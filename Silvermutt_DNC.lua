@@ -113,7 +113,8 @@ function job_setup()
   state.CP = M(false, "Capacity Points Mode")
 
   no_swap_gear = S{"Warp Ring", "Dim. Ring (Dem)", "Dim. Ring (Holla)", "Dim. Ring (Mea)",
-            "Trizek Ring", "Echad Ring", "Facility Ring", "Capacity Ring", "Dem Ring", "Empress Band", "Fisherman's Cuffs", "Reraise Earring"}
+            "Trizek Ring", "Echad Ring", "Facility Ring", "Capacity Ring", "Dem Ring", "Empress Band",
+            "Fisherman's Cuffs", "Reraise Earring"}
 
   lockstyleset = 2
 end
@@ -905,7 +906,7 @@ function init_gear_sets()
       waist="Gishdubar Sash", --10
       }
 
-  -- sets.CP = {back="Mecisto. Mantle"}
+  sets.CP = {back="Aptitude Mantle"}
   --sets.Reive = {neck="Ygnas's Resolve +1"}
 
 end
