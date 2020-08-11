@@ -1,0 +1,17 @@
+sets.exported={
+    main={ name="Aettir", augments={'Accuracy+70','Mag. Evasion+50','Weapon skill damage +10%',}},
+    sub="Tzacab Grip",
+    ammo="Bibiki Seashell",
+    head="Aya. Zucchetto +1",
+    body="Ayanmo Corazza +1",
+    hands="Aya. Manopolas +1",
+    legs="Aya. Cosciales +1",
+    feet="Aya. Gambieras +1",
+    neck="Dampener's Torque",
+    waist="Fotia Belt",
+    left_ear="Brutal Earring",
+    right_ear="Cessance Earring",
+    left_ring="Epona's Ring",
+    right_ring="Ayanmo Ring",
+    back="Boxer's Mantle",
+}
