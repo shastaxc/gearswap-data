@@ -125,12 +125,12 @@ function user_setup()
     send_command('bind ^= gs c cycle Runes')
     send_command('bind ^f11 gs c cycle MagicalDefenseMode')
     send_command('bind @a gs c cycle AttackMode')
-    -- send_command('bind @c gs c toggle CP')
+    send_command('bind @c gs c toggle CP')
     send_command('bind @e gs c cycleback WeaponSet')
     send_command('bind @r gs c cycle WeaponSet')
     send_command('bind @w gs c toggle WeaponLock')
     send_command('bind @k gs c toggle Knockback')
-    send_command('bind !q input /ma "Temper" <me>')
+    send_command('bind ^` input /ma "Temper" <me>')
 
     if player.sub_job == 'BLU' then
         send_command('bind !w input /ma "Cocoon" <me>')
@@ -142,8 +142,16 @@ function user_setup()
         send_command('bind !w input /ja "Hasso" <me>')
     end
 
-    send_command('bind !o input /ma "Regen IV" <stpc>')
-    send_command('bind !p input /ma "Ice Spikes" <me>')
+    send_command('bind !u input /ma "Blink" <me>')
+    send_command('bind !i input /ma "Stoneskin" <me>')
+    send_command('bind !o input /ma "Phalanx" <me>')
+    send_command('bind !p input /ma "Aquaveil" <me>')
+
+    send_command('bind !; input /ma "Regen IV" <stpc>')
+    send_command('bind !\' input /ma "Refresh" <stpc>')
+
+    send_command('bind !. input /ma "Ice Spikes" <me>')
+    send_command('bind !/ input /ma "Shock Spikes" <me>')
 
     send_command('bind @w gs c toggle WeaponLock')
 
@@ -181,18 +189,24 @@ function user_unload()
     send_command('unbind ^`')
     send_command('unbind !`')
     send_command('unbind ^f11')
-    send_command('unbind ^insert')
-    send_command('unbind ^delete')
+    send_command('unbind ^-')
+    send_command('unbind ^=')
     send_command('unbind @a')
-    -- send_command('unbind @c')
+    send_command('unbind @c')
     send_command('unbind @d')
-    send_command('unbind !q')
     send_command('unbind @w')
     send_command('unbind @e')
     send_command('unbind @r')
+    send_command('unbind !u')
+    send_command('unbind !i')
     send_command('unbind !o')
     send_command('unbind !p')
-    send_command('unbind ^,')
+
+    send_command('unbind !;')
+    send_command('unbind !\'')
+
+    send_command('unbind !.')
+    send_command('unbind !/')
     send_command('unbind @w')
     send_command('unbind ^numpad/')
     send_command('unbind ^numpad*')
@@ -202,6 +216,7 @@ function user_unload()
     send_command('unbind ^numpad5')
     send_command('unbind ^numpad1')
     send_command('unbind @numpad*')
+    send_command('unbind numpad0')
 
     send_command('unbind #`')
     send_command('unbind #1')
@@ -845,7 +860,7 @@ function init_gear_sets()
 
     sets.Embolden = set_combine(sets.midcast.EnhancingDuration, {back="Evasionist's Cape"})
     sets.Obi = {waist="Hachirin-no-Obi"}
-    -- sets.CP = {back="Mecisto. Mantle"}
+    sets.CP = {back="Aptitude Mantle"}
     --sets.Reive = {neck="Ygnas's Resolve +1"}
 
     sets.Epeolatry = {main="Epeolatry"}
@@ -1062,12 +1077,12 @@ function customize_idle_set(idleSet)
     if state.Knockback.value == true then
         idleSet = set_combine(idleSet, sets.defense.Knockback)
     end
-    --if state.CP.current == 'on' then
+    -- if state.CP.current == 'on' then
     --    equip(sets.CP)
     --    disable('back')
-    --else
+    -- else
     --    enable('back')
-    --end
+    -- end
     if state.Auto_Kite.value == true then
        idleSet = set_combine(idleSet, sets.Kiting)
     end
@@ -1250,13 +1265,15 @@ windower.register_event('zone change',
 function select_default_macro_book()
     -- Default macro set/book: (set, book)
     if player.sub_job == 'BLU' then
-        set_macro_page(2, 5)
+        set_macro_page(1, 5)
     elseif player.sub_job == 'DRK' then
-        set_macro_page(3, 5)
+        set_macro_page(2, 5)
     elseif player.sub_job == 'WHM' then
+        set_macro_page(3, 5)
+    elseif player.sub_job == 'WAR' then
         set_macro_page(4, 5)
     else
-        set_macro_page(1, 5)
+        set_macro_page(5, 5)
     end
 end
 
