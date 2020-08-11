@@ -361,18 +361,18 @@ function init_gear_sets()
     ------------------------------------------------------------------------------------------------
 
     sets.precast.WS = {
-        ammo="Knobkierrie",
-        head=gear.Herc_WSD_head,
-        body=gear.Herc_WS_body,
-        hands="Meg. Gloves +2",
-        legs=gear.Herc_WS_legs,
-        feet=gear.Herc_TA_feet,
-        neck="Fotia Gorget",
-        ear1="Sherida Earring",
-        ear2="Moonshade Earring",
-        ring1="Regal Ring",
-        ring2="Niqmaddu Ring",
-        back=gear.RUN_WS1_Cape,
+        -- ammo="Knobkierrie",
+        -- head=gear.Herc_WSD_head,
+        -- body=gear.Herc_WS_body,
+        -- hands="Meg. Gloves +2",
+        -- legs=gear.Herc_WS_legs,
+        feet=gear.Herc_WSD_feet,
+        -- neck="Fotia Gorget",
+        -- ear1="Sherida Earring",
+        -- ear2="Moonshade Earring",
+        -- ring1="Regal Ring",
+        -- ring2="Niqmaddu Ring",
+        -- back=gear.RUN_WS1_Cape,
         waist="Fotia Belt",
         }
 
