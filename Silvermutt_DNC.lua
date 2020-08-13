@@ -129,12 +129,16 @@ function user_setup()
   state.HybridMode:options('Normal', 'DT')
   state.WeaponskillMode:options('Normal', 'Acc')
   state.IdleMode:options('Normal', 'DT')
+  
+  state.WeaponLock = M(false, 'Weapon Lock')
 
   -- Additional local binds
   include('Global-Binds.lua') -- OK to remove this line
   include('Global-GEO-Binds.lua') -- OK to remove this line
 
   send_command('lua l gearinfo')
+
+  send_command('bind @w gs c toggle WeaponLock')
 
   send_command('bind ^- gs c cycleback mainstep')
   send_command('bind ^= gs c cycle mainstep')
@@ -201,6 +205,7 @@ function user_unload()
   send_command('unbind ^,')
   send_command('unbind @f')
   send_command('unbind @c')
+  send_command('unbind @w')
   send_command('unbind ^numlock')
   send_command('unbind ^numpad/')
   send_command('unbind ^numpad*')
@@ -982,6 +987,15 @@ function job_buff_change(buff,gain)
 
 end
 
+-- Handle notifications of general user state change.
+function job_state_change(stateField, newValue, oldValue)
+  if state.WeaponLock.value == true then
+      disable('main','sub')
+  else
+      enable('main','sub')
+  end
+end
+
 -------------------------------------------------------------------------------------------------------------------
 -- User code that supplements standard library decisions.
 -------------------------------------------------------------------------------------------------------------------
@@ -989,6 +1003,7 @@ end
 -- Called by the 'update' self-command, for common needs.
 -- Set eventArgs.handled to true if we don't want automatic equipping of gear.
 function job_handle_equipping_gear(playerStatus, eventArgs)
+  update_weapons()
   check_gear()
   update_combat_form()
   determine_haste_group()
@@ -1198,6 +1213,13 @@ function check_moving()
   end
 end
 
+function update_weapons()
+  if player.equipment.main ~= "empty" then
+      gear.prevMain = player.equipment.main
+      gear.prevSub = player.equipment.sub
+  end
+end
+
 function check_gear()
   if no_swap_gear:contains(player.equipment.left_ring) then
       disable("ring1")
@@ -1208,6 +1230,20 @@ function check_gear()
       disable("ring2")
   else
       enable("ring2")
+  end
+    
+  --Disarm Handling--
+  --Turns out that the table fill the string "empty" for empty slot. It won't return nil
+  if player.equipment.main == "empty" then
+    if state.WeaponLock.value == false then
+      equip({
+        main = gear.prevMain,
+      })
+      -- Trying to equip subhand in same command as main causes it not to equip
+      equip({
+        sub = gear.prevSub,
+      })
+    end
   end
 end
 

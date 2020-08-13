@@ -5,6 +5,9 @@
 -------------------------------------------------------------------------------------------------------------------
 
 function define_global_sets()
+    -- Weapons entering combat (initialized to nothing)
+    gear.prevMain = ""
+    gear.prevSub = ""
 
     -- Augmented Weapons
     gear.Colada_ENH = {name="Colada", augments={'Enh. Mag. eff. dur. +4','INT+5','Mag. Acc.+9',}}

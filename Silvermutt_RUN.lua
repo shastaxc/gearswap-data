@@ -24,9 +24,9 @@
 --              [ CTRL+= ]          Rune element cycle backward.
 --              [ CTRL+` ]          Use current Rune
 --
---              [ CTRL+Numpad/ ]    Berserk/Meditate/Souleater
+--              [ CTRL+Numpad/ ]    Berserk/Meditate/Last Resort
 --              [ CTRL+Numpad* ]    Warcry/Sekkanoki/Arcane Circle
---              [ CTRL+Numpad- ]    Aggressor/Third Eye/Weapon Bash
+--              [ CTRL+Numpad- ]    Aggressor/Third Eye/Souleater
 --
 --  Spells:     [ WIN+, ]           Utsusemi: Ichi
 --              [ WIN+. ]           Utsusemi: Ni
@@ -106,7 +106,7 @@ function user_setup()
 
     state.Knockback = M(false, 'Knockback')
 
-    state.WeaponSet = M{['description']='Weapon Set', 'Epeolatry', 'Lionheart', 'Aettir', 'Lycurgos'}
+    -- state.WeaponSet = M{['description']='Weapon Set', 'Epeolatry', 'Lionheart', 'Aettir', 'Lycurgos'}
     state.AttackMode = M{['description']='Attack', 'Uncapped', 'Capped'}
     -- state.CP = M(false, "Capacity Points Mode")
     state.WeaponLock = M(false, 'Weapon Lock')
@@ -119,15 +119,15 @@ function user_setup()
 
     send_command('lua l gearinfo')
 
-    send_command('bind numpad0 input //gs c rune')
+    send_command('bind numpad0 input /ja '..state.Runes.value..' <me>')
     send_command('bind !` input /ja "Vivacious Pulse" <me>')
     send_command('bind ^- gs c cycleback Runes')
     send_command('bind ^= gs c cycle Runes')
     send_command('bind ^f11 gs c cycle MagicalDefenseMode')
     send_command('bind @a gs c cycle AttackMode')
     send_command('bind @c gs c toggle CP')
-    send_command('bind @e gs c cycleback WeaponSet')
-    send_command('bind @r gs c cycle WeaponSet')
+    -- send_command('bind @e gs c cycleback WeaponSet')
+    -- send_command('bind @r gs c cycle WeaponSet')
     send_command('bind @w gs c toggle WeaponLock')
     send_command('bind @k gs c toggle Knockback')
     send_command('bind ^` input /ma "Temper" <me>')
@@ -137,7 +137,7 @@ function user_setup()
     elseif player.sub_job == 'WAR' then
         send_command('bind !w input /ja "Defender" <me>')
     elseif player.sub_job == 'DRK' then
-        send_command('bind !w input /ja "Last Resort" <me>')
+        send_command('bind !w input /ja "Weapon Bash" <t>')
     elseif player.sub_job == 'SAM' then
         send_command('bind !w input /ja "Hasso" <me>')
     end
@@ -153,16 +153,14 @@ function user_setup()
     send_command('bind !. input /ma "Ice Spikes" <me>')
     send_command('bind !/ input /ma "Shock Spikes" <me>')
 
-    send_command('bind @w gs c toggle WeaponLock')
-
     if player.sub_job == 'WAR' then
         send_command('bind ^numpad/ input /ja "Berserk" <me>')
         send_command('bind ^numpad* input /ja "Warcry" <me>')
         send_command('bind ^numpad- input /ja "Aggressor" <me>')
     elseif player.sub_job == 'DRK' then
-        send_command('bind ^numpad/ input /ja "Souleater" <me>')
+        send_command('bind ^numpad/ input /ja "Last Resort" <me>')
         send_command('bind ^numpad* input /ja "Arcane Circle" <me>')
-        send_command('bind ^numpad- input /ja "Weapon Bash" <me>')
+        send_command('bind ^numpad- input /ja "Souleater" <me>')
     elseif player.sub_job == 'SAM' then
         send_command('bind ^numpad/ input /ja "Meditate" <me>')
         send_command('bind ^numpad* input /ja "Sekkanoki" <me>')
@@ -172,7 +170,7 @@ function user_setup()
     send_command('bind ^numpad7 input /ws "Resolution" <t>')
     send_command('bind ^numpad8 input /ws "Upheaval" <t>')
     send_command('bind ^numpad9 input /ws "Dimidiation" <t>')
-    send_command('bind ^numpad5 input /ws "Ground Strike" <t>;input /p Ground Strike')
+    send_command('bind ^numpad5 input /ws "Ground Strike" <t>')
     send_command('bind ^numpad6 input /ws "Full Break" <t>')
     send_command('bind ^numpad1 input /ws "Herculean Slash" <t>')
     send_command('bind ^numpad2 input /ws "Shockwave" <t>')
@@ -195,8 +193,8 @@ function user_unload()
     send_command('unbind @c')
     send_command('unbind @d')
     send_command('unbind @w')
-    send_command('unbind @e')
-    send_command('unbind @r')
+    -- send_command('unbind @e')
+    -- send_command('unbind @r')
     send_command('unbind !u')
     send_command('unbind !i')
     send_command('unbind !o')
@@ -207,7 +205,6 @@ function user_unload()
 
     send_command('unbind !.')
     send_command('unbind !/')
-    send_command('unbind @w')
     send_command('unbind ^numpad/')
     send_command('unbind ^numpad*')
     send_command('unbind ^numpad-')
@@ -518,7 +515,7 @@ function init_gear_sets()
         } -- +10% from merit points
 
     sets.midcast.Cure = {
-        sub="Mensch Strap +1",
+        -- sub="Mensch Strap +1",
         ammo="Staunch Tathlum +1",
         head="Fu. Bandeau +3",
         body="Vrikodara Jupon", -- 13
@@ -535,7 +532,7 @@ function init_gear_sets()
         }
 
     sets.midcast['Enhancing Magic'] = {
-        main="Pukulatmuj +1",
+        -- main="Pukulatmuj +1",
         head="Carmine Mask +1",
         body="Manasa Chasuble",
         hands="Runeist's Mitons +3",
@@ -556,7 +553,7 @@ function init_gear_sets()
         }
 
     sets.midcast['Phalanx'] = set_combine(sets.midcast.SpellInterrupt, {
-        main="Deacon Sword", --4
+        -- main="Deacon Sword", --4
         head="Fu. Bandeau +3", --7
         body=gear.Taeon_Phalanx_body, --3(10)
         hands=gear.Taeon_Phalanx_hands, --3(10)
@@ -565,8 +562,8 @@ function init_gear_sets()
         })
 
     sets.midcast['Aquaveil'] = set_combine(sets.midcast['Enhancing Magic'], sets.midcast.SpellInterrupt, {
-        main="Nibiru Faussar", --1
-        sub="Refined Grip +1",
+        -- main="Nibiru Faussar", --1
+        -- sub="Refined Grip +1",
         })
 
     sets.midcast['Regen'] = set_combine(sets.midcast['Enhancing Magic'], {head="Rune. Bandeau +3", neck="Sacro Gorget"})
@@ -600,7 +597,7 @@ function init_gear_sets()
     ------------------------------------------------------------------------------------------------
 
     sets.idle = {
-      sub="Tzacab Grip",
+      -- sub="Tzacab Grip",
       ammo="Bibiki Seashell",
       head="Aya. Zucchetto +1",
       body="Ayanmo Corazza +1",
@@ -617,7 +614,7 @@ function init_gear_sets()
         }
 
     sets.idle.DT = {
-        sub="Mensch Strap +1", --5/0
+        -- sub="Mensch Strap +1", --5/0
         ammo="Staunch Tathlum +1", --3/3
         head="Fu. Bandeau +3", --6/0
         body="Runeist's Coat +3",
@@ -661,7 +658,7 @@ function init_gear_sets()
     sets.defense.Knockback = {back="Repulse Mantle"}
 
     sets.defense.PDT = {
-        sub="Refined Grip +1", --3/3
+        -- sub="Refined Grip +1", --3/3
         ammo="Staunch Tathlum +1", --3/3
         head="Turms Cap +1",
         body="Runeist's Coat +3",
@@ -678,7 +675,7 @@ function init_gear_sets()
         }
 
     sets.defense.MDT = {
-        sub="Refined Grip +1", --3/3
+        -- sub="Refined Grip +1", --3/3
         ammo="Staunch Tathlum +1", --3/3
         head="Turms Cap +1",
         body="Runeist's Coat +3",
@@ -695,7 +692,7 @@ function init_gear_sets()
         }
 
     sets.defense.HP = {
-        sub="Mensch Strap +1", --5/0
+        -- sub="Mensch Strap +1", --5/0
         ammo="Staunch Tathlum +1", --3/3
         head=gear.Adhemar_D_head, --4/0
         body={name="Runeist's Coat +3", priority=2},
@@ -723,7 +720,7 @@ function init_gear_sets()
     ------------------------------------------------------------------------------------------------
 
     sets.engaged = {
-      sub="Tzacab Grip",
+      -- sub="Tzacab Grip",
       ammo="Bibiki Seashell",
       head="Aya. Zucchetto +1",
       body="Ayanmo Corazza +1",
@@ -863,10 +860,10 @@ function init_gear_sets()
     sets.CP = {back="Aptitude Mantle"}
     --sets.Reive = {neck="Ygnas's Resolve +1"}
 
-    sets.Epeolatry = {main="Epeolatry"}
-    sets.Lionheart = {main="Lionheart"}
-    sets.Aettir = {main="Aettir"}
-    sets.Lycurgos = {main="Lycurgos"}
+    -- sets.Epeolatry = {main="Epeolatry"}
+    -- sets.Lionheart = {main="Lionheart"}
+    -- sets.Aettir = {main="Aettir"}
+    -- sets.Lycurgos = {main="Lycurgos"}
 
 end
 
@@ -875,7 +872,7 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 function job_precast(spell, action, spellMap, eventArgs)
-    equip(sets[state.WeaponSet.current])
+    -- equip(sets[state.WeaponSet.current])
 
     if buffactive['terror'] or buffactive['petrification'] or buffactive['stun'] or buffactive['sleep'] then
         add_to_chat(167, 'Stopped due to status.')
@@ -965,7 +962,7 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
 end
 
 function job_aftercast(spell, action, spellMap, eventArgs)
-    equip(sets[state.WeaponSet.current])
+    -- equip(sets[state.WeaponSet.current])
 
     if spell.name == 'Rayke' and not spell.interrupted then
         send_command('@timers c "Rayke ['..spell.target.name..']" '..rayke_duration..' down spells/00136.png')
@@ -1051,7 +1048,7 @@ function job_state_change(stateField, newValue, oldValue)
         enable('main','sub')
     end
 
-    equip(sets[state.WeaponSet.current])
+    -- equip(sets[state.WeaponSet.current])
 
 end
 
@@ -1060,12 +1057,13 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 function job_handle_equipping_gear(playerStatus, eventArgs)
-    check_gear()
-    check_moving()
+  update_weapons()
+  check_gear()
+  check_moving()
 end
 
 function job_update(cmdParams, eventArgs)
-    equip(sets[state.WeaponSet.current])
+    -- equip(sets[state.WeaponSet.current])
     handle_equipping_gear(player.status)
 end
 
@@ -1205,9 +1203,6 @@ end
 
 function job_self_command(cmdParams, eventArgs)
     gearinfo(cmdParams, eventArgs)
-    if cmdParams[1]:lower() == 'rune' then
-        send_command('@input /ja '..state.Runes.value..' <me>')
-    end
 end
 
 function gearinfo(cmdParams, eventArgs)
@@ -1235,17 +1230,38 @@ function check_moving()
     end
 end
 
+function update_weapons()
+  if player.equipment.main ~= "empty" then
+    gear.prevMain = player.equipment.main
+    gear.prevSub = player.equipment.sub
+  end
+end
+
 function check_gear()
-    if no_swap_gear:contains(player.equipment.left_ring) then
-        disable("ring1")
-    else
-        enable("ring1")
+  if no_swap_gear:contains(player.equipment.left_ring) then
+      disable("ring1")
+  else
+      enable("ring1")
+  end
+  if no_swap_gear:contains(player.equipment.right_ring) then
+      disable("ring2")
+  else
+      enable("ring2")
+  end
+
+  --Disarm Handling--
+  --Turns out that the table fill the string "empty" for empty slot. It won't return nil
+  if player.equipment.main == "empty" then
+    if state.WeaponLock.value == false then
+      equip({
+        main = gear.prevMain,
+      })
+      -- Trying to equip subhand in same command as main causes it not to equip
+      equip({
+        sub = gear.prevSub,
+      })
     end
-    if no_swap_gear:contains(player.equipment.right_ring) then
-        disable("ring2")
-    else
-        enable("ring2")
-    end
+  end
 end
 
 windower.register_event('zone change',
