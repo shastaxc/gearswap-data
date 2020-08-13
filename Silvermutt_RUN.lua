@@ -133,13 +133,15 @@ function user_setup()
     send_command('bind ^` input /ma "Temper" <me>')
 
     if player.sub_job == 'BLU' then
-        send_command('bind !w input /ma "Cocoon" <me>')
+      send_command('bind !q input /ma "Wild Carrot" <stpc>')
+      send_command('bind !w input /ma "Cocoon" <me>')
+      send_command('bind !e input /ma "Refueling" <me>')
     elseif player.sub_job == 'WAR' then
-        send_command('bind !w input /ja "Defender" <me>')
+      send_command('bind !w input /ja "Defender" <me>')
     elseif player.sub_job == 'DRK' then
-        send_command('bind !w input /ja "Weapon Bash" <t>')
+      send_command('bind !w input /ja "Weapon Bash" <t>')
     elseif player.sub_job == 'SAM' then
-        send_command('bind !w input /ja "Hasso" <me>')
+      send_command('bind !w input /ja "Hasso" <me>')
     end
 
     send_command('bind !u input /ma "Blink" <me>')
@@ -195,6 +197,9 @@ function user_unload()
     send_command('unbind @w')
     -- send_command('unbind @e')
     -- send_command('unbind @r')
+    send_command('unbind !q')
+    send_command('unbind !w')
+    send_command('unbind !e')
     send_command('unbind !u')
     send_command('unbind !i')
     send_command('unbind !o')
