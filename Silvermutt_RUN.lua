@@ -119,7 +119,7 @@ function user_setup()
 
     send_command('lua l gearinfo')
 
-    send_command('bind numpad0 input /ja '..state.Runes.value..' <me>')
+    send_command('bind numpad0 input //gs c rune')
     send_command('bind !` input /ja "Vivacious Pulse" <me>')
     send_command('bind ^- gs c cycleback Runes')
     send_command('bind ^= gs c cycle Runes')
@@ -1208,6 +1208,9 @@ end
 
 function job_self_command(cmdParams, eventArgs)
     gearinfo(cmdParams, eventArgs)
+    if cmdParams[1]:lower() == 'rune' then
+        send_command('@input /ja '..state.Runes.value..' <me>')
+    end
 end
 
 function gearinfo(cmdParams, eventArgs)
