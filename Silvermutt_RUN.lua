@@ -19,17 +19,35 @@
 --              [ WIN+A ]           AttackMode: Capped/Uncapped WS Modifier
 --              [ WIN+C ]           Toggle Capacity Points Mode
 --
---  Abilities:  [ CTRL+` ]          Use current Rune
---              [ CTRL+- ]          Rune element cycle forward.
+--  Abilities:  [ CTRL+- ]          Rune element cycle forward.
 --              [ CTRL+= ]          Rune element cycle backward.
---              [ CTRL+` ]          Use current Rune
+--              [ Numpad0 ]         Use current Rune
+--
+--              [ CTRL+` ]          Vivacious Pulse
+--              [ ALT+` ]           Temper
 --
 --              [ CTRL+Numpad/ ]    Berserk/Meditate/Last Resort
 --              [ CTRL+Numpad* ]    Warcry/Sekkanoki/Arcane Circle
 --              [ CTRL+Numpad- ]    Aggressor/Third Eye/Souleater
 --
+--              [ ALT+W ]           Defender (WAR sub)/Weapon Bash (DRK sub)
+--
 --  Spells:     [ WIN+, ]           Utsusemi: Ichi
 --              [ WIN+. ]           Utsusemi: Ni
+--
+--              [ ALT+U ]           Blink
+--              [ ALT+I ]           Stoneskin
+--              [ ALT+O ]           Phalanx
+--              [ ALT+P ]           Aquaveil
+--              [ ALT+; ]           Regen IV
+--              [ ALT+' ]           Refresh
+--              [ ALT+, ]           Blaze Spikes
+--              [ ALT+. ]           Ice Spikes
+--              [ ALT+/ ]           Shock Spikes
+--
+--              [ ALT+Q ]           Wild Carrot (BLU sub)
+--              [ ALT+W ]           Cocoon (BLU sub)
+--              [ ALT+E ]           Refueling (BLU sub)
 --
 --  Weapons:    [ CTRL+G ]          Cycles between available greatswords
 --              [ CTRL+W ]          Toggle Weapon Lock
@@ -152,6 +170,7 @@ function user_setup()
     send_command('bind !; input /ma "Regen IV" <stpc>')
     send_command('bind !\' input /ma "Refresh" <stpc>')
 
+    send_command('bind !, input /ma "Blaze Spikes" <me>')
     send_command('bind !. input /ma "Ice Spikes" <me>')
     send_command('bind !/ input /ma "Shock Spikes" <me>')
 
@@ -207,9 +226,11 @@ function user_unload()
 
     send_command('unbind !;')
     send_command('unbind !\'')
-
+    
+    send_command('unbind !,')
     send_command('unbind !.')
     send_command('unbind !/')
+
     send_command('unbind ^numpad/')
     send_command('unbind ^numpad*')
     send_command('unbind ^numpad-')
