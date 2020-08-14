@@ -275,7 +275,7 @@ function init_gear_sets()
         -- ear2="Trux Earring", --5
         -- ring1="Pernicious Ring", --5
         ring2="Supershear Ring", --5
-        -- back=gear.RUN_HPD_Cape, --10
+        back=gear.RUN_HPD_Cape, --10
         -- waist="Kasiri Belt", --3
         }
 
@@ -291,14 +291,14 @@ function init_gear_sets()
         -- ear2={name="Odnowa Earring +1", priority=3},
         -- ring1={name="Moonlight Ring", priority=2},
         ring2="Supershear Ring", --5
-        -- back=gear.RUN_HPD_Cape, --10
+        back=gear.RUN_HPD_Cape, --10
         -- waist="Kasiri Belt", --3
         }
 
     sets.precast.JA['Vallation'] = {
       -- body="Runeist's Coat +3",
       -- legs="Futhark Trousers +3",
-      -- back=gear.RUN_HPD_Cape,
+      back=gear.RUN_HPD_Cape,
     }
     sets.precast.JA['Valiance'] = sets.precast.JA['Vallation']
     sets.precast.JA['Pflug'] = {
@@ -356,6 +356,8 @@ function init_gear_sets()
 
     -- Fast cast sets for spells
     sets.precast.FC = {
+      ring1="Prolix Ring", --2
+      ring2="Ayanmo Ring",
         -- ammo="Sapience Orb", --2
         -- head="Rune. Bandeau +3", --14
         -- body=gear.Taeon_FC_body, --8
@@ -386,7 +388,10 @@ function init_gear_sets()
         -- legs="Futhark Trousers +3",
         })
 
-    sets.precast.FC.Cure = set_combine(sets.precast.FC, {ammo="Impatiens", ear2="Mendi. Earring"})
+    sets.precast.FC.Cure = set_combine(sets.precast.FC, {
+      -- ammo="Impatiens",
+      -- ear2="Mendi. Earring"
+    })
 
     sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {
         -- ammo="Impatiens",
@@ -434,7 +439,7 @@ function init_gear_sets()
         -- hands=gear.Adhemar_B_hands,
         -- legs="Samnuha Tights",
         -- feet="Lustra. Leggings +1",
-        --neck="Futhark Torque +2",
+        -- neck="Futhark Torque +2",
         ring1="Epona's Ring",
         -- back=gear.RUN_WS1_Cape,
         })
@@ -663,7 +668,7 @@ function init_gear_sets()
       right_ear="Cessance Earring",
       left_ring="Epona's Ring",
       right_ring="Ayanmo Ring",
-      back="Boxer's Mantle",
+      back=gear.RUN_HPD_Cape,
         }
 
     sets.idle.DT = {
@@ -679,7 +684,7 @@ function init_gear_sets()
         -- ear2="Odnowa Earring +1", --0/2
         -- ring1="Moonlight Ring", --5/5
         -- ring2="Defending Ring", --10/10
-        -- back=gear.RUN_HPD_Cape, --10/0
+        back=gear.RUN_HPD_Cape, --10/0
         -- waist="Flume Belt +1", --4/0
         }
 
@@ -701,14 +706,18 @@ function init_gear_sets()
         -- ear1="Sanare Earring",
         })
 
-    sets.Kiting = {legs="Carmine Cuisses +1"}
+    sets.Kiting = {
+      -- legs="Carmine Cuisses +1"
+    }
 
 
     ------------------------------------------------------------------------------------------------
     ---------------------------------------- Defense Sets ------------------------------------------
     ------------------------------------------------------------------------------------------------
 
-    sets.defense.Knockback = {back="Repulse Mantle"}
+    sets.defense.Knockback = {
+      -- back="Repulse Mantle"
+    }
 
     sets.defense.PDT = {
         -- sub="Refined Grip +1", --3/3
@@ -723,7 +732,7 @@ function init_gear_sets()
         -- ear2="Odnowa Earring +1", --0/2
         -- ring1="Gelatinous Ring +1", --7/(-1)
         -- ring2="Defending Ring", --10/10
-        -- back=gear.RUN_HPD_Cape, --10/0
+        back=gear.RUN_HPD_Cape, --10/0
         -- waist="Engraved Belt",
         }
 
@@ -740,7 +749,7 @@ function init_gear_sets()
         -- ear2="Odnowa Earring +1", --0/2
         -- ring1="Gelatinous Ring +1", --7/(-1)
         -- ring2="Defending Ring", --10/10
-        -- back=gear.RUN_HPD_Cape, --10/0
+        back=gear.RUN_HPD_Cape, --10/0
         -- waist="Engraved Belt",
         }
 
@@ -773,7 +782,6 @@ function init_gear_sets()
     ------------------------------------------------------------------------------------------------
 
     sets.engaged = {
-      -- sub="Tzacab Grip",
       ammo="Bibiki Seashell",
       head="Aya. Zucchetto +1",
       body="Ayanmo Corazza +1",
