@@ -49,8 +49,7 @@
 --              [ ALT+W ]           Cocoon (BLU sub)
 --              [ ALT+E ]           Refueling (BLU sub)
 --
---  Weapons:    [ CTRL+G ]          Cycles between available greatswords
---              [ CTRL+W ]          Toggle Weapon Lock
+--  Weapons:    [ WIN+W ]          Toggle Weapon Lock
 --
 --  WS:         [ CTRL+Numpad7 ]    Resolution
 --              [ CTRL+Numpad8 ]    Upheaval
