@@ -302,7 +302,7 @@ function init_gear_sets()
     ammo="Charis Feather",
     head="Maxixi Tiara +2",
     body="Mummu Jacket +1",
-    hands="Mummu Wrists +1",
+    hands="Mummu Wrists +2",
     legs="Mummu Kecks +1",
     feet="Mummu Gamashes +1",
     neck="Love Torque",
@@ -320,7 +320,7 @@ function init_gear_sets()
     ammo="Charis Feather",
     head="Maxixi Tiara +2",
     body="Horos Casaque +1",
-    hands="Mummu Wrists +1",
+    hands="Mummu Wrists +2",
     legs="Mummu Kecks +1",
     feet="Mummu Gamashes +1",
     neck="Love Torque",
@@ -395,13 +395,16 @@ function init_gear_sets()
     ear2="Telos Earring",
   })
 
-  sets.precast.WS.Critical = {body="Meg. Cuirie +2"}
+  sets.precast.WS.Critical = {
+    body="Meg. Cuirie +2",
+    ammo="Charis Feather"
+  }
 
   sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS, {
     ammo="Charis Feather",
     head="Maxixi Tiara +2",
     body="Mummu Jacket +1",
-    hands="Mummu Wrists +1",
+    hands="Mummu Wrists +2",
     legs="Mummu Kecks +1",
     neck="Soil Gorget",
     waist="Fotia Belt",
@@ -416,7 +419,7 @@ function init_gear_sets()
     ammo="Charis Feather",
     head="Maxixi Tiara +2",
     body="Mummu Jacket +1",
-    hands="Mummu Wrists +1",
+    hands="Mummu Wrists +2",
     legs="Mummu Kecks +1",
     neck="Soil Gorget",
     waist="Fotia Belt",
@@ -430,7 +433,7 @@ function init_gear_sets()
     ammo="Charis Feather",
     head="Maxixi Tiara +2",
     body="Mummu Jacket +1",
-    hands="Mummu Wrists +1",
+    hands="Mummu Wrists +2",
     legs="Mummu Kecks +1",
     neck="Soil Gorget",
     waist="Fotia Belt",
@@ -444,7 +447,7 @@ function init_gear_sets()
     ammo="Charis Feather",
     head="Maxixi Tiara +2",
     body="Mummu Jacket +1",
-    hands="Mummu Wrists +1",
+    hands="Mummu Wrists +2",
     legs="Mummu Kecks +1",
     neck="Love Torque",
     waist="Fotia Belt",
@@ -457,7 +460,7 @@ function init_gear_sets()
   sets.precast.WS['Aeolian Edge'] = {
     ammo="Charis Feather",
     body="Mummu Jacket +1",
-    hands="Mummu Wrists +1",
+    hands="Mummu Wrists +2",
     legs="Mummu Kecks +1",
     neck="Soil Gorget",
     waist="Fotia Belt",
@@ -495,7 +498,7 @@ function init_gear_sets()
     ammo="Charis Feather",
     head="Maxixi Tiara +2",
     body="Mummu Jacket +1",
-    hands="Mummu Wrists +1",
+    hands="Mummu Wrists +2",
     legs="Mummu Kecks +1",
     feet="Tandava Crackows",
     neck="Charis Necklace",
@@ -550,7 +553,7 @@ function init_gear_sets()
     ammo="Charis Feather",
     head="Maxixi Tiara +2",
     body="Mummu Jacket +1",
-    hands="Mummu Wrists +1",
+    hands="Mummu Wrists +2",
     legs="Mummu Kecks +1",
     feet="Mummu Gamashes +1",
     neck="Charis Necklace",
@@ -601,7 +604,7 @@ function init_gear_sets()
     ammo="Charis Feather",
     head="Maxixi Tiara +2",
     body="Mummu Jacket +1",
-    hands="Mummu Wrists +1",
+    hands="Mummu Wrists +2",
     legs="Mummu Kecks +1",
     feet="Mummu Gamashes +1",
     neck="Charis Necklace",
@@ -648,7 +651,7 @@ function init_gear_sets()
     ammo="Charis Feather",
     head="Maxixi Tiara +2",
     body="Mummu Jacket +1",
-    hands="Mummu Wrists +1",
+    hands="Mummu Wrists +2",
     legs="Mummu Kecks +1",
     feet="Mummu Gamashes +1",
     neck="Charis Necklace",
@@ -696,7 +699,7 @@ function init_gear_sets()
     ammo="Charis Feather",
     head="Maxixi Tiara +2",
     body="Mummu Jacket +1",
-    hands="Mummu Wrists +1",
+    hands="Mummu Wrists +2",
     legs="Mummu Kecks +1",
     feet="Mummu Gamashes +1",
     neck="Charis Necklace",
@@ -744,7 +747,7 @@ function init_gear_sets()
     ammo="Charis Feather",
     head="Maxixi Tiara +2",
     body="Mummu Jacket +1",
-    hands="Mummu Wrists +1",
+    hands="Mummu Wrists +2",
     legs="Mummu Kecks +1",
     feet="Mummu Gamashes +1",
     neck="Charis Necklace",
@@ -793,7 +796,7 @@ function init_gear_sets()
     ammo="Charis Feather",
     head="Maxixi Tiara +2",
     body="Mummu Jacket +1",
-    hands="Mummu Wrists +1",
+    hands="Mummu Wrists +2",
     legs="Mummu Kecks +1",
     feet="Mummu Gamashes +1",
     neck="Charis Necklace",
@@ -895,7 +898,10 @@ function init_gear_sets()
 
   sets.buff['Saber Dance'] = {legs="Horos Tights"}
   sets.buff['Fan Dance'] = {body="Horos Bangles"}
-  sets.buff['Climactic Flourish'] = {head="Maculele Tiara"} --body="Meg. Cuirie +2"}
+  sets.buff['Climactic Flourish'] = {
+    head="Maculele Tiara",
+    body="Meg. Cuirie +2"
+  }
   sets.buff['Closed Position'] = {feet="Horos T. Shoes +3"}
 
   sets.buff.Doom = {
