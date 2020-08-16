@@ -297,7 +297,7 @@ function init_gear_sets()
         }
 
     sets.precast.JA['Vallation'] = {
-      body="Runeist Coat",
+      body="Runeist Coat +1",
       legs="Futhark Trousers",
       back=gear.RUN_HPD_Cape,
     }
@@ -309,7 +309,7 @@ function init_gear_sets()
       head="Futhark Bandeau"
     }
     sets.precast.JA['Liement'] = {
-      body="Futhark Coat"
+      body="Futhark Coat +1",
     }
 
     sets.precast.JA['Lunge'] = {
@@ -336,7 +336,7 @@ function init_gear_sets()
       feet="Futhark Boots"
     }
     sets.precast.JA['Elemental Sforzo'] = {
-      body="Futhark Coat"
+      body="Futhark Coat +1",
     }
     sets.precast.JA['Swordplay'] = {
       hands="Futhark Mitons"
@@ -661,13 +661,13 @@ function init_gear_sets()
       -- sub="Tzacab Grip",
       ammo="Staunch Tathlum",
       head="Aya. Zucchetto +1",
-      body="Ayanmo Corazza +1",
+      body="Runeist Coat +1",
       hands="Aya. Manopolas +1",
       legs="Aya. Cosciales +1",
       feet="Erilaz Greaves",
       neck="Twilight Torque",
       waist="Sailfi Belt +1",
-      left_ear="Brutal Earring",
+      left_ear="Ethereal Earring",
       right_ear="Cessance Earring",
       left_ring="Epona's Ring",
       right_ring="Ayanmo Ring",
@@ -677,13 +677,13 @@ function init_gear_sets()
     sets.idle.DT = {
       ammo="Staunch Tathlum",
       head="Aya. Zucchetto +1",
-      body="Ayanmo Corazza +1",
+      body="Futhark Coat +1",
       hands="Aya. Manopolas +1",
       legs="Erilaz Leg Guards", --6/0
       feet="Erilaz Greaves",
       neck="Twilight Torque",
       waist="Sailfi Belt +1",
-      left_ear="Brutal Earring",
+      left_ear="Ethereal Earring",
       right_ear="Cessance Earring",
       left_ring=gear.Dark_Ring,
       right_ring="Ayanmo Ring",
@@ -693,7 +693,7 @@ function init_gear_sets()
     sets.idle.Refresh = set_combine(sets.idle, {
         -- ammo="Homiliary",
         -- head=gear.Herc_Idle_head,
-      body="Runeist Coat",
+      body="Runeist Coat +1",
         -- hands="Regal Gauntlets",
         -- legs="Rawhide Trousers",
         -- ring1={name="Stikini Ring +1", bag="wardrobe3"},
@@ -724,13 +724,13 @@ function init_gear_sets()
     sets.defense.PDT = {
       ammo="Staunch Tathlum",
       head="Aya. Zucchetto +1",
-      body="Ayanmo Corazza +1",
+      body="Futhark Coat +1",
       hands="Aya. Manopolas +1",
       legs="Erilaz Leg Guards", --6/0
       feet="Erilaz Greaves",
       neck="Twilight Torque",
       waist="Sailfi Belt +1",
-      left_ear="Brutal Earring",
+      left_ear="Ethereal Earring",
       right_ear="Cessance Earring",
       left_ring=gear.Dark_Ring,
       right_ring="Ayanmo Ring",
@@ -753,13 +753,13 @@ function init_gear_sets()
     sets.defense.MDT = {
       ammo="Staunch Tathlum",
       head="Aya. Zucchetto +1",
-      body="Runeist Coat",
+      body="Futhark Coat +1",
       hands="Aya. Manopolas +1",
       legs="Erilaz Leg Guards", --6/0
       feet="Erilaz Greaves",
       neck="Twilight Torque",
       waist="Sailfi Belt +1",
-      left_ear="Brutal Earring",
+      left_ear="Ethereal Earring",
       right_ear="Cessance Earring",
       left_ring=gear.Dark_Ring,
       right_ring="Ayanmo Ring",
@@ -769,13 +769,13 @@ function init_gear_sets()
     sets.defense.HP = {
       ammo="Staunch Tathlum",
       head="Aya. Zucchetto +1",
-      body="Runeist Coat",
+      body="Runeist Coat +1",
       hands="Aya. Manopolas +1",
       legs="Erilaz Leg Guards", --6/0
       feet="Erilaz Greaves",
       neck="Twilight Torque",
       waist="Sailfi Belt +1",
-      left_ear="Brutal Earring",
+      left_ear="Ethereal Earring",
       right_ear="Cessance Earring",
       left_ring="Epona's Ring",
       right_ring="Ayanmo Ring",
@@ -863,7 +863,7 @@ function init_gear_sets()
 
     sets.Hybrid = {
         -- head=gear.Adhemar_D_head, --4/0
-        -- body="Ashera Harness", --7/7
+      body="Futhark Coat +1",
         -- neck="Futhark Torque +2", --7/7
         -- ring1="Moonlight Ring", --5/5
         -- ring2="Defending Ring", --10/10
@@ -921,7 +921,7 @@ function init_gear_sets()
       -- waist="Hachirin-no-Obi"
     }
     sets.CP = {
-      -- back="Aptitude Mantle"
+      back="Aptitude Mantle"
     }
     sets.Reive = {
       -- neck="Ygnas's Resolve +1"
