@@ -267,7 +267,7 @@ function init_gear_sets()
       feet="Erilaz Greaves", --5
         -- ammo="Aqreqaq Bomblet", --2
         -- head="Halitus Helm", --8
-        -- body="Emet Harness +1", --10
+      body="Emet Harness +1", --10
         -- hands="Kurys Gloves", --9
       legs="Erilaz Leg Guards", --10
         -- feet="Ahosi Leggings",--7
@@ -283,7 +283,7 @@ function init_gear_sets()
     sets.Enmity.HP = {
         -- ammo="Aqreqaq Bomblet", --2
         -- head="Halitus Helm", --8
-        -- body="Emet Harness +1", --10
+      body="Emet Harness +1", --10
         -- hands="Kurys Gloves", --9
       legs="Erilaz Leg Guards", --10
         -- feet="Ahosi Leggings",--7
