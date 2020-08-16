@@ -400,7 +400,7 @@ function init_gear_sets()
         -- ammo="Impatiens",
         -- body="Passion Jacket",
         -- ring1="Lebeche Ring",
-        -- waist="Audumbla Sash",
+        waist="Audumbla Sash",
         })
 
 
@@ -553,7 +553,7 @@ function init_gear_sets()
     sets.midcast.FastRecast = sets.precast.FC
 
     sets.midcast.SpellInterrupt = {
-        -- ammo="Staunch Tathlum +1", --11
+        ammo="Staunch Tathlum", --10
         -- body=gear.Taeon_Phalanx_body, --10
         -- hands=gear.Taeon_Phalanx_hands, --10
         -- legs=gear.Taeon_Phalanx_legs, --10
@@ -562,12 +562,12 @@ function init_gear_sets()
         -- ear1="Halasz Earring", --5
         -- ring1="Evanescence Ring", --5
         -- back=gear.RUN_FC_Cape, --10
-        -- waist="Audumbla Sash", --10
+        waist="Audumbla Sash", --10
         } -- +10% from merit points
 
     sets.midcast.Cure = {
         -- sub="Mensch Strap +1",
-        -- ammo="Staunch Tathlum +1",
+        ammo="Staunch Tathlum",
         -- head="Fu. Bandeau +3",
         -- body="Vrikodara Jupon", -- 13
         -- hands="Buremte Gloves", --(13)
@@ -626,7 +626,7 @@ function init_gear_sets()
       -- waist="Gishdubar Sash"
     })
     sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {
-      -- waist="Siegel Sash"
+      waist="Siegel Sash"
     })
     sets.midcast.Protect = set_combine(sets.midcast['Enhancing Magic'], {
       -- ring2="Sheltered Ring"
@@ -659,13 +659,13 @@ function init_gear_sets()
 
     sets.idle = {
       -- sub="Tzacab Grip",
-      ammo="Bibiki Seashell",
+      ammo="Staunch Tathlum",
       head="Aya. Zucchetto +1",
       body="Ayanmo Corazza +1",
       hands="Aya. Manopolas +1",
       legs="Aya. Cosciales +1",
-      feet="Aya. Gambieras +1",
-      neck="Dampener's Torque",
+      feet="Erilaz Greaves",
+      neck="Twilight Torque",
       waist="Sailfi Belt +1",
       left_ear="Brutal Earring",
       right_ear="Cessance Earring",
@@ -675,20 +675,19 @@ function init_gear_sets()
         }
 
     sets.idle.DT = {
-        -- sub="Mensch Strap +1", --5/0
-        -- ammo="Staunch Tathlum +1", --3/3
-        -- head="Fu. Bandeau +3", --6/0
-        -- body="Runeist's Coat +3",
-        -- hands="Turms Mittens +1",
-        -- legs="Turms Subligar +1",
-        -- feet="Turms Leggings +1",
-        -- neck="Futhark Torque +2", --7/7
-        -- ear1="Sanare Earring",
-        -- ear2="Odnowa Earring +1", --0/2
-        -- ring1="Moonlight Ring", --5/5
-        -- ring2="Defending Ring", --10/10
-        back=gear.RUN_HPD_Cape, --10/0
-        -- waist="Flume Belt +1", --4/0
+      ammo="Staunch Tathlum",
+      head="Aya. Zucchetto +1",
+      body="Ayanmo Corazza +1",
+      hands="Aya. Manopolas +1",
+      legs="Erilaz Leg Guards", --6/0
+      feet="Erilaz Greaves",
+      neck="Twilight Torque",
+      waist="Sailfi Belt +1",
+      left_ear="Brutal Earring",
+      right_ear="Cessance Earring",
+      left_ring=gear.Dark_Ring,
+      right_ring="Ayanmo Ring",
+      back=gear.RUN_HPD_Cape,
         }
 
     sets.idle.Refresh = set_combine(sets.idle, {
@@ -723,54 +722,64 @@ function init_gear_sets()
     }
 
     sets.defense.PDT = {
+      ammo="Staunch Tathlum",
+      head="Aya. Zucchetto +1",
+      body="Ayanmo Corazza +1",
+      hands="Aya. Manopolas +1",
+      legs="Erilaz Leg Guards", --6/0
+      feet="Erilaz Greaves",
+      neck="Twilight Torque",
+      waist="Sailfi Belt +1",
+      left_ear="Brutal Earring",
+      right_ear="Cessance Earring",
+      left_ring=gear.Dark_Ring,
+      right_ring="Ayanmo Ring",
+      back=gear.RUN_HPD_Cape,
         -- sub="Refined Grip +1", --3/3
         -- ammo="Staunch Tathlum +1", --3/3
         -- head="Turms Cap +1",
         -- body="Runeist's Coat +3",
         -- hands="Turms Mittens +1",
-      legs="Erilaz Leg Guards", --6/0
         -- feet="Turms Leggings +1",
         -- neck="Futhark Torque +2", --7/7
         -- ear1="Genmei Earring", --2/0
         -- ear2="Odnowa Earring +1", --0/2
         -- ring1="Gelatinous Ring +1", --7/(-1)
         -- ring2="Defending Ring", --10/10
-        back=gear.RUN_HPD_Cape, --10/0
+        -- back=gear.RUN_HPD_Cape, --10/0
         -- waist="Engraved Belt",
         }
 
     sets.defense.MDT = {
-        -- sub="Refined Grip +1", --3/3
-        -- ammo="Staunch Tathlum +1", --3/3
-        -- head="Turms Cap +1",
+      ammo="Staunch Tathlum",
+      head="Aya. Zucchetto +1",
       body="Runeist Coat",
-        -- hands="Turms Mittens +1",
+      hands="Aya. Manopolas +1",
       legs="Erilaz Leg Guards", --6/0
-        -- feet="Turms Leggings +1",
-        -- neck="Futhark Torque +2", --7/7
-        -- ear1="Genmei Earring", --2/0
-        -- ear2="Odnowa Earring +1", --0/2
-        -- ring1="Gelatinous Ring +1", --7/(-1)
-        -- ring2="Defending Ring", --10/10
-        back=gear.RUN_HPD_Cape, --10/0
-        -- waist="Engraved Belt",
+      feet="Erilaz Greaves",
+      neck="Twilight Torque",
+      waist="Sailfi Belt +1",
+      left_ear="Brutal Earring",
+      right_ear="Cessance Earring",
+      left_ring=gear.Dark_Ring,
+      right_ring="Ayanmo Ring",
+      back=gear.RUN_HPD_Cape,
         }
 
     sets.defense.HP = {
-        -- sub="Mensch Strap +1", --5/0
-        -- ammo="Staunch Tathlum +1", --3/3
-        -- head=gear.Adhemar_D_head, --4/0
-        -- body={name="Runeist's Coat +3", priority=2},
-        -- hands={name="Regal Gauntlets", priority=3},
+      ammo="Staunch Tathlum",
+      head="Aya. Zucchetto +1",
+      body="Runeist Coat",
+      hands="Aya. Manopolas +1",
       legs="Erilaz Leg Guards", --6/0
-        -- feet="Turms Leggings +1",
-        -- neck="Futhark Torque +2", --7/7
-        -- ear1={name="Tuisto Earring", priority=6}, --0/1
-        -- ear2={name="Odnowa Earring +1", priority=5}, --0/2
-        -- ring1={name="Moonlight Ring", priority=4}, --5/5
-        -- ring2="Defending Ring", --10/10
-        -- back={name="Moonlight Cape", priority=1}, --6/6
-        -- waist="Flume Belt +1", --4/0
+      feet="Erilaz Greaves",
+      neck="Twilight Torque",
+      waist="Sailfi Belt +1",
+      left_ear="Brutal Earring",
+      right_ear="Cessance Earring",
+      left_ring="Epona's Ring",
+      right_ring="Ayanmo Ring",
+      back=gear.RUN_HPD_Cape,
         }
 
     sets.defense.Parry = {
@@ -785,33 +794,19 @@ function init_gear_sets()
     ------------------------------------------------------------------------------------------------
 
     sets.engaged = {
-      ammo="Bibiki Seashell",
+      ammo="Staunch Tathlum",
       head="Aya. Zucchetto +1",
       body="Ayanmo Corazza +1",
       hands="Aya. Manopolas +1",
       legs="Aya. Cosciales +1",
-      feet="Aya. Gambieras +1",
-      neck="Dampener's Torque",
+      feet="Erilaz Greaves",
+      neck="Twilight Torque",
       waist="Sailfi Belt +1",
       left_ear="Brutal Earring",
       right_ear="Cessance Earring",
       left_ring="Epona's Ring",
       right_ring="Ayanmo Ring",
       back="Boxer's Mantle",
-        -- sub="Utu Grip",
-        -- ammo="Aurgelmir Orb +1",
-        -- head=gear.Adhemar_B_head,
-        -- body=gear.Adhemar_B_body,
-        -- hands=gear.Adhemar_B_hands,
-        -- legs="Samnuha Tights",
-        -- feet=gear.Herc_TA_feet,
-        -- neck="Anu Torque",
-        -- ear1="Sherida Earring",
-        -- ear2="Brutal Earring",
-        -- ring1="Epona's Ring",
-        -- ring2="Niqmaddu Ring",
-        -- back=gear.RUN_TP_Cape,
-        -- waist="Sailfi Belt +1",
         }
 
     sets.engaged.LowAcc = set_combine(sets.engaged, {
