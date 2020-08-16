@@ -511,13 +511,12 @@ function init_gear_sets()
   }
 
   sets.idle.DT = set_combine(sets.idle, {
-    ammo="Bibiki Seashell",
+    ammo="Staunch Tathlum",
     legs="Mummu Kecks +1",
     neck="Twilight Torque",
     waist="Sailfi Belt +1",
     left_ring="Alert Ring",
     right_ring=gear.Dark_Ring,
-    back="Boxer's Mantle",
     feet="Mummu Gamashes +1",
   })
 
