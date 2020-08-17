@@ -306,7 +306,7 @@ function init_gear_sets()
       feet="Runeist Bottes"
     }
     sets.precast.JA['Battuta'] = {
-      head="Futhark Bandeau"
+      head="Futhark Bandeau +1"
     }
     sets.precast.JA['Liement'] = {
       body="Futhark Coat +1",
@@ -605,7 +605,7 @@ function init_gear_sets()
 
     sets.midcast['Phalanx'] = set_combine(sets.midcast.SpellInterrupt, {
         -- main="Deacon Sword", --4
-        head="Futhark Bandeau", --4
+        head="Futhark Bandeau +1", --4
         -- body=gear.Taeon_Phalanx_body, --3(10)
         -- hands=gear.Taeon_Phalanx_hands, --3(10)
         -- legs=gear.Taeon_Phalanx_legs, --3(10)

@@ -304,7 +304,7 @@ function init_gear_sets()
     body="Mummu Jacket +1",
     hands="Mummu Wrists +2",
     legs="Mummu Kecks +1",
-    feet="Mummu Gamashes +1",
+    feet="Horos Toe Shoes +2",
     neck="Love Torque",
     left_ring=gear.Dark_Ring,
     right_ring="Rajas Ring",
@@ -589,6 +589,7 @@ function init_gear_sets()
   })
 
   sets.engaged.STP = set_combine(sets.engaged, {
+    feet="Horos Toe Shoes +2",
     -- head=gear.Herc_STP_head,
     -- body="Ashera Harness",
     -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
@@ -895,13 +896,19 @@ function init_gear_sets()
   ---------------------------------------- Special Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
 
-  sets.buff['Saber Dance'] = {legs="Horos Tights"}
-  sets.buff['Fan Dance'] = {body="Horos Bangles"}
+  sets.buff['Saber Dance'] = {
+    legs="Horos Tights",
+  }
+  sets.buff['Fan Dance'] = {
+    body="Horos Bangles",
+  }
   sets.buff['Climactic Flourish'] = {
     head="Maculele Tiara",
-    body="Meg. Cuirie +2"
+    body="Meg. Cuirie +2",
   }
-  sets.buff['Closed Position'] = {feet="Horos T. Shoes +3"}
+  sets.buff['Closed Position'] = {
+    feet="Horos T. Shoes +3",
+  }
 
   sets.buff.Doom = {
       neck="Nicander's Necklace", --20
