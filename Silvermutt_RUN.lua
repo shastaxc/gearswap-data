@@ -265,18 +265,19 @@ function init_gear_sets()
     -- Enmity sets
     sets.Enmity = {
       feet="Erilaz Greaves", --5
+      body="Emet Harness +1", --10
+      legs="Erilaz Leg Guards", --10
+      neck="Atzintli Necklace", --5
+      ring2="Supershear Ring", --5
+      back=gear.RUN_HPD_Cape, --10
         -- ammo="Aqreqaq Bomblet", --2
         -- head="Halitus Helm", --8
-      body="Emet Harness +1", --10
         -- hands="Kurys Gloves", --9
-      legs="Erilaz Leg Guards", --10
         -- feet="Ahosi Leggings",--7
         -- neck="Moonlight Necklace", --15
         -- ear1="Cryptic Earring", --4
         -- ear2="Trux Earring", --5
         -- ring1="Pernicious Ring", --5
-        ring2="Supershear Ring", --5
-        back=gear.RUN_HPD_Cape, --10
         -- waist="Kasiri Belt", --3
         }
 
@@ -634,8 +635,8 @@ function init_gear_sets()
     sets.midcast.Shell = sets.midcast.Protect
 
     sets.midcast['Divine Magic'] = {
-        -- ammo="Yamarang",
       legs="Runeist Trousers",
+        -- ammo="Yamarang",
         -- neck="Incanter's Torque",
         -- ring1={name="Stikini Ring +1", bag="wardrobe3"},
         -- ring2={name="Stikini Ring +1", bag="wardrobe4"},
@@ -658,11 +659,10 @@ function init_gear_sets()
     ------------------------------------------------------------------------------------------------
 
     sets.idle = {
-      -- sub="Tzacab Grip",
       ammo="Staunch Tathlum",
-      head="Aya. Zucchetto +1",
+      head="Erilaz Galea",
       body="Runeist Coat +1",
-      hands="Aya. Manopolas +1",
+      hands="Meghanada Gloves +1",
       legs="Aya. Cosciales +1",
       feet="Erilaz Greaves",
       neck="Twilight Torque",
@@ -674,11 +674,9 @@ function init_gear_sets()
       back=gear.RUN_HPD_Cape,
         }
 
-    sets.idle.DT = {
-      ammo="Staunch Tathlum",
+    sets.idle.DT = set_combine(sets.idle, {
       head="Aya. Zucchetto +1",
       body="Futhark Coat +1",
-      hands="Aya. Manopolas +1",
       legs="Erilaz Leg Guards", --6/0
       feet="Erilaz Greaves",
       neck="Twilight Torque",
@@ -687,13 +685,13 @@ function init_gear_sets()
       right_ear="Cessance Earring",
       left_ring=gear.Dark_Ring,
       right_ring="Ayanmo Ring",
-      back=gear.RUN_HPD_Cape,
-        }
+    })
 
     sets.idle.Refresh = set_combine(sets.idle, {
+      head="Erilaz Galea",
+      body="Runeist Coat +1",
         -- ammo="Homiliary",
         -- head=gear.Herc_Idle_head,
-      body="Runeist Coat +1",
         -- hands="Regal Gauntlets",
         -- legs="Rawhide Trousers",
         -- ring1={name="Stikini Ring +1", bag="wardrobe3"},
@@ -725,11 +723,11 @@ function init_gear_sets()
       ammo="Staunch Tathlum",
       head="Aya. Zucchetto +1",
       body="Futhark Coat +1",
-      hands="Aya. Manopolas +1",
+      hands="Meghanada Gloves +1",
       legs="Erilaz Leg Guards", --6/0
       feet="Erilaz Greaves",
       neck="Twilight Torque",
-      waist="Sailfi Belt +1",
+      waist="Audumbla Sash",
       left_ear="Ethereal Earring",
       right_ear="Cessance Earring",
       left_ring=gear.Dark_Ring,
@@ -770,7 +768,7 @@ function init_gear_sets()
       ammo="Staunch Tathlum",
       head="Aya. Zucchetto +1",
       body="Runeist Coat +1",
-      hands="Aya. Manopolas +1",
+      hands="Meghanada Gloves +1",
       legs="Erilaz Leg Guards", --6/0
       feet="Erilaz Greaves",
       neck="Twilight Torque",
@@ -794,19 +792,20 @@ function init_gear_sets()
     ------------------------------------------------------------------------------------------------
 
     sets.engaged = {
+      sub="Tzacab Grip",
       ammo="Staunch Tathlum",
       head="Aya. Zucchetto +1",
       body="Ayanmo Corazza +1",
-      hands="Aya. Manopolas +1",
+      hands="Meghanada Gloves +1",
       legs="Aya. Cosciales +1",
-      feet="Erilaz Greaves",
+      feet=gear.Herc_WSD_feet,
       neck="Twilight Torque",
       waist="Sailfi Belt +1",
       left_ear="Brutal Earring",
       right_ear="Cessance Earring",
       left_ring="Epona's Ring",
-      right_ring="Ayanmo Ring",
-      back="Boxer's Mantle",
+      right_ring="Ilabrat Ring",
+      back="Atheling Mantle",
         }
 
     sets.engaged.LowAcc = set_combine(sets.engaged, {
@@ -862,8 +861,19 @@ function init_gear_sets()
     ------------------------------------------------------------------------------------------------
 
     sets.Hybrid = {
-        -- head=gear.Adhemar_D_head, --4/0
+      sub="Refined Grip",
+      ammo="Staunch Tathlum",
+      head="Aya. Zucchetto +1",
       body="Futhark Coat +1",
+      hands="Aya. Manopolas +1",
+      legs="Ayanmo Cosciales +1", --6/0
+      feet="Ayanmo Gambieras +1",
+      neck="Twilight Torque",
+      left_ear="Ethereal Earring",
+      left_ring=gear.Dark_Ring,
+      right_ring="Ayanmo Ring",
+      back=gear.RUN_HPD_Cape,
+        -- head=gear.Adhemar_D_head, --4/0
         -- neck="Futhark Torque +2", --7/7
         -- ring1="Moonlight Ring", --5/5
         -- ring2="Defending Ring", --10/10
@@ -908,7 +918,7 @@ function init_gear_sets()
     ------------------------------------------------------------------------------------------------
 
     sets.buff.Doom = {
-        -- neck="Nicander's Necklace", --20
+      neck="Nicander's Necklace", --20
         -- ring1={name="Eshmun's Ring", bag="wardrobe3"}, --20
         -- ring2={name="Eshmun's Ring", bag="wardrobe4"}, --20
         -- waist="Gishdubar Sash", --10
