@@ -1,3 +1,8 @@
+-- Drop script into gearswap's `data` folder
+-- Update user_settings to include spells you want it to use
+-- Start script with //gs load skillup.lua
+-- Stop script with //gs reload
+
 packets = require('packets')
 res = require 'resources'
 --version 2.0.0.0 final
@@ -10,7 +15,9 @@ user_settings = {
     user_spells = {
         Healing = T{},
         Geomancy = T{},
-        Enhancing = T{},
+        Enhancing = T{
+          'Barfire', 'Barblizzard', 'Baraero', 'Barstone', 'Barthunder', 'Barwater'
+        },
         Ninjutsu = T{},
         Singing = T{},
         Blue = T{},
@@ -22,19 +29,19 @@ sets.brd = {
     string_inst = {
         range="Lamia Harp"},}--put your string instrument here
 sets.Idle = {
-    right_ear="Liminus Earring",
-    head="Tema. Headband",
-    body="Temachtiani Shirt",
-    hands="Temachtiani Gloves",
-    legs="Temachtiani Pants",
-    feet="Temachtiani Boots",
+    -- right_ear="Liminus Earring",
+    -- head="Tema. Headband",
+    -- body="Temachtiani Shirt",
+    -- hands="Temachtiani Gloves",
+    -- legs="Temachtiani Pants",
+    -- feet="Temachtiani Boots",
     }
 sets.Resting = {
-    main="Dark Staff",
-    left_ear="Relaxing Earring",
-    ammo="Clarus Stone",
-    neck="Eidolon pendant",
-    right_ear="Boroka Earring",
+    -- main="Dark Staff",
+    -- left_ear="Relaxing Earring",
+    -- ammo="Clarus Stone",
+    -- neck="Eidolon pendant",
+    -- right_ear="Boroka Earring",
     }
 --DO NOT CHANGE ANY THING BELOW THIS LINE--
 function get_sets()
@@ -42,8 +49,8 @@ function get_sets()
     gs_skill = {skillup_table = {"Healing","Geomancy","Enhancing","Ninjutsu","Singing","Blue","Summoning"},skillup_type = 'None',skillup_spells = T{},
         skillup_count=1,bluspellulid = {['Harden Shell']=737,['Pyric Bulwark']=741,['Carcharian Verve']=745},skill_up_item = T{5889,5890,5891,5892}}
     end_skillup = {shutdown = false,logoff = false,stoptype = "Stop"}
-    gs_skillup = {color={GEO=true,HEL=true,ENH=true,NIN=true,SIN=true,BLU=true,SMN=true,STOP=true,DOWN=true,LOG=true,TRUST=true,TEST=true,REF=true,ITEM=true},
-                skill_ups={},total_skill_ups=0,skill={},use_trust=false,use_item=false,use_geo=false,test_mode=false,test_brd="Wind",skipped_spells=T{}}
+    gs_skillup = {color={GEO=true,HEL=true,ENH=true,NIN=true,SIN=true,BLU=true,SMN=true,STOP=true,DOWN=true,LOG=true,TRUST=true,TEST=true,REFRESH=true,REF=true,ITEM=true},
+                skill_ups={},total_skill_ups=0,skill={},use_trust=false,use_item=false,use_refresh=false,use_geo=false,test_mode=false,test_brd="Wind",skipped_spells=T{}}
     gs_skillup.box={pos={x=211,y=402},text={font='Segoe UI Symbol',size=12,Fonts={'sans-serif'},},bg={alpha=255}}
     gs_skillup.boxa={pos={x=gs_skillup.box.pos.x - 145,y=gs_skillup.box.pos.y},text={font='Segoe UI Symbol',size=9},bg={alpha=255}}
     if gearswap.pathsearch({'Saves/skillup_data.lua'}) then
@@ -184,6 +191,14 @@ function precast(spell)
                 return
             end
         end
+    elseif gs_skillup.use_refresh then
+      if spell_usable(res.spells[109]) and not buffactive[43] then
+        if spell.en ~= "Refresh" then
+          cancel_spell()
+          send_command('input /ma "'..res.spells[109][gearswap.language]..'" <me>')
+          return
+        end
+      end
     elseif gs_skillup.use_geo then
         if player.main_job == "GEO" and spell_usable(res.spells[800]) and not pet.isvalid then
             if spell.en ~= "Geo-Refresh" then
@@ -297,6 +312,8 @@ function self_command(command)
         end_skillup.logoff = false
     elseif command == 'settrust' then
         gs_skillup.use_trust = not gs_skillup.use_trust
+    elseif command == 'setrefresh' then
+        gs_skillup.use_refresh = not gs_skillup.use_refresh
     elseif command == 'setitem' then
         gs_skillup.use_item = not gs_skillup.use_item
     elseif command == 'setgeo' then
@@ -387,6 +404,9 @@ function initialize(text, settings, a)
         if gs_skillup.use_trust then
             properties:append('\\crUsing Moogle Trust')
         end
+        if gs_skillup.use_refresh then
+            properties:append('\\crUsing Refresh')
+        end
         if gs_skillup.use_geo then
             properties:append("\\crUsing Geo's Refresh")
         end
@@ -420,6 +440,7 @@ function initialize(text, settings, a)
     if a == 'button' then
         local properties = L{}
         properties:append('${TRUSTc}')
+        properties:append('${REFRESHc}')
         properties:append('${REFc}')
         properties:append('${ITEMc}')
         properties:append('${HELc}')
@@ -468,11 +489,12 @@ function updatedisplay()
         info.SMNc = (gs_skillup.color.SMN and 'Start Summoning Magic  ' or '\\cs(255,0,0)Start Summoning Magic\\cr  ')
         info.STOPc = (gs_skillup.color.STOP and 'Stop Skillups' or '\\cs(255,0,0)Stop Skillups\\cr')
         info.DOWNc = (gs_skillup.color.DOWN and 'Shutdown After Skillup' or '\\cs(255,0,0)Shutdown After Skillup\\cr')
-        info.LOGc = (gs_skillup.color.LOG and  'Logoff After Skillup' or '\\cs(255,0,0)Logoff After Skillup\\cr')
-        info.TRUSTc = (gs_skillup.color.TRUST and  'Use Moogle Trust' or '\\cs(255,0,0)Use Moogle Trust\\cr')
-        info.REFc = (gs_skillup.color.REF and  "Use Geo's Refresh" or "\\cs(255,0,0)Use Geo's Refresh\\cr")
-        info.ITEMc = (gs_skillup.color.ITEM and  'Use Skill Up Item' or '\\cs(255,0,0)Use Skill Up Item\\cr')
-        info.TESTc = (gs_skillup.color.TEST and  'Change Bard Item' or '\\cs(255,0,0)Change Bard Item\\cr')
+        info.LOGc = (gs_skillup.color.LOG and 'Logoff After Skillup' or '\\cs(255,0,0)Logoff After Skillup\\cr')
+        info.TRUSTc = (gs_skillup.color.TRUST and 'Use Moogle Trust' or '\\cs(255,0,0)Use Moogle Trust\\cr')
+        info.REFc = (gs_skillup.color.REF and "Use Geo's Refresh" or "\\cs(255,0,0)Use Geo's Refresh\\cr")
+        info.ITEMc = (gs_skillup.color.ITEM and 'Use Skill Up Item' or '\\cs(255,0,0)Use Skill Up Item\\cr')
+        info.REFRESHc = (gs_skillup.color.REFRESH and 'Use Refresh' or '\\cs(255,0,0)Use Refresh\\cr')
+        info.TESTc = (gs_skillup.color.TEST and 'Change Bard Item' or '\\cs(255,0,0)Change Bard Item\\cr')
         info.barditem = gs_skillup.test_brd
         button:update(info)
         button:show()
@@ -551,8 +573,8 @@ windower.raw_register_event('mouse', function(type, x, y, delta, blocked)
         elseif button:hover(x, y) and button:visible() then
             window:pos((gs_skillup.boxa.pos.x + 145), gs_skillup.boxa.pos.y)
             for i, v in ipairs(location) do
-                local switch = {[1]="TRUST",[2]='REF',[3]='ITEM',[4]="HEL",[5]="ENH",[6]="NIN",[7]="SIN",[8]="BLU",[9]="SMN",[10]="GEO",[11]="STOP",[12]="DOWN",
-                                [13]="LOG",[14]="TEST"}
+                local switch = {[1]="TRUST",[2]='REFRESH',[3]='REF',[4]='ITEM',[5]="HEL",[6]="ENH",[7]="NIN",[8]="SIN",[9]="BLU",[10]="SMN",[11]="GEO",[12]="STOP",[13]="DOWN",
+                                [14]="LOG",[15]="TEST"}
                 if hy > location[i].ya and hy < location[i].yb then
                     set_color(switch[i])
                     updatedisplay()
@@ -565,9 +587,9 @@ windower.raw_register_event('mouse', function(type, x, y, delta, blocked)
     elseif type == 2 then
         if button:hover(x, y) and button:visible() then
             for i, v in ipairs(location) do
-                local switchb = {[1]="settrust",[2]="setgeo",[3]="setitem",[4]="start Healing",[5]="start Enhancing",[6]="start Ninjutsu",
-                                [7]="start Singing",[8]="start Blue",[9]="start Summoning",[10]="start Geomancy",[11]="skillstop",[12]="aftershutdown",
-                                [13]="afterlogoff",[14]="changeinstrament"}
+                local switchb = {[1]="settrust",[2]="setrefresh",[3]="setgeo",[4]="setitem",[5]="start Healing",[6]="start Enhancing",[7]="start Ninjutsu",
+                                [8]="start Singing",[9]="start Blue",[10]="start Summoning",[11]="start Geomancy",[12]="skillstop",[13]="aftershutdown",
+                                [14]="afterlogoff",[15]="changeinstrament"}
                 if hy > location[i].ya and hy < location[i].yb then
                     send_command("gs c "..switchb[i])
                     updatedisplay()
