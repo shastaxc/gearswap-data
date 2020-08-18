@@ -413,7 +413,7 @@ function init_gear_sets()
         -- ammo="Knobkierrie",
         -- head=gear.Herc_WSD_head,
         -- body=gear.Herc_WS_body,
-        -- hands="Meg. Gloves +2",
+        hands="Meg. Gloves +1",
         -- legs=gear.Herc_WS_legs,
         feet=gear.Herc_WSD_feet,
         -- neck="Fotia Gorget",
@@ -502,6 +502,7 @@ function init_gear_sets()
     sets.precast.WS['Herculean Slash'] = sets.precast.JA['Lunge']
 
     sets.precast.WS['Shockwave'] = {
+      hands="Meg. Gloves +1",
         -- ammo="Pemphredo Tathlum",
         -- head="Aya. Zucchetto +2",
         -- body="Ayanmo Corazza +2",
@@ -580,7 +581,7 @@ function init_gear_sets()
         -- ring1="Lebeche Ring", -- 3
         -- ring2="Defending Ring",
         -- back="Solemnity Cape", -- 7
-        -- waist="Gishdubar Sash", --(10)
+        waist="Gishdubar Sash", --(10)
         }
 
     sets.midcast['Enhancing Magic'] = {
@@ -624,7 +625,7 @@ function init_gear_sets()
     })
     sets.midcast.Refresh = set_combine(sets.midcast.EnhancingDuration, {
       head="Erilaz Galea",
-      -- waist="Gishdubar Sash"
+      waist="Gishdubar Sash"
     })
     sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {
       waist="Siegel Sash"
@@ -677,8 +678,9 @@ function init_gear_sets()
     sets.idle.DT = set_combine(sets.idle, {
       head="Aya. Zucchetto +1",
       body="Futhark Coat +1",
+      hands="Turms Mittens",
       legs="Erilaz Leg Guards", --6/0
-      feet="Erilaz Greaves",
+      feet="Turms Leggings",
       neck="Twilight Torque",
       waist="Sailfi Belt +1",
       left_ear="Ethereal Earring",
@@ -723,9 +725,9 @@ function init_gear_sets()
       ammo="Staunch Tathlum",
       head="Aya. Zucchetto +1",
       body="Futhark Coat +1",
-      hands="Meghanada Gloves +1",
+      hands="Turms Mittens",
       legs="Erilaz Leg Guards", --6/0
-      feet="Erilaz Greaves",
+      feet="Turms Leggings",
       neck="Twilight Torque",
       waist="Audumbla Sash",
       left_ear="Ethereal Earring",
@@ -752,9 +754,9 @@ function init_gear_sets()
       ammo="Staunch Tathlum",
       head="Aya. Zucchetto +1",
       body="Futhark Coat +1",
-      hands="Aya. Manopolas +1",
+      hands="Turms Mittens",
       legs="Erilaz Leg Guards", --6/0
-      feet="Erilaz Greaves",
+      feet="Turms Leggings",
       neck="Twilight Torque",
       waist="Sailfi Belt +1",
       left_ear="Ethereal Earring",
@@ -768,9 +770,9 @@ function init_gear_sets()
       ammo="Staunch Tathlum",
       head="Aya. Zucchetto +1",
       body="Runeist Coat +1",
-      hands="Meghanada Gloves +1",
+      hands="Turms Mittens",
       legs="Erilaz Leg Guards", --6/0
-      feet="Erilaz Greaves",
+      feet="Turms Leggings",
       neck="Twilight Torque",
       waist="Sailfi Belt +1",
       left_ear="Ethereal Earring",
@@ -781,9 +783,9 @@ function init_gear_sets()
         }
 
     sets.defense.Parry = {
-        -- hands="Turms Mittens +1",
+      hands="Turms Mittens",
         -- legs="Eri. Leg Guards +1",
-        -- feet="Turms Leggings +1",
+      feet="Turms Leggings",
         -- back=gear.RUN_HPP_Cape,
         }
 
@@ -865,9 +867,9 @@ function init_gear_sets()
       ammo="Staunch Tathlum",
       head="Aya. Zucchetto +1",
       body="Futhark Coat +1",
-      hands="Aya. Manopolas +1",
+      hands="Turms Mittens",
       legs="Ayanmo Cosciales +1", --6/0
-      feet="Ayanmo Gambieras +1",
+      feet="Turms Leggings",
       neck="Twilight Torque",
       left_ear="Ethereal Earring",
       left_ring=gear.Dark_Ring,
@@ -921,8 +923,8 @@ function init_gear_sets()
       neck="Nicander's Necklace", --20
         -- ring1={name="Eshmun's Ring", bag="wardrobe3"}, --20
         -- ring2={name="Eshmun's Ring", bag="wardrobe4"}, --20
-        -- waist="Gishdubar Sash", --10
-        }
+      waist="Gishdubar Sash", --10
+    }
 
     sets.Embolden = set_combine(sets.midcast.EnhancingDuration, {
       -- back="Evasionist's Cape"
