@@ -125,11 +125,11 @@ function user_setup()
 
     -- state.WeaponSet = M{['description']='Weapon Set', 'Epeolatry', 'Lionheart', 'Aettir', 'Lycurgos'}
     state.AttackMode = M{['description']='Attack', 'Uncapped', 'Capped'}
-    -- state.CP = M(false, "Capacity Points Mode")
+    state.CP = M(false, "Capacity Points Mode")
     state.WeaponLock = M(false, 'Weapon Lock')
 
     state.Runes = M{['description']='Runes', 'Ignis', 'Gelus', 'Flabra', 'Tellus', 'Sulpor', 'Unda', 'Lux', 'Tenebrae'}
-
+    
     -- Additional local binds
     include('Global-Binds.lua') -- OK to remove this line
     include('Global-GEO-Binds.lua') -- OK to remove this line
@@ -1160,12 +1160,12 @@ function customize_idle_set(idleSet)
     if state.Knockback.value == true then
         idleSet = set_combine(idleSet, sets.defense.Knockback)
     end
-    -- if state.CP.current == 'on' then
-    --    equip(sets.CP)
-    --    disable('back')
-    -- else
-    --    enable('back')
-    -- end
+    if state.CP.current == 'on' then
+       equip(sets.CP)
+       disable('back')
+    else
+       enable('back')
+    end
     if state.Auto_Kite.value == true then
        idleSet = set_combine(idleSet, sets.Kiting)
     end
