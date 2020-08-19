@@ -608,7 +608,7 @@ function init_gear_sets()
     feet="Mummu Gamashes +1",
     neck="Charis Necklace", -- 3%
     waist="Sailfi Belt +1",
-    left_ear="Brutal Earring",
+    left_ear="Suppanomimi Earring", -- 5%
     right_ear="Cessance Earring",
     left_ring="Epona's Ring",
     right_ring="Rajas Ring",
@@ -655,7 +655,7 @@ function init_gear_sets()
     feet="Mummu Gamashes +1",
     neck="Charis Necklace", -- 3%
     waist="Sailfi Belt +1",
-    left_ear="Brutal Earring",
+    left_ear="Suppanomimi Earring", -- 5%
     right_ear="Cessance Earring",
     left_ring="Epona's Ring",
     right_ring="Rajas Ring",
@@ -703,7 +703,7 @@ function init_gear_sets()
     feet="Mummu Gamashes +1",
     neck="Charis Necklace", -- 3%
     waist="Sailfi Belt +1",
-    left_ear="Brutal Earring",
+    left_ear="Suppanomimi Earring", -- 5%
     right_ear="Cessance Earring",
     left_ring="Epona's Ring",
     right_ring="Rajas Ring",
