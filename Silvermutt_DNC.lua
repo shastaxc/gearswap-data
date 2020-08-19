@@ -304,7 +304,7 @@ function init_gear_sets()
     body="Mummu Jacket +1",
     hands="Mummu Wrists +2",
     legs="Mummu Kecks +1",
-    feet="Horos Toe Shoes +2",
+    feet="Horos Toe Shoes +3",
     neck="Love Torque",
     left_ring=gear.Dark_Ring,
     right_ring="Rajas Ring",
@@ -513,6 +513,7 @@ function init_gear_sets()
   sets.idle.DT = set_combine(sets.idle, {
     ammo="Staunch Tathlum",
     legs="Mummu Kecks +1",
+    feet="Horos Toe Shoes +3",
     neck="Twilight Torque",
     right_ring=gear.Dark_Ring,
   })
@@ -553,7 +554,7 @@ function init_gear_sets()
     body="Horos Casaque +3",
     hands="Mummu Wrists +2",
     legs="Mummu Kecks +1",
-    feet="Mummu Gamashes +1",
+    feet="Horos Toe Shoes +3",
     neck="Charis Necklace",
     waist="Sailfi Belt +1",
     left_ear="Brutal Earring",
@@ -588,7 +589,7 @@ function init_gear_sets()
   })
 
   sets.engaged.STP = set_combine(sets.engaged, {
-    feet="Horos Toe Shoes +2",
+    feet="Horos Toe Shoes +3",
     -- head=gear.Herc_STP_head,
     -- body="Ashera Harness",
     -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
@@ -605,7 +606,7 @@ function init_gear_sets()
     body="Horos Casaque +3",
     hands="Mummu Wrists +2",
     legs="Mummu Kecks +1",
-    feet="Mummu Gamashes +1",
+    feet="Horos Toe Shoes +3",
     neck="Charis Necklace", -- 3%
     waist="Sailfi Belt +1",
     left_ear="Suppanomimi", -- 5%
@@ -700,7 +701,7 @@ function init_gear_sets()
     body="Horos Casaque +3",
     hands="Mummu Wrists +2",
     legs="Mummu Kecks +1",
-    feet="Mummu Gamashes +1",
+    feet="Horos Toe Shoes +3",
     neck="Charis Necklace", -- 3%
     waist="Sailfi Belt +1",
     left_ear="Suppanomimi", -- 5%
@@ -748,7 +749,7 @@ function init_gear_sets()
     body="Horos Casaque +3",
     hands="Mummu Wrists +2",
     legs="Mummu Kecks +1",
-    feet="Mummu Gamashes +1",
+    feet="Horos Toe Shoes +3",
     neck="Charis Necklace", -- 3%
     waist="Sailfi Belt +1",
     left_ear="Suppanomimi", -- 5%
@@ -797,7 +798,7 @@ function init_gear_sets()
     body="Horos Casaque +3",
     hands="Mummu Wrists +2",
     legs="Mummu Kecks +1",
-    feet="Mummu Gamashes +1",
+    feet="Horos Toe Shoes +3",
     neck="Lissome Necklace",
     waist="Sailfi Belt +1",
     left_ear="Brutal Earring",
@@ -910,7 +911,7 @@ function init_gear_sets()
     body="Meg. Cuirie +2",
   }
   sets.buff['Closed Position'] = {
-    feet="Horos T. Shoes +3",
+    feet="Horos Toe Shoes +3",
   }
 
   sets.buff.Doom = {
