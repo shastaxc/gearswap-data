@@ -598,22 +598,22 @@ function init_gear_sets()
   -- * DNC Native DW Trait: 30% DW
   -- * DNC Job Points DW Gift: 5% DW
 
-  -- No Magic Haste (74% DW to cap)
+  -- No Magic/Gear/JA Haste (74% DW to cap, 39% from gear)
   sets.engaged.DW = {
     ammo="Charis Feather",
-    head="Maxixi Tiara +2",
+    head="Maxixi Tiara +2", -- 4%
     body="Horos Casaque +3",
     hands="Mummu Wrists +2",
     legs="Mummu Kecks +1",
     feet="Mummu Gamashes +1",
-    neck="Charis Necklace",
+    neck="Charis Necklace", -- 3%
     waist="Sailfi Belt +1",
     left_ear="Brutal Earring",
     right_ear="Cessance Earring",
     left_ring="Epona's Ring",
     right_ring="Rajas Ring",
     back=gear.DNC_TP_Cape,
-  } -- 41%
+  }
 
   sets.engaged.DW.LowAcc = set_combine(sets.engaged.DW, {
     -- head="Dampening Tam",
@@ -645,22 +645,22 @@ function init_gear_sets()
     -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
   })
 
-  -- 15% Magic Haste (67% DW to cap)
+  -- Low Magic/Gear/JA Haste (67% DW to cap, 32% from gear)
   sets.engaged.DW.LowHaste = {
     ammo="Charis Feather",
-    head="Maxixi Tiara +2",
+    head="Maxixi Tiara +2", -- 4%
     body="Horos Casaque +3",
     hands="Mummu Wrists +2",
     legs="Mummu Kecks +1",
     feet="Mummu Gamashes +1",
-    neck="Charis Necklace",
+    neck="Charis Necklace", -- 3%
     waist="Sailfi Belt +1",
     left_ear="Brutal Earring",
     right_ear="Cessance Earring",
     left_ring="Epona's Ring",
     right_ring="Rajas Ring",
     back=gear.DNC_TP_Cape,
-  } -- 32%
+  }
 
   sets.engaged.DW.LowAcc.LowHaste = set_combine(sets.engaged.DW.LowHaste, {
     -- head="Dampening Tam",
@@ -693,22 +693,22 @@ function init_gear_sets()
     -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
   })
 
-  -- 30% Magic Haste (56% DW to cap)
+  -- Mid Magic/Gear/JA Haste (56% DW to cap, 21% from gear)
   sets.engaged.DW.MidHaste = {
     ammo="Charis Feather",
-    head="Maxixi Tiara +2",
+    head="Maxixi Tiara +2", -- 4%
     body="Horos Casaque +3",
     hands="Mummu Wrists +2",
     legs="Mummu Kecks +1",
     feet="Mummu Gamashes +1",
-    neck="Charis Necklace",
+    neck="Charis Necklace", -- 3%
     waist="Sailfi Belt +1",
     left_ear="Brutal Earring",
     right_ear="Cessance Earring",
     left_ring="Epona's Ring",
     right_ring="Rajas Ring",
     back=gear.DNC_TP_Cape,
-  } -- 22%
+  }
 
   sets.engaged.DW.LowAcc.MidHaste = set_combine(sets.engaged.DW.MidHaste, {
     -- head="Dampening Tam",
@@ -741,22 +741,22 @@ function init_gear_sets()
     -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
   })
 
-  -- 35% Magic Haste (51% DW to cap)
+  -- High Magic/Gear/JA Haste (51% DW to cap, 16% from gear)
   sets.engaged.DW.HighHaste = {
     ammo="Charis Feather",
-    head="Maxixi Tiara +2",
+    head="Maxixi Tiara +2", -- 4%
     body="Horos Casaque +3",
     hands="Mummu Wrists +2",
     legs="Mummu Kecks +1",
     feet="Mummu Gamashes +1",
-    neck="Charis Necklace",
+    neck="Charis Necklace", -- 3%
     waist="Sailfi Belt +1",
-    left_ear="Brutal Earring",
+    left_ear="Suppanomimi Earring", -- 5%
     right_ear="Cessance Earring",
     left_ring="Epona's Ring",
     right_ring="Rajas Ring",
     back=gear.DNC_TP_Cape,
-  } -- 10% Gear
+  }
 
   sets.engaged.DW.LowAcc.HighHaste = set_combine(sets.engaged.DW.HighHaste, {
     -- head="Dampening Tam",
@@ -790,22 +790,22 @@ function init_gear_sets()
     -- waist="Kentarch Belt +1",
   })
 
-  -- 45% Magic Haste (36% DW to cap)
+  -- Max Magic/Gear/JA Haste (36% DW to cap, 1% from gear)
   sets.engaged.DW.MaxHaste = {
     ammo="Charis Feather",
-    head="Maxixi Tiara +2",
+    head="Mummu Bonnet +1",
     body="Horos Casaque +3",
     hands="Mummu Wrists +2",
     legs="Mummu Kecks +1",
     feet="Mummu Gamashes +1",
-    neck="Charis Necklace",
+    neck="Lissome Necklace",
     waist="Sailfi Belt +1",
     left_ear="Brutal Earring",
     right_ear="Cessance Earring",
     left_ring="Epona's Ring",
     right_ring="Rajas Ring",
     back=gear.DNC_TP_Cape,
-  } -- 0%
+  }
 
   sets.engaged.DW.LowAcc.MaxHaste = set_combine(sets.engaged.DW.MaxHaste, {
     -- head="Dampening Tam",
