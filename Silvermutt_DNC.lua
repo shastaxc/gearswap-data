@@ -503,7 +503,7 @@ function init_gear_sets()
     feet="Tandava Crackows",
     neck="Lissome Necklace",
     waist="Sailfi Belt +1",
-    left_ear="Brutal Earring",
+    left_ear="Suppanomimi Earring",
     right_ear="Cessance Earring",
     left_ring="Epona's Ring",
     right_ring="Rajas Ring",
