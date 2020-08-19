@@ -262,7 +262,7 @@ function init_gear_sets()
 
   sets.precast.JA['Provoke'] = sets.Enmity
   sets.precast.JA['No Foot Rise'] = {
-    body="Horos Casaque +1",
+    body="Horos Casaque +3",
   }
   sets.precast.JA['Trance'] = {
     head="Horos Tiara"
@@ -319,7 +319,7 @@ function init_gear_sets()
   sets.precast.Flourish1['Violent Flourish'] = {
     ammo="Charis Feather",
     head="Maxixi Tiara +2",
-    body="Horos Casaque +1",
+    body="Horos Casaque +3",
     hands="Mummu Wrists +2",
     legs="Mummu Kecks +1",
     feet="Mummu Gamashes +1",
@@ -497,7 +497,7 @@ function init_gear_sets()
   sets.idle = {
     ammo="Charis Feather",
     head="Maxixi Tiara +2",
-    body="Mummu Jacket +1",
+    body="Horos Casaque +3",
     hands="Mummu Wrists +2",
     legs="Mummu Kecks +1",
     feet="Tandava Crackows",
@@ -514,10 +514,7 @@ function init_gear_sets()
     ammo="Staunch Tathlum",
     legs="Mummu Kecks +1",
     neck="Twilight Torque",
-    waist="Sailfi Belt +1",
-    left_ring="Alert Ring",
     right_ring=gear.Dark_Ring,
-    feet="Mummu Gamashes +1",
   })
 
   sets.idle.Town = set_combine(sets.idle, {
@@ -531,9 +528,11 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.defense.PDT = set_combine(sets.idle.DT, {
+    body="Horos Casaque +3",
     left_ring="Jelly Ring",
   })
-  sets.defense.MDT = sets.idle.DT
+  sets.defense.MDT = set_combine(sets.idle.DT, {
+  })
 
   sets.Kiting = {
     -- feet="Skd. Jambeaux +1"
@@ -551,7 +550,7 @@ function init_gear_sets()
   sets.engaged = {
     ammo="Charis Feather",
     head="Maxixi Tiara +2",
-    body="Mummu Jacket +1",
+    body="Horos Casaque +3",
     hands="Mummu Wrists +2",
     legs="Mummu Kecks +1",
     feet="Mummu Gamashes +1",
@@ -603,7 +602,7 @@ function init_gear_sets()
   sets.engaged.DW = {
     ammo="Charis Feather",
     head="Maxixi Tiara +2",
-    body="Mummu Jacket +1",
+    body="Horos Casaque +3",
     hands="Mummu Wrists +2",
     legs="Mummu Kecks +1",
     feet="Mummu Gamashes +1",
@@ -650,7 +649,7 @@ function init_gear_sets()
   sets.engaged.DW.LowHaste = {
     ammo="Charis Feather",
     head="Maxixi Tiara +2",
-    body="Mummu Jacket +1",
+    body="Horos Casaque +3",
     hands="Mummu Wrists +2",
     legs="Mummu Kecks +1",
     feet="Mummu Gamashes +1",
@@ -698,7 +697,7 @@ function init_gear_sets()
   sets.engaged.DW.MidHaste = {
     ammo="Charis Feather",
     head="Maxixi Tiara +2",
-    body="Mummu Jacket +1",
+    body="Horos Casaque +3",
     hands="Mummu Wrists +2",
     legs="Mummu Kecks +1",
     feet="Mummu Gamashes +1",
@@ -746,7 +745,7 @@ function init_gear_sets()
   sets.engaged.DW.HighHaste = {
     ammo="Charis Feather",
     head="Maxixi Tiara +2",
-    body="Mummu Jacket +1",
+    body="Horos Casaque +3",
     hands="Mummu Wrists +2",
     legs="Mummu Kecks +1",
     feet="Mummu Gamashes +1",
@@ -795,7 +794,7 @@ function init_gear_sets()
   sets.engaged.DW.MaxHaste = {
     ammo="Charis Feather",
     head="Maxixi Tiara +2",
-    body="Mummu Jacket +1",
+    body="Horos Casaque +3",
     hands="Mummu Wrists +2",
     legs="Mummu Kecks +1",
     feet="Mummu Gamashes +1",
@@ -848,6 +847,10 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.engaged.Hybrid = {
+    ammo="Staunch Tathlum",
+    legs="Mummu Kecks +1",
+    neck="Twilight Torque",
+    right_ring=gear.Dark_Ring,
     -- head=gear.Adhemar_D_head, --4/0
     -- body="Ashera Harness", --7/7
     -- neck="Loricate Torque +1", --6/6
@@ -917,7 +920,9 @@ function init_gear_sets()
       waist="Gishdubar Sash", --10
       }
 
-  sets.CP = {back="Aptitude Mantle"}
+  sets.CP = {
+    back="Aptitude Mantle"
+  }
   --sets.Reive = {neck="Ygnas's Resolve +1"}
 
 end
