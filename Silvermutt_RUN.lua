@@ -666,7 +666,7 @@ function init_gear_sets()
       hands="Meghanada Gloves +1",
       legs="Aya. Cosciales +1",
       feet="Erilaz Greaves",
-      neck="Twilight Torque",
+      neck="Lissome Necklace",
       waist="Sailfi Belt +1",
       left_ear="Ethereal Earring",
       right_ear="Cessance Earring",
