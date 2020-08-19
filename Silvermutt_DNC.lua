@@ -501,7 +501,7 @@ function init_gear_sets()
     hands="Mummu Wrists +2",
     legs="Mummu Kecks +1",
     feet="Tandava Crackows",
-    neck="Charis Necklace",
+    neck="Lissome Necklace",
     waist="Sailfi Belt +1",
     left_ear="Brutal Earring",
     right_ear="Cessance Earring",

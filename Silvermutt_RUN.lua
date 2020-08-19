@@ -801,7 +801,7 @@ function init_gear_sets()
       hands="Meghanada Gloves +1",
       legs="Aya. Cosciales +1",
       feet=gear.Herc_WSD_feet,
-      neck="Twilight Torque",
+      neck="Lissome Necklace",
       waist="Sailfi Belt +1",
       left_ear="Brutal Earring",
       right_ear="Cessance Earring",
