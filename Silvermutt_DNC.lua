@@ -358,6 +358,7 @@ function init_gear_sets()
 
   sets.precast.FC = {
     left_ear="Loquac. Earring",
+    feet="Horos Toe Shoes +3",
   }
 
   sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {
@@ -372,32 +373,35 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.precast.WS = {
-    ammo="Aurgelmir Orb +1",
-    head=gear.Herc_WSD_head,
-    body=gear.Herc_WS_body,
-    hands="Maxixi Bangles +3",
-    legs="Horos Tights +3",
+    ammo="Charis Feather",
+    head="Mummu Bonnet +1",
+    body="Horos Casaque +3",
+    hands="Meghanada Gloves +1",
+    legs="Meghanada Chausses +1",
     feet=gear.Herc_WSD_feet,
     neck="Fotia Gorget",
-    ear1="Ishvara Earring",
-    ear2="Moonshade Earring",
-    ring1="Regal Ring",
-    ring2="Epaminondas's Ring",
-    back=gear.DNC_WS1_Cape,
     waist="Fotia Belt",
+    left_ear="Brutal Earring",
+    right_ear="Cessance Earring",
+    left_ring="Epona's Ring",
+    right_ring="Ilabrat Ring",
+    back=gear.DNC_TP_Cape,
   } -- default set
 
   sets.precast.WS.Acc = set_combine(sets.precast.WS, {
-    ammo="Voluspa Tathlum",
-    head="Dampening Tam",
-    legs="Meg. Chausses +2",
-    feet="Mummu Gamashes +1",
-    ear2="Telos Earring",
+    -- ammo="Voluspa Tathlum",
+    -- head="Dampening Tam",
+    -- legs="Meg. Chausses +2",
+    -- feet="Mummu Gamashes +1",
+    -- ear2="Telos Earring",
   })
 
+  -- For Crit Dmg
   sets.precast.WS.Critical = {
+    head="Maculele Tiara",
     body="Meg. Cuirie +2",
-    ammo="Charis Feather"
+    ammo="Charis Feather",
+    back=gear.DNC_TP_Cape,
   }
 
   sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS, {
@@ -406,7 +410,6 @@ function init_gear_sets()
     body="Mummu Jacket +1",
     hands="Mummu Wrists +2",
     legs="Mummu Kecks +1",
-    neck="Soil Gorget",
     waist="Fotia Belt",
     left_ear="Brutal Earring",
     right_ear="Cessance Earring",
@@ -421,7 +424,6 @@ function init_gear_sets()
     body="Mummu Jacket +1",
     hands="Mummu Wrists +2",
     legs="Mummu Kecks +1",
-    neck="Soil Gorget",
     waist="Fotia Belt",
     left_ear="Brutal Earring",
     left_ring="Epona's Ring",

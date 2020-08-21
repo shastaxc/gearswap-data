@@ -266,6 +266,7 @@ function init_gear_sets()
     sets.Enmity = {
       feet="Erilaz Greaves", --5
       body="Emet Harness +1", --10
+      hands="Kurys Gloves", --9
       legs="Erilaz Leg Guards", --10
       neck="Atzintli Necklace", --5
       ring2="Supershear Ring", --5
@@ -416,7 +417,7 @@ function init_gear_sets()
         hands="Meg. Gloves +1",
         -- legs=gear.Herc_WS_legs,
         feet=gear.Herc_WSD_feet,
-        -- neck="Fotia Gorget",
+        neck="Fotia Gorget",
         -- ear1="Sherida Earring",
         -- ear2="Moonshade Earring",
         -- ring1="Regal Ring",
@@ -586,7 +587,7 @@ function init_gear_sets()
 
     sets.midcast['Enhancing Magic'] = {
         -- main="Pukulatmuj +1",
-        -- head="Carmine Mask +1",
+      head="Erilaz Galea",
         -- body="Manasa Chasuble",
       hands="Runeist Mitons",
         -- legs="Carmine Cuisses +1",
