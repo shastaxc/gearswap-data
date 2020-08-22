@@ -299,7 +299,7 @@ function init_gear_sets()
         }
 
     sets.precast.JA['Vallation'] = {
-      body="Runeist Coat +1",
+      body="Runeist's Coat +2",
       legs="Futhark Trousers",
       back=gear.RUN_HPD_Cape,
     }
@@ -663,7 +663,7 @@ function init_gear_sets()
     sets.idle = {
       ammo="Staunch Tathlum",
       head="Erilaz Galea",
-      body="Runeist Coat +1",
+      body="Runeist's Coat +2",
       hands="Meghanada Gloves +1",
       legs="Aya. Cosciales +1",
       feet="Erilaz Greaves",
@@ -692,7 +692,7 @@ function init_gear_sets()
 
     sets.idle.Refresh = set_combine(sets.idle, {
       head="Erilaz Galea",
-      body="Runeist Coat +1",
+      body="Runeist's Coat +2",
         -- ammo="Homiliary",
         -- head=gear.Herc_Idle_head,
         -- hands="Regal Gauntlets",
@@ -770,7 +770,7 @@ function init_gear_sets()
     sets.defense.HP = {
       ammo="Staunch Tathlum",
       head="Aya. Zucchetto +1",
-      body="Runeist Coat +1",
+      body="Runeist's Coat +2",
       hands="Turms Mittens",
       legs="Erilaz Leg Guards", --6/0
       feet="Turms Leggings",
