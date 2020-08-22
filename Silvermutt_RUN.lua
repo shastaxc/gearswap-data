@@ -754,7 +754,7 @@ function init_gear_sets()
     sets.defense.MDT = {
       ammo="Staunch Tathlum",
       head="Aya. Zucchetto +1",
-      body="Futhark Coat +1",
+      body="Runeist's Coat +2",
       hands="Turms Mittens",
       legs="Erilaz Leg Guards", --6/0
       feet="Turms Leggings",
