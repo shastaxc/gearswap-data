@@ -37,8 +37,8 @@
 --              [ CTRL+Numpad0 ]    Sneak Attack
 --              [ CTRL+Numpad. ]    Trick Attack
 --
---  Spells:     [ WIN+, ]           Utsusemi: Ichi
---              [ WIN+. ]           Utsusemi: Ni
+--  Spells:     [ CTRL+Numpad0 ]    Utsusemi: Ichi
+--              [ CTRL+Numpad. ]    Utsusemi: Ni
 --
 --  WS:         [ CTRL+Numpad7 ]    Exenterator
 --              [ CTRL+Numpad4 ]    Evisceration
@@ -164,6 +164,9 @@ function user_setup()
   elseif player.sub_job == 'THF' then
       send_command('bind ^numpad0 input /ja "Sneak Attack" <me>')
       send_command('bind ^numpad. input /ja "Trick Attack" <me>')
+  elseif player.sub_job == 'NIN' then
+      send_command('bind ^numpad0 input /ma "Utsusemi: Ichi" <me>')
+      send_command('bind ^numpad. input /ma "Utsusemi: Ni" <me>')
   end
 
   send_command('bind ^numpad+ input /ja "Climactic Flourish" <me>')
@@ -306,8 +309,8 @@ function init_gear_sets()
     legs="Mummu Kecks +1",
     feet="Horos Toe Shoes +3",
     neck="Love Torque",
-    left_ring=gear.Dark_Ring,
-    right_ring="Rajas Ring",
+    left_ring="Supershear Ring",
+    right_ring="Ilabrat Ring",
   }
 
   sets.precast.Step['Feather Step'] = set_combine(sets.precast.Step, {
@@ -325,7 +328,7 @@ function init_gear_sets()
     feet="Mummu Gamashes +1",
     neck="Love Torque",
     left_ring="Balrahn's Ring",
-    right_ring="Rajas Ring",
+    right_ring=gear.Dark_Ring,
   } -- Magic Accuracy
 
   sets.precast.Flourish1['Desperate Flourish'] = {
