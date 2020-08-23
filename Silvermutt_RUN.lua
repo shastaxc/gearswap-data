@@ -669,7 +669,7 @@ function init_gear_sets()
       feet="Erilaz Greaves",
       neck="Lissome Necklace",
       waist="Sailfi Belt +1",
-      left_ear="Ethereal Earring",
+      left_ear="Brutal Earring",
       right_ear="Cessance Earring",
       left_ring="Epona's Ring",
       right_ring="Ayanmo Ring",
@@ -685,7 +685,7 @@ function init_gear_sets()
       neck="Twilight Torque",
       waist="Sailfi Belt +1",
       left_ear="Ethereal Earring",
-      right_ear="Cessance Earring",
+      right_ear="Odnowa Earring +1",
       left_ring=gear.Dark_Ring,
       right_ring="Ayanmo Ring",
     })
@@ -700,14 +700,6 @@ function init_gear_sets()
         -- ring1={name="Stikini Ring +1", bag="wardrobe3"},
         -- ring2={name="Stikini Ring +1", bag="wardrobe4"},
     })
-
-    sets.idle.Town = set_combine(sets.idle, {
-        -- ammo="Aurgelmir Orb +1",
-        -- head="Turms Cap +1",
-        -- body="Ashera Harness",
-        -- neck="Futhark Torque +2",
-        -- ear1="Sanare Earring",
-        })
 
     sets.Kiting = {
       -- legs="Carmine Cuisses +1"
