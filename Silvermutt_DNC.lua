@@ -294,7 +294,7 @@ function init_gear_sets()
   }
   sets.precast.Samba = {
     head="Maxixi Tiara +2",
-    back=gear.DNC_TP_Cape
+    back=gear.DNC_TP_DW_Cape
   }
   sets.precast.Jig = {
     legs="Horos Tights",
@@ -343,7 +343,7 @@ function init_gear_sets()
     ear2="Telos Earring",
     ring1="Regal Ring",
     ring2={name="Chirich Ring +1", bag="wardrobe4"},
-    back=gear.DNC_TP_Cape,
+    back=gear.DNC_TP_DW_Cape,
   } -- Accuracy
 
   sets.precast.Flourish2 = {}
@@ -388,7 +388,7 @@ function init_gear_sets()
     right_ear="Cessance Earring",
     left_ring="Epona's Ring",
     right_ring="Ilabrat Ring",
-    back=gear.DNC_TP_Cape,
+    back=gear.DNC_TP_DA_Cape,
   } -- default set
 
   sets.precast.WS.Acc = set_combine(sets.precast.WS, {
@@ -404,7 +404,7 @@ function init_gear_sets()
     head="Maculele Tiara",
     body="Meg. Cuirie +2",
     ammo="Charis Feather",
-    back=gear.DNC_TP_Cape,
+    back=gear.DNC_TP_DA_Cape,
   }
 
   sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS, {
@@ -418,7 +418,7 @@ function init_gear_sets()
     right_ear="Cessance Earring",
     left_ring="Epona's Ring",
     right_ring=gear.Dark_Ring,
-    back=gear.DNC_TP_Cape,
+    back=gear.DNC_TP_DA_Cape,
   }) -- AGI
 
   sets.precast.WS['Pyrrhic Kleos'] = set_combine(sets.precast.WS, {
@@ -431,7 +431,7 @@ function init_gear_sets()
     left_ear="Brutal Earring",
     left_ring="Epona's Ring",
     right_ring="Rajas Ring",
-    back=gear.DNC_TP_Cape,
+    back=gear.DNC_TP_DA_Cape,
   }) -- 40% STR / 40% DEX
 
   sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
@@ -445,7 +445,7 @@ function init_gear_sets()
     left_ear="Brutal Earring",
     left_ring="Ilabrat Ring",
     right_ring="Rajas Ring",
-    back=gear.DNC_TP_Cape,
+    back=gear.DNC_TP_DA_Cape,
   }) -- 50% DEX
 
   sets.precast.WS['Rudra\'s Storm'] = set_combine(sets.precast.WS, {
@@ -459,7 +459,7 @@ function init_gear_sets()
     left_ear="Brutal Earring",
     left_ring="Ilabrat Ring",
     right_ring="Rajas Ring",
-    back=gear.DNC_TP_Cape,
+    back=gear.DNC_TP_DA_Cape,
   }) -- 80% DEX
 
   sets.precast.WS['Aeolian Edge'] = {
@@ -473,7 +473,7 @@ function init_gear_sets()
     right_ear="Moldavite Earring",
     left_ring="Mephitas's Ring",
     right_ring="Ilabrat Ring",
-    back=gear.DNC_TP_Cape,
+    back=gear.DNC_TP_DA_Cape,
   } -- 40% DEX / 40% INT + MAB
 
   sets.precast.Skillchain = {
@@ -512,7 +512,7 @@ function init_gear_sets()
     right_ear="Cessance Earring",
     left_ring="Epona's Ring",
     right_ring="Rajas Ring",
-    back=gear.DNC_TP_Cape,
+    back=gear.DNC_TP_DW_Cape,
   }
 
   sets.idle.DT = set_combine(sets.idle, {
@@ -566,7 +566,7 @@ function init_gear_sets()
     right_ear="Cessance Earring",
     left_ring="Epona's Ring",
     right_ring="Rajas Ring",
-    back=gear.DNC_TP_Cape,
+    back=gear.DNC_TP_DW_Cape,
   }
 
   sets.engaged.LowAcc = set_combine(sets.engaged, {
@@ -618,7 +618,7 @@ function init_gear_sets()
     right_ear="Cessance Earring",
     left_ring="Epona's Ring",
     right_ring="Rajas Ring",
-    back=gear.DNC_TP_Cape,
+    back=gear.DNC_TP_DW_Cape, -- 10%
   }
 
   sets.engaged.DW.LowAcc = set_combine(sets.engaged.DW, {
@@ -665,7 +665,7 @@ function init_gear_sets()
     right_ear="Cessance Earring",
     left_ring="Epona's Ring",
     right_ring="Rajas Ring",
-    back=gear.DNC_TP_Cape,
+    back=gear.DNC_TP_DW_Cape, -- 10%
   }
 
   sets.engaged.DW.LowAcc.LowHaste = set_combine(sets.engaged.DW.LowHaste, {
@@ -713,7 +713,7 @@ function init_gear_sets()
     right_ear="Cessance Earring",
     left_ring="Epona's Ring",
     right_ring="Rajas Ring",
-    back=gear.DNC_TP_Cape,
+    back=gear.DNC_TP_DW_Cape, -- 10%
   }
 
   sets.engaged.DW.LowAcc.MidHaste = set_combine(sets.engaged.DW.MidHaste, {
@@ -757,11 +757,11 @@ function init_gear_sets()
     feet="Horos Toe Shoes +3",
     neck="Charis Necklace", -- 3%
     waist="Sailfi Belt +1",
-    left_ear="Suppanomimi", -- 5%
+    left_ear="Brutal Earring",
     right_ear="Cessance Earring",
     left_ring="Epona's Ring",
     right_ring="Rajas Ring",
-    back=gear.DNC_TP_Cape,
+    back=gear.DNC_TP_DW_Cape, -- 10%
   }
 
   sets.engaged.DW.LowAcc.HighHaste = set_combine(sets.engaged.DW.HighHaste, {
@@ -810,7 +810,7 @@ function init_gear_sets()
     right_ear="Cessance Earring",
     left_ring="Epona's Ring",
     right_ring="Rajas Ring",
-    back=gear.DNC_TP_Cape,
+    back=gear.DNC_TP_DA_Cape,
   }
 
   sets.engaged.DW.LowAcc.MaxHaste = set_combine(sets.engaged.DW.MaxHaste, {
