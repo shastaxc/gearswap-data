@@ -665,7 +665,7 @@ function init_gear_sets()
       head="Erilaz Galea",
       body="Runeist's Coat +2",
       hands="Meghanada Gloves +1",
-      legs="Aya. Cosciales +1",
+      legs="Meghanada Chausses +2",
       feet="Erilaz Greaves",
       neck="Lissome Necklace",
       waist="Sailfi Belt +1",
