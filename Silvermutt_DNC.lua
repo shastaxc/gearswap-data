@@ -855,6 +855,7 @@ function init_gear_sets()
   sets.engaged.Hybrid = {
     ammo="Staunch Tathlum",
     legs="Mummu Kecks +1",
+    hands="Turms Mittens",
     neck="Twilight Torque",
     right_ring=gear.Dark_Ring,
     -- head=gear.Adhemar_D_head, --4/0
