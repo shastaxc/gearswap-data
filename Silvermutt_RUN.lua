@@ -429,7 +429,7 @@ function init_gear_sets()
     sets.precast.WS.Acc = set_combine(sets.precast.WS, {
         -- ammo="Voluspa Tathlum",
         -- body=gear.Adhemar_B_body,
-        -- legs="Meg. Chausses +2",
+        legs="Meghanada Chausses +2",
         -- ear2="Telos Earring",
         })
 
@@ -453,7 +453,7 @@ function init_gear_sets()
         -- ammo="Voluspa Tathlum",
         -- head=gear.Adhemar_B_head,
         -- hands=gear.Adhemar_A_hands,
-        -- legs="Meg. Chausses +2",
+        legs="Meghanada Chausses +2",
         -- feet=gear.Herc_STP_feet,
         -- ear2="Telos Earring",
         })
@@ -461,7 +461,7 @@ function init_gear_sets()
     sets.precast.WS['Resolution'].Uncapped = set_combine(sets.precast.WS['Resolution'], {
         -- head=gear.Adhemar_B_head,
         -- body=gear.Adhemar_B_body,
-        -- legs="Meg. Chausses +2",
+        legs="Meghanada Chausses +2",
         -- feet=gear.Herc_TA_feet,
         -- ring1="Regal Ring",
         })
@@ -792,7 +792,7 @@ function init_gear_sets()
       head="Aya. Zucchetto +1",
       body="Ayanmo Corazza +1",
       hands="Meghanada Gloves +1",
-      legs="Meghanada Chausses +1",
+      legs="Meghanada Chausses +2",
       feet=gear.Herc_WSD_feet,
       neck="Lissome Necklace",
       waist="Sailfi Belt +1",
@@ -898,7 +898,7 @@ function init_gear_sets()
         -- head="Aya. Zucchetto +2",
         -- body="Ashera Harness",
         -- hands=gear.Adhemar_A_hands,
-        -- legs="Meg. Chausses +2",
+        legs="Meghanada Chausses +2",
         -- feet=gear.Herc_STP_feet,
         -- neck="Futhark Torque +2",
         -- ear1="Sherida Earring",
