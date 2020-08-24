@@ -792,7 +792,7 @@ function init_gear_sets()
       head="Aya. Zucchetto +1",
       body="Ayanmo Corazza +1",
       hands="Meghanada Gloves +1",
-      legs="Aya. Cosciales +1",
+      legs="Meghanada Chausses +1",
       feet=gear.Herc_WSD_feet,
       neck="Lissome Necklace",
       waist="Sailfi Belt +1",
