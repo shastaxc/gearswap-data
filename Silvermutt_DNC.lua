@@ -378,16 +378,16 @@ function init_gear_sets()
   sets.precast.WS = {
     ammo="Charis Feather",
     head="Mummu Bonnet +1",
-    body="Horos Casaque +3",
-    hands="Meghanada Gloves +1",
-    legs="Meghanada Chausses +1",
+    body="Meghanada Cuirie +2",
+    hands="Mummu Wrists +2",
+    legs="Meghanada Chausses +2",
     feet=gear.Herc_WSD_feet,
     neck="Fotia Gorget",
     waist="Fotia Belt",
     left_ear="Brutal Earring",
     right_ear="Cessance Earring",
-    left_ring="Epona's Ring",
-    right_ring="Ilabrat Ring",
+    left_ring="Ilabrat Ring",
+    right_ring="Rajas Ring",
     back=gear.DNC_TP_DA_Cape,
   } -- default set
 
@@ -403,77 +403,29 @@ function init_gear_sets()
   sets.precast.WS.Critical = {
     head="Maculele Tiara",
     body="Meg. Cuirie +2",
-    ammo="Charis Feather",
-    back=gear.DNC_TP_DA_Cape,
   }
 
   sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS, {
-    ammo="Charis Feather",
-    head="Maxixi Tiara +2",
-    body="Mummu Jacket +1",
-    hands="Mummu Wrists +2",
-    legs="Mummu Kecks +1",
-    waist="Fotia Belt",
-    left_ear="Brutal Earring",
-    right_ear="Cessance Earring",
-    left_ring="Epona's Ring",
+    left_ring="Ilabrat Ring",
     right_ring=gear.Dark_Ring,
-    back=gear.DNC_TP_DA_Cape,
   }) -- AGI
 
   sets.precast.WS['Pyrrhic Kleos'] = set_combine(sets.precast.WS, {
-    ammo="Charis Feather",
-    head="Maxixi Tiara +2",
-    body="Mummu Jacket +1",
-    hands="Mummu Wrists +2",
-    legs="Mummu Kecks +1",
-    waist="Fotia Belt",
-    left_ear="Brutal Earring",
-    left_ring="Epona's Ring",
+    left_ring="Ilabrat Ring",
     right_ring="Rajas Ring",
-    back=gear.DNC_TP_DA_Cape,
   }) -- 40% STR / 40% DEX
 
   sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
-    ammo="Charis Feather",
-    head="Maxixi Tiara +2",
-    body="Mummu Jacket +1",
-    hands="Mummu Wrists +2",
-    legs="Mummu Kecks +1",
-    neck="Soil Gorget",
-    waist="Fotia Belt",
-    left_ear="Brutal Earring",
-    left_ring="Ilabrat Ring",
-    right_ring="Rajas Ring",
-    back=gear.DNC_TP_DA_Cape,
   }) -- 50% DEX
 
   sets.precast.WS['Rudra\'s Storm'] = set_combine(sets.precast.WS, {
-    ammo="Charis Feather",
-    head="Maxixi Tiara +2",
-    body="Mummu Jacket +1",
-    hands="Mummu Wrists +2",
-    legs="Mummu Kecks +1",
-    neck="Love Torque",
-    waist="Fotia Belt",
-    left_ear="Brutal Earring",
-    left_ring="Ilabrat Ring",
-    right_ring="Rajas Ring",
-    back=gear.DNC_TP_DA_Cape,
   }) -- 80% DEX
 
   sets.precast.WS['Aeolian Edge'] = {
-    ammo="Charis Feather",
-    body="Mummu Jacket +1",
-    hands="Mummu Wrists +2",
-    legs="Mummu Kecks +1",
-    neck="Soil Gorget",
-    waist="Fotia Belt",
     left_ear="Hecate's Earring",
     right_ear="Moldavite Earring",
-    left_ring="Mephitas's Ring",
-    right_ring="Ilabrat Ring",
-    back=gear.DNC_TP_DA_Cape,
+    left_ring="Ilabrat Ring",
+    right_ring="Mephitas's Ring",
   } -- 40% DEX / 40% INT + MAB
 
   sets.precast.Skillchain = {
