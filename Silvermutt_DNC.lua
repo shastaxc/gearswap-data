@@ -113,8 +113,8 @@ function job_setup()
   state.CP = M(false, "Capacity Points Mode")
 
   no_swap_gear = S{"Warp Ring", "Dim. Ring (Dem)", "Dim. Ring (Holla)", "Dim. Ring (Mea)",
-            "Trizek Ring", "Echad Ring", "Facility Ring", "Capacity Ring", "Dem Ring", "Empress Band",
-            "Fisherman's Cuffs", "Reraise Earring"}
+      "Trizek Ring", "Echad Ring", "Facility Ring", "Capacity Ring", "Dem Ring", "Empress Band",
+      "Emperor Band", "Fisherman's Cuffs", "Reraise Earring", "Emporox's Ring"}
 
   lockstyleset = 2
 end

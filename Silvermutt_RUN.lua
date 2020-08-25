@@ -99,7 +99,8 @@ function job_setup()
     blue_magic_maps.Buffs = S{'Cocoon', 'Refueling'}
 
     no_swap_gear = S{"Warp Ring", "Dim. Ring (Dem)", "Dim. Ring (Holla)", "Dim. Ring (Mea)",
-              "Trizek Ring", "Echad Ring", "Facility Ring", "Capacity Ring", "Emperor Band"}
+        "Trizek Ring", "Echad Ring", "Facility Ring", "Capacity Ring", "Dem Ring", "Empress Band",
+        "Emperor Band", "Fisherman's Cuffs", "Reraise Earring", "Emporox's Ring"}
 
     rayke_duration = 35
     gambit_duration = 96
