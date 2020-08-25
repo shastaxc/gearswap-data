@@ -666,7 +666,7 @@ function init_gear_sets()
     ------------------------------------------------------------------------------------------------
 
     sets.idle = {
-      ammo="Staunch Tathlum",
+      ammo="Seething Bomblet",
       head="Erilaz Galea",
       body="Runeist's Coat +2",
       hands="Meghanada Gloves +1",
@@ -682,6 +682,7 @@ function init_gear_sets()
         }
 
     sets.idle.DT = set_combine(sets.idle, {
+      ammo="Staunch Tathlum",
       head="Aya. Zucchetto +1",
       body="Futhark Coat +1",
       hands="Turms Mittens",
