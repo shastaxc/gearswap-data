@@ -316,6 +316,7 @@ function init_gear_sets()
     }
 
     sets.precast.JA['Lunge'] = {
+      ammo="Seething Bomblet",
         -- ammo="Aurgelmir Orb +1",
         -- head=gear.Herc_MAB_head,
         -- body="Carm. Sc. Mail +1",
@@ -435,10 +436,12 @@ function init_gear_sets()
         })
 
     sets.precast.WS.Uncapped = set_combine(sets.precast.WS, {
+      ammo="Seething Bomblet",
         -- ammo="Aurgelmir Orb +1",
         })
 
     sets.precast.WS['Resolution'] = set_combine(sets.precast.WS, {
+      ammo="Seething Bomblet",
         -- ammo="Aurgelmir Orb +1",
         -- head="Lustratio Cap +1",
         -- body="Lustr. Harness +1",
@@ -474,6 +477,7 @@ function init_gear_sets()
         })
 
     sets.precast.WS['Dimidiation'] = set_combine(sets.precast.WS, {
+      ammo="Seething Bomblet",
         -- ammo="Aurgelmir Orb +1",
         -- body=gear.Adhemar_B_body,
         -- legs="Lustr. Subligar +1",
@@ -790,7 +794,7 @@ function init_gear_sets()
 
     sets.engaged = {
       sub="Tzacab Grip",
-      ammo="Staunch Tathlum",
+      ammo="Seething Bomblet",
       head="Aya. Zucchetto +1",
       body="Ayanmo Corazza +1",
       hands="Meghanada Gloves +1",
