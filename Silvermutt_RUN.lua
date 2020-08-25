@@ -667,7 +667,7 @@ function init_gear_sets()
       body="Runeist's Coat +2",
       hands="Meghanada Gloves +1",
       legs="Meghanada Chausses +2",
-      feet="Erilaz Greaves",
+      feet="Skadi's Jambeaux +1",
       neck="Lissome Necklace",
       waist="Sailfi Belt +1",
       left_ear="Brutal Earring",
@@ -703,6 +703,7 @@ function init_gear_sets()
     })
 
     sets.Kiting = {
+      feet="Skadi's Jambeaux +1",
       -- legs="Carmine Cuisses +1"
     }
 

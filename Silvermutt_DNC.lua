@@ -457,7 +457,7 @@ function init_gear_sets()
     body="Horos Casaque +3",
     hands="Mummu Wrists +2",
     legs="Mummu Kecks +1",
-    feet="Tandava Crackows",
+    feet="Skadi's Jambeaux +1",
     neck="Lissome Necklace",
     waist="Sailfi Belt +1",
     left_ear="Suppanomimi",
@@ -476,7 +476,7 @@ function init_gear_sets()
   })
 
   sets.idle.Town = set_combine(sets.idle, {
-    feet="Tandava Crackows",
+    feet="Skadi's Jambeaux +1",
   })
 
   sets.idle.Weak = sets.idle.DT
@@ -493,7 +493,7 @@ function init_gear_sets()
   })
 
   sets.Kiting = {
-    -- feet="Skd. Jambeaux +1"
+    feet="Skd. Jambeaux +1"
   }
 
   ------------------------------------------------------------------------------------------------
