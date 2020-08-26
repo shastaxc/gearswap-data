@@ -274,7 +274,7 @@ function init_gear_sets()
   sets.precast.Waltz = {
     ammo="Light Sachet",
     head=gear.Anwig_Salade,
-    body="Maxixi Casaque +1",
+    body="Maxixi Casaque +2",
     legs="Mummu Kecks +1",
     feet="Charis Shoes +2",
     neck="Soil Gorget",
@@ -286,13 +286,15 @@ function init_gear_sets()
 
   sets.precast.WaltzSelf = set_combine(sets.precast.Waltz, {
     head="Mummu Bonnet +1",
+    body="Maxixi Casaque +2",
     ring1="Asklepian Ring", --(3)
     ear1="Roundel Earring", --5
   }) -- Waltz effects received
 
   sets.precast.Waltz['Healing Waltz'] = {
     head=gear.Anwig_Salade,
-  }
+    body="Maxixi Casaque +2",
+  } -- Waltz delay
   sets.precast.Samba = {
     head="Maxixi Tiara +2",
     back=gear.DNC_TP_DW_Cape
