@@ -756,7 +756,7 @@ function init_gear_sets()
     hands="Mummu Wrists +2",
     legs="Mummu Kecks +1",
     feet="Horos Toe Shoes +3",
-    neck="Lissome Necklace",
+    neck="Asperity Necklace",
     waist="Sailfi Belt +1",
     left_ear="Brutal Earring",
     right_ear="Cessance Earring",
@@ -780,6 +780,7 @@ function init_gear_sets()
   })
 
   sets.engaged.DW.HighAcc.MaxHaste = set_combine(sets.engaged.DW.MidAcc.MaxHaste, {
+    neck="Lissome Necklace",
     -- ammo="C. Palug Stone",
     -- head="Maxixi Tiara +3", --8
     -- body="Maxixi Casaque +3",

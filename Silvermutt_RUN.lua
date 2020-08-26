@@ -363,8 +363,7 @@ function init_gear_sets()
     sets.precast.FC = {
       head="Runeist Bandeau", --10
       legs="Ayanmo cosciales +1", --5
-      ring1="Prolix Ring", --2
-      ring2="Ayanmo Ring",
+      ring2="Prolix Ring", --2
         -- ammo="Sapience Orb", --2
         -- head="Rune. Bandeau +3", --14
         -- body=gear.Taeon_FC_body, --8
@@ -801,7 +800,7 @@ function init_gear_sets()
       hands="Meghanada Gloves +1",
       legs="Meghanada Chausses +2",
       feet=gear.Herc_WSD_feet,
-      neck="Lissome Necklace",
+      neck="Asperity Necklace",
       waist="Sailfi Belt +1",
       left_ear="Brutal Earring",
       right_ear="Cessance Earring",
@@ -826,6 +825,7 @@ function init_gear_sets()
         })
 
     sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
+      neck="Lissome Necklace",
         -- ammo="C. Palug Stone",
         -- head="Carmine Mask +1",
         -- body="Carm. Sc. Mail +1",
