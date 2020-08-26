@@ -278,6 +278,7 @@ function init_gear_sets()
     legs="Mummu Kecks +1",
     feet="Charis Shoes +2",
     neck="Soil Gorget",
+    waist="Aristo Belt",
     left_ring=gear.Dark_Ring,
     feet="Maxixi Shoes +1",
     back="Toetapper Mantle",
