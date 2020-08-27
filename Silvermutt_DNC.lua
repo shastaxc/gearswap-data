@@ -886,7 +886,7 @@ function init_gear_sets()
   sets.CP = {
     back="Aptitude Mantle"
   }
-  --sets.Reive = {neck="Ygnas's Resolve +1"}
+  sets.Reive = {neck="Ygnas's Resolve +1"}
 
 end
 
@@ -945,14 +945,14 @@ function job_buff_change(buff,gain)
       handle_equipping_gear(player.status)
   end
 
---    if buffactive['Reive Mark'] then
---        if gain then
---            equip(sets.Reive)
---            disable('neck')
---        else
---            enable('neck')
---        end
---    end
+   if buffactive['Reive Mark'] then
+       if gain then
+           equip(sets.Reive)
+           disable('neck')
+       else
+           enable('neck')
+       end
+   end
 
   if buff == "doom" then
       if gain then
