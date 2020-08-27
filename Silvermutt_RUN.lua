@@ -937,7 +937,7 @@ function init_gear_sets()
       back="Aptitude Mantle"
     }
     sets.Reive = {
-      -- neck="Ygnas's Resolve +1"
+      neck="Ygnas's Resolve +1"
     }
 
     sets.Epeolatry = {
@@ -1078,16 +1078,18 @@ function job_state_change(field, new_value, old_value)
     classes.CustomMeleeGroups:append(state.Death.current)
 end
 
+-- Called when a player gains or loses a buff.
+-- buff == buff gained or lost
+-- gain == true if the buff was gained, false if it was lost.
 function job_buff_change(buff,gain)
-    -- If we gain or lose any haste buffs, adjust which gear set we target.
---    if buffactive['Reive Mark'] then
---        if gain then
---            equip(sets.Reive)
---            disable('neck')
---        else
---            enable('neck')
---        end
---    end
+   if buffactive['Reive Mark'] then
+       if gain then
+           equip(sets.Reive)
+           disable('neck')
+       else
+           enable('neck')
+       end
+   end
 
     if buff == "terror" then
         if gain then
