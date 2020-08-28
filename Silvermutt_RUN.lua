@@ -711,6 +711,10 @@ function init_gear_sets()
       -- legs="Carmine Cuisses +1"
     }
 
+    sets.idle.Town.Adoulin = {
+      body="Councilor's Garb",
+    }
+  
 
     ------------------------------------------------------------------------------------------------
     ---------------------------------------- Defense Sets ------------------------------------------
@@ -1014,6 +1018,14 @@ function job_precast(spell, action, spellMap, eventArgs)
     end
 end
 
+function job_post_precast(spell, action, spellMap, eventArgs)
+  if spell.type == "WeaponSkill" then
+      if buffactive['Reive Mark'] then
+        equip(sets.Reive)
+      end
+  end
+end
+
 function job_midcast(spell, action, spellMap, eventArgs)
     if state.DefenseMode.value == 'Physical' and state.PhysicalDefenseMode.current == 'HP' and spell.english ~= "Phalanx" then
         eventArgs.handled = true
@@ -1082,14 +1094,14 @@ end
 -- buff == buff gained or lost
 -- gain == true if the buff was gained, false if it was lost.
 function job_buff_change(buff,gain)
-   if buffactive['Reive Mark'] then
-       if gain then
-           equip(sets.Reive)
-           disable('neck')
-       else
-           enable('neck')
-       end
-   end
+  --  if buffactive['Reive Mark'] then
+  --      if gain then
+  --          equip(sets.Reive)
+  --          disable('neck')
+  --      else
+  --          enable('neck')
+  --      end
+  --  end
 
     if buff == "terror" then
         if gain then
@@ -1173,6 +1185,9 @@ function customize_idle_set(idleSet)
     end
     if state.Auto_Kite.value == true then
        idleSet = set_combine(idleSet, sets.Kiting)
+    end
+    if world.zone == 'Eastern Adoulin' or world.zone == 'Western Adoulin' then
+      idleSet = set_combine(idleSet, sets.idle.Town.Adoulin)
     end
 
     return idleSet

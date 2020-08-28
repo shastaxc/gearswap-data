@@ -482,6 +482,10 @@ function init_gear_sets()
     feet="Skadi's Jambeaux +1",
   })
 
+  sets.idle.Town.Adoulin = {
+    body="Councilor's Garb",
+  }
+
   sets.idle.Weak = sets.idle.DT
 
   ------------------------------------------------------------------------------------------------
@@ -919,6 +923,9 @@ function job_post_precast(spell, action, spellMap, eventArgs)
       if state.Buff['Climactic Flourish'] then
           equip(sets.buff['Climactic Flourish'])
       end
+      if buffactive['Reive Mark'] then
+        equip(sets.Reive)
+      end
   end
   if spell.type=='Waltz' and spell.english:startswith('Curing') and spell.target.type == 'SELF' then
       equip(sets.precast.WaltzSelf)
@@ -945,14 +952,14 @@ function job_buff_change(buff,gain)
       handle_equipping_gear(player.status)
   end
 
-   if buffactive['Reive Mark'] then
-       if gain then
-           equip(sets.Reive)
-           disable('neck')
-       else
-           enable('neck')
-       end
-   end
+  --  if buffactive['Reive Mark'] then
+  --      if gain then
+  --          equip(sets.Reive)
+  --          disable('neck')
+  --      else
+  --          enable('neck')
+  --      end
+  --  end
 
   if buff == "doom" then
       if gain then
@@ -1020,6 +1027,9 @@ function customize_idle_set(idleSet)
   end
   if state.Auto_Kite.value == true then
      idleSet = set_combine(idleSet, sets.Kiting)
+  end
+  if world.zone == 'Eastern Adoulin' or world.zone == 'Western Adoulin' then
+    idleSet = set_combine(idleSet, sets.idle.Town.Adoulin)
   end
 
   return idleSet
