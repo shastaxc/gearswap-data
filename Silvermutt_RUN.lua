@@ -675,7 +675,7 @@ function init_gear_sets()
       waist="Sailfi Belt +1",
       left_ear="Brutal Earring",
       right_ear="Cessance Earring",
-      left_ring="Epona's Ring",
+      left_ring="Karieyh Ring",
       right_ring="Ayanmo Ring",
       back=gear.RUN_HPD_Cape,
         }

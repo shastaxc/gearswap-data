@@ -466,7 +466,7 @@ function init_gear_sets()
     left_ear="Suppanomimi",
     right_ear="Cessance Earring",
     left_ring="Epona's Ring",
-    right_ring="Rajas Ring",
+    right_ring="Karieyh Ring",
     back=gear.DNC_TP_DW_Cape,
   }
 
