@@ -711,6 +711,10 @@ function init_gear_sets()
       -- legs="Carmine Cuisses +1"
     }
 
+    sets.idle.Town = set_combine(sets.idle, {
+      feet="Skadi's Jambeaux +1",
+    })
+  
     sets.idle.Town.Adoulin = {
       body="Councilor's Garb",
     }
