@@ -269,6 +269,7 @@ function init_gear_sets()
       body="Emet Harness +1", --10
       hands="Kurys Gloves", --9
       legs="Erilaz Leg Guards", --10
+      waist="Sulla Belt", --3
       neck="Atzintli Necklace", --5
       ring2="Supershear Ring", --5
       back=gear.RUN_HPD_Cape, --10
