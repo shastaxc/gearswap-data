@@ -634,7 +634,7 @@ function init_gear_sets()
     })
     sets.midcast.Refresh = set_combine(sets.midcast.EnhancingDuration, {
       head="Erilaz Galea",
-      waist="Gishdubar Sash"
+      waist="Gishdubar Sash",
     })
     sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {
       waist="Siegel Sash"
@@ -673,7 +673,7 @@ function init_gear_sets()
       head="Erilaz Galea",
       body="Runeist's Coat +2",
       hands="Meghanada Gloves +1",
-      legs="Meghanada Chausses +2",
+      legs="Rawhide Trousers",
       feet="Skadi's Jambeaux +1",
       neck="Lissome Necklace",
       waist="Sailfi Belt +1",
@@ -702,6 +702,7 @@ function init_gear_sets()
     sets.idle.Refresh = set_combine(sets.idle, {
       head="Erilaz Galea",
       body="Runeist's Coat +2",
+      legs="Rawhide Trousers",
         -- ammo="Homiliary",
         -- head=gear.Herc_Idle_head,
         -- hands="Regal Gauntlets",
