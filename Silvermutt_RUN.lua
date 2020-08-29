@@ -317,6 +317,10 @@ function init_gear_sets()
 
     sets.precast.JA['Lunge'] = {
       ammo="Seething Bomblet",
+      neck="Atzintli Necklace",
+      ear1="Friomisi Earring",
+      ear2="Novio Earring",
+      waist="Eschan Stone",
         -- ammo="Aurgelmir Orb +1",
         -- head=gear.Herc_MAB_head,
         -- body="Carm. Sc. Mail +1",
@@ -329,8 +333,8 @@ function init_gear_sets()
         -- ring1={name="Fenrir Ring +1", bag="wardrobe3"},
         -- ring2={name="Fenrir Ring +1", bag="wardrobe4"},
         -- back="Argocham. Mantle",
-        waist="Eschan Stone",
-        }
+        -- waist="Eschan Stone",
+        } -- MAB
 
     sets.precast.JA['Swipe'] = sets.precast.JA['Lunge']
     sets.precast.JA['Gambit'] = {
@@ -621,7 +625,6 @@ function init_gear_sets()
 
     sets.midcast['Aquaveil'] = set_combine(sets.midcast['Enhancing Magic'], sets.midcast.SpellInterrupt, {
         -- main="Nibiru Faussar", --1
-        -- sub="Refined Grip +1",
         })
 
     sets.midcast['Regen'] = set_combine(sets.midcast['Enhancing Magic'], {
@@ -729,6 +732,7 @@ function init_gear_sets()
     }
 
     sets.defense.PDT = {
+      sub="Refined Grip +1", --3/3
       ammo="Staunch Tathlum",
       head="Aya. Zucchetto +1",
       body="Futhark Coat +1",
@@ -742,7 +746,6 @@ function init_gear_sets()
       left_ring=gear.Dark_Ring,
       right_ring="Ayanmo Ring",
       back=gear.RUN_HPD_Cape,
-        -- sub="Refined Grip +1", --3/3
         -- ammo="Staunch Tathlum +1", --3/3
         -- head="Turms Cap +1",
         -- body="Runeist's Coat +3",
@@ -758,6 +761,7 @@ function init_gear_sets()
         }
 
     sets.defense.MDT = {
+      sub="Refined Grip +1", --3/3
       ammo="Staunch Tathlum",
       head="Aya. Zucchetto +1",
       body="Runeist's Coat +2",
@@ -871,7 +875,7 @@ function init_gear_sets()
     ------------------------------------------------------------------------------------------------
 
     sets.Hybrid = {
-      sub="Refined Grip",
+      sub="Refined Grip +1", --3/3
       ammo="Staunch Tathlum",
       head="Aya. Zucchetto +1",
       body="Futhark Coat +1",

@@ -382,7 +382,7 @@ function init_gear_sets()
     ammo="Charis Feather",
     head="Mummu Bonnet +1",
     body="Meghanada Cuirie +2",
-    hands="Mummu Wrists +2",
+    hands="Meghanada Gloves +1",
     legs="Meghanada Chausses +2",
     feet=gear.Herc_WSD_feet,
     neck="Fotia Gorget",
@@ -390,7 +390,7 @@ function init_gear_sets()
     left_ear="Brutal Earring",
     right_ear="Cessance Earring",
     left_ring="Ilabrat Ring",
-    right_ring="Rajas Ring",
+    right_ring="Karieyh Ring",
     back=gear.DNC_TP_DA_Cape,
   } -- default set
 
@@ -409,8 +409,6 @@ function init_gear_sets()
   }
 
   sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS, {
-    left_ring="Ilabrat Ring",
-    right_ring=gear.Dark_Ring,
   }) -- AGI
 
   sets.precast.WS['Pyrrhic Kleos'] = set_combine(sets.precast.WS, {
@@ -419,16 +417,17 @@ function init_gear_sets()
   }) -- 40% STR / 40% DEX
 
   sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
+    hands="Mummu Wrists +2"
   }) -- 50% DEX
 
   sets.precast.WS['Rudra\'s Storm'] = set_combine(sets.precast.WS, {
   }) -- 80% DEX
 
   sets.precast.WS['Aeolian Edge'] = {
-    left_ear="Hecate's Earring",
-    right_ear="Moldavite Earring",
+    left_ear="Friomisi Earring",
+    right_ear="Novio Earring",
     left_ring="Ilabrat Ring",
-    right_ring="Mephitas's Ring",
+    right_ring="Karieyh Ring",
   } -- 40% DEX / 40% INT + MAB
 
   sets.precast.Skillchain = {
