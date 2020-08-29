@@ -589,7 +589,7 @@ function init_gear_sets()
         -- ear1="Roundel Earring", -- 5
         -- ear2="Mendi. Earring", -- 5
         -- ring1="Lebeche Ring", -- 3
-        -- ring2="Defending Ring",
+        ring2="Defending Ring",
         -- back="Solemnity Cape", -- 7
         waist="Gishdubar Sash", --(10)
         }
@@ -677,10 +677,10 @@ function init_gear_sets()
       feet="Skadi's Jambeaux +1",
       neck="Lissome Necklace",
       waist="Sailfi Belt +1",
-      left_ear="Brutal Earring",
-      right_ear="Cessance Earring",
-      left_ring="Karieyh Ring",
-      right_ring="Ayanmo Ring",
+      ear1="Brutal Earring",
+      ear2="Cessance Earring",
+      ring1="Karieyh Ring",
+      ring2="Ayanmo Ring",
       back=gear.RUN_HPD_Cape,
         }
 
@@ -693,10 +693,10 @@ function init_gear_sets()
       feet="Turms Leggings",
       neck="Twilight Torque",
       waist="Sailfi Belt +1",
-      left_ear="Ethereal Earring",
-      right_ear="Odnowa Earring +1",
-      left_ring=gear.Dark_Ring,
-      right_ring="Ayanmo Ring",
+      ear1="Ethereal Earring",
+      ear2="Odnowa Earring +1",
+      ring1=gear.Dark_Ring, --3/5
+      ring2="Defending Ring", --10/10
     })
 
     sets.idle.Refresh = set_combine(sets.idle, {
@@ -742,10 +742,10 @@ function init_gear_sets()
       feet="Turms Leggings",
       neck="Twilight Torque",
       waist="Audumbla Sash",
-      left_ear="Ethereal Earring",
-      right_ear="Cessance Earring",
-      left_ring=gear.Dark_Ring,
-      right_ring="Ayanmo Ring",
+      ear1="Ethereal Earring",
+      ear2="Cessance Earring",
+      ring1=gear.Dark_Ring, --3/5
+      ring2="Defending Ring", --10/10
       back=gear.RUN_HPD_Cape,
         -- ammo="Staunch Tathlum +1", --3/3
         -- head="Turms Cap +1",
@@ -771,10 +771,10 @@ function init_gear_sets()
       feet="Turms Leggings",
       neck="Twilight Torque",
       waist="Sailfi Belt +1",
-      left_ear="Ethereal Earring",
-      right_ear="Odnowa Earring +1",
-      left_ring=gear.Dark_Ring,
-      right_ring="Ayanmo Ring",
+      ear1="Ethereal Earring",
+      ear2="Odnowa Earring +1",
+      ring1=gear.Dark_Ring, --3/5
+      ring2="Defending Ring", --10/10
       back=gear.RUN_HPD_Cape,
         }
 
@@ -787,10 +787,10 @@ function init_gear_sets()
       feet="Turms Leggings",
       neck="Twilight Torque",
       waist="Sailfi Belt +1",
-      left_ear="Ethereal Earring",
-      right_ear="Cessance Earring",
-      left_ring="Epona's Ring",
-      right_ring="Ayanmo Ring",
+      ear1="Ethereal Earring",
+      ear2="Cessance Earring",
+      ring1="Epona's Ring",
+      ring2="Ayanmo Ring",
       back=gear.RUN_HPD_Cape,
         }
 
@@ -815,10 +815,10 @@ function init_gear_sets()
       feet=gear.Herc_WSD_feet,
       neck="Asperity Necklace",
       waist="Sailfi Belt +1",
-      left_ear="Brutal Earring",
-      right_ear="Cessance Earring",
-      left_ring="Epona's Ring",
-      right_ring="Ilabrat Ring",
+      ear1="Brutal Earring",
+      ear2="Cessance Earring",
+      ring1="Epona's Ring",
+      ring2="Ilabrat Ring",
       back="Atheling Mantle",
         }
 
@@ -884,10 +884,10 @@ function init_gear_sets()
       legs="Ayanmo Cosciales +1", --6/0
       feet="Turms Leggings",
       neck="Twilight Torque",
-      left_ear="Ethereal Earring",
-      right_ear="Odnowa Earring +1",
-      left_ring=gear.Dark_Ring,
-      right_ring="Ayanmo Ring",
+      ear1="Ethereal Earring",
+      ear2="Odnowa Earring +1",
+      ring1=gear.Dark_Ring,
+      ring2="Defending Ring", --10/10
       back=gear.RUN_HPD_Cape,
         -- head=gear.Adhemar_D_head, --4/0
         -- neck="Futhark Torque +2", --7/7
@@ -915,10 +915,13 @@ function init_gear_sets()
 ]]
 
     sets.engaged.Aftermath.DT = {
+      legs="Meghanada Chausses +2",
+      ring2="Defending Ring",
+      waist="Sailfi Belt +1",
         -- head="Aya. Zucchetto +2",
         -- body="Ashera Harness",
         -- hands=gear.Adhemar_A_hands,
-        legs="Meghanada Chausses +2",
+        -- legs="Meghanada Chausses +2",
         -- feet=gear.Herc_STP_feet,
         -- neck="Futhark Torque +2",
         -- ear1="Sherida Earring",
@@ -926,7 +929,7 @@ function init_gear_sets()
         -- ring1="Moonlight Ring",
         -- ring2="Defending Ring",
         -- back=gear.RUN_TP_Cape,
-        waist="Sailfi Belt +1",
+        -- waist="Sailfi Belt +1",
         }
 
     ------------------------------------------------------------------------------------------------
@@ -1355,12 +1358,12 @@ function update_weapons()
 end
 
 function check_gear()
-  if no_swap_gear:contains(player.equipment.left_ring) then
+  if no_swap_gear:contains(player.equipment.ring1) then
       disable("ring1")
   else
       enable("ring1")
   end
-  if no_swap_gear:contains(player.equipment.right_ring) then
+  if no_swap_gear:contains(player.equipment.ring2) then
       disable("ring2")
   else
       enable("ring2")
@@ -1383,11 +1386,11 @@ end
 
 windower.register_event('zone change',
     function()
-        if no_swap_gear:contains(player.equipment.left_ring) then
+        if no_swap_gear:contains(player.equipment.ring1) then
             enable("ring1")
             equip(sets.idle)
         end
-        if no_swap_gear:contains(player.equipment.right_ring) then
+        if no_swap_gear:contains(player.equipment.ring2) then
             enable("ring2")
             equip(sets.idle)
         end

@@ -279,7 +279,7 @@ function init_gear_sets()
     feet="Charis Shoes +2",
     neck="Soil Gorget",
     waist="Aristo Belt",
-    left_ring=gear.Dark_Ring,
+    ring1=gear.Dark_Ring,
     feet="Maxixi Shoes +1",
     back="Toetapper Mantle",
   } -- Waltz Potency/CHR
@@ -312,8 +312,8 @@ function init_gear_sets()
     legs="Mummu Kecks +1",
     feet="Horos Toe Shoes +3",
     neck="Love Torque",
-    left_ring="Supershear Ring",
-    right_ring="Ilabrat Ring",
+    ring1="Supershear Ring",
+    ring2="Ilabrat Ring",
   }
 
   sets.precast.Step['Feather Step'] = set_combine(sets.precast.Step, {
@@ -330,8 +330,8 @@ function init_gear_sets()
     legs="Mummu Kecks +1",
     feet="Mummu Gamashes +1",
     neck="Love Torque",
-    left_ring="Balrahn's Ring",
-    right_ring=gear.Dark_Ring,
+    ring1="Balrahn's Ring",
+    ring2=gear.Dark_Ring,
   } -- Magic Accuracy
 
   sets.precast.Flourish1['Desperate Flourish'] = {
@@ -363,7 +363,7 @@ function init_gear_sets()
   }
 
   sets.precast.FC = {
-    left_ear="Loquac. Earring",
+    ear1="Loquac. Earring",
     feet="Horos Toe Shoes +3",
   }
 
@@ -387,10 +387,10 @@ function init_gear_sets()
     feet=gear.Herc_WSD_feet,
     neck="Fotia Gorget",
     waist="Fotia Belt",
-    left_ear="Brutal Earring",
-    right_ear="Cessance Earring",
-    left_ring="Ilabrat Ring",
-    right_ring="Karieyh Ring",
+    ear1="Brutal Earring",
+    ear2="Cessance Earring",
+    ring1="Ilabrat Ring",
+    ring2="Karieyh Ring",
     back=gear.DNC_TP_DA_Cape,
   } -- default set
 
@@ -412,8 +412,8 @@ function init_gear_sets()
   }) -- AGI
 
   sets.precast.WS['Pyrrhic Kleos'] = set_combine(sets.precast.WS, {
-    left_ring="Ilabrat Ring",
-    right_ring="Rajas Ring",
+    ring1="Ilabrat Ring",
+    ring2="Rajas Ring",
   }) -- 40% STR / 40% DEX
 
   sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
@@ -424,10 +424,10 @@ function init_gear_sets()
   }) -- 80% DEX
 
   sets.precast.WS['Aeolian Edge'] = {
-    left_ear="Friomisi Earring",
-    right_ear="Novio Earring",
-    left_ring="Ilabrat Ring",
-    right_ring="Karieyh Ring",
+    ear1="Friomisi Earring",
+    ear2="Novio Earring",
+    ring1="Ilabrat Ring",
+    ring2="Karieyh Ring",
   } -- 40% DEX / 40% INT + MAB
 
   sets.precast.Skillchain = {
@@ -462,10 +462,10 @@ function init_gear_sets()
     feet="Skadi's Jambeaux +1",
     neck="Lissome Necklace",
     waist="Sailfi Belt +1",
-    left_ear="Suppanomimi",
-    right_ear="Cessance Earring",
-    left_ring="Epona's Ring",
-    right_ring="Karieyh Ring",
+    ear1="Suppanomimi",
+    ear2="Cessance Earring",
+    ring1="Epona's Ring",
+    ring2="Karieyh Ring",
     back=gear.DNC_TP_DW_Cape,
   }
 
@@ -474,7 +474,8 @@ function init_gear_sets()
     legs="Mummu Kecks +1",
     feet="Horos Toe Shoes +3",
     neck="Twilight Torque",
-    right_ring=gear.Dark_Ring,
+    ring1=gear.Dark_Ring,
+    ring2="Defending Ring", --10/10
   })
 
   sets.idle.Town = set_combine(sets.idle, {
@@ -493,7 +494,7 @@ function init_gear_sets()
 
   sets.defense.PDT = set_combine(sets.idle.DT, {
     body="Horos Casaque +3",
-    left_ring="Jelly Ring",
+    ring1="Jelly Ring",
   })
   sets.defense.MDT = set_combine(sets.idle.DT, {
   })
@@ -520,10 +521,10 @@ function init_gear_sets()
     feet="Horos Toe Shoes +3",
     neck="Charis Necklace",
     waist="Sailfi Belt +1",
-    left_ear="Brutal Earring",
-    right_ear="Cessance Earring",
-    left_ring="Epona's Ring",
-    right_ring="Rajas Ring",
+    ear1="Brutal Earring",
+    ear2="Cessance Earring",
+    ring1="Epona's Ring",
+    ring2="Rajas Ring",
     back=gear.DNC_TP_DW_Cape,
   }
 
@@ -572,10 +573,10 @@ function init_gear_sets()
     feet="Horos Toe Shoes +3",
     neck="Charis Necklace", -- 3%
     waist="Sailfi Belt +1",
-    left_ear="Suppanomimi", -- 5%
-    right_ear="Cessance Earring",
-    left_ring="Epona's Ring",
-    right_ring="Rajas Ring",
+    ear1="Suppanomimi", -- 5%
+    ear2="Cessance Earring",
+    ring1="Epona's Ring",
+    ring2="Rajas Ring",
     back=gear.DNC_TP_DW_Cape, -- 10%
   }
 
@@ -619,10 +620,10 @@ function init_gear_sets()
     feet="Mummu Gamashes +1",
     neck="Charis Necklace", -- 3%
     waist="Sailfi Belt +1",
-    left_ear="Suppanomimi", -- 5%
-    right_ear="Cessance Earring",
-    left_ring="Epona's Ring",
-    right_ring="Rajas Ring",
+    ear1="Suppanomimi", -- 5%
+    ear2="Cessance Earring",
+    ring1="Epona's Ring",
+    ring2="Rajas Ring",
     back=gear.DNC_TP_DW_Cape, -- 10%
   }
 
@@ -667,10 +668,10 @@ function init_gear_sets()
     feet="Horos Toe Shoes +3",
     neck="Charis Necklace", -- 3%
     waist="Sailfi Belt +1",
-    left_ear="Suppanomimi", -- 5%
-    right_ear="Cessance Earring",
-    left_ring="Epona's Ring",
-    right_ring="Rajas Ring",
+    ear1="Suppanomimi", -- 5%
+    ear2="Cessance Earring",
+    ring1="Epona's Ring",
+    ring2="Rajas Ring",
     back=gear.DNC_TP_DW_Cape, -- 10%
   }
 
@@ -715,10 +716,10 @@ function init_gear_sets()
     feet="Horos Toe Shoes +3",
     neck="Charis Necklace", -- 3%
     waist="Sailfi Belt +1",
-    left_ear="Brutal Earring",
-    right_ear="Cessance Earring",
-    left_ring="Epona's Ring",
-    right_ring="Rajas Ring",
+    ear1="Brutal Earring",
+    ear2="Cessance Earring",
+    ring1="Epona's Ring",
+    ring2="Rajas Ring",
     back=gear.DNC_TP_DW_Cape, -- 10%
   }
 
@@ -764,10 +765,10 @@ function init_gear_sets()
     feet="Horos Toe Shoes +3",
     neck="Asperity Necklace",
     waist="Sailfi Belt +1",
-    left_ear="Brutal Earring",
-    right_ear="Cessance Earring",
-    left_ring="Epona's Ring",
-    right_ring="Rajas Ring",
+    ear1="Brutal Earring",
+    ear2="Cessance Earring",
+    ring1="Epona's Ring",
+    ring2="Rajas Ring",
     back=gear.DNC_TP_DA_Cape,
   }
 
@@ -816,7 +817,8 @@ function init_gear_sets()
     legs="Mummu Kecks +1",
     hands="Turms Mittens",
     neck="Twilight Torque",
-    right_ring=gear.Dark_Ring,
+    ring1=gear.Dark_Ring,
+    ring2="Defending Ring", --10/10
     -- head=gear.Adhemar_D_head, --4/0
     -- body="Ashera Harness", --7/7
     -- neck="Loricate Torque +1", --6/6
@@ -1210,12 +1212,12 @@ function update_weapons()
 end
 
 function check_gear()
-  if no_swap_gear:contains(player.equipment.left_ring) then
+  if no_swap_gear:contains(player.equipment.ring1) then
       disable("ring1")
   else
       enable("ring1")
   end
-  if no_swap_gear:contains(player.equipment.right_ring) then
+  if no_swap_gear:contains(player.equipment.ring2) then
       disable("ring2")
   else
       enable("ring2")
@@ -1238,11 +1240,11 @@ end
 
 windower.register_event('zone change',
   function()
-      if no_swap_gear:contains(player.equipment.left_ring) then
+      if no_swap_gear:contains(player.equipment.ring1) then
           enable("ring1")
           equip(sets.idle)
       end
-      if no_swap_gear:contains(player.equipment.right_ring) then
+      if no_swap_gear:contains(player.equipment.ring2) then
           enable("ring2")
           equip(sets.idle)
       end
