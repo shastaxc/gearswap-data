@@ -733,21 +733,23 @@ function init_gear_sets()
       -- back="Repulse Mantle"
     }
 
+    -- Protect V = 0%, PDT cap is 50%
+    -- TODO: Fully augment Odnowa and swap with Cessance, swap Dark Ring for Epona's
     sets.defense.PDT = {
       sub="Refined Grip +1", --3/3
-      ammo="Staunch Tathlum",
-      head="Aya. Zucchetto +1",
-      body="Futhark Coat +1",
+      ammo="Staunch Tathlum", --2/2
+      head="Meghanada Visor +1", --4/0
+      body="Futhark Coat +1", --7/7
       hands="Turms Mittens",
       legs="Erilaz Leg Guards", --6/0
       feet="Turms Leggings",
-      neck="Twilight Torque",
-      waist="Audumbla Sash",
-      ear1="Ethereal Earring",
+      neck="Twilight Torque", --5/5
+      waist="Sailfi Belt +1",
+      ear1="Brutal Earring",
       ear2="Cessance Earring",
       ring1=gear.Dark_Ring, --3/5
       ring2="Defending Ring", --10/10
-      back=gear.RUN_HPD_Cape,
+      back=gear.RUN_HPD_Cape, --10/0
         -- ammo="Staunch Tathlum +1", --3/3
         -- head="Turms Cap +1",
         -- body="Runeist's Coat +3",
@@ -760,24 +762,26 @@ function init_gear_sets()
         -- ring2="Defending Ring", --10/10
         -- back=gear.RUN_HPD_Cape, --10/0
         -- waist="Engraved Belt",
-        }
+        } --50/32
 
+    -- Shell V = 29%, MDT cap is 50%
+    -- TODO: Get Engraved Belt
     sets.defense.MDT = {
       sub="Refined Grip +1", --3/3
-      ammo="Staunch Tathlum",
-      head="Aya. Zucchetto +1",
+      ammo="Staunch Tathlum", --2/2
+      head="Aya. Zucchetto +1", --2/2
       body="Runeist's Coat +2",
       hands="Turms Mittens",
       legs="Erilaz Leg Guards", --6/0
-      feet="Turms Leggings",
-      neck="Twilight Torque",
+      feet="Erilaz Greaves", --4/0
+      neck="Twilight Torque", --5/5
       waist="Sailfi Belt +1",
-      ear1="Ethereal Earring",
-      ear2="Odnowa Earring +1",
+      ear1="Brutal Earring",
+      ear2="Odnowa Earring +1", --0/2
       ring1=gear.Dark_Ring, --3/5
       ring2="Defending Ring", --10/10
-      back=gear.RUN_HPD_Cape,
-        }
+      back=gear.RUN_HPD_Cape, --10/0
+        } --45 PDT + 5 PDT2 / 29 MDT
 
     sets.defense.HP = {
       ammo="Staunch Tathlum",
@@ -797,8 +801,10 @@ function init_gear_sets()
 
     sets.defense.Parry = {
       hands="Turms Mittens",
-        -- legs="Eri. Leg Guards +1",
       feet="Turms Leggings",
+        -- hands="Turms Mittens",
+        -- legs="Eri. Leg Guards +1",
+        -- feet="Turms Leggings",
         -- back=gear.RUN_HPP_Cape,
         }
 
@@ -809,7 +815,7 @@ function init_gear_sets()
     sets.engaged = {
       sub="Tzacab Grip",
       ammo="Seething Bomblet",
-      head="Aya. Zucchetto +1",
+      head="Meghanada Visor +1",
       body="Ayanmo Corazza +1",
       hands="Meghanada Gloves +1",
       legs="Meghanada Chausses +2",
@@ -876,26 +882,22 @@ function init_gear_sets()
     ---------------------------------------- Hybrid Sets -------------------------------------------
     ------------------------------------------------------------------------------------------------
 
+    -- Shell V gives -29% MDT, PDT and MDT cap at 50%
     sets.Hybrid = {
       sub="Refined Grip +1", --3/3
-      ammo="Staunch Tathlum",
-      head="Aya. Zucchetto +1",
-      body="Futhark Coat +1",
-      hands="Turms Mittens",
-      legs="Ayanmo Cosciales +1", --6/0
-      feet="Turms Leggings",
-      neck="Twilight Torque",
-      ear1="Ethereal Earring",
-      ear2="Odnowa Earring +1",
-      ring1=gear.Dark_Ring,
+      ammo="Staunch Tathlum", --2/2
+      head="Aya. Zucchetto +1", --2/2
+      body="Meghanada Cuirie +2", --8/0
+      legs="Meghanada Chausses +2", --6/0
+      neck="Twilight Torque", --5/5
       ring2="Defending Ring", --10/10
-      back=gear.RUN_HPD_Cape,
+      back=gear.RUN_HPD_Cape, --10/0
         -- head=gear.Adhemar_D_head, --4/0
         -- neck="Futhark Torque +2", --7/7
         -- ring1="Moonlight Ring", --5/5
         -- ring2="Defending Ring", --10/10
         -- back=gear.RUN_TP_Cape, --10/0
-        }
+        } --46 PDT + 5 PDT2 / 22 MDT
 
     sets.engaged.DT = set_combine(sets.engaged, sets.Hybrid)
     sets.engaged.LowAcc.DT = set_combine(sets.engaged.LowAcc, sets.Hybrid)
