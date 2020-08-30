@@ -266,6 +266,7 @@ function init_gear_sets()
     -- Enmity sets
     sets.Enmity = {
       ammo="Aqreqaq Bomblet", --2
+      head="Highwing Helm", --4
       feet="Erilaz Greaves", --5
       body="Emet Harness +1", --10
       hands="Kurys Gloves", --9
@@ -319,11 +320,13 @@ function init_gear_sets()
     }
 
     sets.precast.JA['Lunge'] = {
-      ammo="Seething Bomblet",
-      neck="Atzintli Necklace",
-      ear1="Friomisi Earring",
-      ear2="Novio Earring",
-      waist="Eschan Stone",
+      ammo="Seething Bomblet", --6
+      head="Highwing Helm", --20
+      feet="Herc_WSD_feet", --10
+      neck="Atzintli Necklace", --5
+      ear1="Friomisi Earring", --10
+      ear2="Novio Earring", --7
+      waist="Eschan Stone", --7
         -- ammo="Aurgelmir Orb +1",
         -- head=gear.Herc_MAB_head,
         -- body="Carm. Sc. Mail +1",
