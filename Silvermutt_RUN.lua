@@ -265,13 +265,15 @@ function init_gear_sets()
 
     -- Enmity sets
     sets.Enmity = {
+      ammo="Aqreqaq Bomblet", --2
       feet="Erilaz Greaves", --5
       body="Emet Harness +1", --10
       hands="Kurys Gloves", --9
       legs="Erilaz Leg Guards", --10
-      waist="Sulla Belt", --3
       neck="Atzintli Necklace", --5
+      ear2="Fiomisi Earring", --2
       ring2="Supershear Ring", --5
+      waist="Sulla Belt", --3
       back=gear.RUN_HPD_Cape, --10
         -- ammo="Aqreqaq Bomblet", --2
         -- head="Halitus Helm", --8
@@ -672,29 +674,26 @@ function init_gear_sets()
       ammo="Seething Bomblet",
       head="Erilaz Galea",
       body="Runeist's Coat +2",
-      hands="Meghanada Gloves +1",
+      hands="Turms Mittens",
       legs="Rawhide Trousers",
       feet="Skadi's Jambeaux +1",
       neck="Lissome Necklace",
-      waist="Sailfi Belt +1",
+      waist="Gishdubar Sash",
       ear1="Brutal Earring",
       ear2="Cessance Earring",
       ring1="Karieyh Ring",
-      ring2="Ayanmo Ring",
+      ring2="Defending Ring",
       back=gear.RUN_HPD_Cape,
         }
 
     sets.idle.DT = set_combine(sets.idle, {
-      ammo="Staunch Tathlum",
-      head="Aya. Zucchetto +1",
-      body="Futhark Coat +1",
-      hands="Turms Mittens",
-      legs="Erilaz Leg Guards", --6/0
+      ammo="Staunch Tathlum", --2/2
+      head="Aya. Zucchetto +1", --2/2
       feet="Turms Leggings",
-      neck="Twilight Torque",
-      waist="Sailfi Belt +1",
+      neck="Twilight Torque", --5/5
+      waist="Audumbla Sash", --4/0
       ear1="Ethereal Earring",
-      ear2="Odnowa Earring +1",
+      ear2="Odnowa Earring +1", --0/2
       ring1=gear.Dark_Ring, --3/5
       ring2="Defending Ring", --10/10
     })
