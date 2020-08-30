@@ -617,7 +617,7 @@ function init_gear_sets()
     body="Horos Casaque +3",
     hands="Mummu Wrists +2",
     legs="Mummu Kecks +1",
-    feet="Mummu Gamashes +1",
+    feet="Horos Toe Shoes +3",
     neck="Charis Necklace", -- 3%
     waist="Sailfi Belt +1",
     ear1="Suppanomimi", -- 5%
