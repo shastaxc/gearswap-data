@@ -322,7 +322,7 @@ function init_gear_sets()
     sets.precast.JA['Lunge'] = {
       ammo="Seething Bomblet", --6
       head="Highwing Helm", --20
-      feet="Herc_WSD_feet", --10
+      feet=gear.Herc_Temp_feet, --10
       neck="Atzintli Necklace", --5
       ear1="Friomisi Earring", --10
       ear2="Novio Earring", --7
@@ -822,7 +822,7 @@ function init_gear_sets()
       body="Ayanmo Corazza +1",
       hands="Meghanada Gloves +1",
       legs="Meghanada Chausses +2",
-      feet=gear.Herc_WSD_feet,
+      feet=gear.Herc_Temp_feet,
       neck="Asperity Necklace",
       waist="Sailfi Belt +1",
       ear1="Brutal Earring",
