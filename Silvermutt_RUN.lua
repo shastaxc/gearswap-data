@@ -371,6 +371,7 @@ function init_gear_sets()
 
     -- Fast cast sets for spells
     sets.precast.FC = {
+      ammo="Impatiens",
       head="Runeist Bandeau", --10
       legs="Ayanmo cosciales +1", --5
       ring2="Prolix Ring", --2
@@ -405,12 +406,12 @@ function init_gear_sets()
         })
 
     sets.precast.FC.Cure = set_combine(sets.precast.FC, {
-      -- ammo="Impatiens",
+      ammo="Impatiens",
       -- ear2="Mendi. Earring"
     })
 
     sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {
-        -- ammo="Impatiens",
+        ammo="Impatiens",
         -- body="Passion Jacket",
         -- ring1="Lebeche Ring",
         waist="Audumbla Sash",

@@ -363,7 +363,7 @@ function init_gear_sets()
   }
 
   sets.precast.FC = {
-    -- ammo="Impatiens",
+    ammo="Impatiens",
     legs="Rawhide Trousers",
     feet="Horos Toe Shoes +3",
     ear1="Loquac. Earring",
