@@ -363,14 +363,15 @@ function init_gear_sets()
   }
 
   sets.precast.FC = {
-    ear1="Loquac. Earring",
+    -- ammo="Impatiens",
+    legs="Rawhide Trousers",
     feet="Horos Toe Shoes +3",
+    ear1="Loquac. Earring",
+    -- ring1="Lebeche Ring",
   }
 
   sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {
-    ammo="Impatiens",
-    body="Passion Jacket",
-    ring1="Lebeche Ring",
+    -- body="Passion Jacket",
   })
 
 
@@ -424,10 +425,11 @@ function init_gear_sets()
   }) -- 80% DEX
 
   sets.precast.WS['Aeolian Edge'] = {
-    ear1="Friomisi Earring",
-    ear2="Novio Earring",
-    ring1="Ilabrat Ring",
-    ring2="Karieyh Ring",
+    head="Highwing Helm", --20 MAB
+    ear1="Friomisi Earring", --10 MAB
+    ear2="Novio Earring", --7 MAB
+    ring1="Ilabrat Ring", --10 DEX
+    ring2="Karieyh Ring", --3 WSD
   } -- 40% DEX / 40% INT + MAB
 
   sets.precast.Skillchain = {
