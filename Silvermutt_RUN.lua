@@ -133,7 +133,6 @@ function user_setup()
     
     -- Additional local binds
     include('Global-Binds.lua') -- OK to remove this line
-    include('Global-GEO-Binds.lua') -- OK to remove this line
 
     send_command('lua l gearinfo')
 
@@ -150,18 +149,6 @@ function user_setup()
     send_command('bind @k gs c toggle Knockback')
     send_command('bind ^` input /ma "Temper" <me>')
 
-    if player.sub_job == 'BLU' then
-      send_command('bind !q input /ma "Wild Carrot" <stpc>')
-      send_command('bind !w input /ma "Cocoon" <me>')
-      send_command('bind !e input /ma "Refueling" <me>')
-    elseif player.sub_job == 'WAR' then
-      send_command('bind !w input /ja "Defender" <me>')
-    elseif player.sub_job == 'DRK' then
-      send_command('bind !w input /ja "Weapon Bash" <t>')
-    elseif player.sub_job == 'SAM' then
-      send_command('bind !w input /ja "Hasso" <me>')
-    end
-
     send_command('bind !u input /ma "Blink" <me>')
     send_command('bind !i input /ma "Stoneskin" <me>')
     send_command('bind !o input /ma "Phalanx" <me>')
@@ -174,18 +161,24 @@ function user_setup()
     send_command('bind !. input /ma "Ice Spikes" <me>')
     send_command('bind !/ input /ma "Shock Spikes" <me>')
 
-    if player.sub_job == 'WAR' then
-        send_command('bind ^numpad/ input /ja "Berserk" <me>')
-        send_command('bind ^numpad* input /ja "Warcry" <me>')
-        send_command('bind ^numpad- input /ja "Aggressor" <me>')
+    if player.sub_job == 'BLU' then
+      send_command('bind !q input /ma "Wild Carrot" <stpc>')
+      send_command('bind !w input /ma "Cocoon" <me>')
+      send_command('bind !e input /ma "Refueling" <me>')
+    elseif player.sub_job == 'WAR' then
+      send_command('bind ^numpad/ input /ja "Berserk" <me>')
+      send_command('bind ^numpad* input /ja "Warcry" <me>')
+      send_command('bind ^numpad- input /ja "Aggressor" <me>')
     elseif player.sub_job == 'DRK' then
-        send_command('bind ^numpad/ input /ja "Last Resort" <me>')
-        send_command('bind ^numpad* input /ja "Arcane Circle" <me>')
-        send_command('bind ^numpad- input /ja "Souleater" <me>')
+      send_command('bind !w input /ja "Weapon Bash" <t>')
+      send_command('bind ^numpad/ input /ja "Last Resort" <me>')
+      send_command('bind ^numpad* input /ja "Arcane Circle" <me>')
+      send_command('bind ^numpad- input /ja "Souleater" <me>')
     elseif player.sub_job == 'SAM' then
-        send_command('bind ^numpad/ input /ja "Meditate" <me>')
-        send_command('bind ^numpad* input /ja "Sekkanoki" <me>')
-        send_command('bind ^numpad- input /ja "Third Eye" <me>')
+      send_command('bind !w input /ja "Hasso" <me>')
+      send_command('bind ^numpad/ input /ja "Meditate" <me>')
+      send_command('bind ^numpad* input /ja "Sekkanoki" <me>')
+      send_command('bind ^numpad- input /ja "Third Eye" <me>')
     end
 
     send_command('bind ^numpad7 input /ws "Resolution" <t>')
