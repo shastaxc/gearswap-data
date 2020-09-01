@@ -33,16 +33,16 @@
 
     -- Default Spell HotKeys
     if player.main_job == 'DNC' or player.sub_job == 'DNC' then
-        send_command('bind ^, input /ja "Spectral Jig" <me>')
-        send_command('unbind ^.')
+      send_command('unbind !j')
+      send_command('bind !k input /ja "Spectral Jig" <me>')
     elseif player.main_job == 'RDM' or player.sub_job == 'RDM'
-        or player.main_job == 'SCH' or player.sub_job == 'SCH'
-        or player.main_job == 'WHM' or player.sub_job == 'WHM' then
-        send_command('bind ^, input /ma "Sneak" <stpc>')
-        send_command('bind ^. input /ma "Invisible" <stpc>')
+      or player.main_job == 'SCH' or player.sub_job == 'SCH'
+      or player.main_job == 'WHM' or player.sub_job == 'WHM' then
+        send_command('bind !j input /ma "Invisible" <stpc>')
+      send_command('bind !k input /ma "Sneak" <stpc>')
     else
-        send_command('bind ^, input /item "Silent Oil" <me>')
-        send_command('bind ^. input /item "Prism Powder" <me>')
+      send_command('bind !j input /item "Prism Powder" <me>')
+      send_command('bind !k input /item "Silent Oil" <me>')
     end
 
     -- Default Status Cure HotKeys
