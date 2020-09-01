@@ -380,7 +380,7 @@ function init_gear_sets()
 
   sets.precast.WS = {
     ammo="Charis Feather",
-    head="Mummu Bonnet +1",
+    head=gear.Herc_WSD_head,
     body="Meghanada Cuirie +2",
     hands="Meghanada Gloves +1",
     legs="Horos Tights +3",
@@ -423,13 +423,11 @@ function init_gear_sets()
   sets.precast.WS['Rudra\'s Storm'] = set_combine(sets.precast.WS, {
   }) -- 80% DEX
 
-  sets.precast.WS['Aeolian Edge'] = {
+  sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
     head="Highwing Helm", --20 MAB
     ear1="Friomisi Earring", --10 MAB
     ear2="Novio Earring", --7 MAB
-    ring1="Ilabrat Ring", --10 DEX
-    ring2="Karieyh Ring", --3 WSD
-  } -- 40% DEX / 40% INT + MAB
+  }) -- 40% DEX / 40% INT + MAB
 
   sets.precast.Skillchain = {
     hands="Charis Bangles +2",

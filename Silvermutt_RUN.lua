@@ -312,7 +312,7 @@ function init_gear_sets()
       body="Futhark Coat +1",
     }
 
-    sets.precast.JA['Lunge'] = {
+    sets.MAB = {
       ammo="Seething Bomblet", --6
       head="Highwing Helm", --20
       feet=gear.Herc_Temp_feet, --10
@@ -320,22 +320,24 @@ function init_gear_sets()
       ear1="Friomisi Earring", --10
       ear2="Novio Earring", --7
       waist="Eschan Stone", --7
-        -- ammo="Aurgelmir Orb +1",
-        -- head=gear.Herc_MAB_head,
-        -- body="Carm. Sc. Mail +1",
-        -- hands="Carmine Fin. Ga. +1",
-        -- legs=gear.Herc_MAB_legs,
-        -- feet=gear.Herc_MAB_feet,
-        -- neck="Baetyl Pendant",
-        -- ear1="Crematio Earring",
-        -- ear2="Friomisi Earring",
-        -- ring1={name="Fenrir Ring +1", bag="wardrobe3"},
-        -- ring2={name="Fenrir Ring +1", bag="wardrobe4"},
-        -- back="Argocham. Mantle",
-        -- waist="Eschan Stone",
-        } -- MAB
+      -- ammo="Aurgelmir Orb +1",
+      -- head=gear.Herc_MAB_head,
+      -- body="Carm. Sc. Mail +1",
+      -- hands="Carmine Fin. Ga. +1",
+      -- legs=gear.Herc_MAB_legs,
+      -- feet=gear.Herc_MAB_feet,
+      -- neck="Baetyl Pendant",
+      -- ear1="Crematio Earring",
+      -- ear2="Friomisi Earring",
+      -- ring1={name="Fenrir Ring +1", bag="wardrobe3"},
+      -- ring2={name="Fenrir Ring +1", bag="wardrobe4"},
+      -- back="Argocham. Mantle",
+      -- waist="Eschan Stone",
+    }
 
-    sets.precast.JA['Swipe'] = sets.precast.JA['Lunge']
+    sets.precast.JA['Lunge'] = sets.MAB
+
+    sets.precast.JA['Swipe'] = sets.MAB
     sets.precast.JA['Gambit'] = {
       hands="Runeist Mitons"
     }
@@ -416,86 +418,96 @@ function init_gear_sets()
     ------------------------------------------------------------------------------------------------
 
     sets.precast.WS = {
-        -- ammo="Knobkierrie",
-        -- head=gear.Herc_WSD_head,
-        -- body=gear.Herc_WS_body,
-        hands="Meg. Gloves +1",
-        -- legs=gear.Herc_WS_legs,
-        feet=gear.Herc_WSD_feet,
-        neck="Fotia Gorget",
-        -- ear1="Sherida Earring",
-        -- ear2="Moonshade Earring",
-        -- ring1="Regal Ring",
-        -- ring2="Niqmaddu Ring",
-        -- back=gear.RUN_WS1_Cape,
-        waist="Fotia Belt",
+      ammo="Seething Bomblet",
+      head=gear.Herc_WSD_head,
+      body="Meghanada Cuirie +2",
+      hands="Meg. Gloves +1",
+      legs="Meghanada Chausses +2",
+      feet=gear.Herc_WSD_feet,
+      neck="Fotia Gorget",
+      waist="Fotia Belt",
+      ear1="Brutal Earring",
+      ear2="Cessance Earring",
+      ring1="Epona's Ring",
+      ring2="Ilabrat Ring",
+      back="Atheling Mantle",
+      -- ammo="Knobkierrie",
+      -- head=gear.Herc_WSD_head,
+      -- body=gear.Herc_WS_body,
+      -- hands="Meg. Gloves +2",
+      -- legs=gear.Herc_WS_legs,
+      -- feet=gear.Herc_TA_feet,
+      -- neck="Fotia Gorget",
+      -- ear1="Sherida Earring",
+      -- ear2="Moonshade Earring",
+      -- ring1="Regal Ring",
+      -- ring2="Niqmaddu Ring",
+      -- back=gear.RUN_WS1_Cape,
+      -- waist="Fotia Belt",
         }
 
     sets.precast.WS.Acc = set_combine(sets.precast.WS, {
-        -- ammo="Voluspa Tathlum",
-        -- body=gear.Adhemar_B_body,
-        legs="Meghanada Chausses +2",
-        -- ear2="Telos Earring",
+      -- ammo="Voluspa Tathlum",
+      -- body=gear.Adhemar_B_body,
+      -- legs="Meg. Chausses +2",
+      -- ear2="Telos Earring",
         })
 
     sets.precast.WS.Uncapped = set_combine(sets.precast.WS, {
-      ammo="Seething Bomblet",
         -- ammo="Aurgelmir Orb +1",
         })
 
     sets.precast.WS['Resolution'] = set_combine(sets.precast.WS, {
-      ammo="Seething Bomblet",
-        -- ammo="Aurgelmir Orb +1",
-        -- head="Lustratio Cap +1",
-        -- body="Lustr. Harness +1",
-        -- hands=gear.Adhemar_B_hands,
-        -- legs="Samnuha Tights",
-        -- feet="Lustra. Leggings +1",
-        -- neck="Futhark Torque +2",
-        ring1="Epona's Ring",
-        -- back=gear.RUN_WS1_Cape,
+      -- ammo="Aurgelmir Orb +1",
+      -- head="Lustratio Cap +1",
+      -- body="Lustr. Harness +1",
+      -- hands=gear.Adhemar_B_hands,
+      -- legs="Samnuha Tights",
+      -- feet="Lustra. Leggings +1",
+      --neck="Futhark Torque +2", -- Remove???
+      -- ring1="Epona's Ring",
+      -- back=gear.RUN_WS1_Cape,
         })
 
     sets.precast.WS['Resolution'].Acc = set_combine(sets.precast.WS['Resolution'], {
-        -- ammo="Voluspa Tathlum",
-        -- head=gear.Adhemar_B_head,
-        -- hands=gear.Adhemar_A_hands,
-        legs="Meghanada Chausses +2",
-        -- feet=gear.Herc_STP_feet,
-        -- ear2="Telos Earring",
+      -- ammo="Voluspa Tathlum",
+      -- head=gear.Adhemar_B_head,
+      -- hands=gear.Adhemar_A_hands,
+      -- legs="Meg. Chausses +2",
+      -- feet=gear.Herc_STP_feet,
+      -- ear2="Telos Earring",
         })
 
     sets.precast.WS['Resolution'].Uncapped = set_combine(sets.precast.WS['Resolution'], {
-        -- head=gear.Adhemar_B_head,
-        -- body=gear.Adhemar_B_body,
-        legs="Meghanada Chausses +2",
-        -- feet=gear.Herc_TA_feet,
-        -- ring1="Regal Ring",
+      -- head=gear.Adhemar_B_head,
+      -- body=gear.Adhemar_B_body,
+      -- legs="Meg. Chausses +2",
+      -- feet=gear.Herc_TA_feet,
+      -- ring1="Regal Ring",
         })
 
     sets.precast.WS['Resolution'].Safe = set_combine(sets.precast.WS['Resolution'], {
-        -- head=gear.Adhemar_D_head,
-        -- body=gear.Adhemar_B_body,
-        -- feet=gear.Herc_TA_feet,
+      -- head=gear.Adhemar_D_head,
+      -- body=gear.Adhemar_B_body,
+      -- feet=gear.Herc_TA_feet,
         })
 
     sets.precast.WS['Dimidiation'] = set_combine(sets.precast.WS, {
-      ammo="Seething Bomblet",
-        -- ammo="Aurgelmir Orb +1",
-        -- body=gear.Adhemar_B_body,
-        -- legs="Lustr. Subligar +1",
-        -- feet="Lustra. Leggings +1",
-        -- ear1="Odr Earring",
-        -- ring2="Epaminondas's Ring",
-        -- back=gear.RUN_WS2_Cape,
+      -- ammo="Aurgelmir Orb +1",
+      -- body=gear.Adhemar_B_body,
+      -- legs="Lustr. Subligar +1",
+      -- feet="Lustra. Leggings +1",
+      -- ear1="Odr Earring",
+      -- ring2="Epaminondas's Ring",
+      -- back=gear.RUN_WS2_Cape,
         })
 
     sets.precast.WS['Dimidiation'].Acc = set_combine(sets.precast.WS['Dimidiation'], {
-        -- ammo="Voluspa Tathlum",
-        -- body=gear.Adhemar_B_body,
-        -- legs="Samnuha Tights",
-        -- feet=gear.Herc_STP_feet,
-        -- ear2="Mache Earring +1",
+      -- ammo="Voluspa Tathlum",
+      -- body=gear.Adhemar_B_body,
+      -- legs="Samnuha Tights",
+      -- feet=gear.Herc_STP_feet,
+      -- ear2="Mache Earring +1",
         })
 
     sets.precast.WS['Dimidiation'].Uncapped = set_combine(sets.precast.WS['Dimidiation'], {
@@ -508,36 +520,35 @@ function init_gear_sets()
         -- feet=gear.Herc_TA_feet,
         })
 
-    sets.precast.WS['Herculean Slash'] = sets.precast.JA['Lunge']
+    sets.precast.WS['Herculean Slash'] = sets.MAB
 
     sets.precast.WS['Shockwave'] = {
-      hands="Meg. Gloves +1",
-        -- ammo="Pemphredo Tathlum",
-        -- head="Aya. Zucchetto +2",
-        -- body="Ayanmo Corazza +2",
-        -- hands="Leyline Gloves",
-        -- legs="Aya. Cosciales +2",
-        -- feet="Aya. Gambieras +2",
-        -- neck="Erra Pendant",
-        -- ear1="Digni. Earring",
-        -- ear2="Moonshade Earring",
-        -- ring1="Metamor. Ring +1",
-        -- ring2="Weather. Ring +1",
-        -- back=gear.RUN_WS1_Cape,
-        -- waist="Acuity Belt +1",
+      -- ammo="Pemphredo Tathlum",
+      -- head="Aya. Zucchetto +2",
+      -- body="Ayanmo Corazza +2",
+      -- hands="Leyline Gloves",
+      -- legs="Aya. Cosciales +2",
+      -- feet="Aya. Gambieras +2",
+      -- neck="Erra Pendant",
+      -- ear1="Digni. Earring",
+      -- ear2="Moonshade Earring",
+      -- ring1="Metamor. Ring +1",
+      -- ring2="Weather. Ring +1",
+      -- back=gear.RUN_WS1_Cape,
+      -- waist="Acuity Belt +1",
         }
 
     sets.precast.WS['Fell Cleave'] = set_combine(sets.precast.WS, {
         -- feet="Lustra. Leggings +1",
         -- ear2="Ishvara Earring",
         -- back=gear.RUN_WS1_Cape,
-        waist="Sailfi Belt +1",
+        -- waist="Sailfi Belt +1",
         })
 
     sets.precast.WS['Fell Cleave'].Acc = set_combine(sets.precast.WS.Acc, {
-        -- ear2="Ishvara Earring",
-        -- back=gear.RUN_WS1_Cape,
-        waist="Sailfi Belt +1",
+      -- ear2="Ishvara Earring",
+      -- back=gear.RUN_WS1_Cape,
+      -- waist="Sailfi Belt +1",
         })
 
     sets.precast.WS['Fell Cleave'].Safe = set_combine(sets.precast.WS, {
