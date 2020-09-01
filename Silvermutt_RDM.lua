@@ -139,9 +139,9 @@ function user_setup()
       send_command('bind ^= gs c scholar dark')
       send_command('bind !- gs c scholar addendum')
       send_command('bind != gs c scholar addendum')
-      send_command('bind ^; gs c scholar speed')
+      send_command('bind ^l gs c scholar speed')
       send_command('bind ![ gs c scholar aoe')
-      send_command('bind !; gs c scholar cost')
+      send_command('bind !l gs c scholar cost')
     elseif player.sub_job == 'NIN' then
       send_command('bind ^numpad0 input /ma "Utsusemi: Ichi" <me>')
       send_command('bind ^numpad. input /ma "Utsusemi: Ni" <me>')
@@ -149,9 +149,14 @@ function user_setup()
 
     send_command('bind ^` input /ma "Temper II" <me>')
     send_command('bind !w input /ma "Flurry II" <stpc>')
-    send_command('bind !e input /ma "Haste II" <stpc>')
-    send_command('bind !\' input /ma "Refresh III" <stpc>')
-    send_command('bind !o input /ma "Phalanx II" <stpc>')
+    send_command('bind !e input /ma "Haste" <stpc>')
+
+    send_command('bind !u input /ma "Blink" <me>')
+    send_command('bind !i input /ma "Stoneskin" <me>')
+    send_command('bind !o input /ma "Phalanx" <me>')
+    send_command('bind !p input /ma "Aquaveil" <me>')
+
+    send_command('bind !\' input /ma "Refresh" <stpc>')
     send_command('bind !; input /ma "Regen II" <stpc>')
     send_command('bind !, input /ma "Blaze Spikes" <me>')
     send_command('bind !. input /ma "Ice Spikes" <me>')
@@ -171,8 +176,8 @@ function user_setup()
     send_command('bind @d gs c toggle NM')
     send_command('bind @w gs c toggle WeaponLock')
     -- send_command('bind @c gs c toggle CP')
-    send_command('bind @e gs c cycleback WeaponSet')
-    send_command('bind @r gs c cycle WeaponSet')
+    -- send_command('bind @e gs c cycleback WeaponSet')
+    -- send_command('bind @r gs c cycle WeaponSet')
 
     send_command('bind ^numpad7 input /ws "Savage Blade" <t>')
     send_command('bind ^numpad9 input /ws "Chant du Cygne" <t>')
@@ -200,9 +205,9 @@ function user_unload()
     send_command('unbind ^=')
     send_command('unbind !-')
     send_command('unbind !=')
-    send_command('unbind ^;')
+    send_command('unbind ^l')
     send_command('unbind ![')
-    send_command('unbind !;')
+    send_command('unbind !l')
     send_command('unbind ^`')
     send_command('unbind !w')
     send_command('unbind !e')
@@ -296,7 +301,7 @@ function init_gear_sets()
         waist="Shinjutsu-no-Obi +1", --5
         })
 
-    sets.midcast.FC.Dispelga = set_combine(sets.precast.FC, {main="Daybreak", sub="Ammurapi Shield", waist="Shinjutsu-no-Obi +1"})
+    sets.precast.FC.Dispelga = set_combine(sets.precast.FC, {main="Daybreak", sub="Ammurapi Shield", waist="Shinjutsu-no-Obi +1"})
     sets.precast.Storm = set_combine(sets.precast.FC, {name="Stikini Ring +1", bag="wardrobe4"})
     sets.precast.FC.Utsusemi = sets.precast.FC.Cure
 
@@ -1580,7 +1585,7 @@ windower.register_event('zone change',
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
     -- Default macro set/book
-    set_macro_page(1, 13)
+    set_macro_page(1, 7)
 end
 
 function set_lockstyle()
