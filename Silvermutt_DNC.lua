@@ -299,7 +299,7 @@ function init_gear_sets()
     back=gear.DNC_TP_DW_Cape
   }
   sets.precast.Jig = {
-    legs="Horos Tights",
+    legs="Horos Tights +3",
     feet="Maxixi Shoes +1"
   }
 
@@ -383,7 +383,7 @@ function init_gear_sets()
     head="Mummu Bonnet +1",
     body="Meghanada Cuirie +2",
     hands="Meghanada Gloves +1",
-    legs="Meghanada Chausses +2",
+    legs="Horos Tights +3",
     feet=gear.Herc_WSD_feet,
     neck="Fotia Gorget",
     waist="Fotia Belt",
@@ -869,7 +869,7 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.buff['Saber Dance'] = {
-    legs="Horos Tights",
+    legs="Horos Tights +3",
   }
   sets.buff['Fan Dance'] = {
     body="Horos Bangles",
