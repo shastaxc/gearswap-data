@@ -388,7 +388,7 @@ function init_gear_sets()
     neck="Fotia Gorget",
     waist="Fotia Belt",
     ear1="Brutal Earring",
-    ear2="Cessance Earring",
+    ear2="Sherida Earring",
     ring1="Ilabrat Ring",
     ring2="Karieyh Ring",
     back=gear.DNC_TP_DA_Cape,
@@ -462,7 +462,7 @@ function init_gear_sets()
     neck="Lissome Necklace",
     waist="Sailfi Belt +1",
     ear1="Suppanomimi",
-    ear2="Cessance Earring",
+    ear2="Sherida Earring",
     ring1="Epona's Ring",
     ring2="Karieyh Ring",
     back=gear.DNC_TP_DW_Cape,
@@ -521,7 +521,7 @@ function init_gear_sets()
     neck="Charis Necklace",
     waist="Sailfi Belt +1",
     ear1="Brutal Earring",
-    ear2="Cessance Earring",
+    ear2="Sherida Earring",
     ring1="Epona's Ring",
     ring2="Rajas Ring",
     back=gear.DNC_TP_DW_Cape,
@@ -573,7 +573,7 @@ function init_gear_sets()
     neck="Charis Necklace", -- 3%
     waist="Sailfi Belt +1",
     ear1="Suppanomimi", -- 5%
-    ear2="Cessance Earring",
+    ear2="Sherida Earring",
     ring1="Epona's Ring",
     ring2="Rajas Ring",
     back=gear.DNC_TP_DW_Cape, -- 10%
@@ -620,7 +620,7 @@ function init_gear_sets()
     neck="Charis Necklace", -- 3%
     waist="Sailfi Belt +1",
     ear1="Suppanomimi", -- 5%
-    ear2="Cessance Earring",
+    ear2="Sherida Earring",
     ring1="Epona's Ring",
     ring2="Rajas Ring",
     back=gear.DNC_TP_DW_Cape, -- 10%
@@ -668,7 +668,7 @@ function init_gear_sets()
     neck="Charis Necklace", -- 3%
     waist="Sailfi Belt +1",
     ear1="Suppanomimi", -- 5%
-    ear2="Cessance Earring",
+    ear2="Sherida Earring",
     ring1="Epona's Ring",
     ring2="Rajas Ring",
     back=gear.DNC_TP_DW_Cape, -- 10%
@@ -716,7 +716,7 @@ function init_gear_sets()
     neck="Charis Necklace", -- 3%
     waist="Sailfi Belt +1",
     ear1="Brutal Earring",
-    ear2="Cessance Earring",
+    ear2="Sherida Earring",
     ring1="Epona's Ring",
     ring2="Rajas Ring",
     back=gear.DNC_TP_DW_Cape, -- 10%
@@ -765,7 +765,7 @@ function init_gear_sets()
     neck="Asperity Necklace",
     waist="Sailfi Belt +1",
     ear1="Brutal Earring",
-    ear2="Cessance Earring",
+    ear2="Sherida Earring",
     ring1="Epona's Ring",
     ring2="Rajas Ring",
     back=gear.DNC_TP_DA_Cape,

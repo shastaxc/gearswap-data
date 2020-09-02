@@ -688,7 +688,7 @@ function init_gear_sets()
       neck="Lissome Necklace",
       waist="Gishdubar Sash",
       ear1="Brutal Earring",
-      ear2="Cessance Earring",
+      ear2="Sherida Earring",
       ring1="Karieyh Ring",
       ring2="Defending Ring",
       back=gear.RUN_HPD_Cape,
@@ -699,8 +699,8 @@ function init_gear_sets()
       feet="Turms Leggings",
       neck="Twilight Torque", --5/5
       waist="Audumbla Sash", --4/0
-      ear1="Ethereal Earring",
-      ear2="Odnowa Earring +1", --0/2
+      ear1="Odnowa Earring +1", --0/2
+      ear2="Sherida Earring",
       ring1=gear.Dark_Ring, --3/5
       ring2="Defending Ring", --10/10
     })
@@ -753,7 +753,7 @@ function init_gear_sets()
       neck="Twilight Torque", --5/5
       waist="Sailfi Belt +1",
       ear1="Brutal Earring",
-      ear2="Cessance Earring",
+      ear2="Sherida Earring",
       ring1=gear.Dark_Ring, --3/5
       ring2="Defending Ring", --10/10
       back=gear.RUN_HPD_Cape, --10/0
@@ -783,8 +783,8 @@ function init_gear_sets()
       feet="Erilaz Greaves", --4/0
       neck="Twilight Torque", --5/5
       waist="Sailfi Belt +1",
-      ear1="Brutal Earring",
-      ear2="Odnowa Earring +1", --0/2
+      ear1="Odnowa Earring +1", --0/2
+      ear2="Sherida Earring",
       ring1=gear.Dark_Ring, --3/5
       ring2="Defending Ring", --10/10
       back=gear.RUN_HPD_Cape, --10/0
@@ -799,8 +799,8 @@ function init_gear_sets()
       feet="Turms Leggings",
       neck="Twilight Torque",
       waist="Sailfi Belt +1",
-      ear1="Ethereal Earring",
-      ear2="Cessance Earring",
+      ear1="Brutal Earring",
+      ear2="Sherida Earring",
       ring1="Epona's Ring",
       ring2="Ayanmo Ring",
       back=gear.RUN_HPD_Cape,
@@ -830,7 +830,7 @@ function init_gear_sets()
       neck="Asperity Necklace",
       waist="Sailfi Belt +1",
       ear1="Brutal Earring",
-      ear2="Cessance Earring",
+      ear2="Sherida Earring",
       ring1="Epona's Ring",
       ring2="Ilabrat Ring",
       back="Atheling Mantle",
