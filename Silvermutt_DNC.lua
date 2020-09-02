@@ -882,7 +882,7 @@ function init_gear_sets()
 
   sets.buff.Doom = {
       neck="Nicander's Necklace", --20
-      ring1={name="Eshmun's Ring", bag="wardrobe3"}, --20
+      ring1="Eshmun's Ring", --20
       ring2={name="Eshmun's Ring", bag="wardrobe4"}, --20
       waist="Gishdubar Sash", --10
       }
