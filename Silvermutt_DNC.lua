@@ -884,8 +884,7 @@ function init_gear_sets()
 
   sets.buff.Doom = {
       neck="Nicander's Necklace", --20
-      ring1="Eshmun's Ring", --20
-      -- ring2={name="Eshmun's Ring", bag="wardrobe4"}, --20
+      ring2="Eshmun's Ring", --20
       waist="Gishdubar Sash", --10
       }
 
@@ -967,12 +966,12 @@ function job_buff_change(buff,gain)
     if gain then
       equip(sets.buff.Doom)
       send_command('@input /p Doomed.')
-      disable('neck', 'ring1','waist')
+      disable('neck', 'ring2','waist')
     else
       if player.hpp > 0 then
         send_command('@input /p Doom Removed.')
       end
-      enable('neck', 'ring1','waist')
+      enable('neck', 'ring2','waist')
       handle_equipping_gear(player.status)
     end
   end

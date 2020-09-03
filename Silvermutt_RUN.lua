@@ -1135,16 +1135,19 @@ function job_buff_change(buff,gain)
     end
 
     if buff == "doom" then
-        if gain then
-            equip(sets.buff.Doom)
-            send_command('@input /p Doomed.')
-             disable('neck','ring1','waist')
-        else
-            enable('neck','ring1','waist')
-            handle_equipping_gear(player.status)
+      if gain then
+        equip(sets.buff.Doom)
+        send_command('@input /p Doomed.')
+        disable('neck', 'ring1','waist')
+      else
+        if player.hpp > 0 then
+          send_command('@input /p Doom Removed.')
         end
+        enable('neck', 'ring1','waist')
+        handle_equipping_gear(player.status)
+      end
     end
-
+  
     if buff == 'Embolden' then
         if gain then
             equip(sets.Embolden)
