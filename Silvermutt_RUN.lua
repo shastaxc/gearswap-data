@@ -742,7 +742,7 @@ function init_gear_sets()
     }
 
     -- Protect V = 0%, PDT cap is 50%
-    -- TODO: Fully augment Odnowa and swap with Cessance, swap Dark Ring for Epona's
+    -- TODO: Fully augment Odnowa and swap with Sherida, swap Dark Ring for Epona's
     sets.defense.PDT = {
       sub="Refined Grip +1", --3/3
       ammo="Staunch Tathlum", --2/2
@@ -809,6 +809,7 @@ function init_gear_sets()
 
     sets.defense.Parry = {
       hands="Turms Mittens",
+      legs="Erilaz Leg Guards",
       feet="Turms Leggings",
         -- hands="Turms Mittens",
         -- legs="Eri. Leg Guards +1",
