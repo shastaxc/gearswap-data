@@ -261,7 +261,7 @@ function init_gear_sets()
     sets.Enmity = {
       ammo="Aqreqaq Bomblet", --2
       head="Highwing Helm", --4
-      feet="Erilaz Greaves", --5
+      feet="Erilaz Greaves +1", --6
       body="Emet Harness +1", --10
       hands="Kurys Gloves", --9
       legs="Erilaz Leg Guards +1", --11
@@ -280,7 +280,7 @@ function init_gear_sets()
         -- ear2="Trux Earring", --5
         -- ring1="Pernicious Ring", --5
         -- waist="Kasiri Belt", --3
-        } --69
+        } --71
 
     sets.Enmity.HP = {
       ammo="Aqreqaq Bomblet", --2
@@ -771,7 +771,7 @@ function init_gear_sets()
         -- ring2="Defending Ring", --10/10
         -- back=gear.RUN_HPD_Cape, --10/0
         -- waist="Engraved Belt",
-        } --50/32
+        } --51 PDT + 5 PDT2 / 33 MDT
 
     -- Shell V = 29%, MDT cap is 50%
     -- TODO: Get Engraved Belt
@@ -782,7 +782,7 @@ function init_gear_sets()
       body="Runeist's Coat +2",
       hands="Turms Mittens",
       legs="Erilaz Leg Guards +1", --7/0
-      feet="Erilaz Greaves", --4/0
+      feet="Erilaz Greaves +1", --5/0
       neck="Twilight Torque", --5/5
       waist="Sailfi Belt +1",
       ear1="Odnowa Earring +1", --0/2
@@ -790,7 +790,7 @@ function init_gear_sets()
       ring1=gear.Dark_Ring, --3/5
       ring2="Defending Ring", --10/10
       back=gear.RUN_HPD_Cape, --10/0
-        } --45 PDT + 5 PDT2 / 29 MDT
+        } --47 PDT + 5 PDT2 / 29 MDT
 
     sets.defense.HP = {
       ammo="Staunch Tathlum",
