@@ -263,7 +263,7 @@ function init_gear_sets()
       feet="Erilaz Greaves", --5
       body="Emet Harness +1", --10
       hands="Kurys Gloves", --9
-      legs="Erilaz Leg Guards", --10
+      legs="Erilaz Leg Guards +1", --11
       neck="Atzintli Necklace", --5
       ear1="Cryptic Earring", --4
       ear2="Fiomisi Earring", --2
@@ -282,18 +282,18 @@ function init_gear_sets()
         } --69
 
     sets.Enmity.HP = {
-        -- ammo="Aqreqaq Bomblet", --2
+      ammo="Aqreqaq Bomblet", --2
         -- head="Halitus Helm", --8
       body="Emet Harness +1", --10
-        -- hands="Kurys Gloves", --9
-      legs="Erilaz Leg Guards", --10
+      hands="Kurys Gloves", --9
+      legs="Erilaz Leg Guards +1", --11
         -- feet="Ahosi Leggings",--7
         -- neck={name="Unmoving Collar +1", priority=1}, --10
-        -- ear1={name="Tuisto Earring", priority=4},
-        -- ear2={name="Odnowa Earring +1", priority=3},
+      ear1="Odnowa Earring +1",
+        -- ear2={name="Tuisto Earring", priority=4},
         -- ring1={name="Moonlight Ring", priority=2},
-        ring2="Supershear Ring", --5
-        back=gear.RUN_HPD_Cape, --10
+      ring2="Supershear Ring", --5
+      back=gear.RUN_HPD_Cape, --10
         -- waist="Kasiri Belt", --3
         }
 
@@ -749,7 +749,7 @@ function init_gear_sets()
       head="Meghanada Visor +1", --4/0
       body="Futhark Coat +1", --7/7
       hands="Turms Mittens",
-      legs="Erilaz Leg Guards", --6/0
+      legs="Erilaz Leg Guards +1", --7/0
       feet="Turms Leggings",
       neck="Twilight Torque", --5/5
       waist="Sailfi Belt +1",
@@ -780,7 +780,7 @@ function init_gear_sets()
       head="Aya. Zucchetto +1", --2/2
       body="Runeist's Coat +2",
       hands="Turms Mittens",
-      legs="Erilaz Leg Guards", --6/0
+      legs="Erilaz Leg Guards +1", --7/0
       feet="Erilaz Greaves", --4/0
       neck="Twilight Torque", --5/5
       waist="Sailfi Belt +1",
@@ -796,7 +796,7 @@ function init_gear_sets()
       head="Aya. Zucchetto +1",
       body="Runeist's Coat +2",
       hands="Turms Mittens",
-      legs="Erilaz Leg Guards", --6/0
+      legs="Erilaz Leg Guards +1", --7/0
       feet="Turms Leggings",
       neck="Twilight Torque",
       waist="Sailfi Belt +1",
@@ -808,9 +808,9 @@ function init_gear_sets()
         }
 
     sets.defense.Parry = {
-      hands="Turms Mittens",
-      legs="Erilaz Leg Guards",
-      feet="Turms Leggings",
+      hands="Turms Mittens", --Parry: Recover HP+75
+      legs="Erilaz Leg Guards +1", --Inquartata+2
+      feet="Turms Leggings", --Inquartata+4
         -- hands="Turms Mittens",
         -- legs="Eri. Leg Guards +1",
         -- feet="Turms Leggings",
