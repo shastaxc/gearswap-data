@@ -265,6 +265,7 @@ function init_gear_sets()
       hands="Kurys Gloves", --9
       legs="Erilaz Leg Guards", --10
       neck="Atzintli Necklace", --5
+      ear1="Cryptic Earring", --4
       ear2="Fiomisi Earring", --2
       ring2="Supershear Ring", --5
       waist="Sulla Belt", --3
@@ -278,7 +279,7 @@ function init_gear_sets()
         -- ear2="Trux Earring", --5
         -- ring1="Pernicious Ring", --5
         -- waist="Kasiri Belt", --3
-        }
+        } --69
 
     sets.Enmity.HP = {
         -- ammo="Aqreqaq Bomblet", --2
