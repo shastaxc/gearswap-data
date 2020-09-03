@@ -353,7 +353,7 @@ function init_gear_sets()
     }
 
     sets.precast.JA['Vivacious Pulse'] = {
-        head="Erilaz Galea",
+        head="Erilaz Galea +1",
         -- legs="Rune. Trousers +3",
         -- neck="Incanter's Torque",
         -- ear1="Beatific Earring",
@@ -607,7 +607,7 @@ function init_gear_sets()
 
     sets.midcast['Enhancing Magic'] = {
         -- main="Pukulatmuj +1",
-      head="Erilaz Galea",
+      head="Erilaz Galea +1",
         -- body="Manasa Chasuble",
       hands="Runeist Mitons",
         -- legs="Carmine Cuisses +1",
@@ -621,7 +621,7 @@ function init_gear_sets()
         }
 
     sets.midcast.EnhancingDuration = {
-      head="Erilaz Galea",
+      head="Erilaz Galea +1",
         -- hands="Regal Gauntlets",
       legs="Futhark Trousers",
         }
@@ -644,7 +644,7 @@ function init_gear_sets()
       -- neck="Sacro Gorget"
     })
     sets.midcast.Refresh = set_combine(sets.midcast.EnhancingDuration, {
-      head="Erilaz Galea",
+      head="Erilaz Galea +1",
       waist="Gishdubar Sash",
     })
     sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {
@@ -681,7 +681,7 @@ function init_gear_sets()
 
     sets.idle = {
       ammo="Homiliary",
-      head="Erilaz Galea",
+      head="Erilaz Galea +1",
       body="Runeist's Coat +2",
       hands="Turms Mittens",
       legs="Rawhide Trousers",
@@ -708,7 +708,7 @@ function init_gear_sets()
 
     sets.idle.Refresh = set_combine(sets.idle, {
       ammo="Homiliary",
-      head="Erilaz Galea",
+      head="Erilaz Galea +1",
       body="Runeist's Coat +2",
       legs="Rawhide Trousers",
         -- ammo="Homiliary",
