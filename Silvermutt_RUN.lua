@@ -166,6 +166,7 @@ function user_setup()
       send_command('bind !w input /ma "Cocoon" <me>')
       send_command('bind !e input /ma "Refueling" <me>')
     elseif player.sub_job == 'WAR' then
+      send_command('bind !w input /ja "Defender" <me>')
       send_command('bind ^numpad/ input /ja "Berserk" <me>')
       send_command('bind ^numpad* input /ja "Warcry" <me>')
       send_command('bind ^numpad- input /ja "Aggressor" <me>')

@@ -153,10 +153,12 @@ function user_setup()
   send_command('bind @c gs c toggle CP')
 
   if player.sub_job == 'WAR' then
+      send_command('bind !w input /ja "Defender" <me>')
       send_command('bind ^numpad/ input /ja "Berserk" <me>')
       send_command('bind ^numpad* input /ja "Warcry" <me>')
       send_command('bind ^numpad- input /ja "Aggressor" <me>')
   elseif player.sub_job == 'SAM' then
+      send_command('bind !w input /ja "Hasso" <me>')
       send_command('bind ^numpad/ input /ja "Meditate" <me>')
       send_command('bind ^numpad* input /ja "Sekkanoki" <me>')
       send_command('bind ^numpad- input /ja "Third Eye" <me>')
