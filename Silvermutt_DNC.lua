@@ -158,10 +158,10 @@ function user_setup()
       send_command('bind ^numpad* input /ja "Warcry" <me>')
       send_command('bind ^numpad- input /ja "Aggressor" <me>')
   elseif player.sub_job == 'SAM' then
-      send_command('bind !w input /ja "Hasso" <me>')
+      send_command('bind !w input /ja "Third Eye" <me>')
       send_command('bind ^numpad/ input /ja "Meditate" <me>')
       send_command('bind ^numpad* input /ja "Sekkanoki" <me>')
-      send_command('bind ^numpad- input /ja "Third Eye" <me>')
+      send_command('bind ^numpad- input /ja "Hasso" <me>')
   elseif player.sub_job == 'THF' then
       send_command('bind ^numpad0 input /ja "Sneak Attack" <me>')
       send_command('bind ^numpad. input /ja "Trick Attack" <me>')
@@ -964,14 +964,17 @@ function job_buff_change(buff,gain)
   --  end
 
   if buff == "doom" then
-      if gain then
-          equip(sets.buff.Doom)
-          send_command('@input /p Doomed.')
-           disable('neck', 'ring1','waist')
-      else
-          enable('neck', 'ring1','waist')
-          handle_equipping_gear(player.status)
+    if gain then
+      equip(sets.buff.Doom)
+      send_command('@input /p Doomed.')
+      disable('neck', 'ring1','waist')
+    else
+      if player.hpp > 0 then
+        send_command('@input /p Doom Removed.')
       end
+      enable('neck', 'ring1','waist')
+      handle_equipping_gear(player.status)
+    end
   end
 
 end

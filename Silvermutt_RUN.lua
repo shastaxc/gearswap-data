@@ -176,10 +176,10 @@ function user_setup()
       send_command('bind ^numpad* input /ja "Arcane Circle" <me>')
       send_command('bind ^numpad- input /ja "Souleater" <me>')
     elseif player.sub_job == 'SAM' then
-      send_command('bind !w input /ja "Hasso" <me>')
+      send_command('bind !w input /ja "Third Eye" <me>')
       send_command('bind ^numpad/ input /ja "Meditate" <me>')
       send_command('bind ^numpad* input /ja "Sekkanoki" <me>')
-      send_command('bind ^numpad- input /ja "Third Eye" <me>')
+      send_command('bind ^numpad- input /ja "Hasso" <me>')
     end
 
     send_command('bind ^numpad7 input /ws "Resolution" <t>')
