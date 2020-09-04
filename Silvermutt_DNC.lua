@@ -567,6 +567,7 @@ function init_gear_sets()
   -- * DNC Job Points DW Gift: 5% DW
 
   -- No Magic/Gear/JA Haste (74% DW to cap, 39% from gear)
+  -- Assuming using Enchufla (4% DW)
   sets.engaged.DW = {
     ammo="Charis Feather",
     head="Maxixi Tiara +2", -- 4%
@@ -577,7 +578,7 @@ function init_gear_sets()
     neck="Charis Necklace", -- 3%
     waist="Sailfi Belt +1",
     ear1="Suppanomimi", -- 5%
-    ear2="Sherida Earring",
+    ear2="Eabani Earring", -- 4%
     ring1="Epona's Ring",
     ring2="Rajas Ring",
     back=gear.DNC_TP_DW_Cape, -- 10%
@@ -614,6 +615,7 @@ function init_gear_sets()
   })
 
   -- Low Magic/Gear/JA Haste (67% DW to cap, 32% from gear)
+  -- Assuming using Enchufla (4% DW)
   sets.engaged.DW.LowHaste = {
     ammo="Charis Feather",
     head="Maxixi Tiara +2", -- 4%
@@ -624,7 +626,7 @@ function init_gear_sets()
     neck="Charis Necklace", -- 3%
     waist="Sailfi Belt +1",
     ear1="Suppanomimi", -- 5%
-    ear2="Sherida Earring",
+    ear2="Eabani Earring", -- 4%
     ring1="Epona's Ring",
     ring2="Rajas Ring",
     back=gear.DNC_TP_DW_Cape, -- 10%
@@ -662,6 +664,7 @@ function init_gear_sets()
   })
 
   -- Mid Magic/Gear/JA Haste (56% DW to cap, 21% from gear)
+  -- Assuming using Enchufla (4% DW)
   sets.engaged.DW.MidHaste = {
     ammo="Charis Feather",
     head="Maxixi Tiara +2", -- 4%
@@ -671,7 +674,7 @@ function init_gear_sets()
     feet="Horos Toe Shoes +3",
     neck="Charis Necklace", -- 3%
     waist="Sailfi Belt +1",
-    ear1="Suppanomimi", -- 5%
+    ear1="Brutal Earring",
     ear2="Sherida Earring",
     ring1="Epona's Ring",
     ring2="Rajas Ring",
@@ -710,6 +713,7 @@ function init_gear_sets()
   })
 
   -- High Magic/Gear/JA Haste (51% DW to cap, 16% from gear)
+  -- Assuming using Enchufla (4% DW)
   sets.engaged.DW.HighHaste = {
     ammo="Charis Feather",
     head="Maxixi Tiara +2", -- 4%
@@ -717,7 +721,7 @@ function init_gear_sets()
     hands="Mummu Wrists +2",
     legs="Mummu Kecks +1",
     feet="Horos Toe Shoes +3",
-    neck="Charis Necklace", -- 3%
+    neck="Asperity Necklace",
     waist="Sailfi Belt +1",
     ear1="Brutal Earring",
     ear2="Sherida Earring",
