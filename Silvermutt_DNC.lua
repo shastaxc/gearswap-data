@@ -331,6 +331,7 @@ function init_gear_sets()
     legs="Mummu Kecks +1",
     feet="Mummu Gamashes +1",
     neck="Love Torque",
+    ear1="Digni. Earring",
     ring1="Balrahn's Ring",
     ring2=gear.Dark_Ring,
   } -- Magic Accuracy

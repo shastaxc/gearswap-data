@@ -532,7 +532,7 @@ function init_gear_sets()
       -- legs="Aya. Cosciales +2",
       -- feet="Aya. Gambieras +2",
       -- neck="Erra Pendant",
-      -- ear1="Digni. Earring",
+      ear1="Digni. Earring",
       -- ear2="Moonshade Earring",
       -- ring1="Metamor. Ring +1",
       -- ring2="Weather. Ring +1",
