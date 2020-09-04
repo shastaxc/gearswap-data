@@ -514,7 +514,7 @@ function init_gear_sets()
 
     sets.precast.WS['Dimidiation'].Uncapped = set_combine(sets.precast.WS['Dimidiation'], {
         -- neck="Caro Necklace",
-        -- waist="Grunfeld Rope",
+        waist="Grunfeld Rope",
         })
 
     sets.precast.WS['Dimidiation'].Safe = set_combine(sets.precast.WS['Dimidiation'], {

@@ -423,6 +423,7 @@ function init_gear_sets()
   }) -- 50% DEX
 
   sets.precast.WS['Rudra\'s Storm'] = set_combine(sets.precast.WS, {
+    waist="Grunfeld Rope",
   }) -- 80% DEX
 
   sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
