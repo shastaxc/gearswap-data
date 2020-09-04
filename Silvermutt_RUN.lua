@@ -618,8 +618,8 @@ function init_gear_sets()
         -- ring1={name="Stikini Ring +1", bag="wardrobe3"},
         -- ring2={name="Stikini Ring +1", bag="wardrobe4"},
         -- back="Merciful Cape",
-        -- waist="Olympus Sash",
-        }
+      waist="Olympus Sash",
+    }
 
     sets.midcast.EnhancingDuration = {
       head="Erilaz Galea +1",
