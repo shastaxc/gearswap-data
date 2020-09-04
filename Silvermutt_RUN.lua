@@ -699,16 +699,22 @@ function init_gear_sets()
       back=gear.RUN_HPD_Cape,
         }
 
-    sets.idle.DT = set_combine(sets.idle, {
-      head="Aya. Zucchetto +1", --2/2
-      feet="Turms Leggings",
+    sets.idle.DT = {
+      sub="Refined Grip +1", --3/3
+      ammo="Staunch Tathlum", --2/2
+      head="Meghanada Visor +1", --4/0
+      body="Runeist's Coat +2",
+      hands="Turms Mittens",
+      legs="Erilaz Leg Guards +1", --7/0
+      feet="Erilaz Greaves +1", --5/0
       neck="Twilight Torque", --5/5
-      waist="Audumbla Sash", --4/0
+      waist="Gishdubar Sash",
       ear1="Odnowa Earring +1", --0/2
-      ear2="Sherida Earring",
-      ring1=gear.Dark_Ring, --3/5
+      ear2="Ethereal Earring",
+      ring1="Ayanmo Ring", --3/3
       ring2="Defending Ring", --10/10
-    })
+      back=gear.RUN_HPD_Cape, --10/0
+    } -- 49 / 25
 
     sets.idle.Refresh = set_combine(sets.idle, {
       ammo="Homiliary",
