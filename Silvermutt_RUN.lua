@@ -370,11 +370,14 @@ function init_gear_sets()
     sets.precast.FC = {
       ammo="Impatiens",
       head="Runeist Bandeau", --10
+      body=gear.Taeon_FC_body, --9
+      hands=gear.Taeon_FC_hands, --5
       legs="Ayanmo cosciales +1", --5
+      feet=gear.Taeon_FC_feet, --5
       ring2="Prolix Ring", --2
         -- ammo="Sapience Orb", --2
         -- head="Rune. Bandeau +3", --14
-        -- body=gear.Taeon_FC_body, --8
+        -- body=gear.Taeon_FC_body, --9
         -- hands="Leyline Gloves", --8
         -- legs="Aya. Cosciales +2", --6
         -- feet="Carmine Greaves +1", --8
@@ -634,10 +637,10 @@ function init_gear_sets()
     sets.midcast['Phalanx'] = set_combine(sets.midcast.SpellInterrupt, {
         -- main="Deacon Sword", --4
         head="Futhark Bandeau +1", --4
-        -- body=gear.Taeon_Phalanx_body, --3(10)
-        -- hands=gear.Taeon_Phalanx_hands, --3(10)
-        -- legs=gear.Taeon_Phalanx_legs, --3(10)
-        -- feet=gear.Taeon_Phalanx_feet, --3(10)
+        body=gear.Taeon_Phalanx_body, --3
+        hands=gear.Taeon_Phalanx_hands, --3
+        legs=gear.Taeon_Phalanx_legs, --3
+        feet=gear.Taeon_Phalanx_feet, --3
         })
 
     sets.midcast['Aquaveil'] = set_combine(sets.midcast['Enhancing Magic'], sets.midcast.SpellInterrupt, {
