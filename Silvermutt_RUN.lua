@@ -268,6 +268,7 @@ function init_gear_sets()
       neck="Atzintli Necklace", --5
       ear1="Cryptic Earring", --4
       ear2="Fiomisi Earring", --2
+      ring1="Pernicious Ring", --5
       ring2="Supershear Ring", --5
       waist="Sulla Belt", --3
       back=gear.RUN_HPD_Cape, --10
