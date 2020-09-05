@@ -415,6 +415,7 @@ function init_gear_sets()
   }) -- AGI
 
   sets.precast.WS['Pyrrhic Kleos'] = set_combine(sets.precast.WS, {
+    hands="Adhemar Wristbands +1",
     ring1="Ilabrat Ring",
     ring2="Rajas Ring",
   }) -- 40% STR / 40% DEX
@@ -460,7 +461,7 @@ function init_gear_sets()
     ammo="Charis Feather",
     head="Maxixi Tiara +2",
     body="Horos Casaque +3",
-    hands="Mummu Wrists +2",
+    hands="Adhemar Wristbands +1",
     legs="Mummu Kecks +1",
     feet="Skadi's Jambeaux +1",
     neck="Lissome Necklace",
@@ -519,7 +520,7 @@ function init_gear_sets()
     ammo="Charis Feather",
     head="Maxixi Tiara +2",
     body="Horos Casaque +3",
-    hands="Mummu Wrists +2",
+    hands="Adhemar Wristbands +1",
     legs="Mummu Kecks +1",
     feet="Horos Toe Shoes +3",
     neck="Charis Necklace",
@@ -572,7 +573,7 @@ function init_gear_sets()
     ammo="Charis Feather",
     head="Maxixi Tiara +2", -- 4%
     body="Horos Casaque +3",
-    hands="Mummu Wrists +2",
+    hands="Adhemar Wristbands +1",
     legs="Mummu Kecks +1",
     feet="Horos Toe Shoes +3",
     neck="Charis Necklace", -- 3%
@@ -620,7 +621,7 @@ function init_gear_sets()
     ammo="Charis Feather",
     head="Maxixi Tiara +2", -- 4%
     body="Horos Casaque +3",
-    hands="Mummu Wrists +2",
+    hands="Adhemar Wristbands +1",
     legs="Mummu Kecks +1",
     feet="Horos Toe Shoes +3",
     neck="Charis Necklace", -- 3%
@@ -669,7 +670,7 @@ function init_gear_sets()
     ammo="Charis Feather",
     head="Maxixi Tiara +2", -- 4%
     body="Horos Casaque +3",
-    hands="Mummu Wrists +2",
+    hands="Adhemar Wristbands +1",
     legs="Mummu Kecks +1",
     feet="Horos Toe Shoes +3",
     neck="Charis Necklace", -- 3%
@@ -718,7 +719,7 @@ function init_gear_sets()
     ammo="Charis Feather",
     head="Maxixi Tiara +2", -- 4%
     body="Horos Casaque +3",
-    hands="Mummu Wrists +2",
+    hands="Adhemar Wristbands +1",
     legs="Mummu Kecks +1",
     feet="Horos Toe Shoes +3",
     neck="Asperity Necklace",
@@ -767,7 +768,7 @@ function init_gear_sets()
     ammo="Charis Feather",
     head="Mummu Bonnet +1",
     body="Horos Casaque +3",
-    hands="Mummu Wrists +2",
+    hands="Adhemar Wristbands +1",
     legs="Mummu Kecks +1",
     feet="Horos Toe Shoes +3",
     neck="Asperity Necklace",
@@ -820,9 +821,6 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.engaged.Hybrid = {
-    ammo="Staunch Tathlum",
-    legs="Mummu Kecks +1",
-    hands="Turms Mittens",
     neck="Twilight Torque",
     ring1=gear.Dark_Ring,
     ring2="Defending Ring", --10/10

@@ -837,7 +837,7 @@ function init_gear_sets()
       ammo="Seething Bomblet",
       head="Meghanada Visor +1",
       body="Ayanmo Corazza +1",
-      hands="Meghanada Gloves +1",
+      hands="Adhemar Wristbands +1",
       legs="Meghanada Chausses +2",
       feet=gear.Herc_Temp_feet,
       neck="Asperity Necklace",
