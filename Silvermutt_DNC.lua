@@ -415,7 +415,7 @@ function init_gear_sets()
   }) -- AGI
 
   sets.precast.WS['Pyrrhic Kleos'] = set_combine(sets.precast.WS, {
-    hands="Adhemar Wristbands +1",
+    hands=gear.Adhemar_A_hands,
     ring1="Ilabrat Ring",
     ring2="Rajas Ring",
   }) -- 40% STR / 40% DEX
@@ -461,7 +461,7 @@ function init_gear_sets()
     ammo="Charis Feather",
     head="Maxixi Tiara +2",
     body="Horos Casaque +3",
-    hands="Adhemar Wristbands +1",
+    hands=gear.Adhemar_A_hands,
     legs="Mummu Kecks +1",
     feet="Skadi's Jambeaux +1",
     neck="Lissome Necklace",
@@ -520,7 +520,7 @@ function init_gear_sets()
     ammo="Charis Feather",
     head="Maxixi Tiara +2",
     body="Horos Casaque +3",
-    hands="Adhemar Wristbands +1",
+    hands=gear.Adhemar_A_hands,
     legs="Mummu Kecks +1",
     feet="Horos Toe Shoes +3",
     neck="Charis Necklace",
@@ -573,7 +573,7 @@ function init_gear_sets()
     ammo="Charis Feather",
     head="Maxixi Tiara +2", -- 4%
     body="Horos Casaque +3",
-    hands="Adhemar Wristbands +1",
+    hands=gear.Adhemar_A_hands,
     legs="Mummu Kecks +1",
     feet="Horos Toe Shoes +3",
     neck="Charis Necklace", -- 3%
@@ -621,7 +621,7 @@ function init_gear_sets()
     ammo="Charis Feather",
     head="Maxixi Tiara +2", -- 4%
     body="Horos Casaque +3",
-    hands="Adhemar Wristbands +1",
+    hands=gear.Adhemar_A_hands,
     legs="Mummu Kecks +1",
     feet="Horos Toe Shoes +3",
     neck="Charis Necklace", -- 3%
@@ -670,7 +670,7 @@ function init_gear_sets()
     ammo="Charis Feather",
     head="Maxixi Tiara +2", -- 4%
     body="Horos Casaque +3",
-    hands="Adhemar Wristbands +1",
+    hands=gear.Adhemar_A_hands,
     legs="Mummu Kecks +1",
     feet="Horos Toe Shoes +3",
     neck="Charis Necklace", -- 3%
@@ -719,7 +719,7 @@ function init_gear_sets()
     ammo="Charis Feather",
     head="Maxixi Tiara +2", -- 4%
     body="Horos Casaque +3",
-    hands="Adhemar Wristbands +1",
+    hands=gear.Adhemar_A_hands,
     legs="Mummu Kecks +1",
     feet="Horos Toe Shoes +3",
     neck="Asperity Necklace",
@@ -768,7 +768,7 @@ function init_gear_sets()
     ammo="Charis Feather",
     head="Mummu Bonnet +1",
     body="Horos Casaque +3",
-    hands="Adhemar Wristbands +1",
+    hands=gear.Adhemar_A_hands,
     legs="Mummu Kecks +1",
     feet="Horos Toe Shoes +3",
     neck="Asperity Necklace",

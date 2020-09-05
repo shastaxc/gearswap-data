@@ -474,7 +474,7 @@ function init_gear_sets()
     sets.precast.WS['Resolution'].Acc = set_combine(sets.precast.WS['Resolution'], {
       -- ammo="Voluspa Tathlum",
       -- head=gear.Adhemar_B_head,
-      -- hands=gear.Adhemar_A_hands,
+      hands=gear.Adhemar_A_hands,
       -- legs="Meg. Chausses +2",
       -- feet=gear.Herc_STP_feet,
       -- ear2="Telos Earring",
@@ -688,7 +688,7 @@ function init_gear_sets()
       ammo="Homiliary",
       head="Erilaz Galea +1",
       body="Runeist's Coat +2",
-      hands="Turms Mittens",
+      hands=gear.Adhemar_A_hands,
       legs="Rawhide Trousers",
       feet="Skadi's Jambeaux +1",
       neck="Lissome Necklace",
@@ -837,7 +837,7 @@ function init_gear_sets()
       ammo="Seething Bomblet",
       head="Meghanada Visor +1",
       body="Ayanmo Corazza +1",
-      hands="Adhemar Wristbands +1",
+      hands=gear.Adhemar_A_hands,
       legs="Meghanada Chausses +2",
       feet=gear.Herc_Temp_feet,
       neck="Asperity Necklace",
@@ -851,7 +851,7 @@ function init_gear_sets()
 
     sets.engaged.LowAcc = set_combine(sets.engaged, {
         -- head="Dampening Tam",
-        -- hands=gear.Adhemar_A_hands,
+        hands=gear.Adhemar_A_hands,
         -- neck="Combatant's Torque",
         -- waist="Ioskeha Belt +1",
         })
@@ -943,7 +943,7 @@ function init_gear_sets()
       waist="Sailfi Belt +1",
         -- head="Aya. Zucchetto +2",
         -- body="Ashera Harness",
-        -- hands=gear.Adhemar_A_hands,
+      hands=gear.Adhemar_A_hands,
         -- legs="Meghanada Chausses +2",
         -- feet=gear.Herc_STP_feet,
         -- neck="Futhark Torque +2",
