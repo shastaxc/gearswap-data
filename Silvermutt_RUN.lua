@@ -370,7 +370,7 @@ function init_gear_sets()
     -- Fast cast sets for spells
     sets.precast.FC = {
       ammo="Impatiens",
-      head="Runeist Bandeau", --10
+      head="Runeist Bandeau +1", --10
       body=gear.Taeon_FC_body, --9
       hands=gear.Taeon_FC_hands, --5
       legs="Ayanmo cosciales +1", --5
@@ -653,7 +653,7 @@ function init_gear_sets()
         })
 
     sets.midcast['Regen'] = set_combine(sets.midcast['Enhancing Magic'], {
-      head="Runeist Bandeau",
+      head="Runeist Bandeau +1",
       -- neck="Sacro Gorget"
     })
     sets.midcast.Refresh = set_combine(sets.midcast.EnhancingDuration, {
