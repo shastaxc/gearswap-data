@@ -2,8 +2,8 @@
 --  Global Keybinds
 -------------------------------------------------------------------------------------------------------------------
 
---  Spells:     [ ALT+, ]           Sneak/Spectral Jig/Silent Oil
---              [ ALT+. ]           Invisible/Prism Powder
+--  Spells:     [ ALT+K ]           Sneak/Spectral Jig/Silent Oil
+--              [ ALT+J ]           Invisible/Prism Powder
 --              [ ALT+Numpad7 ]     Paralyna
 --              [ ALT+Numpad8 ]     Silena
 --              [ ALT+Numpad9 ]     Blindna
