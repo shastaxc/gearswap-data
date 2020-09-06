@@ -433,8 +433,8 @@ function init_gear_sets()
       neck="Fotia Gorget",
       waist="Fotia Belt",
       ear1="Brutal Earring",
-      ear2="Cessance Earring",
-      ring1="Epona's Ring",
+      ear2="Sherida Earring",
+      ring1="Karieyh Ring",
       ring2="Ilabrat Ring",
       back="Atheling Mantle",
       -- ammo="Knobkierrie",
@@ -463,6 +463,7 @@ function init_gear_sets()
         -- ammo="Aurgelmir Orb +1",
         })
 
+    -- 85% STR mod
     sets.precast.WS['Resolution'] = set_combine(sets.precast.WS, {
       -- ammo="Aurgelmir Orb +1",
       -- head="Lustratio Cap +1",
@@ -470,15 +471,16 @@ function init_gear_sets()
       -- hands=gear.Adhemar_B_hands,
       -- legs="Samnuha Tights",
       -- feet="Lustra. Leggings +1",
-      --neck="Futhark Torque +2", -- Remove???
+      -- neck="Futhark Torque +2",
       -- ring1="Epona's Ring",
       -- back=gear.RUN_WS1_Cape,
         })
 
     sets.precast.WS['Resolution'].Acc = set_combine(sets.precast.WS['Resolution'], {
+      hands=gear.Adhemar_A_hands,
       -- ammo="Voluspa Tathlum",
       -- head=gear.Adhemar_B_head,
-      hands=gear.Adhemar_A_hands,
+      -- hands=gear.Adhemar_A_hands,
       -- legs="Meg. Chausses +2",
       -- feet=gear.Herc_STP_feet,
       -- ear2="Telos Earring",
@@ -498,6 +500,7 @@ function init_gear_sets()
       -- feet=gear.Herc_TA_feet,
         })
 
+    -- 80% DEX mod
     sets.precast.WS['Dimidiation'] = set_combine(sets.precast.WS, {
       -- ammo="Aurgelmir Orb +1",
       -- body=gear.Adhemar_B_body,
