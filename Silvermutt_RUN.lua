@@ -618,6 +618,7 @@ function init_gear_sets()
       hands="Runeist Mitons",
       waist="Olympus Sash",
       ear1="Andoaa Earring",
+      ear2="Mimir Earring",
         -- main="Pukulatmuj +1",
         -- head="Erilaz Galea +1",
         -- body="Manasa Chasuble",
