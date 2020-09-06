@@ -366,6 +366,7 @@ function init_gear_sets()
 
   sets.precast.FC = {
     ammo="Impatiens",
+    head=gear.Herc_WSD_head,
     body=gear.Taeon_FC_body,
     hands=gear.Taeon_FC_hands,
     legs="Rawhide Trousers",
