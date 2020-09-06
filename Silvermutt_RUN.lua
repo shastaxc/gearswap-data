@@ -375,7 +375,7 @@ function init_gear_sets()
       hands=gear.Taeon_FC_hands, --5
       legs="Ayanmo cosciales +1", --5
       feet=gear.Taeon_FC_feet, --5
-      ring2="Prolix Ring", --2
+      ring1="Prolix Ring", --2
         -- ammo="Sapience Orb", --2
         -- head="Rune. Bandeau +3", --14
         -- body=gear.Taeon_FC_body, --9
@@ -767,7 +767,7 @@ function init_gear_sets()
       legs="Erilaz Leg Guards +1", --7/0
       feet="Turms Leggings",
       neck="Twilight Torque", --5/5
-      waist="Sailfi Belt +1",
+      waist="Engraved Belt",
       ear1="Brutal Earring",
       ear2="Sherida Earring",
       ring1=gear.Dark_Ring, --3/5
@@ -788,7 +788,6 @@ function init_gear_sets()
         } --51 PDT + 5 PDT2 / 33 MDT
 
     -- Shell V = 29%, MDT cap is 50%
-    -- TODO: Get Engraved Belt
     sets.defense.MDT = {
       sub="Refined Grip +1", --3/3
       ammo="Staunch Tathlum", --2/2
@@ -798,7 +797,7 @@ function init_gear_sets()
       legs="Erilaz Leg Guards +1", --7/0
       feet="Erilaz Greaves +1", --5/0
       neck="Twilight Torque", --5/5
-      waist="Sailfi Belt +1",
+      waist="Engraved Belt",
       ear1="Odnowa Earring +1", --0/2
       ear2="Sherida Earring",
       ring1=gear.Dark_Ring, --3/5
