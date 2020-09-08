@@ -265,7 +265,7 @@ function init_gear_sets()
       body="Emet Harness +1", --10
       hands="Kurys Gloves", --9
       legs="Erilaz Leg Guards +1", --11
-      neck="Atzintli Necklace", --5
+      neck="Futhark Torque +1", --7
       ear1="Cryptic Earring", --4
       ear2="Fiomisi Earring", --2
       ring1="Pernicious Ring", --5
@@ -356,6 +356,7 @@ function init_gear_sets()
 
     sets.precast.JA['Vivacious Pulse'] = {
         head="Erilaz Galea +1",
+        neck="Incanter's Torque",
         -- legs="Rune. Trousers +3",
         -- neck="Incanter's Torque",
         -- ear1="Beatific Earring",
@@ -617,6 +618,7 @@ function init_gear_sets()
       head="Erilaz Galea +1",
       hands="Runeist Mitons",
       waist="Olympus Sash",
+      neck="Incanter's Torque",
       ear1="Andoaa Earring",
       ear2="Mimir Earring",
         -- main="Pukulatmuj +1",
@@ -670,6 +672,7 @@ function init_gear_sets()
 
     sets.midcast['Divine Magic'] = {
       legs="Runeist Trousers",
+      neck="Incanter's Torque",
         -- ammo="Yamarang",
         -- neck="Incanter's Torque",
         -- ring1={name="Stikini Ring +1", bag="wardrobe3"},
