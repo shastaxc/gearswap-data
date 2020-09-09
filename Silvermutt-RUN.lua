@@ -850,7 +850,7 @@ function init_gear_sets()
       hands=gear.Adhemar_A_hands,
       legs="Meghanada Chausses +2",
       feet=gear.Herc_Temp_feet,
-      neck="Asperity Necklace",
+      neck="Anu Torque",
       waist="Sailfi Belt +1",
       ear1="Brutal Earring",
       ear2="Sherida Earring",
