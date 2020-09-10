@@ -191,6 +191,7 @@ function init_gear_sets()
     ------------------------------------------------------------------------------------------------
 
     sets.TreasureHunter = {
+      hands="Plunderer's Armlets +1", --3
         -- head=gear.Herc_TH_head, --2
         -- hands="Plun. Armlets +3", --4
         -- feet="Skulk. Poulaines +1", --3
@@ -281,6 +282,19 @@ function init_gear_sets()
     ------------------------------------------------------------------------------------------------
 
     sets.precast.WS = {
+      ammo="Seething Bomblet",
+      head=gear.Herc_WSD_head,
+      body="Meghanada Cuirie +2",
+      hands="Meghanada Gloves +1",
+      legs="Meghanada Chausses +2",
+      feet=gear.Herc_WSD_feet,
+      neck="Fotia Gorget",
+      waist="Fotia Belt",
+      ear1="Brutal Earring",
+      ear2="Sherida Earring",
+      ring1="Ilabrat Ring",
+      ring2="Karieyh Ring",
+      back="Atheling Mantle",
         -- ammo="Aurgelmir Orb +1",
         -- head=gear.Herc_WSD_head,
         -- body=gear.Herc_WS_body,
@@ -322,6 +336,7 @@ function init_gear_sets()
         })
 
     sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
+      hands="Mummu Wrists +2",
         -- ammo="Yetshila +1",
         -- head=gear.Adhemar_B_head,
         -- body="Pillager's Vest +3",
@@ -395,6 +410,19 @@ function init_gear_sets()
     sets.resting = {}
 
     sets.idle = {
+      ammo="Seething Bomblet",
+      head="Mummu Bonnet +1",
+      body="Mummu Jacket +1",
+      hands=gear.Adhemar_A_hands,
+      legs="Mummu Kecks +1",
+      feet="Skd. Jambeaux +1",
+      neck="Lissome Necklace",
+      waist="Sailfi Belt +1",
+      ear1="Suppanomimi",
+      ear2="Sherida Earring",
+      ring1="Epona's Ring",
+      ring2="Karieyh Ring",
+      back="Atheling Mantle",
         -- ammo="Staunch Tathlum +1",
         -- head="Turms Cap +1",
         -- body="Malignance Tabard",
@@ -456,6 +484,20 @@ function init_gear_sets()
     -- EG: sets.engaged.Dagger.Accuracy.Evasion
 
     sets.engaged = {
+      
+      ammo="Seething Bomblet",
+      head="Mummu Bonnet +1",
+      body="Mummu Jacket +1",
+      hands=gear.Adhemar_A_hands,
+      legs="Mummu Kecks +1",
+      feet="Mummu Gamash. +1",
+      neck="Anu Torque",
+      waist="Sailfi Belt +1",
+      ear1="Suppanomimi",
+      ear2="Sherida Earring",
+      ring1="Epona's Ring",
+      ring2="Karieyh Ring",
+      back="Atheling Mantle",
         -- ammo="Aurgelmir Orb +1",
         -- ammo="Yamarang",
         -- head=gear.Adhemar_B_head,
@@ -505,11 +547,23 @@ function init_gear_sets()
         -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
         })
 
-    -- * DNC Native DW Trait: 30% DW
-    -- * DNC Job Points DW Gift: 5% DW
+    -- * THF Native DW Trait: 30% DW
 
-    -- No Magic Haste (74% DW to cap)
+    -- No Magic Haste (44% DW to cap)
     sets.engaged.DW = {
+      ammo="Seething Bomblet",
+      head="Mummu Bonnet +1",
+      body="Mummu Jacket +1",
+      hands=gear.Adhemar_A_hands,
+      legs="Mummu Kecks +1",
+      feet="Mummu Gamash. +1",
+      neck="Anu Torque",
+      waist="Sailfi Belt +1",
+      ear1="Suppanomimi", -- 5%
+      ear2="Sherida Earring",
+      ring1="Epona's Ring",
+      ring2="Karieyh Ring",
+      back="Atheling Mantle",
         -- ammo="Aurgelmir Orb +1",
         -- ammo="Yamarang",
         -- head=gear.Adhemar_B_head,
@@ -558,8 +612,21 @@ function init_gear_sets()
         -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
         })
 
-    -- 15% Magic Haste (67% DW to cap)
+    -- 15% Magic Haste (37% DW to cap)
     sets.engaged.DW.LowHaste = {
+      ammo="Seething Bomblet",
+      head="Mummu Bonnet +1",
+      body="Mummu Jacket +1",
+      hands=gear.Adhemar_A_hands,
+      legs="Mummu Kecks +1",
+      feet="Mummu Gamash. +1",
+      neck="Anu Torque",
+      waist="Sailfi Belt +1",
+      ear1="Suppanomimi", -- 5%
+      ear2="Sherida Earring",
+      ring1="Epona's Ring",
+      ring2="Karieyh Ring",
+      back="Atheling Mantle",
         -- ammo="Aurgelmir Orb +1",
         -- ammo="Yamarang",
         -- head=gear.Adhemar_B_head,
@@ -607,8 +674,21 @@ function init_gear_sets()
         -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
         })
 
-    -- 30% Magic Haste (56% DW to cap)
+    -- 30% Magic Haste (26% DW to cap)
     sets.engaged.DW.MidHaste = {
+      ammo="Seething Bomblet",
+      head="Mummu Bonnet +1",
+      body="Mummu Jacket +1",
+      hands=gear.Adhemar_A_hands,
+      legs="Mummu Kecks +1",
+      feet="Mummu Gamash. +1",
+      neck="Anu Torque",
+      waist="Sailfi Belt +1",
+      ear1="Suppanomimi", -- 5%
+      ear2="Sherida Earring",
+      ring1="Epona's Ring",
+      ring2="Karieyh Ring",
+      back="Atheling Mantle",
         -- ammo="Aurgelmir Orb +1",
         -- ammo="Yamarang",
         -- head=gear.Adhemar_B_head,
@@ -657,8 +737,21 @@ function init_gear_sets()
         -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
         })
 
-    -- 35% Magic Haste (51% DW to cap)
+    -- 35% Magic Haste (21% DW to cap)
     sets.engaged.DW.HighHaste = {
+      ammo="Seething Bomblet",
+      head="Mummu Bonnet +1",
+      body="Mummu Jacket +1",
+      hands=gear.Adhemar_A_hands,
+      legs="Mummu Kecks +1",
+      feet="Mummu Gamash. +1",
+      neck="Anu Torque",
+      waist="Sailfi Belt +1",
+      ear1="Suppanomimi", -- 5%
+      ear2="Sherida Earring",
+      ring1="Epona's Ring",
+      ring2="Karieyh Ring",
+      back="Atheling Mantle",
         -- ammo="Aurgelmir Orb +1",
         -- ammo="Yamarang",
         -- head=gear.Adhemar_B_head,
@@ -707,8 +800,21 @@ function init_gear_sets()
         -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
         })
 
-    -- 45% Magic Haste (36% DW to cap)
+    -- 45% Magic Haste (6% DW to cap)
     sets.engaged.DW.MaxHaste = {
+      ammo="Seething Bomblet",
+      head="Mummu Bonnet +1",
+      body="Mummu Jacket +1",
+      hands=gear.Adhemar_A_hands,
+      legs="Mummu Kecks +1",
+      feet="Mummu Gamash. +1",
+      neck="Anu Torque",
+      waist="Sailfi Belt +1",
+      ear1="Suppanomimi", -- 5%
+      ear2="Sherida Earring",
+      ring1="Epona's Ring",
+      ring2="Karieyh Ring",
+      back="Atheling Mantle",
         -- ammo="Aurgelmir Orb +1",
         -- head=gear.Adhemar_B_head,
         -- body="Pillager's Vest +3",
@@ -1127,12 +1233,12 @@ function check_moving()
 end
 
 function check_gear()
-    if no_swap_gear:contains(player.equipment.left_ring) then
+    if no_swap_gear:contains(player.equipment.ring1) then
         disable("ring1")
     else
         enable("ring1")
     end
-    if no_swap_gear:contains(player.equipment.right_ring) then
+    if no_swap_gear:contains(player.equipment.ring2) then
         disable("ring2")
     else
         enable("ring2")
@@ -1141,11 +1247,11 @@ end
 
 windower.register_event('zone change',
     function()
-        if no_swap_gear:contains(player.equipment.left_ring) then
+        if no_swap_gear:contains(player.equipment.ring1) then
             enable("ring1")
             equip(sets.idle)
         end
-        if no_swap_gear:contains(player.equipment.right_ring) then
+        if no_swap_gear:contains(player.equipment.ring2) then
             enable("ring2")
             equip(sets.idle)
         end
