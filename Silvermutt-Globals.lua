@@ -218,6 +218,7 @@ function define_global_sets()
     -- Misc.
     gear.Dark_Ring = { name="Dark Ring", augments={'Magic dmg. taken -5%','Phys. dmg. taken -3%','Breath dmg. taken -3%',}}
     gear.Anwig_Salade = { name="Anwig Salade", augments={'CHR+4','"Waltz" ability delay -2','Attack+3','Pet: Damage taken -10%',}}
+    gear.Samnuha = { name="Samnuha Tights", augments={'STR+5','DEX+5','"Triple Atk."+1',}}
 
 end
 

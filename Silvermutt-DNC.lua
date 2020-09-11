@@ -276,7 +276,7 @@ function init_gear_sets()
     ammo="Light Sachet",
     head=gear.Anwig_Salade,
     body="Maxixi Casaque +2",
-    legs="Mummu Kecks +1",
+    legs="Horos Tights +3",
     feet="Charis Shoes +2",
     neck="Soil Gorget",
     waist="Aristo Belt",
@@ -310,7 +310,7 @@ function init_gear_sets()
     head="Maxixi Tiara +2",
     body="Mummu Jacket +1",
     hands="Mummu Wrists +2",
-    legs="Mummu Kecks +1",
+    legs="Meghanada Chausses +2",
     feet="Horos Toe Shoes +3",
     neck="Love Torque",
     ring1="Supershear Ring",
@@ -328,7 +328,7 @@ function init_gear_sets()
     head="Maxixi Tiara +2",
     body="Horos Casaque +3",
     hands="Mummu Wrists +2",
-    legs="Mummu Kecks +1",
+    legs="Meghanada Chausses +2",
     feet="Mummu Gamashes +1",
     neck="Love Torque",
     ear1="Digni. Earring",
@@ -465,7 +465,7 @@ function init_gear_sets()
     head="Maxixi Tiara +2",
     body="Horos Casaque +3",
     hands=gear.Adhemar_A_hands,
-    legs="Mummu Kecks +1",
+    legs=gear.Samnuha,
     feet="Skadi's Jambeaux +1",
     neck="Lissome Necklace",
     waist="Sailfi Belt +1",
@@ -478,7 +478,7 @@ function init_gear_sets()
 
   sets.idle.DT = set_combine(sets.idle, {
     ammo="Staunch Tathlum",
-    legs="Mummu Kecks +1",
+    legs=gear.Samnuha,
     feet="Horos Toe Shoes +3",
     neck="Twilight Torque",
     ring1=gear.Dark_Ring,
@@ -524,7 +524,7 @@ function init_gear_sets()
     head="Maxixi Tiara +2",
     body="Horos Casaque +3",
     hands=gear.Adhemar_A_hands,
-    legs="Mummu Kecks +1",
+    legs=gear.Samnuha,
     feet="Horos Toe Shoes +3",
     neck="Anu Torque",
     waist="Sailfi Belt +1",
@@ -577,7 +577,7 @@ function init_gear_sets()
     head="Maxixi Tiara +2", -- 4%
     body="Horos Casaque +3",
     hands=gear.Adhemar_A_hands,
-    legs="Mummu Kecks +1",
+    legs=gear.Samnuha,
     feet="Horos Toe Shoes +3",
     neck="Charis Necklace", -- 3%
     waist="Sailfi Belt +1",
@@ -625,7 +625,7 @@ function init_gear_sets()
     head="Maxixi Tiara +2", -- 4%
     body="Horos Casaque +3",
     hands=gear.Adhemar_A_hands,
-    legs="Mummu Kecks +1",
+    legs=gear.Samnuha,
     feet="Horos Toe Shoes +3",
     neck="Charis Necklace", -- 3%
     waist="Sailfi Belt +1",
@@ -674,7 +674,7 @@ function init_gear_sets()
     head="Maxixi Tiara +2", -- 4%
     body="Horos Casaque +3",
     hands=gear.Adhemar_A_hands,
-    legs="Mummu Kecks +1",
+    legs=gear.Samnuha,
     feet="Horos Toe Shoes +3",
     neck="Charis Necklace", -- 3%
     waist="Sailfi Belt +1",
@@ -723,7 +723,7 @@ function init_gear_sets()
     head="Maxixi Tiara +2", -- 4%
     body="Horos Casaque +3",
     hands=gear.Adhemar_A_hands,
-    legs="Mummu Kecks +1",
+    legs=gear.Samnuha,
     feet="Horos Toe Shoes +3",
     neck="Anu Torque",
     waist="Sailfi Belt +1",
@@ -772,7 +772,7 @@ function init_gear_sets()
     head="Mummu Bonnet +1",
     body="Horos Casaque +3",
     hands=gear.Adhemar_A_hands,
-    legs="Mummu Kecks +1",
+    legs=gear.Samnuha,
     feet="Horos Toe Shoes +3",
     neck="Anu Torque",
     waist="Sailfi Belt +1",
