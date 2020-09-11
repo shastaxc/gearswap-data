@@ -202,6 +202,7 @@ function init_gear_sets()
 
     sets.TreasureHunter = {
       hands="Plunderer's Armlets +1", --3
+      feet="Skulk. Poulaines +1", --3
         -- head=gear.Herc_TH_head, --2
         -- hands="Plun. Armlets +3", --4
         -- feet="Skulk. Poulaines +1", --3
@@ -246,6 +247,7 @@ function init_gear_sets()
         }
 
     sets.precast.JA['Despoil'] = {
+      feet="Skulk. Poulaines +1",
       -- ammo="Barathrum",
       -- legs="Skulk. Culottes +1",
       -- feet="Skulk. Poulaines +1",
