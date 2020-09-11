@@ -68,6 +68,8 @@ function job_setup()
     state.Buff['Sneak Attack'] = buffactive['sneak attack'] or false
     state.Buff['Trick Attack'] = buffactive['trick attack'] or false
     state.Buff['Feint'] = buffactive['feint'] or false
+    
+    state.MainStep = M{['description']='Main Step', 'Box Step', 'Quickstep', 'Feather Step', 'Stutter Step'}
 
     no_swap_gear = S{"Warp Ring", "Dim. Ring (Dem)", "Dim. Ring (Holla)", "Dim. Ring (Mea)",
         "Trizek Ring", "Echad Ring", "Facility Ring", "Capacity Ring", "Dem Ring", "Empress Band",
@@ -112,13 +114,17 @@ function user_setup()
     send_command('bind ^numlock input /ja "Assassin\'s Charge" <me>')
 
     if player.sub_job == 'WAR' then
-        send_command('bind ^numpad/ input /ja "Berserk" <me>')
-        send_command('bind ^numpad* input /ja "Warcry" <me>')
-        send_command('bind ^numpad- input /ja "Aggressor" <me>')
+      send_command('bind ^numpad/ input /ja "Berserk" <me>')
+      send_command('bind ^numpad* input /ja "Warcry" <me>')
+      send_command('bind ^numpad- input /ja "Aggressor" <me>')
     elseif player.sub_job == 'SAM' then
-        send_command('bind ^numpad/ input /ja "Meditate" <me>')
-        send_command('bind ^numpad* input /ja "Sekkanoki" <me>')
-        send_command('bind ^numpad- input /ja "Third Eye" <me>')
+      send_command('bind ^numpad/ input /ja "Meditate" <me>')
+      send_command('bind ^numpad* input /ja "Sekkanoki" <me>')
+      send_command('bind ^numpad- input /ja "Third Eye" <me>')
+    elseif player.sub_job == 'DNC' then
+      send_command('bind ^- gs c cycleback mainstep')
+      send_command('bind ^= gs c cycle mainstep')
+      send_command('bind numpad0 gs c step t')
     end
 
     send_command('bind ^numpad7 input /ws "Exenterator" <t>')
@@ -166,6 +172,10 @@ function user_unload()
     send_command('unbind ^numpad3')
     send_command('unbind ^numpad0')
     send_command('unbind ^numpad.')
+    
+    send_command('unbind ^-')
+    send_command('unbind ^=')
+    send_command('unbind numpad0')
 
     send_command('unbind #`')
     send_command('unbind #1')
@@ -1114,6 +1124,10 @@ function display_current_job_state(eventArgs)
     if state.Kiting.value then
         msg = msg .. ' Kiting: On |'
     end
+    if player.sub_job == 'DNC' then
+      local s_msg = state.MainStep.current
+      msg = msg ..string.char(31,060).. ' Step: '  ..string.char(31,001)..s_msg.. string.char(31,002)..  ' |'
+    end
 
     add_to_chat(002, '| ' ..string.char(31,210).. 'Melee' ..cf_msg.. ': ' ..string.char(31,001)..m_msg.. string.char(31,002)..  ' |'
         ..string.char(31,207).. ' WS: ' ..string.char(31,001)..ws_msg.. string.char(31,002)..  ' |'
@@ -1147,7 +1161,11 @@ function determine_haste_group()
 end
 
 function job_self_command(cmdParams, eventArgs)
-    gearinfo(cmdParams, eventArgs)
+  if cmdParams[1] == 'step' then
+    send_command('@input /ja "'..state.MainStep.Current..'" <t>')
+  end
+
+  gearinfo(cmdParams, eventArgs)
 end
 
 function gearinfo(cmdParams, eventArgs)
@@ -1181,19 +1199,8 @@ function gearinfo(cmdParams, eventArgs)
     end
 end
 
-
--- Automatically use Presto for steps when it's available and we have less than 3 finishing moves
 function job_pretarget(spell, action, spellMap, eventArgs)
-    if spell.type == 'Step' then
-        local allRecasts = windower.ffxi.get_ability_recasts()
-        local prestoCooldown = allRecasts[236]
-        local under3FMs = not buffactive['Finishing Move 3'] and not buffactive['Finishing Move 4'] and not buffactive['Finishing Move 5']
 
-        if player.main_job_level >= 77 and prestoCooldown < 1 and under3FMs then
-            cast_delay(1.1)
-            send_command('input /ja "Presto" <me>')
-        end
-    end
 end
 
 -- State buff checks that will equip buff gear and mark the event as handled.
