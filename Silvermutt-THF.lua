@@ -111,8 +111,6 @@ function user_setup()
     send_command('bind !` input /ja "Flee" <me>')
     -- send_command('bind @c gs c toggle CP')
 
-    send_command('bind ^numlock input /ja "Assassin\'s Charge" <me>')
-
     if player.sub_job == 'WAR' then
       send_command('bind ^numpad/ input /ja "Berserk" <me>')
       send_command('bind ^numpad* input /ja "Warcry" <me>')
@@ -125,6 +123,7 @@ function user_setup()
       send_command('bind ^- gs c cycleback mainstep')
       send_command('bind ^= gs c cycle mainstep')
       send_command('bind numpad0 gs c step t')
+      send_command('bind ^numlock input /ja "Reverse Flourish" <me>')
     end
 
     send_command('bind ^numpad7 input /ws "Exenterator" <t>')
@@ -159,7 +158,6 @@ function user_unload()
     send_command('unbind @a')
     -- send_command('unbind @c')
     send_command('unbind @r')
-    send_command('unbind ^numlock')
     send_command('unbind ^numpad/')
     send_command('unbind ^numpad*')
     send_command('unbind ^numpad-')
@@ -176,6 +174,7 @@ function user_unload()
     send_command('unbind ^-')
     send_command('unbind ^=')
     send_command('unbind numpad0')
+    send_command('unbind ^numlock')
 
     send_command('unbind #`')
     send_command('unbind #1')
