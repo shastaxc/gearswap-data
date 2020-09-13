@@ -780,21 +780,23 @@ function init_gear_sets()
     ------------------------------------------------------------------------------------------------
 
     sets.idle = {
-        main="Bolelabunga",
-        sub="Sacro Bulwark",
-        ammo="Homiliary",
-        head="Viti. Chapeau +3",
-        body="Jhakri Robe +2",
-        hands="Raetic Bangles +1",
-        legs="Malignance Tights",
-        feet="Malignance Boots",
-        neck="Bathy Choker +1",
-        ear1="Eabani Earring",
-        ear2="Sanare Earring",
-        ring1={name="Stikini Ring +1", bag="wardrobe3"},
-        ring2={name="Stikini Ring +1", bag="wardrobe4"},
-        back="Moonlight Cape",
-        waist="Flume Belt +1",
+      neck="Lissome Necklace",
+      ear1="Infused Earring",
+        -- main="Bolelabunga",
+        -- sub="Sacro Bulwark",
+        -- ammo="Homiliary",
+        -- head="Viti. Chapeau +3",
+        -- body="Jhakri Robe +2",
+        -- hands="Raetic Bangles +1",
+        -- legs="Malignance Tights",
+        -- feet="Malignance Boots",
+        -- neck="Bathy Choker +1",
+        -- ear1="Eabani Earring",
+        -- ear2="Sanare Earring",
+        -- ring1={name="Stikini Ring +1", bag="wardrobe3"},
+        -- ring2={name="Stikini Ring +1", bag="wardrobe4"},
+        -- back="Moonlight Cape",
+        -- waist="Flume Belt +1",
         }
 
     sets.idle.DT = set_combine(sets.idle, {

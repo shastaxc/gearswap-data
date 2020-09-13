@@ -429,7 +429,7 @@ function init_gear_sets()
       feet="Skd. Jambeaux +1",
       neck="Lissome Necklace",
       waist="Sailfi Belt +1",
-      ear1="Suppanomimi",
+      ear1="Infused Earring",
       ear2="Sherida Earring",
       ring1="Epona's Ring",
       ring2="Karieyh Ring",
