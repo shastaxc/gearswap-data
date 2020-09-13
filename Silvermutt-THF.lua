@@ -296,7 +296,7 @@ function init_gear_sets()
       ammo="Seething Bomblet",
       head=gear.Herc_WSD_head,
       body="Meghanada Cuirie +2",
-      hands="Meghanada Gloves +1",
+      hands="Meghanada Gloves +2",
       legs="Meghanada Chausses +2",
       feet=gear.Herc_WSD_feet,
       neck="Fotia Gorget",
