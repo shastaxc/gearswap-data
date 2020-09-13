@@ -422,7 +422,7 @@ function init_gear_sets()
 
     sets.idle = {
       ammo="Seething Bomblet",
-      head="Mummu Bonnet +1",
+      head="Mummu Bonnet +2",
       body="Mummu Jacket +1",
       hands=gear.Adhemar_A_hands,
       legs=gear.Samnuha,
@@ -496,7 +496,7 @@ function init_gear_sets()
 
     sets.engaged = {
       ammo="Seething Bomblet",
-      head="Mummu Bonnet +1",
+      head="Mummu Bonnet +2",
       body="Mummu Jacket +1",
       hands=gear.Adhemar_A_hands,
       legs=gear.Samnuha,
@@ -562,7 +562,7 @@ function init_gear_sets()
     -- No Magic Haste (44% DW to cap)
     sets.engaged.DW = {
       ammo="Seething Bomblet",
-      head="Mummu Bonnet +1",
+      head="Mummu Bonnet +2",
       body="Mummu Jacket +1",
       hands=gear.Adhemar_A_hands,
       legs=gear.Samnuha,
@@ -625,7 +625,7 @@ function init_gear_sets()
     -- 15% Magic Haste (37% DW to cap)
     sets.engaged.DW.LowHaste = {
       ammo="Seething Bomblet",
-      head="Mummu Bonnet +1",
+      head="Mummu Bonnet +2",
       body="Mummu Jacket +1",
       hands=gear.Adhemar_A_hands,
       legs=gear.Samnuha,
@@ -687,7 +687,7 @@ function init_gear_sets()
     -- 30% Magic Haste (26% DW to cap)
     sets.engaged.DW.MidHaste = {
       ammo="Seething Bomblet",
-      head="Mummu Bonnet +1",
+      head="Mummu Bonnet +2",
       body="Mummu Jacket +1",
       hands=gear.Adhemar_A_hands,
       legs=gear.Samnuha,
@@ -750,7 +750,7 @@ function init_gear_sets()
     -- 35% Magic Haste (21% DW to cap)
     sets.engaged.DW.HighHaste = {
       ammo="Seething Bomblet",
-      head="Mummu Bonnet +1",
+      head="Mummu Bonnet +2",
       body="Mummu Jacket +1",
       hands=gear.Adhemar_A_hands,
       legs=gear.Samnuha,
@@ -813,7 +813,7 @@ function init_gear_sets()
     -- 45% Magic Haste (6% DW to cap)
     sets.engaged.DW.MaxHaste = {
       ammo="Seething Bomblet",
-      head="Mummu Bonnet +1",
+      head="Mummu Bonnet +2",
       body="Mummu Jacket +1",
       hands=gear.Adhemar_A_hands,
       legs=gear.Samnuha,

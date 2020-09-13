@@ -286,7 +286,7 @@ function init_gear_sets()
   } -- Waltz Potency/CHR
 
   sets.precast.WaltzSelf = set_combine(sets.precast.Waltz, {
-    head="Mummu Bonnet +1",
+    head="Mummu Bonnet +2",
     body="Maxixi Casaque +2",
     ring1="Asklepian Ring", --(3)
     ear1="Roundel Earring", --5
@@ -774,7 +774,7 @@ function init_gear_sets()
   -- Max Magic/Gear/JA Haste (36% DW to cap, 1% from gear)
   sets.engaged.DW.MaxHaste = {
     ammo="Charis Feather",
-    head="Mummu Bonnet +1",
+    head="Mummu Bonnet +2",
     body="Horos Casaque +3",
     hands=gear.Adhemar_A_hands,
     legs=gear.Samnuha,

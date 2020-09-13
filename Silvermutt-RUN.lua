@@ -438,7 +438,7 @@ function init_gear_sets()
       ear2="Sherida Earring",
       ring1="Karieyh Ring",
       ring2="Ilabrat Ring",
-      back="Atheling Mantle",
+      back=gear.RUN_WS2_Cape,
       -- ammo="Knobkierrie",
       -- head=gear.Herc_WSD_head,
       -- body=gear.Herc_WS_body,
@@ -656,8 +656,11 @@ function init_gear_sets()
         -- main="Nibiru Faussar", --1
         })
 
-    sets.midcast['Regen'] = set_combine(sets.midcast['Enhancing Magic'], {
+    sets.midcast['Regen'] = set_combine(sets.midcast.EnhancingDuration, {
       head="Runeist Bandeau +1",
+      body="Meghanada Cuirie +2",
+      hands="Meghanada Gloves +2",
+      legs="Meghanada Chausses +2",
       -- neck="Sacro Gorget"
     })
     sets.midcast.Refresh = set_combine(sets.midcast.EnhancingDuration, {
@@ -716,7 +719,7 @@ function init_gear_sets()
     sets.idle.DT = {
       sub="Refined Grip +1", --3/3
       ammo="Staunch Tathlum", --2/2
-      head="Meghanada Visor +1", --4/0
+      head="Meghanada Visor +2", --5/0
       body="Runeist's Coat +2",
       hands="Turms Mittens",
       legs="Erilaz Leg Guards +1", --7/0
@@ -728,7 +731,7 @@ function init_gear_sets()
       ring1="Ayanmo Ring", --3/3
       ring2="Defending Ring", --10/10
       back=gear.RUN_HPD_Cape, --10/0
-    } -- 49 / 25
+    } -- 50 / 25
 
     sets.idle.Refresh = set_combine(sets.idle, {
       ammo="Homiliary",
@@ -770,7 +773,7 @@ function init_gear_sets()
     sets.defense.PDT = {
       sub="Refined Grip +1", --3/3
       ammo="Staunch Tathlum", --2/2
-      head="Meghanada Visor +1", --4/0
+      head="Meghanada Visor +2", --5/0
       body="Futhark Coat +1", --7/7
       hands="Turms Mittens",
       legs="Erilaz Leg Guards +1", --7/0
@@ -794,7 +797,7 @@ function init_gear_sets()
         -- ring2="Defending Ring", --10/10
         -- back=gear.RUN_HPD_Cape, --10/0
         -- waist="Engraved Belt",
-        } --51 PDT + 5 PDT2 / 33 MDT
+        } --52 PDT + 5 PDT2 / 33 MDT
 
     -- Shell V = 29%, MDT cap is 50%
     sets.defense.MDT = {
@@ -847,7 +850,7 @@ function init_gear_sets()
     sets.engaged = {
       sub="Tzacab Grip",
       ammo="Seething Bomblet",
-      head="Meghanada Visor +1",
+      head="Meghanada Visor +2",
       body="Ayanmo Corazza +1",
       hands=gear.Adhemar_A_hands,
       legs="Meghanada Chausses +2",
