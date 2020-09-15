@@ -424,7 +424,8 @@ function init_gear_sets()
   }) -- 40% STR / 40% DEX
 
   sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
-    hands="Mummu Wrists +2"
+    hands="Mummu Wrists +2",
+    legs=gear.Lustratio_B_legs,
   }) -- 50% DEX
 
   sets.precast.WS['Rudra\'s Storm'] = set_combine(sets.precast.WS, {

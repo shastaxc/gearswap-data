@@ -507,6 +507,7 @@ function init_gear_sets()
 
     -- 80% DEX mod
     sets.precast.WS['Dimidiation'] = set_combine(sets.precast.WS, {
+      legs="Lustr. Subligar +1",
       -- ammo="Aurgelmir Orb +1",
       -- body=gear.Adhemar_B_body,
       -- legs="Lustr. Subligar +1",

@@ -297,7 +297,7 @@ function init_gear_sets()
       head=gear.Herc_WSD_head,
       body="Meghanada Cuirie +2",
       hands="Meghanada Gloves +2",
-      legs="Meghanada Chausses +2",
+      legs=gear.Lustratio_B_legs,
       feet=gear.Herc_WSD_feet,
       neck="Fotia Gorget",
       waist="Fotia Belt",
@@ -481,6 +481,7 @@ function init_gear_sets()
     sets.defense.MDT = sets.idle.DT
 
     sets.Kiting = {
+      feet="Skadi's Jambeaux +1",
       -- feet="Pill. Poulaines +3",
     }
 
