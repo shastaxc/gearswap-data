@@ -1076,25 +1076,31 @@ function get_custom_wsmode(spell, action, spellMap)
 end
 
 function customize_idle_set(idleSet)
-    -- if state.CP.current == 'on' then
-    --     equip(sets.CP)
-    --     disable('back')
-    -- else
-    --     enable('back')
-    -- end
-    if state.Auto_Kite.value == true then
-       idleSet = set_combine(idleSet, sets.Kiting)
-    end
+  if state.Auto_Kite.value == true then
+     idleSet = set_combine(idleSet, sets.Kiting)
+  end
+  if state.CP.current == 'on' then
+    idleSet = set_combine(idleSet, sets.CP)
+  end
 
-    return idleSet
+  return idleSet
 end
 
 function customize_melee_set(meleeSet)
-    if state.TreasureMode.value == 'Fulltime' then
-        meleeSet = set_combine(meleeSet, sets.TreasureHunter)
-    end
+  if state.TreasureMode.value == 'Fulltime' then
+      meleeSet = set_combine(meleeSet, sets.TreasureHunter)
+  end
+  if state.CP.current == 'on' then
+    meleeSet = set_combine(meleeSet, sets.CP)
+  end
 
-    return meleeSet
+  return meleeSet
+end
+
+function customize_defense_set(defenseSet)
+  if state.CP.current == 'on' then
+    defenseSet = set_combine(defenseSet, sets.CP)
+  end
 end
 
 -- Function to display the current relevant user state when doing an update.
@@ -1129,6 +1135,9 @@ function display_current_job_state(eventArgs)
     if player.sub_job == 'DNC' then
       local s_msg = state.MainStep.current
       msg = msg ..string.char(31,060).. ' Step: '  ..string.char(31,001)..s_msg.. string.char(31,002)..  ' |'
+    end
+    if state.CP.current == 'on' then
+      msg = msg .. ' CP Mode: On |'
     end
 
     add_to_chat(002, '| ' ..string.char(31,210).. 'Melee' ..cf_msg.. ': ' ..string.char(31,001)..m_msg.. string.char(31,002)..  ' |'

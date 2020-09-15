@@ -1326,6 +1326,9 @@ function display_current_job_state(eventArgs)
     if state.DeathResist.value then
       msg = msg .. ' Death Resist: On |'
     end
+    if state.CP.current == 'on' then
+      msg = msg .. ' CP Mode: On |'
+    end
 
     add_to_chat(r_color, string.char(129,121).. '  ' ..string.upper(r_msg).. '  ' ..string.char(129,122)
         ..string.char(31,210).. ' Melee' ..cf_msg.. ': ' ..string.char(31,001)..m_msg.. string.char(31,002).. ' |'

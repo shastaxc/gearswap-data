@@ -1042,6 +1042,9 @@ function customize_idle_set(idleSet)
   if state.Auto_Kite.value == true then
      idleSet = set_combine(idleSet, sets.Kiting)
   end
+  if state.CP.current == 'on' then
+    idleSet = set_combine(idleSet, sets.CP)
+  end
   if world.zone == 'Eastern Adoulin' or world.zone == 'Western Adoulin' then
     idleSet = set_combine(idleSet, sets.idle.Town.Adoulin)
   end
@@ -1056,8 +1059,17 @@ function customize_melee_set(meleeSet)
   if state.ClosedPosition.value == true then
       meleeSet = set_combine(meleeSet, sets.buff['Closed Position'])
   end
+  if state.CP.current == 'on' then
+    meleeSet = set_combine(meleeSet, sets.CP)
+  end
 
   return meleeSet
+end
+
+function customize_defense_set(defenseSet)
+  if state.CP.current == 'on' then
+    defenseSet = set_combine(defenseSet, sets.CP)
+  end
 end
 
 -- Handle auto-targetting based on local setup.
@@ -1103,6 +1115,9 @@ function display_current_job_state(eventArgs)
   local msg = ''
   if state.Kiting.value then
       msg = msg .. ' Kiting: On |'
+  end
+  if state.CP.current == 'on' then
+    msg = msg .. ' CP Mode: On |'
   end
 
   add_to_chat(002, '| ' ..string.char(31,210).. 'Melee' ..cf_msg.. ': ' ..string.char(31,001)..m_msg.. string.char(31,002)..  ' |'
