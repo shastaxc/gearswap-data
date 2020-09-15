@@ -33,6 +33,8 @@
 --              [ CTRL+Numpad5 ]    Rudra's Storm
 --              [ CTRL+Numpad1 ]    Aeolian Edge
 --
+-- Other:       [ ALT+D]            Cancel Invisibility and use key on <t>
+--
 --
 --              (Global-Binds.lua contains additional non-job-related keybinds)
 
@@ -84,7 +86,6 @@ function job_setup()
     info.default_u_ja_ids = S{201, 202, 203, 205, 207}
 
     state.AttackMode = M{['description']='Attack', 'Capped', 'Uncapped'}
-    -- state.CP = M(false, "Capacity Points Mode")
 
     lockstyleset = 5
 end
@@ -100,19 +101,18 @@ function user_setup()
     state.RangedMode:options('Normal', 'Acc')
     state.WeaponskillMode:options('Normal', 'Acc', 'LowBuff')
     state.IdleMode:options('Normal', 'DT')
+    state.CP = M(false, "Capacity Points Mode")
 
     -- Additional local binds
     include('Global-Binds.lua') -- OK to remove this line
-    include('Global-GEO-Binds.lua') -- OK to remove this line
 
     send_command('lua l gearinfo')
 
-    -- Using skeleton keys from Invisible
-    send_command('bind !d input //cancel Invisible; /item "Skeleton Key" <t>')
+    send_command('bind !d gs c usekey')
 
     send_command('bind ^` gs c cycle treasuremode')
     send_command('bind !` input /ja "Flee" <me>')
-    -- send_command('bind @c gs c toggle CP')
+    send_command('bind @c gs c toggle CP')
 
     if player.sub_job == 'WAR' then
       send_command('bind ^numpad/ input /ja "Berserk" <me>')
@@ -160,7 +160,7 @@ function user_unload()
     send_command('unbind !`')
     send_command('unbind ^,')
     send_command('unbind @a')
-    -- send_command('unbind @c')
+    send_command('unbind @c')
     send_command('unbind @r')
     send_command('unbind ^numpad/')
     send_command('unbind ^numpad*')
@@ -831,7 +831,9 @@ function init_gear_sets()
     }
 
     --sets.Reive = {neck="Ygnas's Resolve +1"}
-    -- sets.CP = {back="Mecisto. Mantle"}
+    sets.CP = {
+      back="Aptitude Mantle"
+    }
 
 end
 
@@ -1070,6 +1072,15 @@ end
 function job_self_command(cmdParams, eventArgs)
   if cmdParams[1] == 'step' then
     send_command('@input /ja "'..state.MainStep.Current..'" <t>')
+  elseif cmdParams[1]:lower() == 'usekey' then
+    send_command('cancel Invisible')
+    if has_item('Inventory','Skeleton Key') then
+      send_command('@input /item "Skeleton Key" <t>')
+    elseif has_item('Inventory','Living Key') then
+      send_command('@input /item "Living Key" <t>')
+    elseif has_item('Inventory','Thief\'s Tools') then
+      send_command('@input /item "Thief\'s Tools" <t>')
+    end
   end
 
   gearinfo(cmdParams, eventArgs)
