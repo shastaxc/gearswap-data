@@ -107,6 +107,9 @@ function user_setup()
 
     send_command('lua l gearinfo')
 
+    -- Using skeleton keys from Invisible
+    send_command('bind !d input //cancel Invisible; /item "Skeleton Key" <t>')
+
     send_command('bind ^` gs c cycle treasuremode')
     send_command('bind !` input /ja "Flee" <me>')
     -- send_command('bind @c gs c toggle CP')
@@ -152,6 +155,7 @@ end
 
 -- Called when this job file is unloaded (eg: job change)
 function user_unload()
+    send_command('unbind !d')
     send_command('unbind ^`')
     send_command('unbind !`')
     send_command('unbind ^,')

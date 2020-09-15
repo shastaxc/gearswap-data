@@ -131,6 +131,9 @@ function user_setup()
 
     send_command('lua l gearinfo')
 
+    -- Using skeleton keys from Invisible
+    send_command('bind !d input //cancel Invisible; /item "Skeleton Key" <t>')
+
     send_command('bind !` input /ja "Composure" <me>')
     send_command('bind @` gs c toggle MagicBurst')
 
@@ -199,6 +202,7 @@ end
 
 -- Called when this job file is unloaded (eg: job change)
 function user_unload()
+    send_command('unbind !d')
     send_command('unbind !`')
     send_command('unbind @`')
     send_command('unbind ^-')
