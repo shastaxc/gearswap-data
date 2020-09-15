@@ -43,6 +43,8 @@
 --              [ CTRL+Numpad4 ]    Requiescat
 --              [ CTRL+Numpad1 ]    Sanguine Blade
 --
+-- Other:       [ ALT+D]            Cancel Invisibility and use key on <t>
+--
 --
 --              (Global-Binds.lua contains additional non-job-related keybinds)
 
@@ -131,8 +133,7 @@ function user_setup()
 
     send_command('lua l gearinfo')
 
-    -- Using skeleton keys from Invisible
-    send_command('bind !d input //cancel Invisible; /item "Skeleton Key" <t>')
+    send_command('bind !d gs c usekey')
 
     send_command('bind !` input /ja "Composure" <me>')
     send_command('bind @` gs c toggle MagicBurst')
@@ -1434,6 +1435,11 @@ function job_self_command(cmdParams, eventArgs)
         send_command('@input /ma '..state.BarStatus.value..' <me>')
     elseif cmdParams[1]:lower() == 'gainspell' then
         send_command('@input /ma '..state.GainSpell.value..' <me>')
+    elseif cmdParams[1]:lower() == 'usekey' then
+      send_command('cancel Invisible')
+      if has_item('Inventory','Skeleton Key') then
+        send_command('@input /item "Skeleton Key" <t>')
+      end
     end
 
     gearinfo(cmdParams, eventArgs)

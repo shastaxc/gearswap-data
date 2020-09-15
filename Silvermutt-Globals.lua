@@ -1,3 +1,4 @@
+res = include('resources')
 -------------------------------------------------------------------------------------------------------------------
 -- Modify the sets table.  Any gear sets that are added to the sets table need to
 -- be defined within this function, because sets isn't available until after the
@@ -242,3 +243,15 @@ windower.register_event('zone change',
         end
     end
 )
+
+function has_item(bag_name, item_name)
+  local bag = res.bags:with('en', bag_name)
+  local item = res.items:with('en', item_name)
+  local items_in_bag = windower.ffxi.get_items(bag['id'])
+  for k,v in pairs(items_in_bag) do
+    if type(v)~='number' and type(v)~='boolean' and v['id'] == item['id'] then
+      return true
+    end
+  end
+  return false
+end
