@@ -123,6 +123,7 @@ function user_setup()
     state.MagicalDefenseMode:options('MDT')
 
     state.Knockback = M(false, 'Knockback')
+    state.DeathResist = M(false, 'Death Resist Mode')
 
     -- state.WeaponSet = M{['description']='Weapon Set', 'Epeolatry', 'Lionheart', 'Aettir', 'Lycurgos'}
     state.AttackMode = M{['description']='Attack', 'Uncapped', 'Capped'}
@@ -135,6 +136,8 @@ function user_setup()
     include('Global-Binds.lua') -- OK to remove this line
 
     send_command('lua l gearinfo')
+    
+    send_command('bind @d gs c toggle DeathResist')
 
     send_command('bind numpad0 input //gs c rune')
     send_command('bind !` input /ja "Vivacious Pulse" <me>')
@@ -746,11 +749,6 @@ function init_gear_sets()
         -- ring2={name="Stikini Ring +1", bag="wardrobe4"},
     })
 
-    sets.Kiting = {
-      feet="Skadi's Jambeaux +1",
-      -- legs="Carmine Cuisses +1"
-    }
-
     sets.idle.Town = set_combine(sets.idle, {
       feet="Skadi's Jambeaux +1",
     })
@@ -759,6 +757,15 @@ function init_gear_sets()
       body="Councilor's Garb",
     }
   
+    sets.Kiting = {
+      feet="Skadi's Jambeaux +1",
+      -- legs="Carmine Cuisses +1"
+    }
+
+    sets.DeathResist = {
+      ring2="Warden's Ring",
+    }
+
 
     ------------------------------------------------------------------------------------------------
     ---------------------------------------- Defense Sets ------------------------------------------
@@ -842,6 +849,8 @@ function init_gear_sets()
         -- feet="Turms Leggings",
         -- back=gear.RUN_HPP_Cape,
         }
+
+    sets.defense.DeathResist = set_combine(sets.DeathResist, {})
 
     ------------------------------------------------------------------------------------------------
     ---------------------------------------- Engaged Sets ------------------------------------------
@@ -1128,19 +1137,6 @@ end
 -- Job-specific hooks for non-casting events.
 -------------------------------------------------------------------------------------------------------------------
 
--- Called when the player's status changes.
-function job_state_change(field, new_value, old_value)
-    classes.CustomDefenseGroups:clear()
-    classes.CustomDefenseGroups:append(state.Charm.current)
-    classes.CustomDefenseGroups:append(state.Knockback.current)
-    classes.CustomDefenseGroups:append(state.Death.current)
-
-    classes.CustomMeleeGroups:clear()
-    classes.CustomMeleeGroups:append(state.Charm.current)
-    classes.CustomMeleeGroups:append(state.Knockback.current)
-    classes.CustomMeleeGroups:append(state.Death.current)
-end
-
 -- Called when a player gains or loses a buff.
 -- buff == buff gained or lost
 -- gain == true if the buff was gained, false if it was lost.
@@ -1203,7 +1199,7 @@ function job_state_change(stateField, newValue, oldValue)
     else
         enable('main','sub')
     end
-
+    
     -- equip(sets[state.WeaponSet.current])
 
 end
@@ -1231,14 +1227,11 @@ function customize_idle_set(idleSet)
     if state.Knockback.value == true then
         idleSet = set_combine(idleSet, sets.defense.Knockback)
     end
-    if state.CP.current == 'on' then
-       equip(sets.CP)
-       disable('back')
-    else
-       enable('back')
-    end
     if state.Auto_Kite.value == true then
        idleSet = set_combine(idleSet, sets.Kiting)
+    end
+    if state.CP.current == 'on' then
+      idleSet = set_combine(idleSet, sets.CP)
     end
     if world.zone == 'Eastern Adoulin' or world.zone == 'Western Adoulin' then
       idleSet = set_combine(idleSet, sets.idle.Town.Adoulin)
@@ -1260,6 +1253,12 @@ function customize_melee_set(meleeSet)
     if state.Knockback.value == true then
         meleeSet = set_combine(meleeSet, sets.defense.Knockback)
     end
+    if state.DeathResist.value == true then
+      meleeSet = set_combine(meleeSet, sets.DeathResist)
+    end
+    if state.CP.current == 'on' then
+      meleeSet = set_combine(meleeSet, sets.CP)
+    end
 
     return meleeSet
 end
@@ -1270,6 +1269,12 @@ function customize_defense_set(defenseSet)
     end
     if state.Knockback.value == true then
         defenseSet = set_combine(defenseSet, sets.defense.Knockback)
+    end
+    if state.DeathResist.value == true then
+      defenseSet = set_combine(defenseSet, sets.defense.DeathResist)
+    end
+    if state.CP.current == 'on' then
+      defenseSet = set_combine(defenseSet, sets.CP)
     end
 
     return defenseSet
@@ -1316,6 +1321,9 @@ function display_current_job_state(eventArgs)
     end
     if state.Kiting.value then
         msg = msg .. ' Kiting: On |'
+    end
+    if state.DeathResist.value then
+      msg = msg .. ' Death Resist: On |'
     end
 
     add_to_chat(r_color, string.char(129,121).. '  ' ..string.upper(r_msg).. '  ' ..string.char(129,122)
