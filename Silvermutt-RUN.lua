@@ -604,8 +604,12 @@ function init_gear_sets()
         } -- +10% from merit points
 
     sets.midcast.Cure = {
+      ammo="Staunch Tathlum",
+      legs="Aya. Cosciales +2",
+      ring2="Defending Ring",
+      waist="Gishdubar Sash", --(10)
         -- sub="Mensch Strap +1",
-        ammo="Staunch Tathlum",
+        -- ammo="Staunch Tathlum",
         -- head="Fu. Bandeau +3",
         -- body="Vrikodara Jupon", -- 13
         -- hands="Buremte Gloves", --(13)
@@ -615,14 +619,15 @@ function init_gear_sets()
         -- ear1="Roundel Earring", -- 5
         -- ear2="Mendi. Earring", -- 5
         -- ring1="Lebeche Ring", -- 3
-        ring2="Defending Ring",
+        -- ring2="Defending Ring",
         -- back="Solemnity Cape", -- 7
-        waist="Gishdubar Sash", --(10)
+        -- waist="Gishdubar Sash", --(10)
         }
 
     sets.midcast['Enhancing Magic'] = {
       head="Erilaz Galea +1",
       hands="Runeist Mitons",
+      legs="Carmine Cuisses +1",
       waist="Olympus Sash",
       neck="Incanter's Torque",
       ear1="Andoaa Earring",
@@ -759,8 +764,7 @@ function init_gear_sets()
     }
   
     sets.Kiting = {
-      feet="Skadi's Jambeaux +1",
-      -- legs="Carmine Cuisses +1"
+      legs="Carmine Cuisses +1",
     }
 
     sets.DeathResist = {
@@ -891,6 +895,7 @@ function init_gear_sets()
 
     sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
       neck="Lissome Necklace",
+      legs="Carmine Cuisses +1",
         -- ammo="C. Palug Stone",
         -- head="Carmine Mask +1",
         -- body="Carm. Sc. Mail +1",
@@ -933,7 +938,7 @@ function init_gear_sets()
       ammo="Staunch Tathlum", --2/2
       head="Aya. Zucchetto +2", --3/3
       body="Meghanada Cuirie +2", --8/0
-      legs="Meghanada Chausses +2", --6/0
+      legs="Carmine Cuisses +1", --6/0
       neck="Twilight Torque", --5/5
       ring2="Defending Ring", --10/10
       back=gear.RUN_HPD_Cape, --10/0
@@ -942,7 +947,7 @@ function init_gear_sets()
         -- ring1="Moonlight Ring", --5/5
         -- ring2="Defending Ring", --10/10
         -- back=gear.RUN_TP_Cape, --10/0
-        } --47 PDT + 5 PDT2 / 23 MDT
+        } --41 PDT + 5 PDT2 / 23 MDT
 
     sets.engaged.DT = set_combine(sets.engaged, sets.Hybrid)
     sets.engaged.LowAcc.DT = set_combine(sets.engaged.LowAcc, sets.Hybrid)
