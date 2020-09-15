@@ -197,7 +197,7 @@ function user_setup()
     select_default_macro_book()
     set_lockstyle()
 
-    state.Auto_Kite = M(false, 'Auto_Kite')
+    -- state.Auto_Kite = M(false, 'Auto_Kite')
     moving = false
 end
 
@@ -714,8 +714,8 @@ function init_gear_sets()
       head="Erilaz Galea +1",
       body="Runeist's Coat +2",
       hands=gear.Adhemar_A_hands,
-      legs="Rawhide Trousers",
-      feet="Skadi's Jambeaux +1",
+      legs="Carmine Cuisses +1",
+      feet="Erilaz Greaves +1",
       neck="Lissome Necklace",
       waist="Gishdubar Sash",
       ear1="Infused Earring",
@@ -1233,9 +1233,9 @@ function customize_idle_set(idleSet)
     if state.Knockback.value == true then
         idleSet = set_combine(idleSet, sets.defense.Knockback)
     end
-    if state.Auto_Kite.value == true then
-       idleSet = set_combine(idleSet, sets.Kiting)
-    end
+    -- if state.Auto_Kite.value == true then
+    --    idleSet = set_combine(idleSet, sets.Kiting)
+    -- end
     if state.CP.current == 'on' then
       idleSet = set_combine(idleSet, sets.CP)
     end
@@ -1400,13 +1400,13 @@ function gearinfo(cmdParams, eventArgs)
 end
 
 function check_moving()
-    if state.DefenseMode.value == 'None'  and state.Kiting.value == false then
-        if state.Auto_Kite.value == false and moving then
-            state.Auto_Kite:set(true)
-        elseif state.Auto_Kite.value == true and moving == false then
-            state.Auto_Kite:set(false)
-        end
-    end
+    -- if state.DefenseMode.value == 'None'  and state.Kiting.value == false then
+    --     if state.Auto_Kite.value == false and moving then
+    --         state.Auto_Kite:set(true)
+    --     elseif state.Auto_Kite.value == true and moving == false then
+    --         state.Auto_Kite:set(false)
+    --     end
+    -- end
 end
 
 function update_weapons()
