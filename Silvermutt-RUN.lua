@@ -526,11 +526,12 @@ function init_gear_sets()
         })
 
     sets.precast.WS['Dimidiation'].Uncapped = set_combine(sets.precast.WS['Dimidiation'], {
-        -- neck="Caro Necklace",
+        neck="Caro Necklace",
         waist="Grunfeld Rope",
         })
 
     sets.precast.WS['Dimidiation'].Safe = set_combine(sets.precast.WS['Dimidiation'], {
+      legs="Lustr. Subligar +1",
         -- legs="Lustr. Subligar +1",
         -- feet=gear.Herc_TA_feet,
         })
