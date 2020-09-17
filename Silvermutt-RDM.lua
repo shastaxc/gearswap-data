@@ -100,7 +100,7 @@ function job_setup()
         'Temper', 'Temper II', 'Enfire', 'Enfire II', 'Enblizzard', 'Enblizzard II', 'Enaero', 'Enaero II',
         'Enstone', 'Enstone II', 'Enthunder', 'Enthunder II', 'Enwater', 'Enwater II'}
 
-    lockstyleset = 14
+    lockstyleset = 4
 end
 
 
@@ -1490,7 +1490,7 @@ function job_self_command(cmdParams, eventArgs)
     elseif cmdParams[1]:lower() == 'gainspell' then
         send_command('@input /ma '..state.GainSpell.value..' <me>')
     elseif cmdParams[1]:lower() == 'usekey' then
-      send_command('cancel Invisible')
+      send_command('cancel Invisible; cancel Hide; cancel Gestation')
       if has_item('Inventory','Skeleton Key') then
         send_command('@input /item "Skeleton Key" <t>')
       end
