@@ -459,6 +459,12 @@ function init_gear_sets()
         }
 
     sets.midcast.Cure = {
+      head="Ayanmo Zucchetto +2",
+      body="Ayanmo Corazza +1",
+      hands="Ayanmo Manopolas +1",
+      legs="Carmine Cuisses +1",
+      feet="Ayanmo Gambieras +1",
+      neck="Incanter's Torque",
         -- main="Daybreak", --30
         -- sub="Sors Shield", --3/(-5)
         -- ammo="Esper Stone +1", --0/(-5)
@@ -484,6 +490,7 @@ function init_gear_sets()
         })
 
     sets.midcast.CureSelf = set_combine(sets.midcast.Cure, {
+      waist="Gishdubar Sash", -- (10)
         -- neck="Phalaina Locket", -- 4(4)
         -- ring2="Asklepian Ring", -- (3)
         -- waist="Gishdubar Sash", -- (10)
