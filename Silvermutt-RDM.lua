@@ -160,7 +160,7 @@ function user_setup()
     send_command('bind !o input /ma "Phalanx II" <stpc>')
     send_command('bind !p input /ma "Aquaveil" <me>')
 
-    send_command('bind !\' input /ma "Refresh" <stpc>')
+    send_command('bind !\' input /ma "Refresh II" <stpc>')
     send_command('bind !; input /ma "Regen II" <stpc>')
     send_command('bind !, input /ma "Blaze Spikes" <me>')
     send_command('bind !. input /ma "Ice Spikes" <me>')
