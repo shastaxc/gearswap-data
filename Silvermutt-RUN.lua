@@ -137,6 +137,8 @@ function user_setup()
 
     send_command('lua l gearinfo')
     
+    send_command('bind !s gs c faceaway')
+
     send_command('bind @d gs c toggle DeathResist')
 
     send_command('bind numpad0 input //gs c rune')
@@ -202,6 +204,8 @@ function user_setup()
 end
 
 function user_unload()
+  send_command('unbind !s')
+
     send_command('unbind ^`')
     send_command('unbind !`')
     send_command('unbind ^f11')
@@ -1382,6 +1386,8 @@ function job_self_command(cmdParams, eventArgs)
     gearinfo(cmdParams, eventArgs)
     if cmdParams[1]:lower() == 'rune' then
         send_command('@input /ja '..state.Runes.value..' <me>')
+    elseif cmdParams[1]:lower() == 'faceaway' then
+      windower.ffxi.turn(player.facing - math.pi);
     end
 end
 

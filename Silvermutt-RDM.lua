@@ -133,6 +133,7 @@ function user_setup()
 
     send_command('lua l gearinfo')
 
+    send_command('bind !s gs c faceaway')
     send_command('bind !d gs c usekey')
 
     send_command('bind !` input /ja "Composure" <me>')
@@ -203,7 +204,8 @@ end
 
 -- Called when this job file is unloaded (eg: job change)
 function user_unload()
-    send_command('unbind !d')
+  send_command('unbind !s')
+  send_command('unbind !d')
     send_command('unbind !`')
     send_command('unbind @`')
     send_command('unbind ^-')
@@ -1494,6 +1496,8 @@ function job_self_command(cmdParams, eventArgs)
       if has_item('Inventory','Skeleton Key') then
         send_command('@input /item "Skeleton Key" <t>')
       end
+    elseif cmdParams[1]:lower() == 'faceaway' then
+      windower.ffxi.turn(player.facing - math.pi);
     end
 
     gearinfo(cmdParams, eventArgs)

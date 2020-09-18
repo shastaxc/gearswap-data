@@ -137,6 +137,8 @@ function user_setup()
 
   send_command('lua l gearinfo')
 
+  send_command('bind !s gs c faceaway')
+
   send_command('bind @w gs c toggle WeaponLock')
 
   send_command('bind ^- gs c cycleback mainstep')
@@ -196,6 +198,8 @@ end
 
 -- Called when this job file is unloaded (eg: job change)
 function user_unload()
+  send_command('unbind !s')
+
   send_command('unbind ^-')
   send_command('unbind ^=')
   send_command('unbind !-')
@@ -1171,6 +1175,8 @@ function job_self_command(cmdParams, eventArgs)
       end
 
       send_command('@input /ja "'..doStep..'" <t>')
+  elseif cmdParams[1]:lower() == 'faceaway' then
+    windower.ffxi.turn(player.facing - math.pi);
   end
 
   gearinfo(cmdParams, eventArgs)
