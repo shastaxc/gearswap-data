@@ -738,14 +738,14 @@ function init_gear_sets()
       hands="Turms Mittens",
       legs="Erilaz Leg Guards +1", --7/0
       feet="Erilaz Greaves +1", --5/0
-      neck="Twilight Torque", --5/5
+      neck="Futhark Torque +1", --4/4
       waist="Gishdubar Sash",
       ear1="Odnowa Earring +1", --0/2
       ear2="Ethereal Earring",
       ring1="Ayanmo Ring", --3/3
       ring2="Defending Ring", --10/10
       back=gear.RUN_HPD_Cape, --10/0
-    } -- 50 / 25
+    } -- 49 / 24
 
     sets.idle.Refresh = set_combine(sets.idle, {
       ammo="Homiliary",
@@ -795,7 +795,7 @@ function init_gear_sets()
       hands="Turms Mittens",
       legs="Erilaz Leg Guards +1", --7/0
       feet="Turms Leggings",
-      neck="Twilight Torque", --5/5
+      neck="Futhark Torque +1", --4/4
       waist="Engraved Belt",
       ear1="Brutal Earring",
       ear2="Sherida Earring",
@@ -814,7 +814,7 @@ function init_gear_sets()
         -- ring2="Defending Ring", --10/10
         -- back=gear.RUN_HPD_Cape, --10/0
         -- waist="Engraved Belt",
-        } --52 PDT + 5 PDT2 / 33 MDT
+        } --51 PDT + 5 PDT2 / 32 MDT
 
     -- Shell V = 29%, MDT cap is 50%
     sets.defense.MDT = {
@@ -825,14 +825,14 @@ function init_gear_sets()
       hands="Turms Mittens",
       legs="Erilaz Leg Guards +1", --7/0
       feet="Erilaz Greaves +1", --5/0
-      neck="Twilight Torque", --5/5
+      neck="Futhark Torque +1", --4/4
       waist="Engraved Belt",
       ear1="Odnowa Earring +1", --0/2
       ear2="Sherida Earring",
       ring1=gear.Dark_Ring, --3/5
       ring2="Defending Ring", --10/10
       back=gear.RUN_HPD_Cape, --10/0
-        } --48 PDT + 5 PDT2 / 30 MDT
+        } --47 PDT + 5 PDT2 / 29 MDT
 
     sets.defense.HP = {
       ammo="Staunch Tathlum",
@@ -841,7 +841,7 @@ function init_gear_sets()
       hands="Turms Mittens",
       legs="Erilaz Leg Guards +1", --7/0
       feet="Turms Leggings",
-      neck="Twilight Torque",
+      neck="Futhark Torque +1",
       waist="Sailfi Belt +1",
       ear1="Brutal Earring",
       ear2="Sherida Earring",
@@ -944,7 +944,7 @@ function init_gear_sets()
       head="Aya. Zucchetto +2", --3/3
       body="Meghanada Cuirie +2", --8/0
       legs="Carmine Cuisses +1", --6/0
-      neck="Twilight Torque", --5/5
+      neck="Futhark Torque +1", --4/4
       ring2="Defending Ring", --10/10
       back=gear.RUN_HPD_Cape, --10/0
         -- head=gear.Adhemar_D_head, --4/0
@@ -952,7 +952,7 @@ function init_gear_sets()
         -- ring1="Moonlight Ring", --5/5
         -- ring2="Defending Ring", --10/10
         -- back=gear.RUN_TP_Cape, --10/0
-        } --41 PDT + 5 PDT2 / 23 MDT
+        } --40 PDT + 5 PDT2 / 22 MDT
 
     sets.engaged.DT = set_combine(sets.engaged, sets.Hybrid)
     sets.engaged.LowAcc.DT = set_combine(sets.engaged.LowAcc, sets.Hybrid)
