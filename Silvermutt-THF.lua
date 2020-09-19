@@ -1193,9 +1193,6 @@ function job_self_command(cmdParams, eventArgs)
       send_command('@input /item "Thief\'s Tools" <t>')
     end
   elseif cmdParams[1]:lower() == 'faceaway' then
-    print('facing: '..player.facing)
-    print('pi: '..tostring(math.pi))
-    print('turning: '..tostring(player.facing - math.pi))
     windower.ffxi.turn(player.facing - math.pi);
   end
 
