@@ -1493,9 +1493,6 @@ function job_self_command(cmdParams, eventArgs)
         send_command('@input /ma '..state.GainSpell.value..' <me>')
     elseif cmdParams[1]:lower() == 'usekey' then
       send_command('cancel Invisible; cancel Hide; cancel Gestation')
-      if has_item('Inventory','Skeleton Key') then
-        send_command('@input /item "Skeleton Key" <t>')
-      end
     elseif cmdParams[1]:lower() == 'faceaway' then
       windower.ffxi.turn(player.facing - math.pi);
     end
