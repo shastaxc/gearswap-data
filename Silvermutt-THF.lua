@@ -1185,12 +1185,16 @@ function job_self_command(cmdParams, eventArgs)
     send_command('@input /ja "'..state.MainStep.Current..'" <t>')
   elseif cmdParams[1]:lower() == 'usekey' then
     send_command('cancel Invisible; cancel Hide; cancel Gestation')
-    if has_item('Inventory','Skeleton Key') then
-      send_command('@input /item "Skeleton Key" <t>')
-    elseif has_item('Inventory','Living Key') then
-      send_command('@input /item "Living Key" <t>')
-    elseif has_item('Inventory','Thief\'s Tools') then
-      send_command('@input /item "Thief\'s Tools" <t>')
+    if player.target.type ~= 'NONE' then
+      if player.target.name == 'Sturdy Pyxis' then
+        send_command('@input /item "Forbidden Key" <t>')
+      elseif has_item('Inventory','Skeleton Key') then
+        send_command('@input /item "Skeleton Key" <t>')
+      elseif has_item('Inventory','Living Key') then
+        send_command('@input /item "Living Key" <t>')
+      elseif has_item('Inventory','Thief\'s Tools') then
+        send_command('@input /item "Thief\'s Tools" <t>')
+      end
     end
   elseif cmdParams[1]:lower() == 'faceaway' then
     windower.ffxi.turn(player.facing - math.pi);
