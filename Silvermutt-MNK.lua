@@ -234,6 +234,7 @@ function init_gear_sets()
 
   -- Default set for any weaponskill that isn't any more specifically defined
   sets.precast.WS = {
+    legs="Hizamaru Hizayoroi +1",
     -- ammo="Knobkierrie",
     -- head=gear.Adhemar_B_head,
     -- body=gear.Herc_WS_body,
@@ -355,7 +356,7 @@ function init_gear_sets()
   sets.idle = {
     ammo="Ginsen",
     head=gear.Adhemar_B_head,
-    body="Bhikku Cyclas",
+    body="Bhikku Cyclas +1",
     hands=gear.Adhemar_B_hands,
     legs="Samnuha Tights",
     feet="Hermes' Sandals",
@@ -405,7 +406,7 @@ function init_gear_sets()
   sets.engaged = {
     ammo="Ginsen",
     head=gear.Adhemar_B_head,
-    body="Bhikku Cyclas",
+    body="Bhikku Cyclas +1",
     hands=gear.Adhemar_B_hands,
     legs="Samnuha Tights",
     feet=gear.Herc_Temp_feet,
@@ -500,42 +501,42 @@ function init_gear_sets()
 
   -- Hundred Fists/Impetus melee set mods
   sets.engaged.Impetus = set_combine(sets.engaged, {
-    body="Bhikku Cyclas",
+    body="Bhikku Cyclas +1",
   })
   sets.engaged.HF = set_combine(sets.engaged)
   sets.engaged.HF.Impetus = set_combine(sets.engaged.HF, {
-    body="Bhikku Cyclas",
+    body="Bhikku Cyclas +1",
   })
   sets.engaged.LowAcc.HF = set_combine(sets.engaged.LowAcc)
   sets.engaged.LowAcc.HF.Impetus = set_combine(sets.engaged.LowAcc.HF, {
-    body="Bhikku Cyclas",
+    body="Bhikku Cyclas +1",
   })
   sets.engaged.MidAcc.HF = set_combine(sets.engaged.MidAcc)
   sets.engaged.MidAcc.HF.Impetus = set_combine(sets.engaged.MidAcc.HF, {
-    body="Bhikku Cyclas",
+    body="Bhikku Cyclas +1",
   })
   sets.engaged.HighAcc.HF = set_combine(sets.engaged.HighAcc)
   sets.engaged.HighAcc.HF.Impetus = set_combine(sets.engaged.HighAcc.HF, {
-    body="Bhikku Cyclas",
+    body="Bhikku Cyclas +1",
   })
   sets.engaged.Counter.HF = set_combine(sets.engaged.Counter)
   sets.engaged.Counter.HF.Impetus = set_combine(sets.engaged.Counter.HF, {
-    body="Bhikku Cyclas",
+    body="Bhikku Cyclas +1",
   })
   sets.engaged.LowAcc.Counter = set_combine(sets.engaged.LowAcc, sets.engaged.Counter)
   sets.engaged.LowAcc.Counter.HF = set_combine(sets.engaged.LowAcc.Counter, {})
   sets.engaged.LowAcc.Counter.HF.Impetus = set_combine(sets.engaged.LowAcc.Counter.HF, {
-    body="Bhikku Cyclas",
+    body="Bhikku Cyclas +1",
   })
   sets.engaged.MidAcc.Counter = set_combine(sets.engaged.MidAcc, sets.engaged.Counter)
   sets.engaged.MidAcc.Counter.HF = set_combine(sets.engaged.MidAcc.Counter, {})
   sets.engaged.MidAcc.Counter.HF.Impetus = set_combine(sets.engaged.MidAcc.Counter.HF, {
-    body="Bhikku Cyclas",
+    body="Bhikku Cyclas +1",
   })
   sets.engaged.HighAcc.Counter = set_combine(sets.engaged.HighAcc, sets.engaged.Counter)
   sets.engaged.HighAcc.Counter.HF = set_combine(sets.engaged.HighAcc.Counter, {})
   sets.engaged.HighAcc.Counter.HF.Impetus = set_combine(sets.engaged.HighAcc.Counter.HF, {
-    body="Bhikku Cyclas",
+    body="Bhikku Cyclas +1",
   })
 
   -- Footwork combat form
@@ -572,7 +573,7 @@ function init_gear_sets()
       
   -- Quick sets for post-precast adjustments, listed here so that the gear can be Validated.
   sets.impetus_body = {
-    -- body="Bhikku Cyclas"
+    -- body="Bhikku Cyclas +1"
   }
   sets.footwork_kick_feet = {
     -- feet="Anchorite's Gaiters +1"
