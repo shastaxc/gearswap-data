@@ -302,7 +302,7 @@ function init_gear_sets()
     body="Maxixi Casaque +2",
   } -- Waltz delay
   sets.precast.Samba = {
-    head="Maxixi Tiara +2",
+    head="Maxixi Tiara +3",
     back=gear.DNC_TP_DW_Cape
   }
   sets.precast.Jig = {
@@ -312,7 +312,7 @@ function init_gear_sets()
 
   sets.precast.Step = {
     ammo="Charis Feather",
-    head="Maxixi Tiara +2",
+    head="Maxixi Tiara +3",
     body="Mummu Jacket +1",
     hands="Mummu Wrists +2",
     legs="Meghanada Chausses +2",
@@ -330,7 +330,7 @@ function init_gear_sets()
 
   sets.precast.Flourish1['Violent Flourish'] = {
     ammo="Charis Feather",
-    head="Maxixi Tiara +2",
+    head="Maxixi Tiara +3",
     body="Horos Casaque +3",
     hands="Mummu Wrists +2",
     legs="Meghanada Chausses +2",
@@ -470,7 +470,7 @@ function init_gear_sets()
 
   sets.idle = {
     ammo="Charis Feather",
-    head="Maxixi Tiara +2",
+    head="Maxixi Tiara +3",
     body="Horos Casaque +3",
     hands=gear.Adhemar_A_hands,
     legs=gear.Samnuha,
@@ -529,7 +529,7 @@ function init_gear_sets()
 
   sets.engaged = {
     ammo="Charis Feather",
-    head="Maxixi Tiara +2",
+    head="Maxixi Tiara +3",
     body="Horos Casaque +3",
     hands=gear.Adhemar_A_hands,
     legs=gear.Samnuha,
@@ -582,7 +582,7 @@ function init_gear_sets()
   -- No Magic/Gear/JA Haste (74% DW to cap, 39% from gear)
   sets.engaged.DW = {
     ammo="Charis Feather",
-    head="Maxixi Tiara +2", -- 4%
+    head="Maxixi Tiara +3", -- 8%
     body="Horos Casaque +3",
     hands=gear.Adhemar_A_hands,
     legs=gear.Samnuha,
@@ -594,7 +594,7 @@ function init_gear_sets()
     ring1="Epona's Ring",
     ring2="Rajas Ring",
     back=gear.DNC_TP_DW_Cape, -- 10%
-  }
+  } --30
 
   sets.engaged.DW.LowAcc = set_combine(sets.engaged.DW, {
     -- head="Dampening Tam",
@@ -630,7 +630,7 @@ function init_gear_sets()
   -- Low Magic/Gear/JA Haste (67% DW to cap, 32% from gear)
   sets.engaged.DW.LowHaste = {
     ammo="Charis Feather",
-    head="Maxixi Tiara +2", -- 4%
+    head="Maxixi Tiara +3", -- 8%
     body="Horos Casaque +3",
     hands=gear.Adhemar_A_hands,
     legs=gear.Samnuha,
@@ -642,7 +642,7 @@ function init_gear_sets()
     ring1="Epona's Ring",
     ring2="Rajas Ring",
     back=gear.DNC_TP_DW_Cape, -- 10%
-  }
+  } --30
 
   sets.engaged.DW.LowAcc.LowHaste = set_combine(sets.engaged.DW.LowHaste, {
     -- head="Dampening Tam",
@@ -679,19 +679,19 @@ function init_gear_sets()
   -- Mid Magic/Gear/JA Haste (56% DW to cap, 21% from gear)
   sets.engaged.DW.MidHaste = {
     ammo="Charis Feather",
-    head="Maxixi Tiara +2", -- 4%
+    head="Maxixi Tiara +3", -- 8%
     body="Horos Casaque +3",
     hands=gear.Adhemar_A_hands,
     legs=gear.Samnuha,
     feet="Horos Toe Shoes +3",
-    neck="Charis Necklace", -- 3%
+    neck="Anu Torque",
     waist="Sailfi Belt +1",
     ear1="Eabani Earring", -- 4%
     ear2="Sherida Earring",
     ring1="Epona's Ring",
     ring2="Rajas Ring",
     back=gear.DNC_TP_DW_Cape, -- 10%
-  }
+  } --22
 
   sets.engaged.DW.LowAcc.MidHaste = set_combine(sets.engaged.DW.MidHaste, {
     -- head="Dampening Tam",
@@ -728,19 +728,19 @@ function init_gear_sets()
   -- High Magic/Gear/JA Haste (51% DW to cap, 16% from gear)
   sets.engaged.DW.HighHaste = {
     ammo="Charis Feather",
-    head="Maxixi Tiara +2", -- 4%
+    head="Maxixi Tiara +3", -- 8%
     body="Horos Casaque +3",
     hands=gear.Adhemar_A_hands,
     legs=gear.Samnuha,
     feet="Horos Toe Shoes +3",
-    neck="Charis Necklace", -- 3%
+    neck="Anu Torque",
     waist="Sailfi Belt +1",
     ear1="Brutal Earring",
     ear2="Sherida Earring",
     ring1="Epona's Ring",
     ring2="Rajas Ring",
     back=gear.DNC_TP_DW_Cape, -- 10%
-  }
+  } --18
 
   sets.engaged.DW.LowAcc.HighHaste = set_combine(sets.engaged.DW.HighHaste, {
     -- head="Dampening Tam",
