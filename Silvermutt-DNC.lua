@@ -405,6 +405,8 @@ function init_gear_sets()
   } -- default set
 
   sets.precast.WS.Acc = set_combine(sets.precast.WS, {
+    legs="Meg. Chausses +2",
+    feet="Mummu Gamashes +1",
     -- ammo="Voluspa Tathlum",
     -- head="Dampening Tam",
     -- legs="Meg. Chausses +2",
