@@ -52,7 +52,7 @@ function job_setup()
     info.impetus_hit_count = 0
     windower.raw_register_event('action', on_action_for_impetus)
 
-    lockstyleset = 1
+    lockstyleset = 5
 
 end
 
@@ -451,9 +451,10 @@ function init_gear_sets()
       waist="Windbuffet Belt",
       legs="Hesychast's Hose +1",
       feet="Otronif Boots +1",
-    })
+    }
 
     sets.engaged.Counter = {
+      feet="Melee Gaiters +2",
     }
 
     ------------------------------------------------------------------------------------------------
@@ -464,19 +465,38 @@ function init_gear_sets()
       body="Bhikku Cyclas",
     })
 	  sets.engaged.HF = set_combine(sets.engaged)
-    sets.engaged.HF.Impetus = set_combine(sets.engaged, {
+    sets.engaged.HF.Impetus = set_combine(sets.engaged.HF, {
       body="Bhikku Cyclas",
     })
-    sets.engaged.Acc.HF = set_combine(sets.engaged.Acc)
-    sets.engaged.Acc.HF.Impetus = set_combine(sets.engaged.Acc, {
+    sets.engaged.LowAcc.HF = set_combine(sets.engaged.LowAcc)
+    sets.engaged.LowAcc.HF.Impetus = set_combine(sets.engaged.LowAcc.HF, {
+      body="Bhikku Cyclas",
+    })
+    sets.engaged.MidAcc.HF = set_combine(sets.engaged.MidAcc)
+    sets.engaged.MidAcc.HF.Impetus = set_combine(sets.engaged.MidAcc.HF, {
+      body="Bhikku Cyclas",
+    })
+    sets.engaged.HighAcc.HF = set_combine(sets.engaged.HighAcc)
+    sets.engaged.HighAcc.HF.Impetus = set_combine(sets.engaged.HighAcc.HF, {
       body="Bhikku Cyclas",
     })
     sets.engaged.Counter.HF = set_combine(sets.engaged.Counter)
-    sets.engaged.Counter.HF.Impetus = set_combine(sets.engaged.Counter, {
+    sets.engaged.Counter.HF.Impetus = set_combine(sets.engaged.Counter.HF, {
       body="Bhikku Cyclas",
     })
-    sets.engaged.Acc.Counter.HF = set_combine(sets.engaged.Acc.Counter)
-    sets.engaged.Acc.Counter.HF.Impetus = set_combine(sets.engaged.Acc.Counter, {
+    sets.engaged.LowAcc.Counter = set_combine(sets.engaged.LowAcc, sets.engaged.Counter)
+    sets.engaged.LowAcc.Counter.HF = set_combine(sets.engaged.LowAcc.Counter, {})
+    sets.engaged.LowAcc.Counter.HF.Impetus = set_combine(sets.engaged.LowAcc.Counter.HF, {
+      body="Bhikku Cyclas",
+    })
+    sets.engaged.MidAcc.Counter = set_combine(sets.engaged.MidAcc, sets.engaged.Counter)
+    sets.engaged.MidAcc.Counter.HF = set_combine(sets.engaged.MidAcc.Counter, {})
+    sets.engaged.MidAcc.Counter.HF.Impetus = set_combine(sets.engaged.MidAcc.Counter.HF, {
+      body="Bhikku Cyclas",
+    })
+    sets.engaged.HighAcc.Counter = set_combine(sets.engaged.HighAcc, sets.engaged.Counter)
+    sets.engaged.HighAcc.Counter.HF = set_combine(sets.engaged.HighAcc.Counter, {})
+    sets.engaged.HighAcc.Counter.HF.Impetus = set_combine(sets.engaged.HighAcc.Counter.HF, {
       body="Bhikku Cyclas",
     })
 
@@ -777,3 +797,74 @@ end
 function set_lockstyle()
     send_command('wait 2; input /lockstyleset ' .. lockstyleset)
 end
+
+-------------------------------------------------------------------------------------------------------------------
+-- Custom event hooks.
+-------------------------------------------------------------------------------------------------------------------
+
+-- Keep track of the current hit count while Impetus is up.
+function on_action_for_impetus(action)
+  if state.Buff.Impetus then
+    -- count melee hits by player
+    if action.actor_id == player.id then
+      if action.category == 1 then
+        for _,target in pairs(action.targets) do
+          for _,action in pairs(target.actions) do
+            -- Reactions (bitset):
+            -- 1 = evade
+            -- 2 = parry
+            -- 4 = block/guard
+            -- 8 = hit
+            -- 16 = JA/weaponskill?
+            -- If action.reaction has bits 1 or 2 set, it missed or was parried. Reset count.
+            if (action.reaction % 4) > 0 then
+              info.impetus_hit_count = 0
+            else
+              info.impetus_hit_count = info.impetus_hit_count + 1
+            end
+          end
+        end
+      elseif action.category == 3 then
+        -- Missed weaponskill hits will reset the counter.  Can we tell?
+        -- Reaction always seems to be 24 (what does this value mean? 8=hit, 16=?)
+        -- Can't tell if any hits were missed, so have to assume all hit.
+        -- Increment by the minimum number of weaponskill hits: 2.
+        for _,target in pairs(action.targets) do
+          for _,action in pairs(target.actions) do
+            -- This will only be if the entire weaponskill missed or was parried.
+            if (action.reaction % 4) > 0 then
+              info.impetus_hit_count = 0
+            else
+              info.impetus_hit_count = info.impetus_hit_count + 2
+            end
+          end
+        end
+      end
+    elseif action.actor_id ~= player.id and action.category == 1 then
+      -- If mob hits the player, check for counters.
+      for _,target in pairs(action.targets) do
+        if target.id == player.id then
+          for _,action in pairs(target.actions) do
+            -- Spike effect animation:
+            -- 63 = counter
+            -- ?? = missed counter
+            if action.has_spike_effect then
+              -- spike_effect_message of 592 == missed counter
+              if action.spike_effect_message == 592 then
+                info.impetus_hit_count = 0
+              elseif action.spike_effect_animation == 63 then
+                info.impetus_hit_count = info.impetus_hit_count + 1
+              end
+            end
+          end
+        end
+      end
+    end
+    
+  --add_to_chat(123,'Current Impetus hit count = ' .. tostring(info.impetus_hit_count))
+  else
+    info.impetus_hit_count = 0
+  end
+  
+end
+
