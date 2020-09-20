@@ -160,10 +160,10 @@ function init_gear_sets()
   
   -- Precast sets to enhance JAs on use
   sets.precast.JA['Hundred Fists'] = {
-    -- legs="Hesychast's Hose +1",
+    legs="Hesychast's Hose",
   }
   sets.precast.JA['Boost'] = {
-    -- hands="Anchorite's Gloves +2",
+    hands="Anchorite's Gloves",
   }
   sets.precast.JA['Dodge'] = {
     -- feet="Anchorite's Gaiters +1",
@@ -178,7 +178,7 @@ function init_gear_sets()
     -- feet="Tantra Gaiters +2",
   }
   sets.precast.JA['Formless Strikes'] = {
-    -- body="Hesychast's Cyclas",
+    body="Hesychast's Cyclas",
   }
   sets.precast.JA['Mantra'] = {
     -- feet="Hesychast's Gaiters +1",
@@ -352,7 +352,19 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.idle = {
+    ammo="Ginsen",
+    head=gear.Adhemar_B_head,
+    body="Bhikku Cyclas",
+    hands=gear.Adhemar_B_hands,
+    legs="Samnuha Tights",
     feet="Hermes' Sandals",
+    neck="Monk's Nodowa +2",
+    ear1="Sherida Earring",
+    ear2="Brutal Earring",
+    ring1="Epona's Ring",
+    ring2="Ilabrat Ring",
+    back=gear.MNK_TP_Cape,
+    waist="Black Belt",
     -- ammo="Seki Shuriken",
     -- head="Volte Cap",
     -- body="Hiza. Haramaki +2",
@@ -390,21 +402,23 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.engaged = {
-      -- ammo="Ginsen",
-      -- head=gear.Adhemar_B_head,
-      -- body=gear.Adhemar_B_body,
-      -- hands=gear.Adhemar_B_hands,
-      -- legs="Samnuha Tights",
-      -- feet=gear.Herc_TA_feet,
-      -- neck="Anu Torque",
-      -- ear1="Mache Earring +1",
-      -- ear2="Brutal Earring",
-      -- ring1="Niqmaddu Ring",
-      -- ring2="Epona's Ring",
-      -- back="Relucent Cape",
-      -- waist="Windbuffet Belt +1",
-      }
-  sets.engaged.LowAcc = {
+    ammo="Ginsen",
+    head=gear.Adhemar_B_head,
+    body="Bhikku Cyclas",
+    hands=gear.Adhemar_B_hands,
+    legs="Samnuha Tights",
+    feet=gear.Herc_Temp_feet,
+    neck="Monk's Nodowa +2",
+    ear1="Sherida Earring",
+    ear2="Brutal Earring",
+    ring1="Epona's Ring",
+    ring2="Ilabrat Ring",
+    back=gear.MNK_TP_Cape,
+    waist="Black Belt",
+  }
+  sets.engaged.LowAcc = set_combine(sets.engaged, {
+    ammo="Falcon Eye",
+    ear2="Cessance Earring",
     -- ammo="Hasty Pinion +1",
     -- head="Ademar bonnet",
     -- neck="Lissome necklace",
@@ -418,8 +432,8 @@ function init_gear_sets()
     -- waist="Moonbow belt +1",
     -- legs="Kendatsuba hakama +1",
     -- feet="Kendatsuba sune-ate +1",
-  }
-  sets.engaged.MidAcc = {
+  })
+  sets.engaged.MidAcc = set_combine(sets.engaged.LowAcc, {
     -- ammo="Hasty Pinion +1",
     -- head="Ademar bonnet",
     -- neck="Lissome necklace",
@@ -433,8 +447,8 @@ function init_gear_sets()
     -- waist="Moonbow belt +1",
     -- legs="Kendatsuba hakama +1",
     -- feet="Kendatsuba sune-ate +1",
-  }
-  sets.engaged.HighAcc = {
+  })
+  sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
     -- ammo="Hasty Pinion +1",
     -- head="Ademar bonnet",
     -- neck="Lissome necklace",
@@ -448,7 +462,7 @@ function init_gear_sets()
     -- waist="Moonbow belt +1",
     -- legs="Kendatsuba hakama +1",
     -- feet="Kendatsuba sune-ate +1",
-  }
+  })
 
 
   ------------------------------------------------------------------------------------------------
@@ -485,42 +499,42 @@ function init_gear_sets()
 
   -- Hundred Fists/Impetus melee set mods
   sets.engaged.Impetus = set_combine(sets.engaged, {
-    -- body="Bhikku Cyclas",
+    body="Bhikku Cyclas",
   })
   sets.engaged.HF = set_combine(sets.engaged)
   sets.engaged.HF.Impetus = set_combine(sets.engaged.HF, {
-    -- body="Bhikku Cyclas",
+    body="Bhikku Cyclas",
   })
   sets.engaged.LowAcc.HF = set_combine(sets.engaged.LowAcc)
   sets.engaged.LowAcc.HF.Impetus = set_combine(sets.engaged.LowAcc.HF, {
-    -- body="Bhikku Cyclas",
+    body="Bhikku Cyclas",
   })
   sets.engaged.MidAcc.HF = set_combine(sets.engaged.MidAcc)
   sets.engaged.MidAcc.HF.Impetus = set_combine(sets.engaged.MidAcc.HF, {
-    -- body="Bhikku Cyclas",
+    body="Bhikku Cyclas",
   })
   sets.engaged.HighAcc.HF = set_combine(sets.engaged.HighAcc)
   sets.engaged.HighAcc.HF.Impetus = set_combine(sets.engaged.HighAcc.HF, {
-    -- body="Bhikku Cyclas",
+    body="Bhikku Cyclas",
   })
   sets.engaged.Counter.HF = set_combine(sets.engaged.Counter)
   sets.engaged.Counter.HF.Impetus = set_combine(sets.engaged.Counter.HF, {
-    -- body="Bhikku Cyclas",
+    body="Bhikku Cyclas",
   })
   sets.engaged.LowAcc.Counter = set_combine(sets.engaged.LowAcc, sets.engaged.Counter)
   sets.engaged.LowAcc.Counter.HF = set_combine(sets.engaged.LowAcc.Counter, {})
   sets.engaged.LowAcc.Counter.HF.Impetus = set_combine(sets.engaged.LowAcc.Counter.HF, {
-    -- body="Bhikku Cyclas",
+    body="Bhikku Cyclas",
   })
   sets.engaged.MidAcc.Counter = set_combine(sets.engaged.MidAcc, sets.engaged.Counter)
   sets.engaged.MidAcc.Counter.HF = set_combine(sets.engaged.MidAcc.Counter, {})
   sets.engaged.MidAcc.Counter.HF.Impetus = set_combine(sets.engaged.MidAcc.Counter.HF, {
-    -- body="Bhikku Cyclas",
+    body="Bhikku Cyclas",
   })
   sets.engaged.HighAcc.Counter = set_combine(sets.engaged.HighAcc, sets.engaged.Counter)
   sets.engaged.HighAcc.Counter.HF = set_combine(sets.engaged.HighAcc.Counter, {})
   sets.engaged.HighAcc.Counter.HF.Impetus = set_combine(sets.engaged.HighAcc.Counter.HF, {
-    -- body="Bhikku Cyclas",
+    body="Bhikku Cyclas",
   })
 
   -- Footwork combat form
