@@ -425,7 +425,7 @@ function init_gear_sets()
   }) -- AGI
 
   sets.precast.WS['Pyrrhic Kleos'] = set_combine(sets.precast.WS, {
-    hands=gear.Adhemar_A_hands,
+    hands=gear.Adhemar_B_hands,
     ring1="Ilabrat Ring",
     ring2="Rajas Ring",
   }) -- 40% STR / 40% DEX
@@ -472,7 +472,7 @@ function init_gear_sets()
     ammo="Charis Feather",
     head="Maxixi Tiara +3",
     body="Horos Casaque +3",
-    hands=gear.Adhemar_A_hands,
+    hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha,
     feet="Skadi's Jambeaux +1",
     neck="Lissome Necklace",
@@ -531,7 +531,7 @@ function init_gear_sets()
     ammo="Charis Feather",
     head="Maxixi Tiara +3",
     body="Horos Casaque +3",
-    hands=gear.Adhemar_A_hands,
+    hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha,
     feet="Horos Toe Shoes +3",
     neck="Anu Torque",
@@ -584,7 +584,7 @@ function init_gear_sets()
     ammo="Charis Feather",
     head="Maxixi Tiara +3", -- 8%
     body="Horos Casaque +3",
-    hands=gear.Adhemar_A_hands,
+    hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha,
     feet="Horos Toe Shoes +3",
     neck="Charis Necklace", -- 3%
@@ -632,7 +632,7 @@ function init_gear_sets()
     ammo="Charis Feather",
     head="Maxixi Tiara +3", -- 8%
     body="Horos Casaque +3",
-    hands=gear.Adhemar_A_hands,
+    hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha,
     feet="Horos Toe Shoes +3",
     neck="Charis Necklace", -- 3%
@@ -681,7 +681,7 @@ function init_gear_sets()
     ammo="Charis Feather",
     head="Maxixi Tiara +3", -- 8%
     body="Horos Casaque +3",
-    hands=gear.Adhemar_A_hands,
+    hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha,
     feet="Horos Toe Shoes +3",
     neck="Anu Torque",
@@ -730,7 +730,7 @@ function init_gear_sets()
     ammo="Charis Feather",
     head="Maxixi Tiara +3", -- 8%
     body="Horos Casaque +3",
-    hands=gear.Adhemar_A_hands,
+    hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha,
     feet="Horos Toe Shoes +3",
     neck="Anu Torque",
@@ -778,9 +778,9 @@ function init_gear_sets()
   -- Max Magic/Gear/JA Haste (36% DW to cap, 1% from gear)
   sets.engaged.DW.MaxHaste = {
     ammo="Charis Feather",
-    head="Mummu Bonnet +2",
+    head=gear.Adhemar_B_head,
     body="Horos Casaque +3",
-    hands=gear.Adhemar_A_hands,
+    hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha,
     feet="Horos Toe Shoes +3",
     neck="Anu Torque",
