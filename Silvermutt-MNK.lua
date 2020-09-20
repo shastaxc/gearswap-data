@@ -94,6 +94,7 @@ function user_setup()
 
   send_command('bind ^numpad7 input /ws "Victory Smite" <t>')
   send_command('bind ^numpad8 input /ws "Ascetic\'s Fury" <t>')
+  send_command('bind ^numpad9 input /ws "Shijin Spiral" <t>')
   send_command('bind ^numpad4 input /ws "Asuran Fists" <t>')
   send_command('bind ^numpad1 input /ws "Spinning Attack" <t>')
   send_command('bind ^numpad2 input /ws "Shoulder Tackle" <t>')
@@ -358,11 +359,11 @@ function init_gear_sets()
     hands=gear.Adhemar_B_hands,
     legs="Samnuha Tights",
     feet="Hermes' Sandals",
-    neck="Monk's Nodowa +2",
+    neck="Lissome Necklace",
     ear1="Sherida Earring",
-    ear2="Brutal Earring",
+    ear2="Infused Earring",
     ring1="Epona's Ring",
-    ring2="Ilabrat Ring",
+    ring2="Karieyh Ring",
     back=gear.MNK_TP_Cape,
     waist="Black Belt",
     -- ammo="Seki Shuriken",
