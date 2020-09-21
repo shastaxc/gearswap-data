@@ -366,7 +366,7 @@ function init_gear_sets()
     ring1="Epona's Ring",
     ring2="Karieyh Ring",
     back=gear.MNK_TP_Cape,
-    waist="Black Belt",
+    waist="Moonbow Belt +1",
     -- ammo="Seki Shuriken",
     -- head="Volte Cap",
     -- body="Hiza. Haramaki +2",
@@ -416,7 +416,7 @@ function init_gear_sets()
     ring1="Epona's Ring",
     ring2="Ilabrat Ring",
     back=gear.MNK_TP_Cape,
-    waist="Black Belt",
+    waist="Moonbow Belt +1",
   }
   sets.engaged.LowAcc = set_combine(sets.engaged, {
     ammo="Falcon Eye",
