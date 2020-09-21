@@ -1040,12 +1040,6 @@ function get_custom_wsmode(spell, action, spellMap)
 end
 
 function customize_idle_set(idleSet)
-  if state.CP.current == 'on' then
-      equip(sets.CP)
-      disable('back')
-  else
-      enable('back')
-  end
   if state.Auto_Kite.value == true then
      idleSet = set_combine(idleSet, sets.Kiting)
   end
