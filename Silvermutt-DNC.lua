@@ -440,9 +440,14 @@ function init_gear_sets()
   }) -- 80% DEX
 
   sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
-    head="Highwing Helm", --20 MAB
-    ear1="Friomisi Earring", --10 MAB
-    ear2="Novio Earring", --7 MAB
+    ammo="Seething Bomblet", --6
+    head="Highwing Helm", --20
+    hands="Leyline Gloves", --30
+    feet=gear.Herc_Temp_feet, --10
+    neck="Atzintli Necklace", --5
+    ear1="Friomisi Earring", --10
+    ear2="Novio Earring", --7
+    waist="Eschan Stone", --7
   }) -- 40% DEX / 40% INT + MAB
 
   sets.precast.Skillchain = {

@@ -390,8 +390,15 @@ function init_gear_sets()
 
     sets.precast.WS['Mandalic Stab'] = sets.precast.WS["Rudra's Storm"]
     sets.precast.WS['Mandalic Stab'].Acc = sets.precast.WS["Rudra's Storm"].Acc
-
     sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
+      ammo="Seething Bomblet", --6
+      head="Highwing Helm", --20
+      hands="Leyline Gloves", --30
+      feet=gear.Herc_Temp_feet, --10
+      neck="Atzintli Necklace", --5
+      ear1="Friomisi Earring", --10
+      ear2="Novio Earring", --7
+      waist="Eschan Stone", --7
         -- ammo="Seeth. Bomblet +1",
         -- head=gear.Herc_MAB_head,
         -- body="Samnuha Coat",
@@ -405,7 +412,7 @@ function init_gear_sets()
         -- ring2="Epaminondas's Ring",
         -- back="Argocham. Mantle",
         -- waist="Orpheus's Sash",
-        })
+        }) -- 40% DEX / 40% INT + MAB
 
     ------------------------------------------------------------------------------------------------
     ---------------------------------------- Midcast Sets ------------------------------------------
