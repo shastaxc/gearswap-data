@@ -275,18 +275,21 @@ function init_gear_sets()
 
     -- Fast cast sets for spells
     sets.precast.FC = {
-      ammo="Impatiens",
-      body="Duelist's Tabard",
-      hands="Leyline Gloves",
-      legs="Ayanmo Cosciales +1",
+      ammo="Impatiens", --Quick Magic 2%
+      head=gear.Herc_WSD_head, --7
+      body="Duelist's Tabard", --10
+      hands="Leyline Gloves", --8
+      legs="Ayanmo Cosciales +1", --5
       feet=gear.Taeon_FC_feet, --5
-      ring1="Prolix Ring", --2
+      ear1="Loquac. Earring", --2
+      ring1="Lebeche Ring", --Quick Magic 2%
+      ring2="Prolix Ring", --2
         -- head="Atrophy Chapeau +3", --16
         -- body="Viti. Tabard +3", --15
         -- legs="Aya. Cosciales +2", --6
         -- feet="Carmine Greaves +1", --8
         -- ring2="Weather. Ring +1", --5
-        }
+    }
 
     sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {
       -- waist="Siegel Sash",

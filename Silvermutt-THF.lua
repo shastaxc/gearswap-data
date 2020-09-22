@@ -278,17 +278,16 @@ function init_gear_sets()
     sets.precast.Waltz['Healing Waltz'] = {}
 
     sets.precast.FC = {
-        -- ammo="Sapience Orb",
-        -- head=gear.Herc_MAB_head, --7
-        -- body=gear.Taeon_FC_body, --8
-        -- hands="Leyline Gloves", --8
-        -- legs="Rawhide Trousers", --5
-        -- feet=gear.Herc_MAB_feet, --2
-        -- neck="Orunmila's Torque", --5
-        -- ear1="Loquacious Earring", --2
-        -- ear2="Enchntr. Earring +1", --2
-        -- ring2="Weather. Ring +1", --6(4)
-        }
+      ammo="Impatiens", --Quick Magic 2%
+      head=gear.Herc_WSD_head, --7
+      body=gear.Taeon_FC_body, --9
+      hands="Leyline Gloves", --8
+      legs=gear.Taeon_FC_legs, --5
+      feet=gear.Taeon_FC_feet, --5
+      ear1="Loquac. Earring", --2
+      ring1="Lebeche Ring", --Quick Magic 2%
+      ring2="Prolix Ring", --2
+    }
 
     sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {
         -- body="Passion Jacket",

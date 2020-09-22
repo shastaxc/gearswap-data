@@ -378,13 +378,15 @@ function init_gear_sets()
 
     -- Fast cast sets for spells
     sets.precast.FC = {
-      ammo="Impatiens",
+      ammo="Impatiens", --Quick Magic 2%
       head="Runeist Bandeau +1", --10
       body=gear.Taeon_FC_body, --9
       hands="Leyline Gloves", --8
-      legs="Ayanmo cosciales +1", --5
+      legs="Ayanmo Cosciales +1", --5
       feet=gear.Taeon_FC_feet, --5
-      ring1="Prolix Ring", --2
+      ear1="Loquac. Earring", --2
+      ring1="Lebeche Ring", --Quick Magic 2%
+      ring2="Prolix Ring", --2
         -- ammo="Sapience Orb", --2
         -- head="Rune. Bandeau +3", --14
         -- body=gear.Taeon_FC_body, --9

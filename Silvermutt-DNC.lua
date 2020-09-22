@@ -370,14 +370,15 @@ function init_gear_sets()
   }
 
   sets.precast.FC = {
-    ammo="Impatiens",
-    head=gear.Herc_WSD_head,
-    body=gear.Taeon_FC_body,
-    hands=gear.Taeon_FC_hands,
-    legs="Rawhide Trousers",
-    feet=gear.Taeon_FC_feet,
-    ear1="Loquac. Earring",
-    -- ring1="Lebeche Ring",
+    ammo="Impatiens", --Quick Magic 2%
+    head=gear.Herc_WSD_head, --7
+    body=gear.Taeon_FC_body, --9
+    hands="Leyline Gloves", --8
+    legs=gear.Taeon_FC_legs, --5
+    feet=gear.Taeon_FC_feet, --5
+    ear1="Loquac. Earring", --2
+    ring1="Lebeche Ring", --Quick Magic 2%
+    ring2="Prolix Ring", --2
   }
 
   sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {

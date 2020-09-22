@@ -146,18 +146,16 @@ function init_gear_sets()
 
   -- Fast cast sets for spells
   sets.precast.FC = {
-    -- ammo="Sapience Orb", --2
-    -- head=gear.Herc_MAB_head, --7
+    ammo="Impatiens", --Quick Magic 2%
+    head=gear.Herc_WSD_head, --7
     body=gear.Taeon_FC_body, --9
     hands="Leyline Gloves", --8
-    legs="Rawhide Trousers", --5
-    -- feet=gear.Herc_MAB_feet, --2
-    -- neck="Orunmila's Torque", --5
-    ear1="Loquacious Earring", --2
-    -- ear2="Enchntr. Earring +1", --2
-    -- ring1="Weather. Ring +1", --6(4)
-    -- ring2="Kishar Ring", --4
-    }
+    legs=gear.Taeon_FC_legs, --5
+    feet=gear.Taeon_FC_feet, --5
+    ear1="Loquac. Earring", --2
+    ring1="Lebeche Ring", --Quick Magic 2%
+    ring2="Prolix Ring", --2
+  }
   
   -- Precast sets to enhance JAs on use
   sets.precast.JA['Hundred Fists'] = {
@@ -166,29 +164,31 @@ function init_gear_sets()
   sets.precast.JA['Boost'] = {
     hands="Anchorite's Gloves",
   }
+  sets.precast.JA['Perfect Counter'] = {
+    hands="Tantra Crown +1",
+  }
   sets.precast.JA['Dodge'] = {
-    -- feet="Anchorite's Gaiters +1",
+    feet="Anchorite's Gaiters",
   }
   sets.precast.JA['Focus'] = {
-    -- head="Anchorite's Crown +1",
+    head="Anchorite's Crown",
   }
   sets.precast.JA['Counterstance'] = {
-    -- feet="Hesychast's Gaiters +1",
+    feet="Hesychast's Gaiters",
   }
   sets.precast.JA['Footwork'] = {
-    -- feet="Tantra Gaiters +2",
+    feet="Tantra Gaiters +2",
   }
   sets.precast.JA['Formless Strikes'] = {
     body="Hesychast's Cyclas",
   }
   sets.precast.JA['Mantra'] = {
-    -- feet="Hesychast's Gaiters +1",
+    feet="Hesychast's Gaiters",
   }
 
   sets.precast.JA['Chi Blast'] = {
-    head="Melee Crown +1",
-    hands="Adhemar wristbands +1",
-    -- head="Melee Crown +2",
+    head="Hesychast's Crown",
+    hands=gear.Adhemar_B_hands,
     -- body="Otronif Harness +1",
     -- hands="Adhemar wristbands +1",
     -- back="Tuilha Cape",
@@ -197,10 +197,10 @@ function init_gear_sets()
   }
 
   sets.precast.JA['Chakra'] = {
+    body="Anchorite's Cyclas",
+    hands="Hesychast's Gloves",
     -- ammo="Iron Gobbet",
     -- head="Kendatsuba jinpachi +1",
-    -- body="Anchorite's Cyclas +1",
-    -- hands="Hesychast's Gloves +1",
     -- ring1="Spiral Ring",
     -- back="Iximulew Cape",
     -- waist="Caudata Belt",
@@ -576,7 +576,7 @@ function init_gear_sets()
     body="Bhikku Cyclas +1"
   }
   sets.footwork_kick_feet = {
-    -- feet="Anchorite's Gaiters +1"
+    feet="Anchorite's Gaiters"
   }
   sets.buff.Doom = {
     neck="Nicander's Necklace", --20
