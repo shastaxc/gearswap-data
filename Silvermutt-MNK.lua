@@ -162,7 +162,7 @@ function init_gear_sets()
     legs="Hesychast's Hose",
   }
   sets.precast.JA['Boost'] = {
-    hands="Anchorite's Gloves",
+    hands="Anchorite's Gloves +1",
   }
   sets.precast.JA['Perfect Counter'] = {
     hands="Tantra Crown +1",
@@ -171,7 +171,7 @@ function init_gear_sets()
     feet="Anchorite's Gaiters",
   }
   sets.precast.JA['Focus'] = {
-    head="Anchorite's Crown",
+    head="Anchorite's Crown +1",
   }
   sets.precast.JA['Counterstance'] = {
     feet="Hesychast's Gaiters",
@@ -189,43 +189,20 @@ function init_gear_sets()
   sets.precast.JA['Chi Blast'] = {
     head="Hesychast's Crown",
     hands=gear.Adhemar_B_hands,
-    -- body="Otronif Harness +1",
-    -- hands="Adhemar wristbands +1",
-    -- back="Tuilha Cape",
-    -- legs="Hesychast's Hose +1",
-    -- feet="Anchorite's Gaiters +1",
   }
 
   sets.precast.JA['Chakra'] = {
-    body="Anchorite's Cyclas",
+    body="Anchorite's Cyclas +1",
     hands="Hesychast's Gloves",
-    -- ammo="Iron Gobbet",
-    -- head="Kendatsuba jinpachi +1",
-    -- ring1="Spiral Ring",
-    -- back="Iximulew Cape",
-    -- waist="Caudata Belt",
-    -- legs="Kendatsuba hakama +1",
-    -- feet="Thurandaut Boots +1",
   }
 
   -- Waltz set (chr and vit)
   sets.precast.Waltz = {
-    -- ammo="Sonia's Plectrum",
-    -- head="Kendatsuba jinpachi +1",
-    -- body="Otronif Harness +1",
-    -- hands="Hesychast's Gloves +1",
-    -- ring1="Spiral Ring",
-    -- back="Iximulew Cape",
-    -- waist="Caudata Belt",
-    -- legs="Kendatsuba hakama +1",
-    -- feet="Otronif Boots +1",
   }
       
   sets.precast.Step = {
-    -- waist="Chaac Belt",
   }
   sets.precast.Flourish1 = {
-    -- waist="Chaac Belt",
   }
 
   ------------------------------------------------------------------------------------------------
@@ -234,115 +211,223 @@ function init_gear_sets()
 
   -- Default set for any weaponskill that isn't any more specifically defined
   sets.precast.WS = {
-    legs="Hizamaru Hizayoroi +1",
-    -- ammo="Knobkierrie",
-    -- head=gear.Adhemar_B_head,
-    -- body=gear.Herc_WS_body,
-    -- hands=gear.Adhemar_B_hands,
-    -- legs=gear.Samnuha,
-    -- feet=gear.Herc_TA_feet,
-    -- neck="Fotia Gorget",
-    -- ear1="Moonshade Earring",
-    -- ear2="Ishvara Earring",
-    -- ring1="Gere Ring",
-    -- ring2="Epaminondas's Ring",
-    -- back="Relucent Cape",
-    -- waist="Fotia Belt",
-    } -- default set
-  sets.precast.WSAcc = {
-    -- ammo="Honed Tathlum",
-    -- body="Manibozho Jerkin",
-    -- back="Letalis Mantle",
-    -- feet="Qaaxo Leggings",
-  }
+  } -- Base WS set
+
   sets.precast.MaxTP = {
-    -- ear1="Bladeborn Earring",
-    -- ear2="Steelflash Earring",
-  }
-  sets.precast.WS.Acc = set_combine(sets.precast.WS, sets.precast.WSAcc)
+  } -- Replace any TP Bonus gear, overwrites all WS sets
 
-  -- Specific weaponskill sets.
-  sets.precast.WS['Raging Fists'] = set_combine(sets.precast.WS, {})
-  sets.precast.WS['Howling Fist'] = set_combine(sets.precast.WS, {
-    -- legs="Manibozho Brais",
-    -- feet="Daihanshi Habaki",
-  })
-  sets.precast.WS['Asuran Fists'] = set_combine(sets.precast.WS, {
-    -- ear1="Bladeborn Earring",
-    -- ear2="Moonshade Earring",
-    -- ring2="Spiral Ring",
-    -- back="Buquwik Cape",
-  })
-  sets.precast.WS["Ascetic's Fury"] = set_combine(sets.precast.WS, {
-    -- ammo="Tantra Tathlum",
-    -- ring1="Spiral Ring",
-    -- back="Buquwik Cape",
-    -- feet="Qaaxo Leggings",
-  })
+  -- Victory Smite: 80% STR, can crit
   sets.precast.WS["Victory Smite"] = set_combine(sets.precast.WS, {
-    -- neck="Rancor Collar",
-    -- back="Buquwik Cape",
-    -- feet="Qaaxo Leggings",
+    ammo="Tantra Tathlum",
+    head=gear.Adhemar_B_head,
+    body="Kendatsuba Samue +1",
+    hands=gear.Adhemar_B_hands,
+    legs="Hizamaru Hizayoroi +1",
+    feet=gear.Herc_WSD_feet,
+    neck="Monk's Nodowa +2",
+    ear1="Sherida Earring",
+    ear2="Brutal Earring",
+    ring1="Rajas Ring",
+    ring2="Karieyh Ring",
+    back=gear.MNK_TP_Cape,
+    waist="Moonbow Belt +1",
+    -- ammo="Knobkierrie",
+    -- body="Anchorite's Cyclas +3",
+    -- hands="Ryuo Tekko +1",
+    -- legs="Hizamaru Hizayoroi +2",
+    -- back=gear.MNK_WS_Cape,
+    -- ear2="Moonshade Earring",
+    -- ring1="Begrudging Ring",
+    -- ring2="Niqmaddu Ring",
   })
+  sets.precast.WS["Victory Smite"].LowAcc = set_combine(sets.precast.WS["Victory Smite"], {
+    neck="Fotia Gorget",
+  })
+  sets.precast.WS["Victory Smite"].MidAcc = set_combine(sets.precast.WS["Victory Smite"].LowAcc, {
+    -- head="Rao Kabuto +1",
+    -- ear1="Telos Earring",
+  })
+  sets.precast.WS["Victory Smite"].HighAcc = set_combine(sets.precast.WS["Victory Smite"].MidAcc, {
+    ammo="Falcon Eye",
+    -- head="Ken. Jinpachi +1",
+    -- legs="Ken. Hakama +1",
+    -- feet="Ken. Sune-Ate +1",
+  })
+
+  -- Shijin Spiral: 100% DEX
   sets.precast.WS['Shijin Spiral'] = set_combine(sets.precast.WS, {
-    -- ear1="Bladeborn Earring",
-    -- ear2="Steelflash Earring",
-    -- legs="Manibozho Brais",
-    -- feet="Daihanshi Habaki",
+    ammo="Falcon Eye",
+    head=gear.Herc_WSD_head,
+    body="Mummu Jacket +1",
+    hands=gear.Adhemar_B_hands,
+    legs="Hizamaru Hizayoroi +1",
+    feet=gear.Herc_WSD_feet,
+    neck="Caro Necklace",
+    ear1="Sherida Earring",
+    ear2="Brutal Earring",
+    ring1="Ilabrat Ring",
+    ring2="Rajas Ring",
+    back=gear.MNK_TP_Cape,
+    waist="Moonbow Belt +1",
+    -- ammo="Jukukik Feather",
+    -- head="Ken. Jinpachi +1",
+    -- body="Adhemar Jacket +1",
+    -- legs="Jokushu Haidate",
+    -- feet="Ken. Sune-Ate +1",
+    -- ear2="Mache Earring +1",
+    -- ring1="Niqmaddu Ring",
+    -- ring2="Regal Ring",
+    -- back=gear.MNK_WS_Cape,
   })
+  sets.precast.WS["Shijin Spiral"].LowAcc = set_combine(sets.precast.WS["Shijin Spiral"], {
+    neck="Fotia Gorget",
+    head="Mummu Bonnet +2",
+    -- head="Ken. Jinpachi +1",
+  })
+  sets.precast.WS["Shijin Spiral"].MidAcc = set_combine(sets.precast.WS["Shijin Spiral"].LowAcc, {
+    ammo="Falcon Eye",
+  })
+  sets.precast.WS["Shijin Spiral"].HighAcc = set_combine(sets.precast.WS["Shijin Spiral"].MidAcc, {
+    hands="Mummu Wrists +2",
+    feet="Mummu Gamashes +1",
+  })
+
+  -- Asuran Fists: 20% STR / 20% VIT
+  sets.precast.WS['Asuran Fists'] = set_combine(sets.precast.WS, {
+    ammo="Tantra Tathlum",
+    head=gear.Adhemar_B_head,
+    body="Kendatsuba Samue +1",
+    hands=gear.Adhemar_B_hands,
+    legs="Hizamaru Hizayoroi +1",
+    feet=gear.Herc_WSD_feet,
+    neck="Caro Necklace",
+    ear1="Sherida Earring",
+    ear2="Odnowa Earring +1",
+    ring1="Rajas Ring",
+    ring2="Karieyh Ring",
+    back=gear.MNK_TP_Cape,
+    waist="Moonbow Belt +1",
+  })
+  sets.precast.WS["Asuran Fists"].LowAcc = set_combine(sets.precast.WS["Asuran Fists"], {
+    neck="Fotia Gorget",
+  })
+  sets.precast.WS["Asuran Fists"].MidAcc = set_combine(sets.precast.WS["Asuran Fists"].LowAcc, {
+    ear2="Dignitary's Earring",
+  })
+  sets.precast.WS["Asuran Fists"].HighAcc = set_combine(sets.precast.WS["Asuran Fists"].MidAcc, {
+    ammo="Falcon Eye",
+    head="Mummu Bonnet +2",
+  })
+
+  -- Ascetic's Fury: 50% STR / 50% VIT, can crit
+  sets.precast.WS["Ascetic's Fury"] = set_combine(sets.precast.WS, {
+    ammo="Tantra Tathlum",
+    head=gear.Adhemar_B_head,
+    body="Kendatsuba Samue +1",
+    hands=gear.Adhemar_B_hands,
+    legs="Hizamaru Hizayoroi +1",
+    feet=gear.Herc_WSD_feet,
+    neck="Fotia Gorget",
+    ear1="Sherida Earring",
+    ear2="Odnowa Earring +1",
+    ring1="Rajas Ring",
+    ring2="Karieyh Ring",
+    back=gear.MNK_TP_Cape,
+    waist="Moonbow Belt +1",
+    -- ammo="Knobkierrie",
+    -- body="Anch. Cyclas +3",
+    -- hands="Ryuo Tekko +1",
+    -- legs="Ken. Hakama +1",
+    -- ear2="Moonshade Earring",
+    -- ring1="Begrudging Ring",
+    -- ring2="Niqmaddu Ring",
+    -- back=gear.MNK_WS_Cape,
+  })
+  sets.precast.WS["Ascetic's Fury"].LowAcc = set_combine(sets.precast.WS["Ascetic's Fury"], {
+    head="Mummu Bonnet +2",
+    -- feet="Ken. Sune-Ate +1",
+  })
+  sets.precast.WS["Ascetic's Fury"].MidAcc = set_combine(sets.precast.WS["Ascetic's Fury"].LowAcc, {
+    ear2="Dignitary's Earring",
+  })
+  sets.precast.WS["Ascetic's Fury"].HighAcc = set_combine(sets.precast.WS["Ascetic's Fury"].MidAcc, {
+    ammo="Falcon Eye",
+    -- ear1="Mache Earring +1",
+    -- head="Ken. Jinpachi +1",
+  })
+
+  -- Raging Fists: 30% STR / 30% DEX
+  sets.precast.WS['Raging Fists'] = set_combine(sets.precast.WS, {
+
+  })
+  sets.precast.WS["Raging Fists"].LowAcc = set_combine(sets.precast.WS["Raging Fists"], {
+
+  })
+  sets.precast.WS["Raging Fists"].MidAcc = set_combine(sets.precast.WS["Raging Fists"].LowAcc, {
+
+  })
+  sets.precast.WS["Raging Fists"].HighAcc = set_combine(sets.precast.WS["Raging Fists"].MidAcc, {
+
+  })
+
+  -- Howling Fist: 40% STR / 40% VIT
+  sets.precast.WS['Howling Fist'] = set_combine(sets.precast.WS, {
+    
+  })
+  sets.precast.WS["Howling Fist"].LowAcc = set_combine(sets.precast.WS["Howling Fist"], {
+
+  })
+  sets.precast.WS["Howling Fist"].MidAcc = set_combine(sets.precast.WS["Howling Fist"].LowAcc, {
+
+  })
+  sets.precast.WS["Howling Fist"].HighAcc = set_combine(sets.precast.WS["Howling Fist"].MidAcc, {
+
+  })
+
+  -- Dragon Kick: 50% STR / 50% DEX
   sets.precast.WS['Dragon Kick'] = set_combine(sets.precast.WS, {
-    -- feet="Daihanshi Habaki",
+    
   })
+  sets.precast.WS["Dragon Kick"].LowAcc = set_combine(sets.precast.WS["Dragon Kick"], {
+
+  })
+  sets.precast.WS["Dragon Kick"].MidAcc = set_combine(sets.precast.WS["Dragon Kick"].LowAcc, {
+
+  })
+  sets.precast.WS["Dragon Kick"].HighAcc = set_combine(sets.precast.WS["Dragon Kick"].MidAcc, {
+
+  })
+
+  -- Tornado Kick: 40% STR / 40% VIT
   sets.precast.WS['Tornado Kick'] = set_combine(sets.precast.WS, {
-    -- ammo="Tantra Tathlum",
-    -- ring1="Spiral Ring",
+    
   })
+  sets.precast.WS["Tornado Kick"].LowAcc = set_combine(sets.precast.WS["Tornado Kick"], {
+
+  })
+  sets.precast.WS["Tornado Kick"].MidAcc = set_combine(sets.precast.WS["Tornado Kick"].LowAcc, {
+
+  })
+  sets.precast.WS["Tornado Kick"].HighAcc = set_combine(sets.precast.WS["Tornado Kick"].MidAcc, {
+
+  })
+
+  -- Spinning Attack: 100% STR
   sets.precast.WS['Spinning Attack'] = set_combine(sets.precast.WS, {
-    -- head="Kendatsuba jinpachi +1",
-    -- ear1="Bladeborn Earring",
-    -- ear2="Steelflash Earring",
+    
   })
+  sets.precast.WS["Spinning Attack"].LowAcc = set_combine(sets.precast.WS["Spinning Attack"], {
 
-  sets.precast.WS["Raging Fists"].LowAcc = set_combine(sets.precast.WS["Raging Fists"], sets.precast.WSAcc)
-  sets.precast.WS["Howling Fist"].LowAcc = set_combine(sets.precast.WS["Howling Fist"], sets.precast.WSAcc)
-  sets.precast.WS["Asuran Fists"].LowAcc = set_combine(sets.precast.WS["Asuran Fists"], sets.precast.WSAcc)
-  sets.precast.WS["Ascetic's Fury"].LowAcc = set_combine(sets.precast.WS["Ascetic's Fury"], sets.precast.WSAcc)
-  sets.precast.WS["Victory Smite"].LowAcc = set_combine(sets.precast.WS["Victory Smite"], sets.precast.WSAcc)
-  sets.precast.WS["Shijin Spiral"].LowAcc = set_combine(sets.precast.WS["Shijin Spiral"], sets.precast.WSAcc)
-  sets.precast.WS["Dragon Kick"].LowAcc = set_combine(sets.precast.WS["Dragon Kick"], sets.precast.WSAcc)
-  sets.precast.WS["Tornado Kick"].LowAcc = set_combine(sets.precast.WS["Tornado Kick"], sets.precast.WSAcc)
+  })
+  sets.precast.WS["Spinning Attack"].MidAcc = set_combine(sets.precast.WS["Spinning Attack"].LowAcc, {
 
-  sets.precast.WS["Raging Fists"].MidAcc = set_combine(sets.precast.WS["Raging Fists"], sets.precast.WSAcc)
-  sets.precast.WS["Howling Fist"].MidAcc = set_combine(sets.precast.WS["Howling Fist"], sets.precast.WSAcc)
-  sets.precast.WS["Asuran Fists"].MidAcc = set_combine(sets.precast.WS["Asuran Fists"], sets.precast.WSAcc)
-  sets.precast.WS["Ascetic's Fury"].MidAcc = set_combine(sets.precast.WS["Ascetic's Fury"], sets.precast.WSAcc)
-  sets.precast.WS["Victory Smite"].MidAcc = set_combine(sets.precast.WS["Victory Smite"], sets.precast.WSAcc)
-  sets.precast.WS["Shijin Spiral"].MidAcc = set_combine(sets.precast.WS["Shijin Spiral"], sets.precast.WSAcc)
-  sets.precast.WS["Dragon Kick"].MidAcc = set_combine(sets.precast.WS["Dragon Kick"], sets.precast.WSAcc)
-  sets.precast.WS["Tornado Kick"].MidAcc = set_combine(sets.precast.WS["Tornado Kick"], sets.precast.WSAcc)
+  })
+  sets.precast.WS["Spinning Attack"].HighAcc = set_combine(sets.precast.WS["Spinning Attack"].MidAcc, {
 
-  sets.precast.WS["Raging Fists"].HighAcc = set_combine(sets.precast.WS["Raging Fists"], sets.precast.WSAcc)
-  sets.precast.WS["Howling Fist"].HighAcc = set_combine(sets.precast.WS["Howling Fist"], sets.precast.WSAcc)
-  sets.precast.WS["Asuran Fists"].HighAcc = set_combine(sets.precast.WS["Asuran Fists"], sets.precast.WSAcc)
-  sets.precast.WS["Ascetic's Fury"].HighAcc = set_combine(sets.precast.WS["Ascetic's Fury"], sets.precast.WSAcc)
-  sets.precast.WS["Victory Smite"].HighAcc = set_combine(sets.precast.WS["Victory Smite"], sets.precast.WSAcc)
-  sets.precast.WS["Shijin Spiral"].HighAcc = set_combine(sets.precast.WS["Shijin Spiral"], sets.precast.WSAcc)
-  sets.precast.WS["Dragon Kick"].HighAcc = set_combine(sets.precast.WS["Dragon Kick"], sets.precast.WSAcc)
-  sets.precast.WS["Tornado Kick"].HighAcc = set_combine(sets.precast.WS["Tornado Kick"], sets.precast.WSAcc)
+  })
 
   sets.precast.WS['Cataclysm'] = {
-    -- head="Wayfarer Circlet",
-    -- neck="Stoicheion Medal",
-    -- ear1="Friomisi Earring",
-    -- ear2="Hecate's Earring",
-    -- body="Wayfarer Robe",
-    -- hands="Otronif Gloves",
-    -- ring1="Acumen Ring",
-    -- ring2="Demon's Ring",
-    -- back="Toro Cape",
-    -- waist="Thunder Belt",
-    -- legs="Nahtirah Trousers",
-    -- feet="Qaaxo Leggings",
+    
   }
 
   ------------------------------------------------------------------------------------------------
@@ -367,19 +452,6 @@ function init_gear_sets()
     ring2="Karieyh Ring",
     back=gear.MNK_TP_Cape,
     waist="Moonbow Belt +1",
-    -- ammo="Seki Shuriken",
-    -- head="Volte Cap",
-    -- body="Hiza. Haramaki +2",
-    -- hands=gear.Herc_DT_hands,
-    -- legs=gear.Samnuha,
-    -- feet="Herald's Gaiters",
-    -- neck="Bathy Choker +1",
-    -- ear1="Eabani Earring",
-    -- ear2="Sanare Earring",
-    -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
-    -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
-    -- back="Moonlight Cape",
-    -- waist="Flume Belt +1",
   }
 
   sets.idle.DT = set_combine(sets.idle, {
@@ -421,49 +493,12 @@ function init_gear_sets()
   sets.engaged.LowAcc = set_combine(sets.engaged, {
     ammo="Falcon Eye",
     ear2="Cessance Earring",
-    -- ammo="Hasty Pinion +1",
-    -- head="Ademar bonnet",
-    -- neck="Lissome necklace",
-    -- ear1="Mache earring +1",
-    -- ear2="Cessance earring",
-    -- body="Kendatsuba samue +1",
-    -- hands="Adhemar wristbands +1",
-    -- ring1="Niqmaddu Ring",
-    -- ring2="Epona's Ring",
-    -- back="Segomo's Mantle",
-    -- waist="Moonbow belt +1",
-    -- legs="Kendatsuba hakama +1",
-    -- feet="Kendatsuba sune-ate +1",
   })
   sets.engaged.MidAcc = set_combine(sets.engaged.LowAcc, {
-    -- ammo="Hasty Pinion +1",
-    -- head="Ademar bonnet",
-    -- neck="Lissome necklace",
-    -- ear1="Mache earring +1",
-    -- ear2="Cessance earring",
-    -- body="Kendatsuba samue +1",
-    -- hands="Adhemar wristbands +1",
-    -- ring1="Niqmaddu Ring",
-    -- ring2="Epona's Ring",
-    -- back="Segomo's Mantle",
-    -- waist="Moonbow belt +1",
-    -- legs="Kendatsuba hakama +1",
-    -- feet="Kendatsuba sune-ate +1",
+    
   })
   sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
-    -- ammo="Hasty Pinion +1",
-    -- head="Ademar bonnet",
-    -- neck="Lissome necklace",
-    -- ear1="Mache earring +1",
-    -- ear2="Cessance earring",
-    -- body="Kendatsuba samue +1",
-    -- hands="Adhemar wristbands +1",
-    -- ring1="Niqmaddu Ring",
-    -- ring2="Epona's Ring",
-    -- back="Segomo's Mantle",
-    -- waist="Moonbow belt +1",
-    -- legs="Kendatsuba hakama +1",
-    -- feet="Kendatsuba sune-ate +1",
+    
   })
 
 
@@ -472,23 +507,11 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.engaged.DT = {
-    -- ammo="Thew Bomblet",
-    -- head="Uk'uxkaj Cap",
-    -- neck="Lissome necklace",
-    -- ear1="Bladeborn Earring",
-    -- ear2="Cessance earring",
-    -- body="Otronif Harness +1",
-    -- hands="Adhemar wristbands +1",
-    -- ring1="Patricius Ring",
-    -- ring2="Epona's Ring",
-    -- back="Iximulew Cape",
-    -- waist="Windbuffet Belt",
-    -- legs="Hesychast's Hose +1",
-    -- feet="Otronif Boots +1",
+    
   }
 
   sets.engaged.Counter = {
-    -- feet="Melee Gaiters +2",
+    feet="Hesychast's Gaiters",
   }
 
   ------------------------------------------------------------------------------------------------
@@ -541,34 +564,10 @@ function init_gear_sets()
 
   -- Footwork combat form
   sets.engaged.Footwork = {
-    -- ammo="Thew Bomblet",
-    -- head="Kendatsuba jinpachi +1",
-    -- neck="Monk's nodowa +1",
-    -- ear1="Mache earring +1",
-    -- ear2="Cessance earring",
-    -- body="Kendatsuba samue +1",
-    -- hands="Adhemar wristbands +1",
-    -- ring1="Niqmaddu Ring",
-    -- ring2="Epona's Ring",
-    -- back="Segomo's Mantle",
-    -- waist="Moonbow belt +1",
-    -- legs="Hesychast's Hose +1",
-    -- feet="Anchorite's Gaiters +1",
+    
   }
   sets.engaged.Footwork.Acc = {
-    -- ammo="Honed Tathlum",
-    -- head="Whirlpool Mask",
-    -- neck="Monk's nodowa +1",
-    -- ear1="Mache earring +1",
-    -- ear2="Cessance earring",
-    -- body="Kendatsuba samue +1",
-    -- hands="Adhemar wristbands +1",
-    -- ring1="Niqmaddu Ring",
-    -- ring2="Epona's Ring",
-    -- back="Segomo's Mantle",
-    -- waist="Moonbow belt +1",
-    -- legs="Hesychast's Hose +1",
-    -- feet="Anchorite's Gaiters +1",
+    
   }
       
   -- Quick sets for post-precast adjustments, listed here so that the gear can be Validated.
@@ -587,8 +586,7 @@ function init_gear_sets()
     back="Aptitude Mantle",
   }
   sets.TreasureHunter = {
-    -- head="Volte Cap",
-    -- waist="Chaac Belt",
+    
   }
   sets.Reive = {
     neck="Ygnas's Resolve +1"
