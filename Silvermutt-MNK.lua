@@ -356,7 +356,7 @@ function init_gear_sets()
   sets.idle = {
     ammo="Ginsen",
     head=gear.Adhemar_B_head,
-    body="Bhikku Cyclas +1",
+    body="Kendatsuba Samue +1",
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha,
     feet="Hermes' Sandals",
@@ -406,7 +406,7 @@ function init_gear_sets()
   sets.engaged = {
     ammo="Ginsen",
     head=gear.Adhemar_B_head,
-    body="Bhikku Cyclas +1",
+    body="Kendatsuba Samue +1",
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha,
     feet=gear.Herc_Temp_feet,
@@ -573,7 +573,7 @@ function init_gear_sets()
       
   -- Quick sets for post-precast adjustments, listed here so that the gear can be Validated.
   sets.impetus_body = {
-    -- body="Bhikku Cyclas +1"
+    body="Bhikku Cyclas +1"
   }
   sets.footwork_kick_feet = {
     -- feet="Anchorite's Gaiters +1"
