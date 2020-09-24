@@ -270,6 +270,9 @@ function init_gear_sets()
     -- legs=gear.Adhemar_D_legs, --10/13
   }
 
+  -- Initializes trusts at iLvl 119
+  sets.midcast.Trust = sets.precast.FC
+
   -- Weaponskill sets
   -- Default set for any weaponskill that isn't any more specifically defined
   sets.precast.WS = {

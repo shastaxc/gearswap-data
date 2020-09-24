@@ -374,6 +374,9 @@ function init_gear_sets()
     -- body="Passion Jacket",
   })
 
+  -- Initializes trusts at iLvl 119
+  sets.midcast.Trust = sets.precast.FC
+
 
   ------------------------------------------------------------------------------------------------
   ------------------------------------- Weapon Skill Sets ----------------------------------------
