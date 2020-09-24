@@ -108,6 +108,7 @@ function user_setup()
   include('Global-Binds.lua')
 
   send_command('lua l gearinfo')
+  send_command('lua l equipviewerv2')
 
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c usekey')
@@ -199,6 +200,7 @@ function user_unload()
   send_command('unbind #0')
 
   send_command('lua u gearinfo')
+  send_command('lua u equipviewerv2')
 end
 
 

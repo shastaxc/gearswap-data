@@ -81,6 +81,9 @@ function user_setup()
   -- Additional local binds
   include('Global-Binds.lua')
 
+  send_command('lua l gearinfo')
+  send_command('lua l equipviewerv2')
+
   send_command('bind @c gs c toggle CP')
 
   if player.sub_job == 'WAR' then
@@ -148,6 +151,9 @@ function user_unload()
   send_command('unbind #8')
   send_command('unbind #9')
   send_command('unbind #0')
+
+  send_command('lua u gearinfo')
+  send_command('lua u equipviewerv2')
 end
 
 -- Define sets and vars used by this job file.
