@@ -2,8 +2,9 @@
 --  Global Keybinds
 -------------------------------------------------------------------------------------------------------------------
 
---  Spells:     [ ALT+K ]           Sneak/Spectral Jig/Silent Oil
+--  Spells:     
 --              [ ALT+J ]           Invisible/Prism Powder
+--              [ ALT+K ]           Sneak/Spectral Jig/Silent Oil
 --              [ ALT+Numpad7 ]     Paralyna
 --              [ ALT+Numpad8 ]     Silena
 --              [ ALT+Numpad9 ]     Blindna
@@ -15,7 +16,8 @@
 --              [ ALT+Numpad0 ]     Sacrifice
 --              [ ALT+Numpad. ]     Esuna
 --
---  Items:      [ WIN+Numpad/ ]     Soldier's Drink
+--  Items:
+--              [ WIN+Numpad/ ]     Soldier's Drink
 --              [ WIN+Numpad7 ]     Remedy
 --              [ WIN+Numpad8 ]     Echo Drops
 --              [ WIN+Numpad9 ]     Eye Drops
@@ -38,8 +40,11 @@
     elseif player.main_job == 'RDM' or player.sub_job == 'RDM'
       or player.main_job == 'SCH' or player.sub_job == 'SCH'
       or player.main_job == 'WHM' or player.sub_job == 'WHM' then
-        send_command('bind !j input /ma "Invisible" <stpc>')
+      send_command('bind !j input /ma "Invisible" <stpc>')
       send_command('bind !k input /ma "Sneak" <stpc>')
+    elseif player.main_job == 'NIN' or player.sub_job == 'NIN' then
+      send_command('bind ^j input /ma "Tonko: Ni" <me>')
+      send_command('bind ^k input /ma "Monomi: Ichi" <me>')
     else
       send_command('bind !j input /item "Prism Powder" <me>')
       send_command('bind !k input /item "Silent Oil" <me>')

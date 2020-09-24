@@ -98,10 +98,6 @@ function job_setup()
     blue_magic_maps.Cure = S{'Wild Carrot'}
     blue_magic_maps.Buffs = S{'Cocoon', 'Refueling'}
 
-    no_swap_gear = S{"Warp Ring", "Dim. Ring (Dem)", "Dim. Ring (Holla)", "Dim. Ring (Mea)",
-        "Trizek Ring", "Echad Ring", "Facility Ring", "Capacity Ring", "Dem Ring", "Empress Band",
-        "Emperor Band", "Fisherman's Cuffs", "Reraise Earring", "Emporox's Ring"}
-
     rayke_duration = 35
     gambit_duration = 96
 
@@ -138,6 +134,8 @@ function user_setup()
     send_command('lua l gearinfo')
     
     send_command('bind !s gs c faceaway')
+    send_command('bind !d gs c usekey')
+    send_command('bind @w gs c toggle WeaponLock')
 
     send_command('bind @d gs c toggle DeathResist')
 
@@ -150,7 +148,6 @@ function user_setup()
     send_command('bind @c gs c toggle CP')
     -- send_command('bind @e gs c cycleback WeaponSet')
     -- send_command('bind @r gs c cycle WeaponSet')
-    send_command('bind @w gs c toggle WeaponLock')
     send_command('bind @k gs c toggle Knockback')
     send_command('bind ^` input /ma "Temper" <me>')
 
@@ -205,6 +202,7 @@ end
 
 function user_unload()
   send_command('unbind !s')
+  send_command('unbind !d')
 
     send_command('unbind ^`')
     send_command('unbind !`')
@@ -326,7 +324,7 @@ function init_gear_sets()
       ammo="Seething Bomblet", --6
       head="Highwing Helm", --20
       hands="Leyline Gloves", --30
-      feet=gear.Herc_Temp_feet, --10
+      feet=gear.Herc_TA_feet, --10
       neck="Atzintli Necklace", --5
       ear1="Friomisi Earring", --10
       ear2="Novio Earring", --7
@@ -875,7 +873,7 @@ function init_gear_sets()
       body="Ayanmo Corazza +1",
       hands=gear.Adhemar_B_hands,
       legs="Meghanada Chausses +2",
-      feet=gear.Herc_Temp_feet,
+      feet=gear.Herc_TA_feet,
       neck="Anu Torque",
       waist="Sailfi Belt +1",
       ear1="Brutal Earring",
@@ -1154,16 +1152,8 @@ end
 -- buff == buff gained or lost
 -- gain == true if the buff was gained, false if it was lost.
 function job_buff_change(buff,gain)
-  --  if buffactive['Reive Mark'] then
-  --      if gain then
-  --          equip(sets.Reive)
-  --          disable('neck')
-  --      else
-  --          enable('neck')
-  --      end
-  --  end
 
-    if buff == "terror" then
+  if buff == "terror" then
         if gain then
             equip(sets.defense.PDT)
         end
@@ -1173,12 +1163,12 @@ function job_buff_change(buff,gain)
       if gain then
         equip(sets.buff.Doom)
         send_command('@input /p Doomed.')
-        disable('neck', 'ring1','waist')
+        disable('neck','ring1','waist')
       else
         if player.hpp > 0 then
           send_command('@input /p Doom Removed.')
         end
-        enable('neck', 'ring1','waist')
+        enable('neck','ring1','waist')
         handle_equipping_gear(player.status)
       end
     end
@@ -1387,7 +1377,9 @@ end
 function job_self_command(cmdParams, eventArgs)
     gearinfo(cmdParams, eventArgs)
     if cmdParams[1]:lower() == 'rune' then
-        send_command('@input /ja '..state.Runes.value..' <me>')
+      send_command('@input /ja '..state.Runes.value..' <me>')
+    elseif cmdParams[1]:lower() == 'usekey' then
+      send_command('cancel Invisible; cancel Hide; cancel Gestation')
     elseif cmdParams[1]:lower() == 'faceaway' then
       windower.ffxi.turn(player.facing - math.pi);
     end

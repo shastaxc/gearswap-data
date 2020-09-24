@@ -73,10 +73,6 @@ function job_setup()
     
     state.MainStep = M{['description']='Main Step', 'Box Step', 'Quickstep', 'Feather Step', 'Stutter Step'}
 
-    no_swap_gear = S{"Warp Ring", "Dim. Ring (Dem)", "Dim. Ring (Holla)", "Dim. Ring (Mea)",
-        "Trizek Ring", "Echad Ring", "Facility Ring", "Capacity Ring", "Dem Ring", "Empress Band",
-        "Emperor Band", "Fisherman's Cuffs", "Reraise Earring", "Emporox's Ring"}
-
     include('Mote-TreasureHunter')
 
     -- For th_action_check():
@@ -102,6 +98,7 @@ function user_setup()
     state.WeaponskillMode:options('Normal', 'Acc', 'LowBuff')
     state.IdleMode:options('Normal', 'DT')
     state.CP = M(false, "Capacity Points Mode")
+    state.WeaponLock = M(false, 'Weapon Lock')
 
     -- Additional local binds
     include('Global-Binds.lua') -- OK to remove this line
@@ -111,7 +108,8 @@ function user_setup()
 
     send_command('bind !s gs c faceaway')
     send_command('bind !d gs c usekey')
-
+    send_command('bind @w gs c toggle WeaponLock')
+  
     send_command('bind ^` gs c cycle treasuremode')
     send_command('bind !` input /ja "Flee" <me>')
     send_command('bind @c gs c toggle CP')
@@ -159,6 +157,8 @@ end
 function user_unload()
   send_command('unbind !s')
   send_command('unbind !d')
+  send_command('unbind @w')
+
     send_command('unbind ^`')
     send_command('unbind !`')
     send_command('unbind ^,')
@@ -393,7 +393,7 @@ function init_gear_sets()
       ammo="Seething Bomblet", --6
       head="Highwing Helm", --20
       hands="Leyline Gloves", --30
-      feet=gear.Herc_Temp_feet, --10
+      feet=gear.Herc_TA_feet, --10
       neck="Atzintli Necklace", --5
       ear1="Friomisi Earring", --10
       ear2="Novio Earring", --7
@@ -1017,31 +1017,33 @@ end
 -- gain == true if the buff was gained, false if it was lost.
 function job_buff_change(buff,gain)
 
---    if buffactive['Reive Mark'] then
---        if gain then
---            equip(sets.Reive)
---            disable('neck')
---        else
---            enable('neck')
---        end
---    end
-
-    if buff == "doom" then
-        if gain then
-            equip(sets.buff.Doom)
-            send_command('@input /p Doomed.')
-            disable('neck','ring2','waist')
-        else
-            enable('neck','ring2','waist')
-            handle_equipping_gear(player.status)
-        end
+  if buff == "doom" then
+    if gain then
+      equip(sets.buff.Doom)
+      send_command('@input /p Doomed.')
+      disable('neck','ring2','waist')
+    else
+      if player.hpp > 0 then
+        send_command('@input /p Doom Removed.')
+      end
+      enable('neck','ring2','waist')
+      handle_equipping_gear(player.status)
     end
+  end
 
-    if not midaction() then
-        handle_equipping_gear(player.status)
-    end
+  if not midaction() then
+    handle_equipping_gear(player.status)
+  end
 end
 
+-- Handle notifications of general user state change.
+function job_state_change(stateField, newValue, oldValue)
+  if state.WeaponLock.value == true then
+    disable('main','sub')
+  else
+    enable('main','sub')
+  end
+end
 
 -------------------------------------------------------------------------------------------------------------------
 -- User code that supplements standard library decisions.
@@ -1050,6 +1052,7 @@ end
 -- Called by the 'update' self-command, for common needs.
 -- Set eventArgs.handled to true if we don't want automatic equipping of gear.
 function job_handle_equipping_gear(playerStatus, eventArgs)
+    update_weapons()
     check_gear()
     update_combat_form()
     determine_haste_group()
@@ -1279,6 +1282,13 @@ function check_moving()
     end
 end
 
+function update_weapons()
+  if player.equipment.main ~= "empty" then
+    gear.prevMain = player.equipment.main
+    gear.prevSub = player.equipment.sub
+  end
+end
+
 function check_gear()
     if no_swap_gear:contains(player.equipment.ring1) then
         disable("ring1")
@@ -1290,6 +1300,20 @@ function check_gear()
     else
         enable("ring2")
     end
+    
+  --Disarm Handling--
+  --Turns out that the table fill the string "empty" for empty slot. It won't return nil
+  if player.equipment.main == "empty" then
+    if state.WeaponLock.value == false then
+      equip({
+        main = gear.prevMain,
+      })
+      -- Trying to equip subhand in same command as main causes it not to equip
+      equip({
+        sub = gear.prevSub,
+      })
+    end
+  end
 end
 
 windower.register_event('zone change',

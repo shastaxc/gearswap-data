@@ -33,9 +33,6 @@ end
 -- Setup vars that are user-independent.
 function job_setup()
 
-    no_swap_gear = S{"Warp Ring", "Dim. Ring (Dem)", "Dim. Ring (Holla)", "Dim. Ring (Mea)",
-              "Trizek Ring", "Echad Ring", "Facility Ring", "Capacity Ring"}
-
     include('Mote-TreasureHunter')
 
     -- For th_action_check():
@@ -61,7 +58,7 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 function user_setup()
-  state.OffenseMode:options('STP', 'Normal', 'LowAcc', 'MidAcc', 'HighAcc')
+  state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.WeaponskillMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.HybridMode:options('Normal', 'DT', 'Counter')
   state.IdleMode:options('Normal', 'DT')
@@ -69,7 +66,7 @@ function user_setup()
   state.CP = M(false, "Capacity Points Mode")
 
   -- Additional local binds
-  include('Global-Binds.lua') -- OK to remove this line
+  include('Global-Binds.lua')
 
   send_command('bind ^` gs c cycle treasuremode')
   send_command('bind @c gs c toggle CP')
@@ -99,7 +96,9 @@ function user_setup()
   send_command('bind ^numpad1 input /ws "Spinning Attack" <t>')
   send_command('bind ^numpad2 input /ws "Shoulder Tackle" <t>')
 
-  send_command('bind numpad0 input /ja "Boost" <t>')
+  send_command('bind ^` input /ja "Impetus" <me>')
+  send_command('bind !` input /ja "Chakra" <me>')
+  send_command('bind ^numpad+ input /ja "Boost" <me>')
 
   update_combat_form()
   update_melee_groups()
@@ -110,6 +109,7 @@ end
 
 function user_unload()
   send_command('unbind ^`')
+  send_command('unbind !`')
   send_command('unbind @c')
   send_command('unbind !w')
   send_command('unbind ^numpad/')
@@ -122,6 +122,7 @@ function user_unload()
   send_command('unbind ^numpad2')
   send_command('unbind ^numpad0')
   send_command('unbind ^numpad.')
+  send_command('unbind ^numpad+')
   send_command('unbind numpad0')
 
   send_command('unbind #`')
@@ -168,7 +169,7 @@ function init_gear_sets()
     hands="Tantra Crown +1",
   }
   sets.precast.JA['Dodge'] = {
-    feet="Anchorite's Gaiters",
+    feet="Anchorite's Gaiters +1",
   }
   sets.precast.JA['Focus'] = {
     head="Anchorite's Crown +1",
@@ -211,6 +212,19 @@ function init_gear_sets()
 
   -- Default set for any weaponskill that isn't any more specifically defined
   sets.precast.WS = {
+    ammo="Tantra Tathlum",
+    head=gear.Adhemar_B_head,
+    body="Kendatsuba Samue +1",
+    hands=gear.Adhemar_B_hands,
+    legs="Hizamaru Hizayoroi +1",
+    feet=gear.Herc_WSD_feet,
+    neck="Monk's Nodowa +2",
+    ear1="Sherida Earring",
+    ear2="Brutal Earring",
+    ring1="Rajas Ring",
+    ring2="Karieyh Ring",
+    back=gear.MNK_TP_Cape,
+    waist="Moonbow Belt +1",
   } -- Base WS set
 
   sets.precast.MaxTP = {
@@ -445,7 +459,7 @@ function init_gear_sets()
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha,
     feet="Hermes' Sandals",
-    neck="Lissome Necklace",
+    neck="Monk's Nodowa",
     ear1="Sherida Earring",
     ear2="Infused Earring",
     ring1="Epona's Ring",
@@ -460,7 +474,9 @@ function init_gear_sets()
 
   sets.idle.Weak = sets.idle.DT
 
-  sets.idle.Town = sets.idle
+  sets.idle.Town = set_combine(sets.idle, {
+    neck="Monk's Nodowa",
+  })
 
   sets.idle.Town.Adoulin = {
     body="Councilor's Garb",
@@ -481,7 +497,7 @@ function init_gear_sets()
     body="Kendatsuba Samue +1",
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha,
-    feet=gear.Herc_Temp_feet,
+    feet=gear.Herc_TA_feet,
     neck="Monk's Nodowa +2",
     ear1="Sherida Earring",
     ear2="Brutal Earring",
@@ -506,13 +522,24 @@ function init_gear_sets()
   ---------------------------------------- Hybrid Sets -------------------------------------------
   ------------------------------------------------------------------------------------------------
 
-  sets.engaged.DT = {
-    
+  sets.Hybrid = {
+    neck="Twilight Torque",
+    ring2="Defending Ring",
   }
 
-  sets.engaged.Counter = {
+  sets.engaged.DT = set_combine(sets.engaged, sets.Hybrid)
+  sets.engaged.LowAcc.DT = set_combine(sets.engaged.LowAcc, sets.Hybrid)
+  sets.engaged.MidAcc.DT = set_combine(sets.engaged.MidAcc, sets.Hybrid)
+  sets.engaged.HighAcc.DT = set_combine(sets.engaged.HighAcc, sets.Hybrid)
+
+  sets.Counter = {
     feet="Hesychast's Gaiters",
   }
+
+  sets.engaged.Counter = set_combine(sets.engaged, sets.Counter)
+  sets.engaged.LowAcc.Counter = set_combine(sets.engaged.LowAcc, sets.Counter)
+  sets.engaged.MidAcc.Counter = set_combine(sets.engaged.MidAcc, sets.Counter)
+  sets.engaged.HighAcc.Counter = set_combine(sets.engaged.HighAcc, sets.Counter)
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Special Sets ------------------------------------------
@@ -575,11 +602,11 @@ function init_gear_sets()
     body="Bhikku Cyclas +1"
   }
   sets.footwork_kick_feet = {
-    feet="Anchorite's Gaiters"
+    feet="Anchorite's Gaiters +1"
   }
   sets.buff.Doom = {
     neck="Nicander's Necklace", --20
-    ring1="Eshmun's Ring", --20
+    ring2="Eshmun's Ring", --20
     waist="Gishdubar Sash", --10
   }
   sets.CP = {
@@ -672,12 +699,12 @@ function job_buff_change(buff,gain)
     if gain then
       equip(sets.buff.Doom)
       send_command('@input /p Doomed.')
-      disable('neck', 'ring1','waist')
+      disable('neck','ring2','waist')
     else
       if player.hpp > 0 then
         send_command('@input /p Doom Removed.')
       end
-      enable('neck', 'ring1','waist')
+      enable('neck','ring2','waist')
       handle_equipping_gear(player.status)
     end
   end
@@ -689,6 +716,7 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 function job_handle_equipping_gear(playerStatus, eventArgs)
+  update_weapons()
   check_gear()
 end
 
@@ -768,6 +796,12 @@ function customize_melee_set(meleeSet)
   return meleeSet
 end
 
+function customize_defense_set(defenseSet)
+  if state.CP.current == 'on' then
+    defenseSet = set_combine(defenseSet, sets.CP)
+  end
+end
+
 -------------------------------------------------------------------------------------------------------------------
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
@@ -789,6 +823,23 @@ function update_melee_groups()
   
   if buffactive.impetus then
     classes.CustomMeleeGroups:append('Impetus')
+  end
+end
+
+function job_self_command(cmdParams, eventArgs)
+  if cmdParams[1]:lower() == 'usekey' then
+    send_command('cancel Invisible; cancel Hide; cancel Gestation')
+  elseif cmdParams[1]:lower() == 'faceaway' then
+    windower.ffxi.turn(player.facing - math.pi);
+  end
+
+  -- gearinfo(cmdParams, eventArgs)
+end
+
+function update_weapons()
+  if player.equipment.main ~= "empty" then
+      gear.prevMain = player.equipment.main
+      gear.prevSub = player.equipment.sub
   end
 end
 

@@ -87,9 +87,6 @@ function job_setup()
     state.Buff.Saboteur = buffactive.Saboteur or false
     state.Buff.Stymie = buffactive.Stymie or false
 
-    no_swap_gear = S{"Warp Ring", "Dim. Ring (Dem)", "Dim. Ring (Holla)", "Dim. Ring (Mea)",
-              "Trizek Ring", "Echad Ring", "Facility Ring", "Capacity Ring"}
-
     enfeebling_magic_acc = S{'Bind', 'Break', 'Dispel', 'Distract', 'Distract II', 'Frazzle',
         'Frazzle II',  'Gravity', 'Gravity II', 'Silence'}
     enfeebling_magic_skill = S{'Distract III', 'Frazzle III', 'Poison II'}
@@ -126,7 +123,7 @@ function user_setup()
     state.SleepMode = M{['description']='Sleep Mode', 'Normal', 'MaxDuration'}
     state.EnspellMode = M(false, 'Enspell Melee Mode')
     state.NM = M(false, 'NM?')
-    -- state.CP = M(false, "Capacity Points Mode")
+    state.CP = M(false, "Capacity Points Mode")
 
     -- Additional local binds
     include('Global-Binds.lua') -- OK to remove this line
@@ -180,7 +177,7 @@ function user_setup()
     send_command('bind @e gs c cycle EnspellMode')
     send_command('bind @d gs c toggle NM')
     send_command('bind @w gs c toggle WeaponLock')
-    -- send_command('bind @c gs c toggle CP')
+    send_command('bind @c gs c toggle CP')
     -- send_command('bind @e gs c cycleback WeaponSet')
     -- send_command('bind @r gs c cycle WeaponSet')
 
@@ -219,16 +216,23 @@ function user_unload()
     send_command('unbind !w')
     send_command('unbind !e')
     send_command('unbind !r')
+    
+    send_command('unbind !u')
+    send_command('unbind !i')
+    send_command('unbind !o')
+    send_command('unbind !p')
+
     send_command('unbind !;')
     send_command('unbind !\'')
     send_command('unbind !,')
     send_command('unbind !.')
     send_command('unbind !/')
+    
     send_command('unbind @s')
     send_command('unbind @e')
     send_command('unbind @d')
     send_command('unbind @w')
-    -- send_command('unbind @c')
+    send_command('unbind @c')
     send_command('unbind @r')
     send_command('unbind !insert')
     send_command('unbind !delete')
@@ -1164,11 +1168,10 @@ function init_gear_sets()
     ------------------------------------------------------------------------------------------------
 
     sets.buff.Doom = {
-        -- neck="Nicander's Necklace", --20
-        -- ring1={name="Eshmun's Ring", bag="wardrobe3"}, --20
-        -- ring2={name="Eshmun's Ring", bag="wardrobe4"}, --20
-        -- waist="Gishdubar Sash", --10
-        }
+      -- neck="Nicander's Necklace", --20
+      -- ring2="Eshmun's Ring", --20
+      -- waist="Gishdubar Sash", --10
+    }
 
     sets.Obi = {
       waist="Hachirin-no-Obi",
@@ -1256,16 +1259,19 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 function job_buff_change(buff,gain)
-    if buff == "doom" then
-        if gain then
-            equip(sets.buff.Doom)
-            send_command('@input /p Doomed.')
-             disable('ring1','ring2','waist')
-        else
-            enable('ring1','ring2','waist')
-            handle_equipping_gear(player.status)
-        end
+  if buff == "doom" then
+    if gain then
+      equip(sets.buff.Doom)
+      send_command('@input /p Doomed.')
+      disable('neck','ring2','waist')
+    else
+      if player.hpp > 0 then
+        send_command('@input /p Doom Removed.')
+      end
+      enable('neck','ring2','waist')
+      handle_equipping_gear(player.status)
     end
+  end
 end
 
 -- Handle notifications of general user state change.
@@ -1354,13 +1360,9 @@ function customize_idle_set(idleSet)
     if player.mpp < 51 then
         idleSet = set_combine(idleSet, sets.latent_refresh)
     end
-    -- if state.CP.current == 'on' then
-    --     equip(sets.CP)
-    --     disable('back')
-    -- else
-    --     enable('back')
-    -- end
-
+    if state.CP.current == 'on' then
+      idleSet = set_combine(idleSet, sets.CP)
+    end
     if state.Auto_Kite.value == true then
        idleSet = set_combine(idleSet, sets.Kiting)
     end
@@ -1375,14 +1377,17 @@ function customize_melee_set(meleeSet)
     if state.EnspellMode.value == true and player.hpp <= 75 and player.tp < 1000 then
         meleeSet = set_combine(meleeSet, sets.engaged.Enspell.Fencer)
     end
+    if state.CP.current == 'on' then
+      idleSet = set_combine(idleSet, sets.CP)
+    end
 
     return meleeSet
 end
 
--- Set eventArgs.handled to true if we don't want the automatic display to be run.
-function display_current_job_state(eventArgs)
-    display_current_caster_state()
-    eventArgs.handled = true
+function customize_defense_set(defenseSet)
+  if state.CP.current == 'on' then
+    defenseSet = set_combine(defenseSet, sets.CP)
+  end
 end
 
 -- Function to display the current relevant user state when doing an update.
@@ -1415,6 +1420,9 @@ function display_current_job_state(eventArgs)
     end
     if state.Kiting.value then
         msg = msg .. ' Kiting: On |'
+    end
+    if state.CP.current == 'on' then
+      msg = msg .. ' CP Mode: On |'
     end
 
     add_to_chat(002, '| ' ..string.char(31,210).. 'Melee' ..cf_msg.. ': ' ..string.char(31,001)..m_msg.. string.char(31,002)..  ' |'

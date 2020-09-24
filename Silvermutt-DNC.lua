@@ -112,10 +112,6 @@ function job_setup()
 
   state.CP = M(false, "Capacity Points Mode")
 
-  no_swap_gear = S{"Warp Ring", "Dim. Ring (Dem)", "Dim. Ring (Holla)", "Dim. Ring (Mea)",
-      "Trizek Ring", "Echad Ring", "Facility Ring", "Capacity Ring", "Dem Ring", "Empress Band",
-      "Emperor Band", "Fisherman's Cuffs", "Reraise Earring", "Emporox's Ring"}
-
   lockstyleset = 2
 end
 
@@ -133,12 +129,12 @@ function user_setup()
   state.WeaponLock = M(false, 'Weapon Lock')
 
   -- Additional local binds
-  include('Global-Binds.lua') -- OK to remove this line
+  include('Global-Binds.lua')
 
   send_command('lua l gearinfo')
 
   send_command('bind !s gs c faceaway')
-
+  send_command('bind !d gs c usekey')
   send_command('bind @w gs c toggle WeaponLock')
 
   send_command('bind ^- gs c cycleback mainstep')
@@ -199,6 +195,7 @@ end
 -- Called when this job file is unloaded (eg: job change)
 function user_unload()
   send_command('unbind !s')
+  send_command('unbind !d')
 
   send_command('unbind ^-')
   send_command('unbind ^=')
@@ -444,7 +441,7 @@ function init_gear_sets()
     ammo="Seething Bomblet", --6
     head="Highwing Helm", --20
     hands="Leyline Gloves", --30
-    feet=gear.Herc_Temp_feet, --10
+    feet=gear.Herc_TA_feet, --10
     neck="Atzintli Necklace", --5
     ear1="Friomisi Earring", --10
     ear2="Novio Earring", --7
@@ -976,25 +973,16 @@ function job_buff_change(buff,gain)
       handle_equipping_gear(player.status)
   end
 
-  --  if buffactive['Reive Mark'] then
-  --      if gain then
-  --          equip(sets.Reive)
-  --          disable('neck')
-  --      else
-  --          enable('neck')
-  --      end
-  --  end
-
   if buff == "doom" then
     if gain then
       equip(sets.buff.Doom)
       send_command('@input /p Doomed.')
-      disable('neck', 'ring2','waist')
+      disable('neck','ring2','waist')
     else
       if player.hpp > 0 then
         send_command('@input /p Doom Removed.')
       end
-      enable('neck', 'ring2','waist')
+      enable('neck','ring2','waist')
       handle_equipping_gear(player.status)
     end
   end
@@ -1178,6 +1166,8 @@ function job_self_command(cmdParams, eventArgs)
       end
 
       send_command('@input /ja "'..doStep..'" <t>')
+  elseif cmdParams[1]:lower() == 'usekey' then
+    send_command('cancel Invisible; cancel Hide; cancel Gestation')
   elseif cmdParams[1]:lower() == 'faceaway' then
     windower.ffxi.turn(player.facing - math.pi);
   end
