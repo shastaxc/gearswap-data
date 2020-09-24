@@ -39,30 +39,30 @@
 
 -- Initialization function for this job file.
 function get_sets()
-    mote_include_version = 2
+  mote_include_version = 2
 
-    -- Load and initialize the include file.
-    include('Mote-Include.lua')
+  -- Load and initialize the include file.
+  include('Mote-Include.lua')
 end
 
 -- Setup vars that are user-independent.
 function job_setup()
 
-    -- For th_action_check():
-    -- JA IDs for actions that always have TH: Provoke, Animated Flourish
-    info.default_ja_ids = S{35, 204}
-    -- Unblinkable JA IDs for actions that always have TH: Quick/Box/Stutter Step, Desperate/Violent Flourish
-    info.default_u_ja_ids = S{201, 202, 203, 205, 207}
+  -- For th_action_check():
+  -- JA IDs for actions that always have TH: Provoke, Animated Flourish
+  info.default_ja_ids = S{35, 204}
+  -- Unblinkable JA IDs for actions that always have TH: Quick/Box/Stutter Step, Desperate/Violent Flourish
+  info.default_u_ja_ids = S{201, 202, 203, 205, 207}
 
-    state.Buff.Footwork = buffactive.Footwork or false
-    state.Buff.Impetus = buffactive.Impetus or false
+  state.Buff.Footwork = buffactive.Footwork or false
+  state.Buff.Impetus = buffactive.Impetus or false
 
-    state.FootworkWS = M(false, 'Footwork on WS')
+  state.FootworkWS = M(false, 'Footwork on WS')
 
-    info.impetus_hit_count = 0
-    windower.raw_register_event('action', on_action_for_impetus)
+  info.impetus_hit_count = 0
+  windower.raw_register_event('action', on_action_for_impetus)
 
-    lockstyleset = 5
+  lockstyleset = 5
 
 end
 
@@ -649,7 +649,7 @@ function job_post_precast(spell, action, spellMap, eventArgs)
     if state.Buff.Impetus and (spell.english == "Ascetic's Fury" or spell.english == "Victory Smite") then
       -- Need 6 hits at capped dDex, or 9 hits if dDex is uncapped, for Tantra to tie or win.
       if (state.OffenseMode.current ~= 'MidAcc' and state.OffenseMode.current ~= 'HighAcc' and info.impetus_hit_count > 5)
-        or (info.impetus_hit_count > 8) then
+          or (info.impetus_hit_count > 8) then
         equip(sets.impetus_body)
       end
     elseif state.Buff.Footwork and (spell.english == "Dragon's Kick" or spell.english == "Tornado Kick") then
@@ -733,40 +733,40 @@ end
 -- Function to display the current relevant user state when doing an update.
 -- Set eventArgs.handled to true if display was handled, and you don't want the default info shown.
 function display_current_job_state(eventArgs)
-    local cf_msg = ''
-    if state.CombatForm.has_value then
-        cf_msg = ' (' ..state.CombatForm.value.. ')'
-    end
+  local cf_msg = ''
+  if state.CombatForm.has_value then
+    cf_msg = ' (' ..state.CombatForm.value.. ')'
+  end
 
-    local m_msg = state.OffenseMode.value
-    if state.HybridMode.value ~= 'Normal' then
-        m_msg = m_msg .. '/' ..state.HybridMode.value
-    end
+  local m_msg = state.OffenseMode.value
+  if state.HybridMode.value ~= 'Normal' then
+    m_msg = m_msg .. '/' ..state.HybridMode.value
+  end
 
-    local ws_msg = state.WeaponskillMode.value
+  local ws_msg = state.WeaponskillMode.value
 
-    local d_msg = 'None'
-    if state.DefenseMode.value ~= 'None' then
-        d_msg = state.DefenseMode.value .. state[state.DefenseMode.value .. 'DefenseMode'].value
-    end
+  local d_msg = 'None'
+  if state.DefenseMode.value ~= 'None' then
+    d_msg = state.DefenseMode.value .. state[state.DefenseMode.value .. 'DefenseMode'].value
+  end
 
-    local i_msg = state.IdleMode.value
+  local i_msg = state.IdleMode.value
 
-    local msg = ''
-    if state.Kiting.value then
-        msg = msg .. ' Kiting: On |'
-    end
-    if state.CP.current == 'on' then
-      msg = msg .. ' CP Mode: On |'
-    end
+  local msg = ''
+  if state.Kiting.value then
+    msg = msg .. ' Kiting: On |'
+  end
+  if state.CP.current == 'on' then
+    msg = msg .. ' CP Mode: On |'
+  end
 
-    add_to_chat(002, '| ' ..string.char(31,210).. 'Melee' ..cf_msg.. ': ' ..string.char(31,001)..m_msg.. string.char(31,002)..  ' |'
-        ..string.char(31,207).. ' WS: ' ..string.char(31,001)..ws_msg.. string.char(31,002)..  ' |'
-        ..string.char(31,004).. ' Defense: ' ..string.char(31,001)..d_msg.. string.char(31,002)..  ' |'
-        ..string.char(31,008).. ' Idle: ' ..string.char(31,001)..i_msg.. string.char(31,002)..  ' |'
-        ..string.char(31,002)..msg)
+  add_to_chat(002, '| ' ..string.char(31,210).. 'Melee' ..cf_msg.. ': ' ..string.char(31,001)..m_msg.. string.char(31,002)..  ' |'
+      ..string.char(31,207).. ' WS: ' ..string.char(31,001)..ws_msg.. string.char(31,002)..  ' |'
+      ..string.char(31,004).. ' Defense: ' ..string.char(31,001)..d_msg.. string.char(31,002)..  ' |'
+      ..string.char(31,008).. ' Idle: ' ..string.char(31,001)..i_msg.. string.char(31,002)..  ' |'
+      ..string.char(31,002)..msg)
 
-    eventArgs.handled = true
+  eventArgs.handled = true
 end
 
 
@@ -877,24 +877,24 @@ windower.register_event('zone change',
 
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
-    -- Default macro set/book: (set, book)
-    if player.sub_job == 'WAR' then
-      set_macro_page(1, 1)
-    elseif player.sub_job == 'DNC' then
-      set_macro_page(2, 1)
-    elseif player.sub_job == 'NIN' then
-      set_macro_page(3, 1)
-    elseif player.sub_job == 'THF' then
-      set_macro_page(4, 1)
-    elseif player.sub_job == 'RUN' then
-      set_macro_page(5, 1)
-    else
-      set_macro_page(1, 1)
-    end
+  -- Default macro set/book: (set, book)
+  if player.sub_job == 'WAR' then
+    set_macro_page(1, 1)
+  elseif player.sub_job == 'DNC' then
+    set_macro_page(2, 1)
+  elseif player.sub_job == 'NIN' then
+    set_macro_page(3, 1)
+  elseif player.sub_job == 'THF' then
+    set_macro_page(4, 1)
+  elseif player.sub_job == 'RUN' then
+    set_macro_page(5, 1)
+  else
+    set_macro_page(1, 1)
+  end
 end
 
 function set_lockstyle()
-    send_command('wait 2; input /lockstyleset ' .. lockstyleset)
+  send_command('wait 2; input /lockstyleset ' .. lockstyleset)
 end
 
 -------------------------------------------------------------------------------------------------------------------
