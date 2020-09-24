@@ -17,6 +17,9 @@
 --              [ ALT+F12 ]         Cancel Emergency -PDT/-MDT Mode
 --              [ ALT+` ]           Toggle Magic Burst Mode
 --              [ WIN+C ]           Toggle Capacity Points Mode
+--              [ WIN+W ]           Toggle Weapon Lock
+--                                  (off = re-equip previous weapons if you go barehanded)
+--                                  (on = prevent weapon auto-equipping)
 --
 --  Abilities:  [ CTRL+` ]          Composure
 --              [ CTRL+- ]          Light Arts/Addendum: White
@@ -36,14 +39,13 @@
 --              [ WIN+, ]           Utsusemi: Ichi
 --              [ WIN+. ]           Utsusemi: Ni
 --
---  Weapons:    [ CTRL+W ]          Toggles Weapon Lock
---
 --  WS:         [ CTRL+Numpad7 ]    Savage Blade
 --              [ CTRL+Numpad9 ]    Chant Du Cygne
 --              [ CTRL+Numpad4 ]    Requiescat
 --              [ CTRL+Numpad1 ]    Sanguine Blade
 --
--- Other:       [ ALT+D]            Cancel Invisibility and use key on <t>
+--  Other:      [ ALT+D ]           Cancel Invisible/Hide & Use Key on <t>
+--              [ ALT+S ]           Turn 180 degrees in place
 --
 --
 --              (Global-Binds.lua contains additional non-job-related keybinds)

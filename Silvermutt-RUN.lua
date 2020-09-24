@@ -18,6 +18,9 @@
 --              [ WIN+K ]           Toggle Knockback Defense Mods
 --              [ WIN+A ]           AttackMode: Capped/Uncapped WS Modifier
 --              [ WIN+C ]           Toggle Capacity Points Mode
+--              [ WIN+W ]           Toggle Weapon Lock
+--                                  (off = re-equip previous weapons if you go barehanded)
+--                                  (on = prevent weapon auto-equipping)
 --
 --  Abilities:  [ CTRL+- ]          Rune element cycle forward.
 --              [ CTRL+= ]          Rune element cycle backward.
@@ -49,8 +52,6 @@
 --              [ ALT+W ]           Cocoon (BLU sub)
 --              [ ALT+E ]           Refueling (BLU sub)
 --
---  Weapons:    [ WIN+W ]          Toggle Weapon Lock
---
 --  WS:         [ CTRL+Numpad7 ]    Resolution
 --              [ CTRL+Numpad8 ]    Upheaval
 --              [ CTRL+Numpad9 ]    Dimidiation
@@ -59,6 +60,9 @@
 --              [ CTRL+Numpad1 ]    Herculean Slash
 --              [ CTRL+Numpad2 ]    Shockwave
 --              [ CTRL+Numpad3 ]    Armor Break
+--
+--  Other:      [ ALT+D ]           Cancel Invisible/Hide & Use Key on <t>
+--              [ ALT+S ]           Turn 180 degrees in place
 --
 --
 --              (Global-Binds.lua contains additional non-job-related keybinds)

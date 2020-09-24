@@ -14,7 +14,22 @@
 --              [ CTRL+F12 ]        Cycle Idle Modes
 --              [ ALT+F12 ]         Cancel Emergency -PDT/-MDT Mode
 --              [ WIN+C ]           Toggle Capacity Points Mode
+--              [ WIN+W ]           Toggle Weapon Lock
+--                                  (off = re-equip previous weapons if you go barehanded)
+--                                  (on = prevent weapon auto-equipping)
 --
+--  Abilities:  [ CTRL+` ]          Impetus
+--                                  Chakra
+--
+--  WS:         [ CTRL+Numpad7 ]    Victory Smite
+--              [ CTRL+Numpad8 ]    Ascetic's Fury
+--              [ CTRL+Numpad9 ]    Shijin Spiral
+--              [ CTRL+Numpad4 ]    Asuran Fists
+--              [ CTRL+Numpad1 ]    Spinning Attack
+--              [ CTRL+Numpad2 ]    Shoulder Tackle
+--
+--  Other:      [ ALT+D ]           Cancel Invisible/Hide & Use Key on <t>
+--              [ ALT+S ]           Turn 180 degrees in place
 --
 --              (Global-Binds.lua contains additional non-job-related keybinds)
 
@@ -32,8 +47,6 @@ end
 
 -- Setup vars that are user-independent.
 function job_setup()
-
-    include('Mote-TreasureHunter')
 
     -- For th_action_check():
     -- JA IDs for actions that always have TH: Provoke, Animated Flourish
@@ -68,7 +81,6 @@ function user_setup()
   -- Additional local binds
   include('Global-Binds.lua')
 
-  send_command('bind ^` gs c cycle treasuremode')
   send_command('bind @c gs c toggle CP')
 
   if player.sub_job == 'WAR' then
@@ -612,9 +624,6 @@ function init_gear_sets()
   sets.CP = {
     back="Aptitude Mantle",
   }
-  sets.TreasureHunter = {
-    
-  }
   sets.Reive = {
     neck="Ygnas's Resolve +1"
   }
@@ -788,9 +797,6 @@ end
 function customize_melee_set(meleeSet)
   if state.CP.current == 'on' then
     idleSet = set_combine(idleSet, sets.CP)
-  end
-  if state.TreasureMode.value == 'Fulltime' then
-      meleeSet = set_combine(meleeSet, sets.TreasureHunter)
   end
 
   return meleeSet

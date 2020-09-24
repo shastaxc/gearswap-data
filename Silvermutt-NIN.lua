@@ -39,8 +39,7 @@
 --              [ CTRL+Numpad6 ]    Blade: Hi
 --              [ CTRL+Numpad1 ]    Blade: Yu
 --
---  Other:
---              [ ALT+D ]           Cancel Invisible/Hide & Use Key
+--  Other:      [ ALT+D ]           Cancel Invisible/Hide & Use Key on <t>
 --              [ ALT+S ]           Turn 180 degrees in place
 --
 --              (Global-Binds.lua contains additional non-job-related keybinds)

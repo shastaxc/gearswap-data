@@ -16,6 +16,9 @@
 --              [ ALT+F12 ]         Cancel Emergency -PDT/-MDT Mode
 --              [ WIN+F ]           Toggle Closed Position (Facing) Mode
 --              [ WIN+C ]           Toggle Capacity Points Mode
+--              [ WIN+W ]           Toggle Weapon Lock
+--                                  (off = re-equip previous weapons if you go barehanded)
+--                                  (on = prevent weapon auto-equipping)
 --
 --  Abilities:  [ CTRL+- ]          Primary step element cycle forward.
 --              [ CTRL+= ]          Primary step element cycle backward.
@@ -46,23 +49,10 @@
 --              [ CTRL+Numpad6 ]    Pyrrhic Kleos
 --              [ CTRL+Numpad1 ]    Aeolian Edge
 --
+--  Other:      [ ALT+D ]           Cancel Invisible/Hide & Use Key on <t>
+--              [ ALT+S ]           Turn 180 degrees in place
 --
 --              (Global-Binds.lua contains additional non-job-related keybinds)
-
--- TODO:
--- FOR TP SETS
--- Samnua Tights
--- Etoile Gorget +2
--- Adhemar Wrists +1
--- Sherida Earring
--- Eabani Earring (stepping stone piece)
--- Windbuffet Belt +1 - for half TP sets
--- Adhemar Jacket +1 - for half TP sets
--- Adhemar Bonnet +1 - for half TP sets
-
--- FOR OTHERS
--- Toetapper Mantle (from high level rieves) - for reverse flourish
-
 
 
 -------------------------------------------------------------------------------------------------------------------

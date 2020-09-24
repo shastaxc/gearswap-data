@@ -16,6 +16,9 @@
 --              [ ALT+F12 ]         Cancel Emergency -PDT/-MDT Mode
 --              [ CTRL+` ]          Cycle Treasure Hunter Mode
 --              [ WIN+C ]           Toggle Capacity Points Mode
+--              [ WIN+W ]           Toggle Weapon Lock
+--                                  (off = re-equip previous weapons if you go barehanded)
+--                                  (on = prevent weapon auto-equipping)
 --
 --  Abilities:  [ ALT+` ]           Flee
 --              [ CTRL+Numpad/ ]    Berserk
@@ -33,7 +36,8 @@
 --              [ CTRL+Numpad5 ]    Rudra's Storm
 --              [ CTRL+Numpad1 ]    Aeolian Edge
 --
--- Other:       [ ALT+D]            Cancel Invisibility and use key on <t>
+--  Other:      [ ALT+D ]           Cancel Invisible/Hide & Use Key on <t>
+--              [ ALT+S ]           Turn 180 degrees in place
 --
 --
 --              (Global-Binds.lua contains additional non-job-related keybinds)
