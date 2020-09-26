@@ -135,8 +135,8 @@ function user_setup()
   -- Additional local binds
   include('Global-Binds.lua')
 
-  send_command('lua l gearinfo')
-  send_command('lua l equipviewerv2')
+  send_command('lua r gearinfo')
+  send_command('lua r equipviewerv2')
   
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c usekey')
@@ -257,8 +257,6 @@ function user_unload()
   send_command('unbind #9')
   send_command('unbind #0')
 
-  send_command('lua u gearinfo')
-  send_command('lua u equipviewerv2')
 end
 
 -- Define sets and vars used by this job file.
@@ -329,25 +327,24 @@ function init_gear_sets()
   sets.MAB = {
     ammo="Seething Bomblet", --6
     head="Highwing Helm", --20
+    body=gear.Samnuha_body, --25
     hands="Leyline Gloves", --30
-    feet=gear.Herc_TA_feet, --10
-    neck="Atzintli Necklace", --5
+    legs=gear.Herc_MAB_legs, --24
+    feet=gear.Herc_WSD_feet, --10
+    neck="Baetyl Pendant", --13
     ear1="Friomisi Earring", --10
     ear2="Novio Earring", --7
+    ring1="Shiva Ring +1", --3
     waist="Eschan Stone", --7
-    -- ammo="Aurgelmir Orb +1",
+    -- ammo="Pemphredo Tathlum",
     -- head=gear.Herc_MAB_head,
     -- body="Carm. Sc. Mail +1",
     -- hands="Carmine Fin. Ga. +1",
-    -- legs=gear.Herc_MAB_legs,
     -- feet=gear.Herc_MAB_feet,
-    -- neck="Baetyl Pendant",
     -- ear1="Crematio Earring",
-    -- ear2="Friomisi Earring",
     -- ring1={name="Fenrir Ring +1", bag="wardrobe3"},
     -- ring2={name="Fenrir Ring +1", bag="wardrobe4"},
     -- back="Argocham. Mantle",
-    -- waist="Eschan Stone",
   }
 
   sets.precast.JA['Lunge'] = sets.MAB
@@ -436,7 +433,7 @@ function init_gear_sets()
   -- Initializes trusts at iLvl 119
   sets.midcast.Trust = sets.precast.FC
 
-  
+
   ------------------------------------------------------------------------------------------------
   ------------------------------------- Weapon Skill Sets ----------------------------------------
   ------------------------------------------------------------------------------------------------
@@ -552,21 +549,10 @@ function init_gear_sets()
   sets.precast.WS['Herculean Slash'] = sets.MAB
 
   -- Magic accuracy required for Shockwave
-  sets.precast.WS['Shockwave'] = {
-    -- ammo="Pemphredo Tathlum",
-    head="Aya. Zucchetto +2", --44
-    body="Ayanmo Corazza +1", --40
-    hands="Leyline Gloves", --33
-    legs="Aya. Cosciales +1", --39
-    feet="Aya. Gambieras +1", --36
-    -- neck="Erra Pendant",
-    ear1="Digni. Earring",
+  sets.precast.WS['Shockwave'] = set_combine(sets.MAB, {
+    ring2="Karieyh Ring",
     -- ear2="Moonshade Earring",
-    -- ring1="Metamor. Ring +1",
-    -- ring2="Weather. Ring +1",
-    -- back=gear.RUN_WS1_Cape,
-    -- waist="Acuity Belt +1",
-  }
+  })
 
   sets.precast.WS['Fell Cleave'] = set_combine(sets.precast.WS, {
     -- feet="Lustra. Leggings +1",
@@ -1020,7 +1006,7 @@ function init_gear_sets()
     -- waist="Hachirin-no-Obi"
   }
   sets.CP = {
-    back="Aptitude Mantle"
+    back="Mecistopins Mantle",
   }
   sets.Reive = {
     neck="Ygnas's Resolve +1"

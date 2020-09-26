@@ -107,8 +107,8 @@ function user_setup()
   -- Additional local binds
   include('Global-Binds.lua')
 
-  send_command('lua l gearinfo')
-  send_command('lua l equipviewerv2')
+  send_command('lua r gearinfo')
+  send_command('lua r equipviewerv2')
 
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c usekey')
@@ -199,8 +199,6 @@ function user_unload()
   send_command('unbind #9')
   send_command('unbind #0')
 
-  send_command('lua u gearinfo')
-  send_command('lua u equipviewerv2')
 end
 
 
@@ -400,23 +398,19 @@ function init_gear_sets()
   sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
     ammo="Seething Bomblet", --6
     head="Highwing Helm", --20
+    body=gear.Samnuha_body, --25
     hands="Leyline Gloves", --30
-    feet=gear.Herc_TA_feet, --10
-    neck="Atzintli Necklace", --5
+    legs=gear.Herc_MAB_legs, --24
+    feet=gear.Herc_WSD_feet, --10
+    neck="Baetyl Pendant", --13
     ear1="Friomisi Earring", --10
     ear2="Novio Earring", --7
+    ring1="Shiva Ring +1", --3
+    ring2="Karieyh Ring",
     waist="Eschan Stone", --7
     -- ammo="Seeth. Bomblet +1",
     -- head=gear.Herc_MAB_head,
-    -- body="Samnuha Coat",
-    -- hands="Leyline Gloves",
-    -- legs=gear.Herc_WSD_legs,
-    -- feet=gear.Herc_WSD_feet,
-    -- neck="Baetyl Pendant",
-    -- ear1="Crematio Earring",
-    -- ear2="Friomisi Earring",
-    -- ring1="Metamor. Ring +1",
-    -- ring2="Epaminondas's Ring",
+    -- feet=gear.Herc_MAB_feet,
     -- back="Argocham. Mantle",
     -- waist="Orpheus's Sash",
   }) -- 40% DEX / 40% INT + MAB
@@ -957,7 +951,7 @@ function init_gear_sets()
 
   --sets.Reive = {neck="Ygnas's Resolve +1"}
   sets.CP = {
-    back="Aptitude Mantle"
+    back="Mecistopins Mantle",
   }
 
 end

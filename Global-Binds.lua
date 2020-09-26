@@ -43,8 +43,8 @@
       send_command('bind !j input /ma "Invisible" <stpc>')
       send_command('bind !k input /ma "Sneak" <stpc>')
     elseif player.main_job == 'NIN' or player.sub_job == 'NIN' then
-      send_command('bind ^j input /ma "Tonko: Ni" <me>')
-      send_command('bind ^k input /ma "Monomi: Ichi" <me>')
+      send_command('bind !j input /ma "Tonko: Ni" <me>')
+      send_command('bind !k input /ma "Monomi: Ichi" <me>')
     else
       send_command('bind !j input /item "Prism Powder" <me>')
       send_command('bind !k input /item "Silent Oil" <me>')

@@ -76,15 +76,25 @@ function user_setup()
   state.HybridMode:options('Normal', 'DT', 'Counter')
   state.IdleMode:options('Normal', 'DT')
 
+  state.WeaponLock = M(false, 'Weapon Lock')
+
   state.CP = M(false, "Capacity Points Mode")
 
   -- Additional local binds
   include('Global-Binds.lua')
 
-  send_command('lua l gearinfo')
-  send_command('lua l equipviewerv2')
+  send_command('lua r gearinfo')
+  send_command('lua r equipviewerv2')
+
+  send_command('bind !s gs c faceaway')
+  send_command('bind !d gs c usekey')
+  send_command('bind @w gs c toggle WeaponLock')
 
   send_command('bind @c gs c toggle CP')
+
+  send_command('bind ^` input /ja "Impetus" <me>')
+  send_command('bind !` input /ja "Chakra" <me>')
+  send_command('bind ^numpad+ input /ja "Boost" <me>')
 
   if player.sub_job == 'WAR' then
     send_command('bind !w input /ja "Defender" <me>')
@@ -108,12 +118,9 @@ function user_setup()
   send_command('bind ^numpad8 input /ws "Ascetic\'s Fury" <t>')
   send_command('bind ^numpad9 input /ws "Shijin Spiral" <t>')
   send_command('bind ^numpad4 input /ws "Asuran Fists" <t>')
-  send_command('bind ^numpad1 input /ws "Spinning Attack" <t>')
+  send_command('bind ^numpad5 input /ws "Spinning Attack" <t>')
+  send_command('bind ^numpad6 input /ws "Howling Fist" <t>')
   send_command('bind ^numpad2 input /ws "Shoulder Tackle" <t>')
-
-  send_command('bind ^` input /ja "Impetus" <me>')
-  send_command('bind !` input /ja "Chakra" <me>')
-  send_command('bind ^numpad+ input /ja "Boost" <me>')
 
   update_combat_form()
   update_melee_groups()
@@ -123,6 +130,10 @@ function user_setup()
 end
 
 function user_unload()
+  send_command('unbind !s')
+  send_command('unbind !d')
+  send_command('unbind @w')
+
   send_command('unbind ^`')
   send_command('unbind !`')
   send_command('unbind @c')
@@ -132,8 +143,10 @@ function user_unload()
   send_command('unbind ^numpad-')
   send_command('unbind ^numpad7')
   send_command('unbind ^numpad8')
+  send_command('unbind ^numpad9')
+  send_command('unbind ^numpad4')
   send_command('unbind ^numpad5')
-  send_command('unbind ^numpad1')
+  send_command('unbind ^numpad6')
   send_command('unbind ^numpad2')
   send_command('unbind ^numpad0')
   send_command('unbind ^numpad.')
@@ -152,8 +165,6 @@ function user_unload()
   send_command('unbind #9')
   send_command('unbind #0')
 
-  send_command('lua u gearinfo')
-  send_command('lua u equipviewerv2')
 end
 
 -- Define sets and vars used by this job file.
@@ -304,7 +315,6 @@ function init_gear_sets()
     ring2="Rajas Ring",
     back=gear.MNK_TP_Cape,
     waist="Moonbow Belt +1",
-    -- ammo="Jukukik Feather",
     -- head="Ken. Jinpachi +1",
     -- body="Adhemar Jacket +1",
     -- legs="Jokushu Haidate",
@@ -407,16 +417,37 @@ function init_gear_sets()
 
   -- Howling Fist: 40% STR / 40% VIT
   sets.precast.WS['Howling Fist'] = set_combine(sets.precast.WS, {
-    
+    ammo="Tantra Tathlum",
+    head=gear.Adhemar_B_head,
+    body="Kendatsuba Samue +1",
+    hands=gear.Adhemar_B_hands,
+    legs="Hizamaru Hizayoroi +1",
+    feet=gear.Herc_WSD_feet,
+    neck="Fotia Gorget",
+    ear1="Sherida Earring",
+    ear2="Odnowa Earring +1",
+    ring1="Epona's Ring",
+    ring2="Karieyh Ring",
+    back=gear.MNK_TP_Cape,
+    waist="Moonbow Belt +1",
+    -- ammo="Knobkierrie",
+    -- head="Herculean Helm",
+    -- body="Herculean Vest",
+    -- hands="Anchorite Gloves +3",
+    -- legs="Hizamaru Hizayoroi +2",
+    -- feet="Herculean Boots",
+    -- ear2="Moonshade Earring",
+    -- ring2="Niqmaddu Ring",
   })
   sets.precast.WS["Howling Fist"].LowAcc = set_combine(sets.precast.WS["Howling Fist"], {
-
+    head="Mummu Bonnet +2",
   })
   sets.precast.WS["Howling Fist"].MidAcc = set_combine(sets.precast.WS["Howling Fist"].LowAcc, {
-
+    ear2="Dignitary's Earring",
   })
   sets.precast.WS["Howling Fist"].HighAcc = set_combine(sets.precast.WS["Howling Fist"].MidAcc, {
-
+    ammo="Falcon Eye",
+    head="Mummu Bonnet +2",
   })
 
   -- Dragon Kick: 50% STR / 50% DEX
@@ -449,21 +480,51 @@ function init_gear_sets()
 
   -- Spinning Attack: 100% STR
   sets.precast.WS['Spinning Attack'] = set_combine(sets.precast.WS, {
-    
+    ammo="Tantra Tathlum",
+    head=gear.Adhemar_B_head,
+    body="Kendatsuba Samue +1",
+    hands=gear.Adhemar_B_hands,
+    legs="Hizamaru Hizayoroi +1",
+    feet=gear.Herc_WSD_feet,
+    neck="Monk's Nodowa +2",
+    ear1="Sherida Earring",
+    ear2="Brutal Earring",
+    ring1="Rajas Ring",
+    ring2="Karieyh Ring",
+    back=gear.MNK_TP_Cape,
+    waist="Moonbow Belt +1",
   })
   sets.precast.WS["Spinning Attack"].LowAcc = set_combine(sets.precast.WS["Spinning Attack"], {
-
+    neck="Fotia Gorget",
   })
   sets.precast.WS["Spinning Attack"].MidAcc = set_combine(sets.precast.WS["Spinning Attack"].LowAcc, {
 
   })
   sets.precast.WS["Spinning Attack"].HighAcc = set_combine(sets.precast.WS["Spinning Attack"].MidAcc, {
-
+    ammo="Falcon Eye",
   })
 
-  sets.precast.WS['Cataclysm'] = {
-    
+  sets.MAB = {
+    head="Highwing Helm", --20
+    body=gear.Samnuha_body, --25
+    hands="Leyline Gloves", --30
+    legs=gear.Herc_MAB_legs, --24
+    feet=gear.Herc_WSD_feet, --10
+    neck="Baetyl Pendant", --13
+    ear1="Friomisi Earring", --10
+    ear2="Novio Earring", --7
+    ring1="Shiva Ring +1", --3
+    waist="Eschan Stone", --7
+    -- feet=gear.Herc_MAB_feet,
   }
+
+  sets.precast.WS['Cataclysm'] = set_combine(sets.precast.WS, sets.MAB, {
+    ammo="Tantra Tathlum",
+    ring2="Karieyh Ring",
+    -- waist="Fotia Belt",
+    -- ammo="Knobkierrie",
+    -- back=gear.MNK_WS_Cape,
+  }) -- STR 30% / INT 30% + MAB
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Midcast Sets ------------------------------------------
@@ -631,7 +692,7 @@ function init_gear_sets()
     waist="Gishdubar Sash", --10
   }
   sets.CP = {
-    back="Aptitude Mantle",
+    back="Mecistopins Mantle",
   }
   sets.Reive = {
     neck="Ygnas's Resolve +1"
@@ -675,6 +736,15 @@ end
 function job_aftercast(spell, action, spellMap, eventArgs)
   if spell.type == 'WeaponSkill' and not spell.interrupted and state.FootworkWS and state.Buff.Footwork then
     send_command('cancel Footwork')
+  end
+end
+
+-- Handle notifications of general user state change.
+function job_state_change(stateField, newValue, oldValue)
+  if state.WeaponLock.value == true then
+    disable('main','sub')
+  else
+    enable('main','sub')
   end
 end
 
@@ -787,7 +857,6 @@ function job_update(cmdParams, eventArgs)
   update_combat_form()
   update_melee_groups()
   handle_equipping_gear(player.status)
-  th_update(cmdParams, eventArgs)
 end
 
 -- Modify the default idle set after it was constructed.
@@ -868,6 +937,20 @@ function check_gear()
     disable("ring2")
   else
     enable("ring2")
+  end
+  
+  --Disarm Handling--
+  --Turns out that the table fill the string "empty" for empty slot. It won't return nil
+  if player.equipment.main == "empty" then
+    if state.WeaponLock.value == false then
+      equip({
+        main = gear.prevMain,
+      })
+      -- Trying to equip subhand in same command as main causes it not to equip
+      equip({
+        sub = gear.prevSub,
+      })
+    end
   end
 end
 
