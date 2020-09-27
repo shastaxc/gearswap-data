@@ -336,6 +336,7 @@ function init_gear_sets()
     ear2="Novio Earring", --7
     ring1="Shiva Ring +1", --3
     waist="Eschan Stone", --7
+    back="Evasionist's Cape", --10
     -- ammo="Pemphredo Tathlum",
     -- head=gear.Herc_MAB_head,
     -- body="Carm. Sc. Mail +1",
@@ -1000,7 +1001,7 @@ function init_gear_sets()
   }
 
   sets.Embolden = set_combine(sets.midcast.EnhancingDuration, {
-    -- back="Evasionist's Cape"
+    back="Evasionist's Cape"
   })
   sets.Obi = {
     -- waist="Hachirin-no-Obi"
