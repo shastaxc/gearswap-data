@@ -222,7 +222,7 @@ function init_gear_sets()
   }
 
   sets.precast.JA['Chakra'] = {
-    body="Anchorite's Cyclas +1",
+    body="Anchorite's Cyclas +2",
     hands="Hesychast's Gloves",
   }
 
