@@ -204,7 +204,7 @@ function init_gear_sets()
     head="Anchorite's Crown +1",
   }
   sets.precast.JA['Counterstance'] = {
-    feet="Hesychast's Gaiters",
+    feet="Hesychast's Gaiters +1",
   }
   sets.precast.JA['Footwork'] = {
     feet="Tantra Gaiters +2",
@@ -213,7 +213,7 @@ function init_gear_sets()
     body="Hesychast's Cyclas",
   }
   sets.precast.JA['Mantra'] = {
-    feet="Hesychast's Gaiters",
+    feet="Hesychast's Gaiters +1",
   }
 
   sets.precast.JA['Chi Blast'] = {
@@ -267,7 +267,7 @@ function init_gear_sets()
     ammo="Tantra Tathlum",
     head=gear.Adhemar_B_head,
     body="Kendatsuba Samue +1",
-    hands=gear.Adhemar_B_hands,
+    hands=gear.Ryuo_A_hands,
     legs="Hizamaru Hizayoroi +1",
     feet=gear.Herc_WSD_feet,
     neck="Monk's Nodowa +2",
@@ -279,7 +279,6 @@ function init_gear_sets()
     waist="Moonbow Belt +1",
     -- ammo="Knobkierrie",
     -- body="Anchorite's Cyclas +3",
-    -- hands="Ryuo Tekko +1",
     -- legs="Hizamaru Hizayoroi +2",
     -- back=gear.MNK_WS_Cape,
     -- ear2="Moonshade Earring",
@@ -333,7 +332,7 @@ function init_gear_sets()
     ammo="Falcon Eye",
   })
   sets.precast.WS["Shijin Spiral"].HighAcc = set_combine(sets.precast.WS["Shijin Spiral"].MidAcc, {
-    hands="Mummu Wrists +2",
+    hands=gear.Ryuo_A_hands,
     feet="Mummu Gamashes +1",
   })
 
@@ -358,6 +357,7 @@ function init_gear_sets()
   })
   sets.precast.WS["Asuran Fists"].MidAcc = set_combine(sets.precast.WS["Asuran Fists"].LowAcc, {
     ear2="Dignitary's Earring",
+    hands=gear.Ryuo_A_hands,
   })
   sets.precast.WS["Asuran Fists"].HighAcc = set_combine(sets.precast.WS["Asuran Fists"].MidAcc, {
     ammo="Falcon Eye",
@@ -369,7 +369,7 @@ function init_gear_sets()
     ammo="Tantra Tathlum",
     head=gear.Adhemar_B_head,
     body="Kendatsuba Samue +1",
-    hands=gear.Adhemar_B_hands,
+    hands=gear.Ryuo_A_hands,
     legs="Hizamaru Hizayoroi +1",
     feet=gear.Herc_WSD_feet,
     neck="Fotia Gorget",
@@ -381,7 +381,6 @@ function init_gear_sets()
     waist="Moonbow Belt +1",
     -- ammo="Knobkierrie",
     -- body="Anch. Cyclas +3",
-    -- hands="Ryuo Tekko +1",
     -- legs="Ken. Hakama +1",
     -- ear2="Moonshade Earring",
     -- ring1="Begrudging Ring",
@@ -615,7 +614,7 @@ function init_gear_sets()
   sets.engaged.HighAcc.DT = set_combine(sets.engaged.HighAcc, sets.Hybrid)
 
   sets.Counter = {
-    feet="Hesychast's Gaiters",
+    feet="Hesychast's Gaiters +1",
   }
 
   sets.engaged.Counter = set_combine(sets.engaged, sets.Counter)
@@ -806,6 +805,8 @@ end
 function job_handle_equipping_gear(playerStatus, eventArgs)
   update_weapons()
   check_gear()
+  update_combat_form()
+  update_melee_groups()
 end
 
 
@@ -854,8 +855,6 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 function job_update(cmdParams, eventArgs)
-  update_combat_form()
-  update_melee_groups()
   handle_equipping_gear(player.status)
 end
 
@@ -917,7 +916,15 @@ function job_self_command(cmdParams, eventArgs)
     windower.ffxi.turn(player.facing - math.pi);
   end
 
-  -- gearinfo(cmdParams, eventArgs)
+  gearinfo(cmdParams, eventArgs)
+end
+
+function gearinfo(cmdParams, eventArgs)
+  if cmdParams[1] == 'gearinfo' then
+    if not midaction() then
+      job_update()
+    end
+  end
 end
 
 function update_weapons()

@@ -899,7 +899,8 @@ function init_gear_sets()
     -- hands="Malignance Gloves", --5/5
     -- legs="Malignance Tights", --7/7
     -- feet="Malignance Boots", --4/4
-    -- ring2="Defending Ring", --10/10
+    neck="Twilight Torque",
+    ring2="Defending Ring", --10/10
   }
 
   sets.engaged.DT = set_combine(sets.engaged, sets.engaged.Hybrid)

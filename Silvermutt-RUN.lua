@@ -269,7 +269,7 @@ function init_gear_sets()
   -- Enmity sets
   sets.Enmity = {
     ammo="Aqreqaq Bomblet", --2
-    head="Highwing Helm", --4
+    head="Halitus Helm", --8
     feet="Erilaz Greaves +1", --6
     body="Emet Harness +1", --10
     hands="Kurys Gloves", --9
@@ -281,20 +281,15 @@ function init_gear_sets()
     ring2="Supershear Ring", --5
     waist="Sulla Belt", --3
     back=gear.RUN_HPD_Cape, --10
-    -- ammo="Aqreqaq Bomblet", --2
-    -- head="Halitus Helm", --8
-    -- hands="Kurys Gloves", --9
     -- feet="Ahosi Leggings",--7
     -- neck="Moonlight Necklace", --15
-    -- ear1="Cryptic Earring", --4
     -- ear2="Trux Earring", --5
-    -- ring1="Pernicious Ring", --5
     -- waist="Kasiri Belt", --3
-  } --71
+  } --75
 
   sets.Enmity.HP = {
     ammo="Aqreqaq Bomblet", --2
-    -- head="Halitus Helm", --8
+    head="Halitus Helm", --8
     body="Emet Harness +1", --10
     hands="Kurys Gloves", --9
     legs="Erilaz Leg Guards +1", --11
@@ -310,13 +305,10 @@ function init_gear_sets()
 
   sets.precast.JA['Vallation'] = {
     body="Runeist's Coat +2",
-    legs="Futhark Trousers",
+    legs="Futhark Trousers +1",
     back=gear.RUN_HPD_Cape,
   }
   sets.precast.JA['Valiance'] = sets.precast.JA['Vallation']
-  sets.precast.JA['Pflug'] = {
-    feet="Runeist Bottes"
-  }
   sets.precast.JA['Battuta'] = {
     head="Futhark Bandeau +1"
   }
@@ -352,7 +344,7 @@ function init_gear_sets()
 
   sets.precast.JA['Swipe'] = sets.MAB
   sets.precast.JA['Gambit'] = {
-    hands="Runeist Mitons"
+    hands="Runeist Mitons +1"
   }
   sets.precast.JA['Rayke'] = {
     feet="Futhark Boots"
@@ -416,7 +408,7 @@ function init_gear_sets()
   })
 
   sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {
-    legs="Futhark Trousers",
+    legs="Futhark Trousers +1",
   })
 
   sets.precast.FC.Cure = set_combine(sets.precast.FC, {
@@ -627,7 +619,7 @@ function init_gear_sets()
 
   sets.midcast['Enhancing Magic'] = {
     head="Erilaz Galea +1",
-    hands="Runeist Mitons",
+    hands="Runeist Mitons +1",
     legs="Carmine Cuisses +1",
     waist="Olympus Sash",
     neck="Incanter's Torque",
@@ -650,7 +642,7 @@ function init_gear_sets()
   sets.midcast.EnhancingDuration = {
     head="Erilaz Galea +1",
     -- hands="Regal Gauntlets",
-    legs="Futhark Trousers",
+    legs="Futhark Trousers +1",
   }
 
   sets.midcast['Phalanx'] = set_combine(sets.midcast.SpellInterrupt, {
