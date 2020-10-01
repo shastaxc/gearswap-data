@@ -552,7 +552,12 @@ function init_gear_sets()
   }
 
   sets.idle.DT = set_combine(sets.idle, {
-    ring1="Defending Ring",
+    ammo="Staunch Tathlum",
+    neck="Twilight Necklace",
+    ear2="Odnowa Earring +1",
+    ring1=gear.Dark_Ring,
+    ring2="Defending Ring",
+    waist="Moonbow Belt +1",
   })
 
   sets.idle.Weak = sets.idle.DT
@@ -565,9 +570,15 @@ function init_gear_sets()
     body="Councilor's Garb",
   }
 
+
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Defense Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
+
+  sets.defense.PDT = set_combine(sets.idle.DT, {
+  })
+  sets.defense.MDT = set_combine(sets.idle.DT, {
+  })
 
 
   ------------------------------------------------------------------------------------------------
@@ -606,8 +617,10 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.Hybrid = {
-    neck="Twilight Torque",
+    ammo="Staunch Tathlum",
+    ear2="Odnowa Earring +1",
     ring2="Defending Ring",
+    waist="Moonbow Belt +1",
   }
 
   sets.engaged.DT = set_combine(sets.engaged, sets.Hybrid)
