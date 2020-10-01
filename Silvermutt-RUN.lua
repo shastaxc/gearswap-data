@@ -304,7 +304,7 @@ function init_gear_sets()
   }
 
   sets.precast.JA['Vallation'] = {
-    body="Runeist's Coat +2",
+    body="Runeist's Coat +3",
     legs="Futhark Trousers +1",
     back=gear.RUN_HPD_Cape,
   }
@@ -705,7 +705,7 @@ function init_gear_sets()
   sets.idle = {
     ammo="Homiliary",
     head="Erilaz Galea +1",
-    body="Runeist's Coat +2",
+    body="Runeist's Coat +3",
     hands=gear.Adhemar_B_hands,
     legs="Carmine Cuisses +1",
     feet="Erilaz Greaves +1",
@@ -722,7 +722,7 @@ function init_gear_sets()
     sub="Refined Grip +1", --3/3
     ammo="Staunch Tathlum", --2/2
     head="Meghanada Visor +2", --5/0
-    body="Runeist's Coat +2",
+    body="Runeist's Coat +3",
     hands="Turms Mittens",
     legs="Erilaz Leg Guards +1", --7/0
     feet="Erilaz Greaves +1", --5/0
@@ -738,7 +738,7 @@ function init_gear_sets()
   sets.idle.Refresh = set_combine(sets.idle, {
     ammo="Homiliary",
     head="Erilaz Galea +1",
-    body="Runeist's Coat +2",
+    body="Runeist's Coat +3",
     legs="Rawhide Trousers",
     -- ammo="Homiliary",
     -- head=gear.Herc_Idle_head,
@@ -809,7 +809,7 @@ function init_gear_sets()
     sub="Refined Grip +1", --3/3
     ammo="Staunch Tathlum", --2/2
     head="Aya. Zucchetto +2", --3/3
-    body="Runeist's Coat +2",
+    body="Runeist's Coat +3",
     hands="Turms Mittens",
     legs="Erilaz Leg Guards +1", --7/0
     feet="Erilaz Greaves +1", --5/0
@@ -825,7 +825,7 @@ function init_gear_sets()
   sets.defense.HP = {
     ammo="Staunch Tathlum",
     head="Aya. Zucchetto +2",
-    body="Runeist's Coat +2",
+    body="Runeist's Coat +3",
     hands="Turms Mittens",
     legs="Erilaz Leg Guards +1", --7/0
     feet="Turms Leggings",
