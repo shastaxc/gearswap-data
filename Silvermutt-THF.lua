@@ -588,7 +588,7 @@ function init_gear_sets()
     ear1="Suppanomimi", -- 5%
     ear2="Sherida Earring",
     ring1="Epona's Ring",
-    ring2="Karieyh Ring",
+    ring2="Ilabrat Ring",
     back=gear.THF_TP_Cape,
     -- ammo="Aurgelmir Orb +1",
     -- ammo="Yamarang",
@@ -651,7 +651,7 @@ function init_gear_sets()
     ear1="Suppanomimi", -- 5%
     ear2="Sherida Earring",
     ring1="Epona's Ring",
-    ring2="Karieyh Ring",
+    ring2="Ilabrat Ring",
     back=gear.THF_TP_Cape,
     -- ammo="Aurgelmir Orb +1",
     -- ammo="Yamarang",
@@ -713,7 +713,7 @@ function init_gear_sets()
     ear1="Suppanomimi", -- 5%
     ear2="Sherida Earring",
     ring1="Epona's Ring",
-    ring2="Karieyh Ring",
+    ring2="Ilabrat Ring",
     back=gear.THF_TP_Cape,
     -- ammo="Aurgelmir Orb +1",
     -- ammo="Yamarang",
@@ -776,7 +776,7 @@ function init_gear_sets()
     ear1="Suppanomimi", -- 5%
     ear2="Sherida Earring",
     ring1="Epona's Ring",
-    ring2="Karieyh Ring",
+    ring2="Ilabrat Ring",
     back=gear.THF_TP_Cape,
     -- ammo="Aurgelmir Orb +1",
     -- ammo="Yamarang",
@@ -839,7 +839,7 @@ function init_gear_sets()
     ear1="Suppanomimi", -- 5%
     ear2="Sherida Earring",
     ring1="Epona's Ring",
-    ring2="Karieyh Ring",
+    ring2="Ilabrat Ring",
     back=gear.THF_TP_Cape,
     -- ammo="Aurgelmir Orb +1",
     -- head=gear.Adhemar_B_head,
