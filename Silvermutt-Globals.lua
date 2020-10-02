@@ -263,3 +263,29 @@ function has_item(bag_name, item_name)
   end
   return false
 end
+
+function update_weapons()
+  --Save state of any equipped weapons
+  if player.equipment.main ~= "empty" then
+    gear.prevMain = player.equipment.main
+    gear.prevSub = player.equipment.sub
+  end
+
+  --Disarm Handling--
+  --Turns out that the table fills the string "empty" for empty slot. It won't return nil
+  if player.equipment.main == "empty" then
+    if state.WeaponLock.value == false then
+      equip({
+        main = gear.prevMain,
+      })
+    end
+  end
+  -- Trying to equip subhand in same command as main causes it not to equip
+  if player.equipment.sub == "empty" and gear.prevSub ~= "empty" then
+    if state.WeaponLock.value == false then
+      equip({
+        sub = gear.prevSub,
+      })
+    end
+  end
+end

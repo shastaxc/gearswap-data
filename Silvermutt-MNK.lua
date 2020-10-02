@@ -942,13 +942,6 @@ function gearinfo(cmdParams, eventArgs)
   end
 end
 
-function update_weapons()
-  if player.equipment.main ~= "empty" then
-      gear.prevMain = player.equipment.main
-      gear.prevSub = player.equipment.sub
-  end
-end
-
 function check_gear()
   if no_swap_gear:contains(player.equipment.left_ring) then
     disable("ring1")
@@ -959,20 +952,6 @@ function check_gear()
     disable("ring2")
   else
     enable("ring2")
-  end
-  
-  --Disarm Handling--
-  --Turns out that the table fill the string "empty" for empty slot. It won't return nil
-  if player.equipment.main == "empty" then
-    if state.WeaponLock.value == false then
-      equip({
-        main = gear.prevMain,
-      })
-      -- Trying to equip subhand in same command as main causes it not to equip
-      equip({
-        sub = gear.prevSub,
-      })
-    end
   end
 end
 
