@@ -383,8 +383,6 @@ function init_gear_sets()
     ring2="Prolix Ring", --2
     -- ammo="Sapience Orb", --2
     -- head="Rune. Bandeau +3", --14
-    -- body=gear.Taeon_FC_body, --9
-    -- hands="Leyline Gloves", --8
     -- legs="Aya. Cosciales +2", --6
     -- feet="Carmine Greaves +1", --8
     -- neck="Orunmila's Torque", --5
@@ -419,7 +417,7 @@ function init_gear_sets()
   sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {
     ammo="Impatiens",
     -- body="Passion Jacket",
-    -- ring1="Lebeche Ring",
+    ring1="Lebeche Ring",
     waist="Audumbla Sash",
   })
 
@@ -473,31 +471,33 @@ function init_gear_sets()
 
   -- 85% STR mod
   sets.precast.WS['Resolution'] = set_combine(sets.precast.WS, {
+    head=gear.Adhemar_B_head,
+    hands=gear.Adhemar_B_hands,
+    legs=gear.Samnuha_legs,
+    neck="Caro Necklace",
+    ring1="Epona's Ring",
     -- ammo="Aurgelmir Orb +1",
     -- head="Lustratio Cap +1",
     -- body="Lustr. Harness +1",
-    -- hands=gear.Adhemar_B_hands,
-    -- legs="Samnuha Tights",
     -- feet="Lustra. Leggings +1",
     -- neck="Futhark Torque +2",
-    -- ring1="Epona's Ring",
     -- back=gear.RUN_WS1_Cape,
   })
 
   sets.precast.WS['Resolution'].Acc = set_combine(sets.precast.WS['Resolution'], {
     hands=gear.Adhemar_B_hands,
+    legs="Meg. Chausses +2",
     -- ammo="Voluspa Tathlum",
     -- head=gear.Adhemar_B_head,
     -- hands=gear.Adhemar_A_hands,
-    -- legs="Meg. Chausses +2",
     -- feet=gear.Herc_STP_feet,
     -- ear2="Telos Earring",
   })
 
   sets.precast.WS['Resolution'].Uncapped = set_combine(sets.precast.WS['Resolution'], {
-    -- head=gear.Adhemar_B_head,
+    head=gear.Adhemar_B_head,
+    legs="Meg. Chausses +2",
     -- body=gear.Adhemar_B_body,
-    -- legs="Meg. Chausses +2",
     -- feet=gear.Herc_TA_feet,
     -- ring1="Regal Ring",
   })
