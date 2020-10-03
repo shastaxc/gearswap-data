@@ -12,8 +12,8 @@ no_swap_gear = S{"Warp Ring", "Dim. Ring (Dem)", "Dim. Ring (Holla)", "Dim. Ring
 
 function define_global_sets()
     --Toy weapon sets
-    sets.ToyWeapon = {}
-    sets.ToyWeapon.None = {main=nil, sub=nil}
+    sets.ToyWeapon = {} --DO NOT MODIFY
+    sets.ToyWeapon.None = {main=nil, sub=nil} --DO NOT MODIFY
     sets.ToyWeapon.Katana = {main="Trainee Burin",sub="Wind Knife"}
     sets.ToyWeapon.GreatKatana = {main="Lotus Katana",sub="Tzacab Grip"}
     sets.ToyWeapon.Dagger = {main="Wind Knife",sub="Wind Knife"}
@@ -25,10 +25,7 @@ function define_global_sets()
     sets.ToyWeapon.Scythe = {main="Hoe",sub="Tzacab Grip"}
 
     --Most recent weapon (used for re-arming)
-    sets.MostRecent = {
-      main="",
-      sub="",
-    }
+    sets.MostRecent = {main="",sub=""} --DO NOT MODIFY
 
     -- Augmented Weapons
     gear.Colada_ENH = {name="Colada", augments={'Enh. Mag. eff. dur. +4','INT+5','Mag. Acc.+9',}}
