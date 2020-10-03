@@ -136,15 +136,12 @@ function user_setup()
   -- Additional local binds
   include('Global-Binds.lua')
 
-  send_command('lua r gearinfo')
-  send_command('lua r equipviewerv2')
-
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c usekey')
 
   send_command('bind ^pageup gs c toyweapon cycle')
   send_command('bind ^pagedown gs c toyweapon cycleback')
-  send_command('bind ^right gs c toyweapon reset')
+  send_command('bind !pagedown gs c toyweapon reset')
 
   send_command('bind !` input /ja "Composure" <me>')
   send_command('bind @` gs c toggle MagicBurst')
@@ -219,7 +216,7 @@ function user_unload()
   
   send_command('unbind ^pageup')
   send_command('unbind ^pagedown')
-  send_command('unbind ^right')
+  send_command('unbind !pagedown')
 
   send_command('unbind !`')
   send_command('unbind @`')
