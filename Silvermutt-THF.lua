@@ -1070,6 +1070,7 @@ end
 function job_update(cmdParams, eventArgs)
   handle_equipping_gear(player.status)
   th_update(cmdParams, eventArgs)
+  update_weaponskill_binds()
 end
 
 function update_combat_form()

@@ -1305,6 +1305,7 @@ end
 
 function job_update(cmdParams, eventArgs)
   handle_equipping_gear(player.status)
+  update_weaponskill_binds()
 end
 
 function update_combat_form()
