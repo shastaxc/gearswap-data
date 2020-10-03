@@ -1,0 +1,13 @@
+{
+	"folders": [
+    {
+      "path": "."
+    },
+    {
+      "path": "..\\libs\\rev1"
+    }
+  ],
+  "settings": {
+    "terminal.integrated.cwd": ".",
+  }
+}
