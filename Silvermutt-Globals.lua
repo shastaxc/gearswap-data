@@ -1,3 +1,4 @@
+send_command('lua l gearinfo')
 res = include('resources')
 -------------------------------------------------------------------------------------------------------------------
 -- Modify the sets table.  Any gear sets that are added to the sets table need to
@@ -10,9 +11,24 @@ no_swap_gear = S{"Warp Ring", "Dim. Ring (Dem)", "Dim. Ring (Holla)", "Dim. Ring
 "Emperor Band", "Emporox's Ring"}
 
 function define_global_sets()
-    -- Weapons entering combat (initialized to nothing)
-    gear.prevMain = ""
-    gear.prevSub = ""
+    --Toy weapon sets
+    sets.ToyWeapon = {}
+    sets.ToyWeapon.None = {main=nil, sub=nil}
+    sets.ToyWeapon.Katana = {main="Trainee Burin",sub="Wind Knife"}
+    sets.ToyWeapon.GreatKatana = {main="Lotus Katana",sub="Tzacab Grip"}
+    sets.ToyWeapon.Dagger = {main="Wind Knife",sub="Wind Knife"}
+    sets.ToyWeapon.Sword = {main="Nihility",sub="Wind Knife"}
+    sets.ToyWeapon.Club = {main="Lady Bell",sub="Wind Knife"}
+    sets.ToyWeapon.Staff = {main="Savage. Pole",sub="Tzacab Grip"}
+    sets.ToyWeapon.Polearm = {main="Pitchfork +1",sub="Tzacab Grip"}
+    sets.ToyWeapon.GreatSword = {main="Lament",sub="Tzacab Grip"}
+    sets.ToyWeapon.Scythe = {main="Hoe",sub="Tzacab Grip"}
+
+    --Most recent weapon (used for re-arming)
+    sets.MostRecent = {
+      main="",
+      sub="",
+    }
 
     -- Augmented Weapons
     gear.Colada_ENH = {name="Colada", augments={'Enh. Mag. eff. dur. +4','INT+5','Mag. Acc.+9',}}
@@ -267,25 +283,15 @@ end
 function update_weapons()
   --Save state of any equipped weapons
   if player.equipment.main ~= "empty" then
-    gear.prevMain = player.equipment.main
-    gear.prevSub = player.equipment.sub
+    sets.MostRecent.main = player.equipment.main
+    sets.MostRecent.sub = player.equipment.sub
   end
 
   --Disarm Handling--
   --Turns out that the table fills the string "empty" for empty slot. It won't return nil
   if player.equipment.main == "empty" then
     if state.WeaponLock.value == false then
-      equip({
-        main = gear.prevMain,
-      })
-    end
-  end
-  -- Trying to equip subhand in same command as main causes it not to equip
-  if player.equipment.sub == "empty" and gear.prevSub ~= "empty" then
-    if state.WeaponLock.value == false then
-      equip({
-        sub = gear.prevSub,
-      })
+      equip(sets.MostRecent)
     end
   end
 end

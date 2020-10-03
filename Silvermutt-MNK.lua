@@ -14,6 +14,9 @@
 --              [ CTRL+F12 ]        Cycle Idle Modes
 --              [ ALT+F12 ]         Cancel Emergency -PDT/-MDT Mode
 --              [ WIN+C ]           Toggle Capacity Points Mode
+--              [ CTRL+PageUp ]     Cycle Toy Weapon Mode
+--              [ CTRL+PageDown ]   Cycleback Toy Weapon Mode
+--              [ CTRL+Right Arrow] Reset Toy Weapon Mode
 --              [ WIN+W ]           Toggle Weapon Lock
 --                                  (off = re-equip previous weapons if you go barehanded)
 --                                  (on = prevent weapon auto-equipping)
@@ -77,8 +80,9 @@ function user_setup()
   state.IdleMode:options('Normal', 'DT')
 
   state.WeaponLock = M(false, 'Weapon Lock')
-
   state.CP = M(false, "Capacity Points Mode")
+  state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger',
+      'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
 
   -- Additional local binds
   include('Global-Binds.lua')
@@ -89,6 +93,10 @@ function user_setup()
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c usekey')
   send_command('bind @w gs c toggle WeaponLock')
+
+  send_command('bind ^pageup gs c toyweapon cycle')
+  send_command('bind ^pagedown gs c toyweapon cycleback')
+  send_command('bind ^right gs c toyweapon reset')
 
   send_command('bind @c gs c toggle CP')
 
@@ -134,6 +142,10 @@ function user_unload()
   send_command('unbind !s')
   send_command('unbind !d')
   send_command('unbind @w')
+
+  send_command('unbind ^pageup')
+  send_command('unbind ^pagedown')
+  send_command('unbind ^right')
 
   send_command('unbind ^`')
   send_command('unbind !`')
@@ -847,6 +859,8 @@ function display_current_job_state(eventArgs)
 
   local i_msg = state.IdleMode.value
 
+  local toy_msg = state.ToyWeapons.current
+
   local msg = ''
   if state.Kiting.value then
     msg = msg .. ' Kiting: On |'
@@ -859,9 +873,33 @@ function display_current_job_state(eventArgs)
       ..string.char(31,207).. ' WS: ' ..string.char(31,001)..ws_msg.. string.char(31,002)..  ' |'
       ..string.char(31,004).. ' Defense: ' ..string.char(31,001)..d_msg.. string.char(31,002)..  ' |'
       ..string.char(31,008).. ' Idle: ' ..string.char(31,001)..i_msg.. string.char(31,002)..  ' |'
+      ..string.char(31,012).. ' Toy Weapon: ' ..string.char(31,001)..toy_msg.. string.char(31,002)..  ' |'
       ..string.char(31,002)..msg)
 
   eventArgs.handled = true
+end
+
+function cycle_toy_weapons(cycle_dir)
+  --If current state is None, save current weapons to switch back later
+  if state.ToyWeapons.current == 'None' then
+    sets.ToyWeapon.None.main = player.equipment.main
+    sets.ToyWeapon.None.sub = player.equipment.sub
+  end
+
+  if cycle_dir == 'forward' then
+    state.ToyWeapons:cycle()
+  elseif cycle_dir == 'back' then
+    state.ToyWeapons:cycleback()
+  else
+    state.ToyWeapons:reset()
+  end
+  
+  local mode_color = 001
+  if state.ToyWeapons.current == 'None' then
+    mode_color = 006
+  end
+  add_to_chat(012, 'Toy Weapon Mode: '..string.char(31,mode_color)..state.ToyWeapons.current)
+  equip(sets.ToyWeapon[state.ToyWeapons.current])
 end
 
 
@@ -929,6 +967,14 @@ function job_self_command(cmdParams, eventArgs)
     send_command('cancel Invisible; cancel Hide; cancel Gestation')
   elseif cmdParams[1]:lower() == 'faceaway' then
     windower.ffxi.turn(player.facing - math.pi);
+  elseif cmdParams[1]:lower() == 'toyweapon' then
+    if cmdParams[2]:lower() == 'cycle' then
+      cycle_toy_weapons('forward')
+    elseif cmdParams[2]:lower() == 'cycleback' then
+      cycle_toy_weapons('back')
+    elseif cmdParams[2]:lower() == 'reset' then
+      cycle_toy_weapons('reset')
+    end
   end
 
   gearinfo(cmdParams, eventArgs)
