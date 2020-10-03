@@ -16,7 +16,7 @@
 --              [ WIN+C ]           Toggle Capacity Points Mode
 --              [ CTRL+PageUp ]     Cycle Toy Weapon Mode
 --              [ CTRL+PageDown ]   Cycleback Toy Weapon Mode
---              [ CTRL+Right Arrow] Reset Toy Weapon Mode
+--              [ ALT+PageDown ]    Reset Toy Weapon Mode
 --              [ WIN+W ]           Toggle Weapon Lock
 --                                  (off = re-equip previous weapons if you go barehanded)
 --                                  (on = prevent weapon auto-equipping)
