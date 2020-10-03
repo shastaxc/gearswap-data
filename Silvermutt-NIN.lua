@@ -36,12 +36,6 @@
 --              [ WIN+. ]           Utsusemi: Ni
 --              [ WIN+/ ]           Utsusemi: San
 --
---  WS:         [ CTRL+Numpad7 ]    Blade: Kamu
---              [ CTRL+Numpad8 ]    Blade: Shun
---              [ CTRL+Numpad4 ]    Blade: Ten
---              [ CTRL+Numpad6 ]    Blade: Hi
---              [ CTRL+Numpad1 ]    Blade: Yu
---
 --  Other:      [ ALT+D ]           Cancel Invisible/Hide & Use Key on <t>
 --              [ ALT+S ]           Turn 180 degrees in place
 --
@@ -135,13 +129,6 @@ function user_setup()
     send_command('bind ^numpad- input /ja "Aggressor" <me>')
   end
 
-  send_command('bind ^numpad7 input /ws "Blade: Kamu" <t>')
-  send_command('bind ^numpad8 input /ws "Blade: Shun" <t>')
-  send_command('bind ^numpad4 input /ws "Blade: Ten" <t>')
-  send_command('bind ^numpad6 input /ws "Blade: Hi" <t>')
-  send_command('bind ^numpad1 input /ws "Blade: Yu" <t>')
-  send_command('bind ^numpad2 input /ws "Blade: Chi" <t>')
-
   -- Whether a warning has been given for low ninja tools
   state.warned = M(false)
 
@@ -182,12 +169,15 @@ function user_unload()
   send_command('unbind ^numpad-')
   send_command('unbind ^numpad+')
   send_command('unbind !numpad+')
-  send_command('unbind ^numpad7')
+  send_command('unbind ^numpad9')
   send_command('unbind ^numpad8')
-  send_command('unbind ^numpad4')
+  send_command('unbind ^numpad7')
   send_command('unbind ^numpad6')
-  send_command('unbind ^numpad1')
+  send_command('unbind ^numpad5')
+  send_command('unbind ^numpad4')
+  send_command('unbind ^numpad3')
   send_command('unbind ^numpad2')
+  send_command('unbind ^numpad1')
 
   send_command('unbind #`')
   send_command('unbind #1')

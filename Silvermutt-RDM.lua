@@ -42,11 +42,6 @@
 --              [ WIN+, ]           Utsusemi: Ichi
 --              [ WIN+. ]           Utsusemi: Ni
 --
---  WS:         [ CTRL+Numpad7 ]    Savage Blade
---              [ CTRL+Numpad9 ]    Chant Du Cygne
---              [ CTRL+Numpad4 ]    Requiescat
---              [ CTRL+Numpad1 ]    Sanguine Blade
---
 --  Other:      [ ALT+D ]           Cancel Invisible/Hide & Use Key on <t>
 --              [ ALT+S ]           Turn 180 degrees in place
 --
@@ -191,12 +186,6 @@ function user_setup()
   -- send_command('bind @e gs c cycleback WeaponSet')
   -- send_command('bind @r gs c cycle WeaponSet')
 
-  send_command('bind ^numpad7 input /ws "Savage Blade" <t>')
-  send_command('bind ^numpad9 input /ws "Chant du Cygne" <t>')
-  send_command('bind ^numpad4 input /ws "Requiescat" <t>')
-  send_command('bind ^numpad1 input /ws "Sanguine Blade" <t>')
-  send_command('bind ^numpad2 input /ws "Seraph Blade" <t>')
-
   select_default_macro_book()
   set_lockstyle()
 
@@ -257,11 +246,15 @@ function user_unload()
   send_command('unbind ^end')
   send_command('unbind !home')
   send_command('unbind !end')
-  send_command('unbind ^numpad7')
   send_command('unbind ^numpad9')
+  send_command('unbind ^numpad8')
+  send_command('unbind ^numpad7')
+  send_command('unbind ^numpad6')
+  send_command('unbind ^numpad5')
   send_command('unbind ^numpad4')
-  send_command('unbind ^numpad1')
+  send_command('unbind ^numpad3')
   send_command('unbind ^numpad2')
+  send_command('unbind ^numpad1')
   send_command('unbind ^numpad0')
   send_command('unbind ^numpad.')
 

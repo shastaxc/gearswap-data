@@ -24,13 +24,6 @@
 --  Abilities:  [ CTRL+` ]          Impetus
 --                                  Chakra
 --
---  WS:         [ CTRL+Numpad7 ]    Victory Smite
---              [ CTRL+Numpad8 ]    Ascetic's Fury
---              [ CTRL+Numpad9 ]    Shijin Spiral
---              [ CTRL+Numpad4 ]    Asuran Fists
---              [ CTRL+Numpad1 ]    Spinning Attack
---              [ CTRL+Numpad2 ]    Shoulder Tackle
---
 --  Other:      [ ALT+D ]           Cancel Invisible/Hide & Use Key on <t>
 --              [ ALT+S ]           Turn 180 degrees in place
 --
@@ -119,15 +112,6 @@ function user_setup()
     send_command('bind ^numpad. input /ma "Utsusemi: Ni" <me>')
   end
 
-  send_command('bind ^numpad7 input /ws "Victory Smite" <t>')
-  send_command('bind ^numpad8 input /ws "Ascetic\'s Fury" <t>')
-  send_command('bind ^numpad9 input /ws "Shijin Spiral" <t>')
-  send_command('bind ^numpad4 input /ws "Asuran Fists" <t>')
-  send_command('bind ^numpad5 input /ws "Spinning Attack" <t>')
-  send_command('bind ^numpad6 input /ws "Howling Fist" <t>')
-  send_command('bind ^numpad2 input /ws "Shoulder Tackle" <t>')
-  send_command('bind ^numpad1 input /ws "Raging Fists" <t>')
-
   update_combat_form()
   update_melee_groups()
 
@@ -151,12 +135,13 @@ function user_unload()
   send_command('unbind ^numpad/')
   send_command('unbind ^numpad*')
   send_command('unbind ^numpad-')
-  send_command('unbind ^numpad7')
-  send_command('unbind ^numpad8')
   send_command('unbind ^numpad9')
-  send_command('unbind ^numpad4')
-  send_command('unbind ^numpad5')
+  send_command('unbind ^numpad8')
+  send_command('unbind ^numpad7')
   send_command('unbind ^numpad6')
+  send_command('unbind ^numpad5')
+  send_command('unbind ^numpad4')
+  send_command('unbind ^numpad3')
   send_command('unbind ^numpad2')
   send_command('unbind ^numpad1')
   send_command('unbind ^numpad0')

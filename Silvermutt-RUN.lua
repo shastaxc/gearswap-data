@@ -55,15 +55,6 @@
 --              [ ALT+W ]           Cocoon (BLU sub)
 --              [ ALT+E ]           Refueling (BLU sub)
 --
---  WS:         [ CTRL+Numpad7 ]    Resolution
---              [ CTRL+Numpad8 ]    Upheaval
---              [ CTRL+Numpad9 ]    Dimidiation
---              [ CTRL+Numpad5 ]    Ground Strike
---              [ CTRL+Numpad6 ]    Full Break
---              [ CTRL+Numpad1 ]    Herculean Slash
---              [ CTRL+Numpad2 ]    Shockwave
---              [ CTRL+Numpad3 ]    Armor Break
---
 --  Other:      [ ALT+D ]           Cancel Invisible/Hide & Use Key on <t>
 --              [ ALT+S ]           Turn 180 degrees in place
 --
@@ -196,15 +187,6 @@ function user_setup()
     send_command('bind ^numpad- input /ja "Hasso" <me>')
   end
 
-  send_command('bind ^numpad7 input /ws "Resolution" <t>')
-  send_command('bind ^numpad8 input /ws "Upheaval" <t>')
-  send_command('bind ^numpad9 input /ws "Dimidiation" <t>')
-  send_command('bind ^numpad5 input /ws "Ground Strike" <t>')
-  send_command('bind ^numpad6 input /ws "Full Break" <t>')
-  send_command('bind ^numpad1 input /ws "Herculean Slash" <t>')
-  send_command('bind ^numpad2 input /ws "Shockwave" <t>')
-  send_command('bind ^numpad3 input /ws "Armor Break" <t>')
-
   select_default_macro_book()
   set_lockstyle()
 
@@ -249,9 +231,14 @@ function user_unload()
   send_command('unbind ^numpad/')
   send_command('unbind ^numpad*')
   send_command('unbind ^numpad-')
-  send_command('unbind ^numpad7')
   send_command('unbind ^numpad9')
+  send_command('unbind ^numpad8')
+  send_command('unbind ^numpad7')
+  send_command('unbind ^numpad6')
   send_command('unbind ^numpad5')
+  send_command('unbind ^numpad4')
+  send_command('unbind ^numpad3')
+  send_command('unbind ^numpad2')
   send_command('unbind ^numpad1')
   send_command('unbind @numpad*')
   send_command('unbind numpad0')

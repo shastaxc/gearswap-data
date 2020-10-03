@@ -46,12 +46,6 @@
 --  Spells:     [ CTRL+Numpad0 ]    Utsusemi: Ichi
 --              [ CTRL+Numpad. ]    Utsusemi: Ni
 --
---  WS:         [ CTRL+Numpad7 ]    Exenterator
---              [ CTRL+Numpad4 ]    Evisceration
---              [ CTRL+Numpad5 ]    Rudra's Storm
---              [ CTRL+Numpad6 ]    Pyrrhic Kleos
---              [ CTRL+Numpad1 ]    Aeolian Edge
---
 --  Other:      [ ALT+D ]           Cancel Invisible/Hide & Use Key on <t>
 --              [ ALT+S ]           Turn 180 degrees in place
 --
@@ -168,12 +162,6 @@ function user_setup()
   send_command('bind ^numpad+ input /ja "Climactic Flourish" <me>')
   send_command('bind ^numpadenter input /ja "Building Flourish" <me>')
 
-  send_command('bind ^numpad7 input /ws "Exenterator" <t>')
-  send_command('bind ^numpad4 input /ws "Evisceration" <t>')
-  send_command('bind ^numpad5 input /ws "Rudra\'s Storm" <t>')
-  send_command('bind ^numpad6 input /ws "Pyrrhic Kleos" <t>')
-  send_command('bind ^numpad1 input /ws "Aeolian Edge" <t>')
-
   send_command('bind numpad0 gs c step t')
 
   select_default_macro_book()
@@ -219,14 +207,18 @@ function user_unload()
   send_command('unbind ^numpad-')
   send_command('unbind ^numpad+')
   send_command('unbind ^numpadenter')
+  send_command('unbind ^numpad9')
+  send_command('unbind ^numpad8')
   send_command('unbind ^numpad7')
-  send_command('unbind ^numpad4')
-  send_command('unbind ^numpad5')
   send_command('unbind ^numpad6')
+  send_command('unbind ^numpad5')
+  send_command('unbind ^numpad4')
+  send_command('unbind ^numpad3')
+  send_command('unbind ^numpad2')
   send_command('unbind ^numpad1')
-  send_command('unbind numpad0')
   send_command('unbind ^numpad0')
   send_command('unbind ^numpad.')
+  send_command('unbind numpad0')
 
   send_command('unbind #`')
   send_command('unbind #1')
@@ -1022,6 +1014,7 @@ end
 
 function job_update(cmdParams, eventArgs)
   handle_equipping_gear(player.status)
+  update_weaponskill_binds()
 end
 
 function update_combat_form()
@@ -1133,6 +1126,7 @@ function display_current_job_state(eventArgs)
       ..string.char(31,012).. ' Toy Weapon: ' ..string.char(31,001)..toy_msg.. string.char(31,002)..  ' |'
       ..string.char(31,002)..msg)
 
+  print('player.equipment.main: '..player.equipment.main)
   eventArgs.handled = true
 end
 

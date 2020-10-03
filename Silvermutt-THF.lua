@@ -33,12 +33,6 @@
 --  Spells:     [ WIN+, ]           Utsusemi: Ichi
 --              [ WIN+. ]           Utsusemi: Ni
 --
---  WS:         [ CTRL+Numpad7 ]    Exenterator
---              [ CTRL+Numpad8 ]    Mandalic Stab
---              [ CTRL+Numpad4 ]    Evisceration
---              [ CTRL+Numpad5 ]    Rudra's Storm
---              [ CTRL+Numpad1 ]    Aeolian Edge
---
 --  Other:      [ ALT+D ]           Cancel Invisible/Hide & Use Key on <t>
 --              [ ALT+S ]           Turn 180 degrees in place
 --
@@ -146,14 +140,6 @@ function user_setup()
     send_command('bind ^numlock input /ja "Reverse Flourish" <me>')
   end
 
-  send_command('bind ^numpad7 input /ws "Exenterator" <t>')
-  send_command('bind ^numpad8 input /ws "Mandalic Stab" <t>')
-  send_command('bind ^numpad4 input /ws "Evisceration" <t>')
-  send_command('bind ^numpad5 input /ws "Rudra\'s Storm" <t>')
-  send_command('bind ^numpad1 input /ws "Aeolian Edge" <t>')
-  send_command('bind ^numpad2 input /ws "Wasp Sting" <t>')
-  send_command('bind ^numpad3 input /ws "Gust Slash" <t>')
-
   send_command('bind ^numpad0 input /ja "Sneak Attack" <me>')
   send_command('bind ^numpad. input /ja "Trick Attack" <me>')
 
@@ -184,13 +170,15 @@ function user_unload()
   send_command('unbind ^numpad/')
   send_command('unbind ^numpad*')
   send_command('unbind ^numpad-')
-  send_command('unbind ^numpad7')
+  send_command('unbind ^numpad9')
   send_command('unbind ^numpad8')
-  send_command('unbind ^numpad4')
+  send_command('unbind ^numpad7')
+  send_command('unbind ^numpad6')
   send_command('unbind ^numpad5')
-  send_command('unbind ^numpad1')
-  send_command('unbind ^numpad2')
+  send_command('unbind ^numpad4')
   send_command('unbind ^numpad3')
+  send_command('unbind ^numpad2')
+  send_command('unbind ^numpad1')
   send_command('unbind ^numpad0')
   send_command('unbind ^numpad.')
   
