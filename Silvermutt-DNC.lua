@@ -486,13 +486,15 @@ function init_gear_sets()
     back=gear.DNC_TP_DW_Cape,
   }
 
-  sets.idle.DT = set_combine(sets.idle, {
+  sets.DT = {
     ammo="Staunch Tathlum", --2/2
     feet="Horos Toe Shoes +3",
     neck="Twilight Torque", --5/5
     ring1=gear.Dark_Ring, --5/4
     ring2="Defending Ring", --10/10
-  }) --22/21
+  } --22/21
+
+  sets.idle.DT = set_combine(sets.idle, sets.DT)
 
   sets.idle.Town = set_combine(sets.idle, {
     feet="Skadi's Jambeaux +1",
@@ -504,25 +506,9 @@ function init_gear_sets()
 
   sets.idle.Weak = sets.idle.DT
 
-  sets.idle.Regen = {
-    head="Meghanada Visor +2",
-    body="Meghanada Cuirie +2",
-    hands="Meghanada Gloves +2",
-    legs="Meghanada Chausses +2",
-    neck="Lissome Necklace",
-    ear1="Infused Earring",
-  }
-
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Defense Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
-
-  sets.defense.PDT = set_combine(sets.idle.DT, {
-    body="Horos Casaque +3",
-    ring1="Jelly Ring",
-  })
-  sets.defense.MDT = set_combine(sets.idle.DT, {
-  })
 
   sets.Kiting = {
     feet="Skd. Jambeaux +1"
@@ -926,6 +912,15 @@ function init_gear_sets()
     neck="Ygnas's Resolve +1"
   }
 
+  sets.latent_regen = {
+    head="Meghanada Visor +2",
+    body="Meghanada Cuirie +2",
+    hands="Meghanada Gloves +2",
+    legs="Meghanada Chausses +2",
+    neck="Lissome Necklace",
+    ear1="Infused Earring",
+  }
+
 end
 
 
@@ -1049,7 +1044,7 @@ end
 
 function customize_idle_set(idleSet)
   if player.hpp < 85 then
-    idleSet = set_combine(idleSet, sets.idle.Regen)
+    idleSet = set_combine(idleSet, sets.latent_regen)
   end
   if state.Auto_Kite.value == true then
     idleSet = set_combine(idleSet, sets.Kiting)
@@ -1142,7 +1137,6 @@ function display_current_job_state(eventArgs)
       ..string.char(31,012).. ' Toy Weapon: ' ..string.char(31,001)..toy_msg.. string.char(31,002)..  ' |'
       ..string.char(31,002)..msg)
 
-  print('player.equipment.main: '..player.equipment.main)
   eventArgs.handled = true
 end
 

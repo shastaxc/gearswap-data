@@ -546,14 +546,16 @@ function init_gear_sets()
     waist="Moonbow Belt +1",
   }
 
-  sets.idle.DT = set_combine(sets.idle, {
+  sets.DT = {
     ammo="Staunch Tathlum",
     neck="Twilight Necklace",
     ear2="Odnowa Earring +1",
     ring1=gear.Dark_Ring,
     ring2="Defending Ring",
     waist="Moonbow Belt +1",
-  })
+  }
+
+  sets.idle.DT = set_combine(sets.idle, sets.DT)
 
   sets.idle.Weak = sets.idle.DT
 
@@ -569,11 +571,6 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Defense Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
-
-  sets.defense.PDT = set_combine(sets.idle.DT, {
-  })
-  sets.defense.MDT = set_combine(sets.idle.DT, {
-  })
 
 
   ------------------------------------------------------------------------------------------------
@@ -705,6 +702,11 @@ function init_gear_sets()
   }
   sets.Reive = {
     neck="Ygnas's Resolve +1"
+  }
+
+  sets.latent_regen = {
+    neck="Lissome Necklace",
+    ear1="Infused Earring",
   }
 
 end
@@ -897,6 +899,9 @@ end
 
 -- Modify the default idle set after it was constructed.
 function customize_idle_set(idleSet)
+  if player.hpp < 85 then
+    idleSet = set_combine(idleSet, sets.latent_regen)
+  end
   if state.CP.current == 'on' then
     idleSet = set_combine(idleSet, sets.CP)
   end

@@ -776,6 +776,11 @@ function init_gear_sets()
     -- neck="Ygnas's Resolve +1"
   }
 
+  sets.latent_regen = {
+    neck="Lissome Necklace",
+    ear1="Infused Earring",
+  }
+
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -916,6 +921,9 @@ end
 
 -- Modify the default idle set after it was constructed.
 function customize_idle_set(idleSet)
+  if player.hpp < 85 and state.DefenseMode.value == 'None' then
+    idleSet = set_combine(idleSet, sets.latent_regen)
+  end
   if state.Buff.Migawari then
     idleSet = set_combine(idleSet, sets.buff.Migawari)
   end

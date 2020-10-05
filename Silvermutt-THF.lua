@@ -956,6 +956,15 @@ function init_gear_sets()
     back="Mecistopins Mantle",
   }
 
+  sets.latent_regen = {
+    head="Meghanada Visor +2",
+    body="Meghanada Cuirie +2",
+    hands="Meghanada Gloves +2",
+    legs="Meghanada Chausses +2",
+    neck="Lissome Necklace",
+    ear1="Infused Earring",
+  }
+
 end
 
 
@@ -1099,6 +1108,9 @@ function get_custom_wsmode(spell, action, spellMap)
 end
 
 function customize_idle_set(idleSet)
+  if player.hpp < 85 then
+    idleSet = set_combine(idleSet, sets.latent_regen)
+  end
   if state.Auto_Kite.value == true then
     idleSet = set_combine(idleSet, sets.Kiting)
   end

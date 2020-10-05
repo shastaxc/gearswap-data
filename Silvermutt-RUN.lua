@@ -848,6 +848,7 @@ function init_gear_sets()
 
   sets.defense.DeathResist = set_combine(sets.DeathResist, {})
 
+
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Engaged Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
@@ -1014,6 +1015,21 @@ function init_gear_sets()
   }
   sets.Lycurgos = {
     -- main="Lycurgos"
+  }
+
+  sets.latent_refresh = {
+    ammo="Homiliary", --1
+    body="Runeist's Coat +3", --3
+    legs="Rawhide Trousers", --1
+  }
+
+  sets.latent_regen = {
+    head="Meghanada Visor +2",
+    body="Meghanada Cuirie +2",
+    hands="Meghanada Gloves +2",
+    legs="Meghanada Chausses +2",
+    neck="Lissome Necklace",
+    ear1="Infused Earring",
   }
 
 end
@@ -1213,7 +1229,10 @@ end
 
 -- Modify the default idle set after it was constructed.
 function customize_idle_set(idleSet)
-  if player.mpp < 51 then
+  if player.hpp < 85 and state.DefenseMode.value == 'None' then
+    idleSet = set_combine(idleSet, sets.latent_regen)
+  end
+  if player.mpp < 90 and state.DefenseMode.value == 'None' then
     idleSet = set_combine(idleSet, sets.latent_refresh)
   end
   if state.Knockback.value == true then
