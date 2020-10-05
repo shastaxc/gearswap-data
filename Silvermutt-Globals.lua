@@ -321,9 +321,9 @@ function update_weaponskill_binds()
     elseif current_weapon_type == 'Dagger' then
       send_command('bind ^numpad7 input /ws "Exenterator" <t>')
       send_command('bind ^numpad8 input /ws "Mandalic Stab" <t>')
-      send_command('bind ^numpad9 input /ws "Rudra\'s Storm" <t>')
+      send_command('bind ^numpad9 input /ws "Shark Bite" <t>')
       send_command('bind ^numpad4 input /ws "Evisceration" <t>')
-      send_command('bind ^numpad5 input /ws "Shark Bite" <t>')
+      send_command('bind ^numpad5 input /ws "Rudra\'s Storm" <t>')
       send_command('bind ^numpad6 input /ws "Pyrrhic Kleos" <t>')
       send_command('bind ^numpad1 input /ws "Aeolian Edge" <t>') --aoe
       send_command('bind ^numpad2 input /ws "Cyclone" <t>') --elemental
