@@ -285,8 +285,8 @@ function init_gear_sets()
     neck="Fotia Gorget",
   })
   sets.precast.WS["Victory Smite"].MidAcc = set_combine(sets.precast.WS["Victory Smite"].LowAcc, {
+    ear2="Telos Earring",
     -- head="Rao Kabuto +1",
-    -- ear1="Telos Earring",
   })
   sets.precast.WS["Victory Smite"].HighAcc = set_combine(sets.precast.WS["Victory Smite"].MidAcc, {
     ammo="Falcon Eye",
@@ -326,6 +326,7 @@ function init_gear_sets()
   })
   sets.precast.WS["Shijin Spiral"].MidAcc = set_combine(sets.precast.WS["Shijin Spiral"].LowAcc, {
     ammo="Falcon Eye",
+    ear2="Telos Earring",
   })
   sets.precast.WS["Shijin Spiral"].HighAcc = set_combine(sets.precast.WS["Shijin Spiral"].MidAcc, {
     hands=gear.Ryuo_A_hands,
@@ -352,7 +353,7 @@ function init_gear_sets()
     neck="Fotia Gorget",
   })
   sets.precast.WS["Asuran Fists"].MidAcc = set_combine(sets.precast.WS["Asuran Fists"].LowAcc, {
-    ear2="Dignitary's Earring",
+    ear2="Telos Earring",
     hands=gear.Ryuo_A_hands,
   })
   sets.precast.WS["Asuran Fists"].HighAcc = set_combine(sets.precast.WS["Asuran Fists"].MidAcc, {
@@ -388,7 +389,7 @@ function init_gear_sets()
     -- feet="Ken. Sune-Ate +1",
   })
   sets.precast.WS["Ascetic's Fury"].MidAcc = set_combine(sets.precast.WS["Ascetic's Fury"].LowAcc, {
-    ear2="Dignitary's Earring",
+    ear2="Telos Earring",
   })
   sets.precast.WS["Ascetic's Fury"].HighAcc = set_combine(sets.precast.WS["Ascetic's Fury"].MidAcc, {
     ammo="Falcon Eye",
@@ -438,7 +439,7 @@ function init_gear_sets()
     head="Mummu Bonnet +2",
   })
   sets.precast.WS["Howling Fist"].MidAcc = set_combine(sets.precast.WS["Howling Fist"].LowAcc, {
-    ear2="Dignitary's Earring",
+    ear2="Telos Earring",
   })
   sets.precast.WS["Howling Fist"].HighAcc = set_combine(sets.precast.WS["Howling Fist"].MidAcc, {
     ammo="Falcon Eye",
@@ -493,7 +494,7 @@ function init_gear_sets()
     neck="Fotia Gorget",
   })
   sets.precast.WS["Spinning Attack"].MidAcc = set_combine(sets.precast.WS["Spinning Attack"].LowAcc, {
-
+    ear2="Telos Earring",
   })
   sets.precast.WS["Spinning Attack"].HighAcc = set_combine(sets.precast.WS["Spinning Attack"].MidAcc, {
     ammo="Falcon Eye",

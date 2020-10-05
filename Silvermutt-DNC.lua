@@ -546,6 +546,7 @@ function init_gear_sets()
   }
 
   sets.engaged.LowAcc = set_combine(sets.engaged, {
+    ring2="Ilabrat Ring",
     -- head="Dampening Tam",
     -- hands=gear.Adhemar_A_hands,
   })
@@ -553,13 +554,12 @@ function init_gear_sets()
   sets.engaged.MidAcc = set_combine(sets.engaged.LowAcc, {
     legs="Meghanada Chausses +2",
     -- ammo="Voluspa Tathlum",
-    -- ear2="Telos Earring",
     -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
-    -- ring2="Ilabrat Ring",
     -- waist="Kentarch Belt +1",
   })
 
   sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
+    ear1="Telos Earring",
     -- ammo="C. Palug Stone",
     -- body="Maxixi Casaque +3",
     -- legs="Horos Tights +3",
@@ -599,6 +599,7 @@ function init_gear_sets()
   } --30
 
   sets.engaged.DW.LowAcc = set_combine(sets.engaged.DW, {
+    ring2="Ilabrat Ring",
     -- head="Dampening Tam",
     -- hands=gear.Adhemar_A_hands,
   })
@@ -608,14 +609,13 @@ function init_gear_sets()
     -- ammo="Voluspa Tathlum",
     -- head="Maxixi Tiara +3", --8
     -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
-    -- ring2="Ilabrat Ring",
     -- waist="Kentarch Belt +1",
   })
 
   sets.engaged.DW.HighAcc = set_combine(sets.engaged.DW.MidAcc, {
+    ear2="Telos Earring",
     -- ammo="C. Palug Stone",
     -- body="Maxixi Casaque +3",
-    -- legs="Horos Tights +3",
     -- feet=gear.Herc_STP_feet,
     -- ear2="Mache Earring +1",
     -- ring1="Regal Ring",
@@ -647,6 +647,7 @@ function init_gear_sets()
   } --30
 
   sets.engaged.DW.LowAcc.LowHaste = set_combine(sets.engaged.DW.LowHaste, {
+    ring2="Ilabrat Ring",
     -- head="Dampening Tam",
     -- hands=gear.Adhemar_A_hands,
   })
@@ -657,14 +658,13 @@ function init_gear_sets()
     -- head="Maxixi Tiara +3", --8
     -- body="Horos Casaque +3",
     -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
-    -- ring2="Ilabrat Ring",
     -- waist="Kentarch Belt +1",
   })
 
   sets.engaged.DW.HighAcc.LowHaste = set_combine(sets.engaged.DW.MidAcc.LowHaste, {
+    ear2="Telos Earring",
     -- ammo="C. Palug Stone",
     -- body="Maxixi Casaque +3",
-    -- legs="Horos Tights +3",
     -- feet=gear.Herc_STP_feet,
     -- ear2="Mache Earring +1",
     -- ring1="Regal Ring",
@@ -696,6 +696,7 @@ function init_gear_sets()
   } --22
 
   sets.engaged.DW.LowAcc.MidHaste = set_combine(sets.engaged.DW.MidHaste, {
+    ring2="Ilabrat Ring",
     -- head="Dampening Tam",
     -- hands=gear.Adhemar_A_hands,
   })
@@ -706,11 +707,11 @@ function init_gear_sets()
     -- head="Maxixi Tiara +3", --8
     -- body="Horos Casaque +3",
     -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
-    -- ring2="Ilabrat Ring",
     -- waist="Kentarch Belt +1",
   })
 
   sets.engaged.DW.HighAcc.MidHaste = set_combine(sets.engaged.DW.MidAcc.MidHaste, {
+    ear2="Telos Earring",
     -- ammo="C. Palug Stone",
     -- body="Maxixi Casaque +3",
     -- legs="Horos Tights +3",
@@ -745,6 +746,7 @@ function init_gear_sets()
   } --18
 
   sets.engaged.DW.LowAcc.HighHaste = set_combine(sets.engaged.DW.HighHaste, {
+    ring2="Ilabrat Ring",
     -- head="Dampening Tam",
     -- hands=gear.Adhemar_A_hands,
     -- waist="Kentarch Belt +1",
@@ -755,10 +757,11 @@ function init_gear_sets()
     -- ammo="Voluspa Tathlum",
     -- body="Horos Casaque +3",
     -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
-    -- ring2="Ilabrat Ring",
   })
 
   sets.engaged.DW.HighAcc.HighHaste = set_combine(sets.engaged.DW.MidAcc.HighHaste, {
+    ear1="Cessance Earring",
+    ear2="Telos Earring",
     -- ammo="C. Palug Stone",
     -- head="Maxixi Tiara +3", --8
     -- body="Maxixi Casaque +3",
@@ -795,22 +798,22 @@ function init_gear_sets()
   }
 
   sets.engaged.DW.LowAcc.MaxHaste = set_combine(sets.engaged.DW.MaxHaste, {
+    ring2="Ilabrat Ring",
     -- head="Dampening Tam",
     -- hands=gear.Adhemar_A_hands,
-    -- ear2="Telos Earring",
+    -- ear1="Telos Earring",
     -- waist="Kentarch Belt +1",
   })
 
   sets.engaged.DW.MidAcc.MaxHaste = set_combine(sets.engaged.DW.LowAcc.MaxHaste, {
     legs="Meghanada Chausses +2",
     -- ammo="Voluspa Tathlum",
-    -- ear1="Cessance Earring",
     -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
-    -- ring2="Ilabrat Ring",
   })
 
   sets.engaged.DW.HighAcc.MaxHaste = set_combine(sets.engaged.DW.MidAcc.MaxHaste, {
-    neck="Lissome Necklace",
+    ear1="Cessance Earring",
+    ear2="Telos Earring",
     -- ammo="C. Palug Stone",
     -- head="Maxixi Tiara +3", --8
     -- body="Maxixi Casaque +3",
@@ -823,9 +826,9 @@ function init_gear_sets()
   })
 
   sets.engaged.DW.STP.MaxHaste = set_combine(sets.engaged.DW.MaxHaste, {
+    ear1="Telos Earring",
     -- head=gear.Herc_STP_head,
     -- body="Ashera Harness",
-    -- ear2="Telos Earring",
     -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
     -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
     -- waist="Kentarch Belt +1",

@@ -862,7 +862,7 @@ function init_gear_sets()
     feet=gear.Herc_TA_feet,
     neck="Anu Torque",
     waist="Sailfi Belt +1",
-    ear1="Brutal Earring",
+    ear1="Telos Earring",
     ear2="Sherida Earring",
     ring1="Epona's Ring",
     ring2="Ilabrat Ring",
