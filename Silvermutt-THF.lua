@@ -434,21 +434,34 @@ function init_gear_sets()
   ----------------------------------------- Idle Sets --------------------------------------------
   ------------------------------------------------------------------------------------------------
 
-  sets.resting = {}
+  sets.latent_regain = {
+    ring2="Karieyh Ring",
+  }
 
-  sets.idle = {
-    ammo="Seething Bomblet",
+  sets.latent_regen = {
     head="Meghanada Visor +2",
     body="Meghanada Cuirie +2",
     hands="Meghanada Gloves +2",
     legs="Meghanada Chausses +2",
-    feet="Skd. Jambeaux +1",
     neck="Lissome Necklace",
-    waist="Sailfi Belt +1",
     ear1="Infused Earring",
+  }
+
+  sets.resting = {}
+
+  sets.idle = {
+    ammo="Seething Bomblet",
+    head="Mummu Bonnet +2",
+    body="Mummu Jacket +1",
+    hands=gear.Adhemar_B_hands,
+    legs=gear.Samnuha,
+    feet="Mummu Gamash. +1",
+    neck="Anu Torque",
+    waist="Sailfi Belt +1",
+    ear1="Suppanomimi", -- 5%
     ear2="Sherida Earring",
     ring1="Epona's Ring",
-    ring2="Karieyh Ring",
+    ring2="Ilabrat Ring",
     back=gear.THF_TP_Cape,
     -- ammo="Staunch Tathlum +1",
     -- head="Turms Cap +1",
@@ -956,15 +969,6 @@ function init_gear_sets()
     back="Mecistopins Mantle",
   }
 
-  sets.latent_regen = {
-    head="Meghanada Visor +2",
-    body="Meghanada Cuirie +2",
-    hands="Meghanada Gloves +2",
-    legs="Meghanada Chausses +2",
-    neck="Lissome Necklace",
-    ear1="Infused Earring",
-  }
-
 end
 
 
@@ -1108,6 +1112,9 @@ function get_custom_wsmode(spell, action, spellMap)
 end
 
 function customize_idle_set(idleSet)
+  if player.tp < 3000 then 
+    idleSet = set_combine(idleSet, sets.latent_regain)
+  end
   if player.hpp < 85 then
     idleSet = set_combine(idleSet, sets.latent_regen)
   end

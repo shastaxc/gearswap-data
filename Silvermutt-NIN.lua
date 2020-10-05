@@ -471,6 +471,15 @@ function init_gear_sets()
   -- Idle/resting/defense/etc sets
   --------------------------------------
 
+  sets.latent_regain = {
+    ring2="Karieyh Ring",
+  }
+
+  sets.latent_regen = {
+    neck="Lissome Necklace",
+    ear1="Infused Earring",
+  }
+
   -- Idle sets
   sets.idle = {
     -- ammo="Seki Shuriken",
@@ -776,11 +785,6 @@ function init_gear_sets()
     -- neck="Ygnas's Resolve +1"
   }
 
-  sets.latent_regen = {
-    neck="Lissome Necklace",
-    ear1="Infused Earring",
-  }
-
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -921,6 +925,9 @@ end
 
 -- Modify the default idle set after it was constructed.
 function customize_idle_set(idleSet)
+  if player.tp < 3000 then 
+    idleSet = set_combine(idleSet, sets.latent_regain)
+  end
   if player.hpp < 85 and state.DefenseMode.value == 'None' then
     idleSet = set_combine(idleSet, sets.latent_regen)
   end

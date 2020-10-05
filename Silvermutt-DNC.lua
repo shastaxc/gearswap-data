@@ -419,8 +419,8 @@ function init_gear_sets()
 
   sets.precast.WS['Pyrrhic Kleos'] = set_combine(sets.precast.WS, {
     hands=gear.Adhemar_B_hands,
-    ring1="Ilabrat Ring",
-    ring2="Rajas Ring",
+    ring1="Rajas Ring",
+    ring2="Ilabrat Ring",
   }) -- 40% STR / 40% DEX
 
   sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
@@ -468,22 +468,35 @@ function init_gear_sets()
   ----------------------------------------- Idle Sets --------------------------------------------
   ------------------------------------------------------------------------------------------------
 
+  sets.latent_regain = {
+    ring2="Karieyh Ring",
+  }
+
+  sets.latent_regen = {
+    head="Meghanada Visor +2",
+    body="Meghanada Cuirie +2",
+    hands="Meghanada Gloves +2",
+    legs="Meghanada Chausses +2",
+    neck="Lissome Necklace",
+    ear1="Infused Earring",
+  }
+
   sets.resting = {}
 
   sets.idle = {
     ammo="Charis Feather",
-    head="Maxixi Tiara +3",
+    head=gear.Adhemar_B_head,
     body="Horos Casaque +3",
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha,
     feet="Skadi's Jambeaux +1",
-    neck="Lissome Necklace",
+    neck="Anu Torque",
     waist="Sailfi Belt +1",
-    ear1="Infused Earring",
+    ear1="Telos Earring",
     ear2="Sherida Earring",
     ring1="Epona's Ring",
-    ring2="Karieyh Ring",
-    back=gear.DNC_TP_DW_Cape,
+    ring2="Ilabrat Ring",
+    back=gear.DNC_TP_DA_Cape,
   }
 
   sets.DT = {
@@ -535,7 +548,7 @@ function init_gear_sets()
     ear1="Brutal Earring",
     ear2="Sherida Earring",
     ring1="Epona's Ring",
-    ring2="Rajas Ring",
+    ring2="Ilabrat Ring",
     back=gear.DNC_TP_DW_Cape,
   }
 
@@ -588,7 +601,7 @@ function init_gear_sets()
     ear1="Suppanomimi", -- 5%
     ear2="Eabani Earring", -- 4%
     ring1="Epona's Ring",
-    ring2="Rajas Ring",
+    ring2="Ilabrat Ring",
     back=gear.DNC_TP_DW_Cape, -- 10%
   } --30
 
@@ -636,7 +649,7 @@ function init_gear_sets()
     ear1="Suppanomimi", -- 5%
     ear2="Eabani Earring", -- 4%
     ring1="Epona's Ring",
-    ring2="Rajas Ring",
+    ring2="Ilabrat Ring",
     back=gear.DNC_TP_DW_Cape, -- 10%
   } --30
 
@@ -685,7 +698,7 @@ function init_gear_sets()
     ear1="Eabani Earring", -- 4%
     ear2="Sherida Earring",
     ring1="Epona's Ring",
-    ring2="Rajas Ring",
+    ring2="Ilabrat Ring",
     back=gear.DNC_TP_DW_Cape, -- 10%
   } --22
 
@@ -735,7 +748,7 @@ function init_gear_sets()
     ear1="Brutal Earring",
     ear2="Sherida Earring",
     ring1="Epona's Ring",
-    ring2="Rajas Ring",
+    ring2="Ilabrat Ring",
     back=gear.DNC_TP_DW_Cape, -- 10%
   } --18
 
@@ -787,7 +800,7 @@ function init_gear_sets()
     ear1="Brutal Earring",
     ear2="Sherida Earring",
     ring1="Epona's Ring",
-    ring2="Rajas Ring",
+    ring2="Ilabrat Ring",
     back=gear.DNC_TP_DA_Cape,
   }
 
@@ -912,15 +925,6 @@ function init_gear_sets()
     neck="Ygnas's Resolve +1"
   }
 
-  sets.latent_regen = {
-    head="Meghanada Visor +2",
-    body="Meghanada Cuirie +2",
-    hands="Meghanada Gloves +2",
-    legs="Meghanada Chausses +2",
-    neck="Lissome Necklace",
-    ear1="Infused Earring",
-  }
-
 end
 
 
@@ -1043,6 +1047,9 @@ function get_custom_wsmode(spell, action, spellMap)
 end
 
 function customize_idle_set(idleSet)
+  if player.tp < 3000 then 
+    idleSet = set_combine(idleSet, sets.latent_regain)
+  end
   if player.hpp < 85 then
     idleSet = set_combine(idleSet, sets.latent_regen)
   end

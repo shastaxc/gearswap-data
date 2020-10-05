@@ -700,18 +700,37 @@ function init_gear_sets()
   ----------------------------------------- Idle Sets --------------------------------------------
   ------------------------------------------------------------------------------------------------
 
+  sets.latent_regain = {
+    ring1="Karieyh Ring",
+  }
+
+  sets.latent_regen = {
+    head="Meghanada Visor +2",
+    body="Meghanada Cuirie +2",
+    hands="Meghanada Gloves +2",
+    legs="Meghanada Chausses +2",
+    neck="Lissome Necklace",
+    ear1="Infused Earring",
+  }
+
+  sets.latent_refresh = {
+    ammo="Homiliary", --1
+    body="Runeist's Coat +3", --3
+    legs="Rawhide Trousers", --1
+  }
+
   sets.idle = {
-    ammo="Homiliary",
-    head="Erilaz Galea +1",
+    ammo="Staunch Tathlum",
+    head="Aya. Zucchetto +2",
     body="Runeist's Coat +3",
-    hands=gear.Adhemar_B_hands,
+    hands="Turms Mittens",
     legs="Carmine Cuisses +1",
     feet="Erilaz Greaves +1",
-    neck="Lissome Necklace",
-    waist="Gishdubar Sash",
-    ear1="Infused Earring",
+    neck="Futhark Torque +1",
+    waist="Engraved Belt",
+    ear1="Odnowa Earring +1",
     ear2="Sherida Earring",
-    ring1="Karieyh Ring",
+    ring1=gear.Dark_Ring,
     ring2="Defending Ring",
     back=gear.RUN_HPD_Cape,
   }
@@ -746,9 +765,7 @@ function init_gear_sets()
     -- ring2={name="Stikini Ring +1", bag="wardrobe4"},
   })
 
-  sets.idle.Town = set_combine(sets.idle, {
-    feet="Skadi's Jambeaux +1",
-  })
+  sets.idle.Town = sets.idle
 
   sets.idle.Town.Adoulin = {
     body="Councilor's Garb",
@@ -1017,21 +1034,6 @@ function init_gear_sets()
     -- main="Lycurgos"
   }
 
-  sets.latent_refresh = {
-    ammo="Homiliary", --1
-    body="Runeist's Coat +3", --3
-    legs="Rawhide Trousers", --1
-  }
-
-  sets.latent_regen = {
-    head="Meghanada Visor +2",
-    body="Meghanada Cuirie +2",
-    hands="Meghanada Gloves +2",
-    legs="Meghanada Chausses +2",
-    neck="Lissome Necklace",
-    ear1="Infused Earring",
-  }
-
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -1229,6 +1231,9 @@ end
 
 -- Modify the default idle set after it was constructed.
 function customize_idle_set(idleSet)
+  if player.tp < 3000 then 
+    idleSet = set_combine(idleSet, sets.latent_regain)
+  end
   if player.hpp < 85 and state.DefenseMode.value == 'None' then
     idleSet = set_combine(idleSet, sets.latent_regen)
   end

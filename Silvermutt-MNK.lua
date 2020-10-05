@@ -530,6 +530,15 @@ function init_gear_sets()
   ----------------------------------------- Idle Sets --------------------------------------------
   ------------------------------------------------------------------------------------------------
 
+  sets.latent_regain = {
+    ring2="Karieyh Ring",
+  }
+
+  sets.latent_regen = {
+    neck="Lissome Necklace",
+    ear1="Infused Earring",
+  }
+
   sets.idle = {
     ammo="Ginsen",
     head=gear.Adhemar_B_head,
@@ -537,11 +546,11 @@ function init_gear_sets()
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha,
     feet="Hermes' Sandals",
-    neck="Monk's Nodowa",
+    neck="Monk's Nodowa +2",
     ear1="Sherida Earring",
-    ear2="Infused Earring",
+    ear2="Brutal Earring",
     ring1="Epona's Ring",
-    ring2="Karieyh Ring",
+    ring2="Ilabrat Ring",
     back=gear.MNK_TP_Cape,
     waist="Moonbow Belt +1",
   }
@@ -702,11 +711,6 @@ function init_gear_sets()
   }
   sets.Reive = {
     neck="Ygnas's Resolve +1"
-  }
-
-  sets.latent_regen = {
-    neck="Lissome Necklace",
-    ear1="Infused Earring",
   }
 
 end
@@ -899,6 +903,9 @@ end
 
 -- Modify the default idle set after it was constructed.
 function customize_idle_set(idleSet)
+  if player.tp < 3000 then 
+    idleSet = set_combine(idleSet, sets.latent_regain)
+  end
   if player.hpp < 85 then
     idleSet = set_combine(idleSet, sets.latent_regen)
   end
