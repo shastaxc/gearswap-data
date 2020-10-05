@@ -360,6 +360,7 @@ function init_gear_sets()
 
   sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
     hands="Mummu Wrists +2",
+    ring2="Begrudging Ring",
     -- ammo="Yetshila +1",
     -- head=gear.Adhemar_B_head,
     -- body="Pillager's Vest +3",
@@ -437,10 +438,10 @@ function init_gear_sets()
 
   sets.idle = {
     ammo="Seething Bomblet",
-    head="Mummu Bonnet +2",
-    body="Mummu Jacket +1",
-    hands=gear.Adhemar_B_hands,
-    legs=gear.Samnuha,
+    head="Meghanada Visor +2",
+    body="Meghanada Cuirie +2",
+    hands="Meghanada Gloves +2",
+    legs="Meghanada Chausses +2",
     feet="Skd. Jambeaux +1",
     neck="Lissome Necklace",
     waist="Sailfi Belt +1",

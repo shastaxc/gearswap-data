@@ -426,6 +426,7 @@ function init_gear_sets()
   sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
     hands="Mummu Wrists +2",
     legs=gear.Lustratio_B_legs,
+    ring2="Begrudging Ring",
   }) -- 50% DEX
 
   sets.precast.WS['Rudra\'s Storm'] = set_combine(sets.precast.WS, {
@@ -895,6 +896,7 @@ function init_gear_sets()
   sets.buff['Climactic Flourish'] = {
     head="Maculele Tiara",
     body="Meg. Cuirie +2",
+    ring2="Begrudging Ring",
   }
   sets.buff['Closed Position'] = {
     feet="Horos Toe Shoes +3",
