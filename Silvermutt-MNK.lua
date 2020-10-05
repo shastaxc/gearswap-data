@@ -200,7 +200,7 @@ function init_gear_sets()
     head="Anchorite's Crown +1",
   }
   sets.precast.JA['Counterstance'] = {
-    feet="Hesychast's Gaiters +1",
+    feet="Hesychast's Gaiters +2",
   }
   sets.precast.JA['Footwork'] = {
     feet="Tantra Gaiters +2",
@@ -209,7 +209,7 @@ function init_gear_sets()
     body="Hesychast's Cyclas",
   }
   sets.precast.JA['Mantra'] = {
-    feet="Hesychast's Gaiters +1",
+    feet="Hesychast's Gaiters +2",
   }
 
   sets.precast.JA['Chi Blast'] = {
@@ -623,7 +623,7 @@ function init_gear_sets()
   sets.engaged.HighAcc.DT = set_combine(sets.engaged.HighAcc, sets.Hybrid)
 
   sets.Counter = {
-    feet="Hesychast's Gaiters +1",
+    feet="Hesychast's Gaiters +2",
   }
 
   sets.engaged.Counter = set_combine(sets.engaged, sets.Counter)
