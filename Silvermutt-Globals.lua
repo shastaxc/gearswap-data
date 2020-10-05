@@ -315,7 +315,7 @@ function update_weaponskill_binds()
       send_command('bind ^numpad9 input /ws "Shijin Spiral" <t>')
       send_command('bind ^numpad4 input /ws "Asuran Fists" <t>')
       send_command('bind ^numpad5 input /ws "Shoulder Tackle" <t>')
-      send_command('bind ^numpad1 input /ws "Spinning Attack" <t>')
+      send_command('bind ^numpad1 input /ws "Spinning Attack" <t>') --aoe
       send_command('bind ^numpad2 input /ws "Raging Fists" <t>')
       send_command('bind ^numpad3 input /ws "Howling Fist" <t>')
     elseif current_weapon_type == 'Dagger' then
@@ -325,51 +325,51 @@ function update_weaponskill_binds()
       send_command('bind ^numpad4 input /ws "Evisceration" <t>')
       send_command('bind ^numpad5 input /ws "Shark Bite" <t>')
       send_command('bind ^numpad6 input /ws "Pyrrhic Kleos" <t>')
-      send_command('bind ^numpad1 input /ws "Aeolian Edge" <t>')
-      send_command('bind ^numpad2 input /ws "Cyclone" <t>')
-      send_command('bind ^numpad3 input /ws "Energy Drain" <t>')
+      send_command('bind ^numpad1 input /ws "Aeolian Edge" <t>') --aoe
+      send_command('bind ^numpad2 input /ws "Cyclone" <t>') --elemental
+      send_command('bind ^numpad3 input /ws "Energy Drain" <t>') --elemental
     elseif current_weapon_type == 'Sword' then
       send_command('bind ^numpad7 input /ws "Savage Blade" <t>')
       send_command('bind ^numpad9 input /ws "Chant du Cygne" <t>')
       send_command('bind ^numpad4 input /ws "Requiescat" <t>')
       send_command('bind ^numpad6 input /ws "Sanguine Blade" <t>')
       send_command('bind ^numpad6 input /ws "Circle Blade" <t>')
-      send_command('bind ^numpad2 input /ws "Red Flame Blade" <t>')
-      send_command('bind ^numpad3 input /ws "Seraph Blade" <t>')
+      send_command('bind ^numpad2 input /ws "Red Flame Blade" <t>') --elemental
+      send_command('bind ^numpad3 input /ws "Seraph Blade" <t>') --elemental
     elseif current_weapon_type == 'Great Sword' then
       send_command('bind ^numpad7 input /ws "Resolution" <t>')
       send_command('bind ^numpad9 input /ws "Dimidiation" <t>')
       send_command('bind ^numpad8 input /ws "Ground Strike" <t>')
       send_command('bind ^numpad5 input /ws "Herculean Slash" <t>')
-      send_command('bind ^numpad1 input /ws "Shockwave" <t>')
-      send_command('bind ^numpad2 input /ws "Freezebite" <t>')
+      send_command('bind ^numpad1 input /ws "Shockwave" <t>') --aoe
+      send_command('bind ^numpad2 input /ws "Freezebite" <t>') --elemental
     elseif current_weapon_type == 'Axe' then
     elseif current_weapon_type == 'Great Axe' then
       send_command('bind ^numpad4 input /ws "Upheaval" <t>')
       send_command('bind ^numpad5 input /ws "Full Break" <t>')
       send_command('bind ^numpad6 input /ws "Armor Break" <t>')
-      send_command('bind ^numpad1 input /ws "Fell Cleave" <t>')
+      send_command('bind ^numpad1 input /ws "Fell Cleave" <t>') --aoe
     elseif current_weapon_type == 'Scythe' then
-      send_command('bind ^numpad2 input /ws "Shadow of Death" <t>')
+      send_command('bind ^numpad2 input /ws "Shadow of Death" <t>') --elemental
     elseif current_weapon_type == 'Polearm' then
-      send_command('bind ^numpad2 input /ws "Raiden Thrust" <t>')
+      send_command('bind ^numpad2 input /ws "Raiden Thrust" <t>') --elemental
     elseif current_weapon_type == 'Katana' then
       send_command('bind ^numpad7 input /ws "Blade: Kamu" <t>')
       send_command('bind ^numpad8 input /ws "Blade: Shun" <t>')
       send_command('bind ^numpad4 input /ws "Blade: Ten" <t>')
       send_command('bind ^numpad5 input /ws "Blade: Chi" <t>')
       send_command('bind ^numpad6 input /ws "Blade: Hi" <t>')
-      send_command('bind ^numpad1 input /ws "Blade: Yu" <t>')
-      send_command('bind ^numpad2 input /ws "Blade: Ei" <t>')
+      send_command('bind ^numpad1 input /ws "Blade: Yu" <t>') --aoe
+      send_command('bind ^numpad2 input /ws "Blade: Ei" <t>') --elemental
     elseif current_weapon_type == 'Great Katana' then
-      send_command('bind ^numpad2 input /ws "Tachi: Jinpu" <t>')
-      send_command('bind ^numpad3 input /ws "Tachi: Koki" <t>')
+      send_command('bind ^numpad2 input /ws "Tachi: Jinpu" <t>') --elemental
+      send_command('bind ^numpad3 input /ws "Tachi: Koki" <t>') --elemental
     elseif current_weapon_type == 'Club' then
-      send_command('bind ^numpad2 input /ws "Seraph Strike" <t>')
+      send_command('bind ^numpad2 input /ws "Seraph Strike" <t>') --elemental
     elseif current_weapon_type == 'Staff' then
-      send_command('bind ^numpad1 input /ws "Cataclysm" <t>')
-      send_command('bind ^numpad2 input /ws "Earth Crusher" <t>')
-      send_command('bind ^numpad3 input /ws "Sunburst" <t>')
+      send_command('bind ^numpad1 input /ws "Cataclysm" <t>') --aoe
+      send_command('bind ^numpad2 input /ws "Earth Crusher" <t>') --elemental
+      send_command('bind ^numpad3 input /ws "Sunburst" <t>') --elemental
     end
   end
 end
