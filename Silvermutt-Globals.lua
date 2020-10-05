@@ -236,7 +236,7 @@ function define_global_sets()
   gear.MNK_WS_Cape = { name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}
 
   -- Misc.
-  gear.Dark_Ring = { name="Dark Ring", augments={'Magic dmg. taken -5%','Phys. dmg. taken -3%','Breath dmg. taken -3%',}}
+  gear.Dark_Ring = { name="Dark Ring", augments={'Magic dmg. taken -4%','Phys. dmg. taken -5%','Breath dmg. taken -4%',}}
   gear.Anwig_Salade = { name="Anwig Salade", augments={'CHR+4','"Waltz" ability delay -2','Attack+3','Pet: Damage taken -10%',}}
   gear.Samnuha = { name="Samnuha Tights", augments={'STR+7','"Dbl.Atk."+2','"Triple Atk."+1',}}
   gear.Samnuha_legs = { name="Samnuha Tights", augments={'STR+7','"Dbl.Atk."+2','"Triple Atk."+1',}}

@@ -487,13 +487,12 @@ function init_gear_sets()
   }
 
   sets.idle.DT = set_combine(sets.idle, {
-    ammo="Staunch Tathlum",
-    legs=gear.Samnuha,
+    ammo="Staunch Tathlum", --2/2
     feet="Horos Toe Shoes +3",
-    neck="Twilight Torque",
-    ring1=gear.Dark_Ring,
+    neck="Twilight Torque", --5/5
+    ring1=gear.Dark_Ring, --5/4
     ring2="Defending Ring", --10/10
-  })
+  }) --22/21
 
   sets.idle.Town = set_combine(sets.idle, {
     feet="Skadi's Jambeaux +1",
@@ -504,6 +503,15 @@ function init_gear_sets()
   }
 
   sets.idle.Weak = sets.idle.DT
+
+  sets.idle.Regen = {
+    head="Meghanada Visor +2",
+    body="Meghanada Cuirie +2",
+    hands="Meghanada Gloves +2",
+    legs="Meghanada Chausses +2",
+    neck="Lissome Necklace",
+    ear1="Infused Earring",
+  }
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Defense Sets ------------------------------------------
@@ -840,14 +848,14 @@ function init_gear_sets()
 
   sets.engaged.Hybrid = {
     neck="Twilight Torque",
-    ring1=gear.Dark_Ring,
+    ring1=gear.Dark_Ring, --5/4
     ring2="Defending Ring", --10/10
     -- head=gear.Adhemar_D_head, --4/0
     -- body="Ashera Harness", --7/7
     -- neck="Loricate Torque +1", --6/6
     -- ring1="Moonlight Ring", --5/5
     -- ring2="Defending Ring", --10/10
-  }
+  } --15/14
 
   sets.engaged.DT = set_combine(sets.engaged, sets.engaged.Hybrid)
   sets.engaged.LowAcc.DT = set_combine(sets.engaged.LowAcc, sets.engaged.Hybrid)
@@ -1040,6 +1048,9 @@ function get_custom_wsmode(spell, action, spellMap)
 end
 
 function customize_idle_set(idleSet)
+  if player.hpp < 85 then
+    idleSet = set_combine(idleSet, sets.idle.Regen)
+  end
   if state.Auto_Kite.value == true then
     idleSet = set_combine(idleSet, sets.Kiting)
   end
@@ -1201,6 +1212,11 @@ function job_self_command(cmdParams, eventArgs)
     send_command('@input /ja "'..doStep..'" <t>')
   elseif cmdParams[1]:lower() == 'usekey' then
     send_command('cancel Invisible; cancel Hide; cancel Gestation')
+    if player.target.type ~= 'NONE' then
+      if player.target.name == 'Sturdy Pyxis' then
+        send_command('@input /item "Forbidden Key" <t>')
+      end
+    end
   elseif cmdParams[1]:lower() == 'faceaway' then
     windower.ffxi.turn(player.facing - math.pi);
   elseif cmdParams[1]:lower() == 'toyweapon' then

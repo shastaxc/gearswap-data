@@ -785,7 +785,7 @@ function init_gear_sets()
     waist="Engraved Belt",
     ear1="Brutal Earring",
     ear2="Sherida Earring",
-    ring1=gear.Dark_Ring, --3/5
+    ring1=gear.Dark_Ring, --5/4
     ring2="Defending Ring", --10/10
     back=gear.RUN_HPD_Cape, --10/0
     -- ammo="Staunch Tathlum +1", --3/3
@@ -800,7 +800,7 @@ function init_gear_sets()
     -- ring2="Defending Ring", --10/10
     -- back=gear.RUN_HPD_Cape, --10/0
     -- waist="Engraved Belt",
-  } --51 PDT + 5 PDT2 / 32 MDT
+  } --53 PDT + 5 PDT2 / 31 MDT
 
   -- Shell V = 29%, MDT cap is 50%
   sets.defense.MDT = {
@@ -815,10 +815,10 @@ function init_gear_sets()
     waist="Engraved Belt",
     ear1="Odnowa Earring +1", --0/2
     ear2="Sherida Earring",
-    ring1=gear.Dark_Ring, --3/5
+    ring1=gear.Dark_Ring, --5/4
     ring2="Defending Ring", --10/10
     back=gear.RUN_HPD_Cape, --10/0
-  } --47 PDT + 5 PDT2 / 29 MDT
+  } --49 PDT + 5 PDT2 / 28 MDT
 
   sets.defense.HP = {
     ammo="Staunch Tathlum",
@@ -1396,6 +1396,11 @@ function job_self_command(cmdParams, eventArgs)
     send_command('@input /ja '..state.Runes.value..' <me>')
   elseif cmdParams[1]:lower() == 'usekey' then
     send_command('cancel Invisible; cancel Hide; cancel Gestation')
+    if player.target.type ~= 'NONE' then
+      if player.target.name == 'Sturdy Pyxis' then
+        send_command('@input /item "Forbidden Key" <t>')
+      end
+    end
   elseif cmdParams[1]:lower() == 'faceaway' then
     windower.ffxi.turn(player.facing - math.pi);
   elseif cmdParams[1]:lower() == 'toyweapon' then

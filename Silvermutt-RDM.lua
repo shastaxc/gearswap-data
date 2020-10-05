@@ -1539,6 +1539,11 @@ function job_self_command(cmdParams, eventArgs)
     send_command('@input /ma '..state.GainSpell.value..' <me>')
   elseif cmdParams[1]:lower() == 'usekey' then
     send_command('cancel Invisible; cancel Hide; cancel Gestation')
+    if player.target.type ~= 'NONE' then
+      if player.target.name == 'Sturdy Pyxis' then
+        send_command('@input /item "Forbidden Key" <t>')
+      end
+    end
   elseif cmdParams[1]:lower() == 'faceaway' then
     windower.ffxi.turn(player.facing - math.pi);
   elseif cmdParams[1]:lower() == 'toyweapon' then
