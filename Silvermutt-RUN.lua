@@ -456,13 +456,6 @@ function init_gear_sets()
     -- waist="Fotia Belt",
   }
 
-  sets.precast.WS.Acc = set_combine(sets.precast.WS, {
-    -- ammo="Voluspa Tathlum",
-    -- body=gear.Adhemar_B_body,
-    -- legs="Meg. Chausses +2",
-    -- ear2="Telos Earring",
-  })
-
   sets.precast.WS.Uncapped = set_combine(sets.precast.WS, {
     -- ammo="Aurgelmir Orb +1",
   })
@@ -540,9 +533,22 @@ function init_gear_sets()
   sets.precast.WS['Herculean Slash'] = sets.MAB
 
   -- Magic accuracy required for Shockwave
-  sets.precast.WS['Shockwave'] = set_combine(sets.MAB, {
+  sets.precast.WS['Shockwave'] = set_combine(sets.precast.WS, sets.MAB, {
     ring2="Karieyh Ring",
     -- ear2="Moonshade Earring",
+  })
+
+  -- Magic accuracy required for Shockwave
+  sets.precast.WS['Shockwave'].Acc = set_combine(sets.precast.WS['Shockwave'], {
+    ammo="Hydrocera",
+    head="Ayanmo Zucchetto +2",
+    body="Ayanmo Corazza +1",
+    hands="Ayanmo Manopolas +1",
+    legs="Ayanmo Cosciales +1",
+    feet="Ayanmo Gambieras +1",
+    ear2="Dignitary's Earring",
+    ring2="Ayanmo Ring",
+    waist="Eschan Stone",
   })
 
   sets.precast.WS['Fell Cleave'] = set_combine(sets.precast.WS, {
@@ -552,7 +558,7 @@ function init_gear_sets()
     -- waist="Sailfi Belt +1",
   })
 
-  sets.precast.WS['Fell Cleave'].Acc = set_combine(sets.precast.WS.Acc, {
+  sets.precast.WS['Fell Cleave'].Acc = set_combine(sets.precast.WS['Fell Cleave'], {
     -- ear2="Ishvara Earring",
     -- back=gear.RUN_WS1_Cape,
     -- waist="Sailfi Belt +1",
