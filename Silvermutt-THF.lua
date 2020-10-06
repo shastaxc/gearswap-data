@@ -138,6 +138,9 @@ function user_setup()
     send_command('bind ^= gs c cycle mainstep')
     send_command('bind numpad0 gs c step t')
     send_command('bind ^numlock input /ja "Reverse Flourish" <me>')
+  elseif player.sub_job == 'NIN' then
+    send_command('bind !, input /ma "Utsusemi: Ichi" <me>')
+    send_command('bind !. input /ma "Utsusemi: Ni" <me>')
   end
 
   send_command('bind ^numpad0 input /ja "Sneak Attack" <me>')
@@ -186,6 +189,8 @@ function user_unload()
   send_command('unbind ^=')
   send_command('unbind numpad0')
   send_command('unbind ^numlock')
+  send_command('unbind !,')
+  send_command('unbind !.')
 
   send_command('unbind #`')
   send_command('unbind #1')
