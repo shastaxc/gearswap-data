@@ -334,7 +334,7 @@ function update_weaponskill_binds()
       send_command('bind ^numpad4 input /ws "Requiescat" <t>')
       send_command('bind ^numpad6 input /ws "Sanguine Blade" <t>')
       send_command('bind ^numpad6 input /ws "Circle Blade" <t>')
-      send_command('bind ^numpad2 input /ws "Red Flame Blade" <t>') --elemental
+      send_command('bind ^numpad2 input /ws "Red Lotus Blade" <t>') --elemental
       send_command('bind ^numpad3 input /ws "Seraph Blade" <t>') --elemental
     elseif current_weapon_type == 'Great Sword' then
       send_command('bind ^numpad7 input /ws "Resolution" <t>')
