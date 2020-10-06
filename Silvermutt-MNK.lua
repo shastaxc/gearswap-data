@@ -688,11 +688,11 @@ function init_gear_sets()
 
   -- Footwork combat form
   sets.engaged.Footwork = {
-    
+    feet="Anchorite's Gaiters +2"
   }
-  sets.engaged.Footwork.Acc = {
+  sets.engaged.Footwork.Acc = set_combine(sets.engaged.Footwork, {
     
-  }
+  })
       
   -- Quick sets for post-precast adjustments, listed here so that the gear can be Validated.
   sets.impetus_body = {
