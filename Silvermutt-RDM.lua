@@ -189,11 +189,9 @@ function user_setup()
   select_default_macro_book()
   set_lockstyle()
 
-  state.Auto_Kite = M(false, 'Auto_Kite')
   Haste = 0
   DW_needed = 0
   DW = false
-  moving = false
   update_combat_form()
   determine_haste_group()
 end
@@ -1300,7 +1298,6 @@ function job_handle_equipping_gear(playerStatus, eventArgs)
   check_gear()
   update_combat_form()
   determine_haste_group()
-  check_moving()
 end
 
 function job_update(cmdParams, eventArgs)
@@ -1370,9 +1367,6 @@ function customize_idle_set(idleSet)
   end
   if state.CP.current == 'on' then
     idleSet = set_combine(idleSet, sets.CP)
-  end
-  if state.Auto_Kite.value == true then
-    idleSet = set_combine(idleSet, sets.Kiting)
   end
 
   return idleSet
@@ -1507,13 +1501,6 @@ function gearinfo(cmdParams, eventArgs)
     if type(tonumber(cmdParams[3])) == 'number' then
       if tonumber(cmdParams[3]) ~= Haste then
         Haste = tonumber(cmdParams[3])
-      end
-    end
-    if type(cmdParams[4]) == 'string' then
-      if cmdParams[4] == 'true' then
-        moving = true
-      elseif cmdParams[4] == 'false' then
-        moving = false
       end
     end
     if not midaction() then
@@ -1670,16 +1657,6 @@ function set_sleep_timer(spell)
   end
   add_to_chat(1, 'Base: ' ..base.. ' Merits: ' ..self.merits.enfeebling_magic_duration.. ' Job Points: ' ..self.job_points.rdm.stymie_effect.. ' Set Bonus: ' ..empy_mult)
 
-end
-
-function check_moving()
-  if state.DefenseMode.value == 'None'  and state.Kiting.value == false then
-    if state.Auto_Kite.value == false and moving then
-      state.Auto_Kite:set(true)
-    elseif state.Auto_Kite.value == true and moving == false then
-      state.Auto_Kite:set(false)
-    end
-  end
 end
 
 function check_gear()

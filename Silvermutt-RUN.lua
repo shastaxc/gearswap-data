@@ -189,9 +189,6 @@ function user_setup()
 
   select_default_macro_book()
   set_lockstyle()
-
-  -- state.Auto_Kite = M(false, 'Auto_Kite')
-  moving = false
 end
 
 function user_unload()
@@ -1226,7 +1223,6 @@ end
 function job_handle_equipping_gear(playerStatus, eventArgs)
   update_weapons()
   check_gear()
-  check_moving()
 end
 
 function job_update(cmdParams, eventArgs)
@@ -1249,9 +1245,6 @@ function customize_idle_set(idleSet)
   if state.Knockback.value == true then
     idleSet = set_combine(idleSet, sets.defense.Knockback)
   end
-  -- if state.Auto_Kite.value == true then
-  --    idleSet = set_combine(idleSet, sets.Kiting)
-  -- end
   if state.CP.current == 'on' then
     idleSet = set_combine(idleSet, sets.CP)
   end
@@ -1446,27 +1439,10 @@ end
 
 function gearinfo(cmdParams, eventArgs)
   if cmdParams[1] == 'gearinfo' then
-    if type(cmdParams[4]) == 'string' then
-      if cmdParams[4] == 'true' then
-        moving = true
-      elseif cmdParams[4] == 'false' then
-        moving = false
-      end
-    end
     if not midaction() then
       job_update()
     end
   end
-end
-
-function check_moving()
-    -- if state.DefenseMode.value == 'None'  and state.Kiting.value == false then
-    --     if state.Auto_Kite.value == false and moving then
-    --         state.Auto_Kite:set(true)
-    --     elseif state.Auto_Kite.value == true and moving == false then
-    --         state.Auto_Kite:set(false)
-    --     end
-    -- end
 end
 
 function check_gear()
