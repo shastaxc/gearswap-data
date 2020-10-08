@@ -43,6 +43,7 @@ end
 
 -- Setup vars that are user-independent.
 function job_setup()
+  lockstyleset = 5
 
   -- For th_action_check():
   -- JA IDs for actions that always have TH: Provoke, Animated Flourish
@@ -55,18 +56,9 @@ function job_setup()
 
   state.FootworkWS = M(false, 'Footwork on WS')
 
-  info.impetus_hit_count = 0
+  info.impetus_hit_count = 0 -- Do not modify
   windower.raw_register_event('action', on_action_for_impetus)
 
-  lockstyleset = 5
-
-end
-
--------------------------------------------------------------------------------------------------------------------
--- User setup functions for this job.  Recommend that these be overridden in a sidecar file.
--------------------------------------------------------------------------------------------------------------------
-
-function user_setup()
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.WeaponskillMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.HybridMode:options('Normal', 'DT', 'Counter')
@@ -74,11 +66,8 @@ function user_setup()
 
   state.WeaponLock = M(false, 'Weapon Lock')
   state.CP = M(false, "Capacity Points Mode")
-  state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger',
+  state.ToyWeapons = M{['description']='Toy Weapons','None',
       'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
-
-  -- Additional local binds
-  include('Global-Binds.lua')
 
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c usekey')
@@ -119,7 +108,7 @@ function user_setup()
   set_lockstyle()
 end
 
-function user_unload()
+function job_file_unload()
   send_command('unbind !s')
   send_command('unbind !d')
   send_command('unbind @w')
@@ -606,7 +595,7 @@ function init_gear_sets()
     ear2="Cessance Earring",
   })
   sets.engaged.MidAcc = set_combine(sets.engaged.LowAcc, {
-    
+    ear1="Telos Earring",
   })
   sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
     

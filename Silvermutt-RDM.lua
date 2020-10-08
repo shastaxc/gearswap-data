@@ -81,8 +81,12 @@ end
 
 -- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
 function job_setup()
+  lockstyleset = 4
 
-  state.CP = M(false, "Capacity Points Mode")
+  Haste = 0 -- Do not modify
+  DW_needed = 0 -- Do not modify
+  DW = false -- Do not modify
+
   state.Buff.Composure = buffactive.Composure or false
   state.Buff.Saboteur = buffactive.Saboteur or false
   state.Buff.Stymie = buffactive.Stymie or false
@@ -92,21 +96,10 @@ function job_setup()
   enfeebling_magic_skill = S{'Distract III', 'Frazzle III', 'Poison II'}
   enfeebling_magic_effect = S{'Dia', 'Dia II', 'Dia III', 'Diaga', 'Blind', 'Blind II'}
   enfeebling_magic_sleep = S{'Sleep', 'Sleep II', 'Sleepga'}
-
   skill_spells = S{
       'Temper', 'Temper II', 'Enfire', 'Enfire II', 'Enblizzard', 'Enblizzard II', 'Enaero', 'Enaero II',
       'Enstone', 'Enstone II', 'Enthunder', 'Enthunder II', 'Enwater', 'Enwater II'}
 
-  lockstyleset = 4
-end
-
-
--------------------------------------------------------------------------------------------------------------------
--- User setup functions for this job.  Recommend that these be overridden in a sidecar file.
--------------------------------------------------------------------------------------------------------------------
-
--- Setup vars that are user-dependent.  Can override this function in a sidecar file.
-function user_setup()
   state.OffenseMode:options('Normal', 'MidAcc', 'HighAcc')
   state.HybridMode:options('Normal', 'DT')
   state.WeaponskillMode:options('Normal', 'Acc')
@@ -126,10 +119,6 @@ function user_setup()
   state.CP = M(false, "Capacity Points Mode")
   state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger',
       'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
-
-
-  -- Additional local binds
-  include('Global-Binds.lua')
 
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c usekey')
@@ -189,15 +178,12 @@ function user_setup()
   select_default_macro_book()
   set_lockstyle()
 
-  Haste = 0
-  DW_needed = 0
-  DW = false
   update_combat_form()
   determine_haste_group()
 end
 
 -- Called when this job file is unloaded (eg: job change)
-function user_unload()
+function job_file_unload()
   send_command('unbind !s')
   send_command('unbind !d')
   

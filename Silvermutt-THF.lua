@@ -68,13 +68,13 @@ end
 
 -- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
 function job_setup()
-  state.Buff['Sneak Attack'] = buffactive['sneak attack'] or false
-  state.Buff['Trick Attack'] = buffactive['trick attack'] or false
-  state.Buff['Feint'] = buffactive['feint'] or false
-  
-  state.MainStep = M{['description']='Main Step', 'Box Step', 'Quickstep', 'Feather Step', 'Stutter Step'}
-
   include('Mote-TreasureHunter')
+
+  lockstyleset = 1
+
+  Haste = 0 -- Do not modify
+  DW_needed = 0 -- Do not modify
+  DW = false -- Do not modify
 
   -- For th_action_check():
   -- JA IDs for actions that always have TH: Provoke, Animated Flourish
@@ -82,21 +82,12 @@ function job_setup()
   -- Unblinkable JA IDs for actions that always have TH: Quick/Box/Stutter Step, Desperate/Violent Flourish
   info.default_u_ja_ids = S{201, 202, 203, 205, 207}
 
+  state.Buff['Sneak Attack'] = buffactive['sneak attack'] or false
+  state.Buff['Trick Attack'] = buffactive['trick attack'] or false
+  state.Buff['Feint'] = buffactive['feint'] or false
+  
+  state.MainStep = M{['description']='Main Step', 'Box Step', 'Quickstep', 'Feather Step', 'Stutter Step'}
   state.AttackMode = M{['description']='Attack', 'Capped', 'Uncapped'}
-
-  lockstyleset = 1
-end
-
--------------------------------------------------------------------------------------------------------------------
--- User setup functions for this job.  Recommend that these be overridden in a sidecar file.
--------------------------------------------------------------------------------------------------------------------
-
--- Setup vars that are user-dependent.  Can override this function in a sidecar file.
-function user_setup()
-  Haste = 0
-  DW_needed = 0
-  DW = false
-
   state.OffenseMode:options('STP', 'Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.HybridMode:options('Normal', 'DT')
   state.RangedMode:options('Normal', 'Acc')
@@ -104,12 +95,8 @@ function user_setup()
   state.IdleMode:options('Normal', 'DT')
   state.CP = M(false, "Capacity Points Mode")
   state.WeaponLock = M(false, 'Weapon Lock')
-
   state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger',
       'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
-
-  -- Additional local binds
-  include('Global-Binds.lua')
 
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c usekey')
@@ -151,9 +138,8 @@ function user_setup()
   determine_haste_group()
 end
 
-
 -- Called when this job file is unloaded (eg: job change)
-function user_unload()
+function job_file_unload()
   send_command('unbind !s')
   send_command('unbind !d')
   send_command('unbind @w')

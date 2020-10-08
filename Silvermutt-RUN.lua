@@ -82,56 +82,38 @@ function get_sets()
 
   -- Load and initialize the include file.
   include('Mote-Include.lua')
-  res = require 'resources'
 end
 
 -- Setup vars that are user-independent.
 function job_setup()
+  lockstyleset = 3
+  rayke_duration = 35
+  gambit_duration = 96
 
   -- /BLU Spell Maps
   blue_magic_maps = {}
-
   blue_magic_maps.Enmity = S{'Blank Gaze', 'Geist Wall', 'Jettatura', 'Soporific',
       'Poison Breath', 'Blitzstrahl', 'Sheep Song', 'Chaotic Eye'}
   blue_magic_maps.Cure = S{'Wild Carrot'}
   blue_magic_maps.Buffs = S{'Cocoon', 'Refueling'}
 
-  rayke_duration = 35
-  gambit_duration = 96
-
-  lockstyleset = 3
-
-end
-
--------------------------------------------------------------------------------------------------------------------
--- User setup functions for this job.  Recommend that these be overridden in a sidecar file.
--------------------------------------------------------------------------------------------------------------------
-
-function user_setup()
   state.OffenseMode:options('STP', 'Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.WeaponskillMode:options('Normal', 'Acc')
   state.HybridMode:options('Normal', 'DT')
   state.CastingMode:options('Normal', 'Resistant')
-  state.IdleMode:options('Normal', 'DT', 'Refresh')
+  state.IdleMode:options('Normal', 'DT')
   state.PhysicalDefenseMode:options('PDT', 'HP')
   state.MagicalDefenseMode:options('MDT')
-
   state.Knockback = M(false, 'Knockback')
   state.DeathResist = M(false, 'Death Resist Mode')
-
   -- state.WeaponSet = M{['description']='Weapon Set', 'Epeolatry', 'Lionheart', 'Aettir', 'Lycurgos'}
   state.AttackMode = M{['description']='Attack', 'Uncapped', 'Capped'}
   state.CP = M(false, "Capacity Points Mode")
   state.WeaponLock = M(false, 'Weapon Lock')
   state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger',
       'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
-
-
   state.Runes = M{['description']='Runes', 'Ignis', 'Gelus', 'Flabra', 'Tellus', 'Sulpor', 'Unda', 'Lux', 'Tenebrae'}
   
-  -- Additional local binds
-  include('Global-Binds.lua')
-
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c usekey')
   send_command('bind @w gs c toggle WeaponLock')
@@ -191,7 +173,7 @@ function user_setup()
   set_lockstyle()
 end
 
-function user_unload()
+function job_file_unload()
   send_command('unbind !s')
   send_command('unbind !d')
 

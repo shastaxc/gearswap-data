@@ -83,6 +83,12 @@ end
 
 -- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
 function job_setup()
+  lockstyleset = 2
+
+  Haste = 0 -- Do not modify
+  DW_needed = 0 -- Do not modify
+  DW = false -- Do not modify
+
   state.Buff['Climactic Flourish'] = buffactive['climactic flourish'] or false
   state.Buff['Sneak Attack'] = buffactive['sneak attack'] or false
 
@@ -99,15 +105,6 @@ function job_setup()
 
   state.CP = M(false, "Capacity Points Mode")
 
-  lockstyleset = 2
-end
-
--------------------------------------------------------------------------------------------------------------------
--- User setup functions for this job.  Recommend that these be overridden in a sidecar file.
--------------------------------------------------------------------------------------------------------------------
-
--- Setup vars that are user-dependent.  Can override this function in a sidecar file.
-function user_setup()
   state.OffenseMode:options('STP', 'Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.HybridMode:options('Normal', 'DT')
   state.WeaponskillMode:options('Normal', 'Acc')
@@ -116,9 +113,6 @@ function user_setup()
   state.WeaponLock = M(false, 'Weapon Lock')
   state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger',
       'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
-
-  -- Additional local binds
-  include('Global-Binds.lua')
 
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c usekey')
@@ -167,18 +161,15 @@ function user_setup()
   select_default_macro_book()
   set_lockstyle()
 
-  Haste = 0
-  DW_needed = 0
-  DW = false
   update_combat_form()
   determine_haste_group()
 end
 
-
 -- Called when this job file is unloaded (eg: job change)
-function user_unload()
+function job_file_unload()
   send_command('unbind !s')
   send_command('unbind !d')
+  send_command('unbind @w')
 
   send_command('unbind ^pageup')
   send_command('unbind ^pagedown')
@@ -197,7 +188,6 @@ function user_unload()
   send_command('unbind ^,')
   send_command('unbind @f')
   send_command('unbind @c')
-  send_command('unbind @w')
   send_command('unbind !w')
   send_command('unbind ^numlock')
   send_command('unbind ^numpad/')

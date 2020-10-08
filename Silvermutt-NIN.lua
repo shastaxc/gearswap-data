@@ -57,14 +57,14 @@ end
 
 -- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
 function job_setup()
-  state.Buff.Migawari = buffactive.migawari or false
-  state.Buff.Doom = buffactive.doom or false
-  state.Buff.Yonin = buffactive.Yonin or false
-  state.Buff.Innin = buffactive.Innin or false
-  state.Buff.Futae = buffactive.Futae or false
-  state.Buff.Sange = buffactive.Sange or false
-
   include('Mote-TreasureHunter')
+
+  lockstyleset = 1
+  options.ninja_tool_warning_limit = 10
+
+  Haste = 0 -- Do not modify
+  DW_needed = 0 -- Do not modify
+  DW = false -- Do not modify
 
   -- For th_action_check():
   -- JA IDs for actions that always have TH: Provoke, Animated Flourish
@@ -74,15 +74,13 @@ function job_setup()
 
   lugra_ws = S{'Blade: Kamu', 'Blade: Shun', 'Blade: Ten'}
 
-  lockstyleset = 1
-end
+  state.Buff.Migawari = buffactive.migawari or false
+  state.Buff.Doom = buffactive.doom or false
+  state.Buff.Yonin = buffactive.Yonin or false
+  state.Buff.Innin = buffactive.Innin or false
+  state.Buff.Futae = buffactive.Futae or false
+  state.Buff.Sange = buffactive.Sange or false
 
--------------------------------------------------------------------------------------------------------------------
--- User setup functions for this job.  Recommend that these be overridden in a sidecar file.
--------------------------------------------------------------------------------------------------------------------
-
--- Setup vars that are user-dependent.  Can override this function in a sidecar file.
-function user_setup()
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.HybridMode:options('Normal', 'DT')
   state.WeaponskillMode:options('Normal', 'Acc')
@@ -97,10 +95,7 @@ function user_setup()
   state.ToyWeapons = M{['description']='Toy Weapons','None','Katana','GreatKatana','Dagger',
       'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
 
-  options.ninja_tool_warning_limit = 10
-
-  -- Additional local binds
-  include('Global-Binds.lua')
+  state.warned = M(false) -- Whether a warning has been given for low ninja tools
 
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c usekey')
@@ -129,20 +124,14 @@ function user_setup()
     send_command('bind ^numpad- input /ja "Aggressor" <me>')
   end
 
-  -- Whether a warning has been given for low ninja tools
-  state.warned = M(false)
-
   select_default_macro_book()
   set_lockstyle()
   
-  Haste = 0
-  DW_needed = 0
-  DW = false
   update_combat_form()
   determine_haste_group()
 end
 
-function user_unload()
+function job_file_unload()
   send_command('unbind !d')
   send_command('unbind !s')
   send_command('unbind @w')
