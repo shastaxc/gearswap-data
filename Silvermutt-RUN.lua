@@ -761,7 +761,7 @@ function init_gear_sets()
   }
 
   sets.DeathResist = {
-    ring2="Warden's Ring",
+    ring1="Warden's Ring",
   }
 
 
