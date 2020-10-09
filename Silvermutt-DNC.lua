@@ -80,8 +80,7 @@ function get_sets()
   include('Mote-Include.lua')
 end
 
-
--- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
+-- Executes on first load and main job change
 function job_setup()
   lockstyleset = 2
 
@@ -135,6 +134,18 @@ function job_setup()
 
   send_command('bind @c gs c toggle CP')
 
+  send_command('bind ^numpad+ input /ja "Climactic Flourish" <me>')
+  send_command('bind ^numpadenter input /ja "Building Flourish" <me>')
+  send_command('bind numpad0 gs c step t')
+
+  send_command('lua l gearinfo')
+  send_command('lua r equipviewerv2')
+end
+
+-- Executes on first load, main job change, **and sub job change**
+function user_setup()
+  include('Global-Binds.lua') -- Additional local binds
+
   if player.sub_job == 'WAR' then
     send_command('bind !w input /ja "Defender" <me>')
     send_command('bind ^numpad/ input /ja "Berserk" <me>')
@@ -153,16 +164,11 @@ function job_setup()
     send_command('bind ^numpad. input /ma "Utsusemi: Ni" <me>')
   end
 
-  send_command('bind ^numpad+ input /ja "Climactic Flourish" <me>')
-  send_command('bind ^numpadenter input /ja "Building Flourish" <me>')
-
-  send_command('bind numpad0 gs c step t')
+  update_combat_form()
+  determine_haste_group()
 
   select_default_macro_book()
   set_lockstyle()
-
-  update_combat_form()
-  determine_haste_group()
 end
 
 -- Called when this job file is unloaded (eg: job change)
@@ -219,7 +225,6 @@ function job_file_unload()
   send_command('unbind #8')
   send_command('unbind #9')
   send_command('unbind #0')
-
 end
 
 

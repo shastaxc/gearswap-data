@@ -11,13 +11,6 @@ no_swap_gear = S{"Warp Ring", "Dim. Ring (Dem)", "Dim. Ring (Holla)", "Dim. Ring
 
 current_weapon_type = nil
 
--- Executes on first load AND job change
-function user_setup()
-  send_command('lua l gearinfo')
-  send_command('lua l equipviewerv2')
-  include('Global-Binds.lua') -- Additional local binds
-end
-
 function define_global_sets()
   --Toy weapon sets
   sets.ToyWeapon = {} --DO NOT MODIFY

@@ -84,7 +84,7 @@ function get_sets()
   include('Mote-Include.lua')
 end
 
--- Setup vars that are user-independent.
+-- Executes on first load and main job change
 function job_setup()
   lockstyleset = 3
   rayke_duration = 35
@@ -147,6 +147,14 @@ function job_setup()
   send_command('bind !, input /ma "Blaze Spikes" <me>')
   send_command('bind !. input /ma "Ice Spikes" <me>')
   send_command('bind !/ input /ma "Shock Spikes" <me>')
+
+  send_command('lua l gearinfo')
+  send_command('lua r equipviewerv2')
+end
+
+-- Executes on first load, main job change, **and sub job change**
+function user_setup()
+  include('Global-Binds.lua') -- Additional local binds
 
   if player.sub_job == 'BLU' then
     send_command('bind !q input /ma "Wild Carrot" <stpc>')

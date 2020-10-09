@@ -78,8 +78,7 @@ function get_sets()
   include('Mote-Include.lua')
 end
 
-
--- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
+-- Executes on first load and main job change
 function job_setup()
   lockstyleset = 4
 
@@ -130,19 +129,6 @@ function job_setup()
   send_command('bind !` input /ja "Composure" <me>')
   send_command('bind @` gs c toggle MagicBurst')
 
-  if player.sub_job == 'SCH' then
-    send_command('bind ^- gs c scholar light')
-    send_command('bind ^= gs c scholar dark')
-    send_command('bind !- gs c scholar addendum')
-    send_command('bind != gs c scholar addendum')
-    send_command('bind ^l gs c scholar speed')
-    send_command('bind ![ gs c scholar aoe')
-    send_command('bind !l gs c scholar cost')
-  elseif player.sub_job == 'NIN' then
-    send_command('bind ^numpad0 input /ma "Utsusemi: Ichi" <me>')
-    send_command('bind ^numpad. input /ma "Utsusemi: Ni" <me>')
-  end
-
   send_command('bind ^` input /ma "Temper II" <me>')
   send_command('bind !w input /ma "Flurry II" <stpc>')
   send_command('bind !e input /ma "Haste II" <stpc>')
@@ -175,11 +161,32 @@ function job_setup()
   -- send_command('bind @e gs c cycleback WeaponSet')
   -- send_command('bind @r gs c cycle WeaponSet')
 
-  select_default_macro_book()
-  set_lockstyle()
+  send_command('lua l gearinfo')
+  send_command('lua r equipviewerv2')
+end
+
+-- Executes on first load, main job change, **and sub job change**
+function user_setup()
+  include('Global-Binds.lua') -- Additional local binds
+
+  if player.sub_job == 'SCH' then
+    send_command('bind ^- gs c scholar light')
+    send_command('bind ^= gs c scholar dark')
+    send_command('bind !- gs c scholar addendum')
+    send_command('bind != gs c scholar addendum')
+    send_command('bind ^l gs c scholar speed')
+    send_command('bind ![ gs c scholar aoe')
+    send_command('bind !l gs c scholar cost')
+  elseif player.sub_job == 'NIN' then
+    send_command('bind ^numpad0 input /ma "Utsusemi: Ichi" <me>')
+    send_command('bind ^numpad. input /ma "Utsusemi: Ni" <me>')
+  end
 
   update_combat_form()
   determine_haste_group()
+
+  select_default_macro_book()
+  set_lockstyle()
 end
 
 -- Called when this job file is unloaded (eg: job change)

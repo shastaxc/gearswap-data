@@ -65,8 +65,7 @@ function get_sets()
   include('Mote-Include.lua')
 end
 
-
--- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
+-- Executes on first load and main job change
 function job_setup()
   include('Mote-TreasureHunter')
 
@@ -110,6 +109,17 @@ function job_setup()
   send_command('bind !` input /ja "Flee" <me>')
   send_command('bind @c gs c toggle CP')
 
+  send_command('bind ^numpad0 input /ja "Sneak Attack" <me>')
+  send_command('bind ^numpad. input /ja "Trick Attack" <me>')
+
+  send_command('lua l gearinfo')
+  send_command('lua r equipviewerv2')
+end
+
+-- Executes on first load, main job change, **and sub job change**
+function user_setup()
+  include('Global-Binds.lua') -- Additional local binds
+
   if player.sub_job == 'WAR' then
     send_command('bind ^numpad/ input /ja "Berserk" <me>')
     send_command('bind ^numpad* input /ja "Warcry" <me>')
@@ -128,14 +138,11 @@ function job_setup()
     send_command('bind !. input /ma "Utsusemi: Ni" <me>')
   end
 
-  send_command('bind ^numpad0 input /ja "Sneak Attack" <me>')
-  send_command('bind ^numpad. input /ja "Trick Attack" <me>')
+  update_combat_form()
+  determine_haste_group()
 
   select_default_macro_book()
   set_lockstyle()
-
-  update_combat_form()
-  determine_haste_group()
 end
 
 -- Called when this job file is unloaded (eg: job change)
