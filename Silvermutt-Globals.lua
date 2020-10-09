@@ -1,3 +1,5 @@
+send_command('lua l gearinfo')
+
 res = include('resources')
 -------------------------------------------------------------------------------------------------------------------
 -- Modify the sets table.  Any gear sets that are added to the sets table need to

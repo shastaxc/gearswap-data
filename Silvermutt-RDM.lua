@@ -75,7 +75,8 @@ function get_sets()
   mote_include_version = 2
 
   -- Load and initialize the include file.
-  include('Mote-Include.lua')
+  include('Mote-Include.lua') -- Executes job_setup, user_setup, init_gear_sets
+  send_command('wait 2; input //lua r equipviewerv2')
 end
 
 -- Executes on first load and main job change
@@ -160,9 +161,6 @@ function job_setup()
   send_command('bind @c gs c toggle CP')
   -- send_command('bind @e gs c cycleback WeaponSet')
   -- send_command('bind @r gs c cycle WeaponSet')
-
-  send_command('lua l gearinfo')
-  send_command('lua r equipviewerv2')
 end
 
 -- Executes on first load, main job change, **and sub job change**

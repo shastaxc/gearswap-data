@@ -51,7 +51,8 @@ function get_sets()
   mote_include_version = 2
 
   -- Load and initialize the include file.
-  include('Mote-Include.lua')
+  include('Mote-Include.lua') -- Executes job_setup, user_setup, init_gear_sets
+  send_command('wait 2; input //lua r equipviewerv2')
 end
 
 -- Executes on first load and main job change
@@ -115,9 +116,6 @@ function job_setup()
 
   send_command('bind ^numlock input /ja "Innin" <me>')
   send_command('bind !numlock input /ja "Yonin" <me>')
-
-  send_command('lua l gearinfo')
-  send_command('lua r equipviewerv2')
 end
 
 -- Executes on first load, main job change, **and sub job change**
