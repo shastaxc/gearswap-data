@@ -287,7 +287,7 @@ function init_gear_sets()
 
   sets.precast.JA['Vallation'] = {
     body="Runeist's Coat +3",
-    legs="Futhark Trousers +1",
+    legs="Futhark Trousers +2",
     back=gear.RUN_HPD_Cape,
   }
   sets.precast.JA['Valiance'] = sets.precast.JA['Vallation']
@@ -388,7 +388,7 @@ function init_gear_sets()
   })
 
   sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {
-    legs="Futhark Trousers +1",
+    legs="Futhark Trousers +2",
   })
 
   sets.precast.FC.Cure = set_combine(sets.precast.FC, {
@@ -630,7 +630,7 @@ function init_gear_sets()
   sets.midcast.EnhancingDuration = {
     head="Erilaz Galea +1",
     -- hands="Regal Gauntlets",
-    legs="Futhark Trousers +1",
+    legs="Futhark Trousers +2",
   }
 
   sets.midcast['Phalanx'] = set_combine(sets.midcast.SpellInterrupt, {
