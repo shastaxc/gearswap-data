@@ -461,18 +461,17 @@ function init_gear_sets()
   sets.latent_regain = {
     ring2="Karieyh Ring",
   }
-
   sets.latent_regen = {
     head="Meghanada Visor +2",
     body="Meghanada Cuirie +2",
     hands="Meghanada Gloves +2",
     legs="Meghanada Chausses +2",
+    feet="Meghanada Jambeaux +1",
     neck="Lissome Necklace",
     ear1="Infused Earring",
   }
-
   sets.latent_refresh = {
-
+    legs="Rawhide Trousers",
   }
 
   sets.resting = {}
@@ -483,7 +482,7 @@ function init_gear_sets()
     body="Horos Casaque +3",
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha,
-    feet="Skadi's Jambeaux +1",
+    feet="Horos Toe Shoes +3",
     neck="Anu Torque",
     waist="Windbuffet Belt +1",
     ear1="Telos Earring",
@@ -503,7 +502,6 @@ function init_gear_sets()
 
   sets.DT = {
     ammo="Staunch Tathlum", --2/2
-    feet="Horos Toe Shoes +3",
     neck="Twilight Torque", --5/5
     ring1=gear.Dark_Ring, --5/4
     ring2="Defending Ring", --10/10
@@ -518,23 +516,11 @@ function init_gear_sets()
   sets.idle.DT.Regen.Refresh = set_combine(sets.idle.Regen.Refresh, sets.DT)
   sets.idle.DT.Regain.Regen.Refresh = set_combine(sets.idle.Regain.Regen.Refresh, sets.DT)
 
-  sets.idle.Town = set_combine(sets.idle, {
-    feet="Skadi's Jambeaux +1",
-  })
-
-  sets.idle.Town.Adoulin = {
-    body="Councilor's Garb",
-  }
-
   sets.idle.Weak = sets.idle.DT
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Defense Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
-
-  sets.Kiting = {
-    feet="Skd. Jambeaux +1"
-  }
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Engaged Sets ------------------------------------------
@@ -942,13 +928,18 @@ function init_gear_sets()
   sets.buff['Closed Position'] = {
     feet="Horos Toe Shoes +3",
   }
-
   sets.buff.Doom = {
-      neck="Nicander's Necklace", --20
-      ring2="Eshmun's Ring", --20
-      waist="Gishdubar Sash", --10
-      }
+    neck="Nicander's Necklace", --20
+    ring2="Eshmun's Ring", --20
+    waist="Gishdubar Sash", --10
+  }
 
+  sets.Kiting = {
+    feet="Skd. Jambeaux +1"
+  }
+  sets.Kiting.Adoulin = {
+    body="Councilor's Garb",
+  }
   sets.CP = {
     back="Mecistopins Mantle",
   }
@@ -1078,11 +1069,16 @@ function get_custom_wsmode(spell, action, spellMap)
 end
 
 function customize_idle_set(idleSet)
+  -- If not in DT mode put on move speed gear
+  if state.IdleMode.current ~= 'DT' and state.DefenseMode.value == 'None' then
+    if classes.CustomIdleGroups:contains('Adoulin') then
+      idleSet = set_combine(idleSet, sets.Kiting.Adoulin)
+    else
+      idleSet = set_combine(idleSet, sets.Kiting)
+    end
+  end
   if state.CP.current == 'on' then
     idleSet = set_combine(idleSet, sets.CP)
-  end
-  if world.zone == 'Eastern Adoulin' or world.zone == 'Western Adoulin' then
-    idleSet = set_combine(idleSet, sets.idle.Town.Adoulin)
   end
 
   return idleSet
@@ -1219,6 +1215,9 @@ function update_idle_groups()
       classes.CustomIdleGroups:append('Refresh')
     elseif isRefreshing==false and player.mpp < 85 then
       classes.CustomIdleGroups:append('Refresh')
+    end
+    if world.zone == 'Eastern Adoulin' or world.zone == 'Western Adoulin' then
+      classes.CustomIdleGroups:append('Adoulin')
     end
   end
 end

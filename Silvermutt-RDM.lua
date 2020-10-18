@@ -827,6 +827,19 @@ function init_gear_sets()
   ----------------------------------------- Idle Sets --------------------------------------------
   ------------------------------------------------------------------------------------------------
 
+  sets.latent_regain = {
+    ring2="Karieyh Ring",
+  }
+  sets.latent_regen = {
+    neck="Lissome Necklace",
+    ear1="Infused Earring",
+  }
+  sets.latent_refresh = {
+    ammo="Homiliary",
+    head="Duelist's Chapeau",
+    -- waist="Fucho-no-obi",
+  }
+
   sets.idle = {
     ammo="Homiliary",
     head="Duelist's Chapeau",
@@ -852,7 +865,15 @@ function init_gear_sets()
     -- waist="Flume Belt +1",
   }
 
-  sets.idle.DT = set_combine(sets.idle, {
+  sets.idle.Regain = set_combine(sets.idle, sets.latent_regain)
+  sets.idle.Regen = set_combine(sets.idle, sets.latent_regen)
+  sets.idle.Refresh = set_combine(sets.idle, sets.latent_refresh)
+  sets.idle.Regain.Regen = set_combine(sets.idle, sets.latent_regain, sets.latent_regen)
+  sets.idle.Regain.Refresh = set_combine(sets.idle, sets.latent_regain, sets.latent_refresh)
+  sets.idle.Regen.Refresh = set_combine(sets.idle, sets.latent_regen, sets.latent_refresh)
+  sets.idle.Regain.Regen.Refresh = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh)
+
+  sets.DT = {
     -- main="Bolelabunga",
     -- sub="Sacro Bulwark", --10/10
     -- head="Malignance Chapeau", --6/6
@@ -866,21 +887,16 @@ function init_gear_sets()
     -- ring2="Defending Ring", --10/10
     -- back=gear.RDM_INT_Cape,
     -- waist="Carrier's Sash",
-  })
+  }
 
-  sets.idle.Town = set_combine(sets.idle, {
-    -- ammo="Regal Gem",
-    -- head="Viti. Chapeau +3",
-    -- body="Viti. Tabard +3",
-    -- hands="Regal Cuffs",
-    -- legs="Viti. Tights +3",
-    -- feet="Vitiation Boots +3",
-    -- neck="Dls. Torque +2",
-    -- ear1="Malignance Earring",
-    -- ear2="Snotra Earring",
-    -- back=gear.RDM_INT_Cape,
-    -- waist="Acuity Belt +1",
-  })
+  sets.idle.DT = set_combine(sets.idle, sets.DT)
+  sets.idle.DT.Regain = set_combine(sets.idle.Regain, sets.DT)
+  sets.idle.DT.Regen = set_combine(sets.idle.Regen, sets.DT)
+  sets.idle.DT.Refresh = set_combine(sets.idle.Refresh, sets.DT)
+  sets.idle.DT.Regain.Regen = set_combine(sets.idle.Regain.Regen, sets.DT)
+  sets.idle.DT.Regain.Refresh = set_combine(sets.idle.Regain.Refresh, sets.DT)
+  sets.idle.DT.Regen.Refresh = set_combine(sets.idle.Regen.Refresh, sets.DT)
+  sets.idle.DT.Regain.Regen.Refresh = set_combine(sets.idle.Regain.Regen.Refresh, sets.DT)
 
   sets.resting = set_combine(sets.idle, {
     -- main="Chatoyant Staff",
@@ -902,13 +918,6 @@ function init_gear_sets()
     -- feet="Ea Pigaches +1", --5/(5)
     -- neck="Mizu. Kubikazari", --10
     -- ring2="Mujin Band", --(5)
-  }
-
-  sets.Kiting = {
-    legs="Carmine Cuisses +1",
-  }
-  sets.latent_refresh = {
-    -- waist="Fucho-no-obi",
   }
 
 
@@ -1168,6 +1177,12 @@ function init_gear_sets()
     -- waist="Gishdubar Sash", --10
   }
 
+  sets.Kiting = {
+    legs="Carmine Cuisses +1",
+  }
+  sets.Kiting.Adoulin = {
+    body="Councilor's Garb",
+  }
   sets.Obi = {
     waist="Hachirin-no-Obi",
   }
@@ -1286,6 +1301,7 @@ end
 -- Set eventArgs.handled to true if we don't want automatic equipping of gear.
 function job_handle_equipping_gear(playerStatus, eventArgs)
   check_gear()
+  update_idle_groups()
   update_combat_form()
   determine_haste_group()
 end
@@ -1352,8 +1368,13 @@ end
 
 -- Modify the default idle set after it was constructed.
 function customize_idle_set(idleSet)
-  if player.mpp < 51 then
-    idleSet = set_combine(idleSet, sets.latent_refresh)
+  -- If not in DT mode put on move speed gear
+  if state.IdleMode.current ~= 'DT' and state.DefenseMode.value == 'None' then
+    if classes.CustomIdleGroups:contains('Adoulin') then
+      idleSet = set_combine(idleSet, sets.Kiting.Adoulin)
+    else
+      idleSet = set_combine(idleSet, sets.Kiting)
+    end
   end
   if state.CP.current == 'on' then
     idleSet = set_combine(idleSet, sets.CP)
@@ -1457,6 +1478,31 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
+
+function update_idle_groups()
+  local isRegening = classes.CustomIdleGroups:contains('Regen')
+  local isRefreshing = classes.CustomIdleGroups:contains('Refresh')
+
+  classes.CustomIdleGroups:clear()
+  if player.status == 'Idle' then
+    if player.tp < 3000 then
+      classes.CustomIdleGroups:append('Regain')
+    end
+    if isRegening==true and player.hpp < 100 then
+      classes.CustomIdleGroups:append('Regen')
+    elseif isRegening==false and player.hpp < 85 then
+      classes.CustomIdleGroups:append('Regen')
+    end
+    if isRefreshing==true and player.mpp < 100 then
+      classes.CustomIdleGroups:append('Refresh')
+    elseif isRefreshing==false and player.mpp < 85 then
+      classes.CustomIdleGroups:append('Refresh')
+    end
+    if world.zone == 'Eastern Adoulin' or world.zone == 'Western Adoulin' then
+      classes.CustomIdleGroups:append('Adoulin')
+    end
+  end
+end
 
 function determine_haste_group()
   classes.CustomMeleeGroups:clear()

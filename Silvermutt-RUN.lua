@@ -693,39 +693,50 @@ function init_gear_sets()
   sets.latent_regain = {
     ring1="Karieyh Ring",
   }
-
   sets.latent_regen = {
     head="Meghanada Visor +2",
     body="Meghanada Cuirie +2",
     hands="Meghanada Gloves +2",
     legs="Meghanada Chausses +2",
+    feet="Meghanada Jambeaux +1",
     neck="Lissome Necklace",
     ear1="Infused Earring",
   }
-
   sets.latent_refresh = {
     ammo="Homiliary", --1
     body="Runeist's Coat +3", --3
     legs="Rawhide Trousers", --1
+    -- head=gear.Herc_Idle_head,
+    -- hands="Regal Gauntlets",
+    -- ring1={name="Stikini Ring +1", bag="wardrobe3"},
+    -- ring2={name="Stikini Ring +1", bag="wardrobe4"},
   }
 
   sets.idle = {
-    ammo="Staunch Tathlum",
-    head="Aya. Zucchetto +2",
-    body="Runeist's Coat +3",
+    ammo="Staunch Tathlum", --2/2
+    head="Meghanada Visor +2", --5/0
+    body="Futhark Coat +1", --7/7
     hands="Turms Mittens",
-    legs="Meghanada Cuisses +2",
-    feet="Skadi's Jambeaux +1",
-    neck="Futhark Torque +1",
+    legs="Erilaz Leg Guards +1", --7/0
+    feet="Turms Leggings",
+    neck="Futhark Torque +1", --4/4
     waist="Engraved Belt",
-    ear1="Odnowa Earring +1",
+    ear1="Brutal Earring",
     ear2="Sherida Earring",
-    ring1=gear.Dark_Ring,
-    ring2="Defending Ring",
-    back=gear.RUN_HPD_Cape,
+    ring1=gear.Dark_Ring, --5/4
+    ring2="Defending Ring", --10/10
+    back=gear.RUN_HPD_Cape, --10/0
   }
 
-  sets.idle.DT = {
+  sets.idle.Regain = set_combine(sets.idle, sets.latent_regain)
+  sets.idle.Regen = set_combine(sets.idle, sets.latent_regen)
+  sets.idle.Refresh = set_combine(sets.idle, sets.latent_refresh)
+  sets.idle.Regain.Regen = set_combine(sets.idle, sets.latent_regain, sets.latent_regen)
+  sets.idle.Regain.Refresh = set_combine(sets.idle, sets.latent_regain, sets.latent_refresh)
+  sets.idle.Regen.Refresh = set_combine(sets.idle, sets.latent_regen, sets.latent_refresh)
+  sets.idle.Regain.Regen.Refresh = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh)
+
+  sets.DT = {
     sub="Refined Grip +1", --3/3
     ammo="Staunch Tathlum", --2/2
     head="Meghanada Visor +2", --5/0
@@ -742,32 +753,14 @@ function init_gear_sets()
     back=gear.RUN_HPD_Cape, --10/0
   } -- 49 / 24
 
-  sets.idle.Refresh = set_combine(sets.idle, {
-    ammo="Homiliary",
-    head="Erilaz Galea +1",
-    body="Runeist's Coat +3",
-    legs="Rawhide Trousers",
-    -- ammo="Homiliary",
-    -- head=gear.Herc_Idle_head,
-    -- hands="Regal Gauntlets",
-    -- legs="Rawhide Trousers",
-    -- ring1={name="Stikini Ring +1", bag="wardrobe3"},
-    -- ring2={name="Stikini Ring +1", bag="wardrobe4"},
-  })
-
-  sets.idle.Town = sets.idle
-
-  sets.idle.Town.Adoulin = {
-    body="Councilor's Garb",
-  }
-
-  sets.Kiting = {
-    feet="Skadi's Jambeaux +1",
-  }
-
-  sets.DeathResist = {
-    ring1="Warden's Ring",
-  }
+  sets.idle.DT = set_combine(sets.idle, sets.DT)
+  sets.idle.DT.Regain = set_combine(sets.idle.Regain, sets.DT)
+  sets.idle.DT.Regen = set_combine(sets.idle.Regen, sets.DT)
+  sets.idle.DT.Refresh = set_combine(sets.idle.Refresh, sets.DT)
+  sets.idle.DT.Regain.Regen = set_combine(sets.idle.Regain.Regen, sets.DT)
+  sets.idle.DT.Regain.Refresh = set_combine(sets.idle.Regain.Refresh, sets.DT)
+  sets.idle.DT.Regen.Refresh = set_combine(sets.idle.Regen.Refresh, sets.DT)
+  sets.idle.DT.Regain.Regen.Refresh = set_combine(sets.idle.Regain.Regen.Refresh, sets.DT)
 
 
   ------------------------------------------------------------------------------------------------
@@ -998,6 +991,15 @@ function init_gear_sets()
     waist="Gishdubar Sash", --10
   }
 
+  sets.Kiting = {
+    feet="Skadi's Jambeaux +1",
+  }
+  sets.Kiting.Adoulin = {
+    body="Councilor's Garb",
+  }
+  sets.DeathResist = {
+    ring1="Warden's Ring",
+  }
   sets.Embolden = set_combine(sets.midcast.EnhancingDuration, {
     back="Evasionist's Cape"
   })
@@ -1210,6 +1212,7 @@ end
 function job_handle_equipping_gear(playerStatus, eventArgs)
   update_weapons()
   check_gear()
+  update_idle_groups()
 end
 
 function job_update(cmdParams, eventArgs)
@@ -1220,23 +1223,19 @@ end
 
 -- Modify the default idle set after it was constructed.
 function customize_idle_set(idleSet)
-  if player.tp < 3000 then 
-    idleSet = set_combine(idleSet, sets.latent_regain)
-  end
-  if player.hpp < 85 and state.DefenseMode.value == 'None' then
-    idleSet = set_combine(idleSet, sets.latent_regen)
-  end
-  if player.mpp < 85 and state.DefenseMode.value == 'None' then
-    idleSet = set_combine(idleSet, sets.latent_refresh)
-  end
   if state.Knockback.value == true then
     idleSet = set_combine(idleSet, sets.defense.Knockback)
   end
+  -- If not in DT mode put on move speed gear
+  if state.IdleMode.current ~= 'DT' and state.DefenseMode.value == 'None' then
+    if classes.CustomIdleGroups:contains('Adoulin') then
+      idleSet = set_combine(idleSet, sets.Kiting.Adoulin)
+    else
+      idleSet = set_combine(idleSet, sets.Kiting)
+    end
+  end
   if state.CP.current == 'on' then
     idleSet = set_combine(idleSet, sets.CP)
-  end
-  if world.zone == 'Eastern Adoulin' or world.zone == 'Western Adoulin' then
-    idleSet = set_combine(idleSet, sets.idle.Town.Adoulin)
   end
 
   return idleSet
@@ -1399,6 +1398,31 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
+
+function update_idle_groups()
+  local isRegening = classes.CustomIdleGroups:contains('Regen')
+  local isRefreshing = classes.CustomIdleGroups:contains('Refresh')
+
+  classes.CustomIdleGroups:clear()
+  if player.status == 'Idle' then
+    if player.tp < 3000 then
+      classes.CustomIdleGroups:append('Regain')
+    end
+    if isRegening==true and player.hpp < 100 then
+      classes.CustomIdleGroups:append('Regen')
+    elseif isRegening==false and player.hpp < 85 then
+      classes.CustomIdleGroups:append('Regen')
+    end
+    if isRefreshing==true and player.mpp < 100 then
+      classes.CustomIdleGroups:append('Refresh')
+    elseif isRefreshing==false and player.mpp < 85 then
+      classes.CustomIdleGroups:append('Refresh')
+    end
+    if world.zone == 'Eastern Adoulin' or world.zone == 'Western Adoulin' then
+      classes.CustomIdleGroups:append('Adoulin')
+    end
+  end
+end
 
 function job_self_command(cmdParams, eventArgs)
   gearinfo(cmdParams, eventArgs)

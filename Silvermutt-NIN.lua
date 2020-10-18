@@ -465,10 +465,12 @@ function init_gear_sets()
   sets.latent_regain = {
     ring2="Karieyh Ring",
   }
-
   sets.latent_regen = {
     neck="Lissome Necklace",
     ear1="Infused Earring",
+  }
+  sets.latent_refresh = {
+    legs="Rawhide Trousers",
   }
 
   -- Idle sets
@@ -488,7 +490,15 @@ function init_gear_sets()
     -- waist="Engraved Belt",
   }
 
-  sets.idle.DT = set_combine(sets.idle, {
+  sets.idle.Regain = set_combine(sets.idle, sets.latent_regain)
+  sets.idle.Regen = set_combine(sets.idle, sets.latent_regen)
+  sets.idle.Refresh = set_combine(sets.idle, sets.latent_refresh)
+  sets.idle.Regain.Regen = set_combine(sets.idle, sets.latent_regain, sets.latent_regen)
+  sets.idle.Regain.Refresh = set_combine(sets.idle, sets.latent_regain, sets.latent_refresh)
+  sets.idle.Regen.Refresh = set_combine(sets.idle, sets.latent_regen, sets.latent_refresh)
+  sets.idle.Regain.Regen.Refresh = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh)
+
+  sets.DT = {
     -- head="Malignance Chapeau", --6/6
     -- body="Malignance Tabard", --9/9
     -- hands="Malignance Gloves", --5/5
@@ -499,47 +509,27 @@ function init_gear_sets()
     -- ring1="Purity Ring", --0/4
     -- ring2="Defending Ring", --10/10
     -- back="Moonlight Cape", --6/6
-  })
-
-  sets.idle.Town = set_combine(sets.idle, {
-    -- ammo="Aurgelmir Orb +1",
-    -- head="Ken. Jinpachi +1",
-    -- body="Ken. Samue +1",
-    -- hands="Ken. Tekko +1",
-    -- legs="Mochi. Hakama +3",
-    -- feet="Ken. Sune-Ate +1",
-    -- neck="Ninja Nodowa +1",
-    -- ear1="Cessance Earring",
-    -- ear2="Telos Earring",
-    -- back=gear.NIN_TP_Cape,
-    -- waist="Windbuffet Belt +1",
-  })
-
-  sets.idle.Town.Adoulin = {
-    -- body="Councilor's Garb",
   }
-    
-  -- Defense sets
+
+  sets.idle.DT = set_combine(sets.idle, sets.DT)
+  sets.idle.DT.Regain = set_combine(sets.idle.Regain, sets.DT)
+  sets.idle.DT.Regen = set_combine(sets.idle.Regen, sets.DT)
+  sets.idle.DT.Refresh = set_combine(sets.idle.Refresh, sets.DT)
+  sets.idle.DT.Regain.Regen = set_combine(sets.idle.Regain.Regen, sets.DT)
+  sets.idle.DT.Regain.Refresh = set_combine(sets.idle.Regain.Refresh, sets.DT)
+  sets.idle.DT.Regen.Refresh = set_combine(sets.idle.Regen.Refresh, sets.DT)
+  sets.idle.DT.Regain.Regen.Refresh = set_combine(sets.idle.Regain.Regen.Refresh, sets.DT)
+
+  ------------------------------------------------------------------------------------------------
+  ---------------------------------------- Defense Sets ------------------------------------------
+  ------------------------------------------------------------------------------------------------
+
   sets.defense.PDT = sets.idle.DT
   sets.defense.MDT = sets.idle.DT
 
-  sets.Kiting = {
-    -- feet="Danzo sune-ate"
-  }
-
-  sets.DayMovement = {
-    -- feet="Danzo sune-ate"
-  }
-  sets.NightMovement = {
-    -- feet="Hachiya Kyahan +3"
-  }
-
-
-  --------------------------------------
-  -- Engaged sets
-  --------------------------------------
-
-  -- Engaged sets
+  ------------------------------------------------------------------------------------------------
+  ---------------------------------------- Engaged Sets ------------------------------------------
+  ------------------------------------------------------------------------------------------------
 
   -- Variations for TP weapon and (optional) offense/defense modes.  Code will fall back on previous
   -- sets if more refined versions aren't defined.
@@ -739,10 +729,10 @@ function init_gear_sets()
   sets.engaged.MidAcc.DT.MaxHaste = set_combine(sets.engaged.MidAcc.MaxHaste, sets.engaged.Hybrid)
   sets.engaged.HighAcc.DT.MaxHaste = set_combine(sets.engaged.HighAcc.MaxHaste, sets.engaged.Hybrid)
 
-  --------------------------------------
-  -- Custom buff sets
-  --------------------------------------
-
+  ------------------------------------------------------------------------------------------------
+  ---------------------------------------- Special Sets ------------------------------------------
+  ------------------------------------------------------------------------------------------------
+  
   sets.buff.Migawari = {
     -- body="Iga Ningi +2"
   }
@@ -751,19 +741,23 @@ function init_gear_sets()
   sets.buff.Sange = {
     -- ammo="Hachiya Shuriken"
   }
-
-  sets.magic_burst = {
-    -- feet="Hachiya Kyahan +3",
-    -- ring1="Locus Ring",
-    -- ring2="Mujin Band", --(5)
-  }
-
   sets.buff.Doom = {
     -- neck="Nicander's Necklace", --20
     -- ring2="Eshmun's Ring", --20
     -- waist="Gishdubar Sash", --10
   }
 
+  sets.DayMovement = {
+    -- feet="Danzo sune-ate"
+  }
+  sets.NightMovement = {
+    -- feet="Hachiya Kyahan +3"
+  }
+  sets.magic_burst = {
+    -- feet="Hachiya Kyahan +3",
+    -- ring1="Locus Ring",
+    -- ring2="Mujin Band", --(5)
+  }
   sets.CP = {
     -- back="Aptitude Mantle"
   }
@@ -776,6 +770,8 @@ function init_gear_sets()
     -- neck="Ygnas's Resolve +1"
   }
 
+  sets.Kiting = {}
+  determine_kiting_set()
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -886,6 +882,8 @@ end
 function job_handle_equipping_gear(playerStatus, eventArgs)
   update_weapons()
   check_gear()
+  determine_kiting_set()
+  update_idle_groups()
   update_combat_form()
   determine_haste_group()
 end
@@ -915,25 +913,15 @@ end
 
 -- Modify the default idle set after it was constructed.
 function customize_idle_set(idleSet)
-  if player.tp < 3000 then 
-    idleSet = set_combine(idleSet, sets.latent_regain)
-  end
-  if player.hpp < 85 and state.DefenseMode.value == 'None' then
-    idleSet = set_combine(idleSet, sets.latent_regen)
-  end
   if state.Buff.Migawari then
     idleSet = set_combine(idleSet, sets.buff.Migawari)
   end
+  -- If not in DT mode put on move speed gear
+  if state.IdleMode.current ~= 'DT' and state.DefenseMode.value == 'None' then
+    idleSet = set_combine(idleSet, sets.Kiting)
+  end
   if state.CP.current == 'on' then
     idleSet = set_combine(idleSet, sets.CP)
-  end
-  if world.time >= (17*60) or world.time <= (7*60) then
-    idleSet = set_combine(idleSet, sets.NightMovement)
-  else
-    idleSet = set_combine(idleSet, sets.DayMovement)
-  end
-  if world.zone == 'Eastern Adoulin' or world.zone == 'Western Adoulin' then
-    idleSet = set_combine(idleSet, sets.idle.Town.Adoulin)
   end
 
   return idleSet
@@ -1043,6 +1031,45 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
+
+function determine_kiting_set()
+  if classes.CustomIdleGroups:contains('Adoulin') then
+    sets.Kiting = {
+      body="Councilor's Garb",
+    }
+  else
+    if world.time >= (17*60) or world.time <= (7*60) then
+      sets.Kiting = sets.NightMovement
+    else
+      sets.Kiting = sets.DayMovement
+    end
+  end
+end
+
+function update_idle_groups()
+  local isRegening = classes.CustomIdleGroups:contains('Regen')
+  local isRefreshing = classes.CustomIdleGroups:contains('Refresh')
+
+  classes.CustomIdleGroups:clear()
+  if player.status == 'Idle' then
+    if player.tp < 3000 then
+      classes.CustomIdleGroups:append('Regain')
+    end
+    if isRegening==true and player.hpp < 100 then
+      classes.CustomIdleGroups:append('Regen')
+    elseif isRegening==false and player.hpp < 85 then
+      classes.CustomIdleGroups:append('Regen')
+    end
+    if isRefreshing==true and player.mpp < 100 then
+      classes.CustomIdleGroups:append('Refresh')
+    elseif isRefreshing==false and player.mpp < 85 then
+      classes.CustomIdleGroups:append('Refresh')
+    end
+    if world.zone == 'Eastern Adoulin' or world.zone == 'Western Adoulin' then
+      classes.CustomIdleGroups:append('Adoulin')
+    end
+  end
+end
 
 function determine_haste_group()
   classes.CustomMeleeGroups:clear()

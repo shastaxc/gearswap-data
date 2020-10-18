@@ -523,10 +523,12 @@ function init_gear_sets()
   sets.latent_regain = {
     ring2="Karieyh Ring",
   }
-
   sets.latent_regen = {
     neck="Lissome Necklace",
     ear1="Infused Earring",
+  }
+  sets.latent_refresh = {
+    legs="Rawhide Trousers",
   }
 
   sets.idle = {
@@ -535,7 +537,7 @@ function init_gear_sets()
     body="Kendatsuba Samue +1",
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha,
-    feet="Hermes' Sandals",
+    feet=gear.Herc_TA_feet,
     neck="Monk's Nodowa +2",
     ear1="Sherida Earring",
     ear2="Telos Earring",
@@ -544,6 +546,14 @@ function init_gear_sets()
     back=gear.MNK_TP_Cape,
     waist="Moonbow Belt +1",
   }
+
+  sets.idle.Regain = set_combine(sets.idle, sets.latent_regain)
+  sets.idle.Regen = set_combine(sets.idle, sets.latent_regen)
+  sets.idle.Refresh = set_combine(sets.idle, sets.latent_refresh)
+  sets.idle.Regain.Regen = set_combine(sets.idle, sets.latent_regain, sets.latent_regen)
+  sets.idle.Regain.Refresh = set_combine(sets.idle, sets.latent_regain, sets.latent_refresh)
+  sets.idle.Regen.Refresh = set_combine(sets.idle, sets.latent_regen, sets.latent_refresh)
+  sets.idle.Regain.Regen.Refresh = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh)
 
   sets.DT = {
     ammo="Staunch Tathlum",
@@ -555,17 +565,15 @@ function init_gear_sets()
   }
 
   sets.idle.DT = set_combine(sets.idle, sets.DT)
+  sets.idle.DT.Regain = set_combine(sets.idle.Regain, sets.DT)
+  sets.idle.DT.Regen = set_combine(sets.idle.Regen, sets.DT)
+  sets.idle.DT.Refresh = set_combine(sets.idle.Refresh, sets.DT)
+  sets.idle.DT.Regain.Regen = set_combine(sets.idle.Regain.Regen, sets.DT)
+  sets.idle.DT.Regain.Refresh = set_combine(sets.idle.Regain.Refresh, sets.DT)
+  sets.idle.DT.Regen.Refresh = set_combine(sets.idle.Regen.Refresh, sets.DT)
+  sets.idle.DT.Regain.Regen.Refresh = set_combine(sets.idle.Regain.Regen.Refresh, sets.DT)
 
   sets.idle.Weak = sets.idle.DT
-
-  sets.idle.Town = set_combine(sets.idle, {
-    neck="Monk's Nodowa",
-  })
-
-  sets.idle.Town.Adoulin = {
-    body="Councilor's Garb",
-  }
-
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Defense Sets ------------------------------------------
@@ -643,10 +651,6 @@ function init_gear_sets()
   ---------------------------------------- Special Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
   
-  sets.Kiting = {
-    feet="Hermes' Sandals",
-  }
-
   -- Hundred Fists/Impetus/Counterstance melee set mods
   sets.engaged.HF = set_combine(sets.engaged)
   sets.engaged.Impetus = set_combine(sets.engaged, {
@@ -797,6 +801,12 @@ function init_gear_sets()
     ring2="Eshmun's Ring", --20
     waist="Gishdubar Sash", --10
   }
+  sets.Kiting = {
+    feet="Hermes' Sandals",
+  }
+  sets.Kiting.Adoulin = {
+    body="Councilor's Garb",
+  }
   sets.CP = {
     back="Mecistopins Mantle",
   }
@@ -941,6 +951,7 @@ end
 function job_handle_equipping_gear(playerStatus, eventArgs)
   update_weapons()
   check_gear()
+  update_idle_groups()
   update_combat_form()
   update_melee_groups()
 end
@@ -1023,17 +1034,16 @@ end
 
 -- Modify the default idle set after it was constructed.
 function customize_idle_set(idleSet)
-  if player.tp < 3000 then 
-    idleSet = set_combine(idleSet, sets.latent_regain)
-  end
-  if player.hpp < 85 then
-    idleSet = set_combine(idleSet, sets.latent_regen)
+  -- If not in DT mode put on move speed gear
+  if state.IdleMode.current ~= 'DT' and state.DefenseMode.value == 'None' then
+    if classes.CustomIdleGroups:contains('Adoulin') then
+      idleSet = set_combine(idleSet, sets.Kiting.Adoulin)
+    else
+      idleSet = set_combine(idleSet, sets.Kiting)
+    end
   end
   if state.CP.current == 'on' then
     idleSet = set_combine(idleSet, sets.CP)
-  end
-  if world.zone == 'Eastern Adoulin' or world.zone == 'Western Adoulin' then
-    idleSet = set_combine(idleSet, sets.idle.Town.Adoulin)
   end
 
   return idleSet
@@ -1057,6 +1067,31 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
+
+function update_idle_groups()
+  local isRegening = classes.CustomIdleGroups:contains('Regen')
+  local isRefreshing = classes.CustomIdleGroups:contains('Refresh')
+
+  classes.CustomIdleGroups:clear()
+  if player.status == 'Idle' then
+    if player.tp < 3000 then
+      classes.CustomIdleGroups:append('Regain')
+    end
+    if isRegening==true and player.hpp < 100 then
+      classes.CustomIdleGroups:append('Regen')
+    elseif isRegening==false and player.hpp < 85 then
+      classes.CustomIdleGroups:append('Regen')
+    end
+    if isRefreshing==true and player.mpp < 100 then
+      classes.CustomIdleGroups:append('Refresh')
+    elseif isRefreshing==false and player.mpp < 85 then
+      classes.CustomIdleGroups:append('Refresh')
+    end
+    if world.zone == 'Eastern Adoulin' or world.zone == 'Western Adoulin' then
+      classes.CustomIdleGroups:append('Adoulin')
+    end
+  end
+end
 
 function update_combat_form()
   if buffactive.footwork and not buffactive['hundred fists'] then
