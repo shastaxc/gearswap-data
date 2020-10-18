@@ -471,6 +471,10 @@ function init_gear_sets()
     ear1="Infused Earring",
   }
 
+  sets.latent_refresh = {
+
+  }
+
   sets.resting = {}
 
   sets.idle = {
@@ -481,13 +485,21 @@ function init_gear_sets()
     legs=gear.Samnuha,
     feet="Skadi's Jambeaux +1",
     neck="Anu Torque",
-    waist="Sailfi Belt +1",
+    waist="Windbuffet Belt +1",
     ear1="Telos Earring",
     ear2="Sherida Earring",
     ring1="Epona's Ring",
     ring2="Ilabrat Ring",
     back=gear.DNC_TP_DA_Cape,
   }
+
+  sets.idle.Regain = set_combine(sets.idle, sets.latent_regain)
+  sets.idle.Regen = set_combine(sets.idle, sets.latent_regen)
+  sets.idle.Refresh = set_combine(sets.idle, sets.latent_refresh)
+  sets.idle.Regain.Regen = set_combine(sets.idle, sets.latent_regain, sets.latent_regen)
+  sets.idle.Regain.Refresh = set_combine(sets.idle, sets.latent_regain, sets.latent_refresh)
+  sets.idle.Regen.Refresh = set_combine(sets.idle, sets.latent_regen, sets.latent_refresh)
+  sets.idle.Regain.Regen.Refresh = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh)
 
   sets.DT = {
     ammo="Staunch Tathlum", --2/2
@@ -498,6 +510,13 @@ function init_gear_sets()
   } --22/21
 
   sets.idle.DT = set_combine(sets.idle, sets.DT)
+  sets.idle.DT.Regain = set_combine(sets.idle.Regain, sets.DT)
+  sets.idle.DT.Regen = set_combine(sets.idle.Regen, sets.DT)
+  sets.idle.DT.Refresh = set_combine(sets.idle.Refresh, sets.DT)
+  sets.idle.DT.Regain.Regen = set_combine(sets.idle.Regain.Regen, sets.DT)
+  sets.idle.DT.Regain.Refresh = set_combine(sets.idle.Regain.Refresh, sets.DT)
+  sets.idle.DT.Regen.Refresh = set_combine(sets.idle.Regen.Refresh, sets.DT)
+  sets.idle.DT.Regain.Regen.Refresh = set_combine(sets.idle.Regain.Regen.Refresh, sets.DT)
 
   sets.idle.Town = set_combine(sets.idle, {
     feet="Skadi's Jambeaux +1",
@@ -534,7 +553,7 @@ function init_gear_sets()
     legs=gear.Samnuha,
     feet="Horos Toe Shoes +3",
     neck="Anu Torque",
-    waist="Sailfi Belt +1",
+    waist="Windbuffet Belt +1",
     ear1="Brutal Earring",
     ear2="Sherida Earring",
     ring1="Epona's Ring",
@@ -568,6 +587,7 @@ function init_gear_sets()
   })
 
   sets.engaged.STP = set_combine(sets.engaged, {
+    ammo="Ginsen",
     feet="Horos Toe Shoes +3",
     -- head=gear.Herc_STP_head,
     -- body="Ashera Harness",
@@ -587,7 +607,7 @@ function init_gear_sets()
     legs=gear.Samnuha,
     feet="Horos Toe Shoes +3",
     neck="Charis Necklace", -- 3%
-    waist="Sailfi Belt +1",
+    waist="Windbuffet Belt +1",
     ear1="Suppanomimi", -- 5%
     ear2="Eabani Earring", -- 4%
     ring1="Epona's Ring",
@@ -596,13 +616,13 @@ function init_gear_sets()
   } --30
 
   sets.engaged.DW.LowAcc = set_combine(sets.engaged.DW, {
-    ring2="Ilabrat Ring",
+    ammo="Falcon Eye",
     -- head="Dampening Tam",
     -- hands=gear.Adhemar_A_hands,
   })
 
   sets.engaged.DW.MidAcc = set_combine(sets.engaged.DW.LowAcc, {
-    legs="Meghanada Chausses +2",
+    legs="Horos Tights +3",
     -- ammo="Voluspa Tathlum",
     -- head="Maxixi Tiara +3", --8
     -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
@@ -610,7 +630,10 @@ function init_gear_sets()
   })
 
   sets.engaged.DW.HighAcc = set_combine(sets.engaged.DW.MidAcc, {
-    ear2="Telos Earring",
+    hands="Mummu Wrists +2",
+    legs="Meghanada Chausses +2",
+    ring1="Begrudging Ring",
+    ring2="Ilabrat Ring",
     -- ammo="C. Palug Stone",
     -- body="Maxixi Casaque +3",
     -- feet=gear.Herc_STP_feet,
@@ -621,6 +644,7 @@ function init_gear_sets()
   })
 
   sets.engaged.DW.STP = set_combine(sets.engaged.DW, {
+    ammo="Ginsen",
     -- head=gear.Herc_STP_head,
     -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
     -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
@@ -635,7 +659,7 @@ function init_gear_sets()
     legs=gear.Samnuha,
     feet="Horos Toe Shoes +3",
     neck="Charis Necklace", -- 3%
-    waist="Sailfi Belt +1",
+    waist="Windbuffet Belt +1",
     ear1="Suppanomimi", -- 5%
     ear2="Eabani Earring", -- 4%
     ring1="Epona's Ring",
@@ -644,13 +668,14 @@ function init_gear_sets()
   } --30
 
   sets.engaged.DW.LowAcc.LowHaste = set_combine(sets.engaged.DW.LowHaste, {
-    ring2="Ilabrat Ring",
+    ammo="Falcon Eye",
     -- head="Dampening Tam",
     -- hands=gear.Adhemar_A_hands,
   })
 
   sets.engaged.DW.MidAcc.LowHaste = set_combine(sets.engaged.DW.LowAcc.LowHaste, {
-    legs="Meghanada Chausses +2",
+    legs="Horos Tights +3",
+    ring2="Begrudging Ring",
     -- ammo="Voluspa Tathlum",
     -- head="Maxixi Tiara +3", --8
     -- body="Horos Casaque +3",
@@ -659,7 +684,9 @@ function init_gear_sets()
   })
 
   sets.engaged.DW.HighAcc.LowHaste = set_combine(sets.engaged.DW.MidAcc.LowHaste, {
-    ear2="Telos Earring",
+    hands="Mummu Wrists +2",
+    legs="Meghanada Chausses +2",
+    ring1="Ilabrat Ring",
     -- ammo="C. Palug Stone",
     -- body="Maxixi Casaque +3",
     -- feet=gear.Herc_STP_feet,
@@ -670,6 +697,7 @@ function init_gear_sets()
   })
 
   sets.engaged.DW.STP.LowHaste = set_combine(sets.engaged.DW.LowHaste, {
+    ammo="Ginsen",
     -- head=gear.Herc_STP_head,
     -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
     -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
@@ -684,7 +712,7 @@ function init_gear_sets()
     legs=gear.Samnuha,
     feet="Horos Toe Shoes +3",
     neck="Anu Torque",
-    waist="Sailfi Belt +1",
+    waist="Windbuffet Belt +1",
     ear1="Eabani Earring", -- 4%
     ear2="Sherida Earring",
     ring1="Epona's Ring",
@@ -693,13 +721,14 @@ function init_gear_sets()
   } --22
 
   sets.engaged.DW.LowAcc.MidHaste = set_combine(sets.engaged.DW.MidHaste, {
-    ring2="Ilabrat Ring",
+    ear2="Telos Earring",
     -- head="Dampening Tam",
     -- hands=gear.Adhemar_A_hands,
   })
 
   sets.engaged.DW.MidAcc.MidHaste = set_combine(sets.engaged.DW.LowAcc.MidHaste, {
-    legs="Meghanada Chausses +2",
+    ammo="Falcon Eye",
+    legs="Horos Tights +3",
     -- ammo="Voluspa Tathlum",
     -- head="Maxixi Tiara +3", --8
     -- body="Horos Casaque +3",
@@ -708,7 +737,10 @@ function init_gear_sets()
   })
 
   sets.engaged.DW.HighAcc.MidHaste = set_combine(sets.engaged.DW.MidAcc.MidHaste, {
-    ear2="Telos Earring",
+    hands="Mummu Wrists +2",
+    legs="Meghanada Chausses +2",
+    ring1="Begrudging Ring",
+    ring2="Ilabrat Ring",
     -- ammo="C. Palug Stone",
     -- body="Maxixi Casaque +3",
     -- legs="Horos Tights +3",
@@ -720,6 +752,7 @@ function init_gear_sets()
   })
 
   sets.engaged.DW.STP.MidHaste = set_combine(sets.engaged.DW.MidHaste, {
+    ammo="Ginsen",
     -- head=gear.Herc_STP_head,
     -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
     -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
@@ -734,7 +767,7 @@ function init_gear_sets()
     legs=gear.Samnuha,
     feet="Horos Toe Shoes +3",
     neck="Anu Torque",
-    waist="Sailfi Belt +1",
+    waist="Windbuffet Belt +1",
     ear1="Brutal Earring",
     ear2="Sherida Earring",
     ring1="Epona's Ring",
@@ -743,22 +776,26 @@ function init_gear_sets()
   } --18
 
   sets.engaged.DW.LowAcc.HighHaste = set_combine(sets.engaged.DW.HighHaste, {
-    ring2="Ilabrat Ring",
+    ear1="Telos Earring",
     -- head="Dampening Tam",
     -- hands=gear.Adhemar_A_hands,
     -- waist="Kentarch Belt +1",
   })
 
   sets.engaged.DW.MidAcc.HighHaste = set_combine(sets.engaged.DW.LowAcc.HighHaste, {
-    legs="Meghanada Chausses +2",
+    ammo="Falcon Eye",
+    legs="Horos Tights +3",
     -- ammo="Voluspa Tathlum",
     -- body="Horos Casaque +3",
     -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
   })
 
   sets.engaged.DW.HighAcc.HighHaste = set_combine(sets.engaged.DW.MidAcc.HighHaste, {
-    ear1="Cessance Earring",
-    ear2="Telos Earring",
+    hands="Mummu Wrists +2",
+    legs="Meghanada Chausses +2",
+    ear2="Cessance Earring",
+    ring1="Begrudging Ring",
+    ring2="Ilabrat Ring",
     -- ammo="C. Palug Stone",
     -- head="Maxixi Tiara +3", --8
     -- body="Maxixi Casaque +3",
@@ -771,6 +808,7 @@ function init_gear_sets()
   })
 
   sets.engaged.DW.STP.HighHaste = set_combine(sets.engaged.DW.HighHaste, {
+    ammo="Ginsen",
     -- head=gear.Herc_STP_head,
     -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
     -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
@@ -786,7 +824,7 @@ function init_gear_sets()
     legs=gear.Samnuha,
     feet="Horos Toe Shoes +3",
     neck="Anu Torque",
-    waist="Sailfi Belt +1",
+    waist="Windbuffet Belt +1",
     ear1="Brutal Earring",
     ear2="Sherida Earring",
     ring1="Epona's Ring",
@@ -795,26 +833,28 @@ function init_gear_sets()
   }
 
   sets.engaged.DW.LowAcc.MaxHaste = set_combine(sets.engaged.DW.MaxHaste, {
-    ring2="Ilabrat Ring",
-    -- head="Dampening Tam",
+    ear1="Telos Earring",
+    head="Dampening Tam",
     -- hands=gear.Adhemar_A_hands,
-    -- ear1="Telos Earring",
     -- waist="Kentarch Belt +1",
   })
 
   sets.engaged.DW.MidAcc.MaxHaste = set_combine(sets.engaged.DW.LowAcc.MaxHaste, {
-    legs="Meghanada Chausses +2",
+    ammo="Falcon Eye",
+    legs="Horos Tights +3",
     -- ammo="Voluspa Tathlum",
     -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
   })
 
   sets.engaged.DW.HighAcc.MaxHaste = set_combine(sets.engaged.DW.MidAcc.MaxHaste, {
-    ear1="Cessance Earring",
-    ear2="Telos Earring",
+    hands="Mummu Wrists +2",
+    legs="Meghanada Chausses +2",
+    ear2="Cessance Earring",
+    ring1="Begrudging Ring",
+    ring2="Ilabrat Ring",
     -- ammo="C. Palug Stone",
     -- head="Maxixi Tiara +3", --8
     -- body="Maxixi Casaque +3",
-    -- legs="Horos Tights +3",
     -- feet=gear.Herc_STP_feet,
     -- ear2="Mache Earring +1",
     -- ring1="Regal Ring",
@@ -823,6 +863,7 @@ function init_gear_sets()
   })
 
   sets.engaged.DW.STP.MaxHaste = set_combine(sets.engaged.DW.MaxHaste, {
+    ammo="Ginsen",
     ear1="Telos Earring",
     -- head=gear.Herc_STP_head,
     -- body="Ashera Harness",
@@ -1009,6 +1050,7 @@ end
 function job_handle_equipping_gear(playerStatus, eventArgs)
   update_weapons()
   check_gear()
+  update_idle_groups()
   update_combat_form()
   determine_haste_group()
 end
@@ -1036,12 +1078,6 @@ function get_custom_wsmode(spell, action, spellMap)
 end
 
 function customize_idle_set(idleSet)
-  if player.tp < 3000 then 
-    idleSet = set_combine(idleSet, sets.latent_regain)
-  end
-  if player.hpp < 85 then
-    idleSet = set_combine(idleSet, sets.latent_regen)
-  end
   if state.CP.current == 'on' then
     idleSet = set_combine(idleSet, sets.CP)
   end
@@ -1164,6 +1200,28 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
+
+function update_idle_groups()
+  local isRegening = classes.CustomIdleGroups:contains('Regen')
+  local isRefreshing = classes.CustomIdleGroups:contains('Refresh')
+
+  classes.CustomIdleGroups:clear()
+  if player.status == 'Idle' then
+    if player.tp < 3000 then
+      classes.CustomIdleGroups:append('Regain')
+    end
+    if isRegening==true and player.hpp < 100 then
+      classes.CustomIdleGroups:append('Regen')
+    elseif isRegening==false and player.hpp < 85 then
+      classes.CustomIdleGroups:append('Regen')
+    end
+    if isRefreshing==true and player.mpp < 100 then
+      classes.CustomIdleGroups:append('Refresh')
+    elseif isRefreshing==false and player.mpp < 85 then
+      classes.CustomIdleGroups:append('Refresh')
+    end
+  end
+end
 
 function determine_haste_group()
   classes.CustomMeleeGroups:clear()
