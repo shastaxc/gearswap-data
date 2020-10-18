@@ -18,9 +18,9 @@
 --              [ CTRL+` ]          Toggle Treasure Hunter Mode
 --              [ ALT+` ]           Toggle Magic Burst Mode
 --              [ WIN+C ]           Toggle Capacity Points Mode
---              [ CTRL+PageUp ]     Cycle Toy Weapon Mode
---              [ CTRL+PageDown ]   Cycleback Toy Weapon Mode
---              [ ALT+PageDown ]    Reset Toy Weapon Mode
+lua--              [ ALT+F ]     		Cycle Toy Weapon Mode
+--              [ ALT+G ]   		Cycleback Toy Weapon Mode
+--              [ CTRL+F ]    		Reset Toy Weapon Mode
 --              [ WIN+W ]           Toggle Weapon Lock
 --                                  (off = re-equip previous weapons if you go barehanded)
 --                                  (on = prevent weapon auto-equipping)
@@ -110,9 +110,9 @@ function user_setup()
   send_command('bind !s gs c faceaway')
   send_command('bind @w gs c toggle WeaponLock')
   
-  send_command('bind ^pageup gs c toyweapon cycle')
-  send_command('bind ^pagedown gs c toyweapon cycleback')
-  send_command('bind !pagedown gs c toyweapon reset')
+  send_command('bind !f gs c toyweapon cycle')
+  send_command('bind !g gs c toyweapon cycleback')
+  send_command('bind ^f gs c toyweapon reset')
 
   send_command('bind ^` gs c cycle treasuremode')
   send_command('bind !` gs c toggle MagicBurst')
@@ -153,9 +153,9 @@ function user_unload()
   send_command('unbind !s')
   send_command('unbind @w')
   
-  send_command('unbind ^pageup')
-  send_command('unbind ^pagedown')
-  send_command('unbind !pagedown')
+  send_command('unbind !f')
+  send_command('unbind !g')
+  send_command('unbind ^f')
 
   send_command('unbind ^`')
   send_command('unbind !`')
@@ -211,9 +211,10 @@ function init_gear_sets()
     neck="Unmoving Collar +1", --10
     waist="Trance Belt", --4
     left_ear="Friomisi Earring", --2
+	right_ear="Cryptic Earring", --4
     left_ring="Eihwaz Ring", --5
     right_ring="Supershear Ring", --5
-    back={ name="Andartia's Mantle", augments={'AGI+20','Eva.+20 /Mag. Eva.+20','Enmity+10','Damage taken-5%',}}, --10
+    back={ name="Andartia's Mantle", augments={'AGI+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Damage taken-5%',}}, --10
   }
 
   sets.precast.JA['Provoke'] = sets.Enmity
@@ -237,7 +238,7 @@ function init_gear_sets()
 
   sets.precast.Waltz = {
     ammo="Yamarang",
-	  head="Mummu Bonnet +2",
+	head="Mummu Bonnet +2",
     -- body="Passion Jacket",
     -- legs="Dashing Subligar",
     -- ring1="Asklepian Ring",
@@ -252,7 +253,9 @@ function init_gear_sets()
     ammo="Sapience Orb", --2
     head={ name="Herculean Helm", augments={'"Fast Cast"+4','CHR+1',}}, --11
     body={ name="Taeon Tabard", augments={'Mag. Acc.+15 "Mag.Atk.Bns."+15','"Fast Cast"+4','Mag. crit. hit dmg. +8%',}}, --8
+	hands={ name="Leyline Gloves", augments={'Accuracy+15','Mag. Acc.+15','"Mag.Atk.Bns."+15','"Fast Cast"+3',}}, --8
     legs={ name="Herculean Trousers", augments={'Mag. Acc.+11 "Mag.Atk.Bns."+11','"Fast Cast"+5','MND+10','"Mag.Atk.Bns."+8',}}, --5
+	neck="Orunmila's Torque", --5
     waist="Oneiros Belt", --0
     left_ear="Loquac. Earring", --2
     right_ear="Enchntr. Earring +1", --2
@@ -261,7 +264,7 @@ function init_gear_sets()
   }
 
   sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {
-    body="Mochi. Chainmail +1", --10
+    -- body="Mochi. Chainmail +1", --10
     -- neck="Magoraga Beads", --10
   })
 
@@ -335,8 +338,8 @@ function init_gear_sets()
     hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
     legs="Hiza. Hizayoroi +2",
     feet="Hiza. Sune-Ate +2",
-    neck={ name="Ninja Nodowa", augments={'Path: A',}},
-    waist="Sailfi Belt +1",
+    neck="Fotia Gorget",
+    waist="Fotia Belt",
     left_ear="Odr Earring",
     right_ear="Lugra Earring +1",
     left_ring="Tyrant's Ring",
@@ -362,18 +365,34 @@ function init_gear_sets()
   })
 
   sets.precast.WS['Blade: Yu'] = set_combine(sets.precast.WS, {
-    -- ammo="Seeth. Bomblet +1",
+    ammo="Ghastly Tathlum +1",
     head="Hachiya Hatsu. +3",
-    -- body="Samnuha Coat",
-    -- hands="Leyline Gloves",
-    -- legs=gear.Herc_WSD_legs,
-    -- feet=gear.Herc_MAB_feet,
-    -- neck="Baetyl Pendant",
-    -- ear1="Crematio Earring",
-    ear2="Friomisi Earring",
-    -- ring1="Dingir Ring",
+    body={ name="Rawhide Vest", augments={'DEX+10','STR+7','INT+7',}},
+    hands={ name="Leyline Gloves", augments={'Accuracy+15','Mag. Acc.+15','"Mag.Atk.Bns."+15','"Fast Cast"+3',}},
+    legs={ name="Herculean Trousers", augments={'Mag. Acc.+19','Magic burst dmg.+5%','MND+7','"Mag.Atk.Bns."+8',}},
+    feet={ name="Mochi. Kyahan +3", augments={'Enh. Ninj. Mag. Acc/Cast Time Red.',}},
+    neck="Sanctity Necklace",
+    left_ear="Friomisi Earring",
+    right_ear="Hecate's Earring",
+    left_ring="Shiva Ring +1",
     back={ name="Andartia's Mantle", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+5','"Mag.Atk.Bns."+10','Damage taken-5%',}},
     waist="Eschan Stone",
+  })
+  
+  sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
+    ammo="Ghastly Tathlum +1",
+    head={ name="Mochi. Hatsuburi +3", augments={'Enhances "Yonin" and "Innin" effect',}},
+    body={ name="Rawhide Vest", augments={'DEX+10','STR+7','INT+7',}},
+    hands={ name="Leyline Gloves", augments={'Accuracy+15','Mag. Acc.+15','"Mag.Atk.Bns."+15','"Fast Cast"+3',}},
+    legs={ name="Herculean Trousers", augments={'Mag. Acc.+19','Magic burst dmg.+5%','MND+7','"Mag.Atk.Bns."+8',}},
+    feet={ name="Mochi. Kyahan +3", augments={'Enh. Ninj. Mag. Acc/Cast Time Red.',}},
+    neck="Sanctity Necklace",
+    waist="Eschan Stone",
+    left_ear="Friomisi Earring",
+    right_ear="Hecate's Earring",
+    left_ring="Shiva Ring +1",
+    right_ring="Metamorph Ring +1",
+    back={ name="Andartia's Mantle", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Damage taken-5%',}},
   })
 
   sets.Lugra = {
@@ -409,8 +428,8 @@ function init_gear_sets()
     ammo="Ghastly Tathlum +1",
     head={ name="Mochi. Hatsuburi +3", augments={'Enhances "Yonin" and "Innin" effect',}},
     body={ name="Rawhide Vest", augments={'DEX+10','STR+7','INT+7',}},
-    hands={ name="Herculean Gloves", augments={'"Mag.Atk.Bns."+23','Magic burst dmg.+5%',}},
-    legs={ name="Mochi. Hakama +2", augments={'Enhances "Mijin Gakure" effect',}},
+    hands={ name="Leyline Gloves", augments={'Accuracy+15','Mag. Acc.+15','"Mag.Atk.Bns."+15','"Fast Cast"+3',}},
+    legs="Gyve Trousers",
     feet={ name="Mochi. Kyahan +3", augments={'Enh. Ninj. Mag. Acc/Cast Time Red.',}},
     neck="Sanctity Necklace",
     waist="Eschan Stone",
@@ -418,7 +437,7 @@ function init_gear_sets()
     right_ear="Hecate's Earring",
     left_ring="Shiva Ring +1",
     right_ring="Metamorph Ring +1",
-    back={ name="Andartia's Mantle", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+5','"Mag.Atk.Bns."+10','Damage taken-5%',}},
+    back={ name="Andartia's Mantle", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Damage taken-5%',}},
   }
 
   sets.midcast.ElementalNinjutsu.Resistant = set_combine(sets.midcast.Ninjutsu, {
@@ -434,7 +453,7 @@ function init_gear_sets()
     body="Mummu Jacket +2",
     hands="Mummu Wrists +2",
     legs="Mummu Kecks +2",
-    feet="Hachiya Kyahan +2",
+    feet="Hachiya Kyahan +3",
     neck="Sanctity Necklace",
     waist="Eschan Stone",
     left_ear="Stealth Earring",
@@ -479,11 +498,11 @@ function init_gear_sets()
   -- Idle sets
   sets.idle = {
     ammo="Date Shuriken",
-    head={ name="Adhemar Bonnet +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
+    head="Ken. Jinpachi",
     body="Ken. Samue +1",
-    hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
-    legs={ name="Mochi. Hakama +2", augments={'Enhances "Mijin Gakure" effect',}},
-    feet="Hiza. Sune-Ate +2",
+    hands="Ken. Tekko",
+    legs="Ken. Hakama",
+    feet="Ken. Sune-Ate",
     neck={ name="Ninja Nodowa", augments={'Path: A',}},
     waist="Patentia Sash",
     left_ear="Suppanomimi",
@@ -514,7 +533,7 @@ function init_gear_sets()
   })
 
   sets.idle.Town.Adoulin = {
-    -- body="Councilor's Garb",
+    body="Councilor's Garb",
   }
     
   -- Defense sets
@@ -529,7 +548,7 @@ function init_gear_sets()
     feet="Danzo sune-ate"
   }
   sets.NightMovement = {
-    feet="Hachiya Kyahan +2"
+    feet="Hachiya Kyahan +3"
   }
 
 
@@ -583,7 +602,7 @@ function init_gear_sets()
     head={ name="Ryuo Somen +1", augments={'HP+65','"Store TP"+5','"Subtle Blow"+8',}}, --9
     body="Ken. Samue +1",
     hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
-    legs="Ken. Hakama",
+    legs={ name="Samnuha Tights", augments={'STR+8','DEX+9','"Dbl.Atk."+3','"Triple Atk."+2',}},
     feet="Hiza. Sune-Ate +2", --8
     neck={ name="Ninja Nodowa", augments={'Path: A',}},
     waist="Patentia Sash", --5
@@ -614,7 +633,7 @@ function init_gear_sets()
     head={ name="Ryuo Somen +1", augments={'HP+65','"Store TP"+5','"Subtle Blow"+8',}}, --9
     body="Ken. Samue +1",
     hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
-    legs="Ken. Hakama",
+    legs={ name="Samnuha Tights", augments={'STR+8','DEX+9','"Dbl.Atk."+3','"Triple Atk."+2',}},
     feet="Hiza. Sune-Ate +2", --8
     neck={ name="Ninja Nodowa", augments={'Path: A',}},
     waist="Patentia Sash", --5
@@ -645,7 +664,7 @@ function init_gear_sets()
     head={ name="Adhemar Bonnet +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
     body="Ken. Samue +1",
     hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
-    legs="Ken. Hakama",
+    legs={ name="Samnuha Tights", augments={'STR+8','DEX+9','"Dbl.Atk."+3','"Triple Atk."+2',}},
     feet="Hiza. Sune-Ate +2", --8
     neck={ name="Ninja Nodowa", augments={'Path: A',}},
     waist="Patentia Sash", --5
@@ -676,7 +695,7 @@ function init_gear_sets()
     head={ name="Adhemar Bonnet +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
     body="Ken. Samue +1",
     hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
-    legs="Ken. Hakama",
+    legs={ name="Samnuha Tights", augments={'STR+8','DEX+9','"Dbl.Atk."+3','"Triple Atk."+2',}},
     feet={ name="Herculean Boots", augments={'Attack+18','"Triple Atk."+4','Accuracy+3',}},
     neck={ name="Ninja Nodowa", augments={'Path: A',}},
     waist="Windbuffet Belt +1",
@@ -711,7 +730,7 @@ function init_gear_sets()
     -- head="Malignance Chapeau", --6/6
     -- legs="Malignance Tights", --7/7
     -- feet="Malignance Boots", --4/4
-    -- ring2="Defending Ring", --10/10
+    ring2="Defending Ring", --10/10
     -- back=gear.NIN_WS1_Cape, --10/0
   }
 
@@ -758,14 +777,14 @@ function init_gear_sets()
     head={ name="Mochi. Hatsuburi +3", augments={'Enhances "Yonin" and "Innin" effect',}},
     body={ name="Rawhide Vest", augments={'DEX+10','STR+7','INT+7',}},
     hands={ name="Herculean Gloves", augments={'"Mag.Atk.Bns."+23','Magic burst dmg.+5%',}},
-    legs={ name="Mochi. Hakama +2", augments={'Enhances "Mijin Gakure" effect',}},
+    legs={ name="Herculean Trousers", augments={'Mag. Acc.+19','Magic burst dmg.+5%','MND+7','"Mag.Atk.Bns."+8',}},
     feet={ name="Mochi. Kyahan +3", augments={'Enh. Ninj. Mag. Acc/Cast Time Red.',}},
     neck="Mizu. Kubikazari",
     waist="Eschan Stone",
     left_ear="Friomisi Earring",
     right_ear="Hecate's Earring",
     left_ring="Mujin Band",
-    right_ring="Metamorph Ring +1",
+    right_ring="Locus Ring",
     back={ name="Andartia's Mantle", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+5','"Mag.Atk.Bns."+10','Damage taken-5%',}},
   }
 
