@@ -25,7 +25,7 @@ function define_global_sets()
   sets.ToyWeapon.Staff = {main="Savage. Pole",sub="Tzacab Grip"}
   sets.ToyWeapon.Polearm = {main="Pitchfork +1",sub="Tzacab Grip"}
   sets.ToyWeapon.GreatSword = {main="Lament",sub="Tzacab Grip"}
-  sets.ToyWeapon.Scythe = {main="Hoe",sub="Tzacab Grip"}
+  sets.ToyWeapon.Scythe = {main="Lost Sickle",sub="Tzacab Grip"}
 
   --Most recent weapon (used for re-arming)
   sets.MostRecent = {main="",sub=""} --DO NOT MODIFY
@@ -245,6 +245,7 @@ function define_global_sets()
   gear.Samnuha_body = { name="Samnuha Coat", augments={'Mag. Acc.+4','"Mag.Atk.Bns."+5','"Fast Cast"+1',}}
   gear.Lustratio_B_legs = { name="Lustr. Subligar +1", augments={'Accuracy+20','DEX+8','Crit. hit rate+3%',}}
   gear.Ryuo_A_hands = { name="Ryuo Tekko +1", augments={'STR+12','DEX+12','Accuracy+20',}}
+  gear.Dampening_Tam = { name="Dampening Tam", augments={'DEX+10','Accuracy+15','Mag. Acc.+15','Quadruple Attack +3',}}
 
 end
 
@@ -335,7 +336,7 @@ function update_weaponskill_binds()
       send_command('bind ^numpad9 input /ws "Chant du Cygne" <t>')
       send_command('bind ^numpad4 input /ws "Requiescat" <t>')
       send_command('bind ^numpad6 input /ws "Sanguine Blade" <t>')
-      send_command('bind ^numpad6 input /ws "Circle Blade" <t>')
+      send_command('bind ^numpad1 input /ws "Circle Blade" <t>') --aoe
       send_command('bind ^numpad2 input /ws "Red Lotus Blade" <t>') --elemental
       send_command('bind ^numpad3 input /ws "Seraph Blade" <t>') --elemental
     elseif current_weapon_type == 'Great Sword' then
