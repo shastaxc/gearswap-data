@@ -412,7 +412,7 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.precast.WS = {
-    ammo="Seething Bomblet",
+    ammo="Knobkierrie",
     head=gear.Herc_WSD_head,
     body="Meghanada Cuirie +2",
     hands="Meg. Gloves +2",
@@ -714,8 +714,8 @@ function init_gear_sets()
     head="Aya. Zucchetto +2",
     body="Runeist's Coat +3",
     hands="Turms Mittens",
-    legs="Carmine Cuisses +1",
-    feet="Erilaz Greaves +1",
+    legs="Meghanada Cuisses +2",
+    feet="Skadi's Jambeaux +1",
     neck="Futhark Torque +1",
     waist="Engraved Belt",
     ear1="Odnowa Earring +1",
@@ -762,7 +762,7 @@ function init_gear_sets()
   }
 
   sets.Kiting = {
-    legs="Carmine Cuisses +1",
+    feet="Skadi's Jambeaux +1",
   }
 
   sets.DeathResist = {
@@ -1226,7 +1226,7 @@ function customize_idle_set(idleSet)
   if player.hpp < 85 and state.DefenseMode.value == 'None' then
     idleSet = set_combine(idleSet, sets.latent_regen)
   end
-  if player.mpp < 90 and state.DefenseMode.value == 'None' then
+  if player.mpp < 85 and state.DefenseMode.value == 'None' then
     idleSet = set_combine(idleSet, sets.latent_refresh)
   end
   if state.Knockback.value == true then
