@@ -747,12 +747,6 @@ function init_gear_sets()
     -- waist="Gishdubar Sash", --10
   }
 
-  sets.DayMovement = {
-    -- feet="Danzo sune-ate"
-  }
-  sets.NightMovement = {
-    -- feet="Hachiya Kyahan +3"
-  }
   sets.magic_burst = {
     -- feet="Hachiya Kyahan +3",
     -- ring1="Locus Ring",
@@ -771,6 +765,15 @@ function init_gear_sets()
   }
 
   sets.Kiting = {}
+  sets.Kiting.Adoulin = {
+    body="Councilor's Garb",
+  }
+  sets.DayMovement = {
+    -- feet="Danzo sune-ate"
+  }
+  sets.NightMovement = {
+    -- feet="Hachiya Kyahan +3"
+  }
   determine_kiting_set()
 end
 
@@ -1034,9 +1037,7 @@ end
 
 function determine_kiting_set()
   if classes.CustomIdleGroups:contains('Adoulin') then
-    sets.Kiting = {
-      body="Councilor's Garb",
-    }
+    sets.Kiting = sets.Kiting.Adoulin
   else
     if world.time >= (17*60) or world.time <= (7*60) then
       sets.Kiting = sets.NightMovement
