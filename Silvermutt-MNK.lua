@@ -61,7 +61,7 @@ function job_setup()
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.WeaponskillMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
-  state.HybridMode:options('Normal', 'DT', 'Counter')
+  state.HybridMode:options('Normal', 'DT', 'SuperDef')
   state.IdleMode:options('Normal', 'DT')
 
   state.WeaponLock = M(false, 'Weapon Lock')
@@ -194,7 +194,7 @@ function init_gear_sets()
     head="Anchorite's Crown +1",
   }
   sets.precast.JA['Counterstance'] = {
-    feet="Hesychast's Gaiters +2",
+    feet="Hesychast's Gaiters +3",
   }
   sets.precast.JA['Footwork'] = {
     feet="Tantra Gaiters +2",
@@ -203,7 +203,7 @@ function init_gear_sets()
     body="Hesychast's Cyclas",
   }
   sets.precast.JA['Mantra'] = {
-    feet="Hesychast's Gaiters +2",
+    feet="Hesychast's Gaiters +3",
   }
 
   sets.precast.JA['Chi Blast'] = {
@@ -234,7 +234,7 @@ function init_gear_sets()
 
   -- Default set for any weaponskill that isn't any more specifically defined
   sets.precast.WS = {
-    ammo="Tantra Tathlum",
+    ammo="Knobkierrie",
     head=gear.Adhemar_B_head,
     body="Kendatsuba Samue +1",
     hands=gear.Adhemar_B_hands,
@@ -254,7 +254,7 @@ function init_gear_sets()
 
   -- Victory Smite: 80% STR, can crit
   sets.precast.WS["Victory Smite"] = set_combine(sets.precast.WS, {
-    ammo="Tantra Tathlum",
+    ammo="Knobkierrie",
     head=gear.Adhemar_B_head,
     body="Kendatsuba Samue +1",
     hands=gear.Ryuo_A_hands,
@@ -267,7 +267,6 @@ function init_gear_sets()
     ring2="Begrudging Ring",
     back=gear.MNK_TP_Cape,
     waist="Moonbow Belt +1",
-    -- ammo="Knobkierrie",
     -- body="Anchorite's Cyclas +3",
     -- legs="Hizamaru Hizayoroi +2",
     -- back=gear.MNK_WS_Cape,
@@ -329,7 +328,7 @@ function init_gear_sets()
 
   -- Asuran Fists: 20% STR / 20% VIT
   sets.precast.WS['Asuran Fists'] = set_combine(sets.precast.WS, {
-    ammo="Tantra Tathlum",
+    ammo="Knobkierrie",
     head=gear.Adhemar_B_head,
     body="Kendatsuba Samue +1",
     hands=gear.Adhemar_B_hands,
@@ -357,7 +356,7 @@ function init_gear_sets()
 
   -- Ascetic's Fury: 50% STR / 50% VIT, can crit
   sets.precast.WS["Ascetic's Fury"] = set_combine(sets.precast.WS, {
-    ammo="Tantra Tathlum",
+    ammo="Knobkierrie",
     head=gear.Adhemar_B_head,
     body="Kendatsuba Samue +1",
     hands=gear.Ryuo_A_hands,
@@ -370,7 +369,6 @@ function init_gear_sets()
     ring2="Begrudging Ring",
     back=gear.MNK_TP_Cape,
     waist="Moonbow Belt +1",
-    -- ammo="Knobkierrie",
     -- body="Anch. Cyclas +3",
     -- legs="Ken. Hakama +1",
     -- ear2="Moonshade Earring",
@@ -407,7 +405,7 @@ function init_gear_sets()
 
   -- Howling Fist: 40% STR / 40% VIT
   sets.precast.WS['Howling Fist'] = set_combine(sets.precast.WS, {
-    ammo="Tantra Tathlum",
+    ammo="Knobkierrie",
     head=gear.Adhemar_B_head,
     body="Kendatsuba Samue +1",
     hands=gear.Adhemar_B_hands,
@@ -420,7 +418,6 @@ function init_gear_sets()
     ring2="Karieyh Ring",
     back=gear.MNK_TP_Cape,
     waist="Moonbow Belt +1",
-    -- ammo="Knobkierrie",
     -- head="Herculean Helm",
     -- body="Herculean Vest",
     -- hands="Anchorite Gloves +3",
@@ -509,10 +506,9 @@ function init_gear_sets()
   }
 
   sets.precast.WS['Cataclysm'] = set_combine(sets.precast.WS, sets.MAB, {
-    ammo="Tantra Tathlum",
+    ammo="Knobkierrie",
     ring2="Karieyh Ring",
     -- waist="Fotia Belt",
-    -- ammo="Knobkierrie",
     -- back=gear.MNK_WS_Cape,
   }) -- STR 30% / INT 30% + MAB
 
@@ -542,7 +538,7 @@ function init_gear_sets()
     feet="Hermes' Sandals",
     neck="Monk's Nodowa +2",
     ear1="Sherida Earring",
-    ear2="Brutal Earring",
+    ear2="Telos Earring",
     ring1="Epona's Ring",
     ring2="Ilabrat Ring",
     back=gear.MNK_TP_Cape,
@@ -589,7 +585,7 @@ function init_gear_sets()
     feet=gear.Herc_TA_feet,
     neck="Monk's Nodowa +2",
     ear1="Sherida Earring",
-    ear2="Brutal Earring",
+    ear2="Telos Earring",
     ring1="Epona's Ring",
     ring2="Ilabrat Ring",
     back=gear.MNK_TP_Cape,
@@ -600,10 +596,10 @@ function init_gear_sets()
     ear2="Cessance Earring",
   })
   sets.engaged.MidAcc = set_combine(sets.engaged.LowAcc, {
-    ear1="Telos Earring",
+    head=gear.Dampening_Tam,
   })
   sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
-    
+    feet="Anchorite's Gaiters +2",
   })
 
 
@@ -618,19 +614,30 @@ function init_gear_sets()
     waist="Moonbow Belt +1",
   }
 
+  sets.SuperDef = set_combine(sets.Hybrid, {
+    head="Mummu Bonnet +2",
+    hands="Volte Bracers",
+    legs="Mummu Kecks +1",
+    feet="Mummu gamashes +1",
+    ring1=gear.Dark_Ring,
+  })
+
+  sets.defense.PDT = set_combine(sets.Hybrid, {
+    hands="Volte Bracers",
+    legs="Mummu Kecks +1",
+    feet="Mummu gamashes +1",
+    ring1=gear.Dark_Ring,
+  })
+
   sets.engaged.DT = set_combine(sets.engaged, sets.Hybrid)
   sets.engaged.LowAcc.DT = set_combine(sets.engaged.LowAcc, sets.Hybrid)
   sets.engaged.MidAcc.DT = set_combine(sets.engaged.MidAcc, sets.Hybrid)
   sets.engaged.HighAcc.DT = set_combine(sets.engaged.HighAcc, sets.Hybrid)
 
-  sets.Counter = {
-    feet="Hesychast's Gaiters +2",
-  }
-
-  sets.engaged.Counter = set_combine(sets.engaged, sets.Counter)
-  sets.engaged.LowAcc.Counter = set_combine(sets.engaged.LowAcc, sets.Counter)
-  sets.engaged.MidAcc.Counter = set_combine(sets.engaged.MidAcc, sets.Counter)
-  sets.engaged.HighAcc.Counter = set_combine(sets.engaged.HighAcc, sets.Counter)
+  sets.engaged.SuperDef = set_combine(sets.engaged, sets.SuperDef)
+  sets.engaged.LowAcc.SuperDef = set_combine(sets.engaged.LowAcc, sets.SuperDef)
+  sets.engaged.MidAcc.SuperDef = set_combine(sets.engaged.MidAcc, sets.SuperDef)
+  sets.engaged.HighAcc.SuperDef = set_combine(sets.engaged.HighAcc, sets.SuperDef)
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Special Sets ------------------------------------------
@@ -640,44 +647,134 @@ function init_gear_sets()
     feet="Hermes' Sandals",
   }
 
-  -- Hundred Fists/Impetus melee set mods
+  -- Hundred Fists/Impetus/Counterstance melee set mods
+  sets.engaged.HF = set_combine(sets.engaged)
   sets.engaged.Impetus = set_combine(sets.engaged, {
     body="Bhikku Cyclas +1",
   })
-  sets.engaged.HF = set_combine(sets.engaged)
+  sets.engaged.Counterstance = set_combine(sets.engaged, {
+    feet="Hesychast's Gaiters +3",
+  })
   sets.engaged.HF.Impetus = set_combine(sets.engaged.HF, {
     body="Bhikku Cyclas +1",
   })
+  sets.engaged.Impetus.Counterstance = set_combine(sets.engaged.Impetus, {
+    feet="Hesychast's Gaiters +3",
+  })
   sets.engaged.LowAcc.HF = set_combine(sets.engaged.LowAcc)
+  sets.engaged.LowAcc.Impetus = set_combine(sets.engaged.LowAcc, {
+    body="Bhikku Cyclas +1",
+  })
+  sets.engaged.LowAcc.Counterstance = set_combine(sets.engaged.LowAcc, {
+    feet="Hesychast's Gaiters +3",
+  })
   sets.engaged.LowAcc.HF.Impetus = set_combine(sets.engaged.LowAcc.HF, {
     body="Bhikku Cyclas +1",
   })
+  sets.engaged.LowAcc.HF.Counterstance = set_combine(sets.engaged.LowAcc.HF, {
+    feet="Hesychast's Gaiters +3",
+  })
+  sets.engaged.LowAcc.Impetus.Counterstance = set_combine(sets.engaged.LowAcc.Impetus, {
+    feet="Hesychast's Gaiters +3",
+  })
   sets.engaged.MidAcc.HF = set_combine(sets.engaged.MidAcc)
+  sets.engaged.MidAcc.Impetus = set_combine(sets.engaged.MidAcc, {
+    body="Bhikku Cyclas +1",
+  })
+  sets.engaged.MidAcc.Counterstance = set_combine(sets.engaged.MidAcc, {
+    feet="Hesychast's Gaiters +3",
+  })
   sets.engaged.MidAcc.HF.Impetus = set_combine(sets.engaged.MidAcc.HF, {
     body="Bhikku Cyclas +1",
   })
+  sets.engaged.MidAcc.HF.Counterstance = set_combine(sets.engaged.MidAcc.HF, {
+    feet="Hesychast's Gaiters +3",
+  })
+  sets.engaged.MidAcc.Impetus.Counterstance = set_combine(sets.engaged.MidAcc.Impetus, {
+    feet="Hesychast's Gaiters +3",
+  })
   sets.engaged.HighAcc.HF = set_combine(sets.engaged.HighAcc)
+  sets.engaged.HighAcc.Impetus = set_combine(sets.engaged.HighAcc, {
+    body="Bhikku Cyclas +1",
+  })
+  sets.engaged.HighAcc.Counterstance = set_combine(sets.engaged.HighAcc, {
+    feet="Hesychast's Gaiters +3",
+  })
   sets.engaged.HighAcc.HF.Impetus = set_combine(sets.engaged.HighAcc.HF, {
     body="Bhikku Cyclas +1",
   })
-  sets.engaged.Counter.HF = set_combine(sets.engaged.Counter)
-  sets.engaged.Counter.HF.Impetus = set_combine(sets.engaged.Counter.HF, {
+  sets.engaged.HighAcc.HF.Counterstance = set_combine(sets.engaged.HighAcc.HF, {
+    feet="Hesychast's Gaiters +3",
+  })
+  sets.engaged.HighAcc.Impetus.Counterstance = set_combine(sets.engaged.HighAcc.Impetus, {
+    feet="Hesychast's Gaiters +3",
+  })
+  sets.engaged.SuperDef.HF = set_combine(sets.engaged.SuperDef)
+  sets.engaged.SuperDef.Impetus = set_combine(sets.engaged.SuperDef, {
     body="Bhikku Cyclas +1",
   })
-  sets.engaged.LowAcc.Counter = set_combine(sets.engaged.LowAcc, sets.engaged.Counter)
-  sets.engaged.LowAcc.Counter.HF = set_combine(sets.engaged.LowAcc.Counter, {})
-  sets.engaged.LowAcc.Counter.HF.Impetus = set_combine(sets.engaged.LowAcc.Counter.HF, {
+  sets.engaged.SuperDef.Counterstance = set_combine(sets.engaged.SuperDef, {
+    feet="Hesychast's Gaiters +3",
+  })
+  sets.engaged.SuperDef.HF.Impetus = set_combine(sets.engaged.SuperDef.HF, {
     body="Bhikku Cyclas +1",
   })
-  sets.engaged.MidAcc.Counter = set_combine(sets.engaged.MidAcc, sets.engaged.Counter)
-  sets.engaged.MidAcc.Counter.HF = set_combine(sets.engaged.MidAcc.Counter, {})
-  sets.engaged.MidAcc.Counter.HF.Impetus = set_combine(sets.engaged.MidAcc.Counter.HF, {
+  sets.engaged.SuperDef.HF.Counterstance = set_combine(sets.engaged.SuperDef.HF, {
+    feet="Hesychast's Gaiters +3",
+  })
+  sets.engaged.SuperDef.Impetus.Counterstance = set_combine(sets.engaged.SuperDef.Impetus, {
+    feet="Hesychast's Gaiters +3",
+  })
+  sets.engaged.LowAcc.SuperDef = set_combine(sets.engaged.LowAcc, sets.engaged.SuperDef)
+  sets.engaged.LowAcc.SuperDef.HF = set_combine(sets.engaged.LowAcc.SuperDef, {})
+  sets.engaged.LowAcc.SuperDef.Impetus = set_combine(sets.engaged.LowAcc.SuperDef, {
     body="Bhikku Cyclas +1",
   })
-  sets.engaged.HighAcc.Counter = set_combine(sets.engaged.HighAcc, sets.engaged.Counter)
-  sets.engaged.HighAcc.Counter.HF = set_combine(sets.engaged.HighAcc.Counter, {})
-  sets.engaged.HighAcc.Counter.HF.Impetus = set_combine(sets.engaged.HighAcc.Counter.HF, {
+  sets.engaged.LowAcc.SuperDef.Counterstance = set_combine(sets.engaged.LowAcc.SuperDef, {
+    feet="Hesychast's Gaiters +3",
+  })
+  sets.engaged.LowAcc.SuperDef.HF.Impetus = set_combine(sets.engaged.LowAcc.SuperDef.HF, {
     body="Bhikku Cyclas +1",
+  })
+  sets.engaged.LowAcc.SuperDef.HF.Counterstance = set_combine(sets.engaged.LowAcc.SuperDef.HF, {
+    feet="Hesychast's Gaiters +3",
+  })
+  sets.engaged.LowAcc.SuperDef.Impetus.Counterstance = set_combine(sets.engaged.LowAcc.SuperDef.Impetus, {
+    feet="Hesychast's Gaiters +3",
+  })
+  sets.engaged.MidAcc.SuperDef = set_combine(sets.engaged.MidAcc, sets.engaged.SuperDef)
+  sets.engaged.MidAcc.SuperDef.HF = set_combine(sets.engaged.MidAcc.SuperDef, {})
+  sets.engaged.MidAcc.SuperDef.Impetus = set_combine(sets.engaged.MidAcc.SuperDef, {
+    body="Bhikku Cyclas +1",
+  })
+  sets.engaged.MidAcc.SuperDef.Counterstance = set_combine(sets.engaged.MidAcc.SuperDef, {
+    feet="Hesychast's Gaiters +3",
+  })
+  sets.engaged.MidAcc.SuperDef.HF.Impetus = set_combine(sets.engaged.MidAcc.SuperDef.HF, {
+    body="Bhikku Cyclas +1",
+  })
+  sets.engaged.MidAcc.SuperDef.HF.Counterstance = set_combine(sets.engaged.MidAcc.SuperDef.HF, {
+    feet="Hesychast's Gaiters +3",
+  })
+  sets.engaged.MidAcc.SuperDef.Impetus.Counterstance = set_combine(sets.engaged.MidAcc.SuperDef.Impetus, {
+    feet="Hesychast's Gaiters +3",
+  })
+  sets.engaged.HighAcc.SuperDef = set_combine(sets.engaged.HighAcc, sets.engaged.SuperDef)
+  sets.engaged.HighAcc.SuperDef.HF = set_combine(sets.engaged.HighAcc.SuperDef, {})
+  sets.engaged.HighAcc.SuperDef.Impetus = set_combine(sets.engaged.HighAcc.SuperDef, {
+    body="Bhikku Cyclas +1",
+  })
+  sets.engaged.HighAcc.SuperDef.Counterstance = set_combine(sets.engaged.HighAcc.SuperDef, {
+    feet="Hesychast's Gaiters +3",
+  })
+  sets.engaged.HighAcc.SuperDef.HF.Impetus = set_combine(sets.engaged.HighAcc.SuperDef.HF, {
+    body="Bhikku Cyclas +1",
+  })
+  sets.engaged.HighAcc.SuperDef.HF.Counterstance = set_combine(sets.engaged.HighAcc.SuperDef.HF, {
+    feet="Hesychast's Gaiters +3",
+  })
+  sets.engaged.HighAcc.SuperDef.Impetus.Counterstance = set_combine(sets.engaged.HighAcc.SuperDef.Impetus, {
+    feet="Hesychast's Gaiters +3",
   })
 
   -- Footwork combat form
@@ -687,7 +784,7 @@ function init_gear_sets()
   sets.engaged.Footwork.Acc = set_combine(sets.engaged.Footwork, {
     
   })
-      
+
   -- Quick sets for post-precast adjustments, listed here so that the gear can be Validated.
   sets.impetus_body = {
     body="Bhikku Cyclas +1"
@@ -784,6 +881,10 @@ function job_buff_change(buff,gain)
     if (buff == "Impetus" and gain) or buffactive.impetus then
       classes.CustomMeleeGroups:append('Impetus')
     end
+
+    if (buff == "Counterstance" and gain) or buffactive.counterstance then
+      classes.CustomMeleeGroups:append('Counterstance')
+    end
   end
 
   -- Update gear if any of the above changed
@@ -803,6 +904,32 @@ function job_buff_change(buff,gain)
       enable('neck','ring2','waist')
       handle_equipping_gear(player.status)
     end
+  end
+
+  if buff == "Aftermath: Lv.3" then
+    if gain then
+        send_command('timers create "Aftermath Tier III" 180 down')
+        send_command('input /echo Tier III Aftermath!!!')
+    else
+        send_command('timers delete "Aftermath Tier III";gs c -cd AM3 Lost!!!')
+        send_command('input /echo Tier III Aftermath OFF!!!')
+    end
+  end
+  if buff == "Aftermath: Lv.2" then
+      if gain then
+          send_command('timers create "Aftermath Tier II" 120 down')
+          send_command('input /echo Tier II Aftermath!!')
+      else
+          send_command('timers delete "Aftermath Tier II";gs c -cd AM3 Lost!!!')
+      end
+  end
+  if buff == "Aftermath: Lv.1" then
+      if gain then
+          send_command('timers create "Aftermath Tier I" 60 down')
+          send_command('input /echo Tier I Aftermath!')
+      else
+          send_command('timers delete "Aftermath Tier I";gs c -cd AM3 Lost!!!')
+      end
   end
 end
 
@@ -948,6 +1075,10 @@ function update_melee_groups()
   
   if buffactive.impetus then
     classes.CustomMeleeGroups:append('Impetus')
+  end
+
+  if buffactive.counterstance then
+    classes.CustomMeleeGroups:append('Counterstance')
   end
 end
 
