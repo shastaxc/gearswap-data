@@ -60,7 +60,7 @@ function job_setup()
   windower.raw_register_event('action', on_action_for_impetus)
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
-  state.WeaponskillMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
+  state.WeaponskillMode:options('Normal', 'MaxTp', 'LowAcc', 'LowAccMaxTp', 'MidAcc', 'MidAccMaxTp', 'HighAcc', 'HighAccMaxTp')
   state.HybridMode:options('Normal', 'DT', 'SuperDef')
   state.IdleMode:options('Normal', 'DT')
 
@@ -249,9 +249,6 @@ function init_gear_sets()
     waist="Moonbow Belt +1",
   } -- Base WS set
 
-  sets.precast.MaxTP = {
-  } -- Replace any TP Bonus gear, overwrites all WS sets
-
   -- Victory Smite: 80% STR, can crit
   sets.precast.WS["Victory Smite"] = set_combine(sets.precast.WS, {
     ammo="Knobkierrie",
@@ -274,17 +271,25 @@ function init_gear_sets()
     -- ring1="Begrudging Ring",
     -- ring2="Niqmaddu Ring",
   })
+  sets.precast.WS["Victory Smite"].MaxTp = set_combine(sets.precast.WS["Victory Smite"], {
+  })
   sets.precast.WS["Victory Smite"].LowAcc = set_combine(sets.precast.WS["Victory Smite"], {
     neck="Fotia Gorget",
+  })
+  sets.precast.WS["Victory Smite"].LowAccMaxTp = set_combine(sets.precast.WS["Victory Smite"].LowAcc, {
   })
   sets.precast.WS["Victory Smite"].MidAcc = set_combine(sets.precast.WS["Victory Smite"].LowAcc, {
     ammo="Falcon Eye",
     -- head="Rao Kabuto +1",
   })
+  sets.precast.WS["Victory Smite"].MidAccMaxTp = set_combine(sets.precast.WS["Victory Smite"].MidAcc, {
+  })
   sets.precast.WS["Victory Smite"].HighAcc = set_combine(sets.precast.WS["Victory Smite"].MidAcc, {
     -- head="Ken. Jinpachi +1",
     -- legs="Ken. Hakama +1",
     -- feet="Ken. Sune-Ate +1",
+  })
+  sets.precast.WS["Victory Smite"].HighAccMaxTp = set_combine(sets.precast.WS["Victory Smite"].HighAcc, {
   })
 
   -- Shijin Spiral: 100% DEX
@@ -311,18 +316,26 @@ function init_gear_sets()
     -- ring2="Regal Ring",
     -- back=gear.MNK_WS_Cape,
   })
+  sets.precast.WS["Shijin Spiral"].MaxTp = set_combine(sets.precast.WS["Shijin Spiral"], {
+  })
   sets.precast.WS["Shijin Spiral"].LowAcc = set_combine(sets.precast.WS["Shijin Spiral"], {
     neck="Fotia Gorget",
     head="Mummu Bonnet +2",
     -- head="Ken. Jinpachi +1",
   })
+  sets.precast.WS["Shijin Spiral"].LowAccMaxTp = set_combine(sets.precast.WS["Shijin Spiral"].LowAcc, {
+  })
   sets.precast.WS["Shijin Spiral"].MidAcc = set_combine(sets.precast.WS["Shijin Spiral"].LowAcc, {
     ammo="Falcon Eye",
     ear2="Telos Earring",
   })
+  sets.precast.WS["Shijin Spiral"].MidAccMaxTp = set_combine(sets.precast.WS["Shijin Spiral"].MidAcc, {
+  })
   sets.precast.WS["Shijin Spiral"].HighAcc = set_combine(sets.precast.WS["Shijin Spiral"].MidAcc, {
     hands=gear.Ryuo_A_hands,
     feet="Mummu Gamashes +1",
+  })
+  sets.precast.WS["Shijin Spiral"].HighAccMaxTp = set_combine(sets.precast.WS["Shijin Spiral"].HighAcc, {
   })
 
   -- Asuran Fists: 20% STR / 20% VIT
@@ -341,15 +354,27 @@ function init_gear_sets()
     back=gear.MNK_TP_Cape,
     waist="Moonbow Belt +1",
   })
+  sets.precast.WS["Asuran Fists"].MaxTp = set_combine(sets.precast.WS["Asuran Fists"], {
+    ear2="Odnowa Earring +1",
+  })
   sets.precast.WS["Asuran Fists"].LowAcc = set_combine(sets.precast.WS["Asuran Fists"], {
     neck="Fotia Gorget",
+  })
+  sets.precast.WS["Asuran Fists"].LowAccMaxTp = set_combine(sets.precast.WS["Asuran Fists"].LowAcc, {
+    ear2="Odnowa Earring +1",
   })
   sets.precast.WS["Asuran Fists"].MidAcc = set_combine(sets.precast.WS["Asuran Fists"].LowAcc, {
     hands=gear.Ryuo_A_hands,
   })
+  sets.precast.WS["Asuran Fists"].MidAccMaxTp = set_combine(sets.precast.WS["Asuran Fists"].MidAcc, {
+    ear2="Odnowa Earring +1",
+  })
   sets.precast.WS["Asuran Fists"].HighAcc = set_combine(sets.precast.WS["Asuran Fists"].MidAcc, {
     ammo="Falcon Eye",
     head="Mummu Bonnet +2",
+  })
+  sets.precast.WS["Asuran Fists"].HighAccMaxTp = set_combine(sets.precast.WS["Asuran Fists"].HighAcc, {
+    ear2="Odnowa Earring +1",
   })
 
   -- Ascetic's Fury: 50% STR / 50% VIT, can crit
@@ -374,16 +399,28 @@ function init_gear_sets()
     -- ring2="Niqmaddu Ring",
     -- back=gear.MNK_WS_Cape,
   })
+  sets.precast.WS["Ascetic's Fury"].MaxTp = set_combine(sets.precast.WS["Asuran Fists"], {
+    ear2="Odr Earring",
+  })
   sets.precast.WS["Ascetic's Fury"].LowAcc = set_combine(sets.precast.WS["Ascetic's Fury"], {
     head="Mummu Bonnet +2",
     -- feet="Ken. Sune-Ate +1",
   })
+  sets.precast.WS["Ascetic's Fury"].LowAccMaxTp = set_combine(sets.precast.WS["Asuran Fists"].LowAcc, {
+    ear2="Odr Earring",
+  })
   sets.precast.WS["Ascetic's Fury"].MidAcc = set_combine(sets.precast.WS["Ascetic's Fury"].LowAcc, {
     ammo="Falcon Eye",
+  })
+  sets.precast.WS["Ascetic's Fury"].MidAccMaxTp = set_combine(sets.precast.WS["Asuran Fists"].MidAcc, {
+    ear2="Odr Earring",
   })
   sets.precast.WS["Ascetic's Fury"].HighAcc = set_combine(sets.precast.WS["Ascetic's Fury"].MidAcc, {
     -- ear1="Mache Earring +1",
     -- head="Ken. Jinpachi +1",
+  })
+  sets.precast.WS["Ascetic's Fury"].HighAccMaxTp = set_combine(sets.precast.WS["Asuran Fists"].HighAcc, {
+    ear2="Odr Earring",
   })
 
   -- Raging Fists: 30% STR / 30% DEX
@@ -393,16 +430,27 @@ function init_gear_sets()
     feet=gear.Herc_TA_feet,
     ear1="Sherida Earring",
     ear2="Moonshade Earring",
-
+  })
+  sets.precast.WS["Raging Fists"].MaxTP = set_combine(sets.precast.WS["Raging Fists"], {
+    ear2="Brutal Earring",
   })
   sets.precast.WS["Raging Fists"].LowAcc = set_combine(sets.precast.WS["Raging Fists"], {
 
   })
+  sets.precast.WS["Raging Fists"].LowAccMaxTp = set_combine(sets.precast.WS["Raging Fists"].LowAcc, {
+    ear2="Brutal Earring",
+  })
   sets.precast.WS["Raging Fists"].MidAcc = set_combine(sets.precast.WS["Raging Fists"].LowAcc, {
 
   })
+  sets.precast.WS["Raging Fists"].MidAccMaxTp = set_combine(sets.precast.WS["Raging Fists"].MidAcc, {
+    ear2="Brutal Earring",
+  })
   sets.precast.WS["Raging Fists"].HighAcc = set_combine(sets.precast.WS["Raging Fists"].MidAcc, {
 
+  })
+  sets.precast.WS["Raging Fists"].HighAccMaxTp = set_combine(sets.precast.WS["Raging Fists"].HighAcc, {
+    ear2="Brutal Earring",
   })
 
   -- Howling Fist: 40% STR / 40% VIT
@@ -428,43 +476,37 @@ function init_gear_sets()
     -- ear2="Moonshade Earring",
     -- ring2="Niqmaddu Ring",
   })
+  sets.precast.WS["Howling Fist"].MaxTP = set_combine(sets.precast.WS["Howling Fist"], {
+    ear2="Odnowa Earring +1",
+  })
   sets.precast.WS["Howling Fist"].LowAcc = set_combine(sets.precast.WS["Howling Fist"], {
     head="Mummu Bonnet +2",
   })
+  sets.precast.WS["Howling Fist"].LowAccMaxTp = set_combine(sets.precast.WS["Howling Fist"].LowAcc, {
+    ear2="Odnowa Earring +1",
+  })
   sets.precast.WS["Howling Fist"].MidAcc = set_combine(sets.precast.WS["Howling Fist"].LowAcc, {
+    ear2="Telos Earring",
+  })
+  sets.precast.WS["Howling Fist"].MidAccMaxTp = set_combine(sets.precast.WS["Howling Fist"].MidAcc, {
     ear2="Telos Earring",
   })
   sets.precast.WS["Howling Fist"].HighAcc = set_combine(sets.precast.WS["Howling Fist"].MidAcc, {
     ammo="Falcon Eye",
     head="Mummu Bonnet +2",
   })
+  sets.precast.WS["Howling Fist"].HighAccMaxTp = set_combine(sets.precast.WS["Howling Fist"].HighAcc, {
+    ear2="Telos Earring",
+  })
 
   -- Dragon Kick: 50% STR / 50% DEX
   sets.precast.WS['Dragon Kick'] = set_combine(sets.precast.WS, {
     
   })
-  sets.precast.WS["Dragon Kick"].LowAcc = set_combine(sets.precast.WS["Dragon Kick"], {
-
-  })
-  sets.precast.WS["Dragon Kick"].MidAcc = set_combine(sets.precast.WS["Dragon Kick"].LowAcc, {
-
-  })
-  sets.precast.WS["Dragon Kick"].HighAcc = set_combine(sets.precast.WS["Dragon Kick"].MidAcc, {
-
-  })
 
   -- Tornado Kick: 40% STR / 40% VIT
   sets.precast.WS['Tornado Kick'] = set_combine(sets.precast.WS, {
     
-  })
-  sets.precast.WS["Tornado Kick"].LowAcc = set_combine(sets.precast.WS["Tornado Kick"], {
-
-  })
-  sets.precast.WS["Tornado Kick"].MidAcc = set_combine(sets.precast.WS["Tornado Kick"].LowAcc, {
-
-  })
-  sets.precast.WS["Tornado Kick"].HighAcc = set_combine(sets.precast.WS["Tornado Kick"].MidAcc, {
-
   })
 
   -- Spinning Attack: 100% STR
@@ -483,14 +525,22 @@ function init_gear_sets()
     back=gear.MNK_TP_Cape,
     waist="Moonbow Belt +1",
   })
+  sets.precast.WS["Spinning Attack"].MaxTp = set_combine(sets.precast.WS["Spinning Attack"], {
+  })
   sets.precast.WS["Spinning Attack"].LowAcc = set_combine(sets.precast.WS["Spinning Attack"], {
     neck="Fotia Gorget",
+  })
+  sets.precast.WS["Spinning Attack"].LowAccMaxTp = set_combine(sets.precast.WS["Spinning Attack"].LowAcc, {
   })
   sets.precast.WS["Spinning Attack"].MidAcc = set_combine(sets.precast.WS["Spinning Attack"].LowAcc, {
     ear2="Telos Earring",
   })
+  sets.precast.WS["Spinning Attack"].MidAccMaxTp = set_combine(sets.precast.WS["Spinning Attack"].MidAcc, {
+  })
   sets.precast.WS["Spinning Attack"].HighAcc = set_combine(sets.precast.WS["Spinning Attack"].MidAcc, {
     ammo="Falcon Eye",
+  })
+  sets.precast.WS["Spinning Attack"].HighAccMaxTp = set_combine(sets.precast.WS["Spinning Attack"].HighAcc, {
   })
 
   sets.MAB = {
@@ -842,11 +892,6 @@ function job_post_precast(spell, action, spellMap, eventArgs)
     elseif state.Buff.Footwork and (spell.english == "Dragon's Kick" or spell.english == "Tornado Kick") then
       equip(sets.footwork_kick_feet)
     end
-    
-    -- Replace Moonshade Earring if we're at cap TP
-    if player.tp == 3000 then
-      equip(sets.precast.MaxTP)
-    end
   end
 end
 
@@ -889,11 +934,9 @@ function job_buff_change(buff,gain)
     if (buff == "Hundred Fists" and gain) or buffactive['hundred fists'] then
       classes.CustomMeleeGroups:append('HF')
     end
-    
     if (buff == "Impetus" and gain) or buffactive.impetus then
       classes.CustomMeleeGroups:append('Impetus')
     end
-
     if (buff == "Counterstance" and gain) or buffactive.counterstance then
       classes.CustomMeleeGroups:append('Counterstance')
     end
@@ -1024,6 +1067,33 @@ function cycle_toy_weapons(cycle_dir)
   equip(sets.ToyWeapon[state.ToyWeapons.current])
 end
 
+function get_custom_wsmode(spell, action, spellMap)
+  local wsmode
+  if state.OffenseMode.value == 'LowAcc' then
+    if player.tp == 3000 then
+      wsmode = 'LowAccMaxTp'
+    else
+      wsmode = 'LowAcc'
+    end
+  elseif state.OffenseMode.value == 'MidAcc' then
+    if player.tp == 3000 then
+      wsmode = 'MidAccMaxTp'
+    else
+      wsmode = 'MidAcc'
+    end
+  elseif state.OffenseMode.value == 'HighAcc' then
+    if player.tp == 3000 then
+      wsmode = 'HighAccMaxTp'
+    else
+      wsmode = 'HighAcc'
+    end
+  elseif player.tp == 3000 then
+    wsmode = 'MaxTp'
+  end
+
+  return wsmode
+end
+
 
 -------------------------------------------------------------------------------------------------------------------
 -- User code that supplements self-commands.
@@ -1109,11 +1179,9 @@ function update_melee_groups()
   if buffactive['hundred fists'] then
     classes.CustomMeleeGroups:append('HF')
   end
-  
   if buffactive.impetus then
     classes.CustomMeleeGroups:append('Impetus')
   end
-
   if buffactive.counterstance then
     classes.CustomMeleeGroups:append('Counterstance')
   end

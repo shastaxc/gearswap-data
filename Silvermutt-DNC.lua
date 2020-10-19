@@ -106,7 +106,7 @@ function job_setup()
 
   state.OffenseMode:options('STP', 'Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.HybridMode:options('Normal', 'DT')
-  state.WeaponskillMode:options('Normal', 'Acc')
+  state.WeaponskillMode:options('Normal', 'MaxTp', 'LowAcc', 'LowAccMaxTp', 'MidAcc', 'MidAccMaxTp', 'HighAcc', 'HighAccMaxTp')
   state.IdleMode:options('Normal', 'DT')
   
   state.WeaponLock = M(false, 'Weapon Lock')
@@ -388,16 +388,6 @@ function init_gear_sets()
     back=gear.DNC_TP_DA_Cape,
   } -- default set
 
-  sets.precast.WS.Acc = set_combine(sets.precast.WS, {
-    legs="Meg. Chausses +2",
-    feet="Mummu Gamashes +1",
-    -- ammo="Voluspa Tathlum",
-    -- head="Dampening Tam",
-    -- legs="Meg. Chausses +2",
-    -- feet="Mummu Gamashes +1",
-    -- ear2="Telos Earring",
-  })
-
   -- For Crit Dmg, not crit rate
   sets.precast.WS.Critical = {
     head="Maculele Tiara",
@@ -405,27 +395,124 @@ function init_gear_sets()
   }
 
   sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS, {
+    ammo="Charis Feather",
+    head=gear.Herc_WSD_head,
     body="Horos Casaque +3",
+    hands="Meghanada Gloves +2",
     legs="Meghanada Chausses +2",
+    feet=gear.Herc_WSD_feet,
+    neck="Fotia Gorget",
+    waist="Fotia Belt",
+    ear1="Sherida Earring",
+    ear2="Brutal Earring",
+    ring1="Ilabrat Ring",
+    ring2="Karieyh Ring",
+    back=gear.DNC_TP_DA_Cape,
   }) -- AGI
+  sets.precast.WS['Exenterator'].MaxTp = set_combine(sets.precast.WS['Exenterator'], {
+  })
+  sets.precast.WS['Exenterator'].LowAcc = set_combine(sets.precast.WS['Exenterator'], {
+  })
+  sets.precast.WS['Exenterator'].LowAccMaxTp = set_combine(sets.precast.WS['Exenterator'].LowAcc, {
+  })
+  sets.precast.WS['Exenterator'].MidAcc = set_combine(sets.precast.WS['Exenterator'].LowAcc, {
+  })
+  sets.precast.WS['Exenterator'].MidAccMaxTp = set_combine(sets.precast.WS['Exenterator'].MidAcc, {
+  })
+  sets.precast.WS['Exenterator'].HighAcc = set_combine(sets.precast.WS['Exenterator'].MidAcc, {
+  })
+  sets.precast.WS['Exenterator'].HighAccMaxTp = set_combine(sets.precast.WS['Exenterator'].HighAcc, {
+  })
 
   sets.precast.WS['Pyrrhic Kleos'] = set_combine(sets.precast.WS, {
+    ammo="Charis Feather",
+    head=gear.Herc_WSD_head,
+    body="Meghanada Cuirie +2",
     hands=gear.Adhemar_B_hands,
+    legs="Horos Tights +3",
+    feet=gear.Herc_WSD_feet,
+    neck="Fotia Gorget",
+    waist="Fotia Belt",
+    ear1="Sherida Earring",
+    ear2="Brutal Earring",
+    ring1="Ilabrat Ring",
     ring2="Epona's Ring",
+    back=gear.DNC_TP_DA_Cape,
   }) -- 40% STR / 40% DEX
+  sets.precast.WS['Pyrrhic Kleos'].MaxTp = set_combine(sets.precast.WS['Pyrrhic Kleos'], {
+  })
+  sets.precast.WS['Pyrrhic Kleos'].LowAcc = set_combine(sets.precast.WS['Pyrrhic Kleos'], {
+  })
+  sets.precast.WS['Pyrrhic Kleos'].LowAccMaxTp = set_combine(sets.precast.WS['Pyrrhic Kleos'].LowAcc, {
+  })
+  sets.precast.WS['Pyrrhic Kleos'].MidAcc = set_combine(sets.precast.WS['Pyrrhic Kleos'].LowAcc, {
+  })
+  sets.precast.WS['Pyrrhic Kleos'].MidAccMaxTp = set_combine(sets.precast.WS['Pyrrhic Kleos'].MidAcc, {
+  })
+  sets.precast.WS['Pyrrhic Kleos'].HighAcc = set_combine(sets.precast.WS['Pyrrhic Kleos'].MidAcc, {
+  })
+  sets.precast.WS['Pyrrhic Kleos'].HighAccMaxTp = set_combine(sets.precast.WS['Pyrrhic Kleos'].HighAcc, {
+  })
 
   sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
+    ammo="Charis Feather",
     head=gear.Adhemar_B_head,
+    body="Meghanada Cuirie +2",
     hands="Mummu Wrists +2",
     legs=gear.Lustratio_B_legs,
+    feet=gear.Herc_WSD_feet,
+    neck="Fotia Gorget",
+    waist="Fotia Belt",
+    ear1="Sherida Earring",
     ear2="Odr Earring",
+    ring1="Ilabrat Ring",
     ring2="Begrudging Ring",
+    back=gear.DNC_TP_DA_Cape,
   }) -- 50% DEX
+  sets.precast.WS['Evisceration'].MaxTp = set_combine(sets.precast.WS['Evisceration'], {
+  })
+  sets.precast.WS['Evisceration'].LowAcc = set_combine(sets.precast.WS['Evisceration'], {
+  })
+  sets.precast.WS['Evisceration'].LowAccMaxTp = set_combine(sets.precast.WS['Evisceration'].LowAcc, {
+  })
+  sets.precast.WS['Evisceration'].MidAcc = set_combine(sets.precast.WS['Evisceration'].LowAcc, {
+  })
+  sets.precast.WS['Evisceration'].MidAccMaxTp = set_combine(sets.precast.WS['Evisceration'].MidAcc, {
+  })
+  sets.precast.WS['Evisceration'].HighAcc = set_combine(sets.precast.WS['Evisceration'].MidAcc, {
+  })
+  sets.precast.WS['Evisceration'].HighAccMaxTp = set_combine(sets.precast.WS['Evisceration'].HighAcc, {
+  })
 
-  sets.precast.WS['Rudra\'s Storm'] = set_combine(sets.precast.WS, {
+  sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {
+    ammo="Charis Feather",
+    head=gear.Herc_WSD_head,
+    body="Meghanada Cuirie +2",
+    hands="Meghanada Gloves +2",
+    legs="Horos Tights +3",
+    feet=gear.Herc_WSD_feet,
+    neck="Fotia Gorget",
     waist="Grunfeld Rope",
+    ear1="Sherida Earring",
     ear2="Moonshade Earring",
+    ring1="Ilabrat Ring",
+    ring2="Karieyh Ring",
+    back=gear.DNC_TP_DA_Cape,
   }) -- 80% DEX
+  sets.precast.WS["Rudra's Storm"].MaxTp = set_combine(sets.precast.WS["Rudra's Storm"], {
+  })
+  sets.precast.WS["Rudra's Storm"].LowAcc = set_combine(sets.precast.WS["Rudra's Storm"], {
+  })
+  sets.precast.WS["Rudra's Storm"].LowAccMaxTp = set_combine(sets.precast.WS["Rudra's Storm"].LowAcc, {
+  })
+  sets.precast.WS["Rudra's Storm"].MidAcc = set_combine(sets.precast.WS["Rudra's Storm"].LowAcc, {
+  })
+  sets.precast.WS["Rudra's Storm"].MidAccMaxTp = set_combine(sets.precast.WS["Rudra's Storm"].MidAcc, {
+  })
+  sets.precast.WS["Rudra's Storm"].HighAcc = set_combine(sets.precast.WS["Rudra's Storm"].MidAcc, {
+  })
+  sets.precast.WS["Rudra's Storm"].HighAccMaxTp = set_combine(sets.precast.WS["Rudra's Storm"].HighAcc, {
+  })
 
   sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
     ammo="Seething Bomblet", --6
@@ -1066,8 +1153,26 @@ end
 
 function get_custom_wsmode(spell, action, spellMap)
   local wsmode
-  if state.OffenseMode.value == 'MidAcc' or state.OffenseMode.value == 'HighAcc' then
-    wsmode = 'Acc'
+  if state.OffenseMode.value == 'LowAcc' then
+    if player.tp == 3000 then
+      wsmode = 'LowAccMaxTp'
+    else
+      wsmode = 'LowAcc'
+    end
+  elseif state.OffenseMode.value == 'MidAcc' then
+    if player.tp == 3000 then
+      wsmode = 'MidAccMaxTp'
+    else
+      wsmode = 'MidAcc'
+    end
+  elseif state.OffenseMode.value == 'HighAcc' then
+    if player.tp == 3000 then
+      wsmode = 'HighAccMaxTp'
+    else
+      wsmode = 'HighAcc'
+    end
+  elseif player.tp == 3000 then
+    wsmode = 'MaxTp'
   end
 
   return wsmode

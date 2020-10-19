@@ -82,7 +82,7 @@ function job_setup()
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.HybridMode:options('Normal', 'DT')
-  state.WeaponskillMode:options('Normal', 'Acc')
+  state.WeaponskillMode:options('Normal', 'MaxTp', 'LowAcc', 'LowAccMaxTp', 'MidAcc', 'MidAccMaxTp', 'HighAcc', 'HighAccMaxTp')
   state.CastingMode:options('Normal', 'Resistant')
   state.IdleMode:options('Normal', 'DT')
   state.PhysicalDefenseMode:options('PDT', 'Evasion')
@@ -281,14 +281,6 @@ function init_gear_sets()
     -- waist="Fotia Belt",
   } -- default set
 
-  sets.precast.WS.Acc = set_combine(sets.precast.WS, {
-    -- ammo="Voluspa Tathlum",
-    -- hands=gear.Adhemar_A_hands,
-    -- legs=gear.Herc_WS_legs,
-    -- feet=gear.Herc_STP_feet,
-    -- ear2="Telos Earring",
-  })
-
   sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS, {
     -- ammo="Yetshila +1",
     -- body="Ken. Samue +1",
@@ -300,9 +292,19 @@ function init_gear_sets()
     -- ring1="Mummu Ring",
     -- back=gear.NIN_WS2_Cape,
   })
-
-  sets.precast.WS['Blade: Hi'].Acc = set_combine(sets.precast.WS['Blade: Hi'], {
-
+  sets.precast.WS['Blade: Hi'].MaxTp = set_combine(sets.precast.WS['Blade: Hi'], {
+  })
+  sets.precast.WS['Blade: Hi'].LowAcc = set_combine(sets.precast.WS['Blade: Hi'], {
+  })
+  sets.precast.WS['Blade: Hi'].LowAccMaxTp = set_combine(sets.precast.WS['Blade: Hi'].LowAcc, {
+  })
+  sets.precast.WS['Blade: Hi'].MidAcc = set_combine(sets.precast.WS['Blade: Hi'].LowAcc, {
+  })
+  sets.precast.WS['Blade: Hi'].MidAccMaxTp = set_combine(sets.precast.WS['Blade: Hi'].MidAcc, {
+  })
+  sets.precast.WS['Blade: Hi'].HighAcc = set_combine(sets.precast.WS['Blade: Hi'].MidAcc, {
+  })
+  sets.precast.WS['Blade: Hi'].HighAccMaxTp = set_combine(sets.precast.WS['Blade: Hi'].HighAcc, {
   })
 
   sets.precast.WS['Blade: Ten'] = set_combine(sets.precast.WS, {
@@ -310,10 +312,19 @@ function init_gear_sets()
     -- back=gear.NIN_WS2_Cape,
     -- waist="Sailfi Belt +1",
   })
-
-  sets.precast.WS['Blade: Ten'].Acc = set_combine(sets.precast.WS['Blade: Ten'], {
-    -- ammo="Voluspa Tathlum",
-    -- ear2="Telos Earring",
+  sets.precast.WS['Blade: Ten'].MaxTp = set_combine(sets.precast.WS['Blade: Ten'], {
+  })
+  sets.precast.WS['Blade: Ten'].LowAcc = set_combine(sets.precast.WS['Blade: Ten'], {
+  })
+  sets.precast.WS['Blade: Ten'].LowAccMaxTp = set_combine(sets.precast.WS['Blade: Ten'].LowAcc, {
+  })
+  sets.precast.WS['Blade: Ten'].MidAcc = set_combine(sets.precast.WS['Blade: Ten'].LowAcc, {
+  })
+  sets.precast.WS['Blade: Ten'].MidAccMaxTp = set_combine(sets.precast.WS['Blade: Ten'].MidAcc, {
+  })
+  sets.precast.WS['Blade: Ten'].HighAcc = set_combine(sets.precast.WS['Blade: Ten'].MidAcc, {
+  })
+  sets.precast.WS['Blade: Ten'].HighAccMaxTp = set_combine(sets.precast.WS['Blade: Ten'].HighAcc, {
   })
 
   sets.precast.WS['Blade: Shun'] = set_combine(sets.precast.WS, {
@@ -329,22 +340,55 @@ function init_gear_sets()
     -- ring2="Ilabrat Ring",
     -- back=gear.NIN_WS1_Cape,
   })
-
-  sets.precast.WS['Blade: Shun'].Acc = set_combine(sets.precast.WS['Blade: Shun'], {
-    -- ammo="Voluspa Tathlum",
-    -- legs="Ken. Hakama +1",
+  sets.precast.WS['Blade: Shun'].MaxTp = set_combine(sets.precast.WS['Blade: Shun'], {
+  })
+  sets.precast.WS['Blade: Shun'].LowAcc = set_combine(sets.precast.WS['Blade: Shun'], {
+  })
+  sets.precast.WS['Blade: Shun'].LowAccMaxTp = set_combine(sets.precast.WS['Blade: Shun'].LowAcc, {
+  })
+  sets.precast.WS['Blade: Shun'].MidAcc = set_combine(sets.precast.WS['Blade: Shun'].LowAcc, {
+  })
+  sets.precast.WS['Blade: Shun'].MidAccMaxTp = set_combine(sets.precast.WS['Blade: Shun'].MidAcc, {
+  })
+  sets.precast.WS['Blade: Shun'].HighAcc = set_combine(sets.precast.WS['Blade: Shun'].MidAcc, {
+  })
+  sets.precast.WS['Blade: Shun'].HighAccMaxTp = set_combine(sets.precast.WS['Blade: Shun'].HighAcc, {
   })
 
-  sets.precast.WS['Blade: Ku'] = set_combine(sets.precast.WS['Blade: Shun'], {
+  sets.precast.WS['Blade: Ku'] = set_combine(sets.precast.WS, {
 
   })
-
-  sets.precast.WS['Blade: Ku'].Acc = set_combine(sets.precast.WS['Blade: Ku'], {
-
+  sets.precast.WS['Blade: Ku'].MaxTp = set_combine(sets.precast.WS['Blade: Ku'], {
+  })
+  sets.precast.WS['Blade: Ku'].LowAcc = set_combine(sets.precast.WS['Blade: Ku'], {
+  })
+  sets.precast.WS['Blade: Ku'].LowAccMaxTp = set_combine(sets.precast.WS['Blade: Ku'].LowAcc, {
+  })
+  sets.precast.WS['Blade: Ku'].MidAcc = set_combine(sets.precast.WS['Blade: Ku'].LowAcc, {
+  })
+  sets.precast.WS['Blade: Ku'].MidAccMaxTp = set_combine(sets.precast.WS['Blade: Ku'].MidAcc, {
+  })
+  sets.precast.WS['Blade: Ku'].HighAcc = set_combine(sets.precast.WS['Blade: Ku'].MidAcc, {
+  })
+  sets.precast.WS['Blade: Ku'].HighAccMaxTp = set_combine(sets.precast.WS['Blade: Ku'].HighAcc, {
   })
 
   sets.precast.WS['Blade: Kamu'] = set_combine(sets.precast.WS, {
     -- ring2="Ilabrat Ring",
+  })
+  sets.precast.WS['Blade: Kamu'].MaxTp = set_combine(sets.precast.WS['Blade: Kamu'], {
+  })
+  sets.precast.WS['Blade: Kamu'].LowAcc = set_combine(sets.precast.WS['Blade: Kamu'], {
+  })
+  sets.precast.WS['Blade: Kamu'].LowAccMaxTp = set_combine(sets.precast.WS['Blade: Kamu'].LowAcc, {
+  })
+  sets.precast.WS['Blade: Kamu'].MidAcc = set_combine(sets.precast.WS['Blade: Kamu'].LowAcc, {
+  })
+  sets.precast.WS['Blade: Kamu'].MidAccMaxTp = set_combine(sets.precast.WS['Blade: Kamu'].MidAcc, {
+  })
+  sets.precast.WS['Blade: Kamu'].HighAcc = set_combine(sets.precast.WS['Blade: Kamu'].MidAcc, {
+  })
+  sets.precast.WS['Blade: Kamu'].HighAccMaxTp = set_combine(sets.precast.WS['Blade: Kamu'].HighAcc, {
   })
 
   sets.precast.WS['Blade: Yu'] = set_combine(sets.precast.WS, {
@@ -361,9 +405,26 @@ function init_gear_sets()
     -- back=gear.NIN_MAB_Cape,
     -- waist="Eschan Stone",
   })
+  sets.precast.WS['Blade: Yu'].MaxTp = set_combine(sets.precast.WS['Blade: Yu'], {
+  })
+  sets.precast.WS['Blade: Yu'].LowAcc = set_combine(sets.precast.WS['Blade: Yu'], {
+  })
+  sets.precast.WS['Blade: Yu'].LowAccMaxTp = set_combine(sets.precast.WS['Blade: Yu'].LowAcc, {
+  })
+  sets.precast.WS['Blade: Yu'].MidAcc = set_combine(sets.precast.WS['Blade: Yu'].LowAcc, {
+  })
+  sets.precast.WS['Blade: Yu'].MidAccMaxTp = set_combine(sets.precast.WS['Blade: Yu'].MidAcc, {
+  })
+  sets.precast.WS['Blade: Yu'].HighAcc = set_combine(sets.precast.WS['Blade: Yu'].MidAcc, {
+  })
+  sets.precast.WS['Blade: Yu'].HighAccMaxTp = set_combine(sets.precast.WS['Blade: Yu'].HighAcc, {
+  })
 
   sets.Lugra = {
     -- ear2="Lugra Earring +1"
+  }
+  sets.Obi = {
+    waist="Hachirin-no-Obi"
   }
 
   --------------------------------------
@@ -907,8 +968,26 @@ end
 
 function get_custom_wsmode(spell, action, spellMap)
   local wsmode
-  if state.OffenseMode.value == 'MidAcc' or state.OffenseMode.value == 'HighAcc' then
-    wsmode = 'Acc'
+  if state.OffenseMode.value == 'LowAcc' then
+    if player.tp == 3000 then
+      wsmode = 'LowAccMaxTp'
+    else
+      wsmode = 'LowAcc'
+    end
+  elseif state.OffenseMode.value == 'MidAcc' then
+    if player.tp == 3000 then
+      wsmode = 'MidAccMaxTp'
+    else
+      wsmode = 'MidAcc'
+    end
+  elseif state.OffenseMode.value == 'HighAcc' then
+    if player.tp == 3000 then
+      wsmode = 'HighAccMaxTp'
+    else
+      wsmode = 'HighAcc'
+    end
+  elseif player.tp == 3000 then
+    wsmode = 'MaxTp'
   end
 
   return wsmode
@@ -1037,7 +1116,9 @@ end
 
 function determine_kiting_set()
   if classes.CustomIdleGroups:contains('Adoulin') then
-    sets.Kiting = sets.Kiting.Adoulin
+    sets.Kiting = {
+      body="Councilor's Garb",
+    }
   else
     if world.time >= (17*60) or world.time <= (7*60) then
       sets.Kiting = sets.NightMovement

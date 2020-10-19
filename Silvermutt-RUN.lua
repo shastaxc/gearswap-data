@@ -98,7 +98,7 @@ function job_setup()
   blue_magic_maps.Buffs = S{'Cocoon', 'Refueling'}
 
   state.OffenseMode:options('STP', 'Normal', 'LowAcc', 'MidAcc', 'HighAcc')
-  state.WeaponskillMode:options('Normal', 'Acc')
+  state.WeaponskillMode:options('Normal', 'MaxTp', 'LowAcc', 'LowAccMaxTp', 'MidAcc', 'MidAccMaxTp', 'HighAcc', 'HighAccMaxTp')
   state.HybridMode:options('Normal', 'DT')
   state.CastingMode:options('Normal', 'Resistant')
   state.IdleMode:options('Normal', 'DT')
@@ -440,9 +440,8 @@ function init_gear_sets()
     -- waist="Fotia Belt",
   }
 
-  sets.precast.WS.Uncapped = set_combine(sets.precast.WS, {
-    -- ammo="Aurgelmir Orb +1",
-  })
+  sets.precast.WS.Safe = {
+  }
 
   -- 85% STR mod
   sets.precast.WS['Resolution'] = set_combine(sets.precast.WS, {
@@ -458,9 +457,14 @@ function init_gear_sets()
     -- neck="Futhark Torque +2",
     -- back=gear.RUN_WS1_Cape,
   })
-
-  sets.precast.WS['Resolution'].Acc = set_combine(sets.precast.WS['Resolution'], {
-    hands=gear.Adhemar_B_hands,
+  sets.precast.WS['Resolution'].Safe = set_combine(sets.precast.WS.Safe, {
+    -- head=gear.Adhemar_D_head,
+    -- body=gear.Adhemar_B_body,
+    -- feet=gear.Herc_TA_feet,
+  })
+  sets.precast.WS['Resolution'].MaxTp = set_combine(sets.precast.WS['Resolution'], {
+  })
+  sets.precast.WS['Resolution'].LowAcc = set_combine(sets.precast.WS['Resolution'], {
     legs="Meg. Chausses +2",
     -- ammo="Voluspa Tathlum",
     -- head=gear.Adhemar_B_head,
@@ -468,62 +472,81 @@ function init_gear_sets()
     -- feet=gear.Herc_STP_feet,
     -- ear2="Telos Earring",
   })
-
-  sets.precast.WS['Resolution'].Uncapped = set_combine(sets.precast.WS['Resolution'], {
-    head=gear.Adhemar_B_head,
-    legs="Meg. Chausses +2",
-    -- body=gear.Adhemar_B_body,
-    -- feet=gear.Herc_TA_feet,
-    -- ring1="Regal Ring",
+  sets.precast.WS['Resolution'].LowAccMaxTp = set_combine(sets.precast.WS['Resolution'].LowAcc, {
   })
-
-  sets.precast.WS['Resolution'].Safe = set_combine(sets.precast.WS['Resolution'], {
-    -- head=gear.Adhemar_D_head,
-    -- body=gear.Adhemar_B_body,
-    -- feet=gear.Herc_TA_feet,
+  sets.precast.WS['Resolution'].MidAcc = set_combine(sets.precast.WS['Resolution'].LowAcc, {
+  })
+  sets.precast.WS['Resolution'].MidAccMaxTp = set_combine(sets.precast.WS['Resolution'].MidAcc, {
+  })
+  sets.precast.WS['Resolution'].HighAcc = set_combine(sets.precast.WS['Resolution'].MidAcc, {
+  })
+  sets.precast.WS['Resolution'].HighAccMaxTp = set_combine(sets.precast.WS['Resolution'].HighAcc, {
   })
 
   -- 80% DEX mod
   sets.precast.WS['Dimidiation'] = set_combine(sets.precast.WS, {
     legs=gear.Lustratio_B_legs,
+    neck="Caro Necklace",
+    ear1="Odr Earring",
+    waist="Grunfeld Rope",
     -- ammo="Aurgelmir Orb +1",
     -- body=gear.Adhemar_B_body,
-    -- legs="Lustr. Subligar +1",
     -- feet="Lustra. Leggings +1",
-    -- ear1="Odr Earring",
     -- ring2="Epaminondas's Ring",
     -- back=gear.RUN_WS2_Cape,
   })
-
-  sets.precast.WS['Dimidiation'].Acc = set_combine(sets.precast.WS['Dimidiation'], {
+  sets.precast.WS['Dimidiation'].Safe = set_combine(sets.precast.WS.Safe, {
+    legs=gear.Lustratio_B_legs,
+    feet=gear.Herc_TA_feet,
+  })
+  sets.precast.WS['Dimidiation'].MaxTp = set_combine(sets.precast.WS['Dimidiation'], {
+  })
+  sets.precast.WS['Dimidiation'].LowAcc = set_combine(sets.precast.WS['Dimidiation'], {
     -- ammo="Voluspa Tathlum",
     -- body=gear.Adhemar_B_body,
     -- legs="Samnuha Tights",
     -- feet=gear.Herc_STP_feet,
     -- ear2="Mache Earring +1",
   })
-
-  sets.precast.WS['Dimidiation'].Uncapped = set_combine(sets.precast.WS['Dimidiation'], {
-    neck="Caro Necklace",
-    waist="Grunfeld Rope",
+  sets.precast.WS['Dimidiation'].LowAccMaxTp = set_combine(sets.precast.WS['Dimidiation'].LowAcc, {
   })
-
-  sets.precast.WS['Dimidiation'].Safe = set_combine(sets.precast.WS['Dimidiation'], {
-    legs=gear.Lustratio_B_legs,
-    -- legs="Lustr. Subligar +1",
-    -- feet=gear.Herc_TA_feet,
+  sets.precast.WS['Dimidiation'].MidAcc = set_combine(sets.precast.WS['Dimidiation'].LowAcc, {
+  })
+  sets.precast.WS['Dimidiation'].MidAccMaxTp = set_combine(sets.precast.WS['Dimidiation'].MidAcc, {
+  })
+  sets.precast.WS['Dimidiation'].HighAcc = set_combine(sets.precast.WS['Dimidiation'].MidAcc, {
+  })
+  sets.precast.WS['Dimidiation'].HighAccMaxTp = set_combine(sets.precast.WS['Dimidiation'].HighAcc, {
   })
 
   sets.precast.WS['Herculean Slash'] = sets.MAB
-
-  -- Magic accuracy required for Shockwave
-  sets.precast.WS['Shockwave'] = set_combine(sets.precast.WS, sets.MAB, {
-    ring2="Karieyh Ring",
-    -- ear2="Moonshade Earring",
+  sets.precast.WS['Herculean Slash'].Safe = set_combine(sets.precast.WS.Safe, {
+  })
+  sets.precast.WS['Herculean Slash'].MaxTp = set_combine(sets.precast.WS['Herculean Slash'], {
+  })
+  sets.precast.WS['Herculean Slash'].LowAcc = set_combine(sets.precast.WS['Herculean Slash'], {
+  })
+  sets.precast.WS['Herculean Slash'].LowAccMaxTp = set_combine(sets.precast.WS['Herculean Slash'].LowAcc, {
+  })
+  sets.precast.WS['Herculean Slash'].MidAcc = set_combine(sets.precast.WS['Herculean Slash'].LowAcc, {
+  })
+  sets.precast.WS['Herculean Slash'].MidAccMaxTp = set_combine(sets.precast.WS['Herculean Slash'].MidAcc, {
+  })
+  sets.precast.WS['Herculean Slash'].HighAcc = set_combine(sets.precast.WS['Herculean Slash'].MidAcc, {
+  })
+  sets.precast.WS['Herculean Slash'].HighAccMaxTp = set_combine(sets.precast.WS['Herculean Slash'].HighAcc, {
   })
 
   -- Magic accuracy required for Shockwave
-  sets.precast.WS['Shockwave'].Acc = set_combine(sets.precast.WS['Shockwave'], {
+  sets.precast.WS['Shockwave'] = set_combine(sets.precast.WS, sets.MAB, {
+    ear2="Moonshade Earring",
+    ring2="Karieyh Ring",
+  })
+  sets.precast.WS['Shockwave'].Safe = set_combine(sets.precast.WS.Safe, {
+  })
+  sets.precast.WS['Shockwave'].MaxTp = set_combine(sets.precast.WS['Shockwave'], {
+  })
+  sets.precast.WS['Shockwave'].LowAcc = set_combine(sets.precast.WS['Shockwave'], {
     ammo="Hydrocera",
     head="Ayanmo Zucchetto +2",
     body="Ayanmo Corazza +2",
@@ -534,6 +557,16 @@ function init_gear_sets()
     ring2="Ayanmo Ring",
     waist="Eschan Stone",
   })
+  sets.precast.WS['Shockwave'].LowAccMaxTp = set_combine(sets.precast.WS['Shockwave'].LowAcc, {
+  })
+  sets.precast.WS['Shockwave'].MidAcc = set_combine(sets.precast.WS['Shockwave'].LowAcc, {
+  })
+  sets.precast.WS['Shockwave'].MidAccMaxTp = set_combine(sets.precast.WS['Shockwave'].MidAcc, {
+  })
+  sets.precast.WS['Shockwave'].HighAcc = set_combine(sets.precast.WS['Shockwave'].MidAcc, {
+  })
+  sets.precast.WS['Shockwave'].HighAccMaxTp = set_combine(sets.precast.WS['Shockwave'].HighAcc, {
+  })
 
   sets.precast.WS['Fell Cleave'] = set_combine(sets.precast.WS, {
     -- feet="Lustra. Leggings +1",
@@ -541,29 +574,87 @@ function init_gear_sets()
     -- back=gear.RUN_WS1_Cape,
     -- waist="Sailfi Belt +1",
   })
-
-  sets.precast.WS['Fell Cleave'].Acc = set_combine(sets.precast.WS['Fell Cleave'], {
+  sets.precast.WS['Fell Cleave'].Safe = set_combine(sets.precast.WS.Safe, {
+    -- feet="Futhark Boots +3",
+  })
+  sets.precast.WS['Fell Cleave'].MaxTp = set_combine(sets.precast.WS['Fell Cleave'], {
+  })
+  sets.precast.WS['Fell Cleave'].LowAcc = set_combine(sets.precast.WS['Fell Cleave'], {
     -- ear2="Ishvara Earring",
     -- back=gear.RUN_WS1_Cape,
     -- waist="Sailfi Belt +1",
   })
-
-  sets.precast.WS['Fell Cleave'].Safe = set_combine(sets.precast.WS, {
-    -- feet="Futhark Boots +3",
+  sets.precast.WS['Fell Cleave'].LowAccMaxTp = set_combine(sets.precast.WS['Fell Cleave'].LowAcc, {
+  })
+  sets.precast.WS['Fell Cleave'].MidAcc = set_combine(sets.precast.WS['Fell Cleave'].LowAcc, {
+  })
+  sets.precast.WS['Fell Cleave'].MidAccMaxTp = set_combine(sets.precast.WS['Fell Cleave'].MidAcc, {
+  })
+  sets.precast.WS['Fell Cleave'].HighAcc = set_combine(sets.precast.WS['Fell Cleave'].MidAcc, {
+  })
+  sets.precast.WS['Fell Cleave'].HighAccMaxTp = set_combine(sets.precast.WS['Fell Cleave'].HighAcc, {
   })
 
   sets.precast.WS['Steel Cyclone'] = sets.precast.WS['Fell Cleave']
-  sets.precast.WS['Steel Cyclone'].Acc = sets.precast.WS['Fell Cleave'].Acc
   sets.precast.WS['Steel Cyclone'].Safe = sets.precast.WS['Fell Cleave'].Safe
+  sets.precast.WS['Steel Cyclone'].MaxTp = sets.precast.WS['Fell Cleave'].MaxTp
+  sets.precast.WS['Steel Cyclone'].LowAcc = sets.precast.WS['Fell Cleave'].LowAcc
+  sets.precast.WS['Steel Cyclone'].LowAccMaxTp = sets.precast.WS['Fell Cleave'].LowAccMaxTp
+  sets.precast.WS['Steel Cyclone'].MidAcc = sets.precast.WS['Fell Cleave'].MidAcc
+  sets.precast.WS['Steel Cyclone'].MidAccMaxTp = sets.precast.WS['Fell Cleave'].MidAccMaxTp
+  sets.precast.WS['Steel Cyclone'].HighAcc = sets.precast.WS['Fell Cleave'].HighAcc
+  sets.precast.WS['Steel Cyclone'].HighAccMaxTp = sets.precast.WS['Fell Cleave'].HighAccMaxTp
 
   sets.precast.WS['Upheaval'] = sets.precast.WS['Resolution']
-  sets.precast.WS['Upheaval'].Acc = sets.precast.WS['Resolution'].Acc
   sets.precast.WS['Upheaval'].Safe = sets.precast.WS['Resolution'].Safe
+  sets.precast.WS['Upheaval'].MaxTp = sets.precast.WS['Resolution'].MaxTp
+  sets.precast.WS['Upheaval'].LowAcc = sets.precast.WS['Resolution'].LowAcc
+  sets.precast.WS['Upheaval'].LowAccMaxTp = sets.precast.WS['Resolution'].LowAccMaxTp
+  sets.precast.WS['Upheaval'].MidAcc = sets.precast.WS['Resolution'].MidAcc
+  sets.precast.WS['Upheaval'].MidAccMaxTp = sets.precast.WS['Resolution'].MidAccMaxTp
+  sets.precast.WS['Upheaval'].HighAcc = sets.precast.WS['Resolution'].HighAcc
+  sets.precast.WS['Upheaval'].HighAccMaxTp = sets.precast.WS['Resolution'].HighAccMaxTp
 
   sets.precast.WS['Shield Break'] = sets.precast.WS['Shockwave']
+  sets.precast.WS['Shield Break'].Safe = sets.precast.WS['Shockwave'].Safe
+  sets.precast.WS['Shield Break'].MaxTp = sets.precast.WS['Shockwave'].MaxTp
+  sets.precast.WS['Shield Break'].LowAcc = sets.precast.WS['Shockwave'].LowAcc
+  sets.precast.WS['Shield Break'].LowAccMaxTp = sets.precast.WS['Shockwave'].LowAccMaxTp
+  sets.precast.WS['Shield Break'].MidAcc = sets.precast.WS['Shockwave'].MidAcc
+  sets.precast.WS['Shield Break'].MidAccMaxTp = sets.precast.WS['Shockwave'].MidAccMaxTp
+  sets.precast.WS['Shield Break'].HighAcc = sets.precast.WS['Shockwave'].HighAcc
+  sets.precast.WS['Shield Break'].HighAccMaxTp = sets.precast.WS['Shockwave'].HighAccMaxTp
+
   sets.precast.WS['Armor Break'] = sets.precast.WS['Shockwave']
+  sets.precast.WS['Armor Break'].Safe = sets.precast.WS['Shockwave'].Safe
+  sets.precast.WS['Armor Break'].MaxTp = sets.precast.WS['Shockwave'].MaxTp
+  sets.precast.WS['Armor Break'].LowAcc = sets.precast.WS['Shockwave'].LowAcc
+  sets.precast.WS['Armor Break'].LowAccMaxTp = sets.precast.WS['Shockwave'].LowAccMaxTp
+  sets.precast.WS['Armor Break'].MidAcc = sets.precast.WS['Shockwave'].MidAcc
+  sets.precast.WS['Armor Break'].MidAccMaxTp = sets.precast.WS['Shockwave'].MidAccMaxTp
+  sets.precast.WS['Armor Break'].HighAcc = sets.precast.WS['Shockwave'].HighAcc
+  sets.precast.WS['Armor Break'].HighAccMaxTp = sets.precast.WS['Shockwave'].HighAccMaxTp
+
   sets.precast.WS['Weapon Break'] = sets.precast.WS['Shockwave']
+  sets.precast.WS['Weapon Break'].Safe = sets.precast.WS['Shockwave'].Safe
+  sets.precast.WS['Weapon Break'].MaxTp = sets.precast.WS['Shockwave'].MaxTp
+  sets.precast.WS['Weapon Break'].LowAcc = sets.precast.WS['Shockwave'].LowAcc
+  sets.precast.WS['Weapon Break'].LowAccMaxTp = sets.precast.WS['Shockwave'].LowAccMaxTp
+  sets.precast.WS['Weapon Break'].MidAcc = sets.precast.WS['Shockwave'].MidAcc
+  sets.precast.WS['Weapon Break'].MidAccMaxTp = sets.precast.WS['Shockwave'].MidAccMaxTp
+  sets.precast.WS['Weapon Break'].HighAcc = sets.precast.WS['Shockwave'].HighAcc
+  sets.precast.WS['Weapon Break'].HighAccMaxTp = sets.precast.WS['Shockwave'].HighAccMaxTp
+
   sets.precast.WS['Full Break'] = sets.precast.WS['Shockwave']
+  sets.precast.WS['Full Break'].Safe = sets.precast.WS['Shockwave'].Safe
+  sets.precast.WS['Full Break'].MaxTp = sets.precast.WS['Shockwave'].MaxTp
+  sets.precast.WS['Full Break'].LowAcc = sets.precast.WS['Shockwave'].LowAcc
+  sets.precast.WS['Full Break'].LowAccMaxTp = sets.precast.WS['Shockwave'].LowAccMaxTp
+  sets.precast.WS['Full Break'].MidAcc = sets.precast.WS['Shockwave'].MidAcc
+  sets.precast.WS['Full Break'].MidAccMaxTp = sets.precast.WS['Shockwave'].MidAccMaxTp
+  sets.precast.WS['Full Break'].HighAcc = sets.precast.WS['Shockwave'].HighAcc
+  sets.precast.WS['Full Break'].HighAccMaxTp = sets.precast.WS['Shockwave'].HighAccMaxTp
+
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Midcast Sets ------------------------------------------
@@ -1386,13 +1477,32 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 function get_custom_wsmode(spell, action, spellMap)
-  if spell.type == 'WeaponSkill' then
-    if state.AttackMode.value == 'Uncapped' and state.DefenseMode.value == 'None' and state.HybridMode.value == 'Normal' then
-      return "Uncapped"
-    elseif state.DefenseMode.value ~= 'None' or state.HybridMode.value == 'DT' then
-      return "Safe"
+  local wsmode
+  if state.DefenseMode.value ~= 'None' or state.HybridMode.value == 'DT' then
+    wsmode = 'Safe'
+  elseif state.OffenseMode.value == 'LowAcc' then
+    if player.tp == 3000 then
+      wsmode = 'LowAccMaxTp'
+    else
+      wsmode = 'LowAcc'
     end
+  elseif state.OffenseMode.value == 'MidAcc' then
+    if player.tp == 3000 then
+      wsmode = 'MidAccMaxTp'
+    else
+      wsmode = 'MidAcc'
+    end
+  elseif state.OffenseMode.value == 'HighAcc' then
+    if player.tp == 3000 then
+      wsmode = 'HighAccMaxTp'
+    else
+      wsmode = 'HighAcc'
+    end
+  elseif player.tp == 3000 then
+    wsmode = 'MaxTp'
   end
+
+  return wsmode
 end
 
 -------------------------------------------------------------------------------------------------------------------

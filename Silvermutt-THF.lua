@@ -90,7 +90,7 @@ function job_setup()
   state.OffenseMode:options('STP', 'Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.HybridMode:options('Normal', 'DT')
   state.RangedMode:options('Normal', 'Acc')
-  state.WeaponskillMode:options('Normal', 'Acc', 'LowBuff')
+  state.WeaponskillMode:options('Normal', 'MaxTp', 'LowAcc', 'LowAccMaxTp', 'MidAcc', 'MidAccMaxTp', 'HighAcc', 'HighAccMaxTp')
   state.IdleMode:options('Normal', 'DT')
   state.CP = M(false, "Capacity Points Mode")
   state.WeaponLock = M(false, 'Weapon Lock')
@@ -359,9 +359,20 @@ function init_gear_sets()
     -- ear2="Telos Earring",
     -- ring2="Ilabrat Ring",
   })
-
-  sets.precast.WS['Exenterator'].Acc = set_combine(sets.precast.WS['Exenterator'], {
-    -- head="Dampening Tam",
+  sets.precast.WS['Exenterator'].MaxTp = set_combine(sets.precast.WS['Exenterator'], {
+  })
+  sets.precast.WS['Exenterator'].LowAcc = set_combine(sets.precast.WS['Exenterator'], {
+    head="Dampening Tam",
+  })
+  sets.precast.WS['Exenterator'].LowAccMaxTp = set_combine(sets.precast.WS['Exenterator'].LowAcc, {
+  })
+  sets.precast.WS['Exenterator'].MidAcc = set_combine(sets.precast.WS['Exenterator'].LowAcc, {
+  })
+  sets.precast.WS['Exenterator'].MidAccMaxTp = set_combine(sets.precast.WS['Exenterator'].MidAcc, {
+  })
+  sets.precast.WS['Exenterator'].HighAcc = set_combine(sets.precast.WS['Exenterator'].MidAcc, {
+  })
+  sets.precast.WS['Exenterator'].HighAccMaxTp = set_combine(sets.precast.WS['Exenterator'].HighAcc, {
   })
   
   -- 50% DEX
@@ -391,15 +402,26 @@ function init_gear_sets()
     -- ring2="Mummu Ring",
     -- back=gear.THF_WS2_Cape,
   })
-
-  sets.precast.WS['Evisceration'].Acc = set_combine(sets.precast.WS['Evisceration'], {
+  sets.precast.WS['Evisceration'].MaxTp = set_combine(sets.precast.WS['Evisceration'], {
+  })
+  sets.precast.WS['Evisceration'].LowAcc = set_combine(sets.precast.WS['Evisceration'], {
     -- ammo="Voluspa Tathlum",
     -- legs="Pill. Culottes +3",
     -- ring1="Regal Ring",
   })
+  sets.precast.WS['Evisceration'].LowAccMaxTp = set_combine(sets.precast.WS['Evisceration'].LowAcc, {
+  })
+  sets.precast.WS['Evisceration'].MidAcc = set_combine(sets.precast.WS['Evisceration'].LowAcc, {
+  })
+  sets.precast.WS['Evisceration'].MidAccMaxTp = set_combine(sets.precast.WS['Evisceration'].MidAcc, {
+  })
+  sets.precast.WS['Evisceration'].HighAcc = set_combine(sets.precast.WS['Evisceration'].MidAcc, {
+  })
+  sets.precast.WS['Evisceration'].HighAccMaxTp = set_combine(sets.precast.WS['Evisceration'].HighAcc, {
+  })
 
   -- 80% DEX
-  sets.precast.WS['Rudra\'s Storm'] = set_combine(sets.precast.WS, {
+  sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {
     ammo="Falcon Eye",
     head=gear.Herc_WSD_head,
     body="Meghanada Cuirie +2",
@@ -418,16 +440,32 @@ function init_gear_sets()
     -- ear1="Sherida Earring",
     -- waist="Artful Belt +1",
   })
-
-  sets.precast.WS['Rudra\'s Storm'].Acc = set_combine(sets.precast.WS['Rudra\'s Storm'], {
+  sets.precast.WS["Rudra's Storm"].MaxTp = set_combine(sets.precast.WS["Rudra's Storm"], {
+  })
+  sets.precast.WS["Rudra's Storm"].LowAcc = set_combine(sets.precast.WS["Rudra's Storm"], {
     -- ammo="Voluspa Tathlum",
     -- feet=gear.Herc_STP_feet,
     -- ear2="Telos Earring",
     -- waist="Grunfeld Rope",
   })
+  sets.precast.WS["Rudra's Storm"].LowAccMaxTp = set_combine(sets.precast.WS["Rudra's Storm"].LowAcc, {
+  })
+  sets.precast.WS["Rudra's Storm"].MidAcc = set_combine(sets.precast.WS["Rudra's Storm"].LowAcc, {
+  })
+  sets.precast.WS["Rudra's Storm"].MidAccMaxTp = set_combine(sets.precast.WS["Rudra's Storm"].MidAcc, {
+  })
+  sets.precast.WS["Rudra's Storm"].HighAcc = set_combine(sets.precast.WS["Rudra's Storm"].MidAcc, {
+  })
+  sets.precast.WS["Rudra's Storm"].HighAccMaxTp = set_combine(sets.precast.WS["Rudra's Storm"].HighAcc, {
+  })
 
-  sets.precast.WS['Mandalic Stab'] = sets.precast.WS["Rudra's Storm"]
-  sets.precast.WS['Mandalic Stab'].Acc = sets.precast.WS["Rudra's Storm"].Acc
+  sets.precast.WS['Mandalic Stab'].MaxTp = sets.precast.WS["Rudra's Storm"].MaxTp
+  sets.precast.WS['Mandalic Stab'].LowAcc = sets.precast.WS["Rudra's Storm"].LowAcc
+  sets.precast.WS['Mandalic Stab'].LowAccMaxTp = sets.precast.WS["Rudra's Storm"].LowAccMaxTp
+  sets.precast.WS['Mandalic Stab'].MidAcc = sets.precast.WS["Rudra's Storm"].MidAcc
+  sets.precast.WS['Mandalic Stab'].MidAccMaxTp = sets.precast.WS["Rudra's Storm"].MidAccMaxTp
+  sets.precast.WS['Mandalic Stab'].HighAcc = sets.precast.WS["Rudra's Storm"].HighAcc
+  sets.precast.WS['Mandalic Stab'].HighAccMaxTp = sets.precast.WS["Rudra's Storm"].HighAccMaxTp
 
   -- 40% DEX / 40% INT + MAB
   sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
@@ -1138,16 +1176,27 @@ end
 
 function get_custom_wsmode(spell, action, spellMap)
   local wsmode
-  if state.OffenseMode.value == 'MidAcc' or state.OffenseMode.value == 'HighAcc' then
-    wsmode = 'Acc'
+  if state.OffenseMode.value == 'LowAcc' then
+    if player.tp == 3000 then
+      wsmode = 'LowAccMaxTp'
+    else
+      wsmode = 'LowAcc'
+    end
+  elseif state.OffenseMode.value == 'MidAcc' then
+    if player.tp == 3000 then
+      wsmode = 'MidAccMaxTp'
+    else
+      wsmode = 'MidAcc'
+    end
+  elseif state.OffenseMode.value == 'HighAcc' then
+    if player.tp == 3000 then
+      wsmode = 'HighAccMaxTp'
+    else
+      wsmode = 'HighAcc'
+    end
+  elseif player.tp == 3000 then
+    wsmode = 'MaxTp'
   end
-
-  --if state.Buff['Sneak Attack'] then
-  --  wsmode = 'SA'
-  --end
-  --if state.Buff['Trick Attack'] then
-  --  wsmode = (wsmode or '') .. 'TA'
-  --end
 
   return wsmode
 end
