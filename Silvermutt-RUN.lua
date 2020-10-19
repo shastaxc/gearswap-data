@@ -698,7 +698,7 @@ function init_gear_sets()
     body="Meghanada Cuirie +2",
     hands="Meghanada Gloves +2",
     legs="Meghanada Chausses +2",
-    feet="Meghanada Jambeaux +1",
+    feet="Meghanada Jambeaux +2",
     neck="Lissome Necklace",
     ear1="Infused Earring",
   }
