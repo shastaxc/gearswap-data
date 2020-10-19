@@ -420,8 +420,8 @@ function init_gear_sets()
     feet=gear.Herc_WSD_feet,
     neck="Fotia Gorget",
     waist="Fotia Belt",
-    ear1="Brutal Earring",
-    ear2="Sherida Earring",
+    ear1="Sherida Earring",
+    ear2="Moonshade Earring",
     ring1="Karieyh Ring",
     ring2="Ilabrat Ring",
     back=gear.RUN_WS2_Cape,
@@ -446,9 +446,9 @@ function init_gear_sets()
 
   -- 85% STR mod
   sets.precast.WS['Resolution'] = set_combine(sets.precast.WS, {
+    ammo="Seething Bomblet",
     head=gear.Adhemar_B_head,
     hands=gear.Adhemar_B_hands,
-    legs=gear.Samnuha_legs,
     neck="Caro Necklace",
     ring1="Epona's Ring",
     -- ammo="Aurgelmir Orb +1",
@@ -485,7 +485,7 @@ function init_gear_sets()
 
   -- 80% DEX mod
   sets.precast.WS['Dimidiation'] = set_combine(sets.precast.WS, {
-    legs="Lustr. Subligar +1",
+    legs=gear.Lustratio_B_legs,
     -- ammo="Aurgelmir Orb +1",
     -- body=gear.Adhemar_B_body,
     -- legs="Lustr. Subligar +1",
@@ -509,7 +509,7 @@ function init_gear_sets()
   })
 
   sets.precast.WS['Dimidiation'].Safe = set_combine(sets.precast.WS['Dimidiation'], {
-    legs="Lustr. Subligar +1",
+    legs=gear.Lustratio_B_legs,
     -- legs="Lustr. Subligar +1",
     -- feet=gear.Herc_TA_feet,
   })

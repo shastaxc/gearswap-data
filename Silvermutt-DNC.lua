@@ -381,8 +381,8 @@ function init_gear_sets()
     feet=gear.Herc_WSD_feet,
     neck="Fotia Gorget",
     waist="Fotia Belt",
-    ear1="Brutal Earring",
-    ear2="Sherida Earring",
+    ear1="Sherida Earring",
+    ear2="Brutal Earring",
     ring1="Ilabrat Ring",
     ring2="Karieyh Ring",
     back=gear.DNC_TP_DA_Cape,
@@ -398,29 +398,33 @@ function init_gear_sets()
     -- ear2="Telos Earring",
   })
 
-  -- For Crit Dmg
+  -- For Crit Dmg, not crit rate
   sets.precast.WS.Critical = {
     head="Maculele Tiara",
     body="Meg. Cuirie +2",
   }
 
   sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS, {
+    body="Horos Casaque +3",
+    legs="Meghanada Chausses +2",
   }) -- AGI
 
   sets.precast.WS['Pyrrhic Kleos'] = set_combine(sets.precast.WS, {
     hands=gear.Adhemar_B_hands,
-    ring1="Rajas Ring",
-    ring2="Ilabrat Ring",
+    ring2="Epona's Ring",
   }) -- 40% STR / 40% DEX
 
   sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
+    head=gear.Adhemar_B_head,
     hands="Mummu Wrists +2",
     legs=gear.Lustratio_B_legs,
+    ear2="Odr Earring",
     ring2="Begrudging Ring",
   }) -- 50% DEX
 
   sets.precast.WS['Rudra\'s Storm'] = set_combine(sets.precast.WS, {
     waist="Grunfeld Rope",
+    ear2="Moonshade Earring",
   }) -- 80% DEX
 
   sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
@@ -432,8 +436,9 @@ function init_gear_sets()
     feet=gear.Herc_WSD_feet, --10
     neck="Baetyl Pendant", --13
     ear1="Friomisi Earring", --10
-    ear2="Novio Earring", --7
+    ear2="Moonshade Earring",
     ring1="Shiva Ring +1", --3
+    ring2="Karieyh Ring",
     waist="Eschan Stone", --7
   }) -- 40% DEX / 40% INT + MAB
 

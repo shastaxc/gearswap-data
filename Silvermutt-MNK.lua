@@ -262,7 +262,7 @@ function init_gear_sets()
     feet=gear.Herc_WSD_feet,
     neck="Monk's Nodowa +2",
     ear1="Sherida Earring",
-    ear2="Brutal Earring",
+    ear2="Odr Earring",
     ring1="Rajas Ring",
     ring2="Begrudging Ring",
     back=gear.MNK_TP_Cape,
@@ -278,11 +278,10 @@ function init_gear_sets()
     neck="Fotia Gorget",
   })
   sets.precast.WS["Victory Smite"].MidAcc = set_combine(sets.precast.WS["Victory Smite"].LowAcc, {
-    ear2="Telos Earring",
+    ammo="Falcon Eye",
     -- head="Rao Kabuto +1",
   })
   sets.precast.WS["Victory Smite"].HighAcc = set_combine(sets.precast.WS["Victory Smite"].MidAcc, {
-    ammo="Falcon Eye",
     -- head="Ken. Jinpachi +1",
     -- legs="Ken. Hakama +1",
     -- feet="Ken. Sune-Ate +1",
@@ -336,7 +335,7 @@ function init_gear_sets()
     feet=gear.Herc_WSD_feet,
     neck="Caro Necklace",
     ear1="Sherida Earring",
-    ear2="Odnowa Earring +1",
+    ear2="Moonshade Earring",
     ring1="Rajas Ring",
     ring2="Karieyh Ring",
     back=gear.MNK_TP_Cape,
@@ -346,7 +345,6 @@ function init_gear_sets()
     neck="Fotia Gorget",
   })
   sets.precast.WS["Asuran Fists"].MidAcc = set_combine(sets.precast.WS["Asuran Fists"].LowAcc, {
-    ear2="Telos Earring",
     hands=gear.Ryuo_A_hands,
   })
   sets.precast.WS["Asuran Fists"].HighAcc = set_combine(sets.precast.WS["Asuran Fists"].MidAcc, {
@@ -364,7 +362,7 @@ function init_gear_sets()
     feet=gear.Herc_WSD_feet,
     neck="Fotia Gorget",
     ear1="Sherida Earring",
-    ear2="Odnowa Earring +1",
+    ear2="Moonshade Earring",
     ring1="Rajas Ring",
     ring2="Begrudging Ring",
     back=gear.MNK_TP_Cape,
@@ -381,16 +379,20 @@ function init_gear_sets()
     -- feet="Ken. Sune-Ate +1",
   })
   sets.precast.WS["Ascetic's Fury"].MidAcc = set_combine(sets.precast.WS["Ascetic's Fury"].LowAcc, {
-    ear2="Telos Earring",
+    ammo="Falcon Eye",
   })
   sets.precast.WS["Ascetic's Fury"].HighAcc = set_combine(sets.precast.WS["Ascetic's Fury"].MidAcc, {
-    ammo="Falcon Eye",
     -- ear1="Mache Earring +1",
     -- head="Ken. Jinpachi +1",
   })
 
   -- Raging Fists: 30% STR / 30% DEX
   sets.precast.WS['Raging Fists'] = set_combine(sets.precast.WS, {
+    ammo="Knobkierrie",
+    hands=gear.Adhemar_B_hands,
+    feet=gear.Herc_TA_feet,
+    ear1="Sherida Earring",
+    ear2="Moonshade Earring",
 
   })
   sets.precast.WS["Raging Fists"].LowAcc = set_combine(sets.precast.WS["Raging Fists"], {
@@ -413,7 +415,7 @@ function init_gear_sets()
     feet=gear.Herc_WSD_feet,
     neck="Fotia Gorget",
     ear1="Sherida Earring",
-    ear2="Odnowa Earring +1",
+    ear2="Moonshade Earring",
     ring1="Epona's Ring",
     ring2="Karieyh Ring",
     back=gear.MNK_TP_Cape,
