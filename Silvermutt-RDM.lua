@@ -464,7 +464,7 @@ function init_gear_sets()
 
   sets.midcast.Cure = {
     head="Ayanmo Zucchetto +2",
-    body="Ayanmo Corazza +1",
+    body="Ayanmo Corazza +2",
     hands="Ayanmo Manopolas +1",
     legs="Carmine Cuisses +1",
     feet="Ayanmo Gambieras +1",

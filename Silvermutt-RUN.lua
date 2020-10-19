@@ -365,7 +365,7 @@ function init_gear_sets()
     ring2="Prolix Ring", --2
     -- ammo="Sapience Orb", --2
     -- head="Rune. Bandeau +3", --14
-    -- legs="Aya. Cosciales +2", --6
+    -- legs="Ayanmo Cosciales +2", --6
     -- feet="Carmine Greaves +1", --8
     -- neck="Orunmila's Torque", --5
     -- ear1="Tuisto Earring",
@@ -526,7 +526,7 @@ function init_gear_sets()
   sets.precast.WS['Shockwave'].Acc = set_combine(sets.precast.WS['Shockwave'], {
     ammo="Hydrocera",
     head="Ayanmo Zucchetto +2",
-    body="Ayanmo Corazza +1",
+    body="Ayanmo Corazza +2",
     hands="Ayanmo Manopolas +1",
     legs="Ayanmo Cosciales +1",
     feet="Ayanmo Gambieras +1",
@@ -586,7 +586,7 @@ function init_gear_sets()
 
   sets.midcast.Cure = {
     ammo="Staunch Tathlum",
-    legs="Aya. Cosciales +2",
+    legs="Ayanmo Cosciales +2",
     ring2="Defending Ring",
     waist="Gishdubar Sash", --(10)
     -- sub="Mensch Strap +1",
@@ -594,7 +594,7 @@ function init_gear_sets()
     -- head="Fu. Bandeau +3",
     -- body="Vrikodara Jupon", -- 13
     -- hands="Buremte Gloves", --(13)
-    -- legs="Aya. Cosciales +2",
+    -- legs="Ayanmo Cosciales +2",
     -- feet="Skaoi Boots", --7
     -- neck="Phalaina Locket", -- 4(4)
     -- ear1="Roundel Earring", -- 5
@@ -806,7 +806,7 @@ function init_gear_sets()
   sets.defense.MDT = {
     sub="Refined Grip +1", --3/3
     ammo="Staunch Tathlum", --2/2
-    head="Aya. Zucchetto +2", --3/3
+    head="Ayanmo Zucchetto +2", --3/3
     body="Runeist's Coat +3",
     hands="Turms Mittens",
     legs="Erilaz Leg Guards +1", --7/0
@@ -822,7 +822,7 @@ function init_gear_sets()
 
   sets.defense.HP = {
     ammo="Staunch Tathlum",
-    head="Aya. Zucchetto +2",
+    head="Ayanmo Zucchetto +2",
     body="Runeist's Coat +3",
     hands="Turms Mittens",
     legs="Erilaz Leg Guards +1", --7/0
@@ -857,7 +857,7 @@ function init_gear_sets()
     sub="Tzacab Grip",
     ammo="Seething Bomblet",
     head=gear.Adhemar_B_head,
-    body="Ayanmo Corazza +1",
+    body="Ayanmo Corazza +2",
     hands=gear.Adhemar_B_hands,
     legs="Meghanada Chausses +2",
     feet=gear.Herc_TA_feet,
@@ -899,7 +899,7 @@ function init_gear_sets()
   })
 
   sets.engaged.STP = set_combine(sets.engaged, {
-    head="Aya. Zucchetto +2",
+    head="Ayanmo Zucchetto +2",
     -- body="Ashera Harness",
     -- feet="Carmine Greaves +1",
     -- ear2="Dedition Earring",
@@ -909,7 +909,7 @@ function init_gear_sets()
   })
 
   sets.engaged.Aftermath = {
-    head="Aya. Zucchetto +2",
+    head="Ayanmo Zucchetto +2",
     -- body="Ashera Harness",
     -- neck="Anu Torque",
     -- ear1="Sherida Earring",
@@ -928,7 +928,7 @@ function init_gear_sets()
   sets.Hybrid = {
     sub="Refined Grip +1", --3/3
     ammo="Staunch Tathlum", --2/2
-    head="Aya. Zucchetto +2", --3/3
+    head="Ayanmo Zucchetto +2", --3/3
     body="Meghanada Cuirie +2", --8/0
     legs="Carmine Cuisses +1", --6/0
     neck="Futhark Torque +1", --4/4
@@ -948,11 +948,11 @@ function init_gear_sets()
   sets.engaged.STP.DT = set_combine(sets.engaged.STP, sets.Hybrid)
 
   sets.engaged.Aftermath.DT = {
-    head="Aya. Zucchetto +2",
+    head="Ayanmo Zucchetto +2",
     feet="Carmine Greaves +1",
     ear1="Sherida Earring",
     ring2="Defending Ring",
-    -- head="Aya. Zucchetto +2",
+    -- head="Ayanmo Zucchetto +2",
     -- feet="Carmine Greaves +1",
     -- ear1="Sherida Earring",
     -- ear2="Telos Earring",
@@ -965,8 +965,8 @@ function init_gear_sets()
     legs="Meghanada Chausses +2",
     ring2="Defending Ring",
     waist="Sailfi Belt +1",
-    head="Aya. Zucchetto +2",
-    -- head="Aya. Zucchetto +2",
+    head="Ayanmo Zucchetto +2",
+    -- head="Ayanmo Zucchetto +2",
     -- body="Ashera Harness",
     -- hands=gear.Adhemar_A_hands,
     -- legs="Meghanada Chausses +2",
