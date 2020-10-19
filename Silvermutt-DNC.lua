@@ -868,7 +868,7 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.engaged.Hybrid = {
-    neck="Twilight Torque",
+    neck="Twilight Torque", --5/5
     ring1=gear.Dark_Ring, --5/4
     ring2="Defending Ring", --10/10
     -- head=gear.Adhemar_D_head, --4/0
