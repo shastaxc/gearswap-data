@@ -291,7 +291,7 @@ function init_gear_sets()
   sets.precast.WS['Shijin Spiral'] = set_combine(sets.precast.WS, {
     ammo="Falcon Eye",
     head=gear.Herc_WSD_head,
-    body="Mummu Jacket +1",
+    body="Mummu Jacket +2",
     hands=gear.Adhemar_B_hands,
     legs="Hizamaru Hizayoroi +1",
     feet=gear.Herc_WSD_feet,

@@ -489,7 +489,7 @@ function init_gear_sets()
   sets.idle = {
     ammo="Seething Bomblet",
     head=gear.Adhemar_B_head,
-    body="Mummu Jacket +1",
+    body="Mummu Jacket +2",
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha,
     feet=gear.Herc_TA_feet,
@@ -558,7 +558,7 @@ function init_gear_sets()
   sets.engaged = {
     ammo="Seething Bomblet",
     head=gear.Adhemar_B_head,
-    body="Mummu Jacket +1",
+    body="Mummu Jacket +2",
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha,
     feet=gear.Herc_TA_feet,
@@ -624,7 +624,7 @@ function init_gear_sets()
   sets.engaged.DW = {
     ammo="Seething Bomblet",
     head=gear.Adhemar_B_head,
-    body="Mummu Jacket +1",
+    body="Mummu Jacket +2",
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha,
     feet=gear.Herc_TA_feet,
@@ -687,7 +687,7 @@ function init_gear_sets()
   sets.engaged.DW.LowHaste = {
     ammo="Seething Bomblet",
     head=gear.Adhemar_B_head,
-    body="Mummu Jacket +1",
+    body="Mummu Jacket +2",
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha,
     feet=gear.Herc_TA_feet,
@@ -749,7 +749,7 @@ function init_gear_sets()
   sets.engaged.DW.MidHaste = {
     ammo="Seething Bomblet",
     head=gear.Adhemar_B_head,
-    body="Mummu Jacket +1",
+    body="Mummu Jacket +2",
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha,
     feet=gear.Herc_TA_feet,
@@ -812,7 +812,7 @@ function init_gear_sets()
   sets.engaged.DW.HighHaste = {
     ammo="Seething Bomblet",
     head=gear.Adhemar_B_head,
-    body="Mummu Jacket +1",
+    body="Mummu Jacket +2",
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha,
     feet=gear.Herc_TA_feet,
@@ -875,7 +875,7 @@ function init_gear_sets()
   sets.engaged.DW.MaxHaste = {
     ammo="Seething Bomblet",
     head=gear.Adhemar_B_head,
-    body="Mummu Jacket +1",
+    body="Mummu Jacket +2",
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha,
     feet=gear.Herc_TA_feet,

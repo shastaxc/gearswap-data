@@ -292,7 +292,7 @@ function init_gear_sets()
   sets.precast.Step = {
     ammo="Charis Feather",
     head="Maxixi Tiara +3",
-    body="Mummu Jacket +1",
+    body="Mummu Jacket +2",
     hands="Mummu Wrists +2",
     legs="Meghanada Chausses +2",
     feet="Horos Toe Shoes +3",
