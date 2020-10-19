@@ -573,7 +573,7 @@ function init_gear_sets()
     head=gear.Adhemar_B_head,
     body="Horos Casaque +3",
     hands=gear.Adhemar_B_hands,
-    legs=gear.Samnuha,
+    legs=gear.Samnuha_legs,
     feet="Horos Toe Shoes +3",
     neck="Anu Torque",
     waist="Windbuffet Belt +1",
@@ -628,7 +628,7 @@ function init_gear_sets()
     head="Maxixi Tiara +3",
     body="Horos Casaque +3",
     hands=gear.Adhemar_B_hands,
-    legs=gear.Samnuha,
+    legs=gear.Samnuha_legs,
     feet="Horos Toe Shoes +3",
     neck="Anu Torque",
     waist="Windbuffet Belt +1",
@@ -682,7 +682,7 @@ function init_gear_sets()
     head="Maxixi Tiara +3", -- 8%
     body="Horos Casaque +3",
     hands=gear.Adhemar_B_hands,
-    legs=gear.Samnuha,
+    legs=gear.Samnuha_legs,
     feet="Horos Toe Shoes +3",
     neck="Charis Necklace", -- 3%
     waist="Windbuffet Belt +1",
@@ -734,7 +734,7 @@ function init_gear_sets()
     head="Maxixi Tiara +3", -- 8%
     body="Horos Casaque +3",
     hands=gear.Adhemar_B_hands,
-    legs=gear.Samnuha,
+    legs=gear.Samnuha_legs,
     feet="Horos Toe Shoes +3",
     neck="Charis Necklace", -- 3%
     waist="Windbuffet Belt +1",
@@ -787,7 +787,7 @@ function init_gear_sets()
     head="Maxixi Tiara +3", -- 8%
     body="Horos Casaque +3",
     hands=gear.Adhemar_B_hands,
-    legs=gear.Samnuha,
+    legs=gear.Samnuha_legs,
     feet="Horos Toe Shoes +3",
     neck="Anu Torque",
     waist="Windbuffet Belt +1",
@@ -842,7 +842,7 @@ function init_gear_sets()
     head="Maxixi Tiara +3", -- 8%
     body="Horos Casaque +3",
     hands=gear.Adhemar_B_hands,
-    legs=gear.Samnuha,
+    legs=gear.Samnuha_legs,
     feet="Horos Toe Shoes +3",
     neck="Anu Torque",
     waist="Windbuffet Belt +1",
@@ -899,7 +899,7 @@ function init_gear_sets()
     head=gear.Adhemar_B_head,
     body="Horos Casaque +3",
     hands=gear.Adhemar_B_hands,
-    legs=gear.Samnuha,
+    legs=gear.Samnuha_legs,
     feet="Horos Toe Shoes +3",
     neck="Anu Torque",
     waist="Windbuffet Belt +1",
