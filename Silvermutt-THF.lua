@@ -158,7 +158,7 @@ function job_file_unload()
   send_command('unbind @a')
   send_command('unbind @c')
   send_command('unbind @r')
-  
+
   send_command('unbind ^numlock')
   send_command('unbind ^numpad/')
   send_command('unbind ^numpad*')
@@ -462,6 +462,7 @@ function init_gear_sets()
   sets.precast.WS["Rudra's Storm"].HighAccMaxTp = set_combine(sets.precast.WS["Rudra's Storm"].HighAcc, {
   })
 
+  sets.precast.WS['Mandalic Stab'] = sets.precast.WS["Rudra's Storm"]
   sets.precast.WS['Mandalic Stab'].MaxTp = sets.precast.WS["Rudra's Storm"].MaxTp
   sets.precast.WS['Mandalic Stab'].LowAcc = sets.precast.WS["Rudra's Storm"].LowAcc
   sets.precast.WS['Mandalic Stab'].LowAccMaxTp = sets.precast.WS["Rudra's Storm"].LowAccMaxTp
