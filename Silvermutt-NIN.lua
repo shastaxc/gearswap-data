@@ -825,8 +825,7 @@ function init_gear_sets()
     -- neck="Ygnas's Resolve +1"
   }
 
-  sets.Kiting = {}
-  sets.Kiting.Adoulin = {
+  sets.Adoulin = {
     body="Councilor's Garb",
   }
   sets.DayMovement = {
@@ -835,6 +834,7 @@ function init_gear_sets()
   sets.NightMovement = {
     -- feet="Hachiya Kyahan +3"
   }
+  sets.Kiting = {}
   determine_kiting_set()
 end
 
@@ -1116,9 +1116,7 @@ end
 
 function determine_kiting_set()
   if classes.CustomIdleGroups:contains('Adoulin') then
-    sets.Kiting = {
-      body="Councilor's Garb",
-    }
+    sets.Kiting = sets.Adoulin
   else
     if world.time >= (17*60) or world.time <= (7*60) then
       sets.Kiting = sets.NightMovement
