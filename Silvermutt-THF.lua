@@ -208,10 +208,10 @@ function init_gear_sets()
   sets.TreasureHunter = {
     hands="Plunderer's Armlets +1", --3
     feet="Skulk. Poulaines +1", --3
+    waist="Chaac Belt", --1
     -- head=gear.Herc_TH_head, --2
     -- hands="Plun. Armlets +3", --4
     -- feet="Skulk. Poulaines +1", --3
-    -- waist="Chaac Belt", --1
   }
 
   sets.buff['Sneak Attack'] = {}
@@ -554,7 +554,13 @@ function init_gear_sets()
 
   sets.DT = {
     ammo="Staunch Tathlum", --2/2
+    head="Meghanada Visor +2", --5/0
+    body="Meghanada Cuirie +2", --8/0
+    hands="Volte Bracers",
+    legs="Meghanada Chausses +2", --6/0
+    feet="Turms Leggings",
     neck="Twilight Torque", --5/5
+    ear2="Odnowa Earring +1", --0/2
     ring1=gear.Dark_Ring, --5/4
     ring2="Defending Ring", --10/10
     -- ammo="Staunch Tathlum +1", --3/3
@@ -981,7 +987,13 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.engaged.Hybrid = {
+    head="Meghanada Visor +2", --5/0
+    body="Meghanada Cuirie +2", --8/0
+    hands="Volte Bracers",
+    legs="Meghanada Chausses +2", --6/0
+    feet="Turms Leggings",
     neck="Twilight Torque", --5/5
+    ear2="Odnowa Earring +1", --0/2
     ring1=gear.Dark_Ring, --5/4
     ring2="Defending Ring", --10/10
     -- head="Malignance Chapeau", --6/6

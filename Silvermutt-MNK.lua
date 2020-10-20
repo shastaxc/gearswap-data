@@ -43,13 +43,9 @@ end
 
 -- Executes on first load and main job change
 function job_setup()
-  lockstyleset = 5
+  include('Mote-TreasureHunter')
 
-  -- For th_action_check():
-  -- JA IDs for actions that always have TH: Provoke, Animated Flourish
-  info.default_ja_ids = S{35, 204}
-  -- Unblinkable JA IDs for actions that always have TH: Quick/Box/Stutter Step, Desperate/Violent Flourish
-  info.default_u_ja_ids = S{201, 202, 203, 205, 207}
+  lockstyleset = 5
 
   state.Buff.Footwork = buffactive.Footwork or false
   state.Buff.Impetus = buffactive.Impetus or false
@@ -77,9 +73,10 @@ function job_setup()
   send_command('bind ^pagedown gs c toyweapon cycleback')
   send_command('bind !pagedown gs c toyweapon reset')
 
+  send_command('bind ^` gs c cycle treasuremode')
   send_command('bind @c gs c toggle CP')
 
-  send_command('bind ^` input /ja "Impetus" <me>')
+  send_command('bind !q input /ja "Impetus" <me>')
   send_command('bind !` input /ja "Chakra" <me>')
   send_command('bind ^numpad+ input /ja "Boost" <me>')
 end
@@ -123,8 +120,9 @@ function job_file_unload()
   send_command('unbind !pagedown')
 
   send_command('unbind ^`')
-  send_command('unbind !`')
   send_command('unbind @c')
+  send_command('unbind !q')
+  send_command('unbind !`')
   send_command('unbind !w')
   send_command('unbind ^numlock')
   send_command('unbind ^numpad/')
@@ -867,6 +865,11 @@ function init_gear_sets()
   sets.Reive = {
     neck="Ygnas's Resolve +1"
   }
+  sets.TreasureHunter = {
+    hands="Volte Bracers", --1
+    waist="Chaac Belt", --1
+    -- head=gear.Herc_TH_head, --2
+  }
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -1029,6 +1032,9 @@ function display_current_job_state(eventArgs)
   local toy_msg = state.ToyWeapons.current
 
   local msg = ''
+  if state.TreasureMode.value ~= 'None' then
+    msg = msg .. ' TH: ' ..state.TreasureMode.value.. ' |'
+  end
   if state.Kiting.value then
     msg = msg .. ' Kiting: On |'
   end
@@ -1267,6 +1273,7 @@ end
 function set_lockstyle()
   send_command('wait 2; input /lockstyleset ' .. lockstyleset)
 end
+
 
 -------------------------------------------------------------------------------------------------------------------
 -- Custom event hooks.
