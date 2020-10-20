@@ -434,7 +434,7 @@ function init_gear_sets()
   sets.precast.WS['Death Blossom'].MidAcc = sets.precast.WS['Savage Blade'].MidAcc
   sets.precast.WS['Death Blossom'].MidAccMaxTp = sets.precast.WS['Savage Blade'].MidAccMaxTp
   sets.precast.WS['Death Blossom'].HighAcc = sets.precast.WS['Savage Blade'].HighAcc
-  sets.precast.WS['Death Blossom'].HighAccMaxTp = sets.precast.WS['CSavage Blade'].HighAccMaxTp
+  sets.precast.WS['Death Blossom'].HighAccMaxTp = sets.precast.WS['Savage Blade'].HighAccMaxTp
 
   sets.precast.WS['Requiescat'] = set_combine(sets.precast.WS, {
     -- ear2="Sherida Earring",
