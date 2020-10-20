@@ -1528,10 +1528,12 @@ function update_idle_groups()
     elseif isRegening==false and player.hpp < 85 then
       classes.CustomIdleGroups:append('Regen')
     end
-    if isRefreshing==true and player.mpp < 100 then
-      classes.CustomIdleGroups:append('Refresh')
-    elseif isRefreshing==false and player.mpp < 85 then
-      classes.CustomIdleGroups:append('Refresh')
+    if mp_jobs:contains(player.main_job) or mp_jobs:contains(player.sub_job) then
+      if isRefreshing==true and player.mpp < 100 then
+        classes.CustomIdleGroups:append('Refresh')
+      elseif isRefreshing==false and player.mpp < 85 then
+        classes.CustomIdleGroups:append('Refresh')
+      end
     end
     if world.zone == 'Eastern Adoulin' or world.zone == 'Western Adoulin' then
       classes.CustomIdleGroups:append('Adoulin')
