@@ -795,7 +795,7 @@ function init_gear_sets()
     hands="Meghanada Gloves +2",
     legs="Meghanada Chausses +2",
     feet="Meghanada Jambeaux +2",
-    neck="Lissome Necklace",
+    neck="Bathy Choker +1",
     ear1="Infused Earring",
   }
   sets.latent_refresh = {

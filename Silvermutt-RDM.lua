@@ -957,7 +957,7 @@ function init_gear_sets()
     ring2="Karieyh Ring",
   }
   sets.latent_regen = {
-    neck="Lissome Necklace",
+    neck="Bathy Choker +1",
     ear1="Infused Earring",
   }
   sets.latent_refresh = {
@@ -973,7 +973,7 @@ function init_gear_sets()
     hands="Volte Bracers",
     legs="Carmine Cuisses +1",
     feet="Ayanmo Gambieras +1",
-    neck="Lissome Necklace",
+    neck="Bathy Choker +1",
     ear1="Infused Earring",
     ear2="Ethereal Earring",
     ring1=gear.Dark_Ring,

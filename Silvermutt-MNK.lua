@@ -576,7 +576,7 @@ function init_gear_sets()
     ring2="Karieyh Ring",
   }
   sets.latent_regen = {
-    neck="Lissome Necklace",
+    neck="Bathy Choker +1",
     ear1="Infused Earring",
   }
   sets.latent_refresh = {
