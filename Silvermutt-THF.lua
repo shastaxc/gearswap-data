@@ -560,7 +560,7 @@ function init_gear_sets()
     legs="Meghanada Chausses +2", --6/0
     feet="Turms Leggings",
     neck="Twilight Torque", --5/5
-    ear2="Odnowa Earring +1", --0/2
+    ear2="Odnowa Earring +1", --1/3
     ring1=gear.Dark_Ring, --5/4
     ring2="Defending Ring", --10/10
     -- ammo="Staunch Tathlum +1", --3/3
@@ -993,7 +993,7 @@ function init_gear_sets()
     legs="Meghanada Chausses +2", --6/0
     feet="Turms Leggings",
     neck="Twilight Torque", --5/5
-    ear2="Odnowa Earring +1", --0/2
+    ear2="Odnowa Earring +1", --1/3
     ring1=gear.Dark_Ring, --5/4
     ring2="Defending Ring", --10/10
     -- head="Malignance Chapeau", --6/6

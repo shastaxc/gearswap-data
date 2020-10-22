@@ -842,12 +842,12 @@ function init_gear_sets()
     feet="Erilaz Greaves +1", --5/0
     neck="Futhark Torque +1", --4/4
     waist="Gishdubar Sash",
-    ear1="Odnowa Earring +1", --0/2
+    ear1="Odnowa Earring +1", --1/3
     ear2="Ethereal Earring",
     ring1="Ayanmo Ring", --3/3
     ring2="Defending Ring", --10/10
     back=gear.RUN_HPD_Cape, --10/0
-  } -- 49 / 24
+  } -- 50 / 25
 
   sets.idle.DT = set_combine(sets.idle, sets.DT)
   sets.idle.DT.Regain = set_combine(sets.idle.Regain, sets.DT)
@@ -909,12 +909,12 @@ function init_gear_sets()
     feet="Erilaz Greaves +1", --5/0
     neck="Futhark Torque +1", --4/4
     waist="Engraved Belt",
-    ear1="Odnowa Earring +1", --0/2
+    ear1="Odnowa Earring +1", --1/3
     ear2="Sherida Earring",
     ring1=gear.Dark_Ring, --5/4
     ring2="Defending Ring", --10/10
     back=gear.RUN_HPD_Cape, --10/0
-  } --49 PDT + 5 PDT2 / 28 MDT
+  } --50 PDT + 5 PDT2 / 29 MDT
 
   sets.defense.HP = {
     ammo="Staunch Tathlum",
