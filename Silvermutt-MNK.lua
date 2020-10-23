@@ -901,9 +901,9 @@ function job_post_precast(spell, action, spellMap, eventArgs)
 end
 
 function job_aftercast(spell, action, spellMap, eventArgs)
-  if spell.type == 'WeaponSkill' and not spell.interrupted and state.FootworkWS and state.Buff.Footwork then
-    send_command('cancel Footwork')
-  end
+  -- if spell.type == 'WeaponSkill' and not spell.interrupted and state.FootworkWS and state.Buff.Footwork then
+  --   send_command('cancel Footwork')
+  -- end
 end
 
 -- Handle notifications of general user state change.
@@ -1144,6 +1144,10 @@ function customize_defense_set(defenseSet)
   end
 end
 
+function test()
+
+end
+
 -------------------------------------------------------------------------------------------------------------------
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
@@ -1215,6 +1219,8 @@ function job_self_command(cmdParams, eventArgs)
     elseif cmdParams[2]:lower() == 'reset' then
       cycle_toy_weapons('reset')
     end
+  elseif cmdParams[1]:lower() == 'test' then
+    test()
   end
 
   gearinfo(cmdParams, eventArgs)
