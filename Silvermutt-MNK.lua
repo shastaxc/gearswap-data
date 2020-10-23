@@ -245,7 +245,7 @@ function init_gear_sets()
     ear2="Brutal Earring",
     ring1="Rajas Ring",
     ring2="Karieyh Ring",
-    back=gear.MNK_TP_Cape,
+    back=gear.MNK_STR_DA_Cape,
     waist="Moonbow Belt +1",
   } -- Base WS set
 
@@ -262,7 +262,7 @@ function init_gear_sets()
     ear2="Odr Earring",
     ring1="Rajas Ring",
     ring2="Begrudging Ring",
-    back=gear.MNK_TP_Cape,
+    back=gear.MNK_STR_DA_Cape,
     waist="Moonbow Belt +1",
     -- body="Anchorite's Cyclas +3",
     -- legs="Hizamaru Hizayoroi +2",
@@ -305,7 +305,7 @@ function init_gear_sets()
     ear2="Brutal Earring",
     ring1="Ilabrat Ring",
     ring2="Rajas Ring",
-    back=gear.MNK_TP_Cape,
+    back=gear.MNK_DEX_DA_Cape,
     waist="Moonbow Belt +1",
     -- head="Ken. Jinpachi +1",
     -- body="Adhemar Jacket +1",
@@ -351,7 +351,7 @@ function init_gear_sets()
     ear2="Moonshade Earring",
     ring1="Rajas Ring",
     ring2="Karieyh Ring",
-    back=gear.MNK_TP_Cape,
+    back=gear.MNK_STR_DA_Cape,
     waist="Moonbow Belt +1",
   })
   sets.precast.WS["Asuran Fists"].MaxTp = set_combine(sets.precast.WS["Asuran Fists"], {
@@ -390,9 +390,9 @@ function init_gear_sets()
     ear2="Moonshade Earring",
     ring1="Rajas Ring",
     ring2="Begrudging Ring",
-    back=gear.MNK_TP_Cape,
+    back=gear.MNK_STR_DA_Cape,
     waist="Moonbow Belt +1",
-    -- body="Anch. Cyclas +3",
+    -- body="Anchorite's. Cyclas +3",
     -- legs="Ken. Hakama +1",
     -- ear2="Moonshade Earring",
     -- ring1="Begrudging Ring",
@@ -430,6 +430,7 @@ function init_gear_sets()
     feet=gear.Herc_TA_feet,
     ear1="Sherida Earring",
     ear2="Moonshade Earring",
+    back=gear.MNK_STR_DA_Cape,
   })
   sets.precast.WS["Raging Fists"].MaxTP = set_combine(sets.precast.WS["Raging Fists"], {
     ear2="Brutal Earring",
@@ -466,11 +467,11 @@ function init_gear_sets()
     ear2="Moonshade Earring",
     ring1="Epona's Ring",
     ring2="Karieyh Ring",
-    back=gear.MNK_TP_Cape,
+    back=gear.MNK_STR_DA_Cape,
     waist="Moonbow Belt +1",
     -- head="Herculean Helm",
     -- body="Herculean Vest",
-    -- hands="Anchorite Gloves +3",
+    -- hands="Anchorite's Gloves +3",
     -- legs="Hizamaru Hizayoroi +2",
     -- feet="Herculean Boots",
     -- ear2="Moonshade Earring",
@@ -506,7 +507,7 @@ function init_gear_sets()
 
   -- Tornado Kick: 40% STR / 40% VIT
   sets.precast.WS['Tornado Kick'] = set_combine(sets.precast.WS, {
-    
+    back=gear.MNK_STR_DA_Cape,
   })
 
   -- Spinning Attack: 100% STR
@@ -522,7 +523,7 @@ function init_gear_sets()
     ear2="Brutal Earring",
     ring1="Rajas Ring",
     ring2="Karieyh Ring",
-    back=gear.MNK_TP_Cape,
+    back=gear.MNK_STR_DA_Cape,
     waist="Moonbow Belt +1",
   })
   sets.precast.WS["Spinning Attack"].MaxTp = set_combine(sets.precast.WS["Spinning Attack"], {
@@ -595,7 +596,7 @@ function init_gear_sets()
     ear2="Telos Earring",
     ring1="Epona's Ring",
     ring2="Ilabrat Ring",
-    back=gear.MNK_TP_Cape,
+    back=gear.MNK_DEX_DA_Cape,
     waist="Moonbow Belt +1",
   }
 
@@ -648,7 +649,7 @@ function init_gear_sets()
     ear2="Telos Earring",
     ring1="Epona's Ring",
     ring2="Ilabrat Ring",
-    back=gear.MNK_TP_Cape,
+    back=gear.MNK_DEX_DA_Cape,
     waist="Moonbow Belt +1",
   }
   sets.engaged.LowAcc = set_combine(sets.engaged, {
