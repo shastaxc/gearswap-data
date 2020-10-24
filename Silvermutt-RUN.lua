@@ -90,9 +90,12 @@ function job_setup()
   rayke_duration = 34
   gambit_duration = 92
 
+  -- Do not modify
   runes.element_of = {['Lux']='Light', ['Tenebrae']='Dark', ['Ignis']='Fire', ['Gelus']='Ice', ['Flabra']='Wind',
       ['Tellus']='Earth', ['Sulpor']='Lightning', ['Unda']='Water'}
   expended_runes={}
+  rayke_target=nil
+  gambit_target=nil
 
   -- /BLU Spell Maps
   blue_magic_maps = {}
@@ -118,6 +121,7 @@ function job_setup()
       'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
   state.Runes = M{['description']='Runes', 'Ignis', 'Gelus', 'Flabra', 'Tellus', 'Sulpor', 'Unda', 'Lux', 'Tenebrae'}
   
+  send_command('bind !a gs c test')
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c usekey')
   send_command('bind @w gs c toggle WeaponLock')
@@ -1249,29 +1253,53 @@ function job_aftercast(spell, action, spellMap, eventArgs)
     chat_mode = '/echo'
   end
 
-  if spell.name == 'Rayke' and not spell.interrupted then
-    local element_potencies = get_element_potencies()
-    local el_msg = ''
-    for k,v in pairs(element_potencies) do
-      el_msg = el_msg..'('..v.element..')'
+  if spell.name == 'Rayke' then
+    if spell.interrupted then
+      expended_runes = {}
+    else
+      -- Record Rayke target
+      rayke_target = spell.target
+
+      -- Print chat message
+      local element_potencies = get_element_potencies()
+      local el_msg = ''
+      for k,v in pairs(element_potencies) do
+        el_msg = el_msg..'('..v.element
+        if v.count == 1 then
+          el_msg = el_msg..string.char(129,171)
+        elseif v.count == 2 then
+          el_msg = el_msg..string.char(129,171)..string.char(129,171)
+        elseif v.count == 3 then
+          el_msg = el_msg..string.char(129,171)..string.char(129,171)..string.char(129,171)
+        end
+        el_msg = el_msg..')'
+      end
+      
+      send_command('@timers c "Rayke ['..spell.target.name..']" '..rayke_duration..' down spells/00136.png') -- Requires Timers plugin
+      send_command('input '..chat_mode..' [Rayke] Resist'..string.char(129,171)..' for '..rayke_duration..' sec '..el_msg..' '..string.char(129,168)..' <t>;')
+      coroutine.schedule(display_rayke_worn, rayke_duration)
+      expended_runes = {} -- Reset tracking of expended runes
     end
-    
-    send_command('@timers c "Rayke ['..spell.target.name..']" '..rayke_duration..' down spells/00136.png') -- Requires Timers plugin
-    send_command('input '..chat_mode..' [Rayke] Resist'..string.char(129,171)..' for '..rayke_duration..' sec '..el_msg..' '..string.char(129,168)..' <t>;')
-    send_command('wait '..rayke_duration..';input '..chat_mode..' [Rayke] Just wore off!];')
-    expended_runes = {} -- Reset tracking of expended runes
-  elseif spell.name == 'Gambit' and not spell.interrupted then
-    local element_potencies = get_element_potencies()
-    local el_msg = ''
-    for k,v in pairs(element_potencies) do
-      local potency = v.count*10
-      el_msg = el_msg..'('..v.element..' '..potency..'%)'
+  elseif spell.name == 'Gambit' then
+    if spell.interrupted then
+      expended_runes = {}
+    else
+      -- Record Rayke target
+      gambit_target = spell.target
+      
+      -- Print chat message
+      local element_potencies = get_element_potencies()
+      local el_msg = ''
+      for k,v in pairs(element_potencies) do
+        local potency = v.count*10
+        el_msg = el_msg..'('..v.element..' '..potency..'%)'
+      end
+      
+      send_command('@timers c "Gambit ['..spell.target.name..']" '..gambit_duration..' down spells/00136.png') -- Requires Timers plugin
+      send_command('input '..chat_mode..' [Gambit] M.Def'..string.char(129,171)..' for '..gambit_duration..' sec '..el_msg..' '..string.char(129,168)..' <t>;')
+      coroutine.schedule(display_gambit_worn, gambit_duration)
+      expended_runes = {} -- Reset tracking of expended runes
     end
-    
-    send_command('@timers c "Gambit ['..spell.target.name..']" '..gambit_duration..' down spells/00136.png') -- Requires Timers plugin
-    send_command('input '..chat_mode..' [Gambit] M.Def'..string.char(129,171)..' for '..gambit_duration..' sec '..el_msg..' '..string.char(129,168)..' <t>;')
-    send_command('wait '..gambit_duration..';input '..chat_mode..' [Gambit] Just wore off!];')
-    expended_runes = {} -- Reset tracking of expended runes
   end
 end
 
@@ -1477,55 +1505,6 @@ function display_current_job_state(eventArgs)
   eventArgs.handled = true
 end
 
-function cycle_toy_weapons(cycle_dir)
-  --If current state is None, save current weapons to switch back later
-  if state.ToyWeapons.current == 'None' then
-    sets.ToyWeapon.None.main = player.equipment.main
-    sets.ToyWeapon.None.sub = player.equipment.sub
-  end
-
-  if cycle_dir == 'forward' then
-    state.ToyWeapons:cycle()
-  elseif cycle_dir == 'back' then
-    state.ToyWeapons:cycleback()
-  else
-    state.ToyWeapons:reset()
-  end
-  
-  local mode_color = 001
-  if state.ToyWeapons.current == 'None' then
-    mode_color = 006
-  end
-  add_to_chat(012, 'Toy Weapon Mode: '..string.char(31,mode_color)..state.ToyWeapons.current)
-  equip(sets.ToyWeapon[state.ToyWeapons.current])
-end
-
-function get_element_potencies()
-  local element_potencies = {}
-  for k,rune in pairs(expended_runes) do
-    -- Get rune's corresponding element
-    local el = runes.element_of[rune]
-    -- Find element entry if already in the table
-    local el_index = nil
-    for k,v in pairs(element_potencies) do
-      if v.element == el then
-        el_index = k
-      end
-    end
-    -- If element was not found, add new entry
-    if el_index == nil then
-      table.insert(element_potencies, { element=el, count=1 })
-    else -- Otherwise, increase its count
-      element_potencies[el_index].count = element_potencies[el_index].count + 1
-    end
-  end
-  return element_potencies;
-end
-
-function test()
-  
-end
-
 
 -------------------------------------------------------------------------------------------------------------------
 -- General hooks for other events.
@@ -1571,6 +1550,87 @@ function get_custom_wsmode(spell, action, spellMap)
   end
 
   return wsmode
+end
+
+function cycle_toy_weapons(cycle_dir)
+  --If current state is None, save current weapons to switch back later
+  if state.ToyWeapons.current == 'None' then
+    sets.ToyWeapon.None.main = player.equipment.main
+    sets.ToyWeapon.None.sub = player.equipment.sub
+  end
+
+  if cycle_dir == 'forward' then
+    state.ToyWeapons:cycle()
+  elseif cycle_dir == 'back' then
+    state.ToyWeapons:cycleback()
+  else
+    state.ToyWeapons:reset()
+  end
+  
+  local mode_color = 001
+  if state.ToyWeapons.current == 'None' then
+    mode_color = 006
+  end
+  add_to_chat(012, 'Toy Weapon Mode: '..string.char(31,mode_color)..state.ToyWeapons.current)
+  equip(sets.ToyWeapon[state.ToyWeapons.current])
+end
+
+function get_element_potencies()
+  local element_potencies = {}
+  for k,rune in pairs(expended_runes) do
+    -- Get rune's corresponding element
+    local el = runes.element_of[rune]
+    -- Find element entry if already in the table
+    local el_index = nil
+    for k,v in pairs(element_potencies) do
+      if v.element == el then
+        el_index = k
+      end
+    end
+    -- If element was not found, add new entry
+    if el_index == nil then
+      table.insert(element_potencies, { element=el, count=1 })
+    else -- Otherwise, increase its count
+      element_potencies[el_index].count = element_potencies[el_index].count + 1
+    end
+  end
+  return element_potencies;
+end
+
+function display_rayke_worn()
+  local chat_mode = '/p'
+  if windower.ffxi.get_party().party1_count == 1 then
+    chat_mode = '/echo'
+  end
+
+  -- Ensure execution only once by checking for saved target data
+  if rayke_target ~= nil then
+    send_command('input '..chat_mode..' [Rayke] Just wore off!;')
+    -- If timer still exists, clear it
+    send_command('@timers d "Rayke ['..rayke_target.name..']"') -- Requires Timers plugin
+
+    rayke_target = nil -- Reset target
+  end
+end
+
+function display_gambit_worn()
+  local chat_mode = '/p'
+  if windower.ffxi.get_party().party1_count == 1 then
+    chat_mode = '/echo'
+  end
+
+  -- Ensure execution only once by checking for saved target data
+  if gambit_target ~= nil then
+    send_command('input '..chat_mode..' [Gambit] Just wore off!;')
+    -- If timer still exists, clear it
+    send_command('@timers d "Gambit ['..gambit_target.name..']"') -- Requires Timers plugin
+    
+    gambit_target = nil -- Reset target
+  end
+end
+
+function test()
+
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -1663,6 +1723,24 @@ windower.register_event('zone change',
     end
   end
 )
+
+-- Listen for kill message (when an enemy is defeated)
+windower.raw_register_event('incoming chunk', function(id, data, modified, injected, blocked)
+  if id == 0x029 then
+    local message_id = data:unpack("H",0x19)%2^15 -- Cut off the most significant bit
+    if message_id == 6 then
+      local defeated_mob_id = data:unpack("I",0x09)
+      if rayke_target ~= nil and defeated_mob_id == rayke_target.id then
+        -- Display message that Rayke has worn off (because Rayked mob was killed)
+        display_rayke_worn()
+      end
+      if gambit_target ~= nil and defeated_mob_id == gambit_target.id then
+        -- Display message that Gambit has worn off (because Gambited mob was killed)
+        display_gambit_worn()
+      end
+    end
+  end
+end)
 
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
