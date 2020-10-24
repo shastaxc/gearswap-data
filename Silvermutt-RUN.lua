@@ -78,6 +78,7 @@
 
 -- Initialization function for this job file.
 function get_sets()
+  packets = include('packets')
   mote_include_version = 2
 
   -- Load and initialize the include file.
@@ -121,6 +122,7 @@ function job_setup()
       'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
   state.Runes = M{['description']='Runes', 'Ignis', 'Gelus', 'Flabra', 'Tellus', 'Sulpor', 'Unda', 'Lux', 'Tenebrae'}
   
+  send_command('bind !a gs c test')
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c usekey')
   send_command('bind @w gs c toggle WeaponLock')
@@ -158,6 +160,7 @@ end
 
 -- Executes on first load, main job change, **and sub job change**
 function user_setup()
+  locked_style = false -- Do not modify
   include('Global-Binds.lua') -- Additional local binds
 
   if player.sub_job == 'BLU' then
@@ -1636,7 +1639,7 @@ function display_gambit_worn()
 end
 
 function test()
-
+  send_command('input /lockstyleset '..lockstyleset)
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -1730,9 +1733,9 @@ windower.register_event('zone change',
   end
 )
 
--- Listen for kill message (when an enemy is defeated)
 windower.raw_register_event('incoming chunk', function(id, data, modified, injected, blocked)
-  if id == 0x029 then
+  -- Listen for kill message (when an enemy is defeated)
+  if id == 0x029 then -- Combat messages
     local message_id = data:unpack("H",0x19)%2^15 -- Cut off the most significant bit
     if message_id == 6 then
       local defeated_mob_id = data:unpack("I",0x09)
@@ -1744,6 +1747,17 @@ windower.raw_register_event('incoming chunk', function(id, data, modified, injec
         -- Display message that Gambit has worn off (because Gambited mob was killed)
         display_gambit_worn()
       end
+    end
+  end
+end)
+
+windower.raw_register_event('outgoing chunk', function(id, data, modified, injected, blocked)
+  if id == 0x053 then -- Send lockstyle command to server
+    local type = data:unpack("I",0x05)
+    if type == 0 then -- This is lockstyle 'disable' command
+      locked_style = false
+    else -- Various diff ways to set lockstyle
+      locked_style = true
     end
   end
 end)
@@ -1765,5 +1779,16 @@ function select_default_macro_book()
 end
 
 function set_lockstyle()
-  send_command('wait 2; input /lockstyleset ' .. lockstyleset)
+  -- Set lockstyle 2 seconds after changing job, trying immediately will error
+  coroutine.schedule(function()
+    if locked_style == false then
+      send_command('input /lockstyleset '..lockstyleset)
+    end
+  end, 2)
+  -- In case lockstyle was on cooldown for first command, try again (lockstyle has 10s cd)
+  coroutine.schedule(function()
+    if locked_style == false then
+      send_command('input /lockstyleset '..lockstyleset)
+    end
+  end, 10)
 end

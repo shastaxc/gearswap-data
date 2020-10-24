@@ -119,6 +119,7 @@ end
 
 -- Executes on first load, main job change, **and sub job change**
 function user_setup()
+  locked_style = false -- Do not modify
   include('Global-Binds.lua') -- Additional local binds
 
   if player.sub_job == 'WAR' then
@@ -1306,6 +1307,17 @@ windower.register_event('zone change',
   end
 )
 
+windower.raw_register_event('outgoing chunk', function(id, data, modified, injected, blocked)
+  if id == 0x053 then -- Send lockstyle command to server
+    local type = data:unpack("I",0x05)
+    if type == 0 then -- This is lockstyle 'disable' command
+      locked_style = false
+    else -- Various diff ways to set lockstyle
+      locked_style = true
+    end
+  end
+end)
+
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
   -- Default macro set/book
@@ -1319,5 +1331,16 @@ function select_default_macro_book()
 end
 
 function set_lockstyle()
-  send_command('wait 2; input /lockstyleset ' .. lockstyleset)
+  -- Set lockstyle 2 seconds after changing job, trying immediately will error
+  coroutine.schedule(function()
+    if locked_style == false then
+      send_command('input /lockstyleset '..lockstyleset)
+    end
+  end, 2)
+  -- In case lockstyle was on cooldown for first command, try again (lockstyle has 10s cd)
+  coroutine.schedule(function()
+    if locked_style == false then
+      send_command('input /lockstyleset '..lockstyleset)
+    end
+  end, 10)
 end
