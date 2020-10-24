@@ -1278,7 +1278,7 @@ function job_aftercast(spell, action, spellMap, eventArgs)
       end
       
       send_command('@timers c "Rayke ['..spell.target.name..']" '..rayke_duration..' down spells/00136.png') -- Requires Timers plugin
-      send_command('input '..chat_mode..' [Rayke] Resist Down '..el_msg..' '..string.char(129, 168)..' <t>;')
+      send_command('@input '..chat_mode..' [Rayke] Resist Down '..el_msg..' '..string.char(129, 168)..' <t>;')
       coroutine.schedule(display_rayke_worn, rayke_duration)
       expended_runes = {} -- Reset tracking of expended runes
     end
@@ -1305,7 +1305,7 @@ function job_aftercast(spell, action, spellMap, eventArgs)
       end
       
       send_command('@timers c "Gambit ['..spell.target.name..']" '..gambit_duration..' down spells/00136.png') -- Requires Timers plugin
-      send_command('input '..chat_mode..' [Gambit] M.Def Down '..el_msg..' '..string.char(129,168)..' <t>;')
+      send_command('@input '..chat_mode..' [Gambit] M.Def Down '..el_msg..' '..string.char(129,168)..' <t>;')
       coroutine.schedule(display_gambit_worn, gambit_duration)
       expended_runes = {} -- Reset tracking of expended runes
     end
@@ -1614,7 +1614,7 @@ function display_rayke_worn()
 
   -- Ensure execution only once by checking for saved target data
   if rayke_target ~= nil then
-    send_command('input '..chat_mode..' [Rayke] Just wore off!;')
+    send_command('@input '..chat_mode..' [Rayke] Just wore off!;')
     -- If timer still exists, clear it
     send_command('@timers d "Rayke ['..rayke_target.name..']"') -- Requires Timers plugin
 
@@ -1630,7 +1630,7 @@ function display_gambit_worn()
 
   -- Ensure execution only once by checking for saved target data
   if gambit_target ~= nil then
-    send_command('input '..chat_mode..' [Gambit] Just wore off!;')
+    send_command('@input '..chat_mode..' [Gambit] Just wore off!;')
     -- If timer still exists, clear it
     send_command('@timers d "Gambit ['..gambit_target.name..']"') -- Requires Timers plugin
     
