@@ -1257,8 +1257,8 @@ function job_aftercast(spell, action, spellMap, eventArgs)
     end
     
     send_command('@timers c "Rayke ['..spell.target.name..']" '..rayke_duration..' down spells/00136.png') -- Requires Timers plugin
-    send_command('input '..chat_mode..' [Rayke] Resist '..string.char(129,171)..' for '..rayke_duration..' sec '..el_msg..' <t>;')
-    send_command('wait '..rayke_duration..';input '..chat_mode..' [Rayke just wore off!];')
+    send_command('input '..chat_mode..' [Rayke] Resist'..string.char(129,171)..' for '..rayke_duration..' sec '..el_msg..' '..string.char(129,168)..' <t>;')
+    send_command('wait '..rayke_duration..';input '..chat_mode..' [Rayke] Just wore off!];')
     expended_runes = {} -- Reset tracking of expended runes
   elseif spell.name == 'Gambit' and not spell.interrupted then
     local element_potencies = get_element_potencies()
@@ -1269,8 +1269,8 @@ function job_aftercast(spell, action, spellMap, eventArgs)
     end
     
     send_command('@timers c "Gambit ['..spell.target.name..']" '..gambit_duration..' down spells/00136.png') -- Requires Timers plugin
-    send_command('input '..chat_mode..' [Gambit] M.Def '..string.char(129,171)..' for '..gambit_duration..' sec '..el_msg..' <t>;')
-    send_command('wait '..gambit_duration..';input '..chat_mode..' [Gambit just wore off!];')
+    send_command('input '..chat_mode..' [Gambit] M.Def'..string.char(129,171)..' for '..gambit_duration..' sec '..el_msg..' '..string.char(129,168)..' <t>;')
+    send_command('wait '..gambit_duration..';input '..chat_mode..' [Gambit] Just wore off!];')
     expended_runes = {} -- Reset tracking of expended runes
   end
 end
