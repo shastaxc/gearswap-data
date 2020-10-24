@@ -87,8 +87,12 @@ end
 -- Executes on first load and main job change
 function job_setup()
   lockstyleset = 3
-  rayke_duration = 35
-  gambit_duration = 96
+  rayke_duration = 34
+  gambit_duration = 92
+
+  runes.element_of = {['Lux']='Light', ['Tenebrae']='Dark', ['Ignis']='Fire', ['Gelus']='Ice', ['Flabra']='Wind',
+      ['Tellus']='Earth', ['Sulpor']='Lightning', ['Unda']='Water'}
+  expended_runes={}
 
   -- /BLU Spell Maps
   blue_magic_maps = {}
@@ -1181,6 +1185,18 @@ function job_precast(spell, action, spellMap, eventArgs)
       send_command('cancel 66; cancel 444; cancel Copy Image; cancel Copy Image (2)')
     end
   end
+  -- Record which rune elements are active when Rayke or Gambit is used.
+  if spell.english == 'Rayke' or spell.english == 'Gambit' then
+    -- Examine all active buffs
+    for k,buff_id in pairs(player.buffs) do
+      -- Translate buff ID into English
+      local buff_name = res.buffs:get(buff_id).en;
+      -- If buff is a Rune, snapshot it as it was expended
+      if runes:contains(buff_name) then
+        table.insert(expended_runes, buff_name)
+      end
+    end
+  end
 end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
@@ -1228,13 +1244,34 @@ end
 
 function job_aftercast(spell, action, spellMap, eventArgs)
   -- equip(sets[state.WeaponSet.current])
+  local chat_mode = '/p'
+  if windower.ffxi.get_party().party1_count == 1 then
+    chat_mode = '/echo'
+  end
 
   if spell.name == 'Rayke' and not spell.interrupted then
-    send_command('@timers c "Rayke ['..spell.target.name..']" '..rayke_duration..' down spells/00136.png')
-    send_command('wait '..rayke_duration..';input /echo [Rayke just wore off!];')
+    local element_potencies = get_element_potencies()
+    local el_msg = ''
+    for k,v in pairs(element_potencies) do
+      el_msg = el_msg..'('..v.element..')'
+    end
+    
+    send_command('@timers c "Rayke ['..spell.target.name..']" '..rayke_duration..' down spells/00136.png') -- Requires Timers plugin
+    send_command('input '..chat_mode..' [Rayke] Resist '..string.char(129,171)..' for '..rayke_duration..' sec '..el_msg..' <t>;')
+    send_command('wait '..rayke_duration..';input '..chat_mode..' [Rayke just wore off!];')
+    expended_runes = {} -- Reset tracking of expended runes
   elseif spell.name == 'Gambit' and not spell.interrupted then
-    send_command('@timers c "Gambit ['..spell.target.name..']" '..gambit_duration..' down spells/00136.png')
-    send_command('wait '..gambit_duration..';input /echo [Gambit just wore off!];')
+    local element_potencies = get_element_potencies()
+    local el_msg = ''
+    for k,v in pairs(element_potencies) do
+      local potency = v.count*10
+      el_msg = el_msg..'('..v.element..' '..potency..'%)'
+    end
+    
+    send_command('@timers c "Gambit ['..spell.target.name..']" '..gambit_duration..' down spells/00136.png') -- Requires Timers plugin
+    send_command('input '..chat_mode..' [Gambit] M.Def '..string.char(129,171)..' for '..gambit_duration..' sec '..el_msg..' <t>;')
+    send_command('wait '..gambit_duration..';input '..chat_mode..' [Gambit just wore off!];')
+    expended_runes = {} -- Reset tracking of expended runes
   end
 end
 
@@ -1463,6 +1500,32 @@ function cycle_toy_weapons(cycle_dir)
   equip(sets.ToyWeapon[state.ToyWeapons.current])
 end
 
+function get_element_potencies()
+  local element_potencies = {}
+  for k,rune in pairs(expended_runes) do
+    -- Get rune's corresponding element
+    local el = runes.element_of[rune]
+    -- Find element entry if already in the table
+    local el_index = nil
+    for k,v in pairs(element_potencies) do
+      if v.element == el then
+        el_index = k
+      end
+    end
+    -- If element was not found, add new entry
+    if el_index == nil then
+      table.insert(element_potencies, { element=el, count=1 })
+    else -- Otherwise, increase its count
+      element_potencies[el_index].count = element_potencies[el_index].count + 1
+    end
+  end
+  return element_potencies;
+end
+
+function test()
+  
+end
+
 
 -------------------------------------------------------------------------------------------------------------------
 -- General hooks for other events.
@@ -1562,6 +1625,8 @@ function job_self_command(cmdParams, eventArgs)
     elseif cmdParams[2]:lower() == 'reset' then
       cycle_toy_weapons('reset')
     end
+  elseif cmdParams[1]:lower() == 'test' then
+    test()
   end
 end
 
