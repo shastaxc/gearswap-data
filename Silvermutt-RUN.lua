@@ -1150,7 +1150,7 @@ function job_precast(spell, action, spellMap, eventArgs)
       equip(sets.precast.JA[currentSpell])
     end
   else
-    if spell.action_type == 'Ability' then
+    if spell.action_type == 'Ability' and spell.type ~= 'WeaponSkill' then
       equip(sets.Enmity)
       equip(sets.precast.JA[spell])
     end
