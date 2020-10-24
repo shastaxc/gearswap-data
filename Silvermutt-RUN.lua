@@ -960,7 +960,7 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.engaged = {
-    sub="Tzacab Grip",
+    sub="Utu Grip",
     ammo="Seething Bomblet",
     head=gear.Adhemar_B_head,
     body="Ayanmo Corazza +2",
