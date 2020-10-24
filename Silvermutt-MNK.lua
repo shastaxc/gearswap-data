@@ -179,7 +179,7 @@ function init_gear_sets()
   
   -- Precast sets to enhance JAs on use
   sets.precast.JA['Hundred Fists'] = {
-    legs="Hesychast's Hose",
+    legs="Hesychast's Hose +1",
   }
   sets.precast.JA['Boost'] = {
     hands="Anchorite's Gloves +1",
