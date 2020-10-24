@@ -121,7 +121,6 @@ function job_setup()
       'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
   state.Runes = M{['description']='Runes', 'Ignis', 'Gelus', 'Flabra', 'Tellus', 'Sulpor', 'Unda', 'Lux', 'Tenebrae'}
   
-  send_command('bind !a gs c test')
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c usekey')
   send_command('bind @w gs c toggle WeaponLock')
@@ -1276,7 +1275,7 @@ function job_aftercast(spell, action, spellMap, eventArgs)
       end
       
       send_command('@timers c "Rayke ['..spell.target.name..']" '..rayke_duration..' down spells/00136.png') -- Requires Timers plugin
-      send_command('input '..chat_mode..' [Rayke] Resist'..string.char(129,171)..' for '..rayke_duration..' sec '..el_msg..' '..string.char(129,168)..' <t>;')
+      send_command('input '..chat_mode..' [Rayke] Resist Down '..el_msg..' '..string.char(129, 168)..' <t>;')
       coroutine.schedule(display_rayke_worn, rayke_duration)
       expended_runes = {} -- Reset tracking of expended runes
     end
@@ -1291,12 +1290,19 @@ function job_aftercast(spell, action, spellMap, eventArgs)
       local element_potencies = get_element_potencies()
       local el_msg = ''
       for k,v in pairs(element_potencies) do
-        local potency = v.count*10
-        el_msg = el_msg..'('..v.element..' '..potency..'%)'
+        el_msg = el_msg..'('..v.element
+        if v.count == 1 then
+          el_msg = el_msg..string.char(129,171)
+        elseif v.count == 2 then
+          el_msg = el_msg..string.char(129,171)..string.char(129,171)
+        elseif v.count == 3 then
+          el_msg = el_msg..string.char(129,171)..string.char(129,171)..string.char(129,171)
+        end
+        el_msg = el_msg..')'
       end
       
       send_command('@timers c "Gambit ['..spell.target.name..']" '..gambit_duration..' down spells/00136.png') -- Requires Timers plugin
-      send_command('input '..chat_mode..' [Gambit] M.Def'..string.char(129,171)..' for '..gambit_duration..' sec '..el_msg..' '..string.char(129,168)..' <t>;')
+      send_command('input '..chat_mode..' [Gambit] M.Def Down '..el_msg..' '..string.char(129,168)..' <t>;')
       coroutine.schedule(display_gambit_worn, gambit_duration)
       expended_runes = {} -- Reset tracking of expended runes
     end
