@@ -317,7 +317,7 @@ function init_gear_sets()
     ammo="Seething Bomblet", --6
     head="Highwing Helm", --20
     body=gear.Samnuha_body, --25
-    hands="Leyline Gloves", --30
+    hands=gear.Leyline_Gloves, --30
     legs=gear.Herc_MAB_legs, --24
     feet=gear.Herc_WSD_feet, --10
     neck="Baetyl Pendant", --13
@@ -372,7 +372,7 @@ function init_gear_sets()
     ammo="Impatiens", --Quick Magic 2%
     head="Runeist Bandeau +1", --10
     body=gear.Taeon_FC_body, --9
-    hands="Leyline Gloves", --8
+    hands=gear.Leyline_Gloves, --8
     legs="Ayanmo Cosciales +1", --5
     feet=gear.Taeon_FC_feet, --5
     ear1="Loquac. Earring", --2

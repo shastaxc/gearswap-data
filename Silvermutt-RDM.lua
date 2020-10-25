@@ -285,7 +285,7 @@ function init_gear_sets()
     ammo="Impatiens", --Quick Magic 2%
     head=gear.Herc_WSD_head, --7
     body="Duelist's Tabard", --10
-    hands="Leyline Gloves", --8
+    hands=gear.Leyline_Gloves, --8
     legs="Ayanmo Cosciales +1", --5
     feet=gear.Taeon_FC_feet, --5
     ear1="Loquac. Earring", --2

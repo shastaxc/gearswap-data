@@ -170,7 +170,7 @@ function init_gear_sets()
     ammo="Impatiens", --Quick Magic 2%
     head=gear.Herc_WSD_head, --7
     body=gear.Taeon_FC_body, --9
-    hands="Leyline Gloves", --8
+    hands=gear.Leyline_Gloves, --8
     legs=gear.Taeon_FC_legs, --5
     feet=gear.Taeon_FC_feet, --5
     ear1="Loquac. Earring", --2
@@ -208,9 +208,17 @@ function init_gear_sets()
   }
 
   sets.precast.JA['Chi Blast'] = {
-    head="Hesychast's Crown",
-    hands=gear.Adhemar_B_hands,
-  }
+    ammo="Hydrocera", -- 3
+    head="Hesychast's Crown", -- 9, Enhance Penance
+    body="Anchorite's Cyclas +2", -- 29
+    hands=gear.Leyline_Gloves, -- 30
+    legs="Anchorite's Hose +1", -- 2
+    feet="Hesychast's Gaiters +3", -- 22
+    neck="Monk's Nodowa +2", -- 11
+    ring1=gear.Dark_Ring, -- 1
+    ring2="Defending Ring", -- DT
+    waist="Engraved Belt", -- 7
+  } -- MND
 
   sets.precast.JA['Chakra'] = {
     body="Anchorite's Cyclas +2",
@@ -548,7 +556,7 @@ function init_gear_sets()
   sets.MAB = {
     head="Highwing Helm", --20
     body=gear.Samnuha_body, --25
-    hands="Leyline Gloves", --30
+    hands=gear.Leyline_Gloves, --30
     legs=gear.Herc_MAB_legs, --24
     feet=gear.Herc_WSD_feet, --10
     neck="Baetyl Pendant", --13

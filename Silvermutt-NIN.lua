@@ -240,7 +240,7 @@ function init_gear_sets()
     -- ammo="Sapience Orb", --2
     -- head=gear.Herc_MAB_head, --7
     -- body=gear.Taeon_FC_body, --8
-    -- hands="Leyline Gloves", --8
+    -- hands=gear.Leyline_Gloves, --8
     -- legs="Rawhide Trousers", --5
     -- feet=gear.Herc_MAB_feet, --2
     -- neck="Orunmila's Torque", --5
@@ -398,7 +398,7 @@ function init_gear_sets()
     -- ammo="Seeth. Bomblet +1",
     -- head="Hachiya Hatsu. +3",
     -- body="Samnuha Coat",
-    -- hands="Leyline Gloves",
+    -- hands=gear.Leyline_Gloves,
     -- legs=gear.Herc_WSD_legs,
     -- feet=gear.Herc_MAB_feet,
     -- neck="Baetyl Pendant",
@@ -459,7 +459,7 @@ function init_gear_sets()
     -- ammo="Pemphredo Tathlum",
     -- head="Mochi. Hatsuburi +3",
     -- body="Samnuha Coat",
-    -- hands="Leyline Gloves",
+    -- hands=gear.Leyline_Gloves,
     -- legs=gear.Herc_MAB_legs,
     -- feet=gear.Herc_MAB_feet,
     -- neck="Baetyl Pendant",
