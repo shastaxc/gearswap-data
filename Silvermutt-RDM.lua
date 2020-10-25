@@ -329,7 +329,7 @@ function init_gear_sets()
   })
 
   sets.precast.FC.Dispelga = set_combine(sets.precast.FC, {
-    -- main="Daybreak",
+    main="Daybreak",
     -- sub="Ammurapi Shield",
     -- waist="Shinjutsu-no-Obi +1",
   })
@@ -460,6 +460,7 @@ function init_gear_sets()
   })
 
   sets.precast.WS['Sanguine Blade'] = {
+    ear1="Malignance Earring",
     -- ammo="Pemphredo Tathlum",
     -- head="Pixie Hairpin +1",
     -- body="Amalric Doublet +1",
@@ -467,7 +468,6 @@ function init_gear_sets()
     -- legs="Amalric Slops +1",
     -- feet="Amalric Nails +1",
     -- neck="Baetyl Pendant",
-    -- ear1="Malignance Earring",
     -- ear2="Regal Earring",
     -- ring1="Archon Ring",
     -- ring2="Epaminondas's Ring",
@@ -490,6 +490,7 @@ function init_gear_sets()
   })
 
   sets.precast.WS['Seraph Blade'] = set_combine(sets.precast.WS, {
+    ear1="Malignance Earring",
     -- ammo="Pemphredo Tathlum",
     -- head="Merlinic Hood",
     -- body="Amalric Doublet +1",
@@ -497,7 +498,6 @@ function init_gear_sets()
     -- legs="Amalric Slops +1",
     -- feet="Amalric Nails +1",
     -- neck="Baetyl Pendant",
-    -- ear1="Malignance Earring",
     -- ear2="Moonshade Earring",
     -- ring1="Weather. Ring +1",
     -- ring2="Epaminondas's Ring",
@@ -520,6 +520,7 @@ function init_gear_sets()
   })
 
   sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
+    ear1="Malignance Earring",
     -- ammo="Pemphredo Tathlum",
     -- head="Merlinic Hood",
     -- body="Amalric Doublet +1",
@@ -527,7 +528,6 @@ function init_gear_sets()
     -- legs="Amalric Slops +1",
     -- feet="Amalric Nails +1",
     -- neck="Baetyl Pendant",
-    -- ear1="Malignance Earring",
     -- ear2="Moonshade Earring",
     -- ring1="Shiva Ring +1",
     -- ring2="Epaminondas's Ring",
@@ -590,13 +590,13 @@ function init_gear_sets()
   }
 
   sets.midcast.Cure = {
+    main="Daybreak", --30
     head="Ayanmo Zucchetto +2",
     body="Ayanmo Corazza +2",
     hands="Ayanmo Manopolas +1",
     legs="Carmine Cuisses +1",
     feet="Ayanmo Gambieras +1",
     neck="Incanter's Torque",
-    -- main="Daybreak", --30
     -- sub="Sors Shield", --3/(-5)
     -- ammo="Esper Stone +1", --0/(-5)
     -- head="Kaykaus Mitra +1", --11(+2)/(-6)
@@ -614,6 +614,7 @@ function init_gear_sets()
   }
 
   sets.midcast.CureWeather = set_combine(sets.midcast.Cure, {
+    main="Iridal Staff",
     -- main="Chatoyant Staff",
     -- sub="Enki Strap",
     -- back="Twilight Cape",
@@ -755,7 +756,8 @@ function init_gear_sets()
     -- Custom spell classes
 
   sets.midcast.MndEnfeebles = {
-    -- main="Daybreak",
+    main="Daybreak",
+    ear1="Malignance Earring",
     -- sub="Ammurapi Shield",
     -- ammo="Regal Gem",
     -- head="Viti. Chapeau +3",
@@ -764,7 +766,6 @@ function init_gear_sets()
     -- legs="Chironic Hose",
     -- feet="Vitiation Boots +3",
     -- neck="Dls. Torque +2",
-    -- ear1="Malignance Earring",
     -- ear2="Snotra Earring",
     -- ring1="Kishar Ring",
     -- ring2="Metamor. Ring +1",
@@ -850,12 +851,13 @@ function init_gear_sets()
 
   sets.midcast.ElementalEnfeeble = sets.midcast.IntEnfeebles
   sets.midcast.Dispelga = set_combine(sets.midcast.IntEnfeeblesAcc, {
-    -- main="Daybreak",
+    main="Daybreak",
     -- sub="Ammurapi Shield",
     -- waist="Shinjutsu-no-Obi +1",
   })
 
   sets.midcast['Dark Magic'] = {
+    ear1="Malignance Earring",
     -- main="Rubicundity",
     -- sub="Ammurapi Shield",
     -- ammo="Pemphredo Tathlum",
@@ -865,7 +867,6 @@ function init_gear_sets()
     -- legs="Ea Slops +1",
     -- feet="Merlinic Crackows",
     -- neck="Erra Pendant",
-    -- ear1="Malignance Earring",
     -- ear2="Mani Earring",
     -- ring1={name="Stikini Ring +1", bag="wardrobe3"},
     -- ring2="Evanescence Ring",
@@ -892,7 +893,8 @@ function init_gear_sets()
   })
 
   sets.midcast['Elemental Magic'] = {
-    -- main="Daybreak",
+    main="Daybreak",
+    ear1="Malignance Earring",
     -- sub="Ammurapi Shield",
     -- ammo="Pemphredo Tathlum",
     -- head="Merlinic Hood",
@@ -901,7 +903,6 @@ function init_gear_sets()
     -- legs="Amalric Slops +1",
     -- feet="Amalric Nails +1",
     -- neck="Baetyl Pendant",
-    -- ear1="Malignance Earring",
     -- ear2="Regal Earring",
     -- ring1="Freke Ring",
     -- ring2="Metamor. Ring +1",
@@ -962,6 +963,7 @@ function init_gear_sets()
     ear1="Infused Earring",
   }
   sets.latent_refresh = {
+    main="Daybreak",
     ammo="Homiliary",
     head="Duelist's Chapeau",
     -- waist="Fucho-no-obi",
@@ -1032,6 +1034,7 @@ function init_gear_sets()
   sets.idle.DT.Regain.Regen.Refresh = set_combine(sets.idle.Regain.Regen.Refresh, sets.DT)
 
   sets.resting = set_combine(sets.idle, {
+    main="Iridal Staff",
     -- main="Chatoyant Staff",
     -- waist="Shinjutsu-no-Obi +1",
   })
