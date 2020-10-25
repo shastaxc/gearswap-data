@@ -881,7 +881,7 @@ function init_gear_sets()
     -- ring1="Archon Ring",
     -- ring2="Evanescence Ring",
     -- back="Perimede Cape",
-    -- waist="Fucho-no-obi",
+    waist="Fucho-no-obi",
   })
 
   sets.midcast.Aspir = sets.midcast.Drain
@@ -966,8 +966,10 @@ function init_gear_sets()
     main="Daybreak",
     ammo="Homiliary",
     head="Duelist's Chapeau",
-    -- waist="Fucho-no-obi",
   }
+  sets.latent_refresh_sub50 = set_combine(sets.latent_refresh, {
+    waist="Fucho-no-Obi",
+  })
 
   sets.idle = {
     ammo="Homiliary",
@@ -1003,10 +1005,14 @@ function init_gear_sets()
   sets.idle.Regain = set_combine(sets.idle, sets.latent_regain)
   sets.idle.Regen = set_combine(sets.idle, sets.latent_regen)
   sets.idle.Refresh = set_combine(sets.idle, sets.latent_refresh)
+  sets.idle.RefreshSub50 = set_combine(sets.idle, sets.latent_refresh_sub50)
   sets.idle.Regain.Regen = set_combine(sets.idle, sets.latent_regain, sets.latent_regen)
   sets.idle.Regain.Refresh = set_combine(sets.idle, sets.latent_regain, sets.latent_refresh)
+  sets.idle.Regain.RefreshSub50 = set_combine(sets.idle, sets.latent_regain, sets.latent_refresh_sub50)
   sets.idle.Regen.Refresh = set_combine(sets.idle, sets.latent_regen, sets.latent_refresh)
+  sets.idle.Regen.RefreshSub50 = set_combine(sets.idle, sets.latent_regen, sets.latent_refresh_sub50)
   sets.idle.Regain.Regen.Refresh = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh)
+  sets.idle.Regain.Regen.RefreshSub50 = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh_sub50)
 
   sets.DT = {
     -- main="Bolelabunga",
@@ -1028,10 +1034,14 @@ function init_gear_sets()
   sets.idle.DT.Regain = set_combine(sets.idle.Regain, sets.DT)
   sets.idle.DT.Regen = set_combine(sets.idle.Regen, sets.DT)
   sets.idle.DT.Refresh = set_combine(sets.idle.Refresh, sets.DT)
+  sets.idle.DT.RefreshSub50 = set_combine(sets.idle.RefreshSub50, sets.DT)
   sets.idle.DT.Regain.Regen = set_combine(sets.idle.Regain.Regen, sets.DT)
   sets.idle.DT.Regain.Refresh = set_combine(sets.idle.Regain.Refresh, sets.DT)
+  sets.idle.DT.Regain.RefreshSub50 = set_combine(sets.idle.Regain.RefreshSub50, sets.DT)
   sets.idle.DT.Regen.Refresh = set_combine(sets.idle.Regen.Refresh, sets.DT)
+  sets.idle.DT.Regen.RefreshSub50 = set_combine(sets.idle.Regen.RefreshSub50, sets.DT)
   sets.idle.DT.Regain.Regen.Refresh = set_combine(sets.idle.Regain.Regen.Refresh, sets.DT)
+  sets.idle.DT.Regain.Regen.RefreshSub50 = set_combine(sets.idle.Regain.Regen.RefreshSub50, sets.DT)
 
   sets.resting = set_combine(sets.idle, {
     main="Iridal Staff",
@@ -1648,7 +1658,9 @@ function update_idle_groups()
       classes.CustomIdleGroups:append('Regen')
     end
     if mp_jobs:contains(player.main_job) or mp_jobs:contains(player.sub_job) then
-      if isRefreshing==true and player.mpp < 100 then
+      if player.mpp < 50 then
+        classes.CustomIdleGroups:append('RefreshSub50')
+      elseif isRefreshing==true and player.mpp < 100 then
         classes.CustomIdleGroups:append('Refresh')
       elseif isRefreshing==false and player.mpp < 85 then
         classes.CustomIdleGroups:append('Refresh')
