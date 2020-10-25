@@ -348,9 +348,9 @@ function update_weaponskill_binds()
       send_command('bind ^numpad7 input /ws "Resolution" <t>')
       send_command('bind ^numpad9 input /ws "Dimidiation" <t>')
       send_command('bind ^numpad8 input /ws "Ground Strike" <t>')
-      send_command('bind ^numpad5 input /ws "Herculean Slash" <t>')
-      send_command('bind ^numpad1 input /ws "Shockwave" <t>') --aoe
+      send_command('bind ^numpad1 input /ws "Shockwave" <t>') --aoe, sleep
       send_command('bind ^numpad2 input /ws "Freezebite" <t>') --elemental
+      send_command('bind ^numpad3 input /ws "Herculean Slash" <t>') --elemental, paralyze
     elseif current_weapon_type == 'Axe' then
     elseif current_weapon_type == 'Great Axe' then
       send_command('bind ^numpad4 input /ws "Upheaval" <t>')

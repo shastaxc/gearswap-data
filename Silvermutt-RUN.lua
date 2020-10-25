@@ -337,6 +337,16 @@ function init_gear_sets()
     -- back="Argocham. Mantle",
   }
 
+  sets.Macc = {
+    ammo="Hydrocera", --6
+    head="Ayanmo Zucchetto +2", --44
+    body="Ayanmo Corazza +2", --46
+    hands="Volte Bracers", --37
+    legs="Ayanmo Cosciales +1", --39
+    feet="Ayanmo Gambieras +1", --36
+    ear1="Dignitary's Earring", --10
+  }
+
   sets.precast.JA['Lunge'] = sets.MAB
 
   sets.precast.JA['Swipe'] = sets.MAB
@@ -534,8 +544,11 @@ function init_gear_sets()
   sets.precast.WS['Dimidiation'].HighAccMaxTp = set_combine(sets.precast.WS['Dimidiation'].HighAcc, {
   })
 
-  sets.precast.WS['Herculean Slash'] = sets.MAB
-  sets.precast.WS['Herculean Slash'].Safe = set_combine(sets.precast.WS.Safe, {
+  sets.precast.WS['Herculean Slash'] = set_combine(sets.MAB, {
+    ear2="Moonshade Earring",
+    ring2="Karieyh Ring",
+  })
+  sets.precast.WS['Herculean Slash'].Safe = set_combine(sets.precast.WS.Safe, sets.Macc, {
   })
   sets.precast.WS['Herculean Slash'].MaxTp = set_combine(sets.precast.WS['Herculean Slash'], {
   })
@@ -553,24 +566,15 @@ function init_gear_sets()
   })
 
   -- Magic accuracy required for Shockwave
-  sets.precast.WS['Shockwave'] = set_combine(sets.precast.WS, sets.MAB, {
+  sets.precast.WS['Shockwave'] = set_combine(sets.Macc, {
     ear2="Moonshade Earring",
     ring2="Karieyh Ring",
   })
-  sets.precast.WS['Shockwave'].Safe = set_combine(sets.precast.WS.Safe, {
+  sets.precast.WS['Shockwave'].Safe = set_combine(sets.precast.WS.Safe, sets.Macc, {
   })
   sets.precast.WS['Shockwave'].MaxTp = set_combine(sets.precast.WS['Shockwave'], {
   })
   sets.precast.WS['Shockwave'].LowAcc = set_combine(sets.precast.WS['Shockwave'], {
-    ammo="Hydrocera",
-    head="Ayanmo Zucchetto +2",
-    body="Ayanmo Corazza +2",
-    hands="Ayanmo Manopolas +1",
-    legs="Ayanmo Cosciales +1",
-    feet="Ayanmo Gambieras +1",
-    ear2="Dignitary's Earring",
-    ring2="Ayanmo Ring",
-    waist="Eschan Stone",
   })
   sets.precast.WS['Shockwave'].LowAccMaxTp = set_combine(sets.precast.WS['Shockwave'].LowAcc, {
   })
