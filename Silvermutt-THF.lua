@@ -557,23 +557,21 @@ function init_gear_sets()
     ammo="Staunch Tathlum", --2/2
     head="Meghanada Visor +2", --5/0
     body="Meghanada Cuirie +2", --8/0
-    hands="Volte Bracers",
+    hands="Malignance Gloves", --5/5
     legs="Meghanada Chausses +2", --6/0
     feet="Turms Leggings",
     neck="Twilight Torque", --5/5
-    ear2="Odnowa Earring +1", --1/3
+    ear2="Odnowa Earring +1", --2/4
     ring1=gear.Dark_Ring, --5/4
     ring2="Defending Ring", --10/10
     -- ammo="Staunch Tathlum +1", --3/3
     -- head="Malignance Chapeau", --6/6
     -- body="Malignance Tabard", --9/9
-    -- hands="Malignance Gloves", --5/5
     -- legs="Malignance Tights", --7/7
     -- feet="Malignance Boots", --4/4
     -- neck="Warder's Charm +1",
     -- ear1="Sanare Earring",
     -- ring1="Purity Ring", --0/4
-    -- ring2="Defending Ring", --10/10
     -- back="Moonlight Cape", --6/6
   }
 
@@ -990,16 +988,15 @@ function init_gear_sets()
   sets.engaged.Hybrid = {
     head="Meghanada Visor +2", --5/0
     body="Meghanada Cuirie +2", --8/0
-    hands="Volte Bracers",
+    hands="Malignance Gloves", --5/5
     legs="Meghanada Chausses +2", --6/0
     feet="Turms Leggings",
     neck="Twilight Torque", --5/5
-    ear2="Odnowa Earring +1", --1/3
+    ear2="Odnowa Earring +1", --2/4
     ring1=gear.Dark_Ring, --5/4
     ring2="Defending Ring", --10/10
     -- head="Malignance Chapeau", --6/6
     -- body="Malignance Tabard", --9/9
-    -- hands="Malignance Gloves", --5/5
     -- legs="Malignance Tights", --7/7
     -- feet="Malignance Boots", --4/4
   }

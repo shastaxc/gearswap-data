@@ -312,7 +312,7 @@ function init_gear_sets()
     ammo="Charis Feather",
     head="Maxixi Tiara +3",
     body="Horos Casaque +3",
-    hands="Mummu Wrists +2",
+    hands="Malignance Gloves",
     legs="Meghanada Chausses +2",
     feet="Mummu Gamashes +1",
     neck="Love Torque",
@@ -322,18 +322,19 @@ function init_gear_sets()
   } -- Magic Accuracy
 
   sets.precast.Flourish1['Desperate Flourish'] = {
-    ammo="C. Palug Stone",
-    head="Maxixi Tiara +3",
-    body="Maxixi Casaque +3",
-    hands="Maxixi Bangles +3",
-    legs=gear.Herc_WS_legs,
-    feet="Maxixi Toeshoes +3",
-    neck="Etoile Gorget +1",
+    hands="Malignance Gloves",
     ear1="Cessance Earring",
     ear2="Telos Earring",
-    ring1="Regal Ring",
-    ring2={name="Chirich Ring +1", bag="wardrobe4"},
     back=gear.DNC_TP_DW_Cape,
+    -- ammo="C. Palug Stone",
+    -- head="Maxixi Tiara +3",
+    -- body="Maxixi Casaque +3",
+    -- hands="Maxixi Bangles +3",
+    -- legs=gear.Herc_WS_legs,
+    -- feet="Maxixi Toeshoes +3",
+    -- neck="Etoile Gorget +1",
+    -- ring1="Regal Ring",
+    -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
   } -- Accuracy
 
   sets.precast.Flourish2 = {}
@@ -595,6 +596,7 @@ function init_gear_sets()
 
   sets.DT = {
     ammo="Staunch Tathlum", --2/2
+    hands="Malignance Hands", --5/5
     neck="Twilight Torque", --5/5
     ring1=gear.Dark_Ring, --5/4
     ring2="Defending Ring", --10/10
@@ -956,6 +958,7 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.engaged.Hybrid = {
+    hands="Malignance Hands", --5/5
     neck="Twilight Torque", --5/5
     ring1=gear.Dark_Ring, --5/4
     ring2="Defending Ring", --10/10
@@ -964,7 +967,7 @@ function init_gear_sets()
     -- neck="Loricate Torque +1", --6/6
     -- ring1="Moonlight Ring", --5/5
     -- ring2="Defending Ring", --10/10
-  } --15/14
+  } --25/24
 
   sets.engaged.DT = set_combine(sets.engaged, sets.engaged.Hybrid)
   sets.engaged.LowAcc.DT = set_combine(sets.engaged.LowAcc, sets.engaged.Hybrid)

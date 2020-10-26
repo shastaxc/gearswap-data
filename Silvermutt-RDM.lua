@@ -371,7 +371,7 @@ function init_gear_sets()
     -- ammo="Yetshila +1",
     -- head="Aya. Zucchetto +2",
     -- body="Ayanmo Corazza +2",
-    -- hands="Malignance Gloves",
+    hands="Malignance Gloves",
     -- legs="Zoar Subligar +1",
     -- feet="Thereoid Greaves",
     -- ear1="Sherida Earring",
@@ -975,7 +975,7 @@ function init_gear_sets()
     ammo="Homiliary",
     head="Duelist's Chapeau",
     body="Emet Harness +1",
-    hands="Volte Bracers",
+    hands="Malignance Gloves",
     legs="Carmine Cuisses +1",
     feet="Ayanmo Gambieras +1",
     neck="Bathy Choker +1",
@@ -1019,7 +1019,7 @@ function init_gear_sets()
     -- sub="Sacro Bulwark", --10/10
     -- head="Malignance Chapeau", --6/6
     -- body="Malignance Tabard", --9/9
-    -- hands="Malignance Gloves", --5/5
+    hands="Malignance Gloves", --5/5
     -- legs="Malignance Tights", --7/7
     -- feet="Malignance Boots", --4/4
     -- neck="Warder's Charm +1",
@@ -1043,11 +1043,11 @@ function init_gear_sets()
   sets.idle.DT.Regain.Regen.Refresh = set_combine(sets.idle.Regain.Regen.Refresh, sets.DT)
   sets.idle.DT.Regain.Regen.RefreshSub50 = set_combine(sets.idle.Regain.Regen.RefreshSub50, sets.DT)
 
-  sets.resting = set_combine(sets.idle, {
+  sets.resting = {
     main="Iridal Staff",
     -- main="Chatoyant Staff",
     -- waist="Shinjutsu-no-Obi +1",
-  })
+  }
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Defense Sets ------------------------------------------
@@ -1080,7 +1080,7 @@ function init_gear_sets()
     -- ammo="Aurgelmir Orb +1",
     -- head="Malignance Chapeau",
     -- body="Malignance Tabard",
-    -- hands="Malignance Gloves",
+    hands="Malignance Gloves",
     -- legs=gear.Taeon_TA_legs,
     -- legs="Malignance Tights",
     -- feet="Carmine Greaves +1",
@@ -1117,7 +1117,7 @@ function init_gear_sets()
     -- ammo="Aurgelmir Orb +1",
     -- head="Malignance Chapeau",
     -- body="Malignance Tabard",
-    -- hands="Malignance Gloves",
+    hands="Malignance Gloves",
     -- legs="Carmine Cuisses +1", --6
     -- feet=gear.Taeon_DW_feet, --9
     -- neck="Anu Torque",
@@ -1147,7 +1147,7 @@ function init_gear_sets()
     -- ammo="Aurgelmir Orb +1",
     -- head="Malignance Chapeau",
     -- body="Malignance Tabard",
-    -- hands="Malignance Gloves",
+    hands="Malignance Gloves",
     -- legs="Carmine Cuisses +1", --6
     -- feet=gear.Taeon_DW_feet, --9
     -- neck="Anu Torque",
@@ -1177,7 +1177,7 @@ function init_gear_sets()
     -- ammo="Aurgelmir Orb +1",
     -- head="Malignance Chapeau",
     -- body="Malignance Tabard",
-    -- hands="Malignance Gloves",
+    hands="Malignance Gloves",
     -- legs="Malignance Tights",
     -- feet=gear.Taeon_DW_feet, --9
     -- neck="Anu Torque",
@@ -1209,7 +1209,7 @@ function init_gear_sets()
     -- ammo="Aurgelmir Orb +1",
     -- head="Malignance Chapeau",
     -- body="Malignance Tabard",
-    -- hands="Malignance Gloves",
+    hands="Malignance Gloves",
     -- legs="Malignance Tights",
     -- feet=gear.Taeon_DW_feet, --9
     -- neck="Anu Torque",
@@ -1240,7 +1240,7 @@ function init_gear_sets()
     -- ammo="Aurgelmir Orb +1",
     -- head="Malignance Chapeau",
     -- body="Malignance Tabard",
-    -- hands="Malignance Gloves",
+    hands="Malignance Gloves",
     -- legs="Malignance Tights",
     -- feet="Malignance Boots",
     -- neck="Anu Torque",

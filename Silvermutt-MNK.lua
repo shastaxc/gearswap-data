@@ -626,6 +626,7 @@ function init_gear_sets()
 
   sets.DT = {
     ammo="Staunch Tathlum",
+    hands="Malignance Gloves",
     neck="Twilight Necklace",
     ear2="Odnowa Earring +1",
     ring1=gear.Dark_Ring,
@@ -689,17 +690,17 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.Hybrid = {
+    hands="Malignance Gloves",
     ammo="Staunch Tathlum",
-    ear2="Odnowa Earring +1",
     ring2="Defending Ring",
     waist="Moonbow Belt +1",
   }
 
   sets.SuperDef = set_combine(sets.Hybrid, {
     head="Mummu Bonnet +2",
-    hands="Volte Bracers",
     legs="Mummu Kecks +1",
     feet="Mummu gamashes +1",
+    ear2="Odnowa Earring +1",
     ring1=gear.Dark_Ring,
   })
 
