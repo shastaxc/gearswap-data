@@ -596,11 +596,12 @@ function init_gear_sets()
 
   sets.DT = {
     ammo="Staunch Tathlum", --2/2
-    hands="Malignance Hands", --5/5
+    body="Malignance Tabard", --9/9
+    hands="Malignance Gloves", --5/5
     neck="Twilight Torque", --5/5
     ring1=gear.Dark_Ring, --5/4
     ring2="Defending Ring", --10/10
-  } --22/21
+  } --36/35
 
   sets.idle.DT = set_combine(sets.idle, sets.DT)
   sets.idle.DT.Regain = set_combine(sets.idle.Regain, sets.DT)
@@ -959,7 +960,7 @@ function init_gear_sets()
 
   sets.engaged.Hybrid = {
     body="Malignance Tabard", --9/9
-    hands="Malignance Hands", --5/5
+    hands="Malignance Gloves", --5/5
     neck="Twilight Torque", --5/5
     ring1=gear.Dark_Ring, --5/4
     ring2="Defending Ring", --10/10
