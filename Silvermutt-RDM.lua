@@ -1018,7 +1018,7 @@ function init_gear_sets()
     -- main="Bolelabunga",
     -- sub="Sacro Bulwark", --10/10
     -- head="Malignance Chapeau", --6/6
-    -- body="Malignance Tabard", --9/9
+    body="Malignance Tabard", --9/9
     hands="Malignance Gloves", --5/5
     -- legs="Malignance Tights", --7/7
     -- feet="Malignance Boots", --4/4
@@ -1079,7 +1079,7 @@ function init_gear_sets()
   sets.engaged = {
     -- ammo="Aurgelmir Orb +1",
     -- head="Malignance Chapeau",
-    -- body="Malignance Tabard",
+    body="Malignance Tabard",
     hands="Malignance Gloves",
     -- legs=gear.Taeon_TA_legs,
     -- legs="Malignance Tights",
@@ -1116,7 +1116,7 @@ function init_gear_sets()
     -- sub="Tauret",
     -- ammo="Aurgelmir Orb +1",
     -- head="Malignance Chapeau",
-    -- body="Malignance Tabard",
+    body="Malignance Tabard",
     hands="Malignance Gloves",
     -- legs="Carmine Cuisses +1", --6
     -- feet=gear.Taeon_DW_feet, --9
@@ -1146,7 +1146,7 @@ function init_gear_sets()
   sets.engaged.DW.LowHaste = set_combine(sets.engaged.DW, {
     -- ammo="Aurgelmir Orb +1",
     -- head="Malignance Chapeau",
-    -- body="Malignance Tabard",
+    body="Malignance Tabard",
     hands="Malignance Gloves",
     -- legs="Carmine Cuisses +1", --6
     -- feet=gear.Taeon_DW_feet, --9
@@ -1176,7 +1176,7 @@ function init_gear_sets()
   sets.engaged.DW.MidHaste = set_combine(sets.engaged.DW, {
     -- ammo="Aurgelmir Orb +1",
     -- head="Malignance Chapeau",
-    -- body="Malignance Tabard",
+    body="Malignance Tabard",
     hands="Malignance Gloves",
     -- legs="Malignance Tights",
     -- feet=gear.Taeon_DW_feet, --9
@@ -1208,7 +1208,7 @@ function init_gear_sets()
   sets.engaged.DW.HighHaste = set_combine(sets.engaged.DW, {
     -- ammo="Aurgelmir Orb +1",
     -- head="Malignance Chapeau",
-    -- body="Malignance Tabard",
+    body="Malignance Tabard",
     hands="Malignance Gloves",
     -- legs="Malignance Tights",
     -- feet=gear.Taeon_DW_feet, --9
@@ -1239,7 +1239,7 @@ function init_gear_sets()
   sets.engaged.DW.MaxHaste = set_combine(sets.engaged.DW, {
     -- ammo="Aurgelmir Orb +1",
     -- head="Malignance Chapeau",
-    -- body="Malignance Tabard",
+    body="Malignance Tabard",
     hands="Malignance Gloves",
     -- legs="Malignance Tights",
     -- feet="Malignance Boots",

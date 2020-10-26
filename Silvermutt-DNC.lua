@@ -958,6 +958,7 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.engaged.Hybrid = {
+    body="Malignance Tabard", --9/9
     hands="Malignance Hands", --5/5
     neck="Twilight Torque", --5/5
     ring1=gear.Dark_Ring, --5/4
@@ -967,7 +968,7 @@ function init_gear_sets()
     -- neck="Loricate Torque +1", --6/6
     -- ring1="Moonlight Ring", --5/5
     -- ring2="Defending Ring", --10/10
-  } --25/24
+  } --34/33
 
   sets.engaged.DT = set_combine(sets.engaged, sets.engaged.Hybrid)
   sets.engaged.LowAcc.DT = set_combine(sets.engaged.LowAcc, sets.engaged.Hybrid)

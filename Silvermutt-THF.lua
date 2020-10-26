@@ -987,7 +987,7 @@ function init_gear_sets()
 
   sets.engaged.Hybrid = {
     head="Meghanada Visor +2", --5/0
-    body="Meghanada Cuirie +2", --8/0
+    body="Malignance Tabard", --9/9
     hands="Malignance Gloves", --5/5
     legs="Meghanada Chausses +2", --6/0
     feet="Turms Leggings",
@@ -996,7 +996,6 @@ function init_gear_sets()
     ring1=gear.Dark_Ring, --5/4
     ring2="Defending Ring", --10/10
     -- head="Malignance Chapeau", --6/6
-    -- body="Malignance Tabard", --9/9
     -- legs="Malignance Tights", --7/7
     -- feet="Malignance Boots", --4/4
   }

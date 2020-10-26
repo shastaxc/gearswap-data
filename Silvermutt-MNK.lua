@@ -698,6 +698,7 @@ function init_gear_sets()
 
   sets.SuperDef = set_combine(sets.Hybrid, {
     head="Mummu Bonnet +2",
+    body="Malignance Tabard",
     legs="Mummu Kecks +1",
     feet="Mummu gamashes +1",
     ear2="Odnowa Earring +1",
