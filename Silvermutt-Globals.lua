@@ -323,9 +323,9 @@ function update_weaponskill_binds()
       send_command('bind ^numpad9 input /ws "Shijin Spiral" <t>')
       send_command('bind ^numpad4 input /ws "Asuran Fists" <t>')
       send_command('bind ^numpad5 input /ws "Shoulder Tackle" <t>')
+      send_command('bind ^numpad6 input /ws "Howling Fist" <t>')
       send_command('bind ^numpad1 input /ws "Spinning Attack" <t>') --aoe
       send_command('bind ^numpad2 input /ws "Raging Fists" <t>')
-      send_command('bind ^numpad3 input /ws "Howling Fist" <t>')
     elseif current_weapon_type == 'Dagger' then
       send_command('bind ^numpad7 input /ws "Exenterator" <t>')
       send_command('bind ^numpad8 input /ws "Mandalic Stab" <t>')

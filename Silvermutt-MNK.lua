@@ -305,8 +305,8 @@ function init_gear_sets()
   sets.precast.WS['Shijin Spiral'] = set_combine(sets.precast.WS, {
     ammo="Falcon Eye",
     head=gear.Herc_WSD_head,
-    body="Mummu Jacket +2",
-    hands=gear.Adhemar_B_hands,
+    body="Malignance Tabard",
+    hands="Malignance Gloves",
     legs="Hizamaru Hizayoroi +1",
     feet=gear.Herc_TA_feet,
     neck="Caro Necklace",
@@ -626,6 +626,7 @@ function init_gear_sets()
 
   sets.DT = {
     ammo="Staunch Tathlum",
+    body="Malignance Tabard",
     hands="Malignance Gloves",
     neck="Twilight Necklace",
     ear2="Odnowa Earring +1",
