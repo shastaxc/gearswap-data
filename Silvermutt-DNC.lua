@@ -82,6 +82,8 @@ end
 
 -- Executes on first load and main job change
 function job_setup()
+  include('Mote-TreasureHunter')
+
   lockstyleset = 2
 
   Haste = 0 -- Do not modify
@@ -127,11 +129,12 @@ function job_setup()
   send_command('bind != gs c cycle altstep')
   send_command('bind ^] gs c toggle usealtstep')
   send_command('bind ![ input /ja "Contradance" <me>')
-  send_command('bind ^` input /ja "Saber Dance" <me>')
+  send_command('bind !q input /ja "Saber Dance" <me>')
   send_command('bind !` input /ja "Chocobo Jig II" <me>')
   send_command('bind @f gs c toggle ClosedPosition')
   send_command('bind ^numlock input /ja "Reverse Flourish" <me>')
 
+  send_command('bind ^` gs c cycle treasuremode')
   send_command('bind @c gs c toggle CP')
 
   send_command('bind ^numpad+ input /ja "Climactic Flourish" <me>')
@@ -187,10 +190,11 @@ function job_file_unload()
   send_command('unbind ^[')
   send_command('unbind ^]')
   send_command('unbind ![')
-  send_command('unbind ^`')
+  send_command('unbind !q')
   send_command('unbind !`')
   send_command('unbind ^,')
   send_command('unbind @f')
+  send_command('unbind ^`')
   send_command('unbind @c')
   send_command('unbind !w')
   send_command('unbind ^numlock')
@@ -1044,6 +1048,11 @@ function init_gear_sets()
   sets.Reive = {
     neck="Ygnas's Resolve +1"
   }
+  sets.TreasureHunter = {
+    hands="Volte Bracers", --1
+    waist="Chaac Belt", --1
+    -- head=gear.Herc_TH_head, --2
+  }
 
 end
 
@@ -1263,6 +1272,9 @@ function display_current_job_state(eventArgs)
   local toy_msg = state.ToyWeapons.current
 
   local msg = ''
+  if state.TreasureMode.value ~= 'None' then
+    msg = msg .. ' TH: ' ..state.TreasureMode.value.. ' |'
+  end
   if state.Kiting.value then
     msg = msg .. ' Kiting: On |'
   end
