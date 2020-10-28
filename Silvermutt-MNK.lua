@@ -53,6 +53,7 @@ function job_setup()
   state.FootworkWS = M(false, 'Footwork on WS')
 
   info.impetus_hit_count = 0 -- Do not modify
+  info.boost_on = false -- Do not modify
   windower.raw_register_event('action', on_action_for_impetus)
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
@@ -237,6 +238,7 @@ function init_gear_sets()
 
   -- Initializes trusts at iLvl 119
   sets.midcast.Trust = sets.precast.FC
+
 
   ------------------------------------------------------------------------------------------------
   ------------------------------------- Weapon Skill Sets ----------------------------------------
@@ -589,6 +591,7 @@ function init_gear_sets()
   sets.latent_regen = {
     neck="Bathy Choker +1",
     ear1="Infused Earring",
+    ring1="Chirich Ring +1",
   }
   sets.latent_refresh = {
     legs="Rawhide Trousers",
@@ -681,6 +684,8 @@ function init_gear_sets()
   })
   sets.engaged.MidAcc = set_combine(sets.engaged.LowAcc, {
     head=gear.Dampening_Tam,
+    ring1="Chirich Ring +1",
+    ring2="Epona's Ring",
   })
   sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
     feet="Anchorite's Gaiters +2",
@@ -929,6 +934,9 @@ function job_post_precast(spell, action, spellMap, eventArgs)
 end
 
 function job_aftercast(spell, action, spellMap, eventArgs)
+  if spell.english == 'Boost' and not spell.interrupted then
+    info.boost_on = true
+  end
   -- if spell.type == 'WeaponSkill' and not spell.interrupted and state.FootworkWS and state.Buff.Footwork then
   --   send_command('cancel Footwork')
   -- end
@@ -991,6 +999,14 @@ function job_buff_change(buff,gain)
       end
       enable('neck','ring2','waist')
       handle_equipping_gear(player.status)
+    end
+  end
+
+  if buff == "Boost" then
+    if gain then
+      info.boost_on = true
+    else
+      info.boost_on = false
     end
   end
 
@@ -1149,10 +1165,9 @@ function customize_idle_set(idleSet)
     else
       idleSet = set_combine(idleSet, sets.Kiting)
     end
-
-    if classes.CustomIdleGroups:contains('Boost') then
-      idleSet = set_combine(idleSet, sets.Boost)
-    end
+  end
+  if info.boost_on then
+    idleSet = set_combine(idleSet, sets.Boost)
   end
   if state.CP.current == 'on' then
     idleSet = set_combine(idleSet, sets.CP)
@@ -1163,6 +1178,9 @@ end
 
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
+  if info.boost_on then
+    idleSet = set_combine(idleSet, sets.Boost)
+  end
   if state.CP.current == 'on' then
     idleSet = set_combine(idleSet, sets.CP)
   end
@@ -1192,9 +1210,6 @@ function update_idle_groups()
   if player.status == 'Idle' then
     if player.tp < 3000 then
       classes.CustomIdleGroups:append('Regain')
-      if buffactive.boost then
-        classes.CustomIdleGroups:append('Boost')
-      end
     end
     if isRegening==true and player.hpp < 100 then
       classes.CustomIdleGroups:append('Regen')

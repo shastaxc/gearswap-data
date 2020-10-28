@@ -532,6 +532,7 @@ function init_gear_sets()
   sets.latent_regen = {
     neck="Bathy Choker +1",
     ear1="Infused Earring",
+    ring1="Chirich Ring +1",
   }
   sets.latent_refresh = {
     legs="Rawhide Trousers",
