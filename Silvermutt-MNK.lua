@@ -184,6 +184,7 @@ function init_gear_sets()
   }
   sets.precast.JA['Boost'] = {
     hands="Anchorite's Gloves +1",
+    waist="Ask Sash",
   }
   sets.precast.JA['Perfect Counter'] = {
     hands="Tantra Crown +1",
@@ -894,6 +895,9 @@ function init_gear_sets()
     waist="Chaac Belt", --1
     -- head=gear.Herc_TH_head, --2
   }
+  sets.Boost = {
+    waist="Ask Sash",
+  }
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -1145,6 +1149,10 @@ function customize_idle_set(idleSet)
     else
       idleSet = set_combine(idleSet, sets.Kiting)
     end
+
+    if classes.CustomIdleGroups:contains('Boost') then
+      idleSet = set_combine(idleSet, sets.Boost)
+    end
   end
   if state.CP.current == 'on' then
     idleSet = set_combine(idleSet, sets.CP)
@@ -1184,6 +1192,9 @@ function update_idle_groups()
   if player.status == 'Idle' then
     if player.tp < 3000 then
       classes.CustomIdleGroups:append('Regain')
+      if buffactive.boost then
+        classes.CustomIdleGroups:append('Boost')
+      end
     end
     if isRegening==true and player.hpp < 100 then
       classes.CustomIdleGroups:append('Regen')
