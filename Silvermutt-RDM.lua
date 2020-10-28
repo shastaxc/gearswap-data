@@ -1556,7 +1556,7 @@ function customize_melee_set(meleeSet)
     meleeSet = set_combine(meleeSet, sets.engaged.Enspell.Fencer)
   end
   if state.CP.current == 'on' then
-    idleSet = set_combine(idleSet, sets.CP)
+    meleeSet = set_combine(meleeSet, sets.CP)
   end
 
   return meleeSet

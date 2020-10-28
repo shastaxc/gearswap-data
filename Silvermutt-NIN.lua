@@ -1026,7 +1026,7 @@ function customize_melee_set(meleeSet)
     meleeSet = set_combine(meleeSet, sets.buff.Sange)
   end
   if state.CP.current == 'on' then
-    idleSet = set_combine(idleSet, sets.CP)
+    meleeSet = set_combine(meleeSet, sets.CP)
   end
 
   return meleeSet

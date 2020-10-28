@@ -1179,10 +1179,10 @@ end
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
   if info.boost_on then
-    idleSet = set_combine(idleSet, sets.Boost)
+    meleeSet = set_combine(meleeSet, sets.Boost)
   end
   if state.CP.current == 'on' then
-    idleSet = set_combine(idleSet, sets.CP)
+    meleeSet = set_combine(meleeSet, sets.CP)
   end
 
   return meleeSet
