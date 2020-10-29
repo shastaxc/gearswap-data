@@ -984,7 +984,7 @@ function job_buff_change(buff,gain)
     end
   end
 
-  if buff == "doom" then
+  if buff == "Doom" then
     if gain then
       send_command('@input /p Doomed.')
     elseif player.hpp > 0 then
@@ -992,8 +992,13 @@ function job_buff_change(buff,gain)
     end
   end
 
+  if buff == "Boost" and not gain then
+    add_to_chat(001, 'boost off')
+    info.boost_on = false
+  end
+
   -- Update gear for these specific buffs
-  if buff == "Hundred Fists" or buff == "Impetus" or buff == "Footwork" or buff == "Doom" then
+  if buff == "Hundred Fists" or buff == "Impetus" or buff == "Footwork" or buff == "Doom" or buff == "Boost" then
     status_change(player.status)
   end
 

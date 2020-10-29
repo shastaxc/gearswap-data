@@ -911,7 +911,7 @@ function job_buff_change(buff, gain)
     add_to_chat(61, "*** MIGAWARI DOWN ***")
   end
 
-  if buff == "doom" then
+  if buff == "Doom" then
     if gain then
       send_command('@input /p Doomed.')
     elseif player.hpp > 0 then

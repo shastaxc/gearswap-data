@@ -1127,7 +1127,7 @@ end
 -- gain == true if the buff was gained, false if it was lost.
 function job_buff_change(buff,gain)
 
-  if buff == "doom" then
+  if buff == "Doom" then
     if gain then
       send_command('@input /p Doomed.')
     elseif player.hpp > 0 then
