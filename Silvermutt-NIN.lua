@@ -74,7 +74,6 @@ function job_setup()
   lugra_ws = S{'Blade: Kamu', 'Blade: Shun', 'Blade: Ten'}
 
   state.Buff.Migawari = buffactive.migawari or false
-  state.Buff.Doom = buffactive.doom or false
   state.Buff.Yonin = buffactive.Yonin or false
   state.Buff.Innin = buffactive.Innin or false
   state.Buff.Futae = buffactive.Futae or false
@@ -890,9 +889,6 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
       equip(sets.precast.JA['Futae'])
     end
   end
-  if state.Buff.Doom then
-    equip(sets.buff.Doom)
-  end
 end
 
 
@@ -917,16 +913,15 @@ function job_buff_change(buff, gain)
 
   if buff == "doom" then
     if gain then
-      equip(sets.buff.Doom)
       send_command('@input /p Doomed.')
-      disable('neck','ring2','waist')
-    else
-      if player.hpp > 0 then
-        send_command('@input /p Doom Removed.')
-      end
-      enable('neck','ring2','waist')
-      handle_equipping_gear(player.status)
+    elseif player.hpp > 0 then
+      send_command('@input /p Doom Removed.')
     end
+  end
+
+  -- Update gear for these specific buffs
+  if buff == "Doom" then
+    status_change(player.status)
   end
 
 end
@@ -1009,6 +1004,9 @@ function customize_idle_set(idleSet)
   if state.CP.current == 'on' then
     idleSet = set_combine(idleSet, sets.CP)
   end
+  if buffactive.Doom then
+    idleSet = set_combine(idleSet, sets.buff.Doom)
+  end
 
   return idleSet
 end
@@ -1028,6 +1026,9 @@ function customize_melee_set(meleeSet)
   if state.CP.current == 'on' then
     meleeSet = set_combine(meleeSet, sets.CP)
   end
+  if buffactive.Doom then
+    meleeSet = set_combine(meleeSet, sets.buff.Doom)
+  end
 
   return meleeSet
 end
@@ -1035,6 +1036,9 @@ end
 function customize_defense_set(defenseSet)
   if state.CP.current == 'on' then
     defenseSet = set_combine(defenseSet, sets.CP)
+  end
+  if buffactive.Doom then
+    defenseSet = set_combine(defenseSet, sets.buff.Doom)
   end
 end
 

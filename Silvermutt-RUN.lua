@@ -91,12 +91,11 @@ function job_setup()
   rayke_duration = 34
   gambit_duration = 92
 
-  -- Do not modify
   runes.element_of = {['Lux']='Light', ['Tenebrae']='Dark', ['Ignis']='Fire', ['Gelus']='Ice', ['Flabra']='Wind',
-      ['Tellus']='Earth', ['Sulpor']='Lightning', ['Unda']='Water'}
-  expended_runes={}
-  rayke_target=nil
-  gambit_target=nil
+      ['Tellus']='Earth', ['Sulpor']='Lightning', ['Unda']='Water'} -- Do not modify
+  expended_runes={} -- Do not modify
+  rayke_target=nil -- Do not modify
+  gambit_target=nil -- Do not modify
 
   -- /BLU Spell Maps
   blue_magic_maps = {}
@@ -1336,7 +1335,7 @@ end
 -- gain == true if the buff was gained, false if it was lost.
 function job_buff_change(buff,gain)
 
-  if buff == "terror" then
+  if buff == "Terror" then
     if gain then
       equip(sets.defense.PDT)
     end
@@ -1344,15 +1343,9 @@ function job_buff_change(buff,gain)
 
   if buff == "doom" then
     if gain then
-      equip(sets.buff.Doom)
       send_command('@input /p Doomed.')
-      disable('neck','ring1','waist')
-    else
-      if player.hpp > 0 then
-        send_command('@input /p Doom Removed.')
-      end
-      enable('neck','ring1','waist')
-      handle_equipping_gear(player.status)
+    elseif player.hpp > 0 then
+      send_command('@input /p Doom Removed.')
     end
   end
 
@@ -1362,7 +1355,6 @@ function job_buff_change(buff,gain)
       disable('head','legs','back')
     else
       enable('head','legs','back')
-      status_change(player.status)
     end
   end
 
@@ -1372,7 +1364,8 @@ function job_buff_change(buff,gain)
     handle_equipping_gear(player.status)
   end
 
-  if buff == 'Battuta' and not gain then
+  -- Update gear for these specific buffs
+  if buff == "Terror" or buff == "Doom" or buff == "Embolden" or buff == "Battuta" or buff:startswith("Aftermath") then
     status_change(player.status)
   end
 
@@ -1422,6 +1415,9 @@ function customize_idle_set(idleSet)
   if state.CP.current == 'on' then
     idleSet = set_combine(idleSet, sets.CP)
   end
+  if buffactive.Doom then
+    idleSet = set_combine(idleSet, sets.buff.Doom)
+  end
 
   return idleSet
 end
@@ -1445,6 +1441,9 @@ function customize_melee_set(meleeSet)
   if state.CP.current == 'on' then
     meleeSet = set_combine(meleeSet, sets.CP)
   end
+  if buffactive.Doom then
+    meleeSet = set_combine(meleeSet, sets.buff.Doom)
+  end
 
   return meleeSet
 end
@@ -1461,6 +1460,9 @@ function customize_defense_set(defenseSet)
   end
   if state.CP.current == 'on' then
     defenseSet = set_combine(defenseSet, sets.CP)
+  end
+  if buffactive.Doom then
+    defenseSet = set_combine(defenseSet, sets.buff.Doom)
   end
 
   return defenseSet
