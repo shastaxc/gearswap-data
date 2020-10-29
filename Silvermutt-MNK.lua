@@ -993,7 +993,6 @@ function job_buff_change(buff,gain)
   end
 
   if buff == "Boost" and not gain then
-    add_to_chat(001, 'boost off')
     info.boost_on = false
   end
 
