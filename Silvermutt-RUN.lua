@@ -864,12 +864,12 @@ function init_gear_sets()
     feet="Erilaz Greaves +1", --5/0
     neck="Futhark Torque +1", --4/4
     waist="Gishdubar Sash",
-    ear1="Odnowa Earring +1", --2/4
+    ear1="Odnowa Earring +1", --3/5
     ear2="Ethereal Earring",
     ring1="Ayanmo Ring", --3/3
     ring2="Defending Ring", --10/10
     back=gear.RUN_HPD_Cape, --10/0
-  } -- 51 / 26
+  } -- 52 / 27
 
   sets.idle.DT = set_combine(sets.idle, sets.DT)
   sets.idle.DT.Regain = set_combine(sets.idle.Regain, sets.DT)
@@ -894,7 +894,6 @@ function init_gear_sets()
   }
 
   -- Protect V = 0%, PDT cap is 50%
-  -- TODO: Fully augment Odnowa and swap with Sherida, swap Dark Ring for Epona's
   sets.defense.PDT = {
     sub="Refined Grip +1", --3/3
     ammo="Staunch Tathlum", --2/2
@@ -905,9 +904,9 @@ function init_gear_sets()
     feet="Turms Leggings",
     neck="Futhark Torque +1", --4/4
     waist="Engraved Belt",
-    ear1="Brutal Earring",
+    ear1="Odnowa Earring +1", --3/5
     ear2="Sherida Earring",
-    ring1=gear.Dark_Ring, --5/4
+    ring1="Epona's Ring",
     ring2="Defending Ring", --10/10
     back=gear.RUN_HPD_Cape, --10/0
     -- ammo="Staunch Tathlum +1", --3/3
@@ -922,7 +921,7 @@ function init_gear_sets()
     -- ring2="Defending Ring", --10/10
     -- back=gear.RUN_HPD_Cape, --10/0
     -- waist="Engraved Belt",
-  } --53 PDT + 5 PDT2 / 31 MDT
+  } --51 PDT + 5 PDT2 / 32 MDT
 
   -- Shell V = 29%, MDT cap is 50%
   sets.defense.MDT = {
@@ -935,12 +934,12 @@ function init_gear_sets()
     feet="Erilaz Greaves +1", --5/0
     neck="Futhark Torque +1", --4/4
     waist="Engraved Belt",
-    ear1="Odnowa Earring +1", --2/4
+    ear1="Odnowa Earring +1", --3/5
     ear2="Sherida Earring",
     ring1=gear.Dark_Ring, --5/4
     ring2="Defending Ring", --10/10
     back=gear.RUN_HPD_Cape, --10/0
-  } --50 PDT + 5 PDT2 / 29 MDT
+  } --51 PDT + 5 PDT2 / 30 MDT
 
   sets.defense.HP = {
     ammo="Staunch Tathlum",
