@@ -325,7 +325,7 @@ function init_gear_sets()
     ear2="Novio Earring", --7
     ring1="Shiva Ring +1", --3
     waist="Eschan Stone", --7
-    back="Evasionist's Cape", --10
+    back="Argochampsa Mantle", --12
     -- ammo="Pemphredo Tathlum",
     -- head=gear.Herc_MAB_head,
     -- body="Carm. Sc. Mail +1",

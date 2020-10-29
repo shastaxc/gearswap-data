@@ -566,6 +566,7 @@ function init_gear_sets()
     ear1="Friomisi Earring", --10
     ear2="Novio Earring", --7
     ring1="Shiva Ring +1", --3
+    back="Argochampsa Mantle", --12
     waist="Eschan Stone", --7
     -- feet=gear.Herc_MAB_feet,
   }

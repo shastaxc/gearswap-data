@@ -485,11 +485,11 @@ function init_gear_sets()
     ear2="Moonshade Earring",
     ring1="Shiva Ring +1", --3
     ring2="Karieyh Ring",
+    back="Argochampsa Mantle", --12
     waist="Eschan Stone", --7
     -- ammo="Seeth. Bomblet +1",
     -- head=gear.Herc_MAB_head,
     -- feet=gear.Herc_MAB_feet,
-    -- back="Argocham. Mantle",
     -- waist="Orpheus's Sash",
   })
 

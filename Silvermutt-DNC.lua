@@ -532,6 +532,7 @@ function init_gear_sets()
     ear2="Moonshade Earring",
     ring1="Shiva Ring +1", --3
     ring2="Karieyh Ring",
+    back="Argochampsa Mantle", --12
     waist="Eschan Stone", --7
   }) -- 40% DEX / 40% INT + MAB
 
