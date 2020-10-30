@@ -187,6 +187,17 @@ function init_gear_sets()
     hands="Anchorite's Gloves +1",
     waist="Ask Sash",
   }
+  sets.precast.JA['Boost'].Risky = {
+    head="Gnadbhod's Helm",
+    body=empty,
+    hands=empty,
+    legs=empty,
+    feet="Mahant Sandals",
+    neck="Justiciar's Torque",
+    ring1="Sljor ring",
+    waist="Ask Sash",
+    -- hands="Anchorite's Gloves +1",
+  }
   sets.precast.JA['Perfect Counter'] = {
     hands="Tantra Crown +1",
   }
@@ -901,7 +912,7 @@ function init_gear_sets()
     waist="Chaac Belt", --1
     -- head=gear.Herc_TH_head, --2
   }
-  sets.Boost = {
+  sets.BoostRegain = {
     waist="Ask Sash",
   }
 end
@@ -916,6 +927,9 @@ function job_precast(spell, action, spellMap, eventArgs)
   -- Don't gearswap for weaponskills when Defense is on.
   if spell.type == 'WeaponSkill' and state.DefenseMode.current ~= 'None' then
     eventArgs.handled = true
+  end
+  if spell.english == 'Boost' and not player.in_combat and state.IdleMode.value ~= 'DT' and state.DefenseMode.current == 'None' then
+    equip(sets.precast.JA['Boost'].Risky)
   end
 end
 
@@ -1150,7 +1164,7 @@ end
 
 -- Modify the default idle set after it was constructed.
 function customize_idle_set(idleSet)
-  -- If not in DT mode put on move speed gear
+  -- If not in defensive mode put on move speed gear
   if state.IdleMode.current ~= 'DT' and state.DefenseMode.value == 'None' then
     if classes.CustomIdleGroups:contains('Adoulin') then
       idleSet = set_combine(idleSet, sets.Kiting.Adoulin)
@@ -1159,7 +1173,7 @@ function customize_idle_set(idleSet)
     end
   end
   if info.boost_on then
-    idleSet = set_combine(idleSet, sets.Boost)
+    idleSet = set_combine(idleSet, sets.BoostRegain)
   end
   if state.CP.current == 'on' then
     idleSet = set_combine(idleSet, sets.CP)
@@ -1174,7 +1188,7 @@ end
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
   if info.boost_on then
-    meleeSet = set_combine(meleeSet, sets.Boost)
+    meleeSet = set_combine(meleeSet, sets.BoostRegain)
   end
   if state.CP.current == 'on' then
     meleeSet = set_combine(meleeSet, sets.CP)
