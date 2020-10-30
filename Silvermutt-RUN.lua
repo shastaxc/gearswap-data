@@ -904,7 +904,7 @@ function init_gear_sets()
     neck="Futhark Torque +1", --4/4
     waist="Engraved Belt",
     ear1="Odnowa Earring +1", --3/5
-    ear2="Sherida Earring",
+    ear2="Eabani Earring",
     ring1="Epona's Ring",
     ring2="Defending Ring", --10/10
     back=gear.RUN_HPD_Cape, --10/0
@@ -934,7 +934,7 @@ function init_gear_sets()
     neck="Futhark Torque +1", --4/4
     waist="Engraved Belt",
     ear1="Odnowa Earring +1", --3/5
-    ear2="Sherida Earring",
+    ear2="Eabani Earring",
     ring1=gear.Dark_Ring, --5/4
     ring2="Defending Ring", --10/10
     back=gear.RUN_HPD_Cape, --10/0
@@ -1112,7 +1112,7 @@ function init_gear_sets()
   }
 
   sets.Kiting = {
-    feet="Skadi's Jambeaux +1",
+    legs="Carmine Cuisses +1",
   }
   sets.Kiting.Adoulin = {
     body="Councilor's Garb",
