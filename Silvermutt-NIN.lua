@@ -817,7 +817,7 @@ function init_gear_sets()
     -- ring2="Mujin Band", --(5)
   }
   sets.CP = {
-    -- back="Aptitude Mantle"
+    back=gear.CP_Cape,
   }
   sets.TreasureHunter = {
     -- head="Volte Cap",

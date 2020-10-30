@@ -1127,7 +1127,7 @@ function init_gear_sets()
     -- waist="Hachirin-no-Obi"
   }
   sets.CP = {
-    back="Mecistopins Mantle",
+    back=gear.CP_Cape,
   }
   sets.Reive = {
     neck="Ygnas's Resolve +1"

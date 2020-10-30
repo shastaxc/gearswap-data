@@ -1056,7 +1056,7 @@ function init_gear_sets()
     body="Councilor's Garb",
   }
   sets.CP = {
-    back="Mecistopins Mantle",
+    back=gear.CP_Cape,
   }
   sets.Reive = {
     neck="Ygnas's Resolve +1"

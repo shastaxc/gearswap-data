@@ -251,6 +251,7 @@ function define_global_sets()
   gear.Ryuo_A_hands = { name="Ryuo Tekko +1", augments={'STR+12','DEX+12','Accuracy+20',}}
   gear.Dampening_Tam = { name="Dampening Tam", augments={'DEX+10','Accuracy+15','Mag. Acc.+15','Quadruple Attack +3',}}
   gear.Leyline_Gloves = { name="Leyline Gloves", augments={'Accuracy+15','Mag. Acc.+15','"Mag.Atk.Bns."+15','"Fast Cast"+3',}}
+  gear.CP_Cape = { name="Mecisto. Mantle", augments={'Cap. Point+50%','STR+1','"Mag.Atk.Bns."+2','DEF+1',}}
 
 end
 
