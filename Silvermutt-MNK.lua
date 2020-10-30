@@ -181,7 +181,7 @@ function init_gear_sets()
   
   -- Precast sets to enhance JAs on use
   sets.precast.JA['Hundred Fists'] = {
-    legs="Hesychast's Hose +1",
+    legs="Hesychast's Hose +3",
   }
   sets.precast.JA['Boost'] = {
     hands="Anchorite's Gloves +1",
@@ -191,7 +191,7 @@ function init_gear_sets()
     hands="Tantra Crown +1",
   }
   sets.precast.JA['Dodge'] = {
-    feet="Anchorite's Gaiters +2",
+    feet="Anchorite's Gaiters +3",
   }
   sets.precast.JA['Focus'] = {
     head="Anchorite's Crown +1",
@@ -606,8 +606,8 @@ function init_gear_sets()
     head=gear.Adhemar_B_head,
     body="Kendatsuba Samue +1",
     hands=gear.Adhemar_B_hands,
-    legs=gear.Samnuha_legs,
-    feet=gear.Herc_TA_feet,
+    legs="Hesychast's Hose +3",
+    feet="Anchorite's Gaiters +3",
     neck="Monk's Nodowa +2",
     ear1="Sherida Earring",
     ear2="Telos Earring",
@@ -669,8 +669,8 @@ function init_gear_sets()
     head=gear.Adhemar_B_head,
     body="Kendatsuba Samue +1",
     hands=gear.Adhemar_B_hands,
-    legs=gear.Samnuha_legs,
-    feet=gear.Herc_TA_feet,
+    legs="Hesychast's Hose +3",
+    feet="Anchorite's Gaiters +3",
     neck="Monk's Nodowa +2",
     ear1="Sherida Earring",
     ear2="Telos Earring",
@@ -689,7 +689,7 @@ function init_gear_sets()
     ring2="Epona's Ring",
   })
   sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
-    feet="Anchorite's Gaiters +2",
+    feet="Anchorite's Gaiters +3",
   })
 
 
@@ -866,7 +866,7 @@ function init_gear_sets()
 
   -- Footwork combat form
   sets.engaged.Footwork = {
-    feet="Anchorite's Gaiters +2"
+    feet="Anchorite's Gaiters +3"
   }
   sets.engaged.Footwork.Acc = set_combine(sets.engaged.Footwork, {
     
@@ -877,7 +877,7 @@ function init_gear_sets()
     body="Bhikku Cyclas +1"
   }
   sets.footwork_kick_feet = {
-    feet="Anchorite's Gaiters +2"
+    feet="Anchorite's Gaiters +3"
   }
   sets.buff.Doom = {
     neck="Nicander's Necklace", --20
