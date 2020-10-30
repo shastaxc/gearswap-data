@@ -959,6 +959,7 @@ end
 -- Called when a player gains or loses a buff.
 -- buff == buff gained or lost
 -- gain == true if the buff was gained, false if it was lost.
+-- Theory: debuffs must be lowercase and buffs must begin with uppercase
 function job_buff_change(buff,gain)
   -- Set Footwork as combat form any time it's active and Hundred Fists is not.
   if buff == 'Footwork' and gain and not buffactive['hundred fists'] then
@@ -984,7 +985,7 @@ function job_buff_change(buff,gain)
     end
   end
 
-  if buff == "Doom" then
+  if buff == "doom" then
     if gain then
       send_command('@input /p Doomed.')
     elseif player.hpp > 0 then
@@ -997,7 +998,7 @@ function job_buff_change(buff,gain)
   end
 
   -- Update gear for these specific buffs
-  if buff == "Hundred Fists" or buff == "Impetus" or buff == "Footwork" or buff == "Doom" or buff == "Boost" then
+  if buff == "Hundred Fists" or buff == "Impetus" or buff == "Footwork" or buff == "doom" or buff == "Boost" then
     status_change(player.status)
   end
 

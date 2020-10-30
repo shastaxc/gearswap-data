@@ -906,12 +906,13 @@ end
 -- Called when a player gains or loses a buff.
 -- buff == buff gained or lost
 -- gain == true if the buff was gained, false if it was lost.
+-- Theory: debuffs must be lowercase and buffs must begin with uppercase
 function job_buff_change(buff, gain)
   if buff == "Migawari" and not gain then
     add_to_chat(61, "*** MIGAWARI DOWN ***")
   end
 
-  if buff == "Doom" then
+  if buff == "doom" then
     if gain then
       send_command('@input /p Doomed.')
     elseif player.hpp > 0 then
@@ -920,7 +921,7 @@ function job_buff_change(buff, gain)
   end
 
   -- Update gear for these specific buffs
-  if buff == "Doom" then
+  if buff == "doom" then
     status_change(player.status)
   end
 
