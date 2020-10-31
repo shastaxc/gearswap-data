@@ -59,7 +59,6 @@ end
 -- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
 function job_setup()
   state.Buff.Migawari = buffactive.migawari or false
-  state.Buff.Doom = buffactive.doom or false
   state.Buff.Yonin = buffactive.Yonin or false
   state.Buff.Innin = buffactive.Innin or false
   state.Buff.Futae = buffactive.Futae or false
@@ -933,22 +932,12 @@ function job_post_precast(spell, action, spellMap, eventArgs)
     if lugra_ws:contains(spell.english) and (world.time >= (17*60) or world.time <= (7*60)) then
       equip(sets.Lugra)
     end
-	if spell.english == 'Blade: Teki' and (world.weather_element == 'Water' or world.day_element == 'Water') then
-      equip(sets.Obi)
-    end
-	if spell.english == 'Blade: To' and (world.weather_element == 'Ice' or world.day_element == 'Ice') then
-      equip(sets.Obi)
-    end
-	if spell.english == 'Blade: Chi' and (world.weather_element == 'Earth' or world.day_element == 'Earth') then
-      equip(sets.Obi)
-    end
-	if spell.english == 'Blade: Ei' and (world.weather_element == 'Dark' or world.day_element == 'Dark') then
-      equip(sets.Obi)
-    end
-    if spell.english == 'Blade: Yu' and (world.weather_element == 'Water' or world.day_element == 'Water') then
-      equip(sets.Obi)
-    end
-	if spell.english == 'Aeolian Edge' and (world.weather_element == 'Wind' or world.day_element == 'Wind') then
+    if (spell.english == 'Blade: Teki' and (world.weather_element == spell.element or world.day_element == spell.element)) or
+       (spell.english == 'Blade: To' and (world.weather_element == spell.element or world.day_element == spell.element)) or
+       (spell.english == 'Blade: Chi' and (world.weather_element == spell.element or world.day_element == spell.element)) or
+       (spell.english == 'Blade: Ei' and (world.weather_element == spell.element or world.day_element == spell.element)) or
+       (spell.english == 'Blade: Yu' and (world.weather_element == spell.element or world.day_element == spell.element)) or
+       (spell.english == 'Aeolian Edge' and (world.weather_element == spell.element or world.day_element == spell.element)) then
       equip(sets.Obi)
     end
     if buffactive['Reive Mark'] then
@@ -970,9 +959,6 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     if state.Buff.Futae then
       equip(sets.precast.JA['Futae'])
     end
-  end
-  if state.Buff.Doom then
-    equip(sets.buff.Doom)
   end
 end
 
@@ -998,16 +984,15 @@ function job_buff_change(buff, gain)
 
   if buff == "doom" then
     if gain then
-      equip(sets.buff.Doom)
       send_command('@input /p Doomed.')
-      disable('neck','ring1','waist')
-    else
-      if player.hpp > 0 then
-        send_command('@input /p Doom Removed.')
-      end
-      enable('neck','ring1','waist')
-      handle_equipping_gear(player.status)
+    elseif player.hpp > 0 then
+      send_command('@input /p Doom Removed.')
     end
+  end
+
+  -- Update gear for these specific buffs
+  if buff == "doom" then
+    status_change(player.status)
   end
 
 end
@@ -1093,6 +1078,9 @@ function customize_idle_set(idleSet)
   if state.CP.current == 'on' then
     idleSet = set_combine(idleSet, sets.CP)
   end
+  if buffactive.Doom then
+    idleSet = set_combine(idleSet, sets.buff.Doom)
+  end
 
   return idleSet
 end
@@ -1112,6 +1100,9 @@ function customize_melee_set(meleeSet)
   if state.CP.current == 'on' then
     meleeSet = set_combine(meleeSet, sets.CP)
   end
+  if buffactive.Doom then
+    meleeSet = set_combine(meleeSet, sets.buff.Doom)
+  end
 
   return meleeSet
 end
@@ -1120,6 +1111,11 @@ function customize_defense_set(defenseSet)
   if state.CP.current == 'on' then
     defenseSet = set_combine(defenseSet, sets.CP)
   end
+  if buffactive.Doom then
+    defenseSet = set_combine(defenseSet, sets.buff.Doom)
+  end
+
+  return defenseSet
 end
 
 -- Function to display the current relevant user state when doing an update.
@@ -1229,10 +1225,12 @@ function update_idle_groups()
     elseif isRegening==false and player.hpp < 85 then
       classes.CustomIdleGroups:append('Regen')
     end
-    if isRefreshing==true and player.mpp < 100 then
-      classes.CustomIdleGroups:append('Refresh')
-    elseif isRefreshing==false and player.mpp < 85 then
-      classes.CustomIdleGroups:append('Refresh')
+    if mp_jobs:contains(player.main_job) or mp_jobs:contains(player.sub_job) then
+      if isRefreshing==true and player.mpp < 100 then
+        classes.CustomIdleGroups:append('Refresh')
+      elseif isRefreshing==false and player.mpp < 85 then
+        classes.CustomIdleGroups:append('Refresh')
+      end
     end
     if world.zone == 'Eastern Adoulin' or world.zone == 'Western Adoulin' then
       classes.CustomIdleGroups:append('Adoulin')
