@@ -1579,6 +1579,8 @@ function customize_defense_set(defenseSet)
   if buffactive.Doom then
     defenseSet = set_combine(defenseSet, sets.buff.Doom)
   end
+
+  return defenseSet
 end
 
 -- Function to display the current relevant user state when doing an update.

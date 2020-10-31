@@ -1041,6 +1041,8 @@ function customize_defense_set(defenseSet)
   if buffactive.Doom then
     defenseSet = set_combine(defenseSet, sets.buff.Doom)
   end
+
+  return defenseSet
 end
 
 
