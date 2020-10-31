@@ -14,6 +14,34 @@ no_swap_gear = S{"Warp Ring", "Dim. Ring (Dem)", "Dim. Ring (Holla)", "Dim. Ring
 
 mp_jobs = S{"WHM", "BLM", "RDM", "PLD", "DRK", "SMN", "BLU", "GEO", "RUN", "SCH"}
 
+spell_type_blocks = {
+  ['WhiteMagic'] = {'terror', 'petrification', 'stun', 'sleep', 'silence', 'mute'},
+  ['BlackMagic'] = {'terror', 'petrification', 'stun', 'sleep', 'silence', 'mute'},
+  ['SummonerPact'] = {'terror', 'petrification', 'stun', 'sleep', 'silence', 'mute'},
+  ['Ninjutsu'] = {'terror', 'petrification', 'stun', 'sleep', 'silence', 'mute'},
+  ['BardSong'] = {'terror', 'petrification', 'stun', 'sleep', 'silence', 'mute'},
+  ['BlueMagic'] = {'terror', 'petrification', 'stun', 'sleep', 'silence', 'mute'},
+  ['Geomancy'] = {'terror', 'petrification', 'stun', 'sleep', 'silence', 'mute'},
+  ['Trust'] = {'terror', 'petrification', 'stun', 'sleep', 'silence', 'mute'},
+  ['WeaponSkill'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
+  ['JobAbility'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
+  ['PetCommand'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
+  ['Samba'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
+  ['Waltz'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
+  ['Jig'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
+  ['Step'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
+  ['Samba'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
+  ['Flourish1'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
+  ['Flourish2'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
+  ['Effusion'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
+  ['Rune'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
+  ['Ward'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
+  ['CorsairRoll'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
+  ['BloodPactRage'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
+  ['BloodPactWard'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
+  ['Scholar'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
+}
+
 current_weapon_type = nil
 
 function define_global_sets()
@@ -379,6 +407,19 @@ function update_weaponskill_binds()
       send_command('bind ^numpad1 input /ws "Cataclysm" <t>') --aoe
       send_command('bind ^numpad2 input /ws "Earth Crusher" <t>') --elemental
       send_command('bind ^numpad3 input /ws "Sunburst" <t>') --elemental
+    end
+  end
+end
+
+-- Runs before job_precast
+function user_precast(spell, action, spellMap, eventArgs)
+  -- Don't gearswap if status forbids the action
+  local forbidden_statuses = spell_type_blocks[spell.type]
+  for k,status in pairs(forbidden_statuses) do
+    if buffactive[status] then
+      add_to_chat(167, 'Stopped due to status.')
+      eventArgs.cancel = true
+      return
     end
   end
 end
