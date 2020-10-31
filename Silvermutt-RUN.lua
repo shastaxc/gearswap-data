@@ -266,10 +266,10 @@ function init_gear_sets()
   sets.Enmity = {
     ammo="Aqreqaq Bomblet", --2
     head="Halitus Helm", --8
-    feet="Erilaz Greaves +1", --6
     body="Emet Harness +1", --10
     hands="Kurys Gloves", --9
     legs="Erilaz Leg Guards +1", --11
+    feet="Erilaz Greaves +1", --6
     neck="Futhark Torque +1", --7
     ear1="Cryptic Earring", --4
     ear2="Fiomisi Earring", --2
@@ -364,6 +364,7 @@ function init_gear_sets()
 
   sets.precast.JA['Vivacious Pulse'] = {
     head="Erilaz Galea +1",
+    legs="Runist Trousers",
     neck="Incanter's Torque",
     -- legs="Rune. Trousers +3",
     -- neck="Incanter's Torque",
@@ -373,7 +374,7 @@ function init_gear_sets()
     -- ring2={name="Stikini Ring +1", bag="wardrobe4"},
     --back="Altruistic Cape",
     -- waist="Bishop's Sash",
-  }
+  } -- Divine Magic skill
 
 
   -- Fast cast sets for spells
