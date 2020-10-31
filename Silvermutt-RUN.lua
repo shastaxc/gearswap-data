@@ -923,8 +923,6 @@ function init_gear_sets()
     -- back=gear.RUN_HPP_Cape,
   }
 
-  sets.defense.DeathResist = set_combine(sets.DeathResist, {})
-
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Engaged Sets ------------------------------------------
@@ -1328,6 +1326,9 @@ function customize_idle_set(idleSet)
   if state.Knockback.value == true then
     idleSet = set_combine(idleSet, sets.defense.Knockback)
   end
+  if state.DeathResist.value == true then
+    idleSet = set_combine(idleSet, sets.DeathResist)
+  end
   -- If not in DT mode put on move speed gear
   if state.IdleMode.current == 'Normal' and state.DefenseMode.value == 'None' then
     if classes.CustomIdleGroups:contains('Adoulin') then
@@ -1380,7 +1381,7 @@ function customize_defense_set(defenseSet)
     defenseSet = set_combine(defenseSet, sets.defense.Knockback)
   end
   if state.DeathResist.value == true then
-    defenseSet = set_combine(defenseSet, sets.defense.DeathResist)
+    defenseSet = set_combine(defenseSet, sets.DeathResist)
   end
   if state.CP.current == 'on' then
     defenseSet = set_combine(defenseSet, sets.CP)
