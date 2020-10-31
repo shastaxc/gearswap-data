@@ -109,7 +109,7 @@ function job_setup()
   state.CastingMode:options('Normal', 'Resistant')
   state.HybridMode:options('Normal', 'LightDef')
   state.IdleMode:options('Normal', 'LightDef')
-  state.PhysicalDefenseMode:options('PDT', 'HP')
+  state.PhysicalDefenseMode:options('PDT')
   state.MagicalDefenseMode:options('MDT')
   state.Knockback = M(false, 'Knockback')
   state.DeathResist = M(false, 'Death Resist Mode')
@@ -264,40 +264,21 @@ function init_gear_sets()
 
   -- Enmity sets
   sets.Enmity = {
-    ammo="Aqreqaq Bomblet", --2
-    head="Halitus Helm", --8
-    body="Emet Harness +1", --10
-    hands="Kurys Gloves", --9
-    legs="Erilaz Leg Guards +1", --11
-    feet="Erilaz Greaves +1", --6
-    neck="Futhark Torque +1", --7
-    ear1="Cryptic Earring", --4
-    ear2="Fiomisi Earring", --2
-    ring1="Pernicious Ring", --5
-    ring2="Supershear Ring", --5
-    waist="Sulla Belt", --3
-    back=gear.RUN_HPD_Cape, --10
-    -- feet="Ahosi Leggings",--7
-    -- neck="Moonlight Necklace", --15
-    -- ear2="Trux Earring", --5
-    -- waist="Kasiri Belt", --3
-  } --75
-
-  sets.Enmity.HP = {
-    ammo="Aqreqaq Bomblet", --2
-    head="Halitus Helm", --8
-    body="Emet Harness +1", --10
-    hands="Kurys Gloves", --9
-    legs="Erilaz Leg Guards +1", --11
-    -- feet="Ahosi Leggings",--7
-    -- neck={name="Unmoving Collar +1", priority=1}, --10
-    ear1="Odnowa Earring +1",
-    -- ear2={name="Tuisto Earring", priority=4},
-    -- ring1={name="Moonlight Ring", priority=2},
-    ring2="Supershear Ring", --5
-    back=gear.RUN_HPD_Cape, --10
-    -- waist="Kasiri Belt", --3
-  }
+    ammo="Aqreqaq Bomblet", --2 [20]
+    head="Halitus Helm", --8 [38]
+    body="Emet Harness +1", --10 [61]
+    hands="Kurys Gloves", --9 [25]
+    legs="Erilaz Leg Guards +1", --11 [80]
+    feet="Erilaz Greaves +1", --6 [18]
+    neck="Futhark Torque +1", --7 [39]
+    ear1="Odnowa Earring +1", --0 [110]
+    ear2="Cryptic Earring", --4 [40]
+    ring1="Pernicious Ring", --5 [30]
+    ring2="Supershear Ring", --5 [30]
+    waist="Kasiri Belt", --3 [30]
+    back=gear.RUN_HPD_Cape, --10 [60]
+    -- ring1="Eihwaz Ring", --5 [70]
+  } --80 Enmity [551 HP]
 
   sets.precast.JA['Vallation'] = {
     body="Runeist's Coat +3",
@@ -313,38 +294,34 @@ function init_gear_sets()
   }
 
   sets.MAB = {
-    ammo="Seething Bomblet", --6
-    head="Highwing Helm", --20
-    body=gear.Samnuha_body, --25
-    hands=gear.Leyline_Gloves, --30
-    legs=gear.Herc_MAB_legs, --24
-    feet=gear.Herc_WSD_feet, --10
-    neck="Baetyl Pendant", --13
-    ear1="Friomisi Earring", --10
-    ear2="Novio Earring", --7
-    ring1="Shiva Ring +1", --3
-    waist="Eschan Stone", --7
-    back="Argochampsa Mantle", --12
-    -- ammo="Pemphredo Tathlum",
-    -- head=gear.Herc_MAB_head,
-    -- body="Carm. Sc. Mail +1",
-    -- hands="Carmine Fin. Ga. +1",
-    -- feet=gear.Herc_MAB_feet,
-    -- ear1="Crematio Earring",
-    -- ring1={name="Fenrir Ring +1", bag="wardrobe3"},
-    -- ring2={name="Fenrir Ring +1", bag="wardrobe4"},
-    -- back="Argocham. Mantle",
-  }
+    ammo="Seething Bomblet", --6 [0]
+    head="Highwing Helm", --20 [38]
+    body=gear.Samnuha_body, --25 [63]
+    hands=gear.Leyline_Gloves, --30 [25]
+    legs=gear.Herc_MAB_legs, --24 [38]
+    feet=gear.Herc_WSD_feet, --10 [9]
+    neck="Baetyl Pendant", --13 [0]
+    ear1="Friomisi Earring", --10 [0]
+    ear2="Novio Earring", --7 [0]
+    ring2="Shiva Ring +1", --3 [0]
+    waist="Eschan Stone", --7 [20]
+    back="Argochampsa Mantle", --12 [0]
+    -- ammo="Pemphredo Tathlum", --4
+    -- head=gear.Herc_MAB_head, --45 [38]
+    -- body="Carm. Sc. Mail +1", --42 [96]
+    -- hands="Carmine Fin. Ga. +1", --42 [27]
+    -- feet=gear.Herc_MAB_feet, --45 [9]
+  } -- 167 MAB [193 HP, 303 w/ PDT]
 
   sets.Macc = {
-    ammo="Hydrocera", --6
-    head="Ayanmo Zucchetto +2", --44
-    body="Ayanmo Corazza +2", --46
-    hands="Volte Bracers", --37
-    legs="Ayanmo Cosciales +1", --39
-    feet="Ayanmo Gambieras +1", --36
-    ear1="Dignitary's Earring", --10
-  }
+    ammo="Hydrocera", --6 [0]
+    head="Ayanmo Zucchetto +2", --44 [45]
+    body="Ayanmo Corazza +2", --46 [57]
+    hands="Volte Bracers", --37 [57]
+    legs="Ayanmo Cosciales +1", --39 [45]
+    feet="Ayanmo Gambieras +1", --36 [11]
+    ear2="Dignitary's Earring", --10 [0]
+  } --218 Magic Acc [215 HP, 534 w/ PDT, 534 w/ MDT]
 
   sets.precast.JA['Lunge'] = sets.MAB
 
@@ -362,55 +339,39 @@ function init_gear_sets()
     hands="Futhark Mitons"
   }
 
+  -- Divine Magic skill
   sets.precast.JA['Vivacious Pulse'] = {
-    head="Erilaz Galea +1",
-    legs="Runist Trousers",
-    neck="Incanter's Torque",
-    -- legs="Rune. Trousers +3",
-    -- neck="Incanter's Torque",
-    -- ear1="Beatific Earring",
-    -- ear2="Saxnot Earring",
-    -- ring1={name="Stikini Ring +1", bag="wardrobe3"},
-    -- ring2={name="Stikini Ring +1", bag="wardrobe4"},
-    --back="Altruistic Cape",
-    -- waist="Bishop's Sash",
-  } -- Divine Magic skill
-
+    head="Erilaz Galea +1", --Aug JA [91]
+    legs="Runist Trousers", --15 [22]
+    neck="Incanter's Torque", --10 [0]
+    -- legs="Rune. Trousers +3", --19 [80]
+    -- ear2="Saxnot Earring", --10 [0]
+    -- ring1="Stikini Ring +1", --8 [0]
+  } --25 [507]
 
   -- Fast cast sets for spells
   sets.precast.FC = {
-    ammo="Impatiens", --Quick Magic 2%
-    head="Runeist Bandeau +1", --10
-    body=gear.Taeon_FC_body, --9
-    hands=gear.Leyline_Gloves, --8
-    legs="Ayanmo Cosciales +1", --5
-    feet=gear.Taeon_FC_feet, --5
-    ear1="Loquac. Earring", --2
-    ring1="Lebeche Ring", --Quick Magic 2%
-    ring2="Prolix Ring", --2
-    -- ammo="Sapience Orb", --2
-    -- head="Rune. Bandeau +3", --14
-    -- legs="Ayanmo Cosciales +2", --6
-    -- feet="Carmine Greaves +1", --8
-    -- neck="Orunmila's Torque", --5
-    -- ear1="Tuisto Earring",
-    -- ear2="Odnowa Earring +1",
-    -- ring1="Moonlight Ring",
-    -- ring2="Weather. Ring +1", --6(4)
-    -- back=gear.RUN_FC_Cape, --10
-    -- waist="Oneiros Belt",
-  }
+    ammo="Impatiens", --0/2 [0]
+    head="Runeist Bandeau +1", --10/0 [66]
+    body=gear.Taeon_FC_body, --9/0 [59]
+    hands=gear.Leyline_Gloves, --8/0 [25]
+    legs="Ayanmo Cosciales +1", --5/0 [45]
+    feet=gear.Taeon_FC_feet, --5/0 [13]
+    ear2="Loquac. Earring", --2/0 [0]
+    ring2="Prolix Ring", --2/0 [0]
+    waist="Kasiri Belt", --0/0 [30]
+    -- head="Rune. Bandeau +3", --14 [109]
 
-  sets.precast.FC.HP = set_combine(sets.precast.FC, {
-    -- ammo="Aqreqaq Bomblet",
-    -- head={name="Rune. Bandeau +3", priority=6},
-    -- body={name="Runeist's Coat +3", priority=2},
-    -- neck={name="Unmoving Collar +1", priority=1}, --10
-    -- ear1={name="Tuisto Earring", priority=5},
-    -- ear2={name="Odnowa Earring +1", priority=4},
-    -- ring1={name="Moonlight Ring", priority=3},
-    -- waist="Oneiros Belt",
-  })
+    --Goal:
+    -- ammo="Impatiens", --0/2 [0]
+    -- head="Rune. Bandeau +3", --14/0 [109]
+    -- hands=gear.Leyline_Gloves, --8/0 [25]
+    -- legs="Ayanmo Cosciales +2", --6/0 [45]
+    -- feet=gear.Taeon_FC_feet, --5/0 [13]
+    -- waist="Kasiri Belt", --0/0 [30]
+    -- back=gear.RUN_FC_Cape, --10/0 [60]
+    -- 43% Fast Cast / 2% Quick Magic [302 HP, 824 w/ PDT, 824 w/ MDT]
+  } -- 41% Fast Cast / 2% Quick Magic [208 HP, 417 w/ PDT, 417 w/ MDT]
 
   sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {
     legs="Futhark Trousers +2",
@@ -485,15 +446,14 @@ function init_gear_sets()
   sets.precast.WS['Resolution'].Safe = set_combine(sets.precast.WS['Resolution'], {
     ammo="Staunch Tathlum", --2/2
     head="Meghanada Visor +2", --5/0
+    body="Runeist's Coat +3", --0/0
     legs="Erilaz Leg Guards +1", --7/0
     feet="Erilaz Greaves +1", --5/0
     neck="Futhark Torque +1", --5/5
-    ring1="Ayanmo Ring", --3/3
+    ear1="Odnowa Earring +1", --3/5
+    ring1="Gelatinous Ring +1", --7/(-1)
     ring2="Defending Ring", --10/10
     back=gear.RUN_HPD_Cape, --10/0
-    -- head=gear.Adhemar_D_head,
-    -- body=gear.Adhemar_B_body,
-    -- feet=gear.Herc_TA_feet,
   })
   sets.precast.WS['Resolution'].MaxTp = set_combine(sets.precast.WS['Resolution'], {
   })
@@ -552,7 +512,7 @@ function init_gear_sets()
   sets.precast.WS['Dimidiation'].HighAccMaxTp = set_combine(sets.precast.WS['Dimidiation'].HighAcc, {
   })
 
-  sets.precast.WS['Herculean Slash'] = set_combine(sets.MAB, {
+  sets.precast.WS['Herculean Slash'] = set_combine(sets.Macc, {
     ear2="Moonshade Earring",
     ring2="Karieyh Ring",
   })
@@ -691,16 +651,15 @@ function init_gear_sets()
 
   sets.midcast.SpellInterrupt = {
     ammo="Staunch Tathlum", --10
-    -- body=gear.Taeon_Phalanx_body, --10
+    -- head=gear.Taeon_Phalanx_head, --10
     -- hands=gear.Taeon_Phalanx_hands, --10
     -- legs=gear.Taeon_Phalanx_legs, --10
     -- feet=gear.Taeon_Phalanx_feet, --10
-    -- neck="Moonlight Necklace", --15
-    -- ear1="Halasz Earring", --5
-    -- ring1="Evanescence Ring", --5
+    -- ear2="Halasz Earring", --5
+    -- ring2="Evanescence Ring", --5
     -- back=gear.RUN_FC_Cape, --10
     waist="Audumbla Sash", --10
-  } -- +10% from merit points
+  }
 
   sets.midcast.Cure = {
     ammo="Staunch Tathlum",
@@ -731,18 +690,10 @@ function init_gear_sets()
     neck="Incanter's Torque",
     ear1="Andoaa Earring",
     ear2="Mimir Earring",
-    -- main="Pukulatmuj +1",
-    -- head="Erilaz Galea +1",
     -- body="Manasa Chasuble",
-    -- hands="Runeist Mitons",
-    -- legs="Carmine Cuisses +1",
-    -- neck="Incanter's Torque",
-    -- ear1="Mimir Earring",
-    -- ear2="Andoaa Earring",
     -- ring1={name="Stikini Ring +1", bag="wardrobe3"},
     -- ring2={name="Stikini Ring +1", bag="wardrobe4"},
     -- back="Merciful Cape",
-    -- waist="Olympus Sash",
   }
 
   sets.midcast.EnhancingDuration = {
@@ -920,65 +871,47 @@ function init_gear_sets()
 
   -- Protect V = 0%, PDT cap is 50%
   sets.defense.PDT = {
-    sub="Refined Grip +1", --3/3, 0
-    ammo="Staunch Tathlum", --2/2, 0
-    head="Turms Cap +1", --0/0, 109
-    body="Runeist's Coat +3", --0/0, 94
-    hands="Turms Mittens", --0/0, 91
-    legs="Erilaz Leg Guards +1", --7/0, 107
-    feet="Turms Leggings", --0/0, 137
-    neck="Futhark Torque +1", --5/5, 25
-    waist="Audumbla Sash", --4/0, 0
-    ear1="Odnowa Earring +1", --3/5, 0
-    ear2="Eabani Earring", --0/0, 8
-    ring1="Gelatinous Ring +1", --7/(-1), 0
-    ring2="Defending Ring", --10/10, 0
-    back=gear.RUN_HPD_Cape, --10/0, 30
+    sub="Refined Grip +1", --3/3, 0 [0]
+    ammo="Staunch Tathlum", --2/2, 0 [0]
+    head="Turms Cap +1", --0/0, 109 [94]
+    body="Runeist's Coat +3", --0/0, 94 [218]
+    hands="Turms Mittens", --0/0, 91 [59]
+    legs="Erilaz Leg Guards +1", --7/0, 107 [80]
+    feet="Turms Leggings", --0/0, 137 [61]
+    neck="Futhark Torque +1", --5/5, 25 [39]
+    waist="Audumbla Sash", --4/0, 0 [0]
+    ear1="Odnowa Earring +1", --3/5, 0 [110]
+    ear2="Eabani Earring", --0/0, 8 [45]
+    ring1="Gelatinous Ring +1", --7/(-1), 0 [110]
+    ring2="Defending Ring", --10/10, 0 [0]
+    back=gear.RUN_HPD_Cape, --10/0, 30 [60]
     -- ammo="Staunch Tathlum +1", --3/3
-    -- head="Turms Cap +1",
-    -- body="Runeist's Coat +3",
     -- hands="Turms Mittens +1",
     -- feet="Turms Leggings +1",
     -- neck="Futhark Torque +2", --7/7, 30
-  } --50 PDT / 24 MDT, 601 MEVA
+  } --50 PDT / 24 MDT, 601 MEVA [831 HP]
 
   -- Shell V = 29%, MDT cap is 50%
   sets.defense.MDT = {
-    sub="Refined Grip +1", --3/3, 0
-    ammo="Staunch Tathlum", --2/2, 0
-    head="Turms Cap +1", --0/0, 109
-    body="Runeist's Coat +3", --0/0, 94
-    hands="Turms Mittens", --0/0, 91
-    legs="Erilaz Leg Guards +1", --7/0, 107
-    feet="Erilaz Greaves +1", --5/0, 107
-    neck="Futhark Torque +1", --5/5, 25
-    waist="Engraved Belt", --0/0, 0
-    ear1="Odnowa Earring +1", --3/5, 0
-    ear2="Eabani Earring", --0/0, 8
-    ring1="Gelatinous Ring +1", --7/(-1), 0
-    ring2="Defending Ring", --10/10, 0
-    back=gear.RUN_HPD_Cape, --10/0, 30
+    sub="Refined Grip +1", --3/3, 0 [0]
+    ammo="Staunch Tathlum", --2/2, 0 [0]
+    head="Turms Cap +1", --0/0, 109 [94]
+    body="Runeist's Coat +3", --0/0, 94 [218]
+    hands="Turms Mittens", --0/0, 91 [59]
+    legs="Erilaz Leg Guards +1", --7/0, 107 [80]
+    feet="Erilaz Greaves +1", --5/0, 107 [18]
+    neck="Futhark Torque +1", --5/5, 25 [39]
+    waist="Engraved Belt", --0/0, 0 [0]
+    ear1="Odnowa Earring +1", --3/5, 0 [110]
+    ear2="Eabani Earring", --0/0, 8 [45]
+    ring1="Gelatinous Ring +1", --7/(-1), 0 [110]
+    ring2="Defending Ring", --10/10, 0 [0]
+    back=gear.RUN_HPD_Cape, --10/0, 30 [60]
     -- ammo="Staunch Tathlum +1", --3/3
     -- hands="Turms Mittens +1",
     -- neck="Futhark Torque +2", --7/7, 30
     -- ear2="Sanare Earring",
-  } --52 PDT / 24 MDT, 571 MEVA
-
-  sets.defense.HP = {
-    ammo="Staunch Tathlum",
-    head="Ayanmo Zucchetto +2",
-    body="Runeist's Coat +3",
-    hands="Turms Mittens",
-    legs="Erilaz Leg Guards +1", --7/0
-    feet="Turms Leggings",
-    neck="Futhark Torque +1",
-    waist="Sailfi Belt +1",
-    ear1="Brutal Earring",
-    ear2="Sherida Earring",
-    ring1="Epona's Ring",
-    ring2="Ayanmo Ring",
-    back=gear.RUN_HPD_Cape,
-  }
+  } --52 PDT / 24 MDT, 571 MEVA [833 HP]
 
   sets.defense.Parry = {
     hands="Turms Mittens", --Parry: Recover HP+75
@@ -1162,46 +1095,39 @@ end
 function job_precast(spell, action, spellMap, eventArgs)
   -- equip(sets[state.WeaponSet.current])
 
-  if buffactive['terror'] or buffactive['petrification'] or buffactive['stun'] or buffactive['sleep'] then
-    add_to_chat(167, 'Stopped due to status.')
-    eventArgs.cancel = true
-    return
-  end
-  if state.DefenseMode.value == 'Physical' and state.PhysicalDefenseMode.current == 'HP' then
-    currentSpell = spell.english
-    eventArgs.handled = true
-    if spell.action_type == 'Magic' then
-      equip(sets.precast.FC.HP)
-    elseif spell.action_type == 'Ability' then
-      equip(sets.Enmity.HP)
-      equip(sets.precast.JA[currentSpell])
-    end
-  else
-    if spell.action_type == 'Ability' and spell.type ~= 'WeaponSkill' then
+  -- Use safe/enmity set for Lunge/Swipe if in defense mode
+  if (spell.english == 'Lunge' or spell.english == 'Swipe') then
+    if state.HybridMode.value ~= 'Normal' or state.DefenseMode.value ~= 'None' then
       equip(sets.Enmity)
-      equip(sets.precast.JA[spell])
     end
+  elseif spell.action_type == 'Ability' and spell.type ~= 'WeaponSkill' and not runes:contains(spell.english) then
+    equip(sets.Enmity)
+    equip(sets.precast.JA[spell])
   end
+
+  -- Use Swipe if Lunge is on cooldown
   if spell.english == 'Lunge' then
     local abil_recasts = windower.ffxi.get_ability_recasts()
     if abil_recasts[spell.recast_id] > 0 then
       send_command('input /jobability "Swipe" <t>')
---    add_to_chat(122, '***Lunge Aborted: Timer on Cooldown -- Downgrading to Swipe.***')
       eventArgs.cancel = true
       return
     end
   end
+  -- Use Vallation if Valiance is on cooldown
   if spell.english == 'Valiance' then
     local abil_recasts = windower.ffxi.get_ability_recasts()
     if abil_recasts[spell.recast_id] > 0 then
       send_command('input /jobability "Vallation" <me>')
       eventArgs.cancel = true
       return
+    -- Cancel Vallation if using Valiance
     elseif spell.english == 'Valiance' and buffactive['vallation'] then
       cast_delay(0.2)
       send_command('cancel Vallation') -- command requires 'cancel' add-on to work
     end
   end
+  -- Cancel shadows if casting more shadows
   if spellMap == 'Utsusemi' then
     if buffactive['Copy Image (3)'] or buffactive['Copy Image (4+)'] then
       cancel_spell()
@@ -1235,17 +1161,7 @@ function job_post_precast(spell, action, spellMap, eventArgs)
 end
 
 function job_midcast(spell, action, spellMap, eventArgs)
-  if state.DefenseMode.value == 'Physical' and state.PhysicalDefenseMode.current == 'HP' and spell.english ~= "Phalanx" then
-    eventArgs.handled = true
-    if spell.action_type == 'Magic' then
-      if spell.english == 'Flash' or spell.english == 'Foil' or spell.english == 'Stun'
-        or blue_magic_maps.Enmity:contains(spell.english) then
-        equip(sets.Enmity.HP)
-      elseif spell.skill == 'Enhancing Magic' then
-        equip(sets.midcast.EnhancingDuration)
-      end
-    end
-  end
+
 end
 
 -- Run after the default midcast() is done.
