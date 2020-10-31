@@ -975,13 +975,13 @@ function init_gear_sets()
   sets.idle = {
     ammo="Homiliary",
     head="Duelist's Chapeau",
-    body="Emet Harness +1",
+    body="Malignance Tabard",
     hands="Malignance Gloves",
     legs="Carmine Cuisses +1",
     feet="Ayanmo Gambieras +1",
     neck="Bathy Choker +1",
     ear1="Infused Earring",
-    ear2="Ethereal Earring",
+    ear2="Eabani Earring",
     ring1=gear.Dark_Ring,
     ring2="Defending Ring",
     waist="Chuq'aba Belt",
@@ -1024,9 +1024,9 @@ function init_gear_sets()
     -- legs="Malignance Tights", --7/7
     -- feet="Malignance Boots", --4/4
     -- neck="Warder's Charm +1",
-    -- ear1="Eabani Earring",
-    -- ear2="Sanare Earring",
-    -- ring2="Defending Ring", --10/10
+    -- ear1="Sanare Earring",
+    ear2="Eabani Earring",
+    ring2="Defending Ring", --10/10
     -- back=gear.RDM_INT_Cape,
     -- waist="Carrier's Sash",
   }
