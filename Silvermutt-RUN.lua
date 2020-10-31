@@ -106,9 +106,9 @@ function job_setup()
 
   state.OffenseMode:options('STP', 'Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.WeaponskillMode:options('Normal', 'MaxTp', 'LowAcc', 'LowAccMaxTp', 'MidAcc', 'MidAccMaxTp', 'HighAcc', 'HighAccMaxTp')
-  state.HybridMode:options('Normal', 'DT')
   state.CastingMode:options('Normal', 'Resistant')
-  state.IdleMode:options('Normal', 'DT')
+  state.HybridMode:options('Normal', 'LightDef')
+  state.IdleMode:options('Normal', 'LightDef')
   state.PhysicalDefenseMode:options('PDT', 'HP')
   state.MagicalDefenseMode:options('MDT')
   state.Knockback = M(false, 'Knockback')
@@ -482,7 +482,15 @@ function init_gear_sets()
     -- neck="Futhark Torque +2",
     -- back=gear.RUN_WS1_Cape,
   })
-  sets.precast.WS['Resolution'].Safe = set_combine(sets.precast.WS.Safe, {
+  sets.precast.WS['Resolution'].Safe = set_combine(sets.precast.WS['Resolution'], {
+    ammo="Staunch Tathlum", --2/2
+    head="Meghanada Visor +2", --5/0
+    legs="Erilaz Leg Guards +1", --7/0
+    feet="Erilaz Greaves +1", --5/0
+    neck="Futhark Torque +1", --5/5
+    ring1="Ayanmo Ring", --3/3
+    ring2="Defending Ring", --10/10
+    back=gear.RUN_HPD_Cape, --10/0
     -- head=gear.Adhemar_D_head,
     -- body=gear.Adhemar_B_body,
     -- feet=gear.Herc_TA_feet,
@@ -801,10 +809,11 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.latent_regain = {
+    head="Turms Cap +1",
     ring1="Karieyh Ring",
   }
   sets.latent_regen = {
-    head="Meghanada Visor +2",
+    head="Turms Cap +1",
     body="Meghanada Cuirie +2",
     hands="Turms Mittens",
     legs="Meghanada Chausses +2",
@@ -854,35 +863,51 @@ function init_gear_sets()
   sets.idle.Regain.Regen.Refresh = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh)
   sets.idle.Regain.Regen.RefreshSub50 = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh_sub50)
 
-  sets.DT = {
-    sub="Refined Grip +1", --3/3
-    ammo="Staunch Tathlum", --2/2
-    head="Meghanada Visor +2", --5/0
-    body="Runeist's Coat +3",
-    hands="Turms Mittens",
-    legs="Erilaz Leg Guards +1", --7/0
-    feet="Erilaz Greaves +1", --5/0
-    neck="Futhark Torque +1", --4/4
-    waist="Gishdubar Sash",
-    ear1="Odnowa Earring +1", --3/5
-    ear2="Ethereal Earring",
-    ring1="Ayanmo Ring", --3/3
-    ring2="Defending Ring", --10/10
-    back=gear.RUN_HPD_Cape, --10/0
-  } -- 52 / 27
+  sets.LightDef = {
+    sub="Refined Grip +1", --3/3, 0
+    ammo="Staunch Tathlum", --2/2, 0
+    head="Ayanmo Zucchetto +2", --3/3, 53
+    body="Meghanada Cuirie +2", --8/0, 64
+    legs="Carmine Cuisses +1", --6/0, 80
+    neck="Futhark Torque +1", --4/4, 25
+    ring2="Defending Ring", --10/10, 0
+    back=gear.RUN_HPD_Cape, --10/0, 30
+    -- head=gear.Adhemar_D_head, --4/0
+    -- neck="Futhark Torque +2", --7/7
+    -- ring1="Moonlight Ring", --5/5
+    -- ring2="Defending Ring", --10/10
+    -- back=gear.RUN_TP_Cape, --10/0
+  } --40 PDT / 22 MDT, 252 MEVA
 
-  sets.idle.DT = set_combine(sets.idle, sets.DT)
-  sets.idle.DT.Regain = set_combine(sets.idle.Regain, sets.DT)
-  sets.idle.DT.Regen = set_combine(sets.idle.Regen, sets.DT)
-  sets.idle.DT.Refresh = set_combine(sets.idle.Refresh, sets.DT)
-  sets.idle.DT.RefreshSub50 = set_combine(sets.idle.RefreshSub50, sets.DT)
-  sets.idle.DT.Regain.Regen = set_combine(sets.idle.Regain.Regen, sets.DT)
-  sets.idle.DT.Regain.Refresh = set_combine(sets.idle.Regain.Refresh, sets.DT)
-  sets.idle.DT.Regain.RefreshSub50 = set_combine(sets.idle.Regain.RefreshSub50, sets.DT)
-  sets.idle.DT.Regen.Refresh = set_combine(sets.idle.Regen.Refresh, sets.DT)
-  sets.idle.DT.Regen.RefreshSub50 = set_combine(sets.idle.Regen.RefreshSub50, sets.DT)
-  sets.idle.DT.Regain.Regen.Refresh = set_combine(sets.idle.Regain.Regen.Refresh, sets.DT)
-  sets.idle.DT.Regain.Regen.RefreshSub50 = set_combine(sets.idle.Regain.Regen.RefreshSub50, sets.DT)
+  sets.idle.LightDef = set_combine(sets.idle, sets.LightDef)
+  sets.idle.LightDef.Regain = set_combine(sets.idle.Regain, sets.LightDef)
+  sets.idle.LightDef.Regen = set_combine(sets.idle.Regen, sets.LightDef)
+  sets.idle.LightDef.Refresh = set_combine(sets.idle.Refresh, sets.LightDef)
+  sets.idle.LightDef.RefreshSub50 = set_combine(sets.idle.RefreshSub50, sets.LightDef)
+  sets.idle.LightDef.Regain.Regen = set_combine(sets.idle.Regain.Regen, sets.LightDef)
+  sets.idle.LightDef.Regain.Refresh = set_combine(sets.idle.Regain.Refresh, sets.LightDef)
+  sets.idle.LightDef.Regain.RefreshSub50 = set_combine(sets.idle.Regain.RefreshSub50, sets.LightDef)
+  sets.idle.LightDef.Regen.Refresh = set_combine(sets.idle.Regen.Refresh, sets.LightDef)
+  sets.idle.LightDef.Regen.RefreshSub50 = set_combine(sets.idle.Regen.RefreshSub50, sets.LightDef)
+  sets.idle.LightDef.Regain.Regen.Refresh = set_combine(sets.idle.Regain.Regen.Refresh, sets.LightDef)
+  sets.idle.LightDef.Regain.Regen.RefreshSub50 = set_combine(sets.idle.Regain.Regen.RefreshSub50, sets.LightDef)
+
+  sets.idle.Weak = {
+    sub="Refined Grip +1", --3/3, 0
+    ammo="Staunch Tathlum", --2/2, 0
+    head="Turms Cap +1", --0/0, 109
+    body="Runeist's Coat +3", --0/0, 94
+    hands="Turms Mittens", --0/0, 91
+    legs="Erilaz Leg Guards +1", --7/0, 107
+    feet="Erilaz Greaves +1", --5/0, 107
+    neck="Futhark Torque +1", --5/5, 25
+    waist="Engraved Belt", --0/0, 0
+    ear1="Odnowa Earring +1", --3/5, 0
+    ear2="Eabani Earring", --0/0, 8
+    ring1=gear.Dark_Ring, --5/4, 0
+    ring2="Defending Ring", --10/10, 0
+    back=gear.RUN_HPD_Cape, --10/0, 30
+  } --50 PDT / 29 MDT, 571 MEVA
 
 
   ------------------------------------------------------------------------------------------------
@@ -895,51 +920,49 @@ function init_gear_sets()
 
   -- Protect V = 0%, PDT cap is 50%
   sets.defense.PDT = {
-    sub="Refined Grip +1", --3/3
-    ammo="Staunch Tathlum", --2/2
-    head="Meghanada Visor +2", --5/0
-    body="Futhark Coat +1", --7/7
-    hands="Turms Mittens",
-    legs="Erilaz Leg Guards +1", --7/0
-    feet="Turms Leggings",
-    neck="Futhark Torque +1", --4/4
-    waist="Engraved Belt",
-    ear1="Odnowa Earring +1", --3/5
-    ear2="Eabani Earring",
-    ring1="Epona's Ring",
-    ring2="Defending Ring", --10/10
-    back=gear.RUN_HPD_Cape, --10/0
+    sub="Refined Grip +1", --3/3, 0
+    ammo="Staunch Tathlum", --2/2, 0
+    head="Turms Cap +1", --0/0, 109
+    body="Runeist's Coat +3", --0/0, 94
+    hands="Turms Mittens", --0/0, 91
+    legs="Erilaz Leg Guards +1", --7/0, 107
+    feet="Turms Leggings", --0/0, 137
+    neck="Futhark Torque +1", --5/5, 25
+    waist="Audumbla Sash", --4/0, 0
+    ear1="Odnowa Earring +1", --3/5, 0
+    ear2="Eabani Earring", --0/0, 8
+    ring1="Gelatinous Ring +1", --7/(-1), 0
+    ring2="Defending Ring", --10/10, 0
+    back=gear.RUN_HPD_Cape, --10/0, 30
     -- ammo="Staunch Tathlum +1", --3/3
     -- head="Turms Cap +1",
     -- body="Runeist's Coat +3",
     -- hands="Turms Mittens +1",
     -- feet="Turms Leggings +1",
-    -- neck="Futhark Torque +2", --7/7
-    -- ear1="Genmei Earring", --2/0
-    -- ear2="Odnowa Earring +1",
-    -- ring1="Gelatinous Ring +1", --7/(-1)
-    -- ring2="Defending Ring", --10/10
-    -- back=gear.RUN_HPD_Cape, --10/0
-    -- waist="Engraved Belt",
-  } --51 PDT + 5 PDT2 / 32 MDT
+    -- neck="Futhark Torque +2", --7/7, 30
+  } --50 PDT / 24 MDT, 601 MEVA
 
   -- Shell V = 29%, MDT cap is 50%
   sets.defense.MDT = {
-    sub="Refined Grip +1", --3/3
-    ammo="Staunch Tathlum", --2/2
-    head="Ayanmo Zucchetto +2", --3/3
-    body="Runeist's Coat +3",
-    hands="Turms Mittens",
-    legs="Erilaz Leg Guards +1", --7/0
-    feet="Erilaz Greaves +1", --5/0
-    neck="Futhark Torque +1", --4/4
-    waist="Engraved Belt",
-    ear1="Odnowa Earring +1", --3/5
-    ear2="Eabani Earring",
-    ring1=gear.Dark_Ring, --5/4
-    ring2="Defending Ring", --10/10
-    back=gear.RUN_HPD_Cape, --10/0
-  } --51 PDT + 5 PDT2 / 30 MDT
+    sub="Refined Grip +1", --3/3, 0
+    ammo="Staunch Tathlum", --2/2, 0
+    head="Turms Cap +1", --0/0, 109
+    body="Runeist's Coat +3", --0/0, 94
+    hands="Turms Mittens", --0/0, 91
+    legs="Erilaz Leg Guards +1", --7/0, 107
+    feet="Erilaz Greaves +1", --5/0, 107
+    neck="Futhark Torque +1", --5/5, 25
+    waist="Engraved Belt", --0/0, 0
+    ear1="Odnowa Earring +1", --3/5, 0
+    ear2="Eabani Earring", --0/0, 8
+    ring1="Gelatinous Ring +1", --7/(-1), 0
+    ring2="Defending Ring", --10/10, 0
+    back=gear.RUN_HPD_Cape, --10/0, 30
+    -- ammo="Staunch Tathlum +1", --3/3
+    -- hands="Turms Mittens +1",
+    -- neck="Futhark Torque +2", --7/7, 30
+    -- ear2="Sanare Earring",
+  } --52 PDT / 24 MDT, 571 MEVA
 
   sets.defense.HP = {
     ammo="Staunch Tathlum",
@@ -1045,30 +1068,13 @@ function init_gear_sets()
   ---------------------------------------- Hybrid Sets -------------------------------------------
   ------------------------------------------------------------------------------------------------
 
-  -- Shell V gives -29% MDT, PDT and MDT cap at 50%
-  sets.Hybrid = {
-    sub="Refined Grip +1", --3/3
-    ammo="Staunch Tathlum", --2/2
-    head="Ayanmo Zucchetto +2", --3/3
-    body="Meghanada Cuirie +2", --8/0
-    legs="Carmine Cuisses +1", --6/0
-    neck="Futhark Torque +1", --4/4
-    ring2="Defending Ring", --10/10
-    back=gear.RUN_HPD_Cape, --10/0
-    -- head=gear.Adhemar_D_head, --4/0
-    -- neck="Futhark Torque +2", --7/7
-    -- ring1="Moonlight Ring", --5/5
-    -- ring2="Defending Ring", --10/10
-    -- back=gear.RUN_TP_Cape, --10/0
-  } --40 PDT + 5 PDT2 / 22 MDT
+  sets.engaged.LightDef = set_combine(sets.engaged, sets.LightDef)
+  sets.engaged.LowAcc.LightDef = set_combine(sets.engaged.LowAcc, sets.LightDef)
+  sets.engaged.MidAcc.LightDef = set_combine(sets.engaged.MidAcc, sets.LightDef)
+  sets.engaged.HighAcc.LightDef = set_combine(sets.engaged.HighAcc, sets.LightDef)
+  sets.engaged.STP.LightDef = set_combine(sets.engaged.STP, sets.LightDef)
 
-  sets.engaged.DT = set_combine(sets.engaged, sets.Hybrid)
-  sets.engaged.LowAcc.DT = set_combine(sets.engaged.LowAcc, sets.Hybrid)
-  sets.engaged.MidAcc.DT = set_combine(sets.engaged.MidAcc, sets.Hybrid)
-  sets.engaged.HighAcc.DT = set_combine(sets.engaged.HighAcc, sets.Hybrid)
-  sets.engaged.STP.DT = set_combine(sets.engaged.STP, sets.Hybrid)
-
-  sets.engaged.Aftermath.DT = {
+  sets.engaged.Aftermath.LightDef = {
     head="Ayanmo Zucchetto +2",
     feet="Carmine Greaves +1",
     ear1="Sherida Earring",
@@ -1082,7 +1088,7 @@ function init_gear_sets()
     -- waist="Kentarch Belt +1",
   }
 
-  sets.engaged.Aftermath.DT = {
+  sets.engaged.Aftermath.LightDef = {
     legs="Meghanada Chausses +2",
     ring2="Defending Ring",
     waist="Sailfi Belt +1",
@@ -1407,7 +1413,7 @@ function customize_idle_set(idleSet)
     idleSet = set_combine(idleSet, sets.defense.Knockback)
   end
   -- If not in DT mode put on move speed gear
-  if state.IdleMode.current ~= 'DT' and state.DefenseMode.value == 'None' then
+  if state.IdleMode.current == 'Normal' and state.DefenseMode.value == 'None' then
     if classes.CustomIdleGroups:contains('Adoulin') then
       idleSet = set_combine(idleSet, sets.Kiting.Adoulin)
     else
@@ -1553,7 +1559,7 @@ end
 
 function get_custom_wsmode(spell, action, spellMap)
   local wsmode
-  if state.DefenseMode.value ~= 'None' or state.HybridMode.value == 'DT' then
+  if state.DefenseMode.value ~= 'None' or state.HybridMode.value ~= 'Normal' then
     wsmode = 'Safe'
   elseif state.OffenseMode.value == 'LowAcc' then
     if player.tp == 3000 then

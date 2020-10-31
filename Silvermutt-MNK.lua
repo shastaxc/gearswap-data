@@ -58,8 +58,8 @@ function job_setup()
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.WeaponskillMode:options('Normal', 'MaxTp', 'LowAcc', 'LowAccMaxTp', 'MidAcc', 'MidAccMaxTp', 'HighAcc', 'HighAccMaxTp')
-  state.HybridMode:options('Normal', 'DT', 'SuperDef')
-  state.IdleMode:options('Normal', 'DT')
+  state.HybridMode:options('Normal', 'LightDef')
+  state.IdleMode:options('Normal', 'LightDef')
 
   state.WeaponLock = M(false, 'Weapon Lock')
   state.CP = M(false, "Capacity Points Mode")
@@ -646,36 +646,50 @@ function init_gear_sets()
   sets.idle.Regain.Regen.Refresh = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh)
   sets.idle.Regain.Regen.RefreshSub50 = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh_sub50)
 
-  sets.DT = {
-    ammo="Staunch Tathlum",
-    body="Malignance Tabard",
-    hands="Malignance Gloves",
-    neck="Twilight Necklace",
-    ear2="Odnowa Earring +1",
-    ring1=gear.Dark_Ring,
-    ring2="Defending Ring",
-    waist="Moonbow Belt +1",
-  }
+  sets.LightDef = {
+    ammo="Staunch Tathlum", --2/2, 0
+    head="Mummu Bonnet +2", --0/0, 75
+    body="Malignance Tabard", --9/9, 139
+    hands="Malignance Gloves", --5/5, 112
+    legs="Mummu Kecks +1", --4/0, 107
+    feet="Mummu gamashes +1", --0/0, 107
+  } --20 PDT/16 MDT, 540 MEVA
 
-  sets.idle.DT = set_combine(sets.idle, sets.DT)
-  sets.idle.DT.Regain = set_combine(sets.idle.Regain, sets.DT)
-  sets.idle.DT.Regen = set_combine(sets.idle.Regen, sets.DT)
-  sets.idle.DT.Refresh = set_combine(sets.idle.Refresh, sets.DT)
-  sets.idle.DT.RefreshSub50 = set_combine(sets.idle.RefreshSub50, sets.DT)
-  sets.idle.DT.Regain.Regen = set_combine(sets.idle.Regain.Regen, sets.DT)
-  sets.idle.DT.Regain.Refresh = set_combine(sets.idle.Regain.Refresh, sets.DT)
-  sets.idle.DT.Regain.RefreshSub50 = set_combine(sets.idle.Regain.RefreshSub50, sets.DT)
-  sets.idle.DT.Regen.Refresh = set_combine(sets.idle.Regen.Refresh, sets.DT)
-  sets.idle.DT.Regen.RefreshSub50 = set_combine(sets.idle.Regen.RefreshSub50, sets.DT)
-  sets.idle.DT.Regain.Regen.Refresh = set_combine(sets.idle.Regain.Regen.Refresh, sets.DT)
-  sets.idle.DT.Regain.Regen.RefreshSub50 = set_combine(sets.idle.Regain.Regen.RefreshSub50, sets.DT)
+  sets.idle.LightDef = set_combine(sets.idle, sets.LightDef)
+  sets.idle.LightDef.Regain = set_combine(sets.idle.Regain, sets.LightDef)
+  sets.idle.LightDef.Regen = set_combine(sets.idle.Regen, sets.LightDef)
+  sets.idle.LightDef.Refresh = set_combine(sets.idle.Refresh, sets.LightDef)
+  sets.idle.LightDef.RefreshSub50 = set_combine(sets.idle.RefreshSub50, sets.LightDef)
+  sets.idle.LightDef.Regain.Regen = set_combine(sets.idle.Regain.Regen, sets.LightDef)
+  sets.idle.LightDef.Regain.Refresh = set_combine(sets.idle.Regain.Refresh, sets.LightDef)
+  sets.idle.LightDef.Regain.RefreshSub50 = set_combine(sets.idle.Regain.RefreshSub50, sets.LightDef)
+  sets.idle.LightDef.Regen.Refresh = set_combine(sets.idle.Regen.Refresh, sets.LightDef)
+  sets.idle.LightDef.Regen.RefreshSub50 = set_combine(sets.idle.Regen.RefreshSub50, sets.LightDef)
+  sets.idle.LightDef.Regain.Regen.Refresh = set_combine(sets.idle.Regain.Regen.Refresh, sets.LightDef)
+  sets.idle.LightDef.Regain.Regen.RefreshSub50 = set_combine(sets.idle.Regain.Regen.RefreshSub50, sets.LightDef)
 
-  sets.idle.Weak = sets.idle.DT
+  sets.HeavyDef = {
+    ammo="Staunch Tathlum", --2/2, 109
+    head="Mummu Bonnet +2", --0/0, 75
+    body="Malignance Tabard", --9/9, 139 
+    hands="Malignance Gloves", --5/5, 112
+    legs="Mummu Kecks +1", --4/4, 107
+    feet="Mummu Gamashes +1", --0/0, 107
+    neck="Twilight Torque", --5/5, 0
+    ear1="Eabani Earring", --0/0, 8
+    ear2="Odnowa Earring +1", --3/5, 0
+    ring1=gear.Dark_Ring, --5/4, 0
+    ring2="Defending Ring", --10/10, 0
+  } --43 PDT/44 MDT, 657 MEVA
+
+  sets.idle.Weak = sets.HeavyDef
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Defense Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
 
+  sets.defense.PDT = sets.HeavyDef
+  sets.defense.MDT = sets.HeavyDef
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Engaged Sets ------------------------------------------
@@ -714,40 +728,12 @@ function init_gear_sets()
   ---------------------------------------- Hybrid Sets -------------------------------------------
   ------------------------------------------------------------------------------------------------
 
-  sets.Hybrid = {
-    hands="Malignance Gloves",
-    ammo="Staunch Tathlum",
-    ring2="Defending Ring",
-    waist="Moonbow Belt +1",
-  }
+  sets.engaged.LightDef = set_combine(sets.engaged, sets.LightDef)
+  sets.engaged.LowAcc.LightDef = set_combine(sets.engaged.LowAcc, sets.LightDef)
+  sets.engaged.MidAcc.LightDef = set_combine(sets.engaged.MidAcc, sets.LightDef)
+  sets.engaged.HighAcc.LightDef = set_combine(sets.engaged.HighAcc, sets.LightDef)
 
-  sets.SuperDef = set_combine(sets.Hybrid, {
-    head="Mummu Bonnet +2",
-    body="Malignance Tabard",
-    legs="Mummu Kecks +1",
-    feet="Mummu gamashes +1",
-    ear2="Odnowa Earring +1",
-    ring1=gear.Dark_Ring,
-  })
-
-  sets.defense.PDT = set_combine(sets.Hybrid, {
-    hands="Volte Bracers",
-    legs="Mummu Kecks +1",
-    feet="Mummu gamashes +1",
-    ring1=gear.Dark_Ring,
-  })
-
-  sets.engaged.DT = set_combine(sets.engaged, sets.Hybrid)
-  sets.engaged.LowAcc.DT = set_combine(sets.engaged.LowAcc, sets.Hybrid)
-  sets.engaged.MidAcc.DT = set_combine(sets.engaged.MidAcc, sets.Hybrid)
-  sets.engaged.HighAcc.DT = set_combine(sets.engaged.HighAcc, sets.Hybrid)
-
-  sets.engaged.SuperDef = set_combine(sets.engaged, sets.SuperDef)
-  sets.engaged.LowAcc.SuperDef = set_combine(sets.engaged.LowAcc, sets.SuperDef)
-  sets.engaged.MidAcc.SuperDef = set_combine(sets.engaged.MidAcc, sets.SuperDef)
-  sets.engaged.HighAcc.SuperDef = set_combine(sets.engaged.HighAcc, sets.SuperDef)
-
-  ------------------------------------------------------------------------------------------------
+  -----------------------------------------------------------------------------------
   ---------------------------------------- Special Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
   
@@ -813,73 +799,6 @@ function init_gear_sets()
   sets.engaged.HighAcc.Impetus.Counterstance = set_combine(sets.engaged.HighAcc.Impetus, {
     feet="Hesychast's Gaiters +3",
   })
-  sets.engaged.SuperDef.HF = set_combine(sets.engaged.SuperDef)
-  sets.engaged.SuperDef.Impetus = set_combine(sets.engaged.SuperDef, {
-    body="Bhikku Cyclas +1",
-  })
-  sets.engaged.SuperDef.Counterstance = set_combine(sets.engaged.SuperDef, {
-    feet="Hesychast's Gaiters +3",
-  })
-  sets.engaged.SuperDef.HF.Impetus = set_combine(sets.engaged.SuperDef.HF, {
-    body="Bhikku Cyclas +1",
-  })
-  sets.engaged.SuperDef.HF.Counterstance = set_combine(sets.engaged.SuperDef.HF, {
-    feet="Hesychast's Gaiters +3",
-  })
-  sets.engaged.SuperDef.Impetus.Counterstance = set_combine(sets.engaged.SuperDef.Impetus, {
-    feet="Hesychast's Gaiters +3",
-  })
-  sets.engaged.LowAcc.SuperDef = set_combine(sets.engaged.LowAcc, sets.engaged.SuperDef)
-  sets.engaged.LowAcc.SuperDef.HF = set_combine(sets.engaged.LowAcc.SuperDef, {})
-  sets.engaged.LowAcc.SuperDef.Impetus = set_combine(sets.engaged.LowAcc.SuperDef, {
-    body="Bhikku Cyclas +1",
-  })
-  sets.engaged.LowAcc.SuperDef.Counterstance = set_combine(sets.engaged.LowAcc.SuperDef, {
-    feet="Hesychast's Gaiters +3",
-  })
-  sets.engaged.LowAcc.SuperDef.HF.Impetus = set_combine(sets.engaged.LowAcc.SuperDef.HF, {
-    body="Bhikku Cyclas +1",
-  })
-  sets.engaged.LowAcc.SuperDef.HF.Counterstance = set_combine(sets.engaged.LowAcc.SuperDef.HF, {
-    feet="Hesychast's Gaiters +3",
-  })
-  sets.engaged.LowAcc.SuperDef.Impetus.Counterstance = set_combine(sets.engaged.LowAcc.SuperDef.Impetus, {
-    feet="Hesychast's Gaiters +3",
-  })
-  sets.engaged.MidAcc.SuperDef = set_combine(sets.engaged.MidAcc, sets.engaged.SuperDef)
-  sets.engaged.MidAcc.SuperDef.HF = set_combine(sets.engaged.MidAcc.SuperDef, {})
-  sets.engaged.MidAcc.SuperDef.Impetus = set_combine(sets.engaged.MidAcc.SuperDef, {
-    body="Bhikku Cyclas +1",
-  })
-  sets.engaged.MidAcc.SuperDef.Counterstance = set_combine(sets.engaged.MidAcc.SuperDef, {
-    feet="Hesychast's Gaiters +3",
-  })
-  sets.engaged.MidAcc.SuperDef.HF.Impetus = set_combine(sets.engaged.MidAcc.SuperDef.HF, {
-    body="Bhikku Cyclas +1",
-  })
-  sets.engaged.MidAcc.SuperDef.HF.Counterstance = set_combine(sets.engaged.MidAcc.SuperDef.HF, {
-    feet="Hesychast's Gaiters +3",
-  })
-  sets.engaged.MidAcc.SuperDef.Impetus.Counterstance = set_combine(sets.engaged.MidAcc.SuperDef.Impetus, {
-    feet="Hesychast's Gaiters +3",
-  })
-  sets.engaged.HighAcc.SuperDef = set_combine(sets.engaged.HighAcc, sets.engaged.SuperDef)
-  sets.engaged.HighAcc.SuperDef.HF = set_combine(sets.engaged.HighAcc.SuperDef, {})
-  sets.engaged.HighAcc.SuperDef.Impetus = set_combine(sets.engaged.HighAcc.SuperDef, {
-    body="Bhikku Cyclas +1",
-  })
-  sets.engaged.HighAcc.SuperDef.Counterstance = set_combine(sets.engaged.HighAcc.SuperDef, {
-    feet="Hesychast's Gaiters +3",
-  })
-  sets.engaged.HighAcc.SuperDef.HF.Impetus = set_combine(sets.engaged.HighAcc.SuperDef.HF, {
-    body="Bhikku Cyclas +1",
-  })
-  sets.engaged.HighAcc.SuperDef.HF.Counterstance = set_combine(sets.engaged.HighAcc.SuperDef.HF, {
-    feet="Hesychast's Gaiters +3",
-  })
-  sets.engaged.HighAcc.SuperDef.Impetus.Counterstance = set_combine(sets.engaged.HighAcc.SuperDef.Impetus, {
-    feet="Hesychast's Gaiters +3",
-  })
 
   -- Footwork combat form
   sets.engaged.Footwork = {
@@ -934,7 +853,7 @@ function job_precast(spell, action, spellMap, eventArgs)
   if spell.type == 'WeaponSkill' and state.DefenseMode.current ~= 'None' then
     eventArgs.handled = true
   end
-  if spell.english == 'Boost' and not player.in_combat and state.IdleMode.value ~= 'DT' and state.DefenseMode.current == 'None' then
+  if spell.english == 'Boost' and not player.in_combat and state.IdleMode.value == 'Normal' and state.DefenseMode.current == 'None' then
     equip(sets.precast.JA['Boost'].Risky)
   end
 end
@@ -1171,7 +1090,7 @@ end
 -- Modify the default idle set after it was constructed.
 function customize_idle_set(idleSet)
   -- If not in defensive mode put on move speed gear
-  if state.IdleMode.current ~= 'DT' and state.DefenseMode.value == 'None' then
+  if state.IdleMode.current == 'Normal' and state.DefenseMode.value == 'None' then
     if classes.CustomIdleGroups:contains('Adoulin') then
       idleSet = set_combine(idleSet, sets.Kiting.Adoulin)
     else

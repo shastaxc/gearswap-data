@@ -100,10 +100,10 @@ function job_setup()
       'Enstone', 'Enstone II', 'Enthunder', 'Enthunder II', 'Enwater', 'Enwater II'}
 
   state.OffenseMode:options('Normal', 'MidAcc', 'HighAcc')
-  state.HybridMode:options('Normal', 'DT')
   state.WeaponskillMode:options('Normal', 'MaxTp', 'LowAcc', 'LowAccMaxTp', 'MidAcc', 'MidAccMaxTp', 'HighAcc', 'HighAccMaxTp')
   state.CastingMode:options('Normal', 'Seidr', 'Resistant')
-  state.IdleMode:options('Normal', 'DT')
+  state.HybridMode:options('Normal', 'LightDef')
+  state.IdleMode:options('Normal', 'LightDef')
 
   state.EnSpell = M{['description']='EnSpell', 'Enfire', 'Enblizzard', 'Enaero', 'Enstone', 'Enthunder', 'Enwater'}
   state.BarElement = M{['description']='BarElement', 'Barfire', 'Barblizzard', 'Baraero', 'Barstone', 'Barthunder', 'Barwater'}
@@ -972,6 +972,12 @@ function init_gear_sets()
     waist="Fucho-no-Obi",
   })
 
+  sets.resting = {
+    main="Iridal Staff",
+    -- main="Chatoyant Staff",
+    -- waist="Shinjutsu-no-Obi +1",
+  }
+
   sets.idle = {
     ammo="Homiliary",
     head="Duelist's Chapeau",
@@ -1015,57 +1021,53 @@ function init_gear_sets()
   sets.idle.Regain.Regen.Refresh = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh)
   sets.idle.Regain.Regen.RefreshSub50 = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh_sub50)
 
-  sets.DT = {
+  sets.LightDef = {
+    ammo="Staunch Tathlum", --2/2, 0
+    body="Malignance Tabard", --9/9, 139
+    hands="Malignance Gloves", --5/5, 112
+    -- head="Malignance Chapeau", --6/6
+    -- legs="Malignance Tights", --7/7
+    -- feet="Malignance Boots", --4/4
+  } --16 PDT / 16 MDT, 251 MEVA
+
+  sets.idle.LightDef = set_combine(sets.idle, sets.LightDef)
+  sets.idle.LightDef.Regain = set_combine(sets.idle.Regain, sets.LightDef)
+  sets.idle.LightDef.Regen = set_combine(sets.idle.Regen, sets.LightDef)
+  sets.idle.LightDef.Refresh = set_combine(sets.idle.Refresh, sets.LightDef)
+  sets.idle.LightDef.RefreshSub50 = set_combine(sets.idle.RefreshSub50, sets.LightDef)
+  sets.idle.LightDef.Regain.Regen = set_combine(sets.idle.Regain.Regen, sets.LightDef)
+  sets.idle.LightDef.Regain.Refresh = set_combine(sets.idle.Regain.Refresh, sets.LightDef)
+  sets.idle.LightDef.Regain.RefreshSub50 = set_combine(sets.idle.Regain.RefreshSub50, sets.LightDef)
+  sets.idle.LightDef.Regen.Refresh = set_combine(sets.idle.Regen.Refresh, sets.LightDef)
+  sets.idle.LightDef.Regen.RefreshSub50 = set_combine(sets.idle.Regen.RefreshSub50, sets.LightDef)
+  sets.idle.LightDef.Regain.Regen.Refresh = set_combine(sets.idle.Regain.Regen.Refresh, sets.LightDef)
+  sets.idle.LightDef.Regain.Regen.RefreshSub50 = set_combine(sets.idle.Regain.Regen.RefreshSub50, sets.LightDef)
+
+  sets.HeavyDef = {
+    ammo="Staunch Tathlum", --2/2, 0
+    body="Malignance Tabard", --9/9, 139
+    hands="Malignance Gloves", --5/5, 112
+    ear2="Eabani Earring", --0/0, 8
+    ring2="Defending Ring", --10/10, 0
     -- main="Bolelabunga",
     -- sub="Sacro Bulwark", --10/10
     -- head="Malignance Chapeau", --6/6
-    body="Malignance Tabard", --9/9
-    hands="Malignance Gloves", --5/5
     -- legs="Malignance Tights", --7/7
     -- feet="Malignance Boots", --4/4
     -- neck="Warder's Charm +1",
     -- ear1="Sanare Earring",
-    ear2="Eabani Earring",
-    ring2="Defending Ring", --10/10
     -- back=gear.RDM_INT_Cape,
     -- waist="Carrier's Sash",
-  }
+  } --26 PDT / 26 MDT, 259 MEVA
 
-  sets.idle.DT = set_combine(sets.idle, sets.DT)
-  sets.idle.DT.Regain = set_combine(sets.idle.Regain, sets.DT)
-  sets.idle.DT.Regen = set_combine(sets.idle.Regen, sets.DT)
-  sets.idle.DT.Refresh = set_combine(sets.idle.Refresh, sets.DT)
-  sets.idle.DT.RefreshSub50 = set_combine(sets.idle.RefreshSub50, sets.DT)
-  sets.idle.DT.Regain.Regen = set_combine(sets.idle.Regain.Regen, sets.DT)
-  sets.idle.DT.Regain.Refresh = set_combine(sets.idle.Regain.Refresh, sets.DT)
-  sets.idle.DT.Regain.RefreshSub50 = set_combine(sets.idle.Regain.RefreshSub50, sets.DT)
-  sets.idle.DT.Regen.Refresh = set_combine(sets.idle.Regen.Refresh, sets.DT)
-  sets.idle.DT.Regen.RefreshSub50 = set_combine(sets.idle.Regen.RefreshSub50, sets.DT)
-  sets.idle.DT.Regain.Regen.Refresh = set_combine(sets.idle.Regain.Regen.Refresh, sets.DT)
-  sets.idle.DT.Regain.Regen.RefreshSub50 = set_combine(sets.idle.Regain.Regen.RefreshSub50, sets.DT)
-
-  sets.resting = {
-    main="Iridal Staff",
-    -- main="Chatoyant Staff",
-    -- waist="Shinjutsu-no-Obi +1",
-  }
+  sets.idle.Weak = sets.HeavyDef
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Defense Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
 
-  sets.defense.PDT = sets.idle.DT
-  sets.defense.MDT = sets.idle.DT
-
-  sets.magic_burst = {
-    -- head="Ea Hat +1", --7/(7)
-    -- body="Ea Houppe. +1", --9/(9)
-    -- hands="Amalric Gages +1", --(6)
-    -- legs="Ea Slops +1", --8/(8)
-    -- feet="Ea Pigaches +1", --5/(5)
-    -- neck="Mizu. Kubikazari", --10
-    -- ring2="Mujin Band", --(5)
-  }
+  sets.defense.PDT = sets.HeavyDef
+  sets.defense.MDT = sets.HeavyDef
 
 
   ------------------------------------------------------------------------------------------------
@@ -1274,34 +1276,29 @@ function init_gear_sets()
   ---------------------------------------- Hybrid Sets -------------------------------------------
   ------------------------------------------------------------------------------------------------
 
-  sets.engaged.Hybrid = {
-    -- neck="Loricate Torque +1", --6/6
-    -- ring2="Defending Ring", --10/10
-  }
+  sets.engaged.LightDef = set_combine(sets.engaged, sets.LightDef)
+  sets.engaged.MidAcc.LightDef = set_combine(sets.engaged.MidAcc, sets.LightDef)
+  sets.engaged.HighAcc.LightDef = set_combine(sets.engaged.HighAcc, sets.LightDef)
 
-  sets.engaged.DT = set_combine(sets.engaged, sets.engaged.Hybrid)
-  sets.engaged.MidAcc.DT = set_combine(sets.engaged.MidAcc, sets.engaged.Hybrid)
-  sets.engaged.HighAcc.DT = set_combine(sets.engaged.HighAcc, sets.engaged.Hybrid)
+  sets.engaged.DW.LightDef = set_combine(sets.engaged.DW, sets.LightDef)
+  sets.engaged.DW.MidAcc.LightDef = set_combine(sets.engaged.DW.MidAcc, sets.LightDef)
+  sets.engaged.DW.HighAcc.LightDef = set_combine(sets.engaged.DW.HighAcc, sets.LightDef)
 
-  sets.engaged.DW.DT = set_combine(sets.engaged.DW, sets.engaged.Hybrid)
-  sets.engaged.DW.MidAcc.DT = set_combine(sets.engaged.DW.MidAcc, sets.engaged.Hybrid)
-  sets.engaged.DW.HighAcc.DT = set_combine(sets.engaged.DW.HighAcc, sets.engaged.Hybrid)
+  sets.engaged.DW.LightDef.LowHaste = set_combine(sets.engaged.DW.LowHaste, sets.LightDef)
+  sets.engaged.DW.MidAcc.LightDef.LowHaste = set_combine(sets.engaged.DW.MidAcc.LowHaste, sets.LightDef)
+  sets.engaged.DW.HighAcc.LightDef.LowHaste = set_combine(sets.engaged.DW.HighAcc.LowHaste, sets.LightDef)
 
-  sets.engaged.DW.DT.LowHaste = set_combine(sets.engaged.DW.LowHaste, sets.engaged.Hybrid)
-  sets.engaged.DW.MidAcc.DT.LowHaste = set_combine(sets.engaged.DW.MidAcc.LowHaste, sets.engaged.Hybrid)
-  sets.engaged.DW.HighAcc.DT.LowHaste = set_combine(sets.engaged.DW.HighAcc.LowHaste, sets.engaged.Hybrid)
+  sets.engaged.DW.LightDef.MidHaste = set_combine(sets.engaged.DW.MidHaste, sets.LightDef)
+  sets.engaged.DW.MidAcc.LightDef.MidHaste = set_combine(sets.engaged.DW.MidAcc.MidHaste, sets.LightDef)
+  sets.engaged.DW.HighAcc.LightDef.MidHaste = set_combine(sets.engaged.DW.HighAcc.MidHaste, sets.LightDef)
 
-  sets.engaged.DW.DT.MidHaste = set_combine(sets.engaged.DW.MidHaste, sets.engaged.Hybrid)
-  sets.engaged.DW.MidAcc.DT.MidHaste = set_combine(sets.engaged.DW.MidAcc.MidHaste, sets.engaged.Hybrid)
-  sets.engaged.DW.HighAcc.DT.MidHaste = set_combine(sets.engaged.DW.HighAcc.MidHaste, sets.engaged.Hybrid)
+  sets.engaged.DW.LightDef.HighHaste = set_combine(sets.engaged.DW.HighHaste, sets.LightDef)
+  sets.engaged.DW.MidAcc.LightDef.HighHaste = set_combine(sets.engaged.DW.MidAcc.HighHaste, sets.LightDef)
+  sets.engaged.DW.HighAcc.LightDef.HighHaste = set_combine(sets.engaged.DW.HighAcc.HighHaste, sets.LightDef)
 
-  sets.engaged.DW.DT.HighHaste = set_combine(sets.engaged.DW.HighHaste, sets.engaged.Hybrid)
-  sets.engaged.DW.MidAcc.DT.HighHaste = set_combine(sets.engaged.DW.MidAcc.HighHaste, sets.engaged.Hybrid)
-  sets.engaged.DW.HighAcc.DT.HighHaste = set_combine(sets.engaged.DW.HighAcc.HighHaste, sets.engaged.Hybrid)
-
-  sets.engaged.DW.DT.MaxHaste = set_combine(sets.engaged.DW.MaxHaste, sets.engaged.Hybrid)
-  sets.engaged.DW.MidAcc.DT.MaxHaste = set_combine(sets.engaged.DW.MidAcc.MaxHaste, sets.engaged.Hybrid)
-  sets.engaged.DW.HighAcc.DT.MaxHaste = set_combine(sets.engaged.DW.HighAcc.MaxHaste, sets.engaged.Hybrid)
+  sets.engaged.DW.LightDef.MaxHaste = set_combine(sets.engaged.DW.MaxHaste, sets.LightDef)
+  sets.engaged.DW.MidAcc.LightDef.MaxHaste = set_combine(sets.engaged.DW.MidAcc.MaxHaste, sets.LightDef)
+  sets.engaged.DW.HighAcc.LightDef.MaxHaste = set_combine(sets.engaged.DW.HighAcc.MaxHaste, sets.LightDef)
 
   sets.engaged.Enspell = {
     -- hands="Aya. Manopolas +2",
@@ -1317,6 +1314,16 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Special Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
+
+  sets.magic_burst = {
+    -- head="Ea Hat +1", --7/(7)
+    -- body="Ea Houppe. +1", --9/(9)
+    -- hands="Amalric Gages +1", --(6)
+    -- legs="Ea Slops +1", --8/(8)
+    -- feet="Ea Pigaches +1", --5/(5)
+    -- neck="Mizu. Kubikazari", --10
+    -- ring2="Mujin Band", --(5)
+  }
 
   sets.buff.Doom = {
     -- neck="Nicander's Necklace", --20
@@ -1538,7 +1545,7 @@ end
 -- Modify the default idle set after it was constructed.
 function customize_idle_set(idleSet)
   -- If not in DT mode put on move speed gear
-  if state.IdleMode.current ~= 'DT' and state.DefenseMode.value == 'None' then
+  if state.IdleMode.current == 'Normal' and state.DefenseMode.value == 'None' then
     if classes.CustomIdleGroups:contains('Adoulin') then
       idleSet = set_combine(idleSet, sets.Kiting.Adoulin)
     else

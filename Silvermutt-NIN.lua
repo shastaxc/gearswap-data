@@ -80,10 +80,10 @@ function job_setup()
   state.Buff.Sange = buffactive.Sange or false
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
-  state.HybridMode:options('Normal', 'DT')
   state.WeaponskillMode:options('Normal', 'MaxTp', 'LowAcc', 'LowAccMaxTp', 'MidAcc', 'MidAccMaxTp', 'HighAcc', 'HighAccMaxTp')
   state.CastingMode:options('Normal', 'Resistant')
-  state.IdleMode:options('Normal', 'DT')
+  state.HybridMode:options('Normal', 'LightDef')
+  state.IdleMode:options('Normal', 'LightDef')
   state.PhysicalDefenseMode:options('PDT', 'Evasion')
 
   state.MagicBurst = M(false, 'Magic Burst')
@@ -562,34 +562,46 @@ function init_gear_sets()
   sets.idle.Regen.Refresh = set_combine(sets.idle, sets.latent_regen, sets.latent_refresh)
   sets.idle.Regain.Regen.Refresh = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh)
 
-  sets.DT = {
+  sets.LightDef = {
+    ammo="Staunch Tathlum", --2/2, 0
+    body="Malignance Tabard", --9/9, 139
+    hands="Malignance Gloves", --5/5, 112
+    ring2="Defending Ring", --10/10, 0
     -- head="Malignance Chapeau", --6/6
-    -- body="Malignance Tabard", --9/9
-    -- hands="Malignance Gloves", --5/5
+    -- legs="Malignance Tights", --7/7
+    -- feet="Malignance Boots", --4/4
+  } --26 PDT/26 MDT, 251 MEVA
+
+  sets.idle.LightDef = set_combine(sets.idle, sets.LightDef)
+  sets.idle.LightDef.Regain = set_combine(sets.idle.Regain, sets.LightDef)
+  sets.idle.LightDef.Regen = set_combine(sets.idle.Regen, sets.LightDef)
+  sets.idle.LightDef.Refresh = set_combine(sets.idle.Refresh, sets.LightDef)
+  sets.idle.LightDef.Regain.Regen = set_combine(sets.idle.Regain.Regen, sets.LightDef)
+  sets.idle.LightDef.Regain.Refresh = set_combine(sets.idle.Regain.Refresh, sets.LightDef)
+  sets.idle.LightDef.Regen.Refresh = set_combine(sets.idle.Regen.Refresh, sets.LightDef)
+  sets.idle.LightDef.Regain.Regen.Refresh = set_combine(sets.idle.Regain.Regen.Refresh, sets.LightDef)
+
+  sets.HeavyDef = {
+    body="Malignance Tabard", --9/9
+    hands="Malignance Gloves", --5/5
+    ring2="Defending Ring", --10/10
+    -- head="Malignance Chapeau", --6/6
     -- legs="Malignance Tights", --7/7
     -- feet="Malignance Boots", --4/4
     -- neck="Warder's Charm +1",
     -- ear1="Sanare Earring",
     -- ring1="Purity Ring", --0/4
-    -- ring2="Defending Ring", --10/10
     -- back="Moonlight Cape", --6/6
   }
 
-  sets.idle.DT = set_combine(sets.idle, sets.DT)
-  sets.idle.DT.Regain = set_combine(sets.idle.Regain, sets.DT)
-  sets.idle.DT.Regen = set_combine(sets.idle.Regen, sets.DT)
-  sets.idle.DT.Refresh = set_combine(sets.idle.Refresh, sets.DT)
-  sets.idle.DT.Regain.Regen = set_combine(sets.idle.Regain.Regen, sets.DT)
-  sets.idle.DT.Regain.Refresh = set_combine(sets.idle.Regain.Refresh, sets.DT)
-  sets.idle.DT.Regen.Refresh = set_combine(sets.idle.Regen.Refresh, sets.DT)
-  sets.idle.DT.Regain.Regen.Refresh = set_combine(sets.idle.Regain.Regen.Refresh, sets.DT)
+  sets.idle.Weak = sets.HeavyDef
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Defense Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
 
-  sets.defense.PDT = sets.idle.DT
-  sets.defense.MDT = sets.idle.DT
+  sets.defense.PDT = sets.HeavyDef
+  sets.defense.MDT = sets.HeavyDef
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Engaged Sets ------------------------------------------
@@ -760,38 +772,30 @@ function init_gear_sets()
     -- waist="Olseni Belt",
   })
 
-  sets.engaged.Hybrid = {
-    -- head="Malignance Chapeau", --6/6
-    -- legs="Malignance Tights", --7/7
-    -- feet="Malignance Boots", --4/4
-    -- ring2="Defending Ring", --10/10
-    -- back=gear.NIN_WS1_Cape, --10/0
-  }
+  sets.engaged.LightDef = set_combine(sets.engaged, sets.LightDef)
+  sets.engaged.LowAcc.LightDef = set_combine(sets.engaged.LowAcc, sets.LightDef)
+  sets.engaged.MidAcc.LightDef = set_combine(sets.engaged.MidAcc, sets.LightDef)
+  sets.engaged.HighAcc.LightDef = set_combine(sets.engaged.HighAcc, sets.LightDef)
 
-  sets.engaged.DT = set_combine(sets.engaged, sets.engaged.Hybrid)
-  sets.engaged.LowAcc.DT = set_combine(sets.engaged.LowAcc, sets.engaged.Hybrid)
-  sets.engaged.MidAcc.DT = set_combine(sets.engaged.MidAcc, sets.engaged.Hybrid)
-  sets.engaged.HighAcc.DT = set_combine(sets.engaged.HighAcc, sets.engaged.Hybrid)
+  sets.engaged.LightDef.LowHaste = set_combine(sets.engaged.LowHaste, sets.LightDef)
+  sets.engaged.LowAcc.LightDef.LowHaste = set_combine(sets.engaged.LowAcc.LowHaste, sets.LightDef)
+  sets.engaged.MidAcc.LightDef.LowHaste = set_combine(sets.engaged.MidAcc.LowHaste, sets.LightDef)
+  sets.engaged.HighAcc.LightDef.LowHaste = set_combine(sets.engaged.HighAcc.LowHaste, sets.LightDef)
 
-  sets.engaged.DT.LowHaste = set_combine(sets.engaged.LowHaste, sets.engaged.Hybrid)
-  sets.engaged.LowAcc.DT.LowHaste = set_combine(sets.engaged.LowAcc.LowHaste, sets.engaged.Hybrid)
-  sets.engaged.MidAcc.DT.LowHaste = set_combine(sets.engaged.MidAcc.LowHaste, sets.engaged.Hybrid)
-  sets.engaged.HighAcc.DT.LowHaste = set_combine(sets.engaged.HighAcc.LowHaste, sets.engaged.Hybrid)
+  sets.engaged.LightDef.MidHaste = set_combine(sets.engaged.MidHaste, sets.LightDef)
+  sets.engaged.LowAcc.LightDef.MidHaste = set_combine(sets.engaged.LowAcc.MidHaste, sets.LightDef)
+  sets.engaged.MidAcc.LightDef.MidHaste = set_combine(sets.engaged.MidAcc.MidHaste, sets.LightDef)
+  sets.engaged.HighAcc.LightDef.MidHaste = set_combine(sets.engaged.HighAcc.MidHaste, sets.LightDef)
 
-  sets.engaged.DT.MidHaste = set_combine(sets.engaged.MidHaste, sets.engaged.Hybrid)
-  sets.engaged.LowAcc.DT.MidHaste = set_combine(sets.engaged.LowAcc.MidHaste, sets.engaged.Hybrid)
-  sets.engaged.MidAcc.DT.MidHaste = set_combine(sets.engaged.MidAcc.MidHaste, sets.engaged.Hybrid)
-  sets.engaged.HighAcc.DT.MidHaste = set_combine(sets.engaged.HighAcc.MidHaste, sets.engaged.Hybrid)
+  sets.engaged.LightDef.HighHaste = set_combine(sets.engaged.HighHaste, sets.LightDef)
+  sets.engaged.LowAcc.LightDef.HighHaste = set_combine(sets.engaged.LowAcc.HighHaste, sets.LightDef)
+  sets.engaged.MidAcc.LightDef.HighHaste = set_combine(sets.engaged.MidAcc.HighHaste, sets.LightDef)
+  sets.engaged.HighAcc.LightDef.HighHaste = set_combine(sets.engaged.HighAcc.HighHaste, sets.LightDef)
 
-  sets.engaged.DT.HighHaste = set_combine(sets.engaged.HighHaste, sets.engaged.Hybrid)
-  sets.engaged.LowAcc.DT.HighHaste = set_combine(sets.engaged.LowAcc.HighHaste, sets.engaged.Hybrid)
-  sets.engaged.MidAcc.DT.HighHaste = set_combine(sets.engaged.MidAcc.HighHaste, sets.engaged.Hybrid)
-  sets.engaged.HighAcc.DT.HighHaste = set_combine(sets.engaged.HighAcc.HighHaste, sets.engaged.Hybrid)
-
-  sets.engaged.DT.MaxHaste = set_combine(sets.engaged.MaxHaste, sets.engaged.Hybrid)
-  sets.engaged.LowAcc.DT.MaxHaste = set_combine(sets.engaged.LowAcc.MaxHaste, sets.engaged.Hybrid)
-  sets.engaged.MidAcc.DT.MaxHaste = set_combine(sets.engaged.MidAcc.MaxHaste, sets.engaged.Hybrid)
-  sets.engaged.HighAcc.DT.MaxHaste = set_combine(sets.engaged.HighAcc.MaxHaste, sets.engaged.Hybrid)
+  sets.engaged.LightDef.MaxHaste = set_combine(sets.engaged.MaxHaste, sets.LightDef)
+  sets.engaged.LowAcc.LightDef.MaxHaste = set_combine(sets.engaged.LowAcc.MaxHaste, sets.LightDef)
+  sets.engaged.MidAcc.LightDef.MaxHaste = set_combine(sets.engaged.MidAcc.MaxHaste, sets.LightDef)
+  sets.engaged.HighAcc.LightDef.MaxHaste = set_combine(sets.engaged.HighAcc.MaxHaste, sets.LightDef)
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Special Sets ------------------------------------------
@@ -999,7 +1003,7 @@ function customize_idle_set(idleSet)
     idleSet = set_combine(idleSet, sets.buff.Migawari)
   end
   -- If not in DT mode put on move speed gear
-  if state.IdleMode.current ~= 'DT' and state.DefenseMode.value == 'None' then
+  if state.IdleMode.current == 'Normal' and state.DefenseMode.value == 'None' then
     idleSet = set_combine(idleSet, sets.Kiting)
   end
   if state.CP.current == 'on' then
