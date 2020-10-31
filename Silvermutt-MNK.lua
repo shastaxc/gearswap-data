@@ -234,9 +234,15 @@ function init_gear_sets()
   } -- MND
 
   sets.precast.JA['Chakra'] = {
-    body="Anchorite's Cyclas +2",
-    hands="Hesychast's Gloves",
-  }
+    ammo="Bibiki Seashell",
+    head="Highwing Helm",
+    body="Anchorite's Cyclas +2", -- Enhances Chakra
+    hands="Hesychast's Gloves", -- Enhances Chakra
+    legs="Hizamaru Hizayoroi +1",
+    feet="Anchorite's Gaiters +3",
+    ear2="Odnowa Earring +1",
+    ring1="Supershear Ring",
+  } -- VIT
 
   -- Waltz set (chr and vit)
   sets.precast.Waltz = {
