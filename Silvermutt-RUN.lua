@@ -352,7 +352,7 @@ function init_gear_sets()
   -- Fast cast sets for spells
   sets.precast.FC = {
     ammo="Impatiens", --0/2 [0]
-    head="Runeist Bandeau +1", --10/0 [66]
+    head="Runeist Bandeau +2", --12/0 [99]
     body=gear.Taeon_FC_body, --9/0 [59]
     hands=gear.Leyline_Gloves, --8/0 [25]
     legs="Ayanmo Cosciales +1", --5/0 [45]
@@ -371,7 +371,7 @@ function init_gear_sets()
     -- waist="Kasiri Belt", --0/0 [30]
     -- back=gear.RUN_FC_Cape, --10/0 [60]
     -- 43% Fast Cast / 2% Quick Magic [302 HP, 824 w/ PDT, 824 w/ MDT]
-  } -- 41% Fast Cast / 2% Quick Magic [208 HP, 417 w/ PDT, 417 w/ MDT]
+  } -- 43% Fast Cast / 2% Quick Magic [241 HP, 450 w/ PDT, 450 w/ MDT]
 
   sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {
     legs="Futhark Trousers +2",
@@ -716,7 +716,7 @@ function init_gear_sets()
   })
 
   sets.midcast['Regen'] = set_combine(sets.midcast.EnhancingDuration, {
-    head="Runeist Bandeau +1",
+    head="Runeist Bandeau +2",
     body="Meghanada Cuirie +2",
     hands="Meghanada Gloves +2",
     legs="Meghanada Chausses +2",
