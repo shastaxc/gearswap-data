@@ -196,7 +196,6 @@ function init_gear_sets()
     neck="Justiciar's Torque",
     ring1="Sljor ring",
     waist="Ask Sash",
-    -- hands="Anchorite's Gloves +1",
   }
   sets.precast.JA['Perfect Counter'] = {
     hands="Tantra Crown +1",
