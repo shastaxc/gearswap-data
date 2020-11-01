@@ -1056,7 +1056,7 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- Job-specific hooks for standard casting events.
 -------------------------------------------------------------------------------------------------------------------
-function job_precast()
+function job_precast(spell, action, spellMap, eventArgs)
   -- Don't gearswap if status forbids the action
   local forbidden_statuses = action_type_blocks[spell.action_type]
   for k,status in pairs(forbidden_statuses) do
