@@ -862,8 +862,9 @@ function job_precast(spell, action, spellMap, eventArgs)
   if spell.type == 'WeaponSkill' and state.DefenseMode.current ~= 'None' then
     eventArgs.handled = true
   end
-  if spell.english == 'Boost' and not player.in_combat and state.IdleMode.value == 'Normal' and state.DefenseMode.current == 'None' then
+  if spell.english == 'Boost' and not player.in_combat and state.DefenseMode.current == 'None' then
     equip(sets.precast.JA['Boost'].Risky)
+    eventArgs.handled = true
   end
 end
 
