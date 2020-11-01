@@ -1590,6 +1590,22 @@ function display_gambit_worn()
   end
 end
 
+function display_rayke_gambit_worn()
+  local chat_mode = '/p'
+  if windower.ffxi.get_party().party1_count == 1 then
+    chat_mode = '/echo'
+  end
+
+  send_command('@input '..chat_mode..' [Rayke & Gambit] Just wore off!;')
+  -- If timer still exists, clear it
+  send_command('@timers d "Rayke ['..rayke_target.name..']"') -- Requires Timers plugin
+  -- If timer still exists, clear it
+  send_command('@timers d "Gambit ['..gambit_target.name..']"') -- Requires Timers plugin
+
+  rayke_target = nil -- Reset target
+  gambit_target = nil -- Reset target
+end
+
 function test()
   send_command('input /lockstyleset '..lockstyleset)
 end
@@ -1693,11 +1709,13 @@ windower.raw_register_event('incoming chunk', function(id, data, modified, injec
     local message_id = data:unpack("H",0x19)%2^15 -- Cut off the most significant bit
     if message_id == 6 then
       local defeated_mob_id = data:unpack("I",0x09)
-      if rayke_target ~= nil and defeated_mob_id == rayke_target.id then
+      if (rayke_target ~= nil and defeated_mob_id == rayke_target.id) and (gambit_target ~= nil and defeated_mob_id == gambit_target.id) then
+        -- Display message that Rayke and Gambit have worn off due to mob death (if applicable)
+        display_rayke_gambit_worn()
+      elseif rayke_target ~= nil and defeated_mob_id == rayke_target.id then
         -- Display message that Rayke has worn off (because Rayked mob was killed)
         display_rayke_worn()
-      end
-      if gambit_target ~= nil and defeated_mob_id == gambit_target.id then
+      elseif gambit_target ~= nil and defeated_mob_id == gambit_target.id then
         -- Display message that Gambit has worn off (because Gambited mob was killed)
         display_gambit_worn()
       end
