@@ -717,9 +717,6 @@ function init_gear_sets()
 
   sets.midcast['Regen'] = set_combine(sets.midcast.EnhancingDuration, {
     head="Runeist Bandeau +2",
-    body="Meghanada Cuirie +2",
-    hands="Meghanada Gloves +2",
-    legs="Meghanada Chausses +2",
     -- neck="Sacro Gorget"
   })
   sets.midcast.Refresh = set_combine(sets.midcast.EnhancingDuration, {
@@ -787,19 +784,19 @@ function init_gear_sets()
   })
 
   sets.idle = {
-    ammo="Staunch Tathlum", --2/2
-    head="Meghanada Visor +2", --5/0
-    body="Futhark Coat +1", --7/7
-    hands="Turms Mittens",
-    legs="Erilaz Leg Guards +1", --7/0
-    feet="Turms Leggings",
-    neck="Futhark Torque +1", --4/4
-    waist="Engraved Belt",
-    ear1="Brutal Earring",
-    ear2="Sherida Earring",
-    ring1=gear.Dark_Ring, --5/4
-    ring2="Defending Ring", --10/10
-    back=gear.RUN_HPD_Cape, --10/0
+    ammo="Staunch Tathlum", --2/2, 0 [0]
+    head="Turms Cap +1", --0/0, 109 [94]
+    body="Runeist's Coat +3", --0/0, 94 [218]
+    hands="Turms Mittens", --0/0, 91 [59]
+    legs="Erilaz Leg Guards +1", --7/0, 107 [80]
+    feet="Turms Leggings", --0/0, 137 [61]
+    neck="Futhark Torque +1", --5/5, 25 [39]
+    waist="Audumbla Sash", --4/0, 0 [0]
+    ear1="Odnowa Earring +1", --3/5, 0 [110]
+    ear2="Eabani Earring", --0/0, 8 [45]
+    ring1="Gelatinous Ring +1", --7/(-1), 0 [110]
+    ring2="Defending Ring", --10/10, 0 [0]
+    back=gear.RUN_HPD_Cape, --10/0, 30 [60]
   }
 
   sets.idle.Regain = set_combine(sets.idle, sets.latent_regain)
