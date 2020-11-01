@@ -14,33 +14,12 @@ no_swap_gear = S{"Warp Ring", "Dim. Ring (Dem)", "Dim. Ring (Holla)", "Dim. Ring
 
 mp_jobs = S{"WHM", "BLM", "RDM", "PLD", "DRK", "SMN", "BLU", "GEO", "RUN", "SCH"}
 
-spell_type_blocks = {
-  ['WhiteMagic'] = {'terror', 'petrification', 'stun', 'sleep', 'silence', 'mute'},
-  ['BlackMagic'] = {'terror', 'petrification', 'stun', 'sleep', 'silence', 'mute'},
-  ['SummonerPact'] = {'terror', 'petrification', 'stun', 'sleep', 'silence', 'mute'},
-  ['Ninjutsu'] = {'terror', 'petrification', 'stun', 'sleep', 'silence', 'mute'},
-  ['BardSong'] = {'terror', 'petrification', 'stun', 'sleep', 'silence', 'mute'},
-  ['BlueMagic'] = {'terror', 'petrification', 'stun', 'sleep', 'silence', 'mute'},
-  ['Geomancy'] = {'terror', 'petrification', 'stun', 'sleep', 'silence', 'mute'},
-  ['Trust'] = {'terror', 'petrification', 'stun', 'sleep', 'silence', 'mute'},
-  ['WeaponSkill'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
-  ['JobAbility'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
-  ['PetCommand'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
-  ['Samba'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
-  ['Waltz'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
-  ['Jig'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
-  ['Step'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
-  ['Samba'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
-  ['Flourish1'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
-  ['Flourish2'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
-  ['Effusion'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
-  ['Rune'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
-  ['Ward'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
-  ['CorsairRoll'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
-  ['BloodPactRage'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
-  ['BloodPactWard'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
-  ['Scholar'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
+action_type_blocks = {
+  ['Magic'] = {'terror', 'petrification', 'stun', 'sleep', 'silence', 'mute'},
+  ['Ranged Attack'] = {'terror', 'petrification', 'stun', 'sleep'},
+  ['Ability'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
   ['Item'] = {'terror', 'petrification', 'stun', 'sleep', 'muddle'},
+  ['Monster Move'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
 }
 
 current_weapon_type = nil

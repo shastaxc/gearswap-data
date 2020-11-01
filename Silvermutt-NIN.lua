@@ -851,7 +851,7 @@ end
 
 function job_precast(spell, action, spellMap, eventArgs)
   -- Don't gearswap if status forbids the action
-  local forbidden_statuses = spell_type_blocks[spell.type]
+  local forbidden_statuses = action_type_blocks[spell.action_type]
   for k,status in pairs(forbidden_statuses) do
     if buffactive[status] then
       add_to_chat(167, 'Stopped due to status.')
@@ -859,7 +859,7 @@ function job_precast(spell, action, spellMap, eventArgs)
       return -- Ends execution of this function
     end
   end
-  
+
   if spell.skill == "Ninjutsu" then
     do_ninja_tool_checks(spell, spellMap, eventArgs)
   end
