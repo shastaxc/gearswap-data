@@ -553,7 +553,7 @@ function init_gear_sets()
     hands="Mummu Wrists +2",
     legs="Mummu Kecks +2",
     feet="Hachiya Kyahan +3",
-    neck="Sanctity Necklace",
+    neck="Incanter's Torque",
     waist="Eschan Stone",
     left_ear="Stealth Earring",
     right_ear="Hermetic Earring",

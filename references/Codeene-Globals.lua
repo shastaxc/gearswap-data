@@ -37,6 +37,7 @@ spell_type_blocks = {
   ['BloodPactRage'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
   ['BloodPactWard'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
   ['Scholar'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
+  ['Item'] = {'terror', 'petrification', 'stun', 'sleep'},
 }
 
 current_weapon_type = nil
