@@ -1056,6 +1056,17 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- Job-specific hooks for standard casting events.
 -------------------------------------------------------------------------------------------------------------------
+function job_precast()
+  -- Don't gearswap if status forbids the action
+  local forbidden_statuses = spell_type_blocks[spell.type]
+  for k,status in pairs(forbidden_statuses) do
+    if buffactive[status] then
+      add_to_chat(167, 'Stopped due to status.')
+      eventArgs.cancel = true -- Stops the rest of the pipeline from executing
+      return -- Ends execution of this function
+    end
+  end
+end
 
 -- Run after the general precast() is done.
 function job_post_precast(spell, action, spellMap, eventArgs)
@@ -1421,7 +1432,7 @@ function gearinfo(cmdParams, eventArgs)
 end
 
 function job_pretarget(spell, action, spellMap, eventArgs)
-
+  
 end
 
 -- State buff checks that will equip buff gear and mark the event as handled.

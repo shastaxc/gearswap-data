@@ -411,16 +411,3 @@ function update_weaponskill_binds()
     end
   end
 end
-
--- Runs before job_precast
-function user_precast(spell, action, spellMap, eventArgs)
-  -- Don't gearswap if status forbids the action
-  local forbidden_statuses = spell_type_blocks[spell.type]
-  for k,status in pairs(forbidden_statuses) do
-    if buffactive[status] then
-      add_to_chat(167, 'Stopped due to status.')
-      eventArgs.cancel = true
-      return
-    end
-  end
-end

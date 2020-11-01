@@ -37,7 +37,7 @@ spell_type_blocks = {
   ['BloodPactRage'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
   ['BloodPactWard'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
   ['Scholar'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
-  ['Item'] = {'terror', 'petrification', 'stun', 'sleep'},
+  ['Item'] = {'terror', 'petrification', 'stun', 'sleep', 'muddle'},
 }
 
 current_weapon_type = nil
@@ -147,19 +147,6 @@ function update_weaponskill_binds()
     elseif current_weapon_type == 'Staff' then
       send_command('bind !c input /ws "Earth Crusher" <t>')
       send_command('bind !v input /ws "Sunburst" <t>')
-    end
-  end
-end
-
--- Runs before job_precast
-function user_precast(spell, action, spellMap, eventArgs)
-  -- Don't gearswap if status forbids the action
-  local forbidden_statuses = spell_type_blocks[spell.type]
-  for k,status in pairs(forbidden_statuses) do
-    if buffactive[status] then
-      add_to_chat(167, 'Stopped due to status.')
-      eventArgs.cancel = true
-      return
     end
   end
 end
