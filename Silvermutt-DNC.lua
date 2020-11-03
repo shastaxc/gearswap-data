@@ -247,8 +247,8 @@ function init_gear_sets()
     neck="Unmoving Collar +1", --10
     ear1="Cryptic Earring", --4
     ear2="Trux Earring", --5
-    ring1="Pernicious Ring", --5
-    ring2="Eihwaz Ring", --5
+    ring1="Eihwaz Ring", --5
+    ring2="Supershear Ring", --5
     back=gear.DNC_WTZ_Cape, --10
     waist="Kasiri Belt", --3
   }

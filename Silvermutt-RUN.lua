@@ -273,11 +273,10 @@ function init_gear_sets()
     neck="Futhark Torque +1", --7 [39]
     ear1="Odnowa Earring +1", --0 [110]
     ear2="Cryptic Earring", --4 [40]
-    ring1="Pernicious Ring", --5 [30]
+    ring1="Eihwaz Ring", --5 [70]
     ring2="Supershear Ring", --5 [30]
     waist="Kasiri Belt", --3 [30]
     back=gear.RUN_HPD_Cape, --10 [60]
-    -- ring1="Eihwaz Ring", --5 [70]
   } --80 Enmity [551 HP]
 
   sets.precast.JA['Vallation'] = {
@@ -1053,7 +1052,8 @@ function init_gear_sets()
     body="Councilor's Garb",
   }
   sets.DeathResist = {
-    ring1="Warden's Ring",
+    ring1="Eihwaz Ring", --10%
+    ring2="Warden's Ring", --10%
   }
   sets.Embolden = set_combine(sets.midcast.EnhancingDuration, {
     back="Evasionist's Cape"
