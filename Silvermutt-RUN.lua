@@ -356,8 +356,6 @@ function init_gear_sets()
     hands=gear.Leyline_Gloves, --8/0 [25]
     legs="Ayanmo Cosciales +1", --5/0 [45]
     feet=gear.Taeon_FC_feet, --5/0 [13]
-    ear2="Loquac. Earring", --2/0 [0]
-    ring2="Prolix Ring", --2/0 [0]
     waist="Kasiri Belt", --0/0 [30]
 
     --Goal:
@@ -369,7 +367,7 @@ function init_gear_sets()
     -- waist="Kasiri Belt", --0/0 [30]
     -- back=gear.RUN_FC_Cape, --10/0 [60]
     -- 43% Fast Cast / 2% Quick Magic [302 HP, 824 w/ PDT, 824 w/ MDT]
-  } -- 43% Fast Cast / 2% Quick Magic [281 HP, 600 w/ PDT, 600 w/ MDT]
+  } -- 41% Fast Cast / 2% Quick Magic [281 HP, 600 w/ PDT, 600 w/ MDT]
 
   sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {
     legs="Futhark Trousers +2",
