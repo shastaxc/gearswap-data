@@ -322,7 +322,7 @@ function init_gear_sets()
     neck="Love Torque",
     ear1="Digni. Earring",
     ring1="Balrahn's Ring",
-    ring2=gear.Dark_Ring,
+    ring2="Ayanmo Ring",
   } -- Magic Accuracy
 
   sets.precast.Flourish1['Desperate Flourish'] = {
