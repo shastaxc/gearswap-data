@@ -432,6 +432,7 @@ function init_gear_sets()
     hands=gear.Adhemar_B_hands,
     neck="Caro Necklace",
     ring1="Epona's Ring",
+    ring2="Niqmaddu Ring",
     -- ammo="Aurgelmir Orb +1",
     -- head="Lustratio Cap +1",
     -- body="Lustr. Harness +1",
@@ -477,6 +478,7 @@ function init_gear_sets()
     legs=gear.Lustratio_B_legs,
     neck="Caro Necklace",
     ear1="Odr Earring",
+    ring2="Niqmaddu Ring",
     waist="Grunfeld Rope",
     -- ammo="Aurgelmir Orb +1",
     -- body=gear.Adhemar_B_body,
@@ -934,7 +936,7 @@ function init_gear_sets()
     ear1="Telos Earring",
     ear2="Sherida Earring",
     ring1="Epona's Ring",
-    ring2="Ilabrat Ring",
+    ring2="Niqmaddu Ring",
     back="Atheling Mantle",
   }
 

@@ -241,6 +241,7 @@ function init_gear_sets()
     feet="Anchorite's Gaiters +3",
     ear2="Odnowa Earring +1",
     ring1="Supershear Ring",
+    ring2="Niqmaddu Ring",
   } -- VIT
 
   -- Waltz set (chr and vit)
@@ -272,7 +273,7 @@ function init_gear_sets()
     ear1="Sherida Earring",
     ear2="Brutal Earring",
     ring1="Rajas Ring",
-    ring2="Karieyh Ring",
+    ring2="Niqmaddu Ring",
     back=gear.MNK_STR_DA_Cape,
     waist="Moonbow Belt +1",
   } -- Base WS set
@@ -288,8 +289,8 @@ function init_gear_sets()
     neck="Monk's Nodowa +2",
     ear1="Sherida Earring",
     ear2="Odr Earring",
-    ring1="Rajas Ring",
-    ring2="Begrudging Ring",
+    ring1="Begrudging Ring",
+    ring2="Niqmaddu Ring",
     back=gear.MNK_STR_DA_Cape,
     waist="Moonbow Belt +1",
     -- body="Anchorite's Cyclas +3",
@@ -332,7 +333,7 @@ function init_gear_sets()
     ear1="Sherida Earring",
     ear2="Brutal Earring",
     ring1="Ilabrat Ring",
-    ring2="Rajas Ring",
+    ring2="Niqmaddu Ring",
     back=gear.MNK_DEX_DA_Cape,
     waist="Moonbow Belt +1",
     -- head="Ken. Jinpachi +1",
@@ -378,7 +379,7 @@ function init_gear_sets()
     ear1="Sherida Earring",
     ear2="Moonshade Earring",
     ring1="Rajas Ring",
-    ring2="Karieyh Ring",
+    ring2="Niqmaddu Ring",
     back=gear.MNK_STR_DA_Cape,
     waist="Moonbow Belt +1",
   })
@@ -416,8 +417,8 @@ function init_gear_sets()
     neck="Monk's Nodowa +2",
     ear1="Sherida Earring",
     ear2="Moonshade Earring",
-    ring1="Rajas Ring",
-    ring2="Begrudging Ring",
+    ring1="Begrudging Ring",
+    ring2="Niqmaddu Ring",
     back=gear.MNK_STR_DA_Cape,
     waist="Moonbow Belt +1",
     -- body="Anchorite's. Cyclas +3",
@@ -458,6 +459,7 @@ function init_gear_sets()
     feet=gear.Herc_TA_feet,
     ear1="Sherida Earring",
     ear2="Moonshade Earring",
+    ring2="Niqmaddu Ring",
     back=gear.MNK_STR_DA_Cape,
   })
   sets.precast.WS["Raging Fists"].MaxTP = set_combine(sets.precast.WS["Raging Fists"], {
@@ -494,7 +496,7 @@ function init_gear_sets()
     ear1="Sherida Earring",
     ear2="Moonshade Earring",
     ring1="Epona's Ring",
-    ring2="Karieyh Ring",
+    ring2="Niqmaddu Ring",
     back=gear.MNK_STR_DA_Cape,
     waist="Moonbow Belt +1",
     -- head="Herculean Helm",
@@ -550,7 +552,7 @@ function init_gear_sets()
     ear1="Sherida Earring",
     ear2="Brutal Earring",
     ring1="Rajas Ring",
-    ring2="Karieyh Ring",
+    ring2="Niqmaddu Ring",
     back=gear.MNK_STR_DA_Cape,
     waist="Moonbow Belt +1",
   })
@@ -628,7 +630,7 @@ function init_gear_sets()
     ear1="Sherida Earring",
     ear2="Telos Earring",
     ring1="Epona's Ring",
-    ring2="Ilabrat Ring",
+    ring2="Niqmaddu Ring",
     back=gear.MNK_DEX_DA_Cape,
     waist="Moonbow Belt +1",
   }
@@ -705,7 +707,7 @@ function init_gear_sets()
     ear1="Sherida Earring",
     ear2="Telos Earring",
     ring1="Epona's Ring",
-    ring2="Ilabrat Ring",
+    ring2="Niqmaddu Ring",
     back=gear.MNK_DEX_DA_Cape,
     waist="Moonbow Belt +1",
   }
@@ -716,7 +718,6 @@ function init_gear_sets()
   sets.engaged.MidAcc = set_combine(sets.engaged.LowAcc, {
     head=gear.Dampening_Tam,
     ring1="Chirich Ring +1",
-    ring2="Epona's Ring",
   })
   sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
     feet="Anchorite's Gaiters +3",
