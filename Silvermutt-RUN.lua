@@ -1482,7 +1482,7 @@ end
 
 function get_custom_wsmode(spell, action, spellMap)
   local wsmode
-  if state.DefenseMode.value ~= 'None' or state.HybridMode.value ~= 'Normal' then
+  if state.DefenseMode.value ~= 'None' then
     wsmode = 'Safe'
   elseif state.OffenseMode.value == 'LowAcc' then
     if player.tp == 3000 then
