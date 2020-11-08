@@ -1,4 +1,5 @@
 send_command('lua l gearinfo')
+send_command('lua l shout_ml')
 
 res = include('resources')
 inspect = include('inspect')
@@ -298,8 +299,12 @@ end
 function update_weapons()
   --Save state of any equipped weapons
   if player.equipment.main ~= "empty" then
-    sets.MostRecent.main = player.equipment.main
-    sets.MostRecent.sub = player.equipment.sub
+    if not is_encumbered('main') then
+      sets.MostRecent.main = player.equipment.main
+    end
+    if not is_encumbered('sub') then
+      sets.MostRecent.sub = player.equipment.sub
+    end
   end
 
   --Disarm Handling--
