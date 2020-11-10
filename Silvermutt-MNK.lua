@@ -1208,7 +1208,7 @@ end
 
 function job_self_command(cmdParams, eventArgs)
   if cmdParams[1]:lower() == 'usekey' then
-    send_command('cancel Invisible; cancel Hide; cancel Gestation')
+    send_command('cancel Invisible; cancel Hide; cancel Gestation; cancel Camouflage')
     if player.target.type ~= 'NONE' then
       if player.target.name == 'Sturdy Pyxis' then
         send_command('@input /item "Forbidden Key" <t>')

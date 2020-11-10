@@ -262,7 +262,7 @@ function init_gear_sets()
   ---------------------------------------- Precast Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
 
-  -- Enmity sets
+  -- Enmitdwy sets
   sets.Enmity = {
     ammo="Aqreqaq Bomblet", --2 [20]
     head="Halitus Helm", --8 [38]
@@ -1644,7 +1644,7 @@ function job_self_command(cmdParams, eventArgs)
   if cmdParams[1]:lower() == 'rune' then
     send_command('@input /ja '..state.Runes.value..' <me>')
   elseif cmdParams[1]:lower() == 'usekey' then
-    send_command('cancel Invisible; cancel Hide; cancel Gestation')
+    send_command('cancel Invisible; cancel Hide; cancel Gestation; cancel Camouflage')
     if player.target.type ~= 'NONE' then
       if player.target.name == 'Sturdy Pyxis' then
         send_command('@input /item "Forbidden Key" <t>')
