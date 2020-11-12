@@ -130,7 +130,9 @@ end
 
 -- Executes on first load, main job change, **and sub job change**
 function user_setup()
+  locked_style = false -- Do not modify
   Haste = 0 -- Do not modify
+  flurry = nil -- Do not modify
   DW_needed = 0 -- Do not modify
   DW = false -- Do not modify
 
@@ -153,13 +155,6 @@ function user_setup()
     send_command('bind ^numpad0 input /ma "Utsusemi: Ichi" <me>')
     send_command('bind ^numpad. input /ma "Utsusemi: Ni" <me>')
   end
-
-  -- send_command('bind ^numpad7 input /ws "Trueflight" <t>')
-  -- send_command('bind ^numpad8 input /ws "Last Stand" <t>')
-  -- send_command('bind ^numpad4 input /ws "Wildfire" <t>')
-  -- send_command('bind ^numpad6 input /ws "Coronach" <t>')
-  -- send_command('bind ^numpad2 input /ws "Sniper Shot" <t>')
-  -- send_command('bind ^numpad3 input /ws "Numbing Shot" <t>')
 
   update_combat_form()
   determine_haste_group()
@@ -579,7 +574,6 @@ function init_gear_sets()
   })
 
   sets.HeavyDef = {
-    ammo="Staunch Tathlum", --2/2, 109
     head="Turms Cap +1", --0/0, 109
     body="Malignance Tabard", --9/9, 139
     hands="Malignance Gloves", --5/5, 112
@@ -1003,22 +997,22 @@ end
 function job_precast(spell, action, spellMap, eventArgs)
   equip(sets[state.WeaponSet.current])
 
+  -- Don't gearswap if status forbids the action
+  local forbidden_statuses = action_type_blocks[spell.action_type]
+  for k,status in pairs(forbidden_statuses) do
+    if buffactive[status] then
+      add_to_chat(167, 'Stopped due to status.')
+      eventArgs.cancel = true -- Stops the rest of the pipeline from executing
+      return -- Ends execution of this function
+    end
+  end
+
   if spell.action_type == 'Ranged Attack' then
     state.CombatWeapon:set(player.equipment.range)
   end
   -- Check that proper ammo is available if we're using ranged attacks or similar.
   if spell.action_type == 'Ranged Attack' or (spell.type == 'WeaponSkill' and (spell.skill == 'Marksmanship' or spell.skill == 'Archery')) then
     check_ammo(spell, action, spellMap, eventArgs)
-  end
-  if spellMap == 'Utsusemi' then
-    if buffactive['Copy Image (3)'] or buffactive['Copy Image (4+)'] then
-      cancel_spell()
-      add_to_chat(123, '**!! '..spell.english..' Canceled: [3+ IMAGES] !!**')
-      eventArgs.handled = true
-      return
-    elseif buffactive['Copy Image'] or buffactive['Copy Image (2)'] then
-      send_command('cancel 66; cancel 444; cancel Copy Image; cancel Copy Image (2)')
-    end
   end
 end
 
@@ -1065,6 +1059,9 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         equip({waist="Hachirin-no-Obi"})
       end
     end
+  end
+  if spell.type == "WeaponSkill" and buffactive['Reive Mark'] then
+    equip(sets.Reive)
   end
 end
 
@@ -1115,33 +1112,17 @@ function job_buff_change(buff,gain)
     end
   end
 
-  if buff == "Camouflage" then
+  if buff == "doom" then
     if gain then
-      equip(sets.buff.Camouflage)
-      disable('body')
-    else
-      enable('body')
+      send_command('@input /p Doomed.')
+    elseif player.hpp > 0 then
+      send_command('@input /p Doom Removed.')
     end
   end
 
-  -- if buffactive['Reive Mark'] then
-  --     if gain then
-  --         equip(sets.Reive)
-  --         disable('neck')
-  --     else
-  --         enable('neck')
-  --     end
-  -- end
-
-  if buff == "doom" then
-    if gain then
-      equip(sets.buff.Doom)
-      send_command('@input /p Doomed.')
-      disable('ring1','ring2','waist')
-    else
-      enable('ring1','ring2','waist')
-      handle_equipping_gear(player.status)
-    end
+  -- Update gear for these specific buffs
+  if buff == "Camouflage" or buff == "doom" then
+    status_change(player.status)
   end
 
 end
@@ -1201,14 +1182,53 @@ function get_custom_wsmode(spell, action, spellMap)
 end
 
 function customize_idle_set(idleSet)
+  -- If not in DT mode put on move speed gear
+  if state.IdleMode.current == 'Normal' and state.DefenseMode.value == 'None' then
+    if classes.CustomIdleGroups:contains('Adoulin') then
+      idleSet = set_combine(idleSet, sets.Kiting.Adoulin)
+    else
+      idleSet = set_combine(idleSet, sets.Kiting)
+    end
+  end
   if state.CP.current == 'on' then
     idleSet = set_combine(idleSet, sets.CP)
   end
-  if state.Auto_Kite.value == true then
-    idleSet = set_combine(idleSet, sets.Kiting)
+  if buffactive.Camouflage then
+    idleSet = set_combine(idleSet, sets.buff.Camouflage)
+  end
+  if buffactive.Doom then
+    idleSet = set_combine(idleSet, sets.buff.Doom)
   end
 
   return idleSet
+end
+
+function customize_melee_set(meleeSet)
+  if state.CP.current == 'on' then
+    meleeSet = set_combine(meleeSet, sets.CP)
+  end
+  if buffactive.Camouflage then
+    meleeSet = set_combine(meleeSet, sets.buff.Camouflage)
+  end
+  if buffactive.Doom then
+    meleeSet = set_combine(meleeSet, sets.buff.Doom)
+  end
+
+  return meleeSet
+end
+
+function customize_defense_set(defenseSet)
+  if state.CP.current == 'on' then
+    defenseSet = set_combine(defenseSet, sets.CP)
+  end
+  if buffactive.Camouflage then
+    defenseSet = set_combine(defenseSet, sets.buff.Camouflage)
+  end
+  if buffactive.Doom then
+    defenseSet = set_combine(defenseSet, sets.buff.Doom)
+  end
+
+  return defenseSet
 end
 
 function display_current_job_state(eventArgs)
@@ -1234,6 +1254,9 @@ function display_current_job_state(eventArgs)
   local msg = ''
   if state.Kiting.value then
     msg = msg .. ' Kiting: On |'
+  end
+  if state.CP.current == 'on' then
+    msg = msg .. ' CP Mode: On |'
   end
 
   add_to_chat(002, '| ' ..string.char(31,210).. 'Melee' ..cf_msg.. ': ' ..string.char(31,001)..m_msg.. string.char(31,002)..  ' |'
@@ -1423,13 +1446,35 @@ windower.register_event('zone change', function()
   end
 end)
 
+windower.raw_register_event('outgoing chunk', function(id, data, modified, injected, blocked)
+  if id == 0x053 then -- Send lockstyle command to server
+    local type = data:unpack("I",0x05)
+    if type == 0 then -- This is lockstyle 'disable' command
+      locked_style = false
+    else -- Various diff ways to set lockstyle
+      locked_style = true
+    end
+  end
+end)
+
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
   set_macro_page(1, 6)
 end
 
 function set_lockstyle()
-  send_command('wait 2; input /lockstyleset ' .. lockstyleset)
+  -- Set lockstyle 2 seconds after changing job, trying immediately will error
+  coroutine.schedule(function()
+    if locked_style == false then
+      send_command('input /lockstyleset '..lockstyleset)
+    end
+  end, 2)
+  -- In case lockstyle was on cooldown for first command, try again (lockstyle has 10s cd)
+  coroutine.schedule(function()
+    if locked_style == false then
+      send_command('input /lockstyleset '..lockstyleset)
+    end
+  end, 10)
 end
 
 function update_ranged_weaponskill_binds()
@@ -1460,6 +1505,7 @@ function update_ranged_weaponskill_binds()
       send_command('bind !numpad6 input /ws "True Flight" <t>') -- Mythic
       send_command('bind !numpad1 input /ws "Numbing Shot" <t>') -- Melee Range
       send_command('bind !numpad2 input /ws "Slug Shot" <t>') -- High dmg, inaccurate
+      send_command('bind !numpad3 input /ws "Sniper Shot" <t>') -- Lower enemy INT
     end
   end
 end
