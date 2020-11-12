@@ -114,6 +114,9 @@ function job_setup()
     ['Fomalhaut'] = "Devastating Bullet",
   }
 
+  send_command('bind !s gs c faceaway')
+  send_command('bind !d gs c usekey')
+
   send_command('bind @c gs c toggle CP')
   send_command('bind @e gs c cycleback WeaponSet')
   send_command('bind @r gs c cycle WeaponSet')
@@ -167,9 +170,13 @@ end
 
 -- Called when this job file is unloaded (eg: job change)
 function user_unload()
+  send_command('unbind !s')
+  send_command('unbind !d')
+
   send_command('unbind @c')
   send_command('unbind @e')
   send_command('unbind @r')
+
   send_command('unbind !q')
   send_command('unbind !`')
 
@@ -1287,6 +1294,17 @@ function determine_haste_group()
 end
 
 function job_self_command(cmdParams, eventArgs)
+  if cmdParams[1]:lower() == 'usekey' then
+    send_command('cancel Invisible; cancel Hide; cancel Gestation; cancel Camouflage')
+    if player.target.type ~= 'NONE' then
+      if player.target.name == 'Sturdy Pyxis' then
+        send_command('@input /item "Forbidden Key" <t>')
+      end
+    end
+  elseif cmdParams[1]:lower() == 'faceaway' then
+    windower.ffxi.turn(player.facing - math.pi);
+  end
+
   gearinfo(cmdParams, eventArgs)
 end
 
