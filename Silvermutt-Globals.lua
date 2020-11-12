@@ -16,11 +16,11 @@ no_swap_gear = S{"Warp Ring", "Dim. Ring (Dem)", "Dim. Ring (Holla)", "Dim. Ring
 mp_jobs = S{"WHM", "BLM", "RDM", "PLD", "DRK", "SMN", "BLU", "GEO", "RUN", "SCH"}
 
 action_type_blocks = {
-  ['Magic'] = {'terror', 'petrification', 'stun', 'sleep', 'silence', 'mute'},
-  ['Ranged Attack'] = {'terror', 'petrification', 'stun', 'sleep'},
-  ['Ability'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
-  ['Item'] = {'terror', 'petrification', 'stun', 'sleep', 'muddle'},
-  ['Monster Move'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
+  ['Magic'] = {'terror', 'petrification', 'stun', 'sleep', 'charm', 'silence', 'mute', 'Omerta'},
+  ['Ranged Attack'] = {'terror', 'petrification', 'stun', 'sleep', 'charm'},
+  ['Ability'] = {'terror', 'petrification', 'stun', 'sleep', 'charm', 'amnesia', 'impairment'},
+  ['Item'] = {'terror', 'petrification', 'stun', 'sleep', 'charm', 'muddle'},
+  ['Monster Move'] = {'terror', 'petrification', 'stun', 'sleep', 'charm', 'amnesia'},
 }
 
 current_weapon_type = nil
