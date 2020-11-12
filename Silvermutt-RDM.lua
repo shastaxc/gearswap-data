@@ -167,14 +167,26 @@ function user_setup()
   locked_style = false -- Do not modify
   include('Global-Binds.lua') -- Additional local binds
 
-  if player.sub_job == 'SCH' then
-    send_command('bind ^- gs c scholar light')
-    send_command('bind ^= gs c scholar dark')
-    send_command('bind !- gs c scholar addendum')
-    send_command('bind != gs c scholar addendum')
-    send_command('bind ^l gs c scholar speed')
-    send_command('bind ![ gs c scholar aoe')
-    send_command('bind !l gs c scholar cost')
+  -- Default Status Cure HotKeys
+  if player.sub_job == 'WHM' or player.sub_job == 'SCH' then
+    send_command('bind !numpad7 input /ma "Paralyna" <t>') -- WHM, SCH, /WHM, /SCH
+    send_command('bind !numpad8 input /ma "Silena" <t>') -- WHM, SCH, /WHM, /SCH
+    send_command('bind !numpad9 input /ma "Blindna" <t>') -- WHM, SCH, /WHM, /SCH
+    send_command('bind !numpad4 input /ma "Poisona" <t>') -- WHM, SCH, /WHM, /SCH
+    send_command('bind !numpad6 input /ma "Viruna" <t>') -- WHM, SCH, /WHM, /SCH
+    send_command('bind !numpad1 input /ma "Cursna" <t>') -- WHM, SCH, /WHM, /SCH
+    send_command('bind !numpad+ input /ma "Erase" <t>') -- WHM, SCH, /WHM, /SCH
+    if player.sub_job == 'WHM' then
+      send_command('bind !numpad5 input /ma "Stona" <t>') -- WHM, SCH, /WHM
+    elseif player.sub_job == 'SCH' then
+      send_command('bind ^- gs c scholar light')
+      send_command('bind ^= gs c scholar dark')
+      send_command('bind !- gs c scholar addendum')
+      send_command('bind != gs c scholar addendum')
+      send_command('bind ^l gs c scholar speed')
+      send_command('bind ![ gs c scholar aoe')
+      send_command('bind !l gs c scholar cost')
+    end
   elseif player.sub_job == 'NIN' then
     send_command('bind ^numpad0 input /ma "Utsusemi: Ichi" <me>')
     send_command('bind ^numpad. input /ma "Utsusemi: Ni" <me>')
@@ -191,7 +203,7 @@ end
 function job_file_unload()
   send_command('unbind !s')
   send_command('unbind !d')
-  
+
   send_command('unbind ^pageup')
   send_command('unbind ^pagedown')
   send_command('unbind !pagedown')
@@ -209,7 +221,7 @@ function job_file_unload()
   send_command('unbind !w')
   send_command('unbind !e')
   send_command('unbind !r')
-  
+
   send_command('unbind !u')
   send_command('unbind !i')
   send_command('unbind !o')
@@ -220,7 +232,7 @@ function job_file_unload()
   send_command('unbind !,')
   send_command('unbind !.')
   send_command('unbind !/')
-  
+
   send_command('unbind @s')
   send_command('unbind @e')
   send_command('unbind @d')
@@ -1662,7 +1674,7 @@ function cycle_toy_weapons(cycle_dir)
   else
     state.ToyWeapons:reset()
   end
-  
+
   local mode_color = 001
   if state.ToyWeapons.current == 'None' then
     mode_color = 006

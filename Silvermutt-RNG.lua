@@ -54,6 +54,8 @@ end
 function job_setup()
   lockstyleset = 1
 
+  current_ranged_weapon_type = nil -- Do not modify
+
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.HybridMode:options('Normal', 'LightDef')
   state.RangedMode:options('Normal', 'Acc', 'HighAcc', 'Critical')
@@ -192,17 +194,15 @@ function user_unload()
   send_command('unbind ^numpad.')
   send_command('unbind numpad0')
 
-  send_command('unbind #`')
-  send_command('unbind #1')
-  send_command('unbind #2')
-  send_command('unbind #3')
-  send_command('unbind #4')
-  send_command('unbind #5')
-  send_command('unbind #6')
-  send_command('unbind #7')
-  send_command('unbind #8')
-  send_command('unbind #9')
-  send_command('unbind #0')
+  send_command('unbind !numpad9')
+  send_command('unbind !numpad8')
+  send_command('unbind !numpad7')
+  send_command('unbind !numpad6')
+  send_command('unbind !numpad5')
+  send_command('unbind !numpad4')
+  send_command('unbind !numpad3')
+  send_command('unbind !numpad2')
+  send_command('unbind !numpad1')
 end
 
 
@@ -1165,6 +1165,8 @@ end
 function job_update(cmdParams, eventArgs)
   equip(sets[state.WeaponSet.current])
   handle_equipping_gear(player.status)
+  update_weaponskill_binds()
+  update_ranged_weaponskill_binds()
 end
 
 function update_combat_form()
@@ -1410,4 +1412,36 @@ end
 
 function set_lockstyle()
   send_command('wait 2; input /lockstyleset ' .. lockstyleset)
+end
+
+function update_ranged_weaponskill_binds()
+  local weapon = nil
+  local weapon_type = nil
+  --Handle barehanded case
+  if player.equipment.ranged ~= nil or player.equipment.ranged ~= 0 or player.equipment.ranged ~= 'empty' then
+    weapon = res.items:with('name', player.equipment.ranged)
+    weapon_type = res.skills[weapon.skill].en
+  end
+
+  --Change keybinds if weapon type changed
+  if weapon_type ~= current_ranged_weapon_type then
+    current_ranged_weapon_type = weapon_type
+    --Set weaponskill bindings by weapon type
+    if current_ranged_weapon_type == 'Archery' then
+      send_command('bind !numpad7 input /ws "Apex Arrow" <t>') -- Aeonic
+      send_command('bind !numpad8 input /ws "Namas Arrow" <t>') -- Relic
+      send_command('bind !numpad9 input /ws "Jishnu\'s Radiance" <t>') -- Empyrean
+      send_command('bind !numpad4 input /ws "Empyreal Arrow" <t>') -- Quested
+      send_command('bind !numpad1 input /ws "Blast Arrow" <t>') -- Melee Range
+      send_command('bind !numpad2 input /ws "Sidewinder" <t>') -- High dmg, inaccurate
+    elseif current_weapon_type == 'Marksmanship' then
+      send_command('bind !numpad7 input /ws "Last Stand" <t>') -- Aeonic
+      send_command('bind !numpad8 input /ws "Coronach" <t>') -- Relic
+      send_command('bind !numpad9 input /ws "Wildfire" <t>') -- Empyrean
+      send_command('bind !numpad4 input /ws "Detonator" <t>') -- Quested
+      send_command('bind !numpad6 input /ws "True Flight" <t>') -- Mythic
+      send_command('bind !numpad1 input /ws "Numbing Shot" <t>') -- Melee Range
+      send_command('bind !numpad2 input /ws "Slug Shot" <t>') -- High dmg, inaccurate
+    end
+  end
 end

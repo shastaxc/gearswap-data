@@ -351,9 +351,9 @@ function update_weaponskill_binds()
       send_command('bind ^numpad2 input /ws "Cyclone" <t>') --elemental
       send_command('bind ^numpad3 input /ws "Energy Drain" <t>') --elemental
     elseif current_weapon_type == 'Sword' then
-      send_command('bind ^numpad7 input /ws "Savage Blade" <t>')
-      send_command('bind ^numpad9 input /ws "Chant du Cygne" <t>')
-      send_command('bind ^numpad4 input /ws "Requiescat" <t>')
+      send_command('bind ^numpad7 input /ws "Chant du Cygne" <t>')
+      send_command('bind ^numpad4 input /ws "Savage Blade" <t>')
+      send_command('bind ^numpad5 input /ws "Requiescat" <t>')
       send_command('bind ^numpad6 input /ws "Sanguine Blade" <t>')
       send_command('bind ^numpad1 input /ws "Circle Blade" <t>') --aoe
       send_command('bind ^numpad2 input /ws "Red Lotus Blade" <t>') --elemental
