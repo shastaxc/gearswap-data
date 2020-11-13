@@ -52,6 +52,7 @@ function job_setup()
   lockstyleset = 1
 
   current_ranged_weapon_type = nil -- Do not modify
+  current_dp_type = nil -- Do not modify
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.HybridMode:options('Normal', 'LightDef')
@@ -73,6 +74,15 @@ function job_setup()
   elemental_ws = S{'Aeolian Edge', 'Trueflight', 'Wildfire'}
   no_swap_waist = S{"Era. Bul. Pouch", "Dev. Bul. Pouch", "Chr. Bul. Pouch", "Quelling B. Quiver",
       "Yoichi's Quiver", "Artemis's Quiver", "Chrono Quiver"}
+  
+  marksman_weapon_subtypes = {
+    ['Grosveneur\'s Bow'] = "xbow",
+    ['Ribauldequin'] = "gun",
+    ['Annihilator'] = "gun",
+    ['Armageddon'] = "gun",
+    ['Gastraphetes'] = "xbow",
+    ['Fomalhaut'] = "gun",
+  }
 
   DefaultAmmo = {
     ['Pharaoh\'s Bow'] = "Demon Arrow",
@@ -1168,6 +1178,7 @@ function job_update(cmdParams, eventArgs)
   handle_equipping_gear(player.status)
   update_weaponskill_binds()
   update_ranged_weaponskill_binds()
+  update_dp_type() -- Requires DistancePlus addon
 end
 
 function update_combat_form()
@@ -1342,6 +1353,8 @@ function job_self_command(cmdParams, eventArgs)
     end
   elseif cmdParams[1]:lower() == 'faceaway' then
     windower.ffxi.turn(player.facing - math.pi);
+  elseif cmdParams[1]:lower() == 'test' then
+    test()
   end
 
   gearinfo(cmdParams, eventArgs)
@@ -1525,4 +1538,31 @@ function update_ranged_weaponskill_binds()
       send_command('bind !numpad3 input /ws "Sniper Shot" <t>') -- Lower enemy INT
     end
   end
+end
+
+-- Requires DistancePlus addon
+function update_dp_type()
+  local weapon = nil
+  local weapon_type = nil
+  local weapon_subtype = nil
+
+  --Handle unequipped case
+  if player.equipment.ranged ~= nil and player.equipment.ranged ~= 0 and player.equipment.ranged ~= 'empty' then
+    weapon = res.items:with('name', player.equipment.ranged)
+    weapon_type = res.skills[weapon.skill].en
+    if weapon_type == 'Archery' then
+      weapon_subtype = 'bow'
+    elseif weapon_type == 'Marksmanship' then
+      weapon_subtype = marksman_weapon_subtypes[weapon.en]
+    end
+  end
+
+  --Change keybinds if weapon type changed
+  if weapon_subtype ~= current_dp_type then
+    current_dp_type = weapon_subtype
+    send_command('dp '..current_dp_type)
+  end
+end
+
+function test()
 end
