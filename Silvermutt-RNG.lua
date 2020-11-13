@@ -57,7 +57,7 @@ function job_setup()
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.HybridMode:options('Normal', 'LightDef')
-  state.RangedMode:options('Normal', 'Acc', 'HighAcc', 'Critical')
+  state.RangedMode:options('Normal', 'Acc', 'HighAcc')
   state.WeaponskillMode:options('Normal', 'Acc', 'Enmity')
   state.IdleMode:options('Normal', 'LightDef')
   state.WeaponSet = M{['description']='Weapon Set', 'Pharaoh\'s Bow', 'Grosveneur\'s Bow', 'Ribauldequin', 'Annihilator', 'Fomalhaut', 'Armageddon'}
@@ -75,7 +75,7 @@ function job_setup()
   elemental_ws = S{'Aeolian Edge', 'Trueflight', 'Wildfire'}
   no_swap_waist = S{"Era. Bul. Pouch", "Dev. Bul. Pouch", "Chr. Bul. Pouch", "Quelling B. Quiver",
       "Yoichi's Quiver", "Artemis's Quiver", "Chrono Quiver"}
-  
+
   marksman_weapon_subtypes = {
     ['Grosveneur\'s Bow'] = "xbow",
     ['Ribauldequin'] = "gun",
@@ -231,7 +231,7 @@ end
 
 -- Set up all gear sets.
 function init_gear_sets()
-  
+
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Precast Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
@@ -277,36 +277,74 @@ function init_gear_sets()
   }
 
   sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {
-    ring2="Lebeche Ring",
     -- body="Passion Jacket",
   })
 
   -- (10% Snapshot, 5% Rapid from Merits)
   sets.precast.RA = {
     feet="Meg. Jam. +2", --10/0
+
+    -- Goal:
+    -- head=gear.Taeon_RA_head, --10/0
+    -- body="Amini Caban +1", --0/0
+    -- hands=gear.Carmine_D_hands, --8/11
+    -- legs="Orion Braccae +3", --15/0
+    -- feet="Meg. Jam. +2", --10/0
+    -- neck="Scout's Gorget +2" --4/0
+    -- back=gear.RNG_SNP_Cape, --10/0
+    -- waist="Impulse Belt", --3/0
+    --60 Snapshot / 11 Rapid Shot
+
+    -- Best:
     -- head=gear.Taeon_RA_head, --10/0
     -- body="Oshosi Vest +1", --14/0
-    -- hands="Carmine Fin. Ga. +1", --8/11
+    -- hands=gear.Carmine_D_hands, --8/11
     -- legs=gear.Adhemar_D_legs, --10/13
+    -- feet="Meg. Jam. +2", --10/0
     -- back=gear.RNG_SNP_Cape, --10/0
     -- waist="Yemaya Belt", --0/5
-  } --61/26
+    --62 Snapshot / 29 Rapid Shot
+  } --10 Snapshot / 0 Rapid Shot
 
-  sets.precast.RA.Flurry1 = set_combine(sets.precast.RA, {
+  sets.precast.RA.Flurry1 = {
+    feet="Meg. Jam. +2", --10/0
+
+    -- Goal:
     -- head="Orion Beret +3", --0/18
-    -- body="Amini Caban +1",
-    -- neck="Scout's Gorget +1", --3/0
+    -- body="Amini Caban +1", --0/0
+    -- hands=gear.Carmine_D_hands, --8/11
+    -- legs=gear.Adhemar_D_legs, --10/13
+    -- feet="Meg. Jam. +2", --10/0
+    -- neck="Scout's Gorget +2", --4/0
+    -- back=gear.RNG_SNP_Cape, --10/0
     -- waist="Impulse Belt", --3/0
-  }) --43/39
+    --45 Snapshot / 42 Rapid Shot
+  } --10 Snapshot / 0 Rapid Shot
 
-  sets.precast.RA.Flurry2 = set_combine(sets.precast.RA.Flurry1, {
+  sets.precast.RA.Flurry2 = {
+    feet="Meg. Jam. +2", --10/0
+
+    -- Goal:
+    -- head="Orion Beret +3", --0/18
+    -- body="Amini Caban +1", --0/0
+    -- hands=gear.Carmine_D_hands, --8/11
+    -- legs=gear.Adhemar_D_legs, --10/13
     -- feet="Arcadian Socks +3", --0/10
+    -- neck="Scout's Gorget +2", --4/0
+    -- back=gear.RNG_SNP_Cape, --10/0
     -- waist="Yemaya Belt", --0/5
-  }) --30/54
+    --32 Snapshot / 57 Rapid Shot
+  } --10 Snapshot / 0 Rapid Shot
 
-  --sets.precast.RA.Gastra = {head="Mummu Bonnet +2"}
-  --sets.precast.RA.Gastra.Flurry1 = set_combine(sets.precast.RA.Gastra, {})
-  --sets.precast.RA.Gastra.Flurry2 = set_combine(sets.precast.RA.Gastra.Flurry1, {})
+  sets.precast.RA.Gastra = set_combine(sets.precast.RA, {
+    -- head="Orion Beret +3", --0/18
+  })
+  sets.precast.RA.Gastra.Flurry1 = set_combine(sets.precast.RA.Flurry1, {
+    -- feet="Arcadian Socks +3", --0/10
+  })
+  sets.precast.RA.Gastra.Flurry2 = set_combine(sets.precast.RA.Flurry2, {
+    -- legs=gear.Pursuers_A_legs, --0/19
+  })
 
 
   ------------------------------------------------------------------------------------------------
@@ -466,7 +504,6 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   -- Fast recast for spells
-
   sets.midcast.FastRecast = sets.precast.FC
 
   sets.midcast.SpellInterrupt = {
@@ -484,46 +521,115 @@ function init_gear_sets()
     hands="Malignance Gloves",
     ear2="Telos Earring",
     ring2="Dingir Ring",
-    -- head="Arcadian Beret +3",
-    -- legs="Malignance Tights",
-    -- feet="Malignance Boots",
-    -- neck="Scout's Gorget +1",
-    -- ear1="Enervating Earring",
-    -- ring1="Regal Ring",
-    -- back=gear.RNG_RA_Cape,
-    -- waist="Yemaya Belt",
+
+    -- Goal:
+    -- head="Arcadian Beret +3", --37 [0] 37/62 <0> {0} (38)
+    -- body="Malignance Tabard", --42 [11] 50/0 <0> {6} (0)
+    -- hands="Malignance Gloves", --24 [12] 50/0 <0> {4} (0)
+    -- legs="Malignance Tights", --42 [10] 50/0 <0> {5} (0)
+    -- feet="Malignance Boots", --49 [9] 50/0 <0> {2} (0)
+    -- neck="Scout's Gorget +2", --25 [7] 25/0 <0> {10} (0)
+    -- ear1="Telos Earring", --0 [5] 10/10 <0> {0} (0)
+    -- ear2="Enervating Earring", --0 [4] 7/7 <0> {0} (0)
+    -- ring1="Regal Ring", --10 [0] 0/20 <0> {0} (0)
+    -- ring2="Dingir Ring", --10 [0] 0/25 <0> {0} (10)
+    -- back=gear.RNG_RA_Cape, --30 [10] 20/20 <0> {0} (0)
+    -- waist="Yemaya Belt", --7 [4] 10/10 <0> {0} (0)
+    --276 AGI [72 STP] 309 racc / 154 ratt <0 crit> {27 dmg limit} (48 Recycle)
+
+    -- Best:
+    -- head="Arcadian Beret +3", --37 [0] 37/62 <0> {0} (38)
+    -- body="Nisroch Jerkin", --40 [7] 45/45 <10> {0} (0)
+    -- hands="Malignance Gloves", --24 [12] 50/0 <0> {4} (0)
+    -- legs=gear.Adhemar_C_legs, --42 [8] 54/54 <0> {0} (16)
+    -- feet="Malignance Boots", --49 [9] 50/0 <0> {2} (0)
+    -- neck="Scout's Gorget +2", --25 [7] 25/0 <0> {10} (0)
+    -- ear1="Telos Earring", --0 [5] 10/10 <0> {0} (0)
+    -- ear2="Dedition Earring", --0 [8] -10/-10 <0> {0} (0)
+    -- ring1="Regal Ring", --10 [0] 0/20 <0> {0} (0)
+    -- ring2="Ilabrat Ring", --10 [5] 0/0 <0> {0} (0)
+    -- back=gear.RNG_RA_Cape, --30 [10] 20/20 <0> {0} (0)
+    -- waist="Kwahu Kachina Belt +1" --8 [0] 20/0 <5> {0} (0)
+    --275 AGI [71 STP] 301 racc / 201 ratt <15 crit> {16 dmg limit} (54 Recycle)
   }
 
   sets.midcast.RA.Acc = set_combine(sets.midcast.RA, {
-    -- feet="Orion Socks +3",
-    -- ear1="Beyla Earring",
-    -- ring2="Hajduk Ring +1",
+    -- Goal:
+    -- head="Arcadian Beret +3", --37 [0] 37/62 <0> {0} (38)
+    -- body="Malignance Tabard", --42 [11] 50/0 <0> {6} (0)
+    -- hands="Malignance Gloves", --24 [12] 50/0 <0> {4} (0)
+    -- legs="Malignance Tights", --42 [10] 50/0 <0> {5} (0)
+    -- feet="Orion Socks +3", --49 [0] 54/36 <0> {0} (0)
+    -- neck="Scout's Gorget +2", --25 [7] 25/0 <0> {10} (0)
+    -- ear1="Telos Earring", --0 [5] 10/10 <0> {0} (0)
+    -- ear2="Beyla Earring", --0 [0] 15/0 <0> {0} (0)
+    -- ring1="Regal Ring", --10 [0] 0/20 <0> {0} (0)
+    -- ring2="Hajduk Ring +1", --0 [0] 17/0 <0> {0} (0)
+    -- back=gear.RNG_RA_Cape, --30 [10] 20/20 <0> {0} (0)
+    -- waist="Kwahu Kachina Belt +1" --8 [0] 20/0 <5> {0} (0)
+    -- Includes set bonus 15 racc from orion + regal
+    -- 267 AGI [55 STP] 363 racc / 148 ratt <5 crit> {25 dmg limit} (48 Recycle)
+
+    -- Best:
+    -- head="Arcadian Beret +3", --37 [0] 37/62 <0> {0} (38)
+    -- body="Nisroch Jerkin", --40 [7] 45/45 <10> {0} (0)
+    -- hands="Malignance Gloves", --24 [12] 50/0 <0> {4} (0)
+    -- legs=gear.Adhemar_C_legs, --42 [8] 54/54 <0> {0} (16)
+    -- feet="Orion Socks +3", --49 [0] 54/36 <0> {0} (0)
+    -- neck="Scout's Gorget +2", --25 [7] 25/0 <0> {10} (0)
+    -- ear1="Telos Earring", --0 [5] 10/10 <0> {0} (0)
+    -- ear2="Beyla Earring", --0 [0] 15/0 <0> {0} (0)
+    -- ring1="Regal Ring", --10 [0] 0/20 <0> {0} (0)
+    -- ring2="Hajduk Ring +1", --0 [0] 17/0 <0> {0} (0)
+    -- back=gear.RNG_RA_Cape, --30 [10] 20/20 <0> {0} (0)
+    -- waist="Kwahu Kachina Belt +1" --8 [0] 20/0 <5> {0} (0)
+    -- Includes set bonus 15 racc from orion + regal
+    -- 265 AGI [49 STP] 362 racc / 247 ratt <15 crit> {14 dmg limit} (54 Recycle)
   })
 
   sets.midcast.RA.HighAcc = set_combine(sets.midcast.RA.Acc, {
-    -- head="Orion Beret +3",
-    -- body="Orion Jerkin +3",
-    -- hands="Orion Bracers +3",
-    -- waist="K. Kachina Belt +1",
+    -- Goal:
+    -- head="Orion Beret +3", --39 [0] 47/34 <0> {0} (0)
+    -- body="Orion Jerkin +3", --40 [8] 60/41 <0> {0} (0)
+    -- hands="Orion Bracers +3", --27 [0] 48/0 <0> {0} (0)
+    -- legs="Malignance Tights", --42 [10] 50/0 <0> {5} (0)
+    -- feet="Orion Socks +3", --49 [0] 54/36 <0> {0} (0)
+    -- neck="Scout's Gorget +2", --25 [7] 25/0 <0> {10} (0)
+    -- ear1="Telos Earring", --0 [5] 10/10 <0> {0} (0)
+    -- ear2="Beyla Earring", --0 [0] 15/0 <0> {0} (0)
+    -- ring1="Regal Ring", --10 [0] 0/20 <0> {0} (0)
+    -- ring2="Hajduk Ring +1", --0 [0] 17/0 <0> {0} (0)
+    -- back=gear.RNG_RA_Cape, --30 [10] 20/20 <0> {0} (0)
+    -- waist="Kwahu Kachina Belt +1" --8 [0] 20/0 <5> {0} (0)
+    -- Includes set bonus 15 racc from orion + regal
+    -- 270 AGI [40 STP] 426 racc / 161 ratt <5 crit> {15 dmg limit} (0 Recycle)
+
+    -- Best:
+    -- head="Orion Beret +3", --39 [0] 47/34 <0> {0} (0)
+    -- body="Orion Jerkin +3", --40 [8] 60/41 <0> {0} (0)
+    -- hands="Orion Bracers +3", --27 [0] 48/0 <0> {0} (0)
+    -- legs=gear.Adhemar_C_legs, --42 [8] 54/54 <0> {0} (16)
+    -- feet="Orion Socks +3", --49 [0] 54/36 <0> {0} (0)
+    -- neck="Scout's Gorget +2", --25 [7] 25/0 <0> {10} (0)
+    -- ear1="Telos Earring", --0 [5] 10/10 <0> {0} (0)
+    -- ear2="Beyla Earring", --0 [0] 15/0 <0> {0} (0)
+    -- ring1="Regal Ring", --10 [0] 0/20 <0> {0} (0)
+    -- ring2="Hajduk Ring +1", --0 [0] 17/0 <0> {0} (0)
+    -- back=gear.RNG_RA_Cape, --30 [10] 20/20 <0> {0} (0)
+    -- waist="Kwahu Kachina Belt +1" --8 [0] 20/0 <5> {0} (0)
+    -- Includes set bonus 60 racc from orion + regal
+    --270 AGI [38 STP] 430 racc / 215 ratt <5 crit> {10 dmg limit} (16 Recycle)
   })
 
   sets.midcast.RA.Critical = set_combine(sets.midcast.RA, {
     head="Meghanada Visor +2",
     body="Meg. Cuirie +2",
+    hands="Mummu Wrists +2",
     ring1="Begrudging Ring",
-    -- hands="Kobo Kote",
-    -- legs="Mummu Kecks +2",
+    legs="Mummu Kecks +2",
+    -- body="Nisroch Jerkin",
     -- feet="Osh. Leggings +1",
-    -- ring2="Mummu Ring",
     -- waist="K. Kachina Belt +1",
-  })
-
-  sets.midcast.RA.STP = set_combine(sets.midcast.RA, {
-    ring1="Chirich Ring +1",
-    -- neck="Iskur Gorget",
-    -- ear1="Dedition Earring",
-    -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
-    -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
   })
 
   sets.DoubleShot = {
@@ -532,7 +638,7 @@ function init_gear_sets()
     -- hands="Oshosi Gloves +1", -- 5
     -- legs="Osh. Trousers +1", --7
     -- feet="Osh. Leggings +1", --4
-  } --25
+  }
 
   sets.DoubleShot.Critical = {
     head="Meghanada Visor +2",
@@ -662,13 +768,6 @@ function init_gear_sets()
     -- waist="Olseni Belt",
   })
 
-  sets.engaged.STP = set_combine(sets.engaged, {
-    ring1="Chirich Ring +1",
-    -- head=gear.Herc_STP_head,
-    -- feet="Carmine Greaves +1",
-    -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
-  })
-
   -- * DNC Subjob DW Trait: +15%
   -- * NIN Subjob DW Trait: +25%
 
@@ -710,12 +809,6 @@ function init_gear_sets()
     -- waist="Olseni Belt",
   })
 
-  sets.engaged.DW.STP = set_combine(sets.engaged.DW, {
-    ring1="Chirich Ring +1",
-    -- head=gear.Herc_STP_head,
-    -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
-  })
-
   -- 15% Magic Haste (67% DW to cap)
   sets.engaged.DW.LowHaste = {
     head=gear.Adhemar_B_head,
@@ -753,12 +846,6 @@ function init_gear_sets()
     -- ear2="Mache Earring +1",
     -- ring1="Regal Ring",
     -- waist="Olseni Belt",
-  })
-
-  sets.engaged.DW.STP.LowHaste = set_combine(sets.engaged.DW.LowHaste, {
-    ring2="Chirich Ring +1",
-    -- head=gear.Herc_STP_head,
-    -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
   })
 
   -- 30% Magic Haste (56% DW to cap)
@@ -802,12 +889,6 @@ function init_gear_sets()
     -- waist="Olseni Belt",
   })
 
-  sets.engaged.DW.STP.MidHaste = set_combine(sets.engaged.DW.MidHaste, {
-    ring1="Chirich Ring +1",
-    -- head=gear.Herc_STP_head,
-    -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
-  })
-
   -- 35% Magic Haste (51% DW to cap)
   sets.engaged.DW.HighHaste = {
     head=gear.Adhemar_B_head,
@@ -847,12 +928,6 @@ function init_gear_sets()
     -- ear2="Mache Earring +1",
     -- ring1="Regal Ring",
     -- waist="Olseni Belt",
-  })
-
-  sets.engaged.DW.STP.HighHaste = set_combine(sets.engaged.DW.HighHaste, {
-    ring1="Chirich Ring +1",
-    -- head=gear.Herc_STP_head,
-    -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
   })
 
   -- 45% Magic Haste (36% DW to cap)
@@ -895,17 +970,10 @@ function init_gear_sets()
     -- waist="Olseni Belt",
   })
 
-  sets.engaged.DW.STP.MaxHaste = set_combine(sets.engaged.DW.MaxHaste, {
-    ring1="Chirich Ring +1",
-    -- head=gear.Herc_STP_head,
-    -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
-  })
-
   sets.engaged.DW.MaxHastePlus = set_combine(sets.engaged.DW.MaxHaste, {back=gear.RNG_DW_Cape})
   sets.engaged.DW.LowAcc.MaxHastePlus = set_combine(sets.engaged.DW.LowAcc.MaxHaste, {back=gear.RNG_DW_Cape})
   sets.engaged.DW.MidAcc.MaxHastePlus = set_combine(sets.engaged.DW.MidAcc.MaxHaste, {back=gear.RNG_DW_Cape})
   sets.engaged.DW.HighAcc.MaxHastePlus = set_combine(sets.engaged.DW.HighAcc.MaxHaste, {back=gear.RNG_DW_Cape})
-  sets.engaged.DW.STP.MaxHastePlus = set_combine(sets.engaged.DW.STP.MaxHaste, {back=gear.RNG_DW_Cape})
 
 
   ------------------------------------------------------------------------------------------------
@@ -1102,9 +1170,6 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     if state.Buff.Barrage then
       equip(sets.buff.Barrage)
     end
---        if state.Buff['Velocity Shot'] and state.RangedMode.value == 'STP' then
---            equip(sets.buff['Velocity Shot'])
---        end
   end
 end
 
