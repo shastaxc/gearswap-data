@@ -49,7 +49,7 @@ end
 
 -- Executes on first load and main job change
 function job_setup()
-  lockstyleset = 1
+  lockstyleset = 6
 
   current_ranged_weapon_type = nil -- Do not modify
   current_dp_type = nil -- Do not modify
@@ -1483,7 +1483,7 @@ end)
 
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
-  set_macro_page(1, 6)
+  set_macro_page(1, 9)
 end
 
 function set_lockstyle()
