@@ -45,6 +45,7 @@ function get_sets()
 
   -- Load and initialize the include file.
   include('Mote-Include.lua') -- Executes job_setup, user_setup, init_gear_sets
+  send_command('gs c equipweapons')
 end
 
 -- Executes on first load and main job change
@@ -61,15 +62,15 @@ function job_setup()
   state.IdleMode:options('Normal', 'LightDef')
   state.WeaponSet = M{['description']='Weapon Set', 'Pharaoh\'s Bow', 'Grosveneur\'s Bow', 'Ribauldequin', 'Annihilator', 'Fomalhaut', 'Armageddon'}
   state.CP = M(false, "Capacity Points Mode")
+  state.WeaponLock = M(false, 'Weapon Lock')
+  -- Whether a warning has been given for low ammo
+  state.warned = M(false)
 
   state.Buff.Barrage = buffactive.Barrage or false
   state.Buff.Camouflage = buffactive.Camouflage or false
   state.Buff['Unlimited Shot'] = buffactive['Unlimited Shot'] or false
   state.Buff['Velocity Shot'] = buffactive['Velocity Shot'] or false
   state.Buff['Double Shot'] = buffactive['Double Shot'] or false
-
-  -- Whether a warning has been given for low ammo
-  state.warned = M(false)
 
   elemental_ws = S{'Aeolian Edge', 'Trueflight', 'Wildfire'}
   no_swap_waist = S{"Era. Bul. Pouch", "Dev. Bul. Pouch", "Chr. Bul. Pouch", "Quelling B. Quiver",
@@ -135,6 +136,7 @@ function job_setup()
 
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c usekey')
+  send_command('bind @w gs c toggle WeaponLock')
 
   send_command('bind @c gs c toggle CP')
   send_command('bind ^insert gs c cycle WeaponSet')
@@ -185,6 +187,7 @@ end
 function user_unload()
   send_command('unbind !s')
   send_command('unbind !d')
+  send_command('unbind @w')
 
   send_command('unbind @c')
   send_command('unbind @e')
@@ -1146,13 +1149,13 @@ function job_buff_change(buff,gain)
 end
 
 function job_state_change(stateField, newValue, oldValue)
-  -- if state.WeaponLock.value == true then
-  --   disable('ranged')
-  -- else
-  --   enable('ranged')
-  -- end
+  if state.WeaponLock.value == true then
+    disable('main','sub','ranged')
+  else
+    enable('main','sub','ranged')
+  end
   if stateField == 'Weapon Set' then
-    equip(sets[state.WeaponSet.current])
+    equip_weapons()
   end
 
 end
@@ -1164,6 +1167,7 @@ end
 -- Called by the 'update' self-command, for common needs.
 -- Set eventArgs.handled to true if we don't want automatic equipping of gear.
 function job_handle_equipping_gear(playerStatus, eventArgs)
+  update_weapons()
   check_gear()
   update_combat_form()
   determine_haste_group()
@@ -1201,9 +1205,6 @@ function get_custom_wsmode(spell, action, spellMap)
 end
 
 function customize_idle_set(idleSet)
-  -- Equip weapons (weapons won't set properly on load or job change without this here)
-  idleSet = set_combine(idleSet, sets[state.WeaponSet.current])
-
   -- If not in DT mode put on move speed gear
   if state.IdleMode.current == 'Normal' and state.DefenseMode.value == 'None' then
     if classes.CustomIdleGroups:contains('Adoulin') then
@@ -1348,6 +1349,8 @@ function job_self_command(cmdParams, eventArgs)
     end
   elseif cmdParams[1]:lower() == 'faceaway' then
     windower.ffxi.turn(player.facing - math.pi);
+  elseif cmdParams[1]:lower() == 'equipweapons' then
+    equip_weapons()
   elseif cmdParams[1]:lower() == 'test' then
     test()
   end
@@ -1559,6 +1562,10 @@ function update_dp_type()
       send_command('dp '..current_dp_type)
     end
   end
+end
+
+function equip_weapons()
+  equip(sets[state.WeaponSet.current])
 end
 
 function test()
