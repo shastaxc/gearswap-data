@@ -25,11 +25,9 @@
 --  Spells:     [ WIN+, ]           Utsusemi: Ichi
 --              [ WIN+. ]           Utsusemi: Ni
 --
---  Weapons:    [ WIN+E/R ]         Cycles between available Weapon Sets
+--  Weapons:    [ CTRL+Ins/Del ]    Cycles between available Weapon Sets
 --
---  WS:         [ CTRL+Numpad7 ]    Trueflight
---              [ CTRL+Numpad8 ]    Last Stand
---              [ CTRL+Numpad4 ]    Wildfire
+--  WS:         [ ALT+Numpad 1-9 ]  Dependent on ranged weapon equipped
 --
 --  RA:         [ Numpad0 ]         Ranged Attack
 --
@@ -49,7 +47,6 @@ function get_sets()
   include('Mote-Include.lua') -- Executes job_setup, user_setup, init_gear_sets
 end
 
-
 -- Executes on first load and main job change
 function job_setup()
   lockstyleset = 1
@@ -61,7 +58,7 @@ function job_setup()
   state.RangedMode:options('Normal', 'Acc', 'HighAcc', 'Critical')
   state.WeaponskillMode:options('Normal', 'Acc', 'Enmity')
   state.IdleMode:options('Normal', 'LightDef')
-  state.WeaponSet = M{['description']='Weapon Set', 'Annihilator', 'Fomalhaut', 'Armageddon'}
+  state.WeaponSet = M{['description']='Weapon Set', 'Pharaoh\'s Bow', 'Grosveneur\'s Bow', 'Ribauldequin', 'Annihilator', 'Fomalhaut', 'Armageddon'}
   state.CP = M(false, "Capacity Points Mode")
 
   state.Buff.Barrage = buffactive.Barrage or false
@@ -78,6 +75,9 @@ function job_setup()
       "Yoichi's Quiver", "Artemis's Quiver", "Chrono Quiver"}
 
   DefaultAmmo = {
+    ['Pharaoh\'s Bow'] = "Demon Arrow",
+    ['Grosveneur\'s Bow'] = "Darksteel Bolt",
+    ['Ribauldequin'] = "Dweomer Bullet",
     ['Yoichinoyumi'] = "Chrono Arrow",
     ['Gandiva'] = "Chrono Arrow",
     ['Fail-Not'] = "Chrono Arrow",
@@ -87,6 +87,9 @@ function job_setup()
     ['Fomalhaut'] = "Chrono Bullet",
   }
   AccAmmo = {
+    ['Pharaoh\'s Bow'] = "Demon Arrow",
+    ['Grosveneur\'s Bow'] = "Darksteel Bolt",
+    ['Ribauldequin'] = "Dweomer Bullet",
     ['Yoichinoyumi'] = "Yoichi's Arrow",
     ['Gandiva'] = "Yoichi's Arrow",
     ['Fail-Not'] = "Yoichi's Arrow",
@@ -96,6 +99,9 @@ function job_setup()
     ['Fomalhaut'] = "Devastating Bullet",
   }
   WSAmmo = {
+    ['Pharaoh\'s Bow'] = "Demon Arrow",
+    ['Grosveneur\'s Bow'] = "Darksteel Bolt",
+    ['Ribauldequin'] = "Dweomer Bullet",
     ['Yoichinoyumi'] = "Chrono Arrow",
     ['Gandiva'] = "Chrono Arrow",
     ['Fail-Not'] = "Chrono Arrow",
@@ -105,6 +111,9 @@ function job_setup()
     ['Fomalhaut'] = "Chrono Bullet",
   }
   MagicAmmo = {
+    ['Pharaoh\'s Bow'] = "Demon Arrow",
+    ['Grosveneur\'s Bow'] = "Darksteel Bolt",
+    ['Ribauldequin'] = "Dweomer Bullet",
     ['Yoichinoyumi'] = "Chrono Arrow",
     ['Gandiva'] = "Chrono Arrow",
     ['Fail-Not'] = "Chrono Arrow",
@@ -118,14 +127,13 @@ function job_setup()
   send_command('bind !d gs c usekey')
 
   send_command('bind @c gs c toggle CP')
-  send_command('bind @e gs c cycleback WeaponSet')
-  send_command('bind @r gs c cycle WeaponSet')
+  send_command('bind ^insert gs c cycle WeaponSet')
+  send_command('bind ^delete gs c cycleback WeaponSet')
 
   send_command('bind !q input /ja "Velocity Shot" <me>')
   send_command('bind !` input /ja "Scavenge" <me>')
   send_command('bind ^numlock input /ja "Double Shot" <me>')
   send_command('bind numpad0 input /ra <t>')
-
 end
 
 -- Executes on first load, main job change, **and sub job change**
@@ -210,7 +218,7 @@ end
 
 -- Set up all gear sets.
 function init_gear_sets()
-
+  
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Precast Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
@@ -973,6 +981,15 @@ function init_gear_sets()
     waist="Hachirin-no-Obi"
   }
 
+  sets['Pharaoh\'s Bow'] = {
+    ranged="Pharaoh\'s Bow"
+  }
+  sets['Grosveneur\'s Bow'] = {
+    ranged="Grosveneur\'s Bow"
+  }
+  sets['Ribauldequin'] = {
+    ranged="Ribauldequin"
+  }
   sets.Annihilator = {
     ranged="Annihilator"
   }
@@ -982,9 +999,9 @@ function init_gear_sets()
   sets.Armageddon = {
     ranged="Armageddon"
   }
-  -- sets.Gastraphetes = {
-  --   ranged="Gastraphetes"
-  -- }
+  sets.Gastraphetes = {
+    ranged="Gastraphetes"
+  }
 
 end
 
@@ -995,8 +1012,6 @@ end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
 function job_precast(spell, action, spellMap, eventArgs)
-  equip(sets[state.WeaponSet.current])
-
   -- Don't gearswap if status forbids the action
   local forbidden_statuses = action_type_blocks[spell.action_type]
   for k,status in pairs(forbidden_statuses) do
@@ -1086,8 +1101,6 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
 end
 
 function job_aftercast(spell, action, spellMap, eventArgs)
-  equip(sets[state.WeaponSet.current])
-
   if spell.english == "Shadowbind" then
     send_command('@timers c "Shadowbind ['..spell.target.name..']" 42 down abilities/00122.png')
   end
@@ -1133,8 +1146,9 @@ function job_state_change(stateField, newValue, oldValue)
   -- else
   --   enable('ranged')
   -- end
-
-  equip(sets[state.WeaponSet.current])
+  if stateField == 'Weapon Set' then
+    equip(sets[state.WeaponSet.current])
+  end
 
 end
 
@@ -1151,7 +1165,6 @@ function job_handle_equipping_gear(playerStatus, eventArgs)
 end
 
 function job_update(cmdParams, eventArgs)
-  equip(sets[state.WeaponSet.current])
   handle_equipping_gear(player.status)
   update_weaponskill_binds()
   update_ranged_weaponskill_binds()
@@ -1182,6 +1195,9 @@ function get_custom_wsmode(spell, action, spellMap)
 end
 
 function customize_idle_set(idleSet)
+  -- Equip weapons (weapons won't set properly on load or job change without this here)
+  idleSet = set_combine(idleSet, sets[state.WeaponSet.current])
+
   -- If not in DT mode put on move speed gear
   if state.IdleMode.current == 'Normal' and state.DefenseMode.value == 'None' then
     if classes.CustomIdleGroups:contains('Adoulin') then
@@ -1480,8 +1496,9 @@ end
 function update_ranged_weaponskill_binds()
   local weapon = nil
   local weapon_type = nil
-  --Handle barehanded case
-  if player.equipment.ranged ~= nil or player.equipment.ranged ~= 0 or player.equipment.ranged ~= 'empty' then
+
+  --Handle unequipped case
+  if player.equipment.ranged ~= nil and player.equipment.ranged ~= 0 and player.equipment.ranged ~= 'empty' then
     weapon = res.items:with('name', player.equipment.ranged)
     weapon_type = res.skills[weapon.skill].en
   end
