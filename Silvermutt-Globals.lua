@@ -40,7 +40,7 @@ function define_global_sets()
   sets.ToyWeapon.Scythe = {main="Lost Sickle",sub="Tzacab Grip"}
 
   --Most recent weapon (used for re-arming)
-  sets.MostRecent = {main="",sub=""} --DO NOT MODIFY
+  sets.MostRecent = {main="",sub="",ranged=""} --DO NOT MODIFY
 
   -- Augmented Weapons
   gear.Colada_ENH = {name="Colada", augments={'Enh. Mag. eff. dur. +4','INT+5','Mag. Acc.+9',}}
@@ -306,10 +306,16 @@ function update_weapons()
       sets.MostRecent.sub = player.equipment.sub
     end
   end
+  if player.equipment.ranged ~= "empty" then
+    if not is_encumbered('ranged') then
+      sets.MostRecent.ranged = player.equipment.ranged
+    end
+  end
 
   --Disarm Handling--
   --Turns out that the table fills the string "empty" for empty slot. It won't return nil
-  if player.equipment.main == "empty" then
+  if (player.equipment.main == "empty" and sets.MostRecent.main ~= "empty")
+      or (player.equipment.ranged == "empty" and sets.MostRecent.ranged ~= "empty") then
     if state.WeaponLock.value == false then
       equip(sets.MostRecent)
     end

@@ -521,7 +521,7 @@ function init_gear_sets()
   })
 
   sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
-    ammo="Seething Bomblet", --6
+    ammo="Pemphredo Tathlum", --4
     head="Highwing Helm", --20
     body=gear.Samnuha_body, --25
     hands=gear.Leyline_Gloves, --30
