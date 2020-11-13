@@ -358,8 +358,9 @@ function init_gear_sets()
     ear2="Moonshade Earring",
     waist="Fotia Belt",
     -- head="Orion Beret +3",
-    -- body=gear.Herc_RA_body,
+    -- body=gear.Herc_RA_WSD_body,
     -- legs="Arc. Braccae +3",
+    -- feet=gear.Herc_RA_WSD_feet,
     -- ear1="Ishvara Earring",
     -- ring1="Regal Ring",
     -- ring2="Epaminondas's Ring",
@@ -398,9 +399,20 @@ function init_gear_sets()
     hands="Mummu Wrists +2",
     ear1="Sherida Earring",
     ring1="Begrudging Ring",
+
+    -- Goal:
+    -- head="Mummu Bonnet +2",
     -- body="Abnoba Kaftan",
+    -- hands="Mummu Wrists +2",
+    -- legs="Arc. Braccae +3",
     -- feet="Thereoid Greaves",
+    -- neck="Fotia Gorget",
+    -- ear1="Sherida Earring",
+    -- ear2="Moonshade Earring",
+    -- ring1="Begrudging Ring",
     -- ring2="Mummu Ring",
+    -- back=gear.RNG_WS2_Cape,
+    -- waist="Fotia Belt",
   })
 
   sets.precast.WS['Jishnu\'s Radiance'].Acc = set_combine(sets.precast.WS['Jishnu\'s Radiance'], {
@@ -421,7 +433,7 @@ function init_gear_sets()
   })
 
   sets.precast.WS["Last Stand"] = set_combine(sets.precast.WS, {
-    -- neck="Scout's Gorget +1",
+    -- neck="Scout's Gorget +2",
   })
 
   sets.precast.WS['Last Stand'].Acc = set_combine(sets.precast.WS['Last Stand'], {
@@ -439,18 +451,17 @@ function init_gear_sets()
   })
 
   sets.precast.WS["Coronach"] = set_combine(sets.precast.WS['Last Stand'], {
-    ear1="Sherida Earring",
-    -- neck="Scout's Gorget +1",
-    -- ear2="Mache Earring +1",
+    ear2="Sherida Earring",
+    -- neck="Scout's Gorget +2",
   })
 
   sets.precast.WS["Coronach"].Acc = set_combine(sets.precast.WS['Coronach'], {
-    ear2="Telos Earring",
-    -- ear1="Beyla Earring",
+    ear1="Telos Earring",
+    -- ear2="Beyla Earring",
   })
 
   sets.precast.WS["Coronach"].Enmity = set_combine(sets.precast.WS['Coronach'], {
-    -- ear1="Beyla Earring",
+    -- ear2="Beyla Earring",
   })
 
   sets.precast.WS["Trueflight"] = {
@@ -458,39 +469,80 @@ function init_gear_sets()
     ear1="Moonshade Earring",
     ear2="Friomisi Earring",
     waist="Eschan Stone",
+
+    -- Goal:
     -- head="Orion Beret +3",
     -- body="Carm. Sc. Mail +1",
     -- hands="Carmine Fin. Ga. +1",
     -- legs=gear.Herc_WSD_legs,
-    -- neck="Scout's Gorget +1",
-    -- ring1="Weather. Ring +1",
-    -- ring2="Epaminondas's Ring",
+    -- feet=gear.Herc_WSD_feet,
+    -- neck="Scout's Gorget +2",
+    -- ear1="Moonshade Earring",
+    -- ear2="Friomisi Earring",
+    -- ring1="Epaminondas's Ring",
+    -- ring2="Dingir Ring",
     -- back=gear.RNG_WS1_Cape,
-  }
+    -- waist="Eschan Stone",
 
-  sets.precast.WS["Wildfire"] = set_combine(sets.precast.WS["Trueflight"], {
-    -- ring1="Regal Ring"
-  })
+    -- Best:
+    -- head=empty
+    -- body="Cohort Cloak +1",
+    -- hands=gear.Herc_MAB_hands,
+    -- legs="Arcadian Braccae +3",
+    -- feet=gear.Herc_MAB_feet,
+    -- ear1="Friomisi Earring",
+    -- ear2="Moonshade Earring",
+    -- ring1="Epaminondas's Ring",
+    -- ring2="Dingir Ring",
+    -- back=gear.RNG_WS1_Cape,
+    -- waist="Orpheus's Sash",
+  } -- AGI / MAB
+
+  sets.precast.WS["Wildfire"] = sets.precast.WS["Trueflight"]
 
   sets.precast.WS['Evisceration'] = {
     head=gear.Adhemar_B_head,
     hands="Mummu Wrists +2",
-    feet=gear.Herc_STP_feet,
+    feet=gear.Herc_WSD_feet,
     neck="Fotia Gorget",
-    ring1="Begrudging Ring",
+    ear1="Odr Earring",
+    ear2="Moonshade Earring",
+    ring2="Begrudging Ring",
     waist="Fotia Belt",
+
+    -- Goal:
     -- body="Abnoba Kaftan",
     -- legs="Zoar Subligar +1",
-    -- ear2="Mache Earring +1",
-    -- ring2="Mummu Ring",
-    -- back=gear.RNG_TP_Cape,
+    -- ring1="Regal Ring",
+    -- back=gear.RNG_Melee_Crit_Cape
   }
 
   sets.precast.WS['Evisceration'].Acc = set_combine(sets.precast.WS['Evisceration'], {
     head="Dampening Tam",
+    ring2="Chirich Ring +1",
     -- body=gear.Adhemar_B_body,
-    -- legs=gear.Herc_WS_legs,
+    -- ear1="Mache Earring +1",
+  })
+
+  sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
+    -- Goal:
+    -- head="Orion Beret +3",
+    -- body=gear.Herc_STR_WSD_body,
+    -- hands="Meghanada Gloves +2",
+    -- legs="Aradian Braccae +3",
+    -- feet=gear.Herc_STR_WSD_feet,
+    -- neck="Scout's Gorget +2",
+    -- ear1="Ishvara Earring",
+    -- ear2="Moonshade Earring",
     -- ring1="Regal Ring",
+    -- ring2="Epaminondas's Ring",
+    -- back=gear.RNG_STR_WSD_Cape,
+    -- waist="Sailfi Belt +1",
+  })
+
+  sets.precast.WS['Savage Blade'].Acc = set_combine(sets.precast.WS['Savage Blade'], {
+    ring2="Chirich Ring +1",
+    -- ear1="Telos Earring",
   })
 
   sets.precast.WS['Rampage'] = set_combine(sets.precast.WS['Evisceration'], {
@@ -689,7 +741,7 @@ function init_gear_sets()
     -- hands="Oshosi Gloves +1",
     -- legs="Arc. Braccae +3",
     -- feet="Osh. Leggings +1",
-    -- neck="Scout's Gorget +1",
+    -- neck="Scout's Gorget +2",
     -- ear1="Beyla Earring",
     -- back=gear.RNG_RA_Cape,
     -- waist="K. Kachina Belt +1",
