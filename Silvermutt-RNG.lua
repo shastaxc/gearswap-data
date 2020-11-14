@@ -1643,7 +1643,7 @@ function update_ranged_weaponskill_binds()
       send_command('bind !numpad4 input /ws "Empyreal Arrow" <t>') -- Quested
       send_command('bind !numpad1 input /ws "Blast Arrow" <t>') -- Melee Range
       send_command('bind !numpad2 input /ws "Sidewinder" <t>') -- High dmg, inaccurate
-    elseif current_weapon_type == 'Marksmanship' then
+    elseif current_ranged_weapon_type == 'Marksmanship' then
       send_command('bind !numpad7 input /ws "Last Stand" <t>') -- Aeonic
       send_command('bind !numpad8 input /ws "Coronach" <t>') -- Relic
       send_command('bind !numpad9 input /ws "Wildfire" <t>') -- Empyrean
