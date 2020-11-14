@@ -46,6 +46,7 @@ function get_sets()
   -- Load and initialize the include file.
   include('Mote-Include.lua') -- Executes job_setup, user_setup, init_gear_sets
   send_command('gs c equipweapons')
+  send_command('gs c equiprangedweapons')
 end
 
 -- Executes on first load and main job change
@@ -60,7 +61,9 @@ function job_setup()
   state.RangedMode:options('Normal', 'Acc', 'HighAcc')
   state.WeaponskillMode:options('Normal', 'Acc', 'Enmity')
   state.IdleMode:options('Normal', 'LightDef')
-  state.WeaponSet = M{['description']='Weapon Set', 'Pharaoh\'s Bow', 'Grosveneur\'s Bow', 'Ribauldequin', 'Annihilator', 'Fomalhaut', 'Armageddon'}
+  state.WeaponSet = M{['description']='Weapon Set', 'TempWeak1', 'TempWeak2', 'MagicRA', 'PhysRA', 'PhysRA RangedOnly', 'PhysRA NoBuff', 'Melee', 'CritRA'}
+  state.RangedWeaponSet = M{['description']='Ranged Weapon Set', 'Pharaoh\'s Bow', 'Grosveneur\'s Bow', 'Ribauldequin', 
+      'Annihilator', 'Fomalhaut', 'Armageddon', 'Sparrowhawk +2'}
   state.CP = M(false, "Capacity Points Mode")
   state.WeaponLock = M(false, 'Weapon Lock')
   -- Whether a warning has been given for low ammo
@@ -141,6 +144,8 @@ function job_setup()
   send_command('bind @c gs c toggle CP')
   send_command('bind ^insert gs c cycle WeaponSet')
   send_command('bind ^delete gs c cycleback WeaponSet')
+  send_command('bind ^home gs c cycle RangedWeaponSet')
+  send_command('bind ^end gs c cycleback RangedWeaponSet')
 
   send_command('bind !q input /ja "Velocity Shot" <me>')
   send_command('bind !` input /ja "Scavenge" <me>')
@@ -190,8 +195,10 @@ function user_unload()
   send_command('unbind @w')
 
   send_command('unbind @c')
-  send_command('unbind @e')
-  send_command('unbind @r')
+  send_command('unbind ^insert')
+  send_command('unbind ^delete')
+  send_command('unbind ^home')
+  send_command('unbind ^end')
 
   send_command('unbind !q')
   send_command('unbind !`')
@@ -1110,6 +1117,41 @@ function init_gear_sets()
     waist="Hachirin-no-Obi"
   }
 
+  -- Melee weapon set
+  sets['TempWeak1'] = {
+    main="Kaja Knife",
+    sub="Nusku Shield",
+  }
+  sets['TempWeak2'] = {
+    main="Kaja Knife",
+    sub="Malevolence",
+  }
+  sets['MagicRA'] = {
+    main="Malevolence",
+    sub="Malevolence",
+  }
+  sets['PhysRA'] = {
+    main="Ternion Dagger +1",
+    sub="Odium",
+  }
+  sets['PhysRA RangedOnly'] = {
+    main="Ternion Dagger +1",
+    sub="Nusku Shield",
+  }
+  sets['PhysRA NoBuff'] = {
+    main="Perun +1",
+    sub="Nusku Shield",
+  }
+  sets['Melee'] = {
+    main="Naegling",
+    sub="Ternion Dagger +1",
+  }
+  sets['CritRA'] = {
+    main="Oneiros Knife",
+    sub="Nusku Shield",
+  }
+
+  -- Ranged weapon sets
   sets['Pharaoh\'s Bow'] = {
     ranged="Pharaoh\'s Bow"
   }
@@ -1191,7 +1233,7 @@ function job_post_precast(spell, action, spellMap, eventArgs)
       equip(sets.Reive)
     end
   elseif spell.action_type == 'Ranged Attack' then
-    if state.WeaponSet.current == "Gastraphetes" then
+    if state.RangedWeaponSet.current == "Gastraphetes" then
       if flurry == 2 then
         equip(sets.precast.RA.Gastra.Flurry2)
       elseif flurry == 1 then
@@ -1267,15 +1309,16 @@ function job_buff_change(buff,gain)
 end
 
 function job_state_change(stateField, newValue, oldValue)
-  if state.WeaponLock.value == true then
-    disable('main','sub','ranged')
-  else
-    enable('main','sub','ranged')
+  if stateField == 'Weapon Lock' and newValue == false then
+    equip_weapons()
+    equip_ranged_weapons()
   end
-  if stateField == 'Weapon Set' then
+  if stateField == 'Weapon Set' and state.WeaponLock.value == false then
     equip_weapons()
   end
-
+  if stateField == 'Ranged Weapon Set' and state.WeaponLock.value == false then
+    equip_ranged_weapons()
+  end
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -1469,6 +1512,8 @@ function job_self_command(cmdParams, eventArgs)
     windower.ffxi.turn(player.facing - math.pi);
   elseif cmdParams[1]:lower() == 'equipweapons' then
     equip_weapons()
+  elseif cmdParams[1]:lower() == 'equiprangedweapons' then
+    equip_ranged_weapons()
   elseif cmdParams[1]:lower() == 'test' then
     test()
   end
@@ -1684,6 +1729,20 @@ end
 
 function equip_weapons()
   equip(sets[state.WeaponSet.current])
+end
+
+function equip_ranged_weapons()
+  equip(sets[state.RangedWeaponSet.current])
+
+  -- Equip appropriate ammo
+  local ranged = sets[state.RangedWeaponSet.current].ranged
+  if DefaultAmmo[ranged] then
+    if player.inventory[DefaultAmmo[ranged]] then
+      equip({ammo=DefaultAmmo[ranged]})
+    else
+      add_to_chat(3,"Default ammo unavailable.  Leaving empty.")
+    end
+  end
 end
 
 function test()

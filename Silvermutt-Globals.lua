@@ -40,7 +40,7 @@ function define_global_sets()
   sets.ToyWeapon.Scythe = {main="Lost Sickle",sub="Tzacab Grip"}
 
   --Most recent weapon (used for re-arming)
-  sets.MostRecent = {main="",sub="",ranged=""} --DO NOT MODIFY
+  sets.MostRecent = {main="",sub="",ranged="",ammo=""} --DO NOT MODIFY
 
   -- Augmented Weapons
   gear.Colada_ENH = {name="Colada", augments={'Enh. Mag. eff. dur. +4','INT+5','Mag. Acc.+9',}}
@@ -309,6 +309,9 @@ function update_weapons()
   if player.equipment.ranged ~= "empty" then
     if not is_encumbered('ranged') then
       sets.MostRecent.ranged = player.equipment.ranged
+    end
+    if not is_encumbered('ammo') then
+      sets.MostRecent.ammo = player.equipment.ammo
     end
   end
 
