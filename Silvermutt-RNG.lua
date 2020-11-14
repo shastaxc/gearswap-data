@@ -706,18 +706,15 @@ function init_gear_sets()
 
   -- Idle sets
   sets.idle = {
-    body="Malignance Tabard",
-    hands="Malignance Gloves",
+    head="Meghanada Visor +2",
+    body="Meghanada Cuirie +2",
+    hands="Meghanada Gloves +2",
+    legs="Meghanada Chausses +2",
+    feet="Meghanada Jambeaux +2",
     neck="Bathy Choker +1",
-    ear1="Sanare Earring",
+    ear1="Infused Earring",
     ear2="Eabani Earring",
-    back="Moonlight Cape",
-    waist="Carrier's Sash",
-    -- head="Malignance Chapeau",
-    -- legs="Malignance Tights",
-    -- feet="Malignance Boots",
-    -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
-    -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
+    ring1="Chirich Ring +1",
   }
 
   sets.LightDef = {
@@ -784,12 +781,16 @@ function init_gear_sets()
 
   sets.engaged = {
     head=gear.Adhemar_B_head,
+    body="Malignance Tabard",
     hands=gear.Adhemar_B_hands,
     legs="Samnuha Tights",
     feet=gear.Herc_TA_feet,
+    neck="Anu Torque",
     ear1="Sherida Earring",
     ear2="Brutal Earring",
+    ring1="Ilabrat Ring",
     ring2="Epona's Ring",
+    back="Atheling Mantle",
     waist="Windbuffet Belt +1",
     -- body=gear.Adhemar_B_body,
     -- neck="Iskur Gorget",
