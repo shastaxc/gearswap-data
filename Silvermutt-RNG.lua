@@ -742,6 +742,8 @@ function init_gear_sets()
     ear2="Odnowa Earring +1", --3/5, 0
     ring1=gear.Dark_Ring, --5/4, 0
     ring2="Defending Ring", --10/10, 0
+    back="Atheling Mantle", --0/0, 0
+    waist="Windbuffet Belt +1", --0/0, 0
   }
 
   sets.idle.Regain = set_combine(sets.idle, sets.latent_regain)
@@ -792,6 +794,8 @@ function init_gear_sets()
     ear2="Odnowa Earring +1", --3/5, 0
     ring1=gear.Dark_Ring, --5/4, 0
     ring2="Defending Ring", --10/10, 0
+    back="Atheling Mantle", --0/0, 0
+    waist="Kasiri Belt", --0/0, 0
   }
 
   sets.idle.Weak = sets.HeavyDef
