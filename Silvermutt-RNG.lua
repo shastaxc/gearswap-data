@@ -709,10 +709,10 @@ function init_gear_sets()
   ----------------------------------------- Idle Sets --------------------------------------------
   ------------------------------------------------------------------------------------------------
 
-  sets.resting = {}
-
-  -- Idle sets
-  sets.idle = {
+  sets.latent_regain = {
+    ring2="Karieyh Ring",
+  }
+  sets.latent_regen = {
     head="Meghanada Visor +2",
     body="Meghanada Cuirie +2",
     hands="Meghanada Gloves +2",
@@ -720,9 +720,42 @@ function init_gear_sets()
     feet="Meghanada Jambeaux +2",
     neck="Bathy Choker +1",
     ear1="Infused Earring",
-    ear2="Eabani Earring",
     ring1="Chirich Ring +1",
   }
+  sets.latent_refresh = {
+    legs="Rawhide Trousers",
+  }
+  sets.latent_refresh_sub50 = set_combine(sets.latent_refresh, {
+    waist="Fucho-no-Obi",
+  })
+
+  sets.resting = {}
+
+  -- Idle sets
+  sets.idle = {
+    head="Meghanada Visor +2", --5/0, 53
+    body="Malignance Tabard", --9/9, 139
+    hands="Malignance Gloves", --5/5, 112
+    legs="Mummu Kecks +1", --4/4, 107
+    feet="Meghanada Jambeaux +2", --3/0, 69
+    neck="Twilight Torque", --5/5, 0
+    ear1="Eabani Earring", --0/0, 8
+    ear2="Odnowa Earring +1", --3/5, 0
+    ring1=gear.Dark_Ring, --5/4, 0
+    ring2="Defending Ring", --10/10, 0
+  }
+
+  sets.idle.Regain = set_combine(sets.idle, sets.latent_regain)
+  sets.idle.Regen = set_combine(sets.idle, sets.latent_regen)
+  sets.idle.Refresh = set_combine(sets.idle, sets.latent_refresh)
+  sets.idle.RefreshSub50 = set_combine(sets.idle, sets.latent_refresh_sub50)
+  sets.idle.Regain.Regen = set_combine(sets.idle, sets.latent_regain, sets.latent_regen)
+  sets.idle.Regain.Refresh = set_combine(sets.idle, sets.latent_regain, sets.latent_refresh)
+  sets.idle.Regain.RefreshSub50 = set_combine(sets.idle, sets.latent_regain, sets.latent_refresh_sub50)
+  sets.idle.Regen.Refresh = set_combine(sets.idle, sets.latent_regen, sets.latent_refresh)
+  sets.idle.Regen.RefreshSub50 = set_combine(sets.idle, sets.latent_regen, sets.latent_refresh_sub50)
+  sets.idle.Regain.Regen.Refresh = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh)
+  sets.idle.Regain.Regen.RefreshSub50 = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh_sub50)
 
   sets.LightDef = {
     body="Malignance Tabard", --9/9
@@ -737,19 +770,17 @@ function init_gear_sets()
   }
 
   sets.idle.LightDef = set_combine(sets.idle, sets.LightDef)
-
-  sets.idle.Town = set_combine(sets.idle, {
-    ear2="Telos Earring",
-    -- head="Orion Beret +3",
-    -- body="Oshosi Vest +1",
-    -- hands="Oshosi Gloves +1",
-    -- legs="Arc. Braccae +3",
-    -- feet="Osh. Leggings +1",
-    -- neck="Scout's Gorget +2",
-    -- ear1="Beyla Earring",
-    -- back=gear.RNG_RA_Cape,
-    -- waist="K. Kachina Belt +1",
-  })
+  sets.idle.LightDef.Regain = set_combine(sets.idle.Regain, sets.LightDef)
+  sets.idle.LightDef.Regen = set_combine(sets.idle.Regen, sets.LightDef)
+  sets.idle.LightDef.Refresh = set_combine(sets.idle.Refresh, sets.LightDef)
+  sets.idle.LightDef.RefreshSub50 = set_combine(sets.idle.RefreshSub50, sets.LightDef)
+  sets.idle.LightDef.Regain.Regen = set_combine(sets.idle.Regain.Regen, sets.LightDef)
+  sets.idle.LightDef.Regain.Refresh = set_combine(sets.idle.Regain.Refresh, sets.LightDef)
+  sets.idle.LightDef.Regain.RefreshSub50 = set_combine(sets.idle.Regain.RefreshSub50, sets.LightDef)
+  sets.idle.LightDef.Regen.Refresh = set_combine(sets.idle.Regen.Refresh, sets.LightDef)
+  sets.idle.LightDef.Regen.RefreshSub50 = set_combine(sets.idle.Regen.RefreshSub50, sets.LightDef)
+  sets.idle.LightDef.Regain.Regen.Refresh = set_combine(sets.idle.Regain.Regen.Refresh, sets.LightDef)
+  sets.idle.LightDef.Regain.Regen.RefreshSub50 = set_combine(sets.idle.Regain.Regen.RefreshSub50, sets.LightDef)
 
   sets.HeavyDef = {
     head="Meghanada Visor +2", --5/0, 53
@@ -829,9 +860,9 @@ function init_gear_sets()
   })
 
   -- * DNC Subjob DW Trait: +15%
-  -- * NIN Subjob DW Trait: +25%
+  -- * NIN Subjob DW Trait: +25% -- Assumed to be used for these sets
 
-  -- No Magic Haste (74% DW to cap)
+  -- No Magic/Gear/JA Haste (74% DW to cap, 49% from gear)
   sets.engaged.DW = {
     head=gear.Adhemar_B_head,
     legs="Carmine Cuisses +1", --6
@@ -869,7 +900,7 @@ function init_gear_sets()
     -- waist="Olseni Belt",
   })
 
-  -- 15% Magic Haste (67% DW to cap)
+  -- Low Magic/Gear/JA Haste (67% DW to cap, 42% from gear)
   sets.engaged.DW.LowHaste = {
     head=gear.Adhemar_B_head,
     legs="Carmine Cuisses +1", --6
@@ -908,7 +939,7 @@ function init_gear_sets()
     -- waist="Olseni Belt",
   })
 
-  -- 30% Magic Haste (56% DW to cap)
+  -- Mid Magic/Gear/JA Haste (56% DW to cap, 31% from gear)
   sets.engaged.DW.MidHaste = {
     head=gear.Adhemar_B_head,
     hands=gear.Adhemar_B_hands,
@@ -949,7 +980,7 @@ function init_gear_sets()
     -- waist="Olseni Belt",
   })
 
-  -- 35% Magic Haste (51% DW to cap)
+  -- High Magic/Gear/JA Haste (51% DW to cap, 27% from gear)
   sets.engaged.DW.HighHaste = {
     head=gear.Adhemar_B_head,
     hands=gear.Adhemar_B_hands,
@@ -990,7 +1021,7 @@ function init_gear_sets()
     -- waist="Olseni Belt",
   })
 
-  -- 45% Magic Haste (36% DW to cap)
+  -- Max Magic/Gear/JA Haste (36% DW to cap, 11% from gear)
   sets.engaged.DW.MaxHaste = {
     head=gear.Adhemar_B_head,
     hands=gear.Adhemar_B_hands,
@@ -1030,6 +1061,7 @@ function init_gear_sets()
     -- waist="Olseni Belt",
   })
 
+  -- High Magic/Gear/JA Haste (46% DW to cap, 21% from gear)
   sets.engaged.DW.MaxHastePlus = set_combine(sets.engaged.DW.MaxHaste, {back=gear.RNG_DW_Cape})
   sets.engaged.DW.LowAcc.MaxHastePlus = set_combine(sets.engaged.DW.LowAcc.MaxHaste, {back=gear.RNG_DW_Cape})
   sets.engaged.DW.MidAcc.MaxHastePlus = set_combine(sets.engaged.DW.MidAcc.MaxHaste, {back=gear.RNG_DW_Cape})
@@ -1330,6 +1362,7 @@ end
 function job_handle_equipping_gear(playerStatus, eventArgs)
   update_weapons()
   check_gear()
+  update_idle_groups()
   update_combat_form()
   determine_haste_group()
 end
@@ -1455,6 +1488,35 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
+
+function update_idle_groups()
+  local isRegening = classes.CustomIdleGroups:contains('Regen')
+  local isRefreshing = classes.CustomIdleGroups:contains('Refresh')
+
+  classes.CustomIdleGroups:clear()
+  if player.status == 'Idle' then
+    if player.tp < 3000 then
+      classes.CustomIdleGroups:append('Regain')
+    end
+    if isRegening==true and player.hpp < 100 then
+      classes.CustomIdleGroups:append('Regen')
+    elseif isRegening==false and player.hpp < 85 then
+      classes.CustomIdleGroups:append('Regen')
+    end
+    if mp_jobs:contains(player.main_job) or mp_jobs:contains(player.sub_job) then
+      if player.mpp < 50 then
+        classes.CustomIdleGroups:append('RefreshSub50')
+      elseif isRefreshing==true and player.mpp < 100 then
+        classes.CustomIdleGroups:append('Refresh')
+      elseif isRefreshing==false and player.mpp < 85 then
+        classes.CustomIdleGroups:append('Refresh')
+      end
+    end
+    if world.zone == 'Eastern Adoulin' or world.zone == 'Western Adoulin' then
+      classes.CustomIdleGroups:append('Adoulin')
+    end
+  end
+end
 
 --Read incoming packet to differentiate between Haste/Flurry I and II
 windower.register_event('action', function(act)
