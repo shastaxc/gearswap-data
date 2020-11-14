@@ -1161,31 +1161,14 @@ function job_precast(spell, action, spellMap, eventArgs)
 end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
-  if spell.action_type == 'Ranged Attack' then
-    -- if state.Buff['Velocity Shot'] then
-    --     equip( sets.buff['Velocity Shot'])
-    -- end
-    if spell.action_type == 'Ranged Attack' and state.WeaponSet.current == "Gastraphetes" then
-      if flurry == 2 then
-        equip(sets.precast.RA.Gastra.Flurry2)
-      elseif flurry == 1 then
-        equip(sets.precast.RA.Gastra.Flurry1)
-      else
-        equip(sets.precast.RA.Gastra)
-      end
-    elseif spell.action_type == 'Ranged Attack' then
-      if flurry == 2 then
-        equip(sets.precast.RA.Flurry2)
-      elseif flurry == 1 then
-        equip(sets.precast.RA.Flurry1)
-      end
-    end
+  if spell.type == 'WeaponSkill' then
     -- Replace TP-bonus gear if not needed.
     if spell.english == 'Trueflight' or spell.english == 'Aeolian Edge' and player.tp > 2900 then
       equip(sets.FullTP)
     end
+
     -- Equip obi if weather/day matches for WS.
-    if elemental_ws:contains(spell.name) then
+    if elemental_ws:contains(spell.english) then
       -- Matching double weather (w/o day conflict).
       if spell.element == world.weather_element and (get_weather_intensity() == 2 and spell.element ~= elements.weak_to[world.day_element]) then
         equip({waist="Hachirin-no-Obi"})
@@ -1203,9 +1186,26 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         equip({waist="Hachirin-no-Obi"})
       end
     end
-  end
-  if spell.type == "WeaponSkill" and buffactive['Reive Mark'] then
-    equip(sets.Reive)
+
+    if buffactive['Reive Mark'] then
+      equip(sets.Reive)
+    end
+  elseif spell.action_type == 'Ranged Attack' then
+    if state.WeaponSet.current == "Gastraphetes" then
+      if flurry == 2 then
+        equip(sets.precast.RA.Gastra.Flurry2)
+      elseif flurry == 1 then
+        equip(sets.precast.RA.Gastra.Flurry1)
+      else
+        equip(sets.precast.RA.Gastra)
+      end
+    else
+      if flurry == 2 then
+        equip(sets.precast.RA.Flurry2)
+      elseif flurry == 1 then
+        equip(sets.precast.RA.Flurry1)
+      end
+    end
   end
 end
 
