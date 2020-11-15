@@ -62,7 +62,7 @@ function job_setup()
   state.WeaponskillMode:options('Normal', 'Acc', 'Enmity')
   state.IdleMode:options('Normal', 'LightDef')
   state.WeaponSet = M{['description']='Weapon Set', 'TempWeak1', 'TempWeak2', 'MagicRA', 'PhysRA', 'PhysRA RangedOnly', 'PhysRA NoBuff', 'Melee', 'CritRA'}
-  state.RangedWeaponSet = M{['description']='Ranged Weapon Set', 'Pharaoh\'s Bow', 'Grosveneur\'s Bow', 'Ribauldequin', 
+  state.RangedWeaponSet = M{['description']='Ranged Weapon Set', 'Pharaoh\'s Bow', 'Grosveneur\'s Bow', 'Doomsday', 
       'Annihilator', 'Fomalhaut', 'Armageddon', 'Sparrowhawk +2'}
   state.CP = M(false, "Capacity Points Mode")
   state.WeaponLock = M(false, 'Weapon Lock')
@@ -81,7 +81,7 @@ function job_setup()
 
   marksman_weapon_subtypes = {
     ['Grosveneur\'s Bow'] = "xbow",
-    ['Ribauldequin'] = "gun",
+    ['Doomsday'] = "gun",
     ['Annihilator'] = "gun",
     ['Armageddon'] = "gun",
     ['Gastraphetes'] = "xbow",
@@ -91,7 +91,7 @@ function job_setup()
   DefaultAmmo = {
     ['Pharaoh\'s Bow'] = "Demon Arrow",
     ['Grosveneur\'s Bow'] = "Darksteel Bolt",
-    ['Ribauldequin'] = "Dweomer Bullet",
+    ['Doomsday'] = "Dweomer Bullet",
     ['Yoichinoyumi'] = "Chrono Arrow",
     ['Gandiva'] = "Chrono Arrow",
     ['Fail-Not'] = "Chrono Arrow",
@@ -103,7 +103,7 @@ function job_setup()
   AccAmmo = {
     ['Pharaoh\'s Bow'] = "Demon Arrow",
     ['Grosveneur\'s Bow'] = "Darksteel Bolt",
-    ['Ribauldequin'] = "Dweomer Bullet",
+    ['Doomsday'] = "Dweomer Bullet",
     ['Yoichinoyumi'] = "Yoichi's Arrow",
     ['Gandiva'] = "Yoichi's Arrow",
     ['Fail-Not'] = "Yoichi's Arrow",
@@ -115,7 +115,7 @@ function job_setup()
   WSAmmo = {
     ['Pharaoh\'s Bow'] = "Demon Arrow",
     ['Grosveneur\'s Bow'] = "Darksteel Bolt",
-    ['Ribauldequin'] = "Dweomer Bullet",
+    ['Doomsday'] = "Dweomer Bullet",
     ['Yoichinoyumi'] = "Chrono Arrow",
     ['Gandiva'] = "Chrono Arrow",
     ['Fail-Not'] = "Chrono Arrow",
@@ -127,7 +127,7 @@ function job_setup()
   MagicAmmo = {
     ['Pharaoh\'s Bow'] = "Demon Arrow",
     ['Grosveneur\'s Bow'] = "Darksteel Bolt",
-    ['Ribauldequin'] = "Dweomer Bullet",
+    ['Doomsday'] = "Dweomer Bullet",
     ['Yoichinoyumi'] = "Chrono Arrow",
     ['Gandiva'] = "Chrono Arrow",
     ['Fail-Not'] = "Chrono Arrow",
@@ -1197,8 +1197,8 @@ function init_gear_sets()
   sets['Grosveneur\'s Bow'] = {
     ranged="Grosveneur\'s Bow"
   }
-  sets['Ribauldequin'] = {
-    ranged="Ribauldequin"
+  sets['Doomsday'] = {
+    ranged="Doomsday"
   }
   sets.Annihilator = {
     ranged="Annihilator"
