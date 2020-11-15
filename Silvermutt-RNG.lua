@@ -292,6 +292,7 @@ function init_gear_sets()
 
   -- (10% Snapshot, 5% Rapid from Merits)
   sets.precast.RA = {
+    head=gear.Taeon_RA_head, --10/0
     feet="Meg. Jam. +2", --10/0
 
     -- Goal:
@@ -314,7 +315,7 @@ function init_gear_sets()
     -- back=gear.RNG_SNP_Cape, --10/0
     -- waist="Yemaya Belt", --0/5
     --62 Snapshot / 29 Rapid Shot
-  } --10 Snapshot / 0 Rapid Shot
+  } --20 Snapshot / 0 Rapid Shot
 
   sets.precast.RA.Flurry1 = {
     feet="Meg. Jam. +2", --10/0
