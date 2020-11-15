@@ -355,8 +355,8 @@ function init_gear_sets()
     legs="Ayanmo Cosciales +1", --5/0 [45]
     feet=gear.Taeon_FC_feet, --5/0 [13]
     waist="Kasiri Belt", --0/0 [30]
-    back=gear.RUN_FC_Cape, --10/0 [78]
-  } -- 42% Fast Cast / 2% Quick Magic [300 HP, 822 w/ PDT, 822 w/ MDT]
+    back=gear.RUN_FC_Cape, --10/0 [80]
+  } -- 42% Fast Cast / 2% Quick Magic [302 HP, 824 w/ PDT, 824 w/ MDT]
 
   sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {
     legs="Futhark Trousers +2",
