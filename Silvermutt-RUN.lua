@@ -276,7 +276,7 @@ function init_gear_sets()
     ring1="Eihwaz Ring", --5 [70]
     ring2="Supershear Ring", --5 [30]
     waist="Kasiri Belt", --3 [30]
-    back=gear.RUN_HPD_Cape, --10 [60]
+    back=gear.RUN_HPD_Cape, --10 [60] ::: Change augs to add 20HP
   } --80 Enmity [551 HP]
 
   sets.precast.JA['Vallation'] = {
@@ -351,22 +351,12 @@ function init_gear_sets()
   sets.precast.FC = {
     ammo="Impatiens", --0/2 [0]
     head="Runeist Bandeau +3", --14/0 [109]
-    body=gear.Taeon_FC_body, --9/0 [59]
     hands=gear.Leyline_Gloves, --8/0 [25]
     legs="Ayanmo Cosciales +1", --5/0 [45]
     feet=gear.Taeon_FC_feet, --5/0 [13]
     waist="Kasiri Belt", --0/0 [30]
-
-    --Goal:
-    -- ammo="Impatiens", --0/2 [0]
-    -- head="Runeist Bandeau +3", --14/0 [109]
-    -- hands=gear.Leyline_Gloves, --8/0 [25]
-    -- legs="Ayanmo Cosciales +2", --6/0 [45]
-    -- feet=gear.Taeon_FC_feet, --5/0 [13]
-    -- waist="Kasiri Belt", --0/0 [30]
-    -- back=gear.RUN_FC_Cape, --10/0 [60]
-    -- 43% Fast Cast / 2% Quick Magic [302 HP, 824 w/ PDT, 824 w/ MDT]
-  } -- 41% Fast Cast / 2% Quick Magic [281 HP, 600 w/ PDT, 600 w/ MDT]
+    back=gear.RUN_FC_Cape, --10/0 [78]
+  } -- 43% Fast Cast / 2% Quick Magic [320 HP, 842 w/ PDT, 842 w/ MDT]
 
   sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {
     legs="Futhark Trousers +2",
@@ -654,7 +644,6 @@ function init_gear_sets()
     -- feet=gear.Taeon_Phalanx_feet, --10
     -- ear2="Halasz Earring", --5
     -- ring2="Evanescence Ring", --5
-    -- back=gear.RUN_FC_Cape, --10
     waist="Audumbla Sash", --10
   }
 
