@@ -295,6 +295,7 @@ function init_gear_sets()
     hands=gear.Carmine_D_hands, --8/11
     feet="Meg. Jam. +2", --10/0
     neck="Scout's Gorget +1", --3/0
+    waist="Impulse Belt", --3/0
 
     -- Goal:
     -- head=gear.Taeon_RA_head, --10/0
@@ -316,13 +317,14 @@ function init_gear_sets()
     -- back=gear.RNG_SNP_Cape, --10/0
     -- waist="Yemaya Belt", --0/5
     --62 Snapshot / 29 Rapid Shot
-  } --31 Snapshot / 11 Rapid Shot
+  } --34 Snapshot / 11 Rapid Shot
 
   sets.precast.RA.Flurry1 = {
     head=gear.Taeon_RA_head, --10/0
     hands=gear.Carmine_D_hands, --8/11
     feet="Meg. Jam. +2", --10/0
     neck="Scout's Gorget +1", --3/0
+    waist="Impulse Belt", --3/0
 
     -- Goal:
     -- head="Orion Beret +3", --0/18
@@ -334,13 +336,14 @@ function init_gear_sets()
     -- back=gear.RNG_SNP_Cape, --10/0
     -- waist="Impulse Belt", --3/0
     --45 Snapshot / 42 Rapid Shot
-  } --31 Snapshot / 11 Rapid Shot
+  } --34 Snapshot / 11 Rapid Shot
 
   sets.precast.RA.Flurry2 = {
     head=gear.Taeon_RA_head, --10/0
     hands=gear.Carmine_D_hands, --8/11
     feet="Meg. Jam. +2", --10/0
     neck="Scout's Gorget +1", --3/0
+    waist="Impulse Belt", --3/0
 
     -- Goal:
     -- head="Orion Beret +3", --0/18
@@ -352,7 +355,7 @@ function init_gear_sets()
     -- back=gear.RNG_SNP_Cape, --10/0
     -- waist="Yemaya Belt", --0/5
     --32 Snapshot / 57 Rapid Shot
-  } --31 Snapshot / 11 Rapid Shot
+  } --34 Snapshot / 11 Rapid Shot
 
   sets.precast.RA.Gastra = set_combine(sets.precast.RA, {
     -- head="Orion Beret +3", --0/18
