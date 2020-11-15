@@ -383,6 +383,7 @@ function init_gear_sets()
     ear2="Moonshade Earring",
     ring1="Dingir Ring",
     ring2="Karieyh Ring",
+    back=gear.RNG_WS2_Cape,
     waist="Fotia Belt",
     -- head="Orion Beret +3",
     -- body=gear.Herc_RA_WSD_body,
@@ -391,7 +392,6 @@ function init_gear_sets()
     -- ear1="Ishvara Earring",
     -- ring1="Regal Ring",
     -- ring2="Epaminondas's Ring",
-    -- back=gear.RNG_WS2_Cape,
   }
 
   sets.precast.WS.Acc = set_combine(sets.precast.WS, {
@@ -500,6 +500,7 @@ function init_gear_sets()
 
   sets.precast.WS["Trueflight"] = {
     head="Orion Beret +1",
+    body="Meghanada Cuirie +2",
     hands=gear.Carmine_D_hands,
     legs=gear.Herc_MAB_legs,
     feet=gear.Herc_WSD_feet,
@@ -508,6 +509,7 @@ function init_gear_sets()
     ring1="Karieyh Ring",
     ring2="Dingir Ring",
     neck="Scout's Gorget +1",
+    back=gear.RNG_WS2_Cape,
     waist="Eschan Stone",
     -- head="Orion Beret +3",
     -- body="Carm. Sc. Mail +1",
@@ -540,12 +542,16 @@ function init_gear_sets()
 
   sets.precast.WS['Evisceration'] = {
     head=gear.Adhemar_B_head,
+    body="Mummu Jacket +2",
     hands="Mummu Wrists +2",
+    legs=gear.Samnuha_legs,
     feet=gear.Herc_WSD_feet,
     neck="Fotia Gorget",
     ear1="Odr Earring",
     ear2="Moonshade Earring",
+    ring1="Ilabrat Ring",
     ring2="Begrudging Ring",
+    back=gear.RNG_WS2_Cape,
     waist="Fotia Belt",
 
     -- Goal:
@@ -621,7 +627,7 @@ function init_gear_sets()
     ear2="Sherida Earring",
     ring1="Ilabrat Ring",
     ring2="Dingir Ring",
-    back="Atheling Mantle",
+    back=gear.RNG_WS2_Cape,
     waist="Kwahu Kachina Belt +1",
 
     -- Goal:
@@ -786,7 +792,7 @@ function init_gear_sets()
     ear2="Odnowa Earring +1", --3/5, 0
     ring1=gear.Dark_Ring, --5/4, 0
     ring2="Defending Ring", --10/10, 0
-    back="Atheling Mantle", --0/0, 0
+    back=gear.RNG_WS2_Cape,
     waist="Windbuffet Belt +1", --0/0, 0
   }
 
@@ -838,7 +844,7 @@ function init_gear_sets()
     ear2="Odnowa Earring +1", --3/5, 0
     ring1=gear.Dark_Ring, --5/4, 0
     ring2="Defending Ring", --10/10, 0
-    back="Atheling Mantle", --0/0, 0
+    back=gear.RNG_WS2_Cape,
     waist="Kasiri Belt", --0/0, 0
   }
 
