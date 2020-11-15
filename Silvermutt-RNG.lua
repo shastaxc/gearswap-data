@@ -251,15 +251,19 @@ function init_gear_sets()
     -- hands="Amini Glove. +1"
   }
   sets.precast.JA['Camouflage'] = {
+    body="Orion Jerkin"
     -- body="Orion Jerkin +3"
   }
   sets.precast.JA['Scavenge'] = {
+    feet="Orion Socks"
     -- feet="Orion Socks +3"
   }
   sets.precast.JA['Shadowbind'] = {
+    hands="Orion Bracers"
     -- hands="Orion Bracers +3"
   }
   sets.precast.JA['Sharpshot'] = {
+    legs="Orion Braccae"
     -- legs="Orion Braccae +1"
   }
 
