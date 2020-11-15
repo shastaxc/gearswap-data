@@ -296,7 +296,7 @@ function init_gear_sets()
     ammo="Seething Bomblet", --6 [0]
     head="Highwing Helm", --20 [38]
     body=gear.Samnuha_body, --25 [63]
-    hands=gear.Leyline_Gloves, --30 [25]
+    hands=gear.Carmine_D_hands, --42 [27]
     legs=gear.Herc_MAB_legs, --24 [38]
     feet=gear.Herc_WSD_feet, --10 [9]
     neck="Baetyl Pendant", --13 [0]
@@ -308,9 +308,8 @@ function init_gear_sets()
     -- ammo="Pemphredo Tathlum", --4
     -- head=gear.Herc_MAB_head, --45 [38]
     -- body="Carm. Sc. Mail +1", --42 [96]
-    -- hands="Carmine Fin. Ga. +1", --42 [27]
     -- feet=gear.Herc_MAB_feet, --45 [9]
-  } -- 167 MAB [193 HP, 303 w/ PDT]
+  } -- 179 MAB [195 HP, 305 w/ PDT]
 
   sets.Macc = {
     ammo="Hydrocera", --6 [0]
