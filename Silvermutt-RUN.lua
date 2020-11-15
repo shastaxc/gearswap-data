@@ -356,7 +356,7 @@ function init_gear_sets()
     feet=gear.Taeon_FC_feet, --5/0 [13]
     waist="Kasiri Belt", --0/0 [30]
     back=gear.RUN_FC_Cape, --10/0 [78]
-  } -- 43% Fast Cast / 2% Quick Magic [320 HP, 842 w/ PDT, 842 w/ MDT]
+  } -- 42% Fast Cast / 2% Quick Magic [300 HP, 822 w/ PDT, 822 w/ MDT]
 
   sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {
     legs="Futhark Trousers +2",
