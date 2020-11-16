@@ -262,9 +262,9 @@ function init_gear_sets()
   ---------------------------------------- Precast Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
 
-  -- Enmitdwy sets
+  -- Enmity sets
   sets.Enmity = {
-    ammo="Aqreqaq Bomblet", --2 [20]
+    ammo={name="Aqreqaq Bomblet", priority=1}, --2 [20]
     head="Halitus Helm", --8 [88]
     body="Emet Harness +1", --10 [61]
     hands="Kurys Gloves", --9 [25]
@@ -274,8 +274,8 @@ function init_gear_sets()
     ear1="Odnowa Earring +1", --0 [110]
     ear2="Cryptic Earring", --4 [40]
     ring1="Eihwaz Ring", --5 [70]
-    ring2="Supershear Ring", --5 [30]
-    waist="Kasiri Belt", --3 [30]
+    ring2={name="Supershear Ring", priority=1}, --5 [30]
+    waist={name="Kasiri Belt", priority=1}, --3 [30]
     back=gear.RUN_HPD_Cape, --10 [60] ::: Change augs to add 20HP
   } --80 Enmity [601 HP]; -39% PDT; -13% MDT
 
@@ -350,12 +350,12 @@ function init_gear_sets()
   -- Fast cast sets for spells
   sets.precast.FC = {
     ammo="Impatiens", --0/2 [0]
-    head="Runeist Bandeau +3", --14/0 [109]
+    head={name="Runeist Bandeau +3", priority=1}, --14/0 [109]
     hands=gear.Leyline_Gloves, --8/0 [25]
     legs="Ayanmo Cosciales +1", --5/0 [45]
     feet=gear.Taeon_FC_feet, --5/0 [13]
-    waist="Kasiri Belt", --0/0 [30]
-    back=gear.RUN_FC_Cape, --10/0 [80]
+    waist={name="Kasiri Belt", priority=1}, --0/0 [30]
+    back={name=gear.RUN_FC_Cape, priority=1}, --10/0 [80]
   } -- 42% Fast Cast / 2% Quick Magic [302 HP, 824 w/ PDT, 824 w/ MDT]
 
   sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {
