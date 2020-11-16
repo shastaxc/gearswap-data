@@ -265,7 +265,7 @@ function init_gear_sets()
   -- Enmitdwy sets
   sets.Enmity = {
     ammo="Aqreqaq Bomblet", --2 [20]
-    head="Halitus Helm", --8 [38]
+    head="Halitus Helm", --8 [88]
     body="Emet Harness +1", --10 [61]
     hands="Kurys Gloves", --9 [25]
     legs="Erilaz Leg Guards +1", --11 [80]
@@ -277,7 +277,7 @@ function init_gear_sets()
     ring2="Supershear Ring", --5 [30]
     waist="Kasiri Belt", --3 [30]
     back=gear.RUN_HPD_Cape, --10 [60] ::: Change augs to add 20HP
-  } --80 Enmity [551 HP]
+  } --80 Enmity [601 HP]; -39% PDT; -13% MDT
 
   sets.precast.JA['Vallation'] = {
     body="Runeist's Coat +3",
@@ -798,7 +798,7 @@ function init_gear_sets()
   sets.idle.Regain.Regen.RefreshSub50 = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh_sub50)
 
   sets.LightDef = {
-    sub="Refined Grip +1", --3/3, 0
+    sub="Utu Grip", --0/0, 0
     ammo="Staunch Tathlum", --2/2, 0
     head="Ayanmo Zucchetto +2", --3/3, 53
     body="Meghanada Cuirie +2", --8/0, 64
@@ -811,7 +811,7 @@ function init_gear_sets()
     -- ring1="Moonlight Ring", --5/5
     -- ring2="Defending Ring", --10/10
     -- back=gear.RUN_TP_Cape, --10/0
-  } --40 PDT / 22 MDT, 252 MEVA
+  } --37 PDT / 22 MDT, 252 MEVA
 
   sets.idle.LightDef = set_combine(sets.idle, sets.LightDef)
   sets.idle.LightDef.Regain = set_combine(sets.idle.Regain, sets.LightDef)
