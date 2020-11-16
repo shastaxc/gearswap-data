@@ -1091,10 +1091,12 @@ function job_precast(spell, action, spellMap, eventArgs)
   if (spell.english == 'Lunge' or spell.english == 'Swipe') then
     if state.HybridMode.value ~= 'Normal' or state.DefenseMode.value ~= 'None' then
       equip(sets.Enmity)
+      eventArgs.handled = true
     end
   elseif spell.action_type == 'Ability' and spell.type ~= 'WeaponSkill' and not runes:contains(spell.english) then
     equip(sets.Enmity)
     equip(sets.precast.JA[spell])
+    eventArgs.handled = true
   end
 
   -- Use Swipe if Lunge is on cooldown
