@@ -446,10 +446,9 @@ function init_gear_sets()
   })
 
   sets.precast.WS['Jishnu\'s Radiance'].Acc = set_combine(sets.precast.WS['Jishnu\'s Radiance'], {
-    legs="Mummu Kecks +1",
+    legs="Mummu Kecks +2",
     ear2="Telos Earring",
     waist="Kwahu Kachina Belt +1",
-    -- legs="Mummu Kecks +2",
     -- feet="Arcadian Socks +3",
     -- neck="Iskur Gorget",
     -- ear1="Beyla Earring",
@@ -785,7 +784,7 @@ function init_gear_sets()
     head="Meghanada Visor +2", --5/0, 53
     body="Malignance Tabard", --9/9, 139
     hands="Malignance Gloves", --5/5, 112
-    legs="Mummu Kecks +1", --4/4, 107
+    legs="Mummu Kecks +2", --5/5, 107
     feet="Meghanada Jambeaux +2", --3/0, 69
     neck="Twilight Torque", --5/5, 0
     ear1="Eabani Earring", --0/0, 8
@@ -837,7 +836,7 @@ function init_gear_sets()
     head="Meghanada Visor +2", --5/0, 53
     body="Malignance Tabard", --9/9, 139
     hands="Malignance Gloves", --5/5, 112
-    legs="Mummu Kecks +1", --4/4, 107
+    legs="Mummu Kecks +2", --5/5, 107
     feet="Meghanada Jambeaux +2", --3/0, 69
     neck="Twilight Torque", --5/5, 0
     ear1="Eabani Earring", --0/0, 8
@@ -1230,7 +1229,7 @@ function init_gear_sets()
     sub="Nusku Shield",
   }
   sets['Melee'] = {
-    main="Naegling",
+    main="Kaja Sword",
     sub="Ternion Dagger +1",
   }
   sets['CritRA'] = {

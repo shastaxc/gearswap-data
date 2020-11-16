@@ -362,7 +362,7 @@ function init_gear_sets()
   })
   sets.precast.WS["Shijin Spiral"].HighAcc = set_combine(sets.precast.WS["Shijin Spiral"].MidAcc, {
     hands=gear.Ryuo_A_hands,
-    feet="Mummu Gamashes +1",
+    feet="Mummu Gamashes +2",
   })
   sets.precast.WS["Shijin Spiral"].HighAccMaxTp = set_combine(sets.precast.WS["Shijin Spiral"].HighAcc, {
   })
@@ -653,9 +653,9 @@ function init_gear_sets()
     head="Mummu Bonnet +2", --0/0, 75
     body="Malignance Tabard", --9/9, 139
     hands="Malignance Gloves", --5/5, 112
-    legs="Mummu Kecks +1", --4/0, 107
-    feet="Mummu gamashes +1", --0/0, 107
-  } --20 PDT/16 MDT, 540 MEVA
+    legs="Mummu Kecks +2", --5/5, 107
+    feet="Mummu Gamashes +2", --0/0, 107
+  } --21 PDT/21 MDT, 540 MEVA
 
   sets.idle.LightDef = set_combine(sets.idle, sets.LightDef)
   sets.idle.LightDef.Regain = set_combine(sets.idle.Regain, sets.LightDef)
@@ -675,14 +675,14 @@ function init_gear_sets()
     head="Mummu Bonnet +2", --0/0, 75
     body="Malignance Tabard", --9/9, 139 
     hands="Malignance Gloves", --5/5, 112
-    legs="Mummu Kecks +1", --4/4, 107
-    feet="Mummu Gamashes +1", --0/0, 107
+    legs="Mummu Kecks +2", --5/5, 107
+    feet="Mummu Gamashes +2", --0/0, 107
     neck="Twilight Torque", --5/5, 0
     ear1="Eabani Earring", --0/0, 8
     ear2="Odnowa Earring +1", --3/5, 0
     ring1=gear.Dark_Ring, --5/4, 0
     ring2="Defending Ring", --10/10, 0
-  } --43 PDT/44 MDT, 657 MEVA
+  } --44 PDT/45 MDT, 657 MEVA
 
   sets.idle.Weak = sets.HeavyDef
 

@@ -560,9 +560,9 @@ function init_gear_sets()
     head="Turms Cap +1", --0/0, 109
     body="Malignance Tabard", --9/9, 139 
     hands="Malignance Gloves", --5/5, 112
-    legs="Mummu Kecks +1", --4/4, 107
+    legs="Mummu Kecks +2", --5/5, 107
     feet="Turms Leggings", --0/0, 137
-  } --20 PDT/20 MDT, 604 MEVA
+  } --21 PDT/21 MDT, 604 MEVA
 
   sets.idle.LightDef = set_combine(sets.idle, sets.LightDef)
   sets.idle.LightDef.Regain = set_combine(sets.idle.Regain, sets.LightDef)
@@ -578,14 +578,14 @@ function init_gear_sets()
     head="Turms Cap +1", --0/0, 109
     body="Malignance Tabard", --9/9, 139 
     hands="Malignance Gloves", --5/5, 112
-    legs="Mummu Kecks +1", --4/4, 107
+    legs="Mummu Kecks +2", --5/5, 107
     feet="Turms Leggings", --0/0, 137
     neck="Twilight Torque", --5/5, 0
     ear1="Eabani Earring", --0/0, 8
     ear2="Odnowa Earring +1", --3/5, 0
     ring1=gear.Dark_Ring, --5/4, 0
     ring2="Defending Ring", --10/10, 0
-  } --43 PDT/44 MDT, 721 MEVA
+  } --44 PDT/45 MDT, 721 MEVA
 
   sets.idle.Weak = sets.HeavyDef
 
