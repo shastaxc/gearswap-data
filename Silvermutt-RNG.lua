@@ -62,7 +62,7 @@ function job_setup()
   state.WeaponskillMode:options('Normal', 'Acc', 'Enmity')
   state.IdleMode:options('Normal', 'LightDef')
   state.WeaponSet = M{['description']='Weapon Set', 'TempWeak1', 'TempWeak2', 'MagicRA', 'PhysRA', 'PhysRA RangedOnly', 'PhysRA NoBuff', 'Melee', 'CritRA'}
-  state.RangedWeaponSet = M{['description']='Ranged Weapon Set', 'Pharaoh\'s Bow', 'Grosveneur\'s Bow', 'Doomsday', 
+  state.RangedWeaponSet = M{['description']='Ranged Weapon Set', 'Doomsday', 'Pharaoh\'s Bow', 'Grosveneur\'s Bow', 
       'Annihilator', 'Fomalhaut', 'Armageddon', 'Sparrowhawk +2'}
   state.CP = M(false, "Capacity Points Mode")
   state.WeaponLock = M(false, 'Weapon Lock')
@@ -89,9 +89,9 @@ function job_setup()
   }
 
   DefaultAmmo = {
-    ['Pharaoh\'s Bow'] = "Demon Arrow",
-    ['Grosveneur\'s Bow'] = "Darksteel Bolt",
-    ['Doomsday'] = "Dweomer Bullet",
+    ['Pharaoh\'s Bow'] = "Eminent Arrow",
+    ['Grosveneur\'s Bow'] = "Eminent Bolt",
+    ['Doomsday'] = "Eminent Bullet",
     ['Yoichinoyumi'] = "Chrono Arrow",
     ['Gandiva'] = "Chrono Arrow",
     ['Fail-Not'] = "Chrono Arrow",
@@ -101,9 +101,9 @@ function job_setup()
     ['Fomalhaut'] = "Chrono Bullet",
   }
   AccAmmo = {
-    ['Pharaoh\'s Bow'] = "Demon Arrow",
-    ['Grosveneur\'s Bow'] = "Darksteel Bolt",
-    ['Doomsday'] = "Dweomer Bullet",
+    ['Pharaoh\'s Bow'] = "Eminent Arrow",
+    ['Grosveneur\'s Bow'] = "Eminent Bolt",
+    ['Doomsday'] = "Eminent Bullet",
     ['Yoichinoyumi'] = "Yoichi's Arrow",
     ['Gandiva'] = "Yoichi's Arrow",
     ['Fail-Not'] = "Yoichi's Arrow",
@@ -113,9 +113,9 @@ function job_setup()
     ['Fomalhaut'] = "Devastating Bullet",
   }
   WSAmmo = {
-    ['Pharaoh\'s Bow'] = "Demon Arrow",
-    ['Grosveneur\'s Bow'] = "Darksteel Bolt",
-    ['Doomsday'] = "Dweomer Bullet",
+    ['Pharaoh\'s Bow'] = "Eminent Arrow",
+    ['Grosveneur\'s Bow'] = "Eminent Bolt",
+    ['Doomsday'] = "Eminent Bullet",
     ['Yoichinoyumi'] = "Chrono Arrow",
     ['Gandiva'] = "Chrono Arrow",
     ['Fail-Not'] = "Chrono Arrow",
@@ -125,9 +125,9 @@ function job_setup()
     ['Fomalhaut'] = "Chrono Bullet",
   }
   MagicAmmo = {
-    ['Pharaoh\'s Bow'] = "Demon Arrow",
-    ['Grosveneur\'s Bow'] = "Darksteel Bolt",
-    ['Doomsday'] = "Dweomer Bullet",
+    ['Pharaoh\'s Bow'] = "Eminent Arrow",
+    ['Grosveneur\'s Bow'] = "Eminent Bolt",
+    ['Doomsday'] = "Eminent Bullet",
     ['Yoichinoyumi'] = "Chrono Arrow",
     ['Gandiva'] = "Chrono Arrow",
     ['Fail-Not'] = "Chrono Arrow",
@@ -1805,11 +1805,11 @@ function update_ranged_weaponskill_binds()
       send_command('bind !numpad1 input /ws "Blast Arrow" <t>') -- Melee Range
       send_command('bind !numpad2 input /ws "Sidewinder" <t>') -- High dmg, inaccurate
     elseif current_ranged_weapon_type == 'Marksmanship' then
-      send_command('bind !numpad7 input /ws "Last Stand" <t>') -- Aeonic
+      send_command('bind !numpad7 input /ws "Trueflight" <t>') -- Mythic
       send_command('bind !numpad8 input /ws "Coronach" <t>') -- Relic
       send_command('bind !numpad9 input /ws "Wildfire" <t>') -- Empyrean
       send_command('bind !numpad4 input /ws "Detonator" <t>') -- Quested
-      send_command('bind !numpad6 input /ws "True Flight" <t>') -- Mythic
+      send_command('bind !numpad6 input /ws "Last Stand" <t>') -- Aeonic
       send_command('bind !numpad1 input /ws "Numbing Shot" <t>') -- Melee Range
       send_command('bind !numpad2 input /ws "Slug Shot" <t>') -- High dmg, inaccurate
       send_command('bind !numpad3 input /ws "Sniper Shot" <t>') -- Lower enemy INT
