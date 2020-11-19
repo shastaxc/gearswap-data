@@ -319,6 +319,7 @@ function init_gear_sets()
     --62 Snapshot / 29 Rapid Shot
   } --34 Snapshot / 11 Rapid Shot
 
+  -- (15% Flurry, 10% Snapshot, 5% Rapid from Merits)
   sets.precast.RA.Flurry1 = {
     head=gear.Taeon_RA_head, --10/0
     hands=gear.Carmine_D_hands, --8/11
@@ -338,6 +339,7 @@ function init_gear_sets()
     --45 Snapshot / 42 Rapid Shot
   } --34 Snapshot / 11 Rapid Shot
 
+  -- (30% Flurry, 10% Snapshot, 5% Rapid from Merits)
   sets.precast.RA.Flurry2 = {
     head=gear.Taeon_RA_head, --10/0
     hands=gear.Carmine_D_hands, --8/11
@@ -597,6 +599,20 @@ function init_gear_sets()
   })
   sets.precast.WS['Rampage'].Acc = sets.precast.WS['Evisceration'].Acc
 
+  sets.precast.WS['Aeolian Edge'] = {
+    head="Highwing Helm", --20
+    body=gear.Samnuha_body, --25
+    hands=gear.Leyline_Gloves, --30
+    legs=gear.Herc_MAB_legs, --24
+    feet=gear.Herc_WSD_feet, --10
+    neck="Baetyl Pendant", --13
+    ear1="Friomisi Earring", --10
+    ear2="Moonshade Earring",
+    ring1="Shiva Ring +1", --3
+    ring2="Karieyh Ring",
+    back="Argochampsa Mantle", --12
+    waist="Eschan Stone", --7
+  } -- 40% DEX / 40% INT + MAB
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Midcast Sets ------------------------------------------
@@ -614,9 +630,8 @@ function init_gear_sets()
   sets.midcast.Utsusemi = sets.midcast.SpellInterrupt
 
   -- Ranged sets
-
   sets.midcast.RA = {
-    head="Meghanada Visor +2",
+    head="Arcadian Beret +1", --27 [0] 0/0 <0> {0} (34)
     body="Malignance Tabard",
     hands="Malignance Gloves",
     legs=gear.Samnuha_legs,
@@ -740,6 +755,7 @@ function init_gear_sets()
   })
 
   sets.DoubleShot = {
+    head="Arcadian Beret +1",
     -- head="Arcadian Beret +3",
     -- body="Arc. Jerkin +3",
     -- hands="Oshosi Gloves +1", -- 5
