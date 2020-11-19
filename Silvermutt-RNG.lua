@@ -631,7 +631,7 @@ function init_gear_sets()
 
   -- Ranged sets
   sets.midcast.RA = {
-    head="Arcadian Beret +1", --27 [0] 0/0 <0> {0} (34)
+    head="Arcadian Beret +2", --32 [0] 27/47 <0> {0} (36)
     body="Malignance Tabard",
     hands="Malignance Gloves",
     legs=gear.Samnuha_legs,
@@ -755,7 +755,7 @@ function init_gear_sets()
   })
 
   sets.DoubleShot = {
-    head="Arcadian Beret +1",
+    head="Arcadian Beret +2",
     -- head="Arcadian Beret +3",
     -- body="Arc. Jerkin +3",
     -- hands="Oshosi Gloves +1", -- 5
@@ -1825,7 +1825,7 @@ function update_ranged_weaponskill_binds()
       send_command('bind !numpad8 input /ws "Coronach" <t>') -- Relic
       send_command('bind !numpad9 input /ws "Wildfire" <t>') -- Empyrean
       send_command('bind !numpad4 input /ws "Detonator" <t>') -- Quested
-      send_command('bind !numpad6 input /ws "Last Stand" <t>') -- Aeonic
+      send_command('bind !numpad5 input /ws "Last Stand" <t>') -- Aeonic
       send_command('bind !numpad1 input /ws "Numbing Shot" <t>') -- Melee Range
       send_command('bind !numpad2 input /ws "Slug Shot" <t>') -- High dmg, inaccurate
       send_command('bind !numpad3 input /ws "Sniper Shot" <t>') -- Lower enemy INT
