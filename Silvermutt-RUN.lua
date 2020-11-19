@@ -119,7 +119,7 @@ function job_setup()
   state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger',
       'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
   state.Runes = M{['description']='Runes', 'Ignis', 'Gelus', 'Flabra', 'Tellus', 'Sulpor', 'Unda', 'Lux', 'Tenebrae'}
-  
+
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c usekey')
 
@@ -218,7 +218,7 @@ function job_file_unload()
 
   send_command('unbind !;')
   send_command('unbind !\'')
-  
+
   send_command('unbind !,')
   send_command('unbind !.')
   send_command('unbind !/')
@@ -618,38 +618,6 @@ function init_gear_sets()
 
   sets.midcast.FastRecast = sets.precast.FC
 
-  sets.midcast.SpellInterrupt = {
-    ammo="Staunch Tathlum", --10
-    -- head=gear.Taeon_Phalanx_head, --10
-    -- hands=gear.Taeon_Phalanx_hands, --10
-    -- legs=gear.Taeon_Phalanx_legs, --10
-    -- feet=gear.Taeon_Phalanx_feet, --10
-    -- ear2="Halasz Earring", --5
-    -- ring2="Evanescence Ring", --5
-    waist="Audumbla Sash", --10
-  }
-
-  sets.midcast.Cure = {
-    ammo="Staunch Tathlum",
-    legs="Ayanmo Cosciales +2",
-    ring2="Defending Ring",
-    waist="Gishdubar Sash", --(10)
-    -- sub="Mensch Strap +1",
-    -- ammo="Staunch Tathlum",
-    -- head="Fu. Bandeau +3",
-    -- body="Vrikodara Jupon", -- 13
-    -- hands="Buremte Gloves", --(13)
-    -- legs="Ayanmo Cosciales +2",
-    -- feet="Skaoi Boots", --7
-    -- neck="Phalaina Locket", -- 4(4)
-    -- ear1="Roundel Earring", -- 5
-    -- ear2="Mendi. Earring", -- 5
-    -- ring1="Lebeche Ring", -- 3
-    -- ring2="Defending Ring",
-    -- back="Solemnity Cape", -- 7
-    -- waist="Gishdubar Sash", --(10)
-  }
-
   sets.midcast['Enhancing Magic'] = {
     head="Erilaz Galea +1",
     hands="Runeist Mitons +1",
@@ -666,21 +634,28 @@ function init_gear_sets()
 
   sets.midcast.EnhancingDuration = {
     head="Erilaz Galea +1",
-    -- hands="Regal Gauntlets",
     legs="Futhark Trousers +2",
+    -- hands="Regal Gauntlets",
+    -- legs="Futhark Trousers +3",
   }
 
-  sets.midcast['Phalanx'] = set_combine(sets.midcast.SpellInterrupt, {
-    -- main="Deacon Sword", --4
-    head="Futhark Bandeau +1", --4
-    body=gear.Taeon_Phalanx_body, --3
-    hands=gear.Taeon_Phalanx_hands, --3
-    legs=gear.Taeon_Phalanx_legs, --3
-    feet=gear.Taeon_Phalanx_feet, --3
-  })
+  sets.midcast['Phalanx'] = {
+    ammo="Staunch Tathlum", --0, 10 [2/2, 0]
+    head="Futhark Bandeau +1", --4, 0 [4/4, 36]
+    body=gear.Taeon_Phalanx_body, --3, 0 [0/0, 59]
+    hands=gear.Taeon_Phalanx_hands, --3, 0 [0/0, 25]
+    legs=gear.Taeon_Phalanx_legs, --3, 0 [0/0, 47]
+    feet=gear.Taeon_Phalanx_feet, --3, 0 [0/0, 13]
+    waist="Audumbla Sash", --0, 10 [4/0, 0]
+    -- back="Moonlight Cape", --0, 0 [6/6, 275]
+  } -- 16 Phalanx, 20% Interrupt [49PDT/29MDT, 575 HP w/ PDT set]
 
-  sets.midcast['Aquaveil'] = set_combine(sets.midcast['Enhancing Magic'], sets.midcast.SpellInterrupt, {
-    -- main="Nibiru Faussar", --1
+  sets.midcast['Aquaveil'] = sets.midcast['Enhancing Magic']
+  sets.midcast['Aquaveil'].Safe = set_combine(sets.midcast['Aquaveil'], {
+    -- TODO
+    ammo="Staunch Tathlum", --10
+    waist="Audumbla Sash", --10
+    -- back="Moonlight Cape",
   })
 
   sets.midcast['Regen'] = set_combine(sets.midcast.EnhancingDuration, {
@@ -694,31 +669,48 @@ function init_gear_sets()
   sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {
     waist="Siegel Sash"
   })
+  sets.midcast.Stoneskin.Safe = set_combine(sets.midcast.Stoneskin, {
+    -- TODO
+    waist="Siegel Sash",
+    -- back="Moonlight Cape",
+  })
   sets.midcast.Protect = set_combine(sets.midcast['Enhancing Magic'], {
     -- ring2="Sheltered Ring"
   })
+  sets.midcast.Protect.Safe = set_combine(sets.midcast['Enhancing Magic'], {
+    -- TODO
+    -- back="Moonlight Cape",
+  })
   sets.midcast.Shell = sets.midcast.Protect
-
-  sets.midcast['Divine Magic'] = {
-    legs="Runeist Trousers",
-    neck="Incanter's Torque",
-    -- ammo="Yamarang",
-    -- neck="Incanter's Torque",
-    -- ring1={name="Stikini Ring +1", bag="wardrobe3"},
-    -- ring2={name="Stikini Ring +1", bag="wardrobe4"},
-    -- waist="Bishop's Sash",
-  }
+  sets.midcast.Shell = sets.midcast.Protect.Safe
 
   sets.midcast.Flash = sets.Enmity
   sets.midcast.Foil = sets.Enmity
   sets.midcast.Stun = sets.Enmity
-  sets.midcast.Utsusemi = sets.midcast.SpellInterrupt
+  sets.midcast.Utsusemi = {
+    ammo="Staunch Tathlum", --10
+    waist="Audumbla Sash", --10
+  } -- 20% Spell Interrupt
 
   sets.midcast['Blue Magic'] = {}
   sets.midcast['Blue Magic'].Enmity = sets.Enmity
-  sets.midcast['Blue Magic'].Cure = sets.midcast.Cure
-  sets.midcast['Blue Magic'].Buff = sets.midcast['Enhancing Magic']
-
+  sets.midcast['Blue Magic'].Buff = sets.midcast.EnhancingDuration
+  sets.midcast['Blue Magic'].Cure = {
+    legs="Ayanmo Cosciales +2",
+    ring1="Lebeche Ring", -- 3
+    waist="Gishdubar Sash", --(10)
+    -- body="Vrikodara Jupon", -- 13
+    -- hands="Buremte Gloves", --(13)
+    -- feet="Skaoi Boots", --7
+    -- neck="Phalaina Locket", -- 4(4)
+    -- ear1="Roundel Earring", -- 5
+    -- ear2="Mendi. Earring", -- 5
+    -- back="Solemnity Cape", -- 7
+    -- waist="Gishdubar Sash", --(10)
+  }
+  sets.midcast['Blue Magic'].Cure.Safe = set_combine(sets.midcast['Blue Magic'].Cure, {
+    -- TODO
+  })
 
   ------------------------------------------------------------------------------------------------
   ----------------------------------------- Idle Sets --------------------------------------------
@@ -1175,7 +1167,7 @@ function job_aftercast(spell, action, spellMap, eventArgs)
         end
         el_msg = el_msg..')'
       end
-      
+
       send_command('@timers c "Rayke ['..spell.target.name..']" '..rayke_duration..' down spells/00136.png') -- Requires Timers plugin
       send_command('@input '..chat_mode..' [Rayke] Resist Down '..el_msg..' '..string.char(129, 168)..' <t>;')
       coroutine.schedule(display_rayke_worn, rayke_duration)
@@ -1187,7 +1179,7 @@ function job_aftercast(spell, action, spellMap, eventArgs)
     else
       -- Record Rayke target
       gambit_target = spell.target
-      
+
       -- Print chat message
       local element_potencies = get_element_potencies()
       local el_msg = ''
@@ -1202,7 +1194,7 @@ function job_aftercast(spell, action, spellMap, eventArgs)
         end
         el_msg = el_msg..')'
       end
-      
+
       send_command('@timers c "Gambit ['..spell.target.name..']" '..gambit_duration..' down spells/00136.png') -- Requires Timers plugin
       send_command('@input '..chat_mode..' [Gambit] M.Def Down '..el_msg..' '..string.char(129,168)..' <t>;')
       coroutine.schedule(display_gambit_worn, gambit_duration)
@@ -1475,7 +1467,7 @@ function cycle_weapons(cycle_dir)
   elseif cycle_dir == 'back' then
     state.WeaponSet:cycleback()
   end
-  
+
   add_to_chat(141, 'Weapon Set to '..string.char(31,1)..state.WeaponSet.current)
   equip(sets[state.WeaponSet.current])
 end
@@ -1494,7 +1486,7 @@ function cycle_toy_weapons(cycle_dir)
   else
     state.ToyWeapons:reset()
   end
-  
+
   local mode_color = 001
   if state.ToyWeapons.current == 'None' then
     mode_color = 006
@@ -1552,7 +1544,7 @@ function display_gambit_worn()
     send_command('@input '..chat_mode..' [Gambit] Just wore off!;')
     -- If timer still exists, clear it
     send_command('@timers d "Gambit ['..gambit_target.name..']"') -- Requires Timers plugin
-    
+
     gambit_target = nil -- Reset target
   end
 end
