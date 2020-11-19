@@ -264,20 +264,21 @@ function init_gear_sets()
 
   -- Enmity sets
   sets.Enmity = {
-    ammo={name="Aqreqaq Bomblet", priority=1}, --2 [20]
-    head="Halitus Helm", --8 [88]
-    body="Emet Harness +1", --10 [61]
-    hands="Kurys Gloves", --9 [25]
-    legs="Erilaz Leg Guards +1", --11 [80]
-    feet="Erilaz Greaves +1", --6 [18]
-    neck="Futhark Torque +1", --7 [39]
-    ear1="Odnowa Earring +1", --0 [110]
-    ear2="Cryptic Earring", --4 [40]
-    ring1="Eihwaz Ring", --5 [70]
-    ring2={name="Supershear Ring", priority=1}, --5 [30]
-    waist={name="Kasiri Belt", priority=1}, --3 [30]
-    back=gear.RUN_HPD_Cape, --10 [60] ::: Change augs to add 20HP
-  } --80 Enmity [601 HP]; -39% PDT; -13% MDT
+    ammo={name="Aqreqaq Bomblet", priority=1}, --0/0, 0 [20] <2>
+    head="Halitus Helm", --0/0, 43 [88] <8>
+    body="Emet Harness +1", --6/0, 64 [61] <10>
+    hands="Kurys Gloves", --2/2, 57 [25] <9>
+    legs="Erilaz Leg Guards +1", --7/0, 107 [80] <11>
+    feet="Erilaz Greaves +1", --5/0, 107 [18] <6>
+    neck="Futhark Torque +1", --6/6, 25 [45] <7>
+    ear1="Odnowa Earring +1", --3/5, 0 [110] <0>
+    ear2="Cryptic Earring", --0/0, 0 [40] <4>
+    ring1="Eihwaz Ring", --0/0, 0 [70] <5>
+    ring2={name="Supershear Ring", priority=1}, --0/0, 0 [30] <5>
+    waist={name="Kasiri Belt", priority=1}, --0/0, 0 [30] <3>
+    back=gear.RUN_HPD_Cape, --10/0, 20 [60] <10> ::: Change augs to add 20HP
+    -- feet="Ahosi Leggings", --4/0, 107 [18] <6>
+  } --80 Enmity [677 HP]; -39% PDT; -13% MDT
 
   sets.precast.JA['Vallation'] = {
     body="Runeist's Coat +3",
@@ -305,11 +306,10 @@ function init_gear_sets()
     ring2="Shiva Ring +1", --3 [0]
     waist="Eschan Stone", --7 [20]
     back="Argochampsa Mantle", --12 [0]
-    -- ammo="Pemphredo Tathlum", --4
     -- head=gear.Herc_MAB_head, --45 [38]
     -- body="Carm. Sc. Mail +1", --42 [96]
     -- feet=gear.Herc_MAB_feet, --45 [9]
-  } -- 179 MAB [195 HP, 305 w/ PDT]
+  } -- 179 MAB [195 HP, 330 w/ PDT, 330 w/ MDT]
 
   sets.Macc = {
     ammo="Hydrocera", --6 [0]
@@ -319,7 +319,7 @@ function init_gear_sets()
     legs="Ayanmo Cosciales +1", --39 [45]
     feet="Ayanmo Gambieras +1", --36 [11]
     ear2="Dignitary's Earring", --10 [0]
-  } --218 Magic Acc [215 HP, 534 w/ PDT, 534 w/ MDT]
+  } --218 Magic Acc [215 HP, 565 w/ PDT, 520 w/ MDT]
 
   sets.precast.JA['Lunge'] = sets.MAB
 
@@ -345,7 +345,7 @@ function init_gear_sets()
     -- legs="Rune. Trousers +3", --19 [80]
     -- ear2="Saxnot Earring", --10 [0]
     -- ring1="Stikini Ring +1", --8 [0]
-  } --25 [507]
+  } --25 Divine Skill [486 HP w/ Enmity]
 
   -- Fast cast sets for spells
   sets.precast.FC = {
@@ -356,7 +356,7 @@ function init_gear_sets()
     feet=gear.Taeon_FC_feet, --5/0 [13]
     waist={name="Kasiri Belt", priority=1}, --0/0 [30]
     back={name=gear.RUN_FC_Cape, priority=1}, --10/0 [80]
-  } -- 42% Fast Cast / 2% Quick Magic [302 HP, 824 w/ PDT, 824 w/ MDT]
+  } -- 42% Fast Cast / 2% Quick Magic [302 HP, 855 w/ PDT, 810 w/ MDT]
 
   sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {
     legs="Futhark Trousers +2",
@@ -369,9 +369,9 @@ function init_gear_sets()
 
   sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {
     ammo="Impatiens",
-    -- body="Passion Jacket",
     ring1="Lebeche Ring",
     waist="Audumbla Sash",
+    -- body="Passion Jacket",
   })
 
   -- Initializes trusts at iLvl 119
@@ -386,29 +386,16 @@ function init_gear_sets()
     ammo="Knobkierrie",
     head=gear.Herc_WSD_head,
     body="Meghanada Cuirie +2",
-    hands="Meg. Gloves +2",
+    hands="Meghanada Gloves +2",
     legs="Meghanada Chausses +2",
-    feet=gear.Herc_WSD_feet,
+    feet=gear.Herc_TA_feet,
     neck="Fotia Gorget",
     waist="Fotia Belt",
     ear1="Sherida Earring",
     ear2="Moonshade Earring",
-    ring1="Karieyh Ring",
-    ring2="Ilabrat Ring",
+    ring1="Ilabrat Ring",
+    ring2="Niqmaddu Ring",
     back=gear.RUN_WS2_Cape,
-    -- ammo="Knobkierrie",
-    -- head=gear.Herc_WSD_head,
-    -- body=gear.Herc_WS_body,
-    -- hands="Meg. Gloves +2",
-    -- legs=gear.Herc_WS_legs,
-    -- feet=gear.Herc_TA_feet,
-    -- neck="Fotia Gorget",
-    -- ear1="Sherida Earring",
-    -- ear2="Moonshade Earring",
-    -- ring1="Regal Ring",
-    -- ring2="Niqmaddu Ring",
-    -- back=gear.RUN_WS1_Cape,
-    -- waist="Fotia Belt",
   }
 
   sets.precast.WS.Safe = {
@@ -418,38 +405,35 @@ function init_gear_sets()
   sets.precast.WS['Resolution'] = set_combine(sets.precast.WS, {
     ammo="Seething Bomblet",
     head=gear.Adhemar_B_head,
+    body="Meghanada Cuirie +2",
     hands=gear.Adhemar_B_hands,
-    neck="Caro Necklace",
+    legs="Meghanada Chausses +2",
+    feet=gear.Herc_TA_feet,
+    neck="Fotia Necklace",
+    waist="Fotia Belt",
+    ear1="Sherida Earring",
+    ear2="Moonshade Earring",
     ring1="Epona's Ring",
     ring2="Niqmaddu Ring",
-    -- ammo="Aurgelmir Orb +1",
-    -- head="Lustratio Cap +1",
-    -- body="Lustr. Harness +1",
-    -- feet="Lustra. Leggings +1",
-    -- neck="Futhark Torque +2",
+    back=gear.RUN_WS2_Cape,
+    -- ammo="Seething Bomblet +1",
+    -- head=gear.Lustratio_A_head,
+    -- body=gear.Adhemar_B_body,
+    -- feet=gear.Lustratio_A_feet,
     -- back=gear.RUN_WS1_Cape,
   })
-  sets.precast.WS['Resolution'].Safe = set_combine(sets.precast.WS['Resolution'], {
-    ammo="Staunch Tathlum", --2/2
-    head="Meghanada Visor +2", --5/0
-    body="Runeist's Coat +3", --0/0
-    legs="Erilaz Leg Guards +1", --7/0
-    feet="Erilaz Greaves +1", --5/0
-    neck="Futhark Torque +1", --5/5
-    ear1="Odnowa Earring +1", --3/5
-    ring1="Gelatinous Ring +1", --7/(-1)
-    ring2="Defending Ring", --10/10
-    back=gear.RUN_HPD_Cape, --10/0
+  sets.precast.WS['Resolution'].Safe = set_combine(sets.precast.WS.Safe, {
+    ammo="Seething Bomblet",
+    head=gear.Adhemar_B_head,
+    hands=gear.Adhemar_B_hands,
+    feet=gear.Herc_TA_feet,
+    waist="Fotia Belt",
   })
   sets.precast.WS['Resolution'].MaxTp = set_combine(sets.precast.WS['Resolution'], {
+    ear2="Odnowa Earring +1",
+    -- ear2="Vulcan's Pearl",
   })
   sets.precast.WS['Resolution'].LowAcc = set_combine(sets.precast.WS['Resolution'], {
-    legs="Meg. Chausses +2",
-    -- ammo="Voluspa Tathlum",
-    -- head=gear.Adhemar_B_head,
-    -- hands=gear.Adhemar_A_hands,
-    -- feet=gear.Herc_STP_feet,
-    -- ear2="Telos Earring",
   })
   sets.precast.WS['Resolution'].LowAccMaxTp = set_combine(sets.precast.WS['Resolution'].LowAcc, {
   })
@@ -464,29 +448,34 @@ function init_gear_sets()
 
   -- 80% DEX mod
   sets.precast.WS['Dimidiation'] = set_combine(sets.precast.WS, {
-    legs=gear.Lustratio_B_legs,
-    neck="Caro Necklace",
-    ear1="Odr Earring",
-    ring2="Niqmaddu Ring",
-    waist="Grunfeld Rope",
-    -- ammo="Aurgelmir Orb +1",
-    -- body=gear.Adhemar_B_body,
-    -- feet="Lustra. Leggings +1",
-    -- ring2="Epaminondas's Ring",
-    -- back=gear.RUN_WS2_Cape,
-  })
-  sets.precast.WS['Dimidiation'].Safe = set_combine(sets.precast.WS.Safe, {
+    ammo="Knobkierrie",
+    head=gear.Herc_WSD_head,
+    body="Meghanada Cuirie +2",
+    hands="Meghanada Gloves +2",
     legs=gear.Lustratio_B_legs,
     feet=gear.Herc_TA_feet,
+    neck="Caro Necklace",
+    waist="Grunfeld Rope",
+    ear1="Sherida Earring",
+    ear2="Moonshade Earring",
+    ring1="Karieyh Ring",
+    ring2="Ilabrat Ring",
+    back=gear.RUN_WS2_Cape,
+    -- body=gear.Adhemar_B_body,
+    -- feet=gear.Lustratio_D_feet,
+    -- ring1="Epaminondas's Ring",
+  })
+  sets.precast.WS['Dimidiation'].Safe = set_combine(sets.precast.WS.Safe, {
+    ammo="Knobkierrie",
+    head=gear.Herc_WSD_head,
+    hands="Meghanada Gloves +2",
+    feet=gear.Herc_TA_feet,
+    waist="Grunfeld Rope",
   })
   sets.precast.WS['Dimidiation'].MaxTp = set_combine(sets.precast.WS['Dimidiation'], {
+    ear2="Odr Earring",
   })
   sets.precast.WS['Dimidiation'].LowAcc = set_combine(sets.precast.WS['Dimidiation'], {
-    -- ammo="Voluspa Tathlum",
-    -- body=gear.Adhemar_B_body,
-    -- legs="Samnuha Tights",
-    -- feet=gear.Herc_STP_feet,
-    -- ear2="Mache Earring +1",
   })
   sets.precast.WS['Dimidiation'].LowAccMaxTp = set_combine(sets.precast.WS['Dimidiation'].LowAcc, {
   })
@@ -543,20 +532,12 @@ function init_gear_sets()
   })
 
   sets.precast.WS['Fell Cleave'] = set_combine(sets.precast.WS, {
-    -- feet="Lustra. Leggings +1",
-    -- ear2="Ishvara Earring",
-    -- back=gear.RUN_WS1_Cape,
-    -- waist="Sailfi Belt +1",
   })
   sets.precast.WS['Fell Cleave'].Safe = set_combine(sets.precast.WS.Safe, {
-    -- feet="Futhark Boots +3",
   })
   sets.precast.WS['Fell Cleave'].MaxTp = set_combine(sets.precast.WS['Fell Cleave'], {
   })
   sets.precast.WS['Fell Cleave'].LowAcc = set_combine(sets.precast.WS['Fell Cleave'], {
-    -- ear2="Ishvara Earring",
-    -- back=gear.RUN_WS1_Cape,
-    -- waist="Sailfi Belt +1",
   })
   sets.precast.WS['Fell Cleave'].LowAccMaxTp = set_combine(sets.precast.WS['Fell Cleave'].LowAcc, {
   })
@@ -803,15 +784,10 @@ function init_gear_sets()
     head="Ayanmo Zucchetto +2", --3/3, 53
     body="Meghanada Cuirie +2", --8/0, 64
     legs="Carmine Cuisses +1", --6/0, 80
-    neck="Futhark Torque +1", --4/4, 25
+    neck="Futhark Torque +1", --6/6, 25
     ring2="Defending Ring", --10/10, 0
     back=gear.RUN_HPD_Cape, --10/0, 30
-    -- head=gear.Adhemar_D_head, --4/0
-    -- neck="Futhark Torque +2", --7/7
-    -- ring1="Moonlight Ring", --5/5
-    -- ring2="Defending Ring", --10/10
-    -- back=gear.RUN_TP_Cape, --10/0
-  } --37 PDT / 22 MDT, 252 MEVA
+  } --45 PDT / 21 MDT, 252 MEVA
 
   sets.idle.LightDef = set_combine(sets.idle, sets.LightDef)
   sets.idle.LightDef.Regain = set_combine(sets.idle.Regain, sets.LightDef)
@@ -861,18 +837,20 @@ function init_gear_sets()
     hands="Turms Mittens", --0/0, 91 [59]
     legs="Erilaz Leg Guards +1", --7/0, 107 [80]
     feet="Turms Leggings", --0/0, 137 [61]
-    neck="Futhark Torque +1", --5/5, 25 [39]
+    neck="Futhark Torque +1", --6/6, 25 [45]
     waist="Audumbla Sash", --4/0, 0 [0]
     ear1="Odnowa Earring +1", --3/5, 0 [110]
     ear2="Eabani Earring", --0/0, 8 [45]
-    ring1="Gelatinous Ring +1", --7/(-1), 0 [110]
+    ring1="Gelatinous Ring +1", --7/(-1), 0 [135]
     ring2="Defending Ring", --10/10, 0 [0]
     back=gear.RUN_HPD_Cape, --10/0, 30 [60]
-    -- ammo="Staunch Tathlum +1", --3/3
-    -- hands="Turms Mittens +1",
-    -- feet="Turms Leggings +1",
-    -- neck="Futhark Torque +2", --7/7, 30
-  } --50 PDT / 24 MDT, 601 MEVA [831 HP]
+    -- ammo="Staunch Tathlum +1", --3/3, 0 [0]
+    -- hands="Turms Mittens +1", --0/0, 101 [74]
+    -- feet="Turms Leggings +1", --0/0, 147 [76]
+    -- neck="Futhark Torque +2", --7/7, 30 [60]
+    -- ear2="Sanare Earring", --0/0, 6 [0]
+    -- waist="Engraved Belt", --0/0, 0 [0] Swap to this after PDT is 54
+  } --52 PDT / 25 MDT, 601 MEVA [907 HP]
 
   -- Shell V = 29%, MDT cap is 50%
   sets.defense.MDT = {
@@ -883,18 +861,18 @@ function init_gear_sets()
     hands="Turms Mittens", --0/0, 91 [59]
     legs="Erilaz Leg Guards +1", --7/0, 107 [80]
     feet="Erilaz Greaves +1", --5/0, 107 [18]
-    neck="Futhark Torque +1", --5/5, 25 [39]
+    neck="Futhark Torque +1", --6/6, 25 [45]
     waist="Engraved Belt", --0/0, 0 [0]
     ear1="Odnowa Earring +1", --3/5, 0 [110]
     ear2="Eabani Earring", --0/0, 8 [45]
-    ring1="Gelatinous Ring +1", --7/(-1), 0 [110]
+    ring1="Gelatinous Ring +1", --7/(-1), 0 [135]
     ring2="Defending Ring", --10/10, 0 [0]
     back=gear.RUN_HPD_Cape, --10/0, 30 [60]
     -- ammo="Staunch Tathlum +1", --3/3
-    -- hands="Turms Mittens +1",
-    -- neck="Futhark Torque +2", --7/7, 30
+    -- hands="Turms Mittens +1", --0/0, 101 [74]
+    -- neck="Futhark Torque +2", --7/7, 30 [60]
     -- ear2="Sanare Earring",
-  } --52 PDT / 24 MDT, 571 MEVA [833 HP]
+  } --53 PDT / 25 MDT, 571 MEVA [864 HP]
 
   sets.defense.Parry = {
     hands="Turms Mittens", --Parry: Recover HP+75
