@@ -1219,7 +1219,7 @@ function init_gear_sets()
     waist="Hachirin-no-Obi"
   }
 
-  -- Melee weapon set
+  -- Melee weapon sets
   sets['TempWeak1'] = {
     main="Kaja Knife",
     sub="Nusku Shield",

@@ -83,6 +83,7 @@ function get_sets()
 
   -- Load and initialize the include file.
   include('Mote-Include.lua') -- Executes job_setup, user_setup, init_gear_sets
+  send_command('gs c weaponset current')
 end
 
 -- Executes on first load and main job change
@@ -104,16 +105,14 @@ function job_setup()
   blue_magic_maps.Cure = S{'Wild Carrot'}
   blue_magic_maps.Buffs = S{'Cocoon', 'Refueling'}
 
-  state.OffenseMode:options('STP', 'Normal', 'LowAcc', 'MidAcc', 'HighAcc')
+  state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.WeaponskillMode:options('Normal', 'MaxTp', 'LowAcc', 'LowAccMaxTp', 'MidAcc', 'MidAccMaxTp', 'HighAcc', 'HighAccMaxTp')
   state.CastingMode:options('Normal', 'Resistant')
   state.HybridMode:options('Normal', 'LightDef')
   state.IdleMode:options('Normal', 'LightDef')
-  state.PhysicalDefenseMode:options('PDT')
-  state.MagicalDefenseMode:options('MDT')
   state.Knockback = M(false, 'Knockback')
   state.DeathResist = M(false, 'Death Resist Mode')
-  -- state.WeaponSet = M{['description']='Weapon Set', 'Epeolatry', 'Lionheart', 'Aettir', 'Lycurgos'}
+  state.WeaponSet = M{['description']='Weapon Set', 'Aettir', 'ZanX', 'Epeolatry', 'Lionheart', 'Lycurgos'}
   state.AttackMode = M{['description']='Attack', 'Uncapped', 'Capped'}
   state.CP = M(false, "Capacity Points Mode")
   state.WeaponLock = M(false, 'Weapon Lock')
@@ -121,10 +120,12 @@ function job_setup()
       'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
   state.Runes = M{['description']='Runes', 'Ignis', 'Gelus', 'Flabra', 'Tellus', 'Sulpor', 'Unda', 'Lux', 'Tenebrae'}
   
-  send_command('bind !a gs c test')
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c usekey')
+
   send_command('bind @w gs c toggle WeaponLock')
+  send_command('bind ^insert gs c weaponset cycle')
+  send_command('bind ^delete gs c weaponset cycleback')
 
   send_command('bind ^pageup gs c toyweapon cycle')
   send_command('bind ^pagedown gs c toyweapon cycleback')
@@ -134,15 +135,12 @@ function job_setup()
 
   send_command('bind numpad0 input //gs c rune')
   send_command('bind !` input /ja "Vivacious Pulse" <me>')
+  send_command('bind ^` input /ma "Temper" <me>')
   send_command('bind ^- gs c cycleback Runes')
   send_command('bind ^= gs c cycle Runes')
-  send_command('bind ^f11 gs c cycle MagicalDefenseMode')
   send_command('bind @a gs c cycle AttackMode')
   send_command('bind @c gs c toggle CP')
-  -- send_command('bind @e gs c cycleback WeaponSet')
-  -- send_command('bind @r gs c cycle WeaponSet')
   send_command('bind @k gs c toggle Knockback')
-  send_command('bind ^` input /ma "Temper" <me>')
 
   send_command('bind !u input /ma "Blink" <me>')
   send_command('bind !i input /ma "Stoneskin" <me>')
@@ -188,24 +186,28 @@ function user_setup()
 end
 
 function job_file_unload()
+  send_command('unbind !a')
   send_command('unbind !s')
   send_command('unbind !d')
+
+  send_command('unbind @w')
+  send_command('unbind ^insert')
+  send_command('unbind ^delete')
 
   send_command('unbind ^pageup')
   send_command('unbind ^pagedown')
   send_command('unbind !pagedown')
 
-  send_command('unbind ^`')
+  send_command('unbind @d')
+
   send_command('unbind !`')
-  send_command('unbind ^f11')
+  send_command('unbind ^`')
   send_command('unbind ^-')
   send_command('unbind ^=')
   send_command('unbind @a')
   send_command('unbind @c')
-  send_command('unbind @d')
-  send_command('unbind @w')
-  -- send_command('unbind @e')
-  -- send_command('unbind @r')
+  send_command('unbind @k')
+
   send_command('unbind !q')
   send_command('unbind !w')
   send_command('unbind !e')
@@ -239,7 +241,6 @@ function job_file_unload()
   send_command('unbind ^numpad0')
   send_command('unbind ^numpad.')
   send_command('unbind numpad0')
-  send_command('unbind @numpad*')
 
   send_command('unbind #`')
   send_command('unbind #1')
@@ -934,16 +935,6 @@ function init_gear_sets()
     -- waist="Olseni Belt",
   })
 
-  sets.engaged.STP = set_combine(sets.engaged, {
-    head="Ayanmo Zucchetto +2",
-    -- body="Ashera Harness",
-    -- feet="Carmine Greaves +1",
-    -- ear2="Dedition Earring",
-    -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
-    -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
-    -- waist="Kentarch Belt +1",
-  })
-
   sets.engaged.Aftermath = {
     head="Ayanmo Zucchetto +2",
     -- body="Ashera Harness",
@@ -964,7 +955,6 @@ function init_gear_sets()
   sets.engaged.LowAcc.LightDef = set_combine(sets.engaged.LowAcc, sets.LightDef)
   sets.engaged.MidAcc.LightDef = set_combine(sets.engaged.MidAcc, sets.LightDef)
   sets.engaged.HighAcc.LightDef = set_combine(sets.engaged.HighAcc, sets.LightDef)
-  sets.engaged.STP.LightDef = set_combine(sets.engaged.STP, sets.LightDef)
 
   sets.engaged.Aftermath.LightDef = {
     head="Ayanmo Zucchetto +2",
@@ -1032,17 +1022,21 @@ function init_gear_sets()
     neck="Ygnas's Resolve +1"
   }
 
+  -- Weapon Sets
+  sets['Aettir'] = {
+    main="Aettir",
+  }
+  sets['ZanX'] = {
+    main="Zantetsuken X",
+  }
   sets.Epeolatry = {
-    -- main="Epeolatry"
+    main="Epeolatry",
   }
   sets.Lionheart = {
-    -- main="Lionheart"
-  }
-  sets.Aettir = {
-    -- main="Aettir"
+    main="Lionheart",
   }
   sets.Lycurgos = {
-    -- main="Lycurgos"
+    main="Lycurgos",
   }
 
 end
@@ -1061,8 +1055,6 @@ function job_precast(spell, action, spellMap, eventArgs)
       return -- Ends execution of this function
     end
   end
-
-  -- equip(sets[state.WeaponSet.current])
 
   -- Use safe/enmity set for Lunge/Swipe if in defense mode
   if (spell.english == 'Lunge' or spell.english == 'Swipe') then
@@ -1157,7 +1149,6 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
 end
 
 function job_aftercast(spell, action, spellMap, eventArgs)
-  -- equip(sets[state.WeaponSet.current])
   local chat_mode = '/p'
   if windower.ffxi.get_party().party1_count == 1 then
     chat_mode = '/echo'
@@ -1268,14 +1259,6 @@ end
 
 -- Handle notifications of general user state change.
 function job_state_change(stateField, newValue, oldValue)
-  if state.WeaponLock.value == true then
-    disable('main','sub')
-  else
-    enable('main','sub')
-  end
-  
-  -- equip(sets[state.WeaponSet.current])
-
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -1289,7 +1272,6 @@ function job_handle_equipping_gear(playerStatus, eventArgs)
 end
 
 function job_update(cmdParams, eventArgs)
-  -- equip(sets[state.WeaponSet.current])
   handle_equipping_gear(player.status)
   update_weaponskill_binds()
 end
@@ -1309,6 +1291,9 @@ function customize_idle_set(idleSet)
     else
       idleSet = set_combine(idleSet, sets.Kiting)
     end
+  end
+  if buffactive['terror'] then
+    idleSet = set_combine(idleSet, sets.defense.PDT)
   end
   if state.CP.current == 'on' then
     idleSet = set_combine(idleSet, sets.CP)
@@ -1335,6 +1320,9 @@ function customize_melee_set(meleeSet)
   end
   if state.DeathResist.value == true then
     meleeSet = set_combine(meleeSet, sets.DeathResist)
+  end
+  if buffactive['terror'] then
+    meleeSet = set_combine(meleeSet, sets.defense.PDT)
   end
   if state.CP.current == 'on' then
     meleeSet = set_combine(meleeSet, sets.CP)
@@ -1476,6 +1464,22 @@ function get_custom_wsmode(spell, action, spellMap)
   return wsmode
 end
 
+function cycle_weapons(cycle_dir)
+  -- Do nothing if weapon lock is on
+  if state.WeaponLock.current == true then
+    return
+  end
+
+  if cycle_dir == 'forward' then
+    state.WeaponSet:cycle()
+  elseif cycle_dir == 'back' then
+    state.WeaponSet:cycleback()
+  end
+  
+  add_to_chat(141, 'Weapon Set to '..string.char(31,1)..state.WeaponSet.current)
+  equip(sets[state.WeaponSet.current])
+end
+
 function cycle_toy_weapons(cycle_dir)
   --If current state is None, save current weapons to switch back later
   if state.ToyWeapons.current == 'None' then
@@ -1570,7 +1574,6 @@ function display_rayke_gambit_worn()
 end
 
 function test()
-  send_command('input /lockstyleset '..lockstyleset)
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -1626,6 +1629,14 @@ function job_self_command(cmdParams, eventArgs)
       cycle_toy_weapons('back')
     elseif cmdParams[2]:lower() == 'reset' then
       cycle_toy_weapons('reset')
+    end
+  elseif cmdParams[1]:lower() == 'weaponset' then
+    if cmdParams[2]:lower() == 'cycle' then
+      cycle_weapons('forward')
+    elseif cmdParams[2]:lower() == 'cycleback' then
+      cycle_weapons('back')
+    elseif cmdParams[2]:lower() == 'current' then
+      cycle_weapons('current')
     end
   elseif cmdParams[1]:lower() == 'test' then
     test()
