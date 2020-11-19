@@ -676,6 +676,7 @@ function init_gear_sets()
   }
 
   sets.midcast.RA.Acc = set_combine(sets.midcast.RA, {
+    legs="Mummu Kecks +2",
     -- Goal:
     -- head="Arcadian Beret +3", --37 [0] 37/62 <0> {0} (38)
     -- body="Malignance Tabard", --42 [11] 50/0 <0> {6} (0)
