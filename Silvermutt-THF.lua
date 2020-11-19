@@ -302,7 +302,7 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.precast.WS = {
-    ammo="Seething Bomblet",
+    ammo="Aurgelmir Orb",
     head=gear.Herc_WSD_head,
     body="Meghanada Cuirie +2",
     hands="Meghanada Gloves +2",
@@ -381,7 +381,7 @@ function init_gear_sets()
   
   -- 50% DEX
   sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
-    ammo="Falcon Eye",
+    ammo="Aurgelmir Orb",
     head=gear.Adhemar_B_head,
     body="Meghanada Cuirie +2",
     hands="Mummu Wrists +2",
@@ -426,7 +426,7 @@ function init_gear_sets()
 
   -- 80% DEX
   sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {
-    ammo="Falcon Eye",
+    ammo="Aurgelmir Orb",
     head=gear.Herc_WSD_head,
     body="Meghanada Cuirie +2",
     hands="Meghanada Gloves +2",
@@ -532,7 +532,7 @@ function init_gear_sets()
   sets.resting = {}
 
   sets.idle = {
-    ammo="Seething Bomblet",
+    ammo="Aurgelmir Orb",
     head=gear.Adhemar_B_head,
     body="Mummu Jacket +2",
     hands=gear.Adhemar_B_hands,
@@ -607,7 +607,7 @@ function init_gear_sets()
   -- EG: sets.engaged.Dagger.Accuracy.Evasion
 
   sets.engaged = {
-    ammo="Seething Bomblet",
+    ammo="Aurgelmir Orb",
     head=gear.Adhemar_B_head,
     body="Mummu Jacket +2",
     hands=gear.Adhemar_B_hands,
@@ -673,7 +673,7 @@ function init_gear_sets()
 
   -- No Magic/Gear/JA Haste (74% DW to cap, 44% from gear)
   sets.engaged.DW = {
-    ammo="Seething Bomblet",
+    ammo="Aurgelmir Orb",
     head=gear.Adhemar_B_head,
     body="Mummu Jacket +2",
     hands=gear.Adhemar_B_hands,
@@ -736,7 +736,7 @@ function init_gear_sets()
 
   -- Low Magic/Gear/JA Haste (67% DW to cap, 37% from gear)
   sets.engaged.DW.LowHaste = {
-    ammo="Seething Bomblet",
+    ammo="Aurgelmir Orb",
     head=gear.Adhemar_B_head,
     body="Mummu Jacket +2",
     hands=gear.Adhemar_B_hands,
@@ -798,7 +798,7 @@ function init_gear_sets()
 
   -- Mid Magic/Gear/JA Haste (56% DW to cap, 26% from gear)
   sets.engaged.DW.MidHaste = {
-    ammo="Seething Bomblet",
+    ammo="Aurgelmir Orb",
     head=gear.Adhemar_B_head,
     body="Mummu Jacket +2",
     hands=gear.Adhemar_B_hands,
@@ -861,7 +861,7 @@ function init_gear_sets()
 
   -- High Magic/Gear/JA Haste (51% DW to cap, 21% from gear)
   sets.engaged.DW.HighHaste = {
-    ammo="Seething Bomblet",
+    ammo="Aurgelmir Orb",
     head=gear.Adhemar_B_head,
     body="Mummu Jacket +2",
     hands=gear.Adhemar_B_hands,
@@ -924,7 +924,7 @@ function init_gear_sets()
 
   -- Max Magic/Gear/JA Haste (36% DW to cap, 6% from gear)
   sets.engaged.DW.MaxHaste = {
-    ammo="Seething Bomblet",
+    ammo="Aurgelmir Orb",
     head=gear.Adhemar_B_head,
     body="Mummu Jacket +2",
     hands=gear.Adhemar_B_hands,

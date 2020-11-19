@@ -379,7 +379,7 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.precast.WS = {
-    ammo="Charis Feather",
+    ammo="Aurgelmir Orb",
     head=gear.Herc_WSD_head,
     body="Meghanada Cuirie +2",
     hands="Meghanada Gloves +2",
@@ -431,7 +431,7 @@ function init_gear_sets()
   })
 
   sets.precast.WS['Pyrrhic Kleos'] = set_combine(sets.precast.WS, {
-    ammo="Charis Feather",
+    ammo="Aurgelmir Orb",
     head=gear.Herc_WSD_head,
     body="Meghanada Cuirie +2",
     hands=gear.Adhemar_B_hands,
@@ -491,7 +491,7 @@ function init_gear_sets()
   })
 
   sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {
-    ammo="Charis Feather",
+    ammo="Aurgelmir Orb",
     head=gear.Herc_WSD_head,
     body="Meghanada Cuirie +2",
     hands="Meghanada Gloves +2",
@@ -652,7 +652,7 @@ function init_gear_sets()
   -- EG: sets.engaged.Dagger.Accuracy.Evasion
 
   sets.engaged = {
-    ammo="Charis Feather",
+    ammo="Aurgelmir Orb",
     head="Maxixi Tiara +3",
     body="Horos Casaque +3",
     hands=gear.Adhemar_B_hands,
@@ -668,19 +668,19 @@ function init_gear_sets()
   }
 
   sets.engaged.LowAcc = set_combine(sets.engaged, {
-    ring2="Ilabrat Ring",
-    -- head="Dampening Tam",
+    head="Dampening Tam",
     -- hands=gear.Adhemar_A_hands,
   })
 
   sets.engaged.MidAcc = set_combine(sets.engaged.LowAcc, {
     legs="Meghanada Chausses +2",
+    ring1="Chirich Ring +1",
     -- ammo="Voluspa Tathlum",
-    -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
     -- waist="Kentarch Belt +1",
   })
 
   sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
+    ammo="Falcon Eye",
     ear1="Telos Earring",
     -- ammo="C. Palug Stone",
     -- body="Maxixi Casaque +3",
@@ -693,7 +693,6 @@ function init_gear_sets()
   })
 
   sets.engaged.STP = set_combine(sets.engaged, {
-    ammo="Ginsen",
     feet="Horos Toe Shoes +3",
     -- head=gear.Herc_STP_head,
     -- body="Ashera Harness",
@@ -706,7 +705,7 @@ function init_gear_sets()
 
   -- No Magic/Gear/JA Haste (74% DW to cap, 39% from gear)
   sets.engaged.DW = {
-    ammo="Charis Feather",
+    ammo="Aurgelmir Orb",
     head="Maxixi Tiara +3", -- 8%
     body="Horos Casaque +3",
     hands=gear.Adhemar_B_hands,
@@ -722,24 +721,22 @@ function init_gear_sets()
   } --30
 
   sets.engaged.DW.LowAcc = set_combine(sets.engaged.DW, {
-    ammo="Falcon Eye",
-    -- head="Dampening Tam",
+    head="Dampening Tam",
     -- hands=gear.Adhemar_A_hands,
   })
 
   sets.engaged.DW.MidAcc = set_combine(sets.engaged.DW.LowAcc, {
     legs="Horos Tights +3",
+    ring1="Chirich Ring +1",
     -- ammo="Voluspa Tathlum",
     -- head="Maxixi Tiara +3", --8
-    -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
     -- waist="Kentarch Belt +1",
   })
 
   sets.engaged.DW.HighAcc = set_combine(sets.engaged.DW.MidAcc, {
+    ammo="Falcon Eye",
     hands="Mummu Wrists +2",
     legs="Meghanada Chausses +2",
-    ring1="Begrudging Ring",
-    ring2="Ilabrat Ring",
     -- ammo="C. Palug Stone",
     -- body="Maxixi Casaque +3",
     -- feet=gear.Herc_STP_feet,
@@ -750,7 +747,6 @@ function init_gear_sets()
   })
 
   sets.engaged.DW.STP = set_combine(sets.engaged.DW, {
-    ammo="Ginsen",
     -- head=gear.Herc_STP_head,
     -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
     -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
@@ -758,7 +754,7 @@ function init_gear_sets()
 
   -- Low Magic/Gear/JA Haste (67% DW to cap, 32% from gear)
   sets.engaged.DW.LowHaste = {
-    ammo="Charis Feather",
+    ammo="Aurgelmir Orb",
     head="Maxixi Tiara +3", -- 8%
     body="Horos Casaque +3",
     hands=gear.Adhemar_B_hands,
@@ -774,25 +770,23 @@ function init_gear_sets()
   } --30
 
   sets.engaged.DW.LowAcc.LowHaste = set_combine(sets.engaged.DW.LowHaste, {
-    ammo="Falcon Eye",
-    -- head="Dampening Tam",
+    head="Dampening Tam",
     -- hands=gear.Adhemar_A_hands,
   })
 
   sets.engaged.DW.MidAcc.LowHaste = set_combine(sets.engaged.DW.LowAcc.LowHaste, {
     legs="Horos Tights +3",
-    ring2="Begrudging Ring",
+    ring1="Chirich Ring +1",
     -- ammo="Voluspa Tathlum",
     -- head="Maxixi Tiara +3", --8
     -- body="Horos Casaque +3",
-    -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
     -- waist="Kentarch Belt +1",
   })
 
   sets.engaged.DW.HighAcc.LowHaste = set_combine(sets.engaged.DW.MidAcc.LowHaste, {
+    ammo="Falcon Eye",
     hands="Mummu Wrists +2",
     legs="Meghanada Chausses +2",
-    ring1="Ilabrat Ring",
     -- ammo="C. Palug Stone",
     -- body="Maxixi Casaque +3",
     -- feet=gear.Herc_STP_feet,
@@ -803,7 +797,6 @@ function init_gear_sets()
   })
 
   sets.engaged.DW.STP.LowHaste = set_combine(sets.engaged.DW.LowHaste, {
-    ammo="Ginsen",
     -- head=gear.Herc_STP_head,
     -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
     -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
@@ -811,7 +804,7 @@ function init_gear_sets()
 
   -- Mid Magic/Gear/JA Haste (56% DW to cap, 21% from gear)
   sets.engaged.DW.MidHaste = {
-    ammo="Charis Feather",
+    ammo="Aurgelmir Orb",
     head="Maxixi Tiara +3", -- 8%
     body="Horos Casaque +3",
     hands=gear.Adhemar_B_hands,
@@ -828,25 +821,23 @@ function init_gear_sets()
 
   sets.engaged.DW.LowAcc.MidHaste = set_combine(sets.engaged.DW.MidHaste, {
     ear2="Telos Earring",
-    -- head="Dampening Tam",
+    head="Dampening Tam",
     -- hands=gear.Adhemar_A_hands,
   })
 
   sets.engaged.DW.MidAcc.MidHaste = set_combine(sets.engaged.DW.LowAcc.MidHaste, {
-    ammo="Falcon Eye",
     legs="Horos Tights +3",
+    ring1="Chirich Ring +1",
     -- ammo="Voluspa Tathlum",
     -- head="Maxixi Tiara +3", --8
     -- body="Horos Casaque +3",
-    -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
     -- waist="Kentarch Belt +1",
   })
 
   sets.engaged.DW.HighAcc.MidHaste = set_combine(sets.engaged.DW.MidAcc.MidHaste, {
+    ammo="Falcon Eye",
     hands="Mummu Wrists +2",
     legs="Meghanada Chausses +2",
-    ring1="Begrudging Ring",
-    ring2="Ilabrat Ring",
     -- ammo="C. Palug Stone",
     -- body="Maxixi Casaque +3",
     -- legs="Horos Tights +3",
@@ -858,7 +849,6 @@ function init_gear_sets()
   })
 
   sets.engaged.DW.STP.MidHaste = set_combine(sets.engaged.DW.MidHaste, {
-    ammo="Ginsen",
     -- head=gear.Herc_STP_head,
     -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
     -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
@@ -866,7 +856,7 @@ function init_gear_sets()
 
   -- High Magic/Gear/JA Haste (51% DW to cap, 16% from gear)
   sets.engaged.DW.HighHaste = {
-    ammo="Charis Feather",
+    ammo="Aurgelmir Orb",
     head="Maxixi Tiara +3", -- 8%
     body="Horos Casaque +3",
     hands=gear.Adhemar_B_hands,
@@ -883,25 +873,23 @@ function init_gear_sets()
 
   sets.engaged.DW.LowAcc.HighHaste = set_combine(sets.engaged.DW.HighHaste, {
     ear1="Telos Earring",
-    -- head="Dampening Tam",
+    head="Dampening Tam",
     -- hands=gear.Adhemar_A_hands,
     -- waist="Kentarch Belt +1",
   })
 
   sets.engaged.DW.MidAcc.HighHaste = set_combine(sets.engaged.DW.LowAcc.HighHaste, {
-    ammo="Falcon Eye",
     legs="Horos Tights +3",
+    ring1="Chirich Ring +1",
     -- ammo="Voluspa Tathlum",
     -- body="Horos Casaque +3",
-    -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
   })
 
   sets.engaged.DW.HighAcc.HighHaste = set_combine(sets.engaged.DW.MidAcc.HighHaste, {
+    ammo="Falcon Eye",
     hands="Mummu Wrists +2",
     legs="Meghanada Chausses +2",
     ear2="Cessance Earring",
-    ring1="Begrudging Ring",
-    ring2="Ilabrat Ring",
     -- ammo="C. Palug Stone",
     -- head="Maxixi Tiara +3", --8
     -- body="Maxixi Casaque +3",
@@ -914,7 +902,6 @@ function init_gear_sets()
   })
 
   sets.engaged.DW.STP.HighHaste = set_combine(sets.engaged.DW.HighHaste, {
-    ammo="Ginsen",
     -- head=gear.Herc_STP_head,
     -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
     -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
@@ -923,7 +910,7 @@ function init_gear_sets()
 
   -- Max Magic/Gear/JA Haste (36% DW to cap, 1% from gear)
   sets.engaged.DW.MaxHaste = {
-    ammo="Charis Feather",
+    ammo="Aurgelmir Orb",
     head=gear.Adhemar_B_head,
     body="Horos Casaque +3",
     hands=gear.Adhemar_B_hands,
@@ -946,13 +933,13 @@ function init_gear_sets()
   })
 
   sets.engaged.DW.MidAcc.MaxHaste = set_combine(sets.engaged.DW.LowAcc.MaxHaste, {
-    ammo="Falcon Eye",
     legs="Horos Tights +3",
     -- ammo="Voluspa Tathlum",
-    -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
+    ring1="Chirich Ring +1",
   })
 
   sets.engaged.DW.HighAcc.MaxHaste = set_combine(sets.engaged.DW.MidAcc.MaxHaste, {
+    ammo="Falcon Eye",
     hands="Mummu Wrists +2",
     legs="Meghanada Chausses +2",
     ear2="Cessance Earring",
@@ -969,7 +956,6 @@ function init_gear_sets()
   })
 
   sets.engaged.DW.STP.MaxHaste = set_combine(sets.engaged.DW.MaxHaste, {
-    ammo="Ginsen",
     ear1="Telos Earring",
     -- head=gear.Herc_STP_head,
     -- body="Ashera Harness",

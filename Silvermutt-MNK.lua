@@ -233,7 +233,7 @@ function init_gear_sets()
   } -- MND
 
   sets.precast.JA['Chakra'] = {
-    ammo="Bibiki Seashell",
+    ammo="Aurgelmir Orb",
     head="Highwing Helm",
     body="Anchorite's Cyclas +2", -- Enhances Chakra
     hands="Hesychast's Gloves", -- Enhances Chakra
@@ -323,7 +323,7 @@ function init_gear_sets()
 
   -- Shijin Spiral: 100% DEX
   sets.precast.WS['Shijin Spiral'] = set_combine(sets.precast.WS, {
-    ammo="Falcon Eye",
+    ammo="Aurgelmir Orb",
     head=gear.Herc_WSD_head,
     body="Malignance Tabard",
     hands="Malignance Gloves",
@@ -542,7 +542,7 @@ function init_gear_sets()
 
   -- Spinning Attack: 100% STR
   sets.precast.WS['Spinning Attack'] = set_combine(sets.precast.WS, {
-    ammo="Tantra Tathlum",
+    ammo="Aurgelmir Orb",
     head=gear.Adhemar_B_head,
     body="Kendatsuba Samue +1",
     hands=gear.Adhemar_B_hands,
@@ -698,7 +698,7 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.engaged = {
-    ammo="Ginsen",
+    ammo="Aurgelmir Orb",
     head=gear.Adhemar_B_head,
     body="Kendatsuba Samue +1",
     hands=gear.Adhemar_B_hands,
@@ -713,10 +713,10 @@ function init_gear_sets()
     waist="Moonbow Belt +1",
   }
   sets.engaged.LowAcc = set_combine(sets.engaged, {
-    ammo="Falcon Eye",
     ear2="Cessance Earring",
   })
   sets.engaged.MidAcc = set_combine(sets.engaged.LowAcc, {
+    ammo="Ginsen",
     head=gear.Dampening_Tam,
     ring1="Chirich Ring +1",
   })

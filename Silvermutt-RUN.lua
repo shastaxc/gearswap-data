@@ -913,7 +913,7 @@ function init_gear_sets()
 
   sets.engaged = {
     sub="Utu Grip",
-    ammo="Seething Bomblet",
+    ammo="Aurgelmir Orb",
     head=gear.Adhemar_B_head,
     body="Ayanmo Corazza +2",
     hands=gear.Adhemar_B_hands,
@@ -1028,7 +1028,6 @@ function init_gear_sets()
   sets.buff.Doom = {
     neck="Nicander's Necklace", --20
     ring1="Eshmun's Ring", --20
-      -- ring2={name="Eshmun's Ring", bag="wardrobe4"}, --20
     waist="Gishdubar Sash", --10
   }
 
