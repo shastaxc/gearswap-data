@@ -1380,6 +1380,13 @@ function job_precast(spell, action, spellMap, eventArgs)
       send_command('cancel 66; cancel 444; cancel Copy Image; cancel Copy Image (2)')
     end
   end
+  
+  -- If slot is locked, keep current equipment on
+  if locked_neck then equip({ neck=player.equipment.neck }) end
+  if locked_ear1 then equip({ ear1=player.equipment.ear1 }) end
+  if locked_ear2 then equip({ ear2=player.equipment.ear2 }) end
+  if locked_ring1 then equip({ ring1=player.equipment.ring1 }) end
+  if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
 end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
@@ -1390,6 +1397,13 @@ function job_post_precast(spell, action, spellMap, eventArgs)
     cancel_spell()
     send_command('@input /ma "Phalanx" <me>')
   end
+  
+  -- If slot is locked, keep current equipment on
+  if locked_neck then equip({ neck=player.equipment.neck }) end
+  if locked_ear1 then equip({ ear1=player.equipment.ear1 }) end
+  if locked_ear2 then equip({ ear2=player.equipment.ear2 }) end
+  if locked_ring1 then equip({ ring1=player.equipment.ring1 }) end
+  if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
 end
 
 -- Run after the default midcast() is done.
@@ -1429,6 +1443,13 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
       equip(sets.Obi)
     end
   end
+  
+  -- If slot is locked, keep current equipment on
+  if locked_neck then equip({ neck=player.equipment.neck }) end
+  if locked_ear1 then equip({ ear1=player.equipment.ear1 }) end
+  if locked_ear2 then equip({ ear2=player.equipment.ear2 }) end
+  if locked_ring1 then equip({ ring1=player.equipment.ring1 }) end
+  if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
 end
 
 function job_aftercast(spell, action, spellMap, eventArgs)
@@ -1574,6 +1595,14 @@ function customize_idle_set(idleSet)
   if state.CP.current == 'on' then
     idleSet = set_combine(idleSet, sets.CP)
   end
+
+  -- If slot is locked to use no-swap gear, keep it equipped
+  if locked_neck then idleSet = set_combine(idleSet, { neck=player.equipment.neck }) end
+  if locked_ear1 then idleSet = set_combine(idleSet, { ear1=player.equipment.ear1 }) end
+  if locked_ear2 then idleSet = set_combine(idleSet, { ear2=player.equipment.ear2 }) end
+  if locked_ring1 then idleSet = set_combine(idleSet, { ring1=player.equipment.ring1 }) end
+  if locked_ring2 then idleSet = set_combine(idleSet, { ring2=player.equipment.ring2 }) end
+
   if buffactive.Doom then
     idleSet = set_combine(idleSet, sets.buff.Doom)
   end
@@ -1591,6 +1620,14 @@ function customize_melee_set(meleeSet)
   if state.CP.current == 'on' then
     meleeSet = set_combine(meleeSet, sets.CP)
   end
+
+  -- If slot is locked to use no-swap gear, keep it equipped
+  if locked_neck then meleeSet = set_combine(meleeSet, { neck=player.equipment.neck }) end
+  if locked_ear1 then meleeSet = set_combine(meleeSet, { ear1=player.equipment.ear1 }) end
+  if locked_ear2 then meleeSet = set_combine(meleeSet, { ear2=player.equipment.ear2 }) end
+  if locked_ring1 then meleeSet = set_combine(meleeSet, { ring1=player.equipment.ring1 }) end
+  if locked_ring2 then meleeSet = set_combine(meleeSet, { ring2=player.equipment.ring2 }) end
+
   if buffactive.Doom then
     meleeSet = set_combine(meleeSet, sets.buff.Doom)
   end
@@ -1602,6 +1639,14 @@ function customize_defense_set(defenseSet)
   if state.CP.current == 'on' then
     defenseSet = set_combine(defenseSet, sets.CP)
   end
+
+  -- If slot is locked to use no-swap gear, keep it equipped
+  if locked_neck then defenseSet = set_combine(defenseSet, { neck=player.equipment.neck }) end
+  if locked_ear1 then defenseSet = set_combine(defenseSet, { ear1=player.equipment.ear1 }) end
+  if locked_ear2 then defenseSet = set_combine(defenseSet, { ear2=player.equipment.ear2 }) end
+  if locked_ring1 then defenseSet = set_combine(defenseSet, { ring1=player.equipment.ring1 }) end
+  if locked_ring2 then defenseSet = set_combine(defenseSet, { ring2=player.equipment.ring2 }) end
+
   if buffactive.Doom then
     defenseSet = set_combine(defenseSet, sets.buff.Doom)
   end
@@ -1906,30 +1951,40 @@ function set_sleep_timer(spell)
 end
 
 function check_gear()
-  if no_swap_gear:contains(player.equipment.left_ring) then
-    disable("ring1")
+  if no_swap_necks:contains(player.equipment.neck) then
+    locked_neck = true
   else
-    enable("ring1")
+    locked_neck = false
   end
-  if no_swap_gear:contains(player.equipment.right_ring) then
-    disable("ring2")
+  if no_swap_earrings:contains(player.equipment.ear1) then
+    locked_ear1 = true
   else
-    enable("ring2")
+    locked_ear1 = false
+  end
+  if no_swap_earrings:contains(player.equipment.ear2) then
+    locked_ear2 = true
+  else
+    locked_ear2 = false
+  end
+  if no_swap_rings:contains(player.equipment.ring1) then
+    locked_ring1 = true
+  else
+    locked_ring1 = false
+  end
+  if no_swap_rings:contains(player.equipment.ring2) then
+    locked_ring2 = true
+  else
+    locked_ring2 = false
   end
 end
 
-windower.register_event('zone change',
-  function()
-    if no_swap_gear:contains(player.equipment.left_ring) then
-      enable("ring1")
-      equip(sets.idle)
-    end
-    if no_swap_gear:contains(player.equipment.right_ring) then
-      enable("ring2")
-      equip(sets.idle)
-    end
-  end
-)
+windower.register_event('zone change', function()
+  if locked_neck then equip({ neck=empty }) end
+  if locked_ear1 then equip({ ear1=empty }) end
+  if locked_ear2 then equip({ ear2=empty }) end
+  if locked_ring1 then equip({ ring1=empty }) end
+  if locked_ring2 then equip({ ring2=empty }) end
+end)
 
 windower.raw_register_event('outgoing chunk', function(id, data, modified, injected, blocked)
   if id == 0x053 then -- Send lockstyle command to server

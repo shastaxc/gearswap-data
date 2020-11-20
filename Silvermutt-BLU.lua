@@ -172,8 +172,6 @@ function job_setup()
         'Crashing Thunder','Cruel Joke','Droning Whirlwind','Gates of Hades','Harden Shell','Mighty Guard',
         'Polar Roar','Pyric Bulwark','Tearing Gust','Thunderbolt','Tourbillion','Uproot'}
 
-    no_swap_gear = S{"Warp Ring", "Dim. Ring (Dem)", "Dim. Ring (Holla)", "Dim. Ring (Mea)",
-              "Trizek Ring", "Echad Ring", "Facility Ring", "Capacity Ring"}
     elemental_ws = S{'Flash Nova', 'Sanguine Blade'}
 
     include('Mote-TreasureHunter')
@@ -1363,6 +1361,13 @@ function job_precast(spell, action, spellMap, eventArgs)
     if state.IdleMode.value == 'Learning' then
       equip(sets.Learning)
     end
+  
+    -- If slot is locked, keep current equipment on
+    if locked_neck then equip({ neck=player.equipment.neck }) end
+    if locked_ear1 then equip({ ear1=player.equipment.ear1 }) end
+    if locked_ear2 then equip({ ear2=player.equipment.ear2 }) end
+    if locked_ring1 then equip({ ring1=player.equipment.ring1 }) end
+    if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
 end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
@@ -1389,6 +1394,13 @@ function job_post_precast(spell, action, spellMap, eventArgs)
     if state.IdleMode.value == 'Learning' then
       equip(sets.Learning)
     end
+  
+    -- If slot is locked, keep current equipment on
+    if locked_neck then equip({ neck=player.equipment.neck }) end
+    if locked_ear1 then equip({ ear1=player.equipment.ear1 }) end
+    if locked_ear2 then equip({ ear2=player.equipment.ear2 }) end
+    if locked_ring1 then equip({ ring1=player.equipment.ring1 }) end
+    if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
 end
 
 -- Run after the default midcast() is done.
@@ -1420,6 +1432,13 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     if state.IdleMode.value == 'Learning' then
       equip(sets.Learning)
     end
+  
+    -- If slot is locked, keep current equipment on
+    if locked_neck then equip({ neck=player.equipment.neck }) end
+    if locked_ear1 then equip({ ear1=player.equipment.ear1 }) end
+    if locked_ear2 then equip({ ear2=player.equipment.ear2 }) end
+    if locked_ring1 then equip({ ring1=player.equipment.ring1 }) end
+    if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
 end
 
 function job_aftercast(spell, action, spellMap, eventArgs)
@@ -1536,6 +1555,13 @@ function customize_idle_set(idleSet)
        idleSet = set_combine(idleSet, sets.Kiting)
     end
 
+    -- If slot is locked to use no-swap gear, keep it equipped
+    if locked_neck then idleSet = set_combine(idleSet, { neck=player.equipment.neck }) end
+    if locked_ear1 then idleSet = set_combine(idleSet, { ear1=player.equipment.ear1 }) end
+    if locked_ear2 then idleSet = set_combine(idleSet, { ear2=player.equipment.ear2 }) end
+    if locked_ring1 then idleSet = set_combine(idleSet, { ring1=player.equipment.ring1 }) end
+    if locked_ring2 then idleSet = set_combine(idleSet, { ring2=player.equipment.ring2 }) end
+
     return idleSet
 end
 
@@ -1548,7 +1574,25 @@ function customize_melee_set(meleeSet)
       meleeSet = set_combine(meleeSet, sets.Learning)
     end
 
+    -- If slot is locked to use no-swap gear, keep it equipped
+    if locked_neck then meleeSet = set_combine(meleeSet, { neck=player.equipment.neck }) end
+    if locked_ear1 then meleeSet = set_combine(meleeSet, { ear1=player.equipment.ear1 }) end
+    if locked_ear2 then meleeSet = set_combine(meleeSet, { ear2=player.equipment.ear2 }) end
+    if locked_ring1 then meleeSet = set_combine(meleeSet, { ring1=player.equipment.ring1 }) end
+    if locked_ring2 then meleeSet = set_combine(meleeSet, { ring2=player.equipment.ring2 }) end
+
     return meleeSet
+end
+
+function customize_defense_set(defenseSet)
+  -- If slot is locked to use no-swap gear, keep it equipped
+  if locked_neck then defenseSet = set_combine(defenseSet, { neck=player.equipment.neck }) end
+  if locked_ear1 then defenseSet = set_combine(defenseSet, { ear1=player.equipment.ear1 }) end
+  if locked_ear2 then defenseSet = set_combine(defenseSet, { ear2=player.equipment.ear2 }) end
+  if locked_ring1 then defenseSet = set_combine(defenseSet, { ring1=player.equipment.ring1 }) end
+  if locked_ring2 then defenseSet = set_combine(defenseSet, { ring2=player.equipment.ring2 }) end
+
+  return defenseSet
 end
 
 -- Function to display the current relevant user state when doing an update.
@@ -1703,30 +1747,40 @@ function check_moving()
 end
 
 function check_gear()
-    if no_swap_gear:contains(player.equipment.left_ring) then
-        disable("ring1")
-    else
-        enable("ring1")
-    end
-    if no_swap_gear:contains(player.equipment.right_ring) then
-        disable("ring2")
-    else
-        enable("ring2")
-    end
+  if no_swap_necks:contains(player.equipment.neck) then
+    locked_neck = true
+  else
+    locked_neck = false
+  end
+  if no_swap_earrings:contains(player.equipment.ear1) then
+    locked_ear1 = true
+  else
+    locked_ear1 = false
+  end
+  if no_swap_earrings:contains(player.equipment.ear2) then
+    locked_ear2 = true
+  else
+    locked_ear2 = false
+  end
+  if no_swap_rings:contains(player.equipment.ring1) then
+    locked_ring1 = true
+  else
+    locked_ring1 = false
+  end
+  if no_swap_rings:contains(player.equipment.ring2) then
+    locked_ring2 = true
+  else
+    locked_ring2 = false
+  end
 end
 
-windower.register_event('zone change',
-    function()
-        if no_swap_gear:contains(player.equipment.left_ring) then
-            enable("ring1")
-            equip(sets.idle)
-        end
-        if no_swap_gear:contains(player.equipment.right_ring) then
-            enable("ring2")
-            equip(sets.idle)
-        end
-    end
-)
+windower.register_event('zone change', function()
+  if locked_neck then equip({ neck=empty }) end
+  if locked_ear1 then equip({ ear1=empty }) end
+  if locked_ear2 then equip({ ear2=empty }) end
+  if locked_ring1 then equip({ ring1=empty }) end
+  if locked_ring2 then equip({ ring2=empty }) end
+end)
 
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
