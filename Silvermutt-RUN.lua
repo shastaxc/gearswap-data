@@ -107,7 +107,7 @@ function job_setup()
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.WeaponskillMode:options('Normal', 'MaxTp', 'LowAcc', 'LowAccMaxTp', 'MidAcc', 'MidAccMaxTp', 'HighAcc', 'HighAccMaxTp')
-  state.CastingMode:options('Normal', 'Resistant')
+  state.CastingMode:options('Normal', 'Safe')
   state.HybridMode:options('Normal', 'LightDef')
   state.IdleMode:options('Normal', 'LightDef')
   state.Knockback = M(false, 'Knockback')
@@ -281,18 +281,20 @@ function init_gear_sets()
     -- feet="Ahosi Leggings", --4/0, 107 [18] <6>
   } --80 Enmity [677 HP]; -39% PDT; -13% MDT
 
-  sets.precast.JA['Vallation'] = {
+  sets.precast.JA = sets.Enmity;
+
+  sets.precast.JA['Vallation'] = set_combine(sets.Enmity, {
     body="Runeist's Coat +3",
     legs="Futhark Trousers +2",
     back=gear.RUN_HPD_Cape,
-  }
+  })
   sets.precast.JA['Valiance'] = sets.precast.JA['Vallation']
-  sets.precast.JA['Battuta'] = {
+  sets.precast.JA['Battuta'] = set_combine(sets.Enmity, {
     head="Futhark Bandeau +1"
-  }
-  sets.precast.JA['Liement'] = {
+  })
+  sets.precast.JA['Liement'] = set_combine(sets.Enmity, {
     body="Futhark Coat +1",
-  }
+  })
 
   sets.MAB = {
     ammo="Seething Bomblet", --6 [0]
@@ -310,43 +312,36 @@ function init_gear_sets()
     -- head=gear.Herc_MAB_head, --45 [38]
     -- body="Carm. Sc. Mail +1", --42 [96]
     -- feet=gear.Herc_MAB_feet, --45 [9]
-  } -- 179 MAB [195 HP, 330 w/ PDT, 330 w/ MDT]
+  } -- 179 MAB [195 HP, 245 w/ Enmity]
 
-  sets.Macc = {
-    ammo="Hydrocera", --6 [0]
-    head="Ayanmo Zucchetto +2", --44 [45]
-    body="Ayanmo Corazza +2", --46 [57]
-    hands="Volte Bracers", --37 [57]
-    legs="Ayanmo Cosciales +1", --39 [45]
-    feet="Ayanmo Gambieras +1", --36 [11]
-    ear2="Dignitary's Earring", --10 [0]
-  } --218 Magic Acc [215 HP, 565 w/ PDT, 520 w/ MDT]
+  sets.precast.JA['Lunge'] = set_combine(sets.Enmity, sets.MAB)
+  sets.precast.JA['Lunge'].Safe = sets.Enmity
 
-  sets.precast.JA['Lunge'] = sets.MAB
+  sets.precast.JA['Swipe'] = set_combine(sets.Enmity, sets.MAB)
+  sets.precast.JA['Swipe'].Safe = sets.Enmity
 
-  sets.precast.JA['Swipe'] = sets.MAB
-  sets.precast.JA['Gambit'] = {
+  sets.precast.JA['Gambit'] = set_combine(sets.Enmity, {
     hands="Runeist Mitons +1"
-  }
-  sets.precast.JA['Rayke'] = {
+  })
+  sets.precast.JA['Rayke'] = set_combine(sets.Enmity, {
     feet="Futhark Boots"
-  }
-  sets.precast.JA['Elemental Sforzo'] = {
+  })
+  sets.precast.JA['Elemental Sforzo'] = set_combine(sets.Enmity, {
     body="Futhark Coat +1",
-  }
-  sets.precast.JA['Swordplay'] = {
+  })
+  sets.precast.JA['Swordplay'] = set_combine(sets.Enmity, {
     hands="Futhark Mitons"
-  }
+  })
 
   -- Divine Magic skill
-  sets.precast.JA['Vivacious Pulse'] = {
+  sets.precast.JA['Vivacious Pulse'] = set_combine(sets.Enmity, {
     head="Erilaz Galea +1", --Aug JA [91]
     legs="Runist Trousers", --15 [22]
     neck="Incanter's Torque", --10 [0]
     -- legs="Rune. Trousers +3", --19 [80]
     -- ear2="Saxnot Earring", --10 [0]
     -- ring1="Stikini Ring +1", --8 [0]
-  } --25 Divine Skill [486 HP w/ Enmity]
+  }) --25 Divine Skill [486 HP w/ Enmity]
 
   -- Fast cast sets for spells
   sets.precast.FC = {
@@ -377,6 +372,16 @@ function init_gear_sets()
 
   -- Initializes trusts at iLvl 119
   sets.midcast.Trust = sets.precast.FC
+
+  sets.Macc = {
+    ammo="Hydrocera", --6 [0]
+    head="Ayanmo Zucchetto +2", --44 [45]
+    body="Ayanmo Corazza +2", --46 [57]
+    hands="Volte Bracers", --37 [57]
+    legs="Ayanmo Cosciales +1", --39 [45]
+    feet="Ayanmo Gambieras +1", --36 [11]
+    ear2="Dignitary's Earring", --10 [0]
+  } --218 Magic Acc [215 HP, 565 w/ PDT, 520 w/ MDT]
 
 
   ------------------------------------------------------------------------------------------------
@@ -652,9 +657,10 @@ function init_gear_sets()
 
   sets.midcast['Aquaveil'] = sets.midcast['Enhancing Magic']
   sets.midcast['Aquaveil'].Safe = set_combine(sets.midcast['Aquaveil'], {
-    -- TODO
-    ammo="Staunch Tathlum", --10
-    waist="Audumbla Sash", --10
+    ammo="Staunch Tathlum",
+    waist="Audumbla Sash",
+    ring1="Gelatinous Ring +1",
+    ring2="Defending Ring",
     -- back="Moonlight Cape",
   })
 
@@ -670,15 +676,20 @@ function init_gear_sets()
     waist="Siegel Sash"
   })
   sets.midcast.Stoneskin.Safe = set_combine(sets.midcast.Stoneskin, {
-    -- TODO
-    waist="Siegel Sash",
+    ammo="Staunch Tathlum",
+    waist="Audumbla Sash",
+    ring1="Gelatinous Ring +1",
+    ring2="Defending Ring",
     -- back="Moonlight Cape",
   })
   sets.midcast.Protect = set_combine(sets.midcast['Enhancing Magic'], {
     -- ring2="Sheltered Ring"
   })
   sets.midcast.Protect.Safe = set_combine(sets.midcast['Enhancing Magic'], {
-    -- TODO
+    ammo="Staunch Tathlum",
+    waist="Audumbla Sash",
+    ring1="Gelatinous Ring +1",
+    ring2="Defending Ring",
     -- back="Moonlight Cape",
   })
   sets.midcast.Shell = sets.midcast.Protect
@@ -709,7 +720,11 @@ function init_gear_sets()
     -- waist="Gishdubar Sash", --(10)
   }
   sets.midcast['Blue Magic'].Cure.Safe = set_combine(sets.midcast['Blue Magic'].Cure, {
-    -- TODO
+    ammo="Staunch Tathlum",
+    waist="Audumbla Sash",
+    ring1="Gelatinous Ring +1",
+    ring2="Defending Ring",
+    -- back="Moonlight Cape",
   })
 
   ------------------------------------------------------------------------------------------------
@@ -1048,16 +1063,15 @@ function job_precast(spell, action, spellMap, eventArgs)
     end
   end
 
-  -- Use safe/enmity set for Lunge/Swipe if in defense mode
-  if (spell.english == 'Lunge' or spell.english == 'Swipe') then
-    if state.HybridMode.value ~= 'Normal' or state.DefenseMode.value ~= 'None' then
-      equip(sets.Enmity)
-      eventArgs.handled = true
+  -- Use defensive "safe" sets if any are defined. Falls back to normal sets if a "safe" set is not defined.
+  if state.DefenseMode.value ~= 'None'
+      or (state.HybridMode.value ~= 'Normal' and player.in_combat)
+      or (state.IdleMode.value ~= 'Normal' and not player.in_combat) then
+    if spell.action_type == 'Ability' and spell.type ~= 'WeaponSkill' and not runes:contains(spell.english) then
+      classes.JAMode = 'Safe'
+    elseif spell.action_type == 'Magic' then
+      state.CastingMode:set('Safe')
     end
-  elseif spell.action_type == 'Ability' and spell.type ~= 'WeaponSkill' and not runes:contains(spell.english) then
-    equip(sets.Enmity)
-    equip(sets.precast.JA[spell])
-    eventArgs.handled = true
   end
 
   -- Use Swipe if Lunge is on cooldown
@@ -1069,6 +1083,7 @@ function job_precast(spell, action, spellMap, eventArgs)
       return
     end
   end
+
   -- Use Vallation if Valiance is on cooldown
   if spell.english == 'Valiance' then
     local abil_recasts = windower.ffxi.get_ability_recasts()
@@ -1082,6 +1097,7 @@ function job_precast(spell, action, spellMap, eventArgs)
       send_command('cancel Vallation') -- command requires 'cancel' add-on to work
     end
   end
+
   -- Cancel shadows if casting more shadows
   if spellMap == 'Utsusemi' then
     if buffactive['Copy Image (3)'] or buffactive['Copy Image (4+)'] then
@@ -1093,6 +1109,7 @@ function job_precast(spell, action, spellMap, eventArgs)
       send_command('cancel 66; cancel 444; cancel Copy Image; cancel Copy Image (2)')
     end
   end
+
   -- Record which rune elements are active when Rayke or Gambit is used.
   if spell.english == 'Rayke' or spell.english == 'Gambit' then
     -- Examine all active buffs
@@ -1108,6 +1125,7 @@ function job_precast(spell, action, spellMap, eventArgs)
 end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
+  -- Equip Reive set for ws if in a Reive
   if spell.type == "WeaponSkill" then
     if buffactive['Reive Mark'] then
       equip(sets.Reive)
@@ -1116,7 +1134,6 @@ function job_post_precast(spell, action, spellMap, eventArgs)
 end
 
 function job_midcast(spell, action, spellMap, eventArgs)
-
 end
 
 -- Run after the default midcast() is done.
@@ -1141,6 +1158,8 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
 end
 
 function job_aftercast(spell, action, spellMap, eventArgs)
+  state.CastingMode:reset()
+
   local chat_mode = '/p'
   if windower.ffxi.get_party().party1_count == 1 then
     chat_mode = '/echo'
