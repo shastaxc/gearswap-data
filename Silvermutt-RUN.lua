@@ -913,35 +913,31 @@ function init_gear_sets()
     ring2="Niqmaddu Ring",
     back="Atheling Mantle",
   }
-
   sets.engaged.LowAcc = set_combine(sets.engaged, {
-    -- head="Dampening Tam",
+    head="Dampening Tam",
     -- hands=gear.Adhemar_A_hands,
     -- neck="Combatant's Torque",
     -- waist="Ioskeha Belt +1",
   })
-
   sets.engaged.MidAcc = set_combine(sets.engaged.LowAcc, {
-    -- ammo="Yamarang",
     ear1="Cessance Earring",
-    -- ear2="Telos Earring",
+    ear2="Telos Earring",
+    -- ammo="Yamarang",
     -- ring1="Regal Ring",
     -- feet=gear.Herc_STP_feet,
   })
-
   sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
+    ammo="Falcon Eye",
     neck="Lissome Necklace",
     legs="Carmine Cuisses +1",
+    ear1="Odr Earring",
     -- ammo="C. Palug Stone",
     -- head="Carmine Mask +1",
     -- body="Carm. Sc. Mail +1",
     -- hands="Runeist's Mitons +3",
-    -- legs="Carmine Cuisses +1",
-    -- ear1="Odr Earring",
     -- ear2="Mache Earring +1",
     -- waist="Olseni Belt",
   })
-
   sets.engaged.Aftermath = {
     head="Ayanmo Zucchetto +2",
     -- body="Ashera Harness",
