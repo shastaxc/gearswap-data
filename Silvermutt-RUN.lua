@@ -930,11 +930,11 @@ function init_gear_sets()
     neck="Lissome Necklace",
     legs="Carmine Cuisses +1",
     ear1="Odr Earring",
+    ear2="Dignitary's Earring",
     -- ammo="C. Palug Stone",
     -- head="Carmine Mask +1",
     -- body="Carm. Sc. Mail +1",
     -- hands="Runeist's Mitons +3",
-    -- ear2="Mache Earring +1",
     -- waist="Olseni Belt",
   })
   sets.engaged.Aftermath = {

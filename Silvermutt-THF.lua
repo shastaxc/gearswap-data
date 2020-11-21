@@ -87,7 +87,7 @@ function job_setup()
   
   state.MainStep = M{['description']='Main Step', 'Box Step', 'Quickstep', 'Feather Step', 'Stutter Step'}
   state.AttackMode = M{['description']='Attack', 'Capped', 'Uncapped'}
-  state.OffenseMode:options('STP', 'Normal', 'LowAcc', 'MidAcc', 'HighAcc')
+  state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.RangedMode:options('Normal', 'Acc')
   state.HybridMode:options('Normal', 'LightDef')
   state.IdleMode:options('Normal', 'LightDef')
@@ -408,6 +408,7 @@ function init_gear_sets()
   sets.precast.WS['Evisceration'].MaxTP = set_combine(sets.precast.WS['Evisceration'], {
   })
   sets.precast.WS['Evisceration'].LowAcc = set_combine(sets.precast.WS['Evisceration'], {
+    ear1="Dignitary's Earring",
     -- ammo="Voluspa Tathlum",
     -- legs="Pill. Culottes +3",
     -- ring1="Regal Ring",
@@ -652,20 +653,13 @@ function init_gear_sets()
   })
 
   sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
+    ear2="Dignitary's Earring",
     -- ammo="C. Palug Stone",
     -- legs="Pill. Culottes +3",
     -- feet=gear.Herc_STP_feet,
-    -- ear2="Mache Earring +1",
     -- ring1="Regal Ring",
     -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
     -- waist="Olseni Belt",
-  })
-
-  sets.engaged.STP = set_combine(sets.engaged, {
-    -- head=gear.Herc_STP_head,
-    -- neck="Anu Torque",
-    -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
-    -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
   })
 
   -- * THF Native DW Trait: 30% DW
@@ -726,13 +720,6 @@ function init_gear_sets()
     -- waist="Olseni Belt",
   })
 
-  sets.engaged.DW.STP = set_combine(sets.engaged.DW, {
-    -- head=gear.Herc_STP_head,
-    -- neck="Anu Torque",
-    -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
-    -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
-  })
-
   -- Low Magic/Gear/JA Haste (67% DW to cap, 37% from gear)
   sets.engaged.DW.LowHaste = {
     ammo="Aurgelmir Orb",
@@ -786,13 +773,6 @@ function init_gear_sets()
     -- ring1="Regal Ring",
     -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
     -- waist="Olseni Belt",
-  })
-
-  sets.engaged.DW.STP.LowHaste = set_combine(sets.engaged.DW.LowHaste, {
-    -- head=gear.Herc_STP_head,
-    -- neck="Anu Torque",
-    -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
-    -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
   })
 
   -- Mid Magic/Gear/JA Haste (56% DW to cap, 26% from gear)
@@ -850,14 +830,6 @@ function init_gear_sets()
     -- waist="Olseni Belt",
   })
 
-  sets.engaged.DW.STP.MidHaste = set_combine(sets.engaged.DW.MidHaste, {
-    -- head=gear.Herc_STP_head,
-    -- neck="Anu Torque",
-    -- ear1="Sherida Earring",
-    -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
-    -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
-  })
-
   -- High Magic/Gear/JA Haste (51% DW to cap, 21% from gear)
   sets.engaged.DW.HighHaste = {
     ammo="Aurgelmir Orb",
@@ -911,14 +883,6 @@ function init_gear_sets()
     -- ring1="Regal Ring",
     -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
     -- waist="Olseni Belt",
-  })
-
-  sets.engaged.DW.STP.HighHaste = set_combine(sets.engaged.DW.HighHaste, {
-      -- head=gear.Herc_STP_head,
-    -- neck="Anu Torque",
-    -- ear1="Sherida Earring",
-    -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
-    -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
   })
 
   -- Max Magic/Gear/JA Haste (36% DW to cap, 6% from gear)
@@ -975,14 +939,6 @@ function init_gear_sets()
     -- waist="Olseni Belt",
   })
 
-  sets.engaged.DW.STP.MaxHaste = set_combine(sets.engaged.DW.MaxHaste, {
-    -- head=gear.Herc_STP_head,
-    -- neck="Anu Torque",
-    -- ear1="Sherida Earring",
-    -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
-    -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
-    -- waist="Kentarch Belt +1",
-  })
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Hybrid Sets -------------------------------------------
@@ -992,37 +948,31 @@ function init_gear_sets()
   sets.engaged.LowAcc.LightDef = set_combine(sets.engaged.LowAcc, sets.LightDef)
   sets.engaged.MidAcc.LightDef = set_combine(sets.engaged.MidAcc, sets.LightDef)
   sets.engaged.HighAcc.LightDef = set_combine(sets.engaged.HighAcc, sets.LightDef)
-  sets.engaged.STP.LightDef = set_combine(sets.engaged.STP, sets.LightDef)
 
   sets.engaged.DW.LightDef = set_combine(sets.engaged.DW, sets.LightDef)
   sets.engaged.DW.LowAcc.LightDef = set_combine(sets.engaged.DW.LowAcc, sets.LightDef)
   sets.engaged.DW.MidAcc.LightDef = set_combine(sets.engaged.DW.MidAcc, sets.LightDef)
   sets.engaged.DW.HighAcc.LightDef = set_combine(sets.engaged.DW.HighAcc, sets.LightDef)
-  sets.engaged.DW.STP.LightDef = set_combine(sets.engaged.DW.STP, sets.LightDef)
 
   sets.engaged.DW.LightDef.LowHaste = set_combine(sets.engaged.DW.LowHaste, sets.LightDef)
   sets.engaged.DW.LowAcc.LightDef.LowHaste = set_combine(sets.engaged.DW.LowAcc.LowHaste, sets.LightDef)
   sets.engaged.DW.MidAcc.LightDef.LowHaste = set_combine(sets.engaged.DW.MidAcc.LowHaste, sets.LightDef)
   sets.engaged.DW.HighAcc.LightDef.LowHaste = set_combine(sets.engaged.DW.HighAcc.LowHaste, sets.LightDef)
-  sets.engaged.DW.STP.LightDef.LowHaste = set_combine(sets.engaged.DW.STP.LowHaste, sets.LightDef)
 
   sets.engaged.DW.LightDef.MidHaste = set_combine(sets.engaged.DW.MidHaste, sets.LightDef)
   sets.engaged.DW.LowAcc.LightDef.MidHaste = set_combine(sets.engaged.DW.LowAcc.MidHaste, sets.LightDef)
   sets.engaged.DW.MidAcc.LightDef.MidHaste = set_combine(sets.engaged.DW.MidAcc.MidHaste, sets.LightDef)
   sets.engaged.DW.HighAcc.LightDef.MidHaste = set_combine(sets.engaged.DW.HighAcc.MidHaste, sets.LightDef)
-  sets.engaged.DW.STP.LightDef.MidHaste = set_combine(sets.engaged.DW.STP.MidHaste, sets.LightDef)
 
   sets.engaged.DW.LightDef.HighHaste = set_combine(sets.engaged.DW.HighHaste, sets.LightDef)
   sets.engaged.DW.LowAcc.LightDef.HighHaste = set_combine(sets.engaged.DW.LowAcc.HighHaste, sets.LightDef)
   sets.engaged.DW.MidAcc.LightDef.HighHaste = set_combine(sets.engaged.DW.MidAcc.HighHaste, sets.LightDef)
   sets.engaged.DW.HighAcc.LightDef.HighHaste = set_combine(sets.engaged.DW.HighAcc.HighHaste, sets.LightDef)
-  sets.engaged.DW.STP.LightDef.HighHaste = set_combine(sets.engaged.DW.HighHaste.STP, sets.LightDef)
 
   sets.engaged.DW.LightDef.MaxHaste = set_combine(sets.engaged.DW.MaxHaste, sets.LightDef)
   sets.engaged.DW.LowAcc.LightDef.MaxHaste = set_combine(sets.engaged.DW.LowAcc.MaxHaste, sets.LightDef)
   sets.engaged.DW.MidAcc.LightDef.MaxHaste = set_combine(sets.engaged.DW.MidAcc.MaxHaste, sets.LightDef)
   sets.engaged.DW.HighAcc.LightDef.MaxHaste = set_combine(sets.engaged.DW.HighAcc.MaxHaste, sets.LightDef)
-  sets.engaged.DW.STP.LightDef.MaxHaste = set_combine(sets.engaged.DW.STP.MaxHaste, sets.LightDef)
 
 
   ------------------------------------------------------------------------------------------------

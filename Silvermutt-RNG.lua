@@ -396,22 +396,26 @@ function init_gear_sets()
     -- ring2="Epaminondas's Ring",
   }
   sets.precast.WS.MaxTP = set_combine(sets.precast.WS, {
+    ear2="Telos Earring",
   })
   sets.precast.WS.LowAcc = set_combine(sets.precast.WS, {
     waist="Kwahu Kachina Belt +1",
     -- ear1="Beyla Earring",
   })
   sets.precast.WS.LowAccMaxTP = set_combine(sets.precast.WS.LowAcc, {
+    ear2="Telos Earring",
   })
   sets.precast.WS.MidAcc = set_combine(sets.precast.WS.LowAcc, {
     -- feet="Arcadian Socks +3",
     -- neck="Combatant's Torque",
   })
   sets.precast.WS.MidAccMaxTP = set_combine(sets.precast.WS.MidAcc, {
+    ear2="Telos Earring",
   })
   sets.precast.WS.HighAcc = set_combine(sets.precast.WS.MidAcc, {
   })
   sets.precast.WS.HighAccMaxTP = set_combine(sets.precast.WS.HighAcc, {
+    ear2="Telos Earring",
   })
 
   sets.precast.WS['Apex Arrow'] = sets.precast.WS
@@ -438,6 +442,7 @@ function init_gear_sets()
     head="Mummu Bonnet +2",
     hands="Mummu Wrists +2",
     ear1="Sherida Earring",
+    ear2="Moonshade Earring",
     ring1="Begrudging Ring",
     neck="Fotia Gorget",
     waist="Fotia Belt",
@@ -485,12 +490,14 @@ function init_gear_sets()
     -- neck="Scout's Gorget +2",
   })
   sets.precast.WS['Last Stand'].MaxTP = set_combine(sets.precast.WS['Last Stand'], {
+    ear2="Telos Earring",
   })
   sets.precast.WS['Last Stand'].LowAcc = set_combine(sets.precast.WS['Last Stand'], {
     ear2="Telos Earring",
     waist="Kwahu Kachina Belt +1",
   })
   sets.precast.WS['Last Stand'].LowAccMaxTP = set_combine(sets.precast.WS['Last Stand'].LowAcc, {
+    ear2="Telos Earring",
   })
   sets.precast.WS['Last Stand'].MidAcc = set_combine(sets.precast.WS['Last Stand'].LowAcc, {
     feet="Orion Socks +1",
@@ -498,6 +505,7 @@ function init_gear_sets()
     -- feet="Orion Socks +3",
   })
   sets.precast.WS['Last Stand'].MidAccMaxTP = set_combine(sets.precast.WS['Last Stand'].MidAcc, {
+    ear2="Telos Earring",
   })
   sets.precast.WS['Last Stand'].HighAcc = set_combine(sets.precast.WS['Last Stand'].MidAcc, {
     -- ear1="Beyla Earring",
@@ -567,18 +575,22 @@ function init_gear_sets()
     -- waist="Orpheus's Sash",
   } -- AGI / MAB
   sets.precast.WS["Trueflight"].MaxTP = set_combine(sets.precast.WS["Trueflight"], {
+    ear2="Novio Earring",
   })
   sets.precast.WS["Trueflight"].LowAcc = set_combine(sets.precast.WS["Trueflight"], {
   })
   sets.precast.WS["Trueflight"].LowAccMaxTP = set_combine(sets.precast.WS["Trueflight"].LowAcc, {
+    ear2="Novio Earring",
   })
   sets.precast.WS["Trueflight"].MidAcc = set_combine(sets.precast.WS["Trueflight"].LowAcc, {
   })
   sets.precast.WS["Trueflight"].MidAccMaxTP = set_combine(sets.precast.WS["Trueflight"].MidAcc, {
+    ear2="Novio Earring",
   })
   sets.precast.WS["Trueflight"].HighAcc = set_combine(sets.precast.WS["Trueflight"].MidAcc, {
   })
   sets.precast.WS["Trueflight"].HighAccMaxTP = set_combine(sets.precast.WS["Trueflight"].HighAcc, {
+    ear2="Novio Earring",
   })
 
   sets.precast.WS["Wildfire"] = sets.precast.WS["Trueflight"]
@@ -611,16 +623,18 @@ function init_gear_sets()
     -- back=gear.RNG_Melee_Crit_Cape
   }
   sets.precast.WS['Evisceration'].MaxTP = set_combine(sets.precast.WS['Evisceration'], {
+    ear2="Sherida Earring",
   })
   sets.precast.WS['Evisceration'].LowAcc = set_combine(sets.precast.WS['Evisceration'], {
     head="Dampening Tam",
     ring2="Chirich Ring +1",
   })
   sets.precast.WS['Evisceration'].LowAccMaxTP = set_combine(sets.precast.WS['Evisceration'].LowAcc, {
+    ear2="Sherida Earring",
   })
   sets.precast.WS['Evisceration'].MidAcc = set_combine(sets.precast.WS['Evisceration'].LowAcc, {
+    ear2="Dignitary's Earring",
     -- body=gear.Adhemar_B_body,
-    -- ear1="Mache Earring +1",
   })
   sets.precast.WS['Evisceration'].MidAccMaxTP = set_combine(sets.precast.WS['Evisceration'].MidAcc, {
   })
@@ -691,18 +705,22 @@ function init_gear_sets()
     waist="Eschan Stone", --7
   } -- 40% DEX / 40% INT + MAB
   sets.precast.WS['Aeolian Edge'].MaxTP = set_combine(sets.precast.WS['Aeolian Edge'], {
+    ear2="Novio Earring",
   })
   sets.precast.WS['Aeolian Edge'].LowAcc = set_combine(sets.precast.WS['Aeolian Edge'], {
   })
   sets.precast.WS['Aeolian Edge'].LowAccMaxTP = set_combine(sets.precast.WS['Aeolian Edge'].LowAcc, {
+    ear2="Novio Earring",
   })
   sets.precast.WS['Aeolian Edge'].MidAcc = set_combine(sets.precast.WS['Aeolian Edge'].LowAcc, {
   })
   sets.precast.WS['Aeolian Edge'].MidAccMaxTP = set_combine(sets.precast.WS['Aeolian Edge'].MidAcc, {
+    ear2="Novio Earring",
   })
   sets.precast.WS['Aeolian Edge'].HighAcc = set_combine(sets.precast.WS['Aeolian Edge'].MidAcc, {
   })
   sets.precast.WS['Aeolian Edge'].HighAccMaxTP = set_combine(sets.precast.WS['Aeolian Edge'].HighAcc, {
+    ear2="Novio Earring",
   })
 
   ------------------------------------------------------------------------------------------------
@@ -1013,10 +1031,9 @@ function init_gear_sets()
 
   sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
     feet=gear.Herc_STP_feet,
-    ear1="Cessance Earring",
+    ear1="Dignitary's Earring",
     ring1="Chirich Ring +1",
     -- head="Carmine Mask +1",
-    -- ear2="Mache Earring +1",
     -- waist="Olseni Belt",
   })
 
@@ -1053,10 +1070,8 @@ function init_gear_sets()
 
   sets.engaged.DW.HighAcc = set_combine(sets.engaged.DW.MidAcc, {
     feet=gear.Herc_STP_feet,
-    ear1="Cessance Earring",
     ring1="Chirich Ring +1",
     -- head="Carmine Mask +1",
-    -- ear2="Mache Earring +1",
     -- ring1="Regal Ring",
     -- waist="Olseni Belt",
   })
@@ -1084,7 +1099,6 @@ function init_gear_sets()
   })
 
   sets.engaged.DW.MidAcc.LowHaste = set_combine(sets.engaged.DW.LowAcc.LowHaste, {
-    ear2="Telos Earring",
     ring2="Ilabrat Ring",
     -- hands=gear.Adhemar_A_hands,
     -- waist="Kentarch Belt +1",
@@ -1092,10 +1106,8 @@ function init_gear_sets()
 
   sets.engaged.DW.HighAcc.LowHaste = set_combine(sets.engaged.DW.MidAcc.LowHaste, {
     feet=gear.Herc_STP_feet,
-    ear1="Cessance Earring",
     ring2="Chirich Ring +1",
     -- head="Carmine Mask +1",
-    -- ear2="Mache Earring +1",
     -- ring1="Regal Ring",
     -- waist="Olseni Belt",
   })
@@ -1125,7 +1137,6 @@ function init_gear_sets()
 
   sets.engaged.DW.MidAcc.MidHaste = set_combine(sets.engaged.DW.LowAcc.MidHaste, {
     legs="Meg. Chausses +2",
-    ear2="Telos Earring",
     ring2="Ilabrat Ring",
     -- waist="Kentarch Belt +1",
   })
@@ -1133,10 +1144,8 @@ function init_gear_sets()
   sets.engaged.DW.HighAcc.MidHaste = set_combine(sets.engaged.DW.MidAcc.MidHaste, {
     legs="Carmine Cuisses +1",
     feet=gear.Herc_STP_feet,
-    ear1="Cessance Earring",
     ring2="Chirich Ring +1",
     -- head="Carmine Mask +1",
-    -- ear2="Mache Earring +1",
     -- ring1="Regal Ring",
     -- waist="Olseni Belt",
   })
@@ -1166,7 +1175,6 @@ function init_gear_sets()
 
   sets.engaged.DW.MidAcc.HighHaste = set_combine(sets.engaged.DW.LowAcc.HighHaste, {
     legs="Meg. Chausses +2",
-    ear2="Telos Earring",
     ring2="Ilabrat Ring",
     -- waist="Kentarch Belt +1",
   })
@@ -1174,10 +1182,8 @@ function init_gear_sets()
   sets.engaged.DW.HighAcc.HighHaste = set_combine(sets.engaged.DW.MidAcc.HighHaste, {
     legs="Carmine Cuisses +1",
     feet=gear.Herc_STP_feet,
-    ear1="Cessance Earring",
     ring2="Chirich Ring +1",
     -- head="Carmine Mask +1",
-    -- ear2="Mache Earring +1",
     -- ring1="Regal Ring",
     -- waist="Olseni Belt",
   })
@@ -1214,10 +1220,8 @@ function init_gear_sets()
   sets.engaged.DW.HighAcc.MaxHaste = set_combine(sets.engaged.DW.MidAcc.MaxHaste, {
     legs="Carmine Cuisses +1",
     feet=gear.Herc_STP_feet,
-    ear1="Cessance Earring",
     ring2="Chirich Ring +1",
     -- head="Carmine Mask +1",
-    -- ear2="Mache Earring +1",
     -- ring1="Regal Ring",
     -- waist="Olseni Belt",
   })
