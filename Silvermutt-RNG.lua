@@ -59,8 +59,8 @@ function job_setup()
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.HybridMode:options('Normal', 'LightDef')
-  state.RangedMode:options('Normal', 'Acc', 'HighAcc')
-  state.WeaponskillMode:options('Normal', 'Acc', 'Enmity')
+  state.RangedMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
+  state.WeaponskillMode:options('Normal', 'MaxTP', 'LowAcc', 'LowAccMaxTP', 'MidAcc', 'MidAccMaxTP', 'HighAcc', 'HighAccMaxTP')
   state.IdleMode:options('Normal', 'LightDef')
   state.WeaponSet = M{['description']='Weapon Set', 'TempWeak1', 'TempWeak2', 'MagicRA', 'PhysRA', 'PhysRA RangedOnly', 'PhysRA NoBuff', 'Melee', 'CritRA'}
   state.RangedWeaponSet = M{['description']='Ranged Weapon Set', 'Doomsday', 'Pharaoh\'s Bow', 'Grosveneur\'s Bow', 
@@ -396,33 +396,43 @@ function init_gear_sets()
     -- ring1="Regal Ring",
     -- ring2="Epaminondas's Ring",
   }
-
-  sets.precast.WS.Acc = set_combine(sets.precast.WS, {
+  sets.precast.WS.MaxTP = set_combine(sets.precast.WS, {
+  })
+  sets.precast.WS.LowAcc = set_combine(sets.precast.WS, {
     waist="Kwahu Kachina Belt +1",
-    -- feet="Arcadian Socks +3",
-    -- neck="Combatant's Torque",
     -- ear1="Beyla Earring",
   })
-
-  sets.precast.WS.Enmity = set_combine(sets.precast.WS, {
-    -- hands="Arc. Bracers +3",
+  sets.precast.WS.LowAccMaxTP = set_combine(sets.precast.WS.LowAcc, {
+  })
+  sets.precast.WS.MidAcc = set_combine(sets.precast.WS.LowAcc, {
     -- feet="Arcadian Socks +3",
-    -- ear1="Beyla Earring",
+    -- neck="Combatant's Torque",
+  })
+  sets.precast.WS.MidAccMaxTP = set_combine(sets.precast.WS.MidAcc, {
+  })
+  sets.precast.WS.HighAcc = set_combine(sets.precast.WS.MidAcc, {
+  })
+  sets.precast.WS.HighAccMaxTP = set_combine(sets.precast.WS.HighAcc, {
   })
 
   sets.precast.WS['Apex Arrow'] = sets.precast.WS
-
-  sets.precast.WS['Apex Arrow'].Acc = set_combine(sets.precast.WS['Apex Arrow'], {
-    feet="Orion Socks +1",
+  sets.precast.WS['Apex Arrow'].MaxTP = set_combine(sets.precast.WS['Apex Arrow'], {
+  })
+  sets.precast.WS['Apex Arrow'].LowAcc = set_combine(sets.precast.WS['Apex Arrow'], {
     waist="Kwahu Kachina Belt +1",
-    -- feet="Orion Socks +3",
     -- ear1="Beyla Earring",
   })
-
-  sets.precast.WS['Apex Arrow'].Enmity = set_combine(sets.precast.WS['Apex Arrow'], {
-    -- hands="Arc. Bracers +3",
-    -- feet="Arcadian Socks +3",
-    -- ear1="Beyla Earring",
+  sets.precast.WS['Apex Arrow'].LowAccMaxTP = set_combine(sets.precast.WS['Apex Arrow'].LowAcc, {
+  })
+  sets.precast.WS['Apex Arrow'].MidAcc = set_combine(sets.precast.WS['Apex Arrow'].LowAcc, {
+    feet="Orion Socks +1",
+    -- feet="Orion Socks +3",
+  })
+  sets.precast.WS['Apex Arrow'].MidAccMaxTP = set_combine(sets.precast.WS['Apex Arrow'].MidAcc, {
+  })
+  sets.precast.WS['Apex Arrow'].HighAcc = set_combine(sets.precast.WS['Apex Arrow'].MidAcc, {
+  })
+  sets.precast.WS['Apex Arrow'].HighAccMaxTP = set_combine(sets.precast.WS['Apex Arrow'].HighAcc, {
   })
 
   sets.precast.WS['Jishnu\'s Radiance'] = set_combine(sets.precast.WS, {
@@ -447,42 +457,53 @@ function init_gear_sets()
     -- back=gear.RNG_WS2_Cape,
     -- waist="Fotia Belt",
   })
-
-  sets.precast.WS['Jishnu\'s Radiance'].Acc = set_combine(sets.precast.WS['Jishnu\'s Radiance'], {
-    legs="Mummu Kecks +2",
+  sets.precast.WS['Jishnu\'s Radiance'].MaxTP = set_combine(sets.precast.WS['Jishnu\'s Radiance'], {
+  })
+  sets.precast.WS['Jishnu\'s Radiance'].LowAcc = set_combine(sets.precast.WS['Jishnu\'s Radiance'], {
     ear2="Telos Earring",
     waist="Kwahu Kachina Belt +1",
+  })
+  sets.precast.WS['Jishnu\'s Radiance'].LowAccMaxTP = set_combine(sets.precast.WS['Jishnu\'s Radiance'].LowAcc, {
+  })
+  sets.precast.WS['Jishnu\'s Radiance'].MidAcc = set_combine(sets.precast.WS['Jishnu\'s Radiance'].LowAcc, {
+    legs="Mummu Kecks +2",
+    -- neck="Iskur Gorget",
+    -- ring1="Regal Ring",
+  })
+  sets.precast.WS['Jishnu\'s Radiance'].MidAccMaxTP = set_combine(sets.precast.WS['Jishnu\'s Radiance'].MidAcc, {
+  })
+  sets.precast.WS['Jishnu\'s Radiance'].HighAcc = set_combine(sets.precast.WS['Jishnu\'s Radiance'].MidAcc, {
+    ring2="Hajduk Ring +1",
     -- feet="Arcadian Socks +3",
     -- neck="Iskur Gorget",
     -- ear1="Beyla Earring",
-    -- ring1="Regal Ring",
-    -- ring2="Hajduk Ring +1",
   })
-
-  sets.precast.WS['Jishnu\'s Radiance'].Enmity = set_combine(sets.precast.WS['Jishnu\'s Radiance'], {
-    -- hands="Arc. Bracers +3",
-    -- feet="Arcadian Socks +3",
-    -- ear1="Beyla Earring",
+  sets.precast.WS['Jishnu\'s Radiance'].HighAccMaxTP = set_combine(sets.precast.WS['Jishnu\'s Radiance'].HighAcc, {
   })
 
   sets.precast.WS["Last Stand"] = set_combine(sets.precast.WS, {
     neck="Scout's Gorget +1",
     -- neck="Scout's Gorget +2",
   })
-
-  sets.precast.WS['Last Stand'].Acc = set_combine(sets.precast.WS['Last Stand'], {
-    feet="Orion Socks +1",
+  sets.precast.WS['Last Stand'].MaxTP = set_combine(sets.precast.WS['Last Stand'], {
+  })
+  sets.precast.WS['Last Stand'].LowAcc = set_combine(sets.precast.WS['Last Stand'], {
     ear2="Telos Earring",
     waist="Kwahu Kachina Belt +1",
-    -- feet="Orion Socks +3",
-    -- ear1="Beyla Earring",
-    -- ring2="Hajduk Ring +1",
   })
-
-  sets.precast.WS['Last Stand'].Enmity = set_combine(sets.precast.WS['Last Stand'], {
-    -- hands="Arc. Bracers +3",
-    -- feet="Arcadian Socks +3",
+  sets.precast.WS['Last Stand'].LowAccMaxTP = set_combine(sets.precast.WS['Last Stand'].LowAcc, {
+  })
+  sets.precast.WS['Last Stand'].MidAcc = set_combine(sets.precast.WS['Last Stand'].LowAcc, {
+    feet="Orion Socks +1",
+    ring2="Hajduk Ring +1",
+    -- feet="Orion Socks +3",
+  })
+  sets.precast.WS['Last Stand'].MidAccMaxTP = set_combine(sets.precast.WS['Last Stand'].MidAcc, {
+  })
+  sets.precast.WS['Last Stand'].HighAcc = set_combine(sets.precast.WS['Last Stand'].MidAcc, {
     -- ear1="Beyla Earring",
+  })
+  sets.precast.WS['Last Stand'].HighAccMaxTP = set_combine(sets.precast.WS['Last Stand'].HighAcc, {
   })
 
   sets.precast.WS["Coronach"] = set_combine(sets.precast.WS['Last Stand'], {
@@ -490,19 +511,26 @@ function init_gear_sets()
     neck="Scout's Gorget +1",
     -- neck="Scout's Gorget +2",
   })
-
-  sets.precast.WS["Coronach"].Acc = set_combine(sets.precast.WS['Coronach'], {
+  sets.precast.WS["Coronach"].MaxTP = set_combine(sets.precast.WS['Coronach'], {
+  })
+  sets.precast.WS["Coronach"].LowAcc = set_combine(sets.precast.WS['Coronach'], {
     ear1="Telos Earring",
+  })
+  sets.precast.WS["Coronach"].LowAccMaxTP = set_combine(sets.precast.WS['Coronach'].LowAcc, {
+  })
+  sets.precast.WS["Coronach"].MidAcc = set_combine(sets.precast.WS['Coronach'].LowAcc, {
     -- ear2="Beyla Earring",
   })
-
-  sets.precast.WS["Coronach"].Enmity = set_combine(sets.precast.WS['Coronach'], {
-    -- ear2="Beyla Earring",
+  sets.precast.WS["Coronach"].MidAccMaxTP = set_combine(sets.precast.WS['Coronach'].MidAcc, {
+  })
+  sets.precast.WS["Coronach"].HighAcc = set_combine(sets.precast.WS['Coronach'].MidAcc, {
+  })
+  sets.precast.WS["Coronach"].HighAccMaxTP = set_combine(sets.precast.WS['Coronach'].HighAcc, {
   })
 
   sets.precast.WS["Trueflight"] = {
-    head="Orion Beret +1",
-    body="Meghanada Cuirie +2",
+    head=empty,
+    body="Cohort Cloak +1",
     hands=gear.Carmine_D_hands,
     legs=gear.Herc_MAB_legs,
     feet=gear.Herc_WSD_feet,
@@ -539,8 +567,29 @@ function init_gear_sets()
     -- back=gear.RNG_WS1_Cape,
     -- waist="Orpheus's Sash",
   } -- AGI / MAB
+  sets.precast.WS["Trueflight"].MaxTP = set_combine(sets.precast.WS["Trueflight"], {
+  })
+  sets.precast.WS["Trueflight"].LowAcc = set_combine(sets.precast.WS["Trueflight"], {
+  })
+  sets.precast.WS["Trueflight"].LowAccMaxTP = set_combine(sets.precast.WS["Trueflight"].LowAcc, {
+  })
+  sets.precast.WS["Trueflight"].MidAcc = set_combine(sets.precast.WS["Trueflight"].LowAcc, {
+  })
+  sets.precast.WS["Trueflight"].MidAccMaxTP = set_combine(sets.precast.WS["Trueflight"].MidAcc, {
+  })
+  sets.precast.WS["Trueflight"].HighAcc = set_combine(sets.precast.WS["Trueflight"].MidAcc, {
+  })
+  sets.precast.WS["Trueflight"].HighAccMaxTP = set_combine(sets.precast.WS["Trueflight"].HighAcc, {
+  })
 
   sets.precast.WS["Wildfire"] = sets.precast.WS["Trueflight"]
+  sets.precast.WS["Wildfire"].MaxTP = sets.precast.WS["Trueflight"].MaxTP
+  sets.precast.WS["Wildfire"].LowAcc = sets.precast.WS["Trueflight"].LowAcc
+  sets.precast.WS["Wildfire"].LowAccMaxTP = sets.precast.WS["Trueflight"].LowAccMaxTP
+  sets.precast.WS["Wildfire"].MidAcc = sets.precast.WS["Trueflight"].MidAcc
+  sets.precast.WS["Wildfire"].MidAccMaxTP = sets.precast.WS["Trueflight"].MidAccMaxTP
+  sets.precast.WS["Wildfire"].HighAcc = sets.precast.WS["Trueflight"].HighAcc
+  sets.precast.WS["Wildfire"].HighAccMaxTP = sets.precast.WS["Trueflight"].HighAccMaxTP
 
   sets.precast.WS['Evisceration'] = {
     head=gear.Adhemar_B_head,
@@ -562,12 +611,23 @@ function init_gear_sets()
     -- ring1="Regal Ring",
     -- back=gear.RNG_Melee_Crit_Cape
   }
-
-  sets.precast.WS['Evisceration'].Acc = set_combine(sets.precast.WS['Evisceration'], {
+  sets.precast.WS['Evisceration'].MaxTP = set_combine(sets.precast.WS['Evisceration'], {
+  })
+  sets.precast.WS['Evisceration'].LowAcc = set_combine(sets.precast.WS['Evisceration'], {
     head="Dampening Tam",
     ring2="Chirich Ring +1",
+  })
+  sets.precast.WS['Evisceration'].LowAccMaxTP = set_combine(sets.precast.WS['Evisceration'].LowAcc, {
+  })
+  sets.precast.WS['Evisceration'].MidAcc = set_combine(sets.precast.WS['Evisceration'].LowAcc, {
     -- body=gear.Adhemar_B_body,
     -- ear1="Mache Earring +1",
+  })
+  sets.precast.WS['Evisceration'].MidAccMaxTP = set_combine(sets.precast.WS['Evisceration'].MidAcc, {
+  })
+  sets.precast.WS['Evisceration'].HighAcc = set_combine(sets.precast.WS['Evisceration'].MidAcc, {
+  })
+  sets.precast.WS['Evisceration'].HighAccMaxTP = set_combine(sets.precast.WS['Evisceration'].HighAcc, {
   })
 
   sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
@@ -589,16 +649,33 @@ function init_gear_sets()
     -- back=gear.RNG_STR_WSD_Cape,
     -- waist="Sailfi Belt +1",
   })
-
-  sets.precast.WS['Savage Blade'].Acc = set_combine(sets.precast.WS['Savage Blade'], {
+  sets.precast.WS['Savage Blade'].MaxTP = set_combine(sets.precast.WS['Savage Blade'], {
+  })
+  sets.precast.WS['Savage Blade'].LowAcc = set_combine(sets.precast.WS['Savage Blade'], {
+    ear1="Telos Earring",
     ring2="Chirich Ring +1",
-    -- ear1="Telos Earring",
+  })
+  sets.precast.WS['Savage Blade'].LowAccMaxTP = set_combine(sets.precast.WS['Savage Blade'].LowAcc, {
+  })
+  sets.precast.WS['Savage Blade'].MidAcc = set_combine(sets.precast.WS['Savage Blade'].LowAcc, {
+  })
+  sets.precast.WS['Savage Blade'].MidAccMaxTP = set_combine(sets.precast.WS['Savage Blade'].MidAcc, {
+  })
+  sets.precast.WS['Savage Blade'].HighAcc = set_combine(sets.precast.WS['Savage Blade'].MidAcc, {
+  })
+  sets.precast.WS['Savage Blade'].HighAccMaxTP = set_combine(sets.precast.WS['Savage Blade'].HighAcc, {
   })
 
   sets.precast.WS['Rampage'] = set_combine(sets.precast.WS['Evisceration'], {
     feet=gear.Herc_TA_feet
   })
-  sets.precast.WS['Rampage'].Acc = sets.precast.WS['Evisceration'].Acc
+  sets.precast.WS['Rampage'].MaxTP = sets.precast.WS['Evisceration']
+  sets.precast.WS['Rampage'].LowAcc = sets.precast.WS['Evisceration']
+  sets.precast.WS['Rampage'].LowAccMaxTP = sets.precast.WS['Evisceration'].LowAcc
+  sets.precast.WS['Rampage'].MidAcc = sets.precast.WS['Evisceration'].LowAcc
+  sets.precast.WS['Rampage'].MidAccMaxTP = sets.precast.WS['Evisceration'].MidAcc
+  sets.precast.WS['Rampage'].HighAcc = sets.precast.WS['Evisceration'].MidAcc
+  sets.precast.WS['Rampage'].HighAccMaxTP = sets.precast.WS['Evisceration'].HighAcc
 
   sets.precast.WS['Aeolian Edge'] = {
     head="Highwing Helm", --20
@@ -614,6 +691,20 @@ function init_gear_sets()
     back="Argochampsa Mantle", --12
     waist="Eschan Stone", --7
   } -- 40% DEX / 40% INT + MAB
+  sets.precast.WS['Aeolian Edge'].MaxTP = set_combine(sets.precast.WS['Aeolian Edge'], {
+  })
+  sets.precast.WS['Aeolian Edge'].LowAcc = set_combine(sets.precast.WS['Aeolian Edge'], {
+  })
+  sets.precast.WS['Aeolian Edge'].LowAccMaxTP = set_combine(sets.precast.WS['Aeolian Edge'].LowAcc, {
+  })
+  sets.precast.WS['Aeolian Edge'].MidAcc = set_combine(sets.precast.WS['Aeolian Edge'].LowAcc, {
+  })
+  sets.precast.WS['Aeolian Edge'].MidAccMaxTP = set_combine(sets.precast.WS['Aeolian Edge'].MidAcc, {
+  })
+  sets.precast.WS['Aeolian Edge'].HighAcc = set_combine(sets.precast.WS['Aeolian Edge'].MidAcc, {
+  })
+  sets.precast.WS['Aeolian Edge'].HighAccMaxTP = set_combine(sets.precast.WS['Aeolian Edge'].HighAcc, {
+  })
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Midcast Sets ------------------------------------------
@@ -675,9 +766,11 @@ function init_gear_sets()
     -- waist="Kwahu Kachina Belt +1" --8 [0] 20/0 <5> {0} (0)
     --275 AGI [71 STP] 301 racc / 201 ratt <15 crit> {16 dmg limit} (54 Recycle)
   }
-
-  sets.midcast.RA.Acc = set_combine(sets.midcast.RA, {
+  sets.midcast.RA.LowAcc = set_combine(sets.midcast.RA, {
     legs="Mummu Kecks +2",
+  })
+  sets.midcast.RA.MidAcc = set_combine(sets.midcast.RA.LowAcc, {
+    ring2="Hajduk Ring +1", --0 [0] 17/0 <0> {0} (0)
     -- Goal:
     -- head="Arcadian Beret +3", --37 [0] 37/62 <0> {0} (38)
     -- body="Malignance Tabard", --42 [11] 50/0 <0> {6} (0)
@@ -710,8 +803,7 @@ function init_gear_sets()
     -- Includes set bonus 15 racc from orion + regal
     -- 265 AGI [49 STP] 362 racc / 247 ratt <15 crit> {14 dmg limit} (54 Recycle)
   })
-
-  sets.midcast.RA.HighAcc = set_combine(sets.midcast.RA.Acc, {
+  sets.midcast.RA.HighAcc = set_combine(sets.midcast.RA.MidAcc, {
     -- Goal:
     -- head="Orion Beret +3", --39 [0] 47/34 <0> {0} (0)
     -- body="Orion Jerkin +3", --40 [8] 60/41 <0> {0} (0)
@@ -1214,9 +1306,6 @@ function init_gear_sets()
     -- head=gear.Herc_TH_head, --2
   }
 
-  sets.FullTP = {
-    -- ear1="Crematio Earring"
-  }
   sets.Obi = {
     waist="Hachirin-no-Obi"
   }
@@ -1316,11 +1405,6 @@ end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
   if spell.type == 'WeaponSkill' then
-    -- Replace TP-bonus gear if not needed.
-    if spell.english == 'Trueflight' or spell.english == 'Aeolian Edge' and player.tp > 2900 then
-      equip(sets.FullTP)
-    end
-
     -- Equip obi if weather/day matches for WS.
     if elemental_ws:contains(spell.english) then
       -- Matching double weather (w/o day conflict).
@@ -1414,7 +1498,6 @@ function job_buff_change(buff,gain)
   if S{'flurry'}:contains(buff:lower()) then
     if not gain then
       flurry = nil
-      add_to_chat(122, "Flurry status cleared.")
     end
     if not midaction() then
       handle_equipping_gear(player.status)
@@ -1479,16 +1562,20 @@ function update_combat_form()
 end
 
 function get_custom_wsmode(spell, action, spellMap)
-  local wsmode
+  local wsmode = ''
+  -- Ranged WS
   if (spell.skill == 'Marksmanship' or spell.skill == 'Archery') then
-    if state.RangedMode.value == 'Acc' or state.RangedMode.value == 'HighAcc' then
-      wsmode = 'Acc'
-      add_to_chat(1, 'WS Mode Auto Acc')
+    if state.RangedMode.value ~= 'Normal' then
+      wsmode = state.RangedMode.value
     end
-  elseif (spell.skill ~= 'Marksmanship' and spell.skill ~= 'Archery') then
-    if state.OffenseMode.value == 'Acc' or state.OffenseMode.value == 'HighAcc' then
-      wsmode = 'Acc'
+  else -- Melee WS
+    if state.OffenseMode.value ~= 'Normal' then
+      wsmode = state.OffenseMode.value
     end
+  end
+
+  if player.tp == 2900 then
+    wsmode = wsmode..'MaxTp'
   end
 
   return wsmode
@@ -1656,10 +1743,8 @@ windower.register_event('action', function(act)
     if act.category == 4 then
       local param = act.param
       if param == 845 and flurry ~= 2 then
-        --add_to_chat(122, 'Flurry Status: Flurry I')
         flurry = 1
       elseif param == 846 then
-        --add_to_chat(122, 'Flurry Status: Flurry II')
         flurry = 2
       end
     end
@@ -1736,7 +1821,6 @@ function check_ammo(spell, action, spellMap, eventArgs)
     if player.equipment.ammo == 'empty' or player.equipment.ammo ~= DefaultAmmo[player.equipment.range] then
       if DefaultAmmo[player.equipment.range] then
         if player.inventory[DefaultAmmo[player.equipment.range]] then
-          --add_to_chat(3,"Using Default Ammo")
           equip({ammo=DefaultAmmo[player.equipment.range]})
         else
           add_to_chat(3,"Default ammo unavailable.  Leaving empty.")
@@ -1750,7 +1834,6 @@ function check_ammo(spell, action, spellMap, eventArgs)
     if elemental_ws:contains(spell.english) then
       if player.inventory[MagicAmmo[player.equipment.range]] then
         equip({ammo=MagicAmmo[player.equipment.range]})
-        add_to_chat(1, 'Magic Ammo')
       else
         add_to_chat(3,"Magic ammo unavailable.  Using default ammo.")
         equip({ammo=DefaultAmmo[player.equipment.range]})
@@ -1760,7 +1843,6 @@ function check_ammo(spell, action, spellMap, eventArgs)
       if state.RangedMode.value == 'Acc' then
         if player.inventory[AccAmmo[player.equipment.range]] then
           equip({ammo=AccAmmo[player.equipment.range]})
-          add_to_chat(1, 'Acc Ammo')
         else
           add_to_chat(3,"Acc ammo unavailable.  Using default ammo.")
           equip({ammo=DefaultAmmo[player.equipment.range]})
