@@ -245,6 +245,7 @@ function init_gear_sets()
 
   -- Precast sets to enhance JAs
   sets.precast.JA['Eagle Eye Shot'] = {
+    legs="Arc. Braccae +1"
     -- legs="Arc. Braccae +3"
   }
   sets.precast.JA['Bounty Shot'] = {
@@ -293,8 +294,10 @@ function init_gear_sets()
   sets.precast.RA = {
     head=gear.Taeon_RA_head, --10/0
     hands=gear.Carmine_D_hands, --8/11
+    legs="Orion Braccae +1", --12/0
     feet="Meg. Jam. +2", --10/0
     neck="Scout's Gorget +1", --3/0
+    back=gear.RNG_SNP_Cape, --10/0
     waist="Impulse Belt", --3/0
 
     -- Goal:
@@ -317,7 +320,7 @@ function init_gear_sets()
     -- back=gear.RNG_SNP_Cape, --10/0
     -- waist="Yemaya Belt", --0/5
     --62 Snapshot / 29 Rapid Shot
-  } --34 Snapshot / 11 Rapid Shot
+  } --56 Snapshot / 11 Rapid Shot
 
   -- (15% Flurry, 10% Snapshot, 5% Rapid from Merits)
   sets.precast.RA.Flurry1 = {
@@ -325,6 +328,7 @@ function init_gear_sets()
     hands=gear.Carmine_D_hands, --8/11
     feet="Meg. Jam. +2", --10/0
     neck="Scout's Gorget +1", --3/0
+    back=gear.RNG_SNP_Cape, --10/0
     waist="Impulse Belt", --3/0
 
     -- Goal:
@@ -337,14 +341,15 @@ function init_gear_sets()
     -- back=gear.RNG_SNP_Cape, --10/0
     -- waist="Impulse Belt", --3/0
     --45 Snapshot / 42 Rapid Shot
-  } --34 Snapshot / 11 Rapid Shot
+  } --44 Snapshot / 11 Rapid Shot
 
   -- (30% Flurry, 10% Snapshot, 5% Rapid from Merits)
   sets.precast.RA.Flurry2 = {
-    head=gear.Taeon_RA_head, --10/0
+    head="Orion Beret +1", --0/14
     hands=gear.Carmine_D_hands, --8/11
     feet="Meg. Jam. +2", --10/0
     neck="Scout's Gorget +1", --3/0
+    back=gear.RNG_SNP_Cape, --10/0
     waist="Impulse Belt", --3/0
 
     -- Goal:
@@ -357,7 +362,7 @@ function init_gear_sets()
     -- back=gear.RNG_SNP_Cape, --10/0
     -- waist="Yemaya Belt", --0/5
     --32 Snapshot / 57 Rapid Shot
-  } --34 Snapshot / 11 Rapid Shot
+  } --34 Snapshot / 25 Rapid Shot
 
   sets.precast.RA.Gastra = set_combine(sets.precast.RA, {
     -- head="Orion Beret +3", --0/18
@@ -1058,7 +1063,6 @@ function init_gear_sets()
     -- neck="Iskur Gorget",
     -- ring1="Hetairoi Ring",
     -- back=gear.RNG_DW_Cape, --10
-    -- waist="Reiki Yotai", --7
   } -- 52%
 
   sets.engaged.DW.LowAcc = set_combine(sets.engaged.DW, {
@@ -1099,7 +1103,6 @@ function init_gear_sets()
     -- neck="Iskur Gorget",
     -- ring1="Hetairoi Ring",
     -- back=gear.RNG_TP_Cape,
-    -- waist="Reiki Yotai", --7
   } -- 42%
 
   sets.engaged.DW.LowAcc.LowHaste = set_combine(sets.engaged.DW.LowHaste, {
@@ -1142,7 +1145,6 @@ function init_gear_sets()
     -- neck="Iskur Gorget",
     -- ring1="Hetairoi Ring",
     -- back=gear.RNG_TP_Cape,
-    -- waist="Reiki Yotai", --7
   } -- 31%
 
   sets.engaged.DW.LowAcc.MidHaste = set_combine(sets.engaged.DW.MidHaste, {
@@ -1188,7 +1190,6 @@ function init_gear_sets()
     -- neck="Iskur Gorget",
     -- ring1="Hetairoi Ring",
     -- back=gear.RNG_TP_Cape,
-    -- waist="Reiki Yotai", --7
   } -- 27%
 
   sets.engaged.DW.LowAcc.HighHaste = set_combine(sets.engaged.DW.HighHaste, {
