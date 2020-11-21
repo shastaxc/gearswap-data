@@ -620,7 +620,7 @@ function init_gear_sets()
   })
 
   sets.idle = {
-    ammo="Ginsen",
+    ammo="Aurgelmir Orb",
     head=gear.Adhemar_B_head,
     body="Kendatsuba Samue +1",
     hands=gear.Adhemar_B_hands,
@@ -901,6 +901,12 @@ end
 function job_aftercast(spell, action, spellMap, eventArgs)
   if spell.english == 'Boost' and not spell.interrupted then
     info.boost_on = true
+    -- Wait 1 second to verify boost was applied, otherwise unlock gear
+    coroutine.schedule(function()
+      if not buffactive.Boost then
+        info.boost_on = false
+      end
+    end, 1)
   end
   -- if spell.type == 'WeaponSkill' and not spell.interrupted and state.FootworkWS and state.Buff.Footwork then
   --   send_command('cancel Footwork')
