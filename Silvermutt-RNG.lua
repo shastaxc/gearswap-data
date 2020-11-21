@@ -60,7 +60,6 @@ function job_setup()
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.HybridMode:options('Normal', 'LightDef')
   state.RangedMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
-  state.WeaponskillMode:options('Normal', 'MaxTP', 'LowAcc', 'LowAccMaxTP', 'MidAcc', 'MidAccMaxTP', 'HighAcc', 'HighAccMaxTP')
   state.IdleMode:options('Normal', 'LightDef')
   state.WeaponSet = M{['description']='Weapon Set', 'TempWeak1', 'TempWeak2', 'MagicRA', 'PhysRA', 'PhysRA RangedOnly', 'PhysRA NoBuff', 'Melee', 'CritRA'}
   state.RangedWeaponSet = M{['description']='Ranged Weapon Set', 'Doomsday', 'Pharaoh\'s Bow', 'Grosveneur\'s Bow', 
@@ -1574,8 +1573,8 @@ function get_custom_wsmode(spell, action, spellMap)
     end
   end
 
-  if player.tp == 2900 then
-    wsmode = wsmode..'MaxTp'
+  if player.tp > 2900 then
+    wsmode = wsmode..'MaxTP'
   end
 
   return wsmode
@@ -1669,8 +1668,6 @@ function display_current_job_state(eventArgs)
     m_msg = m_msg .. '/' ..state.HybridMode.value
   end
 
-  local ws_msg = state.WeaponskillMode.value
-
   local d_msg = 'None'
   if state.DefenseMode.value ~= 'None' then
     d_msg = state.DefenseMode.value .. state[state.DefenseMode.value .. 'DefenseMode'].value
@@ -1687,9 +1684,8 @@ function display_current_job_state(eventArgs)
   end
 
   add_to_chat(002, '| ' ..string.char(31,210).. 'Melee' ..cf_msg.. ': ' ..string.char(31,001)..m_msg.. string.char(31,002)..  ' |'
-      ..string.char(31,207).. ' WS: ' ..string.char(31,001)..ws_msg.. string.char(31,002)..  ' |'
       ..string.char(31,004).. ' Defense: ' ..string.char(31,001)..d_msg.. string.char(31,002)..  ' |'
-      ..string.char(31,008).. ' Idle: ' ..string.char(31,001)..i_msg.. string.char(31,002)..  ' |'
+      ..string.char(31,207).. ' Idle: ' ..string.char(31,001)..i_msg.. string.char(31,002)..  ' |'
       ..string.char(31,002)..msg)
 
   eventArgs.handled = true

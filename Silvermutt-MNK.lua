@@ -57,7 +57,6 @@ function job_setup()
   windower.raw_register_event('action', on_action_for_impetus)
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
-  state.WeaponskillMode:options('Normal', 'MaxTp', 'LowAcc', 'LowAccMaxTp', 'MidAcc', 'MidAccMaxTp', 'HighAcc', 'HighAccMaxTp')
   state.HybridMode:options('Normal', 'LightDef')
   state.IdleMode:options('Normal', 'LightDef')
 
@@ -300,25 +299,25 @@ function init_gear_sets()
     -- ring1="Begrudging Ring",
     -- ring2="Niqmaddu Ring",
   })
-  sets.precast.WS["Victory Smite"].MaxTp = set_combine(sets.precast.WS["Victory Smite"], {
+  sets.precast.WS["Victory Smite"].MaxTP = set_combine(sets.precast.WS["Victory Smite"], {
   })
   sets.precast.WS["Victory Smite"].LowAcc = set_combine(sets.precast.WS["Victory Smite"], {
     neck="Fotia Gorget",
   })
-  sets.precast.WS["Victory Smite"].LowAccMaxTp = set_combine(sets.precast.WS["Victory Smite"].LowAcc, {
+  sets.precast.WS["Victory Smite"].LowAccMaxTP = set_combine(sets.precast.WS["Victory Smite"].LowAcc, {
   })
   sets.precast.WS["Victory Smite"].MidAcc = set_combine(sets.precast.WS["Victory Smite"].LowAcc, {
     ammo="Falcon Eye",
     -- head="Rao Kabuto +1",
   })
-  sets.precast.WS["Victory Smite"].MidAccMaxTp = set_combine(sets.precast.WS["Victory Smite"].MidAcc, {
+  sets.precast.WS["Victory Smite"].MidAccMaxTP = set_combine(sets.precast.WS["Victory Smite"].MidAcc, {
   })
   sets.precast.WS["Victory Smite"].HighAcc = set_combine(sets.precast.WS["Victory Smite"].MidAcc, {
     -- head="Ken. Jinpachi +1",
     -- legs="Ken. Hakama +1",
     -- feet="Ken. Sune-Ate +1",
   })
-  sets.precast.WS["Victory Smite"].HighAccMaxTp = set_combine(sets.precast.WS["Victory Smite"].HighAcc, {
+  sets.precast.WS["Victory Smite"].HighAccMaxTP = set_combine(sets.precast.WS["Victory Smite"].HighAcc, {
   })
 
   -- Shijin Spiral: 100% DEX
@@ -345,26 +344,26 @@ function init_gear_sets()
     -- ring2="Regal Ring",
     -- back=gear.MNK_WS_Cape,
   })
-  sets.precast.WS["Shijin Spiral"].MaxTp = set_combine(sets.precast.WS["Shijin Spiral"], {
+  sets.precast.WS["Shijin Spiral"].MaxTP = set_combine(sets.precast.WS["Shijin Spiral"], {
   })
   sets.precast.WS["Shijin Spiral"].LowAcc = set_combine(sets.precast.WS["Shijin Spiral"], {
     neck="Fotia Gorget",
     head="Mummu Bonnet +2",
     -- head="Ken. Jinpachi +1",
   })
-  sets.precast.WS["Shijin Spiral"].LowAccMaxTp = set_combine(sets.precast.WS["Shijin Spiral"].LowAcc, {
+  sets.precast.WS["Shijin Spiral"].LowAccMaxTP = set_combine(sets.precast.WS["Shijin Spiral"].LowAcc, {
   })
   sets.precast.WS["Shijin Spiral"].MidAcc = set_combine(sets.precast.WS["Shijin Spiral"].LowAcc, {
     ammo="Falcon Eye",
     ear2="Telos Earring",
   })
-  sets.precast.WS["Shijin Spiral"].MidAccMaxTp = set_combine(sets.precast.WS["Shijin Spiral"].MidAcc, {
+  sets.precast.WS["Shijin Spiral"].MidAccMaxTP = set_combine(sets.precast.WS["Shijin Spiral"].MidAcc, {
   })
   sets.precast.WS["Shijin Spiral"].HighAcc = set_combine(sets.precast.WS["Shijin Spiral"].MidAcc, {
     hands=gear.Ryuo_A_hands,
     feet="Mummu Gamashes +2",
   })
-  sets.precast.WS["Shijin Spiral"].HighAccMaxTp = set_combine(sets.precast.WS["Shijin Spiral"].HighAcc, {
+  sets.precast.WS["Shijin Spiral"].HighAccMaxTP = set_combine(sets.precast.WS["Shijin Spiral"].HighAcc, {
   })
 
   -- Asuran Fists: 20% STR / 20% VIT
@@ -383,26 +382,26 @@ function init_gear_sets()
     back=gear.MNK_STR_DA_Cape,
     waist="Moonbow Belt +1",
   })
-  sets.precast.WS["Asuran Fists"].MaxTp = set_combine(sets.precast.WS["Asuran Fists"], {
+  sets.precast.WS["Asuran Fists"].MaxTP = set_combine(sets.precast.WS["Asuran Fists"], {
     ear2="Odnowa Earring +1",
   })
   sets.precast.WS["Asuran Fists"].LowAcc = set_combine(sets.precast.WS["Asuran Fists"], {
     neck="Fotia Gorget",
   })
-  sets.precast.WS["Asuran Fists"].LowAccMaxTp = set_combine(sets.precast.WS["Asuran Fists"].LowAcc, {
+  sets.precast.WS["Asuran Fists"].LowAccMaxTP = set_combine(sets.precast.WS["Asuran Fists"].LowAcc, {
     ear2="Odnowa Earring +1",
   })
   sets.precast.WS["Asuran Fists"].MidAcc = set_combine(sets.precast.WS["Asuran Fists"].LowAcc, {
     hands=gear.Ryuo_A_hands,
   })
-  sets.precast.WS["Asuran Fists"].MidAccMaxTp = set_combine(sets.precast.WS["Asuran Fists"].MidAcc, {
+  sets.precast.WS["Asuran Fists"].MidAccMaxTP = set_combine(sets.precast.WS["Asuran Fists"].MidAcc, {
     ear2="Odnowa Earring +1",
   })
   sets.precast.WS["Asuran Fists"].HighAcc = set_combine(sets.precast.WS["Asuran Fists"].MidAcc, {
     ammo="Falcon Eye",
     head="Mummu Bonnet +2",
   })
-  sets.precast.WS["Asuran Fists"].HighAccMaxTp = set_combine(sets.precast.WS["Asuran Fists"].HighAcc, {
+  sets.precast.WS["Asuran Fists"].HighAccMaxTP = set_combine(sets.precast.WS["Asuran Fists"].HighAcc, {
     ear2="Odnowa Earring +1",
   })
 
@@ -428,27 +427,27 @@ function init_gear_sets()
     -- ring2="Niqmaddu Ring",
     -- back=gear.MNK_WS_Cape,
   })
-  sets.precast.WS["Ascetic's Fury"].MaxTp = set_combine(sets.precast.WS["Asuran Fists"], {
+  sets.precast.WS["Ascetic's Fury"].MaxTP = set_combine(sets.precast.WS["Asuran Fists"], {
     ear2="Odr Earring",
   })
   sets.precast.WS["Ascetic's Fury"].LowAcc = set_combine(sets.precast.WS["Ascetic's Fury"], {
     head="Mummu Bonnet +2",
     -- feet="Ken. Sune-Ate +1",
   })
-  sets.precast.WS["Ascetic's Fury"].LowAccMaxTp = set_combine(sets.precast.WS["Asuran Fists"].LowAcc, {
+  sets.precast.WS["Ascetic's Fury"].LowAccMaxTP = set_combine(sets.precast.WS["Asuran Fists"].LowAcc, {
     ear2="Odr Earring",
   })
   sets.precast.WS["Ascetic's Fury"].MidAcc = set_combine(sets.precast.WS["Ascetic's Fury"].LowAcc, {
     ammo="Falcon Eye",
   })
-  sets.precast.WS["Ascetic's Fury"].MidAccMaxTp = set_combine(sets.precast.WS["Asuran Fists"].MidAcc, {
+  sets.precast.WS["Ascetic's Fury"].MidAccMaxTP = set_combine(sets.precast.WS["Asuran Fists"].MidAcc, {
     ear2="Odr Earring",
   })
   sets.precast.WS["Ascetic's Fury"].HighAcc = set_combine(sets.precast.WS["Ascetic's Fury"].MidAcc, {
     -- ear1="Mache Earring +1",
     -- head="Ken. Jinpachi +1",
   })
-  sets.precast.WS["Ascetic's Fury"].HighAccMaxTp = set_combine(sets.precast.WS["Asuran Fists"].HighAcc, {
+  sets.precast.WS["Ascetic's Fury"].HighAccMaxTP = set_combine(sets.precast.WS["Asuran Fists"].HighAcc, {
     ear2="Odr Earring",
   })
 
@@ -468,19 +467,19 @@ function init_gear_sets()
   sets.precast.WS["Raging Fists"].LowAcc = set_combine(sets.precast.WS["Raging Fists"], {
 
   })
-  sets.precast.WS["Raging Fists"].LowAccMaxTp = set_combine(sets.precast.WS["Raging Fists"].LowAcc, {
+  sets.precast.WS["Raging Fists"].LowAccMaxTP = set_combine(sets.precast.WS["Raging Fists"].LowAcc, {
     ear2="Brutal Earring",
   })
   sets.precast.WS["Raging Fists"].MidAcc = set_combine(sets.precast.WS["Raging Fists"].LowAcc, {
 
   })
-  sets.precast.WS["Raging Fists"].MidAccMaxTp = set_combine(sets.precast.WS["Raging Fists"].MidAcc, {
+  sets.precast.WS["Raging Fists"].MidAccMaxTP = set_combine(sets.precast.WS["Raging Fists"].MidAcc, {
     ear2="Brutal Earring",
   })
   sets.precast.WS["Raging Fists"].HighAcc = set_combine(sets.precast.WS["Raging Fists"].MidAcc, {
 
   })
-  sets.precast.WS["Raging Fists"].HighAccMaxTp = set_combine(sets.precast.WS["Raging Fists"].HighAcc, {
+  sets.precast.WS["Raging Fists"].HighAccMaxTP = set_combine(sets.precast.WS["Raging Fists"].HighAcc, {
     ear2="Brutal Earring",
   })
 
@@ -513,20 +512,20 @@ function init_gear_sets()
   sets.precast.WS["Howling Fist"].LowAcc = set_combine(sets.precast.WS["Howling Fist"], {
     head="Mummu Bonnet +2",
   })
-  sets.precast.WS["Howling Fist"].LowAccMaxTp = set_combine(sets.precast.WS["Howling Fist"].LowAcc, {
+  sets.precast.WS["Howling Fist"].LowAccMaxTP = set_combine(sets.precast.WS["Howling Fist"].LowAcc, {
     ear2="Odnowa Earring +1",
   })
   sets.precast.WS["Howling Fist"].MidAcc = set_combine(sets.precast.WS["Howling Fist"].LowAcc, {
     ear2="Telos Earring",
   })
-  sets.precast.WS["Howling Fist"].MidAccMaxTp = set_combine(sets.precast.WS["Howling Fist"].MidAcc, {
+  sets.precast.WS["Howling Fist"].MidAccMaxTP = set_combine(sets.precast.WS["Howling Fist"].MidAcc, {
     ear2="Telos Earring",
   })
   sets.precast.WS["Howling Fist"].HighAcc = set_combine(sets.precast.WS["Howling Fist"].MidAcc, {
     ammo="Falcon Eye",
     head="Mummu Bonnet +2",
   })
-  sets.precast.WS["Howling Fist"].HighAccMaxTp = set_combine(sets.precast.WS["Howling Fist"].HighAcc, {
+  sets.precast.WS["Howling Fist"].HighAccMaxTP = set_combine(sets.precast.WS["Howling Fist"].HighAcc, {
     ear2="Telos Earring",
   })
 
@@ -556,22 +555,22 @@ function init_gear_sets()
     back=gear.MNK_STR_DA_Cape,
     waist="Moonbow Belt +1",
   })
-  sets.precast.WS["Spinning Attack"].MaxTp = set_combine(sets.precast.WS["Spinning Attack"], {
+  sets.precast.WS["Spinning Attack"].MaxTP = set_combine(sets.precast.WS["Spinning Attack"], {
   })
   sets.precast.WS["Spinning Attack"].LowAcc = set_combine(sets.precast.WS["Spinning Attack"], {
     neck="Fotia Gorget",
   })
-  sets.precast.WS["Spinning Attack"].LowAccMaxTp = set_combine(sets.precast.WS["Spinning Attack"].LowAcc, {
+  sets.precast.WS["Spinning Attack"].LowAccMaxTP = set_combine(sets.precast.WS["Spinning Attack"].LowAcc, {
   })
   sets.precast.WS["Spinning Attack"].MidAcc = set_combine(sets.precast.WS["Spinning Attack"].LowAcc, {
     ear2="Telos Earring",
   })
-  sets.precast.WS["Spinning Attack"].MidAccMaxTp = set_combine(sets.precast.WS["Spinning Attack"].MidAcc, {
+  sets.precast.WS["Spinning Attack"].MidAccMaxTP = set_combine(sets.precast.WS["Spinning Attack"].MidAcc, {
   })
   sets.precast.WS["Spinning Attack"].HighAcc = set_combine(sets.precast.WS["Spinning Attack"].MidAcc, {
     ammo="Falcon Eye",
   })
-  sets.precast.WS["Spinning Attack"].HighAccMaxTp = set_combine(sets.precast.WS["Spinning Attack"].HighAcc, {
+  sets.precast.WS["Spinning Attack"].HighAccMaxTP = set_combine(sets.precast.WS["Spinning Attack"].HighAcc, {
   })
 
   sets.MAB = {
@@ -1021,8 +1020,6 @@ function display_current_job_state(eventArgs)
     m_msg = m_msg .. '/' ..state.HybridMode.value
   end
 
-  local ws_msg = state.WeaponskillMode.value
-
   local d_msg = 'None'
   if state.DefenseMode.value ~= 'None' then
     d_msg = state.DefenseMode.value .. state[state.DefenseMode.value .. 'DefenseMode'].value
@@ -1044,9 +1041,8 @@ function display_current_job_state(eventArgs)
   end
 
   add_to_chat(002, '| ' ..string.char(31,210).. 'Melee' ..cf_msg.. ': ' ..string.char(31,001)..m_msg.. string.char(31,002)..  ' |'
-      ..string.char(31,207).. ' WS: ' ..string.char(31,001)..ws_msg.. string.char(31,002)..  ' |'
       ..string.char(31,004).. ' Defense: ' ..string.char(31,001)..d_msg.. string.char(31,002)..  ' |'
-      ..string.char(31,008).. ' Idle: ' ..string.char(31,001)..i_msg.. string.char(31,002)..  ' |'
+      ..string.char(31,207).. ' Idle: ' ..string.char(31,001)..i_msg.. string.char(31,002)..  ' |'
       ..string.char(31,012).. ' Toy Weapon: ' ..string.char(31,001)..toy_msg.. string.char(31,002)..  ' |'
       ..string.char(31,002)..msg)
 
@@ -1077,27 +1073,14 @@ function cycle_toy_weapons(cycle_dir)
 end
 
 function get_custom_wsmode(spell, action, spellMap)
-  local wsmode
-  if state.OffenseMode.value == 'LowAcc' then
-    if player.tp == 3000 then
-      wsmode = 'LowAccMaxTp'
-    else
-      wsmode = 'LowAcc'
-    end
-  elseif state.OffenseMode.value == 'MidAcc' then
-    if player.tp == 3000 then
-      wsmode = 'MidAccMaxTp'
-    else
-      wsmode = 'MidAcc'
-    end
-  elseif state.OffenseMode.value == 'HighAcc' then
-    if player.tp == 3000 then
-      wsmode = 'HighAccMaxTp'
-    else
-      wsmode = 'HighAcc'
-    end
-  elseif player.tp == 3000 then
-    wsmode = 'MaxTp'
+  local wsmode = ''
+
+  if state.OffenseMode.value ~= 'Normal' then
+    wsmode = state.OffenseMode.value
+  end
+
+  if player.tp > 2900 then
+    wsmode = wsmode..'MaxTP'
   end
 
   return wsmode

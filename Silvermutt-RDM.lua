@@ -100,7 +100,6 @@ function job_setup()
       'Enstone', 'Enstone II', 'Enthunder', 'Enthunder II', 'Enwater', 'Enwater II'}
 
   state.OffenseMode:options('Normal', 'MidAcc', 'HighAcc')
-  state.WeaponskillMode:options('Normal', 'MaxTp', 'LowAcc', 'LowAccMaxTp', 'MidAcc', 'MidAccMaxTp', 'HighAcc', 'HighAccMaxTp')
   state.CastingMode:options('Normal', 'Seidr', 'Resistant')
   state.HybridMode:options('Normal', 'LightDef')
   state.IdleMode:options('Normal', 'LightDef')
@@ -388,84 +387,84 @@ function init_gear_sets()
     -- ring2="Ilabrat Ring",
     -- back=gear.RDM_WS2_Cape,
   })
-  sets.precast.WS['Chant du Cygne'].MaxTp = set_combine(sets.precast.WS['Chant du Cygne'], {
+  sets.precast.WS['Chant du Cygne'].MaxTP = set_combine(sets.precast.WS['Chant du Cygne'], {
   })
   sets.precast.WS['Chant du Cygne'].LowAcc = set_combine(sets.precast.WS['Chant du Cygne'], {
     -- ammo="Voluspa Tathlum",
     -- head="Malignance Chapeau",
     -- ear2="Mache Earring +1",
   })
-  sets.precast.WS['Chant du Cygne'].LowAccMaxTp = set_combine(sets.precast.WS['Chant du Cygne'].LowAcc, {
+  sets.precast.WS['Chant du Cygne'].LowAccMaxTP = set_combine(sets.precast.WS['Chant du Cygne'].LowAcc, {
   })
   sets.precast.WS['Chant du Cygne'].MidAcc = set_combine(sets.precast.WS['Chant du Cygne'].LowAcc, {
   })
-  sets.precast.WS['Chant du Cygne'].MidAccMaxTp = set_combine(sets.precast.WS['Chant du Cygne'].MidAcc, {
+  sets.precast.WS['Chant du Cygne'].MidAccMaxTP = set_combine(sets.precast.WS['Chant du Cygne'].MidAcc, {
   })
   sets.precast.WS['Chant du Cygne'].HighAcc = set_combine(sets.precast.WS['Chant du Cygne'].MidAcc, {
   })
-  sets.precast.WS['Chant du Cygne'].HighAccMaxTp = set_combine(sets.precast.WS['Chant du Cygne'].HighAcc, {
+  sets.precast.WS['Chant du Cygne'].HighAccMaxTP = set_combine(sets.precast.WS['Chant du Cygne'].HighAcc, {
   })
 
   sets.precast.WS['Vorpal Blade'] = sets.precast.WS['Chant du Cygne']
-  sets.precast.WS['Vorpal Blade'].MaxTp = sets.precast.WS['Chant du Cygne'].MaxTp
+  sets.precast.WS['Vorpal Blade'].MaxTP = sets.precast.WS['Chant du Cygne'].MaxTP
   sets.precast.WS['Vorpal Blade'].LowAcc = sets.precast.WS['Chant du Cygne'].LowAcc
-  sets.precast.WS['Vorpal Blade'].LowAccMaxTp = sets.precast.WS['Chant du Cygne'].LowAccMaxTp
+  sets.precast.WS['Vorpal Blade'].LowAccMaxTP = sets.precast.WS['Chant du Cygne'].LowAccMaxTP
   sets.precast.WS['Vorpal Blade'].MidAcc = sets.precast.WS['Chant du Cygne'].MidAcc
-  sets.precast.WS['Vorpal Blade'].MidAccMaxTp = sets.precast.WS['Chant du Cygne'].MidAccMaxTp
+  sets.precast.WS['Vorpal Blade'].MidAccMaxTP = sets.precast.WS['Chant du Cygne'].MidAccMaxTP
   sets.precast.WS['Vorpal Blade'].HighAcc = sets.precast.WS['Chant du Cygne'].HighAcc
-  sets.precast.WS['Vorpal Blade'].HighAccMaxTp = sets.precast.WS['Chant du Cygne'].HighAccMaxTp
+  sets.precast.WS['Vorpal Blade'].HighAccMaxTP = sets.precast.WS['Chant du Cygne'].HighAccMaxTP
 
   sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
     -- neck="Dls. Torque +2",
     -- waist="Sailfi Belt +1",
   })
-  sets.precast.WS['Savage Blade'].MaxTp = set_combine(sets.precast.WS['Savage Blade'], {
+  sets.precast.WS['Savage Blade'].MaxTP = set_combine(sets.precast.WS['Savage Blade'], {
   })
   sets.precast.WS['Savage Blade'].LowAcc = set_combine(sets.precast.WS['Savage Blade'], {
     -- ammo="Voluspa Tathlum",
     -- neck="Combatant's Torque",
     -- waist="Grunfeld Rope",
   })
-  sets.precast.WS['Savage Blade'].LowAccMaxTp = set_combine(sets.precast.WS['Savage Blade'].LowAcc, {
+  sets.precast.WS['Savage Blade'].LowAccMaxTP = set_combine(sets.precast.WS['Savage Blade'].LowAcc, {
   })
   sets.precast.WS['Savage Blade'].MidAcc = set_combine(sets.precast.WS['Savage Blade'].LowAcc, {
   })
-  sets.precast.WS['Savage Blade'].MidAccMaxTp = set_combine(sets.precast.WS['Savage Blade'].MidAcc, {
+  sets.precast.WS['Savage Blade'].MidAccMaxTP = set_combine(sets.precast.WS['Savage Blade'].MidAcc, {
   })
   sets.precast.WS['Savage Blade'].HighAcc = set_combine(sets.precast.WS['Savage Blade'].MidAcc, {
   })
-  sets.precast.WS['Savage Blade'].HighAccMaxTp = set_combine(sets.precast.WS['Savage Blade'].HighAcc, {
+  sets.precast.WS['Savage Blade'].HighAccMaxTP = set_combine(sets.precast.WS['Savage Blade'].HighAcc, {
   })
 
   sets.precast.WS['Death Blossom'] = sets.precast.WS['Savage Blade']
-  sets.precast.WS['Death Blossom'].MaxTp = sets.precast.WS['Savage Blade'].MaxTp
+  sets.precast.WS['Death Blossom'].MaxTP = sets.precast.WS['Savage Blade'].MaxTP
   sets.precast.WS['Death Blossom'].LowAcc = sets.precast.WS['Savage Blade'].LowAcc
-  sets.precast.WS['Death Blossom'].LowAccMaxTp = sets.precast.WS['Savage Blade'].LowAccMaxTp
+  sets.precast.WS['Death Blossom'].LowAccMaxTP = sets.precast.WS['Savage Blade'].LowAccMaxTP
   sets.precast.WS['Death Blossom'].MidAcc = sets.precast.WS['Savage Blade'].MidAcc
-  sets.precast.WS['Death Blossom'].MidAccMaxTp = sets.precast.WS['Savage Blade'].MidAccMaxTp
+  sets.precast.WS['Death Blossom'].MidAccMaxTP = sets.precast.WS['Savage Blade'].MidAccMaxTP
   sets.precast.WS['Death Blossom'].HighAcc = sets.precast.WS['Savage Blade'].HighAcc
-  sets.precast.WS['Death Blossom'].HighAccMaxTp = sets.precast.WS['Savage Blade'].HighAccMaxTp
+  sets.precast.WS['Death Blossom'].HighAccMaxTP = sets.precast.WS['Savage Blade'].HighAccMaxTP
 
   sets.precast.WS['Requiescat'] = set_combine(sets.precast.WS, {
     -- ear2="Sherida Earring",
     -- ring2="Shukuyu Ring",
   })
-  sets.precast.WS['Requiescat'].MaxTp = set_combine(sets.precast.WS['Requiescat'], {
+  sets.precast.WS['Requiescat'].MaxTP = set_combine(sets.precast.WS['Requiescat'], {
   })
   sets.precast.WS['Requiescat'].LowAcc = set_combine(sets.precast.WS['Requiescat'], {
     -- ammo="Voluspa Tathlum",
     -- neck="Combatant's Torque",
     -- ear1="Mache Earring +1",
   })
-  sets.precast.WS['Requiescat'].LowAccMaxTp = set_combine(sets.precast.WS['Requiescat'].LowAcc, {
+  sets.precast.WS['Requiescat'].LowAccMaxTP = set_combine(sets.precast.WS['Requiescat'].LowAcc, {
   })
   sets.precast.WS['Requiescat'].MidAcc = set_combine(sets.precast.WS['Requiescat'].LowAcc, {
   })
-  sets.precast.WS['Requiescat'].MidAccMaxTp = set_combine(sets.precast.WS['Requiescat'].MidAcc, {
+  sets.precast.WS['Requiescat'].MidAccMaxTP = set_combine(sets.precast.WS['Requiescat'].MidAcc, {
   })
   sets.precast.WS['Requiescat'].HighAcc = set_combine(sets.precast.WS['Requiescat'].MidAcc, {
   })
-  sets.precast.WS['Requiescat'].HighAccMaxTp = set_combine(sets.precast.WS['Requiescat'].HighAcc, {
+  sets.precast.WS['Requiescat'].HighAccMaxTP = set_combine(sets.precast.WS['Requiescat'].HighAcc, {
   })
 
   sets.precast.WS['Sanguine Blade'] = {
@@ -483,19 +482,19 @@ function init_gear_sets()
     -- back=gear.RDM_INT_Cape,
     -- waist="Orpheus's Sash",
   }
-  sets.precast.WS['Sanguine Blade'].MaxTp = set_combine(sets.precast.WS['Sanguine Blade'], {
+  sets.precast.WS['Sanguine Blade'].MaxTP = set_combine(sets.precast.WS['Sanguine Blade'], {
   })
   sets.precast.WS['Sanguine Blade'].LowAcc = set_combine(sets.precast.WS['Sanguine Blade'], {
   })
-  sets.precast.WS['Sanguine Blade'].LowAccMaxTp = set_combine(sets.precast.WS['Sanguine Blade'].LowAcc, {
+  sets.precast.WS['Sanguine Blade'].LowAccMaxTP = set_combine(sets.precast.WS['Sanguine Blade'].LowAcc, {
   })
   sets.precast.WS['Sanguine Blade'].MidAcc = set_combine(sets.precast.WS['Sanguine Blade'].LowAcc, {
   })
-  sets.precast.WS['Sanguine Blade'].MidAccMaxTp = set_combine(sets.precast.WS['Sanguine Blade'].MidAcc, {
+  sets.precast.WS['Sanguine Blade'].MidAccMaxTP = set_combine(sets.precast.WS['Sanguine Blade'].MidAcc, {
   })
   sets.precast.WS['Sanguine Blade'].HighAcc = set_combine(sets.precast.WS['Sanguine Blade'].MidAcc, {
   })
-  sets.precast.WS['Sanguine Blade'].HighAccMaxTp = set_combine(sets.precast.WS['Sanguine Blade'].HighAcc, {
+  sets.precast.WS['Sanguine Blade'].HighAccMaxTP = set_combine(sets.precast.WS['Sanguine Blade'].HighAcc, {
   })
 
   sets.precast.WS['Seraph Blade'] = set_combine(sets.precast.WS, {
@@ -513,19 +512,19 @@ function init_gear_sets()
     -- back=gear.RDM_INT_Cape,
     -- waist="Orpheus's Sash",
   })
-  sets.precast.WS['Seraph Blade'].MaxTp = set_combine(sets.precast.WS['Seraph Blade'], {
+  sets.precast.WS['Seraph Blade'].MaxTP = set_combine(sets.precast.WS['Seraph Blade'], {
   })
   sets.precast.WS['Seraph Blade'].LowAcc = set_combine(sets.precast.WS['Seraph Blade'], {
   })
-  sets.precast.WS['Seraph Blade'].LowAccMaxTp = set_combine(sets.precast.WS['Seraph Blade'].LowAcc, {
+  sets.precast.WS['Seraph Blade'].LowAccMaxTP = set_combine(sets.precast.WS['Seraph Blade'].LowAcc, {
   })
   sets.precast.WS['Seraph Blade'].MidAcc = set_combine(sets.precast.WS['Seraph Blade'].LowAcc, {
   })
-  sets.precast.WS['Seraph Blade'].MidAccMaxTp = set_combine(sets.precast.WS['Seraph Blade'].MidAcc, {
+  sets.precast.WS['Seraph Blade'].MidAccMaxTP = set_combine(sets.precast.WS['Seraph Blade'].MidAcc, {
   })
   sets.precast.WS['Seraph Blade'].HighAcc = set_combine(sets.precast.WS['Seraph Blade'].MidAcc, {
   })
-  sets.precast.WS['Seraph Blade'].HighAccMaxTp = set_combine(sets.precast.WS['Seraph Blade'].HighAcc, {
+  sets.precast.WS['Seraph Blade'].HighAccMaxTP = set_combine(sets.precast.WS['Seraph Blade'].HighAcc, {
   })
 
   sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
@@ -543,19 +542,19 @@ function init_gear_sets()
     -- back=gear.RDM_INT_Cape,
     -- waist="Orpheus's Sash",
   })
-  sets.precast.WS['Aeolian Edge'].MaxTp = set_combine(sets.precast.WS['Aeolian Edge'], {
+  sets.precast.WS['Aeolian Edge'].MaxTP = set_combine(sets.precast.WS['Aeolian Edge'], {
   })
   sets.precast.WS['Aeolian Edge'].LowAcc = set_combine(sets.precast.WS['Aeolian Edge'], {
   })
-  sets.precast.WS['Aeolian Edge'].LowAccMaxTp = set_combine(sets.precast.WS['Aeolian Edge'].LowAcc, {
+  sets.precast.WS['Aeolian Edge'].LowAccMaxTP = set_combine(sets.precast.WS['Aeolian Edge'].LowAcc, {
   })
   sets.precast.WS['Aeolian Edge'].MidAcc = set_combine(sets.precast.WS['Aeolian Edge'].LowAcc, {
   })
-  sets.precast.WS['Aeolian Edge'].MidAccMaxTp = set_combine(sets.precast.WS['Aeolian Edge'].MidAcc, {
+  sets.precast.WS['Aeolian Edge'].MidAccMaxTP = set_combine(sets.precast.WS['Aeolian Edge'].MidAcc, {
   })
   sets.precast.WS['Aeolian Edge'].HighAcc = set_combine(sets.precast.WS['Aeolian Edge'].MidAcc, {
   })
-  sets.precast.WS['Aeolian Edge'].HighAccMaxTp = set_combine(sets.precast.WS['Aeolian Edge'].HighAcc, {
+  sets.precast.WS['Aeolian Edge'].HighAccMaxTP = set_combine(sets.precast.WS['Aeolian Edge'].HighAcc, {
   })
 
   sets.precast.WS['Black Halo'] = set_combine(sets.precast.WS['Savage Blade'], {
@@ -564,7 +563,7 @@ function init_gear_sets()
     -- ring1="Rufescent Ring",
     -- waist="Sailfi Belt +1",
   })
-  sets.precast.WS['Black Halo'].MaxTp = set_combine(sets.precast.WS['Black Halo'], {
+  sets.precast.WS['Black Halo'].MaxTP = set_combine(sets.precast.WS['Black Halo'], {
   })
   sets.precast.WS['Black Halo'].LowAcc = set_combine(sets.precast.WS['Black Halo'], {
     -- ammo="Voluspa Tathlum",
@@ -572,15 +571,15 @@ function init_gear_sets()
     -- ear2="Telos Earring",
     -- waist="Grunfeld Rope",
   })
-  sets.precast.WS['Black Halo'].LowAccMaxTp = set_combine(sets.precast.WS['Black Halo'].LowAcc, {
+  sets.precast.WS['Black Halo'].LowAccMaxTP = set_combine(sets.precast.WS['Black Halo'].LowAcc, {
   })
   sets.precast.WS['Black Halo'].MidAcc = set_combine(sets.precast.WS['Black Halo'].LowAcc, {
   })
-  sets.precast.WS['Black Halo'].MidAccMaxTp = set_combine(sets.precast.WS['Black Halo'].MidAcc, {
+  sets.precast.WS['Black Halo'].MidAccMaxTP = set_combine(sets.precast.WS['Black Halo'].MidAcc, {
   })
   sets.precast.WS['Black Halo'].HighAcc = set_combine(sets.precast.WS['Black Halo'].MidAcc, {
   })
-  sets.precast.WS['Black Halo'].HighAccMaxTp = set_combine(sets.precast.WS['Black Halo'].HighAcc, {
+  sets.precast.WS['Black Halo'].HighAccMaxTP = set_combine(sets.precast.WS['Black Halo'].HighAcc, {
   })
 
 
@@ -1556,27 +1555,14 @@ function job_get_spell_map(spell, default_spell_map)
 end
 
 function get_custom_wsmode(spell, action, spellMap)
-  local wsmode
-  if state.OffenseMode.value == 'LowAcc' then
-    if player.tp == 3000 then
-      wsmode = 'LowAccMaxTp'
-    else
-      wsmode = 'LowAcc'
-    end
-  elseif state.OffenseMode.value == 'MidAcc' then
-    if player.tp == 3000 then
-      wsmode = 'MidAccMaxTp'
-    else
-      wsmode = 'MidAcc'
-    end
-  elseif state.OffenseMode.value == 'HighAcc' then
-    if player.tp == 3000 then
-      wsmode = 'HighAccMaxTp'
-    else
-      wsmode = 'HighAcc'
-    end
-  elseif player.tp == 3000 then
-    wsmode = 'MaxTp'
+  local wsmode = ''
+
+  if state.OffenseMode.value ~= 'Normal' then
+    wsmode = state.OffenseMode.value
+  end
+
+  if player.tp > 2900 then
+    wsmode = wsmode..'MaxTP'
   end
 
   return wsmode
@@ -1667,8 +1653,6 @@ function display_current_job_state(eventArgs)
     m_msg = m_msg .. '/' ..state.HybridMode.value
   end
 
-  local ws_msg = state.WeaponskillMode.value
-
   local c_msg = state.CastingMode.value
 
   local d_msg = 'None'
@@ -1692,10 +1676,9 @@ function display_current_job_state(eventArgs)
   end
 
   add_to_chat(002, '| ' ..string.char(31,210).. 'Melee' ..cf_msg.. ': ' ..string.char(31,001)..m_msg.. string.char(31,002)..  ' |'
-      ..string.char(31,207).. ' WS: ' ..string.char(31,001)..ws_msg.. string.char(31,002)..  ' |'
       ..string.char(31,060).. ' Magic: ' ..string.char(31,001)..c_msg.. string.char(31,002)..  ' |'
       ..string.char(31,004).. ' Defense: ' ..string.char(31,001)..d_msg.. string.char(31,002)..  ' |'
-      ..string.char(31,008).. ' Idle: ' ..string.char(31,001)..i_msg.. string.char(31,002)..  ' |'
+      ..string.char(31,207).. ' Idle: ' ..string.char(31,001)..i_msg.. string.char(31,002)..  ' |'
       ..string.char(31,012).. ' Toy Weapon: ' ..string.char(31,001)..toy_msg.. string.char(31,002)..  ' |'
       ..string.char(31,002)..msg)
 

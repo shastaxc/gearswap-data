@@ -107,7 +107,6 @@ function job_setup()
   state.CP = M(false, "Capacity Points Mode")
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
-  state.WeaponskillMode:options('Normal', 'MaxTp', 'LowAcc', 'LowAccMaxTp', 'MidAcc', 'MidAccMaxTp', 'HighAcc', 'HighAccMaxTp')
   state.HybridMode:options('Normal', 'LightDef')
   state.IdleMode:options('Normal', 'LightDef')
   
@@ -415,19 +414,19 @@ function init_gear_sets()
     ring2="Karieyh Ring",
     back=gear.DNC_TP_DA_Cape,
   }) -- AGI
-  sets.precast.WS['Exenterator'].MaxTp = set_combine(sets.precast.WS['Exenterator'], {
+  sets.precast.WS['Exenterator'].MaxTP = set_combine(sets.precast.WS['Exenterator'], {
   })
   sets.precast.WS['Exenterator'].LowAcc = set_combine(sets.precast.WS['Exenterator'], {
   })
-  sets.precast.WS['Exenterator'].LowAccMaxTp = set_combine(sets.precast.WS['Exenterator'].LowAcc, {
+  sets.precast.WS['Exenterator'].LowAccMaxTP = set_combine(sets.precast.WS['Exenterator'].LowAcc, {
   })
   sets.precast.WS['Exenterator'].MidAcc = set_combine(sets.precast.WS['Exenterator'].LowAcc, {
   })
-  sets.precast.WS['Exenterator'].MidAccMaxTp = set_combine(sets.precast.WS['Exenterator'].MidAcc, {
+  sets.precast.WS['Exenterator'].MidAccMaxTP = set_combine(sets.precast.WS['Exenterator'].MidAcc, {
   })
   sets.precast.WS['Exenterator'].HighAcc = set_combine(sets.precast.WS['Exenterator'].MidAcc, {
   })
-  sets.precast.WS['Exenterator'].HighAccMaxTp = set_combine(sets.precast.WS['Exenterator'].HighAcc, {
+  sets.precast.WS['Exenterator'].HighAccMaxTP = set_combine(sets.precast.WS['Exenterator'].HighAcc, {
   })
 
   sets.precast.WS['Pyrrhic Kleos'] = set_combine(sets.precast.WS, {
@@ -445,19 +444,19 @@ function init_gear_sets()
     ring2="Epona's Ring",
     back=gear.DNC_TP_DA_Cape,
   }) -- 40% STR / 40% DEX
-  sets.precast.WS['Pyrrhic Kleos'].MaxTp = set_combine(sets.precast.WS['Pyrrhic Kleos'], {
+  sets.precast.WS['Pyrrhic Kleos'].MaxTP = set_combine(sets.precast.WS['Pyrrhic Kleos'], {
   })
   sets.precast.WS['Pyrrhic Kleos'].LowAcc = set_combine(sets.precast.WS['Pyrrhic Kleos'], {
   })
-  sets.precast.WS['Pyrrhic Kleos'].LowAccMaxTp = set_combine(sets.precast.WS['Pyrrhic Kleos'].LowAcc, {
+  sets.precast.WS['Pyrrhic Kleos'].LowAccMaxTP = set_combine(sets.precast.WS['Pyrrhic Kleos'].LowAcc, {
   })
   sets.precast.WS['Pyrrhic Kleos'].MidAcc = set_combine(sets.precast.WS['Pyrrhic Kleos'].LowAcc, {
   })
-  sets.precast.WS['Pyrrhic Kleos'].MidAccMaxTp = set_combine(sets.precast.WS['Pyrrhic Kleos'].MidAcc, {
+  sets.precast.WS['Pyrrhic Kleos'].MidAccMaxTP = set_combine(sets.precast.WS['Pyrrhic Kleos'].MidAcc, {
   })
   sets.precast.WS['Pyrrhic Kleos'].HighAcc = set_combine(sets.precast.WS['Pyrrhic Kleos'].MidAcc, {
   })
-  sets.precast.WS['Pyrrhic Kleos'].HighAccMaxTp = set_combine(sets.precast.WS['Pyrrhic Kleos'].HighAcc, {
+  sets.precast.WS['Pyrrhic Kleos'].HighAccMaxTP = set_combine(sets.precast.WS['Pyrrhic Kleos'].HighAcc, {
   })
 
   sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
@@ -475,19 +474,23 @@ function init_gear_sets()
     ring2="Begrudging Ring",
     back=gear.DNC_TP_DA_Cape,
   }) -- 50% DEX
-  sets.precast.WS['Evisceration'].MaxTp = set_combine(sets.precast.WS['Evisceration'], {
+  sets.precast.WS['Evisceration'].MaxTP = set_combine(sets.precast.WS['Evisceration'], {
+    ring2="Defending Ring"
   })
   sets.precast.WS['Evisceration'].LowAcc = set_combine(sets.precast.WS['Evisceration'], {
   })
-  sets.precast.WS['Evisceration'].LowAccMaxTp = set_combine(sets.precast.WS['Evisceration'].LowAcc, {
+  sets.precast.WS['Evisceration'].LowAccMaxTP = set_combine(sets.precast.WS['Evisceration'].LowAcc, {
+    ring2="Defending Ring"
   })
   sets.precast.WS['Evisceration'].MidAcc = set_combine(sets.precast.WS['Evisceration'].LowAcc, {
   })
-  sets.precast.WS['Evisceration'].MidAccMaxTp = set_combine(sets.precast.WS['Evisceration'].MidAcc, {
+  sets.precast.WS['Evisceration'].MidAccMaxTP = set_combine(sets.precast.WS['Evisceration'].MidAcc, {
+    ring2="Defending Ring"
   })
   sets.precast.WS['Evisceration'].HighAcc = set_combine(sets.precast.WS['Evisceration'].MidAcc, {
   })
-  sets.precast.WS['Evisceration'].HighAccMaxTp = set_combine(sets.precast.WS['Evisceration'].HighAcc, {
+  sets.precast.WS['Evisceration'].HighAccMaxTP = set_combine(sets.precast.WS['Evisceration'].HighAcc, {
+    ring2="Defending Ring"
   })
 
   sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {
@@ -505,19 +508,19 @@ function init_gear_sets()
     ring2="Karieyh Ring",
     back=gear.DNC_TP_DA_Cape,
   }) -- 80% DEX
-  sets.precast.WS["Rudra's Storm"].MaxTp = set_combine(sets.precast.WS["Rudra's Storm"], {
+  sets.precast.WS["Rudra's Storm"].MaxTP = set_combine(sets.precast.WS["Rudra's Storm"], {
   })
   sets.precast.WS["Rudra's Storm"].LowAcc = set_combine(sets.precast.WS["Rudra's Storm"], {
   })
-  sets.precast.WS["Rudra's Storm"].LowAccMaxTp = set_combine(sets.precast.WS["Rudra's Storm"].LowAcc, {
+  sets.precast.WS["Rudra's Storm"].LowAccMaxTP = set_combine(sets.precast.WS["Rudra's Storm"].LowAcc, {
   })
   sets.precast.WS["Rudra's Storm"].MidAcc = set_combine(sets.precast.WS["Rudra's Storm"].LowAcc, {
   })
-  sets.precast.WS["Rudra's Storm"].MidAccMaxTp = set_combine(sets.precast.WS["Rudra's Storm"].MidAcc, {
+  sets.precast.WS["Rudra's Storm"].MidAccMaxTP = set_combine(sets.precast.WS["Rudra's Storm"].MidAcc, {
   })
   sets.precast.WS["Rudra's Storm"].HighAcc = set_combine(sets.precast.WS["Rudra's Storm"].MidAcc, {
   })
-  sets.precast.WS["Rudra's Storm"].HighAccMaxTp = set_combine(sets.precast.WS["Rudra's Storm"].HighAcc, {
+  sets.precast.WS["Rudra's Storm"].HighAccMaxTP = set_combine(sets.precast.WS["Rudra's Storm"].HighAcc, {
   })
 
   sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
@@ -1115,27 +1118,14 @@ function update_combat_form()
 end
 
 function get_custom_wsmode(spell, action, spellMap)
-  local wsmode
-  if state.OffenseMode.value == 'LowAcc' then
-    if player.tp == 3000 then
-      wsmode = 'LowAccMaxTp'
-    else
-      wsmode = 'LowAcc'
-    end
-  elseif state.OffenseMode.value == 'MidAcc' then
-    if player.tp == 3000 then
-      wsmode = 'MidAccMaxTp'
-    else
-      wsmode = 'MidAcc'
-    end
-  elseif state.OffenseMode.value == 'HighAcc' then
-    if player.tp == 3000 then
-      wsmode = 'HighAccMaxTp'
-    else
-      wsmode = 'HighAcc'
-    end
-  elseif player.tp == 3000 then
-    wsmode = 'MaxTp'
+  local wsmode = ''
+
+  if state.OffenseMode.value ~= 'Normal' then
+    wsmode = state.OffenseMode.value
+  end
+
+  if player.tp > 2900 then
+    wsmode = wsmode..'MaxTP'
   end
 
   return wsmode
@@ -1238,19 +1228,17 @@ function display_current_job_state(eventArgs)
     m_msg = m_msg .. '/' ..state.HybridMode.value
   end
 
-  local ws_msg = state.WeaponskillMode.value
-
-  local s_msg = state.MainStep.current
-  if state.UseAltStep.value == true then
-    s_msg = s_msg .. '/'..state.AltStep.current
-  end
-
   local d_msg = 'None'
   if state.DefenseMode.value ~= 'None' then
     d_msg = state.DefenseMode.value .. state[state.DefenseMode.value .. 'DefenseMode'].value
   end
 
   local i_msg = state.IdleMode.value
+
+  local s_msg = state.MainStep.current
+  if state.UseAltStep.value == true then
+    s_msg = s_msg .. '/'..state.AltStep.current
+  end
 
   local toy_msg = state.ToyWeapons.current
 
@@ -1266,10 +1254,9 @@ function display_current_job_state(eventArgs)
   end
 
   add_to_chat(002, '| ' ..string.char(31,210).. 'Melee' ..cf_msg.. ': ' ..string.char(31,001)..m_msg.. string.char(31,002)..  ' |'
-      ..string.char(31,207).. ' WS: ' ..string.char(31,001)..ws_msg.. string.char(31,002)..  ' |'
-      ..string.char(31,060).. ' Step: '  ..string.char(31,001)..s_msg.. string.char(31,002)..  ' |'
       ..string.char(31,004).. ' Defense: ' ..string.char(31,001)..d_msg.. string.char(31,002)..  ' |'
-      ..string.char(31,008).. ' Idle: ' ..string.char(31,001)..i_msg.. string.char(31,002)..  ' |'
+      ..string.char(31,207).. ' Idle: ' ..string.char(31,001)..i_msg.. string.char(31,002)..  ' |'
+      ..string.char(31,060).. ' Step: '  ..string.char(31,001)..s_msg.. string.char(31,002)..  ' |'
       ..string.char(31,012).. ' Toy Weapon: ' ..string.char(31,001)..toy_msg.. string.char(31,002)..  ' |'
       ..string.char(31,002)..msg)
 
