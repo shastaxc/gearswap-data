@@ -61,7 +61,7 @@ function job_setup()
   state.HybridMode:options('Normal', 'LightDef')
   state.RangedMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.IdleMode:options('Normal', 'LightDef')
-  state.WeaponSet = M{['description']='Weapon Set', 'TempWeak1', 'TempWeak2', 'MagicRA', 'PhysRA', 'PhysRA RangedOnly', 'PhysRA NoBuff', 'Melee', 'CritRA'}
+  state.WeaponSet = M{['description']='Weapon Set', 'TempWeak', 'MagicRA', 'PhysRA', 'PhysRA RangedOnly', 'PhysRA NoBuff', 'Melee', 'CritRA'}
   state.RangedWeaponSet = M{['description']='Ranged Weapon Set', 'Doomsday', 'Pharaoh\'s Bow', 'Grosveneur\'s Bow', 
       'Annihilator', 'Fomalhaut', 'Armageddon', 'Sparrowhawk +2'}
   state.CP = M(false, "Capacity Points Mode")
@@ -1000,7 +1000,7 @@ function init_gear_sets()
     head=gear.Adhemar_B_head,
     body="Malignance Tabard",
     hands=gear.Adhemar_B_hands,
-    legs="Samnuha Tights",
+    legs=gear.Samnuha_legs,
     feet=gear.Herc_TA_feet,
     neck="Anu Torque",
     ear1="Sherida Earring",
@@ -1043,13 +1043,18 @@ function init_gear_sets()
   -- No Magic/Gear/JA Haste (74% DW to cap, 49% from gear)
   sets.engaged.DW = {
     head=gear.Adhemar_B_head,
+    body="Malignance Tabard",
+    hands="Floral Gauntlets", --5
     legs="Carmine Cuisses +1", --6
+    feet=gear.Taeon_DW_feet, --9
+    neck="Anu Torque",
     ear1="Suppanomimi", --5
     ear2="Eabani Earring", --4
+    ring1="Ilabrat Ring",
     ring2="Epona's Ring",
+    back="Atheling Mantle",
+    waist="Windbuffet Belt +1",
     -- body=gear.Adhemar_B_body, --6
-    -- hands="Floral Gauntlets", --5
-    -- feet=gear.Taeon_DW_feet, --9
     -- neck="Iskur Gorget",
     -- ring1="Hetairoi Ring",
     -- back=gear.RNG_DW_Cape, --10
@@ -1079,13 +1084,18 @@ function init_gear_sets()
   -- Low Magic/Gear/JA Haste (67% DW to cap, 42% from gear)
   sets.engaged.DW.LowHaste = {
     head=gear.Adhemar_B_head,
+    body="Malignance Tabard",
+    hands="Floral Gauntlets", --5
     legs="Carmine Cuisses +1", --6
+    feet=gear.Taeon_DW_feet, --9
+    neck="Anu Torque",
     ear1="Suppanomimi", --5
     ear2="Eabani Earring", --4
+    ring1="Ilabrat Ring",
     ring2="Epona's Ring",
+    back="Atheling Mantle",
+    waist="Windbuffet Belt +1",
     -- body=gear.Adhemar_B_body, --6
-    -- hands="Floral Gauntlets", --5
-    -- feet=gear.Taeon_DW_feet, --9
     -- neck="Iskur Gorget",
     -- ring1="Hetairoi Ring",
     -- back=gear.RNG_TP_Cape,
@@ -1115,13 +1125,20 @@ function init_gear_sets()
   -- Mid Magic/Gear/JA Haste (56% DW to cap, 31% from gear)
   sets.engaged.DW.MidHaste = {
     head=gear.Adhemar_B_head,
-    hands=gear.Adhemar_B_hands,
-    legs="Samnuha Tights",
+    body="Malignance Tabard",
+    hands="Floral Gauntlets", --5
+    legs="Carmine Cuisses +1", --6
+    feet=gear.Taeon_DW_feet, --9
+    neck="Anu Torque",
     ear1="Suppanomimi", --5
     ear2="Eabani Earring", --4
+    ring1="Ilabrat Ring",
     ring2="Epona's Ring",
+    back="Atheling Mantle",
+    waist="Windbuffet Belt +1",
     -- body=gear.Adhemar_B_body, --6
-    -- feet=gear.Taeon_DW_feet, --9
+    -- hands=gear.Adhemar_B_hands,
+    -- legs=gear.Samnuha_legs,
     -- neck="Iskur Gorget",
     -- ring1="Hetairoi Ring",
     -- back=gear.RNG_TP_Cape,
@@ -1153,13 +1170,21 @@ function init_gear_sets()
   -- High Magic/Gear/JA Haste (51% DW to cap, 27% from gear)
   sets.engaged.DW.HighHaste = {
     head=gear.Adhemar_B_head,
-    hands=gear.Adhemar_B_hands,
-    legs="Samnuha Tights",
-    feet=gear.Herc_TA_feet,
+    body="Malignance Tabard",
+    hands="Floral Gauntlets", --5
+    legs="Carmine Cuisses +1", --6
+    feet=gear.Taeon_DW_feet, --9
+    neck="Anu Torque",
     ear1="Suppanomimi", --5
     ear2="Eabani Earring", --4
+    ring1="Ilabrat Ring",
     ring2="Epona's Ring",
+    back="Atheling Mantle",
+    waist="Windbuffet Belt +1",
     -- body=gear.Adhemar_B_body, --6
+    -- hands=gear.Adhemar_B_hands,
+    -- legs=gear.Samnuha_legs,
+    -- feet=gear.Herc_TA_feet,
     -- neck="Iskur Gorget",
     -- ring1="Hetairoi Ring",
     -- back=gear.RNG_TP_Cape,
@@ -1191,14 +1216,19 @@ function init_gear_sets()
   -- Max Magic/Gear/JA Haste (36% DW to cap, 11% from gear)
   sets.engaged.DW.MaxHaste = {
     head=gear.Adhemar_B_head,
+    body="Malignance Tabard",
     hands=gear.Adhemar_B_hands,
-    legs="Samnuha Tights",
+    legs="Carmine Cuisses +1", --6
     feet=gear.Herc_TA_feet,
+    neck="Anu Torque",
     ear1="Suppanomimi", --5
-    ear2="Telos Earring",
+    ear2="Brutal Earring",
+    ring1="Ilabrat Ring",
     ring2="Epona's Ring",
+    back="Atheling Mantle",
     waist="Windbuffet Belt +1",
     -- body=gear.Adhemar_B_body, --6
+    -- legs=gear.Samnuha_legs,
     -- neck="Iskur Gorget",
     -- ring1="Hetairoi Ring",
     -- back=gear.RNG_TP_Cape,
@@ -1314,13 +1344,9 @@ function init_gear_sets()
   }
 
   -- Melee weapon sets
-  sets['TempWeak1'] = {
+  sets['TempWeak'] = {
     main="Kaja Knife",
     sub="Nusku Shield",
-  }
-  sets['TempWeak2'] = {
-    main="Kaja Knife",
-    sub="Malevolence",
   }
   sets['MagicRA'] = {
     main="Malevolence",
