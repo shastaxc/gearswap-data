@@ -977,7 +977,7 @@ function init_gear_sets()
     ring2="Defending Ring", --10/10, 0
     back=gear.RNG_WS2_Cape,
     waist="Kasiri Belt", --0/0, 0
-  }
+  } -- 50 PDT / 43 MDT, 488 MEVA
 
   sets.idle.Weak = sets.HeavyDef
 
