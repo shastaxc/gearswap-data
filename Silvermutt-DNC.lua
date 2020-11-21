@@ -106,7 +106,7 @@ function job_setup()
 
   state.CP = M(false, "Capacity Points Mode")
 
-  state.OffenseMode:options('STP', 'Normal', 'LowAcc', 'MidAcc', 'HighAcc')
+  state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.WeaponskillMode:options('Normal', 'MaxTp', 'LowAcc', 'LowAccMaxTp', 'MidAcc', 'MidAccMaxTp', 'HighAcc', 'HighAccMaxTp')
   state.HybridMode:options('Normal', 'LightDef')
   state.IdleMode:options('Normal', 'LightDef')
@@ -666,19 +666,16 @@ function init_gear_sets()
     ring2="Ilabrat Ring",
     back=gear.DNC_TP_DW_Cape,
   }
-
   sets.engaged.LowAcc = set_combine(sets.engaged, {
     head="Dampening Tam",
     -- hands=gear.Adhemar_A_hands,
   })
-
   sets.engaged.MidAcc = set_combine(sets.engaged.LowAcc, {
     legs="Meghanada Chausses +2",
     ring1="Chirich Ring +1",
     -- ammo="Voluspa Tathlum",
     -- waist="Kentarch Belt +1",
   })
-
   sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
     ammo="Falcon Eye",
     ear1="Telos Earring",
@@ -690,14 +687,6 @@ function init_gear_sets()
     -- ring1="Regal Ring",
     -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
     -- waist="Olseni Belt",
-  })
-
-  sets.engaged.STP = set_combine(sets.engaged, {
-    feet="Horos Toe Shoes +3",
-    -- head=gear.Herc_STP_head,
-    -- body="Ashera Harness",
-    -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
-    -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
   })
 
   -- * DNC Native DW Trait: 30% DW
@@ -719,12 +708,10 @@ function init_gear_sets()
     ring2="Ilabrat Ring",
     back=gear.DNC_TP_DW_Cape, -- 10%
   } --30
-
   sets.engaged.DW.LowAcc = set_combine(sets.engaged.DW, {
     head="Dampening Tam",
     -- hands=gear.Adhemar_A_hands,
   })
-
   sets.engaged.DW.MidAcc = set_combine(sets.engaged.DW.LowAcc, {
     legs="Horos Tights +3",
     ring1="Chirich Ring +1",
@@ -732,7 +719,6 @@ function init_gear_sets()
     -- head="Maxixi Tiara +3", --8
     -- waist="Kentarch Belt +1",
   })
-
   sets.engaged.DW.HighAcc = set_combine(sets.engaged.DW.MidAcc, {
     ammo="Falcon Eye",
     hands="Mummu Wrists +2",
@@ -744,12 +730,6 @@ function init_gear_sets()
     -- ring1="Regal Ring",
     -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
     -- waist="Olseni Belt",
-  })
-
-  sets.engaged.DW.STP = set_combine(sets.engaged.DW, {
-    -- head=gear.Herc_STP_head,
-    -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
-    -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
   })
 
   -- Low Magic/Gear/JA Haste (67% DW to cap, 32% from gear)
@@ -768,12 +748,10 @@ function init_gear_sets()
     ring2="Ilabrat Ring",
     back=gear.DNC_TP_DW_Cape, -- 10%
   } --30
-
   sets.engaged.DW.LowAcc.LowHaste = set_combine(sets.engaged.DW.LowHaste, {
     head="Dampening Tam",
     -- hands=gear.Adhemar_A_hands,
   })
-
   sets.engaged.DW.MidAcc.LowHaste = set_combine(sets.engaged.DW.LowAcc.LowHaste, {
     legs="Horos Tights +3",
     ring1="Chirich Ring +1",
@@ -782,7 +760,6 @@ function init_gear_sets()
     -- body="Horos Casaque +3",
     -- waist="Kentarch Belt +1",
   })
-
   sets.engaged.DW.HighAcc.LowHaste = set_combine(sets.engaged.DW.MidAcc.LowHaste, {
     ammo="Falcon Eye",
     hands="Mummu Wrists +2",
@@ -794,12 +771,6 @@ function init_gear_sets()
     -- ring1="Regal Ring",
     -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
     -- waist="Olseni Belt",
-  })
-
-  sets.engaged.DW.STP.LowHaste = set_combine(sets.engaged.DW.LowHaste, {
-    -- head=gear.Herc_STP_head,
-    -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
-    -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
   })
 
   -- Mid Magic/Gear/JA Haste (56% DW to cap, 21% from gear)
@@ -818,13 +789,11 @@ function init_gear_sets()
     ring2="Ilabrat Ring",
     back=gear.DNC_TP_DW_Cape, -- 10%
   } --22
-
   sets.engaged.DW.LowAcc.MidHaste = set_combine(sets.engaged.DW.MidHaste, {
     ear2="Telos Earring",
     head="Dampening Tam",
     -- hands=gear.Adhemar_A_hands,
   })
-
   sets.engaged.DW.MidAcc.MidHaste = set_combine(sets.engaged.DW.LowAcc.MidHaste, {
     legs="Horos Tights +3",
     ring1="Chirich Ring +1",
@@ -833,7 +802,6 @@ function init_gear_sets()
     -- body="Horos Casaque +3",
     -- waist="Kentarch Belt +1",
   })
-
   sets.engaged.DW.HighAcc.MidHaste = set_combine(sets.engaged.DW.MidAcc.MidHaste, {
     ammo="Falcon Eye",
     hands="Mummu Wrists +2",
@@ -846,12 +814,6 @@ function init_gear_sets()
     -- ring1="Regal Ring",
     -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
     -- waist="Olseni Belt",
-  })
-
-  sets.engaged.DW.STP.MidHaste = set_combine(sets.engaged.DW.MidHaste, {
-    -- head=gear.Herc_STP_head,
-    -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
-    -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
   })
 
   -- High Magic/Gear/JA Haste (51% DW to cap, 16% from gear)
@@ -870,21 +832,18 @@ function init_gear_sets()
     ring2="Ilabrat Ring",
     back=gear.DNC_TP_DW_Cape, -- 10%
   } --18
-
   sets.engaged.DW.LowAcc.HighHaste = set_combine(sets.engaged.DW.HighHaste, {
     ear1="Telos Earring",
     head="Dampening Tam",
     -- hands=gear.Adhemar_A_hands,
     -- waist="Kentarch Belt +1",
   })
-
   sets.engaged.DW.MidAcc.HighHaste = set_combine(sets.engaged.DW.LowAcc.HighHaste, {
     legs="Horos Tights +3",
     ring1="Chirich Ring +1",
     -- ammo="Voluspa Tathlum",
     -- body="Horos Casaque +3",
   })
-
   sets.engaged.DW.HighAcc.HighHaste = set_combine(sets.engaged.DW.MidAcc.HighHaste, {
     ammo="Falcon Eye",
     hands="Mummu Wrists +2",
@@ -899,13 +858,6 @@ function init_gear_sets()
     -- ring1="Regal Ring",
     -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
     -- waist="Olseni Belt",
-  })
-
-  sets.engaged.DW.STP.HighHaste = set_combine(sets.engaged.DW.HighHaste, {
-    -- head=gear.Herc_STP_head,
-    -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
-    -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
-    -- waist="Kentarch Belt +1",
   })
 
   -- Max Magic/Gear/JA Haste (36% DW to cap, 1% from gear)
@@ -924,20 +876,17 @@ function init_gear_sets()
     ring2="Ilabrat Ring",
     back=gear.DNC_TP_DA_Cape,
   }
-
   sets.engaged.DW.LowAcc.MaxHaste = set_combine(sets.engaged.DW.MaxHaste, {
     ear1="Telos Earring",
     head="Dampening Tam",
     -- hands=gear.Adhemar_A_hands,
     -- waist="Kentarch Belt +1",
   })
-
   sets.engaged.DW.MidAcc.MaxHaste = set_combine(sets.engaged.DW.LowAcc.MaxHaste, {
     legs="Horos Tights +3",
     -- ammo="Voluspa Tathlum",
     ring1="Chirich Ring +1",
   })
-
   sets.engaged.DW.HighAcc.MaxHaste = set_combine(sets.engaged.DW.MidAcc.MaxHaste, {
     ammo="Falcon Eye",
     hands="Mummu Wrists +2",
@@ -955,14 +904,6 @@ function init_gear_sets()
     -- waist="Olseni Belt",
   })
 
-  sets.engaged.DW.STP.MaxHaste = set_combine(sets.engaged.DW.MaxHaste, {
-    ear1="Telos Earring",
-    -- head=gear.Herc_STP_head,
-    -- body="Ashera Harness",
-    -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
-    -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
-    -- waist="Kentarch Belt +1",
-  })
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Hybrid Sets -------------------------------------------
@@ -972,37 +913,31 @@ function init_gear_sets()
   sets.engaged.LowAcc.LightDef = set_combine(sets.engaged.LowAcc, sets.LightDef)
   sets.engaged.MidAcc.LightDef = set_combine(sets.engaged.MidAcc, sets.LightDef)
   sets.engaged.HighAcc.LightDef = set_combine(sets.engaged.HighAcc, sets.LightDef)
-  sets.engaged.STP.LightDef = set_combine(sets.engaged.STP, sets.LightDef)
 
   sets.engaged.DW.LightDef = set_combine(sets.engaged.DW, sets.LightDef)
   sets.engaged.DW.LowAcc.LightDef = set_combine(sets.engaged.DW.LowAcc, sets.LightDef)
   sets.engaged.DW.MidAcc.LightDef = set_combine(sets.engaged.DW.MidAcc, sets.LightDef)
   sets.engaged.DW.HighAcc.LightDef = set_combine(sets.engaged.DW.HighAcc, sets.LightDef)
-  sets.engaged.DW.STP.LightDef = set_combine(sets.engaged.DW.STP, sets.LightDef)
 
   sets.engaged.DW.LightDef.LowHaste = set_combine(sets.engaged.DW.LowHaste, sets.LightDef)
   sets.engaged.DW.LowAcc.LightDef.LowHaste = set_combine(sets.engaged.DW.LowAcc.LowHaste, sets.LightDef)
   sets.engaged.DW.MidAcc.LightDef.LowHaste = set_combine(sets.engaged.DW.MidAcc.LowHaste, sets.LightDef)
   sets.engaged.DW.HighAcc.LightDef.LowHaste = set_combine(sets.engaged.DW.HighAcc.LowHaste, sets.LightDef)
-  sets.engaged.DW.STP.LightDef.LowHaste = set_combine(sets.engaged.DW.STP.LowHaste, sets.LightDef)
 
   sets.engaged.DW.LightDef.MidHaste = set_combine(sets.engaged.DW.MidHaste, sets.LightDef)
   sets.engaged.DW.LowAcc.LightDef.MidHaste = set_combine(sets.engaged.DW.LowAcc.MidHaste, sets.LightDef)
   sets.engaged.DW.MidAcc.LightDef.MidHaste = set_combine(sets.engaged.DW.MidAcc.MidHaste, sets.LightDef)
   sets.engaged.DW.HighAcc.LightDef.MidHaste = set_combine(sets.engaged.DW.HighAcc.MidHaste, sets.LightDef)
-  sets.engaged.DW.STP.LightDef.MidHaste = set_combine(sets.engaged.DW.STP.MidHaste, sets.LightDef)
 
   sets.engaged.DW.LightDef.HighHaste = set_combine(sets.engaged.DW.HighHaste, sets.LightDef)
   sets.engaged.DW.LowAcc.LightDef.HighHaste = set_combine(sets.engaged.DW.LowAcc.HighHaste, sets.LightDef)
   sets.engaged.DW.MidAcc.LightDef.HighHaste = set_combine(sets.engaged.DW.MidAcc.HighHaste, sets.LightDef)
   sets.engaged.DW.HighAcc.LightDef.HighHaste = set_combine(sets.engaged.DW.HighAcc.HighHaste, sets.LightDef)
-  sets.engaged.DW.STP.LightDef.HighHaste = set_combine(sets.engaged.DW.HighHaste.STP, sets.LightDef)
 
   sets.engaged.DW.LightDef.MaxHaste = set_combine(sets.engaged.DW.MaxHaste, sets.LightDef)
   sets.engaged.DW.LowAcc.LightDef.MaxHaste = set_combine(sets.engaged.DW.LowAcc.MaxHaste, sets.LightDef)
   sets.engaged.DW.MidAcc.LightDef.MaxHaste = set_combine(sets.engaged.DW.MidAcc.MaxHaste, sets.LightDef)
   sets.engaged.DW.HighAcc.LightDef.MaxHaste = set_combine(sets.engaged.DW.HighAcc.MaxHaste, sets.LightDef)
-  sets.engaged.DW.STP.LightDef.MaxHaste = set_combine(sets.engaged.DW.STP.MaxHaste, sets.LightDef)
 
 
   ------------------------------------------------------------------------------------------------
