@@ -410,7 +410,7 @@ function init_gear_sets()
   sets.precast.WS['Resolution'] = set_combine(sets.precast.WS, {
     ammo="Seething Bomblet",
     head=gear.Adhemar_B_head,
-    body="Meghanada Cuirie +2",
+    body=gear.Adhemar_B_body,
     hands=gear.Adhemar_B_hands,
     legs="Meghanada Chausses +2",
     feet=gear.Herc_TA_feet,
@@ -423,7 +423,6 @@ function init_gear_sets()
     back=gear.RUN_WS2_Cape,
     -- ammo="Seething Bomblet +1",
     -- head=gear.Lustratio_A_head,
-    -- body=gear.Adhemar_B_body,
     -- feet=gear.Lustratio_A_feet,
     -- back=gear.RUN_WS1_Cape,
   })
@@ -455,7 +454,7 @@ function init_gear_sets()
   sets.precast.WS['Dimidiation'] = set_combine(sets.precast.WS, {
     ammo="Knobkierrie",
     head=gear.Herc_WSD_head,
-    body="Meghanada Cuirie +2",
+    body=gear.Adhemar_B_body,
     hands="Meghanada Gloves +2",
     legs=gear.Lustratio_B_legs,
     feet=gear.Herc_TA_feet,
@@ -466,7 +465,6 @@ function init_gear_sets()
     ring1="Karieyh Ring",
     ring2="Ilabrat Ring",
     back=gear.RUN_WS2_Cape,
-    -- body=gear.Adhemar_B_body,
     -- feet=gear.Lustratio_D_feet,
     -- ring1="Epaminondas's Ring",
   })

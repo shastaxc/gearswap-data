@@ -454,6 +454,7 @@ function init_gear_sets()
   -- Raging Fists: 30% STR / 30% DEX
   sets.precast.WS['Raging Fists'] = set_combine(sets.precast.WS, {
     ammo="Knobkierrie",
+    body=gear.Adhemar_B_body,
     hands=gear.Adhemar_B_hands,
     feet=gear.Herc_TA_feet,
     ear1="Sherida Earring",

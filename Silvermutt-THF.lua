@@ -344,23 +344,16 @@ function init_gear_sets()
   sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS, {
     ammo="Seething Bomblet",
     head=gear.Adhemar_B_head,
-    body="Meghanada Cuirie +2",
+    body=gear.Adhemar_B_body,
     hands=gear.Adhemar_B_hands,
     legs="Meghanada Chausses +2",
-    feet=gear.Herc_WSD_feet,
+    feet="Meg. Jam. +2",
     neck="Fotia Gorget",
     ear1="Sherida Earring",
-    ear2="Brutal Earring",
+    ear2="Telos Earring",
     ring1="Epona's Ring",
     ring2="Ilabrat Ring",
     back=gear.THF_TP_Cape,
-    -- head=gear.Adhemar_B_head,
-    -- body=gear.Adhemar_B_body,
-    -- legs="Meg. Chausses +2",
-    -- feet="Meg. Jam. +2",
-    -- ear1="Sherida Earring",
-    -- ear2="Telos Earring",
-    -- ring2="Ilabrat Ring",
   })
   sets.precast.WS['Exenterator'].MaxTP = set_combine(sets.precast.WS['Exenterator'], {
   })
@@ -609,7 +602,7 @@ function init_gear_sets()
   sets.engaged = {
     ammo="Aurgelmir Orb",
     head=gear.Adhemar_B_head,
-    body="Mummu Jacket +2",
+    body=gear.Adhemar_B_body,
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha_legs,
     feet=gear.Herc_TA_feet,
@@ -621,7 +614,6 @@ function init_gear_sets()
     ring2="Gere Ring",
     back=gear.THF_TP_Cape,
     -- ammo="Aurgelmir Orb +1",
-    -- body=gear.Adhemar_B_body,
   }
 
   sets.engaged.LowAcc = set_combine(sets.engaged, {
@@ -656,32 +648,23 @@ function init_gear_sets()
   sets.engaged.DW = {
     ammo="Aurgelmir Orb",
     head=gear.Adhemar_B_head,
-    body="Mummu Jacket +2",
+    body=gear.Adhemar_B_body, -- 6
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha_legs,
-    feet=gear.Herc_TA_feet,
+    feet=gear.Taeon_DW_feet, --9
     neck="Anu Torque",
     waist="Windbuffet Belt +1",
-    ear1="Suppanomimi", -- 5%
-    ear2="Eabani Earring", -- 4%
+    ear1="Suppanomimi", --5
+    ear2="Eabani Earring", --4
     ring1="Epona's Ring",
     ring2="Gere Ring",
     back=gear.THF_TP_Cape,
     -- ammo="Aurgelmir Orb +1",
-    -- ammo="Yamarang",
-    -- head=gear.Adhemar_B_head,
-    -- body=gear.Adhemar_B_body, -- 6
     -- hands=gear.Adhemar_A_hands,
-    -- legs="Samnuha Tights",
-    -- feet=gear.Taeon_DW_feet, --9
     -- neck="Erudit. Necklace",
-    -- ear1="Eabani Earring", --4
-    -- ear2="Suppanomimi", --5
-    -- ring1="Gere Ring",
-    -- ring2="Epona's Ring",
     -- back=gear.THF_DW_Cape, --10
     -- waist="Reiki Yotai", --7
-  } -- 41%
+  }
 
   sets.engaged.DW.LowAcc = set_combine(sets.engaged.DW, {
     -- head="Skulker's Bonnet +1",
@@ -712,32 +695,25 @@ function init_gear_sets()
   sets.engaged.DW.LowHaste = {
     ammo="Aurgelmir Orb",
     head=gear.Adhemar_B_head,
-    body="Mummu Jacket +2",
+    body=gear.Adhemar_B_body, --6
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha_legs,
-    feet=gear.Herc_TA_feet,
+    feet=gear.Taeon_DW_feet, --9
     neck="Anu Torque",
     waist="Windbuffet Belt +1",
-    ear1="Suppanomimi", -- 5%
-    ear2="Eabani Earring", -- 4%
+    ear1="Suppanomimi", --5
+    ear2="Eabani Earring", --4
     ring1="Epona's Ring",
     ring2="Gere Ring",
     back=gear.THF_TP_Cape,
     -- ammo="Aurgelmir Orb +1",
-    -- ammo="Yamarang",
-    -- head=gear.Adhemar_B_head,
-    -- body=gear.Adhemar_B_body, -- 6
     -- hands=gear.Adhemar_A_hands,
-    -- legs="Samnuha Tights",
-    -- feet=gear.Taeon_DW_feet, --9
     -- neck="Erudit. Necklace",
     -- ear1="Cessance Earring",
     -- ear2="Suppanomimi", --5
-    -- ring1="Gere Ring",
-    -- ring2="Epona's Ring",
     -- back=gear.THF_DW_Cape, --10
     -- waist="Reiki Yotai", --7
-  } -- 37%
+  }
 
   sets.engaged.DW.LowAcc.LowHaste = set_combine(sets.engaged.DW.LowHaste, {
     -- head="Skulker's Bonnet +1",
@@ -767,7 +743,7 @@ function init_gear_sets()
   sets.engaged.DW.MidHaste = {
     ammo="Aurgelmir Orb",
     head=gear.Adhemar_B_head,
-    body="Mummu Jacket +2",
+    body=gear.Adhemar_B_body, --6
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha_legs,
     feet=gear.Herc_TA_feet,
@@ -792,7 +768,7 @@ function init_gear_sets()
     -- ring2="Epona's Ring",
     -- back=gear.THF_DW_Cape, --10
     -- waist="Reiki Yotai", --7
-  } -- 26%
+  }
 
   sets.engaged.DW.LowAcc.MidHaste = set_combine(sets.engaged.DW.MidHaste, {
     -- head="Skulker's Bonnet +1",
@@ -822,7 +798,7 @@ function init_gear_sets()
   sets.engaged.DW.HighHaste = {
     ammo="Aurgelmir Orb",
     head=gear.Adhemar_B_head,
-    body="Mummu Jacket +2",
+    body=gear.Adhemar_B_body, --6
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha_legs,
     feet=gear.Herc_TA_feet,
@@ -847,7 +823,7 @@ function init_gear_sets()
     -- ring2="Epona's Ring",
     -- back=gear.THF_DW_Cape, --10
     -- waist="Reiki Yotai", --7
-  } -- 22%
+  }
 
   sets.engaged.DW.LowAcc.HighHaste = set_combine(sets.engaged.DW.HighHaste, {
     -- head="Skulker's Bonnet +1",
@@ -877,13 +853,13 @@ function init_gear_sets()
   sets.engaged.DW.MaxHaste = {
     ammo="Aurgelmir Orb",
     head=gear.Adhemar_B_head,
-    body="Mummu Jacket +2",
+    body=gear.Adhemar_B_body, --6
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha_legs,
     feet=gear.Herc_TA_feet,
     neck="Anu Torque",
     waist="Windbuffet Belt +1",
-    ear1="Suppanomimi", -- 5%
+    ear1="Telos Earring",
     ear2="Sherida Earring",
     ring1="Epona's Ring",
     ring2="Gere Ring",
@@ -901,7 +877,7 @@ function init_gear_sets()
     -- ring2="Epona's Ring",
     -- back=gear.THF_TP_Cape,
     -- waist="Windbuffet Belt +1",
-  } -- 5%
+  }
 
   sets.engaged.DW.LowAcc.MaxHaste = set_combine(sets.engaged.DW.MaxHaste, {
     -- head="Skulker's Bonnet +1",

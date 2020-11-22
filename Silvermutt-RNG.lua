@@ -639,7 +639,7 @@ function init_gear_sets()
   })
   sets.precast.WS['Evisceration'].MidAcc = set_combine(sets.precast.WS['Evisceration'].LowAcc, {
     ear2="Dignitary's Earring",
-    -- body=gear.Adhemar_B_body,
+    body=gear.Adhemar_B_body,
   })
   sets.precast.WS['Evisceration'].MidAccMaxTP = set_combine(sets.precast.WS['Evisceration'].MidAcc, {
   })
@@ -979,7 +979,7 @@ function init_gear_sets()
 
   sets.engaged = {
     head=gear.Adhemar_B_head,
-    body="Malignance Tabard",
+    body=gear.Adhemar_B_body,
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha_legs,
     feet=gear.Herc_TA_feet,
@@ -990,7 +990,6 @@ function init_gear_sets()
     ring2="Epona's Ring",
     back="Atheling Mantle",
     waist="Windbuffet Belt +1",
-    -- body=gear.Adhemar_B_body,
     -- neck="Iskur Gorget",
     -- ring1="Hetairoi Ring",
     -- back=gear.RNG_TP_Cape,
@@ -1024,7 +1023,7 @@ function init_gear_sets()
   -- No Magic/Gear/JA Haste (74% DW to cap, 49% from gear)
   sets.engaged.DW = {
     head=gear.Adhemar_B_head,
-    body="Malignance Tabard",
+    body=gear.Adhemar_B_body, --6
     hands="Floral Gauntlets", --5
     legs="Carmine Cuisses +1", --6
     feet=gear.Taeon_DW_feet, --9
@@ -1035,7 +1034,6 @@ function init_gear_sets()
     ring2="Epona's Ring",
     back="Atheling Mantle",
     waist="Windbuffet Belt +1",
-    -- body=gear.Adhemar_B_body, --6
     -- neck="Iskur Gorget",
     -- ring1="Hetairoi Ring",
     -- back=gear.RNG_DW_Cape, --10
@@ -1064,7 +1062,7 @@ function init_gear_sets()
   -- Low Magic/Gear/JA Haste (67% DW to cap, 42% from gear)
   sets.engaged.DW.LowHaste = {
     head=gear.Adhemar_B_head,
-    body="Malignance Tabard",
+    body=gear.Adhemar_B_body, --6
     hands="Floral Gauntlets", --5
     legs="Carmine Cuisses +1", --6
     feet=gear.Taeon_DW_feet, --9
@@ -1075,7 +1073,6 @@ function init_gear_sets()
     ring2="Epona's Ring",
     back="Atheling Mantle",
     waist="Windbuffet Belt +1",
-    -- body=gear.Adhemar_B_body, --6
     -- neck="Iskur Gorget",
     -- ring1="Hetairoi Ring",
     -- back=gear.RNG_TP_Cape,
@@ -1104,18 +1101,17 @@ function init_gear_sets()
   -- Mid Magic/Gear/JA Haste (56% DW to cap, 31% from gear)
   sets.engaged.DW.MidHaste = {
     head=gear.Adhemar_B_head,
-    body="Malignance Tabard",
+    body=gear.Adhemar_B_body, --6
     hands="Floral Gauntlets", --5
     legs="Carmine Cuisses +1", --6
     feet=gear.Taeon_DW_feet, --9
     neck="Anu Torque",
     ear1="Suppanomimi", --5
-    ear2="Eabani Earring", --4
+    ear2="Sherida Earring",
     ring1="Ilabrat Ring",
     ring2="Epona's Ring",
     back="Atheling Mantle",
     waist="Windbuffet Belt +1",
-    -- body=gear.Adhemar_B_body, --6
     -- hands=gear.Adhemar_B_hands,
     -- legs=gear.Samnuha_legs,
     -- neck="Iskur Gorget",
@@ -1148,10 +1144,10 @@ function init_gear_sets()
   -- High Magic/Gear/JA Haste (51% DW to cap, 27% from gear)
   sets.engaged.DW.HighHaste = {
     head=gear.Adhemar_B_head,
-    body="Malignance Tabard",
+    body=gear.Adhemar_B_body, --6
     hands="Floral Gauntlets", --5
     legs="Carmine Cuisses +1", --6
-    feet=gear.Taeon_DW_feet, --9
+    feet=gear.Herc_TA_feet,
     neck="Anu Torque",
     ear1="Suppanomimi", --5
     ear2="Eabani Earring", --4
@@ -1159,7 +1155,6 @@ function init_gear_sets()
     ring2="Epona's Ring",
     back="Atheling Mantle",
     waist="Windbuffet Belt +1",
-    -- body=gear.Adhemar_B_body, --6
     -- hands=gear.Adhemar_B_hands,
     -- legs=gear.Samnuha_legs,
     -- feet=gear.Herc_TA_feet,
@@ -1193,9 +1188,9 @@ function init_gear_sets()
   -- Max Magic/Gear/JA Haste (36% DW to cap, 11% from gear)
   sets.engaged.DW.MaxHaste = {
     head=gear.Adhemar_B_head,
-    body="Malignance Tabard",
+    body=gear.Adhemar_B_body, --6
     hands=gear.Adhemar_B_hands,
-    legs="Carmine Cuisses +1", --6
+    legs=gear.Samnuha_legs,
     feet=gear.Herc_TA_feet,
     neck="Anu Torque",
     ear1="Suppanomimi", --5
@@ -1204,7 +1199,6 @@ function init_gear_sets()
     ring2="Epona's Ring",
     back="Atheling Mantle",
     waist="Windbuffet Belt +1",
-    -- body=gear.Adhemar_B_body, --6
     -- legs=gear.Samnuha_legs,
     -- neck="Iskur Gorget",
     -- ring1="Hetairoi Ring",
