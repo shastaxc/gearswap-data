@@ -618,22 +618,10 @@ function init_gear_sets()
     ear1="Telos Earring",
     ear2="Sherida Earring",
     ring1="Epona's Ring",
-    ring2="Ilabrat Ring",
+    ring2="Gere Ring",
     back=gear.THF_TP_Cape,
     -- ammo="Aurgelmir Orb +1",
-    -- ammo="Yamarang",
-    -- head=gear.Adhemar_B_head,
     -- body=gear.Adhemar_B_body,
-    -- hands=gear.Adhemar_A_hands,
-    -- legs="Samnuha Tights",
-    -- feet=gear.Herc_TA_feet,
-    -- neck="Anu Torque",
-    -- ear1="Sherida Earring",
-    -- ear2="Brutal Earring",
-    -- ring1="Gere Ring",
-    -- ring2="Epona's Ring",
-    -- back=gear.THF_TP_Cape,
-    -- waist="Windbuffet Belt +1",
   }
 
   sets.engaged.LowAcc = set_combine(sets.engaged, {
@@ -677,7 +665,7 @@ function init_gear_sets()
     ear1="Suppanomimi", -- 5%
     ear2="Eabani Earring", -- 4%
     ring1="Epona's Ring",
-    ring2="Ilabrat Ring",
+    ring2="Gere Ring",
     back=gear.THF_TP_Cape,
     -- ammo="Aurgelmir Orb +1",
     -- ammo="Yamarang",
@@ -733,7 +721,7 @@ function init_gear_sets()
     ear1="Suppanomimi", -- 5%
     ear2="Eabani Earring", -- 4%
     ring1="Epona's Ring",
-    ring2="Ilabrat Ring",
+    ring2="Gere Ring",
     back=gear.THF_TP_Cape,
     -- ammo="Aurgelmir Orb +1",
     -- ammo="Yamarang",
@@ -788,7 +776,7 @@ function init_gear_sets()
     ear1="Suppanomimi", -- 5%
     ear2="Eabani Earring", -- 4%
     ring1="Epona's Ring",
-    ring2="Ilabrat Ring",
+    ring2="Gere Ring",
     back=gear.THF_TP_Cape,
     -- ammo="Aurgelmir Orb +1",
     -- ammo="Yamarang",
@@ -843,7 +831,7 @@ function init_gear_sets()
     ear1="Suppanomimi", -- 5%
     ear2="Eabani Earring", -- 4%
     ring1="Epona's Ring",
-    ring2="Ilabrat Ring",
+    ring2="Gere Ring",
     back=gear.THF_TP_Cape,
     -- ammo="Aurgelmir Orb +1",
     -- ammo="Yamarang",
@@ -898,7 +886,7 @@ function init_gear_sets()
     ear1="Suppanomimi", -- 5%
     ear2="Sherida Earring",
     ring1="Epona's Ring",
-    ring2="Ilabrat Ring",
+    ring2="Gere Ring",
     back=gear.THF_TP_Cape,
     -- ammo="Aurgelmir Orb +1",
     -- head=gear.Adhemar_B_head,

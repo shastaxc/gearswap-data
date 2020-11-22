@@ -302,7 +302,7 @@ function init_gear_sets()
     feet="Horos Toe Shoes +3",
     neck="Love Torque",
     ring1="Supershear Ring",
-    ring2="Ilabrat Ring",
+    ring2="Chirich Ring +1",
   }
 
   sets.precast.Step['Feather Step'] = set_combine(sets.precast.Step, {
@@ -440,7 +440,7 @@ function init_gear_sets()
     waist="Fotia Belt",
     ear1="Sherida Earring",
     ear2="Brutal Earring",
-    ring1="Ilabrat Ring",
+    ring1="Gere Ring",
     ring2="Epona's Ring",
     back=gear.DNC_TP_DA_Cape,
   }) -- 40% STR / 40% DEX
@@ -666,7 +666,7 @@ function init_gear_sets()
     ear1="Brutal Earring",
     ear2="Sherida Earring",
     ring1="Epona's Ring",
-    ring2="Ilabrat Ring",
+    ring2="Gere Ring",
     back=gear.DNC_TP_DW_Cape,
   }
   sets.engaged.LowAcc = set_combine(sets.engaged, {
@@ -708,7 +708,7 @@ function init_gear_sets()
     ear1="Suppanomimi", -- 5%
     ear2="Eabani Earring", -- 4%
     ring1="Epona's Ring",
-    ring2="Ilabrat Ring",
+    ring2="Gere Ring",
     back=gear.DNC_TP_DW_Cape, -- 10%
   } --30
   sets.engaged.DW.LowAcc = set_combine(sets.engaged.DW, {
@@ -748,7 +748,7 @@ function init_gear_sets()
     ear1="Suppanomimi", -- 5%
     ear2="Eabani Earring", -- 4%
     ring1="Epona's Ring",
-    ring2="Ilabrat Ring",
+    ring2="Gere Ring",
     back=gear.DNC_TP_DW_Cape, -- 10%
   } --30
   sets.engaged.DW.LowAcc.LowHaste = set_combine(sets.engaged.DW.LowHaste, {
@@ -789,7 +789,7 @@ function init_gear_sets()
     ear1="Eabani Earring", -- 4%
     ear2="Sherida Earring",
     ring1="Epona's Ring",
-    ring2="Ilabrat Ring",
+    ring2="Gere Ring",
     back=gear.DNC_TP_DW_Cape, -- 10%
   } --22
   sets.engaged.DW.LowAcc.MidHaste = set_combine(sets.engaged.DW.MidHaste, {
@@ -832,7 +832,7 @@ function init_gear_sets()
     ear1="Brutal Earring",
     ear2="Sherida Earring",
     ring1="Epona's Ring",
-    ring2="Ilabrat Ring",
+    ring2="Gere Ring",
     back=gear.DNC_TP_DW_Cape, -- 10%
   } --18
   sets.engaged.DW.LowAcc.HighHaste = set_combine(sets.engaged.DW.HighHaste, {
@@ -875,7 +875,7 @@ function init_gear_sets()
     ear1="Brutal Earring",
     ear2="Sherida Earring",
     ring1="Epona's Ring",
-    ring2="Ilabrat Ring",
+    ring2="Gere Ring",
     back=gear.DNC_TP_DA_Cape,
   }
   sets.engaged.DW.LowAcc.MaxHaste = set_combine(sets.engaged.DW.MaxHaste, {
