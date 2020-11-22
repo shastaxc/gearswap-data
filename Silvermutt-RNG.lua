@@ -695,38 +695,14 @@ function init_gear_sets()
   sets.precast.WS['Rampage'].HighAcc = sets.precast.WS['Evisceration'].MidAcc
   sets.precast.WS['Rampage'].HighAccMaxTP = sets.precast.WS['Evisceration'].HighAcc
 
-  sets.precast.WS['Aeolian Edge'] = {
-    head="Highwing Helm", --20
-    body=gear.Samnuha_body, --25
-    hands=gear.Leyline_Gloves, --30
-    legs=gear.Herc_MAB_legs, --24
-    feet=gear.Herc_WSD_feet, --10
-    neck="Baetyl Pendant", --13
-    ear1="Friomisi Earring", --10
-    ear2="Moonshade Earring",
-    ring1="Shiva Ring +1", --3
-    ring2="Karieyh Ring",
-    back="Argochampsa Mantle", --12
-    waist="Eschan Stone", --7
-  } -- 40% DEX / 40% INT + MAB
-  sets.precast.WS['Aeolian Edge'].MaxTP = set_combine(sets.precast.WS['Aeolian Edge'], {
-    ear2="Novio Earring",
-  })
-  sets.precast.WS['Aeolian Edge'].LowAcc = set_combine(sets.precast.WS['Aeolian Edge'], {
-  })
-  sets.precast.WS['Aeolian Edge'].LowAccMaxTP = set_combine(sets.precast.WS['Aeolian Edge'].LowAcc, {
-    ear2="Novio Earring",
-  })
-  sets.precast.WS['Aeolian Edge'].MidAcc = set_combine(sets.precast.WS['Aeolian Edge'].LowAcc, {
-  })
-  sets.precast.WS['Aeolian Edge'].MidAccMaxTP = set_combine(sets.precast.WS['Aeolian Edge'].MidAcc, {
-    ear2="Novio Earring",
-  })
-  sets.precast.WS['Aeolian Edge'].HighAcc = set_combine(sets.precast.WS['Aeolian Edge'].MidAcc, {
-  })
-  sets.precast.WS['Aeolian Edge'].HighAccMaxTP = set_combine(sets.precast.WS['Aeolian Edge'].HighAcc, {
-    ear2="Novio Earring",
-  })
+  sets.precast.WS["Aeolian Edge"] = sets.precast.WS["Trueflight"]
+  sets.precast.WS["Aeolian Edge"].MaxTP = sets.precast.WS["Trueflight"].MaxTP
+  sets.precast.WS["Aeolian Edge"].LowAcc = sets.precast.WS["Trueflight"].LowAcc
+  sets.precast.WS["Aeolian Edge"].LowAccMaxTP = sets.precast.WS["Trueflight"].LowAccMaxTP
+  sets.precast.WS["Aeolian Edge"].MidAcc = sets.precast.WS["Trueflight"].MidAcc
+  sets.precast.WS["Aeolian Edge"].MidAccMaxTP = sets.precast.WS["Trueflight"].MidAccMaxTP
+  sets.precast.WS["Aeolian Edge"].HighAcc = sets.precast.WS["Trueflight"].HighAcc
+  sets.precast.WS["Aeolian Edge"].HighAccMaxTP = sets.precast.WS["Trueflight"].HighAccMaxTP
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Midcast Sets ------------------------------------------
