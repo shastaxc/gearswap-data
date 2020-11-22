@@ -345,7 +345,7 @@ function init_gear_sets()
 
   -- (30% Flurry, 10% Snapshot, 5% Rapid from Merits)
   sets.precast.RA.Flurry2 = {
-    head="Orion Beret +1", --0/14
+    head="Orion Beret +2", --0/16
     hands=gear.Carmine_D_hands, --8/11
     feet="Meg. Jam. +2", --10/0
     neck="Scout's Gorget +1", --3/0
@@ -362,7 +362,7 @@ function init_gear_sets()
     -- back=gear.RNG_SNP_Cape, --10/0
     -- waist="Yemaya Belt", --0/5
     --32 Snapshot / 57 Rapid Shot
-  } --34 Snapshot / 25 Rapid Shot
+  } --34 Snapshot / 27 Rapid Shot
 
   sets.precast.RA.Gastra = set_combine(sets.precast.RA, {
     -- head="Orion Beret +3", --0/18
@@ -380,7 +380,7 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.precast.WS = {
-    head="Orion Beret +1",
+    head="Orion Beret +2",
     body="Meghanada Cuirie +2",
     hands="Meg. Gloves +2",
     legs="Meghanada Chausses +2",
@@ -649,7 +649,7 @@ function init_gear_sets()
   })
 
   sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
-    head="Orion Beret +1",
+    head="Orion Beret +2",
     neck="Scout's Gorget +1",
     ring2="Karieyh Ring",
   
