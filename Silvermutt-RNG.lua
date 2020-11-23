@@ -45,8 +45,10 @@ function get_sets()
 
   -- Load and initialize the include file.
   include('Mote-Include.lua') -- Executes job_setup, user_setup, init_gear_sets
-  send_command('gs c equipweapons')
-  send_command('gs c equiprangedweapons')
+  coroutine.schedule(function()
+    send_command('gs c equipweapons')
+    send_command('gs c equiprangedweapons')
+  end, 2)
 end
 
 -- Executes on first load and main job change
