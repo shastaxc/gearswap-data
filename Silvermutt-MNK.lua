@@ -908,7 +908,7 @@ function job_aftercast(spell, action, spellMap, eventArgs)
       if not buffactive.Boost then
         info.boost_on = false
       end
-    end, 1)
+    end, 3)
   end
   -- if spell.type == 'WeaponSkill' and not spell.interrupted and state.FootworkWS and state.Buff.Footwork then
   --   send_command('cancel Footwork')
