@@ -407,7 +407,7 @@ function init_gear_sets()
   })
   sets.precast.WS.LowAcc = set_combine(sets.precast.WS, {
     waist="Kwahu Kachina Belt +1",
-    -- ear1="Beyla Earring",
+    ear1="Beyla Earring",
   })
   sets.precast.WS.LowAccMaxTP = set_combine(sets.precast.WS.LowAcc, {
     ear2="Telos Earring",
@@ -430,7 +430,7 @@ function init_gear_sets()
   })
   sets.precast.WS['Apex Arrow'].LowAcc = set_combine(sets.precast.WS['Apex Arrow'], {
     waist="Kwahu Kachina Belt +1",
-    -- ear1="Beyla Earring",
+    ear1="Beyla Earring",
   })
   sets.precast.WS['Apex Arrow'].LowAccMaxTP = set_combine(sets.precast.WS['Apex Arrow'].LowAcc, {
   })
@@ -484,10 +484,10 @@ function init_gear_sets()
   sets.precast.WS['Jishnu\'s Radiance'].MidAccMaxTP = set_combine(sets.precast.WS['Jishnu\'s Radiance'].MidAcc, {
   })
   sets.precast.WS['Jishnu\'s Radiance'].HighAcc = set_combine(sets.precast.WS['Jishnu\'s Radiance'].MidAcc, {
+    ear1="Beyla Earring",
     ring2="Hajduk Ring +1",
     -- feet="Arcadian Socks +3",
     -- neck="Iskur Gorget",
-    -- ear1="Beyla Earring",
   })
   sets.precast.WS['Jishnu\'s Radiance'].HighAccMaxTP = set_combine(sets.precast.WS['Jishnu\'s Radiance'].HighAcc, {
   })
@@ -515,7 +515,7 @@ function init_gear_sets()
     ear2="Telos Earring",
   })
   sets.precast.WS['Last Stand'].HighAcc = set_combine(sets.precast.WS['Last Stand'].MidAcc, {
-    -- ear1="Beyla Earring",
+    ear1="Beyla Earring",
   })
   sets.precast.WS['Last Stand'].HighAccMaxTP = set_combine(sets.precast.WS['Last Stand'].HighAcc, {
   })
@@ -533,7 +533,7 @@ function init_gear_sets()
   sets.precast.WS["Coronach"].LowAccMaxTP = set_combine(sets.precast.WS['Coronach'].LowAcc, {
   })
   sets.precast.WS["Coronach"].MidAcc = set_combine(sets.precast.WS['Coronach'].LowAcc, {
-    -- ear2="Beyla Earring",
+    ear2="Beyla Earring",
   })
   sets.precast.WS["Coronach"].MidAccMaxTP = set_combine(sets.precast.WS['Coronach'].MidAcc, {
   })
@@ -770,6 +770,7 @@ function init_gear_sets()
     legs="Mummu Kecks +2",
   })
   sets.midcast.RA.MidAcc = set_combine(sets.midcast.RA.LowAcc, {
+    ear2="Beyla Earring", --0 [0] 15/0 <0> {0} (0)
     ring2="Hajduk Ring +1", --0 [0] 17/0 <0> {0} (0)
     -- Goal:
     -- head="Arcadian Beret +3", --37 [0] 37/62 <0> {0} (38)
