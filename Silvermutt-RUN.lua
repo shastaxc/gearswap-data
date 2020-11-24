@@ -1015,7 +1015,7 @@ function init_gear_sets()
     back="Evasionist's Cape"
   })
   sets.Obi = {
-    -- waist="Hachirin-no-Obi"
+    waist="Hachirin-no-Obi"
   }
   sets.CP = {
     back=gear.CP_Cape,
