@@ -537,6 +537,7 @@ function init_gear_sets()
     ring2="Karieyh Ring",
     back="Argochampsa Mantle", --12
     waist="Eschan Stone", --7
+    -- waist="Orpheus's Sash",
   }) -- 40% DEX / 40% INT + MAB
 
   sets.precast.Skillchain = {

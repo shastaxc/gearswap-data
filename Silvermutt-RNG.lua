@@ -1415,13 +1415,15 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         equip({waist="Hachirin-no-Obi"})
       -- Target distance under 1.7 yalms.
       elseif spell.target.distance < (1.7 + spell.target.model_size) then
-        equip({waist="Orpheus's Sash"})
+        -- equip({waist="Orpheus's Sash"})
+        equip({waist="Hachirin-no-Obi"})
       -- Matching day and weather.
       elseif spell.element == world.day_element and spell.element == world.weather_element then
         equip({waist="Hachirin-no-Obi"})
       -- Target distance under 8 yalms.
       elseif spell.target.distance < (8 + spell.target.model_size) then
-        equip({waist="Orpheus's Sash"})
+        -- equip({waist="Orpheus's Sash"})
+        equip({waist="Hachirin-no-Obi"})
       -- Match day or weather.
       elseif spell.element == world.day_element or spell.element == world.weather_element then
         equip({waist="Hachirin-no-Obi"})
@@ -1672,6 +1674,8 @@ function display_current_job_state(eventArgs)
     m_msg = m_msg .. '/' ..state.HybridMode.value
   end
 
+  local r_msg = state.RangedMode.value
+
   local d_msg = 'None'
   if state.DefenseMode.value ~= 'None' then
     d_msg = state.DefenseMode.value .. state[state.DefenseMode.value .. 'DefenseMode'].value
@@ -1688,6 +1692,7 @@ function display_current_job_state(eventArgs)
   end
 
   add_to_chat(002, '| ' ..string.char(31,210).. 'Melee' ..cf_msg.. ': ' ..string.char(31,001)..m_msg.. string.char(31,002)..  ' |'
+      ..string.char(31,210).. ' Ranged: ' ..string.char(31,001)..r_msg.. string.char(31,002)..  ' |'
       ..string.char(31,004).. ' Defense: ' ..string.char(31,001)..d_msg.. string.char(31,002)..  ' |'
       ..string.char(31,207).. ' Idle: ' ..string.char(31,001)..i_msg.. string.char(31,002)..  ' |'
       ..string.char(31,002)..msg)
