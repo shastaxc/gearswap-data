@@ -317,7 +317,7 @@ function init_gear_sets()
     body="Horos Casaque +3",
     hands="Malignance Gloves",
     legs="Meghanada Chausses +2",
-    feet="Mummu Gamashes +2",
+    feet="Malignance Boots",
     neck="Love Torque",
     ear1="Digni. Earring",
     ring1="Balrahn's Ring",
@@ -611,8 +611,8 @@ function init_gear_sets()
     body="Malignance Tabard", --9/9, 139 
     hands="Malignance Gloves", --5/5, 112
     legs="Mummu Kecks +2", --5/5, 107
-    feet="Turms Leggings", --0/0, 137
-  } --21 PDT/21 MDT, 604 MEVA
+    feet="Malignance Boots", --4/4, 150
+  } --25 PDT/25 MDT, 604 MEVA
 
   sets.idle.LightDef = set_combine(sets.idle, sets.LightDef)
   sets.idle.LightDef.Regain = set_combine(sets.idle.Regain, sets.LightDef)
@@ -629,7 +629,7 @@ function init_gear_sets()
     body="Malignance Tabard", --9/9, 139 
     hands="Malignance Gloves", --5/5, 112
     legs="Mummu Kecks +2", --5/5, 107
-    feet="Turms Leggings", --0/0, 137
+    feet="Malignance Boots", --4/4, 150
     neck="Twilight Torque", --5/5, 0
     ear1="Eabani Earring", --0/0, 8
     ear2="Odnowa Earring +1", --3/5, 0

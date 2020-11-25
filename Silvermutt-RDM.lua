@@ -992,7 +992,7 @@ function init_gear_sets()
     body="Malignance Tabard",
     hands="Malignance Gloves",
     legs="Carmine Cuisses +1",
-    feet="Ayanmo Gambieras +1",
+    feet="Malignance Boots",
     neck="Bathy Choker +1",
     ear1="Infused Earring",
     ear2="Eabani Earring",
@@ -1033,10 +1033,10 @@ function init_gear_sets()
     ammo="Staunch Tathlum", --2/2, 0
     body="Malignance Tabard", --9/9, 139
     hands="Malignance Gloves", --5/5, 112
+    feet="Malignance Boots", --4/4, 150
     -- head="Malignance Chapeau", --6/6
     -- legs="Malignance Tights", --7/7
-    -- feet="Malignance Boots", --4/4
-  } --16 PDT / 16 MDT, 251 MEVA
+  } --20 PDT / 20 MDT, 401 MEVA
 
   sets.idle.LightDef = set_combine(sets.idle, sets.LightDef)
   sets.idle.LightDef.Regain = set_combine(sets.idle.Regain, sets.LightDef)
@@ -1055,18 +1055,18 @@ function init_gear_sets()
     ammo="Staunch Tathlum", --2/2, 0
     body="Malignance Tabard", --9/9, 139
     hands="Malignance Gloves", --5/5, 112
+    -- feet="Malignance Boots", --4/4, 150
     ear2="Eabani Earring", --0/0, 8
     ring2="Defending Ring", --10/10, 0
     -- main="Bolelabunga",
     -- sub="Sacro Bulwark", --10/10
     -- head="Malignance Chapeau", --6/6
     -- legs="Malignance Tights", --7/7
-    -- feet="Malignance Boots", --4/4
     -- neck="Warder's Charm +1",
     -- ear1="Sanare Earring",
     -- back=gear.RDM_INT_Cape,
     -- waist="Carrier's Sash",
-  } --26 PDT / 26 MDT, 259 MEVA
+  } --30 PDT / 30 MDT, 401 MEVA
 
   sets.idle.Weak = sets.HeavyDef
 
@@ -1253,14 +1253,14 @@ function init_gear_sets()
     body="Malignance Tabard",
     hands="Malignance Gloves",
     -- legs="Malignance Tights",
-    -- feet="Malignance Boots",
-    -- neck="Anu Torque",
-    -- ear1="Sherida Earring",
-    -- ear2="Telos Earring",
+    feet="Malignance Boots",
+    neck="Anu Torque",
+    ear1="Sherida Earring",
+    ear2="Telos Earring",
     -- ring1="Hetairoi Ring",
-    -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
+    ring2="Chirich Ring +1",
     -- back=gear.RDM_DW_Cape, --10
-    -- waist="Windbuffet Belt +1",
+    waist="Windbuffet Belt +1",
   }) --10
 
   sets.engaged.DW.MidAcc.MaxHaste = set_combine(sets.engaged.DW.MaxHaste, {
