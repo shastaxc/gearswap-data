@@ -676,7 +676,6 @@ function init_gear_sets()
   })
   sets.midcast.Stoneskin.Safe = set_combine(sets.midcast.Stoneskin, {
     ammo="Staunch Tathlum",
-    waist="Audumbla Sash",
     ring1="Gelatinous Ring +1",
     ring2="Defending Ring",
     -- back="Moonlight Cape",
@@ -692,7 +691,7 @@ function init_gear_sets()
     -- back="Moonlight Cape",
   })
   sets.midcast.Shell = sets.midcast.Protect
-  sets.midcast.Shell = sets.midcast.Protect.Safe
+  sets.midcast.Shell.Safe = sets.midcast.Protect.Safe
 
   sets.midcast.Flash = sets.Enmity
   sets.midcast.Foil = sets.Enmity
