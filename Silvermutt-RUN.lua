@@ -303,7 +303,7 @@ function init_gear_sets()
     body=gear.Samnuha_body, --25 [63]
     hands=gear.Carmine_D_hands, --42 [27]
     legs=gear.Herc_MAB_legs, --24 [38]
-    feet=gear.Herc_WSD_feet, --10 [9]
+    feet=gear.Herc_MAB_feet, --41 [9]
     neck="Baetyl Pendant", --13 [0]
     ear1="Friomisi Earring", --10 [0]
     ear2="Novio Earring", --7 [0]

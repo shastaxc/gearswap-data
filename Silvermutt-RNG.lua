@@ -547,7 +547,7 @@ function init_gear_sets()
     body="Cohort Cloak +1",
     hands=gear.Carmine_D_hands,
     legs=gear.Herc_MAB_legs,
-    feet=gear.Herc_WSD_feet,
+    feet=gear.Herc_MAB_feet, --41
     ear1="Friomisi Earring",
     ear2="Moonshade Earring",
     ring1="Weatherspoon Ring",
@@ -555,29 +555,9 @@ function init_gear_sets()
     neck="Scout's Gorget +1",
     back=gear.RNG_WS2_Cape,
     waist="Eschan Stone",
-    -- head="Orion Beret +3",
-    -- body="Carm. Sc. Mail +1",
-    -- hands=gear.Carmine_D_hands,
-    -- legs=gear.Herc_WSD_legs,
-    -- feet=gear.Herc_WSD_feet,
-    -- neck="Scout's Gorget +2",
-    -- ear1="Moonshade Earring",
-    -- ear2="Friomisi Earring",
-    -- ring1="Epaminondas's Ring",
-    -- ring2="Dingir Ring",
-    -- back=gear.RNG_WS1_Cape,
-    -- waist="Eschan Stone",
-
-    -- Best:
-    -- head=empty
-    -- body="Cohort Cloak +1",
     -- hands=gear.Herc_MAB_hands,
     -- legs="Arcadian Braccae +3",
-    -- feet=gear.Herc_MAB_feet,
-    -- ear1="Friomisi Earring",
-    -- ear2="Moonshade Earring",
     -- ring1="Epaminondas's Ring",
-    -- ring2="Dingir Ring",
     -- back=gear.RNG_WS1_Cape,
     -- waist="Orpheus's Sash",
   } -- AGI / MAB
