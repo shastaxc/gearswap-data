@@ -382,7 +382,8 @@ function init_gear_sets()
     legs="Ayanmo Cosciales +1", --39 [45]
     feet="Ayanmo Gambieras +1", --36 [11]
     ear2="Dignitary's Earring", --10 [0]
-  } --218 Magic Acc [215 HP, 565 w/ PDT, 520 w/ MDT]
+    ring2="Weatherspoon Ring", --10 [0]
+  } --228 Magic Acc [215 HP, 565 w/ PDT, 520 w/ MDT]
 
 
   ------------------------------------------------------------------------------------------------
@@ -464,7 +465,7 @@ function init_gear_sets()
     waist="Grunfeld Rope",
     ear1="Sherida Earring",
     ear2="Moonshade Earring",
-    ring1="Karieyh Ring",
+    ring1="Niqmaddu Ring",
     ring2="Ilabrat Ring",
     back=gear.RUN_WS2_Cape,
     -- feet=gear.Lustratio_D_feet,
@@ -495,7 +496,7 @@ function init_gear_sets()
 
   sets.precast.WS['Herculean Slash'] = set_combine(sets.Macc, {
     ear2="Moonshade Earring",
-    ring2="Karieyh Ring",
+    ring2="Niqmaddu Ring",
   })
   sets.precast.WS['Herculean Slash'].Safe = set_combine(sets.precast.WS.Safe, sets.Macc, {
   })
@@ -517,7 +518,7 @@ function init_gear_sets()
   -- Magic accuracy required for Shockwave
   sets.precast.WS['Shockwave'] = set_combine(sets.Macc, {
     ear2="Moonshade Earring",
-    ring2="Karieyh Ring",
+    ring2="Niqmaddu Ring",
   })
   sets.precast.WS['Shockwave'].Safe = set_combine(sets.precast.WS.Safe, sets.Macc, {
   })
@@ -731,7 +732,6 @@ function init_gear_sets()
 
   sets.latent_regain = {
     head="Turms Cap +1",
-    ring1="Karieyh Ring",
   }
   sets.latent_regen = {
     head="Turms Cap +1",

@@ -285,7 +285,7 @@ function init_gear_sets()
     feet=gear.Taeon_FC_feet, --5
     ear1="Loquac. Earring", --2
     ring1="Lebeche Ring", --Quick Magic 2%
-    ring2="Prolix Ring", --2
+    ring2="Weatherspoon Ring", --5
   }
 
   sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {
@@ -391,7 +391,7 @@ function init_gear_sets()
     ear1="Sherida Earring",
     ear2="Moonshade Earring",
     ring1="Dingir Ring",
-    ring2="Karieyh Ring",
+    ring2="Epona's Ring",
     back=gear.RNG_WS2_Cape,
     waist="Fotia Belt",
     -- head="Orion Beret +3",
@@ -550,7 +550,7 @@ function init_gear_sets()
     feet=gear.Herc_WSD_feet,
     ear1="Friomisi Earring",
     ear2="Moonshade Earring",
-    ring1="Karieyh Ring",
+    ring1="Weatherspoon Ring",
     ring2="Dingir Ring",
     neck="Scout's Gorget +1",
     back=gear.RNG_WS2_Cape,
@@ -653,7 +653,7 @@ function init_gear_sets()
   sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
     head="Orion Beret +2",
     neck="Scout's Gorget +1",
-    ring2="Karieyh Ring",
+    ring2="Epona's Ring",
   
     -- Goal:
     -- head="Orion Beret +3",
@@ -869,7 +869,6 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.latent_regain = {
-    ring2="Karieyh Ring",
   }
   sets.latent_regen = {
     head="Meghanada Visor +2",

@@ -525,7 +525,6 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.latent_regain = {
-    ring2="Karieyh Ring",
   }
   sets.latent_regen = {
     neck="Bathy Choker +1",

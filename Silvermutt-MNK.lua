@@ -175,7 +175,7 @@ function init_gear_sets()
     feet=gear.Taeon_FC_feet, --5
     ear1="Loquac. Earring", --2
     ring1="Lebeche Ring", --Quick Magic 2%
-    ring2="Prolix Ring", --2
+    ring2="Weatherspoon Ring", --5
   }
   
   -- Precast sets to enhance JAs on use
@@ -593,7 +593,7 @@ function init_gear_sets()
 
   sets.precast.WS['Cataclysm'] = set_combine(sets.precast.WS, sets.MAB, {
     ammo="Knobkierrie",
-    ring2="Karieyh Ring",
+    ring2="Epona's Ring",
     -- waist="Fotia Belt",
     -- back=gear.MNK_WS_Cape,
   }) -- STR 30% / INT 30% + MAB
@@ -607,7 +607,6 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.latent_regain = {
-    ring2="Karieyh Ring",
   }
   sets.latent_regen = {
     neck="Bathy Choker +1",

@@ -285,7 +285,7 @@ function init_gear_sets()
     feet=gear.Taeon_FC_feet, --5
     ear1="Loquac. Earring", --2
     ring1="Lebeche Ring", --Quick Magic 2%
-    ring2="Prolix Ring", --2
+    ring2="Weatherspoon Ring", --5
   }
 
   sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {
@@ -312,7 +312,7 @@ function init_gear_sets()
     ear1="Moonshade Earring",
     ear2="Sherida Earring",
     ring1="Ilabrat Ring",
-    ring2="Karieyh Ring",
+    ring2="Epona's Ring",
     back=gear.THF_TP_Cape,
     -- ammo="Aurgelmir Orb +1",
     -- head=gear.Herc_WSD_head,
@@ -430,7 +430,7 @@ function init_gear_sets()
     ear1="Moonshade Earring",
     ear2="Odr Earring",
     ring1="Ilabrat Ring",
-    ring2="Karieyh Ring",
+    ring2="Epona's Ring",
     back=gear.THF_TP_Cape,
     -- ammo="Aurgelmir Orb +1",
     -- neck="Caro Necklace",
@@ -477,7 +477,7 @@ function init_gear_sets()
     ear1="Friomisi Earring", --10
     ear2="Moonshade Earring",
     ring1="Shiva Ring +1", --3
-    ring2="Karieyh Ring",
+    ring2="Epona's Ring",
     back="Argochampsa Mantle", --12
     waist="Eschan Stone", --7
     -- ammo="Seeth. Bomblet +1",
@@ -506,7 +506,6 @@ function init_gear_sets()
 
   sets.latent_regain = {
     head="Turms Cap +1",
-    ring2="Karieyh Ring",
   }
   sets.latent_regen = {
     head="Turms Cap +1",

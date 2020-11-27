@@ -320,7 +320,7 @@ function init_gear_sets()
     feet="Malignance Boots",
     neck="Love Torque",
     ear1="Digni. Earring",
-    ring1="Balrahn's Ring",
+    ring1="Weatherspoon Ring",
     ring2="Ayanmo Ring",
   } -- Magic Accuracy
 
@@ -362,7 +362,7 @@ function init_gear_sets()
     feet=gear.Taeon_FC_feet, --5
     ear1="Loquac. Earring", --2
     ring1="Lebeche Ring", --Quick Magic 2%
-    ring2="Prolix Ring", --2
+    ring2="Weatherspoon Ring", --5
   }
 
   sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {
@@ -389,7 +389,7 @@ function init_gear_sets()
     ear1="Sherida Earring",
     ear2="Brutal Earring",
     ring1="Ilabrat Ring",
-    ring2="Karieyh Ring",
+    ring2="Epona's Ring",
     back=gear.DNC_TP_DA_Cape,
   } -- default set
 
@@ -411,7 +411,7 @@ function init_gear_sets()
     ear1="Sherida Earring",
     ear2="Brutal Earring",
     ring1="Ilabrat Ring",
-    ring2="Karieyh Ring",
+    ring2="Epona's Ring",
     back=gear.DNC_TP_DA_Cape,
   }) -- AGI
   sets.precast.WS['Exenterator'].MaxTP = set_combine(sets.precast.WS['Exenterator'], {
@@ -505,7 +505,7 @@ function init_gear_sets()
     ear1="Sherida Earring",
     ear2="Moonshade Earring",
     ring1="Ilabrat Ring",
-    ring2="Karieyh Ring",
+    ring2="Epona's Ring",
     back=gear.DNC_TP_DA_Cape,
   }) -- 80% DEX
   sets.precast.WS["Rudra's Storm"].MaxTP = set_combine(sets.precast.WS["Rudra's Storm"], {
@@ -534,7 +534,7 @@ function init_gear_sets()
     ear1="Friomisi Earring", --10
     ear2="Moonshade Earring",
     ring1="Shiva Ring +1", --3
-    ring2="Karieyh Ring",
+    ring2="Epona's Ring",
     back="Argochampsa Mantle", --12
     waist="Eschan Stone", --7
     -- waist="Orpheus's Sash",
@@ -563,7 +563,6 @@ function init_gear_sets()
 
   sets.latent_regain = {
     head="Turms Cap +1",
-    ring2="Karieyh Ring",
   }
   sets.latent_regen = {
     head="Turms Cap +1",

@@ -296,9 +296,8 @@ function init_gear_sets()
     hands=gear.Leyline_Gloves, --8
     legs="Ayanmo Cosciales +1", --5
     feet=gear.Taeon_FC_feet, --5
-    ear1="Loquac. Earring", --2
     ring1="Lebeche Ring", --Quick Magic 2%
-    ring2="Prolix Ring", --2
+    ring2="Weatherspoon Ring", --5
     -- head="Atrophy Chapeau +3", --16
     -- body="Viti. Tabard +3", --15
     -- legs="Aya. Cosciales +2", --6
@@ -964,7 +963,6 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.latent_regain = {
-    ring2="Karieyh Ring",
   }
   sets.latent_regen = {
     neck="Bathy Choker +1",
