@@ -699,7 +699,7 @@ function init_gear_sets()
   sets.engaged.DW = {
     ammo="Aurgelmir Orb",
     head="Maxixi Tiara +3", -- 8%
-    body="Horos Casaque +3",
+    body=gear.Adhemar_B_body, -- 6%
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha_legs,
     feet="Horos Toe Shoes +3",
@@ -710,7 +710,7 @@ function init_gear_sets()
     ring1="Epona's Ring",
     ring2="Gere Ring",
     back=gear.DNC_TP_DW_Cape, -- 10%
-  } --30
+  } --36
   sets.engaged.DW.LowAcc = set_combine(sets.engaged.DW, {
     head="Dampening Tam",
     -- hands=gear.Adhemar_A_hands,
@@ -739,14 +739,14 @@ function init_gear_sets()
   sets.engaged.DW.LowHaste = {
     ammo="Aurgelmir Orb",
     head="Maxixi Tiara +3", -- 8%
-    body="Horos Casaque +3",
+    body=gear.Adhemar_B_body, -- 6%
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha_legs,
     feet="Horos Toe Shoes +3",
     neck="Charis Necklace", -- 3%
     waist="Windbuffet Belt +1",
     ear1="Suppanomimi", -- 5%
-    ear2="Eabani Earring", -- 4%
+    ear2="Sherida Earring",
     ring1="Epona's Ring",
     ring2="Gere Ring",
     back=gear.DNC_TP_DW_Cape, -- 10%
