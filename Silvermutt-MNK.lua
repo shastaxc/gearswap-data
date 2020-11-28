@@ -639,12 +639,12 @@ function init_gear_sets()
 
   sets.LightDef = {
     ammo="Staunch Tathlum", --2/2, 0
-    head="Mummu Bonnet +2", --0/0, 75
+    head="Kendatsuba Jinpachi +1", --0/0, 101
     body="Malignance Tabard", --9/9, 139
     hands="Malignance Gloves", --5/5, 112
     legs="Mummu Kecks +2", --5/5, 107
     feet="Malignance Boots", --4/4, 150
-  } --25 PDT/25 MDT, 583 MEVA
+  } --25 PDT/25 MDT, 609 MEVA
 
   sets.idle.LightDef = set_combine(sets.idle, sets.LightDef)
   sets.idle.LightDef.Regain = set_combine(sets.idle.Regain, sets.LightDef)
@@ -661,7 +661,7 @@ function init_gear_sets()
 
   sets.HeavyDef = {
     ammo="Staunch Tathlum", --2/2, 109
-    head="Mummu Bonnet +2", --0/0, 75
+    head="Kendatsuba Jinpachi +1", --0/0, 101
     body="Malignance Tabard", --9/9, 139 
     hands="Malignance Gloves", --5/5, 112
     legs="Mummu Kecks +2", --5/5, 107
@@ -671,7 +671,7 @@ function init_gear_sets()
     ear2="Odnowa Earring +1", --3/5, 0
     ring1=gear.Dark_Ring, --5/4, 0
     ring2="Defending Ring", --10/10, 0
-  } --48 PDT/49 MDT, 700 MEVA
+  } --48 PDT/49 MDT, 726 MEVA
 
   sets.idle.Weak = sets.HeavyDef
 
@@ -706,7 +706,7 @@ function init_gear_sets()
     ear2="Cessance Earring",
   })
   sets.engaged.MidAcc = set_combine(sets.engaged.LowAcc, {
-    head=gear.Dampening_Tam,
+    head="Kendatsuba Jinpachi +1",
   })
   sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
     feet="Anchorite's Gaiters +3",
