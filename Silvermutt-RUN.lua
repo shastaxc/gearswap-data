@@ -1764,7 +1764,7 @@ function select_default_macro_book()
   -- Default macro set/book: (set, book)
   if player.sub_job == 'BLU' then
     set_macro_page(1, 5)
-  elseif player.sub_job == 'DRK' then
+  elseif player.sub_job == 'DRK' or player.sub_job == 'BLM' then
     set_macro_page(2, 5)
   elseif player.sub_job == 'WHM' then
     set_macro_page(3, 5)
