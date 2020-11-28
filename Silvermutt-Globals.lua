@@ -300,9 +300,9 @@ windower.register_event('zone change',
     end]]--
 
     -- Auto load Omen add-on
-    -- if world.zone == 'Reisenjima Henge' then
-    --   send_command('lua l omen')
-    -- end
+    if world.zone == 'Reisenjima Henge' then
+      send_command('lua l omen')
+    end
   end
 )
 
