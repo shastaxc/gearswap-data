@@ -447,7 +447,7 @@ function init_gear_sets()
     ammo="Knobkierrie",
     head="Kendatsuba Jinpachi +1",
     body="Kendatsuba Samue +1",
-    hands=gear.Adhemar_B_hands,
+    hands=gear.Herc_TA_hands,
     legs="Hizamaru Hizayoroi +1",
     feet=gear.Herc_TA_feet,
     neck="Monk's Nodowa +2",
@@ -458,7 +458,6 @@ function init_gear_sets()
     back=gear.MNK_STR_DA_Cape,
     waist="Moonbow Belt +1",
     -- body="Tatenashi Harama +1",
-    -- hands=gear.Herc_TA_hands,
     -- legs="Tatenashi Haidate +1",
     -- back=gear.MNK_VIT_WSD_Cape,
   })
