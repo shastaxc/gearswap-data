@@ -292,12 +292,8 @@ function init_gear_sets()
     ring2="Niqmaddu Ring",
     back=gear.MNK_STR_DA_Cape,
     waist="Moonbow Belt +1",
-    -- body="Anchorite's Cyclas +3",
-    -- legs="Hizamaru Hizayoroi +2",
-    -- back=gear.MNK_WS_Cape,
-    -- ear2="Moonshade Earring",
-    -- ring1="Begrudging Ring",
-    -- ring2="Niqmaddu Ring",
+    -- legs="Kendatsuba Hakama +1",
+    -- back=gear.MNK_STR_Crit_Cape,
   })
   sets.precast.WS["Victory Smite"].MaxTP = set_combine(sets.precast.WS["Victory Smite"], {
   })
@@ -308,12 +304,11 @@ function init_gear_sets()
   })
   sets.precast.WS["Victory Smite"].MidAcc = set_combine(sets.precast.WS["Victory Smite"].LowAcc, {
     ammo="Falcon Eye",
-    -- head="Rao Kabuto +1",
   })
   sets.precast.WS["Victory Smite"].MidAccMaxTP = set_combine(sets.precast.WS["Victory Smite"].MidAcc, {
   })
   sets.precast.WS["Victory Smite"].HighAcc = set_combine(sets.precast.WS["Victory Smite"].MidAcc, {
-    -- head="Ken. Jinpachi +1",
+    head="Kendatsuba Jinpachi +1",
     -- legs="Ken. Hakama +1",
     -- feet="Ken. Sune-Ate +1",
   })
@@ -323,7 +318,7 @@ function init_gear_sets()
   -- Shijin Spiral: 100% DEX
   sets.precast.WS['Shijin Spiral'] = set_combine(sets.precast.WS, {
     ammo="Aurgelmir Orb",
-    head=gear.Herc_WSD_head,
+    head="Kendatsuba Jinpachi +1",
     body="Malignance Tabard",
     hands="Malignance Gloves",
     legs="Hizamaru Hizayoroi +1",
@@ -335,21 +330,14 @@ function init_gear_sets()
     ring2="Niqmaddu Ring",
     back=gear.MNK_DEX_DA_Cape,
     waist="Moonbow Belt +1",
-    -- head="Ken. Jinpachi +1",
-    -- body="Adhemar Jacket +1",
-    -- legs="Jokushu Haidate",
-    -- feet="Ken. Sune-Ate +1",
+    -- ammo="Aurgelmir Orb +1",
+    -- legs="Tatenashi Haidate +1",
     -- ear2="Mache Earring +1",
-    -- ring1="Niqmaddu Ring",
-    -- ring2="Regal Ring",
-    -- back=gear.MNK_WS_Cape,
   })
   sets.precast.WS["Shijin Spiral"].MaxTP = set_combine(sets.precast.WS["Shijin Spiral"], {
   })
   sets.precast.WS["Shijin Spiral"].LowAcc = set_combine(sets.precast.WS["Shijin Spiral"], {
     neck="Fotia Gorget",
-    head="Mummu Bonnet +2",
-    -- head="Ken. Jinpachi +1",
   })
   sets.precast.WS["Shijin Spiral"].LowAccMaxTP = set_combine(sets.precast.WS["Shijin Spiral"].LowAcc, {
   })
@@ -406,13 +394,23 @@ function init_gear_sets()
   })
 
   -- Ascetic's Fury: 50% STR / 50% VIT, can crit
-  sets.precast.WS["Ascetic's Fury"] = set_combine(sets.precast.WS, {
+  sets.precast.WS["Ascetic's Fury"] = sets.precast.WS["Victory Smite"]
+  sets.precast.WS["Ascetic's Fury"].MaxTP = sets.precast.WS["Victory Smite"].MaxTP
+  sets.precast.WS["Ascetic's Fury"].LowAcc = sets.precast.WS["Victory Smite"].LowAcc
+  sets.precast.WS["Ascetic's Fury"].LowAccMaxTP = sets.precast.WS["Victory Smite"].LowAccMaxTP
+  sets.precast.WS["Ascetic's Fury"].MidAcc = sets.precast.WS["Victory Smite"].MidAcc
+  sets.precast.WS["Ascetic's Fury"].MidAccMaxTP = sets.precast.WS["Victory Smite"].MidAccMaxTP
+  sets.precast.WS["Ascetic's Fury"].HighAcc = sets.precast.WS["Victory Smite"].HighAcc
+  sets.precast.WS["Ascetic's Fury"].HighAccMaxTP = sets.precast.WS["Victory Smite"].HighAccMaxTP
+
+  -- Raging Fists: 30% STR / 30% DEX
+  sets.precast.WS['Raging Fists'] = set_combine(sets.precast.WS, {
     ammo="Knobkierrie",
-    head=gear.Adhemar_B_head,
-    body="Kendatsuba Samue +1",
-    hands=gear.Ryuo_A_hands,
+    head="Kendatsuba Jinpachi +1",
+    body=gear.Adhemar_B_body,
+    hands=gear.Adhemar_B_hands,
     legs="Hizamaru Hizayoroi +1",
-    feet=gear.Herc_CritDmg_feet,
+    feet=gear.Herc_TA_feet,
     neck="Monk's Nodowa +2",
     ear1="Sherida Earring",
     ear2="Moonshade Earring",
@@ -420,48 +418,7 @@ function init_gear_sets()
     ring2="Niqmaddu Ring",
     back=gear.MNK_STR_DA_Cape,
     waist="Moonbow Belt +1",
-    -- body="Anchorite's. Cyclas +3",
-    -- legs="Ken. Hakama +1",
-    -- ear2="Moonshade Earring",
-    -- ring1="Begrudging Ring",
-    -- ring2="Niqmaddu Ring",
-    -- back=gear.MNK_WS_Cape,
-  })
-  sets.precast.WS["Ascetic's Fury"].MaxTP = set_combine(sets.precast.WS["Asuran Fists"], {
-    ear2="Odr Earring",
-  })
-  sets.precast.WS["Ascetic's Fury"].LowAcc = set_combine(sets.precast.WS["Ascetic's Fury"], {
-    head="Mummu Bonnet +2",
-    -- feet="Ken. Sune-Ate +1",
-  })
-  sets.precast.WS["Ascetic's Fury"].LowAccMaxTP = set_combine(sets.precast.WS["Asuran Fists"].LowAcc, {
-    ear2="Odr Earring",
-  })
-  sets.precast.WS["Ascetic's Fury"].MidAcc = set_combine(sets.precast.WS["Ascetic's Fury"].LowAcc, {
-    ammo="Falcon Eye",
-  })
-  sets.precast.WS["Ascetic's Fury"].MidAccMaxTP = set_combine(sets.precast.WS["Asuran Fists"].MidAcc, {
-    ear2="Odr Earring",
-  })
-  sets.precast.WS["Ascetic's Fury"].HighAcc = set_combine(sets.precast.WS["Ascetic's Fury"].MidAcc, {
-    -- ear1="Mache Earring +1",
-    -- head="Ken. Jinpachi +1",
-  })
-  sets.precast.WS["Ascetic's Fury"].HighAccMaxTP = set_combine(sets.precast.WS["Asuran Fists"].HighAcc, {
-    ear2="Odr Earring",
-  })
-
-  -- Raging Fists: 30% STR / 30% DEX
-  sets.precast.WS['Raging Fists'] = set_combine(sets.precast.WS, {
-    ammo="Knobkierrie",
-    body=gear.Adhemar_B_body,
-    hands=gear.Adhemar_B_hands,
-    feet=gear.Herc_TA_feet,
-    ear1="Sherida Earring",
-    ear2="Moonshade Earring",
-    ring1="Gere Ring",
-    ring2="Niqmaddu Ring",
-    back=gear.MNK_STR_DA_Cape,
+    -- legs="Tatenashi Haidate +1",
   })
   sets.precast.WS["Raging Fists"].MaxTP = set_combine(sets.precast.WS["Raging Fists"], {
     ear2="Brutal Earring",
@@ -488,7 +445,7 @@ function init_gear_sets()
   -- Howling Fist: 40% STR / 40% VIT
   sets.precast.WS['Howling Fist'] = set_combine(sets.precast.WS, {
     ammo="Knobkierrie",
-    head=gear.Adhemar_B_head,
+    head="Kendatsuba Jinpachi +1",
     body="Kendatsuba Samue +1",
     hands=gear.Adhemar_B_hands,
     legs="Hizamaru Hizayoroi +1",
@@ -500,7 +457,6 @@ function init_gear_sets()
     ring2="Niqmaddu Ring",
     back=gear.MNK_STR_DA_Cape,
     waist="Moonbow Belt +1",
-    -- head="Kendatsuba Jinpachi +1",
     -- body="Tatenashi Harama +1",
     -- hands=gear.Herc_TA_hands,
     -- legs="Tatenashi Haidate +1",
@@ -510,7 +466,6 @@ function init_gear_sets()
     ear2="Brutal Earring",
   })
   sets.precast.WS["Howling Fist"].LowAcc = set_combine(sets.precast.WS["Howling Fist"], {
-    head="Mummu Bonnet +2",
   })
   sets.precast.WS["Howling Fist"].LowAccMaxTP = set_combine(sets.precast.WS["Howling Fist"].LowAcc, {
     ear2="Brutal Earring",
@@ -523,20 +478,61 @@ function init_gear_sets()
   })
   sets.precast.WS["Howling Fist"].HighAcc = set_combine(sets.precast.WS["Howling Fist"].MidAcc, {
     ammo="Falcon Eye",
-    head="Mummu Bonnet +2",
   })
   sets.precast.WS["Howling Fist"].HighAccMaxTP = set_combine(sets.precast.WS["Howling Fist"].HighAcc, {
     ear2="Telos Earring",
   })
 
   -- Dragon Kick: 50% STR / 50% DEX
-  sets.precast.WS['Dragon Kick'] = set_combine(sets.precast.WS, {
-    
+  sets.precast.WS['Dragon Kick'] = set_combine(sets.precast.WS["Raging Fists"], {
+    feet="Anchorite's Gaiters +3",
+  })
+  sets.precast.WS['Dragon Kick'].MaxTP = set_combine(sets.precast.WS["Raging Fists"].MaxTP, {
+    feet="Anchorite's Gaiters +3",
+  })
+  sets.precast.WS['Dragon Kick'].LowAcc = set_combine(sets.precast.WS["Raging Fists"].LowAcc, {
+    feet="Anchorite's Gaiters +3",
+  })
+  sets.precast.WS['Dragon Kick'].LowAccMaxTP = set_combine(sets.precast.WS["Raging Fists"].LowAccMaxTP, {
+    feet="Anchorite's Gaiters +3",
+  })
+  sets.precast.WS['Dragon Kick'].MidAcc = set_combine(sets.precast.WS["Raging Fists"].MidAcc, {
+    feet="Anchorite's Gaiters +3",
+  })
+  sets.precast.WS['Dragon Kick'].MidAccMaxTP = set_combine(sets.precast.WS["Raging Fists"].MidAccMaxTP, {
+    feet="Anchorite's Gaiters +3",
+  })
+  sets.precast.WS['Dragon Kick'].HighAcc = set_combine(sets.precast.WS["Raging Fists"].HighAcc, {
+    feet="Anchorite's Gaiters +3",
+  })
+  sets.precast.WS['Dragon Kick'].HighAccMaxTP = set_combine(sets.precast.WS["Raging Fists"].HighAccMaxTP, {
+    feet="Anchorite's Gaiters +3",
   })
 
   -- Tornado Kick: 40% STR / 40% VIT
-  sets.precast.WS['Tornado Kick'] = set_combine(sets.precast.WS, {
-    back=gear.MNK_STR_DA_Cape,
+  sets.precast.WS['Tornado Kick'] = set_combine(sets.precast.WS["Howling Fist"], {
+    feet="Anchorite's Gaiters +3",
+  })
+  sets.precast.WS['Tornado Kick'].MaxTP = set_combine(sets.precast.WS["Howling Fist"].MaxTP, {
+    feet="Anchorite's Gaiters +3",
+  })
+  sets.precast.WS['Tornado Kick'].LowAcc = set_combine(sets.precast.WS["Howling Fist"].LowAcc, {
+    feet="Anchorite's Gaiters +3",
+  })
+  sets.precast.WS['Tornado Kick'].LowAccMaxTP = set_combine(sets.precast.WS["Howling Fist"].LowAccMaxTP, {
+    feet="Anchorite's Gaiters +3",
+  })
+  sets.precast.WS['Tornado Kick'].MidAcc = set_combine(sets.precast.WS["Howling Fist"].MidAcc, {
+    feet="Anchorite's Gaiters +3",
+  })
+  sets.precast.WS['Tornado Kick'].MidAccMaxTP = set_combine(sets.precast.WS["Howling Fist"].MidAccMaxTP, {
+    feet="Anchorite's Gaiters +3",
+  })
+  sets.precast.WS['Tornado Kick'].HighAcc = set_combine(sets.precast.WS["Howling Fist"].HighAcc, {
+    feet="Anchorite's Gaiters +3",
+  })
+  sets.precast.WS['Tornado Kick'].HighAccMaxTP = set_combine(sets.precast.WS["Howling Fist"].HighAccMaxTP, {
+    feet="Anchorite's Gaiters +3",
   })
 
   -- Spinning Attack: 100% STR
@@ -549,7 +545,7 @@ function init_gear_sets()
     feet=gear.Herc_WSD_feet,
     neck="Monk's Nodowa +2",
     ear1="Sherida Earring",
-    ear2="Brutal Earring",
+    ear2="Telos Earring",
     ring1="Gere Ring",
     ring2="Niqmaddu Ring",
     back=gear.MNK_STR_DA_Cape,
@@ -563,7 +559,6 @@ function init_gear_sets()
   sets.precast.WS["Spinning Attack"].LowAccMaxTP = set_combine(sets.precast.WS["Spinning Attack"].LowAcc, {
   })
   sets.precast.WS["Spinning Attack"].MidAcc = set_combine(sets.precast.WS["Spinning Attack"].LowAcc, {
-    ear2="Telos Earring",
   })
   sets.precast.WS["Spinning Attack"].MidAccMaxTP = set_combine(sets.precast.WS["Spinning Attack"].MidAcc, {
   })
@@ -578,7 +573,7 @@ function init_gear_sets()
     head="Highwing Helm", --20
     body=gear.Samnuha_body, --25
     hands=gear.Leyline_Gloves, --30
-    legs=gear.Herc_MAB_legs, --24
+    legs=gear.Herc_MAB_legs, --33
     feet=gear.Herc_MAB_feet, --41
     neck="Baetyl Pendant", --13
     ear1="Friomisi Earring", --10
@@ -591,9 +586,6 @@ function init_gear_sets()
 
   sets.precast.WS['Cataclysm'] = set_combine(sets.precast.WS, sets.MAB, {
     ammo="Knobkierrie",
-    ring2="Epona's Ring",
-    -- waist="Fotia Belt",
-    -- back=gear.MNK_WS_Cape,
   }) -- STR 30% / INT 30% + MAB
 
   ------------------------------------------------------------------------------------------------

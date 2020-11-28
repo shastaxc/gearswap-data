@@ -270,6 +270,7 @@ function define_global_sets()
 
   gear.MNK_DEX_DA_Cape = { name="Segomo's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Mag. Evasion+15',}}
   gear.MNK_STR_DA_Cape = { name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Mag. Evasion+15',}}
+  gear.MNK_STR_Crit_Cape = {}
 
   -- Misc.
   gear.Dark_Ring = { name="Dark Ring", augments={'Magic dmg. taken -4%','Phys. dmg. taken -5%','Breath dmg. taken -4%',}}
@@ -298,9 +299,9 @@ windower.register_event('zone change',
     end]]--
 
     -- Auto load Omen add-on
-    if world.zone == 'Reisenjima Henge' then
-      send_command('lua l omen')
-    end
+    -- if world.zone == 'Reisenjima Henge' then
+    --   send_command('lua l omen')
+    -- end
   end
 )
 

@@ -528,7 +528,7 @@ function init_gear_sets()
     head="Highwing Helm", --20
     body=gear.Samnuha_body, --25
     hands=gear.Leyline_Gloves, --30
-    legs=gear.Herc_MAB_legs, --24
+    legs=gear.Herc_MAB_legs, --33
     feet=gear.Herc_MAB_feet, --41
     neck="Baetyl Pendant", --13
     ear1="Friomisi Earring", --10

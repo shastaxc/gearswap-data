@@ -546,7 +546,7 @@ function init_gear_sets()
     head=empty,
     body="Cohort Cloak +1",
     hands=gear.Carmine_D_hands,
-    legs=gear.Herc_MAB_legs,
+    legs=gear.Herc_MAB_legs, --33
     feet=gear.Herc_MAB_feet, --41
     ear1="Friomisi Earring",
     ear2="Moonshade Earring",
