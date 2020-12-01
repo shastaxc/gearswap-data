@@ -247,8 +247,7 @@ function init_gear_sets()
 
   -- Precast sets to enhance JAs
   sets.precast.JA['Eagle Eye Shot'] = {
-    legs="Arc. Braccae +1"
-    -- legs="Arc. Braccae +3"
+    legs="Arcadian Braccae +3",
   }
   sets.precast.JA['Bounty Shot'] = {
     -- hands="Amini Glove. +1"
@@ -385,7 +384,7 @@ function init_gear_sets()
     head="Orion Beret +2",
     body="Meghanada Cuirie +2",
     hands="Meg. Gloves +2",
-    legs="Meghanada Chausses +2",
+    legs="Arcadian Braccae +3",
     feet=gear.Herc_WSD_feet,
     neck="Fotia Gorget",
     ear1="Sherida Earring",
@@ -396,7 +395,6 @@ function init_gear_sets()
     waist="Fotia Belt",
     -- head="Orion Beret +3",
     -- body=gear.Herc_RA_WSD_body,
-    -- legs="Arc. Braccae +3",
     -- feet=gear.Herc_RA_WSD_feet,
     -- ear1="Ishvara Earring",
     -- ring1="Regal Ring",
@@ -448,10 +446,11 @@ function init_gear_sets()
   sets.precast.WS['Jishnu\'s Radiance'] = set_combine(sets.precast.WS, {
     head="Mummu Bonnet +2",
     hands="Mummu Wrists +2",
+    legs="Arcadian Braccae +3",
+    neck="Fotia Gorget",
     ear1="Sherida Earring",
     ear2="Moonshade Earring",
     ring1="Begrudging Ring",
-    neck="Fotia Gorget",
     waist="Fotia Belt",
 
     -- Goal:
@@ -546,7 +545,7 @@ function init_gear_sets()
     head=empty,
     body="Cohort Cloak +1",
     hands=gear.Carmine_D_hands,
-    legs=gear.Herc_MAB_legs, --33
+    legs="Arcadian Braccae +3",
     feet=gear.Herc_MAB_feet, --41
     ear1="Friomisi Earring",
     ear2="Moonshade Earring",
@@ -556,7 +555,6 @@ function init_gear_sets()
     back=gear.RNG_WS2_Cape,
     waist="Eschan Stone",
     -- hands=gear.Herc_MAB_hands,
-    -- legs="Arcadian Braccae +3",
     -- ring1="Epaminondas's Ring",
     -- back=gear.RNG_WS1_Cape,
     -- waist="Orpheus's Sash",
@@ -632,8 +630,14 @@ function init_gear_sets()
 
   sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
     head="Orion Beret +2",
+    hands="Meghanada Gloves +2",
+    legs="Arcadian Braccae +3",
+    feet=gear.Herc_WSD_feet,
     neck="Scout's Gorget +1",
-    ring2="Epona's Ring",
+    ear1="Sherida Earring",
+    ear2="Moonshade Earring",
+    ring1="Epona's Ring"
+    ring2="Ilabrat Ring",
   
     -- Goal:
     -- head="Orion Beret +3",
