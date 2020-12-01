@@ -636,7 +636,7 @@ function init_gear_sets()
     neck="Scout's Gorget +1",
     ear1="Sherida Earring",
     ear2="Moonshade Earring",
-    ring1="Epona's Ring"
+    ring1="Epona's Ring",
     ring2="Ilabrat Ring",
   
     -- Goal:
