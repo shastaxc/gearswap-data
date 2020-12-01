@@ -482,7 +482,6 @@ function init_gear_sets()
     waist="Eschan Stone", --7
     -- ammo="Seeth. Bomblet +1",
     -- head=gear.Herc_MAB_head,
-    -- feet=gear.Herc_MAB_feet,
     -- waist="Orpheus's Sash",
   })
 
