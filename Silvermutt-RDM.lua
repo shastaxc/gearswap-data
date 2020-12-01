@@ -1063,7 +1063,7 @@ function init_gear_sets()
     ammo="Staunch Tathlum", --2/2, 0
     body="Malignance Tabard", --9/9, 139
     hands="Malignance Gloves", --5/5, 112
-    -- feet="Malignance Boots", --4/4, 150
+    feet="Malignance Boots", --4/4, 150
     ear2="Eabani Earring", --0/0, 8
     ring2="Defending Ring", --10/10, 0
     -- main="Bolelabunga",
