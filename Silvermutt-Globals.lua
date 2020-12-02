@@ -329,11 +329,15 @@ function update_weapons()
     end
   end
   if player.equipment.ranged ~= "empty" then
-    if not is_encumbered('ranged') then
-      sets.MostRecent.ranged = player.equipment.ranged
-    end
-    if not is_encumbered('ammo') then
-      sets.MostRecent.ammo = player.equipment.ammo
+    -- Only save if ranged is a combat item
+    local rangedItem = res.items:with('name', player.equipment.ranged)
+    if res.skills[rangedItem.skill].category == 'Combat' then
+      if not is_encumbered('ranged') then
+        sets.MostRecent.ranged = player.equipment.ranged
+      end
+      if not is_encumbered('ammo') then
+        sets.MostRecent.ammo = player.equipment.ammo
+      end
     end
   end
 
