@@ -1326,7 +1326,7 @@ function init_gear_sets()
     sub="Nusku Shield",
   }
   sets['Melee'] = {
-    main="Kaja Sword",
+    main="Naegling",
     sub="Ternion Dagger +1",
   }
   sets['CritRA'] = {
