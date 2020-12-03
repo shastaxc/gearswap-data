@@ -958,20 +958,6 @@ function init_gear_sets()
   sets.engaged.HighAcc.LightDef = set_combine(sets.engaged.HighAcc, sets.LightDef)
 
   sets.engaged.Aftermath.LightDef = {
-    head="Ayanmo Zucchetto +2",
-    feet="Carmine Greaves +1",
-    ear1="Sherida Earring",
-    ring2="Defending Ring",
-    -- head="Ayanmo Zucchetto +2",
-    -- feet="Carmine Greaves +1",
-    -- ear1="Sherida Earring",
-    -- ear2="Telos Earring",
-    -- ring1="Moonlight Ring",
-    -- ring2="Defending Ring",
-    -- waist="Kentarch Belt +1",
-  }
-
-  sets.engaged.Aftermath.LightDef = {
     legs="Meghanada Chausses +2",
     ring2="Defending Ring",
     waist="Sailfi Belt +1",
@@ -1349,8 +1335,8 @@ end
 function customize_melee_set(meleeSet)
   if buffactive['Aftermath: Lv.3'] and player.equipment.main == "Epeolatry"
       and state.DefenseMode.value == 'None' then
-    if state.HybridMode.value == "DT" then
-      meleeSet = set_combine(meleeSet, sets.engaged.Aftermath.DT)
+    if state.HybridMode.value == "LightDef" then
+      meleeSet = set_combine(meleeSet, sets.engaged.Aftermath.LightDef)
     else
       meleeSet = set_combine(meleeSet, sets.engaged.Aftermath)
     end
