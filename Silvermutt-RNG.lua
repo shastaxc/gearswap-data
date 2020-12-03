@@ -1031,6 +1031,7 @@ function init_gear_sets()
   })
 
   sets.engaged.DW.MidAcc = set_combine(sets.engaged.DW.LowAcc, {
+    hands="Malignance Gloves",
     ring2="Ilabrat Ring",
     -- hands=gear.Adhemar_A_hands,
     -- neck="Combatant's Torque",
@@ -1038,7 +1039,8 @@ function init_gear_sets()
   })
 
   sets.engaged.DW.HighAcc = set_combine(sets.engaged.DW.MidAcc, {
-    feet=gear.Herc_STP_feet,
+    body="Malignance Tabard",
+    feet="Malignance Boots",
     ring1="Chirich Ring +1",
     -- head="Carmine Mask +1",
     -- ring1="Regal Ring",
@@ -1071,13 +1073,15 @@ function init_gear_sets()
   })
 
   sets.engaged.DW.MidAcc.LowHaste = set_combine(sets.engaged.DW.LowAcc.LowHaste, {
+    hands="Malignance Gloves",
     ring2="Ilabrat Ring",
     -- hands=gear.Adhemar_A_hands,
     -- waist="Kentarch Belt +1",
   })
 
   sets.engaged.DW.HighAcc.LowHaste = set_combine(sets.engaged.DW.MidAcc.LowHaste, {
-    feet=gear.Herc_STP_feet,
+    body="Malignance Tabard",
+    feet="Malignance Boots",
     ring2="Chirich Ring +1",
     -- head="Carmine Mask +1",
     -- ring1="Regal Ring",
@@ -1113,14 +1117,14 @@ function init_gear_sets()
   })
 
   sets.engaged.DW.MidAcc.MidHaste = set_combine(sets.engaged.DW.LowAcc.MidHaste, {
-    legs="Meg. Chausses +2",
+    hands="Malignance Gloves",
     ring2="Ilabrat Ring",
     -- waist="Kentarch Belt +1",
   })
 
   sets.engaged.DW.HighAcc.MidHaste = set_combine(sets.engaged.DW.MidAcc.MidHaste, {
-    legs="Carmine Cuisses +1",
-    feet=gear.Herc_STP_feet,
+    body="Malignance Tabard",
+    feet="Malignance Boots",
     ring2="Chirich Ring +1",
     -- head="Carmine Mask +1",
     -- ring1="Regal Ring",
@@ -1157,14 +1161,14 @@ function init_gear_sets()
   })
 
   sets.engaged.DW.MidAcc.HighHaste = set_combine(sets.engaged.DW.LowAcc.HighHaste, {
-    legs="Meg. Chausses +2",
+    hands="Malignance Gloves",
     ring2="Ilabrat Ring",
     -- waist="Kentarch Belt +1",
   })
 
   sets.engaged.DW.HighAcc.HighHaste = set_combine(sets.engaged.DW.MidAcc.HighHaste, {
-    legs="Carmine Cuisses +1",
-    feet=gear.Herc_STP_feet,
+    body="Malignance Tabard",
+    feet="Malignance Boots",
     ring2="Chirich Ring +1",
     -- head="Carmine Mask +1",
     -- ring1="Regal Ring",
@@ -1199,14 +1203,14 @@ function init_gear_sets()
   })
 
   sets.engaged.DW.MidAcc.MaxHaste = set_combine(sets.engaged.DW.LowAcc.MaxHaste, {
-    legs="Meg. Chausses +2",
+    hands="Malignance Gloves",
     ring2="Ilabrat Ring",
     -- neck="Combatant's Torque",
   })
 
   sets.engaged.DW.HighAcc.MaxHaste = set_combine(sets.engaged.DW.MidAcc.MaxHaste, {
-    legs="Carmine Cuisses +1",
-    feet=gear.Herc_STP_feet,
+    body="Malignance Tabard",
+    feet="Malignance Boots",
     ring2="Chirich Ring +1",
     -- head="Carmine Mask +1",
     -- ring1="Regal Ring",
@@ -1399,14 +1403,12 @@ function job_post_precast(spell, action, spellMap, eventArgs)
       -- Target distance under 1.7 yalms.
       elseif spell.target.distance < (1.7 + spell.target.model_size) then
         -- equip({waist="Orpheus's Sash"})
-        equip({waist="Hachirin-no-Obi"})
       -- Matching day and weather.
       elseif spell.element == world.day_element and spell.element == world.weather_element then
         equip({waist="Hachirin-no-Obi"})
       -- Target distance under 8 yalms.
       elseif spell.target.distance < (8 + spell.target.model_size) then
         -- equip({waist="Orpheus's Sash"})
-        equip({waist="Hachirin-no-Obi"})
       -- Match day or weather.
       elseif spell.element == world.day_element or spell.element == world.weather_element then
         equip({waist="Hachirin-no-Obi"})
