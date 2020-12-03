@@ -1043,11 +1043,15 @@ function job_precast(spell, action, spellMap, eventArgs)
     end
   end
 
+  if runes:contains(spell.english) then
+    eventArgs.handled = true
+  end
+
   -- Use defensive "safe" sets if any are defined. Falls back to normal sets if a "safe" set is not defined.
   if state.DefenseMode.value ~= 'None'
       or (state.HybridMode.value ~= 'Normal' and player.in_combat)
       or (state.IdleMode.value ~= 'Normal' and not player.in_combat) then
-    if spell.action_type == 'Ability' and spell.type ~= 'WeaponSkill' and not runes:contains(spell.english) then
+    if spell.action_type == 'Ability' and spell.type ~= 'WeaponSkill' then
       classes.JAMode = 'Safe'
     elseif spell.action_type == 'Magic' then
       state.CastingMode:set('Safe')
