@@ -55,10 +55,6 @@ end
 function job_setup()
   lockstyleset = 6
 
-  current_ranged_weapon_type = nil -- Do not modify
-  current_dp_type = nil -- Do not modify
-  locked_waist = false -- Do not modify
-
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.HybridMode:options('Normal', 'LightDef')
   state.RangedMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
@@ -162,6 +158,9 @@ function user_setup()
   flurry = nil -- Do not modify
   DW_needed = 0 -- Do not modify
   DW = false -- Do not modify
+  current_ranged_weapon_type = nil -- Do not modify
+  current_dp_type = nil -- Do not modify
+  locked_waist = false -- Do not modify
 
   include('Global-Binds.lua') -- Additional local binds
 
