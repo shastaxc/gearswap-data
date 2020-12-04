@@ -328,7 +328,7 @@ function update_weapons()
       sets.MostRecent.sub = player.equipment.sub
     end
   end
-  if player.equipment.ranged ~= "empty" then
+  if player.equipment.ranged ~= "empty" and player.equipment.ranged ~= nil then
     -- Only save if ranged is a combat item
     local rangedItem = res.items:with('name', player.equipment.ranged)
     if res.skills[rangedItem.skill].category == 'Combat' then
