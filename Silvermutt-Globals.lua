@@ -283,6 +283,7 @@ function define_global_sets()
   gear.Dampening_Tam = { name="Dampening Tam", augments={'DEX+10','Accuracy+15','Mag. Acc.+15','Quadruple Attack +3',}}
   gear.Leyline_Gloves = { name="Leyline Gloves", augments={'Accuracy+15','Mag. Acc.+15','"Mag.Atk.Bns."+15','"Fast Cast"+3',}}
   gear.CP_Cape = { name="Mecisto. Mantle", augments={'Cap. Point+50%','STR+1','"Mag.Atk.Bns."+2','DEF+1',}}
+  gear.Floral_Gauntlets = { name="Floral Gauntlets", augments={'Rng.Acc.+13','Accuracy+14','"Triple Atk."+1','Magic dmg. taken -2%',}}
 
 end
 

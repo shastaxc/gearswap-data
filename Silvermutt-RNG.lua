@@ -1010,7 +1010,7 @@ function init_gear_sets()
   sets.engaged.DW = {
     head=gear.Adhemar_B_head,
     body=gear.Adhemar_B_body, --6
-    hands="Floral Gauntlets", --5
+    hands=gear.Floral_Gauntlets, --5
     legs="Carmine Cuisses +1", --6
     feet=gear.Taeon_DW_feet, --9
     neck="Anu Torque",
@@ -1051,7 +1051,7 @@ function init_gear_sets()
   sets.engaged.DW.LowHaste = {
     head=gear.Adhemar_B_head,
     body=gear.Adhemar_B_body, --6
-    hands="Floral Gauntlets", --5
+    hands=gear.Floral_Gauntlets, --5
     legs="Carmine Cuisses +1", --6
     feet=gear.Taeon_DW_feet, --9
     neck="Anu Torque",
@@ -1092,7 +1092,7 @@ function init_gear_sets()
   sets.engaged.DW.MidHaste = {
     head=gear.Adhemar_B_head,
     body=gear.Adhemar_B_body, --6
-    hands="Floral Gauntlets", --5
+    hands=gear.Floral_Gauntlets, --5
     legs="Carmine Cuisses +1", --6
     feet=gear.Taeon_DW_feet, --9
     neck="Anu Torque",
@@ -1135,7 +1135,7 @@ function init_gear_sets()
   sets.engaged.DW.HighHaste = {
     head=gear.Adhemar_B_head,
     body=gear.Adhemar_B_body, --6
-    hands="Floral Gauntlets", --5
+    hands=gear.Floral_Gauntlets, --5
     legs="Carmine Cuisses +1", --6
     feet=gear.Herc_TA_feet,
     neck="Anu Torque",
