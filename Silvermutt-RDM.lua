@@ -999,7 +999,7 @@ function init_gear_sets()
     head="Duelist's Chapeau",
     body="Malignance Tabard",
     hands="Malignance Gloves",
-    legs="Carmine Cuisses +1",
+    legs="Malignance Tights",
     feet="Malignance Boots",
     neck="Bathy Choker +1",
     ear1="Infused Earring",
@@ -1010,15 +1010,9 @@ function init_gear_sets()
     back="Grapevine Cape",
     -- main="Bolelabunga",
     -- sub="Sacro Bulwark",
-    -- ammo="Homiliary",
     -- head="Viti. Chapeau +3",
     -- body="Jhakri Robe +2",
     -- hands="Raetic Bangles +1",
-    -- legs="Malignance Tights",
-    -- feet="Malignance Boots",
-    -- neck="Bathy Choker +1",
-    -- ear1="Eabani Earring",
-    -- ear2="Sanare Earring",
     -- ring1={name="Stikini Ring +1", bag="wardrobe3"},
     -- ring2={name="Stikini Ring +1", bag="wardrobe4"},
     -- back="Moonlight Cape",
@@ -1041,10 +1035,10 @@ function init_gear_sets()
     ammo="Staunch Tathlum", --2/2, 0
     body="Malignance Tabard", --9/9, 139
     hands="Malignance Gloves", --5/5, 112
+    legs="Malignance Tights", --7/7, 150
     feet="Malignance Boots", --4/4, 150
     -- head="Malignance Chapeau", --6/6
-    -- legs="Malignance Tights", --7/7
-  } --20 PDT / 20 MDT, 401 MEVA
+  } --27 PDT / 27 MDT, 551 MEVA
 
   sets.idle.LightDef = set_combine(sets.idle, sets.LightDef)
   sets.idle.LightDef.Regain = set_combine(sets.idle.Regain, sets.LightDef)
@@ -1063,18 +1057,18 @@ function init_gear_sets()
     ammo="Staunch Tathlum", --2/2, 0
     body="Malignance Tabard", --9/9, 139
     hands="Malignance Gloves", --5/5, 112
+    legs="Malignance Tights", --7/7, 150
     feet="Malignance Boots", --4/4, 150
     ear2="Eabani Earring", --0/0, 8
     ring2="Defending Ring", --10/10, 0
     -- main="Bolelabunga",
     -- sub="Sacro Bulwark", --10/10
     -- head="Malignance Chapeau", --6/6
-    -- legs="Malignance Tights", --7/7
     -- neck="Warder's Charm +1",
     -- ear1="Sanare Earring",
     -- back=gear.RDM_INT_Cape,
     -- waist="Carrier's Sash",
-  } --30 PDT / 30 MDT, 401 MEVA
+  } --37 PDT / 37 MDT, 551 MEVA
 
   sets.idle.Weak = sets.HeavyDef
 
@@ -1100,8 +1094,7 @@ function init_gear_sets()
     -- head="Malignance Chapeau",
     body="Malignance Tabard",
     hands="Malignance Gloves",
-    -- legs=gear.Taeon_TA_legs,
-    -- legs="Malignance Tights",
+    legs="Malignance Tights",
     -- feet="Carmine Greaves +1",
     -- neck="Anu Torque",
     -- ear1="Sherida Earring",
@@ -1197,13 +1190,13 @@ function init_gear_sets()
     -- head="Malignance Chapeau",
     body="Malignance Tabard",
     hands="Malignance Gloves",
-    -- legs="Malignance Tights",
+    legs="Malignance Tights",
     -- feet=gear.Taeon_DW_feet, --9
-    -- neck="Anu Torque",
-    -- ear1="Sherida Earring",
-    -- ear2="Suppanomimi", --5
+    neck="Anu Torque",
+    ear1="Sherida Earring",
+    ear2="Suppanomimi", --5
     -- ring1="Hetairoi Ring",
-    -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
+    ring2="Chirich Ring +1",
     -- back=gear.RDM_DW_Cape, --10
     -- waist="Reiki Yotai", --7
   }) --31
@@ -1229,13 +1222,13 @@ function init_gear_sets()
     -- head="Malignance Chapeau",
     body="Malignance Tabard",
     hands="Malignance Gloves",
-    -- legs="Malignance Tights",
+    legs="Malignance Tights",
     -- feet=gear.Taeon_DW_feet, --9
-    -- neck="Anu Torque",
-    -- ear1="Sherida Earring",
-    -- ear2="Telos Earring",
+    neck="Anu Torque",
+    ear1="Sherida Earring",
+    ear2="Telos Earring",
     -- ring1="Hetairoi Ring",
-    -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
+    ring2="Chirich Ring +1",
     -- back=gear.RDM_DW_Cape, --10
     -- waist="Reiki Yotai", --7
   }) --26
@@ -1260,7 +1253,7 @@ function init_gear_sets()
     -- head="Malignance Chapeau",
     body="Malignance Tabard",
     hands="Malignance Gloves",
-    -- legs="Malignance Tights",
+    legs="Malignance Tights",
     feet="Malignance Boots",
     neck="Anu Torque",
     ear1="Sherida Earring",

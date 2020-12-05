@@ -709,7 +709,7 @@ function init_gear_sets()
     head="Arcadian Beret +2", --32 [0] 27/47 <0> {0} (36)
     body="Malignance Tabard",
     hands="Malignance Gloves",
-    legs=gear.Samnuha_legs,
+    legs="Malignance Tights", --42 [10] 50/0 <0> {5} (0)
     feet="Malignance Boots", --49 [9] 50/0 <0> {2} (0)
     neck="Scout's Gorget +1",
     ear1="Telos Earring",
@@ -903,10 +903,10 @@ function init_gear_sets()
   sets.LightDef = {
     body="Malignance Tabard", --9/9
     hands="Malignance Gloves", --5/5
+    legs="Malignance Tights", --7/7, 150
     feet="Malignance Boots", --4/4
     ring2="Defending Ring", --10/10
     -- head="Malignance Chapeau", --6/6
-    -- legs="Malignance Tights", --7/7
     -- neck="Warder's Charm +1",
     -- ring1="Purity Ring", --0/4
     -- back="Moonlight Cape", --6/6
@@ -929,7 +929,7 @@ function init_gear_sets()
     head="Meghanada Visor +2", --5/0, 53
     body="Malignance Tabard", --9/9, 139
     hands="Malignance Gloves", --5/5, 112
-    legs="Mummu Kecks +2", --5/5, 107
+    legs="Malignance Tights", --7/7, 150
     feet="Malignance Boots", --4/4, 150
     neck="Twilight Torque", --5/5, 0
     ear1="Eabani Earring", --0/0, 8
@@ -938,7 +938,7 @@ function init_gear_sets()
     ring2="Defending Ring", --10/10, 0
     back=gear.RNG_WS2_Cape,
     waist="Kasiri Belt", --0/0, 0
-  } -- 51 PDT / 47 MDT, 569 MEVA
+  } -- 53 PDT / 49 MDT, 612 MEVA
 
   sets.idle.Weak = sets.HeavyDef
 
@@ -1030,7 +1030,7 @@ function init_gear_sets()
   })
 
   sets.engaged.DW.MidAcc = set_combine(sets.engaged.DW.LowAcc, {
-    hands="Malignance Gloves",
+    hands="Malignance Gloves",wwwwwww
     ring2="Ilabrat Ring",
     -- hands=gear.Adhemar_A_hands,
     -- neck="Combatant's Torque",
