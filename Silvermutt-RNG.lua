@@ -1030,7 +1030,7 @@ function init_gear_sets()
   })
 
   sets.engaged.DW.MidAcc = set_combine(sets.engaged.DW.LowAcc, {
-    hands="Malignance Gloves",wwwwwww
+    hands="Malignance Gloves",
     ring2="Ilabrat Ring",
     -- hands=gear.Adhemar_A_hands,
     -- neck="Combatant's Torque",
