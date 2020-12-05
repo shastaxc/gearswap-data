@@ -877,7 +877,7 @@ function init_gear_sets()
     head="Meghanada Visor +2", --5/0, 53
     body="Malignance Tabard", --9/9, 139
     hands="Malignance Gloves", --5/5, 112
-    legs="Mummu Kecks +2", --5/5, 107
+    legs="Malignance Tights", --7/7, 150
     feet="Meghanada Jambeaux +2", --3/0, 69
     neck="Twilight Torque", --5/5, 0
     ear1="Eabani Earring", --0/0, 8
@@ -901,11 +901,11 @@ function init_gear_sets()
   sets.idle.Regain.Regen.RefreshSub50 = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh_sub50)
 
   sets.LightDef = {
-    body="Malignance Tabard", --9/9
-    hands="Malignance Gloves", --5/5
+    body="Malignance Tabard", --9/9, 139
+    hands="Malignance Gloves", --5/5, 112
     legs="Malignance Tights", --7/7, 150
-    feet="Malignance Boots", --4/4
-    ring2="Defending Ring", --10/10
+    feet="Malignance Boots", --4/4, 150
+    ring2="Defending Ring", --10/10, 0
     -- head="Malignance Chapeau", --6/6
     -- neck="Warder's Charm +1",
     -- ring1="Purity Ring", --0/4
