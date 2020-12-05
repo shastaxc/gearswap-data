@@ -626,7 +626,7 @@ function init_gear_sets()
   sets.midcast['Enhancing Magic'] = {
     head="Erilaz Galea +1",
     hands="Runeist Mitons +1",
-    legs="Carmine Cuisses +1",
+    legs=gear.Carmine_B_legs,
     waist="Olympus Sash",
     neck="Incanter's Torque",
     ear1="Andoaa Earring",
@@ -789,7 +789,7 @@ function init_gear_sets()
     ammo="Staunch Tathlum", --2/2, 0
     head="Ayanmo Zucchetto +2", --3/3, 53
     body="Meghanada Cuirie +2", --8/0, 64
-    legs="Carmine Cuisses +1", --6/0, 80
+    legs=gear.Carmine_D_legs, --6/0, 80
     neck="Futhark Torque +1", --6/6, 25
     ring2="Defending Ring", --10/10, 0
     back=gear.RUN_HPD_Cape, --10/0, 30
@@ -927,7 +927,7 @@ function init_gear_sets()
   sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
     ammo="Falcon Eye",
     neck="Lissome Necklace",
-    legs="Carmine Cuisses +1",
+    legs=gear.Carmine_D_legs,
     ear1="Odr Earring",
     ear2="Dignitary's Earring",
     -- ammo="C. Palug Stone",
@@ -987,7 +987,7 @@ function init_gear_sets()
   }
 
   sets.Kiting = {
-    legs="Carmine Cuisses +1",
+    legs=gear.Carmine_D_legs,
   }
   sets.Kiting.Adoulin = {
     body="Councilor's Garb",

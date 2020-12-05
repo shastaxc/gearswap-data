@@ -697,7 +697,7 @@ function init_gear_sets()
   sets.midcast.FastRecast = sets.precast.FC
 
   sets.midcast.SpellInterrupt = {
-    legs="Carmine Cuisses +1", --20
+    legs=gear.Carmine_D_legs, --20
     -- ring1="Evanescence Ring", --5
     -- waist="Rumination Sash", --10
   }
@@ -1010,7 +1010,7 @@ function init_gear_sets()
     head=gear.Adhemar_B_head,
     body=gear.Adhemar_B_body, --6
     hands=gear.Floral_Gauntlets, --5
-    legs="Carmine Cuisses +1", --6
+    legs=gear.Carmine_D_legs, --6
     feet=gear.Taeon_DW_feet, --9
     neck="Anu Torque",
     ear1="Suppanomimi", --5
@@ -1051,7 +1051,7 @@ function init_gear_sets()
     head=gear.Adhemar_B_head,
     body=gear.Adhemar_B_body, --6
     hands=gear.Floral_Gauntlets, --5
-    legs="Carmine Cuisses +1", --6
+    legs=gear.Carmine_D_legs, --6
     feet=gear.Taeon_DW_feet, --9
     neck="Anu Torque",
     ear1="Suppanomimi", --5
@@ -1092,7 +1092,7 @@ function init_gear_sets()
     head=gear.Adhemar_B_head,
     body=gear.Adhemar_B_body, --6
     hands=gear.Floral_Gauntlets, --5
-    legs="Carmine Cuisses +1", --6
+    legs=gear.Carmine_D_legs, --6
     feet=gear.Taeon_DW_feet, --9
     neck="Anu Torque",
     ear1="Suppanomimi", --5
@@ -1135,7 +1135,7 @@ function init_gear_sets()
     head=gear.Adhemar_B_head,
     body=gear.Adhemar_B_body, --6
     hands=gear.Floral_Gauntlets, --5
-    legs="Carmine Cuisses +1", --6
+    legs=gear.Carmine_D_legs, --6
     feet=gear.Herc_TA_feet,
     neck="Anu Torque",
     ear1="Suppanomimi", --5

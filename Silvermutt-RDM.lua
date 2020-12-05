@@ -589,9 +589,9 @@ function init_gear_sets()
   sets.midcast.FastRecast = sets.precast.FC
 
   sets.midcast.SpellInterrupt = {
+    legs=gear.Carmine_B_legs, --20
     -- sub="Sacro Bulwark", --7
     -- ammo="Impatiens", --10
-    -- legs="Carmine Cuisses +1", --20
     -- ring1="Evanescence Ring", --5
     -- waist="Rumination Sash", --10
   }
@@ -601,7 +601,7 @@ function init_gear_sets()
     head="Ayanmo Zucchetto +2",
     body="Ayanmo Corazza +2",
     hands="Ayanmo Manopolas +1",
-    legs="Carmine Cuisses +1",
+    legs=gear.Carmine_B_legs,
     feet="Ayanmo Gambieras +1",
     neck="Incanter's Torque",
     -- sub="Sors Shield", --3/(-5)
@@ -1112,10 +1112,10 @@ function init_gear_sets()
   })
 
   sets.engaged.HighAcc = set_combine(sets.engaged, {
+    legs=gear.Carmine_B_legs,
     -- ammo="Voluspa Tathlum",
     -- head="Carmine Mask +1",
     -- body="Carm. Sc. Mail +1",
-    -- legs="Carmine Cuisses +1",
     -- ear1="Cessance Earring",
     -- ear2="Mache Earring +1",
     -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
@@ -1130,7 +1130,7 @@ function init_gear_sets()
     -- head="Malignance Chapeau",
     body="Malignance Tabard",
     hands="Malignance Gloves",
-    -- legs="Carmine Cuisses +1", --6
+    legs=gear.Carmine_D_legs, --6
     -- feet=gear.Taeon_DW_feet, --9
     -- neck="Anu Torque",
     -- ear1="Eabani Earring", --4
@@ -1160,7 +1160,7 @@ function init_gear_sets()
     -- head="Malignance Chapeau",
     body="Malignance Tabard",
     hands="Malignance Gloves",
-    -- legs="Carmine Cuisses +1", --6
+    legs=gear.Carmine_D_legs, --6
     -- feet=gear.Taeon_DW_feet, --9
     -- neck="Anu Torque",
     -- ear1="Eabani Earring", --4
@@ -1202,7 +1202,7 @@ function init_gear_sets()
   }) --31
 
   sets.engaged.DW.MidAcc.MidHaste = set_combine(sets.engaged.DW.MidHaste, {
-    -- legs="Carmine Cuisses +1", --6
+    legs=gear.Carmine_D_legs, --6
     -- neck="Combatant's Torque",
     -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
     -- ear2="Telos Earring",
@@ -1234,7 +1234,7 @@ function init_gear_sets()
   }) --26
 
   sets.engaged.DW.MidAcc.HighHaste = set_combine(sets.engaged.DW.HighHaste, {
-    -- legs="Carmine Cuisses +1", --6
+    legs=gear.Carmine_D_legs, --6
     -- neck="Combatant's Torque",
     -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
   })
@@ -1274,7 +1274,7 @@ function init_gear_sets()
     -- ammo="Voluspa Tathlum",
     -- head="Carmine Mask +1",
     -- body="Carm. Sc. Mail +1",
-    -- legs="Carmine Cuisses +1",
+    legs=gear.Carmine_D_legs, --6
     -- ear1="Cessance Earring",
     -- ear2="Mache Earring +1",
     -- waist="Olseni Belt",
@@ -1341,7 +1341,7 @@ function init_gear_sets()
   }
 
   sets.Kiting = {
-    legs="Carmine Cuisses +1",
+    legs=gear.Carmine_B_legs,
   }
   sets.Kiting.Adoulin = {
     body="Councilor's Garb",

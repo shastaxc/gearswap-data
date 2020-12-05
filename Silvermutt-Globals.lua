@@ -98,6 +98,9 @@ function define_global_sets()
   gear.Adhemar_D_feet = {name="Adhe. Gamashes +1", augments={'HP+65','"Store TP"+7','"Snapshot"+10',}}
 
   -- Carmine
+  gear.Carmine_B_legs = { name="Carmine Cuisses +1", augments={'Accuracy+12','DEX+12','MND+20',}}
+  gear.Carmine_D_legs = { name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}}
+
   gear.Carmine_D_hands = { name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}}
 
   -- Chironic
