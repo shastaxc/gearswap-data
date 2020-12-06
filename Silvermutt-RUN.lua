@@ -421,7 +421,7 @@ function init_gear_sets()
     waist="Fotia Belt",
     ear1="Sherida Earring",
     ear2="Moonshade Earring",
-    ring1="Epona's Ring",
+    ring1="Regal Ring",
     ring2="Niqmaddu Ring",
     back=gear.RUN_WS2_Cape,
     -- ammo="Seething Bomblet +1",
@@ -920,8 +920,8 @@ function init_gear_sets()
   sets.engaged.MidAcc = set_combine(sets.engaged.LowAcc, {
     ear1="Cessance Earring",
     ear2="Telos Earring",
+    ring1="Regal Ring",
     -- ammo="Yamarang",
-    -- ring1="Regal Ring",
     -- feet=gear.Herc_STP_feet,
   })
   sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {

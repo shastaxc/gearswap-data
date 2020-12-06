@@ -328,6 +328,8 @@ function init_gear_sets()
     hands="Malignance Gloves",
     ear1="Cessance Earring",
     ear2="Telos Earring",
+    ring1="Regal Ring",
+    ring2="Chirich Ring +1",
     back=gear.DNC_TP_DW_Cape,
     -- ammo="C. Palug Stone",
     -- head="Maxixi Tiara +3",
@@ -336,8 +338,6 @@ function init_gear_sets()
     -- legs=gear.Herc_WS_legs,
     -- feet="Maxixi Toeshoes +3",
     -- neck="Etoile Gorget +1",
-    -- ring1="Regal Ring",
-    -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
   } -- Accuracy
 
   sets.precast.Flourish2 = {}
@@ -411,7 +411,7 @@ function init_gear_sets()
     ear1="Sherida Earring",
     ear2="Brutal Earring",
     ring1="Ilabrat Ring",
-    ring2="Epona's Ring",
+    ring2="Regal Ring",
     back=gear.DNC_TP_DA_Cape,
   }) -- AGI
   sets.precast.WS['Exenterator'].MaxTP = set_combine(sets.precast.WS['Exenterator'], {
@@ -471,7 +471,7 @@ function init_gear_sets()
     ear1="Sherida Earring",
     ear2="Odr Earring",
     ring1="Ilabrat Ring",
-    ring2="Begrudging Ring",
+    ring2="Regal Ring",
     back=gear.DNC_TP_DA_Cape,
   }) -- 50% DEX
   sets.precast.WS['Evisceration'].MaxTP = set_combine(sets.precast.WS['Evisceration'], {
@@ -505,7 +505,7 @@ function init_gear_sets()
     ear1="Sherida Earring",
     ear2="Moonshade Earring",
     ring1="Ilabrat Ring",
-    ring2="Epona's Ring",
+    ring2="Regal Ring",
     back=gear.DNC_TP_DA_Cape,
   }) -- 80% DEX
   sets.precast.WS["Rudra's Storm"].MaxTP = set_combine(sets.precast.WS["Rudra's Storm"], {
@@ -683,12 +683,12 @@ function init_gear_sets()
     ammo="Falcon Eye",
     ear1="Telos Earring",
     ear2="Dignitary's Earring",
+    ring1="Regal Ring",
+    ring2="Chirich Ring +1",
     -- ammo="C. Palug Stone",
     -- body="Maxixi Casaque +3",
     -- legs="Horos Tights +3",
     -- feet=gear.Herc_STP_feet,
-    -- ring1="Regal Ring",
-    -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
     -- waist="Olseni Belt",
   })
 
@@ -727,11 +727,11 @@ function init_gear_sets()
     hands="Mummu Wrists +2",
     legs="Meghanada Chausses +2",
     ear2="Dignitary's Earring",
+    ring1="Regal Ring",
+    ring2="Chirich Ring +1",
     -- ammo="C. Palug Stone",
     -- body="Maxixi Casaque +3",
     -- feet=gear.Herc_STP_feet,
-    -- ring1="Regal Ring",
-    -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
     -- waist="Olseni Belt",
   })
 
@@ -768,11 +768,11 @@ function init_gear_sets()
     hands="Mummu Wrists +2",
     legs="Meghanada Chausses +2",
     ear2="Dignitary's Earring",
+    ring1="Regal Ring",
+    ring2="Chirich Ring +1",
     -- ammo="C. Palug Stone",
     -- body="Maxixi Casaque +3",
     -- feet=gear.Herc_STP_feet,
-    -- ring1="Regal Ring",
-    -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
     -- waist="Olseni Belt",
   })
 
@@ -810,12 +810,12 @@ function init_gear_sets()
     hands="Mummu Wrists +2",
     legs="Meghanada Chausses +2",
     ear2="Dignitary's Earring",
+    ring1="Regal Ring",
+    ring2="Chirich Ring +1",
     -- ammo="C. Palug Stone",
     -- body="Maxixi Casaque +3",
     -- legs="Horos Tights +3",
     -- feet=gear.Herc_STP_feet,
-    -- ring1="Regal Ring",
-    -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
     -- waist="Olseni Belt",
   })
 
@@ -852,13 +852,13 @@ function init_gear_sets()
     hands="Mummu Wrists +2",
     legs="Meghanada Chausses +2",
     ear2="Dignitary's Earring",
+    ring1="Regal Ring",
+    ring2="Chirich Ring +1",
     -- ammo="C. Palug Stone",
     -- head="Maxixi Tiara +3", --8
     -- body="Maxixi Casaque +3",
     -- legs="Horos Tights +3",
     -- feet=gear.Herc_STP_feet,
-    -- ring1="Regal Ring",
-    -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
     -- waist="Olseni Belt",
   })
 
@@ -894,14 +894,12 @@ function init_gear_sets()
     hands="Mummu Wrists +2",
     legs="Meghanada Chausses +2",
     ear2="Dignitary's Earring",
-    ring1="Begrudging Ring",
-    ring2="Ilabrat Ring",
+    ring1="Regal Ring",
+    ring2="Chirich Ring +1",
     -- ammo="C. Palug Stone",
     -- head="Maxixi Tiara +3", --8
     -- body="Maxixi Casaque +3",
     -- feet=gear.Herc_STP_feet,
-    -- ring1="Regal Ring",
-    -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
     -- waist="Olseni Belt",
   })
 

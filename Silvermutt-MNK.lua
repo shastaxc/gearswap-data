@@ -239,7 +239,7 @@ function init_gear_sets()
     legs="Hizamaru Hizayoroi +1",
     feet="Anchorite's Gaiters +3",
     ear2="Odnowa Earring +1",
-    ring1="Supershear Ring",
+    ring1="Regal Ring",
     ring2="Niqmaddu Ring",
   } -- VIT
 
@@ -703,12 +703,12 @@ function init_gear_sets()
   }
   sets.engaged.LowAcc = set_combine(sets.engaged, {
     ammo="Ginsen",
-    ear2="Cessance Earring",
   })
   sets.engaged.MidAcc = set_combine(sets.engaged.LowAcc, {
     head="Kendatsuba Jinpachi +1",
   })
   sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
+    ammo="Falcon Eye",
     feet="Anchorite's Gaiters +3",
     ring1="Chirich Ring +1",
   })
