@@ -626,7 +626,7 @@ function init_gear_sets()
   sets.midcast['Enhancing Magic'] = {
     head="Erilaz Galea +1",
     hands="Runeist Mitons +1",
-    legs=gear.Carmine_B_legs,
+    legs=gear.Carmine_D_legs,
     waist="Olympus Sash",
     neck="Incanter's Torque",
     ear1="Andoaa Earring",

@@ -589,7 +589,7 @@ function init_gear_sets()
   sets.midcast.FastRecast = sets.precast.FC
 
   sets.midcast.SpellInterrupt = {
-    legs=gear.Carmine_B_legs, --20
+    legs=gear.Carmine_D_legs, --20
     -- sub="Sacro Bulwark", --7
     -- ammo="Impatiens", --10
     -- ring1="Evanescence Ring", --5
@@ -601,7 +601,7 @@ function init_gear_sets()
     head="Ayanmo Zucchetto +2",
     body="Ayanmo Corazza +2",
     hands="Ayanmo Manopolas +1",
-    legs=gear.Carmine_B_legs,
+    legs=gear.Carmine_D_legs,
     feet="Ayanmo Gambieras +1",
     neck="Incanter's Torque",
     -- sub="Sors Shield", --3/(-5)
@@ -1112,7 +1112,7 @@ function init_gear_sets()
   })
 
   sets.engaged.HighAcc = set_combine(sets.engaged, {
-    legs=gear.Carmine_B_legs,
+    legs=gear.Carmine_D_legs,
     -- ammo="Voluspa Tathlum",
     -- head="Carmine Mask +1",
     -- body="Carm. Sc. Mail +1",
@@ -1341,7 +1341,7 @@ function init_gear_sets()
   }
 
   sets.Kiting = {
-    legs=gear.Carmine_B_legs,
+    legs=gear.Carmine_D_legs,
   }
   sets.Kiting.Adoulin = {
     body="Councilor's Garb",
