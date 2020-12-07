@@ -1,5 +1,4 @@
 send_command('lua l gearinfo')
-send_command('lua l shout_ml')
 
 res = include('resources')
 inspect = include('inspect')
