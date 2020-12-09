@@ -907,7 +907,7 @@ function init_gear_sets()
     body="Malignance Tabard", --9/9, 139
     hands="Malignance Gloves", --5/5, 112
     legs="Malignance Tights", --7/7, 150
-    feet="Meghanada Jambeaux +2", --3/0, 69
+    feet="Malignance Boots", --4/4, 150
     neck="Twilight Torque", --5/5, 0
     ear1="Eabani Earring", --0/0, 8
     ear2="Odnowa Earring +1", --3/5, 0
