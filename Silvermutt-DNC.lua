@@ -534,11 +534,20 @@ function init_gear_sets()
     ear1="Friomisi Earring", --10
     ear2="Moonshade Earring",
     ring1="Shiva Ring +1", --3
-    ring2="Epona's Ring",
+    ring2="Ilabrat Ring",
     back="Argochampsa Mantle", --12
     waist="Eschan Stone", --7
     -- waist="Orpheus's Sash",
   }) -- 40% DEX / 40% INT + MAB
+  sets.precast.WS['Aeolian Edge'].MaxTP = set_combine(sets.precast.WS['Aeolian Edge'], {
+    ear2="Novio Earring", --7
+  })
+  sets.precast.WS['Aeolian Edge'].LowAcc = sets.precast.WS['Aeolian Edge']
+  sets.precast.WS['Aeolian Edge'].LowAccMaxTP = sets.precast.WS['Aeolian Edge'].MaxTP
+  sets.precast.WS['Aeolian Edge'].MidAcc = sets.precast.WS['Aeolian Edge']
+  sets.precast.WS['Aeolian Edge'].MidAccMaxTP = sets.precast.WS['Aeolian Edge'].MaxTP
+  sets.precast.WS['Aeolian Edge'].HighAcc = sets.precast.WS['Aeolian Edge']
+  sets.precast.WS['Aeolian Edge'].HighAccMaxTP = sets.precast.WS['Aeolian Edge'].MaxTP
 
   sets.precast.Skillchain = {
     hands="Charis Bangles +2",

@@ -575,14 +575,30 @@ function init_gear_sets()
     ear2="Novio Earring",
   })
 
-  sets.precast.WS["Wildfire"] = sets.precast.WS["Trueflight"]
-  sets.precast.WS["Wildfire"].MaxTP = sets.precast.WS["Trueflight"].MaxTP
-  sets.precast.WS["Wildfire"].LowAcc = sets.precast.WS["Trueflight"].LowAcc
-  sets.precast.WS["Wildfire"].LowAccMaxTP = sets.precast.WS["Trueflight"].LowAccMaxTP
-  sets.precast.WS["Wildfire"].MidAcc = sets.precast.WS["Trueflight"].MidAcc
-  sets.precast.WS["Wildfire"].MidAccMaxTP = sets.precast.WS["Trueflight"].MidAccMaxTP
-  sets.precast.WS["Wildfire"].HighAcc = sets.precast.WS["Trueflight"].HighAcc
-  sets.precast.WS["Wildfire"].HighAccMaxTP = sets.precast.WS["Trueflight"].HighAccMaxTP
+  sets.precast.WS["Wildfire"] = set_combine(sets.precast.WS["Trueflight"], {
+    ring1="Shiva Ring +1",
+  })
+  sets.precast.WS["Wildfire"].MaxTP = set_combine(sets.precast.WS["Trueflight"].MaxTP, {
+    ring1="Shiva Ring +1",
+  })
+  sets.precast.WS["Wildfire"].LowAcc = set_combine(sets.precast.WS["Trueflight"].LowAcc, {
+    ring1="Shiva Ring +1",
+  })
+  sets.precast.WS["Wildfire"].LowAccMaxTP = set_combine(sets.precast.WS["Trueflight"].LowAccMaxTP, {
+    ring1="Shiva Ring +1",
+  })
+  sets.precast.WS["Wildfire"].MidAcc = set_combine(sets.precast.WS["Trueflight"].MidAcc, {
+    ring1="Shiva Ring +1",
+  })
+  sets.precast.WS["Wildfire"].MidAccMaxTP = set_combine(sets.precast.WS["Trueflight"].MidAccMaxTP, {
+    ring1="Shiva Ring +1",
+  })
+  sets.precast.WS["Wildfire"].HighAcc = set_combine(sets.precast.WS["Trueflight"].HighAcc, {
+    ring1="Shiva Ring +1",
+  })
+  sets.precast.WS["Wildfire"].HighAccMaxTP = set_combine(sets.precast.WS["Trueflight"].HighAccMaxTP, {
+    ring1="Shiva Ring +1",
+  })
 
   sets.precast.WS['Evisceration'] = {
     head=gear.Adhemar_B_head,
@@ -677,14 +693,30 @@ function init_gear_sets()
   sets.precast.WS['Rampage'].HighAcc = sets.precast.WS['Evisceration'].MidAcc
   sets.precast.WS['Rampage'].HighAccMaxTP = sets.precast.WS['Evisceration'].HighAcc
 
-  sets.precast.WS["Aeolian Edge"] = sets.precast.WS["Trueflight"]
-  sets.precast.WS["Aeolian Edge"].MaxTP = sets.precast.WS["Trueflight"].MaxTP
-  sets.precast.WS["Aeolian Edge"].LowAcc = sets.precast.WS["Trueflight"].LowAcc
-  sets.precast.WS["Aeolian Edge"].LowAccMaxTP = sets.precast.WS["Trueflight"].LowAccMaxTP
-  sets.precast.WS["Aeolian Edge"].MidAcc = sets.precast.WS["Trueflight"].MidAcc
-  sets.precast.WS["Aeolian Edge"].MidAccMaxTP = sets.precast.WS["Trueflight"].MidAccMaxTP
-  sets.precast.WS["Aeolian Edge"].HighAcc = sets.precast.WS["Trueflight"].HighAcc
-  sets.precast.WS["Aeolian Edge"].HighAccMaxTP = sets.precast.WS["Trueflight"].HighAccMaxTP
+  sets.precast.WS["Aeolian Edge"] = set_combine(sets.precast.WS["Trueflight"], {
+    ring1="Shiva Ring +1",
+  })
+  sets.precast.WS["Aeolian Edge"].MaxTP = set_combine(sets.precast.WS["Trueflight"].MaxTP, {
+    ring1="Shiva Ring +1",
+  })
+  sets.precast.WS["Aeolian Edge"].LowAcc = set_combine(sets.precast.WS["Trueflight"].LowAcc, {
+    ring1="Shiva Ring +1",
+  })
+  sets.precast.WS["Aeolian Edge"].LowAccMaxTP = set_combine(sets.precast.WS["Trueflight"].LowAccMaxTP, {
+    ring1="Shiva Ring +1",
+  })
+  sets.precast.WS["Aeolian Edge"].MidAcc = set_combine(sets.precast.WS["Trueflight"].MidAcc, {
+    ring1="Shiva Ring +1",
+  })
+  sets.precast.WS["Aeolian Edge"].MidAccMaxTP = set_combine(sets.precast.WS["Trueflight"].MidAccMaxTP, {
+    ring1="Shiva Ring +1",
+  })
+  sets.precast.WS["Aeolian Edge"].HighAcc = set_combine(sets.precast.WS["Trueflight"].HighAcc, {
+    ring1="Shiva Ring +1",
+  })
+  sets.precast.WS["Aeolian Edge"].HighAccMaxTP = set_combine(sets.precast.WS["Trueflight"].HighAccMaxTP, {
+    ring1="Shiva Ring +1",
+  })
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Midcast Sets ------------------------------------------
