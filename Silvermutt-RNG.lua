@@ -1011,7 +1011,6 @@ function init_gear_sets()
     head="Dampening Tam",
     ring1="Chirich Ring +1",
     -- hands=gear.Adhemar_A_hands,
-    -- neck="Combatant's Torque",
   })
 
   sets.engaged.MidAcc = set_combine(sets.engaged.LowAcc, {
@@ -1024,8 +1023,6 @@ function init_gear_sets()
     feet=gear.Herc_STP_feet,
     ear1="Dignitary's Earring",
     ring1="Chirich Ring +1",
-    -- head="Carmine Mask +1",
-    -- waist="Olseni Belt",
   })
 
   -- * DNC Subjob DW Trait: +15%
@@ -1057,7 +1054,6 @@ function init_gear_sets()
     feet="Malignance Boots",
     hands="Malignance Gloves",
     -- hands=gear.Adhemar_A_hands,
-    -- neck="Combatant's Torque",
     -- waist="Kentarch Belt +1",
   })
 
@@ -1066,7 +1062,6 @@ function init_gear_sets()
     body="Malignance Tabard",
     ring1="Regal Ring",
     ring2="Chirich Ring +1",
-    -- waist="Olseni Belt",
   })
 
   -- Low Magic/Gear/JA Haste (67% DW to cap, 42% from gear)
@@ -1090,7 +1085,6 @@ function init_gear_sets()
   sets.engaged.DW.LowAcc.LowHaste = set_combine(sets.engaged.DW.LowHaste, {
     head="Dampening Tam",
     ring1="Chirich Ring +1",
-    -- neck="Combatant's Torque",
   })
 
   sets.engaged.DW.MidAcc.LowHaste = set_combine(sets.engaged.DW.LowAcc.LowHaste, {
@@ -1106,7 +1100,6 @@ function init_gear_sets()
     body="Malignance Tabard",
     ring1="Regal Ring",
     ring2="Chirich Ring +1",
-    -- waist="Olseni Belt",
   })
 
   -- Mid Magic/Gear/JA Haste (56% DW to cap, 31% from gear)
@@ -1131,7 +1124,6 @@ function init_gear_sets()
     head="Dampening Tam",
     ring1="Chirich Ring +1",
     -- hands=gear.Adhemar_A_hands,
-    -- neck="Combatant's Torque",
   })
 
   sets.engaged.DW.MidAcc.MidHaste = set_combine(sets.engaged.DW.LowAcc.MidHaste, {
@@ -1146,7 +1138,6 @@ function init_gear_sets()
     body="Malignance Tabard",
     ring1="Regal Ring",
     ring2="Chirich Ring +1",
-    -- waist="Olseni Belt",
   })
 
   -- High Magic/Gear/JA Haste (51% DW to cap, 27% from gear)
@@ -1172,7 +1163,6 @@ function init_gear_sets()
     head="Dampening Tam",
     ring1="Chirich Ring +1",
     -- hands=gear.Adhemar_A_hands,
-    -- neck="Combatant's Torque",
   })
 
   sets.engaged.DW.MidAcc.HighHaste = set_combine(sets.engaged.DW.LowAcc.HighHaste, {
@@ -1186,7 +1176,6 @@ function init_gear_sets()
     body="Malignance Tabard",
     ring1="Regal Ring",
     ring2="Chirich Ring +1",
-    -- waist="Olseni Belt",
   })
 
   -- Max Magic/Gear/JA Haste (36% DW to cap, 11% from gear)
@@ -1216,7 +1205,6 @@ function init_gear_sets()
   sets.engaged.DW.MidAcc.MaxHaste = set_combine(sets.engaged.DW.LowAcc.MaxHaste, {
     hands="Malignance Gloves",
     feet="Malignance Boots",
-    -- neck="Combatant's Torque",
   })
 
   sets.engaged.DW.HighAcc.MaxHaste = set_combine(sets.engaged.DW.MidAcc.MaxHaste, {
@@ -1224,7 +1212,6 @@ function init_gear_sets()
     body="Malignance Tabard",
     ring1="Regal Ring",
     ring2="Chirich Ring +1",
-    -- waist="Olseni Belt",
   })
 
   -- High Magic/Gear/JA Haste (46% DW to cap, 21% from gear)
