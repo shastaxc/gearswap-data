@@ -694,27 +694,35 @@ function init_gear_sets()
   sets.precast.WS['Rampage'].HighAccMaxTP = sets.precast.WS['Evisceration'].HighAcc
 
   sets.precast.WS["Aeolian Edge"] = set_combine(sets.precast.WS["Trueflight"], {
+    neck="Baetyl Pendant", --13
     ring1="Shiva Ring +1",
   })
   sets.precast.WS["Aeolian Edge"].MaxTP = set_combine(sets.precast.WS["Trueflight"].MaxTP, {
+    neck="Baetyl Pendant", --13
     ring1="Shiva Ring +1",
   })
   sets.precast.WS["Aeolian Edge"].LowAcc = set_combine(sets.precast.WS["Trueflight"].LowAcc, {
+    neck="Baetyl Pendant", --13
     ring1="Shiva Ring +1",
   })
   sets.precast.WS["Aeolian Edge"].LowAccMaxTP = set_combine(sets.precast.WS["Trueflight"].LowAccMaxTP, {
+    neck="Baetyl Pendant", --13
     ring1="Shiva Ring +1",
   })
   sets.precast.WS["Aeolian Edge"].MidAcc = set_combine(sets.precast.WS["Trueflight"].MidAcc, {
+    neck="Baetyl Pendant", --13
     ring1="Shiva Ring +1",
   })
   sets.precast.WS["Aeolian Edge"].MidAccMaxTP = set_combine(sets.precast.WS["Trueflight"].MidAccMaxTP, {
+    neck="Baetyl Pendant", --13
     ring1="Shiva Ring +1",
   })
   sets.precast.WS["Aeolian Edge"].HighAcc = set_combine(sets.precast.WS["Trueflight"].HighAcc, {
+    neck="Baetyl Pendant", --13
     ring1="Shiva Ring +1",
   })
   sets.precast.WS["Aeolian Edge"].HighAccMaxTP = set_combine(sets.precast.WS["Trueflight"].HighAccMaxTP, {
+    neck="Baetyl Pendant", --13
     ring1="Shiva Ring +1",
   })
 
@@ -858,16 +866,16 @@ function init_gear_sets()
     legs="Mummu Kecks +2",
     waist="Kwahu Kachina Belt +1",
     -- body="Nisroch Jerkin",
-    -- feet="Osh. Leggings +1",
+    -- feet="Oshosi Leggings +1",
   })
 
   sets.DoubleShot = {
     head="Arcadian Beret +2",
     -- head="Arcadian Beret +3",
-    -- body="Arc. Jerkin +3",
+    -- body="Arcadian Jerkin +3",
     -- hands="Oshosi Gloves +1", -- 5
-    -- legs="Osh. Trousers +1", --7
-    -- feet="Osh. Leggings +1", --4
+    -- legs="Oshosi Trousers +1", --7
+    -- feet="Oshosi Leggings +1", --4
   }
 
   sets.DoubleShot.Critical = {
@@ -1058,10 +1066,10 @@ function init_gear_sets()
   })
 
   sets.engaged.DW.HighAcc = set_combine(sets.engaged.DW.MidAcc, {
-    head="Malignance Chapeau",
     body="Malignance Tabard",
     ring1="Regal Ring",
     ring2="Chirich Ring +1",
+    -- head="Malignance Chapeau",
   })
 
   -- Low Magic/Gear/JA Haste (67% DW to cap, 42% from gear)
@@ -1096,10 +1104,10 @@ function init_gear_sets()
   })
 
   sets.engaged.DW.HighAcc.LowHaste = set_combine(sets.engaged.DW.MidAcc.LowHaste, {
-    head="Malignance Chapeau",
     body="Malignance Tabard",
     ring1="Regal Ring",
     ring2="Chirich Ring +1",
+    -- head="Malignance Chapeau",
   })
 
   -- Mid Magic/Gear/JA Haste (56% DW to cap, 31% from gear)
@@ -1134,10 +1142,10 @@ function init_gear_sets()
   })
 
   sets.engaged.DW.HighAcc.MidHaste = set_combine(sets.engaged.DW.MidAcc.MidHaste, {
-    head="Malignance Chapeau",
     body="Malignance Tabard",
     ring1="Regal Ring",
     ring2="Chirich Ring +1",
+    -- head="Malignance Chapeau",
   })
 
   -- High Magic/Gear/JA Haste (51% DW to cap, 27% from gear)
@@ -1172,10 +1180,10 @@ function init_gear_sets()
   })
 
   sets.engaged.DW.HighAcc.HighHaste = set_combine(sets.engaged.DW.MidAcc.HighHaste, {
-    head="Malignance Chapeau",
     body="Malignance Tabard",
     ring1="Regal Ring",
     ring2="Chirich Ring +1",
+    -- head="Malignance Chapeau",
   })
 
   -- Max Magic/Gear/JA Haste (36% DW to cap, 11% from gear)
@@ -1208,10 +1216,10 @@ function init_gear_sets()
   })
 
   sets.engaged.DW.HighAcc.MaxHaste = set_combine(sets.engaged.DW.MidAcc.MaxHaste, {
-    head="Malignance Chapeau",
     body="Malignance Tabard",
     ring1="Regal Ring",
     ring2="Chirich Ring +1",
+    -- head="Malignance Chapeau",
   })
 
   -- High Magic/Gear/JA Haste (46% DW to cap, 21% from gear)
