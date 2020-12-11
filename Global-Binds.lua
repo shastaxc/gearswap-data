@@ -5,27 +5,13 @@
 --  Spells:
 --              [ ALT+J ]           Invisible/Prism Powder
 --              [ ALT+K ]           Sneak/Spectral Jig/Silent Oil
---              [ ALT+Numpad7 ]     Paralyna
---              [ ALT+Numpad8 ]     Silena
---              [ ALT+Numpad9 ]     Blindna
---              [ ALT+Numpad4 ]     Poisona
---              [ ALT+Numpad5 ]     Stona
---              [ ALT+Numpad6 ]     Viruna
---              [ ALT+Numpad1 ]     Cursna
---              [ ALT+Numpad+ ]     Erase
---              [ ALT+Numpad0 ]     Sacrifice
---              [ ALT+Numpad. ]     Esuna
 --
 --  Items:
---              [ WIN+Numpad/ ]     Soldier's Drink
+--              [ WIN+Numpad9 ]     Holy Water
 --              [ WIN+Numpad7 ]     Remedy
---              [ WIN+Numpad8 ]     Echo Drops
---              [ WIN+Numpad9 ]     Eye Drops
---              [ WIN+Numpad4 ]     Antidote
---              [ WIN+Numpad6 ]     Remedy
---              [ WIN+Numpad1 ]     Holy Water
---              [ WIN+Numpad0 ]     Catholican +1
---              [ WIN+Numpad. ]     Catholican
+--              [ WIN+Numpad1 ]     Echo Drops
+--              [ WIN+Numpad2 ]     Eye Drops
+--              [ WIN+Numpad3 ]     Antidote
 --
 --
 --              (Global-Binds.lua contains additional non-job-related keybinds)
