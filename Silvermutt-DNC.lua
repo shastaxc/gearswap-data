@@ -559,9 +559,6 @@ function init_gear_sets()
     -- body=gear.Herc_WSD_body,
     -- hands="Maxixi Bangles +3",
     -- neck="Etoile Gorget +2",
-    -- ring1="Regal Ring",
-    -- ring2="Ilabrat Ring",
-    -- waist="Grunfeld Rope",
     -- back=gear.DNC_WS1_Cape,
   }) -- 80% DEX
   sets.precast.WS["Rudra's Storm"].MaxTP = set_combine(sets.precast.WS["Rudra's Storm"], {
