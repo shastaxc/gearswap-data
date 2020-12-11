@@ -548,6 +548,9 @@ function init_gear_sets()
     waist="Shinjutsu-no-Obi +1",
   })
 
+  -- Initializes trusts at iLvl 119
+  sets.midcast.Trust = sets.precast.FC
+
   ------------------------------------------------------------------------------------------------
   ----------------------------------------- Idle Sets --------------------------------------------
   ------------------------------------------------------------------------------------------------
@@ -602,19 +605,6 @@ function init_gear_sets()
     waist="Carrier's Sash",
   }
 
-  sets.idle.Town = set_combine(sets.idle, {
-    main="Carnwenhan",
-    sub="Genmei Shield",
-    range="Gjallarhorn",
-    head="Mousai Turban +1",
-    legs="Brioso Cannions +3",
-    feet="Brioso Slippers +3",
-    neck="Mnbw. Whistle +1",
-    ear1="Enchntr. Earring +1",
-    ear2="Regal Earring",
-    back=gear.BRD_Song_Cape,
-    waist="Acuity Belt +1",
-  })
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Defense Sets ------------------------------------------

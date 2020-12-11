@@ -25,125 +25,124 @@
 
 -- Initialization function for this job file.
 function get_sets()
-    mote_include_version = 2
+  mote_include_version = 2
 
-    -- Load and initialize the include file.
-    include('Mote-Include.lua')
-    res = require 'resources'
+  -- Load and initialize the include file.
+  include('Mote-Include.lua') -- Executes job_setup, user_setup, init_gear_sets
 end
 
--- Setup vars that are user-independent.
+-- Executes on first load and main job change
 function job_setup()
+  include('Mote-TreasureHunter')
+  lockstyleset = 4
 
-    no_swap_gear = S{"Warp Ring", "Dim. Ring (Dem)", "Dim. Ring (Holla)", "Dim. Ring (Mea)",
-              "Trizek Ring", "Echad Ring", "Facility Ring", "Capacity Ring"}
-    wyv_breath_spells = S{'Dia', 'Poison', 'Blaze Spikes', 'Protect', 'Sprout Smack', 'Head Butt', 'Cocoon',
-        'Barfira', 'Barblizzara', 'Baraera', 'Barstonra', 'Barthundra', 'Barwatera'}
-    wyv_elem_breath = S{'Flame Breath', 'Frost Breath', 'Sand Breath', 'Hydro Breath', 'Gust Breath', 'Lightning Breath'}
+  -- For th_action_check():
+  -- JA IDs for actions that always have TH: Provoke, Animated Flourish
+  info.default_ja_ids = S{35, 204}
+  -- Unblinkable JA IDs for actions that always have TH: Quick/Box/Stutter Step, Desperate/Violent Flourish
+  info.default_u_ja_ids = S{201, 202, 203, 205, 207}
 
-    lockstyleset = 4
+  wyv_breath_spells = S{'Dia', 'Poison', 'Blaze Spikes', 'Protect', 'Sprout Smack', 'Head Butt', 'Cocoon',
+      'Barfira', 'Barblizzara', 'Baraera', 'Barstonra', 'Barthundra', 'Barwatera'}
+  wyv_elem_breath = S{'Flame Breath', 'Frost Breath', 'Sand Breath', 'Hydro Breath', 'Gust Breath', 'Lightning Breath'}
+
+  state.OffenseMode:options('STP', 'Normal', 'LowAcc', 'MidAcc', 'HighAcc', 'MaxAcc')
+  state.WeaponskillMode:options('Normal', 'Acc')
+  state.HybridMode:options('Normal', 'DT')
+  state.IdleMode:options('Normal', 'DT')
+  state.AttackMode = M{['description']='Attack', 'Capped', 'Uncapped'}
+  state.CP = M(false, "Capacity Points Mode")
+
+  send_command('bind !s gs c faceaway')
+  send_command('bind !d gs c usekey')
+  send_command('bind @w gs c toggle WeaponLock')
+
+  send_command('bind ^` gs c cycle treasuremode')
+  send_command('bind @c gs c toggle CP')
+  send_command('bind @a gs c cycle AttackMode')
+
+  send_command('bind ^` input /ja "Call Wyvern" <me>')
+  send_command('bind !` input /ja "Spirit Link" <me>')
+  send_command('bind @` input /ja "Dismiss" <me>')
+  send_command('bind ^numpad0 input /ja "Jump" <t>')
+  send_command('bind ^numpad. input /ja "High Jump" <t>')
+  send_command('bind ^numpad+ input /ja "Spirit Jump" <t>')
+  send_command('bind ^numpadenter input /ja "Soul Jump" <t>')
+  send_command('bind ^numlock input /ja "Super Jump" <t>')
 
 end
 
--------------------------------------------------------------------------------------------------------------------
--- User setup functions for this job.  Recommend that these be overridden in a sidecar file.
--------------------------------------------------------------------------------------------------------------------
-
+-- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
-    state.OffenseMode:options('STP', 'Normal', 'LowAcc', 'MidAcc', 'HighAcc', 'MaxAcc')
-    state.WeaponskillMode:options('Normal', 'Acc')
-    state.HybridMode:options('Normal', 'DT')
-    state.IdleMode:options('Normal', 'DT')
+  locked_style = false -- Do not modify
+  include('Global-Binds.lua') -- Additional local binds
 
-    state.AttackMode = M{['description']='Attack', 'Capped', 'Uncapped'}
-    -- state.CP = M(false, "Capacity Points Mode")
+  if player.sub_job == 'WAR' then
+    send_command('bind !w input /ja "Defender" <me>')
+    send_command('bind ^numpad/ input /ja "Berserk" <me>')
+    send_command('bind ^numpad* input /ja "Warcry" <me>')
+    send_command('bind ^numpad- input /ja "Aggressor" <me>')
+  elseif player.sub_job == 'SAM' then
+    send_command('bind !w input /ja "Hasso" <me>')
+    send_command('bind ^numpad/ input /ja "Meditate" <me>')
+    send_command('bind ^numpad* input /ja "Sekkanoki" <me>')
+    send_command('bind ^numpad- input /ja "Third Eye" <me>')
+  end
 
-    -- Additional local binds
-    include('Global-Binds.lua') -- OK to remove this line
-
-    send_command('lua l gearinfo')
-
-    send_command('bind ^` input /ja "Call Wyvern" <me>')
-    send_command('bind !` input /ja "Spirit Link" <me>')
-    send_command('bind @` input /ja "Dismiss" <me>')
-    send_command('bind @a gs c cycle AttackMode')
-    -- send_command('bind @c gs c toggle CP')
-
-    if player.sub_job == 'WAR' then
-        send_command('bind !w input /ja "Defender" <me>')
-    elseif player.sub_job == 'SAM' then
-        send_command('bind !w input /ja "Hasso" <me>')
-    end
-
-    send_command('bind @w gs c toggle WeaponLock')
-    send_command('bind @c gs c toggle CP')
-
-    if player.sub_job == 'WAR' then
-        send_command('bind ^numpad/ input /ja "Berserk" <me>')
-        send_command('bind ^numpad* input /ja "Warcry" <me>')
-        send_command('bind ^numpad- input /ja "Aggressor" <me>')
-    elseif player.sub_job == 'SAM' then
-        send_command('bind ^numpad/ input /ja "Meditate" <me>')
-        send_command('bind ^numpad* input /ja "Sekkanoki" <me>')
-        send_command('bind ^numpad- input /ja "Third Eye" <me>')
-    end
-
-    send_command('bind ^numpad7 input /ws "Camlann\'s Torment" <t>')
-    send_command('bind ^numpad8 input /ws "Drakesbane" <t>')
-    send_command('bind ^numpad4 input /ws "Stardiver" <t>')
-    send_command('bind ^numpad5 input /ws "Geirskogul" <t>')
-    send_command('bind ^numpad6 input /ws "Impulse Drive" <t>')
-    send_command('bind ^numpad1 input /ws "Sonic Thrust" <t>')
-    send_command('bind ^numpad2 input /ws "Leg Sweep" <t>')
-
-    send_command('bind ^numpad0 input /ja "Jump" <t>')
-    send_command('bind ^numpad. input /ja "High Jump" <t>')
-    send_command('bind ^numpad+ input /ja "Spirit Jump" <t>')
-    send_command('bind ^numpadenter input /ja "Soul Jump" <t>')
-    send_command('bind ^numlock input /ja "Super Jump" <t>')
-
-    select_default_macro_book()
-
-
-    state.Auto_Kite = M(false, 'Auto_Kite')
-    moving = false
+  select_default_macro_book()
+  set_lockstyle()
 end
 
-function user_unload()
-    send_command('unbind ^`')
-    send_command('unbind !`')
-    send_command('unbind @`')
-    send_command('unbind @a')
-    -- send_command('unbind @c')
-    send_command('unbind ^numpad/')
-    send_command('unbind ^numpad*')
-    send_command('unbind ^numpad-')
-    send_command('unbind ^numpad7')
-    send_command('unbind ^numpad8')
-    send_command('unbind ^numpad4')
-    send_command('unbind ^numpad5')
-    send_command('unbind ^numpad6')
-    send_command('unbind ^numpad1')
-    send_command('unbind ^numpad2')
-    send_command('unbind ^numpad0')
-    send_command('unbind ^numpad.')
-    send_command('unbind ^numpad+')
-    send_command('unbind ^numpadenter')
-    send_command('unbind ^numlock')
+-- Called when this job file is unloaded (eg: job change)
+function job_file_unload()
+  send_command('unbind !s')
+  send_command('unbind !d')
+  send_command('unbind @w')
 
-    send_command('unbind #`')
-    send_command('unbind #1')
-    send_command('unbind #2')
-    send_command('unbind #3')
-    send_command('unbind #4')
-    send_command('unbind #5')
-    send_command('unbind #6')
-    send_command('unbind #7')
-    send_command('unbind #8')
-    send_command('unbind #9')
-    send_command('unbind #0')
+  send_command('unbind ^`')
+  send_command('unbind @c')
+  send_command('unbind @a')
 
-    send_command('lua u gearinfo')
+  send_command('unbind ^`')
+  send_command('unbind !`')
+  send_command('unbind @`')
+
+  send_command('unbind !w')
+  send_command('unbind ^numpad/')
+  send_command('unbind ^numpad*')
+  send_command('unbind ^numpad-')
+
+  send_command('unbind ^numlock')
+  send_command('unbind ^numpad/')
+  send_command('unbind ^numpad*')
+  send_command('unbind ^numpad-')
+  send_command('unbind ^numpad+')
+  send_command('unbind ^numpadenter')
+  send_command('unbind ^numpad9')
+  send_command('unbind ^numpad8')
+  send_command('unbind ^numpad7')
+  send_command('unbind ^numpad6')
+  send_command('unbind ^numpad5')
+  send_command('unbind ^numpad4')
+  send_command('unbind ^numpad3')
+  send_command('unbind ^numpad2')
+  send_command('unbind ^numpad1')
+  send_command('unbind ^numpad0')
+  send_command('unbind ^numpad.')
+  send_command('unbind numpad0')
+
+  send_command('unbind #`')
+  send_command('unbind #1')
+  send_command('unbind #2')
+  send_command('unbind #3')
+  send_command('unbind #4')
+  send_command('unbind #5')
+  send_command('unbind #6')
+  send_command('unbind #7')
+  send_command('unbind #8')
+  send_command('unbind #9')
+  send_command('unbind #0')
+
 end
 
 -- Define sets and vars used by this job file.
@@ -368,6 +367,9 @@ function init_gear_sets()
         waist="Glassblower's Belt",
         }
 
+    -- Initializes trusts at iLvl 119
+    sets.midcast.Trust = sets.precast.FC
+
     ------------------------------------------------------------------------------------------------
     ----------------------------------------- Idle Sets --------------------------------------------
     ------------------------------------------------------------------------------------------------
@@ -422,21 +424,7 @@ function init_gear_sets()
         back="Moonlight Cape", --6/6
         })
 
-    sets.idle.Town = set_combine(sets.idle, {
-        ammo="Aurgelmir Orb",
-        head="Ptero. Armet +3",
-        hands="Ptero. Fin. G. +3",
-        feet="Ptero. Greaves +3",
-        neck="Dgn. Collar +1",
-        ear1="Sherida Earring",
-        ear2="Telos Earring",
-        back=gear.DRG_TP_Cape,
-        waist="Ioskeha Belt +1",
-        })
-
     sets.idle.Weak = sets.idle.DT
-    sets.Kiting = {legs="Carmine Cuisses +1"}
-
 
     ------------------------------------------------------------------------------------------------
     ---------------------------------------- Defense Sets ------------------------------------------
@@ -524,15 +512,24 @@ function init_gear_sets()
     ---------------------------------------- Special Sets ------------------------------------------
     ------------------------------------------------------------------------------------------------
 
-    sets.buff.Doom = {
-        neck="Nicander's Necklace", --20
-        ring1={name="Eshmun's Ring", bag="wardrobe3"}, --20
-        ring2={name="Eshmun's Ring", bag="wardrobe4"}, --20
-        waist="Gishdubar Sash", --10
-        }
 
-    -- sets.CP = {back="Mecisto. Mantle"}
-    --sets.Reive = {neck="Ygnas's Resolve +1"}
+    sets.buff.Doom = {
+      -- neck="Nicander's Necklace", --20
+      -- ring2="Eshmun's Ring", --20
+      waist="Gishdubar Sash", --10
+    }
+    sets.Reive = {
+      neck="Ygnas's Resolve +1"
+    }
+    sets.CP = {
+      back="Aptitude Mantle"
+    }
+    sets.Kiting = {
+      legs="Carmine Cuisses +1"
+    }
+    sets.Kiting.Adoulin = {
+      body="Councilor's Garb",
+    }
 
 end
 
@@ -541,23 +538,33 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 function job_precast(spell, action, spellMap, eventArgs)
-    -- Wyvern Commands
-    if spell.name == 'Dismiss' and pet.hpp < 100 then
-        eventArgs.cancel = true
-        add_to_chat(50, 'Cancelling Dismiss! ' ..pet.name.. ' is below full HP! [ ' ..pet.hpp.. '% ]')
-    elseif wyv_breath_spells:contains(spell.english) or (spell.skill == 'Ninjutsu' and player.hpp < 33) then
-        equip(sets.precast.HealingBreath)
+  -- Don't gearswap if status forbids the action
+  local forbidden_statuses = action_type_blocks[spell.action_type]
+  for k,status in pairs(forbidden_statuses) do
+    if buffactive[status] then
+      add_to_chat(167, 'Stopped due to status.')
+      eventArgs.cancel = true -- Stops the rest of the pipeline from executing
+      return -- Ends execution of this function
     end
-    -- Jump Overrides
-    --if pet.isvalid and player.main_job_level >= 77 and spell.name == "Jump" then
-    --    eventArgs.cancel = true
-    --    send_command('@input /ja "Spirit Jump" <t>')
-    --end
+  end
 
-    --if pet.isvalid and player.main_job_level >= 85 and spell.name == "High Jump" then
-    --    eventArgs.cancel = true
-    --    send_command('@input /ja "Soul Jump" <t>')
-    --end
+  -- Wyvern Commands
+  if spell.name == 'Dismiss' and pet.hpp < 100 then
+      eventArgs.cancel = true
+      add_to_chat(50, 'Cancelling Dismiss! ' ..pet.name.. ' is below full HP! [ ' ..pet.hpp.. '% ]')
+  elseif wyv_breath_spells:contains(spell.english) or (spell.skill == 'Ninjutsu' and player.hpp < 33) then
+      equip(sets.precast.HealingBreath)
+  end
+  -- Jump Overrides
+  --if pet.isvalid and player.main_job_level >= 77 and spell.name == "Jump" then
+  --    eventArgs.cancel = true
+  --    send_command('@input /ja "Spirit Jump" <t>')
+  --end
+
+  --if pet.isvalid and player.main_job_level >= 85 and spell.name == "High Jump" then
+  --    eventArgs.cancel = true
+  --    send_command('@input /ja "Soul Jump" <t>')
+  --end
 end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
@@ -585,31 +592,31 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 function job_buff_change(buff,gain)
-    -- If we gain or lose any haste buffs, adjust which gear set we target.
---    if buffactive['Reive Mark'] then
---        if gain then
---            equip(sets.Reive)
---            disable('neck')
---        else
---            enable('neck')
---        end
---    end
-
-    if buff == "doom" then
-        if gain then
-            equip(sets.buff.Doom)
-            send_command('@input /p Doomed.')
-             disable('ring1','ring2','waist')
-        else
-            enable('ring1','ring2','waist')
-            handle_equipping_gear(player.status)
-        end
+  if buff == "doom" then
+    if gain then
+      send_command('@input /p Doomed.')
+    elseif player.hpp > 0 then
+      send_command('@input /p Doom Removed.')
     end
+  end
 
-    if buff == 'Hasso' and not gain then
-        add_to_chat(167, 'Hasso just expired!')
-    end
+  if buff == 'Hasso' and not gain then
+    add_to_chat(167, 'Hasso just expired!')
+  end
 
+  -- Update gear for these specific buffs
+  if buff == "doom" then
+    status_change(player.status)
+  end
+end
+
+-- Handle notifications of general user state change.
+function job_state_change(stateField, newValue, oldValue)
+  if state.WeaponLock.value == true then
+    disable('main','sub')
+  else
+    enable('main','sub')
+  end
 end
 
 
@@ -618,8 +625,9 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 function job_handle_equipping_gear(playerStatus, eventArgs)
-    check_gear()
-    check_moving()
+  update_weapons()
+  check_gear()
+  update_idle_groups()
 end
 
 function job_update(cmdParams, eventArgs)
@@ -638,17 +646,47 @@ end
 
 -- Modify the default idle set after it was constructed.
 function customize_idle_set(idleSet)
-    -- if state.CP.current == 'on' then
-    --     equip(sets.CP)
-    --     disable('back')
-    -- else
-    --     enable('back')
-    -- end
-    if state.Auto_Kite.value == true then
-       idleSet = set_combine(idleSet, sets.Kiting)
+  -- If not in DT mode put on move speed gear
+  if state.IdleMode.current == 'Normal' and state.DefenseMode.value == 'None' then
+    if classes.CustomIdleGroups:contains('Adoulin') then
+      idleSet = set_combine(idleSet, sets.Kiting.Adoulin)
+    else
+      idleSet = set_combine(idleSet, sets.Kiting)
     end
+  end
+  if state.CP.current == 'on' then
+    idleSet = set_combine(idleSet, sets.CP)
+  end
 
-    return idleSet
+  if buffactive.Doom then
+    idleSet = set_combine(idleSet, sets.buff.Doom)
+  end
+
+  return idleSet
+end
+
+function customize_melee_set(meleeSet)
+  if state.CP.current == 'on' then
+    meleeSet = set_combine(meleeSet, sets.CP)
+  end
+
+  if buffactive.Doom then
+    meleeSet = set_combine(meleeSet, sets.buff.Doom)
+  end
+
+  return meleeSet
+end
+
+function customize_defense_set(defenseSet)
+  if state.CP.current == 'on' then
+    defenseSet = set_combine(defenseSet, sets.CP)
+  end
+
+  if buffactive.Doom then
+    defenseSet = set_combine(defenseSet, sets.buff.Doom)
+  end
+
+  return defenseSet
 end
 
 -- Function to display the current relevant user state when doing an update.
@@ -676,6 +714,9 @@ function display_current_job_state(eventArgs)
     local i_msg = state.IdleMode.value
 
     local msg = ''
+    if state.TreasureMode.value ~= 'None' then
+        msg = msg .. ' TH: ' ..state.TreasureMode.value.. ' |'
+    end
     if state.Kiting.value then
         msg = msg .. ' Kiting: On |'
     end
@@ -693,8 +734,28 @@ end
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
 
+function update_idle_groups()
+  classes.CustomIdleGroups:clear()
+  if player.status == 'Idle' then
+    if world.zone == 'Eastern Adoulin' or world.zone == 'Western Adoulin' then
+      classes.CustomIdleGroups:append('Adoulin')
+    end
+  end
+end
+
 function job_self_command(cmdParams, eventArgs)
-    gearinfo(cmdParams, eventArgs)
+  if cmdParams[1]:lower() == 'usekey' then
+    send_command('cancel Invisible; cancel Hide; cancel Gestation; cancel Camouflage')
+    if player.target.type ~= 'NONE' then
+      if player.target.name == 'Sturdy Pyxis' then
+        send_command('@input /item "Forbidden Key" <t>')
+      end
+    end
+  elseif cmdParams[1]:lower() == 'faceaway' then
+    windower.ffxi.turn(player.facing - math.pi);
+  end
+
+  gearinfo(cmdParams, eventArgs)
 end
 
 function gearinfo(cmdParams, eventArgs)
@@ -712,41 +773,42 @@ function gearinfo(cmdParams, eventArgs)
     end
 end
 
-function check_moving()
-    if state.DefenseMode.value == 'None'  and state.Kiting.value == false then
-        if state.Auto_Kite.value == false and moving then
-            state.Auto_Kite:set(true)
-        elseif state.Auto_Kite.value == true and moving == false then
-            state.Auto_Kite:set(false)
-        end
-    end
-end
-
 function check_gear()
-    if no_swap_gear:contains(player.equipment.left_ring) then
-        disable("ring1")
-    else
-        enable("ring1")
-    end
-    if no_swap_gear:contains(player.equipment.right_ring) then
-        disable("ring2")
-    else
-        enable("ring2")
-    end
+  if no_swap_rings:contains(player.equipment.ring1) then
+      disable("ring1")
+  else
+      enable("ring1")
+  end
+  if no_swap_rings:contains(player.equipment.ring2) then
+      disable("ring2")
+  else
+      enable("ring2")
+  end
 end
 
 windower.register_event('zone change',
-    function()
-        if no_swap_gear:contains(player.equipment.left_ring) then
-            enable("ring1")
-            equip(sets.idle)
-        end
-        if no_swap_gear:contains(player.equipment.right_ring) then
-            enable("ring2")
-            equip(sets.idle)
-        end
-    end
+  function()
+      if no_swap_rings:contains(player.equipment.ring1) then
+          enable("ring1")
+          equip(sets.idle)
+      end
+      if no_swap_rings:contains(player.equipment.ring2) then
+          enable("ring2")
+          equip(sets.idle)
+      end
+  end
 )
+
+windower.raw_register_event('outgoing chunk', function(id, data, modified, injected, blocked)
+if id == 0x053 then -- Send lockstyle command to server
+  local type = data:unpack("I",0x05)
+  if type == 0 then -- This is lockstyle 'disable' command
+    locked_style = false
+  else -- Various diff ways to set lockstyle
+    locked_style = true
+  end
+end
+end)
 
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
@@ -759,5 +821,16 @@ function select_default_macro_book()
 end
 
 function set_lockstyle()
-    send_command('wait 2; input /lockstyleset ' .. lockstyleset)
+  -- Set lockstyle 2 seconds after changing job, trying immediately will error
+  coroutine.schedule(function()
+    if locked_style == false then
+      send_command('input /lockstyleset '..lockstyleset)
+    end
+  end, 2)
+  -- In case lockstyle was on cooldown for first command, try again (lockstyle has 10s cd)
+  coroutine.schedule(function()
+    if locked_style == false then
+      send_command('input /lockstyleset '..lockstyleset)
+    end
+  end, 10)
 end

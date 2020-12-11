@@ -63,51 +63,59 @@
 
 -- Initialization function for this job file.
 function get_sets()
-    mote_include_version = 2
+  mote_include_version = 2
 
-    -- Load and initialize the include file.
-    include('Mote-Include.lua')
+  -- Load and initialize the include file.
+  include('Mote-Include.lua') -- Executes job_setup, user_setup, init_gear_sets
 end
 
--- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
+-- Executes on first load and main job change
 function job_setup()
-    state.Buff['Afflatus Solace'] = buffactive['Afflatus Solace'] or false
-    state.Buff['Afflatus Misery'] = buffactive['Afflatus Misery'] or false
-    state.Buff['Sublimation: Activated'] = buffactive['Sublimation: Activated'] or false
+  lockstyleset = 1
 
-    state.RegenMode = M{['description']='Regen Mode', 'Duration', 'Potency'}
+  DW = false -- Do not modify
 
-    no_swap_gear = S{"Warp Ring", "Dim. Ring (Dem)", "Dim. Ring (Holla)", "Dim. Ring (Mea)",
-              "Trizek Ring", "Echad Ring", "Facility Ring", "Capacity Ring"}
+  state.Buff['Afflatus Solace'] = buffactive['Afflatus Solace'] or false
+  state.Buff['Afflatus Misery'] = buffactive['Afflatus Misery'] or false
+  state.Buff['Sublimation: Activated'] = buffactive['Sublimation: Activated'] or false
 
-    lockstyleset = 1
+  state.BarElement = M{['description']='BarElement', 'Barfira', 'Barblizzara', 'Baraera', 'Barstonra', 'Barthundra', 'Barwatera'}
+  state.BarStatus = M{['description']='BarStatus', 'Baramnesra', 'Barvira', 'Barparalyzra', 'Barsilencera', 'Barpetra', 'Barpoisonra', 'Barblindra', 'Barsleepra'}
+  state.BoostSpell = M{['description']='BoostSpell', 'Boost-STR', 'Boost-INT', 'Boost-AGI', 'Boost-VIT', 'Boost-DEX', 'Boost-MND', 'Boost-CHR'}
 
+  state.RegenMode = M{['description']='Regen Mode', 'Duration', 'Potency'}
+  state.OffenseMode:options('Normal', 'Acc')
+  state.CastingMode:options('Normal', 'Resistant')
+  state.IdleMode:options('Normal', 'DT', 'MEva')
+  state.WeaponLock = M(false, 'Weapon Lock')
+  state.CP = M(false, "Capacity Points Mode")
+
+  send_command('bind !s gs c faceaway')
+  send_command('bind !d gs c usekey')
+
+  send_command('bind @w gs c toggle WeaponLock')
+  send_command('bind @c gs c toggle CP')
+  send_command('bind @r gs c cycle RegenMode')
+
+  send_command('bind ^` input /ja "Afflatus Solace" <me>')
+  send_command('bind !` input /ja "Afflatus Misery" <me>')
+  send_command('bind ^insert gs c cycleback BoostSpell')
+  send_command('bind ^delete gs c cycle BoostSpell')
+  send_command('bind ^home gs c cycleback BarElement')
+  send_command('bind ^end gs c cycle BarElement')
+  send_command('bind ^pageup gs c cycleback BarStatus')
+  send_command('bind ^pagedown gs c cycle BarStatus')
+  send_command('bind ^[ input /ja "Divine Seal" <me>')
+  send_command('bind ^] input /ja "Divine Caress" <me>')
+  send_command('bind !o input /ma "Regen IV" <stpc>')
 end
-
--------------------------------------------------------------------------------------------------------------------
--- User setup functions for this job.  Recommend that these be overridden in a sidecar file.
--------------------------------------------------------------------------------------------------------------------
 
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
-    state.OffenseMode:options('Normal', 'Acc')
-    state.CastingMode:options('Normal', 'Resistant')
-    state.IdleMode:options('Normal', 'DT', 'MEva')
+  locked_style = false -- Do not modify
+  include('Global-Binds.lua') -- Additional local binds
 
-    state.BarElement = M{['description']='BarElement', 'Barfira', 'Barblizzara', 'Baraera', 'Barstonra', 'Barthundra', 'Barwatera'}
-    state.BarStatus = M{['description']='BarStatus', 'Baramnesra', 'Barvira', 'Barparalyzra', 'Barsilencera', 'Barpetra', 'Barpoisonra', 'Barblindra', 'Barsleepra'}
-    state.BoostSpell = M{['description']='BoostSpell', 'Boost-STR', 'Boost-INT', 'Boost-AGI', 'Boost-VIT', 'Boost-DEX', 'Boost-MND', 'Boost-CHR'}
-
-    state.WeaponLock = M(false, 'Weapon Lock')
-    -- state.CP = M(false, "Capacity Points Mode")
-
-    -- Additional local binds
-    include('Global-Binds.lua') -- OK to remove this line
-
-    send_command('lua l gearinfo')
-
-    send_command('bind ^` input /ja "Afflatus Solace" <me>')
-    send_command('bind !` input /ja "Afflatus Misery" <me>')
+  if player.sub_job == 'SCH' then
     send_command('bind ^- gs c scholar light')
     send_command('bind ^= gs c scholar dark')
     send_command('bind !- gs c scholar addendum')
@@ -115,81 +123,71 @@ function user_setup()
     send_command('bind ^; gs c scholar speed')
     send_command('bind ![ gs c scholar aoe')
     send_command('bind !; gs c scholar cost')
-    send_command('bind ^insert gs c cycleback BoostSpell')
-    send_command('bind ^delete gs c cycle BoostSpell')
-    send_command('bind ^home gs c cycleback BarElement')
-    send_command('bind ^end gs c cycle BarElement')
-    send_command('bind ^pageup gs c cycleback BarStatus')
-    send_command('bind ^pagedown gs c cycle BarStatus')
-    send_command('bind ^[ input /ja "Divine Seal" <me>')
-    send_command('bind ^] input /ja "Divine Caress" <me>')
-    send_command('bind !o input /ma "Regen IV" <stpc>')
-    -- send_command('bind @c gs c toggle CP')
-    send_command('bind @r gs c cycle RegenMode')
-    send_command('bind @w gs c toggle WeaponLock')
+  end
 
-    send_command('bind ^numpad7 input /ws "Black Halo" <t>')
-    send_command('bind ^numpad8 input /ws "Hexa Strike" <t>')
-    send_command('bind ^numpad5 input /ws "Realmrazer" <t>')
-    send_command('bind ^numpad1 input /ws "Flash Nova" <t>')
-    send_command('bind ^numpad0 input /ws "Mystic Boon" <t>')
-
-    select_default_macro_book()
-    set_lockstyle()
-
-    state.Auto_Kite = M(false, 'Auto_Kite')
-    DW = false
-    moving = false
-    update_combat_form()
+  update_combat_form()
+  select_default_macro_book()
+  set_lockstyle()
 end
 
-function user_unload()
-    send_command('unbind ^`')
-    send_command('unbind !`')
-    send_command('unbind ^-')
-    send_command('unbind ^=')
-    send_command('unbind !-')
-    send_command('unbind !=')
-    send_command('unbind ^;')
-    send_command('unbind ![')
-    send_command('unbind !;')
-    send_command('unbind ^insert')
-    send_command('unbind ^delete')
-    send_command('unbind ^home')
-    send_command('unbind ^end')
-    send_command('unbind ^pageup')
-    send_command('unbind ^pagedown')
-    send_command('unbind ^[')
-    send_command('unbind ^]')
-    send_command('unbind !o')
-    -- send_command('unbind @c')
-    send_command('unbind @r')
-    send_command('unbind @w')
-    send_command('unbind ^numpad7')
-    send_command('unbind ^numpad8')
-    send_command('unbind ^numpad5')
-    send_command('unbind ^numpad1')
-    send_command('unbind ^numpad0')
+-- Called when this job file is unloaded (eg: job change)
+function job_file_unload()
+  send_command('unbind !s')
+  send_command('unbind !d')
 
-    send_command('unbind #`')
-    send_command('unbind #1')
-    send_command('unbind #2')
-    send_command('unbind #3')
-    send_command('unbind #4')
-    send_command('unbind #5')
-    send_command('unbind #6')
-    send_command('unbind #7')
-    send_command('unbind #8')
-    send_command('unbind #9')
-    send_command('unbind #0')
+  send_command('unbind @w')
+  send_command('unbind @c')
+  send_command('unbind @r')
 
-    send_command('unbind 1')
-    send_command('unbind 2')
-    send_command('unbind 3')
-    send_command('unbind 4')
-    send_command('unbind 5')
-    send_command('unbind 6')
+  send_command('unbind ^`')
+  send_command('unbind !`')
+  send_command('unbind ^insert')
+  send_command('unbind ^delete')
+  send_command('unbind ^home')
+  send_command('unbind ^end')
+  send_command('unbind ^pageup')
+  send_command('unbind ^pagedown')
+  send_command('unbind ^[')
+  send_command('unbind ^]')
+  send_command('unbind !o')
+
+  send_command('unbind ^numlock')
+  send_command('unbind ^numpad/')
+  send_command('unbind ^numpad*')
+  send_command('unbind ^numpad-')
+  send_command('unbind ^numpad+')
+  send_command('unbind ^numpadenter')
+  send_command('unbind ^numpad9')
+  send_command('unbind ^numpad8')
+  send_command('unbind ^numpad7')
+  send_command('unbind ^numpad6')
+  send_command('unbind ^numpad5')
+  send_command('unbind ^numpad4')
+  send_command('unbind ^numpad3')
+  send_command('unbind ^numpad2')
+  send_command('unbind ^numpad1')
+  send_command('unbind ^numpad0')
+  send_command('unbind ^numpad.')
+  send_command('unbind numpad0')
+
+  send_command('unbind ^-')
+  send_command('unbind ^=')
+  send_command('unbind !,')
+  send_command('unbind !.')
+
+  send_command('unbind #`')
+  send_command('unbind #1')
+  send_command('unbind #2')
+  send_command('unbind #3')
+  send_command('unbind #4')
+  send_command('unbind #5')
+  send_command('unbind #6')
+  send_command('unbind #7')
+  send_command('unbind #8')
+  send_command('unbind #9')
+  send_command('unbind #0')
 end
+
 
 -- Define sets and vars used by this job file.
 function init_gear_sets()
@@ -626,24 +624,11 @@ function init_gear_sets()
         waist="Carrier's Sash",
         })
 
-    sets.idle.Town = set_combine(sets.idle, {
-        main="Yagrush",
-        sub="Ammurapi Shield",
-        head="Kaykaus Mitra +1",
-        body="Kaykaus Bliaut +1",
-        legs="Kaykaus Tights +1",
-        feet="Kaykaus Boots +1",
-        neck="Debilis Medallion",
-        ear1="Glorious Earring",
-        ear2="Regal Earring",
-        })
-
     -- Defense sets
 
     sets.defense.PDT = sets.idle.DT
     sets.defense.MDT = sets.idle.DT
 
-    sets.Kiting = {feet="Herald's Gaiters"}
     sets.latent_refresh = {waist="Fucho-no-obi"}
 
     -- Engaged sets
@@ -714,15 +699,28 @@ function init_gear_sets()
     sets.buff.Sublimation = {waist="Embla Sash"}
 
     sets.buff.Doom = {
-        neck="Nicander's Necklace", --20
-        ring1={name="Eshmun's Ring", bag="wardrobe3"}, --20
-        ring2={name="Eshmun's Ring", bag="wardrobe4"}, --20
-        waist="Gishdubar Sash", --10
-        }
+      -- neck="Nicander's Necklace", --20
+      -- ring2="Eshmun's Ring", --20
+      waist="Gishdubar Sash", --10
+    }
 
+    ------------------------------------------------------------------------------------------------
+    ---------------------------------------- Special Sets ------------------------------------------
+    ------------------------------------------------------------------------------------------------
+
+    sets.Reive = {
+      neck="Ygnas's Resolve +1",
+    }
+    sets.CP = {
+      back="Aptitude Mantle",
+    }
+    sets.Kiting = {
+      feet="Herald's Gaiters",
+    }
+    sets.Kiting.Adoulin = {
+      body="Councilor's Garb",
+    }
     sets.Obi = {waist="Hachirin-no-Obi"}
-    -- sets.CP = {back="Mecisto. Mantle"}
-
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -732,10 +730,20 @@ end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
 function job_precast(spell, action, spellMap, eventArgs)
-    if spell.english == "Paralyna" and buffactive.Paralyzed then
-        -- no gear swaps if we're paralyzed, to avoid blinking while trying to remove it.
-        eventArgs.handled = true
+  -- Don't gearswap if status forbids the action
+  local forbidden_statuses = action_type_blocks[spell.action_type]
+  for k,status in pairs(forbidden_statuses) do
+    if buffactive[status] then
+      add_to_chat(167, 'Stopped due to status.')
+      eventArgs.cancel = true -- Stops the rest of the pipeline from executing
+      return -- Ends execution of this function
     end
+  end
+
+  if spell.english == "Paralyna" and buffactive.Paralyzed then
+    -- no gear swaps if we're paralyzed, to avoid blinking while trying to remove it.
+    eventArgs.handled = true
+  end
 end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
@@ -789,25 +797,26 @@ function job_buff_change(buff,gain)
     end
 
     if buff == "doom" then
-        if gain then
-            equip(sets.buff.Doom)
-            --send_command('@input /p Doomed.')
-             disable('ring1','ring2','waist')
-        else
-            enable('ring1','ring2','waist')
-            handle_equipping_gear(player.status)
-        end
+      if gain then
+        send_command('@input /p Doomed.')
+      elseif player.hpp > 0 then
+        send_command('@input /p Doom Removed.')
+      end
     end
 
+  -- Update gear for these specific buffs
+  if buff == "doom" then
+    status_change(player.status)
+  end
 end
 
 -- Handle notifications of general user state change.
 function job_state_change(stateField, newValue, oldValue)
-    if state.WeaponLock.value == true then
-        disable('main','sub')
-    else
-        enable('main','sub')
-    end
+  if state.WeaponLock.value == true then
+    disable('main','sub')
+  else
+    enable('main','sub')
+  end
 end
 
 
@@ -818,15 +827,15 @@ end
 -- Called by the 'update' self-command, for common needs.
 -- Set eventArgs.handled to true if we don't want automatic equipping of gear.
 function job_handle_equipping_gear(playerStatus, eventArgs)
-    check_gear()
-    update_combat_form()
-    check_moving()
+  check_gear()
+  update_idle_groups()
+  update_combat_form()
 end
 
 function job_update(cmdParams, eventArgs)
-    handle_equipping_gear(player.status)
-    update_sublimation()
-    update_weaponskill_binds()
+  handle_equipping_gear(player.status)
+  update_sublimation()
+  update_weaponskill_binds()
 end
 
 function update_combat_form()
@@ -872,33 +881,58 @@ function job_get_spell_map(spell, default_spell_map)
     end
 end
 
--- Modify the default melee set after it was constructed.
-function customize_melee_set(meleeSet)
-    if buffactive['Aftermath: Lv.3'] and player.equipment.main == "Yagrush" then
-        meleeSet = set_combine(meleeSet, sets.engaged.Aftermath)
+function customize_idle_set(idleSet)
+  -- If not in DT mode put on move speed gear
+  if state.IdleMode.current == 'Normal' and state.DefenseMode.value == 'None' then
+    if classes.CustomIdleGroups:contains('Adoulin') then
+      idleSet = set_combine(idleSet, sets.Kiting.Adoulin)
+    else
+      idleSet = set_combine(idleSet, sets.Kiting)
     end
+  end
+  if state.Buff['Sublimation: Activated'] then
+      idleSet = set_combine(idleSet, sets.buff.Sublimation)
+  end
+  if player.mpp < 51 then
+      idleSet = set_combine(idleSet, sets.latent_refresh)
+  end
+  if state.CP.current == 'on' then
+    idleSet = set_combine(idleSet, sets.CP)
+  end
 
-    return meleeSet
+  if buffactive.Doom then
+    idleSet = set_combine(idleSet, sets.buff.Doom)
+  end
+
+  return idleSet
 end
 
-function customize_idle_set(idleSet)
-    if state.Buff['Sublimation: Activated'] then
-        idleSet = set_combine(idleSet, sets.buff.Sublimation)
-    end
-    if player.mpp < 51 then
-        idleSet = set_combine(idleSet, sets.latent_refresh)
-    end
-    -- if state.CP.current == 'on' then
-    --     equip(sets.CP)
-    --     disable('back')
-    -- else
-    --     enable('back')
-    -- end
-    if state.Auto_Kite.value == true then
-       idleSet = set_combine(idleSet, sets.Kiting)
-    end
+-- Modify the default melee set after it was constructed.
+function customize_melee_set(meleeSet)
+  if buffactive['Aftermath: Lv.3'] and player.equipment.main == "Yagrush" then
+      meleeSet = set_combine(meleeSet, sets.engaged.Aftermath)
+  end
+  if state.CP.current == 'on' then
+    meleeSet = set_combine(meleeSet, sets.CP)
+  end
 
-    return idleSet
+  if buffactive.Doom then
+    meleeSet = set_combine(meleeSet, sets.buff.Doom)
+  end
+
+  return meleeSet
+end
+
+function customize_defense_set(defenseSet)
+  if state.CP.current == 'on' then
+    defenseSet = set_combine(defenseSet, sets.CP)
+  end
+
+  if buffactive.Doom then
+    defenseSet = set_combine(defenseSet, sets.buff.Doom)
+  end
+
+  return defenseSet
 end
 
 -- Function to display the current relevant user state when doing an update.
@@ -933,8 +967,16 @@ end
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
 
+function update_idle_groups()
+  classes.CustomIdleGroups:clear()
+  if player.status == 'Idle' then
+    if world.zone == 'Eastern Adoulin' or world.zone == 'Western Adoulin' then
+      classes.CustomIdleGroups:append('Adoulin')
+    end
+  end
+end
+
 function job_self_command(cmdParams, eventArgs)
-    gearinfo(cmdParams, eventArgs)
     if cmdParams[1]:lower() == 'scholar' then
         handle_strategems(cmdParams)
         eventArgs.handled = true
@@ -947,6 +989,15 @@ function job_self_command(cmdParams, eventArgs)
         send_command('@input /ma '..state.BarStatus.value..' <me>')
     elseif cmdParams[1]:lower() == 'boostspell' then
         send_command('@input /ma '..state.BoostSpell.value..' <me>')
+    elseif cmdParams[1]:lower() == 'usekey' then
+      send_command('cancel Invisible; cancel Hide; cancel Gestation; cancel Camouflage')
+      if player.target.type ~= 'NONE' then
+        if player.target.name == 'Sturdy Pyxis' then
+          send_command('@input /item "Forbidden Key" <t>')
+        end
+      end
+    elseif cmdParams[1]:lower() == 'faceaway' then
+      windower.ffxi.turn(player.facing - math.pi);
     end
 
     gearinfo(cmdParams, eventArgs)
@@ -1059,41 +1110,42 @@ function gearinfo(cmdParams, eventArgs)
     end
 end
 
-function check_moving()
-    if state.DefenseMode.value == 'None'  and state.Kiting.value == false then
-        if state.Auto_Kite.value == false and moving then
-            state.Auto_Kite:set(true)
-        elseif state.Auto_Kite.value == true and moving == false then
-            state.Auto_Kite:set(false)
-        end
-    end
-end
-
 function check_gear()
-    if no_swap_gear:contains(player.equipment.left_ring) then
-        disable("ring1")
-    else
-        enable("ring1")
-    end
-    if no_swap_gear:contains(player.equipment.right_ring) then
-        disable("ring2")
-    else
-        enable("ring2")
-    end
+  if no_swap_rings:contains(player.equipment.ring1) then
+      disable("ring1")
+  else
+      enable("ring1")
+  end
+  if no_swap_rings:contains(player.equipment.ring2) then
+      disable("ring2")
+  else
+      enable("ring2")
+  end
 end
 
 windower.register_event('zone change',
-    function()
-        if no_swap_gear:contains(player.equipment.left_ring) then
-            enable("ring1")
-            equip(sets.idle)
-        end
-        if no_swap_gear:contains(player.equipment.right_ring) then
-            enable("ring2")
-            equip(sets.idle)
-        end
-    end
+  function()
+      if no_swap_rings:contains(player.equipment.ring1) then
+          enable("ring1")
+          equip(sets.idle)
+      end
+      if no_swap_rings:contains(player.equipment.ring2) then
+          enable("ring2")
+          equip(sets.idle)
+      end
+  end
 )
+
+windower.raw_register_event('outgoing chunk', function(id, data, modified, injected, blocked)
+if id == 0x053 then -- Send lockstyle command to server
+  local type = data:unpack("I",0x05)
+  if type == 0 then -- This is lockstyle 'disable' command
+    locked_style = false
+  else -- Various diff ways to set lockstyle
+    locked_style = true
+  end
+end
+end)
 
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
@@ -1102,5 +1154,17 @@ function select_default_macro_book()
 end
 
 function set_lockstyle()
-    send_command('wait 2; input /lockstyleset ' .. lockstyleset)
+  -- Set lockstyle 2 seconds after changing job, trying immediately will error
+  coroutine.schedule(function()
+    if locked_style == false then
+      send_command('input /lockstyleset '..lockstyleset)
+    end
+  end, 2)
+  -- In case lockstyle was on cooldown for first command, try again (lockstyle has 10s cd)
+  coroutine.schedule(function()
+    if locked_style == false then
+      send_command('input /lockstyleset '..lockstyleset)
+    end
+  end, 10)
 end
+

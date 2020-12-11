@@ -23,63 +23,97 @@
 
 -- Initialization function for this job file.
 function get_sets()
-	-- Load and initialize the include file.
-    mote_include_version = 2
-	include('Mote-Include.lua')
-	include('organizer-lib')
+  mote_include_version = 2
+
+  -- Load and initialize the include file.
+  include('Mote-Include.lua') -- Executes job_setup, user_setup, init_gear_sets
 end
 
-
--- Setup vars that are user-independent.
+-- Executes on first load and main job change
 function job_setup()
-    include('Mote-TreasureHunter')
-    state.TreasureMode:set('None')
-    get_combat_form()
-    --get_combat_weapon()
-    update_melee_groups()
+  include('Mote-TreasureHunter')
+  --get_combat_weapon()
+  update_melee_groups()
 
-    state.CapacityMode = M(false, 'Capacity Point Mantle')
+  state.CP = M(false, 'Capacity Points Mode')
+  state.YoichiAM = M(false, 'Cancel Yoichi AM Mode')
+  -- Options: Override default values
+  state.OffenseMode:options('Normal', 'Mid', 'Acc')
+  state.HybridMode:options('Normal', 'PDT')
+  state.WeaponskillMode:options('Normal', 'Mid', 'Acc')
+  state.IdleMode:options('Normal', 'Sphere')
+  state.RestingMode:options('Normal')
+  state.PhysicalDefenseMode:options('PDT', 'Reraise')
+  state.MagicalDefenseMode:options('MDT')
+  state.WeaponLock = M(false, 'Weapon Lock')
 
-    state.YoichiAM = M(false, 'Cancel Yoichi AM Mode')
-    -- list of weaponskills that make better use of otomi helm in low acc situations
-    wsList = S{'Tachi: Shoha'}
+  -- list of weaponskills that make better use of otomi helm in low acc situations
+  wsList = S{'Tachi: Shoha'}
+  gear.RAarrow = {name="Eminent Arrow"}
+  LugraWSList = S{'Tachi: Fudo', 'Tachi: Shoha', 'Namas Arrow', 'Impulse Drive', 'Stardiver'}
 
-    gear.RAarrow = {name="Eminent Arrow"}
-    LugraWSList = S{'Tachi: Fudo', 'Tachi: Shoha', 'Namas Arrow', 'Impulse Drive', 'Stardiver'}
+  state.Buff.Sekkanoki = buffactive.sekkanoki or false
+  state.Buff.Sengikori = buffactive.sengikori or false
+  state.Buff['Third Eye'] = buffactive['Third Eye'] or false
+  state.Buff['Meikyo Shisui'] = buffactive['Meikyo Shisui'] or false
 
-    state.Buff.Sekkanoki = buffactive.sekkanoki or false
-    state.Buff.Sengikori = buffactive.sengikori or false
-    state.Buff['Third Eye'] = buffactive['Third Eye'] or false
-    state.Buff['Meikyo Shisui'] = buffactive['Meikyo Shisui'] or false
+  send_command('bind !s gs c faceaway')
+  send_command('bind !d gs c usekey')
+  send_command('bind @w gs c toggle WeaponLock')
+
+  send_command('bind ^` gs c cycle treasuremode')
+  send_command('bind @c gs c toggle CP')
 end
-
 
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
-    -- Options: Override default values
-    state.OffenseMode:options('Normal', 'Mid', 'Acc')
-    state.HybridMode:options('Normal', 'PDT')
-    state.WeaponskillMode:options('Normal', 'Mid', 'Acc')
-    state.IdleMode:options('Normal', 'Sphere')
-    state.RestingMode:options('Normal')
-    state.PhysicalDefenseMode:options('PDT', 'Reraise')
-    state.MagicalDefenseMode:options('MDT')
+  locked_style = false -- Do not modify
+  include('Global-Binds.lua') -- Additional local binds
 
-    -- Additional local binds
-    send_command('bind ^= gs c cycle treasuremode')
-    send_command('bind ^[ input /lockstyle on')
-    send_command('bind ![ input /lockstyle off')
-    send_command('bind != gs c toggle CapacityMode')
-
-    select_default_macro_book()
+  select_default_macro_book()
+  set_lockstyle()
 end
 
-
 -- Called when this job file is unloaded (eg: job change)
-function file_unload()
-    send_command('unbind ^[')
-    send_command('unbind !=')
-    send_command('unbind ![')
+function job_file_unload()
+  send_command('unbind !s')
+  send_command('unbind !d')
+  send_command('unbind @w')
+
+  send_command('unbind ^`')
+  send_command('unbind @c')
+
+  send_command('unbind ^numlock')
+  send_command('unbind ^numpad/')
+  send_command('unbind ^numpad*')
+  send_command('unbind ^numpad-')
+  send_command('unbind ^numpad+')
+  send_command('unbind ^numpadenter')
+  send_command('unbind ^numpad9')
+  send_command('unbind ^numpad8')
+  send_command('unbind ^numpad7')
+  send_command('unbind ^numpad6')
+  send_command('unbind ^numpad5')
+  send_command('unbind ^numpad4')
+  send_command('unbind ^numpad3')
+  send_command('unbind ^numpad2')
+  send_command('unbind ^numpad1')
+  send_command('unbind ^numpad0')
+  send_command('unbind ^numpad.')
+  send_command('unbind numpad0')
+
+  send_command('unbind #`')
+  send_command('unbind #1')
+  send_command('unbind #2')
+  send_command('unbind #3')
+  send_command('unbind #4')
+  send_command('unbind #5')
+  send_command('unbind #6')
+  send_command('unbind #7')
+  send_command('unbind #8')
+  send_command('unbind #9')
+  send_command('unbind #0')
+
 end
 
 --[[
@@ -168,7 +202,6 @@ function init_gear_sets()
     -- Don't need any special gear for Healing Waltz.
     sets.precast.Waltz['Healing Waltz'] = {}
 
-    sets.CapacityMantle  = { back="Mecistopins Mantle" }
     --sets.Berserker       = { neck="Berserker's Torque" }
     sets.WSDayBonus      = { head="Gavialis Helm" }
     sets.LugraMoonshade  = { ear1="Lugra Earring +1", ear2="Moonshade Earring" }
@@ -337,6 +370,9 @@ function init_gear_sets()
         -- feet="Ejekamal Boots"
         waist="Sailfi Belt +1"
     }
+    -- Initializes trusts at iLvl 119
+    sets.midcast.Trust = sets.precast.FC
+
     -- Sets to return to when not performing an action.
 
     -- Resting sets
@@ -346,26 +382,7 @@ function init_gear_sets()
         ring2="Paguroidea Ring"
     }
 
-    sets.idle.Town = {
-        ammo="Ginsen",
-        head="Kendatsuba Jinpachi +1",
-        neck="Samurai's Nodowa +2",
-        ear1="Telos Earring",
-        ear2="Dedition Earring",
-   	    body="Kendatsuba Samue +1",
-        hands="Wakido Kote +3",
-        ring1="Niqmaddu Ring",
-        ring2="Regal Ring",
-        back=Smertrios.TP,
-        waist="Windbuffet Belt +1",
-        legs="Kendatsuba Hakama +1",
-        feet="Danzo Sune-ate"
-    }
-    -- sets.idle.Town.Adoulin = set_combine(sets.idle.Town, {
-    --     body="Councilor's Garb"
-    -- })
-
-    sets.idle.Field = set_combine(sets.idle.Town, {
+    sets.idle = set_combine({
         ammo="Staunch Tathlum",
         head="Valorous Mask",
         neck="Sanctity Necklace",
@@ -422,8 +439,6 @@ function init_gear_sets()
          neck="Twilight Torque",
     	back=Smertrios.TP,
     })
-
-    sets.Kiting = {feet="Danzo Sune-ate"}
 
     sets.Reraise = {head="Twilight Helm",body="Twilight Mail"}
 
@@ -521,6 +536,25 @@ function init_gear_sets()
     sets.MadrigalBonus = {
         hands="Composer's Mitts"
     }
+
+    sets.buff.Doom = {
+      -- neck="Nicander's Necklace", --20
+      -- ring2="Eshmun's Ring", --20
+      waist="Gishdubar Sash", --10
+    }
+
+    sets.Reive = {
+      neck="Ygnas's Resolve +1",
+    }
+    sets.CP = {
+      back="Aptitude Mantle",
+    }
+    sets.Kiting = {
+      feet="Danzo Sune-ate",
+    }
+    sets.Kiting.Adoulin = {
+      body="Councilor's Garb",
+    }
 end
 
 
@@ -530,21 +564,21 @@ end
 
 -- Set eventArgs.handled to true if we don't want any automatic target handling to be done.
 function job_pretarget(spell, action, spellMap, eventArgs)
-	if spell.type:lower() == 'weaponskill' then
-		-- Change any GK weaponskills to polearm weaponskill if we're using a polearm.
-		if player.equipment.main =='Nativus Halberd' or player.equipment.main =='Quint Spear' then
-			if spell.english:startswith("Tachi:") then
-				send_command('@input /ws "Stardiver" '..spell.target.raw)
-				eventArgs.cancel = true
-			end
-		end
-	end
     if state.Buff[spell.english] ~= nil then
         state.Buff[spell.english] = true
     end
 end
 
 function job_precast(spell, action, spellMap, eventArgs)
+  -- Don't gearswap if status forbids the action
+  local forbidden_statuses = action_type_blocks[spell.action_type]
+  for k,status in pairs(forbidden_statuses) do
+    if buffactive[status] then
+      add_to_chat(167, 'Stopped due to status.')
+      eventArgs.cancel = true -- Stops the rest of the pipeline from executing
+      return -- Ends execution of this function
+    end
+  end
     --if spell.english == 'Third Eye' and not buffactive.Seigan then
     --    cancel_spell()
     --    send_command('@wait 0.5;input /ja Seigan <me>')
@@ -558,8 +592,8 @@ function job_post_precast(spell, action, spellMap, eventArgs)
 		if state.Buff.Sekkanoki then
 			equip(sets.buff.Sekkanoki)
 		end
-        if state.CapacityMode.value then
-            equip(sets.CapacityMantle)
+        if state.CP.value then
+            equip(sets.CP)
         end
         if is_sc_element_today(spell) then
             if wsList:contains(spell.english) then
@@ -592,10 +626,6 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         else
             equip(sets.seigan)
         end
-    end
-    if spell.name == 'Spectral Jig' and buffactive.sneak then
-            -- If sneak is active when using, cancel before completion
-            send_command('cancel 71')
     end
     update_am_type(spell)
 end
@@ -634,31 +664,48 @@ end
 
 -- Modify the default idle set after it was constructed.
 function customize_idle_set(idleSet)
-    if player.hpp < 90 then
-        idleSet = set_combine(idleSet, sets.idle.Regen)
+  -- If not in DT mode put on move speed gear
+  if state.IdleMode.current == 'Normal' and state.DefenseMode.value == 'None' then
+    if classes.CustomIdleGroups:contains('Adoulin') then
+      idleSet = set_combine(idleSet, sets.Kiting.Adoulin)
+    else
+      idleSet = set_combine(idleSet, sets.Kiting)
     end
-	return idleSet
+  end
+  if player.hpp < 90 then
+      idleSet = set_combine(idleSet, sets.idle.Regen)
+  end
+  if state.CP.current == 'on' then
+    idleSet = set_combine(idleSet, sets.CP)
+  end
+  if buffactive.Doom then
+    idleSet = set_combine(idleSet, sets.buff.Doom)
+  end
+
+  return idleSet
 end
 
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
-    if state.TreasureMode.value == 'Fulltime' then
-        meleeSet = set_combine(meleeSet, sets.TreasureHunter)
-    end
-    if state.Buff['Seigan'] then
-        if state.DefenseMode.value == 'PDT' then
-    	    meleeSet = set_combine(meleeSet, sets.thirdeye)
-        else
-            meleeSet = set_combine(meleeSet, sets.seigan)
-        end
-    end
-    if state.CapacityMode.value then
-        meleeSet = set_combine(meleeSet, sets.CapacityMantle)
-    end
-    if player.equipment.range == 'Yoichinoyumi' then
-        meleeSet = set_combine(meleeSet, sets.bow)
-    end
-    return meleeSet
+  if state.Buff['Seigan'] then
+      if state.DefenseMode.value == 'PDT' then
+        meleeSet = set_combine(meleeSet, sets.thirdeye)
+      else
+          meleeSet = set_combine(meleeSet, sets.seigan)
+      end
+  end
+  if state.CP.value then
+      meleeSet = set_combine(meleeSet, sets.CP)
+  end
+  if player.equipment.range == 'Yoichinoyumi' then
+      meleeSet = set_combine(meleeSet, sets.bow)
+  end
+
+  if buffactive.Doom then
+    meleeSet = set_combine(meleeSet, sets.buff.Doom)
+  end
+
+  return meleeSet
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -678,41 +725,60 @@ function job_status_change(newStatus, oldStatus, eventArgs)
             add_to_chat(122, 'No more Arrows!')
         end
     elseif newStatus == 'Idle' then
-        determine_idle_group()
+        update_idle_groups()
     end
 end
+
 -- Called when a player gains or loses a buff.
 -- buff == buff gained or lost
 -- gain == true if the buff was gained, false if it was lost.
-function job_buff_change(buff, gain)
-    if state.Buff[buff] ~= nil then
-    	state.Buff[buff] = gain
-        handle_equipping_gear(player.status)
-    end
+function job_buff_change(buff,gain)
 
-    if S{'madrigal'}:contains(buff:lower()) then
-        if buffactive.madrigal and state.OffenseMode.value == 'Acc' then
-            equip(sets.MadrigalBonus)
-        end
+  if buff == "doom" then
+    if gain then
+      send_command('@input /p Doomed.')
+    elseif player.hpp > 0 then
+      send_command('@input /p Doom Removed.')
     end
-    if S{'aftermath'}:contains(buff:lower()) then
-        classes.CustomMeleeGroups:clear()
+  end
 
-        if player.equipment.main == 'Amanomurakumo' and state.YoichiAM.value then
-            classes.CustomMeleeGroups:clear()
-        elseif player.equipment.main == 'Kogarasumaru'  then
-            if buff == "Aftermath: Lv.3" and gain or buffactive['Aftermath: Lv.3'] then
-                classes.CustomMeleeGroups:append('AM3')
-            end
-        elseif buff == "Aftermath" and gain or buffactive.Aftermath then
-            classes.CustomMeleeGroups:append('AM')
-        end
-    end
+  if state.Buff[buff] ~= nil then
+    state.Buff[buff] = gain
+      handle_equipping_gear(player.status)
+  end
 
-    if not midaction() then
-        handle_equipping_gear(player.status)
-    end
+  if S{'madrigal'}:contains(buff:lower()) then
+      if buffactive.madrigal and state.OffenseMode.value == 'Acc' then
+          equip(sets.MadrigalBonus)
+      end
+  end
+  if S{'aftermath'}:contains(buff:lower()) then
+      classes.CustomMeleeGroups:clear()
 
+      if player.equipment.main == 'Amanomurakumo' and state.YoichiAM.value then
+          classes.CustomMeleeGroups:clear()
+      elseif player.equipment.main == 'Kogarasumaru'  then
+          if buff == "Aftermath: Lv.3" and gain or buffactive['Aftermath: Lv.3'] then
+              classes.CustomMeleeGroups:append('AM3')
+          end
+      elseif buff == "Aftermath" and gain or buffactive.Aftermath then
+          classes.CustomMeleeGroups:append('AM')
+      end
+  end
+
+  if not midaction() then
+    handle_equipping_gear(player.status)
+  end
+
+end
+
+-- Handle notifications of general user state change.
+function job_state_change(stateField, newValue, oldValue)
+  if state.WeaponLock.value == true then
+    disable('main','sub')
+  else
+    enable('main','sub')
+  end
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -721,8 +787,14 @@ end
 
 -- Called by the 'update' self-command, for common needs.
 -- Set eventArgs.handled to true if we don't want automatic equipping of gear.
+function job_handle_equipping_gear(playerStatus, eventArgs)
+  check_gear()
+  update_idle_groups()
+end
+
+-- Called by the 'update' self-command, for common needs.
+-- Set eventArgs.handled to true if we don't want automatic equipping of gear.
 function job_update(cmdParams, eventArgs)
-	get_combat_form()
   update_melee_groups()
     --get_combat_weapon()
   update_weaponskill_binds()
@@ -733,81 +805,135 @@ function display_current_job_state(eventArgs)
 
 end
 
--- State buff checks that will equip buff gear and mark the event as handled.
-function check_buff(buff_name, eventArgs)
-    if state.Buff[buff_name] then
-        equip(sets.buff[buff_name] or {})
-        if state.TreasureMode.value == 'SATA' or state.TreasureMode.value == 'Fulltime' then
-            equip(sets.TreasureHunter)
-        end
-        eventArgs.handled = true
-    end
-end
 -------------------------------------------------------------------------------------------------------------------
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
---function get_combat_weapon()
---    if player.equipment.range == 'Yoichinoyumi' then
---        if player.equipment.main == 'Amanomurakumo' then
---            state.CombatWeapon:set('AmanoYoichi')
---        else
---            state.CombatWeapon:set('Yoichi')
---        end
---    else
---        state.CombatWeapon:set(player.equipment.main)
---    end
---end
--- Handle zone specific rules
--- windower.register_event('Zone change', function(new,old)
---     determine_idle_group()
--- end)
 
-function determine_idle_group()
-    classes.CustomIdleGroups:clear()
-    -- if areas.Adoulin:contains(world.area) then
-    -- 	classes.CustomIdleGroups:append('Adoulin')
-    -- end
-end
-
-function get_combat_form()
-    -- if areas.Adoulin:contains(world.area) and buffactive.ionis then
-    -- 	state.CombatForm:set('Adoulin')
-    -- else
-    --     state.CombatForm:reset()
-    -- end
+function update_idle_groups()
+  classes.CustomIdleGroups:clear()
+  if player.status == 'Idle' then
+    if world.zone == 'Eastern Adoulin' or world.zone == 'Western Adoulin' then
+      classes.CustomIdleGroups:append('Adoulin')
+    end
+  end
 end
 
 function seigan_thirdeye_active()
-    return state.Buff['Seigan'] or state.Buff['Third Eye']
+  return state.Buff['Seigan'] or state.Buff['Third Eye']
 end
 
 function update_melee_groups()
-    classes.CustomMeleeGroups:clear()
+  classes.CustomMeleeGroups:clear()
 
-    if player.equipment.main == 'Amanomurakumo' and state.YoichiAM.value then
-        -- prevents using Amano AM while overriding it with Yoichi AM
-        classes.CustomMeleeGroups:clear()
-    elseif player.equipment.main == 'Kogarasumaru' then
-        if buffactive['Aftermath: Lv.3'] then
-            classes.CustomMeleeGroups:append('AM3')
-        end
-    else
-        if buffactive['Aftermath'] then
-            classes.CustomMeleeGroups:append('AM')
-        end
-    end
+  if player.equipment.main == 'Amanomurakumo' and state.YoichiAM.value then
+      -- prevents using Amano AM while overriding it with Yoichi AM
+      classes.CustomMeleeGroups:clear()
+  elseif player.equipment.main == 'Kogarasumaru' then
+      if buffactive['Aftermath: Lv.3'] then
+          classes.CustomMeleeGroups:append('AM3')
+      end
+  else
+      if buffactive['Aftermath'] then
+          classes.CustomMeleeGroups:append('AM')
+      end
+  end
 end
+
 -- call this in job_post_precast()
 function update_am_type(spell)
-    if spell.type == 'WeaponSkill' and spell.skill == 'Archery' and spell.english == 'Namas Arrow' then
-        if player.equipment.main == 'Amanomurakumo' then
-            -- Yoichi AM overwrites Amano AM
-            state.YoichiAM:set(true)
-        end
-    else
-        state.YoichiAM:set(false)
-    end
+  if spell.type == 'WeaponSkill' and spell.skill == 'Archery' and spell.english == 'Namas Arrow' then
+      if player.equipment.main == 'Amanomurakumo' then
+          -- Yoichi AM overwrites Amano AM
+          state.YoichiAM:set(true)
+      end
+  else
+      state.YoichiAM:set(false)
+  end
 end
+
+function job_self_command(cmdParams, eventArgs)
+  if cmdParams[1]:lower() == 'usekey' then
+    send_command('cancel Invisible; cancel Hide; cancel Gestation; cancel Camouflage')
+    if player.target.type ~= 'NONE' then
+      if player.target.name == 'Sturdy Pyxis' then
+        send_command('@input /item "Forbidden Key" <t>')
+      end
+    end
+  elseif cmdParams[1]:lower() == 'faceaway' then
+    windower.ffxi.turn(player.facing - math.pi);
+  end
+
+  gearinfo(cmdParams, eventArgs)
+end
+
+function gearinfo(cmdParams, eventArgs)
+  if cmdParams[1] == 'gearinfo' then
+      if type(tonumber(cmdParams[2])) == 'number' then
+          if tonumber(cmdParams[2]) ~= DW_needed then
+          DW_needed = tonumber(cmdParams[2])
+          DW = true
+          end
+      elseif type(cmdParams[2]) == 'string' then
+          if cmdParams[2] == 'false' then
+              DW_needed = 0
+              DW = false
+          end
+      end
+      if type(tonumber(cmdParams[3])) == 'number' then
+          if tonumber(cmdParams[3]) ~= Haste then
+              Haste = tonumber(cmdParams[3])
+          end
+      end
+      if type(cmdParams[4]) == 'string' then
+          if cmdParams[4] == 'true' then
+              moving = true
+          elseif cmdParams[4] == 'false' then
+              moving = false
+          end
+      end
+      if not midaction() then
+          job_update()
+      end
+  end
+end
+
+function check_gear()
+  if no_swap_rings:contains(player.equipment.ring1) then
+      disable("ring1")
+  else
+      enable("ring1")
+  end
+  if no_swap_rings:contains(player.equipment.ring2) then
+      disable("ring2")
+  else
+      enable("ring2")
+  end
+end
+
+windower.register_event('zone change',
+    function()
+        if no_swap_rings:contains(player.equipment.ring1) then
+            enable("ring1")
+            equip(sets.idle)
+        end
+        if no_swap_rings:contains(player.equipment.ring2) then
+            enable("ring2")
+            equip(sets.idle)
+        end
+    end
+)
+
+windower.raw_register_event('outgoing chunk', function(id, data, modified, injected, blocked)
+  if id == 0x053 then -- Send lockstyle command to server
+    local type = data:unpack("I",0x05)
+    if type == 0 then -- This is lockstyle 'disable' command
+      locked_style = false
+    else -- Various diff ways to set lockstyle
+      locked_style = true
+    end
+  end
+end)
+
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
     -- Default macro set/book
@@ -818,4 +944,19 @@ function select_default_macro_book()
     else
     	set_macro_page(1, 1)
     end
+end
+
+function set_lockstyle()
+  -- Set lockstyle 2 seconds after changing job, trying immediately will error
+  coroutine.schedule(function()
+    if locked_style == false then
+      send_command('input /lockstyleset '..lockstyleset)
+    end
+  end, 2)
+  -- In case lockstyle was on cooldown for first command, try again (lockstyle has 10s cd)
+  coroutine.schedule(function()
+    if locked_style == false then
+      send_command('input /lockstyleset '..lockstyleset)
+    end
+  end, 10)
 end

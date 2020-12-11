@@ -33,27 +33,39 @@
 
 -- Initialization function for this job file.
 function get_sets()
-    mote_include_version = 2
+  mote_include_version = 2
 
-    -- Load and initialize the include file.
-    include('Mote-Include.lua')
+  -- Load and initialize the include file.
+  include('Mote-Include.lua') -- Executes job_setup, user_setup, init_gear_sets
 end
 
-
--- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
+-- Executes on first load and main job change
 function job_setup()
+  lockstyleset = 5
 
-    state.CP = M(false, "Capacity Points Mode")
+  state.CastingMode:options('Normal', 'Resistant', 'Spaekona')
+  state.IdleMode:options('Normal', 'DT')
 
-    no_swap_gear = S{"Warp Ring", "Dim. Ring (Dem)", "Dim. Ring (Holla)", "Dim. Ring (Mea)",
-              "Trizek Ring", "Echad Ring", "Facility Ring", "Capacity Ring"}
+  state.WeaponLock = M(false, 'Weapon Lock')
+  state.MagicBurst = M(false, 'Magic Burst')
+  state.DeathMode = M(false, 'Death Mode')
+  state.CP = M(false, "Capacity Points Mode")
 
-    degrade_array = {
-        ['Aspirs'] = {'Aspir','Aspir II','Aspir III'}
-        }
+  degrade_array = {
+    ['Aspirs'] = {'Aspir','Aspir II','Aspir III'}
+  }
+  lowTierNukes = S{'Stone', 'Water', 'Aero', 'Fire', 'Blizzard', 'Thunder'}
 
-    lockstyleset = 5
-
+  send_command('bind !s gs c faceaway')
+  send_command('bind !d gs c usekey')
+  send_command('bind ^` input /ma Stun <t>')
+  send_command('bind !` gs c toggle MagicBurst')
+  send_command('bind !w input /ma "Aspir III" <t>')
+  send_command('bind !p input /ma "Shock Spikes" <me>')
+  send_command('bind @d gs c toggle DeathMode')
+  send_command('bind @c gs c toggle CP')
+  send_command('bind @w gs c toggle WeaponLock')
+  send_command('bind ^numpad0 input /Myrkr')
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -62,66 +74,63 @@ end
 
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
-    state.CastingMode:options('Normal', 'Resistant', 'Spaekona')
-    state.IdleMode:options('Normal', 'DT')
+  locked_style = false -- Do not modify
+  include('Global-Binds.lua') -- Additional local binds
 
-    state.WeaponLock = M(false, 'Weapon Lock')
-    state.MagicBurst = M(false, 'Magic Burst')
-    state.DeathMode = M(false, 'Death Mode')
-    state.CP = M(false, "Capacity Points Mode")
-
-    lowTierNukes = S{'Stone', 'Water', 'Aero', 'Fire', 'Blizzard', 'Thunder'}
-
-    -- Additional local binds
-
-	include('Global-Binds.lua') -- OK to remove this line
-
-    send_command('lua l gearinfo')
-
-    send_command('bind ^` input /ma Stun <t>')
-    send_command('bind !` gs c toggle MagicBurst')
-    send_command('bind !w input /ma "Aspir III" <t>')
-    send_command('bind !p input /ma "Shock Spikes" <me>')
-    send_command('bind @d gs c toggle DeathMode')
-    send_command('bind @c gs c toggle CP')
-    send_command('bind @w gs c toggle WeaponLock')
-    send_command('bind ^numpad0 input /Myrkr')
-
-    select_default_macro_book()
-    set_lockstyle()
-
-    state.Auto_Kite = M(false, 'Auto_Kite')
-    moving = false
+  select_default_macro_book()
+  set_lockstyle()
 end
 
 -- Called when this job file is unloaded (eg: job change)
-function user_unload()
-    send_command('unbind ^`')
-    send_command('unbind !`')
-    send_command('unbind !w')
-    send_command('unbind !p')
-    send_command('unbind ^,')
-    send_command('unbind !.')
-    send_command('unbind @d')
-    send_command('unbind @c')
-    send_command('unbind @w')
-    send_command('unbind ^numpad0')
+function job_file_unload()
+  send_command('unbind !s')
+  send_command('unbind !d')
+  send_command('unbind ^`')
+  send_command('unbind !`')
+  send_command('unbind !w')
+  send_command('unbind !p')
+  send_command('unbind @d')
+  send_command('unbind @c')
+  send_command('unbind @w')
+  send_command('unbind ^numpad0')
 
-    send_command('unbind #`')
-    send_command('unbind #1')
-    send_command('unbind #2')
-    send_command('unbind #3')
-    send_command('unbind #4')
-    send_command('unbind #5')
-    send_command('unbind #6')
-    send_command('unbind #7')
-    send_command('unbind #8')
-    send_command('unbind #9')
-    send_command('unbind #0')
+  send_command('unbind ^numlock')
+  send_command('unbind ^numpad/')
+  send_command('unbind ^numpad*')
+  send_command('unbind ^numpad-')
+  send_command('unbind ^numpad+')
+  send_command('unbind ^numpadenter')
+  send_command('unbind ^numpad9')
+  send_command('unbind ^numpad8')
+  send_command('unbind ^numpad7')
+  send_command('unbind ^numpad6')
+  send_command('unbind ^numpad5')
+  send_command('unbind ^numpad4')
+  send_command('unbind ^numpad3')
+  send_command('unbind ^numpad2')
+  send_command('unbind ^numpad1')
+  send_command('unbind ^numpad0')
+  send_command('unbind ^numpad.')
+  send_command('unbind numpad0')
 
-    send_command('lua u gearinfo')
+  send_command('unbind ^-')
+  send_command('unbind ^=')
+  send_command('unbind !,')
+  send_command('unbind !.')
+
+  send_command('unbind #`')
+  send_command('unbind #1')
+  send_command('unbind #2')
+  send_command('unbind #3')
+  send_command('unbind #4')
+  send_command('unbind #5')
+  send_command('unbind #6')
+  send_command('unbind #7')
+  send_command('unbind #8')
+  send_command('unbind #9')
+  send_command('unbind #0')
+
 end
-
 
 -- Define sets and vars used by this job file.
 function init_gear_sets()
@@ -595,28 +604,11 @@ function init_gear_sets()
         waist="Shinjutsu-no-Obi +1",
         }
 
-    sets.idle.Town = set_combine(sets.idle, {
-        main=gear.Grioavolr_MB,
-        sub="Kaja Grip",
-        head="Ea Hat +1",
-        body="Ea Houppelande",
-        legs="Ea Slops",
-        feet="Volte Gaiters",
-        neck="Incanter's Torque",
-        ear1="Malignance Earring",
-        ear2="Regal Earring",
-        ring1="Freke Ring",
-        ring2="Metamor. Ring +1",
-        back=gear.BLM_MAB_Cape,
-        waist="Acuity Belt +1",
-        })
-
     -- Defense sets
 
     sets.defense.PDT = sets.idle.DT
     sets.defense.MDT = sets.idle.DT
 
-    sets.Kiting = {feet="Herald's Gaiters"}
     sets.latent_refresh = {waist="Fucho-no-obi"}
     sets.latent_dt = {ear2="Sorcerer's Earring"}
 
@@ -674,6 +666,11 @@ function init_gear_sets()
     sets.Obi = {waist="Hachirin-no-Obi"}
     sets.CP = {back="Aptitude Mantle"}
 
+    sets.Kiting = {feet="Herald's Gaiters"}
+    sets.Kiting.Adoulin = {
+      body="Councilor's Garb",
+    }
+
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -682,19 +679,29 @@ end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
 function job_precast(spell, action, spellMap, eventArgs)
-    if spell.action_type == 'Magic' and state.DeathMode.value then
-        eventArgs.handled = true
-        equip(sets.precast.FC.DeathMode)
-        if spell.english == "Impact" then
-            equip(sets.precast.FC.Impact.DeathMode)
-        end
+  -- Don't gearswap if status forbids the action
+  local forbidden_statuses = action_type_blocks[spell.action_type]
+  for k,status in pairs(forbidden_statuses) do
+    if buffactive[status] then
+      add_to_chat(167, 'Stopped due to status.')
+      eventArgs.cancel = true -- Stops the rest of the pipeline from executing
+      return -- Ends execution of this function
     end
-    if spell.name:startswith('Aspir') then
-        refine_various_spells(spell, action, spellMap, eventArgs)
-    end
-    if buffactive['Mana Wall'] then
-        equip(sets.precast.JA['Mana Wall'])
-    end
+  end
+
+  if spell.action_type == 'Magic' and state.DeathMode.value then
+      eventArgs.handled = true
+      equip(sets.precast.FC.DeathMode)
+      if spell.english == "Impact" then
+          equip(sets.precast.FC.Impact.DeathMode)
+      end
+  end
+  if spell.name:startswith('Aspir') then
+      refine_various_spells(spell, action, spellMap, eventArgs)
+  end
+  if buffactive['Mana Wall'] then
+      equip(sets.precast.JA['Mana Wall'])
+  end
 end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
@@ -786,33 +793,30 @@ function job_buff_change(buff, gain)
     end
 
     if buff == "doom" then
-        if gain then
-            equip(sets.buff.Doom)
-            send_command('@input /p Doomed.')
-            disable('ring1','ring2','waist')
-        else
-            enable('ring1','ring2','waist')
-            handle_equipping_gear(player.status)
-        end
+      if gain then
+        send_command('@input /p Doomed.')
+      elseif player.hpp > 0 then
+        send_command('@input /p Doom Removed.')
+      end
     end
 
 end
 
 -- Handle notifications of general user state change.
 function job_state_change(stateField, newValue, oldValue)
-    if state.WeaponLock.value == true then
-        disable('main','sub')
-    else
-        enable('main','sub')
-    end
+  if state.WeaponLock.value == true then
+    disable('main','sub')
+  else
+    enable('main','sub')
+  end
 end
 
 -- latent DT set auto equip on HP% change
-    windower.register_event('hpp change', function(new, old)
-        if new<=25 then
-            equip(sets.latent_dt)
-        end
-    end)
+windower.register_event('hpp change', function(new, old)
+    if new<=25 then
+        equip(sets.latent_dt)
+    end
+end)
 
 
 -------------------------------------------------------------------------------------------------------------------
@@ -820,8 +824,8 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 function job_handle_equipping_gear(playerStatus, eventArgs)
-    check_gear()
-    check_moving()
+  check_gear()
+  update_idle_groups()
 end
 
 function job_update(cmdParams, eventArgs)
@@ -844,43 +848,64 @@ end
 
 -- Modify the default idle set after it was constructed.
 function customize_idle_set(idleSet)
-    if state.DeathMode.value then
-        idleSet = sets.idle.DeathMode
-    end
-    if player.mpp < 51 then
-        idleSet = set_combine(idleSet, sets.latent_refresh)
-    end
-    if player.hpp <= 25 then
-        idleSet = set_combine(idleSet, sets.latent_dt)
-    end
-    if state.CP.current == 'on' then
-        equip(sets.CP)
-        disable('back')
-    else
-        enable('back')
-    end
-    if buffactive['Mana Wall'] then
-        idleSet = set_combine(idleSet, sets.precast.JA['Mana Wall'])
-    end
-    if state.Auto_Kite.value == true then
-       idleSet = set_combine(idleSet, sets.Kiting)
-    end
 
-    return idleSet
+  -- If not in DT mode put on move speed gear
+  if state.IdleMode.current == 'Normal' and state.DefenseMode.value == 'None' then
+    if classes.CustomIdleGroups:contains('Adoulin') then
+      idleSet = set_combine(idleSet, sets.Kiting.Adoulin)
+    else
+      idleSet = set_combine(idleSet, sets.Kiting)
+    end
+  end
+  if state.DeathMode.value then
+      idleSet = sets.idle.DeathMode
+  end
+  if player.mpp < 51 then
+      idleSet = set_combine(idleSet, sets.latent_refresh)
+  end
+  if player.hpp <= 25 then
+      idleSet = set_combine(idleSet, sets.latent_dt)
+  end
+  if state.CP.current == 'on' then
+    idleSet = set_combine(idleSet, sets.CP)
+  end
+  if buffactive['Mana Wall'] then
+      idleSet = set_combine(idleSet, sets.precast.JA['Mana Wall'])
+  end
+
+  if buffactive.Doom then
+    idleSet = set_combine(idleSet, sets.buff.Doom)
+  end
+
+  return idleSet
 end
 
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
+    if state.CP.current == 'on' then
+      meleeSet = set_combine(meleeSet, sets.CP)
+    end
     if buffactive['Mana Wall'] then
-        meleeSet = set_combine(meleeSet, sets.precast.JA['Mana Wall'])
+      meleeSet = set_combine(meleeSet, sets.precast.JA['Mana Wall'])
+    end
+
+    if buffactive.Doom then
+      meleeSet = set_combine(meleeSet, sets.buff.Doom)
     end
 
     return meleeSet
 end
 
 function customize_defense_set(defenseSet)
+    if state.CP.current == 'on' then
+      defenseSet = set_combine(defenseSet, sets.CP)
+    end
+
     if buffactive['Mana Wall'] then
-        defenseSet = set_combine(defenseSet, sets.precast.JA['Mana Wall'])
+      defenseSet = set_combine(defenseSet, sets.precast.JA['Mana Wall'])
+    end
+    if buffactive.Doom then
+      defenseSet = set_combine(defenseSet, sets.buff.Doom)
     end
 
     return defenseSet
@@ -945,8 +970,28 @@ end
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
 
+function update_idle_groups()
+  classes.CustomIdleGroups:clear()
+  if player.status == 'Idle' then
+    if world.zone == 'Eastern Adoulin' or world.zone == 'Western Adoulin' then
+      classes.CustomIdleGroups:append('Adoulin')
+    end
+  end
+end
+
 function job_self_command(cmdParams, eventArgs)
-    gearinfo(cmdParams, eventArgs)
+  if cmdParams[1]:lower() == 'usekey' then
+    send_command('cancel Invisible; cancel Hide; cancel Gestation; cancel Camouflage')
+    if player.target.type ~= 'NONE' then
+      if player.target.name == 'Sturdy Pyxis' then
+        send_command('@input /item "Forbidden Key" <t>')
+      end
+    end
+  elseif cmdParams[1]:lower() == 'faceaway' then
+    windower.ffxi.turn(player.facing - math.pi);
+  end
+
+  gearinfo(cmdParams, eventArgs)
 end
 
 function gearinfo(cmdParams, eventArgs)
@@ -964,41 +1009,42 @@ function gearinfo(cmdParams, eventArgs)
     end
 end
 
-function check_moving()
-    if state.DefenseMode.value == 'None'  and state.Kiting.value == false then
-        if state.Auto_Kite.value == false and moving then
-            state.Auto_Kite:set(true)
-        elseif state.Auto_Kite.value == true and moving == false then
-            state.Auto_Kite:set(false)
-        end
-    end
-end
-
 function check_gear()
-    if no_swap_gear:contains(player.equipment.left_ring) then
-        disable("ring1")
-    else
-        enable("ring1")
-    end
-    if no_swap_gear:contains(player.equipment.right_ring) then
-        disable("ring2")
-    else
-        enable("ring2")
-    end
+  if no_swap_rings:contains(player.equipment.ring1) then
+      disable("ring1")
+  else
+      enable("ring1")
+  end
+  if no_swap_rings:contains(player.equipment.ring2) then
+      disable("ring2")
+  else
+      enable("ring2")
+  end
 end
 
 windower.register_event('zone change',
-    function()
-        if no_swap_gear:contains(player.equipment.left_ring) then
-            enable("ring1")
-            equip(sets.idle)
-        end
-        if no_swap_gear:contains(player.equipment.right_ring) then
-            enable("ring2")
-            equip(sets.idle)
-        end
-    end
+  function()
+      if no_swap_rings:contains(player.equipment.ring1) then
+          enable("ring1")
+          equip(sets.idle)
+      end
+      if no_swap_rings:contains(player.equipment.ring2) then
+          enable("ring2")
+          equip(sets.idle)
+      end
+  end
 )
+
+windower.raw_register_event('outgoing chunk', function(id, data, modified, injected, blocked)
+  if id == 0x053 then -- Send lockstyle command to server
+    local type = data:unpack("I",0x05)
+    if type == 0 then -- This is lockstyle 'disable' command
+      locked_style = false
+    else -- Various diff ways to set lockstyle
+      locked_style = true
+    end
+  end
+end)
 
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
@@ -1006,5 +1052,16 @@ function select_default_macro_book()
 end
 
 function set_lockstyle()
-    send_command('wait 2; input /lockstyleset ' .. lockstyleset)
+  -- Set lockstyle 2 seconds after changing job, trying immediately will error
+  coroutine.schedule(function()
+    if locked_style == false then
+      send_command('input /lockstyleset '..lockstyleset)
+    end
+  end, 2)
+  -- In case lockstyle was on cooldown for first command, try again (lockstyle has 10s cd)
+  coroutine.schedule(function()
+    if locked_style == false then
+      send_command('input /lockstyleset '..lockstyleset)
+    end
+  end, 10)
 end
