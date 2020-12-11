@@ -306,7 +306,7 @@ function init_gear_sets()
     body=gear.Samnuha_body, --25 [63]
     hands=gear.Carmine_D_hands, --42 [27]
     legs=gear.Herc_MAB_legs, --33 [38]
-    feet=gear.Herc_MAB_feet, --41 [9]
+    feet=gear.Herc_MAB_feet, --50 [9]
     neck="Baetyl Pendant", --13 [0]
     ear1="Friomisi Earring", --10 [0]
     ear2="Novio Earring", --7 [0]
@@ -315,7 +315,6 @@ function init_gear_sets()
     back="Argochampsa Mantle", --12 [0]
     -- head=gear.Herc_MAB_head, --45 [38]
     -- body="Carm. Sc. Mail +1", --42 [96]
-    -- feet=gear.Herc_MAB_feet, --45 [9]
   } -- 188 MAB [195 HP, 245 w/ Enmity]
 
   sets.precast.JA['Lunge'] = set_combine(sets.Enmity, sets.MAB)

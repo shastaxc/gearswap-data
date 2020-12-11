@@ -573,14 +573,13 @@ function init_gear_sets()
     body=gear.Samnuha_body, --25
     hands=gear.Leyline_Gloves, --30
     legs=gear.Herc_MAB_legs, --33
-    feet=gear.Herc_MAB_feet, --41
+    feet=gear.Herc_MAB_feet, --50
     neck="Baetyl Pendant", --13
     ear1="Friomisi Earring", --10
     ear2="Novio Earring", --7
     ring1="Shiva Ring +1", --3
     back="Argochampsa Mantle", --12
     waist="Eschan Stone", --7
-    -- feet=gear.Herc_MAB_feet,
   }
 
   sets.precast.WS['Cataclysm'] = set_combine(sets.precast.WS, sets.MAB, {

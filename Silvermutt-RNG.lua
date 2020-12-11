@@ -410,7 +410,6 @@ function init_gear_sets()
   })
   sets.precast.WS.MidAcc = set_combine(sets.precast.WS.LowAcc, {
     -- feet="Arcadian Socks +3",
-    -- neck="Combatant's Torque",
   })
   sets.precast.WS.MidAccMaxTP = set_combine(sets.precast.WS.MidAcc, {
     ear2="Telos Earring",
@@ -543,7 +542,7 @@ function init_gear_sets()
     body="Cohort Cloak +1",
     hands=gear.Carmine_D_hands,
     legs="Arcadian Braccae +3",
-    feet=gear.Herc_MAB_feet, --41
+    feet=gear.Herc_MAB_feet, --50
     ear1="Friomisi Earring",
     ear2="Moonshade Earring",
     ring1="Weatherspoon Ring",
