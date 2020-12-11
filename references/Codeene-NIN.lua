@@ -74,7 +74,7 @@ function job_setup()
 
   lugra_ws = S{'Blade: Kamu', 'Blade: Shun', 'Blade: Ten'}
 
-  lockstyleset = 20
+  lockstyleset = 19
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -84,7 +84,7 @@ end
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
-  state.HybridMode:options('Normal', 'DT')
+  state.HybridMode:options('Normal', 'CritRate', 'DT', 'Evasion')
   state.WeaponskillMode:options('Normal', 'MaxTp', 'LowAcc', 'LowAccMaxTp', 'MidAcc', 'MidAccMaxTp', 'HighAcc', 'HighAccMaxTp')
   state.CastingMode:options('Normal', 'Resistant')
   state.IdleMode:options('Normal', 'DT')
@@ -105,8 +105,6 @@ function user_setup()
 
   send_command('lua l gearinfo')
 
-  send_command('bind !d gs c usekey')
-  send_command('bind !s gs c faceaway')
   send_command('bind @w gs c toggle WeaponLock')
   
   send_command('bind !f gs c toyweapon cycle')
@@ -115,8 +113,50 @@ function user_setup()
 
   send_command('bind ^` gs c cycle treasuremode')
   send_command('bind !` gs c toggle MagicBurst')
-  send_command('bind ^- input /ja "Mijin Gakure" <t>')
-  send_command('bind ^= input /ja "Mikage" <me>')
+  
+  --JA Keybinds
+  send_command('bind @2 input /ja "Futae" <me>')
+  send_command('bind !\' input /ja "Yonin" <me>; wait 1; input /ma "Gekka: Ichi" <me>')
+  send_command('bind !; input /ja "Innin" <me>; wait 1; input /ma "Yain: Ichi" <me>')
+  send_command('bind ^0 input /ja "Issekigan" <me>')
+  
+  --2hr JAs
+  send_command('bind ![ input /ja "Mijin Gakure" <t>')
+  send_command('bind !] input /ja "Mikage" <me>')
+  
+  --Magic Keybinds
+  send_command('bind ^e input /ma "Migawari: Ichi" <me>')
+  send_command('bind !e input /ma "Utsusemi: San" <me>')
+  send_command('bind ^1 input /ma "Kurayami: Ni" <t>')
+  send_command('bind ^2 input /ma "Dokumori: Ichi" <t>')
+  send_command('bind ^3 input /ma "Aisha: Ichi" <t>')
+  send_command('bind ^4 input /ma "Yurin: Ichi" <t>')
+  send_command('bind ^5 input /ma "Kakka: Ichi" <me>')
+  send_command('bind ^6 input /ma "Hojo: Ni" <t>')
+  send_command('bind ^7 input /ma "Jubaku: Ichi" <t>')
+  send_command('bind @3 input /ma "Katon: San" <t>')
+  send_command('bind @4 input /ma "Suiton: San" <t>')
+  send_command('bind @5 input /ma "Raiton: San" <t>')
+  send_command('bind @6 input /ma "Doton: San" <t>')
+  send_command('bind @7 input /ma "Huton: San" <t>')
+  send_command('bind @8 input /ma "Hyoton: San" <t>')
+  
+  --Sub job JAs
+  if player.sub_job == 'WAR' then
+    send_command('unbind @9')
+    send_command('bind !1 input /ja "Provoke" <t>; input /p Provoke > <t>')
+	send_command('bind ^8 input /ja "Berserk" <me>; wait 1; input /ja "Aggressor" <me>')
+	send_command('bind ^9 input /ja "Warcry" <me>')
+	send_command('bind @0 input /ja "Defender" <me>')
+  end
+  
+  if player.sub_job == 'DNC' then
+    send_command('bind ^1 input /ja "Animated Flourish" <t>')
+	send_command('bind ^8 input /ja "Haste Samba" <me>')
+	send_command('bind ^9 input /ja "Stutter Step" <t>')
+	send_command('bind @9 input /ja "Quick Step" <t>')
+	send_command('bind @0 input /ja "Box Step" <t>')
+  end
 
   send_command('bind @a gs c cycle AttackMode')
   send_command('bind @c gs c toggle CP')
@@ -147,45 +187,70 @@ function user_unload()
   send_command('unbind ^f')
   
   send_command('unbind !e')
-  send_command('unbind !r')
-  send_command('unbind !t')
-  send_command('unbind ^t')
+  send_command('unbind ^e')
 
   send_command('unbind ^`')
   send_command('unbind !`')
-  send_command('unbind ^-')
-  send_command('unbind ^=')
-  send_command('unbind @/')
   send_command('unbind @a')
   send_command('unbind @c')
-  send_command('unbind @t')
-  send_command('unbind ^numlock')
-  send_command('unbind !numlock')
-  send_command('unbind ^numpad/')
-  send_command('unbind !w')
-  send_command('unbind ^numpad*')
-  send_command('unbind ^numpad-')
-  send_command('unbind ^numpad+')
-  send_command('unbind !numpad+')
-  send_command('unbind ^numpad7')
-  send_command('unbind ^numpad8')
-  send_command('unbind ^numpad4')
-  send_command('unbind ^numpad6')
-  send_command('unbind ^numpad1')
-  send_command('unbind ^numpad2')
 
-  send_command('unbind #`')
-  send_command('unbind #1')
-  send_command('unbind #2')
-  send_command('unbind #3')
-  send_command('unbind #4')
-  send_command('unbind #5')
-  send_command('unbind #6')
-  send_command('unbind #7')
-  send_command('unbind #8')
-  send_command('unbind #9')
-  send_command('unbind #0')
-
+  send_command('unbind !\'')
+  send_command('unbind !;')
+  send_command('unbind ![')
+  send_command('unbind !]')
+  
+  send_command('unbind !1')
+  send_command('unbind !2')
+  send_command('unbind !3')
+  send_command('unbind !4')
+  send_command('unbind !5')
+  send_command('unbind !6')
+  send_command('unbind !7')
+  send_command('unbind !8')
+  send_command('unbind !9')
+  send_command('unbind !0')
+  
+  send_command('unbind ^1')
+  send_command('unbind ^2')
+  send_command('unbind ^3')
+  send_command('unbind ^4')
+  send_command('unbind ^5')
+  send_command('unbind ^6')
+  send_command('unbind ^7')
+  send_command('unbind ^8')
+  send_command('unbind ^9')
+  send_command('unbind ^0')
+  
+  send_command('unbind @1')
+  send_command('unbind @2')
+  send_command('unbind @3')
+  send_command('unbind @4')
+  send_command('unbind @5')
+  send_command('unbind @6')
+  send_command('unbind @7')
+  send_command('unbind @8')
+  send_command('unbind @9')
+  send_command('unbind @0')
+  
+  send_command('unbind !q')
+  send_command('unbind ^q')
+  send_command('unbind @q')
+  send_command('unbind !k')
+  send_command('unbind !j')
+  
+  send_command('unbind home')
+  send_command('unbind end')
+  send_command('unbind !.')
+  send_command('unbind !/')
+  send_command('unbind !b')
+  send_command('unbind !n')
+  send_command('unbind !m')
+  send_command('unbind !h')
+  send_command('unbind !p')
+  send_command('unbind !o')
+  send_command('unbind !i')
+  send_command('unbind !u')
+   
   send_command('lua u gearinfo')
 end
 
@@ -200,6 +265,7 @@ function init_gear_sets()
     ammo="Date Shuriken", --3
     head={ name="Naga Somen", augments={'HP+50','VIT+10','Evasion+20',}}, --0
     body="Emet Harness +1", --10
+	hands="Kurys Gloves", -- 9
     legs="Zoar Subligar +1", --6
     feet={ name="Mochi. Kyahan +3", augments={'Enh. Ninj. Mag. Acc/Cast Time Red.',}}, --8
     neck="Unmoving Collar +1", --10
@@ -215,7 +281,7 @@ function init_gear_sets()
   sets.precast.JA['Warcry'] = sets.Enmity
   
   sets.precast.JA['Mijin Gakure'] = {
-    legs="Mochi. Hakama +2"
+    legs="Mochi. Hakama +3"
   }
   sets.precast.JA['Futae'] = {  
     hands="Hattori Tekko +1"
@@ -233,12 +299,12 @@ function init_gear_sets()
   sets.precast.Waltz = {
     ammo="Yamarang",
 	head="Mummu Bonnet +2",
-    -- body="Passion Jacket",
+    body="Passion Jacket",
 	-- hands="Herculean Gloves",
     -- legs="Dashing Subligar",
 	-- feet="Herculean Boots",
-	-- left_ring="Valseur's Ring",
-    -- right_ring="Asklepian Ring",
+	left_ring="Valseur's Ring",
+    right_ring="Asklepian Ring",
     waist="Gishdubar Sash",
   }
 
@@ -252,11 +318,13 @@ function init_gear_sets()
     body={ name="Taeon Tabard", augments={'Mag. Acc.+15 "Mag.Atk.Bns."+15','"Fast Cast"+4','Mag. crit. hit dmg. +8%',}}, --8
 	hands={ name="Leyline Gloves", augments={'Accuracy+15','Mag. Acc.+15','"Mag.Atk.Bns."+15','"Fast Cast"+3',}}, --8
     legs={ name="Herculean Trousers", augments={'Mag. Acc.+11 "Mag.Atk.Bns."+11','"Fast Cast"+5','MND+10','"Mag.Atk.Bns."+8',}}, --5
+	feet={ name="Herculean Boots", augments={'"Fast Cast"+5','MND+3','Mag. Acc.+8',}}, --5
 	neck="Orunmila's Torque", --5
     waist="Oneiros Belt", --0
     left_ear="Loquac. Earring", --2
     right_ear="Enchntr. Earring +1", --2
     left_ring="Prolix Ring", --2
+	right_ring="Kishar Ring", --4
     back={ name="Andartia's Mantle", augments={'INT+20','Mag. Acc+10 /Mag. Dmg.+10','Mag. Acc.+10','"Fast Cast"+10','Damage taken-5%',}}, --10
   }
 
@@ -274,7 +342,7 @@ function init_gear_sets()
     head="Hachiya Hatsu. +3",
     body="Ken. Samue +1",
     hands="Mummu Wrists +2",
-    legs="Mummu Kecks +2",
+    legs="Mochi. Hakama +3",
     feet="Mummu Gamash. +2",
     neck="Rancor Collar",
     waist="Sailfi Belt +1",
@@ -304,11 +372,11 @@ function init_gear_sets()
   sets.precast.WS['Blade: Ten'].HighAccMaxTp = set_combine(sets.precast.WS['Blade: Ten'].HighAcc, {})
 
   sets.precast.WS['Blade: Shun'] = set_combine(sets.precast.WS, {
-    ammo="Date Shuriken",
+    ammo="Voluspa Tathlum",
     head={ name="Adhemar Bonnet +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
     body={ name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20',}},
     hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
-    legs="Hiza. Hizayoroi +2",
+    legs="Mochi. Hakama +3",
     feet={ name="Adhe. Gamashes +1", augments={'STR+12','DEX+12','Attack+20',}},
     neck="Fotia Gorget",
     waist="Fotia Belt",
@@ -555,8 +623,8 @@ function init_gear_sets()
     feet="Hachiya Kyahan +3",
     neck="Incanter's Torque",
     waist="Eschan Stone",
-    left_ear="Stealth Earring",
-    right_ear="Hermetic Earring",
+    left_ear="Digni. Earring",
+    right_ear="Hnoss Earring",
     left_ring="Mummu Ring",
     right_ring="Metamorph Ring",
     back={ name="Andartia's Mantle", augments={'INT+20','Mag. Acc+10 /Mag. Dmg.+10','Mag. Acc.+10','"Fast Cast"+10','Damage taken-5%',}},
@@ -591,7 +659,7 @@ function init_gear_sets()
     hands="Ken. Tekko +1",
     legs="Ken. Hakama +1",
     feet="Ken. Sune-Ate +1",
-    neck={ name="Ninja Nodowa", augments={'Path: A',}},
+    neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
     waist="Patentia Sash",
     left_ear="Suppanomimi",
     right_ear="Eabani Earring",
@@ -615,7 +683,7 @@ function init_gear_sets()
     hands="Ken. Tekko +1",
     legs="Ken. Hakama +1",
     feet="Ken. Sune-Ate +1",
-    neck={ name="Ninja Nodowa", augments={'Path: A',}},
+    neck={ name="Ninja Nodowa +2", augments={'Path: A',}},
     waist="Patentia Sash",
     left_ear="Suppanomimi",
     right_ear="Eabani Earring",
@@ -657,16 +725,27 @@ function init_gear_sets()
     head={ name="Ryuo Somen +1", augments={'HP+65','"Store TP"+5','"Subtle Blow"+8',}}, --9% Acc47
     body="Ken. Samue +1", --Acc81
     hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}}, --Acc94
-    legs={ name="Mochi. Hakama +2", augments={'Enhances "Mijin Gakure" effect',}}, --9% Acc29
+    legs={ name="Mochi. Hakama +3", augments={'Enhances "Mijin Gakure" effect',}}, --10% Acc29
     feet="Hiza. Sune-Ate +2", --8% Acc65
-    neck={ name="Ninja Nodowa", augments={'Path: A',}}, --Acc22
+    neck={ name="Ninja Nodowa +2", augments={'Path: A',}}, --Acc22
     waist="Patentia Sash", --5% 
     left_ear="Suppanomimi", --5%
     right_ear="Eabani Earring", --4%
     left_ring="Mummu Ring", --Acc6 (+Acc6 for each extra Mummu piece)
     right_ring="Epona's Ring",
     back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Damage taken-5%',}}, --Acc42
-  } -- 39% Acc394
+  } -- 40/39% Acc394
+
+  sets.engaged.CritRate = set_combine(sets.engaged, {
+    head="Ken. Jinpachi +1",
+	hands="Ken. Tekko +1",
+	legs="Ken. Hakama +1",
+	feet="Ken. Sune-Ate",
+	neck="Rancor Collar",
+	left_ear="Brutal Earring",
+	right_ear="Odr Earring",
+	back={ name="Andartia's Mantle", augments={'AGI+20','Accuracy+20 Attack+20','AGI+10','Crit.hit rate+10',}},
+  })
 
   sets.engaged.LowAcc = set_combine(sets.engaged, {
     legs="Mummu Kecks +2", --Acc53+6
@@ -680,10 +759,10 @@ function init_gear_sets()
   }) --16% Acc487
 
   sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
-    ammo="Yamarang", --Acc15
+    sub="Shigi", --Acc35 (from Kaja Katana)
     head="Ken. Jinpachi +1", --Acc85
     right_ring="Supershear Ring", --Acc7
-  }) --0% Acc539
+  }) --0% Acc567
 
   -- Low Magic/Gear/JA Haste (67% DW to cap, 32% from gear)
   sets.engaged.LowHaste = {
@@ -693,7 +772,7 @@ function init_gear_sets()
     hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}}, --Acc94
     legs={ name="Samnuha Tights", augments={'STR+8','DEX+9','"Dbl.Atk."+3','"Triple Atk."+2',}}, --Acc26
     feet="Hiza. Sune-Ate +2", --8 Acc65
-    neck={ name="Ninja Nodowa", augments={'Path: A',}}, --Acc22
+    neck={ name="Ninja Nodowa +2", augments={'Path: A',}}, --Acc22
     waist="Patentia Sash", --5 
     left_ear="Suppanomimi", --5
     right_ear="Eabani Earring", --4
@@ -701,6 +780,17 @@ function init_gear_sets()
     right_ring="Epona's Ring",
     back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Damage taken-5%',}}, --Acc42
   } -- 31% Acc391
+  
+  sets.engaged.CritRate.LowHaste = set_combine(sets.engaged.LowHaste, {
+    head="Ken. Jinpachi +1",
+	hands="Ken. Tekko +1",
+	legs="Ken. Hakama +1",
+	feet="Ken. Sune-Ate",
+	neck="Rancor Collar",
+	left_ear="Brutal Earring",
+	right_ear="Odr Earring",
+	back={ name="Andartia's Mantle", augments={'AGI+20','Accuracy+20 Attack+20','AGI+10','Crit.hit rate+10',}},
+  })
 
   sets.engaged.LowAcc.LowHaste = set_combine(sets.engaged.LowHaste, {
     legs="Mummu Kecks +2", --Acc53+6
@@ -714,10 +804,10 @@ function init_gear_sets()
   }) --8% Acc487
 
   sets.engaged.HighAcc.LowHaste = set_combine(sets.engaged.LowAcc.LowHaste, {
-    ammo="Yamarang", --Acc15
+    sub="Shigi", --Acc35 (from Kaja Katana)
     head="Ken. Jinpachi +1", --Acc85
     right_ring="Supershear Ring", --Acc7
-  }) --0% Acc539
+  }) --0% Acc567
 
   -- Mid Magic/Gear/JA Haste (56% DW to cap, 21% from gear)
   sets.engaged.MidHaste = {
@@ -727,7 +817,7 @@ function init_gear_sets()
     hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}}, --Acc94
     legs={ name="Samnuha Tights", augments={'STR+8','DEX+9','"Dbl.Atk."+3','"Triple Atk."+2',}}, --Acc26
     feet="Hiza. Sune-Ate +2", --8 Acc65
-    neck={ name="Ninja Nodowa", augments={'Path: A',}}, --Acc22
+    neck={ name="Ninja Nodowa +2", augments={'Path: A',}}, --Acc22
     waist="Patentia Sash", --5
 	left_ear="Brutal Earring",
     right_ear="Telos Earring", --Acc10
@@ -735,6 +825,16 @@ function init_gear_sets()
     right_ring="Epona's Ring",
     back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Damage taken-5%',}}, --Acc42
   } -- 22% Acc401
+  
+  sets.engaged.CritRate.MidHaste = set_combine(sets.engaged.MidHaste, {
+    head="Ken. Jinpachi +1",
+	hands="Ken. Tekko +1",
+	legs="Ken. Hakama +1",
+	feet="Ken. Sune-Ate",
+	neck="Rancor Collar",
+	right_ear="Odr Earring",
+	back={ name="Andartia's Mantle", augments={'AGI+20','Accuracy+20 Attack+20','AGI+10','Crit.hit rate+10',}},
+  })
 
   sets.engaged.LowAcc.MidHaste = set_combine(sets.engaged.MidHaste, {
     legs="Mummu Kecks +2", --Acc53+6
@@ -748,9 +848,9 @@ function init_gear_sets()
   }) --17% Acc487
 
   sets.engaged.HighAcc.MidHaste = set_combine(sets.engaged.MidHaste.MidAcc, {
-    ammo="Yamarang", --Acc15
+    sub="Shigi", --Acc35 (from Kaja Katana)
     head="Ken. Jinpachi +1", --Acc85
-  }) --0% Acc539
+  }) --0% Acc567
 
   -- High Magic/Gear/JA Haste (51% DW to cap, 16% from gear)
   sets.engaged.HighHaste = {
@@ -760,7 +860,7 @@ function init_gear_sets()
     hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}}, --Acc94
     legs={ name="Samnuha Tights", augments={'STR+8','DEX+9','"Dbl.Atk."+3','"Triple Atk."+2',}}, --Acc26
     feet="Hiza. Sune-Ate +2", --8 Acc65
-    neck={ name="Ninja Nodowa", augments={'Path: A',}}, --Acc22
+    neck={ name="Ninja Nodowa +2", augments={'Path: A',}}, --Acc22
     waist="Patentia Sash", --5
     left_ear="Brutal Earring",	
     right_ear="Telos Earring", --Acc10
@@ -768,6 +868,16 @@ function init_gear_sets()
     right_ring="Epona's Ring",
     back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Damage taken-5%',}}, --Acc42
   } -- 12% Acc398
+  
+  sets.engaged.CritRate.HighHaste = set_combine(sets.engaged.HighHaste, {
+    head="Ken. Jinpachi +1",
+	hands="Ken. Tekko +1",
+	legs="Ken. Hakama +1",
+	feet="Ken. Sune-Ate",
+	neck="Rancor Collar",
+	right_ear="Odr Earring",
+	back={ name="Andartia's Mantle", augments={'AGI+20','Accuracy+20 Attack+20','AGI+10','Crit.hit rate+10',}},
+  })
 
   sets.engaged.LowAcc.HighHaste = set_combine(sets.engaged.HighHaste, {
     head="Ken. Jinpachi +1", --Acc85
@@ -781,9 +891,9 @@ function init_gear_sets()
   }) --17% Acc516
 
   sets.engaged.HighAcc.HighHaste = set_combine(sets.engaged.MidAcc.HighHaste, {
-    ammo="Yamarang", --Acc15
+    sub="Shigi", --Acc35 (from Kaja Katana)
 	feet="Ken. Sune-Ate +1" --Acc81
-  }) --0% Acc539
+  }) --0% Acc567
 
   -- Max Magic/Gear/JA Haste (36% DW to cap, 1% from gear)
   sets.engaged.MaxHaste = {
@@ -792,33 +902,43 @@ function init_gear_sets()
     body="Ken. Samue +1", --Acc81
     hands={ name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}}, --Acc94
     legs={ name="Samnuha Tights", augments={'STR+8','DEX+9','"Dbl.Atk."+3','"Triple Atk."+2',}}, --Acc26
-    feet={ name="Herculean Boots", augments={'Attack+18','"Triple Atk."+4','Accuracy+3',}}, --Acc21
-    neck={ name="Ninja Nodowa", augments={'Path: A',}}, --Acc22
+    feet={ name="Herculean Boots", augments={'Accuracy+15','"Triple Atk."+4','AGI+7','Attack+9',}}, --Acc21
+    neck={ name="Ninja Nodowa +2", augments={'Path: A',}}, --Acc22
     waist="Windbuffet Belt +1", --Acc2
     left_ear="Brutal Earring",	
     right_ear="Telos Earring", --Acc10
     left_ring="Mummu Ring", --Acc6 (+Acc6 for each extra Mummu piece)
     right_ring="Epona's Ring",
     back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Damage taken-5%',}}, --Acc42
-  } --0% Acc356
+  } --0% Acc368
+  
+  sets.engaged.CritRate.MaxHaste = set_combine(sets.engaged.MaxHaste, {
+    head="Ken. Jinpachi +1",
+	hands="Ken. Tekko +1",
+	legs="Ken. Hakama +1",
+	feet="Ken. Sune-Ate",
+	neck="Rancor Collar",
+	right_ear="Odr Earring",
+	back={ name="Andartia's Mantle", augments={'AGI+20','Accuracy+20 Attack+20','AGI+10','Crit.hit rate+10',}},
+  })	
 
   sets.engaged.LowAcc.MaxHaste = set_combine(sets.engaged.MaxHaste, {
     head="Ken. Jinpachi +1", --Acc73
 	legs="Mummu Kecks +2", --Acc53
-  }) --0% Acc418
+  }) --0% Acc430
 
   sets.engaged.MidAcc.MaxHaste = set_combine(sets.engaged.LowAcc.MaxHaste, {
     waist="Olseni Belt", --Acc20
     left_ear="Odr Earring", --Acc17
     right_ring="Supershear Ring", --Acc7
-  }) --0% Acc460
+  }) --0% Acc472
 
   sets.engaged.HighAcc.MaxHaste = set_combine(sets.engaged.MidAcc.MaxHaste, {
-    ammo="Yamarang", --Acc15
+    sub="Shigi", --Acc35 (from Kaja Katana)
     feet="Ken. Sune-Ate +1", --Acc81
-  }) --0% Acc527
+  }) --0% Acc567
 
-  sets.engaged.Hybrid = {
+  sets.engaged.HybridDT = {
 	ammo="Date Shuriken",
 	head="Ken. Jinpachi +1",
     hands="Ken. Tekko +1",
@@ -826,31 +946,49 @@ function init_gear_sets()
 	feet="Ken. Sune-Ate +1",
     left_ring="Hizamaru Ring",
   }
+  
+  sets.engaged.HybridEva = {
+    ammo="Date Shuriken",
+    head="Hiza. Somen　+2",
+    body="Malignance Tabard",
+    hands={ name="Shigure Tekko +1", augments={'Path: A',}},
+    legs="Mummu Kecks +2",
+    feet="Malignance Boots",
+    neck="Combatant's Torque",
+    waist="Svelt. Gouriz +1",
+    left_ear="Infused Earring",
+    right_ear="Eabani Earring",
+    left_ring="Hizamaru Ring",
+    right_ring="Vengeful Ring",
+    back={ name="Andartia's Mantle", augments={'AGI+20','Eva.+20 /Mag. Eva.+20','Evasion+10','"Dual Wield"+10','Evasion+15',}},
+  }
 
-  sets.engaged.DT = set_combine(sets.engaged, sets.engaged.Hybrid)
-  sets.engaged.LowAcc.DT = set_combine(sets.engaged.LowAcc, sets.engaged.Hybrid)
-  sets.engaged.MidAcc.DT = set_combine(sets.engaged.MidAcc, sets.engaged.Hybrid)
-  sets.engaged.HighAcc.DT = set_combine(sets.engaged.HighAcc, sets.engaged.Hybrid)
+  sets.engaged.Evasion = set_combine(sets.engaged, sets.engaged.HybridEva)
 
-  sets.engaged.DT.LowHaste = set_combine(sets.engaged.LowHaste, sets.engaged.Hybrid)
-  sets.engaged.LowAcc.DT.LowHaste = set_combine(sets.engaged.LowAcc.LowHaste, sets.engaged.Hybrid)
-  sets.engaged.MidAcc.DT.LowHaste = set_combine(sets.engaged.MidAcc.LowHaste, sets.engaged.Hybrid)
-  sets.engaged.HighAcc.DT.LowHaste = set_combine(sets.engaged.HighAcc.LowHaste, sets.engaged.Hybrid)
+  sets.engaged.DT = set_combine(sets.engaged, sets.engaged.HybridDT)
+  sets.engaged.LowAcc.DT = set_combine(sets.engaged.LowAcc, sets.engaged.HybridDT)
+  sets.engaged.MidAcc.DT = set_combine(sets.engaged.MidAcc, sets.engaged.HybridDT)
+  sets.engaged.HighAcc.DT = set_combine(sets.engaged.HighAcc, sets.engaged.HybridDT)
 
-  sets.engaged.DT.MidHaste = set_combine(sets.engaged.MidHaste, sets.engaged.Hybrid)
-  sets.engaged.LowAcc.DT.MidHaste = set_combine(sets.engaged.LowAcc.MidHaste, sets.engaged.Hybrid)
-  sets.engaged.MidAcc.DT.MidHaste = set_combine(sets.engaged.MidAcc.MidHaste, sets.engaged.Hybrid)
-  sets.engaged.HighAcc.DT.MidHaste = set_combine(sets.engaged.HighAcc.MidHaste, sets.engaged.Hybrid)
+  sets.engaged.DT.LowHaste = set_combine(sets.engaged.LowHaste, sets.engaged.HybridDT)
+  sets.engaged.LowAcc.DT.LowHaste = set_combine(sets.engaged.LowAcc.LowHaste, sets.engaged.HybridDT)
+  sets.engaged.MidAcc.DT.LowHaste = set_combine(sets.engaged.MidAcc.LowHaste, sets.engaged.HybridDT)
+  sets.engaged.HighAcc.DT.LowHaste = set_combine(sets.engaged.HighAcc.LowHaste, sets.engaged.HybridDT)
 
-  sets.engaged.DT.HighHaste = set_combine(sets.engaged.HighHaste, sets.engaged.Hybrid)
-  sets.engaged.LowAcc.DT.HighHaste = set_combine(sets.engaged.LowAcc.HighHaste, sets.engaged.Hybrid)
-  sets.engaged.MidAcc.DT.HighHaste = set_combine(sets.engaged.MidAcc.HighHaste, sets.engaged.Hybrid)
-  sets.engaged.HighAcc.DT.HighHaste = set_combine(sets.engaged.HighAcc.HighHaste, sets.engaged.Hybrid)
+  sets.engaged.DT.MidHaste = set_combine(sets.engaged.MidHaste, sets.engaged.HybridDT)
+  sets.engaged.LowAcc.DT.MidHaste = set_combine(sets.engaged.LowAcc.MidHaste, sets.engaged.HybridDT)
+  sets.engaged.MidAcc.DT.MidHaste = set_combine(sets.engaged.MidAcc.MidHaste, sets.engaged.HybridDT)
+  sets.engaged.HighAcc.DT.MidHaste = set_combine(sets.engaged.HighAcc.MidHaste, sets.engaged.HybridDT)
 
-  sets.engaged.DT.MaxHaste = set_combine(sets.engaged.MaxHaste, sets.engaged.Hybrid)
-  sets.engaged.LowAcc.DT.MaxHaste = set_combine(sets.engaged.LowAcc.MaxHaste, sets.engaged.Hybrid)
-  sets.engaged.MidAcc.DT.MaxHaste = set_combine(sets.engaged.MidAcc.MaxHaste, sets.engaged.Hybrid)
-  sets.engaged.HighAcc.DT.MaxHaste = set_combine(sets.engaged.HighAcc.MaxHaste, sets.engaged.Hybrid)
+  sets.engaged.DT.HighHaste = set_combine(sets.engaged.HighHaste, sets.engaged.HybridDT)
+  sets.engaged.LowAcc.DT.HighHaste = set_combine(sets.engaged.LowAcc.HighHaste, sets.engaged.HybridDT)
+  sets.engaged.MidAcc.DT.HighHaste = set_combine(sets.engaged.MidAcc.HighHaste, sets.engaged.HybridDT)
+  sets.engaged.HighAcc.DT.HighHaste = set_combine(sets.engaged.HighAcc.HighHaste, sets.engaged.HybridDT)
+
+  sets.engaged.DT.MaxHaste = set_combine(sets.engaged.MaxHaste, sets.engaged.HybridDT)
+  sets.engaged.LowAcc.DT.MaxHaste = set_combine(sets.engaged.LowAcc.MaxHaste, sets.engaged.HybridDT)
+  sets.engaged.MidAcc.DT.MaxHaste = set_combine(sets.engaged.MidAcc.MaxHaste, sets.engaged.HybridDT)
+  sets.engaged.HighAcc.DT.MaxHaste = set_combine(sets.engaged.HighAcc.MaxHaste, sets.engaged.HybridDT)
 
   --------------------------------------
   -- Custom buff sets
@@ -881,12 +1019,12 @@ function init_gear_sets()
     head={ name="Mochi. Hatsuburi +3", augments={'Enhances "Yonin" and "Innin" effect',}},
     body={ name="Samnuha Coat", augments={'Mag. Acc.+15','"Mag.Atk.Bns."+15','"Fast Cast"+5','"Dual Wield"+5',}},
     hands={ name="Herculean Gloves", augments={'"Mag.Atk.Bns."+23','Magic burst dmg.+5%',}},
-    legs={ name="Herculean Trousers", augments={'Mag. Acc.+19','Magic burst dmg.+5%','MND+7','"Mag.Atk.Bns."+8',}},
+    legs={ name="Herculean Trousers", augments={'Attack+21','Magic burst dmg.+7%','INT+5','Mag. Acc.+14',}},
     feet={ name="Mochi. Kyahan +3", augments={'Enh. Ninj. Mag. Acc/Cast Time Red.',}},
     neck="Baetyl Pendant",
     waist="Eschan Stone",
     left_ear="Friomisi Earring",
-    right_ear="Hecate's Earring",
+    right_ear="Static Earring",
     left_ring="Mujin Band",
     right_ring="Locus Ring",
     back={ name="Andartia's Mantle", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+5','"Mag.Atk.Bns."+10','Damage taken-5%',}},
@@ -911,6 +1049,9 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 function job_precast(spell, action, spellMap, eventArgs)
+  -- Downgrade elemental spell if higher tier is on cooldown
+  refine_various_spells(spell, action, spellMap, eventArgs)
+  
   -- Don't gearswap if status forbids the action
   local forbidden_statuses = spell_type_blocks[spell.type]
   for k,status in pairs(forbidden_statuses) do
@@ -921,16 +1062,13 @@ function job_precast(spell, action, spellMap, eventArgs)
     end
   end
 
+  -- Ninja tool status check
   if spell.skill == "Ninjutsu" then
     do_ninja_tool_checks(spell, spellMap, eventArgs)
   end
+  
+  -- Handle deletion of lower level shadows
   if spellMap == 'Utsusemi' then
-    --[[if buffactive['Copy Image (3)'] or buffactive['Copy Image (4+)'] then
-      cancel_spell()
-      add_to_chat(123, '**!! '..spell.english..' Canceled: [3+ IMAGES] !!**')
-      eventArgs.handled = true
-      return
-    else]]
 	if buffactive['Copy Image'] or buffactive['Copy Image (2)'] or buffactive['Copy Image (3)'] or buffactive['Copy Image (4+)'] then
       send_command('cancel 66; cancel Copy Image; cancel 444; cancel Copy Image (2); cancel 445; cancel Copy Image (3); cancel 446; cancel Copy Image (4+)')
     end
@@ -1202,6 +1340,110 @@ function cycle_toy_weapons(cycle_dir)
   equip(sets.ToyWeapon[state.ToyWeapons.current])
 end
 
+-- Logic to handle downgrade elemental spell if higher tier is on cooldown
+function refine_various_spells(spell, action, spellMap, eventArgs)
+    fires = S{'Katon: Ichi','Katon: Ni','Katon: San'}
+    waters = S{'Suiton: Ichi','Suiton: Ni','Suiton: San'}
+    thunders = S{'Raiton: Ichi','Raiton: Ni','Raiton: San'}
+	earths = S{'Doton: Ichi','Doton: Ni','Doton: San'}
+	winds = S{'Huton: Ichi','Huton: Ni','Huton: San'}
+	ices = S{'Hyoton: Ichi','Hyoton: Ni','Hyoton: San'}
+	shadows = S{'Utsusemi: Ichi','Utsusemi: Ni','Utsusemi: San'}
+ 
+    if not fires:contains(spell.english) and
+	  not waters:contains(spell.english) and 
+	  not thunders:contains(spell.english) and
+	  not earths:contains(spell.english) and
+	  not winds:contains(spell.english) and
+	  not ices:contains(spell.english) and
+	  not shadows:contains(spell.english) then
+        return
+    end
+ 
+    local newSpell = spell.english
+    local spell_recasts = windower.ffxi.get_spell_recasts()
+    local cancelling = 'All '..spell.english..' spells are on cooldown. Cancelling spell casting.'
+  
+    if spell_recasts[spell.recast_id] > 0 then
+        if fires:contains(spell.english) then
+            if spell.english == 'Katon: Ichi' then
+                add_to_chat(122,cancelling)
+                eventArgs.cancel = true
+                return
+            elseif spell.english == 'Katon: Ni' then
+                newSpell = 'Katon: Ichi'
+            elseif spell.english == 'Katon: San' then
+                newSpell = 'Katon: Ni'
+            end
+        elseif waters:contains(spell.english) then
+            if spell.english == 'Suiton: Ichi' then
+                add_to_chat(122,cancelling)
+                eventArgs.cancel = true
+                return
+            elseif spell.english == 'Suiton: Ni' then
+                newSpell = 'Suiton: Ichi'
+            elseif spell.english == 'Suiton: San' then
+                newSpell = 'Suiton: Ni'
+            end
+		elseif thunders:contains(spell.english) then
+            if spell.english == 'Raiton: Ichi' then
+                add_to_chat(122,cancelling)
+                eventArgs.cancel = true
+                return
+            elseif spell.english == 'Raiton: Ni' then
+                newSpell = 'Raiton: Ichi'
+            elseif spell.english == 'Raiton: San' then
+                newSpell = 'Raiton: Ni'
+            end
+		elseif earths:contains(spell.english) then
+            if spell.english == 'Doton: Ichi' then
+                add_to_chat(122,cancelling)
+                eventArgs.cancel = true
+                return
+            elseif spell.english == 'Doton: Ni' then
+                newSpell = 'Doton: Ichi'
+            elseif spell.english == 'Doton: San' then
+                newSpell = 'Doton: Ni'
+            end
+		elseif winds:contains(spell.english) then
+            if spell.english == 'Huton: Ichi' then
+                add_to_chat(122,cancelling)
+                eventArgs.cancel = true
+                return
+            elseif spell.english == 'Huton: Ni' then
+                newSpell = 'Huton: Ichi'
+            elseif spell.english == 'Huton: San' then
+                newSpell = 'Huton: Ni'
+            end
+		elseif ices:contains(spell.english) then
+            if spell.english == 'Hyoton: Ichi' then
+                add_to_chat(122,cancelling)
+                eventArgs.cancel = true
+                return
+            elseif spell.english == 'Hyoton: Ni' then
+                newSpell = 'Hyoton: Ichi'
+            elseif spell.english == 'Hyoton: San' then
+                newSpell = 'Hyoton: Ni'
+            end
+		elseif shadows:contains(spell.english) then
+            if spell.english == 'Utsusemi: Ichi' then
+                add_to_chat(122,cancelling)
+                eventArgs.cancel = true
+                return
+            elseif spell.english == 'Utsusemi: Ni' then
+                newSpell = 'Utsusemi: Ichi'
+            elseif spell.english == 'Utsusemi: San' then
+                newSpell = 'Utsusemi: Ni'
+            end	
+        end
+    end
+  
+    if newSpell ~= spell.english then
+        send_command('@input /ma "'..newSpell..'" '..tostring(spell.target.raw))
+        eventArgs.cancel = true
+        return
+    end
+end
 
 -------------------------------------------------------------------------------------------------------------------
 -- Utility functions specific to this job.
