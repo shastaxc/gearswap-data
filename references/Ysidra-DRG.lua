@@ -34,7 +34,7 @@ end
 -- Executes on first load and main job change
 function job_setup()
   include('Mote-TreasureHunter')
-  lockstyleset = 4
+  lockstyleset = 5
 
   -- For th_action_check():
   -- JA IDs for actions that always have TH: Provoke, Animated Flourish
@@ -52,6 +52,7 @@ function job_setup()
   state.IdleMode:options('Normal', 'DT')
   state.AttackMode = M{['description']='Attack', 'Capped', 'Uncapped'}
   state.CP = M(false, "Capacity Points Mode")
+  state.WeaponLock = M(false, 'Weapon Lock')
 
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c usekey')
