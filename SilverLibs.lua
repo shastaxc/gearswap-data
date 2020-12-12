@@ -42,12 +42,17 @@ sets.MostRecent = {main="",sub="",ranged="",ammo=""} --DO NOT MODIFY
 -- 's' is self player object
 -- 't' is target object
 function is_ws_out_of_range(ws_range, s, t)
-  if ws_name == nil or s == nil or t == nil then
+  if ws_range == nil or s == nil or t == nil then
+    print('Invalid params for is_ws_out_of_range.')
     return true
   end
 
   local distance = t.distance:sqrt()
   local is_out_of_range = distance > (t.model_size + ws_range * range_mult[ws_range] + s.model_size)
+
+  if is_out_of_range then
+    windower.add_to_chat(167, 'Target out of range.')
+  end
 
   return is_out_of_range
 end
@@ -66,7 +71,6 @@ function cancel_outranged_ws(spell, eventArgs)
   if is_ws_out_of_range(spell.range, player, target) then
     cancel_spell() -- Blocks the outgoing action packet that would perform the WS
     eventArgs.cancel = true -- Ensures gear doesn't swap
-    windower.add_to_chat(167, 'Stopping WS. Target out of range.')
   end
 end
 
