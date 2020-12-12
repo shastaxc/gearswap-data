@@ -582,10 +582,10 @@ function init_gear_sets()
 
   sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
     ammo="Pemphredo Tathlum", --4
-    head="Highwing Helm", --20
+    head=gear.Herc_MAB_head, --25
     body=gear.Samnuha_body, --25
     hands=gear.Leyline_Gloves, --30
-    legs=gear.Herc_MAB_legs, --33
+    legs=gear.Herc_MAB_legs, --43
     feet=gear.Herc_MAB_feet, --50
     neck="Baetyl Pendant", --13
     ear1="Friomisi Earring", --10
@@ -594,7 +594,6 @@ function init_gear_sets()
     ring2="Ilabrat Ring",
     back="Argochampsa Mantle", --12
     waist="Eschan Stone", --7
-    -- head=gear.Herc_MAB_head,
     -- body=gear.Herc_MAB_body,
     -- hands=gear.Herc_MAB_hands,
     -- legs="Horos Tights +3", -- Use once more MAB gear obtained

@@ -114,14 +114,14 @@ function define_global_sets()
   gear.Herc_RA_legs = {name="Herculean Trousers", augments={'Rng.Acc.+24 Rng.Atk.+24','Weapon skill damage +2%','STR+10','Rng.Acc.+13',}}
   gear.Herc_RA_feet = {name="Herculean Boots", augments={'Rng.Acc.+25 Rng.Atk.+25','Weapon skill damage +1%','AGI+4','Rng.Atk.+15',}}
 
-  gear.Herc_MAB_head = {name="Herculean Helm", augments={'AGI+6','"Mag.Atk.Bns."+25','Weapon skill damage +2%','Mag. Acc.+18 "Mag.Atk.Bns."+18',}}
+  gear.Herc_MAB_head = { name="Herculean Helm", augments={'Pet: INT+11','Weapon skill damage +4%','Mag. Acc.+15 "Mag.Atk.Bns."+15',}}
   gear.Herc_MAB_legs = { name="Herculean Trousers", augments={'Mag. Acc.+18 "Mag.Atk.Bns."+18','Weapon skill damage +1%','MND+1','Mag. Acc.+1','"Mag.Atk.Bns."+15',}}
   gear.Herc_MAB_feet = { name="Herculean Boots", augments={'Mag. Acc.+1','"Mag.Atk.Bns."+23','Quadruple Attack +1','Mag. Acc.+17 "Mag.Atk.Bns."+17',}}
 
   gear.Herc_WS_body = {name="Herculean Vest", augments={'Accuracy+23 Attack+23','Weapon skill damage +4%','DEX+9','Attack+12',}}
   gear.Herc_WS_legs = {name="Herculean Trousers", augments={'Accuracy+25 Attack+25','Weapon skill damage +3%','DEX+13','Accuracy+6','Attack+4',}}
 
-  gear.Herc_WSD_head = { name="Herculean Helm", augments={'Accuracy+2','Weapon skill damage +4%','Attack+15',}}
+  gear.Herc_WSD_head = { name="Herculean Helm", augments={'Pet: INT+11','Weapon skill damage +4%','Mag. Acc.+15 "Mag.Atk.Bns."+15',}}
   gear.Herc_WSD_legs = {name="Herculean Trousers", augments={'"Repair" potency +1%','Magic dmg. taken -1%','Weapon skill damage +8%','Accuracy+11 Attack+11','Mag. Acc.+10 "Mag.Atk.Bns."+10',}}
   gear.Herc_WSD_feet = { name="Herculean Boots", augments={'Rng.Acc.+21','Mag. Acc.+20','Weapon skill damage +6%','Accuracy+3 Attack+3',}}
 
@@ -347,7 +347,7 @@ function update_weaponskill_binds()
     elseif current_weapon_type == 'Great Sword' then
       send_command('bind ^numpad7 input /ws "Resolution" <t>')
       send_command('bind ^numpad9 input /ws "Dimidiation" <t>')
-      send_command('bind ^numpad8 input /ws "Ground Strike" <t>')
+      send_command('bind ^numpad5 input /ws "Ground Strike" <t>')
       send_command('bind ^numpad1 input /ws "Shockwave" <t>') --aoe, sleep
       send_command('bind ^numpad2 input /ws "Freezebite" <t>') --elemental
       send_command('bind ^numpad3 input /ws "Herculean Slash" <t>') --elemental, paralyze

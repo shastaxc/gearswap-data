@@ -459,7 +459,7 @@ function init_gear_sets()
   -- 40% DEX / 40% INT + MAB
   sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
     ammo="Seething Bomblet", --6
-    head="Highwing Helm", --20
+    head=gear.Herc_MAB_head, --25
     body=gear.Samnuha_body, --25
     hands=gear.Leyline_Gloves, --30
     legs=gear.Herc_MAB_legs, --33
@@ -472,7 +472,6 @@ function init_gear_sets()
     back="Argochampsa Mantle", --12
     waist="Eschan Stone", --7
     -- ammo="Seeth. Bomblet +1",
-    -- head=gear.Herc_MAB_head,
     -- waist="Orpheus's Sash",
   })
   sets.precast.WS['Aeolian Edge'].MaxTP = set_combine(sets.precast.WS['Aeolian Edge'], {

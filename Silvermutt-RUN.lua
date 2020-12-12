@@ -301,7 +301,7 @@ function init_gear_sets()
 
   sets.MAB = {
     ammo="Seething Bomblet", --6 [0]
-    head="Highwing Helm", --20 [38]
+    head=gear.Herc_MAB_head, --25 [38]
     body=gear.Samnuha_body, --25 [63]
     hands=gear.Carmine_D_hands, --42 [27]
     legs=gear.Herc_MAB_legs, --33 [38]
@@ -312,7 +312,6 @@ function init_gear_sets()
     ring2="Shiva Ring +1", --3 [0]
     waist="Eschan Stone", --7 [20]
     back="Argochampsa Mantle", --12 [0]
-    -- head=gear.Herc_MAB_head, --45 [38]
     -- body="Carm. Sc. Mail +1", --42 [96]
   } -- 188 MAB [195 HP, 245 w/ Enmity]
 
