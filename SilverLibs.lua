@@ -3,6 +3,7 @@
 -------------------------------------------------------------------------------
 res = include('resources')
 
+
 -------------------------------------------------------------------------------
 -- Constants and maps
 -------------------------------------------------------------------------------
@@ -28,11 +29,222 @@ action_type_blocks = {
   ['Monster Move'] = {'terror', 'petrification', 'stun', 'sleep', 'charm', 'amnesia'},
 }
 
+-- DO NOT OVERWRITE THESE. You can use your own custom keybinds by copying this table
+--   to your globals file and changing the bindings there.
+-- To overwrite, create table with the same format, but named user_ws_bindings.
+-- Your bindings will be used instead of the default for the entire weapon type table.
+--   For example, if you have a 'Hand-to-Hand' table defined, none of the default 'Hand-to-Hand'
+--   keybinds will be used.
+-- Bindings will be set from top to bottom within a weapon type category. Ex. In Dagger
+--   category, if 'Default' table is first, those will be set. If you then have 'MNK' table
+--   and you are main job MNK, those bindings will overwrite default. If you have a '/WAR'
+--   table after that, then those keybinds will overwrite the previous ones if you are sub
+--   job WAR.
+default_ws_bindings = {
+  ['Hand-to-Hand'] = {
+    ['Default'] = {
+      ['^numpad7'] = "Victory Smite", --empyrean
+      ['^numpad8'] = "",
+      ['^numpad9'] = "Final Heaven", --relic
+      ['^numpad4'] = "Asuran Fists", --ambuscade
+      ['^numpad5'] = "Shijin Spiral", --aeonic
+      ['^numpad6'] = "Shoulder Tackle",
+      ['^numpad1'] = "Spinning Attack", --aoe
+      ['^numpad2'] = "Raging Fists",
+      ['^numpad3'] = "Howling Fist",
+    },
+    ['MNK'] = {
+      ['^numpad8'] = "Ascetic's Fury", --mythic
+    },
+    ['PUP'] = {
+      ['^numpad8'] = "Stringing Pummel", --mythic
+    },
+  },
+  ['Dagger'] = {
+    ['Default'] = {
+      ['^numpad7'] = "Rudra's Storm", --empyrean
+      ['^numpad8'] = "",
+      ['^numpad9'] = "Mercy Stroke", --relic
+      ['^numpad4'] = "Evisceration", --ambuscade
+      ['^numpad5'] = "Exenterator", --aeonic
+      ['^numpad6'] = "Shark Bite",
+      ['^numpad1'] = "Aeolian Edge", --aoe
+      ['^numpad2'] = "Cyclone", --elemental
+      ['^numpad3'] = "Energy Drain", --elemental
+    },
+    ['THF'] = {
+      ['^numpad8'] = "Mandalic Stab", --mythic
+    },
+    ['DNC'] = {
+      ['^numpad8'] = "Pyrrhic Kleos", --mythic
+    },
+    ['BRD'] = {
+      ['^numpad8'] = "Mordant Rime", --mythic
+    },
+  },
+  ['Sword'] = {
+    ['Default'] = {
+      ['^numpad7'] = "Chant du Cygne", --empyrean
+      ['^numpad8'] = "",
+      ['^numpad9'] = "Knights of Round", --relic
+      ['^numpad4'] = "Savage Blade", --ambuscade
+      ['^numpad5'] = "Requiescat", --aeonic
+      ['^numpad6'] = "Sanguine Blade",
+      ['^numpad1'] = "Circle Blade", --aoe
+      ['^numpad2'] = "Red Lotus Blade", --elemental
+      ['^numpad3'] = "Seraph Blade", --elemental
+    },
+    ['RDM'] = {
+      ['^numpad8'] = "Death Blossom", --mythic
+    },
+    ['PLD'] = {
+      ['^numpad8'] = "Atonement", --mythic
+    },
+    ['BLU'] = {
+      ['^numpad8'] = "Expiacion", --mythic
+    },
+  },
+  ['Great Sword'] = {
+    ['Default'] = {
+      ['^numpad7'] = "Torcleaver", --empyrean
+      ['^numpad8'] = "Dimidiation", --mythic
+      ['^numpad9'] = "Scourge", --relic
+      ['^numpad4'] = "Ground Strike", --ambuscade
+      ['^numpad5'] = "Resolution", --aeonic
+      ['^numpad6'] = "",
+      ['^numpad1'] = "Shockwave", --aoe
+      ['^numpad2'] = "Freezebite", --elemental
+      ['^numpad3'] = "Herculean Slash",
+    },
+  },
+  ['Axe'] = {
+    ['Default'] = {
+      ['^numpad7'] = "Cloudsplitter", --empyrean
+      ['^numpad8'] = "Primal Rend", --mythic
+      ['^numpad9'] = "Onslaught", --relic
+      ['^numpad4'] = "Decimation", --ambuscade
+      ['^numpad5'] = "Ruinator", --aeonic
+      ['^numpad6'] = "",
+      ['^numpad1'] = "", --aoe
+      ['^numpad2'] = "",
+      ['^numpad3'] = "",
+    },
+  },
+  ['Great Axe'] = {
+    ['Default'] = {
+      ['^numpad7'] = "Ukko's Fury", --empyrean
+      ['^numpad8'] = "King's Justice", --mythic
+      ['^numpad9'] = "Metatron Torment", --relic
+      ['^numpad4'] = "Steel Cyclone", --ambuscade
+      ['^numpad5'] = "Upheaval", --aeonic
+      ['^numpad6'] = "",
+      ['^numpad1'] = "", --aoe
+      ['^numpad2'] = "",
+      ['^numpad3'] = "",
+    },
+  },
+  ['Scythe'] = {
+    ['Default'] = {
+      ['^numpad7'] = "Quietus", --empyrean
+      ['^numpad8'] = "Insurgency", --mythic
+      ['^numpad9'] = "Catastrophe", --relic
+      ['^numpad4'] = "Spiral Hell", --ambuscade
+      ['^numpad5'] = "Entropy", --aeonic
+      ['^numpad6'] = "",
+      ['^numpad1'] = "", --aoe
+      ['^numpad2'] = "Shadow of Death", --elemental
+      ['^numpad3'] = "",
+    },
+  },
+  ['Polearm'] = {
+    ['Default'] = {
+      ['^numpad7'] = "Camlann's Torment", --empyrean
+      ['^numpad8'] = "Drakesbane", --mythic
+      ['^numpad9'] = "Geirskogul", --relic
+      ['^numpad4'] = "Impulse Drive", --ambuscade
+      ['^numpad5'] = "Stardiver", --aeonic
+      ['^numpad6'] = "",
+      ['^numpad1'] = "", --aoe
+      ['^numpad2'] = "Raiden Thrust", --elemental
+      ['^numpad3'] = "",
+    },
+  },
+  ['Katana'] = {
+    ['Default'] = {
+      ['^numpad7'] = "Blade: Hi", --empyrean
+      ['^numpad8'] = "Blade: Kamu", --mythic
+      ['^numpad9'] = "Blade: Metsu", --relic
+      ['^numpad4'] = "Blade: Ku", --ambuscade
+      ['^numpad5'] = "Blade: Shun", --aeonic
+      ['^numpad6'] = "Blade: Chi",
+      ['^numpad1'] = "Blade: Yu", --aoe
+      ['^numpad2'] = "Blade: Ei", --elemental
+      ['^numpad3'] = "Blade: Ten",
+    },
+  },
+  ['Great Katana'] = {
+    ['Default'] = {
+      ['^numpad7'] = "Tachi: Fudo", --empyrean
+      ['^numpad8'] = "Tachi: Rana", --mythic
+      ['^numpad9'] = "Tachi: Kaiten", --relic
+      ['^numpad4'] = "Tachi: Kasha", --ambuscade
+      ['^numpad5'] = "Tachi: Shoha", --aeonic
+      ['^numpad6'] = "",
+      ['^numpad1'] = "", --aoe
+      ['^numpad2'] = "Tachi: Jinpu", --elemental
+      ['^numpad3'] = "Tachi: Koki", --elemental
+    },
+  },
+  ['Club'] = {
+    ['Default'] = {
+      ['^numpad7'] = "Dagan", --empyrean
+      ['^numpad8'] = "",
+      ['^numpad9'] = "Randgrith", --relic
+      ['^numpad4'] = "Black Halo", --ambuscade
+      ['^numpad5'] = "Realmrazer", --aeonic
+      ['^numpad6'] = "",
+      ['^numpad1'] = "", --aoe
+      ['^numpad2'] = "Seraph Strike", --elemental
+      ['^numpad3'] = "",
+    },
+    ['WHM'] = {
+      ['^numpad8'] = "Mystic Boon", --mythic
+    },
+    ['GEO'] = {
+      ['^numpad8'] = "Exudation", --mythic
+    },
+  },
+  ['Staff'] = {
+    ['Default'] = {
+      ['^numpad7'] = "Myrkr", --empyrean
+      ['^numpad8'] = "",
+      ['^numpad9'] = "Gates of Tartarus", --relic
+      ['^numpad4'] = "Retribution", --ambuscade
+      ['^numpad5'] = "Shattersoul", --aeonic
+      ['^numpad6'] = "",
+      ['^numpad1'] = "Cataclysm", --aoe
+      ['^numpad2'] = "Earth Crusher", --elemental
+      ['^numpad3'] = "Sunburst", --elemental
+    },
+    ['BLM'] = {
+      ['^numpad8'] = "Vidohunir", --mythic
+    },
+    ['SMN'] = {
+      ['^numpad8'] = "Garland of Bliss", --mythic
+    },
+    ['SCH'] = {
+      ['^numpad8'] = "Omniscience", --mythic
+    },
+  },
+}
+
+
 -------------------------------------------------------------------------------
 -- Instatiated variables for storing values and states
 -------------------------------------------------------------------------------
 --Most recent weapons (used for re-arming)
 sets.MostRecent = {main="",sub="",ranged="",ammo=""} --DO NOT MODIFY
+current_weapon_type = nil --DO NOT MODIFY
 
 -------------------------------------------------------------------------------
 -- Functions
@@ -108,7 +320,7 @@ end
 -- If 'main', 'sub', or 'ranged' are in idle, engaged, or defense sets
 -- it may conflict with this functionality
 function update_and_rearm_weapons()
-  --Save state of any equipped weapons
+  -- Save state of any equipped weapons
   if player.equipment.main ~= "empty" then
     if not is_encumbered('main') then
       sets.MostRecent.main = player.equipment.main
@@ -130,8 +342,8 @@ function update_and_rearm_weapons()
     end
   end
 
-  --Disarm Handling--
-  --Turns out that the table fills the string "empty" for empty slot. It won't return nil
+  -- Disarm Handling
+  -- Table fills the string "empty" for empty slot. It won't return nil
   if (player.equipment.main == "empty" and sets.MostRecent.main ~= "empty")
       or (player.equipment.ranged == "empty" and sets.MostRecent.ranged ~= "empty") then
     if state.WeaponLock == nil or state.WeaponLock.value == false then
@@ -140,9 +352,107 @@ function update_and_rearm_weapons()
   end
 end
 
+function update_main_weaponskill_binds(has_job_changed)
+  local weapon = nil
+  local weapon_type = nil
+  -- Handle barehanded case
+  if player.equipment.main == nil or player.equipment.main == 0 or player.equipment.main == 'empty' then
+    weapon_type = 'Hand-to-Hand'
+  else -- Handle equipped weapons case
+    weapon = res.items:with('name', player.equipment.main)
+    weapon_type = res.skills[weapon.skill].en
+  end
+  
+  -- Do nothing if weapon type is the same as last checked and job hasn't changed
+  if weapon_type == current_weapon_type and not has_job_changed then
+    return
+  end
+
+  -- Update the weapon type tracker
+  current_weapon_type = weapon_type
+
+  -- Get defined bindings
+  local ws_bindings = get_ws_bindings(weapon_type)
+  -- Set weaponskill bindings according to mapping table
+  -- TODO
+end
+
+function get_ws_bindings(weapon_type)
+  -- Null check
+  if default_ws_bindings == nil then
+    return {}
+  end
+
+  local player = windower.ffxi.get_player()
+  local weapon_specific_binding
+  local final_bindings = {}
+
+  -- If user table exists for the weapon type, use those instead of defaults
+  if user_ws_binding[weapon_type] then
+    weapon_specific_binding = user_ws_binding[weapon_type]
+  else
+    weapon_specific_binding = default_ws_binding[weapon_type]
+  end
+
+  -- Combine job-specific tables default table
+  for key,job_specific_table in pairs(weapon_specific_binding) do
+    local is_key_sub_job = key:sub(1, 1) == '/'
+    if key:lower() == 'Default' or key:lower()=='All' or key:lower()=='Any' then
+      -- Add in default/all/any job bindings
+      for keybind,ws_name in pairs(job_specific_table) do
+        final_bindings[keybind] = ws_name
+      end
+      -- Merge in job-specific bindings
+    elseif (is_key_sub_job and key:sub(2,key.len):lower() == player.sub_job:lower()) or
+        (not is_key_sub_job and key:lower() == player.main_job:lower()) then
+      for keybind,ws_name in pairs(job_specific_table) do
+        final_bindings[keybind] = ws_name
+      end
+    end
+  end
+  
+  -- Purge invalid entries
+  final_bindings = purge_invalid_ws_bindings(final_bindings)
+
+  -- Set keybinds
+  -- TODO
+end
+
+function purge_invalid_ws_bindings(ws_bindings)
+  local index = 1
+  local valid_keybinds = res.keybinds; -- TODO: Get actual map reference
+  for keybind,ws_name in pairs(ws_bindings) do
+    -- Remove entries that have blank key
+    if keybind == '' then
+      ws_bindings:remove(index)
+    elseif not valid_keybinds[keybind] then-- Remove entries whose key is not on keybind list
+      ws_bindings:remove(index)
+    elseif ws_name == '' then -- Remove entries that have blank value
+      ws_bindings:remove(index)
+    elseif not res.weapon_skills:with('en', ws_name) then -- Remove entries that have value that isn't on WS list
+      ws_bindings:remove(index)
+    end
+    index = index + 1
+  end
+  return ws_bindings
+end
+
+
+-------------------------------------------------------------------------------
+-- Event hooks
+-------------------------------------------------------------------------------
 -- Executes on every frame. This is just a way to create a perpetual loop.
 windower.register_event('prerender',function()
   if USE_WEAPON_REARM then
     update_and_rearm_weapons()
   end
+  if USE_DYNAMIC_MAIN_WS_KEYBINDS then
+    update_main_weaponskill_binds(false)
+  end
 end)
+
+-- Hook into job/subjob change event
+-- TODO
+if USE_DYNAMIC_MAIN_WS_KEYBINDS then
+  update_main_weaponskill_binds(true)
+end
