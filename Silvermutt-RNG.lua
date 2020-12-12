@@ -386,7 +386,7 @@ function init_gear_sets()
     legs="Arcadian Braccae +3",
     feet=gear.Herc_WSD_feet,
     neck="Fotia Gorget",
-    ear1="Sherida Earring",
+    ear1="Ishvara Earring",
     ear2="Moonshade Earring",
     ring1="Regal Ring",
     ring2="Dingir Ring",
@@ -395,7 +395,6 @@ function init_gear_sets()
     -- head="Orion Beret +3",
     -- body=gear.Herc_RA_WSD_body,
     -- feet=gear.Herc_RA_WSD_feet,
-    -- ear1="Ishvara Earring",
     -- ring2="Epaminondas's Ring",
   }
   sets.precast.WS.MaxTP = set_combine(sets.precast.WS, {
@@ -645,24 +644,17 @@ function init_gear_sets()
     legs="Arcadian Braccae +3",
     feet=gear.Herc_WSD_feet,
     neck="Scout's Gorget +1",
-    ear1="Sherida Earring",
+    ear1="Ishvara Earring",
     ear2="Moonshade Earring",
     ring1="Regal Ring",
     ring2="Ilabrat Ring",
-  
-    -- Goal:
+    waist="Sailfi Belt +1",
     -- head="Orion Beret +3",
     -- body=gear.Herc_STR_WSD_body,
-    -- hands="Meghanada Gloves +2",
-    -- legs="Aradian Braccae +3",
     -- feet=gear.Herc_STR_WSD_feet,
     -- neck="Scout's Gorget +2",
-    -- ear1="Ishvara Earring",
-    -- ear2="Moonshade Earring",
-    -- ring1="Regal Ring",
     -- ring2="Epaminondas's Ring",
     -- back=gear.RNG_STR_WSD_Cape,
-    -- waist="Sailfi Belt +1",
   })
   sets.precast.WS['Savage Blade'].MaxTP = set_combine(sets.precast.WS['Savage Blade'], {
   })

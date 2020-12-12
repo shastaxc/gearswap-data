@@ -562,22 +562,22 @@ function init_gear_sets()
     -- back=gear.DNC_WS1_Cape,
   }) -- 80% DEX
   sets.precast.WS["Rudra's Storm"].MaxTP = set_combine(sets.precast.WS["Rudra's Storm"], {
-    -- ear2="Ishvara Earring",
+    ear2="Ishvara Earring",
   })
   sets.precast.WS["Rudra's Storm"].LowAcc = set_combine(sets.precast.WS["Rudra's Storm"], {
   })
   sets.precast.WS["Rudra's Storm"].LowAccMaxTP = set_combine(sets.precast.WS["Rudra's Storm"].LowAcc, {
-    -- ear2="Ishvara Earring",
+    ear2="Ishvara Earring",
   })
   sets.precast.WS["Rudra's Storm"].MidAcc = set_combine(sets.precast.WS["Rudra's Storm"].LowAcc, {
   })
   sets.precast.WS["Rudra's Storm"].MidAccMaxTP = set_combine(sets.precast.WS["Rudra's Storm"].MidAcc, {
-    -- ear2="Ishvara Earring",
+    ear2="Ishvara Earring",
   })
   sets.precast.WS["Rudra's Storm"].HighAcc = set_combine(sets.precast.WS["Rudra's Storm"].MidAcc, {
   })
   sets.precast.WS["Rudra's Storm"].HighAccMaxTP = set_combine(sets.precast.WS["Rudra's Storm"].HighAcc, {
-    -- ear2="Ishvara Earring",
+    ear2="Ishvara Earring",
   })
 
   sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
@@ -1044,12 +1044,12 @@ function init_gear_sets()
     -- ring2="Epaminondas's Ring",
   }
   sets.buff['Climactic Flourish'].WS = set_combine(sets.buff['Climactic Flourish'], {
-    -- ear1="Ishvara Earring",
-    -- ear2="Moonshade Earring",
+    ear1="Ishvara Earring",
+    ear2="Moonshade Earring",
   })
   sets.buff['Climactic Flourish'].WSMaxTP = set_combine(sets.buff['Climactic Flourish'], {
-    -- ear1="Ishvara Earring",
-    -- ear2="Sherida Earring",
+    ear1="Ishvara Earring",
+    ear2="Sherida Earring",
   })
   sets.buff['Closed Position'] = {
     feet="Horos Toe Shoes +3",
