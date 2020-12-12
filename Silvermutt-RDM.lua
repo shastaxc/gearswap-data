@@ -72,9 +72,8 @@
 
 -- Initialization function for this job file.
 function get_sets()
+  -- Load and initialize Mote library
   mote_include_version = 2
-
-  -- Load and initialize the include file.
   include('Mote-Include.lua') -- Executes job_setup, user_setup, init_gear_sets
 end
 
@@ -1360,15 +1359,8 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 function job_precast(spell, action, spellMap, eventArgs)
-  -- Don't gearswap if status forbids the action
-  local forbidden_statuses = action_type_blocks[spell.action_type]
-  for k,status in pairs(forbidden_statuses) do
-    if buffactive[status] then
-      add_to_chat(167, 'Stopped due to status.')
-      eventArgs.cancel = true -- Stops the rest of the pipeline from executing
-      return -- Ends execution of this function
-    end
-  end
+  cancel_outranged_ws(spell, eventArgs)
+  cancel_on_blocking_status(spell, eventArgs)
 
   if spellMap == 'Utsusemi' then
     if buffactive['Copy Image (3)'] or buffactive['Copy Image (4+)'] then

@@ -2,6 +2,8 @@ send_command('lua l gearinfo')
 
 res = include('resources')
 inspect = include('inspect')
+packets = include('packets')
+include('SilverLibs')
 -------------------------------------------------------------------------------------------------------------------
 -- Modify the sets table.  Any gear sets that are added to the sets table need to
 -- be defined within this function, because sets isn't available until after the
@@ -26,13 +28,6 @@ no_swap_rings = S{"Duck Ring", "Homing Ring", "Invisible Ring", "Reraise Ring", 
     "Duodecennial Ring", "Kupofried's Ring", "Novennial Ring", "Undecennial Ring", "Allied Ring", "Resolution Ring",
     "Endorsement Ring", "Expertise Ring", "Vocation Ring"}
 mp_jobs = S{"WHM", "BLM", "RDM", "PLD", "DRK", "SMN", "BLU", "GEO", "RUN", "SCH"}
-action_type_blocks = {
-  ['Magic'] = {'terror', 'petrification', 'stun', 'sleep', 'charm', 'silence', 'mute', 'Omerta'},
-  ['Ranged Attack'] = {'terror', 'petrification', 'stun', 'sleep', 'charm'},
-  ['Ability'] = {'terror', 'petrification', 'stun', 'sleep', 'charm', 'amnesia', 'impairment'},
-  ['Item'] = {'terror', 'petrification', 'stun', 'sleep', 'charm', 'muddle'},
-  ['Monster Move'] = {'terror', 'petrification', 'stun', 'sleep', 'charm', 'amnesia'},
-}
 
 current_weapon_type = nil -- Do not modify
 locked_neck = false -- Do not modify
@@ -54,9 +49,6 @@ function define_global_sets()
   sets.ToyWeapon.Polearm = {main="Pitchfork +1",sub="Tzacab Grip"}
   sets.ToyWeapon.GreatSword = {main="Lament",sub="Tzacab Grip"}
   sets.ToyWeapon.Scythe = {main="Lost Sickle",sub="Tzacab Grip"}
-
-  --Most recent weapon (used for re-arming)
-  sets.MostRecent = {main="",sub="",ranged="",ammo=""} --DO NOT MODIFY
 
   -- Augmented Weapons
   gear.Colada_ENH = {name="Colada", augments={'Enh. Mag. eff. dur. +4','INT+5','Mag. Acc.+9',}}
@@ -309,51 +301,6 @@ windower.register_event('zone change',
     end
   end
 )
-
-function has_item(bag_name, item_name)
-  local bag = res.bags:with('en', bag_name)
-  local item = res.items:with('en', item_name)
-  local items_in_bag = windower.ffxi.get_items(bag['id'])
-  for k,v in pairs(items_in_bag) do
-    if type(v)~='number' and type(v)~='boolean' and v['id'] == item['id'] then
-      return true
-    end
-  end
-  return false
-end
-
-function update_weapons()
-  --Save state of any equipped weapons
-  if player.equipment.main ~= "empty" then
-    if not is_encumbered('main') then
-      sets.MostRecent.main = player.equipment.main
-    end
-    if not is_encumbered('sub') then
-      sets.MostRecent.sub = player.equipment.sub
-    end
-  end
-  if player.equipment.ranged ~= "empty" and player.equipment.ranged ~= nil then
-    -- Only save if ranged is a combat item
-    local rangedItem = res.items:with('name', player.equipment.ranged)
-    if res.skills[rangedItem.skill].category == 'Combat' then
-      if not is_encumbered('ranged') then
-        sets.MostRecent.ranged = player.equipment.ranged
-      end
-      if not is_encumbered('ammo') then
-        sets.MostRecent.ammo = player.equipment.ammo
-      end
-    end
-  end
-
-  --Disarm Handling--
-  --Turns out that the table fills the string "empty" for empty slot. It won't return nil
-  if (player.equipment.main == "empty" and sets.MostRecent.main ~= "empty")
-      or (player.equipment.ranged == "empty" and sets.MostRecent.ranged ~= "empty") then
-    if state.WeaponLock.value == false then
-      equip(sets.MostRecent)
-    end
-  end
-end
 
 function update_weaponskill_binds()
   local weapon = nil

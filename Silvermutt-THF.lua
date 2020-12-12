@@ -59,9 +59,8 @@
 
 -- Initialization function for this job file.
 function get_sets()
+  -- Load and initialize Mote library
   mote_include_version = 2
-
-  -- Load and initialize the include file.
   include('Mote-Include.lua') -- Executes job_setup, user_setup, init_gear_sets
 end
 
@@ -70,6 +69,7 @@ function job_setup()
   include('Mote-TreasureHunter')
 
   lockstyleset = 1
+  USE_WEAPON_REARM = true
 
   Haste = 0 -- Do not modify
   DW_needed = 0 -- Do not modify
@@ -969,15 +969,8 @@ end
 -- Job-specific hooks for standard casting events.
 -------------------------------------------------------------------------------------------------------------------
 function job_precast(spell, action, spellMap, eventArgs)
-  -- Don't gearswap if status forbids the action
-  local forbidden_statuses = action_type_blocks[spell.action_type]
-  for k,status in pairs(forbidden_statuses) do
-    if buffactive[status] then
-      add_to_chat(167, 'Stopped due to status.')
-      eventArgs.cancel = true -- Stops the rest of the pipeline from executing
-      return -- Ends execution of this function
-    end
-  end
+  cancel_outranged_ws(spell, eventArgs)
+  cancel_on_blocking_status(spell, eventArgs)
   
   -- If slot is locked, keep current equipment on
   if locked_neck then equip({ neck=player.equipment.neck }) end
@@ -1084,7 +1077,6 @@ end
 -- Called by the 'update' self-command, for common needs.
 -- Set eventArgs.handled to true if we don't want automatic equipping of gear.
 function job_handle_equipping_gear(playerStatus, eventArgs)
-  update_weapons()
   check_gear()
   update_idle_groups()
   update_combat_form()

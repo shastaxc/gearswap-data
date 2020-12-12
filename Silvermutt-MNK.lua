@@ -35,9 +35,8 @@
 
 -- Initialization function for this job file.
 function get_sets()
+  -- Load and initialize Mote library
   mote_include_version = 2
-
-  -- Load and initialize the include file.
   include('Mote-Include.lua') -- Executes job_setup, user_setup, init_gear_sets
 end
 
@@ -46,6 +45,7 @@ function job_setup()
   include('Mote-TreasureHunter')
 
   lockstyleset = 5
+  USE_WEAPON_REARM = true
 
   state.Buff.Footwork = buffactive.Footwork or false
   state.Buff.Impetus = buffactive.Impetus or false
@@ -838,15 +838,8 @@ end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
 function job_precast(spell, action, spellMap, eventArgs)
-  -- Don't gearswap if status forbids the action
-  local forbidden_statuses = action_type_blocks[spell.action_type]
-  for k,status in pairs(forbidden_statuses) do
-    if buffactive[status] then
-      add_to_chat(167, 'Stopped due to status.')
-      eventArgs.cancel = true -- Stops the rest of the pipeline from executing
-      return -- Ends execution of this function
-    end
-  end
+  cancel_outranged_ws(spell, eventArgs)
+  cancel_on_blocking_status(spell, eventArgs)
 
   -- Don't gearswap for weaponskills when Defense is on.
   if spell.type == 'WeaponSkill' and state.DefenseMode.current ~= 'None' then
@@ -994,7 +987,6 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 function job_handle_equipping_gear(playerStatus, eventArgs)
-  update_weapons()
   check_gear()
   update_idle_groups()
   update_combat_form()

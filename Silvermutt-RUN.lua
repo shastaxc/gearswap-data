@@ -78,10 +78,8 @@
 
 -- Initialization function for this job file.
 function get_sets()
-  packets = include('packets')
+  -- Load and initialize Mote library
   mote_include_version = 2
-
-  -- Load and initialize the include file.
   include('Mote-Include.lua') -- Executes job_setup, user_setup, init_gear_sets
   coroutine.schedule(function() 
     send_command('gs c weaponset current')
@@ -91,6 +89,7 @@ end
 -- Executes on first load and main job change
 function job_setup()
   lockstyleset = 3
+  USE_WEAPON_REARM = true
   rayke_duration = 34
   gambit_duration = 92
 
@@ -1035,15 +1034,8 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 function job_precast(spell, action, spellMap, eventArgs)
-  -- Don't gearswap if status forbids the action
-  local forbidden_statuses = action_type_blocks[spell.action_type]
-  for k,status in pairs(forbidden_statuses) do
-    if buffactive[status] then
-      add_to_chat(167, 'Stopped due to status.')
-      eventArgs.cancel = true -- Stops the rest of the pipeline from executing
-      return -- Ends execution of this function
-    end
-  end
+  cancel_outranged_ws(spell, eventArgs)
+  cancel_on_blocking_status(spell, eventArgs)
 
   if runes:contains(spell.english) then
     eventArgs.handled = true
@@ -1290,7 +1282,6 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 function job_handle_equipping_gear(playerStatus, eventArgs)
-  update_weapons()
   check_gear()
   update_idle_groups()
 end
