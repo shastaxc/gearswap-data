@@ -255,6 +255,8 @@ function init_gear_sets()
   -- Initializes trusts at iLvl 119
   sets.midcast.Trust = sets.precast.FC
 
+  sets.midcast.Utsusemi = sets.precast.FC
+
 
   ------------------------------------------------------------------------------------------------
   ------------------------------------- Weapon Skill Sets ----------------------------------------
@@ -570,7 +572,7 @@ function init_gear_sets()
   sets.MAB = {
     ammo="Pemphredo Tathlum", --4
     head="Highwing Helm", --20
-    body=gear.Samnuha_body, --25
+    body=gear.Samnuha_body, --33
     hands=gear.Leyline_Gloves, --30
     legs=gear.Herc_MAB_legs, --33
     feet=gear.Herc_MAB_feet, --50
@@ -848,6 +850,17 @@ function job_precast(spell, action, spellMap, eventArgs)
   if spell.english == 'Boost' and not player.in_combat and state.DefenseMode.current == 'None' then
     equip(sets.precast.JA['Boost'].Risky)
     eventArgs.handled = true
+  end
+
+  if spellMap == 'Utsusemi' then
+    if buffactive['Copy Image (3)'] or buffactive['Copy Image (4+)'] then
+      cancel_spell()
+      add_to_chat(123, '**!! '..spell.english..' Canceled: [3+ IMAGES] !!**')
+      eventArgs.handled = true
+      return
+    elseif buffactive['Copy Image'] or buffactive['Copy Image (2)'] then
+      send_command('cancel 66; cancel 444; cancel Copy Image; cancel Copy Image (2)')
+    end
   end
   
   -- If slot is locked, keep current equipment on
