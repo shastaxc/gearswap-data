@@ -59,6 +59,16 @@ end
 
 Whenever your weapons are removed, this function will re-equip whatever you previously had equipped. This covers 'main', 'sub', 'ranged', and 'ammo' slots.
 
+**Implementation**
+
+In your job file after `include`ing SilverLibs and Mote libs, add the following:
+```
+USE_WEAPON_REARM = true
+```
+Recommend putting it in your job lua instead of globals.
+
+**Usage**
+
 Functionality can be temporarily disabled by adding a togglable weapon lock state:
 ```
 state.WeaponLock = M(false, 'Weapon Lock')
@@ -69,30 +79,48 @@ And add a keybind to perform the actual toggling (WIN+W is used here but it can 
 send_command('bind @w gs c toggle WeaponLock')
 ```
 
-**Implementation**
-
-In your job file after `include`ing SilverLibs and Mote libs, add the following:
-```
-USE_WEAPON_REARM = true
-```
-Recommend putting it in your job lua instead of globals.
 
 **Known Issue**
 
 The 'sub' slot sometimes does not re-equip properly. Possibly a race condition.
 
-### Dynamic global weaponskill keybinds
+### Dynamic weaponskill keybinds
 **Descripton**
 
-Provides weaponskill keybinds that change dynamically based on your current weapon. The main purpose is
-so you can easily use multiple weapons on one job while using common keybinds for your skills (for example,
-you can always have Evisceration on the same button regardless of job).
+Provides weaponskill keybinds that change dynamically based on your current weapon. This function has the
+following benefits:
+- Easily use multiple weapons on one job. For example, having a dagger equipped will allow you to
+use 9 buttons for dagger weaponskills, and then changing your weapon to a sword will automatically unbind those
+dagger WS keybinds and then set your sword keybinds.
+- Use common keybinds for a specific weapon regardless of your job (but with the ability to customize it per job).
+- Have all your keybinds defined in one place instead of in each individual job file.
 
 Override functionality is included so that you can define your own keybinds in a global file without having
-to modify this library lua. Think of the keybinds defined in this library as defaults and you can override
-for a specific weapon's keybinds. To do so, create a global keybind file called `CharacterName-Globals.lua` and
-add a table called `user_ws_bindings`. This table must have the same format as `default_ws_bindings` in the library lua.
-The syntax is as follows:
+to modify this library lua.
+
+**Implementation**
+
+In your job file after `include`ing SilverLibs and Mote libs, add the following:
+```
+USE_DYNAMIC_WS_KEYBINDS = true
+```
+Recommend putting it in your job lua instead of globals.
+
+If you want to use `<stnpc>` targeting instead of the default `<t>` for your weaponskills you can set the
+following line of code in the same place (you can use separate targeting mode for main hand WSs vs ranged WSs):
+```
+MAIN_WS_TARGET_MODE = 'stnpc'
+```
+or
+```
+RANGED_WS_TARGET_MODE = 'stnpc'
+```
+
+**Usage**
+
+Think of the keybinds defined in this library as defaults and you can override for a specific weapon's keybinds.
+To do so, create a global keybind file called `CharacterName-Globals.lua` and add a table called `user_ws_bindings`.
+This table must have the same format as `default_ws_bindings` in the library lua. The syntax is as follows:
 ```
 user_ws_bindings = {
   ['Weapon Category'] = {
@@ -106,28 +134,26 @@ user_ws_bindings = {
     ['/SUB'] = {
       ['keybind1'] = "WS4 Name",
     },
+    ['JOB/SUB'] = {
+      ['keybind1'] = "WS4 Name",
+    },
   },
 }
 ```
-The category's bindings will be merged in the following order: Default -> Job (using player's current job) -> Sub (using
-player's current sub job). Default bindings will apply regardless of job. Job-specific bindings will overwrite Default
-bindings in the case that they both define the same keybind. Sub-job-specific bindings will overwrite the other two.
 
-Note 1: To use a subjob binding the job must be prefixed with '/'. For example, '/NIN' will apply
-those bindings if your sub job is Ninja.
+The category's bindings will be merged in the following order: Default -> Main Job -> Sub Job -> Main Job/Sub Job Combo.
+The player's current main job and sub job are used for matching and non-matching job definitions will be ignored. Default
+bindings will apply for all jobs.
 
-Note 2: The 'Default' key is case-sensitive, you must use a capital 'D'. The job and sub job keys are not case sensitive.
+In other words, the most specific definitions will overwrite all the others. A Job/Sub combo is obviously the most specific.
 
-**Implementation**
+The order in which they are defined in your table does not matter. Overwrites will always go in the order described above.
 
-In your job file after `include`ing SilverLibs and Mote libs, add the following:
-```
-USE_DYNAMIC_MAIN_WS_KEYBINDS = true
-```
-Recommend putting it in your job lua instead of globals.
+To use a sub job binding the key must begin with '/'. For example, '/NIN' will apply those bindings if your sub job is Ninja.
 
-If you want to use `<stnpc>` targeting instead of `<t>` for your weaponskills you can set the following line
-of code in the same place:
-```
-MAIN_WS_TARGET_MODE = 'stnpc'
-```
+The 'Default' key is case-sensitive, you must use a capital 'D'. The job and sub job keys are not case sensitive.
+
+**Known Issues**
+
+If any of your job luas have an "Unbind" command that unbinds any of the ws keybinds you have defined, you may run into an
+issue where switching jobs results in your WS keybinds not setting properly.

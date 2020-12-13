@@ -70,7 +70,7 @@ function job_setup()
 
   lockstyleset = 1
   USE_WEAPON_REARM = true
-  USE_DYNAMIC_MAIN_WS_KEYBINDS = true
+  USE_DYNAMIC_WS_KEYBINDS = true
 
   Haste = 0 -- Do not modify
   DW_needed = 0 -- Do not modify

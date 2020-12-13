@@ -90,7 +90,7 @@ end
 function job_setup()
   lockstyleset = 3
   USE_WEAPON_REARM = true
-  USE_DYNAMIC_MAIN_WS_KEYBINDS = true
+  USE_DYNAMIC_WS_KEYBINDS = true
   rayke_duration = 34
   gambit_duration = 92
 

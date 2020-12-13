@@ -46,7 +46,7 @@ function job_setup()
 
   lockstyleset = 5
   USE_WEAPON_REARM = true
-  USE_DYNAMIC_MAIN_WS_KEYBINDS = true
+  USE_DYNAMIC_WS_KEYBINDS = true
 
   state.Buff.Footwork = buffactive.Footwork or false
   state.Buff.Impetus = buffactive.Impetus or false

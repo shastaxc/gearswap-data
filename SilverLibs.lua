@@ -5,6 +5,20 @@ res = include('resources')
 
 
 -------------------------------------------------------------------------------
+-- Instatiated variables for storing values and states
+-------------------------------------------------------------------------------
+-- Most recent weapons (used for re-arming)
+sets.MostRecent = {main="",sub="",ranged="",ammo=""} --DO NOT MODIFY
+current_weapon_type = nil --DO NOT MODIFY
+latest_ws_binds = {}
+USE_WEAPON_REARM = false
+USE_DYNAMIC_MAIN_WS_KEYBINDS = false
+MAIN_WS_TARGET_MODE = 't'
+RANGED_WS_TARGET_MODE = 't'
+current_ranged_weapon_type = nil -- Do not modify
+
+
+-------------------------------------------------------------------------------
 -- Constants and maps
 -------------------------------------------------------------------------------
 range_mult = {
@@ -44,7 +58,7 @@ default_ws_bindings = {
   ['Hand-to-Hand'] = {
     ['Default'] = {
       ['^numpad7'] = "Victory Smite", --empyrean
-      ['^numpad8'] = "",
+      ['^numpad8'] = "", --mythic
       ['^numpad9'] = "Final Heaven", --relic
       ['^numpad4'] = "Asuran Fists", --ambuscade
       ['^numpad5'] = "Shijin Spiral", --aeonic
@@ -63,7 +77,7 @@ default_ws_bindings = {
   ['Dagger'] = {
     ['Default'] = {
       ['^numpad7'] = "Rudra's Storm", --empyrean
-      ['^numpad8'] = "",
+      ['^numpad8'] = "", --mythic
       ['^numpad9'] = "Mercy Stroke", --relic
       ['^numpad4'] = "Evisceration", --ambuscade
       ['^numpad5'] = "Exenterator", --aeonic
@@ -85,7 +99,7 @@ default_ws_bindings = {
   ['Sword'] = {
     ['Default'] = {
       ['^numpad7'] = "Chant du Cygne", --empyrean
-      ['^numpad8'] = "",
+      ['^numpad8'] = "", --mythic
       ['^numpad9'] = "Knights of Round", --relic
       ['^numpad4'] = "Savage Blade", --ambuscade
       ['^numpad5'] = "Requiescat", --aeonic
@@ -198,7 +212,7 @@ default_ws_bindings = {
   ['Club'] = {
     ['Default'] = {
       ['^numpad7'] = "Dagan", --empyrean
-      ['^numpad8'] = "",
+      ['^numpad8'] = "", --mythic
       ['^numpad9'] = "Randgrith", --relic
       ['^numpad4'] = "Black Halo", --ambuscade
       ['^numpad5'] = "Realmrazer", --aeonic
@@ -217,8 +231,8 @@ default_ws_bindings = {
   ['Staff'] = {
     ['Default'] = {
       ['^numpad7'] = "Myrkr", --empyrean
-      ['^numpad8'] = "",
-      ['^numpad9'] = "Gates of Tartarus", --relic
+      ['^numpad8'] = "", --mythic
+      ['^numpad9'] = "Gate of Tartarus", --relic
       ['^numpad4'] = "Retribution", --ambuscade
       ['^numpad5'] = "Shattersoul", --aeonic
       ['^numpad6'] = "Shell Crusher",
@@ -234,6 +248,53 @@ default_ws_bindings = {
     },
     ['SCH'] = {
       ['^numpad8'] = "Omniscience", --mythic
+    },
+  },
+  -- =====================================================
+  -- IMPORTANT: Ranged keybinds should be different than
+  -- all of the other WS keybinds! Otherwise, you will
+  -- only get either main WSs or ranged WSs, but not both!
+  -- =====================================================
+  ['Archery'] = {
+    ['Default'] = {
+      ['!numpad7'] = "Jishnu's Radiance", --empyrean
+      ['!numpad8'] = "", --mythic
+      ['!numpad9'] = "Namas Arrow", --relic
+      ['!numpad4'] = "Empyreal Arrow", --ambuscade
+      ['!numpad5'] = "Apex Arrow", --aeonic
+      ['!numpad6'] = "Sidewinder",
+      ['!numpad1'] = "Dulling Arrow",
+      ['!numpad2'] = "Flaming Arrow", --elemental
+      ['!numpad3'] = "Refulgent Arrow",
+    },
+    ['RNG'] = {
+      ['!numpad9'] = "Namas Arrow", --relic
+      ['!numpad5'] = "Apex Arrow", --aeonic
+    },
+    ['SAM'] = {
+      ['!numpad9'] = "Namas Arrow", --relic
+    },
+  },
+  ['Marksmanship'] = {
+    ['Default'] = {
+      ['!numpad7'] = "Wildfire", --empyrean
+      ['!numpad8'] = "", --mythic
+      ['!numpad9'] = "", --relic
+      ['!numpad4'] = "Detonator",
+      ['!numpad5'] = "", --aeonic
+      ['!numpad6'] = "Slug Shot",
+      ['!numpad1'] = "Sniper Shot",
+      ['!numpad2'] = "Hot Shot", --elemental
+      ['!numpad3'] = "Numbing Shot",
+    },
+    ['RNG'] = {
+      ['!numpad8'] = "Trueflight", --mythic
+      ['!numpad5'] = "Last Stand", --aeonic
+      ['!numpad9'] = "Coronach", --relic
+    },
+    ['COR'] = {
+      ['!numpad8'] = "Leaden Salute", --mythic
+      ['!numpad5'] = "Last Stand", --aeonic
     },
   },
 }
@@ -386,19 +447,6 @@ valid_keybinds = S{
   "webstop",
 }
 
-
--------------------------------------------------------------------------------
--- Instatiated variables for storing values and states
--------------------------------------------------------------------------------
---Most recent weapons (used for re-arming)
-sets.MostRecent = {main="",sub="",ranged="",ammo=""} --DO NOT MODIFY
-current_weapon_type = nil --DO NOT MODIFY
-latest_ws_binds = {}
-USE_WEAPON_REARM = false
-USE_DYNAMIC_MAIN_WS_KEYBINDS = false
-MAIN_WS_TARGET_MODE = 't'
-
-
 -------------------------------------------------------------------------------
 -- Functions
 -------------------------------------------------------------------------------
@@ -407,6 +455,7 @@ function init_settings()
   USE_WEAPON_REARM = false
   USE_DYNAMIC_MAIN_WS_KEYBINDS = false
   MAIN_WS_TARGET_MODE = 't'
+  RANGED_WS_TARGET_MODE = 't'
 end
 
 -- 'ws_range' expected to be the range pulled from weapon_skills.lua
@@ -511,53 +560,124 @@ function update_and_rearm_weapons()
   end
 end
 
-function update_main_weaponskill_binds(has_job_changed)
-  local weapon = nil
-  local weapon_type = nil
+function update_weaponskill_binds(has_job_changed)
+  local has_main_weapon_changed = false
+  local has_ranged_weapon_changed = false
+  local main_weapon = nil
+  local main_weapon_type = nil
+  local ranged_weapon = nil
+  local ranged_weapon_type = nil
+
+  -- Get main weapon and type
   -- Handle barehanded case
   if player.equipment.main == nil or player.equipment.main == 0 or player.equipment.main == 'empty' then
-    weapon_type = 'Hand-to-Hand'
+    main_weapon_type = 'Hand-to-Hand'
   else -- Handle equipped weapons case
-    weapon = res.items:with('name', player.equipment.main)
-    weapon_type = res.skills[weapon.skill].en
+    main_weapon = res.items:with('name', player.equipment.main)
+    main_weapon_type = res.skills[main_weapon.skill].en
   end
+
+  -- Get ranged weapon and type
+  if player.equipment.ranged ~= nil and player.equipment.ranged ~= 0 and player.equipment.ranged ~= 'empty' then
+    ranged_weapon = res.items:with('name', player.equipment.ranged)
+    ranged_weapon_type = res.skills[ranged_weapon.skill].en
+  end
+
+  has_main_weapon_changed = main_weapon_type ~= current_main_weapon_type
+  has_ranged_weapon_changed = ranged_weapon_type ~= current_ranged_weapon_type
   
-  -- Do nothing if weapon type is the same as last checked and job hasn't changed
-  if weapon_type == current_weapon_type and not has_job_changed then
+  -- Do not proceed to update keybinds if:
+  -- Main weapon type has not changed, and
+  -- Ranged weapon type has not changed, and
+  -- Job has not changed
+  if not has_main_weapon_changed and not has_ranged_weapon_changed and not has_job_changed then
     return
   end
 
-  -- Update the weapon type tracker
-  current_weapon_type = weapon_type
+  -- Update the main weapon type tracker and get new keybinds
+  local new_main_ws_bindings = {}
+  if has_main_weapon_changed or has_job_changed then
+    current_main_weapon_type = main_weapon_type
 
-  -- Get defined bindings
-  local new_ws_bindings = get_ws_bindings(weapon_type)
+    -- Get defined bindings
+    new_main_ws_bindings = get_ws_bindings(main_weapon_type)
+  end
 
-  -- Unbind previous bindings if there is no overlap in new bindings
+  -- Update the ranged weapon type tracker and get new keybinds
+  local new_ranged_ws_bindings = {}
+  if has_ranged_weapon_changed or has_job_changed then
+    current_ranged_weapon_type = ranged_weapon_type
+
+    -- Get defined bindings
+    new_ranged_ws_bindings = get_ws_bindings(ranged_weapon_type)
+  end
+
+  -- If main changed, unbind previous main bindings if there is no overlap in new bindings.
+  -- If ranged changed, unbind previous ranged bindings if there is no overlap in new bindings.
+  -- Also, if no ranged weapon is equipped, unbind all ranged WS
   for old_keybind,old_ws_name in pairs(latest_ws_binds) do
-    local is_same = false
-    for new_keybind,new_ws_name in pairs(new_ws_bindings) do
-      if old_keybind == new_keybind then
-        is_same = true
-        break
+    local ws = res.weapon_skills:with('en', old_ws_name)
+    local is_main_hand_keybind = ws.skill > 0 and ws.skill < 13 -- Skill ID 1-12 are main hand
+    if is_main_hand_keybind and has_main_weapon_changed then -- Only consider main hand keybinds
+      local is_same = false
+      for new_keybind,new_ws_name in pairs(new_main_ws_bindings) do
+        if old_keybind == new_keybind then
+          is_same = true
+          break
+        end
+      end
+      if not is_same then
+        send_command("unbind "..old_keybind)
+      end
+    elseif has_ranged_weapon_changed then -- Assume it's a ranged keybind if it's not main hand
+      local is_same = false
+      for new_keybind,new_ws_name in pairs(new_ranged_ws_bindings) do
+        if old_keybind == new_keybind then
+          is_same = true
+          break
+        end
+      end
+      if not is_same then
+        send_command("unbind "..old_keybind)
       end
     end
-    if not is_same then
-      send_command("unbind "..old_keybind)
+  end
+
+  -- Merge main and ranged keybinds into same table
+  local merged_main_ranged_bindings = new_main_ws_bindings
+  for keybind,ws_name in pairs(new_ranged_ws_bindings) do
+    -- If key is already in the table for main hand WS, warn user
+    if merged_main_ranged_bindings[keybind] then
+      print('Keybind Overwrite Warning: "'..ws_name..'" overwriting "'..
+          merged_main_ranged_bindings[keybind]..'" keybind ('..keybind..').')
     end
+    merged_main_ranged_bindings[keybind] = new_ranged_ws_bindings[keybind]
   end
 
   -- Set weaponskill bindings according to table
-  for keybind,ws_name in pairs(new_ws_bindings) do
-    send_command("bind "..keybind.." input /ws \""..ws_name.."\" <"..MAIN_WS_TARGET_MODE..">")
+  for keybind,ws_name in pairs(merged_main_ranged_bindings) do
+    local ws = res.weapon_skills:with('en', ws_name)
+    local is_main_hand_keybind = ws.skill > 0 and ws.skill < 13 -- Skill ID 1-12 are main hand
+    if is_main_hand_keybind then
+      send_command("bind "..keybind.." input /ws \""..ws_name.."\" <"..MAIN_WS_TARGET_MODE..">")
+    else
+      send_command("bind "..keybind.." input /ws \""..ws_name.."\" <"..RANGED_WS_TARGET_MODE..">")
+    end
   end
 
-  latest_ws_binds = new_ws_bindings
+  latest_ws_binds = merged_main_ranged_bindings
+  
+  -- Notify user that keybinds have been updated
+  local notify_msg = 'WS Keybinds: '..main_weapon_type
+  if ranged_weapon_type ~= nil then
+    notify_msg = notify_msg..'/'..ranged_weapon_type..''
+  end
+  windower.add_to_chat(8, notify_msg)
 end
 
 function get_ws_bindings(weapon_type)
   -- Null check
-  if default_ws_bindings == nil then
+  if default_ws_bindings == nil or weapon_type == nil then
     return {}
   end
 
@@ -672,8 +792,8 @@ windower.register_event('prerender',function()
   if USE_WEAPON_REARM then
     update_and_rearm_weapons()
   end
-  if USE_DYNAMIC_MAIN_WS_KEYBINDS then
-    update_main_weaponskill_binds(false)
+  if USE_DYNAMIC_WS_KEYBINDS then
+    update_weaponskill_binds(false)
   end
 end)
 
@@ -681,7 +801,7 @@ end)
 windower.register_event('job change',function()
   init_settings()
 
-  if USE_DYNAMIC_MAIN_WS_KEYBINDS then
-    update_main_weaponskill_binds(true)
+  if USE_DYNAMIC_WS_KEYBINDS then
+    update_weaponskill_binds(true)
   end
 end)

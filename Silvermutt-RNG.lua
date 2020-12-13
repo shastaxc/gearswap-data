@@ -54,7 +54,7 @@ end
 function job_setup()
   lockstyleset = 6
   USE_WEAPON_REARM = true
-  USE_DYNAMIC_MAIN_WS_KEYBINDS = true
+  USE_DYNAMIC_WS_KEYBINDS = true
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.HybridMode:options('Normal', 'LightDef')
@@ -159,7 +159,6 @@ function user_setup()
   flurry = nil -- Do not modify
   DW_needed = 0 -- Do not modify
   DW = false -- Do not modify
-  current_ranged_weapon_type = nil -- Do not modify
   current_dp_type = nil -- Do not modify
   locked_waist = false -- Do not modify
 
@@ -1506,7 +1505,6 @@ end
 
 function job_update(cmdParams, eventArgs)
   handle_equipping_gear(player.status)
-  update_ranged_weaponskill_binds()
   update_dp_type() -- Requires DistancePlus addon
 end
 
@@ -1902,40 +1900,6 @@ function set_lockstyle()
       send_command('input /lockstyleset '..lockstyleset)
     end
   end, 10)
-end
-
-function update_ranged_weaponskill_binds()
-  local weapon = nil
-  local weapon_type = nil
-
-  --Handle unequipped case
-  if player.equipment.ranged ~= nil and player.equipment.ranged ~= 0 and player.equipment.ranged ~= 'empty' then
-    weapon = res.items:with('name', player.equipment.ranged)
-    weapon_type = res.skills[weapon.skill].en
-  end
-
-  --Change keybinds if weapon type changed
-  if weapon_type ~= current_ranged_weapon_type then
-    current_ranged_weapon_type = weapon_type
-    --Set weaponskill bindings by weapon type
-    if current_ranged_weapon_type == 'Archery' then
-      send_command('bind !numpad7 input /ws "Apex Arrow" <t>') -- Aeonic
-      send_command('bind !numpad8 input /ws "Namas Arrow" <t>') -- Relic
-      send_command('bind !numpad9 input /ws "Jishnu\'s Radiance" <t>') -- Empyrean
-      send_command('bind !numpad4 input /ws "Empyreal Arrow" <t>') -- Quested
-      send_command('bind !numpad1 input /ws "Blast Arrow" <t>') -- Melee Range
-      send_command('bind !numpad2 input /ws "Sidewinder" <t>') -- High dmg, inaccurate
-    elseif current_ranged_weapon_type == 'Marksmanship' then
-      send_command('bind !numpad7 input /ws "Trueflight" <t>') -- Mythic
-      send_command('bind !numpad8 input /ws "Coronach" <t>') -- Relic
-      send_command('bind !numpad9 input /ws "Wildfire" <t>') -- Empyrean
-      send_command('bind !numpad4 input /ws "Detonator" <t>') -- Quested
-      send_command('bind !numpad5 input /ws "Last Stand" <t>') -- Aeonic
-      send_command('bind !numpad1 input /ws "Numbing Shot" <t>') -- Melee Range
-      send_command('bind !numpad2 input /ws "Slug Shot" <t>') -- High dmg, inaccurate
-      send_command('bind !numpad3 input /ws "Sniper Shot" <t>') -- Lower enemy INT
-    end
-  end
 end
 
 -- Requires DistancePlus addon
