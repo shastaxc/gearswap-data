@@ -695,17 +695,23 @@ function get_ws_bindings(weapon_type)
   local default_bindings
   local main_job_bindings
   local sub_job_bindings
+  local main_sub_combo_bindings
   
   for key,job_specific_table in pairs(weapon_specific_bindings) do
     local is_key_sub_job = key:sub(1, 1) == '/'
+    local is_key_main_sub_combo = key:sub(4, 4) == '/' and string.len(key) == 7
     -- Get default bindings
     if key == 'Default' then
       default_bindings = job_specific_table
     -- Get sub job bindings
     elseif (is_key_sub_job and key:sub(2,string.len(key)):lower() == player.sub_job:lower()) then
       sub_job_bindings = job_specific_table
+    -- Get main/sub bindings
+    elseif (is_key_main_sub_combo and key:sub(1,3):lower() == player.main_job:lower()
+        and key:sub(5,7):lower() == player.sub_job:lower()) then
+      main_sub_combo_bindings = job_specific_table
     -- Get main job bindings
-    elseif (not is_key_sub_job and key:lower() == player.main_job:lower()) then
+    elseif (not is_key_sub_job and not is_key_main_sub_combo and key:lower() == player.main_job:lower()) then
       main_job_bindings = job_specific_table
     end
   end
@@ -725,6 +731,11 @@ function get_ws_bindings(weapon_type)
   end
   if sub_job_bindings then
     for keybind,ws_name in pairs(sub_job_bindings) do
+      merged_bindings[keybind] = ws_name
+    end
+  end
+  if main_sub_combo_bindings then
+    for keybind,ws_name in pairs(main_sub_combo_bindings) do
       merged_bindings[keybind] = ws_name
     end
   end
