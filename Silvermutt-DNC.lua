@@ -85,6 +85,7 @@ function job_setup()
 
   lockstyleset = 2
   USE_WEAPON_REARM = true
+  USE_DYNAMIC_MAIN_WS_KEYBINDS = true
 
   Haste = 0 -- Do not modify
   DW_needed = 0 -- Do not modify
@@ -583,7 +584,7 @@ function init_gear_sets()
   sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
     ammo="Pemphredo Tathlum", --4
     head=gear.Herc_MAB_head, --25
-    body=gear.Samnuha_body, --25
+    body=gear.Samnuha_body, --33
     hands=gear.Leyline_Gloves, --30
     legs=gear.Herc_MAB_legs, --43
     feet=gear.Herc_MAB_feet, --50
@@ -1194,7 +1195,6 @@ end
 
 function job_update(cmdParams, eventArgs)
   handle_equipping_gear(player.status)
-  update_weaponskill_binds()
 end
 
 function update_combat_form()

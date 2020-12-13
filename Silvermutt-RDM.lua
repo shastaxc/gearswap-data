@@ -80,6 +80,8 @@ end
 -- Executes on first load and main job change
 function job_setup()
   lockstyleset = 4
+  USE_WEAPON_REARM = true
+  USE_DYNAMIC_MAIN_WS_KEYBINDS = true
 
   Haste = 0 -- Do not modify
   DW_needed = 0 -- Do not modify
@@ -1498,7 +1500,6 @@ end
 
 function job_update(cmdParams, eventArgs)
   handle_equipping_gear(player.status)
-  update_weaponskill_binds()
 end
 
 function update_combat_form()

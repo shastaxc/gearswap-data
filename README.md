@@ -70,10 +70,64 @@ send_command('bind @w gs c toggle WeaponLock')
 ```
 
 **Implementation**
-Anywhere after `include`ing SilverLibs and Mote libs, add the following:
+
+In your job file after `include`ing SilverLibs and Mote libs, add the following:
 ```
 USE_WEAPON_REARM = true
 ```
+Recommend putting it in your job lua instead of globals.
 
 **Known Issue**
+
 The 'sub' slot sometimes does not re-equip properly. Possibly a race condition.
+
+### Dynamic global weaponskill keybinds
+**Descripton**
+
+Provides weaponskill keybinds that change dynamically based on your current weapon. The main purpose is
+so you can easily use multiple weapons on one job while using common keybinds for your skills (for example,
+you can always have Evisceration on the same button regardless of job).
+
+Override functionality is included so that you can define your own keybinds in a global file without having
+to modify this library lua. Think of the keybinds defined in this library as defaults and you can override
+for a specific weapon's keybinds. To do so, create a global keybind file called `CharacterName-Globals.lua` and
+add a table called `user_ws_bindings`. This table must have the same format as `default_ws_bindings` in the library lua.
+The syntax is as follows:
+```
+user_ws_bindings = {
+  ['Weapon Category'] = {
+    ['Default'] = {
+      ['keybind1'] = "WS Name",
+      ['keybind2'] = "WS2 Name",
+    },
+    ['JOB'] = {
+      ['keybind1'] = "WS3 Name",
+    },
+    ['/SUB'] = {
+      ['keybind1'] = "WS4 Name",
+    },
+  },
+}
+```
+The category's bindings will be merged in the following order: Default -> Job (using player's current job) -> Sub (using
+player's current sub job). Default bindings will apply regardless of job. Job-specific bindings will overwrite Default
+bindings in the case that they both define the same keybind. Sub-job-specific bindings will overwrite the other two.
+
+Note 1: To use a subjob binding the job must be prefixed with '/'. For example, '/NIN' will apply
+those bindings if your sub job is Ninja.
+
+Note 2: The 'Default' key is case-sensitive, you must use a capital 'D'. The job and sub job keys are not case sensitive.
+
+**Implementation**
+
+In your job file after `include`ing SilverLibs and Mote libs, add the following:
+```
+USE_DYNAMIC_MAIN_WS_KEYBINDS = true
+```
+Recommend putting it in your job lua instead of globals.
+
+If you want to use `<stnpc>` targeting instead of `<t>` for your weaponskills you can set the following line
+of code in the same place:
+```
+MAIN_WS_TARGET_MODE = 'stnpc'
+```

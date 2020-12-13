@@ -90,6 +90,7 @@ end
 function job_setup()
   lockstyleset = 3
   USE_WEAPON_REARM = true
+  USE_DYNAMIC_MAIN_WS_KEYBINDS = true
   rayke_duration = 34
   gambit_duration = 92
 
@@ -302,7 +303,7 @@ function init_gear_sets()
   sets.MAB = {
     ammo="Seething Bomblet", --6 [0]
     head=gear.Herc_MAB_head, --25 [38]
-    body=gear.Samnuha_body, --25 [63]
+    body=gear.Samnuha_body, --33 [63]
     hands=gear.Carmine_D_hands, --42 [27]
     legs=gear.Herc_MAB_legs, --33 [38]
     feet=gear.Herc_MAB_feet, --50 [9]
@@ -1287,7 +1288,6 @@ end
 
 function job_update(cmdParams, eventArgs)
   handle_equipping_gear(player.status)
-  update_weaponskill_binds()
 end
 
 -- Modify the default idle set after it was constructed.

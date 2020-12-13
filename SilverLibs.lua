@@ -111,7 +111,7 @@ default_ws_bindings = {
       ['^numpad9'] = "Scourge", --relic
       ['^numpad4'] = "Ground Strike", --ambuscade
       ['^numpad5'] = "Resolution", --aeonic
-      ['^numpad6'] = "",
+      ['^numpad6'] = "Power Slash",
       ['^numpad1'] = "Shockwave", --aoe
       ['^numpad2'] = "Freezebite", --elemental
       ['^numpad3'] = "Herculean Slash",
@@ -124,10 +124,10 @@ default_ws_bindings = {
       ['^numpad9'] = "Onslaught", --relic
       ['^numpad4'] = "Decimation", --ambuscade
       ['^numpad5'] = "Ruinator", --aeonic
-      ['^numpad6'] = "",
-      ['^numpad1'] = "", --aoe
-      ['^numpad2'] = "",
-      ['^numpad3'] = "",
+      ['^numpad6'] = "Smash Axe",
+      ['^numpad1'] = "Rampage",
+      ['^numpad2'] = "Gale Axe", --elemental
+      ['^numpad3'] = "Bora Axe",
     },
   },
   ['Great Axe'] = {
@@ -137,10 +137,10 @@ default_ws_bindings = {
       ['^numpad9'] = "Metatron Torment", --relic
       ['^numpad4'] = "Steel Cyclone", --ambuscade
       ['^numpad5'] = "Upheaval", --aeonic
-      ['^numpad6'] = "",
-      ['^numpad1'] = "", --aoe
-      ['^numpad2'] = "",
-      ['^numpad3'] = "",
+      ['^numpad6'] = "Weapon Break",
+      ['^numpad1'] = "Fell Cleave", --aoe
+      ['^numpad2'] = "Shield Break",
+      ['^numpad3'] = "Armor Break",
     },
   },
   ['Scythe'] = {
@@ -150,10 +150,10 @@ default_ws_bindings = {
       ['^numpad9'] = "Catastrophe", --relic
       ['^numpad4'] = "Spiral Hell", --ambuscade
       ['^numpad5'] = "Entropy", --aeonic
-      ['^numpad6'] = "",
-      ['^numpad1'] = "", --aoe
+      ['^numpad6'] = "Cross Reaper",
+      ['^numpad1'] = "Spinning Scythe", --aoe
       ['^numpad2'] = "Shadow of Death", --elemental
-      ['^numpad3'] = "",
+      ['^numpad3'] = "Nightmare Scythe",
     },
   },
   ['Polearm'] = {
@@ -163,10 +163,10 @@ default_ws_bindings = {
       ['^numpad9'] = "Geirskogul", --relic
       ['^numpad4'] = "Impulse Drive", --ambuscade
       ['^numpad5'] = "Stardiver", --aeonic
-      ['^numpad6'] = "",
-      ['^numpad1'] = "", --aoe
+      ['^numpad6'] = "Leg Sweep",
+      ['^numpad1'] = "Sonic Thrust", --aoe
       ['^numpad2'] = "Raiden Thrust", --elemental
-      ['^numpad3'] = "",
+      ['^numpad3'] = "Penta Thrust",
     },
   },
   ['Katana'] = {
@@ -189,8 +189,8 @@ default_ws_bindings = {
       ['^numpad9'] = "Tachi: Kaiten", --relic
       ['^numpad4'] = "Tachi: Kasha", --ambuscade
       ['^numpad5'] = "Tachi: Shoha", --aeonic
-      ['^numpad6'] = "",
-      ['^numpad1'] = "", --aoe
+      ['^numpad6'] = "Tachi: Hobaku",
+      ['^numpad1'] = "Tachi: Gekko",
       ['^numpad2'] = "Tachi: Jinpu", --elemental
       ['^numpad3'] = "Tachi: Koki", --elemental
     },
@@ -202,10 +202,10 @@ default_ws_bindings = {
       ['^numpad9'] = "Randgrith", --relic
       ['^numpad4'] = "Black Halo", --ambuscade
       ['^numpad5'] = "Realmrazer", --aeonic
-      ['^numpad6'] = "",
-      ['^numpad1'] = "", --aoe
+      ['^numpad6'] = "Brainshaker",
+      ['^numpad1'] = "Hexa Strike",
       ['^numpad2'] = "Seraph Strike", --elemental
-      ['^numpad3'] = "",
+      ['^numpad3'] = "Skullbreaker",
     },
     ['WHM'] = {
       ['^numpad8'] = "Mystic Boon", --mythic
@@ -221,7 +221,7 @@ default_ws_bindings = {
       ['^numpad9'] = "Gates of Tartarus", --relic
       ['^numpad4'] = "Retribution", --ambuscade
       ['^numpad5'] = "Shattersoul", --aeonic
-      ['^numpad6'] = "",
+      ['^numpad6'] = "Shell Crusher",
       ['^numpad1'] = "Cataclysm", --aoe
       ['^numpad2'] = "Earth Crusher", --elemental
       ['^numpad3'] = "Sunburst", --elemental
@@ -238,6 +238,154 @@ default_ws_bindings = {
   },
 }
 
+valid_keybind_modifiers = S{
+  "^", 	-- Ctrl
+  "!", 	-- Alt
+  "@", 	-- Win
+  "#", 	-- Apps
+  "~", 	-- Shift
+}
+valid_keybind_states = S{
+  "$", -- Keybind is valid while the game input line is active
+  "%", -- Keybind is valid while the game input line is inactive
+}
+valid_keybinds = S{
+  "`",
+  "escape",
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+  "0",
+  "-",
+  "=",
+  "backspace",
+  "tab",
+  "q",
+  "w",
+  "e",
+  "r",
+  "t",
+  "y",
+  "u",
+  "i",
+  "o",
+  "p",
+  "[",
+  "]",
+  "enter",
+  "return",
+  "ctrl",
+  "lctrl",
+  "a",
+  "s",
+  "d",
+  "f",
+  "g",
+  "h",
+  "j",
+  "k",
+  "l",
+  ";",
+  "'",
+  "shift",
+  "lshift",
+  "\\",
+  "z",
+  "x",
+  "c",
+  "v",
+  "b",
+  "n",
+  "m",
+  ",",
+  ".",
+  "/",
+  "rshift",
+  "numpad*",
+  "alt",
+  "lalt",
+  "space",
+  "capslock",
+  "f1",
+  "f2",
+  "f3",
+  "f4",
+  "f5",
+  "f6",
+  "f7",
+  "f8",
+  "f9",
+  "f10",
+  "numlock",
+  "numpad/",
+  "scrolllock",
+  "numpad7",
+  "numpad8",
+  "numpad9",
+  "numpad-",
+  "numpad4",
+  "numpad5",
+  "numpad6",
+  "numpad+",
+  "numpad1",
+  "numpad2",
+  "numpad3",
+  "numpad0",
+  "numpad.",
+  "f11",
+  "f12",
+  "kana",
+  "convert",
+  "noconvert",
+  "yen",
+  "kanji",
+  "numpadenter",
+  "rctrl",
+  "sysrq",
+  "ralt",
+  "pause",
+  "home",
+  "up",
+  "pageup",
+  "left",
+  "right",
+  "end",
+  "down",
+  "pagedown",
+  "insert",
+  "delete",
+  "windows",
+  "lwindows",
+  "rwindows",
+  "apps",
+  "mail",
+  "mmselect",
+  "mmstop",
+  "mute",
+  "mycomputer",
+  "mmnext",
+  "mmnexttrack",
+  "mmplaypause",
+  "power",
+  "mmprevtrack",
+  "mmstop",
+  "mmvolup",
+  "mmvoldown",
+  "webback",
+  "webfav",
+  "webforward",
+  "webhome",
+  "webrefresh",
+  "websearch",
+  "webstop",
+}
+
 
 -------------------------------------------------------------------------------
 -- Instatiated variables for storing values and states
@@ -245,6 +393,11 @@ default_ws_bindings = {
 --Most recent weapons (used for re-arming)
 sets.MostRecent = {main="",sub="",ranged="",ammo=""} --DO NOT MODIFY
 current_weapon_type = nil --DO NOT MODIFY
+latest_ws_binds = {}
+USE_WEAPON_REARM = false
+USE_DYNAMIC_MAIN_WS_KEYBINDS = false
+MAIN_WS_TARGET_MODE = 't'
+
 
 -------------------------------------------------------------------------------
 -- Functions
@@ -372,9 +525,19 @@ function update_main_weaponskill_binds(has_job_changed)
   current_weapon_type = weapon_type
 
   -- Get defined bindings
-  local ws_bindings = get_ws_bindings(weapon_type)
-  -- Set weaponskill bindings according to mapping table
-  -- TODO
+  local new_ws_bindings = get_ws_bindings(weapon_type)
+
+  -- Unbind previous bindings
+  for keybind,ws_name in pairs(latest_ws_binds) do
+    send_command("unbind "..keybind)
+  end
+
+  -- Set weaponskill bindings according to table
+  for keybind,ws_name in pairs(new_ws_bindings) do
+    send_command("bind "..keybind.." input /ws \""..ws_name.."\" <"..MAIN_WS_TARGET_MODE..">")
+  end
+
+  latest_ws_binds = new_ws_bindings
 end
 
 function get_ws_bindings(weapon_type)
@@ -384,57 +547,105 @@ function get_ws_bindings(weapon_type)
   end
 
   local player = windower.ffxi.get_player()
-  local weapon_specific_binding
-  local final_bindings = {}
+  local weapon_specific_bindings
 
   -- If user table exists for the weapon type, use those instead of defaults
-  if user_ws_binding[weapon_type] then
-    weapon_specific_binding = user_ws_binding[weapon_type]
+  if user_ws_bindings and user_ws_bindings[weapon_type] then
+    weapon_specific_bindings = user_ws_bindings[weapon_type]
   else
-    weapon_specific_binding = default_ws_binding[weapon_type]
+    weapon_specific_bindings = default_ws_bindings[weapon_type]
   end
 
-  -- Combine job-specific tables default table
-  for key,job_specific_table in pairs(weapon_specific_binding) do
+  -- Separate default bindings, main job bindings, and sub job bindings
+  local default_bindings
+  local main_job_bindings
+  local sub_job_bindings
+  
+  for key,job_specific_table in pairs(weapon_specific_bindings) do
     local is_key_sub_job = key:sub(1, 1) == '/'
-    if key:lower() == 'Default' or key:lower()=='All' or key:lower()=='Any' then
-      -- Add in default/all/any job bindings
-      for keybind,ws_name in pairs(job_specific_table) do
-        final_bindings[keybind] = ws_name
-      end
-      -- Merge in job-specific bindings
-    elseif (is_key_sub_job and key:sub(2,key.len):lower() == player.sub_job:lower()) or
-        (not is_key_sub_job and key:lower() == player.main_job:lower()) then
-      for keybind,ws_name in pairs(job_specific_table) do
-        final_bindings[keybind] = ws_name
-      end
+    -- Get default bindings
+    if key == 'Default' then
+      default_bindings = job_specific_table
+    -- Get sub job bindings
+    elseif (is_key_sub_job and key:sub(2,string.len(key)):lower() == player.sub_job:lower()) then
+      sub_job_bindings = job_specific_table
+    -- Get main job bindings
+    elseif (not is_key_sub_job and key:lower() == player.main_job:lower()) then
+      main_job_bindings = job_specific_table
+    end
+  end
+
+  -- Combine default, main job, and sub job bindings in that
+  -- order to give priority to sub job bindings
+  local merged_bindings = {}
+  if default_bindings then
+    for keybind,ws_name in pairs(default_bindings) do
+      merged_bindings[keybind] = ws_name
+    end
+  end
+  if main_job_bindings then
+    for keybind,ws_name in pairs(main_job_bindings) do
+      merged_bindings[keybind] = ws_name
+    end
+  end
+  if sub_job_bindings then
+    for keybind,ws_name in pairs(sub_job_bindings) do
+      merged_bindings[keybind] = ws_name
     end
   end
   
   -- Purge invalid entries
-  final_bindings = purge_invalid_ws_bindings(final_bindings)
-
-  -- Set keybinds
-  -- TODO
+  return purge_invalid_ws_bindings(merged_bindings)
 end
 
 function purge_invalid_ws_bindings(ws_bindings)
-  local index = 1
-  local valid_keybinds = res.keybinds; -- TODO: Get actual map reference
+  local purged_table = {}
   for keybind,ws_name in pairs(ws_bindings) do
-    -- Remove entries that have blank key
-    if keybind == '' then
-      ws_bindings:remove(index)
-    elseif not valid_keybinds[keybind] then-- Remove entries whose key is not on keybind list
-      ws_bindings:remove(index)
-    elseif ws_name == '' then -- Remove entries that have blank value
-      ws_bindings:remove(index)
-    elseif not res.weapon_skills:with('en', ws_name) then -- Remove entries that have value that isn't on WS list
-      ws_bindings:remove(index)
+
+    -- Check if modifier or state is included
+    local first_char = keybind:sub(1,1)
+    local second_char = keybind:sub(2,2)
+    local modifier
+    local state
+    local bind_btn
+    if valid_keybind_states:contains(first_char) then
+      state = first_char
+      bind_btn = keybind:sub(2,string.len(keybind))
+    elseif valid_keybind_modifiers:contains(first_char) then
+      modifier = first_char
+      if valid_keybind_states:contains(second_char) then
+        state = second_char
+        bind_btn = keybind:sub(3,string.len(keybind))
+      else
+        bind_btn = keybind:sub(2,string.len(keybind))
+      end
+    else
+      bind_btn = keybind
     end
-    index = index + 1
+
+    local is_keybind_blank = bind_btn == ''
+    local is_keybind_valid = valid_keybinds:contains(bind_btn)
+    local is_ws_name_valid = res.weapon_skills:with('en', ws_name) ~= nil
+
+    -- If keybind is valid and ws name is valid, add to purged table
+    if not is_keybind_blank -- Ensure keybind is not blank
+        and is_keybind_valid -- Ensure keybind is in list of valid keys
+        and is_ws_name_valid then -- Ensure WS name is an actual WS name
+      purged_table[keybind] = ws_name
+    elseif is_keybind_blank then
+      if ws_name ~= '' then
+        print("WS Keybind Error: Keybind is blank for "..ws_name)
+      else
+        print("WS Keybind Error: Keybind is blank")
+      end
+    elseif not is_keybind_valid then
+      print("WS Keybind Error: \""..keybind.."\" is not a valid keybind")
+    elseif not is_ws_name_valid and ws_name ~= nil and ws_name ~= '' then
+      print("WS Keybind Error: \""..ws_name.."\" is not a valid WS name")
+    end
   end
-  return ws_bindings
+
+  return purged_table
 end
 
 
@@ -452,7 +663,11 @@ windower.register_event('prerender',function()
 end)
 
 -- Hook into job/subjob change event
--- TODO
-if USE_DYNAMIC_MAIN_WS_KEYBINDS then
-  update_main_weaponskill_binds(true)
-end
+windower.register_event('job change',function()
+  USE_WEAPON_REARM = false
+  USE_DYNAMIC_MAIN_WS_KEYBINDS = false
+
+  if USE_DYNAMIC_MAIN_WS_KEYBINDS then
+    update_main_weaponskill_binds(true)
+  end
+end)

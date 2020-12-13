@@ -54,6 +54,7 @@ end
 function job_setup()
   lockstyleset = 6
   USE_WEAPON_REARM = true
+  USE_DYNAMIC_MAIN_WS_KEYBINDS = true
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.HybridMode:options('Normal', 'LightDef')
@@ -1526,7 +1527,6 @@ end
 
 function job_update(cmdParams, eventArgs)
   handle_equipping_gear(player.status)
-  update_weaponskill_binds()
   update_ranged_weaponskill_binds()
   update_dp_type() -- Requires DistancePlus addon
 end

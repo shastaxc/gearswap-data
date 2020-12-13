@@ -28,8 +28,8 @@ no_swap_rings = S{"Duck Ring", "Homing Ring", "Invisible Ring", "Reraise Ring", 
     "Duodecennial Ring", "Kupofried's Ring", "Novennial Ring", "Undecennial Ring", "Allied Ring", "Resolution Ring",
     "Endorsement Ring", "Expertise Ring", "Vocation Ring"}
 mp_jobs = S{"WHM", "BLM", "RDM", "PLD", "DRK", "SMN", "BLU", "GEO", "RUN", "SCH"}
+laggy_zones = S{'Al Zahbi', 'Aht Urhgan Whitegate', 'Eastern Adoulin', 'Mhaura', 'Nashmau', 'Selbina', 'Western Adoulin'}
 
-current_weapon_type = nil -- Do not modify
 locked_neck = false -- Do not modify
 locked_ear1 = false -- Do not modify
 locked_ear2 = false -- Do not modify
@@ -282,102 +282,9 @@ function define_global_sets()
 
 end
 
-
-
-laggy_zones = S{'Al Zahbi', 'Aht Urhgan Whitegate', 'Eastern Adoulin', 'Mhaura', 'Nashmau', 'Selbina', 'Western Adoulin'}
-
-windower.register_event('zone change',
-  function()
-  -- Caps FPS to 30 via Config addon in certain problem zones
-    --[[if laggy_zones:contains(world.zone) then
-      send_command('config FrameRateDivisor 2')
-    else
-      send_command('config FrameRateDivisor 1')
-    end]]--
-
-    -- Auto load Omen add-on
-    if world.zone == 'Reisenjima Henge' then
-      send_command('lua l omen')
-    end
+windower.register_event('zone change', function()
+  -- Auto load Omen add-on
+  if world.zone == 'Reisenjima Henge' then
+    send_command('lua l omen')
   end
-)
-
-function update_weaponskill_binds()
-  local weapon = nil
-  local weapon_type = nil
-  --Handle barehanded case
-  if player.equipment.main == nil or player.equipment.main == 0 or player.equipment.main == 'empty' then
-    weapon_type = 'Hand-to-Hand'
-  else --All other types of weapons
-    weapon = res.items:with('name', player.equipment.main)
-    weapon_type = res.skills[weapon.skill].en
-  end
-
-  --Change keybinds if weapon type changed
-  if weapon_type ~= current_weapon_type then
-    current_weapon_type = weapon_type
-    --Set weaponskill bindings by weapon type
-    if current_weapon_type == 'Hand-to-Hand' then
-      send_command('bind ^numpad7 input /ws "Victory Smite" <t>')
-      send_command('bind ^numpad8 input /ws "Ascetic\'s Fury" <t>')
-      send_command('bind ^numpad9 input /ws "Shijin Spiral" <t>')
-      send_command('bind ^numpad4 input /ws "Asuran Fists" <t>')
-      send_command('bind ^numpad5 input /ws "Shoulder Tackle" <t>')
-      send_command('bind ^numpad6 input /ws "Howling Fist" <t>')
-      send_command('bind ^numpad1 input /ws "Spinning Attack" <t>') --aoe
-      send_command('bind ^numpad2 input /ws "Raging Fists" <t>')
-    elseif current_weapon_type == 'Dagger' then
-      send_command('bind ^numpad7 input /ws "Exenterator" <t>')
-      send_command('bind ^numpad8 input /ws "Mandalic Stab" <t>')
-      send_command('bind ^numpad9 input /ws "Shark Bite" <t>')
-      send_command('bind ^numpad4 input /ws "Evisceration" <t>')
-      send_command('bind ^numpad5 input /ws "Rudra\'s Storm" <t>')
-      send_command('bind ^numpad6 input /ws "Pyrrhic Kleos" <t>')
-      send_command('bind ^numpad1 input /ws "Aeolian Edge" <t>') --aoe
-      send_command('bind ^numpad2 input /ws "Cyclone" <t>') --elemental
-      send_command('bind ^numpad3 input /ws "Energy Drain" <t>') --elemental
-    elseif current_weapon_type == 'Sword' then
-      send_command('bind ^numpad7 input /ws "Chant du Cygne" <t>')
-      send_command('bind ^numpad4 input /ws "Savage Blade" <t>')
-      send_command('bind ^numpad5 input /ws "Requiescat" <t>')
-      send_command('bind ^numpad6 input /ws "Sanguine Blade" <t>')
-      send_command('bind ^numpad1 input /ws "Circle Blade" <t>') --aoe
-      send_command('bind ^numpad2 input /ws "Red Lotus Blade" <t>') --elemental
-      send_command('bind ^numpad3 input /ws "Seraph Blade" <t>') --elemental
-    elseif current_weapon_type == 'Great Sword' then
-      send_command('bind ^numpad7 input /ws "Resolution" <t>')
-      send_command('bind ^numpad9 input /ws "Dimidiation" <t>')
-      send_command('bind ^numpad5 input /ws "Ground Strike" <t>')
-      send_command('bind ^numpad1 input /ws "Shockwave" <t>') --aoe, sleep
-      send_command('bind ^numpad2 input /ws "Freezebite" <t>') --elemental
-      send_command('bind ^numpad3 input /ws "Herculean Slash" <t>') --elemental, paralyze
-    elseif current_weapon_type == 'Axe' then
-    elseif current_weapon_type == 'Great Axe' then
-      send_command('bind ^numpad4 input /ws "Upheaval" <t>')
-      send_command('bind ^numpad5 input /ws "Full Break" <t>')
-      send_command('bind ^numpad6 input /ws "Armor Break" <t>')
-      send_command('bind ^numpad1 input /ws "Fell Cleave" <t>') --aoe
-    elseif current_weapon_type == 'Scythe' then
-      send_command('bind ^numpad2 input /ws "Shadow of Death" <t>') --elemental
-    elseif current_weapon_type == 'Polearm' then
-      send_command('bind ^numpad2 input /ws "Raiden Thrust" <t>') --elemental
-    elseif current_weapon_type == 'Katana' then
-      send_command('bind ^numpad7 input /ws "Blade: Kamu" <t>')
-      send_command('bind ^numpad8 input /ws "Blade: Shun" <t>')
-      send_command('bind ^numpad4 input /ws "Blade: Ten" <t>')
-      send_command('bind ^numpad5 input /ws "Blade: Chi" <t>')
-      send_command('bind ^numpad6 input /ws "Blade: Hi" <t>')
-      send_command('bind ^numpad1 input /ws "Blade: Yu" <t>') --aoe
-      send_command('bind ^numpad2 input /ws "Blade: Ei" <t>') --elemental
-    elseif current_weapon_type == 'Great Katana' then
-      send_command('bind ^numpad2 input /ws "Tachi: Jinpu" <t>') --elemental
-      send_command('bind ^numpad3 input /ws "Tachi: Koki" <t>') --elemental
-    elseif current_weapon_type == 'Club' then
-      send_command('bind ^numpad2 input /ws "Seraph Strike" <t>') --elemental
-    elseif current_weapon_type == 'Staff' then
-      send_command('bind ^numpad1 input /ws "Cataclysm" <t>') --aoe
-      send_command('bind ^numpad2 input /ws "Earth Crusher" <t>') --elemental
-      send_command('bind ^numpad3 input /ws "Sunburst" <t>') --elemental
-    end
-  end
-end
+end)
