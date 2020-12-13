@@ -119,10 +119,12 @@ function user_setup()
   include('Global-Binds.lua') -- Additional local binds
 
   if player.sub_job == 'WAR' then
+    send_command('bind !w input /ja "Defender" <me>')
     send_command('bind ^numpad/ input /ja "Berserk" <me>')
     send_command('bind ^numpad* input /ja "Warcry" <me>')
     send_command('bind ^numpad- input /ja "Aggressor" <me>')
   elseif player.sub_job == 'SAM' then
+    send_command('bind !w input /ja "Third Eye" <me>')
     send_command('bind ^numpad/ input /ja "Meditate" <me>')
     send_command('bind ^numpad* input /ja "Sekkanoki" <me>')
     send_command('bind ^numpad- input /ja "Third Eye" <me>')
@@ -132,8 +134,8 @@ function user_setup()
     send_command('bind numpad0 gs c step t')
     send_command('bind ^numlock input /ja "Reverse Flourish" <me>')
   elseif player.sub_job == 'NIN' then
-    send_command('bind !, input /ma "Utsusemi: Ichi" <me>')
-    send_command('bind !. input /ma "Utsusemi: Ni" <me>')
+    send_command('bind !numpad0 input /ma "Utsusemi: Ichi" <me>')
+    send_command('bind !numpad. input /ma "Utsusemi: Ni" <me>')
   end
 
   update_combat_form()
@@ -155,47 +157,21 @@ function job_file_unload()
 
   send_command('unbind ^`')
   send_command('unbind !`')
-  send_command('unbind ^,')
-  send_command('unbind @a')
   send_command('unbind @c')
-  send_command('unbind @r')
 
+  send_command('unbind !w')
   send_command('unbind ^numlock')
   send_command('unbind ^numpad/')
   send_command('unbind ^numpad*')
   send_command('unbind ^numpad-')
-  send_command('unbind ^numpad+')
-  send_command('unbind ^numpadenter')
-  send_command('unbind ^numpad9')
-  send_command('unbind ^numpad8')
-  send_command('unbind ^numpad7')
-  send_command('unbind ^numpad6')
-  send_command('unbind ^numpad5')
-  send_command('unbind ^numpad4')
-  send_command('unbind ^numpad3')
-  send_command('unbind ^numpad2')
-  send_command('unbind ^numpad1')
   send_command('unbind ^numpad0')
   send_command('unbind ^numpad.')
   send_command('unbind numpad0')
   
   send_command('unbind ^-')
   send_command('unbind ^=')
-  send_command('unbind !,')
-  send_command('unbind !.')
-
-  send_command('unbind #`')
-  send_command('unbind #1')
-  send_command('unbind #2')
-  send_command('unbind #3')
-  send_command('unbind #4')
-  send_command('unbind #5')
-  send_command('unbind #6')
-  send_command('unbind #7')
-  send_command('unbind #8')
-  send_command('unbind #9')
-  send_command('unbind #0')
-
+  send_command('unbind !numpad0')
+  send_command('unbind !numpad.')
 end
 
 

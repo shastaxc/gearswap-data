@@ -190,7 +190,6 @@ function user_setup()
 end
 
 function job_file_unload()
-  send_command('unbind !a')
   send_command('unbind !s')
   send_command('unbind !d')
 
@@ -212,9 +211,6 @@ function job_file_unload()
   send_command('unbind @c')
   send_command('unbind @k')
 
-  send_command('unbind !q')
-  send_command('unbind !w')
-  send_command('unbind !e')
   send_command('unbind !u')
   send_command('unbind !i')
   send_command('unbind !o')
@@ -222,42 +218,19 @@ function job_file_unload()
 
   send_command('unbind !;')
   send_command('unbind !\'')
-
   send_command('unbind !,')
   send_command('unbind !.')
   send_command('unbind !/')
-
-  send_command('unbind ^numlock')
+  send_command('unbind !q')
+  send_command('unbind !w')
+  send_command('unbind !e')
+  
   send_command('unbind ^numpad/')
   send_command('unbind ^numpad*')
   send_command('unbind ^numpad-')
-  send_command('unbind ^numpad+')
-  send_command('unbind ^numpadenter')
-  send_command('unbind ^numpad9')
-  send_command('unbind ^numpad8')
-  send_command('unbind ^numpad7')
-  send_command('unbind ^numpad6')
-  send_command('unbind ^numpad5')
-  send_command('unbind ^numpad4')
-  send_command('unbind ^numpad3')
-  send_command('unbind ^numpad2')
-  send_command('unbind ^numpad1')
   send_command('unbind ^numpad0')
   send_command('unbind ^numpad.')
   send_command('unbind numpad0')
-
-  send_command('unbind #`')
-  send_command('unbind #1')
-  send_command('unbind #2')
-  send_command('unbind #3')
-  send_command('unbind #4')
-  send_command('unbind #5')
-  send_command('unbind #6')
-  send_command('unbind #7')
-  send_command('unbind #8')
-  send_command('unbind #9')
-  send_command('unbind #0')
-
 end
 
 -- Define sets and vars used by this job file.

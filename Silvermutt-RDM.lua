@@ -169,15 +169,15 @@ function user_setup()
 
   -- Default Status Cure HotKeys
   if player.sub_job == 'WHM' or player.sub_job == 'SCH' then
-    send_command('bind !numpad7 input /ma "Paralyna" <t>') -- WHM, SCH, /WHM, /SCH
-    send_command('bind !numpad8 input /ma "Silena" <t>') -- WHM, SCH, /WHM, /SCH
-    send_command('bind !numpad9 input /ma "Blindna" <t>') -- WHM, SCH, /WHM, /SCH
-    send_command('bind !numpad4 input /ma "Poisona" <t>') -- WHM, SCH, /WHM, /SCH
-    send_command('bind !numpad6 input /ma "Viruna" <t>') -- WHM, SCH, /WHM, /SCH
-    send_command('bind !numpad1 input /ma "Cursna" <t>') -- WHM, SCH, /WHM, /SCH
-    send_command('bind !numpad2 input /ma "Erase" <t>') -- WHM, SCH, /WHM, /SCH
+    send_command('bind ~numpad7 input /ma "Paralyna" <t>') -- WHM, SCH, /WHM, /SCH
+    send_command('bind ~numpad8 input /ma "Silena" <t>') -- WHM, SCH, /WHM, /SCH
+    send_command('bind ~numpad9 input /ma "Blindna" <t>') -- WHM, SCH, /WHM, /SCH
+    send_command('bind ~numpad4 input /ma "Poisona" <t>') -- WHM, SCH, /WHM, /SCH
+    send_command('bind ~numpad6 input /ma "Viruna" <t>') -- WHM, SCH, /WHM, /SCH
+    send_command('bind ~numpad1 input /ma "Cursna" <t>') -- WHM, SCH, /WHM, /SCH
+    send_command('bind ~numpad2 input /ma "Erase" <t>') -- WHM, SCH, /WHM, /SCH
     if player.sub_job == 'WHM' then
-      send_command('bind !numpad5 input /ma "Stona" <t>') -- WHM, SCH, /WHM
+      send_command('bind ~numpad5 input /ma "Stona" <t>') -- WHM, SCH, /WHM
     elseif player.sub_job == 'SCH' then
       send_command('bind ^- gs c scholar light')
       send_command('bind ^= gs c scholar dark')
@@ -210,35 +210,21 @@ function job_file_unload()
 
   send_command('unbind !`')
   send_command('unbind @`')
-  send_command('unbind ^-')
-  send_command('unbind ^=')
-  send_command('unbind !-')
-  send_command('unbind !=')
-  send_command('unbind ^l')
-  send_command('unbind ![')
-  send_command('unbind !l')
   send_command('unbind ^`')
   send_command('unbind !w')
   send_command('unbind !e')
-  send_command('unbind !r')
 
   send_command('unbind !u')
   send_command('unbind !i')
   send_command('unbind !o')
   send_command('unbind !p')
 
-  send_command('unbind !;')
   send_command('unbind !\'')
+  send_command('unbind !;')
   send_command('unbind !,')
   send_command('unbind !.')
   send_command('unbind !/')
 
-  send_command('unbind @s')
-  send_command('unbind @e')
-  send_command('unbind @d')
-  send_command('unbind @w')
-  send_command('unbind @c')
-  send_command('unbind @r')
   send_command('unbind !insert')
   send_command('unbind !delete')
   send_command('unbind ^insert')
@@ -247,34 +233,28 @@ function job_file_unload()
   send_command('unbind ^end')
   send_command('unbind !home')
   send_command('unbind !end')
-  send_command('unbind ^numlock')
-  send_command('unbind ^numpad/')
-  send_command('unbind ^numpad*')
-  send_command('unbind ^numpad-')
-  send_command('unbind ^numpad+')
-  send_command('unbind ^numpadenter')
-  send_command('unbind ^numpad9')
-  send_command('unbind ^numpad8')
-  send_command('unbind ^numpad7')
-  send_command('unbind ^numpad6')
-  send_command('unbind ^numpad5')
-  send_command('unbind ^numpad4')
-  send_command('unbind ^numpad3')
-  send_command('unbind ^numpad2')
-  send_command('unbind ^numpad1')
+  send_command('unbind @s')
+  send_command('unbind @e')
+  send_command('unbind @d')
+  send_command('unbind @w')
+  send_command('unbind @c')
+  send_command('unbind ~numpad9')
+  send_command('unbind ~numpad8')
+  send_command('unbind ~numpad7')
+  send_command('unbind ~numpad6')
+  send_command('unbind ~numpad5')
+  send_command('unbind ~numpad4')
+  send_command('unbind ~numpad2')
+  send_command('unbind ~numpad1')
+  send_command('unbind ^-')
+  send_command('unbind ^=')
+  send_command('unbind !-')
+  send_command('unbind !=')
+  send_command('unbind ^l')
+  send_command('unbind ![')
+  send_command('unbind !l')
   send_command('unbind ^numpad0')
   send_command('unbind ^numpad.')
-  send_command('unbind numpad0')
-
-  send_command('unbind !numpad9')
-  send_command('unbind !numpad8')
-  send_command('unbind !numpad7')
-  send_command('unbind !numpad6')
-  send_command('unbind !numpad5')
-  send_command('unbind !numpad4')
-  send_command('unbind !numpad3')
-  send_command('unbind !numpad2')
-  send_command('unbind !numpad1')
 end
 
 -- Define sets and vars used by this job file.

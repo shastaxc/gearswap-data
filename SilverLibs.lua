@@ -403,6 +403,12 @@ MAIN_WS_TARGET_MODE = 't'
 -- Functions
 -------------------------------------------------------------------------------
 
+function init_settings()
+  USE_WEAPON_REARM = false
+  USE_DYNAMIC_MAIN_WS_KEYBINDS = false
+  MAIN_WS_TARGET_MODE = 't'
+end
+
 -- 'ws_range' expected to be the range pulled from weapon_skills.lua
 -- 's' is self player object
 -- 't' is target object
@@ -527,9 +533,18 @@ function update_main_weaponskill_binds(has_job_changed)
   -- Get defined bindings
   local new_ws_bindings = get_ws_bindings(weapon_type)
 
-  -- Unbind previous bindings
-  for keybind,ws_name in pairs(latest_ws_binds) do
-    send_command("unbind "..keybind)
+  -- Unbind previous bindings if there is no overlap in new bindings
+  for old_keybind,old_ws_name in pairs(latest_ws_binds) do
+    local is_same = false
+    for new_keybind,new_ws_name in pairs(new_ws_bindings) do
+      if old_keybind == new_keybind then
+        is_same = true
+        break
+      end
+    end
+    if not is_same then
+      send_command("unbind "..old_keybind)
+    end
   end
 
   -- Set weaponskill bindings according to table
@@ -664,8 +679,7 @@ end)
 
 -- Hook into job/subjob change event
 windower.register_event('job change',function()
-  USE_WEAPON_REARM = false
-  USE_DYNAMIC_MAIN_WS_KEYBINDS = false
+  init_settings()
 
   if USE_DYNAMIC_MAIN_WS_KEYBINDS then
     update_main_weaponskill_binds(true)
