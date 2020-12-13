@@ -8,39 +8,9 @@ res = include('resources')
 no_swap_gear = S{"Warp Ring", "Dim. Ring (Dem)", "Dim. Ring (Holla)", "Dim. Ring (Mea)",
 "Trizek Ring", "Echad Ring", "Facility Ring", "Capacity Ring", "Dem Ring", "Empress Band",
 "Emperor Band", "Emporox's Ring"}
-
 mp_jobs = S{"WHM", "BLM", "RDM", "PLD", "DRK", "SMN", "BLU", "GEO", "RUN", "SCH"}
+laggy_zones = S{'Al Zahbi', 'Aht Urhgan Whitegate', 'Eastern Adoulin', 'Mhaura', 'Nashmau', 'Selbina', 'Western Adoulin'}
 
-spell_type_blocks = {
-  ['WhiteMagic'] = {'terror', 'petrification', 'stun', 'sleep', 'silence', 'mute'},
-  ['BlackMagic'] = {'terror', 'petrification', 'stun', 'sleep', 'silence', 'mute'},
-  ['SummonerPact'] = {'terror', 'petrification', 'stun', 'sleep', 'silence', 'mute'},
-  ['Ninjutsu'] = {'terror', 'petrification', 'stun', 'sleep', 'silence', 'mute'},
-  ['BardSong'] = {'terror', 'petrification', 'stun', 'sleep', 'silence', 'mute'},
-  ['BlueMagic'] = {'terror', 'petrification', 'stun', 'sleep', 'silence', 'mute'},
-  ['Geomancy'] = {'terror', 'petrification', 'stun', 'sleep', 'silence', 'mute'},
-  ['Trust'] = {'terror', 'petrification', 'stun', 'sleep', 'silence', 'mute'},
-  ['WeaponSkill'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
-  ['JobAbility'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
-  ['PetCommand'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
-  ['Samba'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
-  ['Waltz'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
-  ['Jig'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
-  ['Step'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
-  ['Samba'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
-  ['Flourish1'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
-  ['Flourish2'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
-  ['Effusion'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
-  ['Rune'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
-  ['Ward'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
-  ['CorsairRoll'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
-  ['BloodPactRage'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
-  ['BloodPactWard'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
-  ['Scholar'] = {'terror', 'petrification', 'stun', 'sleep', 'amnesia'},
-  ['Item'] = {'terror', 'petrification', 'stun', 'sleep', 'muddle'},
-}
-
-current_weapon_type = nil
 
 function define_global_sets()
   --Toy weapon sets
@@ -49,8 +19,8 @@ function define_global_sets()
   sets.ToyWeapon.Katana = {main="Kunai",sub="Bronze Dagger"}
   sets.ToyWeapon.GreatKatana = {main="Zanmato",sub="empty"}
   sets.ToyWeapon.Dagger = {main="Bronze Dagger",sub="Kunai"}
-  sets.ToyWeapon.Sword = {main="Nihility",sub="Bronze Dagger"}
-  sets.ToyWeapon.Club = {main="Kitty Rod",sub="Bronze Dagger"}
+  sets.ToyWeapon.Sword = {main="Nihility",sub="Kunai"}
+  sets.ToyWeapon.Club = {main="Kitty Rod",sub="Kunai"}
   sets.ToyWeapon.Staff = {main="Cobra Staff",sub="empty"}
   sets.ToyWeapon.Polearm = {main="Pitchfork +1",sub="empty"}
   sets.ToyWeapon.GreatSword = {main="Lament",sub="empty"}
@@ -60,10 +30,6 @@ function define_global_sets()
   sets.MostRecent = {main="",sub=""} --DO NOT MODIFY
 
 end
-
-
-
-laggy_zones = S{'Al Zahbi', 'Aht Urhgan Whitegate', 'Eastern Adoulin', 'Mhaura', 'Nashmau', 'Selbina', 'Western Adoulin'}
 
 windower.register_event('zone change',
   function()
@@ -81,72 +47,37 @@ windower.register_event('zone change',
   end
 )
 
-function has_item(bag_name, item_name)
-  local bag = res.bags:with('en', bag_name)
-  local item = res.items:with('en', item_name)
-  local items_in_bag = windower.ffxi.get_items(bag['id'])
-  for k,v in pairs(items_in_bag) do
-    if type(v)~='number' and type(v)~='boolean' and v['id'] == item['id'] then
-      return true
-    end
-  end
-  return false
-end
-
-function update_weapons()
-  --Save state of any equipped weapons
-  if player.equipment.main ~= "empty" then
-    sets.MostRecent.main = player.equipment.main
-    sets.MostRecent.sub = player.equipment.sub
-  end
-
-  --Disarm Handling--
-  --Turns out that the table fills the string "empty" for empty slot. It won't return nil
-  if player.equipment.main == "empty" then
-    if state.WeaponLock.value == false then
-      equip(sets.MostRecent)
-    end
-  end
-end
-
-function update_weaponskill_binds()
-  local weapon = nil
-  local weapon_type = nil
-  --Handle barehanded case
-  if player.equipment.main == nil or player.equipment.main == 0 or player.equipment.main == 'empty' then
-    weapon_type = 'Hand-to-Hand'
-  else --All other types of weapons
-    weapon = res.items:with('name', player.equipment.main)
-    weapon_type = res.skills[weapon.skill].en
-  end
-
-  --Change keybinds if weapon type changed
-  if weapon_type ~= current_weapon_type then
-    current_weapon_type = weapon_type
-    --Set weaponskill bindings by weapon type
-    if current_weapon_type == 'Hand-to-Hand' then
-    elseif current_weapon_type == 'Dagger' then
-      send_command('bind !c input /ws "Cyclone" <t>')
-      send_command('bind !v input /ws "Energy Drain" <t>')
-    elseif current_weapon_type == 'Sword' then
-      send_command('bind !c input /ws "Red Lotus Blade" <t>')
-      send_command('bind !v input /ws "Seraph Blade" <t>')
-    elseif current_weapon_type == 'Great Sword' then
-      send_command('bind !c input /ws "Freezebite" <t>')
-    elseif current_weapon_type == 'Scythe' then
-      send_command('bind !c input /ws "Shadow of Death" <t>')
-    elseif current_weapon_type == 'Polearm' then
-      send_command('bind !c input /ws "Raiden Thrust" <t>')
-    elseif current_weapon_type == 'Katana' then
-      send_command('bind !c input /ws "Blade: Ei" <t>')
-    elseif current_weapon_type == 'Great Katana' then
-      send_command('bind !c input /ws "Tachi: Jinpu" <t>')
-      send_command('bind !v input /ws "Tachi: Koki" <t>')
-    elseif current_weapon_type == 'Club' then
-      send_command('bind !c input /ws "Seraph Strike" <t>')
-    elseif current_weapon_type == 'Staff' then
-      send_command('bind !c input /ws "Earth Crusher" <t>')
-      send_command('bind !v input /ws "Sunburst" <t>')
-    end
-  end
-end
+-- elseif current_weapon_type == 'Dagger' then
+--   send_command('bind !2 input /ws "Evisceration" <t>')
+--   send_command('bind !4 input /ws "Aeolian Edge" <t>')
+--   send_command('bind !c input /ws "Cyclone" <t>')
+--   send_command('bind !v input /ws "Energy Drain" <t>')
+-- elseif current_weapon_type == 'Sword' then
+--   send_command('bind !c input /ws "Red Lotus Blade" <t>')
+--   send_command('bind !v input /ws "Seraph Blade" <t>')
+-- elseif current_weapon_type == 'Great Sword' then
+--   send_command('bind !c input /ws "Freezebite" <t>')
+-- elseif current_weapon_type == 'Scythe' then
+--   send_command('bind !c input /ws "Shadow of Death" <t>')
+-- elseif current_weapon_type == 'Polearm' then
+--   send_command('bind !c input /ws "Raiden Thrust" <t>')
+-- elseif current_weapon_type == 'Katana' then
+--   send_command('bind !c input /ws "Blade: Ei" <t>')
+--   send_command('bind !2 input /ws "Blade: Hi" <t>')
+--   send_command('bind !3 input /ws "Blade: Metsu" <t>')
+--   send_command('bind !4 input /ws "Blade: Shun" <t>')
+--   send_command('bind !5 input /ws "Blade: Ten" <t>')
+--   send_command('bind !6 input /ws "Blade: Chi" <t>')
+--   send_command('bind !7 input /ws "Blade: Retsu" <t>')
+--   send_command('bind !8 input /ws "Blade: Ku" <t>')
+--   send_command('bind !9 input /ws "Blade: To" <t>')
+--   send_command('bind !0 input /ws "Blade: Yu" <t>')
+-- elseif current_weapon_type == 'Great Katana' then
+--   send_command('bind !c input /ws "Tachi: Jinpu" <t>')
+--   send_command('bind !v input /ws "Tachi: Koki" <t>')
+-- elseif current_weapon_type == 'Club' then
+--   send_command('bind !c input /ws "Seraph Strike" <t>')
+-- elseif current_weapon_type == 'Staff' then
+--   send_command('bind !c input /ws "Earth Crusher" <t>')
+--   send_command('bind !v input /ws "Sunburst" <t>')
+-- end

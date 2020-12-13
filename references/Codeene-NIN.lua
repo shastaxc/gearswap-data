@@ -1052,16 +1052,6 @@ function job_precast(spell, action, spellMap, eventArgs)
   -- Downgrade elemental spell if higher tier is on cooldown
   refine_various_spells(spell, action, spellMap, eventArgs)
   
-  -- Don't gearswap if status forbids the action
-  local forbidden_statuses = spell_type_blocks[spell.type]
-  for k,status in pairs(forbidden_statuses) do
-    if buffactive[status] then
-      add_to_chat(167, 'Stopped due to status.')
-      eventArgs.cancel = true -- Stops the rest of the pipeline from executing
-      return -- Ends execution of this function
-    end
-  end
-
   -- Ninja tool status check
   if spell.skill == "Ninjutsu" then
     do_ninja_tool_checks(spell, spellMap, eventArgs)
@@ -1072,6 +1062,10 @@ function job_precast(spell, action, spellMap, eventArgs)
 	if buffactive['Copy Image'] or buffactive['Copy Image (2)'] or buffactive['Copy Image (3)'] or buffactive['Copy Image (4+)'] then
       send_command('cancel 66; cancel Copy Image; cancel 444; cancel Copy Image (2); cancel 445; cancel Copy Image (3); cancel 446; cancel Copy Image (4+)')
     end
+  end
+  
+  if spell.english:startswith('Monomi') then
+    send_command('cancel sneak')
   end
 end
 
@@ -1097,7 +1091,7 @@ end
 -- Run after the general midcast() is done.
 -- eventArgs is the same one used in job_midcast, in case information needs to be persisted.
 function job_post_midcast(spell, action, spellMap, eventArgs)
-  if default_spell_map == 'ElementalNinjutsu' then
+  if spellMap == 'ElementalNinjutsu' then
     if state.MagicBurst.value then
       equip(sets.magic_burst)
     end
@@ -1162,7 +1156,6 @@ end
 -- Called by the 'update' self-command, for common needs.
 -- Set eventArgs.handled to true if we don't want automatic equipping of gear.
 function job_handle_equipping_gear(playerStatus, eventArgs)
-  update_weapons()
   check_gear()
   determine_kiting_set()
   update_idle_groups()
@@ -1174,7 +1167,6 @@ end
 function job_update(cmdParams, eventArgs)
   handle_equipping_gear(player.status)
   th_update(cmdParams, eventArgs)
-  update_weaponskill_binds()
 end
 
 function update_combat_form()
