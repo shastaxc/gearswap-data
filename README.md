@@ -2,7 +2,9 @@
 FFXI GearSwap scripts
 
 ## SilverLibs
-The SilverLibs.lua file contains functionality that is designed to be easily implemented into job files. To use any of these functions, follow the instructions below:
+The SilverLibs.lua file contains functionality that is designed to be easily implemented into job files. You do not need any of the
+other files listed in this repository but feel free to use them as references. To use any of these functions, follow the instructions
+below:
 
 **Installing Silverlibs**
 1. The SilverLibs.lua file should be placed in the gearswap/data folder or in the gearswap/libs folder.
