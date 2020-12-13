@@ -1461,7 +1461,7 @@ function job_self_command(cmdParams, eventArgs)
     end
   end
 
-  -- gearinfo(cmdParams, eventArgs)
+  gearinfo(cmdParams, eventArgs)
 end
 
 function gearinfo(cmdParams, eventArgs)
