@@ -3,7 +3,7 @@ send_command('lua l gearinfo')
 res = include('resources')
 inspect = include('inspect')
 packets = include('packets')
-include('SilverLibs')
+silibs = include('SilverLibs')
 -------------------------------------------------------------------------------------------------------------------
 -- Modify the sets table.  Any gear sets that are added to the sets table need to
 -- be defined within this function, because sets isn't available until after the

@@ -69,8 +69,8 @@ function job_setup()
   include('Mote-TreasureHunter')
 
   lockstyleset = 1
-  USE_WEAPON_REARM = true
-  USE_DYNAMIC_WS_KEYBINDS = true
+  silibs.use_weapon_rearm = true
+  silibs.use_dynamic_ws_keybinds = true
 
   Haste = 0 -- Do not modify
   DW_needed = 0 -- Do not modify
@@ -1284,11 +1284,11 @@ function job_self_command(cmdParams, eventArgs)
     if player.target.type ~= 'NONE' then
       if player.target.name == 'Sturdy Pyxis' then
         send_command('@input /item "Forbidden Key" <t>')
-      elseif has_item('Inventory','Skeleton Key') then
+      elseif silibs.has_item('Inventory','Skeleton Key') then
         send_command('@input /item "Skeleton Key" <t>')
-      elseif has_item('Inventory','Living Key') then
+      elseif silibs.has_item('Inventory','Living Key') then
         send_command('@input /item "Living Key" <t>')
-      elseif has_item('Inventory','Thief\'s Tools') then
+      elseif silibs.has_item('Inventory','Thief\'s Tools') then
         send_command('@input /item "Thief\'s Tools" <t>')
       end
     end

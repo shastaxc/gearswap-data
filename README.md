@@ -10,7 +10,7 @@ below:
 1. The SilverLibs.lua file should be placed in the gearswap/libs folder. It will still work if you have it in the gearswap/data folder though.
 2. Add the following line at the top of your gearswap file in which you wish to use the function. If you have a global file, you can put it at the top of that one instead.
 ```
-include('SilverLibs')
+silibs = include('SilverLibs')
 ```
 3. Mote library is required for this to work. To enable Mote libs, add this to the top of your `get_sets` function:
 ```
@@ -65,7 +65,7 @@ Whenever your weapons are removed, this function will re-equip whatever you prev
 
 In your job file after `include`ing SilverLibs and Mote libs, add the following:
 ```
-USE_WEAPON_REARM = true
+silibs.use_weapon_rearm = true
 ```
 Recommend putting it in your job lua instead of globals.
 
@@ -104,18 +104,18 @@ to modify this library lua.
 
 In your job file after `include`ing SilverLibs and Mote libs, add the following:
 ```
-USE_DYNAMIC_WS_KEYBINDS = true
+silibs.use_dynamic_ws_keybinds = true
 ```
 Recommend putting it in your job lua instead of globals.
 
 If you want to use `<stnpc>` targeting instead of the default `<t>` for your weaponskills you can set the
 following line of code in the same place (you can use separate targeting mode for main hand WSs vs ranged WSs):
 ```
-MAIN_WS_TARGET_MODE = 'stnpc'
+silibs.main_ws_target_mode = 'stnpc'
 ```
 or
 ```
-RANGED_WS_TARGET_MODE = 'stnpc'
+silibs.ranged_ws_target_mode = 'stnpc'
 ```
 
 **Usage**

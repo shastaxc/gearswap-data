@@ -80,8 +80,8 @@ end
 -- Executes on first load and main job change
 function job_setup()
   lockstyleset = 4
-  USE_WEAPON_REARM = true
-  USE_DYNAMIC_WS_KEYBINDS = true
+  silibs.use_weapon_rearm = true
+  silibs.use_dynamic_ws_keybinds = true
 
   Haste = 0 -- Do not modify
   DW_needed = 0 -- Do not modify
