@@ -944,8 +944,8 @@ end
 -- Job-specific hooks for standard casting events.
 -------------------------------------------------------------------------------------------------------------------
 function job_precast(spell, action, spellMap, eventArgs)
-  cancel_outranged_ws(spell, eventArgs)
-  cancel_on_blocking_status(spell, eventArgs)
+  silibs.cancel_outranged_ws(spell, eventArgs)
+  silibs.cancel_on_blocking_status(spell, eventArgs)
   
   -- If slot is locked, keep current equipment on
   if locked_neck then equip({ neck=player.equipment.neck }) end

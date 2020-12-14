@@ -1007,8 +1007,8 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 function job_precast(spell, action, spellMap, eventArgs)
-  cancel_outranged_ws(spell, eventArgs)
-  cancel_on_blocking_status(spell, eventArgs)
+  silibs.cancel_outranged_ws(spell, eventArgs)
+  silibs.cancel_on_blocking_status(spell, eventArgs)
 
   if runes:contains(spell.english) then
     eventArgs.handled = true
