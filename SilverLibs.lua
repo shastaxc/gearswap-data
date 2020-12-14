@@ -10,12 +10,12 @@ res = include('resources')
 -- Most recent weapons (used for re-arming)
 sets.MostRecent = {main="",sub="",ranged="",ammo=""} --DO NOT MODIFY
 current_weapon_type = nil --DO NOT MODIFY
-latest_ws_binds = {}
-USE_WEAPON_REARM = false
-USE_DYNAMIC_MAIN_WS_KEYBINDS = false
-MAIN_WS_TARGET_MODE = 't'
-RANGED_WS_TARGET_MODE = 't'
 current_ranged_weapon_type = nil -- Do not modify
+latest_ws_binds = {} --DO NOT MODIFY
+USE_WEAPON_REARM = false --DO NOT MODIFY
+USE_DYNAMIC_MAIN_WS_KEYBINDS = false --DO NOT MODIFY
+MAIN_WS_TARGET_MODE = 't' --DO NOT MODIFY
+RANGED_WS_TARGET_MODE = 't' --DO NOT MODIFY
 
 
 -------------------------------------------------------------------------------
@@ -452,6 +452,7 @@ valid_keybinds = S{
 -------------------------------------------------------------------------------
 
 function init_settings()
+  sets.MostRecent = {main="",sub="",ranged="",ammo=""} --DO NOT MODIFY
   USE_WEAPON_REARM = false
   USE_DYNAMIC_MAIN_WS_KEYBINDS = false
   MAIN_WS_TARGET_MODE = 't'
@@ -593,55 +594,16 @@ function update_weaponskill_binds(has_job_changed)
   if not has_main_weapon_changed and not has_ranged_weapon_changed and not has_job_changed then
     return
   end
-
+  
   -- Update the main weapon type tracker and get new keybinds
-  local new_main_ws_bindings = {}
-  if has_main_weapon_changed or has_job_changed then
-    current_main_weapon_type = main_weapon_type
-
-    -- Get defined bindings
-    new_main_ws_bindings = get_ws_bindings(main_weapon_type)
-  end
+  current_main_weapon_type = main_weapon_type
+  -- Get new main hand bindings
+  local new_main_ws_bindings = get_ws_bindings(main_weapon_type)
 
   -- Update the ranged weapon type tracker and get new keybinds
-  local new_ranged_ws_bindings = {}
-  if has_ranged_weapon_changed or has_job_changed then
-    current_ranged_weapon_type = ranged_weapon_type
-
-    -- Get defined bindings
-    new_ranged_ws_bindings = get_ws_bindings(ranged_weapon_type)
-  end
-
-  -- If main changed, unbind previous main bindings if there is no overlap in new bindings.
-  -- If ranged changed, unbind previous ranged bindings if there is no overlap in new bindings.
-  -- Also, if no ranged weapon is equipped, unbind all ranged WS
-  for old_keybind,old_ws_name in pairs(latest_ws_binds) do
-    local ws = res.weapon_skills:with('en', old_ws_name)
-    local is_main_hand_keybind = ws.skill > 0 and ws.skill < 13 -- Skill ID 1-12 are main hand
-    if is_main_hand_keybind and has_main_weapon_changed then -- Only consider main hand keybinds
-      local is_same = false
-      for new_keybind,new_ws_name in pairs(new_main_ws_bindings) do
-        if old_keybind == new_keybind then
-          is_same = true
-          break
-        end
-      end
-      if not is_same then
-        send_command("unbind "..old_keybind)
-      end
-    elseif has_ranged_weapon_changed then -- Assume it's a ranged keybind if it's not main hand
-      local is_same = false
-      for new_keybind,new_ws_name in pairs(new_ranged_ws_bindings) do
-        if old_keybind == new_keybind then
-          is_same = true
-          break
-        end
-      end
-      if not is_same then
-        send_command("unbind "..old_keybind)
-      end
-    end
-  end
+  current_ranged_weapon_type = ranged_weapon_type
+  -- Get new ranged bindings
+  local new_ranged_ws_bindings = get_ws_bindings(ranged_weapon_type)
 
   -- Merge main and ranged keybinds into same table
   local merged_main_ranged_bindings = new_main_ws_bindings
@@ -652,6 +614,22 @@ function update_weaponskill_binds(has_job_changed)
           merged_main_ranged_bindings[keybind]..'" keybind ('..keybind..').')
     end
     merged_main_ranged_bindings[keybind] = new_ranged_ws_bindings[keybind]
+  end
+
+  -- Unbind previous bindings if there is no overlap in new bindings. This
+  -- is necessary because unbind commands appear to be asynchronous and
+  -- would otherwise erase your new keybinds too.
+  for old_keybind,old_ws_name in pairs(latest_ws_binds) do
+    local is_same = false
+    for new_keybind,new_ws_name in pairs(merged_main_ranged_bindings) do
+      if old_keybind == new_keybind then
+        is_same = true
+        break
+      end
+    end
+    if not is_same then
+      send_command("unbind "..old_keybind)
+    end
   end
 
   -- Set weaponskill bindings according to table
@@ -666,12 +644,13 @@ function update_weaponskill_binds(has_job_changed)
   end
 
   latest_ws_binds = merged_main_ranged_bindings
-  
+
   -- Notify user that keybinds have been updated
   local notify_msg = 'WS Keybinds: '..main_weapon_type
   if ranged_weapon_type ~= nil then
     notify_msg = notify_msg..'/'..ranged_weapon_type..''
   end
+  notify_msg = notify_msg..' for '..get_current_job()
   windower.add_to_chat(8, notify_msg)
 end
 
@@ -794,6 +773,26 @@ function purge_invalid_ws_bindings(ws_bindings)
   return purged_table
 end
 
+function get_current_job()
+  local player = windower.ffxi.get_player()
+  return player.main_job..'/'..player.sub_job
+end
+
+function unbind_all_ws()
+  -- Iterate through all categories in default_ws_bindings
+  -- If there is a user override in user_ws_bindings, unbind that instead
+  for weapon_category, weapon_specific_table in pairs(default_ws_bindings) do
+    if user_ws_bindings and user_ws_bindings[weapon_category] then
+      weapon_specific_table = user_ws_bindings[weapon_category]
+    end
+    for job_category, job_specific_table in pairs(weapon_specific_table) do
+      for keybind,ws_name in pairs(job_specific_table) do
+        send_command("unbind "..keybind)
+      end
+    end
+  end
+end
+
 
 -------------------------------------------------------------------------------
 -- Event hooks
@@ -803,16 +802,23 @@ windower.register_event('prerender',function()
   if USE_WEAPON_REARM then
     update_and_rearm_weapons()
   end
+  
   if USE_DYNAMIC_WS_KEYBINDS then
     update_weaponskill_binds(false)
   end
 end)
 
--- Hook into job/subjob change event
-windower.register_event('job change',function()
-  init_settings()
+-- Hook into job/subjob change event (happens after job has finished changing)
+windower.register_event('job change', function(main_job_id, main_job_level, sub_job_id, sub_job_level)
+  -- For some reason, this event may fire twice. The first time, the game does not actually detect
+  -- the player's new job. Enforce a check to ensure it has.
+  if main_job_id == nil then return end
 
+  init_settings()
+  unbind_all_ws()
   if USE_DYNAMIC_WS_KEYBINDS then
-    update_weaponskill_binds(true)
+    coroutine.schedule(function()
+      update_weaponskill_binds(true)
+    end, 1)
   end
 end)
