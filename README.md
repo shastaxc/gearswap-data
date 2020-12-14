@@ -6,8 +6,8 @@ The SilverLibs.lua file contains functionality that is designed to be easily imp
 other files listed in this repository but feel free to use them as references. To use any of these functions, follow the instructions
 below:
 
-**Installing Silverlibs**
-1. The SilverLibs.lua file should be placed in the gearswap/data folder or in the gearswap/libs folder.
+**Installing SilverLibs**
+1. The SilverLibs.lua file should be placed in the gearswap/libs folder. It will still work if you have it in the gearswap/data folder though.
 2. Add the following line at the top of your gearswap file in which you wish to use the function. If you have a global file, you can put it at the top of that one instead.
 ```
 include('SilverLibs')

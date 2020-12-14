@@ -191,7 +191,7 @@ default_ws_bindings = {
       ['^numpad4'] = "Blade: Ku", --ambuscade
       ['^numpad5'] = "Blade: Shun", --aeonic
       ['^numpad6'] = "Blade: Chi",
-      ['^numpad1'] = "Blade: Yu", --aoe
+      ['^numpad1'] = "Blade: Yu",
       ['^numpad2'] = "Blade: Ei", --elemental
       ['^numpad3'] = "Blade: Ten",
     },
