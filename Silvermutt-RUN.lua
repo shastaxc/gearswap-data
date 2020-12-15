@@ -90,7 +90,6 @@ end
 function job_setup()
   lockstyleset = 3
   silibs.use_weapon_rearm = true
-  silibs.use_dynamic_ws_keybinds = true
   rayke_duration = 34
   gambit_duration = 92
 

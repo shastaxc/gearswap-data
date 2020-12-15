@@ -46,7 +46,6 @@ function job_setup()
 
   lockstyleset = 5
   silibs.use_weapon_rearm = true
-  silibs.use_dynamic_ws_keybinds = true
 
   state.Buff.Footwork = buffactive.Footwork or false
   state.Buff.Impetus = buffactive.Impetus or false

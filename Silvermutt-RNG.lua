@@ -54,7 +54,6 @@ end
 function job_setup()
   lockstyleset = 6
   silibs.use_weapon_rearm = true
-  silibs.use_dynamic_ws_keybinds = true
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.HybridMode:options('Normal', 'LightDef')

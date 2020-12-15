@@ -70,7 +70,6 @@ function job_setup()
 
   lockstyleset = 1
   silibs.use_weapon_rearm = true
-  silibs.use_dynamic_ws_keybinds = true
 
   Haste = 0 -- Do not modify
   DW_needed = 0 -- Do not modify
