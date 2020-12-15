@@ -60,24 +60,68 @@
 
 -- Initialization function for this job file.
 function get_sets()
+  -- Load and initialize Mote library
   mote_include_version = 2
-
-  -- Load and initialize the include file.
-  include('Mote-Include.lua')
-  res = require 'resources'
+  include('Mote-Include.lua') -- Executes job_setup, user_setup, init_gear_sets
 end
 
-
--- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
+-- Executes on first load and main job change
 function job_setup()
-  state.SongMode = M{['description']='Song Mode', 'None', 'Placeholder'}
+  lockstyleset = 1
+  -- Adjust this if using the Terpander (new +song instrument)
+  info.ExtraSongInstrument = 'Daurdabla'
+  -- How many extra songs we can keep from Daurdabla/Terpander
+  info.ExtraSongs = 2
+
+  Haste = 0 -- Do not modify
+  DW_needed = 0 -- Do not modify
+  DW = false -- Do not modify
 
   state.Buff['Pianissimo'] = buffactive['pianissimo'] or false
 
-  no_swap_gear = S{"Warp Ring", "Dim. Ring (Dem)", "Dim. Ring (Holla)", "Dim. Ring (Mea)",
-            "Trizek Ring", "Echad Ring", "Facility Ring", "Capacity Ring"}
+  state.SongMode = M{['description']='Song Mode', 'None', 'Placeholder'}
+  state.OffenseMode:options('Normal', 'Acc')
+  state.HybridMode:options('Normal', 'DT')
+  state.WeaponskillMode:options('Normal', 'Acc')
+  state.CastingMode:options('Normal', 'Resistant')
+  state.IdleMode:options('Normal', 'DT', 'MEva')
+  state.CP = M(false, "Capacity Points Mode")
+  state.LullabyMode = M{['description']='Lullaby Instrument', 'Harp', 'Horn'}
+  state.Carol = M{['description']='Carol',
+      'Fire Carol', 'Fire Carol II', 'Ice Carol', 'Ice Carol II', 'Wind Carol', 'Wind Carol II',
+      'Earth Carol', 'Earth Carol II', 'Lightning Carol', 'Lightning Carol II', 'Water Carol', 'Water Carol II',
+      'Light Carol', 'Light Carol II', 'Dark Carol', 'Dark Carol II',
+      }
+  state.Threnody = M{['description']='Threnody',
+      'Fire Threnody II', 'Ice Threnody II', 'Wind Threnody II', 'Earth Threnody II',
+      'Ltng. Threnody II', 'Water Threnody II', 'Light Threnody II', 'Dark Threnody II',
+      }
+  state.Etude = M{['description']='Etude', 'Sinewy Etude', 'Herculean Etude', 'Learned Etude', 'Sage Etude',
+      'Quick Etude', 'Swift Etude', 'Vivacious Etude', 'Vital Etude', 'Dextrous Etude', 'Uncanny Etude',
+      'Spirited Etude', 'Logical Etude', 'Enchanting Etude', 'Bewitching Etude'}
+  state.WeaponSet = M{['description']='Weapon Set', 'Carnwenhan', 'Twashtar', 'Naegling', 'Tauret', 'Free'}
+  state.WeaponLock = M(false, 'Weapon Lock')
 
-  lockstyleset = 1
+  send_command('bind !s gs c faceaway')
+  send_command('bind !d gs c usekey')
+  send_command('bind @w gs c toggle WeaponLock')
+
+  send_command('bind ^` gs c cycle SongMode')
+  send_command('bind !` input /ma "Chocobo Mazurka" <me>')
+  send_command('bind !p input /ja "Pianissimo" <me>')
+
+  send_command('bind ^backspace gs c cycle SongTier')
+  send_command('bind ^[ gs c cycleback Etude')
+  send_command('bind ^] gs c cycle Etude')
+  send_command('bind ^; gs c cycleback Carol')
+  send_command('bind ^\' gs c cycle Carol')
+  send_command('bind ^, gs c cycleback Threnody')
+  send_command('bind ^. gs c cycle Threnody')
+
+  send_command('bind @` gs c cycle LullabyMode')
+  send_command('bind @c gs c toggle CP')
+  send_command('bind ^delete gs c cycleback WeaponSet')
+  send_command('bind ^insert gs c cycle WeaponSet')
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -86,111 +130,44 @@ end
 
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
-  state.OffenseMode:options('Normal', 'Acc')
-  state.HybridMode:options('Normal', 'DT')
-  state.WeaponskillMode:options('Normal', 'Acc')
-  state.CastingMode:options('Normal', 'Resistant')
-  state.IdleMode:options('Normal', 'DT', 'MEva')
-
-  state.LullabyMode = M{['description']='Lullaby Instrument', 'Harp', 'Horn'}
-
-  state.Carol = M{['description']='Carol',
-      'Fire Carol', 'Fire Carol II', 'Ice Carol', 'Ice Carol II', 'Wind Carol', 'Wind Carol II',
-      'Earth Carol', 'Earth Carol II', 'Lightning Carol', 'Lightning Carol II', 'Water Carol', 'Water Carol II',
-      'Light Carol', 'Light Carol II', 'Dark Carol', 'Dark Carol II',
-      }
-
-  state.Threnody = M{['description']='Threnody',
-      'Fire Threnody II', 'Ice Threnody II', 'Wind Threnody II', 'Earth Threnody II',
-      'Ltng. Threnody II', 'Water Threnody II', 'Light Threnody II', 'Dark Threnody II',
-      }
-
-  state.Etude = M{['description']='Etude', 'Sinewy Etude', 'Herculean Etude', 'Learned Etude', 'Sage Etude',
-      'Quick Etude', 'Swift Etude', 'Vivacious Etude', 'Vital Etude', 'Dextrous Etude', 'Uncanny Etude',
-      'Spirited Etude', 'Logical Etude', 'Enchanting Etude', 'Bewitching Etude'}
-
-  state.WeaponSet = M{['description']='Weapon Set', 'Carnwenhan', 'Twashtar', 'Naegling', 'Tauret', 'Free'}
-  state.WeaponLock = M(false, 'Weapon Lock')
-  -- state.CP = M(false, "Capacity Points Mode")
-
   -- Additional local binds
-  include('Global-Binds.lua') -- OK to remove this line
-  include('Global-GEO-Binds.lua') -- OK to remove this line
+  include('Global-Binds.lua')
 
-  send_command('lua l gearinfo')
-
-  -- Adjust this if using the Terpander (new +song instrument)
-  info.ExtraSongInstrument = 'Daurdabla'
-  -- How many extra songs we can keep from Daurdabla/Terpander
-  info.ExtraSongs = 2
-
-  send_command('bind ^` gs c cycle SongMode')
-  send_command('bind !` input /ma "Chocobo Mazurka" <me>')
-  send_command('bind !p input /ja "Pianissimo" <me>')
-
-  send_command('bind ^backspace gs c cycle SongTier')
-  send_command('bind ^insert gs c cycleback Etude')
-  send_command('bind ^delete gs c cycle Etude')
-  send_command('bind ^home gs c cycleback Carol')
-  send_command('bind ^end gs c cycle Carol')
-  send_command('bind ^pageup gs c cycleback Threnody')
-  send_command('bind ^pagedown gs c cycle Threnody')
-
-  send_command('bind @` gs c cycle LullabyMode')
-  send_command('bind @w gs c toggle WeaponLock')
-  -- send_command('bind @c gs c toggle CP')
-  send_command('bind @e gs c cycleback WeaponSet')
-  send_command('bind @r gs c cycle WeaponSet')
-
-  --send_command('bind ^numpad7 input /ws "Savage Blade" <t>')
-  send_command('bind ^numpad7 input /ws "Mordant Rime" <t>')
-  send_command('bind ^numpad4 input /ws "Evisceration" <t>')
-  send_command('bind ^numpad5 input /ws "Rudra\'s Storm" <t>')
-  send_command('bind ^numpad1 input /ws "Aeolian Edge" <t>')
+  update_combat_form()
+  determine_haste_group()
 
   select_default_macro_book()
   set_lockstyle()
-
-  state.Auto_Kite = M(false, 'Auto_Kite')
-  Haste = 0
-  DW_needed = 0
-  DW = false
-  moving = false
-  update_combat_form()
-  determine_haste_group()
 end
 
 
 -- Called when this job file is unloaded (eg: job change)
 function user_unload()
+  send_command('unbind !s')
+  send_command('unbind !d')
+  send_command('unbind @w')
+
   send_command('unbind ^`')
   send_command('unbind !`')
-  send_command('unbind ^backspace')
-  send_command('unbind !insert')
-  send_command('unbind !delete')
-  send_command('unbind ^insert')
-  send_command('unbind ^delete')
-  send_command('unbind ^home')
-  send_command('unbind ^end')
-  send_command('unbind ^pageup')
-  send_command('unbind ^pagedown')
-  send_command('unbind @`')
-  send_command('unbind @w')
-  -- send_command('unbind @c')
-  send_command('unbind @e')
-  send_command('unbind @r')
-  send_command('unbind ^numpad7')
-  send_command('unbind ^numpad4')
-  send_command('unbind ^numpad5')
-  send_command('unbind ^numpad1')
+  send_command('unbind !p')
 
-  send_command('lua u gearinfo')
+  send_command('unbind ^backspace')
+  send_command('unbind ^[')
+  send_command('unbind ^]')
+  send_command('unbind ^;')
+  send_command('unbind ^\'')
+  send_command('unbind ^,')
+  send_command('unbind ^.')
+
+  send_command('unbind @`')
+  send_command('unbind @c')
+  send_command('unbind ^delete')
+  send_command('unbind ^insert')
 end
 
 
 -- Define sets and vars used by this job file.
 function init_gear_sets()
-
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Precast Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
@@ -203,14 +180,14 @@ function init_gear_sets()
     body="Inyanga Jubbah +2", --14
     hands="Gende. Gages +1", --7/5
     legs="Aya. Cosciales +2", --6
-    feet="Volte Gaiters", --6
+    feet="Volte Gaiters", --6 (or use Navon Crackows for 5% FC)
     neck="Orunmila's Torque", --5
     ear1="Loquac. Earring", --2
     ear2="Etiolation Earring", --1
-    ring1="Weather. Ring +1", --5
+    ring1="Lebeche Ring", --Quick Magic 2%
     ring2="Kishar Ring", --4
     back=gear.BRD_Song_Cape, --10
-    waist="Embla Sash", --5
+    waist="Witful Belt", --3; Quick Magic 3%
   }
 
   sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {
@@ -223,13 +200,15 @@ function init_gear_sets()
     ear2="Mendi. Earring", --0/5
   })
 
+  -- Caps at 80%, fill the rest of the slots with defensive gear
+  -- Also, don't use quick magic for songs because lag might mess up midcast sets
   sets.precast.FC.BardSong = set_combine(sets.precast.FC, {
     head="Fili Calot +1", --14
     body="Brioso Justau. +3", --15
-    feet="Bihu Slippers +3", --9
+    feet="Bihu Slippers +3", --10
     neck="Loricate Torque +1",
-    ear1="Genmei Earring",
-    ring2="Defending Ring",
+    ring1="Defending Ring",
+    waist="Embla Sash",
   })
 
   sets.precast.FC.SongPlaceholder = set_combine(sets.precast.FC.BardSong, {
@@ -238,20 +217,19 @@ function init_gear_sets()
 
   sets.precast.FC.Dispelga = set_combine(sets.precast.FC, {
     main="Daybreak",
-    sub="Ammurapi Shield",
-    waist="Shinjutsu-no-Obi +1",
+    sub="Ammurapi Shield", -- Not sure this is necessary
+    waist="Shinjutsu-no-Obi +1", -- Not sure this is necessary
   })
 
   -- Precast sets to enhance JAs
-
   sets.precast.JA.Nightingale = {
-    feet="Bihu Slippers +3",
+    feet="Bihu Slippers +3", -- +1 is acceptable
   }
   sets.precast.JA.Troubadour = {
-    body="Bihu Jstcorps. +3",
+    body="Bihu Jstcorps. +3", -- +1 is acceptable
   }
   sets.precast.JA['Soul Voice'] = {
-    legs="Bihu Cannions +3",
+    legs="Bihu Cannions +3", -- +1 is acceptable
   }
 
   -- Waltz set (chr and vit)
@@ -613,12 +591,10 @@ function init_gear_sets()
   sets.defense.PDT = sets.idle.DT
   sets.defense.MDT = sets.idle.DT
 
-  sets.Kiting = {
-    feet="Fili Cothurnes +1",
-  }
   sets.latent_refresh = {
     waist="Fucho-no-obi",
   }
+
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Engaged Sets ------------------------------------------
@@ -656,7 +632,7 @@ function init_gear_sets()
   -- * DNC Subjob DW Trait: +15%
   -- * NIN Subjob DW Trait: +25%
 
-  -- No Magic Haste (74% DW to cap)
+  -- No Magic/Gear/JA Haste (74% DW to cap, 49% from gear)
   sets.engaged.DW = {
     range=gear.Linos_TP,
     head="Aya. Zucchetto +2",
@@ -678,19 +654,43 @@ function init_gear_sets()
     feet="Bihu Slippers +3",
   })
 
-  -- 15% Magic Haste (67% DW to cap)
+  -- Low Magic/Gear/JA Haste (67% DW to cap, 42% from gear)
   sets.engaged.DW.LowHaste = sets.engaged.DW
   sets.engaged.DW.Acc.LowHaste = sets.engaged.DW.Acc
 
-  -- 30% Magic Haste (56% DW to cap)
+  -- Mid Magic/Gear/JA Haste (56% DW to cap, 31% from gear)
   sets.engaged.DW.MidHaste = sets.engaged.DW
   sets.engaged.DW.Acc.MidHaste = sets.engaged.DW.Acc
 
-  -- 35% Magic Haste (51% DW to cap)
+  -- High Magic/Gear/JA Haste (51% DW to cap, 27% from gear)
   sets.engaged.DW.HighHaste = sets.engaged.DW
   sets.engaged.DW.Acc.HighHaste = sets.engaged.DW.Acc
 
-  -- 45% Magic Haste (36% DW to cap)
+  -- Super Magic/Gear/JA Haste (46% DW to cap, 21% from gear)
+  sets.engaged.DW.SuperHaste = set_combine(sets.engaged.DW.MaxHaste, {
+    main="Carnwenhan",
+    sub="Taming Sari",
+    range=gear.Linos_TP,
+    head="Aya. Zucchetto +2",
+    body="Ayanmo Corazza +2",
+    hands=gear.Chironic_QA_hands,
+    legs="Aya. Cosciales +2",
+    feet=gear.Chironic_QA_feet,
+    neck="Bard's Charm +1",
+    ear1="Eabani Earring", --4
+    ear2="Telos Earring",
+    ring1={name="Chirich Ring +1", bag="wardrobe3"},
+    ring2={name="Chirich Ring +1", bag="wardrobe4"},
+    back=gear.BRD_STP_Cape,
+    waist="Reiki Yotai", --7
+  })
+  sets.engaged.DW.Acc.SuperHaste = set_combine(sets.engaged.DW.Acc.MaxHaste, {
+    hands="Raetic Bangles +1",
+    feet="Bihu Slippers +3",
+    ear2="Mache Earring +1",
+  })
+
+  -- Max Magic/Gear/JA Haste (37% DW to cap, 12% from gear)
   sets.engaged.DW.MaxHaste = {
     main="Carnwenhan",
     sub="Taming Sari",
@@ -708,20 +708,10 @@ function init_gear_sets()
     back=gear.BRD_STP_Cape,
     waist="Reiki Yotai", --7
   }
-
   sets.engaged.DW.MaxHaste.Acc = set_combine(sets.engaged.DW, {
     hands="Raetic Bangles +1",
     feet="Bihu Slippers +3",
     ear2="Mache Earring +1",
-  })
-
-  sets.engaged.DW.MaxHastePlus = set_combine(sets.engaged.DW.MaxHaste, {
-    ear1="Cessance Earring",
-    back=gear.BRD_DW_Cape,
-  })
-  sets.engaged.DW.Acc.MaxHastePlus = set_combine(sets.engaged.DW.Acc.MaxHaste, {
-    ear1="Cessance Earring",
-    back=gear.BRD_DW_Cape,
   })
 
   sets.engaged.Aftermath = {
@@ -763,8 +753,8 @@ function init_gear_sets()
   sets.engaged.DW.DT.MaxHaste = set_combine(sets.engaged.DW.MaxHaste, sets.engaged.Hybrid)
   sets.engaged.DW.Acc.DT.MaxHaste = set_combine(sets.engaged.DW.Acc.MaxHaste, sets.engaged.Hybrid)
 
-  sets.engaged.DW.DT.MaxHastePlus = set_combine(sets.engaged.DW.MaxHastePlus, sets.engaged.Hybrid)
-  sets.engaged.DW.Acc.DT.MaxHastePlus = set_combine(sets.engaged.DW.Acc.MaxHastePlus, sets.engaged.Hybrid)
+  sets.engaged.DW.DT.SuperHaste = set_combine(sets.engaged.DW.SuperHaste, sets.engaged.Hybrid)
+  sets.engaged.DW.Acc.DT.SuperHaste = set_combine(sets.engaged.DW.Acc.SuperHaste, sets.engaged.Hybrid)
 
 
   ------------------------------------------------------------------------------------------------
@@ -777,9 +767,8 @@ function init_gear_sets()
   }
 
   sets.buff.Doom = {
-    neck="Nicander's Necklace", --20
-    ring1={name="Eshmun's Ring", bag="wardrobe3"}, --20
-    ring2={name="Eshmun's Ring", bag="wardrobe4"}, --20
+    -- neck="Nicander's Necklace", --20
+    -- ring2="Eshmun's Ring", --20
     waist="Gishdubar Sash", --10
   }
 
@@ -791,6 +780,12 @@ function init_gear_sets()
   }
   sets.Reive = {
     neck="Ygnas's Resolve +1",
+  }
+  sets.Kiting = {
+    feet="Fili Cothurnes +1",
+  }
+  sets.Kiting.Adoulin = {
+    body="Councilor's Garb",
   }
 
 end
@@ -879,27 +874,18 @@ function job_aftercast(spell, action, spellMap, eventArgs)
 end
 
 function job_buff_change(buff,gain)
-
---    if buffactive['Reive Mark'] then
---        if gain then
---            equip(sets.Reive)
---            disable('neck')
---        else
---            enable('neck')
---        end
---    end
-
   if buff == "doom" then
     if gain then
-      equip(sets.buff.Doom)
       send_command('@input /p Doomed.')
-      disable('ring1','ring2','waist')
-    else
-      enable('ring1','ring2','waist')
-      handle_equipping_gear(player.status)
+    elseif player.hpp > 0 then
+      send_command('@input /p Doom Removed.')
     end
   end
 
+  -- Update gear for these specific buffs
+  if buff == "doom" then
+    status_change(player.status)
+  end
 end
 
 -- Handle notifications of general user state change.
@@ -921,7 +907,6 @@ function job_handle_equipping_gear(playerStatus, eventArgs)
   check_gear()
   update_combat_form()
   determine_haste_group()
-  check_moving()
 end
 
 function job_update(cmdParams, eventArgs)
@@ -945,9 +930,72 @@ function job_self_command(cmdParams, eventArgs)
     send_command('@input /ma '..state.Carol.value..' <stpc>')
   elseif cmdParams[1]:lower() == 'threnody' then
     send_command('@input /ma '..state.Threnody.value..' <stnpc>')
+  elseif cmdParams[1]:lower() == 'usekey' then
+    send_command('cancel Invisible; cancel Hide; cancel Gestation; cancel Camouflage')
+    if player.target.type ~= 'NONE' then
+      if player.target.name == 'Sturdy Pyxis' then
+        send_command('@input /item "Forbidden Key" <t>')
+      end
+    end
+  elseif cmdParams[1]:lower() == 'faceaway' then
+    windower.ffxi.turn(player.facing - math.pi);
   end
 
   gearinfo(cmdParams, eventArgs)
+end
+
+function gearinfo(cmdParams, eventArgs)
+  if cmdParams[1] == 'gearinfo' then
+    if type(tonumber(cmdParams[2])) == 'number' then
+      if tonumber(cmdParams[2]) ~= DW_needed then
+      DW_needed = tonumber(cmdParams[2])
+      DW = true
+      end
+    elseif type(cmdParams[2]) == 'string' then
+      if cmdParams[2] == 'false' then
+        DW_needed = 0
+        DW = false
+      end
+    end
+    if type(tonumber(cmdParams[3])) == 'number' then
+      if tonumber(cmdParams[3]) ~= Haste then
+        Haste = tonumber(cmdParams[3])
+      end
+    end
+    if type(cmdParams[4]) == 'string' then
+      if cmdParams[4] == 'true' then
+        moving = true
+      elseif cmdParams[4] == 'false' then
+        moving = false
+      end
+    end
+    if not midaction() then
+      job_update()
+    end
+  end
+end
+
+-- Modify the default idle set after it was constructed.
+function customize_idle_set(idleSet)
+  -- If not in DT mode put on move speed gear
+  if state.IdleMode.current == 'Normal' and state.DefenseMode.value == 'None' then
+    if classes.CustomIdleGroups:contains('Adoulin') then
+      idleSet = set_combine(idleSet, sets.Kiting.Adoulin)
+    else
+      idleSet = set_combine(idleSet, sets.Kiting)
+    end
+  end
+  if player.mpp < 51 then
+    idleSet = set_combine(idleSet, sets.latent_refresh)
+  end
+  if state.CP.current == 'on' then
+    idleSet = set_combine(idleSet, sets.CP)
+  end
+  if buffactive.Doom then
+    idleSet = set_combine(idleSet, sets.buff.Doom)
+  end
+
+  return idleSet
 end
 
 -- Modify the default melee set after it was constructed.
@@ -964,8 +1012,25 @@ function customize_melee_set(meleeSet)
   if buffactive['Aftermath: Lv.3'] and player.equipment.main == "Carnwenhan" then
     meleeSet = set_combine(meleeSet, sets.engaged.Aftermath)
   end
+  if state.CP.current == 'on' then
+    meleeSet = set_combine(meleeSet, sets.CP)
+  end
+  if buffactive.Doom then
+    meleeSet = set_combine(meleeSet, sets.buff.Doom)
+  end
 
   return meleeSet
+end
+
+function customize_defense_set(defenseSet)
+  if state.CP.current == 'on' then
+    defenseSet = set_combine(defenseSet, sets.CP)
+  end
+  if buffactive.Doom then
+    defenseSet = set_combine(defenseSet, sets.buff.Doom)
+  end
+
+  return defenseSet
 end
 
 function get_custom_wsmode(spell, action, spellMap)
@@ -975,24 +1040,6 @@ function get_custom_wsmode(spell, action, spellMap)
   end
 
   return wsmode
-end
-
--- Modify the default idle set after it was constructed.
-function customize_idle_set(idleSet)
-  -- if state.CP.current == 'on' then
-  --     equip(sets.CP)
-  --     disable('back')
-  -- else
-  --     enable('back')
-  -- end
-  if player.mpp < 51 then
-    idleSet = set_combine(idleSet, sets.latent_refresh)
-  end
-  if state.Auto_Kite.value == true then
-    idleSet = set_combine(idleSet, sets.Kiting)
-  end
-
-  return idleSet
 end
 
 -- Set eventArgs.handled to true if we don't want the automatic display to be run.
@@ -1145,7 +1192,7 @@ function determine_haste_group()
     if DW_needed <= 12 then
       classes.CustomMeleeGroups:append('MaxHaste')
     elseif DW_needed > 12 and DW_needed <= 21 then
-      classes.CustomMeleeGroups:append('MaxHastePlus')
+      classes.CustomMeleeGroups:append('SuperHaste')
     elseif DW_needed > 21 and DW_needed <= 27 then
       classes.CustomMeleeGroups:append('HighHaste')
     elseif DW_needed > 27 and DW_needed <= 31 then
@@ -1158,54 +1205,13 @@ function determine_haste_group()
   end
 end
 
-function gearinfo(cmdParams, eventArgs)
-  if cmdParams[1] == 'gearinfo' then
-    if type(tonumber(cmdParams[2])) == 'number' then
-      if tonumber(cmdParams[2]) ~= DW_needed then
-      DW_needed = tonumber(cmdParams[2])
-      DW = true
-      end
-    elseif type(cmdParams[2]) == 'string' then
-      if cmdParams[2] == 'false' then
-        DW_needed = 0
-        DW = false
-      end
-    end
-    if type(tonumber(cmdParams[3])) == 'number' then
-      if tonumber(cmdParams[3]) ~= Haste then
-        Haste = tonumber(cmdParams[3])
-      end
-    end
-    if type(cmdParams[4]) == 'string' then
-      if cmdParams[4] == 'true' then
-        moving = true
-      elseif cmdParams[4] == 'false' then
-        moving = false
-      end
-    end
-    if not midaction() then
-      job_update()
-    end
-  end
-end
-
-function check_moving()
-  if state.DefenseMode.value == 'None'  and state.Kiting.value == false then
-    if state.Auto_Kite.value == false and moving then
-      state.Auto_Kite:set(true)
-    elseif state.Auto_Kite.value == true and moving == false then
-      state.Auto_Kite:set(false)
-    end
-  end
-end
-
 function check_gear()
-  if no_swap_gear:contains(player.equipment.left_ring) then
+  if no_swap_rings:contains(player.equipment.left_ring) then
     disable("ring1")
   else
     enable("ring1")
   end
-  if no_swap_gear:contains(player.equipment.right_ring) then
+  if no_swap_rings:contains(player.equipment.right_ring) then
     disable("ring2")
   else
     enable("ring2")
@@ -1214,11 +1220,11 @@ end
 
 windower.register_event('zone change',
   function()
-    if no_swap_gear:contains(player.equipment.left_ring) then
+    if no_swap_rings:contains(player.equipment.left_ring) then
       enable("ring1")
       equip(sets.idle)
     end
-    if no_swap_gear:contains(player.equipment.right_ring) then
+    if no_swap_rings:contains(player.equipment.right_ring) then
       enable("ring2")
       equip(sets.idle)
     end
@@ -1231,5 +1237,16 @@ function select_default_macro_book()
 end
 
 function set_lockstyle()
-  send_command('wait 2; input /lockstyleset ' .. lockstyleset)
+  -- Set lockstyle 2 seconds after changing job, trying immediately will error
+  coroutine.schedule(function()
+    if locked_style == false then
+      send_command('input /lockstyleset '..lockstyleset)
+    end
+  end, 2)
+  -- In case lockstyle was on cooldown for first command, try again (lockstyle has 10s cd)
+  coroutine.schedule(function()
+    if locked_style == false then
+      send_command('input /lockstyleset '..lockstyleset)
+    end
+  end, 10)
 end
