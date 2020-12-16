@@ -40,15 +40,11 @@
 --[[
   Custom commands:
 
-  SongMode may take one of three values: None, Placeholder, FullLength
-
   You can set these via the standard 'set' and 'cycle' self-commands.  EG:
   gs c cycle SongMode
   gs c set SongMode Placeholder
 
   The Placeholder state will equip the bonus song instrument and ensure non-duration gear is equipped.
-  The FullLength state will simply equip the bonus song instrument on top of standard gear.
-
 
   Simple macro to cast a placeholder Daurdabla song:
   /console gs c set SongMode Placeholder
@@ -310,39 +306,49 @@ function init_gear_sets()
   -- General set for recast times.
   sets.midcast.FastRecast = sets.precast.FC
 
-  -- Gear to enhance certain classes of songs.
+  -- Song-specific gear to enhance party buff songs.
   sets.midcast.Ballad = {
     legs="Fili Rhingrave +1",
+  }
+  sets.midcast.Minne = {
+    legs="Mousai Seraweels +1",
+  }
+  sets.midcast.Minuet = {
+    body="Fili Hongreline +1", -- No potency change with +1
+  }
+  sets.midcast.Madrigal = {
+    head="Fili Calot +1", -- No potency change with +1
+    -- Ambuscape cape has Madrigal+1 but will be combined in later
+  }
+  sets.midcast.Prelude = {
+    -- Ambuscape cape has Prelude+1 but will be combined in later
+  }
+  sets.midcast.March = {
+    hands="Fili Manchettes +1", -- No potency change with +1
+  }
+  sets.midcast["Sentinel's Scherzo"] = {
+    feet="Fili Cothurnes +1",
   }
   sets.midcast.Carol = {
     hands="Mousai Gages +1",
   }
+  sets.midcast.Paeon = {
+    head="Brioso Roundlet +3",
+  }
+  sets.midcast.Mambo = {
+    feet="Mousai Crackows"
+  }
   sets.midcast.Etude = {
     head="Mousai Turban +1",
+  }
+
+  -- Song-specific gear to enhance offensive songs.
+  sets.midcast.Lullaby = {
+    hands="Brioso Cuffs +3",
   }
   sets.midcast.HonorMarch = {
     range="Marsyas",
     hands="Fili Manchettes +1",
-  }
-  sets.midcast.Lullaby = {
-    body="Fili Hongreline +1",
-    hands="Brioso Cuffs +3",
-  }
-  sets.midcast.Madrigal = {
-    head="Fili Calot +1",
-  }
-  --sets.midcast.Mambo = {feet="Mousai Crackows"}
-  sets.midcast.March = {
-    hands="Fili Manchettes +1",
-  }
-  sets.midcast.Minne = {
-    legs="Mousai Seraweels",
-  }
-  sets.midcast.Minuet = {
-    body="Fili Hongreline +1",
-  }
-  sets.midcast.Paeon = {
-    head="Brioso Roundlet +3",
   }
   sets.midcast.Threnody = {
     body="Mou. Manteel +1",
@@ -357,18 +363,16 @@ function init_gear_sets()
   sets.midcast['Magic Finale'] = {
     legs="Fili Rhingrave +1",
   }
-  sets.midcast["Sentinel's Scherzo"] = {
-    feet="Fili Cothurnes +1",
-  }
   sets.midcast["Chocobo Mazurka"] = {
     range="Marsyas",
   }
 
   -- For song buffs (duration and AF3 set bonus)
+  -- Song-specific gear will be combined in later
   sets.midcast.SongEnhancing = {
     main="Carnwenhan",
     sub="Genmei Shield",
-    range="Gjallarhorn",
+    range="Gjallarhorn",        -- +4 Potency
     head="Fili Calot +1",
     body="Fili Hongreline +1",
     hands="Fili Manchettes +1",
@@ -377,35 +381,41 @@ function init_gear_sets()
     neck="Mnbw. Whistle +1",
     ear1="Genmei Earring",
     ear2="Etiolation Earring",
-    ring1="Moonlight Ring",
+    ring1="Moonlight Ring", -- Gel. Ring +1 acceptable alt
     ring2="Defending Ring",
     waist="Flume Belt +1",
     back=gear.BRD_Song_Cape,
   }
 
-  -- For song defbuffs (duration primary, accuracy secondary)
-  sets.midcast.SongEnfeeble = {
-    main="Carnwenhan",
-    sub="Ammurapi Shield",
-    range="Gjallarhorn",
-    head="Brioso Roundlet +3",
-    body="Brioso Justau. +3",
-    hands="Brioso Cuffs +3",
-    legs="Brioso Cannions +3",
-    feet="Brioso Slippers +3",
-    neck="Mnbw. Whistle +1",
-    ear1="Digni. Earring",
-    ear2="Regal Earring",
-    ring1={name="Stikini Ring +1", bag="wardrobe3"},
-    ring2="Metamor. Ring +1",
-    waist="Acuity Belt +1",
-    back=gear.BRD_Song_Cape,
-  }
+  -- For the following song sets, instrument may be replaced later situationally
 
-  -- For song defbuffs (accuracy primary, duration secondary)
+  -- For song debuffs (duration primary, accuracy secondary)
+  sets.midcast.SongEnfeeble = {
+    main="Carnwenhan",          -- __, 50, 70, 255
+    sub="Ammurapi Shield",      -- __, __, 38, ___
+    range="Gjallarhorn",
+    head="Brioso Roundlet +3",  -- 41, __, 61, ___
+    body="Fili Hongreline +1",  -- 37, 12, __, ___
+    hands="Brioso Cuffs +3",    -- 39, __, 48, ___
+    legs="Inyanga Shalwar +2",  -- 32, 17, 45, ___
+    feet="Brioso Slippers +3",  -- 48, 15, 46, ___
+    neck="Mnbw. Whistle +1",    -- 23, __, 23, ___
+    ear1="Digni. Earring",      -- __, __, 10, ___
+    ear2="Regal Earring",       -- 10, __, __, ___; Adds to set bonus
+    ring1="Stikini Ring +1",    -- __, __, 11, ___
+    ring2="Stikini Ring +1",    -- __, __, 11, ___
+    waist="Acuity Belt +1",     -- __, __, 15, ___
+    back=gear.BRD_Song_Cape,    -- 20, __, 30, ___
+    -- Set bonuses                 __, __, 45, ___
+  } -- 250 CHR, 94% Duration, 453 M.Acc, 255 M.Acc skill
+
+  -- For song debuffs (accuracy primary, duration secondary)
   sets.midcast.SongEnfeebleAcc = set_combine(sets.midcast.SongEnfeeble, {
-    legs="Brioso Cannions +3"
-  })
+    body="Brioso Justau. +3",   -- 43, __, 64, ___
+    legs="Brioso Cannions +3",  -- 33, __, 56, ___
+    ring2="Metamor. Ring +1",   -- 16, __, 15, ___; Stikini acceptable alt
+    -- Set bonuses                 __, __, 75, ___
+  }) -- 273 CHR, 65% Duration, 562 M.Acc, 255 M.Acc skill
 
   -- For Horde Lullaby maxiumum AOE range.
   sets.midcast.SongStringSkill = {
@@ -420,22 +430,30 @@ function init_gear_sets()
   })
 
   -- Other general spells and classes.
+
+  -- Prioritize: Cap Cure Potency > Heal Skill > Conserve MP > MND
   sets.midcast.Cure = {
-    main="Daybreak", --30
-    sub="Ammurapi Shield",
-    head="Kaykaus Mitra +1", --11
-    body="Kaykaus Bliaut +1", --(+4)/(-6)
-    hands="Kaykaus Cuffs +1", --11(+2)/(-6)
-    legs="Kaykaus Tights +1", --11/(+2)/(-6)
-    feet="Kaykaus Boots +1", --11(+2)/(-12)
-    neck="Incanter's Torque",
-    ear1="Beatific Earring",
-    ear2="Meili Earring",
-    ring1="Menelaus's Ring",
-    ring2="Haoma's Ring",
-    back="Solemnity Cape", --7
-    waist="Bishop's Sash",
+    -- Cheap set
+    main="Daybreak",              -- __, 30, __, __, 30
+    sub="Ammurapi Shield",        -- __, __, __, __, 13
+    ammo="Pemphredo Tathlum",     -- __, __, __,  4, __
+    head=gear.Vanya_B_head,       -- __, 10, 20,  6, 27
+    body=gear.Vanya_B_body,       -- __, __, 20, __, 36
+    hands=gear.Vanya_B_hands,     -- __, __, 20, __, 33
+    legs=gear.Vanya_B_legs,       -- __, __, 20,  6, 34
+    feet=gear.Vanya_B_feet,       -- __,  5, 40, __, 19
+    neck="Incanter's Torque",     -- __, __, 10, __, __
+    ear1="Beatific Earring",      -- __, __,  4, __, __
+    ear2="Meili Earring",         -- __, __, 10, __, __
+    ring1="Sirona's Ring",        -- __, __, 10, __,  3
+    ring2="Menelaus's Ring",      -- __,  5, 15, __, __
+    back="Aurist's Cape +1",      -- __, __, __,  5, 33
+    waist="Bishop's Sash",        -- __, __,  5, __, __
+    waist="Shinjutsu-no-Obi +1",  -- __, __, __, 15, __
+    -- 0 CPII, 50 CP, 174 Heal Skill, 36 Conserve MP, 264 MND
   }
+
+  -- RESUME UPDATING HERE
 
   sets.midcast.Curaga = set_combine(sets.midcast.Cure, {
     neck="Nuna Gorget +1",
