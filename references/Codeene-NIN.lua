@@ -1,4 +1,4 @@
--- Original: Motenten / Modified: Arislan
+-- Original: Motenten/Arislan || Modified: Silvermutt
 -- Haste/DW Detection Requires Gearinfo Addon
 
 -------------------------------------------------------------------------------------------------------------------
@@ -106,24 +106,24 @@ function user_setup()
   send_command('lua l gearinfo')
 
   send_command('bind @w gs c toggle WeaponLock')
-  
+
   send_command('bind !f gs c toyweapon cycle')
   send_command('bind !g gs c toyweapon cycleback')
   send_command('bind ^f gs c toyweapon reset')
 
   send_command('bind ^` gs c cycle treasuremode')
   send_command('bind !` gs c toggle MagicBurst')
-  
+
   --JA Keybinds
   send_command('bind @2 input /ja "Futae" <me>')
   send_command('bind !\' input /ja "Yonin" <me>; wait 1; input /ma "Gekka: Ichi" <me>')
   send_command('bind !; input /ja "Innin" <me>; wait 1; input /ma "Yain: Ichi" <me>')
   send_command('bind ^0 input /ja "Issekigan" <me>')
-  
+
   --2hr JAs
   send_command('bind ![ input /ja "Mijin Gakure" <t>')
   send_command('bind !] input /ja "Mikage" <me>')
-  
+
   --Magic Keybinds
   send_command('bind ^e input /ma "Migawari: Ichi" <me>')
   send_command('bind !e input /ma "Utsusemi: San" <me>')
@@ -140,7 +140,7 @@ function user_setup()
   send_command('bind @6 input /ma "Doton: San" <t>')
   send_command('bind @7 input /ma "Huton: San" <t>')
   send_command('bind @8 input /ma "Hyoton: San" <t>')
-  
+
   --Sub job JAs
   if player.sub_job == 'WAR' then
     send_command('unbind @9')
@@ -149,7 +149,7 @@ function user_setup()
 	send_command('bind ^9 input /ja "Warcry" <me>')
 	send_command('bind @0 input /ja "Defender" <me>')
   end
-  
+
   if player.sub_job == 'DNC' then
     send_command('bind ^1 input /ja "Animated Flourish" <t>')
 	send_command('bind ^8 input /ja "Haste Samba" <me>')
@@ -174,18 +174,18 @@ function user_setup()
   moving = false
   update_combat_form()
   determine_haste_group()
-  
+
 end
 
 function user_unload()
   send_command('unbind !d')
   send_command('unbind !s')
   send_command('unbind @w')
-  
+
   send_command('unbind !f')
   send_command('unbind !g')
   send_command('unbind ^f')
-  
+
   send_command('unbind !e')
   send_command('unbind ^e')
 
@@ -198,7 +198,7 @@ function user_unload()
   send_command('unbind !;')
   send_command('unbind ![')
   send_command('unbind !]')
-  
+
   send_command('unbind !1')
   send_command('unbind !2')
   send_command('unbind !3')
@@ -209,7 +209,7 @@ function user_unload()
   send_command('unbind !8')
   send_command('unbind !9')
   send_command('unbind !0')
-  
+
   send_command('unbind ^1')
   send_command('unbind ^2')
   send_command('unbind ^3')
@@ -220,7 +220,7 @@ function user_unload()
   send_command('unbind ^8')
   send_command('unbind ^9')
   send_command('unbind ^0')
-  
+
   send_command('unbind @1')
   send_command('unbind @2')
   send_command('unbind @3')
@@ -231,13 +231,13 @@ function user_unload()
   send_command('unbind @8')
   send_command('unbind @9')
   send_command('unbind @0')
-  
+
   send_command('unbind !q')
   send_command('unbind ^q')
   send_command('unbind @q')
   send_command('unbind !k')
   send_command('unbind !j')
-  
+
   send_command('unbind home')
   send_command('unbind end')
   send_command('unbind !.')
@@ -250,7 +250,7 @@ function user_unload()
   send_command('unbind !o')
   send_command('unbind !i')
   send_command('unbind !u')
-   
+
   send_command('lua u gearinfo')
 end
 
@@ -279,11 +279,11 @@ function init_gear_sets()
 
   sets.precast.JA['Provoke'] = sets.Enmity
   sets.precast.JA['Warcry'] = sets.Enmity
-  
+
   sets.precast.JA['Mijin Gakure'] = {
     legs="Mochi. Hakama +3"
   }
-  sets.precast.JA['Futae'] = {  
+  sets.precast.JA['Futae'] = {
     hands="Hattori Tekko +1"
   }
   sets.precast.JA['Sange'] = {
@@ -438,7 +438,7 @@ function init_gear_sets()
   sets.precast.WS['Blade: Yu'].MidAccMaxTp = set_combine(sets.precast.WS['Blade: Yu'].MidAcc, {})
   sets.precast.WS['Blade: Yu'].HighAcc = set_combine(sets.precast.WS['Blade: Yu'].MidAcc, {})
   sets.precast.WS['Blade: Yu'].HighAccMaxTp = set_combine(sets.precast.WS['Blade: Yu'].HighAcc, {})
-  
+
   sets.precast.WS['Blade: Ei'] = set_combine(sets.precast.WS, {
     ammo="Ghastly Tathlum +1",
     head={ name="Mochi. Hatsuburi +3", augments={'Enhances "Yonin" and "Innin" effect',}},
@@ -462,7 +462,7 @@ function init_gear_sets()
   sets.precast.WS['Blade: Ei'].MidAccMaxTp = set_combine(sets.precast.WS['Blade: Ei'].MidAcc, {})
   sets.precast.WS['Blade: Ei'].HighAcc = set_combine(sets.precast.WS['Blade: Ei'].MidAcc, {})
   sets.precast.WS['Blade: Ei'].HighAccMaxTp = set_combine(sets.precast.WS['Blade: Ei'].HighAcc, {})
-  
+
   sets.precast.WS['Blade: Chi'] = set_combine(sets.precast.WS, {
     ammo="Ghastly Tathlum +1",
     head={ name="Mochi. Hatsuburi +3", augments={'Enhances "Yonin" and "Innin" effect',}},
@@ -486,7 +486,7 @@ function init_gear_sets()
   sets.precast.WS['Blade: Chi'].MidAccMaxTp = set_combine(sets.precast.WS['Blade: Chi'].MidAcc, {})
   sets.precast.WS['Blade: Chi'].HighAcc = set_combine(sets.precast.WS['Blade: Chi'].MidAcc, {})
   sets.precast.WS['Blade: Chi'].HighAccMaxTp = set_combine(sets.precast.WS['Blade: Chi'].HighAcc, {})
-  
+
   sets.precast.WS['Blade: To'] = set_combine(sets.precast.WS, {
     ammo="Ghastly Tathlum +1",
     head={ name="Mochi. Hatsuburi +3", augments={'Enhances "Yonin" and "Innin" effect',}},
@@ -510,7 +510,7 @@ function init_gear_sets()
   sets.precast.WS['Blade: To'].MidAccMaxTp = set_combine(sets.precast.WS['Blade: To'].MidAcc, {})
   sets.precast.WS['Blade: To'].HighAcc = set_combine(sets.precast.WS['Blade: To'].MidAcc, {})
   sets.precast.WS['Blade: To'].HighAccMaxTp = set_combine(sets.precast.WS['Blade: To'].HighAcc, {})
-  
+
   sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
     ammo="Date Shuriken",
     head={ name="Adhemar Bonnet +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
@@ -533,8 +533,8 @@ function init_gear_sets()
   sets.precast.WS['Evisceration'].MidAcc = set_combine(sets.precast.WS['Evisceration'].LowAcc, {})
   sets.precast.WS['Evisceration'].MidAccMaxTp = set_combine(sets.precast.WS['Evisceration'].MidAcc, {})
   sets.precast.WS['Evisceration'].HighAcc = set_combine(sets.precast.WS['Evisceration'].MidAcc, {})
-  sets.precast.WS['Evisceration'].HighAccMaxTp = set_combine(sets.precast.WS['Evisceration'].HighAcc, {})  
-  
+  sets.precast.WS['Evisceration'].HighAccMaxTp = set_combine(sets.precast.WS['Evisceration'].HighAcc, {})
+
   sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
     ammo="Ghastly Tathlum +1",
     head={ name="Adhemar Bonnet +1", augments={'DEX+12','AGI+12','Accuracy+20',}},
@@ -728,7 +728,7 @@ function init_gear_sets()
     legs={ name="Mochi. Hakama +3", augments={'Enhances "Mijin Gakure" effect',}}, --10% Acc29
     feet="Hiza. Sune-Ate +2", --8% Acc65
     neck={ name="Ninja Nodowa +2", augments={'Path: A',}}, --Acc22
-    waist="Patentia Sash", --5% 
+    waist="Patentia Sash", --5%
     left_ear="Suppanomimi", --5%
     right_ear="Eabani Earring", --4%
     left_ring="Mummu Ring", --Acc6 (+Acc6 for each extra Mummu piece)
@@ -773,14 +773,14 @@ function init_gear_sets()
     legs={ name="Samnuha Tights", augments={'STR+8','DEX+9','"Dbl.Atk."+3','"Triple Atk."+2',}}, --Acc26
     feet="Hiza. Sune-Ate +2", --8 Acc65
     neck={ name="Ninja Nodowa +2", augments={'Path: A',}}, --Acc22
-    waist="Patentia Sash", --5 
+    waist="Patentia Sash", --5
     left_ear="Suppanomimi", --5
     right_ear="Eabani Earring", --4
     left_ring="Mummu Ring", --Acc6 (+Acc6 for each extra Mummu piece)
     right_ring="Epona's Ring",
     back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Damage taken-5%',}}, --Acc42
   } -- 31% Acc391
-  
+
   sets.engaged.CritRate.LowHaste = set_combine(sets.engaged.LowHaste, {
     head="Ken. Jinpachi +1",
 	hands="Ken. Tekko +1",
@@ -825,7 +825,7 @@ function init_gear_sets()
     right_ring="Epona's Ring",
     back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Damage taken-5%',}}, --Acc42
   } -- 22% Acc401
-  
+
   sets.engaged.CritRate.MidHaste = set_combine(sets.engaged.MidHaste, {
     head="Ken. Jinpachi +1",
 	hands="Ken. Tekko +1",
@@ -862,13 +862,13 @@ function init_gear_sets()
     feet="Hiza. Sune-Ate +2", --8 Acc65
     neck={ name="Ninja Nodowa +2", augments={'Path: A',}}, --Acc22
     waist="Patentia Sash", --5
-    left_ear="Brutal Earring",	
+    left_ear="Brutal Earring",
     right_ear="Telos Earring", --Acc10
     left_ring="Mummu Ring", --Acc6 (+Acc6 for each extra Mummu piece)
     right_ring="Epona's Ring",
     back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Damage taken-5%',}}, --Acc42
   } -- 12% Acc398
-  
+
   sets.engaged.CritRate.HighHaste = set_combine(sets.engaged.HighHaste, {
     head="Ken. Jinpachi +1",
 	hands="Ken. Tekko +1",
@@ -905,13 +905,13 @@ function init_gear_sets()
     feet={ name="Herculean Boots", augments={'Accuracy+15','"Triple Atk."+4','AGI+7','Attack+9',}}, --Acc21
     neck={ name="Ninja Nodowa +2", augments={'Path: A',}}, --Acc22
     waist="Windbuffet Belt +1", --Acc2
-    left_ear="Brutal Earring",	
+    left_ear="Brutal Earring",
     right_ear="Telos Earring", --Acc10
     left_ring="Mummu Ring", --Acc6 (+Acc6 for each extra Mummu piece)
     right_ring="Epona's Ring",
     back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Damage taken-5%',}}, --Acc42
   } --0% Acc368
-  
+
   sets.engaged.CritRate.MaxHaste = set_combine(sets.engaged.MaxHaste, {
     head="Ken. Jinpachi +1",
 	hands="Ken. Tekko +1",
@@ -920,7 +920,7 @@ function init_gear_sets()
 	neck="Rancor Collar",
 	right_ear="Odr Earring",
 	back={ name="Andartia's Mantle", augments={'AGI+20','Accuracy+20 Attack+20','AGI+10','Crit.hit rate+10',}},
-  })	
+  })
 
   sets.engaged.LowAcc.MaxHaste = set_combine(sets.engaged.MaxHaste, {
     head="Ken. Jinpachi +1", --Acc73
@@ -946,7 +946,7 @@ function init_gear_sets()
 	feet="Ken. Sune-Ate +1",
     left_ring="Hizamaru Ring",
   }
-  
+
   sets.engaged.HybridEva = {
     ammo="Date Shuriken",
     head="Hiza. Somen　+2",
@@ -1051,19 +1051,19 @@ end
 function job_precast(spell, action, spellMap, eventArgs)
   -- Downgrade elemental spell if higher tier is on cooldown
   refine_various_spells(spell, action, spellMap, eventArgs)
-  
+
   -- Ninja tool status check
   if spell.skill == "Ninjutsu" then
     do_ninja_tool_checks(spell, spellMap, eventArgs)
   end
-  
+
   -- Handle deletion of lower level shadows
   if spellMap == 'Utsusemi' then
 	if buffactive['Copy Image'] or buffactive['Copy Image (2)'] or buffactive['Copy Image (3)'] or buffactive['Copy Image (4+)'] then
       send_command('cancel 66; cancel Copy Image; cancel 444; cancel Copy Image (2); cancel 445; cancel Copy Image (3); cancel 446; cancel Copy Image (4+)')
     end
   end
-  
+
   if spell.english:startswith('Monomi') then
     send_command('cancel sneak')
   end
@@ -1323,7 +1323,7 @@ function cycle_toy_weapons(cycle_dir)
   else
     state.ToyWeapons:reset()
   end
-  
+
   local mode_color = 001
   if state.ToyWeapons.current == 'None' then
     mode_color = 006
@@ -1341,9 +1341,9 @@ function refine_various_spells(spell, action, spellMap, eventArgs)
 	winds = S{'Huton: Ichi','Huton: Ni','Huton: San'}
 	ices = S{'Hyoton: Ichi','Hyoton: Ni','Hyoton: San'}
 	shadows = S{'Utsusemi: Ichi','Utsusemi: Ni','Utsusemi: San'}
- 
+
     if not fires:contains(spell.english) and
-	  not waters:contains(spell.english) and 
+	  not waters:contains(spell.english) and
 	  not thunders:contains(spell.english) and
 	  not earths:contains(spell.english) and
 	  not winds:contains(spell.english) and
@@ -1351,11 +1351,11 @@ function refine_various_spells(spell, action, spellMap, eventArgs)
 	  not shadows:contains(spell.english) then
         return
     end
- 
+
     local newSpell = spell.english
     local spell_recasts = windower.ffxi.get_spell_recasts()
     local cancelling = 'All '..spell.english..' spells are on cooldown. Cancelling spell casting.'
-  
+
     if spell_recasts[spell.recast_id] > 0 then
         if fires:contains(spell.english) then
             if spell.english == 'Katon: Ichi' then
@@ -1426,10 +1426,10 @@ function refine_various_spells(spell, action, spellMap, eventArgs)
                 newSpell = 'Utsusemi: Ichi'
             elseif spell.english == 'Utsusemi: San' then
                 newSpell = 'Utsusemi: Ni'
-            end	
+            end
         end
     end
-  
+
     if newSpell ~= spell.english then
         send_command('@input /ma "'..newSpell..'" '..tostring(spell.target.raw))
         eventArgs.cancel = true

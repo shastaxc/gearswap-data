@@ -59,8 +59,14 @@ function define_global_sets()
   gear.Lathi_MAB = {name="Lathi", augments={'MP+80','INT+20','"Mag.Atk.Bns."+20',}}
   gear.Lathi_ENF = {name="Lathi", augments={'Mag. Acc.+20','Enfb.mag. skill +15','Dark magic skill +15',}}
 
-  gear.Linos_TP = {name="Linos", augments={'Accuracy+15 Attack+15','"Dbl.Atk."+3','Quadruple Attack +3',}}
-  gear.Linos_WS = {name="Linos", augments={'Accuracy+15 Attack+15','Weapon skill damage +3%','STR+6 CHR+6',}}
+  gear.Linos_CnsvMP -- 15M.Eva, 8MND, 4 Conserve MP
+  gear.Linos_DT -- 15 Magic evasion, -5% PDT, 20 HP
+  gear.Linos_FC -- 20HP, 15M.Eva, 6% Fast Cast
+  gear.Linos_TP -- 20 Acc, 3 Quad attack, 4 Store TP
+  gear.Linos_WS1 -- 20M.atk, 3 WS Damage, 8INT
+  gear.Linos_WS2 -- 15Acc/Atk, 8STR, 3 WS Damage
+  gear.Linos_WS3 -- 15Acc/Atk, 8STR, 3 WS Damage
+  gear.Linos_WS4 -- 15Acc/Atk, 8STR, 3 WS Damage
 
   gear.Grioavolr_MND = {name="Grioavolr", augments={'Enfb.mag. skill +10','MND+18','Mag. Acc.+20','"Mag.Atk.Bns."+11',}}
   gear.Grioavolr_MP = {name="Grioavolr", augments={'"Fast Cast"+5','MP+97','Mag. Acc.+28','"Mag.Atk.Bns."+29',}}
@@ -126,7 +132,7 @@ function define_global_sets()
   -- Merlinic
   gear.Merl_FC_body = {name="Merlinic Jubbah", augments={'STR +15, Accuracy +13, Attack +13, Mag. Acc. +16, "Mag.Atk.Bns."+16', 'Pot. of "Cure" effect rec. +1%',}}
   gear.Merl_MB_body = {name="Merlinic Jubbah", augments={'Mag. Acc.+25 "Mag.Atk.Bns."+25','Magic burst dmg.+10%','VIT+5','"Mag.Atk.Bns."+12',}}
-gear.Merl_MAB_body = { name="Merlinic Jubbah", augments={'STR +15, Accuracy +13, Attack +13, Mag. Acc. +16, "Mag.Atk.Bns."+16', 'Pot. of "Cure" effect rec. +1%',}}
+  gear.Merl_MAB_body = { name="Merlinic Jubbah", augments={'STR +15, Accuracy +13, Attack +13, Mag. Acc. +16, "Mag.Atk.Bns."+16', 'Pot. of "Cure" effect rec. +1%',}}
 
   -- Taeon
   gear.Taeon_DW_feet = {name="Taeon Boots", augments={'Accuracy+20 Attack+20','"Dual Wield"+5','STR+7 DEX+7',}}
@@ -156,11 +162,16 @@ gear.Merl_MAB_body = { name="Merlinic Jubbah", augments={'STR +15, Accuracy +13,
   gear.Telchine_ENH_legs = {name="Telchine Braconi", augments={'Mag. Evasion+25','"Regen"+2','Enh. Mag. eff. dur. +10',}}
   gear.Telchine_ENH_feet = {name="Telchine Pigaches", augments={'Mag. Evasion+25','"Regen"+2','Enh. Mag. eff. dur. +10',}}
 
+  gear.Telchine_Regen_head = {name="Telchine Cap", augments={'Mag. Evasion+21','"Regen"+2','Enh. Mag. eff. dur. +10',}}
+  gear.Telchine_Regen_body = {name="Telchine Chas.", augments={'Mag. Evasion+20','"Regen"+2','Enh. Mag. eff. dur. +10',}}
+  gear.Telchine_Regen_hands = {name="Telchine Gloves", augments={'Mag. Evasion+24','"Regen"+2','Enh. Mag. eff. dur. +10',}}
+  gear.Telchine_Regen_legs = {name="Telchine Braconi", augments={'Mag. Evasion+25','"Regen"+2','Enh. Mag. eff. dur. +10',}}
+  gear.Telchine_Regen_feet = {name="Telchine Pigaches", augments={'Mag. Evasion+25','"Regen"+2','Enh. Mag. eff. dur. +10',}}
+
   gear.Telchine_STP_hands = {name="Telchine Gloves", augments={'Accuracy+20','"Store TP"+6','DEX+10',}}
   gear.Telchine_STP_feet = {name="Telchine Pigaches", augments={'Accuracy+20','"Store TP"+6','DEX+10',}}
 
   -- Valorous
-
   gear.Valo_STP_legs = {name="Valor. Hose", augments={'Accuracy+21 Attack+21','"Store TP"+8','Accuracy+15','Attack+11',}}
 
   gear.Valo_TP_body = {name="Valorous Mail", augments={'Attack+27','"Dbl.Atk."+5','DEX+9','Accuracy+15',}}
@@ -170,6 +181,20 @@ gear.Merl_MAB_body = { name="Merlinic Jubbah", augments={'STR +15, Accuracy +13,
   gear.Valo_WSD_body = {name="Valorous Mail", augments={'Accuracy+22 Attack+22','Weapon skill damage +4%','STR+1','Accuracy+15','Attack+15',}}
   gear.Valo_WSD_legs = {name="Valor. Hose", augments={'Accuracy+25 Attack+25','Weapon skill damage +4%','STR+12','Attack+6',}}
   gear.Valo_WSD_feet = {name="Valorous Greaves", augments={'VIT+5','"Store TP"+4','Weapon skill damage +4%','Accuracy+19 Attack+19','Mag. Acc.+15 "Mag.Atk.Bns."+15',}}
+
+  -- Vanya
+  gear.Vanya_B_head  -- 7 Cure Spellcasting Time-
+  gear.Vanya_B_body  -- 7 Cure Spellcasting Time-
+  gear.Vanya_B_hands -- 7 Cure Spellcasting Time-
+  gear.Vanya_B_legs  -- 7 Cure Spellcasting Time-
+  gear.Vanya_B_feet  -- 7 Cure Spellcasting Time-
+
+  -- Gendewitha
+  gear.Gende_SongFC_head  -- 5 Song Spellcasting Time-, 3 Song Recast Delay-, 4 PDT
+  gear.Gende_SongFC_body  -- 5 Song Spellcasting Time-, 3 Song Recast Delay-, 4 PDT
+  gear.Gende_SongFC_hands -- 5 Song Spellcasting Time-, 3 Song Recast Delay-, 4 PDT
+  gear.Gende_SongFC_legs  -- 5 Song Spellcasting Time-, 3 Song Recast Delay-, 4 PDT
+  gear.Gende_SongFC_feet  -- 5 Song Spellcasting Time-, 3 Song Recast Delay-, 4 PDT
 
   -- Ambuscade Capes
   gear.BLM_Death_Cape = {name="Taranus's Cape", augments={'MP+60','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Fast Cast"+10',}} --*
@@ -248,6 +273,13 @@ gear.Merl_MAB_body = { name="Merlinic Jubbah", augments={'STR +15, Accuracy +13,
   gear.WHM_MND_Cape = {name="Alaunus's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Mag.Atk.Bns."+10','Spell interruption rate down-10%',}} --**
   gear.WHM_FC_Cape = {name="Alaunus's Cape", augments={'INT+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Fast Cast"+10','Mag. Evasion+15',}} --**
 
+  -- SR Gear
+  gear.Leyline_Gloves = { name="Leyline Gloves", augments={'Accuracy+15','Mag. Acc.+15','"Mag.Atk.Bns."+15','"Fast Cast"+3',}}
+  gear.Dampening_Tam = { name="Dampening Tam", augments={'DEX+10','Accuracy+15','Mag. Acc.+15','Quadruple Attack +3',}}
+  gear.Samnuha_legs = { name="Samnuha Tights", augments={'STR+10','DEX+10','"Dbl.Atk."+3','"Triple Atk."+3',}}
+
+  -- Misc.
+  gear.Dark_Ring = { name="Dark Ring", augments={'Magic dmg. taken -4%','Phys. dmg. taken -5%','Breath dmg. taken -4%',}}
 end
 
 windower.register_event('zone change',

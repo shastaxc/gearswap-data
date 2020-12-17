@@ -1,4 +1,4 @@
--- Original: Motenten / Modified: Arislan
+-- Original: Motenten/Arislan || Modified: Silvermutt
 -- Haste/DW Detection Requires Gearinfo Addon
 
 -------------------------------------------------------------------------------------------------------------------

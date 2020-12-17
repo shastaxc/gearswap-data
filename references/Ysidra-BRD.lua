@@ -1,4 +1,4 @@
--- Original: Motenten / Modified: Arislan
+-- TODO: Update engaged sets and WS sets
 
 -------------------------------------------------------------------------------------------------------------------
 --  Keybinds
@@ -95,12 +95,14 @@ function job_setup()
   state.Etude = M{['description']='Etude', 'Sinewy Etude', 'Herculean Etude', 'Learned Etude', 'Sage Etude',
       'Quick Etude', 'Swift Etude', 'Vivacious Etude', 'Vital Etude', 'Dextrous Etude', 'Uncanny Etude',
       'Spirited Etude', 'Logical Etude', 'Enchanting Etude', 'Bewitching Etude'}
-  state.WeaponSet = M{['description']='Weapon Set', 'Carnwenhan', 'Twashtar', 'Naegling', 'Tauret', 'Free'}
+  state.WeaponSet = M{['description']='Weapon Set', 'Carnwenhan', 'Twashtar', 'Naegling', 'Tauret', 'Aeneas', 'Free'}
+  state.BattleMode = M(false, 'Battle Mode')
   state.WeaponLock = M(false, 'Weapon Lock')
 
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c usekey')
   send_command('bind @w gs c toggle WeaponLock')
+  send_command('bind ^b gs c toggle BattleMode')
 
   send_command('bind ^` gs c cycle SongMode')
   send_command('bind !` input /ma "Chocobo Mazurka" <me>')
@@ -142,6 +144,7 @@ function user_unload()
   send_command('unbind !s')
   send_command('unbind !d')
   send_command('unbind @w')
+  send_command('unbind ^b')
 
   send_command('unbind ^`')
   send_command('unbind !`')
@@ -168,44 +171,54 @@ function init_gear_sets()
   ---------------------------------------- Precast Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
 
-  -- Fast cast sets for spells
+  -- FC caps 80% but some pieces will be replaced depending on spell type
   sets.precast.FC = {
-    main="Kali", --7
-    sub="Genmei Shield",
-    head="Nahtirah Hat", --10
-    body="Inyanga Jubbah +2", --14
-    hands="Gende. Gages +1", --7/5
-    legs="Aya. Cosciales +2", --6
-    feet="Volte Gaiters", --6 (or use Navon Crackows for 5% FC)
-    neck="Orunmila's Torque", --5
-    ear1="Loquac. Earring", --2
-    ear2="Etiolation Earring", --1
-    ring1="Lebeche Ring", --Quick Magic 2%
-    ring2="Kishar Ring", --4
-    back=gear.BRD_Song_Cape, --10
-    waist="Witful Belt", --3; Quick Magic 3%
-  }
+    main="Kali",                --  7, __ (__, __, ___)
+    sub="Genmei Shield",        -- __, __ (10, __, ___)
+    range=gear.Linos_FC,        --  6, __ (__, __,  15)
+    head="Nahtirah Hat",        -- 10, __ (__, __,  75)
+    body="Inyanga Jubbah +2",   -- 14, __ (__,  8, 120)
+    hands=gear.Leyline_Gloves,  --  8, __ (__, __,  62)
+    legs="Volte Brais",         --  8, __ (__, __, 142); Aya. Cosciales +2 good alt
+    feet="Volte Gaiters",       --  6, __ (__, __, 142); Navon Crackows good alt
+    neck="Orunmila's Torque",   --  5, __ (__, __, ___)
+    ear1="Loquac. Earring",     --  2, __ (__, __, ___)
+    ear2="Etiolation Earring",  --  1, __ (__,  3, ___)
+    ring1="Weather. Ring +1",   --  6,  4 (__, __, ___); Lebeche Ring good alt
+    ring2="Kishar Ring",        --  4, __ (__, __, ___)
+    back=gear.BRD_Song_Cape,    -- 10, __ (__, __, ___)
+    waist="Witful Belt",        --  3,  3 (__, __, ___)
+  } -- 90 Fast Cast, 7 Quick Magic
+    -- (10 PDT, 11 MDT, 556 Magic Evasion)
 
   sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {
     waist="Siegel Sash",
   })
 
+  -- Total cast speed cap 80%, fill in rest with defensive gear
   sets.precast.FC.Cure = set_combine(sets.precast.FC, {
-    legs="Kaykaus Tights +1", --7
-    feet="Kaykaus Boots +1", --0/7
-    ear2="Mendi. Earring", --0/5
-  })
+    hands=gear.Gende_CureFC_hands,  --  7, __,  5 ( 4, __,  37)
+    legs="Brioso Cannions +3",      -- __, __, __ ( 8,  8, 127)
+    feet=gear.Vanya_B_feet,         -- __, __,  7 (__, __, 107)
+    neck="Loricate Torque +1",      -- __, __, __ ( 6,  6, ___)
+    ear1="Hearty Earring",          -- __, __, __ (__, __, ___); Status resist
+    ear2="Mendi. Earring",          -- __, __,  5 (__, __, ___)
+    ring2="Defending Ring",         -- __, __, __ (10, 10, ___)
+  })-- 63 Fast Cast, 7 Quick Magic, 17 Cure Cast Time-
+    -- (38 PDT, 32 MDT, 481 Magic Evasion)
 
-  -- Caps at 80%, fill the rest of the slots with defensive gear
-  -- Also, don't use quick magic for songs because lag might mess up midcast sets
+  -- Total cast speed cap 80%, "song cast time-" cap 50%, fill in rest with defensive gear
+  -- Don't use Quick Magic for songs because lag might mess up midcast sets
   sets.precast.FC.BardSong = set_combine(sets.precast.FC, {
-    head="Fili Calot +1", --14
-    body="Brioso Justau. +3", --15
-    feet="Bihu Slippers +3", --10
-    neck="Loricate Torque +1",
-    ring1="Defending Ring",
-    waist="Embla Sash",
-  })
+    head=gear.Gende_SongFC_head,    -- __,  5,  3 ( 4, __,  75)
+    hands=gear.Gende_SongFC_hands,  --  7,  5,  3 ( 4, __,  37)
+    legs=gear.Gende_SongFC_legs,    -- __, 10,  3 ( 4, __, 107)
+    feet=gear.Gende_SongFC_feet,    -- __,  5,  3 ( 4, __, 107)
+    neck="Loricate Torque +1",      -- __, __, __ ( 6,  6, ___)
+    ring1="Defending Ring",         -- __, __, __ (10, 10, ___)
+    waist="Embla Sash",             --  5, __, __ (__, __, ___)
+  })-- 56 Fast Cast, 25 Song Cast Time-, 12 Song Recast-
+    -- (42 PDT, 27 MDT, 461 Magic Evasion)
 
   sets.precast.FC.SongPlaceholder = set_combine(sets.precast.FC.BardSong, {
     range=info.ExtraSongInstrument,
@@ -412,16 +425,17 @@ function init_gear_sets()
   -- For song debuffs (accuracy primary, duration secondary)
   sets.midcast.SongEnfeebleAcc = set_combine(sets.midcast.SongEnfeeble, {
     body="Brioso Justau. +3",   -- 43, __, 64, ___
+    hands="Inyan. Dastanas +2", -- 32, __, 43, ___; Used for extra skill since set bonus 5/5
     legs="Brioso Cannions +3",  -- 33, __, 56, ___
     ring2="Metamor. Ring +1",   -- 16, __, 15, ___; Stikini acceptable alt
-    -- Set bonuses                 __, __, 75, ___
-  }) -- 273 CHR, 65% Duration, 562 M.Acc, 255 M.Acc skill
+    -- Set bonuses                 __, __, 60, ___
+  }) -- 266 CHR, 65% Duration, 542 M.Acc, 255 M.Acc skill
 
   -- For Horde Lullaby maxiumum AOE range.
   sets.midcast.SongStringSkill = {
     ear1="Gersemi Earring",
     ear2="Darkside Earring",
-    ring2={name="Stikini Ring +1", bag="wardrobe4"},
+    ring2="Stikini Ring +1",
   }
 
   -- Placeholder song; minimize duration to make it easy to overwrite.
@@ -434,70 +448,59 @@ function init_gear_sets()
   -- Prioritize: Cap Cure Potency > Heal Skill > Conserve MP > MND
   sets.midcast.Cure = {
     -- Cheap set
-    main="Daybreak",              -- __, 30, __, __, 30
-    sub="Ammurapi Shield",        -- __, __, __, __, 13
-    ammo="Pemphredo Tathlum",     -- __, __, __,  4, __
-    head=gear.Vanya_B_head,       -- __, 10, 20,  6, 27
-    body=gear.Vanya_B_body,       -- __, __, 20, __, 36
-    hands=gear.Vanya_B_hands,     -- __, __, 20, __, 33
-    legs=gear.Vanya_B_legs,       -- __, __, 20,  6, 34
-    feet=gear.Vanya_B_feet,       -- __,  5, 40, __, 19
-    neck="Incanter's Torque",     -- __, __, 10, __, __
-    ear1="Beatific Earring",      -- __, __,  4, __, __
-    ear2="Meili Earring",         -- __, __, 10, __, __
-    ring1="Sirona's Ring",        -- __, __, 10, __,  3
-    ring2="Menelaus's Ring",      -- __,  5, 15, __, __
-    back="Aurist's Cape +1",      -- __, __, __,  5, 33
-    waist="Bishop's Sash",        -- __, __,  5, __, __
-    waist="Shinjutsu-no-Obi +1",  -- __, __, __, 15, __
-    -- 0 CPII, 50 CP, 174 Heal Skill, 36 Conserve MP, 264 MND
+    main="Daybreak",              -- 30, __, __, 30
+    sub="Ammurapi Shield",        -- __, __, __, 13
+    range=gear.Linos_CnsvMP,      -- __, __,  6,  8
+    head=gear.Vanya_B_head,       -- 10, 20,  6, 27
+    body=gear.Vanya_B_body,       -- __, 20, __, 36
+    hands=gear.Vanya_B_hands,     -- __, 20, __, 33
+    legs=gear.Vanya_B_legs,       -- __, 20,  6, 34
+    feet=gear.Vanya_B_feet,       --  5, 40, __, 19
+    neck="Incanter's Torque",     -- __, 10, __, __
+    ear1="Beatific Earring",      -- __,  4, __, __
+    ear2="Meili Earring",         -- __, 10, __, __
+    ring1="Sirona's Ring",        -- __, 10, __,  3
+    ring2="Menelaus's Ring",      --  5, 15, __, __
+    back="Aurist's Cape +1",      -- __, __,  5, 33
+    waist="Bishop's Sash",        -- __,  5, __, __
+    -- 50 CP, 174 Heal Skill, 23 Conserve MP, 272 MND
   }
 
-  -- RESUME UPDATING HERE
+  sets.midcast.Curaga = sets.midcast.Cure
 
-  sets.midcast.Curaga = set_combine(sets.midcast.Cure, {
-    neck="Nuna Gorget +1",
-    ring1={name="Stikini Ring +1", bag="wardrobe3"},
-    ring2="Metamor. Ring +1",
-    waist="Luminary Sash",
-  })
-
-  sets.midcast.StatusRemoval = {
-    head="Vanya Hood",
-    body="Vanya Robe",
-    legs="Aya. Cosciales +2",
-    feet="Vanya Clogs",
-    neck="Incanter's Torque",
-    ear2="Meili Earring",
-    ring1="Menelaus's Ring",
-    ring2="Haoma's Ring",
-    back=gear.BRD_Song_Cape,
-    waist="Bishop's Sash",
-  }
-
-  sets.midcast.Cursna = set_combine(sets.midcast.StatusRemoval, {
-    hands="Hieros Mittens",
-    neck="Debilis Medallion",
-    ear1="Beatific Earring",
-    back="Oretan. Cape +1",
-  })
+  -- Cursna+ and healing magic skill
+  sets.midcast.Cursna = {
+    head=gear.Vanya_B_head,       -- __, 20
+    body=gear.Vanya_B_body,       -- __, 20
+    hands="Hieros Mittens",       -- 10, __
+    legs=gear.Vanya_B_legs,       -- __, 20
+    feet=gear.Vanya_B_feet,       -- __, 40
+    neck="Debilis Medallion",     -- 15, __
+    ear1="Beatific Earring",      -- __,  4
+    ear2="Meili Earring",         -- __, 10
+    ring1="Haoma's Ring",         -- 15,  8
+    ring2="Menelaus's Ring",      -- 20, 15
+    back="Oretan. Cape +1",       --  5, __
+    waist="Bishop's Sash",        -- __,  5
+  } -- 65 Cursna+, 182 Healing Skill
 
   sets.midcast['Enhancing Magic'] = {
-    main="Carnwenhan",
-    sub="Ammurapi Shield",
-    head=gear.Telchine_ENH_head,
-    body=gear.Telchine_ENH_body,
-    hands=gear.Telchine_ENH_hands,
-    legs=gear.Telchine_ENH_legs,
-    feet=gear.Telchine_ENH_feet,
-    neck="Incanter's Torque",
-    ear1="Mimir Earring",
-    ear2="Andoaa Earring",
-    ring1={name="Stikini Ring +1", bag="wardrobe3"},
-    ring2={name="Stikini Ring +1", bag="wardrobe4"},
-    back="Fi Follet Cape +1",
-    waist="Embla Sash",
-  }
+    main="Pukulatmuj +1",         -- 11, __
+    sub="Ammurapi Shield",        -- __, 10
+    range=gear.Linos_CnsvMP,      -- __, __
+    head="Umuthi Hat",            -- 13, __
+    body=gear.Telchine_ENH_body,  -- 12, 10
+    hands="Inyan. Dastanas +2",   -- 20, __
+    legs="Shedir Seraweels",      -- 15, __
+    feet="Kaykaus Boots +1",      -- 21, __
+    neck="Incanter's Torque",     -- 10, __
+    ear1="Mimir Earring",         -- 10, __
+    ear2="Andoaa Earring",        --  5, __
+    ring1="Stikini Ring +1",      --  8, __
+    ring2="Stikini Ring +1",      --  8, __
+    back="Fi Follet Cape +1",     --  9, __
+    waist="Embla Sash",           -- __, 10
+  } -- 142 Enhancing Skill, 30% Enhancing Duration
 
   sets.midcast.Regen = set_combine(sets.midcast['Enhancing Magic'], {
     head="Inyanga Tiara +2",
@@ -508,12 +511,15 @@ function init_gear_sets()
     back="Grapevine Cape",
   })
   sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {
+    legs="Shedir Seraweels",
     neck="Nodens Gorget",
     waist="Siegel Sash",
   })
   sets.midcast.Aquaveil = set_combine(sets.midcast['Enhancing Magic'], {
+    head="Chironic Hat",
+    legs="Shedir Seraweels",
     waist="Emphatikos Rope",
-  })
+  }) -- 4 Interruptions Prevented
   sets.midcast.Protect = set_combine(sets.midcast['Enhancing Magic'], {
     ring2="Sheltered Ring",
   })
@@ -522,26 +528,26 @@ function init_gear_sets()
   sets.midcast.Shellra = sets.midcast.Shell
 
   sets.midcast['Enfeebling Magic'] = {
-    main="Carnwenhan",
-    sub="Ammurapi Shield",
-    head="Brioso Roundlet +3",
-    body="Brioso Justau. +3",
-    hands="Brioso Cuffs +3",
-    legs="Brioso Cannions +3",
-    feet="Brioso Slippers +3",
-    neck="Mnbw. Whistle +1",
-    ear1="Digni. Earring",
-    ear2="Vor Earring",
-    ring1="Kishar Ring",
-    ring2="Metamor. Ring +1",
-    waist="Acuity Belt +1",
-    back=gear.BRD_Song_Cape,
-  }
+    main="Carnwenhan",          -- 255, 40, __, __
+    sub="Ammurapi Shield",      -- ___, 38, __, __
+    head="Brioso Roundlet +3",  -- ___, 61, __, __
+    body="Brioso Justau. +3",   -- ___, 64, __, __
+    hands="Brioso Cuffs +3",    -- ___, 48, __, __
+    legs="Brioso Cannions +3",  -- ___, 56, __, __
+    feet="Brioso Slippers +3",  -- ___, 46, __, __
+    neck="Mnbw. Whistle +1",    -- ___, 23, __, __
+    ear1="Digni. Earring",      -- ___, 10, __, __
+    ear2="Vor Earring",         -- ___, __, __, 10
+    ring1="Kishar Ring",        -- ___,  5, 10, __
+    ring2="Metamor. Ring +1",   -- ___, 15, __, __; Stikini acceptable alt
+    waist="Acuity Belt +1",     -- ___, 15, __, __
+    back=gear.BRD_Song_Cape,    -- ___, 30, __, __
+    -- Set bonuses                 ___, 60, __, __
+  }-- 255 Magic accuracy skill, 511 Magic accuracy, 10 enfeebling duration, 10 enfeebling skill
 
   sets.midcast.Dispelga = set_combine(sets.midcast['Enfeebling Magic'], {
     main="Daybreak",
     sub="Ammurapi Shield",
-    waist="Shinjutsu-no-Obi +1",
   })
 
   -- Initializes trusts at iLvl 119
@@ -551,39 +557,76 @@ function init_gear_sets()
   ----------------------------------------- Idle Sets --------------------------------------------
   ------------------------------------------------------------------------------------------------
 
-  sets.idle = {
-    main="Sangoma",
-    sub="Genmei Shield",
-    range="Gjallarhorn",
-    head="Inyanga Tiara +2",
-    body="Mou. Manteel +1",
-    hands="Raetic Bangles +1",
-    legs="Inyanga Shalwar +2",
-    feet="Inyan. Crackows +2",
-    neck="Bathy Choker +1",
-    ear1="Eabani Earring",
-    ear2="Sanare Earring",
-    ring1={name="Stikini Ring +1", bag="wardrobe3"},
-    ring2={name="Stikini Ring +1", bag="wardrobe4"},
-    back="Moonlight Cape",
-    waist="Flume Belt +1",
+  sets.latent_regain = {
   }
-
-  sets.idle.DT = {
-    head="Bihu Roundlet +3", --6/0
-    body="Bihu Jstcorps. +3", --7/0
-    hands="Raetic Bangles +1",
-    legs="Brioso Cannions +3", --8/8
-    feet="Inyan. Crackows +2", --0/3
-    neck="Loricate Torque +1", --6/6
-    ear1="Genmei Earring", --2/0
-    ear2="Etiolation Earring", --0/3
-    ring1="Moonlight Ring", --5/5
-    ring2="Defending Ring",  --10/10
-    back="Moonlight Cape", --6/6
-    waist="Carrier's Sash",
+  sets.latent_regen = {
+    main="Terra's Staff",             -- Just to enable use of grip
+    sub="Mensch Strap +1",            -- 3
+    head=gear.Telchine_Regen_head,    -- 2
+    body=gear.Telchine_Regen_body,    -- 2
+    hands=gear.Telchine_Regen_hands,  -- 2
+    legs=gear.Telchine_Regen_legs,    -- 2
+    feet="Fili Cothurnes +1",         -- 2
+    neck="Bathy Choker +1",           -- 3
+    ear2="Infused Earring",           -- 1
+    ring1="Chirich Ring +1",          -- 2
+    ring2="Chirich Ring +1",          -- 2
+    -- Spare ambu cape can have 5 Regen
   }
+  sets.latent_refresh = {
+    main="Contemplator +1",           -- 2
+    sub="Oneiros Grip",               -- 1
+    head=gear.Chironic_Refresh_head,  -- 2
+    body="Kaykaus Bliaut +1",         -- 3; Gendewitha bliaut +1 good alt
+    hands=gear.Chironic_Refresh_hands,-- 2
+    legs="Assid. Pants +1",           -- 2
+    feet=gear.Chironic_Refresh_feet,  -- 2
+    neck="Chrys. Torque",             -- 1
+    ring1="Stikini Ring +1",          -- 1
+    ring2="Stikini Ring +1",          -- 1
+  }
+  sets.latent_refresh_sub50 = set_combine(sets.latent_refresh, {
+    waist="Fucho-no-Obi",
+  })
 
+  -- PDT and MDT cap at 50% each, but included more in case slots
+  -- swap out for Regen, or in battle mode
+  sets.HeavyDef = {
+    main="Barfawc",           -- 12, 12, ___
+    sub="Genmei Shield",      -- 10, __, ___
+    range=gear.Linos_DT,      --  5, __,  15
+    head="Inyanga Tiara +2",  -- __,  5, 114
+    body="Ashera Harness",    --  7,  7,  96; Status resist, Mousai Manteel +1 good alt
+    hands="Volte Bracers",    -- __, __, 102; Status resist, Raetic Bangles +1 good alt
+    legs="Brioso Cannions +3",--  8,  8, 127
+    feet="Inyan. Crackows +2",-- __, __, 147
+    neck="Loricate Torque +1",--  6,  6, ___
+    ear1="Hearty Earring",    -- __, __, ___; Status resist
+    ear2="Etiolation Earring",-- __,  3, ___; Status resist
+    ring1="Defending Ring",   -- 10, 10, ___
+    ring2="Moonlight Ring",   --  5,  5, ___; Gel. Ring +1 acceptable alt
+    back="Moonlight Cape",    --  6,  6, ___
+    waist="Flume Belt +1",    --  4, __, ___
+  } --73 PDT, 62 MDT, 601 MEVA
+
+  sets.idle = sets.HeavyDef
+  sets.idle.Regain = set_combine(sets.idle, sets.latent_regain)
+  sets.idle.Regen = set_combine(sets.idle, sets.latent_regen)
+  sets.idle.Refresh = set_combine(sets.idle, sets.latent_refresh)
+  sets.idle.RefreshSub50 = set_combine(sets.idle, sets.latent_refresh_sub50)
+  sets.idle.Regain.Regen = set_combine(sets.idle, sets.latent_regain, sets.latent_regen)
+  sets.idle.Regain.Refresh = set_combine(sets.idle, sets.latent_regain, sets.latent_refresh)
+  sets.idle.Regain.RefreshSub50 = set_combine(sets.idle, sets.latent_regain, sets.latent_refresh_sub50)
+  sets.idle.Regen.Refresh = set_combine(sets.idle, sets.latent_regen, sets.latent_refresh)
+  sets.idle.Regen.RefreshSub50 = set_combine(sets.idle, sets.latent_regen, sets.latent_refresh_sub50)
+  sets.idle.Regain.Regen.Refresh = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh)
+  sets.idle.Regain.Regen.RefreshSub50 = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh_sub50)
+
+  -- DT mode disables move speed, regain, regen, refresh
+  sets.idle.DT = sets.HeavyDef
+
+  -- Mainly to avoid aoe status effects like Stun
+  -- MEva mode disables move speed, regain, regen, refresh
   sets.idle.MEva = {
     main="Daybreak",
     sub="Ammurapi Shield",
@@ -599,19 +642,16 @@ function init_gear_sets()
     ring2="Inyanga Ring",
     back="Moonlight Cape", --6/6
     waist="Carrier's Sash",
-  }
+  } --?? PDT, ?? MDT, ??? MEVA
 
+  sets.idle.Weak = sets.HeavyDef
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Defense Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
 
-  sets.defense.PDT = sets.idle.DT
-  sets.defense.MDT = sets.idle.DT
-
-  sets.latent_refresh = {
-    waist="Fucho-no-obi",
-  }
+  sets.defense.PDT = sets.HeavyDef
+  sets.defense.MDT = sets.HeavyDef
 
 
   ------------------------------------------------------------------------------------------------
@@ -635,8 +675,8 @@ function init_gear_sets()
     neck="Bard's Charm +1",
     ear1="Cessance Earring",
     ear2="Telos Earring",
-    ring1={name="Chirich Ring +1", bag="wardrobe3"},
-    ring2={name="Chirich Ring +1", bag="wardrobe4"},
+    ring1="Chirich Ring +1",
+    ring2="Chirich Ring +1",
     back=gear.BRD_STP_Cape,
     waist="Windbuffet Belt +1",
   }
@@ -661,12 +701,11 @@ function init_gear_sets()
     neck="Bard's Charm +1",
     ear1="Eabani Earring", --4
     ear2="Suppanomimi", --5
-    ring1={name="Chirich Ring +1", bag="wardrobe3"},
-    ring2={name="Chirich Ring +1", bag="wardrobe4"},
+    ring1="Chirich Ring +1",
+    ring2="Chirich Ring +1",
     back=gear.BRD_DW_Cape, --10
     waist="Reiki Yotai", --7
   } -- 26%
-
   sets.engaged.DW.Acc = set_combine(sets.engaged.DW, {
     hands="Raetic Bangles +1",
     feet="Bihu Slippers +3",
@@ -697,8 +736,8 @@ function init_gear_sets()
     neck="Bard's Charm +1",
     ear1="Eabani Earring", --4
     ear2="Telos Earring",
-    ring1={name="Chirich Ring +1", bag="wardrobe3"},
-    ring2={name="Chirich Ring +1", bag="wardrobe4"},
+    ring1="Chirich Ring +1",
+    ring2="Chirich Ring +1",
     back=gear.BRD_STP_Cape,
     waist="Reiki Yotai", --7
   })
@@ -721,8 +760,8 @@ function init_gear_sets()
     neck="Bard's Charm +1",
     ear1="Eabani Earring", --4
     ear2="Telos Earring",
-    ring1={name="Chirich Ring +1", bag="wardrobe3"},
-    ring2={name="Chirich Ring +1", bag="wardrobe4"},
+    ring1="Chirich Ring +1",
+    ring2="Chirich Ring +1",
     back=gear.BRD_STP_Cape,
     waist="Reiki Yotai", --7
   }
@@ -738,8 +777,8 @@ function init_gear_sets()
     hands=gear.Telchine_STP_hands,
     feet=gear.Telchine_STP_feet,
     neck="Bard's Charm +1",
-    ring1={name="Chirich Ring +1", bag="wardrobe3"},
-    ring2={name="Chirich Ring +1", bag="wardrobe4"},
+    ring1="Chirich Ring +1",
+    ring2="Chirich Ring +1",
     back=gear.BRD_STP_Cape,
   }
 
@@ -747,6 +786,7 @@ function init_gear_sets()
   ---------------------------------------- Hybrid Sets -------------------------------------------
   ------------------------------------------------------------------------------------------------
 
+  -- Use Barfawc for extra DT
   sets.engaged.Hybrid = {
     neck="Loricate Torque +1", --6/6
     ring1="Moonlight Ring", --5/5
@@ -806,6 +846,14 @@ function init_gear_sets()
     body="Councilor's Garb",
   }
 
+  sets.WeaponSet = {} -- DO NOT MODIFY
+  sets.WeaponSet.Free = {} -- DO NOT MODIFY
+  sets.WeaponSet.Carnwenhan = {main="Carnwenhan",sub="Taming Sari"}
+  sets.WeaponSet.Twashtar = {main="Twashtar",sub="Centovente"}
+  sets.WeaponSet.Naegling = {main="Naegling",sub="Centovente"}
+  sets.WeaponSet.Tauret = {main="Tauret",sub="Twashtar"}
+  sets.WeaponSet.Aeneas = {main="Aeneas",sub="Taming Sari"}
+
 end
 
 
@@ -854,6 +902,14 @@ function job_precast(spell, action, spellMap, eventArgs)
 end
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
+function job_post_precast(spell, action, spellMap, eventArgs)
+  -- Always put this last in job_post_precast
+  if state.BattleMode.value == true then
+    equip(sets.WeaponSet[state.WeaponSet.current])
+  end
+end
+
+-- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_midcast(spell, action, spellMap, eventArgs)
   if spell.type == 'BardSong' then
     -- layer general gear on first, then let default handler add song-specific gear.
@@ -877,11 +933,16 @@ function job_midcast(spell, action, spellMap, eventArgs)
   end
 end
 
+-- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_post_midcast(spell, action, spellMap, eventArgs)
   if spell.type == 'BardSong' then
     if state.CombatForm.current == 'DW' then
       equip(sets.SongDWDuration)
     end
+  end
+  -- Always put this last in job_post_midcast
+  if state.BattleMode.value == true then
+    equip(sets.WeaponSet[state.WeaponSet.current])
   end
 end
 
@@ -919,11 +980,41 @@ end
 -- User code that supplements standard library decisions.
 -------------------------------------------------------------------------------------------------------------------
 
+function update_idle_groups()
+  local isRegening = classes.CustomIdleGroups:contains('Regen')
+  local isRefreshing = classes.CustomIdleGroups:contains('Refresh')
+
+  classes.CustomIdleGroups:clear()
+  if player.status == 'Idle' then
+    if player.tp < 3000 then
+      classes.CustomIdleGroups:append('Regain')
+    end
+    if isRegening==true and player.hpp < 100 then
+      classes.CustomIdleGroups:append('Regen')
+    elseif isRegening==false and player.hpp < 85 then
+      classes.CustomIdleGroups:append('Regen')
+    end
+    if mp_jobs:contains(player.main_job) or mp_jobs:contains(player.sub_job) then
+      if player.mpp < 50 then
+        classes.CustomIdleGroups:append('RefreshSub50')
+      elseif isRefreshing==true and player.mpp < 100 then
+        classes.CustomIdleGroups:append('Refresh')
+      elseif isRefreshing==false and player.mpp < 85 then
+        classes.CustomIdleGroups:append('Refresh')
+      end
+    end
+    if world.zone == 'Eastern Adoulin' or world.zone == 'Western Adoulin' then
+      classes.CustomIdleGroups:append('Adoulin')
+    end
+  end
+end
+
 -- Called by the 'update' self-command, for common needs.
 -- Set eventArgs.handled to true if we don't want automatic equipping of gear.
 function job_handle_equipping_gear(playerStatus, eventArgs)
   check_gear()
   update_combat_form()
+  update_idle_groups()
   determine_haste_group()
 end
 
@@ -995,6 +1086,9 @@ end
 
 -- Modify the default idle set after it was constructed.
 function customize_idle_set(idleSet)
+  if state.BattleMode.value == true then
+    equip(sets.WeaponSet[state.WeaponSet.current])
+  end
   -- If not in DT mode put on move speed gear
   if state.IdleMode.current == 'Normal' and state.DefenseMode.value == 'None' then
     if classes.CustomIdleGroups:contains('Adoulin') then
@@ -1018,15 +1112,7 @@ end
 
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
-  if state.WeaponSet.value == "Carnwenhan" then
-    equip({main="Carnwenhan",sub="Taming Sari"})
-  elseif state.WeaponSet.value == "Twashtar" then
-    equip({main="Twashtar",sub="Centovente"})
-  elseif state.WeaponSet.value == "Naegling" then
-    equip({main="Naegling",sub="Centovente"})
-  elseif state.WeaponSet.value == "Tauret" then
-    equip({main="Tauret",sub="Twashtar"})
-  end
+  equip(sets.WeaponSet[state.WeaponSet.current])
   if buffactive['Aftermath: Lv.3'] and player.equipment.main == "Carnwenhan" then
     meleeSet = set_combine(meleeSet, sets.engaged.Aftermath)
   end
@@ -1041,6 +1127,9 @@ function customize_melee_set(meleeSet)
 end
 
 function customize_defense_set(defenseSet)
+  if state.BattleMode.value == true then
+    equip(sets.WeaponSet[state.WeaponSet.current])
+  end
   if state.CP.current == 'on' then
     defenseSet = set_combine(defenseSet, sets.CP)
   end
@@ -1053,7 +1142,7 @@ end
 
 function get_custom_wsmode(spell, action, spellMap)
   local wsmode
-  if state.OffenseMode.value == 'MidAcc' or state.OffenseMode.value == 'HighAcc' then
+  if state.OffenseMode.value == 'Acc' then
     wsmode = 'Acc'
   end
 
