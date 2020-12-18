@@ -69,24 +69,15 @@ function define_global_sets()
   gear.Grioavolr_MP = {name="Grioavolr", augments={'"Fast Cast"+5','MP+97','Mag. Acc.+28','"Mag.Atk.Bns."+29',}}
   gear.Grioavolr_MB = {name="Grioavolr", augments={'Magic burst dmg.+5%','INT+9','Mag. Acc.+27','"Mag.Atk.Bns."+27',}}
 
-  gear.Linos_CnsvMP = {name="Linos", augments={-- 15 M.Eva, 8 MND, 4 Conserve MP
-  }}
-  gear.Linos_DT = {name="Linos", augments={-- 15 Magic evasion, -5% PDT, 20 HP
-  }}
-  gear.Linos_FC = {name="Linos", augments={-- 20 HP, 15 M.Eva, 6% Fast Cast
-  }}
-  gear.Linos_TP = {name="Linos", augments={-- 20 Acc, 3 Quad attack, 4 Store TP
-  }}
-  gear.Linos_WS1 = {name="Linos", augments={-- 20 MAB, 8 INT, 3 WS Damage
-  }}
-  gear.Linos_WS2 = {name="Linos", augments={-- 15 Acc/Atk, 8 CHR, 3 WS Damage
-  }}
-  gear.Linos_WS3 = {name="Linos", augments={-- 15 Acc/Atk, 8 DEX, 3 WS Damage
-  }}
-  gear.Linos_WS4 = {name="Linos", augments={-- 15 Acc/Atk, 3 QA, 3 DA
-  }}
-  gear.Linos_WS5 = {name="Linos", augments={-- 15 Acc/Atk, 8 STR, 3 WS Damage
-  }}
+  gear.Linos_CnsvMP = {} -- 15 M.Eva, 8 MND, 4 Conserve MP
+  gear.Linos_DT = {} -- 15 Magic evasion, -5% PDT, 20 HP
+  gear.Linos_FC = {} -- 20 HP, 15 M.Eva, 6% Fast Cast
+  gear.Linos_TP = {} -- 20 Acc, 3 Quad attack, 4 Store TP
+  gear.Linos_WS1 = {} -- 20 MAB, 8 INT, 3 WS Damage
+  gear.Linos_WS2 = {} -- 15 Acc/Atk, 8 CHR, 3 WS Damage
+  gear.Linos_WS3 = {} -- 15 Acc/Atk, 8 DEX, 3 WS Damage
+  gear.Linos_WS4 = {} -- 15 Acc/Atk, 3 QA, 3 DA
+  gear.Linos_WS5 = {} -- 15 Acc/Atk, 8 STR, 3 WS Damage
 
   -- Acro
   gear.Acro_Pet_body = {name="Acro Surcoat", augments={'Pet: Mag. Acc.+25','Pet: Breath+7',}}
@@ -114,22 +105,15 @@ function define_global_sets()
   gear.Carmine_D_hands = { name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}}
 
   -- Chironic
-  gear.Chironic_QA_hands = {name="Chironic Hat", augments={-- 3 QA > 10 DEX > 30 ACC > 32 ATT
-  }}
-  gear.Chironic_QA_feet = {name="Chironic Slippers", augments={-- 3 QA > 10 DEX > 30 ACC > 32 ATT
-  }}
+  gear.Chironic_QA_hands = {} -- 3 QA > 10 DEX > 30 ACC > 32 ATT
+  gear.Chironic_QA_feet = {} -- 3 QA > 10 DEX > 30 ACC > 32 ATT
 
-  gear.Chironic_Refresh_head = {name="Chironic Hat", augments={-- 2 Refresh
-  }}
-  gear.Chironic_Refresh_hands = {name="Chironic Gloves", augments={-- 2 Refresh
-  }}
-  gear.Chironic_Refresh_feet = {name="Chironic Slippers", augments={-- 2 Refresh
-  }}
+  gear.Chironic_Refresh_head = {} -- 2 Refresh
+  gear.Chironic_Refresh_hands = {} -- 2 Refresh
+  gear.Chironic_Refresh_feet = {} -- 2 Refresh
 
-  gear.Chironic_AE_hands = {name="Chironic Gloves", augments={-- 10 WSD > 40 MAB > 15 INT > 15 DEX
-  }}
-  gear.Chironic_AE_feet = {name="Chironic Slippers", augments={-- 10 WSD > 40 MAB > 15 INT > 15 DEX
-  }}
+  gear.Chironic_AE_hands = { }-- 10 WSD > 40 MAB > 15 INT > 15 DEX
+  gear.Chironic_AE_feet = {} -- 10 WSD > 40 MAB > 15 INT > 15 DEX
 
   -- Herculean
   gear.Herc_TA_body = {name="Herculean Vest", augments={'Accuracy+19 Attack+19','"Triple Atk."+3','STR+9','Accuracy+10',}}
@@ -216,17 +200,17 @@ function define_global_sets()
   gear.Valo_WSD_feet = {name="Valorous Greaves", augments={'VIT+5','"Store TP"+4','Weapon skill damage +4%','Accuracy+19 Attack+19','Mag. Acc.+15 "Mag.Atk.Bns."+15',}}
 
   -- Vanya
-  gear.Vanya_B_head  -- 7 Cure Spellcasting Time-
-  gear.Vanya_B_body  -- 7 Cure Spellcasting Time-
-  gear.Vanya_B_hands -- 7 Cure Spellcasting Time-
-  gear.Vanya_B_legs  -- 7 Cure Spellcasting Time-
-  gear.Vanya_B_feet  -- 7 Cure Spellcasting Time-
+  gear.Vanya_B_head = {} -- 7 Cure Spellcasting Time-
+  gear.Vanya_B_body = {} -- 7 Cure Spellcasting Time-
+  gear.Vanya_B_hands = {} -- 7 Cure Spellcasting Time-
+  gear.Vanya_B_legs = {} -- 7 Cure Spellcasting Time-
+  gear.Vanya_B_feet = {} -- 7 Cure Spellcasting Time-
 
   -- Gendewitha
-  gear.Gende_SongFC_head  -- 5 Song Spellcasting Time-, 3 Song Recast Delay-, 4 PDT
-  gear.Gende_SongFC_hands -- 5 Song Spellcasting Time-, 3 Song Recast Delay-, 4 PDT
-  gear.Gende_SongFC_legs  -- 5 Song Spellcasting Time-, 3 Song Recast Delay-, 4 PDT
-  gear.Gende_SongFC_feet  -- 5 Song Spellcasting Time-, 3 Song Recast Delay-, 4 PDT
+  gear.Gende_SongFC_head = {} -- 5 Song Spellcasting Time-, 3 Song Recast Delay-, 4 PDT
+  gear.Gende_SongFC_hands = {} -- 5 Song Spellcasting Time-, 3 Song Recast Delay-, 4 PDT
+  gear.Gende_SongFC_legs = {} -- 5 Song Spellcasting Time-, 3 Song Recast Delay-, 4 PDT
+  gear.Gende_SongFC_feet = {} -- 5 Song Spellcasting Time-, 3 Song Recast Delay-, 4 PDT
 
   -- Ambuscade Capes
   gear.BLM_Death_Cape = {name="Taranus's Cape", augments={'MP+60','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Fast Cast"+10',}} --*
@@ -238,10 +222,8 @@ function define_global_sets()
   gear.BRD_STP_Cape = {name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}} --**
   gear.BRD_WS1_Cape = {name="Intarabus's Cape", augments={'CHR+20','Accuracy+20 Attack+20','CHR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}} --**
   gear.BRD_WS2_Cape = {name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}} --*
-  gear.BRD_WS3_Cape = {name="Intarabus's Cape", augments={-- 30DEX, 20Acc/Atk, 10 Critical Hit Rate, -10 PDT
-  }}
-  gear.BRD_WS4_Cape = {name="Intarabus's Cape", augments={-- 30AGI, 20Acc/Atk, 10 Double Attack, -10 PDT
-  }}
+  gear.BRD_WS3_Cape = {} -- 30DEX, 20Acc/Atk, 10 Critical Hit Rate, -10 PDT
+  gear.BRD_WS4_Cape = {} -- 30AGI, 20Acc/Atk, 10 Double Attack, -10 PDT
   gear.BRD_WS5_Cape = {name="Intarabus's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
 
   gear.BLU_MAB_Cape = {name="Rosmerta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10',}} --*
