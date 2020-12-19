@@ -788,7 +788,7 @@ function init_gear_sets()
     -- waist="Olseni Belt",
   })
 
-  -- Low Magic/Gear/JA Haste (67% DW to cap, 32% from gear)
+  -- Low Magic/Gear/JA Haste (60% DW to cap, 25% from gear)
   sets.engaged.DW.LowHaste = {
     ammo="Aurgelmir Orb",
     head="Maxixi Tiara +3", -- 8
@@ -803,7 +803,8 @@ function init_gear_sets()
     ring1="Epona's Ring",
     ring2="Gere Ring",
     back=gear.DNC_TP_DW_Cape, -- 10
-    -- neck="Etoile Gorget +2",
+    -- neck="Etoile Gorget +2", -- Use with Reiki Yotai
+    -- ear1="Eabani Earring", -- 4 -- Use with Reiki Yotai
     -- waist="Reiki Yotai", -- 7
   } --30
   sets.engaged.DW.LowAcc.LowHaste = set_combine(sets.engaged.DW.LowHaste, {
@@ -877,10 +878,10 @@ function init_gear_sets()
     -- waist="Olseni Belt",
   })
 
-  -- High Magic/Gear/JA Haste (51% DW to cap, 16% from gear)
+  -- High Magic/Gear/JA Haste (43% DW to cap, 8% from gear)
   sets.engaged.DW.HighHaste = {
     ammo="Aurgelmir Orb",
-    head="Maxixi Tiara +3", -- 8%
+    head=gear.Adhemar_B_head,
     body="Horos Casaque +3",
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha_legs,
@@ -895,7 +896,8 @@ function init_gear_sets()
     -- head=gear.Adhemar_B_head, -- Use with Reiki Yotai
     -- neck="Etoile Gorget +2",
     -- waist="Reiki Yotai", -- 7
-  } --18
+    -- back=gear.DNC_TP_DA_Cape, -- Use with Reiki Yotai
+  } --10
   sets.engaged.DW.LowAcc.HighHaste = set_combine(sets.engaged.DW.HighHaste, {
     ear1="Telos Earring",
     head="Dampening Tam",
@@ -922,7 +924,7 @@ function init_gear_sets()
     -- waist="Olseni Belt",
   })
 
-  -- Max Magic/Gear/JA Haste (36% DW to cap, 1% from gear)
+  -- Max Magic/Gear/JA Haste (0-36% DW to cap, 0-1% from gear)
   sets.engaged.DW.MaxHaste = {
     ammo="Aurgelmir Orb",
     head=gear.Adhemar_B_head,
@@ -1391,11 +1393,11 @@ function determine_haste_group()
   if DW == true then
     if DW_needed <= 1 then
       classes.CustomMeleeGroups:append('MaxHaste')
-    elseif DW_needed > 1 and DW_needed <= 9 then
+    elseif DW_needed > 1 and DW_needed <= 8 then
       classes.CustomMeleeGroups:append('HighHaste')
-    elseif DW_needed > 9 and DW_needed <= 21 then
+    elseif DW_needed > 8 and DW_needed <= 25 then
       classes.CustomMeleeGroups:append('MidHaste')
-    elseif DW_needed > 21 and DW_needed <= 39 then
+    elseif DW_needed > 25 and DW_needed <= 39 then
       classes.CustomMeleeGroups:append('LowHaste')
     elseif DW_needed > 39 then
       classes.CustomMeleeGroups:append('')

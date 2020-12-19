@@ -981,6 +981,7 @@ function init_gear_sets()
     ring2="Epona's Ring",
     back="Atheling Mantle",
     waist="Windbuffet Belt +1",
+    back=gear.RNG_DW_Cape,
     -- back=gear.RNG_DA_Cape,
   }
 
@@ -1019,8 +1020,8 @@ function init_gear_sets()
     ring2="Epona's Ring",
     back="Atheling Mantle",
     waist="Windbuffet Belt +1",
-    -- back=gear.RNG_DW_Cape, --10
-  } -- 52%
+    back=gear.RNG_DW_Cape, --10
+  } -- 45%
 
   sets.engaged.DW.LowAcc = set_combine(sets.engaged.DW, {
     head="Dampening Tam",
@@ -1055,8 +1056,7 @@ function init_gear_sets()
     ring2="Epona's Ring",
     back="Atheling Mantle",
     waist="Windbuffet Belt +1",
-    -- feet=gear.Herc_TA_feet,
-    -- back=gear.RNG_DW_Cape, --10
+    back=gear.RNG_DW_Cape, --10
   } -- 42%
 
   sets.engaged.DW.LowAcc.LowHaste = set_combine(sets.engaged.DW.LowHaste, {
@@ -1085,7 +1085,7 @@ function init_gear_sets()
     body=gear.Adhemar_B_body, --6
     hands=gear.Floral_Gauntlets, --5
     legs=gear.Carmine_D_legs, --6
-    feet=gear.Taeon_DW_feet, --9
+    feet=gear.Herc_TA_feet,
     neck="Iskur Gorget",
     ear1="Sherida Earring",
     ear2="Suppanomimi", --5
@@ -1093,9 +1093,8 @@ function init_gear_sets()
     ring2="Epona's Ring",
     back="Atheling Mantle",
     waist="Windbuffet Belt +1",
-    -- feet=gear.Herc_TA_feet,
-    -- back=gear.RNG_DW_Cape, --10
-  } -- 31%
+    back=gear.RNG_DW_Cape, --10
+  } -- 32%
 
   sets.engaged.DW.LowAcc.MidHaste = set_combine(sets.engaged.DW.MidHaste, {
     head="Dampening Tam",
@@ -1117,24 +1116,22 @@ function init_gear_sets()
     -- head="Malignance Chapeau",
   })
 
-  -- High Magic/Gear/JA Haste (51% DW to cap, 27% from gear)
+  -- High Magic/Gear/JA Haste (43% DW to cap, 18% from gear)
   sets.engaged.DW.HighHaste = {
     head=gear.Adhemar_B_head,
     body=gear.Adhemar_B_body, --6
-    hands=gear.Floral_Gauntlets, --5
-    legs=gear.Carmine_D_legs, --6
+    hands=gear.Adhemar_B_hands,
+    legs=gear.Samnuha_legs,
     feet=gear.Herc_TA_feet,
     neck="Iskur Gorget",
-    ear1="Eabani Earring", --4
-    ear2="Suppanomimi", --5
+    ear1="Sherida Earring",
+    ear2="Eabani Earring", --4
     ring1="Ilabrat Ring",
     ring2="Epona's Ring",
     back="Atheling Mantle",
     waist="Windbuffet Belt +1",
-    -- legs=gear.Samuha_legs,
-    -- ear1="Sherida Earring",
-    -- back=gear.RNG_DW_Cape, --10
-  } -- 27%
+    back=gear.RNG_DW_Cape, --10
+  } -- 20%
 
   sets.engaged.DW.LowAcc.HighHaste = set_combine(sets.engaged.DW.HighHaste, {
     head="Dampening Tam",
@@ -1155,7 +1152,32 @@ function init_gear_sets()
     -- head="Malignance Chapeau",
   })
 
-  -- Max Magic/Gear/JA Haste (36% DW to cap, 11% from gear)
+  -- High Magic/Gear/JA Haste (36% DW to cap, 11% from gear)
+  sets.engaged.DW.SuperHaste = {
+    head=gear.Adhemar_B_head,
+    body=gear.Adhemar_B_body, --6
+    hands=gear.Adhemar_B_hands,
+    legs=gear.Samnuha_legs,
+    feet=gear.Herc_TA_feet,
+    neck="Iskur Gorget",
+    ear1="Sherida Earring",
+    ear2="Telos Earring",
+    ring1="Ilabrat Ring",
+    ring2="Epona's Ring",
+    back="Atheling Mantle",
+    waist="Windbuffet Belt +1",
+    back=gear.RNG_DW_Cape, --10
+    -- ear2="Suppanomimi", --5
+    -- back=gear.RNG_DA_Cape,
+  } -- 21%
+  sets.engaged.DW.LowAcc.SuperHaste = {
+  }
+  sets.engaged.DW.MidAcc.SuperHaste = {
+  }
+  sets.engaged.DW.HighAcc.SuperHaste = {
+  }
+
+  -- Max Magic/Gear/JA Haste (0-25% DW to cap, 0% from gear)
   sets.engaged.DW.MaxHaste = {
     head=gear.Adhemar_B_head,
     body=gear.Adhemar_B_body, --6
@@ -1164,13 +1186,14 @@ function init_gear_sets()
     feet=gear.Herc_TA_feet,
     neck="Iskur Gorget",
     ear1="Sherida Earring",
-    ear2="Suppanomimi", --5
+    ear2="Telos Earring",
     ring1="Ilabrat Ring",
     ring2="Epona's Ring",
     back="Atheling Mantle",
     waist="Windbuffet Belt +1",
+    back=gear.RNG_DW_Cape, --10
     -- back=gear.RNG_DA_Cape,
-  } -- 11%
+  } -- 16%
 
   sets.engaged.DW.LowAcc.MaxHaste = set_combine(sets.engaged.DW.MaxHaste, {
     head="Dampening Tam",
@@ -1190,12 +1213,6 @@ function init_gear_sets()
     ring2="Chirich Ring +1",
     -- head="Malignance Chapeau",
   })
-
-  -- High Magic/Gear/JA Haste (46% DW to cap, 21% from gear)
-  sets.engaged.DW.MaxHastePlus = set_combine(sets.engaged.DW.MaxHaste, {back=gear.RNG_DW_Cape})
-  sets.engaged.DW.LowAcc.MaxHastePlus = set_combine(sets.engaged.DW.LowAcc.MaxHaste, {back=gear.RNG_DW_Cape})
-  sets.engaged.DW.MidAcc.MaxHastePlus = set_combine(sets.engaged.DW.MidAcc.MaxHaste, {back=gear.RNG_DW_Cape})
-  sets.engaged.DW.HighAcc.MaxHastePlus = set_combine(sets.engaged.DW.HighAcc.MaxHaste, {back=gear.RNG_DW_Cape})
 
 
   ------------------------------------------------------------------------------------------------
@@ -1708,13 +1725,13 @@ end)
 function determine_haste_group()
   classes.CustomMeleeGroups:clear()
   if DW == true then
-    if DW_needed <= 11 then
+    if DW_needed <= 0 then
       classes.CustomMeleeGroups:append('MaxHaste')
-    elseif DW_needed > 11 and DW_needed <= 21 then
-      classes.CustomMeleeGroups:append('MaxHastePlus')
-    elseif DW_needed > 21 and DW_needed <= 27 then
+    elseif DW_needed > 0 and DW_needed <= 11 then
+      classes.CustomMeleeGroups:append('SuperHaste')
+    elseif DW_needed > 11 and DW_needed <= 18 then
       classes.CustomMeleeGroups:append('HighHaste')
-    elseif DW_needed > 27 and DW_needed <= 31 then
+    elseif DW_needed > 18 and DW_needed <= 31 then
       classes.CustomMeleeGroups:append('MidHaste')
     elseif DW_needed > 31 and DW_needed <= 42 then
       classes.CustomMeleeGroups:append('LowHaste')

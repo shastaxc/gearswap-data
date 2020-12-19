@@ -590,25 +590,24 @@ function init_gear_sets()
   }
 
   sets.engaged.LowAcc = set_combine(sets.engaged, {
+    ring1="Chirich Ring +1",
     -- head="Skulker's Bonnet +1",
     -- neck="Combatant's Torque",
-    -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
-    -- ear2="Telos Earring",
   })
 
   sets.engaged.MidAcc = set_combine(sets.engaged.LowAcc, {
+    head="Dampening Tam",
+    ear1="Cessance Earring",
+    ring2="Ilabrat Ring",
     -- ammo="Yamarang",
-    -- head="Dampening Tam",
     -- body="Pillager's Vest +3",
-    -- ear1="Cessance Earring",
-    -- ring2="Ilabrat Ring",
     -- waist="Kentarch Belt +1",
   })
 
   sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
     ear2="Dignitary's Earring",
     ring1="Regal Ring",
-    ring2="Chirich Ring +1",
+    -- ring2="Chirich Ring +1",
     -- ammo="C. Palug Stone",
     -- legs="Pill. Culottes +3",
     -- feet=gear.Herc_STP_feet,
@@ -633,34 +632,33 @@ function init_gear_sets()
     ring2="Gere Ring",
     back=gear.THF_TP_Cape,
     -- ammo="Aurgelmir Orb +1",
-    -- hands=gear.Adhemar_A_hands,
     -- neck="Erudit. Necklace",
     -- back=gear.THF_DW_Cape, --10
     -- waist="Reiki Yotai", --7
   }
 
   sets.engaged.DW.LowAcc = set_combine(sets.engaged.DW, {
+    ring1="Chirich Ring +1",
     -- head="Skulker's Bonnet +1",
     -- neck="Combatant's Torque",
-    -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
   })
 
   sets.engaged.DW.MidAcc = set_combine(sets.engaged.DW.LowAcc, {
+    head="Dampening Tam",
+    ring2="Ilabrat Ring",
     -- ammo="Yamarang",
-    -- head="Dampening Tam",
     -- body="Pillager's Vest +3",
-    -- ring2="Ilabrat Ring",
     -- waist="Kentarch Belt +1",
   })
 
   sets.engaged.DW.HighAcc = set_combine(sets.engaged.DW.MidAcc, {
+    ear1="Cessance Earring",
+    ear2="Telos Earring",
     ring1="Regal Ring",
-    ring2="Chirich Ring +1",
+    -- ring2="Chirich Ring +1",
     -- ammo="C. Palug Stone",
     -- legs="Pill. Culottes +3",
     -- feet=gear.Herc_STP_feet,
-    -- ear1="Cessance Earring",
-    -- ear2="Telos Earring",
     -- waist="Olseni Belt",
   })
 
@@ -682,33 +680,33 @@ function init_gear_sets()
     -- ammo="Aurgelmir Orb +1",
     -- hands=gear.Adhemar_A_hands,
     -- neck="Erudit. Necklace",
-    -- ear1="Cessance Earring",
+    -- ear1="Sherida Earring",
     -- ear2="Suppanomimi", --5
     -- back=gear.THF_DW_Cape, --10
     -- waist="Reiki Yotai", --7
   }
 
   sets.engaged.DW.LowAcc.LowHaste = set_combine(sets.engaged.DW.LowHaste, {
+    ring1="Chirich Ring +1",
     -- head="Skulker's Bonnet +1",
     -- neck="Combatant's Torque",
-    -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
   })
 
   sets.engaged.DW.MidAcc.LowHaste = set_combine(sets.engaged.DW.LowAcc.LowHaste, {
+    head="Dampening Tam",
+    ring2="Ilabrat Ring",
     -- ammo="Yamarang",
-    -- head="Dampening Tam",
     -- body="Pillager's Vest +3",
-    -- ring2="Ilabrat Ring",
     -- waist="Kentarch Belt +1",
   })
 
   sets.engaged.DW.HighAcc.LowHaste = set_combine(sets.engaged.DW.MidAcc.LowHaste, {
+    ear2="Telos Earring",
     ring1="Regal Ring",
-    ring2="Chirich Ring +1",
+    -- ring2="Chirich Ring +1",
     -- ammo="C. Palug Stone",
     -- legs="Pill. Culottes +3",
     -- feet=gear.Herc_STP_feet,
-    -- ear2="Telos Earring",
     -- waist="Olseni Belt",
   })
 
@@ -729,45 +727,40 @@ function init_gear_sets()
     back=gear.THF_TP_Cape,
     -- ammo="Aurgelmir Orb +1",
     -- ammo="Yamarang",
-    -- head=gear.Adhemar_B_head,
     -- body="Pillager's Vest +3",
-    -- hands=gear.Adhemar_A_hands,
-    -- legs="Samnuha Tights",
+    -- hands=gear.Adhemar_B_hands,
     -- feet=gear.Herc_TA_feet,
     -- neck="Erudit. Necklace",
     -- ear1="Eabani Earring", --4
-    -- ear2="Suppanomimi", --5
-    -- ring1="Gere Ring",
-    -- ring2="Epona's Ring",
     -- back=gear.THF_DW_Cape, --10
     -- waist="Reiki Yotai", --7
   }
 
   sets.engaged.DW.LowAcc.MidHaste = set_combine(sets.engaged.DW.MidHaste, {
+    ring1="Chirich Ring +1",
     -- head="Skulker's Bonnet +1",
     -- neck="Combatant's Torque",
-    -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
   })
 
   sets.engaged.DW.MidAcc.MidHaste = set_combine(sets.engaged.DW.LowAcc.MidHaste, {
+    head="Dampening Tam",
+    ear1="Cessance Earring",
+    ring2="Ilabrat Ring",
     -- ammo="Yamarang",
-    -- head="Dampening Tam",
-    -- ear1="Cessance Earring",
-    -- ring2="Ilabrat Ring",
     -- waist="Kentarch Belt +1",
   })
 
   sets.engaged.DW.HighAcc.MidHaste = set_combine(sets.engaged.DW.MidAcc.MidHaste, {
+    ear2="Telos Earring",
     ring1="Regal Ring",
-    ring2="Chirich Ring +1",
+    -- ring2="Chirich Ring +1",
     -- ammo="C. Palug Stone",
     -- legs="Pill. Culottes +3",
     -- feet=gear.Herc_STP_feet,
-    -- ear2="Telos Earring",
     -- waist="Olseni Belt",
   })
 
-  -- High Magic/Gear/JA Haste (51% DW to cap, 21% from gear)
+  -- High Magic/Gear/JA Haste (43% DW to cap, 13% from gear)
   sets.engaged.DW.HighHaste = {
     ammo="Aurgelmir Orb",
     head=gear.Adhemar_B_head,
@@ -777,52 +770,83 @@ function init_gear_sets()
     feet=gear.Herc_TA_feet,
     neck="Anu Torque",
     waist="Windbuffet Belt +1",
-    ear1="Suppanomimi", --5
+    ear1="Sherida Earring",
     ear2="Eabani Earring", --4
     ring1="Epona's Ring",
     ring2="Gere Ring",
     back=gear.THF_TP_Cape,
     -- ammo="Aurgelmir Orb +1",
     -- ammo="Yamarang",
-    -- head=gear.Adhemar_B_head,
     -- body="Pillager's Vest +3",
-    -- hands=gear.Adhemar_A_hands,
-    -- legs="Samnuha Tights",
-    -- feet=gear.Herc_TA_feet,
+    -- hands=gear.Adhemar_B_hands, -- Use with Reiki Yotai
+    -- ear2="Telos Earring", -- Use with Reiki Yotai
     -- neck="Erudit. Necklace",
-    -- ear1="Sherida Earring",
-    -- ear2="Suppanomimi", --5
-    -- ring1="Gere Ring",
-    -- ring2="Epona's Ring",
-    -- back=gear.THF_DW_Cape, --10
     -- waist="Reiki Yotai", --7
   }
-
   sets.engaged.DW.LowAcc.HighHaste = set_combine(sets.engaged.DW.HighHaste, {
+    ring1="Chirich Ring +1",
     -- head="Skulker's Bonnet +1",
     -- neck="Combatant's Torque",
-    -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
   })
-
   sets.engaged.DW.MidAcc.HighHaste = set_combine(sets.engaged.DW.LowAcc.HighHaste, {
+    head="Dampening Tam",
+    ear1="Cessance Earring",
+    ring2="Ilabrat Ring",
     -- ammo="Yamarang",
-    -- head="Dampening Tam",
-    -- ear1="Cessance Earring",
-    -- ring2="Ilabrat Ring",
     -- waist="Kentarch Belt +1",
   })
-
   sets.engaged.DW.HighAcc.HighHaste = set_combine(sets.engaged.DW.MidAcc.HighHaste, {
+    ear2="Telos Earring",
     ring1="Regal Ring",
-    ring2="Chirich Ring +1",
+    -- ring2="Chirich Ring +1",
     -- ammo="C. Palug Stone",
     -- legs="Pill. Culottes +3",
     -- feet=gear.Herc_STP_feet,
-    -- ear2="Telos Earring",
     -- waist="Olseni Belt",
   })
 
-  -- Max Magic/Gear/JA Haste (36% DW to cap, 6% from gear)
+  -- High Magic/Gear/JA Haste (36% DW to cap, 6% from gear)
+  sets.engaged.DW.SuperHaste = {
+    ammo="Aurgelmir Orb",
+    head=gear.Adhemar_B_head,
+    body=gear.Adhemar_B_body, --6
+    hands=gear.Adhemar_B_hands,
+    legs=gear.Samnuha_legs,
+    feet=gear.Herc_TA_feet,
+    neck="Anu Torque",
+    waist="Windbuffet Belt +1",
+    ear1="Telos Earring",
+    ear2="Sherida Earring",
+    ring1="Epona's Ring",
+    ring2="Gere Ring",
+    back=gear.THF_TP_Cape,
+    -- ammo="Aurgelmir Orb +1",
+    -- body="Pillager's Vest +3",
+    -- neck="Erudit. Necklace",
+  }
+  sets.engaged.DW.LowAcc.SuperHaste = set_combine(sets.engaged.DW.SuperHaste, {
+    ring1="Chirich Ring +1",
+    -- head="Skulker's Bonnet +1",
+    -- neck="Combatant's Torque",
+    -- waist="Kentarch Belt +1",
+  })
+  sets.engaged.DW.MidAcc.SuperHaste = set_combine(sets.engaged.DW.LowAcc.SuperHaste, {
+    head="Dampening Tam",
+    ear1="Cessance Earring",
+    ring2="Ilabrat Ring",
+    -- ammo="Yamarang",
+  })
+  sets.engaged.DW.HighAcc.SuperHaste = set_combine(sets.engaged.DW.MidAcc.SuperHaste, {
+    ear2="Telos Earring",
+    ring1="Regal Ring",
+    -- ring2="Chirich Ring +1",
+    -- ammo="C. Palug Stone",
+    -- legs="Pill. Culottes +3",
+    -- feet=gear.Herc_STP_feet,
+    -- waist="Olseni Belt",
+  })
+
+  -- Max Magic/Gear/JA Haste (0-30% DW to cap, 0% from gear)
   sets.engaged.DW.MaxHaste = {
     ammo="Aurgelmir Orb",
     head=gear.Adhemar_B_head,
@@ -838,41 +862,29 @@ function init_gear_sets()
     ring2="Gere Ring",
     back=gear.THF_TP_Cape,
     -- ammo="Aurgelmir Orb +1",
-    -- head=gear.Adhemar_B_head,
     -- body="Pillager's Vest +3",
     -- hands=gear.Adhemar_A_hands,
-    -- legs="Samnuha Tights",
-    -- feet=gear.Herc_TA_feet,
     -- neck="Erudit. Necklace",
-    -- ear1="Sherida Earring",
-    -- ear2="Suppanomimi", --5
-    -- ring1="Gere Ring",
-    -- ring2="Epona's Ring",
-    -- back=gear.THF_TP_Cape,
-    -- waist="Windbuffet Belt +1",
   }
-
   sets.engaged.DW.LowAcc.MaxHaste = set_combine(sets.engaged.DW.MaxHaste, {
+    ring1="Chirich Ring +1",
     -- head="Skulker's Bonnet +1",
     -- neck="Combatant's Torque",
-    -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
     -- waist="Kentarch Belt +1",
   })
-
   sets.engaged.DW.MidAcc.MaxHaste = set_combine(sets.engaged.DW.LowAcc.MaxHaste, {
+    head="Dampening Tam",
+    ear1="Cessance Earring",
+    ring2="Ilabrat Ring",
     -- ammo="Yamarang",
-    -- head="Dampening Tam",
-    -- ear1="Cessance Earring",
-    -- ring2="Ilabrat Ring",
   })
-
   sets.engaged.DW.HighAcc.MaxHaste = set_combine(sets.engaged.DW.MidAcc.MaxHaste, {
+    ear2="Telos Earring",
     ring1="Regal Ring",
-    ring2="Chirich Ring +1",
+    -- ring2="Chirich Ring +1",
     -- ammo="C. Palug Stone",
     -- legs="Pill. Culottes +3",
     -- feet=gear.Herc_STP_feet,
-    -- ear2="Telos Earring",
     -- waist="Olseni Belt",
   })
 
@@ -1261,11 +1273,13 @@ end
 function determine_haste_group()
   classes.CustomMeleeGroups:clear()
   if DW == true then
-    if DW_needed <= 6 then
+    if DW_needed <= 0 then
       classes.CustomMeleeGroups:append('MaxHaste')
-    elseif DW_needed > 6 and DW_needed <= 22 then
+    elseif DW_needed > 0 and DW_needed <= 6 then
+      classes.CustomMeleeGroups:append('SuperHaste')
+    elseif DW_needed > 6 and DW_needed <= 13 then
       classes.CustomMeleeGroups:append('HighHaste')
-    elseif DW_needed > 22 and DW_needed <= 26 then
+    elseif DW_needed > 13 and DW_needed <= 26 then
       classes.CustomMeleeGroups:append('MidHaste')
     elseif DW_needed > 26 and DW_needed <= 37 then
       classes.CustomMeleeGroups:append('LowHaste')
