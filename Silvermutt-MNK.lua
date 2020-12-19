@@ -267,10 +267,9 @@ function init_gear_sets()
     ear2="Odr Earring",
     ring1="Gere Ring",
     ring2="Niqmaddu Ring",
-    back=gear.MNK_STR_DA_Cape,
+    back=gear.MNK_STR_Crit_Cape,
     waist="Moonbow Belt +1",
     -- legs="Kendatsuba Hakama +1",
-    -- back=gear.MNK_STR_Crit_Cape,
   })
   sets.precast.WS["Victory Smite"].MaxTP = set_combine(sets.precast.WS["Victory Smite"], {
   })

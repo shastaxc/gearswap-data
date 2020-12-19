@@ -890,7 +890,7 @@ function init_gear_sets()
     ear2="Odnowa Earring +1", --3/5, 0
     ring1=gear.Dark_Ring, --5/4, 0
     ring2="Defending Ring", --10/10, 0
-    back=gear.RNG_WS2_Cape,
+    back=gear.RNG_DW_Cape, --0/0, 15
     waist="Windbuffet Belt +1", --0/0, 0
   }
 
@@ -942,7 +942,7 @@ function init_gear_sets()
     ear2="Odnowa Earring +1", --3/5, 0
     ring1=gear.Dark_Ring, --5/4, 0
     ring2="Defending Ring", --10/10, 0
-    back=gear.RNG_WS2_Cape,
+    back=gear.RNG_DW_Cape, --0/0, 15
     waist="Kasiri Belt", --0/0, 0
   } -- 53 PDT / 49 MDT, 612 MEVA
 
