@@ -274,13 +274,12 @@ function init_gear_sets()
     head=gear.Herc_WSD_head, --7
     body="Duelist's Tabard", --10
     hands=gear.Leyline_Gloves, --8
-    legs="Ayanmo Cosciales +1", --5
+    legs="Ayanmo Cosciales +2", --6
     feet=gear.Taeon_FC_feet, --5
     ring1="Lebeche Ring", --Quick Magic 2%
     ring2="Weatherspoon Ring", --5
     -- head="Atrophy Chapeau +3", --16
     -- body="Viti. Tabard +3", --15
-    -- legs="Aya. Cosciales +2", --6
     -- feet="Carmine Greaves +1", --8
     -- ring2="Weather. Ring +1", --5
   }
@@ -885,7 +884,7 @@ function init_gear_sets()
     head=empty,
     body="Cohort Cloak +1", --100
     hands=gear.Carmine_D_hands, --42
-    legs="Ayanmo Cosciales +1",
+    legs="Ayanmo Cosciales +2",
     feet="Ayanmo Gambieras +1",
     neck="Baetyl Pendant", --13
     ear1="Friomisi Earring", --10

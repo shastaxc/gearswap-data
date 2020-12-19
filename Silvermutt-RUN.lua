@@ -322,11 +322,11 @@ function init_gear_sets()
     ammo="Impatiens", --0/2 [0]
     head={name="Runeist Bandeau +3", priority=1}, --14/0 [109]
     hands=gear.Leyline_Gloves, --8/0 [25]
-    legs="Ayanmo Cosciales +1", --5/0 [45]
+    legs="Ayanmo Cosciales +2", --6/0 [45]
     feet=gear.Taeon_FC_feet, --5/0 [13]
     waist={name="Kasiri Belt", priority=1}, --0/0 [30]
     back={name=gear.RUN_FC_Cape, priority=1}, --10/0 [80]
-  } -- 42% Fast Cast / 2% Quick Magic [302 HP, 855 w/ PDT, 810 w/ MDT]
+  } -- 43% Fast Cast / 2% Quick Magic [302 HP, 855 w/ PDT, 810 w/ MDT]
 
   sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {
     legs="Futhark Trousers +2",
@@ -352,7 +352,7 @@ function init_gear_sets()
     head="Ayanmo Zucchetto +2", --44 [45]
     body="Ayanmo Corazza +2", --46 [57]
     hands="Volte Bracers", --37 [57]
-    legs="Ayanmo Cosciales +1", --39 [45]
+    legs="Ayanmo Cosciales +2", --45 [45]
     feet="Ayanmo Gambieras +1", --36 [11]
     ear2="Dignitary's Earring", --10 [0]
     ring2="Weatherspoon Ring", --10 [0]
