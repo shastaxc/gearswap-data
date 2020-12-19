@@ -63,7 +63,7 @@ function job_setup()
   state.RangedWeaponSet = M{['description']='Ranged Weapon Set', 'Doomsday', 'Pharaoh\'s Bow', 'Grosveneur\'s Bow', 
       'Annihilator', 'Fomalhaut', 'Armageddon', 'Sparrowhawk +2'}
   state.CP = M(false, "Capacity Points Mode")
-  state.WeaponLock = M(false, 'Weapon Lock')
+  state.RearmingLock = M(false, 'Rearming Lock')
   -- Whether a warning has been given for low ammo
   state.warned = M(false)
 
@@ -137,7 +137,7 @@ function job_setup()
 
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c usekey')
-  send_command('bind @w gs c toggle WeaponLock')
+  send_command('bind @w gs c toggle RearmingLock')
 
   send_command('bind @c gs c toggle CP')
   send_command('bind ^insert gs c cycle WeaponSet')
@@ -1494,14 +1494,10 @@ function job_buff_change(buff,gain)
 end
 
 function job_state_change(stateField, newValue, oldValue)
-  if stateField == 'Weapon Lock' and newValue == false then
-    equip_weapons()
-    equip_ranged_weapons()
-  end
-  if stateField == 'Weapon Set' and state.WeaponLock.value == false then
+  if stateField == 'Weapon Set' then
     equip_weapons()
   end
-  if stateField == 'Ranged Weapon Set' and state.WeaponLock.value == false then
+  if stateField == 'Ranged Weapon Set' then
     equip_ranged_weapons()
   end
 end

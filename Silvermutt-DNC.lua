@@ -19,7 +19,7 @@
 --              [ CTRL+PageUp ]     Cycle Toy Weapon Mode
 --              [ CTRL+PageDown ]   Cycleback Toy Weapon Mode
 --              [ ALT+PageDown ]    Reset Toy Weapon Mode
---              [ WIN+W ]           Toggle Weapon Lock
+--              [ WIN+W ]           Toggle Rearming Lock
 --                                  (off = re-equip previous weapons if you go barehanded)
 --                                  (on = prevent weapon auto-equipping)
 --
@@ -110,13 +110,14 @@ function job_setup()
   state.HybridMode:options('Normal', 'LightDef')
   state.IdleMode:options('Normal', 'LightDef')
 
-  state.WeaponLock = M(false, 'Weapon Lock')
+  state.RearmingLock = M(false, 'Rearming Lock')
   state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger',
       'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
 
+  send_command('bind !a gs c test')
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c usekey')
-  send_command('bind @w gs c toggle WeaponLock')
+  send_command('bind @w gs c toggle RearmingLock')
 
   send_command('bind ^pageup gs c toyweapon cycle')
   send_command('bind ^pagedown gs c toyweapon cycleback')
@@ -1151,11 +1152,6 @@ end
 
 -- Handle notifications of general user state change.
 function job_state_change(stateField, newValue, oldValue)
-  if state.WeaponLock.value == true then
-    disable('main','sub')
-  else
-    enable('main','sub')
-  end
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -1437,6 +1433,8 @@ function job_self_command(cmdParams, eventArgs)
     elseif cmdParams[2]:lower() == 'reset' then
       cycle_toy_weapons('reset')
     end
+  elseif cmdParams[1]:lower() == 'test' then
+    test()
   end
 
   gearinfo(cmdParams, eventArgs)
@@ -1559,4 +1557,12 @@ function set_lockstyle()
       send_command('input /lockstyleset '..lockstyleset)
     end
   end, 10)
+end
+
+function test()
+  print('test')
+  equip({
+    main="Kaja Knife",
+    sub="Taming Sari",
+  })
 end

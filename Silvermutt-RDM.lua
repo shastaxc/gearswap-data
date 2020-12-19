@@ -20,7 +20,7 @@
 --              [ CTRL+PageUp ]     Cycle Toy Weapon Mode
 --              [ CTRL+PageDown ]   Cycleback Toy Weapon Mode
 --              [ ALT+PageDown ]    Reset Toy Weapon Mode
---              [ WIN+W ]           Toggle Weapon Lock
+--              [ WIN+W ]           Toggle Rearming Lock
 --                                  (off = re-equip previous weapons if you go barehanded)
 --                                  (on = prevent weapon auto-equipping)
 --
@@ -109,7 +109,7 @@ function job_setup()
   state.BarStatus = M{['description']='BarStatus', 'Baramnesia', 'Barvirus', 'Barparalyze', 'Barsilence', 'Barpetrify', 'Barpoison', 'Barblind', 'Barsleep'}
   state.GainSpell = M{['description']='GainSpell', 'Gain-STR', 'Gain-INT', 'Gain-AGI', 'Gain-VIT', 'Gain-DEX', 'Gain-MND', 'Gain-CHR'}
 
-  state.WeaponLock = M(false, 'Weapon Lock')
+  state.RearmingLock = M(false, 'Rearming Lock')
   state.MagicBurst = M(false, 'Magic Burst')
   state.SleepMode = M{['description']='Sleep Mode', 'Normal', 'MaxDuration'}
   state.EnspellMode = M(false, 'Enspell Melee Mode')
@@ -155,7 +155,7 @@ function job_setup()
   send_command('bind @s gs c cycle SleepMode')
   send_command('bind @e gs c cycle EnspellMode')
   send_command('bind @d gs c toggle NM')
-  send_command('bind @w gs c toggle WeaponLock')
+  send_command('bind @w gs c toggle RearmingLock')
   send_command('bind @c gs c toggle CP')
   -- send_command('bind @e gs c cycleback WeaponSet')
   -- send_command('bind @r gs c cycle WeaponSet')
@@ -1456,11 +1456,6 @@ end
 
 -- Handle notifications of general user state change.
 function job_state_change(stateField, newValue, oldValue)
-  if state.WeaponLock.value == true then
-    disable('main','sub','range')
-  else
-    enable('main','sub','range')
-  end
 end
 
 -------------------------------------------------------------------------------------------------------------------

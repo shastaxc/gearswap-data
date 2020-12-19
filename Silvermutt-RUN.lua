@@ -21,7 +21,7 @@
 --              [ CTRL+PageUp ]     Cycle Toy Weapon Mode
 --              [ CTRL+PageDown ]   Cycleback Toy Weapon Mode
 --              [ ALT+PageDown ]    Reset Toy Weapon Mode
---              [ WIN+W ]           Toggle Weapon Lock
+--              [ WIN+W ]           Toggle Rearming Lock
 --                                  (off = re-equip previous weapons if you go barehanded)
 --                                  (on = prevent weapon auto-equipping)
 --
@@ -115,7 +115,7 @@ function job_setup()
   state.WeaponSet = M{['description']='Weapon Set', 'Aettir', 'ZanX', 'Epeolatry', 'Lionheart', 'Lycurgos'}
   state.AttackMode = M{['description']='Attack', 'Uncapped', 'Capped'}
   state.CP = M(false, "Capacity Points Mode")
-  state.WeaponLock = M(false, 'Weapon Lock')
+  state.RearmingLock = M(false, 'Rearming Lock')
   state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger',
       'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
   state.Runes = M{['description']='Runes', 'Ignis', 'Gelus', 'Flabra', 'Tellus', 'Sulpor', 'Unda', 'Lux', 'Tenebrae'}
@@ -123,7 +123,7 @@ function job_setup()
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c usekey')
 
-  send_command('bind @w gs c toggle WeaponLock')
+  send_command('bind @w gs c toggle RearmingLock')
   send_command('bind ^insert gs c weaponset cycle')
   send_command('bind ^delete gs c weaponset cycleback')
 
@@ -1460,11 +1460,6 @@ function get_custom_wsmode(spell, action, spellMap)
 end
 
 function cycle_weapons(cycle_dir)
-  -- Do nothing if weapon lock is on
-  if state.WeaponLock.current == true then
-    return
-  end
-
   if cycle_dir == 'forward' then
     state.WeaponSet:cycle()
   elseif cycle_dir == 'back' then
