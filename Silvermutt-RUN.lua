@@ -1072,13 +1072,6 @@ function job_precast(spell, action, spellMap, eventArgs)
       end
     end
   end
-  
-  -- If slot is locked, keep current equipment on
-  if locked_neck then equip({ neck=player.equipment.neck }) end
-  if locked_ear1 then equip({ ear1=player.equipment.ear1 }) end
-  if locked_ear2 then equip({ ear2=player.equipment.ear2 }) end
-  if locked_ring1 then equip({ ring1=player.equipment.ring1 }) end
-  if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
 end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
@@ -1098,12 +1091,6 @@ function job_post_precast(spell, action, spellMap, eventArgs)
 end
 
 function job_midcast(spell, action, spellMap, eventArgs)
-  -- If slot is locked, keep current equipment on
-  if locked_neck then equip({ neck=player.equipment.neck }) end
-  if locked_ear1 then equip({ ear1=player.equipment.ear1 }) end
-  if locked_ear2 then equip({ ear2=player.equipment.ear2 }) end
-  if locked_ring1 then equip({ ring1=player.equipment.ring1 }) end
-  if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
 end
 
 -- Run after the default midcast() is done.
