@@ -1,7 +1,6 @@
 send_command('lua l gearinfo')
 
 res = include('resources')
-inspect = include('inspect')
 -------------------------------------------------------------------------------------------------------------------
 -- Modify the sets table.  Any gear sets that are added to the sets table need to
 -- be defined within this function, because sets isn't available until after the
@@ -291,13 +290,6 @@ end
 
 windower.register_event('zone change',
   function()
-  -- Caps FPS to 30 via Config addon in certain problem zones
-    --[[if laggy_zones:contains(world.zone) then
-      send_command('config FrameRateDivisor 2')
-    else
-      send_command('config FrameRateDivisor 1')
-    end]]--
-
     -- Auto load Omen add-on
     if world.zone == 'Reisenjima Henge' then
       send_command('lua l omen')

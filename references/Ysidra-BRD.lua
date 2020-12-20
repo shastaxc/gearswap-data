@@ -1251,9 +1251,6 @@ end
 
 -- Modify the default idle set after it was constructed.
 function customize_idle_set(idleSet)
-  if state.BattleMode.value == true then
-    equip(sets.WeaponSet[state.WeaponSet.current])
-  end
   -- If not in DT mode put on move speed gear
   if state.IdleMode.current == 'Normal' and state.DefenseMode.value == 'None' then
     if classes.CustomIdleGroups:contains('Adoulin') then
@@ -1272,12 +1269,14 @@ function customize_idle_set(idleSet)
     idleSet = set_combine(idleSet, sets.buff.Doom)
   end
 
+  if state.BattleMode.value == true then
+    idleSet = set_combine(idleSet, sets.WeaponSet[state.WeaponSet.current])
+  end
   return idleSet
 end
 
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
-  equip(sets.WeaponSet[state.WeaponSet.current])
   if buffactive['Aftermath: Lv.3'] and player.equipment.main == "Carnwenhan" then
     meleeSet = set_combine(meleeSet, sets.engaged.Aftermath)
   end
@@ -1288,13 +1287,13 @@ function customize_melee_set(meleeSet)
     meleeSet = set_combine(meleeSet, sets.buff.Doom)
   end
 
+  if state.BattleMode.value == true then
+    meleeSet = set_combine(meleeSet, sets.WeaponSet[state.WeaponSet.current])
+  end
   return meleeSet
 end
 
 function customize_defense_set(defenseSet)
-  if state.BattleMode.value == true then
-    equip(sets.WeaponSet[state.WeaponSet.current])
-  end
   if state.CP.current == 'on' then
     defenseSet = set_combine(defenseSet, sets.CP)
   end
@@ -1302,6 +1301,9 @@ function customize_defense_set(defenseSet)
     defenseSet = set_combine(defenseSet, sets.buff.Doom)
   end
 
+  if state.BattleMode.value == true then
+    defenseSet = set_combine(defenseSet, sets.WeaponSet[state.WeaponSet.current])
+  end
   return defenseSet
 end
 

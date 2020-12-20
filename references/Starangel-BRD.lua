@@ -61,9 +61,9 @@ end
 function job_setup()
   lockstyleset = 1
   -- Adjust this if using the Terpander (new +song instrument)
-  info.ExtraSongInstrument = 'Daurdabla'
+  info.ExtraSongInstrument = 'Blurred Harp +1'
   -- How many extra songs we can keep from Daurdabla/Terpander
-  info.ExtraSongs = 2
+  info.ExtraSongs = 1
 
   Haste = 0 -- Do not modify
   DW_needed = 0 -- Do not modify
@@ -100,8 +100,8 @@ function job_setup()
   send_command('bind @w gs c toggle WeaponLock')
   send_command('bind ^b gs c toggle BattleMode')
 
-  send_command('bind ^` gs c cycle SongMode')
-  send_command('bind !` input /ma "Chocobo Mazurka" <me>')
+  send_command('bind ^` gs c cycle SongMode') -- ^ -> ctrl
+  send_command('bind !` input /ma "Chocobo Mazurka" <me>') -- ! -> alt
   send_command('bind !p input /ja "Pianissimo" <me>')
 
   send_command('bind ^backspace gs c cycle SongTier')
@@ -112,7 +112,7 @@ function job_setup()
   send_command('bind ^, gs c cycleback Threnody')
   send_command('bind ^. gs c cycle Threnody')
 
-  send_command('bind @` gs c cycle LullabyMode')
+  send_command('bind @` gs c cycle LullabyMode')  -- @ -> windows key
   send_command('bind @c gs c toggle CP')
   send_command('bind ^delete gs c cycleback WeaponSet')
   send_command('bind ^insert gs c cycle WeaponSet')
@@ -1250,9 +1250,6 @@ end
 
 -- Modify the default idle set after it was constructed.
 function customize_idle_set(idleSet)
-  if state.BattleMode.value == true then
-    equip(sets.WeaponSet[state.WeaponSet.current])
-  end
   -- If not in DT mode put on move speed gear
   if state.IdleMode.current == 'Normal' and state.DefenseMode.value == 'None' then
     if classes.CustomIdleGroups:contains('Adoulin') then
@@ -1271,12 +1268,14 @@ function customize_idle_set(idleSet)
     idleSet = set_combine(idleSet, sets.buff.Doom)
   end
 
+  if state.BattleMode.value == true then
+    idleSet = set_combine(idleSet, sets.WeaponSet[state.WeaponSet.current])
+  end
   return idleSet
 end
 
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
-  equip(sets.WeaponSet[state.WeaponSet.current])
   if buffactive['Aftermath: Lv.3'] and player.equipment.main == "Carnwenhan" then
     meleeSet = set_combine(meleeSet, sets.engaged.Aftermath)
   end
@@ -1287,13 +1286,13 @@ function customize_melee_set(meleeSet)
     meleeSet = set_combine(meleeSet, sets.buff.Doom)
   end
 
+  if state.BattleMode.value == true then
+    meleeSet = set_combine(meleeSet, sets.WeaponSet[state.WeaponSet.current])
+  end
   return meleeSet
 end
 
 function customize_defense_set(defenseSet)
-  if state.BattleMode.value == true then
-    equip(sets.WeaponSet[state.WeaponSet.current])
-  end
   if state.CP.current == 'on' then
     defenseSet = set_combine(defenseSet, sets.CP)
   end
@@ -1301,6 +1300,9 @@ function customize_defense_set(defenseSet)
     defenseSet = set_combine(defenseSet, sets.buff.Doom)
   end
 
+  if state.BattleMode.value == true then
+    defenseSet = set_combine(defenseSet, sets.WeaponSet[state.WeaponSet.current])
+  end
   return defenseSet
 end
 
@@ -1509,7 +1511,7 @@ windower.register_event('zone change',
 
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
-  set_macro_page(1, 14)
+  set_macro_page(1, 2)
 end
 
 function set_lockstyle()
