@@ -625,24 +625,21 @@ function init_gear_sets()
     legs=gear.Samnuha_legs,
     feet=gear.Taeon_DW_feet, --9
     neck="Anu Torque",
-    waist="Windbuffet Belt +1",
     ear1="Suppanomimi", --5
     ear2="Eabani Earring", --4
     ring1="Epona's Ring",
     ring2="Gere Ring",
     back=gear.THF_TP_Cape,
+    waist="Reiki Yotai", --7
     -- ammo="Aurgelmir Orb +1",
     -- neck="Erudit. Necklace",
     -- back=gear.THF_DW_Cape, --10
-    -- waist="Reiki Yotai", --7
-  }
-
+  }--36
   sets.engaged.DW.LowAcc = set_combine(sets.engaged.DW, {
     ring1="Chirich Ring +1",
     -- head="Skulker's Bonnet +1",
     -- neck="Combatant's Torque",
   })
-
   sets.engaged.DW.MidAcc = set_combine(sets.engaged.DW.LowAcc, {
     head="Dampening Tam",
     ring2="Ilabrat Ring",
@@ -650,12 +647,10 @@ function init_gear_sets()
     -- body="Pillager's Vest +3",
     -- waist="Kentarch Belt +1",
   })
-
   sets.engaged.DW.HighAcc = set_combine(sets.engaged.DW.MidAcc, {
     ear1="Cessance Earring",
     ear2="Telos Earring",
-    ring1="Regal Ring",
-    -- ring2="Chirich Ring +1",
+    ring2="Regal Ring",
     -- ammo="C. Palug Stone",
     -- legs="Pill. Culottes +3",
     -- feet=gear.Herc_STP_feet,
@@ -671,19 +666,18 @@ function init_gear_sets()
     legs=gear.Samnuha_legs,
     feet=gear.Taeon_DW_feet, --9
     neck="Anu Torque",
-    waist="Windbuffet Belt +1",
     ear1="Suppanomimi", --5
     ear2="Eabani Earring", --4
     ring1="Epona's Ring",
     ring2="Gere Ring",
     back=gear.THF_TP_Cape,
+    waist="Reiki Yotai", --7
     -- ammo="Aurgelmir Orb +1",
     -- hands=gear.Adhemar_A_hands,
     -- neck="Erudit. Necklace",
     -- ear1="Sherida Earring",
     -- ear2="Suppanomimi", --5
     -- back=gear.THF_DW_Cape, --10
-    -- waist="Reiki Yotai", --7
   }
 
   sets.engaged.DW.LowAcc.LowHaste = set_combine(sets.engaged.DW.LowHaste, {
@@ -717,24 +711,21 @@ function init_gear_sets()
     body=gear.Adhemar_B_body, --6
     hands=gear.Floral_Gauntlets, --5
     legs=gear.Samnuha_legs,
-    feet=gear.Taeon_DW_feet, --9
+    feet=gear.Herc_TA_feet,
     neck="Anu Torque",
-    waist="Windbuffet Belt +1",
-    ear1="Suppanomimi", --5
-    ear2="Sherida Earring",
+    ear1="Eabani Earring", --4
+    ear2="Suppanomimi", --5
     ring1="Epona's Ring",
     ring2="Gere Ring",
     back=gear.THF_TP_Cape,
+    waist="Reiki Yotai", --7
     -- ammo="Aurgelmir Orb +1",
-    -- ammo="Yamarang",
     -- body="Pillager's Vest +3",
     -- hands=gear.Adhemar_B_hands,
     -- feet=gear.Herc_TA_feet,
     -- neck="Erudit. Necklace",
-    -- ear1="Eabani Earring", --4
     -- back=gear.THF_DW_Cape, --10
-    -- waist="Reiki Yotai", --7
-  }
+  }--27
 
   sets.engaged.DW.LowAcc.MidHaste = set_combine(sets.engaged.DW.MidHaste, {
     ring1="Chirich Ring +1",
@@ -752,8 +743,7 @@ function init_gear_sets()
 
   sets.engaged.DW.HighAcc.MidHaste = set_combine(sets.engaged.DW.MidAcc.MidHaste, {
     ear2="Telos Earring",
-    ring1="Regal Ring",
-    -- ring2="Chirich Ring +1",
+    ring2="Regal Ring",
     -- ammo="C. Palug Stone",
     -- legs="Pill. Culottes +3",
     -- feet=gear.Herc_STP_feet,
@@ -765,23 +755,19 @@ function init_gear_sets()
     ammo="Aurgelmir Orb",
     head=gear.Adhemar_B_head,
     body=gear.Adhemar_B_body, --6
-    hands=gear.Floral_Gauntlets, --5
+    hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha_legs,
     feet=gear.Herc_TA_feet,
     neck="Anu Torque",
-    waist="Windbuffet Belt +1",
     ear1="Sherida Earring",
-    ear2="Eabani Earring", --4
+    ear2="Telos Earring",
     ring1="Epona's Ring",
     ring2="Gere Ring",
     back=gear.THF_TP_Cape,
+    waist="Reiki Yotai", --7
     -- ammo="Aurgelmir Orb +1",
-    -- ammo="Yamarang",
     -- body="Pillager's Vest +3",
-    -- hands=gear.Adhemar_B_hands, -- Use with Reiki Yotai
-    -- ear2="Telos Earring", -- Use with Reiki Yotai
     -- neck="Erudit. Necklace",
-    -- waist="Reiki Yotai", --7
   }
   sets.engaged.DW.LowAcc.HighHaste = set_combine(sets.engaged.DW.HighHaste, {
     ring1="Chirich Ring +1",
@@ -797,8 +783,7 @@ function init_gear_sets()
   })
   sets.engaged.DW.HighAcc.HighHaste = set_combine(sets.engaged.DW.MidAcc.HighHaste, {
     ear2="Telos Earring",
-    ring1="Regal Ring",
-    -- ring2="Chirich Ring +1",
+    ring2="Regal Ring",
     -- ammo="C. Palug Stone",
     -- legs="Pill. Culottes +3",
     -- feet=gear.Herc_STP_feet,
@@ -814,12 +799,12 @@ function init_gear_sets()
     legs=gear.Samnuha_legs,
     feet=gear.Herc_TA_feet,
     neck="Anu Torque",
-    waist="Windbuffet Belt +1",
     ear1="Telos Earring",
     ear2="Sherida Earring",
     ring1="Epona's Ring",
     ring2="Gere Ring",
     back=gear.THF_TP_Cape,
+    waist="Windbuffet Belt +1",
     -- ammo="Aurgelmir Orb +1",
     -- body="Pillager's Vest +3",
     -- neck="Erudit. Necklace",
@@ -838,8 +823,7 @@ function init_gear_sets()
   })
   sets.engaged.DW.HighAcc.SuperHaste = set_combine(sets.engaged.DW.MidAcc.SuperHaste, {
     ear2="Telos Earring",
-    ring1="Regal Ring",
-    -- ring2="Chirich Ring +1",
+    ring2="Regal Ring",
     -- ammo="C. Palug Stone",
     -- legs="Pill. Culottes +3",
     -- feet=gear.Herc_STP_feet,
@@ -855,12 +839,12 @@ function init_gear_sets()
     legs=gear.Samnuha_legs,
     feet=gear.Herc_TA_feet,
     neck="Anu Torque",
-    waist="Windbuffet Belt +1",
     ear1="Telos Earring",
     ear2="Sherida Earring",
     ring1="Epona's Ring",
     ring2="Gere Ring",
     back=gear.THF_TP_Cape,
+    waist="Windbuffet Belt +1",
     -- ammo="Aurgelmir Orb +1",
     -- body="Pillager's Vest +3",
     -- hands=gear.Adhemar_A_hands,
@@ -880,8 +864,7 @@ function init_gear_sets()
   })
   sets.engaged.DW.HighAcc.MaxHaste = set_combine(sets.engaged.DW.MidAcc.MaxHaste, {
     ear2="Telos Earring",
-    ring1="Regal Ring",
-    -- ring2="Chirich Ring +1",
+    ring2="Regal Ring",
     -- ammo="C. Palug Stone",
     -- legs="Pill. Culottes +3",
     -- feet=gear.Herc_STP_feet,
