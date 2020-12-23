@@ -62,6 +62,9 @@ function get_sets()
   -- Load and initialize Mote library
   mote_include_version = 2
   include('Mote-Include.lua') -- Executes job_setup, user_setup, init_gear_sets
+  coroutine.schedule(function() 
+    send_command('gs c weaponset current')
+  end, 2)
 end
 
 -- Executes on first load and main job change
@@ -95,10 +98,14 @@ function job_setup()
   state.RearmingLock = M(false, 'Rearming Lock')
   state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger',
       'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
+  state.WeaponSet = M{['description']='Weapon Set', 'Normal', 'Cleaving'}
 
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c usekey')
   send_command('bind @w gs c toggle RearmingLock')
+  
+  send_command('bind ^insert gs c weaponset cycle')
+  send_command('bind ^delete gs c weaponset cycleback')
 
   send_command('bind ^pageup gs c toyweapon cycle')
   send_command('bind ^pagedown gs c toyweapon cycleback')
@@ -243,11 +250,11 @@ function init_gear_sets()
   -- sets.precast.JA['Trick Attack'] = sets.buff['Trick Attack']
 
   sets.precast.Waltz = {
+    legs="Dashing Subligar",
+    waist="Gishdubar Sash",
     -- ammo="Yamarang",
     -- body="Passion Jacket",
-    -- legs="Dashing Subligar",
     -- ring1="Asklepian Ring",
-    waist="Gishdubar Sash",
   }
 
   sets.precast.Waltz['Healing Waltz'] = {}
@@ -931,6 +938,9 @@ function init_gear_sets()
     neck="Ygnas's Resolve +1"
   }
 
+  sets.WeaponSet = {}
+  sets.WeaponSet['Normal'] = {main="Kaja Knife", sub="Taming Sari"}
+  sets.WeaponSet['Cleaving'] = {main="Malevolence", sub="Malevolence"}
 end
 
 
@@ -1101,6 +1111,8 @@ function customize_idle_set(idleSet)
   if buffactive.Doom then
     idleSet = set_combine(idleSet, sets.buff.Doom)
   end
+  
+  -- add_to_chat(001, 'idle set: '..inspect(idleSet))
 
   return idleSet
 end
@@ -1190,6 +1202,17 @@ function display_current_job_state(eventArgs)
       ..string.char(31,002)..msg)
 
   eventArgs.handled = true
+end
+
+function cycle_weapons(cycle_dir)
+  if cycle_dir == 'forward' then
+    state.WeaponSet:cycle()
+  elseif cycle_dir == 'back' then
+    state.WeaponSet:cycleback()
+  end
+
+  add_to_chat(141, 'Weapon Set to '..string.char(31,1)..state.WeaponSet.current)
+  equip(sets.WeaponSet[state.WeaponSet.current])
 end
 
 function cycle_toy_weapons(cycle_dir)
@@ -1291,6 +1314,14 @@ function job_self_command(cmdParams, eventArgs)
       cycle_toy_weapons('back')
     elseif cmdParams[2]:lower() == 'reset' then
       cycle_toy_weapons('reset')
+    end
+  elseif cmdParams[1]:lower() == 'weaponset' then
+    if cmdParams[2]:lower() == 'cycle' then
+      cycle_weapons('forward')
+    elseif cmdParams[2]:lower() == 'cycleback' then
+      cycle_weapons('back')
+    elseif cmdParams[2]:lower() == 'current' then
+      cycle_weapons('current')
     end
   end
 

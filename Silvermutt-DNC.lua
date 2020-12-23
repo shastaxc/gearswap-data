@@ -244,7 +244,7 @@ function init_gear_sets()
     ammo="Light Sachet",            -- __(_),  2 <__>
     head=gear.Anwig_Salade,         -- __(_),  4 <-2>
     body="Maxixi Casaque +2",       -- 17(7), 28 <-1>
-    legs="Horos Tights +3",         -- __(_), 24 <__>
+    legs="Dashing Subligar",        -- 10(_), 11 <__>; Gives Blink
     feet="Charis Shoes +2",         -- __(_),  8 <__>
     ring1=gear.Dark_Ring,           -- __(_),  1 <__>
     feet="Maxixi Shoes +1",         -- 10(_), 30 <__>
