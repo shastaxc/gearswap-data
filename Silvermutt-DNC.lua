@@ -243,7 +243,7 @@ function init_gear_sets()
   sets.precast.Waltz = {
     ammo="Light Sachet",            -- __(_),  2 <__>
     head=gear.Anwig_Salade,         -- __(_),  4 <-2>
-    body="Maxixi Casaque +2",       -- 17(7), 28 <-1>
+    body="Maxixi Casaque +3",       -- 19(8), 33 <-2>
     legs="Dashing Subligar",        -- 10(_), 11 <__>; Gives Blink
     feet="Charis Shoes +2",         -- __(_),  8 <__>
     ring1=gear.Dark_Ring,           -- __(_),  1 <__>
@@ -265,21 +265,19 @@ function init_gear_sets()
     -- back=gear.DNC_WTZ_Cape,      -- __(_), 30 <__>; Enmity-10
     -- waist="Aristo Belt",         -- __(_),  8 <__>
     -- 53 Potency (8 Self Potency), 217 CHR <-4 Delay>
-  } -- 32 Potency (7 Self Potency), 105 CHR <-3 Delay>
+  } -- 44 Potency (8 Self Potency), 97 CHR <-4 Delay>
 
   -- Waltz effects received
   sets.precast.WaltzSelf = set_combine(sets.precast.Waltz, {
     head="Mummu Bonnet +2",         -- __(9), 17 <__>
-    body="Maxixi Casaque +2",       -- 17(7), 28 <-1>
-    -- body="Maxixi Casaque +3",    -- 19(8), 33 <-2>
+    body="Maxixi Casaque +3",       -- 19(8), 33 <-2>
     -- ring1="Asklepian Ring",      -- __(3), __ <__>
   })
 
   -- Waltz delay
   sets.precast.Waltz['Healing Waltz'] = {
     head=gear.Anwig_Salade, --2
-    body="Maxixi Casaque +2", --1
-    -- body="Maxixi Casaque +3", --2
+    body="Maxixi Casaque +3", --2
   }
   sets.precast.Samba = {
     head="Maxixi Tiara +3",
@@ -295,7 +293,7 @@ function init_gear_sets()
   sets.precast.Step = {
     ammo="Charis Feather",
     head="Maxixi Tiara +3",
-    body="Maxixi Casaque +2",
+    body="Maxixi Casaque +3",
     hands="Mummu Wrists +2",
     legs="Meghanada Chausses +2",
     feet="Horos Toe Shoes +3",
@@ -733,13 +731,13 @@ function init_gear_sets()
   })
   sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
     ammo="Falcon Eye",
+    body="Maxixi Casaque +3",
     legs="Malignance Tights",
     ear1="Telos Earring",
     ear2="Dignitary's Earring",
     ring1="Regal Ring",
     ring2="Chirich Ring +1",
     -- ammo="C. Palug Stone",
-    -- body="Maxixi Casaque +3",
     -- waist="Olseni Belt",
   })
 
@@ -774,13 +772,14 @@ function init_gear_sets()
     -- waist="Kentarch Belt +1",
   })
   sets.engaged.DW.HighAcc = set_combine(sets.engaged.DW.MidAcc, {
+    -- TODO: Re-evaluate to avoid dropping DW
     ammo="Falcon Eye",
+    body="Maxixi Casaque +3",
     hands="Mummu Wrists +2",
     legs="Malignance Tights",
     ear2="Dignitary's Earring",
     ring2="Regal Ring",
     -- ammo="C. Palug Stone",
-    -- body="Maxixi Casaque +3",
     -- waist="Olseni Belt",
   })
 
@@ -815,13 +814,14 @@ function init_gear_sets()
     -- waist="Kentarch Belt +1",
   })
   sets.engaged.DW.HighAcc.LowHaste = set_combine(sets.engaged.DW.MidAcc.LowHaste, {
+    -- TODO: Re-evaluate to avoid dropping DW
     ammo="Falcon Eye",
+    body="Maxixi Casaque +3",
     hands="Mummu Wrists +2",
     legs="Malignance Tights",
     ear1="Dignitary's Earring",
     ring2="Regal Ring",
     -- ammo="C. Palug Stone",
-    -- body="Maxixi Casaque +3",
     -- feet=gear.Herc_STP_feet,
     -- waist="Olseni Belt",
   })
@@ -860,12 +860,12 @@ function init_gear_sets()
   })
   sets.engaged.DW.HighAcc.MidHaste = set_combine(sets.engaged.DW.MidAcc.MidHaste, {
     ammo="Falcon Eye",
+    body="Maxixi Casaque +3",
     legs="Malignance Tights",
     ear2="Dignitary's Earring",
     ring1="Regal Ring",
     ring2="Chirich Ring +1",
     -- ammo="C. Palug Stone",
-    -- body="Maxixi Casaque +3",
     -- waist="Olseni Belt",
   })
 
@@ -901,12 +901,12 @@ function init_gear_sets()
   })
   sets.engaged.DW.HighAcc.HighHaste = set_combine(sets.engaged.DW.MidAcc.HighHaste, {
     ammo="Falcon Eye",
+    head="Maxixi Tiara +3", --8
+    body="Maxixi Casaque +3",
     legs="Malignance Tights",
     ear2="Dignitary's Earring",
     ring2="Regal Ring",
     -- ammo="C. Palug Stone",
-    -- head="Maxixi Tiara +3", --8
-    -- body="Maxixi Casaque +3",
     -- waist="Olseni Belt",
   })
 
@@ -941,13 +941,12 @@ function init_gear_sets()
   })
   sets.engaged.DW.HighAcc.MaxHaste = set_combine(sets.engaged.DW.MidAcc.MaxHaste, {
     ammo="Falcon Eye",
-    body="Maxixi Casaque +2",
+    head="Maxixi Tiara +3", --8
+    body="Maxixi Casaque +3",
     legs="Malignance Tights",
     ear2="Dignitary's Earring",
     ring2="Regal Ring",
     -- ammo="C. Palug Stone",
-    -- head="Maxixi Tiara +3", --8
-    -- body="Maxixi Casaque +3",
     -- legs="Maxixi Tights +3",
     -- waist="Olseni Belt",
   })
