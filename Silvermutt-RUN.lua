@@ -911,13 +911,13 @@ function init_gear_sets()
   })
   sets.engaged.Aftermath = {
     head="Ayanmo Zucchetto +2",
+    neck="Anu Torque",
+    ear1="Sherida Earring",
+    ring1="Chirich Ring +1",
+    waist="Kentarch Belt +1",
     -- body="Ashera Harness",
-    -- neck="Anu Torque",
-    -- ear1="Sherida Earring",
     -- ear2="Dedition Earring",
-    -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
-    -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
-    -- waist="Kentarch Belt +1",
+    -- ring2="Chirich Ring +1",
   }
 
 

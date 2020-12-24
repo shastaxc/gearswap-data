@@ -245,7 +245,7 @@ function init_gear_sets()
     head=gear.Anwig_Salade,         -- __(_),  4 <-2>
     body="Maxixi Casaque +3",       -- 19(8), 33 <-2>
     legs="Dashing Subligar",        -- 10(_), 11 <__>; Gives Blink
-    feet="Charis Shoes +2",         -- __(_),  8 <__>
+    feet="Maculele Toe Shoes +1",   -- __(_), 33 <__>
     ring1=gear.Dark_Ring,           -- __(_),  1 <__>
     feet="Maxixi Shoes +1",         -- 10(_), 30 <__>
     back="Toetapper Mantle",        --  5(_), __ <__>
@@ -319,8 +319,7 @@ function init_gear_sets()
   }
 
   sets.precast.Step['Feather Step'] = set_combine(sets.precast.Step, {
-    feet="Charis Shoes +2",
-    -- feet="Maculele Toe Shoes +1",
+    feet="Maculele Toe Shoes +1",
   })
   sets.precast.Flourish1 = {}
   sets.precast.Flourish1['Animated Flourish'] = sets.Enmity
@@ -726,8 +725,8 @@ function init_gear_sets()
   sets.engaged.MidAcc = set_combine(sets.engaged.LowAcc, {
     legs="Meghanada Chausses +2",
     ring1="Chirich Ring +1",
+    waist="Kentarch Belt +1",
     -- ammo="Voluspa Tathlum",
-    -- waist="Kentarch Belt +1",
   })
   sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
     ammo="Falcon Eye",
@@ -768,8 +767,8 @@ function init_gear_sets()
   })
   sets.engaged.DW.MidAcc = set_combine(sets.engaged.DW.LowAcc, {
     legs="Horos Tights +3",
+    waist="Kentarch Belt +1",
     -- ammo="Voluspa Tathlum",
-    -- waist="Kentarch Belt +1",
   })
   sets.engaged.DW.HighAcc = set_combine(sets.engaged.DW.MidAcc, {
     -- TODO: Re-evaluate to avoid dropping DW
@@ -808,10 +807,10 @@ function init_gear_sets()
   sets.engaged.DW.MidAcc.LowHaste = set_combine(sets.engaged.DW.LowAcc.LowHaste, {
     legs="Horos Tights +3",
     ring1="Chirich Ring +1",
+    waist="Kentarch Belt +1",
     -- ammo="Voluspa Tathlum",
     -- head="Maxixi Tiara +3", --8
     -- body="Horos Casaque +3",
-    -- waist="Kentarch Belt +1",
   })
   sets.engaged.DW.HighAcc.LowHaste = set_combine(sets.engaged.DW.MidAcc.LowHaste, {
     -- TODO: Re-evaluate to avoid dropping DW
@@ -853,10 +852,10 @@ function init_gear_sets()
     legs="Horos Tights +3",
     ear1="Telos Earring",
     ring1="Chirich Ring +1",
+    waist="Kentarch Belt +1",
     -- ammo="Voluspa Tathlum",
     -- head="Maxixi Tiara +3", --8
     -- body="Horos Casaque +3",
-    -- waist="Kentarch Belt +1",
   })
   sets.engaged.DW.HighAcc.MidHaste = set_combine(sets.engaged.DW.MidAcc.MidHaste, {
     ammo="Falcon Eye",
@@ -895,9 +894,9 @@ function init_gear_sets()
   sets.engaged.DW.MidAcc.HighHaste = set_combine(sets.engaged.DW.LowAcc.HighHaste, {
     hands="Mummu Wrists +2",
     legs="Horos Tights +3",
+    waist="Kentarch Belt +1",
     -- ammo="Voluspa Tathlum",
     -- body="Horos Casaque +3",
-    -- waist="Kentarch Belt +1",
   })
   sets.engaged.DW.HighAcc.HighHaste = set_combine(sets.engaged.DW.MidAcc.HighHaste, {
     ammo="Falcon Eye",
@@ -936,8 +935,8 @@ function init_gear_sets()
   sets.engaged.DW.MidAcc.MaxHaste = set_combine(sets.engaged.DW.LowAcc.MaxHaste, {
     hands="Mummu Wrists +2",
     legs="Horos Tights +3",
+    waist="Kentarch Belt +1",
     -- ammo="Voluspa Tathlum",
-    -- waist="Kentarch Belt +1",
   })
   sets.engaged.DW.HighAcc.MaxHaste = set_combine(sets.engaged.DW.MidAcc.MaxHaste, {
     ammo="Falcon Eye",

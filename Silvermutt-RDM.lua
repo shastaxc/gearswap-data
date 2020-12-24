@@ -1075,27 +1075,25 @@ function init_gear_sets()
     hands="Malignance Gloves",
     legs="Malignance Tights",
     -- feet="Carmine Greaves +1",
-    -- neck="Anu Torque",
-    -- ear1="Sherida Earring",
-    -- ear2="Telos Earring",
+    neck="Anu Torque",
+    ear1="Sherida Earring",
+    ear2="Telos Earring",
     -- ring1="Hetairoi Ring",
-    -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
+    ring2="Chirich Ring +1",
     -- back=gear.RDM_DW_Cape,
-    -- waist="Windbuffet Belt +1",
+    waist="Windbuffet Belt +1",
   }
-
   sets.engaged.MidAcc = set_combine(sets.engaged, {
+    waist="Kentarch Belt +1",
     -- neck="Combatant's Torque",
-    -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
-    -- waist="Kentarch Belt +1",
+    -- ring1="Chirich Ring +1",
   })
-
   sets.engaged.HighAcc = set_combine(sets.engaged, {
     legs=gear.Carmine_D_legs,
     -- ammo="Voluspa Tathlum",
     -- head="Carmine Mask +1",
     -- body="Carm. Sc. Mail +1",
-    -- ear1="Cessance Earring",
+    ear1="Cessance Earring",
     -- ear2="Mache Earring +1",
     -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
     -- waist="Olseni Belt",
@@ -1110,26 +1108,24 @@ function init_gear_sets()
     body="Malignance Tabard",
     hands="Malignance Gloves",
     legs=gear.Carmine_D_legs, --6
-    -- feet=gear.Taeon_DW_feet, --9
-    -- neck="Anu Torque",
-    -- ear1="Eabani Earring", --4
-    -- ear2="Suppanomimi", --5
+    feet=gear.Taeon_DW_feet, --9
+    neck="Anu Torque",
+    ear1="Eabani Earring", --4
+    ear2="Suppanomimi", --5
     -- ring1="Hetairoi Ring",
-    -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
+    ring2="Chirich Ring +1",
     -- back=gear.RDM_DW_Cape, --10
     waist="Reiki Yotai", --7
   } --41
-
   sets.engaged.DW.MidAcc = set_combine(sets.engaged.DW, {
     -- neck="Combatant's Torque",
     -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
   })
-
   sets.engaged.DW.HighAcc = set_combine(sets.engaged.DW.MidAcc, {
     -- ammo="Voluspa Tathlum",
     -- head="Carmine Mask +1",
     -- body="Carm. Sc. Mail +1",
-    -- ear1="Cessance Earring",
+    ear1="Cessance Earring",
     -- ear2="Mache Earring +1",
   })
 
@@ -1140,26 +1136,24 @@ function init_gear_sets()
     body="Malignance Tabard",
     hands="Malignance Gloves",
     legs=gear.Carmine_D_legs, --6
-    -- feet=gear.Taeon_DW_feet, --9
-    -- neck="Anu Torque",
-    -- ear1="Eabani Earring", --4
-    -- ear2="Suppanomimi", --5
+    feet=gear.Taeon_DW_feet, --9
+    neck="Anu Torque",
+    ear1="Eabani Earring", --4
+    ear2="Suppanomimi", --5
     -- ring1="Hetairoi Ring",
-    -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
+    ring2="Chirich Ring +1",
     -- back=gear.RDM_DW_Cape, --10
     waist="Reiki Yotai", --7
   }) --41
-
   sets.engaged.DW.MidAcc.LowHaste = set_combine(sets.engaged.DW.LowHaste, {
     -- neck="Combatant's Torque",
     -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
   })
-
   sets.engaged.DW.HighAcc.LowHaste = set_combine(sets.engaged.DW.MidAcc.LowHaste, {
     -- ammo="Voluspa Tathlum",
     -- head="Carmine Mask +1",
     -- body="Carm. Sc. Mail +1",
-    -- ear1="Cessance Earring",
+    ear1="Cessance Earring",
     -- ear2="Mache Earring +1",
   })
 
@@ -1170,7 +1164,7 @@ function init_gear_sets()
     body="Malignance Tabard",
     hands="Malignance Gloves",
     legs="Malignance Tights",
-    -- feet=gear.Taeon_DW_feet, --9
+    feet=gear.Taeon_DW_feet, --9
     neck="Anu Torque",
     ear1="Sherida Earring",
     ear2="Suppanomimi", --5
@@ -1179,19 +1173,17 @@ function init_gear_sets()
     -- back=gear.RDM_DW_Cape, --10
     waist="Reiki Yotai", --7
   }) --31
-
   sets.engaged.DW.MidAcc.MidHaste = set_combine(sets.engaged.DW.MidHaste, {
     legs=gear.Carmine_D_legs, --6
+    ear2="Telos Earring",
     -- neck="Combatant's Torque",
     -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
-    -- ear2="Telos Earring",
   })
-
   sets.engaged.DW.HighAcc.MidHaste = set_combine(sets.engaged.DW.MidAcc.MidHaste, {
     -- ammo="Voluspa Tathlum",
     -- head="Carmine Mask +1",
     -- body="Carm. Sc. Mail +1",
-    -- ear1="Cessance Earring",
+    ear1="Cessance Earring",
     -- ear2="Mache Earring +1",
   })
 
@@ -1211,18 +1203,16 @@ function init_gear_sets()
     -- back=gear.RDM_DW_Cape, --10
     waist="Reiki Yotai", --7
   }) --26
-
   sets.engaged.DW.MidAcc.HighHaste = set_combine(sets.engaged.DW.HighHaste, {
     legs=gear.Carmine_D_legs, --6
     -- neck="Combatant's Torque",
     -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
   })
-
   sets.engaged.DW.HighAcc.HighHaste = set_combine(sets.engaged.DW.MidAcc.HighHaste, {
     -- ammo="Voluspa Tathlum",
     -- head="Carmine Mask +1",
     -- body="Carm. Sc. Mail +1",
-    -- ear1="Cessance Earring",
+    ear1="Cessance Earring",
     -- ear2="Mache Earring +1",
   })
 
@@ -1242,19 +1232,17 @@ function init_gear_sets()
     -- back=gear.RDM_DW_Cape, --10
     waist="Windbuffet Belt +1",
   }) --10
-
   sets.engaged.DW.MidAcc.MaxHaste = set_combine(sets.engaged.DW.MaxHaste, {
     -- neck="Combatant's Torque",
     -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
-    -- waist="Kentarch Belt +1",
+    waist="Kentarch Belt +1",
   })
-
   sets.engaged.DW.HighAcc.MaxHaste = set_combine(sets.engaged.DW.MidAcc.MaxHaste, {
     -- ammo="Voluspa Tathlum",
     -- head="Carmine Mask +1",
     -- body="Carm. Sc. Mail +1",
     legs=gear.Carmine_D_legs, --6
-    -- ear1="Cessance Earring",
+    ear1="Cessance Earring",
     -- ear2="Mache Earring +1",
     -- waist="Olseni Belt",
   })

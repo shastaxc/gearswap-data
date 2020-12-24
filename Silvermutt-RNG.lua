@@ -994,7 +994,7 @@ function init_gear_sets()
   sets.engaged.MidAcc = set_combine(sets.engaged.LowAcc, {
     ring1="Regal Ring",
     ring2="Ilabrat Ring",
-    -- waist="Kentarch Belt +1",
+    waist="Kentarch Belt +1",
   })
 
   sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
@@ -1031,8 +1031,8 @@ function init_gear_sets()
   sets.engaged.DW.MidAcc = set_combine(sets.engaged.DW.LowAcc, {
     feet="Malignance Boots",
     hands="Malignance Gloves",
+    waist="Kentarch Belt +1",
     -- hands=gear.Adhemar_A_hands,
-    -- waist="Kentarch Belt +1",
   })
 
   sets.engaged.DW.HighAcc = set_combine(sets.engaged.DW.MidAcc, {
@@ -1068,8 +1068,8 @@ function init_gear_sets()
     feet="Malignance Boots",
     hands="Malignance Gloves",
     ring2="Ilabrat Ring",
+    waist="Kentarch Belt +1",
     -- hands=gear.Adhemar_A_hands,
-    -- waist="Kentarch Belt +1",
   })
 
   sets.engaged.DW.HighAcc.LowHaste = set_combine(sets.engaged.DW.MidAcc.LowHaste, {
@@ -1106,7 +1106,7 @@ function init_gear_sets()
     feet="Malignance Boots",
     hands="Malignance Gloves",
     ring2="Ilabrat Ring",
-    -- waist="Kentarch Belt +1",
+    waist="Kentarch Belt +1",
   })
 
   sets.engaged.DW.HighAcc.MidHaste = set_combine(sets.engaged.DW.MidAcc.MidHaste, {
@@ -1142,7 +1142,7 @@ function init_gear_sets()
   sets.engaged.DW.MidAcc.HighHaste = set_combine(sets.engaged.DW.LowAcc.HighHaste, {
     feet="Malignance Boots",
     hands="Malignance Gloves",
-    -- waist="Kentarch Belt +1",
+    waist="Kentarch Belt +1",
   })
 
   sets.engaged.DW.HighAcc.HighHaste = set_combine(sets.engaged.DW.MidAcc.HighHaste, {
@@ -1198,8 +1198,8 @@ function init_gear_sets()
   sets.engaged.DW.LowAcc.MaxHaste = set_combine(sets.engaged.DW.MaxHaste, {
     head="Dampening Tam",
     ring1="Chirich Ring +1",
+    waist="Kentarch Belt +1",
     -- hands=gear.Adhemar_A_hands,
-    -- waist="Kentarch Belt +1",
   })
 
   sets.engaged.DW.MidAcc.MaxHaste = set_combine(sets.engaged.DW.LowAcc.MaxHaste, {

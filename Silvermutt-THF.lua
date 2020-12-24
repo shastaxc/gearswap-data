@@ -595,22 +595,19 @@ function init_gear_sets()
     back=gear.THF_TP_Cape,
     -- ammo="Aurgelmir Orb +1",
   }
-
   sets.engaged.LowAcc = set_combine(sets.engaged, {
     ring1="Chirich Ring +1",
     -- head="Skulker's Bonnet +1",
     -- neck="Combatant's Torque",
   })
-
   sets.engaged.MidAcc = set_combine(sets.engaged.LowAcc, {
     head="Dampening Tam",
     ear1="Cessance Earring",
     ring2="Ilabrat Ring",
+    waist="Kentarch Belt +1",
     -- ammo="Yamarang",
     -- body="Pillager's Vest +3",
-    -- waist="Kentarch Belt +1",
   })
-
   sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
     ear2="Dignitary's Earring",
     ring1="Regal Ring",
@@ -650,9 +647,9 @@ function init_gear_sets()
   sets.engaged.DW.MidAcc = set_combine(sets.engaged.DW.LowAcc, {
     head="Dampening Tam",
     ring2="Ilabrat Ring",
+    waist="Kentarch Belt +1",
     -- ammo="Yamarang",
     -- body="Pillager's Vest +3",
-    -- waist="Kentarch Belt +1",
   })
   sets.engaged.DW.HighAcc = set_combine(sets.engaged.DW.MidAcc, {
     ear1="Cessance Earring",
@@ -696,9 +693,9 @@ function init_gear_sets()
   sets.engaged.DW.MidAcc.LowHaste = set_combine(sets.engaged.DW.LowAcc.LowHaste, {
     head="Dampening Tam",
     ring2="Ilabrat Ring",
+    waist="Kentarch Belt +1",
     -- ammo="Yamarang",
     -- body="Pillager's Vest +3",
-    -- waist="Kentarch Belt +1",
   })
 
   sets.engaged.DW.HighAcc.LowHaste = set_combine(sets.engaged.DW.MidAcc.LowHaste, {
@@ -744,8 +741,8 @@ function init_gear_sets()
     head="Dampening Tam",
     ear1="Cessance Earring",
     ring2="Ilabrat Ring",
+    waist="Kentarch Belt +1",
     -- ammo="Yamarang",
-    -- waist="Kentarch Belt +1",
   })
 
   sets.engaged.DW.HighAcc.MidHaste = set_combine(sets.engaged.DW.MidAcc.MidHaste, {
@@ -785,8 +782,8 @@ function init_gear_sets()
     head="Dampening Tam",
     ear1="Cessance Earring",
     ring2="Ilabrat Ring",
+    waist="Kentarch Belt +1",
     -- ammo="Yamarang",
-    -- waist="Kentarch Belt +1",
   })
   sets.engaged.DW.HighAcc.HighHaste = set_combine(sets.engaged.DW.MidAcc.HighHaste, {
     ear2="Telos Earring",
@@ -818,9 +815,9 @@ function init_gear_sets()
   }
   sets.engaged.DW.LowAcc.SuperHaste = set_combine(sets.engaged.DW.SuperHaste, {
     ring1="Chirich Ring +1",
+    waist="Kentarch Belt +1",
     -- head="Skulker's Bonnet +1",
     -- neck="Combatant's Torque",
-    -- waist="Kentarch Belt +1",
   })
   sets.engaged.DW.MidAcc.SuperHaste = set_combine(sets.engaged.DW.LowAcc.SuperHaste, {
     head="Dampening Tam",
@@ -859,9 +856,9 @@ function init_gear_sets()
   }
   sets.engaged.DW.LowAcc.MaxHaste = set_combine(sets.engaged.DW.MaxHaste, {
     ring1="Chirich Ring +1",
+    waist="Kentarch Belt +1",
     -- head="Skulker's Bonnet +1",
     -- neck="Combatant's Torque",
-    -- waist="Kentarch Belt +1",
   })
   sets.engaged.DW.MidAcc.MaxHaste = set_combine(sets.engaged.DW.LowAcc.MaxHaste, {
     head="Dampening Tam",
