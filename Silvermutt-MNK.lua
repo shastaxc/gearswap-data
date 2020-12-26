@@ -53,7 +53,7 @@ function job_setup()
   state.FootworkWS = M(false, 'Footwork on WS')
 
   info.impetus_hit_count = 0 -- Do not modify
-  info.boost_on = false -- Do not modify
+  info.boost_temp_lock = false -- Do not modify
   windower.raw_register_event('action', on_action_for_impetus)
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
@@ -826,9 +826,15 @@ function job_precast(spell, action, spellMap, eventArgs)
   if spell.type == 'WeaponSkill' and state.DefenseMode.current ~= 'None' then
     eventArgs.handled = true
   end
-  if spell.english == 'Boost' and not player.in_combat and state.DefenseMode.current == 'None' then
-    equip(sets.precast.JA['Boost'].Risky)
-    eventArgs.handled = true
+  if spell.english == 'Boost' then
+    if buffactive.Warcry then
+      windower.add_to_chat(167, 'Stopped due to conflicting buff: Warcry.')
+      eventArgs.cancel = true -- Ensures gear doesn't swap
+      return -- Ends function without finishing loop
+    elseif not player.in_combat and state.DefenseMode.current == 'None' then
+      equip(sets.precast.JA['Boost'].Risky)
+      eventArgs.handled = true
+    end
   end
 
   if spellMap == 'Utsusemi' then
@@ -872,13 +878,11 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
 end
 
 function job_aftercast(spell, action, spellMap, eventArgs)
+  -- Enable boost lock temporarily until buffactive can be detected
   if spell.english == 'Boost' and not spell.interrupted then
-    info.boost_on = true
-    -- Wait 1 second to verify boost was applied, otherwise unlock gear
+    info.boost_temp_lock = true
     coroutine.schedule(function()
-      if not buffactive.Boost then
-        info.boost_on = false
-      end
+        info.boost_temp_lock = false
     end, 3)
   end
   -- if spell.type == 'WeaponSkill' and not spell.interrupted and state.FootworkWS and state.Buff.Footwork then
@@ -929,10 +933,6 @@ function job_buff_change(buff,gain)
     elseif player.hpp > 0 then
       send_command('@input /p Doom Removed.')
     end
-  end
-
-  if buff == "Boost" and not gain then
-    info.boost_on = false
   end
 
   -- Update gear for these specific buffs
@@ -1078,7 +1078,7 @@ function customize_idle_set(idleSet)
       idleSet = set_combine(idleSet, sets.Kiting)
     end
   end
-  if info.boost_on then
+  if buffactive.Boost or info.boost_temp_lock then
     idleSet = set_combine(idleSet, sets.BoostRegain)
   end
   if state.CP.current == 'on' then
@@ -1101,7 +1101,7 @@ end
 
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
-  if info.boost_on then
+  if buffactive.Boost or info.boost_temp_lock then
     meleeSet = set_combine(meleeSet, sets.BoostRegain)
   end
   if state.CP.current == 'on' then
