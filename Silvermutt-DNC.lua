@@ -83,7 +83,6 @@ end
 function job_setup()
   include('Mote-TreasureHunter')
 
-  lockstyleset = 2
   silibs.use_weapon_rearm = true
 
   Haste = 0 -- Do not modify
@@ -144,7 +143,7 @@ end
 
 -- Executes on first load, main job change, **and sub job change**
 function user_setup()
-  locked_style = false -- Do not modify
+  silibs.set_lockstyle(2)
   include('Global-Binds.lua') -- Additional local binds
 
   if player.sub_job == 'WAR' then
@@ -169,7 +168,6 @@ function user_setup()
   determine_haste_group()
 
   select_default_macro_book()
-  set_lockstyle()
 end
 
 -- Called when this job file is unloaded (eg: job change)
@@ -1494,17 +1492,6 @@ windower.register_event('zone change', function()
   if locked_ring2 then equip({ ring2=empty }) end
 end)
 
-windower.raw_register_event('outgoing chunk', function(id, data, modified, injected, blocked)
-  if id == 0x053 then -- Send lockstyle command to server
-    local type = data:unpack("I",0x05)
-    if type == 0 then -- This is lockstyle 'disable' command
-      locked_style = false
-    else -- Various diff ways to set lockstyle
-      locked_style = true
-    end
-  end
-end)
-
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
   -- Default macro set/book: (set, book)
@@ -1523,25 +1510,5 @@ function select_default_macro_book()
   end
 end
 
-function set_lockstyle()
-  -- Set lockstyle 2 seconds after changing job, trying immediately will error
-  coroutine.schedule(function()
-    if locked_style == false then
-      send_command('input /lockstyleset '..lockstyleset)
-    end
-  end, 2)
-  -- In case lockstyle was on cooldown for first command, try again (lockstyle has 10s cd)
-  coroutine.schedule(function()
-    if locked_style == false then
-      send_command('input /lockstyleset '..lockstyleset)
-    end
-  end, 10)
-end
-
 function test()
-  print('test')
-  equip({
-    main="Kaja Knife",
-    sub="Taming Sari",
-  })
 end
