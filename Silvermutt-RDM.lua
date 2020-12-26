@@ -581,7 +581,7 @@ function init_gear_sets()
     body="Ayanmo Corazza +2",
     hands="Ayanmo Manopolas +1",
     legs=gear.Carmine_D_legs,
-    feet="Ayanmo Gambieras +1",
+    feet="Ayanmo Gambieras +2",
     neck="Incanter's Torque",
     -- sub="Sors Shield", --3/(-5)
     -- ammo="Esper Stone +1", --0/(-5)
@@ -885,7 +885,7 @@ function init_gear_sets()
     body="Cohort Cloak +1", --100
     hands=gear.Carmine_D_hands, --42
     legs="Ayanmo Cosciales +2",
-    feet="Ayanmo Gambieras +1",
+    feet="Ayanmo Gambieras +2",
     neck="Baetyl Pendant", --13
     ear1="Friomisi Earring", --10
     ear2="Novio Earring", --7

@@ -353,10 +353,10 @@ function init_gear_sets()
     body="Ayanmo Corazza +2", --46 [57]
     hands="Volte Bracers", --37 [57]
     legs="Ayanmo Cosciales +2", --45 [45]
-    feet="Ayanmo Gambieras +1", --36 [11]
+    feet="Ayanmo Gambieras +1", --42 [11]
     ear2="Dignitary's Earring", --10 [0]
     ring2="Weatherspoon Ring", --10 [0]
-  } --228 Magic Acc [215 HP, 565 w/ PDT, 520 w/ MDT]
+  } --234 Magic Acc [215 HP, 565 w/ PDT, 520 w/ MDT]
 
 
   ------------------------------------------------------------------------------------------------

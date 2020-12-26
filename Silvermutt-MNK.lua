@@ -227,10 +227,15 @@ function init_gear_sets()
   sets.precast.Flourish1 = {
   }
 
+  sets.precast.Utsusemi = set_combine(sets.precast.FC, {
+    ammo="Staunch Tathlum",
+    ring1="Defending Ring",
+  })
+
   -- Initializes trusts at iLvl 119
   sets.midcast.Trust = sets.precast.FC
 
-  sets.midcast.Utsusemi = sets.precast.FC
+  sets.midcast.Utsusemi = sets.precast.Utsusemi
 
 
   ------------------------------------------------------------------------------------------------
@@ -832,7 +837,7 @@ function job_precast(spell, action, spellMap, eventArgs)
       add_to_chat(123, '**!! '..spell.english..' Canceled: [3+ IMAGES] !!**')
       eventArgs.handled = true
       return
-    elseif buffactive['Copy Image'] or buffactive['Copy Image (2)'] then
+    elseif spell.english == 'Utsusemi: Ichi' and (buffactive['Copy Image'] or buffactive['Copy Image (2)']) then
       send_command('cancel 66; cancel 444; cancel Copy Image; cancel Copy Image (2)')
     end
   end
