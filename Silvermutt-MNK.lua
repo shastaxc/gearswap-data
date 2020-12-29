@@ -578,6 +578,7 @@ function init_gear_sets()
   sets.latent_regain = {
   }
   sets.latent_regen = {
+    body="Hesychast's Cyclas",
     neck="Bathy Choker +1",
     ear1="Infused Earring",
     ring1="Chirich Ring +1",
