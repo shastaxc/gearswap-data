@@ -271,7 +271,7 @@ function init_gear_sets()
   })
 
   sets.MAB = {
-    ammo="Seething Bomblet", --6 [0]
+    ammo="Seething Bomblet +1", --7 [0]
     head=gear.Herc_MAB_head, --25 [38]
     body=gear.Samnuha_body, --33 [63]
     hands=gear.Carmine_D_hands, --42 [27]
@@ -382,7 +382,7 @@ function init_gear_sets()
 
   -- 85% STR mod
   sets.precast.WS['Resolution'] = set_combine(sets.precast.WS, {
-    ammo="Seething Bomblet",
+    ammo="Seething Bomblet +1",
     head=gear.Adhemar_B_head,
     body=gear.Adhemar_B_body,
     hands=gear.Adhemar_B_hands,
@@ -395,13 +395,12 @@ function init_gear_sets()
     ring1="Regal Ring",
     ring2="Niqmaddu Ring",
     back=gear.RUN_WS2_Cape,
-    -- ammo="Seething Bomblet +1",
     -- head=gear.Lustratio_A_head,
     -- feet=gear.Lustratio_A_feet,
     -- back=gear.RUN_WS1_Cape,
   })
   sets.precast.WS['Resolution'].Safe = set_combine(sets.precast.WS.Safe, {
-    ammo="Seething Bomblet",
+    ammo="Seething Bomblet +1",
     head=gear.Adhemar_B_head,
     hands=gear.Adhemar_B_hands,
     feet=gear.Herc_TA_feet,

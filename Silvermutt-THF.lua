@@ -315,7 +315,7 @@ function init_gear_sets()
 
   -- AGI
   sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS, {
-    ammo="Seething Bomblet",
+    ammo="Seething Bomblet +1",
     head=gear.Adhemar_B_head,
     body=gear.Adhemar_B_body,
     hands=gear.Adhemar_B_hands,
@@ -439,7 +439,7 @@ function init_gear_sets()
 
   -- 40% DEX / 40% INT + MAB
   sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
-    ammo="Seething Bomblet", --6
+    ammo="Seething Bomblet +1", --7
     head=gear.Herc_MAB_head, --25
     body=gear.Samnuha_body, --33
     hands=gear.Leyline_Gloves, --30
@@ -452,7 +452,6 @@ function init_gear_sets()
     ring2="Dingir Ring", --10
     back="Argochampsa Mantle", --12
     waist="Eschan Stone", --7
-    -- ammo="Seeth. Bomblet +1",
     -- waist="Orpheus's Sash",
   })
   sets.precast.WS['Aeolian Edge'].MaxTP = set_combine(sets.precast.WS['Aeolian Edge'], {
