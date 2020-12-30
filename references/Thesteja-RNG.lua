@@ -4,3 +4,20 @@ function get_sets()
   mote_include_version = 2
   include('Mote-Include.lua') -- Executes job_setup, user_setup, init_gear_sets
 end
+
+-- Executes on first load and main job change
+function job_setup()
+end
+
+
+-- Executes on first load, main job change, **and sub job change**
+function user_setup()
+end
+
+-- Called when this job file is unloaded (eg: job change)
+function job_file_unload()
+end
+
+-- Define sets and vars used by this job file.
+function init_gear_sets()
+end
