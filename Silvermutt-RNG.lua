@@ -868,7 +868,9 @@ function init_gear_sets()
     ring1="Chirich Ring +1",
   }
   sets.latent_refresh = {
+    head=gear.Herc_Refresh_head,
     legs="Rawhide Trousers",
+    feet=gear.Herc_Refresh_feet,
   }
   sets.latent_refresh_sub50 = set_combine(sets.latent_refresh, {
     waist="Fucho-no-Obi",

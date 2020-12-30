@@ -715,9 +715,10 @@ function init_gear_sets()
   }
   sets.latent_refresh = {
     ammo="Homiliary", --1
+    head=gear.Herc_Refresh_head, --1
     body="Runeist's Coat +3", --3
     legs="Rawhide Trousers", --1
-    -- head=gear.Herc_Idle_head,
+    feet=gear.Herc_Refresh_feet, --2
     -- hands="Regal Gauntlets",
     -- ring1={name="Stikini Ring +1", bag="wardrobe3"},
     -- ring2={name="Stikini Ring +1", bag="wardrobe4"},

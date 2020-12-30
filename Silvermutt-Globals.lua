@@ -142,12 +142,13 @@ function define_global_sets()
   gear.Herc_DT_head = {name="Herculean Helm", augments={'AGI+2','"Rapid Shot"+2','Damage taken-5%','Accuracy+2 Attack+2',}}
   gear.Herc_DT_hands = {name="Herculean Gloves", augments={'"Cure" potency +3%','INT+9','Damage taken-5%','Accuracy+19 Attack+19','Mag. Acc.+5 "Mag.Atk.Bns."+5',}}
 
-  gear.Herc_Idle_head ={name="Herculean Helm", augments={'INT+5','"Mag.Atk.Bns."+19','"Refresh"+2','Mag. Acc.+14 "Mag.Atk.Bns."+14',}}
-
   gear.Herc_TH_head = {name="Herculean Helm", augments={'"Mag.Atk.Bns."+10','Attack+6','"Treasure Hunter"+2',}}
   gear.Herc_TH_hands = {name="Herculean Gloves", augments={'INT+4','Crit. hit damage +2%','"Treasure Hunter"+2','Accuracy+6 Attack+6','Mag. Acc.+19 "Mag.Atk.Bns."+19',}}
 
   gear.Herc_CritDmg_feet = { name="Herculean Boots", augments={'Accuracy+25','Crit. hit damage +3%','DEX+9',}}
+
+  gear.Herc_Refresh_head = { name="Herculean Helm", augments={'Weapon Skill Acc.+13','Accuracy+2','"Refresh"+1','Accuracy+19 Attack+19',}}
+  gear.Herc_Refresh_feet = { name="Herculean Boots", augments={'Crit.hit rate+1','STR+14','"Refresh"+2',}}
 
   -- Merlinic
   gear.Merl_FC_body = {name="Merlinic Jubbah", augments={'"Mag.Atk.Bns."+13','"Fast Cast"+7',}}
