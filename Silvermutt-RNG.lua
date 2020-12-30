@@ -1274,7 +1274,7 @@ function init_gear_sets()
   }
 
   sets.Kiting = {
-    feet="Skd. Jambeaux +1"
+    legs="Carmine Cuisses +1",
   }
   sets.Kiting.Adoulin = {
     body="Councilor's Garb",
