@@ -155,6 +155,9 @@ function job_file_unload()
   send_command('unbind !d')
   send_command('unbind @w')
 
+  send_command('unbind ^insert')
+  send_command('unbind ^delete')
+
   send_command('unbind ^pageup')
   send_command('unbind ^pagedown')
   send_command('unbind !pagedown')

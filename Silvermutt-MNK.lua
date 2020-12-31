@@ -38,6 +38,9 @@ function get_sets()
   -- Load and initialize Mote library
   mote_include_version = 2
   include('Mote-Include.lua') -- Executes job_setup, user_setup, init_gear_sets
+  coroutine.schedule(function() 
+    send_command('gs c weaponset current')
+  end, 2)
 end
 
 -- Executes on first load and main job change
@@ -65,11 +68,15 @@ function job_setup()
   state.CP = M(false, "Capacity Points Mode")
   state.ToyWeapons = M{['description']='Toy Weapons','None',
       'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
+  state.WeaponSet = M{['description']='Weapon Set', 'Verethragna', 'Piercing', 'Slashing', 'Cleaving'}
 
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c usekey')
   send_command('bind @w gs c toggle RearmingLock')
 
+  send_command('bind ^insert gs c weaponset cycle')
+  send_command('bind ^delete gs c weaponset cycleback')
+  
   send_command('bind ^pageup gs c toyweapon cycle')
   send_command('bind ^pagedown gs c toyweapon cycleback')
   send_command('bind !pagedown gs c toyweapon reset')
@@ -115,6 +122,9 @@ function job_file_unload()
   send_command('unbind !s')
   send_command('unbind !d')
   send_command('unbind @w')
+
+  send_command('unbind ^insert')
+  send_command('unbind ^delete')
 
   send_command('unbind ^pageup')
   send_command('unbind ^pagedown')
@@ -813,6 +823,12 @@ function init_gear_sets()
   sets.BoostRegain = {
     waist="Ask Sash",
   }
+  
+  sets.WeaponSet = {}
+  sets.WeaponSet['Verethragna'] = {main="Verethragna"}
+  sets.WeaponSet['Piercing'] = {main="Birdbanes"}
+  sets.WeaponSet['Slashing'] = {main="Vampiric Claws"}
+  sets.WeaponSet['Cleaving'] = {main="Reikikon", sub="Alber Strap"}
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -1043,6 +1059,17 @@ function display_current_job_state(eventArgs)
   eventArgs.handled = true
 end
 
+function cycle_weapons(cycle_dir)
+  if cycle_dir == 'forward' then
+    state.WeaponSet:cycle()
+  elseif cycle_dir == 'back' then
+    state.WeaponSet:cycleback()
+  end
+
+  add_to_chat(141, 'Weapon Set to '..string.char(31,1)..state.WeaponSet.current)
+  equip(sets.WeaponSet[state.WeaponSet.current])
+end
+
 function cycle_toy_weapons(cycle_dir)
   --If current state is None, save current weapons to switch back later
   if state.ToyWeapons.current == 'None' then
@@ -1238,6 +1265,14 @@ function job_self_command(cmdParams, eventArgs)
       cycle_toy_weapons('back')
     elseif cmdParams[2]:lower() == 'reset' then
       cycle_toy_weapons('reset')
+    end
+  elseif cmdParams[1]:lower() == 'weaponset' then
+    if cmdParams[2]:lower() == 'cycle' then
+      cycle_weapons('forward')
+    elseif cmdParams[2]:lower() == 'cycleback' then
+      cycle_weapons('back')
+    elseif cmdParams[2]:lower() == 'current' then
+      cycle_weapons('current')
     end
   elseif cmdParams[1]:lower() == 'test' then
     test()
