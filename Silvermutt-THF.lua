@@ -190,6 +190,7 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.TreasureHunter = {
+    body=gear.Herc_TH_body, --2
     hands="Plunderer's Armlets +1", --3
     feet="Skulk. Poulaines +1", --3
     waist="Chaac Belt", --1

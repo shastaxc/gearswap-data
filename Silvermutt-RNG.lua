@@ -58,9 +58,8 @@ function job_setup()
   state.HybridMode:options('Normal', 'LightDef')
   state.RangedMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.IdleMode:options('Normal', 'LightDef')
-  state.WeaponSet = M{['description']='Weapon Set', 'TempWeak', 'MagicRA', 'PhysRA', 'PhysRA RangedOnly', 'PhysRA NoBuff', 'Melee', 'CritRA'}
-  state.RangedWeaponSet = M{['description']='Ranged Weapon Set', 'Doomsday', 'Pharaoh\'s Bow', 'Grosveneur\'s Bow', 
-      'Annihilator', 'Fomalhaut', 'Armageddon', 'Sparrowhawk +2'}
+  state.WeaponSet = M{['description']='Weapon Set', 'MagicRA', 'PhysRA', 'PhysRA RangedOnly', 'PhysRA NoBuff', 'Melee', 'CritRA'}
+  state.RangedWeaponSet = M{['description']='Ranged Weapon Set', 'Doomsday', "Pharaoh's Bow", "Grosveneur's Bow", 'Armageddon', 'Sparrowhawk'}
   state.CP = M(false, "Capacity Points Mode")
   state.RearmingLock = M(false, 'Rearming Lock')
   -- Whether a warning has been given for low ammo
@@ -77,17 +76,14 @@ function job_setup()
       "Yoichi's Quiver", "Artemis's Quiver", "Chrono Quiver"}
 
   marksman_weapon_subtypes = {
-    ['Grosveneur\'s Bow'] = "xbow",
+    ["Grosveneur's Bow"] = "xbow",
     ['Doomsday'] = "gun",
-    ['Annihilator'] = "gun",
-    ['Armageddon'] = "gun",
     ['Gastraphetes'] = "xbow",
-    ['Fomalhaut'] = "gun",
   }
 
   DefaultAmmo = {
-    ['Pharaoh\'s Bow'] = "Eminent Arrow",
-    ['Grosveneur\'s Bow'] = "Eminent Bolt",
+    ["Pharaoh's Bow"] = "Eminent Arrow",
+    ["Grosveneur's Bow"] = "Eminent Bolt",
     ['Doomsday'] = "Eminent Bullet",
     ['Yoichinoyumi'] = "Chrono Arrow",
     ['Gandiva'] = "Chrono Arrow",
@@ -96,10 +92,14 @@ function job_setup()
     ['Armageddon'] = "Chrono Bullet",
     ['Gastraphetes'] = "Quelling Bolt",
     ['Fomalhaut'] = "Chrono Bullet",
+    ['Sparrowhawk'] = "Hauksbok Arrow",
+    ['Sparrowhawk +1'] = "Hauksbok Arrow",
+    ['Sparrowhawk +2'] = "Hauksbok Arrow",
+    ['Sparrowhawk +3'] = "Hauksbok Arrow",
   }
   AccAmmo = {
-    ['Pharaoh\'s Bow'] = "Eminent Arrow",
-    ['Grosveneur\'s Bow'] = "Eminent Bolt",
+    ["Pharaoh's Bow"] = "Eminent Arrow",
+    ["Grosveneur's Bow"] = "Eminent Bolt",
     ['Doomsday'] = "Eminent Bullet",
     ['Yoichinoyumi'] = "Yoichi's Arrow",
     ['Gandiva'] = "Yoichi's Arrow",
@@ -108,10 +108,14 @@ function job_setup()
     ['Armageddon'] = "Eradicating Bullet",
     ['Gastraphetes'] = "Quelling Bolt",
     ['Fomalhaut'] = "Devastating Bullet",
+    ['Sparrowhawk'] = "Hauksbok Arrow",
+    ['Sparrowhawk +1'] = "Hauksbok Arrow",
+    ['Sparrowhawk +2'] = "Hauksbok Arrow",
+    ['Sparrowhawk +3'] = "Hauksbok Arrow",
   }
   WSAmmo = {
-    ['Pharaoh\'s Bow'] = "Eminent Arrow",
-    ['Grosveneur\'s Bow'] = "Eminent Bolt",
+    ["Pharaoh's Bow"] = "Eminent Arrow",
+    ["Grosveneur's Bow"] = "Eminent Bolt",
     ['Doomsday'] = "Eminent Bullet",
     ['Yoichinoyumi'] = "Chrono Arrow",
     ['Gandiva'] = "Chrono Arrow",
@@ -120,10 +124,14 @@ function job_setup()
     ['Armageddon'] = "Chrono Bullet",
     ['Gastraphetes'] = "Quelling Bolt",
     ['Fomalhaut'] = "Chrono Bullet",
+    ['Sparrowhawk'] = "Hauksbok Arrow",
+    ['Sparrowhawk +1'] = "Hauksbok Arrow",
+    ['Sparrowhawk +2'] = "Hauksbok Arrow",
+    ['Sparrowhawk +3'] = "Hauksbok Arrow",
   }
   MagicAmmo = {
-    ['Pharaoh\'s Bow'] = "Eminent Arrow",
-    ['Grosveneur\'s Bow'] = "Eminent Bolt",
+    ["Pharaoh's Bow"] = "Eminent Arrow",
+    ["Grosveneur's Bow"] = "Eminent Bolt",
     ['Doomsday'] = "Eminent Bullet",
     ['Yoichinoyumi'] = "Chrono Arrow",
     ['Gandiva'] = "Chrono Arrow",
@@ -132,6 +140,10 @@ function job_setup()
     ['Armageddon'] = "Devastating Bullet",
     ['Gastraphetes'] = "Quelling Bolt",
     ['Fomalhaut'] = "Devastating Bullet",
+    ['Sparrowhawk'] = "Hauksbok Arrow",
+    ['Sparrowhawk +1'] = "Hauksbok Arrow",
+    ['Sparrowhawk +2'] = "Hauksbok Arrow",
+    ['Sparrowhawk +3'] = "Hauksbok Arrow",
   }
 
   send_command('bind !s gs c faceaway')
@@ -1286,66 +1298,57 @@ function init_gear_sets()
     neck="Ygnas's Resolve +1"
   }
   sets.TreasureHunter = {
+    body=gear.Herc_TH_body, --2
     hands="Volte Bracers", --1
     waist="Chaac Belt", --1
-    -- head=gear.Herc_TH_head, --2
   }
 
   sets.Obi = {
     waist="Hachirin-no-Obi"
   }
 
+  sets.WeaponSet = {}
   -- Melee weapon sets
-  sets['TempWeak'] = {
-    main="Kaja Knife",
-    sub="Nusku Shield",
-  }
-  sets['MagicRA'] = {
+  sets.WeaponSet['MagicRA'] = {
     main="Malevolence",
     sub="Malevolence",
   }
-  sets['PhysRA'] = {
+  sets.WeaponSet['PhysRA'] = {
     main="Ternion Dagger +1",
     sub="Odium",
   }
-  sets['PhysRA RangedOnly'] = {
+  sets.WeaponSet['PhysRA RangedOnly'] = {
     main="Ternion Dagger +1",
     sub="Nusku Shield",
   }
-  sets['PhysRA NoBuff'] = {
+  sets.WeaponSet['PhysRA NoBuff'] = {
     main="Perun +1",
     sub="Nusku Shield",
   }
-  sets['Melee'] = {
+  sets.WeaponSet['Melee'] = {
     main="Naegling",
     sub="Ternion Dagger +1",
   }
-  sets['CritRA'] = {
+  sets.WeaponSet['CritRA'] = {
     main="Oneiros Knife",
     sub="Nusku Shield",
   }
 
   -- Ranged weapon sets
-  sets['Pharaoh\'s Bow'] = {
-    ranged="Pharaoh\'s Bow"
+  sets.WeaponSet["Pharaoh's Bow"] = {
+    ranged="Pharaoh's Bow",
   }
-  sets['Grosveneur\'s Bow'] = {
-    ranged="Grosveneur\'s Bow"
+  sets.WeaponSet["Grosveneur's Bow"] = {
+    ranged="Grosveneur's Bow",
   }
-  sets['Doomsday'] = {
-    ranged="Doomsday"
+  sets.WeaponSet['Doomsday'] = {
+    ranged="Doomsday",
   }
-  sets.Annihilator = {
-    ranged="Annihilator"
+  sets.WeaponSet['Gastraphetes'] = {
+    ranged="Gastraphetes",
   }
-  sets.Fomalhaut = {
-    ranged="Fomalhaut"
-  }
-  sets.Armageddon = {
-    ranged="Armageddon"
-  }
-  sets.Gastraphetes = {
-    ranged="Gastraphetes"
+  sets.WeaponSet['Sparrowhawk'] = {
+    ranged="Sparrowhawk +2",
   }
 
 end
