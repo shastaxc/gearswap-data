@@ -59,7 +59,7 @@ function job_setup()
   state.RangedMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.IdleMode:options('Normal', 'LightDef')
   state.WeaponSet = M{['description']='Weapon Set', 'MagicRA', 'PhysRA', 'PhysRA RangedOnly', 'PhysRA NoBuff', 'Melee', 'CritRA'}
-  state.RangedWeaponSet = M{['description']='Ranged Weapon Set', 'Doomsday', "Pharaoh's Bow", "Grosveneur's Bow", 'Armageddon', 'Sparrowhawk'}
+  state.RangedWeaponSet = M{['description']='Ranged Weapon Set', 'Doomsday', "Pharaoh's Bow", "Grosveneur's Bow", 'Gastraphetes', 'Sparrowhawk'}
   state.CP = M(false, "Capacity Points Mode")
   state.RearmingLock = M(false, 'Rearming Lock')
   -- Whether a warning has been given for low ammo
@@ -92,8 +92,8 @@ function job_setup()
     ['Armageddon'] = "Chrono Bullet",
     ['Gastraphetes'] = "Quelling Bolt",
     ['Fomalhaut'] = "Chrono Bullet",
-    ['Sparrowhawk'] = "Hauksbok Arrow",
-    ['Sparrowhawk +1'] = "Hauksbok Arrow",
+    ['Sparrowhawk'] = "Eminent Arrow",
+    ['Sparrowhawk +1'] = "Eminent Arrow",
     ['Sparrowhawk +2'] = "Hauksbok Arrow",
     ['Sparrowhawk +3'] = "Hauksbok Arrow",
   }
@@ -108,8 +108,8 @@ function job_setup()
     ['Armageddon'] = "Eradicating Bullet",
     ['Gastraphetes'] = "Quelling Bolt",
     ['Fomalhaut'] = "Devastating Bullet",
-    ['Sparrowhawk'] = "Hauksbok Arrow",
-    ['Sparrowhawk +1'] = "Hauksbok Arrow",
+    ['Sparrowhawk'] = "Eminent Arrow",
+    ['Sparrowhawk +1'] = "Eminent Arrow",
     ['Sparrowhawk +2'] = "Hauksbok Arrow",
     ['Sparrowhawk +3'] = "Hauksbok Arrow",
   }
@@ -124,8 +124,8 @@ function job_setup()
     ['Armageddon'] = "Chrono Bullet",
     ['Gastraphetes'] = "Quelling Bolt",
     ['Fomalhaut'] = "Chrono Bullet",
-    ['Sparrowhawk'] = "Hauksbok Arrow",
-    ['Sparrowhawk +1'] = "Hauksbok Arrow",
+    ['Sparrowhawk'] = "Eminent Arrow",
+    ['Sparrowhawk +1'] = "Eminent Arrow",
     ['Sparrowhawk +2'] = "Hauksbok Arrow",
     ['Sparrowhawk +3'] = "Hauksbok Arrow",
   }
@@ -140,8 +140,8 @@ function job_setup()
     ['Armageddon'] = "Devastating Bullet",
     ['Gastraphetes'] = "Quelling Bolt",
     ['Fomalhaut'] = "Devastating Bullet",
-    ['Sparrowhawk'] = "Hauksbok Arrow",
-    ['Sparrowhawk +1'] = "Hauksbok Arrow",
+    ['Sparrowhawk'] = "Eminent Arrow",
+    ['Sparrowhawk +1'] = "Eminent Arrow",
     ['Sparrowhawk +2'] = "Hauksbok Arrow",
     ['Sparrowhawk +3'] = "Hauksbok Arrow",
   }
@@ -1348,7 +1348,7 @@ function init_gear_sets()
     ranged="Gastraphetes",
   }
   sets.WeaponSet['Sparrowhawk'] = {
-    ranged="Sparrowhawk +2",
+    ranged="Sparrowhawk",
   }
 
 end
@@ -1915,14 +1915,14 @@ function update_dp_type()
 end
 
 function equip_weapons()
-  equip(sets[state.WeaponSet.current])
+  equip(sets.WeaponSet[state.WeaponSet.current])
 end
 
 function equip_ranged_weapons()
-  equip(sets[state.RangedWeaponSet.current])
+  equip(sets.WeaponSet[state.RangedWeaponSet.current])
 
   -- Equip appropriate ammo
-  local ranged = sets[state.RangedWeaponSet.current].ranged
+  local ranged = sets.WeaponSet[state.RangedWeaponSet.current].ranged
   if DefaultAmmo[ranged] then
     if player.inventory[DefaultAmmo[ranged]] then
       equip({ammo=DefaultAmmo[ranged]})
