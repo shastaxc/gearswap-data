@@ -52,6 +52,8 @@ end
 
 -- Executes on first load and main job change
 function job_setup()
+  include('Mote-TreasureHunter')
+
   silibs.use_weapon_rearm = true
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
@@ -64,6 +66,8 @@ function job_setup()
   state.RearmingLock = M(false, 'Rearming Lock')
   -- Whether a warning has been given for low ammo
   state.warned = M(false)
+  state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger',
+      'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
 
   state.Buff.Barrage = buffactive.Barrage or false
   state.Buff.Camouflage = buffactive.Camouflage or false
@@ -150,6 +154,11 @@ function job_setup()
   send_command('bind !d gs c usekey')
   send_command('bind @w gs c toggle RearmingLock')
 
+  send_command('bind ^pageup gs c toyweapon cycle')
+  send_command('bind ^pagedown gs c toyweapon cycleback')
+  send_command('bind !pagedown gs c toyweapon reset')
+
+  send_command('bind ^` gs c cycle treasuremode')
   send_command('bind @c gs c toggle CP')
   send_command('bind ^insert gs c cycle WeaponSet')
   send_command('bind ^delete gs c cycleback WeaponSet')
@@ -204,6 +213,7 @@ function user_unload()
   send_command('unbind !d')
   send_command('unbind @w')
 
+  send_command('bind ^`')
   send_command('unbind @c')
   send_command('unbind ^insert')
   send_command('unbind ^delete')
@@ -1660,6 +1670,29 @@ function display_current_job_state(eventArgs)
   eventArgs.handled = true
 end
 
+function cycle_toy_weapons(cycle_dir)
+  --If current state is None, save current weapons to switch back later
+  if state.ToyWeapons.current == 'None' then
+    sets.ToyWeapon.None.main = player.equipment.main
+    sets.ToyWeapon.None.sub = player.equipment.sub
+  end
+
+  if cycle_dir == 'forward' then
+    state.ToyWeapons:cycle()
+  elseif cycle_dir == 'back' then
+    state.ToyWeapons:cycleback()
+  else
+    state.ToyWeapons:reset()
+  end
+
+  local mode_color = 001
+  if state.ToyWeapons.current == 'None' then
+    mode_color = 006
+  end
+  add_to_chat(012, 'Toy Weapon Mode: '..string.char(31,mode_color)..state.ToyWeapons.current)
+  equip(sets.ToyWeapon[state.ToyWeapons.current])
+end
+
 -------------------------------------------------------------------------------------------------------------------
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
@@ -1749,6 +1782,14 @@ function job_self_command(cmdParams, eventArgs)
     equip_weapons()
   elseif cmdParams[1]:lower() == 'equiprangedweapons' then
     equip_ranged_weapons()
+  elseif cmdParams[1]:lower() == 'toyweapon' then
+    if cmdParams[2]:lower() == 'cycle' then
+      cycle_toy_weapons('forward')
+    elseif cmdParams[2]:lower() == 'cycleback' then
+      cycle_toy_weapons('back')
+    elseif cmdParams[2]:lower() == 'reset' then
+      cycle_toy_weapons('reset')
+    end
   elseif cmdParams[1]:lower() == 'test' then
     test()
   end
