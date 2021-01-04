@@ -251,9 +251,9 @@ function init_gear_sets()
     ring1="Eihwaz Ring", --0/0, 0 [70] <5>
     ring2={name="Supershear Ring", priority=1}, --0/0, 0 [30] <5>
     waist={name="Kasiri Belt", priority=1}, --0/0, 0 [30] <3>
-    back=gear.RUN_HPD_Cape, --10/0, 20 [60] <10> ::: Change augs to add 20HP
+    back=gear.RUN_HPD_Cape, --10/0, 20 [80] <10>
     -- feet="Ahosi Leggings", --4/0, 107 [18] <7>
-  } --80 Enmity [677 HP]; -39% PDT; -13% MDT
+  } --80 Enmity, 423 M.Eva [697 HP]; -39% PDT; -13% MDT
 
   sets.precast.JA = sets.Enmity;
 
@@ -740,7 +740,7 @@ function init_gear_sets()
     ear2="Eabani Earring", --0/0, 8 [45]
     ring1="Gelatinous Ring +1", --7/(-1), 0 [110]
     ring2="Defending Ring", --10/10, 0 [0]
-    back=gear.RUN_HPD_Cape, --10/0, 30 [60]
+    back=gear.RUN_HPD_Cape, --10/0, 20 [80]
   }
 
   sets.idle.Regain = set_combine(sets.idle, sets.latent_regain)
@@ -763,7 +763,7 @@ function init_gear_sets()
     legs=gear.Carmine_D_legs, --6/0, 80
     neck="Futhark Torque +1", --6/6, 25
     ring2="Defending Ring", --10/10, 0
-    back=gear.RUN_HPD_Cape, --10/0, 30
+    back=gear.RUN_HPD_Cape, --10/0, 20
   } --45 PDT / 21 MDT, 252 MEVA
 
   sets.idle.LightDef = set_combine(sets.idle, sets.LightDef)
@@ -793,7 +793,7 @@ function init_gear_sets()
     ear2="Eabani Earring", --0/0, 8
     ring1=gear.Dark_Ring, --5/4, 0
     ring2="Defending Ring", --10/10, 0
-    back=gear.RUN_HPD_Cape, --10/0, 30
+    back=gear.RUN_HPD_Cape, --10/0, 20
   } --50 PDT / 29 MDT, 571 MEVA
 
 
@@ -820,7 +820,7 @@ function init_gear_sets()
     ear2="Eabani Earring", --0/0, 8 [45]
     ring1="Gelatinous Ring +1", --7/(-1), 0 [135]
     ring2="Defending Ring", --10/10, 0 [0]
-    back=gear.RUN_HPD_Cape, --10/0, 30 [60]
+    back=gear.RUN_HPD_Cape, --10/0, 20 [80]
     -- ammo="Staunch Tathlum +1", --3/3, 0 [0]
     -- hands="Turms Mittens +1", --0/0, 101 [74]
     -- feet="Turms Leggings +1", --0/0, 147 [76]
@@ -844,7 +844,7 @@ function init_gear_sets()
     ear2="Eabani Earring", --0/0, 8 [45]
     ring1="Gelatinous Ring +1", --7/(-1), 0 [135]
     ring2="Defending Ring", --10/10, 0 [0]
-    back=gear.RUN_HPD_Cape, --10/0, 30 [60]
+    back=gear.RUN_HPD_Cape, --10/0, 20 [80]
     -- ammo="Staunch Tathlum +1", --3/3
     -- hands="Turms Mittens +1", --0/0, 101 [74]
     -- neck="Futhark Torque +2", --7/7, 30 [60]
