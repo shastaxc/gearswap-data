@@ -204,17 +204,18 @@ function init_gear_sets()
     -- (38 PDT, 32 MDT, 481 Magic Evasion)
 
   -- Total cast speed cap 80%, "song cast time-" cap 50%, fill in rest with defensive gear
-  -- Don't use Quick Magic for songs because lag might mess up midcast sets
+  -- Don't use Quick Magic for songs because lag might mess up midcast sets.
+  -- Instrument will be overridden, so can't count on Linos FC.
   sets.precast.FC.BardSong = set_combine(sets.precast.FC, {
     head=gear.Gende_SongFC_head,    -- __,  5,  3 ( 4, __,  75)
     hands=gear.Gende_SongFC_hands,  --  7,  5,  3 ( 4, __,  37)
     legs=gear.Gende_SongFC_legs,    -- __, 10,  3 ( 4, __, 107)
-    feet=gear.Gende_SongFC_feet,    -- __,  5,  3 ( 4, __, 107)
+    feet=gear.Telchine_SongFC_feet, --  5,  6, __ (__, __, 132)
     neck="Loricate Torque +1",      -- __, __, __ ( 6,  6, ___)
     ring1="Defending Ring",         -- __, __, __ (10, 10, ___)
     waist="Embla Sash",             --  5, __, __ (__, __, ___)
-  })-- 56 Fast Cast, 25 Song Cast Time-, 12 Song Recast-
-    -- (42 PDT, 27 MDT, 461 Magic Evasion)
+  })-- 55 Fast Cast, 26 Song Cast Time-, 9 Song Recast-
+    -- (38 PDT, 27 MDT, 471 Magic Evasion)
 
   sets.precast.FC.SongPlaceholder = set_combine(sets.precast.FC.BardSong, {
     range=info.ExtraSongInstrument,
