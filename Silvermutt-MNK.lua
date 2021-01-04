@@ -313,7 +313,7 @@ function init_gear_sets()
     head="Kendatsuba Jinpachi +1",
     body="Malignance Tabard",
     hands="Malignance Gloves",
-    legs="Hizamaru Hizayoroi +2",
+    legs="Tatenashi Haidate +1",
     feet=gear.Herc_TA_feet,
     neck="Monk's Nodowa +2",
     ear1="Sherida Earring",
@@ -323,7 +323,6 @@ function init_gear_sets()
     back=gear.MNK_DEX_DA_Cape,
     waist="Moonbow Belt +1",
     -- ammo="Aurgelmir Orb +1",
-    -- legs="Tatenashi Haidate +1",
     -- ear2="Mache Earring +1",
   })
   sets.precast.WS["Shijin Spiral"].MaxTP = set_combine(sets.precast.WS["Shijin Spiral"], {
@@ -401,7 +400,7 @@ function init_gear_sets()
     head="Kendatsuba Jinpachi +1",
     body=gear.Adhemar_B_body,
     hands=gear.Adhemar_B_hands,
-    legs="Hizamaru Hizayoroi +2",
+    legs="Tatenashi Haidate +1",
     feet=gear.Herc_TA_feet,
     neck="Monk's Nodowa +2",
     ear1="Sherida Earring",
@@ -410,7 +409,6 @@ function init_gear_sets()
     ring2="Niqmaddu Ring",
     back=gear.MNK_STR_DA_Cape,
     waist="Moonbow Belt +1",
-    -- legs="Tatenashi Haidate +1",
   })
   sets.precast.WS["Raging Fists"].MaxTP = set_combine(sets.precast.WS["Raging Fists"], {
     ear2="Brutal Earring",
@@ -440,7 +438,7 @@ function init_gear_sets()
     head="Kendatsuba Jinpachi +1",
     body="Kendatsuba Samue +1",
     hands=gear.Herc_TA_hands,
-    legs="Hizamaru Hizayoroi +2",
+    legs="Tatenashi Haidate +1",
     feet=gear.Herc_TA_feet,
     neck="Monk's Nodowa +2",
     ear1="Sherida Earring",
@@ -450,7 +448,6 @@ function init_gear_sets()
     back=gear.MNK_STR_DA_Cape,
     waist="Moonbow Belt +1",
     -- body="Tatenashi Harama +1",
-    -- legs="Tatenashi Haidate +1",
     -- back=gear.MNK_VIT_WSD_Cape,
   })
   sets.precast.WS["Howling Fist"].MaxTP = set_combine(sets.precast.WS["Howling Fist"], {
