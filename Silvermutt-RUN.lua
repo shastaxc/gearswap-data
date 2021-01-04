@@ -468,7 +468,7 @@ function init_gear_sets()
     ear2="Moonshade Earring",
     ring2="Niqmaddu Ring",
   })
-  sets.precast.WS['Herculean Slash'].Safe = set_combine(sets.precast.WS.Safe, sets.Macc, {
+  sets.precast.WS['Herculean Slash'].Safe = set_combine(sets.precast.WS.Safe, {
   })
   sets.precast.WS['Herculean Slash'].MaxTP = set_combine(sets.precast.WS['Herculean Slash'], {
   })
@@ -490,7 +490,7 @@ function init_gear_sets()
     ear2="Moonshade Earring",
     ring2="Niqmaddu Ring",
   })
-  sets.precast.WS['Shockwave'].Safe = set_combine(sets.precast.WS.Safe, sets.Macc, {
+  sets.precast.WS['Shockwave'].Safe = set_combine(sets.precast.WS.Safe, {
   })
   sets.precast.WS['Shockwave'].MaxTP = set_combine(sets.precast.WS['Shockwave'], {
   })
