@@ -197,11 +197,11 @@ function init_gear_sets()
     legs="Brioso Cannions +3",      -- __, __, __ ( 8,  8, 127)
     feet=gear.Vanya_B_feet,         -- __, __,  7 (__, __, 107)
     neck="Loricate Torque +1",      -- __, __, __ ( 6,  6, ___)
-    ear1="Hearty Earring",          -- __, __, __ (__, __, ___); Status resist
+    ear1="Odnowa Earring",          -- __, __, __ ( 3,  5, ___)
     ear2="Mendi. Earring",          -- __, __,  5 (__, __, ___)
     ring2="Defending Ring",         -- __, __, __ (10, 10, ___)
   })-- 63 Fast Cast, 7 Quick Magic, 17 Cure Cast Time-
-    -- (38 PDT, 32 MDT, 481 Magic Evasion)
+    -- (41 PDT, 7 MDT, 481 Magic Evasion)
 
   -- Total cast speed cap 80%, "song cast time-" cap 50%, fill in rest with defensive gear
   -- Don't use Quick Magic for songs because lag might mess up midcast sets.
@@ -212,10 +212,11 @@ function init_gear_sets()
     legs=gear.Gende_SongFC_legs,    -- __, 10,  3 ( 4, __, 107)
     feet=gear.Telchine_SongFC_feet, --  5,  6, __ (__, __, 132)
     neck="Loricate Torque +1",      -- __, __, __ ( 6,  6, ___)
+    ear1="Odnowa Earring",          -- __, __, __ ( 3,  5, ___)
     ring1="Defending Ring",         -- __, __, __ (10, 10, ___)
     waist="Embla Sash",             --  5, __, __ (__, __, ___)
-  })-- 55 Fast Cast, 26 Song Cast Time-, 9 Song Recast-
-    -- (38 PDT, 27 MDT, 471 Magic Evasion)
+  })-- 54 Fast Cast, 26 Song Cast Time-, 9 Song Recast-
+    -- (41 PDT, 32 MDT, 471 Magic Evasion)
 
   sets.precast.FC.SongPlaceholder = set_combine(sets.precast.FC.BardSong, {
     range=info.ExtraSongInstrument,
