@@ -414,7 +414,7 @@ function init_gear_sets()
 
   sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS, {
     ammo="Charis Feather",
-    head=gear.Herc_WSD_head,
+    head=gear.Adhemar_B_head,
     body="Horos Casaque +3",
     hands=gear.Herc_TA_hands,
     legs="Meghanada Chausses +2",
@@ -422,7 +422,7 @@ function init_gear_sets()
     neck="Fotia Gorget",
     ear1="Sherida Earring",
     ear2="Brutal Earring",
-    ring1="Ilabrat Ring",
+    ring1="Gere Ring",
     ring2="Regal Ring",
     back=gear.DNC_TP_DA_Cape,
     waist="Fotia Belt",
@@ -485,7 +485,7 @@ function init_gear_sets()
     body="Meghanada Cuirie +2",
     hands="Mummu Wrists +2",
     legs=gear.Lustratio_B_legs,
-    feet=gear.Herc_WSD_feet,
+    feet=gear.Herc_DEX_CritDmg_feet,
     neck="Fotia Gorget",
     ear1="Sherida Earring",
     ear2="Odr Earring",
@@ -493,7 +493,6 @@ function init_gear_sets()
     ring2="Regal Ring",
     back=gear.DNC_TP_DA_Cape,
     waist="Fotia Belt",
-    -- feet=gear.Herc_DEX_CritDmg_feet,
     -- back=gear.DNC_WS3_Cape,
   }) -- 50% DEX
   sets.precast.WS['Evisceration'].MaxTP = set_combine(sets.precast.WS['Evisceration'], {
@@ -528,7 +527,6 @@ function init_gear_sets()
     back=gear.DNC_TP_DA_Cape,
     waist="Grunfeld Rope",
     -- ammo="Aurgelmir Orb +1",
-    -- head=gear.Herc_WSD_head,
     -- body=gear.Herc_WSD_body,
     -- hands="Maxixi Bangles +3",
     -- neck="Etoile Gorget +2",
