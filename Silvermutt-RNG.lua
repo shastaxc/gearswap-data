@@ -1949,7 +1949,9 @@ function update_dp_type()
     current_dp_type = weapon_subtype
     if current_dp_type ~= nil then
       coroutine.schedule(function()
-        send_command('dp '..current_dp_type)
+        if current_dp_type ~= nil then
+          send_command('dp '..current_dp_type)
+        end
       end,3)
     end
   end
