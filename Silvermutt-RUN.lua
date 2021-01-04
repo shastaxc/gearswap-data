@@ -609,8 +609,8 @@ function init_gear_sets()
 
   sets.midcast.EnhancingDuration = {
     head="Erilaz Galea +1",
+    hands="Regal Gauntlets",
     legs="Futhark Trousers +2",
-    -- hands="Regal Gauntlets",
     -- legs="Futhark Trousers +3",
   }
 
@@ -717,9 +717,9 @@ function init_gear_sets()
     ammo="Homiliary", --1
     head=gear.Herc_Refresh_head, --1
     body="Runeist's Coat +3", --3
+    hands="Regal Gauntlets", --1
     legs="Rawhide Trousers", --1
     feet=gear.Herc_Refresh_feet, --2
-    -- hands="Regal Gauntlets",
     -- ring1={name="Stikini Ring +1", bag="wardrobe3"},
     -- ring2={name="Stikini Ring +1", bag="wardrobe4"},
   }
