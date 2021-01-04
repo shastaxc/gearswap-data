@@ -252,7 +252,7 @@ function init_gear_sets()
     ring2={name="Supershear Ring", priority=1}, --0/0, 0 [30] <5>
     waist={name="Kasiri Belt", priority=1}, --0/0, 0 [30] <3>
     back=gear.RUN_HPD_Cape, --10/0, 20 [60] <10> ::: Change augs to add 20HP
-    -- feet="Ahosi Leggings", --4/0, 107 [18] <6>
+    -- feet="Ahosi Leggings", --4/0, 107 [18] <7>
   } --80 Enmity [677 HP]; -39% PDT; -13% MDT
 
   sets.precast.JA = sets.Enmity;
