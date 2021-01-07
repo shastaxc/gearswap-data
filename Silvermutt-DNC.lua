@@ -1448,7 +1448,7 @@ function job_pretarget(spell, action, spellMap, eventArgs)
     local allRecasts = windower.ffxi.get_ability_recasts()
     local prestoCooldown = allRecasts[236]
 
-    if player.main_job_level >= 77 and prestoCooldown < 1 then
+    if player.main_job_level >= 77 and prestoCooldown < 1 and not buffactive.Presto then
       cast_delay(1.1)
       send_command('input /ja "Presto" <me>')
     end
