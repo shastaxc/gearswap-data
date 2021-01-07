@@ -907,7 +907,7 @@ function init_gear_sets()
     hands="Malignance Gloves", --5/5, 112
     legs="Malignance Tights", --7/7, 150
     feet="Malignance Boots", --4/4, 150
-    neck="Twilight Torque", --5/5, 0
+    neck="Loricate Torque", --5/5, 0
     ear1="Eabani Earring", --0/0, 8
     ear2="Odnowa Earring +1", --3/5, 0
     ring1=gear.Dark_Ring, --5/4, 0
@@ -959,7 +959,7 @@ function init_gear_sets()
     hands="Malignance Gloves", --5/5, 112
     legs="Malignance Tights", --7/7, 150
     feet="Malignance Boots", --4/4, 150
-    neck="Twilight Torque", --5/5, 0
+    neck="Loricate Torque", --5/5, 0
     ear1="Eabani Earring", --0/0, 8
     ear2="Odnowa Earring +1", --3/5, 0
     ring1=gear.Dark_Ring, --5/4, 0
