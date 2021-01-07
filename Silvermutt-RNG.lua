@@ -98,8 +98,8 @@ function job_setup()
     ['Fomalhaut'] = "Chrono Bullet",
     ['Sparrowhawk'] = "Eminent Arrow",
     ['Sparrowhawk +1'] = "Eminent Arrow",
-    ['Sparrowhawk +2'] = "Hauksbok Arrow",
-    ['Sparrowhawk +3'] = "Hauksbok Arrow",
+    ['Sparrowhawk +2'] = "Eminent Arrow",
+    ['Sparrowhawk +3'] = "Eminent Arrow",
   }
   AccAmmo = {
     ["Pharaoh's Bow"] = "Eminent Arrow",
@@ -114,8 +114,8 @@ function job_setup()
     ['Fomalhaut'] = "Devastating Bullet",
     ['Sparrowhawk'] = "Eminent Arrow",
     ['Sparrowhawk +1'] = "Eminent Arrow",
-    ['Sparrowhawk +2'] = "Hauksbok Arrow",
-    ['Sparrowhawk +3'] = "Hauksbok Arrow",
+    ['Sparrowhawk +2'] = "Eminent Arrow",
+    ['Sparrowhawk +3'] = "Eminent Arrow",
   }
   WSAmmo = {
     ["Pharaoh's Bow"] = "Eminent Arrow",
@@ -130,8 +130,8 @@ function job_setup()
     ['Fomalhaut'] = "Chrono Bullet",
     ['Sparrowhawk'] = "Eminent Arrow",
     ['Sparrowhawk +1'] = "Eminent Arrow",
-    ['Sparrowhawk +2'] = "Hauksbok Arrow",
-    ['Sparrowhawk +3'] = "Hauksbok Arrow",
+    ['Sparrowhawk +2'] = "Eminent Arrow",
+    ['Sparrowhawk +3'] = "Eminent Arrow",
   }
   MagicAmmo = {
     ["Pharaoh's Bow"] = "Eminent Arrow",
@@ -146,8 +146,8 @@ function job_setup()
     ['Fomalhaut'] = "Devastating Bullet",
     ['Sparrowhawk'] = "Eminent Arrow",
     ['Sparrowhawk +1'] = "Eminent Arrow",
-    ['Sparrowhawk +2'] = "Hauksbok Arrow",
-    ['Sparrowhawk +3'] = "Hauksbok Arrow",
+    ['Sparrowhawk +2'] = "Eminent Arrow",
+    ['Sparrowhawk +3'] = "Eminent Arrow",
   }
 
   send_command('bind !s gs c faceaway')
@@ -1380,6 +1380,11 @@ function job_precast(spell, action, spellMap, eventArgs)
   if spell.action_type == 'Ranged Attack' or (spell.type == 'WeaponSkill' and (spell.skill == 'Marksmanship' or spell.skill == 'Archery')) then
     check_ammo(spell, action, spellMap, eventArgs)
   end
+
+  -- If using a WS and ranged weapon set to sparrowhawk, equip WSD ammo
+  if spell.type == 'WeaponSkill' and state.RangedWeaponSet.current == 'Sparrowhawk' then
+    equip({ammo="Hauksbok Arrow"})
+  end
 end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
@@ -1823,11 +1828,13 @@ end
 
 -- Check for proper ammo when shooting or weaponskilling
 function check_ammo(spell, action, spellMap, eventArgs)
+  local swapped_ammo = nil
   if spell.action_type == 'Ranged Attack' then
     if player.equipment.ammo == 'empty' or player.equipment.ammo ~= DefaultAmmo[player.equipment.range] then
       if DefaultAmmo[player.equipment.range] then
         if player.inventory[DefaultAmmo[player.equipment.range]] then
-          equip({ammo=DefaultAmmo[player.equipment.range]})
+          swapped_ammo = DefaultAmmo[player.equipment.range]
+          equip({ammo=swapped_ammo})
         else
           add_to_chat(3,"Default ammo unavailable.  Leaving empty.")
         end
@@ -1839,32 +1846,38 @@ function check_ammo(spell, action, spellMap, eventArgs)
     -- magical weaponskills
     if elemental_ws:contains(spell.english) then
       if player.inventory[MagicAmmo[player.equipment.range]] then
-        equip({ammo=MagicAmmo[player.equipment.range]})
+        swapped_ammo = MagicAmmo[player.equipment.range]
+        equip({ammo=swapped_ammo})
       else
         add_to_chat(3,"Magic ammo unavailable.  Using default ammo.")
-        equip({ammo=DefaultAmmo[player.equipment.range]})
+        swapped_ammo = DefaultAmmo[player.equipment.range]
+        equip({ammo=swapped_ammo})
       end
     --physical weaponskills
     else
       if state.RangedMode.value == 'Acc' then
         if player.inventory[AccAmmo[player.equipment.range]] then
-          equip({ammo=AccAmmo[player.equipment.range]})
+          swapped_ammo = AccAmmo[player.equipment.range]
+          equip({ammo=swapped_ammo})
         else
           add_to_chat(3,"Acc ammo unavailable.  Using default ammo.")
-          equip({ammo=DefaultAmmo[player.equipment.range]})
+          swapped_ammo = DefaultAmmo[player.equipment.range]
+          equip({ammo=swapped_ammo})
         end
       else
         if player.inventory[WSAmmo[player.equipment.range]] then
-          equip({ammo=WSAmmo[player.equipment.range]})
+          swapped_ammo = WSAmmo[player.equipment.range]
+          equip({ammo=swapped_ammo})
         else
           add_to_chat(3,"WS ammo unavailable.  Using default ammo.")
-          equip({ammo=DefaultAmmo[player.equipment.range]})
+          swapped_ammo = DefaultAmmo[player.equipment.range]
+          equip({ammo=swapped_ammo})
         end
       end
     end
   end
-  if player.equipment.ammo ~= 'empty' and player.inventory[player.equipment.ammo].count < 15 then
-    add_to_chat(39,"*** Ammo '"..player.inventory[player.equipment.ammo].shortname.."' running low! *** ("..player.inventory[player.equipment.ammo].count..")")
+  if player.equipment.ammo ~= 'empty' and player.inventory[swapped_ammo] ~= nil and player.inventory[swapped_ammo].count < 5 then
+    add_to_chat(39,"*** Ammo '"..player.inventory[swapped_ammo].shortname.."' running low! *** ("..player.inventory[swapped_ammo].count..")")
   end
 end
 
