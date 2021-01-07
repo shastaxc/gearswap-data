@@ -1442,14 +1442,13 @@ function gearinfo(cmdParams, eventArgs)
 end
 
 
--- Automatically use Presto for steps when it's available and we have less than 3 finishing moves
+-- Automatically use Presto for steps when it's available
 function job_pretarget(spell, action, spellMap, eventArgs)
   if spell.type == 'Step' then
     local allRecasts = windower.ffxi.get_ability_recasts()
     local prestoCooldown = allRecasts[236]
-    local under3FMs = not buffactive['Finishing Move 3'] and not buffactive['Finishing Move 4'] and not buffactive['Finishing Move 5']
 
-    if player.main_job_level >= 77 and prestoCooldown < 1 and under3FMs then
+    if player.main_job_level >= 77 and prestoCooldown < 1 then
       cast_delay(1.1)
       send_command('input /ja "Presto" <me>')
     end
