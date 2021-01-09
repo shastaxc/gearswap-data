@@ -234,7 +234,7 @@ function init_gear_sets()
     body="Horos Casaque +3",
   }
   sets.precast.JA['Trance'] = {
-    head="Horos Tiara"
+    head="Horos Tiara +1"
   }
 
   -- Waltz Potency/CHR
