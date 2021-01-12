@@ -43,3 +43,7 @@ send_command('bind @numpad9 input /item "Holy Water" <me>')
 send_command('bind @numpad1 input /item "Echo Drops" <me>')
 send_command('bind @numpad2 input /item "Eye Drops" <me>')
 send_command('bind @numpad3 input /item "Antidote" <me>')
+
+send_command('bind scrolllock input //ffo me; input //cureplease stop')
+send_command('bind pause input //ffo stopall; input //cureplease start')
+send_command('bind !pause input //ffo stopall; input //cureplease stop')
