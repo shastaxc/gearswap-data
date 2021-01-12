@@ -232,6 +232,11 @@ end
 
 -- Define sets and vars used by this job file.
 function init_gear_sets()
+  sets.TreasureHunter = {
+    body=gear.Herc_TH_body, --2
+    hands="Volte Bracers", --1
+    waist="Chaac Belt", --1
+  }
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Precast Sets ------------------------------------------
@@ -317,14 +322,14 @@ function init_gear_sets()
 
   -- Fast cast sets for spells
   sets.precast.FC = {
-    ammo="Impatiens", --0/2 [0]
+    ammo="Staunch Tathlum",
     head={name="Runeist Bandeau +3", priority=1}, --14/0 [109]
     hands=gear.Leyline_Gloves, --8/0 [25]
     legs="Ayanmo Cosciales +2", --6/0 [45]
     feet=gear.Taeon_FC_feet, --5/0 [13]
     waist={name="Kasiri Belt", priority=1}, --0/0 [30]
     back={name=gear.RUN_FC_Cape, priority=1}, --10/0 [80]
-  } -- 43% Fast Cast / 2% Quick Magic [302 HP, 855 w/ PDT, 810 w/ MDT]
+  } -- 43% Fast Cast [302 HP, 855 w/ PDT, 810 w/ MDT]
 
   sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {
     legs="Futhark Trousers +2",
@@ -671,6 +676,9 @@ function init_gear_sets()
     ammo="Staunch Tathlum", --10
     waist="Audumbla Sash", --10
   } -- 20% Spell Interrupt
+
+  sets.midcast['Jettatura'] = set_combine(sets.Enmity, sets.TreasureHunter)
+  sets.midcast['Geist Wall'] = set_combine(sets.Enmity, sets.TreasureHunter)
 
   sets.midcast['Blue Magic'] = {}
   sets.midcast['Blue Magic'].Enmity = sets.Enmity
