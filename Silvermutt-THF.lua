@@ -252,9 +252,9 @@ function init_gear_sets()
   -- sets.precast.JA['Trick Attack'] = sets.buff['Trick Attack']
 
   sets.precast.Waltz = {
+    ammo="Yamarang",
     legs="Dashing Subligar",
     waist="Gishdubar Sash",
-    -- ammo="Yamarang",
     -- body="Passion Jacket",
     -- ring1="Asklepian Ring",
   }
@@ -604,11 +604,11 @@ function init_gear_sets()
     -- neck="Combatant's Torque",
   })
   sets.engaged.MidAcc = set_combine(sets.engaged.LowAcc, {
+    ammo="Yamarang",
     head="Dampening Tam",
     ear1="Cessance Earring",
     ring2="Ilabrat Ring",
     waist="Kentarch Belt +1",
-    -- ammo="Yamarang",
     -- body="Pillager's Vest +3",
   })
   sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
@@ -648,10 +648,10 @@ function init_gear_sets()
     -- neck="Combatant's Torque",
   })
   sets.engaged.DW.MidAcc = set_combine(sets.engaged.DW.LowAcc, {
+    ammo="Yamarang",
     head="Dampening Tam",
     ring2="Ilabrat Ring",
     waist="Kentarch Belt +1",
-    -- ammo="Yamarang",
     -- body="Pillager's Vest +3",
   })
   sets.engaged.DW.HighAcc = set_combine(sets.engaged.DW.MidAcc, {
@@ -694,10 +694,10 @@ function init_gear_sets()
   })
 
   sets.engaged.DW.MidAcc.LowHaste = set_combine(sets.engaged.DW.LowAcc.LowHaste, {
+    ammo="Yamarang",
     head="Dampening Tam",
     ring2="Ilabrat Ring",
     waist="Kentarch Belt +1",
-    -- ammo="Yamarang",
     -- body="Pillager's Vest +3",
   })
 
@@ -741,11 +741,11 @@ function init_gear_sets()
   })
 
   sets.engaged.DW.MidAcc.MidHaste = set_combine(sets.engaged.DW.LowAcc.MidHaste, {
+    ammo="Yamarang",
     head="Dampening Tam",
     ear1="Cessance Earring",
     ring2="Ilabrat Ring",
     waist="Kentarch Belt +1",
-    -- ammo="Yamarang",
   })
 
   sets.engaged.DW.HighAcc.MidHaste = set_combine(sets.engaged.DW.MidAcc.MidHaste, {
@@ -782,11 +782,11 @@ function init_gear_sets()
     -- neck="Combatant's Torque",
   })
   sets.engaged.DW.MidAcc.HighHaste = set_combine(sets.engaged.DW.LowAcc.HighHaste, {
+    ammo="Yamarang",
     head="Dampening Tam",
     ear1="Cessance Earring",
     ring2="Ilabrat Ring",
     waist="Kentarch Belt +1",
-    -- ammo="Yamarang",
   })
   sets.engaged.DW.HighAcc.HighHaste = set_combine(sets.engaged.DW.MidAcc.HighHaste, {
     ear2="Telos Earring",
@@ -823,10 +823,10 @@ function init_gear_sets()
     -- neck="Combatant's Torque",
   })
   sets.engaged.DW.MidAcc.SuperHaste = set_combine(sets.engaged.DW.LowAcc.SuperHaste, {
+    ammo="Yamarang",
     head="Dampening Tam",
     ear1="Cessance Earring",
     ring2="Ilabrat Ring",
-    -- ammo="Yamarang",
   })
   sets.engaged.DW.HighAcc.SuperHaste = set_combine(sets.engaged.DW.MidAcc.SuperHaste, {
     ear2="Telos Earring",
@@ -864,10 +864,10 @@ function init_gear_sets()
     -- neck="Combatant's Torque",
   })
   sets.engaged.DW.MidAcc.MaxHaste = set_combine(sets.engaged.DW.LowAcc.MaxHaste, {
+    ammo="Yamarang",
     head="Dampening Tam",
     ear1="Cessance Earring",
     ring2="Ilabrat Ring",
-    -- ammo="Yamarang",
   })
   sets.engaged.DW.HighAcc.MaxHaste = set_combine(sets.engaged.DW.MidAcc.MaxHaste, {
     ear2="Telos Earring",

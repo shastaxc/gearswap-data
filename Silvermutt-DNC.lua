@@ -289,7 +289,7 @@ function init_gear_sets()
 
   -- Acc
   sets.precast.Step = {
-    ammo="Charis Feather",
+    ammo="Yamarang",
     head="Maxixi Tiara +3",
     body="Maxixi Casaque +3",
     hands="Mummu Wrists +2",
@@ -324,7 +324,7 @@ function init_gear_sets()
 
   -- Magic Accuracy
   sets.precast.Flourish1['Violent Flourish'] = {
-    ammo="Charis Feather",
+    ammo="Yamarang",
     head="Mummu Bonnet +2",
     body="Horos Casaque +3",
     hands="Malignance Gloves",
@@ -336,7 +336,6 @@ function init_gear_sets()
     ring2="Ayanmo Ring",
     back=gear.DNC_TP_DW_Cape,
     waist="Eschan Stone",
-    -- ammo="Yamarang",
     -- head="Malignance Chapeau",
     -- neck="Etoile Gorget +2",
     -- ear2="Hermetic Earring",
@@ -699,7 +698,7 @@ function init_gear_sets()
   -- EG: sets.engaged.Dagger.Accuracy.Evasion
 
   sets.engaged = {
-    ammo="Aurgelmir Orb",
+    ammo="Yamarang",
     head=gear.Adhemar_B_head,
     body="Horos Casaque +3",
     hands=gear.Adhemar_B_hands,
@@ -712,7 +711,6 @@ function init_gear_sets()
     ring2="Gere Ring",
     back=gear.DNC_TP_DA_Cape,
     waist="Windbuffet Belt +1",
-    -- ammo="Yamarang",
     -- hands=gear.Adhemar_A_hands,
     -- neck="Etoile Gorget +2",
   }
@@ -759,8 +757,8 @@ function init_gear_sets()
     -- neck="Etoile Gorget +2",
   } --40
   sets.engaged.DW.LowAcc = set_combine(sets.engaged.DW, {
+    ammo="Yamarang",
     ring1="Chirich Ring +1",
-    -- ammo="Yamarang",
     -- hands=gear.Adhemar_A_hands,
   })
   sets.engaged.DW.MidAcc = set_combine(sets.engaged.DW.LowAcc, {
@@ -798,8 +796,8 @@ function init_gear_sets()
     -- neck="Etoile Gorget +2",
   } --27
   sets.engaged.DW.LowAcc.LowHaste = set_combine(sets.engaged.DW.LowHaste, {
+    ammo="Yamarang",
     head="Dampening Tam",
-    -- ammo="Yamarang",
     -- hands=gear.Adhemar_A_hands,
   })
   sets.engaged.DW.MidAcc.LowHaste = set_combine(sets.engaged.DW.LowAcc.LowHaste, {
@@ -841,9 +839,9 @@ function init_gear_sets()
     -- neck="Etoile Gorget +2",
   } --21
   sets.engaged.DW.LowAcc.MidHaste = set_combine(sets.engaged.DW.MidHaste, {
+    ammo="Yamarang",
     head="Dampening Tam",
     hands="Mummu Wrists +2",
-    -- ammo="Yamarang",
     -- hands=gear.Adhemar_A_hands,
   })
   sets.engaged.DW.MidAcc.MidHaste = set_combine(sets.engaged.DW.LowAcc.MidHaste, {
@@ -884,9 +882,9 @@ function init_gear_sets()
     -- neck="Etoile Gorget +2",
   } --7
   sets.engaged.DW.LowAcc.HighHaste = set_combine(sets.engaged.DW.HighHaste, {
+    ammo="Yamarang",
     head="Dampening Tam",
     ring1="Chirich Ring +1",
-    -- ammo="Yamarang",
     -- hands=gear.Adhemar_A_hands,
   })
   sets.engaged.DW.MidAcc.HighHaste = set_combine(sets.engaged.DW.LowAcc.HighHaste, {
@@ -925,9 +923,9 @@ function init_gear_sets()
     -- neck="Etoile Gorget +2",
   }
   sets.engaged.DW.LowAcc.MaxHaste = set_combine(sets.engaged.DW.MaxHaste, {
+    ammo="Yamarang",
     head="Dampening Tam",
     ring1="Chirich Ring +1",
-    -- ammo="Yamarang",
     -- hands=gear.Adhemar_A_hands,
   })
   sets.engaged.DW.MidAcc.MaxHaste = set_combine(sets.engaged.DW.LowAcc.MaxHaste, {

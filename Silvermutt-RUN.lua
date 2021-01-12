@@ -897,10 +897,10 @@ function init_gear_sets()
     -- waist="Ioskeha Belt +1",
   })
   sets.engaged.MidAcc = set_combine(sets.engaged.LowAcc, {
+    ammo="Yamarang",
     ear1="Cessance Earring",
     ear2="Telos Earring",
     ring1="Regal Ring",
-    -- ammo="Yamarang",
     -- feet=gear.Herc_STP_feet,
   })
   sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
