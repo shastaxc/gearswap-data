@@ -531,12 +531,11 @@ function init_gear_sets()
     ear2="Moonshade Earring",
     ring1="Ilabrat Ring",
     ring2="Regal Ring",
-    back=gear.DNC_TP_DA_Cape,
+    back=gear.DNC_WS1_Cape,
     waist="Grunfeld Rope",
     -- ammo="Aurgelmir Orb +1",
     -- body=gear.Herc_WSD_body,
     -- hands="Maxixi Bangles +3",
-    -- back=gear.DNC_WS1_Cape,
   }) -- 80% DEX
   sets.precast.WS["Rudra's Storm"].MaxTP = set_combine(sets.precast.WS["Rudra's Storm"], {
     ear2="Ishvara Earring",
@@ -569,13 +568,12 @@ function init_gear_sets()
     ear2="Moonshade Earring",
     ring1="Shiva Ring +1", --3
     ring2="Ilabrat Ring",
-    back="Argochampsa Mantle", --12
+    back=gear.DNC_WS1_Cape,
     waist="Eschan Stone", --7
     -- body=gear.Herc_MAB_body,
     -- hands=gear.Herc_MAB_hands,
-    -- legs="Horos Tights +3", -- Use once more MAB gear obtained
+    -- legs="Horos Tights +3", -- Use once Orpheus obtained
     -- ring2="Epaminondas's Ring",
-    -- back=gear.DNC_WS1_Cape,
     -- waist="Orpheus's Sash",
   }) -- 40% DEX / 40% INT + MAB
   sets.precast.WS['Aeolian Edge'].MaxTP = set_combine(sets.precast.WS['Aeolian Edge'], {
