@@ -199,6 +199,10 @@ function user_setup()
   elseif player.sub_job == 'NIN' then
     send_command('bind ^numpad0 input /ma "Utsusemi: Ichi" <me>')
     send_command('bind ^numpad. input /ma "Utsusemi: Ni" <me>')
+  elseif player.sub_job == 'DRG' then
+    send_command('bind !w input /ja "Ancient Circle" <me>')
+    send_command('bind ^numpad/ input /ja "Jump" <t>')
+    send_command('bind ^numpad* input /ja "High Jump" <t>')
   end
 
   update_combat_form()
@@ -445,21 +449,11 @@ function init_gear_sets()
     ear1="Sherida Earring",
     ear2="Moonshade Earring",
     ring1="Begrudging Ring",
+    back=gear.RNG_WS2_Cape,
     waist="Fotia Belt",
-
-    -- Goal:
-    -- head="Mummu Bonnet +2",
     -- body="Abnoba Kaftan",
-    -- hands="Mummu Wrists +2",
-    -- legs="Arc. Braccae +3",
     -- feet="Thereoid Greaves",
-    -- neck="Fotia Gorget",
-    -- ear1="Sherida Earring",
-    -- ear2="Moonshade Earring",
-    -- ring1="Begrudging Ring",
     -- ring2="Mummu Ring",
-    -- back=gear.RNG_WS2_Cape,
-    -- waist="Fotia Belt",
   })
   sets.precast.WS['Jishnu\'s Radiance'].MaxTP = set_combine(sets.precast.WS['Jishnu\'s Radiance'], {
   })
@@ -733,17 +727,17 @@ function init_gear_sets()
   -- Ranged sets
   sets.midcast.RA = {
     head="Arcadian Beret +2", --32 [0] 27/47 <0> {0} (36)
-    body="Malignance Tabard",
-    hands="Malignance Gloves",
+    body="Malignance Tabard", --42 [11] 50/0 <0> {6} (0)
+    hands="Malignance Gloves", --24 [12] 50/0 <0> {4} (0)
     legs="Malignance Tights", --42 [10] 50/0 <0> {5} (0)
     feet="Malignance Boots", --49 [9] 50/0 <0> {2} (0)
     neck="Scout's Gorget +1",
-    ear1="Telos Earring",
+    ear1="Telos Earring", --0 [5] 10/10 <0> {0} (0)
     ear2="Sherida Earring",
     ring1="Regal Ring", --10 [0] 0/20 <0> {0} (0)
-    ring2="Dingir Ring",
-    back=gear.RNG_WS2_Cape,
-    waist="Kwahu Kachina Belt +1",
+    ring2="Dingir Ring", --10 [0] 0/25 <0> {0} (10)
+    back=gear.RNG_RA_Cape, --30 [10] 20/20 <0> {0} (0)
+    waist="Kwahu Kachina Belt +1" --8 [0] 20/0 <5> {0} (0)
 
     -- Goal:
     -- head="Arcadian Beret +3", --37 [0] 37/62 <0> {0} (38)
