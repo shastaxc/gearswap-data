@@ -77,6 +77,9 @@ function get_sets()
   -- Load and initialize Mote library
   mote_include_version = 2
   include('Mote-Include.lua') -- Executes job_setup, user_setup, init_gear_sets
+  coroutine.schedule(function() 
+    send_command('gs c weaponset current')
+  end, 2)
 end
 
 -- Executes on first load and main job change
@@ -92,6 +95,7 @@ function job_setup()
   state.Buff['Climactic Flourish'] = buffactive['climactic flourish'] or false
   state.Buff['Sneak Attack'] = buffactive['sneak attack'] or false
 
+  state.WeaponSet = M{['description']='Weapon Set', 'Normal', 'H2H', 'Fusion', 'Fast/DI'}
   state.MainStep = M{['description']='Main Step', 'Box Step', 'Quickstep', 'Feather Step', 'Stutter Step'}
   state.AltStep = M{['description']='Alt Step', 'Quickstep', 'Feather Step', 'Stutter Step', 'Box Step'}
   state.UseAltStep = M(false, 'Use Alt Step')
@@ -118,6 +122,9 @@ function job_setup()
   send_command('bind !d gs c usekey')
   send_command('bind @w gs c toggle RearmingLock')
 
+  send_command('bind ^insert gs c weaponset cycle')
+  send_command('bind ^delete gs c weaponset cycleback')
+  
   send_command('bind ^pageup gs c toyweapon cycle')
   send_command('bind ^pagedown gs c toyweapon cycleback')
   send_command('bind !pagedown gs c toyweapon reset')
@@ -175,6 +182,9 @@ function job_file_unload()
   send_command('unbind !s')
   send_command('unbind !d')
   send_command('unbind @w')
+
+  send_command('unbind ^insert')
+  send_command('unbind ^delete')
 
   send_command('unbind ^pageup')
   send_command('unbind ^pagedown')
@@ -359,8 +369,7 @@ function init_gear_sets()
     body="Maculele Casaque +1"
   }
   sets.precast.Flourish3['Climactic Flourish'] = {
-    head="Maculele Tiara",
-    -- head="Maculele Tiara +1",
+    head="Maculele Tiara +1",
   }
 
   sets.precast.FC = {
@@ -406,9 +415,8 @@ function init_gear_sets()
   -- For Crit Dmg, not crit rate
   sets.precast.WS.SneakAttack = {
     ammo="Charis Feather",
-    head="Maculele Tiara",
+    head="Maculele Tiara +1",
     body="Meghanada Cuirie +2",
-    -- head="Maculele Tiara +1",
   }
 
   sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS, {
@@ -993,9 +1001,8 @@ function init_gear_sets()
   }
   sets.buff['Climactic Flourish'] = {
     ammo="Charis Feather",
-    head="Maculele Tiara",
+    head="Maculele Tiara +1",
     body="Meghanada Cuirie +2",
-    -- head="Maculele Tiara +1",
     -- ring2="Epaminondas's Ring",
   }
   sets.buff['Climactic Flourish'].WS = set_combine(sets.buff['Climactic Flourish'], {
@@ -1033,6 +1040,11 @@ function init_gear_sets()
     waist="Chaac Belt", --1
   }
 
+  sets.WeaponSet = {}
+  sets.WeaponSet['Normal'] = {main="Aeneas", sub="Taming Sari"}
+  sets.WeaponSet['H2H'] = {main="Kaja Knuckles", sub=empty}
+  sets.WeaponSet['Fusion'] = {main="Hepatizon Rapier", sub="Sleight Kukri"}
+  sets.WeaponSet['Fast/DI'] = {main="Voluspa Knife", sub="Sleight Kukri"}
 end
 
 
@@ -1299,6 +1311,17 @@ function display_current_job_state(eventArgs)
   eventArgs.handled = true
 end
 
+function cycle_weapons(cycle_dir)
+  if cycle_dir == 'forward' then
+    state.WeaponSet:cycle()
+  elseif cycle_dir == 'back' then
+    state.WeaponSet:cycleback()
+  end
+
+  add_to_chat(141, 'Weapon Set to '..string.char(31,1)..state.WeaponSet.current)
+  equip(sets.WeaponSet[state.WeaponSet.current])
+end
+
 function cycle_toy_weapons(cycle_dir)
   --If current state is None, save current weapons to switch back later
   if state.ToyWeapons.current == 'None' then
@@ -1406,6 +1429,14 @@ function job_self_command(cmdParams, eventArgs)
       cycle_toy_weapons('back')
     elseif cmdParams[2]:lower() == 'reset' then
       cycle_toy_weapons('reset')
+    end
+  elseif cmdParams[1]:lower() == 'weaponset' then
+    if cmdParams[2]:lower() == 'cycle' then
+      cycle_weapons('forward')
+    elseif cmdParams[2]:lower() == 'cycleback' then
+      cycle_weapons('back')
+    elseif cmdParams[2]:lower() == 'current' then
+      cycle_weapons('current')
     end
   elseif cmdParams[1]:lower() == 'test' then
     test()
