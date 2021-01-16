@@ -146,6 +146,18 @@ end
 -- Define sets and vars used by this job file.
 function init_gear_sets()
 
+  -- Enmity sets
+  sets.Enmity = {
+    head="Halitus Helm", --0/0, 43 [88] <8>
+    body="Emet Harness +1", --6/0, 64 [61] <10>
+    hands="Kurys Gloves", --2/2, 57 [25] <9>
+    ear2="Cryptic Earring", --0/0, 0 [40] <4>
+    ring1="Eihwaz Ring", --0/0, 0 [70] <5>
+    ring2={name="Supershear Ring", priority=1}, --0/0, 0 [30] <5>
+    waist={name="Kasiri Belt", priority=1}, --0/0, 0 [30] <3>
+    -- feet="Ahosi Leggings", --4/0, 107 [18] <7>
+  }
+
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Precast Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
@@ -227,6 +239,8 @@ function init_gear_sets()
     ring1="Regal Ring",
     ring2="Niqmaddu Ring",
   } -- VIT
+
+  sets.precast.JA['Provoke'] = sets.Enmity
 
   -- Waltz set (chr and vit)
   sets.precast.Waltz = {
