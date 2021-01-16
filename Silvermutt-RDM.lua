@@ -983,7 +983,7 @@ function init_gear_sets()
     ear2="Eabani Earring",
     ring1=gear.Dark_Ring,
     ring2="Defending Ring",
-    waist="Chuq'aba Belt",
+    waist=empty,
     back="Grapevine Cape",
     -- main="Bolelabunga",
     -- sub="Sacro Bulwark",

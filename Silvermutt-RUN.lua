@@ -888,7 +888,7 @@ function init_gear_sets()
     ear2="Sherida Earring",
     ring1="Epona's Ring",
     ring2="Niqmaddu Ring",
-    back="Atheling Mantle",
+    back=gear.RUN_HPD_Cape,
   }
   sets.engaged.LowAcc = set_combine(sets.engaged, {
     head="Dampening Tam",
@@ -905,7 +905,6 @@ function init_gear_sets()
   })
   sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
     ammo="Falcon Eye",
-    neck="Lissome Necklace",
     legs=gear.Carmine_D_legs,
     ear1="Odr Earring",
     ear2="Dignitary's Earring",

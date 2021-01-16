@@ -239,7 +239,7 @@ function init_gear_sets()
 
   sets.precast.Utsusemi = set_combine(sets.precast.FC, {
     ammo="Staunch Tathlum",
-    ring1=gear.Dark_Ring,
+    ring1="Prolix Ring",
     ring2="Defending Ring",
   })
 

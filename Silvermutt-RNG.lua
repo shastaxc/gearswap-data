@@ -995,9 +995,8 @@ function init_gear_sets()
     ear2="Telos Earring",
     ring1="Ilabrat Ring",
     ring2="Epona's Ring",
-    back="Atheling Mantle",
-    waist="Windbuffet Belt +1",
     back=gear.RNG_DW_Cape,
+    waist="Windbuffet Belt +1",
     -- back=gear.RNG_DA_Cape,
   }
 
@@ -1034,9 +1033,8 @@ function init_gear_sets()
     ear2="Suppanomimi", --5
     ring1="Ilabrat Ring",
     ring2="Epona's Ring",
-    back="Atheling Mantle",
-    waist="Windbuffet Belt +1",
     back=gear.RNG_DW_Cape, --10
+    waist="Windbuffet Belt +1",
   } -- 45%
 
   sets.engaged.DW.LowAcc = set_combine(sets.engaged.DW, {
@@ -1070,9 +1068,8 @@ function init_gear_sets()
     ear2="Suppanomimi", --5
     ring1="Ilabrat Ring",
     ring2="Epona's Ring",
-    back="Atheling Mantle",
-    waist="Windbuffet Belt +1",
     back=gear.RNG_DW_Cape, --10
+    waist="Windbuffet Belt +1",
   } -- 42%
 
   sets.engaged.DW.LowAcc.LowHaste = set_combine(sets.engaged.DW.LowHaste, {
@@ -1107,9 +1104,8 @@ function init_gear_sets()
     ear2="Suppanomimi", --5
     ring1="Ilabrat Ring",
     ring2="Epona's Ring",
-    back="Atheling Mantle",
-    waist="Windbuffet Belt +1",
     back=gear.RNG_DW_Cape, --10
+    waist="Windbuffet Belt +1",
   } -- 32%
 
   sets.engaged.DW.LowAcc.MidHaste = set_combine(sets.engaged.DW.MidHaste, {
@@ -1144,9 +1140,8 @@ function init_gear_sets()
     ear2="Eabani Earring", --4
     ring1="Ilabrat Ring",
     ring2="Epona's Ring",
-    back="Atheling Mantle",
-    waist="Windbuffet Belt +1",
     back=gear.RNG_DW_Cape, --10
+    waist="Windbuffet Belt +1",
   } -- 20%
 
   sets.engaged.DW.LowAcc.HighHaste = set_combine(sets.engaged.DW.HighHaste, {
@@ -1180,9 +1175,8 @@ function init_gear_sets()
     ear2="Telos Earring",
     ring1="Ilabrat Ring",
     ring2="Epona's Ring",
-    back="Atheling Mantle",
-    waist="Windbuffet Belt +1",
     back=gear.RNG_DW_Cape, --10
+    waist="Windbuffet Belt +1",
     -- ear2="Suppanomimi", --5
     -- back=gear.RNG_DA_Cape,
   } -- 21%
@@ -1205,9 +1199,8 @@ function init_gear_sets()
     ear2="Telos Earring",
     ring1="Ilabrat Ring",
     ring2="Epona's Ring",
-    back="Atheling Mantle",
-    waist="Windbuffet Belt +1",
     back=gear.RNG_DW_Cape, --10
+    waist="Windbuffet Belt +1",
     -- back=gear.RNG_DA_Cape,
   } -- 16%
 
