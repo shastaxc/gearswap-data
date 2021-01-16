@@ -302,27 +302,17 @@ function init_gear_sets()
     ammo="Yamarang",
     head="Maxixi Tiara +3",
     body="Maxixi Casaque +3",
-    hands="Mummu Wrists +2",
+    hands="Maxixi Bangles +3",
     legs="Meghanada Chausses +2",
     feet="Horos Toe Shoes +3",
-    neck="Love Torque",
+    neck="Etoile Gorget +2",
     ring1="Regal Ring",
     ring2="Chirich Ring +1",
     back=gear.DNC_TP_DW_Cape,
-
-    -- Goal:
-    -- ammo="Yamarang",
-    -- head="Maxixi Tiara +3",
-    -- body="Maxixi Casaque +3",
-    -- hands="Maxixi Bangles +3",
     -- legs="Maxixi Tights +3",
-    -- feet="Horos Toe Shoes +3",
     -- neck="Etoile Gorget +2",
     -- ear1="Mache Earring +1",
     -- ear2="Mache Earring +1",
-    -- ring1="Regal Ring",
-    -- ring2="Chirich Ring +1",
-    -- back=gear.DNC_TP_DW_Cape,
     -- waist="Olseni Belt",
   }
 
@@ -523,7 +513,7 @@ function init_gear_sets()
     ammo="Aurgelmir Orb",
     head=gear.Herc_WSD_head,
     body="Meghanada Cuirie +2",
-    hands="Meghanada Gloves +2",
+    hands="Maxixi Bangles +3",
     legs="Horos Tights +3",
     feet=gear.Herc_WSD_feet,
     neck="Etoile Gorget +2",
@@ -535,7 +525,6 @@ function init_gear_sets()
     waist="Grunfeld Rope",
     -- ammo="Aurgelmir Orb +1",
     -- body=gear.Herc_WSD_body,
-    -- hands="Maxixi Bangles +3",
   }) -- 80% DEX
   sets.precast.WS["Rudra's Storm"].MaxTP = set_combine(sets.precast.WS["Rudra's Storm"], {
     ear2="Ishvara Earring",
