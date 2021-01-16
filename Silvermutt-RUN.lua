@@ -301,7 +301,7 @@ function init_gear_sets()
     hands="Runeist Mitons +1"
   })
   sets.precast.JA['Rayke'] = set_combine(sets.Enmity, {
-    feet="Futhark Boots"
+    feet="Futhark Boots +1"
   })
   sets.precast.JA['Elemental Sforzo'] = set_combine(sets.Enmity, {
     body="Futhark Coat +1",
