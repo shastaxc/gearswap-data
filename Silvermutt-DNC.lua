@@ -1030,7 +1030,7 @@ function init_gear_sets()
   sets.WeaponSet = {}
   sets.WeaponSet['Normal'] = {main="Aeneas", sub="Taming Sari"}
   sets.WeaponSet['H2H'] = {main="Kaja Knuckles", sub=empty}
-  sets.WeaponSet['Fusion'] = {main="Hepatizon Rapier", sub="Sleight Kukri"}
+  sets.WeaponSet['Fusion'] = {main="Demersal Degen +1", sub="Sleight Kukri"}
   sets.WeaponSet['Fast/DI'] = {main="Voluspa Knife", sub="Sleight Kukri"}
 end
 
