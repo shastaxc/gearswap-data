@@ -532,12 +532,22 @@ function init_gear_sets()
   ----------------------------------------- Idle Sets --------------------------------------------
   ------------------------------------------------------------------------------------------------
 
+  -- Passive sets are applied to idle in function `customize_idle_sets`
   sets.passive_regen = {
   }
-  sets.passive_refresh = {
+  sets.passive_regen.daytime = {
     hands="Serpentes Cuffs",
   }
-  sets.passive_refresh_sub50 = set_combine(sets.latent_refresh, {
+  sets.passive_regen.nighttime = {
+  }
+  sets.passive_refresh = {
+  }
+  sets.passive_refresh.daytime = {
+  }
+  sets.passive_refresh.nighttime = {
+    hands="Serpentes Cuffs",
+  }
+  sets.passive_refresh.sub50 = set_combine(sets.latent_refresh, {
     -- waist="Fucho-no-Obi",
   })
 
@@ -570,12 +580,6 @@ function init_gear_sets()
     -- waist="Carrier's Sash",
   }
 
-  sets.idle.Regen = set_combine(sets.idle, sets.passive_regen)
-  sets.idle.Refresh = set_combine(sets.idle, sets.passive_refresh)
-  sets.idle.RefreshSub50 = set_combine(sets.idle, sets.passive_refresh_sub50)
-  sets.idle.Regen.Refresh = set_combine(sets.idle, sets.passive_regen, sets.passive_refresh)
-  sets.idle.Regen.RefreshSub50 = set_combine(sets.idle, sets.passive_regen, sets.passive_refresh_sub50)
-
   sets.HeavyDef = {
     -- main="Daybreak",
     -- sub="Genmei Shield", --10/0
@@ -594,12 +598,6 @@ function init_gear_sets()
   }
 
   sets.idle.HeavyDef = set_combine(sets.idle, sets.HeavyDef)
-  sets.idle.HeavyDef.Regen = set_combine(sets.idle.Regen, sets.HeavyDef)
-  sets.idle.HeavyDef.Refresh = set_combine(sets.idle.Refresh, sets.HeavyDef)
-  sets.idle.HeavyDef.RefreshSub50 = set_combine(sets.idle.RefreshSub50, sets.HeavyDef)
-  sets.idle.HeavyDef.Regen.Refresh = set_combine(sets.idle.Regen.Refresh, sets.HeavyDef)
-  sets.idle.HeavyDef.Regen.RefreshSub50 = set_combine(sets.idle.Regen.RefreshSub50, sets.HeavyDef)
-
   sets.idle.Weak = sets.HeavyDef
 
   sets.idle.Vagary = sets.midcast['Elemental Magic']
@@ -889,7 +887,29 @@ end
 
 function customize_idle_set(idleSet)
   -- If not in DT mode put on move speed gear
-  if state.IdleMode.current == 'Normal' and state.DefenseMode.value == 'None' then
+  if state.IdleMode.current == 'Normal' then
+    -- Apply regen gear
+    if classes.CustomIdleGroups:contains('Regen') then
+      idleSet = set_combine(idleSet, sets.passive_regen)
+      if classes.CustomIdleGroups:contains('Daytime') then
+        idleSet = set_combine(idleSet, sets.passive_regen.daytime)
+      elseif classes.CustomIdleGroups:contains('Nighttime') then
+        idleSet = set_combine(idleSet, sets.passive_regen.nighttime)
+      end
+    end
+    -- Apply refresh gear
+    if classes.CustomIdleGroups:contains('Refresh') then
+      idleSet = set_combine(idleSet, sets.passive_refresh)
+      if classes.CustomIdleGroups:contains('MpSub50') then
+        idleSet = set_combine(idleSet, sets.passive_refresh.sub50)
+      end
+      if classes.CustomIdleGroups:contains('Daytime') then
+        idleSet = set_combine(idleSet, sets.passive_refresh.daytime)
+      elseif classes.CustomIdleGroups:contains('Nighttime') then
+        idleSet = set_combine(idleSet, sets.passive_refresh.nighttime)
+      end
+    end
+    -- Apply movement speed gear
     if classes.CustomIdleGroups:contains('Adoulin') then
       -- idleSet = set_combine(idleSet, sets.Kiting.Adoulin) -- Uncomment line when gear obtained
       idleSet = set_combine(idleSet, sets.Kiting)
@@ -1027,22 +1047,30 @@ function update_idle_groups()
 
   classes.CustomIdleGroups:clear()
   if player.status == 'Idle' then
-    if isRegening==true and player.hpp < 100 then
-      classes.CustomIdleGroups:append('Regen')
-    elseif isRegening==false and player.hpp < 85 then
+    if (isRegening==true and player.hpp < 100) or (isRegening==false and player.hpp < 85) then
       classes.CustomIdleGroups:append('Regen')
     end
     if mp_jobs:contains(player.main_job) or mp_jobs:contains(player.sub_job) then
+      if (isRefreshing==true and player.mpp < 100) or (isRefreshing==false and player.mpp < 85) then
+        classes.CustomIdleGroups:append('Refresh')
+      end
       if player.mpp < 50 then
-        classes.CustomIdleGroups:append('RefreshSub50')
-      elseif isRefreshing==true and player.mpp < 100 then
-        classes.CustomIdleGroups:append('Refresh')
-      elseif isRefreshing==false and player.mpp < 85 then
-        classes.CustomIdleGroups:append('Refresh')
+        classes.CustomIdleGroups:append('MpSub50')
       end
     end
     if world.zone == 'Eastern Adoulin' or world.zone == 'Western Adoulin' then
       classes.CustomIdleGroups:append('Adoulin')
+    end
+    -- Apply time of day
+    if (world.time >= (6*60) and world.time < (18*60)) then
+      classes.CustomIdleGroups:append('Daytime')
+      if (world.time >= (6*60) and world.time < (7*60)) then
+        classes.CustomIdleGroups:append('Dawn')
+      elseif (world.time >= (17*60) and world.time < (18*60)) then
+        classes.CustomIdleGroups:append('Dusk')
+      end
+    elseif (world.time >= (18*60) or world.time < (6*60)) then
+      classes.CustomIdleGroups:append('Nighttime')
     end
   end
 end
