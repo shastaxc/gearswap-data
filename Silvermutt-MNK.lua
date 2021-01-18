@@ -217,7 +217,7 @@ function init_gear_sets()
 
   sets.precast.JA['Chi Blast'] = {
     ammo="Hydrocera", -- 3
-    head="Hesychast's Crown", -- 9, Enhance Penance
+    head="Hesychast's Crown +1", -- 15, Enhance Penance
     body="Anchorite's Cyclas +2", -- 29
     hands=gear.Leyline_Gloves, -- 30
     legs="Anchorite's Hose +1", -- 2
