@@ -136,7 +136,7 @@ function init_gear_sets()
   -- Fast cast sets for spells
   sets.precast.FC = {
   --    /RDM --15
-    -- ammo="Sapience Orb", --2
+    ammo="Incantor Stone", --2
     -- head="Amalric Coif +1", --11
     -- body=gear.Merl_FC_body, --13
     -- hands="Acad. Bracers +3", --9
@@ -430,7 +430,7 @@ function init_gear_sets()
   }
 
   sets.midcast.Kaustra = {
-    -- main="Akademos", --10
+    main="Akademos", --10
     -- sub="Enki Strap",
     -- ammo="Pemphredo Tathlum",
     -- head="Pixie Hairpin +1",
@@ -463,7 +463,7 @@ function init_gear_sets()
 
   -- Elemental Magic
   sets.midcast['Elemental Magic'] = {
-    -- main="Akademos",
+    main="Akademos",
     -- sub="Enki Strap",
     -- ammo="Pemphredo Tathlum",
     -- head="Peda. M.Board +3",
@@ -497,7 +497,7 @@ function init_gear_sets()
   })
 
   sets.midcast.Impact = set_combine(sets.midcast['Elemental Magic'], {
-    -- main="Akademos",
+    main="Akademos",
     -- sub="Khonsu",
     -- head=empty,
     -- body="Twilight Cloak",
@@ -506,7 +506,7 @@ function init_gear_sets()
   })
 
   sets.midcast.Helix = {
-    -- main="Akademos",
+    main="Akademos",
     -- sub="Enki Strap",
     -- ammo="Ghastly Tathlum +1",
     -- neck="Argute Stole +1",
@@ -541,6 +541,8 @@ function init_gear_sets()
   sets.passive_regen.nighttime = {
   }
   sets.passive_refresh = {
+    main="Akademos",
+    sub=empty,
   }
   sets.passive_refresh.daytime = {
   }
@@ -552,7 +554,7 @@ function init_gear_sets()
   })
 
   sets.idle = {
-    main="Arka IV",
+    main="Akademos",
     sub=empty,
     head="Scholar's Mortarboard",
     body="Scholar's Gown",
@@ -562,8 +564,7 @@ function init_gear_sets()
     neck="Twilight Torque",
     ear1="Hecate's Earring",
     ear2="Savant's Earring",
-    back="Nexus Cape",
-    -- main="Akademos",
+    back="Cheviot Cape",
     -- sub="Enki Strap",
     -- ammo="Homiliary",
     -- head="Befouled Crown",
