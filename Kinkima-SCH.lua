@@ -137,6 +137,7 @@ function init_gear_sets()
   sets.precast.FC = {
   --    /RDM --15
     ammo="Incantor Stone", --2
+    back="Swith Cape +1", --4
     -- head="Amalric Coif +1", --11
     -- body=gear.Merl_FC_body, --13
     -- hands="Acad. Bracers +3", --9
@@ -557,7 +558,7 @@ function init_gear_sets()
   })
 
   sets.idle = {
-    main="Akademos",
+    main="Bolelabunga",
     sub=empty,
     head="Scholar's Mortarboard",
     body="Scholar's Gown",
