@@ -239,6 +239,7 @@ function init_gear_sets()
   sets.midcast.FastRecast = sets.precast.FC
 
   sets.midcast.Cure = {
+    main="Arka IV", --24
     -- main="Daybreak", --30
     -- sub="Sors Shield", --3/(-5)
     -- ammo="Esper Stone +1", --0/(-5)
@@ -336,6 +337,7 @@ function init_gear_sets()
   })
 
   sets.midcast.RegenDuration = set_combine(sets.midcast.EnhancingDuration, {
+    main="Bolelabunga",
     -- head=gear.Telchine_ENH_head,
     -- back=gear.SCH_FC_Cape,
   })
@@ -452,7 +454,7 @@ function init_gear_sets()
     -- ear1="Hirudinea Earring",
     -- ring1="Evanescence Ring",
     -- ring2="Archon Ring",
-    -- waist="Fucho-no-obi",
+    waist="Fucho-no-obi",
   })
 
   sets.midcast.Aspir = sets.midcast.Drain
@@ -534,6 +536,8 @@ function init_gear_sets()
 
   -- Passive sets are applied to idle in function `customize_idle_sets`
   sets.passive_regen = {
+    main="Bolelabunga",
+    back="Kumbira Cape",
   }
   sets.passive_regen.daytime = {
     hands="Serpentes Cuffs",
@@ -541,8 +545,7 @@ function init_gear_sets()
   sets.passive_regen.nighttime = {
   }
   sets.passive_refresh = {
-    main="Akademos",
-    sub=empty,
+    main="Bolelabunga",
   }
   sets.passive_refresh.daytime = {
   }
@@ -550,7 +553,7 @@ function init_gear_sets()
     hands="Serpentes Cuffs",
   }
   sets.passive_refresh.sub50 = set_combine(sets.latent_refresh, {
-    -- waist="Fucho-no-Obi",
+    waist="Fucho-no-Obi",
   })
 
   sets.idle = {
