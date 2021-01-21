@@ -272,7 +272,7 @@ function init_gear_sets()
     head="Futhark Bandeau +1"
   })
   sets.precast.JA['Liement'] = set_combine(sets.Enmity, {
-    body="Futhark Coat +1",
+    body="Futhark Coat +2",
   })
 
   sets.MAB = {
@@ -304,7 +304,7 @@ function init_gear_sets()
     feet="Futhark Boots +1"
   })
   sets.precast.JA['Elemental Sforzo'] = set_combine(sets.Enmity, {
-    body="Futhark Coat +1",
+    body="Futhark Coat +2",
   })
   sets.precast.JA['Swordplay'] = set_combine(sets.Enmity, {
     hands="Futhark Mitons"
@@ -713,9 +713,8 @@ function init_gear_sets()
   }
   sets.latent_regen = {
     head="Turms Cap +1",
-    body="Meghanada Cuirie +2",
+    body="Futhark Coat +2",
     hands="Turms Mittens",
-    legs="Meghanada Chausses +2",
     feet="Turms Leggings",
     neck="Bathy Choker +1",
     ear1="Infused Earring",
