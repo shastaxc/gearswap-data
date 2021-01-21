@@ -694,9 +694,9 @@ function init_gear_sets()
   }
 
   sets.buff.FullSublimation = {
+    main="Siriti", --1
     sub="Genmei Shield", --10/0
     ear1="Savant's Earring", --1
-    -- main="Siriti", --1
     -- head="Acad. Mortar. +3", --4
     -- body="Peda. Gown +3", --5
     -- waist="Embla Sash", --5
