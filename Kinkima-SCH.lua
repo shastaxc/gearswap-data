@@ -137,6 +137,7 @@ function init_gear_sets()
   sets.precast.FC = {
   --    /RDM --15
     ammo="Incantor Stone", --2
+    body="Shango Robe", --8
     back="Swith Cape +1", --4
     -- head="Amalric Coif +1", --11
     -- body=gear.Merl_FC_body, --13
@@ -241,6 +242,8 @@ function init_gear_sets()
 
   sets.midcast.Cure = {
     main="Arka IV", --24
+    hands="Serpentes Cuffs", -- Set: 5
+    feet="Serpentes Sabots", -- Set: 5
     -- main="Daybreak", --30
     -- sub="Sors Shield", --3/(-5)
     -- ammo="Esper Stone +1", --0/(-5)
@@ -382,6 +385,7 @@ function init_gear_sets()
 
   -- Custom spell classes
   sets.midcast.MndEnfeebles = {
+    body="Shango Robe",
     -- main="Maxentius",
     -- sub="Ammurapi Shield",
     -- ammo="Pemphredo Tathlum",
@@ -415,6 +419,7 @@ function init_gear_sets()
   })
 
   sets.midcast['Dark Magic'] = {
+    body="Shango Robe",
     -- main="Rubicundity",
     -- sub="Ammurapi Shield",
     -- ammo="Pemphredo Tathlum",
@@ -544,11 +549,13 @@ function init_gear_sets()
     hands="Serpentes Cuffs",
   }
   sets.passive_regen.nighttime = {
+    feet="Serpentes Sabots",
   }
   sets.passive_refresh = {
     main="Bolelabunga",
   }
   sets.passive_refresh.daytime = {
+    feet="Serpentes Sabots",
   }
   sets.passive_refresh.nighttime = {
     hands="Serpentes Cuffs",
@@ -561,7 +568,7 @@ function init_gear_sets()
     main="Bolelabunga",
     sub="Genmei Shield", --10/0
     head="Scholar's Mortarboard",
-    body="Scholar's Gown",
+    body="Shango Robe",
     hands="Savant's Bracers +2",
     legs="Savant's Pants +2",
     feet="Savant's Loafers +2",
@@ -586,8 +593,9 @@ function init_gear_sets()
   }
 
   sets.HeavyDef = {
-    -- main="Daybreak",
     sub="Genmei Shield", --10/0
+    body="Shango Robe",
+    -- main="Daybreak",
     -- ammo="Staunch Tathlum +1", --3/3
     -- head="Volte Cap",
     -- body="Mallquis Saio +2", --8/8
