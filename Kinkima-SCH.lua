@@ -559,7 +559,7 @@ function init_gear_sets()
 
   sets.idle = {
     main="Bolelabunga",
-    sub=empty,
+    sub="Genmei Shield", --10/0
     head="Scholar's Mortarboard",
     body="Scholar's Gown",
     hands="Savant's Bracers +2",
@@ -587,7 +587,7 @@ function init_gear_sets()
 
   sets.HeavyDef = {
     -- main="Daybreak",
-    -- sub="Genmei Shield", --10/0
+    sub="Genmei Shield", --10/0
     -- ammo="Staunch Tathlum +1", --3/3
     -- head="Volte Cap",
     -- body="Mallquis Saio +2", --8/8
@@ -683,9 +683,9 @@ function init_gear_sets()
   }
 
   sets.buff.FullSublimation = {
+    sub="Genmei Shield", --10/0
     ear1="Savant's Earring", --1
     -- main="Siriti", --1
-    -- sub="Genmei Shield", --10/0
     -- head="Acad. Mortar. +3", --4
     -- body="Peda. Gown +3", --5
     -- waist="Embla Sash", --5
