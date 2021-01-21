@@ -847,6 +847,7 @@ function init_gear_sets()
     hands="Mummu Wrists +2",
     ring1="Begrudging Ring",
     legs="Mummu Kecks +2",
+    feet="Oshosi Leggings",
     waist="Kwahu Kachina Belt +1",
     -- body="Nisroch Jerkin",
     -- feet="Oshosi Leggings +1",
@@ -854,6 +855,9 @@ function init_gear_sets()
 
   sets.DoubleShot = {
     head="Arcadian Beret +2",
+    hands="Oshosi Gloves", --4
+    legs="Oshosi Trousers", --6
+    feet="Oshosi Leggings", --3
     -- head="Arcadian Beret +3",
     -- body="Arcadian Jerkin +3",
     -- hands="Oshosi Gloves +1", -- 5
