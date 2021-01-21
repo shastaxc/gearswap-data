@@ -137,7 +137,9 @@ function init_gear_sets()
   sets.precast.FC = {
   --    /RDM --15
     ammo="Incantor Stone", --2
+    head=gear.Psycloth_FC_head, --10
     body="Shango Robe", --8
+    legs=gear.Psycloth_FC_legs, --7
     back="Swith Cape +1", --4
     -- head="Amalric Coif +1", --11
     -- body=gear.Merl_FC_body, --13
@@ -163,8 +165,8 @@ function init_gear_sets()
   sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, {})
 
   sets.precast.FC.Cure = set_combine(sets.precast.FC, {
+    ear1="Mendicant's Earring", --5
     -- feet="Kaykaus Boots +1", --7
-    -- ear1="Mendi. Earring", --5
     -- ring1="Lebeche Ring", --(2)
   })
 
@@ -244,6 +246,7 @@ function init_gear_sets()
     main="Arka IV", --24
     hands="Serpentes Cuffs", -- Set: 5
     feet="Serpentes Sabots", -- Set: 5
+    ear1="Mendicant's Earring", --5
     -- main="Daybreak", --30
     -- sub="Sors Shield", --3/(-5)
     -- ammo="Esper Stone +1", --0/(-5)
