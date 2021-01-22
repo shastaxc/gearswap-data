@@ -46,11 +46,10 @@ function job_setup()
   send_command('bind !] gs c scholar duration')
   send_command('bind !; gs c scholar cost')
   send_command('bind !w input /ma "Aspir II" <t>')
-  send_command('bind !o input /ma "Regen V" <stpc>')
   send_command('bind @h gs c cycle HelixMode')
   send_command('bind @r gs c cycle RegenMode')
   send_command('bind @s gs c toggle StormSurge')
-  
+
   send_command('bind !u input /ma "Blink" <me>')
   send_command('bind !i input /ma "Stoneskin" <me>')
   send_command('bind !p input /ma "Aquaveil" <me>')
@@ -88,11 +87,10 @@ function job_file_unload()
   send_command('unbind !]')
   send_command('unbind !;')
   send_command('unbind !w')
-  send_command('unbind !o')
   send_command('unbind @h')
   send_command('unbind @r')
   send_command('unbind @s')
-  
+
   send_command('unbind !u')
   send_command('unbind !i')
   send_command('unbind !p')
@@ -116,21 +114,44 @@ function init_gear_sets()
   sets.precast.JA['Enlightenment'] = {
     -- body="Peda. Gown +3",
   }
+  -- Maximize HP+ (MP-to-HP conversion doesn't work)
   sets.precast.JA['Sublimation'] = {
-    -- main="Musa",
-    -- sub="Enki Strap",
-    -- head="Acad. Mortar. +3",
-    -- body="Acad. Gown +3",
-    -- hands=gear.Telchine_ENH_hands,
-    -- legs="Acad. Pants +3",
-    -- feet="Skaoi Boots",
-    -- neck="Unmoving Collar +1",
-    -- ear1="Eabani Earring",
-    -- ear2="Etiolation Earring",
-    -- ring1="Gelatinous Ring +1",
-    -- ring2="Eihwaz Ring",
-    -- back="Moonlight Cape",
-    -- waist="Eschan Stone",
+    main="Siriti", --Sublimation+
+    sub="Genmei Shield",
+
+    -- Good:
+    -- main="Malignance Pole",        -- 150
+    -- sub="Balarama Grip",           --  50
+    -- head="Acad. Mortar. +3",       --  64
+    -- body="Acad. Gown +3",          --  91
+    -- hands=gear.Telchine_ENH_hands, -- 102
+    -- legs="Acad. Pants +3",         --  89
+    -- feet="Skaoi Boots",            --  65
+    -- neck="Unmoving Collar +1",     -- 200
+    -- ear1="Etiolation Earring",     --  50
+    -- ear2="Eabani Earring",         --  45
+    -- ring1="Gelatinous Ring +1",    -- 135
+    -- ring2="Meridian Ring",         --  90
+    -- back="Moonlight Cape",         -- 275
+    -- waist="Eschan Stone",          --  20
+    -- 1426 HP+
+
+    -- Ideal:
+    -- main="Malignance Pole",        -- 150
+    -- sub="Balarama Grip",           --  50
+    -- head="Pedagogy Mortarboard +3",--  86
+    -- body="Rosette Jaseran +1",     -- 139
+    -- hands=gear.Telchine_HP_hands,  -- 102
+    -- legs=gear.Telchine_HP_legs,    --  93
+    -- feet="Pinga Pumps +1",         --  84
+    -- neck="Unmoving Collar +1",     -- 200
+    -- ear1="Etiolation Earring",     --  50
+    -- ear2="Eabani Earring",         --  45
+    -- ring1="Gelatinous Ring +1",    -- 135
+    -- ring2="Meridian Ring",         --  90
+    -- back="Moonlight Cape",         -- 275
+    -- waist="Jungle Sash",           --  45
+    -- 1544 HP+
   }
 
   -- Fast cast sets for spells
@@ -755,7 +776,7 @@ function job_post_precast(spell, action, spellMap, eventArgs)
   elseif spell.name == 'Impact' then
     equip(sets.precast.FC.Impact)
   end
-  
+
   -- If slot is locked, keep current equipment on
   if locked_neck then equip({ neck=player.equipment.neck }) end
   if locked_ear1 then equip({ ear1=player.equipment.ear1 }) end
@@ -932,12 +953,12 @@ function customize_idle_set(idleSet)
     else
       idleSet = set_combine(idleSet, sets.Kiting)
     end
-  end
-  if state.Buff['Sublimation: Activated'] then
-      idleSet = set_combine(idleSet, sets.buff.FullSublimation)
-  end
-  if state.CP.current == 'on' then
-    idleSet = set_combine(idleSet, sets.CP)
+    if state.Buff['Sublimation: Activated'] then
+        idleSet = set_combine(idleSet, sets.buff.FullSublimation)
+    end
+    if state.CP.current == 'on' then
+      idleSet = set_combine(idleSet, sets.CP)
+    end
   end
 
   -- If slot is locked to use no-swap gear, keep it equipped
