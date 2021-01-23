@@ -479,8 +479,23 @@ function init_gear_sets()
   })
 
   sets.precast.WS["Last Stand"] = set_combine(sets.precast.WS, {
+    head="Orion Beret +2",
+    body="Meghanada Cuirie +2",
+    hands="Meg. Gloves +2",
+    legs="Arcadian Braccae +3",
+    feet=gear.Herc_WSD_feet,
     neck="Scout's Gorget +1",
+    ear1="Ishvara Earring",
+    ear2="Moonshade Earring",
+    ring1="Regal Ring",
+    ring2="Dingir Ring",
+    back=gear.RNG_WS2_Cape,
+    waist="Fotia Belt",
+    -- head="Orion Beret +3",
+    -- body=gear.Herc_RA_WSD_body,
+    -- feet=gear.Herc_RA_WSD_feet,
     -- neck="Scout's Gorget +2",
+    -- ring2="Epaminondas's Ring",
   })
   sets.precast.WS['Last Stand'].MaxTP = set_combine(sets.precast.WS['Last Stand'], {
     ear2="Telos Earring",
@@ -855,12 +870,20 @@ function init_gear_sets()
 
   sets.DoubleShot = {
     head="Arcadian Beret +2",
-    hands="Oshosi Gloves", --4
     legs="Oshosi Trousers", --6
     feet="Oshosi Leggings", --3
     -- head="Arcadian Beret +3",
     -- body="Arcadian Jerkin +3",
     -- hands="Oshosi Gloves +1", -- 5
+    -- legs="Oshosi Trousers +1", --7
+    -- feet="Oshosi Leggings +1", --4
+  }
+  sets.DoubleShot.Acc = {
+    head="Arcadian Beret +2",
+    legs="Oshosi Trousers", --6
+    feet="Oshosi Leggings", --3
+    -- head="Arcadian Beret +3",
+    -- body="Arcadian Jerkin +3",
     -- legs="Oshosi Trousers +1", --7
     -- feet="Oshosi Leggings +1", --4
   }
@@ -1437,7 +1460,11 @@ end
 function job_post_midcast(spell, action, spellMap, eventArgs)
   if spell.action_type == 'Ranged Attack' then
     if buffactive['Double Shot'] then
-      equip(sets.DoubleShot)
+      if state.RangedMode.current ==  'HighAcc' then
+        equip(sets.DoubleShot.Acc)
+      else
+        equip(sets.DoubleShot)
+      end
       if buffactive['Aftermath: Lv.3'] and player.equipment.ranged == "Armageddon" then
         equip(sets.DoubleShotCritical)
       end
