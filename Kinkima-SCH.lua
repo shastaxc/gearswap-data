@@ -116,42 +116,12 @@ function init_gear_sets()
   }
   -- Maximize HP+ (MP-to-HP conversion doesn't work)
   sets.precast.JA['Sublimation'] = {
-    main="Siriti", --Sublimation+
-    sub="Genmei Shield",
-
-    -- Good:
-    -- main="Malignance Pole",        -- 150
-    -- sub="Balarama Grip",           --  50
-    -- head="Acad. Mortar. +3",       --  64
-    -- body="Acad. Gown +3",          --  91
-    -- hands=gear.Telchine_ENH_hands, -- 102
-    -- legs="Acad. Pants +3",         --  89
-    -- feet="Skaoi Boots",            --  65
-    -- neck="Unmoving Collar +1",     -- 200
-    -- ear1="Etiolation Earring",     --  50
-    -- ear2="Eabani Earring",         --  45
-    -- ring1="Gelatinous Ring +1",    -- 135
-    -- ring2="Meridian Ring",         --  90
-    -- back="Moonlight Cape",         -- 275
-    -- waist="Eschan Stone",          --  20
-    -- 1426 HP+
-
-    -- Ideal:
-    -- main="Malignance Pole",        -- 150
-    -- sub="Balarama Grip",           --  50
-    -- head="Pedagogy Mortarboard +3",--  86
-    -- body="Rosette Jaseran +1",     -- 139
-    -- hands=gear.Telchine_HP_hands,  -- 102
-    -- legs=gear.Telchine_HP_legs,    --  93
-    -- feet="Pinga Pumps +1",         --  84
-    -- neck="Unmoving Collar +1",     -- 200
-    -- ear1="Etiolation Earring",     --  50
-    -- ear2="Eabani Earring",         --  45
-    -- ring1="Gelatinous Ring +1",    -- 135
-    -- ring2="Meridian Ring",         --  90
-    -- back="Moonlight Cape",         -- 275
-    -- waist="Jungle Sash",           --  45
-    -- 1544 HP+
+    main="Siriti", --1
+    sub="Genmei Shield", --10/0
+    ear1="Savant's Earring", --1
+    -- head="Acad. Mortar. +3", --4
+    -- body="Peda. Gown +3", --5
+    -- waist="Embla Sash", --5
   }
 
   -- Fast cast sets for spells
@@ -714,14 +684,7 @@ function init_gear_sets()
     -- feet="Arbatel Loafers +1",
   }
 
-  sets.buff.FullSublimation = {
-    main="Siriti", --1
-    sub="Genmei Shield", --10/0
-    ear1="Savant's Earring", --1
-    -- head="Acad. Mortar. +3", --4
-    -- body="Peda. Gown +3", --5
-    -- waist="Embla Sash", --5
-  }
+  sets.buff.FullSublimation = sets.precast.JA['Sublimation']
 
   sets.buff.Doom = {
     -- neck="Nicander's Necklace", --20
