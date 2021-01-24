@@ -262,7 +262,7 @@ function init_gear_sets()
     -- feet="Orion Socks +3"
   }
   sets.precast.JA['Shadowbind'] = {
-    hands="Orion Bracers +1"
+    hands="Orion Bracers +2"
     -- hands="Orion Bracers +3"
   }
   sets.precast.JA['Sharpshot'] = {
@@ -1291,7 +1291,7 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.buff.Barrage = {
-    hands="Orion Bracers +1"
+    hands="Orion Bracers +2"
     -- hands="Orion Bracers +3"
   }
   sets.buff['Velocity Shot'] = set_combine(sets.midcast.RA, {
@@ -1410,12 +1410,14 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         equip({waist="Hachirin-no-Obi"})
       -- Target distance under 1.7 yalms.
       elseif spell.target.distance < (1.7 + spell.target.model_size) then
+        equip({waist="Hachirin-no-Obi"})
         -- equip({waist="Orpheus's Sash"})
       -- Matching day and weather.
       elseif spell.element == world.day_element and spell.element == world.weather_element then
         equip({waist="Hachirin-no-Obi"})
       -- Target distance under 8 yalms.
       elseif spell.target.distance < (8 + spell.target.model_size) then
+        equip({waist="Hachirin-no-Obi"})
         -- equip({waist="Orpheus's Sash"})
       -- Match day or weather.
       elseif spell.element == world.day_element or spell.element == world.weather_element then
