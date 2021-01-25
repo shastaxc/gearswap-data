@@ -547,6 +547,7 @@ function init_gear_sets()
   }
   sets.passive_refresh = {
     main="Bolelabunga",
+    legs="Assiduity Pants",
   }
   sets.passive_refresh.daytime = {
     feet="Serpentes Sabots",
@@ -564,7 +565,7 @@ function init_gear_sets()
     head="Scholar's Mortarboard",
     body="Shango Robe",
     hands="Savant's Bracers +2",
-    legs="Savant's Pants +2",
+    legs="Assiduity Pants",
     feet="Savant's Loafers +2",
     neck="Twilight Torque",
     ear1="Hecate's Earring",
