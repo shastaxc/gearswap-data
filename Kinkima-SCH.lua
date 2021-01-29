@@ -126,12 +126,16 @@ function init_gear_sets()
 
   -- Fast cast sets for spells
   sets.precast.FC = {
-  --    /RDM --15
     ammo="Incantor Stone", --2
-    head=gear.Psycloth_FC_head, --10
+    head=gear.Psycloth_D_head, --10
     body="Shango Robe", --8
-    legs=gear.Psycloth_FC_legs, --7
+    legs=gear.Psycloth_D_legs, --7
     back="Swith Cape +1", --4
+    -- neck="Voltsurge Torque", --4
+    -- waist="Embla Sash", --5
+    -- ear2="Loquacious Earring", --2
+
+    -- Ideal:
     -- head="Amalric Coif +1", --11
     -- body=gear.Merl_FC_body, --13
     -- hands="Acad. Bracers +3", --9
@@ -141,9 +145,9 @@ function init_gear_sets()
     -- ear1="Malignance Earring", --4
     -- ear2="Enchntr. Earring +1", --2
     -- ring1="Kishar Ring", --4
-    -- ring2="Weather. Ring +1", --5/(3)
+    -- ring2="Defending Ring",
     -- back=gear.SCH_FC_Cape, --10
-    -- waist="Embla Sash", --5
+    -- waist="Shinjutsu-no-Obi +1", --5
   }
 
   sets.precast.FC.Grimoire = {
@@ -156,23 +160,17 @@ function init_gear_sets()
   sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, {})
 
   sets.precast.FC.Cure = set_combine(sets.precast.FC, {
-    ear1="Mendicant's Earring", --5
-    -- feet="Kaykaus Boots +1", --7
-    -- ring1="Lebeche Ring", --(2)
+    ear2="Mendicant's Earring", --5
   })
 
   sets.precast.FC.Curaga = sets.precast.FC.Cure
   sets.precast.FC.Impact = set_combine(sets.precast.FC, {
     -- head=empty,
     -- body="Twilight Cloak",
-    -- waist="Shinjutsu-no-Obi +1",
   })
   sets.precast.FC.Dispelga = set_combine(sets.precast.FC, {
     -- main="Daybreak",
     -- sub="Ammurapi Shield",
-  })
-  sets.precast.Storm = set_combine(sets.precast.FC, {
-    -- ring2="Stikini Ring +1",
   })
 
 
@@ -209,22 +207,40 @@ function init_gear_sets()
     -- waist="Sacro Cord",
   })
 
-
+  -- Max MP
   sets.precast.WS['Myrkr'] = {
-    -- ammo="Ghastly Tathlum +1",
-    -- head="Pixie Hairpin +1",
-    -- body="Amalric Doublet +1",
-    -- hands="Kaykaus Cuffs +1",
-    -- legs="Amalric Slops +1",
-    -- feet="Kaykaus Boots +1",
-    -- neck="Orunmila's Torque",
-    -- ear1="Loquacious Earring",
-    -- ear2="Etiolation Earring",
-    -- ring1={name="Fenrir Ring +1", bag="wardrobe3"},
-    -- ring2="Metamor. Ring +1",
-    -- back="Fi Follet Cape +1",
-    -- waist="Shinjutsu-no-Obi +1",
-  } -- Max MP
+    legs=gear.Psycloth_D_legs,     -- 109
+    -- ammo=" Strobilus",             --  45
+    -- head="Pixie Hairpin +1",       -- 120
+    -- body="Academic's Gown +3",     -- 173
+    -- hands="Thrift Gloves +1 ",     --  99
+    -- feet=gear.Psycloth_A_feet,     -- 124
+    -- neck="Dualism Collar +1",      --  60
+    -- ear1="Evans Earring",          --  50
+    -- ear2="Etiolation Earring",     --  50
+    -- ring1="Persis ring ",          --  80
+    -- ring2="Mephitas's Ring",       -- 100
+    -- back="Tantalic Cape ",         --  50
+    -- waist="Shinjutsu-no-Obi +1",   --  85
+    -- 1145 MP
+
+    -- Ideal:
+    -- ammo=" Strobilus",             --  45
+    -- head="Pixie Hairpin +1",       -- 120
+    -- body="Academic's Gown +3",     -- 173
+    -- hands="Kaykaus Cuffs +1",      -- 100
+    -- legs="Amalric Slops +1",       -- 185; Path A, B, or D
+    -- feet=gear.Psycloth_A_feet,     -- 124
+    -- neck="Dualism Collar +1",      --  60
+    -- ear1="Evans Earring",          --  50
+    -- ear2="Etiolation Earring",     --  50
+    -- ring1="Mephitas's Ring +1",    -- 110
+    -- ring2="Mephitas's Ring",       -- 100
+    -- back="Tantalic Cape ",         --  50
+    -- back=SCH_MP_Cape,              --  80
+    -- waist="Shinjutsu-no-Obi +1",   --  85
+    -- 1332 MP
+  }
 
 
   ------------------------------------------------------------------------------------------------
