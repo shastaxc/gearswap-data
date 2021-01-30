@@ -969,20 +969,21 @@ function job_post_precast(spell, action, spellMap, eventArgs)
       equip(sets.TreasureHunter)
     end
   end
-  if spell.type == "WeaponSkill" then
+  if spell.type == 'WeaponSkill' then
     if state.Buff['Sneak Attack'] == true or state.Buff['Trick Attack'] == true then
       equip(sets.precast.WS.Critical)
     end
-  end
-  if spell.type == 'WeaponSkill' then
     if spell.english == 'Aeolian Edge' then
       -- Matching double weather (w/o day conflict).
       if spell.element == world.weather_element and (get_weather_intensity() == 2 and spell.element ~= elements.weak_to[world.day_element]) then
         equip({waist="Hachirin-no-Obi"})
       end
     end
+    if buffactive['Reive Mark'] then
+      equip(sets.Reive)
+    end
   end
-  
+
   -- If slot is locked, keep current equipment on
   if locked_neck then equip({ neck=player.equipment.neck }) end
   if locked_ear1 then equip({ ear1=player.equipment.ear1 }) end

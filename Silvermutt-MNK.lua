@@ -877,8 +877,8 @@ end
 
 -- Run after the general precast() is done.
 function job_post_precast(spell, action, spellMap, eventArgs)
-  if spell.type == 'WeaponSkill' and state.DefenseMode.current == 'None' then
-    if state.Buff.Impetus and (spell.english == "Ascetic's Fury" or spell.english == "Victory Smite") then
+  if spell.type == 'WeaponSkill' then
+    if state.Buff.Impetus and state.DefenseMode.current == 'None' and (spell.english == "Ascetic's Fury" or spell.english == "Victory Smite") then
       -- Need 6 hits at capped dDex, or 9 hits if dDex is uncapped, for Tantra to tie or win.
       if (state.OffenseMode.current ~= 'MidAcc' and state.OffenseMode.current ~= 'HighAcc' and info.impetus_hit_count > 5)
           or (info.impetus_hit_count > 8) then
@@ -904,6 +904,10 @@ function job_post_precast(spell, action, spellMap, eventArgs)
       elseif spell.element == world.day_element or spell.element == world.weather_element then
         equip({waist="Hachirin-no-Obi"})
       end
+    end
+    
+    if buffactive['Reive Mark'] then
+      equip(sets.Reive)
     end
   end
   

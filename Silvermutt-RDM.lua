@@ -1348,6 +1348,12 @@ function job_post_precast(spell, action, spellMap, eventArgs)
     cancel_spell()
     send_command('@input /ma "Phalanx" <me>')
   end
+
+  if spell.type == 'WeaponSkill' then
+    if buffactive['Reive Mark'] then
+      equip(sets.Reive)
+    end
+  end
   
   -- If slot is locked, keep current equipment on
   if locked_neck then equip({ neck=player.equipment.neck }) end
