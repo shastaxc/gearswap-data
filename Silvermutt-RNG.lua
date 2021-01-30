@@ -266,8 +266,7 @@ function init_gear_sets()
     -- feet="Orion Socks +3"
   }
   sets.precast.JA['Shadowbind'] = {
-    hands="Orion Bracers +2"
-    -- hands="Orion Bracers +3"
+    hands="Orion Bracers +3"
   }
   sets.precast.JA['Sharpshot'] = {
     legs="Orion Braccae +1"
@@ -830,16 +829,16 @@ function init_gear_sets()
     -- Goal:
     -- head="Orion Beret +3", --39 [0] 47/34 <0> {0} (0)
     -- body="Orion Jerkin +3", --40 [8] 60/41 <0> {0} (0)
-    -- hands="Orion Bracers +3", --27 [0] 48/0 <0> {0} (0)
-    -- legs="Malignance Tights", --42 [10] 50/0 <0> {5} (0)
+    hands="Orion Bracers +3", --27 [0] 48/0 <0> {0} (0)
+    legs="Malignance Tights", --42 [10] 50/0 <0> {5} (0)
     -- feet="Orion Socks +3", --49 [0] 54/36 <0> {0} (0)
     -- neck="Scout's Gorget +2", --25 [7] 25/0 <0> {10} (0)
-    -- ear1="Telos Earring", --0 [5] 10/10 <0> {0} (0)
-    -- ear2="Beyla Earring", --0 [0] 15/0 <0> {0} (0)
-    -- ring1="Regal Ring", --10 [0] 0/20 <0> {0} (0)
-    -- ring2="Hajduk Ring +1", --0 [0] 17/0 <0> {0} (0)
-    -- back=gear.RNG_RA_Cape, --30 [10] 20/20 <0> {0} (0)
-    -- waist="Kwahu Kachina Belt +1" --8 [0] 20/0 <5> {0} (0)
+    ear1="Telos Earring", --0 [5] 10/10 <0> {0} (0)
+    ear2="Beyla Earring", --0 [0] 15/0 <0> {0} (0)
+    ring1="Regal Ring", --10 [0] 0/20 <0> {0} (0)
+    ring2="Hajduk Ring +1", --0 [0] 17/0 <0> {0} (0)
+    back=gear.RNG_RA_Cape, --30 [10] 20/20 <0> {0} (0)
+    waist="Kwahu Kachina Belt +1" --8 [0] 20/0 <5> {0} (0)
     -- Includes set bonus 15 racc from orion + regal
     -- 270 AGI [40 STP] 426 racc / 161 ratt <5 crit> {15 dmg limit} (0 Recycle)
 
@@ -1295,8 +1294,7 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.buff.Barrage = {
-    hands="Orion Bracers +2"
-    -- hands="Orion Bracers +3"
+    hands="Orion Bracers +3"
   }
   sets.buff['Velocity Shot'] = set_combine(sets.midcast.RA, {
     -- body="Amini Caban +1",
