@@ -119,9 +119,9 @@ function init_gear_sets()
     main="Siriti", --1
     sub="Genmei Shield", --10/0
     ear1="Savant's Earring", --1
+    waist="Embla Sash", --5
     -- head="Acad. Mortar. +3", --4
     -- body="Peda. Gown +3", --5
-    -- waist="Embla Sash", --5
   }
 
   -- Fast cast sets for spells
@@ -131,8 +131,8 @@ function init_gear_sets()
     body="Shango Robe", --8
     legs=gear.Psycloth_D_legs, --7
     back="Swith Cape +1", --4
+    waist="Embla Sash", --5
     -- neck="Voltsurge Torque", --4
-    -- waist="Embla Sash", --5
     -- ear2="Loquacious Earring", --2
 
     -- Ideal:
@@ -329,6 +329,7 @@ function init_gear_sets()
   }
 
   sets.midcast.EnhancingDuration = {
+    waist="Embla Sash",
     -- main="Musa",
     -- sub="Khonsu",
     -- head=gear.Telchine_ENH_head,
@@ -336,7 +337,6 @@ function init_gear_sets()
     -- hands=gear.Telchine_ENH_hands,
     -- legs=gear.Telchine_ENH_legs,
     -- feet=gear.Telchine_ENH_feet,
-    -- waist="Embla Sash",
   }
 
   sets.midcast.Regen = set_combine(sets.midcast.EnhancingDuration, {
