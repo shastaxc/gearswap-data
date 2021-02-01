@@ -1959,7 +1959,12 @@ end)
 
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
-  set_macro_page(1, 9)
+  -- Default macro set/book: (set, book)
+  if player.sub_job == 'DNC' then
+    set_macro_page(2, 9)
+  else
+    set_macro_page(1, 9)
+  end
 end
 
 -- Requires DistancePlus addon
