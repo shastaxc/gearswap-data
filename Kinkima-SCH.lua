@@ -578,10 +578,10 @@ function init_gear_sets()
   sets.idle = {
     main="Bolelabunga",
     sub="Genmei Shield", --10/0
-    head="Scholar's Mortarboard",
+    head="Wayfarer Circlet",
     body="Shango Robe",
-    hands="Savant's Bracers +2",
-    legs="Assiduity Pants",
+    hands="Wayfarer Cuffs",
+    legs="Wayfarer Slops",
     feet="Savant's Loafers +2",
     neck="Twilight Torque",
     ear1="Hecate's Earring",
@@ -605,7 +605,10 @@ function init_gear_sets()
 
   sets.HeavyDef = {
     sub="Genmei Shield", --10/0
+    head="Wayfarer Circlet",
     body="Shango Robe",
+    hands="Wayfarer Cuffs",
+    legs="Wayfarer Slops",
     -- main="Daybreak",
     -- ammo="Staunch Tathlum +1", --3/3
     -- head="Volte Cap",
