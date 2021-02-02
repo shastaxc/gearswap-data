@@ -563,7 +563,7 @@ function init_gear_sets()
   }
   sets.passive_refresh = {
     main="Bolelabunga",
-    legs="Assiduity Pants",
+    legs="Assiduity Pants +1",
   }
   sets.passive_refresh.daytime = {
     feet="Serpentes Sabots",
@@ -581,7 +581,7 @@ function init_gear_sets()
     head="Wayfarer Circlet",
     body="Shango Robe",
     hands="Wayfarer Cuffs",
-    legs="Wayfarer Slops",
+    legs="Assiduity Pants +1",
     feet="Savant's Loafers +2",
     neck="Twilight Torque",
     ear1="Hecate's Earring",
@@ -592,7 +592,6 @@ function init_gear_sets()
     -- head="Befouled Crown",
     -- body="Acad. Gown +3",
     -- hands="Raetic Bangles +1",
-    -- legs="Assiduity Pants +1",
     -- feet="Volte Gaiters",
     -- neck="Bathy Choker +1",
     -- ear1="Sanare Earring",
