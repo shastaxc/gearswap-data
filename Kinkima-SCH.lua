@@ -130,7 +130,7 @@ function init_gear_sets()
     head=gear.Psycloth_D_head, --10
     body="Shango Robe", --8
     legs=gear.Psycloth_D_legs, --7
-    feet="Regal Pumps +1", --7
+    feet="Regal Pumps", --4
     back="Swith Cape +1", --4
     waist="Embla Sash", --5
     -- neck="Voltsurge Torque", --4
