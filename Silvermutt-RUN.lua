@@ -105,6 +105,7 @@ function job_setup()
   blue_magic_maps.Cure = S{'Wild Carrot'}
   blue_magic_maps.Buffs = S{'Cocoon', 'Refueling'}
 
+  state.DefenseMode:set('Physical') -- Default to PDT mode
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.CastingMode:options('Normal', 'Safe')
   state.HybridMode:options('Normal', 'LightDef')
