@@ -873,20 +873,20 @@ function init_gear_sets()
 
   sets.DoubleShot = {
     head="Arcadian Beret +2",
+    body="Arcadian Jerkin +3",
     legs="Oshosi Trousers", --6
     feet="Oshosi Leggings", --3
     -- head="Arcadian Beret +3",
-    -- body="Arcadian Jerkin +3",
     -- hands="Oshosi Gloves +1", -- 5
     -- legs="Oshosi Trousers +1", --7
     -- feet="Oshosi Leggings +1", --4
   }
   sets.DoubleShot.Acc = {
     head="Arcadian Beret +2",
+    body="Arcadian Jerkin +3",
     legs="Oshosi Trousers", --6
     feet="Oshosi Leggings", --3
     -- head="Arcadian Beret +3",
-    -- body="Arcadian Jerkin +3",
     -- legs="Oshosi Trousers +1", --7
     -- feet="Oshosi Leggings +1", --4
   }
