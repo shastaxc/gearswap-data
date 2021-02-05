@@ -618,7 +618,7 @@ function init_gear_sets()
   sets.resting = {}
 
   sets.idle = {
-    ammo="Charis Feather",
+    ammo="Yamarang",
     head=gear.Adhemar_B_head,
     body="Horos Casaque +3",
     hands=gear.Adhemar_B_hands,
