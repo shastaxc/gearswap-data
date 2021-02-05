@@ -1397,8 +1397,8 @@ function job_precast(spell, action, spellMap, eventArgs)
     check_ammo(spell, action, spellMap, eventArgs)
   end
 
-  -- If using a WS and ranged weapon set to sparrowhawk, equip WSD ammo
-  if spell.type == 'WeaponSkill' and state.RangedWeaponSet.current == 'Sparrowhawk' then
+  -- If using a WSand ranged weapon set to sparrowhawk and not a ranged WS , equip WSD ammo
+  if spell.type == 'WeaponSkill' and state.RangedWeaponSet.current == 'Sparrowhawk' and not spell.skill == 'Archery' then
     equip({ammo="Hauksbok Arrow"})
   end
 end
