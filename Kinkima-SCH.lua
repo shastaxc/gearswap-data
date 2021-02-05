@@ -250,26 +250,53 @@ function init_gear_sets()
 
   sets.midcast.FastRecast = sets.precast.FC
 
+  -- Prioritize: CPII > CP > Heal Skill, MND, VIT (to cap) > FC, -Enmity
+  -- Cap at 700 power; Power = floor(MND÷2) + floor(VIT÷4) + Healing Magic Skill
+  -- Mithra SCH Lv99 Base MND = ???
+  -- Mithra SCH Lv99 Base VIT = ???
+  -- Mithra SCH Lv99 Base Healing Magic Skill = ???
   sets.midcast.Cure = {
     main="Arka IV", --24
     hands="Serpentes Cuffs", -- Set: 5
     feet="Serpentes Sabots", -- Set: 5
     ear1="Mendicant's Earring", --5
-    -- main="Daybreak", --30
-    -- sub="Sors Shield", --3/(-5)
-    -- ammo="Esper Stone +1", --0/(-5)
-    -- head="Kaykaus Mitra +1", --11(+2)/(-6)
-    -- body="Kaykaus Bliaut +1", --(+4)/(-6)
-    -- hands="Peda. Bracers +3", --(+3)/(-7)
-    -- legs="Kaykaus Tights +1", --11(+2)/(-6)
-    -- feet="Kaykaus Boots +1", --11(+2)/(-12)
-    -- neck="Incanter's Torque",
-    -- ear1="Beatific Earring",
-    -- ear2="Meili Earring",
-    -- ring1="Lebeche Ring", --3/(-5)
-    -- ring2="Menelaus's Ring",
-    -- back=gear.SCH_Cure_Cape, --10
-    -- waist="Bishop's Sash",
+
+    -- Cheap set
+    -- main="Daybreak",              -- __, 30, __, 30, __, __
+    -- sub="Ammurapi Shield",        -- __, __, __, 13, __, __
+    -- ammo="Incantor Stone",        -- __, __, __, __, __,  2
+    -- head=gear.Vanya_B_head,       -- __, 10, 20, 27, 18,  7
+    -- body=gear.Vanya_B_body,       -- __, __, 20, 36, 23,  7
+    -- hands=gear.Vanya_B_hands,     -- __, __, 20, 33, 25,  7
+    -- legs=gear.Vanya_B_legs,       -- __, __, 20, 34, 12,  7
+    -- feet=gear.Vanya_B_feet,       -- __,  5, 40, 19, 10,  7
+    -- neck="Incanter's Torque",     -- __, __, 10, __, __, __
+    -- ear1="Regal Earring",         -- __, __, __, 10, __, __
+    -- ear2="Meili Earring",         -- __, __, 10, __, __, __
+    -- ring1="Sirona's Ring",        -- __, __, 10,  3,  3, __
+    -- ring2="Menelaus's Ring",      -- __,  5, 15, __, __,-10
+    -- back=gear.SCH_FC_Cape,        -- __, __, __, 30, __, 10
+    -- waist="Luminary Sash",        -- __, __, __, 10, __, __
+    -- 0 CPII, 50 CP, 165 Heal Skill, 245 MND, 91 VIT, 37 FC
+
+    -- Ideal
+    -- main="Gada",               -- __, 18, 18, 16, __,  6
+    -- sub="Ammurapi Shield",     -- __, __, __, 13, __, __
+    -- ammo="Incantor Stone",     -- __, __, __, __, __,  2
+    -- head=gear.Kaykaus_A_head,  -- __, 11, 16, 31, 14, __
+    -- body=gear.Kaykaus_A_body,  --  4, __, __, 45, 20, __
+    -- hands="Peda. Bracers +3",  --  3, __, 19, 46, 35, __
+    -- legs=gear.Kaykaus_A_legs,  -- __, 11, __, 42, 12,  7
+    -- feet=gear.Kaykaus_A_feet,  -- __, 11, __, 31, 10, __
+    -- neck="Incanter's Torque",  -- __, __, 10, __, __, __
+    -- ear1="Regal Earring",      -- __, __, __, 10, __, __
+    -- ear2="Meili Earring",      -- __, __, 10, __, __, __
+    -- ring1="Sirona's Ring",     -- __, __, 10,  3,  3, __
+    -- ring2="Haoma's Ring",      -- __, __,  8, __, __, __
+    -- back=gear.SCH_FC_Cape,     -- __, __, __, 30, __, 10
+    -- waist="Luminary Sash",     -- __, __, __, 10, __, __
+    -- Kaykaus set bonus          --  8, __, __, __, __, __
+    -- 15 CPII, 51 CP, 91 Heal Skill, 277 MND, 94 VIT, 25 FC
   }
 
   sets.midcast.CureWeather = set_combine(sets.midcast.Cure, {

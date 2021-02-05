@@ -115,7 +115,6 @@ function define_global_sets()
   gear.Psycloth_D_legs = { name="Psycloth Lappas", augments={'MP+80','Mag. Acc.+15','"Fast Cast"+7',}}
 
   -- Ambuscade Capes
-  gear.SCH_Cure_Cape = {} --MND, Cure pot
   gear.SCH_MAB_Cape = {} --INT, MAB
   gear.SCH_FC_Cape = {} --MND, FC
 
