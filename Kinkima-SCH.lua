@@ -250,7 +250,7 @@ function init_gear_sets()
 
   sets.midcast.FastRecast = sets.precast.FC
 
-  -- Prioritize: CPII > CP > Heal Skill, MND, VIT (to cap) > FC, -Enmity
+  -- Prioritize: CPII > CP > Heal Skill, MND, VIT (to cap) > FC
   -- Cap at 700 power; Power = floor(MND÷2) + floor(VIT÷4) + Healing Magic Skill
   -- Mithra SCH Lv99 MND = 95
   -- Mithra SCH Lv99 VIT = 91
@@ -293,16 +293,52 @@ function init_gear_sets()
   }
 
   sets.midcast.CureWeather = set_combine(sets.midcast.Cure, {
-    -- main="Chatoyant Staff", --10
-    -- sub="Khonsu", --0/(-5)
-    -- waist="Hachirin-no-Obi",
+    -- main="Chatoyant Staff",    -- __, 10, __,  5,  5, __
+    -- sub="Enki Strap",          -- __, __, __, 10, __, __
+    -- ammo="Incantor Stone",     -- __, __, __, __, __,  2
+    -- head=gear.Kaykaus_A_head,  -- __, 11, 16, 31, 14, __
+    -- body=gear.Kaykaus_A_body,  --  4, __, __, 45, 20, __
+    -- hands="Peda. Bracers +3",  --  3, __, 19, 46, 35, __
+    -- legs=gear.Kaykaus_A_legs,  -- __, 11, __, 42, 12,  7
+    -- feet=gear.Kaykaus_A_feet,  -- __, 11, __, 31, 10, __
+    -- neck="Incanter's Torque",  -- __, __, 10, __, __, __
+    -- ear1="Malignance Earring", -- __, __, __,  8, __,  4
+    -- ear2="Meili Earring",      -- __, __, 10, __, __, __
+    -- ring1="Sirona's Ring",     -- __, __, 10,  3,  3, __
+    -- ring2="Stikini Ring +1",   -- __, __,  8,  8, __, __
+    -- back=gear.SCH_Cure_Cape,   -- __, 10, __, 30, __, __
+    -- waist="Hachirin-no-Obi",   -- __, __, __, __, __, __
+    -- Kaykaus set bonus          --  8, __, __, __, __, __
+    -- 15 CPII, 53 CP, 73 Heal Skill, 259 MND, 99 VIT, 13 FC
+    -- Plus minimum of 20% weather bonus
+    -- 683 Power
   })
 
+  -- Prioritize: CPII > CP > Heal Skill, MND, VIT (to cap) > FC
+  -- Cap at 700 power; Power = 3×MND + VIT + 3×floor(Healing Magic Skill÷5)
+  -- Mithra SCH Lv99 MND = 95
+  -- Mithra SCH Lv99 VIT = 91
+  -- Mithra SCH Lv99 Healing Magic Skill = 386
   sets.midcast.Curaga = set_combine(sets.midcast.Cure, {
-    -- neck="Nuna Gorget +1",
-    -- ring1={name="Stikini Ring +1", bag="wardrobe3"},
-    -- ring2="Metamor. Ring +1",
-    -- waist="Luminary Sash",
+    -- Ideal
+    -- main="Gada",               -- __, 18, 18, 16, __,  6
+    -- sub="Chanter's Shield",    -- __, __, __, __, __,  3
+    -- ammo="Incantor Stone",     -- __, __, __, __, __,  2
+    -- head=gear.Kaykaus_A_head,  -- __, 11, 16, 31, 14, __
+    -- body=gear.Kaykaus_A_body,  --  4, __, __, 45, 20, __
+    -- hands="Peda. Bracers +3",  --  3, __, 19, 46, 35, __
+    -- legs=gear.Kaykaus_A_legs,  -- __, 11, __, 42, 12,  7
+    -- feet=gear.Kaykaus_A_feet,  -- __, 11, __, 31, 10, __
+    -- neck="Nuna Gorget +1",     -- __, __, __,  9, __, __
+    -- ear1="Malignance Earring", -- __, __, __,  8, __,  4
+    -- ear2="Lifestorm Earring",  -- __, __, __,  4, __, __
+    -- ring1="Metamorph Ring +1", -- __, __, __, 16, __, __
+    -- ring2="Stikini Ring +1",   -- __, __,  8,  8, __, __
+    -- back=gear.SCH_FC_Cape,     -- __, __, __, 30, __, 10
+    -- waist="Luminary Sash",     -- __, __, __, 10, __, __
+    -- Kaykaus set bonus          --  8, __, __, __, __, __
+    -- 15 CPII, 51 CP, 61 Heal Skill, 296 MND, 91 VIT, 32 FC
+    -- 1622 Power
   })
 
   sets.midcast.StatusRemoval = {
