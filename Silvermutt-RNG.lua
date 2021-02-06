@@ -1422,8 +1422,8 @@ function job_post_precast(spell, action, spellMap, eventArgs)
       elseif spell.target.distance < (8 + spell.target.model_size) then
         equip({waist="Hachirin-no-Obi"})
         -- equip({waist="Orpheus's Sash"})
-      -- Match day or weather.
-      elseif spell.element == world.day_element or spell.element == world.weather_element then
+      -- Match day or weather without conflict.
+      elseif (spell.element == world.day_element and spell.element ~= elements.weak_to[world.weather_element]) or (spell.element == world.weather_element and spell.element ~= elements.weak_to[world.day_element]) then
         equip({waist="Hachirin-no-Obi"})
       end
     end

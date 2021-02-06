@@ -92,6 +92,8 @@ function job_setup()
   DW_needed = 0 -- Do not modify
   DW = false -- Do not modify
 
+  elemental_ws = S{'Aeolian Edge'}
+
   state.Buff['Climactic Flourish'] = buffactive['climactic flourish'] or false
   state.Buff['Sneak Attack'] = buffactive['sneak attack'] or false
 
@@ -1059,6 +1061,27 @@ end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
   if spell.type == "WeaponSkill" then
+    -- Equip obi if weather/day matches for WS.
+    if elemental_ws:contains(spell.english) then
+      -- Matching double weather (w/o day conflict).
+      if spell.element == world.weather_element and (get_weather_intensity() == 2 and spell.element ~= elements.weak_to[world.day_element]) then
+        equip({waist="Hachirin-no-Obi"})
+      -- Target distance under 1.7 yalms.
+      elseif spell.target.distance < (1.7 + spell.target.model_size) then
+        equip({waist="Hachirin-no-Obi"})
+        -- equip({waist="Orpheus's Sash"})
+      -- Matching day and weather.
+      elseif spell.element == world.day_element and spell.element == world.weather_element then
+        equip({waist="Hachirin-no-Obi"})
+      -- Target distance under 8 yalms.
+      elseif spell.target.distance < (8 + spell.target.model_size) then
+        equip({waist="Hachirin-no-Obi"})
+        -- equip({waist="Orpheus's Sash"})
+      -- Match day or weather without conflict.
+      elseif (spell.element == world.day_element and spell.element ~= elements.weak_to[world.weather_element]) or (spell.element == world.weather_element and spell.element ~= elements.weak_to[world.day_element]) then
+        equip({waist="Hachirin-no-Obi"})
+      end
+    end
     if state.Buff['Sneak Attack'] == true then
       equip(sets.precast.WS.SneakAttack)
     end

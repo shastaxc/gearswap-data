@@ -83,6 +83,8 @@ function job_setup()
   -- Unblinkable JA IDs for actions that always have TH: Quick/Box/Stutter Step, Desperate/Violent Flourish
   info.default_u_ja_ids = S{201, 202, 203, 205, 207}
 
+  elemental_ws = S{'Aeolian Edge'}
+
   state.Buff['Sneak Attack'] = buffactive['sneak attack'] or false
   state.Buff['Trick Attack'] = buffactive['trick attack'] or false
   state.Buff['Feint'] = buffactive['feint'] or false
@@ -973,9 +975,24 @@ function job_post_precast(spell, action, spellMap, eventArgs)
     if state.Buff['Sneak Attack'] == true or state.Buff['Trick Attack'] == true then
       equip(sets.precast.WS.Critical)
     end
-    if spell.english == 'Aeolian Edge' then
+    -- Equip obi if weather/day matches for WS.
+    if elemental_ws:contains(spell.english) then
       -- Matching double weather (w/o day conflict).
       if spell.element == world.weather_element and (get_weather_intensity() == 2 and spell.element ~= elements.weak_to[world.day_element]) then
+        equip({waist="Hachirin-no-Obi"})
+      -- Target distance under 1.7 yalms.
+      elseif spell.target.distance < (1.7 + spell.target.model_size) then
+        equip({waist="Hachirin-no-Obi"})
+        -- equip({waist="Orpheus's Sash"})
+      -- Matching day and weather.
+      elseif spell.element == world.day_element and spell.element == world.weather_element then
+        equip({waist="Hachirin-no-Obi"})
+      -- Target distance under 8 yalms.
+      elseif spell.target.distance < (8 + spell.target.model_size) then
+        equip({waist="Hachirin-no-Obi"})
+        -- equip({waist="Orpheus's Sash"})
+      -- Match day or weather without conflict.
+      elseif (spell.element == world.day_element and spell.element ~= elements.weak_to[world.weather_element]) or (spell.element == world.weather_element and spell.element ~= elements.weak_to[world.day_element]) then
         equip({waist="Hachirin-no-Obi"})
       end
     end
