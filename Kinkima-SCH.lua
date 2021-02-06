@@ -137,6 +137,7 @@ function init_gear_sets()
     -- ear2="Loquacious Earring", --2
 
     -- Ideal:
+    -- ammo="Incantor Stone", --2
     -- head="Amalric Coif +1", --11
     -- body=gear.Merl_FC_body, --13
     -- hands="Acad. Bracers +3", --9
@@ -824,6 +825,9 @@ function job_post_precast(spell, action, spellMap, eventArgs)
   if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
 end
 
+function job_midcast(spell, action, spellMap, eventArgs)
+end
+
 -- Run after the general midcast() is done.
 function job_post_midcast(spell, action, spellMap, eventArgs)
   if spell.skill == 'Elemental Magic' then
@@ -865,15 +869,17 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
       equip(sets.Obi)
     -- Target distance under 1.7 yalms.
     elseif spell.target.distance < (1.7 + spell.target.model_size) then
-      equip({waist="Orpheus's Sash"})
+      equip(sets.Obi)
+      -- equip({waist="Orpheus's Sash"})
     -- Matching day and weather.
     elseif spell.element == world.day_element and spell.element == world.weather_element then
       equip(sets.Obi)
     -- Target distance under 8 yalms.
     elseif spell.target.distance < (8 + spell.target.model_size) then
-      equip({waist="Orpheus's Sash"})
-    -- Match day or weather.
-    elseif spell.element == world.day_element or spell.element == world.weather_element then
+      equip(sets.Obi)
+      -- equip({waist="Orpheus's Sash"})
+      -- Match day or weather without conflict.
+      elseif (spell.element == world.day_element and spell.element ~= elements.weak_to[world.weather_element]) or (spell.element == world.weather_element and spell.element ~= elements.weak_to[world.day_element]) then
       equip(sets.Obi)
     end
   end
@@ -948,7 +954,7 @@ end
 function job_get_spell_map(spell, default_spell_map)
   if spell.action_type == 'Magic' then
     if default_spell_map == 'Cure' or default_spell_map == 'Curaga' then
-      if (world.weather_element == 'Light' or world.day_element == 'Light') then
+      if (world.weather_element == 'Light' or world.day_element == 'Light' or buffactive.Aurorastorm) then
         return 'CureWeather'
       end
     elseif spell.skill == 'Enfeebling Magic' then
