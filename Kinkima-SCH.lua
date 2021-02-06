@@ -954,7 +954,7 @@ end
 function job_get_spell_map(spell, default_spell_map)
   if spell.action_type == 'Magic' then
     if default_spell_map == 'Cure' or default_spell_map == 'Curaga' then
-      if (world.weather_element == 'Light' or world.day_element == 'Light' or buffactive.Aurorastorm) then
+      if (world.weather_element == 'Light' or world.day_element == 'Light') then
         return 'CureWeather'
       end
     elseif spell.skill == 'Enfeebling Magic' then
