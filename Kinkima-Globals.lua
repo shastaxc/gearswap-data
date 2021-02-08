@@ -51,6 +51,9 @@ function define_global_sets()
   sets.ToyWeapon.Scythe = {main="Lost Sickle",sub="Tzacab Grip"}
 
   -- Augmented Weapons
+  gear.Gada_Cure = {} -- 10 MND, 6 FC
+  gear.Gada_ENH = {} -- 6 Enh Duration, 6 FC
+
   gear.Grioavolr_MND = {} -- MND, Enfeeb skill, M.Acc
   gear.Grioavolr_MP = {} -- 100 MP
   gear.Grioavolr_MB = {} --MB Dmg, MAB, M.Acc, INT

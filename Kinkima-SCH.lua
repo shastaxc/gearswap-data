@@ -274,7 +274,7 @@ function init_gear_sets()
     -- back=gear.SCH_FC_Cape,     -- __, __, __, 30, __, 10
 
     -- Ideal
-    -- main="Gada",               -- __, 18, 18, 16, __,  6
+    -- main=gear.Gada_Cure,       -- __, 18, 18, 16, __,  6
     -- sub="Chanter's Shield",    -- __, __, __, __, __,  3
     -- ammo="Incantor Stone",     -- __, __, __, __, __,  2
     -- head=gear.Kaykaus_A_head,  -- __, 11, 16, 31, 14, __
@@ -323,7 +323,7 @@ function init_gear_sets()
   -- Mithra SCH Lv99 Healing Magic Skill = 386
   sets.midcast.Curaga = set_combine(sets.midcast.Cure, {
     ammo="Incantor Stone",     -- __, __, __, __, __,  2
-    -- main="Gada",               -- __, 18, 18, 16, __,  6
+    -- main=gear.Gada_Cure,       -- __, 18, 18, 16, __,  6
     -- sub="Chanter's Shield",    -- __, __, __, __, __,  3
     -- head=gear.Kaykaus_A_head,  -- __, 11, 16, 31, 14, __
     -- body=gear.Kaykaus_A_body,  --  4, __, __, 45, 20, __
@@ -342,100 +342,115 @@ function init_gear_sets()
     -- 1622 Power
   })
 
-  sets.midcast.StatusRemoval = {
-    -- main="Musa",
-    -- sub="Khonsu",
-    -- head="Vanya Hood",
-    -- body="Vanya Robe",
-    -- hands="Peda. Bracers +3",
-    -- legs="Acad. Pants +3",
-    -- feet="Vanya Clogs",
-    -- neck="Incanter's Torque",
-    -- ear2="Meili Earring",
-    -- ring1="Haoma's Ring",
-    -- ring2="Menelaus's Ring",
-    -- waist="Bishop's Sash",
-  }
-
+  -- Removal rate = Base Rate * (1+(x/100)) * (1+(y/100))
+  -- Base rate is determined by base healing magic skill (26% @500)
+  -- x = healing skill from gear; y = cursna+ stat from gear
   sets.midcast.Cursna = set_combine(sets.midcast.StatusRemoval, {
-    -- main=gear.Gada_ENH,
-    -- sub="Ammurapi Shield",
-    -- hands="Hieros Mittens",
-    -- feet="Vanya Clogs",
-    -- neck="Debilis Medallion",
-    -- ear1="Beatific Earring",
-    -- ring2="Menelaus's Ring",
-    -- back="Oretan. Cape +1",
+    ammo="Incantor Stone",     -- __, __,  2
+    -- main="Gada",               -- 18, __,  6
+    -- sub="Chanter's Shield",    -- __, __,  3
+    -- head=gear.Vanya_B_head,    -- 20, __, __
+    -- body=gear.Vanya_B_body,    -- 20, __, __
+    -- hands=gear.Vanya_B_hands,  -- 20, __, __
+    -- legs=gear.Vanya_B_legs,    -- 20, __, __
+    -- feet=gear.Vanya_B_feet,    -- 40,  5, __
+    -- neck="Debilis Medallion",  -- __, 15, __
+    -- ear1="Beatific Earring",   --  4, __, __
+    -- ear2="Meili Earring",      -- 10, __, __
+    -- ring1="Haoma's Ring",      --  8, 15, __
+    -- ring2="Menelaus's Ring",   -- 15, 20,-10
+    -- back="Oretania's Cape +1", -- __,  5, __
+    -- waist="Bishop's Sash",     --  5, __, __
+    -- 180 Healing skill, 60 Cursna+, 1 FC
+    -- Rate @386 (assuming 20% base) = 89.6%
+    -- Rate @500 (26% base) = 116%
   })
 
+  -- Enh Magic Skill + Enh Magic Duration > Fast Cast
   sets.midcast['Enhancing Magic'] = {
-    -- main=gear.Gada_ENH,
-    -- sub="Ammurapi Shield",
-    -- ammo="Savant's Treatise",
-    -- head=gear.Telchine_ENH_head,
-    -- body="Peda. Gown +3",
-    -- hands=gear.Telchine_ENH_hands,
-    -- legs=gear.Telchine_ENH_legs,
-    -- feet=gear.Telchine_ENH_feet,
-    -- neck="Incanter's Torque",
-    -- ear1="Mimir Earring",
-    -- ear2="Andoaa Earring",
-    -- ring1={name="Stikini Ring +1", bag="wardrobe3"},
-    -- ring2={name="Stikini Ring +1", bag="wardrobe4"},
-    -- back="Fi Follet Cape +1",
-    -- waist="Olympus Sash",
+    waist="Embla Sash",            -- __, 10,  5
+    -- main=gear.Gada_ENH,            -- 18,  6,  6
+    -- sub="Ammurapi Shield",         -- __, 10, __
+    -- ammo="Savant's Treatise",      --  4, __, __
+    -- head=gear.Telchine_ENH_head,   -- __, 10, __
+    -- body="Peda. Gown +3",          -- 19, 12, __
+    -- hands=gear.Telchine_ENH_hands, -- __, 10, __
+    -- legs=gear.Telchine_ENH_legs,   -- __, 10, __
+    -- feet=gear.Kaykaus_D_feet,      -- 21, __,  4
+    -- neck="Incanter's Torque",      -- 10, __, __
+    -- ear1="Mimir Earring",          -- 10, __, __
+    -- ear2="Andoaa Earring",         --  5, __, __
+    -- ring1="Stikini Ring +1",       --  8, __, __
+    -- ring2="Stikini Ring +1",       --  8, __, __
+    -- back="Fi Follet Cape +1",      --  9, __, 10
+    -- 112 Enh Skill, 68 Enh Duration, 25 FC
   }
 
   sets.midcast.EnhancingDuration = {
-    waist="Embla Sash",
-    -- main="Musa",
-    -- sub="Khonsu",
-    -- head=gear.Telchine_ENH_head,
-    -- body="Peda. Gown +3",
-    -- hands=gear.Telchine_ENH_hands,
-    -- legs=gear.Telchine_ENH_legs,
-    -- feet=gear.Telchine_ENH_feet,
+    waist="Embla Sash",            -- 10,  5
+    -- main=gear.Musa_C,              -- 20, 10
+    -- sub="Clerisy Strap +1",        -- __,  3
+    -- head=gear.Telchine_ENH_head,   -- 10, __
+    -- body="Peda. Gown +3",          -- 12, __
+    -- hands=gear.Telchine_ENH_hands, -- 10, __
+    -- legs=gear.Telchine_ENH_legs,   -- 10, __
+    -- feet=gear.Telchine_ENH_feet,   -- 10, __
+    -- 82 Enh Duration, 18 FC
   }
 
-  sets.midcast.Regen = set_combine(sets.midcast.EnhancingDuration, {
-    -- main="Musa",
-    -- sub="Khonsu",
-    -- head="Arbatel Bonnet +1",
-    -- body=gear.Telchine_ENH_body,
-    -- hands=gear.Telchine_ENH_hands,
-    -- legs=gear.Telchine_ENH_legs,
-    -- feet=gear.Telchine_ENH_feet,
-    -- back="Bookworm's Cape",
-  })
+  -- Regen not affected by Enh Magic Skill
+  sets.midcast.Regen = {
+    main="Bolelabunga",            -- __, 10, __, __
+    sub="Genmei Shield",           -- __, __, __, __
+    waist="Embla Sash",            -- __, __, 10,  5
+    -- main=gear.Musa_C,              -- 25, __, 20, __
+    -- sub="Khonsu",                  -- __, __, __, __
+    -- head="Arbatel Bonnet +1",      -- __, 15, __, __
+    -- body=gear.Telchine_ENH_body,   -- __, __, 10, 12
+    -- hands=gear.Telchine_ENH_hands, -- __, __, 10, __
+    -- legs=gear.Telchine_ENH_legs,   -- __, __, 10, __
+    -- feet=gear.Telchine_ENH_feet,   -- __, __, 10, __
+    -- back="Bookworm's Cape",        -- 10, __, __, __
+    -- 35 Regen Potency, 15 Regen Potency %, 70 Enh Duration %, 17 Regen Duration
+  }-- 0 Regen Potency, 10 Regen Potency %, 10 Enh Duration %, 5 Regen Duration
 
-  sets.midcast.RegenDuration = set_combine(sets.midcast.EnhancingDuration, {
-    main="Bolelabunga",
-    -- head=gear.Telchine_ENH_head,
-    -- back=gear.SCH_FC_Cape,
-  })
+  sets.midcast.RegenDuration = set_combine(sets.midcast.Regen, {
+    -- head=gear.Telchine_ENH_head,   -- __, __, 10, __
+    -- back=gear.SCH_FC_Cape,         -- __, __, __, 15
+    -- 0 Regen Potency, 0 Regen Potency %, 80 Enh Duration %, 45 Regen Duration
+  })-- 0 Regen Potency, 0 Regen Potency %, 10 Enh Duration %, 5 Regen Duration
 
   sets.midcast.Haste = sets.midcast.EnhancingDuration
 
+  -- Ref Potency > Enh Duration %, Ref Duration
   sets.midcast.Refresh = set_combine(sets.midcast.EnhancingDuration, {
-    -- head="Amalric Coif +1",
-    -- waist="Gishdubar Sash",
-    -- back="Grapevine Cape",
+    -- head="Amalric Coif +1",  --  2, __, __
+    -- 2 Ref Potency, 72 Enh Duration%, 0 Ref Duration
   })
 
+  sets.midcast.RefreshSelf = set_combine(sets.midcast.Refresh, {
+    -- waist="Gishdubar Sash",  -- __, __, 20
+    -- back="Grapevine Cape",   -- __, __, 30
+    -- 2 Ref Potency, 62 Enh Duration%, 50 Ref Duration
+  })
+
+  -- Stoneskin Cap, Enh Duration
   sets.midcast.Stoneskin = set_combine(sets.midcast.EnhancingDuration, {
-    -- neck="Nodens Gorget",
-    -- waist="Siegel Sash",
+    -- neck="Nodens Gorget",    -- 30, __, __
+    -- waist="Siegel Sash",     -- 20, __, __
+    -- ear1="Earthcry Earring", -- 10, __, __
+    -- +60 Stoneskin Cap, 72% Enh Duration
   })
 
+  -- Aquaveil Count > Enh Duration
   sets.midcast.Aquaveil = set_combine(sets.midcast.EnhancingDuration, {
-    -- main="Vadose Rod",
-    -- sub="Ammurapi Shield",
-    -- ammo="Staunch Tathlum +1",
-    -- head="Amalric Coif +1",
-    -- hands="Regal Cuffs",
-    -- ear1="Halasz Earring",
-    -- ring1="Freke Ring",
-    -- waist="Emphatikos Rope",
+    -- main="Vadose Rod",           --  1, __
+    -- sub="Ammurapi Shield",       -- __, 10
+    -- head="Amalric Coif +1",      --  2, __
+    -- hands="Regal Cuffs",         --  2, 20
+    -- legs="Shedir seraweels",     --  1, __
+    -- waist="Emphatikos Rope",     --  1, __
+    -- +6 Aquaveil, 52% Enh Duration
   })
 
   sets.midcast.Storm = sets.midcast.EnhancingDuration
@@ -887,7 +902,13 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     if classes.NoSkillSpells:contains(spell.english) then
       equip(sets.midcast.EnhancingDuration)
       if spellMap == 'Refresh' then
-        equip(sets.midcast.Refresh)
+        if spell.targets.Self then
+          -- If self targeted
+          equip(sets.midcast.RefreshSelf)
+        else
+          -- If not self targeted
+          equip(sets.midcast.Refresh)
+        end
       end
     end
     if spellMap == "Regen" and state.RegenMode.value == 'Duration' then
