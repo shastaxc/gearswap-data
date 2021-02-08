@@ -58,6 +58,8 @@ function define_global_sets()
   gear.Grioavolr_MP = {} -- 100 MP
   gear.Grioavolr_MB = {} --MB Dmg, MAB, M.Acc, INT
 
+  gear.Musa_C = {} --Regen potency +25, Cure potency +25%, Fast Cast +10%
+
   -- Acro
 
   -- Adhemar
@@ -101,11 +103,11 @@ function define_global_sets()
   -- Valorous
 
   -- Vanya
-  gear.Vanya_B_head = {} -- 7 Cure Spellcasting Time-
-  gear.Vanya_B_body = {} -- 7 Cure Spellcasting Time-
-  gear.Vanya_B_hands = {} -- 7 Cure Spellcasting Time-
-  gear.Vanya_B_legs = {} -- 7 Cure Spellcasting Time-
-  gear.Vanya_B_feet = {} -- 7 Cure Spellcasting Time-
+  gear.Vanya_B_head = {} -- 20 healing magic skill, 7 Cure Spellcasting Time-
+  gear.Vanya_B_body = {} -- 20 healing magic skill, 7 Cure Spellcasting Time-
+  gear.Vanya_B_hands = {} -- 20 healing magic skill, 7 Cure Spellcasting Time-
+  gear.Vanya_B_legs = {} -- 20 healing magic skill, 7 Cure Spellcasting Time-
+  gear.Vanya_B_feet = {} -- 20 healing magic skill, 7 Cure Spellcasting Time-
 
   -- Gendewitha
   gear.Gende_SongFC_head = {} -- 5 Song Spellcasting Time-, 3 Song Recast Delay-, 4 PDT
@@ -113,9 +115,20 @@ function define_global_sets()
   gear.Gende_SongFC_legs = {} -- 5 Song Spellcasting Time-, 3 Song Recast Delay-, 4 PDT
   gear.Gende_SongFC_feet = {} -- 5 Song Spellcasting Time-, 3 Song Recast Delay-, 4 PDT
 
+  -- Kaykaus
+  gear.Kaykaus_A_body = {}
+  gear.Kaykaus_A_legs = {}
+  gear.Kaykaus_A_feet = {}
+
+  gear.Kaykaus_D_head = {}
+  gear.Kaykaus_D_body = {}
+  gear.Kaykaus_D_legs = {}
+  gear.Kaykaus_D_feet = {}
+
   -- Psycloth
   gear.Psycloth_D_head = { name="Psycloth Tiara", augments={'Mag. Acc.+20','"Fast Cast"+10','INT+7',}}
   gear.Psycloth_D_legs = { name="Psycloth Lappas", augments={'MP+80','Mag. Acc.+15','"Fast Cast"+7',}}
+  gear.Psycloth_A_feet = {}
 
   -- Ambuscade Capes
   gear.SCH_Cure_Cape = {} --MND, Cure Potency
