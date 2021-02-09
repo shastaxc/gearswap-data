@@ -344,7 +344,7 @@ function init_gear_sets()
   }
 
   -- Prioritize: CPII > CP > Heal Skill, MND, VIT (to cap) > FC > -Enmity
-  -- Cap at 700 power; Power = 3×MND + VIT + 3×floor(Healing Magic Skill÷5)
+  -- No power cap; Power = 3×MND + VIT + 3×floor(Healing Magic Skill÷5)
   -- Mithra SCH Lv99 MND = 95
   -- Mithra SCH Lv99 VIT = 91
   -- Mithra SCH Lv99 Healing Magic Skill = 386
