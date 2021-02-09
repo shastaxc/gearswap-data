@@ -949,6 +949,10 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- Job-specific hooks for standard casting events.
 -------------------------------------------------------------------------------------------------------------------
+
+function job_pretarget(spell, action, spellMap, eventArgs)
+end
+
 function job_precast(spell, action, spellMap, eventArgs)
   silibs.cancel_outranged_ws(spell, eventArgs)
   silibs.cancel_on_blocking_status(spell, eventArgs)
@@ -993,6 +997,9 @@ function job_post_precast(spell, action, spellMap, eventArgs)
       elseif (spell.element == world.day_element and spell.element ~= elements.weak_to[world.weather_element]) or (spell.element == world.weather_element and spell.element ~= elements.weak_to[world.day_element]) then
         equip({waist="Hachirin-no-Obi"})
       end
+    end
+    if state.TreasureMode.value == 'Fulltime' then
+      equip(sets.TreasureHunter)
     end
     if buffactive['Reive Mark'] then
       equip(sets.Reive)
@@ -1372,10 +1379,6 @@ function gearinfo(cmdParams, eventArgs)
       job_update()
     end
   end
-end
-
-function job_pretarget(spell, action, spellMap, eventArgs)
-  
 end
 
 -- State buff checks that will equip buff gear and mark the event as handled.
