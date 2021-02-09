@@ -130,7 +130,7 @@ function init_gear_sets()
     head=gear.Psycloth_D_head, --10
     body="Shango Robe", --8
     legs=gear.Psycloth_D_legs, --7
-    feet="Regal Pumps", --4
+    feet="Peda. Loafers", --5
     back="Swith Cape +1", --4
     waist="Embla Sash", --5
     -- neck="Voltsurge Torque", --4
@@ -646,6 +646,7 @@ function init_gear_sets()
   sets.midcast.Storm = sets.midcast.EnhancingDuration
 
   sets.midcast.Stormsurge = set_combine(sets.midcast.Storm, {
+    feet="Peda. Loafers",
     -- feet="Peda. Loafers +3",
   })
 
@@ -908,6 +909,7 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.engaged = {
+    feet="Peda. Loafers",
     -- head="Peda. M.Board +3",
     -- body="Jhakri Robe +2",
     -- hands="Raetic Bangles +1",
@@ -957,9 +959,11 @@ function init_gear_sets()
     -- legs="Arbatel Pants +1",
   }
   sets.buff['Celerity'] = {
+    feet="Peda. Loafers",
     -- feet="Peda. Loafers +3",
   }
   sets.buff['Alacrity'] = {
+    feet="Peda. Loafers",
     -- feet="Peda. Loafers +3",
   }
   sets.buff['Klimaform'] = {
