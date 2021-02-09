@@ -112,12 +112,14 @@ function init_gear_sets()
     -- legs="Peda. Pants +3",
   }
   sets.precast.JA['Enlightenment'] = {
+    body="Peda. Gown",
     -- body="Peda. Gown +3",
   }
   -- Maximize HP+ (MP-to-HP conversion doesn't work)
   sets.precast.JA['Sublimation'] = {
     main="Siriti", --1
     sub="Genmei Shield", --10/0
+    body="Peda. Gown", --2
     ear1="Savant's Earring", --1
     waist="Embla Sash", --5
     -- head="Acad. Mortar. +3", --4
@@ -197,6 +199,7 @@ function init_gear_sets()
   }
 
   sets.precast.WS['Omniscience'] = set_combine(sets.precast.WS, {
+    body="Peda. Gown",
     -- ammo="Pemphredo Tathlum",
     -- head="Pixie Hairpin +1",
     -- body="Peda. Gown +3",
@@ -558,6 +561,7 @@ function init_gear_sets()
 
   -- Enh Magic Skill + Enh Magic Duration > Fast Cast
   sets.midcast['Enhancing Magic'] = {
+    body="Peda. Gown",             -- 12, __, __
     waist="Embla Sash",            -- __, 10,  5
     -- main=gear.Gada_ENH,            -- 18,  6,  6
     -- sub="Ammurapi Shield",         -- __, 10, __
