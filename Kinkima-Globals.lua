@@ -51,8 +51,12 @@ function define_global_sets()
   sets.ToyWeapon.Scythe = {main="Lost Sickle",sub="Tzacab Grip"}
 
   -- Augmented Weapons
+  gear.Akademos_A = {} -- MP+80, INT+20, MAB+20
+
   gear.Gada_Cure = {} -- 10 MND, 6 FC
   gear.Gada_ENH = {} -- 6 Enh Duration, 6 FC
+  gear.Gada_MND_MAcc = {} -- 10 MND, 25 MAcc
+  gear.Gada_INT_MAcc = {} -- 10 INT, 25 MAcc
 
   gear.Grioavolr_MND = {} -- MND, Enfeeb skill, M.Acc
   gear.Grioavolr_MP = {} -- 100 MP
@@ -81,7 +85,8 @@ function define_global_sets()
 
   -- Merlinic
   gear.Merl_FC_body = {} --7 FC
-  gear.Merl_MB_body = {} --MB Dmg, MAB, M.Acc, INT
+  gear.Merl_MB_body = {} --10 MB Dmg, 40 MAB, 40 M.Acc, 10 INT
+  gear.Merl_MB_feet = {} --10 MB Dmg, 40 MAB, 40 M.Acc, 10 INT
 
   -- Taeon
   gear.Taeon_FC_body = { name="Taeon Tabard", augments={'DEF+17','"Fast Cast"+5','Phalanx +3',}}
@@ -134,6 +139,9 @@ function define_global_sets()
   gear.SCH_Cure_Cape = {} --MND, Cure Potency
   gear.SCH_MAB_Cape = {} --INT, MAB
   gear.SCH_FC_Cape = {} --MND, FC
+  gear.SCH_INT_MAcc_Cape = {name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc+10','"Fast Cast"+10','Mag. Evasion+15',}}
+  gear.SCH_MND_MAcc_Cape = {name="Lugh's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc+10','"Fast Cast"+10','Mag. Evasion+15',}}
+  gear.SCH_MP_Cape = {} --MP
 
   -- Misc.
   gear.CP_Cape = {}

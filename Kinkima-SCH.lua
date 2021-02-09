@@ -138,7 +138,7 @@ function init_gear_sets()
     -- neck="Voltsurge Torque", --4
     -- ear2="Loquacious Earring", --2
 
-    -- Ideal:
+    -- Great:
     -- ammo="Incantor Stone", --2
     -- head="Amalric Coif +1", --11
     -- body=gear.Merl_FC_body, --13
@@ -152,16 +152,41 @@ function init_gear_sets()
     -- ring2="Defending Ring",
     -- back=gear.SCH_FC_Cape, --10
     -- waist="Shinjutsu-no-Obi +1", --5
+
+    -- Ideal:
+    -- main="Hvergelmir", --50
+    -- sub="Khonsu",
+    -- body="Pinga Tunic +1", --15
+    -- back=gear.SCH_FC_Cape, --10
+    -- waist="Shinjutsu-no-Obi +1", --5
   }
 
+  -- Grimoire casting bonuses multiply separately from FC, allowing
+  -- breaking the normal 80% cast time reduction cap.
+  -- Time to cast = Base Cast Time X (1 - FC gear/traits)x(1 - magian staff cast bonus)x(1 - Grimoire reduction)
   sets.precast.FC.Grimoire = {
     -- head="Peda. M.Board +3",
     -- feet="Acad. Loafers +3",
+
+    -- If NOT using Hvergelmir in precast.FC...
+    -- ammo="Incantor Stone", --2
+    -- head="Amalric Coif +1", --11
+    -- body="Pinga Tunic +1", --15
+    -- hands="Acad. Bracers +3", --9
+    -- legs="Kaykaus Tights +1", --7
+    -- feet="Peda. Loafers +3", --8
+    -- neck="Orunmila's Torque", --5
+    -- ear1="Malignance Earring", --4
+    -- ear2="Enchntr. Earring +1", --2
+    -- ring1="Kishar Ring", --4
+    -- ring2="Defending Ring",
+    -- back=gear.SCH_FC_Cape, --10
+    -- waist="Shinjutsu-no-Obi +1", --5
   }
   sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {
     -- waist="Siegel Sash",
   })
-  sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, {})
+  sets.precast.FC['Elemental Magic'] = sets.precast.FC
 
   sets.precast.FC.Cure = set_combine(sets.precast.FC, {
     ear2="Mendicant's Earring", --5
@@ -175,6 +200,21 @@ function init_gear_sets()
   sets.precast.FC.Dispelga = set_combine(sets.precast.FC, {
     -- main="Daybreak",
     -- sub="Ammurapi Shield",
+
+    -- If using Hvergelmir in precast.FC...
+    -- ammo="Incantor Stone", --2
+    -- head="Amalric Coif +1", --11
+    -- body="Pinga Tunic +1", --15
+    -- hands="Acad. Bracers +3", --9
+    -- legs="Kaykaus Tights +1", --7
+    -- feet="Peda. Loafers +3", --8
+    -- neck="Orunmila's Torque", --5
+    -- ear1="Malignance Earring", --4
+    -- ear2="Enchntr. Earring +1", --2
+    -- ring1="Kishar Ring", --4
+    -- ring2="Defending Ring",
+    -- back=gear.SCH_FC_Cape, --10
+    -- waist="Shinjutsu-no-Obi +1", --5
   })
 
 
@@ -215,7 +255,7 @@ function init_gear_sets()
   -- Max MP
   sets.precast.WS['Myrkr'] = {
     legs=gear.Psycloth_D_legs,     -- 109
-    -- ammo="Strobilus",             --  45
+    -- ammo="Strobilus",              --  45
     -- head="Pixie Hairpin +1",       -- 120
     -- body="Academic's Gown +3",     -- 173
     -- hands="Thrift Gloves +1 ",     --  99
@@ -230,7 +270,7 @@ function init_gear_sets()
     -- 1145 MP
 
     -- Ideal:
-    -- ammo="Strobilus",             --  45
+    -- ammo="Strobilus",              --  45
     -- head="Pixie Hairpin +1",       -- 120
     -- body="Academic's Gown +3",     -- 173
     -- hands="Kaykaus Cuffs +1",      -- 100
@@ -242,7 +282,7 @@ function init_gear_sets()
     -- ring1="Mephitas's Ring +1",    -- 110
     -- ring2="Mephitas's Ring",       -- 100
     -- back="Tantalic Cape ",         --  50
-    -- back=SCH_MP_Cape,              --  80
+    -- back=gear.SCH_MP_Cape,         --  80
     -- waist="Shinjutsu-no-Obi +1",   --  85
     -- 1332 MP
   }
@@ -529,8 +569,8 @@ function init_gear_sets()
   }
 
   -- Removal rate = Base Rate * (1+(x/100)) * (1+(y/100))
-  -- Base rate is determined by base healing magic skill (26% @500)
   -- x = healing skill from gear; y = cursna+ stat from gear
+  -- Base rate is determined by base healing magic skill (26% @500)
   sets.midcast.Cursna = {
     ammo="Incantor Stone",     -- __, __,  2
     -- main="Gada",               -- 18, __,  6
@@ -549,14 +589,12 @@ function init_gear_sets()
     -- waist="Bishop's Sash",     --  5, __, __
     -- 180 Healing skill, 60 Cursna+, 1 FC
     -- Rate @386 (assuming 20% base) = 89.6%
-    -- Rate @500 (26% base) = 116%
   }
 
   sets.midcast.Cursna.LightArts = set_combine(sets.midcast.Cursna, {
     -- legs="Academic's Pants +3",    -- 24, __,  9
     -- 184 Healing skill, 60 Cursna+, 10 FC
-    -- Rate @386 (assuming 20% base) = 90.88%
-    -- Rate @500 (26% base) = 118%
+    -- Rate @456 (assuming 23% base) = 104.5%
   })
 
   -- Enh Magic Skill + Enh Magic Duration > Fast Cast
@@ -599,13 +637,15 @@ function init_gear_sets()
     waist="Embla Sash",            -- __, __, 10,  5
     -- main=gear.Musa_C,              -- 25, __, 20, __
     -- sub="Khonsu",                  -- __, __, __, __
-    -- head="Arbatel Bonnet +1",      -- __, 15, __, __
+    -- head="Arbatel Bonnet +1",      --  7, __, __, __
     -- body=gear.Telchine_ENH_body,   -- __, __, 10, 12
     -- hands=gear.Telchine_ENH_hands, -- __, __, 10, __
     -- legs=gear.Telchine_ENH_legs,   -- __, __, 10, __
     -- feet=gear.Telchine_ENH_feet,   -- __, __, 10, __
     -- back="Bookworm's Cape",        -- 10, __, __, __
-    -- 35 Regen Potency, 15 Regen Potency %, 70 Enh Duration %, 17 Regen Duration
+    -- 42 Regen Potency, 0 Regen Potency %, 70 Enh Duration %, 17 Regen Duration
+    -- Regen V (no LA) = 82 hp/tic
+    -- Regen V (w/ LA) = 106 hp/tic
   }-- 0 Regen Potency, 10 Regen Potency %, 10 Enh Duration %, 5 Regen Duration
 
   sets.midcast.RegenDuration = set_combine(sets.midcast.Regen, {
@@ -661,91 +701,170 @@ function init_gear_sets()
   sets.midcast.Shell = sets.midcast.Protect
   sets.midcast.Shellra = sets.midcast.Shell
 
-  -- Custom spell classes
+  -- M.Acc > MND > Enfeebling Duration > Enfeebling Skill
   sets.midcast.MndEnfeebles = {
-    body="Shango Robe",
-    -- main="Maxentius",
-    -- sub="Ammurapi Shield",
-    -- ammo="Pemphredo Tathlum",
-    -- head="Acad. Mortar. +3",
-    -- body="Acad. Gown +3",
-    -- hands="Regal Cuffs",
-    -- legs="Acad. Pants +3",
-    -- feet="Acad. Loafers +3",
-    -- neck="Argute Stole +1",
-    -- ear1="Malignance Earring",
-    -- ear2="Vor Earring",
-    -- ring1="Kishar Ring",
-    -- ring2="Metamor. Ring +1",
-    -- back=gear.SCH_FC_Cape,
-    -- waist="Luminary Sash",
+    body="Shango Robe",             -- 23, 29, __, 15
+    -- main=gear.Gada_MND_MAcc,     -- 35, 16, __, 16; +215 M.Acc skill
+    -- sub="Ammurapi Shield",       -- 38, 13, __, __
+    -- ammo="Pemphredo Tathlum",    --  8, __, __, __
+    -- head="Acad. Mortar. +3",     -- 52, 37, __, __
+    -- body="Acad. Gown +3",        -- 50, 39, __, __; +24 enf skill in DA
+    -- hands="Regal Cuffs",         -- 45, 40, 20, __
+    -- legs="Acad. Pants +3",       -- 49, 39, __, __; +24 enf skill in LA
+    -- feet="Acad. Loafers +3",     -- 46, 29, __, __; +20 M.Acc in Grimoire
+    -- neck="Argute Stole +2",      -- 30, 15, __, __
+    -- ear1="Malignance Earring",   -- 10,  8, __, __
+    -- ear2="Regal Earring",        -- __, 10, __, __; Adds set bonus
+    -- ring1="Kishar Ring",         --  5, __, 10, __
+    -- ring2="Metamor. Ring +1",    -- 16, 15, __, __
+    -- back=gear.SCH_MND_MAcc_Cape, -- 30, 20, __, __
+    -- waist="Luminary Sash",       -- 10, 10, __, __
+    -- Acad. set bonus              -- 60, __, __, __
+    -- 504 M.Acc, 291 MND, 30% Enfeebling Duration, 40 Enfeebling Skill
+
+    -- Ideal:
+    -- main="Maxentius",            -- 40, 15, __, __; +250 M.Acc skill
+    -- 489 M.Acc, 290 MND, 30% Enfeebling Duration, 24 Enfeebling Skill
   }
 
-  sets.midcast.IntEnfeebles = set_combine(sets.midcast.MndEnfeebles, {
-    -- main="Maxentius",
-    -- sub="Ammurapi Shield",
-    -- legs="Chironic Hose",
-    -- back=gear.SCH_MAB_Cape,
-    -- waist="Acuity Belt +1",
-  })
+  -- M.Acc > INT > Enfeebling Duration > Enfeebling Skill
+  sets.midcast.IntEnfeebles = {
+    -- main=gear.Gada_INT_MAcc,     -- 35, 16, __, 16; +215 M.Acc skill
+    -- sub="Ammurapi Shield",       -- 38, 13, __, __
+    -- ammo="Pemphredo Tathlum",    --  8,  4, __, __
+    -- head="Acad. Mortar. +3",     -- 52, 37, __, __
+    -- body="Acad. Gown +3",        -- 50, 44, __, __; +24 enf skill in DA
+    -- hands="Regal Cuffs",         -- 45, 40, 20, __
+    -- legs="Acad. Pants +3",       -- 49, 39, __, __; +24 enf skill in LA
+    -- feet="Acad. Loafers +3",     -- 46, 32, __, __; +20 M.Acc in Grimoire
+    -- neck="Argute Stole +2",      -- 30, 15, __, __
+    -- ear1="Malignance Earring",   -- 10,  8, __, __
+    -- ear2="Regal Earring",        -- __, 10, __, __; Adds set bonus
+    -- ring1="Kishar Ring",         --  5, __, 10, __
+    -- ring2="Metamor. Ring +1",    -- 16, 15, __, __
+    -- back=gear.SCH_INT_MAcc_Cape, -- 30, 20, __, __
+    -- waist="Acuity Belt +1",      -- 15, 23, __, __
+    -- Acad. set bonus              -- 60, __, __, __
+    -- 509 M.Acc, 316 INT, 30% Enfeebling Duration, 40 Enfeebling Skill
+    -- +147 M.Acc from skill
 
-  sets.midcast.ElementalEnfeeble = sets.midcast.Enfeebles
+    -- Ideal:
+    -- main="Maxentius",            -- 40, 15, __, __; +250 M.Acc skill
+    -- 514 M.Acc, 315 INT, 30% Enfeebling Duration, 24 Enfeebling Skill
+    -- +149 M.Acc from skill
+  }
+
+  sets.midcast.ElementalEnfeeble = sets.midcast.IntEnfeebles
   sets.midcast.Dispelga = set_combine(sets.midcast.IntEnfeebles, {
     -- main="Daybreak",
     -- sub="Ammurapi Shield",
     -- waist="Shinjutsu-no-Obi +1",
   })
 
+  -- SCH Dark Magic = 386, with Dark Arts = 456
+  -- Dark Magic Skill, INT, M.Acc
   sets.midcast['Dark Magic'] = {
     body="Shango Robe",
-    -- main="Rubicundity",
-    -- sub="Ammurapi Shield",
-    -- ammo="Pemphredo Tathlum",
-    -- head="Acad. Mortar. +3",
-    -- body="Acad. Gown +3",
-    -- hands="Acad. Bracers +3",
-    -- legs="Peda. Pants +3",
-    -- feet="Acad. Loafers +3",
-    -- neck="Argute Stole +1",
-    -- ear1="Malignance Earring",
-    -- ear2="Mani Earring",
-    -- ring1={name="Stikini Ring +1", bag="wardrobe3"},
-    -- ring2={name="Stikini Ring +1", bag="wardrobe4"},
-    -- back="Perimede Cape",
-    -- waist="Acuity Belt +1",
+    -- main="Rubicundity",        -- 25, 21, 20; +215 M.Acc skill
+    -- sub="Ammurapi Shield",     -- __, 13, 38
+    -- ammo="Pemphredo Tathlum",  -- __,  4,  8
+    -- head="Acad. Mortar. +3",   -- __, 37, 52
+    -- body="Acad. Gown +3",      -- 24, 44, 50
+    -- hands="Acad. Bracers +3",  -- __, 29, 48
+    -- legs="Peda. Pants +3",     -- 19, 47, 39
+    -- feet="Acad. Loafers +3",   -- __, 32, 46
+    -- neck="Erra Pendant",       -- 10, __, 17
+    -- ear1="Regal Earring",      -- __, 10, __; Adds set effect
+    -- ear2="Mani Earring",       -- 10, __, __
+    -- ring1="Evanescence Ring",  -- 10, __, __
+    -- ring2="Stikini Ring +1",   --  8, __, 11
+    -- back="Bookworm's Cape",    --  8,  5, __
+    -- waist="Acuity Belt +1",    -- __, 23, __
+    -- Acad. set bonus            -- __, __, 60
+    -- 114 Dark magic skill, 265 INT, 389 M.Acc
   }
 
+  -- M.Burst Dmg, INT, Magic Acc, MAB, Dark Magic Skill
+  -- Assumed that this will only ever be used in a Magic Burst
   sets.midcast.Kaustra = {
-    main="Akademos", --10
-    -- sub="Enki Strap",
-    -- ammo="Pemphredo Tathlum",
-    -- head="Pixie Hairpin +1",
-    -- body=gear.Merl_MB_body, --10
-    -- hands="Amalric Gages +1", --(5)
-    -- legs="Mallquis Trews +2", --6
-    -- feet="Merlinic Crackows", --11
-    -- neck="Argute Stole +1", --8
-    -- ear1="Malignance Earring",
-    -- ear2="Regal Earring",
-    -- ring1="Freke Ring",
-    -- ring2="Archon Ring",
-    -- back=gear.SCH_MAB_Cape,
-    -- waist="Acuity Belt +1",
+    main=gear.Akademos_A,         -- 10, 20, __, 20, __
+    -- sub="Enki Strap",          -- __, 10, 10, __, __
+    -- ammo="Pemphredo Tathlum",  -- __,  4,  8,  4, __
+    -- head="Pixie Hairpin +1",   -- __, 27, __, 28, __
+    -- body=gear.Merl_MB_body,    -- 10, 50, 60, 60, __
+    -- hands=gear.Amalric_D_hands,--  6, 36, 20, 53, __
+    -- legs="Mallquis Trews +2",  --  6, 57, 45, 15, __
+    -- feet=gear.Merl_MB_feet,    -- 10, 34, 40, 55, __
+    -- neck="Argute Stole +2",    -- 10, 15, 30, __, __
+    -- ear1="Malignance Earring", -- __,  8, 10,  8, __
+    -- ear2="Regal Earring",      -- __, 10, __,  7, __
+    -- ring1="Freke Ring",        -- __, 10, __,  8, __
+    -- ring2="Archon Ring",       -- __, __,  5, __, __
+    -- back=gear.SCH_MAB_Cape,    -- __, 30, 20, 10, __
+    -- waist="Acuity Belt +1",    -- __, 23, 15, __, __
+    -- 52 M.Burst Dmg, 334 INT, 263 Magic Acc, 268 MAB, 0 Dark Magic Skill
   }
 
+  -- Add Drain potency
   sets.midcast.Drain = set_combine(sets.midcast['Dark Magic'], {
-    -- head="Pixie Hairpin +1",
-    -- ear1="Hirudinea Earring",
-    -- ring1="Evanescence Ring",
-    -- ring2="Archon Ring",
-    waist="Fucho-no-obi",
+    waist="Fucho-no-obi",         --  8
+    -- main="Rubicundity",        -- 20
+    -- sub="Ammurapi Shield",     -- __
+    -- legs="Peda. Pants +3",     -- 15
+    -- ear2="Hirudinea Earring",  --  3
+    -- ring1="Evanescence Ring",  -- 10
+    -- 104 Dark magic skill, 242 INT, 389 M.Acc
   })
 
   sets.midcast.Aspir = sets.midcast.Drain
 
+  -- FC > M.Acc > M.Acc Skill
   sets.midcast.Stun = set_combine(sets.midcast['Dark Magic'], {
-    back=gear.SCH_MAB_Cape,
+    -- back=gear.SCH_MAB_Cape,
+
+    --Ideal:
+    -- main="Hvergelmir",           -- 50, __, 269
+    -- sub="Khonsu",                -- __, 30, ___
+    -- ammo="Pemphredo Tathlum",    -- __,  8, ___
+    -- head="Acad. Mortar. +3",     --  8, 52, ___
+    -- body="Acad. Gown +3",        -- __, 50, ___
+    -- hands="Acad. Bracers +3",    --  9, 48, ___
+    -- legs="Acad. Pants +3",       -- __, 49, ___
+    -- feet="Acad. Loafers +3",     -- __, 46, ___
+    -- neck="Argute Stole +2",      -- __, 30, ___
+    -- ear1="Malignance Earring",   --  4, 10, ___
+    -- ear2="Dignitary's Earring",  -- __, 10, ___
+    -- ring1="Stikini Ring +1",     -- __, 11, ___; +8 all skill
+    -- ring2="Stikini Ring +2",     -- __, 11, ___; +8 all skill
+    -- back=gear.SCH_INT_MAcc_Cape, -- 10, 30, ___
+    -- waist="Acuity Belt +1",      -- __, 15, ___
+    -- Acad. set bonus              -- __, 60, ___
+    -- 81 FC, 460 M.Acc, 269 M.Acc Skill
   })
+
+  sets.midcast.Stun.DarkArts = set_combine(sets.midcast.Stun, {
+    --Ideal:
+    -- main="Hvergelmir",           -- __, 50, __, 269
+    -- sub="Khonsu",                -- __, __, 30, ___
+    -- ammo="Pemphredo Tathlum",    -- __, __,  8, ___
+    -- head="Peda. M.Board +3",     -- 13, __, 37, ___; Grimoire recast-
+    -- body="Acad. Gown +3",        -- __, __, 50, ___; +24 Dark Magic skill in DA
+    -- hands="Acad. Bracers +3",    -- __,  9, 48, ___
+    -- legs="Acad. Pants +3",       -- __, __, 49, ___
+    -- feet="Acad. Loafers +3",     -- 12, __, 46, ___; Grimoire recast-, +20M.Acc in Grimoire
+    -- neck="Argute Stole +2",      -- __, __, 30, ___
+    -- ear1="Malignance Earring",   -- __,  4, 10, ___
+    -- ear2="Regal Earring",        -- __, __, __, ___; adds set effect
+    -- ring1="Stikini Ring +1",     -- __, __, 11, ___; +8 all skill
+    -- ring2="Stikini Ring +2",     -- __, __, 11, ___; +8 all skill
+    -- back=gear.SCH_INT_MAcc_Cape, -- __, 10, 30, ___
+    -- waist="Witful Belt",         -- __,  3, __, ___
+    -- Acad. set bonus              -- __, __, 60, ___
+    -- 25% Grimoire Recast, 76 FC, 420 M.Acc, 269 M.Acc Skill
+    -- Add 10% Grimoire Recast from Dark Arts
+    -- Hits 90% recast reduction cap even without Haste spell/JA
+  })
+  sets.midcast.Stun.LightArts = sets.midcast.Stun.DarkArts
 
   -- Elemental Magic
   sets.midcast['Elemental Magic'] = {
