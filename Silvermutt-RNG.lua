@@ -61,7 +61,7 @@ function job_setup()
   state.RangedMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.IdleMode:options('Normal', 'LightDef')
   state.WeaponSet = M{['description']='Weapon Set', 'MagicRA', 'PhysRA', 'PhysRA RangedOnly', 'PhysRA NoBuff', 'Melee', 'CritRA'}
-  state.RangedWeaponSet = M{['description']='Ranged Weapon Set', 'Doomsday', "Pharaoh's Bow", "Grosveneur's Bow", 'Gastraphetes', 'Sparrowhawk'}
+  state.RangedWeaponSet = M{['description']='Ranged Weapon Set', 'Gastraphetes', 'Sparrowhawk', 'Doomsday', "Pharaoh's Bow"}
   state.CP = M(false, "Capacity Points Mode")
   state.RearmingLock = M(false, 'Rearming Lock')
   -- Whether a warning has been given for low ammo
@@ -80,14 +80,12 @@ function job_setup()
       "Yoichi's Quiver", "Artemis's Quiver", "Chrono Quiver"}
 
   marksman_weapon_subtypes = {
-    ["Grosveneur's Bow"] = "xbow",
     ['Doomsday'] = "gun",
     ['Gastraphetes'] = "xbow",
   }
 
   DefaultAmmo = {
     ["Pharaoh's Bow"] = "Eminent Arrow",
-    ["Grosveneur's Bow"] = "Quelling Bolt",
     ['Doomsday'] = "Eminent Bullet",
     ['Yoichinoyumi'] = "Chrono Arrow",
     ['Gandiva'] = "Chrono Arrow",
@@ -103,7 +101,6 @@ function job_setup()
   }
   AccAmmo = {
     ["Pharaoh's Bow"] = "Eminent Arrow",
-    ["Grosveneur's Bow"] = "Quelling Bolt",
     ['Doomsday'] = "Eminent Bullet",
     ['Yoichinoyumi'] = "Yoichi's Arrow",
     ['Gandiva'] = "Yoichi's Arrow",
@@ -119,7 +116,6 @@ function job_setup()
   }
   WSAmmo = {
     ["Pharaoh's Bow"] = "Eminent Arrow",
-    ["Grosveneur's Bow"] = "Quelling Bolt",
     ['Doomsday'] = "Eminent Bullet",
     ['Yoichinoyumi'] = "Chrono Arrow",
     ['Gandiva'] = "Chrono Arrow",
@@ -135,7 +131,6 @@ function job_setup()
   }
   MagicAmmo = {
     ["Pharaoh's Bow"] = "Eminent Arrow",
-    ["Grosveneur's Bow"] = "Quelling Bolt",
     ['Doomsday'] = "Eminent Bullet",
     ['Yoichinoyumi'] = "Chrono Arrow",
     ['Gandiva'] = "Chrono Arrow",
@@ -1359,9 +1354,6 @@ function init_gear_sets()
   -- Ranged weapon sets
   sets.WeaponSet["Pharaoh's Bow"] = {
     ranged="Pharaoh's Bow",
-  }
-  sets.WeaponSet["Grosveneur's Bow"] = {
-    ranged="Grosveneur's Bow",
   }
   sets.WeaponSet['Doomsday'] = {
     ranged="Doomsday",
