@@ -81,7 +81,7 @@ function get_sets()
   -- Load and initialize Mote library
   mote_include_version = 2
   include('Mote-Include.lua') -- Executes job_setup, user_setup, init_gear_sets
-  coroutine.schedule(function() 
+  coroutine.schedule(function()
     send_command('gs c weaponset current')
   end, 2)
 end
@@ -223,7 +223,7 @@ function job_file_unload()
   send_command('unbind !q')
   send_command('unbind !w')
   send_command('unbind !e')
-  
+
   send_command('unbind ^numpad/')
   send_command('unbind ^numpad*')
   send_command('unbind ^numpad-')
@@ -713,13 +713,13 @@ function init_gear_sets()
     head="Turms Cap +1",
   }
   sets.latent_regen = {
-    head="Turms Cap +1",
-    body="Futhark Coat +3",
-    hands="Turms Mittens",
-    feet="Turms Leggings",
-    neck="Bathy Choker +1",
-    ear1="Infused Earring",
-    ring1="Chirich Ring +1",
+    head="Turms Cap +1", --7
+    body="Futhark Coat +3", --5
+    hands="Regal Gauntlets", --10
+    feet="Turms Leggings", --4
+    neck="Bathy Choker +1", --3
+    ear1="Infused Earring", --1
+    ring1="Chirich Ring +1", --2
   }
   sets.latent_refresh = {
     ammo="Homiliary", --1
@@ -1117,7 +1117,7 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
       equip(sets.midcast.EnhancingDuration)
     end
   end
-  
+
   -- If slot is locked, keep current equipment on
   if locked_neck then equip({ neck=player.equipment.neck }) end
   if locked_ear1 then equip({ ear1=player.equipment.ear1 }) end
@@ -1313,7 +1313,7 @@ function customize_melee_set(meleeSet)
   if state.CP.current == 'on' then
     meleeSet = set_combine(meleeSet, sets.CP)
   end
-  
+
   -- If slot is locked to use no-swap gear, keep it equipped
   if locked_neck then meleeSet = set_combine(meleeSet, { neck=player.equipment.neck }) end
   if locked_ear1 then meleeSet = set_combine(meleeSet, { ear1=player.equipment.ear1 }) end
@@ -1341,7 +1341,7 @@ function customize_defense_set(defenseSet)
   if state.CP.current == 'on' then
     defenseSet = set_combine(defenseSet, sets.CP)
   end
-  
+
   -- If slot is locked to use no-swap gear, keep it equipped
   if locked_neck then defenseSet = set_combine(defenseSet, { neck=player.equipment.neck }) end
   if locked_ear1 then defenseSet = set_combine(defenseSet, { ear1=player.equipment.ear1 }) end
@@ -1442,7 +1442,7 @@ function get_custom_wsmode(spell, action, spellMap)
     if state.OffenseMode.value ~= 'Normal' then
       wsmode = state.OffenseMode.value
     end
-  
+
     if player.tp > 2900 then
       wsmode = wsmode..'MaxTP'
     end
