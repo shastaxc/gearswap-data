@@ -683,7 +683,7 @@ function init_gear_sets()
 
   sets.midcast['Blue Magic'] = {}
   sets.midcast['Blue Magic'].Enmity = sets.Enmity
-  sets.midcast['Blue Magic'].Buff = sets.midcast.EnhancingDuration
+  sets.midcast['Blue Magic'].Buffs = sets.midcast.EnhancingDuration
   sets.midcast['Blue Magic'].Cure = {
     legs="Ayanmo Cosciales +2",
     ring1="Lebeche Ring", -- 3
