@@ -164,7 +164,7 @@ function init_gear_sets()
   -- Grimoire casting bonuses multiply separately from FC, allowing
   -- breaking the normal 80% cast time reduction cap.
   -- Time to cast = Base Cast Time X (1 - FC gear/traits)x(1 - magian staff cast bonus)x(1 - Grimoire reduction)
-  sets.precast.FC.Grimoire = {
+  sets.precast.FC.Grimoire = set_combine(sets.precast.FC, {
     -- head="Peda. M.Board +3",
     -- feet="Acad. Loafers +3",
 
@@ -182,22 +182,52 @@ function init_gear_sets()
     -- ring2="Defending Ring",
     -- back=gear.SCH_FC_Cape, --10
     -- waist="Shinjutsu-no-Obi +1", --5
-  }
+  })
   sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {
     -- waist="Siegel Sash",
   })
+  sets.precast.FC['Enhancing Magic'].Grimoire = set_combine(sets.precast.FC.Grimoire, {
+    -- waist="Siegel Sash",
+  })
   sets.precast.FC['Elemental Magic'] = sets.precast.FC
+  sets.precast.FC['Elemental Magic'].Grimoire = sets.precast.FC.Grimoire
 
   sets.precast.FC.Cure = set_combine(sets.precast.FC, {
     ear2="Mendicant's Earring", --5
   })
-
+  sets.precast.FC.Cure.Grimoire = set_combine(sets.precast.FC.Grimoire, {
+    ear2="Mendicant's Earring", --5
+  })
   sets.precast.FC.Curaga = sets.precast.FC.Cure
+  sets.precast.FC.Curaga.Grimoire = sets.precast.FC.CureGrimoire
   sets.precast.FC.Impact = set_combine(sets.precast.FC, {
     -- head=empty,
     -- body="Twilight Cloak",
   })
+  sets.precast.FC.Impact.Grimoire = set_combine(sets.precast.FC.Grimoire, {
+    -- head=empty,
+    -- body="Twilight Cloak",
+  })
   sets.precast.FC.Dispelga = set_combine(sets.precast.FC, {
+    -- main="Daybreak",
+    -- sub="Ammurapi Shield",
+
+    -- If using Hvergelmir in precast.FC...
+    -- ammo="Incantor Stone", --2
+    -- head="Amalric Coif +1", --11
+    -- body="Pinga Tunic +1", --15
+    -- hands="Acad. Bracers +3", --9
+    -- legs="Kaykaus Tights +1", --7
+    -- feet="Peda. Loafers +3", --8
+    -- neck="Orunmila's Torque", --5
+    -- ear1="Malignance Earring", --4
+    -- ear2="Enchntr. Earring +1", --2
+    -- ring1="Kishar Ring", --4
+    -- ring2="Defending Ring",
+    -- back=gear.SCH_FC_Cape, --10
+    -- waist="Shinjutsu-no-Obi +1", --5
+  })
+  sets.precast.FC.Dispelga.Grimoire = set_combine(sets.precast.FC.Grimoire, {
     -- main="Daybreak",
     -- sub="Ammurapi Shield",
 
@@ -1136,23 +1166,30 @@ end
 function job_precast(spell, action, spellMap, eventArgs)
   silibs.cancel_outranged_ws(spell, eventArgs)
 
-  if buffactive.LightArts then
-    classes.CustomClass="LightArts"
-  elseif buffactive.DarkArts then
-    classes.CustomClass="DarkArts"
-  end
-
   if spell.name:startswith('Aspir') then
     refine_various_spells(spell, action, spellMap, eventArgs)
   end
 end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
-  if (spell.type == "WhiteMagic" and (buffactive["Light Arts"] or buffactive["Addendum: White"])) or
-    (spell.type == "BlackMagic" and (buffactive["Dark Arts"] or buffactive["Addendum: Black"])) then
-    equip(sets.precast.FC.Grimoire)
-  elseif spell.name == 'Impact' then
-    equip(sets.precast.FC.Impact)
+  -- If magic and grimoire is active, use Grimoire sub-set
+  local crumbs = mote_vars.set_breadcrumbs
+  if spell.action_type == 'Magic' then
+    if (buffactive["Light Arts"] or buffactive["Addendum: White"]) or (buffactive["Dark Arts"] or buffactive["Addendum: Black"]) then
+      if (#crumbs == 3) then
+        equip(sets[crumbs[2]][crumbs[3]].Grimoire)
+      end
+      if (#crumbs == 4) then
+        equip(sets[crumbs[2]][crumbs[3]][crumbs[4]].Grimoire)
+      end
+      if spell.name == 'Impact' then
+        equip(sets.precast.FC.Impact.Grimoire)
+      end
+    else
+      if spell.name == 'Impact' then
+        equip(sets.precast.FC.Impact)
+      end
+    end
   end
 
   -- If slot is locked, keep current equipment on
