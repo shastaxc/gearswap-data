@@ -61,6 +61,7 @@ function define_global_sets()
   gear.Grioavolr_MND = {} -- MND, Enfeeb skill, M.Acc
   gear.Grioavolr_MP = {} -- 100 MP
   gear.Grioavolr_MB = {} --MB Dmg, MAB, M.Acc, INT
+  gear.Grioavolr_FC = {} --7 FC
 
   gear.Musa_C = {} --Regen potency +25, Cure potency +25%, Fast Cast +10%
 
@@ -85,6 +86,8 @@ function define_global_sets()
 
   -- Merlinic
   gear.Merl_FC_body = {} --7 FC
+  gear.Merl_FC_feet = {} --7 FC
+
   gear.Merl_MB_body = {} --10 MB Dmg, 40 MAB, 40 M.Acc, 10 INT
   gear.Merl_MB_feet = {} --10 MB Dmg, 40 MAB, 40 M.Acc, 10 INT
 
@@ -114,6 +117,13 @@ function define_global_sets()
   gear.Vanya_B_legs = {} -- 20 healing magic skill, 7 Cure Spellcasting Time-
   gear.Vanya_B_feet = {} -- 20 healing magic skill, 7 Cure Spellcasting Time-
 
+  -- Amalric
+  gear.Amalric_A_body = {}
+  gear.Amalric_A_legs = {}
+
+  gear.Amalric_D_hands = {}
+  gear.Amalric_D_feet = {}
+
   -- Gendewitha
   gear.Gende_SongFC_head = {} -- 5 Song Spellcasting Time-, 3 Song Recast Delay-, 4 PDT
   gear.Gende_SongFC_hands = {} -- 5 Song Spellcasting Time-, 3 Song Recast Delay-, 4 PDT
@@ -131,9 +141,10 @@ function define_global_sets()
   gear.Kaykaus_D_feet = {}
 
   -- Psycloth
+  gear.Psycloth_A_feet = {}
+
   gear.Psycloth_D_head = { name="Psycloth Tiara", augments={'Mag. Acc.+20','"Fast Cast"+10','INT+7',}}
   gear.Psycloth_D_legs = { name="Psycloth Lappas", augments={'MP+80','Mag. Acc.+15','"Fast Cast"+7',}}
-  gear.Psycloth_A_feet = {}
 
   -- Ambuscade Capes
   gear.SCH_Cure_Cape = {} --MND, Cure Potency
@@ -142,6 +153,7 @@ function define_global_sets()
   gear.SCH_INT_MAcc_Cape = {name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc+10','"Fast Cast"+10','Mag. Evasion+15',}}
   gear.SCH_MND_MAcc_Cape = {name="Lugh's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc+10','"Fast Cast"+10','Mag. Evasion+15',}}
   gear.SCH_MP_Cape = {} --MP
+  gear.SCH_Regen_Cape = {} --Regen
 
   -- Misc.
   gear.CP_Cape = {}

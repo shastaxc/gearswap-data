@@ -139,55 +139,42 @@ function init_gear_sets()
     -- ear2="Loquacious Earring", --2
 
     -- Great:
+    -- main=gear.Grioavolr_FC, --11
+    -- sub="Clerisy Strap +1", --3
     -- ammo="Incantor Stone", --2
     -- head="Amalric Coif +1", --11
-    -- body=gear.Merl_FC_body, --13
+    -- body="Pinga Tunic +1", --15
     -- hands="Acad. Bracers +3", --9
-    -- legs="Kaykaus Tights +1", --7
-    -- feet="Peda. Loafers +3", --8
+    -- legs="Pinga Pants +1", --13
+    -- feet=gear.Merl_FC_feet, --12
     -- neck="Orunmila's Torque", --5
     -- ear1="Malignance Earring", --4
     -- ear2="Enchntr. Earring +1", --2
     -- ring1="Kishar Ring", --4
-    -- ring2="Defending Ring",
+    -- ring2="Prolix Ring", --2
     -- back=gear.SCH_FC_Cape, --10
-    -- waist="Shinjutsu-no-Obi +1", --5
+    -- waist="Embla Sash", --5
 
     -- Ideal:
     -- main="Hvergelmir", --50
     -- sub="Khonsu",
     -- body="Pinga Tunic +1", --15
     -- back=gear.SCH_FC_Cape, --10
-    -- waist="Shinjutsu-no-Obi +1", --5
+    -- waist="Embla Sash", --5
   }
 
   -- Grimoire casting bonuses multiply separately from FC, allowing
   -- breaking the normal 80% cast time reduction cap.
-  -- Time to cast = Base Cast Time X (1 - FC gear/traits)x(1 - magian staff cast bonus)x(1 - Grimoire reduction)
+  -- Cast Time = Base Cast Time x (1 - FC)x(1 - magian staff cast bonus)x(1 - Grimoire reduction)
   sets.precast.FC.Grimoire = set_combine(sets.precast.FC, {
     -- head="Peda. M.Board +3",
     -- feet="Acad. Loafers +3",
-
-    -- If NOT using Hvergelmir in precast.FC...
-    -- ammo="Incantor Stone", --2
-    -- head="Amalric Coif +1", --11
-    -- body="Pinga Tunic +1", --15
-    -- hands="Acad. Bracers +3", --9
-    -- legs="Kaykaus Tights +1", --7
-    -- feet="Peda. Loafers +3", --8
-    -- neck="Orunmila's Torque", --5
-    -- ear1="Malignance Earring", --4
-    -- ear2="Enchntr. Earring +1", --2
-    -- ring1="Kishar Ring", --4
-    -- ring2="Defending Ring",
-    -- back=gear.SCH_FC_Cape, --10
-    -- waist="Shinjutsu-no-Obi +1", --5
   })
   sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {
     -- waist="Siegel Sash",
   })
   sets.precast.FC['Enhancing Magic'].Grimoire = set_combine(sets.precast.FC.Grimoire, {
-    -- waist="Siegel Sash",
+    -- waist="Siegel Sash", --8
   })
   sets.precast.FC['Elemental Magic'] = sets.precast.FC
   sets.precast.FC['Elemental Magic'].Grimoire = sets.precast.FC.Grimoire
@@ -204,10 +191,9 @@ function init_gear_sets()
     -- head=empty,
     -- body="Twilight Cloak",
   })
-  sets.precast.FC.Impact.Grimoire = set_combine(sets.precast.FC.Grimoire, {
-    -- head=empty,
-    -- body="Twilight Cloak",
-  })
+  -- Without head & body, cannot use Grimoire gear and hit 80% FC
+  -- until Hvergelmir set is acquired
+  sets.precast.FC.Impact.Grimoire = sets.precast.FC.Impact
   sets.precast.FC.Dispelga = set_combine(sets.precast.FC, {
     -- main="Daybreak",
     -- sub="Ammurapi Shield",
@@ -217,34 +203,34 @@ function init_gear_sets()
     -- head="Amalric Coif +1", --11
     -- body="Pinga Tunic +1", --15
     -- hands="Acad. Bracers +3", --9
-    -- legs="Kaykaus Tights +1", --7
-    -- feet="Peda. Loafers +3", --8
+    -- legs="Pinga Pants +1", --13
+    -- feet=gear.Merl_FC_feet, --12
     -- neck="Orunmila's Torque", --5
     -- ear1="Malignance Earring", --4
     -- ear2="Enchntr. Earring +1", --2
     -- ring1="Kishar Ring", --4
-    -- ring2="Defending Ring",
+    -- ring2="Prolix Ring", --2
     -- back=gear.SCH_FC_Cape, --10
-    -- waist="Shinjutsu-no-Obi +1", --5
+    -- waist="Embla Sash", --5
   })
   sets.precast.FC.Dispelga.Grimoire = set_combine(sets.precast.FC.Grimoire, {
     -- main="Daybreak",
-    -- sub="Ammurapi Shield",
+    -- sub="Chanter's Shield", --3
+    -- head="Amalric Coif +1", --11
 
     -- If using Hvergelmir in precast.FC...
     -- ammo="Incantor Stone", --2
     -- head="Amalric Coif +1", --11
     -- body="Pinga Tunic +1", --15
     -- hands="Acad. Bracers +3", --9
-    -- legs="Kaykaus Tights +1", --7
-    -- feet="Peda. Loafers +3", --8
+    -- legs="Pinga Pants +1", --13
     -- neck="Orunmila's Torque", --5
     -- ear1="Malignance Earring", --4
     -- ear2="Enchntr. Earring +1", --2
     -- ring1="Kishar Ring", --4
-    -- ring2="Defending Ring",
+    -- ring2="Prolix Ring", --2
     -- back=gear.SCH_FC_Cape, --10
-    -- waist="Shinjutsu-no-Obi +1", --5
+    -- waist="Embla Sash", --5
   })
 
 
@@ -323,6 +309,8 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.midcast.FastRecast = sets.precast.FC
+  -- Initializes trusts at iLvl 119
+  sets.midcast.Trust = sets.precast.FC
 
   -- Prioritize: CPII > CP > Heal Skill, MND, VIT (to cap) > FC > -Enmity
   -- Cap at 700 power; Power = floor(MND÷2) + floor(VIT÷4) + Healing Magic Skill
@@ -814,27 +802,6 @@ function init_gear_sets()
     -- 114 Dark magic skill, 265 INT, 389 M.Acc
   }
 
-  -- M.Burst Dmg, INT, Magic Acc, MAB, Dark Magic Skill
-  -- Assumed that this will only ever be used in a Magic Burst
-  sets.midcast.Kaustra = {
-    main=gear.Akademos_A,         -- 10, 20, __, 20, __
-    -- sub="Enki Strap",          -- __, 10, 10, __, __
-    -- ammo="Pemphredo Tathlum",  -- __,  4,  8,  4, __
-    -- head="Pixie Hairpin +1",   -- __, 27, __, 28, __
-    -- body=gear.Merl_MB_body,    -- 10, 50, 60, 60, __
-    -- hands=gear.Amalric_D_hands,--  6, 36, 20, 53, __
-    -- legs="Mallquis Trews +2",  --  6, 57, 45, 15, __
-    -- feet=gear.Merl_MB_feet,    -- 10, 34, 40, 55, __
-    -- neck="Argute Stole +2",    -- 10, 15, 30, __, __
-    -- ear1="Malignance Earring", -- __,  8, 10,  8, __
-    -- ear2="Regal Earring",      -- __, 10, __,  7, __
-    -- ring1="Freke Ring",        -- __, 10, __,  8, __
-    -- ring2="Archon Ring",       -- __, __,  5, __, __
-    -- back=gear.SCH_MAB_Cape,    -- __, 30, 20, 10, __
-    -- waist="Acuity Belt +1",    -- __, 23, 15, __, __
-    -- 52 M.Burst Dmg, 334 INT, 263 Magic Acc, 268 MAB, 0 Dark Magic Skill
-  }
-
   -- Add Drain potency
   sets.midcast.Drain = set_combine(sets.midcast['Dark Magic'], {
     waist="Fucho-no-obi",         --  8
@@ -896,23 +863,47 @@ function init_gear_sets()
   })
   sets.midcast.Stun.LightArts = sets.midcast.Stun.DarkArts
 
-  -- Elemental Magic
+  -- INT, Magic Acc, MAB
+  -- More emphasis on INT
+  sets.midcast.Kaustra = {
+    main=gear.Akademos_A,         -- 32, __, 58
+    -- sub="Enki Strap",          -- 10, 10, __
+    -- ammo="Pemphredo Tathlum",  --  4,  8,  4
+    -- head="Peda. M.Board +3",   -- 39, 52, 49
+    -- body=gear.Merl_MB_body,    -- 50, 60, 60
+    -- hands=gear.Amalric_D_hands,-- 36, 20, 53
+    -- legs="Mallquis Trews +2",  -- 57, 45, 15
+    -- feet=gear.Merl_MB_feet,    -- 34, 40, 55
+    -- neck="Argute Stole +2",    -- 15, 30, __
+    -- ear1="Malignance Earring", --  8, 10,  8
+    -- ear2="Regal Earring",      -- 10, __,  7
+    -- ring1="Freke Ring",        -- 10, __,  8
+    -- ring2="Metamor. Ring +1",  -- 16, 15, __
+    -- back=gear.SCH_MAB_Cape,    -- 30, 20, 10
+    -- waist="Acuity Belt +1",    -- 23, 15, __
+    -- 374 INT, 315 Magic Acc, 327 MAB
+  }
+
+  -- INT, Magic Acc, MAB
+  -- More emphasis on MAB
   sets.midcast['Elemental Magic'] = {
-    main="Akademos",
-    -- sub="Enki Strap",
-    -- ammo="Pemphredo Tathlum",
-    -- head="Peda. M.Board +3",
-    -- body="Amalric Doublet +1",
-    -- hands="Amalric Gages +1",
-    -- legs="Amalric Slops +1",
-    -- feet="Amalric Nails +1",
-    -- neck="Baetyl Pendant",
-    -- ear1="Malignance Earring",
-    -- ear2="Regal Earring",
-    -- ring1="Freke Ring",
-    -- ring2="Metamor. Ring +1",
-    -- back=gear.SCH_MAB_Cape,
-    -- waist="Refoccilation Stone",
+    main=gear.Akademos_A,           -- 32, __, 58
+    -- sub="Enki Strap",            -- 10, 10, __
+    -- ammo="Pemphredo Tathlum",    --  4,  8,  4
+    -- head="Peda. M.Board +3",     -- 39, 52, 49
+    -- body=gear.Amalric_A_body,    -- 38, 53, 53
+    -- hands=gear.Amalric_D_hands,  -- 36, 20, 53
+    -- legs=gear.Amalric_A_legs,    -- 40, 20, 60
+    -- feet=gear.Amalric_D_feet,    -- 21, 20, 52
+    -- neck="Baetyl Pendant",       -- __, __, 13
+    -- ear1="Malignance Earring",   --  8, 10,  8
+    -- ear2="Regal Earring",        -- 10, __,  7
+    -- ring1="Freke Ring",          -- 10, __,  8
+    -- ring2="Metamor. Ring +1",    -- 16, 15, __
+    -- back=gear.SCH_MAB_Cape,      -- 30, 20, 10
+    -- waist="Refoccilation Stone", -- __,  4, 10
+    -- Amalric set bonus            -- __, __, 40
+    -- 294 INT, 232 Magic Acc, 425 MAB
   }
 
   sets.midcast['Elemental Magic'].Seidr = set_combine(sets.midcast['Elemental Magic'], {
@@ -932,7 +923,7 @@ function init_gear_sets()
   })
 
   sets.midcast.Impact = set_combine(sets.midcast['Elemental Magic'], {
-    main="Akademos",
+    main=gear.Akademos_A,
     -- sub="Khonsu",
     -- head=empty,
     -- body="Twilight Cloak",
@@ -941,10 +932,10 @@ function init_gear_sets()
   })
 
   sets.midcast.Helix = {
-    main="Akademos",
+    main=gear.Akademos_A,
     -- sub="Enki Strap",
     -- ammo="Ghastly Tathlum +1",
-    -- neck="Argute Stole +1",
+    -- neck="Argute Stole +2",
     -- waist="Sacro Cord",
   }
 
@@ -956,12 +947,18 @@ function init_gear_sets()
   sets.midcast.LightHelix = set_combine(sets.midcast.Helix, {
     -- main="Daybreak",
     -- sub="Ammurapi Shield",
-    -- ring2="Weather. Ring +1",
   })
 
-  -- Initializes trusts at iLvl 119
-  sets.midcast.Trust = sets.precast.FC
-
+  -- This is applied on top of other sets when appropriate
+  sets.magic_burst = {
+    main=gear.Akademos_A, --10
+    -- head="Peda. M.Board +3", --(4)
+    -- body=gear.Merl_MB_body, --10
+    -- hands="Amalric Gages +1", --(6)
+    -- feet="Merlinic Crackows", --10
+    -- neck="Argute Stole +2", --10
+    -- ring2="Mujin Band", --(5)
+  }
 
   ------------------------------------------------------------------------------------------------
   ----------------------------------------- Idle Sets --------------------------------------------
@@ -969,18 +966,37 @@ function init_gear_sets()
 
   -- Passive sets are applied to idle in function `customize_idle_sets`
   sets.passive_regen = {
-    main="Bolelabunga",
-    back="Kumbira Cape",
+    main="Bolelabunga", --1
+    back="Kumbira Cape", --1
+    -- main="Malignance Pole", --0
+    -- sub="Mensch Strap +1", --3
+    -- body="Pluviale", --1
+    -- feet="Coalrake Sabots", --1
+    -- neck="Bathy Choker +1", --1
+    -- ear1="Infused Earring", --1
+    -- ring1="Chirich Ring +1", --2
+    -- ring2="Paguroidea Ring", --2
+    -- back=gear.SCH_Regen_Cape, --5
   }
   sets.passive_regen.daytime = {
-    hands="Serpentes Cuffs",
+    hands="Serpentes Cuffs", --1
+    -- ear2="Dawn Earring", --1
+    -- waist="Lycopodium Sash", --3
   }
   sets.passive_regen.nighttime = {
-    feet="Serpentes Sabots",
+    feet="Serpentes Sabots", --1
   }
   sets.passive_refresh = {
     main="Bolelabunga",
     legs="Assiduity Pants +1",
+    -- main="Contemplator +1", --2
+    -- sub="Oneiros Grip", --1; when mp<70%
+    -- head="Befouled Crown", --1
+    -- body="Jhakri Robe +2", --4
+    -- hands="Volte Gloves", --1
+    -- feet="Volte Gaiters", --1
+    -- ring1="Stikini Ring +1", --1
+    -- ring2="Stikini Ring +1", --1
   }
   sets.passive_refresh.daytime = {
     feet="Serpentes Sabots",
@@ -1080,17 +1096,6 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Special Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
-
-  sets.magic_burst = {
-    -- Akademos 10
-    -- head="Peda. M.Board +3", --(4)
-    -- body=gear.Merl_MB_body, --10
-    -- hands="Amalric Gages +1", --(6)
-    -- legs="Merlinic Shalwar", --2
-    -- feet="Merlinic Crackows", --11
-    -- neck="Argute Stole +1", --7
-    -- ring2="Mujin Band", --(5)
-  }
 
   sets.buff['Ebullience'] = {
     -- head="Arbatel Bonnet +1",
@@ -1232,6 +1237,9 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     elseif spell.type == "BlackMagic" and (buffactive["Dark Arts"] or buffactive["Addendum: Black"]) then
       equip(sets.DarkArts)
     end
+  end
+  if spell.english == "Kaustra" and state.MagicBurst.value then
+    equip(sets.magic_burst)
   end
   if spell.skill == 'Elemental Magic' and state.MagicBurst.value then
     equip(sets.magic_burst)
