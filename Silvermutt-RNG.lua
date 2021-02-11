@@ -1387,7 +1387,6 @@ function job_precast(spell, action, spellMap, eventArgs)
 
   -- If using a WS and ranged weapon set to sparrowhawk and not a ranged WS , equip WSD ammo
   if spell.type == 'WeaponSkill' and state.RangedWeaponSet.current == 'Sparrowhawk' and spell.skill ~= 'Archery' then
-    add_to_chat(001, "Qualified")
     equip({ammo="Hauksbok Arrow"})
   end
 end
