@@ -548,11 +548,10 @@ function init_gear_sets()
     ring1="Weatherspoon Ring",
     ring2="Dingir Ring",
     neck="Scout's Gorget +1",
-    back=gear.RNG_WS2_Cape,
+    back=gear.RNG_WS1_Cape,
     waist="Eschan Stone",
     -- hands=gear.Herc_MAB_hands,
     -- ring1="Epaminondas's Ring",
-    -- back=gear.RNG_WS1_Cape,
     -- waist="Orpheus's Sash",
   } -- AGI / MAB
   sets.precast.WS["Trueflight"].MaxTP = set_combine(sets.precast.WS["Trueflight"], {
@@ -649,13 +648,13 @@ function init_gear_sets()
     ear2="Moonshade Earring",
     ring1="Regal Ring",
     ring2="Ilabrat Ring",
+    back=gear.RNG_WS3_Cape,
     waist="Sailfi Belt +1",
     -- head="Orion Beret +3",
     -- body=gear.Herc_STR_WSD_body,
     -- feet=gear.Herc_STR_WSD_feet,
     -- neck="Scout's Gorget +2",
     -- ring2="Epaminondas's Ring",
-    -- back=gear.RNG_STR_WSD_Cape,
   })
   sets.precast.WS['Savage Blade'].MaxTP = set_combine(sets.precast.WS['Savage Blade'], {
   })
@@ -903,6 +902,7 @@ function init_gear_sets()
     neck="Bathy Choker +1",
     ear1="Infused Earring",
     ring1="Chirich Ring +1",
+    back=gear.RNG_Regen_Cape,
   }
   sets.latent_refresh = {
     head=gear.Herc_Refresh_head,
