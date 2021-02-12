@@ -1008,7 +1008,7 @@ function init_gear_sets()
     waist="Fucho-no-Obi",
   })
 
-  sets.idle = {
+  sets.HeavyDef = {
     main="Bolelabunga",
     sub="Genmei Shield", --10/0
     head="Wayfarer Circlet",
@@ -1020,49 +1020,49 @@ function init_gear_sets()
     ear1="Hecate's Earring",
     ear2="Savant's Earring",
     back="Cheviot Cape",
-    -- sub="Enki Strap",
-    -- ammo="Homiliary",
-    -- head="Befouled Crown",
-    -- body="Acad. Gown +3",
-    -- hands="Raetic Bangles +1",
-    -- feet="Volte Gaiters",
-    -- neck="Bathy Choker +1",
-    -- ear1="Sanare Earring",
-    -- ear2="Lugalbanda Earring",
-    -- ring1={name="Stikini Ring +1", bag="wardrobe3"},
-    -- ring2={name="Stikini Ring +1", bag="wardrobe4"},
-    -- back="Moonlight Cape",
-    -- waist="Carrier's Sash",
+    -- main="Malignance Pole",      -- 20, 20, ___
+    -- sub="Khonsu",                --  6,  6, ___
+    -- ammo="Staunch Tathlum +1",   --  3,  3, ___; Resist Status+11
+    -- head="Pinga Crown +1",       -- __, __, 109
+    -- body="Pinga Tunic +1",       -- __, __, 128
+    -- hands="Pinga Mittens +1",    -- __, __, 101
+    -- legs="Pinga Pants +1",       -- __, __, 147
+    -- feet="Pinga Pumps +1",       -- __, __, 147
+    -- neck="Loricate Torque +1",   --  6,  6, ___; DEF+60
+    -- ear1="Hearty Earring",       -- __, __, ___; Resist Status+5
+    -- ear2="Etiolation Earring",   -- __,  3, ___; Resist Silence+15
+    -- ring1="Gelatinous Ring +1",  --  7, -1, ___
+    -- ring2="Defending Ring",      -- 10, 10, ___
+    -- back="Archon Cape",          -- __, __, ___
+    -- waist="Carrier's Sash",      -- __, __, ___; Ele Resist+15
+
+    -- Ideal:
+    -- main="Malignance Pole",      -- 20, 20, ___
+    -- sub="Khonsu",                --  6,  6, ___
+    -- ammo="Staunch Tathlum +1",   --  3,  3, ___; Resist Status+11
+    -- head="Volte Cap",            -- __, __, 102; Resist Status+10
+    -- body="Pinga Tunic +1",       -- __, __, 128
+    -- hands="Volte Bracers",       -- __, __, 102; Resist Status+10
+    -- legs="Pinga Pants +1",       -- __, __, 147
+    -- feet="Pinga Pumps +1",       -- __, __, 147
+    -- neck="Loricate Torque +1",   --  6,  6, ___; DEF+60
+    -- ear1="Hearty Earring",       -- __, __, ___; Resist Status+5
+    -- ear2="Etiolation Earring",   -- __,  3, ___; Resist Silence+15
+    -- ring1="Gelatinous Ring +1",  --  7, -1, ___
+    -- ring2="Defending Ring",      -- 10, 10, ___
+    -- back="Archon Cape",          -- __, __, ___
+    -- waist="Carrier's Sash",      -- __, __, ___; Ele Resist+15
+    -- 52 PDT / 47 MDT, 626 M.Eva
   }
 
-  sets.HeavyDef = {
-    sub="Genmei Shield", --10/0
-    head="Wayfarer Circlet",
-    body="Shango Robe",
-    hands="Wayfarer Cuffs",
-    legs="Wayfarer Slops",
-    -- main="Daybreak",
-    -- ammo="Staunch Tathlum +1", --3/3
-    -- head="Volte Cap",
-    -- body="Mallquis Saio +2", --8/8
-    -- hands="Gende. Gages +1", --4/4
-    -- legs="Peda. Pants +3",
-    -- feet="Volte Gaiters",
-    -- neck="Loricate Torque +1", --6/6
-    -- ear1="Sanare Earring",
-    -- ring1="Gelatinous Ring +1", --7/(-1)
-    -- ring2="Defending Ring", --10/10
-    -- back="Moonlight Cape", --6/6
-    -- waist="Carrier's Sash",
-  }
-
+  sets.idle = sets.HeavyDef
   sets.idle.HeavyDef = set_combine(sets.idle, sets.HeavyDef)
   sets.idle.Weak = sets.HeavyDef
 
   sets.idle.Vagary = sets.midcast['Elemental Magic']
 
   sets.resting = set_combine(sets.idle, {
-    -- main="Chatoyant Staff",
+    main="Chatoyant Staff",
     -- waist="Shinjutsu-no-Obi +1",
   })
 
@@ -1070,8 +1070,8 @@ function init_gear_sets()
   ---------------------------------------- Defense Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
 
-  sets.defense.PDT = sets.idle.HeavyDef
-  sets.defense.MDT = sets.idle.HeavyDef
+  sets.defense.PDT = sets.HeavyDef
+  sets.defense.MDT = sets.HeavyDef
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Engaged Sets ------------------------------------------
