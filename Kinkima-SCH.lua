@@ -722,6 +722,7 @@ function init_gear_sets()
   -- M.Acc > MND > Enfeebling Duration > Enfeebling Skill
   sets.midcast.MndEnfeebles = {
     body="Shango Robe",             -- 23, 29, __, 15
+    neck="Sanctity Necklace",       -- 10, __, __, __
     -- main=gear.Gada_MND_MAcc,     -- 35, 16, __, 16; +215 M.Acc skill
     -- sub="Ammurapi Shield",       -- 38, 13, __, __
     -- ammo="Pemphredo Tathlum",    --  8, __, __, __
@@ -747,6 +748,8 @@ function init_gear_sets()
 
   -- M.Acc > INT > Enfeebling Duration > Enfeebling Skill
   sets.midcast.IntEnfeebles = {
+    body="Shango Robe",             -- 23, 29, __, 15
+    neck="Sanctity Necklace",       -- 10, __, __, __
     -- main=gear.Gada_INT_MAcc,     -- 35, 16, __, 16; +215 M.Acc skill
     -- sub="Ammurapi Shield",       -- 38, 13, __, __
     -- ammo="Pemphredo Tathlum",    --  8,  4, __, __
@@ -867,6 +870,7 @@ function init_gear_sets()
   -- More emphasis on INT
   sets.midcast.Kaustra = {
     main=gear.Akademos_A,         -- 32, __, 58
+    neck="Sanctity Necklace",     -- __, 10, 10
     -- sub="Enki Strap",          -- 10, 10, __
     -- ammo="Pemphredo Tathlum",  --  4,  8,  4
     -- head="Peda. M.Board +3",   -- 39, 52, 49
@@ -888,6 +892,7 @@ function init_gear_sets()
   -- More emphasis on MAB
   sets.midcast['Elemental Magic'] = {
     main=gear.Akademos_A,           -- 32, __, 58
+    neck="Sanctity Necklace",       -- __, 10, 10
     -- sub="Enki Strap",            -- 10, 10, __
     -- ammo="Pemphredo Tathlum",    --  4,  8,  4
     -- head="Peda. M.Board +3",     -- 39, 52, 49
@@ -968,6 +973,7 @@ function init_gear_sets()
   sets.passive_regen = {
     main="Bolelabunga", --1
     back="Kumbira Cape", --1
+    neck="Sanctity Necklace", --2
     -- main="Malignance Pole", --0
     -- sub="Mensch Strap +1", --3
     -- body="Pluviale", --1
