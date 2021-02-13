@@ -113,7 +113,7 @@ function job_setup()
   state.IdleMode:options('Normal', 'LightDef')
   state.Knockback = M(false, 'Knockback')
   state.DeathResist = M(false, 'Death Resist Mode')
-  state.WeaponSet = M{['description']='Weapon Set', 'Aettir', 'ZanX', 'Epeolatry', 'Lionheart', 'Lycurgos'}
+  state.WeaponSet = M{['description']='Weapon Set', 'Aettir', 'ZanX', 'Epeolatry', 'Lionheart', 'Kaja Chopper'}
   state.AttackMode = M{['description']='Attack', 'Uncapped', 'Capped'}
   state.CP = M(false, "Capacity Points Mode")
   state.RearmingLock = M(false, 'Rearming Lock')
@@ -988,20 +988,21 @@ function init_gear_sets()
   }
 
   -- Weapon Sets
-  sets['Aettir'] = {
+  sets.WeaponSet = {}
+  sets.WeaponSet["Aettir"] = {
     main="Aettir",
   }
-  sets['ZanX'] = {
+  sets.WeaponSet["ZanX"] = {
     main="Zantetsuken X",
   }
-  sets.Epeolatry = {
+  sets.WeaponSet["Epeolatry"] = {
     main="Epeolatry",
   }
-  sets.Lionheart = {
+  sets.WeaponSet["Lionheart"] = {
     main="Lionheart",
   }
-  sets.Lycurgos = {
-    main="Lycurgos",
+  sets.WeaponSet["Kaja Chopper"] = {
+    main="Kaja Chopper",
   }
 
 end
@@ -1459,7 +1460,7 @@ function cycle_weapons(cycle_dir)
   end
 
   add_to_chat(141, 'Weapon Set to '..string.char(31,1)..state.WeaponSet.current)
-  equip(sets[state.WeaponSet.current])
+  equip(sets.WeaponSet[state.WeaponSet.current])
 end
 
 function cycle_toy_weapons(cycle_dir)
