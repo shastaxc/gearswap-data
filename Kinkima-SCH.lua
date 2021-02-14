@@ -713,7 +713,7 @@ function init_gear_sets()
   })
 
   sets.midcast.Protect = set_combine(sets.midcast.EnhancingDuration, {
-    -- ring2="Sheltered Ring",
+    ring2="Sheltered Ring",
   })
   sets.midcast.Protectra = sets.midcast.Protect
   sets.midcast.Shell = sets.midcast.Protect
