@@ -89,7 +89,7 @@ function define_global_sets()
   gear.Merl_FC_feet = {} --7 FC
 
   gear.Merl_MB_body = {} --10 MB Dmg, 40 MAB, 40 M.Acc, 10 INT
-  gear.Merl_MB_feet = {} --10 MB Dmg, 40 MAB, 40 M.Acc, 10 INT
+  gear.Merl_MB_feet = { name="Merlinic Crackows", augments={'Magic burst dmg.+8%','Phys. dmg. taken -2%','INT+3 MND+3 CHR+3','Accuracy+7 Attack+7','Mag. Acc.+1 "Mag.Atk.Bns."+1',}}--Max: 10 MB Dmg, 40 MAB, 40 M.Acc, 10 INT
 
   -- Taeon
   gear.Taeon_FC_body = { name="Taeon Tabard", augments={'DEF+17','"Fast Cast"+5','Phalanx +3',}}

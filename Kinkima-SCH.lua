@@ -957,6 +957,10 @@ function init_gear_sets()
   -- This is applied on top of other sets when appropriate
   sets.magic_burst = {
     main=gear.Akademos_A, --10
+    feet=gear.Merl_MB_feet, --8
+    ring1="Locus Ring", --5
+    -- Ideal:
+    -- main=gear.Akademos_A, --10
     -- head="Peda. M.Board +3", --(4)
     -- body=gear.Merl_MB_body, --10
     -- hands="Amalric Gages +1", --(6)
