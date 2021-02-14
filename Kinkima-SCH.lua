@@ -270,8 +270,8 @@ function init_gear_sets()
 
   -- Max MP
   sets.precast.WS['Myrkr'] = {
+    ammo="Strobilus",              --  45
     legs=gear.Psycloth_D_legs,     -- 109
-    -- ammo="Strobilus",              --  45
     -- head="Pixie Hairpin +1",       -- 120
     -- body="Academic's Gown +3",     -- 173
     -- hands="Thrift Gloves +1 ",     --  99
