@@ -130,7 +130,7 @@ function init_gear_sets()
   sets.precast.FC = {
     ammo="Incantor Stone", --2
     head=gear.Psycloth_D_head, --10
-    body="Shango Robe", --8
+    body=gear.Merl_FC_body, --14
     legs=gear.Psycloth_D_legs, --7
     feet="Peda. Loafers", --5
     back="Swith Cape +1", --4

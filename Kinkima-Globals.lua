@@ -85,7 +85,7 @@ function define_global_sets()
   -- Herculean
 
   -- Merlinic
-  gear.Merl_FC_body = {} --7 FC
+  gear.Merl_FC_body = { name="Merlinic Jubbah", augments={'Mag. Acc.+2 "Mag.Atk.Bns."+2','VIT+5','"Fast Cast"+8',}}
   gear.Merl_FC_feet = {} --7 FC
 
   gear.Merl_MB_body = {} --10 MB Dmg, 40 MAB, 40 M.Acc, 10 INT
