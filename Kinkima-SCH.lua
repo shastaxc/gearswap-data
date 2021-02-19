@@ -132,7 +132,7 @@ function init_gear_sets()
     head=gear.Psycloth_D_head, --10
     body=gear.Merl_FC_body, --14
     legs=gear.Psycloth_D_legs, --7
-    feet="Peda. Loafers", --5
+    feet=gear.Merl_FC_feet, --11
     back="Swith Cape +1", --4
     waist="Embla Sash", --5
     -- neck="Voltsurge Torque", --4
