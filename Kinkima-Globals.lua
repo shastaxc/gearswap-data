@@ -1,4 +1,5 @@
 send_command('lua l gearinfo')
+send_command('ev pos 1260 720')
 
 res = include('resources')
 inspect = include('inspect')
@@ -86,7 +87,7 @@ function define_global_sets()
 
   -- Merlinic
   gear.Merl_FC_body = { name="Merlinic Jubbah", augments={'Mag. Acc.+2 "Mag.Atk.Bns."+2','VIT+5','"Fast Cast"+8',}}
-  gear.Merl_FC_feet = {} --7 FC
+  gear.Merl_FC_feet = { name="Merlinic Crackows", augments={'Accuracy+6','INT+10','"Fast Cast"+6','Mag. Acc.+3 "Mag.Atk.Bns."+3',}}
 
   gear.Merl_MB_body = {} --10 MB Dmg, 40 MAB, 40 M.Acc, 10 INT
   gear.Merl_MB_feet = { name="Merlinic Crackows", augments={'Magic burst dmg.+8%','Phys. dmg. taken -2%','INT+3 MND+3 CHR+3','Accuracy+7 Attack+7','Mag. Acc.+1 "Mag.Atk.Bns."+1',}}--Max: 10 MB Dmg, 40 MAB, 40 M.Acc, 10 INT
