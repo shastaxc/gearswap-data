@@ -640,6 +640,7 @@ function init_gear_sets()
 
   sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
     head="Orion Beret +2",
+    body=gear.Herc_WSD_body,
     hands="Meghanada Gloves +2",
     legs="Arcadian Braccae +3",
     feet=gear.Herc_WSD_feet,

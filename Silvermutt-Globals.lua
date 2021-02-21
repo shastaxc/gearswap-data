@@ -132,7 +132,7 @@ function define_global_sets()
   gear.Herc_MAB_feet = { name="Herculean Boots", augments={'Mag. Acc.+1','"Mag.Atk.Bns."+23','Quadruple Attack +1','Mag. Acc.+17 "Mag.Atk.Bns."+17',}}
 
   gear.Herc_WSD_head = { name="Herculean Helm", augments={'Pet: INT+11','Weapon skill damage +4%','Mag. Acc.+15 "Mag.Atk.Bns."+15',}}
-  gear.Herc_WSD_body = {}
+  gear.Herc_WSD_body = { name="Herculean Vest", augments={'Pet: Attack+12 Pet: Rng.Atk.+12','"Mag.Atk.Bns."+9','Weapon skill damage +10%','Accuracy+20 Attack+20',}}
   gear.Herc_WSD_legs = {}
   gear.Herc_WSD_feet = { name="Herculean Boots", augments={'Rng.Acc.+21','Mag. Acc.+20','Weapon skill damage +6%','Accuracy+3 Attack+3',}}
 

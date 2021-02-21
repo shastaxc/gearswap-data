@@ -496,7 +496,7 @@ function init_gear_sets()
     body="Meghanada Cuirie +2",
     hands="Turms Mittens",
     legs="Meghanada Chausses +2",
-    feet="Turms Leggings",
+    feet="Turms Leggings +1",
     neck="Bathy Choker +1",
     ear1="Infused Earring",
     ring1="Chirich Ring +1",

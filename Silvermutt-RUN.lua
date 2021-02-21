@@ -716,7 +716,7 @@ function init_gear_sets()
     head="Turms Cap +1", --7
     body="Futhark Coat +3", --5
     hands="Regal Gauntlets", --10
-    feet="Turms Leggings", --4
+    feet="Turms Leggings +1", --5
     neck="Bathy Choker +1", --3
     ear1="Infused Earring", --1
     ring1="Chirich Ring +1", --2
@@ -741,7 +741,7 @@ function init_gear_sets()
     body="Runeist's Coat +3", --0/0, 94 [218]
     hands="Turms Mittens", --0/0, 91 [59]
     legs="Erilaz Leg Guards +1", --7/0, 107 [80]
-    feet="Turms Leggings", --0/0, 137 [61]
+    feet="Turms Leggings +1", --0/0, 147 [76]
     neck="Futhark Torque +1", --5/5, 25 [39]
     waist="Audumbla Sash", --4/0, 0 [0]
     ear1="Odnowa Earring +1", --3/5, 0 [110]
@@ -821,7 +821,7 @@ function init_gear_sets()
     body="Runeist's Coat +3", --0/0, 94 [218]
     hands="Turms Mittens", --0/0, 91 [59]
     legs="Erilaz Leg Guards +1", --7/0, 107 [80]
-    feet="Turms Leggings", --0/0, 137 [61]
+    feet="Turms Leggings +1", --0/0, 147 [76]
     neck="Futhark Torque +1", --6/6, 25 [45]
     waist="Audumbla Sash", --4/0, 0 [0]
     ear1="Odnowa Earring +1", --3/5, 0 [110]
@@ -835,7 +835,7 @@ function init_gear_sets()
     -- neck="Futhark Torque +2", --7/7, 30 [60]
     -- ear2="Sanare Earring", --0/0, 6 [0]
     -- waist="Engraved Belt", --0/0, 0 [0] Swap to this after PDT is 54
-  } --52 PDT / 25 MDT, 601 MEVA [907 HP]
+  } --52 PDT / 25 MDT, 611 MEVA [922 HP]
 
   -- Shell V = 29%, MDT cap is 50%
   sets.defense.MDT = {
@@ -862,10 +862,8 @@ function init_gear_sets()
   sets.defense.Parry = {
     hands="Turms Mittens", --Parry: Recover HP+75
     legs="Erilaz Leg Guards +1", --Inquartata+2
-    feet="Turms Leggings", --Inquartata+4
-    -- hands="Turms Mittens",
-    -- legs="Eri. Leg Guards +1",
-    -- feet="Turms Leggings",
+    feet="Turms Leggings +1", --Inquartata+5
+    -- hands="Turms Mittens +1",
     -- back=gear.RUN_HPP_Cape,
   }
 
