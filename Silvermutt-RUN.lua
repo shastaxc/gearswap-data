@@ -113,7 +113,7 @@ function job_setup()
   state.IdleMode:options('Normal', 'LightDef')
   state.Knockback = M(false, 'Knockback')
   state.DeathResist = M(false, 'Death Resist Mode')
-  state.WeaponSet = M{['description']='Weapon Set', 'Aettir', 'ZanX', 'Epeolatry', 'Lionheart', 'Lycurgos'}
+  state.WeaponSet = M{['description']='Weapon Set', 'Aettir', 'Lionheart', 'Epeolatry', 'Lycurgos'}
   state.AttackMode = M{['description']='Attack', 'Uncapped', 'Capped'}
   state.CP = M(false, "Capacity Points Mode")
   state.RearmingLock = M(false, 'Rearming Lock')
