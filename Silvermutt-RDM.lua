@@ -269,7 +269,7 @@ function init_gear_sets()
   -- Fast cast sets for spells
   sets.precast.FC = {
     ammo="Impatiens", --Quick Magic 2%
-    head=gear.Herc_WSD_head, --7
+    head="Herculean Helm", --7
     body="Duelist's Tabard", --10
     hands=gear.Leyline_Gloves, --8
     legs="Ayanmo Cosciales +2", --6
