@@ -1384,11 +1384,11 @@ function job_precast(spell, action, spellMap, eventArgs)
   -- Check that proper ammo is available if we're using ranged attacks or similar.
   if spell.action_type == 'Ranged Attack' or (spell.type == 'WeaponSkill' and (spell.skill == 'Marksmanship' or spell.skill == 'Archery')) then
     check_ammo(spell, action, spellMap, eventArgs)
-  end
-
   -- If using a WS and ranged weapon set to sparrowhawk and not a ranged WS , equip WSD ammo
-  if spell.type == 'WeaponSkill' and state.RangedWeaponSet.current == 'Sparrowhawk' and spell.skill ~= 'Archery' then
+  elseif spell.type == 'WeaponSkill' and state.RangedWeaponSet.current == 'Sparrowhawk' and spell.skill ~= 'Archery' then
     equip({ammo="Hauksbok Arrow"})
+  else
+    equip({ammo=empty})
   end
 end
 
