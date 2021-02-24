@@ -41,10 +41,10 @@ function job_setup()
   send_command('bind ^= gs c scholar dark')
   send_command('bind ^[ gs c scholar power')
   send_command('bind ^] gs c scholar accuracy')
-  send_command('bind ^; gs c scholar speed')
+  send_command('bind ^\' gs c scholar speed')
   send_command('bind ![ gs c scholar aoe')
   send_command('bind !] gs c scholar duration')
-  send_command('bind !; gs c scholar cost')
+  send_command('bind !\' gs c scholar cost')
   send_command('bind !w input /ma "Aspir II" <t>')
   send_command('bind @h gs c cycle HelixMode')
   send_command('bind @r gs c cycle RegenMode')
@@ -133,6 +133,7 @@ function init_gear_sets()
     body=gear.Merl_FC_body, --14
     legs=gear.Psycloth_D_legs, --7
     feet=gear.Merl_FC_feet, --11
+    ring1="Kishar Ring", --4
     back="Swith Cape +1", --4
     waist="Embla Sash", --5
     -- neck="Voltsurge Torque", --4
@@ -323,6 +324,7 @@ function init_gear_sets()
     hands="Serpentes Cuffs",   -- __, __, __, __, __, __, __; Set: 5% CP
     feet="Serpentes Sabots",   -- __, __, __, __, __, __, __; Set: 5% CP
     ear2="Mendicant's Earring",-- __,  5, __, __, __, __, __
+    ring1="Kishar Ring",       -- __, __, __, __, __,  4, __
     ring2="Sirona's Ring",     -- __, __, 10,  3,  3, __, __
     waist="Embla Sash",        -- __, __, __, __, __,  5, __
     -- main="Daybreak",           -- __, 30, __, 30, __, __, __
@@ -334,7 +336,6 @@ function init_gear_sets()
     -- feet=gear.Vanya_B_feet,    -- __,  5, 40, 19, 10, __, __
     -- neck="Voltsurge Torque",   -- __, __, __, __, __,  4, __
     -- ear1="Malignance Earring", -- __, __, __,  8, __,  4, __
-    -- ring1="Kishar Ring",       -- __, __, __, __, __,  4, __
     -- back=gear.SCH_FC_Cape,     -- __, __, __, 30, __, 10, __
     -- 0 CPII, 50 CP, 130 Heal Skill, 220 MND, 91 VIT, 32 FC, 0 -Enmity
     -- 718 Power
@@ -366,6 +367,7 @@ function init_gear_sets()
     hands="Serpentes Cuffs",   -- __, __, __, __, __, __, __; Set: 5% CP
     feet="Serpentes Sabots",   -- __, __, __, __, __, __, __; Set: 5% CP
     ear2="Mendicant's Earring",-- __,  5, __, __, __, __, __
+    ring1="Kishar Ring",       -- __, __, __, __, __,  4, __
     ring2="Sirona's Ring",     -- __, __, 10,  3,  3, __, __
     waist="Embla Sash",        -- __, __, __, __, __,  5, __
     -- main="Daybreak",           -- __, 30, __, 30, __, __, __
@@ -377,7 +379,6 @@ function init_gear_sets()
     -- feet=gear.Vanya_B_feet,    -- __,  5, 40, 19, 10, __, __
     -- neck="Voltsurge Torque",   -- __, __, __, __, __,  4, __
     -- ear1="Malignance Earring", -- __, __, __,  8, __,  4, __
-    -- ring1="Kishar Ring",       -- __, __, __, __, __,  4, __
     -- back=gear.SCH_FC_Cape,     -- __, __, __, 30, __, 10, __
     -- 0 CPII, 50 CP, 130 Heal Skill, 220 MND, 91 VIT, 32 FC, 0 -Enmity
     -- 718 Power
@@ -415,6 +416,7 @@ function init_gear_sets()
     hands="Serpentes Cuffs",   -- __, __, __, __, __, __, __; Set: 5% CP
     feet="Serpentes Sabots",   -- __, __, __, __, __, __, __; Set: 5% CP
     ear2="Mendicant's Earring",-- __,  5, __, __, __, __, __
+    ring1="Kishar Ring",       -- __, __, __, __, __,  4, __
     ring2="Sirona's Ring",     -- __, __, 10,  3,  3, __, __
     waist="Embla Sash",        -- __, __, __, __, __,  5, __
     -- main="Daybreak",           -- __, 30, __, 30, __, __, __
@@ -426,7 +428,6 @@ function init_gear_sets()
     -- feet=gear.Vanya_B_feet,    -- __,  5, 40, 19, 10, __, __
     -- neck="Voltsurge Torque",   -- __, __, __, __, __,  4, __
     -- ear1="Malignance Earring", -- __, __, __,  8, __,  4, __
-    -- ring1="Kishar Ring",       -- __, __, __, __, __,  4, __
     -- back=gear.SCH_FC_Cape,     -- __, __, __, 30, __, 10, __
     -- 0 CPII, 50 CP, 130 Heal Skill, 220 MND, 91 VIT, 32 FC, 0 -Enmity
     -- 1436 Power
@@ -458,6 +459,7 @@ function init_gear_sets()
     hands="Serpentes Cuffs",   -- __, __, __, __, __, __, __; Set: 5% CP
     feet="Serpentes Sabots",   -- __, __, __, __, __, __, __; Set: 5% CP
     ear2="Mendicant's Earring",-- __,  5, __, __, __, __, __
+    ring1="Kishar Ring",       -- __, __, __, __, __,  4, __
     ring2="Sirona's Ring",     -- __, __, 10,  3,  3, __, __
     waist="Embla Sash",        -- __, __, __, __, __,  5, __
     -- sub="Enki Strap",          -- __, __, __, 10, __, __, __
@@ -468,7 +470,6 @@ function init_gear_sets()
     -- feet=gear.Vanya_B_feet,    -- __,  5, 40, 19, 10, __, __
     -- neck="Voltsurge Torque",   -- __, __, __, __, __,  4, __
     -- ear1="Malignance Earring", -- __, __, __,  8, __,  4, __
-    -- ring1="Kishar Ring",       -- __, __, __, __, __,  4, __
     -- back=gear.SCH_FC_Cape,     -- __, __, __, 30, __, 10, __
     -- waist="Hachirin-no-Obi",   -- __, __, __, __, __, __, __
     -- 0 CPII, 50 CP, 130 Heal Skill, 220 MND, 91 VIT, 32 FC, 0 -Enmity
@@ -507,6 +508,7 @@ function init_gear_sets()
     legs=gear.Psycloth_D_legs, -- __, __, __, 30, 12,  7, __
     feet="Serpentes Sabots",   -- __, __, __, __, __, __, __; Set: 5% CP
     ear2="Mendicant's Earring",-- __,  5, __, __, __, __, __
+    ring1="Kishar Ring",       -- __, __, __, __, __,  4, __
     ring2="Sirona's Ring",     -- __, __, 10,  3,  3, __, __
     waist="Embla Sash",        -- __, __, __, __, __,  5, __
     -- main="Daybreak",           -- __, 30, __, 30, __, __, __
@@ -516,7 +518,6 @@ function init_gear_sets()
     -- feet=gear.Vanya_B_feet,    -- __,  5, 40, 19, 10, __, __
     -- neck="Voltsurge Torque",   -- __, __, __, __, __,  4, __
     -- ear1="Malignance Earring", -- __, __, __,  8, __,  4, __
-    -- ring1="Kishar Ring",       -- __, __, __, __, __,  4, __
     -- back=gear.SCH_FC_Cape,     -- __, __, __, 30, __, 10, __
     -- 0 CPII, 50 CP, 70 Heal Skill, 209 MND, 89 VIT, 52 FC, 4 -Enmity
     -- 723 Power
@@ -550,6 +551,7 @@ function init_gear_sets()
     legs=gear.Psycloth_D_legs, -- __, __, __, 30, 12,  7, __
     feet="Serpentes Sabots",   -- __, __, __, __, __, __, __; Set: 5% CP
     ear2="Mendicant's Earring",-- __,  5, __, __, __, __, __
+    ring1="Kishar Ring",       -- __, __, __, __, __,  4, __
     ring2="Sirona's Ring",     -- __, __, 10,  3,  3, __, __
     waist="Embla Sash",        -- __, __, __, __, __,  5, __
     -- main="Daybreak",           -- __, 30, __, 30, __, __, __
@@ -559,7 +561,6 @@ function init_gear_sets()
     -- feet=gear.Vanya_B_feet,    -- __,  5, 40, 19, 10, __, __
     -- neck="Voltsurge Torque",   -- __, __, __, __, __,  4, __
     -- ear1="Malignance Earring", -- __, __, __,  8, __,  4, __
-    -- ring1="Kishar Ring",       -- __, __, __, __, __,  4, __
     -- back=gear.SCH_FC_Cape,     -- __, __, __, 30, __, 10, __
     -- 0 CPII, 50 CP, 70 Heal Skill, 209 MND, 89 VIT, 52 FC, 4 -Enmity
     -- 723 Power
@@ -723,6 +724,7 @@ function init_gear_sets()
   sets.midcast.MndEnfeebles = {
     body="Shango Robe",             -- 23, 29, __, 15
     neck="Sanctity Necklace",       -- 10, __, __, __
+    ring1="Kishar Ring",         --  5, __, 10, __
     -- main=gear.Gada_MND_MAcc,     -- 35, 16, __, 16; +215 M.Acc skill
     -- sub="Ammurapi Shield",       -- 38, 13, __, __
     -- ammo="Pemphredo Tathlum",    --  8, __, __, __
@@ -734,7 +736,6 @@ function init_gear_sets()
     -- neck="Argute Stole +2",      -- 30, 15, __, __
     -- ear1="Malignance Earring",   -- 10,  8, __, __
     -- ear2="Regal Earring",        -- __, 10, __, __; Adds set bonus
-    -- ring1="Kishar Ring",         --  5, __, 10, __
     -- ring2="Metamor. Ring +1",    -- 16, 15, __, __
     -- back=gear.SCH_MND_MAcc_Cape, -- 30, 20, __, __
     -- waist="Luminary Sash",       -- 10, 10, __, __
@@ -750,6 +751,7 @@ function init_gear_sets()
   sets.midcast.IntEnfeebles = {
     body="Shango Robe",             -- 23, 29, __, 15
     neck="Sanctity Necklace",       -- 10, __, __, __
+    ring1="Kishar Ring",         --  5, __, 10, __
     -- main=gear.Gada_INT_MAcc,     -- 35, 16, __, 16; +215 M.Acc skill
     -- sub="Ammurapi Shield",       -- 38, 13, __, __
     -- ammo="Pemphredo Tathlum",    --  8,  4, __, __
@@ -761,7 +763,6 @@ function init_gear_sets()
     -- neck="Argute Stole +2",      -- 30, 15, __, __
     -- ear1="Malignance Earring",   -- 10,  8, __, __
     -- ear2="Regal Earring",        -- __, 10, __, __; Adds set bonus
-    -- ring1="Kishar Ring",         --  5, __, 10, __
     -- ring2="Metamor. Ring +1",    -- 16, 15, __, __
     -- back=gear.SCH_INT_MAcc_Cape, -- 30, 20, __, __
     -- waist="Acuity Belt +1",      -- 15, 23, __, __
