@@ -255,9 +255,9 @@ function init_gear_sets()
     head=gear.Anwig_Salade,         -- __(_),  4 <-2>
     body="Maxixi Casaque +3",       -- 19(8), 33 <-2>
     legs="Dashing Subligar",        -- 10(_), 11 <__>; Gives Blink
-    feet="Maculele Toe Shoes +1",   -- __(_), 33 <__>
-    ring1=gear.Dark_Ring,           -- __(_),  1 <__>
     feet="Maxixi Shoes +1",         -- 10(_), 30 <__>
+    neck="Etoile gorget +2",        -- 10(_), 25 <__>
+    ring1=gear.Dark_Ring,           -- __(_),  1 <__>
     back="Toetapper Mantle",        --  5(_), __ <__>
     waist="Aristo Belt",            -- __(_),  8 <__>
     -- Ideal:
@@ -312,7 +312,6 @@ function init_gear_sets()
     ring2="Chirich Ring +1",
     back=gear.DNC_TP_DW_Cape,
     -- legs="Maxixi Tights +3",
-    -- neck="Etoile Gorget +2",
     -- ear1="Mache Earring +1",
     -- ear2="Mache Earring +1",
     -- waist="Olseni Belt",
@@ -699,7 +698,7 @@ function init_gear_sets()
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha_legs,
     feet="Horos Toe Shoes +3",
-    neck="Anu Torque",
+    neck="Etoile Gorget +2",
     ear1="Sherida Earring",
     ear2="Telos Earring",
     ring1="Epona's Ring",
@@ -707,7 +706,6 @@ function init_gear_sets()
     back=gear.DNC_TP_DA_Cape,
     waist="Windbuffet Belt +1",
     -- hands=gear.Adhemar_A_hands,
-    -- neck="Etoile Gorget +2",
   }
   sets.engaged.LowAcc = set_combine(sets.engaged, {
     head="Dampening Tam",
@@ -742,14 +740,13 @@ function init_gear_sets()
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha_legs,
     feet="Horos Toe Shoes +3",
-    neck="Anu Torque",
+    neck="Etoile Gorget +2",
     ear1="Suppanomimi", -- 5
     ear2="Eabani Earring", -- 4
     ring1="Epona's Ring",
     ring2="Gere Ring",
     back=gear.DNC_TP_DW_Cape, -- 10
     waist="Reiki Yotai", -- 7
-    -- neck="Etoile Gorget +2",
   } --40
   sets.engaged.DW.LowAcc = set_combine(sets.engaged.DW, {
     ammo="Yamarang",
@@ -781,14 +778,13 @@ function init_gear_sets()
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha_legs,
     feet="Horos Toe Shoes +3",
-    neck="Anu Torque",
+    neck="Etoile Gorget +2",
     ear1="Eabani Earring", -- 4
     ear2="Sherida Earring",
     ring1="Epona's Ring",
     ring2="Gere Ring",
     back=gear.DNC_TP_DW_Cape, -- 10
     waist="Reiki Yotai", -- 7
-    -- neck="Etoile Gorget +2",
   } --27
   sets.engaged.DW.LowAcc.LowHaste = set_combine(sets.engaged.DW.LowHaste, {
     ammo="Yamarang",
@@ -824,14 +820,13 @@ function init_gear_sets()
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha_legs,
     feet="Horos Toe Shoes +3",
-    neck="Anu Torque",
+    neck="Etoile Gorget +2",
     ear1="Eabani Earring", -- 4
     ear2="Sherida Earring",
     ring1="Epona's Ring",
     ring2="Gere Ring",
     back=gear.DNC_TP_DW_Cape, -- 10
     waist="Reiki Yotai", -- 7
-    -- neck="Etoile Gorget +2",
   } --21
   sets.engaged.DW.LowAcc.MidHaste = set_combine(sets.engaged.DW.MidHaste, {
     ammo="Yamarang",
@@ -867,14 +862,13 @@ function init_gear_sets()
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha_legs,
     feet="Horos Toe Shoes +3",
-    neck="Anu Torque",
+    neck="Etoile Gorget +2",
     ear1="Telos Earring",
     ear2="Sherida Earring",
     ring1="Epona's Ring",
     ring2="Gere Ring",
     back=gear.DNC_TP_DA_Cape,
     waist="Reiki Yotai", -- 7
-    -- neck="Etoile Gorget +2",
   } --7
   sets.engaged.DW.LowAcc.HighHaste = set_combine(sets.engaged.DW.HighHaste, {
     ammo="Yamarang",
@@ -908,14 +902,13 @@ function init_gear_sets()
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha_legs,
     feet="Horos Toe Shoes +3",
-    neck="Anu Torque",
+    neck="Etoile Gorget +2",
     waist="Windbuffet Belt +1",
     ear1="Telos Earring",
     ear2="Sherida Earring",
     ring1="Epona's Ring",
     ring2="Gere Ring",
     back=gear.DNC_TP_DA_Cape,
-    -- neck="Etoile Gorget +2",
   }
   sets.engaged.DW.LowAcc.MaxHaste = set_combine(sets.engaged.DW.MaxHaste, {
     ammo="Yamarang",
