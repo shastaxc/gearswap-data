@@ -980,11 +980,11 @@ function init_gear_sets()
   -- Passive sets are applied to idle in function `customize_idle_sets`
   sets.passive_regen = {
     main="Bolelabunga", --1
+    body="Pluviale", --1
     back="Kumbira Cape", --1
     neck="Sanctity Necklace", --2
     -- main="Malignance Pole", --0
     -- sub="Mensch Strap +1", --3
-    -- body="Pluviale", --1
     -- feet="Coalrake Sabots", --1
     -- neck="Bathy Choker +1", --1
     -- ear1="Infused Earring", --1
@@ -1002,6 +1002,7 @@ function init_gear_sets()
   }
   sets.passive_refresh = {
     main="Bolelabunga",
+    body="Pluviale", --1
     legs="Assiduity Pants +1",
     -- main="Contemplator +1", --2
     -- sub="Oneiros Grip", --1; when mp<70%
