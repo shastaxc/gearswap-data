@@ -994,7 +994,7 @@ function init_gear_sets()
   }
   sets.passive_regen.daytime = {
     hands="Serpentes Cuffs", --1
-    -- ear2="Dawn Earring", --1
+    ear2="Dawn Earring", --1
     -- waist="Lycopodium Sash", --3
   }
   sets.passive_regen.nighttime = {
