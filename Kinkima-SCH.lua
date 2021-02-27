@@ -596,6 +596,7 @@ function init_gear_sets()
   sets.midcast.Cursna = {
     ammo="Incantor Stone",     -- __, __,  2
     ear2="Meili Earring",      -- 10, __, __
+    ring1="Haoma's Ring",      --  8, 15, __
     -- main="Gada",               -- 18, __,  6
     -- sub="Chanter's Shield",    -- __, __,  3
     -- head=gear.Vanya_B_head,    -- 20, __, __
@@ -605,7 +606,6 @@ function init_gear_sets()
     -- feet=gear.Vanya_B_feet,    -- 40,  5, __
     -- neck="Debilis Medallion",  -- __, 15, __
     -- ear1="Beatific Earring",   --  4, __, __
-    -- ring1="Haoma's Ring",      --  8, 15, __
     -- ring2="Menelaus's Ring",   -- 15, 20,-10
     -- back="Oretania's Cape +1", -- __,  5, __
     -- waist="Bishop's Sash",     --  5, __, __
