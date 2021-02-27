@@ -323,7 +323,8 @@ function init_gear_sets()
     ammo="Incantor Stone",     -- __, __, __, __, __,  2, __
     hands="Serpentes Cuffs",   -- __, __, __, __, __, __, __; Set: 5% CP
     feet="Serpentes Sabots",   -- __, __, __, __, __, __, __; Set: 5% CP
-    ear2="Mendicant's Earring",-- __,  5, __, __, __, __, __
+    ear1="Mendicant's Earring",-- __,  5, __, __, __, __, __
+    ear2="Meili Earring",      -- __, __, 10, __, __, __, __
     ring1="Kishar Ring",       -- __, __, __, __, __,  4, __
     ring2="Sirona's Ring",     -- __, __, 10,  3,  3, __, __
     waist="Embla Sash",        -- __, __, __, __, __,  5, __
@@ -366,7 +367,8 @@ function init_gear_sets()
     ammo="Incantor Stone",     -- __, __, __, __, __,  2, __
     hands="Serpentes Cuffs",   -- __, __, __, __, __, __, __; Set: 5% CP
     feet="Serpentes Sabots",   -- __, __, __, __, __, __, __; Set: 5% CP
-    ear2="Mendicant's Earring",-- __,  5, __, __, __, __, __
+    ear1="Mendicant's Earring",-- __,  5, __, __, __, __, __
+    ear2="Meili Earring",      -- __, __, 10, __, __, __, __
     ring1="Kishar Ring",       -- __, __, __, __, __,  4, __
     ring2="Sirona's Ring",     -- __, __, 10,  3,  3, __, __
     waist="Embla Sash",        -- __, __, __, __, __,  5, __
@@ -550,7 +552,8 @@ function init_gear_sets()
     hands="Serpentes Cuffs",   -- __, __, __, __, __, __, __; Set: 5% CP
     legs=gear.Psycloth_D_legs, -- __, __, __, 30, 12,  7, __
     feet="Serpentes Sabots",   -- __, __, __, __, __, __, __; Set: 5% CP
-    ear2="Mendicant's Earring",-- __,  5, __, __, __, __, __
+    ear1="Mendicant's Earring",-- __,  5, __, __, __, __, __
+    ear2="Meili Earring",      -- __, __, 10, __, __, __, __
     ring1="Kishar Ring",       -- __, __, __, __, __,  4, __
     ring2="Sirona's Ring",     -- __, __, 10,  3,  3, __, __
     waist="Embla Sash",        -- __, __, __, __, __,  5, __
@@ -592,6 +595,7 @@ function init_gear_sets()
   -- Base rate is determined by base healing magic skill (26% @500)
   sets.midcast.Cursna = {
     ammo="Incantor Stone",     -- __, __,  2
+    ear2="Meili Earring",      -- 10, __, __
     -- main="Gada",               -- 18, __,  6
     -- sub="Chanter's Shield",    -- __, __,  3
     -- head=gear.Vanya_B_head,    -- 20, __, __
@@ -601,7 +605,6 @@ function init_gear_sets()
     -- feet=gear.Vanya_B_feet,    -- 40,  5, __
     -- neck="Debilis Medallion",  -- __, 15, __
     -- ear1="Beatific Earring",   --  4, __, __
-    -- ear2="Meili Earring",      -- 10, __, __
     -- ring1="Haoma's Ring",      --  8, 15, __
     -- ring2="Menelaus's Ring",   -- 15, 20,-10
     -- back="Oretania's Cape +1", -- __,  5, __
