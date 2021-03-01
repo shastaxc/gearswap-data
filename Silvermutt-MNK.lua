@@ -290,7 +290,7 @@ function init_gear_sets()
     head=gear.Adhemar_B_head,
     body="Kendatsuba Samue +1",
     hands=gear.Ryuo_A_hands,
-    legs="Hizamaru Hizayoroi +2",
+    legs="Kendatsuba Hakama +1",
     feet=gear.Herc_DEX_CritDmg_feet,
     neck="Monk's Nodowa +2",
     ear1="Sherida Earring",
@@ -299,7 +299,6 @@ function init_gear_sets()
     ring2="Niqmaddu Ring",
     back=gear.MNK_STR_Crit_Cape,
     waist="Moonbow Belt +1",
-    -- legs="Kendatsuba Hakama +1",
     -- feet=gear.Herc_STR_CritDmg_feet,
   })
   sets.precast.WS["Victory Smite"].MaxTP = set_combine(sets.precast.WS["Victory Smite"], {
