@@ -61,7 +61,7 @@ function job_setup()
   state.RangedMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.IdleMode:options('Normal', 'LightDef')
   state.WeaponSet = M{['description']='Weapon Set', 'MagicRA', 'PhysRA', 'PhysRA RangedOnly', 'PhysRA NoBuff', 'Melee', 'CritRA'}
-  state.RangedWeaponSet = M{['description']='Ranged Weapon Set', 'Gastraphetes', 'Doomsday', "Pharaoh's Bow", 'Sparrowhawk'}
+  state.RangedWeaponSet = M{['description']='Ranged Weapon Set', 'Gastraphetes', 'Doomsday', "Pharaoh's Bow", 'Sparrowhawk +1'}
   state.CP = M(false, "Capacity Points Mode")
   state.RearmingLock = M(false, 'Rearming Lock')
   -- Whether a warning has been given for low ammo
@@ -1362,8 +1362,8 @@ function init_gear_sets()
   sets.WeaponSet['Gastraphetes'] = {
     ranged="Gastraphetes",
   }
-  sets.WeaponSet['Sparrowhawk'] = {
-    ranged="Sparrowhawk",
+  sets.WeaponSet['Sparrowhawk +1'] = {
+    ranged="Sparrowhawk +1",
   }
 
 end
