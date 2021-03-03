@@ -61,7 +61,7 @@ function job_setup()
   state.RangedMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.IdleMode:options('Normal', 'LightDef')
   state.WeaponSet = M{['description']='Weapon Set', 'MagicRA', 'PhysRA', 'PhysRA RangedOnly', 'PhysRA NoBuff', 'Melee', 'CritRA'}
-  state.RangedWeaponSet = M{['description']='Ranged Weapon Set', 'Gastraphetes', 'Doomsday', "Pharaoh's Bow", 'Sparrowhawk +1'}
+  state.RangedWeaponSet = M{['description']='Ranged Weapon Set', 'Gastraphetes', 'Doomsday', "Pharaoh's Bow", 'Sparrowhawk +2'}
   state.CP = M(false, "Capacity Points Mode")
   state.RearmingLock = M(false, 'Rearming Lock')
   -- Whether a warning has been given for low ammo
@@ -1362,8 +1362,8 @@ function init_gear_sets()
   sets.WeaponSet['Gastraphetes'] = {
     ranged="Gastraphetes",
   }
-  sets.WeaponSet['Sparrowhawk +1'] = {
-    ranged="Sparrowhawk +1",
+  sets.WeaponSet['Sparrowhawk +2'] = {
+    ranged="Sparrowhawk +2",
   }
 
 end
@@ -1896,8 +1896,8 @@ function check_ammo(spell, action, spellMap, eventArgs)
       -- physical non-ranged weaponskills
       else
         -- If ranged weapon set to sparrowhawk and using non-ranged WS, equip WSD ammo
-        if state.RangedWeaponSet.current == 'Sparrowhawk' then
-          add_to_chat(3,"check")
+        local rweapon = state.RangedWeaponSet.current
+        if rweapon and rweapon:length() >= 11 and rweapon:startswith('Sparrowhawk') then
           swapped_ammo = "Hauksbok Arrow"
           equip({ammo=swapped_ammo})
         end
