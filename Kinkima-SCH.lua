@@ -50,6 +50,7 @@ function job_setup()
   send_command('bind @r gs c cycle RegenMode')
   send_command('bind @s gs c toggle StormSurge')
 
+  send_command('bind !q input /ja "Sublimation" <me>')
   send_command('bind !u input /ma "Blink" <me>')
   send_command('bind !i input /ma "Stoneskin" <me>')
   send_command('bind !p input /ma "Aquaveil" <me>')
