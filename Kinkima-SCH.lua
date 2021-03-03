@@ -168,6 +168,7 @@ function init_gear_sets()
   -- breaking the normal 80% cast time reduction cap.
   -- Cast Time = Base Cast Time x (1 - FC)x(1 - magian staff cast bonus)x(1 - Grimoire reduction)
   sets.precast.FC.Grimoire = set_combine(sets.precast.FC, {
+    head="Peda. M.Board",
     -- head="Peda. M.Board +3",
     -- feet="Acad. Loafers +3",
   })
@@ -857,6 +858,7 @@ function init_gear_sets()
   })
 
   sets.midcast.Stun.DarkArts = set_combine(sets.midcast.Stun, {
+    head="Peda. M.Board",
     --Ideal:
     -- main="Hvergelmir",           -- __, 50, __, 269
     -- sub="Khonsu",                -- __, __, 30, ___
@@ -884,6 +886,7 @@ function init_gear_sets()
   -- More emphasis on INT
   sets.midcast.Kaustra = {
     main=gear.Akademos_A,         -- 32, __, 58
+    head="Peda. M.Board",
     neck="Sanctity Necklace",     -- __, 10, 10
     -- sub="Enki Strap",          -- 10, 10, __
     -- ammo="Pemphredo Tathlum",  --  4,  8,  4
@@ -906,6 +909,7 @@ function init_gear_sets()
   -- More emphasis on MAB
   sets.midcast['Elemental Magic'] = {
     main=gear.Akademos_A,           -- 32, __, 58
+    head="Peda. M.Board",
     neck="Sanctity Necklace",       -- __, 10, 10
     -- sub="Enki Strap",            -- 10, 10, __
     -- ammo="Pemphredo Tathlum",    --  4,  8,  4
@@ -971,6 +975,7 @@ function init_gear_sets()
   -- This is applied on top of other sets when appropriate
   sets.magic_burst = {
     main=gear.Akademos_A, --10
+    head="Peda. M.Board",
     feet=gear.Merl_MB_feet, --8
     ring1="Locus Ring", --5
     -- Ideal:
@@ -1103,6 +1108,7 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.engaged = {
+    head="Peda. M.Board",
     feet="Peda. Loafers",
     -- head="Peda. M.Board +3",
     -- body="Jhakri Robe +2",
