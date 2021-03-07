@@ -61,7 +61,7 @@ function job_setup()
   state.RangedMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.IdleMode:options('Normal', 'LightDef')
   state.WeaponSet = M{['description']='Weapon Set', 'MagicRA', 'PhysRA', 'PhysRA RangedOnly', 'PhysRA NoBuff', 'Melee', 'CritRA'}
-  state.RangedWeaponSet = M{['description']='Ranged Weapon Set', 'Gastraphetes', 'Doomsday', "Pharaoh's Bow", 'Sparrowhawk +2'}
+  state.RangedWeaponSet = M{['description']='Ranged Weapon Set', 'Gastraphetes', 'Fomalhaut', 'Doomsday', 'Sparrowhawk +2'}
   state.CP = M(false, "Capacity Points Mode")
   state.RearmingLock = M(false, 'Rearming Lock')
   -- Whether a warning has been given for low ammo
@@ -80,13 +80,12 @@ function job_setup()
       "Yoichi's Quiver", "Artemis's Quiver", "Chrono Quiver"}
 
   marksman_weapon_subtypes = {
-    ['Doomsday'] = "gun",
     ['Gastraphetes'] = "xbow",
+    ['Fomalhaut'] = "gun",
+    ['Doomsday'] = "gun",
   }
-
+  
   DefaultAmmo = {
-    ["Pharaoh's Bow"] = "Eminent Arrow",
-    ['Doomsday'] = "Eminent Bullet",
     ['Yoichinoyumi'] = "Chrono Arrow",
     ['Gandiva'] = "Chrono Arrow",
     ['Fail-Not'] = "Chrono Arrow",
@@ -94,14 +93,14 @@ function job_setup()
     ['Armageddon'] = "Chrono Bullet",
     ['Gastraphetes'] = "Quelling Bolt",
     ['Fomalhaut'] = "Chrono Bullet",
+    ['Doomsday'] = "Eminent Bullet",
     ['Sparrowhawk'] = "Eminent Arrow",
     ['Sparrowhawk +1'] = "Eminent Arrow",
     ['Sparrowhawk +2'] = "Eminent Arrow",
     ['Sparrowhawk +3'] = "Eminent Arrow",
+    ['Accipiter'] = "Eminent Arrow",
   }
   AccAmmo = {
-    ["Pharaoh's Bow"] = "Eminent Arrow",
-    ['Doomsday'] = "Eminent Bullet",
     ['Yoichinoyumi'] = "Yoichi's Arrow",
     ['Gandiva'] = "Yoichi's Arrow",
     ['Fail-Not'] = "Yoichi's Arrow",
@@ -109,14 +108,14 @@ function job_setup()
     ['Armageddon'] = "Eradicating Bullet",
     ['Gastraphetes'] = "Quelling Bolt",
     ['Fomalhaut'] = "Devastating Bullet",
+    ['Doomsday'] = "Eminent Bullet",
     ['Sparrowhawk'] = "Eminent Arrow",
     ['Sparrowhawk +1'] = "Eminent Arrow",
     ['Sparrowhawk +2'] = "Eminent Arrow",
     ['Sparrowhawk +3'] = "Eminent Arrow",
+    ['Accipiter'] = "Eminent Arrow",
   }
   WSAmmo = {
-    ["Pharaoh's Bow"] = "Eminent Arrow",
-    ['Doomsday'] = "Eminent Bullet",
     ['Yoichinoyumi'] = "Chrono Arrow",
     ['Gandiva'] = "Chrono Arrow",
     ['Fail-Not'] = "Chrono Arrow",
@@ -124,14 +123,14 @@ function job_setup()
     ['Armageddon'] = "Chrono Bullet",
     ['Gastraphetes'] = "Quelling Bolt",
     ['Fomalhaut'] = "Chrono Bullet",
+    ['Doomsday'] = "Eminent Bullet",
     ['Sparrowhawk'] = "Eminent Arrow",
     ['Sparrowhawk +1'] = "Eminent Arrow",
     ['Sparrowhawk +2'] = "Eminent Arrow",
     ['Sparrowhawk +3'] = "Eminent Arrow",
+    ['Accipiter'] = "Eminent Arrow",
   }
   MagicAmmo = {
-    ["Pharaoh's Bow"] = "Eminent Arrow",
-    ['Doomsday'] = "Eminent Bullet",
     ['Yoichinoyumi'] = "Chrono Arrow",
     ['Gandiva'] = "Chrono Arrow",
     ['Fail-Not'] = "Chrono Arrow",
@@ -139,10 +138,12 @@ function job_setup()
     ['Armageddon'] = "Devastating Bullet",
     ['Gastraphetes'] = "Quelling Bolt",
     ['Fomalhaut'] = "Devastating Bullet",
+    ['Doomsday'] = "Eminent Bullet",
     ['Sparrowhawk'] = "Eminent Arrow",
     ['Sparrowhawk +1'] = "Eminent Arrow",
     ['Sparrowhawk +2'] = "Eminent Arrow",
     ['Sparrowhawk +3'] = "Eminent Arrow",
+    ['Accipiter'] = "Eminent Arrow",
   }
 
   send_command('bind !s gs c faceaway')
@@ -1353,14 +1354,14 @@ function init_gear_sets()
   }
 
   -- Ranged weapon sets
-  sets.WeaponSet["Pharaoh's Bow"] = {
-    ranged="Pharaoh's Bow",
+  sets.WeaponSet['Gastraphetes'] = {
+    ranged="Gastraphetes",
+  }
+  sets.WeaponSet['Fomalhaut'] = {
+    ranged="Fomalhaut",
   }
   sets.WeaponSet['Doomsday'] = {
     ranged="Doomsday",
-  }
-  sets.WeaponSet['Gastraphetes'] = {
-    ranged="Gastraphetes",
   }
   sets.WeaponSet['Sparrowhawk +2'] = {
     ranged="Sparrowhawk +2",
