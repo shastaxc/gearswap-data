@@ -134,6 +134,7 @@ function init_gear_sets()
     ammo="Incantor Stone", --2
     head=gear.Psycloth_D_head, --10
     body=gear.Merl_FC_body, --14
+    hands="Academic's Bracers", --5
     legs=gear.Psycloth_D_legs, --7
     feet=gear.Merl_FC_feet, --11
     ring1="Kishar Ring", --4
@@ -809,6 +810,7 @@ function init_gear_sets()
   sets.midcast['Dark Magic'] = {
     head="Academic's Mortarboard",
     body="Shango Robe",
+    hands="Academic's Bracers",
     legs="Pedagogy Pants",
     -- main="Rubicundity",        -- 25, 21, 20; +215 M.Acc skill
     -- sub="Ammurapi Shield",     -- __, 13, 38
@@ -847,6 +849,7 @@ function init_gear_sets()
   sets.midcast.Stun = set_combine(sets.midcast['Dark Magic'], {
     head="Academic's Mortarboard",
     body="Academic's Gown",
+    hands="Academic's Bracers",
     -- back=gear.SCH_MAB_Cape,
 
     --Ideal:
@@ -872,6 +875,7 @@ function init_gear_sets()
   sets.midcast.Stun.DarkArts = set_combine(sets.midcast.Stun, {
     head="Peda. M.Board",
     body="Academic's Gown",
+    hands="Academic's Bracers",
     --Ideal:
     -- main="Hvergelmir",           -- __, 50, __, 269
     -- sub="Khonsu",                -- __, __, 30, ___
