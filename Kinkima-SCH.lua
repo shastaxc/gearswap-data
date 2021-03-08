@@ -110,6 +110,7 @@ function init_gear_sets()
 
   -- Precast sets to enhance JAs
   sets.precast.JA['Tabula Rasa'] = {
+    legs="Pedagogy Pants",
     -- legs="Peda. Pants +3",
   }
   sets.precast.JA['Enlightenment'] = {
@@ -260,6 +261,7 @@ function init_gear_sets()
 
   sets.precast.WS['Omniscience'] = set_combine(sets.precast.WS, {
     body="Peda. Gown",
+    legs="Pedagogy Pants",
     -- ammo="Pemphredo Tathlum",
     -- head="Pixie Hairpin +1",
     -- body="Peda. Gown +3",
@@ -806,6 +808,7 @@ function init_gear_sets()
   sets.midcast['Dark Magic'] = {
     head="Academic's Mortarboard",
     body="Shango Robe",
+    legs="Pedagogy Pants",
     -- main="Rubicundity",        -- 25, 21, 20; +215 M.Acc skill
     -- sub="Ammurapi Shield",     -- __, 13, 38
     -- ammo="Pemphredo Tathlum",  -- __,  4,  8
@@ -827,6 +830,7 @@ function init_gear_sets()
 
   -- Add Drain potency
   sets.midcast.Drain = set_combine(sets.midcast['Dark Magic'], {
+    legs="Pedagogy Pants",
     waist="Fucho-no-obi",         --  8
     -- main="Rubicundity",        -- 20
     -- sub="Ammurapi Shield",     -- __
@@ -936,6 +940,7 @@ function init_gear_sets()
   }
 
   sets.midcast['Elemental Magic'].Seidr = set_combine(sets.midcast['Elemental Magic'], {
+    legs="Pedagogy Pants",
     -- head="Merlinic Hood",
     -- body="Seidr Cotehardie",
     -- legs="Peda. Pants +3",
@@ -945,6 +950,7 @@ function init_gear_sets()
   })
 
   sets.midcast['Elemental Magic'].Resistant = set_combine(sets.midcast['Elemental Magic'], {
+    legs="Pedagogy Pants",
     -- head="Merlinic Hood",
     -- legs="Peda. Pants +3",
     -- neck="Erra Pendant",
@@ -1115,6 +1121,7 @@ function init_gear_sets()
 
   sets.engaged = {
     head="Peda. M.Board",
+    legs="Pedagogy Pants",
     feet="Peda. Loafers",
     -- head="Peda. M.Board +3",
     -- body="Jhakri Robe +2",
