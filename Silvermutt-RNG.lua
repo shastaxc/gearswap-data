@@ -61,7 +61,7 @@ function job_setup()
   state.RangedMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.IdleMode:options('Normal', 'LightDef')
   state.WeaponSet = M{['description']='Weapon Set', 'MagicRA', 'PhysRA', 'PhysRA RangedOnly', 'PhysRA NoBuff', 'Melee', 'CritRA'}
-  state.RangedWeaponSet = M{['description']='Ranged Weapon Set', 'Gastraphetes', 'Fomalhaut', 'Doomsday', 'Sparrowhawk +2'}
+  state.RangedWeaponSet = M{['description']='Ranged Weapon Set', 'Gastraphetes', 'Fomalhaut', 'Sparrowhawk +2'}
   state.CP = M(false, "Capacity Points Mode")
   state.RearmingLock = M(false, 'Rearming Lock')
   -- Whether a warning has been given for low ammo
@@ -82,7 +82,6 @@ function job_setup()
   marksman_weapon_subtypes = {
     ['Gastraphetes'] = "xbow",
     ['Fomalhaut'] = "gun",
-    ['Doomsday'] = "gun",
   }
   
   DefaultAmmo = {
@@ -93,7 +92,6 @@ function job_setup()
     ['Armageddon'] = "Chrono Bullet",
     ['Gastraphetes'] = "Quelling Bolt",
     ['Fomalhaut'] = "Chrono Bullet",
-    ['Doomsday'] = "Eminent Bullet",
     ['Sparrowhawk'] = "Eminent Arrow",
     ['Sparrowhawk +1'] = "Eminent Arrow",
     ['Sparrowhawk +2'] = "Eminent Arrow",
@@ -108,7 +106,6 @@ function job_setup()
     ['Armageddon'] = "Eradicating Bullet",
     ['Gastraphetes'] = "Quelling Bolt",
     ['Fomalhaut'] = "Devastating Bullet",
-    ['Doomsday'] = "Eminent Bullet",
     ['Sparrowhawk'] = "Eminent Arrow",
     ['Sparrowhawk +1'] = "Eminent Arrow",
     ['Sparrowhawk +2'] = "Eminent Arrow",
@@ -123,7 +120,6 @@ function job_setup()
     ['Armageddon'] = "Chrono Bullet",
     ['Gastraphetes'] = "Quelling Bolt",
     ['Fomalhaut'] = "Chrono Bullet",
-    ['Doomsday'] = "Eminent Bullet",
     ['Sparrowhawk'] = "Eminent Arrow",
     ['Sparrowhawk +1'] = "Eminent Arrow",
     ['Sparrowhawk +2'] = "Eminent Arrow",
@@ -138,7 +134,6 @@ function job_setup()
     ['Armageddon'] = "Devastating Bullet",
     ['Gastraphetes'] = "Quelling Bolt",
     ['Fomalhaut'] = "Devastating Bullet",
-    ['Doomsday'] = "Eminent Bullet",
     ['Sparrowhawk'] = "Eminent Arrow",
     ['Sparrowhawk +1'] = "Eminent Arrow",
     ['Sparrowhawk +2'] = "Eminent Arrow",
@@ -1359,9 +1354,6 @@ function init_gear_sets()
   }
   sets.WeaponSet['Fomalhaut'] = {
     ranged="Fomalhaut",
-  }
-  sets.WeaponSet['Doomsday'] = {
-    ranged="Doomsday",
   }
   sets.WeaponSet['Sparrowhawk +2'] = {
     ranged="Sparrowhawk +2",
