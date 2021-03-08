@@ -277,6 +277,7 @@ function init_gear_sets()
   -- Max MP
   sets.precast.WS['Myrkr'] = {
     ammo="Strobilus",              --  45
+    body="Academic's Gown",
     legs=gear.Psycloth_D_legs,     -- 109
     -- head="Pixie Hairpin +1",       -- 120
     -- body="Academic's Gown +3",     -- 173
@@ -845,6 +846,7 @@ function init_gear_sets()
   -- FC > M.Acc > M.Acc Skill
   sets.midcast.Stun = set_combine(sets.midcast['Dark Magic'], {
     head="Academic's Mortarboard",
+    body="Academic's Gown",
     -- back=gear.SCH_MAB_Cape,
 
     --Ideal:
@@ -869,6 +871,7 @@ function init_gear_sets()
 
   sets.midcast.Stun.DarkArts = set_combine(sets.midcast.Stun, {
     head="Peda. M.Board",
+    body="Academic's Gown",
     --Ideal:
     -- main="Hvergelmir",           -- __, 50, __, 269
     -- sub="Khonsu",                -- __, __, 30, ___
@@ -1186,6 +1189,7 @@ function init_gear_sets()
     -- feet="Acad. Loafers +3",
   }
   sets.DarkArts = {
+    body="Academic's Gown",
     -- body="Acad. Gown +3",
     -- feet="Acad. Loafers +3",
   }
