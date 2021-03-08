@@ -120,6 +120,7 @@ function init_gear_sets()
   sets.precast.JA['Sublimation'] = {
     main="Siriti", --1
     sub="Genmei Shield", --10/0
+    head="Academic's Mortarboard", --2
     body="Peda. Gown", --2
     ear1="Savant's Earring", --1
     waist="Embla Sash", --5
@@ -737,6 +738,7 @@ function init_gear_sets()
 
   -- M.Acc > MND > Enfeebling Duration > Enfeebling Skill
   sets.midcast.MndEnfeebles = {
+    head="Academic's Mortarboard",
     body="Shango Robe",             -- 23, 29, __, 15
     neck="Sanctity Necklace",       -- 10, __, __, __
     ring1="Kishar Ring",         --  5, __, 10, __
@@ -764,6 +766,7 @@ function init_gear_sets()
 
   -- M.Acc > INT > Enfeebling Duration > Enfeebling Skill
   sets.midcast.IntEnfeebles = {
+    head="Academic's Mortarboard",
     body="Shango Robe",             -- 23, 29, __, 15
     neck="Sanctity Necklace",       -- 10, __, __, __
     ring1="Kishar Ring",         --  5, __, 10, __
@@ -801,6 +804,7 @@ function init_gear_sets()
   -- SCH Dark Magic = 386, with Dark Arts = 456
   -- Dark Magic Skill, INT, M.Acc
   sets.midcast['Dark Magic'] = {
+    head="Academic's Mortarboard",
     body="Shango Robe",
     -- main="Rubicundity",        -- 25, 21, 20; +215 M.Acc skill
     -- sub="Ammurapi Shield",     -- __, 13, 38
@@ -836,6 +840,7 @@ function init_gear_sets()
 
   -- FC > M.Acc > M.Acc Skill
   sets.midcast.Stun = set_combine(sets.midcast['Dark Magic'], {
+    head="Academic's Mortarboard",
     -- back=gear.SCH_MAB_Cape,
 
     --Ideal:
