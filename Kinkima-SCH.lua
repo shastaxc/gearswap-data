@@ -1178,9 +1178,11 @@ function init_gear_sets()
     -- back="Lugh's Cape",
   }
   sets.buff['Penury'] = {
+    legs="Arbatel Pants",
     -- legs="Arbatel Pants +1",
   }
   sets.buff['Parsimony'] = {
+    legs="Arbatel Pants",
     -- legs="Arbatel Pants +1",
   }
   sets.buff['Celerity'] = {
@@ -1192,6 +1194,7 @@ function init_gear_sets()
     -- feet="Peda. Loafers +3",
   }
   sets.buff['Klimaform'] = {
+    feet="Arbatel Loafers",
     -- feet="Arbatel Loafers +1",
   }
 
