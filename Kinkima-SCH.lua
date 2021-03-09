@@ -631,6 +631,7 @@ function init_gear_sets()
   }
 
   sets.midcast.Cursna.LightArts = set_combine(sets.midcast.Cursna, {
+    legs="Academic's Pants",
     -- legs="Academic's Pants +3",    -- 24, __,  9
     -- 184 Healing skill, 60 Cursna+, 10 FC
     -- Rate @456 (assuming 23% base) = 104.5%
@@ -744,6 +745,7 @@ function init_gear_sets()
   sets.midcast.MndEnfeebles = {
     head="Academic's Mortarboard",
     body="Shango Robe",             -- 23, 29, __, 15
+    legs="Academic's Pants",
     neck="Sanctity Necklace",       -- 10, __, __, __
     ring1="Kishar Ring",         --  5, __, 10, __
     -- main=gear.Gada_MND_MAcc,     -- 35, 16, __, 16; +215 M.Acc skill
@@ -772,6 +774,7 @@ function init_gear_sets()
   sets.midcast.IntEnfeebles = {
     head="Academic's Mortarboard",
     body="Shango Robe",             -- 23, 29, __, 15
+    legs="Academic's Pants",
     neck="Sanctity Necklace",       -- 10, __, __, __
     ring1="Kishar Ring",         --  5, __, 10, __
     -- main=gear.Gada_INT_MAcc,     -- 35, 16, __, 16; +215 M.Acc skill
@@ -850,6 +853,7 @@ function init_gear_sets()
     head="Academic's Mortarboard",
     body="Academic's Gown",
     hands="Academic's Bracers",
+    legs="Academic's Pants",
     -- back=gear.SCH_MAB_Cape,
 
     --Ideal:
@@ -876,6 +880,7 @@ function init_gear_sets()
     head="Peda. M.Board",
     body="Academic's Gown",
     hands="Academic's Bracers",
+    legs="Academic's Pants",
     --Ideal:
     -- main="Hvergelmir",           -- __, 50, __, 269
     -- sub="Khonsu",                -- __, __, 30, ___
@@ -1189,6 +1194,7 @@ function init_gear_sets()
   }
 
   sets.LightArts = {
+    legs="Academic's Pants",
     -- legs="Acad. Pants +3",
     -- feet="Acad. Loafers +3",
   }
