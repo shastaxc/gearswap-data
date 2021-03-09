@@ -173,6 +173,7 @@ function init_gear_sets()
   -- Cast Time = Base Cast Time x (1 - FC)x(1 - magian staff cast bonus)x(1 - Grimoire reduction)
   sets.precast.FC.Grimoire = set_combine(sets.precast.FC, {
     head="Peda. M.Board",
+    feet="Academic's Loafers",
     -- head="Peda. M.Board +3",
     -- feet="Acad. Loafers +3",
   })
@@ -746,6 +747,7 @@ function init_gear_sets()
     head="Academic's Mortarboard",
     body="Shango Robe",             -- 23, 29, __, 15
     legs="Academic's Pants",
+    feet="Academic's Loafers",
     neck="Sanctity Necklace",       -- 10, __, __, __
     ring1="Kishar Ring",         --  5, __, 10, __
     -- main=gear.Gada_MND_MAcc,     -- 35, 16, __, 16; +215 M.Acc skill
@@ -775,6 +777,7 @@ function init_gear_sets()
     head="Academic's Mortarboard",
     body="Shango Robe",             -- 23, 29, __, 15
     legs="Academic's Pants",
+    feet="Academic's Loafers",
     neck="Sanctity Necklace",       -- 10, __, __, __
     ring1="Kishar Ring",         --  5, __, 10, __
     -- main=gear.Gada_INT_MAcc,     -- 35, 16, __, 16; +215 M.Acc skill
@@ -815,6 +818,7 @@ function init_gear_sets()
     body="Shango Robe",
     hands="Academic's Bracers",
     legs="Pedagogy Pants",
+    feet="Academic's Loafers",
     -- main="Rubicundity",        -- 25, 21, 20; +215 M.Acc skill
     -- sub="Ammurapi Shield",     -- __, 13, 38
     -- ammo="Pemphredo Tathlum",  -- __,  4,  8
@@ -854,6 +858,7 @@ function init_gear_sets()
     body="Academic's Gown",
     hands="Academic's Bracers",
     legs="Academic's Pants",
+    feet="Academic's Loafers",
     -- back=gear.SCH_MAB_Cape,
 
     --Ideal:
@@ -881,6 +886,7 @@ function init_gear_sets()
     body="Academic's Gown",
     hands="Academic's Bracers",
     legs="Academic's Pants",
+    feet="Academic's Loafers",
     --Ideal:
     -- main="Hvergelmir",           -- __, 50, __, 269
     -- sub="Khonsu",                -- __, __, 30, ___
@@ -1195,11 +1201,13 @@ function init_gear_sets()
 
   sets.LightArts = {
     legs="Academic's Pants",
+    feet="Academic's Loafers",
     -- legs="Acad. Pants +3",
     -- feet="Acad. Loafers +3",
   }
   sets.DarkArts = {
     body="Academic's Gown",
+    feet="Academic's Loafers",
     -- body="Acad. Gown +3",
     -- feet="Acad. Loafers +3",
   }
