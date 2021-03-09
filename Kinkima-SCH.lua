@@ -675,6 +675,7 @@ function init_gear_sets()
   sets.midcast.Regen = {
     main="Bolelabunga",            -- __, 10, __, __
     sub="Genmei Shield",           -- __, __, __, __
+    head="Arbatel Bonnet",
     waist="Embla Sash",            -- __, __, 10,  5
     -- main=gear.Musa_C,              -- 25, __, 20, __
     -- sub="Khonsu",                  -- __, __, __, __
@@ -1160,9 +1161,11 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.buff['Ebullience'] = {
+    head="Arbatel Bonnet",
     -- head="Arbatel Bonnet +1",
   }
   sets.buff['Rapture'] = {
+    head="Arbatel Bonnet",
     -- head="Arbatel Bonnet +1",
   }
   sets.buff['Perpetuance'] = {
