@@ -112,11 +112,11 @@ function define_global_sets()
   -- Valorous
 
   -- Vanya
-  gear.Vanya_B_head = {} -- 20 healing magic skill, 7 Cure Spellcasting Time-
-  gear.Vanya_B_body = {} -- 20 healing magic skill, 7 Cure Spellcasting Time-
-  gear.Vanya_B_hands = {} -- 20 healing magic skill, 7 Cure Spellcasting Time-
-  gear.Vanya_B_legs = {} -- 20 healing magic skill, 7 Cure Spellcasting Time-
-  gear.Vanya_B_feet = {} -- 20 healing magic skill, 7 Cure Spellcasting Time-
+  gear.Vanya_B_head = { name="Vanya Hood", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}}
+  gear.Vanya_B_body = { name="Vanya Robe", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}}
+  gear.Vanya_B_hands = { name="Vanya Cuffs", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}}
+  gear.Vanya_B_legs = { name="Vanya Slops", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}}
+  gear.Vanya_B_feet = { name="Vanya Clogs", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}}
 
   -- Amalric
   gear.Amalric_A_body = {}
