@@ -114,7 +114,7 @@ function init_gear_sets()
     -- legs="Peda. Pants +3",
   }
   sets.precast.JA['Enlightenment'] = {
-    body="Peda. Gown",
+    body="Pedagogy Gown",
     -- body="Peda. Gown +3",
   }
   -- Maximize HP+ (MP-to-HP conversion doesn't work)
@@ -122,7 +122,7 @@ function init_gear_sets()
     main="Siriti", --1
     sub="Genmei Shield", --10/0
     head="Academic's Mortarboard", --2
-    body="Peda. Gown", --2
+    body="Pedagogy Gown", --2
     ear1="Savant's Earring", --1
     waist="Embla Sash", --5
     -- head="Acad. Mortar. +3", --4
@@ -262,7 +262,7 @@ function init_gear_sets()
   }
 
   sets.precast.WS['Omniscience'] = set_combine(sets.precast.WS, {
-    body="Peda. Gown",
+    body="Pedagogy Gown",
     legs="Pedagogy Pants",
     -- ammo="Pemphredo Tathlum",
     -- head="Pixie Hairpin +1",
@@ -626,7 +626,7 @@ function init_gear_sets()
 
   -- Enh Magic Skill + Enh Magic Duration > Fast Cast
   sets.midcast['Enhancing Magic'] = {
-    body="Peda. Gown",             -- 12, __, __
+    body="Pedagogy Gown",             -- 12, __, __
     waist="Embla Sash",            -- __, 10,  5
     -- main=gear.Gada_ENH,            -- 18,  6,  6
     -- sub="Ammurapi Shield",         -- __, 10, __
@@ -1057,12 +1057,12 @@ function init_gear_sets()
 
   sets.HeavyDef = {
     main="Bolelabunga",
-    sub="Genmei Shield", --10/0
-    head="Wayfarer Circlet",
-    body="Shango Robe",
-    hands="Wayfarer Cuffs",
-    legs="Assiduity Pants +1",
-    feet="Savant's Loafers +2",
+    sub="Genmei Shield", --10/0, 0
+    head=gear.Vanya_B_head, --0/5, 75
+    body=gear.Vanya_B_body, --1/3, 80
+    hands=gear.Vanya_B_hands, --0/3, 37
+    legs=gear.Vanya_B_legs, --0/3, 107
+    feet=gear.Vanya_B_feet, --0/3, 107
     neck="Twilight Torque",
     ear1="Lugalbanda Earring",
     ear2="Savant's Earring",
