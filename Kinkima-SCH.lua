@@ -1078,7 +1078,7 @@ function init_gear_sets()
     legs="Assiduity Pants +1",
     feet="Savant's Loafers +2",
     neck="Twilight Torque",
-    ear1="Hecate's Earring",
+    ear1="Lugalbanda Earring",
     ear2="Savant's Earring",
     back="Cheviot Cape",
     -- main="Malignance Pole",      -- 20, 20, ___
