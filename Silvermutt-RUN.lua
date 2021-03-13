@@ -715,7 +715,7 @@ function init_gear_sets()
     -- back="Repulse Mantle"
   }
 
-  -- Protect V = 0%, PDT cap is 50%
+  -- PDT cap is 50%, Protect V = 0%
   sets.defense.PDT = {
     sub="Refined Grip +1",        --  3/ 3, ___ [ 35]
     ammo="Staunch Tathlum",       --  2/ 2, ___ [___]
@@ -735,11 +735,12 @@ function init_gear_sets()
     -- body="Nyame Mail",         --  9/ 9, 139 [136]
     -- hands="Turms Mittens +1",  -- __/__, 101 [ 74]
     -- neck="Futhark Torque +2",  --  7/ 7,  30 [ 60]
-    -- ring2="Moonlight Ring",    -- __/__, ___ [110]
-    --50 PDT / 33 MDT, 677 MEVA [967 HP]
+    -- ring2="Moonlight Ring",    --  5/ 5, ___ [110]
+    -- waist="Engraved Belt",     -- __/__, ___ [___]
+    --51 PDT / 38 MDT, 677 MEVA [967 HP]
   } --49 PDT / 22 MDT, 617 MEVA [909 HP]
   
-  -- Shell V = 29%, MDT cap is 50%
+  -- MDT cap is 50%, Shell V = 29%
   sets.defense.MDT = {
     sub="Refined Grip +1",        --  3/ 3, ___ [ 35]
     ammo="Staunch Tathlum",       --  2/ 2, ___ [___]
@@ -763,9 +764,10 @@ function init_gear_sets()
     -- feet="Nyame Sollerets",    --  7/ 7, 150 [ 68]
     -- neck="Futhark Torque +2",  --  7/ 7,  30 [ 60]
     -- ear2="Sanare Earring",     -- __/__,   6 [___]; M. Def Bonus+4
-    -- ring2="Moonlight Ring",    -- __/__, ___ [110]
+    -- ring1="Moonlight Ring",    --  5/ 5, ___ [110]
+    -- ring2="Moonlight Ring",    --  5/ 5, ___ [110]
     -- back=gear.RUN_HPME_Cape,   -- __/__,  45 [ 60]
-    --51 PDT / 34 MDT, 754 MEVA [1008 HP]
+    --54 PDT / 40 MDT, 754 MEVA [983 HP]
   } --50 PDT / 22 MDT, 585 MEVA [896 HP]
 
   sets.defense.Parry = {
@@ -773,7 +775,7 @@ function init_gear_sets()
     legs="Erilaz Leg Guards +1", --Inquartata+2
     feet="Turms Leggings +1", --Inquartata+5
     back=gear.RUN_HPP_Cape, --Parry Rate+5
-    -- hands="Turms Mittens +1",
+    -- hands="Turms Mittens +1", --Parry: Recover HP+100
   }
 
 
@@ -835,12 +837,11 @@ function init_gear_sets()
     -- head="Nyame Helm",            --  7/ 7, 123 [ 91]
     -- body="Nyame Mail",            --  9/ 9, 139 [136]
     -- legs="Nyame Flanchard",       --  8/ 8, 150 [114]
-    -- feet="Nyame Sollerets",       --  7/ 7, 150 [ 68]
     -- ear1="Odnowa Earring +1",     --  3/ 5, ___ [110]
-    -- ring1="Gelatinous Ring +1",   --  7/-1, ___ [135]
-    -- ring2="Moonlight Ring",       -- __/__, ___ [110]
+    -- ring1="Moonlight Ring",       --  5/ 5, ___ [110]
+    -- ring2="Moonlight Ring",       --  5/ 5, ___ [110]
     -- back=gear.RUN_TP_Cape,        -- 10/__, ___ [___]
-    --51 PDT / 35 MDT, 562 MEVA [764 HP]
+    --47 PDT / 34 MDT, 412 MEVA [671 HP]
   } --45 PDT / 21 MDT, 252 MEVA
 
   sets.idle.LightDef = set_combine(sets.idle, sets.LightDef)
