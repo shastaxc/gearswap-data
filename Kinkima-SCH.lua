@@ -1006,6 +1006,61 @@ function init_gear_sets()
   }
 
   ------------------------------------------------------------------------------------------------
+  ---------------------------------------- Defense Sets ------------------------------------------
+  ------------------------------------------------------------------------------------------------
+
+  sets.HeavyDef = {
+    main="Bolelabunga",
+    sub="Genmei Shield", --10/0, 0
+    head=gear.Vanya_B_head, --0/5, 75
+    body=gear.Vanya_B_body, --1/3, 80
+    hands=gear.Vanya_B_hands, --0/3, 37
+    legs=gear.Vanya_B_legs, --0/3, 107
+    feet=gear.Vanya_B_feet, --0/3, 107
+    neck="Twilight Torque",
+    ear1="Lugalbanda Earring",
+    ear2="Savant's Earring",
+    back="Cheviot Cape",
+    -- main="Malignance Pole",      -- 20, 20, ___
+    -- sub="Khonsu",                --  6,  6, ___
+    -- ammo="Staunch Tathlum +1",   --  3,  3, ___; Resist Status+11
+    -- head="Pinga Crown +1",       -- __, __, 109
+    -- body="Pinga Tunic +1",       -- __, __, 128
+    -- hands="Pinga Mittens +1",    -- __, __, 101
+    -- legs="Pinga Pants +1",       -- __, __, 147
+    -- feet="Pinga Pumps +1",       -- __, __, 147
+    -- neck="Loricate Torque +1",   --  6,  6, ___; DEF+60
+    -- ear1="Hearty Earring",       -- __, __, ___; Resist Status+5
+    -- ear2="Etiolation Earring",   -- __,  3, ___; Resist Silence+15
+    -- ring1="Gelatinous Ring +1",  --  7, -1, ___
+    -- ring2="Defending Ring",      -- 10, 10, ___
+    -- back="Archon Cape",          -- __, __, ___
+    -- waist="Carrier's Sash",      -- __, __, ___; Ele Resist+15
+
+    -- Ideal:
+    -- main="Malignance Pole",      -- 20, 20, ___
+    -- sub="Khonsu",                --  6,  6, ___
+    -- ammo="Staunch Tathlum +1",   --  3,  3, ___; Resist Status+11
+    -- head="Volte Cap",            -- __, __, 102; Resist Status+10
+    -- body="Pinga Tunic +1",       -- __, __, 128
+    -- hands="Volte Bracers",       -- __, __, 102; Resist Status+10
+    -- legs="Pinga Pants +1",       -- __, __, 147
+    -- feet="Pinga Pumps +1",       -- __, __, 147
+    -- neck="Loricate Torque +1",   --  6,  6, ___; DEF+60
+    -- ear1="Hearty Earring",       -- __, __, ___; Resist Status+5
+    -- ear2="Etiolation Earring",   -- __,  3, ___; Resist Silence+15
+    -- ring1="Gelatinous Ring +1",  --  7, -1, ___
+    -- ring2="Defending Ring",      -- 10, 10, ___
+    -- back="Archon Cape",          -- __, __, ___
+    -- waist="Carrier's Sash",      -- __, __, ___; Ele Resist+15
+    -- 52 PDT / 47 MDT, 626 M.Eva
+  }
+
+  sets.defense.PDT = sets.HeavyDef
+  sets.defense.MDT = sets.HeavyDef
+
+
+  ------------------------------------------------------------------------------------------------
   ----------------------------------------- Idle Sets --------------------------------------------
   ------------------------------------------------------------------------------------------------
 
@@ -1055,53 +1110,6 @@ function init_gear_sets()
     waist="Fucho-no-Obi",
   })
 
-  sets.HeavyDef = {
-    main="Bolelabunga",
-    sub="Genmei Shield", --10/0, 0
-    head=gear.Vanya_B_head, --0/5, 75
-    body=gear.Vanya_B_body, --1/3, 80
-    hands=gear.Vanya_B_hands, --0/3, 37
-    legs=gear.Vanya_B_legs, --0/3, 107
-    feet=gear.Vanya_B_feet, --0/3, 107
-    neck="Twilight Torque",
-    ear1="Lugalbanda Earring",
-    ear2="Savant's Earring",
-    back="Cheviot Cape",
-    -- main="Malignance Pole",      -- 20, 20, ___
-    -- sub="Khonsu",                --  6,  6, ___
-    -- ammo="Staunch Tathlum +1",   --  3,  3, ___; Resist Status+11
-    -- head="Pinga Crown +1",       -- __, __, 109
-    -- body="Pinga Tunic +1",       -- __, __, 128
-    -- hands="Pinga Mittens +1",    -- __, __, 101
-    -- legs="Pinga Pants +1",       -- __, __, 147
-    -- feet="Pinga Pumps +1",       -- __, __, 147
-    -- neck="Loricate Torque +1",   --  6,  6, ___; DEF+60
-    -- ear1="Hearty Earring",       -- __, __, ___; Resist Status+5
-    -- ear2="Etiolation Earring",   -- __,  3, ___; Resist Silence+15
-    -- ring1="Gelatinous Ring +1",  --  7, -1, ___
-    -- ring2="Defending Ring",      -- 10, 10, ___
-    -- back="Archon Cape",          -- __, __, ___
-    -- waist="Carrier's Sash",      -- __, __, ___; Ele Resist+15
-
-    -- Ideal:
-    -- main="Malignance Pole",      -- 20, 20, ___
-    -- sub="Khonsu",                --  6,  6, ___
-    -- ammo="Staunch Tathlum +1",   --  3,  3, ___; Resist Status+11
-    -- head="Volte Cap",            -- __, __, 102; Resist Status+10
-    -- body="Pinga Tunic +1",       -- __, __, 128
-    -- hands="Volte Bracers",       -- __, __, 102; Resist Status+10
-    -- legs="Pinga Pants +1",       -- __, __, 147
-    -- feet="Pinga Pumps +1",       -- __, __, 147
-    -- neck="Loricate Torque +1",   --  6,  6, ___; DEF+60
-    -- ear1="Hearty Earring",       -- __, __, ___; Resist Status+5
-    -- ear2="Etiolation Earring",   -- __,  3, ___; Resist Silence+15
-    -- ring1="Gelatinous Ring +1",  --  7, -1, ___
-    -- ring2="Defending Ring",      -- 10, 10, ___
-    -- back="Archon Cape",          -- __, __, ___
-    -- waist="Carrier's Sash",      -- __, __, ___; Ele Resist+15
-    -- 52 PDT / 47 MDT, 626 M.Eva
-  }
-
   sets.idle = sets.HeavyDef
   sets.idle.HeavyDef = set_combine(sets.idle, sets.HeavyDef)
   sets.idle.Weak = sets.HeavyDef
@@ -1113,12 +1121,6 @@ function init_gear_sets()
     -- waist="Shinjutsu-no-Obi +1",
   })
 
-  ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Defense Sets ------------------------------------------
-  ------------------------------------------------------------------------------------------------
-
-  sets.defense.PDT = sets.HeavyDef
-  sets.defense.MDT = sets.HeavyDef
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Engaged Sets ------------------------------------------

@@ -885,6 +885,41 @@ function init_gear_sets()
 
 
   ------------------------------------------------------------------------------------------------
+  ---------------------------------------- Defense Sets ------------------------------------------
+  ------------------------------------------------------------------------------------------------
+
+  sets.LightDef = {
+    body="Malignance Tabard", --9/9, 139
+    hands="Malignance Gloves", --5/5, 112
+    legs="Malignance Tights", --7/7, 150
+    feet="Malignance Boots", --4/4, 150
+    ring2="Defending Ring", --10/10, 0
+    -- head="Malignance Chapeau", --6/6
+    -- neck="Warder's Charm +1",
+    -- ring1="Purity Ring", --0/4
+    -- back="Moonlight Cape", --6/6
+  }
+
+  sets.HeavyDef = {
+    head="Meghanada Visor +2", --5/0, 53
+    body="Malignance Tabard", --9/9, 139
+    hands="Malignance Gloves", --5/5, 112
+    legs="Malignance Tights", --7/7, 150
+    feet="Malignance Boots", --4/4, 150
+    neck="Loricate Torque", --5/5, 0
+    ear1="Eabani Earring", --0/0, 8
+    ear2="Odnowa Earring +1", --3/5, 0
+    ring1=gear.Dark_Ring, --5/4, 0
+    ring2="Defending Ring", --10/10, 0
+    back=gear.RNG_DW_Cape, --0/0, 15
+    waist="Kasiri Belt", --0/0, 0
+  } -- 53 PDT / 49 MDT, 612 MEVA
+
+  sets.defense.PDT = sets.HeavyDef
+  sets.defense.MDT = sets.HeavyDef
+
+
+  ------------------------------------------------------------------------------------------------
   ----------------------------------------- Idle Sets --------------------------------------------
   ------------------------------------------------------------------------------------------------
 
@@ -913,20 +948,7 @@ function init_gear_sets()
   sets.resting = {}
 
   -- Idle sets
-  sets.idle = {
-    head="Meghanada Visor +2", --5/0, 53
-    body="Malignance Tabard", --9/9, 139
-    hands="Malignance Gloves", --5/5, 112
-    legs="Malignance Tights", --7/7, 150
-    feet="Malignance Boots", --4/4, 150
-    neck="Loricate Torque", --5/5, 0
-    ear1="Eabani Earring", --0/0, 8
-    ear2="Odnowa Earring +1", --3/5, 0
-    ring1=gear.Dark_Ring, --5/4, 0
-    ring2="Defending Ring", --10/10, 0
-    back=gear.RNG_DW_Cape, --0/0, 15
-    waist="Windbuffet Belt +1", --0/0, 0
-  }
+  sets.idle = sets.HeavyDef
 
   sets.idle.Regain = set_combine(sets.idle, sets.latent_regain)
   sets.idle.Regen = set_combine(sets.idle, sets.latent_regen)
@@ -939,18 +961,6 @@ function init_gear_sets()
   sets.idle.Regen.RefreshSub50 = set_combine(sets.idle, sets.latent_regen, sets.latent_refresh_sub50)
   sets.idle.Regain.Regen.Refresh = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh)
   sets.idle.Regain.Regen.RefreshSub50 = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh_sub50)
-
-  sets.LightDef = {
-    body="Malignance Tabard", --9/9, 139
-    hands="Malignance Gloves", --5/5, 112
-    legs="Malignance Tights", --7/7, 150
-    feet="Malignance Boots", --4/4, 150
-    ring2="Defending Ring", --10/10, 0
-    -- head="Malignance Chapeau", --6/6
-    -- neck="Warder's Charm +1",
-    -- ring1="Purity Ring", --0/4
-    -- back="Moonlight Cape", --6/6
-  }
 
   sets.idle.LightDef = set_combine(sets.idle, sets.LightDef)
   sets.idle.LightDef.Regain = set_combine(sets.idle.Regain, sets.LightDef)
@@ -965,30 +975,7 @@ function init_gear_sets()
   sets.idle.LightDef.Regain.Regen.Refresh = set_combine(sets.idle.Regain.Regen.Refresh, sets.LightDef)
   sets.idle.LightDef.Regain.Regen.RefreshSub50 = set_combine(sets.idle.Regain.Regen.RefreshSub50, sets.LightDef)
 
-  sets.HeavyDef = {
-    head="Meghanada Visor +2", --5/0, 53
-    body="Malignance Tabard", --9/9, 139
-    hands="Malignance Gloves", --5/5, 112
-    legs="Malignance Tights", --7/7, 150
-    feet="Malignance Boots", --4/4, 150
-    neck="Loricate Torque", --5/5, 0
-    ear1="Eabani Earring", --0/0, 8
-    ear2="Odnowa Earring +1", --3/5, 0
-    ring1=gear.Dark_Ring, --5/4, 0
-    ring2="Defending Ring", --10/10, 0
-    back=gear.RNG_DW_Cape, --0/0, 15
-    waist="Kasiri Belt", --0/0, 0
-  } -- 53 PDT / 49 MDT, 612 MEVA
-
   sets.idle.Weak = sets.HeavyDef
-
-
-  ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Defense Sets ------------------------------------------
-  ------------------------------------------------------------------------------------------------
-
-  sets.defense.PDT = sets.HeavyDef
-  sets.defense.MDT = sets.HeavyDef
 
 
   ------------------------------------------------------------------------------------------------

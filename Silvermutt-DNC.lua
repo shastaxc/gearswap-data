@@ -593,6 +593,36 @@ function init_gear_sets()
   sets.midcast.Utsusemi = sets.midcast.SpellInterrupt
 
   ------------------------------------------------------------------------------------------------
+  ---------------------------------------- Defense Sets ------------------------------------------
+  ------------------------------------------------------------------------------------------------
+
+  sets.LightDef = {
+    ammo="Staunch Tathlum", --2/2, 0
+    head="Turms Cap +1", --0/0, 109
+    body="Malignance Tabard", --9/9, 139
+    hands="Malignance Gloves", --5/5, 112
+    legs="Malignance Tights", --7/7, 150
+    feet="Malignance Boots", --4/4, 150
+  } --27 PDT/27 MDT, 647 MEVA
+
+  sets.HeavyDef = {
+    ammo="Staunch Tathlum", --2/2, 109
+    head="Turms Cap +1", --0/0, 109
+    body="Malignance Tabard", --9/9, 139
+    hands="Malignance Gloves", --5/5, 112
+    legs="Malignance Tights", --7/7, 150
+    feet="Malignance Boots", --4/4, 150
+    neck="Loricate Torque", --5/5, 0
+    ear1="Eabani Earring", --0/0, 8
+    ear2="Odnowa Earring +1", --3/5, 0
+    ring1=gear.Dark_Ring, --5/4, 0
+    ring2="Defending Ring", --10/10, 0
+  } --46 PDT/47 MDT, 764 MEVA
+
+  sets.defense.PDT = sets.HeavyDef
+  sets.defense.MDT = sets.HeavyDef
+
+  ------------------------------------------------------------------------------------------------
   ----------------------------------------- Idle Sets --------------------------------------------
   ------------------------------------------------------------------------------------------------
 
@@ -617,21 +647,7 @@ function init_gear_sets()
 
   sets.resting = {}
 
-  sets.idle = {
-    ammo="Yamarang",
-    head=gear.Adhemar_B_head,
-    body="Horos Casaque +3",
-    hands=gear.Adhemar_B_hands,
-    legs=gear.Samnuha_legs,
-    feet="Horos Toe Shoes +3",
-    neck="Anu Torque",
-    ear1="Telos Earring",
-    ear2="Sherida Earring",
-    ring1="Epona's Ring",
-    ring2="Ilabrat Ring",
-    back=gear.DNC_TP_DA_Cape,
-    waist="Windbuffet Belt +1",
-  }
+  sets.idle = sets.HeavyDef
 
   sets.idle.Regain = set_combine(sets.idle, sets.latent_regain)
   sets.idle.Regen = set_combine(sets.idle, sets.latent_regen)
@@ -640,15 +656,6 @@ function init_gear_sets()
   sets.idle.Regain.Refresh = set_combine(sets.idle, sets.latent_regain, sets.latent_refresh)
   sets.idle.Regen.Refresh = set_combine(sets.idle, sets.latent_regen, sets.latent_refresh)
   sets.idle.Regain.Regen.Refresh = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh)
-
-  sets.LightDef = {
-    ammo="Staunch Tathlum", --2/2, 0
-    head="Turms Cap +1", --0/0, 109
-    body="Malignance Tabard", --9/9, 139
-    hands="Malignance Gloves", --5/5, 112
-    legs="Malignance Tights", --7/7, 150
-    feet="Malignance Boots", --4/4, 150
-  } --27 PDT/27 MDT, 647 MEVA
 
   sets.idle.LightDef = set_combine(sets.idle, sets.LightDef)
   sets.idle.LightDef.Regain = set_combine(sets.idle.Regain, sets.LightDef)
@@ -659,28 +666,7 @@ function init_gear_sets()
   sets.idle.LightDef.Regen.Refresh = set_combine(sets.idle.Regen.Refresh, sets.LightDef)
   sets.idle.LightDef.Regain.Regen.Refresh = set_combine(sets.idle.Regain.Regen.Refresh, sets.LightDef)
 
-  sets.HeavyDef = {
-    ammo="Staunch Tathlum", --2/2, 109
-    head="Turms Cap +1", --0/0, 109
-    body="Malignance Tabard", --9/9, 139
-    hands="Malignance Gloves", --5/5, 112
-    legs="Malignance Tights", --7/7, 150
-    feet="Malignance Boots", --4/4, 150
-    neck="Loricate Torque", --5/5, 0
-    ear1="Eabani Earring", --0/0, 8
-    ear2="Odnowa Earring +1", --3/5, 0
-    ring1=gear.Dark_Ring, --5/4, 0
-    ring2="Defending Ring", --10/10, 0
-  } --46 PDT/47 MDT, 764 MEVA
-
   sets.idle.Weak = sets.HeavyDef
-
-  ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Defense Sets ------------------------------------------
-  ------------------------------------------------------------------------------------------------
-
-  sets.defense.PDT = sets.HeavyDef
-  sets.defense.MDT = sets.HeavyDef
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Engaged Sets ------------------------------------------

@@ -946,6 +946,40 @@ function init_gear_sets()
 
 
   ------------------------------------------------------------------------------------------------
+  ---------------------------------------- Defense Sets ------------------------------------------
+  ------------------------------------------------------------------------------------------------
+
+  sets.LightDef = {
+    ammo="Staunch Tathlum", --2/2, 0
+    body="Malignance Tabard", --9/9, 139
+    hands="Malignance Gloves", --5/5, 112
+    legs="Malignance Tights", --7/7, 150
+    feet="Malignance Boots", --4/4, 150
+    -- head="Malignance Chapeau", --6/6
+  } --27 PDT / 27 MDT, 551 MEVA
+
+  sets.HeavyDef = {
+    ammo="Staunch Tathlum", --2/2, 0
+    body="Malignance Tabard", --9/9, 139
+    hands="Malignance Gloves", --5/5, 112
+    legs="Malignance Tights", --7/7, 150
+    feet="Malignance Boots", --4/4, 150
+    ear2="Eabani Earring", --0/0, 8
+    ring2="Defending Ring", --10/10, 0
+    -- main="Bolelabunga",
+    -- sub="Sacro Bulwark", --10/10
+    -- head="Malignance Chapeau", --6/6
+    -- neck="Warder's Charm +1",
+    -- ear1="Sanare Earring",
+    -- back=gear.RDM_INT_Cape,
+    -- waist="Carrier's Sash",
+  } --37 PDT / 37 MDT, 551 MEVA
+
+  sets.defense.PDT = sets.HeavyDef
+  sets.defense.MDT = sets.HeavyDef
+
+
+  ------------------------------------------------------------------------------------------------
   ----------------------------------------- Idle Sets --------------------------------------------
   ------------------------------------------------------------------------------------------------
 
@@ -971,30 +1005,7 @@ function init_gear_sets()
     -- waist="Shinjutsu-no-Obi +1",
   }
 
-  sets.idle = {
-    ammo="Homiliary",
-    head="Duelist's Chapeau",
-    body="Malignance Tabard",
-    hands="Malignance Gloves",
-    legs="Malignance Tights",
-    feet="Malignance Boots",
-    neck="Bathy Choker +1",
-    ear1="Infused Earring",
-    ear2="Eabani Earring",
-    ring1=gear.Dark_Ring,
-    ring2="Defending Ring",
-    waist=empty,
-    back="Grapevine Cape",
-    -- main="Bolelabunga",
-    -- sub="Sacro Bulwark",
-    -- head="Viti. Chapeau +3",
-    -- body="Jhakri Robe +2",
-    -- hands="Raetic Bangles +1",
-    -- ring1={name="Stikini Ring +1", bag="wardrobe3"},
-    -- ring2={name="Stikini Ring +1", bag="wardrobe4"},
-    -- back="Moonlight Cape",
-    -- waist="Flume Belt +1",
-  }
+  sets.idle = sets.HeavyDef
 
   sets.idle.Regain = set_combine(sets.idle, sets.latent_regain)
   sets.idle.Regen = set_combine(sets.idle, sets.latent_regen)
@@ -1007,15 +1018,6 @@ function init_gear_sets()
   sets.idle.Regen.RefreshSub50 = set_combine(sets.idle, sets.latent_regen, sets.latent_refresh_sub50)
   sets.idle.Regain.Regen.Refresh = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh)
   sets.idle.Regain.Regen.RefreshSub50 = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh_sub50)
-
-  sets.LightDef = {
-    ammo="Staunch Tathlum", --2/2, 0
-    body="Malignance Tabard", --9/9, 139
-    hands="Malignance Gloves", --5/5, 112
-    legs="Malignance Tights", --7/7, 150
-    feet="Malignance Boots", --4/4, 150
-    -- head="Malignance Chapeau", --6/6
-  } --27 PDT / 27 MDT, 551 MEVA
 
   sets.idle.LightDef = set_combine(sets.idle, sets.LightDef)
   sets.idle.LightDef.Regain = set_combine(sets.idle.Regain, sets.LightDef)
@@ -1030,31 +1032,7 @@ function init_gear_sets()
   sets.idle.LightDef.Regain.Regen.Refresh = set_combine(sets.idle.Regain.Regen.Refresh, sets.LightDef)
   sets.idle.LightDef.Regain.Regen.RefreshSub50 = set_combine(sets.idle.Regain.Regen.RefreshSub50, sets.LightDef)
 
-  sets.HeavyDef = {
-    ammo="Staunch Tathlum", --2/2, 0
-    body="Malignance Tabard", --9/9, 139
-    hands="Malignance Gloves", --5/5, 112
-    legs="Malignance Tights", --7/7, 150
-    feet="Malignance Boots", --4/4, 150
-    ear2="Eabani Earring", --0/0, 8
-    ring2="Defending Ring", --10/10, 0
-    -- main="Bolelabunga",
-    -- sub="Sacro Bulwark", --10/10
-    -- head="Malignance Chapeau", --6/6
-    -- neck="Warder's Charm +1",
-    -- ear1="Sanare Earring",
-    -- back=gear.RDM_INT_Cape,
-    -- waist="Carrier's Sash",
-  } --37 PDT / 37 MDT, 551 MEVA
-
   sets.idle.Weak = sets.HeavyDef
-
-  ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Defense Sets ------------------------------------------
-  ------------------------------------------------------------------------------------------------
-
-  sets.defense.PDT = sets.HeavyDef
-  sets.defense.MDT = sets.HeavyDef
 
 
   ------------------------------------------------------------------------------------------------
