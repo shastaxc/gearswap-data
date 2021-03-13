@@ -599,27 +599,30 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.LightDef = {
-    ammo="Staunch Tathlum", --2/2, 0
-    head="Kendatsuba Jinpachi +1", --0/0, 101
-    body="Malignance Tabard", --9/9, 139
-    hands="Malignance Gloves", --5/5, 112
-    legs="Malignance Tights", --7/7, 150
-    feet="Malignance Boots", --4/4, 150
-  } --27 PDT/27 MDT, 652 MEVA
+    ammo="Staunch Tathlum",     --  2/ 2, ___
+    head="Ken. Jinpachi +1",    -- __/__, 101
+    body="Malignance Tabard",   --  9/ 9, 139
+    hands="Malignance Gloves",  --  5/ 5, 112
+    legs="Malignance Tights",   --  7/ 7, 150
+    feet="Malignance Boots",    --  4/ 4, 150
+    waist="Moonbow Belt +1",    --  6/ 6, ___
+  } --33 PDT/33 MDT, 652 MEVA
 
   sets.HeavyDef = {
-    ammo="Staunch Tathlum", --2/2, 109
-    head="Kendatsuba Jinpachi +1", --0/0, 101
-    body="Malignance Tabard", --9/9, 139 
-    hands="Malignance Gloves", --5/5, 112
-    legs="Malignance Tights", --7/7, 150
-    feet="Malignance Boots", --4/4, 150
-    neck="Loricate Torque", --5/5, 0
-    ear1="Eabani Earring", --0/0, 8
-    ear2="Odnowa Earring +1", --3/5, 0
-    ring1=gear.Dark_Ring, --5/4, 0
-    ring2="Defending Ring", --10/10, 0
-  } --50 PDT/51 MDT, 769 MEVA
+    ammo="Staunch Tathlum",     --  2/ 2, 109
+    head="Nyame Helm",          --  7/ 7, 123
+    body="Malignance Tabard",   --  9/ 9, 139 
+    hands="Malignance Gloves",  --  5/ 5, 112
+    legs="Malignance Tights",   --  7/ 7, 150
+    feet="Malignance Boots",    --  4/ 4, 150
+    neck="Monk's Nodowa +2",    -- __/__, ___
+    ear1="Sherida Earring",     -- __/__, ___
+    ear2="Odnowa Earring +1",   --  3/ 5, ___
+    ring1="Niqmaddu Ring",      -- __/__, ___
+    ring2="Defending Ring",     -- 10/10, ___
+    back=gear.MNK_DEX_DA_Cape,  -- __/__, ___
+    waist="Moonbow Belt +1",    --  6/ 6, ___
+  } --53 PDT/55 MDT, 791 MEVA
 
   sets.defense.PDT = sets.HeavyDef
   sets.defense.MDT = sets.HeavyDef

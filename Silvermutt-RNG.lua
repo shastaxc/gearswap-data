@@ -889,31 +889,30 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.LightDef = {
-    body="Malignance Tabard", --9/9, 139
-    hands="Malignance Gloves", --5/5, 112
-    legs="Malignance Tights", --7/7, 150
-    feet="Malignance Boots", --4/4, 150
-    ring2="Defending Ring", --10/10, 0
-    -- head="Malignance Chapeau", --6/6
-    -- neck="Warder's Charm +1",
-    -- ring1="Purity Ring", --0/4
-    -- back="Moonlight Cape", --6/6
-  }
+    head="Nyame Helm",            --  7/ 7, 123
+    body="Malignance Tabard",     --  9/ 9, 139
+    hands="Malignance Gloves",    --  5/ 5, 112
+    legs="Malignance Tights",     --  7/ 7, 150
+    feet="Malignance Boots",      --  4/ 4, 150
+    ring2="Defending Ring",       -- 10/10, ___
+    -- head="Malignance Chapeau", --  6/ 6, 123
+    -- back="Moonlight Cape",     --  6/ 6, ___
+  } -- 42 PDT / 42 MDT, 674 MEVA
 
   sets.HeavyDef = {
-    head="Meghanada Visor +2", --5/0, 53
-    body="Malignance Tabard", --9/9, 139
-    hands="Malignance Gloves", --5/5, 112
-    legs="Malignance Tights", --7/7, 150
-    feet="Malignance Boots", --4/4, 150
-    neck="Loricate Torque", --5/5, 0
-    ear1="Eabani Earring", --0/0, 8
-    ear2="Odnowa Earring +1", --3/5, 0
-    ring1=gear.Dark_Ring, --5/4, 0
-    ring2="Defending Ring", --10/10, 0
-    back=gear.RNG_DW_Cape, --0/0, 15
-    waist="Kasiri Belt", --0/0, 0
-  } -- 53 PDT / 49 MDT, 612 MEVA
+    head="Nyame Helm",          --  7/ 7, 123
+    body="Malignance Tabard",   --  9/ 9, 139
+    hands="Malignance Gloves",  --  5/ 5, 112
+    legs="Malignance Tights",   --  7/ 7, 150
+    feet="Malignance Boots",    --  4/ 4, 150
+    neck="Loricate Torque",     --  5/ 5, ___
+    ear1="Eabani Earring",      -- __/__,   8
+    ear2="Odnowa Earring +1",   --  3/ 5, ___
+    ring1="Chirich Ring +1",    -- __/__, ___
+    ring2="Defending Ring",     -- 10/10, ___
+    back=gear.RNG_DW_Cape,      -- __/__,  15
+    waist="Engraved Belt",      -- __/__, ___
+  } -- 50 PDT / 52 MDT, 697 MEVA
 
   sets.defense.PDT = sets.HeavyDef
   sets.defense.MDT = sets.HeavyDef
@@ -975,7 +974,11 @@ function init_gear_sets()
   sets.idle.LightDef.Regain.Regen.Refresh = set_combine(sets.idle.Regain.Regen.Refresh, sets.LightDef)
   sets.idle.LightDef.Regain.Regen.RefreshSub50 = set_combine(sets.idle.Regain.Regen.RefreshSub50, sets.LightDef)
 
-  sets.idle.Weak = sets.HeavyDef
+  sets.idle.Weak = set_combine(sets.HeavyDef, {
+    neck="Loricate Torque",     --  5/ 5, ___
+    ring2="Gelatinous Ring +1", --  7/-1, ___
+    back="Moonlight Cape",      --  6/ 6, ___
+  }) -- 53 PDT / 47 MDT, 697 MEVA
 
 
   ------------------------------------------------------------------------------------------------
