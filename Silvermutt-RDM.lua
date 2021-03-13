@@ -577,7 +577,7 @@ function init_gear_sets()
     main="Daybreak", --30
     head="Ayanmo Zucchetto +2",
     body="Ayanmo Corazza +2",
-    hands="Ayanmo Manopolas +1",
+    hands="Ayanmo Manopolas +2",
     legs=gear.Carmine_D_legs,
     feet="Ayanmo Gambieras +2",
     neck="Incanter's Torque",
