@@ -1886,7 +1886,7 @@ function check_ammo(spell, action, spellMap, eventArgs)
         end
       end
     end
-  elseif spell.english == "Bounty Shot" or spell.english == "Eagle Eye Shot" then
+  elseif spell.english == "Shadowbind" or spell.english == "Bounty Shot" or spell.english == "Eagle Eye Shot" then
     if player.inventory[DefaultAmmo[player.equipment.range]] then
       add_to_chat(3,"WS ammo unavailable. Using default ammo.")
       swapped_ammo = DefaultAmmo[player.equipment.range]
