@@ -248,14 +248,14 @@ function init_gear_sets()
   sets.Enmity = {
     ammo={name="Aqreqaq Bomblet", priority=1}, --0/0, 0 [20] <2>
     head="Halitus Helm", --0/0, 43 [88] <8>
-    body="Emet Harness +1", --6/0, 64 [61] <10>
-    hands="Kurys Gloves", --2/2, 57 [25] <9>
+    body={name="Emet Harness +1", priority=5}, --6/0, 64 [61] <10>
+    hands={name="Kurys Gloves", priority=5}, --2/2, 57 [25] <9>
     legs="Erilaz Leg Guards +1", --7/0, 107 [80] <11>
-    feet="Erilaz Greaves +1", --5/0, 107 [18] <6>
+    feet={name="Erilaz Greaves +1", priority=5}, --5/0, 107 [18] <6>
     neck="Futhark Torque +1", --6/6, 25 [45] <7>
     ear1="Odnowa Earring +1", --3/5, 0 [110] <0>
-    ear2="Cryptic Earring", --0/0, 0 [40] <4>
-    ring1="Eihwaz Ring", --0/0, 0 [70] <5>
+    ear2={name="Cryptic Earring", priority=1}, --0/0, 0 [40] <4>
+    ring1={name="Eihwaz Ring", priority=5}, --0/0, 0 [70] <5>
     ring2={name="Supershear Ring", priority=1}, --0/0, 0 [30] <5>
     waist={name="Kasiri Belt", priority=1}, --0/0, 0 [30] <3>
     back=gear.RUN_HPD_Cape, --10/0, 20 [80] <10>
@@ -898,7 +898,7 @@ function init_gear_sets()
     ammo="Yamarang",
     ear1="Cessance Earring",
     ear2="Telos Earring",
-    ring1="Regal Ring",
+    ring1="Chirich Ring +1",
     -- feet=gear.Herc_STP_feet,
   })
   sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
