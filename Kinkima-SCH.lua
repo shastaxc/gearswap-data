@@ -30,7 +30,6 @@ function job_setup()
 
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c usekey')
-  send_command('bind @w gs c toggle RearmingLock')
   send_command('bind @c gs c toggle CP')
 
   send_command('bind ^` input /ja Immanence <me>')
@@ -1820,9 +1819,11 @@ end)
 function select_default_macro_book()
   -- Default macro set/book: (set, book)
   if player.sub_job == 'WHM' then
-    set_macro_page(2, 1)
-  elseif player.sub_job == 'BLM' then
     set_macro_page(1, 1)
+  elseif player.sub_job == 'RDM' then
+    set_macro_page(1, 1)
+  elseif player.sub_job == 'BLM' then
+    set_macro_page(2, 1)
   else
     set_macro_page(1, 1)
   end
