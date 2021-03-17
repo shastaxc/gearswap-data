@@ -401,10 +401,9 @@ function init_gear_sets()
     ear2="Moonshade Earring",
     ring1="Regal Ring",
     ring2="Niqmaddu Ring",
-    back=gear.RUN_WS2_Cape,
+    back=gear.RUN_WS1_Cape,
     -- head=gear.Lustratio_A_head,
-    -- feet=gear.Lustratio_A_feet,
-    -- back=gear.RUN_WS1_Cape,
+    -- feet=gear.Lustratio_D_feet,
   })
   sets.precast.WS['Resolution'].Safe = set_combine(sets.precast.WS.Safe, {
     ammo="Seething Bomblet +1",
