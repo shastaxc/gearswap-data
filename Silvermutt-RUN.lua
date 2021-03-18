@@ -393,7 +393,7 @@ function init_gear_sets()
     head=gear.Adhemar_B_head,
     body=gear.Adhemar_B_body,
     hands=gear.Adhemar_B_hands,
-    legs="Meghanada Chausses +2",
+    legs=gear.Samnuha_legs,
     feet=gear.Herc_TA_feet,
     neck="Fotia Gorget",
     waist="Fotia Belt",
@@ -726,13 +726,14 @@ function init_gear_sets()
     ammo="Staunch Tathlum",     --  2/ 2, ___ [___]
     head="Nyame Helm",          --  7/ 7, 123 [ 91]
     body="Nyame Mail",          --  9/ 9, 139 [136]
-    legs=gear.Carmine_D_legs,   --  6/__,  80 [ 50]
+    legs="Nyame Flanchard",     --  8/ 8, 150 [114]
     neck="Futhark Torque +1",   --  6/ 6,  25 [ 45]
     ring2="Defending Ring",     -- 10/10, ___ [___]
     back=gear.RUN_HPD_Cape,     -- 10/__,  20 [ 80]
     
     -- Ideal:
     -- sub="Utu Grip",               -- __/__, ___ [ 70]
+    -- ammo="Staunch Tathlum +1",    --  3/ 3, ___ [___]
     -- head="Nyame Helm",            --  7/ 7, 123 [ 91]
     -- body="Nyame Mail",            --  9/ 9, 139 [136]
     -- legs="Nyame Flanchard",       --  8/ 8, 150 [114]
@@ -740,8 +741,8 @@ function init_gear_sets()
     -- ring1="Moonlight Ring",       --  5/ 5, ___ [110]
     -- ring2="Moonlight Ring",       --  5/ 5, ___ [110]
     -- back=gear.RUN_TP_Cape,        -- 10/__, ___ [___]
-    --47 PDT / 34 MDT, 412 MEVA [741 HP]
-  } --50 PDT / 34 MDT, 397 MEVA [472 HP]
+    --50 PDT / 37 MDT, 412 MEVA [741 HP]
+  } --52 PDT / 34 MDT, 457 MEVA [536 HP]
 
   sets.defense.Knockback = {
     -- back="Repulse Mantle"
@@ -806,6 +807,64 @@ function init_gear_sets()
 
 
   ------------------------------------------------------------------------------------------------
+  ---------------------------------------- Engaged Sets ------------------------------------------
+  ------------------------------------------------------------------------------------------------
+
+  sets.engaged = {
+    sub="Utu Grip",
+    ammo="Aurgelmir Orb",
+    head=gear.Adhemar_B_head,
+    body="Adhemar Jacket +1",
+    hands=gear.Adhemar_B_hands,
+    legs=gear.Samnuha_legs,
+    feet=gear.Herc_TA_feet,
+    neck="Anu Torque",
+    waist="Windbuffet Belt +1",
+    ear1="Telos Earring",
+    ear2="Sherida Earring",
+    ring1="Epona's Ring",
+    ring2="Niqmaddu Ring",
+    back=gear.RUN_HPD_Cape,
+    -- ammo="Aurgelmir Orb +1",
+    -- back=gear.RUN_TP_Cape,
+  }
+  sets.engaged.LowAcc = set_combine(sets.engaged, {
+    head="Dampening Tam",
+    -- hands=gear.Adhemar_A_hands,
+    -- neck="Combatant's Torque",
+    -- waist="Ioskeha Belt +1",
+  })
+  sets.engaged.MidAcc = set_combine(sets.engaged.LowAcc, {
+    ammo="Yamarang",
+    ear1="Cessance Earring",
+    ear2="Telos Earring",
+    ring1="Chirich Ring +1",
+    -- feet=gear.Herc_STP_feet,
+  })
+  sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
+    ammo="Falcon Eye",
+    legs=gear.Carmine_D_legs,
+    ear1="Odr Earring",
+    ear2="Dignitary's Earring",
+    -- ammo="C. Palug Stone",
+    -- head="Carmine Mask +1",
+    -- body="Carm. Sc. Mail +1",
+    -- hands="Runeist's Mitons +3",
+    -- waist="Olseni Belt",
+  })
+  sets.engaged.Aftermath = {
+    head="Ayanmo Zucchetto +2",
+    neck="Anu Torque",
+    ear1="Sherida Earring",
+    ring1="Chirich Ring +1",
+    waist="Kentarch Belt +1",
+    -- body="Ashera Harness",
+    -- ear2="Dedition Earring",
+    -- ring2="Chirich Ring +1",
+  }
+
+
+  ------------------------------------------------------------------------------------------------
   ----------------------------------------- Idle Sets --------------------------------------------
   ------------------------------------------------------------------------------------------------
 
@@ -863,64 +922,6 @@ function init_gear_sets()
   sets.idle.LightDef.Regain.Regen.RefreshSub50 = set_combine(sets.idle.Regain.Regen.RefreshSub50, sets.LightDef)
 
   sets.idle.Weak = sets.defense.MDT
-
-
-  ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Engaged Sets ------------------------------------------
-  ------------------------------------------------------------------------------------------------
-
-  sets.engaged = {
-    sub="Utu Grip",
-    ammo="Aurgelmir Orb",
-    head=gear.Adhemar_B_head,
-    body="Adhemar Jacket +1",
-    hands=gear.Adhemar_B_hands,
-    legs=gear.Samnuha_legs,
-    feet=gear.Herc_TA_feet,
-    neck="Anu Torque",
-    waist="Windbuffet Belt +1",
-    ear1="Telos Earring",
-    ear2="Sherida Earring",
-    ring1="Epona's Ring",
-    ring2="Niqmaddu Ring",
-    back=gear.RUN_HPD_Cape,
-    -- ammo="Aurgelmir Orb +1",
-    -- back=gear.RUN_TP_Cape,
-  }
-  sets.engaged.LowAcc = set_combine(sets.engaged, {
-    head="Dampening Tam",
-    -- hands=gear.Adhemar_A_hands,
-    -- neck="Combatant's Torque",
-    -- waist="Ioskeha Belt +1",
-  })
-  sets.engaged.MidAcc = set_combine(sets.engaged.LowAcc, {
-    ammo="Yamarang",
-    ear1="Cessance Earring",
-    ear2="Telos Earring",
-    ring1="Chirich Ring +1",
-    -- feet=gear.Herc_STP_feet,
-  })
-  sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
-    ammo="Falcon Eye",
-    legs=gear.Carmine_D_legs,
-    ear1="Odr Earring",
-    ear2="Dignitary's Earring",
-    -- ammo="C. Palug Stone",
-    -- head="Carmine Mask +1",
-    -- body="Carm. Sc. Mail +1",
-    -- hands="Runeist's Mitons +3",
-    -- waist="Olseni Belt",
-  })
-  sets.engaged.Aftermath = {
-    head="Ayanmo Zucchetto +2",
-    neck="Anu Torque",
-    ear1="Sherida Earring",
-    ring1="Chirich Ring +1",
-    waist="Kentarch Belt +1",
-    -- body="Ashera Harness",
-    -- ear2="Dedition Earring",
-    -- ring2="Chirich Ring +1",
-  }
 
 
   ------------------------------------------------------------------------------------------------
