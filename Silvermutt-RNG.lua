@@ -83,7 +83,7 @@ function job_setup()
     ['Gastraphetes'] = "xbow",
     ['Fomalhaut'] = "gun",
   }
-  
+
   DefaultAmmo = {
     ['Yoichinoyumi'] = "Chrono Arrow",
     ['Gandiva'] = "Chrono Arrow",
@@ -482,7 +482,7 @@ function init_gear_sets()
     back=gear.RNG_WS2_Cape,
     waist="Fotia Belt",
     -- head="Orion Beret +3",
-    -- body=gear.Herc_RA_WSD_body,
+    -- body="Ikenga's Vest", -- After augmenting
     -- feet=gear.Herc_RA_WSD_feet,
     -- neck="Scout's Gorget +2",
     -- ring2="Epaminondas's Ring",
@@ -1411,7 +1411,7 @@ function job_post_precast(spell, action, spellMap, eventArgs)
       end
     end
   end
-  
+
   -- If slot is locked, keep current equipment on
   if locked_neck then equip({ neck=player.equipment.neck }) end
   if locked_ear1 then equip({ ear1=player.equipment.ear1 }) end
@@ -1443,7 +1443,7 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
       equip(sets.buff.Barrage)
     end
   end
-  
+
   -- If slot is locked, keep current equipment on
   if locked_neck then equip({ neck=player.equipment.neck }) end
   if locked_ear1 then equip({ ear1=player.equipment.ear1 }) end

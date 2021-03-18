@@ -38,7 +38,7 @@ function get_sets()
   -- Load and initialize Mote library
   mote_include_version = 2
   include('Mote-Include.lua') -- Executes job_setup, user_setup, init_gear_sets
-  coroutine.schedule(function() 
+  coroutine.schedule(function()
     send_command('gs c weaponset current')
   end, 2)
 end
@@ -76,7 +76,7 @@ function job_setup()
 
   send_command('bind ^insert gs c weaponset cycle')
   send_command('bind ^delete gs c weaponset cycleback')
-  
+
   send_command('bind ^pageup gs c toyweapon cycle')
   send_command('bind ^pagedown gs c toyweapon cycleback')
   send_command('bind !pagedown gs c toyweapon reset')
@@ -174,7 +174,7 @@ function init_gear_sets()
     ring1="Lebeche Ring", --Quick Magic 2%
     ring2="Weatherspoon Ring", --5
   }
-  
+
   -- Precast sets to enhance JAs on use
   sets.precast.JA['Hundred Fists'] = {
     legs="Hesychast's Hose +3",
@@ -245,7 +245,7 @@ function init_gear_sets()
   -- Waltz set (chr and vit)
   sets.precast.Waltz = {
   }
-      
+
   sets.precast.Step = {
   }
   sets.precast.Flourish1 = {
@@ -282,6 +282,7 @@ function init_gear_sets()
     ring2="Niqmaddu Ring",
     back=gear.MNK_STR_DA_Cape,
     waist="Moonbow Belt +1",
+    -- legs="Mpaca's Hose",
   } -- Base WS set
 
   -- Victory Smite: 80% STR, can crit
@@ -299,6 +300,7 @@ function init_gear_sets()
     ring2="Niqmaddu Ring",
     back=gear.MNK_STR_Crit_Cape,
     waist="Moonbow Belt +1",
+    -- legs="Mpaca's Hose",
     -- feet=gear.Herc_STR_CritDmg_feet,
   })
   sets.precast.WS["Victory Smite"].MaxTP = set_combine(sets.precast.WS["Victory Smite"], {
@@ -337,6 +339,7 @@ function init_gear_sets()
     back=gear.MNK_DEX_DA_Cape,
     waist="Moonbow Belt +1",
     -- ammo="Aurgelmir Orb +1",
+    -- legs="Mpaca's Hose",
     -- ear2="Mache Earring +1",
   })
   sets.precast.WS["Shijin Spiral"].MaxTP = set_combine(sets.precast.WS["Shijin Spiral"], {
@@ -354,6 +357,7 @@ function init_gear_sets()
   })
   sets.precast.WS["Shijin Spiral"].HighAcc = set_combine(sets.precast.WS["Shijin Spiral"].MidAcc, {
     hands=gear.Ryuo_A_hands,
+    legs="Tatenashi Haidate +1",
     feet="Mummu Gamashes +2",
   })
   sets.precast.WS["Shijin Spiral"].HighAccMaxTP = set_combine(sets.precast.WS["Shijin Spiral"].HighAcc, {
@@ -374,8 +378,11 @@ function init_gear_sets()
     ring2="Niqmaddu Ring",
     back=gear.MNK_STR_DA_Cape,
     waist="Moonbow Belt +1",
+    -- head="Mpaca's Cap",
+    -- legs="Mpaca's Hose",
   })
   sets.precast.WS["Asuran Fists"].MaxTP = set_combine(sets.precast.WS["Asuran Fists"], {
+    head=gear.Adhemar_B_head,
     ear2="Odnowa Earring +1",
   })
   sets.precast.WS["Asuran Fists"].LowAcc = set_combine(sets.precast.WS["Asuran Fists"], {
@@ -423,8 +430,11 @@ function init_gear_sets()
     ring2="Niqmaddu Ring",
     back=gear.MNK_STR_DA_Cape,
     waist="Moonbow Belt +1",
+    -- head="Mpaca's Cap",
+    -- legs="Mpaca's Hose",
   })
   sets.precast.WS["Raging Fists"].MaxTP = set_combine(sets.precast.WS["Raging Fists"], {
+    head="Kendatsuba Jinpachi +1",
     ear2="Brutal Earring",
   })
   sets.precast.WS["Raging Fists"].LowAcc = set_combine(sets.precast.WS["Raging Fists"], {
@@ -461,10 +471,13 @@ function init_gear_sets()
     ring2="Niqmaddu Ring",
     back=gear.MNK_STR_DA_Cape,
     waist="Moonbow Belt +1",
+    -- head="Mpaca's Cap",
     -- body="Tatenashi Harama +1",
+    -- legs="Mpaca's Hose",
     -- back=gear.MNK_VIT_WSD_Cape,
   })
   sets.precast.WS["Howling Fist"].MaxTP = set_combine(sets.precast.WS["Howling Fist"], {
+    head="Kendatsuba Jinpachi +1",
     ear2="Brutal Earring",
   })
   sets.precast.WS["Howling Fist"].LowAcc = set_combine(sets.precast.WS["Howling Fist"], {
@@ -572,7 +585,7 @@ function init_gear_sets()
 
   sets.MAB = {
     ammo="Pemphredo Tathlum", --4
-    head="Highwing Helm", --20
+    head="Nyame Helm", --30
     body=gear.Samnuha_body, --33
     hands=gear.Leyline_Gloves, --30
     legs=gear.Herc_MAB_legs, --33
@@ -611,7 +624,7 @@ function init_gear_sets()
   sets.HeavyDef = {
     ammo="Staunch Tathlum",     --  2/ 2, 109
     head="Nyame Helm",          --  7/ 7, 123
-    body="Malignance Tabard",   --  9/ 9, 139 
+    body="Malignance Tabard",   --  9/ 9, 139
     hands="Malignance Gloves",  --  5/ 5, 112
     legs="Malignance Tights",   --  7/ 7, 150
     feet="Malignance Boots",    --  4/ 4, 150
@@ -722,7 +735,7 @@ function init_gear_sets()
   -----------------------------------------------------------------------------------
   ---------------------------------------- Special Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
-  
+
   -- Hundred Fists/Impetus/Counterstance melee set mods
   sets.engaged.HF = set_combine(sets.engaged)
   sets.engaged.Impetus = set_combine(sets.engaged, {
@@ -791,7 +804,7 @@ function init_gear_sets()
     feet="Anchorite's Gaiters +3"
   }
   sets.engaged.Footwork.Acc = set_combine(sets.engaged.Footwork, {
-    
+
   })
 
   -- Quick sets for post-precast adjustments, listed here so that the gear can be Validated.
@@ -826,7 +839,7 @@ function init_gear_sets()
   sets.BoostRegain = {
     waist="Ask Sash",
   }
-  
+
   sets.WeaponSet = {}
   sets.WeaponSet['Verethragna'] = {main="Verethragna"}
   sets.WeaponSet['Piercing'] = {main="Birdbanes"}
@@ -896,12 +909,12 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         equip({waist="Hachirin-no-Obi"})
       end
     end
-    
+
     if buffactive['Reive Mark'] then
       equip(sets.Reive)
     end
   end
-  
+
   -- If slot is locked, keep current equipment on
   if locked_neck then equip({ neck=player.equipment.neck }) end
   if locked_ear1 then equip({ ear1=player.equipment.ear1 }) end
@@ -956,11 +969,11 @@ function job_buff_change(buff,gain)
   else
     state.CombatForm:reset()
   end
-  
+
   -- Hundred Fists and Impetus modify the custom melee groups
   if buff == "Hundred Fists" or buff == "Impetus" then
     classes.CustomMeleeGroups:clear()
-    
+
     if (buff == "Hundred Fists" and gain) or buffactive['hundred fists'] then
       classes.CustomMeleeGroups:append('HF')
     end
@@ -1092,7 +1105,7 @@ function cycle_toy_weapons(cycle_dir)
   else
     state.ToyWeapons:reset()
   end
-  
+
   local mode_color = 001
   if state.ToyWeapons.current == 'None' then
     mode_color = 006
@@ -1244,7 +1257,7 @@ end
 
 function update_melee_groups()
   classes.CustomMeleeGroups:clear()
-  
+
   if buffactive['hundred fists'] then
     classes.CustomMeleeGroups:append('HF')
   end
@@ -1414,11 +1427,11 @@ function on_action_for_impetus(action)
         end
       end
     end
-    
+
   --add_to_chat(123,'Current Impetus hit count = ' .. tostring(info.impetus_hit_count))
   else
     info.impetus_hit_count = 0
   end
-  
+
 end
 
