@@ -331,7 +331,7 @@ function init_gear_sets()
     hands="Malignance Gloves",
     legs="Malignance Tights",
     feet="Malignance Boots",
-    neck="Love Torque",
+    neck="Etoile Gorget +2",
     ear1="Digni. Earring",
     ear2="Hermetic Earring",
     ring1="Weatherspoon Ring",
@@ -339,7 +339,6 @@ function init_gear_sets()
     back=gear.DNC_TP_DW_Cape,
     waist="Eschan Stone",
     -- head="Malignance Chapeau",
-    -- neck="Etoile Gorget +2",
     -- ring1="Stikini Ring +1",
     -- ring2="Stikini Ring +1",
   }
