@@ -251,7 +251,6 @@ function init_gear_sets()
 
   -- Waltz Potency/CHR
   sets.precast.Waltz = {
-    ammo="Light Sachet",            -- __(_),  2 <__>
     head=gear.Anwig_Salade,         -- __(_),  4 <-2>
     body="Maxixi Casaque +3",       -- 19(8), 33 <-2>
     legs="Dashing Subligar",        -- 10(_), 11 <__>; Gives Blink
@@ -275,7 +274,7 @@ function init_gear_sets()
     -- back=gear.DNC_WTZ_Cape,      -- __(_), 30 <__>; Enmity-10
     -- waist="Aristo Belt",         -- __(_),  8 <__>
     -- 53 Potency (8 Self Potency), 217 CHR <-4 Delay>
-  } -- 44 Potency (8 Self Potency), 97 CHR <-4 Delay>
+  } -- 54 Potency (8 Self Potency), 112 CHR <-4 Delay>
 
   -- Waltz effects received
   sets.precast.WaltzSelf = set_combine(sets.precast.Waltz, {
@@ -683,7 +682,7 @@ function init_gear_sets()
     neck="Loricate Torque",     --  5/ 5, ___
     ring1="Gelatinous Ring +1", --  7/-1, ___
     ring2="Moonlight Ring",     --  5/ 5, ___
-    back="Moonlight Cape",      --  6/ 6, ___
+    -- back="Moonlight Cape",      --  6/ 6, ___
   }) --60 PDT/54 MDT, 791 MEVA
   
 
