@@ -313,13 +313,13 @@ function init_gear_sets()
   })
 
   -- Divine Magic skill
-  sets.precast.JA['Vivacious Pulse'] = set_combine(sets.Enmity, {
+  sets.precast.JA['Vivacious Pulse'] = {
     head="Erilaz Galea +1", --Aug JA [91]
     neck="Incanter's Torque", --10 [0]
     -- legs="Rune. Trousers +3", --19 [80]
     -- ear2="Saxnot Earring", --10 [0]
     -- ring1="Stikini Ring +1", --8 [0]
-  }) --25 Divine Skill [486 HP w/ Enmity]
+  } --25 Divine Skill [___ HP w/ PDT, ___ HP w/ MDT]
 
   -- Fast cast sets for spells
   sets.precast.FC = {
@@ -402,15 +402,12 @@ function init_gear_sets()
     ring1="Regal Ring",
     ring2="Niqmaddu Ring",
     back=gear.RUN_WS1_Cape,
-    -- head=gear.Lustratio_A_head,
-    -- feet=gear.Lustratio_D_feet,
   })
   sets.precast.WS['Resolution'].Safe = set_combine(sets.precast.WS.Safe, {
     ammo="Seething Bomblet +1",
-    head=gear.Adhemar_B_head,
-    hands=gear.Adhemar_B_hands,
-    feet=gear.Herc_TA_feet,
     waist="Fotia Belt",
+    -- head=gear.Adhemar_A_head,
+    -- hands=gear.Adhemar_A_hands,
   })
   sets.precast.WS['Resolution'].MaxTP = set_combine(sets.precast.WS['Resolution'], {
     ear2="Odnowa Earring +1",
@@ -735,13 +732,13 @@ function init_gear_sets()
     -- sub="Utu Grip",               -- __/__, ___ [ 70]
     -- ammo="Staunch Tathlum +1",    --  3/ 3, ___ [___]
     -- head="Nyame Helm",            --  7/ 7, 123 [ 91]
-    -- body="Nyame Mail",            --  9/ 9, 139 [136]
+    -- body="Ashera Harness",        --  7/ 7,  96 [182]
     -- legs="Nyame Flanchard",       --  8/ 8, 150 [114]
     -- ear1="Odnowa Earring +1",     --  3/ 5, ___ [110]
     -- ring1="Moonlight Ring",       --  5/ 5, ___ [110]
     -- ring2="Moonlight Ring",       --  5/ 5, ___ [110]
     -- back=gear.RUN_TP_Cape,        -- 10/__, ___ [___]
-    --50 PDT / 37 MDT, 412 MEVA [741 HP]
+    --48 PDT / 35 MDT, 369 MEVA [787 HP]
   } --52 PDT / 34 MDT, 457 MEVA [536 HP]
 
   sets.defense.Knockback = {
@@ -777,7 +774,7 @@ function init_gear_sets()
     head="Nyame Helm",            --  7/ 7, 123 [ 91]
     body="Nyame Mail",            --  9/ 9, 139 [136]
     hands="Turms Mittens",        -- __/__,  91 [ 59]
-    legs="Erilaz Leg Guards +1",  --  7/__, 107 [ 80]
+    legs="Nyame Flanchard",    --  8/ 8, 150 [114]
     feet="Erilaz Greaves +1",     --  5/__, 107 [ 18]
     neck="Futhark Torque +1",     --  6/ 6,  25 [ 45]
     waist="Engraved Belt",        -- __/__, ___ [___]
@@ -788,14 +785,13 @@ function init_gear_sets()
     back=gear.RUN_HPP_Cape,       -- __/__,  20 [ 80]
     -- ammo="Staunch Tathlum +1", --  3/ 3, ___ [___]
     -- hands="Turms Mittens +1",  -- __/__, 101 [ 74]
-    -- legs="Nyame Flanchard",    --  8/ 8, 150 [114]
     -- feet="Nyame Sollerets",    --  7/ 7, 150 [ 68]
     -- neck="Futhark Torque +2",  --  7/ 7,  30 [ 60]
     -- ear2="Sanare Earring",     -- __/__,   6 [___]; M. Def Bonus+4
     -- ring1="Moonlight Ring",    --  5/ 5, ___ [110]
     -- back=gear.RUN_HPME_Cape,   -- __/__,  45 [ 60]
     --54 PDT / 40 MDT, 754 MEVA [983 HP]
-  } --51 PDT / 23 MDT, 630 MEVA [959 HP]
+  } --52 PDT / 31 MDT, 673 MEVA [993 HP]
 
   sets.defense.Parry = {
     hands="Turms Mittens", --Parry: Recover HP+75
