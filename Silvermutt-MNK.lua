@@ -87,6 +87,7 @@ function job_setup()
   send_command('bind !q input /ja "Impetus" <me>')
   send_command('bind !` input /ja "Chakra" <me>')
   send_command('bind ^numpad+ input /ja "Boost" <me>')
+  send_command('bind !e input /ja "Footwork" <me>')
 end
 
 -- Executes on first load, main job change, **and sub job change**
@@ -134,6 +135,7 @@ function job_file_unload()
   send_command('unbind @c')
   send_command('unbind !q')
   send_command('unbind !`')
+  send_command('unbind !e')
   send_command('unbind !w')
   send_command('unbind ^numpad/')
   send_command('unbind ^numpad*')
