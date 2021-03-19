@@ -194,11 +194,6 @@ function init_gear_sets()
   sets.TreasureHunter = {
     body=gear.Herc_TH_body, --2
     hands="Plunderer's Armlets +1", --3
-    feet="Skulk. Poulaines +1", --3
-    waist="Chaac Belt", --1
-    -- head=gear.Herc_TH_head, --2
-    -- hands="Plun. Armlets +3", --4
-    -- feet="Skulk. Poulaines +1", --3
   }
 
   sets.buff['Sneak Attack'] = {}
