@@ -740,38 +740,14 @@ function init_gear_sets()
     ear1="Telos Earring", --0 [5] 10/10 <0> {0} (0)
     ear2="Sherida Earring",
     ring1="Regal Ring", --10 [0] 0/20 <0> {0} (0)
-    ring2="Dingir Ring", --10 [0] 0/25 <0> {0} (10)
+    ring2="Ilabrat Ring", --10 [5] 0/0 <0> {0} (0)
     back=gear.RNG_RA_Cape, --30 [10] 20/20 <0> {0} (0)
     waist="Kwahu Kachina Belt +1" --8 [0] 20/0 <5> {0} (0)
-
-    -- Goal:
-    -- head="Arcadian Beret +3", --37 [0] 37/62 <0> {0} (38)
-    -- body="Malignance Tabard", --42 [11] 50/0 <0> {6} (0)
-    -- hands="Malignance Gloves", --24 [12] 50/0 <0> {4} (0)
-    -- legs="Malignance Tights", --42 [10] 50/0 <0> {5} (0)
-    -- feet="Malignance Boots", --49 [9] 50/0 <0> {2} (0)
-    -- neck="Scout's Gorget +2", --25 [7] 25/0 <0> {10} (0)
-    -- ear1="Telos Earring", --0 [5] 10/10 <0> {0} (0)
-    -- ear2="Enervating Earring", --0 [4] 7/7 <0> {0} (0)
-    -- ring1="Regal Ring", --10 [0] 0/20 <0> {0} (0)
-    -- ring2="Dingir Ring", --10 [0] 0/25 <0> {0} (10)
-    -- back=gear.RNG_RA_Cape, --30 [10] 20/20 <0> {0} (0)
-    -- waist="Yemaya Belt", --7 [4] 10/10 <0> {0} (0)
-    --276 AGI [72 STP] 309 racc / 154 ratt <0 crit> {27 dmg limit} (48 Recycle)
-
-    -- Best:
     -- head="Arcadian Beret +3", --37 [0] 37/62 <0> {0} (38)
     -- body="Nisroch Jerkin", --40 [7] 45/45 <10> {0} (0)
-    -- hands="Malignance Gloves", --24 [12] 50/0 <0> {4} (0)
     -- legs=gear.Adhemar_C_legs, --42 [8] 54/54 <0> {0} (16)
-    -- feet="Malignance Boots", --49 [9] 50/0 <0> {2} (0)
     -- neck="Scout's Gorget +2", --25 [7] 25/0 <0> {10} (0)
-    -- ear1="Telos Earring", --0 [5] 10/10 <0> {0} (0)
     -- ear2="Dedition Earring", --0 [8] -10/-10 <0> {0} (0)
-    -- ring1="Regal Ring", --10 [0] 0/20 <0> {0} (0)
-    -- ring2="Ilabrat Ring", --10 [5] 0/0 <0> {0} (0)
-    -- back=gear.RNG_RA_Cape, --30 [10] 20/20 <0> {0} (0)
-    -- waist="Kwahu Kachina Belt +1" --8 [0] 20/0 <5> {0} (0)
     --275 AGI [71 STP] 301 racc / 201 ratt <15 crit> {16 dmg limit} (54 Recycle)
   }
   sets.midcast.RA.LowAcc = set_combine(sets.midcast.RA, {
@@ -780,68 +756,16 @@ function init_gear_sets()
   sets.midcast.RA.MidAcc = set_combine(sets.midcast.RA.LowAcc, {
     ear2="Beyla Earring", --0 [0] 15/0 <0> {0} (0)
     ring2="Hajduk Ring +1", --0 [0] 17/0 <0> {0} (0)
-    -- Goal:
-    -- head="Arcadian Beret +3", --37 [0] 37/62 <0> {0} (38)
-    -- body="Malignance Tabard", --42 [11] 50/0 <0> {6} (0)
-    -- hands="Malignance Gloves", --24 [12] 50/0 <0> {4} (0)
-    -- legs="Malignance Tights", --42 [10] 50/0 <0> {5} (0)
     -- feet="Orion Socks +3", --49 [0] 54/36 <0> {0} (0)
-    -- neck="Scout's Gorget +2", --25 [7] 25/0 <0> {10} (0)
-    -- ear1="Telos Earring", --0 [5] 10/10 <0> {0} (0)
-    -- ear2="Beyla Earring", --0 [0] 15/0 <0> {0} (0)
-    -- ring1="Regal Ring", --10 [0] 0/20 <0> {0} (0)
-    -- ring2="Hajduk Ring +1", --0 [0] 17/0 <0> {0} (0)
-    -- back=gear.RNG_RA_Cape, --30 [10] 20/20 <0> {0} (0)
-    -- waist="Kwahu Kachina Belt +1" --8 [0] 20/0 <5> {0} (0)
-    -- Includes set bonus 15 racc from orion + regal
-    -- 267 AGI [55 STP] 363 racc / 148 ratt <5 crit> {25 dmg limit} (48 Recycle)
-
-    -- Best:
-    -- head="Arcadian Beret +3", --37 [0] 37/62 <0> {0} (38)
-    -- body="Nisroch Jerkin", --40 [7] 45/45 <10> {0} (0)
-    -- hands="Malignance Gloves", --24 [12] 50/0 <0> {4} (0)
-    -- legs=gear.Adhemar_C_legs, --42 [8] 54/54 <0> {0} (16)
-    -- feet="Orion Socks +3", --49 [0] 54/36 <0> {0} (0)
-    -- neck="Scout's Gorget +2", --25 [7] 25/0 <0> {10} (0)
-    -- ear1="Telos Earring", --0 [5] 10/10 <0> {0} (0)
-    -- ear2="Beyla Earring", --0 [0] 15/0 <0> {0} (0)
-    -- ring1="Regal Ring", --10 [0] 0/20 <0> {0} (0)
-    -- ring2="Hajduk Ring +1", --0 [0] 17/0 <0> {0} (0)
-    -- back=gear.RNG_RA_Cape, --30 [10] 20/20 <0> {0} (0)
-    -- waist="Kwahu Kachina Belt +1" --8 [0] 20/0 <5> {0} (0)
     -- Includes set bonus 15 racc from orion + regal
     -- 265 AGI [49 STP] 362 racc / 247 ratt <15 crit> {14 dmg limit} (54 Recycle)
   })
   sets.midcast.RA.HighAcc = set_combine(sets.midcast.RA.MidAcc, {
-    -- Goal:
-    -- head="Orion Beret +3", --39 [0] 47/34 <0> {0} (0)
-    -- body="Orion Jerkin +3", --40 [8] 60/41 <0> {0} (0)
+    head="Orion Beret +2",
     hands="Orion Bracers +3", --27 [0] 48/0 <0> {0} (0)
-    legs="Malignance Tights", --42 [10] 50/0 <0> {5} (0)
-    -- feet="Orion Socks +3", --49 [0] 54/36 <0> {0} (0)
-    -- neck="Scout's Gorget +2", --25 [7] 25/0 <0> {10} (0)
-    ear1="Telos Earring", --0 [5] 10/10 <0> {0} (0)
-    ear2="Beyla Earring", --0 [0] 15/0 <0> {0} (0)
-    ring1="Regal Ring", --10 [0] 0/20 <0> {0} (0)
-    ring2="Hajduk Ring +1", --0 [0] 17/0 <0> {0} (0)
-    back=gear.RNG_RA_Cape, --30 [10] 20/20 <0> {0} (0)
-    waist="Kwahu Kachina Belt +1" --8 [0] 20/0 <5> {0} (0)
-    -- Includes set bonus 15 racc from orion + regal
-    -- 270 AGI [40 STP] 426 racc / 161 ratt <5 crit> {15 dmg limit} (0 Recycle)
-
-    -- Best:
     -- head="Orion Beret +3", --39 [0] 47/34 <0> {0} (0)
     -- body="Orion Jerkin +3", --40 [8] 60/41 <0> {0} (0)
-    -- hands="Orion Bracers +3", --27 [0] 48/0 <0> {0} (0)
-    -- legs=gear.Adhemar_C_legs, --42 [8] 54/54 <0> {0} (16)
     -- feet="Orion Socks +3", --49 [0] 54/36 <0> {0} (0)
-    -- neck="Scout's Gorget +2", --25 [7] 25/0 <0> {10} (0)
-    -- ear1="Telos Earring", --0 [5] 10/10 <0> {0} (0)
-    -- ear2="Beyla Earring", --0 [0] 15/0 <0> {0} (0)
-    -- ring1="Regal Ring", --10 [0] 0/20 <0> {0} (0)
-    -- ring2="Hajduk Ring +1", --0 [0] 17/0 <0> {0} (0)
-    -- back=gear.RNG_RA_Cape, --30 [10] 20/20 <0> {0} (0)
-    -- waist="Kwahu Kachina Belt +1" --8 [0] 20/0 <5> {0} (0)
     -- Includes set bonus 60 racc from orion + regal
     --270 AGI [38 STP] 430 racc / 215 ratt <5 crit> {10 dmg limit} (16 Recycle)
   })
@@ -1836,10 +1760,14 @@ function check_ammo(spell, action, spellMap, eventArgs)
       if player.inventory[MagicAmmo[player.equipment.range]] then
         swapped_ammo = MagicAmmo[player.equipment.range]
         equip({ammo=swapped_ammo})
-      else
+      elseif player.inventory[DefaultAmmo[player.equipment.range]] then
         add_to_chat(3,"Magic ammo unavailable. Using default ammo.")
         swapped_ammo = DefaultAmmo[player.equipment.range]
         equip({ammo=swapped_ammo})
+      else
+        swapped_ammo = empty
+        equip({ammo=swapped_ammo})
+        add_to_chat(3,"Magic & default ammo unavailable. Leaving empty.")
       end
     -- physical weaponskills
     else
@@ -1849,31 +1777,27 @@ function check_ammo(spell, action, spellMap, eventArgs)
           if player.inventory[AccAmmo[player.equipment.range]] then
             swapped_ammo = AccAmmo[player.equipment.range]
             equip({ammo=swapped_ammo})
+          elseif player.inventory[DefaultAmmo[player.equipment.range]] then
+            add_to_chat(3,"Acc ammo unavailable. Using default ammo.")
+            swapped_ammo = DefaultAmmo[player.equipment.range]
+            equip({ammo=swapped_ammo})
           else
-            if player.inventory[DefaultAmmo[player.equipment.range]] then
-              add_to_chat(3,"Acc ammo unavailable. Using default ammo.")
-              swapped_ammo = DefaultAmmo[player.equipment.range]
-              equip({ammo=swapped_ammo})
-            else
-              add_to_chat(3,"Acc ammo unavailable. Default ammo unavailable. Unequipping ammo.")
-              swapped_ammo = empty
-              equip({ammo=swapped_ammo})
-            end
+            add_to_chat(3,"Acc & default ammo unavailable. Unequipping ammo.")
+            swapped_ammo = empty
+            equip({ammo=swapped_ammo})
           end
         else
           if player.inventory[WSAmmo[player.equipment.range]] then
             swapped_ammo = WSAmmo[player.equipment.range]
             equip({ammo=swapped_ammo})
+          elseif player.inventory[DefaultAmmo[player.equipment.range]] then
+            add_to_chat(3,"WS ammo unavailable. Using default ammo.")
+            swapped_ammo = DefaultAmmo[player.equipment.range]
+            equip({ammo=swapped_ammo})
           else
-            if player.inventory[DefaultAmmo[player.equipment.range]] then
-              add_to_chat(3,"WS ammo unavailable. Using default ammo.")
-              swapped_ammo = DefaultAmmo[player.equipment.range]
-              equip({ammo=swapped_ammo})
-            else
-              add_to_chat(3,"WS ammo unavailable. Default ammo unavailable. Unequipping ammo.")
-              swapped_ammo = empty
-              equip({ammo=swapped_ammo})
-            end
+            add_to_chat(3,"WS & default ammo unavailable. Unequipping ammo.")
+            swapped_ammo = empty
+            equip({ammo=swapped_ammo})
           end
         end
       -- physical non-ranged weaponskills
@@ -1888,11 +1812,11 @@ function check_ammo(spell, action, spellMap, eventArgs)
     end
   elseif spell.english == "Shadowbind" or spell.english == "Bounty Shot" or spell.english == "Eagle Eye Shot" then
     if player.inventory[DefaultAmmo[player.equipment.range]] then
-      add_to_chat(3,"WS ammo unavailable. Using default ammo.")
+      add_to_chat(3,"Using default ammo for JA.")
       swapped_ammo = DefaultAmmo[player.equipment.range]
       equip({ammo=swapped_ammo})
     else
-      add_to_chat(3,"WS ammo unavailable. Default ammo unavailable. Unequipping ammo.")
+      add_to_chat(3,"Default ammo unavailable. Unequipping ammo.")
       swapped_ammo = empty
       equip({ammo=swapped_ammo})
     end
