@@ -117,7 +117,7 @@ function init_gear_sets()
   -- Maximize HP+ (MP-to-HP conversion doesn't work)
   sets.precast.JA['Sublimation'] = {
     main="Siriti", --1
-    sub="Genmei Shield", --10/0
+    sub="Genmei Shield",
     head="Academic's Mortarboard", --2
     body="Pedagogy Gown", --2
     ear1="Savant's Earring", --1
@@ -278,13 +278,13 @@ function init_gear_sets()
     ammo="Strobilus",              --  45
     body="Academic's Gown",
     legs=gear.Psycloth_D_legs,     -- 109
+    ear2="Etiolation Earring",     --  50
     -- head="Pixie Hairpin +1",       -- 120
     -- body="Academic's Gown +3",     -- 173
     -- hands="Thrift Gloves +1 ",     --  99
     -- feet=gear.Psycloth_A_feet,     -- 124
     -- neck="Dualism Collar +1",      --  60
     -- ear1="Evans Earring",          --  50
-    -- ear2="Etiolation Earring",     --  50
     -- ring1="Persis ring ",          --  80
     -- ring2="Mephitas's Ring",       -- 100
     -- back="Tantalic Cape ",         --  50
@@ -1017,7 +1017,7 @@ function init_gear_sets()
     feet=gear.Vanya_B_feet,         -- __/ 3, 107
     neck="Twilight Torque",
     ear1="Lugalbanda Earring",      -- __/__,  10
-    ear2="Savant's Earring",
+    ear2="Etiolation Earring",      -- __/ 3, ___; Resist Silence+15
     ring2="Defending Ring",         -- 10/10, ___
     back="Cheviot Cape",
     -- main="Malignance Pole",      -- 20/20, ___
@@ -1030,7 +1030,6 @@ function init_gear_sets()
     -- feet="Pinga Pumps +1",       -- __/__, 147
     -- neck="Loricate Torque +1",   --  6/ 6, ___; DEF+60
     -- ear1="Hearty Earring",       -- __/__, ___; Resist Status+5
-    -- ear2="Etiolation Earring",   -- __/ 3, ___; Resist Silence+15
     -- ring1="Gelatinous Ring +1",  --  7/-1, ___
     -- back="Archon Cape",          -- __/__, ___
     -- waist="Carrier's Sash",      -- __/__, ___; Ele Resist+15
