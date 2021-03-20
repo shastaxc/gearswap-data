@@ -722,22 +722,14 @@ function init_gear_sets()
     head="Nyame Helm",          --  7/ 7, 123 [ 91]
     body="Nyame Mail",          --  9/ 9, 139 [136]
     legs="Nyame Flanchard",     --  8/ 8, 150 [114]
-    neck="Futhark Torque +1",   --  6/ 6,  25 [ 45]
+    ear1="Odnowa Earring +1",   --  3/ 5, ___ [110]
     ring2="Defending Ring",     -- 10/10, ___ [___]
     back=gear.RUN_HPD_Cape,     -- 10/__,  20 [ 80]
-    
-    -- Ideal:
-    -- sub="Utu Grip",               -- __/__, ___ [ 70]
-    -- ammo="Staunch Tathlum +1",    --  3/ 3, ___ [___]
-    -- head="Nyame Helm",            --  7/ 7, 123 [ 91]
     -- body="Ashera Harness",        --  7/ 7,  96 [182]
-    -- legs="Nyame Flanchard",       --  8/ 8, 150 [114]
-    -- ear1="Odnowa Earring +1",     --  3/ 5, ___ [110]
     -- ring1="Moonlight Ring",       --  5/ 5, ___ [110]
-    -- ring2="Moonlight Ring",       --  5/ 5, ___ [110]
     -- back=gear.RUN_TP_Cape,        -- 10/__, ___ [___]
     --48 PDT / 35 MDT, 369 MEVA [787 HP]
-  } --53 PDT / 35 MDT, 457 MEVA [536 HP]
+  } --50 PDT / 42 MDT, 432 MEVA [601 HP]
 
   sets.defense.Knockback = {
     -- back="Repulse Mantle"
