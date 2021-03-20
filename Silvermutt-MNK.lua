@@ -633,7 +633,7 @@ function init_gear_sets()
     ear1="Sherida Earring",     -- __/__, ___
     ear2="Odnowa Earring +1",   --  3/ 5, ___
     ring1="Niqmaddu Ring",      -- __/__, ___
-    ring1="Moonlight Ring",     --  5/ 5, ___
+    ring2="Moonlight Ring",     --  5/ 5, ___
     back=gear.MNK_DEX_DA_Cape,  -- __/__, ___
     waist="Moonbow Belt +1",    --  6/ 6, ___
   } --49 PDT/51 MDT, 674 MEVA
