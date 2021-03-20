@@ -484,17 +484,17 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.LightDef = {
-    ammo="Staunch Tathlum",     --  2/ 2, ___
+    ammo="Staunch Tathlum +1",  --  3/ 3, ___
     head="Nyame Helm",          --  7/ 7, 123
     body="Malignance Tabard",   --  9/ 9, 139 
     hands="Malignance Gloves",  --  5/ 5, 112
     legs="Malignance Tights",   --  7/ 7, 150
     feet="Malignance Boots",    --  4/ 4, 150
     -- head="Malignance Chapeau", --  6/ 6, 123
-  } --34 PDT/34 MDT, 674 MEVA
+  } --35 PDT/35 MDT, 674 MEVA
 
   sets.HeavyDef = {
-    ammo="Staunch Tathlum",     --  2/ 2, ___
+    ammo="Staunch Tathlum +1",  --  3/ 3, ___
     head="Nyame Helm",          --  7/ 7, 123
     body="Malignance Tabard",   --  9/ 9, 139 
     hands="Malignance Gloves",  --  5/ 5, 112
@@ -507,7 +507,7 @@ function init_gear_sets()
     ring2="Defending Ring",     -- 10/10, ___
     back=gear.THF_TP_Cape,      -- __/__, ___
     waist="Engraved Belt",      -- __/__, ___
-  } --52 PDT/54 MDT, 682 MEVA
+  } --53 PDT/55 MDT, 682 MEVA
 
   sets.defense.PDT = sets.HeavyDef
   sets.defense.MDT = sets.HeavyDef

@@ -712,7 +712,7 @@ function init_gear_sets()
   })
 
   sets.midcast.Aquaveil = set_combine(sets.midcast.EnhancingDuration, {
-    -- ammo="Staunch Tathlum +1",
+    ammo="Staunch Tathlum +1",
     -- head="Amalric Coif +1",
     -- hands="Regal Cuffs",
     -- ear1="Halasz Earring",
@@ -950,16 +950,16 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.LightDef = {
-    ammo="Staunch Tathlum", --2/2, 0
+    ammo="Staunch Tathlum +1", --3/3, 0
     body="Malignance Tabard", --9/9, 139
     hands="Malignance Gloves", --5/5, 112
     legs="Malignance Tights", --7/7, 150
     feet="Malignance Boots", --4/4, 150
     -- head="Malignance Chapeau", --6/6
-  } --27 PDT / 27 MDT, 551 MEVA
+  } --28 PDT / 28 MDT, 551 MEVA
 
   sets.HeavyDef = {
-    ammo="Staunch Tathlum", --2/2, 0
+    ammo="Staunch Tathlum +1", --3/3, 0
     body="Malignance Tabard", --9/9, 139
     hands="Malignance Gloves", --5/5, 112
     legs="Malignance Tights", --7/7, 150
@@ -973,7 +973,7 @@ function init_gear_sets()
     -- ear1="Sanare Earring",
     -- back=gear.RDM_INT_Cape,
     -- waist="Carrier's Sash",
-  } --37 PDT / 37 MDT, 551 MEVA
+  } --38 PDT / 38 MDT, 551 MEVA
 
   sets.defense.PDT = sets.HeavyDef
   sets.defense.MDT = sets.HeavyDef

@@ -323,14 +323,14 @@ function init_gear_sets()
 
   -- Fast cast sets for spells
   sets.precast.FC = {
-    ammo="Staunch Tathlum",                       -- {__}  2/ 2, ___ [___]
+    ammo="Staunch Tathlum +1",                      -- {__}  3/ 3, ___ [___]
     head={name="Runeist's Bandeau +3", priority=1}, -- {14} __/__,  83 [109]
-    hands=gear.Leyline_Gloves,                    -- { 8} __/__,  62 [ 25]
-    legs="Ayanmo Cosciales +2",                   -- { 6}  5/ 5,  69 [ 45]
-    feet=gear.Taeon_FC_feet,                      -- { 5} __/__,  69 [ 13]
-    ear2="Eabani Earring",                        -- {__} __/__,   8 [ 45]
-    waist={name="Kasiri Belt", priority=1},       -- {__} __/__, ___ [ 30]
-    back={name=gear.RUN_FC_Cape, priority=1},     -- {10} 10/__,  20 [ 80]
+    hands=gear.Leyline_Gloves,                      -- { 8} __/__,  62 [ 25]
+    legs="Ayanmo Cosciales +2",                     -- { 6}  5/ 5,  69 [ 45]
+    feet=gear.Taeon_FC_feet,                        -- { 5} __/__,  69 [ 13]
+    ear2="Eabani Earring",                          -- {__} __/__,   8 [ 45]
+    waist={name="Kasiri Belt", priority=1},         -- {__} __/__, ___ [ 30]
+    back={name=gear.RUN_FC_Cape, priority=1},       -- {10} 10/__,  20 [ 80]
   } -- 43% Fast Cast [302 HP, 883 w/ PDT, 953 w/ MDT]
 
   sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {
@@ -617,7 +617,7 @@ function init_gear_sets()
   }
 
   sets.midcast['Phalanx'] = {
-    ammo="Staunch Tathlum", --0, 10 [2/2, 0]
+    ammo="Staunch Tathlum +1", --0, 11 [3/3, 0]
     head="Futhark Bandeau +1", --4, 0 [4/4, 36]
     body=gear.Taeon_Phalanx_body, --3, 0 [0/0, 59]
     hands=gear.Taeon_Phalanx_hands, --3, 0 [0/0, 25]
@@ -628,26 +628,24 @@ function init_gear_sets()
     waist="Audumbla Sash", --0, 10 [4/0, 0]
     -- ring2="Defending Ring", --0, 0 [10/10, 0]
     -- back="Moonlight Cape", --0, 0 [6/6, 275]
-  } -- 16 Phalanx, 20% Interrupt [44PDT/24MDT, 740 HP w/ PDT set]
+  } -- 16 Phalanx, 21% Interrupt [45PDT/25MDT, 740 HP w/ PDT set]
 
   -- 10% SIRD from merits
   sets.midcast['Aquaveil'] = {
-    ammo="Staunch Tathlum",     -- {10}
+    ammo="Staunch Tathlum +1",  -- {11}
     hands="Regal Gauntlets",    -- {10}
     legs=gear.Carmine_D_legs,   -- {20}
     waist="Audumbla Sash",      -- {10}
-    -- ammo="Staunch Tathlum +1",  -- {11}
     -- feet=gear.Taeon_SIRD_feet,  -- {10}
     -- neck="Moonbeam Necklace",   -- {10}
-  } -- {50 SIRD}
+  } -- {51 SIRD}
   sets.midcast['Aquaveil'].Safe = {
-    ammo="Staunch Tathlum",     -- {10}
+    ammo="Staunch Tathlum +1",  -- {11}
     hands="Regal Gauntlets",    -- {10}
     legs=gear.Carmine_D_legs,   -- {20}
     ring2="Defending Ring",
     waist="Audumbla Sash",      -- {10}
-    -- ammo="Staunch Tathlum +1",  -- {11}
-  } -- {50 SIRD}
+  } -- {51 SIRD}
   
   sets.midcast['Regen'] = set_combine(sets.midcast.EnhancingDuration, {
     head="Runeist's Bandeau +3",
@@ -661,7 +659,7 @@ function init_gear_sets()
     waist="Siegel Sash"
   })
   sets.midcast.Stoneskin.Safe = set_combine(sets.midcast.Stoneskin, {
-    ammo="Staunch Tathlum",
+    ammo="Staunch Tathlum +1",
     ring1="Gelatinous Ring +1",
     ring2="Defending Ring",
     -- back="Moonlight Cape",
@@ -670,7 +668,7 @@ function init_gear_sets()
     -- ring2="Sheltered Ring"
   })
   sets.midcast.Protect.Safe = set_combine(sets.midcast['Enhancing Magic'], {
-    ammo="Staunch Tathlum",
+    ammo="Staunch Tathlum +1",
     waist="Audumbla Sash",
     ring1="Gelatinous Ring +1",
     ring2="Defending Ring",
@@ -683,9 +681,9 @@ function init_gear_sets()
   sets.midcast.Foil = sets.Enmity
   sets.midcast.Stun = sets.Enmity
   sets.midcast.Utsusemi = {
-    ammo="Staunch Tathlum", --10
+    ammo="Staunch Tathlum +1", --11
     waist="Audumbla Sash", --10
-  } -- 20% Spell Interrupt
+  } -- 21% Spell Interrupt
 
   sets.midcast['Jettatura'] = set_combine(sets.Enmity, sets.TreasureHunter)
   sets.midcast['Geist Wall'] = set_combine(sets.Enmity, sets.TreasureHunter)
@@ -706,7 +704,7 @@ function init_gear_sets()
     -- back="Solemnity Cape", -- 7
   }
   sets.midcast['Blue Magic'].Cure.Safe = set_combine(sets.midcast['Blue Magic'].Cure, {
-    ammo="Staunch Tathlum",
+    ammo="Staunch Tathlum +1",
     waist="Audumbla Sash",
     ring1="Gelatinous Ring +1",
     ring2="Defending Ring",
@@ -720,7 +718,7 @@ function init_gear_sets()
 
   sets.LightDef = {
     sub="Utu Grip",             -- __/__, ___ [ 70]
-    ammo="Staunch Tathlum",     --  2/ 2, ___ [___]
+    ammo="Staunch Tathlum +1",  --  3/ 3, ___ [___]
     head="Nyame Helm",          --  7/ 7, 123 [ 91]
     body="Nyame Mail",          --  9/ 9, 139 [136]
     legs="Nyame Flanchard",     --  8/ 8, 150 [114]
@@ -739,7 +737,7 @@ function init_gear_sets()
     -- ring2="Moonlight Ring",       --  5/ 5, ___ [110]
     -- back=gear.RUN_TP_Cape,        -- 10/__, ___ [___]
     --48 PDT / 35 MDT, 369 MEVA [787 HP]
-  } --52 PDT / 34 MDT, 457 MEVA [536 HP]
+  } --53 PDT / 35 MDT, 457 MEVA [536 HP]
 
   sets.defense.Knockback = {
     -- back="Repulse Mantle"
@@ -748,7 +746,7 @@ function init_gear_sets()
   -- PDT cap is 50%, Protect V = 0%
   sets.defense.PDT = {
     sub="Refined Grip +1",        --  3/ 3, ___ [ 35]
-    ammo="Staunch Tathlum",       --  2/ 2, ___ [___]
+    ammo="Staunch Tathlum +1",    --  3/ 3, ___ [___]
     head="Nyame Helm",            --  7/ 7, 123 [ 91]
     body="Nyame Mail",            --  9/ 9, 139 [136]
     hands="Turms Mittens",        -- __/__,  91 [ 59]
@@ -761,16 +759,15 @@ function init_gear_sets()
     ring1="Gelatinous Ring +1",   --  7/-1, ___ [135]
     ring2="Moonlight Ring",       --  5/ 5, ___ [110]
     back=gear.RUN_HPP_Cape,       -- __/__,  20 [ 80]
-    -- ammo="Staunch Tathlum +1", --  3/ 3, ___ [___]
     -- hands="Turms Mittens +1",  -- __/__, 101 [ 74]
     -- neck="Futhark Torque +2",  --  7/ 7,  30 [ 60]
     --51 PDT / 38 MDT, 677 MEVA [967 HP]
-  } --49 PDT / 27 MDT, 662 MEVA [937 HP]
+  } --50 PDT / 28 MDT, 662 MEVA [937 HP]
   
   -- MDT cap is 50%, Shell V = 29%
   sets.defense.MDT = {
     sub="Utu Grip",               -- __/__, ___ [ 70]
-    ammo="Staunch Tathlum",       --  2/ 2, ___ [___]
+    ammo="Staunch Tathlum +1",    --  3/ 3, ___ [___]
     head="Nyame Helm",            --  7/ 7, 123 [ 91]
     body="Nyame Mail",            --  9/ 9, 139 [136]
     hands="Turms Mittens",        -- __/__,  91 [ 59]
@@ -783,7 +780,6 @@ function init_gear_sets()
     ring1="Gelatinous Ring +1",   --  7/-1, ___ [135]
     ring2="Moonlight Ring",       --  5/ 5, ___ [110]
     back=gear.RUN_HPP_Cape,       -- __/__,  20 [ 80]
-    -- ammo="Staunch Tathlum +1", --  3/ 3, ___ [___]
     -- hands="Turms Mittens +1",  -- __/__, 101 [ 74]
     -- feet="Nyame Sollerets",    --  7/ 7, 150 [ 68]
     -- neck="Futhark Torque +2",  --  7/ 7,  30 [ 60]
@@ -791,7 +787,7 @@ function init_gear_sets()
     -- ring1="Moonlight Ring",    --  5/ 5, ___ [110]
     -- back=gear.RUN_HPME_Cape,   -- __/__,  45 [ 60]
     --54 PDT / 40 MDT, 754 MEVA [983 HP]
-  } --52 PDT / 31 MDT, 673 MEVA [993 HP]
+  } --53 PDT / 32 MDT, 673 MEVA [993 HP]
 
   sets.defense.Parry = {
     hands="Turms Mittens", --Parry: Recover HP+75
