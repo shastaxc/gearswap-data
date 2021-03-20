@@ -1009,6 +1009,7 @@ function init_gear_sets()
   sets.HeavyDef = {
     main="Bolelabunga",
     sub="Genmei Shield",            -- 10/__, ___
+    ammo="Staunch Tathlum",         --  2/ 2, ___; Resist Status+10
     head=gear.Vanya_B_head,         -- __/ 5,  75
     body=gear.Vanya_B_body,         --  1/ 3,  80
     hands=gear.Vanya_B_hands,       -- __/ 3,  37
@@ -1051,7 +1052,7 @@ function init_gear_sets()
     -- back="Archon Cape",          -- __/__, ___
     -- waist="Carrier's Sash",      -- __/__, ___; Ele Resist+15
     -- 52 PDT / 47 MDT, 626 M.Eva
-  }
+  } -- 23 PDT / 29 MDT, 416 M.Eva
 
   sets.defense.PDT = sets.HeavyDef
   sets.defense.MDT = sets.HeavyDef
