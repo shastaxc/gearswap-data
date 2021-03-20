@@ -243,6 +243,7 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.precast.WS = {
+    ear1="Moonshade Earring",
     -- ammo="Floestone",
     -- head="Jhakri Coronal +2",
     -- body="Jhakri Robe +2",
@@ -250,7 +251,6 @@ function init_gear_sets()
     -- legs=gear.Telchine_ENH_legs,
     -- feet="Jhakri Pigaches +2",
     -- neck="Fotia Gorget",
-    -- ear1="Moonshade Earring",
     -- ear2="Telos Earring",
     -- ring1="Epaminondas's Ring",
     -- ring2="Rufescent Ring",
