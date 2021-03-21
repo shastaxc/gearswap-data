@@ -316,7 +316,6 @@ function init_gear_sets()
   })
   sets.precast.WS["Victory Smite"].HighAcc = set_combine(sets.precast.WS["Victory Smite"].MidAcc, {
     head="Kendatsuba Jinpachi +1",
-    -- legs="Ken. Hakama +1",
     -- feet="Ken. Sune-Ate +1",
   })
   sets.precast.WS["Victory Smite"].HighAccMaxTP = set_combine(sets.precast.WS["Victory Smite"].HighAcc, {
@@ -355,7 +354,6 @@ function init_gear_sets()
   })
   sets.precast.WS["Shijin Spiral"].HighAcc = set_combine(sets.precast.WS["Shijin Spiral"].MidAcc, {
     hands=gear.Ryuo_A_hands,
-    legs="Tatenashi Haidate +1",
     feet="Mummu Gamashes +2",
   })
   sets.precast.WS["Shijin Spiral"].HighAccMaxTP = set_combine(sets.precast.WS["Shijin Spiral"].HighAcc, {
@@ -591,8 +589,8 @@ function init_gear_sets()
   }
 
   sets.precast.WS['Cataclysm'] = set_combine(sets.precast.WS, sets.MAB, {
-    ammo="Knobkierrie",
-    ring2="Archon Ring",
+    ammo="Knobkierrie", -- 6 WSD
+    ring2="Archon Ring", -- 5 MAB
   }) -- STR 30% / INT 30% + MAB
 
   ------------------------------------------------------------------------------------------------
