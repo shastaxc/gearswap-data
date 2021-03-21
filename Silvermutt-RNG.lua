@@ -285,13 +285,13 @@ function init_gear_sets()
   -- (10% Snapshot, 5% Rapid from Merits)
   sets.precast.RA = {
     head=gear.Taeon_RA_head,    -- 10/__
+    body="Amini Caban +1",      -- 0/0; -7% ranged aiming delay
     hands=gear.Carmine_D_hands, --  8/11
     legs="Orion Braccae +1",    -- 12/__
     feet="Meg. Jam. +2",        -- 10/__
     neck="Scout's Gorget +1",   --  3/__
     back=gear.RNG_SNP_Cape,     -- 10/__
     waist="Impulse Belt",       --  3/__
-    -- body="Amini Caban +1",      -- 0/0; -7% ranged aiming delay
     -- legs="Orion Braccae +3",    -- 15/0
     -- neck="Scout's Gorget +2"    -- 4/0
     --60 Snapshot / 11 Rapid Shot; -7% delay
@@ -299,39 +299,37 @@ function init_gear_sets()
 
   -- (15% Flurry, 10% Snapshot, 5% Rapid from Merits)
   sets.precast.RA.Flurry1 = {
-    head=gear.Taeon_RA_head, --10/0
+    head="Orion Beret +3",      --0/18
+    body="Amini Caban +1",      -- 0/0; -7% ranged aiming delay
     hands=gear.Carmine_D_hands, --8/11
-    feet="Meg. Jam. +2", --10/0
-    neck="Scout's Gorget +1", --3/0
-    back=gear.RNG_SNP_Cape, --10/0
-    waist="Impulse Belt", --3/0
-    -- head="Orion Beret +3", --0/18
-    -- body="Amini Caban +1", --0/0
-    -- legs=gear.Adhemar_D_legs, --10/13
-    -- neck="Scout's Gorget +2", --4/0
+    feet="Meg. Jam. +2",        --10/0
+    neck="Scout's Gorget +1",   --3/0
+    back=gear.RNG_SNP_Cape,     --10/0
+    waist="Impulse Belt",       --3/0
+    -- legs=gear.Adhemar_D_legs,   --10/13
+    -- neck="Scout's Gorget +2",   --4/0
     --45 Snapshot / 42 Rapid Shot
   } --44 Snapshot / 11 Rapid Shot
 
   -- (30% Flurry, 10% Snapshot, 5% Rapid from Merits)
   sets.precast.RA.Flurry2 = {
-    head="Orion Beret +2", --0/16
+    head="Orion Beret +3",      --0/18
+    body="Amini Caban +1",      -- 0/0; -7% ranged aiming delay
     hands=gear.Carmine_D_hands, --8/11
-    feet="Meg. Jam. +2", --10/0
-    neck="Scout's Gorget +1", --3/0
-    back=gear.RNG_SNP_Cape, --10/0
-    waist="Impulse Belt", --3/0
-    -- head="Orion Beret +3", --0/18
-    -- body="Amini Caban +1", --0/0
-    -- legs=gear.Adhemar_D_legs, --10/13
-    -- feet="Arcadian Socks +3", --0/10
-    -- neck="Scout's Gorget +2", --4/0
-    -- waist="Yemaya Belt", --0/5
+    feet="Meg. Jam. +2",        --10/0
+    neck="Scout's Gorget +1",   --3/0
+    back=gear.RNG_SNP_Cape,     --10/0
+    waist="Impulse Belt",       --3/0
+    -- legs=gear.Adhemar_D_legs,   --10/13
+    -- feet="Arcadian Socks +3",   --0/10
+    -- neck="Scout's Gorget +2",   --4/0
+    -- waist="Yemaya Belt",        --0/5
     --32 Snapshot / 57 Rapid Shot
   } --34 Snapshot / 27 Rapid Shot
 
   -- Gastra has 10 Snapshot
   sets.precast.RA.Gastra = set_combine(sets.precast.RA, {
-    -- head="Orion Beret +3", --0/18
+    head="Orion Beret +3", --0/18
   })
   sets.precast.RA.Gastra.Flurry1 = set_combine(sets.precast.RA.Flurry1, {
     -- feet="Arcadian Socks +3", --0/10
@@ -346,7 +344,7 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.precast.WS = {
-    head="Orion Beret +2",
+    head="Orion Beret +3",
     body="Meghanada Cuirie +2",
     hands="Meg. Gloves +2",
     legs="Arcadian Braccae +3",
@@ -358,7 +356,6 @@ function init_gear_sets()
     ring2="Dingir Ring",
     back=gear.RNG_WS2_Cape,
     waist="Fotia Belt",
-    -- head="Orion Beret +3",
     -- body=gear.Herc_RA_WSD_body,
     -- feet=gear.Herc_RA_WSD_feet,
     -- ring2="Epaminondas's Ring",
@@ -443,7 +440,7 @@ function init_gear_sets()
   })
 
   sets.precast.WS["Last Stand"] = set_combine(sets.precast.WS, {
-    head="Orion Beret +2",
+    head="Orion Beret +3",
     body="Meghanada Cuirie +2",
     hands="Meg. Gloves +2",
     legs="Arcadian Braccae +3",
@@ -455,7 +452,6 @@ function init_gear_sets()
     ring2="Dingir Ring",
     back=gear.RNG_WS2_Cape,
     waist="Fotia Belt",
-    -- head="Orion Beret +3",
     -- body="Ikenga's Vest", -- After augmenting
     -- feet=gear.Herc_RA_WSD_feet,
     -- neck="Scout's Gorget +2",
@@ -609,7 +605,7 @@ function init_gear_sets()
   })
 
   sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
-    head="Orion Beret +2",
+    head="Orion Beret +3",
     body=gear.Herc_WSD_body,
     hands="Meghanada Gloves +2",
     legs="Arcadian Braccae +3",
@@ -621,7 +617,6 @@ function init_gear_sets()
     ring2="Ilabrat Ring",
     back=gear.RNG_WS3_Cape,
     waist="Sailfi Belt +1",
-    -- head="Orion Beret +3",
     -- body=gear.Herc_STR_WSD_body,
     -- feet=gear.Herc_STR_WSD_feet,
     -- neck="Scout's Gorget +2",
@@ -735,9 +730,8 @@ function init_gear_sets()
     -- 265 AGI [49 STP] 362 racc / 247 ratt <15 crit> {14 dmg limit} (54 Recycle)
   })
   sets.midcast.RA.HighAcc = set_combine(sets.midcast.RA.MidAcc, {
-    head="Orion Beret +2",
+    head="Orion Beret +3", --39 [0] 47/34 <0> {0} (0)
     hands="Orion Bracers +3", --27 [0] 48/0 <0> {0} (0)
-    -- head="Orion Beret +3", --39 [0] 47/34 <0> {0} (0)
     -- body="Orion Jerkin +3", --40 [8] 60/41 <0> {0} (0)
     -- feet="Orion Socks +3", --49 [0] 54/36 <0> {0} (0)
     -- Includes set bonus 60 racc from orion + regal
@@ -1173,7 +1167,7 @@ function init_gear_sets()
     hands="Orion Bracers +3"
   }
   sets.buff['Velocity Shot'] = set_combine(sets.midcast.RA, {
-    -- body="Amini Caban +1", -- +7% ranged attack
+    body="Amini Caban +1", -- +7% ranged attack
   })
   sets.buff.Camouflage = {
     body="Orion Jerkin +1"
