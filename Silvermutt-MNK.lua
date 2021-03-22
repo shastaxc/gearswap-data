@@ -208,7 +208,7 @@ function init_gear_sets()
     feet="Hesychast's Gaiters +3",
   }
   sets.precast.JA['Footwork'] = {
-    feet="Tantra Gaiters +2",
+    feet="Bhikku Gaiters +1",
   }
   sets.precast.JA['Formless Strikes'] = {
     body="Hesychast's Cyclas +2",
