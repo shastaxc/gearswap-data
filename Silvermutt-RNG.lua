@@ -316,12 +316,11 @@ function init_gear_sets()
     head="Orion Beret +3",      --0/18
     body="Amini Caban +1",      -- 0/0; -7% ranged aiming delay
     hands=gear.Carmine_D_hands, --8/11
-    feet="Meg. Jam. +2",        --10/0
+    feet="Arcadian Socks +3",   --0/10
     neck="Scout's Gorget +1",   --3/0
     back=gear.RNG_SNP_Cape,     --10/0
     waist="Impulse Belt",       --3/0
     -- legs=gear.Adhemar_D_legs,   --10/13
-    -- feet="Arcadian Socks +3",   --0/10
     -- neck="Scout's Gorget +2",   --4/0
     -- waist="Yemaya Belt",        --0/5
     --32 Snapshot / 57 Rapid Shot
@@ -332,7 +331,7 @@ function init_gear_sets()
     head="Orion Beret +3", --0/18
   })
   sets.precast.RA.Gastra.Flurry1 = set_combine(sets.precast.RA.Flurry1, {
-    -- feet="Arcadian Socks +3", --0/10
+    feet="Arcadian Socks +3", --0/10
   })
   sets.precast.RA.Gastra.Flurry2 = set_combine(sets.precast.RA.Flurry2, {
     -- legs=gear.Pursuers_A_legs, --0/19
@@ -371,7 +370,7 @@ function init_gear_sets()
     ear2="Telos Earring",
   })
   sets.precast.WS.MidAcc = set_combine(sets.precast.WS.LowAcc, {
-    -- feet="Arcadian Socks +3",
+    feet="Arcadian Socks +3",
   })
   sets.precast.WS.MidAccMaxTP = set_combine(sets.precast.WS.MidAcc, {
     ear2="Telos Earring",
@@ -434,7 +433,7 @@ function init_gear_sets()
   sets.precast.WS['Jishnu\'s Radiance'].HighAcc = set_combine(sets.precast.WS['Jishnu\'s Radiance'].MidAcc, {
     ear1="Beyla Earring",
     ring2="Hajduk Ring +1",
-    -- feet="Arcadian Socks +3",
+    feet="Arcadian Socks +3",
   })
   sets.precast.WS['Jishnu\'s Radiance'].HighAccMaxTP = set_combine(sets.precast.WS['Jishnu\'s Radiance'].HighAcc, {
   })
