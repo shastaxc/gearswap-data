@@ -321,10 +321,10 @@ function init_gear_sets()
     back=gear.RNG_SNP_Cape,     -- 10/__
     waist="Impulse Belt",       --  3/__
     -- legs=gear.Adhemar_D_legs,   -- 10/13
-    -- neck="Scout's Gorget +2",   --  4/__
     -- waist="Yemaya Belt",        -- __/ 5
-    --32 Snapshot / 57 Rapid Shot
-  } --34 Snapshot / 27 Rapid Shot
+    -- Remove neck from set when complete
+    --31 Snapshot / 57 Rapid Shot
+  } --24 Snapshot / 39 Rapid Shot
 
   -- Gastra has 10 Snapshot
   sets.precast.RA.Gastra = set_combine(sets.precast.RA, {
@@ -515,7 +515,7 @@ function init_gear_sets()
     neck="Scout's Gorget +1",
     back=gear.RNG_WS1_Cape,
     waist="Eschan Stone",
-    -- hands=gear.Herc_MAB_hands,
+    -- hands=gear.Nyame_C_hands, -- Rank 7+
     -- ring1="Epaminondas's Ring",
     -- waist="Orpheus's Sash",
   } -- AGI / MAB
