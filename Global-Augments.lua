@@ -672,273 +672,95 @@ gear.Vanya_D_feet = {}
 gear.Aram_A = {}
 gear.Aram_B = {}
 gear.Aram_C = {}
-gear.Aram_D = {}
 
 gear.Asclepius_A = {}
 gear.Asclepius_B = {}
 gear.Asclepius_C = {}
-gear.Asclepius_D = {}
 
 gear.Barfawc_A = {}
 gear.Barfawc_B = {}
 gear.Barfawc_C = {}
-gear.Barfawc_D = {}
 
 gear.Bhima_A = {}
 gear.Bhima_B = {}
 gear.Bhima_C = {}
-gear.Bhima_D = {}
 
 gear.Crocea_Mors_A = {}
 gear.Crocea_Mors_B = {}
 gear.Crocea_Mors_C = {}
-gear.Crocea_Mors_D = {}
 
 gear.Draumstafir_A = {}
 gear.Draumstafir_B = {}
 gear.Draumstafir_C = {}
-gear.Draumstafir_D = {}
 
 gear.Father_Time_A = {}
 gear.Father_Time_B = {}
 gear.Father_Time_C = {}
-gear.Father_Time_D = {}
 
 gear.Fudo_Masamune_A = {}
 gear.Fudo_Masamune_B = {}
 gear.Fudo_Masamune_C = {}
-gear.Fudo_Masamune_D = {}
 
 gear.Fusenaikyo_A = {}
 gear.Fusenaikyo_B = {}
 gear.Fusenaikyo_C = {}
-gear.Fusenaikyo_D = {}
 
 gear.Gandring_A = {}
 gear.Gandring_B = {}
 gear.Gandring_C = {}
-gear.Gandring_D = {}
 
 gear.Kaumodaki_A = {}
 gear.Kaumodaki_B = {}
 gear.Kaumodaki_C = {}
-gear.Kaumodaki_D = {}
 
 gear.Labraunda_A = {}
 gear.Labraunda_B = {}
 gear.Labraunda_C = {}
-gear.Labraunda_D = {}
 
 gear.Moralltach_A = {}
 gear.Moralltach_B = {}
 gear.Moralltach_C = {}
-gear.Moralltach_D = {}
 
 gear.Morgelai_A = {}
 gear.Morgelai_B = {}
 gear.Morgelai_C = {}
-gear.Morgelai_D = {}
 
 gear.Musa_A = {}
 gear.Musa_B = {}
 gear.Musa_C = {} --Regen potency +25, Cure potency +25%, Fast Cast +10%
-gear.Musa_D = {}
 
 gear.Pangu_A = {}
 gear.Pangu_B = {}
 gear.Pangu_C = {}
-gear.Pangu_D = {}
 
 gear.Rostam_A = {}
 gear.Rostam_B = {}
 gear.Rostam_C = {}
-gear.Rostam_D = {}
 
 gear.Sagitta_A = {}
 gear.Sagitta_B = {}
 gear.Sagitta_C = {}
-gear.Sagitta_D = {}
 
 gear.Setan_Kober_A = {}
 gear.Setan_Kober_B = {}
 gear.Setan_Kober_C = {}
-gear.Setan_Kober_D = {}
 
 gear.Sharanga_A = {}
 gear.Sharanga_B = {}
 gear.Sharanga_C = {}
-gear.Sharanga_D = {}
 
 gear.Xiucoatl_A = {}
 gear.Xiucoatl_B = {}
 gear.Xiucoatl_C = {}
-gear.Xiucoatl_D = {}
 
 gear.Zomorrodnegar_A = {}
 gear.Zomorrodnegar_B = {}
 gear.Zomorrodnegar_C = {}
-gear.Zomorrodnegar_D = {}
 
 
 ----------------------------------------------------------------------
 -----------------------        Odyssey        ------------------------
 ----------------------------------------------------------------------
-
--- Agwu's
-gear.Agwu_A_head = {}
-gear.Agwu_B_head = {}
-gear.Agwu_C_head = {}
-gear.Agwu_D_head = {}
-
-gear.Agwu_A_body = {}
-gear.Agwu_B_body = {}
-gear.Agwu_C_body = {}
-gear.Agwu_D_body = {}
-
-gear.Agwu_A_hands = {}
-gear.Agwu_B_hands = {}
-gear.Agwu_C_hands = {}
-gear.Agwu_D_hands = {}
-
-gear.Agwu_A_legs = {}
-gear.Agwu_B_legs = {}
-gear.Agwu_C_legs = {}
-gear.Agwu_D_legs = {}
-
-gear.Agwu_A_feet = {}
-gear.Agwu_B_feet = {}
-gear.Agwu_C_feet = {}
-gear.Agwu_D_feet = {}
-
--- Bunzi's
-gear.Bunzi_A_head = {}
-gear.Bunzi_B_head = {}
-gear.Bunzi_C_head = {}
-gear.Bunzi_D_head = {}
-
-gear.Bunzi_A_body = {}
-gear.Bunzi_B_body = {}
-gear.Bunzi_C_body = {}
-gear.Bunzi_D_body = {}
-
-gear.Bunzi_A_hands = {}
-gear.Bunzi_B_hands = {}
-gear.Bunzi_C_hands = {}
-gear.Bunzi_D_hands = {}
-
-gear.Bunzi_A_legs = {}
-gear.Bunzi_B_legs = {}
-gear.Bunzi_C_legs = {}
-gear.Bunzi_D_legs = {}
-
-gear.Bunzi_A_feet = {}
-gear.Bunzi_B_feet = {}
-gear.Bunzi_C_feet = {}
-gear.Bunzi_D_feet = {}
-
--- Gleti's
-gear.Gleti_A_head = {}
-gear.Gleti_B_head = {}
-gear.Gleti_C_head = {}
-gear.Gleti_D_head = {}
-
-gear.Gleti_A_body = {}
-gear.Gleti_B_body = {}
-gear.Gleti_C_body = {}
-gear.Gleti_D_body = {}
-
-gear.Gleti_A_hands = {}
-gear.Gleti_B_hands = {}
-gear.Gleti_C_hands = {}
-gear.Gleti_D_hands = {}
-
-gear.Gleti_A_legs = {}
-gear.Gleti_B_legs = {}
-gear.Gleti_C_legs = {}
-gear.Gleti_D_legs = {}
-
-gear.Gleti_A_feet = {}
-gear.Gleti_B_feet = {}
-gear.Gleti_C_feet = {}
-gear.Gleti_D_feet = {}
-
--- Ikenga's
-gear.Ikenga_A_head = {}
-gear.Ikenga_B_head = {}
-gear.Ikenga_C_head = {}
-gear.Ikenga_D_head = {}
-
-gear.Ikenga_A_body = {}
-gear.Ikenga_B_body = {}
-gear.Ikenga_C_body = {}
-gear.Ikenga_D_body = {}
-
-gear.Ikenga_A_hands = {}
-gear.Ikenga_B_hands = {}
-gear.Ikenga_C_hands = {}
-gear.Ikenga_D_hands = {}
-
-gear.Ikenga_A_legs = {}
-gear.Ikenga_B_legs = {}
-gear.Ikenga_C_legs = {}
-gear.Ikenga_D_legs = {}
-
-gear.Ikenga_A_feet = {}
-gear.Ikenga_B_feet = {}
-gear.Ikenga_C_feet = {}
-gear.Ikenga_D_feet = {}
-
--- Mpaca's
-gear.Mpaca_A_head = {}
-gear.Mpaca_B_head = {}
-gear.Mpaca_C_head = {}
-gear.Mpaca_D_head = {}
-
-gear.Mpaca_A_body = {}
-gear.Mpaca_B_body = {}
-gear.Mpaca_C_body = {}
-gear.Mpaca_D_body = {}
-
-gear.Mpaca_A_hands = {}
-gear.Mpaca_B_hands = {}
-gear.Mpaca_C_hands = {}
-gear.Mpaca_D_hands = {}
-
-gear.Mpaca_A_legs = {}
-gear.Mpaca_B_legs = {}
-gear.Mpaca_C_legs = {}
-gear.Mpaca_D_legs = {}
-
-gear.Mpaca_A_feet = {}
-gear.Mpaca_B_feet = {}
-gear.Mpaca_C_feet = {}
-gear.Mpaca_D_feet = {}
-
--- Sakpata's
-gear.Sakpata_A_head = {}
-gear.Sakpata_B_head = {}
-gear.Sakpata_C_head = {}
-gear.Sakpata_D_head = {}
-
-gear.Sakpata_A_body = {}
-gear.Sakpata_B_body = {}
-gear.Sakpata_C_body = {}
-gear.Sakpata_D_body = {}
-
-gear.Sakpata_A_hands = {}
-gear.Sakpata_B_hands = {}
-gear.Sakpata_C_hands = {}
-gear.Sakpata_D_hands = {}
-
-gear.Sakpata_A_legs = {}
-gear.Sakpata_B_legs = {}
-gear.Sakpata_C_legs = {}
-gear.Sakpata_D_legs = {}
-
-gear.Sakpata_A_feet = {}
-gear.Sakpata_B_feet = {}
-gear.Sakpata_C_feet = {}
-gear.Sakpata_D_feet = {}
 
 -- Nyame
 gear.Nyame_A_head = {} -- STP
