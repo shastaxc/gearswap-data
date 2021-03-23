@@ -291,6 +291,7 @@ function init_gear_sets()
     waist="Eschan Stone", --7 [20]
     back="Argochampsa Mantle", --12 [0]
     -- body="Carm. Sc. Mail +1", --42 [96]
+    -- hands=gear.Nyame_C_hands -- 30+ [91]; Rank 7+
   } -- 188 MAB [195 HP, 245 w/ Enmity]
 
   sets.precast.JA['Lunge'] = set_combine(sets.Enmity, sets.MAB)
