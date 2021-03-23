@@ -789,14 +789,6 @@ function init_gear_sets()
     feet="Hesychast's Gaiters +3",
   })
 
-  -- Footwork combat form
-  sets.engaged.Footwork = {
-    feet="Anchorite's Gaiters +3"
-  }
-  sets.engaged.Footwork.Acc = set_combine(sets.engaged.Footwork, {
-
-  })
-
   -- Quick sets for post-precast adjustments, listed here so that the gear can be Validated.
   sets.impetus_body = {
     body="Bhikku Cyclas +1"
