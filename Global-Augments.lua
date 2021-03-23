@@ -8,39 +8,39 @@ gear.Aizushintogo_C = {name="Aizushintogo", augments={'DMG:+15','Accuracy+15','A
 gear.Aizushintogo_D = {name="Aizushintogo", augments={'DMG:+17','Accuracy+15','Rng.Acc.+15',}}
 
 gear.Akademos_A = {name="Akademos", augments={'MP+80','INT+20','"Mag.Atk.Bns."+20',}}
-gear.Akademos_B = {name="Akademos", augments={'MND+20','"Mag. Acc."+20','"Cure" potency +10'}}
-gear.Akademos_C = {name="Akademos", augments={'INT+15','"Mag.Atk.Bns."+15','"Mag. Acc."+15',}}
-gear.Akademos_D = {name="Akademos", augments={'"Mag. Acc."+20','Enha.mag. skill +15','Enfb.mag. skill +15',}}
+gear.Akademos_B = {name="Akademos", augments={'MND+20','Mag. Acc.+20','"Cure" potency +10'}}
+gear.Akademos_C = {name="Akademos", augments={'INT+15','"Mag.Atk.Bns."+15','Mag. Acc.+15',}}
+gear.Akademos_D = {name="Akademos", augments={'Mag. Acc.+20','Enha.mag. skill +15','Enfb.mag. skill +15',}}
 
-gear.Bidenhander_A = {}
-gear.Bidenhander_B = {}
-gear.Bidenhander_C = {}
-gear.Bidenhander_D = {}
+gear.Bidenhander_A = {name="Bidenhander", augments={'DMG:+30','STR+20','Attack+20',}}
+gear.Bidenhander_B = {name="Bidenhander", augments={'DMG:+30','Accuracy+20','Attack+20',}}
+gear.Bidenhander_C = {name="Bidenhander", augments={'DMG:+30','Attack+20','Enmity+7',}}
+gear.Bidenhander_D = {name="Bidenhander", augments={'DMG:+32','"Store TP"+7','Enmity+7',}}
 
-gear.Compensator_A = {}
-gear.Compensator_B = {}
-gear.Compensator_C = {}
-gear.Compensator_D = {}
+gear.Compensator_A = {name="Compensator", augments={'DMG:+15','AGI+15','Rng.Atk.+15',}}
+gear.Compensator_B = {name="Compensator", augments={'DMG:+15','AGI+15','Rng.Acc.+15',}}
+gear.Compensator_C = {name="Compensator", augments={'DMG:+15','Rng.Acc.+15','Rng.Atk.+15',}}
+gear.Compensator_D = {name="Compensator", augments={'DMG:+15','Rng.Atk.+15','"Mag.Atk.Bns."+15',}}
 
-gear.Deathbane_A = {}
-gear.Deathbane_B = {}
-gear.Deathbane_C = {}
-gear.Deathbane_D = {}
+gear.Deathbane_A = {name="Deathbane", augments={'DMG:+30','STR+20','Attack+20',}}
+gear.Deathbane_B = {name="Deathbane", augments={'DMG:+30','Attack+20','"Store TP"+3',}}
+gear.Deathbane_C = {name="Deathbane", augments={'DMG:+30','Attack+20','Dark magic skill +15',}}
+gear.Deathbane_D = {name="Deathbane", augments={'DMG:+32','MP+80','STR+20',}}
 
-gear.Emisssary_A = {}
-gear.Emisssary_B = {}
-gear.Emisssary_C = {}
-gear.Emisssary_D = {}
+gear.Emisssary_A = {name="Emissary", augments={'DMG:+15','Accuracy+15','Attack+15',}}
+gear.Emisssary_B = {name="Emissary", augments={'DMG:+15','Accuracy+15','Mag. Acc.+15',}}
+gear.Emisssary_C = {name="Emissary", augments={'DMG:+15','Mag. Acc.+15','"Mag.Atk.Bns."+15',}}
+gear.Emisssary_D = {name="Emissary", augments={'Mag. Acc.+15','"Mag.Atk.Bns."+20','"Refresh"+1',}}
 
-gear.Enchufla_A = {}
-gear.Enchufla_B = {}
-gear.Enchufla_C = {}
-gear.Enchufla_D = {}
+gear.Enchufla_A = {name="Enchufla", augments={'DMG:+15','STR+15','Attack+15',}}
+gear.Enchufla_B = {name="Enchufla", augments={'DMG:+15','STR+15','Accuracy+10',}}
+gear.Enchufla_C = {name="Enchufla", augments={'DMG:+15','DEX+15','"Subtle Blow"+7',}}
+gear.Enchufla_D = {name="Enchufla", augments={'DMG:+17','Evasion+15','Mag. Evasion+15',}}
 
-gear.Espiritus_A = {}
-gear.Espiritus_B = {}
-gear.Espiritus_C = {}
-gear.Espiritus_D = {}
+gear.Espiritus_A = {name="Espiritus", augments={'Enmity-6','Pet: "Mag.Atk.Bns."+30','Pet: Damage taken -4%',}}
+gear.Espiritus_B = {name="Espiritus", augments={'Summoning magic skill +15','Pet: M.Acc.+30','Pet: Damage taken -4%',}}
+gear.Espiritus_C = {name="Espiritus", augments={'MP+50','Pet: "Mag.Atk.Bns."+20','Pet: M.Acc.+20',}}
+gear.Espiritus_D = {name="Espiritus", augments={'Pet: STR+15','Pet: Attack+25','Pet: "Dbl. Atk."+4',}}
 
 gear.Hammerfists_A = {}
 gear.Hammerfists_B = {}
@@ -200,12 +200,12 @@ gear.Vijaya_Bow_D = {}
 gear.Adhemar_A_head = {name="Adhemar Bonnet +1", augments={'DEX+12','AGI+12','Accuracy+20',}}
 gear.Adhemar_B_head = {name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20',}}
 gear.Adhemar_C_head = {name="Adhemar Bonnet +1", augments={'AGI+12','Rng.Acc.+20','Rng.Atk.+20',}}
-gear.Adhemar_D_head = {name="Adhemar Bonnet +1", augments={'HP+105','Attack+13','Phys. dmg. taken -4',}}
+gear.Adhemar_D_head = {name="Adhemar Bonnet +1", augments={'HP+105','Attack+13','Phys. dmg. taken -4%',}}
 
 gear.Adhemar_A_body = {name="Adhemar Jacket +1", augments={'DEX+12','AGI+12','Accuracy+20',}}
 gear.Adhemar_B_body = {name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20',}}
 gear.Adhemar_C_body = {name="Adhemar Jacket +1", augments={'AGI+12','Rng.Acc.+20','Rng.Atk.+20',}}
-gear.Adhemar_D_body = {name="Adhemar Jacket +1", augments={'HP+105','"Fast Cast"+10','Magic dmg. taken -4',}}
+gear.Adhemar_D_body = {name="Adhemar Jacket +1", augments={'HP+105','"Fast Cast"+10','Magic dmg. taken -4%',}}
 
 gear.Adhemar_A_hands = {name="Adhemar Wrist. +1", augments={'DEX+12','AGI+12','Accuracy+20',}}
 gear.Adhemar_B_hands = {name="Adhemar Wrist. +1", augments={'STR+12','DEX+12','Attack+20',}}
@@ -763,27 +763,27 @@ gear.Zomorrodnegar_C = {}
 ----------------------------------------------------------------------
 
 -- Nyame
-gear.Nyame_A_head = {} -- STP
-gear.Nyame_B_head = {} -- WSD
-gear.Nyame_C_head = {} -- MAB
-gear.Nyame_D_head = {} -- Pet
+gear.Nyame_A_head = "Nyame Helm" -- STP
+gear.Nyame_B_head = "Nyame Helm" -- WSD
+gear.Nyame_C_head = "Nyame Helm" -- MAB
+gear.Nyame_D_head = "Nyame Helm" -- Pet
 
-gear.Nyame_A_body = {} -- STP
-gear.Nyame_B_body = {} -- WSD
-gear.Nyame_C_body = {} -- MAB
-gear.Nyame_D_body = {} -- Pet
+gear.Nyame_A_body = "Nyame Mail" -- STP
+gear.Nyame_B_body = "Nyame Mail" -- WSD
+gear.Nyame_C_body = "Nyame Mail" -- MAB
+gear.Nyame_D_body = "Nyame Mail" -- Pet
 
-gear.Nyame_A_hands = {} -- STP
-gear.Nyame_B_hands = {} -- WSD
-gear.Nyame_C_hands = {} -- MAB
-gear.Nyame_D_hands = {} -- Pet
+gear.Nyame_A_hands = "Nyame Gauntlets" -- STP
+gear.Nyame_B_hands = "Nyame Gauntlets" -- WSD
+gear.Nyame_C_hands = "Nyame Gauntlets" -- MAB
+gear.Nyame_D_hands = "Nyame Gauntlets" -- Pet
 
-gear.Nyame_A_legs = {} -- STP
-gear.Nyame_B_legs = {} -- WSD
-gear.Nyame_C_legs = {} -- MAB
-gear.Nyame_D_legs = {} -- Pet
+gear.Nyame_A_legs = "Nyame Flanchard" -- STP
+gear.Nyame_B_legs = "Nyame Flanchard" -- WSD
+gear.Nyame_C_legs = "Nyame Flanchard" -- MAB
+gear.Nyame_D_legs = "Nyame Flanchard" -- Pet
 
-gear.Nyame_A_feet = {} -- STP
-gear.Nyame_B_feet = {} -- WSD
-gear.Nyame_C_feet = {} -- MAB
-gear.Nyame_D_feet = {} -- Pet
+gear.Nyame_A_feet = "Nyame Sollerets" -- STP
+gear.Nyame_B_feet = "Nyame Sollerets" -- WSD
+gear.Nyame_C_feet = "Nyame Sollerets" -- MAB
+gear.Nyame_D_feet = "Nyame Sollerets" -- Pet
