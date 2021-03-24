@@ -713,13 +713,12 @@ function init_gear_sets()
     waist="Kwahu Kachina Belt +1" --8 [0] 20/0 <5> {0} (0)
     -- head="Arcadian Beret +3", --37 [0] 37/62 <0> {0} (38)
     -- body="Nisroch Jerkin", --40 [7] 45/45 <10> {0} (0)
-    -- legs=gear.Adhemar_C_legs, --42 [8] 54/54 <0> {0} (16)
     -- neck="Scout's Gorget +2", --25 [7] 25/0 <0> {10} (0)
     -- ear2="Dedition Earring", --0 [8] -10/-10 <0> {0} (0)
     --275 AGI [71 STP] 301 racc / 201 ratt <15 crit> {16 dmg limit} (54 Recycle)
   }
   sets.midcast.RA.LowAcc = set_combine(sets.midcast.RA, {
-    legs="Mummu Kecks +2",
+    legs=gear.Adhemar_C_legs, --42 [8] 54/54 <0> {0} (16)
   })
   sets.midcast.RA.MidAcc = set_combine(sets.midcast.RA.LowAcc, {
     ear2="Beyla Earring", --0 [0] 15/0 <0> {0} (0)
@@ -802,7 +801,7 @@ function init_gear_sets()
     ring1="Chirich Ring +1",    -- __/__, ___
     ring2="Defending Ring",     -- 10/10, ___
     back=gear.RNG_DW_Cape,      -- __/__,  15
-    waist="Engraved Belt",      -- __/__, ___
+    waist="Kasiri Belt",        -- __/__, ___
   } -- 50 PDT / 52 MDT, 697 MEVA
 
   sets.defense.PDT = sets.HeavyDef
