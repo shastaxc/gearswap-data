@@ -702,7 +702,7 @@ function init_gear_sets()
     head="Arcadian Beret +2", --32 [0] 27/47 <0> {0} (36)
     body="Malignance Tabard", --42 [11] 50/0 <0> {6} (0)
     hands="Malignance Gloves", --24 [12] 50/0 <0> {4} (0)
-    legs="Malignance Tights", --42 [10] 50/0 <0> {5} (0)
+    legs=gear.Adhemar_C_legs, --42 [8] 54/54 <0> {0} (16)
     feet="Malignance Boots", --49 [9] 50/0 <0> {2} (0)
     neck="Scout's Gorget +1",
     ear1="Telos Earring", --0 [5] 10/10 <0> {0} (0)
@@ -718,7 +718,6 @@ function init_gear_sets()
     --275 AGI [71 STP] 301 racc / 201 ratt <15 crit> {16 dmg limit} (54 Recycle)
   }
   sets.midcast.RA.LowAcc = set_combine(sets.midcast.RA, {
-    legs=gear.Adhemar_C_legs, --42 [8] 54/54 <0> {0} (16)
   })
   sets.midcast.RA.MidAcc = set_combine(sets.midcast.RA.LowAcc, {
     ear2="Beyla Earring", --0 [0] 15/0 <0> {0} (0)
