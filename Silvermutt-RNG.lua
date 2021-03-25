@@ -866,7 +866,7 @@ function init_gear_sets()
   sets.idle.Weak = set_combine(sets.HeavyDef, {
     neck="Loricate Torque",     --  5/ 5, ___
     ring2="Gelatinous Ring +1", --  7/-1, ___
-    back="Moonlight Cape",      --  6/ 6, ___
+    -- back="Moonlight Cape",      --  6/ 6, ___
   }) -- 53 PDT / 47 MDT, 697 MEVA
 
 

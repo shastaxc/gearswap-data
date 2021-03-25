@@ -294,7 +294,7 @@ function init_gear_sets()
     ear1="Ishvara Earring",
     ear2="Moonshade Earring",
     ring1="Regal Ring",
-    locked_ring2="Ilabrat Ring",
+    ring2="Ilabrat Ring",
     back=gear.THF_TP_Cape,
     -- ammo="Aurgelmir Orb +1",
     -- body=gear.Herc_WS_body,
