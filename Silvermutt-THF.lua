@@ -561,7 +561,7 @@ function init_gear_sets()
     neck="Loricate Torque",     --  5/ 5, ___
     ring1="Gelatinous Ring +1", --  7/-1, ___
     ring2="Moonlight Ring",     --  5/ 5, ___
-    back="Moonlight Cape",      --  6/ 6, ___
+    -- back="Moonlight Cape",      --  6/ 6, ___
   }) --60 PDT/54 MDT, 682 MEVA
   
 
