@@ -319,10 +319,8 @@ function init_gear_sets()
     feet="Arcadian Socks +3",   -- __/10
     neck="Scout's Gorget +1",   --  3/__
     back=gear.RNG_SNP_Cape,     -- 10/__
-    waist="Impulse Belt",       --  3/__
+    waist="Yemaya Belt",        -- __/ 5
     -- legs=gear.Adhemar_D_legs,   -- 10/13
-    -- waist="Yemaya Belt",        -- __/ 5
-    -- Remove neck from set when complete
     --31 Snapshot / 57 Rapid Shot
   } --24 Snapshot / 39 Rapid Shot
 
