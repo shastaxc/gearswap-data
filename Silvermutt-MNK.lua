@@ -589,6 +589,7 @@ function init_gear_sets()
   }
 
   sets.precast.WS['Cataclysm'] = set_combine(sets.precast.WS, sets.MAB, {
+    -- head="Pixie Hairpin +1" -- 28 MAB
     ammo="Knobkierrie", -- 6 WSD
     ring2="Archon Ring", -- 5 MAB
   }) -- STR 30% / INT 30% + MAB
