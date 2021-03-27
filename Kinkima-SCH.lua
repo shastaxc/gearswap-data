@@ -805,6 +805,7 @@ function init_gear_sets()
     hands="Academic's Bracers",
     legs="Pedagogy Pants",
     feet="Academic's Loafers",
+    neck="Erra Pendant",       -- 10, __, 17
     -- main="Rubicundity",        -- 25, 21, 20; +215 M.Acc skill
     -- sub="Ammurapi Shield",     -- __, 13, 38
     -- ammo="Pemphredo Tathlum",  -- __,  4,  8
@@ -813,7 +814,6 @@ function init_gear_sets()
     -- hands="Acad. Bracers +3",  -- __, 29, 48
     -- legs="Peda. Pants +3",     -- 19, 47, 39
     -- feet="Acad. Loafers +3",   -- __, 32, 46
-    -- neck="Erra Pendant",       -- 10, __, 17
     -- ear1="Regal Earring",      -- __, 10, __; Adds set effect
     -- ear2="Mani Earring",       -- 10, __, __
     -- ring1="Evanescence Ring",  -- 10, __, __
@@ -945,19 +945,19 @@ function init_gear_sets()
 
   sets.midcast['Elemental Magic'].Seidr = set_combine(sets.midcast['Elemental Magic'], {
     legs="Pedagogy Pants",
+    neck="Erra Pendant",
     -- head="Merlinic Hood",
     -- body="Seidr Cotehardie",
     -- legs="Peda. Pants +3",
     -- feet="Merlinic Crackows",
-    -- neck="Erra Pendant",
     -- waist="Acuity Belt +1",
   })
 
   sets.midcast['Elemental Magic'].Resistant = set_combine(sets.midcast['Elemental Magic'], {
     legs="Pedagogy Pants",
+    neck="Erra Pendant",
     -- head="Merlinic Hood",
     -- legs="Peda. Pants +3",
-    -- neck="Erra Pendant",
     -- waist="Sacro Cord",
   })
 
