@@ -368,6 +368,7 @@ function init_gear_sets()
 
   sets.midcast.CureWeather = {
     main="Chatoyant Staff",    -- __, 10, __,  5,  5, __, __
+    sub="Enki Strap",          -- __, __, __, 10, __, __, __
     ammo="Incantor Stone",     -- __, __, __, __, __,  2, __
     head=gear.Vanya_B_head,    -- __, 10, 20, 27, 18, __, __
     body=gear.Vanya_B_body,    -- __, __, 20, 36, 23, __, __
@@ -459,6 +460,7 @@ function init_gear_sets()
 
   sets.midcast.CuragaWeather = {
     main="Chatoyant Staff",    -- __, 10, __,  5,  5, __, __
+    sub="Enki Strap",          -- __, __, __, 10, __, __, __
     ammo="Incantor Stone",     -- __, __, __, __, __,  2, __
     head=gear.Vanya_B_head,    -- __, 10, 20, 27, 18, __, __
     body=gear.Vanya_B_body,    -- __, __, 20, 36, 23, __, __
@@ -898,9 +900,9 @@ function init_gear_sets()
   -- More emphasis on INT
   sets.midcast.Kaustra = {
     main=gear.Akademos_A,         -- 32, __, 58
+    sub="Enki Strap",             -- 10, 10, __
     head="Peda. M.Board",
     neck="Sanctity Necklace",     -- __, 10, 10
-    -- sub="Enki Strap",          -- 10, 10, __
     -- ammo="Pemphredo Tathlum",  --  4,  8,  4
     -- head="Peda. M.Board +3",   -- 39, 52, 49
     -- body=gear.Merl_MB_body,    -- 50, 60, 60
@@ -921,9 +923,9 @@ function init_gear_sets()
   -- More emphasis on MAB
   sets.midcast['Elemental Magic'] = {
     main=gear.Akademos_A,           -- 32, __, 58
+    sub="Enki Strap",               -- 10, 10, __
     head="Peda. M.Board",
     neck="Sanctity Necklace",       -- __, 10, 10
-    -- sub="Enki Strap",            -- 10, 10, __
     -- ammo="Pemphredo Tathlum",    --  4,  8,  4
     -- head="Peda. M.Board +3",     -- 39, 52, 49
     -- body=gear.Amalric_A_body,    -- 38, 53, 53
@@ -970,7 +972,7 @@ function init_gear_sets()
 
   sets.midcast.Helix = {
     main=gear.Akademos_A,
-    -- sub="Enki Strap",
+    sub="Enki Strap",
     -- ammo="Ghastly Tathlum +1",
     -- neck="Argute Stole +2",
     -- waist="Sacro Cord",
