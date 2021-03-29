@@ -1426,7 +1426,16 @@ function get_custom_wsmode(spell, action, spellMap)
     end
   end
 
-  if player.tp > 2900 then
+  local rweapon = state.RangedWeaponSet.current
+  if 1900 <= player.tp and player.tp < 2400 then
+    if rweapon and rweapon == 'Fomalhaut' then
+      wsmode = wsmode..'MaxTP'
+    end
+  elseif 2400 <= player.tp and player.tp < 2900 then
+    if rweapon and (rweapon == 'Sparrowhawk +2' or rweapon =='Sparrowhawk +3' or rweapon == 'Accipiter') then
+      wsmode = wsmode..'MaxTP'
+    end
+  elseif 2900 <= player.tp then
     wsmode = wsmode..'MaxTP'
   end
 
