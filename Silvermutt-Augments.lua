@@ -81,6 +81,9 @@ gear.Herc_Refresh_feet = { name="Herculean Boots", augments={'Crit.hit rate+1','
 -- Odyssean
 
 -- Valorous
+gear.Valorous_STR_WSD_head = {} -- 4~5%+ WSD, ~20 Acc/Att, 10~15STR
+gear.Valorous_STR_WSD_hands = {} -- 4~5%+ WSD, ~20 Acc/Att, 10~15STR
+gear.Valorous_STR_WSD_feet = {} -- 4~5%+ WSD, ~20 Acc/Att, 10~15STR
 
 
 ----------------------------------------------------------------------
@@ -137,6 +140,9 @@ gear.Taeon_RA_head = { name="Taeon Chapeau", augments={'"Snapshot"+5','"Snapshot
 
 gear.Dampening_Tam = { name="Dampening Tam", augments={'DEX+10','Accuracy+15','Mag. Acc.+15','Quadruple Attack +3',}}
 gear.Floral_Gauntlets = { name="Floral Gauntlets", augments={'Rng.Acc.+13','Accuracy+14','"Triple Atk."+1','Magic dmg. taken -2%',}}
+gear.Founders_Breastplate = {}
+gear.Founders_Gauntlets = {}
+gear.Founders_Greaves = {}
 gear.Leyline_Gloves = { name="Leyline Gloves", augments={'Accuracy+15','Mag. Acc.+15','"Mag.Atk.Bns."+15','"Fast Cast"+3',}}
 gear.Samnuha_body = { name="Samnuha Coat", augments={'Mag. Acc.+14','"Mag.Atk.Bns."+13','"Fast Cast"+4','"Dual Wield"+3',}}
 gear.Samnuha_legs = { name="Samnuha Tights", augments={'STR+10','DEX+10','"Dbl.Atk."+3','"Triple Atk."+3',}}
@@ -157,6 +163,9 @@ gear.DNC_WS3_Cape = {name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Att
 gear.MNK_DEX_DA_Cape = { name="Segomo's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Mag. Evasion+15',}}
 gear.MNK_STR_DA_Cape = { name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Mag. Evasion+15',}}
 gear.MNK_STR_Crit_Cape = { name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Crit.hit rate+10','Phys. dmg. taken-10%',}}
+
+gear.SAM_STR_WSD_Cape = {} -- 30 STR, 20 Acc/Att, 10% WSD
+gear.SAM_TP_Cape = {} -- 20 DEX, 30 Acc/Att, 10 DA
 
 gear.RNG_DW_Cape = { name="Belenus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dual Wield"+10','Mag. Evasion+15',}}
 gear.RNG_RA_Cape = { name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','"Store TP"+10','Mag. Evasion+15',}}
