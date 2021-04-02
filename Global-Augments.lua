@@ -62,15 +62,15 @@ gear.Iris_B = {}
 gear.Iris_C = {}
 gear.Iris_D = {}
 
-gear.Kali_A = {}
-gear.Kali_B = {}
-gear.Kali_C = {}
-gear.Kali_D = {}
+gear.Kali_A = {name="Kali", augments={'DMG:+15','CHR+15','Mag. Acc.+15',}}
+gear.Kali_B = {name="Kali", augments={'DMG:+15','CHR+15','Enmity-5',}}
+gear.Kali_C = {name="Kali", augments={'MP+60','Mag. Acc.+20','"Refresh"+1',}}
+gear.Kali_D = {name="Kali", augments={'Mag. Acc.+15','String instrument skill +10','Wind instrument skill +10',}}
 
-gear.Lathi_A = {}
-gear.Lathi_B = {}
-gear.Lathi_C = {}
-gear.Lathi_D = {}
+gear.Lathi_A = {name="Lathi", augments={'MP+80','INT+20','"Mag.Atk.Bns."+20',}}
+gear.Lathi_B = {name="Lathi", augments={'MP+80','Mag. Acc.+20','"Fast Cast"+5',}}
+gear.Lathi_C = {name="Lathi", augments={'INT+15','"Mag.Atk.Bns."+15','Mag. Acc.+15',}}
+gear.Lathi_D = {name="Lathi", augments={'Mag. Acc.+20','Enfb.mag. skill +15','Dark magic skill +15',}}
 
 gear.Midnights_A = {}
 gear.Midnights_B = {}
@@ -162,20 +162,20 @@ gear.Nixxer_B = {}
 gear.Nixxer_C = {}
 gear.Nixxer_D = {}
 
-gear.Queller_Rod_A = {}
-gear.Queller_Rod_B = {}
-gear.Queller_Rod_C = {}
-gear.Queller_Rod_D = {}
+gear.Queller_Rod_A = {name="Queller Rod", augments={'MP+80','"Cure" potency +15','Enmity-5',}}
+gear.Queller_Rod_B = {name="Queller Rod", augments={'MND+15','Mag. Acc.+15','"Cure" potency +15',}}
+gear.Queller_Rod_C = {name="Queller Rod", augments={'"Mag.Atk.Bns."+15','Mag. Acc.+15','"Cure" potency +15',}}
+gear.Queller_Rod_D = {name="Queller Rod", augments={'Healing magic skill +15','"Cure" potency +10','"Cure" spellcasting time -7%',}}
 
 gear.Rhomphaia_A = {}
 gear.Rhomphaia_B = {}
 gear.Rhomphaia_C = {}
 gear.Rhomphaia_D = {}
 
-gear.Shijo_A = {}
-gear.Shijo_B = {}
-gear.Shijo_C = {}
-gear.Shijo_D = {}
+gear.Shijo_A = {name="Shijo", augments={'DMG:+15','STR+15','Attack+15',}}
+gear.Shijo_B = {name="Shijo", augments={'DMG:+15','STR+15','Accuracy+10',}}
+gear.Shijo_C = {name="Shijo", augments={'DMG:+15','Accuracy+15','Attack+15',}}
+gear.Shijo_D = {name="Shijo", augments={'"Triple Atk."+2','"Dual Wield"+5','DEX+15',}}
 
 gear.Skullrender_A = {}
 gear.Skullrender_B = {}
@@ -223,56 +223,56 @@ gear.Adhemar_C_feet = {name="Adhe. Gamashes +1", augments={'AGI+12','Rng.Acc.+20
 gear.Adhemar_D_feet = {name="Adhe. Gamashes +1", augments={'HP+65','"Store TP"+7','"Snapshot"+10',}}
 
 -- Amalric
-gear.Amalric_A_head = {}
-gear.Amalric_B_head = {}
-gear.Amalric_C_head = {}
-gear.Amalric_D_head = {}
+gear.Amalric_A_head = {name="Amalric Coif +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}}
+gear.Amalric_B_head = {name="Amalric Coif +1", augments={'MP+80','INT+12','Enmity-6',}}
+gear.Amalric_C_head = {name="Amalric Coif +1", augments={'INT+12','Elem. magic skill +20','Dark magic skill +20',}}
+gear.Amalric_D_head = {name="Amalric Coif +1", augments={'INT+12','Mag. Acc.+25','Enmity -6',}}
 
-gear.Amalric_A_body = {}
-gear.Amalric_B_body = {}
-gear.Amalric_C_body = {}
-gear.Amalric_D_body = {}
+gear.Amalric_A_body = {name="Amalric Doublet +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}}
+gear.Amalric_B_body = {name="Amalric Doublet +1", augments={'MP+80','INT+12','Enmity-6',}}
+gear.Amalric_C_body = {name="Amalric Doublet +1", augments={'INT+12','Elem. magic skill +20','Dark magic skill +20',}}
+gear.Amalric_D_body = {name="Amalric Doublet +1", augments={'MP+80','"Mag.Atk.Bns."+25','"Fast Cast"+4',}}
 
-gear.Amalric_A_hands = {}
-gear.Amalric_B_hands = {}
-gear.Amalric_C_hands = {}
-gear.Amalric_D_hands = {}
+gear.Amalric_A_hands = {name="Amalric Gages +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}}
+gear.Amalric_B_hands = {name="Amalric Gages +1", augments={'MP+80','INT+12','Enmity-6',}}
+gear.Amalric_C_hands = {name="Amalric Gages +1", augments={'INT+12','Elem. magic skill +20','Dark magic skill +20',}}
+gear.Amalric_D_hands = {name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}}
 
-gear.Amalric_A_legs = {}
-gear.Amalric_B_legs = {}
-gear.Amalric_C_legs = {}
-gear.Amalric_D_legs = {}
+gear.Amalric_A_legs = {name="Amalric Slops +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}}
+gear.Amalric_B_legs = {name="Amalric Slops +1", augments={'MP+80','INT+12','Enmity-6',}}
+gear.Amalric_C_legs = {name="Amalric Slops +1", augments={'INT+12','Elem. magic skill +20','Dark magic skill +20',}}
+gear.Amalric_D_legs = {name="Amalric Slops +1", augments={'MP+80','"Mag.Atk.Bns."+25','Enmity-6',}}
 
-gear.Amalric_A_feet = {}
-gear.Amalric_B_feet = {}
-gear.Amalric_C_feet = {}
-gear.Amalric_D_feet = {}
+gear.Amalric_A_feet = {name="Amalric Nails +1", augments={'MP+80','Mag. Acc.+20','"Mag.Atk.Bns."+20',}}
+gear.Amalric_B_feet = {name="Amalric Nails +1", augments={'MP+80','INT+12','Enmity-6',}}
+gear.Amalric_C_feet = {name="Amalric Nails +1", augments={'INT+12','Elem. magic skill +20','Dark magic skill +20',}}
+gear.Amalric_D_feet = {name="Amalric Nails +1", augments={'Mag. Acc.+20','"Mag.Atk.Bns."+20''"Conserve MP"+7',}}
 
 -- Apogee
-gear.Apogee_A_head = {}
-gear.Apogee_B_head = {}
-gear.Apogee_C_head = {}
-gear.Apogee_D_head = {}
+gear.Apogee_A_head = {name="Apogee Crown +1", augments={'MP+80','Pet: "Mag.Atk.Bns."+35','Blood Pact Dmg.+8',}}
+gear.Apogee_B_head = {name="Apogee Crown +1", augments={'MP+80','Pet: Attack+35','Blood Pact Dmg.+8',}}
+gear.Apogee_C_head = {name="Apogee Crown +1", augments={'Pet: Attack+25','Pet: "Mag.Atk.Bns."+25','Blood Pact Dmg.+8',}}
+gear.Apogee_D_head = {name="Apogee Crown +1", augments={'"Avatar perpetuation cost" -7','Pet: Accuracy+25','Pet: Damage taken -4%',}}
 
-gear.Apogee_A_body = {}
-gear.Apogee_B_body = {}
-gear.Apogee_C_body = {}
-gear.Apogee_D_body = {}
+gear.Apogee_A_body = {name="Apogee Dalmatica +1", augments={'MP+80','Pet: "Mag.Atk.Bns."+35','Blood Pact Dmg.+8',}}
+gear.Apogee_B_body = {name="Apogee Dalmatica +1", augments={'MP+80','Pet: Attack+35','Blood Pact Dmg.+8',}}
+gear.Apogee_C_body = {name="Apogee Dalmatica +1", augments={'Pet: Attack+25','Pet: "Mag.Atk.Bns."+25','Blood Pact Dmg.+8',}}
+gear.Apogee_D_body = {name="Apogee Dalmatica +1", augments={'Summoning magic skill +20','Enmity-6','Pet: Damage taken -4%',}}
 
-gear.Apogee_A_hands = {}
-gear.Apogee_B_hands = {}
-gear.Apogee_C_hands = {}
-gear.Apogee_D_hands = {}
+gear.Apogee_A_hands = {name="Apogee Mitts +1", augments={'MP+80','Pet: "Mag.Atk.Bns."+35','Blood Pact Dmg.+8',}}
+gear.Apogee_B_hands = {name="Apogee Mitts +1", augments={'MP+80','Pet: Attack+35','Blood Pact Dmg.+8',}}
+gear.Apogee_C_hands = {name="Apogee Mitts +1", augments={'Pet: Attack+25','Pet: "Mag.Atk.Bns."+25','Blood Pact Dmg.+8',}}
+gear.Apogee_D_hands = {name="Apogee Mitts +1", augments={'Pet: Mag. Acc.+25','"Blood Pact" ability delay -7','Blood Pact Dmg.+8',}}
 
-gear.Apogee_A_legs = {}
-gear.Apogee_B_legs = {}
-gear.Apogee_C_legs = {}
-gear.Apogee_D_legs = {}
+gear.Apogee_A_legs = {name="Apogee Slacks +1", augments={'MP+80','Pet: "Mag.Atk.Bns."+35','Blood Pact Dmg.+8',}}
+gear.Apogee_B_legs = {name="Apogee Slacks +1", augments={'MP+80','Pet: Attack+35','Blood Pact Dmg.+8',}}
+gear.Apogee_C_legs = {name="Apogee Slacks +1", augments={'Pet: Attack+25','Pet: "Mag.Atk.Bns."+25','Blood Pact Dmg.+8',}}
+gear.Apogee_D_legs = {name="Apogee Slacks +1", augments={'Pet: STR+20','Pet: "Dbl. Atk."+4''Blood Pact Dmg.+14',}}
 
-gear.Apogee_A_feet = {}
-gear.Apogee_B_feet = {}
-gear.Apogee_C_feet = {}
-gear.Apogee_D_feet = {}
+gear.Apogee_A_feet = {name="Apogee Pumps +1", augments={'MP+80','Pet: "Mag.Atk.Bns."+35','Blood Pact Dmg.+8',}}
+gear.Apogee_B_feet = {name="Apogee Pumps +1", augments={'MP+80','Pet: Attack+35','Blood Pact Dmg.+8',}}
+gear.Apogee_C_feet = {name="Apogee Pumps +1", augments={'Pet: Attack+25','Pet: "Mag.Atk.Bns."+25','Blood Pact Dmg.+8',}}
+gear.Apogee_D_feet = {name="Apogee Pumps +1", augments={'MP+80','Summoning magic skill +20','Blood Pact Dmg.+8',}}
 
 -- Argosy
 gear.Argosy_A_head = {}
@@ -301,30 +301,30 @@ gear.Argosy_C_feet = {}
 gear.Argosy_D_feet = {}
 
 -- Carmine
-gear.Carmine_A_head = {}
-gear.Carmine_B_head = {}
-gear.Carmine_C_head = {}
-gear.Carmine_D_head = {}
+gear.Carmine_A_head = {name="Carmine Mask +1", augments={'HP+80','STR+12','INT+12',}}
+gear.Carmine_B_head = {name="Carmine Mask +1", augments={'Accuracy+12','DEX+12','MND+20',}}
+gear.Carmine_C_head = {name="Carmine Mask +1", augments={'MP+80','INT+12','MND+12',}}
+gear.Carmine_D_head = {name="Carmine Mask +1", augments={'Accuracy+20','Mag. Acc.+12','"Fast Cast"+4',}}
 
-gear.Carmine_A_body = {}
-gear.Carmine_B_body = {}
-gear.Carmine_C_body = {}
-gear.Carmine_D_body = {}
+gear.Carmine_A_body = {name="Carmine Scale Mail +1", augments={'HP+80','STR+12','INT+12',}}
+gear.Carmine_B_body = {name="Carmine Scale Mail +1", augments={'Accuracy+12','DEX+12','MND+20',}}
+gear.Carmine_C_body = {name="Carmine Scale Mail +1", augments={'MP+80','INT+12','MND+12',}}
+gear.Carmine_D_body = {name="Carmine Scale Mail +1", augments={'Attack+20','"Mag.Atk.Bns."+12','"Dbl.Atk."+4',}}
 
-gear.Carmine_A_hands = {}
-gear.Carmine_B_hands = {}
-gear.Carmine_C_hands = {}
-gear.Carmine_D_hands = { name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}}
+gear.Carmine_A_hands = {name="Carmine Fin. Ga. +1", augments={'HP+80','STR+12','INT+12',}}
+gear.Carmine_B_hands = {name="Carmine Fin. Ga. +1", augments={'Accuracy+12','DEX+12','MND+20',}}
+gear.Carmine_C_hands = {name="Carmine Fin. Ga. +1", augments={'MP+80','INT+12','MND+12',}}
+gear.Carmine_D_hands = {name="Carmine Fin. Ga. +1", augments={'Rng.Atk.+20','"Mag.Atk.Bns."+12','"Store TP"+6',}}
 
-gear.Carmine_A_legs = {}
-gear.Carmine_B_legs = { name="Carmine Cuisses +1", augments={'Accuracy+12','DEX+12','MND+20',}}
-gear.Carmine_C_legs = {}
-gear.Carmine_D_legs = { name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}}
+gear.Carmine_A_legs = {name="Carmine Cuisses +1", augments={'HP+80','STR+12','INT+12',}}
+gear.Carmine_B_legs = {name="Carmine Cuisses +1", augments={'Accuracy+12','DEX+12','MND+20',}}
+gear.Carmine_C_legs = {name="Carmine Cuisses +1", augments={'MP+80','INT+12','MND+12',}}
+gear.Carmine_D_legs = {name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}}
 
-gear.Carmine_A_feet = {}
-gear.Carmine_B_feet = {}
-gear.Carmine_C_feet = {}
-gear.Carmine_D_feet = {}
+gear.Carmine_A_feet = {name="Carmine Greaves +1", augments={'HP+80','STR+12','INT+12',}}
+gear.Carmine_B_feet = {name="Carmine Greaves +1", augments={'Accuracy+12','DEX+12','MND+20',}}
+gear.Carmine_C_feet = {name="Carmine Greaves +1", augments={'MP+80','INT+12','MND+12',}}
+gear.Carmine_D_feet = {name="Carmine Greaves +1", augments={'HP+80','MP+80','Phys. dmg. taken -4%'}}
 
 -- Despair
 gear.Despair_A_head = {}
@@ -405,56 +405,56 @@ gear.Eschite_C_feet = {}
 gear.Eschite_D_feet = {}
 
 -- Kaykaus
-gear.Kaykaus_A_head = {}
-gear.Kaykaus_B_head = {}
-gear.Kaykaus_C_head = {}
-gear.Kaykaus_D_head = {}
+gear.Kaykaus_A_head = {name="Kaykaus Mitra +1", augments={'MP+80','MND+12','Mag. Acc.+20',}}
+gear.Kaykaus_B_head = {name="Kaykaus Mitra +1", augments={'MP+80','"Cure" spellcasting time -7%','Enmity-6',}}
+gear.Kaykaus_C_head = {name="Kaykaus Mitra +1", augments={'MP+80','Spell interruption rate down -12%','"Cure" spellcasting time -7%',}}
+gear.Kaykaus_D_head = {name="Kaykaus Mitra +1", augments={'MND+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}}
 
-gear.Kaykaus_A_body = {}
-gear.Kaykaus_B_body = {}
-gear.Kaykaus_C_body = {}
-gear.Kaykaus_D_body = {}
+gear.Kaykaus_A_body = {name="Kaykaus Bliaut +1", augments={'MP+80','MND+12','Mag. Acc.+20',}}
+gear.Kaykaus_B_body = {name="Kaykaus Bliaut +1", augments={'MP+80','"Cure" spellcasting time -7%','Enmity-6',}}
+gear.Kaykaus_C_body = {name="Kaykaus Bliaut +1", augments={'MP+80','Spell interruption rate down -12%','"Cure" spellcasting time -7%',}}
+gear.Kaykaus_D_body = {name="Kaykaus Bliaut +1", augments={'MP+80','"Cure" potency +6','"Conserve MP"+7',}}
 
-gear.Kaykaus_A_hands = {}
-gear.Kaykaus_B_hands = {}
-gear.Kaykaus_C_hands = {}
-gear.Kaykaus_D_hands = {}
+gear.Kaykaus_A_hands = {name="Kaykaus Cuffs +1", augments={'MP+80','MND+12','Mag. Acc.+20',}}
+gear.Kaykaus_B_hands = {name="Kaykaus Cuffs +1", augments={'MP+80','"Cure" spellcasting time -7%','Enmity-6',}}
+gear.Kaykaus_C_hands = {name="Kaykaus Cuffs +1", augments={'MP+80','Spell interruption rate down -12%','"Cure" spellcasting time -7%',}}
+gear.Kaykaus_D_hands = {name="Kaykaus Cuffs +1", augments={'MP+80','"Conserve MP"+7','"Fast Cast"+4',}}
 
-gear.Kaykaus_A_legs = {}
-gear.Kaykaus_B_legs = {}
-gear.Kaykaus_C_legs = {}
-gear.Kaykaus_D_legs = {}
+gear.Kaykaus_A_legs = {name="Kaykaus Tights +1", augments={'MP+80','MND+12','Mag. Acc.+20',}}
+gear.Kaykaus_B_legs = {name="Kaykaus Tights +1", augments={'MP+80','"Cure" spellcasting time -7%','Enmity-6',}}
+gear.Kaykaus_C_legs = {name="Kaykaus Tights +1", augments={'MP+80','Spell interruption rate down -12%','"Cure" spellcasting time -7%',}}
+gear.Kaykaus_D_legs = {name="Kaykaus Tights +1", augments={'INT+12','"Mag.Atk.Bns."+20','Enmity-6',}}
 
-gear.Kaykaus_A_feet = {}
-gear.Kaykaus_B_feet = {}
-gear.Kaykaus_C_feet = {}
-gear.Kaykaus_D_feet = {}
+gear.Kaykaus_A_feet = {name="Kaykaus Boots +1", augments={'MP+80','MND+12','Mag. Acc.+20',}}
+gear.Kaykaus_B_feet = {name="Kaykaus Boots +1", augments={'MP+80','"Cure" spellcasting time -7%','Enmity-6',}}
+gear.Kaykaus_C_feet = {name="Kaykaus Boots +1", augments={'MP+80','Spell interruption rate down -12%','"Cure" spellcasting time -7%',}}
+gear.Kaykaus_D_feet = {name="Kaykaus Boots +1", augments={'Mag. Acc.+20','"Cure" potency +6','"Fast Cast"+4',}}
 
 -- Lustratio
-gear.Lustratio_A_head = {}
-gear.Lustratio_B_head = {}
-gear.Lustratio_C_head = {}
-gear.Lustratio_D_head = {}
+gear.Lustratio_A_head = {name="Lustratio Cap +1", augments={'Attack+20','STR+8','"Dbl.Atk."+3',}}
+gear.Lustratio_B_head = {name="Lustratio Cap +1", augments={'Accuracy+20','DEX+8','Crit. hit rate+3%',}}
+gear.Lustratio_C_head = {name="Lustratio Cap +1", augments={'Accuracy+10','"Store TP"+5','Attack+10',}}
+gear.Lustratio_D_head = {name="Lustratio Cap +1", augments={'STR+8','DEX+8','INT+35',}}
 
-gear.Lustratio_A_body = {}
-gear.Lustratio_B_body = {}
-gear.Lustratio_C_body = {}
-gear.Lustratio_D_body = {}
+gear.Lustratio_A_body = {name="Lustratio Harness +1", augments={'Attack+20','STR+8','"Dbl.Atk."+3',}}
+gear.Lustratio_B_body = {name="Lustratio Harness +1", augments={'Accuracy+20','DEX+8','Crit. hit rate+3%',}}
+gear.Lustratio_C_body = {name="Lustratio Harness +1", augments={'Accuracy+10','"Store TP"+5','Attack+10',}}
+gear.Lustratio_D_body = {name="Lustratio Harness +1", augments={'Accuracy+10','Attack+13','"Dbl.Atk."+4',}}
 
-gear.Lustratio_A_hands = {}
-gear.Lustratio_B_hands = {}
-gear.Lustratio_C_hands = {}
-gear.Lustratio_D_hands = {}
+gear.Lustratio_A_hands = {name="Lustratio Mittens +1", augments={'Attack+20','STR+8','"Dbl.Atk."+3',}}
+gear.Lustratio_B_hands = {name="Lustratio Mittens +1", augments={'Accuracy+20','DEX+8','Crit. hit rate+3%',}}
+gear.Lustratio_C_hands = {name="Lustratio Mittens +1", augments={'Accuracy+10','"Store TP"+5','Attack+10',}}
+gear.Lustratio_D_hands = {name="Lustratio Mittens +1", augments={'Accuracy+30','VIT+13','DEX+10',}}
 
-gear.Lustratio_A_legs = {}
-gear.Lustratio_B_legs = { name="Lustr. Subligar +1", augments={'Accuracy+20','DEX+8','Crit. hit rate+3%',}}
-gear.Lustratio_C_legs = {}
-gear.Lustratio_D_legs = {}
+gear.Lustratio_A_legs = {name="Lustr. Subligar +1", augments={'Attack+20','STR+8','"Dbl.Atk."+3',}}
+gear.Lustratio_B_legs = {name="Lustr. Subligar +1", augments={'Accuracy+20','DEX+8','Crit. hit rate+3%',}}
+gear.Lustratio_C_legs = {name="Lustr. Subligar +1", augments={'Accuracy+10','"Store TP"+5','Attack+10',}}
+gear.Lustratio_D_legs = {name="Lustr. Subligar +1", augments={'HP+65','Attack+30','Enmity-6',}}
 
-gear.Lustratio_A_feet = {}
-gear.Lustratio_B_feet = {}
-gear.Lustratio_C_feet = {}
-gear.Lustratio_D_feet = {}
+gear.Lustratio_A_feet = {name="Lustratio Leggings +1", augments={'Attack+20','STR+8','"Dbl.Atk."+3',}}
+gear.Lustratio_B_feet = {name="Lustratio Leggings +1", augments={'Accuracy+20','DEX+8','Crit. hit rate+3%',}}
+gear.Lustratio_C_feet = {name="Lustratio Leggings +1", augments={'Accuracy+10','"Store TP"+5','Attack+10',}}
+gear.Lustratio_D_feet = {name="Lustratio Leggings +1", augments={'HP+65','STR+15','DEX+15',}}
 
 -- Naga
 gear.Naga_A_head = {}
@@ -483,56 +483,56 @@ gear.Naga_C_feet = {}
 gear.Naga_D_feet = {}
 
 -- Psycloth
-gear.Psycloth_A_head = {}
-gear.Psycloth_B_head = {}
-gear.Psycloth_C_head = {}
-gear.Psycloth_D_head = { name="Psycloth Tiara", augments={'Mag. Acc.+20','"Fast Cast"+10','INT+7',}}
+gear.Psycloth_A_head = {name="Psycloth Tiara", augments={'MP+50','INT+7','"Conserve MP"+6',}}
+gear.Psycloth_B_head = {name="Psycloth Tiara", augments={'Mag. Acc.+10','Spell interruption rate down -15%','MND+7',}}
+gear.Psycloth_C_head = {name="Psycloth Tiara", augments={'Pet: Attack+25','Pet: "Mag.Atk.Bns."+15','Pet: Enmity+7',}}
+gear.Psycloth_D_head = {name="Psycloth Tiara", augments={'Mag. Acc.+20','"Fast Cast"+10','INT+7',}}
 
-gear.Psycloth_A_body = {}
-gear.Psycloth_B_body = {}
-gear.Psycloth_C_body = {}
-gear.Psycloth_D_body = {}
+gear.Psycloth_A_body = {name="Psycloth Vest", augments={'MP+50','INT+7','"Conserve MP"+6',}}
+gear.Psycloth_B_body = {name="Psycloth Vest", augments={'Mag. Acc.+10','Spell interruption rate down -15%','MND+7',}}
+gear.Psycloth_C_body = {name="Psycloth Vest", augments={'Pet: Attack+25','Pet: "Mag.Atk.Bns."+15','Pet: Enmity+7',}}
+gear.Psycloth_D_body = {name="Psycloth Vest", augments={'Elem. magic skill +20','INT+7','Enmity-6',}}
 
-gear.Psycloth_A_hands = {}
-gear.Psycloth_B_hands = {}
-gear.Psycloth_C_hands = {}
-gear.Psycloth_D_hands = {}
+gear.Psycloth_A_hands = {name="Psycloth Manillas", augments={'MP+50','INT+7','"Conserve MP"+6',}}
+gear.Psycloth_B_hands = {name="Psycloth Manillas", augments={'Mag. Acc.+10','Spell interruption rate down -15%','MND+7',}}
+gear.Psycloth_C_hands = {name="Psycloth Manillas", augments={'Pet: Attack+25','Pet: "Mag.Atk.Bns."+15','Pet: Enmity+7',}}
+gear.Psycloth_D_hands = {name="Psycloth Manillas", augments={'MP+80','"Blood Boon"+4','Pet: "Mag.Atk.Bns."+25',}}
 
-gear.Psycloth_A_legs = {}
-gear.Psycloth_B_legs = {}
-gear.Psycloth_C_legs = {}
-gear.Psycloth_D_legs = { name="Psycloth Lappas", augments={'MP+80','Mag. Acc.+15','"Fast Cast"+7',}}
+gear.Psycloth_A_legs = {name="Psycloth Lappas", augments={'MP+50','INT+7','"Conserve MP"+6',}}
+gear.Psycloth_B_legs = {name="Psycloth Lappas", augments={'Mag. Acc.+10','Spell interruption rate down -15%','MND+7',}}
+gear.Psycloth_C_legs = {name="Psycloth Lappas", augments={'Pet: Attack+25','Pet: "Mag.Atk.Bns."+15','Pet: Enmity+7',}}
+gear.Psycloth_D_legs = {name="Psycloth Lappas", augments={'MP+80','Mag. Acc.+15','"Fast Cast"+7',}}
 
-gear.Psycloth_A_feet = {}
-gear.Psycloth_B_feet = {}
-gear.Psycloth_C_feet = {}
-gear.Psycloth_D_feet = {}
+gear.Psycloth_A_feet = {name="Psycloth Boots", augments={'MP+50','INT+7','"Conserve MP"+6',}}
+gear.Psycloth_B_feet = {name="Psycloth Boots", augments={'Mag. Acc.+10','Spell interruption rate down -15%','MND+7',}}
+gear.Psycloth_C_feet = {name="Psycloth Boots", augments={'Pet: Attack+25','Pet: "Mag.Atk.Bns."+15','Pet: Enmity+7',}}
+gear.Psycloth_D_feet = {name="Psycloth Boots", augments={'Pet: M.Acc.+20','Pet: "Mag.Atk.Bns."+20','Pet: Enmity+7',}}
 
 -- Pursuer's
-gear.Pursuer_A_head = {}
-gear.Pursuer_B_head = {}
-gear.Pursuer_C_head = {}
-gear.Pursuer_D_head = {}
+gear.Pursuer_A_head = {name="Pursuer's Beret", augments={'AGI+10','"Rapid Shot"+10','"Subtle Blow"+7',}}
+gear.Pursuer_B_head = {name="Pursuer's Beret", augments={'DEX+7','AGI+10','"Recycle"+15',}}
+gear.Pursuer_C_head = {name="Pursuer's Beret", augments={'HP+50','Accuracy+20','Attack+15',}}
+gear.Pursuer_D_head = {name="Pursuer's Beret", augments={'Rng.Atk.+15','Enmity-6','"Subtle Blow"+7',}}
 
-gear.Pursuer_A_body = {}
-gear.Pursuer_B_body = {}
-gear.Pursuer_C_body = {}
-gear.Pursuer_D_body = {}
+gear.Pursuer_A_body = {name="Pursuer's Doublet", augments={'AGI+10','"Rapid Shot"+10','"Subtle Blow"+7',}}
+gear.Pursuer_B_body = {name="Pursuer's Doublet", augments={'DEX+7','AGI+10','"Recycle"+15',}}
+gear.Pursuer_C_body = {name="Pursuer's Doublet", augments={'HP+50','Accuracy+20','Attack+15',}}
+gear.Pursuer_D_body = {name="Pursuer's Doublet", augments={'HP+50','Crit. hit rate+4%','"Snapshot"+6'}}
 
-gear.Pursuer_A_hands = {}
-gear.Pursuer_B_hands = {}
-gear.Pursuer_C_hands = {}
-gear.Pursuer_D_hands = {}
+gear.Pursuer_A_hands = {name="Pursuer's Cuffs", augments={'AGI+10','"Rapid Shot"+10','"Subtle Blow"+7',}}
+gear.Pursuer_B_hands = {name="Pursuer's Cuffs", augments={'DEX+7','AGI+10','"Recycle"+15',}}
+gear.Pursuer_C_hands = {name="Pursuer's Cuffs", augments={'HP+50','Accuracy+20','Attack+15',}}
+gear.Pursuer_D_hands = {name="Pursuer's Cuffs", augments={'Rng.Atk.+15','STR+7','Phys. dmg. taken -4%',}}
 
-gear.Pursuer_A_legs = {}
-gear.Pursuer_B_legs = {}
-gear.Pursuer_C_legs = {}
-gear.Pursuer_D_legs = {}
+gear.Pursuer_A_legs = {name="Pursuer's Pants", augments={'AGI+10','"Rapid Shot"+10','"Subtle Blow"+7',}}
+gear.Pursuer_B_legs = {name="Pursuer's Pants", augments={'DEX+7','AGI+10','"Recycle"+15',}}
+gear.Pursuer_C_legs = {name="Pursuer's Pants", augments={'HP+50','Accuracy+20','Attack+15',}}
+gear.Pursuer_D_legs = {name="Pursuer's Pants", augments={'DEX+7','AGI+10','STR+7',}}
 
-gear.Pursuer_A_feet = {}
-gear.Pursuer_B_feet = {}
-gear.Pursuer_C_feet = {}
-gear.Pursuer_D_feet = {}
+gear.Pursuer_A_feet = {name="Pursuer's Gaiters", augments={'AGI+10','"Rapid Shot"+10','"Subtle Blow"+7',}}
+gear.Pursuer_B_feet = {name="Pursuer's Gaiters", augments={'DEX+7','AGI+10','"Recycle"+15',}}
+gear.Pursuer_C_feet = {name="Pursuer's Gaiters", augments={'HP+50','Accuracy+20','Attack+15',}}
+gear.Pursuer_D_feet = {name="Pursuer's Gaiters", augments={'Rng.Acc.+10','"Rapid Shot"+10','"Recycle"+15',}}
 
 -- Rao
 gear.Rao_A_head = {}
@@ -597,7 +597,7 @@ gear.Ryuo_B_body = {}
 gear.Ryuo_C_body = {}
 gear.Ryuo_D_body = {}
 
-gear.Ryuo_A_hands = { name="Ryuo Tekko +1", augments={'STR+12','DEX+12','Accuracy+20',}}
+gear.Ryuo_A_hands = {name="Ryuo Tekko +1", augments={'STR+12','DEX+12','Accuracy+20',}}
 gear.Ryuo_B_hands = {}
 gear.Ryuo_C_hands = {}
 gear.Ryuo_D_hands = {}
@@ -640,27 +640,27 @@ gear.Souveran_D_feet = {}
 
 -- Vanya
 gear.Vanya_A_head = {}
-gear.Vanya_B_head = { name="Vanya Hood", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}}
+gear.Vanya_B_head = {name="Vanya Hood", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}}
 gear.Vanya_C_head = {}
 gear.Vanya_D_head = {}
 
 gear.Vanya_A_body = {}
-gear.Vanya_B_body = { name="Vanya Robe", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}}
+gear.Vanya_B_body = {name="Vanya Robe", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}}
 gear.Vanya_C_body = {}
 gear.Vanya_D_body = {}
 
 gear.Vanya_A_hands = {}
-gear.Vanya_B_hands = { name="Vanya Cuffs", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}}
+gear.Vanya_B_hands = {name="Vanya Cuffs", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}}
 gear.Vanya_C_hands = {}
 gear.Vanya_D_hands = {}
 
 gear.Vanya_A_legs = {}
-gear.Vanya_B_legs = { name="Vanya Slops", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}}
+gear.Vanya_B_legs = {name="Vanya Slops", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}}
 gear.Vanya_C_legs = {}
 gear.Vanya_D_legs = {}
 
 gear.Vanya_A_feet = {}
-gear.Vanya_B_feet = { name="Vanya Clogs", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}}
+gear.Vanya_B_feet = {name="Vanya Clogs", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}}
 gear.Vanya_C_feet = {}
 gear.Vanya_D_feet = {}
 
