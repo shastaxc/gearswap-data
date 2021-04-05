@@ -562,6 +562,7 @@ function init_gear_sets()
 
   sets.engaged = {
     legs="Mpaca's Hose",
+    feet="Mpaca's Boots",
     neck="Samurai's Nodowa +2",
     ear1="Telos Earring",
     ring2="Niqmaddu Ring",
@@ -569,7 +570,6 @@ function init_gear_sets()
     -- head="Flam. Zucchetto +2",
     -- body="Kasuga Domaru +1",
     -- hands="Wakido Kote +3",
-    -- feet="Mpaca's Boots",
     -- ear2="Dedition Earring",
     -- ring1="Flamma Ring",
     -- back=gear.SAM_TP_Cape,
