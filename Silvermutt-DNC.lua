@@ -354,7 +354,7 @@ function init_gear_sets()
   }
   sets.precast.Flourish3 = {}
   sets.precast.Flourish3['Striking Flourish'] = {
-    body="Maculele Casaque +1"
+    -- body="Maculele Casaque +1"
   }
   sets.precast.Flourish3['Climactic Flourish'] = {
     head="Maculele Tiara +1",
