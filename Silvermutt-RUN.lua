@@ -331,7 +331,7 @@ function init_gear_sets()
     feet=gear.Taeon_FC_feet,                        -- { 5} __/__,  69 [ 13]
     ear2="Eabani Earring",                          -- {__} __/__,   8 [ 45]
     waist={name="Kasiri Belt", priority=1},         -- {__} __/__, ___ [ 30]
-    back={name=gear.RUN_FC_Cape, priority=1},       -- {10} 10/__,  20 [ 80]
+    back={gear.RUN_FC_Cape, priority=1},            -- {10} 10/__,  20 [ 80]
   } -- 43% Fast Cast [302 HP, 883 w/ PDT, 953 w/ MDT]
 
   sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {
@@ -976,11 +976,8 @@ function init_gear_sets()
   sets.WeaponSet["Aettir"] = {
     main="Aettir",
   }
-  sets.WeaponSet["ZanX"] = {
-    main="Zantetsuken X",
-  }
   sets.WeaponSet["Epeolatry"] = {
-    main="Epeolatry",
+    -- main="Epeolatry",
   }
   sets.WeaponSet["Lionheart"] = {
     main="Lionheart",

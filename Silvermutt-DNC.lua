@@ -594,7 +594,7 @@ function init_gear_sets()
 
   sets.midcast.SpellInterrupt = {
     ammo="Impatiens", --10
-    ring1="Evanescence Ring", --5
+    -- ring1="Evanescence Ring", --5
   }
 
   sets.midcast.Utsusemi = sets.midcast.SpellInterrupt

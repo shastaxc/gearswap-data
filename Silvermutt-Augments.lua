@@ -5,7 +5,7 @@
 sets.ToyWeapon = {} --DO NOT MODIFY
 sets.ToyWeapon.None = {main=nil, sub=nil} --DO NOT MODIFY
 sets.ToyWeapon.Katana = {main="Trainee Burin",sub="Qutrub Knife"}
-sets.ToyWeapon.GreatKatana = {main="Musunokami",sub="Tzacab Grip"}
+sets.ToyWeapon.GreatKatana = {main="Mutsunokami",sub="Tzacab Grip"}
 -- sets.ToyWeapon.GreatKatana = {main="Lotus Katana",sub="Tzacab Grip"}
 sets.ToyWeapon.Dagger = {main="Qutrub Knife",sub="Wind Knife"}
 sets.ToyWeapon.Sword = {main="Nihility",sub="Qutrub Knife"}

@@ -60,7 +60,7 @@ function job_setup()
   state.HybridMode:options('Normal', 'LightDef')
   state.RangedMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.IdleMode:options('Normal', 'LightDef')
-  state.WeaponSet = M{['description']='Weapon Set', 'MagicRA', 'PhysRA', 'PhysRA RangedOnly', 'PhysRA NoBuff', 'Melee', 'CritRA'}
+  state.WeaponSet = M{['description']='Weapon Set', 'MagicRA', 'PhysRA', 'PhysRA RangedOnly', 'Melee'}
   state.RangedWeaponSet = M{['description']='Ranged Weapon Set', 'Gastraphetes', 'Fomalhaut', 'Sparrowhawk +2'}
   state.CP = M(false, "Capacity Points Mode")
   state.RearmingLock = M(false, 'Rearming Lock')
@@ -1212,7 +1212,7 @@ function init_gear_sets()
     sub="Nusku Shield",
   }
   sets.WeaponSet['PhysRA NoBuff'] = {
-    main="Perun +1",
+    -- main="Perun +1",
     sub="Nusku Shield",
   }
   sets.WeaponSet['Melee'] = {
@@ -1220,7 +1220,7 @@ function init_gear_sets()
     sub="Ternion Dagger +1",
   }
   sets.WeaponSet['CritRA'] = {
-    main="Oneiros Knife",
+    -- main="Oneiros Knife",
     sub="Nusku Shield",
   }
 
