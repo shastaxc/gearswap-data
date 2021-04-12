@@ -47,6 +47,7 @@ function get_sets()
   coroutine.schedule(function()
     send_command('gs c equipweapons')
     send_command('gs c equiprangedweapons')
+    send_command('gs org')
   end, 2)
 end
 

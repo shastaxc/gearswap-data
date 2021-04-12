@@ -1,5 +1,6 @@
 send_command('lua l gearinfo')
 
+include('organizer-lib')
 res = include('resources')
 inspect = include('inspect')
 packets = include('packets')
