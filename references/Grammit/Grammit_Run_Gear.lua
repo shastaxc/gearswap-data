@@ -3,6 +3,7 @@ function user_job_setup()
   rayke_duration = 34
   gambit_duration = 92
 
+  runes = S{'Lux', 'Tenebrae', 'Ignis', 'Gelus', 'Flabra', 'Tellus', 'Sulpor', 'Unda'}
   runes.element_of = {['Lux']='Light', ['Tenebrae']='Dark', ['Ignis']='Fire', ['Gelus']='Ice', ['Flabra']='Wind',
       ['Tellus']='Earth', ['Sulpor']='Lightning', ['Unda']='Water'} -- Do not modify
   expended_runes={} -- Do not modify
@@ -654,7 +655,22 @@ function user_job_lockstyle()
 	end
 end
 
-function user_job_aftercast()
+function user_job_precast(spell, action, spellMap, eventArgs)
+  -- Record which rune elements are active when Rayke or Gambit is used.
+  if spell.english == 'Rayke' or spell.english == 'Gambit' then
+    -- Examine all active buffs
+    for k,buff_id in pairs(player.buffs) do
+      -- Translate buff ID into English
+      local buff_name = res.buffs:get(buff_id).en;
+      -- If buff is a Rune, snapshot it as it was expended
+      if runes:contains(buff_name) then
+        table.insert(expended_runes, buff_name)
+      end
+    end
+  end
+end
+
+function user_job_aftercast(spell, spellMap, eventArgs)
   local chat_mode = '/p'
   if windower.ffxi.get_party().party1_count == 1 then
     chat_mode = '/echo'
