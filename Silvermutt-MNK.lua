@@ -154,6 +154,7 @@ function init_gear_sets()
     head="Halitus Helm", --0/0, 43 [88] <8>
     body="Emet Harness +1", --6/0, 64 [61] <10>
     hands="Kurys Gloves", --2/2, 57 [25] <9>
+    ear2="Friomisi Earring", --0/0, 0 [0] <2>
     ear2="Cryptic Earring", --0/0, 0 [40] <4>
     ring1="Eihwaz Ring", --0/0, 0 [70] <5>
     ring2={name="Supershear Ring", priority=1}, --0/0, 0 [30] <5>
@@ -219,27 +220,17 @@ function init_gear_sets()
   }
 
   sets.precast.JA['Chi Blast'] = {
-    ammo="Hydrocera", -- 3
     head="Hesychast's Crown +1", -- 15, Enhance Penance
-    body="Anchorite's Cyclas +2", -- 29
-    hands=gear.Leyline_Gloves, -- 30
-    legs="Anchorite's Hose +1", -- 2
-    feet="Hesychast's Gaiters +3", -- 22
-    neck="Monk's Nodowa +2", -- 11
-    ring2="Defending Ring", -- DT
-    waist="Engraved Belt", -- 7
   } -- MND
 
   sets.precast.JA['Chakra'] = {
-    ammo="Aurgelmir Orb",
-    head="Highwing Helm",
     body="Anchorite's Cyclas +2", -- Enhances Chakra
     hands="Hesychast's Gloves", -- Enhances Chakra
-    legs="Hizamaru Hizayoroi +2",
-    feet="Anchorite's Gaiters +3",
     ear2="Odnowa Earring +1",
-    ring1="Regal Ring",
-    ring2="Niqmaddu Ring",
+    ring1="Gelatinous Ring +1",
+    ring2="Defending Ring",
+    -- body="Anchorite's Cyclas +3", -- Enhances Chakra
+    -- hands="Hesychast's Gloves +3", -- Enhances Chakra
   } -- VIT
 
   sets.precast.JA['Provoke'] = sets.Enmity
@@ -286,7 +277,9 @@ function init_gear_sets()
     waist="Moonbow Belt +1",
   } -- Base WS set
 
-  -- Victory Smite: 80% STR, can crit
+  -- Victory Smite: 80% STR, 1.5 fTP, 4 hit, can crit
+  -- crit dmg > TP Bonus = crit rate > multihit
+  -- 1000 TP bonus = ~15% crit rate
   sets.precast.WS["Victory Smite"] = set_combine(sets.precast.WS, {
     ammo="Knobkierrie",
     head=gear.Adhemar_B_head,
@@ -322,7 +315,8 @@ function init_gear_sets()
   sets.precast.WS["Victory Smite"].HighAccMaxTP = set_combine(sets.precast.WS["Victory Smite"].HighAcc, {
   })
 
-  -- Shijin Spiral: 100% DEX
+  -- Shijin Spiral: 100% DEX, 1.5 fTP, 5 hit
+  -- DEX > multihit > WSD
   sets.precast.WS['Shijin Spiral'] = set_combine(sets.precast.WS, {
     ammo="Aurgelmir Orb",
     head="Kendatsuba Jinpachi +1",
@@ -333,7 +327,7 @@ function init_gear_sets()
     neck="Monk's Nodowa +2",
     ear1="Sherida Earring",
     ear2="Brutal Earring",
-    ring1="Gere Ring",
+    ring1="Ilabrat Ring",
     ring2="Niqmaddu Ring",
     back=gear.MNK_DEX_DA_Cape,
     waist="Moonbow Belt +1",
@@ -360,96 +354,135 @@ function init_gear_sets()
   sets.precast.WS["Shijin Spiral"].HighAccMaxTP = set_combine(sets.precast.WS["Shijin Spiral"].HighAcc, {
   })
 
-  -- Asuran Fists: 20% STR / 20% VIT
+  -- Asuran Fists: 20% STR / 20% VIT, 1.25 fTP, 8 hit
+  -- WSD > STR/VIT
   sets.precast.WS['Asuran Fists'] = set_combine(sets.precast.WS, {
     ammo="Knobkierrie",
-    head="Mpaca's Cap",
+    head=gear.Adhemar_B_head,
     body="Kendatsuba Samue +1",
     hands=gear.Adhemar_B_hands,
-    legs="Mpaca's Hose",
+    legs="Mpaca's Hose", -- Maybe replace, crit and multihit useless
     feet=gear.Herc_WSD_feet,
-    neck="Monk's Nodowa +2",
+    neck="Fotia Gorget",
     ear1="Sherida Earring",
-    ear2="Moonshade Earring",
+    ear2="Ishvara Earring",
     ring1="Gere Ring",
     ring2="Niqmaddu Ring",
-    back=gear.MNK_STR_DA_Cape,
+    back=gear.MNK_STR_DA_Cape,  -- WSD cape would be better
     waist="Moonbow Belt +1",
+    -- head="Hesychast's Crown +3",
   })
   sets.precast.WS["Asuran Fists"].MaxTP = set_combine(sets.precast.WS["Asuran Fists"], {
-    head=gear.Adhemar_B_head,
-    ear2="Odnowa Earring +1",
   })
   sets.precast.WS["Asuran Fists"].LowAcc = set_combine(sets.precast.WS["Asuran Fists"], {
-    neck="Fotia Gorget",
   })
   sets.precast.WS["Asuran Fists"].LowAccMaxTP = set_combine(sets.precast.WS["Asuran Fists"].LowAcc, {
-    ear2="Odnowa Earring +1",
   })
   sets.precast.WS["Asuran Fists"].MidAcc = set_combine(sets.precast.WS["Asuran Fists"].LowAcc, {
     hands=gear.Ryuo_A_hands,
   })
   sets.precast.WS["Asuran Fists"].MidAccMaxTP = set_combine(sets.precast.WS["Asuran Fists"].MidAcc, {
-    ear2="Odnowa Earring +1",
   })
   sets.precast.WS["Asuran Fists"].HighAcc = set_combine(sets.precast.WS["Asuran Fists"].MidAcc, {
     ammo="Falcon Eye",
     head="Mummu Bonnet +2",
   })
   sets.precast.WS["Asuran Fists"].HighAccMaxTP = set_combine(sets.precast.WS["Asuran Fists"].HighAcc, {
-    ear2="Odnowa Earring +1",
   })
 
-  -- Ascetic's Fury: 50% STR / 50% VIT, can crit
-  sets.precast.WS["Ascetic's Fury"] = sets.precast.WS["Victory Smite"]
-  sets.precast.WS["Ascetic's Fury"].MaxTP = sets.precast.WS["Victory Smite"].MaxTP
-  sets.precast.WS["Ascetic's Fury"].LowAcc = sets.precast.WS["Victory Smite"].LowAcc
-  sets.precast.WS["Ascetic's Fury"].LowAccMaxTP = sets.precast.WS["Victory Smite"].LowAccMaxTP
-  sets.precast.WS["Ascetic's Fury"].MidAcc = sets.precast.WS["Victory Smite"].MidAcc
-  sets.precast.WS["Ascetic's Fury"].MidAccMaxTP = sets.precast.WS["Victory Smite"].MidAccMaxTP
-  sets.precast.WS["Ascetic's Fury"].HighAcc = sets.precast.WS["Victory Smite"].HighAcc
-  sets.precast.WS["Ascetic's Fury"].HighAccMaxTP = sets.precast.WS["Victory Smite"].HighAccMaxTP
+  -- Ascetic's Fury: 50% STR / 50% VIT, 1.0 fTP (2.0 w/ offhand), 1 hit (2 w/ offhand), can crit
+  -- Cannot crit normally - only TP bonus can increase crit rate
+  -- TP Bonus > crit dmg > multihit > WSD
+  sets.precast.WS["Ascetic's Fury"] = set_combine(sets.precast.WS, {
+    ammo="Knobkierrie",
+    head="Mpaca's Cap",
+    body="Kendatsuba Samue +1",
+    hands=gear.Ryuo_A_hands,
+    legs="Mpaca's Hose",
+    feet=gear.Herc_DEX_CritDmg_feet,
+    neck="Fotia Gorget",
+    ear1="Sherida Earring",
+    ear2="Moonshade Earring",
+    ring1="Gere Ring",
+    ring2="Niqmaddu Ring",
+    back=gear.MNK_STR_Crit_Cape,
+    waist="Moonbow Belt +1",
+    -- feet=gear.Herc_STR_CritDmg_feet,
+  })
+  sets.precast.WS["Ascetic's Fury"].MaxTP = set_combine(sets.precast.WS["Ascetic's Fury"], {
+    head=gear.Adhemar_B_head,
+    ear2="Brutal Earring",
+  })
+  sets.precast.WS["Ascetic's Fury"].LowAcc = set_combine(sets.precast.WS["Ascetic's Fury"], {
+  })
+  sets.precast.WS["Ascetic's Fury"].LowAccMaxTP = set_combine(sets.precast.WS["Ascetic's Fury"].LowAcc, {
+    head=gear.Adhemar_B_head,
+    ear2="Brutal Earring",
+  })
+  sets.precast.WS["Ascetic's Fury"].MidAcc = set_combine(sets.precast.WS["Ascetic's Fury"].LowAcc, {
+  })
+  sets.precast.WS["Ascetic's Fury"].MidAccMaxTP = set_combine(sets.precast.WS["Ascetic's Fury"].MidAcc, {
+    head=gear.Adhemar_B_head,
+    ear2="Brutal Earring",
+    -- head=gear.Adhemar_A_head,
+  })
+  sets.precast.WS["Ascetic's Fury"].HighAcc = set_combine(sets.precast.WS["Ascetic's Fury"].MidAcc, {
+  })
+  sets.precast.WS["Ascetic's Fury"].HighAccMaxTP = set_combine(sets.precast.WS["Ascetic's Fury"].HighAcc, {
+    head=gear.Adhemar_B_head,
+    ear2="Telos Earring",
+    -- head=gear.Adhemar_A_head,
+  })
 
-  -- Raging Fists: 30% STR / 30% DEX
+  -- Raging Fists: 30% STR / 30% DEX, 1.0-3.75 fTP, 5 hit
+  -- TP Bonus > WSD > Multihit (assuming always used with high TP)
   sets.precast.WS['Raging Fists'] = set_combine(sets.precast.WS, {
     ammo="Knobkierrie",
     head="Mpaca's Cap",
     body=gear.Adhemar_B_body,
     hands=gear.Adhemar_B_hands,
-    legs="Mpaca's Hose",
+    legs="Hizamaru Hizayoroi +2",
     feet=gear.Herc_TA_feet,
-    neck="Monk's Nodowa +2",
+    neck="Fotia Gorget",
     ear1="Sherida Earring",
     ear2="Moonshade Earring",
     ring1="Gere Ring",
     ring2="Niqmaddu Ring",
     back=gear.MNK_STR_DA_Cape,
     waist="Moonbow Belt +1",
+    -- body=gear.Nyame_B_body, -- R10
+    -- hands="Anchorite's Gloves +3",
+    -- legs=gear.Nyame_B_legs, -- R13+
+    -- feet=gear.Nyame_B_feet, -- R15
   })
   sets.precast.WS["Raging Fists"].MaxTP = set_combine(sets.precast.WS["Raging Fists"], {
-    head="Kendatsuba Jinpachi +1",
-    ear2="Brutal Earring",
+    ear2="Ishvara Earring",
+    -- head="Hesychast's Crown +3",
   })
   sets.precast.WS["Raging Fists"].LowAcc = set_combine(sets.precast.WS["Raging Fists"], {
 
   })
   sets.precast.WS["Raging Fists"].LowAccMaxTP = set_combine(sets.precast.WS["Raging Fists"].LowAcc, {
-    ear2="Brutal Earring",
+    ear2="Ishvara Earring",
+    -- head="Hesychast's Crown +3",
   })
   sets.precast.WS["Raging Fists"].MidAcc = set_combine(sets.precast.WS["Raging Fists"].LowAcc, {
 
   })
   sets.precast.WS["Raging Fists"].MidAccMaxTP = set_combine(sets.precast.WS["Raging Fists"].MidAcc, {
-    ear2="Brutal Earring",
+    ear2="Ishvara Earring",
+    -- head="Hesychast's Crown +3",
   })
   sets.precast.WS["Raging Fists"].HighAcc = set_combine(sets.precast.WS["Raging Fists"].MidAcc, {
 
   })
   sets.precast.WS["Raging Fists"].HighAccMaxTP = set_combine(sets.precast.WS["Raging Fists"].HighAcc, {
-    ear2="Brutal Earring",
+    ear2="Ishvara Earring",
+    -- head="Hesychast's Crown +3",
   })
 
-  -- Howling Fist: 50% VIT / 20% STR
+  -- Howling Fist: 50% VIT / 20% STR, 2.05-5.8 fTP, 2 hit
+  -- TP Bonus > Multihit > WSD
   sets.precast.WS['Howling Fist'] = set_combine(sets.precast.WS, {
     ammo="Knobkierrie",
     head="Mpaca's Cap",
@@ -467,7 +500,7 @@ function init_gear_sets()
     -- body="Tatenashi Harama +1",
   })
   sets.precast.WS["Howling Fist"].MaxTP = set_combine(sets.precast.WS["Howling Fist"], {
-    head="Kendatsuba Jinpachi +1",
+    head=gear.Adhemar_B_head,
     ear2="Brutal Earring",
   })
   sets.precast.WS["Howling Fist"].LowAcc = set_combine(sets.precast.WS["Howling Fist"], {
@@ -488,33 +521,35 @@ function init_gear_sets()
     ear2="Telos Earring",
   })
 
-  -- Dragon Kick: 50% STR / 50% DEX
-  sets.precast.WS['Dragon Kick'] = set_combine(sets.precast.WS["Raging Fists"], {
+  -- Dragon Kick: 50% STR / 50% DEX, ?-5 fTP, 1 hit
+  -- TP Bonus > Multihit > WSD
+  sets.precast.WS['Dragon Kick'] = set_combine(sets.precast.WS["Howling Fist"], {
     feet="Anchorite's Gaiters +3",
   })
-  sets.precast.WS['Dragon Kick'].MaxTP = set_combine(sets.precast.WS["Raging Fists"].MaxTP, {
+  sets.precast.WS['Dragon Kick'].MaxTP = set_combine(sets.precast.WS["Howling Fist"].MaxTP, {
     feet="Anchorite's Gaiters +3",
   })
-  sets.precast.WS['Dragon Kick'].LowAcc = set_combine(sets.precast.WS["Raging Fists"].LowAcc, {
+  sets.precast.WS['Dragon Kick'].LowAcc = set_combine(sets.precast.WS["Howling Fist"].LowAcc, {
     feet="Anchorite's Gaiters +3",
   })
-  sets.precast.WS['Dragon Kick'].LowAccMaxTP = set_combine(sets.precast.WS["Raging Fists"].LowAccMaxTP, {
+  sets.precast.WS['Dragon Kick'].LowAccMaxTP = set_combine(sets.precast.WS["Howling Fist"].LowAccMaxTP, {
     feet="Anchorite's Gaiters +3",
   })
-  sets.precast.WS['Dragon Kick'].MidAcc = set_combine(sets.precast.WS["Raging Fists"].MidAcc, {
+  sets.precast.WS['Dragon Kick'].MidAcc = set_combine(sets.precast.WS["Howling Fist"].MidAcc, {
     feet="Anchorite's Gaiters +3",
   })
-  sets.precast.WS['Dragon Kick'].MidAccMaxTP = set_combine(sets.precast.WS["Raging Fists"].MidAccMaxTP, {
+  sets.precast.WS['Dragon Kick'].MidAccMaxTP = set_combine(sets.precast.WS["Howling Fist"].MidAccMaxTP, {
     feet="Anchorite's Gaiters +3",
   })
-  sets.precast.WS['Dragon Kick'].HighAcc = set_combine(sets.precast.WS["Raging Fists"].HighAcc, {
+  sets.precast.WS['Dragon Kick'].HighAcc = set_combine(sets.precast.WS["Howling Fist"].HighAcc, {
     feet="Anchorite's Gaiters +3",
   })
-  sets.precast.WS['Dragon Kick'].HighAccMaxTP = set_combine(sets.precast.WS["Raging Fists"].HighAccMaxTP, {
+  sets.precast.WS['Dragon Kick'].HighAccMaxTP = set_combine(sets.precast.WS["Howling Fist"].HighAccMaxTP, {
     feet="Anchorite's Gaiters +3",
   })
 
-  -- Tornado Kick: 40% STR / 40% VIT
+  -- Tornado Kick: 40% STR / 40% VIT, 1.68-4.575 fTP, 3 hit
+  -- TP Bonus > Multihit > WSD
   sets.precast.WS['Tornado Kick'] = set_combine(sets.precast.WS["Howling Fist"], {
     feet="Anchorite's Gaiters +3",
   })
@@ -540,21 +575,23 @@ function init_gear_sets()
     feet="Anchorite's Gaiters +3",
   })
 
-  -- Spinning Attack: 100% STR
+  -- Spinning Attack: 100% STR, 1.0 fTP, 1 hit (aoe-physical)
+  -- Multihit > WSD
   sets.precast.WS['Spinning Attack'] = set_combine(sets.precast.WS, {
-    ammo="Aurgelmir Orb",
+    ammo="Knobkierrie",
     head=gear.Adhemar_B_head,
     body="Kendatsuba Samue +1",
     hands=gear.Adhemar_B_hands,
-    legs="Hizamaru Hizayoroi +2",
-    feet=gear.Herc_WSD_feet,
+    legs="Mpaca's Hose",
+    feet=gear.Herc_TA_feet,
     neck="Monk's Nodowa +2",
     ear1="Sherida Earring",
-    ear2="Telos Earring",
+    ear2="Brutal Earring",
     ring1="Gere Ring",
     ring2="Niqmaddu Ring",
     back=gear.MNK_STR_DA_Cape,
     waist="Moonbow Belt +1",
+    -- body="Tatenashi Harama +1",
   })
   sets.precast.WS["Spinning Attack"].MaxTP = set_combine(sets.precast.WS["Spinning Attack"], {
   })
@@ -564,10 +601,12 @@ function init_gear_sets()
   sets.precast.WS["Spinning Attack"].LowAccMaxTP = set_combine(sets.precast.WS["Spinning Attack"].LowAcc, {
   })
   sets.precast.WS["Spinning Attack"].MidAcc = set_combine(sets.precast.WS["Spinning Attack"].LowAcc, {
+    head="Mpaca's Cap",
   })
   sets.precast.WS["Spinning Attack"].MidAccMaxTP = set_combine(sets.precast.WS["Spinning Attack"].MidAcc, {
   })
   sets.precast.WS["Spinning Attack"].HighAcc = set_combine(sets.precast.WS["Spinning Attack"].MidAcc, {
+    head="Mpaca's Cap",
     ammo="Falcon Eye",
   })
   sets.precast.WS["Spinning Attack"].HighAccMaxTP = set_combine(sets.precast.WS["Spinning Attack"].HighAcc, {
@@ -578,7 +617,7 @@ function init_gear_sets()
     head="Nyame Helm", --30
     body="Nyame Mail", --30
     hands=gear.Leyline_Gloves, --30
-    legs=gear.Herc_MAB_legs, --33
+    legs="Nyame Flanchard", --30
     feet=gear.Herc_MAB_feet, --50
     neck="Baetyl Pendant", --13
     ear1="Friomisi Earring", --10
@@ -588,6 +627,8 @@ function init_gear_sets()
     waist="Eschan Stone", --7
   }
 
+  -- Cataclysm: 30% STR/30% INT, 2.75-5.0 fTP, 1 hit (aoe-magical)
+  -- Stack MAB > WSD
   sets.precast.WS['Cataclysm'] = set_combine(sets.precast.WS, sets.MAB, {
     -- head="Pixie Hairpin +1" -- 28 MAB
     ammo="Knobkierrie", -- 6 WSD
