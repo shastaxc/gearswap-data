@@ -449,7 +449,7 @@ function init_gear_sets()
     ear2="Brutal Earring",
   })
 
-  -- Howling Fist: 40% STR / 40% VIT
+  -- Howling Fist: 50% VIT / 20% STR
   sets.precast.WS['Howling Fist'] = set_combine(sets.precast.WS, {
     ammo="Knobkierrie",
     head="Mpaca's Cap",
@@ -465,7 +465,6 @@ function init_gear_sets()
     back=gear.MNK_STR_DA_Cape,
     waist="Moonbow Belt +1",
     -- body="Tatenashi Harama +1",
-    -- back=gear.MNK_VIT_WSD_Cape,
   })
   sets.precast.WS["Howling Fist"].MaxTP = set_combine(sets.precast.WS["Howling Fist"], {
     head="Kendatsuba Jinpachi +1",
