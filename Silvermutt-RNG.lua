@@ -514,8 +514,11 @@ function init_gear_sets()
     neck="Scout's Gorget +1",
     back=gear.RNG_WS1_Cape,
     waist="Eschan Stone",
+    -- head=gear.Nyame_C_head, -- Rank 15
+    -- body=gear.Nyame_C_body, -- Rank 15
     -- hands=gear.Nyame_C_hands, -- Rank 7+
-    -- ring1="Epaminondas's Ring",
+    -- legs=gear.Nyame_C_legs, -- Rank 15
+    -- feet=gear.Nyame_C_feet, -- Rank 15
     -- waist="Orpheus's Sash",
   } -- AGI / MAB
   sets.precast.WS["Trueflight"].MaxTP = set_combine(sets.precast.WS["Trueflight"], {

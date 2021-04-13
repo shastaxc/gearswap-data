@@ -280,10 +280,10 @@ function init_gear_sets()
 
   sets.MAB = {
     ammo="Seething Bomblet +1", --7 [0]
-    head=gear.Herc_MAB_head, --25 [38]
-    body=gear.Samnuha_body, --33 [63]
+    head="Nyame Helm", --30 [91]
+    body="Nyame Mail", --30 [136]
     hands=gear.Carmine_D_hands, --42 [27]
-    legs=gear.Herc_MAB_legs, --33 [38]
+    legs="Nyame Flanchard", --30 [114]
     feet=gear.Herc_MAB_feet, --50 [9]
     neck="Baetyl Pendant", --13 [0]
     ear1="Friomisi Earring", --10 [0]
@@ -291,9 +291,8 @@ function init_gear_sets()
     ring2="Shiva Ring +1", --3 [0]
     waist="Eschan Stone", --7 [20]
     back="Argochampsa Mantle", --12 [0]
-    -- body="Carm. Sc. Mail +1", --42 [96]
     -- hands=gear.Nyame_C_hands -- 30+ [91]; Rank 7+
-  } -- 188 MAB [195 HP, 245 w/ Enmity]
+  } -- 241 MAB [397 HP, ??? w/ Enmity]
 
   sets.precast.JA['Lunge'] = set_combine(sets.Enmity, sets.MAB)
   sets.precast.JA['Lunge'].Safe = sets.Enmity

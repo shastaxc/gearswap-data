@@ -554,20 +554,19 @@ function init_gear_sets()
 
   sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
     ammo="Pemphredo Tathlum", --4
-    head=gear.Herc_MAB_head, --25
-    body=gear.Samnuha_body, --33
+    head="Nyame Helm", --30
+    body="Nyame Mail", --30
     hands=gear.Leyline_Gloves, --30
-    legs=gear.Herc_MAB_legs, --43
+    legs="Nyame Flanchard", --30
     feet=gear.Herc_MAB_feet, --50
     neck="Baetyl Pendant", --13
     ear1="Friomisi Earring", --10
     ear2="Moonshade Earring",
     ring1="Shiva Ring +1", --3
-    ring2="Ilabrat Ring",
+    ring2="Defending Ring",
     back=gear.DNC_WS1_Cape,
     waist="Eschan Stone", --7
-    -- body=gear.Herc_MAB_body,
-    -- hands=gear.Herc_MAB_hands,
+    -- hands="Nyame Gauntlets", --30
     -- legs="Horos Tights +3", -- Use once Orpheus obtained
     -- ring2="Epaminondas's Ring",
     -- waist="Orpheus's Sash",

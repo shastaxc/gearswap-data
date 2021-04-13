@@ -576,7 +576,7 @@ function init_gear_sets()
   sets.MAB = {
     ammo="Pemphredo Tathlum", --4
     head="Nyame Helm", --30
-    body=gear.Samnuha_body, --33
+    body="Nyame Mail", --30
     hands=gear.Leyline_Gloves, --30
     legs=gear.Herc_MAB_legs, --33
     feet=gear.Herc_MAB_feet, --50
