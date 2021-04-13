@@ -453,7 +453,7 @@ function init_gear_sets()
     ear1="Sherida Earring",         --  5,  5, __, __
     ear2="Odr Earring",             -- __, 10, __, __
     ring1="Gere Ring",              -- 10, __, __, __
-    ring2="Epona's Ring",           -- __, __, __, __
+    ring2="Regal Ring",          -- 10, 10, __, __
     back=gear.DNC_TP_DA_Cape,       -- __, 30, __, __
     waist="Fotia Belt",             -- __, __, 10, __
     -- ammo="Aurgelmir Orb +1",     --  7,  7, __, __
@@ -463,7 +463,6 @@ function init_gear_sets()
     -- legs="Gleti's Greaves",      -- 49, __, __,  8
     -- feet=gear.Lustratio_D_feet,  -- 47, 48, __, __
     -- ear2="Mache Earring +1",     -- __,  8, __, __
-    -- ring2="Regal Ring",          -- 10, 10, __, __
     -- back=gear.DNC_WS2_Cape,      -- 30, __, __, __
     -- 250 STR, 207 DEX, 10 WSD, 42 PDL
   }) -- 165 STR, 228 DEX, 30 WSD, 10 PDL
@@ -1026,7 +1025,7 @@ function init_gear_sets()
   }
 
   sets.WeaponSet = {}
-  sets.WeaponSet['Normal'] = {main="Aeneas", sub="Taming Sari"}
+  sets.WeaponSet['Normal'] = {main="Twashtar", sub="Taming Sari"}
   sets.WeaponSet['H2H'] = {main="Kaja Knuckles", sub=empty}
   sets.WeaponSet['Fusion'] = {main="Demersal Degen +1", sub="Sleight Kukri"}
   sets.WeaponSet['Fast/DI'] = {main="Voluspa Knife", sub="Sleight Kukri"}

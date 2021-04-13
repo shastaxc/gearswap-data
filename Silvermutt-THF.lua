@@ -932,7 +932,7 @@ function init_gear_sets()
   }
 
   sets.WeaponSet = {}
-  sets.WeaponSet['Normal'] = {main="Aeneas", sub="Taming Sari"}
+  sets.WeaponSet['Normal'] = {main="Twashtar", sub="Taming Sari"}
   sets.WeaponSet['Cleaving'] = {main="Malevolence", sub="Malevolence"}
 end
 
