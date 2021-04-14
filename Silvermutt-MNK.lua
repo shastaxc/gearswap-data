@@ -634,7 +634,7 @@ function init_gear_sets()
   -- Cataclysm: 30% STR/30% INT, 2.75-5.0 fTP, 1 hit (aoe-magical)
   -- Stack MAB > WSD
   sets.precast.WS['Cataclysm'] = set_combine(sets.precast.WS, sets.MAB, {
-    -- head="Pixie Hairpin +1" -- 28 MAB
+    head="Pixie Hairpin +1", -- 28 MAB
     ammo="Knobkierrie", -- 6 WSD
     ring2="Archon Ring", -- 5 MAB
   }) -- STR 30% / INT 30% + MAB
