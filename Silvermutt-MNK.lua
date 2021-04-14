@@ -263,18 +263,19 @@ function init_gear_sets()
   -- Default set for any weaponskill that isn't any more specifically defined
   sets.precast.WS = {
     ammo="Knobkierrie",
-    head=gear.Adhemar_B_head,
+    head="Mpaca's Cap",
     body="Kendatsuba Samue +1",
-    hands=gear.Adhemar_B_hands,
+    hands=gear.Herc_TA_hands,
     legs="Mpaca's Hose",
-    feet=gear.Herc_WSD_feet,
-    neck="Monk's Nodowa +2",
+    feet=gear.Herc_TA_feet,
+    neck="Fotia Gorget",
     ear1="Sherida Earring",
-    ear2="Brutal Earring",
+    ear2="Moonshade Earring",
     ring1="Gere Ring",
     ring2="Niqmaddu Ring",
     back=gear.MNK_STR_DA_Cape,
     waist="Moonbow Belt +1",
+    -- body="Tatenashi Harama +1",
   } -- Base WS set
 
   -- Victory Smite: 80% STR, 1.5 fTP, 4 hit, can crit
@@ -625,6 +626,9 @@ function init_gear_sets()
     ring1="Shiva Ring +1", --3
     back="Argochampsa Mantle", --12
     waist="Eschan Stone", --7
+    -- hands="Nyame Gauntlets", --30
+    -- back=gear.MNK_MAB_Cape, --10
+    -- waist="Skrymir Cord +1", --7
   }
 
   -- Cataclysm: 30% STR/30% INT, 2.75-5.0 fTP, 1 hit (aoe-magical)
@@ -868,7 +872,11 @@ function init_gear_sets()
   sets.WeaponSet['Verethragna'] = {main="Verethragna"}
   sets.WeaponSet['Piercing'] = {main="Birdbanes"}
   sets.WeaponSet['Slashing'] = {main="Vampiric Claws"}
-  sets.WeaponSet['Cleaving'] = {main="Reikikon", sub="Alber Strap"}
+  sets.WeaponSet['Cleaving'] = {
+    main="Reikikon",
+    sub="Alber Strap"
+    -- main="Xoanon",
+  }
 end
 
 -------------------------------------------------------------------------------------------------------------------

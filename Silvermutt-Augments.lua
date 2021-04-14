@@ -163,6 +163,7 @@ gear.DNC_WS3_Cape = {name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Att
 gear.MNK_DEX_DA_Cape = { name="Segomo's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Mag. Evasion+15',}}
 gear.MNK_STR_DA_Cape = { name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Mag. Evasion+15',}}
 gear.MNK_STR_Crit_Cape = { name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Crit.hit rate+10','Phys. dmg. taken-10%',}}
+-- gear.MNK_MAB_Cape = {} -- 30 INT, 10 MAB, 20 m.acc/m.dmg
 
 gear.SAM_STR_WSD_Cape = {} -- 30 STR, 20 Acc/Att, 10% WSD
 gear.SAM_TP_Cape = {} -- 20 DEX, 30 Acc/Att, 10 DA
