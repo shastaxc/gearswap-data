@@ -239,7 +239,7 @@ function init_gear_sets()
     -- head=gear.Rao_A_head,
     -- hands="Wakido Kote +3",
   })
-  sets.precast.WS["achi: Fudo"].LowAccMaxTP = set_combine(sets.precast.WS["Tachi: Fudo"].LowAcc, {
+  sets.precast.WS["Tachi: Fudo"].LowAccMaxTP = set_combine(sets.precast.WS["Tachi: Fudo"].LowAcc, {
     ear2="Telos Earring",
   })
   sets.precast.WS["Tachi: Fudo"].MidAcc = set_combine(sets.precast.WS["Tachi: Fudo"].LowAcc, {
