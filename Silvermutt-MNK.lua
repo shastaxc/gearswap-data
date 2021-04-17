@@ -772,75 +772,15 @@ function init_gear_sets()
   ---------------------------------------- Special Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
 
-  -- Hundred Fists/Impetus/Counterstance melee set mods
-  sets.engaged.HF = set_combine(sets.engaged)
-  sets.engaged.Impetus = set_combine(sets.engaged, {
-    body="Bhikku Cyclas +1",
-  })
-  sets.engaged.Counterstance = set_combine(sets.engaged, {
-    feet="Hesychast's Gaiters +3",
-  })
-  sets.engaged.HF.Impetus = set_combine(sets.engaged.HF, {
-    body="Bhikku Cyclas +1",
-  })
-  sets.engaged.Impetus.Counterstance = set_combine(sets.engaged.Impetus, {
-    feet="Hesychast's Gaiters +3",
-  })
-  sets.engaged.LowAcc.HF = set_combine(sets.engaged.LowAcc)
-  sets.engaged.LowAcc.Impetus = set_combine(sets.engaged.LowAcc, {
-    body="Bhikku Cyclas +1",
-  })
-  sets.engaged.LowAcc.Counterstance = set_combine(sets.engaged.LowAcc, {
-    feet="Hesychast's Gaiters +3",
-  })
-  sets.engaged.LowAcc.HF.Impetus = set_combine(sets.engaged.LowAcc.HF, {
-    body="Bhikku Cyclas +1",
-  })
-  sets.engaged.LowAcc.HF.Counterstance = set_combine(sets.engaged.LowAcc.HF, {
-    feet="Hesychast's Gaiters +3",
-  })
-  sets.engaged.LowAcc.Impetus.Counterstance = set_combine(sets.engaged.LowAcc.Impetus, {
-    feet="Hesychast's Gaiters +3",
-  })
-  sets.engaged.MidAcc.HF = set_combine(sets.engaged.MidAcc)
-  sets.engaged.MidAcc.Impetus = set_combine(sets.engaged.MidAcc, {
-    body="Bhikku Cyclas +1",
-  })
-  sets.engaged.MidAcc.Counterstance = set_combine(sets.engaged.MidAcc, {
-    feet="Hesychast's Gaiters +3",
-  })
-  sets.engaged.MidAcc.HF.Impetus = set_combine(sets.engaged.MidAcc.HF, {
-    body="Bhikku Cyclas +1",
-  })
-  sets.engaged.MidAcc.HF.Counterstance = set_combine(sets.engaged.MidAcc.HF, {
-    feet="Hesychast's Gaiters +3",
-  })
-  sets.engaged.MidAcc.Impetus.Counterstance = set_combine(sets.engaged.MidAcc.Impetus, {
-    feet="Hesychast's Gaiters +3",
-  })
-  sets.engaged.HighAcc.HF = set_combine(sets.engaged.HighAcc)
-  sets.engaged.HighAcc.Impetus = set_combine(sets.engaged.HighAcc, {
-    body="Bhikku Cyclas +1",
-  })
-  sets.engaged.HighAcc.Counterstance = set_combine(sets.engaged.HighAcc, {
-    feet="Hesychast's Gaiters +3",
-  })
-  sets.engaged.HighAcc.HF.Impetus = set_combine(sets.engaged.HighAcc.HF, {
-    body="Bhikku Cyclas +1",
-  })
-  sets.engaged.HighAcc.HF.Counterstance = set_combine(sets.engaged.HighAcc.HF, {
-    feet="Hesychast's Gaiters +3",
-  })
-  sets.engaged.HighAcc.Impetus.Counterstance = set_combine(sets.engaged.HighAcc.Impetus, {
-    feet="Hesychast's Gaiters +3",
-  })
-
   -- Quick sets for post-precast adjustments, listed here so that the gear can be Validated.
   sets.impetus_body = {
-    body="Bhikku Cyclas +1"
+    body="Bhikku Cyclas +1",
+  }
+  sets.counter_feet = {
+    feet="Hesychast's Gaiters +3",
   }
   sets.footwork_kick_feet = {
-    feet="Anchorite's Gaiters +3"
+    feet="Anchorite's Gaiters +3",
   }
   sets.buff.Doom = {
     neck="Nicander's Necklace", --20
@@ -1003,7 +943,7 @@ function job_buff_change(buff,gain)
   end
 
   -- Hundred Fists and Impetus modify the custom melee groups
-  if buff == "Hundred Fists" or buff == "Impetus" then
+  if buff == "Hundred Fists" or buff == "Impetus" or buff == "Counterstance" then
     classes.CustomMeleeGroups:clear()
 
     if (buff == "Hundred Fists" and gain) or buffactive['hundred fists'] then
@@ -1026,7 +966,7 @@ function job_buff_change(buff,gain)
   end
 
   -- Update gear for these specific buffs
-  if buff == "Hundred Fists" or buff == "Impetus" or buff == "Footwork" or buff == "doom" or buff == "Boost" then
+  if buff == "Hundred Fists" or buff == "Impetus" or buff == "Counterstance" or buff == "Footwork" or buff == "doom" or buff == "Boost" then
     status_change(player.status)
   end
 
@@ -1207,6 +1147,27 @@ function customize_melee_set(meleeSet)
   end
   if state.CP.current == 'on' then
     meleeSet = set_combine(meleeSet, sets.CP)
+  end
+  if state.DefenseMode.value == 'None' then
+    if state.HybridMode.value == "Normal" then
+      -- Override sets to ensure impetus body is equipped if Impetus is up
+      if buffactive.Impetus then
+        meleeSet = set_combine(meleeSet, sets.impetus_body)
+      end
+      -- Override sets to ensure counterstance feet are equipped if Counterstance is up
+      if buffactive.Counterstance then
+        meleeSet = set_combine(meleeSet, sets.counter_feet)
+      end
+        -- Override sets to ensure footwork feet are equipped if Footwork is up
+      if buffactive.Footwork then
+        meleeSet = set_combine(meleeSet, sets.footwork_kick_feet)
+      end
+    elseif state.HybridMode.value == 'LightDef' then
+      -- Override set to ensure impetus body but also increase defense
+      meleeSet = set_combine(meleeSet, sets.impetus_body, {
+        ring1="Defending Ring",
+      })
+    end
   end
 
   -- If slot is locked to use no-swap gear, keep it equipped
