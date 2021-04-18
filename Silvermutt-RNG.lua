@@ -296,34 +296,33 @@ function init_gear_sets()
     -- legs="Orion Braccae +3",    -- 15/__
     -- neck="Scout's Gorget +2"    -- 4/__
     --60 Snapshot / 11 Rapid Shot; -7% delay
-  } --56 Snapshot / 11 Rapid Shot
+  } --56 Snapshot / 11 Rapid Shot; -7% delay
 
   -- (15% Flurry, 10% Snapshot, 5% Rapid from Merits)
   sets.precast.RA.Flurry1 = {
     head="Orion Beret +3",      -- __/18
     body="Amini Caban +1",      -- __/__; -7% ranged aiming delay
     hands=gear.Carmine_D_hands, --  8/11
+    legs=gear.Adhemar_D_legs,   -- 10/13
     feet="Meg. Jam. +2",        -- 10/__
     neck="Scout's Gorget +1",   --  3/__
     back=gear.RNG_SNP_Cape,     -- 10/__
     waist="Impulse Belt",       --  3/__
-    -- legs=gear.Adhemar_D_legs,   -- 10/13
     -- neck="Scout's Gorget +2",   --  4/__
-    --45 Snapshot / 42 Rapid Shot
-  } --44 Snapshot / 11 Rapid Shot
+    --45 Snapshot / 42 Rapid Shot; -7% delay
+  } --44 Snapshot / 42 Rapid Shot; -7% delay
 
   -- (30% Flurry, 10% Snapshot, 5% Rapid from Merits)
   sets.precast.RA.Flurry2 = {
     head="Orion Beret +3",      -- __/18
     body="Amini Caban +1",      -- __/__; -7% ranged aiming delay
     hands=gear.Carmine_D_hands, --  8/11
+    legs=gear.Adhemar_D_legs,   -- 10/13
     feet="Arcadian Socks +3",   -- __/10
     neck="Scout's Gorget +1",   --  3/__
     back=gear.RNG_SNP_Cape,     -- 10/__
     waist="Yemaya Belt",        -- __/ 5
-    -- legs=gear.Adhemar_D_legs,   -- 10/13
-    --31 Snapshot / 57 Rapid Shot
-  } --24 Snapshot / 39 Rapid Shot
+  } --31 Snapshot / 57 Rapid Shot; -7% delay
 
   -- Gastra has 10 Snapshot
   sets.precast.RA.Gastra = set_combine(sets.precast.RA, {
@@ -333,7 +332,7 @@ function init_gear_sets()
     feet="Arcadian Socks +3", -- __/10
   })
   sets.precast.RA.Gastra.Flurry2 = set_combine(sets.precast.RA.Flurry2, {
-    -- legs=gear.Pursuers_A_legs, -- __/19
+    legs=gear.Pursuers_A_legs, -- __/19
   })
 
 
