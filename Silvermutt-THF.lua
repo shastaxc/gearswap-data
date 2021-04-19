@@ -502,14 +502,14 @@ function init_gear_sets()
     hands="Malignance Gloves",  --  5/ 5, 112
     legs="Malignance Tights",   --  7/ 7, 150
     feet="Malignance Boots",    --  4/ 4, 150
-    neck="Loricate Torque",     --  5/ 5, ___
+    neck="Loricate Torque +1",  --  6/ 6, ___
     ear1="Eabani Earring",      -- __/__,   8
     ear2="Odnowa Earring +1",   --  3/ 5, ___
     ring1="Chirich Ring +1",    -- __/__, ___
     ring2="Defending Ring",     -- 10/10, ___
     back=gear.THF_TP_Cape,      -- __/__, ___
     waist="Engraved Belt",      -- __/__, ___
-  } --53 PDT/55 MDT, 682 MEVA
+  } --54 PDT/56 MDT, 682 MEVA
 
   sets.defense.PDT = sets.HeavyDef
   sets.defense.MDT = sets.HeavyDef
@@ -560,11 +560,11 @@ function init_gear_sets()
   sets.idle.LightDef.Regain.Regen.Refresh = set_combine(sets.idle.Regain.Regen.Refresh, sets.LightDef)
 
   sets.idle.Weak = set_combine(sets.HeavyDef, {
-    neck="Loricate Torque",     --  5/ 5, ___
+    neck="Loricate Torque +1",  --  6/ 6, ___
     ring1="Gelatinous Ring +1", --  7/-1, ___
     ring2="Moonlight Ring",     --  5/ 5, ___
     -- back="Moonlight Cape",      --  6/ 6, ___
-  }) --60 PDT/54 MDT, 682 MEVA
+  }) --61 PDT/55 MDT, 682 MEVA
   
 
   ------------------------------------------------------------------------------------------------

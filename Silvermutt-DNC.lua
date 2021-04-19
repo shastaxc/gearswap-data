@@ -483,19 +483,32 @@ function init_gear_sets()
   })
 
   sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
-    ammo="Charis Feather",
-    head=gear.Adhemar_B_head,
-    body="Meghanada Cuirie +2",
-    hands="Mummu Wrists +2",
-    legs=gear.Lustratio_B_legs,
-    feet=gear.Herc_DEX_CritDmg_feet,
-    neck="Fotia Gorget",
-    ear1="Sherida Earring",
-    ear2="Odr Earring",
-    ring1="Ilabrat Ring",
-    ring2="Regal Ring",
-    back=gear.DNC_TP_DA_Cape,
-    waist="Fotia Belt",
+    -- ammo="Charis Feather",
+    -- head=gear.Adhemar_B_head,
+    -- body="Meghanada Cuirie +2",
+    -- hands="Mummu Wrists +2",
+    -- legs=gear.Lustratio_B_legs,
+    -- feet=gear.Herc_DEX_CritDmg_feet,
+    -- neck="Fotia Gorget",
+    -- ear1="Sherida Earring",
+    -- ear2="Odr Earring",
+    -- ring1="Ilabrat Ring",
+    -- ring2="Regal Ring",
+    -- back=gear.DNC_TP_DA_Cape,
+    -- waist="Fotia Belt",
+    ammo=empty,
+    head=empty,
+    body=empty,
+    hands=empty,
+    legs=empty,
+    feet=empty,
+    neck=empty,
+    ear1=empty,
+    ear2=empty,
+    ring1=empty,
+    ring2=empty,
+    back=empty,
+    waist=empty,
     -- back=gear.DNC_WS3_Cape,
   }) -- 50% DEX
   sets.precast.WS['Evisceration'].MaxTP = set_combine(sets.precast.WS['Evisceration'], {
@@ -677,11 +690,11 @@ function init_gear_sets()
   sets.idle.LightDef.Regain.Regen.Refresh = set_combine(sets.idle.Regain.Regen.Refresh, sets.LightDef)
 
   sets.idle.Weak = set_combine(sets.HeavyDef, {
-    neck="Loricate Torque",     --  5/ 5, ___
+    neck="Loricate Torque +1",  --  6/ 6, ___
     ring1="Gelatinous Ring +1", --  7/-1, ___
     ring2="Moonlight Ring",     --  5/ 5, ___
     -- back="Moonlight Cape",      --  6/ 6, ___
-  }) --60 PDT/54 MDT, 791 MEVA
+  }) --61 PDT/55 MDT, 791 MEVA
   
 
   ------------------------------------------------------------------------------------------------
