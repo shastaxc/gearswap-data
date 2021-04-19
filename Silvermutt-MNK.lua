@@ -55,8 +55,6 @@ function job_setup()
   state.Buff.Footwork = buffactive.Footwork or false
   state.Buff.Impetus = buffactive.Impetus or false
 
-  state.FootworkWS = M(false, 'Footwork on WS')
-
   info.impetus_hit_count = 0 -- Do not modify
   info.boost_temp_lock = false -- Do not modify
   windower.raw_register_event('action', on_action_for_impetus)
@@ -773,15 +771,36 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   -- Quick sets for post-precast adjustments, listed here so that the gear can be Validated.
-  sets.impetus_body = {
+  sets.Special = {}
+  sets.Special.Impetus = {
     body="Bhikku Cyclas +1",
   }
-  sets.counter_feet = {
+  sets.Special.Impetus.Safe = {
+    body="Bhikku Cyclas +1",
+    ring1="Defending Ring",
+  }
+  sets.Special.Counterstance = {
     feet="Hesychast's Gaiters +3",
   }
-  sets.footwork_kick_feet = {
+  sets.Special.Footwork = {
     feet="Anchorite's Gaiters +3",
   }
+  sets.Special.Footwork.Safe = {
+    feet="Anchorite's Gaiters +3",
+    ring1="Defending Ring",
+  }
+  sets.Special.ImpetusAndFootwork = {
+    body="Bhikku Cyclas +1",
+    feet="Anchorite's Gaiters +3",
+  }
+  sets.Special.ImpetusAndFootwork.Safe = {
+    head="Nyame Helm",          --  7/ 7, 123
+    body="Bhikku Cyclas +1",
+    feet="Anchorite's Gaiters +3",
+    ring1="Defending Ring",
+    -- head="Malignance Chapeau",
+  }
+
   sets.buff.Doom = {
     neck="Nicander's Necklace", --20
     ring2="Eshmun's Ring", --20
@@ -857,10 +876,10 @@ function job_post_precast(spell, action, spellMap, eventArgs)
       -- Need 6 hits at capped dDex, or 9 hits if dDex is uncapped, for Tantra to tie or win.
       if (state.OffenseMode.current ~= 'MidAcc' and state.OffenseMode.current ~= 'HighAcc' and info.impetus_hit_count > 5)
           or (info.impetus_hit_count > 8) then
-        equip(sets.impetus_body)
+        equip(sets.Special.Impetus)
       end
     elseif state.Buff.Footwork and (spell.english == "Dragon's Kick" or spell.english == "Tornado Kick") then
-      equip(sets.footwork_kick_feet)
+      equip(sets.Special.Footwork)
     end
     -- Equip obi if weather/day matches for WS.
     if elemental_ws:contains(spell.english) then
@@ -915,9 +934,6 @@ function job_aftercast(spell, action, spellMap, eventArgs)
         info.boost_temp_lock = false
     end, 3)
   end
-  -- if spell.type == 'WeaponSkill' and not spell.interrupted and state.FootworkWS and state.Buff.Footwork then
-  --   send_command('cancel Footwork')
-  -- end
 end
 
 -- Handle notifications of general user state change.
@@ -1150,24 +1166,33 @@ function customize_melee_set(meleeSet)
   end
   if state.DefenseMode.value == 'None' then
     if state.HybridMode.value == "Normal" then
-      -- Override sets to ensure impetus body is equipped if Impetus is up
-      if buffactive.Impetus then
-        meleeSet = set_combine(meleeSet, sets.impetus_body)
-      end
-      -- Override sets to ensure counterstance feet are equipped if Counterstance is up
-      if buffactive.Counterstance then
-        meleeSet = set_combine(meleeSet, sets.counter_feet)
-      end
+      if buffactive.Impetus and buffactive.Footwork then
+        -- Override sets to ensure impetus and footwork gear are equipped
+        meleeSet = set_combine(meleeSet, sets.Special.ImpetusAndFootwork)
+      elseif buffactive.Impetus then
+        -- Override sets to ensure impetus body is equipped if Impetus is up
+        meleeSet = set_combine(meleeSet, sets.Special.Impetus)
+      elseif buffactive.Footwork then
         -- Override sets to ensure footwork feet are equipped if Footwork is up
-      if buffactive.Footwork then
-        meleeSet = set_combine(meleeSet, sets.footwork_kick_feet)
+        meleeSet = set_combine(meleeSet, sets.Special.Footwork)
       end
     elseif state.HybridMode.value == 'LightDef' then
-      -- Override set to ensure impetus body but also increase defense
-      meleeSet = set_combine(meleeSet, sets.impetus_body, {
-        ring1="Defending Ring",
-      })
+      if buffactive.Impetus and buffactive.Footwork then
+        -- Override set to ensure Impetus and Footwork gear equipped but also increase defense
+        meleeSet = set_combine(meleeSet, sets.Special.ImpetusAndFootwork.Safe)
+      elseif buffactive.Impetus then
+        -- Override set to ensure Impetus gear equipped but also increase defense
+        meleeSet = set_combine(meleeSet, sets.Special.Impetus.Safe)
+      elseif buffactive.Footwork then
+        -- Override set to ensure Footwork gear equipped but also increase defense
+        meleeSet = set_combine(meleeSet, sets.Special.Footwork.Safe)
+      end
     end
+  end
+
+  -- Override sets to ensure counterstance feet are equipped if Counterstance is up
+  if buffactive.Counterstance then
+    meleeSet = set_combine(meleeSet, sets.Special.Counterstance)
   end
 
   -- If slot is locked to use no-swap gear, keep it equipped
