@@ -100,7 +100,7 @@ function job_setup()
   state.RearmingLock = M(false, 'Rearming Lock')
   state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger',
       'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
-  state.WeaponSet = M{['description']='Weapon Set', 'Normal', 'Cleaving'}
+  state.WeaponSet = M{['description']='Weapon Set', 'Normal', 'Acc', 'Cleaving'}
 
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c usekey')
@@ -933,7 +933,8 @@ function init_gear_sets()
   }
 
   sets.WeaponSet = {}
-  sets.WeaponSet['Normal'] = {main="Twashtar", sub="Taming Sari"}
+  sets.WeaponSet['Normal'] = {main="Twashtar", sub="Centovente"}
+  sets.WeaponSet['Acc'] = {main="Twashtar", sub="Taming Sari"}
   sets.WeaponSet['Cleaving'] = {main="Malevolence", sub="Malevolence"}
 end
 

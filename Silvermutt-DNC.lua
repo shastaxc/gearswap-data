@@ -98,7 +98,7 @@ function job_setup()
   state.Buff['Climactic Flourish'] = buffactive['climactic flourish'] or false
   state.Buff['Sneak Attack'] = buffactive['sneak attack'] or false
 
-  state.WeaponSet = M{['description']='Weapon Set', 'Normal', 'H2H', 'Fusion', 'Fast/DI'}
+  state.WeaponSet = M{['description']='Weapon Set', 'Normal', 'Acc', 'H2H', 'Fast/DI'}
   state.MainStep = M{['description']='Main Step', 'Box Step', 'Quickstep', 'Feather Step', 'Stutter Step'}
   state.AltStep = M{['description']='Alt Step', 'Quickstep', 'Feather Step', 'Stutter Step', 'Box Step'}
   state.UseAltStep = M(false, 'Use Alt Step')
@@ -483,32 +483,19 @@ function init_gear_sets()
   })
 
   sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
-    -- ammo="Charis Feather",
-    -- head=gear.Adhemar_B_head,
-    -- body="Meghanada Cuirie +2",
-    -- hands="Mummu Wrists +2",
-    -- legs=gear.Lustratio_B_legs,
-    -- feet=gear.Herc_DEX_CritDmg_feet,
-    -- neck="Fotia Gorget",
-    -- ear1="Sherida Earring",
-    -- ear2="Odr Earring",
-    -- ring1="Ilabrat Ring",
-    -- ring2="Regal Ring",
-    -- back=gear.DNC_TP_DA_Cape,
-    -- waist="Fotia Belt",
-    ammo=empty,
-    head=empty,
-    body=empty,
-    hands=empty,
-    legs=empty,
-    feet=empty,
-    neck=empty,
-    ear1=empty,
-    ear2=empty,
-    ring1=empty,
-    ring2=empty,
-    back=empty,
-    waist=empty,
+    ammo="Charis Feather",
+    head=gear.Adhemar_B_head,
+    body="Meghanada Cuirie +2",
+    hands="Mummu Wrists +2",
+    legs=gear.Lustratio_B_legs,
+    feet=gear.Herc_DEX_CritDmg_feet,
+    neck="Fotia Gorget",
+    ear1="Sherida Earring",
+    ear2="Odr Earring",
+    ring1="Ilabrat Ring",
+    ring2="Regal Ring",
+    back=gear.DNC_TP_DA_Cape,
+    waist="Fotia Belt",
     -- back=gear.DNC_WS3_Cape,
   }) -- 50% DEX
   sets.precast.WS['Evisceration'].MaxTP = set_combine(sets.precast.WS['Evisceration'], {
@@ -1037,9 +1024,9 @@ function init_gear_sets()
   }
 
   sets.WeaponSet = {}
-  sets.WeaponSet['Normal'] = {main="Twashtar", sub="Taming Sari"}
+  sets.WeaponSet['Normal'] = {main="Twashtar", sub="Centovente"}
+  sets.WeaponSet['Acc'] = {main="Twashtar", sub="Taming Sari"}
   sets.WeaponSet['H2H'] = {main="Kaja Knuckles", sub=empty}
-  sets.WeaponSet['Fusion'] = {main="Demersal Degen +1", sub="Sleight Kukri"}
   sets.WeaponSet['Fast/DI'] = {main="Voluspa Knife", sub="Sleight Kukri"}
 end
 
