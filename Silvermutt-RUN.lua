@@ -726,8 +726,6 @@ function init_gear_sets()
     ear1="Odnowa Earring +1",   --  3/ 5, ___ [110]
     ring2="Defending Ring",     -- 10/10, ___ [___]
     back=gear.RUN_HPD_Cape,     -- 10/__,  20 [ 80]
-    -- body="Ashera Harness",        --  7/ 7,  96 [182]
-    -- ring1="Moonlight Ring",       --  5/ 5, ___ [110]
     -- back=gear.RUN_TP_Cape,        -- 10/__, ___ [___]
     --48 PDT / 35 MDT, 369 MEVA [787 HP]
   } --50 PDT / 42 MDT, 432 MEVA [601 HP]
@@ -760,7 +758,7 @@ function init_gear_sets()
   -- MDT cap is 50%, Shell V = 29%
   sets.defense.MDT = {
     sub="Utu Grip",               -- __/__, ___ [ 70]
-    ammo="Staunch Tathlum +1",    --  3/ 3, ___ [___]
+    ammo="Yamarang",              -- __/__,  15 [___]
     head="Nyame Helm",            --  7/ 7, 123 [ 91]
     body="Nyame Mail",            --  9/ 9, 139 [136]
     hands="Turms Mittens",        -- __/__,  91 [ 59]
@@ -779,8 +777,8 @@ function init_gear_sets()
     -- ear2="Sanare Earring",     -- __/__,   6 [___]; M. Def Bonus+4
     -- ring1="Moonlight Ring",    --  5/ 5, ___ [110]
     -- back=gear.RUN_HPME_Cape,   -- __/__,  45 [ 60]
-    --54 PDT / 40 MDT, 754 MEVA [983 HP]
-  } --53 PDT / 32 MDT, 673 MEVA [993 HP]
+    --51 PDT / 37 MDT, 769 MEVA [983 HP]
+  } --50 PDT / 29 MDT, 688 MEVA [993 HP]
 
   sets.defense.Parry = {
     hands="Turms Mittens", --Parry: Recover HP+75
