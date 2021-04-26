@@ -1117,6 +1117,7 @@ function init_gear_sets()
 
   sets.resting = set_combine(sets.idle, {
     main="Chatoyant Staff",
+    sub=empty
     -- waist="Shinjutsu-no-Obi +1",
   })
 
@@ -1138,7 +1139,7 @@ function init_gear_sets()
     -- ear1="Cessance Earring",
     -- ear2="Telos Earring",
     -- ring1="Hetairoi Ring",
-    -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
+    -- ring2="Chirich Ring +1",
     -- back="Relucent Cape",
     -- waist="Windbuffet Belt +1",
   }
@@ -1189,8 +1190,7 @@ function init_gear_sets()
 
   sets.buff.Doom = {
     -- neck="Nicander's Necklace", --20
-    -- ring1={name="Eshmun's Ring", bag="wardrobe3"}, --20
-    -- ring2={name="Eshmun's Ring", bag="wardrobe4"}, --20
+    -- ring1="Eshmun's Ring", --20
     -- waist="Gishdubar Sash", --10
   }
 

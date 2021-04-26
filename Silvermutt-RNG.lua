@@ -85,6 +85,12 @@ function job_setup()
     ['Fomalhaut'] = "gun",
   }
 
+  sets.org.job[1] = {ammo="Chrono Bullet"}
+  sets.org.job[2] = {ammo="Eminent Arrow"}
+  sets.org.job[3] = {ammo="Quelling Bolt"}
+  sets.org.job[4] = {ammo="Quelling bolt quiver"}
+  sets.org.job[5] = {ammo="Chrono bullet pouch"}
+  
   DefaultAmmo = {
     ['Yoichinoyumi'] = "Chrono Arrow",
     ['Gandiva'] = "Chrono Arrow",
@@ -332,7 +338,7 @@ function init_gear_sets()
     feet="Arcadian Socks +3", -- __/10
   })
   sets.precast.RA.Gastra.Flurry2 = set_combine(sets.precast.RA.Flurry2, {
-    legs=gear.Pursuers_A_legs, -- __/19
+    legs=gear.Pursuer_A_legs, -- __/19
   })
 
 
@@ -751,6 +757,7 @@ function init_gear_sets()
   sets.DoubleShot = {
     head="Arcadian Beret +2",
     body="Arcadian Jerkin +3",
+    hands="Oshosi Gloves", -- 4
     legs="Oshosi Trousers", --6
     feet="Oshosi Leggings", --3
     -- head="Arcadian Beret +3",
@@ -1160,6 +1167,11 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Special Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
+
+  sets.Special = {}
+  sets.Special.HauksbokArrow = {
+    ammo="Hauksbok Arrow"
+  }
 
   sets.buff.Barrage = {
     hands="Orion Bracers +3"
@@ -1779,8 +1791,7 @@ function check_ammo(spell, action, spellMap, eventArgs)
         -- If ranged weapon set to sparrowhawk and using non-ranged WS, equip WSD ammo
         local rweapon = state.RangedWeaponSet.current
         if rweapon and rweapon:length() >= 11 and rweapon:startswith('Sparrowhawk') then
-          swapped_ammo = "Hauksbok Arrow"
-          equip({ammo=swapped_ammo})
+          equip(sets.Special.HauksbokArrow)
         end
       end
     end

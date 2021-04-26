@@ -98,7 +98,7 @@ function job_setup()
   state.Buff['Climactic Flourish'] = buffactive['climactic flourish'] or false
   state.Buff['Sneak Attack'] = buffactive['sneak attack'] or false
 
-  state.WeaponSet = M{['description']='Weapon Set', 'Normal', 'Acc', 'H2H', 'Fast/DI'}
+  state.WeaponSet = M{['description']='Weapon Set', 'Normal', 'Acc', 'H2H', 'Fusion', 'Fast/DI'}
   state.MainStep = M{['description']='Main Step', 'Box Step', 'Quickstep', 'Feather Step', 'Stutter Step'}
   state.AltStep = M{['description']='Alt Step', 'Quickstep', 'Feather Step', 'Stutter Step', 'Box Step'}
   state.UseAltStep = M(false, 'Use Alt Step')
@@ -1027,6 +1027,7 @@ function init_gear_sets()
   sets.WeaponSet['Normal'] = {main="Twashtar", sub="Centovente"}
   sets.WeaponSet['Acc'] = {main="Twashtar", sub="Taming Sari"}
   sets.WeaponSet['H2H'] = {main="Kaja Knuckles", sub=empty}
+  sets.WeaponSet['Fusion'] = {main="Demersal Degen +1", sub="Ternion Dagger +1"}
   sets.WeaponSet['Fast/DI'] = {main="Voluspa Knife", sub="Sleight Kukri"}
 end
 
