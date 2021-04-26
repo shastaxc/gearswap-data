@@ -90,7 +90,7 @@ end
 -- Executes on first load and main job change
 function job_setup()
   silibs.use_weapon_rearm = true
-  rayke_duration = 34
+  rayke_duration = 46
   gambit_duration = 92
 
   runes.element_of = {['Lux']='Light', ['Tenebrae']='Dark', ['Ignis']='Fire', ['Gelus']='Ice', ['Flabra']='Wind',
