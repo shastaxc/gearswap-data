@@ -56,7 +56,7 @@ function job_setup()
   state.RearmingLock = M(false, 'Rearming Lock')
   state.CP = M(false, "Capacity Points Mode")
   state.ToyWeapons = M{['description']='Toy Weapons','None','GreatKatana','Staff','Polearm','GreatSword','Scythe'}
-  state.WeaponSet = M{['description']='Weapon Set', 'Masa', 'Doji', 'Shining One'}
+  state.WeaponSet = M{['description']='Weapon Set', 'Temp', 'Masa', 'Doji', 'Shining One'}
 
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c usekey')
@@ -157,6 +157,7 @@ function init_gear_sets()
   }
 
   sets.precast.JA['Warding Circle'] = {
+    head="Wakido Kabuto +1",
     -- head="Wakido Kabuto +3",
   }
 
@@ -165,10 +166,12 @@ function init_gear_sets()
   }
 
   sets.precast.JA['Hasso'] = {
+    hands="Wakido Kote +1",
     -- hands="Wakido Kote +3",
   }
 
   sets.precast.JA['Meditate'] = {
+    head="Wakido Kabuto +1",
     back="Smertrios's Mantle",
     -- head="Wakido Kabuto +3",
     -- hands="Sakonji Kote +3",
@@ -224,6 +227,7 @@ function init_gear_sets()
   sets.precast.WS = {
     ammo="Knobkierrie",
     head="Mpaca's cap",
+    legs="Wakido Haidate +1",
     neck="Samurai's Nodowa +2",
     ear2="Moonshade Earring",
     ring1="Regal Ring",
@@ -243,6 +247,7 @@ function init_gear_sets()
     ear2="Ishvara Earring",
   })
   sets.precast.WS["Tachi: Fudo"].LowAcc = set_combine(sets.precast.WS["Tachi: Fudo"], {
+    hands="Wakido Kote +1",
     ring1="Regal Ring",
     -- head=gear.Rao_A_head,
     -- hands="Wakido Kote +3",
@@ -319,6 +324,7 @@ function init_gear_sets()
   -- Tachi: Jinpu - 30% STR
   sets.precast.WS['Tachi: Jinpu'] = set_combine(sets.precast.WS, {
     ammo="Knobkierrie",
+    legs="Wakido Haidate +1",
     neck="Fotia Gorget",
     ear1="Friomisi Earring",
     ear2="Moonshade Earring",
@@ -356,6 +362,7 @@ function init_gear_sets()
     ammo="Knobkierrie",
     head="Mpaca's Cap",
     hands="Flamma Manopolas +2",
+    legs="Wakido Haidate +1",
     feet="Flamma Gambieras +2",
     neck="Samurai's Nodowa +2",
     ear2="Moonshade Earring",
@@ -431,6 +438,8 @@ function init_gear_sets()
   sets.precast.WS['Impulse Drive'] = set_combine(sets.precast.WS, {
     ammo="Aurgelmir Orb +1",
     head="Flamma Zucchetto +1",
+    body="Kendatsuba Samue +1",
+    hands=gear.Ryuo_A_hands,
     legs="Ken. Hakama +1",
     feet="Flamma Gambieras +2",
     neck="Samurai's Nodowa +2",
@@ -442,7 +451,6 @@ function init_gear_sets()
     waist="Fotia Belt",
     -- head="Flamma Zucchetto +2",
     -- body="Dagon Breast.",
-    -- hands=gear.Ryuo_A_hands,
   })
   sets.precast.WS["Impulse Drive"].MaxTP = set_combine(sets.precast.WS["Impulse Drive"], {
   })
@@ -491,37 +499,43 @@ function init_gear_sets()
     ammo="Staunch Tathlum +1",  --  3/ 3, ___
     head="Ken. Jinpachi +1",    -- __/__, 101
     legs="Ken. Hakama +1",      -- __/__, 139
-    feet="Ken. Sune-Ate +1",    -- __/__, 139
     ring1="Gelatinous Ring +1", --  7/-1, ___
     ring2="Defending Ring",     -- 10/10, ___
     back=gear.SAM_TP_Cape,      -- 10/__, ___
     -- body="Wakido Domaru +3",    --  8/ 8,  73
-  } --38 PDT/20 MDT, 452 MEVA
+    -- feet="Ken. Sune-Ate +1",    -- __/__, 139
+    --38 PDT/20 MDT, 452 MEVA
+  } 
 
   sets.MEVA = {
     ammo="Staunch Tathlum +1",  --  3/ 3, ___
     head="Ken. Jinpachi +1",    -- __/__, 101
     body="Ken. Samue +1",       -- __/__, 117
-    hands="Wakido Kote +3",     -- __/__,  46
+    hands="Wakido Kote +1",     -- __/__,  26
     legs="Ken. Hakama +1",      -- __/__, 139
-    feet="Ken. Sune-Ate +1",    -- __/__, 139
-  } --13 PDT/3 MDT, 542 MEVA
+    -- hands="Wakido Kote +3",     -- __/__,  46
+    -- feet="Ken. Sune-Ate +1",    -- __/__, 139
+    --13 PDT/3 MDT, 542 MEVA
+  } 
 
   sets.HeavyDef = {
     ammo="Staunch Tathlum +1",  --  3/ 3, ___
     head="Ken. Jinpachi +1",    -- __/__, 101
+    body="Wakido Domaru +1",    -- __/__,  53
+    hands="Wakido Kote +1",     -- __/__,  26
     legs="Ken. Hakama +1",      -- __/__, 139
-    feet="Ken. Sune-Ate +1",    -- __/__, 139
     neck="Loricate Torque +1",  --  6/ 6, ___
     ear1="Odnowa Earring +1",   --  3/ 5, ___
     ear2="Genmei Earring",      --  2/__, ___
     ring1="Gelatinous Ring +1", --  7/-1, ___
     ring2="Defending Ring",     -- 10/10, ___
     back=gear.SAM_TP_Cape,      -- 10/__, ___
+    waist="Ioskeha Belt +1",    -- __/__, ___
     -- body="Wakido Domaru +3",    --  8/ 8,  73
     -- hands="Wakido Kote +3",     -- __/__,  46
-    -- waist="Ioskeha Belt +1",    -- __/__, ___
-  } --49 PDT/31 MDT, 542 MEVA
+    -- feet="Ken. Sune-Ate +1",    -- __/__, 139
+    --49 PDT/31 MDT, 542 MEVA
+  }
 
   sets.defense.PDT = sets.HeavyDef
   sets.defense.MDT = sets.HeavyDef
@@ -574,6 +588,7 @@ function init_gear_sets()
   sets.engaged = {
     ammo="Aurgelmir Orb",
     head="Flamma Zucchetto +1",
+    hands="Wakido Kote +1",
     legs="Mpaca's Hose",
     feet="Mpaca's Boots",
     neck="Samurai's Nodowa +2",
@@ -581,13 +596,12 @@ function init_gear_sets()
     ring1="Flamma Ring",
     ring2="Niqmaddu Ring",
     back=gear.SAM_TP_Cape,
-    waist="Sailfi Belt +1",
+    waist="Ioskeha Belt +1",
     -- ammo="Aurgelmir Orb +1",
     -- head="Flamma Zucchetto +2",
     -- body="Kasuga Domaru +1",
     -- hands="Wakido Kote +3",
     -- ear2="Dedition Earring",
-    -- waist="Ioskeha Belt +1",
   }
   sets.engaged.LowAcc = set_combine(sets.engaged, {
     body="Ken. Samue +1",
@@ -631,7 +645,7 @@ function init_gear_sets()
     waist="Gishdubar Sash", --10
   }
   sets.Kiting = {
-    -- feet="Danzo Sune-Ate",
+    feet="Danzo Sune-Ate",
   }
   sets.Kiting.Adoulin = {
     body="Councilor's Garb",
@@ -648,6 +662,7 @@ function init_gear_sets()
   }
 
   sets.WeaponSet = {}
+  sets.WeaponSet['Temp'] = {main="Taimakuniyuki", sub="Utu Grip"}
   sets.WeaponSet['Masa'] = {main="Masamune", sub="Utu Grip"}
   sets.WeaponSet['Doji'] = {main="Dojikiri Tasutsuna", sub="Utu Grip"}
   sets.WeaponSet['Shining One'] = {main="Kaja Lance", sub="Utu Grip"}
