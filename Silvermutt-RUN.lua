@@ -959,9 +959,6 @@ function init_gear_sets()
   sets.Embolden = set_combine(sets.midcast.EnhancingDuration, {
     back="Evasionist's Cape"
   })
-  sets.Obi = {
-    waist="Hachirin-no-Obi"
-  }
   sets.CP = {
     back=gear.CP_Cape,
   }

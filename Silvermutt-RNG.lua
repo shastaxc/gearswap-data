@@ -1208,7 +1208,7 @@ function init_gear_sets()
     waist="Chaac Belt", --1
   }
 
-  sets.Obi = {
+  sets.Special.ElementalObi = {
     waist="Hachirin-no-Obi"
   }
 
@@ -1276,19 +1276,19 @@ function job_post_precast(spell, action, spellMap, eventArgs)
     if elemental_ws:contains(spell.english) then
       -- Matching double weather (w/o day conflict).
       if spell.element == world.weather_element and (get_weather_intensity() == 2 and spell.element ~= elements.weak_to[world.day_element]) then
-        equip({waist="Hachirin-no-Obi"})
+        equip(sets.Special.ElementalObi)
       -- Target distance under 1.7 yalms.
       -- elseif spell.target.distance < (1.7 + spell.target.model_size) then
         -- equip({waist="Orpheus's Sash"})
       -- Matching day and weather.
       elseif spell.element == world.day_element and spell.element == world.weather_element then
-        equip({waist="Hachirin-no-Obi"})
+        equip(sets.Special.ElementalObi)
       -- Target distance under 8 yalms.
       -- elseif spell.target.distance < (8 + spell.target.model_size) then
         -- equip({waist="Orpheus's Sash"})
       -- Match day or weather without conflict.
       elseif (spell.element == world.day_element and spell.element ~= elements.weak_to[world.weather_element]) or (spell.element == world.weather_element and spell.element ~= elements.weak_to[world.day_element]) then
-        equip({waist="Hachirin-no-Obi"})
+        equip(sets.Special.ElementalObi)
       end
     end
 
