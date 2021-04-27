@@ -71,6 +71,9 @@ function job_setup()
 
   send_command('bind ^` gs c cycle treasuremode')
   send_command('bind @c gs c toggle CP')
+  
+  send_command('bind !e input /ja "Hasso" <me>')
+  send_command('bind !q input /ja "Meditate" <me>')
 end
 
 -- Executes on first load, main job change, **and sub job change**
@@ -118,19 +121,24 @@ end
 -- Define sets and vars used by this job file.
 function init_gear_sets()
 
+  sets.org.job[1] = {
+    main="Taimakuniyuki",
+    sub="Katana Strap",
+  }
+
   -- Enmity sets
   sets.Enmity = {
+    body="Emet Harness +1",
+    hands="Kurys Gloves",
+    ear1="Cryptic Earring",
+    ring1="Supershear Ring",
+    ring2="Eihwaz Ring",
     -- ammo="Sapience Orb",
     -- head="Loess Barbuta +1",
-    -- body="Emet Harness +1",
-    -- hands="Kurys Gloves",
     -- legs=gear.Valorous_Enmity_legs,
     -- feet=gear.Valorous_Enmity_feet,
     -- neck="Unmoving Collar +1",
-    -- ear1="Cryptic Earring",
     -- ear2="Trux Earring",
-    -- ring1="Supershear Ring",
-    -- ring2="Eihwaz Ring",
     -- back=gear.SAM_Enmity_Cape,
     -- waist="Trance Belt",
   }
@@ -161,9 +169,9 @@ function init_gear_sets()
   }
 
   sets.precast.JA['Meditate'] = {
+    back="Smertrios's Mantle",
     -- head="Wakido Kabuto +3",
     -- hands="Sakonji Kote +3",
-    -- back="Smertrios's Mantle",
   }
 
   sets.precast.JA['Seigan'] = {
@@ -216,17 +224,17 @@ function init_gear_sets()
   sets.precast.WS = {
     ammo="Knobkierrie",
     head="Mpaca's cap",
+    neck="Samurai's Nodowa +2",
     ear2="Moonshade Earring",
     ring1="Regal Ring",
+    back=gear.SAM_STR_WSD_Cape,
     waist="Fotia Belt",
     -- body="Sakonji Domaru +3",
     -- hands=gear.Valorous_STR_WSD_hands,
     -- legs="Wakido Haidate +3",
     -- feet=gear.Valorous_STR_WSD_feet,
-    -- neck="Samurai's Nodowa +2",
     -- ear1="Thrud Earring",
     -- ring2="Epaminondas's Ring",
-    -- back=gear.SAM_STR_WSD_Cape,
   } -- Base WS set
 
   -- Tachi: Fudo - 80% STR
@@ -316,13 +324,13 @@ function init_gear_sets()
     ear2="Moonshade Earring",
     ring1="Regal Ring",
     ring2="Niqmaddu Ring",
+    back=gear.SAM_STR_WSD_Cape,
     waist="Fotia Belt",
     -- head=gear.Valorous_STR_WSD_head,
     -- body=gear.Founders_Breastplate,
     -- hands=gear.Founders_Gauntlets,
     -- legs="Wakido Haidate +3",
     -- feet=gear.Founders_Greaves,
-    -- back=gear.SAM_STR_WSD_Cape,
   })
   sets.precast.WS["Tachi: Jinpu"].MaxTP = set_combine(sets.precast.WS["Tachi: Jinpu"], {
     ear2="Novio Earring",
@@ -347,17 +355,17 @@ function init_gear_sets()
   sets.precast.WS['Tachi: Shoha'] = set_combine(sets.precast.WS, {
     ammo="Knobkierrie",
     head="Mpaca's Cap",
+    hands="Flamma Manopolas +2",
+    feet="Flamma Gambieras +2",
     neck="Samurai's Nodowa +2",
     ear2="Moonshade Earring",
     ring1="Niqmaddu Ring",
+    ring2="Flamma Ring",
+    back=gear.SAM_STR_WSD_Cape,
     waist="Fotia Belt",
     -- body="Sakonji Domaru +3",
-    -- hands="Flam. Manopolas +2",
     -- legs="Wakido Haidate +3",
-    -- feet="Flamma Gambieras +2",
     -- ear1="Thrud Earring",
-    -- ring2="Flamma Ring",
-    -- back=gear.SAM_STR_WSD_Cape,
   })
   sets.precast.WS["Tachi: Shoha"].MaxTP = set_combine(sets.precast.WS["Tachi: Shoha"], {
     ear2="Brutal Earring",
@@ -387,13 +395,14 @@ function init_gear_sets()
   sets.precast.WS['Tachi: Ageha'] = set_combine(sets.precast.WS, {
     ammo="Pemphredo Tathlum",
     head="Mpaca's Cap",
+    hands="Flamma Manopolas +2",
+    legs="Flamma Dirs +1",
+    feet="Flamma Gambieras +2",
     ear1="Dignitary's Earring",
     ear2="Moonshade Earring",
     waist="Eschan Stone",
     -- body="Flamme Korazin +2",
-    -- hands="Flamma Manopolas +2",
     -- legs="Flamma Dirs +2",
-    -- feet="Flamma Gambieras +2",
     -- neck="Sanctity Necklace",
     -- ring1="Stikini Ring +1",
     -- ring2="Stikini Ring +1",
@@ -421,18 +430,19 @@ function init_gear_sets()
   -- Impulse Drive - 100% STR
   sets.precast.WS['Impulse Drive'] = set_combine(sets.precast.WS, {
     ammo="Aurgelmir Orb +1",
+    head="Flamma Zucchetto +1",
     legs="Ken. Hakama +1",
+    feet="Flamma Gambieras +2",
     neck="Samurai's Nodowa +2",
     ear1="Brutal Earring",
     ear2="Moonshade Earring",
     ring1="Regal Ring",
     ring2="Niqmaddu Ring",
+    back=gear.SAM_STR_WSD_Cape,
     waist="Fotia Belt",
-    -- head="Flam. Zucchetto +2",
+    -- head="Flamma Zucchetto +2",
     -- body="Dagon Breast.",
     -- hands=gear.Ryuo_A_hands,
-    -- feet="Flam. Gambieras +2",
-    -- back=gear.SAM_STR_WSD_Cape,
   })
   sets.precast.WS["Impulse Drive"].MaxTP = set_combine(sets.precast.WS["Impulse Drive"], {
   })
@@ -484,8 +494,8 @@ function init_gear_sets()
     feet="Ken. Sune-Ate +1",    -- __/__, 139
     ring1="Gelatinous Ring +1", --  7/-1, ___
     ring2="Defending Ring",     -- 10/10, ___
+    back=gear.SAM_TP_Cape,      -- 10/__, ___
     -- body="Wakido Domaru +3",    --  8/ 8,  73
-    -- back=gear.SAM_TP_Cape,      -- 10/__, ___
   } --38 PDT/20 MDT, 452 MEVA
 
   sets.MEVA = {
@@ -507,9 +517,9 @@ function init_gear_sets()
     ear2="Genmei Earring",      --  2/__, ___
     ring1="Gelatinous Ring +1", --  7/-1, ___
     ring2="Defending Ring",     -- 10/10, ___
+    back=gear.SAM_TP_Cape,      -- 10/__, ___
     -- body="Wakido Domaru +3",    --  8/ 8,  73
     -- hands="Wakido Kote +3",     -- __/__,  46
-    -- back=gear.SAM_TP_Cape,      -- 10/__, ___
     -- waist="Ioskeha Belt +1",    -- __/__, ___
   } --49 PDT/31 MDT, 542 MEVA
 
@@ -562,18 +572,21 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.engaged = {
+    ammo="Aurgelmir Orb",
+    head="Flamma Zucchetto +1",
     legs="Mpaca's Hose",
     feet="Mpaca's Boots",
     neck="Samurai's Nodowa +2",
     ear1="Telos Earring",
+    ring1="Flamma Ring",
     ring2="Niqmaddu Ring",
+    back=gear.SAM_TP_Cape,
+    waist="Sailfi Belt +1",
     -- ammo="Aurgelmir Orb +1",
-    -- head="Flam. Zucchetto +2",
+    -- head="Flamma Zucchetto +2",
     -- body="Kasuga Domaru +1",
     -- hands="Wakido Kote +3",
     -- ear2="Dedition Earring",
-    -- ring1="Flamma Ring",
-    -- back=gear.SAM_TP_Cape,
     -- waist="Ioskeha Belt +1",
   }
   sets.engaged.LowAcc = set_combine(sets.engaged, {
@@ -608,6 +621,9 @@ function init_gear_sets()
   ---------------------------------------- Special Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
 
+  sets.Special = {}
+  sets.Special.ElementalObi = {waist="Hachirin-no-Obi",}
+
   -- Quick sets for post-precast adjustments, listed here so that the gear can be Validated.
   sets.buff.Doom = {
     neck="Nicander's Necklace", --20
@@ -615,7 +631,7 @@ function init_gear_sets()
     waist="Gishdubar Sash", --10
   }
   sets.Kiting = {
-    feet="Danzo Sune-Ate",
+    -- feet="Danzo Sune-Ate",
   }
   sets.Kiting.Adoulin = {
     body="Councilor's Garb",
@@ -634,7 +650,8 @@ function init_gear_sets()
   sets.WeaponSet = {}
   sets.WeaponSet['Masa'] = {main="Masamune", sub="Utu Grip"}
   sets.WeaponSet['Doji'] = {main="Dojikiri Tasutsuna", sub="Utu Grip"}
-  sets.WeaponSet['Shining One'] = {main="Shining One", sub="Utu Grip"}
+  sets.WeaponSet['Shining One'] = {main="Kaja Lance", sub="Utu Grip"}
+  -- sets.WeaponSet['Shining One'] = {main="Shining One", sub="Utu Grip"}
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -665,19 +682,19 @@ function job_post_precast(spell, action, spellMap, eventArgs)
     if elemental_ws:contains(spell.english) then
       -- Matching double weather (w/o day conflict).
       if spell.element == world.weather_element and (get_weather_intensity() == 2 and spell.element ~= elements.weak_to[world.day_element]) then
-        equip({waist="Hachirin-no-Obi"})
+        equip(sets.Special.ElementalObi)
       -- Target distance under 1.7 yalms.
       -- elseif spell.target.distance < (1.7 + spell.target.model_size) then
         -- equip({waist="Orpheus's Sash"})
       -- Matching day and weather.
       elseif spell.element == world.day_element and spell.element == world.weather_element then
-        equip({waist="Hachirin-no-Obi"})
+        equip(sets.Special.ElementalObi)
       -- Target distance under 8 yalms.
       -- elseif spell.target.distance < (8 + spell.target.model_size) then
         -- equip({waist="Orpheus's Sash"})
       -- Match day or weather without conflict.
       elseif (spell.element == world.day_element and spell.element ~= elements.weak_to[world.weather_element]) or (spell.element == world.weather_element and spell.element ~= elements.weak_to[world.day_element]) then
-        equip({waist="Hachirin-no-Obi"})
+        equip(sets.Special.ElementalObi)
       end
     end
 
