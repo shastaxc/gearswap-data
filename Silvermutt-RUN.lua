@@ -815,7 +815,7 @@ function init_gear_sets()
     head="Dampening Tam",
     -- hands=gear.Adhemar_A_hands,
     -- neck="Combatant's Torque",
-    -- waist="Ioskeha Belt +1",
+    waist="Ioskeha Belt +1",
   })
   sets.engaged.MidAcc = set_combine(sets.engaged.LowAcc, {
     ammo="Yamarang",
