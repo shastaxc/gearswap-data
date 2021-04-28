@@ -343,13 +343,6 @@ function init_gear_sets()
     -- ear2="Mendi. Earring"
   })
 
-  sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {
-    ammo="Impatiens",
-    ring1="Lebeche Ring",
-    waist="Audumbla Sash",
-    -- body="Passion Jacket",
-  })
-
   -- Initializes trusts at iLvl 119
   sets.midcast.Trust = sets.precast.FC
 
