@@ -153,6 +153,7 @@ function init_gear_sets()
 
   -- Precast sets to enhance JAs on use
   sets.precast.JA['Meikyo Shisui'] = {
+    feet="Sakonji Sune-ate +1",
     -- feet="Sakonji Sune-ate +3",
   }
 
@@ -162,6 +163,7 @@ function init_gear_sets()
   }
 
   sets.precast.JA['Third Eye'] = {
+    legs="Sakonji Haidate +1",
     -- legs="Sakonji Haidate +3",
   }
 
@@ -172,6 +174,7 @@ function init_gear_sets()
 
   sets.precast.JA['Meditate'] = {
     head="Wakido Kabuto +1",
+    hands="Sakonji Kote +1",
     back="Smertrios's Mantle",
     -- head="Wakido Kabuto +3",
     -- hands="Sakonji Kote +3",
@@ -182,14 +185,17 @@ function init_gear_sets()
   }
 
   sets.precast.JA['Sekkanoki'] = {
+    hands="Kasuga Kote",
     -- hands="Kasuga Kote +1",
   }
 
   sets.precast.JA['Shikikoyo'] = {
+    legs="Sakonji Haidate +1",
     -- legs="Sakonji Haidate +3",
   }
 
   sets.precast.JA['Blade Bash'] = {
+    hands="Sakonji Kote +1",
     -- hands="Sakonji Kote +3",
   }
 
@@ -216,7 +222,12 @@ function init_gear_sets()
   -- Initializes trusts at iLvl 119
   sets.midcast.Trust = sets.precast.FC
 
-  sets.midcast.Utsusemi = sets.precast.Utsusemi
+  sets.midcast.SpellInterrupt = {
+    ammo="Impatiens", --10
+    neck="Loricate Torque +1", --5
+  }
+
+  sets.midcast.Utsusemi = set_combine(sets.precast.Utsusemi, sets.midcast.SpellInterrupt)
 
 
   ------------------------------------------------------------------------------------------------
@@ -227,7 +238,10 @@ function init_gear_sets()
   sets.precast.WS = {
     ammo="Knobkierrie",
     head="Mpaca's cap",
+    body="Sakonji Domaru +1",
+    hands="Flamma Manopolas +2",
     legs="Wakido Haidate +1",
+    feet="Flamma Gambieras +2",
     neck="Samurai's Nodowa +2",
     ear2="Moonshade Earring",
     ring1="Regal Ring",
@@ -324,7 +338,10 @@ function init_gear_sets()
   -- Tachi: Jinpu - 30% STR
   sets.precast.WS['Tachi: Jinpu'] = set_combine(sets.precast.WS, {
     ammo="Knobkierrie",
-    legs="Wakido Haidate +1",
+    head="Nyame Helm",
+    body="Nyame Mail",
+    hands="Leyline Gloves",
+    legs="Nyame Flanchard",
     neck="Fotia Gorget",
     ear1="Friomisi Earring",
     ear2="Moonshade Earring",
@@ -402,13 +419,14 @@ function init_gear_sets()
   sets.precast.WS['Tachi: Ageha'] = set_combine(sets.precast.WS, {
     ammo="Pemphredo Tathlum",
     head="Mpaca's Cap",
+    body="Flamma Korazin +1",
     hands="Flamma Manopolas +2",
     legs="Flamma Dirs +1",
     feet="Flamma Gambieras +2",
     ear1="Dignitary's Earring",
     ear2="Moonshade Earring",
     waist="Eschan Stone",
-    -- body="Flamme Korazin +2",
+    -- body="Flamma Korazin +2",
     -- legs="Flamma Dirs +2",
     -- neck="Sanctity Necklace",
     -- ring1="Stikini Ring +1",
@@ -588,18 +606,19 @@ function init_gear_sets()
   sets.engaged = {
     ammo="Aurgelmir Orb",
     head="Flamma Zucchetto +1",
+    body="Kasuga Domaru +1",
     hands="Wakido Kote +1",
     legs="Mpaca's Hose",
     feet="Mpaca's Boots",
     neck="Samurai's Nodowa +2",
     ear1="Telos Earring",
+    ear2="Cessance Earring",
     ring1="Flamma Ring",
     ring2="Niqmaddu Ring",
     back=gear.SAM_TP_Cape,
     waist="Ioskeha Belt +1",
     -- ammo="Aurgelmir Orb +1",
     -- head="Flamma Zucchetto +2",
-    -- body="Kasuga Domaru +1",
     -- hands="Wakido Kote +3",
     -- ear2="Dedition Earring",
   }
@@ -662,7 +681,7 @@ function init_gear_sets()
   }
 
   sets.WeaponSet = {}
-  sets.WeaponSet['Temp'] = {main="Taimakuniyuki", sub="Utu Grip"}
+  sets.WeaponSet['Temp'] = {main="Ichigohitofuri", sub="Utu Grip"}
   sets.WeaponSet['Masa'] = {main="Masamune", sub="Utu Grip"}
   sets.WeaponSet['Doji'] = {main="Dojikiri Tasutsuna", sub="Utu Grip"}
   sets.WeaponSet['Shining One'] = {main="Kaja Lance", sub="Utu Grip"}
