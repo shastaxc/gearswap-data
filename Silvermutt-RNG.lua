@@ -286,7 +286,9 @@ function init_gear_sets()
   }
 
   sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {
-    -- body="Passion Jacket",
+    ammo="Staunch Tathlum +1",
+    neck="Magoraga Beads", --10
+    ring1="Defending Ring",
   })
 
   -- (10% Snapshot, 5% Rapid from Merits)
@@ -508,17 +510,17 @@ function init_gear_sets()
 
   sets.precast.WS["Trueflight"] = {
     head=empty,
-    body="Cohort Cloak +1",
-    hands=gear.Carmine_D_hands,
+    body="Cohort Cloak +1", --100
+    hands=gear.Carmine_D_hands, --42
     legs="Arcadian Braccae +3",
     feet=gear.Herc_MAB_feet, --50
-    ear1="Friomisi Earring",
+    ear1="Friomisi Earring", --10
     ear2="Moonshade Earring",
-    ring1="Weatherspoon Ring",
-    ring2="Dingir Ring",
+    ring1="Weatherspoon Ring", --10 (light only)
+    ring2="Dingir Ring", --10
     neck="Scout's Gorget +1",
     back=gear.RNG_WS1_Cape,
-    waist="Eschan Stone",
+    waist="Eschan Stone", --7
     -- head=gear.Nyame_B_head, -- Rank 15
     -- body=gear.Nyame_B_body, -- Rank 15
     -- hands=gear.Nyame_B_hands, -- Rank 15
@@ -658,7 +660,7 @@ function init_gear_sets()
 
   sets.precast.WS["Aeolian Edge"] = set_combine(sets.precast.WS["Trueflight"], {
     neck="Baetyl Pendant", --13
-    ring1="Shiva Ring +1",
+    ring1="Shiva Ring +1", --3
   })
   sets.precast.WS["Aeolian Edge"].MaxTP = set_combine(sets.precast.WS["Trueflight"].MaxTP, {
     neck="Baetyl Pendant", --13
@@ -697,12 +699,12 @@ function init_gear_sets()
   sets.midcast.FastRecast = sets.precast.FC
 
   sets.midcast.SpellInterrupt = {
+    ammo="Impatiens", --10
     legs=gear.Carmine_D_legs, --20
-    -- ring1="Evanescence Ring", --5
-    -- waist="Rumination Sash", --10
+    neck="Loricate Torque +1", --5
   }
 
-  sets.midcast.Utsusemi = sets.midcast.SpellInterrupt
+  sets.midcast.Utsusemi = set_combine(sets.precast.FC.Utsusemi, sets.midcast.SpellInterrupt)
 
   -- Ranged sets
   sets.midcast.RA = {

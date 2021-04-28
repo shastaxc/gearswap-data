@@ -251,7 +251,13 @@ function init_gear_sets()
   -- Initializes trusts at iLvl 119
   sets.midcast.Trust = sets.precast.FC
 
-  sets.midcast.Utsusemi = sets.precast.Utsusemi
+  sets.midcast.SpellInterrupt = {
+    ammo="Impatiens", --10
+    neck="Loricate Torque +1", --5
+    waist="Audumbla Sash", --10
+  }
+
+  sets.midcast.Utsusemi = set_combine(sets.precast.Utsusemi, sets.midcast.SpellInterrupt)
 
 
   ------------------------------------------------------------------------------------------------

@@ -374,8 +374,10 @@ function init_gear_sets()
   }
 
   sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {
-    -- body="Passion Jacket",
-  })
+    ammo="Staunch Tathlum +1",
+    neck="Magoraga Beads", --10
+    ring1="Defending Ring",
+  }) --51
 
   -- Initializes trusts at iLvl 119
   sets.midcast.Trust = sets.precast.FC
@@ -593,10 +595,10 @@ function init_gear_sets()
 
   sets.midcast.SpellInterrupt = {
     ammo="Impatiens", --10
-    -- ring1="Evanescence Ring", --5
+    neck="Loricate Torque +1", --5
   }
 
-  sets.midcast.Utsusemi = sets.midcast.SpellInterrupt
+  sets.midcast.Utsusemi = set_combine(sets.precast.FC.Utsusemi, sets.midcast.SpellInterrupt)
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Defense Sets ------------------------------------------

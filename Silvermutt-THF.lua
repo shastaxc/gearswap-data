@@ -272,12 +272,20 @@ function init_gear_sets()
   }
 
   sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {
-    -- body="Passion Jacket",
-    -- ring1="Lebeche Ring",
+    ammo="Staunch Tathlum +1",
+    neck="Magoraga Beads", --10
+    ring1="Defending Ring",
   })
 
   -- Initializes trusts at iLvl 119
   sets.midcast.Trust = sets.precast.FC
+
+  sets.midcast.SpellInterrupt = {
+    ammo="Impatiens", --10
+    neck="Loricate Torque +1", --5
+  }
+
+  sets.midcast.Utsusemi = set_combine(sets.precast.FC.Utsusemi, sets.midcast.SpellInterrupt)
 
   ------------------------------------------------------------------------------------------------
   ------------------------------------- Weapon Skill Sets ----------------------------------------
