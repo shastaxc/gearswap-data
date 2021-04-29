@@ -168,7 +168,7 @@ function init_gear_sets()
   }
 
   sets.precast.JA['Hasso'] = {
-    hands="Wakido Kote +1",
+    hands="Wakido Kote +2",
     -- hands="Wakido Kote +3",
   }
 
@@ -261,7 +261,7 @@ function init_gear_sets()
     ear2="Ishvara Earring",
   })
   sets.precast.WS["Tachi: Fudo"].LowAcc = set_combine(sets.precast.WS["Tachi: Fudo"], {
-    hands="Wakido Kote +1",
+    hands="Wakido Kote +2",
     ring1="Regal Ring",
     -- head=gear.Rao_A_head,
     -- hands="Wakido Kote +3",
@@ -529,7 +529,7 @@ function init_gear_sets()
     ammo="Staunch Tathlum +1",  --  3/ 3, ___
     head="Ken. Jinpachi +1",    -- __/__, 101
     body="Ken. Samue +1",       -- __/__, 117
-    hands="Wakido Kote +1",     -- __/__,  26
+    hands="Wakido Kote +2",     -- __/__,  36
     legs="Ken. Hakama +1",      -- __/__, 139
     -- hands="Wakido Kote +3",     -- __/__,  46
     -- feet="Ken. Sune-Ate +1",    -- __/__, 139
@@ -540,7 +540,7 @@ function init_gear_sets()
     ammo="Staunch Tathlum +1",  --  3/ 3, ___
     head="Ken. Jinpachi +1",    -- __/__, 101
     body="Wakido Domaru +1",    -- __/__,  53
-    hands="Wakido Kote +1",     -- __/__,  26
+    hands="Wakido Kote +2",     -- __/__,  36
     legs="Ken. Hakama +1",      -- __/__, 139
     neck="Loricate Torque +1",  --  6/ 6, ___
     ear1="Odnowa Earring +1",   --  3/ 5, ___
@@ -607,7 +607,7 @@ function init_gear_sets()
     ammo="Aurgelmir Orb",
     head="Flamma Zucchetto +1",
     body="Kasuga Domaru +1",
-    hands="Wakido Kote +1",
+    hands="Wakido Kote +2",
     legs="Mpaca's Hose",
     feet="Mpaca's Boots",
     neck="Samurai's Nodowa +2",
