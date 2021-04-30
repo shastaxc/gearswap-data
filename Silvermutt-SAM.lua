@@ -517,11 +517,11 @@ function init_gear_sets()
     ammo="Staunch Tathlum +1",  --  3/ 3, ___
     head="Ken. Jinpachi +1",    -- __/__, 101
     legs="Ken. Hakama +1",      -- __/__, 139
+    feet="Ken. Sune-Ate +1",    -- __/__, 139
     ring1="Gelatinous Ring +1", --  7/-1, ___
     ring2="Defending Ring",     -- 10/10, ___
     back=gear.SAM_TP_Cape,      -- 10/__, ___
     -- body="Wakido Domaru +3",    --  8/ 8,  73
-    -- feet="Ken. Sune-Ate +1",    -- __/__, 139
     --38 PDT/20 MDT, 452 MEVA
   } 
 
@@ -531,8 +531,8 @@ function init_gear_sets()
     body="Ken. Samue +1",       -- __/__, 117
     hands="Wakido Kote +2",     -- __/__,  36
     legs="Ken. Hakama +1",      -- __/__, 139
+    feet="Ken. Sune-Ate +1",    -- __/__, 139
     -- hands="Wakido Kote +3",     -- __/__,  46
-    -- feet="Ken. Sune-Ate +1",    -- __/__, 139
     --13 PDT/3 MDT, 542 MEVA
   } 
 
@@ -542,6 +542,7 @@ function init_gear_sets()
     body="Wakido Domaru +1",    -- __/__,  53
     hands="Wakido Kote +2",     -- __/__,  36
     legs="Ken. Hakama +1",      -- __/__, 139
+    feet="Ken. Sune-Ate +1",    -- __/__, 139
     neck="Loricate Torque +1",  --  6/ 6, ___
     ear1="Odnowa Earring +1",   --  3/ 5, ___
     ear2="Genmei Earring",      --  2/__, ___
@@ -551,7 +552,6 @@ function init_gear_sets()
     waist="Ioskeha Belt +1",    -- __/__, ___
     -- body="Wakido Domaru +3",    --  8/ 8,  73
     -- hands="Wakido Kote +3",     -- __/__,  46
-    -- feet="Ken. Sune-Ate +1",    -- __/__, 139
     --49 PDT/31 MDT, 542 MEVA
   }
 

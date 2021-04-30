@@ -315,7 +315,7 @@ function init_gear_sets()
   })
   sets.precast.WS["Victory Smite"].HighAcc = set_combine(sets.precast.WS["Victory Smite"].MidAcc, {
     head="Kendatsuba Jinpachi +1",
-    -- feet="Ken. Sune-Ate +1",
+    feet="Kendatsuba Sune-Ate +1",
   })
   sets.precast.WS["Victory Smite"].HighAccMaxTP = set_combine(sets.precast.WS["Victory Smite"].HighAcc, {
   })
