@@ -248,9 +248,9 @@ function init_gear_sets()
     back=gear.SAM_STR_WSD_Cape,
     waist="Fotia Belt",
     -- body="Sakonji Domaru +3",
-    -- hands=gear.Valorous_STR_WSD_hands,
+    -- hands=gear.Valorous_STR_WSD_hands, -- Nyame if augmented
     -- legs="Wakido Haidate +3",
-    -- feet=gear.Valorous_STR_WSD_feet,
+    -- feet=gear.Valorous_STR_WSD_feet, -- Nyame if augmented
     -- ear1="Thrud Earring",
     -- ring2="Epaminondas's Ring",
   } -- Base WS set
@@ -349,11 +349,10 @@ function init_gear_sets()
     ring2="Niqmaddu Ring",
     back=gear.SAM_STR_WSD_Cape,
     waist="Fotia Belt",
-    -- head=gear.Valorous_STR_WSD_head,
-    -- body=gear.Founders_Breastplate,
-    -- hands=gear.Founders_Gauntlets,
+    -- head=gear.Valorous_STR_WSD_head, -- Nyame if augmented
+    -- hands="Nyame Gauntlets",
     -- legs="Wakido Haidate +3",
-    -- feet=gear.Founders_Greaves,
+    -- feet="Nyame Sollerets",
   })
   sets.precast.WS["Tachi: Jinpu"].MaxTP = set_combine(sets.precast.WS["Tachi: Jinpu"], {
     ear2="Novio Earring",
@@ -388,7 +387,9 @@ function init_gear_sets()
     back=gear.SAM_STR_WSD_Cape,
     waist="Fotia Belt",
     -- body="Sakonji Domaru +3",
+    -- hands="Nyame Gauntlets", --R7+
     -- legs="Wakido Haidate +3",
+    -- feet="Nyame Sollerets", --R7+
     -- ear1="Thrud Earring",
   })
   sets.precast.WS["Tachi: Shoha"].MaxTP = set_combine(sets.precast.WS["Tachi: Shoha"], {
@@ -698,9 +699,13 @@ function job_precast(spell, action, spellMap, eventArgs)
   silibs.cancel_outranged_ws(spell, eventArgs)
   silibs.cancel_on_blocking_status(spell, eventArgs)
 
-  -- Don't gearswap for weaponskills when Defense is on.
   if spell.type == 'WeaponSkill' and state.DefenseMode.current ~= 'None' then
-    eventArgs.handled = true
+    -- Don't gearswap for weaponskills when Defense is on.
+    if state.DefenseMode.current ~= 'None' then
+      eventArgs.handled = true
+    elseif buffactive['Sekkanoki'] then
+      equip(sets.precast.JA['Sekkanoki'])
+    end
   end
 
   if spellMap == 'Utsusemi' and spell.english == 'Utsusemi: Ichi' and
