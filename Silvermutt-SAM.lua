@@ -577,6 +577,8 @@ function init_gear_sets()
     -- ring2="Chirich Ring +1",
   }
   sets.latent_refresh = {
+    -- ring1="Stikini Ring +1", -- 1
+    -- ring2="Stikini Ring +1", -- 1
   }
   sets.latent_refresh_sub50 = set_combine(sets.latent_refresh, {
   })
