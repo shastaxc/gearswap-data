@@ -146,7 +146,7 @@ gear.Telchine_ENH_feet = {name="Telchine Pigaches", augments={'Mag. Evasion+25',
 
 gear.SCH_Cure_Cape = {} --MND, Cure Potency
 gear.SCH_MAB_Cape = {} --INT, MAB
-gear.SCH_FC_Cape = {} --MND, FC
+gear.SCH_FC_Cape = { name="Lugh's Cape", augments={'MND+20','MND+10','"Fast Cast"+10','Mag. Evasion+12',}}
 gear.SCH_INT_MAcc_Cape = {name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc+10','"Fast Cast"+10','Mag. Evasion+15',}}
 gear.SCH_MND_MAcc_Cape = {name="Lugh's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc+10','"Fast Cast"+10','Mag. Evasion+15',}}
 gear.SCH_MP_Cape = {} --MP
