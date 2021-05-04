@@ -1865,6 +1865,7 @@ windower.register_event('zone change', function()
   if locked_ear2 then equip({ ear2=empty }) end
   if locked_ring1 then equip({ ring1=empty }) end
   if locked_ring2 then equip({ ring2=empty }) end
+  if locked_waist then equip({ waist=empty }) end
 end)
 
 -- Select default macro book on initial load or subjob change.
