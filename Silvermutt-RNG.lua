@@ -90,7 +90,7 @@ function job_setup()
   sets.org.job[3] = {ammo="Quelling Bolt"}
   sets.org.job[4] = {ammo="Quelling bolt quiver"}
   sets.org.job[5] = {ammo="Chrono bullet pouch"}
-  
+
   DefaultAmmo = {
     ['Yoichinoyumi'] = "Chrono Arrow",
     ['Gandiva'] = "Chrono Arrow",
@@ -1810,14 +1810,6 @@ function check_ammo(spell, action, spellMap, eventArgs)
   end
   if player.equipment.ammo ~= 'empty' and player.inventory[swapped_ammo] ~= nil and player.inventory[swapped_ammo].count < 5 then
     add_to_chat(39,"*** Ammo '"..player.inventory[swapped_ammo].shortname.."' running low! *** ("..player.inventory[swapped_ammo].count..")")
-  end
-end
-
-function update_offense_mode()
-  if player.sub_job == 'NIN' or player.sub_job == 'DNC' then
-    state.CombatForm:set('DW')
-  else
-    state.CombatForm:reset()
   end
 end
 
