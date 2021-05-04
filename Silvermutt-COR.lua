@@ -100,7 +100,7 @@ function job_setup()
   state.RangedMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.IdleMode:options('Normal', 'LightDef')
 
-  state.WeaponSet = M{['description']='Weapon Set', 'DeathPenalty_M', 'DeathPenalty_R', 'PhysRA Armageddon_M', 'Armageddon_R', 'Fomalhaut_M', 'Fomalhaut_R', 'Ataktos'}
+  state.WeaponSet = M{['description']='Weapon Set', 'Fomalhaut_M', 'Fomalhaut_R', 'Ataktos', 'DeathPenalty_M', 'DeathPenalty_R', 'PhysRA Armageddon_M', 'Armageddon_R'}
 
   state.CP = M(false, "Capacity Points Mode")
   state.RearmingLock = M(false, 'Rearming Lock')
@@ -123,6 +123,8 @@ function job_setup()
 
   elemental_ws = S{"Aeolian Edge", "Leaden Salute", "Wildfire"}
   no_shoot_ammo = S{"Animikii Bullet", "Hauksbok Bullet", "Bronze Bullet"}
+  no_swap_waists = S{"Era. Bul. Pouch", "Dev. Bul. Pouch", "Chr. Bul. Pouch", "Quelling B. Quiver",
+      "Yoichi's Quiver", "Artemis's Quiver", "Chrono Quiver"}
 
   -- For th_action_check():
   -- JA IDs for actions that always have TH: Provoke, Animated Flourish
@@ -1285,7 +1287,7 @@ function get_custom_wsmode(spell, action, spellMap)
     end
   end
 
-  local rweapon = state.RangedWeaponSet.current
+  local rweapon = sets.WeaponSet[state.WeaponSet.current].range
   if 1900 <= player.tp and player.tp < 2400 then
     if rweapon and rweapon == 'Fomalhaut' then
       wsmode = wsmode..'MaxTP'
@@ -1816,7 +1818,7 @@ function equip_weapons()
   equip(sets.WeaponSet[state.WeaponSet.current])
 
   -- Equip appropriate ammo
-  local ranged = sets.WeaponSet[state.RangedWeaponSet.current].ranged
+  local ranged = sets.WeaponSet[state.WeaponSet.current].ranged
   if ranged and gear.RAbullet then
     if player.inventory[gear.RAbullet] then
       equip({ammo=gear.RAbullet})
