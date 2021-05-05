@@ -337,8 +337,9 @@ function init_gear_sets()
     ammo="Knobkierrie",
     head="Nyame Helm",
     body="Nyame Mail",
-    hands="Leyline Gloves",
+    hands="Nyame Gauntlets",
     legs="Nyame Flanchard",
+    feet="Nyame Sollerets",
     neck="Fotia Gorget",
     ear1="Friomisi Earring",
     ear2="Moonshade Earring",
@@ -347,9 +348,7 @@ function init_gear_sets()
     back=gear.SAM_STR_WSD_Cape,
     waist="Fotia Belt",
     -- head=gear.Valorous_STR_WSD_head, -- Nyame if augmented
-    -- hands="Nyame Gauntlets",
     -- legs="Wakido Haidate +3",
-    -- feet="Nyame Sollerets",
   })
   sets.precast.WS["Tachi: Jinpu"].MaxTP = set_combine(sets.precast.WS["Tachi: Jinpu"], {
     ear2="Novio Earring",

@@ -621,7 +621,7 @@ function init_gear_sets()
     ammo="Pemphredo Tathlum", --4
     head="Nyame Helm", --30
     body="Nyame Mail", --30
-    hands=gear.Leyline_Gloves, --30
+    hands="Nyame Gauntlets", --30
     legs="Nyame Flanchard", --30
     feet=gear.Herc_MAB_feet, --50
     neck="Baetyl Pendant", --13
@@ -630,7 +630,6 @@ function init_gear_sets()
     ring1="Shiva Ring +1", --3
     back="Argochampsa Mantle", --12
     waist="Eschan Stone", --7
-    -- hands="Nyame Gauntlets", --30
     -- back=gear.MNK_MAB_Cape, --10
     -- waist="Skrymir Cord +1", --7
   }

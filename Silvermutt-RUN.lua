@@ -755,8 +755,8 @@ function init_gear_sets()
     head="Nyame Helm",            --  7/ 7, 123 [ 91]
     body="Nyame Mail",            --  9/ 9, 139 [136]
     hands="Turms Mittens",        -- __/__,  91 [ 59]
-    legs="Nyame Flanchard",    --  8/ 8, 150 [114]
-    feet="Erilaz Greaves +1",     --  5/__, 107 [ 18]
+    legs="Nyame Flanchard",       --  8/ 8, 150 [114]
+    feet="Nyame Sollerets",       --  7/ 7, 150 [ 68]
     neck="Futhark Torque +1",     --  6/ 6,  25 [ 45]
     waist="Engraved Belt",        -- __/__, ___ [___]
     ear1="Odnowa Earring +1",     --  3/ 5, ___ [110]
@@ -765,13 +765,12 @@ function init_gear_sets()
     ring2="Moonlight Ring",       --  5/ 5, ___ [110]
     back=gear.RUN_HPP_Cape,       -- __/__,  20 [ 80]
     -- hands="Turms Mittens +1",  -- __/__, 101 [ 74]
-    -- feet="Nyame Sollerets",    --  7/ 7, 150 [ 68]
     -- neck="Futhark Torque +2",  --  7/ 7,  30 [ 60]
     -- ear2="Sanare Earring",     -- __/__,   6 [___]; M. Def Bonus+4
     -- ring1="Moonlight Ring",    --  5/ 5, ___ [110]
     -- back=gear.RUN_HPME_Cape,   -- __/__,  45 [ 60]
     --51 PDT / 37 MDT, 769 MEVA [983 HP]
-  } --50 PDT / 29 MDT, 688 MEVA [993 HP]
+  } --52 PDT / 29 MDT, 731 MEVA [1043 HP]
 
   sets.defense.Parry = {
     hands="Turms Mittens", --Parry: Recover HP+75

@@ -452,7 +452,7 @@ function init_gear_sets()
     ammo="Seething Bomblet +1", --7
     head="Nyame Helm", --30
     body="Nyame Mail", --30
-    hands=gear.Leyline_Gloves, --30
+    hands="Nyame Gauntlets", --30
     legs="Nyame Flanchard", --30
     feet=gear.Herc_MAB_feet, --50
     neck="Baetyl Pendant", --13
@@ -462,7 +462,6 @@ function init_gear_sets()
     ring2="Dingir Ring", --10
     back="Argochampsa Mantle", --12
     waist="Eschan Stone", --7
-    -- hands="Nyame Gauntlets", --30
     -- waist="Orpheus's Sash",
   })
   sets.precast.WS['Aeolian Edge'].MaxTP = set_combine(sets.precast.WS['Aeolian Edge'], {

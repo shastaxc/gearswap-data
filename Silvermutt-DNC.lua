@@ -558,7 +558,7 @@ function init_gear_sets()
     ammo="Pemphredo Tathlum", --4
     head="Nyame Helm", --30
     body="Nyame Mail", --30
-    hands=gear.Leyline_Gloves, --30
+    hands="Nyame Gauntlets", --30
     legs="Nyame Flanchard", --30
     feet=gear.Herc_MAB_feet, --50
     neck="Baetyl Pendant", --13
@@ -568,7 +568,6 @@ function init_gear_sets()
     ring2="Defending Ring",
     back=gear.DNC_WS1_Cape,
     waist="Eschan Stone", --7
-    -- hands="Nyame Gauntlets", --30
     -- legs="Horos Tights +3", -- Use once Orpheus obtained
     -- ring2="Epaminondas's Ring",
     -- waist="Orpheus's Sash",
