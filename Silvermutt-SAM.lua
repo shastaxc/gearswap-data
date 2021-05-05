@@ -243,6 +243,7 @@ function init_gear_sets()
     legs="Wakido Haidate +1",
     feet="Flamma Gambieras +2",
     neck="Samurai's Nodowa +2",
+    ear1="Thrud Earring",
     ear2="Moonshade Earring",
     ring1="Regal Ring",
     back=gear.SAM_STR_WSD_Cape,
@@ -251,7 +252,6 @@ function init_gear_sets()
     -- hands=gear.Valorous_STR_WSD_hands, -- Nyame if augmented
     -- legs="Wakido Haidate +3",
     -- feet=gear.Valorous_STR_WSD_feet, -- Nyame if augmented
-    -- ear1="Thrud Earring",
     -- ring2="Epaminondas's Ring",
   } -- Base WS set
 
@@ -281,8 +281,8 @@ function init_gear_sets()
     -- head="Sakonji Kabuto +3"
   })
   sets.precast.WS["Tachi: Fudo"].HighAccMaxTP = set_combine(sets.precast.WS["Tachi: Fudo"].HighAcc, {
+    ear1="Thrud Earring",
     ear2="Telos Earring",
-    -- ear1="Thrud Earring",
   })
 
   -- Tachi: Kaiten - 80% STR
@@ -381,6 +381,7 @@ function init_gear_sets()
     legs="Wakido Haidate +1",
     feet="Flamma Gambieras +2",
     neck="Samurai's Nodowa +2",
+    ear1="Thrud Earring",
     ear2="Moonshade Earring",
     ring1="Niqmaddu Ring",
     ring2="Flamma Ring",
@@ -390,7 +391,6 @@ function init_gear_sets()
     -- hands="Nyame Gauntlets", --R7+
     -- legs="Wakido Haidate +3",
     -- feet="Nyame Sollerets", --R7+
-    -- ear1="Thrud Earring",
   })
   sets.precast.WS["Tachi: Shoha"].MaxTP = set_combine(sets.precast.WS["Tachi: Shoha"], {
     ear2="Brutal Earring",
@@ -411,8 +411,8 @@ function init_gear_sets()
     ear1="Telos Earring",
   })
   sets.precast.WS["Tachi: Shoha"].HighAccMaxTP = set_combine(sets.precast.WS["Tachi: Shoha"].HighAcc, {
+    ear1="Thrud Earring",
     ear2="Telos Earring",
-    -- ear1="Thrud Earring",
   })
 
   -- Tachi: Ageha - 60% CHR / 40% STR; More important to stack magic acc
