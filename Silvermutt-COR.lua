@@ -514,7 +514,7 @@ function init_gear_sets()
     hands="Mummu Wrists +2",
     feet="Mummu Gamash. +2",
     neck="Fotia Gorget",
-    ear1="Odr Earring"
+    ear1="Odr Earring",
     ear2="Moonshade Earring",
     ring1="Regal Ring",
     waist="Fotia Belt",
