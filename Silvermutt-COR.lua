@@ -145,6 +145,7 @@ function job_setup()
     ['Fomalhaut'] = "gun",
   }
 
+  sets.org.job = {}
   sets.org.job[1] = {ammo=gear.RAbullet}
   sets.org.job[2] = {ammo=gear.RAccbullet}
   sets.org.job[3] = {ammo=gear.WSbullet}

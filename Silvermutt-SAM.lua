@@ -121,10 +121,7 @@ end
 -- Define sets and vars used by this job file.
 function init_gear_sets()
 
-  sets.org.job[1] = {
-    main="Taimakuniyuki",
-    sub="Katana Strap",
-  }
+  sets.org.job = {}
 
   -- Enmity sets
   sets.Enmity = {

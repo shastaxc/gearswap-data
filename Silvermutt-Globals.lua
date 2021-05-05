@@ -39,7 +39,6 @@ locked_ring2 = false -- Do not modify
 
 function define_global_sets()
   sets.org = {}
-  sets.org.job = {}
   sets.org.global = {}
   sets.org.global[1] = {ring1="Dimensional Ring (Holla)"}
   sets.org.global[2] = {ring1="Dimensional Ring (Dem)"}

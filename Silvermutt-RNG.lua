@@ -85,6 +85,7 @@ function job_setup()
     ['Fomalhaut'] = "gun",
   }
 
+  sets.org.job = {}
   sets.org.job[1] = {ammo="Chrono Bullet"}
   sets.org.job[2] = {ammo="Eminent Arrow"}
   sets.org.job[3] = {ammo="Quelling Bolt"}
