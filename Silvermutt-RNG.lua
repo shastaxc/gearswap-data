@@ -920,9 +920,9 @@ function init_gear_sets()
   })
 
   sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
-    feet=gear.Herc_STP_feet,
     ear1="Dignitary's Earring",
     ring1="Chirich Ring +1",
+    -- feet=gear.Herc_STP_feet,
   })
 
   -- * DNC Subjob DW Trait: +15%
