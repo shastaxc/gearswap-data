@@ -178,6 +178,7 @@ function job_setup()
   send_command('bind ^end gs c cycleback RangedWeaponSet')
 
   send_command('bind !q input /ja "Velocity Shot" <me>')
+  send_command('bind !e input /ja "Hover Shot" <me>')
   send_command('bind !` input /ja "Scavenge" <me>')
   send_command('bind ^numlock input /ja "Double Shot" <me>')
   send_command('bind numpad0 input /ra <t>')
@@ -237,6 +238,7 @@ function user_unload()
   send_command('unbind ^end')
 
   send_command('unbind !q')
+  send_command('unbind !e')
   send_command('unbind !`')
 
   send_command('unbind !w')
