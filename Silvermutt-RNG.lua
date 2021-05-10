@@ -83,6 +83,7 @@ function job_setup()
   marksman_weapon_subtypes = {
     ['Gastraphetes'] = "xbow",
     ['Fomalhaut'] = "gun",
+    ['Anarchy'] = "gun",
   }
 
   sets.org.job = {}
@@ -100,11 +101,14 @@ function job_setup()
     ['Armageddon'] = "Chrono Bullet",
     ['Gastraphetes'] = "Quelling Bolt",
     ['Fomalhaut'] = "Chrono Bullet",
-    ['Sparrowhawk'] = "Eminent Arrow",
-    ['Sparrowhawk +1'] = "Eminent Arrow",
     ['Sparrowhawk +2'] = "Eminent Arrow",
     ['Sparrowhawk +3'] = "Eminent Arrow",
     ['Accipiter'] = "Eminent Arrow",
+    ['Anarchy'] = "Chrono Bullet",
+    ['Anarchy +1'] = "Chrono Bullet",
+    ['Anarchy +2'] = "Chrono Bullet",
+    ['Anarchy +3'] = "Chrono Bullet",
+    ['Ataktos'] = "Chrono Bullet",
   }
   AccAmmo = {
     ['Yoichinoyumi'] = "Yoichi's Arrow",
@@ -114,11 +118,14 @@ function job_setup()
     ['Armageddon'] = "Eradicating Bullet",
     ['Gastraphetes'] = "Quelling Bolt",
     ['Fomalhaut'] = "Devastating Bullet",
-    ['Sparrowhawk'] = "Eminent Arrow",
-    ['Sparrowhawk +1'] = "Eminent Arrow",
     ['Sparrowhawk +2'] = "Eminent Arrow",
     ['Sparrowhawk +3'] = "Eminent Arrow",
     ['Accipiter'] = "Eminent Arrow",
+    ['Anarchy'] = "Chrono Bullet",
+    ['Anarchy +1'] = "Chrono Bullet",
+    ['Anarchy +2'] = "Chrono Bullet",
+    ['Anarchy +3'] = "Chrono Bullet",
+    ['Ataktos'] = "Chrono Bullet",
   }
   WSAmmo = {
     ['Yoichinoyumi'] = "Chrono Arrow",
@@ -128,11 +135,14 @@ function job_setup()
     ['Armageddon'] = "Chrono Bullet",
     ['Gastraphetes'] = "Quelling Bolt",
     ['Fomalhaut'] = "Chrono Bullet",
-    ['Sparrowhawk'] = "Eminent Arrow",
-    ['Sparrowhawk +1'] = "Eminent Arrow",
     ['Sparrowhawk +2'] = "Eminent Arrow",
     ['Sparrowhawk +3'] = "Eminent Arrow",
     ['Accipiter'] = "Eminent Arrow",
+    ['Anarchy'] = "Chrono Bullet",
+    ['Anarchy +1'] = "Chrono Bullet",
+    ['Anarchy +2'] = "Chrono Bullet",
+    ['Anarchy +3'] = "Chrono Bullet",
+    ['Ataktos'] = "Chrono Bullet",
   }
   MagicAmmo = {
     ['Yoichinoyumi'] = "Chrono Arrow",
@@ -142,11 +152,14 @@ function job_setup()
     ['Armageddon'] = "Devastating Bullet",
     ['Gastraphetes'] = "Quelling Bolt",
     ['Fomalhaut'] = "Devastating Bullet",
-    ['Sparrowhawk'] = "Eminent Arrow",
-    ['Sparrowhawk +1'] = "Eminent Arrow",
     ['Sparrowhawk +2'] = "Eminent Arrow",
     ['Sparrowhawk +3'] = "Eminent Arrow",
     ['Accipiter'] = "Eminent Arrow",
+    ['Anarchy'] = "Chrono Bullet",
+    ['Anarchy +1'] = "Chrono Bullet",
+    ['Anarchy +2'] = "Chrono Bullet",
+    ['Anarchy +3'] = "Chrono Bullet",
+    ['Ataktos'] = "Chrono Bullet",
   }
 
   send_command('bind !s gs c faceaway')
@@ -1725,14 +1738,53 @@ function gearinfo(cmdParams, eventArgs)
   end
 end
 
+function has_item(item_name)
+  if item_name and item_name ~= '' then
+    if player.inventory[item_name] then
+      return true
+    elseif player.wardrobe[item_name] then
+      return true
+    elseif player.wardrobe2[item_name] then
+      return true
+    elseif player.wardrobe3 and player.wardrobe3[item_name] then
+      return true
+    elseif player.wardrobe4 and player.wardrobe4[item_name] then
+      return true
+    end
+  end
+  return false
+end
+
+function get_item(item_name)
+  if item_name and item_name ~= '' then
+    if player.inventory[item_name] then
+      return player.inventory[item_name]
+    elseif player.wardrobe[item_name] then
+      return player.wardrobe[item_name]
+    elseif player.wardrobe2[item_name] then
+      return player.wardrobe2[item_name]
+    elseif player.wardrobe3 and player.wardrobe3[item_name] then
+      return player.wardrobe3[item_name]
+    elseif player.wardrobe4 and player.wardrobe4[item_name] then
+      return player.wardrobe4[item_name]
+    end
+  end
+  return nil
+end
+
 -- Check for proper ammo when shooting or weaponskilling
 function check_ammo(spell, action, spellMap, eventArgs)
   local swapped_ammo = nil
+  local default_ammo = player.equipment.range and DefaultAmmo[player.equipment.range]
+  local magic_ammo = player.equipment.range and MagicAmmo[player.equipment.range]
+  local acc_ammo = player.equipment.range and AccAmmo[player.equipment.range]
+  local ws_ammo = player.equipment.range and WSAmmo[player.equipment.range]
+
   if spell.action_type == 'Ranged Attack' then
-    if player.equipment.ammo == 'empty' or player.equipment.ammo ~= DefaultAmmo[player.equipment.range] then
-      if DefaultAmmo[player.equipment.range] then
-        if player.inventory[DefaultAmmo[player.equipment.range]] then
-          swapped_ammo = DefaultAmmo[player.equipment.range]
+    if player.equipment.ammo == 'empty' or player.equipment.ammo ~= default_ammo then
+      if default_ammo then
+        if has_item(default_ammo) then
+          swapped_ammo = default_ammo
           equip({ammo=swapped_ammo})
         else
           swapped_ammo = empty
@@ -1746,12 +1798,12 @@ function check_ammo(spell, action, spellMap, eventArgs)
   elseif spell.type == 'WeaponSkill' then
     -- magical weaponskills
     if elemental_ws:contains(spell.english) then
-      if player.inventory[MagicAmmo[player.equipment.range]] then
-        swapped_ammo = MagicAmmo[player.equipment.range]
+      if has_item(magic_ammo) then
+        swapped_ammo = magic_ammo
         equip({ammo=swapped_ammo})
-      elseif player.inventory[DefaultAmmo[player.equipment.range]] then
+      elseif has_item(default_ammo) then
         add_to_chat(3,"Magic ammo unavailable. Using default ammo.")
-        swapped_ammo = DefaultAmmo[player.equipment.range]
+        swapped_ammo = default_ammo
         equip({ammo=swapped_ammo})
       else
         swapped_ammo = empty
@@ -1763,12 +1815,12 @@ function check_ammo(spell, action, spellMap, eventArgs)
       -- physical ranged weaponskills
       if spell.skill == 'Marksmanship' or spell.skill == 'Archery' then
         if state.RangedMode.value == 'Acc' then
-          if player.inventory[AccAmmo[player.equipment.range]] then
-            swapped_ammo = AccAmmo[player.equipment.range]
+          if has_item(acc_ammo) then
+            swapped_ammo = acc_ammo
             equip({ammo=swapped_ammo})
-          elseif player.inventory[DefaultAmmo[player.equipment.range]] then
+          elseif has_item(default_ammo) then
             add_to_chat(3,"Acc ammo unavailable. Using default ammo.")
-            swapped_ammo = DefaultAmmo[player.equipment.range]
+            swapped_ammo = default_ammo
             equip({ammo=swapped_ammo})
           else
             add_to_chat(3,"Acc & default ammo unavailable. Unequipping ammo.")
@@ -1776,12 +1828,12 @@ function check_ammo(spell, action, spellMap, eventArgs)
             equip({ammo=swapped_ammo})
           end
         else
-          if player.inventory[WSAmmo[player.equipment.range]] then
-            swapped_ammo = WSAmmo[player.equipment.range]
+          if has_item(ws_ammo) then
+            swapped_ammo = ws_ammo
             equip({ammo=swapped_ammo})
-          elseif player.inventory[DefaultAmmo[player.equipment.range]] then
+          elseif has_item(default_ammo) then
             add_to_chat(3,"WS ammo unavailable. Using default ammo.")
-            swapped_ammo = DefaultAmmo[player.equipment.range]
+            swapped_ammo = default_ammo
             equip({ammo=swapped_ammo})
           else
             add_to_chat(3,"WS & default ammo unavailable. Unequipping ammo.")
@@ -1799,9 +1851,9 @@ function check_ammo(spell, action, spellMap, eventArgs)
       end
     end
   elseif spell.english == "Shadowbind" or spell.english == "Bounty Shot" or spell.english == "Eagle Eye Shot" then
-    if player.inventory[DefaultAmmo[player.equipment.range]] then
+    if has_item(default_ammo) then
       add_to_chat(3,"Using default ammo for JA.")
-      swapped_ammo = DefaultAmmo[player.equipment.range]
+      swapped_ammo = default_ammo
       equip({ammo=swapped_ammo})
     else
       add_to_chat(3,"Default ammo unavailable. Unequipping ammo.")
@@ -1809,8 +1861,9 @@ function check_ammo(spell, action, spellMap, eventArgs)
       equip({ammo=swapped_ammo})
     end
   end
-  if player.equipment.ammo ~= 'empty' and player.inventory[swapped_ammo] ~= nil and player.inventory[swapped_ammo].count < 5 then
-    add_to_chat(39,"*** Ammo '"..player.inventory[swapped_ammo].shortname.."' running low! *** ("..player.inventory[swapped_ammo].count..")")
+  local swapped_item = get_item(swapped_ammo)
+  if player.equipment.ammo ~= 'empty' and swapped_item ~= nil and swapped_item.count < 5 then
+    add_to_chat(39,"*** Ammo '"..swapped_item.shortname.."' running low! *** ("..swapped_item.count..")")
   end
 end
 
