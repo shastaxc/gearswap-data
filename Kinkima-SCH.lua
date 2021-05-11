@@ -1099,7 +1099,7 @@ function init_gear_sets()
   sets.passive_refresh.nighttime = {
     hands="Serpentes Cuffs",
   }
-  sets.passive_refresh.sub50 = set_combine(sets.latent_refresh, {
+  sets.passive_refresh.sub50 = set_combine(sets.passive_refresh, {
     waist="Fucho-no-Obi",
   })
 
