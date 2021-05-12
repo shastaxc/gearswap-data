@@ -61,11 +61,10 @@ gear.Herc_TA_feet = { name="Herculean Boots", augments={'Accuracy+13','"Triple A
 
 gear.Herc_STP_feet = {} -- STP > DEX > Acc/Att > Multihit
 
-gear.Herc_MAB_head = { name="Herculean Helm", augments={'Pet: INT+11','Weapon skill damage +4%','Mag. Acc.+15 "Mag.Atk.Bns."+15',}}
 gear.Herc_MAB_legs = { name="Herculean Trousers", augments={'Mag. Acc.+18 "Mag.Atk.Bns."+18','Weapon skill damage +1%','MND+1','Mag. Acc.+1','"Mag.Atk.Bns."+15',}}
 gear.Herc_MAB_feet = { name="Herculean Boots", augments={'Mag. Acc.+1','"Mag.Atk.Bns."+23','Quadruple Attack +1','Mag. Acc.+17 "Mag.Atk.Bns."+17',}}
 
-gear.Herc_WSD_head = { name="Herculean Helm", augments={'Pet: INT+11','Weapon skill damage +4%','Mag. Acc.+15 "Mag.Atk.Bns."+15',}}
+gear.Herc_WSD_head = { name="Herculean Helm", augments={'Weapon skill damage +5%','"Snapshot"+2','Magic Damage +4','Mag. Acc.+6 "Mag.Atk.Bns."+6',}}
 gear.Herc_WSD_body = { name="Herculean Vest", augments={'Pet: Attack+12 Pet: Rng.Atk.+12','"Mag.Atk.Bns."+9','Weapon skill damage +10%','Accuracy+20 Attack+20',}}
 gear.Herc_WSD_feet = { name="Herculean Boots", augments={'Rng.Acc.+21','Mag. Acc.+20','Weapon skill damage +6%','Accuracy+3 Attack+3',}}
 
