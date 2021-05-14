@@ -178,7 +178,7 @@ function init_gear_sets()
   }
 
   sets.precast.JA['Seigan'] = {
-    -- head="Kasuga Kabuto +1",
+    head="Kasuga Kabuto +1",
   }
 
   sets.precast.JA['Sekkanoki'] = {
