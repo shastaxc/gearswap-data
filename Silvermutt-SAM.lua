@@ -415,14 +415,13 @@ function init_gear_sets()
   sets.precast.WS['Tachi: Ageha'] = set_combine(sets.precast.WS, {
     ammo="Pemphredo Tathlum",
     head="Mpaca's Cap",
-    body="Flamma Korazin +1",
+    body="Flamma Korazin +2",
     hands="Flamma Manopolas +2",
     legs="Flamma Dirs +1",
     feet="Flamma Gambieras +2",
     ear1="Dignitary's Earring",
     ear2="Moonshade Earring",
     waist="Eschan Stone",
-    -- body="Flamma Korazin +2",
     -- legs="Flamma Dirs +2",
     -- neck="Sanctity Necklace",
     -- ring1="Stikini Ring +1",
@@ -451,7 +450,7 @@ function init_gear_sets()
   -- Impulse Drive - 100% STR
   sets.precast.WS['Impulse Drive'] = set_combine(sets.precast.WS, {
     ammo="Aurgelmir Orb +1",
-    head="Flamma Zucchetto +1",
+    head="Flamma Zucchetto +2",
     body="Kendatsuba Samue +1",
     hands=gear.Ryuo_A_hands,
     legs="Ken. Hakama +1",
@@ -463,7 +462,6 @@ function init_gear_sets()
     ring2="Niqmaddu Ring",
     back=gear.SAM_STR_WSD_Cape,
     waist="Fotia Belt",
-    -- head="Flamma Zucchetto +2",
     -- body="Dagon Breast.",
   })
   sets.precast.WS["Impulse Drive"].MaxTP = set_combine(sets.precast.WS["Impulse Drive"], {
@@ -603,7 +601,7 @@ function init_gear_sets()
 
   sets.engaged = {
     ammo="Aurgelmir Orb",
-    head="Flamma Zucchetto +1",
+    head="Flamma Zucchetto +2",
     body="Kasuga Domaru +1",
     hands="Wakido Kote +2",
     legs="Mpaca's Hose",
@@ -616,7 +614,6 @@ function init_gear_sets()
     back=gear.SAM_TP_Cape,
     waist="Ioskeha Belt +1",
     -- ammo="Aurgelmir Orb +1",
-    -- head="Flamma Zucchetto +2",
     -- hands="Wakido Kote +3",
     -- ear2="Dedition Earring",
   }
