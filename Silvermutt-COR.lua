@@ -275,11 +275,11 @@ function init_gear_sets()
     ear1="Genmei Earring", --2/0
     ring1="Gelatinous Ring +1", --7/(-1)
     ring2="Defending Ring", --10/10
+    back=gear.COR_SNP_Cape,
     -- head="Lanun Tricorne +3",
     -- hands="Chasseur's Gants +1",
     -- legs="Desultor Tassets",
     -- ear2="Etiolation Earring", --0/3
-    -- back=gear.COR_SNP_Cape,
     -- waist="Flume Belt +1", --4/0
   }
 
@@ -345,14 +345,14 @@ function init_gear_sets()
     hands="Carmine Fin. Ga. +1",  --  8/11
     legs=gear.Adhemar_D_legs,     -- 10/13
     feet="Meg. Jam. +2",          -- 10/__
+    back=gear.COR_SNP_Cape,       -- 10/__
     waist="Yemaya Belt",          -- __/ 5
     -- head="Chass. Tricorne +1",    -- __/14
     -- body="Oshosi Vest +1",        -- 14/__
     -- hands="Lanun Gants +3",       -- 13/__
     -- neck="Comm. Charm +2",        --  4/__
-    -- back=gear.COR_SNP_Cape,       -- 10/__
     -- 61 Snapshot / 32 Rapid Shot
-  } -- 38 Snapshot / 29 Rapid Shot
+  } -- 48 Snapshot / 29 Rapid Shot
 
   -- 45 Snapshot to cap
   sets.precast.RA.Flurry1 = set_combine(sets.precast.RA, {
@@ -824,10 +824,10 @@ function init_gear_sets()
     ear2="Odnowa Earring +1",   --  3/ 5, ___
     ring1="Chirich Ring +1",    -- __/__, ___
     ring2="Defending Ring",     -- 10/10, ___
+    back=gear.COR_TP_Cape,      -- 10/__, ___
     waist="Kasiri Belt",        -- __/__, ___
-    -- back=gear.COR_SNP_Cape,
     -- waist="Carrier's Sash",     -- __/__, ___
-  } -- 51 PDT / 53 MDT, 697 MEVA
+  } -- 61 PDT / 53 MDT, 697 MEVA
 
   sets.defense.PDT = sets.HeavyDef
   sets.defense.MDT = sets.HeavyDef
@@ -848,7 +848,7 @@ function init_gear_sets()
     neck="Bathy Choker +1",
     ear1="Infused Earring",
     ring1="Chirich Ring +1",
-    -- back=gear.COR_Regen_Cape,
+    back=gear.COR_Regen_Cape,
   }
   sets.latent_refresh = {
     head=gear.Herc_Refresh_head,
