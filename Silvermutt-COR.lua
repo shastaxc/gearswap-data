@@ -518,11 +518,11 @@ function init_gear_sets()
     ear1="Odr Earring",
     ear2="Moonshade Earring",
     ring1="Regal Ring",
+    back=gear.COR_TP_Cape,
     waist="Fotia Belt",
     -- body="Abnoba Kaftan",
     -- legs="Zoar Subligar +1",
     -- ring2="Mummu Ring",
-    -- back=gear.COR_TP_Cape,
   }
   sets.precast.WS['Evisceration'].MaxTP = set_combine(sets.precast.WS['Evisceration'], {
     ear2="Telos Earring",
@@ -556,6 +556,7 @@ function init_gear_sets()
     ear1="Ishvara Earring",
     ear2="Moonshade Earring",
     ring1="Regal Ring",
+    back=gear.COR_WS2_Cape,
     waist="Sailfi Belt +1",
     -- body="Laksa. Frac +3",
     -- legs=gear.Herc_WSD_legs,
@@ -563,7 +564,6 @@ function init_gear_sets()
     -- neck="Comm. Charm +2",
     -- ring2="Rufescent Ring",
     -- ring2="Epaminondas's Ring",
-    -- back=gear.COR_WS2_Cape,
   })
   sets.precast.WS['Savage Blade'].MaxTP = set_combine(sets.precast.WS['Savage Blade'], {
     ear2="Telos Earring",
@@ -597,8 +597,8 @@ function init_gear_sets()
     ear2="Brutal Earring",
     ring1="Regal Ring",
     ring2="Epona's Ring",
+    back=gear.COR_WS2_Cape,
     waist="Fotia Belt",
-    -- back=gear.COR_WS2_Cape,
   })
   sets.precast.WS['Swift Blade'].MaxTP = set_combine(sets.precast.WS['Swift Blade'], {
   })
@@ -916,9 +916,9 @@ function init_gear_sets()
     ear1="Cessance Earring",
     ear2="Brutal Earring",
     ring1="Epona's Ring",
+    back=gear.COR_TP_Cape,
     waist="Windbuffet Belt +1",
     -- ring2="Petrov Ring",
-    -- back=gear.COR_TP_Cape,
   }
   sets.engaged.LowAcc = set_combine(sets.engaged, {
     head="Dampening Tam",
@@ -995,9 +995,9 @@ function init_gear_sets()
     ear1="Suppanomimi", --5
     ear2="Eabani Earring", --4
     ring1="Epona's Ring",
+    back=gear.COR_TP_Cape,
     waist="Reiki Yotai", --7
     -- ring2="Petrov Ring",
-    -- back=gear.COR_TP_Cape,
   } -- 42%
   sets.engaged.DW.LowAcc.LowHaste = set_combine(sets.engaged.DW.LowHaste, {
     head="Dampening Tam",
@@ -1032,9 +1032,9 @@ function init_gear_sets()
     ear1="Suppanomimi", --5
     ear2="Eabani Earring", --4
     ring1="Epona's Ring",
+    back=gear.COR_TP_Cape,
     waist="Reiki Yotai", --7
     -- ring2="Petrov Ring",
-    -- back=gear.COR_TP_Cape,
   } -- 31%
   sets.engaged.DW.LowAcc.MidHaste = set_combine(sets.engaged.DW.MidHaste, {
     head="Dampening Tam",
@@ -1071,9 +1071,9 @@ function init_gear_sets()
     ear1="Suppanomimi", --5
     ear2="Eabani Earring", --4
     ring1="Epona's Ring",
+    back=gear.COR_TP_Cape,
     waist="Reiki Yotai", --7
     -- ring2="Petrov Ring",
-    -- back=gear.COR_TP_Cape,
   } -- 27%
   sets.engaged.DW.LowAcc.HighHaste = set_combine(sets.engaged.DW.HighHaste, {
     head="Dampening Tam",
@@ -1110,9 +1110,9 @@ function init_gear_sets()
     ear1="Suppanomimi", --5
     ear2="Telos Earring",
     ring1="Epona's Ring",
+    back=gear.COR_TP_Cape,
     waist="Windbuffet Belt +1",
     -- ring2="Petrov Ring",
-    -- back=gear.COR_TP_Cape,
   } -- 11%
   sets.engaged.DW.LowAcc.SuperHaste = set_combine(sets.engaged.DW.SuperHaste, {
     head="Dampening Tam",
@@ -1149,9 +1149,9 @@ function init_gear_sets()
     ear1="Brutal Earring",
     ear2="Telos Earring",
     ring1="Epona's Ring",
+    back=gear.COR_TP_Cape,
     waist="Windbuffet Belt +1",
     -- ring2="Petrov Ring",
-    -- back=gear.COR_TP_Cape,
   }
   sets.engaged.DW.LowAcc.MaxHaste = set_combine(sets.engaged.DW.LowAcc.MaxHaste, {
     head="Dampening Tam",
@@ -1285,6 +1285,14 @@ function init_gear_sets()
     main="Naegling",
     sub="Blurred Knife +1",
     -- ranged="Ataktos",
+  }
+  sets.WeaponSet.Cleaving = {
+    main="Kaja Knife",
+    sub="Blurred Knife +1",
+    -- ranged="Ataktos",
+    -- main="Tauret",
+    -- sub="Levente Dagger",
+    -- range="Doomsday",
   }
 end
 
