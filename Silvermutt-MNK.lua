@@ -242,9 +242,12 @@ function init_gear_sets()
   sets.precast.Flourish1 = {
   }
 
-  sets.precast.Utsusemi = set_combine(sets.precast.FC, {
+  sets.precast['Utsusemi: Ichi'] = set_combine(sets.precast.FC, {
     ammo="Staunch Tathlum +1",
     ring1="Prolix Ring",
+    ring2="Defending Ring",
+  })
+  sets.precast['Utsusemi: Ni'] = set_combine(sets.precast.FC, {
     ring2="Defending Ring",
   })
 
@@ -252,12 +255,12 @@ function init_gear_sets()
   sets.midcast.Trust = sets.precast.FC
 
   sets.midcast.SpellInterrupt = {
-    ammo="Impatiens", --10
     neck="Loricate Torque +1", --5
     waist="Audumbla Sash", --10
   }
 
-  sets.midcast.Utsusemi = set_combine(sets.precast.Utsusemi, sets.midcast.SpellInterrupt)
+  sets.midcast['Utsusemi: Ichi'] = set_combine(sets.precast['Utsusemi: Ichi'], sets.midcast.SpellInterrupt)
+  sets.midcast['Utsusemi: Ni'] = set_combine(sets.precast['Utsusemi: Ni'], sets.midcast.SpellInterrupt)
 
 
   ------------------------------------------------------------------------------------------------
