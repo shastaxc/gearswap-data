@@ -1257,7 +1257,7 @@ function init_gear_sets()
     -- ranged="Death Penalty",
   }
   sets.WeaponSet.DeathPenalty_R = {
-    -- main="Lanun Knife",
+    main="Lanun Knife",
     -- sub="Tauret",
     -- ranged="Death Penalty",
   }
@@ -1273,17 +1273,17 @@ function init_gear_sets()
   }
   sets.WeaponSet.Fomalhaut_M = {
     main="Naegling",
-    -- sub="Blurred Knife +1",
+    sub="Blurred Knife +1",
     ranged="Fomalhaut",
   }
   sets.WeaponSet.Fomalhaut_R = {
-    -- main="Lanun Knife",
+    main="Lanun Knife",
     sub="Nusku Shield",
     ranged="Fomalhaut",
   }
   sets.WeaponSet.Ataktos = {
     main="Naegling",
-    -- sub="Blurred Knife +1",
+    sub="Blurred Knife +1",
     -- ranged="Ataktos",
   }
 end

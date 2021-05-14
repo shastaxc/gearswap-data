@@ -182,8 +182,7 @@ function init_gear_sets()
   }
 
   sets.precast.JA['Sekkanoki'] = {
-    hands="Kasuga Kote",
-    -- hands="Kasuga Kote +1",
+    hands="Kasuga Kote +1",
   }
 
   sets.precast.JA['Shikikoyo'] = {
@@ -197,7 +196,7 @@ function init_gear_sets()
   }
 
   sets.precast.JA['Sengikori'] = {
-    -- feet="Kasuga Sune-ate +1",
+    feet="Kasuga Sune-ate +1",
   }
 
   sets.precast.JA['Provoke'] = sets.Enmity
@@ -268,7 +267,7 @@ function init_gear_sets()
   })
   sets.precast.WS["Tachi: Fudo"].MidAcc = set_combine(sets.precast.WS["Tachi: Fudo"].LowAcc, {
     neck="Fotia Gorget",
-    -- feet="Sak. Sune-Ate +3",
+    -- feet="Sakonji Sune-Ate +3",
   })
   sets.precast.WS["Tachi: Fudo"].MidAccMaxTP = set_combine(sets.precast.WS["Tachi: Fudo"].MidAcc, {
     ear2="Telos Earring",
