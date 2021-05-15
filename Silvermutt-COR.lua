@@ -100,14 +100,14 @@ function job_setup()
   state.RangedMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.IdleMode:options('Normal', 'LightDef')
 
-  state.WeaponSet = M{['description']='Weapon Set', 'Fomalhaut_M', 'Fomalhaut_R', 'Ataktos', 'DeathPenalty_M', 'DeathPenalty_R', 'PhysRA Armageddon_M', 'Armageddon_R'}
+  state.WeaponSet = M{['description']='Weapon Set', 'Ataktos', 'Cleaving', 'Fomalhaut_M', 'Fomalhaut_R',}
 
   state.CP = M(false, "Capacity Points Mode")
   state.RearmingLock = M(false, 'Rearming Lock')
 
   -- QuickDraw Selector
-  state.Mainqd = M{['description']='Primary Shot', 'Fire Shot', 'Ice Shot', 'Wind Shot', 'Earth Shot', 'Thunder Shot', 'Water Shot'}
-  state.Altqd = M{['description']='Secondary Shot', 'Fire Shot', 'Ice Shot', 'Wind Shot', 'Earth Shot', 'Thunder Shot', 'Water Shot'}
+  state.Mainqd = M{['description']='Primary Shot', 'Fire Shot', 'Ice Shot', 'Wind Shot', 'Earth Shot', 'Thunder Shot', 'Water Shot', 'Light Shot', 'Dark Shot',}
+  state.Altqd = M{['description']='Secondary Shot', 'Fire Shot', 'Ice Shot', 'Wind Shot', 'Earth Shot', 'Thunder Shot', 'Water Shot', 'Light Shot', 'Dark Shot',}
   state.UseAltqd = M(false, 'Use Secondary Shot')
   state.SelectqdTarget = M(false, 'Select Quick Draw Target')
   state.IgnoreTargetting = M(false, 'Ignore Targetting')
@@ -170,7 +170,7 @@ function job_setup()
   send_command('bind ^insert gs c cycle WeaponSet')
   send_command('bind ^delete gs c cycleback WeaponSet')
 
-  send_command('bind ^\\ gs c cycle QDMode')
+  send_command('bind ^\\\\ gs c cycle QDMode')
   send_command('bind ^[ gs c cycleback mainqd')
   send_command('bind ^] gs c cycle mainqd')
   send_command('bind ^; gs c cycleback altqd')
@@ -180,9 +180,6 @@ function job_setup()
   send_command('bind @` gs c toggle LuzafRing')
 
   send_command('bind !q input /ja "Double-up" <me>')
-  send_command('bind ^c input /ja "Crooked Cards" <me>')
-  send_command('bind ^s input /ja "Snake Eye" <me>')
-  send_command('bind ^f input /ja "Fold" <me>')
   send_command('bind !` input /ja "Bolter\'s Roll" <me>')
   send_command('bind ^numlock input /ja "Triple Shot" <me>')
   send_command('bind numpad0 input /ra <t>')
@@ -208,6 +205,9 @@ function user_setup()
     send_command('bind ^numpad/ input /ja "Berserk" <me>')
     send_command('bind ^numpad* input /ja "Warcry" <me>')
     send_command('bind ^numpad- input /ja "Aggressor" <me>')
+  elseif player.sub_job == 'NIN' then
+    send_command('bind ^numpad0 input /ma "Utsusemi: Ichi" <me>')
+    send_command('bind ^numpad. input /ma "Utsusemi: Ni" <me>')
   end
 
   update_combat_form()
@@ -232,25 +232,24 @@ function user_unload()
   send_command('unbind ^insert')
   send_command('unbind ^delete')
 
-  send_command('unbind ^\\')
+  send_command('unbind ^\\\\')
   send_command('unbind ^[')
   send_command('unbind ^]')
   send_command('unbind ^;')
   send_command('unbind ^\'')
   send_command('unbind ^p')
   send_command('unbind ^l')
-  send_command ('unbind @`')
+  send_command('unbind @`')
 
   send_command('unbind !q')
-  send_command('unbind ^c')
-  send_command('unbind ^s')
-  send_command('unbind ^f')
   send_command('unbind !`')
   send_command('unbind ^numlock')
   send_command('unbind numpad0')
   send_command('unbind ^numpad/')
   send_command('unbind ^numpad*')
   send_command('unbind ^numpad-')
+  send_command('unbind ^numpad0')
+  send_command('unbind ^numpad.')
 end
 
 -- Define sets and vars used by this job file.
@@ -269,6 +268,7 @@ function init_gear_sets()
 }
 
   sets.precast.CorsairRoll = {
+    head="Lanun Tricorne",
     body="Malignance Tabard", --9/9
     feet="Malignance Boots", --4/0
     neck="Regal Necklace",
@@ -333,7 +333,6 @@ function init_gear_sets()
   }
 
   sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {
-    ammo="Staunch Tathlum +1",
     neck="Magoraga Beads", --10
     ring1="Defending Ring",
   })
@@ -916,6 +915,7 @@ function init_gear_sets()
     ear1="Cessance Earring",
     ear2="Brutal Earring",
     ring1="Epona's Ring",
+    ring2="Ilabrat Ring",
     back=gear.COR_TP_Cape,
     waist="Windbuffet Belt +1",
     -- ring2="Petrov Ring",
@@ -957,6 +957,8 @@ function init_gear_sets()
     ear1="Suppanomimi", --5
     ear2="Brutal Earring",
     ring1="Epona's Ring",
+    ring2="Ilabrat Ring",
+    back=gear.COR_TP_Cape,
     waist="Reiki Yotai", --7
     -- ring2="Petrov Ring",
     -- back=gear.COR_DW_Cape, --10
@@ -995,6 +997,7 @@ function init_gear_sets()
     ear1="Suppanomimi", --5
     ear2="Eabani Earring", --4
     ring1="Epona's Ring",
+    ring2="Ilabrat Ring",
     back=gear.COR_TP_Cape,
     waist="Reiki Yotai", --7
     -- ring2="Petrov Ring",
@@ -1032,6 +1035,7 @@ function init_gear_sets()
     ear1="Suppanomimi", --5
     ear2="Eabani Earring", --4
     ring1="Epona's Ring",
+    ring2="Ilabrat Ring",
     back=gear.COR_TP_Cape,
     waist="Reiki Yotai", --7
     -- ring2="Petrov Ring",
@@ -1071,6 +1075,7 @@ function init_gear_sets()
     ear1="Suppanomimi", --5
     ear2="Eabani Earring", --4
     ring1="Epona's Ring",
+    ring2="Ilabrat Ring",
     back=gear.COR_TP_Cape,
     waist="Reiki Yotai", --7
     -- ring2="Petrov Ring",
@@ -1110,6 +1115,7 @@ function init_gear_sets()
     ear1="Suppanomimi", --5
     ear2="Telos Earring",
     ring1="Epona's Ring",
+    ring2="Ilabrat Ring",
     back=gear.COR_TP_Cape,
     waist="Windbuffet Belt +1",
     -- ring2="Petrov Ring",
@@ -1149,6 +1155,7 @@ function init_gear_sets()
     ear1="Brutal Earring",
     ear2="Telos Earring",
     ring1="Epona's Ring",
+    ring2="Ilabrat Ring",
     back=gear.COR_TP_Cape,
     waist="Windbuffet Belt +1",
     -- ring2="Petrov Ring",
@@ -1284,15 +1291,15 @@ function init_gear_sets()
   sets.WeaponSet.Ataktos = {
     main="Naegling",
     sub="Blurred Knife +1",
+    ranged="Fomalhaut",
     -- ranged="Ataktos",
   }
   sets.WeaponSet.Cleaving = {
     main="Kaja Knife",
     sub="Blurred Knife +1",
-    -- ranged="Ataktos",
+    ranged="Doomsday",
     -- main="Tauret",
     -- sub="Levente Dagger",
-    -- range="Doomsday",
   }
 end
 
@@ -1304,7 +1311,6 @@ end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
 function job_precast(spell, action, spellMap, eventArgs)
-  equip(sets[state.WeaponSet.current])
   -- Check that proper ammo is available if we're using ranged attacks or similar.
   if spell.action_type == 'Ranged Attack' or spell.type == 'WeaponSkill' or spell.type == 'CorsairShot' then
     do_bullet_checks(spell, spellMap, eventArgs)
@@ -1428,7 +1434,6 @@ end
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_aftercast(spell, action, spellMap, eventArgs)
-  equip(sets[state.WeaponSet.current])
   if (spell.type == 'CorsairRoll' or spell.english == "Double-Up") and not spell.interrupted then
     display_roll_info(spell)
   end
