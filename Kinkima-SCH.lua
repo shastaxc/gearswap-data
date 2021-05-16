@@ -1417,7 +1417,7 @@ end
 
 function customize_idle_set(idleSet)
   -- If not in DT mode put on move speed gear
-  if state.IdleMode.current == 'Normal' then
+  if state.IdleMode.current == 'Normal' and state.DefenseMode.value == 'None' then
     -- Apply regen gear
     if classes.CustomIdleGroups:contains('Regen') then
       idleSet = set_combine(idleSet, sets.passive_regen)
