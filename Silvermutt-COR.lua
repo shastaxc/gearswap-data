@@ -258,12 +258,15 @@ function init_gear_sets()
   ---------------------------------------- Precast Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
   sets.precast.JA['Snake Eye'] = {
+    legs="Lanun Trews",
     -- legs="Lanun Trews +3",
   }
   sets.precast.JA['Wild Card'] = {
+    feet="Lanun Bottes",
     -- feet="Lanun Bottes +3",
 }
   sets.precast.JA['Random Deal'] = {
+    body="Lanun Frac +1",
     -- body="Lanun Frac +3",
 }
 
@@ -291,15 +294,17 @@ function init_gear_sets()
     -- back="Gunslinger's Cape",
   }
   sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {
-    -- legs="Chas. Culottes +1",
+    -- legs="Chasseur's Culottes +1",
   })
   sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {
-    -- feet="Chass. Bottes +1",
+    feet="Chasseur's Bottes",
+    -- feet="Chasseur's Bottes +1",
   })
   sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {
-    -- head="Chass. Tricorne +1",
+    head="Chasseur's Tricorne +1",
   })
   sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {
+    body="Chasseur's Frac",
     -- body="Chasseur's Frac +1",
   })
   sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {
@@ -310,6 +315,7 @@ function init_gear_sets()
     -- ring1="Luzaf's Ring",
   })
   sets.precast.FoldDoubleBust = {
+    hands="Lanun Gants",
     -- hands="Lanun Gants +3",
   }
 
@@ -340,13 +346,12 @@ function init_gear_sets()
   -- (10% Snapshot from JP Gifts)
   sets.precast.RA = {
     ammo=gear.RAbullet,
-    head=gear.Taeon_RA_head,      -- 10/__
+    head="Chasseur's Tricorne +1",-- __/14
     hands="Carmine Fin. Ga. +1",  --  8/11
     legs=gear.Adhemar_D_legs,     -- 10/13
     feet="Meg. Jam. +2",          -- 10/__
     back=gear.COR_SNP_Cape,       -- 10/__
     waist="Yemaya Belt",          -- __/ 5
-    -- head="Chass. Tricorne +1",    -- __/14
     -- body="Oshosi Vest +1",        -- 14/__
     -- hands="Lanun Gants +3",       -- 13/__
     -- neck="Comm. Charm +2",        --  4/__
@@ -355,7 +360,7 @@ function init_gear_sets()
 
   -- 45 Snapshot to cap
   sets.precast.RA.Flurry1 = set_combine(sets.precast.RA, {
-    -- body="Laksa. Frac +3", --0/20
+    -- body="Laksamana's Frac +3", --0/20
     -- 47 Snapshot / 52 Rapid Shot
   })
 
@@ -385,7 +390,7 @@ function init_gear_sets()
     ring2="Dingir Ring",
     waist="Fotia Belt",
     -- head="Lanun Tricorne +3",
-    -- body="Laksa. Frac +3",
+    -- body="Laksamana's Frac +3",
     -- legs=gear.Herc_RA_legs,
     -- feet="Lanun Bottes +3",
     -- ring2="Epaminondas's Ring",
@@ -557,7 +562,7 @@ function init_gear_sets()
     ring1="Regal Ring",
     back=gear.COR_WS2_Cape,
     waist="Sailfi Belt +1",
-    -- body="Laksa. Frac +3",
+    -- body="Laksamana's Frac +3",
     -- legs=gear.Herc_WSD_legs,
     -- feet="Lanun Bottes +3",
     -- neck="Comm. Charm +2",
@@ -713,15 +718,18 @@ function init_gear_sets()
   -- More acc
   sets.midcast.CorsairShot['Light Shot'] = {
     ammo=gear.RAccbullet,
+    head="Laksamana's Tricorne +1",
     body="Malignance Tabard",
+    hands="Laksamana's Gants +1",
     legs="Malignance Tights",
+    feet="Laksamana's Bottes +1",
     ear2="Digni. Earring",
     ring1="Regal Ring",
     ring2="Weatherspoon Ring",
     waist="K. Kachina Belt +1",
-    -- head="Laksa. Tricorne +3",
-    -- hands="Laksa. Gants +3",
-    -- feet="Laksa. Boots +3",
+    -- head="Laksamana's Tricorne +3",
+    -- hands="Laksamana's Gants +3",
+    -- feet="Laksamana's Bottes +3",
     -- neck="Comm. Charm +2",
     -- ear1="Gwati Earring",
     -- ring2="Stikini Ring +1",
@@ -730,8 +738,9 @@ function init_gear_sets()
 
   sets.midcast.CorsairShot['Dark Shot'] = sets.midcast.CorsairShot['Light Shot']
   sets.midcast.CorsairShot.Enhance = {
+    feet="Chasseur's Bottes"
     -- body="Mirke Wardecors",
-    -- feet="Chass. Bottes +1"
+    -- feet="Chasseur's Bottes +1"
   }
 
   -- Ranged gear
@@ -761,7 +770,7 @@ function init_gear_sets()
   sets.midcast.RA.HighAcc = set_combine(sets.midcast.RA.Acc, {
     ring1="Regal Ring",
     waist="K. Kachina Belt +1",
-    -- legs="Laksa. Trews +3",
+    -- legs="Laksamana's Trews +3",
   })
 
   sets.midcast.RA.Critical = set_combine(sets.midcast.RA, {
@@ -783,6 +792,7 @@ function init_gear_sets()
   })
 
   sets.TripleShot = {
+    body="Chasseur's Frac", --11
     legs="Oshosi Trousers", --5
     feet="Oshosi Leggings", --2
     -- head="Oshosi Mask +1", --5
@@ -915,10 +925,9 @@ function init_gear_sets()
     ear1="Cessance Earring",
     ear2="Brutal Earring",
     ring1="Epona's Ring",
-    ring2="Ilabrat Ring",
+    ring2="Petrov Ring",
     back=gear.COR_TP_Cape,
     waist="Windbuffet Belt +1",
-    -- ring2="Petrov Ring",
   }
   sets.engaged.LowAcc = set_combine(sets.engaged, {
     head="Dampening Tam",
@@ -957,10 +966,9 @@ function init_gear_sets()
     ear1="Suppanomimi", --5
     ear2="Brutal Earring",
     ring1="Epona's Ring",
-    ring2="Ilabrat Ring",
+    ring2="Petrov Ring",
     back=gear.COR_TP_Cape,
     waist="Reiki Yotai", --7
-    -- ring2="Petrov Ring",
     -- back=gear.COR_DW_Cape, --10
   } -- 48%
   sets.engaged.DW.LowAcc = set_combine(sets.engaged.DW, {
@@ -997,10 +1005,9 @@ function init_gear_sets()
     ear1="Suppanomimi", --5
     ear2="Eabani Earring", --4
     ring1="Epona's Ring",
-    ring2="Ilabrat Ring",
+    ring2="Petrov Ring",
     back=gear.COR_TP_Cape,
     waist="Reiki Yotai", --7
-    -- ring2="Petrov Ring",
   } -- 42%
   sets.engaged.DW.LowAcc.LowHaste = set_combine(sets.engaged.DW.LowHaste, {
     head="Dampening Tam",
@@ -1035,10 +1042,9 @@ function init_gear_sets()
     ear1="Suppanomimi", --5
     ear2="Eabani Earring", --4
     ring1="Epona's Ring",
-    ring2="Ilabrat Ring",
+    ring2="Petrov Ring",
     back=gear.COR_TP_Cape,
     waist="Reiki Yotai", --7
-    -- ring2="Petrov Ring",
   } -- 31%
   sets.engaged.DW.LowAcc.MidHaste = set_combine(sets.engaged.DW.MidHaste, {
     head="Dampening Tam",
@@ -1075,10 +1081,9 @@ function init_gear_sets()
     ear1="Suppanomimi", --5
     ear2="Eabani Earring", --4
     ring1="Epona's Ring",
-    ring2="Ilabrat Ring",
+    ring2="Petrov Ring",
     back=gear.COR_TP_Cape,
     waist="Reiki Yotai", --7
-    -- ring2="Petrov Ring",
   } -- 27%
   sets.engaged.DW.LowAcc.HighHaste = set_combine(sets.engaged.DW.HighHaste, {
     head="Dampening Tam",
@@ -1115,10 +1120,9 @@ function init_gear_sets()
     ear1="Suppanomimi", --5
     ear2="Telos Earring",
     ring1="Epona's Ring",
-    ring2="Ilabrat Ring",
+    ring2="Petrov Ring",
     back=gear.COR_TP_Cape,
     waist="Windbuffet Belt +1",
-    -- ring2="Petrov Ring",
   } -- 11%
   sets.engaged.DW.LowAcc.SuperHaste = set_combine(sets.engaged.DW.SuperHaste, {
     head="Dampening Tam",
@@ -1155,10 +1159,9 @@ function init_gear_sets()
     ear1="Brutal Earring",
     ear2="Telos Earring",
     ring1="Epona's Ring",
-    ring2="Ilabrat Ring",
+    ring2="Petrov Ring",
     back=gear.COR_TP_Cape,
     waist="Windbuffet Belt +1",
-    -- ring2="Petrov Ring",
   }
   sets.engaged.DW.LowAcc.MaxHaste = set_combine(sets.engaged.DW.LowAcc.MaxHaste, {
     head="Dampening Tam",
