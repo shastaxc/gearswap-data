@@ -979,6 +979,7 @@ function init_gear_sets()
 
   sets.Special = {}
   sets.Special.ElementalObi = {waist="Hachirin-no-Obi",}
+  sets.Special.SleepyHead = { head="Frenzy Sallet", }
 
   sets.buff['Saber Dance'] = {
     legs="Horos Tights +3",
@@ -1134,6 +1135,10 @@ end
 -- gain == true if the buff was gained, false if it was lost.
 -- Theory: debuffs must be lowercase and buffs must begin with uppercase
 function job_buff_change(buff,gain)
+  if buff == 'sleep' and gain and player.vitals.hp > 500 and player.status == 'Engaged' then
+    equip(sets.Special.SleepyHead)
+  end
+
   if buff == "doom" then
     if gain then
       send_command('@input /p Doomed.')
