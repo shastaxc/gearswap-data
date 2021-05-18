@@ -122,7 +122,7 @@ function job_setup()
       'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
 
   elemental_ws = S{"Aeolian Edge", "Leaden Salute", "Wildfire"}
-  no_shoot_ammo = S{"Animikii Bullet", "Hauksbok Bullet", "Bronze Bullet"}
+  no_shoot_ammo = S{"Animikii Bullet", "Hauksbok Bullet"}
   no_swap_waists = S{"Era. Bul. Pouch", "Dev. Bul. Pouch", "Chr. Bul. Pouch", "Quelling B. Quiver",
       "Yoichi's Quiver", "Artemis's Quiver", "Chrono Quiver"}
 
@@ -136,6 +136,10 @@ function job_setup()
   gear.RAccbullet = "Devastating Bullet"
   gear.WSbullet = "Chrono Bullet"
   gear.MAbullet = "Living Bullet"
+  -- gear.RAbullet = "Bronze Bullet"
+  -- gear.RAccbullet = "Bronze Bullet"
+  -- gear.WSbullet = "Bronze Bullet"
+  -- gear.MAbullet = "Bronze Bullet"
   gear.QDbullet = "Hauksbok Bullet"
   options.ammo_warning_limit = 10
 
@@ -181,6 +185,7 @@ function job_setup()
 
   send_command('bind !q input /ja "Double-up" <me>')
   send_command('bind !` input /ja "Bolter\'s Roll" <me>')
+  send_command('bind !e input /ja "Random Deal" <me>')
   send_command('bind ^numlock input /ja "Triple Shot" <me>')
   send_command('bind numpad0 input /ra <t>')
 end
@@ -243,6 +248,7 @@ function user_unload()
 
   send_command('unbind !q')
   send_command('unbind !`')
+  send_command('unbind !e')
   send_command('unbind ^numlock')
   send_command('unbind numpad0')
   send_command('unbind ^numpad/')
@@ -262,7 +268,7 @@ function init_gear_sets()
     -- legs="Lanun Trews +3",
   }
   sets.precast.JA['Wild Card'] = {
-    feet="Lanun Bottes",
+    feet="Lanun Bottes +1",
     -- feet="Lanun Bottes +3",
 }
   sets.precast.JA['Random Deal'] = {
@@ -271,8 +277,9 @@ function init_gear_sets()
 }
 
   sets.precast.CorsairRoll = {
-    head="Lanun Tricorne",
+    head="Lanun Tricorne +1",
     body="Malignance Tabard", --9/9
+    hands="Chasseur's Gants +1",
     feet="Malignance Boots", --4/0
     neck="Regal Necklace",
     ear1="Genmei Earring", --2/0
@@ -280,7 +287,6 @@ function init_gear_sets()
     ring2="Defending Ring", --10/10
     back=gear.COR_SNP_Cape,
     -- head="Lanun Tricorne +3",
-    -- hands="Chasseur's Gants +1",
     -- legs="Desultor Tassets",
     -- ear2="Etiolation Earring", --0/3
     -- waist="Flume Belt +1", --4/0
@@ -297,25 +303,23 @@ function init_gear_sets()
     -- legs="Chasseur's Culottes +1",
   })
   sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {
-    feet="Chasseur's Bottes",
-    -- feet="Chasseur's Bottes +1",
+    feet="Chasseur's Bottes +1",
   })
   sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {
     head="Chasseur's Tricorne +1",
   })
   sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {
-    body="Chasseur's Frac",
-    -- body="Chasseur's Frac +1",
+    body="Chasseur's Frac +1",
   })
   sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {
-    -- hands="Chasseur's Gants +1",
+    hands="Chasseur's Gants +1",
   })
 
   sets.precast.LuzafRing = set_combine(sets.precast.CorsairRoll, {
     -- ring1="Luzaf's Ring",
   })
   sets.precast.FoldDoubleBust = {
-    hands="Lanun Gants",
+    hands="Lanun Gants +1",
     -- hands="Lanun Gants +3",
   }
 
@@ -347,16 +351,17 @@ function init_gear_sets()
   sets.precast.RA = {
     ammo=gear.RAbullet,
     head="Chasseur's Tricorne +1",-- __/14
+    body="Oshosi Vest",           -- 12/__
     hands="Carmine Fin. Ga. +1",  --  8/11
     legs=gear.Adhemar_D_legs,     -- 10/13
     feet="Meg. Jam. +2",          -- 10/__
+    neck="Commodore Charm +1",    --  3/__
     back=gear.COR_SNP_Cape,       -- 10/__
     waist="Yemaya Belt",          -- __/ 5
     -- body="Oshosi Vest +1",        -- 14/__
     -- hands="Lanun Gants +3",       -- 13/__
-    -- neck="Comm. Charm +2",        --  4/__
     -- 61 Snapshot / 32 Rapid Shot
-  } -- 48 Snapshot / 29 Rapid Shot
+  } -- 53 Snapshot / 43 Rapid Shot
 
   -- 45 Snapshot to cap
   sets.precast.RA.Flurry1 = set_combine(sets.precast.RA, {
@@ -367,7 +372,7 @@ function init_gear_sets()
   -- 30 Snapshot to cap
   sets.precast.RA.Flurry2 = set_combine(sets.precast.RA.Flurry1, {
     hands="Carmine Fin. Ga. +1",  --  8/11
-    -- feet="Pursuer's Gaiters",     -- __/10
+    -- feet=gear.Pursuer_A_feet,     -- __/10
     -- 32 Snapshot / 73 Rapid Shot
   })
 
@@ -448,6 +453,7 @@ function init_gear_sets()
     hands="Carmine Fin. Ga. +1",
     legs="Nyame Flanchard", --30
     feet=gear.Herc_MAB_feet, --50
+    neck="Commodore Charm +1",
     ear1="Friomisi Earring",
     ring1="Dingir Ring",
     waist="Eschan Stone",
@@ -557,6 +563,7 @@ function init_gear_sets()
     hands="Meg. Gloves +2",
     legs="Meg. Chausses +2",
     feet=gear.Herc_WSD_feet,
+    neck="Commodore Charm +1",
     ear1="Ishvara Earring",
     ear2="Moonshade Earring",
     ring1="Regal Ring",
@@ -723,6 +730,7 @@ function init_gear_sets()
     hands="Laksamana's Gants +1",
     legs="Malignance Tights",
     feet="Laksamana's Bottes +1",
+    neck="Commodore Charm +1",
     ear2="Digni. Earring",
     ring1="Regal Ring",
     ring2="Weatherspoon Ring",
@@ -738,9 +746,8 @@ function init_gear_sets()
 
   sets.midcast.CorsairShot['Dark Shot'] = sets.midcast.CorsairShot['Light Shot']
   sets.midcast.CorsairShot.Enhance = {
-    feet="Chasseur's Bottes"
+    feet="Chasseur's Bottes +1",
     -- body="Mirke Wardecors",
-    -- feet="Chasseur's Bottes +1"
   }
 
   -- Ranged gear
@@ -792,11 +799,10 @@ function init_gear_sets()
   })
 
   sets.TripleShot = {
-    body="Chasseur's Frac", --11
+    body="Chasseur's Frac +1", --12
     legs="Oshosi Trousers", --5
     feet="Oshosi Leggings", --2
     -- head="Oshosi Mask +1", --5
-    -- body="Chasseur's Frac +1", --12
     -- hands="Lanun Gants +3",
     -- legs="Osh. Trousers +1", --6
     -- feet="Osh. Leggings +1", --3
