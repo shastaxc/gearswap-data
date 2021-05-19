@@ -136,10 +136,6 @@ function job_setup()
   gear.RAccbullet = "Devastating Bullet"
   gear.WSbullet = "Chrono Bullet"
   gear.MAbullet = "Living Bullet"
-  -- gear.RAbullet = "Bronze Bullet"
-  -- gear.RAccbullet = "Bronze Bullet"
-  -- gear.WSbullet = "Bronze Bullet"
-  -- gear.MAbullet = "Bronze Bullet"
   gear.QDbullet = "Hauksbok Bullet"
   options.ammo_warning_limit = 10
 
@@ -420,7 +416,9 @@ function init_gear_sets()
     ear2="Telos Earring",
   })
 
-  sets.precast.WS['Last Stand'] = sets.precast.WS
+  sets.precast.WS['Last Stand'] = set_combine(sets.precast.WS, {
+    -- body="Ikenga's Vest", -- R20
+  })
   sets.precast.WS['Last Stand'].MaxTP = set_combine(sets.precast.WS['Last Stand'], {
     ear2="Telos Earring",
   })
@@ -753,31 +751,41 @@ function init_gear_sets()
   -- Ranged gear
   sets.midcast.RA = {
     ammo=gear.RAbullet,
-    head="Meghanada Visor +2",
-    body="Malignance Tabard",
-    hands="Malignance Gloves",
-    legs="Malignance Tights",
-    feet="Malignance Boots",
-    neck="Iskur Gorget",
-    ear2="Telos Earring",
-    ring1="Dingir Ring",
-    ring2="Ilabrat Ring",
-    waist="Yemaya Belt",
-    -- head="Malignance Chapeau",
-    -- ear1="Enervating Earring",
-    -- back=gear.COR_RA_Cape,
-  }
-
-  sets.midcast.RA.Acc = set_combine(sets.midcast.RA, {
+    head="Meghanada Visor +2",    -- 31 [__] 48/44 <_> {_} (__)
+    body="Ikenga's Vest",         -- 39 [11] 45/60 <_> {7} (__)
+    hands="Malignance Gloves",    -- 24 [12] 50/__ <_> {4} (__)
+    legs=gear.Adhemar_C_legs,     -- 42 [ 8] 54/20 <_> {_} (16)
+    feet="Malignance Boots",      -- 49 [ 9] 50/__ <_> {2} (__)
+    neck="Iskur Gorget",          -- __ [ 8] 30/30 <_> {_} (__)
+    ear1="Cessance Earring",      -- __ [ 3] __/__ <_> {_} (__)
+    ear2="Telos Earring",         -- __ [ 5] 10/10 <_> {_} (__)
+    ring1="Dingir Ring",          -- 10 [__] __/25 <_> {_} (10)
+    ring2="Ilabrat Ring",         -- 10 [ 5] __/__ <_> {_} (__)
+    back=gear.COR_TP_Cape,        -- __ [__] __/__ <_> {_} (__)
+    waist="Yemaya Belt",          --  7 [ 4] 10/10 <_> {_} (__)
+    -- head="Ikenga's Hat",       -- 29 [ 8] 45/60 <_> {4} (__)
+    -- legs="Ikenga's Trousers"   -- 40 [10] 45/60 <_> {6} (__)
+    -- ear1="Enervating Earring", -- __ [ 4]  7/ 7 <_> {_} (__)
+    -- back=gear.COR_RA_Cape,     -- 30 [10] 20/20 <_> {_} (__)
+    --238 AGI [86 STP] 312 racc / 282 ratt <0 crit> {23 dmg limit} (10 Recycle)
+  } --212 AGI [65 STP] 297 racc / 199 ratt <0 crit> {13 dmg limit} (26 Recycle)
+  sets.midcast.RA.LowAcc = set_combine(sets.midcast.RA, {
     ammo=gear.RAccbullet,
-    ear1="Beyla Earring",
-    ring2="Hajduk Ring +1",
+    ear1="Beyla Earring",         -- __ [__] 15/__ <_> {__} (__)
+    --238 AGI [82 STP] 319 racc / 275 ratt <0 crit> {23 dmg limit} (10 Recycle)
   })
-
-  sets.midcast.RA.HighAcc = set_combine(sets.midcast.RA.Acc, {
+  sets.midcast.RA.MidAcc = set_combine(sets.midcast.RA.LowAcc, {
+    body="Malignance Tabard",     -- 42 [11] 50/__ <_> { 6} (__)
+    legs="Malignance Tights",     -- 42 [10] 50/__ <_> { 5} (__)
+    ring2="Hajduk Ring +1",       -- __ [__] 17/__ <_> {__} (__)
+    -- head="Malignance Chapeau", -- 33 [ 8] 50/__ <_> { 3} (__)
+    --233 AGI [62 STP] 332 racc / 158 ratt <0 crit> {30 dmg limit} (10 Recycle)
+  })
+  sets.midcast.RA.HighAcc = set_combine(sets.midcast.RA.MidAcc, {
     ring1="Regal Ring",
     waist="K. Kachina Belt +1",
     -- legs="Laksamana's Trews +3",
+    -- Includes set bonus 15 racc from AF + regal
   })
 
   sets.midcast.RA.Critical = set_combine(sets.midcast.RA, {
