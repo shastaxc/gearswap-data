@@ -100,7 +100,7 @@ function job_setup()
   state.RangedMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.IdleMode:options('Normal', 'LightDef')
 
-  state.WeaponSet = M{['description']='Weapon Set', 'Ataktos', 'Cleaving', 'Fomalhaut_M', 'Fomalhaut_R',}
+  state.WeaponSet = M{['description']='Weapon Set', 'Anarchy', 'Cleaving', 'Fomalhaut_M', 'Fomalhaut_R',}
 
   state.CP = M(false, "Capacity Points Mode")
   state.RearmingLock = M(false, 'Rearming Lock')
@@ -143,6 +143,7 @@ function job_setup()
     ['Death Penalty'] = "gun",
     ['Armageddon'] = "gun",
     ['Fomalhaut'] = "gun",
+    ['Doomsday'] = "gun",
   }
 
   sets.org.job = {}
@@ -348,7 +349,7 @@ function init_gear_sets()
     ammo=gear.RAbullet,
     head="Chasseur's Tricorne +1",-- __/14
     body="Oshosi Vest",           -- 12/__
-    hands="Carmine Fin. Ga. +1",  --  8/11
+    hands=gear.Carmine_D_hands, --  8/11
     legs=gear.Adhemar_D_legs,     -- 10/13
     feet="Meg. Jam. +2",          -- 10/__
     neck="Commodore Charm +1",    --  3/__
@@ -367,8 +368,8 @@ function init_gear_sets()
 
   -- 30 Snapshot to cap
   sets.precast.RA.Flurry2 = set_combine(sets.precast.RA.Flurry1, {
-    hands="Carmine Fin. Ga. +1",  --  8/11
-    -- feet=gear.Pursuer_A_feet,     -- __/10
+    hands=gear.Carmine_D_hands, --  8/11
+    feet=gear.Pursuer_A_feet,     -- __/10
     -- 32 Snapshot / 73 Rapid Shot
   })
 
@@ -565,13 +566,13 @@ function init_gear_sets()
     ear1="Ishvara Earring",
     ear2="Moonshade Earring",
     ring1="Regal Ring",
+    ring2="Rufescent Ring",
     back=gear.COR_WS2_Cape,
     waist="Sailfi Belt +1",
     -- body="Laksamana's Frac +3",
     -- legs=gear.Herc_WSD_legs,
     -- feet="Lanun Bottes +3",
     -- neck="Comm. Charm +2",
-    -- ring2="Rufescent Ring",
     -- ring2="Epaminondas's Ring",
   })
   sets.precast.WS['Savage Blade'].MaxTP = set_combine(sets.precast.WS['Savage Blade'], {
@@ -632,7 +633,7 @@ function init_gear_sets()
     hands="Meg. Gloves +2",
     ear1="Telos Earring",
     ear2="Moonshade Earring",
-    -- ring2="Rufescent Ring",
+    ring2="Rufescent Ring",
   }) --MND
   sets.precast.WS['Requiescat'].MaxTP = set_combine(sets.precast.WS['Requiescat'], {
     ear2="Ishvara Earring",
@@ -1149,9 +1150,9 @@ function init_gear_sets()
     ear1="Cessance Earring",
     ring1="Regal Ring",
     ring2="Ilabrat Ring",
+    -- head="Carmine Mask +1",
     -- neck="Combatant's Torque",
   })
-    -- head="Carmine Mask +1",
   sets.engaged.DW.HighAcc.SuperHaste = set_combine(sets.engaged.DW.MidAcc.SuperHaste, {
     legs="Carmine Cuisses +1",
     ear2="Odr Earring",
@@ -1305,18 +1306,16 @@ function init_gear_sets()
     sub="Nusku Shield",
     ranged="Fomalhaut",
   }
-  sets.WeaponSet.Ataktos = {
+  sets.WeaponSet.Anarchy = {
     main="Naegling",
     sub="Blurred Knife +1",
-    ranged="Fomalhaut",
-    -- ranged="Ataktos",
+    ranged="Anarchy +2",
   }
   sets.WeaponSet.Cleaving = {
     main="Kaja Knife",
     sub="Blurred Knife +1",
     ranged="Doomsday",
     -- main="Tauret",
-    -- sub="Levente Dagger",
   }
 end
 
@@ -1328,6 +1327,9 @@ end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
 function job_precast(spell, action, spellMap, eventArgs)
+  silibs.cancel_outranged_ws(spell, eventArgs)
+  silibs.cancel_on_blocking_status(spell, eventArgs)
+
   -- Check that proper ammo is available if we're using ranged attacks or similar.
   if spell.action_type == 'Ranged Attack' or spell.type == 'WeaponSkill' or spell.type == 'CorsairShot' then
     do_bullet_checks(spell, spellMap, eventArgs)
