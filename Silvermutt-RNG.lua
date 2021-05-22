@@ -1465,7 +1465,8 @@ function get_custom_wsmode(spell, action, spellMap)
       wsmode = wsmode..'MaxTP'
     end
   elseif 2400 <= player.tp and player.tp < 2900 then
-    if rweapon and (rweapon == 'Sparrowhawk +2' or rweapon =='Sparrowhawk +3' or rweapon == 'Accipiter') then
+    if rweapon and (rweapon == 'Sparrowhawk +2' or rweapon =='Sparrowhawk +3' or rweapon == 'Accipiter'
+        or rweapon == 'Anarchy +2' or rweapon =='Anarchy +3' or rweapon == 'Ataktos') then
       wsmode = wsmode..'MaxTP'
     end
   elseif 2900 <= player.tp then
