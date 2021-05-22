@@ -1007,13 +1007,13 @@ function init_gear_sets()
     feet="Malignance Boots", --4/4, 150
     ear2="Eabani Earring", --0/0, 8
     ring2="Defending Ring", --10/10, 0
+    waist="Carrier's Sash",      -- __/__, ___; Ele Resist+15
     -- main="Bolelabunga",
     -- sub="Sacro Bulwark", --10/10
     -- head="Malignance Chapeau", --6/6
     -- neck="Warder's Charm +1",
     -- ear1="Sanare Earring",
     -- back=gear.RDM_INT_Cape,
-    -- waist="Carrier's Sash",
   } --38 PDT / 38 MDT, 551 MEVA
 
   sets.defense.PDT = sets.HeavyDef
