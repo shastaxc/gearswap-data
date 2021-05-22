@@ -654,11 +654,10 @@ function init_gear_sets()
   sets.midcast.Regen = {
     main="Bolelabunga",            -- __, 10, __, __
     sub="Genmei Shield",           -- __, __, __, __
-    head="Arbatel Bonnet",
+    head="Arbatel Bonnet +1",      --  7, __, __, __
     waist="Embla Sash",            -- __, __, 10,  5
     -- main=gear.Musa_C,              -- 25, __, 20, __
     -- sub="Khonsu",                  -- __, __, __, __
-    -- head="Arbatel Bonnet +1",      --  7, __, __, __
     -- body=gear.Telchine_ENH_body,   -- __, __, 10, 12
     -- hands=gear.Telchine_ENH_hands, -- __, __, 10, __
     -- legs=gear.Telchine_ENH_legs,   -- __, __, 10, __
@@ -1010,12 +1009,13 @@ function init_gear_sets()
     body=gear.Vanya_B_body,         --  1/ 3,  80
     hands=gear.Vanya_B_hands,       -- __/ 3,  37
     legs=gear.Vanya_B_legs,         -- __/ 3, 107
-    feet=gear.Vanya_B_feet,         -- __/ 3, 107
+    feet="Pinga Pumps",             -- __/__, 137
     neck="Twilight Torque",
-    ear1="Lugalbanda Earring",      -- __/__,  10
+    ear1="Hearty Earring",       -- __/__, ___; Resist Status+5
     ear2="Etiolation Earring",      -- __/ 3, ___; Resist Silence+15
     ring2="Defending Ring",         -- 10/10, ___
     back="Cheviot Cape",
+    waist="Carrier's Sash",      -- __/__, ___; Ele Resist+15
     -- main="Malignance Pole",      -- 20/20, ___
     -- sub="Khonsu",                --  6/ 6, ___
     -- ammo="Staunch Tathlum +1",   --  3/ 3, ___; Resist Status+11
@@ -1023,12 +1023,9 @@ function init_gear_sets()
     -- body="Pinga Tunic +1",       -- __/__, 128
     -- hands="Pinga Mittens +1",    -- __/__, 101
     -- legs="Pinga Pants +1",       -- __/__, 147
-    -- feet="Pinga Pumps +1",       -- __/__, 147
     -- neck="Loricate Torque +1",   --  6/ 6, ___; DEF+60
-    -- ear1="Hearty Earring",       -- __/__, ___; Resist Status+5
     -- ring1="Gelatinous Ring +1",  --  7/-1, ___
     -- back="Archon Cape",          -- __/__, ___
-    -- waist="Carrier's Sash",      -- __/__, ___; Ele Resist+15
 
     -- Ideal:
     -- main="Malignance Pole",      -- 20/20, ___
@@ -1081,7 +1078,7 @@ function init_gear_sets()
     feet="Serpentes Sabots", --1
   }
   sets.passive_refresh = {
-    main="Bolelabunga",
+    main="Bolelabunga", --1
     head="Befouled Crown", --1
     body="Pluviale", --1
     legs="Assiduity Pants +1",
@@ -1143,12 +1140,10 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.buff['Ebullience'] = {
-    head="Arbatel Bonnet",
-    -- head="Arbatel Bonnet +1",
+    head="Arbatel Bonnet +1",
   }
   sets.buff['Rapture'] = {
-    head="Arbatel Bonnet",
-    -- head="Arbatel Bonnet +1",
+    head="Arbatel Bonnet +1",
   }
   sets.buff['Perpetuance'] = {
     hands="Arbatel Bracers",
