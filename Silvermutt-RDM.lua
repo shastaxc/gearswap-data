@@ -23,13 +23,29 @@
 --              [ WIN+W ]           Toggle Rearming Lock
 --                                  (off = re-equip previous weapons if you go barehanded)
 --                                  (on = prevent weapon auto-equipping)
+--              [ CTRL+Insert ]     Cycle Weapon Mode
+--              [ CTRL+Delete ]     Cycleback Weapon Mode
+--              [ ALT+Delete ]      Reset Weapon 
+--                                  While in anything but 'Casting' weapon mode, weapons are locked during casting.
+--              [ ALT+= ]           Cycle EnSpell Mode
+--              [ ALT+- ]           Cycleback EnSpell Mode
+--                                  Set additional keybind or use in-game macro /console gs c enspell
+--              [ ALT+[ ]           Cycle GainSpell Mode
+--              [ ALT+] ]           Cycleback GainSpell Mode
+--                                  Set additional keybind or use in-game macro /console gs c gainspell
+--              [ CTRL+Home ]       Cycle BarElement Mode
+--              [ CTRL+End ]        Cycleback BarElement Mode
+--                                  Set additional keybind or use in-game macro /console gs c barelement
+--              [ ALT+Home ]        Cycle BarStatus Mode
+--              [ ALT+End ]         Cycleback BarStatus Mode
+--                                  Set additional keybind or use in-game macro /console gs c barstatus
 --
 --  Abilities:  [ CTRL+` ]          Composure
 --              [ CTRL+- ]          Light Arts/Addendum: White
 --              [ CTRL+= ]          Dark Arts/Addendum: Black
---              [ CTRL+; ]          Celerity/Alacrity
---              [ ALT+[ ]           Accesion/Manifestation
---              [ ALT+; ]           Penury/Parsimony
+--              [ CTRL+\ ]          Celerity/Alacrity
+--              [ CTRL+[ ]          Accesion/Manifestation
+--              [ CTRL+] ]          Penury/Parsimony
 --
 --  Spells:     [ CTRL+` ]          Stun
 --              [ ALT+Q ]           Temper
@@ -39,8 +55,8 @@
 --              [ ALT+Y ]           Phalanx
 --              [ ALT+O ]           Regen II
 --              [ ALT+P ]           Shock Spikes
---              [ WIN+, ]           Utsusemi: Ichi
---              [ WIN+. ]           Utsusemi: Ni
+--              [ CTRL+num0 ]       Utsusemi: Ichi
+--              [ CTRL+num. ]       Utsusemi: Ni
 --
 --  Other:      [ ALT+D ]           Cancel Invisible/Hide & Use Key on <t>
 --              [ ALT+S ]           Turn 180 degrees in place
@@ -70,13 +86,30 @@
 -- Setup functions for this job.  Generally should not be modified.
 -------------------------------------------------------------------------------------------------------------------
 
+--              Addendum Commands:
+--              Shorthand versions for each strategem type that uses the version appropriate for
+--              the current Arts.
+--                                          Light Arts                  Dark Arts
+--                                          ----------                  ---------
+--              gs c scholar light          Light Arts/Addendum
+--              gs c scholar dark                                       Dark Arts/Addendum
+--              gs c scholar cost           Penury                      Parsimony
+--              gs c scholar speed          Celerity                    Alacrity
+--              gs c scholar aoe            Accession                   Manifestation
+--              gs c scholar addendum       Addendum: White             Addendum: Black
+
+
+-------------------------------------------------------------------------------------------------------------------
+-- Setup functions for this job.  Generally should not be modified.
+-------------------------------------------------------------------------------------------------------------------
+
 -- Initialization function for this job file.
 function get_sets()
   -- Load and initialize Mote library
   mote_include_version = 2
   include('Mote-Include.lua') -- Executes job_setup, user_setup, init_gear_sets
   coroutine.schedule(function()
-    send_command('gs org')
+    send_command('gs c weaponset current')
   end, 2)
 end
 
@@ -92,6 +125,7 @@ function job_setup()
   state.Buff.Saboteur = buffactive.Saboteur or false
   state.Buff.Stymie = buffactive.Stymie or false
 
+  elemental_ws = S{"Aeolian Edge", "Sanguine Blade", "Seraph Blade", "Black Halo", "Cataclysm"}
   enfeebling_magic_acc = S{'Bind', 'Break', 'Dispel', 'Distract', 'Distract II', 'Frazzle',
       'Frazzle II',  'Gravity', 'Gravity II', 'Silence'}
   enfeebling_magic_skill = S{'Distract III', 'Frazzle III', 'Poison II'}
@@ -119,10 +153,11 @@ function job_setup()
   state.CP = M(false, "Capacity Points Mode")
   state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger',
       'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
+  state.WeaponSet = M{['description']='Weapon Set', 'Casting', 'Croc', 'Naegling', 'Cleaving',}
 
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c usekey')
-
+  
   send_command('bind ^pageup gs c toyweapon cycle')
   send_command('bind ^pagedown gs c toyweapon cycleback')
   send_command('bind !pagedown gs c toyweapon reset')
@@ -145,10 +180,15 @@ function job_setup()
   send_command('bind !. input /ma "Ice Spikes" <me>')
   send_command('bind !/ input /ma "Shock Spikes" <me>')
 
-  send_command('bind !insert gs c cycleback EnSpell')
-  send_command('bind !delete gs c cycle EnSpell')
-  send_command('bind ^insert gs c cycleback GainSpell')
-  send_command('bind ^delete gs c cycle GainSpell')
+  send_command('bind !- gs c cycleback EnSpell')
+  send_command('bind != gs c cycle EnSpell')
+  send_command('bind ![ gs c cycleback GainSpell')
+  send_command('bind !] gs c cycle GainSpell')
+
+  send_command('bind ^insert gs c weaponset cycle')
+  send_command('bind ^delete gs c weaponset cycleback')
+  send_command('bind !delete gs c weaponset reset')
+
   send_command('bind ^home gs c cycleback BarElement')
   send_command('bind ^end gs c cycle BarElement')
   send_command('bind !home gs c cycleback BarStatus')
@@ -159,8 +199,6 @@ function job_setup()
   send_command('bind @d gs c toggle NM')
   send_command('bind @w gs c toggle RearmingLock')
   send_command('bind @c gs c toggle CP')
-  -- send_command('bind @e gs c cycleback WeaponSet')
-  -- send_command('bind @r gs c cycle WeaponSet')
 end
 
 -- Executes on first load, main job change, **and sub job change**
@@ -182,11 +220,9 @@ function user_setup()
     elseif player.sub_job == 'SCH' then
       send_command('bind ^- gs c scholar light')
       send_command('bind ^= gs c scholar dark')
-      send_command('bind !- gs c scholar addendum')
-      send_command('bind != gs c scholar addendum')
-      send_command('bind ^l gs c scholar speed')
-      send_command('bind ![ gs c scholar aoe')
-      send_command('bind !l gs c scholar cost')
+      send_command('bind ^[ gs c scholar aoe')
+      send_command('bind ^] gs c scholar cost')
+      send_command('bind ^\\\\ gs c scholar speed')
     end
   elseif player.sub_job == 'NIN' then
     send_command('bind ^numpad0 input /ma "Utsusemi: Ichi" <me>')
@@ -225,10 +261,14 @@ function job_file_unload()
   send_command('unbind !.')
   send_command('unbind !/')
 
-  send_command('unbind !insert')
-  send_command('unbind !delete')
+  send_command('unbind !-')
+  send_command('unbind !=')
+  send_command('unbind ![')
+  send_command('unbind !]')
+  
   send_command('unbind ^insert')
   send_command('unbind ^delete')
+
   send_command('unbind ^home')
   send_command('unbind ^end')
   send_command('unbind !home')
@@ -248,11 +288,9 @@ function job_file_unload()
   send_command('unbind ~numpad1')
   send_command('unbind ^-')
   send_command('unbind ^=')
-  send_command('unbind !-')
-  send_command('unbind !=')
-  send_command('unbind ^l')
-  send_command('unbind ![')
-  send_command('unbind !l')
+  send_command('unbind ^[')
+  send_command('unbind ^]')
+  send_command('unbind ^\\\\')
   send_command('unbind ^numpad0')
   send_command('unbind ^numpad.')
 end
@@ -340,7 +378,7 @@ function init_gear_sets()
     neck="Fotia Gorget",
     ear1="Ishvara Earring",
     ear2="Moonshade Earring",
-    -- ring1="Rufescent Ring",
+    ring1="Rufescent Ring",
     -- ring2="Epaminondas's Ring",
     -- back=gear.RDM_WS1_Cape,
     waist="Fotia Belt",
@@ -539,7 +577,7 @@ function init_gear_sets()
   sets.precast.WS['Black Halo'] = set_combine(sets.precast.WS['Savage Blade'], {
     -- neck="Dls. Torque +2",
     ear2="Sherida Earring",
-    -- ring1="Rufescent Ring",
+    ring1="Rufescent Ring",
     waist="Sailfi Belt +1",
   })
   sets.precast.WS['Black Halo'].MaxTP = set_combine(sets.precast.WS['Black Halo'], {
@@ -1300,6 +1338,21 @@ function init_gear_sets()
     back=gear.CP_Cape,
   }
 
+  sets.WeaponSet = {}
+  sets.WeaponSet['Casting'] = {}
+  sets.WeaponSet['Croc'] = {
+    main="Crocea Mors",
+    sub="Daybreak",
+  }
+  sets.WeaponSet['Naegling'] = {
+    main="Naegling",
+    sub="Thibron",
+  }
+  sets.WeaponSet['Cleaving'] = {
+    main="Malevolence",
+    sub="Malevolence",
+  }
+
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -1362,6 +1415,11 @@ function job_post_precast(spell, action, spellMap, eventArgs)
   if locked_ear2 then equip({ ear2=player.equipment.ear2 }) end
   if locked_ring1 then equip({ ring1=player.equipment.ring1 }) end
   if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
+
+  -- Always put this last in job_post_precast
+  if in_battle_mode() then
+    equip(sets.WeaponSet[state.WeaponSet.current])
+  end
 end
 
 function job_midcast(spell, action, spellMap, eventArgs)
@@ -1411,11 +1469,20 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
   if locked_ear2 then equip({ ear2=player.equipment.ear2 }) end
   if locked_ring1 then equip({ ring1=player.equipment.ring1 }) end
   if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
+
+  -- Always put this last in job_post_precast
+  if in_battle_mode() then
+    equip(sets.WeaponSet[state.WeaponSet.current])
+  end
 end
 
 function job_aftercast(spell, action, spellMap, eventArgs)
   if spell.english:contains('Sleep') and not spell.interrupted then
     set_sleep_timer(spell)
+  end
+  
+  if in_battle_mode() then
+    equip(sets.WeaponSet[state.WeaponSet.current])
   end
 end
 
@@ -1548,6 +1615,10 @@ function customize_idle_set(idleSet)
   if buffactive.Doom then
     idleSet = set_combine(idleSet, sets.buff.Doom)
   end
+  
+  if in_battle_mode() then
+    idleSet = set_combine(idleSet, sets.WeaponSet[state.WeaponSet.current])
+  end
 
   return idleSet
 end
@@ -1574,6 +1645,10 @@ function customize_melee_set(meleeSet)
     meleeSet = set_combine(meleeSet, sets.buff.Doom)
   end
 
+  if in_battle_mode() then
+    meleeSet = set_combine(meleeSet, sets.WeaponSet[state.WeaponSet.current])
+  end
+
   return meleeSet
 end
 
@@ -1591,6 +1666,10 @@ function customize_defense_set(defenseSet)
 
   if buffactive.Doom then
     defenseSet = set_combine(defenseSet, sets.buff.Doom)
+  end
+
+  if in_battle_mode() then
+    defenseSet = set_combine(defenseSet, sets.WeaponSet[state.WeaponSet.current])
   end
 
   return defenseSet
@@ -1639,6 +1718,19 @@ function display_current_job_state(eventArgs)
       ..string.char(31,002)..msg)
 
   eventArgs.handled = true
+end
+
+function cycle_weapons(cycle_dir)
+  if cycle_dir == 'forward' then
+    state.WeaponSet:cycle()
+  elseif cycle_dir == 'back' then
+    state.WeaponSet:cycleback()
+  elseif cycle_dir == 'reset' then
+    state.WeaponSet:reset()
+  end
+
+  add_to_chat(141, 'Weapon Set to '..string.char(31,1)..state.WeaponSet.current)
+  equip(sets.WeaponSet[state.WeaponSet.current])
 end
 
 function cycle_toy_weapons(cycle_dir)
@@ -1770,6 +1862,16 @@ function job_self_command(cmdParams, eventArgs)
       cycle_toy_weapons('back')
     elseif cmdParams[2]:lower() == 'reset' then
       cycle_toy_weapons('reset')
+    end
+  elseif cmdParams[1]:lower() == 'weaponset' then
+    if cmdParams[2]:lower() == 'cycle' then
+      cycle_weapons('forward')
+    elseif cmdParams[2]:lower() == 'cycleback' then
+      cycle_weapons('back')
+    elseif cmdParams[2]:lower() == 'current' then
+      cycle_weapons('current')
+    elseif cmdParams[2]:lower() == 'reset' then
+      cycle_weapons('reset')
     end
   end
 
@@ -1927,6 +2029,18 @@ end)
 
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
-  -- Default macro set/book
-  set_macro_page(1, 7)
+  -- Default macro set/book: (set, book)
+  if player.sub_job == 'SCH' then
+    set_macro_page(1, 12)
+  elseif player.sub_job == 'NIN' then
+    set_macro_page(1, 13)
+  else
+    set_macro_page(1, 12)
+  end
+end
+
+function in_battle_mode()
+  if state.WeaponSet.current ~= 'Casting' then
+    return true
+  end
 end
