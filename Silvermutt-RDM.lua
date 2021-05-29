@@ -153,7 +153,7 @@ function job_setup()
   state.CP = M(false, "Capacity Points Mode")
   state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger',
       'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
-  state.WeaponSet = M{['description']='Weapon Set', 'Casting', 'Croc', 'Naegling', 'Cleaving',}
+  state.WeaponSet = M{['description']='Weapon Set', 'Casting', 'Temp', 'Croc', 'Naegling', 'Cleaving',}
 
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c usekey')
@@ -1006,6 +1006,7 @@ function init_gear_sets()
     legs="Malignance Tights", --7/7, 150
     feet="Malignance Boots", --4/4, 150
     ear2="Eabani Earring", --0/0, 8
+    ring1="Gelatinous Ring +1", --7/-1, 0
     ring2="Defending Ring", --10/10, 0
     waist="Carrier's Sash",      -- __/__, ___; Ele Resist+15
     -- main="Bolelabunga",
@@ -1014,7 +1015,7 @@ function init_gear_sets()
     -- neck="Warder's Charm +1",
     -- ear1="Sanare Earring",
     -- back=gear.RDM_INT_Cape,
-  } --38 PDT / 38 MDT, 551 MEVA
+  } --45 PDT / 37 MDT, 551 MEVA
 
   sets.defense.PDT = sets.HeavyDef
   sets.defense.MDT = sets.HeavyDef
@@ -1340,6 +1341,10 @@ function init_gear_sets()
 
   sets.WeaponSet = {}
   sets.WeaponSet['Casting'] = {}
+  sets.WeaponSet['Temp'] = {
+    main="Naegling",
+    sub="Daybreak",
+  }
   sets.WeaponSet['Croc'] = {
     main="Crocea Mors",
     sub="Daybreak",
@@ -1793,7 +1798,7 @@ end
 function determine_haste_group()
   classes.CustomMeleeGroups:clear()
   if DW == true then
-    if DW_needed <= 14 then
+    if DW_needed <= 15 then
       classes.CustomMeleeGroups:append('MaxHaste')
     elseif DW_needed > 15 and DW_needed <= 26 then
       classes.CustomMeleeGroups:append('HighHaste')
@@ -2040,7 +2045,5 @@ function select_default_macro_book()
 end
 
 function in_battle_mode()
-  if state.WeaponSet.current ~= 'Casting' then
-    return true
-  end
+  return state.WeaponSet.current ~= 'Casting'
 end
