@@ -96,7 +96,7 @@ function job_setup()
   silibs.use_weapon_rearm = true
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
-  state.HybridMode:options('Normal', 'LightDef')
+  state.HybridMode:options('LightDef', 'Normal')
   state.RangedMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.IdleMode:options('Normal', 'LightDef')
 
@@ -265,7 +265,7 @@ function init_gear_sets()
     -- legs="Lanun Trews +3",
   }
   sets.precast.JA['Wild Card'] = {
-    feet="Lanun Bottes +1",
+    feet="Lanun Bottes +2",
     -- feet="Lanun Bottes +3",
 }
   sets.precast.JA['Random Deal'] = {
@@ -384,7 +384,7 @@ function init_gear_sets()
     body="Meghanada Cuirie +2",
     hands="Meg. Gloves +2",
     legs="Meghanada Chausses +2",
-    feet="Meg. Jam. +2",
+    feet="Lanun Bottes +2",
     neck="Fotia Gorget",
     ear1="Ishvara Earring",
     ear2="Moonshade Earring",
@@ -451,15 +451,17 @@ function init_gear_sets()
     body="Nyame Mail", --30
     hands="Carmine Fin. Ga. +1",
     legs="Nyame Flanchard", --30
-    feet=gear.Herc_MAB_feet, --50
+    feet="Lanun Bottes +2",
     neck="Commodore Charm +1",
     ear1="Friomisi Earring",
+    ear2="Novio Earring",
     ring1="Dingir Ring",
+    ring2="Shiva Ring +1",
+    back=gear.COR_WS2_Cape,
     waist="Eschan Stone",
     -- body="Lanun Frac +3",
     -- feet="Lanun Bottes +3",
     -- neck="Comm. Charm +2",
-    -- ear2="Novio Earring",
     -- ring2="Epaminondas's Ring",
     -- back=gear.COR_WS1_Cape,
     -- waist="Skrymir Cord +1",
@@ -708,7 +710,7 @@ function init_gear_sets()
     body="Nyame Mail", --30
     hands="Carmine Fin. Ga. +1",
     legs="Nyame Flanchard", --30
-    feet=gear.Herc_MAB_feet, --50
+    feet="Lanun Bottes +2",
     neck="Baetyl Pendant",
     ear1="Friomisi Earring",
     ear2="Novio Earring",
@@ -1714,7 +1716,7 @@ function update_idle_groups()
         classes.CustomIdleGroups:append('RefreshSub50')
       elseif isRefreshing==true and player.mpp < 100 then
         classes.CustomIdleGroups:append('Refresh')
-      elseif isRefreshing==false and player.mpp < 85 then
+      elseif isRefreshing==false and player.mpp < 80 then
         classes.CustomIdleGroups:append('Refresh')
       end
     end
