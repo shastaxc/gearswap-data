@@ -20,7 +20,7 @@ function job_setup()
   "Stone V", "Water V", "Aero V", "Fire V", "Blizzard V", "Thunder V"}
   state.Buff['Sublimation: Activated'] = buffactive['Sublimation: Activated'] or false
   state.HelixMode = M{['description']='Helix Mode', 'Potency', 'Duration'}
-  state.RegenMode = M{['description']='Regen Mode', 'Duration', 'Potency'}
+  state.RegenMode = M{['description']='Regen Mode', 'Potency', 'Duration'}
 
   degrade_array = {
     ['Aspirs'] = {'Aspir','Aspir II'}
@@ -895,6 +895,7 @@ function init_gear_sets()
     main=gear.Akademos_A,         -- 32, __, 58
     sub="Enki Strap",             -- 10, 10, __
     head="Peda. M.Board",
+    hands=gear.Merl_MB_hands,
     neck="Sanctity Necklace",     -- __, 10, 10
     -- ammo="Pemphredo Tathlum",  --  4,  8,  4
     -- head="Peda. M.Board +3",   -- 39, 52, 49
@@ -985,6 +986,7 @@ function init_gear_sets()
   sets.magic_burst = {
     main=gear.Akademos_A, --10
     head="Peda. M.Board",
+    hands=gear.Merl_MB_hands, --9
     feet=gear.Merl_MB_feet, --8
     ring1="Locus Ring", --5
     -- Ideal:
