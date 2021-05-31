@@ -265,8 +265,7 @@ function init_gear_sets()
     -- legs="Lanun Trews +3",
   }
   sets.precast.JA['Wild Card'] = {
-    feet="Lanun Bottes +2",
-    -- feet="Lanun Bottes +3",
+    feet="Lanun Bottes +3",
 }
   sets.precast.JA['Random Deal'] = {
     body="Lanun Frac +1",
@@ -384,7 +383,7 @@ function init_gear_sets()
     body="Meghanada Cuirie +2",
     hands="Meg. Gloves +2",
     legs="Meghanada Chausses +2",
-    feet="Lanun Bottes +2",
+    feet="Lanun Bottes +3",
     neck="Fotia Gorget",
     ear1="Ishvara Earring",
     ear2="Moonshade Earring",
@@ -394,7 +393,6 @@ function init_gear_sets()
     -- head="Lanun Tricorne +3",
     -- body="Laksamana's Frac +3",
     -- legs=gear.Herc_RA_legs,
-    -- feet="Lanun Bottes +3",
     -- ring2="Epaminondas's Ring",
     -- back=gear.COR_WS3_Cape,
   }
@@ -451,7 +449,7 @@ function init_gear_sets()
     body="Nyame Mail", --30
     hands="Carmine Fin. Ga. +1",
     legs="Nyame Flanchard", --30
-    feet="Lanun Bottes +2",
+    feet="Lanun Bottes +3",
     neck="Commodore Charm +1",
     ear1="Friomisi Earring",
     ear2="Novio Earring",
@@ -460,7 +458,6 @@ function init_gear_sets()
     back=gear.COR_WS2_Cape,
     waist="Eschan Stone",
     -- body="Lanun Frac +3",
-    -- feet="Lanun Bottes +3",
     -- neck="Comm. Charm +2",
     -- ring2="Epaminondas's Ring",
     -- back=gear.COR_WS1_Cape,
@@ -563,7 +560,7 @@ function init_gear_sets()
     body=gear.Herc_WSD_body,
     hands="Meg. Gloves +2",
     legs="Meg. Chausses +2",
-    feet=gear.Herc_WSD_feet,
+    feet="Lanun Bottes +3",
     neck="Commodore Charm +1",
     ear1="Ishvara Earring",
     ear2="Moonshade Earring",
@@ -573,7 +570,6 @@ function init_gear_sets()
     waist="Sailfi Belt +1",
     -- body="Laksamana's Frac +3",
     -- legs=gear.Herc_WSD_legs,
-    -- feet="Lanun Bottes +3",
     -- neck="Comm. Charm +2",
     -- ring2="Epaminondas's Ring",
   })
@@ -710,14 +706,13 @@ function init_gear_sets()
     body="Nyame Mail", --30
     hands="Carmine Fin. Ga. +1",
     legs="Nyame Flanchard", --30
-    feet="Lanun Bottes +2",
+    feet="Lanun Bottes +3",
     neck="Baetyl Pendant",
     ear1="Friomisi Earring",
     ear2="Novio Earring",
     ring1="Dingir Ring",
     waist="Eschan Stone",
     -- body="Lanun Frac +3",
-    -- feet="Lanun Bottes +3",
     -- ring2={name="Fenrir Ring +1", bag="wardrobe4"},
     -- back=gear.COR_WS1_Cape,
     -- waist="Skrymir Cord +1",
