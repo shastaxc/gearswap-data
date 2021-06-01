@@ -300,21 +300,21 @@ function init_gear_sets()
 
   -- Acc
   sets.precast.Step = {
-    ammo="Yamarang",
-    head="Maxixi Tiara +3",
-    body="Maxixi Casaque +3",
-    hands="Maxixi Bangles +3",
-    legs="Meghanada Chausses +2",
-    feet="Horos Toe Shoes +3",
-    neck="Etoile Gorget +2",
-    ring1="Regal Ring",
-    ring2="Chirich Ring +1",
-    back=gear.DNC_TP_DW_Cape,
-    -- legs="Maxixi Tights +3",
-    -- ear1="Mache Earring +1",
-    -- ear2="Mache Earring +1",
-    -- waist="Olseni Belt",
-  }
+    ammo="Yamarang",              -- __/__, 15
+    head="Maxixi Tiara +3",       -- __/__, 82
+    body="Malignance Tabard",     --  9/ 9, 50
+    hands="Maxixi Bangles +3",    -- __/__, 88
+    legs="Meghanada Chausses +2", --  7/ 7, 50
+    feet="Horos Toe Shoes +3",    -- __/__, 66; Step TP -20
+    neck="Etoile Gorget +2",      -- __/__, 25
+    ear1="Odnowa Earring +1",     --  3/ 5, __
+    ear2="Telos Earring",         -- __/__, 10
+    ring1="Gelatinous Ring +1",   --  7/-1, __
+    ring2="Defending Ring",       -- 10/10, __
+    back=gear.DNC_TP_DW_Cape,     -- 10/__, 20 -- After swapping aug to PDT
+    waist="Engraved Belt",
+    -- Maxixi set bonus            -- __/__, 15
+  } -- 37/30, 421
 
   sets.precast.Step['Feather Step'] = set_combine(sets.precast.Step, {
     feet="Maculele Toe Shoes +1",
