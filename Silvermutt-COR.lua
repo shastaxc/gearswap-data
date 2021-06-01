@@ -389,6 +389,7 @@ function init_gear_sets()
     ear2="Moonshade Earring",
     ring1="Regal Ring",
     ring2="Dingir Ring",
+    back=gear.COR_WS2_Cape,
     waist="Fotia Belt",
     -- head="Lanun Tricorne +3",
     -- body="Laksamana's Frac +3",
