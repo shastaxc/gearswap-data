@@ -612,7 +612,8 @@ function init_gear_sets()
     feet="Malignance Boots",    --  4/ 4, 150
     ring2="Defending Ring",     -- 10/10, ___
     -- head="Malignance Chapeau", --  6/ 6, 123
-  } --42 PDT/42 MDT, 689 MEVA
+    -- 10 PDT from JSE cape
+  } --52 PDT/42 MDT, 689 MEVA
 
   sets.HeavyDef = {
     ammo="Yamarang",            -- __/__,  15
@@ -625,10 +626,10 @@ function init_gear_sets()
     ear1="Eabani Earring",      -- __/__,   8
     ear2="Odnowa Earring +1",   --  3/ 5, ___
     ring1="Moonlight Ring",     --  5/ 5, ___
-    ring2="Defending Ring",     -- 10/10, ___
-    back=gear.DNC_TP_DA_Cape,   -- __/__, ___
     waist="Engraved Belt",      -- __/__, ___
-  } --50 PDT/52 MDT, 697 MEVA
+    -- 10 PDT from JSE cape
+    -- head="Malignance Chapeau", --  6/ 6, 123
+  } --50 PDT/42 MDT, 697 MEVA
 
   sets.defense.PDT = sets.HeavyDef
   sets.defense.MDT = sets.HeavyDef
