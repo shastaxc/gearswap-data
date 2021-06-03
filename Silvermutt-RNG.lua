@@ -530,11 +530,11 @@ function init_gear_sets()
     hands=gear.Carmine_D_hands, --42
     legs="Arcadian Braccae +3",
     feet=gear.Herc_MAB_feet, --50
+    neck="Scout's Gorget +1",
     ear1="Friomisi Earring", --10
     ear2="Moonshade Earring",
     ring1="Weatherspoon Ring", --10 (light only)
     ring2="Dingir Ring", --10
-    neck="Scout's Gorget +1",
     back=gear.RNG_WS1_Cape,
     waist="Eschan Stone", --7
     -- head=gear.Nyame_B_head, -- Rank 15
