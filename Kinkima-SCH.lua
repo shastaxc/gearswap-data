@@ -295,7 +295,7 @@ function init_gear_sets()
     -- ammo="Strobilus",              --  45
     -- head="Pixie Hairpin +1",       -- 120
     -- body="Academic's Gown +3",     -- 173
-    -- hands="Kaykaus Cuffs +1",      -- 100
+    -- hands="Kaykaus Cuffs +1",      -- 100; Amalric Path A, B good too
     -- legs="Amalric Slops +1",       -- 185; Path A, B, or D
     -- feet=gear.Psycloth_A_feet,     -- 124
     -- neck="Dualism Collar +1",      --  60
