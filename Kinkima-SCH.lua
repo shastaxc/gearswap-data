@@ -243,10 +243,10 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.precast.WS = {
+    body="Jhakri Robe +2",
     ear1="Moonshade Earring",
     -- ammo="Floestone",
     -- head="Jhakri Coronal +2",
-    -- body="Jhakri Robe +2",
     -- hands="Jhakri Cuffs +2",
     -- legs=gear.Telchine_ENH_legs,
     -- feet="Jhakri Pigaches +2",
@@ -1082,11 +1082,11 @@ function init_gear_sets()
   sets.passive_refresh = {
     main="Bolelabunga", --1
     head="Befouled Crown", --1
+    body="Jhakri Robe +2", --4
     body="Pluviale", --1
     legs="Assiduity Pants +1",
     -- main="Contemplator +1", --2
     -- sub="Oneiros Grip", --1; when mp<70%
-    -- body="Jhakri Robe +2", --4
     -- hands="Volte Gloves", --1
     -- feet="Volte Gaiters", --1
     -- ring1="Stikini Ring +1", --1
@@ -1121,10 +1121,10 @@ function init_gear_sets()
 
   sets.engaged = {
     head="Peda. M.Board",
+    body="Jhakri Robe +2",
     legs="Pedagogy Pants",
     feet="Peda. Loafers",
     -- head="Peda. M.Board +3",
-    -- body="Jhakri Robe +2",
     -- hands="Raetic Bangles +1",
     -- legs="Peda. Pants +3",
     -- feet="Peda. Loafers +3",
