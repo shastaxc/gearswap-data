@@ -936,7 +936,7 @@ function init_gear_sets()
     -- Amalric set bonus            -- __, __, 40
     -- 294 INT, 232 Magic Acc, 425 MAB
   }
-
+  
   sets.midcast['Elemental Magic'].Seidr = set_combine(sets.midcast['Elemental Magic'], {
     legs="Pedagogy Pants",
     neck="Erra Pendant",
@@ -1176,6 +1176,12 @@ function init_gear_sets()
     feet="Arbatel Loafers",
     -- feet="Arbatel Loafers +1",
   }
+  sets.buff['Klimaform'].MB = {
+    legs=gear.Merl_MB_legs,
+    feet="Arbatel Loafers",
+    ring1="Locus Ring",
+    -- feet="Arbatel Loafers +1",
+  }
 
   sets.buff.FullSublimation = sets.precast.JA['Sublimation']
 
@@ -1277,7 +1283,11 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
       end
     end
     if buffactive['Klimaform'] and spell.element == world.weather_element then
-      equip(sets.buff['Klimaform'])
+      if state.MagicBurst.current then
+        equip(sets.buff['Klimaform']).MB
+      else
+        equip(sets.buff['Klimaform'])
+      end
     end
   end
   if spell.action_type == 'Magic' then
