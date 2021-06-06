@@ -430,9 +430,11 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     end
 end
 function job_post_midcast(spell, action, spellMap, eventArgs)
---       if spell.element == world.weather_element or spell_element == world.day_element then
---                equip({waist="Hachirin-no-Obi"})
---            end
+  if spell.element == world.weather_element or spell_element == world.day_element then
+    if spellMap ~= 'Cure' then  -- Do not use obi on cures
+      equip({waist="Hachirin-no-Obi"})
+    end
+  end
 end
 -------------------------------------------------------------------------------------------------------------------
 -- Job-specific hooks for non-casting events.
