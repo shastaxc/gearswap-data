@@ -1,7 +1,7 @@
 function user_job_setup()
 
 	state.OffenseMode:options('Normal','SomeAcc','Acc','HighAcc','FullAcc')
-	state.HybridMode:options('Normal','DTLite','Tank')
+	state.HybridMode:options('Tank','DTLite','Normal')
 	state.WeaponskillMode:options('Match','Normal','SomeAcc','Acc','HighAcc','FullAcc')
 	state.CastingMode:options('Normal','SIRD')
 	state.PhysicalDefenseMode:options('PDT_HP','PDT')
@@ -9,12 +9,13 @@ function user_job_setup()
 	state.ResistDefenseMode:options('MEVA_HP','MEVA','Death','Charm','DTCharm')
 	state.IdleMode:options('Normal','Tank','KiteTank','Sphere')
 	state.Weapons:options('None','Lionheart','Lionheart','DualWeapons')
-
+	
 	state.ExtraDefenseMode = M{['description']='Extra Defense Mode','None','MP'}
 
 	gear.enmity_jse_back = {name="Ogma's cape",augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Damage taken-5%',}}
-	back="Moonlight cape",{name="Ogma's cape",augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10',}}
+	gear.stp_jse_back = {name="Ogma's cape",augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10',}}
 	gear.da_jse_back = {name="Ogma's cape",augments={'STR+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}
+	gear.fc_back = { name="Ogma's cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','"Fast Cast"+10','Spell interruption rate down-10%',}}
 
 	-- Additional local binds
 	send_command('bind !` gs c SubJobEnmity')
@@ -34,13 +35,13 @@ function user_job_setup()
 	send_command('bind @f10 gs c toggle TankAutoDefense')
 	send_command('bind ^@!` gs c cycle SkillchainMode')
 	send_command('bind !r gs c weapons Lionheart;gs c update')
-
+	
 	select_default_macro_book()
 end
 
 function init_gear_sets()
 
-    sets.Enmity ={
+    sets.Enmity ={  
 	main="Lionheart",
     sub="Utu Grip",
     ammo="Yamarang",
@@ -56,15 +57,31 @@ function init_gear_sets()
     left_ring="Gelatinous ring +1",
     right_ring="Defending Ring",
     back="Moonlight cape"}
-
-
-
+	 
+	
+		 
     sets.Enmity.SIRD = {}
-
+		
     sets.Enmity.SIRDT = {}
 
-    sets.Enmity.DT = {}
-
+    sets.Enmity.DT = {  
+      main="Lionheart",
+      sub="Utu Grip",
+      ammo="Yamarang",
+      head="Rune. Bandeau +3",
+      body="Runeist's Coat +3",
+      hands="Runeist's Mitons +3",
+      legs="Rune. Trousers +3",
+      feet="Runeist's Boots +3",
+      neck="Loricate Torque +1",
+      waist="Flume Belt +1",
+      left_ear="Genmei Earring",
+      right_ear="Ethereal Earring",
+      left_ring="Gelatinous ring +1",
+      right_ring="Defending Ring",
+      back="Moonlight cape"
+    }
+		
 	--------------------------------------
 	-- Precast sets
 	--------------------------------------
@@ -130,42 +147,43 @@ function init_gear_sets()
 	sets.precast.JA['Vivacious Pulse']['Unda'] = set_combine(sets.precast.JA['Vivacious Pulse'], {})
 	sets.precast.JA['Vivacious Pulse']['Lux'] = set_combine(sets.precast.JA['Vivacious Pulse'], {})
 	sets.precast.JA['Vivacious Pulse']['Tenebrae'] = set_combine(sets.precast.JA['Vivacious Pulse'], {})
-
-
+	
+	
     -- Waltz set (chr and vit)
     sets.precast.Waltz = {ammo="Yamarang",
         head="Rune. Bandeau +3",neck="Unmoving Collar +1",ear1="Enchntr. Earring +1",ear2="Handler's Earring +1",
         body=gear.herculean_waltz_body,hands=gear.herculean_waltz_hands,ring1="Defending Ring",ring2="Valseur's Ring",
         back="Moonlight Cape",waist="Chaac Belt",legs="Dashing Subligar",feet=gear.herculean_waltz_feet}
-
+        
     -- Don't need any special gear for Healing Waltz.
     sets.precast.Waltz['Healing Waltz'] = {}
-
+	
     sets.precast.Step = {}
-
+		
 	sets.precast.JA['Violent Flourish'] = {}
-
+		
 	-- Fast cast sets for spells
-    sets.precast.FC = {main="Malignance Sword",sub="refined grip +1",ammo="Oneiros grip",
-            head="Rune. Bandeau +3",neck="Voltsurge Torque",ear1="Enchntr. Earring +1",ear2="Loquac. Earring",
-            body="Dread Jupon",hands={ name="Leyline Gloves", augments={'Accuracy+15','Mag. Acc.+15','"Mag.Atk.Bns."+15','"Fast Cast"+3',}},
-			ring1="Lebeche Ring",ring2="Kishar Ring",
+    sets.precast.FC = {ammo="Staunch Tathlum +1",
+            head="Rune. Bandeau +3",neck="Orunmila's torque",ear2="Loquac. Earring",
+            body="Dread Jupon",
+			hands={ name="Leyline Gloves", augments={'Accuracy+15','Mag. Acc.+15','"Mag.Atk.Bns."+15','"Fast Cast"+3',}},
+			ring1="Weather. Ring",ring2="Kishar Ring",
             back="Ogma's cape",waist="Flume belt +1",legs="Rune. Trousers +3",feet="Carmine Greaves +1"}
-
-	sets.precast.FC.DT = {main="Malignance Sword",sub="refined grip +1",ammo="Oneiros grip",
+			
+	sets.precast.FC.DT = {ammo="Staunch Tathlum +1",
         head="Rune. Bandeau +3",neck="Loricate Torque +1",ear1="Odnowa Earring +1",ear2="Ethereal earring",
         body="Runeist's Coat +3",
 		hands={ name="Leyline Gloves", augments={'Accuracy+15','Mag. Acc.+15','"Mag.Atk.Bns."+15','"Fast Cast"+3',}},
-		ring1="Gelatinous Ring +1",ring2="Gelatinous ring +1",
+		ring1="Evanescence ring",ring2="Weather. Ring",
         back="Ogma's cape",waist="Flume belt +1",legs="Rune. Trousers +3",feet="Carmine Greaves +1"}
-
+		
 	sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {waist="Siegel Sash", legs="Futhark Trousers +1"})
     sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {neck='Magoraga Beads'})
 	sets.precast.FC.Cure = set_combine(sets.precast.FC, {})
 
 	-- Weaponskill sets
 	sets.precast.WS = {ammo="Knobkierrie",
-            head="Lilitu Headpiece",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Sherida Earring",
+            head="Adhemar bonnet +1",neck="Fotia Gorget",ear1="Moonshade Earring",ear2="Sherida Earring",
             body="Adhemar Jacket +1",hands="Meg. Gloves +2",ring1="Niqmaddu Ring",ring2="Ilabrat ring",
             back="Evasionist's cape",waist="Fotia Belt",legs="Meg. Chausses +2",feet="Ayanmo gambieras +2",}
 	sets.precast.WS.SomeAcc = {}
@@ -182,41 +200,42 @@ function init_gear_sets()
     sets.precast.WS['Dimidiation'].Acc = set_combine(sets.precast.WS.Acc,{head="Lilitu Headpiece",legs=gear.herculean_wsd_legs,feet=gear.herculean_wsd_feet})
 	sets.precast.WS['Dimidiation'].HighAcc = set_combine(sets.precast.WS.HighAcc,{legs=gear.herculean_wsd_legs,feet=gear.herculean_wsd_feet})
 	sets.precast.WS['Dimidiation'].FullAcc = set_combine(sets.precast.WS.FullAcc,{})
-
+	
     sets.precast.WS['Ground Strike'] = set_combine(sets.precast.WS,{})
     sets.precast.WS['Ground Strike'].Acc = set_combine(sets.precast.WS.Acc,{})
 	sets.precast.WS['Ground Strike'].HighAcc = set_combine(sets.precast.WS.HighAcc,{})
 	sets.precast.WS['Ground Strike'].FullAcc = set_combine(sets.precast.WS.FullAcc,{})
-
+		
     sets.precast.WS['Herculean Slash'] = set_combine(sets.precast['Lunge'], {})
 	sets.precast.WS['Sanguine Blade'] = set_combine(sets.precast['Lunge'], {})
 
 	--------------------------------------
 	-- Midcast sets
 	--------------------------------------
-
+	
     sets.midcast.FastRecast = {main="Malignance sword",ammo="Oneiros grip",
             head="Rune. Bandeau +3",neck="Voltsurge Torque",ear1="Enchntr. Earring +1",ear2="Loquac. Earring",
             body="Dread Jupon",hands="Leyline Gloves",
 			ring1="Lebeche Ring",ring2="Kishar Ring",
             back="Moonlight Cape",waist="Flume Belt +1",legs="Rune. Trousers +3",feet="Carmine Greaves +1"}
-
+			
 	sets.midcast.FastRecast.DT = {ammo="Staunch Tathlum +1",
         head="Fu. Bandeau +1",neck="Loricate Torque +1",ear1="Odnowa Earring +1",ear2="Ethereal earring",
         body="Runeist's Coat +3",hands="Runeist's Mitons +3",
-		ring1="Defending ring",ring2="Gelatinous ring +1",
+		ring1="Weather. ring",ring2="Lebeche ring",
         back="Moonlight Cape",waist="Flume Belt +1",legs="Rune. Trousers +3",feet="Carmine Greaves +1"}
-
+		
 	sets.midcast.FastRecast.SIRD = {ammo="Staunch Tathlum +1",
         head="Fu. Bandeau +1",neck="Loricate Torque +1",ear1="Odnowa Earring +1",ear2="Halasz earring",
         body="Runeist's Coat +3",hands="Runeist's Mitons +3",
 		ring1="Defending ring",ring2="Gelatinous ring +1",
         back="Archon cape",waist="Flume Belt +1",legs="Rune. Trousers +3",feet="Carmine Greaves +1"}
 
-    sets.midcast['Enhancing Magic'] = set_combine(sets.midcast.FastRecast,{head="Erilaz Galea +1",neck="Incanter's Torque",ear1="Andoaa Earring",ear2="Mimir Earring",hands="Runeist's Mitons +3",back="Merciful Cape",waist="Siegel sash",legs="Futhark Trousers +1"})
+    sets.midcast['Enhancing Magic'] = set_combine(sets.midcast.FastRecast,{head="Erilaz Galea +1",neck="Incanter's Torque",ear1="Andoaa Earring",ear2="Mimir Earring",hands="Runeist's Mitons +3",back="Merciful Cape",
+    waist="Siegel sash",legs="Futhark Trousers +1"})
     sets.midcast['Phalanx'] = set_combine(sets.midcast['Enhancing Magic'],{main="Deacon Sword",head="Futhark Bandeau +1",waist="Siegel sash",hands="Runeist Mitons +3",legs="Carmine Cuisses +1",feet=gear.herculean_nuke_feet})
-    sets.midcast['Regen'] = set_combine(sets.midcast['Enhancing Magic'],{head="Rune. Bandeau +3",neck="Incanter's torque"})
-	sets.midcast['Refresh'] = set_combine(sets.midcast['Enhancing Magic'],{head="Erilaz Galea +1"})
+    sets.midcast['Regen'] = set_combine(sets.midcast['Enhancing Magic'],{head="Rune. Bandeau +3",neck="Incanter's torque"}) 
+	sets.midcast['Refresh'] = set_combine(sets.midcast['Enhancing Magic'],{head="Erilaz Galea +1"}) 
     sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {ear2="Earthcry Earring",waist="Siegel Sash"})
 	sets.midcast.Flash = set_combine(sets.Enmity, {})
 	sets.midcast.Flash.DT = set_combine(sets.Enmity.DT, {})
@@ -234,14 +253,14 @@ function init_gear_sets()
         head="Rune. Bandeau +3",neck="Incanter's torque",ear1="Mendi. Earring",ear2="Loquac. Earring",
         body="Vrikodara Jupon",hands="Buremte Gloves",ring1="Lebeche Ring",ring2="Janniston Ring",
         back="Tempered Cape +1",waist="Luminary Sash",legs="Carmine Cuisses +1",feet="Skaoi Boots"}
-
+		
 	sets.midcast['Wild Carrot'] = set_combine(sets.midcast.Cure, {})
-
+		
 	sets.Self_Healing = {hands="Buremte Gloves",ring2="Kunaji Ring",waist="Gishdubar Sash"}
 	sets.Cure_Received = {hands="Buremte Gloves",ring2="Kunaji Ring",waist="Gishdubar Sash"}
 	sets.Self_Refresh = {waist="Gishdubar Sash"}
 	sets.Phalanx_Received = {main="Deacon Sword",hands="Runeist Mitons +3",}
-
+	
     sets.midcast.Protect = set_combine(sets.midcast['Enhancing Magic'], {ring2="Sheltered Ring"})
     sets.midcast.Shell = set_combine(sets.midcast['Enhancing Magic'], {ring2="Sheltered Ring"})
 
@@ -268,27 +287,27 @@ function init_gear_sets()
     back="Moonlight Cape"
 		}
 
-
+			
 	sets.idle.Tank = {main="Aettir",sub="refined grip +1",ammo="Staunch Tathlum +1",
         head="Fu. Bandeau +1",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Ethereal Earring",
         body="Runeist's Coat +3",hands="Runeist's Mitons +3",
-		left_ring="Defending ring",right_ring="Gelatinous ring +1",
+		left_ring="Defending ring",right_ring="Shadow ring",
         back="Moonlight Cape",waist="Flume Belt +1",legs="Rune. Trousers +3",feet="Erilaz Greaves +1"}
 
 	sets.idle.KiteTank = {main="Aettir",sub="refined grip +1",ammo="Staunch Tathlum +1",
         head="Fu. Bandeau +1",neck="Vim Torque +1",ear1="Genmei Earring",ear2="Ethereal Earring",
         body="Futhark Coat +1",hands="Runeist's Mitons +3",
-		left_ring="Defending ring",right_ring="Gelatinous ring +1",
+		left_ring="Defending ring",right_ring="Shadow ring",
         back="Moonlight Cape",waist="Flume Belt +1",legs="Carmine Cuisses +1",feet="Erilaz greaves +1"}
 
 	sets.idle.Weak = {main="Aettir",sub="refined grip +1",ammo="Homiliary",
 		head="Fu. Bandeau +1",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Ethereal Earring",
 		body="Runeist's Coat +3",hands="Runeist's Mitons +3",
-		left_ring="Defending ring",right_ring="Gelatinous ring +1",
+		left_ring="Defending ring",right_ring="Shadow ring",
 		back="Moonlight Cape",waist="Flume Belt +1",legs="Rune. Trousers +3",feet="Erilaz greaves +1"}
 
 	sets.Kiting = {legs="Carmine Cuisses +1"}
-
+	
 	sets.latent_refresh = {waist="Fucho-no-obi"}
 	sets.latent_refresh_grip = {sub="Oneiros Grip"}
 	sets.DayIdle = {}
@@ -298,64 +317,64 @@ function init_gear_sets()
     sets.Knockback = {}
     sets.MP = {ear2="Ethereal Earring",body="Erilaz Surcoat +1",waist="Flume Belt +1"}
 	sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
-
+	
 	-- Weapons sets
 	sets.weapons.Lionheart = {main="Lionheart",sub="Utu Grip"}
 	sets.weapons.Lionheart = {main="Lionheart",sub="Utu Grip"}
 	sets.weapons.DualWeapons = {main="Firangi",sub="Reikiko"}
-
+	
 	-- Defense Sets
-
-	sets.defense.PDT = {main="Lionheart",sub="Utu Grip",ammo="Staunch Tathlum +1",
-        head="Meghanada Visor +2",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Ethereal Earring",
+	
+	sets.defense.PDT = {main="Aettir",sub="Refined grip +1",ammo="Staunch Tathlum +1",
+        head="Turms cap +1",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Ethereal Earring",
         body="Futhark Coat +1",hands="Runeist's Mitons +3",ring1="Gelatinous Ring +1",ring2="Gelatinous ring +1",
         back="Shadow Mantle",waist="Flume Belt +1",legs="Rune. Trousers +3",feet="Erilaz Greaves +1"}
-	sets.defense.PDT_HP = {main="Lionheart",sub="Utu Grip",ammo="Staunch Tathlum +1",
-        head="Fu. Bandeau +1",neck="Loricate Torque +1",ear1="Odnowa Earring +1",ear2="Ethereal earring",
+	sets.defense.PDT_HP = {main="Aettir",sub="Refined grip +1",ammo="Staunch Tathlum +1",
+        head="Turms cap +1",neck="Loricate Torque +1",ear1="Odnowa Earring +1",ear2="Ethereal earring",
         body="Runeist's Coat +3",hands="Runeist's Mitons +3",ring1="Gelatinous Ring +1",ring2="Gelatinous ring +1",
         back="Moonlight Cape",waist="Flume Belt +1",legs="Rune. Trousers +3",feet="Erilaz Greaves +1"}
-	sets.defense.MDT = {main="Lionheart",sub="Utu Grip",ammo="Yamarang",
-        head="Erilaz Galea +1",neck="Warder's Charm +1",ear1="Odnowa Earring +1",ear2="Sanare Earring",
+	sets.defense.MDT = {main="Aettir",sub="Refined grip +1",ammo="Yamarang",
+        head="Turms cap +1",neck="Warder's Charm +1",ear1="Odnowa Earring +1",ear2="Sanare Earring",
         body="Runeist's Coat +3",hands="Runeist's Mitons +3",ring1="Defending Ring",ring2="Shadow Ring",
         back="Moonlight Cape",waist="Engraved Belt",legs=gear.herculean_dt_legs,feet="Erilaz Greaves +1"}
-	sets.defense.MDT_HP = {main="Lionheart",sub="Utu Grip",ammo="Staunch Tathlum +1",
+	sets.defense.MDT_HP = {main="Aettir",sub="Refined grip +1",ammo="Staunch Tathlum +1",
+        head="Turms cap +1",neck="Loricate Torque +1",ear1="Odnowa Earring +1",ear2="Ethereal earring",
+        body="Runeist's Coat +3",hands="Runeist's Mitons +3",ring1="Gelatinous Ring +1",ring2="Gelatinous ring +1",
+        back="Moonlight Cape",waist="Engraved Belt",legs="Rune. Trousers +3",feet="Erilaz Greaves +1"}
+	
+	sets.defense.BDT = {main="Aettir",sub="Refined grip +1",ammo="Staunch Tathlum +1",
+        head="Turms cap +1",neck="Warder's Charm +1",ear1="Odnowa Earring +1",ear2="Sanare Earring",
+        body="Runeist's Coat +3",hands="Runeist's Mitons +3",ring1="Defending Ring",ring2="Shadow Ring",
+        back="Moonlight Cape",waist="Engraved Belt",legs=gear.herculean_dt_legs,feet="Erilaz Greaves +1"}
+	sets.defense.BDT_HP = {main="Aettir",sub="Refined grip +1",ammo="Staunch Tathlum +1",
         head="Erilaz Galea +1",neck="Loricate Torque +1",ear1="Odnowa Earring +1",ear2="Ethereal earring",
         body="Runeist's Coat +3",hands="Runeist's Mitons +3",ring1="Gelatinous Ring +1",ring2="Gelatinous ring +1",
         back="Moonlight Cape",waist="Engraved Belt",legs="Rune. Trousers +3",feet="Erilaz Greaves +1"}
-
-	sets.defense.BDT = {main="Lionheart",sub="Utu Grip",ammo="Staunch Tathlum +1",
-        head="Erilaz Galea +1",neck="Warder's Charm +1",ear1="Odnowa Earring +1",ear2="Sanare Earring",
-        body="Runeist's Coat +3",hands="Runeist's Mitons +3",ring1="Defending Ring",ring2="Shadow Ring",
-        back="Moonlight Cape",waist="Engraved Belt",legs=gear.herculean_dt_legs,feet="Erilaz Greaves +1"}
-	sets.defense.BDT_HP = {main="Lionheart",sub="Utu Grip",ammo="Staunch Tathlum +1",
-        head="Erilaz Galea +1",neck="Loricate Torque +1",ear1="Odnowa Earring +1",ear2="Ethereal earring",
-        body="Runeist's Coat +3",hands="Runeist's Mitons +3",ring1="Gelatinous Ring +1",ring2="Gelatinous ring +1",
-        back="Moonlight Cape",waist="Engraved Belt",legs="Rune. Trousers +3",feet="Erilaz Greaves +1"}
-
+	
 	sets.defense.MEVA = {main="Lionheart",sub="Utu Grip",ammo="Staunch Tathlum +1",
-        head="Erilaz Galea +1",neck="Warder's Charm +1",ear1="Odnowa Earring +1",ear2="Sanare Earring",
+        head="Turms cap +1",neck="Warder's Charm +1",ear1="Odnowa Earring +1",ear2="Sanare Earring",
         body="Runeist's Coat +3",hands="Erilaz Gauntlets +1",ring1="Purity Ring",ring2="Vengeful Ring",
         back=gear.enmity_jse_back,waist="Engraved Belt",legs="Rune. Trousers +3",feet="Erilaz Greaves +1"}
 	sets.defense.MEVA_HP = {main="Lionheart",sub="Utu Grip",ammo="Staunch Tathlum +1",
-        head="Erilaz Galea +1",neck="Warder's Charm +1",ear1="Odnowa Earring +1",ear2="Sanare Earring",
+        head="Turms cap +1",neck="Warder's Charm +1",ear1="Odnowa Earring +1",ear2="Sanare Earring",
         body="Runeist's Coat +3",hands="Erilaz Gauntlets +1",ring1="Gelatinous Ring +1",ring2="Gelatinous ring +1",
         back="Moonlight Cape",waist="Engraved Belt",legs="Rune. Trousers +3",feet="Erilaz Greaves +1"}
-
+		
 	sets.defense.Death = {main="Lionheart",sub="Utu Grip",ammo="Staunch Tathlum +1",
-        head="Erilaz Galea +1",neck="Warder's Charm +1",ear1="Odnowa Earring +1",ear2="Sanare Earring",
+        head="Turms cap +1",neck="Warder's Charm +1",ear1="Odnowa Earring +1",ear2="Sanare Earring",
         body="Runeist's Coat +3",hands="Erilaz Gauntlets +1",ring1="Purity Ring",ring2="Vengeful Ring",
         back=gear.enmity_jse_back,waist="Engraved Belt",legs="Rune. Trousers +3",feet="Erilaz Greaves +1"}
 
 	sets.defense.DTCharm = {main="Lionheart",sub="Utu Grip",ammo="Staunch Tathlum +1",
-        head="Erilaz Galea +1",neck="Unmoving Collar +1",ear1="Odnowa Earring +1",ear2="Sanare Earring",
+        head="Turms cap +1",neck="Unmoving Collar +1",ear1="Odnowa Earring +1",ear2="Sanare Earring",
         body="Runeist's Coat +3",hands="Erilaz Gauntlets +1",ring1="Defending Ring",ring2="Dark Ring",
         back=gear.enmity_jse_back,waist="Engraved Belt",legs="Rune. Trousers +3",feet="Erilaz Greaves +1"}
-
+		
 	sets.defense.Charm = {main="Lionheart",sub="Utu Grip",ammo="Staunch Tathlum +1",
-        head="Erilaz Galea +1",neck="Unmoving Collar +1",ear1="Odnowa Earring +1",ear2="Sanare Earring",
+        head="Turms cap +1",neck="Unmoving Collar +1",ear1="Odnowa Earring +1",ear2="Sanare Earring",
         body="Runeist's Coat +3",hands="Erilaz Gauntlets +1",ring1="Purity Ring",ring2="Vengeful Ring",
         back=gear.enmity_jse_back,waist="Engraved Belt",legs="Rune. Trousers +3",feet="Erilaz Greaves +1"}
-
+	
 	-- Swap to these on Moonshade using WS if at 3000 TP
 	sets.MaxTP = {ear1="Brutal Earring"}
 	sets.AccMaxTP = {ear1="Telos Earring"}
@@ -364,20 +383,17 @@ function init_gear_sets()
 	-- Engaged sets
 	--------------------------------------
 
-    sets.engaged = {main="Lionheart",sub="Utu Grip",ammo="Yamarang",
-            head="Dampening Tam",neck="Anu Torque",ear1="Brutal Earring",ear2="Sherida Earring",
-            body="Adhemar Jacket +1",
-			hands={ name="Adhemar Wrist. +1", augments={'Accuracy+20','Attack+20','"Subtle Blow"+8',}},
-			ring1="Niqmaddu Ring",ring2="Epona's Ring",
-            back="Moonlight cape",waist="Sailfi belt +1",legs="Meg. Chausses +2",feet="Ayanmo gambieras +2"}
-    sets.engaged.SomeAcc = {main="Lionheart",sub="Utu Grip",ammo="Yamarang",
-            head="Dampening Tam",neck="Combatant's Torque",ear1="Brutal Earring",ear2="Sherida Earring",
-            body="Ayanmo Corazza +2",hands="Adhemar Wrist. +1",ring1="Niqmaddu Ring",ring2="Epona's Ring",
-            back="Moonlight cape",waist="Sailfi belt +1",legs="Meg. Chausses +2",feet="Ayanmo gambieras +2"}
+    sets.engaged = {main="Lionheart",sub="Refined grip +1",ammo="Yamarang",
+            head="Turms cap +1",neck="Futhark torque +1",ear1="Odnowa earring +1",ear2="Sherida Earring",
+            body="Runeist's coat +3",
+			hands="Herculean gloves",
+			ring1="Defending ring",ring2="Gelatinous ring +1",
+            back="Moonlight cape",waist="Flume belt +1",legs="Meg. Chausses +2",feet="Ayanmo gambieras +2"}
+    sets.engaged.SomeAcc = {}
 	sets.engaged.Acc = {main="Lionheart",sub="Utu Grip",ammo="Yamarang",
-            head="Dampening Tam",neck="Combatant's Torque",ear1="Cessance Earring",ear2="Sherida Earring",
+            head="Adhemar bonnet +1",neck="Lissome necklace",ear1="Telos earring",ear2="Sherida Earring",
             body="Ayanmo Corazza +2",hands="Adhemar Wrist. +1",ring1="Niqmaddu Ring",ring2="Epona's Ring",
-            back="Moonlight cape",waist="Sailfi belt +1",legs="Meg. Chausses +2",feet="Ayanmo gambieras +2"}
+            back="Moondoe mantle +1",waist="Ioskeha belt +1",legs="Meg. Chausses +2",feet="Ayanmo gambieras +2"}
 	sets.engaged.HighAcc = {main="Lionheart",sub="Utu Grip",ammo="C. Palug Stone",
             head="Aya. Zucchetto +2",neck="Combatant's Torque",ear1="Telos Earring",ear2="Sherida Earring",
             body="Ayanmo Corazza +2",hands="Meg. Gloves +2",ring1="Niqmaddu Ring",ring2="Ilabrat Ring",
@@ -406,8 +422,8 @@ function init_gear_sets()
             head="Aya. Zucchetto +2",neck="Loricate Torque +1",ear1="Telos Earring",ear2="Mache Earring +1",
             body="Ayanmo Corazza +2",hands="Meg. Gloves +2",ring1="Defending Ring",ring2="Patricius Ring",
             back="Moonlight Cape",waist="Olseni Belt",legs="Meg. Chausses +2",feet="Ahosi Leggings"}
-    sets.engaged.Tank = {main="Lionheart",sub="Utu Grip",ammo="Staunch Tathlum +1",
-            head="Meghanada Visor +2",neck="Loricate Torque +1",ear1="Genmei Earring",ear2="Ethereal Earring",
+    sets.engaged.Tank = {main="Aettir",sub="Refined grip +1",ammo="Staunch Tathlum +1",
+            head="Turms cap +1",neck="Loricate Torque +1",ear1="Odnowa earring +1",ear2="Ethereal Earring",
             body="Futhark Coat +1",hands="Runeist's Mitons +3",ring1="Defending Ring",ring2="Shadow Ring",
             back="Shadow Mantle",waist="Engraved Belt",legs=gear.herculean_dt_legs,feet="Erilaz Greaves +1"}
 	sets.engaged.Tank_HP = {main="Lionheart",sub="Utu Grip",ammo="Staunch Tathlum +1",
@@ -418,7 +434,7 @@ function init_gear_sets()
 	sets.engaged.Acc.Tank = sets.engaged.Tank
 	sets.engaged.HighAcc.Tank = sets.engaged.Tank
 	sets.engaged.FullAcc.Tank = sets.engaged.Tank
-
+	
 	--------------------------------------
 	-- Custom buff sets
 	--------------------------------------
@@ -426,7 +442,7 @@ function init_gear_sets()
 	sets.buff.Sleep = {head="Frenzy Sallet"}
 	sets.buff.Battuta = {hands="Turms Mittens +1"}
 	sets.buff.Embolden = {back="Evasionist's Cape"}
-
+	
 end
 
 -- Select default macro book on initial load or subjob change.
@@ -460,7 +476,7 @@ function check_trust()
 			local party = windower.ffxi.get_party()
 			if party.p5 == nil then
 				local spell_recasts = windower.ffxi.get_spell_recasts()
-
+			
 				if spell_recasts[980] < spell_latency and not have_trust("Yoran-Oran") then
 					windower.send_command('input /ma "Yoran-Oran (UC)" <me>')
 					tickdelay = os.clock() + 3
