@@ -1284,7 +1284,7 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     end
     if buffactive['Klimaform'] and spell.element == world.weather_element then
       if state.MagicBurst.current then
-        equip(sets.buff['Klimaform']).MB
+        equip(sets.buff['Klimaform'].MB)
       else
         equip(sets.buff['Klimaform'])
       end
