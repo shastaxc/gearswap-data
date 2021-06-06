@@ -583,6 +583,7 @@ function init_gear_sets()
   sets.precast.WS['Full Break'].HighAcc = sets.precast.WS['Shockwave'].HighAcc
   sets.precast.WS['Full Break'].HighAccMaxTP = sets.precast.WS['Shockwave'].HighAccMaxTP
 
+  sets.precast.WS['Ground Strike'] = set_combine(sets.Enmity, sets.TreasureHunter)
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Midcast Sets ------------------------------------------
