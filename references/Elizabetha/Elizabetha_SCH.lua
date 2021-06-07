@@ -182,7 +182,7 @@ function init_gear_sets()
 
 
 
-    sets.midcast.CureWithLightWeather = set_combine(sets.midcast['Cure'], {waist=""})
+    sets.midcast.CureWithLightWeather = set_combine(sets.midcast['Cure'], {waist="Austerity Belt"})
 
     sets.midcast.Curaga = sets.midcast.Cure
 
@@ -431,7 +431,7 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
 end
 function job_post_midcast(spell, action, spellMap, eventArgs)
   if spell.element == world.weather_element or spell_element == world.day_element then
-    if spellMap ~= 'Cure' then  -- Do not use obi on cures
+    if spell.skill == 'Elemental Magic' then -- Only use obi on elemental magic
       equip({waist="Hachirin-no-Obi"})
     end
   end
