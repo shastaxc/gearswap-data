@@ -238,7 +238,6 @@ function init_gear_sets()
     feet="Skulk. Poulaines +1",
     -- ammo="Barathrum",
     -- legs="Skulk. Culottes +1",
-    -- feet="Skulk. Poulaines +1",
   }
   sets.precast.JA['Perfect Dodge'] = {
     -- hands="Plun. Armlets +3",
