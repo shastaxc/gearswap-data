@@ -1083,7 +1083,6 @@ function init_gear_sets()
     main="Bolelabunga", --1
     head="Befouled Crown", --1
     body="Jhakri Robe +2", --4
-    body="Pluviale", --1
     legs="Assiduity Pants +1",
     -- main="Contemplator +1", --2
     -- sub="Oneiros Grip", --1; when mp<70%
