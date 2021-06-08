@@ -462,7 +462,7 @@ function init_gear_sets()
 
   sets.precast.WS["Last Stand"] = set_combine(sets.precast.WS, {
     head="Orion Beret +3",
-    body="Meghanada Cuirie +2",
+    body="Ikenga's Vest",
     hands="Meg. Gloves +2",
     legs="Arcadian Braccae +3",
     feet=gear.Herc_WSD_feet,
@@ -473,7 +473,6 @@ function init_gear_sets()
     ring2="Dingir Ring",
     back=gear.RNG_WS2_Cape,
     waist="Fotia Belt",
-    -- body="Ikenga's Vest", -- R20
     -- feet=gear.Herc_RA_WSD_feet,
     -- neck="Scout's Gorget +2",
     -- ring2="Epaminondas's Ring",
@@ -628,39 +627,48 @@ function init_gear_sets()
   sets.precast.WS['Evisceration'].HighAccMaxTP = set_combine(sets.precast.WS['Evisceration'].HighAcc, {
   })
 
-  sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
-    head="Orion Beret +3",
-    body=gear.Herc_WSD_body,
-    hands="Meghanada Gloves +2",
-    legs="Arcadian Braccae +3",
-    feet=gear.Herc_WSD_feet,
-    neck="Scout's Gorget +1",
-    ear1="Ishvara Earring",
-    ear2="Moonshade Earring",
-    ring1="Regal Ring",
-    ring2="Ilabrat Ring",
-    back=gear.RNG_WS3_Cape,
-    waist="Sailfi Belt +1",
-    -- body="Ikenga's Vest", -- R20
-    -- feet=gear.Herc_STR_WSD_feet,
-    -- neck="Scout's Gorget +2",
-    -- ring2="Epaminondas's Ring",
-  })
+  sets.precast.WS['Savage Blade'] = {
+    head="Orion Beret +3",        -- 33, 30, __, __, 10, __, ___
+    body=gear.Herc_WSD_body,      -- 28, 20, 20, 35, 10, __, ___
+    hands="Meghanada Gloves +2",  -- 23, 34, 43, 47,  7, __, ___
+    legs="Arcadian Braccae +3",   -- 39, 27, __, __, 10, __, ___
+    feet=gear.Herc_WSD_feet,      -- 16, 11, 13, 13,  6, __, ___
+    neck="Scout's Gorget +1",     -- __, __, __, __, __,  8, ___
+    ear1="Ishvara Earring",       -- __, __, __, __,  2, __, ___
+    ear2="Moonshade Earring",     -- __, __, __,  4, __, __, 250
+    ring1="Regal Ring",           -- 10, __, 20, __, __, __, ___
+    ring2="Ilabrat Ring",         -- __, __, 25, __, __, __, ___
+    back=gear.RNG_WS3_Cape,       -- 30, __, 20, 20, 10, __, ___
+    waist="Fotia Belt",           -- __, __, __, 10, 10, __, ___
+    -- head=gear.Nyame_B_head,    -- 26, 26, 55, 40,  8, __, ___
+    -- body="Ikenga's Vest",      -- 33, 25, __, __, __,  7, 170
+    -- legs=gear.Nyame_B_legs,    -- 43, 32, 55, 40,  9, __, ___
+    -- feet=gear.Nyame_B_feet,    -- 23, 26, 55, 40,  8, __, ___
+    -- neck="Scout's Gorget +2",  -- __, __, __, __, __, 10, ___
+    -- ring2="Epaminondas's Ring",-- __, __, __, __,  5, __, ___
+    -- 188 STR, 143 MND, 248 Attack, 201 Accuracy, 59 WSD, 17 PDL, 420 TP Bonus
+  } -- 179 STR, 122 MND, 141 Attack, 144 Accuracy, 65 WSD, 8 PDL, 250 TP Bonus
   sets.precast.WS['Savage Blade'].MaxTP = set_combine(sets.precast.WS['Savage Blade'], {
+    ear2="Telos Earring",
   })
   sets.precast.WS['Savage Blade'].LowAcc = set_combine(sets.precast.WS['Savage Blade'], {
-    ear1="Telos Earring",
-    ring2="Chirich Ring +1",
+    ear1="Dignitary's Earring",
+    ring1="Rufescent Ring",       --  6,  6, __,  7, __, __, ___
   })
   sets.precast.WS['Savage Blade'].LowAccMaxTP = set_combine(sets.precast.WS['Savage Blade'].LowAcc, {
+    ear2="Telos Earring",
   })
   sets.precast.WS['Savage Blade'].MidAcc = set_combine(sets.precast.WS['Savage Blade'].LowAcc, {
+    ring2="Chirich Ring +1",
   })
   sets.precast.WS['Savage Blade'].MidAccMaxTP = set_combine(sets.precast.WS['Savage Blade'].MidAcc, {
+    ear2="Telos Earring",
   })
   sets.precast.WS['Savage Blade'].HighAcc = set_combine(sets.precast.WS['Savage Blade'].MidAcc, {
+    body=gear.Herc_WSD_body,
   })
   sets.precast.WS['Savage Blade'].HighAccMaxTP = set_combine(sets.precast.WS['Savage Blade'].HighAcc, {
+    ear2="Telos Earring",
   })
 
   sets.precast.WS['Rampage'] = set_combine(sets.precast.WS['Evisceration'], {
@@ -737,27 +745,29 @@ function init_gear_sets()
     back=gear.RNG_RA_Cape,        -- 30 [10]  20/ 20 <_> {__} (__)
     waist="Kwahu Kachina Belt +1",--  8 [__]  20/ __ <5> {__} (__)
     -- head="Arcadian Beret +3",  -- 37 [__]  37/ 62 <_> {__} (38)
+    -- legs="Ikenga's Trousers"   -- 40 [10]  45/ 60 <_> { 6} (__)
     -- neck="Scout's Gorget +2",  -- 25 [ 7]  25/ __ <_> {10} (__)
     -- ear2="Dedition Earring",   -- __ [ 8] -10/-10 <_> {__} (__)
-    --274 AGI [75 STP] 301 racc / 182 ratt <5 crit> {23 dmg limit} (54 Recycle)
+    --272 AGI [77 STP] 292 racc / 222 ratt <5 crit> {29 dmg limit} (38 Recycle)
   } --264 AGI [71 STP] 296 racc / 177 ratt <5 crit> {21 dmg limit} (52 Recycle)
   sets.midcast.RA.LowAcc = set_combine(sets.midcast.RA, {
     -- body="Orion Jerkin +3",    -- 40 [ 8] 60/ 41 <_> {__} (__)
     -- Includes set bonus 15 racc from orion + regal
-    --275 AGI [72 STP] 331 racc / 163 ratt <5 crit> {16 dmg limit} (54 Recycle)
+    --273 AGI [74 STP] 307 racc / 203 ratt <5 crit> {22 dmg limit} (38 Recycle)
   })
   sets.midcast.RA.MidAcc = set_combine(sets.midcast.RA.LowAcc, {
     ear2="Beyla Earring",         -- __ [__] 15/ __ <_> {__} (__)
     ring2="Hajduk Ring +1",       -- __ [__] 17/ __ <_> {__} (__)
     -- feet="Orion Socks +3",     -- 49 [__] 54/ 36 <_> {__} (__)
     -- Includes set bonus 30 racc from orion + regal
-    --265 AGI [50 STP] 392 racc / 209 ratt <5 crit> {14 dmg limit} (54 Recycle)
+    --263 AGI [55 STP] 358 racc / 239 ratt <5 crit> {20 dmg limit} (38 Recycle)
   })
   sets.midcast.RA.HighAcc = set_combine(sets.midcast.RA.MidAcc, {
     head="Orion Beret +3",        -- 39 [__] 47/ 34 <_> {__} (__)
     hands="Orion Bracers +3",     -- 27 [__] 48/ __ <_> {__} (__)
+    legs=gear.Adhemar_C_legs,     -- 42 [ 8] 54/ 20 <_> {__} (16)
     -- Includes set bonus 60 racc from orion + regal
-    --275 AGI [38 STP] 440 racc / 196 ratt <5 crit> {10 dmg limit} (18 Recycle)
+    --270 AGI [41 STP] 405 racc / 128 ratt <5 crit> {10 dmg limit} (16 Recycle)
   })
 
   sets.midcast.RA.Critical = set_combine(sets.midcast.RA, {
