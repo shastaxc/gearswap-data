@@ -562,20 +562,20 @@ function init_gear_sets()
     hands="Meghanada Gloves +2",  -- 23, 34, 43, 47,  7, __, ___
     legs="Meg. Chausses +2",      -- 40, 23, 45, 49, __, __, ___
     feet="Lanun Bottes +3",       -- 22, 22, __, __, 10, __, ___
-    neck="Fotia Gorget",          -- __, __, __, 10, 10, __, ___
+    neck="Caro Necklace",         --  6, __, 10, __, __, __, ___
     ear1="Ishvara Earring",       -- __, __, __, __,  2, __, ___
     ear2="Moonshade Earring",     -- __, __, __,  4, __, __, 250
     ring1="Regal Ring",           -- 10, __, 20, __, __, __, ___
     ring2="Rufescent Ring",       --  6,  6, __,  7, __, __, ___
     back=gear.COR_WS2_Cape,       -- 30, __, 20, 20, 10, __, ___
-    waist="Fotia Belt",           -- __, __, __, 10, 10, __, ___
+    waist="Sailfi Belt +1",       -- 15, __, 15, __, __, __, ___
     -- head=gear.Nyame_B_head,    -- 26, 26, 55, 40,  8, __, ___
     -- body="Ikenga's Vest",      -- 33, 25, __, __, __,  7, 170
     -- legs=gear.Nyame_B_legs,    -- 43, 32, 55, 40,  9, __, ___
     -- feet=gear.Nyame_B_feet,    -- 23, 26, 55, 40,  8, __, ___
     -- ring2="Epaminondas's Ring",-- __, __, __, __,  5, __, ___
-    -- 188 STR, 143 MND, 248 Attack, 211 Accuracy, 69 WSD, 7 PDL, 420 TP Bonus
-  } -- 181 STR, 121 MND, 163 Attack, 182 Accuracy, 64 WSD, 0 PDL, 250 TP Bonus
+    -- 209 STR, 143 MND, 273 Attack, 191 Accuracy, 49 WSD, 7 PDL, 420 TP Bonus
+  } -- 202 STR, 121 MND, 188 Attack, 162 Accuracy, 44 WSD, 0 PDL, 250 TP Bonus
   sets.precast.WS['Savage Blade'].MaxTP = set_combine(sets.precast.WS['Savage Blade'], {
     ear2="Telos Earring",
   })
