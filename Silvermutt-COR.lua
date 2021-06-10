@@ -1259,9 +1259,9 @@ function init_gear_sets()
   }
 
   sets.TreasureHunter = {
-    head="Volte Cap",
-    hands=gear.Herc_TH_hands,
-    waist="Chaac Belt",
+    body=gear.Herc_TH_body, --2
+    hands="Volte Bracers", --1
+    waist="Chaac Belt", --1
   }
 
   sets.buff.Doom = {
