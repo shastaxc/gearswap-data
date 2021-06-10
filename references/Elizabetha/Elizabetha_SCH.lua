@@ -152,6 +152,7 @@ function init_gear_sets()
     sets.precast.FC.Curaga = sets.precast.FC.Cure
 
     sets.precast.FC.Impact = set_combine(sets.precast.FC['Elemental Magic'], {head=empty,body="Twilight Cloak"})
+	
 
 
     -- Midcast Sets
@@ -288,19 +289,9 @@ function init_gear_sets()
 
     --sets.midcast['Elemental Magic'].HighTierNuke.Resistant = set_combine(sets.midcast['Elemental Magic'].Resistant)
 
-    sets.midcast.Impact = {    ammo="",
-    head="jhakri coronal +2",
-    body="Twilight Cloak",
-    hands="jhakri cuffs +2",
-    legs="Mallquis Trews +1",
-    feet="jhakri pigaches +2",
-    neck="Sanctity Necklace",
-    waist="",
-    left_ear="Hecate's Earring",
-    right_ear="Friomisi Earring",
-    left_ring="Mujin Band",
-    right_ring="Locus Ring",
-    back="Seshaw Cape",}
+    sets.midcast.Impact = set_combine(sets.midcast['Elemental Magic'],{
+    head=empty,
+    body="Twilight Cloak",})
 
 
     -- Sets to return to when not performing an action.
