@@ -1012,12 +1012,12 @@ function init_gear_sets()
     hands=gear.Vanya_B_hands,       -- __/ 3,  37
     legs=gear.Vanya_B_legs,         -- __/ 3, 107
     feet="Pinga Pumps",             -- __/__, 137
-    neck="Twilight Torque",
-    ear1="Hearty Earring",       -- __/__, ___; Resist Status+5
+    neck="Twilight Torque",         --  5/ 5, ___
+    ear1="Hearty Earring",          -- __/__, ___; Resist Status+5
     ear2="Etiolation Earring",      -- __/ 3, ___; Resist Silence+15
     ring2="Defending Ring",         -- 10/10, ___
-    back="Cheviot Cape",
-    waist="Carrier's Sash",      -- __/__, ___; Ele Resist+15
+    back="Cheviot Cape",            --  5/__, ___
+    waist="Carrier's Sash",         -- __/__, ___; Ele Resist+15
     -- main="Malignance Pole",      -- 20/20, ___
     -- sub="Khonsu",                --  6/ 6, ___
     -- ammo="Staunch Tathlum +1",   --  3/ 3, ___; Resist Status+11
@@ -1046,7 +1046,7 @@ function init_gear_sets()
     -- back="Archon Cape",          -- __/__, ___
     -- waist="Carrier's Sash",      -- __/__, ___; Ele Resist+15
     -- 52 PDT / 47 MDT, 626 M.Eva
-  } -- 23 PDT / 29 MDT, 416 M.Eva
+  } -- 33 PDT / 34 MDT, 436 M.Eva
 
   sets.defense.PDT = sets.HeavyDef
   sets.defense.MDT = sets.HeavyDef
