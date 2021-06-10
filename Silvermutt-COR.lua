@@ -571,10 +571,11 @@ function init_gear_sets()
     waist="Sailfi Belt +1",       -- 15, __, 15, __, __, __, ___
     -- head=gear.Nyame_B_head,    -- 26, 26, 55, 40,  8, __, ___
     -- body="Ikenga's Vest",      -- 33, 25, __, __, __,  7, 170
+    -- hands=gear.Nyame_B_hands,  -- 17, 40, 55, 40,  8, __, ___
     -- legs=gear.Nyame_B_legs,    -- 43, 32, 55, 40,  9, __, ___
     -- feet=gear.Nyame_B_feet,    -- 23, 26, 55, 40,  8, __, ___
     -- ring2="Epaminondas's Ring",-- __, __, __, __,  5, __, ___
-    -- 209 STR, 143 MND, 273 Attack, 191 Accuracy, 49 WSD, 7 PDL, 420 TP Bonus
+    -- 203 STR, 149 MND, 285 Attack, 184 Accuracy, 50 WSD, 7 PDL, 420 TP Bonus
   } -- 202 STR, 121 MND, 188 Attack, 162 Accuracy, 44 WSD, 0 PDL, 250 TP Bonus
   sets.precast.WS['Savage Blade'].MaxTP = set_combine(sets.precast.WS['Savage Blade'], {
     ear2="Telos Earring",
