@@ -729,8 +729,8 @@ function init_gear_sets()
     ear2="Dignitary's Earring",
     ring1="Regal Ring",
     ring2="Chirich Ring +1",
+    waist="Olseni Belt",
     -- ammo="C. Palug Stone",
-    -- waist="Olseni Belt",
   })
 
   -- * DNC Native DW Trait: 30% DW
@@ -933,9 +933,9 @@ function init_gear_sets()
     legs="Malignance Tights",
     ear2="Dignitary's Earring",
     ring2="Regal Ring",
+    waist="Olseni Belt",
     -- ammo="C. Palug Stone",
     -- legs="Maxixi Tights +3",
-    -- waist="Olseni Belt",
   })
 
 

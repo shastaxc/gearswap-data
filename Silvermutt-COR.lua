@@ -786,9 +786,9 @@ function init_gear_sets()
     --237 AGI [78 STP] 359 racc / 95 ratt <0 crit> {20 dmg limit} (10 Recycle)
   })
   sets.midcast.RA.HighAcc = set_combine(sets.midcast.RA.MidAcc, {
-    ring1="Regal Ring",             -- 10 [__] __/20 <_> {__} (__)
     waist="Kwahu Kachina Belt +1",  --  8 [__] 20/__ <5> {__} (__)
     -- legs="Laksamana's Trews +3", -- 33 [__] 49/__ <_> {__} (__)
+    -- ring1="Regal Ring",             -- 10 [__] __/20 <_> {__} (__)
     -- Includes set bonus 15 racc from AF + regal
     --229 AGI [64 STP] 383 racc / 80 ratt <5 crit> {15 dmg limit} (0 Recycle)
   })
@@ -961,11 +961,11 @@ function init_gear_sets()
   })
   sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
     ear2="Odr Earring",
+    waist="Olseni Belt",
     -- head="Carmine Mask +1",
     -- feet=gear.Herc_STP_feet,
     -- ear1="Mache Earring +1",
     -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
-    -- waist="Olseni Belt",
   })
 
 
@@ -1159,10 +1159,10 @@ function init_gear_sets()
   sets.engaged.DW.HighAcc.SuperHaste = set_combine(sets.engaged.DW.MidAcc.SuperHaste, {
     legs="Carmine Cuisses +1",
     ear2="Odr Earring",
+    waist="Olseni Belt",
     -- feet=gear.Herc_STP_feet,
     -- ear1="Mache Earring +1",
     -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
-    -- waist="Olseni Belt",
   })
 
   -- Max Magic/Gear/JA Haste (0-25% DW to cap, 0% from gear)
@@ -1197,10 +1197,10 @@ function init_gear_sets()
   sets.engaged.DW.HighAcc.MaxHaste = set_combine(sets.engaged.DW.HighAcc.MaxHaste, {
     legs="Carmine Cuisses +1",
     ear2="Odr Earring",
+    waist="Olseni Belt",
     -- feet=gear.Herc_STP_feet,
     -- ear1="Mache Earring +1",
     -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
-    -- waist="Olseni Belt",
   })
 
 

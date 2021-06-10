@@ -949,6 +949,7 @@ function init_gear_sets()
   sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
     ear1="Dignitary's Earring",
     ring1="Chirich Ring +1",
+    waist="Olseni Belt",
     -- feet=gear.Herc_STP_feet,
   })
 
@@ -987,6 +988,7 @@ function init_gear_sets()
     body="Malignance Tabard",
     ring1="Regal Ring",
     ring2="Chirich Ring +1",
+    waist="Olseni Belt",
     -- head="Malignance Chapeau",
   })
 
@@ -1016,6 +1018,7 @@ function init_gear_sets()
     hands="Malignance Gloves",
     ring2="Ilabrat Ring",
     waist="Kentarch Belt +1",
+    waist="Olseni Belt",
     -- hands=gear.Adhemar_A_hands,
   })
 
@@ -1059,6 +1062,7 @@ function init_gear_sets()
     body="Malignance Tabard",
     ring1="Regal Ring",
     ring2="Chirich Ring +1",
+    waist="Olseni Belt",
     -- head="Malignance Chapeau",
   })
 
@@ -1077,23 +1081,21 @@ function init_gear_sets()
     back=gear.RNG_DW_Cape, --10
     waist="Windbuffet Belt +1",
   } -- 20%
-
   sets.engaged.DW.LowAcc.HighHaste = set_combine(sets.engaged.DW.HighHaste, {
     head="Dampening Tam",
     ring1="Chirich Ring +1",
     -- hands=gear.Adhemar_A_hands,
   })
-
   sets.engaged.DW.MidAcc.HighHaste = set_combine(sets.engaged.DW.LowAcc.HighHaste, {
     feet="Malignance Boots",
     hands="Malignance Gloves",
     waist="Kentarch Belt +1",
   })
-
   sets.engaged.DW.HighAcc.HighHaste = set_combine(sets.engaged.DW.MidAcc.HighHaste, {
     body="Malignance Tabard",
     ring1="Regal Ring",
     ring2="Chirich Ring +1",
+    waist="Olseni Belt",
     -- head="Malignance Chapeau",
   })
 
@@ -1119,6 +1121,7 @@ function init_gear_sets()
   sets.engaged.DW.MidAcc.SuperHaste = {
   }
   sets.engaged.DW.HighAcc.SuperHaste = {
+    waist="Olseni Belt",
   }
 
   -- Max Magic/Gear/JA Haste (0-25% DW to cap, 0% from gear)
