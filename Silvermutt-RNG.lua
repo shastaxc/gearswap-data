@@ -302,7 +302,6 @@ function init_gear_sets()
   }
 
   sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {
-    ammo="Staunch Tathlum +1",
     neck="Magoraga Beads", --10
     ring1="Defending Ring",
   })
@@ -724,7 +723,6 @@ function init_gear_sets()
   sets.midcast.FastRecast = sets.precast.FC
 
   sets.midcast.SpellInterrupt = {
-    ammo="Impatiens", --10
     legs=gear.Carmine_D_legs, --20
     neck="Loricate Torque +1", --5
   }
@@ -1017,7 +1015,6 @@ function init_gear_sets()
     feet="Malignance Boots",
     hands="Malignance Gloves",
     ring2="Ilabrat Ring",
-    waist="Kentarch Belt +1",
     waist="Olseni Belt",
     -- hands=gear.Adhemar_A_hands,
   })
