@@ -113,6 +113,7 @@ function job_setup()
   state.IgnoreTargetting = M(false, 'Ignore Targetting')
   state.QDMode = M{['description']='Quick Draw Mode', 'STP', 'Enhance', 'Potency', 'TH'}
   state.Currentqd = M{['description']='Current Quick Draw', 'Main', 'Alt'}
+  state.CritMode = M(false, 'Crit')
 
   -- Whether to use Luzaf's Ring
   state.LuzafRing = M(false, "Luzaf's Ring")
@@ -179,6 +180,7 @@ function job_setup()
   send_command('bind ^p c toggle selectqdtarget')
   send_command('bind ^l gs c toggle usealtqd')
   send_command('bind @` gs c toggle LuzafRing')
+  send_command('bind ^/ gs c toggle critmode')
 
   send_command('bind !q input /ja "Double-up" <me>')
   send_command('bind !` input /ja "Bolter\'s Roll" <me>')
@@ -456,12 +458,11 @@ function init_gear_sets()
     ear2="Novio Earring",
     ring1="Dingir Ring",
     ring2="Shiva Ring +1",
-    back=gear.COR_WS2_Cape,
+    back=gear.COR_WS1_Cape,
     waist="Eschan Stone",
     -- body="Lanun Frac +3",
     -- neck="Comm. Charm +2",
     -- ring2="Epaminondas's Ring",
-    -- back=gear.COR_WS1_Cape,
     -- waist="Skrymir Cord +1",
   }
   sets.precast.WS['Wildfire'].MaxTP = set_combine(sets.precast.WS['Wildfire'], {
@@ -717,10 +718,10 @@ function init_gear_sets()
     ear1="Friomisi Earring",
     ear2="Novio Earring",
     ring1="Dingir Ring",
+    back=gear.COR_WS1_Cape,
     waist="Eschan Stone",
     -- body="Lanun Frac +3",
     -- ring2={name="Fenrir Ring +1", bag="wardrobe4"},
-    -- back=gear.COR_WS1_Cape,
     -- waist="Skrymir Cord +1",
   }
 
@@ -736,6 +737,7 @@ function init_gear_sets()
     ear2="Digni. Earring",
     ring1="Regal Ring",
     ring2="Weatherspoon Ring",
+    back=gear.COR_WS1_Cape,
     waist="K. Kachina Belt +1",
     -- head="Laksamana's Tricorne +3",
     -- hands="Laksamana's Gants +3",
@@ -743,7 +745,6 @@ function init_gear_sets()
     -- neck="Comm. Charm +2",
     -- ear1="Gwati Earring",
     -- ring2="Stikini Ring +1",
-    -- back=gear.COR_WS1_Cape,
   }
 
   sets.midcast.CorsairShot['Dark Shot'] = sets.midcast.CorsairShot['Light Shot']
@@ -761,18 +762,16 @@ function init_gear_sets()
     legs=gear.Adhemar_C_legs,     -- 42 [ 8] 54/20 <_> {_} (16)
     feet="Malignance Boots",      -- 49 [ 9] 50/__ <_> {2} (__)
     neck="Iskur Gorget",          -- __ [ 8] 30/30 <_> {_} (__)
-    ear1="Cessance Earring",      -- __ [ 3] __/__ <_> {_} (__)
+    ear1="Enervating Earring",    -- __ [ 4]  7/ 7 <_> {_} (__)
     ear2="Telos Earring",         -- __ [ 5] 10/10 <_> {_} (__)
     ring1="Dingir Ring",          -- 10 [__] __/25 <_> {_} (10)
     ring2="Ilabrat Ring",         -- 10 [ 5] __/__ <_> {_} (__)
-    back=gear.COR_TP_Cape,        -- __ [__] __/__ <_> {_} (__)
+    back=gear.COR_RA_Cape,        -- 30 [10] 20/20 <_> {_} (__)
     waist="Yemaya Belt",          --  7 [ 4] 10/10 <_> {_} (__)
     -- head="Ikenga's Hat",       -- 29 [ 8] 45/60 <_> {4} (__)
     -- legs="Ikenga's Trousers"   -- 40 [10] 45/60 <_> {6} (__)
-    -- ear1="Enervating Earring", -- __ [ 4]  7/ 7 <_> {_} (__)
-    -- back=gear.COR_RA_Cape,     -- 30 [10] 20/20 <_> {_} (__)
     --238 AGI [86 STP] 312 racc / 282 ratt <0 crit> {23 dmg limit} (10 Recycle)
-  } --212 AGI [65 STP] 297 racc / 199 ratt <0 crit> {13 dmg limit} (26 Recycle)
+  } --242 AGI [76 STP] 324 racc / 226 ratt <0 crit> {13 dmg limit} (26 Recycle)
   sets.midcast.RA.LowAcc = set_combine(sets.midcast.RA, {
     ammo=gear.RAccbullet,
     ear1="Beyla Earring",         -- __ [__] 15/__ <_> {__} (__)
@@ -782,49 +781,49 @@ function init_gear_sets()
     body="Malignance Tabard",     -- 42 [11] 50/__ <_> { 6} (__)
     legs="Malignance Tights",     -- 42 [10] 50/__ <_> { 5} (__)
     ring2="Hajduk Ring +1",       -- __ [__] 17/__ <_> {__} (__)
-    -- head="Malignance Chapeau", -- 33 [ 8] 50/__ <_> { 3} (__)
-    --237 AGI [78 STP] 359 racc / 95 ratt <0 crit> {20 dmg limit} (10 Recycle)
+    --237 AGI [78 STP] 354 racc / 95 ratt <0 crit> {20 dmg limit} (10 Recycle)
   })
   sets.midcast.RA.HighAcc = set_combine(sets.midcast.RA.MidAcc, {
     waist="Kwahu Kachina Belt +1",  --  8 [__] 20/__ <5> {__} (__)
     -- legs="Laksamana's Trews +3", -- 33 [__] 49/__ <_> {__} (__)
     -- ring1="Regal Ring",             -- 10 [__] __/20 <_> {__} (__)
     -- Includes set bonus 15 racc from AF + regal
-    --229 AGI [64 STP] 383 racc / 80 ratt <5 crit> {15 dmg limit} (0 Recycle)
+    --229 AGI [64 STP] 379 racc / 80 ratt <5 crit> {15 dmg limit} (0 Recycle)
   })
 
   sets.midcast.RA.Critical = set_combine(sets.midcast.RA, {
-    head="Meghanada Visor +2",
     body="Meg. Cuirie +2",
     hands="Mummu Wrists +2",
     legs="Mummu Kecks +2",
     feet="Oshosi Leggings",
-    neck="Iskur Gorget",
-    ear1="Telos Earring",
-    ear2="Odr Earring",
+    ear1="Odr Earring",
     ring1="Begrudging Ring",
     waist="K. Kachina Belt +1",
     -- legs="Darraigner's Brais",
     -- feet="Osh. Leggings +1",
     -- ring2="Mummu Ring",
-    -- back=gear.COR_RA_Cape,
-    -- waist="Gerdr Belt +1",
   })
 
+  -- 60% from traits/gifts
   sets.TripleShot = {
     body="Chasseur's Frac +1", --12
     legs="Oshosi Trousers", --5
     feet="Oshosi Leggings", --2
+    back=gear.COR_RA_Cape, --5
     -- head="Oshosi Mask +1", --5
     -- hands="Lanun Gants +3",
     -- legs="Osh. Trousers +1", --6
     -- feet="Osh. Leggings +1", --3
-    -- back=gear.COR_RA_Cape, --5
-  } --27
+  } --24
 
-  sets.TripleShotCritical = {
-    head="Meghanada Visor +2",
+  sets.TripleShot.Critical = {
+    hands="Mummu Wrists +2",
+    feet="Oshosi Leggings", --2
+    ear1="Odr Earring",
+    ring1="Begrudging Ring",
     waist="K. Kachina Belt +1",
+    -- feet="Osh. Leggings +1", --3
+    -- ring2="Mummu Ring",
   }
 
 
@@ -1437,10 +1436,10 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
   elseif spell.action_type == 'Ranged Attack' then
     if buffactive['Triple Shot'] then
       equip(sets.TripleShot)
-      if buffactive['Aftermath: Lv.3'] and player.equipment.ranged == "Armageddon" then
-        equip(sets.TripleShotCritical)
+      if (buffactive['Aftermath: Lv.3'] and player.equipment.ranged == "Armageddon") or state.CritMode.current then
+        equip(sets.TripleShot.Critical)
       end
-    elseif buffactive['Aftermath: Lv.3'] and player.equipment.ranged == "Armageddon" then
+    elseif (buffactive['Aftermath: Lv.3'] and player.equipment.ranged == "Armageddon") or state.CritMode.current then
       equip(sets.midcast.RA.Critical)
     end
   end
