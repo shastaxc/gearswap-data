@@ -244,11 +244,11 @@ function init_gear_sets()
 
   sets.precast.WS = {
     body="Jhakri Robe +2",
+    legs=gear.Telchine_ENH_legs,
     ear1="Moonshade Earring",
     -- ammo="Floestone",
     -- head="Jhakri Coronal +2",
     -- hands="Jhakri Cuffs +2",
-    -- legs=gear.Telchine_ENH_legs,
     -- feet="Jhakri Pigaches +2",
     -- neck="Fotia Gorget",
     -- ear2="Telos Earring",
@@ -619,15 +619,16 @@ function init_gear_sets()
 
   -- Enh Magic Skill + Enh Magic Duration > Fast Cast
   sets.midcast['Enhancing Magic'] = {
+    head=gear.Telchine_ENH_head,      -- __,  9, __
     body="Pedagogy Gown",             -- 12, __, __
-    waist="Embla Sash",            -- __, 10,  5
+    legs=gear.Telchine_ENH_legs,      -- __, 10, __
+    waist="Embla Sash",               -- __, 10,  5
     -- main=gear.Gada_ENH,            -- 18,  6,  6
     -- sub="Ammurapi Shield",         -- __, 10, __
     -- ammo="Savant's Treatise",      --  4, __, __
     -- head=gear.Telchine_ENH_head,   -- __, 10, __
     -- body="Peda. Gown +3",          -- 19, 12, __
     -- hands=gear.Telchine_ENH_hands, -- __, 10, __
-    -- legs=gear.Telchine_ENH_legs,   -- __, 10, __
     -- feet=gear.Kaykaus_D_feet,      -- 21, __,  4
     -- neck="Incanter's Torque",      -- 10, __, __
     -- ear1="Mimir Earring",          -- 10, __, __
@@ -639,13 +640,14 @@ function init_gear_sets()
   }
 
   sets.midcast.EnhancingDuration = {
+    head=gear.Telchine_ENH_head,   --  9, __
+    legs=gear.Telchine_ENH_legs,   -- 10, __
     waist="Embla Sash",            -- 10,  5
     -- main=gear.Musa_C,              -- 20, 10
     -- sub="Clerisy Strap +1",        -- __,  3
     -- head=gear.Telchine_ENH_head,   -- 10, __
     -- body="Peda. Gown +3",          -- 12, __
     -- hands=gear.Telchine_ENH_hands, -- 10, __
-    -- legs=gear.Telchine_ENH_legs,   -- 10, __
     -- feet=gear.Telchine_ENH_feet,   -- 10, __
     -- 82 Enh Duration, 18 FC
   }
@@ -655,24 +657,28 @@ function init_gear_sets()
     main="Bolelabunga",            -- __, 10, __, __
     sub="Genmei Shield",           -- __, __, __, __
     head="Arbatel Bonnet +1",      --  7, __, __, __
+    legs=gear.Telchine_ENH_legs,   --  2, __, 10, __
+    back="Bookworm's Cape",        --  8, __, __, __
     waist="Embla Sash",            -- __, __, 10,  5
     -- main=gear.Musa_C,              -- 25, __, 20, __
     -- sub="Khonsu",                  -- __, __, __, __
-    -- body=gear.Telchine_ENH_body,   -- __, __, 10, 12
-    -- hands=gear.Telchine_ENH_hands, -- __, __, 10, __
-    -- legs=gear.Telchine_ENH_legs,   -- __, __, 10, __
-    -- feet=gear.Telchine_ENH_feet,   -- __, __, 10, __
+    -- body=gear.Telchine_ENH_body,   --  2, __, 10, 12
+    -- hands=gear.Telchine_ENH_hands, --  2, __, 10, __
+    -- feet=gear.Telchine_ENH_feet,   --  2, __, 10, __
     -- back="Bookworm's Cape",        -- 10, __, __, __
-    -- 42 Regen Potency, 0 Regen Potency %, 70 Enh Duration %, 17 Regen Duration
-    -- Regen V (no LA) = 82 hp/tic
-    -- Regen V (w/ LA) = 106 hp/tic
-  }-- 0 Regen Potency, 10 Regen Potency %, 10 Enh Duration %, 5 Regen Duration
+    -- 50 Regen Potency, 0 Regen Potency %, 70 Enh Duration %, 17 Regen Duration
+    -- Regen V (no LA) = 90 hp/tic
+    -- Regen V (w/ LA) = 114 hp/tic
+  }-- 17 Regen Potency, 10 Regen Potency %, 20 Enh Duration %, 5 Regen Duration
 
   sets.midcast.RegenDuration = set_combine(sets.midcast.Regen, {
+    head=gear.Telchine_ENH_head,   --  2, __,  9, __
     back=gear.SCH_FC_Cape,         -- __, __, __, 15
-    -- head=gear.Telchine_ENH_head,   -- __, __, 10, __
-    -- 0 Regen Potency, 0 Regen Potency %, 80 Enh Duration %, 32 Regen Duration
-  })-- 0 Regen Potency, 0 Regen Potency %, 10 Enh Duration %, 32 Regen Duration
+    -- head=gear.Telchine_ENH_head,   --  2, __, 10, __
+    -- 45 Regen Potency, 0 Regen Potency %, 80 Enh Duration %, 32 Regen Duration
+    -- Regen V (no LA) = 85 hp/tic
+    -- Regen V (w/ LA) = 109 hp/tic
+  })-- 12 Regen Potency, 10 Regen Potency %, 29 Enh Duration %, 20 Regen Duration
 
   sets.midcast.Haste = sets.midcast.EnhancingDuration
 
@@ -799,6 +805,7 @@ function init_gear_sets()
     legs="Pedagogy Pants",
     feet="Academic's Loafers",
     neck="Erra Pendant",       -- 10, __, 17
+    back="Bookworm's Cape",    --  8,  4, __
     -- main="Rubicundity",        -- 25, 21, 20; +215 M.Acc skill
     -- sub="Ammurapi Shield",     -- __, 13, 38
     -- ammo="Pemphredo Tathlum",  -- __,  4,  8
@@ -919,6 +926,7 @@ function init_gear_sets()
     main=gear.Akademos_A,           -- 32, __, 58
     sub="Enki Strap",               -- 10, 10, __
     head="Peda. M.Board",
+    body="Count's Garb",            -- 38, __, 30; magic crit rate & dmg
     neck="Sanctity Necklace",       -- __, 10, 10
     -- ammo="Pemphredo Tathlum",    --  4,  8,  4
     -- head="Peda. M.Board +3",     -- 39, 52, 49
@@ -1059,7 +1067,6 @@ function init_gear_sets()
   -- Passive sets are applied to idle in function `customize_idle_sets`
   sets.passive_regen = {
     main="Bolelabunga", --1
-    body="Pluviale", --1
     back="Kumbira Cape", --1
     neck="Sanctity Necklace", --2
     -- main="Malignance Pole", --0
@@ -1207,7 +1214,7 @@ function init_gear_sets()
     -- waist="Hachirin-no-Obi",
   }
   sets.Bookworm = {
-    -- back="Bookworm's Cape",
+    back="Bookworm's Cape",
   }
   sets.CP = {
     -- back="Mecisto. Mantle",
