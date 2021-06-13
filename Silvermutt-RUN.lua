@@ -247,21 +247,21 @@ function init_gear_sets()
 
   -- Enmity sets
   sets.Enmity = {
-    ammo={name="Aqreqaq Bomblet", priority=1}, --0/0, 0 [20] <2>
-    head="Halitus Helm", --0/0, 43 [88] <8>
-    body={name="Emet Harness +1", priority=5}, --6/0, 64 [61] <10>
-    hands={name="Kurys Gloves", priority=5}, --2/2, 57 [25] <9>
-    legs="Erilaz Leg Guards +1", --7/0, 107 [80] <11>
-    feet={name="Erilaz Greaves +1", priority=5}, --5/0, 107 [18] <6>
-    neck="Futhark Torque +1", --6/6, 25 [45] <7>
-    ear1="Odnowa Earring +1", --3/5, 0 [110] <0>
-    ear2={name="Cryptic Earring", priority=1}, --0/0, 0 [40] <4>
-    ring1={name="Eihwaz Ring", priority=5}, --0/0, 0 [70] <5>
-    ring2={name="Supershear Ring", priority=1}, --0/0, 0 [30] <5>
-    waist={name="Kasiri Belt", priority=1}, --0/0, 0 [30] <3>
-    back=gear.RUN_HPD_Cape, --10/0, 20 [80] <10>
-    -- feet="Ahosi Leggings", --4/0, 107 [18] <7>
-  } --80 Enmity, 423 M.Eva [697 HP]; -39% PDT; -13% MDT
+    ammo={name="Aqreqaq Bomblet", priority=1},    -- __/__, ___ [ 20] < 2>
+    head="Halitus Helm",                          -- __/__,  43 [ 88] < 8>
+    body={name="Emet Harness +1", priority=5},    --  6/__,  64 [ 61] <10>
+    hands={name="Kurys Gloves", priority=5},      --  2/ 2,  57 [ 25] < 9>
+    legs="Erilaz Leg Guards +1",                  --  7/__, 107 [ 80] <11>
+    feet={name="Erilaz Greaves +1", priority=5},  --  5/__, 107 [ 18] < 6>
+    neck="Futhark Torque +1",                     --  6/ 6,  25 [ 45] < 7>
+    ear1="Odnowa Earring +1",                     --  3/ 5, ___ [110] <__>
+    ear2={name="Cryptic Earring", priority=1},    -- __/__, ___ [ 40] < 4>
+    ring1={name="Gelatinous Ring +1", priority=1},--  7/-1, ___ [135] <__>
+    ring2={name="Eihwaz Ring", priority=5},       -- __/__, ___ [ 70] < 5>
+    waist={name="Kasiri Belt", priority=1},       -- __/__, ___ [ 30] < 3>
+    back=gear.RUN_HPD_Cape,                       -- 10/__,  20 [ 80] <10>
+    -- feet="Ahosi Leggings",                     --  4/__, 107 [ 18] < 7>
+  } --46% PDT / 12% MDT, 423 M.Eva [802 HP] <75 Enmity>
 
   sets.precast.JA = sets.Enmity;
 
@@ -342,9 +342,6 @@ function init_gear_sets()
     ammo="Impatiens",
     -- ear2="Mendi. Earring"
   })
-
-  -- Initializes trusts at iLvl 119
-  sets.midcast.Trust = sets.precast.FC
 
   sets.Macc = {
     ammo="Hydrocera", --6 [0]
@@ -588,6 +585,9 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Midcast Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
+
+  -- Initializes trusts at iLvl 119
+  sets.midcast.Trust = sets.precast.FC
 
   sets.midcast.FastRecast = sets.precast.FC
 
