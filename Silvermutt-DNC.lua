@@ -259,20 +259,15 @@ function init_gear_sets()
     neck="Etoile gorget +2",        -- 10(_), 25 <__>
     back="Toetapper Mantle",        --  5(_), __ <__>
     waist="Aristo Belt",            -- __(_),  8 <__>
-    -- Ideal:
     -- ammo="Voluspa Tathlum",      -- __(_),  5 <__>
     -- head=gear.Anwig_Salade,      -- __(_),  4 <-2>
-    -- body="Maxixi Casaque +3",    -- 19(8), 33 <-2>
     -- hands="Raetic Bangles +1",   -- __(_), 38 <__>
-    -- legs="Dashing Subligar",     -- 10(_), 11 <__>; Gives Blink
     -- feet="Maxixi Toeshoes +3",   -- 14(_), 40 <__>
-    -- neck="Etoile gorget +2",     -- 10(_), 25 <__>
     -- ear1="Enchntr. Earring +1",  -- __(_),  5 <__>
     -- ear2="Handler's Earring +1", -- __(_),  5 <__>
     -- ring1="Carb. Ring +1",       -- __(_),  9 <__>
     -- ring2="Carb. Ring +1",       -- __(_),  9 <__>
     -- back=gear.DNC_WTZ_Cape,      -- __(_), 30 <__>; Enmity-10
-    -- waist="Aristo Belt",         -- __(_),  8 <__>
     -- 53 Potency (8 Self Potency), 217 CHR <-4 Delay>
   } -- 54 Potency (8 Self Potency), 112 CHR <-4 Delay>
 
@@ -312,9 +307,9 @@ function init_gear_sets()
     ring1="Gelatinous Ring +1",   --  7/-1, __
     ring2="Defending Ring",       -- 10/10, __
     back=gear.DNC_TP_DW_Cape,     -- 10/__, 20 -- After swapping aug to PDT
-    waist="Engraved Belt",
-    -- Maxixi set bonus            -- __/__, 15
-  } -- 37/30, 421
+    waist="Engraved Belt",        -- __/__, 10; Elemental resist
+    -- Maxixi set bonus           -- __/__, 15
+  } -- 46/30, 431
 
   sets.precast.Step['Feather Step'] = set_combine(sets.precast.Step, {
     feet="Maculele Toe Shoes +1",
