@@ -902,6 +902,7 @@ function init_gear_sets()
     main=gear.Akademos_A,         -- 32, __, 58
     sub="Enki Strap",             -- 10, 10, __
     head="Peda. M.Board",
+    body=gear.Merl_MB_body,       -- 40, 20, 20
     hands=gear.Merl_MB_hands,
     neck="Sanctity Necklace",     -- __, 10, 10
     -- ammo="Pemphredo Tathlum",  --  4,  8,  4
@@ -994,6 +995,7 @@ function init_gear_sets()
   sets.magic_burst = {
     main=gear.Akademos_A, --10
     head="Peda. M.Board",
+    body=gear.Merl_MB_body, --7
     hands=gear.Merl_MB_hands, --9
     feet=gear.Merl_MB_feet, --8
     ring1="Locus Ring", --5
