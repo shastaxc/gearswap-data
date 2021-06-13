@@ -621,10 +621,12 @@ function init_gear_sets()
     ear1="Eabani Earring",      -- __/__,   8
     ear2="Odnowa Earring +1",   --  3/ 5, ___
     ring1="Moonlight Ring",     --  5/ 5, ___
+    ring2="Archon Ring",        -- __/__, ___; Occ. blocks magic dmg
+    back=gear.DNC_TP_DW_Cape,   -- 10/__, ___
     waist="Engraved Belt",      -- __/__, ___
     -- 10 PDT from JSE cape
     -- head="Malignance Chapeau", --  6/ 6, 123
-  } --50 PDT/42 MDT, 697 MEVA
+  } --60 PDT/42 MDT, 697 MEVA
 
   sets.defense.PDT = sets.HeavyDef
   sets.defense.MDT = sets.HeavyDef
