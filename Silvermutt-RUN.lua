@@ -580,7 +580,7 @@ function init_gear_sets()
   sets.precast.WS['Full Break'].HighAcc = sets.precast.WS['Shockwave'].HighAcc
   sets.precast.WS['Full Break'].HighAccMaxTP = sets.precast.WS['Shockwave'].HighAccMaxTP
 
-  sets.precast.WS['Ground Strike'] = set_combine(sets.Enmity, sets.TreasureHunter)
+  sets.precast.WS['Freezebite'] = set_combine(sets.defense.PDT, sets.TreasureHunter)
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Midcast Sets ------------------------------------------
@@ -590,6 +590,26 @@ function init_gear_sets()
   sets.midcast.Trust = sets.precast.FC
 
   sets.midcast.FastRecast = sets.precast.FC
+
+  -- 102% SIRD required to cap; if have the 10% from merits, swap neck for Loricate
+  sets.SIRD = {
+    ammo="Staunch Tathlum +1",    --  3/ 3, ___ [___] {11}
+    head="Agwu's Cap",            -- __/__, 107 [ 38] {10}
+    body="Nyame Mail",            --  9/ 9, 139 [136] {__}
+    hands=gear.Rawhide_B_hands,   -- __/__,  37 [ 75] {15}
+    legs=gear.Carmine_A_legs,     -- __/__,  80 [130] {20}
+    feet="Karasutengu Kogake",    -- __/__, ___ [___] {15}; not ilvl
+    neck="Moonlight Necklace",    -- __/__,  15 [___] {15}
+    ear1="Odnowa Earring +1",     --  3/ 5, ___ [110] {__}
+    ear2="Magnetic Earring",      -- __/__, ___ [___] { 8}
+    ring1="Gelatinous Ring +1",   --  7/-1, ___ [135] {__}
+    ring2="Moonlight Ring",       --  5/ 5, ___ [110] {__}
+    back=gear.RUN_HPD_Cape,       -- 10/__,  20 [ 80] {__}
+    waist="Audumbla Sash",        --  4/__, ___ [___] {10}
+    -- ring2="Defending Ring",       -- 10/10, ___ [___] {__}; Use with moonlight cape
+    -- back="Moonlight Cape",        --  6/ 6, ___ [275] {__}
+    -- 42 PDT / 32 MDT, 399 M.Eva [899 HP] {104 SIRD}
+  } -- 41 PDT / 21 MDT, 419 M.Eva [814 HP] {104 SIRD}
 
   sets.midcast['Enhancing Magic'] = {
     head="Erilaz Galea +1",
@@ -680,8 +700,8 @@ function init_gear_sets()
     waist="Audumbla Sash", --10
   } -- 21% Spell Interrupt
 
-  sets.midcast['Jettatura'] = set_combine(sets.Enmity, sets.TreasureHunter)
-  sets.midcast['Geist Wall'] = set_combine(sets.Enmity, sets.TreasureHunter)
+  sets.midcast['Geist Wall'] = sets.SIRD
+  sets.midcast['Bomb Toss'] = sets.SIRD
 
   sets.midcast['Blue Magic'] = {}
   sets.midcast['Blue Magic'].Enmity = sets.Enmity
