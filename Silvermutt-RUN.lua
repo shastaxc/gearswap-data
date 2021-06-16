@@ -591,25 +591,32 @@ function init_gear_sets()
 
   sets.midcast.FastRecast = sets.precast.FC
 
-  -- 102% SIRD required to cap; if have the 10% from merits, swap neck for Loricate
+  -- 102% SIRD required to cap; can get 10% from merits
   sets.SIRD = {
     ammo="Staunch Tathlum +1",    --  3/ 3, ___ [___] {11}
-    head="Agwu's Cap",            -- __/__, 107 [ 38] {10}
+    head="Nyame Helm",            --  7/ 7, 123 [ 91] {__}
     body="Nyame Mail",            --  9/ 9, 139 [136] {__}
-    hands=gear.Rawhide_B_hands,   -- __/__,  37 [ 75] {15}
+    hands="Turms Mittens",        -- __/__,  91 [ 59] {__}
     legs=gear.Carmine_A_legs,     -- __/__,  80 [130] {20}
-    feet="Karasutengu Kogake",    -- __/__, ___ [___] {15}; not ilvl
-    neck="Moonlight Necklace",    -- __/__,  15 [___] {15}
+    feet="Turms Leggings +1",     -- __/__, 147 [ 76] {__}
+    neck="Futhark Torque +1",     --  6/ 6,  25 [ 45] {__}
     ear1="Odnowa Earring +1",     --  3/ 5, ___ [110] {__}
-    ear2="Magnetic Earring",      -- __/__, ___ [___] { 8}
+    ear2="Ethereal Earring",      -- __/__, ___ [___] {__}
     ring1="Gelatinous Ring +1",   --  7/-1, ___ [135] {__}
     ring2="Moonlight Ring",       --  5/ 5, ___ [110] {__}
     back=gear.RUN_HPD_Cape,       -- 10/__,  20 [ 80] {__}
     waist="Audumbla Sash",        --  4/__, ___ [___] {10}
+    -- SIRD merits                                    { 6}
+    
+    -- head="Agwu's Cap",            -- __/__, 107 [ 38] {10}
+    -- hands=gear.Rawhide_B_hands,   -- __/__,  37 [ 75] {15}
+    -- feet=gear.Taeon_SIRD_feet,    -- __/__,  89 [ 63] {10}
+    -- neck="Moonlight Necklace",    -- __/__,  15 [___] {15}
+    -- ear2="Halasz Earring",        -- __/__, ___ [___] { 5}
     -- ring2="Defending Ring",       -- 10/10, ___ [___] {__}; Use with moonlight cape
     -- back="Moonlight Cape",        --  6/ 6, ___ [275] {__}
-    -- 42 PDT / 32 MDT, 399 M.Eva [899 HP] {104 SIRD}
-  } -- 41 PDT / 21 MDT, 419 M.Eva [814 HP] {104 SIRD}
+    -- 42 PDT / 32 MDT, 399 M.Eva [899 HP] {102 SIRD}
+  } -- 61 PDT / 34 MDT, 652 M.Eva [922 HP] {27 SIRD}
 
   sets.midcast['Enhancing Magic'] = {
     head="Erilaz Galea +1",
