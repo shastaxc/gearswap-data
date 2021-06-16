@@ -1220,7 +1220,7 @@ function init_gear_sets()
   }
 
   sets.Kiting = {
-    legs="Carmine Cuisses +1",
+    legs=gear.Carmine_A_legs,
   }
   sets.Kiting.Adoulin = {
     body="Councilor's Garb",

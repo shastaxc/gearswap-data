@@ -685,6 +685,77 @@ function init_gear_sets()
     ear2="Novio Earring",
   })
 
+  -- Ranged gear
+  sets.midcast.RA = {
+    ammo=gear.RAbullet,
+    head="Meghanada Visor +2",    -- 31 [__] 48/44 <_> {_} (__)
+    body="Ikenga's Vest",         -- 39 [11] 45/60 <_> {7} (__)
+    hands="Malignance Gloves",    -- 24 [12] 50/__ <_> {4} (__)
+    legs=gear.Adhemar_C_legs,     -- 42 [ 8] 54/20 <_> {_} (16)
+    feet="Malignance Boots",      -- 49 [ 9] 50/__ <_> {2} (__)
+    neck="Iskur Gorget",          -- __ [ 8] 30/30 <_> {_} (__)
+    ear1="Enervating Earring",    -- __ [ 4]  7/ 7 <_> {_} (__)
+    ear2="Telos Earring",         -- __ [ 5] 10/10 <_> {_} (__)
+    ring1="Dingir Ring",          -- 10 [__] __/25 <_> {_} (10)
+    ring2="Ilabrat Ring",         -- 10 [ 5] __/__ <_> {_} (__)
+    back=gear.COR_RA_Cape,        -- 30 [10] 20/20 <_> {_} (__)
+    waist="Yemaya Belt",          --  7 [ 4] 10/10 <_> {_} (__)
+    -- head="Ikenga's Hat",       -- 29 [ 8] 45/60 <_> {4} (__)
+    -- legs="Ikenga's Trousers"   -- 40 [10] 45/60 <_> {6} (__)
+    --238 AGI [86 STP] 312 racc / 282 ratt <0 crit> {23 dmg limit} (10 Recycle)
+  } --242 AGI [76 STP] 324 racc / 226 ratt <0 crit> {13 dmg limit} (26 Recycle)
+  sets.midcast.RA.LowAcc = set_combine(sets.midcast.RA, {
+    ammo=gear.RAccbullet,
+    ear1="Beyla Earring",         -- __ [__] 15/__ <_> {__} (__)
+    --238 AGI [83 STP] 327 racc / 275 ratt <0 crit> {23 dmg limit} (10 Recycle)
+  })
+  sets.midcast.RA.MidAcc = set_combine(sets.midcast.RA.LowAcc, {
+    body="Malignance Tabard",     -- 42 [11] 50/__ <_> { 6} (__)
+    legs="Malignance Tights",     -- 42 [10] 50/__ <_> { 5} (__)
+    ring2="Hajduk Ring +1",       -- __ [__] 17/__ <_> {__} (__)
+    --237 AGI [78 STP] 354 racc / 95 ratt <0 crit> {20 dmg limit} (10 Recycle)
+  })
+  sets.midcast.RA.HighAcc = set_combine(sets.midcast.RA.MidAcc, {
+    waist="Kwahu Kachina Belt +1",  --  8 [__] 20/__ <5> {__} (__)
+    -- legs="Laksamana's Trews +3", -- 33 [__] 49/__ <_> {__} (__)
+    -- ring1="Regal Ring",             -- 10 [__] __/20 <_> {__} (__)
+    -- Includes set bonus 15 racc from AF + regal
+    --229 AGI [64 STP] 379 racc / 80 ratt <5 crit> {15 dmg limit} (0 Recycle)
+  })
+
+  sets.precast.WS['Sniper Shot'] = {
+    ammo=gear.RAccbullet,
+    head="Meghanada Visor +2",    -- 31, 48
+    body="Malignance Tabard",     -- 42, 50
+    hands="Malignance Gloves",    -- 24, 50
+    legs="Malignance Tights",     -- 42, 50
+    feet="Malignance Boots",      -- 49, 50
+    neck="Iskur Gorget",          -- __, 30
+    ear1="Beyla Earring",         -- __, 15
+    ear2="Telos Earring",         -- __, 10
+    ring1="Regal Ring",           -- 10, __
+    ring2="Hajduk Ring +1",       -- __, 17
+    back=gear.COR_RA_Cape,        -- 30, 20
+    waist="Kwahu Kachina Belt +1",  --  8, 20
+    -- head="Malignance Chapeau",   -- 33, 50
+    -- legs="Laksamana's Trews +3", -- 33, 49
+    -- AF+Regal set bonus           -- __, 15
+  } -- 236 AGI, 360 R.Acc
+  sets.precast.WS['Sniper Shot'].MaxTP = set_combine(sets.precast.WS['Sniper Shot'], {
+  })
+  sets.precast.WS['Sniper Shot'].LowAcc = set_combine(sets.precast.WS['Sniper Shot'], {
+  })
+  sets.precast.WS['Sniper Shot'].LowAccMaxTP = set_combine(sets.precast.WS['Sniper Shot'].LowAcc, {
+  })
+  sets.precast.WS['Sniper Shot'].MidAcc = set_combine(sets.precast.WS['Sniper Shot'].LowAcc, {
+  })
+  sets.precast.WS['Sniper Shot'].MidAccMaxTP = set_combine(sets.precast.WS['Sniper Shot'].MidAcc, {
+  })
+  sets.precast.WS['Sniper Shot'].HighAcc = set_combine(sets.precast.WS['Sniper Shot'].MidAcc, {
+  })
+  sets.precast.WS['Sniper Shot'].HighAccMaxTP = set_combine(sets.precast.WS['Sniper Shot'].HighAcc, {
+  })
+
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Midcast Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
@@ -692,7 +763,7 @@ function init_gear_sets()
   sets.midcast.FastRecast = sets.precast.FC
 
   sets.midcast.SpellInterrupt = {
-    legs="Carmine Cuisses +1", --20
+    legs=gear.Carmine_A_legs, --20
     -- ring1="Evanescence Ring", --5
   }
 
@@ -1016,7 +1087,7 @@ function init_gear_sets()
     head=gear.Adhemar_B_head,
     body=gear.Adhemar_B_body, --6
     hands="Floral Gauntlets", --5
-    legs="Carmine Cuisses +1", --6
+    legs=gear.Carmine_D_legs, --6
     feet=gear.Taeon_DW_feet, --9
     neck="Iskur Gorget",
     ear1="Suppanomimi", --5
@@ -1077,7 +1148,7 @@ function init_gear_sets()
     waist="Kentarch Belt +1",
   })
   sets.engaged.DW.HighAcc.MidHaste = set_combine(sets.engaged.DW.MidAcc.MidHaste, {
-    legs="Carmine Cuisses +1",
+    legs=gear.Carmine_D_legs, --6
     ear2="Odr Earring",
     -- head="Carmine Mask +1",
     -- feet=gear.Herc_STP_feet,
@@ -1116,7 +1187,7 @@ function init_gear_sets()
     waist="Kentarch Belt +1",
   })
   sets.engaged.DW.HighAcc.HighHaste = set_combine(sets.engaged.DW.MidAcc.HighHaste, {
-    legs="Carmine Cuisses +1",
+    legs=gear.Carmine_D_legs, --6
     ear2="Odr Earring",
     -- head="Carmine Mask +1",
     -- feet=gear.Herc_STP_feet,
@@ -1156,7 +1227,7 @@ function init_gear_sets()
     -- neck="Combatant's Torque",
   })
   sets.engaged.DW.HighAcc.SuperHaste = set_combine(sets.engaged.DW.MidAcc.SuperHaste, {
-    legs="Carmine Cuisses +1",
+    legs=gear.Carmine_D_legs, --6
     ear2="Odr Earring",
     waist="Olseni Belt",
     -- feet=gear.Herc_STP_feet,
@@ -1194,7 +1265,7 @@ function init_gear_sets()
     -- neck="Combatant's Torque",
   })
   sets.engaged.DW.HighAcc.MaxHaste = set_combine(sets.engaged.DW.HighAcc.MaxHaste, {
-    legs="Carmine Cuisses +1",
+    legs=gear.Carmine_D_legs, --6
     ear2="Odr Earring",
     waist="Olseni Belt",
     -- feet=gear.Herc_STP_feet,
@@ -1271,7 +1342,7 @@ function init_gear_sets()
   }
 
   sets.Kiting = {
-    legs="Carmine Cuisses +1",
+    legs=gear.Carmine_A_legs,
   }
   sets.Kiting.Adoulin = {
     body="Councilor's Garb",
