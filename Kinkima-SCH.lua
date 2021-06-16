@@ -591,6 +591,7 @@ function init_gear_sets()
   -- x = healing skill from gear; y = cursna+ stat from gear
   -- Base rate is determined by base healing magic skill (26% @500)
   sets.midcast.Cursna = {
+    main="Gada",               -- 18, __,  6
     ammo="Incantor Stone",     -- __, __,  2
     head=gear.Vanya_B_head,    -- 20, __, __
     body=gear.Vanya_B_body,    -- 20, __, __
@@ -599,7 +600,6 @@ function init_gear_sets()
     feet=gear.Vanya_B_feet,    -- 40,  5, __
     ear2="Meili Earring",      -- 10, __, __
     ring1="Haoma's Ring",      --  8, 15, __
-    -- main="Gada",               -- 18, __,  6
     -- sub="Chanter's Shield",    -- __, __,  3
     -- neck="Debilis Medallion",  -- __, 15, __
     -- ear1="Beatific Earring",   --  4, __, __
@@ -619,6 +619,7 @@ function init_gear_sets()
 
   -- Enh Magic Skill + Enh Magic Duration > Fast Cast
   sets.midcast['Enhancing Magic'] = {
+    main="Gada",
     head=gear.Telchine_ENH_head,      -- __,  9, __
     body="Pedagogy Gown",             -- 12, __, __
     legs=gear.Telchine_ENH_legs,      -- __, 10, __
@@ -729,6 +730,7 @@ function init_gear_sets()
 
   -- M.Acc > MND > Enfeebling Duration > Enfeebling Skill
   sets.midcast.MndEnfeebles = {
+    main="Gada",
     head="Academic's Mortarboard",
     body="Shango Robe",             -- 23, 29, __, 15
     legs="Academic's Pants",
@@ -759,6 +761,7 @@ function init_gear_sets()
 
   -- M.Acc > INT > Enfeebling Duration > Enfeebling Skill
   sets.midcast.IntEnfeebles = {
+    main="Gada",
     head="Academic's Mortarboard",
     body="Shango Robe",             -- 23, 29, __, 15
     legs="Academic's Pants",
