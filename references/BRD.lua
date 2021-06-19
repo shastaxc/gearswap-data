@@ -311,7 +311,7 @@ function init_gear_sets()
     feet=gear.Lustratio_B_feet,   -- __, __, __, __, __, 20, 41,  3
     neck="Fotia Gorget",          -- 10, __, __, __, __, __, __, __
     ear1="Moonshade Earring",     -- __, __, __, __, __,  4, __, __; 250 TP Bonus
-    ear1="Brutal Earring",        -- __, __, __,  5, __, __, __, __
+    ear2="Brutal Earring",        -- __, __, __,  5, __, __, __, __
     ring1="Hetairoi Ring",        -- __, __,  2, __, __, __, __,  1
     ring2="Begrudging Ring",      -- __, __, __, __,  7,  7, __,  5
     back=gear.BRD_WS3_Cape,       -- __, __, __, __, 20, 20, 30, 10
@@ -767,19 +767,19 @@ function init_gear_sets()
     -- Acceptable: 0 DW, 49 STP, 7 QA, 2 TA, 13 DA, 139 Att, 297 Acc
 
     -- Ideal
-    range=gear.Linos_TP,          -- __,  4,  3, __, __, __, 20
-    head="Aya. Zucchetto +2",     -- __,  6, __, __, __, __, 44
-    body="Ashera Harness",        -- __, 10, __, __, __, 45, 45
-    hands="Volte Mittens",        -- __,  6, __, __, __, __, 36
-    legs="Volte Tights",          -- __,  8, __, __, __, __, 38
-    feet="Volte Spats",           -- __,  6, __, __, __, __, 35
-    neck="Bard's Charm +2",       -- __,  7,  3, __, __, __, 30
-    ear1="Brutal Earring",        -- __,  1, __, __,  5, __, __
-    ear2="Telos Earring",         -- __,  5, __, __,  1, 10, 10
-    ring1="Ilabrat Ring",         -- __,  5, __, __, __, 25, __
-    ring2="Chirich Ring +1",      -- __,  6, __, __, __, __, 10
-    back=gear.BRD_STP_Cape,       -- __, 10, __, __, __, 20, 20
-    waist="Windbuffet Belt +1",   -- __, __,  2,  2, __, __,  2
+    -- range=gear.Linos_TP,          -- __,  4,  3, __, __, __, 20
+    -- head="Aya. Zucchetto +2",     -- __,  6, __, __, __, __, 44
+    -- body="Ashera Harness",        -- __, 10, __, __, __, 45, 45
+    -- hands="Volte Mittens",        -- __,  6, __, __, __, __, 36
+    -- legs="Volte Tights",          -- __,  8, __, __, __, __, 38
+    -- feet="Volte Spats",           -- __,  6, __, __, __, __, 35
+    -- neck="Bard's Charm +2",       -- __,  7,  3, __, __, __, 30
+    -- ear1="Brutal Earring",        -- __,  1, __, __,  5, __, __
+    -- ear2="Telos Earring",         -- __,  5, __, __,  1, 10, 10
+    -- ring1="Ilabrat Ring",         -- __,  5, __, __, __, 25, __
+    -- ring2="Chirich Ring +1",      -- __,  6, __, __, __, __, 10
+    -- back=gear.BRD_STP_Cape,       -- __, 10, __, __, __, 20, 20
+    -- waist="Windbuffet Belt +1",   -- __, __,  2,  2, __, __,  2
     -- Ideal: 0 DW, 74 STP, 8 QA, 2 TA, 6 DA, 100 Att, 290 Acc
   }
 
@@ -815,19 +815,19 @@ function init_gear_sets()
     -- Acceptable: 26 DW, 37 STP, 5 QA, 0 TA, 7 DA, 129 Att, 305 Acc
 
     -- Ideal
-    range=gear.Linos_TP,          -- __,  4,  3, __, __, __, 20
-    head="Aya. Zucchetto +2",     -- __,  6, __, __, __, __, 44
-    body="Ashera Harness",        -- __, 10, __, __, __, 45, 45
-    hands="Volte Mittens",        -- __,  6, __, __, __, __, 36
-    legs="Volte Tights",          -- __,  8, __, __, __, __, 38
-    feet="Volte Spats",           -- __,  6, __, __, __, __, 35
-    neck="Bard's Charm +2",       -- __,  7,  3, __, __, __, 30
-    ear1="Eabani Earring",        --  4, __, __, __, __, __, __
-    ear2="Suppanomimi",           --  5, __, __, __, __, __, __
-    ring1="Ilabrat Ring",         -- __,  5, __, __, __, 25, __
-    ring2="Chirich Ring +1",      -- __,  6, __, __, __, __, 10
-    back=gear.BRD_DW_Cape,        -- 10, __, __, __, __, 20, 30
-    waist="Reiki Yotai",          --  7,  4, __, __, __, __, 10
+    -- range=gear.Linos_TP,          -- __,  4,  3, __, __, __, 20
+    -- head="Aya. Zucchetto +2",     -- __,  6, __, __, __, __, 44
+    -- body="Ashera Harness",        -- __, 10, __, __, __, 45, 45
+    -- hands="Volte Mittens",        -- __,  6, __, __, __, __, 36
+    -- legs="Volte Tights",          -- __,  8, __, __, __, __, 38
+    -- feet="Volte Spats",           -- __,  6, __, __, __, __, 35
+    -- neck="Bard's Charm +2",       -- __,  7,  3, __, __, __, 30
+    -- ear1="Eabani Earring",        --  4, __, __, __, __, __, __
+    -- ear2="Suppanomimi",           --  5, __, __, __, __, __, __
+    -- ring1="Ilabrat Ring",         -- __,  5, __, __, __, 25, __
+    -- ring2="Chirich Ring +1",      -- __,  6, __, __, __, __, 10
+    -- back=gear.BRD_DW_Cape,        -- 10, __, __, __, __, 20, 30
+    -- waist="Reiki Yotai",          --  7,  4, __, __, __, __, 10
     -- Ideal: 26 DW, 62 STP, 6 QA, 0 TA, 0 DA, 90 Att, 298 Acc
   } -- Only 26% DW; doesn't cap but can't get much better
   sets.engaged.DW.Acc = set_combine(sets.engaged.DW, {
@@ -866,19 +866,19 @@ function init_gear_sets()
     -- Acceptable: 21 DW, 42 STP, 5 QA, 0 TA, 8 DA, 139 Att, 315 Acc
 
     -- Ideal
-    range=gear.Linos_TP,          -- __,  4,  3, __, __, __, 20
-    head="Aya. Zucchetto +2",     -- __,  6, __, __, __, __, 44
-    body="Ashera Harness",        -- __, 10, __, __, __, 45, 45
-    hands="Volte Mittens",        -- __,  6, __, __, __, __, 36
-    legs="Volte Tights",          -- __,  8, __, __, __, __, 38
-    feet="Volte Spats",           -- __,  6, __, __, __, __, 35
-    neck="Bard's Charm +2",       -- __,  7,  3, __, __, __, 30
-    ear1="Eabani Earring",        --  4, __, __, __, __, __, __
-    ear2="Telos Earring",         -- __,  5, __, __,  1, 10, 10
-    ring1="Ilabrat Ring",         -- __,  5, __, __, __, 25, __
-    ring2="Chirich Ring +1",      -- __,  6, __, __, __, __, 10
-    back=gear.BRD_DW_Cape,        -- 10, __, __, __, __, 20, 30
-    waist="Reiki Yotai",          --  7,  4, __, __, __, __, 10
+    -- range=gear.Linos_TP,          -- __,  4,  3, __, __, __, 20
+    -- head="Aya. Zucchetto +2",     -- __,  6, __, __, __, __, 44
+    -- body="Ashera Harness",        -- __, 10, __, __, __, 45, 45
+    -- hands="Volte Mittens",        -- __,  6, __, __, __, __, 36
+    -- legs="Volte Tights",          -- __,  8, __, __, __, __, 38
+    -- feet="Volte Spats",           -- __,  6, __, __, __, __, 35
+    -- neck="Bard's Charm +2",       -- __,  7,  3, __, __, __, 30
+    -- ear1="Eabani Earring",        --  4, __, __, __, __, __, __
+    -- ear2="Telos Earring",         -- __,  5, __, __,  1, 10, 10
+    -- ring1="Ilabrat Ring",         -- __,  5, __, __, __, 25, __
+    -- ring2="Chirich Ring +1",      -- __,  6, __, __, __, __, 10
+    -- back=gear.BRD_DW_Cape,        -- 10, __, __, __, __, 20, 30
+    -- waist="Reiki Yotai",          --  7,  4, __, __, __, __, 10
     -- 21 DW, 67 STP, 6 QA, 0 TA, 1 DA, 100 Att, 308 Acc
   }
   sets.engaged.DW.Acc.HighHaste = set_combine(sets.engaged.DW.HighHaste, {
@@ -908,19 +908,19 @@ function init_gear_sets()
     -- Acceptable: 11 DW, 52 STP, 5 QA, 0 TA, 8 DA, 139 Att, 305 Acc
 
     -- Ideal
-    range=gear.Linos_TP,          -- __,  4,  3, __, __, __, 20
-    head="Aya. Zucchetto +2",     -- __,  6, __, __, __, __, 44
-    body="Ashera Harness",        -- __, 10, __, __, __, 45, 45
-    hands="Volte Mittens",        -- __,  6, __, __, __, __, 36
-    legs="Volte Tights",          -- __,  8, __, __, __, __, 38
-    feet="Volte Spats",           -- __,  6, __, __, __, __, 35
-    neck="Bard's Charm +2",       -- __,  7,  3, __, __, __, 30
-    ear1="Eabani Earring",        --  4, __, __, __, __, __, __
-    ear2="Telos Earring",         -- __,  5, __, __,  1, 10, 10
-    ring1="Ilabrat Ring",         -- __,  5, __, __, __, 25, __
-    ring2="Chirich Ring +1",      -- __,  6, __, __, __, __, 10
-    back=gear.BRD_STP_Cape,       -- __, 10, __, __, __, 20, 20
-    waist="Reiki Yotai",          --  7,  4, __, __, __, __, 10
+    -- range=gear.Linos_TP,          -- __,  4,  3, __, __, __, 20
+    -- head="Aya. Zucchetto +2",     -- __,  6, __, __, __, __, 44
+    -- body="Ashera Harness",        -- __, 10, __, __, __, 45, 45
+    -- hands="Volte Mittens",        -- __,  6, __, __, __, __, 36
+    -- legs="Volte Tights",          -- __,  8, __, __, __, __, 38
+    -- feet="Volte Spats",           -- __,  6, __, __, __, __, 35
+    -- neck="Bard's Charm +2",       -- __,  7,  3, __, __, __, 30
+    -- ear1="Eabani Earring",        --  4, __, __, __, __, __, __
+    -- ear2="Telos Earring",         -- __,  5, __, __,  1, 10, 10
+    -- ring1="Ilabrat Ring",         -- __,  5, __, __, __, 25, __
+    -- ring2="Chirich Ring +1",      -- __,  6, __, __, __, __, 10
+    -- back=gear.BRD_STP_Cape,       -- __, 10, __, __, __, 20, 20
+    -- waist="Reiki Yotai",          --  7,  4, __, __, __, __, 10
     -- 11 DW, 77 STP, 6 QA, 0 TA, 1 DA, 100 Att, 298 Acc
   }
   sets.engaged.DW.Acc.SuperHaste = set_combine(sets.engaged.DW.SuperHaste, {
