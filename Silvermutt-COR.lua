@@ -100,7 +100,7 @@ function job_setup()
   state.RangedMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.IdleMode:options('Normal', 'LightDef')
 
-  state.WeaponSet = M{['description']='Weapon Set', 'Anarchy', 'Cleaving', 'Fomalhaut_M', 'Fomalhaut_R',}
+  state.WeaponSet = M{['description']='Weapon Set', 'Anarchy', 'Cleaving', 'DeathPenalty_M', 'DeathPenalty_R', 'Fomalhaut_M', 'Fomalhaut_R',}
 
   state.CP = M(false, "Capacity Points Mode")
   state.RearmingLock = M(false, 'Rearming Lock')
@@ -270,8 +270,7 @@ function init_gear_sets()
     feet="Lanun Bottes +3",
 }
   sets.precast.JA['Random Deal'] = {
-    body="Lanun Frac +1",
-    -- body="Lanun Frac +3",
+    body="Lanun Frac +3",
 }
 
   sets.precast.CorsairRoll = {
@@ -449,18 +448,17 @@ function init_gear_sets()
   sets.precast.WS['Wildfire'] = {
     ammo=gear.MAbullet,
     head="Nyame Helm", --30
-    body="Nyame Mail", --30
-    hands="Carmine Fin. Ga. +1",
+    body="Lanun Frac +3", --61
+    hands=gear.Carmine_D_hands, --42
     legs="Nyame Flanchard", --30
-    feet="Lanun Bottes +3",
-    neck="Commodore Charm +1",
-    ear1="Friomisi Earring",
-    ear2="Novio Earring",
-    ring1="Dingir Ring",
-    ring2="Shiva Ring +1",
-    back=gear.COR_WS1_Cape,
-    waist="Eschan Stone",
-    -- body="Lanun Frac +3",
+    feet="Lanun Bottes +3", --55
+    neck="Commodore Charm +1", --6
+    ear1="Friomisi Earring", --10
+    ear2="Novio Earring", --7
+    ring1="Dingir Ring", --10
+    ring2="Shiva Ring +1", --3
+    back=gear.COR_WS1_Cape, --0
+    waist="Eschan Stone", --7
     -- neck="Comm. Charm +2",
     -- ring2="Epaminondas's Ring",
     -- waist="Skrymir Cord +1",
@@ -781,7 +779,7 @@ function init_gear_sets()
   sets.midcast.CorsairShot = {
     ammo=gear.QDbullet,
     head="Nyame Helm", --30
-    body="Nyame Mail", --30
+    body="Lanun Frac +3",
     hands="Carmine Fin. Ga. +1",
     legs="Nyame Flanchard", --30
     feet="Lanun Bottes +3",
@@ -791,7 +789,6 @@ function init_gear_sets()
     ring1="Dingir Ring",
     back=gear.COR_WS1_Cape,
     waist="Eschan Stone",
-    -- body="Lanun Frac +3",
     -- ring2={name="Fenrir Ring +1", bag="wardrobe4"},
     -- waist="Skrymir Cord +1",
   }
@@ -1350,23 +1347,28 @@ function init_gear_sets()
 
   sets.WeaponSet = {}
   sets.WeaponSet.DeathPenalty_M = {
+    main="Lanun Knife",
+    sub="Kaja Knife",
+    ranged="Death Penalty",
     -- main="Rostam",
     -- sub="Tauret",
-    -- ranged="Death Penalty",
   }
   sets.WeaponSet.DeathPenalty_R = {
     main="Lanun Knife",
+    sub="Kaja Knife",
+    ranged="Death Penalty",
     -- sub="Tauret",
-    -- ranged="Death Penalty",
   }
   sets.WeaponSet.Armageddon_M = {
+    main="Lanun Knife",
+    sub="Kaja Knife",
     -- main="Rostam",
     -- sub="Tauret",
     -- ranged="Armageddon",
   }
   sets.WeaponSet.Armageddon_R = {
-    -- main="Fettering Blade",
     sub="Nusku Shield",
+    -- main="Fettering Blade",
     -- ranged="Armageddon",
   }
   sets.WeaponSet.Fomalhaut_M = {
