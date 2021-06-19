@@ -981,7 +981,7 @@ function init_gear_sets()
     sub="Enki Strap",
     -- ammo="Ghastly Tathlum +1",
     -- neck="Argute Stole +2",
-    -- waist="Sacro Cord",
+    -- waist="Skrymir Cord",
   }
 
   sets.midcast.DarkHelix = set_combine(sets.midcast.Helix, {
