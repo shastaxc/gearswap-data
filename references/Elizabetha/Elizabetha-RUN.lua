@@ -270,22 +270,13 @@ function init_gear_sets()
     back="Moonbeam Cape",
         }
 
-    sets.defense.Parry = {
-    ammo="Aqreqaq Bomblet",
-    head="Nyame Helm",
-    body="Runeist's Coat +3",
-    legs="Nyame Flanchard",
-    neck={ name="Futhark Torque +1", augments={'Path: A',}},
-    waist="Flume Belt",
-    left_ear="Odnowa Earring",
-    right_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
-    left_ring={ name="Gelatinous Ring +1", augments={'Path: A',}},
-    right_ring="Moonbeam Ring",
-	hands="Turms Mittens +1",
-    legs="Eri. Leg Guards +1",
-    feet="Turms Leggings +1",
-    back={ name="Ogma's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%','Parrying rate+5%',}},
-        }
+        sets.defense.Parry = {
+          hands="Turms Mittens +1",
+          body="Futhark coat +3",
+          legs="Eri. Leg Guards +1",
+          feet="Turms Leggings",
+          back={ name="Ogma's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%','Parrying rate+5%',}},
+              }
 
     ------------------------------------------------------------------------------------------------
     ---------------------------------------- Precast Sets ------------------------------------------
