@@ -699,7 +699,6 @@ function init_gear_sets()
         head=gear.Herc_STP_head,
         neck="Anu Torque",
         ear1="Sherida Earring",
-		ear1="Dignitary Earring",
         ear2="Mache Earring",
         ring1={name="Chirich Ring +1"},
         ring2={name="Chirich Ring +1"},
@@ -707,7 +706,6 @@ function init_gear_sets()
 
     -- 35% Magic Haste (21% DW to cap)
     sets.engaged.DW.HighHaste = {
-        ammo="Aurgelmir Orb",
         ammo="Yamarang",
         head=gear.Adhemar_B_head,
         body="Pillager's Vest +3",
@@ -717,8 +715,6 @@ function init_gear_sets()
         neck="Erudit. Necklace",
         ear1="Sherida Earring",
         ear2="Suppanomimi", --5
-		ear1="Dignitary Earring",
-        ear2="Mache Earring",
         ring1="Gere Ring",
         ring2="Epona's Ring",
         back=gear.THF_DW_Cape, --10
@@ -737,7 +733,6 @@ function init_gear_sets()
         ammo="Yamarang",
         head="Dampening Tam",
         ear1="Cessance Earring",
-		ear1="Dignitary Earring",
         ear2="Mache Earring",
         ring2="Ilabrat Ring",
         waist="Kentarch Belt +1",
@@ -747,8 +742,7 @@ function init_gear_sets()
         ammo="C. Palug Stone",
         legs="Pill. Culottes +3",
         feet=gear.Herc_STP_feet,
-        ear2="Telos Earring",
-		ear1="Dignitary Earring",
+        ear1="Telos Earring",
         ear2="Mache Earring",
         ring1="Regal Ring",
         ring2={name="Chirich Ring +1"},

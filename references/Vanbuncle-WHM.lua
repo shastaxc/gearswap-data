@@ -227,7 +227,6 @@ function init_gear_sets()
         sub="Wizzan Grip",
 		--sub="Thrace Strap",
         ammo="Impatiens", --(2)
-		head="Welkin Crown", --7
 		head="Nahtirah Hat", --10
         body="Inyanga Jubbah +1", --14
         hands="Gendewitha Gages", --7

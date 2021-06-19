@@ -136,7 +136,6 @@ function job_setup()
 				['BlackbeardRandy']="Tiger, Beast, Warrior",['GenerousArthur']="Slug, Amorph, Warrior",
 				['ThreestarLynn']="Ladybug, Vermin, Thief",['BraveHeroGlenn']="Frog, Aquan, Warrior",
 				['SharpwitHermes']="Mandragora, Plantoid, Monk",['ColibriFamiliar']="Colibri, Bird, Red Mage",
-				['ChoralLeera']="HQ Colibri, Bird, Red Mage",['SpiderFamiliar']="Spider, Vermin, Warrior",
 				['GussyHachirobe']="HQ Spider, Vermin, Warrior",['AcuexFamiliar']="Acuex, Amorph, Black Mage",
 				['ChoralLeera']="HQ Colibri, Bird, Red Mage",['SpiderFamiliar']="Spider, Vermin, Warrior",
 				['AmiableRoche']="Pugil, Aquan, Warrior",['HeraldHenry']="Crab, Aquan, Paladin",

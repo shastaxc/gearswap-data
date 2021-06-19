@@ -403,7 +403,6 @@ function init_gear_sets()
         neck="Sanctity Necklace",
         ring2="Paguroidea Ring",
         ear2="Infused Earring",
-        head="Rao Kabuto",
    	    body="Hizamaru Haramaki +2",
         back=Smertrios.TP,
         feet="Danzo Sune-ate"
