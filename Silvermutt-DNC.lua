@@ -677,8 +677,8 @@ function init_gear_sets()
 
   sets.idle.Weak = set_combine(sets.HeavyDef, {
     neck="Loricate Torque +1",  --  6/ 6, ___
-    ring1="Gelatinous Ring +1", --  7/-1, ___
-    ring2="Moonlight Ring",     --  5/ 5, ___
+    ring1="Moonlight Ring",     --  5/ 5, ___
+    ring2="Gelatinous Ring +1", --  7/-1, ___
     -- back="Moonlight Cape",      --  6/ 6, ___
   }) --61 PDT/55 MDT, 791 MEVA
   
@@ -724,8 +724,8 @@ function init_gear_sets()
     legs="Malignance Tights",
     ear1="Telos Earring",
     ear2="Dignitary's Earring",
-    ring1="Regal Ring",
-    ring2="Chirich Ring +1",
+    ring1="Chirich Ring +1",
+    ring2="Regal Ring",
     waist="Olseni Belt",
     -- ammo="C. Palug Stone",
   })
@@ -849,8 +849,8 @@ function init_gear_sets()
     body="Maxixi Casaque +3",
     legs="Malignance Tights",
     ear2="Dignitary's Earring",
-    ring1="Regal Ring",
-    ring2="Chirich Ring +1",
+    ring1="Chirich Ring +1",
+    ring2="Regal Ring",
     -- ammo="C. Palug Stone",
     -- waist="Olseni Belt",
   })
