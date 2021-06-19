@@ -332,6 +332,7 @@ function init_gear_sets()
     ear2="Eabani Earring",                          -- {__} __/__,   8 [ 45]
     waist={name="Kasiri Belt", priority=1},         -- {__} __/__, ___ [ 30]
     back={name=gear.RUN_FC_Cape.name,augments=gear.RUN_FC_Cape.augments, priority=1},            -- {10} 10/__,  20 [ 80]
+    -- feet="Carmine Greaves +1",
   } -- 43% Fast Cast [302 HP, 883 w/ PDT, 953 w/ MDT]
 
   sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {
