@@ -943,6 +943,7 @@ function init_gear_sets()
     ear1="Infused Earring",
     ring1="Chirich Ring +1",
     back=gear.COR_Regen_Cape,
+    -- ring2="Chirich Ring +1",
   }
   sets.latent_refresh = {
     head=gear.Herc_Refresh_head,
@@ -1022,8 +1023,6 @@ function init_gear_sets()
   })
   sets.engaged.MidAcc = set_combine(sets.engaged.LowAcc, {
     ear2="Telos Earring",
-    ring1="Regal Ring",
-    ring2="Ilabrat Ring",
     waist="Kentarch Belt +1",
   })
   sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
@@ -1032,7 +1031,7 @@ function init_gear_sets()
     -- head="Carmine Mask +1",
     -- feet=gear.Herc_STP_feet,
     -- ear1="Mache Earring +1",
-    -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
+    -- ring2="Chirich Ring +1",
   })
 
 
@@ -1064,8 +1063,6 @@ function init_gear_sets()
   sets.engaged.DW.MidAcc = set_combine(sets.engaged.DW.LowAcc, {
     ear1="Cessance Earring",
     ear2="Telos Earring",
-    ring1="Regal Ring",
-    ring2="Ilabrat Ring",
     waist="Kentarch Belt +1",
     -- hands=gear.Adhemar_A_hands,
   })
@@ -1074,8 +1071,7 @@ function init_gear_sets()
     -- head="Carmine Mask +1",
     -- feet=gear.Herc_STP_feet,
     -- ear1="Mache Earring +1",
-    -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
-    -- waist="Olseni Belt",
+    -- ring2="Chirich Ring +1",
   })
 
   -- Low Magic/Gear/JA Haste (67% DW to cap, 42% from gear)
@@ -1096,13 +1092,11 @@ function init_gear_sets()
   } -- 42%
   sets.engaged.DW.LowAcc.LowHaste = set_combine(sets.engaged.DW.LowHaste, {
     head="Dampening Tam",
-    -- ring1={name="Chirich Ring +1", bag="wardrobe3"},
+    ring1="Chirich Ring +1",
     -- neck="Combatant's Torque",
   })
   sets.engaged.DW.MidAcc.LowHaste = set_combine(sets.engaged.DW.LowAcc.LowHaste, {
     ear2="Telos Earring",
-    ring1="Regal Ring",
-    ring2="Ilabrat Ring",
     waist="Kentarch Belt +1",
     -- hands=gear.Adhemar_A_hands,
   })
@@ -1111,8 +1105,7 @@ function init_gear_sets()
     -- head="Carmine Mask +1",
     -- feet=gear.Herc_STP_feet,
     -- ear1="Mache Earring +1",
-    -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
-    -- waist="Olseni Belt",
+    -- ring2="Chirich Ring +1",
   })
 
   -- Mid Magic/Gear/JA Haste (56% DW to cap, 31% from gear)
@@ -1140,8 +1133,6 @@ function init_gear_sets()
   sets.engaged.DW.MidAcc.MidHaste = set_combine(sets.engaged.DW.LowAcc.MidHaste, {
     legs="Meg. Chausses +2",
     ear2="Telos Earring",
-    ring1="Regal Ring",
-    ring2="Ilabrat Ring",
     waist="Kentarch Belt +1",
   })
   sets.engaged.DW.HighAcc.MidHaste = set_combine(sets.engaged.DW.MidAcc.MidHaste, {
@@ -1150,8 +1141,7 @@ function init_gear_sets()
     -- head="Carmine Mask +1",
     -- feet=gear.Herc_STP_feet,
     -- ear1="Mache Earring +1",
-    -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
-    -- waist="Olseni Belt",
+    -- ring2="Chirich Ring +1",
   })
 
   -- High Magic/Gear/JA Haste (43% DW to cap, 18% from gear)
@@ -1179,8 +1169,6 @@ function init_gear_sets()
   sets.engaged.DW.MidAcc.HighHaste = set_combine(sets.engaged.DW.LowAcc.HighHaste, {
     legs="Meg. Chausses +2",
     ear2="Telos Earring",
-    ring1="Regal Ring",
-    ring2="Ilabrat Ring",
     waist="Kentarch Belt +1",
   })
   sets.engaged.DW.HighAcc.HighHaste = set_combine(sets.engaged.DW.MidAcc.HighHaste, {
@@ -1189,8 +1177,7 @@ function init_gear_sets()
     -- head="Carmine Mask +1",
     -- feet=gear.Herc_STP_feet,
     -- ear1="Mache Earring +1",
-    -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
-    -- waist="Olseni Belt",
+    -- ring2="Chirich Ring +1",
   })
 
   -- High Magic/Gear/JA Haste (36% DW to cap, 11% from gear)
@@ -1218,8 +1205,6 @@ function init_gear_sets()
   sets.engaged.DW.MidAcc.SuperHaste = set_combine(sets.engaged.DW.LowAcc.SuperHaste, {
     legs="Meg. Chausses +2",
     ear1="Cessance Earring",
-    ring1="Regal Ring",
-    ring2="Ilabrat Ring",
     -- head="Carmine Mask +1",
     -- neck="Combatant's Torque",
   })
@@ -1229,7 +1214,7 @@ function init_gear_sets()
     waist="Olseni Belt",
     -- feet=gear.Herc_STP_feet,
     -- ear1="Mache Earring +1",
-    -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
+    -- ring2="Chirich Ring +1",
   })
 
   -- Max Magic/Gear/JA Haste (0-25% DW to cap, 0% from gear)
@@ -1257,8 +1242,6 @@ function init_gear_sets()
   sets.engaged.DW.MidAcc.MaxHaste = set_combine(sets.engaged.DW.MidAcc.MaxHaste, {
     legs="Meg. Chausses +2",
     ear1="Cessance Earring",
-    ring1="Regal Ring",
-    ring2="Ilabrat Ring",
     -- neck="Combatant's Torque",
   })
   sets.engaged.DW.HighAcc.MaxHaste = set_combine(sets.engaged.DW.HighAcc.MaxHaste, {
@@ -1267,7 +1250,7 @@ function init_gear_sets()
     waist="Olseni Belt",
     -- feet=gear.Herc_STP_feet,
     -- ear1="Mache Earring +1",
-    -- ring2={name="Chirich Ring +1", bag="wardrobe4"},
+    -- ring2="Chirich Ring +1",
   })
 
 
