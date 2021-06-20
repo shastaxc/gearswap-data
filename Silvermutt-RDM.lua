@@ -635,7 +635,6 @@ function init_gear_sets()
     -- hands="Kaykaus Cuffs +1", --11(+2)/(-6)
     -- legs="Kaykaus Tights +1", --11(+2)/(-6)
     -- feet="Kaykaus Boots +1", --11(+2)/(-12)
-    -- neck="Incanter's Torque",
     -- ear1="Beatific Earring",
     -- ear2="Meili Earring",
     -- ring1="Haoma's Ring",
@@ -666,11 +665,11 @@ function init_gear_sets()
   })
 
   sets.midcast.StatusRemoval = {
+    neck="Incanter's Torque",
     -- head="Vanya Hood",
     -- body="Vanya Robe",
     -- legs="Atrophy Tights +3",
     -- feet="Vanya Clogs",
-    -- neck="Incanter's Torque",
     -- ear2="Meili Earring",
     -- ring1="Haoma's Ring",
     -- ring2="Menelaus's Ring",
@@ -691,6 +690,7 @@ function init_gear_sets()
     head="Befouled Crown",
     ear1="Mimir Earring",
     ear2="Andoaa Earring",
+    neck="Incanter's Torque",
     waist="Olympus Sash",
     -- main=gear.Colada_ENH,
     -- sub="Ammurapi Shield",
@@ -699,7 +699,6 @@ function init_gear_sets()
     -- hands="Atrophy Gloves +3",
     -- legs="Atrophy Tights +3",
     -- feet="Leth. Houseaux +1",
-    -- neck="Incanter's Torque",
     -- ring1={name="Stikini Ring +1", bag="wardrobe3"},
     -- ring2={name="Stikini Ring +1", bag="wardrobe4"},
     -- back="Ghostfyre Cape",
@@ -849,13 +848,13 @@ function init_gear_sets()
   })
 
   sets.midcast.SkillEnfeebles = set_combine(sets.midcast.MndEnfeebles, {
+    neck="Incanter's Torque",
     -- main=gear.Grioavolr_MND,
     -- sub="Mephitis Grip",
     -- head="Viti. Chapeau +3",
     -- body="Atrophy Tabard +3",
     -- hands="Leth. Gantherots +1",
     -- feet="Vitiation Boots +3",
-    -- neck="Incanter's Torque",
     -- ring1={name="Stikini Ring +1", bag="wardrobe3"},
     -- ring2={name="Stikini Ring +1", bag="wardrobe4"},
     -- ear1="Vor Earring",
