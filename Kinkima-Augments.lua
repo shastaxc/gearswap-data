@@ -158,4 +158,4 @@ gear.SCH_Regen_Cape = {} --Regen
 -----------------------     Miscellaneous     ------------------------
 ----------------------------------------------------------------------
 
-gear.CP_Cape = {}
+gear.CP_Cape = { name="Mecisto. Mantle", augments={'Cap. Point+41%','Mag. Acc.+5','DEF+4',}}

@@ -1222,7 +1222,7 @@ function init_gear_sets()
     back="Bookworm's Cape",
   }
   sets.CP = {
-    -- back="Mecisto. Mantle",
+    back=gear.CP_Cape
   }
 
   sets.Kiting = {
