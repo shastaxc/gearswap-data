@@ -11,11 +11,6 @@ function user_job_setup()
 
 	state.ExtraDefenseMode = M{['description']='Extra Defense Mode','None','MP'}
 
-	gear.enmity_jse_back = {name="Moonlight cape",augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Enmity+10','Damage taken-5%',}}
-	gear.stp_jse_back = {name="Moonlight cape",augments={'DEX+20','Accuracy+20 Attack+20','"Store TP"+10',}}
-	gear.da_jse_back = {name="Moonlight cape",augments={'STR+20','Accuracy+20 Attack+20','"Dbl.Atk."+10',}}
-	gear.fc_back = { name="Moonlight cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','"Fast Cast"+10','Spell interruption rate down-10%',}}
-
 	-- Additional local binds
 	send_command('bind @f9 gs c cycle Weapons')
 	send_command('bind @f10 gs c cycle OffenseMode')
@@ -315,7 +310,7 @@ function init_gear_sets()
     ammo="Staunch tathlum +1",
     head="Rune. Bandeau +3",
     body="Emet harness +1",
-    hands="Futhark mitons +1",
+    hands="Futhark mitons +3",
     legs="Eri. leg guards +1",
     feet="Erilaz greaves +1",
     neck="Futhark torque +1",
@@ -347,7 +342,7 @@ function init_gear_sets()
     ammo="Staunch tathlum +1",
     head="Rune. Bandeau +3",
     body="Emet harness +1",
-    hands="Futhark mitons +1",
+    hands="Futhark mitons +3",
     legs="Eri. leg guards +1",
     feet="Erilaz greaves +1",
     neck="Futhark torque +1",
@@ -363,7 +358,7 @@ function init_gear_sets()
     ammo="Staunch Tathlum +1",
     head="Nyame helm",
     body="Nyame mail",
-    hands="Futhark mitons +1",
+    hands="Futhark mitons +3",
     legs="Eri. leg guards +1",
     feet="Erilaz greaves +1",
     neck="Futhark torque +1",
@@ -383,7 +378,7 @@ function init_gear_sets()
     ammo="Staunch tathlum +1",
     head="Rune. Bandeau +3",
     body="Emet harness +1",
-    hands="Futhark mitons +1",
+    hands="Futhark mitons +3",
     legs="Eri. leg guards +1",
     feet="Erilaz greaves +1",
     neck="Futhark torque +1",
@@ -417,7 +412,7 @@ function init_gear_sets()
     ammo="Staunch Tathlum +1",
     head="Nyame helm",
     body="Nyame mail",
-    hands="Futhark mitons +1",
+    hands="Futhark mitons +3",
     legs="Eri. leg guards +1",
     feet="Erilaz greaves +1",
     neck="Futhark torque +1",
