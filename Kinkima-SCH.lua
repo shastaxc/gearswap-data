@@ -128,6 +128,7 @@ function init_gear_sets()
 
   -- Fast cast sets for spells
   sets.precast.FC = {
+    main=gear.Pedagogy_C, --8
     ammo="Incantor Stone", --2
     head=gear.Psycloth_D_head, --10
     body=gear.Merl_FC_body, --14
@@ -163,7 +164,7 @@ function init_gear_sets()
     -- body="Pinga Tunic +1", --15
     -- back=gear.SCH_FC_Cape, --10
     -- waist="Embla Sash", --5
-  }
+  } --76
 
   -- Grimoire casting bonuses multiply separately from FC, allowing
   -- breaking the normal 80% cast time reduction cap.
@@ -641,9 +642,10 @@ function init_gear_sets()
   }
 
   sets.midcast.EnhancingDuration = {
-    head=gear.Telchine_ENH_head,   --  9, __
-    legs=gear.Telchine_ENH_legs,   -- 10, __
-    waist="Embla Sash",            -- 10,  5
+    main=gear.Pedagogy_C,           -- 15,  8
+    head=gear.Telchine_ENH_head,    --  9, __
+    legs=gear.Telchine_ENH_legs,    -- 10, __
+    waist="Embla Sash",             -- 10,  5
     -- main=gear.Musa_C,              -- 20, 10
     -- sub="Clerisy Strap +1",        -- __,  3
     -- head=gear.Telchine_ENH_head,   -- 10, __
@@ -655,12 +657,12 @@ function init_gear_sets()
 
   -- Regen not affected by Enh Magic Skill
   sets.midcast.Regen = {
-    main="Bolelabunga",            -- __, 10, __, __
-    sub="Genmei Shield",           -- __, __, __, __
-    head="Arbatel Bonnet +1",      --  7, __, __, __
-    legs=gear.Telchine_ENH_legs,   --  2, __, 10, __
-    back="Bookworm's Cape",        --  8, __, __, __
-    waist="Embla Sash",            -- __, __, 10,  5
+    main=gear.Pedagogy_C,           -- 20, __, 15, __
+    sub="Genmei Shield",            -- __, __, __, __
+    head="Arbatel Bonnet +1",       --  7, __, __, __
+    legs=gear.Telchine_ENH_legs,    --  2, __, 10, __
+    back="Bookworm's Cape",         --  8, __, __, __
+    waist="Embla Sash",             -- __, __, 10,  5
     -- main=gear.Musa_C,              -- 25, __, 20, __
     -- sub="Khonsu",                  -- __, __, __, __
     -- body=gear.Telchine_ENH_body,   --  2, __, 10, 12
@@ -670,7 +672,7 @@ function init_gear_sets()
     -- 50 Regen Potency, 0 Regen Potency %, 70 Enh Duration %, 17 Regen Duration
     -- Regen V (no LA) = 90 hp/tic
     -- Regen V (w/ LA) = 114 hp/tic
-  }-- 17 Regen Potency, 10 Regen Potency %, 20 Enh Duration %, 5 Regen Duration
+  }-- 37 Regen Potency, 0 Regen Potency %, 35 Enh Duration %, 5 Regen Duration
 
   sets.midcast.RegenDuration = set_combine(sets.midcast.Regen, {
     head=gear.Telchine_ENH_head,   --  2, __,  9, __
@@ -679,7 +681,7 @@ function init_gear_sets()
     -- 45 Regen Potency, 0 Regen Potency %, 80 Enh Duration %, 32 Regen Duration
     -- Regen V (no LA) = 85 hp/tic
     -- Regen V (w/ LA) = 109 hp/tic
-  })-- 12 Regen Potency, 10 Regen Potency %, 29 Enh Duration %, 20 Regen Duration
+  })-- 32 Regen Potency, 0 Regen Potency %, 44 Enh Duration %, 20 Regen Duration
 
   sets.midcast.Haste = sets.midcast.EnhancingDuration
 
