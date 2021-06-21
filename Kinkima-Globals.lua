@@ -1,4 +1,3 @@
-send_command('lua l gearinfo')
 send_command('ev pos 1260 720')
 
 res = include('resources')
