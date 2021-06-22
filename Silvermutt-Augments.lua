@@ -135,6 +135,7 @@ gear.Taeon_RA_head = { name="Taeon Chapeau", augments={'"Snapshot"+5','"Snapshot
 
 -- Yorium
 
+
 ----------------------------------------------------------------------
 -----------------------     Sinister Reign     -----------------------
 ----------------------------------------------------------------------
@@ -147,6 +148,15 @@ gear.Founders_Greaves = {}
 gear.Leyline_Gloves = { name="Leyline Gloves", augments={'Accuracy+15','Mag. Acc.+15','"Mag.Atk.Bns."+15','"Fast Cast"+3',}}
 gear.Samnuha_body = { name="Samnuha Coat", augments={'Mag. Acc.+14','"Mag.Atk.Bns."+13','"Fast Cast"+4','"Dual Wield"+3',}}
 gear.Samnuha_legs = { name="Samnuha Tights", augments={'STR+10','DEX+10','"Dbl.Atk."+3','"Triple Atk."+3',}}
+
+
+----------------------------------------------------------------------
+-----------------------      Adoulin Capes     -----------------------
+----------------------------------------------------------------------
+
+gear.COR_Adoulin_Cape = {}
+gear.RUN_Adoulin_Cape = { name="Evasionist's Cape", augments={'Enmity+4','"Embolden"+15','"Dbl.Atk."+4',}}
+gear.DNC_Adoulin_Cape = { name="Toetapper Mantle", augments={'"Store TP"+1','"Dual Wield"+2','"Rev. Flourish"+28',}}
 
 
 ----------------------------------------------------------------------

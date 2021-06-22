@@ -982,7 +982,7 @@ function init_gear_sets()
     ring2="Warden's Ring", --10%
   }
   sets.Embolden = set_combine(sets.midcast.EnhancingDuration, {
-    back="Evasionist's Cape"
+    back=gear.RUN_Adoulin_Cape
   })
   sets.CP = {
     back=gear.CP_Cape,

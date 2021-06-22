@@ -259,7 +259,7 @@ function init_gear_sets()
     legs="Dashing Subligar",        -- 10(_), 11 <__>; Gives Blink
     feet="Maxixi Shoes +1",         -- 10(_), 30 <__>
     neck="Etoile gorget +2",        -- 10(_), 25 <__>
-    back="Toetapper Mantle",        --  5(_), __ <__>
+    back=gear.DNC_Adoulin_Cape,     --  5(_), __ <__>
     waist="Aristo Belt",            -- __(_),  8 <__>
     -- ammo="Voluspa Tathlum",      -- __(_),  5 <__>
     -- head=gear.Anwig_Salade,      -- __(_),  4 <-2>
@@ -347,7 +347,7 @@ function init_gear_sets()
   sets.precast.Flourish2 = {}
   sets.precast.Flourish2['Reverse Flourish'] = {
     hands="Charis Bangles +2",
-    back="Toetapper Mantle",
+    back=gear.DNC_Adoulin_Cape,
     -- hands="Maculele Bangles +1",
   }
   sets.precast.Flourish3 = {}

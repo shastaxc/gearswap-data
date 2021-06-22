@@ -296,7 +296,7 @@ function init_gear_sets()
     -- range="Compensator",
   }
   sets.precast.CorsairRoll.LowerDelay = {
-    -- back="Gunslinger's Cape",
+    -- back=gear.COR_Adoulin_Cape,
   }
   sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {
     -- legs="Chasseur's Culottes +1",

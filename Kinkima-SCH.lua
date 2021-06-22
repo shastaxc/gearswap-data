@@ -657,22 +657,21 @@ function init_gear_sets()
 
   -- Regen not affected by Enh Magic Skill
   sets.midcast.Regen = {
-    main=gear.Pedagogy_C,           -- 20, __, 15, __
-    sub="Genmei Shield",            -- __, __, __, __
-    head="Arbatel Bonnet +1",       --  7, __, __, __
-    legs=gear.Telchine_ENH_legs,    --  2, __, 10, __
-    back="Bookworm's Cape",         --  8, __, __, __
-    waist="Embla Sash",             -- __, __, 10,  5
+    main=gear.Pedagogy_C,             -- 20, __, 15, __
+    sub="Genmei Shield",              -- __, __, __, __
+    head="Arbatel Bonnet +1",         --  7, __, __, __
+    legs=gear.Telchine_ENH_legs,      --  2, __, 10, __
+    back=gear.SCH_Adoulin_Regen_Cape, -- 10, __, __, __
+    waist="Embla Sash",               -- __, __, 10,  5
+    -- Base Potency (w/ Light Arts)      64, __, __, __
+
     -- main=gear.Musa_C,              -- 25, __, 20, __
     -- sub="Khonsu",                  -- __, __, __, __
     -- body=gear.Telchine_ENH_body,   --  2, __, 10, 12
     -- hands=gear.Telchine_ENH_hands, --  2, __, 10, __
     -- feet=gear.Telchine_ENH_feet,   --  2, __, 10, __
-    -- back="Bookworm's Cape",        -- 10, __, __, __
-    -- 50 Regen Potency, 0 Regen Potency %, 70 Enh Duration %, 17 Regen Duration
-    -- Regen V (no LA) = 90 hp/tic
-    -- Regen V (w/ LA) = 114 hp/tic
-  }-- 37 Regen Potency, 0 Regen Potency %, 35 Enh Duration %, 5 Regen Duration
+    -- 114 Regen Potency, 0 Regen Potency %, 70 Enh Duration %, 17 Regen Duration
+  } -- 103 Regen Potency, 0 Regen Potency %, 35 Enh Duration %, 5 Regen Duration
 
   sets.midcast.RegenDuration = set_combine(sets.midcast.Regen, {
     head=gear.Telchine_ENH_head,   --  2, __,  9, __
@@ -681,7 +680,7 @@ function init_gear_sets()
     -- 45 Regen Potency, 0 Regen Potency %, 80 Enh Duration %, 32 Regen Duration
     -- Regen V (no LA) = 85 hp/tic
     -- Regen V (w/ LA) = 109 hp/tic
-  })-- 32 Regen Potency, 0 Regen Potency %, 44 Enh Duration %, 20 Regen Duration
+  })-- 98 Regen Potency, 0 Regen Potency %, 44 Enh Duration %, 20 Regen Duration
 
   sets.midcast.Haste = sets.midcast.EnhancingDuration
 
