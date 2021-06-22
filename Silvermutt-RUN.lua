@@ -602,7 +602,7 @@ function init_gear_sets()
     hands=gear.Rawhide_B_hands,   -- __/__,  37 [ 75] {15}
     legs=gear.Carmine_A_legs,     -- __/__,  80 [130] {20}
     feet=gear.Taeon_SIRD_feet,    -- __/__,  89 [ 60] {10}
-    neck="Futhark Torque +1",     --  6/ 6,  25 [ 45] {__}
+    neck="Loricate Torque +1",    --  6/ 6,  __ [___] { 5}
     ear1="Odnowa Earring +1",     --  3/ 5, ___ [110] {__}
     ear2="Ethereal Earring",      -- __/__, ___ [___] {__}
     ring1="Gelatinous Ring +1",   --  7/-1, ___ [135] {__}
@@ -610,7 +610,7 @@ function init_gear_sets()
     back=gear.RUN_HPD_Cape,       -- 10/__,  20 [ 80] {__}
     waist="Audumbla Sash",        --  4/__, ___ [___] {10}
     -- SIRD merits                                    { 6}
-    
+
     -- head="Agwu's Cap",            -- __/__, 107 [ 38] {10}
     -- feet=gear.Taeon_SIRD_feet,    -- __/__,  89 [ 63] {10}
     -- neck="Moonlight Necklace",    -- __/__,  15 [___] {15}
@@ -618,7 +618,7 @@ function init_gear_sets()
     -- ring2="Defending Ring",       -- 10/10, ___ [___] {__}; Use with moonlight cape
     -- back="Moonlight Cape",        --  6/ 6, ___ [275] {__}
     -- 42 PDT / 32 MDT, 467 M.Eva [962 HP] {102 SIRD}
-  } -- 54 PDT / 34 MDT, 513 M.Eva [972 HP] {72 SIRD}
+  } -- 54 PDT / 34 MDT, 488 M.Eva [927 HP] {77 SIRD}
 
   sets.midcast['Enhancing Magic'] = {
     head="Erilaz Galea +1",
