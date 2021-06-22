@@ -677,9 +677,7 @@ function init_gear_sets()
     head=gear.Telchine_ENH_head,   --  2, __,  9, __
     back=gear.SCH_FC_Cape,         -- __, __, __, 15
     -- head=gear.Telchine_ENH_head,   --  2, __, 10, __
-    -- 45 Regen Potency, 0 Regen Potency %, 80 Enh Duration %, 32 Regen Duration
-    -- Regen V (no LA) = 85 hp/tic
-    -- Regen V (w/ LA) = 109 hp/tic
+    -- 109 Regen Potency, 0 Regen Potency %, 80 Enh Duration %, 32 Regen Duration
   })-- 98 Regen Potency, 0 Regen Potency %, 44 Enh Duration %, 20 Regen Duration
 
   sets.midcast.Haste = sets.midcast.EnhancingDuration
