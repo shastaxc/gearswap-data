@@ -115,6 +115,8 @@ gear.Gende_SongFC_feet = {} -- 5 Song Spellcasting Time-, 3 Song Recast Delay-, 
 -- Helios
 
 -- Taeon
+gear.Taeon_SIRD_feet = { name="Taeon Boots", augments={'Mag. Evasion+20','Spell interruption rate down -10%','HP+47',}} -- Max: 20 meva, 10 sird, 50 hp
+
 gear.Taeon_DW_feet = { name="Taeon Boots", augments={'Accuracy+15 Attack+15','"Dual Wield"+5',}}
 
 gear.Taeon_FC_body = { name="Taeon Tabard", augments={'DEF+17','"Fast Cast"+5','Phalanx +3',}}

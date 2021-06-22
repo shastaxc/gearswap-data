@@ -572,7 +572,7 @@ gear.Rawhide_C_body = {}
 gear.Rawhide_D_body = {}
 
 gear.Rawhide_A_hands = {}
-gear.Rawhide_B_hands = {}
+gear.Rawhide_B_hands = { name="Rawhide Gloves", augments={'HP+50','Accuracy+15','Evasion+20',}}
 gear.Rawhide_C_hands = {}
 gear.Rawhide_D_hands = {}
 

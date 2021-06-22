@@ -599,9 +599,9 @@ function init_gear_sets()
     ammo="Staunch Tathlum +1",    --  3/ 3, ___ [___] {11}
     head="Nyame Helm",            --  7/ 7, 123 [ 91] {__}
     body="Nyame Mail",            --  9/ 9, 139 [136] {__}
-    hands="Turms Mittens",        -- __/__,  91 [ 59] {__}
+    hands=gear.Rawhide_B_hands,   -- __/__,  37 [ 75] {15}
     legs=gear.Carmine_A_legs,     -- __/__,  80 [130] {20}
-    feet="Turms Leggings +1",     -- __/__, 147 [ 76] {__}
+    feet=gear.Taeon_SIRD_feet,    -- __/__,  89 [ 60] {10}
     neck="Futhark Torque +1",     --  6/ 6,  25 [ 45] {__}
     ear1="Odnowa Earring +1",     --  3/ 5, ___ [110] {__}
     ear2="Ethereal Earring",      -- __/__, ___ [___] {__}
@@ -612,14 +612,13 @@ function init_gear_sets()
     -- SIRD merits                                    { 6}
     
     -- head="Agwu's Cap",            -- __/__, 107 [ 38] {10}
-    -- hands=gear.Rawhide_B_hands,   -- __/__,  37 [ 75] {15}
     -- feet=gear.Taeon_SIRD_feet,    -- __/__,  89 [ 63] {10}
     -- neck="Moonlight Necklace",    -- __/__,  15 [___] {15}
     -- ear2="Halasz Earring",        -- __/__, ___ [___] { 5}
     -- ring2="Defending Ring",       -- 10/10, ___ [___] {__}; Use with moonlight cape
     -- back="Moonlight Cape",        --  6/ 6, ___ [275] {__}
-    -- 42 PDT / 32 MDT, 399 M.Eva [899 HP] {102 SIRD}
-  } -- 61 PDT / 34 MDT, 652 M.Eva [922 HP] {27 SIRD}
+    -- 42 PDT / 32 MDT, 467 M.Eva [962 HP] {102 SIRD}
+  } -- 54 PDT / 34 MDT, 513 M.Eva [972 HP] {72 SIRD}
 
   sets.midcast['Enhancing Magic'] = {
     head="Erilaz Galea +1",
