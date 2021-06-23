@@ -669,14 +669,15 @@ function init_gear_sets()
     -- sub="Khonsu",                  -- __, __, __, __
     -- body=gear.Telchine_ENH_body,   --  2, __, 10, 12
     -- hands=gear.Telchine_ENH_hands, --  2, __, 10, __
-    -- feet=gear.Telchine_ENH_feet,   --  2, __, 10, __
-    -- 114 Regen Potency, 0 Regen Potency %, 70 Enh Duration %, 17 Regen Duration
+    -- feet="Bunzi's Sabots",         --  7, __, __, __
+    -- 119 Regen Potency, 0 Regen Potency %, 60 Enh Duration %, 17 Regen Duration
   } -- 103 Regen Potency, 0 Regen Potency %, 35 Enh Duration %, 5 Regen Duration
 
   sets.midcast.RegenDuration = set_combine(sets.midcast.Regen, {
     head=gear.Telchine_ENH_head,   --  2, __,  9, __
     back=gear.SCH_FC_Cape,         -- __, __, __, 15
     -- head=gear.Telchine_ENH_head,   --  2, __, 10, __
+    -- feet=gear.Telchine_ENH_feet,   --  2, __, 10, __
     -- 109 Regen Potency, 0 Regen Potency %, 80 Enh Duration %, 32 Regen Duration
   })-- 98 Regen Potency, 0 Regen Potency %, 44 Enh Duration %, 20 Regen Duration
 
