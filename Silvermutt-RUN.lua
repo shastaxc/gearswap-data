@@ -604,7 +604,7 @@ function init_gear_sets()
     feet=gear.Taeon_SIRD_feet,    -- __/__,  89 [ 60] {10}
     neck="Loricate Torque +1",    --  6/ 6,  __ [___] { 5}
     ear1="Odnowa Earring +1",     --  3/ 5, ___ [110] {__}
-    ear2="Ethereal Earring",      -- __/__, ___ [___] {__}
+    ear2="Halasz Earring",        -- __/__, ___ [___] { 5}
     ring1="Gelatinous Ring +1",   --  7/-1, ___ [135] {__}
     ring2="Moonlight Ring",       --  5/ 5, ___ [110] {__}
     back=gear.RUN_HPD_Cape,       -- 10/__,  20 [ 80] {__}
@@ -613,11 +613,10 @@ function init_gear_sets()
 
     -- feet=gear.Taeon_SIRD_feet,    -- __/__,  89 [ 63] {10}
     -- neck="Moonlight Necklace",    -- __/__,  15 [___] {15}
-    -- ear2="Halasz Earring",        -- __/__, ___ [___] { 5}
     -- ring2="Defending Ring",       -- 10/10, ___ [___] {__}; Use with moonlight cape
     -- back="Moonlight Cape",        --  6/ 6, ___ [275] {__}
     -- 42 PDT / 32 MDT, 467 M.Eva [962 HP] {102 SIRD}
-  } -- 47 PDT / 27 MDT, 472 M.Eva [874 HP] {87 SIRD}
+  } -- 47 PDT / 27 MDT, 472 M.Eva [874 HP] {92 SIRD}
 
   sets.midcast['Enhancing Magic'] = {
     head="Erilaz Galea +1",
