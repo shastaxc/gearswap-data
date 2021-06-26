@@ -1565,23 +1565,15 @@ end
 
 -- Called for direct player commands.
 function job_self_command(cmdParams, eventArgs)
+  silibs.self_command(cmdParams, eventArgs)
   gearinfo(cmdParams, eventArgs)
-
+  
   if cmdParams[1]:lower() == 'scholar' then
     handle_strategems(cmdParams)
     eventArgs.handled = true
   elseif cmdParams[1]:lower() == 'nuke' then
     handle_nuking(cmdParams)
     eventArgs.handled = true
-  elseif cmdParams[1]:lower() == 'usekey' then
-    send_command('cancel Invisible; cancel Hide; cancel Gestation; cancel Camouflage')
-    if player.target.type ~= 'NONE' then
-      if player.target.name == 'Sturdy Pyxis' then
-        send_command('@input /item "Forbidden Key" <t>')
-      end
-    end
-  elseif cmdParams[1]:lower() == 'faceaway' then
-    windower.ffxi.turn(player.facing - math.pi);
   end
 end
 
