@@ -1417,50 +1417,45 @@ function determine_haste_group()
 end
 
 function job_self_command(cmdParams, eventArgs)
-  if cmdParams[1] == 'step' then
-    if cmdParams[2] == 't' then
-      state.IgnoreTargetting:set()
-    end
+  silibs.self_command(cmdParams, eventArgs)
 
-    local doStep = ''
-    if state.UseAltStep.value == true then
-      doStep = state[state.CurrentStep.current..'Step'].current
-      state.CurrentStep:cycle()
-    else
-      doStep = state.MainStep.current
-    end
-
-    send_command('@input /ja "'..doStep..'" <t>')
-  elseif cmdParams[1]:lower() == 'usekey' then
-    send_command('cancel Invisible; cancel Hide; cancel Gestation; cancel Camouflage')
-    if player.target.type ~= 'NONE' then
-      if player.target.name == 'Sturdy Pyxis' then
-        send_command('@input /item "Forbidden Key" <t>')
+  if not eventArgs.handled then
+    if cmdParams[1] == 'step' then
+      if cmdParams[2] == 't' then
+        state.IgnoreTargetting:set()
       end
-    end
-  elseif cmdParams[1]:lower() == 'faceaway' then
-    windower.ffxi.turn(player.facing - math.pi);
-  elseif cmdParams[1]:lower() == 'toyweapon' then
-    if cmdParams[2]:lower() == 'cycle' then
-      cycle_toy_weapons('forward')
-    elseif cmdParams[2]:lower() == 'cycleback' then
-      cycle_toy_weapons('back')
-    elseif cmdParams[2]:lower() == 'reset' then
-      cycle_toy_weapons('reset')
-    end
-  elseif cmdParams[1]:lower() == 'weaponset' then
-    if cmdParams[2]:lower() == 'cycle' then
-      cycle_weapons('forward')
-    elseif cmdParams[2]:lower() == 'cycleback' then
-      cycle_weapons('back')
-    elseif cmdParams[2]:lower() == 'current' then
-      cycle_weapons('current')
-    end
-  elseif cmdParams[1]:lower() == 'test' then
-    test()
-  end
 
-  gearinfo(cmdParams, eventArgs)
+      local doStep = ''
+      if state.UseAltStep.value == true then
+        doStep = state[state.CurrentStep.current..'Step'].current
+        state.CurrentStep:cycle()
+      else
+        doStep = state.MainStep.current
+      end
+
+      send_command('@input /ja "'..doStep..'" <t>')
+    elseif cmdParams[1] == 'toyweapon' then
+      if cmdParams[2] == 'cycle' then
+        cycle_toy_weapons('forward')
+      elseif cmdParams[2] == 'cycleback' then
+        cycle_toy_weapons('back')
+      elseif cmdParams[2] == 'reset' then
+        cycle_toy_weapons('reset')
+      end
+    elseif cmdParams[1] == 'weaponset' then
+      if cmdParams[2] == 'cycle' then
+        cycle_weapons('forward')
+      elseif cmdParams[2] == 'cycleback' then
+        cycle_weapons('back')
+      elseif cmdParams[2] == 'current' then
+        cycle_weapons('current')
+      end
+    elseif cmdParams[1] == 'test' then
+      test()
+    end
+
+    gearinfo(cmdParams, eventArgs)
+  end
 end
 
 function gearinfo(cmdParams, eventArgs)

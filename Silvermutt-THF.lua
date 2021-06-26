@@ -1339,23 +1339,10 @@ function determine_haste_group()
 end
 
 function job_self_command(cmdParams, eventArgs)
+  silibs.self_command(cmdParams, eventArgs)
+  
   if cmdParams[1] == 'step' then
     send_command('@input /ja "'..state.MainStep.Current..'" <t>')
-  elseif cmdParams[1]:lower() == 'usekey' then
-    send_command('cancel Invisible; cancel Hide; cancel Gestation; cancel Camouflage')
-    if player.target.type ~= 'NONE' then
-      if player.target.name == 'Sturdy Pyxis' then
-        send_command('@input /item "Forbidden Key" <t>')
-      elseif silibs.has_item('Inventory','Skeleton Key') then
-        send_command('@input /item "Skeleton Key" <t>')
-      elseif silibs.has_item('Inventory','Living Key') then
-        send_command('@input /item "Living Key" <t>')
-      elseif silibs.has_item('Inventory','Thief\'s Tools') then
-        send_command('@input /item "Thief\'s Tools" <t>')
-      end
-    end
-  elseif cmdParams[1]:lower() == 'faceaway' then
-    windower.ffxi.turn(player.facing - math.pi);
   elseif cmdParams[1]:lower() == 'toyweapon' then
     if cmdParams[2]:lower() == 'cycle' then
       cycle_toy_weapons('forward')
