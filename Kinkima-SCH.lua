@@ -1021,7 +1021,7 @@ function init_gear_sets()
     sub="Genmei Shield",            -- 10/__, ___
     ammo="Staunch Tathlum",         --  2/ 2, ___; Resist Status+10
     head=gear.Vanya_B_head,         -- __/ 5,  75
-    body=gear.Vanya_B_body,         --  1/ 3,  80
+    body="Shamash Robe",            -- 10/__, 106; Resist Silence+90
     hands=gear.Vanya_B_hands,       -- __/ 3,  37
     legs=gear.Vanya_B_legs,         -- __/ 3, 107
     feet="Pinga Pumps",             -- __/__, 137
@@ -1047,7 +1047,7 @@ function init_gear_sets()
     -- sub="Khonsu",                --  6/ 6, ___
     -- ammo="Staunch Tathlum +1",   --  3/ 3, ___; Resist Status+11
     -- head="Volte Cap",            -- __/__, 102; Resist Status+10
-    -- body="Pinga Tunic +1",       -- __/__, 128
+    -- body="Shamash Robe",         -- 10/__, 106; Resist Silence+90
     -- hands="Volte Bracers",       -- __/__, 102; Resist Status+10
     -- legs="Pinga Pants +1",       -- __/__, 147
     -- feet="Pinga Pumps +1",       -- __/__, 147
@@ -1058,8 +1058,8 @@ function init_gear_sets()
     -- ring2="Defending Ring",      -- 10/10, ___
     -- back="Archon Cape",          -- __/__, ___
     -- waist="Carrier's Sash",      -- __/__, ___; Ele Resist+15
-    -- 52 PDT / 47 MDT, 626 M.Eva
-  } -- 33 PDT / 34 MDT, 436 M.Eva
+    -- 52 PDT / 47 MDT, 614 M.Eva
+  } -- 42 PDT / 31 MDT, 462 M.Eva
 
   sets.defense.PDT = sets.HeavyDef
   sets.defense.MDT = sets.HeavyDef
@@ -1094,7 +1094,7 @@ function init_gear_sets()
   sets.passive_refresh = {
     main="Bolelabunga", --1
     head="Befouled Crown", --1
-    body="Jhakri Robe +2", --4
+    body="Shamash Robe", --3
     legs="Assiduity Pants +1",
     -- main="Contemplator +1", --2
     -- sub="Oneiros Grip", --1; when mp<70%
