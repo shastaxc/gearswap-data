@@ -127,7 +127,7 @@ function job_setup()
   elemental_ws = S{"Aeolian Edge", "Leaden Salute", "Wildfire"}
   no_shoot_ammo = S{"Animikii Bullet", "Hauksbok Bullet"}
   no_swap_waists = S{"Era. Bul. Pouch", "Dev. Bul. Pouch", "Chr. Bul. Pouch", "Quelling B. Quiver",
-      "Yoichi's Quiver", "Artemis's Quiver", "Chrono Quiver"}
+      "Yoichi's Quiver", "Artemis's Quiver", "Chrono Quiver", "Liv. Bul. Pouch"}
 
   -- For th_action_check():
   -- JA IDs for actions that always have TH: Provoke, Animated Flourish
@@ -663,7 +663,6 @@ function init_gear_sets()
   })
 
   sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS['Wildfire'], {
-    ammo=gear.QDbullet,
     ear2="Moonshade Earring",
   })
   sets.precast.WS['Aeolian Edge'].MaxTP = set_combine(sets.precast.WS['Aeolian Edge'], {
