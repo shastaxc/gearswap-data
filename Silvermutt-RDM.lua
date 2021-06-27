@@ -886,6 +886,7 @@ function init_gear_sets()
 
   sets.midcast['Dark Magic'] = {
     ear1="Malignance Earring",
+    neck="Erra Pendant",
     -- main="Rubicundity",
     -- sub="Ammurapi Shield",
     -- ammo="Pemphredo Tathlum",
@@ -894,7 +895,6 @@ function init_gear_sets()
     -- hands="Kaykaus Cuffs +1",
     -- legs="Ea Slops +1",
     -- feet="Merlinic Crackows",
-    -- neck="Erra Pendant",
     -- ear2="Mani Earring",
     -- ring1={name="Stikini Ring +1", bag="wardrobe3"},
     -- ring2="Evanescence Ring",
@@ -948,19 +948,19 @@ function init_gear_sets()
   }
 
   sets.midcast['Elemental Magic'].Seidr = set_combine(sets.midcast['Elemental Magic'], {
+    neck="Erra Pendant",
     -- body="Seidr Cotehardie",
     -- legs="Merlinic Shalwar",
     -- feet="Merlinic Crackows",
-    -- neck="Erra Pendant",
     -- waist="Acuity Belt +1",
   })
 
   sets.midcast['Elemental Magic'].Resistant = set_combine(sets.midcast['Elemental Magic'], {
+    neck="Erra Pendant",
     -- range="Ullr",
     -- ammo=empty,
     -- legs="Merlinic Shalwar",
     -- feet="Merlinic Crackows",
-    -- neck="Erra Pendant",
     -- waist="Sacro Cord",
   })
 
