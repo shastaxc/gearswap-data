@@ -450,7 +450,7 @@ function init_gear_sets()
   -- Polearm sets use a crit build since you should be using Shining One
   -- Impulse Drive - 100% STR
   sets.precast.WS['Impulse Drive'] = set_combine(sets.precast.WS, {
-    ammo="Aurgelmir Orb +1",
+    ammo="Aurgelmir Orb",
     head="Flamma Zucchetto +2",
     body="Kendatsuba Samue +1",
     hands=gear.Ryuo_A_hands,
@@ -463,6 +463,7 @@ function init_gear_sets()
     ring2="Niqmaddu Ring",
     back=gear.SAM_STR_WSD_Cape,
     waist="Fotia Belt",
+    -- ammo="Aurgelmir Orb +1",
     -- body="Dagon Breast.",
   })
   sets.precast.WS["Impulse Drive"].MaxTP = set_combine(sets.precast.WS["Impulse Drive"], {
