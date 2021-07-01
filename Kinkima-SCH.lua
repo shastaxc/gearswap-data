@@ -1017,8 +1017,8 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.HeavyDef = {
-    main="Bolelabunga",
-    sub="Genmei Shield",            -- 10/__, ___
+    main="Malignance Pole",         -- 20/20, ___
+    sub=empty,                      -- __/__, ___
     ammo="Staunch Tathlum",         --  2/ 2, ___; Resist Status+10
     head=gear.Vanya_B_head,         -- __/ 5,  75
     body="Shamash Robe",            -- 10/__, 106; Resist Silence+90
@@ -1031,7 +1031,6 @@ function init_gear_sets()
     ring2="Defending Ring",         -- 10/10, ___
     back="Cheviot Cape",            --  5/__, ___
     waist="Carrier's Sash",         -- __/__, ___; Ele Resist+15
-    -- main="Malignance Pole",      -- 20/20, ___
     -- sub="Khonsu",                --  6/ 6, ___
     -- ammo="Staunch Tathlum +1",   --  3/ 3, ___; Resist Status+11
     -- head="Pinga Crown +1",       -- __/__, 109
@@ -1059,7 +1058,7 @@ function init_gear_sets()
     -- back="Archon Cape",          -- __/__, ___
     -- waist="Carrier's Sash",      -- __/__, ___; Ele Resist+15
     -- 52 PDT / 47 MDT, 614 M.Eva
-  } -- 42 PDT / 31 MDT, 462 M.Eva
+  } -- 52 PDT / 31 MDT, 462 M.Eva
 
   sets.defense.PDT = sets.HeavyDef
   sets.defense.MDT = sets.HeavyDef
@@ -1097,6 +1096,7 @@ function init_gear_sets()
     body="Shamash Robe", --3
     legs="Assiduity Pants +1",
     -- main="Contemplator +1", --2
+    -- main="Mpaca's Staff", --2
     -- sub="Oneiros Grip", --1; when mp<70%
     -- hands="Volte Gloves", --1
     -- feet="Volte Gaiters", --1
