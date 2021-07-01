@@ -188,7 +188,7 @@ function job_setup()
   send_command('bind !` input /ja "Bolter\'s Roll" <me>')
   send_command('bind !e input /ja "Random Deal" <me>')
   send_command('bind ^numlock input /ja "Triple Shot" <me>')
-  send_command('bind numpad0 input /ra <t>')
+  send_command('bind %numpad0 input /ra <t>')
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -461,6 +461,7 @@ function init_gear_sets()
     ring2="Shiva Ring +1", --3
     back=gear.COR_WS1_Cape, --0
     waist="Eschan Stone", --7
+    -- hands=gear.Nyame_B_hands, --R11+
     -- neck="Comm. Charm +2",
     -- ring2="Epaminondas's Ring",
     -- waist="Skrymir Cord +1",
@@ -906,6 +907,7 @@ function init_gear_sets()
     legs="Malignance Tights",     --  7/ 7, 150
     feet="Malignance Boots",      --  4/ 4, 150
     ring2="Defending Ring",       -- 10/10, ___
+    -- head="Malignance Chapeau",
   } -- 42 PDT / 42 MDT, 674 MEVA
 
   sets.HeavyDef = {
@@ -2126,4 +2128,8 @@ function select_default_macro_book()
   else
     set_macro_page(1, 11)
   end
+end
+
+function test()
+  print('mob_list: '..inspect(windower.ffxi.get_mob_list('Nomad Moogle')))
 end

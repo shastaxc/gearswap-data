@@ -530,6 +530,8 @@ function init_gear_sets()
     back=gear.DNC_WS1_Cape,
     waist="Grunfeld Rope",
     -- ammo="Aurgelmir Orb +1",
+    -- head=gear.Nyame_B_head, --R10+
+    -- feet=gear.Nyame_B_feet, --R10+
     -- waist="Kentarch Belt +1", -- Aug it first
   })
   sets.precast.WS["Rudra's Storm"].MaxTP = set_combine(sets.precast.WS["Rudra's Storm"], {

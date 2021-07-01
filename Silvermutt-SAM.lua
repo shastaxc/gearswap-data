@@ -247,9 +247,9 @@ function init_gear_sets()
     back=gear.SAM_STR_WSD_Cape,
     waist="Fotia Belt",
     -- body="Sakonji Domaru +3",
-    -- hands=gear.Valorous_STR_WSD_hands, -- Nyame if augmented
+    -- hands=gear.Nyame_B_hands, -- R10+
     -- legs="Wakido Haidate +3",
-    -- feet=gear.Valorous_STR_WSD_feet, -- Nyame if augmented
+    -- feet=gear.Nyame_B_feet, -- R10+
     -- ring2="Epaminondas's Ring",
   } -- Base WS set
 

@@ -293,7 +293,6 @@ function init_gear_sets()
     ring2="Shiva Ring +1", --3 [0]
     waist="Eschan Stone", --7 [20]
     back="Argochampsa Mantle", --12 [0]
-    -- hands=gear.Nyame_C_hands -- 30+ [91]; Rank 7+
   } -- 241 MAB [397 HP, ??? w/ Enmity]
 
   sets.precast.JA['Lunge'] = set_combine(sets.Enmity, sets.MAB)

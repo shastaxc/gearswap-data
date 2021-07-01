@@ -528,7 +528,7 @@ function init_gear_sets()
     head=empty,
     body="Cohort Cloak +1", --100
     hands=gear.Carmine_D_hands, --42
-    legs="Arcadian Braccae +3",
+    legs=gear.Nyame_B_legs,
     feet=gear.Herc_MAB_feet, --50
     neck="Scout's Gorget +1",
     ear1="Friomisi Earring", --10
@@ -540,7 +540,6 @@ function init_gear_sets()
     -- head=gear.Nyame_B_head, -- Rank 15
     -- body=gear.Nyame_B_body, -- Rank 15
     -- hands=gear.Nyame_B_hands, -- Rank 15
-    -- legs=gear.Nyame_B_legs, -- Rank 15
     -- feet=gear.Nyame_B_feet, -- Rank 15
     -- waist="Orpheus's Sash",
   } -- AGI / MAB
