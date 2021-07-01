@@ -632,7 +632,7 @@ function init_gear_sets()
     body=gear.Herc_WSD_body,      -- 28, 20, 20, 35, 10, __, ___
     hands="Meghanada Gloves +2",  -- 23, 34, 43, 47,  7, __, ___
     legs="Arcadian Braccae +3",   -- 39, 27, __, __, 10, __, ___
-    feet=gear.Herc_WSD_feet,      -- 16, 11, 13, 13,  6, __, ___
+    feet=gear.Nyame_B_feet,       -- 23, 26, 55, 40,  8, __, ___
     neck="Scout's Gorget +1",     -- __, __, __, __, __,  8, ___
     ear1="Ishvara Earring",       -- __, __, __, __,  2, __, ___
     ear2="Moonshade Earring",     -- __, __, __,  4, __, __, 250
@@ -644,11 +644,10 @@ function init_gear_sets()
     -- body="Ikenga's Vest",      -- 33, 25, __, __, __,  7, 170
     -- hands=gear.Nyame_B_hands,  -- 17, 40, 55, 40,  8, __, ___
     -- legs=gear.Nyame_B_legs,    -- 43, 32, 55, 40,  9, __, ___
-    -- feet=gear.Nyame_B_feet,    -- 23, 26, 55, 40,  8, __, ___
     -- neck="Scout's Gorget +2",  -- __, __, __, __, __, 10, ___
     -- ring2="Epaminondas's Ring",-- __, __, __, __,  5, __, ___
     -- 197 STR, 149 MND, 275 Attack, 184 Accuracy, 50 WSD, 17 PDL, 420 TP Bonus
-  } -- 194 STR, 122 MND, 156 Attack, 119 Accuracy, 55 WSD, 8 PDL, 250 TP Bonus
+  } -- 201 STR, 137 MND, 198 Attack, 146 Accuracy, 57 WSD, 8 PDL, 250 TP Bonus
   sets.precast.WS['Savage Blade'].MaxTP = set_combine(sets.precast.WS['Savage Blade'], {
     ear2="Telos Earring",
   })

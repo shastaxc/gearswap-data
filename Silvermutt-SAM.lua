@@ -237,7 +237,7 @@ function init_gear_sets()
     ammo="Knobkierrie",
     head="Mpaca's cap",
     body="Sakonji Domaru +1",
-    hands="Flamma Manopolas +2",
+    hands=gear.Nyame_B_hands,
     legs="Wakido Haidate +1",
     feet="Flamma Gambieras +2",
     neck="Samurai's Nodowa +2",
@@ -247,9 +247,7 @@ function init_gear_sets()
     back=gear.SAM_STR_WSD_Cape,
     waist="Fotia Belt",
     -- body="Sakonji Domaru +3",
-    -- hands=gear.Nyame_B_hands, -- R10+
     -- legs="Wakido Haidate +3",
-    -- feet=gear.Nyame_B_feet, -- R10+
     -- ring2="Epaminondas's Ring",
   } -- Base WS set
 
@@ -374,9 +372,9 @@ function init_gear_sets()
   sets.precast.WS['Tachi: Shoha'] = set_combine(sets.precast.WS, {
     ammo="Knobkierrie",
     head="Mpaca's Cap",
-    hands="Flamma Manopolas +2",
+    hands=gear.Nyame_B_hands,
     legs="Wakido Haidate +1",
-    feet="Flamma Gambieras +2",
+    feet=gear.Nyame_B_feet,
     neck="Samurai's Nodowa +2",
     ear1="Thrud Earring",
     ear2="Moonshade Earring",
@@ -385,9 +383,7 @@ function init_gear_sets()
     back=gear.SAM_STR_WSD_Cape,
     waist="Fotia Belt",
     -- body="Sakonji Domaru +3",
-    -- hands="Nyame Gauntlets", --R7+
     -- legs="Wakido Haidate +3",
-    -- feet="Nyame Sollerets", --R7+
   })
   sets.precast.WS["Tachi: Shoha"].MaxTP = set_combine(sets.precast.WS["Tachi: Shoha"], {
     ear2="Brutal Earring",
@@ -606,8 +602,8 @@ function init_gear_sets()
     head="Flamma Zucchetto +2",
     body="Kasuga Domaru +1",
     hands="Wakido Kote +2",
-    legs="Mpaca's Hose",
-    feet="Mpaca's Boots",
+    legs="Kendatsuba Hakama +1",
+    feet="Kendatsuba Sune-Ate +1",
     neck="Samurai's Nodowa +2",
     ear1="Telos Earring",
     ear2="Cessance Earring",
@@ -617,17 +613,19 @@ function init_gear_sets()
     waist="Ioskeha Belt +1",
     -- ammo="Aurgelmir Orb +1",
     -- hands="Wakido Kote +3",
+    -- feet=gear.Ryuo_A_feet,
     -- ear2="Dedition Earring",
   }
   sets.engaged.LowAcc = set_combine(sets.engaged, {
     body="Ken. Samue +1",
-    legs="Ken. Hakama +1",
+    feet="Flamma Gambieras +2",
   })
   sets.engaged.MidAcc = set_combine(sets.engaged.LowAcc, {
     ear1="Cessance Earring",
     ear2="Brutal Earring",
   })
   sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
+    feet="Kendatsuba Sune-Ate +1",
     ear1="Cessance Earring",
     ear2="Telos Earring",
   })

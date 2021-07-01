@@ -516,11 +516,11 @@ function init_gear_sets()
   -- 80% DEX
   sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {
     ammo="Aurgelmir Orb",
-    head=gear.Herc_WSD_head,
+    head=gear.Nyame_B_head,
     body=gear.Herc_WSD_body,
     hands="Maxixi Bangles +3",
     legs="Horos Tights +3",
-    feet=gear.Herc_WSD_feet,
+    feet=gear.Nyame_B_feet,
     neck="Etoile Gorget +2",
     ear1="Odr Earring",
     ear2="Moonshade Earring",
@@ -529,8 +529,6 @@ function init_gear_sets()
     back=gear.DNC_WS1_Cape,
     waist="Grunfeld Rope",
     -- ammo="Aurgelmir Orb +1",
-    -- head=gear.Nyame_B_head, --R10+
-    -- feet=gear.Nyame_B_feet, --R10+
     -- waist="Kentarch Belt +1", -- Aug it first
   })
   sets.precast.WS["Rudra's Storm"].MaxTP = set_combine(sets.precast.WS["Rudra's Storm"], {

@@ -449,10 +449,10 @@ function init_gear_sets()
 
   sets.precast.WS['Wildfire'] = {
     ammo=gear.MAbullet,
-    head="Nyame Helm", --30
+    head=gear.Nyame_B_head, --30
     body="Lanun Frac +3", --61
     hands=gear.Carmine_D_hands, --42
-    legs="Nyame Flanchard", --30
+    legs=gear.Nyame_B_legs, --30
     feet="Lanun Bottes +3", --55
     neck="Commodore Charm +1", --6
     ear1="Friomisi Earring", --10
@@ -559,7 +559,7 @@ function init_gear_sets()
   })
 
   sets.precast.WS['Savage Blade'] = {
-    head=gear.Herc_WSD_head,      -- 22, 16, 15, __,  5, __, ___
+    head=gear.Nyame_B_head,       -- 26, 26, 55, 40,  8, __, ___
     body=gear.Herc_WSD_body,      -- 28, 20, 20, 35, 10, __, ___
     hands="Meghanada Gloves +2",  -- 23, 34, 43, 47,  7, __, ___
     legs=gear.Nyame_B_legs,       -- 43, 32, 55, 40,  9, __, ___
@@ -571,13 +571,12 @@ function init_gear_sets()
     ring2="Rufescent Ring",       --  6,  6, __,  7, __, __, ___
     back=gear.COR_WS2_Cape,       -- 30, __, 20, 20, 10, __, ___
     waist="Sailfi Belt +1",       -- 15, __, 15, __, __, __, ___
-    -- head=gear.Nyame_B_head,    -- 26, 26, 55, 40,  8, __, ___
     -- body="Ikenga's Vest",      -- 33, 25, __, __, __,  7, 170
     -- hands=gear.Nyame_B_hands,  -- 17, 40, 55, 40,  8, __, ___
     -- feet=gear.Nyame_B_feet,    -- 23, 26, 55, 40,  8, __, ___
     -- ring2="Epaminondas's Ring",-- __, __, __, __,  5, __, ___
     -- 203 STR, 149 MND, 285 Attack, 184 Accuracy, 50 WSD, 7 PDL, 420 TP Bonus
-  } -- 205 STR, 130 MND, 198 Attack, 153 Accuracy, 53 WSD, 0 PDL, 250 TP Bonus
+  } -- 209 STR, 140 MND, 238 Attack, 193 Accuracy, 56 WSD, 0 PDL, 250 TP Bonus
   sets.precast.WS['Savage Blade'].MaxTP = set_combine(sets.precast.WS['Savage Blade'], {
     ear2="Telos Earring",
   })
