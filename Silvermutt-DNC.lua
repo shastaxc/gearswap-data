@@ -110,7 +110,6 @@ function job_setup()
   state.ClosedPosition = M(false, 'Closed Position')
 
   state.CurrentStep = M{['description']='Current Step', 'Main', 'Alt'}
---  state.SkillchainPending = M(false, 'Skillchain Pending')
 
   state.CP = M(false, "Capacity Points Mode")
 
@@ -150,7 +149,7 @@ function job_setup()
 
   send_command('bind ^numpad+ input /ja "Climactic Flourish" <me>')
   send_command('bind ^numpadenter input /ja "Building Flourish" <me>')
-  send_command('bind numpad0 gs c step t')
+  send_command('bind %numpad0 gs c step t')
 end
 
 -- Executes on first load, main job change, **and sub job change**
@@ -216,7 +215,7 @@ function job_file_unload()
   send_command('unbind ^numpadenter')
   send_command('unbind ^numpad0')
   send_command('unbind ^numpad.')
-  send_command('unbind numpad0')
+  send_command('unbind %numpad0')
 end
 
 
@@ -581,9 +580,6 @@ function init_gear_sets()
   sets.precast.WS['Aeolian Edge'].HighAcc = sets.precast.WS['Aeolian Edge']
   sets.precast.WS['Aeolian Edge'].HighAccMaxTP = sets.precast.WS['Aeolian Edge'].MaxTP
 
-  sets.precast.Skillchain = {
-    hands="Charis Bangles +2",
-  }
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Midcast Sets ------------------------------------------
@@ -628,9 +624,8 @@ function init_gear_sets()
     ring2="Archon Ring",        -- __/__, ___; Occ. blocks magic dmg
     back=gear.DNC_TP_DW_Cape,   -- 10/__, ___
     waist="Engraved Belt",      -- __/__, ___
-    -- 10 PDT from JSE cape
     -- head="Malignance Chapeau", --  6/ 6, 123
-  } --60 PDT/42 MDT, 697 MEVA
+  } --50 PDT/42 MDT, 697 MEVA
 
   sets.defense.PDT = sets.HeavyDef
   sets.defense.MDT = sets.HeavyDef

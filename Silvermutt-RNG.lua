@@ -183,7 +183,7 @@ function job_setup()
   send_command('bind !e input /ja "Hover Shot" <me>')
   send_command('bind !` input /ja "Scavenge" <me>')
   send_command('bind ^numlock input /ja "Double Shot" <me>')
-  send_command('bind numpad0 input /ra <t>')
+  send_command('bind %numpad0 input /ra <t>')
 end
 
 -- Executes on first load, main job change, **and sub job change**
@@ -251,7 +251,7 @@ function user_unload()
   send_command('unbind ^numpad-')
   send_command('unbind ^numpad0')
   send_command('unbind ^numpad.')
-  send_command('unbind numpad0')
+  send_command('unbind %numpad0')
 end
 
 

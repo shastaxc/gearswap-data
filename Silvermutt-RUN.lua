@@ -137,7 +137,7 @@ function job_setup()
 
   send_command('bind @d gs c toggle DeathResist')
 
-  send_command('bind numpad0 input //gs c rune')
+  send_command('bind %numpad0 input //gs c rune')
   send_command('bind !` input /ja "Vivacious Pulse" <me>')
   send_command('bind ^` input /ma "Temper" <me>')
   send_command('bind ^- gs c cycleback Runes')
@@ -232,7 +232,7 @@ function job_file_unload()
   send_command('unbind ^numpad-')
   send_command('unbind ^numpad0')
   send_command('unbind ^numpad.')
-  send_command('unbind numpad0')
+  send_command('unbind %numpad0')
 end
 
 -- Define sets and vars used by this job file.
