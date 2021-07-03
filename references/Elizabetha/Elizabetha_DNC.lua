@@ -68,7 +68,7 @@
 -------------------------------------------------------------------------------------------------------------------
 -- Setup functions for this job.  Generally should not be modified.
 -------------------------------------------------------------------------------------------------------------------
-
+--silibs = include('SilverLibs')
 -- Initialization function for this job file.
 function get_sets()
     mote_include_version = 2
@@ -108,10 +108,11 @@ end
 
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
+
     state.OffenseMode:options('Normal', 'STP') -- 'LowAcc', 'MidAcc', 'HighAcc', 
     state.HybridMode:options('Normal', 'DT', 'DTMDT')
     state.WeaponskillMode:options('Normal', 'Acc')
-    state.IdleMode:options('Normal', 'DT', 'None1')
+    state.IdleMode:options('Normal', 'DT')
 
     -- Additional local binds
     include('Global-Binds.lua') -- OK to remove this line
@@ -223,7 +224,7 @@ function init_gear_sets()
     -- Enmity set
     sets.Enmity = {
     ammo="Sapience Orb",
-    head={ name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20',}},
+    head="Halitus helm",
     body="Emet Harness +1",
     hands={ name="Horos Bangles +3", augments={'Enhances "Fan Dance" effect',}},
     legs="Nyame Flanchard",
@@ -250,10 +251,10 @@ function init_gear_sets()
     feet="Maxixi Toe Shoes +2",
     neck={ name="Etoile Gorget +2", augments={'Path: A',}},
     waist="Aristo Belt",
-    left_ear="Etiolation Earring",
-    right_ear="Enchntr. Earring +1",
+    left_ear="Odnowa Earring",
+    right_ear="Odnowa Earring +1",
     left_ring={ name="Gelatinous Ring +1", augments={'Path: A',}},
-    right_ring="Eihwaz Ring",
+    right_ring="Moonbeam Ring",
     back={ name="Toetapper Mantle", augments={'"Store TP"+5','"Dual Wield"+2','"Rev. Flourish"+23','Weapon skill damage +2%',}},
         } -- Waltz Potency/CHR
 
@@ -534,12 +535,6 @@ function init_gear_sets()
     back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}},
         }
 
-    sets.engaged.LowAcc = set_combine(sets.engaged, {})
-
-    sets.engaged.MidAcc = set_combine(sets.engaged.LowAcc, {})
-
-    sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {})
-
     sets.engaged.STP = {
 	ammo="Yamarang",
     head="Maculele Tiara +1",
@@ -576,12 +571,6 @@ function init_gear_sets()
     back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}},
         } -- 24% -- 41%
 
-    sets.engaged.DW.LowAcc = set_combine(sets.engaged.DW, {})
-
-    sets.engaged.DW.MidAcc = set_combine(sets.engaged.DW.LowAcc, {})
-
-    sets.engaged.DW.HighAcc = set_combine(sets.engaged.DW.MidAcc, {})
-
     sets.engaged.DW.STP = {
 	ammo="Yamarang",
     head="Maculele Tiara +1",
@@ -614,44 +603,20 @@ function init_gear_sets()
     right_ring="Epona's Ring",
     back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}},} --24 -- 32%
 
-    sets.engaged.DW.LowAcc.LowHaste = set_combine(sets.engaged.DW.LowHaste, {})
-
-    sets.engaged.DW.MidAcc.LowHaste = set_combine(sets.engaged.DW.LowAcc.LowHaste, {})
-
-    sets.engaged.DW.HighAcc.LowHaste = set_combine(sets.engaged.DW.MidAcc.LowHaste, {})
-
     sets.engaged.DW.STP.LowHaste = set_combine(sets.engaged.DW.LowHaste, {})
 
     -- 30% Magic Haste (56% DW to cap)
     sets.engaged.DW.MidHaste = sets.engaged.DW.LowHaste --24 -- 22%
-
-    sets.engaged.DW.LowAcc.MidHaste = set_combine(sets.engaged.DW.MidHaste, {})
-
-    sets.engaged.DW.MidAcc.MidHaste = set_combine(sets.engaged.DW.LowAcc.MidHaste, {})
-
-    sets.engaged.DW.HighAcc.MidHaste = set_combine(sets.engaged.DW.MidAcc.MidHaste, {})
 
     sets.engaged.DW.STP.MidHaste = set_combine(sets.engaged.DW.MidHaste, {})
 
     -- 35% Magic Haste (51% DW to cap)
     sets.engaged.DW.HighHaste = sets.engaged.DW
 
-    sets.engaged.DW.LowAcc.HighHaste = set_combine(sets.engaged.DW.HighHaste, {})
-
-    sets.engaged.DW.MidAcc.HighHaste = set_combine(sets.engaged.DW.LowAcc.HighHaste, {})
-
-    sets.engaged.DW.HighAcc.HighHaste = set_combine(sets.engaged.DW.MidAcc.HighHaste, {})
-
     sets.engaged.DW.STP.HighHaste = set_combine(sets.engaged.DW.HighHaste, {})
 
     -- 45% Magic Haste (36% DW to cap)
     sets.engaged.DW.MaxHaste = sets.engaged
-
-    sets.engaged.DW.LowAcc.MaxHaste = set_combine(sets.engaged.DW.MaxHaste, {})
-
-    sets.engaged.DW.MidAcc.MaxHaste = set_combine(sets.engaged.DW.LowAcc.MaxHaste, {})
-
-    sets.engaged.DW.HighAcc.MaxHaste = set_combine(sets.engaged.DW.MidAcc.MaxHaste, {})
 
     sets.engaged.DW.STP.MaxHaste = set_combine(sets.engaged.DW.MaxHaste, {})
 
@@ -700,41 +665,33 @@ function init_gear_sets()
     back={ name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10','Damage taken-5%',}},
 	}
 	
-    sets.engaged.LowAcc.DT = set_combine(sets.engaged.LowAcc, sets.engaged.Hybrid)
-    sets.engaged.MidAcc.DT = set_combine(sets.engaged.MidAcc, sets.engaged.Hybrid)
-    sets.engaged.HighAcc.DT = set_combine(sets.engaged.HighAcc, sets.engaged.Hybrid)
     sets.engaged.STP.DT = set_combine(sets.engaged.STP, sets.engaged.Hybrid)
 
     sets.engaged.DW.DT = set_combine(sets.engaged.DW, sets.engaged.Hybrid)
-    sets.engaged.DW.LowAcc.DT = set_combine(sets.engaged.DW.LowAcc, sets.engaged.Hybrid)
-    sets.engaged.DW.MidAcc.DT = set_combine(sets.engaged.DW.MidAcc, sets.engaged.Hybrid)
-    sets.engaged.DW.HighAcc.DT = set_combine(sets.engaged.DW.HighAcc, sets.engaged.Hybrid)
+
     sets.engaged.DW.STP.DT = set_combine(sets.engaged.DW.STP, sets.engaged.Hybrid)
 
     sets.engaged.DW.DT.LowHaste = set_combine(sets.engaged.DW.LowHaste, sets.engaged.Hybrid)
-    sets.engaged.DW.LowAcc.DT.LowHaste = set_combine(sets.engaged.DW.LowAcc.LowHaste, sets.engaged.Hybrid)
-    sets.engaged.DW.MidAcc.DT.LowHaste = set_combine(sets.engaged.DW.MidAcc.LowHaste, sets.engaged.Hybrid)
-    sets.engaged.DW.HighAcc.DT.LowHaste = set_combine(sets.engaged.DW.HighAcc.LowHaste, sets.engaged.Hybrid)
+
     sets.engaged.DW.STP.DT.LowHaste = set_combine(sets.engaged.DW.STP.LowHaste, sets.engaged.Hybrid)
 
     sets.engaged.DW.DT.MidHaste = set_combine(sets.engaged.DW.MidHaste, sets.engaged.Hybrid)
-    sets.engaged.DW.LowAcc.DT.MidHaste = set_combine(sets.engaged.DW.LowAcc.MidHaste, sets.engaged.Hybrid)
-    sets.engaged.DW.MidAcc.DT.MidHaste = set_combine(sets.engaged.DW.MidAcc.MidHaste, sets.engaged.Hybrid)
-    sets.engaged.DW.HighAcc.DT.MidHaste = set_combine(sets.engaged.DW.HighAcc.MidHaste, sets.engaged.Hybrid)
+
     sets.engaged.DW.STP.DT.MidHaste = set_combine(sets.engaged.DW.STP.MidHaste, sets.engaged.Hybrid)
 
     sets.engaged.DW.DT.HighHaste = set_combine(sets.engaged.DW.HighHaste, sets.engaged.Hybrid)
-    sets.engaged.DW.LowAcc.DT.HighHaste = set_combine(sets.engaged.DW.LowAcc.HighHaste, sets.engaged.Hybrid)
-    sets.engaged.DW.MidAcc.DT.HighHaste = set_combine(sets.engaged.DW.MidAcc.HighHaste, sets.engaged.Hybrid)
-    sets.engaged.DW.HighAcc.DT.HighHaste = set_combine(sets.engaged.DW.HighAcc.HighHaste, sets.engaged.Hybrid)
+
     sets.engaged.DW.STP.DT.HighHaste = set_combine(sets.engaged.DW.HighHaste.STP, sets.engaged.Hybrid)
 
     sets.engaged.DW.DT.MaxHaste = set_combine(sets.engaged.DW.MaxHaste, sets.engaged.Hybrid)
-    sets.engaged.DW.LowAcc.DT.MaxHaste = set_combine(sets.engaged.DW.LowAcc.MaxHaste, sets.engaged.Hybrid)
-    sets.engaged.DW.MidAcc.DT.MaxHaste = set_combine(sets.engaged.DW.MidAcc.MaxHaste, sets.engaged.Hybrid)
-    sets.engaged.DW.HighAcc.DT.MaxHaste = set_combine(sets.engaged.DW.HighAcc.MaxHaste, sets.engaged.Hybrid)
-    sets.engaged.DW.STP.DT.MaxHaste = set_combine(sets.engaged.DW.STP.MaxHaste, sets.engaged.Hybrid)
 
+    sets.engaged.DW.STP.DT.MaxHaste = set_combine(sets.engaged.DW.STP.MaxHaste, sets.engaged.Hybrid)
+    sets.engaged.Aftermath = sets.engaged.STP
+
+    sets.engaged.Aftermath.DT = set_combine(sets.engaged.STP, {
+    legs="Nyame flanchard",
+    ring2="Defending ring",
+    })
 
     ------------------------------------------------------------------------------------------------
     ---------------------------------------- Special Sets ------------------------------------------
@@ -765,7 +722,7 @@ end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
 function job_precast(spell, action, spellMap, eventArgs)
-    --auto_presto(spell)
+
     if spellMap == 'Utsusemi' then
         if buffactive['Copy Image (3)'] or buffactive['Copy Image (4+)'] then
             cancel_spell()
@@ -787,6 +744,7 @@ function job_post_precast(spell, action, spellMap, eventArgs)
             equip(sets.buff['Climactic Flourish'])
         end
     end
+	
     if spell.type=='Waltz' and spell.english:startswith('Curing') and spell.target.type == 'SELF' then
         equip(sets.precast.WaltzSelf)
     end
@@ -859,15 +817,6 @@ function update_combat_form()
     end
 end
 
-function get_custom_wsmode(spell, action, spellMap)
-    local wsmode
-    if state.OffenseMode.value == 'MidAcc' or state.OffenseMode.value == 'HighAcc' then
-        wsmode = 'Acc'
-    end
-
-    return wsmode
-end
-
 function customize_idle_set(idleSet)
     if state.CP.current == 'on' then
         equip(sets.CP)
@@ -889,7 +838,14 @@ function customize_melee_set(meleeSet)
     if state.ClosedPosition.value == true then
         meleeSet = set_combine(meleeSet, sets.buff['Closed Position'])
     end
-
+    if buffactive['Aftermath: Lv.3'] and player.equipment.main == "Terpsichore"
+    and state.DefenseMode.value == 'None' then
+      if state.HybridMode.value == "DT" then
+          meleeSet = set_combine(meleeSet, sets.engaged.Aftermath.DT)
+      else
+          meleeSet = set_combine(meleeSet, sets.engaged.Aftermath)
+      end
+    end
     return meleeSet
 end
 
