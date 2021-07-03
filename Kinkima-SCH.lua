@@ -14,7 +14,6 @@ function job_setup()
   state.IdleMode:options('Normal', 'HeavyDef', 'Vagary')
   state.RearmingLock = M(false, 'Rearming Lock')
   state.MagicBurst = M(false, 'Magic Burst')
-  state.StormSurge = M(false, 'Stormsurge')
 
   info.addendumNukes = S{"Stone IV", "Water IV", "Aero IV", "Fire IV", "Blizzard IV", "Thunder IV",
   "Stone V", "Water V", "Aero V", "Fire V", "Blizzard V", "Thunder V"}
@@ -107,7 +106,7 @@ function init_gear_sets()
 
   -- Precast sets to enhance JAs
   sets.precast.JA['Tabula Rasa'] = {
-    legs="Pedagogy Pants",
+    legs="Pedagogy Pants +1",
     -- legs="Peda. Pants +3",
   }
   sets.precast.JA['Enlightenment'] = {
@@ -129,6 +128,7 @@ function init_gear_sets()
   -- Fast cast sets for spells
   sets.precast.FC = {
     main=gear.Pedagogy_C, --8
+    sub="Enki Strap",
     ammo="Incantor Stone", --2
     head=gear.Psycloth_D_head, --10
     body=gear.Merl_FC_body, --14
@@ -170,8 +170,8 @@ function init_gear_sets()
   -- breaking the normal 80% cast time reduction cap.
   -- Cast Time = Base Cast Time x (1 - FC)x(1 - magian staff cast bonus)x(1 - Grimoire reduction)
   sets.precast.FC.Grimoire = set_combine(sets.precast.FC, {
-    head="Peda. M.Board",
-    feet="Academic's Loafers",
+    head="Peda. M.Board +1",
+    feet="Academic's Loafers +1",
     -- head="Peda. M.Board +3",
     -- feet="Acad. Loafers +3",
   })
@@ -261,7 +261,7 @@ function init_gear_sets()
 
   sets.precast.WS['Omniscience'] = set_combine(sets.precast.WS, {
     body="Pedagogy Gown",
-    legs="Pedagogy Pants",
+    legs="Pedagogy Pants +1",
     -- ammo="Pemphredo Tathlum",
     -- head="Pixie Hairpin +1",
     -- body="Peda. Gown +3",
@@ -276,10 +276,10 @@ function init_gear_sets()
 
   -- Max MP
   sets.precast.WS['Myrkr'] = {
-    ammo="Strobilus",              --  45
-    body="Academic's Gown",
-    legs=gear.Psycloth_D_legs,     -- 109
-    ear2="Etiolation Earring",     --  50
+    ammo="Strobilus",               --  45
+    body="Academic's Gown +1",      -- 109
+    legs=gear.Psycloth_D_legs,      -- 109
+    ear2="Etiolation Earring",      --  50
     -- head="Pixie Hairpin +1",       -- 120
     -- body="Academic's Gown +3",     -- 173
     -- hands="Thrift Gloves +1 ",     --  99
@@ -612,7 +612,7 @@ function init_gear_sets()
   }
 
   sets.midcast.Cursna.LightArts = set_combine(sets.midcast.Cursna, {
-    legs="Academic's Pants",
+    legs="Academic's Pants +1",
     -- legs="Academic's Pants +3",    -- 24, __,  9
     -- 184 Healing skill, 60 Cursna+, 10 FC
     -- Rate @456 (assuming 23% base) = 104.5%
@@ -643,6 +643,7 @@ function init_gear_sets()
 
   sets.midcast.EnhancingDuration = {
     main=gear.Pedagogy_C,           -- 15,  8
+    sub="Enki Strap",
     head=gear.Telchine_ENH_head,    --  9, __
     legs=gear.Telchine_ENH_legs,    -- 10, __
     waist="Embla Sash",             -- 10,  5
@@ -658,7 +659,7 @@ function init_gear_sets()
   -- Regen not affected by Enh Magic Skill
   sets.midcast.Regen = {
     main=gear.Pedagogy_C,             -- 20, __, 15, __
-    sub="Genmei Shield",              -- __, __, __, __
+    sub="Enki Strap",                 -- __, __, __, __
     head="Arbatel Bonnet +1",         --  7, __, __, __
     legs=gear.Telchine_ENH_legs,      --  2, __, 10, __
     back=gear.SCH_Adoulin_Regen_Cape, -- 10, __, __, __
@@ -717,7 +718,7 @@ function init_gear_sets()
   sets.midcast.Storm = sets.midcast.EnhancingDuration
 
   sets.midcast.Stormsurge = set_combine(sets.midcast.Storm, {
-    feet="Peda. Loafers",
+    feet="Peda. Loafers +1",
     -- feet="Peda. Loafers +3",
   })
 
@@ -732,11 +733,12 @@ function init_gear_sets()
   sets.midcast.MndEnfeebles = {
     main="Gada",
     head="Academic's Mortarboard",
-    body="Shango Robe",             -- 23, 29, __, 15
-    legs="Academic's Pants",
-    feet="Academic's Loafers",
+    body="Shamash Robe",            -- 45, 40, __, __
+    legs="Academic's Pants +1",
+    feet="Academic's Loafers +1",
     neck="Sanctity Necklace",       -- 10, __, __, __
-    ring1="Kishar Ring",         --  5, __, 10, __
+    ring1="Kishar Ring",            --  5, __, 10, __
+    ring2="Metamorph Ring",         --  5,  5, __, __
     -- main=gear.Gada_MND_MAcc,     -- 35, 16, __, 16; +215 M.Acc skill
     -- sub="Ammurapi Shield",       -- 38, 13, __, __
     -- ammo="Pemphredo Tathlum",    --  8, __, __, __
@@ -763,11 +765,12 @@ function init_gear_sets()
   sets.midcast.IntEnfeebles = {
     main="Gada",
     head="Academic's Mortarboard",
-    body="Shango Robe",             -- 23, 29, __, 15
-    legs="Academic's Pants",
-    feet="Academic's Loafers",
+    body="Shamash Robe",            -- 45, 40, __, __
+    legs="Academic's Pants +1",
+    feet="Academic's Loafers +1",
     neck="Sanctity Necklace",       -- 10, __, __, __
-    ring1="Kishar Ring",         --  5, __, 10, __
+    ring1="Kishar Ring",            --  5, __, 10, __
+    ring2="Metamorph Ring",         --  5,  5, __, __
     -- main=gear.Gada_INT_MAcc,     -- 35, 16, __, 16; +215 M.Acc skill
     -- sub="Ammurapi Shield",       -- 38, 13, __, __
     -- ammo="Pemphredo Tathlum",    --  8,  4, __, __
@@ -803,10 +806,10 @@ function init_gear_sets()
   -- Dark Magic Skill, INT, M.Acc
   sets.midcast['Dark Magic'] = {
     head="Academic's Mortarboard",
-    body="Shango Robe",
+    body="Shamash Robe",            -- __, 40, 45
     hands="Academic's Bracers",
-    legs="Pedagogy Pants",
-    feet="Academic's Loafers",
+    legs="Pedagogy Pants +1",
+    feet="Academic's Loafers +1",
     neck="Erra Pendant",       -- 10, __, 17
     back="Bookworm's Cape",    --  8,  4, __
     -- main="Rubicundity",        -- 25, 21, 20; +215 M.Acc skill
@@ -829,7 +832,7 @@ function init_gear_sets()
 
   -- Add Drain potency
   sets.midcast.Drain = set_combine(sets.midcast['Dark Magic'], {
-    legs="Pedagogy Pants",
+    legs="Pedagogy Pants +1",
     waist="Fucho-no-obi",         --  8
     -- main="Rubicundity",        -- 20
     -- sub="Ammurapi Shield",     -- __
@@ -844,10 +847,10 @@ function init_gear_sets()
   -- FC > M.Acc > M.Acc Skill
   sets.midcast.Stun = set_combine(sets.midcast['Dark Magic'], {
     head="Academic's Mortarboard",
-    body="Academic's Gown",
+    body="Shamash Robe",
     hands="Academic's Bracers",
-    legs="Academic's Pants",
-    feet="Academic's Loafers",
+    legs="Academic's Pants +1",
+    feet="Academic's Loafers +1",
     -- back=gear.SCH_MAB_Cape,
 
     --Ideal:
@@ -871,11 +874,11 @@ function init_gear_sets()
   })
 
   sets.midcast.Stun.DarkArts = set_combine(sets.midcast.Stun, {
-    head="Peda. M.Board",
-    body="Academic's Gown",
+    head="Peda. M.Board +1",
+    body="Academic's Gown +1",
     hands="Academic's Bracers",
-    legs="Academic's Pants",
-    feet="Academic's Loafers",
+    legs="Academic's Pants +1",
+    feet="Academic's Loafers +1",
     --Ideal:
     -- main="Hvergelmir",           -- __, 50, __, 269
     -- sub="Khonsu",                -- __, __, 30, ___
@@ -902,12 +905,13 @@ function init_gear_sets()
   -- INT, Magic Acc, MAB
   -- More emphasis on INT
   sets.midcast.Kaustra = {
-    main=gear.Akademos_A,         -- 32, __, 58
+    main=gear.Akademos_C,         -- 27, 15, 53
     sub="Enki Strap",             -- 10, 10, __
-    head="Peda. M.Board",
+    head="Peda. M.Board +1",
     body=gear.Merl_MB_body,       -- 40, 20, 20
     hands=gear.Merl_MB_hands,
     neck="Sanctity Necklace",     -- __, 10, 10
+    ring2="Metamorph Ring",       --  5,  5, __
     -- ammo="Pemphredo Tathlum",  --  4,  8,  4
     -- head="Peda. M.Board +3",   -- 39, 52, 49
     -- body=gear.Merl_MB_body,    -- 50, 60, 60
@@ -927,11 +931,12 @@ function init_gear_sets()
   -- INT, Magic Acc, MAB
   -- More emphasis on MAB
   sets.midcast['Elemental Magic'] = {
-    main=gear.Akademos_A,           -- 32, __, 58
+    main=gear.Akademos_C,           -- 27, 15, 53
     sub="Enki Strap",               -- 10, 10, __
-    head="Peda. M.Board",
-    body="Count's Garb",            -- 38, __, 30; magic crit rate & dmg
+    head="Peda. M.Board +1",
+    body="Shamash Robe",            -- 40, 45, 45
     neck="Sanctity Necklace",       -- __, 10, 10
+    ring2="Metamorph Ring",         --  5,  5, __
     -- ammo="Pemphredo Tathlum",    --  4,  8,  4
     -- head="Peda. M.Board +3",     -- 39, 52, 49
     -- body=gear.Amalric_A_body,    -- 38, 53, 53
@@ -950,7 +955,7 @@ function init_gear_sets()
   }
   
   sets.midcast['Elemental Magic'].Seidr = set_combine(sets.midcast['Elemental Magic'], {
-    legs="Pedagogy Pants",
+    legs="Pedagogy Pants +1",
     neck="Erra Pendant",
     -- head="Merlinic Hood",
     -- body="Seidr Cotehardie",
@@ -960,7 +965,7 @@ function init_gear_sets()
   })
 
   sets.midcast['Elemental Magic'].Resistant = set_combine(sets.midcast['Elemental Magic'], {
-    legs="Pedagogy Pants",
+    legs="Pedagogy Pants +1",
     neck="Erra Pendant",
     -- head="Merlinic Hood",
     -- legs="Peda. Pants +3",
@@ -968,7 +973,8 @@ function init_gear_sets()
   })
 
   sets.midcast.Impact = set_combine(sets.midcast['Elemental Magic'], {
-    main=gear.Akademos_A,
+    main=gear.Akademos_C,
+    sub="Enki Strap",
     -- sub="Khonsu",
     -- head=empty,
     -- body="Twilight Cloak",
@@ -977,7 +983,7 @@ function init_gear_sets()
   })
 
   sets.midcast.Helix = {
-    main=gear.Akademos_A,
+    main=gear.Akademos_C,
     sub="Enki Strap",
     -- ammo="Ghastly Tathlum +1",
     -- neck="Argute Stole +2",
@@ -996,14 +1002,14 @@ function init_gear_sets()
 
   -- This is applied on top of other sets when appropriate
   sets.magic_burst = {
-    main=gear.Akademos_A, --10
-    head="Peda. M.Board",
+    main=gear.Akademos_C, --10
+    head="Peda. M.Board +1",
     body=gear.Merl_MB_body, --7
     hands=gear.Merl_MB_hands, --9
     feet=gear.Merl_MB_feet, --8
     ring1="Locus Ring", --5
     -- Ideal:
-    -- main=gear.Akademos_A, --10
+    -- main=gear.Akademos_C, --10
     -- head="Peda. M.Board +3", --(4)
     -- body=gear.Merl_MB_body, --10
     -- hands="Amalric Gages +1", --(6)
@@ -1034,7 +1040,6 @@ function init_gear_sets()
     -- sub="Khonsu",                --  6/ 6, ___
     -- ammo="Staunch Tathlum +1",   --  3/ 3, ___; Resist Status+11
     -- head="Pinga Crown +1",       -- __/__, 109
-    -- body="Pinga Tunic +1",       -- __/__, 128
     -- hands="Pinga Mittens +1",    -- __/__, 101
     -- legs="Pinga Pants +1",       -- __/__, 147
     -- neck="Loricate Torque +1",   --  6/ 6, ___; DEF+60
@@ -1131,10 +1136,10 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.engaged = {
-    head="Peda. M.Board",
+    head="Peda. M.Board +1",
     body="Jhakri Robe +2",
-    legs="Pedagogy Pants",
-    feet="Peda. Loafers",
+    legs="Pedagogy Pants +1",
+    feet="Peda. Loafers +1",
     -- head="Peda. M.Board +3",
     -- hands="Raetic Bangles +1",
     -- legs="Peda. Pants +3",
@@ -1176,11 +1181,11 @@ function init_gear_sets()
     -- legs="Arbatel Pants +1",
   }
   sets.buff['Celerity'] = {
-    feet="Peda. Loafers",
+    feet="Peda. Loafers +1",
     -- feet="Peda. Loafers +3",
   }
   sets.buff['Alacrity'] = {
-    feet="Peda. Loafers",
+    feet="Peda. Loafers +1",
     -- feet="Peda. Loafers +3",
   }
   sets.buff['Klimaform'] = {
@@ -1203,14 +1208,14 @@ function init_gear_sets()
   }
 
   sets.LightArts = {
-    legs="Academic's Pants",
-    feet="Academic's Loafers",
+    legs="Academic's Pants +1",
+    feet="Academic's Loafers +1",
     -- legs="Acad. Pants +3",
     -- feet="Acad. Loafers +3",
   }
   sets.DarkArts = {
-    body="Academic's Gown",
-    feet="Academic's Loafers",
+    body="Academic's Gown +1",
+    feet="Academic's Loafers +1",
     -- body="Acad. Gown +3",
     -- feet="Acad. Loafers +3",
   }
@@ -1358,7 +1363,7 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     if state.Buff.Perpetuance then
       equip(sets.buff['Perpetuance'])
     end
-    if spellMap == "Storm" and state.StormSurge.value then
+    if spellMap == "Storm" and player.merits.stormsurge > 0 then
       equip (sets.midcast.Stormsurge)
     end
   end
