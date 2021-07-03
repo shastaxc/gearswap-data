@@ -155,6 +155,15 @@ end
 -- Executes on first load, main job change, **and sub job change**
 function user_setup()
   silibs.set_lockstyle(2)
+  silibs.set_waltz_stats({
+    ['base_chr'] = 104,
+    ['base_vit'] = 97,
+    ['bonus_chr'] = 128,
+    ['bonus_vit'] = 96,
+    ['waltz_potency'] = 50,
+    ['waltz_self_potency'] = 17,
+    ['est_non_party_target_hp'] = 2000,
+  })
   include('Global-Binds.lua') -- Additional local binds
 
   if player.sub_job == 'WAR' then
