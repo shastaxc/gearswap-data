@@ -738,7 +738,7 @@ function init_gear_sets()
     feet="Academic's Loafers +1",
     neck="Sanctity Necklace",       -- 10, __, __, __
     ring1="Kishar Ring",            --  5, __, 10, __
-    ring2="Metamorph Ring",         --  5,  5, __, __
+    ring2="Metamor. Ring +1",       -- 16, 15, __, __
     -- main=gear.Gada_MND_MAcc,     -- 35, 16, __, 16; +215 M.Acc skill
     -- sub="Ammurapi Shield",       -- 38, 13, __, __
     -- ammo="Pemphredo Tathlum",    --  8, __, __, __
@@ -750,7 +750,6 @@ function init_gear_sets()
     -- neck="Argute Stole +2",      -- 30, 15, __, __
     -- ear1="Malignance Earring",   -- 10,  8, __, __
     -- ear2="Regal Earring",        -- __, 10, __, __; Adds set bonus
-    -- ring2="Metamor. Ring +1",    -- 16, 15, __, __
     -- back=gear.SCH_MND_MAcc_Cape, -- 30, 20, __, __
     -- waist="Luminary Sash",       -- 10, 10, __, __
     -- Acad. set bonus              -- 60, __, __, __
@@ -770,7 +769,7 @@ function init_gear_sets()
     feet="Academic's Loafers +1",
     neck="Sanctity Necklace",       -- 10, __, __, __
     ring1="Kishar Ring",            --  5, __, 10, __
-    ring2="Metamorph Ring",         --  5,  5, __, __
+    ring2="Metamor. Ring +1",       -- 16, 15, __, __
     -- main=gear.Gada_INT_MAcc,     -- 35, 16, __, 16; +215 M.Acc skill
     -- sub="Ammurapi Shield",       -- 38, 13, __, __
     -- ammo="Pemphredo Tathlum",    --  8,  4, __, __
@@ -782,7 +781,6 @@ function init_gear_sets()
     -- neck="Argute Stole +2",      -- 30, 15, __, __
     -- ear1="Malignance Earring",   -- 10,  8, __, __
     -- ear2="Regal Earring",        -- __, 10, __, __; Adds set bonus
-    -- ring2="Metamor. Ring +1",    -- 16, 15, __, __
     -- back=gear.SCH_INT_MAcc_Cape, -- 30, 20, __, __
     -- waist="Acuity Belt +1",      -- 15, 23, __, __
     -- Acad. set bonus              -- 60, __, __, __
@@ -911,7 +909,7 @@ function init_gear_sets()
     body=gear.Merl_MB_body,       -- 40, 20, 20
     hands=gear.Merl_MB_hands,
     neck="Sanctity Necklace",     -- __, 10, 10
-    ring2="Metamorph Ring",       --  5,  5, __
+    ring2="Metamor. Ring +1",     -- 16, 15, __
     -- ammo="Pemphredo Tathlum",  --  4,  8,  4
     -- head="Peda. M.Board +3",   -- 39, 52, 49
     -- body=gear.Merl_MB_body,    -- 50, 60, 60
@@ -922,7 +920,6 @@ function init_gear_sets()
     -- ear1="Malignance Earring", --  8, 10,  8
     -- ear2="Regal Earring",      -- 10, __,  7
     -- ring1="Freke Ring",        -- 10, __,  8
-    -- ring2="Metamor. Ring +1",  -- 16, 15, __
     -- back=gear.SCH_MAB_Cape,    -- 30, 20, 10
     -- waist="Acuity Belt +1",    -- 23, 15, __
     -- 374 INT, 315 Magic Acc, 327 MAB
@@ -936,7 +933,7 @@ function init_gear_sets()
     head="Peda. M.Board +1",
     body="Shamash Robe",            -- 40, 45, 45
     neck="Sanctity Necklace",       -- __, 10, 10
-    ring2="Metamorph Ring",         --  5,  5, __
+    ring2="Metamor. Ring +1",       -- 16, 15, __
     -- ammo="Pemphredo Tathlum",    --  4,  8,  4
     -- head="Peda. M.Board +3",     -- 39, 52, 49
     -- body=gear.Amalric_A_body,    -- 38, 53, 53
@@ -947,7 +944,6 @@ function init_gear_sets()
     -- ear1="Malignance Earring",   --  8, 10,  8
     -- ear2="Regal Earring",        -- 10, __,  7
     -- ring1="Freke Ring",          -- 10, __,  8
-    -- ring2="Metamor. Ring +1",    -- 16, 15, __
     -- back=gear.SCH_MAB_Cape,      -- 30, 20, 10
     -- waist="Refoccilation Stone", -- __,  4, 10
     -- Amalric set bonus            -- __, __, 40
