@@ -132,7 +132,7 @@ function init_gear_sets()
     ammo="Incantor Stone", --2
     head=gear.Psycloth_D_head, --10
     body=gear.Merl_FC_body, --14
-    hands="Academic's Bracers", --5
+    hands="Academic's Bracers +1", --5
     legs=gear.Psycloth_D_legs, --7
     feet=gear.Merl_FC_feet, --11
     ring1="Kishar Ring", --4
@@ -507,7 +507,7 @@ function init_gear_sets()
     ammo="Incantor Stone",     -- __, __, __, __, __,  2, __
     body="Shango Robe",        -- __, __, __, 29, 21,  8, __
     head=gear.Vanya_B_head,    -- __, 10, 20, 27, 18, __, __
-    hands="Academic's Bracers",
+    hands="Acad. Bracers +1",  -- __, __, __, 33, 25,  5,  4
     legs=gear.Psycloth_D_legs, -- __, __, __, 30, 12,  7, __
     feet=gear.Vanya_B_feet,    -- __,  5, 40, 19, 10, __, __
     ear2="Mendicant's Earring",-- __,  5, __, __, __, __, __
@@ -517,7 +517,6 @@ function init_gear_sets()
     waist="Embla Sash",        -- __, __, __, __, __,  5, __
     -- main="Daybreak",           -- __, 30, __, 30, __, __, __
     -- sub="Chanter's Shield",    -- __, __, __, __, __,  3, __
-    -- hands="Acad. Bracers +1"   -- __, __, __, 33, 25,  5,  4
     -- neck="Voltsurge Torque",   -- __, __, __, __, __,  4, __
     -- ear1="Malignance Earring", -- __, __, __,  8, __,  4, __
     -- 0 CPII, 50 CP, 70 Heal Skill, 209 MND, 89 VIT, 52 FC, 4 -Enmity
@@ -549,7 +548,7 @@ function init_gear_sets()
     ammo="Incantor Stone",     -- __, __, __, __, __,  2, __
     head=gear.Vanya_B_head,    -- __, 10, 20, 27, 18, __, __
     body="Shango Robe",        -- __, __, __, 29, 21,  8, __
-    hands="Academic's Bracers",
+    hands="Acad. Bracers +1",  -- __, __, __, 33, 25,  5,  4
     legs=gear.Psycloth_D_legs, -- __, __, __, 30, 12,  7, __
     feet=gear.Vanya_B_feet,    -- __,  5, 40, 19, 10, __, __
     ear1="Mendicant's Earring",-- __,  5, __, __, __, __, __
@@ -560,7 +559,6 @@ function init_gear_sets()
     waist="Embla Sash",        -- __, __, __, __, __,  5, __
     -- main="Daybreak",           -- __, 30, __, 30, __, __, __
     -- sub="Chanter's Shield",    -- __, __, __, __, __,  3, __
-    -- hands="Acad. Bracers +1"   -- __, __, __, 33, 25,  5,  4
     -- neck="Voltsurge Torque",   -- __, __, __, __, __,  4, __
     -- ear1="Malignance Earring", -- __, __, __,  8, __,  4, __
     -- 0 CPII, 50 CP, 70 Heal Skill, 209 MND, 89 VIT, 52 FC, 4 -Enmity
@@ -623,6 +621,7 @@ function init_gear_sets()
     main="Gada",
     head=gear.Telchine_ENH_head,      -- __,  9, __
     body="Pedagogy Gown",             -- 12, __, __
+    hands=gear.Telchine_ENH_hands,    -- __, 10, __
     legs=gear.Telchine_ENH_legs,      -- __, 10, __
     waist="Embla Sash",               -- __, 10,  5
     -- main=gear.Gada_ENH,            -- 18,  6,  6
@@ -630,7 +629,6 @@ function init_gear_sets()
     -- ammo="Savant's Treatise",      --  4, __, __
     -- head=gear.Telchine_ENH_head,   -- __, 10, __
     -- body="Peda. Gown +3",          -- 19, 12, __
-    -- hands=gear.Telchine_ENH_hands, -- __, 10, __
     -- feet=gear.Kaykaus_D_feet,      -- 21, __,  4
     -- neck="Incanter's Torque",      -- 10, __, __
     -- ear1="Mimir Earring",          -- 10, __, __
@@ -645,13 +643,13 @@ function init_gear_sets()
     main=gear.Pedagogy_C,           -- 15,  8
     sub="Enki Strap",
     head=gear.Telchine_ENH_head,    --  9, __
+    hands=gear.Telchine_ENH_hands,  -- 10, __
     legs=gear.Telchine_ENH_legs,    -- 10, __
     waist="Embla Sash",             -- 10,  5
     -- main=gear.Musa_C,              -- 20, 10
     -- sub="Clerisy Strap +1",        -- __,  3
     -- head=gear.Telchine_ENH_head,   -- 10, __
     -- body="Peda. Gown +3",          -- 12, __
-    -- hands=gear.Telchine_ENH_hands, -- 10, __
     -- feet=gear.Telchine_ENH_feet,   -- 10, __
     -- 82 Enh Duration, 18 FC
   }
@@ -661,6 +659,7 @@ function init_gear_sets()
     main=gear.Pedagogy_C,             -- 20, __, 15, __
     sub="Enki Strap",                 -- __, __, __, __
     head="Arbatel Bonnet +1",         --  7, __, __, __
+    hands=gear.Telchine_ENH_hands,    --  2, __, 10, __
     legs=gear.Telchine_ENH_legs,      --  2, __, 10, __
     back=gear.SCH_Adoulin_Regen_Cape, -- 10, __, __, __
     waist="Embla Sash",               -- __, __, 10,  5
@@ -669,10 +668,9 @@ function init_gear_sets()
     -- main=gear.Musa_C,              -- 25, __, 20, __
     -- sub="Khonsu",                  -- __, __, __, __
     -- body=gear.Telchine_ENH_body,   --  2, __, 10, 12
-    -- hands=gear.Telchine_ENH_hands, --  2, __, 10, __
     -- feet="Bunzi's Sabots",         --  7, __, __, __
     -- 119 Regen Potency, 0 Regen Potency %, 60 Enh Duration %, 17 Regen Duration
-  } -- 103 Regen Potency, 0 Regen Potency %, 35 Enh Duration %, 5 Regen Duration
+  } -- 105 Regen Potency, 0 Regen Potency %, 45 Enh Duration %, 5 Regen Duration
 
   sets.midcast.RegenDuration = set_combine(sets.midcast.Regen, {
     head=gear.Telchine_ENH_head,   --  2, __,  9, __
@@ -680,7 +678,7 @@ function init_gear_sets()
     -- head=gear.Telchine_ENH_head,   --  2, __, 10, __
     -- feet=gear.Telchine_ENH_feet,   --  2, __, 10, __
     -- 109 Regen Potency, 0 Regen Potency %, 80 Enh Duration %, 32 Regen Duration
-  })-- 98 Regen Potency, 0 Regen Potency %, 44 Enh Duration %, 20 Regen Duration
+  })-- 100 Regen Potency, 0 Regen Potency %, 54 Enh Duration %, 20 Regen Duration
 
   sets.midcast.Haste = sets.midcast.EnhancingDuration
 
@@ -805,7 +803,7 @@ function init_gear_sets()
   sets.midcast['Dark Magic'] = {
     head="Academic's Mortarboard",
     body="Shamash Robe",            -- __, 40, 45
-    hands="Academic's Bracers",
+    hands="Academic's Bracers +1",
     legs="Pedagogy Pants +1",
     feet="Academic's Loafers +1",
     neck="Erra Pendant",       -- 10, __, 17
@@ -846,7 +844,7 @@ function init_gear_sets()
   sets.midcast.Stun = set_combine(sets.midcast['Dark Magic'], {
     head="Academic's Mortarboard",
     body="Shamash Robe",
-    hands="Academic's Bracers",
+    hands="Academic's Bracers +1",
     legs="Academic's Pants +1",
     feet="Academic's Loafers +1",
     -- back=gear.SCH_MAB_Cape,
@@ -874,7 +872,7 @@ function init_gear_sets()
   sets.midcast.Stun.DarkArts = set_combine(sets.midcast.Stun, {
     head="Peda. M.Board +1",
     body="Academic's Gown +1",
-    hands="Academic's Bracers",
+    hands="Academic's Bracers +1",
     legs="Academic's Pants +1",
     feet="Academic's Loafers +1",
     --Ideal:
@@ -1072,6 +1070,7 @@ function init_gear_sets()
   -- Passive sets are applied to idle in function `customize_idle_sets`
   sets.passive_regen = {
     main="Bolelabunga", --1
+    sub="Genmei Shield",
     back="Kumbira Cape", --1
     neck="Sanctity Necklace", --2
     -- main="Malignance Pole", --0
@@ -1093,6 +1092,7 @@ function init_gear_sets()
   }
   sets.passive_refresh = {
     main="Bolelabunga", --1
+    sub="Genmei Shield",
     head="Befouled Crown", --1
     body="Shamash Robe", --3
     legs="Assiduity Pants +1",

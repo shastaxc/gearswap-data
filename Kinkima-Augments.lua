@@ -130,7 +130,7 @@ gear.Taeon_Phalanx_feet = { name="Taeon Boots", augments={'DEF+17','"Fast Cast"+
 -- Telchine
 gear.Telchine_ENH_head = { name="Telchine Cap", augments={'"Regen"+2','Enh. Mag. eff. dur. +9',}} -- Max 25 meva, 2 regen, 10 enh duration
 gear.Telchine_ENH_body = {} -- Max 25 meva, 2 regen, 10 enh duration
-gear.Telchine_ENH_hands = {} -- Max 25 meva, 2 regen, 10 enh duration
+gear.Telchine_ENH_hands = { name="Telchine Gloves", augments={'Mag. Evasion+24','"Regen"+2','Enh. Mag. eff. dur. +10',}} -- Max 25 meva, 2 regen, 10 enh duration
 gear.Telchine_ENH_legs = { name="Telchine Braconi", augments={'Mag. Evasion+21','"Regen"+2','Enh. Mag. eff. dur. +10',}} -- Max 25 meva, 2 regen, 10 enh duration
 gear.Telchine_ENH_feet = {} -- Max 25 meva, 2 regen, 10 enh duration
 
