@@ -262,8 +262,23 @@ function init_gear_sets()
     ring2={name="Eihwaz Ring", priority=5},       -- __/__, ___ [ 70] < 5>
     waist={name="Kasiri Belt", priority=1},       -- __/__, ___ [ 30] < 3>
     back=gear.RUN_HPD_Cape,                       -- 10/__,  20 [ 80] <10>
-    -- feet="Ahosi Leggings",                     --  4/__, 107 [ 18] < 7>
-  } --46% PDT / 12% MDT, 423 M.Eva [802 HP] <75 Enmity>
+    --46% PDT / 12% MDT, 423 M.Eva [802 HP] <75 Enmity>
+    
+    -- ammo="Staunch Tathlum +1",                    --  3/ 3, ___ [___] <__>
+    -- head="Halitus Helm",                          -- __/__,  43 [ 88] < 8>
+    -- body={name="Emet Harness +1", priority=5},    --  6/__,  64 [ 61] <10>
+    -- hands={name="Kurys Gloves", priority=5},      --  2/ 2,  57 [ 25] < 9>
+    -- legs="Erilaz Leg Guards +1",                  --  7/__, 107 [ 80] <11>
+    -- feet={name="Erilaz Greaves +1", priority=5},  --  5/__, 107 [ 18] < 6>
+    -- neck="Unmoving Collar +1",                    -- __/__, ___ [200] <10>
+    -- ear1="Odnowa Earring +1",                     --  3/ 5, ___ [110] <__>
+    -- ear2={name="Cryptic Earring", priority=1},    -- __/__, ___ [ 40] < 4>
+    -- ring1={name="Moonlight Ring", priority=1},    --  5/ 5, ___ [110] <__>
+    -- ring2={name="Moonlight Ring", priority=1},    --  5/ 5, ___ [110] <__>
+    -- waist={name="Kasiri Belt", priority=1},       -- __/__, ___ [ 30] < 3>
+    -- back=gear.RUN_HPD_Cape,                       -- 10/__,  20 [ 80] <10>
+    --46% PDT / 20% MDT, 398 M.Eva [952 HP] <71 Enmity>
+  }
 
   sets.precast.JA = sets.Enmity;
 
@@ -332,8 +347,9 @@ function init_gear_sets()
     feet=gear.Taeon_FC_feet,                        -- { 5} __/__,  69 [ 13]
     ear2="Eabani Earring",                          -- {__} __/__,   8 [ 45]
     waist={name="Kasiri Belt", priority=1},         -- {__} __/__, ___ [ 30]
-    back={name=gear.RUN_FC_Cape.name,augments=gear.RUN_FC_Cape.augments, priority=1},            -- {10} 10/__,  20 [ 80]
-    -- feet="Carmine Greaves +1",
+    back={name=gear.RUN_FC_Cape.name,augments=gear.RUN_FC_Cape.augments, priority=1}, -- {10} 10/__,  20 [ 80]
+    -- legs="Agwu's Slops",                         -- { 7}  7/ 7, 134 [ 50]; R13+
+    -- feet="Carmine Greaves +1",                   -- { 8}  4/__,  80 [ 95]
   } -- 43% Fast Cast [302 HP, 883 w/ PDT, 953 w/ MDT]
 
   sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {

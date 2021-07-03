@@ -786,6 +786,7 @@ function init_gear_sets()
   sets.midcast.MndEnfeebles = {
     main="Daybreak",
     ring1="Kishar Ring",
+    ring2="Metamorph Ring",
     -- sub="Ammurapi Shield",
     -- ammo="Regal Gem",
     -- head="Viti. Chapeau +3",
@@ -932,6 +933,7 @@ function init_gear_sets()
     ear1="Malignance Earring", --8
     ear2="Friomisi Earring", --10
     ring1="Shiva Ring +1", --3
+    ring2="Metamorph Ring",
     back="Argochampsa Mantle", --12
     waist="Eschan Stone", --7
     -- sub="Ammurapi Shield",

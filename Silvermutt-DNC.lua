@@ -234,11 +234,11 @@ function init_gear_sets()
     ear1="Cryptic Earring", --4
     ring1="Eihwaz Ring", --5
     ring2="Supershear Ring", --5
+    neck="Unmoving Collar +1", --10
     waist="Kasiri Belt", --3
     -- ammo="Iron Gobbet", --2
     -- hands="Horos Bangles +3", --9
     -- feet="Ahosi Leggings", --7
-    -- neck="Unmoving Collar +1", --10
     -- ear2="Trux Earring", --5
     -- back="Agema Cape", --5
   }
