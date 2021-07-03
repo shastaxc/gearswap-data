@@ -1185,14 +1185,12 @@ function init_gear_sets()
     -- feet="Peda. Loafers +3",
   }
   sets.buff['Klimaform'] = {
-    feet="Arbatel Loafers",
-    -- feet="Arbatel Loafers +1",
+    feet="Arbatel Loafers +1",
   }
   sets.buff['Klimaform'].MB = {
     legs=gear.Merl_MB_legs,
-    feet="Arbatel Loafers",
+    feet="Arbatel Loafers +1",
     ring1="Locus Ring",
-    -- feet="Arbatel Loafers +1",
   }
 
   sets.buff.FullSublimation = sets.precast.JA['Sublimation']
