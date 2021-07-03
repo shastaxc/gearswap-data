@@ -268,7 +268,7 @@ function init_gear_sets()
     feet="Maxixi Shoes +1",         -- 10(_), 30 <__>
     neck="Etoile Gorget +2",        -- 10(_), 25 <__>
     back=gear.DNC_Adoulin_Cape,     --  5(_), __ <__>
-    ring1="Metamorph Ring +1",   -- __(_), 16 <__>
+    ring1="Metamorph Ring +1",      -- __(_), 16 <__>
     waist="Aristo Belt",            -- __(_),  8 <__>
     -- ammo="Voluspa Tathlum",      -- __(_),  5 <__>
     -- hands="Raetic Bangles +1",   -- __(_), 38 <__>
