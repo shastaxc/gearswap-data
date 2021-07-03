@@ -49,6 +49,12 @@ function define_global_sets()
   include('Silvermutt-Augments.lua')
 end
 
+-- Global intercept on precast.
+function user_precast(spell, action, spellMap, eventArgs)
+  cancel_conflicting_buffs(spell, action, spellMap, eventArgs)
+  silibs.refine_waltz(spell, action, spellMap, eventArgs)
+end
+
 windower.register_event('zone change', function()
   -- Auto load Omen add-on
   if world.zone == 'Reisenjima Henge' then
