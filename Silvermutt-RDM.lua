@@ -652,9 +652,9 @@ function init_gear_sets()
   })
 
   sets.midcast.CureSelf = set_combine(sets.midcast.Cure, {
+    ring2="Asklepian Ring", -- (3)
     waist="Gishdubar Sash", -- (10)
     -- neck="Phalaina Locket", -- 4(4)
-    -- ring2="Asklepian Ring", -- (3)
   })
 
   sets.midcast.Curaga = set_combine(sets.midcast.Cure, {
@@ -786,7 +786,7 @@ function init_gear_sets()
   sets.midcast.MndEnfeebles = {
     main="Daybreak",
     ring1="Kishar Ring",
-    ring2="Metamorph Ring",
+    ring2="Metamorph Ring +1",
     -- sub="Ammurapi Shield",
     -- ammo="Regal Gem",
     -- head="Viti. Chapeau +3",
@@ -933,7 +933,7 @@ function init_gear_sets()
     ear1="Malignance Earring", --8
     ear2="Friomisi Earring", --10
     ring1="Shiva Ring +1", --3
-    ring2="Metamorph Ring",
+    ring2="Metamorph Ring +1",
     back="Argochampsa Mantle", --12
     waist="Eschan Stone", --7
     -- sub="Ammurapi Shield",

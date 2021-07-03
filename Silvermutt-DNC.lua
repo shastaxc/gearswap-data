@@ -266,26 +266,24 @@ function init_gear_sets()
     body="Maxixi Casaque +3",       -- 19(8), 33 <-2>
     legs="Dashing Subligar",        -- 10(_), 11 <__>; Gives Blink
     feet="Maxixi Shoes +1",         -- 10(_), 30 <__>
-    neck="Etoile gorget +2",        -- 10(_), 25 <__>
+    neck="Etoile Gorget +2",        -- 10(_), 25 <__>
     back=gear.DNC_Adoulin_Cape,     --  5(_), __ <__>
+    ring1="Metamorph Ring +1",   -- __(_), 16 <__>
     waist="Aristo Belt",            -- __(_),  8 <__>
     -- ammo="Voluspa Tathlum",      -- __(_),  5 <__>
-    -- head=gear.Anwig_Salade,      -- __(_),  4 <-2>
     -- hands="Raetic Bangles +1",   -- __(_), 38 <__>
     -- feet="Maxixi Toeshoes +3",   -- 14(_), 40 <__>
     -- ear1="Enchntr. Earring +1",  -- __(_),  5 <__>
     -- ear2="Handler's Earring +1", -- __(_),  5 <__>
-    -- ring1="Carb. Ring +1",       -- __(_),  9 <__>
     -- ring2="Carb. Ring +1",       -- __(_),  9 <__>
     -- back=gear.DNC_WTZ_Cape,      -- __(_), 30 <__>; Enmity-10
-    -- 53 Potency (8 Self Potency), 217 CHR <-4 Delay>
-  } -- 54 Potency (8 Self Potency), 112 CHR <-4 Delay>
+    -- 53 Potency (8 Self Potency), 229 CHR <-4 Delay>
+  } -- 54 Potency (8 Self Potency), 127 CHR <-4 Delay>
 
   -- Waltz effects received
   sets.precast.WaltzSelf = set_combine(sets.precast.Waltz, {
-    head="Mummu Bonnet +2",         -- __(9), 17 <__>
     body="Maxixi Casaque +3",       -- 19(8), 33 <-2>
-    -- ring1="Asklepian Ring",      -- __(3), __ <__>
+    ring2="Asklepian Ring",         -- __(3), __ <__>
   })
 
   -- Waltz delay
@@ -407,9 +405,9 @@ function init_gear_sets()
     back=gear.DNC_TP_DA_Cape,
     waist="Fotia Belt",
   } -- default set
-
+  sets.precast.WS.MaxTP = set_combine(sets.precast.WS, {})
   -- For Crit Dmg, not crit rate
-  sets.precast.WS.SneakAttack = {
+  sets.precast.WS.Crit = {
     ammo="Charis Feather",
     head="Maculele Tiara +1",
     body="Meghanada Cuirie +2",
@@ -473,7 +471,6 @@ function init_gear_sets()
     -- back=gear.DNC_WS2_Cape,      -- 30, __, __, __
     -- 250 STR, 207 DEX, 10 WSD, 42 PDL
   }) -- 165 STR, 228 DEX, 30 WSD, 10 PDL
-
   sets.precast.WS['Pyrrhic Kleos'].MaxTP = set_combine(sets.precast.WS['Pyrrhic Kleos'], {
   })
   sets.precast.WS['Pyrrhic Kleos'].LowAcc = set_combine(sets.precast.WS['Pyrrhic Kleos'], {
@@ -531,33 +528,36 @@ function init_gear_sets()
     legs="Horos Tights +3",
     feet=gear.Nyame_B_feet,
     neck="Etoile Gorget +2",
-    ear1="Odr Earring",
+    ear1="Ishvara Earring",
     ear2="Moonshade Earring",
     ring1="Ilabrat Ring",
     ring2="Regal Ring",
     back=gear.DNC_WS1_Cape,
     waist="Grunfeld Rope",
     -- ammo="Aurgelmir Orb +1",
+    -- ring2="Epaminondas's Ring",
     -- waist="Kentarch Belt +1", -- Aug it first
   })
   sets.precast.WS["Rudra's Storm"].MaxTP = set_combine(sets.precast.WS["Rudra's Storm"], {
-    ear2="Ishvara Earring",
+    ear2="Odr Earring",
   })
-  sets.precast.WS["Rudra's Storm"].LowAcc = set_combine(sets.precast.WS["Rudra's Storm"], {
-  })
+  sets.precast.WS["Rudra's Storm"].LowAcc = set_combine(sets.precast.WS["Rudra's Storm"], {})
   sets.precast.WS["Rudra's Storm"].LowAccMaxTP = set_combine(sets.precast.WS["Rudra's Storm"].LowAcc, {
-    ear2="Ishvara Earring",
+    ear2="Odr Earring",
   })
-  sets.precast.WS["Rudra's Storm"].MidAcc = set_combine(sets.precast.WS["Rudra's Storm"].LowAcc, {
-  })
+  sets.precast.WS["Rudra's Storm"].MidAcc = set_combine(sets.precast.WS["Rudra's Storm"].LowAcc, {})
   sets.precast.WS["Rudra's Storm"].MidAccMaxTP = set_combine(sets.precast.WS["Rudra's Storm"].MidAcc, {
-    ear2="Ishvara Earring",
+    ear2="Odr Earring",
   })
-  sets.precast.WS["Rudra's Storm"].HighAcc = set_combine(sets.precast.WS["Rudra's Storm"].MidAcc, {
-  })
+  sets.precast.WS["Rudra's Storm"].HighAcc = set_combine(sets.precast.WS["Rudra's Storm"].MidAcc, {})
   sets.precast.WS["Rudra's Storm"].HighAccMaxTP = set_combine(sets.precast.WS["Rudra's Storm"].HighAcc, {
-    ear2="Ishvara Earring",
+    ear2="Odr Earring",
   })
+  -- Crit sets are overlayed on top of the other sets
+  sets.precast.WS["Rudra's Storm"].Crit = {
+    ammo="Charis Feather",
+    head="Maculele Tiara +1",
+  }
 
   sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
     ammo="Pemphredo Tathlum", --4
@@ -586,6 +586,8 @@ function init_gear_sets()
   sets.precast.WS['Aeolian Edge'].MidAccMaxTP = sets.precast.WS['Aeolian Edge'].MaxTP
   sets.precast.WS['Aeolian Edge'].HighAcc = sets.precast.WS['Aeolian Edge']
   sets.precast.WS['Aeolian Edge'].HighAccMaxTP = sets.precast.WS['Aeolian Edge'].MaxTP
+  -- Crit sets are overlayed on top of the other sets
+  sets.precast.WS["Aeolian Edge"].Crit = {}
 
 
   ------------------------------------------------------------------------------------------------
@@ -992,19 +994,9 @@ function init_gear_sets()
     body="Horos Bangles",
   }
   sets.buff['Climactic Flourish'] = {
-    ammo="Charis Feather",
     head="Maculele Tiara +1",
     body="Meghanada Cuirie +2",
-    -- ring2="Epaminondas's Ring",
   }
-  sets.buff['Climactic Flourish'].WS = set_combine(sets.buff['Climactic Flourish'], {
-    ear1="Ishvara Earring",
-    ear2="Moonshade Earring",
-  })
-  sets.buff['Climactic Flourish'].WSMaxTP = set_combine(sets.buff['Climactic Flourish'], {
-    ear1="Ishvara Earring",
-    ear2="Sherida Earring",
-  })
   sets.buff['Closed Position'] = {
     feet="Horos Toe Shoes +3",
   }
@@ -1084,8 +1076,17 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         equip(sets.Special.ElementalObi)
       end
     end
+    if state.Buff['Climactic Flourish'] or state.Buff['Sneak Attack'] then
+      local critset = sets.precast.WS[spell.name].Crit
+      -- If set isn't found for specific ws, overlay the default crit set
+      if not critset then
+        critset = sets.precast.WS.Crit
+      end
+      equip(critset)
+    end
+  
     if state.Buff['Sneak Attack'] == true then
-      equip(sets.precast.WS.SneakAttack)
+      equip(sets.precast.WS.Crit)
     end
     if state.Buff['Climactic Flourish'] then
       if player.tp <= 2900 then

@@ -285,9 +285,9 @@ function init_gear_sets()
   }
 
   sets.precast.Waltz = {
-    waist="Gishdubar Sash",
     body="Passion Jacket",
-    -- ring1="Asklepian Ring",
+    ring1="Asklepian Ring",
+    waist="Gishdubar Sash",
   }
 
   sets.precast.Waltz['Healing Waltz'] = {}
