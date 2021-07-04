@@ -7,12 +7,13 @@ end
 
 -- Executes on first load and main job change
 function job_setup()
+  silibs.enable_cancel_outranged_ws()
+
   state.CP = M(false, "Capacity Points Mode")
 
   state.OffenseMode:options('Normal', 'Acc')
   state.CastingMode:options('Normal', 'Seidr', 'Resistant')
   state.IdleMode:options('Normal', 'HeavyDef')
-  state.RearmingLock = M(false, 'Rearming Lock')
   state.MagicBurst = M(false, 'Magic Burst')
 
   info.addendumNukes = S{"Stone IV", "Water IV", "Aero IV", "Fire IV", "Blizzard IV", "Thunder IV",
@@ -1160,7 +1161,7 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 function job_precast(spell, action, spellMap, eventArgs)
-  silibs.cancel_outranged_ws(spell, eventArgs)
+  silibs.precast_hook(spell, action, spellMap, eventArgs)
 
   if spell.name:startswith('Aspir') then
     refine_various_spells(spell, action, spellMap, eventArgs)
@@ -1199,6 +1200,7 @@ function job_post_precast(spell, action, spellMap, eventArgs)
 end
 
 function job_midcast(spell, action, spellMap, eventArgs)
+  silibs.midcast_hook(spell, action, spellMap, eventArgs)
 end
 
 -- Run after the general midcast() is done.
@@ -1492,10 +1494,10 @@ function job_self_command(cmdParams, eventArgs)
   silibs.self_command(cmdParams, eventArgs)
   gearinfo(cmdParams, eventArgs)
   
-  if cmdParams[1]:lower() == 'scholar' then
+  if cmdParams[1] == 'scholar' then
     handle_strategems(cmdParams)
     eventArgs.handled = true
-  elseif cmdParams[1]:lower() == 'nuke' then
+  elseif cmdParams[1] == 'nuke' then
     handle_nuking(cmdParams)
     eventArgs.handled = true
   end
@@ -1607,7 +1609,7 @@ function handle_strategems(cmdParams)
     add_to_chat(123,'Error: No strategem command given.')
     return
   end
-  local strategem = cmdParams[2]:lower()
+  local strategem = cmdParams[2]
 
   if strategem == 'light' then
     if buffactive['light arts'] then

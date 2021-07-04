@@ -89,9 +89,10 @@ end
 function job_setup()
   include('Mote-TreasureHunter')
 
-  silibs.use_weapon_rearm = true
-  silibs.enable_th_marker()
-  silibs.set_waltz_stats({
+  silibs.enable_cancel_outranged_ws()
+  silibs.enable_cancel_on_blocking_status()
+  silibs.enable_weapon_rearm()
+  silibs.enable_waltz_refiner({
     ['base_chr'] = 104,
     ['base_vit'] = 97,
     ['bonus_chr'] = 128,
@@ -100,6 +101,7 @@ function job_setup()
     ['waltz_self_potency'] = 17,
     ['est_non_party_target_hp'] = 2000,
   })
+  silibs.enable_th_fix()
 
   Haste = 0 -- Do not modify
   DW_needed = 0 -- Do not modify
@@ -127,7 +129,6 @@ function job_setup()
   state.HybridMode:options('Normal', 'LightDef')
   state.IdleMode:options('Normal', 'LightDef')
 
-  state.RearmingLock = M(false, 'Rearming Lock')
   state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger',
       'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
 
@@ -1041,8 +1042,7 @@ end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
 function job_precast(spell, action, spellMap, eventArgs)
-  silibs.cancel_outranged_ws(spell, eventArgs)
-  silibs.cancel_on_blocking_status(spell, eventArgs)
+  silibs.precast_hook(spell, action, spellMap, eventArgs)
 
   if spellMap == 'Utsusemi' then
     if buffactive['Copy Image (3)'] or buffactive['Copy Image (4+)'] then
@@ -1115,6 +1115,7 @@ function job_post_precast(spell, action, spellMap, eventArgs)
 end
 
 function job_midcast(spell, action, spellMap, eventArgs)
+  silibs.midcast_hook(spell, action, spellMap, eventArgs)
 end
 
 function job_post_midcast(spell, action, spellMap, eventArgs)

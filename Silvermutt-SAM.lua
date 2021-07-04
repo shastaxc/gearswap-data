@@ -47,8 +47,10 @@ end
 function job_setup()
   include('Mote-TreasureHunter')
 
-  silibs.use_weapon_rearm = true
-  silibs.enable_th_marker()
+  silibs.enable_cancel_outranged_ws()
+  silibs.enable_cancel_on_blocking_status()
+  silibs.enable_weapon_rearm()
+  silibs.enable_th_fix()
 
   elemental_ws = S{'Tachi: Goten', 'Tachi: Kagero', 'Tachi: Jinpu', 'Tachi: Koki'}
 
@@ -56,7 +58,6 @@ function job_setup()
   state.HybridMode:options('Normal', 'LightDef', 'MEVA')
   state.IdleMode:options('Normal', 'HeavyDef')
 
-  state.RearmingLock = M(false, 'Rearming Lock')
   state.CP = M(false, "Capacity Points Mode")
   state.ToyWeapons = M{['description']='Toy Weapons','None','GreatKatana','Staff','Polearm','GreatSword','Scythe'}
   state.WeaponSet = M{['description']='Weapon Set', 'Temp', 'Masa', 'Doji', 'Shining One'}
@@ -692,8 +693,7 @@ end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
 function job_precast(spell, action, spellMap, eventArgs)
-  silibs.cancel_outranged_ws(spell, eventArgs)
-  silibs.cancel_on_blocking_status(spell, eventArgs)
+  silibs.precast_hook(spell, action, spellMap, eventArgs)
 
   if spell.type == 'WeaponSkill' and state.DefenseMode.current ~= 'None' then
     -- Don't gearswap for weaponskills when Defense is on.
@@ -749,6 +749,7 @@ function job_post_precast(spell, action, spellMap, eventArgs)
 end
 
 function job_midcast(spell, action, spellMap, eventArgs)
+  silibs.midcast_hook(spell, action, spellMap, eventArgs)
 end
 
 function job_post_midcast(spell, action, spellMap, eventArgs)
@@ -1060,23 +1061,23 @@ end
 function job_self_command(cmdParams, eventArgs)
   silibs.self_command(cmdParams, eventArgs)
   
-  if cmdParams[1]:lower() == 'toyweapon' then
-    if cmdParams[2]:lower() == 'cycle' then
+  if cmdParams[1] == 'toyweapon' then
+    if cmdParams[2] == 'cycle' then
       cycle_toy_weapons('forward')
-    elseif cmdParams[2]:lower() == 'cycleback' then
+    elseif cmdParams[2] == 'cycleback' then
       cycle_toy_weapons('back')
-    elseif cmdParams[2]:lower() == 'reset' then
+    elseif cmdParams[2] == 'reset' then
       cycle_toy_weapons('reset')
     end
-  elseif cmdParams[1]:lower() == 'weaponset' then
-    if cmdParams[2]:lower() == 'cycle' then
+  elseif cmdParams[1] == 'weaponset' then
+    if cmdParams[2] == 'cycle' then
       cycle_weapons('forward')
-    elseif cmdParams[2]:lower() == 'cycleback' then
+    elseif cmdParams[2] == 'cycleback' then
       cycle_weapons('back')
-    elseif cmdParams[2]:lower() == 'current' then
+    elseif cmdParams[2] == 'current' then
       cycle_weapons('current')
     end
-  elseif cmdParams[1]:lower() == 'test' then
+  elseif cmdParams[1] == 'test' then
     test()
   end
 

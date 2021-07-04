@@ -57,8 +57,10 @@ end
 function job_setup()
   include('Mote-TreasureHunter')
 
-  silibs.use_weapon_rearm = true
-  silibs.enable_th_marker()
+  silibs.enable_cancel_outranged_ws()
+  silibs.enable_cancel_on_blocking_status()
+  silibs.enable_weapon_rearm()
+  silibs.enable_th_fix()
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.HybridMode:options('Normal', 'LightDef')
@@ -67,7 +69,6 @@ function job_setup()
   state.WeaponSet = M{['description']='Weapon Set', 'MagicRA', 'PhysRA', 'PhysRA RangedOnly', 'Melee'}
   state.RangedWeaponSet = M{['description']='Ranged Weapon Set', 'Gastraphetes', 'Fomalhaut', 'Sparrowhawk +2'}
   state.CP = M(false, "Capacity Points Mode")
-  state.RearmingLock = M(false, 'Rearming Lock')
   -- Whether a warning has been given for low ammo
   state.warned = M(false)
   state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger',
@@ -1289,8 +1290,7 @@ end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
 function job_precast(spell, action, spellMap, eventArgs)
-  silibs.cancel_outranged_ws(spell, eventArgs)
-  silibs.cancel_on_blocking_status(spell, eventArgs)
+  silibs.precast_hook(spell, action, spellMap, eventArgs)
 
   if spell.action_type == 'Ranged Attack' then
     state.CombatWeapon:set(player.equipment.range)
@@ -1355,6 +1355,7 @@ function job_post_precast(spell, action, spellMap, eventArgs)
 end
 
 function job_midcast(spell, action, spellMap, eventArgs)
+  silibs.midcast_hook(spell, action, spellMap, eventArgs)
 end
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
@@ -1707,19 +1708,19 @@ end
 function job_self_command(cmdParams, eventArgs)
   silibs.self_command(cmdParams, eventArgs)
 
-  if cmdParams[1]:lower() == 'equipweapons' then
+  if cmdParams[1] == 'equipweapons' then
     equip_weapons()
-  elseif cmdParams[1]:lower() == 'equiprangedweapons' then
+  elseif cmdParams[1] == 'equiprangedweapons' then
     equip_ranged_weapons()
-  elseif cmdParams[1]:lower() == 'toyweapon' then
-    if cmdParams[2]:lower() == 'cycle' then
+  elseif cmdParams[1] == 'toyweapon' then
+    if cmdParams[2] == 'cycle' then
       cycle_toy_weapons('forward')
-    elseif cmdParams[2]:lower() == 'cycleback' then
+    elseif cmdParams[2] == 'cycleback' then
       cycle_toy_weapons('back')
-    elseif cmdParams[2]:lower() == 'reset' then
+    elseif cmdParams[2] == 'reset' then
       cycle_toy_weapons('reset')
     end
-  elseif cmdParams[1]:lower() == 'test' then
+  elseif cmdParams[1] == 'test' then
     test()
   end
 

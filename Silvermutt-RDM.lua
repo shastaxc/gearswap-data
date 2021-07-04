@@ -118,7 +118,9 @@ end
 
 -- Executes on first load and main job change
 function job_setup()
-  silibs.use_weapon_rearm = true
+  silibs.enable_cancel_outranged_ws()
+  silibs.enable_cancel_on_blocking_status()
+  silibs.enable_weapon_rearm()
 
   Haste = 0 -- Do not modify
   DW_needed = 0 -- Do not modify
@@ -148,7 +150,6 @@ function job_setup()
   state.BarStatus = M{['description']='BarStatus', 'Baramnesia', 'Barvirus', 'Barparalyze', 'Barsilence', 'Barpetrify', 'Barpoison', 'Barblind', 'Barsleep'}
   state.GainSpell = M{['description']='GainSpell', 'Gain-STR', 'Gain-INT', 'Gain-AGI', 'Gain-VIT', 'Gain-DEX', 'Gain-MND', 'Gain-CHR'}
 
-  state.RearmingLock = M(false, 'Rearming Lock')
   state.MagicBurst = M(false, 'Magic Burst')
   state.SleepMode = M{['description']='Sleep Mode', 'Normal', 'MaxDuration'}
   state.EnspellMode = M(false, 'Enspell Melee Mode')
@@ -1376,8 +1377,7 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 function job_precast(spell, action, spellMap, eventArgs)
-  silibs.cancel_outranged_ws(spell, eventArgs)
-  silibs.cancel_on_blocking_status(spell, eventArgs)
+  silibs.precast_hook(spell, action, spellMap, eventArgs)
 
   if spellMap == 'Utsusemi' then
     if buffactive['Copy Image (3)'] or buffactive['Copy Image (4+)'] then
@@ -1441,6 +1441,7 @@ function job_post_precast(spell, action, spellMap, eventArgs)
 end
 
 function job_midcast(spell, action, spellMap, eventArgs)
+  silibs.midcast_hook(spell, action, spellMap, eventArgs)
 end
 
 -- Run after the default midcast() is done.
@@ -1854,36 +1855,36 @@ end
 function job_self_command(cmdParams, eventArgs)
   silibs.self_command(cmdParams, eventArgs)
   
-  if cmdParams[1]:lower() == 'scholar' then
+  if cmdParams[1] == 'scholar' then
     handle_strategems(cmdParams)
     eventArgs.handled = true
-  elseif cmdParams[1]:lower() == 'nuke' then
+  elseif cmdParams[1] == 'nuke' then
     handle_nuking(cmdParams)
     eventArgs.handled = true
-  elseif cmdParams[1]:lower() == 'enspell' then
+  elseif cmdParams[1] == 'enspell' then
     send_command('@input /ma '..state.EnSpell.value..' <me>')
-  elseif cmdParams[1]:lower() == 'barelement' then
+  elseif cmdParams[1] == 'barelement' then
     send_command('@input /ma '..state.BarElement.value..' <me>')
-  elseif cmdParams[1]:lower() == 'barstatus' then
+  elseif cmdParams[1] == 'barstatus' then
     send_command('@input /ma '..state.BarStatus.value..' <me>')
-  elseif cmdParams[1]:lower() == 'gainspell' then
+  elseif cmdParams[1] == 'gainspell' then
     send_command('@input /ma '..state.GainSpell.value..' <me>')
-  elseif cmdParams[1]:lower() == 'toyweapon' then
-    if cmdParams[2]:lower() == 'cycle' then
+  elseif cmdParams[1] == 'toyweapon' then
+    if cmdParams[2] == 'cycle' then
       cycle_toy_weapons('forward')
-    elseif cmdParams[2]:lower() == 'cycleback' then
+    elseif cmdParams[2] == 'cycleback' then
       cycle_toy_weapons('back')
-    elseif cmdParams[2]:lower() == 'reset' then
+    elseif cmdParams[2] == 'reset' then
       cycle_toy_weapons('reset')
     end
-  elseif cmdParams[1]:lower() == 'weaponset' then
-    if cmdParams[2]:lower() == 'cycle' then
+  elseif cmdParams[1] == 'weaponset' then
+    if cmdParams[2] == 'cycle' then
       cycle_weapons('forward')
-    elseif cmdParams[2]:lower() == 'cycleback' then
+    elseif cmdParams[2] == 'cycleback' then
       cycle_weapons('back')
-    elseif cmdParams[2]:lower() == 'current' then
+    elseif cmdParams[2] == 'current' then
       cycle_weapons('current')
-    elseif cmdParams[2]:lower() == 'reset' then
+    elseif cmdParams[2] == 'reset' then
       cycle_weapons('reset')
     end
   end
@@ -1902,7 +1903,7 @@ function handle_strategems(cmdParams)
     add_to_chat(123,'Error: No strategem command given.')
     return
   end
-  local strategem = cmdParams[2]:lower()
+  local strategem = cmdParams[2]
 
   if strategem == 'light' then
     if buffactive['light arts'] then

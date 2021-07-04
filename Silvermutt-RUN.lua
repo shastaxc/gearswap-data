@@ -91,7 +91,9 @@ end
 
 -- Executes on first load and main job change
 function job_setup()
-  silibs.use_weapon_rearm = true
+  silibs.enable_cancel_outranged_ws()
+  silibs.enable_cancel_on_blocking_status()
+  silibs.enable_weapon_rearm()
   rayke_duration = 46
   gambit_duration = 92
 
@@ -119,7 +121,6 @@ function job_setup()
   state.WeaponSet = M{['description']='Weapon Set', 'Aettir', 'Lionheart', 'Epeolatry', 'Lycurgos'}
   state.AttackMode = M{['description']='Attack', 'Uncapped', 'Capped'}
   state.CP = M(false, "Capacity Points Mode")
-  state.RearmingLock = M(false, 'Rearming Lock')
   state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger',
       'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
   state.Runes = M{['description']='Runes', 'Ignis', 'Gelus', 'Flabra', 'Tellus', 'Sulpor', 'Unda', 'Lux', 'Tenebrae'}
@@ -1026,8 +1027,7 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 function job_precast(spell, action, spellMap, eventArgs)
-  silibs.cancel_outranged_ws(spell, eventArgs)
-  silibs.cancel_on_blocking_status(spell, eventArgs)
+  silibs.precast_hook(spell, action, spellMap, eventArgs)
 
   if runes:contains(spell.english) then
     eventArgs.handled = true
@@ -1113,6 +1113,7 @@ function job_post_precast(spell, action, spellMap, eventArgs)
 end
 
 function job_midcast(spell, action, spellMap, eventArgs)
+  silibs.midcast_hook(spell, action, spellMap, eventArgs)
 end
 
 -- Run after the default midcast() is done.
@@ -1626,25 +1627,25 @@ function job_self_command(cmdParams, eventArgs)
   silibs.self_command(cmdParams, eventArgs)
   
   gearinfo(cmdParams, eventArgs)
-  if cmdParams[1]:lower() == 'rune' then
+  if cmdParams[1] == 'rune' then
     send_command('@input /ja '..state.Runes.value..' <me>')
-  elseif cmdParams[1]:lower() == 'toyweapon' then
-    if cmdParams[2]:lower() == 'cycle' then
+  elseif cmdParams[1] == 'toyweapon' then
+    if cmdParams[2] == 'cycle' then
       cycle_toy_weapons('forward')
-    elseif cmdParams[2]:lower() == 'cycleback' then
+    elseif cmdParams[2] == 'cycleback' then
       cycle_toy_weapons('back')
-    elseif cmdParams[2]:lower() == 'reset' then
+    elseif cmdParams[2] == 'reset' then
       cycle_toy_weapons('reset')
     end
-  elseif cmdParams[1]:lower() == 'weaponset' then
-    if cmdParams[2]:lower() == 'cycle' then
+  elseif cmdParams[1] == 'weaponset' then
+    if cmdParams[2] == 'cycle' then
       cycle_weapons('forward')
-    elseif cmdParams[2]:lower() == 'cycleback' then
+    elseif cmdParams[2] == 'cycleback' then
       cycle_weapons('back')
-    elseif cmdParams[2]:lower() == 'current' then
+    elseif cmdParams[2] == 'current' then
       cycle_weapons('current')
     end
-  elseif cmdParams[1]:lower() == 'test' then
+  elseif cmdParams[1] == 'test' then
     test()
   end
 end
