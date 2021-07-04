@@ -178,12 +178,6 @@ function job_setup()
 
     include('Mote-TreasureHunter')
 
-    -- For th_action_check():
-    -- JA IDs for actions that always have TH: Provoke, Animated Flourish
-    info.default_ja_ids = S{35, 204}
-    -- Unblinkable JA IDs for actions that always have TH: Quick/Box/Stutter Step, Desperate/Violent Flourish
-    info.default_u_ja_ids = S{201, 202, 203, 205, 207}
-
     lockstyleset = 1
 end
 

@@ -96,6 +96,7 @@ function job_setup()
   include('Mote-TreasureHunter')
 
   silibs.use_weapon_rearm = true
+  silibs.enable_th_marker()
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.HybridMode:options('LightDef', 'Normal')
@@ -128,12 +129,6 @@ function job_setup()
   no_shoot_ammo = S{"Animikii Bullet", "Hauksbok Bullet"}
   no_swap_waists = S{"Era. Bul. Pouch", "Dev. Bul. Pouch", "Chr. Bul. Pouch", "Quelling B. Quiver",
       "Yoichi's Quiver", "Artemis's Quiver", "Chrono Quiver", "Liv. Bul. Pouch"}
-
-  -- For th_action_check():
-  -- JA IDs for actions that always have TH: Provoke, Animated Flourish
-  info.default_ja_ids = S{35, 204}
-  -- Unblinkable JA IDs for actions that always have TH: Quick/Box/Stutter Step, Desperate/Violent Flourish
-  info.default_u_ja_ids = S{201, 202, 203, 205, 207}
 
   gear.RAbullet = "Chrono Bullet"
   gear.RAccbullet = "Devastating Bullet"
@@ -1460,6 +1455,8 @@ function job_post_precast(spell, action, spellMap, eventArgs)
   if locked_ring1 then equip({ ring1=player.equipment.ring1 }) end
   if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
   if locked_waist then equip({ waist=player.equipment.waist }) end
+
+  silibs.post_precast_hook(spell, action, spellMap, eventArgs)
 end
 
 function job_post_midcast(spell, action, spellMap, eventArgs)
@@ -1508,6 +1505,8 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
   if locked_ring1 then equip({ ring1=player.equipment.ring1 }) end
   if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
   if locked_waist then equip({ waist=player.equipment.waist }) end
+
+  silibs.post_midcast_hook(spell, action, spellMap, eventArgs)
 end
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
@@ -2012,19 +2011,6 @@ function special_ammo_check()
     cancel_spell()
     add_to_chat(123, '** Action Canceled: [ '.. player.equipment.ammo .. ' equipped!! ] **')
     return
-  end
-end
-
--- Check for various actions that we've specified in user code as being used with TH gear.
--- This will only ever be called if TreasureMode is not 'None'.
--- Category and Param are as specified in the action event packet.
-function th_action_check(category, param)
-  if category == 2 or -- any ranged attack
-    --category == 4 or -- any magic action
-    (category == 3 and param == 30) or -- Aeolian Edge
-    (category == 6 and info.default_ja_ids:contains(param)) or -- Provoke, Animated Flourish
-    (category == 14 and info.default_u_ja_ids:contains(param)) -- Quick/Box/Stutter Step, Desperate/Violent Flourish
-    then return true
   end
 end
 

@@ -90,6 +90,16 @@ function job_setup()
   include('Mote-TreasureHunter')
 
   silibs.use_weapon_rearm = true
+  silibs.enable_th_marker()
+  silibs.set_waltz_stats({
+    ['base_chr'] = 104,
+    ['base_vit'] = 97,
+    ['bonus_chr'] = 128,
+    ['bonus_vit'] = 96,
+    ['waltz_potency'] = 50,
+    ['waltz_self_potency'] = 17,
+    ['est_non_party_target_hp'] = 2000,
+  })
 
   Haste = 0 -- Do not modify
   DW_needed = 0 -- Do not modify
@@ -155,15 +165,6 @@ end
 -- Executes on first load, main job change, **and sub job change**
 function user_setup()
   silibs.set_lockstyle(2)
-  silibs.set_waltz_stats({
-    ['base_chr'] = 104,
-    ['base_vit'] = 97,
-    ['bonus_chr'] = 128,
-    ['bonus_vit'] = 96,
-    ['waltz_potency'] = 50,
-    ['waltz_self_potency'] = 17,
-    ['est_non_party_target_hp'] = 2000,
-  })
   include('Global-Binds.lua') -- Additional local binds
 
   if player.sub_job == 'WAR' then
@@ -1109,6 +1110,8 @@ function job_post_precast(spell, action, spellMap, eventArgs)
   if locked_ear2 then equip({ ear2=player.equipment.ear2 }) end
   if locked_ring1 then equip({ ring1=player.equipment.ring1 }) end
   if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
+
+  silibs.post_precast_hook(spell, action, spellMap, eventArgs)
 end
 
 function job_midcast(spell, action, spellMap, eventArgs)
@@ -1121,6 +1124,8 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
   if locked_ear2 then equip({ ear2=player.equipment.ear2 }) end
   if locked_ring1 then equip({ ring1=player.equipment.ring1 }) end
   if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
+
+  silibs.post_midcast_hook(spell, action, spellMap, eventArgs)
 end
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.

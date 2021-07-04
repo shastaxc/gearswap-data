@@ -1424,7 +1424,7 @@ function job_post_precast(spell, action, spellMap, eventArgs)
       equip(sets.Reive)
     end
   end
-  
+
   -- If slot is locked, keep current equipment on
   if locked_neck then equip({ neck=player.equipment.neck }) end
   if locked_ear1 then equip({ ear1=player.equipment.ear1 }) end
@@ -1436,6 +1436,8 @@ function job_post_precast(spell, action, spellMap, eventArgs)
   if in_battle_mode() then
     equip(sets.WeaponSet[state.WeaponSet.current])
   end
+
+  silibs.post_precast_hook(spell, action, spellMap, eventArgs)
 end
 
 function job_midcast(spell, action, spellMap, eventArgs)
@@ -1478,7 +1480,7 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
       equip(sets.Obi)
     end
   end
-  
+
   -- If slot is locked, keep current equipment on
   if locked_neck then equip({ neck=player.equipment.neck }) end
   if locked_ear1 then equip({ ear1=player.equipment.ear1 }) end
@@ -1486,10 +1488,12 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
   if locked_ring1 then equip({ ring1=player.equipment.ring1 }) end
   if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
 
-  -- Always put this last in job_post_precast
+  -- Always put this last in job_post_midcast
   if in_battle_mode() then
     equip(sets.WeaponSet[state.WeaponSet.current])
   end
+
+  silibs.post_midcast_hook(spell, action, spellMap, eventArgs)
 end
 
 function job_aftercast(spell, action, spellMap, eventArgs)

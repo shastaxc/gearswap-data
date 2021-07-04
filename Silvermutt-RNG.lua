@@ -58,6 +58,7 @@ function job_setup()
   include('Mote-TreasureHunter')
 
   silibs.use_weapon_rearm = true
+  silibs.enable_th_marker()
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.HybridMode:options('Normal', 'LightDef')
@@ -1349,6 +1350,8 @@ function job_post_precast(spell, action, spellMap, eventArgs)
   if locked_ring1 then equip({ ring1=player.equipment.ring1 }) end
   if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
   if locked_waist then equip({ waist=player.equipment.waist }) end
+
+  silibs.post_precast_hook(spell, action, spellMap, eventArgs)
 end
 
 function job_midcast(spell, action, spellMap, eventArgs)
@@ -1381,6 +1384,8 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
   if locked_ring1 then equip({ ring1=player.equipment.ring1 }) end
   if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
   if locked_waist then equip({ waist=player.equipment.waist }) end
+
+  silibs.post_midcast_hook(spell, action, spellMap, eventArgs)
 end
 
 function job_aftercast(spell, action, spellMap, eventArgs)

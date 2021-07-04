@@ -76,16 +76,11 @@ function job_setup()
   include('Mote-TreasureHunter')
 
   silibs.use_weapon_rearm = true
+  silibs.enable_th_marker()
 
   Haste = 0 -- Do not modify
   DW_needed = 0 -- Do not modify
   DW = false -- Do not modify
-
-  -- For th_action_check():
-  -- JA IDs for actions that always have TH: Provoke, Animated Flourish
-  info.default_ja_ids = S{35, 204}
-  -- Unblinkable JA IDs for actions that always have TH: Quick/Box/Stutter Step, Desperate/Violent Flourish
-  info.default_u_ja_ids = S{201, 202, 203, 205, 207}
 
   elemental_ws = S{'Aeolian Edge'}
 
@@ -1005,18 +1000,23 @@ function job_post_precast(spell, action, spellMap, eventArgs)
   if locked_ear2 then equip({ ear2=player.equipment.ear2 }) end
   if locked_ring1 then equip({ ring1=player.equipment.ring1 }) end
   if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
+
+  silibs.post_precast_hook(spell, action, spellMap, eventArgs)
 end
 
 function job_midcast(spell, action, spellMap, eventArgs)
 end
 
 function job_post_midcast(spell, action, spellMap, eventArgs)
+
   -- If slot is locked, keep current equipment on
   if locked_neck then equip({ neck=player.equipment.neck }) end
   if locked_ear1 then equip({ ear1=player.equipment.ear1 }) end
   if locked_ear2 then equip({ ear2=player.equipment.ear2 }) end
   if locked_ring1 then equip({ ring1=player.equipment.ring1 }) end
   if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
+
+  silibs.post_midcast_hook(spell, action, spellMap, eventArgs)
 end
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
@@ -1381,20 +1381,6 @@ function check_buff(buff_name, eventArgs)
       equip(sets.TreasureHunter)
     end
     eventArgs.handled = true
-  end
-end
-
-
--- Check for various actions that we've specified in user code as being used with TH gear.
--- This will only ever be called if TreasureMode is not 'None'.
--- Category and Param are as specified in the action event packet.
-function th_action_check(category, param)
-  if category == 2 or -- any ranged attack
-    --category == 4 or -- any magic action
-    (category == 3 and param == 30) or -- Aeolian Edge
-    (category == 6 and info.default_ja_ids:contains(param)) or -- Provoke, Animated Flourish
-    (category == 14 and info.default_u_ja_ids:contains(param)) -- Quick/Box/Stutter Step, Desperate/Violent Flourish
-    then return true
   end
 end
 

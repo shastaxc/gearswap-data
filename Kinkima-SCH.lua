@@ -1194,6 +1194,8 @@ function job_post_precast(spell, action, spellMap, eventArgs)
   if locked_ear2 then equip({ ear2=player.equipment.ear2 }) end
   if locked_ring1 then equip({ ring1=player.equipment.ring1 }) end
   if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
+
+  silibs.post_precast_hook(spell, action, spellMap, eventArgs)
 end
 
 function job_midcast(spell, action, spellMap, eventArgs)
@@ -1291,6 +1293,8 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
   if locked_ear2 then equip({ ear2=player.equipment.ear2 }) end
   if locked_ring1 then equip({ ring1=player.equipment.ring1 }) end
   if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
+
+  silibs.post_midcast_hook(spell, action, spellMap, eventArgs)
 end
 
 function job_aftercast(spell, action, spellMap, eventArgs)
