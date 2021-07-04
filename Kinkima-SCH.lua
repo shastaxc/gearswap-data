@@ -389,12 +389,12 @@ function init_gear_sets()
     ring1="Kishar Ring",       -- __, __, __, __, __,  4, __
     ring2="Sirona's Ring",     -- __, __, 10,  3,  3, __, __
     back=gear.SCH_FC_Cape,     -- __, __, __, 30, __, 10, __
-    waist="Embla Sash",        -- __, __, __, __, __,  5, __
+    waist="Hachirin-no-Obi",   -- __, __, __, __, __, __, __
     -- main="Daybreak",           -- __, 30, __, 30, __, __, __
     -- sub="Chanter's Shield",    -- __, __, __, __, __,  3, __
     -- neck="Voltsurge Torque",   -- __, __, __, __, __,  4, __
     -- ear1="Malignance Earring", -- __, __, __,  8, __,  4, __
-    -- 0 CPII, 50 CP, 130 Heal Skill, 220 MND, 91 VIT, 32 FC, 0 -Enmity
+    -- 0 CPII, 50 CP, 130 Heal Skill, 220 MND, 91 VIT, 27 FC, 0 -Enmity
     -- 718 Power
 
     -- Ideal
@@ -483,12 +483,12 @@ function init_gear_sets()
     ring1="Kishar Ring",       -- __, __, __, __, __,  4, __
     ring2="Sirona's Ring",     -- __, __, 10,  3,  3, __, __
     back=gear.SCH_FC_Cape,     -- __, __, __, 30, __, 10, __
-    waist="Embla Sash",        -- __, __, __, __, __,  5, __
+    waist="Hachirin-no-Obi",   -- __, __, __, __, __, __, __
     -- main="Daybreak",           -- __, 30, __, 30, __, __, __
     -- sub="Chanter's Shield",    -- __, __, __, __, __,  3, __
     -- neck="Voltsurge Torque",   -- __, __, __, __, __,  4, __
     -- ear1="Malignance Earring", -- __, __, __,  8, __,  4, __
-    -- 0 CPII, 50 CP, 70 Heal Skill, 209 MND, 89 VIT, 52 FC, 4 -Enmity
+    -- 0 CPII, 50 CP, 70 Heal Skill, 209 MND, 89 VIT, 27 FC, 4 -Enmity
     -- 723 Power
 
     -- Ideal:
@@ -1139,7 +1139,7 @@ function init_gear_sets()
   }
 
   sets.Obi = {
-    -- waist="Hachirin-no-Obi",
+    waist="Hachirin-no-Obi",
   }
   sets.Bookworm = {
     back="Bookworm's Cape",
