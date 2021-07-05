@@ -121,6 +121,7 @@ function job_setup()
   silibs.enable_cancel_outranged_ws()
   silibs.enable_cancel_on_blocking_status()
   silibs.enable_weapon_rearm()
+  silibs.enable_auto_lockstyle(4)
 
   Haste = 0 -- Do not modify
   DW_needed = 0 -- Do not modify
@@ -207,7 +208,6 @@ end
 
 -- Executes on first load, main job change, **and sub job change**
 function user_setup()
-  silibs.set_lockstyle(4)
   include('Global-Binds.lua') -- Additional local binds
 
   -- Default Status Cure HotKeys

@@ -94,6 +94,8 @@ function job_setup()
   silibs.enable_cancel_outranged_ws()
   silibs.enable_cancel_on_blocking_status()
   silibs.enable_weapon_rearm()
+  silibs.enable_auto_lockstyle(3)
+  
   rayke_duration = 46
   gambit_duration = 92
 
@@ -162,7 +164,6 @@ end
 
 -- Executes on first load, main job change, **and sub job change**
 function user_setup()
-  silibs.set_lockstyle(3)
   include('Global-Binds.lua') -- Additional local binds
 
   if player.sub_job == 'BLU' then

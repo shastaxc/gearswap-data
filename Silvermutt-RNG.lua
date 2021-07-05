@@ -60,6 +60,7 @@ function job_setup()
   silibs.enable_cancel_outranged_ws()
   silibs.enable_cancel_on_blocking_status()
   silibs.enable_weapon_rearm()
+  silibs.enable_auto_lockstyle(6)
   silibs.enable_th_fix()
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
@@ -190,7 +191,6 @@ end
 
 -- Executes on first load, main job change, **and sub job change**
 function user_setup()
-  silibs.set_lockstyle(6)
   Haste = 0 -- Do not modify
   flurry = nil -- Do not modify
   DW_needed = 0 -- Do not modify

@@ -98,6 +98,7 @@ function job_setup()
   silibs.enable_cancel_outranged_ws()
   silibs.enable_cancel_on_blocking_status()
   silibs.enable_weapon_rearm()
+  silibs.enable_auto_lockstyle(8)
   silibs.enable_th_fix()
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
@@ -193,7 +194,6 @@ end
 
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
-  silibs.set_lockstyle(8)
   Haste = 0
   DW_needed = 0
   DW = false

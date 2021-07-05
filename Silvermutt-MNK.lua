@@ -53,6 +53,7 @@ function job_setup()
   silibs.enable_cancel_outranged_ws()
   silibs.enable_cancel_on_blocking_status()
   silibs.enable_weapon_rearm()
+  silibs.enable_auto_lockstyle(5)
   silibs.enable_th_fix()
 
   elemental_ws = S{'Cataclysm'}
@@ -95,7 +96,6 @@ end
 
 -- Executes on first load, main job change, **and sub job change**
 function user_setup()
-  silibs.set_lockstyle(5)
   include('Global-Binds.lua') -- Additional local binds
 
   if player.sub_job == 'WAR' then
