@@ -23,25 +23,6 @@ function user_job_setup()
 	utsusemi_ni_cancel_delay = .06
 
 	
-  activate_AM_mode = {
-    ["Nagi"] = S{"Aftermath: Lv.1", "Aftermath: Lv.2", "Aftermath: Lv.3"},
-  }
-end
-
-function update_melee_groups()
-  if player then
-		classes.CustomMeleeGroups:clear()
-		
-    for weapon,am_list in pairs(activate_AM_mode) do
-      if player.equipment.main == weapon or player.equipment.ranged == weapon then
-        for am_level,_ in pairs(am_list) do
-          if buffactive[am_level] and not classes.CustomMeleeGroups:contains('AM') then
-            classes.CustomMeleeGroups:append('AM')
-          end
-        end
-      end
-    end
-	end
 end
 
 -- Define sets and vars used by this job file.
