@@ -355,7 +355,7 @@ function init_gear_sets()
     -- ammo="Incantor Stone",     -- __, __, __, __, __,  2, __
     -- head=gear.Kaykaus_D_head,  -- __, 11, 16, 31, 14, __, __
     -- body=gear.Kaykaus_A_body,  --  4, __, __, 45, 20, __, __
-    -- hands="Peda. Bracers +3",  --  3, __, 19, 46, 35, __, __
+    -- hands="Peda. Bracers +3",  --  3, __, 19, 46, 35, __,  7
     -- legs=gear.Kaykaus_A_legs,  -- __, 11, __, 42, 12,  7, __
     -- feet=gear.Kaykaus_A_feet,  -- __, 11, __, 31, 10, __,  6
     -- neck="Incanter's Torque",  -- __, __, 10, __, __, __, __
@@ -403,7 +403,7 @@ function init_gear_sets()
     -- ammo="Incantor Stone",     -- __, __, __, __, __,  2, __
     -- head=gear.Kaykaus_D_head,  -- __, 11, 16, 31, 14, __, __
     -- body=gear.Kaykaus_A_body,  --  4, __, __, 45, 20, __, __
-    -- hands="Peda. Bracers +3",  --  3, __, 19, 46, 35, __, __
+    -- hands="Peda. Bracers +3",  --  3, __, 19, 46, 35, __,  7
     -- legs=gear.Kaykaus_A_legs,  -- __, 11, __, 42, 12,  7, __
     -- feet=gear.Kaykaus_A_feet,  -- __, 11, __, 31, 10, __,  6
     -- neck="Incanter's Torque",  -- __, __, 10, __, __, __, __
