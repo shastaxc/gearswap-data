@@ -619,7 +619,7 @@ function init_gear_sets()
     hands=gear.Rawhide_B_hands,   -- __/__,  37 [ 75] {15}
     legs=gear.Carmine_A_legs,     -- __/__,  80 [130] {20}
     feet=gear.Taeon_SIRD_feet,    -- __/__,  89 [ 60] {10}
-    neck="Loricate Torque +1",    --  6/ 6,  __ [___] { 5}
+    neck="Moonlight Necklace",    -- __/__,  15 [___] {15}
     ear1="Odnowa Earring +1",     --  3/ 5, ___ [110] {__}
     ear2="Halasz Earring",        -- __/__, ___ [___] { 5}
     ring1="Gelatinous Ring +1",   --  7/-1, ___ [135] {__}
@@ -629,11 +629,10 @@ function init_gear_sets()
     -- SIRD merits                                    { 6}
 
     -- feet=gear.Taeon_SIRD_feet,    -- __/__,  89 [ 63] {10}
-    -- neck="Moonlight Necklace",    -- __/__,  15 [___] {15}
     -- ring2="Defending Ring",       -- 10/10, ___ [___] {__}; Use with moonlight cape
     -- back="Moonlight Cape",        --  6/ 6, ___ [275] {__}
     -- 42 PDT / 32 MDT, 467 M.Eva [962 HP] {102 SIRD}
-  } -- 47 PDT / 27 MDT, 472 M.Eva [874 HP] {92 SIRD}
+  } -- 41 PDT / 21 MDT, 487 M.Eva [874 HP] {102 SIRD}
 
   sets.midcast['Enhancing Magic'] = {
     head="Erilaz Galea +1",
@@ -726,6 +725,7 @@ function init_gear_sets()
 
   sets.midcast['Geist Wall'] = sets.SIRD
   sets.midcast['Bomb Toss'] = sets.SIRD
+  sets.midcast['Poisonga'] = sets.SIRD
 
   sets.midcast['Blue Magic'] = {}
   sets.midcast['Blue Magic'].Enmity = sets.Enmity
