@@ -956,6 +956,7 @@ function init_gear_sets()
     neck="Twilight Torque",         --  5/ 5, ___
     ear1="Hearty Earring",          -- __/__, ___; Resist Status+5
     ear2="Etiolation Earring",      -- __/ 3, ___; Resist Silence+15
+    ring1="Gelatinous Ring +1",     --  7/-1, ___
     ring2="Defending Ring",         -- 10/10, ___
     back="Cheviot Cape",            --  5/__, ___
     waist="Carrier's Sash",         -- __/__, ___; Ele Resist+15
@@ -963,9 +964,8 @@ function init_gear_sets()
     -- ammo="Staunch Tathlum +1",   --  3/ 3, ___; Resist Status+11
     -- head="Pinga Crown +1",       -- __/__, 109
     -- hands="Pinga Mittens +1",    -- __/__, 101
-    -- legs="Pinga Pants +1",       -- __/__, 147
+    -- legs="Pinga Pants",          -- __/__, 137
     -- neck="Loricate Torque +1",   --  6/ 6, ___; DEF+60
-    -- ring1="Gelatinous Ring +1",  --  7/-1, ___
     -- back="Archon Cape",          -- __/__, ___
 
     -- Ideal:
@@ -985,7 +985,7 @@ function init_gear_sets()
     -- back="Archon Cape",          -- __/__, ___
     -- waist="Carrier's Sash",      -- __/__, ___; Ele Resist+15
     -- 52 PDT / 47 MDT, 614 M.Eva
-  } -- 52 PDT / 31 MDT, 462 M.Eva
+  } -- 59 PDT / 50 MDT, 462 M.Eva
 
   sets.defense.PDT = sets.HeavyDef
   sets.defense.MDT = sets.HeavyDef
