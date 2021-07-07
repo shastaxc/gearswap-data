@@ -137,7 +137,7 @@ function init_gear_sets()
     ammo="Incantor Stone", --2
     head=gear.Psycloth_D_head, --10
     body=gear.Merl_FC_body, --14
-    hands="Academic's Bracers +1", --5
+    hands="Academic's Bracers +2", --7
     legs=gear.Psycloth_D_legs, --7
     feet=gear.Merl_FC_feet, --11
     ring1="Kishar Ring", --4
@@ -169,7 +169,7 @@ function init_gear_sets()
     -- body="Pinga Tunic +1", --15
     -- back=gear.SCH_FC_Cape, --10
     -- waist="Embla Sash", --5
-  } --76
+  } --78
 
   -- Grimoire casting bonuses multiply separately from FC, allowing
   -- breaking the normal 80% cast time reduction cap.
@@ -329,25 +329,26 @@ function init_gear_sets()
   -- Mithra SCH Lv99 VIT = 91
   -- Mithra SCH Lv99 Healing Magic Skill = 386
   sets.midcast.Cure = {
-    main="Arka IV",            -- __, 24, __, __, __, __, __
-    ammo="Incantor Stone",     -- __, __, __, __, __,  2, __
-    head=gear.Vanya_B_head,    -- __, 10, 20, 27, 18, __, __
-    body=gear.Vanya_B_body,    -- __, __, 20, 36, 23, __, __
-    hands=gear.Vanya_B_hands,  -- __, __, 20, 33, 25, __, __
-    legs=gear.Vanya_B_legs,    -- __, __, 20, 34, 12, __, __
-    feet=gear.Vanya_B_feet,    -- __,  5, 40, 19, 10, __, __
-    ear1="Mendicant's Earring",-- __,  5, __, __, __, __, __
-    ear2="Meili Earring",      -- __, __, 10, __, __, __, __
-    ring1="Kishar Ring",       -- __, __, __, __, __,  4, __
-    ring2="Sirona's Ring",     -- __, __, 10,  3,  3, __, __
-    back=gear.SCH_FC_Cape,     -- __, __, __, 30, __, 10, __
-    waist="Embla Sash",        -- __, __, __, __, __,  5, __
+    main="Arka IV",               -- __, 24, __, __, __, __, __
+    sub="Enki Strap",             -- __, __, __, 10, __, __, __
+    ammo="Incantor Stone",        -- __, __, __, __, __,  2, __
+    head=gear.Vanya_B_head,       -- __, 10, 20, 27, 18, __, __
+    body=gear.Vanya_B_body,       -- __, __, 20, 36, 23, __, __
+    hands="Peda. Bracers +3",     --  3, __, 19, 46, 35, __,  7
+    legs=gear.Vanya_B_legs,       -- __, __, 20, 34, 12, __, __
+    feet=gear.Vanya_B_feet,       -- __,  5, 40, 19, 10, __, __
+    ear1="Mendicant's Earring",   -- __,  5, __, __, __, __, __
+    ear2="Meili Earring",         -- __, __, 10, __, __, __, __
+    ring1="Kishar Ring",          -- __, __, __, __, __,  4, __
+    ring2="Sirona's Ring",        -- __, __, 10,  3,  3, __, __
+    back=gear.SCH_FC_Cape,        -- __, __, __, 30, __, 10, __
+    waist="Embla Sash",           -- __, __, __, __, __,  5, __
     -- main="Daybreak",           -- __, 30, __, 30, __, __, __
     -- sub="Chanter's Shield",    -- __, __, __, __, __,  3, __
     -- neck="Voltsurge Torque",   -- __, __, __, __, __,  4, __
-    -- ear1="Malignance Earring", -- __, __, __,  8, __,  4, __
-    -- 0 CPII, 50 CP, 130 Heal Skill, 220 MND, 91 VIT, 32 FC, 0 -Enmity
-    -- 718 Power
+    -- ear2="Malignance Earring", -- __, __, __,  8, __,  4, __
+    -- 3 CPII, 50 CP, 129 Heal Skill, 233 MND, 91 VIT, 32 FC, 7 -Enmity
+    -- 724 Power
 
     -- Ideal
     -- main=gear.Gada_Cure,       -- __, 18, 18, 16, __,  6, __
@@ -376,26 +377,26 @@ function init_gear_sets()
   -- Mithra SCH Lv99 VIT = 91
   -- Mithra SCH Lv99 Healing Magic Skill = 386
   sets.midcast.CureWeather = {
-    main="Chatoyant Staff",    -- __, 10, __,  5,  5, __, __
-    sub="Enki Strap",          -- __, __, __, 10, __, __, __
-    ammo="Incantor Stone",     -- __, __, __, __, __,  2, __
-    head=gear.Vanya_B_head,    -- __, 10, 20, 27, 18, __, __
-    body=gear.Vanya_B_body,    -- __, __, 20, 36, 23, __, __
-    hands=gear.Vanya_B_hands,  -- __, __, 20, 33, 25, __, __
-    legs=gear.Vanya_B_legs,    -- __, __, 20, 34, 12, __, __
-    feet=gear.Vanya_B_feet,    -- __,  5, 40, 19, 10, __, __
-    ear1="Mendicant's Earring",-- __,  5, __, __, __, __, __
-    ear2="Meili Earring",      -- __, __, 10, __, __, __, __
-    ring1="Kishar Ring",       -- __, __, __, __, __,  4, __
-    ring2="Sirona's Ring",     -- __, __, 10,  3,  3, __, __
-    back=gear.SCH_FC_Cape,     -- __, __, __, 30, __, 10, __
-    waist="Hachirin-no-Obi",   -- __, __, __, __, __, __, __
+    main="Chatoyant Staff",       -- __, 10, __,  5,  5, __, __
+    sub="Enki Strap",             -- __, __, __, 10, __, __, __
+    ammo="Incantor Stone",        -- __, __, __, __, __,  2, __
+    head=gear.Vanya_B_head,       -- __, 10, 20, 27, 18, __, __
+    body=gear.Vanya_B_body,       -- __, __, 20, 36, 23, __, __
+    hands="Peda. Bracers +3",     --  3, __, 19, 46, 35, __,  7
+    legs=gear.Vanya_B_legs,       -- __, __, 20, 34, 12, __, __
+    feet=gear.Vanya_B_feet,       -- __,  5, 40, 19, 10, __, __
+    ear1="Mendicant's Earring",   -- __,  5, __, __, __, __, __
+    ear2="Meili Earring",         -- __, __, 10, __, __, __, __
+    ring1="Kishar Ring",          -- __, __, __, __, __,  4, __
+    ring2="Sirona's Ring",        -- __, __, 10,  3,  3, __, __
+    back=gear.SCH_FC_Cape,        -- __, __, __, 30, __, 10, __
+    waist="Hachirin-no-Obi",      -- __, __, __, __, __, __, __
     -- main="Daybreak",           -- __, 30, __, 30, __, __, __
     -- sub="Chanter's Shield",    -- __, __, __, __, __,  3, __
     -- neck="Voltsurge Torque",   -- __, __, __, __, __,  4, __
-    -- ear1="Malignance Earring", -- __, __, __,  8, __,  4, __
-    -- 0 CPII, 50 CP, 130 Heal Skill, 220 MND, 91 VIT, 27 FC, 0 -Enmity
-    -- 718 Power
+    -- ear2="Malignance Earring", -- __, __, __,  8, __,  4, __
+    -- 3 CPII, 50 CP, 129 Heal Skill, 233 MND, 91 VIT, 27 FC, 7 -Enmity
+    -- 724 Power
 
     -- Ideal
     -- main="Chatoyant Staff",    -- __, 10, __,  5,  5, __, __
@@ -425,24 +426,25 @@ function init_gear_sets()
   -- Mithra SCH Lv99 VIT = 91
   -- Mithra SCH Lv99 Healing Magic Skill = 456 (w/ Light Arts)
   sets.midcast.Cure.LightArts = {
-    main="Arka IV",            -- __, 24, __, __, __, __, __
-    ammo="Incantor Stone",     -- __, __, __, __, __,  2, __
-    body="Shango Robe",        -- __, __, __, 29, 21,  8, __
-    head=gear.Vanya_B_head,    -- __, 10, 20, 27, 18, __, __
-    hands="Acad. Bracers +1",  -- __, __, __, 33, 25,  5,  4
-    legs=gear.Psycloth_D_legs, -- __, __, __, 30, 12,  7, __
-    feet=gear.Vanya_B_feet,    -- __,  5, 40, 19, 10, __, __
-    ear2="Mendicant's Earring",-- __,  5, __, __, __, __, __
-    ring1="Kishar Ring",       -- __, __, __, __, __,  4, __
-    ring2="Sirona's Ring",     -- __, __, 10,  3,  3, __, __
-    back=gear.SCH_FC_Cape,     -- __, __, __, 30, __, 10, __
-    waist="Embla Sash",        -- __, __, __, __, __,  5, __
+    main="Arka IV",               -- __, 24, __, __, __, __, __
+    sub="Enki Strap",             -- __, __, __, 10, __, __, __
+    ammo="Incantor Stone",        -- __, __, __, __, __,  2, __
+    body="Shango Robe",           -- __, __, __, 29, 21,  8, __
+    head=gear.Vanya_B_head,       -- __, 10, 20, 27, 18, __, __
+    hands="Peda. Bracers +3",     --  3, __, 19, 46, 35, __,  7
+    legs=gear.Psycloth_D_legs,    -- __, __, __, 30, 12,  7, __
+    feet=gear.Vanya_B_feet,       -- __,  5, 40, 19, 10, __, __
+    ear1="Mendicant's Earring",   -- __,  5, __, __, __, __, __
+    ring1="Kishar Ring",          -- __, __, __, __, __,  4, __
+    ring2="Sirona's Ring",        -- __, __, 10,  3,  3, __, __
+    back=gear.SCH_FC_Cape,        -- __, __, __, 30, __, 10, __
+    waist="Embla Sash",           -- __, __, __, __, __,  5, __
     -- main="Daybreak",           -- __, 30, __, 30, __, __, __
     -- sub="Chanter's Shield",    -- __, __, __, __, __,  3, __
     -- neck="Voltsurge Torque",   -- __, __, __, __, __,  4, __
-    -- ear1="Malignance Earring", -- __, __, __,  8, __,  4, __
-    -- 0 CPII, 50 CP, 70 Heal Skill, 209 MND, 89 VIT, 52 FC, 4 -Enmity
-    -- 723 Power
+    -- ear2="Malignance Earring", -- __, __, __,  8, __,  4, __
+    -- 3 CPII, 50 CP, 89 Heal Skill, 222 MND, 99 VIT, 47 FC, 7 -Enmity
+    -- 750 Power
 
     -- Ideal
     -- main="Hvergelmir",         -- __, __, __, __, __, 50, __
@@ -471,25 +473,25 @@ function init_gear_sets()
   -- Mithra SCH Lv99 VIT = 91
   -- Mithra SCH Lv99 Healing Magic Skill = 456 (w/ Light Arts)
   sets.midcast.CureWeather.LightArts = {
-    main="Arka IV",            -- __, 24, __, __, __, __, __
-    ammo="Incantor Stone",     -- __, __, __, __, __,  2, __
-    head=gear.Vanya_B_head,    -- __, 10, 20, 27, 18, __, __
-    body="Shango Robe",        -- __, __, __, 29, 21,  8, __
-    hands="Acad. Bracers +1",  -- __, __, __, 33, 25,  5,  4
-    legs=gear.Psycloth_D_legs, -- __, __, __, 30, 12,  7, __
-    feet=gear.Vanya_B_feet,    -- __,  5, 40, 19, 10, __, __
-    ear1="Mendicant's Earring",-- __,  5, __, __, __, __, __
-    ear2="Meili Earring",      -- __, __, 10, __, __, __, __
-    ring1="Kishar Ring",       -- __, __, __, __, __,  4, __
-    ring2="Sirona's Ring",     -- __, __, 10,  3,  3, __, __
-    back=gear.SCH_FC_Cape,     -- __, __, __, 30, __, 10, __
-    waist="Hachirin-no-Obi",   -- __, __, __, __, __, __, __
+    main="Arka IV",               -- __, 24, __, __, __, __, __
+    ammo="Incantor Stone",        -- __, __, __, __, __,  2, __
+    head=gear.Vanya_B_head,       -- __, 10, 20, 27, 18, __, __
+    body="Shango Robe",           -- __, __, __, 29, 21,  8, __
+    hands="Peda. Bracers +3",     --  3, __, 19, 46, 35, __,  7
+    legs=gear.Psycloth_D_legs,    -- __, __, __, 30, 12,  7, __
+    feet=gear.Vanya_B_feet,       -- __,  5, 40, 19, 10, __, __
+    ear1="Mendicant's Earring",   -- __,  5, __, __, __, __, __
+    ear2="Meili Earring",         -- __, __, 10, __, __, __, __
+    ring1="Kishar Ring",          -- __, __, __, __, __,  4, __
+    ring2="Sirona's Ring",        -- __, __, 10,  3,  3, __, __
+    back=gear.SCH_FC_Cape,        -- __, __, __, 30, __, 10, __
+    waist="Hachirin-no-Obi",      -- __, __, __, __, __, __, __
     -- main="Daybreak",           -- __, 30, __, 30, __, __, __
     -- sub="Chanter's Shield",    -- __, __, __, __, __,  3, __
     -- neck="Voltsurge Torque",   -- __, __, __, __, __,  4, __
-    -- ear1="Malignance Earring", -- __, __, __,  8, __,  4, __
-    -- 0 CPII, 50 CP, 70 Heal Skill, 209 MND, 89 VIT, 27 FC, 4 -Enmity
-    -- 723 Power
+    -- ear2="Malignance Earring", -- __, __, __,  8, __,  4, __
+    -- 3 CPII, 50 CP, 89 Heal Skill, 222 MND, 99 VIT, 42 FC, 7 -Enmity
+    -- 750 Power
 
     -- Ideal:
     -- main="Chatoyant Staff",    -- __, 10, __,  5,  5, __, __
@@ -729,7 +731,7 @@ function init_gear_sets()
   sets.midcast['Dark Magic'] = {
     head="Academic's Mortarboard",
     body="Shamash Robe",            -- __, 40, 45
-    hands="Academic's Bracers +1",
+    hands="Academic's Bracers +2",
     legs="Pedagogy Pants +1",
     feet="Academic's Loafers +1",
     neck="Erra Pendant",       -- 10, __, 17
@@ -770,7 +772,7 @@ function init_gear_sets()
   sets.midcast.Stun = set_combine(sets.midcast['Dark Magic'], {
     head="Academic's Mortarboard",
     body="Shamash Robe",
-    hands="Academic's Bracers +1",
+    hands="Academic's Bracers +2",
     legs="Academic's Pants +1",
     feet="Academic's Loafers +1",
     back=gear.SCH_MAB_Cape,
@@ -798,7 +800,7 @@ function init_gear_sets()
   sets.midcast.Stun.DarkArts = set_combine(sets.midcast.Stun, {
     head="Peda. M.Board +1",
     body="Academic's Gown +1",
-    hands="Academic's Bracers +1",
+    hands="Academic's Bracers +2",
     legs="Academic's Pants +1",
     feet="Academic's Loafers +1",
     --Ideal:
