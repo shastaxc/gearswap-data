@@ -80,6 +80,7 @@ gear.Merl_FC_feet = { name="Merlinic Crackows", augments={'Accuracy+6','INT+10',
 
 gear.Merl_MB_body = { name="Merlinic Jubbah", augments={'Pet: STR+10','DEX+8','Magic burst dmg.+7%','Accuracy+20 Attack+20',}} --10 MB Dmg, 40 MAB, 40 M.Acc, 10 INT
 gear.Merl_MB_hands = { name="Merlinic Dastanas", augments={'Accuracy+10 Attack+10','DEX+8','Magic burst dmg.+9%','Mag. Acc.+9 "Mag.Atk.Bns."+9',}}
+gear.Merl_MB_legs = {} -- MAcc, MAB, MB Dmg
 gear.Merl_MB_feet = { name="Merlinic Crackows", augments={'Magic burst dmg.+8%','Phys. dmg. taken -2%','INT+3 MND+3 CHR+3','Accuracy+7 Attack+7','Mag. Acc.+1 "Mag.Atk.Bns."+1',}}--Max: 10 MB Dmg, 40 MAB, 40 M.Acc, 10 INT
 
 -- Odyssean
@@ -161,6 +162,7 @@ gear.SCH_MND_MAcc_Cape = { name="Lugh's Cape", augments={'MND+20','Mag. Acc+20 /
 gear.SCH_Cure_Cape = gear.SCH_MND_MAcc_Cape
 gear.SCH_MP_Cape = { name="Lugh's Cape", augments={'MP+60','Eva.+20 /Mag. Eva.+20','MP+20','"Regen"+5',}}
 gear.SCH_Regen_Cape = gear.SCH_MP_Cape
+-- gear.SCH_Helix_Cape = { name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Magic Damage +10','"Mag.Atk.Bns."+10',}}
 
 
 ----------------------------------------------------------------------

@@ -46,13 +46,13 @@ function job_setup()
   send_command('bind !w input /ma "Aspir II" <t>')
   send_command('bind @h gs c cycle HelixMode')
   send_command('bind @r gs c cycle RegenMode')
-  send_command('bind @s gs c toggle StormSurge')
 
   send_command('bind !q input /ja "Sublimation" <me>')
   send_command('bind !u input /ma "Blink" <me>')
   send_command('bind !i input /ma "Stoneskin" <me>')
   send_command('bind !p input /ma "Aquaveil" <me>')
   send_command('bind !; input /ma "Regen V" <stpc>')
+  send_command('bind !/ input /ma "Klimaform" <me>')
 end
 
 -- Executes on first load, main job change, **and sub job change**
@@ -122,7 +122,7 @@ function init_gear_sets()
   sets.precast.JA['Sublimation'] = {
     main="Siriti", --1
     sub="Genmei Shield",
-    head="Academic's Mortarboard", --2
+    head="Academic's Mortarboard +1", --2
     body="Pedagogy Gown +1", --3
     ear1="Savant's Earring", --1
     waist="Embla Sash", --5
@@ -656,7 +656,7 @@ function init_gear_sets()
   -- M.Acc > MND > Enfeebling Duration > Enfeebling Skill
   sets.midcast.MndEnfeebles = {
     main="Gada",
-    head="Academic's Mortarboard",
+    head="Academic's Mortarboard +1",
     body="Shamash Robe",            -- 45, 40, __, __
     legs="Academic's Pants +1",
     feet="Academic's Loafers +1",
@@ -687,7 +687,7 @@ function init_gear_sets()
   -- M.Acc > INT > Enfeebling Duration > Enfeebling Skill
   sets.midcast.IntEnfeebles = {
     main="Gada",
-    head="Academic's Mortarboard",
+    head="Academic's Mortarboard +1",
     body="Shamash Robe",            -- 45, 40, __, __
     legs="Academic's Pants +1",
     feet="Academic's Loafers +1",
@@ -727,7 +727,7 @@ function init_gear_sets()
   -- SCH Dark Magic = 386, with Dark Arts = 456
   -- Dark Magic Skill, INT, M.Acc
   sets.midcast['Dark Magic'] = {
-    head="Academic's Mortarboard",
+    head="Academic's Mortarboard +1",
     body="Shamash Robe",            -- __, 40, 45
     hands="Academic's Bracers +2",
     legs="Pedagogy Pants +1",
@@ -768,7 +768,7 @@ function init_gear_sets()
 
   -- FC > M.Acc > M.Acc Skill
   sets.midcast.Stun = set_combine(sets.midcast['Dark Magic'], {
-    head="Academic's Mortarboard",
+    head="Academic's Mortarboard +1",
     body="Shamash Robe",
     hands="Academic's Bracers +2",
     legs="Academic's Pants +1",
@@ -863,6 +863,7 @@ function init_gear_sets()
     ear1="Malignance Earring",      --  8, 10,  8
     ring2="Metamor. Ring +1",       -- 16, 15, __
     back=gear.SCH_MAB_Cape,         -- 30, 20, 10
+    -- main="Marin Staff +1",       -- 37, 55, 68; bonus on wind dmg
     -- ammo="Pemphredo Tathlum",    --  4,  8,  4
     -- head="Peda. M.Board +3",     -- 39, 52, 49
     -- body=gear.Amalric_A_body,    -- 38, 53, 53
@@ -874,7 +875,7 @@ function init_gear_sets()
     -- ring1="Freke Ring",          -- 10, __,  8
     -- waist="Refoccilation Stone", -- __,  4, 10
     -- Amalric set bonus            -- __, __, 40
-    -- 294 INT, 232 Magic Acc, 425 MAB
+    -- 304 INT, 272 Magic Acc, 440 MAB
   }
   
   sets.midcast['Elemental Magic'].Seidr = set_combine(sets.midcast['Elemental Magic'], {
@@ -905,25 +906,46 @@ function init_gear_sets()
     -- waist="Shinjutsu-no-Obi +1",
   })
 
+  -- 10% MB dmg from trait with /RDM or /BLM
   sets.midcast.Helix = {
-    main=gear.Akademos_C,
-    sub="Enki Strap",
-    -- ammo="Ghastly Tathlum +1",
-    -- neck="Argute Stole +2",
-    -- waist="Skrymir Cord",
-  }
+    main=gear.Akademos_C,           -- 27, 25, 53, 228, 217, 10, __
+    sub="Enki Strap",               -- 10, 10, __, ___, ___, __, __
+    ear1="Malignance Earring",      --  8, 10,  8, ___, ___, __, __
+    -- main="Daybreak",             -- __, 40, 40, 242, 241, __, __
+    -- sub="Ammurapi Shield",       -- 13, 38, 38, ___, ___, __, __
+    -- waist="Skrymir Cord",        -- __,  5,  5, ___,  30, __, __
 
+    -- Ideal:
+    -- main="Bunzi's Rod",          -- 15, 45, 55, 255, 248, 10, __
+    -- sub="Ammurapi Shield",       -- 13, 38, 38, ___, ___, __, __
+    -- ammo="Pemphredo Tathlum",    --  4,  8,  4, ___, ___, __, __
+    -- head="Peda. M.Board +3",     -- 39, 37, 49, ___, ___, __,  4
+    -- body="Agwu's Robe",          -- 47, 45, 55, ___,  20, 10, __
+    -- hands=gear.Amalric_D_hands,  -- 24, 20, 53, ___, ___, __,  6
+    -- legs=gear.Amalric_A_legs,    -- 40, 20, 60, ___, ___, __, __
+    -- feet="Arbatel Loafers +1",   -- 24, __, __, ___, ___, __, __; Klimaform+15
+    -- neck="Argute Stole +2",      -- 15, 30, __, ___,  25, 10, __; Helix Dur+10%
+    -- ear1="Malignance Earring",   --  8, 10,  8, ___, ___, __, __
+    -- ear2="Regal Earring",        -- 10, __,  7, ___, ___, __, __
+    -- ring1="Mallquis Ring",       -- __,  6, __, ___,  12, __, __
+    -- ring2="Mujin Band",          -- __, __, __, ___, ___, __,  5
+    -- back=gear.SCH_Helix_Cape,    -- 20, 20, 10, ___,  30, __, __
+    -- waist="Skrymir Cord",        -- __,  7,  7, ___,  35, __, __
+    -- Amalric set bonus            -- __, __, 20, ___, ___, __, __
+    -- Sub RDM or BLM Job trait     -- __, __, 20, ___, ___, 10, __
+    -- 259 INT, 286 MAcc, 386 MAB, 255 MAccSk, 370 MDmg, 40 MB Dmg%, 15 MB2 Dmg%
+  }
   sets.midcast.DarkHelix = set_combine(sets.midcast.Helix, {
     -- head="Pixie Hairpin +1",
     -- ring2="Archon Ring",
   })
-
   sets.midcast.LightHelix = set_combine(sets.midcast.Helix, {
     -- main="Daybreak",
     -- sub="Ammurapi Shield",
   })
 
   -- This is applied on top of other sets when appropriate
+  -- 10% MB dmg from trait with /RDM or /BLM
   sets.magic_burst = {
     main=gear.Akademos_C, --10
     head="Peda. M.Board +1",
@@ -1221,8 +1243,10 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
       if state.HelixMode.value == 'Duration' then
         equip(sets.Bookworm)
       end
-    end
-    if buffactive['Klimaform'] and spell.element == world.weather_element then
+      if buffactive['Klimaform'] and spell.element == world.weather_element then
+        equip(sets.buff['Klimaform'])
+      end
+    elseif buffactive['Klimaform'] and spell.element == world.weather_element then
       if state.MagicBurst.current then
         equip(sets.buff['Klimaform'].MB)
       else
