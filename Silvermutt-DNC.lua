@@ -309,14 +309,14 @@ function init_gear_sets()
     head="Maxixi Tiara +3",       -- __/__, 82
     body="Malignance Tabard",     --  9/ 9, 50
     hands="Maxixi Bangles +3",    -- __/__, 88
-    legs="Meghanada Chausses +2", --  7/ 7, 50
+    legs="Malignance Tights",     --  7/ 7, 50
     feet="Horos Toe Shoes +3",    -- __/__, 66; Step TP -20
     neck="Etoile Gorget +2",      -- __/__, 25
     ear1="Odnowa Earring +1",     --  3/ 5, __
     ear2="Telos Earring",         -- __/__, 10
     ring1="Gelatinous Ring +1",   --  7/-1, __
     ring2="Defending Ring",       -- 10/10, __
-    back=gear.DNC_TP_DW_Cape,     -- 10/__, 20 -- After swapping aug to PDT
+    back=gear.DNC_TP_DW_Cape,     -- 10/__, 20
     waist="Engraved Belt",        -- __/__, 10; Elemental resist
     -- Maxixi set bonus           -- __/__, 15
   } -- 46/30, 431
