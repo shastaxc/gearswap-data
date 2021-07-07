@@ -152,11 +152,17 @@ function init_gear_sets()
     sets.precast.FC.Curaga = sets.precast.FC.Cure
 
     sets.precast.FC.Impact = set_combine(sets.precast.FC['Elemental Magic'], {head=empty,body="Twilight Cloak"})
-	
+
+	sets.precast.FC.Dispelga = set_combine(sets.precast.FC, {
+	main="Daybreak",
+	sub="Ammurapi Shield"})	
 
 
     -- Midcast Sets
-
+	sets.midcast.Aquaveil = set_combine(sets.midcast['Enhancing Magic'], {hands="Regal cuffs"})
+	
+	
+	
     sets.midcast.FastRecast = {ammo="",
         head="",ear2="Loquacious Earring",
         --body="Vanir Cotehardie",
@@ -208,7 +214,6 @@ function init_gear_sets()
     sets.midcast['Enhancing Magic'] = {
 	main="Pedagogy Staff",
 	sub="Clerisy strap +1",
-	ammo="",
 	waist="Embla sash",
     head="Arbatel Bonnet +1",
     body="Pedagogy gown +3",
@@ -230,9 +235,16 @@ function init_gear_sets()
 
 
     -- Custom spell classes
-    sets.midcast.MndEnfeebles = set_combine(sets.midcast['Enhancing Magic'])
+    sets.midcast.MndEnfeebles = set_combine(sets.midcast['Elemental Magic'])
 
-    sets.midcast.IntEnfeebles = set_combine(sets.midcast['Enhancing Magic'])
+    sets.midcast.IntEnfeebles = set_combine(sets.midcast['Elemental Magic'])
+
+
+	
+
+    sets.midcast.Dispelga = set_combine(sets.midcast['Elemental Magic'], {
+	main="Daybreak",
+	sub="Ammurapi Shield"})
 
     sets.midcast.ElementalEnfeeble = sets.midcast.IntEnfeebles
 
@@ -251,21 +263,21 @@ function init_gear_sets()
 
     -- Elemental Magic sets are default for handling low-tier nukes. MBD2+ please
     sets.midcast['Elemental Magic'] = {    
-    main="Marin staff +1",
+    main={ name="Marin Staff +1", augments={'Path: A',}},
     sub="Enki Strap",
     ammo="Pemphredo Tathlum",
     head={ name="Peda. M.Board +3", augments={'Enh. "Altruism" and "Focalization"',}},
-    body={ name="Merlinic Jubbah", augments={'"Mag.Atk.Bns."+28','Magic burst dmg.+11%','Mag. Acc.+13',}},
-    hands="Amalric gages +1",
-    legs={ name="Merlinic Shalwar", augments={'Mag. Acc.+23 "Mag.Atk.Bns."+23','Magic burst dmg.+8%','"Mag.Atk.Bns."+11',}},
-    feet="Arbatel loafers +1",
-    neck="Argute stole +1",
-    waist="Hachirin-no-Obi",
-    left_ear="malignance earring",
+    body="Agwu's Robe",
+    hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+    legs="Agwu's Slops",
+    feet="Arbatel Loafers +1",
+    neck={ name="Argute Stole +1", augments={'Path: A',}},
+    waist="Skrymir cord",
+    left_ear="Malignance Earring",
     right_ear="Regal Earring",
     left_ring="Locus Ring",
     right_ring="Mujin Band",
-    back="Lugh's cape",
+    back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Magic Damage +10','"Mag.Atk.Bns."+10',}},
 }
 
     sets.midcast['Elemental Magic'].Resistant = {--main="Lehbrailg +2",sub="",
@@ -289,10 +301,47 @@ function init_gear_sets()
 
     --sets.midcast['Elemental Magic'].HighTierNuke.Resistant = set_combine(sets.midcast['Elemental Magic'].Resistant)
 
-    sets.midcast.Impact = set_combine(sets.midcast['Elemental Magic'],{
-    head=empty,
-    body="Twilight Cloak",})
+    sets.midcast.Impact = {
+    sub="Enki Strap",
+    ammo="Pemphredo Tathlum",
+    body="Twilight Cloak",
+    hands="Regal Cuffs",
+    legs="Agwu's Slops",
+    feet={ name="Peda. Loafers +3", augments={'Enhances "Stormsurge" effect',}},
+    neck={ name="Argute Stole +1", augments={'Path: A',}},
+    waist="Hachirin-no-Obi",
+    left_ear="Malignance Earring",
+    right_ear="Regal Earring",
+    left_ring="Stikini Ring",
+    right_ring="Stikini Ring +1",
+    back={ name="Lugh's Cape", augments={'Mag. Acc+20 /Mag. Dmg.+20','"Fast Cast"+10',}},
+	}
 
+  sets.midcast['Ionohelix II'] = {
+    main="Daybreak",
+    sub="Ammurapi Shield",
+    ammo="Pemphredo Tathlum",
+    head={ name="Peda. M.Board +3", augments={'Enh. "Altruism" and "Focalization"',}},
+    body="Agwu's Robe",
+    hands={ name="Amalric Gages +1", augments={'INT+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}},
+    legs={ name="Merlinic Shalwar", augments={'Mag. Acc.+23 "Mag.Atk.Bns."+23','Magic burst dmg.+8%','"Mag.Atk.Bns."+11',}},
+    feet="Arbatel Loafers +1",
+    neck={ name="Argute Stole +1", augments={'Path: A',}},
+    waist="Skrymir Cord",
+    left_ear="Malignance Earring",
+    right_ear="Regal Earring",
+    left_ring="Locus Ring",
+    right_ring="Mujin Band",
+    back={ name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Magic Damage +10','"Mag.Atk.Bns."+10',}},
+  }
+
+  sets.midcast['Luminohelix II'] = sets.midcast['Ionohelix II']
+  sets.midcast['Anemohelix II'] = sets.midcast['Ionohelix II']
+  sets.midcast['Hydrohelix II'] = sets.midcast['Ionohelix II']
+  sets.midcast['Pyrohelix II'] = sets.midcast['Ionohelix II']
+  sets.midcast['Noctohelix II'] = sets.midcast['Ionohelix II']
+  sets.midcast['Geohelix II'] = sets.midcast['Ionohelix II']
+  sets.midcast['Cryohelix II'] = sets.midcast['Ionohelix II']
 
     -- Sets to return to when not performing an action.
 
@@ -404,8 +453,8 @@ function init_gear_sets()
 
     sets.buff['Klimaform'] = {feet="Arbatel Loafers +1"}
 
-    sets.buff.FullSublimation = {head="",ear1="",body="Pedagogy Gown +3", waist="Embla sash"}
-    sets.buff.PDTSublimation = {head="",ear1=""}
+    sets.buff.FullSublimation = {body="Pedagogy Gown +3", waist="Embla sash"}
+    sets.buff.PDTSublimation = {}
 
     --sets.buff['Sandstorm'] = {feet="Desert Boots"}
 end
