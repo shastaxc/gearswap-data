@@ -408,9 +408,9 @@ function init_gear_sets()
     waist="Fotia Belt",
   } -- default set
   sets.precast.WS.MaxTP = set_combine(sets.precast.WS, {})
-  -- For Crit Dmg, not crit rate
-  sets.precast.WS.Crit = {
-    ammo="Charis Feather",
+  sets.precast.WS.SA = {body="Meg. Cuirie +2"}
+  -- For Crit Dmg, not crit rate; overlaid on any WS set that doesn't have its own Climacic set defined
+  sets.precast.WS.Climactic = {
     head="Maculele Tiara +1",
     body="Meghanada Cuirie +2",
   }
@@ -555,9 +555,8 @@ function init_gear_sets()
   sets.precast.WS["Rudra's Storm"].HighAccMaxTP = set_combine(sets.precast.WS["Rudra's Storm"].HighAcc, {
     ear2="Odr Earring",
   })
-  -- Crit sets are overlayed on top of the other sets
-  sets.precast.WS["Rudra's Storm"].Crit = {
-    ammo="Charis Feather",
+  -- For Crit Dmg, not crit rate; overlaid on Rudra's set
+  sets.precast.WS["Rudra's Storm"].Climactic = {
     head="Maculele Tiara +1",
   }
 
@@ -588,8 +587,8 @@ function init_gear_sets()
   sets.precast.WS['Aeolian Edge'].MidAccMaxTP = sets.precast.WS['Aeolian Edge'].MaxTP
   sets.precast.WS['Aeolian Edge'].HighAcc = sets.precast.WS['Aeolian Edge']
   sets.precast.WS['Aeolian Edge'].HighAccMaxTP = sets.precast.WS['Aeolian Edge'].MaxTP
-  -- Crit sets are overlayed on top of the other sets
-  sets.precast.WS["Aeolian Edge"].Crit = {}
+  -- Required to prevent extra gear from equipping during Climactic; AE cannot crit
+  sets.precast.WS["Aeolian Edge"].Climactic = {}
 
 
   ------------------------------------------------------------------------------------------------
@@ -995,9 +994,9 @@ function init_gear_sets()
   sets.buff['Fan Dance'] = {
     body="Horos Bangles",
   }
+  -- This is overlaid on TP set during Climactic Flourish
   sets.buff['Climactic Flourish'] = {
     head="Maculele Tiara +1",
-    body="Meghanada Cuirie +2",
   }
   sets.buff['Closed Position'] = {
     feet="Horos Toe Shoes +3",
@@ -1077,25 +1076,23 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         equip(sets.Special.ElementalObi)
       end
     end
-    if state.Buff['Climactic Flourish'] or state.Buff['Sneak Attack'] then
-      local critset = sets.precast.WS[spell.name].Crit
+    if state.Buff['Climactic Flourish'] then
+      local critset = sets.precast.WS[spell.name].Climactic
       -- If set isn't found for specific ws, overlay the default crit set
       if not critset then
-        critset = sets.precast.WS.Crit
+        critset = sets.precast.WS.Climactic
+      end
+      equip(critset)
+    end
+    if state.Buff['Sneak Attack'] then
+      local critset = sets.precast.WS[spell.name].SA
+      -- If set isn't found for specific ws, overlay the default crit set
+      if not critset then
+        critset = sets.precast.WS.SA
       end
       equip(critset)
     end
   
-    if state.Buff['Sneak Attack'] == true then
-      equip(sets.precast.WS.Crit)
-    end
-    if state.Buff['Climactic Flourish'] then
-      if player.tp <= 2900 then
-        equip(sets.buff['Climactic Flourish'].WS)
-      else
-        equip(sets.buff['Climactic Flourish'].WSMaxTP)
-      end
-    end
     if buffactive['Reive Mark'] then
       equip(sets.Reive)
     end
