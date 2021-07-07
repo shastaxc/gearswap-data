@@ -536,7 +536,7 @@ function init_gear_sets()
     ring2="Regal Ring",
     back=gear.DNC_WS1_Cape,
     waist="Grunfeld Rope",
-    -- ammo="Aurgelmir Orb +1",
+    -- ammo="Cath Palug Stone",
     -- ring2="Epaminondas's Ring",
     -- waist="Kentarch Belt +1", -- Aug it first
   })
