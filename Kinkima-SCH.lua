@@ -140,6 +140,7 @@ function init_gear_sets()
     hands="Academic's Bracers +2", --7
     legs=gear.Psycloth_D_legs, --7
     feet=gear.Merl_FC_feet, --11
+    ear1="Malignance Earring", --4
     ring1="Kishar Ring", --4
     back=gear.SCH_FC_Cape, --10
     waist="Embla Sash", --5
@@ -169,7 +170,7 @@ function init_gear_sets()
     -- body="Pinga Tunic +1", --15
     -- back=gear.SCH_FC_Cape, --10
     -- waist="Embla Sash", --5
-  } --78
+  } --82
 
   -- Grimoire casting bonuses multiply separately from FC, allowing
   -- breaking the normal 80% cast time reduction cap.
@@ -267,13 +268,13 @@ function init_gear_sets()
   sets.precast.WS['Omniscience'] = set_combine(sets.precast.WS, {
     body="Pedagogy Gown +1",
     legs="Pedagogy Pants +1",
+    ear1="Malignance Earring",
     back=gear.SCH_MAB_Cape,
     -- ammo="Pemphredo Tathlum",
     -- head="Pixie Hairpin +1",
     -- body="Peda. Gown +3",
     -- legs="Peda. Pants +3",
     -- feet="Merlinic Crackows",
-    -- ear1="Malignance Earring",
     -- ear2="Regal Earring",
     -- ring2="Archon Ring",
     -- waist="Sacro Cord",
@@ -338,7 +339,7 @@ function init_gear_sets()
     legs=gear.Vanya_B_legs,       -- __, __, 20, 34, 12, __, __
     feet=gear.Vanya_B_feet,       -- __,  5, 40, 19, 10, __, __
     ear1="Mendicant's Earring",   -- __,  5, __, __, __, __, __
-    ear2="Meili Earring",         -- __, __, 10, __, __, __, __
+    ear2="Malignance Earring",    -- __, __, __,  8, __,  4, __
     ring1="Kishar Ring",          -- __, __, __, __, __,  4, __
     ring2="Sirona's Ring",        -- __, __, 10,  3,  3, __, __
     back=gear.SCH_FC_Cape,        -- __, __, __, 30, __, 10, __
@@ -346,7 +347,6 @@ function init_gear_sets()
     -- main="Daybreak",           -- __, 30, __, 30, __, __, __
     -- sub="Chanter's Shield",    -- __, __, __, __, __,  3, __
     -- neck="Voltsurge Torque",   -- __, __, __, __, __,  4, __
-    -- ear2="Malignance Earring", -- __, __, __,  8, __,  4, __
     -- 3 CPII, 50 CP, 129 Heal Skill, 233 MND, 91 VIT, 32 FC, 7 -Enmity
     -- 724 Power
 
@@ -386,7 +386,7 @@ function init_gear_sets()
     legs=gear.Vanya_B_legs,       -- __, __, 20, 34, 12, __, __
     feet=gear.Vanya_B_feet,       -- __,  5, 40, 19, 10, __, __
     ear1="Mendicant's Earring",   -- __,  5, __, __, __, __, __
-    ear2="Meili Earring",         -- __, __, 10, __, __, __, __
+    ear2="Malignance Earring", -- __, __, __,  8, __,  4, __
     ring1="Kishar Ring",          -- __, __, __, __, __,  4, __
     ring2="Sirona's Ring",        -- __, __, 10,  3,  3, __, __
     back=gear.SCH_FC_Cape,        -- __, __, __, 30, __, 10, __
@@ -394,7 +394,6 @@ function init_gear_sets()
     -- main="Daybreak",           -- __, 30, __, 30, __, __, __
     -- sub="Chanter's Shield",    -- __, __, __, __, __,  3, __
     -- neck="Voltsurge Torque",   -- __, __, __, __, __,  4, __
-    -- ear2="Malignance Earring", -- __, __, __,  8, __,  4, __
     -- 3 CPII, 50 CP, 129 Heal Skill, 233 MND, 91 VIT, 27 FC, 7 -Enmity
     -- 724 Power
 
@@ -435,6 +434,7 @@ function init_gear_sets()
     legs=gear.Psycloth_D_legs,    -- __, __, __, 30, 12,  7, __
     feet=gear.Vanya_B_feet,       -- __,  5, 40, 19, 10, __, __
     ear1="Mendicant's Earring",   -- __,  5, __, __, __, __, __
+    ear2="Malignance Earring",    -- __, __, __,  8, __,  4, __
     ring1="Kishar Ring",          -- __, __, __, __, __,  4, __
     ring2="Sirona's Ring",        -- __, __, 10,  3,  3, __, __
     back=gear.SCH_FC_Cape,        -- __, __, __, 30, __, 10, __
@@ -442,7 +442,6 @@ function init_gear_sets()
     -- main="Daybreak",           -- __, 30, __, 30, __, __, __
     -- sub="Chanter's Shield",    -- __, __, __, __, __,  3, __
     -- neck="Voltsurge Torque",   -- __, __, __, __, __,  4, __
-    -- ear2="Malignance Earring", -- __, __, __,  8, __,  4, __
     -- 3 CPII, 50 CP, 89 Heal Skill, 222 MND, 99 VIT, 47 FC, 7 -Enmity
     -- 750 Power
 
@@ -481,7 +480,7 @@ function init_gear_sets()
     legs=gear.Psycloth_D_legs,    -- __, __, __, 30, 12,  7, __
     feet=gear.Vanya_B_feet,       -- __,  5, 40, 19, 10, __, __
     ear1="Mendicant's Earring",   -- __,  5, __, __, __, __, __
-    ear2="Meili Earring",         -- __, __, 10, __, __, __, __
+    ear2="Malignance Earring",    -- __, __, __,  8, __,  4, __
     ring1="Kishar Ring",          -- __, __, __, __, __,  4, __
     ring2="Sirona's Ring",        -- __, __, 10,  3,  3, __, __
     back=gear.SCH_FC_Cape,        -- __, __, __, 30, __, 10, __
@@ -489,7 +488,6 @@ function init_gear_sets()
     -- main="Daybreak",           -- __, 30, __, 30, __, __, __
     -- sub="Chanter's Shield",    -- __, __, __, __, __,  3, __
     -- neck="Voltsurge Torque",   -- __, __, __, __, __,  4, __
-    -- ear2="Malignance Earring", -- __, __, __,  8, __,  4, __
     -- 3 CPII, 50 CP, 89 Heal Skill, 222 MND, 99 VIT, 42 FC, 7 -Enmity
     -- 750 Power
 
@@ -663,6 +661,7 @@ function init_gear_sets()
     legs="Academic's Pants +1",
     feet="Academic's Loafers +1",
     neck="Sanctity Necklace",       -- 10, __, __, __
+    ear1="Malignance Earring",   -- 10,  8, __, __
     ring1="Kishar Ring",            --  5, __, 10, __
     ring2="Metamor. Ring +1",       -- 16, 15, __, __
     back=gear.SCH_MND_MAcc_Cape, -- 30, 20, __, __
@@ -675,7 +674,6 @@ function init_gear_sets()
     -- legs="Acad. Pants +3",       -- 49, 39, __, __; +24 enf skill in LA
     -- feet="Acad. Loafers +3",     -- 46, 29, __, __; +20 M.Acc in Grimoire
     -- neck="Argute Stole +2",      -- 30, 15, __, __
-    -- ear1="Malignance Earring",   -- 10,  8, __, __
     -- ear2="Regal Earring",        -- __, 10, __, __; Adds set bonus
     -- waist="Luminary Sash",       -- 10, 10, __, __
     -- Acad. set bonus              -- 60, __, __, __
@@ -694,6 +692,7 @@ function init_gear_sets()
     legs="Academic's Pants +1",
     feet="Academic's Loafers +1",
     neck="Sanctity Necklace",       -- 10, __, __, __
+    ear1="Malignance Earring",      -- 10,  8, __, __
     ring1="Kishar Ring",            --  5, __, 10, __
     ring2="Metamor. Ring +1",       -- 16, 15, __, __
     -- main=gear.Gada_INT_MAcc,     -- 35, 16, __, 16; +215 M.Acc skill
@@ -705,7 +704,6 @@ function init_gear_sets()
     -- legs="Acad. Pants +3",       -- 49, 39, __, __; +24 enf skill in LA
     -- feet="Acad. Loafers +3",     -- 46, 32, __, __; +20 M.Acc in Grimoire
     -- neck="Argute Stole +2",      -- 30, 15, __, __
-    -- ear1="Malignance Earring",   -- 10,  8, __, __
     -- ear2="Regal Earring",        -- __, 10, __, __; Adds set bonus
     -- back=gear.SCH_INT_MAcc_Cape, -- 30, 20, __, __
     -- waist="Acuity Belt +1",      -- 15, 23, __, __
@@ -775,6 +773,7 @@ function init_gear_sets()
     hands="Academic's Bracers +2",
     legs="Academic's Pants +1",
     feet="Academic's Loafers +1",
+    ear1="Malignance Earring",      --  4, 10, ___
     back=gear.SCH_MAB_Cape,
 
     --Ideal:
@@ -803,6 +802,8 @@ function init_gear_sets()
     hands="Academic's Bracers +2",
     legs="Academic's Pants +1",
     feet="Academic's Loafers +1",
+    ear1="Malignance Earring",   -- __,  4, 10, ___
+
     --Ideal:
     -- main="Hvergelmir",           -- __, 50, __, 269
     -- sub="Khonsu",                -- __, __, 30, ___
@@ -835,6 +836,7 @@ function init_gear_sets()
     body=gear.Merl_MB_body,       -- 40, 20, 20
     hands=gear.Merl_MB_hands,
     neck="Sanctity Necklace",     -- __, 10, 10
+    ear1="Malignance Earring",    --  8, 10,  8
     ring2="Metamor. Ring +1",     -- 16, 15, __
     back=gear.SCH_MAB_Cape,       -- 30, 20, 10
     -- ammo="Pemphredo Tathlum",  --  4,  8,  4
@@ -844,7 +846,6 @@ function init_gear_sets()
     -- legs="Mallquis Trews +2",  -- 57, 45, 15
     -- feet=gear.Merl_MB_feet,    -- 34, 40, 55
     -- neck="Argute Stole +2",    -- 15, 30, __
-    -- ear1="Malignance Earring", --  8, 10,  8
     -- ear2="Regal Earring",      -- 10, __,  7
     -- ring1="Freke Ring",        -- 10, __,  8
     -- waist="Acuity Belt +1",    -- 23, 15, __
@@ -859,6 +860,7 @@ function init_gear_sets()
     head="Peda. M.Board +1",
     body="Shamash Robe",            -- 40, 45, 45
     neck="Sanctity Necklace",       -- __, 10, 10
+    ear1="Malignance Earring",      --  8, 10,  8
     ring2="Metamor. Ring +1",       -- 16, 15, __
     back=gear.SCH_MAB_Cape,         -- 30, 20, 10
     -- ammo="Pemphredo Tathlum",    --  4,  8,  4
@@ -868,7 +870,6 @@ function init_gear_sets()
     -- legs=gear.Amalric_A_legs,    -- 40, 20, 60
     -- feet=gear.Amalric_D_feet,    -- 21, 20, 52
     -- neck="Baetyl Pendant",       -- __, __, 13
-    -- ear1="Malignance Earring",   --  8, 10,  8
     -- ear2="Regal Earring",        -- 10, __,  7
     -- ring1="Freke Ring",          -- 10, __,  8
     -- waist="Refoccilation Stone", -- __,  4, 10
