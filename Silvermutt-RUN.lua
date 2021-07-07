@@ -299,10 +299,10 @@ function init_gear_sets()
 
   sets.MAB = {
     ammo="Seething Bomblet +1", --7 [0]
-    head="Nyame Helm", --30 [91]
-    body="Nyame Mail", --30 [136]
+    head=gear.Nyame_B_head, --30 [91]
+    body=gear.Nyame_B_body, --30 [136]
     hands=gear.Carmine_D_hands, --42 [27]
-    legs="Nyame Flanchard", --30 [114]
+    legs=gear.Nyame_B_legs, --30 [114]
     feet=gear.Herc_MAB_feet, --50 [9]
     neck="Baetyl Pendant", --13 [0]
     ear1="Friomisi Earring", --10 [0]
@@ -615,7 +615,7 @@ function init_gear_sets()
   sets.SIRD = {
     ammo="Staunch Tathlum +1",    --  3/ 3, ___ [___] {11}
     head="Agwu's Cap",            -- __/__, 107 [ 38] {10}
-    body="Nyame Mail",            --  9/ 9, 139 [136] {__}
+    body=gear.Nyame_B_body,            --  9/ 9, 139 [136] {__}
     hands=gear.Rawhide_B_hands,   -- __/__,  37 [ 75] {15}
     legs=gear.Carmine_A_legs,     -- __/__,  80 [130] {20}
     feet=gear.Taeon_SIRD_feet,    -- __/__,  89 [ 60] {10}
@@ -758,9 +758,9 @@ function init_gear_sets()
   sets.LightDef = {
     sub="Utu Grip",             -- __/__, ___ [ 70]
     ammo="Staunch Tathlum +1",  --  3/ 3, ___ [___]
-    head="Nyame Helm",          --  7/ 7, 123 [ 91]
-    body="Nyame Mail",          --  9/ 9, 139 [136]
-    legs="Nyame Flanchard",     --  8/ 8, 150 [114]
+    head=gear.Nyame_B_head,          --  7/ 7, 123 [ 91]
+    body=gear.Nyame_B_body,          --  9/ 9, 139 [136]
+    legs=gear.Nyame_B_legs,     --  8/ 8, 150 [114]
     ear1="Odnowa Earring +1",   --  3/ 5, ___ [110]
     ring2="Defending Ring",     -- 10/10, ___ [___]
     back=gear.RUN_HPD_Cape,     -- 10/__,  20 [ 80]
@@ -776,8 +776,8 @@ function init_gear_sets()
   sets.defense.PDT = {
     sub="Refined Grip +1",        --  3/ 3, ___ [ 35]
     ammo="Staunch Tathlum +1",    --  3/ 3, ___ [___]
-    head="Nyame Helm",            --  7/ 7, 123 [ 91]
-    body="Nyame Mail",            --  9/ 9, 139 [136]
+    head=gear.Nyame_B_head,            --  7/ 7, 123 [ 91]
+    body=gear.Nyame_B_body,            --  9/ 9, 139 [136]
     hands="Turms Mittens",        -- __/__,  91 [ 59]
     legs="Erilaz Leg Guards +1",  --  7/__, 107 [ 80]
     feet="Turms Leggings +1",     -- __/__, 147 [ 76]
@@ -797,11 +797,11 @@ function init_gear_sets()
   sets.defense.MDT = {
     sub="Utu Grip",               -- __/__, ___ [ 70]
     ammo="Yamarang",              -- __/__,  15 [___]
-    head="Nyame Helm",            --  7/ 7, 123 [ 91]
-    body="Nyame Mail",            --  9/ 9, 139 [136]
+    head=gear.Nyame_B_head,            --  7/ 7, 123 [ 91]
+    body=gear.Nyame_B_body,            --  9/ 9, 139 [136]
     hands="Turms Mittens",        -- __/__,  91 [ 59]
-    legs="Nyame Flanchard",       --  8/ 8, 150 [114]
-    feet="Nyame Sollerets",       --  7/ 7, 150 [ 68]
+    legs=gear.Nyame_B_legs,       --  8/ 8, 150 [114]
+    feet=gear.Nyame_B_feet,       --  7/ 7, 150 [ 68]
     neck="Futhark Torque +1",     --  6/ 6,  25 [ 45]
     waist="Engraved Belt",        -- __/__, ___ [___]
     ear1="Odnowa Earring +1",     --  3/ 5, ___ [110]

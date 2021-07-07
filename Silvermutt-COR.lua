@@ -774,10 +774,10 @@ function init_gear_sets()
 
   sets.midcast.CorsairShot = {
     ammo=gear.QDbullet,
-    head="Nyame Helm", --30
+    head=gear.Nyame_B_head, --30
     body="Lanun Frac +3",
     hands="Carmine Fin. Ga. +1",
-    legs="Nyame Flanchard", --30
+    legs=gear.Nyame_B_legs, --30
     feet="Lanun Bottes +3",
     neck="Baetyl Pendant",
     ear1="Friomisi Earring",
@@ -896,7 +896,7 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.LightDef = {
-    head="Nyame Helm",            --  7/ 7, 123
+    head=gear.Nyame_B_head,            --  7/ 7, 123
     body="Malignance Tabard",     --  9/ 9, 139
     hands="Malignance Gloves",    --  5/ 5, 112
     legs="Malignance Tights",     --  7/ 7, 150
@@ -906,7 +906,7 @@ function init_gear_sets()
   } -- 42 PDT / 42 MDT, 674 MEVA
 
   sets.HeavyDef = {
-    head="Nyame Helm",          --  7/ 7, 123
+    head=gear.Nyame_B_head,          --  7/ 7, 123
     body="Malignance Tabard",   --  9/ 9, 139
     hands="Malignance Gloves",  --  5/ 5, 112
     legs="Malignance Tights",   --  7/ 7, 150

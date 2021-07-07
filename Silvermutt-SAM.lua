@@ -336,11 +336,11 @@ function init_gear_sets()
   -- Tachi: Jinpu - 30% STR
   sets.precast.WS['Tachi: Jinpu'] = set_combine(sets.precast.WS, {
     ammo="Knobkierrie",
-    head="Nyame Helm",
-    body="Nyame Mail",
-    hands="Nyame Gauntlets",
-    legs="Nyame Flanchard",
-    feet="Nyame Sollerets",
+    head=gear.Nyame_B_head,
+    body=gear.Nyame_B_body,
+    hands=gear.Nyame_B_hands,
+    legs=gear.Nyame_B_legs,
+    feet=gear.Nyame_B_feet,
     neck="Fotia Gorget",
     ear1="Friomisi Earring",
     ear2="Moonshade Earring",

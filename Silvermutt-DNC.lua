@@ -563,10 +563,10 @@ function init_gear_sets()
 
   sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
     ammo="Pemphredo Tathlum", --4
-    head="Nyame Helm", --30
-    body="Nyame Mail", --30
-    hands="Nyame Gauntlets", --30
-    legs="Nyame Flanchard", --30
+    head=gear.Nyame_B_head, --30
+    body=gear.Nyame_B_body, --30
+    hands=gear.Nyame_B_hands, --30
+    legs=gear.Nyame_B_legs, --30
     feet=gear.Herc_MAB_feet, --50
     neck="Baetyl Pendant", --13
     ear1="Friomisi Earring", --10
@@ -611,7 +611,7 @@ function init_gear_sets()
 
   sets.LightDef = {
     ammo="Yamarang",            -- __/__,  15
-    head="Nyame Helm",          --  7/ 7, 123
+    head=gear.Nyame_B_head,          --  7/ 7, 123
     body="Malignance Tabard",   --  9/ 9, 139
     hands="Malignance Gloves",  --  5/ 5, 112
     legs="Malignance Tights",   --  7/ 7, 150
@@ -623,7 +623,7 @@ function init_gear_sets()
 
   sets.HeavyDef = {
     ammo="Yamarang",            -- __/__,  15
-    head="Nyame Helm",          --  7/ 7, 123
+    head=gear.Nyame_B_head,          --  7/ 7, 123
     body="Malignance Tabard",   --  9/ 9, 139
     hands="Malignance Gloves",  --  5/ 5, 112
     legs="Malignance Tights",   --  7/ 7, 150
