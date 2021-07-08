@@ -916,26 +916,24 @@ function init_gear_sets()
     -- waist="Skrymir Cord",        -- __,  5,  5, ___,  30, __, __
 
     -- Ideal:
-    -- main="Bunzi's Rod",          -- 15, 45, 55, 255, 248, 10, __
-    -- sub="Ammurapi Shield",       -- 13, 38, 38, ___, ___, __, __
-    -- ammo="Ghastly Tathlum +1",   -- 11, __, 21, ___, ___, __, __
-    -- head="Peda. M.Board +3",     -- 39, 37, 49, ___, ___, __,  4
-    -- body="Agwu's Robe",          -- 47, 45, 55, ___,  20, 10, __
-    -- hands=gear.Amalric_D_hands,  -- 24, 20, 53, ___, ___, __,  6
-    -- legs=gear.Amalric_A_legs,    -- 40, 20, 60, ___, ___, __, __
-    -- feet="Arbatel Loafers +1",   -- 24, __, __, ___, ___, __, __; Klimaform+15; replace
-    -- feet="Mallquis Clogs +2",    -- 37, 42, 15, ___,  46, __, __
-    -- neck="Argute Stole +2",      -- 15, 30, __, ___,  25, 10, __; Helix Dur+10%
-    -- ear1="Malignance Earring",   --  8, 10,  8, ___, ___, __, __
-    -- ear2="Regal Earring",        -- 10, __,  7, ___, ___, __, __
-    -- ring1="Mallquis Ring",       -- __,  6, __, ___,  12, __, __
-    -- ring2="Mujin Band",          -- __, __, __, ___, ___, __,  5
-    -- back=gear.SCH_Helix_Cape,    -- 20, 20, 10, ___,  30, __, __
-    -- waist="Skrymir Cord +1",     -- __,  7,  7, ___,  35, __, __
-    -- Amalric set bonus            -- __, __, 20, ___, ___, __, __
-    -- Mallquis set bonus           --  8, __, __, ___, ___, __, __
-    -- SCH Job trait                -- __, __, __, ___, ___,  9, __
-    -- 311 INT, 320 MAcc, 398 MAB, 255 MAccSk, 416 MDmg, 39 MB Dmg%, 15 MB2 Dmg%
+    main="Bunzi's Rod",          -- 15, 45, 55, 255, 248, 10, __
+    sub="Ammurapi Shield",       -- 13, 38, 38, ___, ___, __, __
+    ammo="Ghastly Tathlum +1",   -- 11, __, __, ___,  21, __, __
+    head="Peda. M.Board +3",     -- 39, 37, 49, ___, ___, __,  4
+    body="Mallquis Saio +2",     -- 54, 46, 15, ___,  58, __, __
+    hands=gear.Amalric_D_hands,  -- 24, 20, 53, ___, ___, __,  6
+    legs="Mallquis Trews +2",    -- 57, 45, 15, ___,  55,  6, __
+    feet="Mallquis Clogs +2",    -- 37, 42, 15, ___,  46, __, __
+    neck="Argute Stole +2",      -- 15, 30, __, ___,  25, 10, __; Helix Dur+10%
+    ear1="Malignance Earring",   --  8, 10,  8, ___, ___, __, __
+    ear2="Regal Earring",        -- 10, __,  7, ___, ___, __, __
+    ring1="Locus Ring",          -- __, __, __, ___, ___,  5, __
+    ring2="Mujin Band",          -- __, __, __, ___, ___, __,  5
+    back=gear.SCH_Helix_Cape,    -- 20, 20, 10, ___,  30, __, __
+    waist="Skrymir Cord +1",     -- __,  7,  7, ___,  35, __, __
+    -- Mallquis set bonus        -- 16, __, __, ___, ___, __, __
+    -- SCH Job trait             -- __, __, __, ___, ___,  9, __
+    -- 319 INT, 340 MAcc, 272 MAB, 255 MAccSk, 518 MDmg, 40 MB Dmg%, 15 MB2 Dmg%
   }
   sets.midcast.DarkHelix = set_combine(sets.midcast.Helix, {
     -- head="Pixie Hairpin +1",
