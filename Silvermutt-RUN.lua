@@ -262,8 +262,8 @@ function init_gear_sets()
     ear2={name="Cryptic Earring", priority=1},    -- __/__, ___ [ 40] < 4>
     ring1={name="Gelatinous Ring +1", priority=1},--  7/-1, ___ [135] <__>
     ring2={name="Eihwaz Ring", priority=5},       -- __/__, ___ [ 70] < 5>
-    waist={name="Kasiri Belt", priority=1},       -- __/__, ___ [ 30] < 3>
     back=gear.RUN_HPD_Cape,                       -- 10/__,  20 [ 80] <10>
+    waist={name="Kasiri Belt", priority=1},       -- __/__, ___ [ 30] < 3>
     --46% PDT / 12% MDT, 423 M.Eva [802 HP] <75 Enmity>
     
     -- ammo="Staunch Tathlum +1",                    --  3/ 3, ___ [___] <__>
@@ -277,8 +277,8 @@ function init_gear_sets()
     -- ear2={name="Cryptic Earring", priority=1},    -- __/__, ___ [ 40] < 4>
     -- ring1={name="Moonlight Ring", priority=1},    --  5/ 5, ___ [110] <__>
     -- ring2={name="Moonlight Ring", priority=1},    --  5/ 5, ___ [110] <__>
-    -- waist={name="Kasiri Belt", priority=1},       -- __/__, ___ [ 30] < 3>
     -- back=gear.RUN_HPD_Cape,                       -- 10/__,  20 [ 80] <10>
+    -- waist={name="Kasiri Belt", priority=1},       -- __/__, ___ [ 30] < 3>
     --46% PDT / 20% MDT, 398 M.Eva [952 HP] <71 Enmity>
   }
 
