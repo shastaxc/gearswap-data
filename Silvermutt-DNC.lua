@@ -76,11 +76,11 @@
 function get_sets()
   -- Load and initialize Mote library
   mote_include_version = 2
-  include('Mote-Include.lua') -- Executes job_setup, user_setup, 
-  coroutine.schedule(function() 
+  include('Mote-Include.lua') -- Executes job_setup, user_setup,
+  coroutine.schedule(function()
     send_command('gs org')
   end, 1)
-  coroutine.schedule(function() 
+  coroutine.schedule(function()
     send_command('gs c weaponset current')
   end, 2)
 end
@@ -140,7 +140,7 @@ function job_setup()
 
   send_command('bind ^insert gs c weaponset cycle')
   send_command('bind ^delete gs c weaponset cycleback')
-  
+
   send_command('bind ^pageup gs c toyweapon cycle')
   send_command('bind ^pagedown gs c toyweapon cycleback')
   send_command('bind !pagedown gs c toyweapon reset')
@@ -523,23 +523,24 @@ function init_gear_sets()
 
   -- 80% DEX
   sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {
-    ammo="Aurgelmir Orb",
-    head=gear.Nyame_B_head,
-    body=gear.Herc_WSD_body,
-    hands="Maxixi Bangles +3",
-    legs="Horos Tights +3",
-    feet=gear.Nyame_B_feet,
-    neck="Etoile Gorget +2",
-    ear1="Ishvara Earring",
-    ear2="Moonshade Earring",
-    ring1="Ilabrat Ring",
-    ring2="Regal Ring",
-    back=gear.DNC_WS1_Cape,
-    waist="Grunfeld Rope",
-    -- ammo="Cath Palug Stone",
-    -- ring2="Epaminondas's Ring",
-    -- waist="Kentarch Belt +1", -- Aug it first
-  })
+    ammo="Aurgelmir Orb",           --  5, __, __,  7, __
+    head=gear.Nyame_B_head,         -- 25, 24,  8, 55, __
+    body=gear.Herc_WSD_body,        -- 34, 21, 10, 20, __
+    hands="Maxixi Bangles +3",      -- 45, 27, 10, 35, __
+    legs="Horos Tights +3",         -- __, 24, 10, 64, __
+    feet=gear.Nyame_B_feet,         -- 26, 38,  8, 55, __
+    neck="Etoile Gorget +2",        -- 25, 25, __, __, 10
+    ear1="Ishvara Earring",         -- __, __,  2, __, __
+    ear2="Moonshade Earring",       -- __, __, __, __, __; TP Bonus+250
+    ring1="Ilabrat Ring",           -- 10, __, __, 25, __
+    ring2="Regal Ring",             -- 10, __, __, 20, __
+    back=gear.DNC_WS1_Cape,         -- 30, __, 10, 20, __; Crit dmg+5
+    waist="Grunfeld Rope",          --  5, __, __, 20, __
+    -- ammo="Cath Palug Stone",     -- 10, __, __, __, __
+    -- ring2="Epaminondas's Ring",  -- __, __,  5, __, __
+    -- waist="Kentarch Belt +1",    -- 10, __, __, __, __;Aug it first
+    -- 215 DEX, 159 CHR, 68 WSD, 274 Att, 10 PDL
+  })-- 215 DEX, 159 CHR, 63 WSD, 321 Att, 10 PDL
   sets.precast.WS["Rudra's Storm"].MaxTP = set_combine(sets.precast.WS["Rudra's Storm"], {
     ear2="Odr Earring",
   })
@@ -690,7 +691,7 @@ function init_gear_sets()
     ring2="Gelatinous Ring +1", --  7/-1, ___
     -- back="Moonlight Cape",      --  6/ 6, ___
   }) --61 PDT/55 MDT, 791 MEVA
-  
+
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Engaged Sets ------------------------------------------
@@ -1092,7 +1093,7 @@ function job_post_precast(spell, action, spellMap, eventArgs)
       end
       equip(critset)
     end
-  
+
     if buffactive['Reive Mark'] then
       equip(sets.Reive)
     end
