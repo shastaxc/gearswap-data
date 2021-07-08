@@ -877,7 +877,7 @@ function init_gear_sets()
     -- Amalric set bonus            -- __, __, 40
     -- 304 INT, 272 Magic Acc, 440 MAB
   }
-  
+
   sets.midcast['Elemental Magic'].Seidr = set_combine(sets.midcast['Elemental Magic'], {
     legs="Pedagogy Pants +1",
     neck="Erra Pendant",
@@ -934,8 +934,8 @@ function init_gear_sets()
     -- waist="Skrymir Cord +1",     -- __,  7,  7, ___,  35, __, __
     -- Amalric set bonus            -- __, __, 20, ___, ___, __, __
     -- Mallquis set bonus           --  8, __, __, ___, ___, __, __
-    -- Sub RDM or BLM Job trait     -- __, __, __, ___, ___, 10, __
-    -- 311 INT, 320 MAcc, 398 MAB, 255 MAccSk, 416 MDmg, 40 MB Dmg%, 15 MB2 Dmg%
+    -- SCH Job trait                -- __, __, __, ___, ___,  9, __
+    -- 311 INT, 320 MAcc, 398 MAB, 255 MAccSk, 416 MDmg, 39 MB Dmg%, 15 MB2 Dmg%
   }
   sets.midcast.DarkHelix = set_combine(sets.midcast.Helix, {
     -- head="Pixie Hairpin +1",
@@ -1522,7 +1522,7 @@ end
 function job_self_command(cmdParams, eventArgs)
   silibs.self_command(cmdParams, eventArgs)
   gearinfo(cmdParams, eventArgs)
-  
+
   if cmdParams[1] == 'scholar' then
     handle_strategems(cmdParams)
     eventArgs.handled = true
