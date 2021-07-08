@@ -918,26 +918,28 @@ function init_gear_sets()
     -- Ideal:
     -- main="Bunzi's Rod",          -- 15, 45, 55, 255, 248, 10, __
     -- sub="Ammurapi Shield",       -- 13, 38, 38, ___, ___, __, __
-    -- ammo="Pemphredo Tathlum",    --  4,  8,  4, ___, ___, __, __
+    -- ammo="Ghastly Tathlum +1",   -- 11, __, 21, ___, ___, __, __
     -- head="Peda. M.Board +3",     -- 39, 37, 49, ___, ___, __,  4
     -- body="Agwu's Robe",          -- 47, 45, 55, ___,  20, 10, __
     -- hands=gear.Amalric_D_hands,  -- 24, 20, 53, ___, ___, __,  6
     -- legs=gear.Amalric_A_legs,    -- 40, 20, 60, ___, ___, __, __
-    -- feet="Arbatel Loafers +1",   -- 24, __, __, ___, ___, __, __; Klimaform+15
+    -- feet="Arbatel Loafers +1",   -- 24, __, __, ___, ___, __, __; Klimaform+15; replace
+    -- feet="Mallquis Clogs +2",    -- 37, 42, 15, ___,  46, __, __
     -- neck="Argute Stole +2",      -- 15, 30, __, ___,  25, 10, __; Helix Dur+10%
     -- ear1="Malignance Earring",   --  8, 10,  8, ___, ___, __, __
     -- ear2="Regal Earring",        -- 10, __,  7, ___, ___, __, __
     -- ring1="Mallquis Ring",       -- __,  6, __, ___,  12, __, __
     -- ring2="Mujin Band",          -- __, __, __, ___, ___, __,  5
     -- back=gear.SCH_Helix_Cape,    -- 20, 20, 10, ___,  30, __, __
-    -- waist="Skrymir Cord",        -- __,  7,  7, ___,  35, __, __
+    -- waist="Skrymir Cord +1",     -- __,  7,  7, ___,  35, __, __
     -- Amalric set bonus            -- __, __, 20, ___, ___, __, __
-    -- Sub RDM or BLM Job trait     -- __, __, 20, ___, ___, 10, __
-    -- 259 INT, 286 MAcc, 386 MAB, 255 MAccSk, 370 MDmg, 40 MB Dmg%, 15 MB2 Dmg%
+    -- Mallquis set bonus           --  8, __, __, ___, ___, __, __
+    -- Sub RDM or BLM Job trait     -- __, __, __, ___, ___, 10, __
+    -- 311 INT, 320 MAcc, 398 MAB, 255 MAccSk, 416 MDmg, 40 MB Dmg%, 15 MB2 Dmg%
   }
   sets.midcast.DarkHelix = set_combine(sets.midcast.Helix, {
     -- head="Pixie Hairpin +1",
-    -- ring2="Archon Ring",
+    -- ring1="Archon Ring",
   })
   sets.midcast.LightHelix = set_combine(sets.midcast.Helix, {
     -- main="Daybreak",
