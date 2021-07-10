@@ -115,19 +115,17 @@ function init_gear_sets()
     -- legs="Peda. Pants +3",
   }
   sets.precast.JA['Enlightenment'] = {
-    body="Pedagogy Gown +1",
-    -- body="Peda. Gown +3",
+    body="Peda. Gown +3",
   }
   -- Maximize HP+ (MP-to-HP conversion doesn't work)
   sets.precast.JA['Sublimation'] = {
     main="Siriti", --1
     sub="Genmei Shield",
     head="Academic's Mortarboard +1", --2
-    body="Pedagogy Gown +1", --3
+    body="Peda. Gown +3", --5
     ear1="Savant's Earring", --1
     waist="Embla Sash", --5
     -- head="Acad. Mortar. +3", --4
-    -- body="Peda. Gown +3", --5
   }
 
   -- Fast cast sets for spells
@@ -266,13 +264,12 @@ function init_gear_sets()
   }
 
   sets.precast.WS['Omniscience'] = set_combine(sets.precast.WS, {
-    body="Pedagogy Gown +1",
+    body="Peda. Gown +3",
     legs="Pedagogy Pants +1",
     ear1="Malignance Earring",
     back=gear.SCH_MAB_Cape,
     -- ammo="Pemphredo Tathlum",
     -- head="Pixie Hairpin +1",
-    -- body="Peda. Gown +3",
     -- legs="Peda. Pants +3",
     -- feet="Merlinic Crackows",
     -- ear2="Regal Earring",
@@ -546,8 +543,9 @@ function init_gear_sets()
   -- Enh Magic Skill + Enh Magic Duration > Fast Cast
   sets.midcast['Enhancing Magic'] = {
     main="Gada",
+    sub="Enki Strap",
     head=gear.Telchine_ENH_head,      -- __,  9, __
-    body="Pedagogy Gown +1",          -- 15, __, __
+    body="Peda. Gown +3",             -- 19, 12, __
     hands=gear.Telchine_ENH_hands,    -- __, 10, __
     legs=gear.Telchine_ENH_legs,      -- __, 10, __
     waist="Embla Sash",               -- __, 10,  5
@@ -555,7 +553,6 @@ function init_gear_sets()
     -- sub="Ammurapi Shield",         -- __, 10, __
     -- ammo="Savant's Treatise",      --  4, __, __
     -- head=gear.Telchine_ENH_head,   -- __, 10, __
-    -- body="Peda. Gown +3",          -- 19, 12, __
     -- feet=gear.Kaykaus_D_feet,      -- 21, __,  4
     -- neck="Incanter's Torque",      -- 10, __, __
     -- ear1="Mimir Earring",          -- 10, __, __
@@ -570,13 +567,13 @@ function init_gear_sets()
     main=gear.Pedagogy_C,           -- 15,  8
     sub="Enki Strap",
     head=gear.Telchine_ENH_head,    --  9, __
+    body="Peda. Gown +3",           -- 12, __
     hands=gear.Telchine_ENH_hands,  -- 10, __
     legs=gear.Telchine_ENH_legs,    -- 10, __
     waist="Embla Sash",             -- 10,  5
     -- main=gear.Musa_C,              -- 20, 10
     -- sub="Clerisy Strap +1",        -- __,  3
     -- head=gear.Telchine_ENH_head,   -- 10, __
-    -- body="Peda. Gown +3",          -- 12, __
     -- feet=gear.Telchine_ENH_feet,   -- 10, __
     -- 82 Enh Duration, 18 FC
   }
@@ -910,29 +907,32 @@ function init_gear_sets()
   sets.midcast.Helix = {
     main=gear.Akademos_C,           -- 27, 25, 53, 228, 217, 10, __
     sub="Enki Strap",               -- 10, 10, __, ___, ___, __, __
+    body="Mallquis Saio +2",        -- 54, 46, 15, ___,  58, __, __
+    legs="Mallquis Trews +2",       -- 57, 45, 15, ___,  55,  6, __
+    feet="Mallquis Clogs +1",       -- 33, 36, 12, ___,  46, __, __
     ear1="Malignance Earring",      --  8, 10,  8, ___, ___, __, __
     -- main="Daybreak",             -- __, 40, 40, 242, 241, __, __
     -- sub="Ammurapi Shield",       -- 13, 38, 38, ___, ___, __, __
     -- waist="Skrymir Cord",        -- __,  5,  5, ___,  30, __, __
 
     -- Ideal:
-    main="Bunzi's Rod",          -- 15, 45, 55, 255, 248, 10, __
-    sub="Ammurapi Shield",       -- 13, 38, 38, ___, ___, __, __
-    ammo="Ghastly Tathlum +1",   -- 11, __, __, ___,  21, __, __
-    head="Peda. M.Board +3",     -- 39, 37, 49, ___, ___, __,  4
-    body="Mallquis Saio +2",     -- 54, 46, 15, ___,  58, __, __
-    hands=gear.Amalric_D_hands,  -- 24, 20, 53, ___, ___, __,  6
-    legs="Mallquis Trews +2",    -- 57, 45, 15, ___,  55,  6, __
-    feet="Mallquis Clogs +2",    -- 37, 42, 15, ___,  46, __, __
-    neck="Argute Stole +2",      -- 15, 30, __, ___,  25, 10, __; Helix Dur+10%
-    ear1="Malignance Earring",   --  8, 10,  8, ___, ___, __, __
-    ear2="Regal Earring",        -- 10, __,  7, ___, ___, __, __
-    ring1="Locus Ring",          -- __, __, __, ___, ___,  5, __
-    ring2="Mujin Band",          -- __, __, __, ___, ___, __,  5
-    back=gear.SCH_Helix_Cape,    -- 20, 20, 10, ___,  30, __, __
-    waist="Skrymir Cord +1",     -- __,  7,  7, ___,  35, __, __
-    -- Mallquis set bonus        -- 16, __, __, ___, ___, __, __
-    -- SCH Job trait             -- __, __, __, ___, ___,  9, __
+    -- main="Bunzi's Rod",          -- 15, 45, 55, 255, 248, 10, __
+    -- sub="Ammurapi Shield",       -- 13, 38, 38, ___, ___, __, __
+    -- ammo="Ghastly Tathlum +1",   -- 11, __, __, ___,  21, __, __
+    -- head="Peda. M.Board +3",     -- 39, 37, 49, ___, ___, __,  4
+    -- body="Mallquis Saio +2",     -- 54, 46, 15, ___,  58, __, __
+    -- hands=gear.Amalric_D_hands,  -- 24, 20, 53, ___, ___, __,  6
+    -- legs="Mallquis Trews +2",    -- 57, 45, 15, ___,  55,  6, __
+    -- feet="Mallquis Clogs +2",    -- 37, 42, 15, ___,  46, __, __
+    -- neck="Argute Stole +2",      -- 15, 30, __, ___,  25, 10, __; Helix Dur+10%
+    -- ear1="Malignance Earring",   --  8, 10,  8, ___, ___, __, __
+    -- ear2="Regal Earring",        -- 10, __,  7, ___, ___, __, __
+    -- ring1="Locus Ring",          -- __, __, __, ___, ___,  5, __
+    -- ring2="Mujin Band",          -- __, __, __, ___, ___, __,  5
+    -- back=gear.SCH_Helix_Cape,    -- 20, 20, 10, ___,  30, __, __
+    -- waist="Skrymir Cord +1",     -- __,  7,  7, ___,  35, __, __
+    -- Mallquis set bonus           -- 16, __, __, ___, ___, __, __
+    -- SCH Job trait                -- __, __, __, ___, ___,  9, __
     -- 319 INT, 340 MAcc, 272 MAB, 255 MAccSk, 518 MDmg, 40 MB Dmg%, 15 MB2 Dmg%
   }
   sets.midcast.DarkHelix = set_combine(sets.midcast.Helix, {
