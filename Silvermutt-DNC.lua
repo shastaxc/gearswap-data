@@ -1044,6 +1044,7 @@ end
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
 function job_precast(spell, action, spellMap, eventArgs)
   silibs.precast_hook(spell, action, spellMap, eventArgs)
+  ----------- Non-silibs content goes below this line -----------
 
   if spellMap == 'Utsusemi' then
     if buffactive['Copy Image (3)'] or buffactive['Copy Image (4+)'] then
@@ -1110,11 +1111,13 @@ function job_post_precast(spell, action, spellMap, eventArgs)
   if locked_ring1 then equip({ ring1=player.equipment.ring1 }) end
   if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
 
+  ----------- Non-silibs content goes above this line -----------
   silibs.post_precast_hook(spell, action, spellMap, eventArgs)
 end
 
 function job_midcast(spell, action, spellMap, eventArgs)
   silibs.midcast_hook(spell, action, spellMap, eventArgs)
+  ----------- Non-silibs content goes below this line -----------
 end
 
 function job_post_midcast(spell, action, spellMap, eventArgs)
@@ -1125,16 +1128,26 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
   if locked_ring1 then equip({ ring1=player.equipment.ring1 }) end
   if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
 
+  ----------- Non-silibs content goes above this line -----------
   silibs.post_midcast_hook(spell, action, spellMap, eventArgs)
 end
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_aftercast(spell, action, spellMap, eventArgs)
+  silibs.aftercast_hook(spell, action, spellMap, eventArgs)
+  ----------- Non-silibs content goes below this line -----------
+
   -- Weaponskills wipe SATA.  Turn those state vars off before default gearing is attempted.
   if spell.type == 'WeaponSkill' and not spell.interrupted then
     state.Buff['Sneak Attack'] = false
   end
 end
+
+function job_post_aftercast(spell, action, spellMap, eventArgs)
+  ----------- Non-silibs content goes above this line -----------
+  silibs.post_aftercast_hook(spell, action, spellMap, eventArgs)
+end
+
 
 -------------------------------------------------------------------------------------------------------------------
 -- Job-specific hooks for non-casting events.
@@ -1276,6 +1289,21 @@ function customize_defense_set(defenseSet)
   end
 
   return defenseSet
+end
+
+function user_customize_idle_set(idleSet)
+  -- Any non-silibs modifications should go in customize_idle_set function
+  return silibs.customize_idle_set(idleSet)
+end
+
+function user_customize_melee_set(meleeSet)
+  -- Any non-silibs modifications should go in customize_melee_set function
+  return silibs.customize_melee_set(meleeSet)
+end
+
+function user_customize_defense_set(defenseSet)
+  -- Any non-silibs modifications should go in customize_defense_set function
+  return silibs.customize_defense_set(defenseSet)
 end
 
 -- Handle auto-targetting based on local setup.
@@ -1428,6 +1456,7 @@ end
 
 function job_self_command(cmdParams, eventArgs)
   silibs.self_command(cmdParams, eventArgs)
+  ----------- Non-silibs content goes below this line -----------
 
   if not eventArgs.handled then
     if cmdParams[1] == 'step' then
