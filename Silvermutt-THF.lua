@@ -73,13 +73,12 @@ end
 
 -- Executes on first load and main job change
 function job_setup()
-  include('Mote-TreasureHunter')
-
   silibs.enable_cancel_outranged_ws()
   silibs.enable_cancel_on_blocking_status()
   silibs.enable_weapon_rearm()
   silibs.enable_auto_lockstyle(9)
-  silibs.enable_th_fix()
+  silibs.enable_premade_commands({force_lower_cmd=false})
+  silibs.enable_th()
 
   Haste = 0 -- Do not modify
   DW_needed = 0 -- Do not modify
@@ -201,20 +200,15 @@ function init_gear_sets()
   sets.buff['Sneak Attack'] = {}
   sets.buff['Trick Attack'] = {}
 
-  -- Actions we want to use to tag TH.
-  sets.precast.Step = sets.TreasureHunter
-  sets.precast.Flourish1 = sets.TreasureHunter
-  sets.precast.JA.Provoke = sets.TreasureHunter
-
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Precast Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
 
   -- Precast sets to enhance JAs
-  sets.precast.JA['Collaborator'] = set_combine(sets.TreasureHunter, {
+  sets.precast.JA['Collaborator'] = {
     -- head="Skulker's Bonnet +1",
-  })
+  }
   sets.precast.JA['Accomplice'] = {
     -- head="Skulker's Bonnet +1",
   }
@@ -224,9 +218,9 @@ function init_gear_sets()
   sets.precast.JA['Hide'] = {
     -- body="Pillager's Vest +3",
   }
-  sets.precast.JA['Conspirator'] = set_combine(sets.TreasureHunter, {
+  sets.precast.JA['Conspirator'] = {
     -- body="Skulker's Vest +1",
-  })
+  }
 
   sets.precast.JA['Steal'] = {
     -- ammo="Barathrum", --3
@@ -955,11 +949,6 @@ function job_post_precast(spell, action, spellMap, eventArgs)
       send_command('cancel 66; cancel 444; cancel Copy Image; cancel Copy Image (2)')
     end
   end
-  if spell.english=='Sneak Attack' or spell.english=='Trick Attack' then
-    if state.TreasureMode.value == 'SATA' or state.TreasureMode.value == 'Fulltime' then
-      equip(sets.TreasureHunter)
-    end
-  end
   if spell.type == 'WeaponSkill' then
     if state.Buff['Sneak Attack'] == true or state.Buff['Trick Attack'] == true then
       equip(sets.precast.WS.Critical)
@@ -982,9 +971,6 @@ function job_post_precast(spell, action, spellMap, eventArgs)
       elseif (spell.element == world.day_element and spell.element ~= elements.weak_to[world.weather_element]) or (spell.element == world.weather_element and spell.element ~= elements.weak_to[world.day_element]) then
         equip(sets.Special.ElementalObi)
       end
-    end
-    if state.TreasureMode.value == 'Fulltime' then
-      equip(sets.TreasureHunter)
     end
     if buffactive['Reive Mark'] then
       equip(sets.Reive)
@@ -1019,6 +1005,7 @@ end
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_aftercast(spell, action, spellMap, eventArgs)
+  silibs.aftercast_hook(spell, action, spellMap, eventArgs)
   -- Weaponskills wipe SATA/Feint.  Turn those state vars off before default gearing is attempted.
   if spell.type == 'WeaponSkill' and not spell.interrupted then
     state.Buff['Sneak Attack'] = false
@@ -1029,9 +1016,7 @@ end
 
 -- Called after the default aftercast handling is complete.
 function job_post_aftercast(spell, action, spellMap, eventArgs)
-  -- If Feint is active, put that gear set on on top of regular gear.
-  -- This includes overlaying SATA gear.
-  check_buff('Feint', eventArgs)
+  silibs.post_aftercast_hook(spell, action, spellMap, eventArgs)
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -1087,7 +1072,6 @@ end
 
 function job_update(cmdParams, eventArgs)
   handle_equipping_gear(player.status)
-  th_update(cmdParams, eventArgs)
 end
 
 function update_combat_form()
@@ -1136,15 +1120,15 @@ function customize_idle_set(idleSet)
     idleSet = set_combine(idleSet, sets.buff.Doom)
   end
   
-  -- add_to_chat(001, 'idle set: '..inspect(idleSet))
-
   return idleSet
 end
 
+function user_customize_idle_set(idleSet)
+  -- Any non-silibs modifications should go in customize_idle_set function
+  return silibs.customize_idle_set(idleSet)
+end
+
 function customize_melee_set(meleeSet)
-  if state.TreasureMode.value == 'Fulltime' then
-    meleeSet = set_combine(meleeSet, sets.TreasureHunter)
-  end
   if state.CP.current == 'on' then
     meleeSet = set_combine(meleeSet, sets.CP)
   end
@@ -1167,6 +1151,11 @@ function customize_melee_set(meleeSet)
   return meleeSet
 end
 
+function user_customize_melee_set(meleeSet)
+  -- Any non-silibs modifications should go in customize_melee_set function
+  return silibs.customize_melee_set(meleeSet)
+end
+
 function customize_defense_set(defenseSet)
   if state.CP.current == 'on' then
     defenseSet = set_combine(defenseSet, sets.CP)
@@ -1187,7 +1176,13 @@ function customize_defense_set(defenseSet)
     defenseSet = set_combine(defenseSet, sets.buff.Doom)
   end
 
+  defenseSet = set_combine(defenseSet, silibs.customize_defense_set(defenseSet))
   return defenseSet
+end
+
+function user_customize_defense_set(defenseSet)
+  -- Any non-silibs modifications should go in customize_defense_set function
+  return silibs.customize_defense_set(defenseSet)
 end
 
 -- Function to display the current relevant user state when doing an update.
@@ -1323,7 +1318,7 @@ end
 
 function job_self_command(cmdParams, eventArgs)
   silibs.self_command(cmdParams, eventArgs)
-  
+
   if cmdParams[1] == 'step' then
     send_command('@input /ja "'..state.MainStep.Current..'" <t>')
   elseif cmdParams[1] == 'toyweapon' then
@@ -1342,6 +1337,8 @@ function job_self_command(cmdParams, eventArgs)
     elseif cmdParams[2] == 'current' then
       cycle_weapons('current')
     end
+  elseif cmdParams[1] == 'test' then
+    test()
   end
 
   gearinfo(cmdParams, eventArgs)
@@ -1375,9 +1372,6 @@ end
 function check_buff(buff_name, eventArgs)
   if state.Buff[buff_name] then
     equip(sets.buff[buff_name] or {})
-    if state.TreasureMode.value == 'SATA' or state.TreasureMode.value == 'Fulltime' then
-      equip(sets.TreasureHunter)
-    end
     eventArgs.handled = true
   end
 end
@@ -1430,4 +1424,7 @@ function select_default_macro_book()
   else
     set_macro_page(1, 8)
   end
+end
+
+function test()
 end
