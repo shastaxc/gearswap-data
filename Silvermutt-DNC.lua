@@ -102,7 +102,8 @@ function job_setup()
     ['waltz_self_potency'] = 17,
     ['est_non_party_target_hp'] = 2000,
   })
-  silibs.enable_th_fix()
+  silibs.enable_premade_commands()
+  silibs.enable_th()
 
   Haste = 0 -- Do not modify
   DW_needed = 0 -- Do not modify

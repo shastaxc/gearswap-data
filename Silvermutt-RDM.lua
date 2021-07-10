@@ -122,6 +122,7 @@ function job_setup()
   silibs.enable_cancel_on_blocking_status()
   silibs.enable_weapon_rearm()
   silibs.enable_auto_lockstyle(4)
+  silibs.enable_premade_commands()
 
   Haste = 0 -- Do not modify
   DW_needed = 0 -- Do not modify

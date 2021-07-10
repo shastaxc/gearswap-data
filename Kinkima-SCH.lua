@@ -7,8 +7,9 @@ end
 
 -- Executes on first load and main job change
 function job_setup()
-  silibs.enable_auto_lockstyle(1)
   silibs.enable_cancel_outranged_ws()
+  silibs.enable_auto_lockstyle(1)
+  silibs.enable_premade_commands()
 
   state.CP = M(false, "Capacity Points Mode")
 

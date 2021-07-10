@@ -77,7 +77,7 @@ function job_setup()
   silibs.enable_cancel_on_blocking_status()
   silibs.enable_weapon_rearm()
   silibs.enable_auto_lockstyle(9)
-  silibs.enable_premade_commands({force_lower_cmd=false})
+  silibs.enable_premade_commands()
   silibs.enable_th()
 
   Haste = 0 -- Do not modify

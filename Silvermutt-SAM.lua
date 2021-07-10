@@ -51,7 +51,8 @@ function job_setup()
   silibs.enable_cancel_on_blocking_status()
   silibs.enable_weapon_rearm()
   silibs.enable_auto_lockstyle(7)
-  silibs.enable_th_fix()
+  silibs.enable_premade_commands()
+  silibs.enable_th()
 
   elemental_ws = S{'Tachi: Goten', 'Tachi: Kagero', 'Tachi: Jinpu', 'Tachi: Koki'}
 
