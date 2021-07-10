@@ -48,8 +48,6 @@ end
 
 -- Executes on first load and main job change
 function job_setup()
-  include('Mote-TreasureHunter')
-
   silibs.enable_cancel_outranged_ws()
   silibs.enable_cancel_on_blocking_status()
   silibs.enable_weapon_rearm()
