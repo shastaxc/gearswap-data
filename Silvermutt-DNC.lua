@@ -264,28 +264,30 @@ function init_gear_sets()
 
   -- Waltz Potency/CHR
   sets.precast.Waltz = {
-    head=gear.Anwig_Salade,         -- __(_),  4 <-2>
-    body="Maxixi Casaque +3",       -- 19(8), 33 <-2>
-    legs="Dashing Subligar",        -- 10(_), 11 <__>; Gives Blink
-    feet="Maxixi Shoes +1",         -- 10(_), 30 <__>
-    neck="Etoile Gorget +2",        -- 10(_), 25 <__>
-    back=gear.DNC_Adoulin_Cape,     --  5(_), __ <__>
-    ring1="Metamorph Ring +1",      -- __(_), 16 <__>
-    waist="Aristo Belt",            -- __(_),  8 <__>
-    -- ammo="Voluspa Tathlum",      -- __(_),  5 <__>
-    -- hands="Raetic Bangles +1",   -- __(_), 38 <__>
-    -- feet="Maxixi Toeshoes +3",   -- 14(_), 40 <__>
-    -- ear1="Enchntr. Earring +1",  -- __(_),  5 <__>
-    -- ear2="Handler's Earring +1", -- __(_),  5 <__>
-    -- ring2="Carb. Ring +1",       -- __(_),  9 <__>
-    -- back=gear.DNC_WTZ_Cape,      -- __(_), 30 <__>; Enmity-10
-    -- 53 Potency (8 Self Potency), 229 CHR <-4 Delay>
-  } -- 54 Potency (8 Self Potency), 127 CHR <-4 Delay>
+    head=gear.Anwig_Salade,         -- __(_),  4, __ <-2>
+    body="Maxixi Casaque +3",       -- 19(8), 33, 34 <-2>
+    legs="Dashing Subligar",        -- 10(_), 11, 16 <__>; Gives Blink
+    feet="Maxixi Shoes +1",         -- 10(_), 30, 12 <__>
+    neck="Etoile Gorget +2",        -- 10(_), 25, __ <__>
+    back=gear.DNC_Adoulin_Cape,     --  5(_), __, __ <__>
+    ring1="Metamorph Ring +1",      -- __(_), 16, __ <__>
+    waist="Aristo Belt",            -- __(_),  8, __ <__>
+    -- ammo="Voluspa Tathlum",      -- __(_),  5, __ <__>
+    -- hands="Raetic Bangles +1",   -- __(_), 38, 38 <__>
+    -- feet="Maxixi Toeshoes +3",   -- 14(_), 40, 22 <__>
+    -- ear1="Enchntr. Earring +1",  -- __(_),  5, __ <__>
+    -- ear2="Handler's Earring +1", -- __(_),  5,  5 <__>
+    -- ring2="Carb. Ring +1",       -- __(_),  9, __ <__>
+    -- back=gear.DNC_WTZ_Cape,      -- __(_), 30, __ <__>; Enmity-10
+    -- 53 Potency (8 Self Potency), 229 CHR, 115 VIT <-4 Delay>
+  } -- 54 Potency (8 Self Potency), 127 CHR, 105 VIT <-4 Delay>
 
   -- Waltz effects received
   sets.precast.WaltzSelf = set_combine(sets.precast.Waltz, {
-    body="Maxixi Casaque +3",       -- 19(8), 33 <-2>
-    ring2="Asklepian Ring",         -- __(3), __ <__>
+    body="Maxixi Casaque +3",       -- 19(8), 33, 34 <-2>
+    ring2="Asklepian Ring",         -- __(3), __, __ <__>
+    -- ear1="Tuisto Earring",       -- __(_), __, 10 <__>
+    -- 53 Potency (11 Self Potency), 215 CHR, 125 VIT <-4 Delay>
   })
 
   -- Waltz delay
