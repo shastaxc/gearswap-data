@@ -92,13 +92,13 @@ function job_setup()
   silibs.enable_weapon_rearm()
   silibs.enable_auto_lockstyle(2)
   silibs.enable_waltz_refiner({
-    ['base_chr'] = 104,
-    ['base_vit'] = 97,
-    ['bonus_chr'] = 128,
-    ['bonus_vit'] = 96,
-    ['waltz_potency'] = 50,
-    ['waltz_self_potency'] = 17,
-    ['est_non_party_target_hp'] = 2000,
+    base_chr= 104,
+    base_vit= 97,
+    bonus_chr= 128,
+    bonus_vit= 96,
+    waltz_potency = 50,
+    waltz_self_potency = 17,
+    est_non_party_target_hp = 2000,
   })
   silibs.enable_premade_commands()
   silibs.enable_th()
