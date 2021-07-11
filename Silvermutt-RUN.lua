@@ -616,7 +616,7 @@ function init_gear_sets()
   sets.SIRD = {
     ammo="Staunch Tathlum +1",    --  3/ 3, ___ [___] {11}
     head="Agwu's Cap",            -- __/__, 107 [ 38] {10}
-    body=gear.Nyame_B_body,            --  9/ 9, 139 [136] {__}
+    body=gear.Nyame_B_body,       --  9/ 9, 139 [136] {__}
     hands=gear.Rawhide_B_hands,   -- __/__,  37 [ 75] {15}
     legs=gear.Carmine_A_legs,     -- __/__,  80 [130] {20}
     feet=gear.Taeon_SIRD_feet,    -- __/__,  89 [ 60] {10}
@@ -759,13 +759,13 @@ function init_gear_sets()
   sets.LightDef = {
     sub="Utu Grip",             -- __/__, ___ [ 70]
     ammo="Staunch Tathlum +1",  --  3/ 3, ___ [___]
-    head=gear.Nyame_B_head,          --  7/ 7, 123 [ 91]
-    body=gear.Nyame_B_body,          --  9/ 9, 139 [136]
+    head=gear.Nyame_B_head,     --  7/ 7, 123 [ 91]
+    body=gear.Nyame_B_body,     --  9/ 9, 139 [136]
     legs=gear.Nyame_B_legs,     --  8/ 8, 150 [114]
     ear1="Odnowa Earring +1",   --  3/ 5, ___ [110]
     ring2="Defending Ring",     -- 10/10, ___ [___]
     back=gear.RUN_HPD_Cape,     -- 10/__,  20 [ 80]
-    -- back=gear.RUN_TP_Cape,        -- 10/__, ___ [___]
+    -- back=gear.RUN_TP_Cape,   -- 10/__, ___ [___]
     --48 PDT / 35 MDT, 369 MEVA [787 HP]
   } --50 PDT / 42 MDT, 432 MEVA [601 HP]
 
@@ -777,8 +777,8 @@ function init_gear_sets()
   sets.defense.PDT = {
     sub="Refined Grip +1",        --  3/ 3, ___ [ 35]
     ammo="Staunch Tathlum +1",    --  3/ 3, ___ [___]
-    head=gear.Nyame_B_head,            --  7/ 7, 123 [ 91]
-    body=gear.Nyame_B_body,            --  9/ 9, 139 [136]
+    head=gear.Nyame_B_head,       --  7/ 7, 123 [ 91]
+    body=gear.Nyame_B_body,       --  9/ 9, 139 [136]
     hands="Turms Mittens",        -- __/__,  91 [ 59]
     legs="Erilaz Leg Guards +1",  --  7/__, 107 [ 80]
     feet="Turms Leggings +1",     -- __/__, 147 [ 76]
@@ -798,8 +798,8 @@ function init_gear_sets()
   sets.defense.MDT = {
     sub="Utu Grip",               -- __/__, ___ [ 70]
     ammo="Yamarang",              -- __/__,  15 [___]
-    head=gear.Nyame_B_head,            --  7/ 7, 123 [ 91]
-    body=gear.Nyame_B_body,            --  9/ 9, 139 [136]
+    head=gear.Nyame_B_head,       --  7/ 7, 123 [ 91]
+    body=gear.Nyame_B_body,       --  9/ 9, 139 [136]
     hands="Turms Mittens",        -- __/__,  91 [ 59]
     legs=gear.Nyame_B_legs,       --  8/ 8, 150 [114]
     feet=gear.Nyame_B_feet,       --  7/ 7, 150 [ 68]
