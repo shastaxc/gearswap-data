@@ -1617,9 +1617,6 @@ function display_rayke_gambit_worn()
   gambit_target = nil -- Reset target
 end
 
-function test()
-end
-
 -------------------------------------------------------------------------------------------------------------------
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
@@ -1759,4 +1756,7 @@ function select_default_macro_book()
   else
     set_macro_page(5, 5)
   end
+end
+
+function test()
 end
