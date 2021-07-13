@@ -342,32 +342,35 @@ function init_gear_sets()
   })
 
   -- (10% Snapshot from JP Gifts)
+  -- 60 Snapshot from gear to cap
   sets.precast.RA = {
     ammo=gear.RAbullet,
-    head="Chasseur's Tricorne +1",-- __/14
-    body="Oshosi Vest",           -- 12/__
-    hands=gear.Carmine_D_hands, --  8/11
-    legs=gear.Adhemar_D_legs,     -- 10/13
-    feet="Meg. Jam. +2",          -- 10/__
-    neck="Commodore Charm +1",    --  3/__
-    back=gear.COR_SNP_Cape,       -- 10/__
-    waist="Yemaya Belt",          -- __/ 5
-    -- body="Oshosi Vest +1",        -- 14/__
-    -- hands="Lanun Gants +3",       -- 13/__
-    -- 61 Snapshot / 32 Rapid Shot
+    head="Chasseur's Tricorne +1",  -- __/14
+    body="Oshosi Vest",             -- 12/__
+    hands=gear.Carmine_D_hands,     --  8/11
+    legs=gear.Adhemar_D_legs,       -- 10/13
+    feet="Meg. Jam. +2",            -- 10/__
+    neck="Commodore Charm +1",      --  3/__
+    back=gear.COR_SNP_Cape,         -- 10/__
+    waist="Yemaya Belt",            -- __/ 5
+    -- body="Oshosi Vest +1",       -- 14/__
+    -- hands="Lanun Gants +3",      -- 13/__
+    -- neck="Commodore Charm +2",   --  4/__
+    -- ring1="Crepuscular Ring",    --  3/__
+    -- 63 Snapshot / 32 Rapid Shot
   } -- 53 Snapshot / 43 Rapid Shot
 
-  -- 45 Snapshot to cap
+  -- 45 Snapshot from gear to cap
   sets.precast.RA.Flurry1 = set_combine(sets.precast.RA, {
     -- body="Laksamana's Frac +3", --0/20
-    -- 47 Snapshot / 52 Rapid Shot
+    -- 49 Snapshot / 52 Rapid Shot
   })
 
-  -- 30 Snapshot to cap
+  -- 30 Snapshot from gear to cap
   sets.precast.RA.Flurry2 = set_combine(sets.precast.RA.Flurry1, {
-    hands=gear.Carmine_D_hands, --  8/11
+    hands=gear.Carmine_D_hands,   --  8/11
     feet=gear.Pursuer_A_feet,     -- __/10
-    -- 32 Snapshot / 73 Rapid Shot
+    -- 34 Snapshot / 73 Rapid Shot
   })
 
 

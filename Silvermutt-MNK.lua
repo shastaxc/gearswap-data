@@ -286,7 +286,7 @@ function init_gear_sets()
     ring2="Niqmaddu Ring",
     back=gear.MNK_STR_DA_Cape,
     waist="Moonbow Belt +1",
-    -- body="Tatenashi Harama +1",
+    -- body="Tatenashi Haramaki +1",
   } -- Base WS set
 
   -- Victory Smite: 80% STR, 1.5 fTP, 4 hit, can crit
@@ -508,7 +508,7 @@ function init_gear_sets()
     ring2="Niqmaddu Ring",
     back=gear.MNK_STR_DA_Cape,
     waist="Moonbow Belt +1",
-    -- body="Tatenashi Harama +1",
+    -- body="Tatenashi Haramaki +1",
   })
   sets.precast.WS["Howling Fist"].MaxTP = set_combine(sets.precast.WS["Howling Fist"], {
     head=gear.Adhemar_B_head,
@@ -602,7 +602,7 @@ function init_gear_sets()
     ring2="Niqmaddu Ring",
     back=gear.MNK_STR_DA_Cape,
     waist="Moonbow Belt +1",
-    -- body="Tatenashi Harama +1",
+    -- body="Tatenashi Haramaki +1",
   })
   sets.precast.WS["Spinning Attack"].MaxTP = set_combine(sets.precast.WS["Spinning Attack"], {
   })

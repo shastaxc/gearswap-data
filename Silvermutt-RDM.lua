@@ -351,7 +351,7 @@ function init_gear_sets()
     ring1="Kishar Ring", --4
     -- ammo="Sapience Orb", --2
     -- head=empty,
-    -- body="Twilight Cloak",
+    -- body="Crepuscular Cloak",
     -- hands="Gende. Gages +1", --7
     -- neck="Orunmila's Torque", --5
     -- ear2="Enchntr. Earring +1", --2
@@ -971,7 +971,7 @@ function init_gear_sets()
   sets.midcast.Impact = set_combine(sets.midcast['Elemental Magic'], {
     ring1="Archon Ring",
     -- head=empty,
-    -- body="Twilight Cloak",
+    -- body="Crepuscular Cloak",
     -- waist="Shinjutsu-no-Obi +1",
   })
 

@@ -199,7 +199,7 @@ function init_gear_sets()
   sets.precast.FC.Curaga.Grimoire = sets.precast.FC.CureGrimoire
   sets.precast.FC.Impact = set_combine(sets.precast.FC, {
     -- head=empty,
-    -- body="Twilight Cloak",
+    -- body="Crepuscular Cloak",
   })
   -- Without head & body, cannot use Grimoire gear and hit 80% FC
   -- until Hvergelmir set is acquired
@@ -899,7 +899,7 @@ function init_gear_sets()
     sub="Enki Strap",
     -- sub="Khonsu",
     -- head=empty,
-    -- body="Twilight Cloak",
+    -- body="Crepuscular Cloak",
     -- ring2="Archon Ring",
     -- waist="Shinjutsu-no-Obi +1",
   })
