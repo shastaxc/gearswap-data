@@ -702,8 +702,8 @@ function init_gear_sets()
   } --242 AGI [76 STP] 344 racc / 226 ratt <0 crit> {13 dmg limit} (26 Recycle)
   sets.midcast.RA.LowAcc = set_combine(sets.midcast.RA, {
     ear1="Beyla Earring",         -- __ [__] 15/__ <_> {_} (__)
-    ring2="Crepuscular Ring",     -- __ [ 6] 10/__ <_> {_} (__)
     -- ammo=gear.RAccbullet,      -- __ [__] 35/__ <_> {_} (__)
+    -- ring2="Crepuscular Ring",  -- __ [ 6] 10/__ <_> {_} (__)
     --228 AGI [83 STP] 365 racc / 275 ratt <0 crit> {23 dmg limit} (10 Recycle)
   })
   sets.midcast.RA.MidAcc = set_combine(sets.midcast.RA.LowAcc, {
