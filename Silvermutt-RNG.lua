@@ -757,37 +757,37 @@ function init_gear_sets()
     ear1="Telos Earring",         -- __ [ 5]  10/ 10 <_> {__} (__)
     ear2="Sherida Earring",       -- __ [ 5]  __/ __ <_> {__} (__)
     ring1="Regal Ring",           -- 10 [__]  __/ 20 <_> {__} (__)
-    ring2="Ilabrat Ring",         -- 10 [ 5]  __/ __ <_> {__} (__)
+    ring2="Crepuscular Ring",     -- __ [ 6]  10/ __ <_> {__} (__)
     back=gear.RNG_RA_Cape,        -- 30 [10]  20/ 20 <_> {__} (__)
     waist="Kwahu Kachina Belt +1",--  8 [__]  20/ __ <5> {__} (__)
     -- head="Arcadian Beret +3",  -- 37 [__]  37/ 62 <_> {__} (38)
     -- legs="Ikenga's Trousers"   -- 40 [10]  45/ 60 <_> { 6} (__)
     -- neck="Scout's Gorget +2",  -- 25 [ 7]  25/ __ <_> {10} (__)
     -- ear2="Dedition Earring",   -- __ [ 8] -10/-10 <_> {__} (__)
-    --272 AGI [77 STP] 292 racc / 222 ratt <5 crit> {29 dmg limit} (38 Recycle)
+    --262 AGI [78 STP] 302 racc / 222 ratt <5 crit> {29 dmg limit} (38 Recycle)
   } --264 AGI [71 STP] 296 racc / 177 ratt <5 crit> {21 dmg limit} (52 Recycle)
   sets.midcast.RA.LowAcc = set_combine(sets.midcast.RA, {
-    -- body="Orion Jerkin +3",    -- 40 [ 8] 60/ 41 <_> {__} (__)
-    -- Includes set bonus 15 racc from orion + regal
-    --273 AGI [74 STP] 307 racc / 203 ratt <5 crit> {22 dmg limit} (38 Recycle)
+    -- body="Orion Jerkin +3",    -- 40 [ 8]  60/ 41 <_> {__} (__)
+    -- AF set bonus                  __ [__]  15/ __ <_> {__} (__)
+    --263 AGI [75 STP] 332 racc / 203 ratt <5 crit> {22 dmg limit} (38 Recycle)
   })
   sets.midcast.RA.MidAcc = set_combine(sets.midcast.RA.LowAcc, {
-    ear2="Beyla Earring",         -- __ [__] 15/ __ <_> {__} (__)
-    ring2="Hajduk Ring +1",       -- __ [__] 17/ __ <_> {__} (__)
-    -- feet="Orion Socks +3",     -- 49 [__] 54/ 36 <_> {__} (__)
-    -- Includes set bonus 30 racc from orion + regal
-    --263 AGI [55 STP] 358 racc / 239 ratt <5 crit> {20 dmg limit} (38 Recycle)
+    ear2="Beyla Earring",         -- __ [__]  15/ __ <_> {__} (__)
+    ring1="Hajduk Ring +1",       -- __ [__]  17/ __ <_> {__} (__)
+    -- feet="Orion Socks +3",     -- 49 [__]  54/ 36 <_> {__} (__)
+    -- AF set bonus                  __ [__]  30/ __ <_> {__} (__)
+    --253 AGI [58 STP] 378 racc / 229 ratt <5 crit> {20 dmg limit} (38 Recycle)
   })
   sets.midcast.RA.HighAcc = set_combine(sets.midcast.RA.MidAcc, {
-    head="Orion Beret +3",        -- 39 [__] 47/ 34 <_> {__} (__)
-    hands="Orion Bracers +3",     -- 27 [__] 48/ __ <_> {__} (__)
-    legs=gear.Adhemar_C_legs,     -- 42 [ 8] 54/ 20 <_> {__} (16)
-    -- Includes set bonus 60 racc from orion + regal
-    --270 AGI [41 STP] 405 racc / 128 ratt <5 crit> {10 dmg limit} (16 Recycle)
+    head="Orion Beret +3",        -- 39 [__]  47/ 34 <_> {__} (__)
+    hands="Orion Bracers +3",     -- 27 [__]  48/ __ <_> {__} (__)
+    legs=gear.Adhemar_C_legs,     -- 42 [ 8]  54/ 20 <_> {__} (16)
+    ring2="Regal Ring",           -- 10 [__]  __/ 20 <_> {__} (__)
+    -- AF set bonus                  __ [__]  60/ __ <_> {__} (__)
+    --270 AGI [38 STP] 430 racc / 181 ratt <5 crit> {10 dmg limit} (16 Recycle)
   })
 
   sets.midcast.RA.Critical = set_combine(sets.midcast.RA, {
-    head="Meghanada Visor +2",
     body="Meg. Cuirie +2",
     hands="Mummu Wrists +2",
     ring1="Begrudging Ring",
@@ -820,7 +820,7 @@ function init_gear_sets()
   }
 
   sets.DoubleShot.Critical = {
-    head="Meghanada Visor +2",
+    ring1="Begrudging Ring",
     waist="Kwahu Kachina Belt +1",
   }
 
@@ -1386,7 +1386,7 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
         equip(sets.DoubleShot)
       end
       if buffactive['Aftermath: Lv.3'] and player.equipment.ranged == "Armageddon" then
-        equip(sets.DoubleShotCritical)
+        equip(sets.DoubleShot.Critical)
       end
     elseif buffactive['Aftermath: Lv.3'] and player.equipment.ranged == "Armageddon" then
       equip(sets.midcast.RA.Critical)

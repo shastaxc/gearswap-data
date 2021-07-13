@@ -683,7 +683,7 @@ function init_gear_sets()
 
   -- Ranged gear
   sets.midcast.RA = {
-    ammo=gear.RAbullet,
+    ammo=gear.RAbullet,           -- __ [__] 20/__ <_> {_} (__)
     head="Meghanada Visor +2",    -- 31 [__] 48/44 <_> {_} (__)
     body="Ikenga's Vest",         -- 39 [11] 45/60 <_> {7} (__)
     hands="Malignance Gloves",    -- 24 [12] 50/__ <_> {4} (__)
@@ -698,25 +698,25 @@ function init_gear_sets()
     waist="Yemaya Belt",          --  7 [ 4] 10/10 <_> {_} (__)
     -- head="Ikenga's Hat",       -- 29 [ 8] 45/60 <_> {4} (__)
     -- legs="Ikenga's Trousers"   -- 40 [10] 45/60 <_> {6} (__)
-    --238 AGI [86 STP] 312 racc / 282 ratt <0 crit> {23 dmg limit} (10 Recycle)
-  } --242 AGI [76 STP] 324 racc / 226 ratt <0 crit> {13 dmg limit} (26 Recycle)
+    --238 AGI [86 STP] 332 racc / 282 ratt <0 crit> {23 dmg limit} (10 Recycle)
+  } --242 AGI [76 STP] 344 racc / 226 ratt <0 crit> {13 dmg limit} (26 Recycle)
   sets.midcast.RA.LowAcc = set_combine(sets.midcast.RA, {
-    ammo=gear.RAccbullet,
-    ear1="Beyla Earring",         -- __ [__] 15/__ <_> {__} (__)
-    --238 AGI [83 STP] 327 racc / 275 ratt <0 crit> {23 dmg limit} (10 Recycle)
+    ear1="Beyla Earring",         -- __ [__] 15/__ <_> {_} (__)
+    ring2="Crepuscular Ring",     -- __ [ 6] 10/__ <_> {_} (__)
+    -- ammo=gear.RAccbullet,      -- __ [__] 35/__ <_> {_} (__)
+    --228 AGI [83 STP] 365 racc / 275 ratt <0 crit> {23 dmg limit} (10 Recycle)
   })
   sets.midcast.RA.MidAcc = set_combine(sets.midcast.RA.LowAcc, {
-    body="Malignance Tabard",     -- 42 [11] 50/__ <_> { 6} (__)
-    legs="Malignance Tights",     -- 42 [10] 50/__ <_> { 5} (__)
-    ring2="Hajduk Ring +1",       -- __ [__] 17/__ <_> {__} (__)
-    --237 AGI [78 STP] 354 racc / 95 ratt <0 crit> {20 dmg limit} (10 Recycle)
+    body="Malignance Tabard",     -- 42 [11] 50/__ <_> {6} (__)
+    ring1="Hajduk Ring +1",       -- __ [__] 17/__ <_> {_} (__)
+    --221 AGI [83 STP] 387 racc / 190 ratt <0 crit> {22 dmg limit} (10 Recycle)
   })
   sets.midcast.RA.HighAcc = set_combine(sets.midcast.RA.MidAcc, {
-    waist="Kwahu Kachina Belt +1",  --  8 [__] 20/__ <5> {__} (__)
-    -- legs="Laksamana's Trews +3", -- 33 [__] 49/__ <_> {__} (__)
-    -- ring1="Regal Ring",             -- 10 [__] __/20 <_> {__} (__)
-    -- Includes set bonus 15 racc from AF + regal
-    --229 AGI [64 STP] 379 racc / 80 ratt <5 crit> {15 dmg limit} (0 Recycle)
+    waist="Kwahu Kachina Belt +1",  --  8 [__] 20/__ <5> {_} (__)
+    -- body="Laksamana's Frac +3",  -- 45 [__] 57/35 <_> {_} (19)
+    -- legs="Laksamana's Trews +3", -- 33 [__] 49/__ <_> {_} (__)
+    -- AF set bonus                 -- __ [__] 15/__ <_> {_} (__)
+    --218 AGI [58 STP] 423 racc / 155 ratt <5 crit> {10 dmg limit} (19 Recycle)
   })
 
   sets.precast.WS['Sniper Shot'] = {
@@ -1863,7 +1863,7 @@ end
 function job_self_command(cmdParams, eventArgs)
   silibs.self_command(cmdParams, eventArgs)
   ----------- Non-silibs content goes below this line -----------
-  
+
   if cmdParams[1] == 'qd' then
     if cmdParams[2] == 't' then
       state.IgnoreTargetting:set()

@@ -75,7 +75,7 @@ function job_setup()
 
   send_command('bind ^` gs c cycle treasuremode')
   send_command('bind @c gs c toggle CP')
-  
+
   send_command('bind !e input /ja "Hasso" <me>')
   send_command('bind !q input /ja "Meditate" <me>')
 end
@@ -518,7 +518,7 @@ function init_gear_sets()
     back=gear.SAM_TP_Cape,      -- 10/__, ___
     -- body="Wakido Domaru +3",    --  8/ 8,  73
     --38 PDT/20 MDT, 452 MEVA
-  } 
+  }
 
   sets.MEVA = {
     ammo="Staunch Tathlum +1",  --  3/ 3, ___
@@ -529,7 +529,7 @@ function init_gear_sets()
     feet="Ken. Sune-Ate +1",    -- __/__, 139
     -- hands="Wakido Kote +3",     -- __/__,  46
     --13 PDT/3 MDT, 542 MEVA
-  } 
+  }
 
   sets.HeavyDef = {
     ammo="Aurgelmir Orb",       -- __/__, ___
@@ -620,6 +620,7 @@ function init_gear_sets()
     -- hands="Wakido Kote +3",        -- __/__,  46
     -- feet=gear.Ryuo_C_feet,         -- __/__,  80
     -- ear1="Dedition Earring",       -- __/__, ___
+    -- ring1="Crepuscular Ring",      -- __/__, ___
   }
   sets.engaged.LowAcc = set_combine(sets.engaged, {
     body="Ken. Samue +1",
@@ -1091,7 +1092,7 @@ end
 function job_self_command(cmdParams, eventArgs)
   silibs.self_command(cmdParams, eventArgs)
   ----------- Non-silibs content goes below this line -----------
-  
+
   if cmdParams[1] == 'toyweapon' then
     if cmdParams[2] == 'cycle' then
       cycle_toy_weapons('forward')
