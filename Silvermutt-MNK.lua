@@ -454,7 +454,7 @@ function init_gear_sets()
     body=gear.Adhemar_B_body,
     hands=gear.Adhemar_B_hands,
     legs=gear.Nyame_B_legs,
-    feet=gear.Herc_TA_feet,
+    feet=gear.Nyame_B_feet,
     neck="Fotia Gorget",
     ear1="Sherida Earring",
     ear2="Moonshade Earring",
@@ -464,7 +464,6 @@ function init_gear_sets()
     waist="Moonbow Belt +1",
     -- body=gear.Nyame_B_body, -- R10
     -- hands="Anchorite's Gloves +3",
-    -- feet=gear.Nyame_B_feet, -- R15
   })
   sets.precast.WS["Raging Fists"].MaxTP = set_combine(sets.precast.WS["Raging Fists"], {
     ear2="Ishvara Earring",

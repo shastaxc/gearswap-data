@@ -544,9 +544,9 @@ function init_gear_sets()
   sets.precast.WS["Trueflight"] = {
     head=empty,
     body="Cohort Cloak +1", --100
-    hands=gear.Carmine_D_hands, --42
+    hands=gear.Nyame_B_hands,
     legs=gear.Nyame_B_legs,
-    feet=gear.Herc_MAB_feet, --50
+    feet=gear.Nyame_B_feet,
     neck="Scout's Gorget +1",
     ear1="Friomisi Earring", --10
     ear2="Moonshade Earring",
@@ -556,8 +556,6 @@ function init_gear_sets()
     waist="Eschan Stone", --7
     -- head=gear.Nyame_B_head, -- Rank 15
     -- body=gear.Nyame_B_body, -- Rank 15
-    -- hands=gear.Nyame_B_hands, -- Rank 15
-    -- feet=gear.Nyame_B_feet, -- Rank 15
     -- waist="Orpheus's Sash",
   } -- AGI / MAB
   sets.precast.WS["Trueflight"].MaxTP = set_combine(sets.precast.WS["Trueflight"], {
@@ -645,10 +643,10 @@ function init_gear_sets()
   })
 
   sets.precast.WS['Savage Blade'] = {
-    head="Orion Beret +3",        -- 33, 30, __, __, 10, __, ___
-    body=gear.Herc_WSD_body,      -- 28, 20, 20, 35, 10, __, ___
-    hands="Meghanada Gloves +2",  -- 23, 34, 43, 47,  7, __, ___
-    legs="Arcadian Braccae +3",   -- 39, 27, __, __, 10, __, ___
+    head=gear.Nyame_B_head,       -- 26, 26, 55, 40,  8, __, ___
+    body="Ikenga's Vest",         -- 33, 25, __, __, __,  7, 170
+    hands=gear.Nyame_B_hands,     -- 17, 40, 55, 40,  8, __, ___
+    legs=gear.Nyame_B_legs,       -- 43, 32, 55, 40,  9, __, ___
     feet=gear.Nyame_B_feet,       -- 23, 26, 55, 40,  8, __, ___
     neck="Scout's Gorget +1",     -- __, __, __, __, __,  8, ___
     ear1="Ishvara Earring",       -- __, __, __, __,  2, __, ___
@@ -657,10 +655,6 @@ function init_gear_sets()
     ring2="Ilabrat Ring",         -- __, __, 25, __, __, __, ___
     back=gear.RNG_WS3_Cape,       -- 30, __, 20, 20, 10, __, ___
     waist="Sailfi Belt +1",       -- 15, __, 15, __, __, __, ___
-    -- head=gear.Nyame_B_head,    -- 26, 26, 55, 40,  8, __, ___
-    -- body="Ikenga's Vest",      -- 33, 25, __, __, __,  7, 170
-    -- hands=gear.Nyame_B_hands,  -- 17, 40, 55, 40,  8, __, ___
-    -- legs=gear.Nyame_B_legs,    -- 43, 32, 55, 40,  9, __, ___
     -- neck="Scout's Gorget +2",  -- __, __, __, __, __, 10, ___
     -- ring2="Epaminondas's Ring",-- __, __, __, __,  5, __, ___
     -- 197 STR, 149 MND, 275 Attack, 184 Accuracy, 50 WSD, 17 PDL, 420 TP Bonus
