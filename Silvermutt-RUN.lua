@@ -725,7 +725,7 @@ function init_gear_sets()
   } -- 21% Spell Interrupt
 
   sets.midcast['Geist Wall'] = sets.SIRD
-  sets.midcast['Bomb Toss'] = sets.SIRD
+  sets.midcast['Bomb Toss'] = set_combine(sets.SIRD, sets.TreasureHunter)
   sets.midcast['Poisonga'] = sets.SIRD
 
   sets.midcast['Blue Magic'] = {}
