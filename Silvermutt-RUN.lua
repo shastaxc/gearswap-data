@@ -96,7 +96,7 @@ function job_setup()
   silibs.enable_weapon_rearm()
   silibs.enable_auto_lockstyle(3)
   silibs.enable_premade_commands()
-  
+
   rayke_duration = 46
   gambit_duration = 92
 
@@ -266,7 +266,7 @@ function init_gear_sets()
     back=gear.RUN_HPD_Cape,                       -- 10/__,  20 [ 80] <10>
     waist={name="Kasiri Belt", priority=1},       -- __/__, ___ [ 30] < 3>
     --46% PDT / 12% MDT, 423 M.Eva [802 HP] <75 Enmity>
-    
+
     -- ammo="Staunch Tathlum +1",                    --  3/ 3, ___ [___] <__>
     -- head="Halitus Helm",                          -- __/__,  43 [ 88] < 8>
     -- body={name="Emet Harness +1", priority=5},    --  6/__,  64 [ 61] <10>
@@ -364,16 +364,21 @@ function init_gear_sets()
     -- ear2="Mendi. Earring"
   })
 
-  sets.Macc = {
-    ammo="Hydrocera", --6 [0]
-    head="Ayanmo Zucchetto +2", --44 [45]
-    body="Ayanmo Corazza +2", --46 [57]
-    hands="Volte Bracers", --37 [57]
-    legs="Ayanmo Cosciales +2", --45 [45]
-    feet="Ayanmo Gambieras +2", --42 [11]
-    ear2="Dignitary's Earring", --10 [0]
-    ring2="Weatherspoon Ring", --10 [0]
-  } --234 Magic Acc
+  sets.HybridAcc = {
+    ammo="Hydrocera",           -- __,  6
+    head=gear.Nyame_B_head,     -- 40, 40
+    body=gear.Nyame_B_body,     -- 40, 40
+    hands=gear.Nyame_B_hands,   -- 40, 40
+    legs=gear.Nyame_B_legs,     -- 40, 40
+    feet=gear.Nyame_B_feet,     -- 40, 40
+    neck="Erra Pendant",        -- __, 17
+    ear1="Crepuscular Earring", -- 10, 10
+    ear2="Dignitary's Earring", -- 10, 10
+    ring1="Etana Ring",         -- 10, 10
+    ring2="Metamorph Ring +1",  -- __, 16
+    back=gear.RUN_WS2_Cape,     -- 20, __
+    waist="Luminary Sash",      -- __, 10
+  } -- 250 Acc, 279 Magic Acc
 
 
   ------------------------------------------------------------------------------------------------
@@ -388,18 +393,18 @@ function init_gear_sets()
     legs="Meghanada Chausses +2",
     feet=gear.Herc_TA_feet,
     neck="Fotia Gorget",
-    waist="Fotia Belt",
     ear1="Sherida Earring",
     ear2="Moonshade Earring",
     ring1="Ilabrat Ring",
     ring2="Niqmaddu Ring",
     back=gear.RUN_WS2_Cape,
+    waist="Fotia Belt",
   }
 
   sets.precast.WS.Safe = {
   }
 
-  -- 85% STR mod
+  -- 85% STR mod, 0.718-2.25 FTP, ftp replicating
   sets.precast.WS['Resolution'] = set_combine(sets.precast.WS, {
     ammo="Seething Bomblet +1",
     head=gear.Adhemar_B_head,
@@ -408,12 +413,12 @@ function init_gear_sets()
     legs=gear.Samnuha_legs,
     feet=gear.Herc_TA_feet,
     neck="Fotia Gorget",
-    waist="Fotia Belt",
     ear1="Sherida Earring",
     ear2="Moonshade Earring",
     ring1="Regal Ring",
     ring2="Niqmaddu Ring",
     back=gear.RUN_WS1_Cape,
+    waist="Fotia Belt",
   })
   sets.precast.WS['Resolution'].Safe = set_combine(sets.precast.WS.Safe, {
     ammo="Seething Bomblet +1",
@@ -422,21 +427,45 @@ function init_gear_sets()
     -- hands=gear.Adhemar_A_hands,
   })
   sets.precast.WS['Resolution'].MaxTP = set_combine(sets.precast.WS['Resolution'], {
+    neck="Caro Necklace",
     ear2="Odnowa Earring +1",
+    waist="Sailfi Belt +1",
     -- ear2="Vulcan's Pearl",
   })
   sets.precast.WS['Resolution'].LowAcc = set_combine(sets.precast.WS['Resolution'], {
   })
   sets.precast.WS['Resolution'].LowAccMaxTP = set_combine(sets.precast.WS['Resolution'].LowAcc, {
+    neck="Caro Necklace",
+    ear2="Odnowa Earring +1",
+    waist="Sailfi Belt +1",
+    -- ear2="Vulcan's Pearl",
   })
   sets.precast.WS['Resolution'].MidAcc = set_combine(sets.precast.WS['Resolution'].LowAcc, {
   })
   sets.precast.WS['Resolution'].MidAccMaxTP = set_combine(sets.precast.WS['Resolution'].MidAcc, {
+    neck="Caro Necklace",
+    ear2="Odnowa Earring +1",
+    waist="Sailfi Belt +1",
+    -- ear2="Vulcan's Pearl",
   })
   sets.precast.WS['Resolution'].HighAcc = set_combine(sets.precast.WS['Resolution'].MidAcc, {
   })
   sets.precast.WS['Resolution'].HighAccMaxTP = set_combine(sets.precast.WS['Resolution'].HighAcc, {
+    neck="Caro Necklace",
+    ear2="Odnowa Earring +1",
+    waist="Sailfi Belt +1",
+    -- ear2="Vulcan's Pearl",
   })
+
+  sets.precast.WS['Upheaval'] = sets.precast.WS['Resolution']
+  sets.precast.WS['Upheaval'].Safe = sets.precast.WS['Resolution'].Safe
+  sets.precast.WS['Upheaval'].MaxTP = sets.precast.WS['Resolution'].MaxTP
+  sets.precast.WS['Upheaval'].LowAcc = sets.precast.WS['Resolution'].LowAcc
+  sets.precast.WS['Upheaval'].LowAccMaxTP = sets.precast.WS['Resolution'].LowAccMaxTP
+  sets.precast.WS['Upheaval'].MidAcc = sets.precast.WS['Resolution'].MidAcc
+  sets.precast.WS['Upheaval'].MidAccMaxTP = sets.precast.WS['Resolution'].MidAccMaxTP
+  sets.precast.WS['Upheaval'].HighAcc = sets.precast.WS['Resolution'].HighAcc
+  sets.precast.WS['Upheaval'].HighAccMaxTP = sets.precast.WS['Resolution'].HighAccMaxTP
 
   -- 80% DEX mod
   sets.precast.WS['Dimidiation'] = set_combine(sets.precast.WS, {
@@ -469,57 +498,17 @@ function init_gear_sets()
   sets.precast.WS['Dimidiation'].LowAcc = set_combine(sets.precast.WS['Dimidiation'], {
   })
   sets.precast.WS['Dimidiation'].LowAccMaxTP = set_combine(sets.precast.WS['Dimidiation'].LowAcc, {
+    ear2="Odr Earring",
   })
   sets.precast.WS['Dimidiation'].MidAcc = set_combine(sets.precast.WS['Dimidiation'].LowAcc, {
   })
   sets.precast.WS['Dimidiation'].MidAccMaxTP = set_combine(sets.precast.WS['Dimidiation'].MidAcc, {
+    ear2="Odr Earring",
   })
   sets.precast.WS['Dimidiation'].HighAcc = set_combine(sets.precast.WS['Dimidiation'].MidAcc, {
   })
   sets.precast.WS['Dimidiation'].HighAccMaxTP = set_combine(sets.precast.WS['Dimidiation'].HighAcc, {
-  })
-
-  sets.precast.WS['Herculean Slash'] = set_combine(sets.Macc, {
-    ear2="Moonshade Earring",
-    ring2="Niqmaddu Ring",
-  })
-  sets.precast.WS['Herculean Slash'].Safe = set_combine(sets.precast.WS.Safe, {
-  })
-  sets.precast.WS['Herculean Slash'].MaxTP = set_combine(sets.precast.WS['Herculean Slash'], {
-  })
-  sets.precast.WS['Herculean Slash'].LowAcc = set_combine(sets.precast.WS['Herculean Slash'], {
-  })
-  sets.precast.WS['Herculean Slash'].LowAccMaxTP = set_combine(sets.precast.WS['Herculean Slash'].LowAcc, {
-  })
-  sets.precast.WS['Herculean Slash'].MidAcc = set_combine(sets.precast.WS['Herculean Slash'].LowAcc, {
-  })
-  sets.precast.WS['Herculean Slash'].MidAccMaxTP = set_combine(sets.precast.WS['Herculean Slash'].MidAcc, {
-  })
-  sets.precast.WS['Herculean Slash'].HighAcc = set_combine(sets.precast.WS['Herculean Slash'].MidAcc, {
-  })
-  sets.precast.WS['Herculean Slash'].HighAccMaxTP = set_combine(sets.precast.WS['Herculean Slash'].HighAcc, {
-  })
-
-  -- Magic accuracy required for Shockwave
-  sets.precast.WS['Shockwave'] = set_combine(sets.Macc, {
-    ear2="Moonshade Earring",
-    ring2="Niqmaddu Ring",
-  })
-  sets.precast.WS['Shockwave'].Safe = set_combine(sets.precast.WS.Safe, {
-  })
-  sets.precast.WS['Shockwave'].MaxTP = set_combine(sets.precast.WS['Shockwave'], {
-  })
-  sets.precast.WS['Shockwave'].LowAcc = set_combine(sets.precast.WS['Shockwave'], {
-  })
-  sets.precast.WS['Shockwave'].LowAccMaxTP = set_combine(sets.precast.WS['Shockwave'].LowAcc, {
-  })
-  sets.precast.WS['Shockwave'].MidAcc = set_combine(sets.precast.WS['Shockwave'].LowAcc, {
-  })
-  sets.precast.WS['Shockwave'].MidAccMaxTP = set_combine(sets.precast.WS['Shockwave'].MidAcc, {
-  })
-  sets.precast.WS['Shockwave'].HighAcc = set_combine(sets.precast.WS['Shockwave'].MidAcc, {
-  })
-  sets.precast.WS['Shockwave'].HighAccMaxTP = set_combine(sets.precast.WS['Shockwave'].HighAcc, {
+    ear2="Odr Earring",
   })
 
   sets.precast.WS['Fell Cleave'] = set_combine(sets.precast.WS, {
@@ -551,25 +540,40 @@ function init_gear_sets()
   sets.precast.WS['Steel Cyclone'].HighAcc = sets.precast.WS['Fell Cleave'].HighAcc
   sets.precast.WS['Steel Cyclone'].HighAccMaxTP = sets.precast.WS['Fell Cleave'].HighAccMaxTP
 
-  sets.precast.WS['Upheaval'] = sets.precast.WS['Resolution']
-  sets.precast.WS['Upheaval'].Safe = sets.precast.WS['Resolution'].Safe
-  sets.precast.WS['Upheaval'].MaxTP = sets.precast.WS['Resolution'].MaxTP
-  sets.precast.WS['Upheaval'].LowAcc = sets.precast.WS['Resolution'].LowAcc
-  sets.precast.WS['Upheaval'].LowAccMaxTP = sets.precast.WS['Resolution'].LowAccMaxTP
-  sets.precast.WS['Upheaval'].MidAcc = sets.precast.WS['Resolution'].MidAcc
-  sets.precast.WS['Upheaval'].MidAccMaxTP = sets.precast.WS['Resolution'].MidAccMaxTP
-  sets.precast.WS['Upheaval'].HighAcc = sets.precast.WS['Resolution'].HighAcc
-  sets.precast.WS['Upheaval'].HighAccMaxTP = sets.precast.WS['Resolution'].HighAccMaxTP
+  -- Magic accuracy required for Shockwave
+  sets.precast.WS['Shockwave'] = set_combine(sets.HybridAcc, {
+    ear2="Moonshade Earring",
+  })
+  sets.precast.WS['Shockwave'].Safe = set_combine(sets.precast.WS.Safe, {
+  })
+  sets.precast.WS['Shockwave'].MaxTP = set_combine(sets.precast.WS['Shockwave'], {
+    ear2=sets.HybridAcc.ear2,
+  })
+  sets.precast.WS['Shockwave'].LowAcc = set_combine(sets.precast.WS['Shockwave'], {
+  })
+  sets.precast.WS['Shockwave'].LowAccMaxTP = set_combine(sets.precast.WS['Shockwave'].LowAcc, {
+    ear2=sets.HybridAcc.ear2,
+  })
+  sets.precast.WS['Shockwave'].MidAcc = set_combine(sets.precast.WS['Shockwave'].LowAcc, {
+  })
+  sets.precast.WS['Shockwave'].MidAccMaxTP = set_combine(sets.precast.WS['Shockwave'].MidAcc, {
+    ear2=sets.HybridAcc.ear2,
+  })
+  sets.precast.WS['Shockwave'].HighAcc = set_combine(sets.precast.WS['Shockwave'].MidAcc, {
+  })
+  sets.precast.WS['Shockwave'].HighAccMaxTP = set_combine(sets.precast.WS['Shockwave'].HighAcc, {
+    ear2=sets.HybridAcc.ear2,
+  })
 
-  sets.precast.WS['Shield Break'] = sets.precast.WS['Shockwave']
-  sets.precast.WS['Shield Break'].Safe = sets.precast.WS['Shockwave'].Safe
-  sets.precast.WS['Shield Break'].MaxTP = sets.precast.WS['Shockwave'].MaxTP
-  sets.precast.WS['Shield Break'].LowAcc = sets.precast.WS['Shockwave'].LowAcc
-  sets.precast.WS['Shield Break'].LowAccMaxTP = sets.precast.WS['Shockwave'].LowAccMaxTP
-  sets.precast.WS['Shield Break'].MidAcc = sets.precast.WS['Shockwave'].MidAcc
-  sets.precast.WS['Shield Break'].MidAccMaxTP = sets.precast.WS['Shockwave'].MidAccMaxTP
-  sets.precast.WS['Shield Break'].HighAcc = sets.precast.WS['Shockwave'].HighAcc
-  sets.precast.WS['Shield Break'].HighAccMaxTP = sets.precast.WS['Shockwave'].HighAccMaxTP
+  sets.precast.WS['Herculean Slash'] = sets.precast.WS['Shockwave']
+  sets.precast.WS['Herculean Slash'].Safe = sets.precast.WS['Shockwave'].Safe
+  sets.precast.WS['Herculean Slash'].MaxTP = sets.precast.WS['Shockwave'].MaxTP
+  sets.precast.WS['Herculean Slash'].LowAcc = sets.precast.WS['Shockwave'].LowAcc
+  sets.precast.WS['Herculean Slash'].LowAccMaxTP = sets.precast.WS['Shockwave'].LowAccMaxTP
+  sets.precast.WS['Herculean Slash'].MidAcc = sets.precast.WS['Shockwave'].MidAcc
+  sets.precast.WS['Herculean Slash'].MidAccMaxTP = sets.precast.WS['Shockwave'].MidAccMaxTP
+  sets.precast.WS['Herculean Slash'].HighAcc = sets.precast.WS['Shockwave'].HighAcc
+  sets.precast.WS['Herculean Slash'].HighAccMaxTP = sets.precast.WS['Shockwave'].HighAccMaxTP
 
   sets.precast.WS['Armor Break'] = sets.precast.WS['Shockwave']
   sets.precast.WS['Armor Break'].Safe = sets.precast.WS['Shockwave'].Safe
@@ -685,7 +689,7 @@ function init_gear_sets()
     ring2="Defending Ring",
     waist="Audumbla Sash",      -- {10}
   } -- {51 SIRD}
-  
+
   sets.midcast['Regen'] = set_combine(sets.midcast.EnhancingDuration, {
     head="Runeist's Bandeau +3",
     -- neck="Sacro Gorget"
@@ -793,7 +797,7 @@ function init_gear_sets()
     -- neck="Futhark Torque +2",  --  7/ 7,  30 [ 60]
     --51 PDT / 38 MDT, 677 MEVA [967 HP]
   } --50 PDT / 28 MDT, 662 MEVA [937 HP]
-  
+
   -- MDT cap is 50%, Shell V = 29%
   sets.defense.MDT = {
     sub="Utu Grip",               -- __/__, ___ [ 70]
@@ -1653,7 +1657,7 @@ end
 function job_self_command(cmdParams, eventArgs)
   silibs.self_command(cmdParams, eventArgs)
   ----------- Non-silibs content goes below this line -----------
-  
+
   gearinfo(cmdParams, eventArgs)
   if cmdParams[1] == 'rune' then
     send_command('@input /ja '..state.Runes.value..' <me>')

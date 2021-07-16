@@ -416,6 +416,8 @@ function init_gear_sets()
     body="Meghanada Cuirie +2",
   }
 
+  -- 73-85% AGI, 1.0 FTP, ftp replicating
+  -- Multihit > AGI
   sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS, {
     ammo="Charis Feather",
     head=gear.Adhemar_B_head,
@@ -449,7 +451,7 @@ function init_gear_sets()
   sets.precast.WS['Exenterator'].HighAccMaxTP = set_combine(sets.precast.WS['Exenterator'].HighAcc, {
   })
 
-  -- 40% STR / 40% DEX
+  -- 40% STR / 40% DEX, ftp replicating
   sets.precast.WS['Pyrrhic Kleos'] = set_combine(sets.precast.WS, {
     ammo="Aurgelmir Orb",           --  5,  5, __, __
     head=gear.Herc_WSD_head,        -- 22, 28,  4, __
@@ -461,7 +463,7 @@ function init_gear_sets()
     ear1="Sherida Earring",         --  5,  5, __, __
     ear2="Odr Earring",             -- __, 10, __, __
     ring1="Gere Ring",              -- 10, __, __, __
-    ring2="Regal Ring",          -- 10, 10, __, __
+    ring2="Regal Ring",             -- 10, 10, __, __
     back=gear.DNC_TP_DA_Cape,       -- __, 30, __, __
     waist="Fotia Belt",             -- __, __, 10, __
     -- ammo="Aurgelmir Orb +1",     --  7,  7, __, __
@@ -489,6 +491,7 @@ function init_gear_sets()
   sets.precast.WS['Pyrrhic Kleos'].HighAccMaxTP = set_combine(sets.precast.WS['Pyrrhic Kleos'].HighAcc, {
   })
 
+  -- 50% DEX, 1.25 FTP, can crit, ftp replicating
   sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
     ammo="Charis Feather",
     head=gear.Adhemar_B_head,
@@ -504,7 +507,7 @@ function init_gear_sets()
     back=gear.DNC_TP_DA_Cape,
     waist="Fotia Belt",
     -- back=gear.DNC_WS3_Cape,
-  }) -- 50% DEX
+  })
   sets.precast.WS['Evisceration'].MaxTP = set_combine(sets.precast.WS['Evisceration'], {
     ring2="Defending Ring"
   })
