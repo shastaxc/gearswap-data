@@ -1255,8 +1255,9 @@ function init_gear_sets()
   sets.WeaponSet = {}
   -- Melee weapon sets
   sets.WeaponSet['MagicRA'] = {
-    main="Malevolence",
+    main="Kaja Knife",
     sub="Malevolence",
+    -- main="Tauret",
   }
   sets.WeaponSet['PhysRA'] = {
     main="Ternion Dagger +1",
