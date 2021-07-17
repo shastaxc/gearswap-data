@@ -394,7 +394,6 @@ function init_gear_sets()
     waist="Fotia Belt",
     -- head="Lanun Tricorne +3",
     -- body="Laksamana's Frac +3",
-    -- legs=gear.Herc_RA_legs,
     -- ring2="Epaminondas's Ring",
     -- back=gear.COR_WS3_Cape,
   }
@@ -622,7 +621,6 @@ function init_gear_sets()
     head="Meghanada Visor +2",
     ear2="Telos Earring",
     -- hands=gear.Adhemar_A_hands,
-    -- feet=gear.Herc_STP_feet,
   })
   sets.precast.WS['Swift Blade'].HighAccMaxTP = set_combine(sets.precast.WS['Swift Blade'].HighAcc, {
   })
@@ -649,7 +647,6 @@ function init_gear_sets()
   sets.precast.WS['Requiescat'].HighAcc = set_combine(sets.precast.WS['Requiescat'].MidAcc, {
     head="Meghanada Visor +2",
     ear1="Cessance Earring",
-    -- feet=gear.Herc_STP_feet,
   })
   sets.precast.WS['Requiescat'].HighAccMaxTP = set_combine(sets.precast.WS['Requiescat'].HighAcc, {
     ear2="Ishvara Earring",
@@ -1024,7 +1021,6 @@ function init_gear_sets()
     ear2="Odr Earring",
     waist="Olseni Belt",
     -- head="Carmine Mask +1",
-    -- feet=gear.Herc_STP_feet,
     -- ear1="Mache Earring +1",
     -- ring2="Chirich Ring +1",
   })
@@ -1064,7 +1060,6 @@ function init_gear_sets()
   sets.engaged.DW.HighAcc = set_combine(sets.engaged.DW.MidAcc, {
     ear2="Odr Earring",
     -- head="Carmine Mask +1",
-    -- feet=gear.Herc_STP_feet,
     -- ear1="Mache Earring +1",
     -- ring2="Chirich Ring +1",
   })
@@ -1098,7 +1093,6 @@ function init_gear_sets()
   sets.engaged.DW.HighAcc.LowHaste = set_combine(sets.engaged.DW.MidAcc.LowHaste, {
     ear2="Odr Earring",
     -- head="Carmine Mask +1",
-    -- feet=gear.Herc_STP_feet,
     -- ear1="Mache Earring +1",
     -- ring2="Chirich Ring +1",
   })
@@ -1134,7 +1128,6 @@ function init_gear_sets()
     legs=gear.Carmine_D_legs, --6
     ear2="Odr Earring",
     -- head="Carmine Mask +1",
-    -- feet=gear.Herc_STP_feet,
     -- ear1="Mache Earring +1",
     -- ring2="Chirich Ring +1",
   })
@@ -1170,7 +1163,6 @@ function init_gear_sets()
     legs=gear.Carmine_D_legs, --6
     ear2="Odr Earring",
     -- head="Carmine Mask +1",
-    -- feet=gear.Herc_STP_feet,
     -- ear1="Mache Earring +1",
     -- ring2="Chirich Ring +1",
   })
@@ -1207,7 +1199,6 @@ function init_gear_sets()
     legs=gear.Carmine_D_legs, --6
     ear2="Odr Earring",
     waist="Olseni Belt",
-    -- feet=gear.Herc_STP_feet,
     -- ear1="Mache Earring +1",
     -- ring2="Chirich Ring +1",
   })
@@ -1243,7 +1234,6 @@ function init_gear_sets()
     legs=gear.Carmine_D_legs, --6
     ear2="Odr Earring",
     waist="Olseni Belt",
-    -- feet=gear.Herc_STP_feet,
     -- ear1="Mache Earring +1",
     -- ring2="Chirich Ring +1",
   })

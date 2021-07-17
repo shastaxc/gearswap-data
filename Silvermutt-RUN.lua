@@ -387,7 +387,7 @@ function init_gear_sets()
 
   sets.precast.WS = {
     ammo="Knobkierrie",
-    head=gear.Herc_WSD_head,
+    head=gear.Nyame_B_head,
     body="Meghanada Cuirie +2",
     hands="Meghanada Gloves +2",
     legs="Meghanada Chausses +2",
@@ -470,11 +470,11 @@ function init_gear_sets()
   -- 80% DEX mod
   sets.precast.WS['Dimidiation'] = set_combine(sets.precast.WS, {
     ammo="Knobkierrie",
-    head=gear.Herc_WSD_head,
-    body=gear.Adhemar_B_body,
-    hands="Meghanada Gloves +2",
+    head=gear.Nyame_B_head,
+    body=gear.Herc_WSD_body,
+    hands=gear.Nyame_B_hands,
     legs=gear.Lustratio_B_legs,
-    feet=gear.Herc_TA_feet,
+    feet=gear.Nyame_B_feet,
     neck="Caro Necklace",
     waist="Grunfeld Rope",
     ear1="Sherida Earring",
@@ -487,9 +487,10 @@ function init_gear_sets()
   })
   sets.precast.WS['Dimidiation'].Safe = set_combine(sets.precast.WS.Safe, {
     ammo="Knobkierrie",
-    head=gear.Herc_WSD_head,
-    hands="Meghanada Gloves +2",
-    feet=gear.Herc_TA_feet,
+    head=gear.Nyame_B_head,
+    hands=gear.Nyame_B_hands,
+    legs=gear.Nyame_B_legs,
+    feet=gear.Nyame_B_feet,
     waist="Grunfeld Rope",
   })
   sets.precast.WS['Dimidiation'].MaxTP = set_combine(sets.precast.WS['Dimidiation'], {
@@ -864,7 +865,6 @@ function init_gear_sets()
     ear1="Cessance Earring",
     ear2="Telos Earring",
     ring1="Chirich Ring +1",
-    -- feet=gear.Herc_STP_feet,
   })
   sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
     ammo="Falcon Eye",
@@ -968,7 +968,6 @@ function init_gear_sets()
     -- body="Ashera Harness",
     -- hands=gear.Adhemar_A_hands,
     -- legs="Meghanada Chausses +2",
-    -- feet=gear.Herc_STP_feet,
     -- neck="Futhark Torque +2",
     -- ear1="Sherida Earring",
     -- ear2="Dedition Earring",

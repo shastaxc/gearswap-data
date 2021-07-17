@@ -287,11 +287,11 @@ function init_gear_sets()
 
   sets.precast.WS = {
     ammo="Aurgelmir Orb",
-    head=gear.Herc_WSD_head,
+    head=gear.Nyame_B_head,
     body=gear.Herc_WSD_body,
     hands="Meghanada Gloves +2",
     legs=gear.Lustratio_B_legs,
-    feet=gear.Herc_WSD_feet,
+    feet=gear.Nyame_B_feet,
     neck="Fotia Gorget",
     waist="Fotia Belt",
     ear1="Ishvara Earring",
@@ -575,7 +575,7 @@ function init_gear_sets()
     body=gear.Adhemar_B_body,
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha_legs,
-    feet=gear.Herc_TA_feet,
+    feet="Plunderer's Poulaines +1",
     neck="Anu Torque",
     ear1="Telos Earring",
     ear2="Sherida Earring",
@@ -605,7 +605,6 @@ function init_gear_sets()
     waist="Olseni Belt",
     -- ammo="C. Palug Stone",
     -- legs="Pill. Culottes +3",
-    -- feet=gear.Herc_STP_feet,
   })
 
   -- * THF Native DW Trait: 30% DW
@@ -646,7 +645,6 @@ function init_gear_sets()
     ring2="Regal Ring",
     -- ammo="C. Palug Stone",
     -- legs="Pill. Culottes +3",
-    -- feet=gear.Herc_STP_feet,
   })
 
   -- Low Magic/Gear/JA Haste (67% DW to cap, 37% from gear)
@@ -692,7 +690,6 @@ function init_gear_sets()
     ring2="Chirich Ring +1",
     -- ammo="C. Palug Stone",
     -- legs="Pill. Culottes +3",
-    -- feet=gear.Herc_STP_feet,
   })
 
   -- Mid Magic/Gear/JA Haste (56% DW to cap, 26% from gear)
@@ -702,7 +699,7 @@ function init_gear_sets()
     body=gear.Adhemar_B_body, --6
     hands=gear.Floral_Gauntlets, --5
     legs=gear.Samnuha_legs,
-    feet=gear.Herc_TA_feet,
+    feet="Plunderer's Poulaines +1",
     neck="Anu Torque",
     ear1="Eabani Earring", --4
     ear2="Suppanomimi", --5
@@ -713,7 +710,6 @@ function init_gear_sets()
     -- ammo="Aurgelmir Orb +1",
     -- body="Pillager's Vest +3",
     -- hands=gear.Adhemar_B_hands,
-    -- feet=gear.Herc_TA_feet,
     -- neck="Erudit. Necklace",
     -- back=gear.THF_DW_Cape, --10
   }--27
@@ -736,7 +732,6 @@ function init_gear_sets()
     ring2="Regal Ring",
     -- ammo="C. Palug Stone",
     -- legs="Pill. Culottes +3",
-    -- feet=gear.Herc_STP_feet,
   })
 
   -- High Magic/Gear/JA Haste (43% DW to cap, 13% from gear)
@@ -746,7 +741,7 @@ function init_gear_sets()
     body=gear.Adhemar_B_body, --6
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha_legs,
-    feet=gear.Herc_TA_feet,
+    feet="Plunderer's Poulaines +1",
     neck="Anu Torque",
     ear1="Sherida Earring",
     ear2="Telos Earring",
@@ -774,7 +769,6 @@ function init_gear_sets()
     ring2="Regal Ring",
     -- ammo="C. Palug Stone",
     -- legs="Pill. Culottes +3",
-    -- feet=gear.Herc_STP_feet,
   })
 
   -- High Magic/Gear/JA Haste (36% DW to cap, 6% from gear)
@@ -784,7 +778,7 @@ function init_gear_sets()
     body=gear.Adhemar_B_body, --6
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha_legs,
-    feet=gear.Herc_TA_feet,
+    feet="Plunderer's Poulaines +1",
     neck="Anu Torque",
     ear1="Telos Earring",
     ear2="Sherida Earring",
@@ -814,7 +808,6 @@ function init_gear_sets()
     waist="Olseni Belt",
     -- ammo="C. Palug Stone",
     -- legs="Pill. Culottes +3",
-    -- feet=gear.Herc_STP_feet,
   })
 
   -- Max Magic/Gear/JA Haste (0-30% DW to cap, 0% from gear)
@@ -824,7 +817,7 @@ function init_gear_sets()
     body=gear.Adhemar_B_body, --6
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha_legs,
-    feet=gear.Herc_TA_feet,
+    feet="Plunderer's Poulaines +1",
     neck="Anu Torque",
     ear1="Telos Earring",
     ear2="Sherida Earring",
@@ -855,7 +848,6 @@ function init_gear_sets()
     waist="Olseni Belt",
     -- ammo="C. Palug Stone",
     -- legs="Pill. Culottes +3",
-    -- feet=gear.Herc_STP_feet,
   })
 
 
@@ -923,9 +915,9 @@ function init_gear_sets()
   }
 
   sets.WeaponSet = {}
-  sets.WeaponSet['Normal'] = {main="Twashtar", sub="Centovente"}
+  sets.WeaponSet['Normal'] = {main="Aeneas", sub="Twashtar"}
   sets.WeaponSet['Acc'] = {main="Twashtar", sub="Taming Sari"}
-  sets.WeaponSet['Cleaving'] = {main="Malevolence", sub="Malevolence"}
+  sets.WeaponSet['Cleaving'] = {main="Kaja Knife", sub="Malevolence"}
 end
 
 

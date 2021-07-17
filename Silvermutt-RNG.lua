@@ -384,10 +384,10 @@ function init_gear_sets()
 
   sets.precast.WS = {
     head="Orion Beret +3",
-    body="Meghanada Cuirie +2",
+    body=gear.Herc_WSD_body,
     hands="Meg. Gloves +2",
     legs="Arcadian Braccae +3",
-    feet=gear.Herc_WSD_feet,
+    feet=gear.Nyame_B_feet,
     neck="Fotia Gorget",
     ear1="Ishvara Earring",
     ear2="Moonshade Earring",
@@ -395,8 +395,6 @@ function init_gear_sets()
     ring2="Dingir Ring",
     back=gear.RNG_WS2_Cape,
     waist="Fotia Belt",
-    -- body=gear.Herc_RA_WSD_body,
-    -- feet=gear.Herc_RA_WSD_feet,
     -- ring2="Epaminondas's Ring",
   }
   sets.precast.WS.MaxTP = set_combine(sets.precast.WS, {
@@ -484,7 +482,7 @@ function init_gear_sets()
     body="Ikenga's Vest",
     hands="Meg. Gloves +2",
     legs="Arcadian Braccae +3",
-    feet=gear.Herc_WSD_feet,
+    feet=gear.Nyame_B_feet,
     neck="Scout's Gorget +1",
     ear1="Ishvara Earring",
     ear2="Moonshade Earring",
@@ -492,7 +490,6 @@ function init_gear_sets()
     ring2="Dingir Ring",
     back=gear.RNG_WS2_Cape,
     waist="Fotia Belt",
-    -- feet=gear.Herc_RA_WSD_feet,
     -- neck="Scout's Gorget +2",
     -- ring2="Epaminondas's Ring",
   })
@@ -960,7 +957,6 @@ function init_gear_sets()
     ear1="Dignitary's Earring",
     ring1="Chirich Ring +1",
     waist="Olseni Belt",
-    -- feet=gear.Herc_STP_feet,
   })
 
   -- * DNC Subjob DW Trait: +15%

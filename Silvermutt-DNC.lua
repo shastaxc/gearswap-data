@@ -395,11 +395,11 @@ function init_gear_sets()
 
   sets.precast.WS = {
     ammo="Aurgelmir Orb",
-    head=gear.Herc_WSD_head,
+    head=gear.Nyame_B_head,
     body="Meghanada Cuirie +2",
     hands="Meghanada Gloves +2",
     legs="Horos Tights +3",
-    feet=gear.Herc_WSD_feet,
+    feet=gear.Nyame_B_feet,
     neck="Fotia Gorget",
     ear1="Sherida Earring",
     ear2="Brutal Earring",
@@ -454,18 +454,18 @@ function init_gear_sets()
   -- 40% STR / 40% DEX, ftp replicating
   sets.precast.WS['Pyrrhic Kleos'] = set_combine(sets.precast.WS, {
     ammo="Aurgelmir Orb",           --  5,  5, __, __
-    head=gear.Herc_WSD_head,        -- 22, 28,  4, __
+    head=gear.Nyame_B_head,         -- 26, 25,  8, __
     body=gear.Adhemar_B_body,       -- 38, 45, __, __
     hands=gear.Adhemar_B_hands,     -- 27, 56, __, __
     legs="Horos Tights +3",         -- 42, __, 10, __
-    feet=gear.Herc_WSD_feet,        -- 16, 24,  6, __
+    feet=gear.Nyame_B_feet,         -- 23, 26,  8, __
     neck="Etoile Gorget +2",        -- __, 25, __, 10
     ear1="Sherida Earring",         --  5,  5, __, __
     ear2="Odr Earring",             -- __, 10, __, __
     ring1="Gere Ring",              -- 10, __, __, __
     ring2="Regal Ring",             -- 10, 10, __, __
     back=gear.DNC_TP_DA_Cape,       -- __, 30, __, __
-    waist="Fotia Belt",             -- __, __, 10, __
+    waist="Fotia Belt",             -- __, __, __, __
     -- ammo="Aurgelmir Orb +1",     --  7,  7, __, __
     -- head="Gleti's Mask",         -- 33, 28, __,  6
     -- body="Gleti's Cuirass",      -- 39, 34, __,  9
@@ -475,7 +475,7 @@ function init_gear_sets()
     -- ear2="Mache Earring +1",     -- __,  8, __, __
     -- back=gear.DNC_WS2_Cape,      -- 30, __, __, __
     -- 250 STR, 207 DEX, 10 WSD, 42 PDL
-  }) -- 165 STR, 228 DEX, 30 WSD, 10 PDL
+  }) -- 186 STR, 237 DEX, 26 WSD, 10 PDL
   sets.precast.WS['Pyrrhic Kleos'].MaxTP = set_combine(sets.precast.WS['Pyrrhic Kleos'], {
   })
   sets.precast.WS['Pyrrhic Kleos'].LowAcc = set_combine(sets.precast.WS['Pyrrhic Kleos'], {
@@ -823,7 +823,6 @@ function init_gear_sets()
     ear1="Dignitary's Earring",
     ring2="Regal Ring",
     -- ammo="C. Palug Stone",
-    -- feet=gear.Herc_STP_feet,
     -- waist="Olseni Belt",
   })
 
