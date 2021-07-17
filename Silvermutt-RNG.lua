@@ -1628,6 +1628,9 @@ function display_current_job_state(eventArgs)
   local i_msg = state.IdleMode.value
 
   local msg = ''
+  if state.TreasureMode.value ~= 'None' then
+    msg = msg .. ' TH: ' ..state.TreasureMode.value.. ' |'
+  end
   if state.Kiting.value then
     msg = msg .. ' Kiting: On |'
   end
