@@ -441,6 +441,7 @@ function init_gear_sets()
   sets.precast.WS['Apex Arrow'].HighAccMaxTP = set_combine(sets.precast.WS['Apex Arrow'].HighAcc, {
   })
 
+  -- 80% DEX, 1.75 FTP, ftp replicating
   sets.precast.WS['Jishnu\'s Radiance'] = set_combine(sets.precast.WS, {
     head="Mummu Bonnet +2",
     hands="Mummu Wrists +2",
