@@ -115,7 +115,6 @@ function user_setup()
     send_command('bind ^numpad. input /ma "Utsusemi: Ni" <me>')
   end
 
-  update_combat_form()
   update_melee_groups()
 
   select_default_macro_book()
@@ -150,6 +149,65 @@ end
 -- Define sets and vars used by this job file.
 function init_gear_sets()
 
+  -----------------------------------------------------------------------------------
+  ---------------------------------------- Weapon Sets ------------------------------------------
+  ------------------------------------------------------------------------------------------------
+
+  sets.WeaponSet = {}
+  sets.WeaponSet['Verethragna'] = {main="Verethragna"}
+  sets.WeaponSet['Piercing'] = {main="Birdbanes"}
+  sets.WeaponSet['Slashing'] = {main="Vampiric Claws"}
+  sets.WeaponSet['Cleaving'] = {
+    main="Reikikon",
+    sub="Alber Strap"
+    -- main="Xoanon",
+  }
+  
+  -----------------------------------------------------------------------------------
+  ---------------------------------------- Special Sets ------------------------------------------
+  ------------------------------------------------------------------------------------------------
+
+  sets.Special = {}
+  sets.Special.Impetus = {
+    body="Bhikku Cyclas +1",
+  }
+  sets.Special.Footwork = {
+    feet="Anchorite's Gaiters +3",
+  }
+  sets.Special.ImpetusAndFootwork = {
+    body="Bhikku Cyclas +1",
+    feet="Anchorite's Gaiters +3",
+  }
+  sets.Special.Counterstance = {
+    feet="Hesychast's Gaiters +3",
+  }
+  sets.Special.ElementalObi = { waist="Hachirin-no-Obi", }
+  sets.Special.SleepyHead = { head="Frenzy Sallet", }
+  sets.buff.Doom = {
+    neck="Nicander's Necklace", --20
+    ring2="Eshmun's Ring", --20
+    waist="Gishdubar Sash", --10
+  }
+  sets.Kiting = {
+    feet="Hermes' Sandals",
+  }
+  sets.Kiting.Adoulin = {
+    body="Councilor's Garb",
+  }
+  sets.CP = {
+    back=gear.CP_Cape,
+  }
+  sets.Reive = {
+    neck="Ygnas's Resolve +1"
+  }
+  sets.TreasureHunter = {
+    body=gear.Herc_TH_body, --2
+    hands="Volte Bracers", --1
+    waist="Chaac Belt", --1
+  }
+  sets.BoostRegain = {
+    waist="Ask Sash",
+  }
   -- Enmity sets
   sets.Enmity = {
     head="Halitus Helm", --0/0, 43 [88] <8>
@@ -163,6 +221,7 @@ function init_gear_sets()
     waist={name="Kasiri Belt", priority=1}, --0/0, 0 [30] <3>
     -- feet="Ahosi Leggings", --4/0, 107 [18] <7>
   }
+
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Precast Sets ------------------------------------------
@@ -655,6 +714,55 @@ function init_gear_sets()
   ---------------------------------------- Midcast Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
 
+
+  ------------------------------------------------------------------------------------------------
+  ---------------------------------------- Engaged Sets ------------------------------------------
+  ------------------------------------------------------------------------------------------------
+
+  sets.engaged = {
+    ammo="Aurgelmir Orb",
+    head=gear.Adhemar_B_head,
+    body="Kendatsuba Samue +1",
+    hands=gear.Adhemar_B_hands,
+    legs="Hesychast's Hose +3",
+    feet="Anchorite's Gaiters +3",
+    neck="Monk's Nodowa +2",
+    ear1="Sherida Earring",
+    ear2="Telos Earring",
+    ring1="Gere Ring",
+    ring2="Niqmaddu Ring",
+    back=gear.MNK_DEX_DA_Cape,
+    waist="Moonbow Belt +1",
+  }
+  sets.engaged.LowAcc = set_combine(sets.engaged, {
+    ammo="Ginsen",
+  })
+  sets.engaged.MidAcc = set_combine(sets.engaged.LowAcc, {
+    head="Kendatsuba Jinpachi +1",
+  })
+  sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
+    ammo="Falcon Eye",
+    feet="Anchorite's Gaiters +3",
+    ring1="Chirich Ring +1",
+  })
+
+  sets.engaged.Impetus = set_combine(sets.engaged, sets.Special.Impetus)
+  sets.engaged.Footwork = set_combine(sets.engaged, sets.Special.Footwork)
+  sets.engaged.Impetus.Footwork = set_combine(sets.engaged, sets.Special.ImpetusAndFootwork)
+
+  sets.engaged.LowAcc.Impetus = set_combine(sets.engaged.LowAcc, sets.Special.Impetus)
+  sets.engaged.LowAcc.Footwork = set_combine(sets.engaged.LowAcc, sets.Special.Footwork)
+  sets.engaged.LowAcc.Impetus.Footwork = set_combine(sets.engaged.LowAcc, sets.Special.ImpetusAndFootwork)
+
+  sets.engaged.MidAcc.Impetus = set_combine(sets.engaged.MidAcc, sets.Special.Impetus)
+  sets.engaged.MidAcc.Footwork = set_combine(sets.engaged.MidAcc, sets.Special.Footwork)
+  sets.engaged.MidAcc.Impetus.Footwork = set_combine(sets.engaged.MidAcc, sets.Special.ImpetusAndFootwork)
+
+  sets.engaged.HighAcc.Impetus = set_combine(sets.engaged.HighAcc, sets.Special.Impetus)
+  sets.engaged.HighAcc.Footwork = set_combine(sets.engaged.HighAcc, sets.Special.Footwork)
+  sets.engaged.HighAcc.Impetus.Footwork = set_combine(sets.engaged.HighAcc, sets.Special.ImpetusAndFootwork)
+
+
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Defense Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
@@ -668,43 +776,49 @@ function init_gear_sets()
     waist="Moonbow Belt +1",      --  6/ 6, ___
     -- TP Cape                    -- 10/__, ___
   } --36 PDT/26 MDT, 542 MEVA
-  sets.LightDef.Footwork = {
+  sets.LightDef.Footwork = set_combine(sets.LightDef, {
     feet="Anchorite's Gaiters +3",-- __/__,  84
-  } --36 PDT/26 MDT, 542 MEVA
-  sets.LightDef.Impetus = {
+  }) --36 PDT/26 MDT
+  sets.LightDef.Impetus = set_combine(sets.LightDef, {
     body="Bhikku Cyclas +1",      -- __/__,  59
     ring1="Defending Ring",       -- 10/10, ___
-  } --37 PDT/27 MDT, 462 MEVA
-  sets.LightDef.ImpetusAndFootwork = {
+  }) --37 PDT/27 MDT
+  sets.LightDef.ImpetusAndFootwork = set_combine(sets.LightDef, {
     body="Bhikku Cyclas +1",      -- __/__,  59
     feet="Anchorite's Gaiters +3",-- __/__,  84
     ring1="Defending Ring",       -- 10/10, ___
-  } --37 PDT/27 MDT, 462 MEVA
+  }) --37 PDT/27 MDT
 
   sets.HeavyDef = {
-    ammo="Staunch Tathlum +1",  --  3/ 3, ___
-    head="Malignance Chapeau",  --  6/ 6, 123
-    body="Malignance Tabard",   --  9/ 9, 139
-    hands="Malignance Gloves",  --  5/ 5, 112
-    legs="Malignance Tights",   --  7/ 7, 150
-    feet="Malignance Boots",    --  4/ 4, 150
-    waist="Moonbow Belt +1",    --  6/ 6, ___
-    -- TP Cape                  -- 10/__, ___
+    ammo="Staunch Tathlum +1",    --  3/ 3, ___
+    head="Malignance Chapeau",    --  6/ 6, 123
+    body="Malignance Tabard",     --  9/ 9, 139
+    hands="Malignance Gloves",    --  5/ 5, 112
+    legs="Malignance Tights",     --  7/ 7, 150
+    feet="Malignance Boots",      --  4/ 4, 150
+    waist="Moonbow Belt +1",      --  6/ 6, ___
+    -- TP Cape                    -- 10/__, ___
   } --50 PDT/40 MDT, 674 MEVA
   sets.HeavyDef.Footwork = {
+    ammo="Staunch Tathlum +1",    --  3/ 3, ___
+    body="Malignance Tabard",     --  9/ 9, 139
+    hands="Malignance Gloves",    --  5/ 5, 112
+    legs="Malignance Tights",     --  7/ 7, 150
     feet="Anchorite's Gaiters +3",-- __/__,  84
+    waist="Moonbow Belt +1",      --  6/ 6, ___
     ring1="Defending Ring",       -- 10/10, ___
-  } --56 PDT/46 MDT, 608 MEVA
-  sets.HeavyDef.Impetus = {
+    -- TP Cape                    -- 10/__, ___
+  } --50 PDT/40 MDT
+  sets.HeavyDef.Impetus = set_combine(sets.HeavyDef, {
     body="Bhikku Cyclas +1",      -- __/__,  59
     ring1="Defending Ring",       -- 10/10, ___
-  } --51 PDT/41 MDT, 594 MEVA
-  sets.HeavyDef.ImpetusAndFootwork = {
+  }) --51 PDT/41 MDT
+  sets.HeavyDef.ImpetusAndFootwork = set_combine(sets.HeavyDef, {
     body="Bhikku Cyclas +1",      -- __/__,  59
     feet="Anchorite's Gaiters +3",-- __/__,  84
     ear2="Odnowa Earring +1",     --  3/ 5, ___
     ring1="Defending Ring",       -- 10/10, ___
-  } -- 50 PDT/42 MDT, 528 MEVA
+  }) -- 50 PDT/42 MDT
 
   sets.defense.PDT = {
     ammo="Staunch Tathlum +1",  --  3/ 3, ___
@@ -776,108 +890,48 @@ function init_gear_sets()
 
 
   ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Engaged Sets ------------------------------------------
-  ------------------------------------------------------------------------------------------------
-
-  sets.engaged = {
-    ammo="Aurgelmir Orb",
-    head=gear.Adhemar_B_head,
-    body="Kendatsuba Samue +1",
-    hands=gear.Adhemar_B_hands,
-    legs="Hesychast's Hose +3",
-    feet="Anchorite's Gaiters +3",
-    neck="Monk's Nodowa +2",
-    ear1="Sherida Earring",
-    ear2="Telos Earring",
-    ring1="Gere Ring",
-    ring2="Niqmaddu Ring",
-    back=gear.MNK_DEX_DA_Cape,
-    waist="Moonbow Belt +1",
-  }
-  sets.engaged.LowAcc = set_combine(sets.engaged, {
-    ammo="Ginsen",
-  })
-  sets.engaged.MidAcc = set_combine(sets.engaged.LowAcc, {
-    head="Kendatsuba Jinpachi +1",
-  })
-  sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
-    ammo="Falcon Eye",
-    feet="Anchorite's Gaiters +3",
-    ring1="Chirich Ring +1",
-  })
-
-
-  ------------------------------------------------------------------------------------------------
   ---------------------------------------- Hybrid Sets -------------------------------------------
   ------------------------------------------------------------------------------------------------
 
   sets.engaged.LightDef = set_combine(sets.engaged, sets.LightDef)
+  sets.engaged.LightDef.Impetus = set_combine(sets.engaged, sets.LightDef.Impetus)
+  sets.engaged.LightDef.Footwork = set_combine(sets.engaged, sets.LightDef.Footwork)
+  sets.engaged.LightDef.Impetus.Footwork = set_combine(sets.engaged, sets.LightDef.ImpetusAndFootwork)
+
   sets.engaged.LowAcc.LightDef = set_combine(sets.engaged.LowAcc, sets.LightDef)
+  sets.engaged.LowAcc.LightDef.Impetus = set_combine(sets.engaged.LowAcc, sets.LightDef.Impetus)
+  sets.engaged.LowAcc.LightDef.Footwork = set_combine(sets.engaged.LowAcc, sets.LightDef.Footwork)
+  sets.engaged.LowAcc.LightDef.Impetus.Footwork = set_combine(sets.engaged.LowAcc, sets.LightDef.ImpetusAndFootwork)
+
   sets.engaged.MidAcc.LightDef = set_combine(sets.engaged.MidAcc, sets.LightDef)
+  sets.engaged.MidAcc.LightDef.Impetus = set_combine(sets.engaged.MidAcc, sets.LightDef.Impetus)
+  sets.engaged.MidAcc.LightDef.Footwork = set_combine(sets.engaged.MidAcc, sets.LightDef.Footwork)
+  sets.engaged.MidAcc.LightDef.Impetus.Footwork = set_combine(sets.engaged.MidAcc, sets.LightDef.ImpetusAndFootwork)
+
   sets.engaged.HighAcc.LightDef = set_combine(sets.engaged.HighAcc, sets.LightDef)
+  sets.engaged.HighAcc.LightDef.Impetus = set_combine(sets.engaged.HighAcc, sets.LightDef.Impetus)
+  sets.engaged.HighAcc.LightDef.Footwork = set_combine(sets.engaged.HighAcc, sets.LightDef.Footwork)
+  sets.engaged.HighAcc.LightDef.Impetus.Footwork = set_combine(sets.engaged.HighAcc, sets.LightDef.ImpetusAndFootwork)
 
   sets.engaged.HeavyDef = set_combine(sets.engaged, sets.HeavyDef)
+  sets.engaged.HeavyDef.Impetus = set_combine(sets.engaged, sets.HeavyDef.Impetus)
+  sets.engaged.HeavyDef.Footwork = set_combine(sets.engaged, sets.HeavyDef.Footwork)
+  sets.engaged.HeavyDef.Impetus.Footwork = set_combine(sets.engaged, sets.HeavyDef.ImpetusAndFootwork)
+
   sets.engaged.LowAcc.HeavyDef = set_combine(sets.engaged.LowAcc, sets.HeavyDef)
+  sets.engaged.LowAcc.HeavyDef.Impetus = set_combine(sets.engaged.LowAcc, sets.HeavyDef.Impetus)
+  sets.engaged.LowAcc.HeavyDef.Footwork = set_combine(sets.engaged.LowAcc, sets.HeavyDef.Footwork)
+  sets.engaged.LowAcc.HeavyDef.Impetus.Footwork = set_combine(sets.engaged.LowAcc, sets.HeavyDef.ImpetusAndFootwork)
+
   sets.engaged.MidAcc.HeavyDef = set_combine(sets.engaged.MidAcc, sets.HeavyDef)
+  sets.engaged.MidAcc.HeavyDef.Impetus = set_combine(sets.engaged.MidAcc, sets.HeavyDef.Impetus)
+  sets.engaged.MidAcc.HeavyDef.Footwork = set_combine(sets.engaged.MidAcc, sets.HeavyDef.Footwork)
+  sets.engaged.MidAcc.HeavyDef.Impetus.Footwork = set_combine(sets.engaged.MidAcc, sets.HeavyDef.ImpetusAndFootwork)
+
   sets.engaged.HighAcc.HeavyDef = set_combine(sets.engaged.HighAcc, sets.HeavyDef)
-
-  -----------------------------------------------------------------------------------
-  ---------------------------------------- Special Sets ------------------------------------------
-  ------------------------------------------------------------------------------------------------
-
-  -- Quick sets for post-precast adjustments, listed here so that the gear can be Validated.
-  sets.Special = {}
-  sets.Special.Impetus = {
-    body="Bhikku Cyclas +1",
-  }
-  sets.Special.Counterstance = {
-    feet="Hesychast's Gaiters +3",
-  }
-  sets.Special.Footwork = {
-    feet="Anchorite's Gaiters +3",
-  }
-  sets.Special.ImpetusAndFootwork = {
-    body="Bhikku Cyclas +1",
-    feet="Anchorite's Gaiters +3",
-  }
-  sets.Special.ElementalObi = { waist="Hachirin-no-Obi", }
-  sets.Special.SleepyHead = { head="Frenzy Sallet", }
-
-  sets.buff.Doom = {
-    neck="Nicander's Necklace", --20
-    ring2="Eshmun's Ring", --20
-    waist="Gishdubar Sash", --10
-  }
-  sets.Kiting = {
-    feet="Hermes' Sandals",
-  }
-  sets.Kiting.Adoulin = {
-    body="Councilor's Garb",
-  }
-  sets.CP = {
-    back=gear.CP_Cape,
-  }
-  sets.Reive = {
-    neck="Ygnas's Resolve +1"
-  }
-  sets.TreasureHunter = {
-    body=gear.Herc_TH_body, --2
-    hands="Volte Bracers", --1
-    waist="Chaac Belt", --1
-  }
-  sets.BoostRegain = {
-    waist="Ask Sash",
-  }
-
-  sets.WeaponSet = {}
-  sets.WeaponSet['Verethragna'] = {main="Verethragna"}
-  sets.WeaponSet['Piercing'] = {main="Birdbanes"}
-  sets.WeaponSet['Slashing'] = {main="Vampiric Claws"}
-  sets.WeaponSet['Cleaving'] = {
-    main="Reikikon",
-    sub="Alber Strap"
-    -- main="Xoanon",
-  }
+  sets.engaged.HighAcc.HeavyDef.Impetus = set_combine(sets.engaged.HighAcc, sets.HeavyDef.Impetus)
+  sets.engaged.HighAcc.HeavyDef.Footwork = set_combine(sets.engaged.HighAcc, sets.HeavyDef.Footwork)
+  sets.engaged.HighAcc.HeavyDef.Impetus.Footwork = set_combine(sets.engaged.HighAcc, sets.HeavyDef.ImpetusAndFootwork)
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -1009,17 +1063,8 @@ end
 -- gain == true if the buff was gained, false if it was lost.
 -- Theory: debuffs must be lowercase and buffs must begin with uppercase
 function job_buff_change(buff,gain)
-  -- Set Footwork as combat form any time it's active and Hundred Fists is not.
-  if buff == 'Footwork' and gain and not buffactive['hundred fists'] then
-    state.CombatForm:set('Footwork')
-  elseif buff == "Hundred Fists" and not gain and buffactive.footwork then
-    state.CombatForm:set('Footwork')
-  else
-    state.CombatForm:reset()
-  end
-
   -- Hundred Fists and Impetus modify the custom melee groups
-  if buff == "Hundred Fists" or buff == "Impetus" or buff == "Counterstance" then
+  if buff == "Hundred Fists" or buff == "Impetus" or buff == "Footwork" then
     classes.CustomMeleeGroups:clear()
 
     if (buff == "Hundred Fists" and gain) or buffactive['hundred fists'] then
@@ -1027,9 +1072,6 @@ function job_buff_change(buff,gain)
     end
     if (buff == "Impetus" and gain) or buffactive.impetus then
       classes.CustomMeleeGroups:append('Impetus')
-    end
-    if (buff == "Counterstance" and gain) or buffactive.counterstance then
-      classes.CustomMeleeGroups:append('Counterstance')
     end
   end
 
@@ -1085,7 +1127,6 @@ end
 function job_handle_equipping_gear(playerStatus, eventArgs)
   check_gear()
   update_idle_groups()
-  update_combat_form()
   update_melee_groups()
 end
 
@@ -1093,11 +1134,6 @@ end
 -- Function to display the current relevant user state when doing an update.
 -- Set eventArgs.handled to true if display was handled, and you don't want the default info shown.
 function display_current_job_state(eventArgs)
-  local cf_msg = ''
-  if state.CombatForm.has_value then
-    cf_msg = ' (' ..state.CombatForm.value.. ')'
-  end
-
   local m_msg = state.OffenseMode.value
   if state.HybridMode.value ~= 'Normal' then
     m_msg = m_msg .. '/' ..state.HybridMode.value
@@ -1123,7 +1159,7 @@ function display_current_job_state(eventArgs)
     msg = msg .. ' CP Mode: On |'
   end
 
-  add_to_chat(002, '| ' ..string.char(31,210).. 'Melee' ..cf_msg.. ': ' ..string.char(31,001)..m_msg.. string.char(31,002)..  ' |'
+  add_to_chat(002, '| ' ..string.char(31,210).. 'Melee: ' ..string.char(31,001)..m_msg.. string.char(31,002)..  ' |'
       ..string.char(31,004).. ' Defense: ' ..string.char(31,001)..d_msg.. string.char(31,002)..  ' |'
       ..string.char(31,207).. ' Idle: ' ..string.char(31,001)..i_msg.. string.char(31,002)..  ' |'
       ..string.char(31,012).. ' Toy Weapon: ' ..string.char(31,001)..toy_msg.. string.char(31,002)..  ' |'
@@ -1228,20 +1264,6 @@ function customize_melee_set(meleeSet)
   if state.CP.current == 'on' then
     meleeSet = set_combine(meleeSet, sets.CP)
   end
-  if state.DefenseMode.value == 'None' then
-    -- Find base set (hybrid set or normal)
-    local baseSet = (state.HybridMode.value == 'Normal' and sets.Special) or sets[state.HybridMode.value]
-    if state.Buff['Impetus'] and state.Buff['Footwork'] then
-      -- Override set to ensure Impetus and Footwork gear equipped but also increase defense
-      meleeSet = set_combine(meleeSet, baseSet.ImpetusAndFootwork)
-    elseif state.Buff['Impetus'] then
-      -- Override set to ensure Impetus gear equipped but also increase defense
-      meleeSet = set_combine(meleeSet, baseSet.Impetus)
-    elseif state.Buff['Footwork'] then
-      -- Override set to ensure Footwork gear equipped but also increase defense
-      meleeSet = set_combine(meleeSet, baseSet.Footwork)
-    end
-  end
 
   -- Override sets to ensure counterstance feet are equipped if Counterstance is up
   if state.Buff['Counterstance'] then
@@ -1341,14 +1363,6 @@ function update_idle_groups()
   end
 end
 
-function update_combat_form()
-  if buffactive.footwork and not buffactive['hundred fists'] then
-    state.CombatForm:set('Footwork')
-  else
-    state.CombatForm:reset()
-  end
-end
-
 function update_melee_groups()
   classes.CustomMeleeGroups:clear()
 
@@ -1357,6 +1371,9 @@ function update_melee_groups()
   end
   if buffactive.impetus then
     classes.CustomMeleeGroups:append('Impetus')
+  end
+  if buffactive.footwork then
+    classes.CustomMeleeGroups:append('Footwork')
   end
   if buffactive.counterstance then
     classes.CustomMeleeGroups:append('Counterstance')
