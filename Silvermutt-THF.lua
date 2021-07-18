@@ -390,25 +390,27 @@ function init_gear_sets()
 
   -- 80% DEX
   sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {
-    ammo="Aurgelmir Orb",           --  5, __,  7, __
-    head=gear.Nyame_B_head,         -- 25,  8, 55, __
-    body=gear.Herc_WSD_body,        -- 34, 10, 20, __
-    hands=gear.Nyame_B_hands,       -- 42,  8, 55, __
-    legs=gear.Nyame_B_legs,         -- __,  9, 55, __
-    feet=gear.Nyame_B_feet,         -- 26,  8, 55, __
-    neck="Caro Necklace",           --  6, __, 10, __
-    ear1="Ishvara Earring",         -- __,  2, __, __
-    ear2="Moonshade Earring",       -- __, __, __, __; TP Bonus+250
-    ring1="Ilabrat Ring",           -- 10, __, 25, __
-    ring2="Regal Ring",             -- 10, __, 20, __
-    back=gear.THF_TP_Cape,          -- 30, __, 20, __
-    waist="Grunfeld Rope",          --  5, __, 20, __
-    -- ammo="Cath Palug Stone",     -- 10, __, __, __
-    -- neck="Assassin's Gorget +2", -- 15, __, __, __
-    -- ring2="Epaminondas's Ring",  -- __,  5, __, __
-    -- back=gear.THF_WS1_Cape,      -- 30, 10, 20, __
-    -- waist="Kentarch Belt +1",    -- 10, __, __, __; Aug it first
-    -- 202 DEX, 60 WSD, 285 Att, 10 PDL
+    ammo="Aurgelmir Orb",             --  5, __,  7, __
+    head=gear.Nyame_B_head,           -- 25,  8, 55, __
+    body=gear.Herc_WSD_body,          -- 34, 10, 20, __
+    hands=gear.Nyame_B_hands,         -- 42,  8, 55, __
+    legs=gear.Nyame_B_legs,           -- __,  9, 55, __
+    feet=gear.Nyame_B_feet,           -- 26,  8, 55, __
+    neck="Caro Necklace",             --  6, __, 10, __
+    ear1="Ishvara Earring",           -- __,  2, __, __
+    ear2="Moonshade Earring",         -- __, __, __, __; TP Bonus+250
+    ring1="Ilabrat Ring",             -- 10, __, 25, __
+    ring2="Regal Ring",               -- 10, __, 20, __
+    back=gear.THF_TP_Cape,            -- 30, __, 20, __
+    waist="Grunfeld Rope",            --  5, __, 20, __
+    -- ammo="Cath Palug Stone",       -- 10, __, __, __
+    -- body="Gleti's Cuirass"         -- 34, __, 64,  9
+    -- legs="Plunderer's Culottes +3" -- 21,  6, 64, __
+    -- neck="Assassin's Gorget +2",   -- 15, __, __, __
+    -- ring2="Epaminondas's Ring",    -- __,  5, __, __
+    -- back=gear.THF_WS1_Cape,        -- 30, 10, 20, __
+    -- waist="Kentarch Belt +1",      -- 10, __, __, __; Aug it first
+    -- 202 DEX, 60 WSD, 285 Att, 9 PDL
   })-- 193 DEX, 45 WSD, 342 Att, 0 PDL
   sets.precast.WS["Rudra's Storm"].MaxTP = set_combine(sets.precast.WS["Rudra's Storm"], {
     ear2="Odr Earring",
@@ -440,7 +442,7 @@ function init_gear_sets()
   
   -- 40% DEX / 40% INT + MAB
   sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
-    ammo="Pemphredo Tathlum", --4
+    ammo="Seething Bomblet +1", --7
     head=gear.Nyame_B_head, --30
     body=gear.Nyame_B_body, --30
     hands=gear.Nyame_B_hands, --30
@@ -465,6 +467,35 @@ function init_gear_sets()
   sets.precast.WS['Aeolian Edge'].MidAccMaxTP = sets.precast.WS['Aeolian Edge'].MaxTP
   sets.precast.WS['Aeolian Edge'].HighAcc = sets.precast.WS['Aeolian Edge']
   sets.precast.WS['Aeolian Edge'].HighAccMaxTP = sets.precast.WS['Aeolian Edge'].MaxTP
+
+  sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
+    ammo="Seething Bomblet +1",   -- 15, __, 13, 13, __, __, ___
+    head=gear.Nyame_B_head,       -- 26, 26, 55, 40,  8, __, ___
+    body=gear.Herc_WSD_body,      -- 28, 20, 20, 35, 10, __, ___
+    hands=gear.Nyame_B_hands,     -- 17, 40, 55, 40,  8, __, ___
+    legs=gear.Nyame_B_legs,       -- 43, 32, 55, 40,  9, __, ___
+    feet=gear.Nyame_B_feet,       -- 23, 26, 55, 40,  8, __, ___
+    neck="Anu Torque",            -- __, __, 20, __, __, __, ___
+    ear1="Ishvara Earring",       -- __, __, __, __,  2, __, ___
+    ear2="Moonshade Earring",     -- __, __, __,  4, __, __, 250
+    ring1="Regal Ring",           -- 10, __, 20, __, __, __, ___
+    ring2="Gere Ring",            -- 10, __, 16, __, __, __, ___
+    back=gear.THF_WS2_Cape,       -- 30, __, 20, 20, 10, __, ___
+    waist="Sailfi Belt +1",       -- 15, __, 15, __, __, __, ___
+    -- body=gear.Nyame_B_body,    -- 35, 37, 55, 40, 10, __, ___
+    -- ring1="Epaminondas's Ring",-- __, __, __, __,  5, __, ___
+    -- 214 STR, 161 MND, 359 Attack, 237 Accuracy, 60 WSD, 0 PDL, 250 TP Bonus
+  })-- 217 STR, 144 MND, 344 Attack, 232 Accuracy, 55 WSD, 0 PDL, 250 TP Bonus
+  sets.precast.WS['Savage Blade'].MaxTP = set_combine(sets.precast.WS['Savage Blade'], {
+    ear2="Sherida Earring",       --  5, __, __, __, __, __, ___
+  })
+  sets.precast.WS['Savage Blade'].LowAcc = sets.precast.WS['Savage Blade']
+  sets.precast.WS['Savage Blade'].LowAccMaxTP = sets.precast.WS['Savage Blade'].MaxTP
+  sets.precast.WS['Savage Blade'].MidAcc = sets.precast.WS['Savage Blade']
+  sets.precast.WS['Savage Blade'].MidAccMaxTP = sets.precast.WS['Savage Blade'].MaxTP
+  sets.precast.WS['Savage Blade'].HighAcc = sets.precast.WS['Savage Blade']
+  sets.precast.WS['Savage Blade'].HighAccMaxTP = sets.precast.WS['Savage Blade'].MaxTP
+
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Midcast Sets ------------------------------------------
@@ -922,9 +953,30 @@ function init_gear_sets()
   }
 
   sets.WeaponSet = {}
-  sets.WeaponSet['Normal'] = {main="Aeneas", sub="Twashtar"}
-  sets.WeaponSet['Acc'] = {main="Twashtar", sub="Taming Sari"}
-  sets.WeaponSet['Cleaving'] = {main="Kaja Knife", sub="Malevolence"}
+  sets.WeaponSet['Glass'] = {
+    main="Twashtar",
+    sub="Centovente",
+  }
+  sets.WeaponSet['Normal'] = {
+    main="Aeneas",
+    sub="Twashtar",
+    -- main="Vajra",
+    -- sub="Centovente",
+  }
+  sets.WeaponSet['Acc'] = {}
+  sets.WeaponSet['Naegling'] = {
+    main="Naegling",
+    sub="Centovente",
+  }
+  -- sets.WeaponSet['SoloCleaving'] = {
+  --   main=gear.Gandring_C,
+  --   sub="Tauret",
+  -- }
+  sets.WeaponSet['Cleaving'] = {
+    main="Kaja Knife",
+    sub="Malevolence",
+    -- main="Tauret",
+  }
 end
 
 
