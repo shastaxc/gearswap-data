@@ -581,13 +581,12 @@ function init_gear_sets()
   })
   sets.precast.WS['Savage Blade'].LowAcc = set_combine(sets.precast.WS['Savage Blade'], {
     ear1="Dignitary's Earring",
-    ring1="Rufescent Ring",       --  6,  6, __,  7, __, __, ___
   })
   sets.precast.WS['Savage Blade'].LowAccMaxTP = set_combine(sets.precast.WS['Savage Blade'].LowAcc, {
     ear2="Telos Earring",
   })
   sets.precast.WS['Savage Blade'].MidAcc = set_combine(sets.precast.WS['Savage Blade'].LowAcc, {
-    ring2="Chirich Ring +1",
+    ring1="Chirich Ring +1",
   })
   sets.precast.WS['Savage Blade'].MidAccMaxTP = set_combine(sets.precast.WS['Savage Blade'].MidAcc, {
     ear2="Telos Earring",
