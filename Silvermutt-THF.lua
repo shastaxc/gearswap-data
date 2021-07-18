@@ -517,17 +517,17 @@ function init_gear_sets()
 
   sets.LightDef = {
     ammo="Staunch Tathlum +1",  --  3/ 3, ___
-    head=gear.Nyame_B_head,          --  7/ 7, 123
+    head="Malignance Chapeau",  --  6/ 6, 123
     body="Malignance Tabard",   --  9/ 9, 139 
     hands="Malignance Gloves",  --  5/ 5, 112
     legs="Malignance Tights",   --  7/ 7, 150
     feet="Malignance Boots",    --  4/ 4, 150
-    -- head="Malignance Chapeau", --  6/ 6, 123
-  } --35 PDT/35 MDT, 674 MEVA
+    -- TP Cape                  -- 10/__, ___
+  } --44 PDT/34 MDT, 674 MEVA
 
   sets.HeavyDef = {
     ammo="Yamarang",            -- __/__,  15
-    head=gear.Nyame_B_head,          --  7/ 7, 123
+    head="Malignance Chapeau",  --  6/ 6, 123
     body="Malignance Tabard",   --  9/ 9, 139
     hands="Malignance Gloves",  --  5/ 5, 112
     legs="Malignance Tights",   --  7/ 7, 150
@@ -537,10 +537,9 @@ function init_gear_sets()
     ear2="Odnowa Earring +1",   --  3/ 5, ___
     ring1="Moonlight Ring",     --  5/ 5, ___
     ring2="Archon Ring",        -- __/__, ___; Occ. blocks magic dmg
-    back=gear.THF_TP_Cape,      -- __/__, ___
+    back=gear.THF_TP_Cape,      -- 10/__, ___
     waist="Engraved Belt",      -- __/__, ___
-    -- head="Malignance Chapeau", --  6/ 6, 123
-  } --46 PDT/48 MDT, 697 MEVA
+  } --55 PDT/47 MDT, 697 MEVA
 
   sets.defense.PDT = sets.HeavyDef
   sets.defense.MDT = sets.HeavyDef

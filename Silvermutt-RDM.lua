@@ -998,15 +998,16 @@ function init_gear_sets()
 
   sets.LightDef = {
     ammo="Staunch Tathlum +1", --3/3, 0
+    head="Malignance Chapeau", --6/6, 123
     body="Malignance Tabard", --9/9, 139
     hands="Malignance Gloves", --5/5, 112
     legs="Malignance Tights", --7/7, 150
     feet="Malignance Boots", --4/4, 150
-    -- head="Malignance Chapeau", --6/6
-  } --28 PDT / 28 MDT, 551 MEVA
+  } --34 PDT / 34 MDT, 674 MEVA
 
   sets.HeavyDef = {
     ammo="Staunch Tathlum +1", --3/3, 0
+    head="Malignance Chapeau", --6/6, 123
     body="Malignance Tabard", --9/9, 139
     hands="Malignance Gloves", --5/5, 112
     legs="Malignance Tights", --7/7, 150
@@ -1017,11 +1018,10 @@ function init_gear_sets()
     waist="Carrier's Sash",      -- __/__, ___; Ele Resist+15
     -- main="Bolelabunga",
     -- sub="Sacro Bulwark", --10/10
-    -- head="Malignance Chapeau", --6/6
     -- neck="Warder's Charm +1",
     -- ear1="Sanare Earring",
     -- back=gear.RDM_INT_Cape,
-  } --45 PDT / 37 MDT, 551 MEVA
+  } --51 PDT / 43 MDT, 682 MEVA
 
   sets.defense.PDT = sets.HeavyDef
   sets.defense.MDT = sets.HeavyDef

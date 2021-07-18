@@ -831,18 +831,17 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.LightDef = {
-    head=gear.Nyame_B_head,            --  7/ 7, 123
+    head="Malignance Chapeau",    --  6/ 6, 123
     body="Malignance Tabard",     --  9/ 9, 139
     hands="Malignance Gloves",    --  5/ 5, 112
     legs="Malignance Tights",     --  7/ 7, 150
     feet="Malignance Boots",      --  4/ 4, 150
     ring2="Defending Ring",       -- 10/10, ___
-    -- head="Malignance Chapeau", --  6/ 6, 123
-    -- back="Moonlight Cape",     --  6/ 6, ___
-  } -- 42 PDT / 42 MDT, 674 MEVA
+    -- TP Cape                    -- 10/__, ___
+  } -- 51 PDT / 41 MDT, 674 MEVA
 
   sets.HeavyDef = {
-    head=gear.Nyame_B_head,          --  7/ 7, 123
+    head="Malignance Chapeau",  --  6/ 6, 123
     body="Malignance Tabard",   --  9/ 9, 139
     hands="Malignance Gloves",  --  5/ 5, 112
     legs="Malignance Tights",   --  7/ 7, 150
@@ -854,7 +853,7 @@ function init_gear_sets()
     ring2="Defending Ring",     -- 10/10, ___
     back=gear.RNG_DW_Cape,      -- __/__,  15
     waist="Kasiri Belt",        -- __/__, ___
-  } -- 51 PDT / 53 MDT, 697 MEVA
+  } -- 50 PDT / 52 MDT, 697 MEVA
 
   sets.defense.PDT = sets.HeavyDef
   sets.defense.MDT = sets.HeavyDef

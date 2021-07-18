@@ -622,15 +622,14 @@ function init_gear_sets()
 
   sets.LightDef = {
     ammo="Yamarang",            -- __/__,  15
-    head=gear.Nyame_B_head,          --  7/ 7, 123
+    head="Malignance Chapeau",  --  6/ 6, 123
     body="Malignance Tabard",   --  9/ 9, 139
     hands="Malignance Gloves",  --  5/ 5, 112
     legs="Malignance Tights",   --  7/ 7, 150
     feet="Malignance Boots",    --  4/ 4, 150
     ring2="Defending Ring",     -- 10/10, ___
-    -- head="Malignance Chapeau", --  6/ 6, 123
     -- 10 PDT from JSE cape
-  } --52 PDT/42 MDT, 689 MEVA
+  } --51 PDT/41 MDT, 689 MEVA
 
   sets.HeavyDef = {
     ammo="Yamarang",            -- __/__,  15

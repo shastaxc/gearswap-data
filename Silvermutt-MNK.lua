@@ -661,29 +661,18 @@ function init_gear_sets()
 
   sets.LightDef = {
     ammo="Staunch Tathlum +1",    --  3/ 3, ___
-    head=gear.Nyame_B_head,       --  7/ 7, 123
+    head="Malignance Chapeau",    --  6/ 6, 123
     body="Malignance Tabard",     --  9/ 9, 139
     hands="Malignance Gloves",    --  5/ 5, 112
-    legs="Hesychast's Hose +3",   -- __/__,  84
+    legs="Hesychast's Host +3",   -- __/__,  84
     feet="Anchorite's Gaiters +3",-- __/__,  84
-    waist="Moonbow Belt +1",      --  6/ 6, ___
     back=gear.MNK_DEX_DA_Cape,    -- 10/__, ___; after changing to PDT aug
-
-    -- Ideal:
-    -- ammo="Staunch Tathlum +1",    --  3/ 3, ___
-    -- head="Malignance Chapeau",    --  6/ 6, 123
-    -- body="Malignance Tabard",     --  9/ 9, 139
-    -- hands="Malignance Gloves",    --  5/ 5, 112
-    -- legs="Hesychast's Host +3",   -- __/__,  84
-    -- feet="Anchorite's Gaiters +3",-- __/__,  84
-    -- back=gear.MNK_DEX_DA_Cape,    -- 10/__, ___; after changing to PDT aug
-    -- waist="Moonbow Belt +1",      --  6/ 6, ___
-    --39 PDT/29 MDT, 542 MEVA
-  } --40 PDT/30 MDT, 542 MEVA
+    waist="Moonbow Belt +1",      --  6/ 6, ___
+  } --39 PDT/29 MDT, 542 MEVA
 
   sets.HeavyDef = {
     ammo="Staunch Tathlum +1",  --  3/ 3, ___
-    head=gear.Nyame_B_head,     --  7/ 7, 123
+    head="Malignance Chapeau",  --  6/ 6, 123
     body="Malignance Tabard",   --  9/ 9, 139
     hands="Malignance Gloves",  --  5/ 5, 112
     legs="Malignance Tights",   --  7/ 7, 150
@@ -695,8 +684,7 @@ function init_gear_sets()
     ring2="Niqmaddu Ring",      -- __/__, ___
     back=gear.MNK_DEX_DA_Cape,  -- __/__, ___
     waist="Moonbow Belt +1",    --  6/ 6, ___
-    -- head="Malignance Chapeau",  --  6/ 6, 123
-  } --54 PDT/56 MDT, 674 MEVA
+  } --52 PDT/55 MDT, 674 MEVA
 
   sets.defense.PDT = sets.HeavyDef
   sets.defense.MDT = sets.HeavyDef
