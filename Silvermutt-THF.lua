@@ -245,8 +245,6 @@ function init_gear_sets()
   sets.precast.JA['Feint'] = {
     -- legs="Plun. Culottes +3",
   }
-  -- sets.precast.JA['Sneak Attack'] = sets.buff['Sneak Attack']
-  -- sets.precast.JA['Trick Attack'] = sets.buff['Trick Attack']
 
   sets.precast.Waltz = {
     ammo="Yamarang",
