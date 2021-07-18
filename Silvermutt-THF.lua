@@ -313,10 +313,10 @@ function init_gear_sets()
     ear2="Telos Earring",
     -- ammo="Voluspa Tathlum",
   })
-  sets.precast.WS.Critical = {
-    body="Meg. Cuirie +2",
+  -- When Sneak Attack active, overlaid on top of normal set
+  sets.precast.WS.SATA = {
     -- ammo="Yetshila +1",
-    -- head="Pill. Bonnet +3",
+    -- head="Pillager's bonnet +3",
   }
 
   -- AGI
@@ -952,8 +952,10 @@ function job_post_precast(spell, action, spellMap, eventArgs)
     end
   end
   if spell.type == 'WeaponSkill' then
-    if state.Buff['Sneak Attack'] == true or state.Buff['Trick Attack'] == true then
-      equip(sets.precast.WS.Critical)
+    if state.Buff['Sneak Attack'] or state.Buff['Trick Attack'] then
+    -- If set isn't found for specific ws, overlay the default set
+      local set = sets.precast.WS[spell.name].SATA or sets.precast.WS.SATA or {}
+      equip(set)
     end
     -- Equip obi if weather/day matches for WS.
     if elemental_ws:contains(spell.english) then

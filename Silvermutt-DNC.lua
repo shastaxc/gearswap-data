@@ -116,6 +116,8 @@ function job_setup()
 
   state.Buff['Climactic Flourish'] = buffactive['climactic flourish'] or false
   state.Buff['Sneak Attack'] = buffactive['sneak attack'] or false
+  state.Buff['Trick Attack'] = buffactive['trick attack'] or false
+  state.Buff['Feint'] = buffactive['feint'] or false
 
   state.WeaponSet = M{['description']='Weapon Set', 'Normal', 'Acc', 'H2H', 'Fast/DI', 'Healing', 'Cleaving'}
   state.MainStep = M{['description']='Main Step', 'Box Step', 'Quickstep', 'Feather Step', 'Stutter Step'}
@@ -414,7 +416,7 @@ function init_gear_sets()
     waist="Fotia Belt",
   } -- default set
   sets.precast.WS.MaxTP = set_combine(sets.precast.WS, {})
-  sets.precast.WS.SA = {body="Meg. Cuirie +2"}
+  sets.precast.WS.SATA = {body="Meg. Cuirie +2"}
   -- For Crit Dmg, not crit rate; overlaid on any WS set that doesn't have its own Climacic set defined
   sets.precast.WS.Climactic = {
     head="Maculele Tiara +1",
@@ -1088,20 +1090,14 @@ function job_post_precast(spell, action, spellMap, eventArgs)
       end
     end
     if state.Buff['Climactic Flourish'] then
-      local critset = sets.precast.WS[spell.name].Climactic
-      -- If set isn't found for specific ws, overlay the default crit set
-      if not critset then
-        critset = sets.precast.WS.Climactic
-      end
-      equip(critset)
+      -- If set isn't found for specific ws, overlay the default set
+      local set = sets.precast.WS[spell.name].Climactic or sets.precast.WS.Climactic or {}
+      equip(set)
     end
-    if state.Buff['Sneak Attack'] then
-      local critset = sets.precast.WS[spell.name].SA
-      -- If set isn't found for specific ws, overlay the default crit set
-      if not critset then
-        critset = sets.precast.WS.SA
-      end
-      equip(critset)
+    if state.Buff['Sneak Attack'] or state.Buff['Trick Attack'] then
+    -- If set isn't found for specific ws, overlay the default set
+      local set = sets.precast.WS[spell.name].SATA or sets.precast.WS.SATA or {}
+      equip(set)
     end
 
     if buffactive['Reive Mark'] then
@@ -1148,6 +1144,8 @@ function job_aftercast(spell, action, spellMap, eventArgs)
   -- Weaponskills wipe SATA.  Turn those state vars off before default gearing is attempted.
   if spell.type == 'WeaponSkill' and not spell.interrupted then
     state.Buff['Sneak Attack'] = false
+    state.Buff['Trick Attack'] = false
+    state.Buff['Feint'] = false
   end
 end
 
