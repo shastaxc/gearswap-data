@@ -65,8 +65,8 @@ function job_setup()
   windower.raw_register_event('action', on_action_for_impetus)
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
-  state.HybridMode:options('Normal', 'LightDef')
-  state.IdleMode:options('Normal', 'LightDef')
+  state.HybridMode:options('Normal', 'LightDef', 'HeavyDef')
+  state.IdleMode:options('Normal', 'HeavyDef')
 
   state.CP = M(false, "Capacity Points Mode")
   state.ToyWeapons = M{['description']='Toy Weapons','None',
@@ -660,17 +660,53 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.LightDef = {
-    ammo="Staunch Tathlum +1",    --  3/ 3, ___
     head="Malignance Chapeau",    --  6/ 6, 123
     body="Malignance Tabard",     --  9/ 9, 139
     hands="Malignance Gloves",    --  5/ 5, 112
     legs="Hesychast's Host +3",   -- __/__,  84
     feet="Anchorite's Gaiters +3",-- __/__,  84
-    back=gear.MNK_DEX_DA_Cape,    -- 10/__, ___; after changing to PDT aug
     waist="Moonbow Belt +1",      --  6/ 6, ___
-  } --39 PDT/29 MDT, 542 MEVA
+    -- TP Cape                    -- 10/__, ___
+  } --36 PDT/26 MDT, 542 MEVA
+  sets.LightDef.Footwork = {
+    feet="Anchorite's Gaiters +3",-- __/__,  84
+  } --36 PDT/26 MDT, 542 MEVA
+  sets.LightDef.Impetus = {
+    body="Bhikku Cyclas +1",      -- __/__,  59
+    ring1="Defending Ring",       -- 10/10, ___
+  } --37 PDT/27 MDT, 462 MEVA
+  sets.LightDef.ImpetusAndFootwork = {
+    body="Bhikku Cyclas +1",      -- __/__,  59
+    feet="Anchorite's Gaiters +3",-- __/__,  84
+    ring1="Defending Ring",       -- 10/10, ___
+  } --37 PDT/27 MDT, 462 MEVA
 
   sets.HeavyDef = {
+    ammo="Staunch Tathlum +1",  --  3/ 3, ___
+    head="Malignance Chapeau",  --  6/ 6, 123
+    body="Malignance Tabard",   --  9/ 9, 139
+    hands="Malignance Gloves",  --  5/ 5, 112
+    legs="Malignance Tights",   --  7/ 7, 150
+    feet="Malignance Boots",    --  4/ 4, 150
+    waist="Moonbow Belt +1",    --  6/ 6, ___
+    -- TP Cape                  -- 10/__, ___
+  } --50 PDT/40 MDT, 674 MEVA
+  sets.HeavyDef.Footwork = {
+    feet="Anchorite's Gaiters +3",-- __/__,  84
+    ring1="Defending Ring",       -- 10/10, ___
+  } --56 PDT/46 MDT, 608 MEVA
+  sets.HeavyDef.Impetus = {
+    body="Bhikku Cyclas +1",      -- __/__,  59
+    ring1="Defending Ring",       -- 10/10, ___
+  } --51 PDT/41 MDT, 594 MEVA
+  sets.HeavyDef.ImpetusAndFootwork = {
+    body="Bhikku Cyclas +1",      -- __/__,  59
+    feet="Anchorite's Gaiters +3",-- __/__,  84
+    ear2="Odnowa Earring +1",     --  3/ 5, ___
+    ring1="Defending Ring",       -- 10/10, ___
+  } -- 50 PDT/42 MDT, 528 MEVA
+
+  sets.defense.PDT = {
     ammo="Staunch Tathlum +1",  --  3/ 3, ___
     head="Malignance Chapeau",  --  6/ 6, 123
     body="Malignance Tabard",   --  9/ 9, 139
@@ -682,12 +718,11 @@ function init_gear_sets()
     ear2="Odnowa Earring +1",   --  3/ 5, ___
     ring1="Defending Ring",     -- 10/10, ___
     ring2="Niqmaddu Ring",      -- __/__, ___
-    back=gear.MNK_DEX_DA_Cape,  -- __/__, ___
+    back=gear.MNK_DEX_DA_Cape,  -- 10/__, ___
     waist="Moonbow Belt +1",    --  6/ 6, ___
-  } --52 PDT/55 MDT, 674 MEVA
+  }
+  sets.defense.MDT = sets.defense.PDT
 
-  sets.defense.PDT = sets.HeavyDef
-  sets.defense.MDT = sets.HeavyDef
 
   ------------------------------------------------------------------------------------------------
   ----------------------------------------- Idle Sets --------------------------------------------
@@ -710,7 +745,7 @@ function init_gear_sets()
     waist="Fucho-no-Obi",
   })
 
-  sets.idle = sets.HeavyDef
+  sets.idle = sets.defense.PDT
 
   sets.idle.Regain = set_combine(sets.idle, sets.latent_regain)
   sets.idle.Regen = set_combine(sets.idle, sets.latent_regen)
@@ -724,18 +759,18 @@ function init_gear_sets()
   sets.idle.Regain.Regen.Refresh = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh)
   sets.idle.Regain.Regen.RefreshSub50 = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh_sub50)
 
-  sets.idle.LightDef = set_combine(sets.idle, sets.LightDef)
-  sets.idle.LightDef.Regain = set_combine(sets.idle.Regain, sets.LightDef)
-  sets.idle.LightDef.Regen = set_combine(sets.idle.Regen, sets.LightDef)
-  sets.idle.LightDef.Refresh = set_combine(sets.idle.Refresh, sets.LightDef)
-  sets.idle.LightDef.RefreshSub50 = set_combine(sets.idle.RefreshSub50, sets.LightDef)
-  sets.idle.LightDef.Regain.Regen = set_combine(sets.idle.Regain.Regen, sets.LightDef)
-  sets.idle.LightDef.Regain.Refresh = set_combine(sets.idle.Regain.Refresh, sets.LightDef)
-  sets.idle.LightDef.Regain.RefreshSub50 = set_combine(sets.idle.Regain.RefreshSub50, sets.LightDef)
-  sets.idle.LightDef.Regen.Refresh = set_combine(sets.idle.Regen.Refresh, sets.LightDef)
-  sets.idle.LightDef.Regen.RefreshSub50 = set_combine(sets.idle.Regen.RefreshSub50, sets.LightDef)
-  sets.idle.LightDef.Regain.Regen.Refresh = set_combine(sets.idle.Regain.Regen.Refresh, sets.LightDef)
-  sets.idle.LightDef.Regain.Regen.RefreshSub50 = set_combine(sets.idle.Regain.Regen.RefreshSub50, sets.LightDef)
+  sets.idle.HeavyDef = set_combine(sets.idle, sets.HeavyDef)
+  sets.idle.HeavyDef.Regain = set_combine(sets.idle.Regain, sets.HeavyDef)
+  sets.idle.HeavyDef.Regen = set_combine(sets.idle.Regen, sets.HeavyDef)
+  sets.idle.HeavyDef.Refresh = set_combine(sets.idle.Refresh, sets.HeavyDef)
+  sets.idle.HeavyDef.RefreshSub50 = set_combine(sets.idle.RefreshSub50, sets.HeavyDef)
+  sets.idle.HeavyDef.Regain.Regen = set_combine(sets.idle.Regain.Regen, sets.HeavyDef)
+  sets.idle.HeavyDef.Regain.Refresh = set_combine(sets.idle.Regain.Refresh, sets.HeavyDef)
+  sets.idle.HeavyDef.Regain.RefreshSub50 = set_combine(sets.idle.Regain.RefreshSub50, sets.HeavyDef)
+  sets.idle.HeavyDef.Regen.Refresh = set_combine(sets.idle.Regen.Refresh, sets.HeavyDef)
+  sets.idle.HeavyDef.Regen.RefreshSub50 = set_combine(sets.idle.Regen.RefreshSub50, sets.HeavyDef)
+  sets.idle.HeavyDef.Regain.Regen.Refresh = set_combine(sets.idle.Regain.Regen.Refresh, sets.HeavyDef)
+  sets.idle.HeavyDef.Regain.Regen.RefreshSub50 = set_combine(sets.idle.Regain.Regen.RefreshSub50, sets.HeavyDef)
 
   sets.idle.Weak = sets.HeavyDef
 
@@ -781,6 +816,11 @@ function init_gear_sets()
   sets.engaged.MidAcc.LightDef = set_combine(sets.engaged.MidAcc, sets.LightDef)
   sets.engaged.HighAcc.LightDef = set_combine(sets.engaged.HighAcc, sets.LightDef)
 
+  sets.engaged.HeavyDef = set_combine(sets.engaged, sets.HeavyDef)
+  sets.engaged.LowAcc.HeavyDef = set_combine(sets.engaged.LowAcc, sets.HeavyDef)
+  sets.engaged.MidAcc.HeavyDef = set_combine(sets.engaged.MidAcc, sets.HeavyDef)
+  sets.engaged.HighAcc.HeavyDef = set_combine(sets.engaged.HighAcc, sets.HeavyDef)
+
   -----------------------------------------------------------------------------------
   ---------------------------------------- Special Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
@@ -790,27 +830,15 @@ function init_gear_sets()
   sets.Special.Impetus = {
     body="Bhikku Cyclas +1",
   }
-  sets.Special.Impetus.Safe = {
-    body="Bhikku Cyclas +1",
-    ring1="Defending Ring",
-  }
   sets.Special.Counterstance = {
     feet="Hesychast's Gaiters +3",
   }
   sets.Special.Footwork = {
     feet="Anchorite's Gaiters +3",
   }
-  sets.Special.Footwork.Safe = {
-    feet="Anchorite's Gaiters +3",
-  }
   sets.Special.ImpetusAndFootwork = {
     body="Bhikku Cyclas +1",
     feet="Anchorite's Gaiters +3",
-  }
-  sets.Special.ImpetusAndFootwork.Safe = {
-    body="Bhikku Cyclas +1",
-    feet="Anchorite's Gaiters +3",
-    ring1="Defending Ring",
   }
   sets.Special.ElementalObi = { waist="Hachirin-no-Obi", }
   sets.Special.SleepyHead = { head="Frenzy Sallet", }
@@ -1194,40 +1222,29 @@ end
 
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
-  if buffactive.Boost or info.boost_temp_lock then
+  if state.Buff['Boost'] or info.boost_temp_lock then
     meleeSet = set_combine(meleeSet, sets.BoostRegain)
   end
   if state.CP.current == 'on' then
     meleeSet = set_combine(meleeSet, sets.CP)
   end
   if state.DefenseMode.value == 'None' then
-    if state.HybridMode.value == "Normal" then
-      if buffactive.Impetus and buffactive.Footwork then
-        -- Override sets to ensure impetus and footwork gear are equipped
-        meleeSet = set_combine(meleeSet, sets.Special.ImpetusAndFootwork)
-      elseif buffactive.Impetus then
-        -- Override sets to ensure impetus body is equipped if Impetus is up
-        meleeSet = set_combine(meleeSet, sets.Special.Impetus)
-      elseif buffactive.Footwork then
-        -- Override sets to ensure footwork feet are equipped if Footwork is up
-        meleeSet = set_combine(meleeSet, sets.Special.Footwork)
-      end
-    elseif state.HybridMode.value == 'LightDef' then
-      if buffactive.Impetus and buffactive.Footwork then
-        -- Override set to ensure Impetus and Footwork gear equipped but also increase defense
-        meleeSet = set_combine(meleeSet, sets.Special.ImpetusAndFootwork.Safe)
-      elseif buffactive.Impetus then
-        -- Override set to ensure Impetus gear equipped but also increase defense
-        meleeSet = set_combine(meleeSet, sets.Special.Impetus.Safe)
-      elseif buffactive.Footwork then
-        -- Override set to ensure Footwork gear equipped but also increase defense
-        meleeSet = set_combine(meleeSet, sets.Special.Footwork.Safe)
-      end
+    -- Find base set (hybrid set or normal)
+    local baseSet = (state.HybridMode.value == 'Normal' and sets.Special) or sets[state.HybridMode.value]
+    if state.Buff['Impetus'] and state.Buff['Footwork'] then
+      -- Override set to ensure Impetus and Footwork gear equipped but also increase defense
+      meleeSet = set_combine(meleeSet, baseSet.ImpetusAndFootwork)
+    elseif state.Buff['Impetus'] then
+      -- Override set to ensure Impetus gear equipped but also increase defense
+      meleeSet = set_combine(meleeSet, baseSet.Impetus)
+    elseif state.Buff['Footwork'] then
+      -- Override set to ensure Footwork gear equipped but also increase defense
+      meleeSet = set_combine(meleeSet, baseSet.Footwork)
     end
   end
 
   -- Override sets to ensure counterstance feet are equipped if Counterstance is up
-  if buffactive.Counterstance then
+  if state.Buff['Counterstance'] then
     meleeSet = set_combine(meleeSet, sets.Special.Counterstance)
   end
 
