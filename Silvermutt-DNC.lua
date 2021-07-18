@@ -108,6 +108,11 @@ function job_setup()
   DW = false -- Do not modify
 
   elemental_ws = S{'Aeolian Edge'}
+  tp_bonus_weapons = {
+    ['Fusetto +2'] = 1000,
+    ['Fusetto +3'] = 1000,
+    ['Centovente'] = 1000,
+  }
 
   state.Buff['Climactic Flourish'] = buffactive['climactic flourish'] or false
   state.Buff['Sneak Attack'] = buffactive['sneak attack'] or false
@@ -1216,7 +1221,14 @@ function get_custom_wsmode(spell, action, spellMap)
     wsmode = state.OffenseMode.value
   end
 
-  if player.tp > 2900 then
+  local buffer = 100
+  local main = player.equipment.main
+  local sub = player.equipment.sub
+  local weapon_bonus = (tp_bonus_weapons[main] or 0) + (tp_bonus_weapons[sub] or 0)
+  local buff_bonus = T{
+    buffactive['Crystal Blessing'] and 250 or 0,
+  }:sum()
+  if player.tp > 3000-weapon_bonus-buff_bonus-buffer then
     wsmode = wsmode..'MaxTP'
   end
 

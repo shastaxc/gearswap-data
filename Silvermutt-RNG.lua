@@ -83,6 +83,15 @@ function job_setup()
   elemental_ws = S{'Aeolian Edge', 'Trueflight', 'Wildfire'}
   no_swap_waists = S{"Era. Bul. Pouch", "Dev. Bul. Pouch", "Chr. Bul. Pouch", "Quelling B. Quiver",
       "Yoichi's Quiver", "Artemis's Quiver", "Chrono Quiver"}
+  tp_bonus_weapons = {
+    ['Fomalhaut'] = 500,
+    ['Anarchy +2'] = 1000,
+    ['Anarchy +3'] = 1000,
+    ['Ataktos'] = 1000,
+    ['Sparrowhawk +2'] = 1000,
+    ['Sparrowhawk +3'] = 1000,
+    ['Accipiter'] = 1000,
+  }
 
   marksman_weapon_subtypes = {
     ['Gastraphetes'] = "xbow",
@@ -1498,17 +1507,13 @@ function get_custom_wsmode(spell, action, spellMap)
     end
   end
 
-  local rweapon = state.RangedWeaponSet.current
-  if 1900 <= player.tp and player.tp < 2400 then
-    if rweapon and rweapon == 'Fomalhaut' then
-      wsmode = wsmode..'MaxTP'
-    end
-  elseif 2400 <= player.tp and player.tp < 2900 then
-    if rweapon and (rweapon == 'Sparrowhawk +2' or rweapon =='Sparrowhawk +3' or rweapon == 'Accipiter'
-        or rweapon == 'Anarchy +2' or rweapon =='Anarchy +3' or rweapon == 'Ataktos') then
-      wsmode = wsmode..'MaxTP'
-    end
-  elseif 2900 <= player.tp then
+  local buffer = 100
+  local rweapon = player.equipment.range
+  local weapon_bonus = tp_bonus_weapons[rweapon] or 0
+  local buff_bonus = T{
+    buffactive['Crystal Blessing'] and 250 or 0,
+  }:sum()
+  if player.tp > 3000-weapon_bonus-buff_bonus-buffer then
     wsmode = wsmode..'MaxTP'
   end
 

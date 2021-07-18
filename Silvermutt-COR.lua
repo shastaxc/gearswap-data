@@ -130,6 +130,12 @@ function job_setup()
   no_shoot_ammo = S{"Animikii Bullet", "Hauksbok Bullet"}
   no_swap_waists = S{"Era. Bul. Pouch", "Dev. Bul. Pouch", "Chr. Bul. Pouch", "Quelling B. Quiver",
       "Yoichi's Quiver", "Artemis's Quiver", "Chrono Quiver", "Liv. Bul. Pouch"}
+  tp_bonus_weapons = {
+    ['Fomalhaut'] = 500,
+    ['Anarchy +2'] = 1000,
+    ['Anarchy +3'] = 1000,
+    ['Ataktos'] = 1000,
+  }
 
   gear.RAbullet = "Chrono Bullet"
   gear.RAccbullet = "Devastating Bullet"
@@ -1588,16 +1594,14 @@ function get_custom_wsmode(spell, action, spellMap)
     end
   end
 
-  local rweapon = sets.WeaponSet[state.WeaponSet.current].range
-  if 1900 <= player.tp and player.tp < 2400 then
-    if rweapon and rweapon == 'Fomalhaut' then
-      wsmode = wsmode..'MaxTP'
-    end
-  elseif 2400 <= player.tp and player.tp < 2900 then
-    if rweapon and (rweapon == 'Anarchy +2' or rweapon =='Anarchy +3' or rweapon == 'Ataktos') then
-      wsmode = wsmode..'MaxTP'
-    end
-  elseif 2900 <= player.tp then
+  local buffer = 100
+  local main = player.equipment.main
+  local sub = player.equipment.sub
+  local weapon_bonus = (tp_bonus_weapons[main] or 0) + (tp_bonus_weapons[sub] or 0)
+  local buff_bonus = T{
+    buffactive['Crystal Blessing'] and 250 or 0,
+  }:sum()
+  if player.tp > 3000-weapon_bonus-buff_bonus-buffer then
     wsmode = wsmode..'MaxTP'
   end
 

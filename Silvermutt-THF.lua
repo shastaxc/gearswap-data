@@ -85,6 +85,11 @@ function job_setup()
   DW = false -- Do not modify
 
   elemental_ws = S{'Aeolian Edge'}
+  tp_bonus_weapons = {
+    ['Fusetto +2'] = 1000,
+    ['Fusetto +3'] = 1000,
+    ['Centovente'] = 1000,
+  }
 
   state.Buff['Sneak Attack'] = buffactive['sneak attack'] or false
   state.Buff['Trick Attack'] = buffactive['trick attack'] or false
@@ -387,39 +392,43 @@ function init_gear_sets()
 
   -- 80% DEX
   sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {
-    ammo="Aurgelmir Orb",
-    head=gear.Nyame_B_head,
-    body=gear.Herc_WSD_body,
-    hands="Meghanada Gloves +2",
-    legs=gear.Lustratio_B_legs,
-    feet=gear.Nyame_B_feet,
-    neck="Caro Necklace",
-    ear1="Odr Earring",
-    ear2="Moonshade Earring",
-    ring1="Ilabrat Ring",
-    ring2="Regal Ring",
-    back=gear.THF_TP_Cape,
-    waist="Grunfeld Rope",
-    -- ammo="Aurgelmir Orb +1",
-    -- waist="Kentarch Belt +1", -- Aug it first
-  })
+    ammo="Aurgelmir Orb",           --  5, __,  7, __
+    head=gear.Nyame_B_head,         -- 25,  8, 55, __
+    body=gear.Herc_WSD_body,        -- 34, 10, 20, __
+    hands=gear.Nyame_B_hands,       -- 42,  8, 55, __
+    legs=gear.Nyame_B_legs,         -- __,  9, 55, __
+    feet=gear.Nyame_B_feet,         -- 26,  8, 55, __
+    neck="Caro Necklace",           --  6, __, 10, __
+    ear1="Ishvara Earring",         -- __,  2, __, __
+    ear2="Moonshade Earring",       -- __, __, __, __; TP Bonus+250
+    ring1="Ilabrat Ring",           -- 10, __, 25, __
+    ring2="Regal Ring",             -- 10, __, 20, __
+    back=gear.THF_TP_Cape,          -- 30, __, 20, __
+    waist="Grunfeld Rope",          --  5, __, 20, __
+    -- ammo="Cath Palug Stone",     -- 10, __, __, __
+    -- neck="Assassin's Gorget +2", -- 15, __, __, __
+    -- ring2="Epaminondas's Ring",  -- __,  5, __, __
+    -- back=gear.THF_WS1_Cape,      -- 30, 10, 20, __
+    -- waist="Kentarch Belt +1",    -- 10, __, __, __; Aug it first
+    -- 202 DEX, 60 WSD, 285 Att, 10 PDL
+  })-- 193 DEX, 45 WSD, 342 Att, 0 PDL
   sets.precast.WS["Rudra's Storm"].MaxTP = set_combine(sets.precast.WS["Rudra's Storm"], {
-    ear2="Ishvara Earring",
+    ear2="Odr Earring",
   })
   sets.precast.WS["Rudra's Storm"].LowAcc = set_combine(sets.precast.WS["Rudra's Storm"], {
   })
   sets.precast.WS["Rudra's Storm"].LowAccMaxTP = set_combine(sets.precast.WS["Rudra's Storm"].LowAcc, {
-    ear2="Ishvara Earring",
+    ear2="Odr Earring",
   })
   sets.precast.WS["Rudra's Storm"].MidAcc = set_combine(sets.precast.WS["Rudra's Storm"].LowAcc, {
   })
   sets.precast.WS["Rudra's Storm"].MidAccMaxTP = set_combine(sets.precast.WS["Rudra's Storm"].MidAcc, {
-    ear2="Ishvara Earring",
+    ear2="Odr Earring",
   })
   sets.precast.WS["Rudra's Storm"].HighAcc = set_combine(sets.precast.WS["Rudra's Storm"].MidAcc, {
   })
   sets.precast.WS["Rudra's Storm"].HighAccMaxTP = set_combine(sets.precast.WS["Rudra's Storm"].HighAcc, {
-    ear2="Telos Earring",
+    ear2="Odr Earring",
   })
 
   sets.precast.WS['Mandalic Stab'] = sets.precast.WS["Rudra's Storm"]
@@ -1090,7 +1099,14 @@ function get_custom_wsmode(spell, action, spellMap)
     wsmode = state.OffenseMode.value
   end
 
-  if player.tp > 2900 then
+  local buffer = 100
+  local main = player.equipment.main
+  local sub = player.equipment.sub
+  local weapon_bonus = (tp_bonus_weapons[main] or 0) + (tp_bonus_weapons[sub] or 0)
+  local buff_bonus = T{
+    buffactive['Crystal Blessing'] and 250 or 0,
+  }:sum()
+  if player.tp > 3000-weapon_bonus-buff_bonus-buffer then
     wsmode = wsmode..'MaxTP'
   end
 
