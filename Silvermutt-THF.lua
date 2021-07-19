@@ -203,6 +203,7 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.TreasureHunter = {
+    ammo="Perfect Lucky Egg", --1
     body=gear.Herc_TH_body, --2
     hands="Plunderer's Armlets +1", --3
   }

@@ -241,8 +241,8 @@ end
 -- Define sets and vars used by this job file.
 function init_gear_sets()
   sets.TreasureHunter = {
+    ammo="Perfect Lucky Egg", --1
     body=gear.Herc_TH_body, --2
-    hands="Volte Bracers", --1
     waist="Chaac Belt", --1
   }
 

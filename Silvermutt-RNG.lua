@@ -1250,8 +1250,8 @@ function init_gear_sets()
     neck="Ygnas's Resolve +1"
   }
   sets.TreasureHunter = {
+    ammo="Perfect Lucky Egg", --1
     body=gear.Herc_TH_body, --2
-    hands="Volte Bracers", --1
     waist="Chaac Belt", --1
   }
 
