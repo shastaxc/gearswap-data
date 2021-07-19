@@ -566,16 +566,17 @@ function init_gear_sets()
     hands=gear.Nyame_B_hands,     -- 17, 40, 55, 40,  8, __, ___
     legs=gear.Nyame_B_legs,       -- 43, 32, 55, 40,  9, __, ___
     feet=gear.Nyame_B_feet,       -- 23, 26, 55, 40,  8, __, ___
-    neck="Caro Necklace",         --  6, __, 10, __, __, __, ___
+    neck="Commodore Charm +1",    -- 12, __, __, __, __, __, ___
     ear1="Ishvara Earring",       -- __, __, __, __,  2, __, ___
     ear2="Moonshade Earring",     -- __, __, __,  4, __, __, 250
     ring1="Regal Ring",           -- 10, __, 20, __, __, __, ___
     ring2="Rufescent Ring",       --  6,  6, __,  7, __, __, ___
     back=gear.COR_WS2_Cape,       -- 30, __, 20, 20, 10, __, ___
     waist="Sailfi Belt +1",       -- 15, __, 15, __, __, __, ___
+    -- neck="Commodore Charm +2", -- 15, __, __, __, __, __, ___
     -- ring2="Epaminondas's Ring",-- __, __, __, __,  5, __, ___
-    -- 203 STR, 149 MND, 285 Attack, 184 Accuracy, 50 WSD, 7 PDL, 420 TP Bonus
-  } -- 209 STR, 155 MND, 285 Attack, 191 Accuracy, 45 WSD, 7 PDL, 420 TP Bonus
+    -- 212 STR, 149 MND, 275 Attack, 184 Accuracy, 50 WSD, 7 PDL, 420 TP Bonus
+  } -- 215 STR, 155 MND, 275 Attack, 191 Accuracy, 45 WSD, 7 PDL, 420 TP Bonus
   sets.precast.WS['Savage Blade'].MaxTP = set_combine(sets.precast.WS['Savage Blade'], {
     ear2="Telos Earring",
   })

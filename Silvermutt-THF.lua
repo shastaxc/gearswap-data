@@ -297,7 +297,7 @@ function init_gear_sets()
   sets.precast.WS = {
     ammo="Aurgelmir Orb",
     head=gear.Nyame_B_head,
-    body=gear.Herc_WSD_body,
+    body=gear.Nyame_B_body,
     hands="Meghanada Gloves +2",
     legs=gear.Lustratio_B_legs,
     feet=gear.Nyame_B_feet,
@@ -399,7 +399,7 @@ function init_gear_sets()
   sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {
     ammo="Aurgelmir Orb",             --  5, __,  7, __
     head=gear.Nyame_B_head,           -- 25,  8, 55, __
-    body=gear.Herc_WSD_body,          -- 34, 10, 20, __
+    body=gear.Nyame_B_body,           -- 24, 10, 55, __
     hands=gear.Nyame_B_hands,         -- 42,  8, 55, __
     legs=gear.Nyame_B_legs,           -- __,  9, 55, __
     feet=gear.Nyame_B_feet,           -- 26,  8, 55, __
@@ -417,8 +417,8 @@ function init_gear_sets()
     -- ring2="Epaminondas's Ring",    -- __,  5, __, __
     -- back=gear.THF_WS1_Cape,        -- 30, 10, 20, __
     -- waist="Kentarch Belt +1",      -- 10, __, __, __; Aug it first
-    -- 202 DEX, 60 WSD, 285 Att, 9 PDL
-  })-- 193 DEX, 45 WSD, 342 Att, 0 PDL
+    -- 223 DEX, 47 WSD, 338 Att, 9 PDL
+  })-- 183 DEX, 45 WSD, 377 Att, 0 PDL
   sets.precast.WS["Rudra's Storm"].MaxTP = set_combine(sets.precast.WS["Rudra's Storm"], {
     ear2="Odr Earring",
   })
@@ -478,7 +478,7 @@ function init_gear_sets()
   sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
     ammo="Seething Bomblet +1",   -- 15, __, 13, 13, __, __, ___
     head=gear.Nyame_B_head,       -- 26, 26, 55, 40,  8, __, ___
-    body=gear.Herc_WSD_body,      -- 28, 20, 20, 35, 10, __, ___
+    body=gear.Nyame_B_body,       -- 35, 37, 55, 40, 10, __, ___
     hands=gear.Nyame_B_hands,     -- 17, 40, 55, 40,  8, __, ___
     legs=gear.Nyame_B_legs,       -- 43, 32, 55, 40,  9, __, ___
     feet=gear.Nyame_B_feet,       -- 23, 26, 55, 40,  8, __, ___
@@ -489,10 +489,9 @@ function init_gear_sets()
     ring2="Gere Ring",            -- 10, __, 16, __, __, __, ___
     back=gear.THF_WS2_Cape,       -- 30, __, 20, 20, 10, __, ___
     waist="Sailfi Belt +1",       -- 15, __, 15, __, __, __, ___
-    -- body=gear.Nyame_B_body,    -- 35, 37, 55, 40, 10, __, ___
     -- ring1="Epaminondas's Ring",-- __, __, __, __,  5, __, ___
     -- 214 STR, 161 MND, 359 Attack, 237 Accuracy, 60 WSD, 0 PDL, 250 TP Bonus
-  })-- 217 STR, 144 MND, 344 Attack, 232 Accuracy, 55 WSD, 0 PDL, 250 TP Bonus
+  })-- 224 STR, 161 MND, 379 Attack, 237 Accuracy, 55 WSD, 0 PDL, 250 TP Bonus
   sets.precast.WS['Savage Blade'].MaxTP = set_combine(sets.precast.WS['Savage Blade'], {
     ear2="Sherida Earring",       --  5, __, __, __, __, __, ___
   })

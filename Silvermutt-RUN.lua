@@ -471,7 +471,7 @@ function init_gear_sets()
   sets.precast.WS['Dimidiation'] = set_combine(sets.precast.WS, {
     ammo="Knobkierrie",
     head=gear.Nyame_B_head,
-    body=gear.Herc_WSD_body,
+    body=gear.Nyame_B_body,
     hands=gear.Nyame_B_hands,
     legs=gear.Lustratio_B_legs,
     feet=gear.Nyame_B_feet,

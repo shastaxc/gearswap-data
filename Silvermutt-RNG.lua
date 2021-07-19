@@ -393,7 +393,7 @@ function init_gear_sets()
 
   sets.precast.WS = {
     head="Orion Beret +3",
-    body=gear.Herc_WSD_body,
+    body=gear.Nyame_B_body,
     hands="Meg. Gloves +2",
     legs="Arcadian Braccae +3",
     feet=gear.Nyame_B_feet,

@@ -536,7 +536,7 @@ function init_gear_sets()
   sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {
     ammo="Aurgelmir Orb",           --  5, __, __,  7, __
     head=gear.Nyame_B_head,         -- 25, 24,  8, 55, __
-    body=gear.Herc_WSD_body,        -- 34, 21, 10, 20, __
+    body=gear.Nyame_B_body,         -- 24, 35, 10, 55, __
     hands="Maxixi Bangles +3",      -- 45, 27, 10, 35, __
     legs="Horos Tights +3",         -- __, 24, 10, 64, __
     feet=gear.Nyame_B_feet,         -- 26, 38,  8, 55, __
@@ -551,7 +551,7 @@ function init_gear_sets()
     -- ring2="Epaminondas's Ring",  -- __, __,  5, __, __
     -- waist="Kentarch Belt +1",    -- 10, __, __, __, __;Aug it first
     -- 215 DEX, 159 CHR, 68 WSD, 274 Att, 10 PDL
-  })-- 215 DEX, 159 CHR, 63 WSD, 321 Att, 10 PDL
+  })-- 205 DEX, 173 CHR, 58 WSD, 356 Att, 10 PDL
   sets.precast.WS["Rudra's Storm"].MaxTP = set_combine(sets.precast.WS["Rudra's Storm"], {
     ear2="Odr Earring",
   })
