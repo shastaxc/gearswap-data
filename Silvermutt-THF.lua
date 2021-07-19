@@ -104,7 +104,7 @@ function job_setup()
   state.CP = M(false, 'Capacity Points Mode')
   state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger',
       'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
-  state.WeaponSet = M{['description']='Weapon Set', 'Normal', 'LowAtt', 'WhiteGlass', 'Naegling', 'Cleaving'}
+  state.WeaponSet = M{['description']='Weapon Set', 'WhiteGlass', 'Normal', 'LowAtt', 'Naegling', 'Cleaving'}
 
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c usekey')
@@ -952,17 +952,19 @@ function init_gear_sets()
   }
 
   sets.WeaponSet = {}
+  sets.WeaponSet['WhiteGlass'] = {
+    main="Twashtar",
+    sub="Centovente",
+  }
   sets.WeaponSet['Normal'] = {
     main="Aeneas",
     sub="Twashtar",
+    -- main="Twashtar",
+    -- sub="Gleti's Knife",
   }
   sets.WeaponSet['LowAtt'] = {
     -- main="Vajra",
     -- sub="Centovente",
-  }
-  sets.WeaponSet['WhiteGlass'] = {
-    main="Twashtar",
-    sub="Centovente",
   }
   sets.WeaponSet['Naegling'] = {
     main="Naegling",
