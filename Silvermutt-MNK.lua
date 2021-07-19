@@ -771,7 +771,7 @@ function init_gear_sets()
     head="Malignance Chapeau",    --  6/ 6, 123
     body="Malignance Tabard",     --  9/ 9, 139
     hands="Malignance Gloves",    --  5/ 5, 112
-    legs="Hesychast's Host +3",   -- __/__,  84
+    legs="Hesychast's Hose +3",   -- __/__,  84
     feet="Anchorite's Gaiters +3",-- __/__,  84
     waist="Moonbow Belt +1",      --  6/ 6, ___
     -- TP Cape                    -- 10/__, ___

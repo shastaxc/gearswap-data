@@ -620,7 +620,7 @@ function init_gear_sets()
     -- hands="Wakido Kote +3",        -- __/__,  46
     -- feet=gear.Ryuo_C_feet,         -- __/__,  80
     -- ear1="Dedition Earring",       -- __/__, ___
-    -- ring1="Crepuscular Ring",      -- __/__, ___
+    -- ring1="Chirich Ring +1",       -- __/__, ___
   }
   sets.engaged.LowAcc = set_combine(sets.engaged, {
     body="Ken. Samue +1",
