@@ -1041,7 +1041,7 @@ function init_gear_sets()
   sets.WeaponSet['H2H'] = {main="Kaja Knuckles", sub=empty}
   sets.WeaponSet['Fast/DI'] = {main="Twashtar", sub="Voluspa Knife"}
   sets.WeaponSet['Healing'] = {main="Enchufla", sub="Blurred Knife +1"}
-  sets.WeaponSet['Cleaving'] = {main="Kaja Knife", sub="Blurred Knife +1"}
+  sets.WeaponSet['Cleaving'] = {main="Kaja Knife", sub="Levante Dagger"}
 end
 
 
