@@ -105,6 +105,7 @@ function job_setup()
   state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger',
       'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
   state.WeaponSet = M{['description']='Weapon Set', 'WhiteGlass', 'Normal', 'LowAtt', 'Naegling', 'Cleaving'}
+  state.Runes = M{['description']='Runes', 'Ignis', 'Gelus', 'Flabra', 'Tellus', 'Sulpor', 'Unda', 'Lux', 'Tenebrae'}
 
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c usekey')
@@ -147,6 +148,10 @@ function user_setup()
   elseif player.sub_job == 'NIN' then
     send_command('bind !numpad0 input /ma "Utsusemi: Ichi" <me>')
     send_command('bind !numpad. input /ma "Utsusemi: Ni" <me>')
+  elseif player.sub_job == 'RUN' then
+    send_command('bind %numpad0 input //gs c rune')
+    send_command('bind ^- gs c cycleback Runes')
+    send_command('bind ^= gs c cycle Runes')
   end
 
   update_combat_form()
@@ -180,7 +185,7 @@ function job_file_unload()
   send_command('unbind ^numpad0')
   send_command('unbind ^numpad.')
   send_command('unbind %numpad0')
-  
+
   send_command('unbind ^-')
   send_command('unbind ^=')
   send_command('unbind !numpad0')
@@ -313,8 +318,9 @@ function init_gear_sets()
   })
   -- When Sneak Attack active, overlaid on top of normal set
   sets.precast.WS.SATA = {
+    head="Pillager's Bonnet +2",
     -- ammo="Yetshila +1",
-    -- head="Pillager's bonnet +3",
+    -- head="Pillager's Bonnet +3",
   }
 
   -- AGI
@@ -1409,6 +1415,8 @@ function job_self_command(cmdParams, eventArgs)
     elseif cmdParams[2] == 'current' then
       cycle_weapons('current')
     end
+  elseif cmdParams[1] == 'rune' then
+    send_command('@input /ja '..state.Runes.value..' <me>')
   elseif cmdParams[1] == 'test' then
     test()
   end
@@ -1493,6 +1501,8 @@ function select_default_macro_book()
     set_macro_page(2, 8)
   elseif player.sub_job == 'NIN' then
     set_macro_page(3, 8)
+  elseif player.sub_job == 'RUN' then
+    set_macro_page(4, 8)
   else
     set_macro_page(1, 8)
   end
