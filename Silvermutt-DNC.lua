@@ -403,9 +403,9 @@ function init_gear_sets()
   sets.precast.WS = {
     ammo="Aurgelmir Orb",
     head=gear.Nyame_B_head,
-    body="Meghanada Cuirie +2",
-    hands="Meghanada Gloves +2",
-    legs="Horos Tights +3",
+    body=gear.Nyame_B_body,
+    hands=gear.Nyame_B_hands,
+    legs=gear.Nyame_B_legs,
     feet=gear.Nyame_B_feet,
     neck="Fotia Gorget",
     ear1="Brutal Earring",
@@ -633,10 +633,10 @@ function init_gear_sets()
 
   sets.HeavyDef = {
     ammo="Yamarang",            -- __/__,  15
-    head=gear.Nyame_B_head,          --  7/ 7, 123
+    head="Malignance Chapeau",  --  6/ 6, 123
     body="Malignance Tabard",   --  9/ 9, 139
     hands="Malignance Gloves",  --  5/ 5, 112
-    legs="Malignance Tights",   --  7/ 7, 150
+    legs=gear.Nyame_B_legs,     --  8/ 8, 150
     feet="Malignance Boots",    --  4/ 4, 150
     neck="Etoile Gorget +2",    -- __/__, ___
     ear1="Eabani Earring",      -- __/__,   8
@@ -645,7 +645,6 @@ function init_gear_sets()
     ring2="Archon Ring",        -- __/__, ___; Occ. blocks magic dmg
     back=gear.DNC_TP_DW_Cape,   -- 10/__, ___
     waist="Engraved Belt",      -- __/__, ___
-    -- head="Malignance Chapeau", --  6/ 6, 123
   } --50 PDT/42 MDT, 697 MEVA
 
   sets.defense.PDT = sets.HeavyDef

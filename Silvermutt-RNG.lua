@@ -549,8 +549,8 @@ function init_gear_sets()
   })
 
   sets.precast.WS["Trueflight"] = {
-    head=empty,
-    body="Cohort Cloak +1", --100
+    head=gear.Nyame_B_head,
+    body=gear.Nyame_B_body,
     hands=gear.Nyame_B_hands,
     legs=gear.Nyame_B_legs,
     feet=gear.Nyame_B_feet,
@@ -561,8 +561,6 @@ function init_gear_sets()
     ring2="Dingir Ring", --10
     back=gear.RNG_WS1_Cape,
     waist="Eschan Stone", --7
-    -- head=gear.Nyame_B_head, -- Rank 15
-    -- body=gear.Nyame_B_body, -- Rank 15
     -- waist="Orpheus's Sash",
   } -- AGI / MAB
   sets.precast.WS["Trueflight"].MaxTP = set_combine(sets.precast.WS["Trueflight"], {
