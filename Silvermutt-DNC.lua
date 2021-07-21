@@ -94,9 +94,9 @@ function job_setup()
   silibs.enable_waltz_refiner({
     base_chr= 104,
     base_vit= 97,
-    bonus_chr= 128,
-    bonus_vit= 96,
-    waltz_potency = 50,
+    bonus_chr= 157,
+    bonus_vit= 62,
+    waltz_potency = 49,
     waltz_self_potency = 17,
     est_non_party_target_hp = 2000,
   })
@@ -270,30 +270,30 @@ function init_gear_sets()
 
   -- Waltz Potency/CHR
   sets.precast.Waltz = {
-    head=gear.Anwig_Salade,         -- __(_),  4, __ <-2>
-    body="Maxixi Casaque +3",       -- 19(8), 33, 34 <-2>
-    legs="Dashing Subligar",        -- 10(_), 11, 16 <__>; Gives Blink
-    feet="Maxixi Shoes +1",         -- 10(_), 30, 12 <__>
-    neck="Etoile Gorget +2",        -- 10(_), 25, __ <__>
-    back=gear.DNC_Adoulin_Cape,     --  5(_), __, __ <__>
-    ring1="Metamorph Ring +1",      -- __(_), 16, __ <__>
-    waist="Aristo Belt",            -- __(_),  8, __ <__>
-    -- ammo="Voluspa Tathlum",      -- __(_),  5, __ <__>
-    -- hands="Raetic Bangles +1",   -- __(_), 38, 38 <__>
-    -- feet="Maxixi Toeshoes +3",   -- 14(_), 40, 22 <__>
-    -- ear1="Enchntr. Earring +1",  -- __(_),  5, __ <__>
-    -- ear2="Handler's Earring +1", -- __(_),  5,  5 <__>
-    -- ring2="Carb. Ring +1",       -- __(_),  9, __ <__>
-    -- back=gear.DNC_WTZ_Cape,      -- __(_), 30, __ <__>; Enmity-10
-    -- 53 Potency (8 Self Potency), 229 CHR, 115 VIT <-4 Delay>
-  } -- 54 Potency (8 Self Potency), 127 CHR, 105 VIT <-4 Delay>
+    ammo="Staunch Tathlum +1",      --  3/ 3 | __(_), __, __ <__>
+    head=gear.Anwig_Salade,         -- __/__ | __(_),  4, __ <-2>
+    body="Maxixi Casaque +3",       -- __/__ | 19(8), 33, 34 <-2>
+    hands=gear.Nyame_B_hands,       --  7/ 7 | __(_), 24, 39 <__>
+    legs="Dashing Subligar",        -- __/__ | 10(_), 11, 16 <__>; Gives Blink
+    feet="Maxixi Shoes +1",         -- __/__ | 10(_), 30, 12 <__>
+    neck="Etoile Gorget +2",        -- __/__ | 10(_), 25, __ <__>
+    ear1="Genmei Earring",          --  2/__ | __(_), __,  2 <__>
+    ear2="Odnowa Earring +1",       --  3/ 5 | __(_), __,  3 <__>
+    ring1="Metamorph Ring +1",      -- __/__ | __(_), 16, __ <__>
+    ring2="Defending Ring",         -- 10/10 | __(_), __, __ <__>
+    back=gear.DNC_WTZ_Cape,         -- 10/__ | __(_), 30, __ <__>; Enmity-10
+    waist="Aristo Belt",            -- __/__ | __(_),  8, __ <__>
+    -- ammo="Voluspa Tathlum",      -- __/__ | __(_),  5, __ <__>
+    -- feet="Maxixi Toeshoes +3",   -- __/__ | 14(_), 40, 22 <__>
+    -- ear1="Handler's Earring +1", -- __/__ | __(_),  5,  5 <__>
+    -- 30/22 | 53 Potency (8 Self Potency), 201 CHR, 119 VIT <-4 Delay>
+  } -- 35/25 | 49 Potency (8 Self Potency), 157 CHR, 62 VIT <-4 Delay>
 
   -- Waltz effects received
   sets.precast.WaltzSelf = set_combine(sets.precast.Waltz, {
-    body="Maxixi Casaque +3",       -- 19(8), 33, 34 <-2>
-    ring2="Asklepian Ring",         -- __(3), __, __ <__>
-    -- ear1="Tuisto Earring",       -- __(_), __, 10 <__>
-    -- 53 Potency (11 Self Potency), 215 CHR, 125 VIT <-4 Delay>
+    body="Maxixi Casaque +3",       -- __/__ | 19(8), 33, 34 <-2>
+    ring1="Asklepian Ring",         -- __/__ | __(3), __, __ <__>
+    -- 30/22 | 53 Potency (11 Self Potency), 185 CHR, 119 VIT <-4 Delay>
   })
 
   -- Waltz delay
@@ -320,8 +320,8 @@ function init_gear_sets()
     legs="Malignance Tights",     --  7/ 7, 50
     feet="Horos Toe Shoes +3",    -- __/__, 66; Step TP -20
     neck="Etoile Gorget +2",      -- __/__, 25
-    ear1="Odnowa Earring +1",     --  3/ 5, __
-    ear2="Telos Earring",         -- __/__, 10
+    ear1="Telos Earring",         -- __/__, 10
+    ear2="Odnowa Earring +1",     --  3/ 5, __
     ring1="Gelatinous Ring +1",   --  7/-1, __
     ring2="Defending Ring",       -- 10/10, __
     back=gear.DNC_TP_DW_Cape,     -- 10/__, 20
@@ -408,8 +408,8 @@ function init_gear_sets()
     legs="Horos Tights +3",
     feet=gear.Nyame_B_feet,
     neck="Fotia Gorget",
-    ear1="Sherida Earring",
-    ear2="Brutal Earring",
+    ear1="Brutal Earring",
+    ear2="Sherida Earring",
     ring1="Ilabrat Ring",
     ring2="Epona's Ring",
     back=gear.DNC_TP_DA_Cape,
@@ -433,8 +433,8 @@ function init_gear_sets()
     legs="Meghanada Chausses +2",
     feet=gear.Herc_TA_feet,
     neck="Fotia Gorget",
-    ear1="Sherida Earring",
-    ear2="Brutal Earring",
+    ear1="Brutal Earring",
+    ear2="Sherida Earring",
     ring1="Gere Ring",
     ring2="Regal Ring",
     back=gear.DNC_TP_DA_Cape,
@@ -467,8 +467,8 @@ function init_gear_sets()
     legs="Horos Tights +3",         -- 42, __, 10, __
     feet=gear.Nyame_B_feet,         -- 23, 26,  8, __
     neck="Etoile Gorget +2",        -- __, 25, __, 10
-    ear1="Sherida Earring",         --  5,  5, __, __
-    ear2="Odr Earring",             -- __, 10, __, __
+    ear1="Odr Earring",             -- __, 10, __, __
+    ear2="Sherida Earring",         --  5,  5, __, __
     ring1="Gere Ring",              -- 10, __, __, __
     ring2="Regal Ring",             -- 10, 10, __, __
     back=gear.DNC_TP_DA_Cape,       -- __, 30, __, __
@@ -507,8 +507,8 @@ function init_gear_sets()
     legs=gear.Lustratio_B_legs,
     feet=gear.Herc_DEX_CritDmg_feet,
     neck="Fotia Gorget",
-    ear1="Sherida Earring",
-    ear2="Odr Earring",
+    ear1="Odr Earring",
+    ear2="Sherida Earring",
     ring1="Ilabrat Ring",
     ring2="Regal Ring",
     back=gear.DNC_TP_DA_Cape,
@@ -519,7 +519,7 @@ function init_gear_sets()
     ring2="Defending Ring"
   })
   sets.precast.WS['Evisceration'].LowAcc = set_combine(sets.precast.WS['Evisceration'], {
-    -- ear2="Mache Earring +1",
+    -- ear1="Mache Earring +1",
   })
   sets.precast.WS['Evisceration'].LowAccMaxTP = set_combine(sets.precast.WS['Evisceration'].LowAcc, {
   })
@@ -720,8 +720,8 @@ function init_gear_sets()
     legs=gear.Samnuha_legs,
     feet="Horos Toe Shoes +3",
     neck="Etoile Gorget +2",
-    ear1="Sherida Earring",
-    ear2="Telos Earring",
+    ear1="Telos Earring",
+    ear2="Sherida Earring",
     ring1="Epona's Ring",
     ring2="Gere Ring",
     back=gear.DNC_TP_DA_Cape,

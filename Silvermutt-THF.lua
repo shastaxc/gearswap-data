@@ -307,11 +307,10 @@ function init_gear_sets()
     ear2="Moonshade Earring",
     ring1="Regal Ring",
     ring2="Ilabrat Ring",
-    back=gear.THF_TP_Cape,
+    back=gear.THF_WS1_Cape,
     -- ammo="Aurgelmir Orb +1",
     -- legs="Plun. Culottes +3",
     -- ring2="Epaminondas's Ring",
-    -- back=gear.THF_WS1_Cape,
   } -- default set
   sets.precast.WS.Acc = set_combine(sets.precast.WS, {
     ear2="Telos Earring",
@@ -408,17 +407,16 @@ function init_gear_sets()
     ear2="Moonshade Earring",         -- __, __, __, __; TP Bonus+250
     ring1="Ilabrat Ring",             -- 10, __, 25, __
     ring2="Regal Ring",               -- 10, __, 20, __
-    back=gear.THF_TP_Cape,            -- 30, __, 20, __
+    back=gear.THF_WS1_Cape,           -- 30, 10, 20, __
     waist="Grunfeld Rope",            --  5, __, 20, __
     -- ammo="Cath Palug Stone",       -- 10, __, __, __
     -- body="Gleti's Cuirass"         -- 34, __, 64,  9
     -- legs="Plunderer's Culottes +3" -- 21,  6, 64, __
     -- neck="Assassin's Gorget +2",   -- 15, __, __, __
     -- ring2="Epaminondas's Ring",    -- __,  5, __, __
-    -- back=gear.THF_WS1_Cape,        -- 30, 10, 20, __
     -- waist="Kentarch Belt +1",      -- 10, __, __, __; Aug it first
     -- 223 DEX, 47 WSD, 338 Att, 9 PDL
-  })-- 183 DEX, 45 WSD, 377 Att, 0 PDL
+  })-- 183 DEX, 55 WSD, 377 Att, 0 PDL
   sets.precast.WS["Rudra's Storm"].MaxTP = set_combine(sets.precast.WS["Rudra's Storm"], {
     ear2="Odr Earring",
   })
