@@ -292,7 +292,7 @@ function init_gear_sets()
   -- Waltz effects received
   sets.precast.WaltzSelf = set_combine(sets.precast.Waltz, {
     body="Maxixi Casaque +3",       -- __/__ | 19(8), 33, 34 <-2>
-    ring1="Asklepian Ring",         -- __/__ | __(3), __, __ <__>
+    ring1="Asklepian Ring",         -- __/__ | __(3), __, __ <__>; Minor upgrade
     -- 30/22 | 53 Potency (11 Self Potency), 185 CHR, 119 VIT <-4 Delay>
   })
 
