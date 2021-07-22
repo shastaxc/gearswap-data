@@ -1089,7 +1089,7 @@ function job_post_precast(spell, action, spellMap, eventArgs)
     end
     if state.Buff['Climactic Flourish'] then
       -- If set isn't found for specific ws, overlay the default set
-      local set = sets.precast.WS[spell.name].Climactic or sets.precast.WS.Climactic or {}
+      local set = (sets.precast.WS[spell.name] and sets.precast.WS[spell.name].Climactic) or sets.precast.WS.Climactic or {}
       equip(set)
     end
     if state.Buff['Sneak Attack'] or state.Buff['Trick Attack'] then

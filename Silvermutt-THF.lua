@@ -1010,7 +1010,7 @@ function job_post_precast(spell, action, spellMap, eventArgs)
   if spell.type == 'WeaponSkill' then
     if state.Buff['Sneak Attack'] or state.Buff['Trick Attack'] then
     -- If set isn't found for specific ws, overlay the default set
-      local set = sets.precast.WS[spell.name].SATA or sets.precast.WS.SATA or {}
+      local set = (sets.precast.WS[spell.name] and sets.precast.WS[spell.name].SATA) or sets.precast.WS.SATA or {}
       equip(set)
     end
     -- Equip obi if weather/day matches for WS.
