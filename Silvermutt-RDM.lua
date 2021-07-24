@@ -414,8 +414,8 @@ function init_gear_sets()
   sets.precast.WS['Chant du Cygne'].MaxTP = set_combine(sets.precast.WS['Chant du Cygne'], {
   })
   sets.precast.WS['Chant du Cygne'].LowAcc = set_combine(sets.precast.WS['Chant du Cygne'], {
+    head="Malignance Chapeau",
     -- ammo="Voluspa Tathlum",
-    -- head="Malignance Chapeau",
     -- ear2="Mache Earring +1",
   })
   sets.precast.WS['Chant du Cygne'].LowAccMaxTP = set_combine(sets.precast.WS['Chant du Cygne'].LowAcc, {
@@ -787,6 +787,7 @@ function init_gear_sets()
   -- Custom spell classes
   sets.midcast.MndEnfeebles = {
     main="Daybreak",
+    ear1="Malignance Earring",
     ring1="Kishar Ring",
     ring2="Metamorph Ring +1",
     -- sub="Ammurapi Shield",
@@ -797,7 +798,6 @@ function init_gear_sets()
     -- legs="Chironic Hose",
     -- feet="Vitiation Boots +3",
     -- neck="Dls. Torque +2",
-    -- ear1="Malignance Earring",
     -- ear2="Snotra Earring",
     -- ring2="Metamor. Ring +1",
     -- back=gear.RDM_MND_Cape,
@@ -1094,18 +1094,18 @@ function init_gear_sets()
 
   sets.engaged = {
     ammo="Aurgelmir Orb",
+    head="Malignance Chapeau",
     body="Malignance Tabard",
     hands="Malignance Gloves",
     legs="Malignance Tights",
     neck="Anu Torque",
     ear1="Sherida Earring",
     ear2="Telos Earring",
+    ring1="Hetairoi Ring",
     ring2="Chirich Ring +1",
     waist="Windbuffet Belt +1",
     -- ammo="Aurgelmir Orb +1",
-    -- head="Malignance Chapeau",
     -- feet="Carmine Greaves +1",
-    -- ring1="Hetairoi Ring",
     -- back=gear.RDM_DW_Cape,
   }
   sets.engaged.MidAcc = set_combine(sets.engaged, {
@@ -1129,6 +1129,7 @@ function init_gear_sets()
     main="Naegling",
     sub="Kaja Knife",
     ammo="Aurgelmir Orb",
+    head="Malignance Chapeau",
     body="Malignance Tabard",
     hands="Malignance Gloves",
     legs=gear.Carmine_D_legs, --6
@@ -1136,12 +1137,11 @@ function init_gear_sets()
     neck="Anu Torque",
     ear1="Eabani Earring", --4
     ear2="Suppanomimi", --5
+    ring1="Hetairoi Ring",
     ring2="Chirich Ring +1",
     waist="Reiki Yotai", --7
     -- sub="Tauret",
     -- ammo="Aurgelmir Orb +1",
-    -- head="Malignance Chapeau",
-    -- ring1="Hetairoi Ring",
     -- back=gear.RDM_DW_Cape, --10
   } --41
   sets.engaged.DW.MidAcc = set_combine(sets.engaged.DW, {
@@ -1159,6 +1159,7 @@ function init_gear_sets()
   -- 15% Magic Haste (67% DW to cap)
   sets.engaged.DW.LowHaste = set_combine(sets.engaged.DW, {
     ammo="Aurgelmir Orb",
+    head="Malignance Chapeau",
     body="Malignance Tabard",
     hands="Malignance Gloves",
     legs=gear.Carmine_D_legs, --6
@@ -1166,11 +1167,10 @@ function init_gear_sets()
     neck="Anu Torque",
     ear1="Eabani Earring", --4
     ear2="Suppanomimi", --5
+    ring1="Hetairoi Ring",
     ring2="Chirich Ring +1",
     waist="Reiki Yotai", --7
     -- ammo="Aurgelmir Orb +1",
-    -- head="Malignance Chapeau",
-    -- ring1="Hetairoi Ring",
     -- back=gear.RDM_DW_Cape, --10
   }) --41
   sets.engaged.DW.MidAcc.LowHaste = set_combine(sets.engaged.DW.LowHaste, {
@@ -1188,6 +1188,7 @@ function init_gear_sets()
   -- 30% Magic Haste (56% DW to cap)
   sets.engaged.DW.MidHaste = set_combine(sets.engaged.DW, {
     ammo="Aurgelmir Orb",
+    head="Malignance Chapeau",
     body="Malignance Tabard",
     hands="Malignance Gloves",
     legs="Malignance Tights",
@@ -1195,11 +1196,10 @@ function init_gear_sets()
     neck="Anu Torque",
     ear1="Sherida Earring",
     ear2="Suppanomimi", --5
+    ring1="Hetairoi Ring",
     ring2="Chirich Ring +1",
     waist="Reiki Yotai", --7
     -- ammo="Aurgelmir Orb +1",
-    -- head="Malignance Chapeau",
-    -- ring1="Hetairoi Ring",
     -- back=gear.RDM_DW_Cape, --10
   }) --31
   sets.engaged.DW.MidAcc.MidHaste = set_combine(sets.engaged.DW.MidHaste, {
@@ -1219,6 +1219,7 @@ function init_gear_sets()
   -- 35% Magic Haste (51% DW to cap)
   sets.engaged.DW.HighHaste = set_combine(sets.engaged.DW, {
     ammo="Aurgelmir Orb",
+    head="Malignance Chapeau",
     body="Malignance Tabard",
     hands="Malignance Gloves",
     legs="Malignance Tights",
@@ -1226,11 +1227,10 @@ function init_gear_sets()
     neck="Anu Torque",
     ear1="Sherida Earring",
     ear2="Telos Earring",
+    ring1="Hetairoi Ring",
     ring2="Chirich Ring +1",
     waist="Reiki Yotai", --7
     -- ammo="Aurgelmir Orb +1",
-    -- head="Malignance Chapeau",
-    -- ring1="Hetairoi Ring",
     -- back=gear.RDM_DW_Cape, --10
   }) --26
   sets.engaged.DW.MidAcc.HighHaste = set_combine(sets.engaged.DW.HighHaste, {
@@ -1249,6 +1249,7 @@ function init_gear_sets()
   -- 45% Magic Haste (36% DW to cap)
   sets.engaged.DW.MaxHaste = set_combine(sets.engaged.DW, {
     ammo="Aurgelmir Orb",
+    head="Malignance Chapeau",
     body="Malignance Tabard",
     hands="Malignance Gloves",
     legs="Malignance Tights",
@@ -1256,11 +1257,10 @@ function init_gear_sets()
     neck="Anu Torque",
     ear1="Sherida Earring",
     ear2="Telos Earring",
+    ring1="Hetairoi Ring",
     ring2="Chirich Ring +1",
     waist="Windbuffet Belt +1",
     -- ammo="Aurgelmir Orb +1",
-    -- head="Malignance Chapeau",
-    -- ring1="Hetairoi Ring",
     -- back=gear.RDM_DW_Cape, --10
   }) --10
   sets.engaged.DW.MidAcc.MaxHaste = set_combine(sets.engaged.DW.MaxHaste, {

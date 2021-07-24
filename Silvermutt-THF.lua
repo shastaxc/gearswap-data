@@ -620,7 +620,7 @@ function init_gear_sets()
     neck="Anu Torque",
     ear1="Telos Earring",
     ear2="Sherida Earring",
-    ring1="Epona's Ring",
+    ring1="Hetairoi Ring",
     ring2="Gere Ring",
     back=gear.THF_TP_Cape,
     waist="Windbuffet Belt +1",
@@ -661,7 +661,7 @@ function init_gear_sets()
     neck="Anu Torque",
     ear1="Suppanomimi", --5
     ear2="Eabani Earring", --4
-    ring1="Epona's Ring",
+    ring1="Hetairoi Ring",
     ring2="Gere Ring",
     back=gear.THF_TP_Cape,
     waist="Reiki Yotai", --7
@@ -699,7 +699,7 @@ function init_gear_sets()
     neck="Anu Torque",
     ear1="Suppanomimi", --5
     ear2="Eabani Earring", --4
-    ring1="Epona's Ring",
+    ring1="Hetairoi Ring",
     ring2="Gere Ring",
     back=gear.THF_TP_Cape,
     waist="Reiki Yotai", --7
@@ -744,7 +744,7 @@ function init_gear_sets()
     neck="Anu Torque",
     ear1="Eabani Earring", --4
     ear2="Suppanomimi", --5
-    ring1="Epona's Ring",
+    ring1="Hetairoi Ring",
     ring2="Gere Ring",
     back=gear.THF_TP_Cape,
     waist="Reiki Yotai", --7
@@ -786,7 +786,7 @@ function init_gear_sets()
     neck="Anu Torque",
     ear1="Sherida Earring",
     ear2="Telos Earring",
-    ring1="Epona's Ring",
+    ring1="Hetairoi Ring",
     ring2="Gere Ring",
     back=gear.THF_TP_Cape,
     waist="Reiki Yotai", --7
@@ -823,7 +823,7 @@ function init_gear_sets()
     neck="Anu Torque",
     ear1="Telos Earring",
     ear2="Sherida Earring",
-    ring1="Epona's Ring",
+    ring1="Hetairoi Ring",
     ring2="Gere Ring",
     back=gear.THF_TP_Cape,
     waist="Windbuffet Belt +1",
@@ -862,7 +862,7 @@ function init_gear_sets()
     neck="Anu Torque",
     ear1="Telos Earring",
     ear2="Sherida Earring",
-    ring1="Epona's Ring",
+    ring1="Hetairoi Ring",
     ring2="Gere Ring",
     back=gear.THF_TP_Cape,
     waist="Windbuffet Belt +1",

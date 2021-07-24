@@ -999,11 +999,11 @@ function init_gear_sets()
   })
 
   sets.engaged.DW.HighAcc = set_combine(sets.engaged.DW.MidAcc, {
+    head="Malignance Chapeau",
     body="Malignance Tabard",
     ring1="Regal Ring",
     ring2="Chirich Ring +1",
     waist="Olseni Belt",
-    -- head="Malignance Chapeau",
   })
 
   -- Low Magic/Gear/JA Haste (67% DW to cap, 42% from gear)
@@ -1036,10 +1036,10 @@ function init_gear_sets()
   })
 
   sets.engaged.DW.HighAcc.LowHaste = set_combine(sets.engaged.DW.MidAcc.LowHaste, {
+    head="Malignance Chapeau",
     body="Malignance Tabard",
     ring1="Regal Ring",
     ring2="Chirich Ring +1",
-    -- head="Malignance Chapeau",
   })
 
   -- Mid Magic/Gear/JA Haste (56% DW to cap, 31% from gear)
@@ -1072,11 +1072,11 @@ function init_gear_sets()
   })
 
   sets.engaged.DW.HighAcc.MidHaste = set_combine(sets.engaged.DW.MidAcc.MidHaste, {
+    head="Malignance Chapeau",
     body="Malignance Tabard",
     ring1="Regal Ring",
     ring2="Chirich Ring +1",
     waist="Olseni Belt",
-    -- head="Malignance Chapeau",
   })
 
   -- High Magic/Gear/JA Haste (43% DW to cap, 18% from gear)
@@ -1105,11 +1105,11 @@ function init_gear_sets()
     waist="Kentarch Belt +1",
   })
   sets.engaged.DW.HighAcc.HighHaste = set_combine(sets.engaged.DW.MidAcc.HighHaste, {
+    head="Malignance Chapeau",
     body="Malignance Tabard",
     ring1="Regal Ring",
     ring2="Chirich Ring +1",
     waist="Olseni Belt",
-    -- head="Malignance Chapeau",
   })
 
   -- High Magic/Gear/JA Haste (36% DW to cap, 11% from gear)
@@ -1167,10 +1167,10 @@ function init_gear_sets()
   })
 
   sets.engaged.DW.HighAcc.MaxHaste = set_combine(sets.engaged.DW.MidAcc.MaxHaste, {
+    head="Malignance Chapeau",
     body="Malignance Tabard",
     ring1="Regal Ring",
     ring2="Chirich Ring +1",
-    -- head="Malignance Chapeau",
   })
 
 

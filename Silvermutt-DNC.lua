@@ -338,7 +338,7 @@ function init_gear_sets()
   -- Magic Accuracy
   sets.precast.Flourish1['Violent Flourish'] = {
     ammo="Yamarang",
-    head="Mummu Bonnet +2",
+    head="Malignance Chapeau",
     body="Horos Casaque +3",
     hands="Malignance Gloves",
     legs="Malignance Tights",
@@ -350,7 +350,6 @@ function init_gear_sets()
     ring2="Ayanmo Ring",
     back=gear.DNC_TP_DW_Cape,
     waist="Eschan Stone",
-    -- head="Malignance Chapeau",
     -- ring1="Stikini Ring +1",
     -- ring2="Stikini Ring +1",
   }

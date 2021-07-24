@@ -886,7 +886,7 @@ function init_gear_sets()
   sets.idle.HeavyDef.Regain.Regen.Refresh = set_combine(sets.idle.Regain.Regen.Refresh, sets.HeavyDef)
   sets.idle.HeavyDef.Regain.Regen.RefreshSub50 = set_combine(sets.idle.Regain.Regen.RefreshSub50, sets.HeavyDef)
 
-  sets.idle.Weak = sets.HeavyDef
+  sets.idle.Weak = sets.defense.PDT
 
 
   ------------------------------------------------------------------------------------------------

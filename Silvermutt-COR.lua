@@ -720,7 +720,7 @@ function init_gear_sets()
 
   sets.precast.WS['Sniper Shot'] = {
     ammo=gear.RAccbullet,
-    head="Meghanada Visor +2",    -- 31, 48
+    head="Malignance Chapeau",    -- 33, 50
     body="Malignance Tabard",     -- 42, 50
     hands="Malignance Gloves",    -- 24, 50
     legs="Malignance Tights",     -- 42, 50
@@ -732,7 +732,6 @@ function init_gear_sets()
     ring2="Hajduk Ring +1",       -- __, 17
     back=gear.COR_RA_Cape,        -- 30, 20
     waist="Kwahu Kachina Belt +1",  --  8, 20
-    -- head="Malignance Chapeau",   -- 33, 50
     -- legs="Laksamana's Trews +3", -- 33, 49
     -- AF+Regal set bonus           -- __, 15
   } -- 236 AGI, 360 R.Acc
