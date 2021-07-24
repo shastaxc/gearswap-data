@@ -784,6 +784,7 @@ function init_gear_sets()
     ear1="Friomisi Earring",
     ear2="Novio Earring",
     ring1="Dingir Ring",
+    ring2="Shiva Ring +1",
     back=gear.COR_WS1_Cape,
     waist="Eschan Stone",
     -- ring2={name="Fenrir Ring +1", bag="wardrobe4"},
@@ -808,7 +809,7 @@ function init_gear_sets()
     -- hands="Laksamana's Gants +3",
     -- feet="Laksamana's Bottes +3",
     -- neck="Comm. Charm +2",
-    -- ear1="Gwati Earring",
+    -- ear1="Crepuscular Earring",
     -- ring2="Stikini Ring +1",
   }
 
@@ -1301,8 +1302,8 @@ function init_gear_sets()
   }
 
   sets.TreasureHunter = {
-    ammo="Perfect Lucky Egg", --1
     body=gear.Herc_TH_body, --2
+    hands="Volte Bracers", --1
     waist="Chaac Belt", --1
   }
 
@@ -1329,9 +1330,9 @@ function init_gear_sets()
   }
   sets.WeaponSet.DeathPenalty_R = {
     main="Lanun Knife",
-    sub="Kaja Knife",
+    sub="Nusku Shield",
     ranged="Death Penalty",
-    -- sub="Tauret",
+    -- main="Rostam",
   }
   sets.WeaponSet.Armageddon_M = {
     main="Lanun Knife",
@@ -1361,10 +1362,10 @@ function init_gear_sets()
     ranged="Anarchy +2",
   }
   sets.WeaponSet.Cleaving = {
-    main="Kaja Knife",
-    sub="Blurred Knife +1",
+    main="Lanun Knife",
+    sub="Kaja Knife",
     ranged="Doomsday",
-    -- main="Tauret",
+    -- sub="Tauret",
   }
 end
 

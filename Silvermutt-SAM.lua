@@ -428,22 +428,22 @@ function init_gear_sets()
     -- ring2="Stikini Ring +1",
   })
   sets.precast.WS["Tachi: Ageha"].MaxTP = set_combine(sets.precast.WS["Tachi: Ageha"], {
-    -- ear2="Gwati Earring",
+    -- ear2="Crepuscular Earring",
   })
   sets.precast.WS["Tachi: Ageha"].LowAcc = set_combine(sets.precast.WS["Tachi: Ageha"], {
   })
   sets.precast.WS["Tachi: Ageha"].LowAccMaxTP = set_combine(sets.precast.WS["Tachi: Ageha"].LowAcc, {
-    -- ear2="Gwati Earring",
+    -- ear2="Crepuscular Earring",
   })
   sets.precast.WS["Tachi: Ageha"].MidAcc = set_combine(sets.precast.WS["Tachi: Ageha"].LowAcc, {
   })
   sets.precast.WS["Tachi: Ageha"].MidAccMaxTP = set_combine(sets.precast.WS["Tachi: Ageha"].MidAcc, {
-    -- ear2="Gwati Earring",
+    -- ear2="Crepuscular Earring",
   })
   sets.precast.WS["Tachi: Ageha"].HighAcc = set_combine(sets.precast.WS["Tachi: Ageha"].MidAcc, {
   })
   sets.precast.WS["Tachi: Ageha"].HighAccMaxTP = set_combine(sets.precast.WS["Tachi: Ageha"].HighAcc, {
-    -- ear2="Gwati Earring",
+    -- ear2="Crepuscular Earring",
   })
 
   -- Polearm sets use a crit build since you should be using Shining One
