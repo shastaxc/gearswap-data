@@ -60,7 +60,7 @@ function job_setup()
 
   state.CP = M(false, "Capacity Points Mode")
   state.ToyWeapons = M{['description']='Toy Weapons','None','GreatKatana','Staff','Polearm','GreatSword','Scythe'}
-  state.WeaponSet = M{['description']='Weapon Set', 'Temp', 'Masa', 'Doji', 'Shining One'}
+  state.WeaponSet = M{['description']='Weapon Set', 'Doji', 'Masa', 'Shining One'}
 
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c usekey')
@@ -375,6 +375,7 @@ function init_gear_sets()
   sets.precast.WS['Tachi: Shoha'] = set_combine(sets.precast.WS, {
     ammo="Knobkierrie",
     head="Mpaca's Cap",
+    body="Kendatsuba Samue +1",
     hands=gear.Nyame_B_hands,
     legs="Wakido Haidate +1",
     feet=gear.Nyame_B_feet,
@@ -422,9 +423,10 @@ function init_gear_sets()
     feet="Flamma Gambieras +2",
     ear1="Dignitary's Earring",
     ear2="Moonshade Earring",
+    ring1="Metamorph Ring +1",
+    ring2="Weatherspoon Ring",
     waist="Eschan Stone",
     -- neck="Sanctity Necklace",
-    -- ring1="Stikini Ring +1",
     -- ring2="Stikini Ring +1",
   })
   sets.precast.WS["Tachi: Ageha"].MaxTP = set_combine(sets.precast.WS["Tachi: Ageha"], {
@@ -611,7 +613,7 @@ function init_gear_sets()
     neck="Samurai's Nodowa +2",       -- __/__, ___
     ear1="Cessance Earring",          -- __/__, ___
     ear2="Telos Earring",             -- __/__, ___
-    ring1="Flamma Ring",              -- __/__, ___
+    ring1="Chirich Ring +1",       -- __/__, ___
     ring2="Niqmaddu Ring",            -- __/__, ___
     back=gear.SAM_TP_Cape,            -- 10/__, ___
     waist="Sailfi Belt +1",           -- __/__, ___
@@ -620,7 +622,6 @@ function init_gear_sets()
     -- hands="Wakido Kote +3",        -- __/__,  46
     -- feet=gear.Ryuo_C_feet,         -- __/__,  80
     -- ear1="Dedition Earring",       -- __/__, ___
-    -- ring1="Chirich Ring +1",       -- __/__, ___
   }
   sets.engaged.LowAcc = set_combine(sets.engaged, {
     body="Ken. Samue +1",
@@ -685,9 +686,8 @@ function init_gear_sets()
   }
 
   sets.WeaponSet = {}
-  sets.WeaponSet['Temp'] = {main="Ichigohitofuri", sub="Utu Grip"}
+  sets.WeaponSet['Doji'] = {main="Dojikiri Yasutsuna", sub="Utu Grip"}
   sets.WeaponSet['Masa'] = {main="Masamune", sub="Utu Grip"}
-  sets.WeaponSet['Doji'] = {main="Dojikiri Tasutsuna", sub="Utu Grip"}
   sets.WeaponSet['Shining One'] = {main="Kaja Lance", sub="Utu Grip"}
   -- sets.WeaponSet['Shining One'] = {main="Shining One", sub="Utu Grip"}
 end
