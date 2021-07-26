@@ -265,11 +265,11 @@ function init_gear_sets()
   }
 
   sets.precast.WS['Omniscience'] = set_combine(sets.precast.WS, {
+    ammo="Pemphredo Tathlum",
     body="Peda. Gown +3",
     legs="Pedagogy Pants +1",
     ear1="Malignance Earring",
     back=gear.SCH_MAB_Cape,
-    -- ammo="Pemphredo Tathlum",
     -- head="Pixie Hairpin +1",
     -- legs="Peda. Pants +3",
     -- feet="Merlinic Crackows",
@@ -654,6 +654,7 @@ function init_gear_sets()
   -- M.Acc > MND > Enfeebling Duration > Enfeebling Skill
   sets.midcast.MndEnfeebles = {
     main="Gada",
+    ammo="Pemphredo Tathlum",    --  8, __, __, __
     head="Academic's Mortarboard +1",
     body="Shamash Robe",            -- 45, 40, __, __
     legs="Academic's Pants +1",
@@ -665,7 +666,6 @@ function init_gear_sets()
     back=gear.SCH_MND_MAcc_Cape, -- 30, 20, __, __
     -- main=gear.Gada_MND_MAcc,     -- 35, 16, __, 16; +215 M.Acc skill
     -- sub="Ammurapi Shield",       -- 38, 13, __, __
-    -- ammo="Pemphredo Tathlum",    --  8, __, __, __
     -- head="Acad. Mortar. +3",     -- 52, 37, __, __
     -- body="Acad. Gown +3",        -- 50, 39, __, __; +24 enf skill in DA
     -- hands="Regal Cuffs",         -- 45, 40, 20, __
@@ -685,6 +685,7 @@ function init_gear_sets()
   -- M.Acc > INT > Enfeebling Duration > Enfeebling Skill
   sets.midcast.IntEnfeebles = {
     main="Gada",
+    ammo="Pemphredo Tathlum",    --  8,  4, __, __
     head="Academic's Mortarboard +1",
     body="Shamash Robe",            -- 45, 40, __, __
     legs="Academic's Pants +1",
@@ -695,7 +696,6 @@ function init_gear_sets()
     ring2="Metamor. Ring +1",       -- 16, 15, __, __
     -- main=gear.Gada_INT_MAcc,     -- 35, 16, __, 16; +215 M.Acc skill
     -- sub="Ammurapi Shield",       -- 38, 13, __, __
-    -- ammo="Pemphredo Tathlum",    --  8,  4, __, __
     -- head="Acad. Mortar. +3",     -- 52, 37, __, __
     -- body="Acad. Gown +3",        -- 50, 44, __, __; +24 enf skill in DA
     -- hands="Regal Cuffs",         -- 45, 40, 20, __
@@ -725,6 +725,7 @@ function init_gear_sets()
   -- SCH Dark Magic = 386, with Dark Arts = 456
   -- Dark Magic Skill, INT, M.Acc
   sets.midcast['Dark Magic'] = {
+    ammo="Pemphredo Tathlum",  -- __,  4,  8
     head="Academic's Mortarboard +1",
     body="Shamash Robe",            -- __, 40, 45
     hands="Academic's Bracers +2",
@@ -734,7 +735,6 @@ function init_gear_sets()
     back="Bookworm's Cape",    --  8,  4, __
     -- main="Rubicundity",        -- 25, 21, 20; +215 M.Acc skill
     -- sub="Ammurapi Shield",     -- __, 13, 38
-    -- ammo="Pemphredo Tathlum",  -- __,  4,  8
     -- head="Acad. Mortar. +3",   -- __, 37, 52
     -- body="Acad. Gown +3",      -- 24, 44, 50
     -- hands="Acad. Bracers +3",  -- __, 29, 48
@@ -766,6 +766,7 @@ function init_gear_sets()
 
   -- FC > M.Acc > M.Acc Skill
   sets.midcast.Stun = set_combine(sets.midcast['Dark Magic'], {
+    ammo="Pemphredo Tathlum",    -- __,  8, ___
     head="Academic's Mortarboard +1",
     body="Shamash Robe",
     hands="Academic's Bracers +2",
@@ -777,7 +778,6 @@ function init_gear_sets()
     --Ideal:
     -- main="Hvergelmir",           -- 50, __, 269
     -- sub="Khonsu",                -- __, 30, ___
-    -- ammo="Pemphredo Tathlum",    -- __,  8, ___
     -- head="Acad. Mortar. +3",     --  8, 52, ___
     -- body="Acad. Gown +3",        -- __, 50, ___
     -- hands="Acad. Bracers +3",    --  9, 48, ___
@@ -795,6 +795,7 @@ function init_gear_sets()
   })
 
   sets.midcast.Stun.DarkArts = set_combine(sets.midcast.Stun, {
+    ammo="Pemphredo Tathlum",    -- __, __,  8, ___
     head="Peda. M.Board +1",
     body="Academic's Gown +1",
     hands="Academic's Bracers +2",
@@ -805,7 +806,6 @@ function init_gear_sets()
     --Ideal:
     -- main="Hvergelmir",           -- __, 50, __, 269
     -- sub="Khonsu",                -- __, __, 30, ___
-    -- ammo="Pemphredo Tathlum",    -- __, __,  8, ___
     -- head="Peda. M.Board +3",     -- 13, __, 37, ___; Grimoire recast-
     -- body="Acad. Gown +3",        -- __, __, 50, ___; +24 Dark Magic skill in DA
     -- hands="Acad. Bracers +3",    -- __,  9, 48, ___
@@ -828,6 +828,7 @@ function init_gear_sets()
   -- INT, Magic Acc, MAB
   -- More emphasis on INT
   sets.midcast.Kaustra = {
+    ammo="Pemphredo Tathlum",  --  4,  8,  4
     main=gear.Akademos_C,         -- 27, 15, 53
     sub="Enki Strap",             -- 10, 10, __
     head="Peda. M.Board +1",
@@ -837,7 +838,6 @@ function init_gear_sets()
     ear1="Malignance Earring",    --  8, 10,  8
     ring2="Metamor. Ring +1",     -- 16, 15, __
     back=gear.SCH_MAB_Cape,       -- 30, 20, 10
-    -- ammo="Pemphredo Tathlum",  --  4,  8,  4
     -- head="Peda. M.Board +3",   -- 39, 52, 49
     -- body=gear.Merl_MB_body,    -- 50, 60, 60
     -- hands=gear.Amalric_D_hands,-- 36, 20, 53
@@ -855,6 +855,7 @@ function init_gear_sets()
   sets.midcast['Elemental Magic'] = {
     main=gear.Akademos_C,           -- 27, 15, 53
     sub="Enki Strap",               -- 10, 10, __
+    ammo="Pemphredo Tathlum",    --  4,  8,  4
     head="Peda. M.Board +1",
     body="Shamash Robe",            -- 40, 45, 45
     neck="Sanctity Necklace",       -- __, 10, 10
@@ -862,7 +863,6 @@ function init_gear_sets()
     ring2="Metamor. Ring +1",       -- 16, 15, __
     back=gear.SCH_MAB_Cape,         -- 30, 20, 10
     -- main="Marin Staff +1",       -- 37, 55, 68; bonus on wind dmg
-    -- ammo="Pemphredo Tathlum",    --  4,  8,  4
     -- head="Peda. M.Board +3",     -- 39, 52, 49
     -- body=gear.Amalric_A_body,    -- 38, 53, 53
     -- hands=gear.Amalric_D_hands,  -- 36, 20, 53
