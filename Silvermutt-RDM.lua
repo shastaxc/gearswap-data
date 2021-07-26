@@ -888,11 +888,11 @@ function init_gear_sets()
   })
 
   sets.midcast['Dark Magic'] = {
-    ear1="Malignance Earring",
+    ammo="Pemphredo Tathlum",
     neck="Erra Pendant",
+    ear1="Malignance Earring",
     -- main="Rubicundity",
     -- sub="Ammurapi Shield",
-    -- ammo="Pemphredo Tathlum",
     -- head="Atrophy Chapeau +3",
     -- body="Carm. Sc. Mail +1",
     -- hands="Kaykaus Cuffs +1",
