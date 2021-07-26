@@ -372,12 +372,12 @@ function init_gear_sets()
     legs=gear.Nyame_B_legs,     -- 40, 40
     feet=gear.Nyame_B_feet,     -- 40, 40
     neck="Erra Pendant",        -- __, 17
-    ear1="Crepuscular Earring", -- 10, 10
-    ear2="Dignitary's Earring", -- 10, 10
+    ear1="Dignitary's Earring", -- 10, 10
     ring1="Etana Ring",         -- 10, 10
     ring2="Metamorph Ring +1",  -- __, 16
     back=gear.RUN_WS2_Cape,     -- 20, __
     waist="Luminary Sash",      -- __, 10
+    -- ear2="Crepuscular Earring", -- 10, 10
   } -- 250 Acc, 279 Magic Acc
 
 
@@ -629,16 +629,14 @@ function init_gear_sets()
     ear1="Odnowa Earring +1",     --  3/ 5, ___ [110] {__}
     ear2="Halasz Earring",        -- __/__, ___ [___] { 5}
     ring1="Gelatinous Ring +1",   --  7/-1, ___ [135] {__}
-    ring2="Moonlight Ring",       --  5/ 5, ___ [110] {__}
-    back=gear.RUN_HPD_Cape,       -- 10/__,  20 [ 80] {__}
+    ring2="Defending Ring",       -- 10/10, ___ [___] {__}
+    back="Moonlight Cape",        --  6/ 6, ___ [275] {__}
     waist="Audumbla Sash",        --  4/__, ___ [___] {10}
     -- SIRD merits                                    { 6}
 
     -- feet=gear.Taeon_SIRD_feet,    -- __/__,  89 [ 63] {10}
-    -- ring2="Defending Ring",       -- 10/10, ___ [___] {__}; Use with moonlight cape
-    -- back="Moonlight Cape",        --  6/ 6, ___ [275] {__}
     -- 42 PDT / 32 MDT, 467 M.Eva [962 HP] {102 SIRD}
-  } -- 41 PDT / 21 MDT, 487 M.Eva [874 HP] {102 SIRD}
+  } -- 42 PDT / 32 MDT, 467 M.Eva [959 HP] {102 SIRD}
 
   sets.midcast['Enhancing Magic'] = {
     head="Erilaz Galea +1",
@@ -668,11 +666,10 @@ function init_gear_sets()
     legs=gear.Taeon_Phalanx_legs, --3, 0 [0/0, 47]
     feet=gear.Taeon_Phalanx_feet, --3, 0 [0/0, 13]
     ear2="Eabani Earring", --0, 0 [0/0, 45]
-    back=gear.RUN_HPD_Cape, --0, 0 [10/0, 80]
+    ring2="Defending Ring", --0, 0 [10/10, 0]
+    back="Moonlight Cape", --0, 0 [6/6, 275]
     waist="Audumbla Sash", --0, 10 [4/0, 0]
-    -- ring2="Defending Ring", --0, 0 [10/10, 0]
-    -- back="Moonlight Cape", --0, 0 [6/6, 275]
-  } -- 16 Phalanx, 21% Interrupt [45PDT/25MDT, 740 HP w/ PDT set]
+  } -- 16 Phalanx, 21% Interrupt [51PDT/41MDT, ??? HP w/ PDT set]
 
   -- 10% SIRD from merits
   sets.midcast['Aquaveil'] = {
@@ -706,7 +703,7 @@ function init_gear_sets()
     ammo="Staunch Tathlum +1",
     ring1="Gelatinous Ring +1",
     ring2="Defending Ring",
-    -- back="Moonlight Cape",
+    back="Moonlight Cape",
   })
   sets.midcast.Protect = set_combine(sets.midcast['Enhancing Magic'], {
     -- ring2="Sheltered Ring"
@@ -716,7 +713,7 @@ function init_gear_sets()
     waist="Audumbla Sash",
     ring1="Gelatinous Ring +1",
     ring2="Defending Ring",
-    -- back="Moonlight Cape",
+    back="Moonlight Cape",
   })
   sets.midcast.Shell = sets.midcast.Protect
   sets.midcast.Shell.Safe = sets.midcast.Protect.Safe
@@ -753,7 +750,7 @@ function init_gear_sets()
     waist="Audumbla Sash",
     ring1="Gelatinous Ring +1",
     ring2="Defending Ring",
-    -- back="Moonlight Cape",
+    back="Moonlight Cape",
   })
 
 

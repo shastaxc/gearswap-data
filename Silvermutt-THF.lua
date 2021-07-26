@@ -597,8 +597,8 @@ function init_gear_sets()
     neck="Loricate Torque +1",  --  6/ 6, ___
     ring1="Gelatinous Ring +1", --  7/-1, ___
     ring2="Moonlight Ring",     --  5/ 5, ___
-    -- back="Moonlight Cape",      --  6/ 6, ___
-  }) --61 PDT/55 MDT, 682 MEVA
+    back="Moonlight Cape",      --  6/ 6, ___
+  })
   
 
   ------------------------------------------------------------------------------------------------
@@ -973,6 +973,11 @@ function init_gear_sets()
   sets.WeaponSet['Naegling'] = {
     main="Naegling",
     sub="Centovente",
+  }
+  sets.WeaponSet['H2H'] = {
+    main="Kaja Knuckles",
+    sub=empty,
+    -- main="Karambit",
   }
   -- sets.WeaponSet['SoloCleaving'] = {
   --   main=gear.Gandring_C,
