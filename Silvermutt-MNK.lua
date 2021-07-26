@@ -79,6 +79,7 @@ function job_setup()
 
   send_command('bind ^insert gs c weaponset cycle')
   send_command('bind ^delete gs c weaponset cycleback')
+  send_command('bind !delete gs c weaponset reset')
 
   send_command('bind ^pageup gs c toyweapon cycle')
   send_command('bind ^pagedown gs c toyweapon cycleback')
@@ -1173,6 +1174,8 @@ function cycle_weapons(cycle_dir)
     state.WeaponSet:cycle()
   elseif cycle_dir == 'back' then
     state.WeaponSet:cycleback()
+  elseif cycle_dir == 'reset' then
+    state.WeaponSet:reset()
   end
 
   add_to_chat(141, 'Weapon Set to '..string.char(31,1)..state.WeaponSet.current)
@@ -1399,6 +1402,8 @@ function job_self_command(cmdParams, eventArgs)
       cycle_weapons('back')
     elseif cmdParams[2] == 'current' then
       cycle_weapons('current')
+    elseif cmdParams[2] == 'reset' then
+      cycle_weapons('reset')
     end
   elseif cmdParams[1] == 'test' then
     test()
