@@ -168,8 +168,7 @@ function init_gear_sets()
   }
 
   sets.precast.JA['Hasso'] = {
-    hands="Wakido Kote +2",
-    -- hands="Wakido Kote +3",
+    hands="Wakido Kote +3",
   }
 
   sets.precast.JA['Meditate'] = {
@@ -260,10 +259,9 @@ function init_gear_sets()
     ear2="Ishvara Earring",
   })
   sets.precast.WS["Tachi: Fudo"].LowAcc = set_combine(sets.precast.WS["Tachi: Fudo"], {
-    hands="Wakido Kote +2",
+    hands="Wakido Kote +3",
     ring1="Regal Ring",
     -- head=gear.Rao_A_head,
-    -- hands="Wakido Kote +3",
   })
   sets.precast.WS["Tachi: Fudo"].LowAccMaxTP = set_combine(sets.precast.WS["Tachi: Fudo"].LowAcc, {
     ear2="Telos Earring",
@@ -526,10 +524,9 @@ function init_gear_sets()
     ammo="Staunch Tathlum +1",  --  3/ 3, ___
     head="Ken. Jinpachi +1",    -- __/__, 101
     body="Ken. Samue +1",       -- __/__, 117
-    hands="Wakido Kote +2",     -- __/__,  36
+    hands="Wakido Kote +3",     -- __/__,  46
     legs="Ken. Hakama +1",      -- __/__, 139
     feet="Ken. Sune-Ate +1",    -- __/__, 139
-    -- hands="Wakido Kote +3",     -- __/__,  46
     --13 PDT/3 MDT, 542 MEVA
   }
 
@@ -537,7 +534,7 @@ function init_gear_sets()
     ammo="Aurgelmir Orb",       -- __/__, ___
     head=gear.Nyame_B_head,     --  7/ 7, 123
     body=gear.Nyame_B_body,     --  9/ 9, 139
-    hands="Wakido Kote +2",     -- __/__,  36
+    hands="Wakido Kote +3",     -- __/__,  46
     legs=gear.Nyame_B_legs,     --  8/ 8, 150
     feet=gear.Nyame_B_feet,     --  7/ 7, 150
     neck="Samurai's Nodowa +2", -- __/__, ___
@@ -548,7 +545,6 @@ function init_gear_sets()
     back=gear.SAM_TP_Cape,      -- 10/__, ___
     waist="Ioskeha Belt +1",    -- __/__, ___
     -- ammo="Aurgelmir Orb +1", -- __/__, ___
-    -- hands="Wakido Kote +3",  -- __/__,  46
     -- ear1="Dedition Earring", -- __/__, ___
     --51 PDT/41 MDT, 608 MEVA
   }
@@ -607,19 +603,18 @@ function init_gear_sets()
     ammo="Aurgelmir Orb",             -- __/__, ___
     head="Flamma Zucchetto +2",       -- __/__,  53
     body="Kasuga Domaru +1",          -- __/__,  59
-    hands="Wakido Kote +2",           -- __/__,  36
+    hands="Wakido Kote +3",           -- __/__,  46
     legs="Tatenashi Haidate +1",      -- __/__, ___
     feet="Kendatsuba Sune-Ate +1",    -- __/__, 139
     neck="Samurai's Nodowa +2",       -- __/__, ___
     ear1="Cessance Earring",          -- __/__, ___
     ear2="Telos Earring",             -- __/__, ___
-    ring1="Chirich Ring +1",       -- __/__, ___
+    ring1="Chirich Ring +1",          -- __/__, ___
     ring2="Niqmaddu Ring",            -- __/__, ___
     back=gear.SAM_TP_Cape,            -- 10/__, ___
     waist="Sailfi Belt +1",           -- __/__, ___
     -- ammo="Aurgelmir Orb +1",       -- __/__, ___
     -- body="Tatenashi Haramaki +1",  -- __/__,  59
-    -- hands="Wakido Kote +3",        -- __/__,  46
     -- feet=gear.Ryuo_C_feet,         -- __/__,  80
     -- ear1="Dedition Earring",       -- __/__, ___
   }
