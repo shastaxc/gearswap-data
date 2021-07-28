@@ -29,8 +29,11 @@ sets.ToyWeapon.Scythe = {main="Lost Sickle",sub="Tzacab Grip"}
 -- Digirbalag
 
 -- Gada
+gear.Gada_ENH = {} -- 6 Enh Duration, 6 FC
 
 -- Grioavolr
+gear.Grioavolr_FC = {} --7 FC
+gear.Grioavolr_MB = {} --MB Dmg, MAB, M.Acc, INT
 
 -- Holliday
 
@@ -72,6 +75,14 @@ gear.Herc_Refresh_head = { name="Herculean Helm", augments={'Weapon Skill Acc.+1
 gear.Herc_Refresh_feet = { name="Herculean Boots", augments={'Crit.hit rate+1','STR+14','"Refresh"+2',}}
 
 -- Merlinic
+gear.Merl_MB_head = {} --MAB, M.Acc, 10 INT
+gear.Merl_MB_body = {} --MAB, M.Acc, 10 INT
+gear.Merl_MB_feet = {} --MAB, M.Acc, 10 INT
+
+gear.Merl_Aspir_feet = {} -- Macc, aspir potency
+
+gear.Merl_Refresh_hands = {}
+gear.Merl_Refresh_feet = {}
 
 -- Odyssean
 
@@ -175,6 +186,9 @@ gear.DNC_WS1_Cape = { name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 At
 -- gear.DNC_WS2_Cape = {name="Senuna's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10',}}
 -- gear.DNC_WS3_Cape = {name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10',}}
 -- gear.DNC_WS4_Cape = {name="Senuna's Mantle", augments={'AGI+20','Accuracy+20 Attack+20','AGI+10','"Dbl.Atk."+10',}}
+
+gear.GEO_Nuke_Cape = {} -- INT, MAB
+gear.GEO_Idle_Cape = {} -- HP, Eva, Pet Regen
 
 gear.MNK_DEX_DA_Cape = { name="Segomo's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
 gear.MNK_STR_DA_Cape = { name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Mag. Evasion+15',}}
