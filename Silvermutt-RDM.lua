@@ -946,7 +946,6 @@ function init_gear_sets()
     -- feet="Amalric Nails +1",
     -- ear2="Regal Earring",
     -- ring1="Freke Ring",
-    -- ring2="Metamor. Ring +1",
     -- back=gear.RDM_INT_Cape,
     -- waist="Refoccilation Stone",
   }
