@@ -14,7 +14,7 @@ res = require 'resources'
 user_settings = {
     user_spells = {
         Healing = T{'Cure'},
-        Geomancy = T{},
+        Geomancy = T{'Indi-Poison','Indi-Voidance'},
         Enhancing = T{
           'Barfire', 'Barblizzard', 'Baraero', 'Barstone', 'Barthunder', 'Barwater'
         },
