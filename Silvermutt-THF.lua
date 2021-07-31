@@ -99,7 +99,7 @@ function job_setup()
   state.AttackMode = M{['description']='Attack', 'Capped', 'Uncapped'}
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.RangedMode:options('Normal', 'Acc')
-  state.HybridMode:options('Normal', 'LightDef')
+  state.HybridMode:options('LightDef', 'Normal')
   state.IdleMode:options('Normal', 'LightDef')
   state.CP = M(false, 'Capacity Points Mode')
   state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger',

@@ -55,7 +55,7 @@ function job_setup()
   elemental_ws = S{'Tachi: Goten', 'Tachi: Kagero', 'Tachi: Jinpu', 'Tachi: Koki'}
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
-  state.HybridMode:options('Normal', 'LightDef', 'MEVA')
+  state.HybridMode:options('LightDef', 'MEVA', 'Normal')
   state.IdleMode:options('Normal', 'HeavyDef')
 
   state.CP = M(false, "Capacity Points Mode")

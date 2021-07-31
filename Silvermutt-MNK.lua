@@ -65,7 +65,7 @@ function job_setup()
   windower.raw_register_event('action', on_action_for_impetus)
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
-  state.HybridMode:options('Normal', 'LightDef', 'HeavyDef')
+  state.HybridMode:options('LightDef', 'HeavyDef', 'Normal')
   state.IdleMode:options('Normal', 'HeavyDef')
 
   state.CP = M(false, "Capacity Points Mode")
