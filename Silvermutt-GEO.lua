@@ -134,6 +134,7 @@ function init_gear_sets()
 
 	-- Precast sets to enhance JAs
 	sets.precast.JA.Bolster = {
+    body="Bagua Tunic",
     -- body="Bagua Tunic +1",
   }
 	sets.precast.JA['Life Cycle'] = {
@@ -1562,7 +1563,7 @@ function job_self_command(cmdParams, eventArgs)
 		if state.DisplayMode.value then update_job_states()	end
 	elseif cmdParams[1] == 'autogeo' and cmdParams[2] then
 		autogeo = cmdParams[2]:ucfirst()
-		add_to_chat(122,'Your Auto Geo- spell is set to '..autoGeomancy.'.')
+		add_to_chat(122,'Your Auto Geo- spell is set to '..autogeo..'.')
 		if state.DisplayMode.value then update_job_states()	end
 	elseif cmdParams[1] == 'autoentrust' and cmdParams[2] then
 		autoentrust = cmdParams[2]:ucfirst()
@@ -1744,7 +1745,7 @@ function check_geo()
 				tickdelay = os.clock() + 1.1
 				return true
 			else
-				windower.chat.input('/ma "Geo-'..autoGeomancy.'" <bt>')
+				windower.chat.input('/ma "Geo-'..autogeo..'" <bt>')
 				tickdelay = os.clock() + 3.1
 				return true
 			end
@@ -1809,7 +1810,7 @@ windower.raw_register_event('prerender', function()
   local geo_count = 0
   local battle_target = windower.ffxi.get_mob_by_target('bt') or false
   if myluopan and last_geo then
-    luopan_txtbox = luopan_txtbox..' \\cs(0,255,0)Geo-'..last_Geomancy.':\\cs(255,255,255)\n'
+    luopan_txtbox = luopan_txtbox..' \\cs(0,255,0)Geo-'..last_geo..':\\cs(255,255,255)\n'
     for i,v in pairs(windower.ffxi.get_mob_array()) do
       local DistanceBetween = ((myluopan.x - v.x)*(myluopan.x-v.x) + (myluopan.y-v.y)*(myluopan.y-v.y)):sqrt()
       if DistanceBetween < (6 + v.model_size) and not (v.status == 2 or v.status == 3) and v.name and v.name ~= '' and v.name ~= "Luopan" and v.valid_target and v.model_size > 0 then
