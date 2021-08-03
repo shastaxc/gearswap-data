@@ -132,7 +132,7 @@ function init_gear_sets()
     body="Bagua Tunic +1",
   }
 	sets.precast.JA['Life Cycle'] = {
-    body="Geomancy Tunic",
+    body="Geomancy Tunic +1",
     -- body="Geomancy Tunic +3",
     -- back=gear.GEO_Idle_Cape,
   }
@@ -147,7 +147,7 @@ function init_gear_sets()
     hands="Bagua Mitaines +1",
   }
   sets.precast.JA['Concentric Pulse'] = {
-    -- head="Bagua Galero +1",
+    head="Bagua Galero +1",
   }
 
 	-- Indi Duration in slots that would normally have skill here to make entrust more efficient.
@@ -158,27 +158,26 @@ function init_gear_sets()
 
 	-- Fast cast sets for spells
 	sets.precast.FC = {
-    range="Dunna",                --  3, __
+    range="Dunna",                   --  3
     ammo=empty,
-    head="Agwu's Cap",            --  5, __
-    legs="Geomancy Pants",        --  9, __
-    ear1="Loquac. Earring",       --  2, __
-    ear2="Malignance Earring",    --  4, __
-    ring1="Kishar Ring",          --  4, __
-    ring2="Prolix Ring",          --  2, __
-    -- main=gear.Grioavolr_FC,    --  7, __
-    -- sub="Clerisy Strap +1",    --  3, __
-    -- ammo="Impatiens",          -- __,  2
-		-- head=gear.Vanya_D_head,    -- 10, __
-		-- body="Zendik Robe",        -- 13, __
-    -- hands="Volte Gloves",      --  6, __
-    -- legs="Geomancy Pants +3",  -- 15, __
-    -- feet="Regal Pumps +1",     --  4, __
-    -- neck="Voltsurge Torque",   --  4, __
-		-- back="Perimede Cape",      -- __,  4
-    -- waist="Embla Sash",        --  5, __
-    -- 79 FC, 6 Quick Magic
-  } -- 29 FC, 0 Quick Magic
+    head="Agwu's Cap",               --  5
+    legs="Geomancy Pants +1",        -- 11
+    ear1="Loquac. Earring",          --  2
+    ear2="Malignance Earring",       --  4
+    ring1="Kishar Ring",             --  4
+    ring2="Prolix Ring",             --  2
+    -- Ideal:
+    -- range="Dunna",                --  3
+    -- ammo=empty,
+    -- head=gear.Merl_FC_head,       -- 15
+    -- body=gear.Merl_FC_body,       -- 13
+    -- hands=gear.Merl_FC_hands,     --  7
+    -- legs="Geomancy Pants +3",     -- 15
+    -- feet=gear.Merl_FC_feet,       -- 12
+    -- back=gear.GEO_FC_Cape,        -- 10
+    -- waist="Shinjutsu-no-Obi +1",  --  5
+    -- 80 FC
+  } -- 31 FC
 
 	sets.precast.FC.Geomancy = set_combine(sets.precast.FC, {
     range="Dunna",
@@ -240,22 +239,19 @@ function init_gear_sets()
 	sets.midcast.Geomancy = {
     range="Dunna",                 -- __, 18, __
     ammo=empty,
-    head="Azimuth Hood +1",
+    head="Azimuth Hood +1",     -- __, 15, __
     body="Geomancy Tunic +1",
-    hands="Geomancy Mitaines +1",
+    hands="Azimuth Gloves +1",  -- __, __, __; Set bonus
     legs="Geomancy Pants +1",
-    feet="Bagua Sandals +1",
+    feet="Azimuth Gaiters +1",  -- __, __, __; Set bonus
     waist="Gishdubar Sash",
     ear1="Eabani Earring",
     ear2="Halasz Earring",
     ring1="Defending Ring",
     -- main="Idris",               -- 10, __, __
-    -- sub=empty,
-    -- head="Azimuth Hood +1",     -- __, 15, __
+    -- sub="Genmei Shield",        -- __, __, __
     -- body="Vedic Coat",          -- __, __, 10
-    -- hands="Azimuth Gloves +1",  -- __, __, __; Set bonus
     -- legs=gear.Vanya_C_legs,     -- __, __, 12
-    -- feet="Azimuth Gaiters +1",  -- __, __, __; Set bonus
     -- neck="Bagua Charm +2",      -- __, __, __; Luopan Duration +25%
     -- ear1="Mendicant's Earring", -- __, __,  2
     -- ear2="Calamitous Earring",  -- __, __,  4
@@ -271,13 +267,14 @@ function init_gear_sets()
     -- head=gear.Vanya_C_head,        -- __, __, 12, __
     -- legs="Bagua Pants +3",         -- __, __, __, 21
     -- neck="Reti Pendant",           -- __,  5,  4, __
-    -- 10 Geomancy, 56 geo skill, 62 Conserve MP, 61 Indi Duration
+    -- 10 Geomancy, 46 geo skill, 62 Conserve MP, 61 Indi Duration
   })
 
   sets.midcast.Cure = {
     main="Daybreak",
     sub=empty,
-    legs="Geomancy Pants",
+    legs="Geomancy Pants +1",
+    -- sub="Ammurapi Shield",
     -- range=empty,
     -- ammo="Esper Stone +1",
     -- head=gear.Vanya_B_head,
@@ -371,12 +368,23 @@ function init_gear_sets()
   }
 
   sets.midcast.Drain = {
+    range=empty,
     ammo="Pemphredo Tathlum",
     head="Pixie Hairpin +1",
+    body=gear.Nyame_B_body,
+    hands=gear.Nyame_B_hands,
+    legs=gear.Nyame_B_legs,
+    feet=gear.Nyame_B_feet,
     neck="Erra Pendant",
-    ear2="Malignance Earring",
+    ear1="Malignance Earring",
+    ear2="Digni. Earring",
     ring1="Archon Ring",
     waist="Fucho-no-obi",
+    -- main="Rubicundicity",
+    -- sub="Ammurapi Shield",
+    -- head="Bagua Galero +3",
+    -- ring2="Evanescence Ring",
+    -- back=gear.GEO_Nuke_Cape,
   }
 
   sets.midcast.Aspir = sets.midcast.Drain
@@ -409,6 +417,7 @@ function init_gear_sets()
     neck="Erra Pendant",
     ear2="Malignance Earring",
     ring1="Metamor. Ring +1",
+    -- sub="Ammurapi Shield",
 		-- body="Twilight Cloak",
     -- hands="Regal Cuffs",
   }
@@ -420,6 +429,7 @@ function init_gear_sets()
     neck="Erra Pendant",
     ear2="Malignance Earring",
     ring1="Metamor. Ring +1",
+    -- sub="Ammurapi Shield",
   }
 
 	sets.midcast.Dispelga = set_combine(sets.midcast.Dispel, {
@@ -435,9 +445,10 @@ function init_gear_sets()
     ammo=empty,
     head=empty,
     body="Cohort Cloak +1",
-    hands="Geomancy Mitaines",
+    hands="Geomancy Mitaines +1",
     ear2="Malignance Earring",
     ring1="Metamorph Ring +1",
+    -- sub="Ammurapi Shield",
     -- hands="Geomancy Mitaines +3",
     -- legs="Geomancy Pants +3",
     -- feet="Geomancy Sandals +3",
@@ -548,17 +559,7 @@ function init_gear_sets()
     ring2="Archon Ring",
     back="Moonlight Cape",
     waist="Carrier's Sash",
-    -- sub="Umbra Strap",
-		-- head="Hagondes Hat +1",
-		-- body="Mallquis Saio +2",
-    -- hands="Hagondes Cuffs +1",
-    -- legs="Hagondes Pants +1",
-    -- feet="Azimuth Gaiters +1",
-    -- ear1="Etiolation Earring",
-    -- ear2="Handler's Earring +1",
-    -- ring2="Dark Ring",
-		-- back="Umbra Cape",
-    -- waist="Flax Sash",
+    -- sub="Khonsu",
   }
 	sets.defense.MDT = sets.defense.PDT
 
@@ -570,6 +571,8 @@ function init_gear_sets()
   sets.passive_refresh = {
 		head="Befouled Crown",
 		body="Jhakri Robe +2",
+    -- main="Mpaca's Staff", --2
+    -- sub="Oneiros Grip", --1; when mp<70%
     -- neck="Chrys. Torque"
     -- ring1="Stikini Ring",
     -- ring2="Stikini Ring",
@@ -586,33 +589,12 @@ function init_gear_sets()
 		body="Jhakri Robe +2",
     ear2="Ethereal Earring",
     ring1="Defending Ring",
+    -- sub="Khonsu",
   }
 
 	-- Idle sets
 
-	sets.idle = {
-    main="Malignance Pole",
-    sub=empty,
-    range="Dunna",
-    ammo=empty,
-    head="Azimuth Hood +1",
-    body="Jhakri Robe +2",
-    hands="Geomancy Mitaines +1",
-    legs=gear.Nyame_B_legs,
-    feet="Bagua Sandals +1",
-    neck="Loricate Torque +1",
-    ear1="Eabani Earring",
-    ear2="Infused Earring",
-    ring1="Chirich Ring +1",
-    ring2="Archon Ring",
-    back="Moonlight Cape",
-    waist="Carrier's Sash",
-    -- sub="Achaq Grip",
-    -- hands="Geomancy Mitaines +2",
-    -- legs="Assid. Pants +1",
-    -- ring2="Stikini Ring",
-    -- waist="Isa Belt",
-	}
+	sets.idle = sets.defense.PDT
 
   -- When you need to be safe (disables move speed gear)
 	sets.idle.HeavyDef = sets.defense.PDT
@@ -638,10 +620,6 @@ function init_gear_sets()
     waist="Carrier's Sash",
     -- main="Idris",
     -- sub="Genmei Shield",
-    -- range="Dunna",
-    -- ammo=empty,
-    -- head="Azimuth Hood +1",
-    -- body="Jhakri Robe +2",
     -- hands="Bagua Mitaines +3",
     -- legs="Telchine Braconi",
     -- feet="Bagua Sandals +3",
@@ -658,31 +636,28 @@ function init_gear_sets()
 	sets.idle.HeavyDef.Pet = {
     main="Malignance Pole",
     sub=empty,
-    range="Dunna",
-    ammo=empty,
-    head="Azimuth Hood +1",
+    range=empty,
+    ammo="Staunch Tathlum +1",
+    head="Agwu's Cap",
     body="Jhakri Robe +2",
-    hands="Geomancy Mitaines +1",
-    legs=gear.Nyame_B_legs,
-    feet="Bagua Sandals +1",
+    hands="Jhakri Cuffs +2",
+    legs="Jhakri Slops +2",
+    feet="Jhakri Pigaches +2",
     neck="Loricate Torque +1",
-    ear1="Eabani Earring",
-    ear2="Halasz Earring",
+    ear1="Lugalbanda Earring",
+    ear2="Eabani Earring",
     ring1="Defending Ring",
     ring2="Archon Ring",
     back="Moonlight Cape",
     waist="Carrier's Sash",
     -- main="Idris",
     -- sub="Genmei Shield",
-    -- range=empty,
-    -- ammo="Staunch Tathlum +1",
     -- head="Bagua Galero +3",
     -- body="Shamash Robe",
     -- hands="Geomancy Mitaines +3",
     -- legs="Agwu's Slops",
     -- feet="Bagua Sandals +3",
     -- neck="Bagua Charm +2",
-    -- ear1="Lugalbanda Earring",
     -- ear2="Etiolation Earring",
     -- back=gear.GEO_Idle_Cape,
     -- waist="Slipor Sash",
@@ -718,6 +693,7 @@ function init_gear_sets()
 		body="Jhakri Robe +2",
     ear1="Cessance Earring",
     ear2="Brutal Earring",
+    -- TODO: Needs work
   }
 
 

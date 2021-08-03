@@ -79,10 +79,10 @@ gear.Merl_MB_head = {} --MAB, M.Acc, 10 INT
 gear.Merl_MB_body = {} --MAB, M.Acc, 10 INT
 gear.Merl_MB_feet = {} --MAB, M.Acc, 10 INT
 
-gear.Merl_Aspir_feet = {} -- Macc, aspir potency
-
-gear.Merl_Refresh_hands = {}
-gear.Merl_Refresh_feet = {}
+gear.Merl_FC_head = {}
+gear.Merl_FC_body = {}
+gear.Merl_FC_hands = {}
+gear.Merl_FC_feet = {}
 
 -- Odyssean
 
