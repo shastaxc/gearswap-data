@@ -106,6 +106,7 @@ function job_setup()
   Haste = 0 -- Do not modify
   DW_needed = 0 -- Do not modify
   DW = false -- Do not modify
+  retry_filtered = nil
 
   elemental_ws = S{'Aeolian Edge'}
   tp_bonus_weapons = {
@@ -119,7 +120,6 @@ function job_setup()
   state.Buff['Trick Attack'] = buffactive['trick attack'] or false
   state.Buff['Feint'] = buffactive['feint'] or false
 
-  state.WeaponSet = M{['description']='Weapon Set', 'Normal', 'Acc', 'H2H', 'Fast/DI', 'Healing', 'Cleaving'}
   state.MainStep = M{['description']='Main Step', 'Box Step', 'Quickstep', 'Feather Step', 'Stutter Step'}
   state.AltStep = M{['description']='Alt Step', 'Quickstep', 'Feather Step', 'Stutter Step', 'Box Step'}
   state.UseAltStep = M(false, 'Use Alt Step')
@@ -133,7 +133,7 @@ function job_setup()
   state.CP = M(false, "Capacity Points Mode")
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
-  state.HybridMode:options('Normal', 'LightDef')
+  state.HybridMode:options('LightDef', 'Normal')
   state.IdleMode:options('Normal', 'LightDef')
 
   state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger',
@@ -173,6 +173,12 @@ end
 -- Executes on first load, main job change, **and sub job change**
 function user_setup()
   include('Global-Binds.lua') -- Additional local binds
+
+  if S{'PLD','WAR','MNK','BLM','DRG','SMN'}:contains(player.sub_job) then
+    state.WeaponSet = M{['description']='Weapon Set', 'Normal', 'Acc', 'H2H', 'Fast/DI', 'Staff', 'Healing', 'Cleaving'}
+  else
+    state.WeaponSet = M{['description']='Weapon Set', 'Normal', 'Acc', 'H2H', 'Fast/DI', 'Healing', 'Cleaving'}
+  end
 
   if player.sub_job == 'WAR' then
     send_command('bind !w input /ja "Defender" <me>')
@@ -292,8 +298,7 @@ function init_gear_sets()
   -- Waltz effects received
   sets.precast.WaltzSelf = set_combine(sets.precast.Waltz, {
     body="Maxixi Casaque +3",       -- __/__ | 19(8), 33, 34 <-2>
-    ring1="Asklepian Ring",         -- __/__ | __(3), __, __ <__>; Minor upgrade
-    -- 30/22 | 53 Potency (11 Self Potency), 185 CHR, 119 VIT <-4 Delay>
+    -- 30/22 | 53 Potency (8 Self Potency), 201 CHR, 119 VIT <-4 Delay>
   })
 
   -- Waltz delay
@@ -327,7 +332,7 @@ function init_gear_sets()
     back=gear.DNC_TP_DW_Cape,     -- 10/__, 20
     waist="Engraved Belt",        -- __/__, 10; Elemental resist
     -- Maxixi set bonus           -- __/__, 15
-  } -- 46/30, 431
+  } -- 46 PDT /30 MDT, 431 Acc
 
   sets.precast.Step['Feather Step'] = set_combine(sets.precast.Step, {
     feet="Maculele Toe Shoes +1",
@@ -601,6 +606,33 @@ function init_gear_sets()
   -- Required to prevent extra gear from equipping during Climactic; AE cannot crit
   sets.precast.WS["Aeolian Edge"].Climactic = {}
 
+  sets.precast.WS['Shell Crusher'] = {
+    ammo="Hydrocera",           -- __,  6
+    head=gear.Nyame_B_head,     -- 40, 40
+    body=gear.Nyame_B_body,     -- 40, 40
+    hands=gear.Nyame_B_hands,   -- 40, 40
+    legs=gear.Nyame_B_legs,     -- 40, 40
+    feet=gear.Nyame_B_feet,     -- 40, 40
+    neck="Carnal Torque",       -- Needed to unlock WS
+    ear1="Dignitary's Earring", -- 10, 10
+    ear2="Moonshade Earring",   -- __, __
+    ring1="Etana Ring",         -- 10, 10
+    ring2="Metamorph Ring +1",  -- __, 16
+    back=gear.DNC_WS1_Cape,     -- 20, __
+    waist="Luminary Sash",      -- __, 10
+    -- ear2="Crepuscular Earring", -- 10, 10
+  } -- Acc, MAcc
+  sets.precast.WS['Shell Crusher'].MaxTP = set_combine(sets.precast.WS['Shell Crusher'], {
+    ear2="Telos Earring",
+    -- ear2="Crepuscular Earring",
+  })
+  sets.precast.WS['Shell Crusher'].LowAcc = sets.precast.WS['Shell Crusher']
+  sets.precast.WS['Shell Crusher'].LowAccMaxTP = sets.precast.WS['Shell Crusher'].MaxTP
+  sets.precast.WS['Shell Crusher'].MidAcc = sets.precast.WS['Shell Crusher']
+  sets.precast.WS['Shell Crusher'].MidAccMaxTP = sets.precast.WS['Shell Crusher'].MaxTP
+  sets.precast.WS['Shell Crusher'].HighAcc = sets.precast.WS['Shell Crusher']
+  sets.precast.WS['Shell Crusher'].HighAccMaxTP = sets.precast.WS['Shell Crusher'].MaxTP
+
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Midcast Sets ------------------------------------------
@@ -697,8 +729,8 @@ function init_gear_sets()
     neck="Loricate Torque +1",  --  6/ 6, ___
     ring1="Moonlight Ring",     --  5/ 5, ___
     ring2="Gelatinous Ring +1", --  7/-1, ___
-    -- back="Moonlight Cape",      --  6/ 6, ___
-  }) --61 PDT/55 MDT, 791 MEVA
+    back="Moonlight Cape",      --  6/ 6, ___
+  })
 
 
   ------------------------------------------------------------------------------------------------
@@ -1038,6 +1070,7 @@ function init_gear_sets()
   sets.WeaponSet['Acc'] = {main="Twashtar", sub="Taming Sari"}
   sets.WeaponSet['H2H'] = {main="Kaja Knuckles", sub=empty}
   sets.WeaponSet['Fast/DI'] = {main="Twashtar", sub="Voluspa Knife"}
+  sets.WeaponSet['Staff'] = {main="Gozuki Mezuki", sub="Tzacab Grip"}
   sets.WeaponSet['Healing'] = {main="Enchufla", sub="Blurred Knife +1"}
   sets.WeaponSet['Cleaving'] = {main="Kaja Knife", sub="Levante Dagger"}
 end
@@ -1047,11 +1080,30 @@ end
 -- Job-specific hooks for standard casting events.
 -------------------------------------------------------------------------------------------------------------------
 
+function filtered_action(spell)
+  if spell.english == "Shell Crusher" then
+    if player.equipment.neck ~= "Carnal Torque" then
+      if not retry_filtered then retry_filtered = {} end
+      if not retry_filtered or (retry_filtered and retry_filtered.count and retry_filtered.count < 3) then
+        print('count: '..tostring(retry_filtered and retry_filtered.count))
+        equip({neck="Carnal Torque"})
+        send_command('gs c update') -- Call the update command to force gear change
+        retry_filtered.action = spell.name
+        retry_filtered.count = (retry_filtered.count and retry_filtered.count + 1) or 1
+        send_command('input /ws "Shell Crusher" <t>')
+      end
+    end
+  end
+end
+
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
 function job_precast(spell, action, spellMap, eventArgs)
   silibs.precast_hook(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
+  if retry_filtered and spell.name == retry_filtered.action then
+    retry_filtered.action = nil
+  end
 
   if spellMap == 'Utsusemi' then
     if buffactive['Copy Image (3)'] or buffactive['Copy Image (4+)'] then
