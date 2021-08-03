@@ -654,7 +654,6 @@ function init_gear_sets()
   })
 
   sets.midcast.CureSelf = set_combine(sets.midcast.Cure, {
-    ring2="Asklepian Ring", -- (3)
     waist="Gishdubar Sash", -- (10)
     -- neck="Phalaina Locket", -- 4(4)
   })

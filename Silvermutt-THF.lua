@@ -256,7 +256,6 @@ function init_gear_sets()
     ammo="Yamarang",
     body="Passion Jacket",
     legs="Dashing Subligar",
-    ring1="Asklepian Ring",
     waist="Gishdubar Sash",
   }
 
