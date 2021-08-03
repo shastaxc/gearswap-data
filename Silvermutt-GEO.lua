@@ -20,7 +20,7 @@ end
 function job_setup()
   silibs.enable_cancel_on_blocking_status()
   silibs.enable_weapon_rearm()
-  silibs.enable_auto_lockstyle(1)
+  silibs.enable_auto_lockstyle(10)
   silibs.enable_premade_commands()
   
   elemental_ws = S{"Black Halo", "Cataclysm"}
@@ -134,23 +134,21 @@ function init_gear_sets()
 
 	-- Precast sets to enhance JAs
 	sets.precast.JA.Bolster = {
-    body="Bagua Tunic",
-    -- body="Bagua Tunic +1",
+    body="Bagua Tunic +1",
   }
 	sets.precast.JA['Life Cycle'] = {
-    body="Geomancy Tunic",
-    -- body="Geomancy Tunic +1",
+    body="Geomancy Tunic +1",
     -- back=gear.GEO_Idle_Cape,
   }
 	sets.precast.JA['Radial Arcana'] = {
-    -- feet="Bagua Sandals +1",
+    feet="Bagua Sandals +1",
   }
 	sets.precast.JA['Mending Halation'] = {
-    -- legs="Bagua Pants +1",
+    legs="Bagua Pants +1",
   }
 	sets.precast.JA['Full Circle'] = {
-    -- head="Azimuth Hood +1",
-    -- hands="Bagua Mitaines +1",
+    head="Azimuth Hood +1",
+    hands="Bagua Mitaines +1",
   }
 	
 	-- Indi Duration in slots that would normally have skill here to make entrust more efficient.
@@ -164,7 +162,7 @@ function init_gear_sets()
     range="Dunna",
     ammo=empty,
     head="Agwu's Cap",
-    legs="Geomancy Pants",
+    legs="Geomancy Pants +1",
     ear1="Loquac. Earring",
     ear2="Malignance Earring",
     ring1="Kishar Ring",
@@ -187,8 +185,8 @@ function init_gear_sets()
   })
 	
   sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, {
+    hands="Bagua Mitaines +1",
     ear2="Malignance Earring",
-    -- hands="Bagua Mitaines +1",
   })
 
 	sets.precast.FC.Cure = set_combine(sets.precast.FC, {
@@ -225,13 +223,12 @@ function init_gear_sets()
   sets.precast.FC.Stoneskin = set_combine(sets.precast.FC['Enhancing Magic'], {})
 
 	sets.precast.FC.Impact = {
-    legs="Geomancy Pants",
+    legs="Geomancy Pants +1",
     ear2="Malignance Earring",
     ring1="Kishar Ring",
 		-- head=empty,
 		-- body="Twilight Cloak",
     -- hands="Volte Gloves",
-    -- legs="Geomancy Pants +1",
     -- feet="Regal Pumps +1",
     -- neck="Voltsurge Torque",
     -- ear1="Enchntr. Earring +1",
@@ -256,7 +253,7 @@ function init_gear_sets()
   sets.midcast.FastRecast = {
     range="Dunna",
     ammo=empty,
-    legs="Geomancy Pants",
+    legs="Geomancy Pants +1",
     ear2="Malignance Earring",
     ring1="Kishar Ring",
     ring2="Prolix Ring",
@@ -265,7 +262,6 @@ function init_gear_sets()
 		-- head="Amalric Coif +1",
 		-- body="Zendik Robe",
     -- hands="Volte Gloves",
-    -- legs="Geomancy Pants +1",
     -- feet="Regal Pumps +1",
     -- neck="Voltsurge Torque",
     -- ear1="Enchntr. Earring +1",
@@ -276,19 +272,18 @@ function init_gear_sets()
 	sets.midcast.Geomancy = {
     range="Dunna",
     ammo=empty,
-    body="Geomancy Tunic",
-    hands="Geomancy Mitaines",
-    legs="Geomancy Pants",
+    head="Azimuth Hood +1",
+    body="Geomancy Tunic +1",
+    hands="Geomancy Mitaines +1",
+    legs="Geomancy Pants +1",
+    feet="Bagua Sandals +1",
     waist="Gishdubar Sash",
     ear1="Eabani Earring",
     ear2="Halasz Earring",
     ring1="Defending Ring",
     -- main="Solstice",
     -- sub="Genmei Shield",
-    -- head="Azimuth Hood +1",
-    -- body="Geomancy Tunic +1",
     -- hands="Geomancy Mitaines +2",
-    -- feet="Bagua Sandals +1",
     -- neck="Bagua Charm +2",
     -- ring2="Stikini Ring",
     -- back="Lifestream Cape",
@@ -296,7 +291,7 @@ function init_gear_sets()
 
 	--Extra Indi duration as long as you can keep your 900 skill cap.
 	sets.midcast.Geomancy.Indi = set_combine(sets.midcast.Geomancy, {
-    -- legs="Bagua Pants +1",
+    legs="Bagua Pants +1",
     -- feet="Azimuth Gaiters +1",
     -- back=gear.GEO_Idle_Cape,
   })
@@ -304,13 +299,12 @@ function init_gear_sets()
   sets.midcast.Cure = {
     main="Daybreak",
     sub=empty,
-    legs="Geomancy Pants",
+    legs="Geomancy Pants +1",
     -- sub="Sors Shield",
     -- ammo="Hasty Pinion +1",
     -- head="Vanya Hood",
     -- body="Zendik Robe",
     -- hands="Weath. Cuffs +1",
-    -- legs="Geomancy Pants +1",
     -- feet="Vanya Clogs",
     -- neck="Nodens Gorget",
     -- ear1="Gifted Earring",
@@ -324,14 +318,13 @@ function init_gear_sets()
   sets.midcast.LightWeatherCure = {
     main="Daybreak",
     sub=empty,
-    legs="Geomancy Pants",
+    legs="Geomancy Pants +1",
     waist="Hachirin-no-Obi",
     -- sub="Sors Shield",
     -- ammo="Hasty Pinion +1",
     -- head="Amalric Coif +1",
     -- body="Vrikodara Jupon",
     -- hands="Telchine Gloves",
-    -- legs="Geomancy Pants +1",
     -- feet="Vanya Clogs",
     -- neck="Phalaina Locket",
     -- ear1="Gifted Earring",
@@ -345,7 +338,7 @@ function init_gear_sets()
   sets.midcast.LightDayCure = {
     main="Daybreak",
     sub=empty,
-    legs="Geomancy Pants",
+    legs="Geomancy Pants +1",
     ring2="Lebeche Ring",
     waist="Hachirin-no-Obi",
     -- sub="Sors Shield",
@@ -353,7 +346,6 @@ function init_gear_sets()
     -- head="Amalric Coif +1",
     -- body="Zendik Robe",
     -- hands="Telchine Gloves",
-    -- legs="Geomancy Pants +1",
     -- feet="Vanya Clogs",
     -- neck="Incanter's Torque",
     -- ear1="Gifted Earring",
@@ -597,7 +589,7 @@ function init_gear_sets()
     range=empty,
     ammo="Hydrocera",
     body="Jhakri Robe +2",
-    hands="Geomancy Mitaines",
+    hands="Geomancy Mitaines +1",
     ear1="Loquac. Earring",
     ear2="Malignance Earring",
     ring1="Metamorph Ring +1",
@@ -768,11 +760,11 @@ function init_gear_sets()
     sub=empty,
     range="Dunna",
     ammo=empty,
-    head="Befouled Crown",
+    head="Azimuth Hood +1",
     body="Jhakri Robe +2",
-    hands="Geomancy Mitaines",
+    hands="Geomancy Mitaines +1",
     legs=gear.Nyame_B_legs,
-    feet=gear.Nyame_B_feet,
+    feet="Bagua Sandals +1",
     neck="Loricate Torque +1",
     ear1="Eabani Earring",
     ear2="Infused Earring",
@@ -781,10 +773,8 @@ function init_gear_sets()
     back="Moonlight Cape",
     waist="Carrier's Sash",
     -- sub="Achaq Grip",
-    -- head="Azimuth Hood +1",
     -- hands="Geomancy Mitaines +2",
     -- legs="Assid. Pants +1",
-    -- feet="Bagua Sandals +1",
     -- ring2="Stikini Ring",
     -- waist="Isa Belt",
 	}
@@ -822,11 +812,11 @@ function init_gear_sets()
     sub=empty,
     range="Dunna",
     ammo=empty,
-    head="Befouled Crown",
+    head="Azimuth Hood +1",
     body="Jhakri Robe +2",
-    hands="Geomancy Mitaines",
+    hands="Geomancy Mitaines +1",
     legs=gear.Nyame_B_legs,
-    feet=gear.Nyame_B_feet,
+    feet="Bagua Sandals +1",
     neck="Loricate Torque +1",
     ear1="Eabani Earring",
     ear2="Halasz Earring",
@@ -836,10 +826,8 @@ function init_gear_sets()
     waist="Carrier's Sash",
     -- main="Solstice",
     -- sub="Genmei Shield",
-		-- head="Azimuth Hood +1",
     -- hands="Geomancy Mitaines +2",
     -- legs="Assid. Pants +1",
-    -- feet="Bagua Sandals +1",
     -- neck="Bagua Charm +2",
     -- ear1="Handler's Earring",
     -- ear2="Handler's Earring +1",
@@ -853,11 +841,11 @@ function init_gear_sets()
     sub=empty,
     range="Dunna",
     ammo=empty,
-    head="Befouled Crown",
+    head="Azimuth Hood +1",
     body="Jhakri Robe +2",
-    hands="Geomancy Mitaines",
+    hands="Geomancy Mitaines +1",
     legs=gear.Nyame_B_legs,
-    feet=gear.Nyame_B_feet,
+    feet="Bagua Sandals +1",
     neck="Loricate Torque +1",
     ear1="Eabani Earring",
     ear2="Halasz Earring",
@@ -866,10 +854,8 @@ function init_gear_sets()
     back="Moonlight Cape",
     waist="Carrier's Sash",
     -- sub="Umbra Strap",
-		-- head="Azimuth Hood +1",
     -- hands="Geomancy Mitaines +2",
     -- legs="Hagondes Pants +1",
-    -- feet="Bagua Sandals +1",
     -- ear1="Handler's Earring",
     -- ear2="Handler's Earring +1",
     -- ring2="Dark Ring",
@@ -931,7 +917,6 @@ function init_gear_sets()
     waist="Carrier's Sash",
     -- sub="Umbra Strap",
 		-- head="Hagondes Hat +1",
-		-- body="Mallquis Saio +2",
     -- hands="Hagondes Cuffs +1",
     -- legs="Hagondes Pants +1",
     -- feet="Azimuth Gaiters +1",
@@ -947,7 +932,7 @@ function init_gear_sets()
     sub=empty,
     range="Dunna",
     ammo=empty,
-    head=gear.Nyame_B_head,
+    head="Azimuth Hood +1",
     body="Jhakri Robe +2",
     hands=gear.Nyame_B_hands,
     legs=gear.Nyame_B_legs,
@@ -960,8 +945,6 @@ function init_gear_sets()
     back="Moonlight Cape",
     waist="Carrier's Sash",
     -- sub="Umbra Strap",
-		-- head="Azimuth Hood +1",
-		-- body="Mallquis Saio +2",
     -- hands="Hagondes Cuffs +1",
     -- legs="Hagondes Pants +1",
     -- feet="Azimuth Gaiters +1",
@@ -977,7 +960,7 @@ function init_gear_sets()
     sub=empty,
     range=empty,
     ammo="Staunch Tathlum +1",
-    head=gear.Nyame_B_head,
+    head="Azimuth Hood +1",
     body="Jhakri Robe +2",
     hands=gear.Nyame_B_hands,
     legs=gear.Nyame_B_legs,
@@ -990,8 +973,6 @@ function init_gear_sets()
     back="Moonlight Cape",
     waist="Carrier's Sash",
     -- sub="Enki Strap",
-    -- head="Azimuth Hood +1",
-		-- body=gear.Merl_MB_body,
     -- hands="Telchine Gloves",
     -- legs="Telchine Braconi",
     -- feet="Azimuth Gaiters +1",
