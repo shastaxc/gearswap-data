@@ -164,6 +164,7 @@ gear.Samnuha_legs = { name="Samnuha Tights", augments={'STR+10','DEX+10','"Dbl.A
 gear.COR_Adoulin_Cape = {}
 gear.RUN_Adoulin_Cape = { name="Evasionist's Cape", augments={'Enmity+4','"Embolden"+15','"Dbl.Atk."+4',}}
 gear.DNC_Adoulin_Cape = { name="Toetapper Mantle", augments={'"Store TP"+1','"Dual Wield"+2','"Rev. Flourish"+28',}}
+gear.GEO_Adoulin_Cape = {} -- 10 Geomancy skill, 20 Indi Duration
 
 
 ----------------------------------------------------------------------
@@ -189,6 +190,7 @@ gear.DNC_WS1_Cape = { name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 At
 
 gear.GEO_Nuke_Cape = {} -- INT, MAB
 gear.GEO_Idle_Cape = {} -- HP, Eva, Pet Regen
+gear.GEO_FC_Cape = {} -- INT, Macc, FC
 
 gear.MNK_DEX_DA_Cape = { name="Segomo's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
 gear.MNK_STR_DA_Cape = { name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Mag. Evasion+15',}}
