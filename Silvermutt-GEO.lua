@@ -239,11 +239,11 @@ function init_gear_sets()
 	sets.midcast.Geomancy = {
     range="Dunna",                 -- __, 18, __
     ammo=empty,
-    head="Azimuth Hood +1",     -- __, 15, __
+    head="Azimuth Hood +1",        -- __, 15, __
     body="Geomancy Tunic +1",
-    hands="Azimuth Gloves +1",  -- __, __, __; Set bonus
+    hands="Azimuth Gloves +1",     -- __, __, __; Set bonus
     legs="Geomancy Pants +1",
-    feet="Azimuth Gaiters +1",  -- __, __, __; Set bonus
+    feet="Azimuth Gaiters +1",     -- __, __, __; Set bonus
     waist="Gishdubar Sash",
     ear1="Eabani Earring",
     ear2="Halasz Earring",
@@ -263,7 +263,7 @@ function init_gear_sets()
 	}-- ?? Geomancy, ?? geo skill, ?? Conserve MP
 
 	--Extra Indi duration as long as you can keep your 900 skill cap.
-	sets.midcast.Geomancy.Indi = set_combine(sets.midcast.Geomancy,
+	sets.midcast.Geomancy.Indi = set_combine(sets.midcast.Geomancy,{
     -- head=gear.Vanya_C_head,        -- __, __, 12, __
     -- legs="Bagua Pants +3",         -- __, __, __, 21
     -- neck="Reti Pendant",           -- __,  5,  4, __
@@ -579,7 +579,7 @@ function init_gear_sets()
   }
 	sets.passive_refresh_sub50 = set_combine(sets.passive_refresh, {
     waist="Fucho-no-obi",
-  }
+  })
 
 	-- Resting sets
 	sets.resting = {
@@ -814,11 +814,7 @@ function job_precast(spell, action, spellMap, eventArgs)
 		windower.chat.input:schedule(1.3,'/ma "'..spell.english..'" '..spell.target.raw..'')
 	end
 
-	if spell.action_type == 'Magic' then
-    if state.CastingMode.value == 'Proc' then
-        classes.CustomClass = 'Proc'
-    end
-	elseif buffactive.Bolster and (spell.english == 'Blaze of Glory' or spell.english == 'Ecliptic Attrition') then
+	if spell.action_type ~= 'Magic' and buffactive.Bolster and (spell.english == 'Blaze of Glory' or spell.english == 'Ecliptic Attrition') then
 		eventArgs.cancel = true
 		add_to_chat(123,'Abort: Bolster maxes the strength of bubbles.')
   end
@@ -1100,6 +1096,35 @@ function user_customize_defense_set(defenseSet)
   return silibs.customize_defense_set(defenseSet)
 end
 
+-- Function to display the current relevant user state when doing an update.
+-- Return true if display was handled, and you don't want the default info shown.
+function display_current_job_state(eventArgs)
+
+  local c_msg = state.CastingMode.value
+
+  local d_msg = 'None'
+  if state.DefenseMode.value ~= 'None' then
+    d_msg = state.DefenseMode.value .. state[state.DefenseMode.value .. 'DefenseMode'].value
+  end
+
+  local i_msg = state.IdleMode.value
+  if classes.CustomIdleGroups:contains('Pet') then
+    i_msg = i_msg .. '/Pet'
+  end
+
+  local msg = ''
+  if state.Kiting.value then
+    msg = msg .. ' Kiting |'
+  end
+
+  add_to_chat(060, 'Magic: ' ..string.char(31,001)..c_msg.. string.char(31,002)..  ' |'
+      ..string.char(31,004).. ' Defense: ' ..string.char(31,001)..d_msg.. string.char(31,002)..  ' |'
+      ..string.char(31,008).. ' Idle: ' ..string.char(31,001)..i_msg.. string.char(31,002)..  ' |'
+      ..string.char(31,002)..msg)
+
+  eventArgs.handled = true
+end
+
 -- Called by the 'update' self-command, for common needs.
 -- Set eventArgs.handled to true if we don't want automatic equipping of gear.
 function job_handle_equipping_gear(playerStatus, eventArgs)
@@ -1119,6 +1144,10 @@ function update_idle_groups(cmdParams, eventArgs)
 
   classes.CustomIdleGroups:clear()
   if player.status == 'Idle' then
+		if pet.isvalid and pet.distance:sqrt() < 50 then
+      classes.CustomIdleGroups:append('Pet')
+    end
+    
     if mp_jobs:contains(player.main_job) or mp_jobs:contains(player.sub_job) then
       if player.mpp < 50 then
         classes.CustomIdleGroups:append('RefreshSub50')
@@ -1129,10 +1158,6 @@ function update_idle_groups(cmdParams, eventArgs)
 
     if world.zone == 'Eastern Adoulin' or world.zone == 'Western Adoulin' then
       classes.CustomIdleGroups:append('Adoulin')
-    end
-
-		if pet.isvalid and pet.distance:sqrt() < 50 then
-      classes.CustomIdleGroups:append('Pet')
     end
   end
 end
