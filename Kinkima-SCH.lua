@@ -1020,27 +1020,9 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   -- Passive sets are applied to idle in function `customize_idle_sets`
-  sets.passive_regen = {
-    main="Bolelabunga", --1
-    sub="Genmei Shield",
-    neck="Sanctity Necklace", --2
-    back=gear.SCH_Regen_Cape, --5
-    -- main="Malignance Pole", --0
-    -- sub="Mensch Strap +1", --3
-    -- feet="Coalrake Sabots", --1
-    -- neck="Bathy Choker +1", --1
-    -- ear1="Infused Earring", --1
-    -- ring1="Chirich Ring +1", --2
-    -- ring2="Paguroidea Ring", --2
-  }
-  sets.passive_regen.daytime = {
-    hands="Serpentes Cuffs", --1
-    ear2="Dawn Earring", --1
-    -- waist="Lycopodium Sash", --3
-  }
-  sets.passive_regen.nighttime = {
-    feet="Serpentes Sabots", --1
-  }
+  sets.passive_regen = {}
+  sets.passive_regen.daytime = {}
+  sets.passive_regen.nighttime = {}
   sets.passive_refresh = {
     main="Bolelabunga", --1
     sub="Genmei Shield",
