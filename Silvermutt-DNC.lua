@@ -1066,13 +1066,13 @@ function init_gear_sets()
   }
 
   sets.WeaponSet = {}
-  sets.WeaponSet['Normal'] = {main="Twashtar", sub="Centovente"}
+  sets.WeaponSet['Normal'] = {main="Twashtar", sub={name="Centovente", priority=1}}
   sets.WeaponSet['Acc'] = {main="Twashtar", sub="Taming Sari"}
   sets.WeaponSet['H2H'] = {main="Kaja Knuckles", sub=empty}
   sets.WeaponSet['Fast/DI'] = {main="Twashtar", sub="Voluspa Knife"}
   sets.WeaponSet['Staff'] = {main="Gozuki Mezuki", sub="Tzacab Grip"}
   sets.WeaponSet['Healing'] = {main="Enchufla", sub="Blurred Knife +1"}
-  sets.WeaponSet['Cleaving'] = {main="Kaja Knife", sub="Levante Dagger"}
+  sets.WeaponSet['Cleaving'] = {main="Kaja Knife", sub="Twashtar"}
 end
 
 

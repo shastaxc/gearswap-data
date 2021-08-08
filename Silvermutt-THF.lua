@@ -957,7 +957,7 @@ function init_gear_sets()
   sets.WeaponSet = {}
   sets.WeaponSet['WhiteGlass'] = {
     main="Twashtar",
-    sub="Centovente",
+    sub={name="Centovente", priority=1},
   }
   sets.WeaponSet['Normal'] = {
     main="Aeneas",
