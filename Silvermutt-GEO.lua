@@ -227,6 +227,32 @@ function init_gear_sets()
 	-- Default set for any weaponskill that isn't any more specifically defined
 	sets.precast.WS = {}
 
+  -- Cataclysm: 30% STR/30% INT, 2.75-5.0 fTP, 1 hit (aoe-magical)
+  -- Stack Dark MAB > MAB > M.Dmg > WSD
+  sets.precast.WS['Cataclysm'] = {
+    head="Pixie Hairpin +1",        -- 28, __, __, __
+    body=gear.Nyame_B_body,         -- __, 30, __, 10
+    hands="Jhakri Cuffs +2",        -- __, 40, __,  7
+    legs=gear.Nyame_B_legs,         -- __, 30, __,  9
+    feet=gear.Nyame_B_feet,         -- __, 30, __,  8
+    neck="Fotia Neck",              -- __, __, __, __; FTP bonus
+    ear1="Friomisi Earring",        -- __, 10, __, __
+    ear2="Moonshade Earring",       -- __, __, __, __; TP bonus
+    ring1="Archon Ring",            --  5, __, __, __
+    ring2="Shiva Ring +1",          -- __,  3, __, __
+    back="Argochampsa Mantle",      -- __, 12, __, __
+    waist="Fotia Belt",             -- __, __, __, __; FTP bonus
+    -- body="Agwu's Robe",          -- __, 55, 20, __
+    -- legs="Agwu's Slops",         -- __, 55, 20, __
+    -- feet="Agwu's Pigaches",      -- __, 55, 20, __
+    -- ear1="Regal Earring",        -- __,  7, __, __
+    -- ring2="Epaminondas's Ring",  -- __, __, __,  5
+    -- back=gear.GEO_Nuke_Cape,     -- __, 10, 20, __
+    -- waist="Skrymir Cord +1",     -- __,  7, 35, __
+  } -- 33 Dark MAB, 175 MAB, 0 M.Dmg, 34 WSD
+  sets.precast.WS['Cataclysm'].MaxTP = set_combine(sets.precast.WS['Cataclysm'], {
+    ear2="Novio Earring", --7
+  })
 
 	--------------------------------------
 	-- Midcast sets
@@ -544,7 +570,7 @@ function init_gear_sets()
 	-- Defense sets
 	sets.defense.PDT = {
     main="Malignance Pole",
-    sub=empty,
+    sub="Tzacab Grip",
     range="Dunna",
     ammo=empty,
     head="Befouled Crown",
@@ -603,7 +629,7 @@ function init_gear_sets()
   -- Maximize Pet Regen
 	sets.idle.Pet = {
     main="Malignance Pole",
-    sub=empty,
+    sub="Tzacab Grip",
     range="Dunna",
     ammo=empty,
     head="Azimuth Hood +1",
@@ -635,7 +661,7 @@ function init_gear_sets()
 	-- When Luopan is present, and you are expecting to take dmg
 	sets.idle.HeavyDef.Pet = {
     main="Malignance Pole",
-    sub=empty,
+    sub="Tzacab Grip",
     range=empty,
     ammo="Staunch Tathlum +1",
     head="Agwu's Cap",
@@ -689,11 +715,21 @@ function init_gear_sets()
 
 	-- Normal melee group
 	sets.engaged = {
-		head="Befouled Crown",
-		body="Jhakri Robe +2",
+    main="Malignance Pole",
+    sub="Tzacab Grip",
+		head="Agwu's Cap",
+		body=gear.Nyame_B_body,
+    hands=gear.Nyame_B_hands,
+    legs="Jhakri Slops +2",
+    feet=gear.Nyame_B_feet,
+    neck="Carnal Torque",
     ear1="Cessance Earring",
-    ear2="Brutal Earring",
-    -- TODO: Needs work
+    ear2="Telos Earring",
+    ring1="Chirich Ring +1",
+    ring2="Petrov Ring",
+    back="Moonlight Cape",
+    waist="Olseni Belt",
+    -- hands="Gazu Bracelet +1",
   }
 
 
@@ -821,6 +857,28 @@ function job_precast(spell, action, spellMap, eventArgs)
 end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
+    -- Equip obi if weather/day matches for WS.
+  if (spell.type == 'WeaponSkill' and elemental_ws:contains(spell.english)) or spell.skill == 'Elemental Magic' then
+    -- Matching double weather (w/o day conflict).
+    if spell.element == world.weather_element and (get_weather_intensity() == 2 and spell.element ~= elements.weak_to[world.day_element]) then
+      equip(sets.Special.ElementalObi)
+    -- Target distance under 1.7 yalms.
+    elseif spell.target.distance < (1.7 + spell.target.model_size) then
+      equip(sets.Special.ElementalObi)
+      -- equip({waist="Orpheus's Sash"})
+    -- Matching day and weather.
+    elseif spell.element == world.day_element and spell.element == world.weather_element then
+      equip(sets.Special.ElementalObi)
+    -- Target distance under 8 yalms.
+    elseif spell.target.distance < (8 + spell.target.model_size) then
+      equip(sets.Special.ElementalObi)
+      -- equip({waist="Orpheus's Sash"})
+    -- Match day or weather without conflict.
+    elseif (spell.element == world.day_element and spell.element ~= elements.weak_to[world.weather_element]) or (spell.element == world.weather_element and spell.element ~= elements.weak_to[world.day_element]) then
+      equip(sets.Special.ElementalObi)
+    end
+  end
+
   -- If slot is locked, keep current equipment on
   if locked_neck then equip({ neck=player.equipment.neck }) end
   if locked_ear1 then equip({ ear1=player.equipment.ear1 }) end
@@ -1196,6 +1254,16 @@ function job_self_command(cmdParams, eventArgs)
   if not midaction() then
     job_update()
   end
+end
+
+function get_custom_wsmode(spell, action, spellMap)
+  local wsmode = ''
+
+  if player.tp > 2900 then
+    wsmode = wsmode..'MaxTP'
+  end
+
+  return wsmode
 end
 
 -- Handling Elemental spells within Gearswap.
