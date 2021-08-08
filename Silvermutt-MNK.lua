@@ -689,27 +689,36 @@ function init_gear_sets()
   sets.MAB = {
     ammo="Pemphredo Tathlum", --4
     head=gear.Nyame_B_head, --30
-    body=gear.Nyame_B_body, --30
+    body=gear.Nyame_B_body,         -- __, 30, __, 10
     hands=gear.Nyame_B_hands, --30
-    legs=gear.Nyame_B_legs, --30
+    legs=gear.Nyame_B_legs,         -- __, 30, __,  9
     feet=gear.Herc_MAB_feet, --50
     neck="Baetyl Pendant", --13
-    ear1="Friomisi Earring", --10
+    ear1="Friomisi Earring",        -- __, 10, __, __
     ear2="Novio Earring", --7
-    ring1="Shiva Ring +1", --3
-    back="Argochampsa Mantle", --12
+    ring1="Shiva Ring +1",          -- __,  3, __, __
+    back="Argochampsa Mantle",      -- __, 12, __, __
     waist="Eschan Stone", --7
     -- back=gear.MNK_MAB_Cape, --10
-    -- waist="Skrymir Cord +1", --7
+    -- waist="Skrymir Cord +1",     -- __,  7, 35, __
   }
 
   -- Cataclysm: 30% STR/30% INT, 2.75-5.0 fTP, 1 hit (aoe-magical)
   -- Stack MAB > WSD
   sets.precast.WS['Cataclysm'] = set_combine(sets.precast.WS, sets.MAB, {
-    head="Pixie Hairpin +1", -- 28 MAB
-    ammo="Knobkierrie", -- 6 WSD
-    ring2="Archon Ring", -- 5 MAB
-  }) -- STR 30% / INT 30% + MAB
+    ammo="Knobkierrie",             -- __, __, __,  6
+    head="Pixie Hairpin +1",        -- 28, __, __, __
+    neck="Fotia Neck",              -- __, __, __, __; FTP bonus
+    ear2="Moonshade Earring",       -- __, __, __, __; TP bonus
+    ring2="Archon Ring",            --  5, __, __, __
+    waist="Fotia Belt",             -- __, __, __, __; FTP bonus
+    -- ammo="Ghastly Tathlum +1",   -- __, __, 21, __
+    -- waist="Skrymir Cord +1",     -- __,  7, 35, __
+  })
+  sets.precast.WS['Cataclysm'].MaxTP = set_combine(sets.precast.WS['Cataclysm'], {
+    ear2="Novio Earring",           -- __,  7, __, __
+  })
+  
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Midcast Sets ------------------------------------------
