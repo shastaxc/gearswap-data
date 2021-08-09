@@ -263,30 +263,31 @@ function init_gear_sets()
   -- Master GEO with full merits = 850 geo skill base (cap at 900)
   -- Lv 99 GEO = 43 Conserve MP base (cap at 100)
 	sets.midcast.Geomancy = {
-    range="Dunna",                 -- __, 18, __
+    range="Dunna",                  -- __, 18, __
     ammo=empty,
-    head="Azimuth Hood +1",        -- __, 15, __
+    head="Azimuth Hood +1",         -- __, 15, __
     body="Geomancy Tunic +1",
-    hands="Azimuth Gloves +1",     -- __, __, __; Set bonus
+    hands="Azimuth Gloves +1",      -- __, __, __; Set bonus
     legs="Geomancy Pants +1",
-    feet="Azimuth Gaiters +1",     -- __, __, __; Set bonus
+    feet="Azimuth Gaiters +1",      -- __, __, __; Set bonus
+    neck="Bagua Charm +1",          --  6, __, __; Luopan Duration +20%
     waist="Gishdubar Sash",
     ear1="Eabani Earring",
     ear2="Halasz Earring",
-    ring1="Defending Ring",
-    -- main="Idris",               -- 10, __, __
-    -- sub="Genmei Shield",        -- __, __, __
-    -- body="Vedic Coat",          -- __, __, 10
-    -- legs=gear.Vanya_C_legs,     -- __, __, 12
-    -- neck="Bagua Charm +2",      -- __, __, __; Luopan Duration +25%
-    -- ear1="Mendicant's Earring", -- __, __,  2
-    -- ear2="Calamitous Earring",  -- __, __,  4
-    -- ring1="Stikini Ring +1",    -- __,  8, __
-    -- ring2="Mephitas's Ring +1", -- __, __, 15
-    -- back=gear.GEO_Adoulin_Cape, -- __, 15, __
-    -- waist="Shinjutsu-no-Obi +1",-- __, __, 15
+    ring1="Stikini Ring +1",        -- __,  8, __
+    ring2="Defending Ring",
+    back=gear.GEO_Adoulin_Cape,     -- __, 15, __
+    -- main="Idris",                -- 10, __, __
+    -- sub="Genmei Shield",         -- __, __, __
+    -- body="Vedic Coat",           -- __, __, 10
+    -- legs=gear.Vanya_C_legs,      -- __, __, 12
+    -- neck="Bagua Charm +2",       -- __, __, __; Luopan Duration +25%
+    -- ear1="Mendicant's Earring",  -- __, __,  2
+    -- ear2="Calamitous Earring",   -- __, __,  4
+    -- ring2="Mephitas's Ring +1",  -- __, __, 15
+    -- waist="Shinjutsu-no-Obi +1", -- __, __, 15
     -- 10 Geomancy, 56 geo skill, 58 Conserve MP
-	}-- ?? Geomancy, ?? geo skill, ?? Conserve MP
+	}-- 6 Geomancy, 906 geo skill, 0 Conserve MP
 
 	--Extra Indi duration as long as you can keep your 900 skill cap.
 	sets.midcast.Geomancy.Indi = set_combine(sets.midcast.Geomancy,{
@@ -300,6 +301,8 @@ function init_gear_sets()
     main="Daybreak",
     sub=empty,
     legs="Geomancy Pants +1",
+    ring1="Stikini Ring +1",
+    ring2="Lebeche Ring",
     -- sub="Ammurapi Shield",
     -- range=empty,
     -- ammo="Esper Stone +1",
@@ -311,8 +314,6 @@ function init_gear_sets()
     -- neck="Incanter's Torque",
     -- ear1="Mendicant's Earring",
     -- ear2="Meili Earring",
-    -- ring1="Stikini Ring +1",
-    -- ring2="Lebeche Ring",
     -- back="Tempered Cape +1",
     -- waist="Luminary Sash",
   }
@@ -321,6 +322,7 @@ function init_gear_sets()
     main="Daybreak",
     sub=empty,
     legs="Geomancy Pants +1",
+    ring1="Stikini Ring +1",
     waist="Hachirin-no-Obi",
     -- main="Chatoyant Staff",
     -- sub="Khonsu",
@@ -334,7 +336,6 @@ function init_gear_sets()
     -- neck="Nodens Gorget",
     -- ear1="Mendicant's Earring",
     -- ear2="Meili Earring",
-    -- ring1="Stikini Ring +1",
     -- ring2="Menelaus's Ring",
     -- back="Twilight Cape",
     -- waist="Hachirin-no-Obi",
@@ -418,8 +419,9 @@ function init_gear_sets()
 	sets.midcast.Stun = {
     range="Dunna",
     ammo=empty,
+    neck="Bagua Charm +1",
     ear2="Malignance Earring",
-    ring1="Metamor. Ring +1",
+    ring1="Stikini Ring +1",
     ring2="Weatherspoon Ring",
     -- main="Mpaca's Staff",
     -- sub="Khonsu",
@@ -472,15 +474,16 @@ function init_gear_sets()
     head=empty,
     body="Cohort Cloak +1",
     hands="Geomancy Mitaines +1",
+    neck="Bagua Charm +1",
     ear2="Malignance Earring",
-    ring1="Metamorph Ring +1",
+    ring1="Stikini Ring +1",
+    ring2="Metamorph Ring +1",
     -- sub="Ammurapi Shield",
     -- hands="Geomancy Mitaines +3",
     -- legs="Geomancy Pants +3",
     -- feet="Geomancy Sandals +3",
     -- neck="Bagua Charm +2",
     -- ear1="Regal Earring",
-    -- ring2="Stikini Ring +1",
     -- back="Aurist's Cape +1",
     -- waist="Acuity Belt +1",
   }
@@ -597,11 +600,12 @@ function init_gear_sets()
   sets.passive_refresh = {
 		head="Befouled Crown",
 		body="Jhakri Robe +2",
+    ring1="Stikini Ring +1",
     -- main="Mpaca's Staff", --2
     -- sub="Oneiros Grip", --1; when mp<70%
-    -- neck="Chrys. Torque"
-    -- ring1="Stikini Ring",
-    -- ring2="Stikini Ring",
+    -- hands="Bagua Mitaines +3", --2
+    -- neck="Chrys. Torque",
+    -- ring2="Stikini Ring +1",
   }
 	sets.passive_refresh_sub50 = set_combine(sets.passive_refresh, {
     waist="Fucho-no-obi",
@@ -628,66 +632,98 @@ function init_gear_sets()
 	-- When Luopan is present, but not expecting to take much dmg
   -- Maximize Pet Regen
 	sets.idle.Pet = {
-    main="Malignance Pole",
-    sub="Tzacab Grip",
-    range="Dunna",
-    ammo=empty,
-    head="Azimuth Hood +1",
-    body="Jhakri Robe +2",
-    hands="Geomancy Mitaines +1",
-    legs=gear.Nyame_B_legs,
-    feet="Bagua Sandals +1",
-    neck="Loricate Torque +1",
-    ear1="Eabani Earring",
-    ear2="Halasz Earring",
-    ring1="Defending Ring",
-    ring2="Archon Ring",
-    back="Moonlight Cape",
-    waist="Carrier's Sash",
-    -- main="Idris",
-    -- sub="Genmei Shield",
-    -- hands="Bagua Mitaines +3",
-    -- legs="Telchine Braconi",
-    -- feet="Bagua Sandals +3",
-    -- neck="Bagua Charm +2",
-    -- ear1="Rimeice Earring",
-    -- ear2="Hypaspist Earring",
-    -- ring1="Stikini Ring +1",
-    -- ring2="Stikini Ring +1",
-    -- back=gear.GEO_Idle_Cape,
-    -- waist="Isa Belt",
+    main="Malignance Pole",         -- 20/20, ___, __/__, __
+    sub="Tzacab Grip",              -- __/__, ___, __/__, __
+    range="Dunna",                  -- __/__, ___,  5/ 5, __
+    ammo=empty,                     -- __/__, ___, __/__, __
+    head="Azimuth Hood +1",         -- __/__,  86, __/__,  3
+    body="Jhakri Robe +2",          -- __/__,  53, __/__, __; Refresh+4
+    hands="Geomancy Mitaines +1",   --  1/__,  37, 11/11, __
+    legs=gear.Nyame_B_legs,         --  8/ 8, 150, __/__, __
+    feet="Bagua Sandals +1",        -- __/__, 107, __/__,  3
+    neck="Bagua Charm +1",          -- __/__, ___, __/__, __; Absorb Dmg+8
+    ear1="Eabani Earring",          -- __/__,   8, __/__, __
+    ear2="Halasz Earring",          -- __/__, ___, __/__, __
+    ring1="Stikini Ring +1",        -- __/__, ___, __/__, __; Refresh+1
+    ring2="Defending Ring",         -- 10/10, ___, __/__, __
+    back="Moonlight Cape",          --  6/ 6, ___, __/__, __
+    waist="Carrier's Sash",         -- __/__, ___, __/__, __; Ele resist+15
+    -- 45 PDT / 44 MDT, 441 Meva, 16 Pet PDT / 16 Pet MDT, 6 Pet Regen
+
+    -- main="Idris",                -- __/__, ___, 25/25, __
+    -- sub="Genmei Shield",         -- 10/__, ___, __/__, __
+    range="Dunna",                  -- __/__, ___,  5/ 5, __
+    ammo=empty,                     -- __/__, ___, __/__, __
+    head="Azimuth Hood +1",         -- __/__,  86, __/__,  3
+    body="Jhakri Robe +2",          -- __/__,  53, __/__, __; Refresh+4
+    -- hands="Bagua Mitaines +3",   -- __/__,  57, __/__, __; Refresh+2
+    -- legs="Telchine Braconi",     -- __/__, 132,  4/ 4,  3
+    -- feet="Bagua Sandals +3",     -- __/__, 127, __/__,  5
+    -- neck="Bagua Charm +2",       -- __/__, ___, __/__, __; Absorb Dmg+10
+    -- ear1="Rimeice Earring",      -- __/__, ___,  1/ 1, __
+    -- ear2="Hypaspist Earring",    -- -5/__, ___,  5/__,  1
+    ring1="Stikini Ring +1",        -- __/__, ___, __/__, __; Refresh+1
+    -- ring2="Stikini Ring +1",     -- __/__, ___, __/__, __; Refresh+1
+    -- back=gear.GEO_Idle_Cape,     -- __/__,  30, __/__, 15
+    -- waist="Isa Belt",            -- __/__, ___,  3/ 3,  1
+    -- 5 PDT / 0 MDT, 455 Meva, 43 Pet PDT / 38 Pet MDT, 28 Pet Regen
+    
+    -- main="Idris",                -- __/__, ___, 25/25, __
+    -- sub="Genmei Shield",         -- 10/__, ___, __/__, __
+    range="Dunna",                  -- __/__, ___,  5/ 5, __
+    ammo=empty,                     -- __/__, ___, __/__, __
+    -- head=gear.Nyame_B_head,      --  7/ 7, 123, __/__, __
+    -- body="Shamash Robe",         -- 10/__, 106, __/__, __; Resist Silence+90
+    -- hands="Geomancy Mitaines +3",--  3/__,  57, 13/13, __
+    -- legs=gear.Nyame_B_legs,      --  8/ 8, 150, __/__, __
+    -- feet="Bagua Sandals +3",     -- __/__, 127, __/__,  5
+    -- neck="Bagua Charm +2",       -- __/__, ___, __/__, __; Absorb Dmg+10
+    ear1="Lugalbanda Earring",      -- __/__,  10, __/__, __
+    -- ear2="Etiolation Earring",   -- __/ 3, ___, __/__, __; Resist Silence+15
+    ring1="Defending Ring",         -- 10/10, ___, __/__, __
+    ring2="Archon Ring",            -- __/__, ___, __/__, __; Annul severe m.dmg
+    -- back=gear.GEO_Idle_Cape,     -- __/__,  30, __/__, 15
+    waist="Carrier's Sash",         -- __/__, ___, __/__, __; Ele resist+15
+    -- 48 PDT / 31 MDT, 575 Meva, 43 Pet PDT / 43 Pet MDT, 20 Pet Regen
   }
 
 	-- When Luopan is present, and you are expecting to take dmg
 	sets.idle.HeavyDef.Pet = {
-    main="Malignance Pole",
-    sub="Tzacab Grip",
-    range=empty,
-    ammo="Staunch Tathlum +1",
-    head="Agwu's Cap",
-    body="Jhakri Robe +2",
-    hands="Jhakri Cuffs +2",
-    legs="Jhakri Slops +2",
-    feet="Jhakri Pigaches +2",
-    neck="Loricate Torque +1",
-    ear1="Lugalbanda Earring",
-    ear2="Eabani Earring",
-    ring1="Defending Ring",
-    ring2="Archon Ring",
-    back="Moonlight Cape",
-    waist="Carrier's Sash",
-    -- main="Idris",
-    -- sub="Genmei Shield",
-    -- head="Bagua Galero +3",
-    -- body="Shamash Robe",
-    -- hands="Geomancy Mitaines +3",
-    -- legs="Agwu's Slops",
-    -- feet="Bagua Sandals +3",
-    -- neck="Bagua Charm +2",
-    -- ear2="Etiolation Earring",
-    -- back=gear.GEO_Idle_Cape,
-    -- waist="Slipor Sash",
-  }
+    main="Malignance Pole",         -- 20/20, ___, __/__, __
+    sub="Tzacab Grip",              -- __/__, ___, __/__, __
+    range="Dunna",                  -- __/__, ___,  5/ 5, __
+    ammo=empty,                     -- __/__, ___, __/__, __
+    head="Agwu's Cap",              -- __/__, 107, __/__, __; Resist Silence+9
+    body=gear.Nyame_B_body,         --  9/ 9, 139, __/__, __
+    hands="Geomancy Mitaines +1",   --  1/__,  37, 11/11, __
+    legs=gear.Nyame_B_legs,         --  8/ 8, 150, __/__, __
+    feet="Bagua Sandals +1",        -- __/__, 107, __/__,  3
+    neck="Bagua Charm +1",          -- __/__, ___, __/__, __; Absorb Dmg+8
+    ear1="Lugalbanda Earring",      -- __/__,  10, __/__, __
+    ear2="Eabani Earring",          -- __/__,   8, __/__, __
+    ring1="Defending Ring",         -- 10/10, ___, __/__, __
+    ring2="Archon Ring",            -- __/__, ___, __/__, __; Annul severe m.dmg
+    back="Moonlight Cape",          --  6/ 6, ___, __/__, __
+    waist="Slipor Sash",            -- __/ 3, ___, __/__, __
+
+    -- main="Idris",                -- __/__, ___, 25/25, __
+    -- sub="Genmei Shield",         -- 10/__, ___, __/__, __
+    range="Dunna",                  -- __/__, ___,  5/ 5, __
+    ammo=empty,                     -- __/__, ___, __/__, __
+    -- head=gear.Nyame_B_head,      --  7/ 7, 123, __/__, __
+    -- body="Shamash Robe",         -- 10/__, 106, __/__, __; Resist Silence+90
+    -- hands="Geomancy Mitaines +3",--  3/__,  57, 13/13, __
+    -- legs=gear.Nyame_B_legs,      --  8/ 8, 150, __/__, __
+    -- feet="Bagua Sandals +3",     -- __/__, 127, __/__,  5
+    -- neck="Bagua Charm +2",       -- __/__, ___, __/__, __; Absorb Dmg+10
+    ear1="Odnowa Earring +1",       --  3/ 5, ___, __/__, __
+    -- ear2="Etiolation Earring",   -- __/ 3, ___, __/__, __; Resist Silence+15
+    ring1="Defending Ring",         -- 10/10, ___, __/__, __
+    ring2="Archon Ring",            -- __/__, ___, __/__, __; Annul severe m.dmg
+    -- back=gear.GEO_Idle_Cape,     -- __/__,  30, __/__, 15
+    waist="Carrier's Sash",         -- __/__, ___, __/__, __; Ele resist+15
+    -- 51 PDT / 33 MDT, 563 Meva, 43 Pet PDT / 43 Pet MDT, 20 Pet Regen
+  } -- 54 PDT / 56 MDT, 558 Meva, 16 Pet PDT / 16 Pet MDT, 3 Pet Regen
 
   -- Handle refresh
   sets.idle.Refresh = set_combine(sets.idle, sets.passive_refresh)
@@ -1401,25 +1437,16 @@ luopan:stroke_transparency(192)
 
 bt_color = '\\cs(230,118,116)'
 
-frame_count = 0
+geo_frame_count = 1
 windower.raw_register_event('prerender', function()
-  if frame_count%15 == 0 and windower.ffxi.get_info().logged_in then
-    send_command('gs c update')
-  end
-  frame_count = frame_count + 1
-
   if windower.ffxi.get_info().logged_in and windower.ffxi.get_player() then
     -- Use frame count to limit execution rate
     -- Every 15 frames (roughly 0.25-0.5 seconds depending on FPS)
-    if frame_count%15 == 0 then
+    if geo_frame_count%15 == 0 then
       send_command('gs c update')
-    end
-
-    -- Increment frame_count but prevent overflows
-    if frame_count == MAX_INT then
-      frame_count = 0
+      geo_frame_count = 1 -- Prevent memory overflow
     else
-      frame_count = frame_count + 1
+      geo_frame_count = geo_frame_count + 1
     end
   end
 
@@ -1578,4 +1605,12 @@ function get_item_table(item)
   else
     return nil
   end
+end
+
+function item_available(item)
+	if player.inventory[item] or player.wardrobe[item] or player.wardrobe2[item] or player.wardrobe3[item] or player.wardrobe4[item] then
+		return true
+	else
+		return false
+	end
 end

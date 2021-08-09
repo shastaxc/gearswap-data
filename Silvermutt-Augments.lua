@@ -162,9 +162,9 @@ gear.Samnuha_legs = { name="Samnuha Tights", augments={'STR+10','DEX+10','"Dbl.A
 ----------------------------------------------------------------------
 
 gear.COR_Adoulin_Cape = {}
-gear.RUN_Adoulin_Cape = { name="Evasionist's Cape", augments={'Enmity+4','"Embolden"+15','"Dbl.Atk."+4',}}
 gear.DNC_Adoulin_Cape = { name="Toetapper Mantle", augments={'"Store TP"+1','"Dual Wield"+2','"Rev. Flourish"+28',}}
-gear.GEO_Adoulin_Cape = {} -- 10 Geomancy skill, 20 Indi Duration
+gear.GEO_Adoulin_Cape = { name="Lifestream Cape", augments={'Geomancy Skill +10','Indi. eff. dur. +17','Pet: Damage taken -5%',}}
+gear.RUN_Adoulin_Cape = { name="Evasionist's Cape", augments={'Enmity+4','"Embolden"+15','"Dbl.Atk."+4',}}
 
 
 ----------------------------------------------------------------------
