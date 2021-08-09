@@ -1023,7 +1023,8 @@ function init_gear_sets()
     waist="Kentarch Belt +1",
   })
   sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
-    ear2="Odr Earring",
+    ear1="Dignitary's Earring",
+    ear2="Telos Earring",
     waist="Olseni Belt",
     -- head="Carmine Mask +1",
     -- ear1="Mache Earring +1",
@@ -1063,7 +1064,8 @@ function init_gear_sets()
     -- hands=gear.Adhemar_A_hands,
   })
   sets.engaged.DW.HighAcc = set_combine(sets.engaged.DW.MidAcc, {
-    ear2="Odr Earring",
+    ear1="Dignitary's Earring",
+    ear2="Telos Earring",
     -- head="Carmine Mask +1",
     -- ear1="Mache Earring +1",
     -- ring2="Chirich Ring +1",
@@ -1096,7 +1098,8 @@ function init_gear_sets()
     -- hands=gear.Adhemar_A_hands,
   })
   sets.engaged.DW.HighAcc.LowHaste = set_combine(sets.engaged.DW.MidAcc.LowHaste, {
-    ear2="Odr Earring",
+    ear1="Dignitary's Earring",
+    ear2="Telos Earring",
     -- head="Carmine Mask +1",
     -- ear1="Mache Earring +1",
     -- ring2="Chirich Ring +1",
@@ -1131,7 +1134,8 @@ function init_gear_sets()
   })
   sets.engaged.DW.HighAcc.MidHaste = set_combine(sets.engaged.DW.MidAcc.MidHaste, {
     legs=gear.Carmine_D_legs, --6
-    ear2="Odr Earring",
+    ear1="Dignitary's Earring",
+    ear2="Telos Earring",
     -- head="Carmine Mask +1",
     -- ear1="Mache Earring +1",
     -- ring2="Chirich Ring +1",
@@ -1166,7 +1170,8 @@ function init_gear_sets()
   })
   sets.engaged.DW.HighAcc.HighHaste = set_combine(sets.engaged.DW.MidAcc.HighHaste, {
     legs=gear.Carmine_D_legs, --6
-    ear2="Odr Earring",
+    ear1="Dignitary's Earring",
+    ear2="Telos Earring",
     -- head="Carmine Mask +1",
     -- ear1="Mache Earring +1",
     -- ring2="Chirich Ring +1",
@@ -1202,7 +1207,8 @@ function init_gear_sets()
   })
   sets.engaged.DW.HighAcc.SuperHaste = set_combine(sets.engaged.DW.MidAcc.SuperHaste, {
     legs=gear.Carmine_D_legs, --6
-    ear2="Odr Earring",
+    ear1="Dignitary's Earring",
+    ear2="Telos Earring",
     waist="Olseni Belt",
     -- ear1="Mache Earring +1",
     -- ring2="Chirich Ring +1",
@@ -1237,7 +1243,8 @@ function init_gear_sets()
   })
   sets.engaged.DW.HighAcc.MaxHaste = set_combine(sets.engaged.DW.HighAcc.MaxHaste, {
     legs=gear.Carmine_D_legs, --6
-    ear2="Odr Earring",
+    ear1="Dignitary's Earring",
+    ear2="Telos Earring",
     waist="Olseni Belt",
     -- ear1="Mache Earring +1",
     -- ring2="Chirich Ring +1",
@@ -1423,13 +1430,15 @@ function job_post_precast(spell, action, spellMap, eventArgs)
       if spell.element == world.weather_element and (get_weather_intensity() == 2 and spell.element ~= elements.weak_to[world.day_element]) then
         equip(sets.Special.ElementalObi)
       -- Target distance under 1.7 yalms.
-      -- elseif spell.target.distance < (1.7 + spell.target.model_size) then
+      elseif spell.target.distance < (1.7 + spell.target.model_size) then
+        equip(sets.Special.ElementalObi)
         -- equip({waist="Orpheus's Sash"})
       -- Matching day and weather.
       elseif spell.element == world.day_element and spell.element == world.weather_element then
         equip(sets.Special.ElementalObi)
       -- Target distance under 8 yalms.
-      -- elseif spell.target.distance < (8 + spell.target.model_size) then
+      elseif spell.target.distance < (8 + spell.target.model_size) then
+        equip(sets.Special.ElementalObi)
         -- equip({waist="Orpheus's Sash"})
       -- Match day or weather without conflict.
       elseif (spell.element == world.day_element and spell.element ~= elements.weak_to[world.weather_element]) or (spell.element == world.weather_element and spell.element ~= elements.weak_to[world.day_element]) then
