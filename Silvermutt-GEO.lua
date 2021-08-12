@@ -643,93 +643,30 @@ function init_gear_sets()
     range="Dunna",                  -- __/__, ___,  5/ 5, __
     ammo=empty,                     -- __/__, ___, __/__, __
     head="Azimuth Hood +1",         -- __/__,  86, __/__,  3
-    body="Jhakri Robe +2",          -- __/__,  53, __/__, __; Refresh+4
-    hands="Geomancy Mitaines +1",   --  1/__,  37, 11/11, __
-    legs=gear.Nyame_B_legs,         --  8/ 8, 150, __/__, __
-    feet="Bagua Sandals +1",        -- __/__, 107, __/__,  3
-    neck="Bagua Charm +1",          -- __/__, ___, __/__, __; Absorb Dmg+8
-    ear1="Eabani Earring",          -- __/__,   8, __/__, __
-    ear2="Halasz Earring",          -- __/__, ___, __/__, __
-    ring1="Stikini Ring +1",        -- __/__, ___, __/__, __; Refresh+1
-    ring2="Defending Ring",         -- 10/10, ___, __/__, __
-    back="Moonlight Cape",          --  6/ 6, ___, __/__, __
-    waist="Carrier's Sash",         -- __/__, ___, __/__, __; Ele resist+15
-    -- 45 PDT / 44 MDT, 441 Meva, 16 Pet PDT / 16 Pet MDT, 6 Pet Regen
-
-    -- main="Idris",                -- __/__, ___, 25/25, __
-    -- sub="Genmei Shield",         -- 10/__, ___, __/__, __
-    range="Dunna",                  -- __/__, ___,  5/ 5, __
-    ammo=empty,                     -- __/__, ___, __/__, __
-    head="Azimuth Hood +1",         -- __/__,  86, __/__,  3
-    body="Jhakri Robe +2",          -- __/__,  53, __/__, __; Refresh+4
-    -- hands="Bagua Mitaines +3",   -- __/__,  57, __/__, __; Refresh+2
-    -- legs="Telchine Braconi",     -- __/__, 132,  4/ 4,  3
-    -- feet="Bagua Sandals +3",     -- __/__, 127, __/__,  5
-    -- neck="Bagua Charm +2",       -- __/__, ___, __/__, __; Absorb Dmg+10
-    -- ear1="Rimeice Earring",      -- __/__, ___,  1/ 1, __
-    -- ear2="Hypaspist Earring",    -- -5/__, ___,  5/__,  1
-    ring1="Stikini Ring +1",        -- __/__, ___, __/__, __; Refresh+1
-    -- ring2="Stikini Ring +1",     -- __/__, ___, __/__, __; Refresh+1
-    -- back=gear.GEO_Idle_Cape,     -- __/__,  30, __/__, 15
-    -- waist="Isa Belt",            -- __/__, ___,  3/ 3,  1
-    -- 5 PDT / 0 MDT, 455 Meva, 43 Pet PDT / 38 Pet MDT, 28 Pet Regen
-    
-    -- main="Idris",                -- __/__, ___, 25/25, __
-    -- sub="Genmei Shield",         -- 10/__, ___, __/__, __
-    range="Dunna",                  -- __/__, ___,  5/ 5, __
-    ammo=empty,                     -- __/__, ___, __/__, __
-    -- head=gear.Nyame_B_head,      --  7/ 7, 123, __/__, __
-    -- body="Shamash Robe",         -- 10/__, 106, __/__, __; Resist Silence+90
-    -- hands="Geomancy Mitaines +3",--  3/__,  57, 13/13, __
-    -- legs=gear.Nyame_B_legs,      --  8/ 8, 150, __/__, __
-    -- feet="Bagua Sandals +3",     -- __/__, 127, __/__,  5
-    -- neck="Bagua Charm +2",       -- __/__, ___, __/__, __; Absorb Dmg+10
-    ear1="Lugalbanda Earring",      -- __/__,  10, __/__, __
-    -- ear2="Etiolation Earring",   -- __/ 3, ___, __/__, __; Resist Silence+15
-    ring1="Defending Ring",         -- 10/10, ___, __/__, __
-    ring2="Archon Ring",            -- __/__, ___, __/__, __; Annul severe m.dmg
-    -- back=gear.GEO_Idle_Cape,     -- __/__,  30, __/__, 15
-    waist="Carrier's Sash",         -- __/__, ___, __/__, __; Ele resist+15
-    -- 48 PDT / 31 MDT, 575 Meva, 43 Pet PDT / 43 Pet MDT, 20 Pet Regen
-  }
-
-	-- When Luopan is present, and you are expecting to take dmg
-	sets.idle.HeavyDef.Pet = {
-    main="Malignance Pole",         -- 20/20, ___, __/__, __
-    sub="Tzacab Grip",              -- __/__, ___, __/__, __
-    range="Dunna",                  -- __/__, ___,  5/ 5, __
-    ammo=empty,                     -- __/__, ___, __/__, __
-    head="Agwu's Cap",              -- __/__, 107, __/__, __; Resist Silence+9
     body=gear.Nyame_B_body,         --  9/ 9, 139, __/__, __
     hands="Geomancy Mitaines +1",   --  1/__,  37, 11/11, __
     legs=gear.Nyame_B_legs,         --  8/ 8, 150, __/__, __
     feet="Bagua Sandals +1",        -- __/__, 107, __/__,  3
     neck="Bagua Charm +1",          -- __/__, ___, __/__, __; Absorb Dmg+8
-    ear1="Lugalbanda Earring",      -- __/__,  10, __/__, __
+    ear1="Odnowa Earring +1",       --  3/ 5, ___, __/__, __
     ear2="Eabani Earring",          -- __/__,   8, __/__, __
     ring1="Defending Ring",         -- 10/10, ___, __/__, __
-    ring2="Archon Ring",            -- __/__, ___, __/__, __; Annul severe m.dmg
+    ring2="Gelatinous Ring +1",     --  7/-1, ___, __/__, __
     back="Moonlight Cape",          --  6/ 6, ___, __/__, __
-    waist="Slipor Sash",            -- __/ 3, ___, __/__, __
-
+    waist="Carrier's Sash",         -- __/__, ___, __/__, __; Ele resist+15
     -- main="Idris",                -- __/__, ___, 25/25, __
     -- sub="Genmei Shield",         -- 10/__, ___, __/__, __
-    range="Dunna",                  -- __/__, ___,  5/ 5, __
-    ammo=empty,                     -- __/__, ___, __/__, __
-    -- head=gear.Nyame_B_head,      --  7/ 7, 123, __/__, __
     -- body="Shamash Robe",         -- 10/__, 106, __/__, __; Resist Silence+90
     -- hands="Geomancy Mitaines +3",--  3/__,  57, 13/13, __
-    -- legs=gear.Nyame_B_legs,      --  8/ 8, 150, __/__, __
     -- feet="Bagua Sandals +3",     -- __/__, 127, __/__,  5
     -- neck="Bagua Charm +2",       -- __/__, ___, __/__, __; Absorb Dmg+10
-    ear1="Odnowa Earring +1",       --  3/ 5, ___, __/__, __
     -- ear2="Etiolation Earring",   -- __/ 3, ___, __/__, __; Resist Silence+15
-    ring1="Defending Ring",         -- 10/10, ___, __/__, __
-    ring2="Archon Ring",            -- __/__, ___, __/__, __; Annul severe m.dmg
     -- back=gear.GEO_Idle_Cape,     -- __/__,  30, __/__, 15
-    waist="Carrier's Sash",         -- __/__, ___, __/__, __; Ele resist+15
-    -- 51 PDT / 33 MDT, 563 Meva, 43 Pet PDT / 43 Pet MDT, 20 Pet Regen
-  } -- 54 PDT / 56 MDT, 558 Meva, 16 Pet PDT / 16 Pet MDT, 3 Pet Regen
+    -- 51 PDT / 25 MDT, 526 Meva, 43 Pet PDT / 43 Pet MDT, 23 Pet Regen
+  } -- 64 PDT / 57 MDT, 527 Meva, 16 Pet PDT / 16 Pet MDT, 6 Pet Regen
+
+	-- When Luopan is present, and you are expecting to take dmg
+	sets.idle.HeavyDef.Pet = sets.idle.Pet
 
   -- Handle refresh
   sets.idle.Refresh = set_combine(sets.idle, sets.passive_refresh)
