@@ -376,6 +376,7 @@ function init_gear_sets()
 
   sets.precast.WS = {
     ammo="Aurgelmir Orb",
+    feet="Jhakri Pigaches +2",
     neck="Fotia Gorget",
     ear1="Ishvara Earring",
     ear2="Moonshade Earring",
@@ -386,15 +387,14 @@ function init_gear_sets()
     -- body="Viti. Tabard +3",
     -- hands="Atrophy Gloves +3",
     -- legs="Viti. Tights +3",
-    -- feet="Jhakri Pigaches +2",
     -- ring2="Epaminondas's Ring",
     -- back=gear.RDM_WS1_Cape,
   }
 
   sets.precast.WS.Acc = set_combine(sets.precast.WS, {
+    body="Jhakri Robe +2",
     waist="Grunfeld Rope",
     -- ammo="Voluspa Tathlum",
-    -- body="Jhakri Robe +2",
     -- neck="Combatant's Torque",
     -- ear2="Mache Earring +1",
   })
@@ -494,11 +494,11 @@ function init_gear_sets()
   sets.precast.WS['Sanguine Blade'] = {
     ammo="Pemphredo Tathlum",
     head="Pixie Hairpin +1",
+    hands="Jhakri Cuffs +2",
     neck="Baetyl Pendant",
     ear1="Malignance Earring",
     ring1="Archon Ring",
     -- body="Amalric Doublet +1",
-    -- hands="Jhakri Cuffs +2",
     -- legs="Amalric Slops +1",
     -- feet="Amalric Nails +1",
     -- ear2="Regal Earring",
@@ -523,13 +523,13 @@ function init_gear_sets()
 
   sets.precast.WS['Seraph Blade'] = set_combine(sets.precast.WS, {
     ammo="Pemphredo Tathlum",
+    hands="Jhakri Cuffs +2",
     neck="Baetyl Pendant",
     ear1="Malignance Earring",
     ear2="Moonshade Earring",
     ring1="Weatherspoon Ring",
     -- head="Merlinic Hood",
     -- body="Amalric Doublet +1",
-    -- hands="Jhakri Cuffs +2",
     -- legs="Amalric Slops +1",
     -- feet="Amalric Nails +1",
     -- ring1="Weather. Ring +1",
@@ -554,13 +554,13 @@ function init_gear_sets()
 
   sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
     ammo="Pemphredo Tathlum",
+    hands="Jhakri Cuffs +2",
     neck="Baetyl Pendant",
     ear1="Malignance Earring",
     ear2="Moonshade Earring",
     ring1="Shiva Ring +1",
     -- head="Merlinic Hood",
     -- body="Amalric Doublet +1",
-    -- hands="Jhakri Cuffs +2",
     -- legs="Amalric Slops +1",
     -- feet="Amalric Nails +1",
     -- ring2="Epaminondas's Ring",
