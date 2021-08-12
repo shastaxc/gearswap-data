@@ -139,8 +139,8 @@ function init_gear_sets()
   }
 	sets.precast.JA['Life Cycle'] = {
     body="Geomancy Tunic +1",
+    back=gear.GEO_Idle_Cape,
     -- body="Geomancy Tunic +3",
-    -- back=gear.GEO_Idle_Cape,
   }
 	sets.precast.JA['Radial Arcana'] = {
     feet="Bagua Sandals +1",
@@ -655,7 +655,7 @@ function init_gear_sets()
     ear2="Eabani Earring",          -- __/__,   8, __/__, __
     ring1="Defending Ring",         -- 10/10, ___, __/__, __
     ring2="Gelatinous Ring +1",     --  7/-1, ___, __/__, __
-    back="Moonlight Cape",          --  6/ 6, ___, __/__, __
+    back=gear.GEO_Idle_Cape,        -- __/__,  30, __/__, 15
     waist="Carrier's Sash",         -- __/__, ___, __/__, __; Ele resist+15
     -- main="Idris",                -- __/__, ___, 25/25, __
     -- sub="Genmei Shield",         -- 10/__, ___, __/__, __
@@ -664,9 +664,8 @@ function init_gear_sets()
     -- feet="Bagua Sandals +3",     -- __/__, 127, __/__,  5
     -- neck="Bagua Charm +2",       -- __/__, ___, __/__, __; Absorb Dmg+10
     -- ear2="Etiolation Earring",   -- __/ 3, ___, __/__, __; Resist Silence+15
-    -- back=gear.GEO_Idle_Cape,     -- __/__,  30, __/__, 15
     -- 51 PDT / 25 MDT, 526 Meva, 43 Pet PDT / 43 Pet MDT, 23 Pet Regen
-  } -- 64 PDT / 57 MDT, 527 Meva, 16 Pet PDT / 16 Pet MDT, 6 Pet Regen
+  } -- 58 PDT / 51 MDT, 557 Meva, 16 Pet PDT / 16 Pet MDT, 21 Pet Regen
 
 	-- When Luopan is present, and you are expecting to take dmg
 	sets.idle.HeavyDef.Pet = sets.idle.Pet
