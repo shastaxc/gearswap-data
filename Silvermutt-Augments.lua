@@ -79,7 +79,7 @@ gear.Merl_MB_head = {} --MAB, M.Acc, 10 INT
 gear.Merl_MB_body = {} --MAB, M.Acc, 10 INT
 gear.Merl_MB_feet = {} --MAB, M.Acc, 10 INT
 
-gear.Merl_FC_head = {}
+gear.Merl_FC_head = { name="Merlinic Hood", augments={'Mag. Acc.+4 "Mag.Atk.Bns."+4','"Fast Cast"+5','Mag. Acc.+4',}}
 gear.Merl_FC_body = {}
 gear.Merl_FC_hands = {}
 gear.Merl_FC_feet = {}

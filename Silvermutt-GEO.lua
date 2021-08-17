@@ -164,26 +164,26 @@ function init_gear_sets()
 
 	-- Fast cast sets for spells
 	sets.precast.FC = {
-    range="Dunna",                   --  3
+    range="Dunna",                  --  3
     ammo=empty,
-    head="Agwu's Cap",               --  5
-    legs="Geomancy Pants +1",        -- 11
-    ear1="Loquac. Earring",          --  2
-    ear2="Malignance Earring",       --  4
-    ring1="Kishar Ring",             --  4
-    ring2="Prolix Ring",             --  2
+    head=gear.Merl_FC_head,         -- 13
+    legs="Geomancy Pants +1",       -- 11
+    ear1="Loquac. Earring",         --  2
+    ear2="Malignance Earring",      --  4
+    ring1="Kishar Ring",            --  4
+    ring2="Prolix Ring",            --  2
     -- Ideal:
-    -- range="Dunna",                --  3
+    -- range="Dunna",               --  3
     -- ammo=empty,
-    -- head=gear.Merl_FC_head,       -- 15
-    -- body=gear.Merl_FC_body,       -- 13
-    -- hands=gear.Merl_FC_hands,     --  7
-    -- legs="Geomancy Pants +3",     -- 15
-    -- feet=gear.Merl_FC_feet,       -- 12
-    -- back=gear.GEO_FC_Cape,        -- 10
-    -- waist="Shinjutsu-no-Obi +1",  --  5
+    -- head=gear.Merl_FC_head,      -- 15
+    -- body=gear.Merl_FC_body,      -- 13
+    -- hands=gear.Merl_FC_hands,    --  7
+    -- legs="Geomancy Pants +3",    -- 15
+    -- feet=gear.Merl_FC_feet,      -- 12
+    -- back=gear.GEO_FC_Cape,       -- 10
+    -- waist="Shinjutsu-no-Obi +1", --  5
     -- 80 FC
-  } -- 31 FC
+  } -- 39 FC
 
 	sets.precast.FC.Geomancy = set_combine(sets.precast.FC, {
     range="Dunna",
@@ -698,7 +698,7 @@ function init_gear_sets()
 	sets.engaged = {
     main="Malignance Pole",
     sub="Tzacab Grip",
-		head="Agwu's Cap",
+		head=gear.Nyame_B_head,
 		body=gear.Nyame_B_body,
     hands=gear.Nyame_B_hands,
     legs="Jhakri Slops +2",
