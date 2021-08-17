@@ -401,7 +401,7 @@ function init_gear_sets()
     hands=gear.Nyame_B_hands,         -- 42,  8, 55, __
     legs=gear.Nyame_B_legs,           -- __,  9, 55, __
     feet=gear.Nyame_B_feet,           -- 26,  8, 55, __
-    neck="Caro Necklace",             --  6, __, 10, __
+    neck="Assassin's Gorget +2",      -- 15, __, __, __
     ear1="Ishvara Earring",           -- __,  2, __, __
     ear2="Moonshade Earring",         -- __, __, __, __; TP Bonus+250
     ring1="Ilabrat Ring",             -- 10, __, 25, __
@@ -411,7 +411,6 @@ function init_gear_sets()
     -- ammo="Cath Palug Stone",       -- 10, __, __, __
     -- body="Gleti's Cuirass"         -- 34, __, 64,  9
     -- legs="Plunderer's Culottes +3" -- 21,  6, 64, __
-    -- neck="Assassin's Gorget +2",   -- 15, __, __, __
     -- ring2="Epaminondas's Ring",    -- __,  5, __, __
     -- waist="Kentarch Belt +1",      -- 10, __, __, __; Aug it first
     -- 223 DEX, 47 WSD, 338 Att, 9 PDL
@@ -616,7 +615,7 @@ function init_gear_sets()
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha_legs,
     feet="Plunderer's Poulaines +1",
-    neck="Anu Torque",
+    neck="Assassin's Gorget +2",
     ear1="Telos Earring",
     ear2="Sherida Earring",
     ring1="Hetairoi Ring",
@@ -657,7 +656,7 @@ function init_gear_sets()
     hands=gear.Floral_Gauntlets, --5
     legs=gear.Samnuha_legs,
     feet=gear.Taeon_DW_feet, --9
-    neck="Anu Torque",
+    neck="Assassin's Gorget +2",
     ear1="Suppanomimi", --5
     ear2="Eabani Earring", --4
     ring1="Hetairoi Ring",
@@ -695,7 +694,7 @@ function init_gear_sets()
     hands=gear.Floral_Gauntlets, --5
     legs=gear.Samnuha_legs,
     feet=gear.Taeon_DW_feet, --9
-    neck="Anu Torque",
+    neck="Assassin's Gorget +2",
     ear1="Suppanomimi", --5
     ear2="Eabani Earring", --4
     ring1="Hetairoi Ring",
@@ -740,7 +739,7 @@ function init_gear_sets()
     hands=gear.Floral_Gauntlets, --5
     legs=gear.Samnuha_legs,
     feet="Plunderer's Poulaines +1",
-    neck="Anu Torque",
+    neck="Assassin's Gorget +2",
     ear1="Eabani Earring", --4
     ear2="Suppanomimi", --5
     ring1="Hetairoi Ring",
@@ -782,7 +781,7 @@ function init_gear_sets()
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha_legs,
     feet="Plunderer's Poulaines +1",
-    neck="Anu Torque",
+    neck="Assassin's Gorget +2",
     ear1="Sherida Earring",
     ear2="Telos Earring",
     ring1="Hetairoi Ring",
@@ -819,7 +818,7 @@ function init_gear_sets()
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha_legs,
     feet="Plunderer's Poulaines +1",
-    neck="Anu Torque",
+    neck="Assassin's Gorget +2",
     ear1="Telos Earring",
     ear2="Sherida Earring",
     ring1="Hetairoi Ring",
@@ -858,7 +857,7 @@ function init_gear_sets()
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha_legs,
     feet="Plunderer's Poulaines +1",
-    neck="Anu Torque",
+    neck="Assassin's Gorget +2",
     ear1="Telos Earring",
     ear2="Sherida Earring",
     ring1="Hetairoi Ring",
