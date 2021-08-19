@@ -774,18 +774,18 @@ function init_gear_sets()
   sets.midcast.CorsairShot = {
     ammo=gear.QDbullet,
     head=gear.Nyame_B_head, --30
-    body="Lanun Frac +3",
-    hands="Carmine Fin. Ga. +1",
+    body="Lanun Frac +3", --61
+    hands="Carmine Fin. Ga. +1", --42
     legs=gear.Nyame_B_legs, --30
-    feet="Lanun Bottes +3",
-    neck="Baetyl Pendant",
-    ear1="Friomisi Earring",
-    ear2="Novio Earring",
-    ring1="Dingir Ring",
-    ring2="Shiva Ring +1",
-    back=gear.COR_WS1_Cape,
-    waist="Eschan Stone",
-    -- ring2={name="Fenrir Ring +1", bag="wardrobe4"},
+    feet="Lanun Bottes +3", --61
+    neck="Commodore Charm +1", --6
+    ear1="Friomisi Earring", --10
+    ear2="Novio Earring", --7
+    ring1="Dingir Ring", --10
+    ring2="Shiva Ring +1", --3
+    back=gear.COR_WS1_Cape, --0
+    waist="Eschan Stone", --7
+    -- neck="Comm. Charm +2",
     -- waist="Skrymir Cord +1",
   }
 
