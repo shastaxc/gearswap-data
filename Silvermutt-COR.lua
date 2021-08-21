@@ -105,7 +105,7 @@ function job_setup()
   state.RangedMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.IdleMode:options('Normal', 'LightDef')
 
-  state.WeaponSet = M{['description']='Weapon Set', 'Anarchy', 'Cleaving', 'DeathPenalty_M', 'DeathPenalty_R', 'Fomalhaut_M', 'Fomalhaut_R',}
+  state.WeaponSet = M{['description']='Weapon Set', 'Savage Blade', 'Cleaving', 'DeathPenalty_M', 'DeathPenalty_R', 'Fomalhaut_M', 'Fomalhaut_R', 'QuickDraw'}
 
   state.CP = M(false, "Capacity Points Mode")
 
@@ -115,7 +115,7 @@ function job_setup()
   state.UseAltqd = M(false, 'Use Secondary Shot')
   state.SelectqdTarget = M(false, 'Select Quick Draw Target')
   state.IgnoreTargetting = M(false, 'Ignore Targetting')
-  state.QDMode = M{['description']='Quick Draw Mode', 'STP', 'Enhance', 'Potency', 'TH'}
+  state.QDMode = M{['description']='Quick Draw Mode', 'STP', 'Enhance', 'Potency'}
   state.Currentqd = M{['description']='Current Quick Draw', 'Main', 'Alt'}
   state.CritMode = M(false, 'Crit')
 
@@ -1361,7 +1361,7 @@ function init_gear_sets()
     sub="Nusku Shield",
     ranged="Fomalhaut",
   }
-  sets.WeaponSet.Anarchy = {
+  sets.WeaponSet["Savage Blade"] = {
     main="Naegling",
     sub="Blurred Knife +1",
     ranged="Anarchy +2",
@@ -1370,6 +1370,12 @@ function init_gear_sets()
     main="Lanun Knife",
     sub="Kaja Knife",
     ranged="Doomsday",
+    -- sub="Tauret",
+  }
+  sets.WeaponSet.QuickDraw = {
+    main="Naegling",
+    sub="Kaja Knife",
+    ranged="Death Penalty",
     -- sub="Tauret",
   }
 end
@@ -1475,13 +1481,15 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
       if spell.element == world.weather_element and (get_weather_intensity() == 2 and spell.element ~= elements.weak_to[world.day_element]) then
         equip(sets.Special.ElementalObi)
       -- Target distance under 1.7 yalms.
-      -- elseif spell.target.distance < (1.7 + spell.target.model_size) then
+      elseif spell.target.distance < (1.7 + spell.target.model_size) then
+        equip(sets.Special.ElementalObi)
         -- equip({waist="Orpheus's Sash"})
       -- Matching day and weather.
       elseif spell.element == world.day_element and spell.element == world.weather_element then
         equip(sets.Special.ElementalObi)
       -- Target distance under 8 yalms.
-      -- elseif spell.target.distance < (8 + spell.target.model_size) then
+      elseif spell.target.distance < (8 + spell.target.model_size) then
+        equip(sets.Special.ElementalObi)
         -- equip({waist="Orpheus's Sash"})
       -- Match day or weather without conflict.
       elseif (spell.element == world.day_element and spell.element ~= elements.weak_to[world.weather_element]) or (spell.element == world.weather_element and spell.element ~= elements.weak_to[world.day_element]) then
@@ -1489,9 +1497,6 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
       end
       if state.QDMode.value == 'Enhance' then
         equip(sets.midcast.CorsairShot.Enhance)
-      elseif state.QDMode.value == 'TH' then
-        equip(sets.midcast.CorsairShot)
-        equip(sets.TreasureHunter)
       elseif state.QDMode.value == 'STP' then
         equip(sets.midcast.CorsairShot.STP)
       end
