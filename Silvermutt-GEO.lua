@@ -172,6 +172,7 @@ function init_gear_sets()
     ear2="Malignance Earring",      --  4
     ring1="Kishar Ring",            --  4
     ring2="Prolix Ring",            --  2
+    back=gear.GEO_FC_Cape,          -- 10
     -- Ideal:
     -- range="Dunna",               --  3
     -- ammo=empty,
@@ -183,7 +184,7 @@ function init_gear_sets()
     -- back=gear.GEO_FC_Cape,       -- 10
     -- waist="Shinjutsu-no-Obi +1", --  5
     -- 80 FC
-  } -- 39 FC
+  } -- 49 FC
 
 	sets.precast.FC.Geomancy = set_combine(sets.precast.FC, {
     range="Dunna",
@@ -430,6 +431,7 @@ function init_gear_sets()
     ear2="Malignance Earring",
     ring1="Stikini Ring +1",
     ring2="Weatherspoon Ring",
+    back=gear.GEO_FC_Cape,
     -- main="Mpaca's Staff",
     -- sub="Khonsu",
     -- head=gear.Amalric_D_head,
@@ -440,7 +442,6 @@ function init_gear_sets()
     -- neck="Bagua Charm +2",
     -- ear1="Regal Earring",
     -- ring1="Stikini Ring +1",
-    -- back=gear.GEO_FC_Cape,
     -- waist="Witful Belt",
   }
 	sets.midcast.Stun.Resistant = set_combine(sets.midcast.Stun, {})
@@ -582,7 +583,7 @@ function init_gear_sets()
 	-- Defense sets
 	sets.defense.PDT = {
     main="Malignance Pole",
-    sub="Tzacab Grip",
+    sub="Kaja Grip",
     range="Dunna",
     ammo=empty,
     head="Befouled Crown",
@@ -623,7 +624,7 @@ function init_gear_sets()
 	-- Resting sets
 	sets.resting = {
     main="Iridal Staff",
-    sub=empty,
+    sub="Kaja Grip",
 		head="Befouled Crown",
 		body="Jhakri Robe +2",
     ear2="Ethereal Earring",
@@ -642,7 +643,7 @@ function init_gear_sets()
   -- Maximize Pet Regen
 	sets.idle.Pet = {
     main="Malignance Pole",         -- 20/20, ___, __/__, __
-    sub="Tzacab Grip",              -- __/__, ___, __/__, __
+    sub="Kaja Grip",                --  5/ 5, ___, __/__, __
     range="Dunna",                  -- __/__, ___,  5/ 5, __
     ammo=empty,                     -- __/__, ___, __/__, __
     head="Azimuth Hood +1",         -- __/__,  86, __/__,  3
@@ -665,7 +666,7 @@ function init_gear_sets()
     -- neck="Bagua Charm +2",       -- __/__, ___, __/__, __; Absorb Dmg+10
     -- ear2="Etiolation Earring",   -- __/ 3, ___, __/__, __; Resist Silence+15
     -- 51 PDT / 25 MDT, 526 Meva, 43 Pet PDT / 43 Pet MDT, 23 Pet Regen
-  } -- 58 PDT / 51 MDT, 557 Meva, 16 Pet PDT / 16 Pet MDT, 21 Pet Regen
+  } -- 63 PDT / 56 MDT, 557 Meva, 16 Pet PDT / 16 Pet MDT, 21 Pet Regen
 
 	-- When Luopan is present, and you are expecting to take dmg
 	sets.idle.HeavyDef.Pet = sets.idle.Pet
@@ -927,7 +928,7 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
 				blazelocked = true
 			end
 		elseif state.Buff.Entrust and spell.english:startswith('Indi-') then
-			if sets.midcast.Geomancy.main == 'Idris' and item_available('Solstice') then
+			if player.equipment.main ~= 'Solstice' and item_available('Solstice') then
 				equip({main="Solstice"})
 			end
 		end
