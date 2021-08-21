@@ -199,6 +199,7 @@ end
 
 -- Executes on first load, main job change, **and sub job change**
 function user_setup()
+  silibs.user_setup_hook()
   Haste = 0 -- Do not modify
   flurry = nil -- Do not modify
   DW_needed = 0 -- Do not modify

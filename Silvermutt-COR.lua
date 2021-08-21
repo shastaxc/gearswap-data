@@ -199,6 +199,7 @@ end
 
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
+  silibs.user_setup_hook()
   Haste = 0
   DW_needed = 0
   DW = false

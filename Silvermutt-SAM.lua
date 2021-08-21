@@ -82,6 +82,7 @@ end
 
 -- Executes on first load, main job change, **and sub job change**
 function user_setup()
+  silibs.user_setup_hook()
   include('Global-Binds.lua') -- Additional local binds
 
   if player.sub_job == 'WAR' then
