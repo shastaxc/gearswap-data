@@ -236,9 +236,9 @@ function init_gear_sets()
   sets.precast.WS = {
     ammo="Knobkierrie",
     head="Mpaca's cap",
-    body="Sakonji Domaru +1",
+    body="Sakonji Domaru +2",
     hands=gear.Nyame_B_hands,
-    legs="Wakido Haidate +2",
+    legs=gear.Nyame_B_legs,
     feet=gear.Nyame_B_feet,
     neck="Samurai's Nodowa +2",
     ear1="Thrud Earring",
@@ -246,11 +246,9 @@ function init_gear_sets()
     ring1="Regal Ring",
     ring2="Niqmaddu Ring",
     back=gear.SAM_STR_WSD_Cape,
-    waist="Fotia Belt",
+    waist="Sailfi Belt +1",
     -- body="Sakonji Domaru +3",
-    -- legs="Wakido Haidate +3",
     -- ring2="Epaminondas's Ring",
-    -- waist="Sailfi Belt +1", -- Augment first
   } -- Base WS set
 
   -- Tachi: Fudo - 80% STR
@@ -375,7 +373,7 @@ function init_gear_sets()
     head="Mpaca's Cap",
     body="Kendatsuba Samue +1",
     hands=gear.Nyame_B_hands,
-    legs="Wakido Haidate +2",
+    legs=gear.Nyame_B_legs,
     feet=gear.Nyame_B_feet,
     neck="Samurai's Nodowa +2",
     ear1="Thrud Earring",
@@ -385,7 +383,6 @@ function init_gear_sets()
     back=gear.SAM_STR_WSD_Cape,
     waist="Fotia Belt",
     -- body="Sakonji Domaru +3",
-    -- legs="Wakido Haidate +3",
   })
   sets.precast.WS["Tachi: Shoha"].MaxTP = set_combine(sets.precast.WS["Tachi: Shoha"], {
     ear2="Brutal Earring",
@@ -511,6 +508,7 @@ function init_gear_sets()
   sets.LightDef = {
     ammo="Staunch Tathlum +1",  --  3/ 3, ___
     head="Ken. Jinpachi +1",    -- __/__, 101
+    body=gear.Nyame_B_body,     --  9/ 9, 139
     legs="Ken. Hakama +1",      -- __/__, 139
     feet="Ken. Sune-Ate +1",    -- __/__, 139
     ring1="Gelatinous Ring +1", --  7/-1, ___
@@ -527,6 +525,7 @@ function init_gear_sets()
     hands="Wakido Kote +3",     -- __/__,  46
     legs="Ken. Hakama +1",      -- __/__, 139
     feet="Ken. Sune-Ate +1",    -- __/__, 139
+    back=gear.SAM_TP_Cape,      -- 10/__, ___
     --13 PDT/3 MDT, 542 MEVA
   }
 
