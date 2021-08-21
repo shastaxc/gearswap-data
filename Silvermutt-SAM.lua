@@ -538,14 +538,13 @@ function init_gear_sets()
     legs=gear.Nyame_B_legs,     --  8/ 8, 150
     feet=gear.Nyame_B_feet,     --  7/ 7, 150
     neck="Samurai's Nodowa +2", -- __/__, ___
-    ear1="Cessance Earring",    -- __/__, ___
+    ear1="Dedition Earring", -- __/__, ___
     ear2="Telos Earring",       -- __/__, ___
     ring1="Niqmaddu Ring",      -- __/__, ___
     ring2="Defending Ring",     -- 10/10, ___
     back=gear.SAM_TP_Cape,      -- 10/__, ___
     waist="Ioskeha Belt +1",    -- __/__, ___
     -- ammo="Aurgelmir Orb +1", -- __/__, ___
-    -- ear1="Dedition Earring", -- __/__, ___
     --51 PDT/41 MDT, 608 MEVA
   }
 
@@ -607,7 +606,7 @@ function init_gear_sets()
     legs="Tatenashi Haidate +1",      -- __/__, ___
     feet="Kendatsuba Sune-Ate +1",    -- __/__, 139
     neck="Samurai's Nodowa +2",       -- __/__, ___
-    ear1="Cessance Earring",          -- __/__, ___
+    ear1="Dedition Earring",       -- __/__, ___
     ear2="Telos Earring",             -- __/__, ___
     ring1="Chirich Ring +1",          -- __/__, ___
     ring2="Niqmaddu Ring",            -- __/__, ___
@@ -616,7 +615,6 @@ function init_gear_sets()
     -- ammo="Aurgelmir Orb +1",       -- __/__, ___
     -- body="Tatenashi Haramaki +1",  -- __/__,  59
     -- feet=gear.Ryuo_C_feet,         -- __/__,  80
-    -- ear1="Dedition Earring",       -- __/__, ___
   }
   sets.engaged.LowAcc = set_combine(sets.engaged, {
     body="Ken. Samue +1",

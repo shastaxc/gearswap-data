@@ -879,10 +879,10 @@ function init_gear_sets()
     head="Ayanmo Zucchetto +2",
     neck="Anu Torque",
     ear1="Sherida Earring",
+    ear2="Dedition Earring",
     ring1="Chirich Ring +1",
     waist="Kentarch Belt +1",
     -- body="Ashera Harness",
-    -- ear2="Dedition Earring",
     -- ring2="Chirich Ring +1",
   }
 
@@ -959,6 +959,7 @@ function init_gear_sets()
   -- Needs updating
   sets.engaged.Aftermath.LightDef = {
     legs="Meghanada Chausses +2",
+    ear2="Dedition Earring",
     ring2="Defending Ring",
     waist="Sailfi Belt +1",
     head="Ayanmo Zucchetto +2",
@@ -968,7 +969,6 @@ function init_gear_sets()
     -- legs="Meghanada Chausses +2",
     -- neck="Futhark Torque +2",
     -- ear1="Sherida Earring",
-    -- ear2="Dedition Earring",
     -- ring1="Moonlight Ring",
     -- ring2="Defending Ring",
     -- back=gear.RUN_TP_Cape,
