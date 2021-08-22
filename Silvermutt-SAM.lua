@@ -382,8 +382,9 @@ function init_gear_sets()
     ring1="Niqmaddu Ring",
     ring2="Flamma Ring",
     back=gear.SAM_STR_WSD_Cape,
-    waist="Fotia Belt",
+    waist="Sailfi Belt +1",
     -- body="Sakonji Domaru +3",
+    -- ring2="Epaminondas's Ring",
   })
   sets.precast.WS["Tachi: Shoha"].MaxTP = set_combine(sets.precast.WS["Tachi: Shoha"], {
     ear2="Brutal Earring",
@@ -606,7 +607,7 @@ function init_gear_sets()
     legs="Tatenashi Haidate +1",      -- __/__, ___
     feet="Kendatsuba Sune-Ate +1",    -- __/__, 139
     neck="Samurai's Nodowa +2",       -- __/__, ___
-    ear1="Dedition Earring",       -- __/__, ___
+    ear1="Dedition Earring",          -- __/__, ___
     ear2="Telos Earring",             -- __/__, ___
     ring1="Chirich Ring +1",          -- __/__, ___
     ring2="Niqmaddu Ring",            -- __/__, ___
