@@ -909,6 +909,7 @@ function init_gear_sets()
   sets.midcast.Helix = {
     main=gear.Akademos_C,           -- 27, 25, 53, 228, 217, 10, __
     sub="Enki Strap",               -- 10, 10, __, ___, ___, __, __
+    head="Peda. M.Board +1",
     body="Mallquis Saio +2",        -- 54, 46, 15, ___,  58, __, __
     legs="Mallquis Trews +2",       -- 57, 45, 15, ___,  55,  6, __
     feet="Mallquis Clogs +1",       -- 33, 36, 12, ___,  46, __, __
