@@ -512,8 +512,8 @@ function init_gear_sets()
   sets.precast.WS['Raging Fists'] = set_combine(sets.precast.WS, {
     ammo="Knobkierrie",
     head="Mpaca's Cap",
-    body=gear.Adhemar_B_body,
-    hands=gear.Adhemar_B_hands,
+    body=gear.Nyame_B_body,
+    hands=gear.Nyame_B_hands,
     legs=gear.Nyame_B_legs,
     feet=gear.Nyame_B_feet,
     neck="Monk's Nodowa +2",
@@ -523,8 +523,6 @@ function init_gear_sets()
     ring2="Niqmaddu Ring",
     back=gear.MNK_STR_DA_Cape,
     waist="Fotia Belt",
-    -- body=gear.Nyame_B_body, -- R10
-    -- hands="Anchorite's Gloves +3",
   })
   sets.precast.WS["Raging Fists"].MaxTP = set_combine(sets.precast.WS["Raging Fists"], {
     ear2="Ishvara Earring",
