@@ -299,10 +299,10 @@ function init_gear_sets()
 
 	--Extra Indi duration as long as you can keep your 900 skill cap.
 	sets.midcast.Geomancy.Indi = set_combine(sets.midcast.Geomancy,{
-    legs="Bagua Pants +3",         -- __, __, __, 15
-    -- head=gear.Vanya_C_head,        -- __, __, 12, __
-    -- legs="Bagua Pants +3",         -- __, __, __, 21
-    -- neck="Reti Pendant",           -- __,  5,  4, __
+    legs="Bagua Pants +3",          -- __, __, __, 15
+    -- head=gear.Vanya_C_head,      -- __, __, 12, __
+    -- legs="Bagua Pants +3",       -- __, __, __, 21
+    -- neck="Reti Pendant",         -- __,  5,  4, __
     -- 10 Geomancy, 46 geo skill, 62 Conserve MP, 61 Indi Duration
   })
 
