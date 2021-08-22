@@ -99,7 +99,7 @@ function job_setup()
   state.AttackMode = M{['description']='Attack', 'Capped', 'Uncapped'}
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.RangedMode:options('Normal', 'Acc')
-  state.HybridMode:options('LightDef', 'Normal')
+  state.HybridMode:options('LightDef', 'Evasion', 'Normal')
   state.IdleMode:options('Normal', 'LightDef')
   state.CP = M(false, 'Capacity Points Mode')
   state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger',
@@ -456,10 +456,10 @@ function init_gear_sets()
     ear1="Friomisi Earring", --10
     ear2="Moonshade Earring",
     ring1="Shiva Ring +1", --3
-    ring2="Defending Ring",
+    ring2="Dingir Ring",
     back=gear.DNC_WS1_Cape,
     waist="Eschan Stone", --7
-    -- ring2="Epaminondas's Ring",
+    -- ring1="Epaminondas's Ring",
     -- waist="Orpheus's Sash",
   })
   sets.precast.WS['Aeolian Edge'].MaxTP = set_combine(sets.precast.WS['Aeolian Edge'], {
@@ -528,6 +528,23 @@ function init_gear_sets()
     -- TP Cape                  -- 10/__, ___
   } --44 PDT/34 MDT, 674 MEVA
 
+  sets.Evasion = {
+    ammo="Yamarang",              -- __/__,  15,  15
+    head="Malignance Chapeau",    --  6/ 6, 123,  91
+    body="Malignance Tabard",     --  9/ 9, 139, 102
+    hands="Malignance Gloves",    --  5/ 5, 112,  80
+    legs="Malignance Tights",     --  7/ 7, 150,  85
+    feet="Malignance Boots",      --  4/ 4, 150, 119
+    neck="Assassin's Gorget +2",  -- __/__, ___,  25
+    ear1="Eabani Earring",        -- __/__,   8,  15
+    ear2="Infused Earring",       -- __/__, ___,  10
+    ring1="Moonlight Ring",       --  5/ 5, ___, ___
+    ring2="Chirich Ring +1",      -- __/__, ___, ___
+    back=gear.THF_TP_Cape,        -- 10/__, ___, ___
+    waist="Kasiri Belt",          -- __/__, ___,  13
+    -- ring2="Moonlight Ring",       --  5/ 5, ___, ___
+  } -- 46 PDT / 36 MDT, 697 MEVA, 555 Evasion
+
   sets.HeavyDef = {
     ammo="Yamarang",            -- __/__,  15
     head="Malignance Chapeau",  --  6/ 6, 123
@@ -591,6 +608,8 @@ function init_gear_sets()
   sets.idle.LightDef.Regain.Refresh = set_combine(sets.idle.Regain.Refresh, sets.LightDef)
   sets.idle.LightDef.Regen.Refresh = set_combine(sets.idle.Regen.Refresh, sets.LightDef)
   sets.idle.LightDef.Regain.Regen.Refresh = set_combine(sets.idle.Regain.Regen.Refresh, sets.LightDef)
+
+  sets.idle.Evasion = set_combine(sets.idle, sets.Evasion)
 
   sets.idle.Weak = set_combine(sets.HeavyDef, {
     neck="Loricate Torque +1",  --  6/ 6, ___
@@ -924,6 +943,16 @@ function init_gear_sets()
   sets.engaged.DW.LowAcc.LightDef.MaxHaste = set_combine(sets.engaged.DW.LowAcc.MaxHaste, sets.LightDef)
   sets.engaged.DW.MidAcc.LightDef.MaxHaste = set_combine(sets.engaged.DW.MidAcc.MaxHaste, sets.LightDef)
   sets.engaged.DW.HighAcc.LightDef.MaxHaste = set_combine(sets.engaged.DW.HighAcc.MaxHaste, sets.LightDef)
+
+  sets.engaged.Evasion = sets.Evasion
+  sets.engaged.LowAcc.Evasion = sets.Evasion
+  sets.engaged.MidAcc.Evasion = sets.Evasion
+  sets.engaged.HighAcc.Evasion = sets.Evasion
+
+  sets.engaged.DW.Evasion = sets.Evasion
+  sets.engaged.DW.LowAcc.Evasion = sets.Evasion
+  sets.engaged.DW.MidAcc.Evasion = sets.Evasion
+  sets.engaged.DW.HighAcc.Evasion = sets.Evasion
 
 
   ------------------------------------------------------------------------------------------------
