@@ -153,6 +153,10 @@ function user_setup()
     send_command('bind %numpad0 input //gs c rune')
     send_command('bind ^- gs c cycleback Runes')
     send_command('bind ^= gs c cycle Runes')
+  elseif player.sub_job == 'DRG' then
+    send_command('bind !w input /ja "Ancient Circle" <me>')
+    send_command('bind ^numpad/ input /ja "Jump" <t>')
+    send_command('bind ^numpad* input /ja "High Jump" <t>')
   end
 
   update_combat_form()
@@ -309,7 +313,6 @@ function init_gear_sets()
     back=gear.THF_WS1_Cape,
     waist="Fotia Belt",
     -- ammo="Aurgelmir Orb +1",
-    -- legs="Plun. Culottes +3",
     -- ring2="Epaminondas's Ring",
   } -- default set
   sets.precast.WS.Acc = set_combine(sets.precast.WS, {
@@ -317,10 +320,9 @@ function init_gear_sets()
     -- ammo="Voluspa Tathlum",
   })
   -- When Sneak Attack active, overlaid on top of normal set
-  sets.precast.WS.SATA = {
-    head="Pillager's Bonnet +2",
-    -- ammo="Yetshila +1",
-    -- head="Pillager's Bonnet +3",
+  sets.precast.WS.SA = {
+    ammo="Yetshila +1",
+    head="Pillager's Bonnet +3",
   }
 
   -- AGI
@@ -356,10 +358,10 @@ function init_gear_sets()
   
   -- 50% DEX
   sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
-    ammo="Aurgelmir Orb",
+    ammo="Yetshila +1",
     head=gear.Adhemar_B_head,
-    body="Meghanada Cuirie +2",
-    hands="Mummu Wrists +2",
+    body="Gleti's Cuirass",
+    hands=gear.Adhemar_B_hands,
     legs=gear.Lustratio_B_legs,
     feet=gear.Herc_TA_feet,
     neck="Fotia Gorget",
@@ -369,12 +371,9 @@ function init_gear_sets()
     ring2="Regal Ring",
     waist="Fotia Belt",
     back=gear.THF_TP_Cape,
-    -- ammo="Yetshila +1",
-    -- body="Pillager's Vest +3",
-    -- legs="Zoar Subligar +1",
-    -- ear2="Mache Earring +1",
-    -- ring2="Mummu Ring",
-    -- back=gear.THF_WS2_Cape,
+    -- legs="Pillager's Culottes +3",
+    -- feet="Gleti's Boots",
+    -- back=gear.THF_WS1_Cape,
   })
   sets.precast.WS['Evisceration'].MaxTP = set_combine(sets.precast.WS['Evisceration'], {
   })
@@ -397,8 +396,8 @@ function init_gear_sets()
   -- 80% DEX
   sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {
     ammo="Aurgelmir Orb",             --  5, __,  7, __
-    head=gear.Nyame_B_head,           -- 25,  8, 55, __
-    body=gear.Nyame_B_body,           -- 24, 10, 55, __
+    head="Gleti's Mask",              -- 28, __, 60,  6
+    body="Gleti's Cuirass",           -- 34, __, 64,  9
     hands=gear.Nyame_B_hands,         -- 42,  8, 55, __
     legs=gear.Nyame_B_legs,           -- __,  9, 55, __
     feet=gear.Nyame_B_feet,           -- 26,  8, 55, __
@@ -410,12 +409,11 @@ function init_gear_sets()
     back=gear.THF_WS1_Cape,           -- 30, 10, 20, __
     waist="Grunfeld Rope",            --  5, __, 20, __
     -- ammo="Cath Palug Stone",       -- 10, __, __, __
-    -- body="Gleti's Cuirass"         -- 34, __, 64,  9
     -- legs="Plunderer's Culottes +3" -- 21,  6, 64, __
     -- ring2="Epaminondas's Ring",    -- __,  5, __, __
     -- waist="Kentarch Belt +1",      -- 10, __, __, __; Aug it first
-    -- 223 DEX, 47 WSD, 338 Att, 9 PDL
-  })-- 183 DEX, 55 WSD, 377 Att, 0 PDL
+    -- 226 DEX, 39 WSD, 343 Att, 15 PDL
+  })-- 205 DEX, 37 WSD, 381 Att, 15 PDL
   sets.precast.WS["Rudra's Storm"].MaxTP = set_combine(sets.precast.WS["Rudra's Storm"], {
     ear2="Odr Earring",
   })
@@ -571,6 +569,7 @@ function init_gear_sets()
 
   sets.latent_regain = {
     head="Turms Cap +1",
+    body="Gleti's Cuirass",
   }
   sets.latent_regen = {
     head="Turms Cap +1",
@@ -629,48 +628,43 @@ function init_gear_sets()
   -- EG: sets.engaged.Dagger.Accuracy.Evasion
 
   sets.engaged = {
-    ammo="Aurgelmir Orb",
+    ammo="Yetshila +1",
     head=gear.Adhemar_B_head,
     body=gear.Adhemar_B_body,
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha_legs,
     feet="Plunderer's Poulaines +1",
     neck="Assassin's Gorget +2",
-    ear1="Telos Earring",
+    ear1="Odr Earring",
     ear2="Sherida Earring",
     ring1="Hetairoi Ring",
     ring2="Gere Ring",
     back=gear.THF_TP_Cape,
     waist="Windbuffet Belt +1",
-    -- ammo="Aurgelmir Orb +1",
+    -- body="Plunderer's Vest +3",
+    -- legs="Pillager's Culottes +3",
+    -- feet="Plunderer's Poulaines +3",
   }
   sets.engaged.LowAcc = set_combine(sets.engaged, {
-    ring1="Chirich Ring +1",
-    -- head="Skulker's Bonnet +1",
-    -- neck="Combatant's Torque",
+    ammo="Yamarang",
+    ear1="Telos Earring",
   })
   sets.engaged.MidAcc = set_combine(sets.engaged.LowAcc, {
-    ammo="Yamarang",
-    head="Dampening Tam",
-    ear1="Cessance Earring",
-    ring2="Ilabrat Ring",
-    waist="Kentarch Belt +1",
-    -- body="Pillager's Vest +3",
+    -- head="Plunderer's Bonnet +3",
+    -- hands=gear.Adhemar_A_hands,
   })
   sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
-    ear2="Dignitary's Earring",
-    ring1="Regal Ring",
-    ring2="Chirich Ring +1",
+    ring2="Regal Ring",
     waist="Olseni Belt",
-    -- ammo="C. Palug Stone",
-    -- legs="Pill. Culottes +3",
+    -- hands="Pillager's Armlets +3",
+    -- ring2="Regal Ring",
   })
 
   -- * THF Native DW Trait: 30% DW
 
   -- No Magic/Gear/JA Haste (74% DW to cap, 44% from gear)
   sets.engaged.DW = {
-    ammo="Aurgelmir Orb",
+    ammo="Yetshila +1",
     head=gear.Adhemar_B_head,
     body=gear.Adhemar_B_body, -- 6
     hands=gear.Floral_Gauntlets, --5
@@ -683,37 +677,31 @@ function init_gear_sets()
     ring2="Gere Ring",
     back=gear.THF_TP_Cape,
     waist="Reiki Yotai", --7
-    -- ammo="Aurgelmir Orb +1",
-    -- neck="Erudit. Necklace",
     -- back=gear.THF_DW_Cape, --10
   }--36
   sets.engaged.DW.LowAcc = set_combine(sets.engaged.DW, {
-    ring1="Chirich Ring +1",
-    -- head="Skulker's Bonnet +1",
-    -- neck="Combatant's Torque",
+    ammo="Yamarang",
+    ear1="Telos Earring",
   })
   sets.engaged.DW.MidAcc = set_combine(sets.engaged.DW.LowAcc, {
-    ammo="Yamarang",
-    head="Dampening Tam",
-    ring2="Ilabrat Ring",
-    -- body="Pillager's Vest +3",
+    -- head="Plunderer's Bonnet +3",
+    -- hands=gear.Adhemar_A_hands,
   })
   sets.engaged.DW.HighAcc = set_combine(sets.engaged.DW.MidAcc, {
-    ear1="Cessance Earring",
-    ear2="Telos Earring",
     ring2="Regal Ring",
-    -- ammo="C. Palug Stone",
-    -- legs="Pill. Culottes +3",
+    waist="Olseni Belt",
+    -- hands="Pillager's Armlets +3",
+    -- ring2="Regal Ring",
   })
 
   -- Low Magic/Gear/JA Haste (67% DW to cap, 37% from gear)
   sets.engaged.DW.LowHaste = {
-    ammo="Aurgelmir Orb",
+    ammo="Yetshila +1",
     head=gear.Adhemar_B_head,
-    body=gear.Adhemar_B_body, --6
+    body=gear.Adhemar_B_body, -- 6
     hands=gear.Floral_Gauntlets, --5
     legs=gear.Samnuha_legs,
-    feet=gear.Taeon_DW_feet, --9
+    feet="Plunderer's Poulaines +1",
     neck="Assassin's Gorget +2",
     ear1="Suppanomimi", --5
     ear2="Eabani Earring", --4
@@ -721,192 +709,163 @@ function init_gear_sets()
     ring2="Gere Ring",
     back=gear.THF_TP_Cape,
     waist="Reiki Yotai", --7
-    -- ammo="Aurgelmir Orb +1",
-    -- hands=gear.Adhemar_A_hands,
-    -- neck="Erudit. Necklace",
-    -- ear1="Sherida Earring",
-    -- ear2="Suppanomimi", --5
+    -- legs="Pillager's Culottes +3",
+    -- feet="Plunderer's Poulaines +3",
     -- back=gear.THF_DW_Cape, --10
   }
 
   sets.engaged.DW.LowAcc.LowHaste = set_combine(sets.engaged.DW.LowHaste, {
-    ring1="Chirich Ring +1",
-    -- head="Skulker's Bonnet +1",
-    -- neck="Combatant's Torque",
+    ammo="Yamarang",
+    ear1="Telos Earring",
   })
 
   sets.engaged.DW.MidAcc.LowHaste = set_combine(sets.engaged.DW.LowAcc.LowHaste, {
-    ammo="Yamarang",
-    head="Dampening Tam",
-    ring2="Ilabrat Ring",
-    waist="Kentarch Belt +1",
-    -- body="Pillager's Vest +3",
+    -- head="Plunderer's Bonnet +3",
+    -- hands=gear.Adhemar_A_hands,
   })
 
   sets.engaged.DW.HighAcc.LowHaste = set_combine(sets.engaged.DW.MidAcc.LowHaste, {
-    ear2="Telos Earring",
-    ring1="Regal Ring",
-    ring2="Chirich Ring +1",
-    -- ammo="C. Palug Stone",
-    -- legs="Pill. Culottes +3",
+    ring2="Regal Ring",
+    waist="Olseni Belt",
+    -- hands="Pillager's Armlets +3",
+    -- ring2="Regal Ring",
   })
 
   -- Mid Magic/Gear/JA Haste (56% DW to cap, 26% from gear)
   sets.engaged.DW.MidHaste = {
-    ammo="Aurgelmir Orb",
+    ammo="Yetshila +1",
     head=gear.Adhemar_B_head,
     body=gear.Adhemar_B_body, --6
-    hands=gear.Floral_Gauntlets, --5
+    hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha_legs,
     feet="Plunderer's Poulaines +1",
     neck="Assassin's Gorget +2",
-    ear1="Eabani Earring", --4
-    ear2="Suppanomimi", --5
+    ear1="Suppanomimi", --5
+    ear2="Eabani Earring", --4
     ring1="Hetairoi Ring",
     ring2="Gere Ring",
     back=gear.THF_TP_Cape,
     waist="Reiki Yotai", --7
-    -- ammo="Aurgelmir Orb +1",
-    -- body="Pillager's Vest +3",
-    -- hands=gear.Adhemar_B_hands,
-    -- neck="Erudit. Necklace",
+    -- body="Plunderer's Vest +3",
+    -- legs="Pillager's Culottes +3",
+    -- feet="Plunderer's Poulaines +3",
     -- back=gear.THF_DW_Cape, --10
   }--27
-
   sets.engaged.DW.LowAcc.MidHaste = set_combine(sets.engaged.DW.MidHaste, {
-    ring1="Chirich Ring +1",
-    -- head="Skulker's Bonnet +1",
-    -- neck="Combatant's Torque",
-  })
-
-  sets.engaged.DW.MidAcc.MidHaste = set_combine(sets.engaged.DW.LowAcc.MidHaste, {
     ammo="Yamarang",
-    head="Dampening Tam",
-    ear1="Cessance Earring",
-    ring2="Ilabrat Ring",
+    ear1="Telos Earring",
   })
-
+  sets.engaged.DW.MidAcc.MidHaste = set_combine(sets.engaged.DW.LowAcc.MidHaste, {
+    -- head="Plunderer's Bonnet +3",
+    -- hands=gear.Adhemar_A_hands,
+  })
   sets.engaged.DW.HighAcc.MidHaste = set_combine(sets.engaged.DW.MidAcc.MidHaste, {
-    ear2="Telos Earring",
     ring2="Regal Ring",
-    -- ammo="C. Palug Stone",
-    -- legs="Pill. Culottes +3",
+    waist="Olseni Belt",
+    -- hands="Pillager's Armlets +3",
+    -- ring2="Regal Ring",
   })
 
   -- High Magic/Gear/JA Haste (43% DW to cap, 13% from gear)
   sets.engaged.DW.HighHaste = {
-    ammo="Aurgelmir Orb",
+    ammo="Yetshila +1",
     head=gear.Adhemar_B_head,
     body=gear.Adhemar_B_body, --6
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha_legs,
     feet="Plunderer's Poulaines +1",
     neck="Assassin's Gorget +2",
-    ear1="Sherida Earring",
-    ear2="Telos Earring",
+    ear1="Suppanomimi", --5
+    ear2="Sherida Earring",
     ring1="Hetairoi Ring",
     ring2="Gere Ring",
     back=gear.THF_TP_Cape,
     waist="Reiki Yotai", --7
-    -- ammo="Aurgelmir Orb +1",
-    -- body="Pillager's Vest +3",
-    -- neck="Erudit. Necklace",
+    -- body="Plunderer's Vest +3",
+    -- legs="Pillager's Culottes +3",
+    -- feet="Plunderer's Poulaines +3",
   }
   sets.engaged.DW.LowAcc.HighHaste = set_combine(sets.engaged.DW.HighHaste, {
-    ring1="Chirich Ring +1",
-    -- head="Skulker's Bonnet +1",
-    -- neck="Combatant's Torque",
+    ammo="Yamarang",
+    ear1="Telos Earring",
   })
   sets.engaged.DW.MidAcc.HighHaste = set_combine(sets.engaged.DW.LowAcc.HighHaste, {
-    ammo="Yamarang",
-    head="Dampening Tam",
-    ear1="Cessance Earring",
-    ring2="Ilabrat Ring",
+    -- head="Plunderer's Bonnet +3",
+    -- hands=gear.Adhemar_A_hands,
   })
   sets.engaged.DW.HighAcc.HighHaste = set_combine(sets.engaged.DW.MidAcc.HighHaste, {
-    ear2="Telos Earring",
     ring2="Regal Ring",
-    -- ammo="C. Palug Stone",
-    -- legs="Pill. Culottes +3",
+    waist="Olseni Belt",
+    -- hands="Pillager's Armlets +3",
+    -- ring2="Regal Ring",
   })
 
   -- High Magic/Gear/JA Haste (36% DW to cap, 6% from gear)
   sets.engaged.DW.SuperHaste = {
-    ammo="Aurgelmir Orb",
+    ammo="Yetshila +1",
     head=gear.Adhemar_B_head,
     body=gear.Adhemar_B_body, --6
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha_legs,
     feet="Plunderer's Poulaines +1",
     neck="Assassin's Gorget +2",
-    ear1="Telos Earring",
+    ear1="Odr Earring",
     ear2="Sherida Earring",
     ring1="Hetairoi Ring",
     ring2="Gere Ring",
     back=gear.THF_TP_Cape,
-    waist="Windbuffet Belt +1",
-    -- ammo="Aurgelmir Orb +1",
-    -- body="Pillager's Vest +3",
-    -- neck="Erudit. Necklace",
+    waist="Reiki Yotai", --7
+    -- body="Plunderer's Vest +3",
+    -- legs="Pillager's Culottes +3",
+    -- feet="Plunderer's Poulaines +3",
   }
   sets.engaged.DW.LowAcc.SuperHaste = set_combine(sets.engaged.DW.SuperHaste, {
-    ring1="Chirich Ring +1",
-    waist="Kentarch Belt +1",
-    -- head="Skulker's Bonnet +1",
-    -- neck="Combatant's Torque",
+    ammo="Yamarang",
+    ear1="Telos Earring",
   })
   sets.engaged.DW.MidAcc.SuperHaste = set_combine(sets.engaged.DW.LowAcc.SuperHaste, {
-    ammo="Yamarang",
-    head="Dampening Tam",
-    ear1="Cessance Earring",
-    ring2="Ilabrat Ring",
+    -- head="Plunderer's Bonnet +3",
+    -- hands=gear.Adhemar_A_hands,
   })
   sets.engaged.DW.HighAcc.SuperHaste = set_combine(sets.engaged.DW.MidAcc.SuperHaste, {
-    ear2="Telos Earring",
     ring2="Regal Ring",
     waist="Olseni Belt",
-    -- ammo="C. Palug Stone",
-    -- legs="Pill. Culottes +3",
+    -- hands="Pillager's Armlets +3",
+    -- ring2="Regal Ring",
   })
 
   -- Max Magic/Gear/JA Haste (0-30% DW to cap, 0% from gear)
   sets.engaged.DW.MaxHaste = {
-    ammo="Aurgelmir Orb",
+    ammo="Yetshila +1",
     head=gear.Adhemar_B_head,
     body=gear.Adhemar_B_body, --6
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha_legs,
     feet="Plunderer's Poulaines +1",
     neck="Assassin's Gorget +2",
-    ear1="Telos Earring",
+    ear1="Odr Earring",
     ear2="Sherida Earring",
     ring1="Hetairoi Ring",
     ring2="Gere Ring",
     back=gear.THF_TP_Cape,
     waist="Windbuffet Belt +1",
-    -- ammo="Aurgelmir Orb +1",
-    -- body="Pillager's Vest +3",
-    -- hands=gear.Adhemar_A_hands,
-    -- neck="Erudit. Necklace",
+    -- body="Plunderer's Vest +3",
+    -- legs="Pillager's Culottes +3",
+    -- feet="Plunderer's Poulaines +3",
   }
   sets.engaged.DW.LowAcc.MaxHaste = set_combine(sets.engaged.DW.MaxHaste, {
-    ring1="Chirich Ring +1",
-    waist="Kentarch Belt +1",
-    -- head="Skulker's Bonnet +1",
-    -- neck="Combatant's Torque",
+    ammo="Yamarang",
+    ear1="Telos Earring",
   })
   sets.engaged.DW.MidAcc.MaxHaste = set_combine(sets.engaged.DW.LowAcc.MaxHaste, {
-    ammo="Yamarang",
-    head="Dampening Tam",
-    ear1="Cessance Earring",
-    ring2="Ilabrat Ring",
+    -- head="Plunderer's Bonnet +3",
+    -- hands=gear.Adhemar_A_hands,
   })
   sets.engaged.DW.HighAcc.MaxHaste = set_combine(sets.engaged.DW.MidAcc.MaxHaste, {
-    ear2="Telos Earring",
     ring2="Regal Ring",
     waist="Olseni Belt",
-    -- ammo="C. Palug Stone",
-    -- legs="Pill. Culottes +3",
+    -- hands="Pillager's Armlets +3",
+    -- ring2="Regal Ring",
   })
 
 
@@ -1041,9 +1000,9 @@ function job_post_precast(spell, action, spellMap, eventArgs)
     end
   end
   if spell.type == 'WeaponSkill' then
-    if state.Buff['Sneak Attack'] or state.Buff['Trick Attack'] then
+    if state.Buff['Sneak Attack'] then
     -- If set isn't found for specific ws, overlay the default set
-      local set = (sets.precast.WS[spell.name] and sets.precast.WS[spell.name].SATA) or sets.precast.WS.SATA or {}
+      local set = (sets.precast.WS[spell.name] and sets.precast.WS[spell.name].SA) or sets.precast.WS.SA or {}
       equip(set)
     end
     -- Equip obi if weather/day matches for WS.
