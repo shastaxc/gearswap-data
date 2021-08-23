@@ -197,6 +197,10 @@ function user_setup()
   elseif player.sub_job == 'NIN' then
     send_command('bind ^numpad0 input /ma "Utsusemi: Ichi" <me>')
     send_command('bind ^numpad. input /ma "Utsusemi: Ni" <me>')
+  elseif player.sub_job == 'DRG' then
+    send_command('bind !w input /ja "Ancient Circle" <me>')
+    send_command('bind ^numpad/ input /ja "Jump" <t>')
+    send_command('bind ^numpad* input /ja "High Jump" <t>')
   end
 
   update_combat_form()
@@ -421,7 +425,7 @@ function init_gear_sets()
     waist="Fotia Belt",
   } -- default set
   sets.precast.WS.MaxTP = set_combine(sets.precast.WS, {})
-  sets.precast.WS.SATA = {body="Meg. Cuirie +2"}
+  sets.precast.WS.SA = {body="Meg. Cuirie +2"}
   -- For Crit Dmg, not crit rate; overlaid on any WS set that doesn't have its own Climacic set defined
   sets.precast.WS.Climactic = {
     head="Maculele Tiara +1",
@@ -466,8 +470,8 @@ function init_gear_sets()
   -- 40% STR / 40% DEX, ftp replicating
   sets.precast.WS['Pyrrhic Kleos'] = set_combine(sets.precast.WS, {
     ammo="Aurgelmir Orb",           --  5,  5, __, __
-    head=gear.Nyame_B_head,         -- 26, 25,  8, __
-    body=gear.Adhemar_B_body,       -- 38, 45, __, __
+    head="Gleti's Mask",            -- 33, 28, __,  6
+    body="Gleti's Cuirass",         -- 39, 34, __,  9
     hands=gear.Adhemar_B_hands,     -- 27, 56, __, __
     legs="Horos Tights +3",         -- 42, __, 10, __
     feet=gear.Nyame_B_feet,         -- 23, 26,  8, __
@@ -479,8 +483,6 @@ function init_gear_sets()
     back=gear.DNC_TP_DA_Cape,       -- __, 30, __, __
     waist="Fotia Belt",             -- __, __, __, __
     -- ammo="Aurgelmir Orb +1",     --  7,  7, __, __
-    -- head="Gleti's Mask",         -- 33, 28, __,  6
-    -- body="Gleti's Cuirass",      -- 39, 34, __,  9
     -- hands="Gleti's Gauntlets",   -- 20, 42, __,  9
     -- legs="Gleti's Greaves",      -- 49, __, __,  8
     -- feet=gear.Lustratio_D_feet,  -- 47, 48, __, __
@@ -540,37 +542,39 @@ function init_gear_sets()
   -- 80% DEX
   sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {
     ammo="Aurgelmir Orb",           --  5, __, __,  7, __
-    head=gear.Nyame_B_head,         -- 25, 24,  8, 55, __
-    body=gear.Nyame_B_body,         -- 24, 35, 10, 55, __
+    head=gear.Nyame_B_head,         -- 25, 24,  8, 30, __
+    body="Gleti's Cuirass",         -- 34, 26, __, 64,  9
     hands="Maxixi Bangles +3",      -- 45, 27, 10, 35, __
     legs="Horos Tights +3",         -- __, 24, 10, 64, __
     feet=gear.Nyame_B_feet,         -- 26, 38,  8, 55, __
     neck="Etoile Gorget +2",        -- 25, 25, __, __, 10
-    ear1="Ishvara Earring",         -- __, __,  2, __, __
+    ear1="Odr Earring",             -- 10, __, __, __, __
     ear2="Moonshade Earring",       -- __, __, __, __, __; TP Bonus+250
     ring1="Ilabrat Ring",           -- 10, __, __, 25, __
     ring2="Regal Ring",             -- 10, __, __, 20, __
     back=gear.DNC_WS1_Cape,         -- 30, __, 10, 20, __; Crit dmg+5
     waist="Grunfeld Rope",          --  5, __, __, 20, __
-    -- ammo="Cath Palug Stone",     -- 10, __, __, __, __
+    -- ammo="Crepuscular Pebble",   -- __, __, __, __,  3
+    -- head=gear.Lustratio_D_head,  -- 45, __, __, __, __
+    -- feet=gear.Lustratio_D_feet,  -- 48, __, __, __, __
     -- ring2="Epaminondas's Ring",  -- __, __,  5, __, __
     -- waist="Kentarch Belt +1",    -- 10, __, __, __, __;Aug it first
-    -- 215 DEX, 159 CHR, 68 WSD, 274 Att, 10 PDL
-  })-- 205 DEX, 173 CHR, 58 WSD, 356 Att, 10 PDL
+    -- 257 DEX, 102 CHR, 35 WSD, 208 Att, 22 PDL
+  })-- 225 DEX, 164 CHR, 46 WSD, 340 Att, 19 PDL
   sets.precast.WS["Rudra's Storm"].MaxTP = set_combine(sets.precast.WS["Rudra's Storm"], {
-    ear2="Odr Earring",
+    ear2="Ishvara Earring",         -- __, __,  2, __, __
   })
   sets.precast.WS["Rudra's Storm"].LowAcc = set_combine(sets.precast.WS["Rudra's Storm"], {})
   sets.precast.WS["Rudra's Storm"].LowAccMaxTP = set_combine(sets.precast.WS["Rudra's Storm"].LowAcc, {
-    ear2="Odr Earring",
+    ear2="Ishvara Earring",         -- __, __,  2, __, __
   })
   sets.precast.WS["Rudra's Storm"].MidAcc = set_combine(sets.precast.WS["Rudra's Storm"].LowAcc, {})
   sets.precast.WS["Rudra's Storm"].MidAccMaxTP = set_combine(sets.precast.WS["Rudra's Storm"].MidAcc, {
-    ear2="Odr Earring",
+    ear2="Ishvara Earring",         -- __, __,  2, __, __
   })
   sets.precast.WS["Rudra's Storm"].HighAcc = set_combine(sets.precast.WS["Rudra's Storm"].MidAcc, {})
   sets.precast.WS["Rudra's Storm"].HighAccMaxTP = set_combine(sets.precast.WS["Rudra's Storm"].HighAcc, {
-    ear2="Odr Earring",
+    ear2="Ishvara Earring",         -- __, __,  2, __, __
   })
   -- For Crit Dmg, not crit rate; overlaid on Rudra's set
   sets.precast.WS["Rudra's Storm"].Climactic = {
@@ -688,6 +692,7 @@ function init_gear_sets()
 
   sets.latent_regain = {
     head="Turms Cap +1",
+    body="Gleti's Cuirass",
   }
   sets.latent_regen = {
     head="Turms Cap +1",
@@ -1144,9 +1149,9 @@ function job_post_precast(spell, action, spellMap, eventArgs)
       local set = (sets.precast.WS[spell.name] and sets.precast.WS[spell.name].Climactic) or sets.precast.WS.Climactic or {}
       equip(set)
     end
-    if state.Buff['Sneak Attack'] or state.Buff['Trick Attack'] then
+    if state.Buff['Sneak Attack'] then
     -- If set isn't found for specific ws, overlay the default set
-      local set = sets.precast.WS[spell.name].SATA or sets.precast.WS.SATA or {}
+      local set = sets.precast.WS[spell.name].SA or sets.precast.WS.SA or {}
       equip(set)
     end
 
