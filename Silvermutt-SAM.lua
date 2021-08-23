@@ -237,7 +237,7 @@ function init_gear_sets()
   sets.precast.WS = {
     ammo="Knobkierrie",
     head="Mpaca's cap",
-    body="Sakonji Domaru +2",
+    body=gear.Nyame_B_body,
     hands=gear.Nyame_B_hands,
     legs=gear.Nyame_B_legs,
     feet=gear.Nyame_B_feet,
