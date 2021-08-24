@@ -475,7 +475,7 @@ function init_gear_sets()
     body=gear.Nyame_B_body,
     hands=gear.Nyame_B_hands,
     legs=gear.Lustratio_B_legs,
-    feet=gear.Nyame_B_feet,
+    feet=gear.Lustratio_D_feet,
     neck="Caro Necklace",
     waist="Grunfeld Rope",
     ear1="Sherida Earring",
@@ -483,7 +483,6 @@ function init_gear_sets()
     ring1="Niqmaddu Ring",
     ring2="Ilabrat Ring",
     back=gear.RUN_WS2_Cape,
-    -- feet=gear.Lustratio_D_feet,
     -- ring1="Epaminondas's Ring",
   })
   sets.precast.WS['Dimidiation'].Safe = set_combine(sets.precast.WS.Safe, {
