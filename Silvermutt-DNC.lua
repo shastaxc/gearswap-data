@@ -659,21 +659,22 @@ function init_gear_sets()
     -- 10 PDT from JSE cape
   } --51 PDT/41 MDT, 689 MEVA
 
+  -- Overcapped DT to account for regain gear swap
   sets.HeavyDef = {
     ammo="Yamarang",            -- __/__,  15
     head="Malignance Chapeau",  --  6/ 6, 123
     body="Malignance Tabard",   --  9/ 9, 139
     hands="Malignance Gloves",  --  5/ 5, 112
     legs=gear.Nyame_B_legs,     --  8/ 8, 150
-    feet="Malignance Boots",    --  4/ 4, 150
+    feet=gear.Nyame_B_feet,     --  7/ 7, 150
     neck="Etoile Gorget +2",    -- __/__, ___
     ear1="Eabani Earring",      -- __/__,   8
     ear2="Odnowa Earring +1",   --  3/ 5, ___
     ring1="Moonlight Ring",     --  5/ 5, ___
-    ring2="Archon Ring",        -- __/__, ___; Occ. blocks magic dmg
+    ring2="Defending Ring",     -- 10/10, ___
     back=gear.DNC_TP_DW_Cape,   -- 10/__, ___
     waist="Engraved Belt",      -- __/__, ___
-  } --50 PDT/42 MDT, 697 MEVA
+  } --63 PDT/55 MDT, 697 MEVA
 
   sets.defense.PDT = sets.HeavyDef
   sets.defense.MDT = sets.HeavyDef
@@ -685,6 +686,8 @@ function init_gear_sets()
   sets.latent_regain = {
     head="Turms Cap +1",
     body="Gleti's Cuirass",
+    hands="Gleti's Gauntlets",
+    legs="Gleti's Breeches",
   }
   sets.latent_regen = {
     head="Turms Cap +1",
@@ -704,7 +707,12 @@ function init_gear_sets()
 
   sets.resting = {}
 
-  sets.idle = sets.HeavyDef
+  sets.idle = set_combine(sets.HeavyDef, {
+    head="Turms Cap +1",        -- __/__, 109
+    body="Gleti's Cuirass",     --  9/__, 102
+    hands="Gleti's Gauntlets",  --  7/__, 75
+    legs="Gleti's Breeches",    --  8/__, 112
+  })
 
   sets.idle.Regain = set_combine(sets.idle, sets.latent_regain)
   sets.idle.Regen = set_combine(sets.idle, sets.latent_regen)
