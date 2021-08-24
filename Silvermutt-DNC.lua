@@ -131,6 +131,7 @@ function job_setup()
   state.CurrentStep = M{['description']='Current Step', 'Main', 'Alt'}
 
   state.CP = M(false, "Capacity Points Mode")
+  state.AttCapped = M(true, "Attack Capped")
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.HybridMode:options('LightDef', 'Normal')
@@ -150,6 +151,8 @@ function job_setup()
   send_command('bind ^pageup gs c toyweapon cycle')
   send_command('bind ^pagedown gs c toyweapon cycleback')
   send_command('bind !pagedown gs c toyweapon reset')
+  
+  send_command('bind ^f8 gs c toggle AttCapped')
 
   send_command('bind ^- gs c cycleback mainstep')
   send_command('bind ^= gs c cycle mainstep')
@@ -454,56 +457,57 @@ function init_gear_sets()
   }) -- Multihit > AGI
   sets.precast.WS['Exenterator'].MaxTP = set_combine(sets.precast.WS['Exenterator'], {
   })
-  sets.precast.WS['Exenterator'].LowAcc = set_combine(sets.precast.WS['Exenterator'], {
-  })
-  sets.precast.WS['Exenterator'].LowAccMaxTP = set_combine(sets.precast.WS['Exenterator'].LowAcc, {
-  })
-  sets.precast.WS['Exenterator'].MidAcc = set_combine(sets.precast.WS['Exenterator'].LowAcc, {
-  })
-  sets.precast.WS['Exenterator'].MidAccMaxTP = set_combine(sets.precast.WS['Exenterator'].MidAcc, {
-  })
-  sets.precast.WS['Exenterator'].HighAcc = set_combine(sets.precast.WS['Exenterator'].MidAcc, {
-  })
-  sets.precast.WS['Exenterator'].HighAccMaxTP = set_combine(sets.precast.WS['Exenterator'].HighAcc, {
-  })
 
   -- 40% STR / 40% DEX, ftp replicating
   sets.precast.WS['Pyrrhic Kleos'] = set_combine(sets.precast.WS, {
-    ammo="Aurgelmir Orb",           --  5,  5, __, __
-    head="Gleti's Mask",            -- 33, 28, __,  6
-    body="Gleti's Cuirass",         -- 39, 34, __,  9
-    hands=gear.Adhemar_B_hands,     -- 27, 56, __, __
-    legs="Horos Tights +3",         -- 42, __, 10, __
-    feet=gear.Nyame_B_feet,         -- 23, 26,  8, __
-    neck="Etoile Gorget +2",        -- __, 25, __, 10
-    ear1="Odr Earring",             -- __, 10, __, __
-    ear2="Sherida Earring",         --  5,  5, __, __
-    ring1="Gere Ring",              -- 10, __, __, __
-    ring2="Regal Ring",             -- 10, 10, __, __
-    back=gear.DNC_TP_DA_Cape,       -- __, 30, __, __
-    waist="Fotia Belt",             -- __, __, __, __
-    -- ammo="Aurgelmir Orb +1",     --  7,  7, __, __
-    -- hands="Gleti's Gauntlets",   -- 20, 42, __,  9
-    -- legs="Gleti's Greaves",      -- 49, __, __,  8
-    -- feet=gear.Lustratio_D_feet,  -- 47, 48, __, __
-    -- ear2="Mache Earring +1",     -- __,  8, __, __
-    -- back=gear.DNC_WS2_Cape,      -- 30, __, __, __
-    -- 250 STR, 207 DEX, 10 WSD, 42 PDL
-  }) -- 186 STR, 237 DEX, 26 WSD, 10 PDL
-  sets.precast.WS['Pyrrhic Kleos'].MaxTP = set_combine(sets.precast.WS['Pyrrhic Kleos'], {
-  })
-  sets.precast.WS['Pyrrhic Kleos'].LowAcc = set_combine(sets.precast.WS['Pyrrhic Kleos'], {
-  })
-  sets.precast.WS['Pyrrhic Kleos'].LowAccMaxTP = set_combine(sets.precast.WS['Pyrrhic Kleos'].LowAcc, {
-  })
-  sets.precast.WS['Pyrrhic Kleos'].MidAcc = set_combine(sets.precast.WS['Pyrrhic Kleos'].LowAcc, {
-  })
-  sets.precast.WS['Pyrrhic Kleos'].MidAccMaxTP = set_combine(sets.precast.WS['Pyrrhic Kleos'].MidAcc, {
-  })
-  sets.precast.WS['Pyrrhic Kleos'].HighAcc = set_combine(sets.precast.WS['Pyrrhic Kleos'].MidAcc, {
-  })
-  sets.precast.WS['Pyrrhic Kleos'].HighAccMaxTP = set_combine(sets.precast.WS['Pyrrhic Kleos'].HighAcc, {
-  })
+    ammo="Aurgelmir Orb",           --  5,  5, __,  7, __
+    head=gear.Adhemar_B_head,       -- 31, 33, __, 56, __
+    body=gear.Adhemar_B_body,       -- 38, 45, __, 55, __
+    hands=gear.Adhemar_B_hands,     -- 27, 56, __, 52, __
+    legs="Gleti's Breeches",        -- 49, __, __, 60,  8
+    feet=gear.Nyame_B_feet,         -- 23, 26,  8, 55, __
+    neck="Etoile Gorget +2",        -- __, 25, __, __, 10
+    ear1="Odr Earring",             -- __, 10, __, __, __
+    ear2="Sherida Earring",         --  5,  5, __, __, __
+    ring1="Gere Ring",              -- 10, __, __, 16, __
+    ring2="Regal Ring",             -- 10, 10, __, 20, __
+    back=gear.DNC_TP_DA_Cape,       -- __, 30, __, 20, __
+    waist="Fotia Belt",             -- __, __, __, __, __; +0.1 ftp
+    -- ammo="Aurgelmir Orb +1",     --  7,  7, __, 10, __
+    -- head=gear.Lustratio_D_head,  -- 47, 45, __, __, __
+    -- feet=gear.Lustratio_D_feet,  -- 47, 48, __, __, __
+    -- ear1="Mache Earring +1",     -- __,  8, __, __, __
+    -- back=gear.DNC_WS2_Cape,      -- 30, __, __, 20, __
+    -- Lustratio set bonus          -- __, __,  4, __, __
+    -- 270 STR, 249 DEX, 4 WSD, 233 Att, 18 PDL
+  }) -- 191 STR, 245 DEX, 18 WSD, 345 Att, 10 PDL
+  sets.precast.WS['Pyrrhic Kleos'].MaxTP = set_combine(sets.precast.WS['Pyrrhic Kleos'], {})
+  sets.precast.WS['Pyrrhic Kleos'].AttCapped = set_combine(sets.precast.WS, {
+    ammo="Aurgelmir Orb",           --  5,  5, __,  7, __
+    head="Gleti's Mask",            -- 33, 28, __, 60,  6
+    body="Gleti's Cuirass",         -- 39, 34, __, 60,  9
+    hands="Gleti's Gauntlets",      -- 20, 42, __, 60,  9
+    legs="Gleti's Breeches",        -- 49, __, __, 60,  8
+    feet=gear.Nyame_B_feet,         -- 23, 26,  8, 55, __
+    neck="Etoile Gorget +2",        -- __, 25, __, __, 10
+    ear1="Odr Earring",             -- __, 10, __, __, __
+    ear2="Sherida Earring",         --  5,  5, __, __, __
+    ring1="Gere Ring",              -- 10, __, __, 16, __
+    ring2="Regal Ring",             -- 10, 10, __, 20, __
+    back=gear.DNC_TP_DA_Cape,       -- __, 30, __, 20, __
+    waist="Fotia Belt",             -- __, __, __, __, __; +0.1 ftp
+    -- ammo="Crepuscular Pebble",   --  3, __, __, __,  3
+    -- head=gear.Lustratio_D_head,  -- 47, 45, __, __, __
+    -- feet=gear.Lustratio_D_feet,  -- 47, 48, __, __, __
+    -- ear1="Mache Earring +1",     -- __,  8, __, __, __
+    -- back=gear.DNC_WS2_Cape,      -- 30, __, __, 20, __
+    -- Lustratio set bonus          -- __, __,  4, __, __
+    -- 260 STR, 217 DEX, 4 WSD, 236 Att, 39 PDL
+  }) -- 194 STR, 229 DEX, 18 WSD, 354 Att, 25 PDL
+  sets.precast.WS['Pyrrhic Kleos'].AttCappedMaxTP = set_combine(sets.precast.WS['Pyrrhic Kleos'].AttCapped, {})
+  -- Required to prevent extra gear from equipping during Climactic; AE cannot crit
+  -- For Crit Dmg, not crit rate; is overlaid, don't set_combine
+  sets.precast.WS['Pyrrhic Kleos'].Climactic = {}
 
   -- 50% DEX, 1.25 FTP, can crit, ftp replicating
   sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
@@ -525,24 +529,32 @@ function init_gear_sets()
   sets.precast.WS['Evisceration'].MaxTP = set_combine(sets.precast.WS['Evisceration'], {
     ring2="Defending Ring"
   })
-  sets.precast.WS['Evisceration'].LowAcc = set_combine(sets.precast.WS['Evisceration'], {
-    -- ear1="Mache Earring +1",
-  })
-  sets.precast.WS['Evisceration'].LowAccMaxTP = set_combine(sets.precast.WS['Evisceration'].LowAcc, {
-  })
-  sets.precast.WS['Evisceration'].MidAcc = set_combine(sets.precast.WS['Evisceration'].LowAcc, {
-  })
-  sets.precast.WS['Evisceration'].MidAccMaxTP = set_combine(sets.precast.WS['Evisceration'].MidAcc, {
-  })
-  sets.precast.WS['Evisceration'].HighAcc = set_combine(sets.precast.WS['Evisceration'].MidAcc, {
-  })
-  sets.precast.WS['Evisceration'].HighAccMaxTP = set_combine(sets.precast.WS['Evisceration'].HighAcc, {
-  })
 
   -- 80% DEX
   sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {
     ammo="Aurgelmir Orb",           --  5, __, __,  7, __
     head=gear.Nyame_B_head,         -- 25, 24,  8, 30, __
+    body=gear.Nyame_B_body,         -- 24, 35, 10, 55, __
+    hands="Maxixi Bangles +3",      -- 45, 27, 10, 35, __
+    legs="Horos Tights +3",         -- __, 24, 10, 64, __
+    feet=gear.Nyame_B_feet,         -- 26, 38,  8, 55, __
+    neck="Etoile Gorget +2",        -- 25, 25, __, __, 10
+    ear1="Odr Earring",             -- 10, __, __, __, __
+    ear2="Moonshade Earring",       -- __, __, __, __, __; TP Bonus+250
+    ring1="Ilabrat Ring",           -- 10, __, __, 25, __
+    ring2="Regal Ring",             -- 10, __, __, 20, __
+    back=gear.DNC_WS1_Cape,         -- 30, __, 10, 20, __; Crit dmg+5
+    waist="Grunfeld Rope",          --  5, __, __, 20, __
+    -- ammo="Aurgelmir Orb +1",     --  7, __, __, 10, __
+    -- waist="Kentarch Belt +1",    -- 10, __, __, __, __; Aug it first
+    -- 222 DEX, 173 CHR, 56 WSD, 314 Att, 10 PDL
+  })-- 215 DEX, 173 CHR, 56 WSD, 341 Att, 10 PDL
+  sets.precast.WS["Rudra's Storm"].MaxTP = set_combine(sets.precast.WS["Rudra's Storm"], {
+    ear2="Ishvara Earring",         -- __, __,  2, __, __
+  })
+  sets.precast.WS["Rudra's Storm"].AttCapped = set_combine(sets.precast.WS, {
+    ammo="Aurgelmir Orb",           --  5, __, __,  7, __
+    head="Gleti's Mask",            -- 28, 19, __, 60,  6
     body="Gleti's Cuirass",         -- 34, 26, __, 64,  9
     hands="Maxixi Bangles +3",      -- 45, 27, 10, 35, __
     legs="Horos Tights +3",         -- __, 24, 10, 64, __
@@ -557,28 +569,19 @@ function init_gear_sets()
     -- ammo="Crepuscular Pebble",   -- __, __, __, __,  3
     -- head=gear.Lustratio_D_head,  -- 45, __, __, __, __
     -- feet=gear.Lustratio_D_feet,  -- 48, __, __, __, __
-    -- ring2="Epaminondas's Ring",  -- __, __,  5, __, __
-    -- waist="Kentarch Belt +1",    -- 10, __, __, __, __;Aug it first
-    -- 257 DEX, 102 CHR, 35 WSD, 208 Att, 22 PDL
-  })-- 225 DEX, 164 CHR, 46 WSD, 340 Att, 19 PDL
-  sets.precast.WS["Rudra's Storm"].MaxTP = set_combine(sets.precast.WS["Rudra's Storm"], {
+    -- ring1="Epaminondas's Ring",  -- __, __,  5, __, __
+    -- waist="Kentarch Belt +1",    -- 10, __, __, __, __; Aug it first
+    -- Lustratio set bonus          -- __, __,  4, __, __
+    -- 257 DEX, 102 CHR, 39 WSD, 208 Att, 22 PDL
+  })-- 228 DEX, 159 CHR, 38 WSD, 370 Att, 25 PDL
+  sets.precast.WS["Rudra's Storm"].AttCappedMaxTP = set_combine(sets.precast.WS["Rudra's Storm"].AttCapped, {
     ear2="Ishvara Earring",         -- __, __,  2, __, __
   })
-  sets.precast.WS["Rudra's Storm"].LowAcc = set_combine(sets.precast.WS["Rudra's Storm"], {})
-  sets.precast.WS["Rudra's Storm"].LowAccMaxTP = set_combine(sets.precast.WS["Rudra's Storm"].LowAcc, {
-    ear2="Ishvara Earring",         -- __, __,  2, __, __
-  })
-  sets.precast.WS["Rudra's Storm"].MidAcc = set_combine(sets.precast.WS["Rudra's Storm"].LowAcc, {})
-  sets.precast.WS["Rudra's Storm"].MidAccMaxTP = set_combine(sets.precast.WS["Rudra's Storm"].MidAcc, {
-    ear2="Ishvara Earring",         -- __, __,  2, __, __
-  })
-  sets.precast.WS["Rudra's Storm"].HighAcc = set_combine(sets.precast.WS["Rudra's Storm"].MidAcc, {})
-  sets.precast.WS["Rudra's Storm"].HighAccMaxTP = set_combine(sets.precast.WS["Rudra's Storm"].HighAcc, {
-    ear2="Ishvara Earring",         -- __, __,  2, __, __
-  })
-  -- For Crit Dmg, not crit rate; overlaid on Rudra's set
+  -- For Crit Dmg, not crit rate; is overlaid, don't set_combine
   sets.precast.WS["Rudra's Storm"].Climactic = {
     head="Maculele Tiara +1",
+    feet=gear.Nyame_B_feet,
+    -- ring1="Epaminondas's Ring",
   }
 
   sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
@@ -602,13 +605,8 @@ function init_gear_sets()
   sets.precast.WS['Aeolian Edge'].MaxTP = set_combine(sets.precast.WS['Aeolian Edge'], {
     ear2="Novio Earring", --7
   })
-  sets.precast.WS['Aeolian Edge'].LowAcc = sets.precast.WS['Aeolian Edge']
-  sets.precast.WS['Aeolian Edge'].LowAccMaxTP = sets.precast.WS['Aeolian Edge'].MaxTP
-  sets.precast.WS['Aeolian Edge'].MidAcc = sets.precast.WS['Aeolian Edge']
-  sets.precast.WS['Aeolian Edge'].MidAccMaxTP = sets.precast.WS['Aeolian Edge'].MaxTP
-  sets.precast.WS['Aeolian Edge'].HighAcc = sets.precast.WS['Aeolian Edge']
-  sets.precast.WS['Aeolian Edge'].HighAccMaxTP = sets.precast.WS['Aeolian Edge'].MaxTP
   -- Required to prevent extra gear from equipping during Climactic; AE cannot crit
+  -- For Crit Dmg, not crit rate; is overlaid, don't set_combine
   sets.precast.WS["Aeolian Edge"].Climactic = {}
 
   sets.precast.WS['Shell Crusher'] = {
@@ -631,12 +629,6 @@ function init_gear_sets()
     ear2="Telos Earring",
     -- ear2="Crepuscular Earring",
   })
-  sets.precast.WS['Shell Crusher'].LowAcc = sets.precast.WS['Shell Crusher']
-  sets.precast.WS['Shell Crusher'].LowAccMaxTP = sets.precast.WS['Shell Crusher'].MaxTP
-  sets.precast.WS['Shell Crusher'].MidAcc = sets.precast.WS['Shell Crusher']
-  sets.precast.WS['Shell Crusher'].MidAccMaxTP = sets.precast.WS['Shell Crusher'].MaxTP
-  sets.precast.WS['Shell Crusher'].HighAcc = sets.precast.WS['Shell Crusher']
-  sets.precast.WS['Shell Crusher'].HighAccMaxTP = sets.precast.WS['Shell Crusher'].MaxTP
 
 
   ------------------------------------------------------------------------------------------------
@@ -1270,10 +1262,12 @@ end
 function get_custom_wsmode(spell, action, spellMap)
   local wsmode = ''
 
-  if state.OffenseMode.value ~= 'Normal' then
-    wsmode = state.OffenseMode.value
+  -- Determine if attack capped
+  if state.AttCapped.value then
+    wsmode = 'AttCapped'
   end
 
+  -- Calculate if need TP bonus
   local buffer = 100
   local main = player.equipment.main
   local sub = player.equipment.sub
