@@ -69,27 +69,21 @@ gear.Herc_WSD_body = { name="Herculean Vest", augments={'Pet: Attack+12 Pet: Rng
 gear.Herc_TH_body = { name="Herculean Vest", augments={'Pet: INT+1','AGI+6','"Treasure Hunter"+2','Accuracy+17 Attack+17',}}
 
 gear.Herc_DEX_CritDmg_feet = { name="Herculean Boots", augments={'Accuracy+25','Crit. hit damage +3%','DEX+9',}}
-gear.Herc_STR_CritDmg_feet = {} -- CritDmg > Str > Acc/Att > Multihit
+-- gear.Herc_STR_CritDmg_feet = {} -- CritDmg > Str > Acc/Att > Multihit
 
 gear.Herc_Refresh_head = { name="Herculean Helm", augments={'Weapon Skill Acc.+13','Accuracy+2','"Refresh"+1','Accuracy+19 Attack+19',}}
 gear.Herc_Refresh_feet = { name="Herculean Boots", augments={'Crit.hit rate+1','STR+14','"Refresh"+2',}}
 
 -- Merlinic
-gear.Merl_MB_head = {} --MAB, M.Acc, 10 INT
-gear.Merl_MB_body = {} --MAB, M.Acc, 10 INT
-gear.Merl_MB_feet = {} --MAB, M.Acc, 10 INT
 
 gear.Merl_FC_head = { name="Merlinic Hood", augments={'Mag. Acc.+4 "Mag.Atk.Bns."+4','"Fast Cast"+5','Mag. Acc.+4',}}
-gear.Merl_FC_body = {}
-gear.Merl_FC_hands = {}
-gear.Merl_FC_feet = {}
+-- gear.Merl_FC_body = {}
+-- gear.Merl_FC_hands = {}
+-- gear.Merl_FC_feet = {}
 
 -- Odyssean
 
 -- Valorous
-gear.Valorous_STR_WSD_head = {} -- 4~5%+ WSD, ~20 Acc/Att, 10~15STR
-gear.Valorous_STR_WSD_hands = {} -- 4~5%+ WSD, ~20 Acc/Att, 10~15STR
-gear.Valorous_STR_WSD_feet = {} -- 4~5%+ WSD, ~20 Acc/Att, 10~15STR
 
 
 ----------------------------------------------------------------------
@@ -149,9 +143,6 @@ gear.Taeon_RA_head = { name="Taeon Chapeau", augments={'"Snapshot"+5','"Snapshot
 
 gear.Dampening_Tam = { name="Dampening Tam", augments={'DEX+10','Accuracy+15','Mag. Acc.+15','Quadruple Attack +3',}}
 gear.Floral_Gauntlets = { name="Floral Gauntlets", augments={'Rng.Acc.+13','Accuracy+14','"Triple Atk."+1','Magic dmg. taken -2%',}}
-gear.Founders_Breastplate = {}
-gear.Founders_Gauntlets = {}
-gear.Founders_Greaves = {}
 gear.Leyline_Gloves = { name="Leyline Gloves", augments={'Accuracy+15','Mag. Acc.+15','"Mag.Atk.Bns."+15','"Fast Cast"+3',}}
 gear.Samnuha_body = { name="Samnuha Coat", augments={'Mag. Acc.+14','"Mag.Atk.Bns."+13','"Fast Cast"+4','"Dual Wield"+3',}}
 gear.Samnuha_legs = { name="Samnuha Tights", augments={'STR+10','DEX+10','"Dbl.Atk."+3','"Triple Atk."+3',}}
@@ -161,7 +152,7 @@ gear.Samnuha_legs = { name="Samnuha Tights", augments={'STR+10','DEX+10','"Dbl.A
 -----------------------      Adoulin Capes     -----------------------
 ----------------------------------------------------------------------
 
-gear.COR_Adoulin_Cape = {}
+-- gear.COR_Adoulin_Cape = {}
 gear.DNC_Adoulin_Cape = { name="Toetapper Mantle", augments={'"Store TP"+1','"Dual Wield"+2','"Rev. Flourish"+28',}}
 gear.GEO_Adoulin_Cape = { name="Lifestream Cape", augments={'Geomancy Skill +10','Indi. eff. dur. +17','Pet: Damage taken -5%',}}
 gear.RUN_Adoulin_Cape = { name="Evasionist's Cape", augments={'Enmity+4','"Embolden"+15','"Dbl.Atk."+4',}}
@@ -174,7 +165,7 @@ gear.RUN_Adoulin_Cape = { name="Evasionist's Cape", augments={'Enmity+4','"Embol
 gear.COR_TP_Cape = { name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
 gear.COR_WS1_Cape = { name="Camulus's Mantle", augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','AGI+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
 gear.COR_WS2_Cape = { name="Camulus's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
-gear.COR_WS3_Cape = {}
+-- gear.COR_WS3_Cape = {}
 gear.COR_SNP_Cape = { name="Camulus's Mantle", augments={'"Snapshot"+10','"Regen"+5',}}
 gear.COR_Regen_Cape = gear.COR_SNP_Cape
 gear.COR_RA_Cape = { name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','"Store TP"+10','Phys. dmg. taken-10%',}}
@@ -188,7 +179,7 @@ gear.DNC_WS2_Cape = gear.DNC_TP_DA_Cape
 -- gear.DNC_WS3_Cape = {name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10',}}
 -- gear.DNC_WS4_Cape = {name="Senuna's Mantle", augments={'AGI+20','Accuracy+20 Attack+20','AGI+10','"Dbl.Atk."+10',}}
 
-gear.GEO_Nuke_Cape = {} -- INT, MAB
+-- gear.GEO_Nuke_Cape = {} -- INT, MAB
 gear.GEO_Idle_Cape = { name="Nantosuelta's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Pet: "Regen"+10','Pet: "Regen"+5',}}
 gear.GEO_FC_Cape = { name="Nantosuelta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Fast Cast"+10','Pet: "Regen"+5',}}
 
@@ -219,7 +210,9 @@ gear.RUN_WS2_Cape = {name="Ogma's cape", augments={'DEX+20','Accuracy+20 Attack+
 
 gear.THF_TP_Cape = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}}
 gear.THF_WS1_Cape = { name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
-gear.THF_WS2_Cape = {} -- STR WSD
+-- gear.THF_WS2_Cape = {} -- STR WSD
+-- gear.THF_WS3_Cape = {} -- AGI DA
+-- gear.THF_WS4_Cape = {} -- DEX Crit
 
 
 ----------------------------------------------------------------------
