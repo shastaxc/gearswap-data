@@ -59,7 +59,6 @@
 
 -- Initialization function for this job file.
 function get_sets()
-  send_command('lua l thfknife')
   -- Load and initialize Mote library
   mote_include_version = 2
   include('Mote-Include.lua') -- Executes job_setup, user_setup, init_gear_sets
@@ -100,7 +99,7 @@ function job_setup()
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.RangedMode:options('Normal', 'Acc')
   state.HybridMode:options('LightDef', 'Evasion', 'Normal')
-  state.IdleMode:options('Normal', 'LightDef')
+  state.IdleMode:options('Normal', 'LightDef', 'Evasion')
   state.CP = M(false, 'Capacity Points Mode')
   state.AttCapped = M(true, "Attack Capped")
   state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger',
@@ -231,7 +230,7 @@ function init_gear_sets()
     -- head="Skulker's Bonnet +1",
   }
   sets.precast.JA['Flee'] = {
-    -- feet="Pill. Poulaines +3",
+    -- feet="Pillager's Poulaines +3",
   }
   sets.precast.JA['Hide'] = {
     -- body="Pillager's Vest +3",
@@ -244,7 +243,7 @@ function init_gear_sets()
     -- ammo="Barathrum", --3
     -- head="Asn. Bonnet +2",
     -- hands="Pillager's Armlets +1",
-    -- feet="Pill. Poulaines +3",
+    -- feet="Pillager's Poulaines +3",
   }
 
   sets.precast.JA['Despoil'] = {
@@ -253,10 +252,10 @@ function init_gear_sets()
     -- legs="Skulk. Culottes +1",
   }
   sets.precast.JA['Perfect Dodge'] = {
-    -- hands="Plun. Armlets +3",
+    -- hands="Plunderer's Armlets +3",
   }
   sets.precast.JA['Feint'] = {
-    -- legs="Plun. Culottes +3",
+    -- legs="Plunderer's Culottes +3",
   }
 
   sets.precast.Waltz = {
@@ -681,7 +680,7 @@ function init_gear_sets()
     body=gear.Adhemar_B_body,
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha_legs,
-    feet="Plunderer's Poulaines +1",
+    feet="Plunderer's Poulaines +2",
     neck="Assassin's Gorget +2",
     ear1="Odr Earring",
     ear2="Sherida Earring",
@@ -749,7 +748,7 @@ function init_gear_sets()
     body=gear.Adhemar_B_body, -- 6
     hands=gear.Floral_Gauntlets, --5
     legs=gear.Samnuha_legs,
-    feet="Plunderer's Poulaines +1",
+    feet="Plunderer's Poulaines +2",
     neck="Assassin's Gorget +2",
     ear1="Suppanomimi", --5
     ear2="Eabani Earring", --4
@@ -786,7 +785,7 @@ function init_gear_sets()
     body=gear.Adhemar_B_body, --6
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha_legs,
-    feet="Plunderer's Poulaines +1",
+    feet="Plunderer's Poulaines +2",
     neck="Assassin's Gorget +2",
     ear1="Suppanomimi", --5
     ear2="Eabani Earring", --4
@@ -821,7 +820,7 @@ function init_gear_sets()
     body=gear.Adhemar_B_body, --6
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha_legs,
-    feet="Plunderer's Poulaines +1",
+    feet="Plunderer's Poulaines +2",
     neck="Assassin's Gorget +2",
     ear1="Suppanomimi", --5
     ear2="Sherida Earring",
@@ -855,7 +854,7 @@ function init_gear_sets()
     body=gear.Adhemar_B_body, --6
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha_legs,
-    feet="Plunderer's Poulaines +1",
+    feet="Plunderer's Poulaines +2",
     neck="Assassin's Gorget +2",
     ear1="Odr Earring",
     ear2="Sherida Earring",
@@ -889,7 +888,7 @@ function init_gear_sets()
     body=gear.Adhemar_B_body, --6
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha_legs,
-    feet="Plunderer's Poulaines +1",
+    feet="Plunderer's Poulaines +2",
     neck="Assassin's Gorget +2",
     ear1="Odr Earring",
     ear2="Sherida Earring",
@@ -978,7 +977,7 @@ function init_gear_sets()
 
   sets.Kiting = {
     feet="Skadi's Jambeaux +1",
-    -- feet="Pill. Poulaines +3",
+    -- feet="Pillager's Poulaines +3",
   }
   sets.Kiting.Adoulin = {
     body="Councilor's Garb",
