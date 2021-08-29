@@ -914,6 +914,7 @@ function init_gear_sets()
     legs="Mallquis Trews +2",       -- 57, 45, 15, ___,  55,  6, __
     feet="Mallquis Clogs +1",       -- 33, 36, 12, ___,  46, __, __
     ear1="Malignance Earring",      --  8, 10,  8, ___, ___, __, __
+    back=gear.SCH_MAB_Cape,
     -- main="Daybreak",             -- __, 40, 40, 242, 241, __, __
     -- sub="Ammurapi Shield",       -- 13, 38, 38, ___, ___, __, __
     -- waist="Skrymir Cord",        -- __,  5,  5, ___,  30, __, __
