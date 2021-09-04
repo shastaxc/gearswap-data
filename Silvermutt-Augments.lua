@@ -77,8 +77,8 @@ gear.Herc_Refresh_feet = { name="Herculean Boots", augments={'Crit.hit rate+1','
 -- Merlinic
 
 gear.Merl_FC_head = { name="Merlinic Hood", augments={'Mag. Acc.+4 "Mag.Atk.Bns."+4','"Fast Cast"+5','Mag. Acc.+4',}}
+gear.Merl_FC_hands = { name="Merlinic Dastanas", augments={'Mag. Acc.+24','"Fast Cast"+5','STR+5','"Mag.Atk.Bns."+9',}}
 -- gear.Merl_FC_body = {}
--- gear.Merl_FC_hands = {}
 -- gear.Merl_FC_feet = {}
 
 -- Odyssean
