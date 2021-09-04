@@ -1019,7 +1019,7 @@ function init_gear_sets()
   -- }
   sets.WeaponSet['Cleaving'] = {
     main="Kaja Knife",
-    sub="Malevolence",
+    sub="Twashtar",
     -- main="Tauret",
   }
 end
