@@ -115,7 +115,7 @@ function job_setup()
   state.UseAltqd = M(false, 'Use Secondary Shot')
   state.SelectqdTarget = M(false, 'Select Quick Draw Target')
   state.IgnoreTargetting = M(false, 'Ignore Targetting')
-  state.QDMode = M{['description']='Quick Draw Mode', 'STP', 'Enhance', 'Potency'}
+  state.QDMode = M{['description']='Quick Draw Mode', 'Enhance', 'STP', 'Potency'}
   state.Currentqd = M{['description']='Current Quick Draw', 'Main', 'Alt'}
   state.CritMode = M(false, 'Crit')
 
