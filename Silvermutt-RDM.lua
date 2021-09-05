@@ -618,9 +618,9 @@ function init_gear_sets()
   sets.midcast.SpellInterrupt = {
     ammo="Impatiens", --10
     legs=gear.Carmine_D_legs, --20
+    waist="Rumination Sash", --10
     -- sub="Sacro Bulwark", --7
     -- ring1="Evanescence Ring", --5
-    -- waist="Rumination Sash", --10
   }
 
   sets.midcast.Cure = {
@@ -852,6 +852,7 @@ function init_gear_sets()
 
   sets.midcast.SkillEnfeebles = set_combine(sets.midcast.MndEnfeebles, {
     neck="Incanter's Torque",
+    waist="Rumination Sash",
     -- main=gear.Grioavolr_MND,
     -- sub="Mephitis Grip",
     -- head="Viti. Chapeau +3",
@@ -862,7 +863,6 @@ function init_gear_sets()
     -- ring2={name="Stikini Ring +1", bag="wardrobe4"},
     -- ear1="Vor Earring",
     -- ear2="Snotra Earring",
-    -- waist="Rumination Sash",
   })
 
   sets.midcast.Sleep = set_combine(sets.midcast.IntEnfeeblesAcc, {
