@@ -655,7 +655,7 @@ function init_gear_sets()
     feet="Bagua Sandals +1",        -- __/__, 107, __/__,  3
     neck="Bagua Charm +1",          -- __/__, ___, __/__, __; Absorb Dmg+8
     ear1="Odnowa Earring +1",       --  3/ 5, ___, __/__, __
-    ear2="Eabani Earring",          -- __/__,   8, __/__, __
+    ear2="Etiolation Earring",      -- __/ 3, ___, __/__, __; Resist Silence+15
     ring1="Defending Ring",         -- 10/10, ___, __/__, __
     ring2="Gelatinous Ring +1",     --  7/-1, ___, __/__, __
     back=gear.GEO_Idle_Cape,        -- __/__,  30, __/__, 15
@@ -666,9 +666,8 @@ function init_gear_sets()
     -- hands="Geomancy Mitaines +3",--  3/__,  57, 13/13, __
     -- feet="Bagua Sandals +3",     -- __/__, 127, __/__,  5
     -- neck="Bagua Charm +2",       -- __/__, ___, __/__, __; Absorb Dmg+10
-    -- ear2="Etiolation Earring",   -- __/ 3, ___, __/__, __; Resist Silence+15
     -- 51 PDT / 25 MDT, 526 Meva, 43 Pet PDT / 43 Pet MDT, 23 Pet Regen
-  } -- 63 PDT / 56 MDT, 557 Meva, 16 Pet PDT / 16 Pet MDT, 21 Pet Regen
+  } -- 63 PDT / 50 MDT, 549 Meva, 16 Pet PDT / 16 Pet MDT, 21 Pet Regen
 
 	-- When Luopan is present, and you are expecting to take dmg
 	sets.idle.HeavyDef.Pet = sets.idle.Pet

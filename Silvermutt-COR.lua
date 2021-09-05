@@ -284,12 +284,12 @@ function init_gear_sets()
     feet="Malignance Boots", --4/0
     neck="Regal Necklace",
     ear1="Genmei Earring", --2/0
+    ear2="Etiolation Earring", --0/3
     ring1="Gelatinous Ring +1", --7/(-1)
     ring2="Defending Ring", --10/10
     back=gear.COR_SNP_Cape,
     -- head="Lanun Tricorne +3",
     -- legs="Desultor Tassets",
-    -- ear2="Etiolation Earring", --0/3
     -- waist="Flume Belt +1", --4/0
   }
 
