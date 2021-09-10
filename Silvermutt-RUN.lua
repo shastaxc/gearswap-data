@@ -121,7 +121,7 @@ function job_setup()
   state.IdleMode:options('Normal', 'LightDef')
   state.Knockback = M(false, 'Knockback')
   state.DeathResist = M(false, 'Death Resist Mode')
-  state.WeaponSet = M{['description']='Weapon Set', 'Aettir', 'Lionheart', 'Epeolatry', 'Lycurgos'}
+  state.WeaponSet = M{['description']='Weapon Set', 'Epeolatry', 'Lionheart', 'Aettir', 'Lycurgos'}
   state.AttackMode = M{['description']='Attack', 'Uncapped', 'Capped'}
   state.CP = M(false, "Capacity Points Mode")
   state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger',
@@ -347,14 +347,13 @@ function init_gear_sets()
     ammo="Staunch Tathlum +1",                      -- {__}  3/ 3, ___ [___]
     head={name="Runeist's Bandeau +3", priority=1}, -- {14} __/__,  83 [109]
     hands=gear.Leyline_Gloves,                      -- { 8} __/__,  62 [ 25]
-    legs="Ayanmo Cosciales +2",                     -- { 6}  5/ 5,  69 [ 45]
+    legs="Agwu's Slops",                            -- { 7}  7/ 7, 134 [ 50]
     feet=gear.Taeon_FC_feet,                        -- { 5} __/__,  69 [ 13]
     ear2="Eabani Earring",                          -- {__} __/__,   8 [ 45]
     waist={name="Kasiri Belt", priority=1},         -- {__} __/__, ___ [ 30]
     back={name=gear.RUN_FC_Cape.name,augments=gear.RUN_FC_Cape.augments, priority=1}, -- {10} 10/__,  20 [ 80]
-    -- legs="Agwu's Slops",                         -- { 7}  7/ 7, 134 [ 50]; R13+
     -- feet="Carmine Greaves +1",                   -- { 8}  4/__,  80 [ 95]
-  } -- 43% Fast Cast [302 HP, 883 w/ PDT, 953 w/ MDT]
+  } -- 44% Fast Cast [307 HP, 888 w/ PDT, 958 w/ MDT]
 
   sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {
     legs="Futhark Trousers +3",
@@ -545,8 +544,7 @@ function init_gear_sets()
   sets.precast.WS['Shockwave'] = set_combine(sets.HybridAcc, {
     ear2="Moonshade Earring",
   })
-  sets.precast.WS['Shockwave'].Safe = set_combine(sets.precast.WS.Safe, {
-  })
+  sets.precast.WS['Shockwave'].Safe = sets.Enmity
   sets.precast.WS['Shockwave'].MaxTP = set_combine(sets.precast.WS['Shockwave'], {
     ear2=sets.HybridAcc.ear2,
   })
@@ -734,7 +732,6 @@ function init_gear_sets()
   sets.midcast['Blue Magic'].Enmity = sets.Enmity
   sets.midcast['Blue Magic'].Buffs = sets.midcast.EnhancingDuration
   sets.midcast['Blue Magic'].Cure = {
-    legs="Ayanmo Cosciales +2",
     ring1="Lebeche Ring", -- 3
     waist="Gishdubar Sash", --(10)
     -- body="Vrikodara Jupon", -- 13
@@ -1013,7 +1010,7 @@ function init_gear_sets()
     main="Aettir",
   }
   sets.WeaponSet["Epeolatry"] = {
-    -- main="Epeolatry",
+    main="Epeolatry",
   }
   sets.WeaponSet["Lionheart"] = {
     main="Lionheart",
