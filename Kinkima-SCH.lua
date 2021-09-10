@@ -8,7 +8,7 @@ end
 -- Executes on first load and main job change
 function job_setup()
   silibs.enable_cancel_outranged_ws()
-  silibs.enable_auto_lockstyle(1)
+  silibs.enable_auto_lockstyle(3)
   silibs.enable_premade_commands()
 
   state.CP = M(false, "Capacity Points Mode")
@@ -975,11 +975,11 @@ function init_gear_sets()
     main="Malignance Pole",         -- 20/20, ___
     sub=empty,                      -- __/__, ___
     ammo="Staunch Tathlum",         --  2/ 2, ___; Resist Status+10
-    head=gear.Vanya_B_head,         -- __/ 5,  75
+    head=gear.Nyame_B_head,         --  7/ 7, 123
     body="Shamash Robe",            -- 10/__, 106; Resist Silence+90
-    hands=gear.Vanya_B_hands,       -- __/ 3,  37
-    legs=gear.Vanya_B_legs,         -- __/ 3, 107
-    feet="Pinga Pumps",             -- __/__, 137
+    hands=gear.Nyame_B_hands,       --  7/ 7, 112
+    legs=gear.Nyame_B_legs,         --  8/ 8, 150
+    feet=gear.Nyame_B_feet,         --  7/ 7, 150
     neck="Twilight Torque",         --  5/ 5, ___
     ear1="Hearty Earring",          -- __/__, ___; Resist Status+5
     ear2="Etiolation Earring",      -- __/ 3, ___; Resist Silence+15
@@ -989,9 +989,6 @@ function init_gear_sets()
     waist="Carrier's Sash",         -- __/__, ___; Ele Resist+15
     -- sub="Khonsu",                --  6/ 6, ___
     -- ammo="Staunch Tathlum +1",   --  3/ 3, ___; Resist Status+11
-    -- head="Pinga Crown +1",       -- __/__, 109
-    -- hands="Pinga Mittens +1",    -- __/__, 101
-    -- legs="Pinga Pants",          -- __/__, 137
     -- neck="Loricate Torque +1",   --  6/ 6, ___; DEF+60
     -- back="Archon Cape",          -- __/__, ___
 
@@ -999,11 +996,11 @@ function init_gear_sets()
     -- main="Malignance Pole",      -- 20/20, ___
     -- sub="Khonsu",                --  6/ 6, ___
     -- ammo="Staunch Tathlum +1",   --  3/ 3, ___; Resist Status+11
-    -- head="Volte Cap",            -- __/__, 102; Resist Status+10
+    -- head=gear.Nyame_B_head,      --  7/ 7, 123
     -- body="Shamash Robe",         -- 10/__, 106; Resist Silence+90
-    -- hands="Volte Bracers",       -- __/__, 102; Resist Status+10
-    -- legs="Pinga Pants +1",       -- __/__, 147
-    -- feet="Pinga Pumps +1",       -- __/__, 147
+    -- hands=gear.Nyame_B_hands,    --  7/ 7, 112
+    -- legs=gear.Nyame_B_legs,      --  8/ 8, 150
+    -- feet=gear.Nyame_B_feet,      --  7/ 7, 150
     -- neck="Loricate Torque +1",   --  6/ 6, ___; DEF+60
     -- ear1="Hearty Earring",       -- __/__, ___; Resist Status+5
     -- ear2="Etiolation Earring",   -- __/ 3, ___; Resist Silence+15
@@ -1011,8 +1008,8 @@ function init_gear_sets()
     -- ring2="Defending Ring",      -- 10/10, ___
     -- back="Archon Cape",          -- __/__, ___
     -- waist="Carrier's Sash",      -- __/__, ___; Ele Resist+15
-    -- 52 PDT / 47 MDT, 614 M.Eva
-  } -- 59 PDT / 50 MDT, 462 M.Eva
+    -- 91 PDT / 76 MDT, 641 M.Eva
+  } -- 88 PDT / 68 MDT, 641 M.Eva
 
   sets.defense.PDT = sets.HeavyDef
   sets.defense.MDT = sets.HeavyDef
