@@ -929,7 +929,6 @@ function init_gear_sets()
     head=empty,
     body="Cohort Cloak +1", --100
     hands=gear.Carmine_D_hands, --42
-    legs="Ayanmo Cosciales +2",
     feet="Ayanmo Gambieras +2",
     neck="Baetyl Pendant", --13
     ear1="Malignance Earring", --8
