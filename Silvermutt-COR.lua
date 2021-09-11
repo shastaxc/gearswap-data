@@ -336,7 +336,7 @@ function init_gear_sets()
     body=gear.Taeon_FC_body, --9
     hands=gear.Leyline_Gloves, --8
     legs=gear.Taeon_FC_legs, --5
-    feet=gear.Taeon_FC_feet, --5
+    feet=gear.Carmine_D_feet, --8
     ear1="Loquac. Earring", --2
     ring1="Lebeche Ring", --Quick Magic 2%
     ring2="Weatherspoon Ring", --5

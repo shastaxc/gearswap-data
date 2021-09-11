@@ -320,12 +320,11 @@ function init_gear_sets()
     body="Duelist's Tabard", --10
     hands=gear.Leyline_Gloves, --8
     legs="Ayanmo Cosciales +2", --6
-    feet=gear.Taeon_FC_feet, --5
+    feet=gear.Carmine_D_feet, --8
     ring1="Lebeche Ring", --Quick Magic 2%
     ring2="Weatherspoon Ring", --5
     -- head="Atrophy Chapeau +3", --16
     -- body="Viti. Tabard +3", --15
-    -- feet="Carmine Greaves +1", --8
     -- ring2="Weather. Ring +1", --5
   }
 

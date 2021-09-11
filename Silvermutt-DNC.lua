@@ -685,7 +685,7 @@ function init_gear_sets()
   sets.latent_regen = {
     head="Turms Cap +1",
     body="Meghanada Cuirie +2",
-    hands="Turms Mittens",
+    hands="Turms Mittens +1",
     legs="Meghanada Chausses +2",
     feet="Turms Leggings +1",
     neck="Bathy Choker +1",

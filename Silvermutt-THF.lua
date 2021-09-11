@@ -577,11 +577,10 @@ function init_gear_sets()
     ear1="Eabani Earring",        -- __/__,   8,  15
     ear2="Infused Earring",       -- __/__, ___,  10
     ring1="Moonlight Ring",       --  5/ 5, ___, ___
-    ring2="Chirich Ring +1",      -- __/__, ___, ___
+    ring2="Moonlight Ring",       --  5/ 5, ___, ___
     back=gear.THF_TP_Cape,        -- 10/__, ___, ___
     waist="Kasiri Belt",          -- __/__, ___,  13
-    -- ring2="Moonlight Ring",       --  5/ 5, ___, ___
-  } -- 46 PDT / 36 MDT, 697 MEVA, 555 Evasion
+  } -- 51 PDT / 41 MDT, 697 MEVA, 555 Evasion
 
   sets.HeavyDef = {
     ammo="Yamarang",            -- __/__,  15
@@ -616,7 +615,7 @@ function init_gear_sets()
   sets.latent_regen = {
     head="Turms Cap +1",
     body="Meghanada Cuirie +2",
-    hands="Turms Mittens",
+    hands="Turms Mittens +1",
     legs="Meghanada Chausses +2",
     feet="Turms Leggings +1",
     neck="Bathy Choker +1",
