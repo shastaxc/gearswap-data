@@ -538,11 +538,10 @@ function init_gear_sets()
     ring1="Ilabrat Ring",           -- 10, __, __, 25, __
     ring2="Regal Ring",             -- 10, __, __, 20, __
     back=gear.DNC_WS1_Cape,         -- 30, __, 10, 20, __; Crit dmg+5
-    waist="Grunfeld Rope",          --  5, __, __, 20, __
+    waist="Kentarch Belt +1",       -- 10, __, __, __, __
     -- ammo="Aurgelmir Orb +1",     --  7, __, __, 10, __
-    -- waist="Kentarch Belt +1",    -- 10, __, __, __, __; Aug it first
     -- 222 DEX, 173 CHR, 56 WSD, 314 Att, 10 PDL
-  })-- 215 DEX, 173 CHR, 56 WSD, 341 Att, 10 PDL
+  })-- 220 DEX, 173 CHR, 56 WSD, 321 Att, 10 PDL
   sets.precast.WS["Rudra's Storm"].MaxTP = set_combine(sets.precast.WS["Rudra's Storm"], {
     ear2="Ishvara Earring",         -- __, __,  2, __, __
   })
@@ -559,14 +558,13 @@ function init_gear_sets()
     ring1="Ilabrat Ring",           -- 10, __, __, 25, __
     ring2="Regal Ring",             -- 10, __, __, 20, __
     back=gear.DNC_WS1_Cape,         -- 30, __, 10, 20, __; Crit dmg+5
-    waist="Grunfeld Rope",          --  5, __, __, 20, __
+    waist="Kentarch Belt +1",       -- 10, __, __, __, __
     -- Lustratio set bonus          -- __, __,  4, __, __
 
     -- ammo="Crepuscular Pebble",   -- __, __, __, __,  3
     -- ring1="Epaminondas's Ring",  -- __, __,  5, __, __
-    -- waist="Kentarch Belt +1",    -- 10, __, __, __, __; Aug it first
     -- 257 DEX, 102 CHR, 39 WSD, 208 Att, 22 PDL
-  })-- 267 DEX, 102 CHR, 34 WSD, 255 Att, 19 PDL
+  })-- 272 DEX, 102 CHR, 34 WSD, 235 Att, 19 PDL
   sets.precast.WS["Rudra's Storm"].AttCappedMaxTP = set_combine(sets.precast.WS["Rudra's Storm"].AttCapped, {
     ear2="Ishvara Earring",         -- __, __,  2, __, __
   })

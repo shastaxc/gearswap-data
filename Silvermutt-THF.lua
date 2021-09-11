@@ -450,14 +450,13 @@ function init_gear_sets()
     ring1="Ilabrat Ring",               -- 10, __, 25, __
     ring2="Regal Ring",                 -- 10, __, 20, __
     back=gear.THF_WS1_Cape,             -- 30, 10, 20, __
-    waist="Grunfeld Rope",              --  5, __, 20, __
+    waist="Kentarch Belt +1",           -- 10, __, __, __
     -- Lustratio set bonus              -- __,  4, __, __
 
     -- ammo="Cath Palug Stone",         -- 10, __, __, __
     -- ring1="Epaminondas's Ring",      -- __,  5, __, __
-    -- waist="Kentarch Belt +1",        -- 10, __, __, __; Aug it first
     -- 288 DEX, 26 WSD, 207 Att, 15 PDL
-  } -- 288 DEX, 21 WSD, 259 Att, 15 PDL
+  } -- 293 DEX, 21 WSD, 239 Att, 15 PDL
   sets.precast.WS["Rudra's Storm"].AttCappedMaxTP = set_combine(sets.precast.WS["Rudra's Storm"].AttCapped, {
     ear2="Sherida Earring",
   })
