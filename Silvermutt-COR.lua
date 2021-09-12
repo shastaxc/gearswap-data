@@ -424,6 +424,7 @@ function init_gear_sets()
 
   sets.precast.WS['Last Stand'] = set_combine(sets.precast.WS, {
     body="Ikenga's Vest",
+    back=gear.COR_WS1_Cape,
   })
   sets.precast.WS['Last Stand'].MaxTP = set_combine(sets.precast.WS['Last Stand'], {
     ear2="Telos Earring",
