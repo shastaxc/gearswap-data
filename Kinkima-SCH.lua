@@ -114,20 +114,20 @@ function init_gear_sets()
   -- Precast sets to enhance JAs
   sets.precast.JA['Tabula Rasa'] = {
     legs="Pedagogy Pants +1",
-    -- legs="Peda. Pants +3",
+    -- legs="Pedagogy Pants +3",
   }
   sets.precast.JA['Enlightenment'] = {
-    body="Peda. Gown +3",
+    body="Pedagogy Gown +3",
   }
   -- Maximize HP+ (MP-to-HP conversion doesn't work)
   sets.precast.JA['Sublimation'] = {
     main="Siriti", --1
     sub="Genmei Shield",
     head="Academic's Mortarboard +1", --2
-    body="Peda. Gown +3", --5
+    body="Pedagogy Gown +3", --5
     ear1="Savant's Earring", --1
     waist="Embla Sash", --5
-    -- head="Acad. Mortar. +3", --4
+    -- head="Academic's Mortarboard +3", --4
   }
 
   -- Fast cast sets for spells
@@ -153,7 +153,7 @@ function init_gear_sets()
     -- ammo="Incantor Stone", --2
     -- head="Amalric Coif +1", --11
     -- body="Pinga Tunic +1", --15
-    -- hands="Acad. Bracers +3", --9
+    -- hands="Academic's Bracers +3", --9
     -- legs="Pinga Pants +1", --13
     -- feet=gear.Merl_FC_feet, --12
     -- neck="Orunmila's Torque", --5
@@ -176,10 +176,10 @@ function init_gear_sets()
   -- breaking the normal 80% cast time reduction cap.
   -- Cast Time = Base Cast Time x (1 - FC)x(1 - magian staff cast bonus)x(1 - Grimoire reduction)
   sets.precast.FC.Grimoire = set_combine(sets.precast.FC, {
-    head="Peda. M.Board +1",
+    head="Pedagogy Mortarboard +1",
     feet="Academic's Loafers +1",
-    -- head="Peda. M.Board +3",
-    -- feet="Acad. Loafers +3",
+    -- head="Pedagogy Mortarboard +3",
+    -- feet="Academic's Loafers +3",
   })
   sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {
     -- waist="Siegel Sash",
@@ -213,7 +213,7 @@ function init_gear_sets()
     -- ammo="Incantor Stone", --2
     -- head="Amalric Coif +1", --11
     -- body="Pinga Tunic +1", --15
-    -- hands="Acad. Bracers +3", --9
+    -- hands="Academic's Bracers +3", --9
     -- legs="Pinga Pants +1", --13
     -- feet=gear.Merl_FC_feet, --12
     -- neck="Orunmila's Torque", --5
@@ -233,7 +233,7 @@ function init_gear_sets()
     -- ammo="Incantor Stone", --2
     -- head="Amalric Coif +1", --11
     -- body="Pinga Tunic +1", --15
-    -- hands="Acad. Bracers +3", --9
+    -- hands="Academic's Bracers +3", --9
     -- legs="Pinga Pants +1", --13
     -- neck="Orunmila's Torque", --5
     -- ear1="Malignance Earring", --4
@@ -267,12 +267,12 @@ function init_gear_sets()
 
   sets.precast.WS['Omniscience'] = set_combine(sets.precast.WS, {
     ammo="Pemphredo Tathlum",
-    body="Peda. Gown +3",
+    body="Pedagogy Gown +3",
     legs="Pedagogy Pants +1",
     ear1="Malignance Earring",
     back=gear.SCH_MAB_Cape,
     -- head="Pixie Hairpin +1",
-    -- legs="Peda. Pants +3",
+    -- legs="Pedagogy Pants +3",
     -- feet="Merlinic Crackows",
     -- ear2="Regal Earring",
     -- ring2="Archon Ring",
@@ -334,7 +334,7 @@ function init_gear_sets()
     ammo="Incantor Stone",        -- __, __, __, __, __,  2, __
     head=gear.Vanya_B_head,       -- __, 10, 20, 27, 18, __, __
     body=gear.Vanya_B_body,       -- __, __, 20, 36, 23, __, __
-    hands="Peda. Bracers +3",     --  3, __, 19, 46, 35, __,  7
+    hands="Pedagogy Bracers +3",     --  3, __, 19, 46, 35, __,  7
     legs=gear.Vanya_B_legs,       -- __, __, 20, 34, 12, __, __
     feet=gear.Vanya_B_feet,       -- __,  5, 40, 19, 10, __, __
     ear1="Mendicant's Earring",   -- __,  5, __, __, __, __, __
@@ -355,7 +355,7 @@ function init_gear_sets()
     -- ammo="Incantor Stone",     -- __, __, __, __, __,  2, __
     -- head=gear.Kaykaus_D_head,  -- __, 11, 16, 31, 14, __, __
     -- body=gear.Kaykaus_A_body,  --  4, __, __, 45, 20, __, __
-    -- hands="Peda. Bracers +3",  --  3, __, 19, 46, 35, __,  7
+    -- hands="Pedagogy Bracers +3",  --  3, __, 19, 46, 35, __,  7
     -- legs=gear.Kaykaus_A_legs,  -- __, 11, __, 42, 12,  7, __
     -- feet=gear.Kaykaus_A_feet,  -- __, 11, __, 31, 10, __,  6
     -- neck="Incanter's Torque",  -- __, __, 10, __, __, __, __
@@ -381,7 +381,7 @@ function init_gear_sets()
     ammo="Incantor Stone",        -- __, __, __, __, __,  2, __
     head=gear.Vanya_B_head,       -- __, 10, 20, 27, 18, __, __
     body=gear.Vanya_B_body,       -- __, __, 20, 36, 23, __, __
-    hands="Peda. Bracers +3",     --  3, __, 19, 46, 35, __,  7
+    hands="Pedagogy Bracers +3",     --  3, __, 19, 46, 35, __,  7
     legs=gear.Vanya_B_legs,       -- __, __, 20, 34, 12, __, __
     feet=gear.Vanya_B_feet,       -- __,  5, 40, 19, 10, __, __
     ear1="Mendicant's Earring",   -- __,  5, __, __, __, __, __
@@ -402,7 +402,7 @@ function init_gear_sets()
     -- ammo="Incantor Stone",     -- __, __, __, __, __,  2, __
     -- head=gear.Kaykaus_D_head,  -- __, 11, 16, 31, 14, __, __
     -- body=gear.Kaykaus_A_body,  --  4, __, __, 45, 20, __, __
-    -- hands="Peda. Bracers +3",  --  3, __, 19, 46, 35, __,  7
+    -- hands="Pedagogy Bracers +3",  --  3, __, 19, 46, 35, __,  7
     -- legs=gear.Kaykaus_A_legs,  -- __, 11, __, 42, 12,  7, __
     -- feet=gear.Kaykaus_A_feet,  -- __, 11, __, 31, 10, __,  6
     -- neck="Incanter's Torque",  -- __, __, 10, __, __, __, __
@@ -429,7 +429,7 @@ function init_gear_sets()
     ammo="Incantor Stone",        -- __, __, __, __, __,  2, __
     body="Shango Robe",           -- __, __, __, 29, 21,  8, __
     head=gear.Vanya_B_head,       -- __, 10, 20, 27, 18, __, __
-    hands="Peda. Bracers +3",     --  3, __, 19, 46, 35, __,  7
+    hands="Pedagogy Bracers +3",     --  3, __, 19, 46, 35, __,  7
     legs=gear.Psycloth_D_legs,    -- __, __, __, 30, 12,  7, __
     feet=gear.Vanya_B_feet,       -- __,  5, 40, 19, 10, __, __
     ear1="Mendicant's Earring",   -- __,  5, __, __, __, __, __
@@ -450,7 +450,7 @@ function init_gear_sets()
     -- ammo="Esper Stone +1",     -- __, __, __, __, __, __,  5
     -- head=gear.Kaykaus_D_head,  -- __, 11, 16, 31, 14, __, __
     -- body=gear.Kaykaus_D_body,  --  4,  6, __, 33, 20, __, __
-    -- hands="Peda. Bracers +3",  --  3, __, 19, 46, 35, __,  7
+    -- hands="Pedagogy Bracers +3",  --  3, __, 19, 46, 35, __,  7
     -- legs=gear.Kaykaus_D_legs,  -- __, 11, __, 30, 12,  7,  6
     -- feet=gear.Kaykaus_D_feet,  -- __, 17, __, 19, 10, __,  6
     -- neck="Incanter's Torque",  -- __, __, 10, __, __, __, __
@@ -475,7 +475,7 @@ function init_gear_sets()
     ammo="Incantor Stone",        -- __, __, __, __, __,  2, __
     head=gear.Vanya_B_head,       -- __, 10, 20, 27, 18, __, __
     body="Shango Robe",           -- __, __, __, 29, 21,  8, __
-    hands="Peda. Bracers +3",     --  3, __, 19, 46, 35, __,  7
+    hands="Pedagogy Bracers +3",     --  3, __, 19, 46, 35, __,  7
     legs=gear.Psycloth_D_legs,    -- __, __, __, 30, 12,  7, __
     feet=gear.Vanya_B_feet,       -- __,  5, 40, 19, 10, __, __
     ear1="Mendicant's Earring",   -- __,  5, __, __, __, __, __
@@ -496,7 +496,7 @@ function init_gear_sets()
     -- ammo="Incantor Stone",     -- __, __, __, __, __,  2, __
     -- head=gear.Kaykaus_D_head,  -- __, 11, 16, 31, 14, __, __
     -- body=gear.Kaykaus_D_body,  --  4,  6, __, 33, 20, __, __
-    -- hands="Peda. Bracers +3",  --  3, __, 19, 46, 35, __,  7
+    -- hands="Pedagogy Bracers +3",  --  3, __, 19, 46, 35, __,  7
     -- legs=gear.Kaykaus_D_legs,  -- __, 11, __, 30, 12,  7,  6
     -- feet=gear.Kaykaus_D_feet,  -- __, 17, __, 19, 10, __,  6
     -- neck="Orunmila's Torque",  -- __, __, __, __, __,  5,  3
@@ -547,7 +547,7 @@ function init_gear_sets()
     main="Gada",
     sub="Ammurapi Shield",            -- __, 10, __
     head=gear.Telchine_ENH_head,      -- __,  9, __
-    body="Peda. Gown +3",             -- 19, 12, __
+    body="Pedagogy Gown +3",             -- 19, 12, __
     hands=gear.Telchine_ENH_hands,    -- __, 10, __
     legs=gear.Telchine_ENH_legs,      -- __, 10, __
     waist="Embla Sash",               -- __, 10,  5
@@ -568,7 +568,7 @@ function init_gear_sets()
     main=gear.Pedagogy_C,           -- 15,  8
     sub="Enki Strap",
     head=gear.Telchine_ENH_head,    --  9, __
-    body="Peda. Gown +3",           -- 12, __
+    body="Pedagogy Gown +3",           -- 12, __
     hands=gear.Telchine_ENH_hands,  -- 10, __
     legs=gear.Telchine_ENH_legs,    -- 10, __
     waist="Embla Sash",             -- 10,  5
@@ -640,8 +640,8 @@ function init_gear_sets()
   sets.midcast.Storm = sets.midcast.EnhancingDuration
 
   sets.midcast.Stormsurge = set_combine(sets.midcast.Storm, {
-    feet="Peda. Loafers +1",
-    -- feet="Peda. Loafers +3",
+    feet="Pedagogy Loafers +1",
+    -- feet="Pedagogy Loafers +3",
   })
 
   sets.midcast.Protect = set_combine(sets.midcast.EnhancingDuration, {
@@ -666,15 +666,15 @@ function init_gear_sets()
     ring2="Metamor. Ring +1",       -- 16, 15, __, __
     back=gear.SCH_MND_MAcc_Cape,    -- 30, 20, __, __
     -- main=gear.Gada_MND_MAcc,     -- 35, 16, __, 16; +215 M.Acc skill
-    -- head="Acad. Mortar. +3",     -- 52, 37, __, __
-    -- body="Acad. Gown +3",        -- 50, 39, __, __; +24 enf skill in DA
+    -- head="Academic's Mortarboard +3",     -- 52, 37, __, __
+    -- body="Academic's Gown +3",        -- 50, 39, __, __; +24 enf skill in DA
     -- hands="Regal Cuffs",         -- 45, 40, 20, __
-    -- legs="Acad. Pants +3",       -- 49, 39, __, __; +24 enf skill in LA
-    -- feet="Acad. Loafers +3",     -- 46, 29, __, __; +20 M.Acc in Grimoire
+    -- legs="Academic's Pants +3",       -- 49, 39, __, __; +24 enf skill in LA
+    -- feet="Academic's Loafers +3",     -- 46, 29, __, __; +20 M.Acc in Grimoire
     -- neck="Argute Stole +2",      -- 30, 15, __, __
     -- ear2="Regal Earring",        -- __, 10, __, __; Adds set bonus
     -- waist="Luminary Sash",       -- 10, 10, __, __
-    -- Acad. set bonus              -- 60, __, __, __
+    -- Academic's set bonus              -- 60, __, __, __
     -- 504 M.Acc, 291 MND, 30% Enfeebling Duration, 40 Enfeebling Skill
 
     -- Ideal:
@@ -696,16 +696,16 @@ function init_gear_sets()
     ring1="Kishar Ring",            --  5, __, 10, __
     ring2="Metamor. Ring +1",       -- 16, 15, __, __
     -- main=gear.Gada_INT_MAcc,     -- 35, 16, __, 16; +215 M.Acc skill
-    -- head="Acad. Mortar. +3",     -- 52, 37, __, __
-    -- body="Acad. Gown +3",        -- 50, 44, __, __; +24 enf skill in DA
+    -- head="Academic's Mortarboard +3",     -- 52, 37, __, __
+    -- body="Academic's Gown +3",        -- 50, 44, __, __; +24 enf skill in DA
     -- hands="Regal Cuffs",         -- 45, 40, 20, __
-    -- legs="Acad. Pants +3",       -- 49, 39, __, __; +24 enf skill in LA
-    -- feet="Acad. Loafers +3",     -- 46, 32, __, __; +20 M.Acc in Grimoire
+    -- legs="Academic's Pants +3",       -- 49, 39, __, __; +24 enf skill in LA
+    -- feet="Academic's Loafers +3",     -- 46, 32, __, __; +20 M.Acc in Grimoire
     -- neck="Argute Stole +2",      -- 30, 15, __, __
     -- ear2="Regal Earring",        -- __, 10, __, __; Adds set bonus
     -- back=gear.SCH_INT_MAcc_Cape, -- 30, 20, __, __
     -- waist="Acuity Belt +1",      -- 15, 23, __, __
-    -- Acad. set bonus              -- 60, __, __, __
+    -- Academic's set bonus              -- 60, __, __, __
     -- 509 M.Acc, 316 INT, 30% Enfeebling Duration, 40 Enfeebling Skill
     -- +147 M.Acc from skill
 
@@ -735,18 +735,18 @@ function init_gear_sets()
     neck="Erra Pendant",          -- 10, __, 17
     back="Bookworm's Cape",       --  8,  4, __
     -- main="Rubicundity",        -- 25, 21, 20; +215 M.Acc skill
-    -- head="Acad. Mortar. +3",   -- __, 37, 52
-    -- body="Acad. Gown +3",      -- 24, 44, 50
-    -- hands="Acad. Bracers +3",  -- __, 29, 48
-    -- legs="Peda. Pants +3",     -- 19, 47, 39
-    -- feet="Acad. Loafers +3",   -- __, 32, 46
+    -- head="Academic's Mortarboard +3",   -- __, 37, 52
+    -- body="Academic's Gown +3",      -- 24, 44, 50
+    -- hands="Academic's Bracers +3",  -- __, 29, 48
+    -- legs="Pedagogy Pants +3",     -- 19, 47, 39
+    -- feet="Academic's Loafers +3",   -- __, 32, 46
     -- ear1="Regal Earring",      -- __, 10, __; Adds set effect
     -- ear2="Mani Earring",       -- 10, __, __
     -- ring1="Evanescence Ring",  -- 10, __, __
     -- ring2="Stikini Ring +1",   --  8, __, 11
     -- back="Bookworm's Cape",    --  8,  5, __
     -- waist="Acuity Belt +1",    -- __, 23, __
-    -- Acad. set bonus            -- __, __, 60
+    -- Academic's set bonus            -- __, __, 60
     -- 114 Dark magic skill, 265 INT, 389 M.Acc
   }
 
@@ -756,7 +756,7 @@ function init_gear_sets()
     legs="Pedagogy Pants +1",
     waist="Fucho-no-obi",         --  8
     -- main="Rubicundity",        -- 20
-    -- legs="Peda. Pants +3",     -- 15
+    -- legs="Pedagogy Pants +3",     -- 15
     -- ear2="Hirudinea Earring",  --  3
     -- ring1="Evanescence Ring",  -- 10
     -- 104 Dark magic skill, 242 INT, 389 M.Acc
@@ -778,11 +778,11 @@ function init_gear_sets()
     --Ideal:
     -- main="Hvergelmir",           -- 50, __, 269
     -- sub="Khonsu",                -- __, 30, ___
-    -- head="Acad. Mortar. +3",     --  8, 52, ___
-    -- body="Acad. Gown +3",        -- __, 50, ___
-    -- hands="Acad. Bracers +3",    --  9, 48, ___
-    -- legs="Acad. Pants +3",       -- __, 49, ___
-    -- feet="Acad. Loafers +3",     -- __, 46, ___
+    -- head="Academic's Mortarboard +3",     --  8, 52, ___
+    -- body="Academic's Gown +3",        -- __, 50, ___
+    -- hands="Academic's Bracers +3",    --  9, 48, ___
+    -- legs="Academic's Pants +3",       -- __, 49, ___
+    -- feet="Academic's Loafers +3",     -- __, 46, ___
     -- neck="Argute Stole +2",      -- __, 30, ___
     -- ear1="Malignance Earring",   --  4, 10, ___
     -- ear2="Dignitary's Earring",  -- __, 10, ___
@@ -790,13 +790,13 @@ function init_gear_sets()
     -- ring2="Stikini Ring +2",     -- __, 11, ___; +8 all skill
     -- back=gear.SCH_INT_MAcc_Cape, -- 10, 30, ___
     -- waist="Acuity Belt +1",      -- __, 15, ___
-    -- Acad. set bonus              -- __, 60, ___
+    -- Academic's set bonus              -- __, 60, ___
     -- 81 FC, 460 M.Acc, 269 M.Acc Skill
   })
 
   sets.midcast.Stun.DarkArts = set_combine(sets.midcast.Stun, {
     ammo="Pemphredo Tathlum",    -- __, __,  8, ___
-    head="Peda. M.Board +1",
+    head="Pedagogy Mortarboard +1",
     body="Academic's Gown +1",
     hands="Academic's Bracers +2",
     legs="Academic's Pants +1",
@@ -806,11 +806,11 @@ function init_gear_sets()
     --Ideal:
     -- main="Hvergelmir",           -- __, 50, __, 269
     -- sub="Khonsu",                -- __, __, 30, ___
-    -- head="Peda. M.Board +3",     -- 13, __, 37, ___; Grimoire recast-
-    -- body="Acad. Gown +3",        -- __, __, 50, ___; +24 Dark Magic skill in DA
-    -- hands="Acad. Bracers +3",    -- __,  9, 48, ___
-    -- legs="Acad. Pants +3",       -- __, __, 49, ___
-    -- feet="Acad. Loafers +3",     -- 12, __, 46, ___; Grimoire recast-, +20M.Acc in Grimoire
+    -- head="Pedagogy Mortarboard +3",     -- 13, __, 37, ___; Grimoire recast-
+    -- body="Academic's Gown +3",        -- __, __, 50, ___; +24 Dark Magic skill in DA
+    -- hands="Academic's Bracers +3",    -- __,  9, 48, ___
+    -- legs="Academic's Pants +3",       -- __, __, 49, ___
+    -- feet="Academic's Loafers +3",     -- 12, __, 46, ___; Grimoire recast-, +20M.Acc in Grimoire
     -- neck="Argute Stole +2",      -- __, __, 30, ___
     -- ear1="Malignance Earring",   -- __,  4, 10, ___
     -- ear2="Regal Earring",        -- __, __, __, ___; adds set effect
@@ -818,7 +818,7 @@ function init_gear_sets()
     -- ring2="Stikini Ring +2",     -- __, __, 11, ___; +8 all skill
     -- back=gear.SCH_INT_MAcc_Cape, -- __, 10, 30, ___
     -- waist="Witful Belt",         -- __,  3, __, ___
-    -- Acad. set bonus              -- __, __, 60, ___
+    -- Academic's set bonus              -- __, __, 60, ___
     -- 25% Grimoire Recast, 76 FC, 420 M.Acc, 269 M.Acc Skill
     -- Add 10% Grimoire Recast from Dark Arts
     -- Hits 90% recast reduction cap even without Haste spell/JA
@@ -828,69 +828,69 @@ function init_gear_sets()
   -- INT, Magic Acc, MAB
   -- More emphasis on INT
   sets.midcast.Kaustra = {
-    ammo="Pemphredo Tathlum",  --  4,  8,  4
-    main=gear.Akademos_C,         -- 27, 15, 53
-    sub="Enki Strap",             -- 10, 10, __
-    head="Peda. M.Board +1",
-    body=gear.Merl_MB_body,       -- 40, 20, 20
+    ammo="Pemphredo Tathlum",         --  4,  8,  4
+    main=gear.Akademos_C,             -- 27, 15, 53
+    sub="Enki Strap",                 -- 10, 10, __
+    head="Pedagogy Mortarboard +1",
+    body=gear.Merl_MB_body,           -- 40, 20, 20
     hands=gear.Merl_MB_hands,
-    neck="Sanctity Necklace",     -- __, 10, 10
-    ear1="Malignance Earring",    --  8, 10,  8
-    ring2="Metamor. Ring +1",     -- 16, 15, __
-    back=gear.SCH_MAB_Cape,       -- 30, 20, 10
-    -- head="Peda. M.Board +3",   -- 39, 52, 49
-    -- body=gear.Merl_MB_body,    -- 50, 60, 60
-    -- hands=gear.Amalric_D_hands,-- 36, 20, 53
-    -- legs="Mallquis Trews +2",  -- 57, 45, 15
-    -- feet=gear.Merl_MB_feet,    -- 34, 40, 55
-    -- neck="Argute Stole +2",    -- 15, 30, __
-    -- ear2="Regal Earring",      -- 10, __,  7
-    -- ring1="Freke Ring",        -- 10, __,  8
-    -- waist="Acuity Belt +1",    -- 23, 15, __
+    neck="Sanctity Necklace",         -- __, 10, 10
+    ear1="Malignance Earring",        --  8, 10,  8
+    ring2="Metamor. Ring +1",         -- 16, 15, __
+    back=gear.SCH_MAB_Cape,           -- 30, 20, 10
+    -- head="Pedagogy Mortarboard +3",-- 39, 52, 49
+    -- body=gear.Merl_MB_body,        -- 50, 60, 60
+    -- hands=gear.Amalric_D_hands,    -- 36, 20, 53
+    -- legs="Mallquis Trews +2",      -- 57, 45, 15
+    -- feet=gear.Merl_MB_feet,        -- 34, 40, 55
+    -- neck="Argute Stole +2",        -- 15, 30, __
+    -- ear2="Regal Earring",          -- 10, __,  7
+    -- ring1="Freke Ring",            -- 10, __,  8
+    -- waist="Acuity Belt +1",        -- 23, 15, __
     -- 374 INT, 315 Magic Acc, 327 MAB
   }
 
   -- INT, Magic Acc, MAB
   -- More emphasis on MAB
   sets.midcast['Elemental Magic'] = {
-    main=gear.Akademos_C,           -- 27, 15, 53
-    sub="Enki Strap",               -- 10, 10, __
-    ammo="Pemphredo Tathlum",    --  4,  8,  4
-    head="Peda. M.Board +1",
-    body="Shamash Robe",            -- 40, 45, 45
-    neck="Sanctity Necklace",       -- __, 10, 10
-    ear1="Malignance Earring",      --  8, 10,  8
-    ring2="Metamor. Ring +1",       -- 16, 15, __
-    back=gear.SCH_MAB_Cape,         -- 30, 20, 10
-    -- main="Marin Staff +1",       -- 37, 55, 68; bonus on wind dmg
-    -- head="Peda. M.Board +3",     -- 39, 52, 49
-    -- body=gear.Amalric_A_body,    -- 38, 53, 53
-    -- hands=gear.Amalric_D_hands,  -- 36, 20, 53
-    -- legs=gear.Amalric_A_legs,    -- 40, 20, 60
-    -- feet=gear.Amalric_D_feet,    -- 21, 20, 52
-    -- neck="Baetyl Pendant",       -- __, __, 13
-    -- ear2="Regal Earring",        -- 10, __,  7
-    -- ring1="Freke Ring",          -- 10, __,  8
-    -- waist="Refoccilation Stone", -- __,  4, 10
-    -- Amalric set bonus            -- __, __, 40
+    main=gear.Akademos_C,             -- 27, 15, 53
+    sub="Enki Strap",                 -- 10, 10, __
+    ammo="Pemphredo Tathlum",         --  4,  8,  4
+    head="Pedagogy Mortarboard +1",
+    body="Shamash Robe",              -- 40, 45, 45
+    legs="Mallquis Trews +2",         -- 57, 45, 15
+    feet="Mallquis Clogs +1",         -- 33, 36, 12
+    neck="Sanctity Necklace",         -- __, 10, 10
+    ear1="Malignance Earring",        --  8, 10,  8
+    ring2="Metamor. Ring +1",         -- 16, 15, __
+    back=gear.SCH_MAB_Cape,           -- 30, 20, 10
+    -- main="Marin Staff +1",         -- 37, 55, 68; bonus on wind dmg
+    -- head="Pedagogy Mortarboard +3",-- 39, 52, 49
+    -- body=gear.Amalric_A_body,      -- 38, 53, 53
+    -- hands=gear.Amalric_D_hands,    -- 36, 20, 53
+    -- legs=gear.Amalric_A_legs,      -- 40, 20, 60
+    -- feet=gear.Amalric_D_feet,      -- 21, 20, 52
+    -- neck="Baetyl Pendant",         -- __, __, 13
+    -- ear2="Regal Earring",          -- 10, __,  7
+    -- ring1="Freke Ring",            -- 10, __,  8
+    -- waist="Refoccilation Stone",   -- __,  4, 10
+    -- Amalric set bonus              -- __, __, 40
     -- 304 INT, 272 Magic Acc, 440 MAB
   }
-
   sets.midcast['Elemental Magic'].Seidr = set_combine(sets.midcast['Elemental Magic'], {
     legs="Pedagogy Pants +1",
     neck="Erra Pendant",
     -- head="Merlinic Hood",
     -- body="Seidr Cotehardie",
-    -- legs="Peda. Pants +3",
+    -- legs="Pedagogy Pants +3",
     -- feet="Merlinic Crackows",
     -- waist="Acuity Belt +1",
   })
-
   sets.midcast['Elemental Magic'].Resistant = set_combine(sets.midcast['Elemental Magic'], {
     legs="Pedagogy Pants +1",
     neck="Erra Pendant",
     -- head="Merlinic Hood",
-    -- legs="Peda. Pants +3",
+    -- legs="Pedagogy Pants +3",
     -- waist="Sacro Cord",
   })
 
@@ -906,36 +906,36 @@ function init_gear_sets()
 
   -- 10% MB dmg from trait with /RDM or /BLM
   sets.midcast.Helix = {
-    main=gear.Akademos_C,           -- 27, 25, 53, 228, 217, 10, __
-    sub="Enki Strap",               -- 10, 10, __, ___, ___, __, __
-    head="Peda. M.Board +1",
-    body="Mallquis Saio +2",        -- 54, 46, 15, ___,  58, __, __
-    legs="Mallquis Trews +2",       -- 57, 45, 15, ___,  55,  6, __
-    feet="Mallquis Clogs +1",       -- 33, 36, 12, ___,  46, __, __
-    ear1="Malignance Earring",      --  8, 10,  8, ___, ___, __, __
+    main=gear.Akademos_C,             -- 27, 25, 53, 228, 217, 10, __
+    sub="Enki Strap",                 -- 10, 10, __, ___, ___, __, __
+    head="Pedagogy Mortarboard +1",
+    body="Mallquis Saio +2",          -- 54, 46, 15, ___,  58, __, __
+    legs="Mallquis Trews +2",         -- 57, 45, 15, ___,  55,  6, __
+    feet="Mallquis Clogs +1",         -- 33, 36, 12, ___,  46, __, __
+    ear1="Malignance Earring",        --  8, 10,  8, ___, ___, __, __
     back=gear.SCH_MAB_Cape,
-    -- main="Daybreak",             -- __, 40, 40, 242, 241, __, __
-    -- sub="Ammurapi Shield",       -- 13, 38, 38, ___, ___, __, __
-    -- waist="Skrymir Cord",        -- __,  5,  5, ___,  30, __, __
+    -- main="Daybreak",               -- __, 40, 40, 242, 241, __, __
+    -- sub="Ammurapi Shield",         -- 13, 38, 38, ___, ___, __, __
+    -- waist="Skrymir Cord",          -- __,  5,  5, ___,  30, __, __
 
     -- Ideal:
-    -- main="Bunzi's Rod",          -- 15, 45, 55, 255, 248, 10, __
-    -- sub="Ammurapi Shield",       -- 13, 38, 38, ___, ___, __, __
-    -- ammo="Ghastly Tathlum +1",   -- 11, __, __, ___,  21, __, __
-    -- head="Peda. M.Board +3",     -- 39, 37, 49, ___, ___, __,  4
-    -- body="Mallquis Saio +2",     -- 54, 46, 15, ___,  58, __, __
-    -- hands=gear.Amalric_D_hands,  -- 24, 20, 53, ___, ___, __,  6
-    -- legs="Mallquis Trews +2",    -- 57, 45, 15, ___,  55,  6, __
-    -- feet="Mallquis Clogs +2",    -- 37, 42, 15, ___,  46, __, __
-    -- neck="Argute Stole +2",      -- 15, 30, __, ___,  25, 10, __; Helix Dur+10%
-    -- ear1="Malignance Earring",   --  8, 10,  8, ___, ___, __, __
-    -- ear2="Regal Earring",        -- 10, __,  7, ___, ___, __, __
-    -- ring1="Locus Ring",          -- __, __, __, ___, ___,  5, __
-    -- ring2="Mujin Band",          -- __, __, __, ___, ___, __,  5
-    -- back=gear.SCH_Helix_Cape,    -- 20, 20, 10, ___,  30, __, __
-    -- waist="Skrymir Cord +1",     -- __,  7,  7, ___,  35, __, __
-    -- Mallquis set bonus           -- 16, __, __, ___, ___, __, __
-    -- SCH Job trait                -- __, __, __, ___, ___,  9, __
+    -- main="Bunzi's Rod",            -- 15, 45, 55, 255, 248, 10, __
+    -- sub="Ammurapi Shield",         -- 13, 38, 38, ___, ___, __, __
+    -- ammo="Ghastly Tathlum +1",     -- 11, __, __, ___,  21, __, __
+    -- head="Pedagogy Mortarboard +3",-- 39, 37, 49, ___, ___, __,  4
+    -- body="Mallquis Saio +2",       -- 54, 46, 15, ___,  58, __, __
+    -- hands=gear.Amalric_D_hands,    -- 24, 20, 53, ___, ___, __,  6
+    -- legs="Mallquis Trews +2",      -- 57, 45, 15, ___,  55,  6, __
+    -- feet="Mallquis Clogs +2",      -- 37, 42, 15, ___,  46, __, __
+    -- neck="Argute Stole +2",        -- 15, 30, __, ___,  25, 10, __; Helix Dur+10%
+    -- ear1="Malignance Earring",     --  8, 10,  8, ___, ___, __, __
+    -- ear2="Regal Earring",          -- 10, __,  7, ___, ___, __, __
+    -- ring1="Locus Ring",            -- __, __, __, ___, ___,  5, __
+    -- ring2="Mujin Band",            -- __, __, __, ___, ___, __,  5
+    -- back=gear.SCH_Helix_Cape,      -- 20, 20, 10, ___,  30, __, __
+    -- waist="Skrymir Cord +1",       -- __,  7,  7, ___,  35, __, __
+    -- Mallquis set bonus             -- 16, __, __, ___, ___, __, __
+    -- SCH Job trait                  -- __, __, __, ___, ___,  9, __
     -- 319 INT, 340 MAcc, 272 MAB, 255 MAccSk, 518 MDmg, 40 MB Dmg%, 15 MB2 Dmg%
   }
   sets.midcast.DarkHelix = set_combine(sets.midcast.Helix, {
@@ -951,14 +951,14 @@ function init_gear_sets()
   -- 10% MB dmg from trait with /RDM or /BLM
   sets.magic_burst = {
     main=gear.Akademos_C, --10
-    head="Peda. M.Board +1",
+    head="Pedagogy Mortarboard +1",
     body=gear.Merl_MB_body, --7
     hands=gear.Merl_MB_hands, --9
     feet=gear.Merl_MB_feet, --8
     ring1="Locus Ring", --5
     -- Ideal:
     -- main=gear.Akademos_C, --10
-    -- head="Peda. M.Board +3", --(4)
+    -- head="Pedagogy Mortarboard +3", --(4)
     -- body=gear.Merl_MB_body, --10
     -- hands="Amalric Gages +1", --(6)
     -- feet="Merlinic Crackows", --10
@@ -1063,14 +1063,14 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.engaged = {
-    head="Peda. M.Board +1",
+    head="Pedagogy Mortarboard +1",
     body="Jhakri Robe +2",
     legs="Pedagogy Pants +1",
-    feet="Peda. Loafers +1",
-    -- head="Peda. M.Board +3",
+    feet="Pedagogy Loafers +1",
+    -- head="Pedagogy Mortarboard +3",
     -- hands="Raetic Bangles +1",
-    -- legs="Peda. Pants +3",
-    -- feet="Peda. Loafers +3",
+    -- legs="Pedagogy Pants +3",
+    -- feet="Pedagogy Loafers +3",
     -- neck="Combatant's Torque",
     -- ear1="Cessance Earring",
     -- ear2="Telos Earring",
@@ -1108,12 +1108,12 @@ function init_gear_sets()
     -- legs="Arbatel Pants +1",
   }
   sets.buff['Celerity'] = {
-    feet="Peda. Loafers +1",
-    -- feet="Peda. Loafers +3",
+    feet="Pedagogy Loafers +1",
+    -- feet="Pedagogy Loafers +3",
   }
   sets.buff['Alacrity'] = {
-    feet="Peda. Loafers +1",
-    -- feet="Peda. Loafers +3",
+    feet="Pedagogy Loafers +1",
+    -- feet="Pedagogy Loafers +3",
   }
   sets.buff['Klimaform'] = {
     feet="Arbatel Loafers +1",
@@ -1135,14 +1135,14 @@ function init_gear_sets()
   sets.LightArts = {
     legs="Academic's Pants +1",
     feet="Academic's Loafers +1",
-    -- legs="Acad. Pants +3",
-    -- feet="Acad. Loafers +3",
+    -- legs="Academic's Pants +3",
+    -- feet="Academic's Loafers +3",
   }
   sets.DarkArts = {
     body="Academic's Gown +1",
     feet="Academic's Loafers +1",
-    -- body="Acad. Gown +3",
-    -- feet="Acad. Loafers +3",
+    -- body="Academic's Gown +3",
+    -- feet="Academic's Loafers +3",
   }
 
   sets.Obi = {
