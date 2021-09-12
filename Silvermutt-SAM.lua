@@ -560,7 +560,7 @@ function init_gear_sets()
     -- head="Valorous Mask",
   }
   sets.latent_regen = {
-    body="Hiza. Haramaki +2",
+    body="Hizamaru Haramaki +2",
     neck="Bathy Choker +1",
     ear1="Infused Earring",
     ring1="Chirich Ring +1",
