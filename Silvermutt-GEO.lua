@@ -66,6 +66,11 @@ function job_setup()
   send_command('bind !d gs c usekey')
   send_command('bind @w gs c toggle RearmingLock')
   send_command('bind ^u gs c toggle ShowLuopanUi')
+  
+  send_command('bind !q gs c elemental tier1')
+  send_command('bind !w gs c elemental tier4')
+  send_command('bind !e gs c elemental tier5')
+  send_command('bind !r gs c elemental ara2')
 
   send_command('bind ^insert gs c weaponset cycle')
   send_command('bind ^delete gs c weaponset cycleback')
@@ -88,7 +93,7 @@ function user_setup()
   include('Global-Binds.lua') -- Additional local binds
 
   if player.sub_job == 'WHM' or player.sub_job == 'RDM' then
-    send_command('bind !e input /ma "Haste" <stpc>')
+    -- send_command('bind !e input /ma "Haste" <stpc>')
   end
   if player.sub_job == 'RDM' then
     send_command('bind !\' input /ma "Refresh" <stpc>')
