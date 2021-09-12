@@ -545,14 +545,13 @@ function init_gear_sets()
   -- Enh Magic Skill + Enh Magic Duration > Fast Cast
   sets.midcast['Enhancing Magic'] = {
     main="Gada",
-    sub="Enki Strap",
+    sub="Ammurapi Shield",            -- __, 10, __
     head=gear.Telchine_ENH_head,      -- __,  9, __
     body="Peda. Gown +3",             -- 19, 12, __
     hands=gear.Telchine_ENH_hands,    -- __, 10, __
     legs=gear.Telchine_ENH_legs,      -- __, 10, __
     waist="Embla Sash",               -- __, 10,  5
     -- main=gear.Gada_ENH,            -- 18,  6,  6
-    -- sub="Ammurapi Shield",         -- __, 10, __
     -- ammo="Savant's Treatise",      --  4, __, __
     -- head=gear.Telchine_ENH_head,   -- __, 10, __
     -- feet=gear.Kaykaus_D_feet,      -- 21, __,  4
@@ -630,7 +629,7 @@ function init_gear_sets()
   -- Aquaveil Count > Enh Duration
   sets.midcast.Aquaveil = set_combine(sets.midcast.EnhancingDuration, {
     -- main="Vadose Rod",           --  1, __
-    -- sub="Ammurapi Shield",       -- __, 10
+    sub="Ammurapi Shield",          -- __, 10
     -- head="Amalric Coif +1",      --  2, __
     -- hands="Regal Cuffs",         --  2, 20
     -- legs="Shedir seraweels",     --  1, __
@@ -655,18 +654,18 @@ function init_gear_sets()
   -- M.Acc > MND > Enfeebling Duration > Enfeebling Skill
   sets.midcast.MndEnfeebles = {
     main="Gada",
-    ammo="Pemphredo Tathlum",    --  8, __, __, __
+    sub="Ammurapi Shield",          -- 38, 13, __, __
+    ammo="Pemphredo Tathlum",       --  8, __, __, __
     head="Academic's Mortarboard +1",
     body="Shamash Robe",            -- 45, 40, __, __
     legs="Academic's Pants +1",
     feet="Academic's Loafers +1",
     neck="Sanctity Necklace",       -- 10, __, __, __
-    ear1="Malignance Earring",   -- 10,  8, __, __
+    ear1="Malignance Earring",      -- 10,  8, __, __
     ring1="Kishar Ring",            --  5, __, 10, __
     ring2="Metamor. Ring +1",       -- 16, 15, __, __
-    back=gear.SCH_MND_MAcc_Cape, -- 30, 20, __, __
+    back=gear.SCH_MND_MAcc_Cape,    -- 30, 20, __, __
     -- main=gear.Gada_MND_MAcc,     -- 35, 16, __, 16; +215 M.Acc skill
-    -- sub="Ammurapi Shield",       -- 38, 13, __, __
     -- head="Acad. Mortar. +3",     -- 52, 37, __, __
     -- body="Acad. Gown +3",        -- 50, 39, __, __; +24 enf skill in DA
     -- hands="Regal Cuffs",         -- 45, 40, 20, __
@@ -686,7 +685,8 @@ function init_gear_sets()
   -- M.Acc > INT > Enfeebling Duration > Enfeebling Skill
   sets.midcast.IntEnfeebles = {
     main="Gada",
-    ammo="Pemphredo Tathlum",    --  8,  4, __, __
+    sub="Ammurapi Shield",          -- 38, 13, __, __
+    ammo="Pemphredo Tathlum",       --  8,  4, __, __
     head="Academic's Mortarboard +1",
     body="Shamash Robe",            -- 45, 40, __, __
     legs="Academic's Pants +1",
@@ -696,7 +696,6 @@ function init_gear_sets()
     ring1="Kishar Ring",            --  5, __, 10, __
     ring2="Metamor. Ring +1",       -- 16, 15, __, __
     -- main=gear.Gada_INT_MAcc,     -- 35, 16, __, 16; +215 M.Acc skill
-    -- sub="Ammurapi Shield",       -- 38, 13, __, __
     -- head="Acad. Mortar. +3",     -- 52, 37, __, __
     -- body="Acad. Gown +3",        -- 50, 44, __, __; +24 enf skill in DA
     -- hands="Regal Cuffs",         -- 45, 40, 20, __
@@ -726,16 +725,16 @@ function init_gear_sets()
   -- SCH Dark Magic = 386, with Dark Arts = 456
   -- Dark Magic Skill, INT, M.Acc
   sets.midcast['Dark Magic'] = {
-    ammo="Pemphredo Tathlum",  -- __,  4,  8
+    sub="Ammurapi Shield",        -- __, 13, 38
+    ammo="Pemphredo Tathlum",     -- __,  4,  8
     head="Academic's Mortarboard +1",
-    body="Shamash Robe",            -- __, 40, 45
+    body="Shamash Robe",          -- __, 40, 45
     hands="Academic's Bracers +2",
     legs="Pedagogy Pants +1",
     feet="Academic's Loafers +1",
-    neck="Erra Pendant",       -- 10, __, 17
-    back="Bookworm's Cape",    --  8,  4, __
+    neck="Erra Pendant",          -- 10, __, 17
+    back="Bookworm's Cape",       --  8,  4, __
     -- main="Rubicundity",        -- 25, 21, 20; +215 M.Acc skill
-    -- sub="Ammurapi Shield",     -- __, 13, 38
     -- head="Acad. Mortar. +3",   -- __, 37, 52
     -- body="Acad. Gown +3",      -- 24, 44, 50
     -- hands="Acad. Bracers +3",  -- __, 29, 48
@@ -753,10 +752,10 @@ function init_gear_sets()
 
   -- Add Drain potency
   sets.midcast.Drain = set_combine(sets.midcast['Dark Magic'], {
+    sub="Ammurapi Shield",        -- __
     legs="Pedagogy Pants +1",
     waist="Fucho-no-obi",         --  8
     -- main="Rubicundity",        -- 20
-    -- sub="Ammurapi Shield",     -- __
     -- legs="Peda. Pants +3",     -- 15
     -- ear2="Hirudinea Earring",  --  3
     -- ring1="Evanescence Ring",  -- 10
