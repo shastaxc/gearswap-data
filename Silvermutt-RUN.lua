@@ -268,9 +268,7 @@ function init_gear_sets()
     -- back="Repulse Mantle"
   }
 
-  -- PDT cap is 50%, Protect V = 0%
-  sets.defense.PDT = {
-    sub="Refined Grip +1",        --  3/ 3, ___ [ 35]
+  sets.HeavyDef = {
     ammo="Staunch Tathlum +1",    --  3/ 3, ___ [___]
     head=gear.Nyame_B_head,       --  7/ 7, 123 [ 91]
     body=gear.Nyame_B_body,       --  9/ 9, 139 [136]
@@ -287,6 +285,11 @@ function init_gear_sets()
     -- neck="Futhark Torque +2",  --  7/ 7,  30 [ 60]
     --51 PDT / 38 MDT, 667 MEVA [987 HP]
   } --50 PDT / 37 MDT, 662 MEVA [972 HP]
+
+  -- PDT cap is 50%, Protect V = 0%
+  sets.defense.PDT = set_combine(sets.HeavyDef, {
+    sub="Refined Grip +1",        --  3/ 3, ___ [ 35]
+  }) --50 PDT / 37 MDT, 662 MEVA [972 HP]
 
   -- MDT cap is 50%, Shell V = 29%
   sets.defense.MDT = {
@@ -492,7 +495,7 @@ function init_gear_sets()
 
   sets.midcast.FastRecast = sets.precast.FC
 
-  sets.midcast['Enhancing Magic'] = set_combine(sets.defense.PDT, {
+  sets.midcast['Enhancing Magic'] = set_combine(sets.HeavyDef, {
     head="Erilaz Galea +1",                         -- [ 91]
     hands={name="Runeist Mitons +1", priority=1},   -- [ 50]
     legs=gear.Carmine_D_legs,                       -- [ 50]
@@ -512,7 +515,7 @@ function init_gear_sets()
     legs={name="Futhark Trousers +3", priority=1},
   }
 
-  sets.midcast['Phalanx'] = set_combine(sets.defense.PDT, {
+  sets.midcast['Phalanx'] = set_combine(sets.HeavyDef, {
     ammo="Staunch Tathlum +1",                -- 0, 11 [ 3/ 3,   0]
     head="Futhark Bandeau +1",                -- 5,  0 [ 4/ 0,  36]
     body=gear.Taeon_Phalanx_body,             -- 3,  0 [ 0/ 0,  59]
@@ -533,7 +536,7 @@ function init_gear_sets()
   })-- 17 Phalanx, 21% Interrupt [51PDT/37MDT, 825 HP w/ PDT set]
 
   -- 10% SIRD from merits
-  sets.midcast['Aquaveil'] = set_combine(sets.defense.PDT, {
+  sets.midcast['Aquaveil'] = set_combine(sets.HeavyDef, {
     ammo="Staunch Tathlum +1",                  -- {11}
     hands={name="Regal Gauntlets", priority=1}, -- {10}
     legs=gear.Carmine_D_legs,                   -- {20}
@@ -541,7 +544,7 @@ function init_gear_sets()
     neck="Moonlight Necklace",                  -- {15}
     waist="Audumbla Sash",                      -- {10}
   }) -- {76 SIRD}
-  sets.midcast['Aquaveil'].Safe = set_combine(sets.defense.PDT, {
+  sets.midcast['Aquaveil'].Safe = set_combine(sets.HeavyDef, {
     ammo="Staunch Tathlum +1",                  -- {11}
     hands={name="Regal Gauntlets", priority=1}, -- {10}
     legs=gear.Carmine_D_legs,                   -- {20}
@@ -549,11 +552,11 @@ function init_gear_sets()
     waist="Audumbla Sash",                      -- {10}
   }) -- {51 SIRD}
 
-  sets.midcast['Regen'] = set_combine(sets.defense.PDT, sets.midcast.EnhancingDuration, {
+  sets.midcast['Regen'] = set_combine(sets.HeavyDef, sets.midcast.EnhancingDuration, {
     head="Runeist's Bandeau +3",
     -- neck="Sacro Gorget"
   })
-  sets.midcast.Refresh = set_combine(sets.defense.PDT, sets.midcast.EnhancingDuration, {
+  sets.midcast.Refresh = set_combine(sets.HeavyDef, sets.midcast.EnhancingDuration, {
     head="Erilaz Galea +1",
     waist="Gishdubar Sash",
   })
@@ -602,7 +605,7 @@ function init_gear_sets()
     -- ear2="Mendi. Earring", -- 5
     -- back="Solemnity Cape", -- 7
   }
-  sets.midcast['Blue Magic'].Cure.Safe = set_combine(sets.defense.PDT, sets.midcast['Blue Magic'].Cure, {
+  sets.midcast['Blue Magic'].Cure.Safe = set_combine(sets.HeavyDef, sets.midcast['Blue Magic'].Cure, {
     ammo="Staunch Tathlum +1",
     waist="Audumbla Sash",
     ring1={name="Gelatinous Ring +1", priority=1},
@@ -821,7 +824,7 @@ function init_gear_sets()
   sets.precast.WS['Full Break'].HighAcc = sets.precast.WS['Shockwave'].HighAcc
   sets.precast.WS['Full Break'].HighAccMaxTP = sets.precast.WS['Shockwave'].HighAccMaxTP
 
-  sets.precast.WS['Freezebite'] = set_combine(sets.defense.PDT, sets.TreasureHunter)
+  sets.precast.WS['Freezebite'] = set_combine(sets.HeavyDef, sets.TreasureHunter)
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Engaged Sets ------------------------------------------
