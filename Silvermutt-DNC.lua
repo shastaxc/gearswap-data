@@ -360,11 +360,10 @@ function init_gear_sets()
     ear1="Digni. Earring",
     ear2="Hermetic Earring",
     ring1="Weatherspoon Ring",
-    ring2="Ayanmo Ring",
+    ring2="Stikini Ring +1",
     back=gear.DNC_TP_DW_Cape,
     waist="Eschan Stone",
     -- ring1="Stikini Ring +1",
-    -- ring2="Stikini Ring +1",
   }
 
   -- Magic Accuracy
