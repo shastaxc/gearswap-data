@@ -174,7 +174,7 @@ function init_gear_sets()
     ammo=empty,
     head=gear.Merl_FC_head,         -- 13
     hands=gear.Merl_FC_hands,       --  5
-    legs="Geomancy Pants +1",       -- 11
+    legs="Geomancy Pants +2",       -- 13
     ear1="Loquac. Earring",         --  2
     ear2="Malignance Earring",      --  4
     ring1="Kishar Ring",            --  4
@@ -191,7 +191,7 @@ function init_gear_sets()
     -- back=gear.GEO_FC_Cape,       -- 10
     -- waist="Shinjutsu-no-Obi +1", --  5
     -- 80 FC
-  } -- 54 FC
+  } -- 56 FC
 
 	sets.precast.FC.Geomancy = set_combine(sets.precast.FC, {
     range="Dunna",
@@ -282,7 +282,7 @@ function init_gear_sets()
     head="Azimuth Hood +1",         -- __, 15, __
     body="Geomancy Tunic +1",
     hands="Azimuth Gloves +1",      -- __, __, __; Set bonus
-    legs="Geomancy Pants +1",
+    legs="Geomancy Pants +2",
     feet="Azimuth Gaiters +1",      -- __, __, __; Set bonus
     neck="Bagua Charm +1",          --  6, __, __; Luopan Duration +20%
     waist="Gishdubar Sash",
@@ -315,7 +315,7 @@ function init_gear_sets()
   sets.midcast.Cure = {
     main="Daybreak",
     sub=empty,
-    legs="Geomancy Pants +1",
+    legs="Geomancy Pants +2",
     ring1="Stikini Ring +1",
     ring2="Lebeche Ring",
     -- sub="Ammurapi Shield",
@@ -336,7 +336,7 @@ function init_gear_sets()
   sets.midcast.LightWeatherCure = {
     main="Daybreak",
     sub=empty,
-    legs="Geomancy Pants +1",
+    legs="Geomancy Pants +2",
     ring1="Stikini Ring +1",
     waist="Hachirin-no-Obi",
     -- main="Chatoyant Staff",
@@ -434,6 +434,7 @@ function init_gear_sets()
 	sets.midcast.Stun = {
     range="Dunna",
     ammo=empty,
+    legs="Geomancy Pants +2",
     neck="Bagua Charm +1",
     ear2="Malignance Earring",
     ring1="Stikini Ring +1",
@@ -489,7 +490,7 @@ function init_gear_sets()
     head=empty,
     body="Cohort Cloak +1",
     hands="Geomancy Mitaines +1",
-    legs="Geomancy Pants +1",
+    legs="Geomancy Pants +2",
     feet="Geomancy Sandals +1",
     neck="Bagua Charm +1",
     ear2="Malignance Earring",
