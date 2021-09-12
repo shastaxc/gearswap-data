@@ -165,7 +165,7 @@ gear.RUN_Adoulin_Cape = { name="Evasionist's Cape", augments={'Enmity+4','"Embol
 gear.COR_TP_Cape = { name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
 gear.COR_WS1_Cape = { name="Camulus's Mantle", augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','AGI+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
 gear.COR_WS2_Cape = { name="Camulus's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
--- gear.COR_WS3_Cape = {}
+-- gear.COR_WS3_Cape = {} -- AGI, Racc/ratt, agi, wsd, pdt
 gear.COR_SNP_Cape = { name="Camulus's Mantle", augments={'"Snapshot"+10','"Regen"+5',}}
 gear.COR_Regen_Cape = gear.COR_SNP_Cape
 gear.COR_RA_Cape = { name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','"Store TP"+10','Phys. dmg. taken-10%',}}
