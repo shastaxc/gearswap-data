@@ -340,6 +340,28 @@ function init_gear_sets()
     waist={name="Kasiri Belt", priority=1},             -- __/__, ___ [ 30] < 3>
   }-- 46% PDT / 20% MDT, 398 M.Eva [952 HP] <71 Enmity>
 
+  -- 102% SIRD required to cap; can get 10% from merits
+  sets.SIRD = {
+    ammo="Staunch Tathlum +1",                            --  3/ 3, ___ [___] {11}
+    head={name="Agwu's Cap", priority=1},                 -- __/__, 107 [ 38] {10}
+    body=gear.Nyame_B_body,                               --  9/ 9, 139 [136] {__}
+    hands=gear.Rawhide_B_hands,                           -- __/__,  37 [ 75] {15}
+    legs={name=gear.Carmine_A_legs.name,
+      augments=gear.Carmine_A_legs.augments, priority=1}, -- __/__,  80 [130] {20}
+    feet=gear.Taeon_SIRD_feet,                            -- __/__,  89 [ 60] {10}
+    neck="Moonlight Necklace",                            -- __/__,  15 [___] {15}
+    ear1="Odnowa Earring +1",                             --  3/ 5, ___ [110] {__}
+    ear2="Halasz Earring",                                -- __/__, ___ [___] { 5}
+    ring1="Gelatinous Ring +1",                           --  7/-1, ___ [135] {__}
+    ring2="Defending Ring",                               -- 10/10, ___ [___] {__}
+    back={name="Moonlight Cape", priority=1},             --  6/ 6, ___ [275] {__}
+    waist="Audumbla Sash",                                --  4/__, ___ [___] {10}
+    -- SIRD merits                                                            { 6}
+
+    -- feet=gear.Taeon_SIRD_feet,                         -- __/__,  89 [ 63] {10}
+    -- 42 PDT / 32 MDT, 467 M.Eva [962 HP] {102 SIRD}
+  } -- 42 PDT / 32 MDT, 467 M.Eva [959 HP] {102 SIRD}
+
   sets.precast.JA = sets.Enmity;
 
   sets.precast.JA['Vallation'] = set_combine(sets.Enmity, {
@@ -439,6 +461,10 @@ function init_gear_sets()
     ammo="Impatiens",
     -- ear2="Mendi. Earring"
   })
+  
+  sets.precast.FC['Geist Wall'] = sets.SIRD
+  sets.precast.FC['Bomb Toss'] = set_combine(sets.SIRD, sets.TreasureHunter)
+  sets.precast.FC['Poisonga'] = sets.SIRD
 
   sets.HybridAcc = {
     ammo="Hydrocera",           -- __,  6
@@ -465,28 +491,6 @@ function init_gear_sets()
   sets.midcast.Trust = sets.precast.FC
 
   sets.midcast.FastRecast = sets.precast.FC
-
-  -- 102% SIRD required to cap; can get 10% from merits
-  sets.SIRD = {
-    ammo="Staunch Tathlum +1",                            --  3/ 3, ___ [___] {11}
-    head={name="Agwu's Cap", priority=1},                 -- __/__, 107 [ 38] {10}
-    body=gear.Nyame_B_body,                               --  9/ 9, 139 [136] {__}
-    hands=gear.Rawhide_B_hands,                           -- __/__,  37 [ 75] {15}
-    legs={name=gear.Carmine_A_legs.name,
-      augments=gear.Carmine_A_legs.augments, priority=1}, -- __/__,  80 [130] {20}
-    feet=gear.Taeon_SIRD_feet,                            -- __/__,  89 [ 60] {10}
-    neck="Moonlight Necklace",                            -- __/__,  15 [___] {15}
-    ear1="Odnowa Earring +1",                             --  3/ 5, ___ [110] {__}
-    ear2="Halasz Earring",                                -- __/__, ___ [___] { 5}
-    ring1="Gelatinous Ring +1",                           --  7/-1, ___ [135] {__}
-    ring2="Defending Ring",                               -- 10/10, ___ [___] {__}
-    back={name="Moonlight Cape", priority=1},             --  6/ 6, ___ [275] {__}
-    waist="Audumbla Sash",                                --  4/__, ___ [___] {10}
-    -- SIRD merits                                                            { 6}
-
-    -- feet=gear.Taeon_SIRD_feet,                         -- __/__,  89 [ 63] {10}
-    -- 42 PDT / 32 MDT, 467 M.Eva [962 HP] {102 SIRD}
-  } -- 42 PDT / 32 MDT, 467 M.Eva [959 HP] {102 SIRD}
 
   sets.midcast['Enhancing Magic'] = set_combine(sets.defense.PDT, {
     head="Erilaz Galea +1",                         -- [ 91]
