@@ -609,11 +609,13 @@ function init_gear_sets()
     neck="Carnal Torque",       -- Needed to unlock WS
     ear1="Dignitary's Earring", -- 10, 10
     ear2="Moonshade Earring",   -- __, __
-    ring1="Etana Ring",         -- 10, 10
+    ring1="Chirich Ring +1",    -- 10, __
     ring2="Metamorph Ring +1",  -- __, 16
     back=gear.DNC_WS1_Cape,     -- 20, __
-    waist="Luminary Sash",      -- __, 10
+    waist="Olseni Belt",        -- 20, __
     -- ear2="Crepuscular Earring", -- 10, 10
+    -- ring1="Etana Ring",         -- 10, 10
+    -- waist="Luminary Sash",      -- __, 10
   } -- Acc, MAcc
   sets.precast.WS['Shell Crusher'].MaxTP = set_combine(sets.precast.WS['Shell Crusher'], {
     ear2="Telos Earring",
