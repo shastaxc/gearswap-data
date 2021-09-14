@@ -535,7 +535,6 @@ function init_gear_sets()
     -- 27 Phalanx, 21% Interrupt [54PDT/32MDT, 939 HP w/ PDT set]
   })-- 17 Phalanx, 21% Interrupt [51PDT/37MDT, 825 HP w/ PDT set]
 
-  -- 10% SIRD from merits
   sets.midcast['Aquaveil'] = set_combine(sets.HeavyDef, {
     ammo="Staunch Tathlum +1",                  -- {11}
     hands={name="Regal Gauntlets", priority=1}, -- {10}
@@ -543,14 +542,16 @@ function init_gear_sets()
     feet=gear.Taeon_SIRD_feet,                  -- {10}
     neck="Moonlight Necklace",                  -- {15}
     waist="Audumbla Sash",                      -- {10}
-  }) -- {76 SIRD}
+    -- SIRD Merits                                 { 6}
+  }) -- {82 SIRD}
   sets.midcast['Aquaveil'].Safe = set_combine(sets.HeavyDef, {
     ammo="Staunch Tathlum +1",                  -- {11}
     hands={name="Regal Gauntlets", priority=1}, -- {10}
     legs=gear.Carmine_D_legs,                   -- {20}
     ring2="Defending Ring",
     waist="Audumbla Sash",                      -- {10}
-  }) -- {51 SIRD}
+    -- SIRD Merits                                 { 6}
+  }) -- {57 SIRD}
 
   sets.midcast['Regen'] = set_combine(sets.HeavyDef, sets.midcast.EnhancingDuration, {
     head="Runeist's Bandeau +3",
