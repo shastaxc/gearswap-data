@@ -60,7 +60,7 @@ function job_setup()
 
   state.CP = M(false, "Capacity Points Mode")
   state.ToyWeapons = M{['description']='Toy Weapons','None','GreatKatana','Staff','Polearm','GreatSword','Scythe'}
-  state.WeaponSet = M{['description']='Weapon Set', 'Doji', 'Masa', 'Shining One'}
+  state.WeaponSet = M{['description']='Weapon Set', 'Masa', 'Doji', 'Shining One'}
 
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c usekey')
@@ -248,7 +248,6 @@ function init_gear_sets()
     ring2="Niqmaddu Ring",
     back=gear.SAM_STR_WSD_Cape,
     waist="Sailfi Belt +1",
-    -- body="Sakonji Domaru +3",
     -- ring2="Epaminondas's Ring",
   } -- Base WS set
 
@@ -682,7 +681,7 @@ function init_gear_sets()
   sets.WeaponSet = {}
   sets.WeaponSet['Doji'] = {main="Dojikiri Yasutsuna", sub="Utu Grip"}
   sets.WeaponSet['Masa'] = {main="Masamune", sub="Utu Grip"}
-  sets.WeaponSet['Shining One'] = {main="Kaja Lance", sub="Utu Grip"}
+  sets.WeaponSet['Shining One'] = {main="Shining One", sub="Utu Grip"}
   -- sets.WeaponSet['Shining One'] = {main="Shining One", sub="Utu Grip"}
 end
 
