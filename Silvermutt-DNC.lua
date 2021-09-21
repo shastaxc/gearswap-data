@@ -373,9 +373,8 @@ function init_gear_sets()
 
   sets.precast.Flourish2 = {}
   sets.precast.Flourish2['Reverse Flourish'] = {
-    hands="Maculele Bangles",
+    hands="Maculele Bangles +1",
     back=gear.DNC_Adoulin_Cape,
-    -- hands="Maculele Bangles +1",
   }
   sets.precast.Flourish3 = {}
   sets.precast.Flourish3['Striking Flourish'] = {
