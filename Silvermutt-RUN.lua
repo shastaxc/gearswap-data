@@ -466,7 +466,6 @@ function init_gear_sets()
   })
   
   sets.precast.FC['Geist Wall'] = sets.SIRD
-  sets.precast.FC['Bomb Toss'] = set_combine(sets.SIRD, sets.TreasureHunter)
   sets.precast.FC['Poisonga'] = sets.SIRD
 
   sets.HybridAcc = {
