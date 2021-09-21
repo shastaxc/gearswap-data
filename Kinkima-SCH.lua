@@ -654,63 +654,66 @@ function init_gear_sets()
   -- M.Acc > MND > Enfeebling Duration > Enfeebling Skill
   sets.midcast.MndEnfeebles = {
     main="Gada",
-    sub="Ammurapi Shield",          -- 38, 13, __, __
-    ammo="Pemphredo Tathlum",       --  8, __, __, __
+    sub="Ammurapi Shield",              -- 38, 13, __, __
+    ammo="Pemphredo Tathlum",           --  8, __, __, __
     head="Academic's Mortarboard +1",
-    body="Shamash Robe",            -- 45, 40, __, __
+    body="Shamash Robe",                -- 45, 40, __, __
     legs="Academic's Pants +1",
     feet="Academic's Loafers +1",
-    neck="Sanctity Necklace",       -- 10, __, __, __
-    ear1="Malignance Earring",      -- 10,  8, __, __
-    ring1="Kishar Ring",            --  5, __, 10, __
-    ring2="Metamor. Ring +1",       -- 16, 15, __, __
-    back=gear.SCH_MND_MAcc_Cape,    -- 30, 20, __, __
-    -- main=gear.Gada_MND_MAcc,     -- 35, 16, __, 16; +215 M.Acc skill
-    -- head="Academic's Mortarboard +3",     -- 52, 37, __, __
-    -- body="Academic's Gown +3",        -- 50, 39, __, __; +24 enf skill in DA
-    -- hands="Regal Cuffs",         -- 45, 40, 20, __
-    -- legs="Academic's Pants +3",       -- 49, 39, __, __; +24 enf skill in LA
-    -- feet="Academic's Loafers +3",     -- 46, 29, __, __; +20 M.Acc in Grimoire
-    -- neck="Argute Stole +2",      -- 30, 15, __, __
-    -- ear2="Regal Earring",        -- __, 10, __, __; Adds set bonus
-    -- waist="Luminary Sash",       -- 10, 10, __, __
-    -- Academic's set bonus              -- 60, __, __, __
+    neck="Sanctity Necklace",           -- 10, __, __, __
+    ear1="Malignance Earring",          -- 10,  8, __, __
+    ring1="Kishar Ring",                --  5, __, 10, __
+    ring2="Metamor. Ring +1",           -- 16, 15, __, __
+    back=gear.SCH_MND_MAcc_Cape,        -- 30, 20, __, __
+    waist="Rumination Sash",            --  3,  4, __, __; Enfeeb skill+7
+    -- main=gear.Gada_MND_MAcc,         -- 35, 16, __, 16; +215 M.Acc skill
+    -- head="Academic's Mortarboard +3",-- 52, 37, __, __
+    -- body="Academic's Gown +3",       -- 50, 39, __, __; +24 enf skill in DA
+    -- hands="Regal Cuffs",             -- 45, 40, 20, __
+    -- legs="Academic's Pants +3",      -- 49, 39, __, __; +24 enf skill in LA
+    -- feet="Academic's Loafers +3",    -- 46, 29, __, __; +20 M.Acc in Grimoire
+    -- neck="Argute Stole +2",          -- 30, 15, __, __
+    -- ear2="Regal Earring",            -- __, 10, __, __; Adds set bonus
+    -- waist="Luminary Sash",           -- 10, 10, __, __
+    -- Academic's set bonus             -- 60, __, __, __
     -- 504 M.Acc, 291 MND, 30% Enfeebling Duration, 40 Enfeebling Skill
 
     -- Ideal:
-    -- main="Maxentius",            -- 40, 15, __, __; +250 M.Acc skill
+    -- main="Maxentius",                -- 40, 15, __, __; +250 M.Acc skill
     -- 489 M.Acc, 290 MND, 30% Enfeebling Duration, 24 Enfeebling Skill
   }
 
   -- M.Acc > INT > Enfeebling Duration > Enfeebling Skill
   sets.midcast.IntEnfeebles = {
     main="Gada",
-    sub="Ammurapi Shield",          -- 38, 13, __, __
-    ammo="Pemphredo Tathlum",       --  8,  4, __, __
+    sub="Ammurapi Shield",              -- 38, 13, __, __
+    ammo="Pemphredo Tathlum",           --  8,  4, __, __
     head="Academic's Mortarboard +1",
-    body="Shamash Robe",            -- 45, 40, __, __
+    body="Shamash Robe",                -- 45, 40, __, __
     legs="Academic's Pants +1",
     feet="Academic's Loafers +1",
-    neck="Sanctity Necklace",       -- 10, __, __, __
-    ear1="Malignance Earring",      -- 10,  8, __, __
-    ring1="Kishar Ring",            --  5, __, 10, __
-    ring2="Metamor. Ring +1",       -- 16, 15, __, __
-    -- main=gear.Gada_INT_MAcc,     -- 35, 16, __, 16; +215 M.Acc skill
-    -- head="Academic's Mortarboard +3",     -- 52, 37, __, __
-    -- body="Academic's Gown +3",        -- 50, 44, __, __; +24 enf skill in DA
-    -- hands="Regal Cuffs",         -- 45, 40, 20, __
-    -- legs="Academic's Pants +3",       -- 49, 39, __, __; +24 enf skill in LA
-    -- feet="Academic's Loafers +3",     -- 46, 32, __, __; +20 M.Acc in Grimoire
-    -- neck="Argute Stole +2",      -- 30, 15, __, __
-    -- ear2="Regal Earring",        -- __, 10, __, __; Adds set bonus
-    -- back=gear.SCH_INT_MAcc_Cape, -- 30, 20, __, __
-    -- waist="Acuity Belt +1",      -- 15, 23, __, __
-    -- Academic's set bonus              -- 60, __, __, __
+    neck="Sanctity Necklace",           -- 10, __, __, __
+    ear1="Malignance Earring",          -- 10,  8, __, __
+    ring1="Kishar Ring",                --  5, __, 10, __
+    ring2="Metamor. Ring +1",           -- 16, 15, __, __
+    back=gear.SCH_MND_MAcc_Cape,        -- 30, 20, __, __
+    waist="Rumination Sash",            --  3,  4, __, __; Enfeeb skill+7
+    -- main=gear.Gada_INT_MAcc,         -- 35, 16, __, 16; +215 M.Acc skill
+    -- head="Academic's Mortarboard +3",-- 52, 37, __, __
+    -- body="Academic's Gown +3",       -- 50, 44, __, __; +24 enf skill in DA
+    -- hands="Regal Cuffs",             -- 45, 40, 20, __
+    -- legs="Academic's Pants +3",      -- 49, 39, __, __; +24 enf skill in LA
+    -- feet="Academic's Loafers +3",    -- 46, 32, __, __; +20 M.Acc in Grimoire
+    -- neck="Argute Stole +2",          -- 30, 15, __, __
+    -- ear2="Regal Earring",            -- __, 10, __, __; Adds set bonus
+    -- back=gear.SCH_INT_MAcc_Cape,     -- 30, 20, __, __
+    -- waist="Acuity Belt +1",          -- 15, 23, __, __
+    -- Academic's set bonus             -- 60, __, __, __
     -- 509 M.Acc, 316 INT, 30% Enfeebling Duration, 40 Enfeebling Skill
     -- +147 M.Acc from skill
 
     -- Ideal:
-    -- main="Maxentius",            -- 40, 15, __, __; +250 M.Acc skill
+    -- main="Maxentius",                -- 40, 15, __, __; +250 M.Acc skill
     -- 514 M.Acc, 315 INT, 30% Enfeebling Duration, 24 Enfeebling Skill
     -- +149 M.Acc from skill
   }
@@ -858,6 +861,7 @@ function init_gear_sets()
     ammo="Pemphredo Tathlum",         --  4,  8,  4
     head="Pedagogy Mortarboard +1",
     body="Shamash Robe",              -- 40, 45, 45
+    hands="Nyame Gauntlets",
     legs="Mallquis Trews +2",         -- 57, 45, 15
     feet="Mallquis Clogs +1",         -- 33, 36, 12
     neck="Sanctity Necklace",         -- __, 10, 10
