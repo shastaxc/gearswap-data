@@ -507,15 +507,14 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.LightDef = {
-    ammo="Staunch Tathlum +1",  --  3/ 3, ___
-    head="Kendatsuba Jinpachi +1",    -- __/__, 101
-    body=gear.Nyame_B_body,     --  9/ 9, 139
-    legs="Kendatsuba Hakama +1",      -- __/__, 139
-    feet="Kendatsuba Sune-Ate +1",    -- __/__, 139
-    ring1="Gelatinous Ring +1", --  7/-1, ___
-    ring2="Defending Ring",     -- 10/10, ___
-    back=gear.SAM_TP_Cape,      -- 10/__, ___
-    -- body="Wakido Domaru +3",    --  8/ 8,  73
+    ammo="Staunch Tathlum +1",      --  3/ 3, ___
+    head="Kendatsuba Jinpachi +1",  -- __/__, 101
+    body="Wakido Domaru +3",        --  8/ 8,  73
+    legs="Kendatsuba Hakama +1",    -- __/__, 139
+    feet="Kendatsuba Sune-Ate +1",  -- __/__, 139
+    ring1="Gelatinous Ring +1",     --  7/-1, ___
+    ring2="Defending Ring",         -- 10/10, ___
+    back=gear.SAM_TP_Cape,          -- 10/__, ___
     --38 PDT/20 MDT, 452 MEVA
   }
 
