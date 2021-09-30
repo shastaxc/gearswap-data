@@ -628,13 +628,14 @@ function init_gear_sets()
 
   -- Aquaveil Count > Enh Duration
   sets.midcast.Aquaveil = set_combine(sets.midcast.EnhancingDuration, {
-    -- main="Vadose Rod",           --  1, __
+    main="Bolelabunga",
     sub="Ammurapi Shield",          -- __, 10
+    hands="Regal Cuffs",            --  2, __
+    -- main="Vadose Rod",           --  1, __
     -- head="Amalric Coif +1",      --  2, __
-    -- hands="Regal Cuffs",         --  2, 20
     -- legs="Shedir seraweels",     --  1, __
     -- waist="Emphatikos Rope",     --  1, __
-    -- +6 Aquaveil, 52% Enh Duration
+    -- +6 Aquaveil, 32% Enh Duration
   })
 
   sets.midcast.Storm = sets.midcast.EnhancingDuration
@@ -658,6 +659,7 @@ function init_gear_sets()
     ammo="Pemphredo Tathlum",           --  8, __, __, __
     head="Academic's Mortarboard +1",
     body="Shamash Robe",                -- 45, 40, __, __
+    hands="Regal Cuffs",                -- 45, 40, 20, __
     legs="Academic's Pants +1",
     feet="Academic's Loafers +1",
     neck="Sanctity Necklace",           -- 10, __, __, __
@@ -669,7 +671,6 @@ function init_gear_sets()
     -- main=gear.Gada_MND_MAcc,         -- 35, 16, __, 16; +215 M.Acc skill
     -- head="Academic's Mortarboard +3",-- 52, 37, __, __
     -- body="Academic's Gown +3",       -- 50, 39, __, __; +24 enf skill in DA
-    -- hands="Regal Cuffs",             -- 45, 40, 20, __
     -- legs="Academic's Pants +3",      -- 49, 39, __, __; +24 enf skill in LA
     -- feet="Academic's Loafers +3",    -- 46, 29, __, __; +20 M.Acc in Grimoire
     -- neck="Argute Stole +2",          -- 30, 15, __, __
@@ -690,6 +691,7 @@ function init_gear_sets()
     ammo="Pemphredo Tathlum",           --  8,  4, __, __
     head="Academic's Mortarboard +1",
     body="Shamash Robe",                -- 45, 40, __, __
+    hands="Regal Cuffs",                -- 45, 40, 20, __
     legs="Academic's Pants +1",
     feet="Academic's Loafers +1",
     neck="Sanctity Necklace",           -- 10, __, __, __
@@ -701,7 +703,6 @@ function init_gear_sets()
     -- main=gear.Gada_INT_MAcc,         -- 35, 16, __, 16; +215 M.Acc skill
     -- head="Academic's Mortarboard +3",-- 52, 37, __, __
     -- body="Academic's Gown +3",       -- 50, 44, __, __; +24 enf skill in DA
-    -- hands="Regal Cuffs",             -- 45, 40, 20, __
     -- legs="Academic's Pants +3",      -- 49, 39, __, __; +24 enf skill in LA
     -- feet="Academic's Loafers +3",    -- 46, 32, __, __; +20 M.Acc in Grimoire
     -- neck="Argute Stole +2",          -- 30, 15, __, __
@@ -1160,10 +1161,10 @@ function init_gear_sets()
   }
 
   sets.Kiting = {
-    feet="Herald's Gaiters",
+    ring1="Shneddick Ring",
   }
   sets.Kiting.Adoulin = {
-    -- body="Councilor's Garb",
+    body="Councilor's Garb",
   }
 end
 
@@ -1411,8 +1412,7 @@ function customize_idle_set(idleSet)
     end
     -- Apply movement speed gear
     if classes.CustomIdleGroups:contains('Adoulin') then
-      -- idleSet = set_combine(idleSet, sets.Kiting.Adoulin) -- Uncomment line when gear obtained
-      idleSet = set_combine(idleSet, sets.Kiting)
+      idleSet = set_combine(idleSet, sets.Kiting.Adoulin)
     else
       idleSet = set_combine(idleSet, sets.Kiting)
     end
