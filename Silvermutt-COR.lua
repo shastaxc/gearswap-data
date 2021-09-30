@@ -386,10 +386,10 @@ function init_gear_sets()
 
   sets.precast.WS = {
     ammo=gear.WSbullet,
-    head="Meghanada Visor +2",
-    body="Meghanada Cuirie +2",
+    head=gear.Nyame_B_head,
+    body=gear.Nyame_B_body,
     hands="Meg. Gloves +2",
-    legs="Meghanada Chausses +2",
+    legs=gear.Nyame_B_legs,
     feet="Lanun Bottes +3",
     neck="Fotia Gorget",
     ear1="Ishvara Earring",
@@ -422,10 +422,25 @@ function init_gear_sets()
     ear2="Telos Earring",
   })
 
-  sets.precast.WS['Last Stand'] = set_combine(sets.precast.WS, {
+  sets.precast.WS['Last Stand'] = {
+    ammo=gear.WSbullet,
+    head=gear.Nyame_B_head,
     body="Ikenga's Vest",
+    hands="Meg. Gloves +2",
+    legs=gear.Nyame_B_legs,
+    feet="Lanun Bottes +3",
+    neck="Fotia Gorget",
+    ear1="Ishvara Earring",
+    ear2="Moonshade Earring",
+    ring1="Regal Ring",
+    ring2="Dingir Ring",
     back=gear.COR_WS1_Cape,
-  })
+    waist="Fotia Belt",
+    -- head="Lanun Tricorne +3",
+    -- body="Laksamana's Frac +3",
+    -- ring2="Epaminondas's Ring",
+    -- back=gear.COR_WS3_Cape,
+  }
   sets.precast.WS['Last Stand'].MaxTP = set_combine(sets.precast.WS['Last Stand'], {
     ear2="Telos Earring",
   })
@@ -484,20 +499,26 @@ function init_gear_sets()
   sets.precast.WS['Wildfire'].HighAccMaxTP = set_combine(sets.precast.WS['Wildfire'].HighAcc, {
   })
 
-  sets.precast.WS['Hot Shot'] = sets.precast.WS['Wildfire']
-  sets.precast.WS['Hot Shot'].MaxTP = set_combine(sets.precast.WS['Hot Shot'], {
+  sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS['Wildfire'], {
+    ear2="Moonshade Earring",
   })
-  sets.precast.WS['Hot Shot'].LowAcc = set_combine(sets.precast.WS['Hot Shot'], {
+  sets.precast.WS['Aeolian Edge'].MaxTP = set_combine(sets.precast.WS['Aeolian Edge'], {
+    ear2="Novio Earring",
   })
-  sets.precast.WS['Hot Shot'].LowAccMaxTP = set_combine(sets.precast.WS['Hot Shot'].LowAcc, {
+  sets.precast.WS['Aeolian Edge'].LowAcc = set_combine(sets.precast.WS['Aeolian Edge'], {
   })
-  sets.precast.WS['Hot Shot'].MidAcc = set_combine(sets.precast.WS['Hot Shot'].LowAcc, {
+  sets.precast.WS['Aeolian Edge'].LowAccMaxTP = set_combine(sets.precast.WS['Aeolian Edge'].LowAcc, {
+    ear2="Novio Earring",
   })
-  sets.precast.WS['Hot Shot'].MidAccMaxTP = set_combine(sets.precast.WS['Hot Shot'].MidAcc, {
+  sets.precast.WS['Aeolian Edge'].MidAcc = set_combine(sets.precast.WS['Aeolian Edge'].LowAcc, {
   })
-  sets.precast.WS['Hot Shot'].HighAcc = set_combine(sets.precast.WS['Hot Shot'].MidAcc, {
+  sets.precast.WS['Aeolian Edge'].MidAccMaxTP = set_combine(sets.precast.WS['Aeolian Edge'].MidAcc, {
+    ear2="Novio Earring",
   })
-  sets.precast.WS['Hot Shot'].HighAccMaxTP = set_combine(sets.precast.WS['Hot Shot'].HighAcc, {
+  sets.precast.WS['Aeolian Edge'].HighAcc = set_combine(sets.precast.WS['Aeolian Edge'].MidAcc, {
+  })
+  sets.precast.WS['Aeolian Edge'].HighAccMaxTP = set_combine(sets.precast.WS['Aeolian Edge'].HighAcc, {
+    ear2="Novio Earring",
   })
 
   sets.precast.WS['Leaden Salute'] = set_combine(sets.precast.WS['Wildfire'], {
@@ -523,6 +544,15 @@ function init_gear_sets()
   sets.precast.WS['Leaden Salute'].HighAccMaxTP = set_combine(sets.precast.WS['Leaden Salute'].HighAcc, {
     ear2="Novio Earring",
   })
+
+  sets.precast.WS['Hot Shot'] = sets.precast.WS['Wildfire']
+  sets.precast.WS['Hot Shot'].MaxTP = sets.precast.WS['Wildfire'].MaxTP
+  sets.precast.WS['Hot Shot'].LowAcc = sets.precast.WS['Wildfire'].LowAcc
+  sets.precast.WS['Hot Shot'].LowAccMaxTP = sets.precast.WS['Wildfire'].LowAccMaxTP
+  sets.precast.WS['Hot Shot'].MidAcc = sets.precast.WS['Wildfire'].MidAcc
+  sets.precast.WS['Hot Shot'].MidAccMaxTP = sets.precast.WS['Wildfire'].MidAccMaxTP
+  sets.precast.WS['Hot Shot'].HighAcc = sets.precast.WS['Wildfire'].HighAcc
+  sets.precast.WS['Hot Shot'].HighAccMaxTP = sets.precast.WS['Wildfire'].HighAccMaxTP
 
   sets.precast.WS['Evisceration'] = {
     head=gear.Adhemar_B_head,
@@ -659,56 +689,32 @@ function init_gear_sets()
     ear2="Ishvara Earring",
   })
 
-  sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS['Wildfire'], {
-    ear2="Moonshade Earring",
-  })
-  sets.precast.WS['Aeolian Edge'].MaxTP = set_combine(sets.precast.WS['Aeolian Edge'], {
-    ear2="Novio Earring",
-  })
-  sets.precast.WS['Aeolian Edge'].LowAcc = set_combine(sets.precast.WS['Aeolian Edge'], {
-  })
-  sets.precast.WS['Aeolian Edge'].LowAccMaxTP = set_combine(sets.precast.WS['Aeolian Edge'].LowAcc, {
-    ear2="Novio Earring",
-  })
-  sets.precast.WS['Aeolian Edge'].MidAcc = set_combine(sets.precast.WS['Aeolian Edge'].LowAcc, {
-  })
-  sets.precast.WS['Aeolian Edge'].MidAccMaxTP = set_combine(sets.precast.WS['Aeolian Edge'].MidAcc, {
-    ear2="Novio Earring",
-  })
-  sets.precast.WS['Aeolian Edge'].HighAcc = set_combine(sets.precast.WS['Aeolian Edge'].MidAcc, {
-  })
-  sets.precast.WS['Aeolian Edge'].HighAccMaxTP = set_combine(sets.precast.WS['Aeolian Edge'].HighAcc, {
-    ear2="Novio Earring",
-  })
-
   -- Ranged gear
   sets.midcast.RA = {
-    ammo=gear.RAbullet,           -- __ [__] 20/__ <_> {_} (__)
-    head="Meghanada Visor +2",    -- 31 [__] 48/44 <_> {_} (__)
-    body="Ikenga's Vest",         -- 39 [11] 45/60 <_> {7} (__)
-    hands="Malignance Gloves",    -- 24 [12] 50/__ <_> {4} (__)
-    legs="Ikenga's Trousers",     -- 40 [10] 45/60 <_> {6} (__)
-    feet="Malignance Boots",      -- 49 [ 9] 50/__ <_> {2} (__)
-    neck="Iskur Gorget",          -- __ [ 8] 30/30 <_> {_} (__)
-    ear1="Enervating Earring",    -- __ [ 4]  7/ 7 <_> {_} (__)
-    ear2="Telos Earring",         -- __ [ 5] 10/10 <_> {_} (__)
-    ring1="Dingir Ring",          -- 10 [__] __/25 <_> {_} (10)
-    ring2="Ilabrat Ring",         -- 10 [ 5] __/__ <_> {_} (__)
-    back=gear.COR_RA_Cape,        -- 30 [10] 20/20 <_> {_} (__)
-    waist="Yemaya Belt",          --  7 [ 4] 10/10 <_> {_} (__)
-    -- head="Ikenga's Hat",       -- 29 [ 8] 45/60 <_> {4} (__)
-    --238 AGI [86 STP] 332 racc / 282 ratt <0 crit> {23 dmg limit} (10 Recycle)
-  } --240 AGI [78 STP] 335 racc / 266 ratt <0 crit> {19 dmg limit} (10 Recycle)
+    ammo=gear.RAbullet,             -- __ [__] 20/__ <_> {_} (__)
+    head="Ikenga's Hat",            -- 29 [ 8] 45/60 <_> {4} (__)
+    body="Ikenga's Vest",           -- 39 [11] 45/60 <_> {7} (__)
+    hands="Malignance Gloves",      -- 24 [12] 50/__ <_> {4} (__)
+    legs="Ikenga's Trousers",       -- 40 [10] 45/60 <_> {6} (__)
+    feet="Malignance Boots",        -- 49 [ 9] 50/__ <_> {2} (__)
+    neck="Iskur Gorget",            -- __ [ 8] 30/30 <_> {_} (__)
+    ear1="Enervating Earring",      -- __ [ 4]  7/ 7 <_> {_} (__)
+    ear2="Telos Earring",           -- __ [ 5] 10/10 <_> {_} (__)
+    ring1="Dingir Ring",            -- 10 [__] __/25 <_> {_} (10)
+    ring2="Ilabrat Ring",           -- 10 [ 5] __/__ <_> {_} (__)
+    back=gear.COR_RA_Cape,          -- 30 [10] 20/20 <_> {_} (__)
+    waist="Yemaya Belt",            --  7 [ 4] 10/10 <_> {_} (__)
+  } --238 AGI [86 STP] 332 racc / 282 ratt <0 crit> {23 dmg limit} (10 Recycle)
   sets.midcast.RA.LowAcc = set_combine(sets.midcast.RA, {
-    ear1="Beyla Earring",         -- __ [__] 15/__ <_> {_} (__)
-    -- ammo=gear.RAccbullet,      -- __ [__] 35/__ <_> {_} (__)
-    -- ring2="Crepuscular Ring",  -- __ [ 6] 10/__ <_> {_} (__)
+    ear1="Beyla Earring",           -- __ [__] 15/__ <_> {_} (__)
+    -- ammo=gear.RAccbullet,        -- __ [__] 35/__ <_> {_} (__)
+    -- ring2="Crepuscular Ring",    -- __ [ 6] 10/__ <_> {_} (__)
     --228 AGI [83 STP] 365 racc / 275 ratt <0 crit> {23 dmg limit} (10 Recycle)
   })
   sets.midcast.RA.MidAcc = set_combine(sets.midcast.RA.LowAcc, {
-    body="Malignance Tabard",     -- 42 [11] 50/__ <_> {6} (__)
-    legs=gear.Adhemar_C_legs,     -- 42 [ 8] 54/20 <_> {_} (16)
-    ring1="Hajduk Ring +1",       -- __ [__] 17/__ <_> {_} (__)
+    body="Malignance Tabard",       -- 42 [11] 50/__ <_> {6} (__)
+    legs=gear.Adhemar_C_legs,       -- 42 [ 8] 54/20 <_> {_} (16)
+    ring1="Hajduk Ring +1",         -- __ [__] 17/__ <_> {_} (__)
     --223 AGI [81 STP] 396 racc / 150 ratt <0 crit> {16 dmg limit} (16 Recycle)
   })
   sets.midcast.RA.HighAcc = set_combine(sets.midcast.RA.MidAcc, {
@@ -733,8 +739,9 @@ function init_gear_sets()
     ring2="Hajduk Ring +1",       -- __, 17
     back=gear.COR_RA_Cape,        -- 30, 20
     waist="Kwahu Kachina Belt +1",  --  8, 20
+    -- body="Laksamana's Frac +3",  -- 45, 57
     -- legs="Laksamana's Trews +3", -- 33, 49
-    -- AF+Regal set bonus           -- __, 15
+    -- AF+Regal set bonus           -- __, 30
   } -- 236 AGI, 360 R.Acc
   sets.precast.WS['Sniper Shot'].MaxTP = set_combine(sets.precast.WS['Sniper Shot'], {
   })
