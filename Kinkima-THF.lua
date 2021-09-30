@@ -972,7 +972,7 @@ function init_gear_sets()
   }
 
   sets.Kiting = {
-    feet="Jute Boots +1",
+    ring1="Shneddick Ring",
     -- feet="Pillager's Poulaines +3",
   }
   sets.Kiting.Adoulin = {
