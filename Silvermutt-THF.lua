@@ -562,7 +562,7 @@ function init_gear_sets()
     hands="Malignance Gloves",  --  5/ 5, 112
     legs="Malignance Tights",   --  7/ 7, 150
     feet="Malignance Boots",    --  4/ 4, 150
-    -- TP Cape                  -- 10/__, ___
+    back=gear.THF_TP_Cape,      -- 10/__, ___
   } --44 PDT/34 MDT, 674 MEVA
 
   sets.Evasion = {
@@ -577,7 +577,6 @@ function init_gear_sets()
     ear2="Infused Earring",       -- __/__, ___,  10
     ring1="Moonlight Ring",       --  5/ 5, ___, ___
     ring2="Moonlight Ring",       --  5/ 5, ___, ___
-    back=gear.THF_TP_Cape,        -- 10/__, ___, ___
     waist="Kasiri Belt",          -- __/__, ___,  13
   } -- 51 PDT / 41 MDT, 697 MEVA, 555 Evasion
 
