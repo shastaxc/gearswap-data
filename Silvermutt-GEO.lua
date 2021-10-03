@@ -22,13 +22,6 @@ function job_setup()
   silibs.enable_weapon_rearm()
   silibs.enable_auto_lockstyle(10)
   silibs.enable_premade_commands()
-  silibs.enable_ui({
-    geo_luopan={
-      align_right=true,
-      x=-250,
-      y=75,
-    }
-  })
 
   elemental_ws = S{"Black Halo", "Cataclysm"}
 
@@ -277,6 +270,8 @@ function init_gear_sets()
   -- Master GEO with full merits = 850 geo skill base (cap at 900)
   -- Lv 99 GEO = 43 Conserve MP base (cap at 100)
 	sets.midcast.Geomancy = {
+    main="Idris",                   -- 10, __, __
+    sub=empty,
     range="Dunna",                  -- __, 18, __
     ammo=empty,
     head="Azimuth Hood +1",         -- __, 15, __
@@ -291,7 +286,6 @@ function init_gear_sets()
     ring1="Stikini Ring +1",        -- __,  8, __
     ring2="Defending Ring",
     back=gear.GEO_Adoulin_Cape,     -- __, 15, __
-    -- main="Idris",                -- 10, __, __
     -- sub="Genmei Shield",         -- __, __, __
     -- body="Vedic Coat",           -- __, __, 10
     -- legs=gear.Vanya_C_legs,      -- __, __, 12
@@ -301,7 +295,7 @@ function init_gear_sets()
     -- ring2="Mephitas's Ring +1",  -- __, __, 15
     -- waist="Shinjutsu-no-Obi +1", -- __, __, 15
     -- 10 Geomancy, 56 geo skill, 58 Conserve MP
-	}-- 6 Geomancy, 906 geo skill, 0 Conserve MP
+	}-- 10 Geomancy, 906 geo skill, 0 Conserve MP
 
 	--Extra Indi duration as long as you can keep your 900 skill cap.
 	sets.midcast.Geomancy.Indi = set_combine(sets.midcast.Geomancy,{
@@ -650,11 +644,11 @@ function init_gear_sets()
 	-- When Luopan is present, but not expecting to take much dmg
   -- Maximize Pet Regen
 	sets.idle.Pet = {
-    main="Malignance Pole",         -- 20/20, ___, __/__, __
-    sub="Kaja Grip",                --  5/ 5, ___, __/__, __
+    main="Idris",                   -- __/__, ___, 25/25, __
+    sub=empty,
     range="Dunna",                  -- __/__, ___,  5/ 5, __
     ammo=empty,                     -- __/__, ___, __/__, __
-    head="Azimuth Hood +1",         -- __/__,  86, __/__,  3
+    head=gear.Nyame_B_head,         --  7/ 7, 123, __/__, __
     body=gear.Nyame_B_body,         --  9/ 9, 139, __/__, __
     hands="Geomancy Mitaines +1",   --  1/__,  37, 11/11, __
     legs=gear.Nyame_B_legs,         --  8/ 8, 150, __/__, __
@@ -666,14 +660,14 @@ function init_gear_sets()
     ring2="Gelatinous Ring +1",     --  7/-1, ___, __/__, __
     back=gear.GEO_Idle_Cape,        -- __/__,  30, __/__, 15
     waist="Carrier's Sash",         -- __/__, ___, __/__, __; Ele resist+15
-    -- main="Idris",                -- __/__, ___, 25/25, __
     -- sub="Genmei Shield",         -- 10/__, ___, __/__, __
+    -- head="Azimuth Hood +1",      -- __/__,  86, __/__,  3
     -- body="Shamash Robe",         -- 10/__, 106, __/__, __; Resist Silence+90
     -- hands="Geomancy Mitaines +3",--  3/__,  57, 13/13, __
     -- feet="Bagua Sandals +3",     -- __/__, 127, __/__,  5
     -- neck="Bagua Charm +2",       -- __/__, ___, __/__, __; Absorb Dmg+10
     -- 51 PDT / 25 MDT, 526 Meva, 43 Pet PDT / 43 Pet MDT, 23 Pet Regen
-  } -- 63 PDT / 50 MDT, 549 Meva, 16 Pet PDT / 16 Pet MDT, 21 Pet Regen
+  } -- 45 PDT / 41 MDT, 556 Meva, 41 Pet PDT / 41 Pet MDT, 18 Pet Regen
 
 	-- When Luopan is present, and you are expecting to take dmg
 	sets.idle.HeavyDef.Pet = sets.idle.Pet
