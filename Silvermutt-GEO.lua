@@ -227,7 +227,7 @@ function init_gear_sets()
 
 	sets.precast.FC.Dispelga = set_combine(sets.precast.FC, {
     main="Daybreak",
-    -- sub="Genmei Shield",
+    sub="Genmei Shield",
   })
 
 	-- Weaponskill sets
@@ -271,13 +271,13 @@ function init_gear_sets()
   -- Lv 99 GEO = 43 Conserve MP base (cap at 100)
 	sets.midcast.Geomancy = {
     main="Idris",                   -- 10, __, __
-    sub=empty,
+    sub="Genmei Shield",            -- __, __, __
     range="Dunna",                  -- __, 18, __
     ammo=empty,
     head="Azimuth Hood +1",         -- __, 15, __
     body="Geomancy Tunic +1",
     hands="Azimuth Gloves +1",      -- __, __, __; Set bonus
-    legs="Geomancy Pants +2",
+    legs=gear.Vanya_C_legs,         -- __, __, 12
     feet="Azimuth Gaiters +1",      -- __, __, __; Set bonus
     neck="Bagua Charm +1",          --  6, __, __; Luopan Duration +20%
     waist="Gishdubar Sash",
@@ -286,23 +286,21 @@ function init_gear_sets()
     ring1="Stikini Ring +1",        -- __,  8, __
     ring2="Defending Ring",
     back=gear.GEO_Adoulin_Cape,     -- __, 15, __
-    -- sub="Genmei Shield",         -- __, __, __
     -- body="Vedic Coat",           -- __, __, 10
-    -- legs=gear.Vanya_C_legs,      -- __, __, 12
     -- neck="Bagua Charm +2",       -- __, __, __; Luopan Duration +25%
     -- ear1="Mendicant's Earring",  -- __, __,  2
     -- ear2="Calamitous Earring",   -- __, __,  4
     -- ring2="Mephitas's Ring +1",  -- __, __, 15
     -- waist="Shinjutsu-no-Obi +1", -- __, __, 15
     -- 10 Geomancy, 56 geo skill, 58 Conserve MP
-	}-- 10 Geomancy, 906 geo skill, 0 Conserve MP
+	} -- 10 Geomancy, 906 geo skill, 12 Conserve MP
 
 	--Extra Indi duration as long as you can keep your 900 skill cap.
 	sets.midcast.Geomancy.Indi = set_combine(sets.midcast.Geomancy,{
     legs="Bagua Pants +3",          -- __, __, __, 15
+    neck="Reti Pendant",            -- __,  5,  4, __
     -- head=gear.Vanya_C_head,      -- __, __, 12, __
     -- legs="Bagua Pants +3",       -- __, __, __, 21
-    -- neck="Reti Pendant",         -- __,  5,  4, __
     -- 10 Geomancy, 46 geo skill, 62 Conserve MP, 61 Indi Duration
   })
 
@@ -483,7 +481,7 @@ function init_gear_sets()
     ammo=empty,
     head=empty,
     body="Cohort Cloak +1",
-    hands="Geomancy Mitaines +1",
+    hands="Geomancy Mitaines +2",
     legs="Geomancy Pants +2",
     feet="Geomancy Sandals +1",
     neck="Bagua Charm +1",
@@ -645,12 +643,12 @@ function init_gear_sets()
   -- Maximize Pet Regen
 	sets.idle.Pet = {
     main="Idris",                   -- __/__, ___, 25/25, __
-    sub=empty,
+    sub="Genmei Shield",            -- 10/__, ___, __/__, __
     range="Dunna",                  -- __/__, ___,  5/ 5, __
     ammo=empty,                     -- __/__, ___, __/__, __
-    head=gear.Nyame_B_head,         --  7/ 7, 123, __/__, __
+    head="Azimuth Hood +1",         -- __/__,  86, __/__,  3
     body=gear.Nyame_B_body,         --  9/ 9, 139, __/__, __
-    hands="Geomancy Mitaines +1",   --  1/__,  37, 11/11, __
+    hands="Geomancy Mitaines +2",   --  2/__,  47, 12/12, __
     legs=gear.Nyame_B_legs,         --  8/ 8, 150, __/__, __
     feet="Bagua Sandals +1",        -- __/__, 107, __/__,  3
     neck="Bagua Charm +1",          -- __/__, ___, __/__, __; Absorb Dmg+8
@@ -660,14 +658,12 @@ function init_gear_sets()
     ring2="Gelatinous Ring +1",     --  7/-1, ___, __/__, __
     back=gear.GEO_Idle_Cape,        -- __/__,  30, __/__, 15
     waist="Carrier's Sash",         -- __/__, ___, __/__, __; Ele resist+15
-    -- sub="Genmei Shield",         -- 10/__, ___, __/__, __
-    -- head="Azimuth Hood +1",      -- __/__,  86, __/__,  3
     -- body="Shamash Robe",         -- 10/__, 106, __/__, __; Resist Silence+90
     -- hands="Geomancy Mitaines +3",--  3/__,  57, 13/13, __
     -- feet="Bagua Sandals +3",     -- __/__, 127, __/__,  5
     -- neck="Bagua Charm +2",       -- __/__, ___, __/__, __; Absorb Dmg+10
     -- 51 PDT / 25 MDT, 526 Meva, 43 Pet PDT / 43 Pet MDT, 23 Pet Regen
-  } -- 45 PDT / 41 MDT, 556 Meva, 41 Pet PDT / 41 Pet MDT, 18 Pet Regen
+  } -- 49 PDT / 34 MDT, 559 Meva, 42 Pet PDT / 42 Pet MDT, 21 Pet Regen
 
 	-- When Luopan is present, and you are expecting to take dmg
 	sets.idle.HeavyDef.Pet = sets.idle.Pet
