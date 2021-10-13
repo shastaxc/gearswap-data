@@ -76,7 +76,7 @@ function job_setup()
   state.HybridMode:options('Normal', 'DT')
   state.WeaponskillMode:options('Normal', 'Acc')
   state.CastingMode:options('Normal', 'Resistant')
-  state.IdleMode:options('Normal', 'DT', 'MEva')
+  state.IdleMode:options('Normal', 'DT')
   state.CP = M(false, "Capacity Points Mode")
   state.LullabyMode = M{['description']='Lullaby Instrument', 'Harp', 'Horn'}
   state.Carol = M{['description']='Carol',
@@ -253,17 +253,17 @@ function init_gear_sets()
 
   -- Default set for any weaponskill that isn't any more specifically defined
   sets.precast.WS = {
+    head=gear.Nyame_B_head,
+    body=gear.Nyame_B_body,
+    hands=gear.Nyame_B_hands,
+    legs=gear.Nyame_B_legs,
+    feet=gear.Nyame_B_feet,
     neck="Fotia Gorget",
     ear1="Ishvara Earring",
     ear2="Moonshade Earring",
     ring2="Ilabrat Ring",
     waist="Fotia Belt",
-    -- range=gear.Linos_WS,
-    -- head=gear.Chironic_WSD_head,
-    -- body="Bihu Jstcorps. +3",
-    -- hands=gear.Chironic_WSD_hands,
-    -- legs="Bihu Cannions +3",
-    -- feet="Bihu Slippers +3",
+    -- range=gear.Linos_WS3,
     -- ring1="Epaminondas's Ring",
     -- back=gear.BRD_WS1_Cape,
   }
@@ -347,16 +347,16 @@ function init_gear_sets()
 
   -- Modifiers: 40% DEX / 40% INT, Focus: MAB
   sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
+    head=gear.Nyame_B_head,       --  8, 
+    body=gear.Nyame_B_body,       -- 10, 
+    hands=gear.Nyame_B_hands,     --  8, 
+    legs=gear.Nyame_B_legs,       --  9, 
+    feet=gear.Nyame_B_feet,       --  8, 
     neck="Baetyl Pendant",        -- __, __, __, 13
     ear1="Moonshade Earring",     -- __, __, __, __; 250 TP Bonus
     ear2="Friomisi Earring",      -- __, __, __, 10
     ring1="Shiva Ring +1",        -- __, __,  9,  3
     -- range=gear.Linos_WS1,         --  3, __,  8, 20
-    -- head="C. Palug Crown",        -- __, 24, 34, 45
-    -- body="Bihu Jstcorps. +3",     -- 10, 41, 39, __
-    -- hands=gear.Chironic_AE_hands, -- 10, 38, 40, 55
-    -- legs="Gyve Trousers",         -- __, 12, 35, 40
-    -- feet=gear.Chironic_AE_feet,   -- 10, 21, 38, 60
     -- ring2="Epaminondas's Ring",   --  5, __, __, __
     -- back=gear.BRD_WS2_Cape,       -- 10, 30, __, __
     -- waist="Orpheus's Sash",       -- 1-15% increase based on range
@@ -368,20 +368,22 @@ function init_gear_sets()
 
   -- Modifiers: 50% STR / 50% MND
   sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
+    head=gear.Nyame_B_head,       --  8, __, __,  2, 55, 40, 26, 26
+    body=gear.Nyame_B_body,       -- 10, __, __,  3, 55, 40, 35, 37
+    hands=gear.Nyame_B_hands,     --  8, __, __,  2, 55, 40, 17, 40
+    legs=gear.Nyame_B_legs,       --  9, __, __,  3, 55, 40, 43, 32
+    feet=gear.Nyame_B_feet,       --  8, __, __,  2, 55, 40, 23, 26
     ear1="Moonshade Earring",     -- __, __, __, __, __,  4, __, __; 250 TP Bonus
     ear2="Ishvara Earring",       --  2, __, __, __, __, __, __, __
     waist="Sailfi Belt +1",       -- __, __,  2,  5, 15, __, 15, __
-    -- range=gear.Linos_WS5,         --  3, __, __, __, 15, 15,  8, __
-    -- head="Bihu Roundlet +3",      -- __, __, __, __, 62, 37, 21, 27
-    -- body="Bihu Jstcorps. +3",     -- 10, __, __, __, 92, 53, 39, 38
-    -- hands="Bihu Cuffs +3",        -- __, __, __, __, 63, 38, 16, 42
-    -- legs="Bihu Cannions +3",      -- __, __, __, __, 64, 39, 33, 43
-    -- feet="Bihu Slippers +3",      -- __, __, __, __, 61, 36, 17, 27
-    -- neck="Bard's Charm +2",       -- __,  3, __, __, __, 30, __, __
-    -- ring1="Ifrit Ring +1",        -- __, __, __, __,  5, __,  9, __
-    -- ring2="Epaminondas's Ring",   --  5, __, __, __, __, __, __, __
-    -- back=gear.BRD_WS5_Cape,       -- 10, __, __, __, 20, 20, 30, __
-  }) -- 30 WSD, 3 QA, 2 TA, 5 DA, 397 Att, 272 Acc, 188 STR, 177 MND
+    -- range=gear.Linos_WS5,      --  3, __, __, __, 15, 15,  8, __
+    -- body="Bihu Jstcorps. +3",  -- 10, __, __, __, 92, 53, 39, 38
+    -- neck="Bard's Charm +2",    -- __,  3, __, __, __, 30, __, __
+    -- ring1="Ifrit Ring +1",     -- __, __, __, __,  5, __,  9, __
+    -- ring2="Epaminondas's Ring",--  5, __, __, __, __, __, __, __
+    -- back=gear.BRD_WS5_Cape,    -- 10, __, __, __, 20, 20, 30, __
+    -- 30 WSD, 3 QA, 2 TA, 5 DA, 397 Att, 272 Acc, 188 STR, 177 MND
+  })
   sets.precast.WS['Savage Blade'].MaxTP = set_combine(sets.precast.WS['Savage Blade'], {
     -- ear1="Vulcan's Pearl",        -- __, __, __, __, __, __,  4, __
   })
@@ -688,9 +690,11 @@ function init_gear_sets()
   -- swap out for Regen, or in battle mode
   sets.HeavyDef = {
     sub="Genmei Shield",      -- 10, __, ___
-    head="Inyanga Tiara +2",  -- __,  5, 114
-    hands="Volte Bracers",    -- __, __, 102; Status resist, Raetic Bangles +1 good alt
-    feet="Inyan. Crackows +2",-- __, __, 147
+    head=gear.Nyame_B_head,   --  7,  7, 123
+    body=gear.Nyame_B_body,   --  9,  9, 139
+    hands=gear.Nyame_B_hands, --  7,  7, 112
+    legs=gear.Nyame_B_legs,   --  8,  8, 150
+    feet=gear.Nyame_B_feet,   --  7,  7, 150
     neck="Loricate Torque +1",--  6,  6, ___
     ear2="Etiolation Earring",-- __,  3, ___; Status resist
     ring1="Defending Ring",   -- 10, 10, ___
@@ -699,10 +703,9 @@ function init_gear_sets()
     -- main="Barfawc",           -- 12, 12, ___
     -- range=gear.Linos_DT,      --  5, __,  15
     -- body="Ashera Harness",    --  7,  7,  96; Status resist, Mousai Manteel +1 good alt
-    -- legs="Brioso Cannions +3",--  8,  8, 127
     -- ear1="Hearty Earring",    -- __, __, ___; Status resist
     -- waist="Flume Belt +1",    --  4, __, ___
-    -- 73 PDT, 62 MDT, 601 MEVA
+    -- 94 PDT, 78 MDT, 646 MEVA
   }
 
   sets.idle = sets.HeavyDef
@@ -720,26 +723,7 @@ function init_gear_sets()
 
   -- DT mode disables move speed, regain, regen, refresh
   sets.idle.DT = sets.HeavyDef
-
-  -- Mainly to avoid aoe status effects like Stun
-  -- MEva mode disables move speed, regain, regen, refresh
-  sets.idle.MEva = {
-    main="Daybreak",
-    head="Inyanga Tiara +2", --0/5
-    body="Inyanga Jubbah +2", --0/8
-    legs="Inyanga Shalwar +2", --0/6
-    feet="Inyan. Crackows +2", --0/3
-    ear1="Eabani Earring",
-    back="Moonlight Cape", --6/6
-    waist="Carrier's Sash",
-    -- sub="Ammurapi Shield",
-    -- hands="Raetic Bangles +1",
-    -- neck="Warder's Charm +1",
-    -- ear2="Sanare Earring",
-    -- ring1="Purity Ring",
-    -- ring2="Inyanga Ring",
-  } --?? PDT, ?? MDT, ??? MEVA
-
+  
   sets.idle.Weak = sets.HeavyDef
 
   ------------------------------------------------------------------------------------------------

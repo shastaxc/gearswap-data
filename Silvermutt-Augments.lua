@@ -57,6 +57,19 @@ gear.Grioavolr_MB = {} --MB Dmg, MAB, M.Acc, INT
 ----------------------------------------------------------------------
 
 -- Chironic
+gear.Chironic_WSD_head = {}
+gear.Chironic_WSD_hands = {}
+
+gear.Chironic_QA_hands = {} -- 3 QA > 10 DEX > 30 ACC > 32 ATT
+gear.Chironic_QA_feet = {} -- 3 QA > 10 DEX > 30 ACC > 32 ATT
+
+gear.Chironic_Refresh_head = {} -- 2 Refresh
+gear.Chironic_Refresh_hands = {} -- 2 Refresh
+gear.Chironic_Refresh_feet = {} -- 2 Refresh
+
+gear.Chironic_AE_hands = { }-- 10 WSD > 40 MAB > 15 INT > 15 DEX
+gear.Chironic_AE_feet = {} -- 10 WSD > 40 MAB > 15 INT > 15 DEX
+
 
 -- Herculean
 gear.Herc_TA_hands = { name="Herculean Gloves", augments={'Attack+26','"Triple Atk."+3','DEX+1',}}
@@ -97,6 +110,7 @@ gear.Gende_SongFC_head = {} -- 5 Song Spellcasting Time-, 3 Song Recast Delay-, 
 gear.Gende_SongFC_hands = {} -- 5 Song Spellcasting Time-, 3 Song Recast Delay-, 4 PDT
 gear.Gende_SongFC_legs = {} -- 5 Song Spellcasting Time-, 3 Song Recast Delay-, 4 PDT
 gear.Gende_SongFC_feet = {} -- 5 Song Spellcasting Time-, 3 Song Recast Delay-, 4 PDT
+gear.Gende_CureFC_hands = {}  --  5 Cure Cast Time-, 4 PDT
 
 -- Hagondes
 
@@ -133,8 +147,27 @@ gear.Taeon_Phalanx_feet = gear.Taeon_FC_feet
 gear.Taeon_RA_head = { name="Taeon Chapeau", augments={'"Snapshot"+5','"Snapshot"+5',}}
 
 -- Telchine
+gear.Telchine_DA_legs = {}
+gear.Telchine_ENH_body = {name="Telchine Chas.", augments={'Mag. Evasion+20','"Regen"+2','Enh. Mag. eff. dur. +10',}}
+gear.Telchine_STP_hands = {name="Telchine Gloves", augments={'Accuracy+20','"Store TP"+6','DEX+10',}}
+gear.Telchine_STP_feet = {name="Telchine Pigaches", augments={'Accuracy+20','"Store TP"+6','DEX+10',}}
 
 -- Yorium
+
+
+----------------------------------------------------------------------
+-----------------------    Skirmish Weapons    -----------------------
+----------------------------------------------------------------------
+
+gear.Linos_CnsvMP = {} -- 15 M.Eva, 8 MND, 4 Conserve MP
+gear.Linos_DT = {} -- 15 Magic evasion, -5% PDT, 20 HP
+gear.Linos_FC = {} -- 20 HP, 15 M.Eva, 6% Fast Cast
+gear.Linos_TP = {} -- 20 Acc, 3 Quad attack, 4 Store TP
+gear.Linos_WS1 = {} -- 20 MAB, 8 INT, 3 WS Damage
+gear.Linos_WS2 = {} -- 15 Acc/Atk, 8 CHR, 3 WS Damage
+gear.Linos_WS3 = {} -- 15 Acc/Atk, 8 DEX, 3 WS Damage
+gear.Linos_WS4 = {} -- 15 Acc/Atk, 3 QA, 3 DA
+gear.Linos_WS5 = {} -- 15 Acc/Atk, 8 STR, 3 WS Damage
 
 
 ----------------------------------------------------------------------
@@ -161,6 +194,15 @@ gear.RUN_Adoulin_Cape = { name="Evasionist's Cape", augments={'Enmity+4','"Embol
 ----------------------------------------------------------------------
 -----------------------    Ambuscade Capes    ------------------------
 ----------------------------------------------------------------------
+
+gear.BRD_DW_Cape = {name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dual Wield"+10','Phys. dmg. taken-10%',}}
+gear.BRD_Song_Cape = {name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Fast Cast"+10',}}
+gear.BRD_STP_Cape = {name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}}
+gear.BRD_WS1_Cape = {name="Intarabus's Cape", augments={'CHR+20','Accuracy+20 Attack+20','CHR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
+gear.BRD_WS2_Cape = {name="Intarabus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
+gear.BRD_WS3_Cape = {} -- 30DEX, 20Acc/Atk, 10 Critical Hit Rate, -10 PDT
+gear.BRD_WS4_Cape = {} -- 30AGI, 20Acc/Atk, 10 Double Attack, -10 PDT
+gear.BRD_WS5_Cape = {name="Intarabus's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
 
 gear.COR_TP_Cape = { name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
 gear.COR_WS1_Cape = { name="Camulus's Mantle", augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','AGI+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
