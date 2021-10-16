@@ -248,7 +248,7 @@ function init_gear_sets()
     ring1="Archon Ring",            --  5, __, __, __
     ring2="Shiva Ring +1",          -- __,  3, __, __
     back="Argochampsa Mantle",      -- __, 12, __, __
-    waist="Fotia Belt",             -- __, __, __, __; FTP bonus
+    waist="Skrymir Cord",
     -- body="Agwu's Robe",          -- __, 55, 20, __
     -- legs="Agwu's Slops",         -- __, 55, 20, __
     -- feet="Agwu's Pigaches",      -- __, 55, 20, __

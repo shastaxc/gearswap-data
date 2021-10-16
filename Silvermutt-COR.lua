@@ -479,7 +479,7 @@ function init_gear_sets()
     ring1="Dingir Ring", --10
     ring2="Shiva Ring +1", --3
     back=gear.COR_WS1_Cape, --0
-    waist="Eschan Stone", --7
+    waist="Skrymir Cord", --5
     -- neck="Comm. Charm +2",
     -- ring2="Epaminondas's Ring",
     -- waist="Skrymir Cord +1",
@@ -793,7 +793,7 @@ function init_gear_sets()
     ring1="Dingir Ring", --10
     ring2="Shiva Ring +1", --3
     back=gear.COR_WS1_Cape, --0
-    waist="Eschan Stone", --7
+    waist="Skrymir Cord", --5
     -- neck="Comm. Charm +2",
     -- waist="Skrymir Cord +1",
   }
