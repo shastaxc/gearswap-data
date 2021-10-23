@@ -429,6 +429,7 @@ function init_gear_sets()
   sets.precast.WS.SA = {body="Meg. Cuirie +2"}
   -- For Crit Dmg, not crit rate; overlaid on any WS set that doesn't have its own Climacic set defined
   sets.precast.WS.Climactic = {
+    ammo="Charis Feather",
     head="Maculele Tiara +1",
     body="Meghanada Cuirie +2",
   }
@@ -497,7 +498,7 @@ function init_gear_sets()
     -- 230 STR, 249 DEX, 4 WSD, 236 Att, 39 PDL
   }) -- 232 STR, 254 DEX, 4 WSD, 243 Att, 36 PDL
   sets.precast.WS['Pyrrhic Kleos'].AttCappedMaxTP = set_combine(sets.precast.WS['Pyrrhic Kleos'].AttCapped, {})
-  -- Required to prevent extra gear from equipping during Climactic; AE cannot crit
+  -- Required to prevent extra gear from equipping during Climactic
   -- For Crit Dmg, not crit rate; is overlaid, don't set_combine
   sets.precast.WS['Pyrrhic Kleos'].Climactic = {}
 
@@ -568,6 +569,7 @@ function init_gear_sets()
   })
   -- For Crit Dmg, not crit rate; is overlaid, don't set_combine
   sets.precast.WS["Rudra's Storm"].Climactic = {
+    ammo="Charis Feather",
     head="Maculele Tiara +1",
     feet=gear.Nyame_B_feet,
     -- ring1="Epaminondas's Ring",
