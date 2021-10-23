@@ -483,7 +483,7 @@ function init_gear_sets()
     body="Cohort Cloak +1",
     hands="Geomancy Mitaines +2",
     legs="Geomancy Pants +2",
-    feet="Geomancy Sandals +1",
+    feet="Geomancy Sandals +2",
     neck="Bagua Charm +1",
     ear2="Malignance Earring",
     ring1="Stikini Ring +1",
