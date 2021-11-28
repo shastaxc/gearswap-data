@@ -160,9 +160,8 @@ function init_gear_sets()
   sets.WeaponSet['Piercing'] = {main="Birdbanes"}
   sets.WeaponSet['Slashing'] = {main="Vampiric Claws"}
   sets.WeaponSet['Cleaving'] = {
-    main="Reikikon",
+    main="Xoanon",
     sub="Alber Strap"
-    -- main="Xoanon",
   }
   
   -----------------------------------------------------------------------------------
