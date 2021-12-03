@@ -247,6 +247,8 @@ function job_file_unload()
   send_command('unbind ^numpad0')
   send_command('unbind ^numpad.')
   send_command('unbind %numpad0')
+  send_command('unbind ^f8')
+
 end
 
 
