@@ -179,9 +179,9 @@ function user_setup()
   include('Global-Binds.lua') -- Additional local binds
 
   if S{'PLD','WAR','MNK','BLM','DRG','SMN'}:contains(player.sub_job) then
-    state.WeaponSet = M{['description']='Weapon Set', 'Normal', 'Acc', 'H2H', 'Fast/DI', 'Staff', 'Healing', 'Cleaving'}
+    state.WeaponSet = M{['description']='Weapon Set', 'Twashtar', 'TwashtarAcc', 'Terpsichore', 'H2H', 'Healing', 'Staff', 'Cleaving'}
   else
-    state.WeaponSet = M{['description']='Weapon Set', 'Normal', 'Acc', 'H2H', 'Fast/DI', 'Healing', 'Cleaving'}
+    state.WeaponSet = M{['description']='Weapon Set', 'Twashtar', 'TwashtarAcc', 'Terpsichore', 'H2H', 'Healing', 'Cleaving'}
   end
 
   if player.sub_job == 'WAR' then
@@ -609,7 +609,7 @@ function init_gear_sets()
     hands=gear.Nyame_B_hands,   -- 40, 40
     legs=gear.Nyame_B_legs,     -- 40, 40
     feet=gear.Nyame_B_feet,     -- 40, 40
-    neck="Carnal Torque",       -- Needed to unlock WS
+    neck="Etoile Gorget +2",    -- 25, 25
     ear1="Dignitary's Earring", -- 10, 10
     ear2="Moonshade Earring",   -- __, __
     ring1="Chirich Ring +1",    -- 10, __
@@ -1067,12 +1067,13 @@ function init_gear_sets()
   }
 
   sets.WeaponSet = {}
-  sets.WeaponSet['Normal'] = {main="Twashtar", sub={name="Centovente", priority=1}}
-  sets.WeaponSet['Acc'] = {main="Twashtar", sub="Taming Sari"}
+  sets.WeaponSet['Twashtar'] = {main="Twashtar", sub={name="Centovente", priority=1}}
+  sets.WeaponSet['TwashtarAcc'] = {main="Twashtar", sub="Taming Sari"}
+  sets.WeaponSet['Terpsichore'] = {main="Terpsichore", sub="Twashtar"}
   sets.WeaponSet['H2H'] = {main="Kaja Knuckles", sub=empty}
   sets.WeaponSet['Fast/DI'] = {main="Twashtar", sub="Voluspa Knife"}
-  sets.WeaponSet['Staff'] = {main="Gozuki Mezuki", sub="Tzacab Grip"}
   sets.WeaponSet['Healing'] = {main="Enchufla", sub="Blurred Knife +1"}
+  sets.WeaponSet['Staff'] = {main="Gozuki Mezuki", sub="Tzacab Grip"}
   sets.WeaponSet['Cleaving'] = {main="Kaja Knife", sub="Twashtar"}
 end
 
@@ -1080,22 +1081,6 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- Job-specific hooks for standard casting events.
 -------------------------------------------------------------------------------------------------------------------
-
-function filtered_action(spell)
-  if spell.english == "Shell Crusher" then
-    if player.equipment.neck ~= "Carnal Torque" then
-      if not retry_filtered then retry_filtered = {} end
-      if not retry_filtered or (retry_filtered and retry_filtered.count and retry_filtered.count < 3) then
-        print('count: '..tostring(retry_filtered and retry_filtered.count))
-        equip({neck="Carnal Torque"})
-        send_command('gs c update') -- Call the update command to force gear change
-        retry_filtered.action = spell.name
-        retry_filtered.count = (retry_filtered.count and retry_filtered.count + 1) or 1
-        send_command('input /ws "Shell Crusher" <t>')
-      end
-    end
-  end
-end
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
