@@ -374,7 +374,7 @@ function init_gear_sets()
   })
   sets.precast.JA['Valiance'] = sets.precast.JA['Vallation']
   sets.precast.JA['Battuta'] = set_combine(sets.Enmity, {
-    head="Futhark Bandeau +1",
+    head="Futhark Bandeau +2",
     -- head="Futhark Bandeau +3",
   })
   sets.precast.JA['Liement'] = set_combine(sets.Enmity, {
