@@ -498,11 +498,11 @@ function init_gear_sets()
     head="Erilaz Galea +1",                         -- [ 91]
     hands={name="Runeist Mitons +1", priority=1},   -- [ 50]
     legs=gear.Carmine_D_legs,                       -- [ 50]
-    waist="Olympus Sash",                           -- [___]
-    neck="Incanter's Torque",                       -- [___]
-    ear1="Andoaa Earring",                          -- [___]
-    ear2="Mimir Earring",                           -- [___]
-    ring1="Stikini Ring +1",                        -- [___]
+    waist="Olympus Sash",                           -- [___], 5
+    neck="Incanter's Torque",                       -- [___], 10
+    ear1="Andoaa Earring",                          -- [___], 5
+    ear2="Mimir Earring",                           -- [___], 10
+    ring1="Stikini Ring +1",                        -- [___], 8
     -- body="Manasa Chasuble",
     -- ring2="Stikini Ring +1",
     -- back="Merciful Cape",
@@ -514,25 +514,47 @@ function init_gear_sets()
     legs={name="Futhark Trousers +3", priority=1},
   }
 
+  sets.HeavyDef = {
+    ammo="Staunch Tathlum +1",    --  3/ 3, ___ [___]
+    head=gear.Nyame_B_head,       --  7/ 7, 123 [ 91]
+    body=gear.Nyame_B_body,       --  9/ 9, 139 [136]
+    hands="Turms Mittens +1",     -- __/__, 101 [ 74]
+    legs="Erilaz Leg Guards +1",  --  7/__, 107 [ 80]
+    feet="Turms Leggings +1",     -- __/__, 147 [ 76]
+    neck="Futhark Torque +1",     --  6/ 6,  25 [ 45]
+    ear1="Odnowa Earring +1",     --  3/ 5, ___ [110]
+    ear2="Ethereal Earring",      -- __/__, ___ [___]
+    ring1="Gelatinous Ring +1",   --  7/-1, ___ [135]
+    ring2="Moonlight Ring",       --  5/ 5, ___ [110]
+    back=gear.RUN_HPP_Cape,       -- __/__,  20 [ 80]
+    waist="Engraved Belt",        -- __/__, ___ [___]
+    -- neck="Futhark Torque +2",  --  7/ 7,  30 [ 60]
+    --51 PDT / 38 MDT, 667 MEVA [987 HP]
+  } --50 PDT / 37 MDT, 662 MEVA [972 HP]
+
   sets.midcast['Phalanx'] = set_combine(sets.HeavyDef, {
-    ammo="Staunch Tathlum +1",                -- 0, 11 [ 3/ 3,   0]
-    head="Futhark Bandeau +1",                -- 5,  0 [ 4/ 0,  36]
-    body=gear.Taeon_Phalanx_body,             -- 3,  0 [ 0/ 0,  59]
-    hands=gear.Taeon_Phalanx_hands,           -- 3,  0 [ 0/ 0,  25]
-    legs=gear.Taeon_Phalanx_legs,             -- 3,  0 [ 0/ 0,  47]
-    feet=gear.Taeon_Phalanx_feet,             -- 3,  0 [ 0/ 0,  13]
-    ear2="Eabani Earring",                    -- 0,  0 [ 0/ 0,  45]
-    ring2="Defending Ring",                   -- 0,  0 [10/10,   0]
-    back={name="Moonlight Cape", priority=1}, -- 0,  0 [ 6/ 6, 275]
-    waist="Audumbla Sash",                    -- 0, 10 [ 4/ 0,   0]
-    -- head="Futhark Bandeau +3",             -- 7,  0 [ 6/ 0,  56]
-    -- body=gear.Herc_Phalanx_body,           -- 5, __ [__/__,  61]
-    -- hands=gear.Herc_Phalanx_hands,         -- 5, __ [ 2/__,  20]
-    -- legs=gear.Herc_Phalanx_legs,           -- 5, __ [ 2/__,  38]
-    -- feet=gear.Herc_Phalanx_feet,           -- 5, __ [ 2/__,   9]
-    -- ring2="Moonlight Ring",                -- _, __ [ 5/ 5, 110]
-    -- 27 Phalanx, 21% Interrupt [54PDT/32MDT, 939 HP w/ PDT set]
-  })-- 17 Phalanx, 21% Interrupt [51PDT/37MDT, 825 HP w/ PDT set]
+    ammo="Staunch Tathlum +1",                -- _, __, 11 [ 3/ 3,   0]
+    head="Futhark Bandeau +2",                -- 6, __, __ [ 5/ 0,  46]
+    body=gear.Taeon_Phalanx_body,             -- 3, __, __ [ 0/ 0,  59]
+    hands=gear.Taeon_Phalanx_hands,           -- 3, __, __ [ 0/ 0,  25]
+    legs=gear.Taeon_Phalanx_legs,             -- 3, __, __ [ 0/ 0,  47]
+    feet=gear.Taeon_Phalanx_feet,             -- 3, __, __ [ 0/ 0,  13]
+    neck="Futhark Torque +1",                 -- _, __, __ [ 6/ 6,  45]
+    ear1="Odnowa Earring +1",                 -- _, __, __ [ 3/ 5, 110]
+    ear2="Mimir Earring",                     -- _, 10, __ [__/__, ___]
+    ring1="Gelatinous Ring +1",               -- _, __, __ [ 7/-1, 135]
+    ring2="Defending Ring",                   -- _, __, __ [10/10,   0]
+    back={name="Moonlight Cape", priority=1}, -- _, __, __ [ 6/ 6, 275]
+    waist="Audumbla Sash",                    -- _, __, 10 [ 4/ 0,   0]
+    -- head="Futhark Bandeau +3",             -- 7, __, __ [ 6/ 0,  56]
+    -- body=gear.Herc_Phalanx_body,           -- 5, __, __ [__/__,  61]
+    -- hands=gear.Herc_Phalanx_hands,         -- 5, __, __ [ 2/__,  20]
+    -- legs=gear.Herc_Phalanx_legs,           -- 5, __, __ [ 2/__,  38]
+    -- feet=gear.Herc_Phalanx_feet,           -- 5, __, __ [ 2/__,   9]
+    -- neck="Futhark Torque +2",              -- _, __, __ [ 7/ 7,  60]
+    -- ring2="Moonlight Ring",                -- _, __, __ [ 5/ 5, 110]
+    -- 27 Phalanx, 10 Enh Skill, 21% Interrupt [47 PDT/25 MDT, 874 HP]
+  })-- 18 Phalanx, 10 Enh Skill, 21% Interrupt [44 PDT/29 MDT, 775 HP]
 
   sets.midcast['Aquaveil'] = set_combine(sets.HeavyDef, {
     ammo="Staunch Tathlum +1",                  -- {11}
