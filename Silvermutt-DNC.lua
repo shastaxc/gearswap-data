@@ -92,10 +92,10 @@ function job_setup()
   silibs.enable_weapon_rearm()
   silibs.enable_auto_lockstyle(2)
   silibs.enable_waltz_refiner({
-    base_chr= 104,
-    base_vit= 97,
-    bonus_chr= 157,
-    bonus_vit= 62,
+    base_chr= 121,
+    base_vit= 122,
+    bonus_chr= 181,
+    bonus_vit= 106,
     waltz_potency = 49,
     waltz_self_potency = 17,
     est_non_party_target_hp = 2000,
@@ -299,16 +299,14 @@ function init_gear_sets()
     ring2="Defending Ring",         -- 10/10 | __(_), __, __ <__>
     back=gear.DNC_WTZ_Cape,         -- 10/__ | __(_), 30, __ <__>; Enmity-10
     waist="Aristo Belt",            -- __/__ | __(_),  8, __ <__>
-    -- ammo="Voluspa Tathlum",      -- __/__ | __(_),  5, __ <__>
     -- feet="Maxixi Toeshoes +3",   -- __/__ | 14(_), 40, 22 <__>
-    -- ear1="Handler's Earring +1", -- __/__ | __(_),  5,  5 <__>
-    -- 30/22 | 53 Potency (8 Self Potency), 201 CHR, 119 VIT <-4 Delay>
-  } -- 35/25 | 49 Potency (8 Self Potency), 157 CHR, 62 VIT <-4 Delay>
+    -- 35/25 | 53 Potency (8 Self Potency), 191 CHR, 116 VIT <-4 Delay>
+  } -- 35/25 | 49 Potency (8 Self Potency), 181 CHR, 106 VIT <-4 Delay>
 
   -- Waltz effects received
   sets.precast.WaltzSelf = set_combine(sets.precast.Waltz, {
     body="Maxixi Casaque +3",       -- __/__ | 19(8), 33, 34 <-2>
-    -- 30/22 | 53 Potency (8 Self Potency), 201 CHR, 119 VIT <-4 Delay>
+    -- 35/25 | 53 Potency (8 Self Potency), 191 CHR, 116 VIT <-4 Delay>
   })
 
   -- Waltz delay
@@ -1068,10 +1066,9 @@ function init_gear_sets()
 
   sets.WeaponSet = {}
   sets.WeaponSet['Twashtar'] = {main="Twashtar", sub={name="Centovente", priority=1}}
-  sets.WeaponSet['TwashtarAcc'] = {main="Twashtar", sub="Taming Sari"}
+  sets.WeaponSet['TwashtarAcc'] = {main="Twashtar", sub={name="Taming Sari", priority=1}}
   sets.WeaponSet['Terpsichore'] = {main="Terpsichore", sub="Twashtar"}
   sets.WeaponSet['H2H'] = {main="Kaja Knuckles", sub=empty}
-  sets.WeaponSet['Fast/DI'] = {main="Twashtar", sub="Voluspa Knife"}
   sets.WeaponSet['Healing'] = {main="Enchufla", sub="Blurred Knife +1"}
   sets.WeaponSet['Staff'] = {main="Gozuki Mezuki", sub="Tzacab Grip"}
   sets.WeaponSet['Cleaving'] = {main="Kaja Knife", sub="Twashtar"}
