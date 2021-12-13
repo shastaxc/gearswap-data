@@ -292,7 +292,7 @@ function init_gear_sets()
     hands="Orion Bracers +3"
   }
   sets.precast.JA['Sharpshot'] = {
-    legs="Orion Braccae +1"
+    legs="Orion Braccae +2"
   }
 
   sets.precast.Waltz = {
@@ -324,7 +324,7 @@ function init_gear_sets()
     head=gear.Taeon_RA_head,    -- 10/__
     body="Amini Caban +1",      -- __/__; -7% ranged aiming delay
     hands=gear.Carmine_D_hands, --  8/11
-    legs="Orion Braccae +1",    -- 12/__
+    legs=gear.Adhemar_D_legs,   -- 10/13
     feet="Meg. Jam. +2",        -- 10/__
     neck="Scout's Gorget +1",   --  3/__
     back=gear.RNG_SNP_Cape,     -- 10/__
@@ -334,7 +334,7 @@ function init_gear_sets()
     -- ring1="Crepuscular Ring",--  3/__
     -- waist="Yemaya Belt",     -- __/ 5
     --60 Snapshot / 16 Rapid Shot; -7% delay
-  } --56 Snapshot / 11 Rapid Shot; -7% delay
+  } --54 Snapshot / 24 Rapid Shot; -7% delay
 
   -- (15% Flurry, 10% Snapshot, 5% Rapid from Merits)
   -- 45 Snapshot from gear to cap
