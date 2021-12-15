@@ -421,7 +421,7 @@ function init_gear_sets()
   sets.precast.JA['Swipe'].Safe = sets.precast.JA['Lunge'].Safe
 
   sets.precast.JA['Gambit'] = set_combine(sets.Enmity, {
-    hands="Runeist Mitons +1"
+    hands="Runeist's Mitons +3"
   })
   sets.precast.JA['Rayke'] = set_combine(sets.Enmity, {
     feet="Futhark Boots +1"
@@ -496,7 +496,7 @@ function init_gear_sets()
 
   sets.midcast['Enhancing Magic'] = set_combine(sets.HeavyDef, {
     head="Erilaz Galea +1",                         -- [ 91]
-    hands={name="Runeist Mitons +1", priority=1},   -- [ 50]
+    hands={name="Runeist's Mitons +3", priority=1}, -- [ 85]
     legs=gear.Carmine_D_legs,                       -- [ 50]
     waist="Olympus Sash",                           -- [___], 5
     neck="Incanter's Torque",                       -- [___], 10
