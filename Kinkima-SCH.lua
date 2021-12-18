@@ -270,11 +270,11 @@ function init_gear_sets()
     body="Pedagogy Gown +3",
     legs="Pedagogy Pants +1",
     ear1="Malignance Earring",
+    ear2="Regal Earring",
     back=gear.SCH_MAB_Cape,
     -- head="Pixie Hairpin +1",
     -- legs="Pedagogy Pants +3",
     -- feet="Merlinic Crackows",
-    -- ear2="Regal Earring",
     -- ring2="Archon Ring",
     -- waist="Sacro Cord",
   })
@@ -664,6 +664,7 @@ function init_gear_sets()
     feet="Academic's Loafers +1",
     neck="Sanctity Necklace",           -- 10, __, __, __
     ear1="Malignance Earring",          -- 10,  8, __, __
+    ear2="Regal Earring",            -- __, 10, __, __; Adds set bonus
     ring1="Kishar Ring",                --  5, __, 10, __
     ring2="Metamor. Ring +1",           -- 16, 15, __, __
     back=gear.SCH_MND_MAcc_Cape,        -- 30, 20, __, __
@@ -674,7 +675,6 @@ function init_gear_sets()
     -- legs="Academic's Pants +3",      -- 49, 39, __, __; +24 enf skill in LA
     -- feet="Academic's Loafers +3",    -- 46, 29, __, __; +20 M.Acc in Grimoire
     -- neck="Argute Stole +2",          -- 30, 15, __, __
-    -- ear2="Regal Earring",            -- __, 10, __, __; Adds set bonus
     -- waist="Luminary Sash",           -- 10, 10, __, __
     -- Academic's set bonus             -- 60, __, __, __
     -- 504 M.Acc, 291 MND, 30% Enfeebling Duration, 40 Enfeebling Skill
@@ -696,6 +696,7 @@ function init_gear_sets()
     feet="Academic's Loafers +1",
     neck="Sanctity Necklace",           -- 10, __, __, __
     ear1="Malignance Earring",          -- 10,  8, __, __
+    ear2="Regal Earring",            -- __, 10, __, __; Adds set bonus
     ring1="Kishar Ring",                --  5, __, 10, __
     ring2="Metamor. Ring +1",           -- 16, 15, __, __
     back=gear.SCH_MND_MAcc_Cape,        -- 30, 20, __, __
@@ -706,7 +707,6 @@ function init_gear_sets()
     -- legs="Academic's Pants +3",      -- 49, 39, __, __; +24 enf skill in LA
     -- feet="Academic's Loafers +3",    -- 46, 32, __, __; +20 M.Acc in Grimoire
     -- neck="Argute Stole +2",          -- 30, 15, __, __
-    -- ear2="Regal Earring",            -- __, 10, __, __; Adds set bonus
     -- back=gear.SCH_INT_MAcc_Cape,     -- 30, 20, __, __
     -- waist="Acuity Belt +1",          -- 15, 23, __, __
     -- Academic's set bonus             -- 60, __, __, __
@@ -737,6 +737,7 @@ function init_gear_sets()
     legs="Pedagogy Pants +1",
     feet="Academic's Loafers +1",
     neck="Erra Pendant",          -- 10, __, 17
+    ear2="Regal Earring",      -- __, 10, __; Adds set effect
     back="Bookworm's Cape",       --  8,  4, __
     -- main="Rubicundity",        -- 25, 21, 20; +215 M.Acc skill
     -- head="Academic's Mortarboard +3",   -- __, 37, 52
@@ -744,8 +745,7 @@ function init_gear_sets()
     -- hands="Academic's Bracers +3",  -- __, 29, 48
     -- legs="Pedagogy Pants +3",     -- 19, 47, 39
     -- feet="Academic's Loafers +3",   -- __, 32, 46
-    -- ear1="Regal Earring",      -- __, 10, __; Adds set effect
-    -- ear2="Mani Earring",       -- 10, __, __
+    -- ear1="Mani Earring",       -- 10, __, __
     -- ring1="Evanescence Ring",  -- 10, __, __
     -- ring2="Stikini Ring +1",   --  8, __, 11
     -- back="Bookworm's Cape",    --  8,  5, __
@@ -806,6 +806,7 @@ function init_gear_sets()
     legs="Academic's Pants +1",
     feet="Academic's Loafers +1",
     ear1="Malignance Earring",   -- __,  4, 10, ___
+    ear2="Regal Earring",        -- __, __, __, ___; adds set effect
 
     --Ideal:
     -- main="Hvergelmir",           -- __, 50, __, 269
@@ -840,6 +841,7 @@ function init_gear_sets()
     hands=gear.Merl_MB_hands,
     neck="Sanctity Necklace",         -- __, 10, 10
     ear1="Malignance Earring",        --  8, 10,  8
+    ear2="Regal Earring",          -- 10, __,  7
     ring2="Metamor. Ring +1",         -- 16, 15, __
     back=gear.SCH_MAB_Cape,           -- 30, 20, 10
     -- head="Pedagogy Mortarboard +3",-- 39, 52, 49
@@ -848,7 +850,6 @@ function init_gear_sets()
     -- legs="Mallquis Trews +2",      -- 57, 45, 15
     -- feet=gear.Merl_MB_feet,        -- 34, 40, 55
     -- neck="Argute Stole +2",        -- 15, 30, __
-    -- ear2="Regal Earring",          -- 10, __,  7
     -- ring1="Freke Ring",            -- 10, __,  8
     -- waist="Acuity Belt +1",        -- 23, 15, __
     -- 374 INT, 315 Magic Acc, 327 MAB
@@ -867,6 +868,7 @@ function init_gear_sets()
     feet="Mallquis Clogs +1",         -- 33, 36, 12
     neck="Sanctity Necklace",         -- __, 10, 10
     ear1="Malignance Earring",        --  8, 10,  8
+    ear2="Regal Earring",          -- 10, __,  7
     ring2="Metamor. Ring +1",         -- 16, 15, __
     back=gear.SCH_MAB_Cape,           -- 30, 20, 10
     -- main="Marin Staff +1",         -- 37, 55, 68; bonus on wind dmg
@@ -876,7 +878,6 @@ function init_gear_sets()
     -- legs=gear.Amalric_A_legs,      -- 40, 20, 60
     -- feet=gear.Amalric_D_feet,      -- 21, 20, 52
     -- neck="Baetyl Pendant",         -- __, __, 13
-    -- ear2="Regal Earring",          -- 10, __,  7
     -- ring1="Freke Ring",            -- 10, __,  8
     -- waist="Refoccilation Stone",   -- __,  4, 10
     -- Amalric set bonus              -- __, __, 40
@@ -918,6 +919,7 @@ function init_gear_sets()
     legs="Mallquis Trews +2",         -- 57, 45, 15, ___,  55,  6, __
     feet="Mallquis Clogs +1",         -- 33, 36, 12, ___,  46, __, __
     ear1="Malignance Earring",        --  8, 10,  8, ___, ___, __, __
+    ear2="Regal Earring",          -- 10, __,  7, ___, ___, __, __
     back=gear.SCH_MAB_Cape,
     -- main="Daybreak",               -- __, 40, 40, 242, 241, __, __
     -- sub="Ammurapi Shield",         -- 13, 38, 38, ___, ___, __, __
