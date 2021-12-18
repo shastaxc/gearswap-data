@@ -836,25 +836,24 @@ function job_precast(spell, action, spellMap, eventArgs)
 end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
-    -- Equip obi if weather/day matches for WS.
+  -- Handle special gear scenario for elemental WS and elemental magic
   if (spell.type == 'WeaponSkill' and elemental_ws:contains(spell.english)) or spell.skill == 'Elemental Magic' then
-    -- Matching double weather (w/o day conflict).
-    if spell.element == world.weather_element and (get_weather_intensity() == 2 and spell.element ~= elements.weak_to[world.day_element]) then
-      equip(sets.ElementalObi)
-    -- Target distance under 1.7 yalms.
-    elseif spell.target.distance < (1.7 + spell.target.model_size) then
-      equip(sets.ElementalObi)
-      -- equip({waist="Orpheus's Sash"})
-    -- Matching day and weather.
-    elseif spell.element == world.day_element and spell.element == world.weather_element then
-      equip(sets.ElementalObi)
-    -- Target distance under 8 yalms.
-    elseif spell.target.distance < (8 + spell.target.model_size) then
-      equip(sets.ElementalObi)
-      -- equip({waist="Orpheus's Sash"})
-    -- Match day or weather without conflict.
-    elseif (spell.element == world.day_element and spell.element ~= elements.weak_to[world.weather_element]) or (spell.element == world.weather_element and spell.element ~= elements.weak_to[world.day_element]) then
-      equip(sets.ElementalObi)
+    if elemental_ws:contains(spell.english) then
+      local base_day_weather_mult = silibs.get_day_weather_multiplier(spell.element, false, false)
+      local obi_mult = silibs.get_day_weather_multiplier(spell.element, true, false)
+      local orpheus_mult = silibs.get_orpheus_multiplier(spell.element, spell.target.distance)
+
+      -- Determine which combination to use: orpheus, hachirin-no-obi, or neither
+      if base_day_weather_mult >= obi_mult and base_day_weather_mult >= orpheus_mult then
+        -- Wearing neither obi nor orpheus is better, both are harmful
+      elseif obi_mult >= orpheus_mult then
+        -- Obi is best
+        equip(sets.Special.ElementalObi)
+      else
+        -- Orpheus is best
+        -- equip({waist="Orpheus's Sash"})
+        equip(sets.Special.ElementalObi) -- I don't have Orpheus yet
+      end
     end
   end
 
@@ -929,6 +928,25 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
 				equip({main="Solstice"})
 			end
 		end
+  end
+
+  -- Handle special gear scenario for elemental damage
+  if spell.skill == 'Elemental Magic' then
+    local base_day_weather_mult = silibs.get_day_weather_multiplier(spell.element, false, false)
+    local obi_mult = silibs.get_day_weather_multiplier(spell.element, true, false)
+    local orpheus_mult = silibs.get_orpheus_multiplier(spell.element, spell.target.distance)
+
+    -- Determine which combination to use: orpheus, hachirin-no-obi, or neither
+    if base_day_weather_mult >= obi_mult and base_day_weather_mult >= orpheus_mult then
+      -- Wearing neither obi nor orpheus is better, both are harmful
+    elseif obi_mult >= orpheus_mult then
+      -- Obi is best
+      equip(sets.Special.ElementalObi)
+    else
+      -- Orpheus is best
+      -- equip({waist="Orpheus's Sash"})
+      equip(sets.Special.ElementalObi) -- I don't have Orpheus yet
+    end
   end
 
   -- If slot is locked, keep current equipment on
