@@ -292,7 +292,7 @@ function init_gear_sets()
     hands="Orion Bracers +3"
   }
   sets.precast.JA['Sharpshot'] = {
-    legs="Orion Braccae +2"
+    legs="Orion Braccae +3"
   }
 
   sets.precast.Waltz = {
@@ -324,17 +324,16 @@ function init_gear_sets()
     head=gear.Taeon_RA_head,    -- 10/__
     body="Amini Caban +1",      -- __/__; -7% ranged aiming delay
     hands=gear.Carmine_D_hands, --  8/11
-    legs=gear.Adhemar_D_legs,   -- 10/13
+    legs="Orion Braccae +3",    -- 15/__
     feet="Meg. Jam. +2",        -- 10/__
     neck="Scout's Gorget +1",   --  3/__
     back=gear.RNG_SNP_Cape,     -- 10/__
     waist="Impulse Belt",       --  3/__
-    -- legs="Orion Braccae +3", -- 15/__
     -- neck="Scout's Gorget +2",--  4/__
     -- ring1="Crepuscular Ring",--  3/__
     -- waist="Yemaya Belt",     -- __/ 5
     --60 Snapshot / 16 Rapid Shot; -7% delay
-  } --54 Snapshot / 24 Rapid Shot; -7% delay
+  } --56 Snapshot / 11 Rapid Shot; -7% delay
 
   -- (15% Flurry, 10% Snapshot, 5% Rapid from Merits)
   -- 45 Snapshot from gear to cap
@@ -1320,7 +1319,7 @@ function job_post_precast(spell, action, spellMap, eventArgs)
     if elemental_ws:contains(spell.english) then
       local base_day_weather_mult = silibs.get_day_weather_multiplier(spell.element, false, false)
       local obi_mult = silibs.get_day_weather_multiplier(spell.element, true, false)
-      local orpheus_mult = silibs.get_orpheus_multiplier(spell.element, spell.target.distance)
+      local orpheus_mult = silibs.get_orpheus_multiplier(spell.element, spell.target.distance, spell.target.model_size)
 
       -- Determine which combination to use: orpheus, hachirin-no-obi, or neither
       if base_day_weather_mult >= obi_mult and base_day_weather_mult >= orpheus_mult then
