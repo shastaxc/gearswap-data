@@ -898,33 +898,32 @@ function init_gear_sets()
     head="Malignance Chapeau",  --  6/ 6, 123
     hands="Malignance Gloves",  --  5/ 5, 112
     legs="Malignance Tights",   --  7/ 7, 150
-    feet="Malignance Boots",    --  4/ 4, 150
+    ring1="Moonlight Ring",     --  5/ 5, ___
     back=gear.THF_TP_Cape,      -- 10/__, ___
-  })-- 35/25
+  })-- 36/26
   sets.engaged.LowAcc.LightDef = set_combine(sets.engaged.LowAcc, {
     ammo="Staunch Tathlum +1",  --  3/ 3, ___
     head="Malignance Chapeau",  --  6/ 6, 123
     hands="Malignance Gloves",  --  5/ 5, 112
     legs="Malignance Tights",   --  7/ 7, 150
-    feet="Malignance Boots",    --  4/ 4, 150
+    ring1="Moonlight Ring",     --  5/ 5, ___
     back=gear.THF_TP_Cape,      -- 10/__, ___
-  })-- 35/25
+  })-- 36/26
   sets.engaged.MidAcc.LightDef = set_combine(sets.engaged.MidAcc, {
     ammo="Staunch Tathlum +1",  --  3/ 3, ___
     head="Malignance Chapeau",  --  6/ 6, 123
     hands="Malignance Gloves",  --  5/ 5, 112
     legs="Malignance Tights",   --  7/ 7, 150
-    feet="Malignance Boots",    --  4/ 4, 150
+    ring1="Moonlight Ring",     --  5/ 5, ___
     back=gear.THF_TP_Cape,      -- 10/__, ___
-  })-- 35/25
+  })-- 36/26
   sets.engaged.HighAcc.LightDef = set_combine(sets.engaged.HighAcc, {
     ammo="Staunch Tathlum +1",  --  3/ 3, ___
     head="Malignance Chapeau",  --  6/ 6, 123
     legs="Malignance Tights",   --  7/ 7, 150
-    feet="Malignance Boots",    --  4/ 4, 150
-    ring2="Moonlight Ring",     --  5/ 5, ___
+    ring2="Defending Ring",     -- 10/10, ___
     back=gear.THF_TP_Cape,      -- 10/__, ___
-  })-- 35/25
+  })-- 36/26
 
   -- No Magic/Gear/JA Haste (74% DW to cap, 44% from gear)
   sets.engaged.DW.LightDef = set_combine(sets.engaged.DW, {
@@ -964,34 +963,30 @@ function init_gear_sets()
     ammo="Staunch Tathlum +1",  --  3/ 3, ___
     head="Malignance Chapeau",  --  6/ 6, 123
     legs="Malignance Tights",   --  7/ 7, 150
-    feet="Malignance Boots",    --  4/ 4, 150
-    ring1="Moonlight Ring",     --  5/ 5, ___
+    ring1="Defending Ring",     -- 10/10, ___
     back=gear.THF_DW_Cape,      -- 10/__, ___
-  })-- 35/25
+  })-- 36/26
   sets.engaged.DW.LowAcc.LightDef.LowHaste = set_combine(sets.engaged.DW.LowAcc.LowHaste, {
     ammo="Staunch Tathlum +1",  --  3/ 3, ___
     head="Malignance Chapeau",  --  6/ 6, 123
     legs="Malignance Tights",   --  7/ 7, 150
-    feet="Malignance Boots",    --  4/ 4, 150
-    ring1="Moonlight Ring",     --  5/ 5, ___
+    ring1="Defending Ring",     -- 10/10, ___
     back=gear.THF_DW_Cape,      -- 10/__, ___
-  })-- 35/25
+  })-- 36/26
   sets.engaged.DW.MidAcc.LightDef.LowHaste = set_combine(sets.engaged.DW.MidAcc.LowHaste, {
     ammo="Staunch Tathlum +1",  --  3/ 3, ___
     head="Malignance Chapeau",  --  6/ 6, 123
     legs="Malignance Tights",   --  7/ 7, 150
-    feet="Malignance Boots",    --  4/ 4, 150
-    ring1="Moonlight Ring",     --  5/ 5, ___
+    ring1="Defending Ring",     -- 10/10, ___
     back=gear.THF_DW_Cape,      -- 10/__, ___
-  })-- 35/25
+  })-- 36/26
   sets.engaged.DW.HighAcc.LightDef.LowHaste = set_combine(sets.engaged.DW.HighAcc.LowHaste, {
     ammo="Staunch Tathlum +1",  --  3/ 3, ___
     head="Malignance Chapeau",  --  6/ 6, 123
     legs="Malignance Tights",   --  7/ 7, 150
-    feet="Malignance Boots",    --  4/ 4, 150
-    ring2="Moonlight Ring",     --  5/ 5, ___
+    ring2="Defending Ring",     -- 10/10, ___
     back=gear.THF_DW_Cape,      -- 10/__, ___
-  })-- 35/25
+  })-- 36/26
 
   -- Mid Magic/Gear/JA Haste (56% DW to cap, 26% from gear)
   sets.engaged.DW.LightDef.MidHaste = set_combine(sets.engaged.DW.MidHaste, {
@@ -999,33 +994,32 @@ function init_gear_sets()
     head="Malignance Chapeau",  --  6/ 6, 123
     hands="Malignance Gloves",  --  5/ 5, 112
     legs="Malignance Tights",   --  7/ 7, 150
-    feet="Malignance Boots",    --  4/ 4, 150
+    ring1="Moonlight Ring",     --  5/ 5, ___
     back=gear.THF_DW_Cape,      -- 10/__, ___
-  })-- 35/25
+  })-- 36/26
   sets.engaged.DW.LowAcc.LightDef.MidHaste = set_combine(sets.engaged.DW.LowAcc.MidHaste, {
     ammo="Staunch Tathlum +1",  --  3/ 3, ___
     head="Malignance Chapeau",  --  6/ 6, 123
     hands="Malignance Gloves",  --  5/ 5, 112
     legs="Malignance Tights",   --  7/ 7, 150
-    feet="Malignance Boots",    --  4/ 4, 150
+    ring1="Moonlight Ring",     --  5/ 5, ___
     back=gear.THF_DW_Cape,      -- 10/__, ___
-  })-- 35/25
+  })-- 36/26
   sets.engaged.DW.MidAcc.LightDef.MidHaste = set_combine(sets.engaged.DW.MidAcc.MidHaste, {
     ammo="Staunch Tathlum +1",  --  3/ 3, ___
     head="Malignance Chapeau",  --  6/ 6, 123
     hands="Malignance Gloves",  --  5/ 5, 112
     legs="Malignance Tights",   --  7/ 7, 150
-    feet="Malignance Boots",    --  4/ 4, 150
+    ring1="Moonlight Ring",     --  5/ 5, ___
     back=gear.THF_DW_Cape,      -- 10/__, ___
-  })-- 35/25
+  })-- 36/26
   sets.engaged.DW.HighAcc.LightDef.MidHaste = set_combine(sets.engaged.DW.HighAcc.MidHaste, {
     ammo="Staunch Tathlum +1",  --  3/ 3, ___
     head="Malignance Chapeau",  --  6/ 6, 123
     legs="Malignance Tights",   --  7/ 7, 150
-    feet="Malignance Boots",    --  4/ 4, 150
-    ring2="Moonlight Ring",     --  5/ 5, ___
+    ring2="Defending Ring",     -- 10/10, ___
     back=gear.THF_DW_Cape,      -- 10/__, ___
-  })-- 35/25
+  })-- 36/26
 
   -- High Magic/Gear/JA Haste (43% DW to cap, 13% from gear)
   sets.engaged.DW.LightDef.HighHaste = set_combine(sets.engaged.DW.HighHaste, {
@@ -1033,33 +1027,32 @@ function init_gear_sets()
     head="Malignance Chapeau",  --  6/ 6, 123
     hands="Malignance Gloves",  --  5/ 5, 112
     legs="Malignance Tights",   --  7/ 7, 150
-    feet="Malignance Boots",    --  4/ 4, 150
+    ring1="Moonlight Ring",     --  5/ 5, ___
     back=gear.THF_TP_Cape,      -- 10/__, ___
-  })-- 35/25
+  })-- 36/26
   sets.engaged.DW.LowAcc.LightDef.HighHaste = set_combine(sets.engaged.DW.LowAcc.HighHaste, {
     ammo="Staunch Tathlum +1",  --  3/ 3, ___
     head="Malignance Chapeau",  --  6/ 6, 123
     hands="Malignance Gloves",  --  5/ 5, 112
     legs="Malignance Tights",   --  7/ 7, 150
-    feet="Malignance Boots",    --  4/ 4, 150
+    ring1="Moonlight Ring",     --  5/ 5, ___
     back=gear.THF_TP_Cape,      -- 10/__, ___
-  })-- 35/25
+  })-- 36/26
   sets.engaged.DW.MidAcc.LightDef.HighHaste = set_combine(sets.engaged.DW.MidAcc.HighHaste, {
     ammo="Staunch Tathlum +1",  --  3/ 3, ___
     head="Malignance Chapeau",  --  6/ 6, 123
     hands="Malignance Gloves",  --  5/ 5, 112
     legs="Malignance Tights",   --  7/ 7, 150
-    feet="Malignance Boots",    --  4/ 4, 150
+    ring1="Moonlight Ring",     --  5/ 5, ___
     back=gear.THF_TP_Cape,      -- 10/__, ___
-  })-- 35/25
+  })-- 36/26
   sets.engaged.DW.HighAcc.LightDef.HighHaste = set_combine(sets.engaged.DW.HighAcc.HighHaste, {
     ammo="Staunch Tathlum +1",  --  3/ 3, ___
     head="Malignance Chapeau",  --  6/ 6, 123
     legs="Malignance Tights",   --  7/ 7, 150
-    feet="Malignance Boots",    --  4/ 4, 150
-    ring2="Moonlight Ring",     --  5/ 5, ___
+    ring2="Defending Ring",     -- 10/10, ___
     back=gear.THF_TP_Cape,      -- 10/__, ___
-  })-- 35/25
+  })-- 36/26
 
   -- Max Magic/Gear/JA Haste (0-30% DW to cap, 0% from gear)
   sets.engaged.DW.LightDef.MaxHaste = set_combine(sets.engaged.DW.MaxHaste, {
@@ -1067,33 +1060,32 @@ function init_gear_sets()
     head="Malignance Chapeau",  --  6/ 6, 123
     hands="Malignance Gloves",  --  5/ 5, 112
     legs="Malignance Tights",   --  7/ 7, 150
-    feet="Malignance Boots",    --  4/ 4, 150
+    ring1="Moonlight Ring",     --  5/ 5, ___
     back=gear.THF_TP_Cape,      -- 10/__, ___
-  })-- 35/25
+  })-- 36/26
   sets.engaged.DW.LowAcc.LightDef.MaxHaste = set_combine(sets.engaged.DW.LowAcc.MaxHaste, {
     ammo="Staunch Tathlum +1",  --  3/ 3, ___
     head="Malignance Chapeau",  --  6/ 6, 123
     hands="Malignance Gloves",  --  5/ 5, 112
     legs="Malignance Tights",   --  7/ 7, 150
-    feet="Malignance Boots",    --  4/ 4, 150
+    ring1="Moonlight Ring",     --  5/ 5, ___
     back=gear.THF_TP_Cape,      -- 10/__, ___
-  })-- 35/25
+  })-- 36/26
   sets.engaged.DW.MidAcc.LightDef.MaxHaste = set_combine(sets.engaged.DW.MidAcc.MaxHaste, {
     ammo="Staunch Tathlum +1",  --  3/ 3, ___
     head="Malignance Chapeau",  --  6/ 6, 123
     hands="Malignance Gloves",  --  5/ 5, 112
     legs="Malignance Tights",   --  7/ 7, 150
-    feet="Malignance Boots",    --  4/ 4, 150
+    ring1="Moonlight Ring",     --  5/ 5, ___
     back=gear.THF_TP_Cape,      -- 10/__, ___
-  })-- 35/25
+  })-- 36/26
   sets.engaged.DW.HighAcc.LightDef.MaxHaste = set_combine(sets.engaged.DW.HighAcc.MaxHaste, {
     ammo="Staunch Tathlum +1",  --  3/ 3, ___
     head="Malignance Chapeau",  --  6/ 6, 123
     legs="Malignance Tights",   --  7/ 7, 150
-    feet="Malignance Boots",    --  4/ 4, 150
-    ring2="Moonlight Ring",     --  5/ 5, ___
+    ring2="Defending Ring",     -- 10/10, ___
     back=gear.THF_TP_Cape,      -- 10/__, ___
-  })-- 35/25
+  })-- 36/26
 
   sets.engaged.Evasion = sets.Evasion
   sets.engaged.LowAcc.Evasion = sets.Evasion
