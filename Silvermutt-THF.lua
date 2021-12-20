@@ -238,9 +238,9 @@ function init_gear_sets()
   }
 
   sets.precast.JA['Steal'] = {
+    hands="Pillager's Armlets +2",
     -- ammo="Barathrum", --3
     -- head="Asn. Bonnet +2",
-    -- hands="Pillager's Armlets +1",
     -- feet="Pillager's Poulaines +3",
   }
 
@@ -691,6 +691,7 @@ function init_gear_sets()
     legs="Malignance Tights",
   })
   sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
+    hands="Pillager's Armlets +2",
     ring1="Regal Ring",
     -- hands="Pillager's Armlets +3",
   })
@@ -724,7 +725,6 @@ function init_gear_sets()
   sets.engaged.DW.HighAcc = set_combine(sets.engaged.DW.MidAcc, {
     ear1="Telos Earring",
     ring1="Regal Ring",
-    -- hands="Pillager's Armlets +3", --5
   })
 
   -- Low Magic/Gear/JA Haste (67% DW to cap, 37% from gear)
