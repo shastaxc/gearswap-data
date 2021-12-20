@@ -211,8 +211,7 @@ function init_gear_sets()
 
   sets.TreasureHunter = {
     ammo="Perfect Lucky Egg", --1
-    body=gear.Herc_TH_body, --2
-    hands="Plunderer's Armlets +1", --3
+    hands="Plunderer's Armlets +3", --4
   }
 
   sets.buff['Sneak Attack'] = {}
@@ -253,7 +252,7 @@ function init_gear_sets()
     -- legs="Skulk. Culottes +1",
   }
   sets.precast.JA['Perfect Dodge'] = {
-    -- hands="Plunderer's Armlets +3",
+    hands="Plunderer's Armlets +3",
   }
   sets.precast.JA['Feint'] = {
     -- legs="Plunderer's Culottes +3",
@@ -331,7 +330,7 @@ function init_gear_sets()
     body=gear.Adhemar_B_body,
     hands="Meghanada Gloves +2",
     legs="Meghanada Chausses +2",
-    feet="Meg. Jam. +2",
+    feet="Plunderer's Poulaines +3",
     neck="Fotia Gorget",
     ear1="Sherida Earring",
     ear2="Telos Earring",
@@ -342,7 +341,6 @@ function init_gear_sets()
     -- ammo="Cath Palug Stone",
     -- head="Plunderer's Bonnet +3",
     -- body="Plunderer's Vest +3",
-    -- feet="Plunderer's Poulaines +3",
     -- back=gear.THF_WS3_Cape
   }
   sets.precast.WS['Exenterator'].MaxTP = set_combine(sets.precast.WS['Exenterator'], {
@@ -353,7 +351,7 @@ function init_gear_sets()
     body="Gleti's Cuirass",
     hands="Malignance Gloves",
     legs="Malignance Tights",
-    feet="Meg. Jam. +2",
+    feet="Plunderer's Poulaines +3",
     neck="Fotia Gorget",
     ear1="Sherida Earring",
     ear2="Brutal Earring",
@@ -363,7 +361,6 @@ function init_gear_sets()
     waist="Fotia Belt",
     -- ammo="Cath Palug Stone",
     -- head="Plunderer's Bonnet +3",
-    -- feet="Plunderer's Poulaines +3",
     -- back=gear.THF_WS3_Cape
   }
   sets.precast.WS['Exenterator'].AttCappedMaxTP = set_combine(sets.precast.WS['Exenterator'].AttCapped, {
@@ -421,7 +418,7 @@ function init_gear_sets()
     body="Gleti's Cuirass",             -- 34, __, 64,  9
     hands="Meghanada Gloves +2",        -- 50,  7, 43, __
     legs=gear.Nyame_B_legs,             -- __,  9, 55, __
-    feet=gear.Nyame_B_feet,             -- 26,  8, 55, __
+    feet="Plunderer's Poulaines +3",    -- 37, __, 61, __
     neck="Assassin's Gorget +2",        -- 15, __, __, __
     ear1="Odr Earring",                 -- 10, __, __, __
     ear2="Moonshade Earring",           -- __, __, __, __; TP Bonus+250
@@ -432,9 +429,8 @@ function init_gear_sets()
     -- head="Plunderer's Bonnet +3",    -- 41, __, 62, __
     -- body="Plunderer's Vest +3",      -- 46, __, 65, __
     -- legs="Plunderer's Culottes +3"   -- 21,  6, 64, __
-    -- feet="Plunderer's Poulaines +3", -- 37, __, 61, __
     -- 280 DEX, 23 WSD, 387 Att, __ PDL
-  } -- 223 DEX, 34 WSD, 369 Att, 15 PDL
+  } -- 234 DEX, 26 WSD, 375 Att, 15 PDL
   sets.precast.WS["Rudra's Storm"].MaxTP = set_combine(sets.precast.WS["Rudra's Storm"], {
     ear2="Sherida Earring",
   })
@@ -678,7 +674,7 @@ function init_gear_sets()
     body=gear.Adhemar_B_body,
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha_legs,
-    feet="Plunderer's Poulaines +2",
+    feet="Plunderer's Poulaines +3",
     neck="Assassin's Gorget +2",
     ear1="Dedition Earring",
     ear2="Sherida Earring",
@@ -688,7 +684,6 @@ function init_gear_sets()
     waist="Windbuffet Belt +1",
     -- ammo="Aurgelmir Orb +1",
     -- body="Plunderer's Vest +3",
-    -- feet="Plunderer's Poulaines +3",
   }
   sets.engaged.LowAcc = set_combine(sets.engaged, {
     ammo="Yamarang",
@@ -741,7 +736,7 @@ function init_gear_sets()
     body=gear.Adhemar_B_body, --6
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha_legs,
-    feet="Plunderer's Poulaines +2",
+    feet="Plunderer's Poulaines +3",
     neck="Assassin's Gorget +2",
     ear1="Suppanomimi", --5
     ear2="Eabani Earring", --4
@@ -751,7 +746,6 @@ function init_gear_sets()
     waist="Reiki Yotai", --7
     -- ammo="Aurgelmir Orb +1",
     -- hands="Pillager's Armlets +3" --5
-    -- feet="Plunderer's Poulaines +3",
   }
   sets.engaged.DW.LowAcc.LowHaste = set_combine(sets.engaged.DW.LowHaste, {
     ammo="Yamarang",
@@ -770,7 +764,7 @@ function init_gear_sets()
     body=gear.Adhemar_B_body, --6
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha_legs,
-    feet="Plunderer's Poulaines +2",
+    feet="Plunderer's Poulaines +3",
     neck="Assassin's Gorget +2",
     ear1="Suppanomimi", --5
     ear2="Eabani Earring", --4
@@ -780,7 +774,6 @@ function init_gear_sets()
     waist="Reiki Yotai", --7
     -- ammo="Aurgelmir Orb +1",
     -- body="Plunderer's Vest +3",
-    -- feet="Plunderer's Poulaines +3",
   }--22
   sets.engaged.DW.LowAcc.MidHaste = set_combine(sets.engaged.DW.MidHaste, {
     ammo="Yamarang",
@@ -801,7 +794,7 @@ function init_gear_sets()
     body=gear.Adhemar_B_body, --6
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha_legs,
-    feet="Plunderer's Poulaines +2",
+    feet="Plunderer's Poulaines +3",
     neck="Assassin's Gorget +2",
     ear1="Suppanomimi", --5
     ear2="Sherida Earring",
@@ -811,7 +804,6 @@ function init_gear_sets()
     waist="Reiki Yotai", --7
     -- ammo="Aurgelmir Orb +1",
     -- body="Plunderer's Vest +3",
-    -- feet="Plunderer's Poulaines +3",
   }
   sets.engaged.DW.LowAcc.HighHaste = set_combine(sets.engaged.DW.HighHaste, {
     ammo="Yamarang",
@@ -832,7 +824,7 @@ function init_gear_sets()
     body=gear.Adhemar_B_body, --6
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha_legs,
-    feet="Plunderer's Poulaines +2",
+    feet="Plunderer's Poulaines +3",
     neck="Assassin's Gorget +2",
     ear1="Dedition Earring",
     ear2="Sherida Earring",
@@ -842,7 +834,6 @@ function init_gear_sets()
     waist="Reiki Yotai", --7
     -- ammo="Aurgelmir Orb +1",
     -- body="Plunderer's Vest +3",
-    -- feet="Plunderer's Poulaines +3",
   }
   sets.engaged.DW.LowAcc.SuperHaste = set_combine(sets.engaged.DW.SuperHaste, {
     ammo="Yamarang",
@@ -863,7 +854,7 @@ function init_gear_sets()
     body=gear.Adhemar_B_body,
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha_legs,
-    feet="Plunderer's Poulaines +2",
+    feet="Plunderer's Poulaines +3",
     neck="Assassin's Gorget +2",
     ear1="Dedition Earring",
     ear2="Sherida Earring",
@@ -873,7 +864,6 @@ function init_gear_sets()
     waist="Windbuffet Belt +1",
     -- ammo="Aurgelmir Orb +1",
     -- body="Plunderer's Vest +3",
-    -- feet="Plunderer's Poulaines +3",
   }
   sets.engaged.DW.LowAcc.MaxHaste = set_combine(sets.engaged.DW.MaxHaste, {
     ammo="Yamarang",
