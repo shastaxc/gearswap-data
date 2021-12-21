@@ -331,7 +331,7 @@ function init_gear_sets()
   sets.precast.WS['Exenterator'] = {
     ammo="Seething Bomblet +1",
     head=gear.Adhemar_B_head,
-    body=gear.Adhemar_B_body,
+    body="Plunderer's Vest +3",
     hands="Meghanada Gloves +2",
     legs="Meghanada Chausses +2",
     feet="Plunderer's Poulaines +3",
@@ -344,7 +344,6 @@ function init_gear_sets()
     waist="Fotia Belt",
     -- ammo="Cath Palug Stone",
     -- head="Plunderer's Bonnet +3",
-    -- body="Plunderer's Vest +3",
     -- back=gear.THF_WS3_Cape
   }
   sets.precast.WS['Exenterator'].MaxTP = set_combine(sets.precast.WS['Exenterator'], {
@@ -374,7 +373,7 @@ function init_gear_sets()
   sets.precast.WS['Evisceration'] = {
     ammo="Yetshila +1",
     head=gear.Adhemar_B_head,
-    body="Gleti's Cuirass",
+    body="Plunderer's Vest +3",
     hands=gear.Adhemar_B_hands,
     legs=gear.Lustratio_B_legs,
     feet=gear.Herc_DEX_CritDmg_feet,
@@ -385,7 +384,6 @@ function init_gear_sets()
     ring2="Regal Ring",
     waist="Fotia Belt",
     back=gear.THF_WS1_Cape,
-    -- body="Plunderer's Vest +3",
     -- legs="Pillager's Culottes +3",
     -- feet=gear.Adhemar_B_feet,
     -- back=gear.THF_WS4_Cape,
@@ -419,7 +417,7 @@ function init_gear_sets()
   sets.precast.WS["Rudra's Storm"] = {
     ammo="Aurgelmir Orb",               --  5, __,  7, __
     head="Gleti's Mask",                -- 28, __, 60,  6
-    body="Gleti's Cuirass",             -- 34, __, 64,  9
+    body="Plunderer's Vest +3",         -- 46, __, 65, __
     hands="Meghanada Gloves +2",        -- 50,  7, 43, __
     legs=gear.Nyame_B_legs,             -- __,  9, 55, __
     feet="Plunderer's Poulaines +3",    -- 37, __, 61, __
@@ -431,10 +429,9 @@ function init_gear_sets()
     back=gear.THF_WS1_Cape,             -- 30, 10, 20, __
     waist="Grunfeld Rope",              --  5, __, 20, __
     -- head="Plunderer's Bonnet +3",    -- 41, __, 62, __
-    -- body="Plunderer's Vest +3",      -- 46, __, 65, __
     -- legs="Plunderer's Culottes +3"   -- 21,  6, 64, __
     -- 280 DEX, 23 WSD, 387 Att, __ PDL
-  } -- 234 DEX, 26 WSD, 375 Att, 15 PDL
+  } -- 246 DEX, 26 WSD, 376 Att, 6 PDL
   sets.precast.WS["Rudra's Storm"].MaxTP = set_combine(sets.precast.WS["Rudra's Storm"], {
     ear2="Sherida Earring",
   })
@@ -682,7 +679,7 @@ function init_gear_sets()
   sets.engaged = {
     ammo="Aurgelmir Orb",
     head=gear.Adhemar_B_head,
-    body=gear.Adhemar_B_body,
+    body="Plunderer's Vest +3",
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha_legs,
     feet="Plunderer's Poulaines +3",
@@ -694,7 +691,6 @@ function init_gear_sets()
     back=gear.THF_TP_Cape,
     waist="Windbuffet Belt +1",
     -- ammo="Aurgelmir Orb +1",
-    -- body="Plunderer's Vest +3",
   }
   sets.engaged.LowAcc = set_combine(sets.engaged, {
     ammo="Yamarang",
@@ -728,7 +724,7 @@ function init_gear_sets()
     waist="Reiki Yotai", --7
     -- hands="Pillager's Armlets +3", --5
     -- feet=gear.Herc_DW_feet, --5
-  }--36
+  }--46
   sets.engaged.DW.LowAcc = set_combine(sets.engaged.DW, {
     ammo="Yamarang",
   })
@@ -745,7 +741,7 @@ function init_gear_sets()
     ammo="Aurgelmir Orb",
     head=gear.Adhemar_B_head,
     body=gear.Adhemar_B_body, --6
-    hands=gear.Adhemar_B_hands,
+    hands=gear.Floral_Gauntlets, --5
     legs=gear.Samnuha_legs,
     feet="Plunderer's Poulaines +3",
     neck="Assassin's Gorget +2",
@@ -757,7 +753,7 @@ function init_gear_sets()
     waist="Reiki Yotai", --7
     -- ammo="Aurgelmir Orb +1",
     -- hands="Pillager's Armlets +3" --5
-  }
+  }--37
   sets.engaged.DW.LowAcc.LowHaste = set_combine(sets.engaged.DW.LowHaste, {
     ammo="Yamarang",
   })
@@ -772,7 +768,7 @@ function init_gear_sets()
   sets.engaged.DW.MidHaste = {
     ammo="Aurgelmir Orb",
     head=gear.Adhemar_B_head,
-    body=gear.Adhemar_B_body, --6
+    body="Plunderer's Vest +3",
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha_legs,
     feet="Plunderer's Poulaines +3",
@@ -784,8 +780,7 @@ function init_gear_sets()
     back=gear.THF_DW_Cape, --10
     waist="Reiki Yotai", --7
     -- ammo="Aurgelmir Orb +1",
-    -- body="Plunderer's Vest +3",
-  }--22
+  }--26
   sets.engaged.DW.LowAcc.MidHaste = set_combine(sets.engaged.DW.MidHaste, {
     ammo="Yamarang",
   })
@@ -802,7 +797,7 @@ function init_gear_sets()
   sets.engaged.DW.HighHaste = {
     ammo="Aurgelmir Orb",
     head=gear.Adhemar_B_head,
-    body=gear.Adhemar_B_body, --6
+    body="Plunderer's Vest +3",
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha_legs,
     feet="Plunderer's Poulaines +3",
@@ -814,8 +809,7 @@ function init_gear_sets()
     back=gear.THF_TP_Cape,
     waist="Reiki Yotai", --7
     -- ammo="Aurgelmir Orb +1",
-    -- body="Plunderer's Vest +3",
-  }
+  }--12
   sets.engaged.DW.LowAcc.HighHaste = set_combine(sets.engaged.DW.HighHaste, {
     ammo="Yamarang",
   })
@@ -832,7 +826,7 @@ function init_gear_sets()
   sets.engaged.DW.SuperHaste = {
     ammo="Aurgelmir Orb",
     head=gear.Adhemar_B_head,
-    body=gear.Adhemar_B_body, --6
+    body="Plunderer's Vest +3",
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha_legs,
     feet="Plunderer's Poulaines +3",
@@ -844,8 +838,7 @@ function init_gear_sets()
     back=gear.THF_TP_Cape,
     waist="Reiki Yotai", --7
     -- ammo="Aurgelmir Orb +1",
-    -- body="Plunderer's Vest +3",
-  }
+  }--7
   sets.engaged.DW.LowAcc.SuperHaste = set_combine(sets.engaged.DW.SuperHaste, {
     ammo="Yamarang",
     ear1="Telos Earring",
@@ -862,7 +855,7 @@ function init_gear_sets()
   sets.engaged.DW.MaxHaste = {
     ammo="Aurgelmir Orb",
     head=gear.Adhemar_B_head,
-    body=gear.Adhemar_B_body,
+    body="Plunderer's Vest +3",
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha_legs,
     feet="Plunderer's Poulaines +3",
@@ -874,7 +867,6 @@ function init_gear_sets()
     back=gear.THF_TP_Cape,
     waist="Windbuffet Belt +1",
     -- ammo="Aurgelmir Orb +1",
-    -- body="Plunderer's Vest +3",
   }
   sets.engaged.DW.LowAcc.MaxHaste = set_combine(sets.engaged.DW.MaxHaste, {
     ammo="Yamarang",
