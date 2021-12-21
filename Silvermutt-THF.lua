@@ -238,7 +238,6 @@ function init_gear_sets()
   }
 
   sets.precast.JA['Steal'] = {
-    hands="Pillager's Armlets +2",
     -- ammo="Barathrum", --3
     -- head="Asn. Bonnet +2",
     -- feet="Pillager's Poulaines +3",
@@ -323,8 +322,7 @@ function init_gear_sets()
   sets.precast.WS.TA = {
     ammo="Yetshila +1",
     head="Pillager's Bonnet +3",
-    hands="Pillager's Armlets +2",
-    -- hands="Pillager's Armlets +3",
+    hands="Pillager's Armlets +3",
   }
 
   -- 73-85% AGI
@@ -467,9 +465,8 @@ function init_gear_sets()
   sets.precast.WS["Rudra's Storm"].TA = {
     ammo="Yetshila +1",
     head="Pillager's Bonnet +3",
-    hands="Pillager's Armlets +2",
+    hands="Pillager's Armlets +3",
     feet=gear.Lustratio_D_feet,
-    -- hands="Pillager's Armlets +3",
   }
 
   sets.precast.WS['Mandalic Stab'] = sets.precast.WS["Rudra's Storm"]
@@ -700,9 +697,8 @@ function init_gear_sets()
     legs="Malignance Tights",
   })
   sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
-    hands="Pillager's Armlets +2",
+    hands="Pillager's Armlets +3",
     ring1="Regal Ring",
-    -- hands="Pillager's Armlets +3",
   })
 
   -- * THF Native DW Trait: 30% DW
@@ -712,7 +708,7 @@ function init_gear_sets()
     ammo="Yamarang",
     head=gear.Adhemar_B_head,
     body=gear.Adhemar_B_body, -- 6
-    hands=gear.Floral_Gauntlets, --5
+    hands="Pillager's Armlets +3", --5
     legs=gear.Samnuha_legs,
     feet=gear.Taeon_DW_feet, --9
     neck="Assassin's Gorget +2",
@@ -722,7 +718,6 @@ function init_gear_sets()
     ring2="Gere Ring",
     back=gear.THF_DW_Cape, --10
     waist="Reiki Yotai", --7
-    -- hands="Pillager's Armlets +3", --5
     -- feet=gear.Herc_DW_feet, --5
   }--46
   sets.engaged.DW.LowAcc = set_combine(sets.engaged.DW, {
@@ -741,7 +736,7 @@ function init_gear_sets()
     ammo="Aurgelmir Orb",
     head=gear.Adhemar_B_head,
     body=gear.Adhemar_B_body, --6
-    hands=gear.Floral_Gauntlets, --5
+    hands="Pillager's Armlets +3", --5
     legs=gear.Samnuha_legs,
     feet="Plunderer's Poulaines +3",
     neck="Assassin's Gorget +2",
@@ -752,7 +747,6 @@ function init_gear_sets()
     back=gear.THF_DW_Cape, --10
     waist="Reiki Yotai", --7
     -- ammo="Aurgelmir Orb +1",
-    -- hands="Pillager's Armlets +3" --5
   }--37
   sets.engaged.DW.LowAcc.LowHaste = set_combine(sets.engaged.DW.LowHaste, {
     ammo="Yamarang",
@@ -788,9 +782,9 @@ function init_gear_sets()
     legs="Malignance Tights",
   })
   sets.engaged.DW.HighAcc.MidHaste = set_combine(sets.engaged.DW.MidAcc.MidHaste, {
+    hands="Pillager's Armlets +3", --5
     ear1="Telos Earring",
     ring1="Regal Ring",
-    -- hands="Pillager's Armlets +3", --5
   })
 
   -- High Magic/Gear/JA Haste (43% DW to cap, 13% from gear)
@@ -817,9 +811,9 @@ function init_gear_sets()
     legs="Malignance Tights",
   })
   sets.engaged.DW.HighAcc.HighHaste = set_combine(sets.engaged.DW.MidAcc.HighHaste, {
+    hands="Pillager's Armlets +3", --5
     ear1="Telos Earring",
     ring1="Regal Ring",
-    -- hands="Pillager's Armlets +3", --5
   })
 
   -- High Magic/Gear/JA Haste (36% DW to cap, 6% from gear)
