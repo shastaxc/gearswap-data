@@ -320,6 +320,12 @@ function init_gear_sets()
     ammo="Yetshila +1",
     head="Pillager's Bonnet +3",
   }
+  sets.precast.WS.TA = {
+    ammo="Yetshila +1",
+    head="Pillager's Bonnet +3",
+    hands="Pillager's Armlets +2",
+    -- hands="Pillager's Armlets +3",
+  }
 
   -- 73-85% AGI
   sets.precast.WS['Exenterator'] = {
@@ -460,6 +466,13 @@ function init_gear_sets()
     ammo="Yetshila +1",
     head="Pillager's Bonnet +3",
     feet=gear.Lustratio_D_feet,
+  }
+  sets.precast.WS["Rudra's Storm"].TA = {
+    ammo="Yetshila +1",
+    head="Pillager's Bonnet +3",
+    hands="Pillager's Armlets +2",
+    feet=gear.Lustratio_D_feet,
+    -- hands="Pillager's Armlets +3",
   }
 
   sets.precast.WS['Mandalic Stab'] = sets.precast.WS["Rudra's Storm"]
@@ -1175,6 +1188,11 @@ function job_post_precast(spell, action, spellMap, eventArgs)
     if state.Buff['Sneak Attack'] then
     -- If set isn't found for specific ws, overlay the default set
       local set = (sets.precast.WS[spell.name] and sets.precast.WS[spell.name].SA) or sets.precast.WS.SA or {}
+      equip(set)
+    end
+    if state.Buff['Trick Attack'] then
+    -- If set isn't found for specific ws, overlay the default set
+      local set = (sets.precast.WS[spell.name] and sets.precast.WS[spell.name].TA) or sets.precast.WS.TA or {}
       equip(set)
     end
     -- Handle special gear scenario for elemental WS
