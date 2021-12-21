@@ -1152,7 +1152,8 @@ function init_gear_sets()
     -- feet="Academic's Loafers +3",
   }
 
-  sets.Obi = {
+  sets.Special = {}
+  sets.Special.ElementalObi = {
     waist="Hachirin-no-Obi",
   }
   sets.Bookworm = {
