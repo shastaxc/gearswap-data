@@ -229,6 +229,7 @@ function user_setup()
     send_command('bind !w input /ja "Ancient Circle" <me>')
     send_command('bind ^numpad/ input /ja "Jump" <t>')
     send_command('bind ^numpad* input /ja "High Jump" <t>')
+    send_command('bind ^numpad- input /ja "Super Jump" <t>')
   end
 
   update_combat_form()

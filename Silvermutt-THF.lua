@@ -158,6 +158,7 @@ function user_setup()
     send_command('bind !w input /ja "Ancient Circle" <me>')
     send_command('bind ^numpad/ input /ja "Jump" <t>')
     send_command('bind ^numpad* input /ja "High Jump" <t>')
+    send_command('bind ^numpad- input /ja "Super Jump" <t>')
   end
 
   update_combat_form()
@@ -841,7 +842,7 @@ function init_gear_sets()
     legs="Malignance Tights",
   })
   sets.engaged.DW.HighAcc.SuperHaste = set_combine(sets.engaged.DW.MidAcc.SuperHaste, {
-    -- legs="Pillager's Coulottes +3",
+    -- legs="Pillager's Culottes +3",
     ring1="Regal Ring",
   })
 
@@ -870,7 +871,7 @@ function init_gear_sets()
     legs="Malignance Tights",
   })
   sets.engaged.DW.HighAcc.MaxHaste = set_combine(sets.engaged.DW.MidAcc.MaxHaste, {
-    -- legs="Pillager's Coulottes +3",
+    -- legs="Pillager's Culottes +3",
     ring1="Regal Ring",
   })
 
