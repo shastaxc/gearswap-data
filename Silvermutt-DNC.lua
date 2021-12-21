@@ -480,7 +480,7 @@ function init_gear_sets()
   }) -- 238 STR, 279 DEX, 4 WSD, 230 Att, 18 PDL
   sets.precast.WS['Pyrrhic Kleos'].MaxTP = set_combine(sets.precast.WS['Pyrrhic Kleos'], {})
   sets.precast.WS['Pyrrhic Kleos'].AttCapped = set_combine(sets.precast.WS, {
-    ammo="Aurgelmir Orb",           --  5,  5, __,  7, __
+    ammo="Crepuscular Pebble",      --  3, __, __, __,  3
     head=gear.Lustratio_D_head,     -- 47, 45, __, __, __
     body="Gleti's Cuirass",         -- 39, 34, __, 60,  9
     hands="Gleti's Gauntlets",      -- 20, 42, __, 60,  9
@@ -494,10 +494,7 @@ function init_gear_sets()
     back=gear.DNC_WS2_Cape,         -- __, 30, __, 20, __
     waist="Fotia Belt",             -- __, __, __, __, __; +0.1 ftp
     -- Lustratio set bonus          -- __, __,  4, __, __
-
-    -- ammo="Crepuscular Pebble",   --  3, __, __, __,  3
-    -- 230 STR, 249 DEX, 4 WSD, 236 Att, 39 PDL
-  }) -- 232 STR, 254 DEX, 4 WSD, 243 Att, 36 PDL
+  }) -- 230 STR, 249 DEX, 4 WSD, 236 Att, 39 PDL
   sets.precast.WS['Pyrrhic Kleos'].AttCappedMaxTP = set_combine(sets.precast.WS['Pyrrhic Kleos'].AttCapped, {})
   -- Required to prevent extra gear from equipping during Climactic
   -- For Crit Dmg, not crit rate; is overlaid, don't set_combine
@@ -546,7 +543,7 @@ function init_gear_sets()
     ear2="Ishvara Earring",         -- __, __,  2, __, __
   })
   sets.precast.WS["Rudra's Storm"].AttCapped = set_combine(sets.precast.WS, {
-    ammo="Aurgelmir Orb",           --  5, __, __,  7, __
+    ammo="Crepuscular Pebble",      -- __, __, __, __,  3
     head=gear.Lustratio_D_head,     -- 45, __, __, __, __
     body="Gleti's Cuirass",         -- 34, 26, __, 64,  9
     hands="Maxixi Bangles +3",      -- 45, 27, 10, 35, __
@@ -561,10 +558,9 @@ function init_gear_sets()
     waist="Kentarch Belt +1",       -- 10, __, __, __, __
     -- Lustratio set bonus          -- __, __,  4, __, __
 
-    -- ammo="Crepuscular Pebble",   -- __, __, __, __,  3
     -- ring1="Epaminondas's Ring",  -- __, __,  5, __, __
     -- 257 DEX, 102 CHR, 39 WSD, 208 Att, 22 PDL
-  })-- 272 DEX, 102 CHR, 34 WSD, 235 Att, 19 PDL
+  })-- 267 DEX, 102 CHR, 34 WSD, 228 Att, 22 PDL
   sets.precast.WS["Rudra's Storm"].AttCappedMaxTP = set_combine(sets.precast.WS["Rudra's Storm"].AttCapped, {
     ear2="Ishvara Earring",         -- __, __,  2, __, __
   })
