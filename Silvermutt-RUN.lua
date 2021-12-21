@@ -259,8 +259,7 @@ function init_gear_sets()
     legs=gear.Nyame_B_legs,     --  8/ 8, 150 [114]
     ear1="Odnowa Earring +1",   --  3/ 5, ___ [110]
     ring2="Defending Ring",     -- 10/10, ___ [___]
-    back=gear.RUN_HPD_Cape,     -- 10/__,  20 [ 80]
-    -- back=gear.RUN_TP_Cape,   -- 10/__, ___ [___]
+    back=gear.RUN_TP_Cape,      -- 10/__, ___ [___]
     --50 PDT / 42 MDT, 412 MEVA [521 HP]
   } --50 PDT / 42 MDT, 432 MEVA [601 HP]
 
@@ -866,9 +865,8 @@ function init_gear_sets()
     ear2="Sherida Earring",
     ring1="Epona's Ring",
     ring2="Niqmaddu Ring",
-    back=gear.RUN_HPD_Cape,
+    back=gear.RUN_TP_Cape,
     -- ammo="Aurgelmir Orb +1",
-    -- back=gear.RUN_TP_Cape,
   }
   sets.engaged.LowAcc = set_combine(sets.engaged, {
     head="Dampening Tam",
@@ -982,11 +980,11 @@ function init_gear_sets()
     ear2="Dedition Earring",
     ring1="Moonlight Ring",
     ring2="Defending Ring",
+    back=gear.RUN_TP_Cape,
     waist="Sailfi Belt +1",
     -- body="Ashera Harness",
     -- hands=gear.Adhemar_A_hands,
     -- neck="Futhark Torque +2",
-    -- back=gear.RUN_TP_Cape,
   }
 
   ------------------------------------------------------------------------------------------------
