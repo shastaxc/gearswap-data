@@ -23,8 +23,6 @@ function job_setup()
   silibs.enable_auto_lockstyle(10)
   silibs.enable_premade_commands()
 
-  elemental_ws = S{"Black Halo", "Cataclysm"}
-
   state.OffenseMode:options('Normal')
   state.CastingMode:options('Normal', 'Resistant', 'Proc')
   state.IdleMode:options('Normal','HeavyDef')

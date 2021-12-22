@@ -108,7 +108,6 @@ function job_setup()
   DW = false -- Do not modify
   retry_filtered = nil
 
-  elemental_ws = S{'Aeolian Edge'}
   tp_bonus_weapons = {
     ['Fusetto +2'] = 1000,
     ['Fusetto +3'] = 1000,
@@ -752,7 +751,6 @@ function init_gear_sets()
     ring2="Gere Ring",
     back=gear.DNC_TP_DA_Cape,
     waist="Windbuffet Belt +1",
-    -- hands=gear.Adhemar_A_hands,
   }
   sets.engaged.LowAcc = set_combine(sets.engaged, {
     head="Dampening Tam",

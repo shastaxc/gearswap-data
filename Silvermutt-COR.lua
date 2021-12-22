@@ -126,7 +126,6 @@ function job_setup()
   state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger',
       'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
 
-  elemental_ws = S{"Aeolian Edge", "Leaden Salute", "Wildfire"}
   no_shoot_ammo = S{"Animikii Bullet", "Hauksbok Bullet"}
   no_swap_waists = S{"Era. Bul. Pouch", "Dev. Bul. Pouch", "Chr. Bul. Pouch", "Quelling B. Quiver",
       "Yoichi's Quiver", "Artemis's Quiver", "Chrono Quiver", "Liv. Bul. Pouch"}
@@ -357,14 +356,14 @@ function init_gear_sets()
     legs=gear.Adhemar_D_legs,       -- 10/13
     feet="Meg. Jam. +2",            -- 10/__
     neck="Commodore Charm +1",      --  3/__
+    ring1="Crepuscular Ring",       --  3/__
     back=gear.COR_SNP_Cape,         -- 10/__
     waist="Yemaya Belt",            -- __/ 5
     -- body="Oshosi Vest +1",       -- 14/__
     -- hands="Lanun Gants +3",      -- 13/__
     -- neck="Commodore Charm +2",   --  4/__
-    -- ring1="Crepuscular Ring",    --  3/__
     -- 63 Snapshot / 32 Rapid Shot
-  } -- 53 Snapshot / 43 Rapid Shot
+  } -- 56 Snapshot / 43 Rapid Shot
 
   -- 45 Snapshot from gear to cap
   sets.precast.RA.Flurry1 = set_combine(sets.precast.RA, {
@@ -707,8 +706,8 @@ function init_gear_sets()
   } --238 AGI [86 STP] 332 racc / 282 ratt <0 crit> {23 dmg limit} (10 Recycle)
   sets.midcast.RA.LowAcc = set_combine(sets.midcast.RA, {
     ear1="Beyla Earring",           -- __ [__] 15/__ <_> {_} (__)
+    ring2="Crepuscular Ring",       -- __ [ 6] 10/__ <_> {_} (__)
     -- ammo=gear.RAccbullet,        -- __ [__] 35/__ <_> {_} (__)
-    -- ring2="Crepuscular Ring",    -- __ [ 6] 10/__ <_> {_} (__)
     --228 AGI [83 STP] 365 racc / 275 ratt <0 crit> {23 dmg limit} (10 Recycle)
   })
   sets.midcast.RA.MidAcc = set_combine(sets.midcast.RA.LowAcc, {

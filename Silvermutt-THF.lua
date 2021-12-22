@@ -83,7 +83,6 @@ function job_setup()
   DW_needed = 0 -- Do not modify
   DW = false -- Do not modify
 
-  elemental_ws = S{'Aeolian Edge'}
   tp_bonus_weapons = {
     ['Fusetto +2'] = 1000,
     ['Fusetto +3'] = 1000,

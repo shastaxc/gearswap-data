@@ -132,7 +132,6 @@ function job_setup()
   state.Buff.Saboteur = buffactive.Saboteur or false
   state.Buff.Stymie = buffactive.Stymie or false
 
-  elemental_ws = S{"Aeolian Edge", "Sanguine Blade", "Seraph Blade", "Black Halo", "Cataclysm"}
   enfeebling_magic_acc = S{'Bind', 'Break', 'Dispel', 'Distract', 'Distract II', 'Frazzle',
       'Frazzle II',  'Gravity', 'Gravity II', 'Silence'}
   enfeebling_magic_skill = S{'Distract III', 'Frazzle III', 'Poison II'}

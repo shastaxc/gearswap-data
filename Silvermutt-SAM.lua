@@ -52,8 +52,6 @@ function job_setup()
   silibs.enable_premade_commands()
   silibs.enable_th()
 
-  elemental_ws = S{'Tachi: Goten', 'Tachi: Kagero', 'Tachi: Jinpu', 'Tachi: Koki'}
-
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.HybridMode:options('LightDef', 'MEVA', 'Normal')
   state.IdleMode:options('Normal', 'HeavyDef')
@@ -98,7 +96,6 @@ function user_setup()
     send_command('bind ^numpad/ input /ja "Jump" <t>')
     send_command('bind ^numpad* input /ja "High Jump" <t>')
     send_command('bind ^numpad- input /ja "Super Jump" <t>')
-  end
   end
 
   update_combat_form()

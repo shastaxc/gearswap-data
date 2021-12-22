@@ -80,7 +80,6 @@ function job_setup()
   state.Buff['Velocity Shot'] = buffactive['Velocity Shot'] or false
   state.Buff['Double Shot'] = buffactive['Double Shot'] or false
 
-  elemental_ws = S{'Aeolian Edge', 'Trueflight', 'Wildfire'}
   no_swap_waists = S{"Era. Bul. Pouch", "Dev. Bul. Pouch", "Chr. Bul. Pouch", "Quelling B. Quiver",
       "Yoichi's Quiver", "Artemis's Quiver", "Chrono Quiver"}
   tp_bonus_weapons = {
@@ -328,13 +327,13 @@ function init_gear_sets()
     legs="Orion Braccae +3",    -- 15/__
     feet="Meg. Jam. +2",        -- 10/__
     neck="Scout's Gorget +1",   --  3/__
+    ring1="Crepuscular Ring",   --  3/__
     back=gear.RNG_SNP_Cape,     -- 10/__
     waist="Impulse Belt",       --  3/__
     -- neck="Scout's Gorget +2",--  4/__
-    -- ring1="Crepuscular Ring",--  3/__
     -- waist="Yemaya Belt",     -- __/ 5
     --60 Snapshot / 16 Rapid Shot; -7% delay
-  } --56 Snapshot / 11 Rapid Shot; -7% delay
+  } --62 Snapshot / 11 Rapid Shot; -7% delay
 
   -- (15% Flurry, 10% Snapshot, 5% Rapid from Merits)
   -- 45 Snapshot from gear to cap
@@ -345,13 +344,13 @@ function init_gear_sets()
     legs=gear.Adhemar_D_legs,   -- 10/13
     feet="Meg. Jam. +2",        -- 10/__
     neck="Scout's Gorget +1",   --  3/__
+    ring1="Crepuscular Ring",   --  3/__
     back=gear.RNG_SNP_Cape,     -- 10/__
     waist="Impulse Belt",       --  3/__
     -- neck="Scout's Gorget +2",--  4/__
-    -- ring1="Crepuscular Ring",--  3/__
     -- waist="Yemaya Belt",     -- __/ 5
     --45 Snapshot / 47 Rapid Shot; -7% delay
-  } --44 Snapshot / 42 Rapid Shot; -7% delay
+  } --47 Snapshot / 42 Rapid Shot; -7% delay
 
   -- (30% Flurry, 10% Snapshot, 5% Rapid from Merits)
   -- 30 Snapshot from gear to cap
@@ -362,12 +361,12 @@ function init_gear_sets()
     legs=gear.Adhemar_D_legs,   -- 10/13
     feet="Arcadian Socks +3",   -- __/10
     neck="Scout's Gorget +1",   --  3/__
+    ring1="Crepuscular Ring",   --  3/__
     back=gear.RNG_SNP_Cape,     -- 10/__
     waist="Yemaya Belt",        -- __/ 5
     -- neck="Scout's Gorget +2",--  4/__
-    -- ring1="Crepuscular Ring",--  3/__
     --35 Snapshot / 57 Rapid Shot; -7% delay
-  } --31 Snapshot / 57 Rapid Shot; -7% delay
+  } --34 Snapshot / 57 Rapid Shot; -7% delay
 
   -- Gastra has 10 Snapshot
   -- 50 Snapshot from gear to cap
@@ -756,14 +755,13 @@ function init_gear_sets()
     ear1="Telos Earring",         -- __ [ 5]  10/ 10 <_> {__} (__)
     ear2="Dedition Earring",      -- __ [ 8] -10/-10 <_> {__} (__)
     ring1="Chirich Ring +1",      -- __ [ 6]  __/ __ <_> {__} (__)
-    ring2="Ilabrat Ring",         -- 10 [ 5]  __/ __ <_> {__} (__)
+    ring2="Crepuscular Ring",     -- __ [ 6]  10/ __ <_> {__} (__)
     back=gear.RNG_RA_Cape,        -- 30 [10]  20/ 20 <_> {__} (__)
     waist="Kwahu Kachina Belt +1",--  8 [__]  20/ __ <5> {__} (__)
     -- head="Arcadian Beret +3",  -- 37 [__]  37/ 62 <_> {__} (38)
     -- neck="Scout's Gorget +2",  -- 25 [ 7]  25/ __ <_> {10} (__)
-    -- ring2="Crepuscular Ring",  -- __ [ 6]  10/ __ <_> {__} (__)
     --252 AGI [84 STP] 302 racc / 202 ratt <5 crit> {29 dmg limit} (38 Recycle)
-  } --252 AGI [82 STP] 277 racc / 187 ratt <5 crit> {27 dmg limit} (36 Recycle)
+  } --242 AGI [83 STP] 287 racc / 187 ratt <5 crit> {27 dmg limit} (36 Recycle)
   sets.midcast.RA.LowAcc = set_combine(sets.midcast.RA, {
     ring1="Regal Ring",           -- 10 [__]  __/ 20 <_> {__} (__)
     -- body="Orion Jerkin +3",    -- 40 [ 8]  60/ 41 <_> {__} (__)
@@ -946,19 +944,16 @@ function init_gear_sets()
     waist="Windbuffet Belt +1",
     -- back=gear.RNG_DA_Cape,
   }
-
   sets.engaged.LowAcc = set_combine(sets.engaged, {
     head="Dampening Tam",
     ring1="Chirich Ring +1",
     -- hands=gear.Adhemar_A_hands,
   })
-
   sets.engaged.MidAcc = set_combine(sets.engaged.LowAcc, {
     ring1="Regal Ring",
     ring2="Ilabrat Ring",
     waist="Kentarch Belt +1",
   })
-
   sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
     ear1="Dignitary's Earring",
     ring1="Chirich Ring +1",
@@ -983,19 +978,16 @@ function init_gear_sets()
     back=gear.RNG_DW_Cape, --10
     waist="Windbuffet Belt +1",
   } -- 45%
-
   sets.engaged.DW.LowAcc = set_combine(sets.engaged.DW, {
     head="Dampening Tam",
     ring1="Chirich Ring +1",
   })
-
   sets.engaged.DW.MidAcc = set_combine(sets.engaged.DW.LowAcc, {
     feet="Malignance Boots",
     hands="Malignance Gloves",
     waist="Kentarch Belt +1",
     -- hands=gear.Adhemar_A_hands,
   })
-
   sets.engaged.DW.HighAcc = set_combine(sets.engaged.DW.MidAcc, {
     head="Malignance Chapeau",
     body="Malignance Tabard",
@@ -1019,12 +1011,10 @@ function init_gear_sets()
     back=gear.RNG_DW_Cape, --10
     waist="Windbuffet Belt +1",
   } -- 42%
-
   sets.engaged.DW.LowAcc.LowHaste = set_combine(sets.engaged.DW.LowHaste, {
     head="Dampening Tam",
     ring1="Chirich Ring +1",
   })
-
   sets.engaged.DW.MidAcc.LowHaste = set_combine(sets.engaged.DW.LowAcc.LowHaste, {
     feet="Malignance Boots",
     hands="Malignance Gloves",
@@ -1032,7 +1022,6 @@ function init_gear_sets()
     waist="Olseni Belt",
     -- hands=gear.Adhemar_A_hands,
   })
-
   sets.engaged.DW.HighAcc.LowHaste = set_combine(sets.engaged.DW.MidAcc.LowHaste, {
     head="Malignance Chapeau",
     body="Malignance Tabard",
@@ -1055,20 +1044,17 @@ function init_gear_sets()
     back=gear.RNG_DW_Cape, --10
     waist="Windbuffet Belt +1",
   } -- 32%
-
   sets.engaged.DW.LowAcc.MidHaste = set_combine(sets.engaged.DW.MidHaste, {
     head="Dampening Tam",
     ring1="Chirich Ring +1",
     -- hands=gear.Adhemar_A_hands,
   })
-
   sets.engaged.DW.MidAcc.MidHaste = set_combine(sets.engaged.DW.LowAcc.MidHaste, {
     feet="Malignance Boots",
     hands="Malignance Gloves",
     ring2="Ilabrat Ring",
     waist="Kentarch Belt +1",
   })
-
   sets.engaged.DW.HighAcc.MidHaste = set_combine(sets.engaged.DW.MidAcc.MidHaste, {
     head="Malignance Chapeau",
     body="Malignance Tabard",
@@ -1151,19 +1137,16 @@ function init_gear_sets()
     waist="Windbuffet Belt +1",
     -- back=gear.RNG_DA_Cape,
   } -- 16%
-
   sets.engaged.DW.LowAcc.MaxHaste = set_combine(sets.engaged.DW.MaxHaste, {
     head="Dampening Tam",
     ring1="Chirich Ring +1",
     waist="Kentarch Belt +1",
     -- hands=gear.Adhemar_A_hands,
   })
-
   sets.engaged.DW.MidAcc.MaxHaste = set_combine(sets.engaged.DW.LowAcc.MaxHaste, {
     hands="Malignance Gloves",
     feet="Malignance Boots",
   })
-
   sets.engaged.DW.HighAcc.MaxHaste = set_combine(sets.engaged.DW.MidAcc.MaxHaste, {
     head="Malignance Chapeau",
     body="Malignance Tabard",

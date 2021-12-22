@@ -55,8 +55,6 @@ function job_setup()
   silibs.enable_premade_commands()
   silibs.enable_th()
 
-  elemental_ws = S{'Cataclysm'}
-
   state.Buff.Footwork = buffactive.Footwork or false
   state.Buff.Impetus = buffactive.Impetus or false
 
