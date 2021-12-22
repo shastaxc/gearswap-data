@@ -87,6 +87,8 @@ gear.Herc_DEX_CritDmg_feet = { name="Herculean Boots", augments={'Accuracy+25','
 gear.Herc_Refresh_head = { name="Herculean Helm", augments={'Weapon Skill Acc.+13','Accuracy+2','"Refresh"+1','Accuracy+19 Attack+19',}}
 gear.Herc_Refresh_feet = { name="Herculean Boots", augments={'Crit.hit rate+1','STR+14','"Refresh"+2',}}
 
+gear.Herc_DW_feet = { name="Herculean Boots", augments={'"Dual Wield"+5','Pet: Attack+15 Pet: Rng.Atk.+15','Chance of successful block +1','Accuracy+13 Attack+13','Mag. Acc.+1 "Mag.Atk.Bns."+1',}}
+
 -- Merlinic
 
 gear.Merl_FC_head = { name="Merlinic Hood", augments={'Mag. Acc.+4 "Mag.Atk.Bns."+4','"Fast Cast"+5','Mag. Acc.+4',}}

@@ -710,7 +710,7 @@ function init_gear_sets()
     body=gear.Adhemar_B_body, -- 6
     hands="Pillager's Armlets +3", --5
     legs=gear.Samnuha_legs,
-    feet=gear.Taeon_DW_feet, --9
+    feet=gear.Herc_DW_feet, --5
     neck="Assassin's Gorget +2",
     ear1="Suppanomimi", --5
     ear2="Eabani Earring", --4
@@ -718,7 +718,6 @@ function init_gear_sets()
     ring2="Gere Ring",
     back=gear.THF_DW_Cape, --10
     waist="Reiki Yotai", --7
-    -- feet=gear.Herc_DW_feet, --5
   }--46
   sets.engaged.DW.LowAcc = set_combine(sets.engaged.DW, {
     ammo="Yamarang",
