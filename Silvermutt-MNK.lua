@@ -688,7 +688,7 @@ function init_gear_sets()
     body=gear.Nyame_B_body,         -- __, 30, __, 10
     hands=gear.Nyame_B_hands, --30
     legs=gear.Nyame_B_legs,         -- __, 30, __,  9
-    feet=gear.Herc_MAB_feet, --50
+    feet=gear.Herc_MAB_feet, --57
     neck="Baetyl Pendant", --13
     ear1="Friomisi Earring",        -- __, 10, __, __
     ear2="Novio Earring", --7
