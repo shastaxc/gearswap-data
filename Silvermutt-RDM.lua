@@ -1412,7 +1412,7 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         -- Obi is better than orpheus and better than nothing
         equip({waist="Hachirin-no-Obi"})
       elseif has_orpheus and (orpheus_mult > base_day_weather_mult) then
-        -- Orpheus is beter than nothing
+        -- Orpheus is better than obi and better than nothing
         equip({waist="Orpheus's Sash"})
       end
     end
@@ -1489,7 +1489,7 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
       -- Obi is better than orpheus and better than nothing
       equip({waist="Hachirin-no-Obi"})
     elseif has_orpheus and (orpheus_mult > base_day_weather_mult) then
-      -- Orpheus is beter than nothing
+      -- Orpheus is better than obi and better than nothing
       equip({waist="Orpheus's Sash"})
     end
   end
