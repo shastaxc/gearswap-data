@@ -1299,22 +1299,21 @@ end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
   if spell.type == 'WeaponSkill' then
-    -- Handle special gear scenario for elemental WS
+    -- Handle belts for elemental WS
     if elemental_ws:contains(spell.english) then
       local base_day_weather_mult = silibs.get_day_weather_multiplier(spell.element, false, false)
       local obi_mult = silibs.get_day_weather_multiplier(spell.element, true, false)
-      local orpheus_mult = silibs.get_orpheus_multiplier(spell.element, spell.target.distance, spell.target.model_size)
-
+      local orpheus_mult = silibs.get_orpheus_multiplier(spell.element, spell.target.distance)
+      local has_obi = true -- Change if you do or don't have Hachirin-no-Obi
+      local has_orpheus = false -- Change if you do or don't have Orpheus's Sash
+  
       -- Determine which combination to use: orpheus, hachirin-no-obi, or neither
-      if base_day_weather_mult >= obi_mult and base_day_weather_mult >= orpheus_mult then
-        -- Wearing neither obi nor orpheus is better, both are harmful
-      elseif obi_mult >= orpheus_mult then
-        -- Obi is best
-        equip(sets.Special.ElementalObi)
-      else
-        -- Orpheus is best
-        -- equip({waist="Orpheus's Sash"})
-        equip(sets.Special.ElementalObi) -- I don't have Orpheus yet
+      if has_obi and (obi_mult >= orpheus_mult or not has_orpheus) and (obi_mult > base_day_weather_mult) then
+        -- Obi is better than orpheus and better than nothing
+        equip({waist="Hachirin-no-Obi"})
+      elseif has_orpheus and (orpheus_mult > base_day_weather_mult) then
+        -- Orpheus is beter than nothing
+        equip({waist="Orpheus's Sash"})
       end
     end
 

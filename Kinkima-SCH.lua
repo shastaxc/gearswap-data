@@ -769,7 +769,7 @@ function init_gear_sets()
     neck="Erra Pendant",                  -- 10, __, 17
     ear2="Regal Earring",                 -- __, 10, __; Adds set effect
     back="Bookworm's Cape",               --  8,  4, __
-    -- main="Rubicundity",                -- 25, 21, 20; +215 M.Acc skill
+    -- main="Rubicundity",                -- 25, 21, 30; +215 M.Acc skill
     -- head="Academic's Mortarboard +3",  -- __, 37, 52
     -- body="Academic's Gown +3",         -- 24, 44, 50
     -- hands="Academic's Bracers +3",     -- __, 29, 48
@@ -780,19 +780,20 @@ function init_gear_sets()
     -- back="Bookworm's Cape",            --  8,  5, __
     -- waist="Acuity Belt +1",            -- __, 23, __
     -- Academic's set bonus               -- __, __, 60
-    -- 114 Dark magic skill, 265 INT, 389 M.Acc
+    -- Base stats                           440,127,___
+    -- 554 Dark magic skill, 392 INT, 399 M.Acc
   }
 
   -- Add Drain potency
   sets.midcast.Drain = set_combine(sets.midcast['Dark Magic'], {
-    sub="Ammurapi Shield",        -- __
-    legs="Pedagogy Pants +1",
-    waist="Fucho-no-obi",         --  8
-    -- main="Rubicundity",        -- 20
-    -- legs="Pedagogy Pants +3",  -- 15
-    -- ear2="Hirudinea Earring",  --  3
-    -- ring1="Evanescence Ring",  -- 10
-    -- 104 Dark magic skill, 242 INT, 389 M.Acc
+    sub="Ammurapi Shield",          -- __, 13, 38, __
+    legs="Pedagogy Pants +1",       -- 15, 37, __, __
+    waist="Fucho-no-obi",           -- __, __, __,  8
+    -- main="Rubicundity",          -- 25, 21, 30, 20; +215 M.Acc skill
+    -- legs="Pedagogy Pants +3",    -- 19, 47, 39, 15
+    -- ear2="Hirudinea Earring",    -- __, __, __,  3
+    -- ring1="Evanescence Ring",    -- 10, __, __, 10
+    -- 554 Dark magic skill, 359 INT, 384 M.Acc, 56 Drain/Aspir potency
   })
 
   sets.midcast.Aspir = sets.midcast.Drain
@@ -860,9 +861,9 @@ function init_gear_sets()
   -- INT, Magic Acc, MAB
   -- More emphasis on INT
   sets.midcast.Kaustra = {
-    ammo="Pemphredo Tathlum",         --  4,  8,  4
     main=gear.Akademos_C,             -- 27, 15, 53
     sub="Enki Strap",                 -- 10, 10, __
+    ammo="Pemphredo Tathlum",         --  4,  8,  4
     head="Pedagogy Mortarboard +1",
     body=gear.Merl_MB_body,           -- 40, 20, 20
     hands=gear.Merl_MB_hands,
@@ -937,7 +938,6 @@ function init_gear_sets()
     -- waist="Shinjutsu-no-Obi +1",
   })
 
-  -- 10% MB dmg from trait with /RDM or /BLM
   sets.midcast.Helix = {
     main=gear.Akademos_C,             -- 27, 25, 53, 228, 217, 10, __
     sub="Enki Strap",                 -- 10, 10, __, ___, ___, __, __
@@ -969,8 +969,8 @@ function init_gear_sets()
     -- back=gear.SCH_Helix_Cape,      -- 20, 20, 10, ___,  30, __, __
     -- waist="Skrymir Cord +1",       -- __,  7,  7, ___,  35, __, __
     -- Mallquis set bonus             -- 16, __, __, ___, ___, __, __
-    -- SCH Job trait                  -- __, __, __, ___, ___,  9, __
-    -- 319 INT, 340 MAcc, 272 MAB, 255 MAccSk, 518 MDmg, 40 MB Dmg%, 15 MB2 Dmg%
+    -- SCH Job trait/gifts            -- __, __, __, ___, ___,  9, 13
+    -- 319 INT, 340 MAcc, 272 MAB, 255 MAccSk, 518 MDmg, 40 MB Dmg%, 28 MB2 Dmg%
   }
   sets.midcast.DarkHelix = set_combine(sets.midcast.Helix, {
     -- head="Pixie Hairpin +1",
@@ -983,27 +983,24 @@ function init_gear_sets()
 
   -- This is applied on top of other sets when appropriate
   -- MB cap is 40%
-  -- 10% MB dmg from trait with /RDM or /BLM
   sets.magic_burst = {
-    main=gear.Akademos_C,               -- 10, __
     head="Pedagogy Mortarboard +1",
     body=gear.Merl_MB_body,             -- 10, __
     hands=gear.Merl_MB_hands,           --  9, __
     feet=gear.Merl_MB_feet,             --  8, __
     ring1="Locus Ring",                 --  5, __
-    -- Base stats                          __, 13
+    -- SCH Job trait/gifts              --  9, 13
 
     -- Ideal:
-    -- main=gear.Akademos_C,            -- 10, __
     -- head="Pedagogy Mortarboard +3",  -- __,  4
     -- body=gear.Merl_MB_body,          -- 10, __
     -- hands="Amalric Gages +1",        -- __,  6
     -- feet="Merlinic Crackows",        -- 10, __
     -- neck="Argute Stole +2",          -- 10, __
     -- ring2="Mujin Band",              -- __,  5
-    -- Base stats                          __, 13
-    -- 40 MB, 28 MB2
-  } -- 42 MB, 13 MB2
+    -- SCH Job trait/gifts              --  9, 13
+    -- 39 MB, 28 MB2
+  } -- 41 MB, 13 MB2
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Defense Sets ------------------------------------------
@@ -1234,6 +1231,24 @@ function job_post_precast(spell, action, spellMap, eventArgs)
       end
     end
   end
+  
+  -- Handle belts for elemental WS
+  if spell.type == 'WeaponSkill' and elemental_ws:contains(spell.english) then
+    local base_day_weather_mult = silibs.get_day_weather_multiplier(spell.element, false, false)
+    local obi_mult = silibs.get_day_weather_multiplier(spell.element, true, false)
+    local orpheus_mult = silibs.get_orpheus_multiplier(spell.element, spell.target.distance)
+    local has_obi = true -- Change if you do or don't have Hachirin-no-Obi
+    local has_orpheus = false -- Change if you do or don't have Orpheus's Sash
+
+    -- Determine which combination to use: orpheus, hachirin-no-obi, or neither
+    if has_obi and (obi_mult >= orpheus_mult or not has_orpheus) and (obi_mult > base_day_weather_mult) then
+      -- Obi is better than orpheus and better than nothing
+      equip({waist="Hachirin-no-Obi"})
+    elseif has_orpheus and (orpheus_mult > base_day_weather_mult) then
+      -- Orpheus is beter than nothing
+      equip({waist="Orpheus's Sash"})
+    end
+  end
 
   -- If slot is locked, keep current equipment on
   if locked_neck then equip({ neck=player.equipment.neck }) end
@@ -1296,22 +1311,27 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
       equip(sets.midcast.Impact)
     end
   end
-  -- Handle special gear scenario for elemental damage
-  if spell.skill == 'Elemental Magic' or spell.english == "Kaustra" then
+  -- Handle belts for elemental damage
+  if spell.skill == 'Elemental Magic' or spell.english == 'Kaustra' then
     local base_day_weather_mult = silibs.get_day_weather_multiplier(spell.element, false, false)
     local obi_mult = silibs.get_day_weather_multiplier(spell.element, true, false)
     local orpheus_mult = silibs.get_orpheus_multiplier(spell.element, spell.target.distance)
+    local has_obi = true -- Change if you do or don't have Hachirin-no-Obi
+    local has_orpheus = false -- Change if you do or don't have Orpheus's Sash
 
     -- Determine which combination to use: orpheus, hachirin-no-obi, or neither
-    if base_day_weather_mult >= obi_mult and base_day_weather_mult >= orpheus_mult then
-      -- Wearing neither obi nor orpheus is better, both are harmful
-    elseif obi_mult >= orpheus_mult then
-      -- Obi is best
-      equip(sets.Special.ElementalObi)
-    else
-      -- Orpheus is best
-      -- equip({waist="Orpheus's Sash"})
-      equip(sets.Special.ElementalObi) -- I don't have Orpheus yet
+    if has_obi and (obi_mult >= orpheus_mult or not has_orpheus) and (obi_mult > base_day_weather_mult) then
+      -- Obi is better than orpheus and better than nothing
+      equip({waist="Hachirin-no-Obi"})
+    elseif has_orpheus and (orpheus_mult > base_day_weather_mult) then
+      -- Orpheus is beter than nothing
+      equip({waist="Orpheus's Sash"})
+    end
+  end
+  if spell.english == 'Drain' or 'Aspir' then
+    local obi_mult = silibs.get_day_weather_multiplier(spell.element, true, false)
+    if obi_mult > 1.08 then -- Must beat Fucho-no-Obi
+      equip({waist="Hachirin-no-Obi"})
     end
   end
   if spell.skill == 'Enhancing Magic' then
