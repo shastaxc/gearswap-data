@@ -177,9 +177,8 @@ function init_gear_sets()
   -- Cast Time = Base Cast Time x (1 - FC)x(1 - magian staff cast bonus)x(1 - Grimoire reduction)
   sets.precast.FC.Grimoire = set_combine(sets.precast.FC, {
     head="Pedagogy Mortarboard +1",
-    feet="Academic's Loafers +1",
+    feet="Academic's Loafers +3",
     -- head="Pedagogy Mortarboard +3",
-    -- feet="Academic's Loafers +3",
   })
   sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {
     -- waist="Siegel Sash",
@@ -694,7 +693,7 @@ function init_gear_sets()
     body="Shamash Robe",                -- 45, 40, __, __
     hands="Regal Cuffs",                -- 45, 40, 20, __
     legs="Academic's Pants +1",
-    feet="Academic's Loafers +1",
+    feet="Academic's Loafers +3",       -- 46, 29, __, __; +20 M.Acc in Grimoire
     neck="Sanctity Necklace",           -- 10, __, __, __
     ear1="Malignance Earring",          -- 10,  8, __, __
     ear2="Regal Earring",               -- __, 10, __, __; Adds set bonus
@@ -706,7 +705,6 @@ function init_gear_sets()
     -- head="Academic's Mortarboard +3",-- 52, 37, __, __
     -- body="Academic's Gown +3",       -- 50, 39, __, __; +24 enf skill in DA
     -- legs="Academic's Pants +3",      -- 49, 39, __, __; +24 enf skill in LA
-    -- feet="Academic's Loafers +3",    -- 46, 29, __, __; +20 M.Acc in Grimoire
     -- neck="Argute Stole +2",          -- 30, 15, __, __
     -- waist="Luminary Sash",           -- 10, 10, __, __
     -- Academic's set bonus             -- 60, __, __, __
@@ -726,7 +724,7 @@ function init_gear_sets()
     body="Shamash Robe",                -- 45, 40, __, __
     hands="Regal Cuffs",                -- 45, 40, 20, __
     legs="Academic's Pants +1",
-    feet="Academic's Loafers +1",
+    feet="Academic's Loafers +3",       -- 46, 32, __, __; +20 M.Acc in Grimoire
     neck="Sanctity Necklace",           -- 10, __, __, __
     ear1="Malignance Earring",          -- 10,  8, __, __
     ear2="Regal Earring",               -- __, 10, __, __; Adds set bonus
@@ -738,7 +736,6 @@ function init_gear_sets()
     -- head="Academic's Mortarboard +3",-- 52, 37, __, __
     -- body="Academic's Gown +3",       -- 50, 44, __, __; +24 enf skill in DA
     -- legs="Academic's Pants +3",      -- 49, 39, __, __; +24 enf skill in LA
-    -- feet="Academic's Loafers +3",    -- 46, 32, __, __; +20 M.Acc in Grimoire
     -- neck="Argute Stole +2",          -- 30, 15, __, __
     -- back=gear.SCH_INT_MAcc_Cape,     -- 30, 20, __, __
     -- waist="Acuity Belt +1",          -- 15, 23, __, __
@@ -768,7 +765,7 @@ function init_gear_sets()
     body="Shamash Robe",                  -- __, 40, 45
     hands="Academic's Bracers +2",
     legs="Pedagogy Pants +1",
-    feet="Academic's Loafers +1",
+    feet="Academic's Loafers +3",         -- __, 32, 46
     neck="Erra Pendant",                  -- 10, __, 17
     ear2="Regal Earring",                 -- __, 10, __; Adds set effect
     back="Bookworm's Cape",               --  8,  4, __
@@ -777,7 +774,6 @@ function init_gear_sets()
     -- body="Academic's Gown +3",         -- 24, 44, 50
     -- hands="Academic's Bracers +3",     -- __, 29, 48
     -- legs="Pedagogy Pants +3",          -- 19, 47, 39
-    -- feet="Academic's Loafers +3",      -- __, 32, 46
     -- ear1="Mani Earring",               -- 10, __, __
     -- ring1="Evanescence Ring",          -- 10, __, __
     -- ring2="Stikini Ring +1",           --  8, __, 11
@@ -808,7 +804,7 @@ function init_gear_sets()
     body="Shamash Robe",
     hands="Academic's Bracers +2",
     legs="Academic's Pants +1",
-    feet="Academic's Loafers +1",
+    feet="Academic's Loafers +3",         -- __, 46, ___
     ear1="Malignance Earring",            --  4, 10, ___
     back=gear.SCH_MAB_Cape,
 
@@ -819,7 +815,6 @@ function init_gear_sets()
     -- body="Academic's Gown +3",         -- __, 50, ___
     -- hands="Academic's Bracers +3",     --  9, 48, ___
     -- legs="Academic's Pants +3",        -- __, 49, ___
-    -- feet="Academic's Loafers +3",      -- __, 46, ___
     -- neck="Argute Stole +2",            -- __, 30, ___
     -- ear1="Malignance Earring",         --  4, 10, ___
     -- ear2="Dignitary's Earring",        -- __, 10, ___
@@ -837,7 +832,7 @@ function init_gear_sets()
     body="Academic's Gown +1",
     hands="Academic's Bracers +2",
     legs="Academic's Pants +1",
-    feet="Academic's Loafers +1",
+    feet="Academic's Loafers +3",       -- 12, __, 46, ___; Grimoire recast-, +20M.Acc in Grimoire
     ear1="Malignance Earring",          -- __,  4, 10, ___
     ear2="Regal Earring",               -- __, __, __, ___; adds set effect
 
@@ -848,7 +843,6 @@ function init_gear_sets()
     -- body="Academic's Gown +3",       -- __, __, 50, ___; +24 Dark Magic skill in DA
     -- hands="Academic's Bracers +3",   -- __,  9, 48, ___
     -- legs="Academic's Pants +3",      -- __, __, 49, ___
-    -- feet="Academic's Loafers +3",    -- 12, __, 46, ___; Grimoire recast-, +20M.Acc in Grimoire
     -- neck="Argute Stole +2",          -- __, __, 30, ___
     -- ear1="Malignance Earring",       -- __,  4, 10, ___
     -- ear2="Regal Earring",            -- __, __, __, ___; adds set effect
@@ -1179,15 +1173,13 @@ function init_gear_sets()
 
   sets.LightArts = {
     legs="Academic's Pants +1",
-    feet="Academic's Loafers +1",
+    feet="Academic's Loafers +3",
     -- legs="Academic's Pants +3",
-    -- feet="Academic's Loafers +3",
   }
   sets.DarkArts = {
     body="Academic's Gown +1",
-    feet="Academic's Loafers +1",
+    feet="Academic's Loafers +3",
     -- body="Academic's Gown +3",
-    -- feet="Academic's Loafers +3",
   }
 
   sets.Special = {}
