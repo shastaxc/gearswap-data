@@ -1441,31 +1441,27 @@ function job_midcast(spell, action, spellMap, eventArgs)
 end
 
 function job_post_midcast(spell, action, spellMap, eventArgs)
-  if spell.type == 'CorsairShot' then
-    if (spell.english ~= 'Light Shot' and spell.english ~= 'Dark Shot') then
-      -- Matching double weather (w/o day conflict).
-      if spell.element == world.weather_element and (get_weather_intensity() == 2 and spell.element ~= elements.weak_to[world.day_element]) then
-        equip(sets.Special.ElementalObi)
-      -- Target distance under 1.7 yalms.
-      elseif spell.target.distance < (1.7 + spell.target.model_size) then
-        equip(sets.Special.ElementalObi)
-        -- equip({waist="Orpheus's Sash"})
-      -- Matching day and weather.
-      elseif spell.element == world.day_element and spell.element == world.weather_element then
-        equip(sets.Special.ElementalObi)
-      -- Target distance under 8 yalms.
-      elseif spell.target.distance < (8 + spell.target.model_size) then
-        equip(sets.Special.ElementalObi)
-        -- equip({waist="Orpheus's Sash"})
-      -- Match day or weather without conflict.
-      elseif (spell.element == world.day_element and spell.element ~= elements.weak_to[world.weather_element]) or (spell.element == world.weather_element and spell.element ~= elements.weak_to[world.day_element]) then
-        equip(sets.Special.ElementalObi)
-      end
-      if state.QDMode.value == 'Enhance' then
-        equip(sets.midcast.CorsairShot.Enhance)
-      elseif state.QDMode.value == 'STP' then
-        equip(sets.midcast.CorsairShot.STP)
-      end
+  if spell.type == 'CorsairShot' and (spell.english ~= 'Light Shot' and spell.english ~= 'Dark Shot') then
+    -- Equip elemental waist
+    local base_day_weather_mult = silibs.get_day_weather_multiplier(spell.element, false, false)
+    local obi_mult = silibs.get_day_weather_multiplier(spell.element, true, false)
+    local orpheus_mult = silibs.get_orpheus_multiplier(spell.element, spell.target.distance)
+    local has_obi = true -- Change if you do or don't have Hachirin-no-Obi
+    local has_orpheus = false -- Change if you do or don't have Orpheus's Sash
+
+    -- Determine which combination to use: orpheus, hachirin-no-obi, or neither
+    if has_obi and (obi_mult >= orpheus_mult or not has_orpheus) and (obi_mult > base_day_weather_mult) then
+      -- Obi is better than orpheus and better than nothing
+      equip({waist="Hachirin-no-Obi"})
+    elseif has_orpheus and (orpheus_mult > base_day_weather_mult) then
+      -- Orpheus is better than obi and better than nothing
+      equip({waist="Orpheus's Sash"})
+    end
+    -- Equip corsair shot set
+    if state.QDMode.value == 'Enhance' then
+      equip(sets.midcast.CorsairShot.Enhance)
+    elseif state.QDMode.value == 'STP' then
+      equip(sets.midcast.CorsairShot.STP)
     end
   elseif spell.action_type == 'Ranged Attack' then
     if buffactive['Triple Shot'] then
