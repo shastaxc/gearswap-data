@@ -38,6 +38,9 @@ elemental_ws = S{'Aeolian Edge', 'Sanguine Blade', 'Cloudsplitter', 'Seraph Blad
     'Shining Strike', 'Seraph Strike', 'Flash Nova', 'Rock Crusher', 'Earth Crusher', 'Starburst', 'Sunburst', 'Vidohunir',
     'Garland of Bliss', 'Omniscience', 'Flaming Arrow', 'Hot Shot'}
 
+classes.NoSkillSpells = S{'Haste', 'Refresh', 'Regen', 'Protect', 'Protectra', 'Shell', 'Shellra',
+'Raise', 'Reraise', 'Sneak', 'Invisible', 'Deodorize', 'Embrava'}
+    
 locked_neck = false -- Do not modify
 locked_ear1 = false -- Do not modify
 locked_ear2 = false -- Do not modify
