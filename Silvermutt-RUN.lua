@@ -555,23 +555,7 @@ function init_gear_sets()
     -- 27 Phalanx, 10 Enh Skill, 21% Interrupt [47 PDT/25 MDT, 874 HP]
   })-- 18 Phalanx, 10 Enh Skill, 21% Interrupt [44 PDT/29 MDT, 775 HP]
 
-  sets.midcast['Aquaveil'] = set_combine(sets.HeavyDef, {
-    ammo="Staunch Tathlum +1",                  -- {11}
-    hands={name="Regal Gauntlets", priority=1}, -- {10}
-    legs=gear.Carmine_D_legs,                   -- {20}
-    feet=gear.Taeon_SIRD_feet,                  -- {10}
-    neck="Moonlight Necklace",                  -- {15}
-    waist="Audumbla Sash",                      -- {10}
-    -- SIRD Merits                                 { 6}
-  }) -- {82 SIRD}
-  sets.midcast['Aquaveil'].Safe = set_combine(sets.HeavyDef, {
-    ammo="Staunch Tathlum +1",                  -- {11}
-    hands={name="Regal Gauntlets", priority=1}, -- {10}
-    legs=gear.Carmine_D_legs,                   -- {20}
-    ring2="Defending Ring",
-    waist="Audumbla Sash",                      -- {10}
-    -- SIRD Merits                                 { 6}
-  }) -- {57 SIRD}
+  sets.midcast['Aquaveil'] = sets.SIRD
 
   sets.midcast['Regen'] = set_combine(sets.HeavyDef, sets.midcast.EnhancingDuration, {
     head="Runeist's Bandeau +3",
@@ -611,6 +595,10 @@ function init_gear_sets()
   sets.midcast['Geist Wall'] = sets.SIRD
   sets.midcast['Bomb Toss'] = set_combine(sets.SIRD, sets.TreasureHunter)
   sets.midcast['Poisonga'] = sets.SIRD
+
+  sets.midcast['Dia'] = sets.SIRD
+  sets.midcast['Dia II'] = sets.SIRD
+  sets.midcast['Diaga'] = sets.SIRD
 
   sets.midcast['Blue Magic'] = {}
   sets.midcast['Blue Magic'].Enmity = sets.Enmity
