@@ -22,7 +22,7 @@ function job_setup()
   "Stone V", "Water V", "Aero V", "Fire V", "Blizzard V", "Thunder V"}
   state.Buff['Sublimation: Activated'] = buffactive['Sublimation: Activated'] or false
   state.HelixMode = M{['description']='Helix Mode', 'Potency', 'Duration'}
-  state.RegenMode = M{['description']='Regen Mode', 'Potency', 'Duration'}
+  state.RegenMode = M{['description']='Regen Mode', 'Duration', 'Potency'}
 
   degrade_array = {
     ['Aspirs'] = {'Aspir','Aspir II'}
@@ -542,36 +542,55 @@ function init_gear_sets()
     -- 724 Power
   }
 
-  -- Removal rate = Base Rate * (1+(x/100)) * (1+(y/100))
-  -- x = healing skill from gear; y = cursna+ stat from gear
-  -- Base rate is determined by base healing magic skill (26% @500, 30% @600, 43% @1000)
-  -- Mithra SCH/RDM M20 Healing Magic Skill = 406, base Cursna rate ~
+  -- Removal rate = Base Rate * (1+(y/100))
+  -- Base rate = (10+(Healing Skill / 30)); y = Cursna+ stat from gear
+  -- Mithra SCH/RDM M20 Healing Magic Skill = 406
   sets.midcast.Cursna = {
-    main="Gada",                  --  18, __,  6
-    ammo="Incantor Stone",        --  __, __,  2
-    head=gear.Vanya_B_head,       --  20, __, __
-    body=gear.Vanya_B_body,       --  20, __, __
-    hands=gear.Vanya_B_hands,     --  20, __, __
-    legs=gear.Vanya_B_legs,       --  20, __, __
-    feet=gear.Vanya_B_feet,       --  40,  5, __
-    ear2="Meili Earring",         --  10, __, __
-    ring1="Haoma's Ring",         --   8, 15, __
-    -- sub="Chanter's Shield",    --  __, __,  3
-    -- neck="Debilis Medallion",  --  __, 15, __
-    -- ear1="Beatific Earring",   --   4, __, __
-    -- ring2="Menelaus's Ring",   --  15, 20,-10
-    -- back="Oretania's Cape +1", --  __,  5, __
-    -- waist="Bishop's Sash",     --   5, __, __
-    -- 180 Healing skill, 60 Cursna+, 1 FC
-    -- Cursna Rate (assuming 21% base) = 94.08%
-  }
+    main="Gada",                  -- 18, __,  6
+    ammo="Incantor Stone",        -- __, __,  2
+    head=gear.Vanya_B_head,       -- 20, __, __
+    body=gear.Vanya_B_body,       -- 20, __, __
+    legs=gear.Vanya_B_legs,       -- 20, __, __
+    feet=gear.Vanya_B_feet,       -- 40,  5, __
+    neck="Debilis Medallion",     -- __, 15, __
+    ear1="Malignance Earring",    -- __, __,  4
+    ear2="Meili Earring",         -- 10, __, __
+    ring1="Haoma's Ring",         --  8, 15, __
+    ring2="Menelaus's Ring",      -- 15, 20,-10
+    waist="Embla Sash",           -- __, __,  5
+    -- sub="Chanter's Shield",    -- __, __,  3
+    -- hands="Hieros Mittens",    -- __, 10, __
+    -- back="Oretania's Cape +1", -- __,  5, __
+    -- Base stats                   406, __, __
+    -- 557 Healing skill, 70 Cursna+, 10 FC; Cursna Rate = 48.56%
 
-  -- Mithra SCH/RDM M20 Healing Magic Skill = 476 (w/ Light Arts), base Cursna rate ~
+    -- Ideal:
+    -- main="Hvergelmir",         -- __, __, 50
+    -- sub="Clerisy Strap +1",    -- __, __,  3
+    -- ammo="Incantor Stone",     -- __, __,  2
+    -- head=gear.Vanya_B_head,    -- 20, __, __
+    -- body=gear.Vanya_B_body,    -- 20, __, __
+    -- hands="Hieros Mittens",    -- __, 10, __
+    -- legs=gear.Vanya_B_legs,    -- 20, __, __
+    -- feet=gear.Vanya_B_feet,    -- 40,  5, __
+    -- neck="Debilis Medallion",  -- __, 15, __
+    -- ear1="Malignance Earring", -- __, __,  4
+    -- ear2="Meili Earring",      -- 10, __, __
+    -- ring1="Haoma's Ring",      --  8, 15, __
+    -- ring2="Menelaus's Ring",   -- 15, 20,-10
+    -- back="Oretania's Cape +1", -- __,  5, __
+    -- waist="Embla Sash",        -- __, __,  5
+    -- 539 Healing skill, 70 Cursna+, 54 FC; Cursna Rate = 47.54%
+  }
+  -- Mithra SCH/RDM M20 Healing Magic Skill = 476 (w/ Light Arts)
   sets.midcast.Cursna.LightArts = set_combine(sets.midcast.Cursna, {
-    legs="Academic's Pants +1",
-    -- legs="Academic's Pants +3",    --  24, __,  9
-    -- 184 Healing skill, 60 Cursna+, 10 FC
-    -- Cursna Rate (assuming 24% base) = 109.06%
+    legs="Academic's Pants +1",       -- 20, __, __
+    -- legs="Academic's Pants +3",    -- 24, __,  9
+    -- Base stats                       476, __, __
+    -- 631 Healing skill, 70 Cursna+, 10 FC; Cursna Rate = 52.76%
+
+    -- Ideal:
+    -- 613 Healing skill, 70 Cursna+, 63 FC; Cursna Rate = 51.74%
   })
 
   -- Enh Magic Skill + Enh Magic Duration > Fast Cast
@@ -603,38 +622,52 @@ function init_gear_sets()
     body="Pedagogy Gown +3",        -- 12, __
     hands=gear.Telchine_ENH_hands,  -- 10, __
     legs=gear.Telchine_ENH_legs,    -- 10, __
+    feet=gear.Telchine_ENH_feet,    --  9, __
     waist="Embla Sash",             -- 10,  5
     -- main=gear.Musa_C,            -- 20, 10
     -- sub="Clerisy Strap +1",      -- __,  3
     -- head=gear.Telchine_ENH_head, -- 10, __
     -- feet=gear.Telchine_ENH_feet, -- 10, __
     -- 82 Enh Duration, 18 FC
-  }
+  } -- 75 Enh Duration, 13 FC
 
   -- Regen not affected by Enh Magic Skill
   sets.midcast.Regen = {
-    main=gear.Pedagogy_C,             -- 20, __, 15, __
-    sub="Enki Strap",                 -- __, __, __, __
-    head="Arbatel Bonnet +1",         --  7, __, __, __
-    hands=gear.Telchine_ENH_hands,    -- __, __, 10, __
-    legs=gear.Telchine_ENH_legs,      -- __, __, 10, __
-    feet=gear.Telchine_ENH_feet,      -- __, __, 10, __
-    back=gear.SCH_Adoulin_Regen_Cape, -- 10, __, __, __
-    waist="Embla Sash",               -- __, __, 10,  5
-    -- Base Potency (w/ Light Arts)      64, __, __, __
+    main=gear.Pedagogy_C,               -- 20, 15, __
+    sub="Enki Strap",                   -- __, __, __
+    head="Arbatel Bonnet +1",           --  7, __, __
+    body=gear.Telchine_Regen_body,      --  3, __, 12
+    hands=gear.Telchine_Regen_hands,    --  3, __, __
+    legs=gear.Telchine_Regen_legs,      --  3, __, __
+    feet=gear.Telchine_Regen_feet,      --  3, __, __
+    back=gear.SCH_Adoulin_Regen_Cape,   -- 10, __, __
+    waist="Embla Sash",                 -- __, 10,  5
+    -- Base Potency (w/ Light Arts)        64, __, __
 
-    -- main=gear.Musa_C,              -- 25, __, 20, __
-    -- sub="Khonsu",                  -- __, __, __, __
-    -- body=gear.Telchine_ENH_body,   -- __, __, 10, 12
-    -- 106 Regen Potency, 0 Regen Potency %, 70 Enh Duration %, 17 Regen Duration
-  } -- 101 Regen Potency, 0 Regen Potency %, 55 Enh Duration %, 5 Regen Duration
+    -- main=gear.Musa_C,                -- 25, 20, __
+    -- sub="Khonsu",                    -- __, __, __
+    -- 118 Regen Potency, 30 Enh Duration %, 17 Regen Duration
+  } -- 113 Regen Potency, 25 Enh Duration %, 17 Regen Duration
 
-  sets.midcast.RegenDuration = set_combine(sets.midcast.Regen, {
-    head=gear.Telchine_ENH_head,      -- __, __,  9, __
-    back=gear.SCH_FC_Cape,            -- __, __, __, 15
-    -- head=gear.Telchine_ENH_head,   -- __, __, 10, __
-    -- 99 Regen Potency, 0 Regen Potency %, 80 Enh Duration %, 32 Regen Duration
-  })-- 94 Regen Potency, 0 Regen Potency %, 64 Enh Duration %, 20 Regen Duration
+  -- Can get longer duration, but potency takes a significant hit, so
+  -- opted not to do that.
+  sets.midcast.RegenDuration = {
+    main=gear.Pedagogy_C,               -- 20, 15, __
+    sub="Enki Strap",                   -- __, __, __
+    head="Arbatel Bonnet +1",           --  7, __, __
+    body=gear.Telchine_ENH_body,        -- __, 10, 12
+    hands=gear.Telchine_ENH_hands,      -- __, 10, __
+    legs=gear.Telchine_ENH_legs,        -- __, 10, __
+    feet=gear.Telchine_ENH_feet,        -- __,  9, __
+    back=gear.SCH_Adoulin_Regen_Cape,   -- 10, __, __
+    waist="Embla Sash",                 -- __, 10,  5
+    -- Base Potency (w/ Light Arts)        64, __, __
+
+    -- main=gear.Musa_C,                -- 25, 20, __
+    -- sub="Khonsu",                    -- __, __, __
+    -- feet=gear.Telchine_ENH_feet,     -- __, 10, __
+    -- 106 Regen Potency, 70 Enh Duration %, 17 Regen Duration
+  } -- 101 Regen Potency, 64 Enh Duration %, 17 Regen Duration
 
   sets.midcast.Haste = sets.midcast.EnhancingDuration
 
@@ -1085,7 +1118,6 @@ function init_gear_sets()
   sets.idle = sets.HeavyDef
   sets.idle.HeavyDef = set_combine(sets.idle, sets.HeavyDef)
   sets.idle.Weak = sets.HeavyDef
-
 
   sets.resting = set_combine(sets.idle, {
     main="Chatoyant Staff",
@@ -1595,6 +1627,8 @@ function job_self_command(cmdParams, eventArgs)
   elseif cmdParams[1] == 'nuke' then
     handle_nuking(cmdParams)
     eventArgs.handled = true
+  elseif cmdParams[1] == 'test' then
+    test()
   end
 end
 
@@ -1854,4 +1888,8 @@ function select_default_macro_book()
   else
     set_macro_page(1, 1)
   end
+end
+
+function test()
+  print('classes.NoSkillSpells:contains(Embrava): '..tostring(classes.NoSkillSpells:contains('Embrava')))
 end

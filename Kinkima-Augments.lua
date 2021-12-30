@@ -29,7 +29,6 @@ sets.ToyWeapon.Scythe = {main="Lost Sickle",sub="Tzacab Grip"}
 -- Digirbalag
 
 -- Gada
-gear.Gada_Cure = {} -- 10 MND, 6 FC
 gear.Gada_ENH = {} -- 6 Enh Duration, 6 FC
 gear.Gada_MND_MAcc = {} -- 10 MND, 25 MAcc
 gear.Gada_INT_MAcc = {} -- 10 INT, 25 MAcc
@@ -117,22 +116,27 @@ gear.Gende_SongFC_feet = {} -- 5 Song Spellcasting Time-, 3 Song Recast Delay-, 
 -- Helios
 
 -- Taeon
-gear.Taeon_FC_body = { name="Taeon Tabard", augments={'DEF+17','"Fast Cast"+5','Phalanx +3',}}
-gear.Taeon_FC_hands = { name="Taeon Gloves", augments={'Mag. Evasion+11','"Fast Cast"+5','Phalanx +3',}}
-gear.Taeon_FC_legs = { name="Taeon Tights", augments={'Evasion+18','"Fast Cast"+5','Phalanx +3',}}
-gear.Taeon_FC_feet = { name="Taeon Boots", augments={'DEF+17','"Fast Cast"+5','Phalanx +3',}}
+gear.Taeon_FC_body = {} -- 5 FC, 3 Phalanx
+gear.Taeon_FC_hands = {} -- 5 FC, 3 Phalanx
+gear.Taeon_FC_legs = {} -- 5 FC, 3 Phalanx
+gear.Taeon_FC_feet = {} -- 5 FC, 3 Phalanx
 
-gear.Taeon_Phalanx_body = { name="Taeon Tabard", augments={'DEF+17','"Fast Cast"+5','Phalanx +3',}}
-gear.Taeon_Phalanx_hands = { name="Taeon Gloves", augments={'Mag. Evasion+11','"Fast Cast"+5','Phalanx +3',}}
-gear.Taeon_Phalanx_legs = { name="Taeon Tights", augments={'Evasion+18','"Fast Cast"+5','Phalanx +3',}}
-gear.Taeon_Phalanx_feet = { name="Taeon Boots", augments={'DEF+17','"Fast Cast"+5','Phalanx +3',}}
+gear.Taeon_Phalanx_body = gear.Taeon_FC_body
+gear.Taeon_Phalanx_hands = gear.Taeon_FC_hands
+gear.Taeon_Phalanx_legs = gear.Taeon_FC_legs
+gear.Taeon_Phalanx_feet = gear.Taeon_FC_feet
 
 -- Telchine
-gear.Telchine_ENH_head = { name="Telchine Cap", augments={'"Regen"+2','Enh. Mag. eff. dur. +9',}} -- Max 25 meva, 2 regen, 10 enh duration
-gear.Telchine_ENH_body = {} -- Max 25 meva, 2 regen, 10 enh duration
-gear.Telchine_ENH_hands = { name="Telchine Gloves", augments={'Mag. Evasion+24','"Regen"+2','Enh. Mag. eff. dur. +10',}} -- Max 25 meva, 2 regen, 10 enh duration
-gear.Telchine_ENH_legs = { name="Telchine Braconi", augments={'Mag. Evasion+21','"Regen"+2','Enh. Mag. eff. dur. +10',}} -- Max 25 meva, 2 regen, 10 enh duration
-gear.Telchine_ENH_feet = {} -- Max 25 meva, 2 regen, 10 enh duration
+gear.Telchine_ENH_head = { name="Telchine Cap", augments={'"Regen"+2','Enh. Mag. eff. dur. +9',}} -- Max 25 meva, 10 enh duration
+gear.Telchine_ENH_body = { name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +10',}} -- Max 25 meva, 10 enh duration
+gear.Telchine_ENH_hands = { name="Telchine Gloves", augments={'Mag. Evasion+24','"Regen"+2','Enh. Mag. eff. dur. +10',}} -- Max 25 meva, 10 enh duration
+gear.Telchine_ENH_legs = { name="Telchine Braconi", augments={'Mag. Evasion+21','"Regen"+2','Enh. Mag. eff. dur. +10',}} -- Max 25 meva, 10 enh duration
+gear.Telchine_ENH_feet = { name="Telchine Pigaches", augments={'Enh. Mag. eff. dur. +9',}} -- Max 25 meva, 10 enh duration
+
+gear.Telchine_Regen_body = { name="Telchine Chas.", augments={'"Regen" potency+3',}}
+gear.Telchine_Regen_hands = { name="Telchine Gloves", augments={'"Regen" potency+3',}}
+gear.Telchine_Regen_legs = { name="Telchine Braconi", augments={'"Regen" potency+3',}}
+gear.Telchine_Regen_feet = { name="Telchine Pigaches", augments={'"Regen" potency+3',}}
 
 -- Yorium
 
