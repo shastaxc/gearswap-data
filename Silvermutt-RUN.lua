@@ -537,7 +537,7 @@ function init_gear_sets()
     body=gear.Taeon_Phalanx_body,             -- 3, __, __ [ 0/ 0,  59]
     hands=gear.Taeon_Phalanx_hands,           -- 3, __, __ [ 0/ 0,  25]
     legs=gear.Taeon_Phalanx_legs,             -- 3, __, __ [ 0/ 0,  47]
-    feet=gear.Taeon_Phalanx_feet,             -- 3, __, __ [ 0/ 0,  13]
+    feet=gear.Herc_Phalanx_feet,              -- 4, __, __ [ 2/__,   9]
     neck="Futhark Torque +1",                 -- _, __, __ [ 6/ 6,  45]
     ear1="Odnowa Earring +1",                 -- _, __, __ [ 3/ 5, 110]
     ear2="Mimir Earring",                     -- _, 10, __ [__/__, ___]
@@ -553,7 +553,7 @@ function init_gear_sets()
     -- neck="Futhark Torque +2",              -- _, __, __ [ 7/ 7,  60]
     -- ring2="Moonlight Ring",                -- _, __, __ [ 5/ 5, 110]
     -- 27 Phalanx, 10 Enh Skill, 21% Interrupt [47 PDT/25 MDT, 874 HP]
-  })-- 18 Phalanx, 10 Enh Skill, 21% Interrupt [44 PDT/29 MDT, 775 HP]
+  })-- 19 Phalanx, 10 Enh Skill, 21% Interrupt [46 PDT/29 MDT, 771 HP]
 
   sets.midcast['Aquaveil'] = sets.SIRD
 

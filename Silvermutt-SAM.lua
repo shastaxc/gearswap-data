@@ -153,6 +153,7 @@ function init_gear_sets()
 
   -- Fast cast sets for spells
   sets.precast.FC = {
+    neck="Orunmila's Torque", --5
   }
 
   -- Precast sets to enhance JAs on use

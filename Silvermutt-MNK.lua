@@ -234,9 +234,8 @@ function init_gear_sets()
     hands=gear.Leyline_Gloves, --8
     legs=gear.Taeon_FC_legs, --5
     feet=gear.Taeon_FC_feet, --5
+    neck="Orunmila's Torque", --5
     ear1="Loquac. Earring", --2
-    ring1="Lebeche Ring", --Quick Magic 2%
-    ring2="Weatherspoon Ring", --5
   }
 
   -- Precast sets to enhance JAs on use

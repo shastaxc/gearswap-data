@@ -336,9 +336,8 @@ function init_gear_sets()
     hands=gear.Leyline_Gloves, --8
     legs=gear.Taeon_FC_legs, --5
     feet=gear.Carmine_D_feet, --8
+    neck="Orunmila's Torque", --5
     ear1="Loquac. Earring", --2
-    ring1="Lebeche Ring", --Quick Magic 2%
-    ring2="Weatherspoon Ring", --5
   }
 
   sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {
@@ -1298,10 +1297,9 @@ function init_gear_sets()
   sets.WeaponSet = {}
   sets.WeaponSet.DeathPenalty_M = {
     main="Lanun Knife",
-    sub="Kaja Knife",
+    sub="Tauret",
     ranged="Death Penalty",
     -- main="Rostam",
-    -- sub="Tauret",
   }
   sets.WeaponSet.DeathPenalty_R = {
     main="Lanun Knife",
@@ -1311,9 +1309,8 @@ function init_gear_sets()
   }
   sets.WeaponSet.Armageddon_M = {
     main="Lanun Knife",
-    sub="Kaja Knife",
+    sub="Tauret",
     -- main="Rostam",
-    -- sub="Tauret",
     -- ranged="Armageddon",
   }
   sets.WeaponSet.Armageddon_R = {
@@ -1338,15 +1335,13 @@ function init_gear_sets()
   }
   sets.WeaponSet.Cleaving = {
     main="Lanun Knife",
-    sub="Kaja Knife",
+    sub="Tauret",
     ranged="Anarchy +2",
-    -- sub="Tauret",
   }
   sets.WeaponSet.QuickDraw = {
     main="Naegling",
-    sub="Kaja Knife",
+    sub="Tauret",
     ranged="Death Penalty",
-    -- sub="Tauret",
   }
 end
 

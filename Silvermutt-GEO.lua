@@ -166,6 +166,7 @@ function init_gear_sets()
     head=gear.Merl_FC_head,         -- 13
     hands=gear.Merl_FC_hands,       --  5
     legs="Geomancy Pants +2",       -- 13
+    neck="Orunmila's Torque",       --  5
     ear1="Loquac. Earring",         --  2
     ear2="Malignance Earring",      --  4
     ring1="Kishar Ring",            --  4
@@ -182,7 +183,7 @@ function init_gear_sets()
     -- back=gear.GEO_FC_Cape,       -- 10
     -- waist="Shinjutsu-no-Obi +1", --  5
     -- 80 FC
-  } -- 56 FC
+  } -- 61 FC
 
 	sets.precast.FC.Geomancy = set_combine(sets.precast.FC, {
     range="Dunna",

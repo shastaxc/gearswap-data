@@ -265,17 +265,14 @@ function init_gear_sets()
   sets.precast.Waltz['Healing Waltz'] = {}
 
   sets.precast.FC = {
-    ammo="Impatiens", --Quick Magic 2%
     head="Herculean Helm", --7
     body=gear.Taeon_FC_body, --9
     hands=gear.Leyline_Gloves, --8
     legs=gear.Taeon_FC_legs, --5
     feet=gear.Taeon_FC_feet, --5
+    neck="Orunmila's Torque", --5
     ear1="Loquac. Earring", --2
-    ring1="Lebeche Ring", --Quick Magic 2%
-    ring2="Weatherspoon Ring", --5
   }
-
   sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {
     ammo="Staunch Tathlum +1",
     neck="Magoraga Beads", --10
@@ -1141,9 +1138,8 @@ function init_gear_sets()
   --   sub="Tauret",
   -- }
   sets.WeaponSet['Cleaving'] = {
-    main="Kaja Knife",
+    main="Tauret",
     sub="Twashtar",
-    -- main="Tauret",
   }
 end
 

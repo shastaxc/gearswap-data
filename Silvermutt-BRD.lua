@@ -177,6 +177,7 @@ function init_gear_sets()
     sub="Genmei Shield",        -- __, __ (10, __, ___)
     body="Inyanga Jubbah +2",   -- 14, __ (__,  8, 120)
     hands=gear.Leyline_Gloves,  --  8, __ (__, __,  62)
+    neck="Orunmila's Torque",   --  5, __ (__, __, ___)
     ear1="Loquac. Earring",     --  2, __ (__, __, ___)
     ear2="Etiolation Earring",  --  1, __ (__,  3, ___)
     ring1="Weatherspoon Ring",  --  5,  3 (__, __, ___)
@@ -186,12 +187,11 @@ function init_gear_sets()
     -- head="Nahtirah Hat",        -- 10, __ (__, __,  75)
     -- legs="Volte Brais",         --  8, __ (__, __, 142); Aya. Cosciales +2 good alt
     -- feet="Volte Gaiters",       --  6, __ (__, __, 142); Navon Crackows good alt
-    -- neck="Orunmila's Torque",   --  5, __ (__, __, ___)
     -- ring1="Weather. Ring +1",   --  6,  4 (__, __, ___); Lebeche Ring good alt
     -- back=gear.BRD_Song_Cape,    -- 10, __ (__, __, ___)
     -- waist="Witful Belt",        --  3,  3 (__, __, ___)
     -- 90 Fast Cast, 7 Quick Magic (10 PDT, 11 MDT, 556 MEVA)
-  } -- 34 Fast Cast, 3 Quick Magic (10 PDT, 11 MDT, 182 MEVA)
+  } -- 39 Fast Cast, 3 Quick Magic (10 PDT, 11 MDT, 182 MEVA)
 
   sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {
     waist="Siegel Sash",
@@ -1029,7 +1029,7 @@ function init_gear_sets()
     sub="Taming Sari"
   }
   sets.WeaponSet.Cleaving = {
-    main="Kaja Knife",
+    main="Tauret",
     sub="Twashtar"
   }
 

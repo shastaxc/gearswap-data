@@ -308,9 +308,8 @@ function init_gear_sets()
     hands=gear.Leyline_Gloves, --8
     legs=gear.Taeon_FC_legs, --5
     feet=gear.Carmine_D_feet, --8
+    neck="Orunmila's Torque", --5
     ear1="Loquac. Earring", --2
-    ring1="Lebeche Ring", --Quick Magic 2%
-    ring2="Weatherspoon Ring", --5
   }
 
   sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {
@@ -1241,9 +1240,8 @@ function init_gear_sets()
   sets.WeaponSet = {}
   -- Melee weapon sets
   sets.WeaponSet['MagicRA'] = {
-    main="Kaja Knife",
+    main="Tauret",
     sub="Malevolence",
-    -- main="Tauret",
   }
   sets.WeaponSet['PhysRA'] = {
     main="Ternion Dagger +1",

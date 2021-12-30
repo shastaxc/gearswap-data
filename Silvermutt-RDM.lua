@@ -320,8 +320,7 @@ function init_gear_sets()
     hands=gear.Leyline_Gloves, --8
     legs="Ayanmo Cosciales +2", --6
     feet=gear.Carmine_D_feet, --8
-    ring1="Lebeche Ring", --Quick Magic 2%
-    ring2="Weatherspoon Ring", --5
+    neck="Orunmila's Torque", --5
     -- head="Atrophy Chapeau +3", --16
     -- body="Viti. Tabard +3", --15
     -- ring2="Weather. Ring +1", --5
@@ -332,12 +331,7 @@ function init_gear_sets()
   })
 
   sets.precast.FC.Cure = set_combine(sets.precast.FC, {
-    ammo="Impatiens", --(2)
-    ring1="Lebeche Ring", --(2)
-    ring2="Weatherspoon Ring", --5/3
     -- legs="Kaykaus Tights +1", --7
-    -- ring2="Weather. Ring +1", --5/(4)
-    -- back="Perimede Cape", --(4)
     -- waist="Embla Sash",
   })
 
@@ -346,13 +340,13 @@ function init_gear_sets()
   sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, {})
 
   sets.precast.FC.Impact = set_combine(sets.precast.FC, {
+    neck="Orunmila's Torque", --5
     ear1="Loquacious Earring", --2
     ring1="Kishar Ring", --4
     -- ammo="Sapience Orb", --2
     -- head=empty,
     -- body="Crepuscular Cloak",
     -- hands="Gende. Gages +1", --7
-    -- neck="Orunmila's Torque", --5
     -- ear2="Enchntr. Earring +1", --2
     -- back="Swith Cape +1", --4
     -- waist="Shinjutsu-no-Obi +1", --5
@@ -366,7 +360,9 @@ function init_gear_sets()
   sets.precast.Storm = set_combine(sets.precast.FC, {
     -- name="Stikini Ring +1",
   })
-  sets.precast.FC.Utsusemi = sets.precast.FC.Cure
+  sets.precast.FC.Utsusemi = set_combine(sets.precast.FC.Cure, {
+    neck="Magoraga Beads", --10
+  }
 
 
   ------------------------------------------------------------------------------------------------
@@ -1123,7 +1119,7 @@ function init_gear_sets()
   -- No Magic Haste (74% DW to cap)
   sets.engaged.DW = {
     main="Naegling",
-    sub="Kaja Knife",
+    sub="Tauret",
     ammo="Aurgelmir Orb",
     head="Malignance Chapeau",
     body="Malignance Tabard",
@@ -1136,7 +1132,6 @@ function init_gear_sets()
     ring1="Hetairoi Ring",
     ring2="Chirich Ring +1",
     waist="Reiki Yotai", --7
-    -- sub="Tauret",
     -- ammo="Aurgelmir Orb +1",
     -- back=gear.RDM_DW_Cape, --10
   } --41
