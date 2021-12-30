@@ -1339,7 +1339,7 @@ function init_gear_sets()
   sets.WeaponSet.Cleaving = {
     main="Lanun Knife",
     sub="Kaja Knife",
-    ranged="Doomsday",
+    ranged="Anarchy +2",
     -- sub="Tauret",
   }
   sets.WeaponSet.QuickDraw = {

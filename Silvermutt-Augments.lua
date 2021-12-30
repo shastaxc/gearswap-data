@@ -150,9 +150,9 @@ gear.Taeon_RA_head = { name="Taeon Chapeau", augments={'"Snapshot"+5','"Snapshot
 
 -- Telchine
 gear.Telchine_DA_legs = {}
-gear.Telchine_ENH_body = {name="Telchine Chas.", augments={'Mag. Evasion+20','"Regen"+2','Enh. Mag. eff. dur. +10',}}
-gear.Telchine_STP_hands = {name="Telchine Gloves", augments={'Accuracy+20','"Store TP"+6','DEX+10',}}
-gear.Telchine_STP_feet = {name="Telchine Pigaches", augments={'Accuracy+20','"Store TP"+6','DEX+10',}}
+gear.Telchine_ENH_body = {} -- 20 MEVA, 10 Enh Duration
+gear.Telchine_STP_hands = {} -- 20 Acc, 6 STP, 10 DEX
+gear.Telchine_STP_feet = {} -- 20 Acc, 6 STP, 10 DEX
 
 -- Yorium
 
