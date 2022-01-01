@@ -1064,7 +1064,7 @@ function init_gear_sets()
   sets.WeaponSet['H2H'] = {main="Kaja Knuckles", sub=empty}
   sets.WeaponSet['Healing'] = {main="Enchufla", sub="Blurred Knife +1"}
   sets.WeaponSet['Staff'] = {main="Gozuki Mezuki", sub="Tzacab Grip"}
-  sets.WeaponSet['Cleaving'] = {main="Kaja Knife", sub="Twashtar"}
+  sets.WeaponSet['Cleaving'] = {main="Tauret", sub="Twashtar"}
 end
 
 
