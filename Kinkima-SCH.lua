@@ -550,6 +550,7 @@ function init_gear_sets()
     ammo="Incantor Stone",        -- __, __,  2
     head=gear.Vanya_B_head,       -- 20, __, __
     body=gear.Vanya_B_body,       -- 20, __, __
+    hands="Hieros Mittens",       -- __, 10, __
     legs=gear.Vanya_B_legs,       -- 20, __, __
     feet=gear.Vanya_B_feet,       -- 40,  5, __
     neck="Debilis Medallion",     -- __, 15, __
@@ -559,7 +560,6 @@ function init_gear_sets()
     ring2="Menelaus's Ring",      -- 15, 20,-10
     waist="Embla Sash",           -- __, __,  5
     -- sub="Chanter's Shield",    -- __, __,  3
-    -- hands="Hieros Mittens",    -- __, 10, __
     -- back="Oretania's Cape +1", -- __,  5, __
     -- Base stats                   406, __, __
     -- 557 Healing skill, 70 Cursna+, 10 FC; Cursna Rate = 48.56%
