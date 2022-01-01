@@ -106,7 +106,7 @@ function job_file_unload()
 
   send_command('unbind @c')
 	send_command('unbind @`')
-	send_command('unbind @f10')
+	send_command('unbind @q')
 
   send_command('unbind !e')
   send_command('unbind !\'')
