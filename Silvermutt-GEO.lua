@@ -247,7 +247,7 @@ function init_gear_sets()
     ring1="Archon Ring",            --  5, __, __, __
     ring2="Shiva Ring +1",          -- __,  3, __, __
     back="Argochampsa Mantle",      -- __, 12, __, __
-    waist="Skrymir Cord",
+    waist="Skrymir Cord",           -- __,  5, 30, __
     -- body="Agwu's Robe",          -- __, 55, 20, __
     -- legs="Agwu's Slops",         -- __, 55, 20, __
     -- feet="Agwu's Pigaches",      -- __, 55, 20, __
@@ -255,7 +255,8 @@ function init_gear_sets()
     -- ring2="Epaminondas's Ring",  -- __, __, __,  5
     -- back=gear.GEO_Nuke_Cape,     -- __, 10, 20, __
     -- waist="Skrymir Cord +1",     -- __,  7, 35, __
-  } -- 33 Dark MAB, 175 MAB, 0 M.Dmg, 34 WSD
+    -- 33 Dark MAB, 229 MAB, 115 M.Dmg, 12 WSD
+  } -- 33 Dark MAB, 160 MAB, 30 M.Dmg, 34 WSD
   sets.precast.WS['Cataclysm'].MaxTP = set_combine(sets.precast.WS['Cataclysm'], {
     ear2="Novio Earring", --7
   })
