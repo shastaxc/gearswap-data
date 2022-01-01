@@ -69,8 +69,6 @@ function job_setup()
   state.WeaponSet = M{['description']='Weapon Set', 'MagicRA', 'PhysRA', 'PhysRA RangedOnly', 'Melee'}
   state.RangedWeaponSet = M{['description']='Ranged Weapon Set', 'Gastraphetes', 'Fomalhaut', 'Sparrowhawk +2'}
   state.CP = M(false, "Capacity Points Mode")
-  -- Whether a warning has been given for low ammo
-  state.warned = M(false)
   state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger',
       'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
 
@@ -79,6 +77,8 @@ function job_setup()
   state.Buff['Unlimited Shot'] = buffactive['Unlimited Shot'] or false
   state.Buff['Velocity Shot'] = buffactive['Velocity Shot'] or false
   state.Buff['Double Shot'] = buffactive['Double Shot'] or false
+
+  options.ammo_warning_limit = 10
 
   no_swap_waists = S{"Era. Bul. Pouch", "Dev. Bul. Pouch", "Chr. Bul. Pouch", "Quelling B. Quiver",
       "Yoichi's Quiver", "Artemis's Quiver", "Chrono Quiver"}
@@ -1808,94 +1808,150 @@ end
 -- Check for proper ammo when shooting or weaponskilling
 function check_ammo(spell, action, spellMap, eventArgs)
   local swapped_ammo = nil
-  local default_ammo = player.equipment.range and DefaultAmmo[player.equipment.range]
-  local magic_ammo = player.equipment.range and MagicAmmo[player.equipment.range]
-  local acc_ammo = player.equipment.range and AccAmmo[player.equipment.range]
-  local ws_ammo = player.equipment.range and WSAmmo[player.equipment.range]
+  local default_ammo
+  local magic_ammo
+  local acc_ammo
+  local ws_ammo
+  if player.main_job == 'RNG' then
+    default_ammo = player.equipment.range and DefaultAmmo[player.equipment.range]
+    magic_ammo = player.equipment.range and MagicAmmo[player.equipment.range]
+    acc_ammo = player.equipment.range and AccAmmo[player.equipment.range]
+    ws_ammo = player.equipment.range and WSAmmo[player.equipment.range]
+    qd_ammo = 'empty'
+  elseif player.main_job == 'COR' then
+    default_ammo = gear.RAbullet
+    magic_ammo = gear.MAbullet
+    acc_ammo = gear.RAccbullet
+    ws_ammo = gear.WSbullet
+    qd_ammo = gear.QDbullet
+  end
 
   if spell.action_type == 'Ranged Attack' then
-    if player.equipment.ammo == 'empty' or player.equipment.ammo ~= default_ammo then
-      if default_ammo then
-        if has_item(default_ammo) then
-          swapped_ammo = default_ammo
-          equip({ammo=swapped_ammo})
-        else
-          swapped_ammo = empty
-          equip({ammo=swapped_ammo})
-          add_to_chat(3,"Default ammo unavailable. Leaving empty.")
-        end
+    -- If in ranged acc mode, use acc bullet (fall back to default bullet if out of acc ammo)
+    if state.RangedMode.value ~= 'Normal' then
+      if acc_ammo and has_item(acc_ammo) then
+        swapped_ammo = acc_ammo
+        equip({ammo=swapped_ammo})
+      elseif default_ammo and has_item(default_ammo) then
+        -- Fall back to default ammo, if there is any
+        swapped_ammo = default_ammo
+        equip({ammo=swapped_ammo})
+        add_to_chat(3,"Acc ammo unavailable. Falling back to default ammo.")
       else
-        add_to_chat(3,"Unable to determine default ammo for current weapon. Leaving empty.")
+        -- If neither is available, empty the ammo slot
+        swapped_ammo = empty
+        equip({ammo=swapped_ammo})
+        cancel_spell()
+        add_to_chat(123, '** Action Canceled: [ Acc & default ammo unavailable. ] **')
+        return
       end
+    elseif default_ammo and has_item(default_ammo) then
+      swapped_ammo = default_ammo
+      equip({ammo=swapped_ammo})
+    else
+      swapped_ammo = empty
+      equip({ammo=swapped_ammo})
+      cancel_spell()
+      add_to_chat(123, '** Action Canceled: [ Default ammo unavailable. ] **')
+      return
     end
   elseif spell.type == 'WeaponSkill' then
     -- magical weaponskills
     if elemental_ws:contains(spell.english) then
-      if has_item(magic_ammo) then
+      if magic_ammo and has_item(magic_ammo) then
         swapped_ammo = magic_ammo
         equip({ammo=swapped_ammo})
-      elseif has_item(default_ammo) then
-        add_to_chat(3,"Magic ammo unavailable. Using default ammo.")
+      elseif default_ammo and has_item(default_ammo) then
         swapped_ammo = default_ammo
         equip({ammo=swapped_ammo})
+        add_to_chat(3,"Magic ammo unavailable. Using default ammo.")
       else
         swapped_ammo = empty
         equip({ammo=swapped_ammo})
-        add_to_chat(3,"Magic & default ammo unavailable. Leaving empty.")
+        cancel_spell()
+        add_to_chat(123, '** Action Canceled: [ Magic & default ammo unavailable. ] **')
+        return
       end
     -- physical weaponskills
     else
       -- physical ranged weaponskills
       if spell.skill == 'Marksmanship' or spell.skill == 'Archery' then
-        if state.RangedMode.value == 'Acc' then
-          if has_item(acc_ammo) then
+        if state.RangedMode.value ~= 'Normal' then
+          if acc_ammo and has_item(acc_ammo) then
             swapped_ammo = acc_ammo
             equip({ammo=swapped_ammo})
-          elseif has_item(default_ammo) then
-            add_to_chat(3,"Acc ammo unavailable. Using default ammo.")
+          elseif ws_ammo and has_item(ws_ammo) then
+            swapped_ammo = ws_ammo
+            equip({ammo=swapped_ammo})
+            add_to_chat(3,"Acc ammo unavailable. Using WS ammo.")
+          elseif default_ammo and has_item(default_ammo) then
             swapped_ammo = default_ammo
             equip({ammo=swapped_ammo})
+            add_to_chat(3,"Acc & WS ammo unavailable. Using default ammo.")
           else
-            add_to_chat(3,"Acc & default ammo unavailable. Unequipping ammo.")
             swapped_ammo = empty
             equip({ammo=swapped_ammo})
+            cancel_spell()
+            add_to_chat(123, '** Action Canceled: [ Acc, WS, & default ammo unavailable. ] **')
+            return
           end
         else
-          if has_item(ws_ammo) then
+          if ws_ammo and has_item(ws_ammo) then
             swapped_ammo = ws_ammo
             equip({ammo=swapped_ammo})
           elseif has_item(default_ammo) then
-            add_to_chat(3,"WS ammo unavailable. Using default ammo.")
             swapped_ammo = default_ammo
             equip({ammo=swapped_ammo})
+            add_to_chat(3,"WS ammo unavailable. Using default ammo.")
           else
-            add_to_chat(3,"WS & default ammo unavailable. Unequipping ammo.")
             swapped_ammo = empty
             equip({ammo=swapped_ammo})
+            cancel_spell()
+            add_to_chat(123, '** Action Canceled: [ WS & default ammo unavailable. ] **')
+            return
           end
         end
       -- physical non-ranged weaponskills
       else
-        -- If ranged weapon set to sparrowhawk and using non-ranged WS, equip WSD ammo
-        local rweapon = state.RangedWeaponSet.current
-        if rweapon and rweapon:length() >= 11 and rweapon:startswith('Sparrowhawk') then
-          equip(sets.Special.HauksbokArrow)
+        -- If ranged weapon is accipiter/sparrowhawk and using non-ranged WS, equip WSD ammo
+        local rweapon = player.equipment.range
+        if rweapon and rweapon == 'Accipiter' or (rweapon:length() >= 11 and rweapon:startswith('Sparrowhawk'))
+            and has_item('Hauksbok Arrow') then
+          swapped_ammo = 'Hauksbok Arrow'
+          equip({ammo=swapped_ammo})
         end
       end
     end
+  elseif spell.type == 'CorsairShot' then
+    if qd_ammo and has_item(qd_ammo) then
+      swapped_ammo = qd_ammo
+      equip({ammo=swapped_ammo})
+    elseif has_item(default_ammo) then
+      swapped_ammo = default_ammo
+      equip({ammo=swapped_ammo})
+      add_to_chat(3,"QD ammo unavailable. Using default ammo.")
+    else
+      swapped_ammo = empty
+      equip({ammo=swapped_ammo})
+      cancel_spell()
+      add_to_chat(123, '** Action Canceled: [ QD & default ammo unavailable. ] **')
+      return
+    end
   elseif spell.english == "Shadowbind" or spell.english == "Bounty Shot" or spell.english == "Eagle Eye Shot" then
     if has_item(default_ammo) then
-      add_to_chat(3,"Using default ammo for JA.")
       swapped_ammo = default_ammo
       equip({ammo=swapped_ammo})
     else
-      add_to_chat(3,"Default ammo unavailable. Unequipping ammo.")
       swapped_ammo = empty
       equip({ammo=swapped_ammo})
+      cancel_spell()
+      add_to_chat(123, '** Action Canceled: [ Default ammo unavailable. ] **')
+      return
     end
   end
   local swapped_item = get_item(swapped_ammo)
-  if player.equipment.ammo ~= 'empty' and swapped_item ~= nil and swapped_item.count < 5 then
+  if player.equipment.ammo ~= 'empty' and swapped_item ~= nil and swapped_item.count < options.ammo_warning_limit
+      and not S{'hauksbok arrow', 'hauksbok bullet', 'animikii bullet'}:contains(swapped_item.shortname) then
     add_to_chat(39,"*** Ammo '"..swapped_item.shortname.."' running low! *** ("..swapped_item.count..")")
   end
 end

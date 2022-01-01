@@ -121,8 +121,6 @@ function job_setup()
 
   -- Whether to use Luzaf's Ring
   state.LuzafRing = M(false, "Luzaf's Ring")
-  -- Whether a warning has been given for low ammo
-  state.warned = M(false)
   state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger',
       'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
 
@@ -1358,7 +1356,7 @@ function job_precast(spell, action, spellMap, eventArgs)
 
   -- Check that proper ammo is available if we're using ranged attacks or similar.
   if spell.action_type == 'Ranged Attack' or spell.type == 'WeaponSkill' or spell.type == 'CorsairShot' then
-    do_bullet_checks(spell, spellMap, eventArgs)
+    check_ammo(spell, action, spellMap, eventArgs)
   end
 
   -- Gear
@@ -1385,16 +1383,12 @@ end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
   if spell.action_type == 'Ranged Attack' then
-    special_ammo_check()
     if flurry == 2 then
       equip(sets.precast.RA.Flurry2)
     elseif flurry == 1 then
       equip(sets.precast.RA.Flurry1)
     end
   elseif spell.type == 'WeaponSkill' then
-    if spell.skill == 'Marksmanship' then
-      special_ammo_check()
-    end
     -- Handle belts for elemental WS
     if elemental_ws:contains(spell.english) then
       local base_day_weather_mult = silibs.get_day_weather_multiplier(spell.element, false, false)
@@ -1928,83 +1922,188 @@ function display_roll_info(spell)
   end
 end
 
--- Determine whether we have sufficient ammo for the action being attempted.
-function do_bullet_checks(spell, spellMap, eventArgs)
-  local bullet_name
-  local bullet_min_count = 1
-
-  if spell.type == 'WeaponSkill' then
-    if spell.skill == "Marksmanship" then
-      if spell.english == 'Wildfire' or spell.english == 'Leaden Salute' then
-        -- magical weaponskills
-        bullet_name = gear.MAbullet
-      else
-        -- physical weaponskills
-        bullet_name = gear.WSbullet
-      end
-    else
-      -- Ignore non-ranged weaponskills
-      return
-    end
-  elseif spell.type == 'CorsairShot' then
-    bullet_name = gear.QDbullet
-  elseif spell.action_type == 'Ranged Attack' then
-    bullet_name = gear.RAbullet
-    if buffactive['Triple Shot'] then
-      bullet_min_count = 3
+function has_item(item_name)
+  if item_name and item_name ~= '' then
+    if player.inventory[item_name] then
+      return true
+    elseif player.wardrobe[item_name] then
+      return true
+    elseif player.wardrobe2[item_name] then
+      return true
+    elseif player.wardrobe3 and player.wardrobe3[item_name] then
+      return true
+    elseif player.wardrobe4 and player.wardrobe4[item_name] then
+      return true
     end
   end
-
-  local available_bullets = player.inventory[bullet_name] or player.wardrobe[bullet_name]
-
-  -- If no ammo is available, give appropriate warning and end.
-  if not available_bullets then
-    if spell.type == 'CorsairShot' and player.equipment.ammo ~= 'empty' then
-      add_to_chat(104, 'No Quick Draw ammo left.  Using what\'s currently equipped ('..player.equipment.ammo..').')
-      return
-    elseif spell.type == 'WeaponSkill' and player.equipment.ammo == gear.RAbullet then
-      add_to_chat(104, 'No weaponskill ammo left.  Using what\'s currently equipped (standard ranged bullets: '..player.equipment.ammo..').')
-      return
-    else
-      add_to_chat(104, 'No ammo ('..tostring(bullet_name)..') available for that action.')
-      eventArgs.cancel = true
-      return
-    end
-  end
-
-  -- Don't allow shooting or weaponskilling with ammo reserved for quick draw.
-  if spell.type ~= 'CorsairShot' and bullet_name == gear.QDbullet and available_bullets.count <= bullet_min_count then
-    add_to_chat(104, 'No ammo will be left for Quick Draw.  Cancelling.')
-    eventArgs.cancel = true
-    return
-  end
-
-  -- Low ammo warning.
-  if spell.type ~= 'CorsairShot' and state.warned.value == false
-    and available_bullets.count > 1 and available_bullets.count <= options.ammo_warning_limit then
-    local msg = '*****  LOW AMMO WARNING: '..bullet_name..' *****'
-    --local border = string.repeat("*", #msg)
-    local border = ""
-    for i = 1, #msg do
-        border = border .. "*"
-    end
-
-    add_to_chat(104, border)
-    add_to_chat(104, msg)
-    add_to_chat(104, border)
-
-    state.warned:set()
-  elseif available_bullets.count > options.ammo_warning_limit and state.warned then
-    state.warned:reset()
-  end
+  return false
 end
 
-function special_ammo_check()
-  -- Stop if Animikii/Hauksbok equipped
-  if no_shoot_ammo:contains(player.equipment.ammo) then
-    cancel_spell()
-    add_to_chat(123, '** Action Canceled: [ '.. player.equipment.ammo .. ' equipped!! ] **')
-    return
+function get_item(item_name)
+  if item_name and item_name ~= '' then
+    if player.inventory[item_name] then
+      return player.inventory[item_name]
+    elseif player.wardrobe[item_name] then
+      return player.wardrobe[item_name]
+    elseif player.wardrobe2[item_name] then
+      return player.wardrobe2[item_name]
+    elseif player.wardrobe3 and player.wardrobe3[item_name] then
+      return player.wardrobe3[item_name]
+    elseif player.wardrobe4 and player.wardrobe4[item_name] then
+      return player.wardrobe4[item_name]
+    end
+  end
+  return nil
+end
+
+-- Check for proper ammo when shooting or weaponskilling
+function check_ammo(spell, action, spellMap, eventArgs)
+  local swapped_ammo = nil
+  local default_ammo
+  local magic_ammo
+  local acc_ammo
+  local ws_ammo
+  if player.main_job == 'RNG' then
+    default_ammo = player.equipment.range and DefaultAmmo[player.equipment.range]
+    magic_ammo = player.equipment.range and MagicAmmo[player.equipment.range]
+    acc_ammo = player.equipment.range and AccAmmo[player.equipment.range]
+    ws_ammo = player.equipment.range and WSAmmo[player.equipment.range]
+    qd_ammo = 'empty'
+  elseif player.main_job == 'COR' then
+    default_ammo = gear.RAbullet
+    magic_ammo = gear.MAbullet
+    acc_ammo = gear.RAccbullet
+    ws_ammo = gear.WSbullet
+    qd_ammo = gear.QDbullet
+  end
+
+  if spell.action_type == 'Ranged Attack' then
+    -- If in ranged acc mode, use acc bullet (fall back to default bullet if out of acc ammo)
+    if state.RangedMode.value ~= 'Normal' then
+      if acc_ammo and has_item(acc_ammo) then
+        swapped_ammo = acc_ammo
+        equip({ammo=swapped_ammo})
+      elseif default_ammo and has_item(default_ammo) then
+        -- Fall back to default ammo, if there is any
+        swapped_ammo = default_ammo
+        equip({ammo=swapped_ammo})
+        add_to_chat(3,"Acc ammo unavailable. Falling back to default ammo.")
+      else
+        -- If neither is available, empty the ammo slot
+        swapped_ammo = empty
+        equip({ammo=swapped_ammo})
+        cancel_spell()
+        add_to_chat(123, '** Action Canceled: [ Acc & default ammo unavailable. ] **')
+        return
+      end
+    elseif default_ammo and has_item(default_ammo) then
+      swapped_ammo = default_ammo
+      equip({ammo=swapped_ammo})
+    else
+      swapped_ammo = empty
+      equip({ammo=swapped_ammo})
+      cancel_spell()
+      add_to_chat(123, '** Action Canceled: [ Default ammo unavailable. ] **')
+      return
+    end
+  elseif spell.type == 'WeaponSkill' then
+    -- magical weaponskills
+    if elemental_ws:contains(spell.english) then
+      if magic_ammo and has_item(magic_ammo) then
+        swapped_ammo = magic_ammo
+        equip({ammo=swapped_ammo})
+      elseif default_ammo and has_item(default_ammo) then
+        swapped_ammo = default_ammo
+        equip({ammo=swapped_ammo})
+        add_to_chat(3,"Magic ammo unavailable. Using default ammo.")
+      else
+        swapped_ammo = empty
+        equip({ammo=swapped_ammo})
+        cancel_spell()
+        add_to_chat(123, '** Action Canceled: [ Magic & default ammo unavailable. ] **')
+        return
+      end
+    -- physical weaponskills
+    else
+      -- physical ranged weaponskills
+      if spell.skill == 'Marksmanship' or spell.skill == 'Archery' then
+        if state.RangedMode.value ~= 'Normal' then
+          if acc_ammo and has_item(acc_ammo) then
+            swapped_ammo = acc_ammo
+            equip({ammo=swapped_ammo})
+          elseif ws_ammo and has_item(ws_ammo) then
+            swapped_ammo = ws_ammo
+            equip({ammo=swapped_ammo})
+            add_to_chat(3,"Acc ammo unavailable. Using WS ammo.")
+          elseif default_ammo and has_item(default_ammo) then
+            swapped_ammo = default_ammo
+            equip({ammo=swapped_ammo})
+            add_to_chat(3,"Acc & WS ammo unavailable. Using default ammo.")
+          else
+            swapped_ammo = empty
+            equip({ammo=swapped_ammo})
+            cancel_spell()
+            add_to_chat(123, '** Action Canceled: [ Acc, WS, & default ammo unavailable. ] **')
+            return
+          end
+        else
+          if ws_ammo and has_item(ws_ammo) then
+            swapped_ammo = ws_ammo
+            equip({ammo=swapped_ammo})
+          elseif has_item(default_ammo) then
+            swapped_ammo = default_ammo
+            equip({ammo=swapped_ammo})
+            add_to_chat(3,"WS ammo unavailable. Using default ammo.")
+          else
+            swapped_ammo = empty
+            equip({ammo=swapped_ammo})
+            cancel_spell()
+            add_to_chat(123, '** Action Canceled: [ WS & default ammo unavailable. ] **')
+            return
+          end
+        end
+      -- physical non-ranged weaponskills
+      else
+        -- If ranged weapon is accipiter/sparrowhawk and using non-ranged WS, equip WSD ammo
+        local rweapon = player.equipment.range
+        if rweapon and rweapon == 'Accipiter' or (rweapon:length() >= 11 and rweapon:startswith('Sparrowhawk'))
+            and has_item('Hauksbok Arrow') then
+          swapped_ammo = 'Hauksbok Arrow'
+          equip({ammo=swapped_ammo})
+        end
+      end
+    end
+  elseif spell.type == 'CorsairShot' then
+    if qd_ammo and has_item(qd_ammo) then
+      swapped_ammo = qd_ammo
+      equip({ammo=swapped_ammo})
+    elseif has_item(default_ammo) then
+      swapped_ammo = default_ammo
+      equip({ammo=swapped_ammo})
+      add_to_chat(3,"QD ammo unavailable. Using default ammo.")
+    else
+      swapped_ammo = empty
+      equip({ammo=swapped_ammo})
+      cancel_spell()
+      add_to_chat(123, '** Action Canceled: [ QD & default ammo unavailable. ] **')
+      return
+    end
+  elseif spell.english == "Shadowbind" or spell.english == "Bounty Shot" or spell.english == "Eagle Eye Shot" then
+    if has_item(default_ammo) then
+      swapped_ammo = default_ammo
+      equip({ammo=swapped_ammo})
+    else
+      swapped_ammo = empty
+      equip({ammo=swapped_ammo})
+      cancel_spell()
+      add_to_chat(123, '** Action Canceled: [ Default ammo unavailable. ] **')
+      return
+    end
+  end
+  local swapped_item = get_item(swapped_ammo)
+  if player.equipment.ammo ~= 'empty' and swapped_item ~= nil and swapped_item.count < options.ammo_warning_limit
+      and not S{'hauksbok arrow', 'hauksbok bullet', 'animikii bullet'}:contains(swapped_item.shortname) then
+    add_to_chat(39,"*** Ammo '"..swapped_item.shortname.."' running low! *** ("..swapped_item.count..")")
   end
 end
 
