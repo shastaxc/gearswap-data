@@ -29,7 +29,7 @@ function job_setup()
 
   state.WeaponSet = M{['description']='Weapon Set', 'Casting', 'Nehushtan',}
   state.CP = M(false, "Capacity Points Mode")
-	state.RecoverMode = M('35%', '60%', 'Always', 'Never')
+	state.RecoverMode = M('Always', '60%', '35%', 'Never')
 	state.MagicBurstMode = M{['description'] = 'Magic Burst Mode', 'Off', 'Single', 'Lock'}
 	state.ElementalMode = M{['description'] = 'Elemental Mode', 'Fire','Ice','Wind','Earth','Lightning','Water'}
 
@@ -68,7 +68,7 @@ function job_setup()
 
   send_command('bind @c gs c toggle CP')
 	send_command('bind @` gs c cycle MagicBurstMode')
-	send_command('bind @f10 gs c cycle RecoverMode')
+	send_command('bind @q gs c cycle RecoverMode')
 
   send_command('bind ^- gs c cycleback ElementalMode')
   send_command('bind ^= gs c cycle ElementalMode')
@@ -717,7 +717,7 @@ function init_gear_sets()
 
 	-- Gear that converts elemental damage done to recover MP.
 	sets.RecoverMP = {
-    -- body="Seidr Cotehardie",
+    body="Seidr Cotehardie",
   }
 
 	-- Gear for Magic Burst mode.
