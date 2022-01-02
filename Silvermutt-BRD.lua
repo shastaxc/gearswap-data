@@ -59,7 +59,13 @@ end
 
 -- Executes on first load and main job change
 function job_setup()
-  lockstyleset = 1
+  silibs.enable_cancel_outranged_ws()
+  silibs.enable_cancel_on_blocking_status()
+  silibs.enable_weapon_rearm()
+  silibs.enable_auto_lockstyle(1)
+  silibs.enable_premade_commands()
+  silibs.enable_th()
+
   -- Adjust this if using the Terpander (new +song instrument)
   info.ExtraSongInstrument = 'Daurdabla'
   -- How many extra songs we can keep from Daurdabla/Terpander
@@ -91,8 +97,8 @@ function job_setup()
   state.Etude = M{['description']='Etude', 'Sinewy Etude', 'Herculean Etude', 'Learned Etude', 'Sage Etude',
       'Quick Etude', 'Swift Etude', 'Vivacious Etude', 'Vital Etude', 'Dextrous Etude', 'Uncanny Etude',
       'Spirited Etude', 'Logical Etude', 'Enchanting Etude', 'Bewitching Etude'}
-  state.WeaponSet = M{['description']='Weapon Set', 'Carnwenhan', 'Twashtar', 'Naegling', 'Tauret', 'Aeneas', 'Cleaving', 'Free'}
-  state.BattleMode = M(false, 'Battle Mode')
+  state.WeaponSet = M{['description']='Weapon Set', 'Naegling', 'Carnwenhan', 'Twashtar', 'Tauret', 'Aeneas', 'Cleaving', 'Free'}
+  state.BattleMode = M(true, 'Battle Mode')
   state.WeaponLock = M(false, 'Weapon Lock')
 
   send_command('bind !s gs c faceaway')
@@ -124,6 +130,7 @@ end
 
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
+  silibs.user_setup_hook()
   -- Additional local binds
   include('Global-Binds.lua')
 
@@ -174,53 +181,68 @@ function init_gear_sets()
 
   -- FC caps 80% but some pieces will be replaced depending on spell type
   sets.precast.FC = {
-    sub="Genmei Shield",        -- __, __ (10, __, ___)
-    body="Inyanga Jubbah +2",   -- 14, __ (__,  8, 120)
-    hands=gear.Leyline_Gloves,  --  8, __ (__, __,  62)
-    neck="Orunmila's Torque",   --  5, __ (__, __, ___)
-    ear1="Loquac. Earring",     --  2, __ (__, __, ___)
-    ear2="Etiolation Earring",  --  1, __ (__,  3, ___)
-    ring1="Weatherspoon Ring",  --  5,  3 (__, __, ___)
-    ring2="Kishar Ring",        --  4, __ (__, __, ___)
-    -- main="Kali",                --  7, __ (__, __, ___)
-    -- range=gear.Linos_FC,        --  6, __ (__, __,  15)
-    -- head="Nahtirah Hat",        -- 10, __ (__, __,  75)
-    -- legs="Volte Brais",         --  8, __ (__, __, 142); Aya. Cosciales +2 good alt
-    -- feet="Volte Gaiters",       --  6, __ (__, __, 142); Navon Crackows good alt
-    -- ring1="Weather. Ring +1",   --  6,  4 (__, __, ___); Lebeche Ring good alt
-    -- back=gear.BRD_Song_Cape,    -- 10, __ (__, __, ___)
-    -- waist="Witful Belt",        --  3,  3 (__, __, ___)
-    -- 90 Fast Cast, 7 Quick Magic (10 PDT, 11 MDT, 556 MEVA)
-  } -- 39 Fast Cast, 3 Quick Magic (10 PDT, 11 MDT, 182 MEVA)
+    sub="Genmei Shield",        -- __ (10, __, ___)
+    body="Inyanga Jubbah +2",   -- 14 (__,  8, 120)
+    hands=gear.Leyline_Gloves,  --  8 (__, __,  62)
+    neck="Orunmila's Torque",   --  5 (__, __, ___)
+    ear1="Loquac. Earring",     --  2 (__, __, ___)
+    ear2="Etiolation Earring",  --  1 (__,  3, ___)
+    ring1="Defending Ring",     -- __ (10, 10, ___)
+    ring2="Kishar Ring",        --  4 (__, __, ___)
+    -- main="Kali",             --  7 (__, __, ___)
+    -- range=gear.Linos_FC,     --  6 (__, __,  15)
+    -- head="Bunzi's Hat",      -- 10 ( 7,  7, 123)
+    -- legs="Volte Brais",      --  8 (__, __, 142); Chironic good alt
+    -- feet="Volte Gaiters",    --  6 (__, __, 142); Chironic good alt
+    -- back=gear.BRD_Song_Cape, -- 10 (__, __, ___)
+    -- waist="Embla Sash",      --  5 (__, __, ___)
+    -- 86 Fast Cast (27 PDT, 28 MDT, 604 MEVA)
+  } -- 34 Fast Cast (20 PDT, 21 MDT, 182 MEVA)
 
   sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {
     waist="Siegel Sash",
   })
 
   -- Total cast speed cap 80%, fill in rest with defensive gear
-  sets.precast.FC.Cure = set_combine(sets.precast.FC, {
-    neck="Loricate Torque +1",      -- __, __, __ ( 6,  6, ___)
-    ear1="Hearty Earring",          -- __, __, __ (__, __, ___); Status resist
-    ring2="Defending Ring",         -- __, __, __ (10, 10, ___)
-    -- hands=gear.Gende_CureFC_hands,  --  7, __,  5 ( 4, __,  37)
-    -- legs="Brioso Cannions +3",      -- __, __, __ ( 8,  8, 127)
-    -- feet=gear.Vanya_B_feet,         -- __, __,  7 (__, __, 107)
-    -- ear2="Mendi. Earring",          -- __, __,  5 (__, __, ___)
-    -- 63 Fast Cast, 7 Quick Magic, 17 Cure Cast Time- (38 PDT, 32 MDT, 481 Magic Evasion)
-  })
+  sets.precast.FC.Cure = {
+    sub="Genmei Shield",              -- __, __ (10, __, ___)
+    body="Inyanga Jubbah +2",         -- 14, __ (__,  8, 120)
+    legs=gear.Nyame_B_legs,           -- __, __ ( 8,  8, 150)
+    neck="Loricate Torque +1",        -- __, __ ( 6,  6, ___)
+    ear2="Etiolation Earring",        --  1, __ (__,  3, ___)
+    ring1="Kishar Ring",              --  4, __ (__, __, ___)
+    ring2="Defending Ring",           -- __, __ (10, 10, ___)
+    -- main="Kali",                   --  7, __ (__, __, ___)
+    -- range=gear.Linos_FC,           --  6, __ (__, __,  15)
+    -- head="Bunzi's Hat",            -- 10, __ ( 7,  7, 123)
+    -- hands=gear.Gende_CureFC_hands, --  7,  5 ( 4, __,  37)
+    -- feet=gear.Vanya_B_feet,        -- __,  7 (__, __, 107)
+    -- ear1="Mendi. Earring",         -- __,  5 (__, __, ___)
+    -- back=gear.BRD_Song_Cape,       -- 10, __ (__, __, ___)
+    -- waist="Embla Sash",            --  5, __ (__, __, ___)
+    -- 64 Fast Cast, 17 Cure Cast Time- (45 PDT, 42 MDT, 552 Magic Evasion)
+  }
 
   -- Total cast speed cap 80%, "song cast time-" cap 50%, fill in rest with defensive gear
   -- Don't use Quick Magic for songs because lag might mess up midcast sets
-  sets.precast.FC.BardSong = set_combine(sets.precast.FC, {
-    neck="Loricate Torque +1",      -- __, __, __ ( 6,  6, ___)
-    ring1="Defending Ring",         -- __, __, __ (10, 10, ___)
-    -- head=gear.Gende_SongFC_head,    -- __,  5,  3 ( 4, __,  75)
-    -- hands=gear.Gende_SongFC_hands,  --  7,  5,  3 ( 4, __,  37)
-    -- legs=gear.Gende_SongFC_legs,    -- __, 10,  3 ( 4, __, 107)
-    -- feet=gear.Gende_SongFC_feet,    -- __,  5,  3 ( 4, __, 107)
-    -- waist="Embla Sash",             --  5, __, __ (__, __, ___)
-    -- 56 Fast Cast, 25 Song Cast Time-, 12 Song Recast- (42 PDT, 27 MDT, 461 Magic Evasion)
-  })
+  sets.precast.FC.BardSong = {
+    sub="Genmei Shield",              -- __, __, __ (10, __, ___)
+    body="Inyanga Jubbah +2",         -- 14, __, __ (__,  8, 120)
+    neck="Loricate Torque +1",        -- __, __, __ ( 6,  6, ___)
+    ear1="Loquac. Earring",           --  2, __, __ (__, __, ___)
+    ear2="Etiolation Earring",        --  1, __, __ (__,  3, ___)
+    ring1="Defending Ring",           -- __, __, __ (10, 10, ___)
+    ring2="Kishar Ring",              --  4, __, __ (__, __, ___)
+    -- main="Kali",                   --  7, __, __ (__, __, ___)
+    -- range=gear.Linos_FC,           --  6, __, __ (__, __,  15)
+    -- head="Bunzi's Hat",            -- 10, __, __ ( 7,  7, 123)
+    -- hands=gear.Gende_SongFC_hands, --  7,  5,  3 ( 4, __,  37)
+    -- legs=gear.Gende_SongFC_legs,   -- __, 10,  3 ( 4, __, 107)
+    -- feet="Volte Gaiters",          --  6, __, __ (__, __, 142); Chironic good alt
+    -- back=gear.BRD_Song_Cape,       -- 10, __, __ (__, __, ___)
+    -- waist="Embla Sash",            --  5, __, __ (__, __, ___)
+    -- 72 Fast Cast, 15 Song Cast Time-, 6 Song Recast- (41 PDT, 34 MDT, 544 Magic Evasion)
+  }
 
   sets.precast.FC.SongPlaceholder = set_combine(sets.precast.FC.BardSong, {
     range=info.ExtraSongInstrument,
@@ -228,8 +250,9 @@ function init_gear_sets()
 
   sets.precast.FC.Dispelga = set_combine(sets.precast.FC, {
     main="Daybreak",
-    -- sub="Ammurapi Shield", -- Not sure this is necessary
-    -- waist="Shinjutsu-no-Obi +1", -- Not sure this is necessary
+    sub="Genmei Shield",
+    -- sub="Ammurapi Shield", -- M.Acc
+    -- waist="Shinjutsu-no-Obi +1", -- Conserve MP
   })
 
   -- Precast sets to enhance JAs
@@ -274,57 +297,57 @@ function init_gear_sets()
     ear2="Ishvara Earring",       --  2, __, __, __, __, __, __, __
     ring1="Metamor. Ring +1",     -- __, __, __, __, __, __, 16, __
     waist="Kentarch Belt +1",     -- __, __, __,  3, __, 14, __, 10
-    -- range=gear.Linos_WS2,         --  3, __, __, __, 15, 15,  8, __
-    -- head="Bihu Roundlet +3",      -- __, __, __, __, 62, 37, 40, 24
-    -- body="Bihu Jstcorps. +3",     -- 10, __, __, __, 92, 53, 43, 41
-    -- hands="Bihu Cuffs +3",        -- __, __, __, __, 63, 38, 33, 38
-    -- legs="Bihu Cannions +3",      -- __, __, __, __, 64, 39, 43, __
-    -- feet="Bihu Slippers +3",      -- __, __, __, __, 61, 36, 48, 21
-    -- neck="Bard's Charm +2",       -- __,  3, __, __, __, 30, 25, 25
-    -- ear1="Regal Earring",         -- __, __, __, __, __, __, 10, __
-    -- ring2="Epaminondas's Ring",   --  5, __, __, __, __, __, __, __
-    -- back=gear.BRD_WS1_Cape,       -- 10, __, __, __, 20, 20, 30, __
+    -- range=gear.Linos_WS2,      --  3, __, __, __, 15, 15,  8, __
+    -- head="Bihu Roundlet +3",   -- __, __, __, __, 62, 37, 40, 24
+    -- body="Bihu Jstcorps. +3",  -- 10, __, __, __, 92, 53, 43, 41
+    -- hands="Bihu Cuffs +3",     -- __, __, __, __, 63, 38, 33, 38
+    -- legs="Bihu Cannions +3",   -- __, __, __, __, 64, 39, 43, __
+    -- feet="Bihu Slippers +3",   -- __, __, __, __, 61, 36, 48, 21
+    -- neck="Bard's Charm +2",    -- __,  3, __, __, __, 30, 25, 25
+    -- ear1="Regal Earring",      -- __, __, __, __, __, __, 10, __
+    -- ring2="Epaminondas's Ring",--  5, __, __, __, __, __, __, __
+    -- back=gear.BRD_WS1_Cape,    -- 10, __, __, __, 20, 20, 30, __
   } -- 30 WSD, 3 QA, 0 TA, 3 DA, 377 Att, 282 Acc, 296 CHR, 159 DEX
 
   -- Modifiers: 80% DEX
   sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {
-    head=gear.Lustratio_D_head,   -- __, __, __, __, __, __, 45
-    legs=gear.Lustratio_B_legs,   -- __, __, __, __, 38, 20, 43
-    feet=gear.Lustratio_D_feet,   -- __, __, __, __, __, __, 48
-    ear1="Moonshade Earring",     -- __, __, __, __, __,  4, __; 250 TP Bonus
-    ear2="Ishvara Earring",       --  2, __, __, __, __, __, __
-    ring1="Ilabrat Ring",         -- __, __, __, __, 25, __, 10
-    waist="Kentarch Belt +1",     -- __, __, __,  3, __, 14, 10
-    -- range=gear.Linos_WS3,         --  3, __, __, __, 15, 15,  8
-    -- body="Bihu Jstcorps. +3",     -- 10, __, __, __, 92, 53, 41
-    -- hands=gear.Lustratio_D_hands, -- __, __, __, __, __, 30, 54
-    -- neck="Bard's Charm +2",       -- __,  3, __, __, __, 30, 25
-    -- ring2="Epaminondas's Ring",   --  5, __, __, __, __, __, __
-    -- back=gear.BRD_WS1_Cape,       -- 10, __, __, __, 20, 20, 30
-    -- Lustr. Set bonus               8, __, __, __, __, __, __
+    head=gear.Lustratio_D_head,     -- __, __, __, __, __, __, 45
+    legs=gear.Lustratio_B_legs,     -- __, __, __, __, 38, 20, 43
+    feet=gear.Lustratio_D_feet,     -- __, __, __, __, __, __, 48
+    ear1="Moonshade Earring",       -- __, __, __, __, __,  4, __; 250 TP Bonus
+    ear2="Ishvara Earring",         --  2, __, __, __, __, __, __
+    ring1="Ilabrat Ring",           -- __, __, __, __, 25, __, 10
+    waist="Kentarch Belt +1",       -- __, __, __,  3, __, 14, 10
+    -- range=gear.Linos_WS3,        --  3, __, __, __, 15, 15,  8
+    -- body="Bihu Jstcorps. +3",    -- 10, __, __, __, 92, 53, 41
+    -- hands=gear.Lustratio_D_hands,-- __, __, __, __, __, 30, 54
+    -- neck="Bard's Charm +2",      -- __,  3, __, __, __, 30, 25
+    -- ring2="Epaminondas's Ring",  --  5, __, __, __, __, __, __
+    -- back=gear.BRD_WS1_Cape,      -- 10, __, __, __, 20, 20, 30
+    -- Lustr. Set bonus                 8, __, __, __, __, __, __
   }) -- 38 WSD, 3 QA, 0 TA, 3 DA, 190 Att, 186 Acc, 314 DEX
   sets.precast.WS["Rudra's Storm"].MaxTP = set_combine(sets.precast.WS["Rudra's Storm"], {
-    ear1="Odr Earring",           -- __, __, __, __, __, 10, 10
+    ear1="Odr Earring",             -- __, __, __, __, __, 10, 10
   })
 
   -- Modifiers: 50% DEX, Focus: crit rate
   sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
-    body="Ayanmo Corazza +2",     -- __, __, __,  7, __, 46, 48, __
-    legs=gear.Lustratio_B_legs,   -- __, __, __, __, 38, 20, 43,  3
-    neck="Fotia Gorget",          -- 10, __, __, __, __, __, __, __
-    ear1="Moonshade Earring",     -- __, __, __, __, __,  4, __, __; 250 TP Bonus
-    ear2="Brutal Earring",        -- __, __, __,  5, __, __, __, __
-    ring1="Hetairoi Ring",        -- __, __,  2, __, __, __, __,  1
-    ring2="Begrudging Ring",      -- __, __, __, __,  7,  7, __,  5
-    waist="Fotia Belt",           -- 10, __, __, __, __, __, __, __
-    -- range=gear.Linos_WS3,         --  3, __, __, __, 15, 15,  8, __
-    -- head="Blistering Sallet +1",  -- __, __, __,  3, __, 53, 41, 10
-    -- hands=gear.Lustratio_B_hands, -- __, __, __, __, __, 20, 52,  3
-    -- feet=gear.Lustratio_B_feet,   -- __, __, __, __, __, 20, 41,  3
-    -- back=gear.BRD_WS3_Cape,       -- __, __, __, __, 20, 20, 30, 10
+    body="Ayanmo Corazza +2",       -- __, __, __,  7, __, 46, 48, __
+    legs=gear.Lustratio_B_legs,     -- __, __, __, __, 38, 20, 43,  3
+    neck="Fotia Gorget",            -- 10, __, __, __, __, __, __, __
+    ear1="Moonshade Earring",       -- __, __, __, __, __,  4, __, __; 250 TP Bonus
+    ear2="Brutal Earring",          -- __, __, __,  5, __, __, __, __
+    ring1="Hetairoi Ring",          -- __, __,  2, __, __, __, __,  1
+    ring2="Begrudging Ring",        -- __, __, __, __,  7,  7, __,  5
+    waist="Fotia Belt",             -- 10, __, __, __, __, __, __, __
+    -- range=gear.Linos_WS3,        --  3, __, __, __, 15, 15,  8, __
+    -- head="Blistering Sallet +1", -- __, __, __,  3, __, 53, 41, 10
+    -- hands=gear.Lustratio_B_hands,-- __, __, __, __, __, 20, 52,  3
+    -- feet=gear.Lustratio_B_feet,  -- __, __, __, __, __, 20, 41,  3
+    -- back=gear.BRD_WS3_Cape,      -- __, __, __, __, 20, 20, 30, 10
   }) -- 23 WSD, 0 QA, 2 TA, 15 DA, 80 Att, 205 Acc, 263 DEX, 35 crit rate
   sets.precast.WS['Evisceration'].MaxTP = set_combine(sets.precast.WS['Evisceration'], {
-    ear1="Odr Earring",           -- __, __, __, __, __, 10, 10
+    ear1="Odr Earring",             -- __, __, __, __, __, 10, 10
   })
 
   -- Modifiers: 85% AGI, Focus: multi-attack
@@ -336,12 +359,12 @@ function init_gear_sets()
     ring1="Hetairoi Ring",        -- __, __,  2, __, __, __, __
     ring2="Ilabrat Ring",         -- __, __, __, __, __, __, 10
     waist="Fotia Belt",           -- 10, __, __, __, __, __, __
-    -- range=gear.Linos_WS4,         -- __,  3, __,  3, 15, 15, __
-    -- head="Bihu Roundlet +3",      -- __, __, __, __, 62, 37, 24
-    -- hands="Bihu Cuffs +3",        -- __, __, __, __, 63, 38, 15
-    -- legs=gear.Telchine_DA_legs,   --  3, __, __,  6, 20, __, 15
-    -- feet="Bihu Slippers +3",      -- __, __, __, __, 61, 36, 43
-    -- back=gear.BRD_WS4_Cape,       -- __, __, __, 10, 20, 20, 30
+    -- range=gear.Linos_WS4,      -- __,  3, __,  3, 15, 15, __
+    -- head="Bihu Roundlet +3",   -- __, __, __, __, 62, 37, 24
+    -- hands="Bihu Cuffs +3",     -- __, __, __, __, 63, 38, 15
+    -- legs=gear.Telchine_DA_legs,--  3, __, __,  6, 20, __, 15
+    -- feet="Bihu Slippers +3",   -- __, __, __, __, 61, 36, 43
+    -- back=gear.BRD_WS4_Cape,    -- __, __, __, 10, 20, 20, 30
     -- 23 WSD, 3 QA, 2 TA, 34 DA, 241 Att, 198 Acc, 170 AGI
   })
 
@@ -356,14 +379,14 @@ function init_gear_sets()
     ear1="Moonshade Earring",     -- __, __, __, __; 250 TP Bonus
     ear2="Friomisi Earring",      -- __, __, __, 10
     ring1="Shiva Ring +1",        -- __, __,  9,  3
-    -- range=gear.Linos_WS1,         --  3, __,  8, 20
-    -- ring2="Epaminondas's Ring",   --  5, __, __, __
-    -- back=gear.BRD_WS2_Cape,       -- 10, 30, __, __
-    -- waist="Orpheus's Sash",       -- 1-15% increase based on range
-    -- 48 WSD, 166 DEX, 203 INT, 246 MAB
+    waist="Skrymir Cord",         -- __, __, __,  5; +30 M.Dmg
+    -- range=gear.Linos_WS1,      --  3, __,  8, 20
+    -- ring2="Epaminondas's Ring",--  5, __, __, __
+    -- back=gear.BRD_WS2_Cape,    -- 10, 30, __, __
+    -- 48 WSD, 166 DEX, 203 INT, 251 MAB
   })
   sets.precast.WS['Aeolian Edge'].MaxTP = set_combine(sets.precast.WS['Aeolian Edge'], {
-    -- ear1="Regal Earring",         -- __, __, 10,  7
+    -- ear1="Regal Earring",      -- __, __, 10,  7
   })
 
   -- Modifiers: 50% STR / 50% MND
@@ -385,24 +408,24 @@ function init_gear_sets()
     -- 30 WSD, 3 QA, 2 TA, 5 DA, 397 Att, 272 Acc, 188 STR, 177 MND
   })
   sets.precast.WS['Savage Blade'].MaxTP = set_combine(sets.precast.WS['Savage Blade'], {
-    -- ear1="Vulcan's Pearl",        -- __, __, __, __, __, __,  4, __
+    -- ear1="Vulcan's Pearl",     -- __, __, __, __, __, __,  4, __
   })
 
   -- Modifiers: 100% STR
   sets.precast.WS['Circle Blade'] = set_combine(sets.precast.WS, {
-    ear2="Ishvara Earring",       --  2, __, __, __, __, __, __
-    waist="Sailfi Belt +1",       -- __, __,  2,  5, 15, __, 15
-    -- range=gear.Linos_WS5,         --  3, __, __, __, 15, 15,  8
-    -- head=gear.Lustratio_A_head,   -- __, __, __,  3, 20, __, 47
-    -- body="Bihu Jstcorps. +3",     -- 10, __, __, __, 92, 53, 39
-    -- hands=gear.Lustratio_A_hands, -- __, __, __,  3, 20, __, 30
-    -- legs="Bihu Cannions +3",      -- __, __, __, __, 64, 39, 33
-    -- feet=gear.Lustratio_A_feet,   -- __, __, __,  3, 20, __, 40
-    -- neck="Bard's Charm +2",       -- __,  3, __, __, __, 30, __
-    -- ear1="Vulcan's Pearl",        -- __, __, __, __, __, __,  4
-    -- ring1="Ifrit Ring +1",        -- __, __, __, __,  5, __,  9
-    -- ring2="Epaminondas's Ring",   --  5, __, __, __, __, __, __
-    -- back=gear.BRD_WS5_Cape,       -- 10, __, __, __, 20, 20, 30
+    ear2="Ishvara Earring",         --  2, __, __, __, __, __, __
+    waist="Sailfi Belt +1",         -- __, __,  2,  5, 15, __, 15
+    -- range=gear.Linos_WS5,        --  3, __, __, __, 15, 15,  8
+    -- head=gear.Lustratio_A_head,  -- __, __, __,  3, 20, __, 47
+    -- body="Bihu Jstcorps. +3",    -- 10, __, __, __, 92, 53, 39
+    -- hands=gear.Lustratio_A_hands,-- __, __, __,  3, 20, __, 30
+    -- legs="Bihu Cannions +3",     -- __, __, __, __, 64, 39, 33
+    -- feet=gear.Lustratio_A_feet,  -- __, __, __,  3, 20, __, 40
+    -- neck="Bard's Charm +2",      -- __,  3, __, __, __, 30, __
+    -- ear1="Vulcan's Pearl",       -- __, __, __, __, __, __,  4
+    -- ring1="Ifrit Ring +1",       -- __, __, __, __,  5, __,  9
+    -- ring2="Epaminondas's Ring",  --  5, __, __, __, __, __, __
+    -- back=gear.BRD_WS5_Cape,      -- 10, __, __, __, 20, 20, 30
   }) -- 30 WSD, 3 QA, 2 TA, 14 DA, 271 Att, 157 Acc, 255 STR
 
 
@@ -454,14 +477,14 @@ function init_gear_sets()
     -- hands="Brioso Cuffs +3",
   }
   sets.midcast.HonorMarch = {
-    -- range="Marsyas",
+    range="Marsyas",
     -- hands="Fili Manchettes +1",
   }
   sets.midcast.Threnody = {
     -- body="Mou. Manteel +1",
   }
   sets.midcast['Adventurer\'s Dirge'] = {
-    -- range="Marsyas",
+    range="Marsyas",
     -- hands="Bihu Cuffs +3",
   }
   sets.midcast['Foe Sirvente'] = {
@@ -471,7 +494,7 @@ function init_gear_sets()
     -- legs="Fili Rhingrave +1",
   }
   sets.midcast["Chocobo Mazurka"] = {
-    -- range="Marsyas",
+    range="Marsyas",
   }
 
   -- For song buffs (duration and AF3 set bonus)
@@ -498,22 +521,22 @@ function init_gear_sets()
 
   -- For song debuffs (duration primary, accuracy secondary)
   sets.midcast.SongEnfeeble = {
-    legs="Inyanga Shalwar +2",  -- 32, 17, 45, ___
-    ear1="Digni. Earring",      -- __, __, 10, ___
-    ring1="Stikini Ring +1",    -- __, __, 11, ___
-    -- main="Carnwenhan",          -- __, 50, 70, 255
-    -- sub="Ammurapi Shield",      -- __, __, 38, ___
+    legs="Inyanga Shalwar +2",    -- 32, 17, 45, ___
+    ear1="Digni. Earring",        -- __, __, 10, ___
+    ring1="Stikini Ring +1",      -- __, __, 11, ___
+    -- main="Carnwenhan",         -- __, 50, 70, 255
+    -- sub="Ammurapi Shield",     -- __, __, 38, ___
     -- range="Gjallarhorn",
-    -- head="Brioso Roundlet +3",  -- 41, __, 61, ___
-    -- body="Fili Hongreline +1",  -- 37, 12, __, ___
-    -- hands="Brioso Cuffs +3",    -- 39, __, 48, ___
-    -- feet="Brioso Slippers +3",  -- 48, 15, 46, ___
-    -- neck="Mnbw. Whistle +1",    -- 23, __, 23, ___
-    -- ear2="Regal Earring",       -- 10, __, __, ___; Adds to set bonus
-    -- ring2="Stikini Ring +1",    -- __, __, 11, ___
-    -- back=gear.BRD_Song_Cape,    -- 20, __, 30, ___
-    -- waist="Acuity Belt +1",     -- __, __, 15, ___
-    -- Set bonuses                 __, __, 45, ___
+    -- head="Brioso Roundlet +3", -- 41, __, 61, ___
+    -- body="Fili Hongreline +1", -- 37, 12, __, ___
+    -- hands="Brioso Cuffs +3",   -- 39, __, 48, ___
+    -- feet="Brioso Slippers +3", -- 48, 15, 46, ___
+    -- neck="Mnbw. Whistle +1",   -- 23, __, 23, ___
+    -- ear2="Regal Earring",      -- 10, __, __, ___; Adds to set bonus
+    -- ring2="Stikini Ring +1",   -- __, __, 11, ___
+    -- back=gear.BRD_Song_Cape,   -- 20, __, 30, ___
+    -- waist="Acuity Belt +1",    -- __, __, 15, ___
+    -- Set bonuses                   __, __, 45, ___
   } -- 250 CHR, 94% Duration, 453 M.Acc, 255 M.Acc skill
 
   -- For song debuffs (accuracy primary, duration secondary)
@@ -562,21 +585,25 @@ function init_gear_sets()
 
   sets.midcast.Curaga = sets.midcast.Cure
 
-  -- Cursna+ and healing magic skill
+  -- Removal rate = Base Rate * (1+(y/100))
+  -- Base rate = (10+(Healing Skill / 30)); y = Cursna+ stat from gear
+  -- BRD/WHM M20 Healing Magic Skill = 184, Base rate = 16.13%
   sets.midcast.Cursna = {
-    -- head=gear.Vanya_B_head,       -- __, 20
-    -- body=gear.Vanya_B_body,       -- __, 20
-    -- hands="Hieros Mittens",       -- 10, __
-    -- legs=gear.Vanya_B_legs,       -- __, 20
-    -- feet=gear.Vanya_B_feet,       -- __, 40
-    -- neck="Debilis Medallion",     -- 15, __
-    -- ear1="Beatific Earring",      -- __,  4
-    -- ear2="Meili Earring",         -- __, 10
-    -- ring1="Haoma's Ring",         -- 15,  8
-    -- ring2="Menelaus's Ring",      -- 20, 15
-    -- back="Oretan. Cape +1",       --  5, __
-    -- waist="Bishop's Sash",        -- __,  5
-    -- 65 Cursna+, 182 Healing Skill
+    -- head=gear.Vanya_B_head,       -- 20, __
+    -- body=gear.Vanya_B_body,       -- 20, __
+    -- hands="Hieros Mittens",       -- __, 10
+    -- legs=gear.Vanya_B_legs,       -- 20, __
+    -- feet=gear.Vanya_B_feet,       -- 40, __
+    -- neck="Debilis Medallion",     -- __, 15
+    -- ear1="Beatific Earring",      --  5, __
+    -- ear2="Meili Earring",         -- 10, __
+    -- ring1="Haoma's Ring",         --  8, 15
+    -- ring2="Menelaus's Ring",      -- 15, 20
+    -- back="Oretan. Cape +1",       -- __,  5
+    -- waist="Bishop's Sash",        --  5, __
+    -- Base stats                      184, __
+    -- 327 Healing skill, 65 Cursna+
+    -- Removal rate = 34.49%
   }
 
   sets.midcast['Enhancing Magic'] = {
@@ -660,27 +687,17 @@ function init_gear_sets()
     main="Gozuki Mezuki",             -- Just to enable use of grip
     neck="Bathy Choker +1",           -- 3
     ear2="Infused Earring",           -- 1
-    ring1="Chirich Ring +1",          -- 2
-    -- sub="Mensch Strap +1",            -- 3
-    -- head=gear.Telchine_Regen_head,    -- 2
-    -- body=gear.Telchine_Regen_body,    -- 2
-    -- hands=gear.Telchine_Regen_hands,  -- 2
-    -- legs=gear.Telchine_Regen_legs,    -- 2
-    -- feet="Fili Cothurnes +1",         -- 2
-    -- ring2="Chirich Ring +1",          -- 2
+    ring2="Chirich Ring +1",          -- 2
+    -- sub="Mensch Strap +1",         -- 3
     -- Spare ambu cape can have 5 Regen
   }
   sets.latent_refresh = {
-    ring1="Stikini Ring +1",          -- 1
-    -- main="Contemplator +1",           -- 2
-    -- sub="Oneiros Grip",               -- 1
-    -- head=gear.Chironic_Refresh_head,  -- 2
-    -- body="Kaykaus Bliaut +1",         -- 3; Gendewitha bliaut +1 good alt
-    -- hands=gear.Chironic_Refresh_hands,-- 2
-    -- legs="Assid. Pants +1",           -- 2
-    -- feet=gear.Chironic_Refresh_feet,  -- 2
-    -- neck="Chrys. Torque",             -- 1
-    -- ring2="Stikini Ring +1",          -- 1
+    ring2="Stikini Ring +1",          -- 1
+    -- main="Mpaca's Staff",          -- 2; Contemplator +1 good alt
+    -- sub="Oneiros Grip",            -- 1
+    -- body="Kaykaus Bliaut +1",      -- 3; Gendewitha bliaut +1 good alt
+    -- neck="Chrys. Torque",          -- 1
+    -- ring1="Stikini Ring +1",       -- 1
   }
   sets.latent_refresh_sub50 = set_combine(sets.latent_refresh, {
     waist="Fucho-no-Obi",
@@ -696,15 +713,15 @@ function init_gear_sets()
     legs=gear.Nyame_B_legs,   --  8,  8, 150
     feet=gear.Nyame_B_feet,   --  7,  7, 150
     neck="Loricate Torque +1",--  6,  6, ___
+    ear1="Hearty Earring",    -- __, __, ___; Status resist
     ear2="Etiolation Earring",-- __,  3, ___; Status resist
     ring1="Defending Ring",   -- 10, 10, ___
     ring2="Moonlight Ring",   --  5,  5, ___; Gel. Ring +1 acceptable alt
     back="Moonlight Cape",    --  6,  6, ___
-    -- main="Barfawc",           -- 12, 12, ___
-    -- range=gear.Linos_DT,      --  5, __,  15
-    -- body="Ashera Harness",    --  7,  7,  96; Status resist, Mousai Manteel +1 good alt
-    -- ear1="Hearty Earring",    -- __, __, ___; Status resist
-    -- waist="Flume Belt +1",    --  4, __, ___
+    -- main="Barfawc",        -- 12, 12, ___
+    -- range=gear.Linos_DT,   --  5, __,  15
+    -- body="Ashera Harness", --  7,  7,  96; Status resist, Mousai Manteel +1 good alt
+    -- waist="Flume Belt +1", --  4, __, ___
     -- 94 PDT, 78 MDT, 646 MEVA
   }
 
@@ -747,46 +764,45 @@ function init_gear_sets()
 
   sets.engaged = {
     -- Acceptable
-    head="Aya. Zucchetto +2",     -- __,  6, __, __, __, __, 44
-    body="Ayanmo Corazza +2",     -- __, __, __, __,  7, __, 46
-    legs="Aya. Cosciales +2",     -- __, __, __, __, __, __, 45
-    ear1="Brutal Earring",        -- __,  1, __, __,  5, __, __
-    ear2="Telos Earring",         -- __,  5, __, __,  1, 10, 10
-    ring1="Ilabrat Ring",         -- __,  5, __, __, __, 25, __
-    ring2="Chirich Ring +1",      -- __,  6, __, __, __, __, 10
-    waist="Windbuffet Belt +1",   -- __, __,  2,  2, __, __,  2
-    -- range=gear.Linos_TP,          -- __,  4,  3, __, __, __, 20
-    -- hands=gear.Chironic_QA_hands, -- __,  3, __, __, __, 32, 45
-    -- feet=gear.Chironic_QA_feet,   -- __,  3, __, __, __, 52, 30
-    -- neck="Bard's Charm +1",       -- __,  6,  2, __, __, __, 25
-    -- back=gear.BRD_STP_Cape,       -- __, 10, __, __, __, 20, 20
-    -- Acceptable: 0 DW, 49 STP, 7 QA, 2 TA, 13 DA, 139 Att, 297 Acc
+    head="Aya. Zucchetto +2",         -- __,  6, __, __, __, __, 44,  3/ 3
+    body="Ayanmo Corazza +2",         -- __, __, __, __,  7, __, 46,  6/ 6
+    legs="Aya. Cosciales +2",         -- __, __, __, __, __, __, 45,  5/ 5
+    ear1="Brutal Earring",            -- __,  1, __, __,  5, __, __, __/__
+    ear2="Telos Earring",             -- __,  5, __, __,  1, 10, 10, __/__
+    ring1="Ilabrat Ring",             -- __,  5, __, __, __, 25, __, __/__
+    ring2="Chirich Ring +1",          -- __,  6, __, __, __, __, 10, __/__
+    waist="Windbuffet Belt +1",       -- __, __,  2,  2, __, __,  2, __/__
+    -- range=gear.Linos_TP,           -- __,  4,  3, __, __, __, 20, __/__
+    -- hands=gear.Chironic_QA_hands,  -- __,  3, __, __, __, 32, 45, __/__
+    -- feet=gear.Chironic_QA_feet,    -- __,  3, __, __, __, 52, 30,  2/__
+    -- neck="Bard's Charm +1",        -- __,  6,  2, __, __, __, 25, __/__
+    -- back=gear.BRD_STP_Cape,        -- __, 10, __, __, __, 20, 20, 10/__
+    -- Acceptable: 0 DW, 49 STP, 7 QA, 2 TA, 13 DA, 139 Att, 297 Acc, 26PDT/14MDT
 
     -- Ideal
-    -- range=gear.Linos_TP,          -- __,  4,  3, __, __, __, 20
-    -- head="Aya. Zucchetto +2",     -- __,  6, __, __, __, __, 44
-    -- body="Ashera Harness",        -- __, 10, __, __, __, 45, 45
-    -- hands="Volte Mittens",        -- __,  6, __, __, __, __, 36
-    -- legs="Volte Tights",          -- __,  8, __, __, __, __, 38
-    -- feet="Volte Spats",           -- __,  6, __, __, __, __, 35
-    -- neck="Bard's Charm +2",       -- __,  7,  3, __, __, __, 30
-    -- ear1="Brutal Earring",        -- __,  1, __, __,  5, __, __
-    -- ear2="Telos Earring",         -- __,  5, __, __,  1, 10, 10
-    -- ring1="Ilabrat Ring",         -- __,  5, __, __, __, 25, __
-    -- ring2="Chirich Ring +1",      -- __,  6, __, __, __, __, 10
-    -- back=gear.BRD_STP_Cape,       -- __, 10, __, __, __, 20, 20
-    -- waist="Windbuffet Belt +1",   -- __, __,  2,  2, __, __,  2
-    -- Ideal: 0 DW, 74 STP, 8 QA, 2 TA, 6 DA, 100 Att, 290 Acc
+    -- range=gear.Linos_TP,           -- __,  4,  3, __, __, __, 20, __/__
+    -- head="Aya. Zucchetto +2",      -- __,  6, __, __, __, __, 44,  3/ 3
+    -- body="Ashera Harness",         -- __, 10, __, __, __, 45, 45,  7/ 7
+    -- hands="Volte Mittens",         -- __,  6, __, __, __, __, 36, __/__
+    -- legs="Volte Tights",           -- __,  8, __, __, __, __, 38, __/__
+    -- feet="Volte Spats",            -- __,  6, __, __, __, __, 35, __/__
+    -- neck="Bard's Charm +2",        -- __,  7,  3, __, __, __, 30, __/__
+    -- ear1="Brutal Earring",         -- __,  1, __, __,  5, __, __, __/__
+    -- ear2="Telos Earring",          -- __,  5, __, __,  1, 10, 10, __/__
+    -- ring1="Ilabrat Ring",          -- __,  5, __, __, __, 25, __, __/__
+    -- ring2="Chirich Ring +1",       -- __,  6, __, __, __, __, 10, __/__
+    -- back=gear.BRD_STP_Cape,        -- __, 10, __, __, __, 20, 20, 10/__
+    -- waist="Windbuffet Belt +1",    -- __, __,  2,  2, __, __,  2, __/__
+    -- Ideal: 0 DW, 74 STP, 8 QA, 2 TA, 6 DA, 100 Att, 290 Acc, 20PDT/10MDT
   }
-
   sets.engaged.Acc = set_combine(sets.engaged, {
-    legs="Aya. Cosciales +2",     -- __, __, __, __, __, __, 45
-    ear1="Dignitary's Earring",   -- __,  3, __, __, __, __, 10
-    ring1="Chirich Ring +1",      -- __,  6, __, __, __, __, 10
-    waist="Olseni Belt",          -- __,  3, __, __, __, -5, 20
-    -- hands="Raetic Bangles +1",    -- __, __, __, __, __, __, 55
-    -- Acceptable: 0 DW, 52 STP, 5 QA, 0 TA, 8 DA, 77 Att, 345 Acc
-    -- Ideal: 0 DW, 74 STP, 6 QA, 0 TA, 1 DA, 70 Att, 354 Acc
+    legs="Aya. Cosciales +2",         -- __, __, __, __, __, __, 45,  5/ 5
+    ear1="Dignitary's Earring",       -- __,  3, __, __, __, __, 10, __/__
+    ring1="Chirich Ring +1",          -- __,  6, __, __, __, __, 10, __/__
+    waist="Olseni Belt",              -- __,  3, __, __, __, -5, 20, __/__
+    -- hands="Raetic Bangles +1",     -- __, __, __, __, __, __, 55, __/__
+    -- Acceptable: 0 DW, 52 STP, 5 QA, 0 TA, 8 DA, 77 Att, 345 Acc, 26PDT/14MDT
+    -- Ideal: 0 DW, 74 STP, 6 QA, 0 TA, 1 DA, 70 Att, 354 Acc, 25PDT/15MDT
   })
 
   -- * DNC Subjob DW Trait: +15%
@@ -795,44 +811,44 @@ function init_gear_sets()
   -- No Magic/Gear/JA Haste (49% from gear to cap)
   sets.engaged.DW = {
     -- Acceptable
-    head="Aya. Zucchetto +2",     -- __,  6, __, __, __, __, 44
-    body="Ayanmo Corazza +2",     -- __, __, __, __,  7, __, 46
-    legs="Aya. Cosciales +2",     -- __, __, __, __, __, __, 45
-    ear1="Eabani Earring",        --  4, __, __, __, __, __, __
-    ear2="Suppanomimi",           --  5, __, __, __, __, __, __
-    ring1="Ilabrat Ring",         -- __,  5, __, __, __, 25, __
-    ring2="Chirich Ring +1",      -- __,  6, __, __, __, __, 10
-    waist="Reiki Yotai",          --  7,  4, __, __, __, __, 10
-    -- range=gear.Linos_TP,          -- __,  4,  3, __, __, __, 20
-    -- hands=gear.Chironic_QA_hands, -- __,  3, __, __, __, 32, 45
-    -- feet=gear.Chironic_QA_feet,   -- __,  3, __, __, __, 52, 30
-    -- neck="Bard's Charm +1",       -- __,  6,  2, __, __, __, 25
-    -- back=gear.BRD_DW_Cape,        -- 10, __, __, __, __, 20, 30
-    -- Acceptable: 26 DW, 37 STP, 5 QA, 0 TA, 7 DA, 129 Att, 305 Acc
+    head="Aya. Zucchetto +2",         -- __,  6, __, __, __, __, 44,  3/ 3
+    body="Ayanmo Corazza +2",         -- __, __, __, __,  7, __, 46,  6/ 6
+    legs="Aya. Cosciales +2",         -- __, __, __, __, __, __, 45,  5/ 5
+    ear1="Eabani Earring",            --  4, __, __, __, __, __, __, __/__
+    ear2="Suppanomimi",               --  5, __, __, __, __, __, __, __/__
+    ring1="Ilabrat Ring",             -- __,  5, __, __, __, 25, __, __/__
+    ring2="Chirich Ring +1",          -- __,  6, __, __, __, __, 10, __/__
+    waist="Reiki Yotai",              --  7,  4, __, __, __, __, 10, __/__
+    -- range=gear.Linos_TP,           -- __,  4,  3, __, __, __, 20, __/__
+    -- hands=gear.Chironic_QA_hands,  -- __,  3, __, __, __, 32, 45, __/__
+    -- feet=gear.Chironic_QA_feet,    -- __,  3, __, __, __, 52, 30,  2/__
+    -- neck="Bard's Charm +1",        -- __,  6,  2, __, __, __, 25, __/__
+    -- back=gear.BRD_DW_Cape,         -- 10, __, __, __, __, 20, 30, 10/__
+    -- Acceptable: 26 DW, 37 STP, 5 QA, 0 TA, 7 DA, 129 Att, 305 Acc, 26PDT/14MDT
 
     -- Ideal
-    -- range=gear.Linos_TP,          -- __,  4,  3, __, __, __, 20
-    -- head="Aya. Zucchetto +2",     -- __,  6, __, __, __, __, 44
-    -- body="Ashera Harness",        -- __, 10, __, __, __, 45, 45
-    -- hands="Volte Mittens",        -- __,  6, __, __, __, __, 36
-    -- legs="Volte Tights",          -- __,  8, __, __, __, __, 38
-    -- feet="Volte Spats",           -- __,  6, __, __, __, __, 35
-    -- neck="Bard's Charm +2",       -- __,  7,  3, __, __, __, 30
-    -- ear1="Eabani Earring",        --  4, __, __, __, __, __, __
-    -- ear2="Suppanomimi",           --  5, __, __, __, __, __, __
-    -- ring1="Ilabrat Ring",         -- __,  5, __, __, __, 25, __
-    -- ring2="Chirich Ring +1",      -- __,  6, __, __, __, __, 10
-    -- back=gear.BRD_DW_Cape,        -- 10, __, __, __, __, 20, 30
-    -- waist="Reiki Yotai",          --  7,  4, __, __, __, __, 10
-    -- Ideal: 26 DW, 62 STP, 6 QA, 0 TA, 0 DA, 90 Att, 298 Acc
+    -- range=gear.Linos_TP,           -- __,  4,  3, __, __, __, 20, __/__
+    -- head="Aya. Zucchetto +2",      -- __,  6, __, __, __, __, 44,  3/ 3
+    -- body="Ashera Harness",         -- __, 10, __, __, __, 45, 45,  7/ 7
+    -- hands="Volte Mittens",         -- __,  6, __, __, __, __, 36, __/__
+    -- legs="Volte Tights",           -- __,  8, __, __, __, __, 38, __/__
+    -- feet="Volte Spats",            -- __,  6, __, __, __, __, 35, __/__
+    -- neck="Bard's Charm +2",        -- __,  7,  3, __, __, __, 30, __/__
+    -- ear1="Eabani Earring",         --  4, __, __, __, __, __, __, __/__
+    -- ear2="Suppanomimi",            --  5, __, __, __, __, __, __, __/__
+    -- ring1="Ilabrat Ring",          -- __,  5, __, __, __, 25, __, __/__
+    -- ring2="Chirich Ring +1",       -- __,  6, __, __, __, __, 10, __/__
+    -- back=gear.BRD_DW_Cape,         -- 10, __, __, __, __, 20, 30, 10/__
+    -- waist="Reiki Yotai",           --  7,  4, __, __, __, __, 10, __/__
+    -- Ideal: 26 DW, 62 STP, 6 QA, 0 TA, 0 DA, 90 Att, 298 Acc, 20PDT/10MDT
   } -- Only 26% DW; doesn't cap but can't get much better
   sets.engaged.DW.Acc = set_combine(sets.engaged.DW, {
-    legs="Aya. Cosciales +2",     -- __, __, __, __, __, __, 45
-    ear1="Dignitary's Earring",   -- __,  3, __, __, __, __, 10
-    ring1="Chirich Ring +1",      -- __,  6, __, __, __, __, 10
-    -- hands="Raetic Bangles +1",    -- __, __, __, __, __, __, 55
-    -- Acceptable: 26 DW, 38 STP, 5 QA, 0 TA, 7 DA, 72 Att, 335 Acc
-    -- Ideal: 26 DW, 52 STP, 6 QA, 0 TA, 0 DA, 65 Att, 344 Acc
+    legs="Aya. Cosciales +2",         -- __, __, __, __, __, __, 45,  5/ 5
+    ear1="Dignitary's Earring",       -- __,  3, __, __, __, __, 10, __/__
+    ring1="Chirich Ring +1",          -- __,  6, __, __, __, __, 10, __/__
+    -- hands="Raetic Bangles +1",     -- __, __, __, __, __, __, 55, __/__
+    -- Acceptable: 26 DW, 38 STP, 5 QA, 0 TA, 7 DA, 72 Att, 335 Acc, 26PDT/14MDT
+    -- Ideal: 26 DW, 52 STP, 6 QA, 0 TA, 0 DA, 65 Att, 344 Acc, 25PDT/15MDT
   })
 
   -- Low Magic/Gear/JA Haste (42% from gear to cap)
@@ -846,85 +862,85 @@ function init_gear_sets()
   -- High Magic/Gear/JA Haste (21% from gear to cap)
   sets.engaged.DW.HighHaste = {
     -- Acceptable
-    head="Aya. Zucchetto +2",     -- __,  6, __, __, __, __, 44
-    body="Ayanmo Corazza +2",     -- __, __, __, __,  7, __, 46
-    legs="Aya. Cosciales +2",     -- __, __, __, __, __, __, 45
-    ear1="Eabani Earring",        --  4, __, __, __, __, __, __
-    ear2="Telos Earring",         -- __,  5, __, __,  1, 10, 10
-    ring1="Ilabrat Ring",         -- __,  5, __, __, __, 25, __
-    ring2="Chirich Ring +1",      -- __,  6, __, __, __, __, 10
-    waist="Reiki Yotai",          --  7,  4, __, __, __, __, 10
-    -- range=gear.Linos_TP,          -- __,  4,  3, __, __, __, 20
-    -- hands=gear.Chironic_QA_hands, -- __,  3, __, __, __, 32, 45
-    -- feet=gear.Chironic_QA_feet,   -- __,  3, __, __, __, 52, 30
-    -- neck="Bard's Charm +1",       -- __,  6,  2, __, __, __, 25
-    -- back=gear.BRD_DW_Cape,        -- 10, __, __, __, __, 20, 30
-    -- Acceptable: 21 DW, 42 STP, 5 QA, 0 TA, 8 DA, 139 Att, 315 Acc
+    head="Aya. Zucchetto +2",         -- __,  6, __, __, __, __, 44,  3/ 3
+    body="Ayanmo Corazza +2",         -- __, __, __, __,  7, __, 46,  6/ 6
+    legs="Aya. Cosciales +2",         -- __, __, __, __, __, __, 45,  5/ 5
+    ear1="Eabani Earring",            --  4, __, __, __, __, __, __, __/__
+    ear2="Telos Earring",             -- __,  5, __, __,  1, 10, 10, __/__
+    ring1="Ilabrat Ring",             -- __,  5, __, __, __, 25, __, __/__
+    ring2="Chirich Ring +1",          -- __,  6, __, __, __, __, 10, __/__
+    waist="Reiki Yotai",              --  7,  4, __, __, __, __, 10, __/__
+    -- range=gear.Linos_TP,           -- __,  4,  3, __, __, __, 20, __/__
+    -- hands=gear.Chironic_QA_hands,  -- __,  3, __, __, __, 32, 45, __/__
+    -- feet=gear.Chironic_QA_feet,    -- __,  3, __, __, __, 52, 30,  2/__
+    -- neck="Bard's Charm +1",        -- __,  6,  2, __, __, __, 25, __/__
+    -- back=gear.BRD_DW_Cape,         -- 10, __, __, __, __, 20, 30, 10/__
+    -- Acceptable: 21 DW, 42 STP, 5 QA, 0 TA, 8 DA, 139 Att, 315 Acc, 26PDT/14MDT
 
     -- Ideal
-    -- range=gear.Linos_TP,          -- __,  4,  3, __, __, __, 20
-    -- head="Aya. Zucchetto +2",     -- __,  6, __, __, __, __, 44
-    -- body="Ashera Harness",        -- __, 10, __, __, __, 45, 45
-    -- hands="Volte Mittens",        -- __,  6, __, __, __, __, 36
-    -- legs="Volte Tights",          -- __,  8, __, __, __, __, 38
-    -- feet="Volte Spats",           -- __,  6, __, __, __, __, 35
-    -- neck="Bard's Charm +2",       -- __,  7,  3, __, __, __, 30
-    -- ear1="Eabani Earring",        --  4, __, __, __, __, __, __
-    -- ear2="Telos Earring",         -- __,  5, __, __,  1, 10, 10
-    -- ring1="Ilabrat Ring",         -- __,  5, __, __, __, 25, __
-    -- ring2="Chirich Ring +1",      -- __,  6, __, __, __, __, 10
-    -- back=gear.BRD_DW_Cape,        -- 10, __, __, __, __, 20, 30
-    -- waist="Reiki Yotai",          --  7,  4, __, __, __, __, 10
-    -- 21 DW, 67 STP, 6 QA, 0 TA, 1 DA, 100 Att, 308 Acc
+    -- range=gear.Linos_TP,           -- __,  4,  3, __, __, __, 20, __/__
+    -- head="Aya. Zucchetto +2",      -- __,  6, __, __, __, __, 44,  3/ 3
+    -- body="Ashera Harness",         -- __, 10, __, __, __, 45, 45,  7/ 7
+    -- hands="Volte Mittens",         -- __,  6, __, __, __, __, 36, __/__
+    -- legs="Volte Tights",           -- __,  8, __, __, __, __, 38, __/__
+    -- feet="Volte Spats",            -- __,  6, __, __, __, __, 35, __/__
+    -- neck="Bard's Charm +2",        -- __,  7,  3, __, __, __, 30, __/__
+    -- ear1="Eabani Earring",         --  4, __, __, __, __, __, __, __/__
+    -- ear2="Telos Earring",          -- __,  5, __, __,  1, 10, 10, __/__
+    -- ring1="Ilabrat Ring",          -- __,  5, __, __, __, 25, __, __/__
+    -- ring2="Chirich Ring +1",       -- __,  6, __, __, __, __, 10, __/__
+    -- back=gear.BRD_DW_Cape,         -- 10, __, __, __, __, 20, 30, 10/__
+    -- waist="Reiki Yotai",           --  7,  4, __, __, __, __, 10, __/__
+    -- 21 DW, 67 STP, 6 QA, 0 TA, 1 DA, 100 Att, 308 Acc, 20PDT/10MDT
   }
   sets.engaged.DW.Acc.HighHaste = set_combine(sets.engaged.DW.HighHaste, {
-    legs="Aya. Cosciales +2",     -- __, __, __, __, __, __, 45
-    ring1="Chirich Ring +1",      -- __,  6, __, __, __, __, 10
-    -- hands="Raetic Bangles +1",    -- __, __, __, __, __, __, 55
-    -- Acceptable: 21 DW, 40 STP, 5 QA, 0 TA, 8 DA, 82 Att, 335 Acc
-    -- Ideal: 21 DW, 66 STP, 6 QA, 0 TA, 1 DA, 75 Att, 344 Acc
+    legs="Aya. Cosciales +2",         -- __, __, __, __, __, __, 45,  5/ 5
+    ring1="Chirich Ring +1",          -- __,  6, __, __, __, __, 10, __/__
+    -- hands="Raetic Bangles +1",     -- __, __, __, __, __, __, 55, __/__
+    -- Acceptable: 21 DW, 40 STP, 5 QA, 0 TA, 8 DA, 82 Att, 335 Acc, 26PDT/14MDT
+    -- Ideal: 21 DW, 66 STP, 6 QA, 0 TA, 1 DA, 75 Att, 344 Acc, 25PDT/15MDT
   })
 
   -- Super Magic/Gear/JA Haste (11% from gear to cap)
   sets.engaged.DW.SuperHaste = {
     -- Acceptable
-    head="Aya. Zucchetto +2",     -- __,  6, __, __, __, __, 44
-    body="Ayanmo Corazza +2",     -- __, __, __, __,  7, __, 46
-    legs="Aya. Cosciales +2",     -- __, __, __, __, __, __, 45
-    ear1="Eabani Earring",        --  4, __, __, __, __, __, __
-    ear2="Telos Earring",         -- __,  5, __, __,  1, 10, 10
-    ring1="Ilabrat Ring",         -- __,  5, __, __, __, 25, __
-    ring2="Chirich Ring +1",      -- __,  6, __, __, __, __, 10
-    waist="Reiki Yotai",          --  7,  4, __, __, __, __, 10
-    -- range=gear.Linos_TP,          -- __,  4,  3, __, __, __, 20
-    -- hands=gear.Chironic_QA_hands, -- __,  3, __, __, __, 32, 45
-    -- feet=gear.Chironic_QA_feet,   -- __,  3, __, __, __, 52, 30
-    -- neck="Bard's Charm +1",       -- __,  6,  2, __, __, __, 25
-    -- back=gear.BRD_STP_Cape,       -- __, 10, __, __, __, 20, 20
-    -- Acceptable: 11 DW, 52 STP, 5 QA, 0 TA, 8 DA, 139 Att, 305 Acc
+    head="Aya. Zucchetto +2",         -- __,  6, __, __, __, __, 44,  3/ 3
+    body="Ayanmo Corazza +2",         -- __, __, __, __,  7, __, 46,  6/ 6
+    legs="Aya. Cosciales +2",         -- __, __, __, __, __, __, 45,  5/ 5
+    ear1="Eabani Earring",            --  4, __, __, __, __, __, __, __/__
+    ear2="Telos Earring",             -- __,  5, __, __,  1, 10, 10, __/__
+    ring1="Ilabrat Ring",             -- __,  5, __, __, __, 25, __, __/__
+    ring2="Chirich Ring +1",          -- __,  6, __, __, __, __, 10, __/__
+    waist="Reiki Yotai",              --  7,  4, __, __, __, __, 10, __/__
+    -- range=gear.Linos_TP,           -- __,  4,  3, __, __, __, 20, __/__
+    -- hands=gear.Chironic_QA_hands,  -- __,  3, __, __, __, 32, 45, __/__
+    -- feet=gear.Chironic_QA_feet,    -- __,  3, __, __, __, 52, 30,  2/__
+    -- neck="Bard's Charm +1",        -- __,  6,  2, __, __, __, 25, __/__
+    -- back=gear.BRD_STP_Cape,        -- __, 10, __, __, __, 20, 20, 10/__
+    -- Acceptable: 11 DW, 52 STP, 5 QA, 0 TA, 8 DA, 139 Att, 305 Acc, 26PDT/14MDT
 
     -- Ideal
-    -- range=gear.Linos_TP,          -- __,  4,  3, __, __, __, 20
-    -- head="Aya. Zucchetto +2",     -- __,  6, __, __, __, __, 44
-    -- body="Ashera Harness",        -- __, 10, __, __, __, 45, 45
-    -- hands="Volte Mittens",        -- __,  6, __, __, __, __, 36
-    -- legs="Volte Tights",          -- __,  8, __, __, __, __, 38
-    -- feet="Volte Spats",           -- __,  6, __, __, __, __, 35
-    -- neck="Bard's Charm +2",       -- __,  7,  3, __, __, __, 30
-    -- ear1="Eabani Earring",        --  4, __, __, __, __, __, __
-    -- ear2="Telos Earring",         -- __,  5, __, __,  1, 10, 10
-    -- ring1="Ilabrat Ring",         -- __,  5, __, __, __, 25, __
-    -- ring2="Chirich Ring +1",      -- __,  6, __, __, __, __, 10
-    -- back=gear.BRD_STP_Cape,       -- __, 10, __, __, __, 20, 20
-    -- waist="Reiki Yotai",          --  7,  4, __, __, __, __, 10
-    -- 11 DW, 77 STP, 6 QA, 0 TA, 1 DA, 100 Att, 298 Acc
+    -- range=gear.Linos_TP,           -- __,  4,  3, __, __, __, 20, __/__
+    -- head="Aya. Zucchetto +2",      -- __,  6, __, __, __, __, 44,  3/ 3
+    -- body="Ashera Harness",         -- __, 10, __, __, __, 45, 45,  7/ 7
+    -- hands="Volte Mittens",         -- __,  6, __, __, __, __, 36, __/__
+    -- legs="Volte Tights",           -- __,  8, __, __, __, __, 38, __/__
+    -- feet="Volte Spats",            -- __,  6, __, __, __, __, 35, __/__
+    -- neck="Bard's Charm +2",        -- __,  7,  3, __, __, __, 30, __/__
+    -- ear1="Eabani Earring",         --  4, __, __, __, __, __, __, __/__
+    -- ear2="Telos Earring",          -- __,  5, __, __,  1, 10, 10, __/__
+    -- ring1="Ilabrat Ring",          -- __,  5, __, __, __, 25, __, __/__
+    -- ring2="Chirich Ring +1",       -- __,  6, __, __, __, __, 10, __/__
+    -- back=gear.BRD_STP_Cape,        -- __, 10, __, __, __, 20, 20, 10/__
+    -- waist="Reiki Yotai",           --  7,  4, __, __, __, __, 10, __/__
+    -- 11 DW, 77 STP, 6 QA, 0 TA, 1 DA, 100 Att, 298 Acc, 20PDT/10MDT
   }
   sets.engaged.DW.Acc.SuperHaste = set_combine(sets.engaged.DW.SuperHaste, {
-    legs="Aya. Cosciales +2",     -- __, __, __, __, __, __, 45
-    ring1="Chirich Ring +1",      -- __,  6, __, __, __, __, 10
-    -- hands="Raetic Bangles +1",    -- __, __, __, __, __, __, 55
-    -- Acceptable: 11 DW, 50 STP, 5 QA, 0 TA, 8 DA, 82 Att, 325 Acc
-    -- Ideal: 11 DW, 64 STP, 6 QA, 0 TA, 1 DA, 75 Att, 334 Acc
+    legs="Aya. Cosciales +2",         -- __, __, __, __, __, __, 45, ??/??
+    ring1="Chirich Ring +1",          -- __,  6, __, __, __, __, 10, ??/??
+    -- hands="Raetic Bangles +1",     -- __, __, __, __, __, __, 55, ??/??
+    -- Acceptable: 11 DW, 50 STP, 5 QA, 0 TA, 8 DA, 82 Att, 325 Acc, 26PDT/14MDT
+    -- Ideal: 11 DW, 64 STP, 6 QA, 0 TA, 1 DA, 75 Att, 334 Acc, 25PDT/15MDT
   })
 
   -- Max Magic/Gear/JA Haste (1% from gear to cap)
@@ -1009,28 +1025,30 @@ function init_gear_sets()
   sets.WeaponSet = {} -- DO NOT MODIFY
   sets.WeaponSet.Free = {} -- DO NOT MODIFY
   sets.WeaponSet.Carnwenhan = {
+    sub="Taming Sari",
     -- main="Carnwenhan",
-    sub="Taming Sari"
+    -- sub="Crepuscular Knife",
   }
   sets.WeaponSet.Twashtar = {
     main="Twashtar",
-    sub="Centovente"
+    sub="Centovente",
   }
   sets.WeaponSet.Naegling = {
     main="Naegling",
-    sub="Centovente"
+    sub="Centovente",
   }
   sets.WeaponSet.Tauret = {
     main="Tauret",
-    sub="Twashtar"
+    sub="Twashtar",
   }
   sets.WeaponSet.Aeneas = {
     main="Aeneas",
-    sub="Taming Sari"
+    sub="Twashtar",
   }
   sets.WeaponSet.Cleaving = {
     main="Tauret",
-    sub="Twashtar"
+    sub="Twashtar",
+    -- main="Barfawc", -- Path A
   }
 
 end
@@ -1043,6 +1061,9 @@ end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
 function job_precast(spell, action, spellMap, eventArgs)
+  silibs.precast_hook(spell, action, spellMap, eventArgs)
+  ----------- Non-silibs content goes below this line -----------
+
   if spell.type == 'BardSong' then
     --[[ Auto-Pianissimo
     if ((spell.target.type == 'PLAYER' and not spell.target.charmed) or (spell.target.type == 'NPC' and spell.target.in_party)) and
@@ -1068,28 +1089,59 @@ function job_precast(spell, action, spellMap, eventArgs)
       end
     end
   end
-  if spellMap == 'Utsusemi' then
-    if buffactive['Copy Image (3)'] or buffactive['Copy Image (4+)'] then
-      cancel_spell()
-      add_to_chat(123, '**!! '..spell.english..' Canceled: [3+ IMAGES] !!**')
-      eventArgs.handled = true
-      return
-    elseif buffactive['Copy Image'] or buffactive['Copy Image (2)'] then
-      send_command('cancel 66; cancel 444; cancel Copy Image; cancel Copy Image (2)')
-    end
+  if spellMap == 'Utsusemi' and spell.english == 'Utsusemi: Ichi' and
+      (buffactive['Copy Image'] or buffactive['Copy Image (2)']) then
+    send_command('cancel 66; cancel 444; cancel Copy Image; cancel Copy Image (2)')
   end
 end
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_post_precast(spell, action, spellMap, eventArgs)
-  -- Always put this last in job_post_precast
-  if state.BattleMode.value == true then
-    equip(sets.WeaponSet[state.WeaponSet.current])
+  if spell.type == 'WeaponSkill' then
+    -- Handle belts for elemental WS
+    if elemental_ws:contains(spell.english) then
+      local base_day_weather_mult = silibs.get_day_weather_multiplier(spell.element, false, false)
+      local obi_mult = silibs.get_day_weather_multiplier(spell.element, true, false)
+      local orpheus_mult = silibs.get_orpheus_multiplier(spell.element, spell.target.distance)
+      local has_obi = true -- Change if you do or don't have Hachirin-no-Obi
+      local has_orpheus = false -- Change if you do or don't have Orpheus's Sash
+  
+      -- Determine which combination to use: orpheus, hachirin-no-obi, or neither
+      if has_obi and (obi_mult >= orpheus_mult or not has_orpheus) and (obi_mult > base_day_weather_mult) then
+        -- Obi is better than orpheus and better than nothing
+        equip({waist="Hachirin-no-Obi"})
+      elseif has_orpheus and (orpheus_mult > base_day_weather_mult) then
+        -- Orpheus is better than obi and better than nothing
+        equip({waist="Orpheus's Sash"})
+      end
+    end
+
+    if buffactive['Reive Mark'] then
+      equip(sets.Reive)
+    end
   end
+
+  if state.BattleMode.value == true then
+    -- Keep weapons the same, to avoid losing TP
+    equip({main=player.equipment.main,sub=player.equipment.sub})
+  end
+
+  -- If slot is locked, keep current equipment on
+  if locked_neck then equip({ neck=player.equipment.neck }) end
+  if locked_ear1 then equip({ ear1=player.equipment.ear1 }) end
+  if locked_ear2 then equip({ ear2=player.equipment.ear2 }) end
+  if locked_ring1 then equip({ ring1=player.equipment.ring1 }) end
+  if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
+
+  ----------- Non-silibs content goes above this line -----------
+  silibs.post_precast_hook(spell, action, spellMap, eventArgs)
 end
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_midcast(spell, action, spellMap, eventArgs)
+  silibs.midcast_hook(spell, action, spellMap, eventArgs)
+  ----------- Non-silibs content goes below this line -----------
+
   if spell.type == 'BardSong' then
     -- layer general gear on first, then let default handler add song-specific gear.
     local generalClass = get_song_class(spell)
@@ -1119,13 +1171,27 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
       equip(sets.SongDWDuration)
     end
   end
-  -- Always put this last in job_post_midcast
+
   if state.BattleMode.value == true then
-    equip(sets.WeaponSet[state.WeaponSet.current])
+    -- Keep weapons the same, to avoid losing TP
+    equip({main=player.equipment.main,sub=player.equipment.sub})
   end
+
+  -- If slot is locked, keep current equipment on
+  if locked_neck then equip({ neck=player.equipment.neck }) end
+  if locked_ear1 then equip({ ear1=player.equipment.ear1 }) end
+  if locked_ear2 then equip({ ear2=player.equipment.ear2 }) end
+  if locked_ring1 then equip({ ring1=player.equipment.ring1 }) end
+  if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
+
+  ----------- Non-silibs content goes above this line -----------
+  silibs.post_midcast_hook(spell, action, spellMap, eventArgs)
 end
 
 function job_aftercast(spell, action, spellMap, eventArgs)
+  silibs.aftercast_hook(spell, action, spellMap, eventArgs)
+  ----------- Non-silibs content goes below this line -----------
+
   if spell.english:contains('Lullaby') and not spell.interrupted then
     get_lullaby_duration(spell)
   end
@@ -1199,7 +1265,6 @@ end
 
 function job_update(cmdParams, eventArgs)
   handle_equipping_gear(player.status)
-  update_weaponskill_binds()
 end
 
 function update_combat_form()
@@ -1212,21 +1277,15 @@ end
 
 -- Called for direct player commands.
 function job_self_command(cmdParams, eventArgs)
+  silibs.self_command(cmdParams, eventArgs)
+  ----------- Non-silibs content goes below this line -----------
+
   if cmdParams[1]:lower() == 'etude' then
     send_command('@input /ma '..state.Etude.value..' <stpc>')
   elseif cmdParams[1]:lower() == 'carol' then
     send_command('@input /ma '..state.Carol.value..' <stpc>')
   elseif cmdParams[1]:lower() == 'threnody' then
     send_command('@input /ma '..state.Threnody.value..' <stnpc>')
-  elseif cmdParams[1]:lower() == 'usekey' then
-    send_command('cancel Invisible; cancel Hide; cancel Gestation; cancel Camouflage')
-    if player.target.type ~= 'NONE' then
-      if player.target.name == 'Sturdy Pyxis' then
-        send_command('@input /item "Forbidden Key" <t>')
-      end
-    end
-  elseif cmdParams[1]:lower() == 'faceaway' then
-    windower.ffxi.turn(player.facing - math.pi);
   end
 
   gearinfo(cmdParams, eventArgs)
@@ -1250,13 +1309,6 @@ function gearinfo(cmdParams, eventArgs)
         Haste = tonumber(cmdParams[3])
       end
     end
-    if type(cmdParams[4]) == 'string' then
-      if cmdParams[4] == 'true' then
-        moving = true
-      elseif cmdParams[4] == 'false' then
-        moving = false
-      end
-    end
     if not midaction() then
       job_update()
     end
@@ -1265,9 +1317,6 @@ end
 
 -- Modify the default idle set after it was constructed.
 function customize_idle_set(idleSet)
-  if state.BattleMode.value == true then
-    equip(sets.WeaponSet[state.WeaponSet.current])
-  end
   -- If not in DT mode put on move speed gear
   if state.IdleMode.current == 'Normal' and state.DefenseMode.value == 'None' then
     if classes.CustomIdleGroups:contains('Adoulin') then
@@ -1282,6 +1331,19 @@ function customize_idle_set(idleSet)
   if state.CP.current == 'on' then
     idleSet = set_combine(idleSet, sets.CP)
   end
+
+  if state.BattleMode.value == true then
+    -- Keep weapons the same, to avoid losing TP
+    equip({main=player.equipment.main,sub=player.equipment.sub})
+  end
+
+  -- If slot is locked to use no-swap gear, keep it equipped
+  if locked_neck then idleSet = set_combine(idleSet, { neck=player.equipment.neck }) end
+  if locked_ear1 then idleSet = set_combine(idleSet, { ear1=player.equipment.ear1 }) end
+  if locked_ear2 then idleSet = set_combine(idleSet, { ear2=player.equipment.ear2 }) end
+  if locked_ring1 then idleSet = set_combine(idleSet, { ring1=player.equipment.ring1 }) end
+  if locked_ring2 then idleSet = set_combine(idleSet, { ring2=player.equipment.ring2 }) end
+
   if buffactive.Doom then
     idleSet = set_combine(idleSet, sets.buff.Doom)
   end
@@ -1298,6 +1360,14 @@ function customize_melee_set(meleeSet)
   if state.CP.current == 'on' then
     meleeSet = set_combine(meleeSet, sets.CP)
   end
+  
+  -- If slot is locked to use no-swap gear, keep it equipped
+  if locked_neck then meleeSet = set_combine(meleeSet, { neck=player.equipment.neck }) end
+  if locked_ear1 then meleeSet = set_combine(meleeSet, { ear1=player.equipment.ear1 }) end
+  if locked_ear2 then meleeSet = set_combine(meleeSet, { ear2=player.equipment.ear2 }) end
+  if locked_ring1 then meleeSet = set_combine(meleeSet, { ring1=player.equipment.ring1 }) end
+  if locked_ring2 then meleeSet = set_combine(meleeSet, { ring2=player.equipment.ring2 }) end
+
   if buffactive.Doom then
     meleeSet = set_combine(meleeSet, sets.buff.Doom)
   end
@@ -1306,17 +1376,42 @@ function customize_melee_set(meleeSet)
 end
 
 function customize_defense_set(defenseSet)
-  if state.BattleMode.value == true then
-    equip(sets.WeaponSet[state.WeaponSet.current])
-  end
   if state.CP.current == 'on' then
     defenseSet = set_combine(defenseSet, sets.CP)
   end
+  
+  if state.BattleMode.value == true then
+    -- Keep weapons the same, to avoid losing TP
+    equip({main=player.equipment.main,sub=player.equipment.sub})
+  end
+
+  -- If slot is locked to use no-swap gear, keep it equipped
+  if locked_neck then defenseSet = set_combine(defenseSet, { neck=player.equipment.neck }) end
+  if locked_ear1 then defenseSet = set_combine(defenseSet, { ear1=player.equipment.ear1 }) end
+  if locked_ear2 then defenseSet = set_combine(defenseSet, { ear2=player.equipment.ear2 }) end
+  if locked_ring1 then defenseSet = set_combine(defenseSet, { ring1=player.equipment.ring1 }) end
+  if locked_ring2 then defenseSet = set_combine(defenseSet, { ring2=player.equipment.ring2 }) end
+
   if buffactive.Doom then
     defenseSet = set_combine(defenseSet, sets.buff.Doom)
   end
 
   return defenseSet
+end
+
+function user_customize_idle_set(idleSet)
+  -- Any non-silibs modifications should go in customize_idle_set function
+  return silibs.customize_idle_set(idleSet)
+end
+
+function user_customize_melee_set(meleeSet)
+  -- Any non-silibs modifications should go in customize_melee_set function
+  return silibs.customize_melee_set(meleeSet)
+end
+
+function user_customize_defense_set(defenseSet)
+  -- Any non-silibs modifications should go in customize_defense_set function
+  return silibs.customize_defense_set(defenseSet)
 end
 
 function get_custom_wsmode(spell, action, spellMap)
@@ -1497,30 +1592,45 @@ function determine_haste_group()
 end
 
 function check_gear()
-  if no_swap_rings:contains(player.equipment.left_ring) then
-    disable("ring1")
+  if no_swap_necks:contains(player.equipment.neck) then
+    locked_neck = true
   else
-    enable("ring1")
+    locked_neck = false
   end
-  if no_swap_rings:contains(player.equipment.right_ring) then
-    disable("ring2")
+  if no_swap_earrings:contains(player.equipment.ear1) then
+    locked_ear1 = true
   else
-    enable("ring2")
+    locked_ear1 = false
+  end
+  if no_swap_earrings:contains(player.equipment.ear2) then
+    locked_ear2 = true
+  else
+    locked_ear2 = false
+  end
+  if no_swap_rings:contains(player.equipment.ring1) then
+    locked_ring1 = true
+  else
+    locked_ring1 = false
+  end
+  if no_swap_rings:contains(player.equipment.ring2) then
+    locked_ring2 = true
+  else
+    locked_ring2 = false
+  end
+  if no_swap_rings:contains(player.equipment.ring2) then
+    locked_ring2 = true
+  else
+    locked_ring2 = false
   end
 end
 
-windower.register_event('zone change',
-  function()
-    if no_swap_rings:contains(player.equipment.left_ring) then
-      enable("ring1")
-      equip(sets.idle)
-    end
-    if no_swap_rings:contains(player.equipment.right_ring) then
-      enable("ring2")
-      equip(sets.idle)
-    end
-  end
-)
+windower.register_event('zone change', function()
+  if locked_neck then equip({ neck=empty }) end
+  if locked_ear1 then equip({ ear1=empty }) end
+  if locked_ear2 then equip({ ear2=empty }) end
+  if locked_ring1 then equip({ ring1=empty }) end
+  if locked_ring2 then equip({ ring2=empty }) end
+end)
 
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
