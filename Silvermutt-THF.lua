@@ -103,7 +103,7 @@ function job_setup()
   state.AttCapped = M(true, "Attack Capped")
   state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger',
       'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
-  state.WeaponSet = M{['description']='Weapon Set', 'WhiteGlass', 'Normal', 'LowAtt', 'Naegling', 'Cleaving'}
+  state.WeaponSet = M{['description']='Weapon Set', 'WhiteGlass', 'Normal', 'Naegling', 'H2H', 'Staff', 'Cleaving'}
   state.Runes = M{['description']='Runes', 'Ignis', 'Gelus', 'Flabra', 'Tellus', 'Sulpor', 'Unda', 'Lux', 'Tenebrae'}
 
   send_command('bind !s gs c faceaway')
@@ -202,6 +202,8 @@ end
 
 -- Define sets and vars used by this job file.
 function init_gear_sets()
+  sets.org.job = {}
+  sets.org.job[1] = {range="Albin Bane"}
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Precast Sets ------------------------------------------
@@ -279,15 +281,12 @@ function init_gear_sets()
     ring1="Defending Ring",
   })
 
-  -- Initializes trusts at iLvl 119
-  sets.midcast.Trust = sets.precast.FC
+  sets.precast.FC.Trust = set_combine(sets.precast.FC, {
+    ammo="Impatiens",
+    ring1="Weatherspoon Ring", --5
+    ring2="Prolix Ring",
+  })
 
-  sets.midcast.SpellInterrupt = {
-    ammo="Impatiens", --10
-    neck="Loricate Torque +1", --5
-  }
-
-  sets.midcast.Utsusemi = set_combine(sets.precast.FC.Utsusemi, sets.midcast.SpellInterrupt)
 
   ------------------------------------------------------------------------------------------------
   ------------------------------------- Weapon Skill Sets ----------------------------------------
@@ -542,12 +541,25 @@ function init_gear_sets()
 
   sets.midcast.FastRecast = sets.precast.FC
 
-  sets.midcast.SpellInterrupt = {
-    ammo="Impatiens", --10
-    -- ring1="Evanescence Ring", --5
+  -- Initializes trusts at iLvl 119
+  sets.midcast.Trust = {
+    head=gear.Nyame_B_head,
+    body=gear.Nyame_B_body,
+    hands=gear.Nyame_B_hands,
+    legs=gear.Nyame_B_legs,
+    feet=gear.Nyame_B_feet,
   }
 
-  sets.midcast.Utsusemi = sets.midcast.SpellInterrupt
+  sets.midcast.Utsusemi = {
+    ammo="Impatiens", -- SIRD
+    head=gear.Nyame_B_head, -- DT
+    body=gear.Nyame_B_body, -- DT
+    hands=gear.Nyame_B_hands, -- DT
+    legs=gear.Nyame_B_legs, -- DT
+    feet=gear.Nyame_B_feet, -- DT
+    neck="Loricate Torque +1", -- SIRD + DT
+    ring1="Defending Ring", -- DT
+  }
 
 
   ------------------------------------------------------------------------------------------------
@@ -698,7 +710,8 @@ function init_gear_sets()
     ring1="Regal Ring",
   })
 
-  -- * THF Native DW Trait: 30% DW
+  -- * THF Native DW Trait: 25% DW
+  -- * THF Job Points DW Gift: 5% DW
 
   -- No Magic/Gear/JA Haste (74% DW to cap, 44% from gear)
   sets.engaged.DW = {
@@ -1140,6 +1153,10 @@ function init_gear_sets()
   sets.WeaponSet['Cleaving'] = {
     main="Tauret",
     sub="Twashtar",
+  }
+  sets.WeaponSet['Staff'] = {
+    main="Gozuki Mezuki",
+    sub="empty",
   }
 end
 

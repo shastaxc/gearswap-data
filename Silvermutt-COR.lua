@@ -260,6 +260,8 @@ end
 
 -- Define sets and vars used by this job file.
 function init_gear_sets()
+  sets.org.job = {}
+
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Precast Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
@@ -336,11 +338,18 @@ function init_gear_sets()
     feet=gear.Carmine_D_feet, --8
     neck="Orunmila's Torque", --5
     ear1="Loquac. Earring", --2
+    ring1="Prolix Ring", --2
+    ring2="Kishar Ring", --4
   }
 
   sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {
     neck="Magoraga Beads", --10
+    ear2="Odnowa Earring +1",
     ring1="Defending Ring",
+  })
+
+  sets.precast.FC.Trust = set_combine(sets.precast.FC, {
+    ring1="Weatherspoon Ring", --5
   })
 
   -- (10% Snapshot from JP Gifts)
@@ -685,42 +694,6 @@ function init_gear_sets()
     ear2="Ishvara Earring",
   })
 
-  -- Ranged gear
-  sets.midcast.RA = {
-    ammo=gear.RAbullet,             -- __ [__] 20/__ <_> {_} (__)
-    head="Ikenga's Hat",            -- 29 [ 8] 45/60 <_> {4} (__)
-    body="Ikenga's Vest",           -- 39 [11] 45/60 <_> {7} (__)
-    hands="Malignance Gloves",      -- 24 [12] 50/__ <_> {4} (__)
-    legs="Ikenga's Trousers",       -- 40 [10] 45/60 <_> {6} (__)
-    feet="Malignance Boots",        -- 49 [ 9] 50/__ <_> {2} (__)
-    neck="Iskur Gorget",            -- __ [ 8] 30/30 <_> {_} (__)
-    ear1="Enervating Earring",      -- __ [ 4]  7/ 7 <_> {_} (__)
-    ear2="Telos Earring",           -- __ [ 5] 10/10 <_> {_} (__)
-    ring1="Dingir Ring",            -- 10 [__] __/25 <_> {_} (10)
-    ring2="Ilabrat Ring",           -- 10 [ 5] __/__ <_> {_} (__)
-    back=gear.COR_RA_Cape,          -- 30 [10] 20/20 <_> {_} (__)
-    waist="Yemaya Belt",            --  7 [ 4] 10/10 <_> {_} (__)
-  } --238 AGI [86 STP] 332 racc / 282 ratt <0 crit> {23 dmg limit} (10 Recycle)
-  sets.midcast.RA.LowAcc = set_combine(sets.midcast.RA, {
-    ear1="Beyla Earring",           -- __ [__] 15/__ <_> {_} (__)
-    ring2="Crepuscular Ring",       -- __ [ 6] 10/__ <_> {_} (__)
-    -- ammo=gear.RAccbullet,        -- __ [__] 35/__ <_> {_} (__)
-    --228 AGI [83 STP] 365 racc / 275 ratt <0 crit> {23 dmg limit} (10 Recycle)
-  })
-  sets.midcast.RA.MidAcc = set_combine(sets.midcast.RA.LowAcc, {
-    body="Malignance Tabard",       -- 42 [11] 50/__ <_> {6} (__)
-    legs=gear.Adhemar_C_legs,       -- 42 [ 8] 54/20 <_> {_} (16)
-    ring1="Hajduk Ring +1",         -- __ [__] 17/__ <_> {_} (__)
-    --223 AGI [81 STP] 396 racc / 150 ratt <0 crit> {16 dmg limit} (16 Recycle)
-  })
-  sets.midcast.RA.HighAcc = set_combine(sets.midcast.RA.MidAcc, {
-    waist="Kwahu Kachina Belt +1",  --  8 [__] 20/__ <5> {_} (__)
-    -- body="Laksamana's Frac +3",  -- 45 [__] 57/35 <_> {_} (19)
-    -- legs="Laksamana's Trews +3", -- 33 [__] 49/__ <_> {_} (__)
-    -- AF set bonus                 -- __ [__] 15/__ <_> {_} (__)
-    --218 AGI [58 STP] 423 racc / 155 ratt <5 crit> {10 dmg limit} (19 Recycle)
-  })
-
   sets.precast.WS['Sniper Shot'] = {
     ammo=gear.RAccbullet,
     head="Malignance Chapeau",    -- 33, 50
@@ -760,21 +733,61 @@ function init_gear_sets()
 
   sets.midcast.FastRecast = sets.precast.FC
 
-  sets.midcast.SpellInterrupt = {
-    legs=gear.Carmine_A_legs, --20
-    -- ring1="Evanescence Ring", --5
+  -- Initializes trusts at iLvl 119
+  sets.midcast.Trust = {
+    head=gear.Nyame_B_head,
+    body=gear.Nyame_B_body,
+    hands=gear.Nyame_B_hands,
+    legs=gear.Nyame_B_legs,
+    feet=gear.Nyame_B_feet,
   }
 
-  sets.midcast.Cure = {
-    neck="Incanter's Torque",
-    ring1="Lebeche Ring",
-    -- ear1="Roundel Earring",
-    -- ear2="Mendi. Earring",
-    -- ring2="Haoma's Ring",
-    -- waist="Bishop's Sash",
+  sets.midcast.Utsusemi = {
+    head=gear.Nyame_B_head, -- DT
+    body=gear.Nyame_B_body, -- DT
+    hands=gear.Nyame_B_hands, -- DT
+    legs=gear.Carmine_A_legs, -- SIRD
+    feet=gear.Nyame_B_feet, -- DT
+    neck="Loricate Torque +1", -- SIRD + DT
+    ear2="Odnowa Earring +1", -- DT
+    ring1="Defending Ring", -- DT
   }
 
-  sets.midcast.Utsusemi = sets.midcast.SpellInterrupt
+  -- Ranged gear
+  sets.midcast.RA = {
+    ammo=gear.RAbullet,             -- __ [__] 20/__ <_> {_} (__)
+    head="Ikenga's Hat",            -- 29 [ 8] 45/60 <_> {4} (__)
+    body="Ikenga's Vest",           -- 39 [11] 45/60 <_> {7} (__)
+    hands="Malignance Gloves",      -- 24 [12] 50/__ <_> {4} (__)
+    legs="Ikenga's Trousers",       -- 40 [10] 45/60 <_> {6} (__)
+    feet="Malignance Boots",        -- 49 [ 9] 50/__ <_> {2} (__)
+    neck="Iskur Gorget",            -- __ [ 8] 30/30 <_> {_} (__)
+    ear1="Enervating Earring",      -- __ [ 4]  7/ 7 <_> {_} (__)
+    ear2="Telos Earring",           -- __ [ 5] 10/10 <_> {_} (__)
+    ring1="Dingir Ring",            -- 10 [__] __/25 <_> {_} (10)
+    ring2="Ilabrat Ring",           -- 10 [ 5] __/__ <_> {_} (__)
+    back=gear.COR_RA_Cape,          -- 30 [10] 20/20 <_> {_} (__)
+    waist="Yemaya Belt",            --  7 [ 4] 10/10 <_> {_} (__)
+  } --238 AGI [86 STP] 332 racc / 282 ratt <0 crit> {23 dmg limit} (10 Recycle)
+  sets.midcast.RA.LowAcc = set_combine(sets.midcast.RA, {
+    ear1="Beyla Earring",           -- __ [__] 15/__ <_> {_} (__)
+    ring2="Crepuscular Ring",       -- __ [ 6] 10/__ <_> {_} (__)
+    -- ammo=gear.RAccbullet,        -- __ [__] 35/__ <_> {_} (__)
+    --228 AGI [83 STP] 365 racc / 275 ratt <0 crit> {23 dmg limit} (10 Recycle)
+  })
+  sets.midcast.RA.MidAcc = set_combine(sets.midcast.RA.LowAcc, {
+    body="Malignance Tabard",       -- 42 [11] 50/__ <_> {6} (__)
+    legs=gear.Adhemar_C_legs,       -- 42 [ 8] 54/20 <_> {_} (16)
+    ring1="Hajduk Ring +1",         -- __ [__] 17/__ <_> {_} (__)
+    --223 AGI [81 STP] 396 racc / 150 ratt <0 crit> {16 dmg limit} (16 Recycle)
+  })
+  sets.midcast.RA.HighAcc = set_combine(sets.midcast.RA.MidAcc, {
+    waist="Kwahu Kachina Belt +1",  --  8 [__] 20/__ <5> {_} (__)
+    -- body="Laksamana's Frac +3",  -- 45 [__] 57/35 <_> {_} (19)
+    -- legs="Laksamana's Trews +3", -- 33 [__] 49/__ <_> {_} (__)
+    -- AF set bonus                 -- __ [__] 15/__ <_> {_} (__)
+    --218 AGI [58 STP] 423 racc / 155 ratt <5 crit> {10 dmg limit} (19 Recycle)
+  })
 
   sets.midcast.CorsairShot = {
     ammo=gear.QDbullet,
@@ -855,6 +868,15 @@ function init_gear_sets()
     waist="K. Kachina Belt +1",
     -- feet="Osh. Leggings +1", --3
     -- ring2="Mummu Ring",
+  }
+
+  sets.midcast.Cure = {
+    neck="Incanter's Torque",
+    ring1="Lebeche Ring",
+    -- ear1="Roundel Earring",
+    -- ear2="Mendi. Earring",
+    -- ring2="Haoma's Ring",
+    -- waist="Bishop's Sash",
   }
 
 

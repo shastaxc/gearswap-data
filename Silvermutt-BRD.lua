@@ -436,6 +436,15 @@ function init_gear_sets()
   -- General set for recast times.
   sets.midcast.FastRecast = sets.precast.FC
 
+  -- Initializes trusts at iLvl 119
+  sets.midcast.Trust = {
+    head=gear.Nyame_B_head,
+    body=gear.Nyame_B_body,
+    hands=gear.Nyame_B_hands,
+    legs=gear.Nyame_B_legs,
+    feet=gear.Nyame_B_feet,
+  }
+
   -- Song-specific gear to enhance party buff songs.
   sets.midcast.Ballad = {
     -- legs="Fili Rhingrave +1",
@@ -674,8 +683,15 @@ function init_gear_sets()
     -- sub="Ammurapi Shield",
   })
 
-  -- Initializes trusts at iLvl 119
-  sets.midcast.Trust = sets.precast.FC
+  sets.midcast.Utsusemi = {
+    head=gear.Nyame_B_head, -- DT
+    body=gear.Nyame_B_body, -- DT
+    hands=gear.Nyame_B_hands, -- DT
+    legs=gear.Nyame_B_legs, -- DT
+    feet=gear.Nyame_B_feet, -- DT
+    neck="Loricate Torque +1", -- SIRD + DT
+    ring1="Defending Ring", -- DT
+  }
 
   ------------------------------------------------------------------------------------------------
   ----------------------------------------- Idle Sets --------------------------------------------

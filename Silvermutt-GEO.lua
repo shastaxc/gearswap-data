@@ -121,6 +121,7 @@ end
 
 -- Define sets and vars used by this job file.
 function init_gear_sets()
+  sets.org.job = {}
 
   sets.TreasureHunter = {
     waist="Chaac Belt", --1
@@ -266,6 +267,15 @@ function init_gear_sets()
 	--------------------------------------
 
   sets.midcast.FastRecast = sets.precast.FC
+
+  -- Initializes trusts at iLvl 119
+  sets.midcast.Trust = {
+    head=gear.Nyame_B_head,
+    body=gear.Nyame_B_body,
+    hands=gear.Nyame_B_hands,
+    legs=gear.Nyame_B_legs,
+    feet=gear.Nyame_B_feet,
+  }
 
   -- Master GEO with full merits = 850 geo skill base (cap at 900)
   -- Lv 99 GEO = 43 Conserve MP base (cap at 100)

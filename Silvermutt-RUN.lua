@@ -241,6 +241,8 @@ end
 
 -- Define sets and vars used by this job file.
 function init_gear_sets()
+  sets.org.job = {}
+  
   sets.TreasureHunter = {
     ammo="Perfect Lucky Egg", --1
     body=gear.Herc_TH_body, --2
@@ -467,6 +469,12 @@ function init_gear_sets()
   sets.precast.FC['Geist Wall'] = sets.SIRD
   sets.precast.FC['Poisonga'] = sets.SIRD
 
+  sets.precast.FC.Trust = set_combine(sets.precast.FC, {
+    ammo="Impatiens",
+    ring1="Weatherspoon Ring", --5
+    ring2="Kishar Ring", --4
+  })
+
   sets.HybridAcc = {
     ammo="Hydrocera",           -- __,  6
     head=gear.Nyame_B_head,     -- 40, 40
@@ -489,7 +497,13 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   -- Initializes trusts at iLvl 119
-  sets.midcast.Trust = sets.precast.FC
+  sets.midcast.Trust = {
+    head=gear.Nyame_B_head,
+    body=gear.Nyame_B_body,
+    hands=gear.Nyame_B_hands,
+    legs=gear.Nyame_B_legs,
+    feet=gear.Nyame_B_feet,
+  }
 
   sets.midcast.FastRecast = sets.precast.FC
 

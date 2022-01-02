@@ -302,6 +302,7 @@ end
 
 -- Define sets and vars used by this job file.
 function init_gear_sets()
+  sets.org.job = {}
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Precast Sets ------------------------------------------
@@ -360,9 +361,6 @@ function init_gear_sets()
   sets.precast.Storm = set_combine(sets.precast.FC, {
     -- name="Stikini Ring +1",
   })
-  sets.precast.FC.Utsusemi = set_combine(sets.precast.FC.Cure, {
-    neck="Magoraga Beads", --10
-  }
 
 
   ------------------------------------------------------------------------------------------------
@@ -608,6 +606,15 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.midcast.FastRecast = sets.precast.FC
+
+  -- Initializes trusts at iLvl 119
+  sets.midcast.Trust = {
+    head=gear.Nyame_B_head,
+    body=gear.Nyame_B_body,
+    hands=gear.Nyame_B_hands,
+    legs=gear.Nyame_B_legs,
+    feet=gear.Nyame_B_feet,
+  }
 
   sets.midcast.SpellInterrupt = {
     ammo="Impatiens", --10
@@ -967,10 +974,18 @@ function init_gear_sets()
     -- waist="Shinjutsu-no-Obi +1",
   })
 
-  sets.midcast.Utsusemi = sets.midcast.SpellInterrupt
-
-  -- Initializes trusts at iLvl 119
-  sets.midcast.Trust = sets.precast.FC
+  sets.midcast.Utsusemi = {
+    ammo="Impatiens", -- SIRD
+    head=gear.Nyame_B_head, -- DT
+    body=gear.Nyame_B_body, -- DT
+    hands=gear.Nyame_B_hands, -- DT
+    legs=gear.Carmine_D_legs, -- SIRD
+    feet=gear.Nyame_B_feet, -- DT
+    neck="Loricate Torque +1", -- SIRD + DT
+    ear2="Odnowa Earring +2", -- DT
+    ring1="Defending Ring", -- DT
+    waist="Rumination Sash", -- SIRD
+  }
 
   -- Job-specific buff sets
   sets.buff.ComposureOther = {

@@ -127,7 +127,6 @@ end
 
 -- Define sets and vars used by this job file.
 function init_gear_sets()
-
   sets.org.job = {}
 
   -- Enmity sets
@@ -153,8 +152,22 @@ function init_gear_sets()
 
   -- Fast cast sets for spells
   sets.precast.FC = {
+    hands=gear.Leyline_Gloves, --8
     neck="Orunmila's Torque", --5
+    ear1="Loquac. Earring", --2
+    ring2="Prolix Ring", --2
   }
+
+  sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {
+    ammo="Staunch Tathlum +1",
+    ring1="Prolix Ring",
+    ring2="Defending Ring",
+  })
+
+  sets.precast.FC.Trust = set_combine(sets.precast.FC, {
+    ammo="Impatiens",
+    ring1="Weatherspoon Ring", --5
+  })
 
   -- Precast sets to enhance JAs on use
   sets.precast.JA['Meikyo Shisui'] = {
@@ -215,22 +228,6 @@ function init_gear_sets()
   }
   sets.precast.Flourish1 = {
   }
-
-  sets.precast.Utsusemi = set_combine(sets.precast.FC, {
-    ammo="Staunch Tathlum +1",
-    ring1="Prolix Ring",
-    ring2="Defending Ring",
-  })
-
-  -- Initializes trusts at iLvl 119
-  sets.midcast.Trust = sets.precast.FC
-
-  sets.midcast.SpellInterrupt = {
-    ammo="Impatiens", --10
-    neck="Loricate Torque +1", --5
-  }
-
-  sets.midcast.Utsusemi = set_combine(sets.precast.Utsusemi, sets.midcast.SpellInterrupt)
 
 
   ------------------------------------------------------------------------------------------------
@@ -505,6 +502,27 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Midcast Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
+
+  -- Initializes trusts at iLvl 119
+  sets.midcast.Trust = {
+    head=gear.Nyame_B_head,
+    body=gear.Nyame_B_body,
+    hands=gear.Nyame_B_hands,
+    legs=gear.Nyame_B_legs,
+    feet=gear.Nyame_B_feet,
+  }
+
+  sets.midcast.Utsusemi = {
+    ammo="Impatiens", -- SIRD
+    head=gear.Nyame_B_head, -- DT
+    body=gear.Nyame_B_body, -- DT
+    hands=gear.Nyame_B_hands, -- DT
+    legs=gear.Nyame_B_legs, -- DT
+    feet=gear.Nyame_B_feet, -- DT
+    neck="Loricate Torque +1", -- SIRD + DT
+    ring1="Defending Ring", -- DT
+  }
+
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Defense Sets ------------------------------------------

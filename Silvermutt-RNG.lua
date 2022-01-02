@@ -268,6 +268,7 @@ end
 
 -- Set up all gear sets.
 function init_gear_sets()
+  sets.org.job = {}
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Precast Sets ------------------------------------------
@@ -314,7 +315,12 @@ function init_gear_sets()
 
   sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {
     neck="Magoraga Beads", --10
+    ear2="Odnowa Earring +1",
     ring1="Defending Ring",
+  })
+
+  sets.precast.FC.Trust = set_combine(sets.precast.FC, {
+    ring1="Weatherspoon Ring", --5
   })
 
   -- (10% Snapshot, 5% Rapid from Merits)
@@ -736,12 +742,26 @@ function init_gear_sets()
   -- Fast recast for spells
   sets.midcast.FastRecast = sets.precast.FC
 
-  sets.midcast.SpellInterrupt = {
-    legs=gear.Carmine_D_legs, --20
-    neck="Loricate Torque +1", --5
+  -- Initializes trusts at iLvl 119
+  sets.midcast.Trust = {
+    head=gear.Nyame_B_head,
+    body=gear.Nyame_B_body,
+    hands=gear.Nyame_B_hands,
+    legs=gear.Nyame_B_legs,
+    feet=gear.Nyame_B_feet,
   }
 
-  sets.midcast.Utsusemi = set_combine(sets.precast.FC.Utsusemi, sets.midcast.SpellInterrupt)
+  sets.midcast.Utsusemi = {
+    ammo="Impatiens", -- SIRD
+    head=gear.Nyame_B_head, -- DT
+    body=gear.Nyame_B_body, -- DT
+    hands=gear.Nyame_B_hands, -- DT
+    legs=gear.Carmine_D_legs, -- SIRD
+    feet=gear.Nyame_B_feet, -- DT
+    neck="Loricate Torque +1", -- SIRD + DT
+    ear2="Odnowa Earring +1", -- DT
+    ring1="Defending Ring", -- DT
+  }
 
   -- Ranged sets
   sets.midcast.RA = {

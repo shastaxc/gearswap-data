@@ -148,6 +148,7 @@ end
 
 -- Define sets and vars used by this job file.
 function init_gear_sets()
+  sets.org.job = {}
 
   -----------------------------------------------------------------------------------
   ---------------------------------------- Weapon Sets ------------------------------------------
@@ -228,7 +229,6 @@ function init_gear_sets()
 
   -- Fast cast sets for spells
   sets.precast.FC = {
-    ammo="Impatiens", --Quick Magic 2%
     head="Herculean Helm", --7
     body=gear.Taeon_FC_body, --9
     hands=gear.Leyline_Gloves, --8
@@ -236,7 +236,20 @@ function init_gear_sets()
     feet=gear.Taeon_FC_feet, --5
     neck="Orunmila's Torque", --5
     ear1="Loquac. Earring", --2
+    ring2="Prolix Ring", --2
   }
+
+  sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {
+    ammo="Staunch Tathlum +1",
+    neck="Magoraga Beads", --10
+    ear2="Odnowa Earring +1",
+    ring1="Defending Ring",
+  })
+
+  sets.precast.FC.Trust = set_combine(sets.precast.FC, {
+    ammo="Impatiens",
+    ring1="Weatherspoon Ring", --5
+  })
 
   -- Precast sets to enhance JAs on use
   sets.precast.JA['Hundred Fists'] = {
@@ -286,8 +299,8 @@ function init_gear_sets()
     body="Anchorite's Cyclas +2", -- Enhances Chakra
     hands="Hesychast's Gloves", -- Enhances Chakra
     ear2="Odnowa Earring +1",
-    ring1="Gelatinous Ring +1",
-    ring2="Defending Ring",
+    ring1="Defending Ring",
+    ring2="Gelatinous Ring +1",
     -- body="Anchorite's Cyclas +3", -- Enhances Chakra
     -- hands="Hesychast's Gloves +3", -- Enhances Chakra
   } -- VIT
@@ -302,26 +315,6 @@ function init_gear_sets()
   }
   sets.precast.Flourish1 = {
   }
-
-  sets.precast['Utsusemi: Ichi'] = set_combine(sets.precast.FC, {
-    ammo="Staunch Tathlum +1",
-    ring1="Prolix Ring",
-    ring2="Defending Ring",
-  })
-  sets.precast['Utsusemi: Ni'] = set_combine(sets.precast.FC, {
-    ring2="Defending Ring",
-  })
-
-  -- Initializes trusts at iLvl 119
-  sets.midcast.Trust = sets.precast.FC
-
-  sets.midcast.SpellInterrupt = {
-    neck="Loricate Torque +1", --5
-    waist="Audumbla Sash", --10
-  }
-
-  sets.midcast['Utsusemi: Ichi'] = set_combine(sets.precast['Utsusemi: Ichi'], sets.midcast.SpellInterrupt)
-  sets.midcast['Utsusemi: Ni'] = set_combine(sets.precast['Utsusemi: Ni'], sets.midcast.SpellInterrupt)
 
 
   ------------------------------------------------------------------------------------------------
@@ -718,6 +711,26 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Midcast Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
+
+  -- Initializes trusts at iLvl 119
+  sets.midcast.Trust = {
+    head=gear.Nyame_B_head,
+    body=gear.Nyame_B_body,
+    hands=gear.Nyame_B_hands,
+    legs=gear.Nyame_B_legs,
+    feet=gear.Nyame_B_feet,
+  }
+
+  sets.midcast.Utsusemi = {
+    ammo="Impatiens", -- SIRD
+    head=gear.Nyame_B_head, -- DT
+    body=gear.Nyame_B_body, -- DT
+    hands=gear.Nyame_B_hands, -- DT
+    legs=gear.Nyame_B_legs, -- DT
+    feet=gear.Nyame_B_feet, -- DT
+    neck="Loricate Torque +1", -- SIRD + DT
+    ring1="Defending Ring", -- DT
+  }
 
 
   ------------------------------------------------------------------------------------------------
