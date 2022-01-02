@@ -19,7 +19,7 @@ user_settings = {
           'Barfire', 'Barblizzard', 'Baraero', 'Barstone', 'Barthunder', 'Barwater'
         },
         Ninjutsu = T{},
-        Singing = T{},
+        Singing = T{"Army's Paeon", "Army's Paeon II", "Sheepfoe Mambo", "Herb Pastoral", "Knight's Minne", "Valor Minuet"},
         Blue = T{},
         Summoning = T{}},
     save_settings = false} --change this to true if you wish to save the last position of your skillup window
