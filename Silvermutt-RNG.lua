@@ -558,8 +558,8 @@ function init_gear_sets()
     ring1="Weatherspoon Ring", --10 (light only)
     ring2="Dingir Ring", --10
     back=gear.RNG_WS1_Cape,
-    waist="Eschan Stone", --7
-    -- waist="Orpheus's Sash",
+    waist="Skrymir Cord",
+    -- waist="Skrymir Cord +1",
   } -- AGI / MAB
   sets.precast.WS["Trueflight"].MaxTP = set_combine(sets.precast.WS["Trueflight"], {
     ear2="Novio Earring",

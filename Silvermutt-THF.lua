@@ -485,9 +485,9 @@ function init_gear_sets()
     ring1="Shiva Ring +1", --3
     ring2="Dingir Ring",
     back=gear.DNC_WS1_Cape,
-    waist="Eschan Stone", --7
+    waist="Skrymir Cord",
     -- ring1="Epaminondas's Ring",
-    -- waist="Orpheus's Sash",
+    -- waist="Skrymir Cord +1",
   }
   sets.precast.WS['Aeolian Edge'].MaxTP = set_combine(sets.precast.WS['Aeolian Edge'], {
     ear2="Novio Earring", --7
