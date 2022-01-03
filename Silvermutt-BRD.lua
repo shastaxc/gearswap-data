@@ -79,7 +79,7 @@ function job_setup()
 
   state.SongMode = M{['description']='Song Mode', 'None', 'Placeholder'}
   state.OffenseMode:options('Normal', 'Acc')
-  state.HybridMode:options('Normal', 'DT')
+  state.HybridMode:options('DT', 'Normal')
   state.WeaponskillMode:options('Normal', 'Acc')
   state.CastingMode:options('Normal', 'Resistant')
   state.IdleMode:options('Normal', 'DT')
@@ -466,7 +466,7 @@ function init_gear_sets()
     -- hands="Fili Manchettes +1", -- No potency change with +1
   }
   sets.midcast["Sentinel's Scherzo"] = {
-    -- feet="Fili Cothurnes +1",
+    feet="Fili Cothurnes +1",
   }
   sets.midcast.Carol = {
     -- hands="Mousai Gages +1",
@@ -722,6 +722,7 @@ function init_gear_sets()
   -- PDT and MDT cap at 50% each, but included more in case slots
   -- swap out for Regen, or in battle mode
   sets.HeavyDef = {
+    main="Naegling",          -- __, __, ___
     sub="Genmei Shield",      -- 10, __, ___
     head=gear.Nyame_B_head,   --  7,  7, 123
     body=gear.Nyame_B_body,   --  9,  9, 139
@@ -1032,7 +1033,7 @@ function init_gear_sets()
     neck="Ygnas's Resolve +1",
   }
   sets.Kiting = {
-    -- feet="Fili Cothurnes +1",
+    feet="Fili Cothurnes +1",
   }
   sets.Kiting.Adoulin = {
     body="Councilor's Garb",
@@ -1139,7 +1140,7 @@ function job_post_precast(spell, action, spellMap, eventArgs)
 
   if state.BattleMode.value == true then
     -- Keep weapons the same, to avoid losing TP
-    equip({main=player.equipment.main,sub=player.equipment.sub})
+    equip(sets.WeaponSet[state.WeaponSet.value])
   end
 
   -- If slot is locked, keep current equipment on
@@ -1190,7 +1191,7 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
 
   if state.BattleMode.value == true then
     -- Keep weapons the same, to avoid losing TP
-    equip({main=player.equipment.main,sub=player.equipment.sub})
+    equip(sets.WeaponSet[state.WeaponSet.value])
   end
 
   -- If slot is locked, keep current equipment on
@@ -1350,7 +1351,7 @@ function customize_idle_set(idleSet)
 
   if state.BattleMode.value == true then
     -- Keep weapons the same, to avoid losing TP
-    equip({main=player.equipment.main,sub=player.equipment.sub})
+    idleSet = set_combine(idleSet, sets.WeaponSet[state.WeaponSet.value])
   end
 
   -- If slot is locked to use no-swap gear, keep it equipped
@@ -1369,12 +1370,16 @@ end
 
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
-  equip(sets.WeaponSet[state.WeaponSet.current])
   if buffactive['Aftermath: Lv.3'] and player.equipment.main == "Carnwenhan" then
     meleeSet = set_combine(meleeSet, sets.engaged.Aftermath)
   end
   if state.CP.current == 'on' then
     meleeSet = set_combine(meleeSet, sets.CP)
+  end
+  
+  if state.BattleMode.value == true then
+    -- Keep weapons the same, to avoid losing TP
+    meleeSet = set_combine(meleeSet, sets.WeaponSet[state.WeaponSet.value])
   end
   
   -- If slot is locked to use no-swap gear, keep it equipped
@@ -1398,7 +1403,7 @@ function customize_defense_set(defenseSet)
   
   if state.BattleMode.value == true then
     -- Keep weapons the same, to avoid losing TP
-    equip({main=player.equipment.main,sub=player.equipment.sub})
+    defenseSet = set_combine(defenseSet, sets.WeaponSet[state.WeaponSet.value])
   end
 
   -- If slot is locked to use no-swap gear, keep it equipped
