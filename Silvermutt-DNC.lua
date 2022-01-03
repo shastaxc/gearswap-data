@@ -170,6 +170,7 @@ function job_setup()
   send_command('bind ^numpad+ input /ja "Climactic Flourish" <me>')
   send_command('bind ^numpadenter input /ja "Building Flourish" <me>')
   send_command('bind %numpad0 gs c step t')
+  send_command('bind %e input /ra <t>')
 end
 
 -- Executes on first load, main job change, **and sub job change**
@@ -248,7 +249,7 @@ function job_file_unload()
   send_command('unbind ^numpad.')
   send_command('unbind %numpad0')
   send_command('unbind ^f8')
-
+  send_command('unbind %e')
 end
 
 
