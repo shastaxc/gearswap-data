@@ -39,7 +39,7 @@ elemental_ws = S{'Aeolian Edge', 'Sanguine Blade', 'Cloudsplitter', 'Seraph Blad
     'Shining Strike', 'Seraph Strike', 'Flash Nova', 'Rock Crusher', 'Earth Crusher', 'Starburst', 'Sunburst', 'Vidohunir',
     'Garland of Bliss', 'Omniscience', 'Flaming Arrow', 'Hot Shot'}
 
--- Enhancing magic spells that don't scale with skill. Overrides Mote lib.
+-- Spells that don't scale with skill. Overrides Mote lib.
 classes.NoSkillSpells = S{'Haste', 'Haste II', 'Refresh', 'Refresh II', 'Refresh III', 'Regen', 'Regen II', 'Regen III',
     'Regen IV', 'Regen V', 'Protect', 'Protect II', 'Protect III', 'Protect IV', 'Protect V', 'Protectra', 'Protectra II',
     'Protectra III', 'Protectra IV', 'Protectra V', 'Shell', 'Shell II', 'Shell III', 'Shell IV', 'Shell V', 'Shellra',
