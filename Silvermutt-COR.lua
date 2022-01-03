@@ -141,12 +141,9 @@ function job_setup()
   gear.QDbullet = "Hauksbok Bullet"
   options.ammo_warning_limit = 10
 
-  marksman_weapon_subtypes = {
-    ['Death Penalty'] = "gun",
-    ['Armageddon'] = "gun",
-    ['Fomalhaut'] = "gun",
-    ['Doomsday'] = "gun",
-  }
+  -- Update DistancePlus addon with weapon type
+  -- Corsair only uses guns for ranged weapons
+  send_command('dp gun')
 
   sets.org.job = {}
   sets.org.job[1] = {ammo=gear.RAbullet}
@@ -1556,7 +1553,6 @@ end
 
 function job_update(cmdParams, eventArgs)
   handle_equipping_gear(player.status)
-  update_dp_type() -- Requires DistancePlus addon
 end
 
 function update_combat_form()
@@ -2175,36 +2171,6 @@ windower.register_event('zone change', function()
   if locked_ring2 then equip({ ring2=empty }) end
   if locked_waist then equip({ waist=empty }) end
 end)
-
--- Requires DistancePlus addon
-function update_dp_type()
-  local weapon = nil
-  local weapon_type = nil
-  local weapon_subtype = nil
-
-  --Handle unequipped case
-  if player.equipment.ranged ~= nil and player.equipment.ranged ~= 0 and player.equipment.ranged ~= 'empty' then
-    weapon = res.items:with('name', player.equipment.ranged)
-    weapon_type = res.skills[weapon.skill].en
-    if weapon_type == 'Archery' then
-      weapon_subtype = 'bow'
-    elseif weapon_type == 'Marksmanship' then
-      weapon_subtype = marksman_weapon_subtypes[weapon.en]
-    end
-  end
-
-  --Change keybinds if weapon type changed
-  if weapon_subtype ~= current_dp_type then
-    current_dp_type = weapon_subtype
-    if current_dp_type ~= nil then
-      coroutine.schedule(function()
-        if current_dp_type ~= nil then
-          send_command('dp '..current_dp_type)
-        end
-      end,3)
-    end
-  end
-end
 
 function equip_weapons()
   equip(sets.WeaponSet[state.WeaponSet.current])
