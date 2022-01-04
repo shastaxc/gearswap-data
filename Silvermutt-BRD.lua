@@ -1140,7 +1140,11 @@ function job_post_precast(spell, action, spellMap, eventArgs)
 
   if state.BattleMode.value == true then
     -- Keep weapons the same, to avoid losing TP
-    equip(sets.WeaponSet[state.WeaponSet.value])
+    if state.CombatForm.value == 'DW' then
+      equip(sets.WeaponSet[state.WeaponSet.value])
+    else
+      equip({ main=sets.WeaponSet[state.WeaponSet.value].main })
+    end
   end
 
   -- If slot is locked, keep current equipment on
@@ -1191,7 +1195,11 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
 
   if state.BattleMode.value == true then
     -- Keep weapons the same, to avoid losing TP
-    equip(sets.WeaponSet[state.WeaponSet.value])
+    if state.CombatForm.value == 'DW' then
+      equip(sets.WeaponSet[state.WeaponSet.value])
+    else
+      equip({ main=sets.WeaponSet[state.WeaponSet.value].main })
+    end
   end
 
   -- If slot is locked, keep current equipment on
@@ -1354,6 +1362,15 @@ function customize_idle_set(idleSet)
     idleSet = set_combine(idleSet, sets.WeaponSet[state.WeaponSet.value])
   end
 
+  if state.BattleMode.value == true then
+    -- Keep weapons the same, to avoid losing TP
+    if state.CombatForm.value == 'DW' then
+      idleSet = set_combine(idleSet, sets.WeaponSet[state.WeaponSet.value])
+    else
+      idleSet = set_combine(idleSet, { main=sets.WeaponSet[state.WeaponSet.value].main })
+    end
+  end
+
   -- If slot is locked to use no-swap gear, keep it equipped
   if locked_neck then idleSet = set_combine(idleSet, { neck=player.equipment.neck }) end
   if locked_ear1 then idleSet = set_combine(idleSet, { ear1=player.equipment.ear1 }) end
@@ -1376,12 +1393,16 @@ function customize_melee_set(meleeSet)
   if state.CP.current == 'on' then
     meleeSet = set_combine(meleeSet, sets.CP)
   end
-  
+
   if state.BattleMode.value == true then
     -- Keep weapons the same, to avoid losing TP
-    meleeSet = set_combine(meleeSet, sets.WeaponSet[state.WeaponSet.value])
+    if state.CombatForm.value == 'DW' then
+      meleeSet = set_combine(meleeSet, sets.WeaponSet[state.WeaponSet.value])
+    else
+      meleeSet = set_combine(meleeSet, { main=sets.WeaponSet[state.WeaponSet.value].main })
+    end
   end
-  
+
   -- If slot is locked to use no-swap gear, keep it equipped
   if locked_neck then meleeSet = set_combine(meleeSet, { neck=player.equipment.neck }) end
   if locked_ear1 then meleeSet = set_combine(meleeSet, { ear1=player.equipment.ear1 }) end
@@ -1400,10 +1421,14 @@ function customize_defense_set(defenseSet)
   if state.CP.current == 'on' then
     defenseSet = set_combine(defenseSet, sets.CP)
   end
-  
+
   if state.BattleMode.value == true then
     -- Keep weapons the same, to avoid losing TP
-    defenseSet = set_combine(defenseSet, sets.WeaponSet[state.WeaponSet.value])
+    if state.CombatForm.value == 'DW' then
+      defenseSet = set_combine(defenseSet, sets.WeaponSet[state.WeaponSet.value])
+    else
+      defenseSet = set_combine(defenseSet, { main=sets.WeaponSet[state.WeaponSet.value].main })
+    end
   end
 
   -- If slot is locked to use no-swap gear, keep it equipped
