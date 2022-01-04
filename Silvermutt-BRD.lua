@@ -62,7 +62,7 @@ function job_setup()
   silibs.enable_cancel_outranged_ws()
   silibs.enable_cancel_on_blocking_status()
   silibs.enable_weapon_rearm()
-  silibs.enable_auto_lockstyle(1)
+  silibs.enable_auto_lockstyle(11)
   silibs.enable_premade_commands()
   silibs.enable_th()
 
