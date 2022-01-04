@@ -145,16 +145,6 @@ function job_setup()
   -- Corsair only uses guns for ranged weapons
   send_command('dp gun')
 
-  sets.org.job = {}
-  sets.org.job[1] = {ammo=gear.RAbullet}
-  sets.org.job[2] = {ammo=gear.RAccbullet}
-  sets.org.job[3] = {ammo=gear.WSbullet}
-  sets.org.job[4] = {ammo=gear.MAbullet}
-  sets.org.job[5] = {ammo=gear.QDbullet}
-  sets.org.job[6] = {ammo="Chrono bullet pouch"}
-  sets.org.job[7] = {ammo="Devastating Bullet Pouch"}
-  sets.org.job[8] = {ammo="Living Bullet Pouch"}
-
   define_roll_values()
 
   send_command('bind !s gs c faceaway')
@@ -258,6 +248,14 @@ end
 -- Define sets and vars used by this job file.
 function init_gear_sets()
   sets.org.job = {}
+  sets.org.job[1] = {ammo=gear.RAbullet}
+  sets.org.job[2] = {ammo=gear.RAccbullet}
+  sets.org.job[3] = {ammo=gear.WSbullet}
+  sets.org.job[4] = {ammo=gear.MAbullet}
+  sets.org.job[5] = {ammo=gear.QDbullet}
+  sets.org.job[6] = {waist="Chrono bullet pouch"}
+  sets.org.job[7] = {waist="Devastating Bullet Pouch"}
+  sets.org.job[8] = {waist="Living Bullet Pouch"}
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Precast Sets ------------------------------------------
