@@ -154,9 +154,6 @@ function init_gear_sets()
     head="Bagua Galero +1",
   }
 
-	-- Indi Duration in slots that would normally have skill here to make entrust more efficient.
-	sets.buff.Entrust = {}
-
 	-- Relic hat for Blaze of Glory HP increase.
 	sets.buff['Blaze of Glory'] = {}
 
@@ -302,16 +299,41 @@ function init_gear_sets()
     -- ear2="Calamitous Earring",   -- __, __,  4
     -- ring2="Mephitas's Ring +1",  -- __, __, 15
     -- waist="Shinjutsu-no-Obi +1", -- __, __, 15
-    -- 10 Geomancy, 56 geo skill, 58 Conserve MP
-	} -- 10 Geomancy, 906 geo skill, 12 Conserve MP
+    -- Base stats                   -- __,850, 43
+    -- 10 Geomancy, 906 geo skill, 101 Conserve MP
+	} -- 10 Geomancy, 906 geo skill, 55 Conserve MP
 
 	--Extra Indi duration as long as you can keep your 900 skill cap.
-	sets.midcast.Geomancy.Indi = set_combine(sets.midcast.Geomancy,{
-    legs="Bagua Pants +3",          -- __, __, __, 15
-    neck="Reti Pendant",            -- __,  5,  4, __
-    -- head=gear.Vanya_C_head,      -- __, __, 12, __
-    -- legs="Bagua Pants +3",       -- __, __, __, 21
-    -- 10 Geomancy, 46 geo skill, 62 Conserve MP, 61 Indi Duration
+	sets.midcast.Geomancy.Indi = {
+    main="Idris",                   -- 10, __, __, __, __
+    sub="Genmei Shield",            -- __, __, __, __, __
+    range="Dunna",                  -- __, 18, __, __, __
+    ammo=empty,
+    hands="Azimuth Gloves +1",      -- __, __, __, __, __; Set bonus: save MP
+    legs="Bagua Pants +1",          -- __, __, __, 15, __
+    feet="Azimuth Gaiters +1",      -- __, __, __, 20, __; Set bonus: save MP
+    neck="Incanter's Torque",       -- __, 10, __, __, __; Save MP
+    ring1="Stikini Ring +1",        -- __,  8, __, __, __
+    -- head=gear.Vanya_C_head,      -- __, __, 12, __, __
+    -- body="Vedic Coat",           -- __, __, 10, __, __
+    -- legs="Bagua Pants +3",       -- __, __, __, 21, __
+    -- ear1="Mendicant's Earring",  -- __, __,  2, __, __
+    -- ear2="Calamitous Earring",   -- __, __,  4, __, __
+    -- ring2="Mephitas's Ring +1",  -- __, __, 15, __, __
+    -- back=gear.GEO_Adoulin_Cape,  -- __, 15, __, __, 20
+    -- waist="Shinjutsu-no-Obi +1", -- __, __, 15, __, __
+    -- Base stats                   -- __,850, 43, __, __
+    -- 10 Geomancy, 901 geo skill, 101 Conserve MP, 41 Indi Duration, 20 Indi Duration %
+  }
+
+	-- Geomancy and skill have no effect on Entrust.
+	sets.buff.Entrust = set_combine(sets.midcast.Geomancy.Indi, {
+    ear1="Odnowa Earring +1",       -- __, __, __, __, __; DT
+    ear2="Etiolation Earring",      -- __, __, __, __, __; DT
+    ring1="Defending Ring",         -- __, __, __, __, __; DT
+    -- main="Solstice",                -- __,  5,  6, 15, __
+    -- sub="Genmei Shield",            -- __, __, __, __, __
+    -- 0 Geomancy, 898 geo skill, 101 Conserve MP, 56 Indi Duration, 20 Indi Duration %
   })
 
   sets.midcast.Cure = {
@@ -935,6 +957,9 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
 			if player.equipment.main ~= 'Solstice' and item_available('Solstice') then
 				equip({main="Solstice"})
 			end
+      if sets.buff.Entrust then
+        equip(sets.buff.Entrust)
+      end
 		end
   end
 
