@@ -490,11 +490,11 @@ function init_gear_sets()
     hands="Jhakri Cuffs +2",
     neck="Baetyl Pendant",
     ear1="Malignance Earring",
+    ear2="Regal Earring",
     ring1="Archon Ring",
     -- body="Amalric Doublet +1",
     -- legs="Amalric Slops +1",
     -- feet="Amalric Nails +1",
-    -- ear2="Regal Earring",
     -- ring2="Epaminondas's Ring",
     -- back=gear.RDM_INT_Cape,
     -- waist="Orpheus's Sash",
@@ -933,7 +933,7 @@ function init_gear_sets()
     feet="Ayanmo Gambieras +2",
     neck="Baetyl Pendant", --13
     ear1="Malignance Earring", --8
-    ear2="Friomisi Earring", --10
+    ear2="Regal Earring",--7
     ring1="Shiva Ring +1", --3
     ring2="Metamorph Ring +1",
     back="Argochampsa Mantle", --12
@@ -944,7 +944,6 @@ function init_gear_sets()
     -- hands="Amalric Gages +1",
     -- legs="Amalric Slops +1",
     -- feet="Amalric Nails +1",
-    -- ear2="Regal Earring",
     -- ring1="Freke Ring",
     -- back=gear.RDM_INT_Cape,
     -- waist="Refoccilation Stone",

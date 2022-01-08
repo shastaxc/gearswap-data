@@ -302,6 +302,7 @@ function init_gear_sets()
   -- Specific weaponskill sets.
   -- Modifiers: 70% CHR / 30% DEX
   sets.precast.WS['Mordant Rime'] = {
+    ear1="Regal Earring",         -- __, __, __, __, __, __, 10, __
     ear2="Ishvara Earring",       --  2, __, __, __, __, __, __, __
     ring1="Metamor. Ring +1",     -- __, __, __, __, __, __, 16, __
     waist="Kentarch Belt +1",     -- __, __, __,  3, __, 14, __, 10
@@ -312,7 +313,6 @@ function init_gear_sets()
     -- legs="Bihu Cannions +3",   -- __, __, __, __, 64, 39, 43, __
     -- feet="Bihu Slippers +3",   -- __, __, __, __, 61, 36, 48, 21
     -- neck="Bard's Charm +2",    -- __,  3, __, __, __, 30, 25, 25
-    -- ear1="Regal Earring",      -- __, __, __, __, __, __, 10, __
     -- ring2="Epaminondas's Ring",--  5, __, __, __, __, __, __, __
     -- back=gear.BRD_WS1_Cape,    -- 10, __, __, __, 20, 20, 30, __
   } -- 30 WSD, 3 QA, 0 TA, 3 DA, 377 Att, 282 Acc, 296 CHR, 159 DEX
@@ -394,7 +394,7 @@ function init_gear_sets()
     -- 48 WSD, 166 DEX, 203 INT, 251 MAB
   })
   sets.precast.WS['Aeolian Edge'].MaxTP = set_combine(sets.precast.WS['Aeolian Edge'], {
-    -- ear1="Regal Earring",      -- __, __, 10,  7
+    ear1="Regal Earring",         -- __, __, 10,  7
   })
 
   -- Modifiers: 50% STR / 50% MND
@@ -540,6 +540,7 @@ function init_gear_sets()
   sets.midcast.SongEnfeeble = {
     legs="Inyanga Shalwar +2",    -- 32, 17, 45, ___
     ear1="Digni. Earring",        -- __, __, 10, ___
+    ear2="Regal Earring",         -- 10, __, __, ___; Adds to set bonus
     ring1="Stikini Ring +1",      -- __, __, 11, ___
     back=gear.BRD_Song_Cape,      -- 20, __, 30, ___
     -- main="Carnwenhan",         -- __, 50, 70, 255
@@ -550,7 +551,6 @@ function init_gear_sets()
     -- hands="Brioso Cuffs +3",   -- 39, __, 48, ___
     -- feet="Brioso Slippers +3", -- 48, 15, 46, ___
     -- neck="Mnbw. Whistle +1",   -- 23, __, 23, ___
-    -- ear2="Regal Earring",      -- 10, __, __, ___; Adds to set bonus
     -- ring2="Stikini Ring +1",   -- __, __, 11, ___
     -- waist="Acuity Belt +1",    -- __, __, 15, ___
     -- Set bonuses                   __, __, 45, ___

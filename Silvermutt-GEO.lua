@@ -240,7 +240,7 @@ function init_gear_sets()
     legs=gear.Nyame_B_legs,         -- __, 30, __,  9
     feet=gear.Nyame_B_feet,         -- __, 30, __,  8
     neck="Fotia Neck",              -- __, __, __, __; FTP bonus
-    ear1="Friomisi Earring",        -- __, 10, __, __
+    ear1="Regal Earring",           -- __,  7, __, __
     ear2="Moonshade Earring",       -- __, __, __, __; TP bonus
     ring1="Archon Ring",            --  5, __, __, __
     ring2="Shiva Ring +1",          -- __,  3, __, __
@@ -249,7 +249,6 @@ function init_gear_sets()
     -- body="Agwu's Robe",          -- __, 55, 20, __
     -- legs="Agwu's Slops",         -- __, 55, 20, __
     -- feet="Agwu's Pigaches",      -- __, 55, 20, __
-    -- ear1="Regal Earring",        -- __,  7, __, __
     -- ring2="Epaminondas's Ring",  -- __, __, __,  5
     -- back=gear.GEO_Nuke_Cape,     -- __, 10, 20, __
     -- waist="Skrymir Cord +1",     -- __,  7, 35, __
@@ -411,7 +410,7 @@ function init_gear_sets()
     feet="Jhakri Pigaches +2",
     neck="Baetyl Pendant", --13
     ear1="Malignance Earring", --8
-    ear2="Friomisi Earring", --10
+    ear2="Regal Earring", --7
     ring1="Metamorph Ring +1",
     ring2="Shiva Ring +1", --3
     back="Argochampsa Mantle", --12
@@ -423,7 +422,6 @@ function init_gear_sets()
     -- legs=gear.Amalric_A_legs,
     -- feet=gear.Amalric_D_feet,
     -- neck="Sanctity Necklace",
-    -- ear2="Regal Earring",
     -- ring1="Freke Ring",
     -- back=gear.GEO_Nuke_Cape,
     -- waist="Sacro Cord",
@@ -467,6 +465,7 @@ function init_gear_sets()
     ammo=empty,
     legs="Geomancy Pants +2",
     neck="Bagua Charm +1",
+    ear1="Regal Earring",
     ear2="Malignance Earring",
     ring1="Stikini Ring +1",
     ring2="Weatherspoon Ring",
@@ -479,7 +478,6 @@ function init_gear_sets()
     -- legs="Geomancy Pants +3",
     -- feet="Volte Gaiters",
     -- neck="Bagua Charm +2",
-    -- ear1="Regal Earring",
     -- ring1="Stikini Ring +1",
     -- waist="Witful Belt",
   }
@@ -524,6 +522,7 @@ function init_gear_sets()
     legs="Geomancy Pants +2",
     feet="Geomancy Sandals +2",
     neck="Bagua Charm +1",
+    ear1="Regal Earring",
     ear2="Malignance Earring",
     ring1="Stikini Ring +1",
     ring2="Metamorph Ring +1",
@@ -532,7 +531,6 @@ function init_gear_sets()
     -- legs="Geomancy Pants +3",
     -- feet="Geomancy Sandals +3",
     -- neck="Bagua Charm +2",
-    -- ear1="Regal Earring",
     -- back="Aurist's Cape +1",
     -- waist="Acuity Belt +1",
   }
