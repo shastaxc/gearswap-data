@@ -1032,9 +1032,8 @@ function init_gear_sets()
     ear2="Brutal Earring",
     ring1="Epona's Ring",
     ring2="Petrov Ring",
-    back=gear.COR_TP_Cape,
+    back=gear.COR_DW_Cape, --10
     waist="Reiki Yotai", --7
-    -- back=gear.COR_DW_Cape, --10
   } -- 48%
   sets.engaged.DW.LowAcc = set_combine(sets.engaged.DW, {
     head="Dampening Tam",
@@ -1060,15 +1059,15 @@ function init_gear_sets()
     ammo=gear.RAbullet,
     head=gear.Adhemar_B_head,
     body=gear.Adhemar_B_body, --6
-    hands="Floral Gauntlets", --5
+    hands=gear.Adhemar_B_hands,
     legs=gear.Carmine_D_legs, --6
     feet=gear.Taeon_DW_feet, --9
     neck="Iskur Gorget",
-    ear1="Suppanomimi", --5
+    ear1="Cessance Earring",
     ear2="Eabani Earring", --4
     ring1="Epona's Ring",
     ring2="Petrov Ring",
-    back=gear.COR_TP_Cape,
+    back=gear.COR_DW_Cape, --10
     waist="Reiki Yotai", --7
   } -- 42%
   sets.engaged.DW.LowAcc.LowHaste = set_combine(sets.engaged.DW.LowHaste, {
@@ -1135,12 +1134,12 @@ function init_gear_sets()
     feet=gear.Herc_TA_feet,
     neck="Iskur Gorget",
     ear1="Suppanomimi", --5
-    ear2="Eabani Earring", --4
+    ear2="Brutal Earring",
     ring1="Epona's Ring",
     ring2="Petrov Ring",
     back=gear.COR_TP_Cape,
     waist="Reiki Yotai", --7
-  } -- 27%
+  } -- 18%
   sets.engaged.DW.LowAcc.HighHaste = set_combine(sets.engaged.DW.HighHaste, {
     head="Dampening Tam",
     ring1="Chirich Ring +1",
@@ -1168,9 +1167,9 @@ function init_gear_sets()
     body=gear.Adhemar_B_body, --6
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha_legs,
-    feet=gear.Herc_TA_feet,
+    feet=gear.Herc_DW_feet, --5
     neck="Iskur Gorget",
-    ear1="Suppanomimi", --5
+    ear1="Cessance Earring",
     ear2="Telos Earring",
     ring1="Epona's Ring",
     ring2="Petrov Ring",
@@ -1213,7 +1212,7 @@ function init_gear_sets()
     ring2="Petrov Ring",
     back=gear.COR_TP_Cape,
     waist="Windbuffet Belt +1",
-  }
+  }--6
   sets.engaged.DW.LowAcc.MaxHaste = set_combine(sets.engaged.DW.LowAcc.MaxHaste, {
     head="Dampening Tam",
     ring1="Chirich Ring +1",
