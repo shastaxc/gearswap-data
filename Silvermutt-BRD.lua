@@ -195,15 +195,15 @@ function init_gear_sets()
     ear2="Etiolation Earring",  --  1 (__,  3, ___)
     ring1="Defending Ring",     -- __ (10, 10, ___)
     ring2="Kishar Ring",        --  4 (__, __, ___)
+    waist="Embla Sash",         --  5 (__, __, ___)
     -- main="Kali",             --  7 (__, __, ___)
     -- range=gear.Linos_FC,     --  6 (__, __,  15)
     -- head="Bunzi's Hat",      -- 10 ( 7,  7, 123)
     -- legs="Volte Brais",      --  8 (__, __, 142); Chironic good alt
     -- feet="Volte Gaiters",    --  6 (__, __, 142); Chironic good alt
     -- back=gear.BRD_Song_Cape, -- 10 (__, __, ___)
-    -- waist="Embla Sash",      --  5 (__, __, ___)
     -- 86 Fast Cast (27 PDT, 28 MDT, 604 MEVA)
-  } -- 34 Fast Cast (20 PDT, 21 MDT, 182 MEVA)
+  } -- 39 Fast Cast (20 PDT, 21 MDT, 182 MEVA)
 
   sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {
     waist="Siegel Sash",
@@ -218,6 +218,7 @@ function init_gear_sets()
     ear2="Etiolation Earring",        --  1, __ (__,  3, ___)
     ring1="Kishar Ring",              --  4, __ (__, __, ___)
     ring2="Defending Ring",           -- __, __ (10, 10, ___)
+    waist="Embla Sash",               --  5, __ (__, __, ___)
     -- main="Kali",                   --  7, __ (__, __, ___)
     -- range=gear.Linos_FC,           --  6, __ (__, __,  15)
     -- head="Bunzi's Hat",            -- 10, __ ( 7,  7, 123)
@@ -225,7 +226,6 @@ function init_gear_sets()
     -- feet=gear.Vanya_B_feet,        -- __,  7 (__, __, 107)
     -- ear1="Mendi. Earring",         -- __,  5 (__, __, ___)
     -- back=gear.BRD_Song_Cape,       -- 10, __ (__, __, ___)
-    -- waist="Embla Sash",            --  5, __ (__, __, ___)
     -- 64 Fast Cast, 17 Cure Cast Time- (45 PDT, 42 MDT, 552 Magic Evasion)
   }
 
@@ -239,6 +239,7 @@ function init_gear_sets()
     ear2="Etiolation Earring",        --  1, __, __ (__,  3, ___)
     ring1="Defending Ring",           -- __, __, __ (10, 10, ___)
     ring2="Kishar Ring",              --  4, __, __ (__, __, ___)
+    waist="Embla Sash",               --  5, __, __ (__, __, ___)
     -- main="Kali",                   --  7, __, __ (__, __, ___)
     -- range=gear.Linos_FC,           --  6, __, __ (__, __,  15)
     -- head="Bunzi's Hat",            -- 10, __, __ ( 7,  7, 123)
@@ -246,7 +247,6 @@ function init_gear_sets()
     -- legs=gear.Gende_SongFC_legs,   -- __, 10,  3 ( 4, __, 107)
     -- feet="Volte Gaiters",          --  6, __, __ (__, __, 142); Chironic good alt
     -- back=gear.BRD_Song_Cape,       -- 10, __, __ (__, __, ___)
-    -- waist="Embla Sash",            --  5, __, __ (__, __, ___)
     -- 72 Fast Cast, 15 Song Cast Time-, 6 Song Recast- (41 PDT, 34 MDT, 544 Magic Evasion)
   }
 
@@ -627,6 +627,7 @@ function init_gear_sets()
     ear1="Mimir Earring",         -- 10, __
     ear2="Andoaa Earring",        --  5, __
     ring1="Stikini Ring +1",      --  8, __
+    waist="Embla Sash",           -- __, 10
     -- main="Pukulatmuj +1",         -- 11, __
     -- sub="Ammurapi Shield",        -- __, 10
     -- range=gear.Linos_CnsvMP,      -- __, __
@@ -636,7 +637,6 @@ function init_gear_sets()
     -- feet="Kaykaus Boots +1",      -- 21, __
     -- ring2="Stikini Ring +1",      --  8, __
     -- back="Fi Follet Cape +1",     --  9, __
-    -- waist="Embla Sash",           -- __, 10
     -- 142 Enhancing Skill, 30% Enhancing Duration
   }
 

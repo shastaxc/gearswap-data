@@ -332,8 +332,8 @@ function init_gear_sets()
   })
 
   sets.precast.FC.Cure = set_combine(sets.precast.FC, {
+    waist="Embla Sash",
     -- legs="Kaykaus Tights +1", --7
-    -- waist="Embla Sash",
   })
 
   sets.precast.FC.Curaga = sets.precast.FC.Cure
@@ -708,6 +708,7 @@ function init_gear_sets()
   }
 
   sets.midcast.EnhancingDuration = {
+    waist="Embla Sash",
     -- main=gear.Colada_ENH,
     -- sub="Ammurapi Shield",
     -- head=gear.Telchine_ENH_head,
@@ -717,7 +718,6 @@ function init_gear_sets()
     -- feet="Leth. Houseaux +1",
     -- neck="Dls. Torque +2",
     -- back="Ghostfyre Cape",
-    -- waist="Embla Sash",
   }
 
   sets.midcast.EnhancingSkill = {

@@ -778,10 +778,10 @@ function init_gear_sets()
 	sets.ResistantMagicBurst = sets.MagicBurst
 
 	sets.buff.Sublimation = {
-    -- waist="Embla Sash"
+    waist="Embla Sash"
   }
   sets.buff.DTSublimation = {
-    -- waist="Embla Sash"
+    waist="Embla Sash"
   }
 
 
