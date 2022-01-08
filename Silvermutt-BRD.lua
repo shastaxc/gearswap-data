@@ -55,6 +55,12 @@ function get_sets()
   -- Load and initialize Mote library
   mote_include_version = 2
   include('Mote-Include.lua') -- Executes job_setup, user_setup, init_gear_sets
+  coroutine.schedule(function()
+    send_command('gs org')
+  end, 1)
+  coroutine.schedule(function()
+    send_command('gs c weaponset current')
+  end, 2)
 end
 
 -- Executes on first load and main job change
@@ -1305,11 +1311,19 @@ function job_self_command(cmdParams, eventArgs)
   silibs.self_command(cmdParams, eventArgs)
   ----------- Non-silibs content goes below this line -----------
 
-  if cmdParams[1]:lower() == 'etude' then
+  if cmdParams[1] == 'weaponset' then
+    if cmdParams[2] == 'cycle' then
+      cycle_weapons('forward')
+    elseif cmdParams[2] == 'cycleback' then
+      cycle_weapons('back')
+    elseif cmdParams[2] == 'current' then
+      cycle_weapons('current')
+    end
+  elseif cmdParams[1] == 'etude' then
     send_command('@input /ma '..state.Etude.value..' <stpc>')
-  elseif cmdParams[1]:lower() == 'carol' then
+  elseif cmdParams[1] == 'carol' then
     send_command('@input /ma '..state.Carol.value..' <stpc>')
-  elseif cmdParams[1]:lower() == 'threnody' then
+  elseif cmdParams[1] == 'threnody' then
     send_command('@input /ma '..state.Threnody.value..' <stnpc>')
   end
 
@@ -1355,11 +1369,6 @@ function customize_idle_set(idleSet)
   end
   if state.CP.current == 'on' then
     idleSet = set_combine(idleSet, sets.CP)
-  end
-
-  if state.BattleMode.value == true then
-    -- Keep weapons the same, to avoid losing TP
-    idleSet = set_combine(idleSet, sets.WeaponSet[state.WeaponSet.value])
   end
 
   if state.BattleMode.value == true then
@@ -1515,6 +1524,21 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
+
+function cycle_weapons(cycle_dir)
+  if cycle_dir == 'forward' then
+    state.WeaponSet:cycle()
+  elseif cycle_dir == 'back' then
+    state.WeaponSet:cycleback()
+  end
+
+  add_to_chat(141, 'Weapon Set to '..string.char(31,1)..state.WeaponSet.current)
+  if state.CombatForm.value == 'DW' then
+    equip(sets.WeaponSet[state.WeaponSet.value])
+  else
+    equip({ main=sets.WeaponSet[state.WeaponSet.value].main })
+  end
+end
 
 -- Determine the custom class to use for the given song.
 function get_song_class(spell)
