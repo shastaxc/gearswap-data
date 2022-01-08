@@ -196,14 +196,14 @@ function init_gear_sets()
     ear2="Etiolation Earring",  --  1 (__,  3, ___)
     ring1="Defending Ring",     -- __ (10, 10, ___)
     ring2="Kishar Ring",        --  4 (__, __, ___)
+    back=gear.BRD_Song_Cape,    -- 10 (10, __, ___)
     waist="Embla Sash",         --  5 (__, __, ___)
     -- main="Kali",             --  7 (__, __, ___)
     -- range=gear.Linos_FC,     --  6 (__, __,  15)
     -- legs="Volte Brais",      --  8 (__, __, 142); Chironic good alt
     -- feet="Volte Gaiters",    --  6 (__, __, 142); Chironic good alt
-    -- back=gear.BRD_Song_Cape, -- 10 (__, __, ___)
-    -- 86 Fast Cast (27 PDT, 28 MDT, 604 MEVA)
-  } -- 39 Fast Cast (20 PDT, 21 MDT, 182 MEVA)
+    -- 86 Fast Cast (37 PDT, 28 MDT, 604 MEVA)
+  } -- 39 Fast Cast (30 PDT, 21 MDT, 182 MEVA)
 
   sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {
     waist="Siegel Sash",
@@ -219,14 +219,14 @@ function init_gear_sets()
     ear2="Etiolation Earring",        --  1, __ (__,  3, ___)
     ring1="Kishar Ring",              --  4, __ (__, __, ___)
     ring2="Defending Ring",           -- __, __ (10, 10, ___)
+    back=gear.BRD_Song_Cape,          -- 10, __ (10, __, ___)
     waist="Embla Sash",               --  5, __ (__, __, ___)
     -- main="Kali",                   --  7, __ (__, __, ___)
     -- range=gear.Linos_FC,           --  6, __ (__, __,  15)
     -- hands=gear.Gende_CureFC_hands, --  7,  5 ( 4, __,  37)
     -- feet=gear.Vanya_B_feet,        -- __,  7 (__, __, 107)
     -- ear1="Mendi. Earring",         -- __,  5 (__, __, ___)
-    -- back=gear.BRD_Song_Cape,       -- 10, __ (__, __, ___)
-    -- 64 Fast Cast, 17 Cure Cast Time- (45 PDT, 42 MDT, 552 Magic Evasion)
+    -- 64 Fast Cast, 17 Cure Cast Time- (55 PDT, 42 MDT, 552 Magic Evasion)
   }
 
   -- Total cast speed cap 80%, "song cast time-" cap 50%, fill in rest with defensive gear
@@ -240,14 +240,14 @@ function init_gear_sets()
     ear2="Etiolation Earring",        --  1, __, __ (__,  3, ___)
     ring1="Defending Ring",           -- __, __, __ (10, 10, ___)
     ring2="Kishar Ring",              --  4, __, __ (__, __, ___)
+    back=gear.BRD_Song_Cape,          -- 10, __, __ (10, __, ___)
     waist="Embla Sash",               --  5, __, __ (__, __, ___)
     -- main="Kali",                   --  7, __, __ (__, __, ___)
     -- range=gear.Linos_FC,           --  6, __, __ (__, __,  15)
     -- hands=gear.Gende_SongFC_hands, --  7,  5,  3 ( 4, __,  37)
     -- legs=gear.Gende_SongFC_legs,   -- __, 10,  3 ( 4, __, 107)
     -- feet="Volte Gaiters",          --  6, __, __ (__, __, 142); Chironic good alt
-    -- back=gear.BRD_Song_Cape,       -- 10, __, __ (__, __, ___)
-    -- 72 Fast Cast, 15 Song Cast Time-, 6 Song Recast- (41 PDT, 34 MDT, 544 Magic Evasion)
+    -- 72 Fast Cast, 15 Song Cast Time-, 6 Song Recast- (51 PDT, 34 MDT, 544 Magic Evasion)
   }
 
   sets.precast.FC.SongPlaceholder = set_combine(sets.precast.FC.BardSong, {
@@ -521,6 +521,7 @@ function init_gear_sets()
     ear2="Etiolation Earring",
     ring1="Moonlight Ring", -- Gel. Ring +1 acceptable alt
     ring2="Defending Ring",
+    back=gear.BRD_Song_Cape,
     -- main="Carnwenhan",
     -- range="Gjallarhorn",        -- +4 Potency
     -- head="Fili Calot +1",
@@ -528,7 +529,6 @@ function init_gear_sets()
     -- hands="Fili Manchettes +1",
     -- feet="Brioso Slippers +3",
     -- neck="Mnbw. Whistle +1",
-    -- back=gear.BRD_Song_Cape,
     -- waist="Flume Belt +1",
   }
 
@@ -539,6 +539,7 @@ function init_gear_sets()
     legs="Inyanga Shalwar +2",    -- 32, 17, 45, ___
     ear1="Digni. Earring",        -- __, __, 10, ___
     ring1="Stikini Ring +1",      -- __, __, 11, ___
+    back=gear.BRD_Song_Cape,      -- 20, __, 30, ___
     -- main="Carnwenhan",         -- __, 50, 70, 255
     -- sub="Ammurapi Shield",     -- __, __, 38, ___
     -- range="Gjallarhorn",
@@ -549,10 +550,10 @@ function init_gear_sets()
     -- neck="Mnbw. Whistle +1",   -- 23, __, 23, ___
     -- ear2="Regal Earring",      -- 10, __, __, ___; Adds to set bonus
     -- ring2="Stikini Ring +1",   -- __, __, 11, ___
-    -- back=gear.BRD_Song_Cape,   -- 20, __, 30, ___
     -- waist="Acuity Belt +1",    -- __, __, 15, ___
     -- Set bonuses                   __, __, 45, ___
-  } -- 250 CHR, 94% Duration, 453 M.Acc, 255 M.Acc skill
+    -- 250 CHR, 94% Duration, 453 M.Acc, 255 M.Acc skill
+  }
 
   -- For song debuffs (accuracy primary, duration secondary)
   sets.midcast.SongEnfeebleAcc = set_combine(sets.midcast.SongEnfeeble, {
@@ -666,21 +667,21 @@ function init_gear_sets()
   sets.midcast.Shellra = sets.midcast.Shell
 
   sets.midcast['Enfeebling Magic'] = {
-    ear1="Digni. Earring",      -- ___, 10, __, __
-    ring1="Kishar Ring",        -- ___,  5, 10, __
-    ring2="Metamor. Ring +1",   -- ___, 15, __, __; Stikini acceptable alt
-    -- main="Carnwenhan",          -- 255, 40, __, __
-    -- sub="Ammurapi Shield",      -- ___, 38, __, __
-    -- head="Brioso Roundlet +3",  -- ___, 61, __, __
-    -- body="Brioso Justau. +3",   -- ___, 64, __, __
-    -- hands="Brioso Cuffs +3",    -- ___, 48, __, __
-    -- legs="Brioso Cannions +3",  -- ___, 56, __, __
-    -- feet="Brioso Slippers +3",  -- ___, 46, __, __
-    -- neck="Mnbw. Whistle +1",    -- ___, 23, __, __
-    -- ear2="Vor Earring",         -- ___, __, __, 10
-    -- waist="Acuity Belt +1",     -- ___, 15, __, __
-    -- back=gear.BRD_Song_Cape,    -- ___, 30, __, __
-    -- Set bonuses                 ___, 60, __, __
+    ear1="Digni. Earring",        -- ___, 10, __, __
+    ring1="Kishar Ring",          -- ___,  5, 10, __
+    ring2="Metamor. Ring +1",     -- ___, 15, __, __; Stikini acceptable alt
+    back=gear.BRD_Song_Cape,      -- ___, 30, __, __
+    -- main="Carnwenhan",         -- 255, 40, __, __
+    -- sub="Ammurapi Shield",     -- ___, 38, __, __
+    -- head="Brioso Roundlet +3", -- ___, 61, __, __
+    -- body="Brioso Justau. +3",  -- ___, 64, __, __
+    -- hands="Brioso Cuffs +3",   -- ___, 48, __, __
+    -- legs="Brioso Cannions +3", -- ___, 56, __, __
+    -- feet="Brioso Slippers +3", -- ___, 46, __, __
+    -- neck="Mnbw. Whistle +1",   -- ___, 23, __, __
+    -- ear2="Vor Earring",        -- ___, __, __, 10
+    -- waist="Acuity Belt +1",    -- ___, 15, __, __
+    -- Set bonuses                   ___, 60, __, __
     -- 255 Magic accuracy skill, 511 Magic accuracy, 10 enfeebling duration, 10 enfeebling skill
   }
 
