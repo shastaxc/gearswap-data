@@ -110,10 +110,8 @@ gear.Merl_FC_hands = { name="Merlinic Dastanas", augments={'Mag. Acc.+24','"Fast
 -- Cizin
 
 -- Gendewitha
-gear.Gende_SongFC_head = {} -- 5 Song Spellcasting Time-, 3 Song Recast Delay-, 4 PDT
-gear.Gende_SongFC_hands = {} -- 5 Song Spellcasting Time-, 3 Song Recast Delay-, 4 PDT
-gear.Gende_SongFC_legs = {} -- 5 Song Spellcasting Time-, 3 Song Recast Delay-, 4 PDT
-gear.Gende_SongFC_feet = {} -- 5 Song Spellcasting Time-, 3 Song Recast Delay-, 4 PDT
+gear.Gende_SongFC_hands = { name="Gende. Gages +1", augments={'Phys. dmg. taken -4%','Magic dmg. taken -2%','Song spellcasting time -4%',}} -- 5 Song Spellcasting Time-, 3 Song Recast Delay-, 4 PDT
+gear.Gende_SongFC_legs = { name="Gende. Spats +1", augments={'Phys. dmg. taken -3%','Song spellcasting time -4%',}} -- 5 Song Spellcasting Time-, 3 Song Recast Delay-, 4 PDT
 gear.Gende_CureFC_hands = {}  --  5 Cure Cast Time-, 4 PDT
 
 -- Hagondes
