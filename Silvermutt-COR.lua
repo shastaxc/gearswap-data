@@ -83,7 +83,7 @@ function get_sets()
   mote_include_version = 2
   include('Mote-Include.lua') -- Executes job_setup, user_setup, init_gear_sets
   coroutine.schedule(function()
-    send_command('gs org')
+    send_command('gs reorg')
   end, 1)
   coroutine.schedule(function()
     send_command('gs c equipweapons')
@@ -120,7 +120,7 @@ function job_setup()
   state.CritMode = M(false, 'Crit')
 
   -- Whether to use Luzaf's Ring
-  state.LuzafRing = M(false, "Luzaf's Ring")
+  state.LuzafRing = M(true, "Luzaf's Ring")
   state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger',
       'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
 
@@ -275,13 +275,15 @@ function init_gear_sets()
     head="Lanun Tricorne +1",
     body="Malignance Tabard", --9/9
     hands="Chasseur's Gants +1",
+    legs=gear.Nyame_B_legs,
     feet="Malignance Boots", --4/0
     neck="Regal Necklace",
     ear1="Genmei Earring", --2/0
     ear2="Etiolation Earring", --0/3
-    ring1="Gelatinous Ring +1", --7/(-1)
+    ring1="Luzaf's Ring",
     ring2="Defending Ring", --10/10
     back=gear.COR_SNP_Cape,
+    waist="Carrier's Sash",
     -- head="Lanun Tricorne +3",
     -- legs="Desultor Tassets",
     -- waist="Flume Belt +1", --4/0
@@ -310,9 +312,9 @@ function init_gear_sets()
     hands="Chasseur's Gants +1",
   })
 
-  sets.precast.LuzafRing = set_combine(sets.precast.CorsairRoll, {
-    -- ring1="Luzaf's Ring",
-  })
+  sets.precast.LuzafRing = {
+    ring1="Luzaf's Ring",
+  }
   sets.precast.FoldDoubleBust = {
     hands="Lanun Gants +1",
     -- hands="Lanun Gants +3",

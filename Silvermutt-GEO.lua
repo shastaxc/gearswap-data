@@ -9,7 +9,7 @@ function get_sets()
   include('Mote-Include.lua') -- Executes job_setup, user_setup,
   include('Sel-Mappings.lua')
   coroutine.schedule(function()
-    send_command('gs org')
+    send_command('gs reorg')
   end, 1)
   coroutine.schedule(function()
     send_command('gs c weaponset current')

@@ -39,7 +39,7 @@ function get_sets()
   mote_include_version = 2
   include('Mote-Include.lua') -- Executes job_setup, user_setup, init_gear_sets
   coroutine.schedule(function()
-    send_command('gs org')
+    send_command('gs reorg')
   end, 1)
   coroutine.schedule(function()
     send_command('gs c weaponset current')
