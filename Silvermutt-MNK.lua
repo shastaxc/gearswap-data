@@ -416,23 +416,23 @@ function init_gear_sets()
   sets.precast.WS["Shijin Spiral"].HighAccMaxTP = set_combine(sets.precast.WS["Shijin Spiral"].HighAcc, {
   })
 
-  -- Asuran Fists: 20% STR / 20% VIT, 1.25 fTP, 8 hit, ftp replicating
+  -- Asuran Fists: 15% STR / 15% VIT, 1.25 fTP, 8 hit, ftp replicating
   -- WSD > STR/VIT
   sets.precast.WS['Asuran Fists'] = set_combine(sets.precast.WS, {
     ammo="Knobkierrie",
-    head=gear.Adhemar_B_head,
-    body="Kendatsuba Samue +1",
-    hands=gear.Adhemar_B_hands,
-    legs="Mpaca's Hose", -- Maybe replace, crit and multihit useless
-    feet=gear.Herc_WSD_feet,
+    head=gear.Nyame_B_head,
+    body=gear.Nyame_B_body,
+    hands=gear.Nyame_B_hands,
+    legs=gear.Nyame_B_legs,
+    feet=gear.Nyame_B_feet,
     neck="Fotia Gorget",
     ear1="Sherida Earring",
     ear2="Ishvara Earring",
-    ring1="Gere Ring",
-    ring2="Niqmaddu Ring",
-    back=gear.MNK_STR_DA_Cape,  -- WSD cape would be better
+    ring1="Niqmaddu Ring",
+    ring2="Regal Ring",
+    back=gear.MNK_STR_DA_Cape, -- WSD cape would be better
     waist="Fotia Belt",
-    -- head="Hesychast's Crown +3",
+    -- ring1="Epaminondas's Ring",
   })
   sets.precast.WS["Asuran Fists"].MaxTP = set_combine(sets.precast.WS["Asuran Fists"], {
   })
