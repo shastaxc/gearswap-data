@@ -97,7 +97,7 @@ function job_setup()
   state.AttackMode = M{['description']='Attack', 'Capped', 'Uncapped'}
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.RangedMode:options('Normal', 'Acc')
-  state.HybridMode:options('LightDef', 'Evasion', 'Normal')
+  state.HybridMode:options('LightDef', 'HeavyDef', 'Evasion', 'Normal')
   state.IdleMode:options('Normal', 'LightDef', 'Evasion')
   state.CP = M(false, 'Capacity Points Mode')
   state.AttCapped = M(true, "Attack Capped")
@@ -591,26 +591,36 @@ function init_gear_sets()
     ring1="Moonlight Ring",       --  5/ 5, ___, ___
     ring2="Moonlight Ring",       --  5/ 5, ___, ___
     waist="Kasiri Belt",          -- __/__, ___,  13
+    -- Cape                          10/__, ___, ___
   } -- 51 PDT / 41 MDT, 697 MEVA, 555 Evasion
 
   sets.HeavyDef = {
+    ammo="Staunch Tathlum +1",  --  3/ 3, ___
+    head="Malignance Chapeau",  --  6/ 6, 123
+    body="Malignance Tabard",   --  9/ 9, 139 
+    hands="Malignance Gloves",  --  5/ 5, 112
+    legs="Malignance Tights",   --  7/ 7, 150
+    feet="Malignance Boots",    --  4/ 4, 150
+    ring2="Moonlight Ring",     --  5/ 5, ___
+    -- Cape                     -- 10/__, ___
+  } --49 PDT/39 MDT, 674 MEVA
+
+  sets.defense.PDT = {
     ammo="Yamarang",            -- __/__,  15
     head="Malignance Chapeau",  --  6/ 6, 123
     body="Malignance Tabard",   --  9/ 9, 139
     hands="Malignance Gloves",  --  5/ 5, 112
-    legs=gear.Nyame_B_legs,     --  8/ 8, 150
-    feet=gear.Nyame_B_feet,     --  7/ 7, 150
-    neck="Loricate Torque +1",  --  6/ 6, ___
+    legs="Malignance Tights",   --  7/ 7, 150
+    feet="Malignance Boots",    --  4/ 4, 150
+    neck="Assassin's Gorget +2",-- __/__, ___
     ear1="Eabani Earring",      -- __/__,   8
     ear2="Odnowa Earring +1",   --  3/ 5, ___
     ring1="Moonlight Ring",     --  5/ 5, ___
-    ring2="Defending Ring",     -- 10/10, ___
+    ring2="Moonlight Ring",     --  5/ 5, ___
     back=gear.THF_TP_Cape,      -- 10/__, ___
     waist="Engraved Belt",      -- __/__, ___
-  } --69 PDT/61 MDT, 697 MEVA
-
-  sets.defense.PDT = sets.HeavyDef
-  sets.defense.MDT = sets.HeavyDef
+  } --54 PDT/46 MDT, 697 MEVA
+  sets.defense.MDT = sets.defense.PDT
 
 
   ------------------------------------------------------------------------------------------------
@@ -641,12 +651,21 @@ function init_gear_sets()
 
   sets.resting = {}
 
-  sets.idle = set_combine(sets.HeavyDef, {
+  sets.idle = {
+    ammo="Yamarang",            -- __/__,  15
     head="Turms Cap +1",        -- __/__, 109
     body="Gleti's Cuirass",     --  9/__, 102
     hands="Gleti's Gauntlets",  --  7/__, 75
     legs="Gleti's Breeches",    --  8/__, 112
-  })
+    feet=gear.Nyame_B_feet,     --  7/ 7, 150
+    neck="Loricate Torque +1",  --  6/ 6, ___
+    ear1="Eabani Earring",      -- __/__,   8
+    ear2="Odnowa Earring +1",   --  3/ 5, ___
+    ring1="Moonlight Ring",     --  5/ 5, ___
+    ring2="Defending Ring",     -- 10/10, ___
+    back=gear.THF_TP_Cape,      -- 10/__, ___
+    waist="Engraved Belt",      -- __/__, ___
+  }
 
   sets.idle.Regain = set_combine(sets.idle, sets.latent_regain)
   sets.idle.Regen = set_combine(sets.idle, sets.latent_regen)
@@ -673,7 +692,7 @@ function init_gear_sets()
     ring2="Moonlight Ring",     --  5/ 5, ___
     back="Moonlight Cape",      --  6/ 6, ___
   })
-  
+
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Engaged Sets ------------------------------------------
@@ -890,6 +909,7 @@ function init_gear_sets()
   ---------------------------------------- Hybrid Sets -------------------------------------------
   ------------------------------------------------------------------------------------------------
 
+  -- Heavy Def Hybrid
   -- No DW
   sets.engaged.LightDef = set_combine(sets.engaged, {
     ammo="Staunch Tathlum +1",  --  3/ 3, ___
@@ -1085,15 +1105,53 @@ function init_gear_sets()
     back=gear.THF_TP_Cape,      -- 10/__, ___
   })-- 36/26
 
-  sets.engaged.Evasion = sets.Evasion
-  sets.engaged.LowAcc.Evasion = sets.Evasion
-  sets.engaged.MidAcc.Evasion = sets.Evasion
-  sets.engaged.HighAcc.Evasion = sets.Evasion
 
-  sets.engaged.DW.Evasion = sets.Evasion
-  sets.engaged.DW.LowAcc.Evasion = sets.Evasion
-  sets.engaged.DW.MidAcc.Evasion = sets.Evasion
-  sets.engaged.DW.HighAcc.Evasion = sets.Evasion
+  -- Heavy Def Hybrid
+  sets.engaged.HeavyDef = set_combine(sets.engaged, sets.HeavyDef)
+  sets.engaged.LowAcc.HeavyDef = set_combine(sets.engaged.LowAcc, sets.HeavyDef)
+  sets.engaged.MidAcc.HeavyDef = set_combine(sets.engaged.MidAcc, sets.HeavyDef)
+  sets.engaged.HighAcc.HeavyDef = set_combine(sets.engaged.HighAcc, sets.HeavyDef)
+
+  sets.engaged.DW.HeavyDef = set_combine(sets.engaged.DW, sets.HeavyDef)
+  sets.engaged.DW.LowAcc.HeavyDef = set_combine(sets.engaged.DW.LowAcc, sets.HeavyDef)
+  sets.engaged.DW.MidAcc.HeavyDef = set_combine(sets.engaged.DW.MidAcc, sets.HeavyDef)
+  sets.engaged.DW.HighAcc.HeavyDef = set_combine(sets.engaged.DW.HighAcc, sets.HeavyDef)
+
+  sets.engaged.DW.HeavyDef.LowHaste = set_combine(sets.engaged.DW.LowHaste, sets.HeavyDef)
+  sets.engaged.DW.LowAcc.HeavyDef.LowHaste = set_combine(sets.engaged.DW.LowAcc.LowHaste, sets.HeavyDef)
+  sets.engaged.DW.MidAcc.HeavyDef.LowHaste = set_combine(sets.engaged.DW.MidAcc.LowHaste, sets.HeavyDef)
+  sets.engaged.DW.HighAcc.HeavyDef.LowHaste = set_combine(sets.engaged.DW.HighAcc.LowHaste, sets.HeavyDef)
+
+  sets.engaged.DW.HeavyDef.MidHaste = set_combine(sets.engaged.DW.MidHaste, sets.HeavyDef)
+  sets.engaged.DW.LowAcc.HeavyDef.MidHaste = set_combine(sets.engaged.DW.LowAcc.MidHaste, sets.HeavyDef)
+  sets.engaged.DW.MidAcc.HeavyDef.MidHaste = set_combine(sets.engaged.DW.MidAcc.MidHaste, sets.HeavyDef)
+  sets.engaged.DW.HighAcc.HeavyDef.MidHaste = set_combine(sets.engaged.DW.HighAcc.MidHaste, sets.HeavyDef)
+
+  sets.engaged.DW.HeavyDef.HighHaste = set_combine(sets.engaged.DW.HighHaste, sets.HeavyDef)
+  sets.engaged.DW.LowAcc.HeavyDef.HighHaste = set_combine(sets.engaged.DW.LowAcc.HighHaste, sets.HeavyDef)
+  sets.engaged.DW.MidAcc.HeavyDef.HighHaste = set_combine(sets.engaged.DW.MidAcc.HighHaste, sets.HeavyDef)
+  sets.engaged.DW.HighAcc.HeavyDef.HighHaste = set_combine(sets.engaged.DW.HighAcc.HighHaste, sets.HeavyDef)
+
+  sets.engaged.DW.HeavyDef.MaxHaste = set_combine(sets.engaged.DW.MaxHaste, sets.HeavyDef)
+  sets.engaged.DW.LowAcc.HeavyDef.MaxHaste = set_combine(sets.engaged.DW.LowAcc.MaxHaste, sets.HeavyDef)
+  sets.engaged.DW.MidAcc.HeavyDef.MaxHaste = set_combine(sets.engaged.DW.MidAcc.MaxHaste, sets.HeavyDef)
+  sets.engaged.DW.HighAcc.HeavyDef.MaxHaste = set_combine(sets.engaged.DW.HighAcc.MaxHaste, sets.HeavyDef)
+
+  -- Evasion Hybrid
+  sets.engaged.Evasion = set_combine(sets.Evasion, { back=gear.THF_TP_Cape })
+  sets.engaged.LowAcc.Evasion = set_combine(sets.Evasion, { back=gear.THF_TP_Cape })
+  sets.engaged.MidAcc.Evasion = set_combine(sets.Evasion, { back=gear.THF_TP_Cape })
+  sets.engaged.HighAcc.Evasion = set_combine(sets.Evasion, { back=gear.THF_TP_Cape })
+
+  sets.engaged.DW.Evasion = set_combine(sets.Evasion, { back=gear.THF_DW_Cape })
+  sets.engaged.DW.LowAcc.Evasion = set_combine(sets.Evasion, { back=gear.THF_DW_Cape })
+  sets.engaged.DW.MidAcc.Evasion = set_combine(sets.Evasion, { back=gear.THF_DW_Cape })
+  sets.engaged.DW.HighAcc.Evasion = set_combine(sets.Evasion, { back=gear.THF_DW_Cape })
+
+  sets.engaged.DW.MaxHaste.Evasion = set_combine(sets.Evasion, { back=gear.THF_TP_Cape })
+  sets.engaged.DW.LowAcc.MaxHaste.Evasion = set_combine(sets.Evasion, { back=gear.THF_TP_Cape })
+  sets.engaged.DW.MidAcc.MaxHaste.Evasion = set_combine(sets.Evasion, { back=gear.THF_TP_Cape })
+  sets.engaged.DW.HighAcc.MaxHaste.Evasion = set_combine(sets.Evasion, { back=gear.THF_TP_Cape })
 
 
   ------------------------------------------------------------------------------------------------
@@ -1159,6 +1217,16 @@ function init_gear_sets()
   sets.WeaponSet['Staff'] = {
     main="Gozuki Mezuki",
     sub="empty",
+  }
+
+  -- Ranged weapon sets
+  sets.WeaponSet['Ullr'] = {
+    ranged="Ullr",
+    ammo="Eminent Arrow",
+  }
+  sets.WeaponSet['Throwing'] = {
+    ranged="Albin Bane",
+    ammo=empty,
   }
 end
 
