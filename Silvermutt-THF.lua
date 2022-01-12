@@ -493,6 +493,12 @@ function init_gear_sets()
   sets.precast.WS['Aeolian Edge'].MaxTP = set_combine(sets.precast.WS['Aeolian Edge'], {
     ear2="Novio Earring", --7
   })
+  sets.precast.WS['Aeolian Edge'].AttCapped = set_combine(sets.precast.WS['Aeolian Edge'], {
+    ear2="Moonshade Earring",
+  })
+  sets.precast.WS['Aeolian Edge'].AttCappedMaxTP = set_combine(sets.precast.WS['Aeolian Edge'], {
+    ear2="Novio Earring", --7
+  })
 
   -- 50% STR / 50% MND
   sets.precast.WS['Savage Blade'] = {
@@ -536,6 +542,31 @@ function init_gear_sets()
     ear2="Sherida Earring",       --  5, __, __, __, __, __, ___
   })
 
+  -- Asuran Fists: 15% STR / 15% VIT, 1.25 fTP, 8 hit, ftp replicating
+  -- WSD > STR/VIT
+  sets.precast.WS['Asuran Fists'] = {
+    ammo="Seething Bomblet +1",
+    head=gear.Nyame_B_head,
+    body=gear.Nyame_B_body,
+    hands=gear.Nyame_B_hands,
+    legs=gear.Nyame_B_legs,
+    feet=gear.Nyame_B_feet,
+    neck="Fotia Gorget",
+    ear1="Sherida Earring",
+    ear2="Ishvara Earring",
+    ring1="Regal Ring",
+    ring2="Gere Ring",
+    back=gear.THF_WS2_Cape,
+    waist="Fotia Belt",
+    -- ring2="Epaminondas's Ring",
+  }
+  sets.precast.WS['Asuran Fists'].MaxTP = sets.precast.WS['Asuran Fists']
+  sets.precast.WS['Asuran Fists'].AttCapped = set_combine(sets.precast.WS['Asuran Fists'], {
+    ammo="Crepuscular Pebble",
+  })
+  sets.precast.WS['Asuran Fists'].AttCappedMaxTP = set_combine(sets.precast.WS['Asuran Fists'], {
+    ammo="Crepuscular Pebble",
+  })
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Midcast Sets ------------------------------------------
