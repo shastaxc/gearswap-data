@@ -615,7 +615,7 @@ function init_gear_sets()
     body="Mummu Jacket +2",
     hands="Mummu Wrists +2",
     legs=gear.Samnuha_legs,
-    feet=gear.Herc_WSD_feet,
+    feet=gear.Nyame_B_feet,
     neck="Fotia Gorget",
     ear1="Odr Earring",
     ear2="Moonshade Earring",
