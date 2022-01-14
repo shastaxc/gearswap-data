@@ -666,7 +666,7 @@ function init_gear_sets()
     -- neck="Scout's Gorget +2",  -- __, __, __, __, __, 10, ___
     -- ring2="Epaminondas's Ring",-- __, __, __, __,  5, __, ___
     -- 197 STR, 149 MND, 275 Attack, 184 Accuracy, 50 WSD, 17 PDL, 420 TP Bonus
-  } -- 201 STR, 137 MND, 198 Attack, 146 Accuracy, 57 WSD, 8 PDL, 250 TP Bonus
+  } -- 197 STR, 149 MND, 300 Attack, 184 Accuracy, 45 WSD, 15 PDL, 420 TP Bonus
   sets.precast.WS['Savage Blade'].MaxTP = set_combine(sets.precast.WS['Savage Blade'], {
     ear2="Telos Earring",
   })
