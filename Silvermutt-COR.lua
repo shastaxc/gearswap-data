@@ -115,7 +115,7 @@ function job_setup()
   state.UseAltqd = M(false, 'Use Secondary Shot')
   state.SelectqdTarget = M(false, 'Select Quick Draw Target')
   state.IgnoreTargetting = M(false, 'Ignore Targetting')
-  state.QDMode = M{['description']='Quick Draw Mode', 'Enhance', 'STP', 'Potency'}
+  state.QDMode = M{['description']='Quick Draw Mode', 'Potency', 'STP', 'Enhance'}
   state.Currentqd = M{['description']='Current Quick Draw', 'Main', 'Alt'}
   state.CritMode = M(false, 'Crit')
 
@@ -503,6 +503,8 @@ function init_gear_sets()
 
   sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS['Wildfire'], {
     ear2="Moonshade Earring",
+    back=gear.COR_TP_Cape,
+    -- back=gear.COR_WS4_Cape,
   })
   sets.precast.WS['Aeolian Edge'].MaxTP = set_combine(sets.precast.WS['Aeolian Edge'], {
     ear2="Novio Earring",
@@ -786,50 +788,82 @@ function init_gear_sets()
     --218 AGI [58 STP] 423 racc / 155 ratt <5 crit> {10 dmg limit} (19 Recycle)
   })
 
+  -- Dmg is based on Gun DMG, bullet DMG, Quick Draw+ stat, elemental bonuses, MAB.
+  -- Acc is based on AGI & M.Acc only.
+  -- Dmg is NOT affected by M.Dmg.
+  -- TP returned is affected by Store TP.
   sets.midcast.CorsairShot = {
-    ammo=gear.QDbullet,
-    head=gear.Nyame_B_head, --30
-    body="Lanun Frac +3", --61
-    hands="Carmine Fin. Ga. +1", --42
-    legs=gear.Nyame_B_legs, --30
-    feet="Lanun Bottes +3", --61
-    neck="Commodore Charm +1", --6
-    ear1="Friomisi Earring", --10
-    ear2="Novio Earring", --7
-    ring1="Dingir Ring", --10
-    ring2="Shiva Ring +1", --3
-    back=gear.COR_WS1_Cape, --0
-    waist="Skrymir Cord", --5
-    -- neck="Comm. Charm +2",
-    -- waist="Skrymir Cord +1",
-  }
+    ammo=gear.QDbullet,           -- 10, 40, __, __, __/__
+    head="Ikenga's Hat",          -- 29, 35, 45,  8, __/__
+    body="Lanun Frac +3",         -- 43, 61, 40, __,  6/__
+    hands="Carmine Fin. Ga. +1",  -- 12, 42, __,  6, __/__
+    legs=gear.Nyame_B_legs,       -- 34, 30, 40, __,  8/ 8
+    feet="Lanun Bottes +3",       -- 49, 61, 36, __,  6/__
+    neck="Commodore Charm +1",    -- 12,  6, 20, __, __/__
+    ear1="Friomisi Earring",      -- __, 10, __, __, __/__
+    ear2="Novio Earring",         -- __,  7, __, __, __/__
+    ring1="Dingir Ring",          -- 10, 10, __, __, __/__
+    ring2="Shiva Ring +1",        -- __,  3, __, __, __/__
+    back=gear.COR_RA_Cape,        -- 30, __, __, 10, 10/__
+    waist="Eschan Stone",         -- __,  7,  7, __, __/__
+    -- neck="Commodore Charm +2", -- 15,  7, 25, __, __/__
+    -- back=gear.COR_QD_Cape,     -- 30, 10, 20, __, 10/__
+  } -- 229 AGI, 312 MAB, 188 M.Acc, 24 STP, 30PDT/8MDT
 
-  -- More acc
+  -- Full STP; and more recast reduction
+  sets.midcast.CorsairShot.STP = {
+    ammo=gear.MAbullet,           -- __, 35, 25, __, __/__
+    head="Ikenga's Hat",          -- 29, 35, 45,  8, __/__
+    body="Malignance Tabard",     -- 42, __, 50, 11,  9/ 9
+    hands="Malignance Gloves",    -- 24, __, 50, 12,  5/ 5
+    legs="Ikenga's Trousers",     -- 40, __, 45, 10,  7/ 7
+    feet="Malignance Boots",      -- 49, __, 50,  9,  4/ 4
+    neck="Iskur Gorget",          -- __, __, __,  8, __/__
+    ear1="Dedition Earring",      -- __, __, __,  8, __/__
+    ear2="Telos Earring",         -- __, __, __,  5, __/__
+    ring1="Chirich Ring +1",      -- __, __, __,  6, __/__
+    ring2="Crepuscular Ring",     -- __, __, 10,  6, __/__
+    back=gear.COR_RA_Cape,        -- 30, __, __, 10, 10/__
+    waist="Reiki Yotai",          -- __, __, __,  4, __/__
+    -- head="Blood Mask",         -- Recast -5
+    -- legs="Ikenga's Trousers", --R25-- 40, __, 50, 10,  9/ 9
+    -- ear2="Crepuscular Earring",-- __, __, 10,  5, __/__
+  } -- 214 AGI, 70 MAB, 275 M.Acc, 97 STP, 35PDT/25MDT
+
+  -- Full MAcc (to land debuff effects)
   sets.midcast.CorsairShot['Light Shot'] = {
-    ammo=gear.RAccbullet,
-    head="Laksamana's Tricorne +1",
-    body="Malignance Tabard",
-    hands="Laksamana's Gants +1",
-    legs="Malignance Tights",
-    feet="Laksamana's Bottes +1",
-    neck="Commodore Charm +1",
-    ear2="Digni. Earring",
-    ring1="Regal Ring",
-    ring2="Weatherspoon Ring",
-    back=gear.COR_WS1_Cape,
-    waist="K. Kachina Belt +1",
-    -- head="Laksamana's Tricorne +3",
-    -- hands="Laksamana's Gants +3",
-    -- feet="Laksamana's Bottes +3",
-    -- neck="Comm. Charm +2",
-    -- ear1="Crepuscular Earring",
-    -- ring2="Stikini Ring +1",
-  }
+    ammo=gear.MAbullet,               -- __, 35, 25, __, __/__
+    head="Malignance Chapeau",        -- 33, __, 50,  8,  6/ 6
+    body="Malignance Tabard",         -- 42, __, 50, 11,  9/ 9
+    hands="Malignance Gloves",        -- 24, __, 50, __, __/__
+    legs="Malignance Tights",         -- 42, __, 50, 10,  7/ 7
+    feet="Malignance Boots",          -- 49, __, 50,  9,  4/ 4
+    neck="Commodore Charm +1",        -- 12,  6, 20, __, __/__
+    ear1="Hermetic Earring",          -- __,  3,  7, __, __/__
+    ear2="Dignitary's Earring",       -- __, __, 10,  3, __/__
+    ring1="Regal Ring",               -- 10, __, __, __, __/__
+    ring2="Stikini Ring +1",          -- __, __, 11, __, __/__
+    back=gear.COR_WS1_Cape,           -- 30, __, 20, __, 10/__
+    waist="K. Kachina Belt +1",       --  8, __, 20, __, __/__
+    -- AF Set Effect                  -- __, __, __, __, __/__
+    -- M.Acc from Quick Draw+ stat    -- __, __, __, __, __/__
 
+    -- head="Laksamana's Tricorne +3",-- 39, __, 56, __, __/__; Quick Draw+20
+    -- hands="Laksamana's Gants +3",  -- 17, __, 57, __, __/__
+    -- legs="Ikenga's Trousers", --R25-- 40, __, 50, 10,  9/ 9
+    -- feet="Laksamana's Bottes +3",  -- 49, __, 52, __, __/__; Quick Draw+20
+    -- neck="Commodore Charm +2",     -- 15,  7, 25, __, __/__
+    -- ear1="Crepuscular Earring",    -- __, __, 10,  5, __/__
+    -- AF Set Effect                  -- __, __, 45, __, __/__
+    -- M.Acc from Quick Draw+ stat    -- __, __, 40, __, __/__
+    -- 250 AGI, 42 MAB, 471 M.Acc, 29 STP, 28PDT/18MDT
+  } -- 250 AGI, 44 MAB, 362 M.Acc, 47 STP, 36PDT/26MDT
   sets.midcast.CorsairShot['Dark Shot'] = sets.midcast.CorsairShot['Light Shot']
+
+  -- High dmg, but with empy feet for enhancement effect; and more recast reduction
   sets.midcast.CorsairShot.Enhance = {
     feet="Chasseur's Bottes +1",
-    -- body="Mirke Wardecors",
+    -- head="Blood Mask", -- Recast -5
   }
 
   sets.midcast.RA.Critical = set_combine(sets.midcast.RA, {
