@@ -873,11 +873,11 @@ function init_gear_sets()
     head=gear.Nyame_B_head,         -- 26, 26, 55, 40,  8, __, ___,  7/ 7 [ 91]
     body=gear.Nyame_B_body,         -- 35, 37, 55, 40, 10, __, ___,  9/ 9 [136]
     hands={
-      name=gear.Nyame_B_hands.name,
+      name=gear.Nyame_B_hands,
       priority=1
     },                              -- 17, 40, 55, 40,  8, __, ___,  7/ 7 [ 91]
     legs={
-      name=gear.Nyame_B_legs.name,
+      name=gear.Nyame_B_legs,
       priority=1
     },                              -- 43, 32, 55, 40,  9, __, ___,  8/ 8 [114]
     feet=gear.Nyame_B_feet,         -- 23, 26, 55, 40,  8, __, ___,  7/ 7 [ 68]
