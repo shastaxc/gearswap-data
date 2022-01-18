@@ -59,6 +59,7 @@ function job_setup()
   state.CP = M(false, "Capacity Points Mode")
   state.ToyWeapons = M{['description']='Toy Weapons','None','GreatKatana','Staff','Polearm','GreatSword','Scythe'}
   state.WeaponSet = M{['description']='Weapon Set', 'Masa', 'Doji', 'Shining One'}
+  state.EnmityMode = M{['description']='Enmity Mode', 'Normal', 'Low', 'Schere'}
 
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c usekey')
@@ -387,13 +388,13 @@ function init_gear_sets()
     -- ring2="Epaminondas's Ring",
   })
   sets.precast.WS["Tachi: Shoha"].MaxTP = set_combine(sets.precast.WS["Tachi: Shoha"], {
-    ear2="Brutal Earring",
+    ear2="Schere Earring",
   })
   sets.precast.WS["Tachi: Shoha"].LowAcc = set_combine(sets.precast.WS["Tachi: Shoha"], {
     ring1="Regal Ring",
   })
   sets.precast.WS["Tachi: Shoha"].LowAccMaxTP = set_combine(sets.precast.WS["Tachi: Shoha"].LowAcc, {
-    ear2="Brutal Earring",
+    ear2="Schere Earring",
   })
   sets.precast.WS["Tachi: Shoha"].MidAcc = set_combine(sets.precast.WS["Tachi: Shoha"].LowAcc, {
     neck="Fotia Gorget",
@@ -455,7 +456,7 @@ function init_gear_sets()
     legs="Kendatsuba Hakama +1",
     feet="Flamma Gambieras +2",
     neck="Samurai's Nodowa +2",
-    ear1="Brutal Earring",
+    ear1="Schere Earring",
     ear2="Moonshade Earring",
     ring1="Regal Ring",
     ring2="Niqmaddu Ring",
@@ -644,7 +645,7 @@ function init_gear_sets()
   })
   sets.engaged.MidAcc = set_combine(sets.engaged.LowAcc, {
     ear1="Cessance Earring",
-    ear2="Brutal Earring",
+    ear2="Schere Earring",
   })
   sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
     feet="Kendatsuba Sune-Ate +1",
@@ -674,6 +675,8 @@ function init_gear_sets()
   sets.Special = {}
   sets.Special.ElementalObi = {waist="Hachirin-no-Obi",}
   sets.Special.SleepyHead = { head="Frenzy Sallet", }
+  sets.Special.LowEnmity = { ear2="Novia Earring", } -- Assumes -Enmity merits and Dirge
+  sets.Special.Schere = { ear2="Schere Earring", }
 
   -- Quick sets for post-precast adjustments, listed here so that the gear can be Validated.
   sets.buff.Doom = {
@@ -754,6 +757,12 @@ function job_post_precast(spell, action, spellMap, eventArgs)
 
     if buffactive['Reive Mark'] then
       equip(sets.Reive)
+    end
+
+    if state.EnmityMode.current == 'Low' then
+      equip(sets.Special.LowEnmity)
+    elseif state.EnmityMode.current == 'Schere' and player.mp > 0 then
+      equip(sets.Special.Schere)
     end
   end
 
@@ -999,6 +1008,9 @@ end
 function customize_melee_set(meleeSet)
   if state.CP.current == 'on' then
     meleeSet = set_combine(meleeSet, sets.CP)
+  end
+  if state.EnmityMode.current == 'Low' then
+    equip(sets.Special.LowEnmity)
   end
 
   -- If slot is locked to use no-swap gear, keep it equipped

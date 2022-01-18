@@ -70,6 +70,7 @@ function job_setup()
   state.ToyWeapons = M{['description']='Toy Weapons','None',
       'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
   state.WeaponSet = M{['description']='Weapon Set', 'Verethragna', 'Piercing', 'Slashing', 'Cleaving'}
+  state.EnmityMode = M{['description']='Enmity Mode', 'Normal', 'Low', 'Schere'}
 
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c usekey')
@@ -85,6 +86,7 @@ function job_setup()
 
   send_command('bind ^` gs c cycle treasuremode')
   send_command('bind @c gs c toggle CP')
+  send_command('bind @v gs c cycle EnmityMode')
 
   send_command('bind !q input /ja "Impetus" <me>')
   send_command('bind !` input /ja "Chakra" <me>')
@@ -183,6 +185,8 @@ function init_gear_sets()
   }
   sets.Special.ElementalObi = { waist="Hachirin-no-Obi", }
   sets.Special.SleepyHead = { head="Frenzy Sallet", }
+  sets.Special.LowEnmity = { ear2="Novia Earring", } -- Assumes -Enmity merits and Dirge
+  sets.Special.Schere = { ear2="Schere Earring", }
   sets.buff.Doom = {
     neck="Nicander's Necklace", --20
     ring2="Eshmun's Ring", --20
@@ -388,7 +392,7 @@ function init_gear_sets()
     feet=gear.Herc_TA_feet,
     neck="Monk's Nodowa +2",
     ear1="Sherida Earring",
-    ear2="Brutal Earring",
+    ear2="Schere Earring",
     ring1="Ilabrat Ring",
     ring2="Niqmaddu Ring",
     back=gear.MNK_DEX_DA_Cape,
@@ -473,19 +477,19 @@ function init_gear_sets()
   })
   sets.precast.WS["Ascetic's Fury"].MaxTP = set_combine(sets.precast.WS["Ascetic's Fury"], {
     head=gear.Adhemar_B_head,
-    ear2="Brutal Earring",
+    ear2="Schere Earring",
   })
   sets.precast.WS["Ascetic's Fury"].LowAcc = set_combine(sets.precast.WS["Ascetic's Fury"], {
   })
   sets.precast.WS["Ascetic's Fury"].LowAccMaxTP = set_combine(sets.precast.WS["Ascetic's Fury"].LowAcc, {
     head=gear.Adhemar_B_head,
-    ear2="Brutal Earring",
+    ear2="Schere Earring",
   })
   sets.precast.WS["Ascetic's Fury"].MidAcc = set_combine(sets.precast.WS["Ascetic's Fury"].LowAcc, {
   })
   sets.precast.WS["Ascetic's Fury"].MidAccMaxTP = set_combine(sets.precast.WS["Ascetic's Fury"].MidAcc, {
     head=gear.Adhemar_B_head,
-    ear2="Brutal Earring",
+    ear2="Schere Earring",
     -- head=gear.Adhemar_A_head,
   })
   sets.precast.WS["Ascetic's Fury"].HighAcc = set_combine(sets.precast.WS["Ascetic's Fury"].MidAcc, {
@@ -563,24 +567,27 @@ function init_gear_sets()
   })
   sets.precast.WS["Howling Fist"].MaxTP = set_combine(sets.precast.WS["Howling Fist"], {
     head=gear.Adhemar_B_head,
-    ear2="Brutal Earring",
+    ear2="Schere Earring",
   })
   sets.precast.WS["Howling Fist"].LowAcc = set_combine(sets.precast.WS["Howling Fist"], {
   })
   sets.precast.WS["Howling Fist"].LowAccMaxTP = set_combine(sets.precast.WS["Howling Fist"].LowAcc, {
-    ear2="Brutal Earring",
+    ear2="Schere Earring",
   })
   sets.precast.WS["Howling Fist"].MidAcc = set_combine(sets.precast.WS["Howling Fist"].LowAcc, {
     ear2="Telos Earring",
+    -- ear2="Schere Earring", -- with more augment
   })
   sets.precast.WS["Howling Fist"].MidAccMaxTP = set_combine(sets.precast.WS["Howling Fist"].MidAcc, {
     ear2="Telos Earring",
+    -- ear2="Schere Earring", -- with more augment
   })
   sets.precast.WS["Howling Fist"].HighAcc = set_combine(sets.precast.WS["Howling Fist"].MidAcc, {
     ammo="Falcon Eye",
   })
   sets.precast.WS["Howling Fist"].HighAccMaxTP = set_combine(sets.precast.WS["Howling Fist"].HighAcc, {
     ear2="Telos Earring",
+    -- ear2="Schere Earring", -- with more augment
   })
 
   -- Dragon Kick: 50% STR / 50% DEX, ?-5 fTP, 1 hit, ftp replicating
@@ -648,7 +655,7 @@ function init_gear_sets()
     feet=gear.Herc_TA_feet,
     neck="Fotia Gorget",
     ear1="Sherida Earring",
-    ear2="Brutal Earring",
+    ear2="Schere Earring",
     ring1="Gere Ring",
     ring2="Niqmaddu Ring",
     back=gear.MNK_STR_DA_Cape,
@@ -1016,6 +1023,12 @@ function job_post_precast(spell, action, spellMap, eventArgs)
     if buffactive['Reive Mark'] then
       equip(sets.Reive)
     end
+
+    if state.EnmityMode.current == 'Low' then
+      equip(sets.Special.LowEnmity)
+    elseif state.EnmityMode.current == 'Schere' and player.mp > 0 then
+      equip(sets.Special.Schere)
+    end
   end
 
   -- If slot is locked, keep current equipment on
@@ -1280,6 +1293,9 @@ function customize_melee_set(meleeSet)
   if state.CP.current == 'on' then
     meleeSet = set_combine(meleeSet, sets.CP)
   end
+  if state.EnmityMode.current == 'Low' then
+    equip(sets.Special.LowEnmity)
+  end
 
   -- Override sets to ensure counterstance feet are equipped if Counterstance is up
   if state.Buff['Counterstance'] then
@@ -1343,7 +1359,6 @@ function user_customize_defense_set(defenseSet)
 end
 
 function test()
-
 end
 
 -------------------------------------------------------------------------------------------------------------------
