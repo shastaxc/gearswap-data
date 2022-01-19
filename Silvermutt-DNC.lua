@@ -133,7 +133,7 @@ function job_setup()
   state.AttCapped = M(true, "Attack Capped")
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
-  state.HybridMode:options('LightDef', 'Normal')
+  state.HybridMode:options('LightDef', 'HeavyDef', 'Normal')
   state.IdleMode:options('Normal', 'LightDef')
 
   state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger',
@@ -305,12 +305,15 @@ function init_gear_sets()
     -- feet="Maxixi Toeshoes +3",   -- __/__ | 14(_), 40, 22 <__>
     -- 35/25 | 53 Potency (8 Self Potency), 191 CHR, 116 VIT <-4 Delay>
   } -- 35/25 | 49 Potency (8 Self Potency), 181 CHR, 106 VIT <-4 Delay>
-
   -- Waltz effects received
   sets.precast.WaltzSelf = set_combine(sets.precast.Waltz, {
     body="Maxixi Casaque +3",       -- __/__ | 19(8), 33, 34 <-2>
     -- 35/25 | 53 Potency (8 Self Potency), 191 CHR, 116 VIT <-4 Delay>
   })
+  sets.precast.WaltzSafe = {
+    ring1="Gelatinous Ring +1",     --  7/-1 | __(_), __, 15 <__>
+    waist="Flume Belt +1",          --  4/__ | __(_), __, __ <__>
+  } -- 46/24 | 49 Potency (8 Self Potency), 157 CHR, 121 VIT <-4 Delay>
 
   -- Waltz delay
   sets.precast.Waltz['Healing Waltz'] = {
@@ -505,25 +508,41 @@ function init_gear_sets()
   sets.precast.WS['Pyrrhic Kleos'].Climactic = {}
 
   -- 50% DEX, 1.25 FTP, can crit, ftp replicating
-  sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
-    ammo="Charis Feather",
-    head=gear.Adhemar_B_head,
-    body="Meghanada Cuirie +2",
-    hands="Mummu Wrists +2",
-    legs=gear.Lustratio_B_legs,
-    feet=gear.Herc_DEX_CritDmg_feet,
-    neck="Fotia Gorget",
-    ear1="Odr Earring",
-    ear2="Sherida Earring",
-    ring1="Ilabrat Ring",
-    ring2="Regal Ring",
-    back=gear.DNC_TP_DA_Cape,
-    waist="Fotia Belt",
+  sets.precast.WS['Evisceration'] = {
+    ammo="Charis Feather",            -- __/__,  5, __,  5, __
+    head=gear.Adhemar_B_head,         -- __/__,  6, __, 21, __
+    body="Meghanada Cuirie +2",       --  8/__,  6, __, 45, __
+    hands="Gleti's Gauntlets",        --  7/__, __,  6, 42,  7
+    legs=gear.Lustratio_B_legs,       -- __/__, __,  3, 43, __
+    feet=gear.Herc_DEX_CritDmg_feet,  --  2/__,  3, __, 33, __
+    neck="Fotia Gorget",              -- fTP Bonus
+    ear1="Odr Earring",               -- __/__, __,  5, 10, __
+    ear2="Sherida Earring",           -- __/__, __, __,  5, __
+    ring1="Ilabrat Ring",             -- __/__, __, __, 10, __
+    ring2="Regal Ring",               -- __/__, __, __, 10, __
+    back=gear.DNC_TP_DA_Cape,         -- 10/__,  5, __, 30, __
+    waist="Fotia Belt",               -- fTP Bonus
     -- back=gear.DNC_WS3_Cape,
-  })
+  } -- 27PDT/0MDT, 25 Crit Damage, 14 Crit Rate, 254 DEX, 7 PDL
   sets.precast.WS['Evisceration'].MaxTP = set_combine(sets.precast.WS['Evisceration'], {
-    ring2="Defending Ring"
+    ring2="Defending Ring",
   })
+  sets.precast.WS['Evisceration'].Safe = {
+    ammo="Charis Feather",            -- __/__,  5, __,  5, __
+    head=gear.Adhemar_B_head,         -- __/__,  6, __, 21, __
+    body="Meghanada Cuirie +2",       --  8/__,  6, __, 45, __
+    hands="Gleti's Gauntlets",        --  7/__, __,  6, 42,  7
+    legs=gear.Lustratio_B_legs,       -- __/__, __,  3, 43, __
+    feet=gear.Herc_DEX_CritDmg_feet,  --  2/__,  3, __, 33, __
+    neck="Fotia Gorget",              -- fTP Bonus
+    ear1="Odr Earring",               -- __/__, __,  5, 10, __
+    ear2="Odnowa Earring +1",         --  3/ 5, __, __, __, __
+    ring1="Gelatinous Ring +1",       --  7/-1, __, __, __, __
+    ring2="Defending Ring",           -- 10/10, __, __, __, __
+    back=gear.DNC_TP_DA_Cape,         -- 10/__,  5, __, 30, __
+    waist="Fotia Belt",               -- fTP Bonus
+    -- back=gear.DNC_WS3_Cape,
+  } -- 47PDT/14MDT, 25 Crit Damage, 14 Crit Rate, 229 DEX, 7 PDL
 
   -- 80% DEX
   sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {
@@ -574,6 +593,11 @@ function init_gear_sets()
     head="Maculele Tiara +1",
     feet=gear.Nyame_B_feet,
     -- ring1="Epaminondas's Ring",
+  }
+  sets.precast.WS["Rudra's Storm"].Safe = {
+    legs=gear.Nyame_B_legs,
+    ring2="Defending Ring",
+    waist="Flume Belt +1",
   }
 
   sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
@@ -1032,6 +1056,36 @@ function init_gear_sets()
   sets.engaged.DW.MidAcc.LightDef.MaxHaste = set_combine(sets.engaged.DW.MidAcc.MaxHaste, sets.LightDef)
   sets.engaged.DW.HighAcc.LightDef.MaxHaste = set_combine(sets.engaged.DW.HighAcc.MaxHaste, sets.LightDef)
 
+  sets.engaged.HeavyDef = set_combine(sets.engaged, sets.LightDef)
+  sets.engaged.LowAcc.HeavyDef = set_combine(sets.engaged.LowAcc, sets.LightDef)
+  sets.engaged.MidAcc.HeavyDef = set_combine(sets.engaged.MidAcc, sets.LightDef)
+  sets.engaged.HighAcc.HeavyDef = set_combine(sets.engaged.HighAcc, sets.LightDef)
+
+  sets.engaged.DW.HeavyDef = set_combine(sets.engaged.DW, sets.LightDef)
+  sets.engaged.DW.LowAcc.HeavyDef = set_combine(sets.engaged.DW.LowAcc, sets.LightDef)
+  sets.engaged.DW.MidAcc.HeavyDef = set_combine(sets.engaged.DW.MidAcc, sets.LightDef)
+  sets.engaged.DW.HighAcc.HeavyDef = set_combine(sets.engaged.DW.HighAcc, sets.LightDef)
+
+  sets.engaged.DW.HeavyDef.LowHaste = set_combine(sets.engaged.DW.LowHaste, sets.LightDef)
+  sets.engaged.DW.LowAcc.HeavyDef.LowHaste = set_combine(sets.engaged.DW.LowAcc.LowHaste, sets.LightDef)
+  sets.engaged.DW.MidAcc.HeavyDef.LowHaste = set_combine(sets.engaged.DW.MidAcc.LowHaste, sets.LightDef)
+  sets.engaged.DW.HighAcc.HeavyDef.LowHaste = set_combine(sets.engaged.DW.HighAcc.LowHaste, sets.LightDef)
+
+  sets.engaged.DW.HeavyDef.MidHaste = set_combine(sets.engaged.DW.MidHaste, sets.LightDef)
+  sets.engaged.DW.LowAcc.HeavyDef.MidHaste = set_combine(sets.engaged.DW.LowAcc.MidHaste, sets.LightDef)
+  sets.engaged.DW.MidAcc.HeavyDef.MidHaste = set_combine(sets.engaged.DW.MidAcc.MidHaste, sets.LightDef)
+  sets.engaged.DW.HighAcc.HeavyDef.MidHaste = set_combine(sets.engaged.DW.HighAcc.MidHaste, sets.LightDef)
+
+  sets.engaged.DW.HeavyDef.HighHaste = set_combine(sets.engaged.DW.HighHaste, sets.LightDef)
+  sets.engaged.DW.LowAcc.HeavyDef.HighHaste = set_combine(sets.engaged.DW.LowAcc.HighHaste, sets.LightDef)
+  sets.engaged.DW.MidAcc.HeavyDef.HighHaste = set_combine(sets.engaged.DW.MidAcc.HighHaste, sets.LightDef)
+  sets.engaged.DW.HighAcc.HeavyDef.HighHaste = set_combine(sets.engaged.DW.HighAcc.HighHaste, sets.LightDef)
+
+  sets.engaged.DW.HeavyDef.MaxHaste = set_combine(sets.engaged.DW.MaxHaste, sets.LightDef)
+  sets.engaged.DW.LowAcc.HeavyDef.MaxHaste = set_combine(sets.engaged.DW.LowAcc.MaxHaste, sets.LightDef)
+  sets.engaged.DW.MidAcc.HeavyDef.MaxHaste = set_combine(sets.engaged.DW.MidAcc.MaxHaste, sets.LightDef)
+  sets.engaged.DW.HighAcc.HeavyDef.MaxHaste = set_combine(sets.engaged.DW.HighAcc.MaxHaste, sets.LightDef)
+
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Special Sets ------------------------------------------
@@ -1102,6 +1156,7 @@ function job_precast(spell, action, spellMap, eventArgs)
     retry_filtered.action = nil
   end
 
+
   if spellMap == 'Utsusemi' then
     if buffactive['Copy Image (3)'] or buffactive['Copy Image (4+)'] then
       cancel_spell()
@@ -1133,23 +1188,29 @@ function job_post_precast(spell, action, spellMap, eventArgs)
         equip({waist="Orpheus's Sash"})
       end
     end
-    if state.Buff['Climactic Flourish'] then
-      -- If set isn't found for specific ws, overlay the default set
-      local set = (sets.precast.WS[spell.name] and sets.precast.WS[spell.name].Climactic) or sets.precast.WS.Climactic or {}
-      equip(set)
+    local climacticSet = (sets.precast.WS[spell.name] and sets.precast.WS[spell.name].Climactic) or sets.precast.WS.Climactic
+    if state.Buff['Climactic Flourish'] and climacticSet then
+      equip(climacticSet)
     end
-    if state.Buff['Sneak Attack'] then
-    -- If set isn't found for specific ws, overlay the default set
-      local set = sets.precast.WS[spell.name].SA or sets.precast.WS.SA or {}
-      equip(set)
+    local saSet = (sets.precast.WS[spell.name] and sets.precast.WS[spell.name].SA) or sets.precast.WS.SA
+    if state.Buff['Sneak Attack'] and saSet then
+      equip(saSet)
     end
-
     if buffactive['Reive Mark'] then
       equip(sets.Reive)
     end
+    local safeSet = sets.precast.WS[spell.name] and sets.precast.WS[spell.name].Safe
+    if state.HybridMode.value == 'HeavyDef' and safeSet then
+      equip(safeSet)
+    end
   end
-  if spell.type=='Waltz' and spell.english:startswith('Curing') and spell.target.type == 'SELF' then
-    equip(sets.precast.WaltzSelf)
+  if spell.type=='Waltz' and spell.english:startswith('Curing') then
+    if spell.target.type == 'SELF' then
+      equip(sets.precast.WaltzSelf)
+    end
+    if state.HybridMode.value == 'HeavyDef' then
+      equip(sets.precast.WaltzSafe)
+    end
   end
 
   -- If slot is locked, keep current equipment on
