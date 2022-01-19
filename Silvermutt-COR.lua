@@ -283,10 +283,9 @@ function init_gear_sets()
     ring1="Luzaf's Ring",
     ring2="Defending Ring", --10/10
     back=gear.COR_SNP_Cape,
-    waist="Carrier's Sash",
+    waist="Flume Belt +1", --4/0
     -- head="Lanun Tricorne +3",
     -- legs="Desultor Tassets",
-    -- waist="Flume Belt +1", --4/0
   }
 
   sets.precast.CorsairRoll.Duration = {

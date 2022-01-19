@@ -527,6 +527,7 @@ function init_gear_sets()
     ring1="Moonlight Ring", -- Gel. Ring +1 acceptable alt
     ring2="Defending Ring",
     back=gear.BRD_Song_Cape,
+    waist="Flume Belt +1",
     -- main="Carnwenhan",
     -- range="Gjallarhorn",        -- +4 Potency
     -- head="Fili Calot +1",
@@ -534,7 +535,6 @@ function init_gear_sets()
     -- hands="Fili Manchettes +1",
     -- feet="Brioso Slippers +3",
     -- neck="Mnbw. Whistle +1",
-    -- waist="Flume Belt +1",
   }
 
   -- For the following song sets, instrument may be replaced later situationally
@@ -747,10 +747,10 @@ function init_gear_sets()
     ring1="Defending Ring",   -- 10, 10, ___
     ring2="Moonlight Ring",   --  5,  5, ___; Gel. Ring +1 acceptable alt
     back="Moonlight Cape",    --  6,  6, ___
+    waist="Flume Belt +1", --  4, __, ___
     -- main="Barfawc",        -- 12, 12, ___
     -- range=gear.Linos_DT,   --  5, __,  15
     -- body="Ashera Harness", --  7,  7,  96; Status resist, Mousai Manteel +1 good alt
-    -- waist="Flume Belt +1", --  4, __, ___
     -- 94 PDT, 78 MDT, 646 MEVA
   }
 
