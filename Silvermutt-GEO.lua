@@ -269,6 +269,17 @@ function init_gear_sets()
     -- 250 TP Bonus, 190 MND, 143 STR, 35 WSD, 54PDT/44MDT [43PetDT]
   })-- 250 TP Bonus, 185 MND, 138 STR, 35 WSD, 53PDT/43MDT [42PetDT]
 
+  -- Physical damage. 1 hit. Attack varies with TP.
+  -- 50% MND / 50% INT; 1.5-4.75fTP
+  -- WSD > MND > INT
+	sets.precast.WS['Exudiation'] = set_combine(sets.precast.WS['Black Halo'], {
+    ear2="Ishvara Earring",
+  })
+  sets.precast.WS['Exudiation'].MaxTP = sets.precast.WS['Exudiation']
+  sets.precast.WS['Exudiation'].Safe = set_combine(sets.precast.WS['Black Halo'].Safe, {
+    ear2="Ishvara Earring",
+  })
+
   -- Physical. 6 Hits. 30% STR / 30% MND
   -- fTP Replicating WS. Can crit. Crit rate varies with TP. 1.125 fTP
   -- TP Bonus > Fotia > Crit Dmg > Crit Rate, MND = STR > WSD
@@ -911,6 +922,11 @@ function init_gear_sets()
     waist="Olseni Belt",
     -- hands="Gazu Bracelet +1",
   }
+	sets.engaged.Staff = set_combine(sets.engaged, {
+    neck="Carnal Torque",
+  })
+	sets.engaged.Club = set_combine(sets.engaged, {
+  })
 
 
 	--------------------------------------
