@@ -53,7 +53,7 @@ function job_setup()
   silibs.enable_th()
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
-  state.HybridMode:options('LightDef', 'MEVA', 'Normal')
+  state.HybridMode:options('LightDef', 'HeavyDef', 'Normal', 'MEVA')
   state.IdleMode:options('Normal', 'HeavyDef')
 
   state.CP = M(false, "Capacity Points Mode")
@@ -157,6 +157,7 @@ function init_gear_sets()
     neck="Orunmila's Torque", --5
     ear1="Loquac. Earring", --2
     ring2="Prolix Ring", --2
+    -- body="Sacro Breastplate", --10
   }
 
   sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {
@@ -226,6 +227,19 @@ function init_gear_sets()
   sets.precast.Waltz = {
   }
   sets.precast.Step = {
+    head="Flam. Zucchetto +2",
+    body=gear.Nyame_B_body,
+    hands="Flam. Manopolas +2",
+    legs=gear.Nyame_B_legs,
+    feet=gear.Nyame_B_feet,
+    neck="Samurai's Nodowa +2",
+    ear1="Dignitary's Earring",
+    ear2="Telos Earring",
+    ring1="Regal Ring",
+    ring2="Chirich Ring +1",
+    back=gear.stp_jse_back,
+    waist="Olseni Belt",
+    -- ear1="Schere Earring", -- R20+
   }
   sets.precast.Flourish1 = {
   }
@@ -450,20 +464,21 @@ function init_gear_sets()
   -- Impulse Drive - 100% STR
   sets.precast.WS['Impulse Drive'] = set_combine(sets.precast.WS, {
     ammo="Aurgelmir Orb",
-    head="Flamma Zucchetto +2",
+    head=gear.Nyame_B_head,
     body="Kendatsuba Samue +1",
     hands=gear.Ryuo_A_hands,
     legs="Kendatsuba Hakama +1",
-    feet="Flamma Gambieras +2",
+    feet=gear.Nyame_B_feet,
     neck="Samurai's Nodowa +2",
-    ear1="Schere Earring",
+    ear1="Thrud Earring",
     ear2="Moonshade Earring",
     ring1="Regal Ring",
     ring2="Niqmaddu Ring",
     back=gear.SAM_STR_WSD_Cape,
-    waist="Fotia Belt",
+    waist="Sailfi belt +1",
     -- ammo="Aurgelmir Orb +1",
     -- body="Dagon Breast.",
+    -- ring1="Epaminondas's Ring",
   })
   sets.precast.WS["Impulse Drive"].MaxTP = set_combine(sets.precast.WS["Impulse Drive"], {
   })
@@ -529,30 +544,7 @@ function init_gear_sets()
   ---------------------------------------- Defense Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
 
-  sets.LightDef = {
-    ammo="Staunch Tathlum +1",      --  3/ 3, ___
-    head="Kendatsuba Jinpachi +1",  -- __/__, 101
-    body="Wakido Domaru +3",        --  8/ 8,  73
-    legs="Kendatsuba Hakama +1",    -- __/__, 139
-    feet="Kendatsuba Sune-Ate +1",  -- __/__, 139
-    ring1="Gelatinous Ring +1",     --  7/-1, ___
-    ring2="Defending Ring",         -- 10/10, ___
-    back=gear.SAM_TP_Cape,          -- 10/__, ___
-    --38 PDT/20 MDT, 452 MEVA
-  }
-
-  sets.MEVA = {
-    ammo="Staunch Tathlum +1",  --  3/ 3, ___
-    head="Kendatsuba Jinpachi +1",    -- __/__, 101
-    body="Kendatsuba Samue +1",       -- __/__, 117
-    hands="Wakido Kote +3",     -- __/__,  46
-    legs="Kendatsuba Hakama +1",      -- __/__, 139
-    feet="Kendatsuba Sune-Ate +1",    -- __/__, 139
-    back=gear.SAM_TP_Cape,      -- 10/__, ___
-    --13 PDT/3 MDT, 542 MEVA
-  }
-
-  sets.HeavyDef = {
+  sets.defense.PDT = {
     ammo="Aurgelmir Orb",       -- __/__, ___
     head=gear.Nyame_B_head,     --  7/ 7, 123
     body=gear.Nyame_B_body,     --  9/ 9, 139
@@ -560,7 +552,7 @@ function init_gear_sets()
     legs=gear.Nyame_B_legs,     --  8/ 8, 150
     feet=gear.Nyame_B_feet,     --  7/ 7, 150
     neck="Samurai's Nodowa +2", -- __/__, ___
-    ear1="Dedition Earring", -- __/__, ___
+    ear1="Dedition Earring",    -- __/__, ___
     ear2="Telos Earring",       -- __/__, ___
     ring1="Niqmaddu Ring",      -- __/__, ___
     ring2="Defending Ring",     -- 10/10, ___
@@ -569,9 +561,7 @@ function init_gear_sets()
     -- ammo="Aurgelmir Orb +1", -- __/__, ___
     --51 PDT/41 MDT, 608 MEVA
   }
-
-  sets.defense.PDT = sets.HeavyDef
-  sets.defense.MDT = sets.HeavyDef
+  sets.defense.MDT = sets.defense.PDT
 
   ------------------------------------------------------------------------------------------------
   ----------------------------------------- Idle Sets --------------------------------------------
@@ -589,6 +579,7 @@ function init_gear_sets()
     -- legs="Rao Haidate +1",
     -- feet="Rao Sune-Ate +1",
     -- ring2="Chirich Ring +1",
+    -- body="Sacro Breastplate", --10
   }
   sets.latent_refresh = {
     -- ring1="Stikini Ring +1", -- 1
@@ -597,7 +588,7 @@ function init_gear_sets()
   sets.latent_refresh_sub50 = set_combine(sets.latent_refresh, {
   })
 
-  sets.idle = sets.HeavyDef
+  sets.idle = sets.defense.PDT
 
   sets.idle.Regain = set_combine(sets.idle, sets.latent_regain)
   sets.idle.Regen = set_combine(sets.idle, sets.latent_regen)
@@ -611,9 +602,9 @@ function init_gear_sets()
   sets.idle.Regain.Regen.Refresh = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh)
   sets.idle.Regain.Regen.RefreshSub50 = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh_sub50)
 
-  sets.idle.HeavyDef = sets.HeavyDef
+  sets.idle.HeavyDef = sets.defense.PDT
 
-  sets.idle.Weak = sets.HeavyDef
+  sets.idle.Weak = sets.defense.PDT
 
 
   ------------------------------------------------------------------------------------------------
@@ -621,23 +612,23 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.engaged = {
-    ammo="Aurgelmir Orb",             -- __/__, ___
-    head="Flamma Zucchetto +2",       -- __/__,  53
-    body="Kasuga Domaru +1",          -- __/__,  59
-    hands="Wakido Kote +3",           -- __/__,  46
-    legs="Tatenashi Haidate +1",      -- __/__, ___
-    feet="Kendatsuba Sune-Ate +1",    -- __/__, 139
-    neck="Samurai's Nodowa +2",       -- __/__, ___
-    ear1="Dedition Earring",          -- __/__, ___
-    ear2="Telos Earring",             -- __/__, ___
-    ring1="Chirich Ring +1",          -- __/__, ___
-    ring2="Niqmaddu Ring",            -- __/__, ___
-    back=gear.SAM_TP_Cape,            -- 10/__, ___
-    waist="Sailfi Belt +1",           -- __/__, ___
-    -- ammo="Aurgelmir Orb +1",       -- __/__, ___
-    -- body="Tatenashi Haramaki +1",  -- __/__,  59
-    -- feet=gear.Ryuo_C_feet,         -- __/__,  80
-  }
+    ammo="Aurgelmir Orb",             -- [__/__, ___] __,  4 <__, __, __> __, __
+    head="Flamma Zucchetto +2",       -- [__/__,  53] __,  6 <__,  5, __> __,  4
+    body="Kendatsuba Samue +1",       -- [__/__, 117] __, __ <__,  6, __>  9,  4
+    hands="Wakido Kote +3",           -- [__/__,  46]  4,  7 <__, __, __> __,  4
+    legs="Tatenashi Haidate +1",      -- [__/__,  80] __,  8 <__,  3, __> __,  5
+    feet="Kendatsuba Sune-Ate +1",    -- [__/__, 139] __, __ <__,  4, __>  5,  3
+    neck="Samurai's Nodowa +2",       -- [__/__, ___] __, 14 <__, __, __> __, __
+    ear1="Dedition Earring",          -- [__/__, ___] __,  8 <__, __, __> __, __
+    ear2="Telos Earring",             -- [__/__, ___] __,  5 <__, __, __> __, __
+    ring1="Chirich Ring +1",          -- [__/__, ___] __,  6 <__, __, __> __, __
+    ring2="Niqmaddu Ring",            -- [__/__, ___] __, __ < 3, __, __> __, __
+    back=gear.SAM_TP_Cape,            -- [10/__, ___] __, __ <__, __, 10> __, __
+    waist="Sailfi Belt +1",           -- [__/__, ___] __, __ <__,  2,  5> __,  9
+    -- ammo="Aurgelmir Orb +1",       -- [__/__, ___] __,  5 <__, __, __> __, __
+    -- body="Tatenashi Haramaki +1",  -- [__/__,  59] __,  9 <__,  5, __>  6,  3
+    -- [10 PDT/0 MDT, 337 MEVA] 4 Hasso, 68 STP <3 QA, 19 TA, 15 DA> 11 Crit Rate, 28 Haste
+  } -- [10 PDT/0 MDT, 435 MEVA] 4 Hasso, 58 STP <3 QA, 20 TA, 15 DA> 14 Crit Rate, 29 Haste
   sets.engaged.LowAcc = set_combine(sets.engaged, {
     body="Kendatsuba Samue +1",
     feet="Flamma Gambieras +2",
@@ -649,8 +640,7 @@ function init_gear_sets()
   })
   sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
     feet="Kendatsuba Sune-Ate +1",
-    ear1="Cessance Earring",
-    ear2="Telos Earring",
+    ear1="Telos Earring",
   })
 
 
@@ -658,15 +648,64 @@ function init_gear_sets()
   ---------------------------------------- Hybrid Sets -------------------------------------------
   ------------------------------------------------------------------------------------------------
 
-  sets.engaged.LightDef = set_combine(sets.engaged, sets.LightDef)
-  sets.engaged.LowAcc.LightDef = set_combine(sets.engaged.LowAcc, sets.LightDef)
-  sets.engaged.MidAcc.LightDef = set_combine(sets.engaged.MidAcc, sets.LightDef)
-  sets.engaged.HighAcc.LightDef = set_combine(sets.engaged.HighAcc, sets.LightDef)
+  sets.MEVA = {
+    ammo="Staunch Tathlum +1",        --  3/ 3, ___; Status resist
+    head="Kendatsuba Jinpachi +1",    -- __/__, 101
+    body="Kendatsuba Samue +1",       -- __/__, 117
+    legs="Kendatsuba Hakama +1",      -- __/__, 139
+    feet="Kendatsuba Sune-Ate +1",    -- __/__, 139
+  }
 
   sets.engaged.MEVA = set_combine(sets.engaged, sets.MEVA)
   sets.engaged.LowAcc.MEVA = set_combine(sets.engaged.LowAcc, sets.MEVA)
   sets.engaged.MidAcc.MEVA = set_combine(sets.engaged.MidAcc, sets.MEVA)
   sets.engaged.HighAcc.MEVA = set_combine(sets.engaged.HighAcc, sets.MEVA)
+
+  sets.engaged.LightDef = {
+    ammo="Aurgelmir Orb",             -- [__/__, ___] __,  4 <__, __, __> __, __
+    head="Flamma Zucchetto +2",       -- [__/__,  53] __,  6 <__,  5, __> __,  4
+    body="Wakido Domaru +3",          -- [ 8/ 8,  73] __,  9 <__, __, __> __,  3
+    hands="Wakido Kote +3",           -- [__/__,  46]  4,  7 <__, __, __> __,  4
+    legs="Tatenashi Haidate +1",      -- [__/__,  80] __,  8 <__,  3, __> __,  5
+    feet="Kendatsuba Sune-Ate +1",    -- [__/__, 139] __, __ <__,  4, __>  5,  3
+    neck="Samurai's Nodowa +2",       -- [__/__, ___] __, 14 <__, __, __> __, __
+    ear1="Dedition Earring",          -- [__/__, ___] __,  8 <__, __, __> __, __
+    ear2="Telos Earring",             -- [__/__, ___] __,  5 <__, __, __> __, __
+    ring1="Chirich Ring +1",          -- [__/__, ___] __,  6 <__, __, __> __, __
+    ring2="Defending Ring",           -- [10/10, ___] __, __ <__, __, __> __, __
+    back=gear.SAM_TP_Cape,            -- [10/__, ___] __, __ <__, __, 10> __, __
+    waist="Sailfi Belt +1",           -- [__/__, ___] __, __ <__,  2,  5> __,  9
+    -- ammo="Aurgelmir Orb +1",       -- [__/__, ___] __,  5 <__, __, __> __, __
+    -- body="Mpaca's Doublet",        -- [10/__,  86] __,  5 <__,  4, __>  7,  4
+    -- feet="Mpaca's Boots",          -- [ 6/__,  96] __, __ <__,  3, __>  3,  3
+    -- [36 PDT/10 MDT, 361 MEVA] 4 Hasso, 64 STP <0 QA, 17 TA, 15 DA> 10 Crit Rate, 29 Haste
+  } -- [28 PDT/18 MDT, 391 MEVA] 4 Hasso, 67 STP <3 QA, 14 TA, 15 DA> 5 Crit Rate, 28 Haste
+  sets.engaged.LowAcc.LightDef = sets.engaged.LightDef
+  sets.engaged.MidAcc.LightDef = sets.engaged.LightDef
+  sets.engaged.HighAcc.LightDef = sets.engaged.LightDef
+
+  sets.engaged.HeavyDef = {
+    ammo="Aurgelmir Orb",             -- [__/__, ___] __,  4 <__, __, __> __, __
+    head=gear.Nyame_B_head,           -- [ 7/ 7, 123] __, __ <__, __,  2> __,  6
+    body=gear.Nyame_B_body,           -- [ 9/ 9, 139] __, __ <__, __,  3> __,  3
+    hands="Wakido Kote +3",           -- [__/__,  46]  4,  7 <__, __, __> __,  4
+    legs="Tatenashi Haidate +1",      -- [__/__,  80] __,  8 <__,  3, __> __,  5
+    feet=gear.Nyame_B_feet,           -- [ 7/ 7, 150] __, __ <__, __,  2> __,  3
+    neck="Samurai's Nodowa +2",       -- [__/__, ___] __, 14 <__, __, __> __, __
+    ear1="Dedition Earring",          -- [__/__, ___] __,  8 <__, __, __> __, __
+    ear2="Telos Earring",             -- [__/__, ___] __,  5 <__, __, __> __, __
+    ring1="Gelatinous Ring +1",       -- [ 7/-1, ___] __, __ <__, __, __> __, __
+    ring2="Defending Ring",           -- [10/10, ___] __, __ <__, __, __> __, __
+    back=gear.SAM_TP_Cape,            -- [10/__, ___] __, __ <__, __, 10> __, __
+    waist="Sailfi Belt +1",           -- [__/__, ___] __, __ <__,  2,  5> __,  9
+    -- ammo="Aurgelmir Orb +1",       -- [__/__, ___] __,  5 <__, __, __> __, __
+    -- body="Mpaca's Doublet",        -- [10/__,  86] __,  5 <__,  4, __>  7,  4
+    -- [51 PDT/23 MDT, 485 MEVA] 4 Hasso, 52 STP <0 QA, 9 TA, 19 DA> 7 Crit Rate, 31 Haste
+  } -- [50 PDT/32 MDT, 538 MEVA] 4 Hasso, 46 STP <0 QA, 5 TA, 22 DA> 7 Crit Rate, 30 Haste
+  sets.engaged.LowAcc.HeavyDef = sets.engaged.HeavyDef
+  sets.engaged.MidAcc.HeavyDef = sets.engaged.HeavyDef
+  sets.engaged.HighAcc.HeavyDef = sets.engaged.HeavyDef
+
 
   -----------------------------------------------------------------------------------
   ---------------------------------------- Special Sets ------------------------------------------
