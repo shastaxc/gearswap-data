@@ -1871,26 +1871,25 @@ function check_ammo(spell, action, spellMap, eventArgs)
       return
     end
   elseif spell.type == 'WeaponSkill' then
-    -- magical weaponskills
-    if elemental_ws:contains(spell.english) then
-      if magic_ammo and has_item(magic_ammo) then
-        swapped_ammo = magic_ammo
-        equip({ammo=swapped_ammo})
-      elseif default_ammo and has_item(default_ammo) then
-        swapped_ammo = default_ammo
-        equip({ammo=swapped_ammo})
-        add_to_chat(3,"Magic ammo unavailable. Using default ammo.")
-      else
-        swapped_ammo = empty
-        equip({ammo=swapped_ammo})
-        cancel_spell()
-        add_to_chat(123, '** Action Canceled: [ Magic & default ammo unavailable. ] **')
-        return
-      end
-    -- physical weaponskills
-    else
-      -- physical ranged weaponskills
-      if spell.skill == 'Marksmanship' or spell.skill == 'Archery' then
+    -- Ranged WS
+    if spell.skill == 'Marksmanship' or spell.skill == 'Archery' then
+      -- ranged magical weaponskills
+      if elemental_ws:contains(spell.english) then
+        if magic_ammo and has_item(magic_ammo) then
+          swapped_ammo = magic_ammo
+          equip({ammo=swapped_ammo})
+        elseif default_ammo and has_item(default_ammo) then
+          swapped_ammo = default_ammo
+          equip({ammo=swapped_ammo})
+          add_to_chat(3,"Magic ammo unavailable. Using default ammo.")
+        else
+          swapped_ammo = empty
+          equip({ammo=swapped_ammo})
+          cancel_spell()
+          add_to_chat(123, '** Action Canceled: [ Magic & default ammo unavailable. ] **')
+          return
+        end
+      else -- ranged physical weaponskills
         if state.RangedMode.value ~= 'Normal' then
           if acc_ammo and has_item(acc_ammo) then
             swapped_ammo = acc_ammo
@@ -1926,8 +1925,31 @@ function check_ammo(spell, action, spellMap, eventArgs)
             return
           end
         end
-      -- physical non-ranged weaponskills
-      else
+      end
+    else -- Melee WS
+      -- melee magical weaponskills
+      if elemental_ws:contains(spell.english) then
+        -- If ranged weapon is accipiter/sparrowhawk and using non-ranged WS, equip WSD ammo
+        local rweapon = player.equipment.range
+        if rweapon and rweapon == 'Accipiter' or (rweapon:length() >= 11 and rweapon:startswith('Sparrowhawk'))
+            and has_item('Hauksbok Arrow') then
+          swapped_ammo = 'Hauksbok Arrow'
+          equip({ammo=swapped_ammo})
+        elseif magic_ammo and has_item(magic_ammo) then
+          swapped_ammo = magic_ammo
+          equip({ammo=swapped_ammo})
+        elseif default_ammo and has_item(default_ammo) then
+          swapped_ammo = default_ammo
+          equip({ammo=swapped_ammo})
+          add_to_chat(3,"Magic ammo unavailable. Using default ammo.")
+        else
+          swapped_ammo = empty
+          equip({ammo=swapped_ammo})
+          cancel_spell()
+          add_to_chat(123, '** Action Canceled: [ Magic & default ammo unavailable. ] **')
+          return
+        end
+      else -- melee physical weaponskills
         -- If ranged weapon is accipiter/sparrowhawk and using non-ranged WS, equip WSD ammo
         local rweapon = player.equipment.range
         if rweapon and rweapon == 'Accipiter' or (rweapon:length() >= 11 and rweapon:startswith('Sparrowhawk'))
