@@ -23,11 +23,11 @@ function job_setup()
   silibs.enable_auto_lockstyle(10)
   silibs.enable_premade_commands()
 
-  state.OffenseMode:options('Normal')
+  state.OffenseMode:options('Safe', 'Normal')
   state.CastingMode:options('Normal', 'Resistant', 'Proc')
   state.IdleMode:options('Normal','HeavyDef')
 
-  state.WeaponSet = M{['description']='Weapon Set', 'Casting', 'Nehushtan',}
+  state.WeaponSet = M{['description']='Weapon Set', 'Casting', 'Idris', 'Maxentius', 'Staff'}
   state.CP = M(false, "Capacity Points Mode")
 	state.RecoverMode = M('Always', '60%', '35%', 'Never')
 	state.MagicBurstMode = M{['description'] = 'Magic Burst Mode', 'Off', 'Single', 'Lock'}
@@ -229,11 +229,154 @@ function init_gear_sets()
 
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined
-	sets.precast.WS = {}
+	sets.precast.WS = {
+    head=gear.Nyame_B_head,
+    body=gear.Nyame_B_body,
+    hands=gear.Nyame_B_hands,
+    legs=gear.Nyame_B_legs,
+    feet=gear.Nyame_B_feet,
+  }
+  
+  -- Physical damage. 2 hit. Damage varies with TP.
+  -- 70% MND / 30% STR; 3.0-9.75fTP
+  -- TP Bonus > WSD > MND > STR
+	sets.precast.WS['Black Halo'] = {
+    -- Assume Idris                 -- ___, __, __, __, __/__ [25]
+    -- Assume Genmei Shield         -- ___, __, __, __, 10/__ [__]
+    -- Assume Dunna                 -- ___, __, __, __, __/__ [ 5]
+    head=gear.Nyame_B_head,         -- ___, 26, 26,  8,  7/ 7 [__]
+    body=gear.Nyame_B_body,         -- ___, 37, 35, 10,  9/ 9 [__]
+    hands=gear.Nyame_B_hands,       -- ___, 40, 17,  8,  7/ 7 [__]
+    legs=gear.Nyame_B_legs,         -- ___, 32, 43,  9,  8/ 8 [__]
+    feet=gear.Nyame_B_feet,         -- ___, 26, 23,  8,  7/ 7 [__]
+    neck="Fotia Gorget",            -- fTP Bonus
+    ear1="Regal Earring",           -- ___, 10, __, __, __/__ [__]
+    ear2="Moonshade Earring",       -- 250, __, __, __, __/__ [__]
+    ring1="Metamorph Ring +1",      -- ___, 16, __, __, __/__ [__]
+    ring2="Stikini Ring +1",        -- ___,  8, __, __, __/__ [__]
+    back=gear.GEO_Idle_Cape,        -- ___, __, __, __, __/__ [__]
+    waist="Fotia Belt",             -- fTP Bonus
+    -- ring2="Epaminondas's Ring",  -- ___, __, __,  5, __/__ [__]
+    -- 250 TP Bonus, 187 MND, 144 STR, 48 WSD, 48PDT/38MDT [30PetDT]
+  } -- 250 TP Bonus, 195 MND, 144 STR, 43 WSD, 48PDT/38MDT [30PetDT]
+  sets.precast.WS['Black Halo'].MaxTP = set_combine(sets.precast.WS['Black Halo'], {
+    ear2="Ishvara Earring",         -- ___, __, __,  2, __/__ [__]
+  })
+  sets.precast.WS['Black Halo'].Safe = set_combine(sets.precast.WS['Black Halo'], {
+    hands="Geomancy Mitaines +2",   -- ___, 38, 11, __,  2/__ [12]
+    ring2="Defending Ring",         -- ___, __, __, __, 10/10 [__]
+    -- hands="Geomancy Mitaines +3",-- ___, 43, 16, __,  3/__ [13]
+    -- 250 TP Bonus, 190 MND, 143 STR, 35 WSD, 54PDT/44MDT [43PetDT]
+  })-- 250 TP Bonus, 185 MND, 138 STR, 35 WSD, 53PDT/43MDT [42PetDT]
+
+  -- Physical. 6 Hits. 30% STR / 30% MND
+  -- fTP Replicating WS. Can crit. Crit rate varies with TP. 1.125 fTP
+  -- TP Bonus > Fotia > Crit Dmg > Crit Rate, MND = STR > WSD
+  sets.precast.WS['Hexa Strike'] = {
+    -- Assume Idris                 -- ___, __, __, __, __, __, __/__ [25]
+    -- Assume Genmei Shield         -- ___, __, __, __, __, __, 10/__ [__]
+    -- Assume Dunna                 -- ___, __, __, __, __, __, __/__ [ 5]
+    head=gear.Nyame_B_head,         -- ___, __, __, 26, 26,  8,  7/ 7 [__]
+    body=gear.Nyame_B_body,         -- ___, __, __, 37, 35, 10,  9/ 9 [__]
+    hands=gear.Nyame_B_hands,       -- ___, __, __, 40, 17,  8,  7/ 7 [__]
+    legs=gear.Nyame_B_legs,         -- ___, __, __, 32, 43,  9,  8/ 8 [__]
+    feet=gear.Nyame_B_feet,         -- ___, __, __, 26, 23,  8,  7/ 7 [__]
+    neck="Fotia Gorget",            -- fTP Bonus
+    ear1="Regal Earring",           -- ___, __, __, 10, __, __, __/__ [__]
+    ear2="Moonshade Earring",       -- 250, __, __, __, __, __, __/__ [__]
+    ring1="Metamorph Ring +1",      -- ___, __, __, 16, __, __, __/__ [__]
+    ring2="Begrudging Ring",        -- ___, __,  5,  8, __, __,-10/-10[__]
+    back=gear.GEO_Idle_Cape,        -- ___, __, __, __, __, __, __/__ [__]
+    waist="Fotia Belt",             -- fTP Bonus
+    -- ring2="Epaminondas's Ring",  -- ___, __, __, __, __,  5, __/__ [__]
+  } -- 250 TP Bonus, 0 Crit Dmg,  5 Crit Rate, 195 MND, 144 STR, 43 WSD, 38PDT/28MDT [30PetDT]
+  sets.precast.WS['Hexa Strike'].MaxTP = set_combine(sets.precast.WS['Hexa Strike'], {
+    ear2="Malignance Earring",
+  })
+	sets.precast.WS['Hexa Strike'].Safe = set_combine(sets.precast.WS['Hexa Strike'], {
+    hands="Geomancy Mitaines +2",   -- ___, 38, 11, __,  2/__ [12]
+    ring2="Defending Ring",         -- ___, __, __, __, 10/10 [__]
+    -- hands="Geomancy Mitaines +3",-- ___, 43, 16, __,  3/__ [13]
+    -- 250 TP Bonus, 0 Crit Dmg,  0 Crit Rate, 190 MND, 143 STR, 35 WSD, 54PDT/42MDT [43PetDT]
+  })-- 250 TP Bonus, 0 Crit Dmg,  0 Crit Rate, 185 MND, 138 STR, 35 WSD, 53PDT/41MDT [42PetDT]
+
+  -- Magical (light). dStat=INT. 50% STR / 50% MND
+  -- Light MAB > MAB > M.Dmg > MND > STR > WSD
+	sets.precast.WS['Flash Nova'] = {
+    -- Assume Idris                 -- __, 40,217, __, __, __, __/__ [25]
+    -- Assume Genmei Shield         -- __, __, __, __, __, __, 10/__ [__]
+    -- Assume Dunna                 -- __, __, __, __, __, __, __/__ [ 5]
+    head="Agwu's Cap",              -- __, 35, 20, 26, 26, __, __/__ [__]
+    body=gear.Nyame_B_body,         -- __, 30, __, 37, 35, 10,  9/ 9 [__]
+    hands="Jhakri Cuffs +2",        -- __, 40, __, 35, 18,  7, __/__ [__]
+    legs="Agwu's Slops",            -- __, 55, 20, 32, 43, __,  7/ 7 [__]
+    feet=gear.Nyame_B_feet,         -- __, 30, __, 26, 23,  8,  7/ 7 [__]
+    neck="Baetyl Pendant",          -- __, 13, __, __, __, __, __/__ [__]
+    ear1="Regal Earring",           -- __,  7, __, 10, __, __, __/__ [__]
+    ear2="Malignance Earring",      -- __,  8, __,  8, __, __, __/__ [__]
+    ring1="Weatherspoon Ring",      -- 10, __, __, __, __, __, __/__ [__]
+    ring2="Shiva Ring +1",          -- __,  3, __, __, __, __, __/__ [__]
+    back="Argochampsa Mantle",      -- __, 12, __, __, __, __, __/__ [__]
+    waist="Skrymir Cord",           -- __,  5, 30, __, __, __, __/__ [__]
+    -- head="Agwu's Cap",           -- __, 58, 33, 26, 26, __, __/__ [__]; R25
+    -- body="Agwu's Robe",          -- __, 58, 20, 37, 33, __, __/__ [__]; R25
+    -- hands="Agwu's Gages",        -- __, 58, 20, 40, 14, __, __/__ [__]; R25
+    -- legs="Agwu's Slops",         -- __, 58, 20, 32, 43, __,  9/ 9 [__]; R25
+    -- feet="Agwu's Pigaches",      -- __, 58, 20, 26, 21, __, __/__ [__]; R25
+    -- back=gear.GEO_Nuke_Cape,     -- __, 10, 20, __, __, __, 10/__ [__]
+    -- waist="Skrymir Cord +1",     -- __,  7, 35, __, __, __, __/__ [__]
+    -- 10 Light MAB, 378 MAB, 385 M.Dmg, 179 MND, 137 STR, 0 WSD, 29PDT/9MDT [30PetDT]
+  } -- 10 Light MAB, 278 MAB, 287 M.Dmg, 174 MND, 145 STR, 25 WSD, 33PDT/23MDT [30PetDT]
+  sets.precast.WS['Flash Nova'].MaxTP = sets.precast.WS['Flash Nova']
+	sets.precast.WS['Flash Nova'].Safe = {
+    -- Assume Idris                 -- __, 40,217, __, __, __, __/__ [25]
+    -- Assume Genmei Shield         -- __, __, __, __, __, __, 10/__ [__]
+    -- Assume Dunna                 -- __, __, __, __, __, __, __/__ [ 5]
+    head="Agwu's Cap",              -- __, 35, 20, 26, 26, __, __/__ [__]
+    body=gear.Nyame_B_body,         -- __, 30, __, 37, 35, 10,  9/ 9 [__]
+    hands="Geomancy Mitaines +2",   -- __, __, __, 38, 11, __,  2/__ [12]
+    legs="Agwu's Slops",            -- __, 55, 20, 32, 43, __,  7/ 7 [__]
+    feet=gear.Nyame_B_feet,         -- __, 30, __, 26, 23,  8,  7/ 7 [__]
+    neck="Baetyl Pendant",          -- __, 13, __, __, __, __, __/__ [__]
+    ear1="Regal Earring",           -- __,  7, __, 10, __, __, __/__ [__]
+    ear2="Malignance Earring",      -- __,  8, __,  8, __, __, __/__ [__]
+    ring1="Weatherspoon Ring",      -- 10, __, __, __, __, __, __/__ [__]
+    ring2="Defending Ring",         -- __, __, __, __, __, __, 10/10 [__]
+    back="Argochampsa Mantle",      -- __, 12, __, __, __, __, __/__ [__]
+    waist="Skrymir Cord",           -- __,  5, 30, __, __, __, __/__ [__]
+    -- head="Agwu's Cap",           -- __, 58, 33, 26, 26, __, __/__ [__]; R25
+    -- body="Shamash Robe",         -- __, 45, __, 40, 30, __, 10/10 [__]
+    -- hands="Geomancy Mitaines +3",-- __, __, __, 43, 16, __,  3/__ [13]
+    -- legs="Agwu's Slops",         -- __, 58, 20, 32, 43, __,  9/ 9 [__]; R25
+    -- feet="Agwu's Pigaches",      -- __, 58, 20, 26, 21, __, __/__ [__]; R25
+    -- back=gear.GEO_Nuke_Cape,     -- __, 10, 20, __, __, __, 10/__ [__]
+    -- waist="Skrymir Cord +1",     -- __,  7, 35, __, __, __, __/__ [__]
+    -- 10 Light MAB, 304 MAB, 345 M.Dmg, 185 MND, 136 STR, 0 WSD, 52PDT/19MDT [43PetDT]
+  } -- 10 Light MAB, 235 MAB, 287 M.Dmg, 177 MND, 138 STR, 18 WSD, 45PDT/33MDT [42PetDT]
+
+  -- Magical (light). dStat=INT. 40% STR / 40% MND
+  -- Damage varies with TP. 2.125-6.125 fTP
+  -- TP Bonus > Fotia > Light MAB > MAB > M.Dmg > MND > STR > WSD
+	sets.precast.WS['Seraph Strike'] = set_combine(sets.precast.WS['Flash Nova'], {
+    neck="Fotia Neck",              -- __, __, __, __, __, __, __/__ [__]; FTP bonus
+    ear2="Moonshade Earring",       -- __, __, __, __, __, __, __/__ [__]; TP bonus
+    waist="Fotia Belt",             -- __, __, __, __, __, __, __/__ [__]; FTP bonus
+  })
+  sets.precast.WS['Seraph Strike'].MaxTP = set_combine(sets.precast.WS['Seraph Strike'].MaxTP, {
+    ear2="Malignance Earring",      -- __,  8, __,  8, __, __, __/__ [__]
+  })
+  sets.precast.WS['Seraph Strike'].Safe = set_combine(sets.precast.WS['Flash Nova'].Safe, {
+    neck="Fotia Neck",              -- __, __, __, __, __, __, __/__ [__]; FTP bonus
+    ear2="Moonshade Earring",       -- __, __, __, __, __, __, __/__ [__]; TP bonus
+    waist="Fotia Belt",             -- __, __, __, __, __, __, __/__ [__]; FTP bonus
+  })
 
   -- Cataclysm: 30% STR/30% INT, 2.75-5.0 fTP, 1 hit (aoe-magical)
-  -- Stack Dark MAB > MAB > M.Dmg > WSD
+  -- Dark MAB > MAB > M.Dmg > INT > STR > WSD
   sets.precast.WS['Cataclysm'] = {
+    -- Assume Malignance Pole       -- __, __, __, 15
+    -- Assume Tzacab Grip           -- __, __, __, __
+    -- Assume Dunna                 -- __, __, __, __
     head="Pixie Hairpin +1",        -- 28, __, __, __
     body=gear.Nyame_B_body,         -- __, 30, __, 10
     hands="Jhakri Cuffs +2",        -- __, 40, __,  7
@@ -246,16 +389,17 @@ function init_gear_sets()
     ring2="Shiva Ring +1",          -- __,  3, __, __
     back="Argochampsa Mantle",      -- __, 12, __, __
     waist="Skrymir Cord",           -- __,  5, 30, __
-    -- body="Agwu's Robe",          -- __, 55, 20, __
-    -- legs="Agwu's Slops",         -- __, 55, 20, __
-    -- feet="Agwu's Pigaches",      -- __, 55, 20, __
+    -- body="Agwu's Robe",          -- __, 58, 20, __; R25
+    -- hands="Agwu's Gages",        -- __, 58, 20, __; R25
+    -- legs="Agwu's Slops",         -- __, 58, 20, __; R25
+    -- feet="Agwu's Pigaches",      -- __, 58, 20, __; R25
     -- ring2="Epaminondas's Ring",  -- __, __, __,  5
     -- back=gear.GEO_Nuke_Cape,     -- __, 10, 20, __
     -- waist="Skrymir Cord +1",     -- __,  7, 35, __
     -- 33 Dark MAB, 229 MAB, 115 M.Dmg, 12 WSD
   } -- 33 Dark MAB, 160 MAB, 30 M.Dmg, 34 WSD
   sets.precast.WS['Cataclysm'].MaxTP = set_combine(sets.precast.WS['Cataclysm'], {
-    ear2="Novio Earring", --7
+    ear2="Malignance Earring", -- __,  8, __, __
   })
 
 	--------------------------------------
@@ -618,25 +762,46 @@ function init_gear_sets()
 	--------------------------------------
 
 	-- Defense sets
+	sets.idle.Pet = {
+    ammo=empty,                     -- __/__, ___, __/__, __
+    head="Azimuth Hood +1",         -- __/__,  86, __/__,  3
+    body=gear.Nyame_B_body,         --  9/ 9, 139, __/__, __
+    hands="Geomancy Mitaines +2",   --  2/__,  47, 12/12, __
+    legs=gear.Nyame_B_legs,         --  8/ 8, 150, __/__, __
+    feet="Bagua Sandals +1",        -- __/__, 107, __/__,  3
+    neck="Bagua Charm +1",          -- __/__, ___, __/__, __; Absorb Dmg+8
+    ear1="Genmei Earring",          --  2/__, ___, __/__, __
+    ear2="Etiolation Earring",      -- __/ 3, ___, __/__, __; Resist Silence+15
+    ring1="Defending Ring",         -- 10/10, ___, __/__, __
+    ring2="Gelatinous Ring +1",     --  7/-1, ___, __/__, __
+    back=gear.GEO_Idle_Cape,        -- __/__,  30, __/__, 15
+    waist="Carrier's Sash",         -- __/__, ___, __/__, __; Ele resist+15
+    -- body="Shamash Robe",         -- 10/__, 106, __/__, __; Resist Silence+90
+    -- hands="Geomancy Mitaines +3",--  3/__,  57, 13/13, __
+    -- feet="Bagua Sandals +3",     -- __/__, 127, __/__,  5
+    -- neck="Bagua Charm +2",       -- __/__, ___, __/__, __; Absorb Dmg+10
+    -- 50 PDT / 20 MDT, 526 Meva, 43 Pet PDT / 43 Pet MDT, 23 Pet Regen
+  } -- 48 PDT / 29 MDT, 559 Meva, 42 Pet PDT / 42 Pet MDT, 21 Pet Regen
 	sets.defense.PDT = {
-    main="Malignance Pole",
-    sub="Kaja Grip",
-    range="Dunna",
-    ammo=empty,
-    head="Befouled Crown",
-    body="Jhakri Robe +2",
-    hands=gear.Nyame_B_hands,
-    legs=gear.Nyame_B_legs,
-    feet=gear.Nyame_B_feet,
-    neck="Loricate Torque +1",
-    ear1="Eabani Earring",
-    ear2="Halasz Earring",
-    ring1="Defending Ring",
-    ring2="Archon Ring",
-    back="Moonlight Cape",
-    waist="Carrier's Sash",
-    -- sub="Khonsu",
-  }
+    main="Malignance Pole",         -- 20/20, ___, __/__, __
+    sub="Kaja Grip",                --  5/ 5, ___, __/__, __
+    range="Dunna",                  -- __/__, ___, __/__, __
+    ammo=empty,                     -- __/__, ___, __/__, __
+    head=gear.Nyame_B_head,         --  7/ 7, 123, __/__, __
+    body=gear.Nyame_B_body,         --  9/ 9, 139, __/__, __
+    hands=gear.Nyame_B_hands,       --  7/ 7, 112, __/__, __
+    legs=gear.Nyame_B_legs,         --  8/ 8, 150, __/__, __
+    feet=gear.Nyame_B_feet,         --  7/ 7, 150, __/__, __
+    neck="Loricate Torque +1",      --  6/ 6, ___, __/__, __
+    ear1="Hearty Earring",          --  2/__, ___, __/__, __; Resist All Status+5
+    ear2="Etiolation Earring",      -- __/ 3, ___, __/__, __; Resist Silence+15
+    ring1="Defending Ring",         -- 10/10, ___, __/__, __
+    ring2="Stikini Ring +1",        -- __/__, ___, __/__, __; Refresh
+    back=gear.GEO_Idle_Cape,        -- __/__,  30, __/__, 15
+    waist="Carrier's Sash",         -- __/__, ___, __/__, __; Ele resist+15
+    -- sub="Khonsu",                --  6/ 6, ___, __/__, __
+    -- body="Shamash Robe",         -- 10/__, 106, __/__, __; Resist Silence+90
+  } -- 81 PDT / 82 MDT, 704 Meva, 0 Pet PDT / 0 Pet MDT, 15 Pet Regen
 	sets.defense.MDT = sets.defense.PDT
 
 	--------------------------------------
@@ -650,6 +815,7 @@ function init_gear_sets()
     ring1="Stikini Ring +1",
     -- main="Mpaca's Staff", --2
     -- sub="Oneiros Grip", --1; when mp<70%
+    -- body="Shamash Robe",
     -- hands="Bagua Mitaines +3", --2
     -- neck="Chrys. Torque",
     -- ring2="Stikini Ring +1",
@@ -689,7 +855,7 @@ function init_gear_sets()
     legs=gear.Nyame_B_legs,         --  8/ 8, 150, __/__, __
     feet="Bagua Sandals +1",        -- __/__, 107, __/__,  3
     neck="Bagua Charm +1",          -- __/__, ___, __/__, __; Absorb Dmg+8
-    ear1="Odnowa Earring +1",       --  3/ 5, ___, __/__, __
+    ear1="Genmei Earring",          --  2/__, ___, __/__, __
     ear2="Etiolation Earring",      -- __/ 3, ___, __/__, __; Resist Silence+15
     ring1="Defending Ring",         -- 10/10, ___, __/__, __
     ring2="Gelatinous Ring +1",     --  7/-1, ___, __/__, __
@@ -699,8 +865,8 @@ function init_gear_sets()
     -- hands="Geomancy Mitaines +3",--  3/__,  57, 13/13, __
     -- feet="Bagua Sandals +3",     -- __/__, 127, __/__,  5
     -- neck="Bagua Charm +2",       -- __/__, ___, __/__, __; Absorb Dmg+10
-    -- 51 PDT / 25 MDT, 526 Meva, 43 Pet PDT / 43 Pet MDT, 23 Pet Regen
-  } -- 49 PDT / 34 MDT, 559 Meva, 42 Pet PDT / 42 Pet MDT, 21 Pet Regen
+    -- 50 PDT / 20 MDT, 526 Meva, 43 Pet PDT / 43 Pet MDT, 23 Pet Regen
+  } -- 48 PDT / 29 MDT, 559 Meva, 42 Pet PDT / 42 Pet MDT, 21 Pet Regen
 
 	-- When Luopan is present, and you are expecting to take dmg
 	sets.idle.HeavyDef.Pet = sets.idle.Pet
@@ -731,8 +897,6 @@ function init_gear_sets()
 
 	-- Normal melee group
 	sets.engaged = {
-    main="Malignance Pole",
-    sub="Tzacab Grip",
 		head=gear.Nyame_B_head,
 		body=gear.Nyame_B_body,
     hands=gear.Nyame_B_hands,
@@ -808,9 +972,21 @@ function init_gear_sets()
   }
 
   sets.WeaponSet = {}
-  sets.WeaponSet['Nehushtan'] = {
-    -- main='Nehushtan',
-    -- sub='Genmei Shield'
+  sets.WeaponSet['Idris'] = {
+    main="Idris",
+    sub="Genmei Shield",
+    range="Dunna",
+  }
+  sets.WeaponSet['Maxentius'] = {
+    main="Idris",
+    sub="Genmei Shield",
+    range="Dunna",
+    -- main="Maxentius",
+  }
+  sets.WeaponSet['Staff'] = {
+    main="Malignance Pole",
+    sub="Tzacab Grip",
+    range="Dunna",
   }
 end
 
@@ -875,20 +1051,26 @@ end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
   -- Handle belts for elemental WS
-  if spell.type == 'WeaponSkill' and elemental_ws:contains(spell.english) then
-    local base_day_weather_mult = silibs.get_day_weather_multiplier(spell.element, false, false)
-    local obi_mult = silibs.get_day_weather_multiplier(spell.element, true, false)
-    local orpheus_mult = silibs.get_orpheus_multiplier(spell.element, spell.target.distance)
-    local has_obi = true -- Change if you do or don't have Hachirin-no-Obi
-    local has_orpheus = false -- Change if you do or don't have Orpheus's Sash
+  if spell.type == 'WeaponSkill' then
+    -- Use safe set depending on OffenseMode setting
+    if state.OffenseMode.value == 'Safe' and sets.precast.WS[spell.name] and sets.precast.WS[spell.name].Safe then
+      equip(sets.precast.WS[spell.name].Safe)
+    end
+    if elemental_ws:contains(spell.english) then
+      local base_day_weather_mult = silibs.get_day_weather_multiplier(spell.element, false, false)
+      local obi_mult = silibs.get_day_weather_multiplier(spell.element, true, false)
+      local orpheus_mult = silibs.get_orpheus_multiplier(spell.element, spell.target.distance)
+      local has_obi = true -- Change if you do or don't have Hachirin-no-Obi
+      local has_orpheus = false -- Change if you do or don't have Orpheus's Sash
 
-    -- Determine which combination to use: orpheus, hachirin-no-obi, or neither
-    if has_obi and (obi_mult >= orpheus_mult or not has_orpheus) and (obi_mult > base_day_weather_mult) then
-      -- Obi is better than orpheus and better than nothing
-      equip({waist="Hachirin-no-Obi"})
-    elseif has_orpheus and (orpheus_mult > base_day_weather_mult) then
-      -- Orpheus is better than obi and better than nothing
-      equip({waist="Orpheus's Sash"})
+      -- Determine which combination to use: orpheus, hachirin-no-obi, or neither
+      if has_obi and (obi_mult >= orpheus_mult or not has_orpheus) and (obi_mult > base_day_weather_mult) then
+        -- Obi is better than orpheus and better than nothing
+        equip({waist="Hachirin-no-Obi"})
+      elseif has_orpheus and (orpheus_mult > base_day_weather_mult) then
+        -- Orpheus is better than obi and better than nothing
+        equip({waist="Orpheus's Sash"})
+      end
     end
   end
 
