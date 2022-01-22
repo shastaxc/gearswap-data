@@ -403,6 +403,7 @@ function init_gear_sets()
 
   sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {
     ammo="Staunch Tathlum +1",
+    body="Passion Jacket", --10
     neck="Magoraga Beads", --10
     ear2="Odnowa Earring +1",
     ring1="Defending Ring",
@@ -723,9 +724,7 @@ function init_gear_sets()
   }
   sets.latent_regen = {
     head="Turms Cap +1",
-    body="Meghanada Cuirie +2",
     hands="Turms Mittens +1",
-    legs="Meghanada Chausses +2",
     feet="Turms Leggings +1",
     neck="Bathy Choker +1",
     ear1="Infused Earring",
