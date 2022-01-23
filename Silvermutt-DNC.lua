@@ -294,7 +294,7 @@ function init_gear_sets()
     body="Maxixi Casaque +3",       -- __/__ | 19(8), 33, 34 <-2>
     hands=gear.Nyame_B_hands,       --  7/ 7 | __(_), 24, 39 <__>
     legs="Dashing Subligar",        -- __/__ | 10(_), 11, 16 <__>; Gives Blink
-    feet="Maxixi Shoes +1",         -- __/__ | 10(_), 30, 12 <__>
+    feet="Maxixi Toe Shoes +2",     -- __/__ | 12(_), 35, 17 <__>
     neck="Etoile Gorget +2",        -- __/__ | 10(_), 25, __ <__>
     ear1="Genmei Earring",          --  2/__ | __(_), __,  2 <__>
     ear2="Odnowa Earring +1",       --  3/ 5 | __(_), __,  3 <__>
@@ -304,7 +304,7 @@ function init_gear_sets()
     waist="Aristo Belt",            -- __/__ | __(_),  8, __ <__>
     -- feet="Maxixi Toeshoes +3",   -- __/__ | 14(_), 40, 22 <__>
     -- 35/25 | 53 Potency (8 Self Potency), 191 CHR, 116 VIT <-4 Delay>
-  } -- 35/25 | 49 Potency (8 Self Potency), 181 CHR, 106 VIT <-4 Delay>
+  } -- 35/25 | 51 Potency (8 Self Potency), 186 CHR, 111 VIT <-4 Delay>
   -- Waltz effects received
   sets.precast.WaltzSelf = set_combine(sets.precast.Waltz, {
     body="Maxixi Casaque +3",       -- __/__ | 19(8), 33, 34 <-2>
@@ -313,7 +313,7 @@ function init_gear_sets()
   sets.precast.WaltzSafe = {
     ring1="Gelatinous Ring +1",     --  7/-1 | __(_), __, 15 <__>
     waist="Flume Belt +1",          --  4/__ | __(_), __, __ <__>
-  } -- 46/24 | 49 Potency (8 Self Potency), 157 CHR, 121 VIT <-4 Delay>
+  } -- 46/24 | 51 Potency (8 Self Potency), 162 CHR, 126 VIT <-4 Delay>
 
   -- Waltz delay
   sets.precast.Waltz['Healing Waltz'] = {
@@ -326,7 +326,7 @@ function init_gear_sets()
   }
   sets.precast.Jig = {
     legs="Horos Tights +3",
-    feet="Maxixi Shoes +1",
+    feet="Maxixi Toe Shoes +2",
     -- feet="Maxixi Shoes +3",
   }
 
@@ -879,12 +879,12 @@ function init_gear_sets()
     -- hands=gear.Adhemar_A_hands,
   })
   sets.engaged.DW.MidAcc.LowHaste = set_combine(sets.engaged.DW.LowAcc.LowHaste, {
+    head="Maxixi Tiara +3", --8
+    body="Horos Casaque +3",
     legs="Horos Tights +3",
     ring1="Chirich Ring +1",
     waist="Kentarch Belt +1",
     -- ammo="Voluspa Tathlum",
-    -- head="Maxixi Tiara +3", --8
-    -- body="Horos Casaque +3",
   })
   sets.engaged.DW.HighAcc.LowHaste = set_combine(sets.engaged.DW.MidAcc.LowHaste, {
     -- TODO: Re-evaluate to avoid dropping DW
@@ -921,13 +921,13 @@ function init_gear_sets()
     -- hands=gear.Adhemar_A_hands,
   })
   sets.engaged.DW.MidAcc.MidHaste = set_combine(sets.engaged.DW.LowAcc.MidHaste, {
+    head="Maxixi Tiara +3", --8
+    body="Horos Casaque +3",
     legs="Horos Tights +3",
     ear1="Telos Earring",
     ring1="Chirich Ring +1",
     waist="Kentarch Belt +1",
     -- ammo="Voluspa Tathlum",
-    -- head="Maxixi Tiara +3", --8
-    -- body="Horos Casaque +3",
   })
   sets.engaged.DW.HighAcc.MidHaste = set_combine(sets.engaged.DW.MidAcc.MidHaste, {
     ammo="Falcon Eye",
