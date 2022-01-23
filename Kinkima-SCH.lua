@@ -123,7 +123,7 @@ function init_gear_sets()
   sets.precast.JA['Sublimation'] = {
     main="Siriti", --1
     sub="Genmei Shield",
-    head="Academic's Mortarboard +1", --2
+    head="Academic's Mortarboard +2", --3
     body="Pedagogy Gown +3", --5
     ear1="Savant's Earring", --1
     waist="Embla Sash", --5
@@ -132,53 +132,76 @@ function init_gear_sets()
 
   -- Fast cast sets for spells
   sets.precast.FC = {
-    main=gear.Pedagogy_C, --8
-    sub="Enki Strap",
-    ammo="Incantor Stone", --2
-    head=gear.Psycloth_D_head, --10
-    body=gear.Merl_FC_body, --14
-    hands="Academic's Bracers +2", --7
-    legs=gear.Psycloth_D_legs, --7
-    feet=gear.Merl_FC_feet, --11
-    ear1="Malignance Earring", --4
-    ring1="Kishar Ring", --4
-    back=gear.SCH_FC_Cape, --10
-    waist="Embla Sash", --5
-    -- neck="Voltsurge Torque", --4
-    -- ear2="Loquacious Earring", --2
+    -- Short Term
+    main=gear.Pedagogy_C,             --  8 [__/__, ___]
+    sub="Enki Strap",                 -- __ [__/__, ___]
+    ammo="Incantor Stone",            --  2 [__/__, ___]
+    head=gear.Psycloth_D_head,        -- 10 [__/__,  75]
+    body=gear.Merl_FC_body,           -- 14 [ 2/__,  91]
+    hands="Academic's Bracers +2",    --  7 [__/__,  47]
+    legs=gear.Psycloth_D_legs,        --  7 [__/__, 107]
+    feet=gear.Merl_FC_feet,           -- 11 [__/__, 118]
+    ear1="Malignance Earring",        --  4 [__/__, ___]
+    ring1="Kishar Ring",              --  4 [__/__, ___]
+    back=gear.SCH_FC_Cape,            -- 10 [10/__,  20] -- TODO: Add meva
+    waist="Embla Sash",               --  5 [__/__, ___]
+    -- neck="Voltsurge Torque",       --  4 [__/__, ___]
+    -- ear2="Loquacious Earring",     --  2 [__/__, ___]
+    -- Sub RDM Trait                  -- 15
+    -- 103 Fast Cast [12 PDT/0 MDT, 458 MEVA]
 
     -- Great:
-    -- main=gear.Grioavolr_FC, --11
-    -- sub="Clerisy Strap +1", --3
-    -- ammo="Incantor Stone", --2
-    -- head="Amalric Coif +1", --11
-    -- body="Pinga Tunic +1", --15
-    -- hands="Academic's Bracers +3", --9
-    -- legs="Pinga Pants +1", --13
-    -- feet=gear.Merl_FC_feet, --12
-    -- neck="Orunmila's Torque", --5
-    -- ear1="Malignance Earring", --4
-    -- ear2="Enchntr. Earring +1", --2
-    -- ring1="Kishar Ring", --4
-    -- ring2="Prolix Ring", --2
-    -- back=gear.SCH_FC_Cape, --10
-    -- waist="Embla Sash", --5
+    -- main="Malignance Pole",        -- __ [20/20, ___]
+    -- sub="Khonsu",                  -- __ [ 6/ 6, ___]
+    -- ammo="Incantor Stone",         --  2 [__/__, ___]
+    -- head="Bunzi's Hat",            -- 10 [ 7/ 7, 123]
+    -- body="Pinga Tunic +1",         -- 15 [__/__, 128]
+    -- hands="Academic's Bracers +3", --  9 [__/__,  57]
+    -- legs="Pinga Pants +1",         -- 13 [__/__, 147]
+    -- feet=gear.Merl_FC_feet,        -- 12 [__/__, 118]
+    -- neck="Orunmila's Torque",      --  5 [__/__, ___]
+    -- ear1="Malignance Earring",     --  4 [__/__, ___]
+    -- ear2="Etiolation Earring",     --  1 [__/ 3, ___]; Resist Silence+15
+    -- ring1="Gelatinous Ring +1",    -- __ [ 7/-1, ___]
+    -- ring2="Defending Ring",        -- __ [10/10, ___]
+    -- back=gear.SCH_FC_Cape,         -- 10 [10/__,  20] -- TODO: Add meva
+    -- waist="Embla Sash",            --  5 [__/__, ___]
+    -- Sub RDM Trait                  -- 15
+    -- 101 Fast Cast [60 PDT/45 MDT, 593 MEVA]
 
     -- Ideal:
-    -- main="Hvergelmir", --50
-    -- sub="Khonsu",
-    -- body="Pinga Tunic +1", --15
-    -- back=gear.SCH_FC_Cape, --10
-    -- waist="Embla Sash", --5
-  } --82
+    -- main="Hvergelmir",             -- 50 [__/__, ___]
+    -- sub="Khonsu",                  -- __ [ 6/ 6, ___]
+    -- ammo="Staunch Tathlum +1",     -- __ [ 3/ 3, ___]; Resist Status+11
+    -- body="Shamash Robe",           -- __ [10/__, 106]; Resist Silence+90
+    -- hands="Academic's Bracers +3", --  9 [__/__,  57]
+    -- legs="Pinga Pants +1",         -- 13 [__/__, 147]
+    -- neck="Loricate Torque +1",     -- __ [ 6/ 6, ___]; DEF+60
+    -- ear1="Hearty Earring",         -- __ [__/__, ___]; Resist Status+5
+    -- ear2="Etiolation Earring",     --  1 [__/ 3, ___]; Resist Silence+15
+    -- ring1="Gelatinous Ring +1",    -- __ [ 7/-1, ___]
+    -- ring2="Defending Ring",        -- __ [10/10, ___]
+    -- back=gear.SCH_FC_Cape,         -- 10 [10/__,  20] -- TODO: Add meva
+    -- waist="Carrier's Sash",        -- __ [__/__, ___]; Ele Resist+15
+    -- 83 Fast Cast [52 PDT/27 MDT, 330 MEVA]
+  }
 
   -- Grimoire casting bonuses multiply separately from FC, allowing
   -- breaking the normal 80% cast time reduction cap.
   -- Cast Time = Base Cast Time x (1 - FC)x(1 - magian staff cast bonus)x(1 - Grimoire reduction)
   sets.precast.FC.Grimoire = set_combine(sets.precast.FC, {
-    head="Pedagogy Mortarboard +1",
-    feet="Academic's Loafers +3",
-    -- head="Pedagogy Mortarboard +3",
+    head="Pedagogy Mortarboard +1",   -- __ [__/__,  75] 11
+    feet="Academic's Loafers +3",     -- __ [__/__, 127] 12
+    -- head="Pedagogy Mortarboard +3",-- __ [__/__,  95] 13
+    
+    -- Short Term
+    -- 82 Fast Cast [12 PDT/0 MDT, 487 MEVA] 25 Grimoire Reduction
+
+    -- Great
+    -- 79 Fast Cast [53 PDT/38 MDT, 474 MEVA] 25 Grimoire Reduction
+    
+    -- Ideal:
+    -- 83 Fast Cast [52 PDT/27 MDT, 552 MEVA] 25 Grimoire Reduction + status resist, don't need /RDM
   })
   sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {
     -- waist="Siegel Sash",
@@ -722,7 +745,7 @@ function init_gear_sets()
     main="Gada",
     sub="Ammurapi Shield",              -- 38, 13, __, __
     ammo="Pemphredo Tathlum",           --  8, __, __, __
-    head="Academic's Mortarboard +1",
+    head="Academic's Mortarboard +2",   -- 42, 32, __, __
     body="Shamash Robe",                -- 45, 40, __, __
     hands="Regal Cuffs",                -- 45, 40, 20, __
     legs="Academic's Pants +1",
@@ -753,7 +776,7 @@ function init_gear_sets()
     main="Gada",
     sub="Ammurapi Shield",              -- 38, 13, __, __
     ammo="Pemphredo Tathlum",           --  8,  4, __, __
-    head="Academic's Mortarboard +1",
+    head="Academic's Mortarboard +2",   -- 42, 32, __, __
     body="Shamash Robe",                -- 45, 40, __, __
     hands="Regal Cuffs",                -- 45, 40, 20, __
     legs="Academic's Pants +1",
@@ -794,7 +817,7 @@ function init_gear_sets()
   sets.midcast['Dark Magic'] = {
     sub="Ammurapi Shield",                -- __, 13, 38
     ammo="Pemphredo Tathlum",             -- __,  4,  8
-    head="Academic's Mortarboard +1",
+    head="Academic's Mortarboard +2",     -- __, 32, 42
     body="Shamash Robe",                  -- __, 40, 45
     hands="Academic's Bracers +2",
     legs="Pedagogy Pants +1",
@@ -834,7 +857,7 @@ function init_gear_sets()
   -- FC > M.Acc > M.Acc Skill
   sets.midcast.Stun = set_combine(sets.midcast['Dark Magic'], {
     ammo="Pemphredo Tathlum",             -- __,  8, ___
-    head="Academic's Mortarboard +1",
+    head="Academic's Mortarboard +2",     --  4, 42,  85
     body="Shamash Robe",
     hands="Academic's Bracers +2",
     legs="Academic's Pants +1",
