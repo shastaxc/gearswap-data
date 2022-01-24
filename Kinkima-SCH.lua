@@ -669,7 +669,8 @@ function init_gear_sets()
 
     -- main=gear.Musa_C,                -- 25, 20, __
     -- sub="Khonsu",                    -- __, __, __
-    -- 118 Regen Potency, 30 Enh Duration %, 17 Regen Duration
+    -- feet="Bunzi's Sabots",           --  7, __, __
+    -- 122 Regen Potency, 30 Enh Duration %, 17 Regen Duration
   } -- 113 Regen Potency, 25 Enh Duration %, 17 Regen Duration
 
   -- Can get longer duration, but potency takes a significant hit, so
