@@ -667,7 +667,7 @@ function init_gear_sets()
     body="Wakido Domaru +3",          -- [ 8/ 8,  73] __,  9 <__, __, __> __,  3
     hands="Wakido Kote +3",           -- [__/__,  46]  4,  7 <__, __, __> __,  4
     legs="Tatenashi Haidate +1",      -- [__/__,  80] __,  8 <__,  3, __> __,  5
-    feet="Kendatsuba Sune-Ate +1",    -- [__/__, 139] __, __ <__,  4, __>  5,  3
+    feet=gear.Nyame_B_feet,           -- [ 7/ 7, 150] __, __ <__, __,  2> __,  3
     neck="Samurai's Nodowa +2",       -- [__/__, ___] __, 14 <__, __, __> __, __
     ear1="Dedition Earring",          -- [__/__, ___] __,  8 <__, __, __> __, __
     ear2="Telos Earring",             -- [__/__, ___] __,  5 <__, __, __> __, __
