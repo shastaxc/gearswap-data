@@ -94,10 +94,10 @@ function job_setup()
   silibs.enable_waltz_refiner({
     base_chr= 121,
     base_vit= 122,
-    bonus_chr= 181,
-    bonus_vit= 106,
-    waltz_potency = 49,
-    waltz_self_potency = 17,
+    bonus_chr= 186,
+    bonus_vit= 111,
+    waltz_potency = 50,
+    waltz_self_potency = 8,
     est_non_party_target_hp = 2000,
   })
   silibs.enable_premade_commands()
@@ -391,6 +391,7 @@ function init_gear_sets()
   }
 
   sets.precast.FC = {
+    ammo="Impatiens",
     head="Herculean Helm", --7
     body=gear.Taeon_FC_body, --9
     hands=gear.Leyline_Gloves, --8
@@ -398,6 +399,8 @@ function init_gear_sets()
     feet=gear.Taeon_FC_feet, --5
     neck="Orunmila's Torque", --5
     ear1="Loquac. Earring", --2
+    ear2="Etiolation Earring", --1
+    ring1="Weatherspoon Ring", --5
     ring2="Prolix Ring", --2
   }
 
