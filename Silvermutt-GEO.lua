@@ -773,26 +773,6 @@ function init_gear_sets()
 	--------------------------------------
 
 	-- Defense sets
-	sets.idle.Pet = {
-    ammo=empty,                     -- __/__, ___, __/__, __
-    head="Azimuth Hood +1",         -- __/__,  86, __/__,  3
-    body=gear.Nyame_B_body,         --  9/ 9, 139, __/__, __
-    hands="Geomancy Mitaines +2",   --  2/__,  47, 12/12, __
-    legs=gear.Nyame_B_legs,         --  8/ 8, 150, __/__, __
-    feet="Bagua Sandals +1",        -- __/__, 107, __/__,  3
-    neck="Bagua Charm +1",          -- __/__, ___, __/__, __; Absorb Dmg+8
-    ear1="Genmei Earring",          --  2/__, ___, __/__, __
-    ear2="Etiolation Earring",      -- __/ 3, ___, __/__, __; Resist Silence+15
-    ring1="Defending Ring",         -- 10/10, ___, __/__, __
-    ring2="Gelatinous Ring +1",     --  7/-1, ___, __/__, __
-    back=gear.GEO_Idle_Cape,        -- __/__,  30, __/__, 15
-    waist="Carrier's Sash",         -- __/__, ___, __/__, __; Ele resist+15
-    -- body="Shamash Robe",         -- 10/__, 106, __/__, __; Resist Silence+90
-    -- hands="Geomancy Mitaines +3",--  3/__,  57, 13/13, __
-    -- feet="Bagua Sandals +3",     -- __/__, 127, __/__,  5
-    -- neck="Bagua Charm +2",       -- __/__, ___, __/__, __; Absorb Dmg+10
-    -- 50 PDT / 20 MDT, 526 Meva, 43 Pet PDT / 43 Pet MDT, 23 Pet Regen
-  } -- 48 PDT / 29 MDT, 559 Meva, 42 Pet PDT / 42 Pet MDT, 21 Pet Regen
 	sets.defense.PDT = {
     main="Malignance Pole",         -- 20/20, ___, __/__, __
     sub="Kaja Grip",                --  5/ 5, ___, __/__, __
@@ -906,8 +886,8 @@ function init_gear_sets()
 	-- If you create a set with both offense and defense modes, the offense mode should be first.
 	-- EG: sets.engaged.Dagger.Accuracy.Evasion
 
-	-- Normal melee group
   -- Need 38 pet DT to cap
+	-- Normal melee group, used when not club or staff
 	sets.engaged = {
     -- Dunna                        -- __/__ [ 5, __], __, __, __
 		head=gear.Nyame_B_head,         --  7/ 7 [__, __], 40, __,  2
@@ -946,6 +926,8 @@ function init_gear_sets()
     -- ring2="Thurandaut Ring +1"   -- __/__ [ 4, __], __, __, __
     -- 21PDT/23MDT [31 Pet DT, 16 Pet Regen], 195 Acc, 18 Store TP, 7 DA
   } -- 25PDT/23MDT [17 Pet DT, 15 Pet Regen], 211 Acc, 31 Store TP, 12 DA
+
+  -- Used for all staves
 	sets.engaged.Staff = {
     -- Malignance Pole              -- 20/20 [__, __], 40, __, __
     -- Tzacab Grip                  -- __/__ [__, __], 10, __, __
@@ -989,6 +971,8 @@ function init_gear_sets()
     -- ring2="Thurandaut Ring +1"   -- __/__ [ 4, __], __, __, __
     -- 51PDT/53MDT [31 Pet DT, 16 Pet Regen], 235 Acc, 12 Store TP, 7 DA
   } -- 45PDT/43MDT [17 Pet DT, 15 Pet Regen], 261 Acc, 31 Store TP, 12 DA
+
+  -- Used for all clubs except Idris
 	sets.engaged.Club = {
     -- Assume Maxentius             -- __/__ [__, __], 40, __, __
     -- Genmei Shield                -- 10/__ [__, __], 15, __, __
@@ -1031,6 +1015,8 @@ function init_gear_sets()
     -- ring1="Thurandaut Ring +1"   -- __/__ [ 4, __], __, __, __
     -- 47PDT/39MDT [31 Pet DT, 16 Pet Regen], 240 Acc, 12 Store TP, 7 DA
   } -- 51PDT/39MDT [17 Pet DT, 15 Pet Regen], 266 Acc, 26 Store TP, 11 DA
+
+  -- Used for Idris only
 	sets.engaged.Idris = {
     -- Idris                        -- __/__ [25, __], 30, __, __
     -- Genmei Shield                -- 10/__ [__, __], 15, __, __
