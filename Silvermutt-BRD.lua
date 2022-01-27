@@ -189,7 +189,7 @@ function init_gear_sets()
   sets.precast.FC = {
     sub="Genmei Shield",        -- __ (10, __, ___)
     head="Bunzi's Hat",         -- 10 ( 7,  7, 123)
-    body="Inyanga Jubbah +1",   -- 13 (__,  7, 114)
+    body="Inyanga Jubbah +2",   -- 14 (__,  8, 120)
     hands=gear.Leyline_Gloves,  --  8 (__, __,  62)
     neck="Orunmila's Torque",   --  5 (__, __, ___)
     ear1="Loquac. Earring",     --  2 (__, __, ___)
@@ -200,11 +200,10 @@ function init_gear_sets()
     waist="Embla Sash",         --  5 (__, __, ___)
     -- main="Kali",             --  7 (__, __, ___)
     -- range=gear.Linos_FC,     --  6 (__, __,  15)
-    -- body="Inyanga Jubbah +2",-- 14 (__,  8, 120)
     -- legs="Volte Brais",      --  8 (__, __, 142); Chironic good alt
     -- feet="Volte Gaiters",    --  6 (__, __, 142); Chironic good alt
     -- 86 Fast Cast (37 PDT, 28 MDT, 604 MEVA)
-  } -- 58 Fast Cast (37 PDT, 27 MDT, 299 MEVA)
+  } -- 59 Fast Cast (37 PDT, 28 MDT, 305 MEVA)
 
   sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {
     waist="Siegel Sash",
@@ -214,7 +213,7 @@ function init_gear_sets()
   sets.precast.FC.Cure = {
     sub="Genmei Shield",              -- __, __ (10, __, ___)
     head="Bunzi's Hat",               -- 10, __ ( 7,  7, 123)
-    body="Inyanga Jubbah +1",         -- 13, __ (__,  7, 114)
+    body="Inyanga Jubbah +2",         -- 14, __ (__,  8, 120)
     legs=gear.Nyame_B_legs,           -- __, __ ( 8,  8, 150)
     neck="Loricate Torque +1",        -- __, __ ( 6,  6, ___)
     ear2="Etiolation Earring",        --  1, __ (__,  3, ___)
@@ -224,19 +223,18 @@ function init_gear_sets()
     waist="Embla Sash",               --  5, __ (__, __, ___)
     -- main="Kali",                   --  7, __ (__, __, ___)
     -- range=gear.Linos_FC,           --  6, __ (__, __,  15)
-    -- body="Inyanga Jubbah +2",      -- 14, __ (__,  8, 120)
     -- hands=gear.Gende_CureFC_hands, --  7,  5 ( 4, __,  37)
     -- feet=gear.Vanya_B_feet,        -- __,  7 (__, __, 107)
     -- ear1="Mendi. Earring",         -- __,  5 (__, __, ___)
     -- 64 Fast Cast, 17 Cure Cast Time- (55 PDT, 42 MDT, 552 Magic Evasion)
-  } -- 43 Fast Cast, 0 Cure Cast Time- (51 PDT, 41 MDT, 387 Magic Evasion)
+  } -- 44 Fast Cast, 0 Cure Cast Time- (51 PDT, 42 MDT, 393 Magic Evasion)
 
   -- Total cast speed cap 80%, "song cast time-" cap 50%, fill in rest with defensive gear
   -- Don't use Quick Magic for songs because lag might mess up midcast sets
   sets.precast.FC.BardSong = {
     sub="Genmei Shield",              -- __, __, __ (10, __, ___)
     head="Bunzi's Hat",               -- 10, __, __ ( 7,  7, 123)
-    body="Inyanga Jubbah +1",         -- 13, __, __ (__,  7, 114)
+    body="Inyanga Jubbah +2",         -- 14, __, __ (__,  8, 120)
     hands=gear.Gende_SongFC_hands,    --  7,  4, __ ( 4,  2,  37)
     legs=gear.Gende_SongFC_legs,      -- __,  9, __ ( 3, __, 107)
     neck="Loricate Torque +1",        -- __, __, __ ( 6,  6, ___)
@@ -248,12 +246,11 @@ function init_gear_sets()
     waist="Embla Sash",               --  5, __, __ (__, __, ___)
     -- main="Kali",                   --  7, __, __ (__, __, ___)
     -- range=gear.Linos_FC,           --  6, __, __ (__, __,  15)
-    -- body="Inyanga Jubbah +2",      -- 14, __, __ (__,  8, 120)
     -- hands=gear.Gende_SongFC_hands, --  7,  5,  3 ( 4, __,  37)
     -- legs=gear.Gende_SongFC_legs,   -- __, 10,  3 ( 4, __, 107)
     -- feet="Volte Gaiters",          --  6, __, __ (__, __, 142); Chironic good alt
     -- 72 Fast Cast, 15 Song Cast Time-, 6 Song Recast- (51 PDT, 34 MDT, 544 Magic Evasion)
-  } -- 52 Fast Cast, 13 Song Cast Time-, 0 Song Recast- (50 PDT, 35 MDT, 381 Magic Evasion)
+  } -- 53 Fast Cast, 13 Song Cast Time-, 0 Song Recast- (50 PDT, 36 MDT, 387 Magic Evasion)
 
   sets.precast.FC.SongPlaceholder = set_combine(sets.precast.FC.BardSong, {
     range=info.ExtraSongInstrument,
@@ -647,7 +644,7 @@ function init_gear_sets()
   }
 
   sets.midcast.Regen = set_combine(sets.midcast['Enhancing Magic'], {
-    head="Inyanga Tiara +2",
+    -- head="Inyanga Tiara +2",
   })
   sets.midcast.Haste = sets.midcast['Enhancing Magic']
   sets.midcast.Refresh = set_combine(sets.midcast['Enhancing Magic'], {
