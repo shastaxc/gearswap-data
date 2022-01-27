@@ -157,9 +157,9 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.WeaponSet = {}
-  sets.WeaponSet['Verethragna'] = {main="Verethragna"}
-  sets.WeaponSet['Piercing'] = {main="Birdbanes"}
-  sets.WeaponSet['Slashing'] = {main="Vampiric Claws"}
+  sets.WeaponSet['Verethragna'] = {main="Verethragna", sub=empty}
+  sets.WeaponSet['Piercing'] = {main="Birdbanes", sub=empty}
+  sets.WeaponSet['Slashing'] = {main="Vampiric Claws", sub=empty}
   sets.WeaponSet['Cleaving'] = {
     main="Xoanon",
     sub="Alber Strap"
