@@ -618,7 +618,6 @@ function init_gear_sets()
     ring2="Defending Ring",
     back=gear.DNC_WS1_Cape,
     waist="Eschan Stone", --7
-    -- legs="Horos Tights +3", -- Use once Orpheus obtained
     -- ring2="Epaminondas's Ring",
     -- waist="Orpheus's Sash",
   }) -- 40% DEX / 40% INT + MAB
