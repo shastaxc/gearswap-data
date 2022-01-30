@@ -141,6 +141,7 @@ function init_gear_sets()
     hands="Academic's Bracers +2",    --  7 [__/__,  47]
     legs=gear.Psycloth_D_legs,        --  7 [__/__, 107]
     feet=gear.Merl_FC_feet,           -- 11 [__/__, 118]
+    neck="Loricate Torque +1",        -- __ [ 6/ 6, ___]; DEF+60
     ear1="Malignance Earring",        --  4 [__/__, ___]
     ring1="Kishar Ring",              --  4 [__/__, ___]
     back=gear.SCH_FC_Cape,            -- 10 [10/__,  20] -- TODO: Add meva
@@ -1071,7 +1072,7 @@ function init_gear_sets()
     hands=gear.Nyame_B_hands,       --  7/ 7, 112
     legs=gear.Nyame_B_legs,         --  8/ 8, 150
     feet=gear.Nyame_B_feet,         --  7/ 7, 150
-    neck="Twilight Torque",         --  5/ 5, ___
+    neck="Loricate Torque +1",      --  6/ 6, ___; DEF+60
     ear1="Hearty Earring",          -- __/__, ___; Resist Status+5
     ear2="Etiolation Earring",      -- __/ 3, ___; Resist Silence+15
     ring1="Gelatinous Ring +1",     --  7/-1, ___
@@ -1080,7 +1081,6 @@ function init_gear_sets()
     waist="Carrier's Sash",         -- __/__, ___; Ele Resist+15
     -- sub="Khonsu",                --  6/ 6, ___
     -- ammo="Staunch Tathlum +1",   --  3/ 3, ___; Resist Status+11
-    -- neck="Loricate Torque +1",   --  6/ 6, ___; DEF+60
     -- back="Archon Cape",          -- __/__, ___
 
     -- Ideal:
