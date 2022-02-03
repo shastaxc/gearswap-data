@@ -752,7 +752,6 @@ function init_gear_sets()
   }
 
   sets.midcast.Utsusemi = {
-    ammo="Impatiens", -- SIRD
     head=gear.Nyame_B_head, -- DT
     body=gear.Nyame_B_body, -- DT
     hands=gear.Nyame_B_hands, -- DT
