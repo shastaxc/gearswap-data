@@ -191,6 +191,7 @@ function init_gear_sets()
     head="Bunzi's Hat",         -- 10 ( 7,  7, 123)
     body="Inyanga Jubbah +2",   -- 14 (__,  8, 120)
     hands=gear.Leyline_Gloves,  --  8 (__, __,  62)
+    legs="Volte Brais",         --  8 (__, __, 142); Chironic good alt
     neck="Orunmila's Torque",   --  5 (__, __, ___)
     ear1="Loquac. Earring",     --  2 (__, __, ___)
     ear2="Etiolation Earring",  --  1 (__,  3, ___)
@@ -200,10 +201,9 @@ function init_gear_sets()
     waist="Embla Sash",         --  5 (__, __, ___)
     -- main="Kali",             --  7 (__, __, ___)
     -- range=gear.Linos_FC,     --  6 (__, __,  15)
-    -- legs="Volte Brais",      --  8 (__, __, 142); Chironic good alt
     -- feet="Volte Gaiters",    --  6 (__, __, 142); Chironic good alt
     -- 86 Fast Cast (37 PDT, 28 MDT, 604 MEVA)
-  } -- 59 Fast Cast (37 PDT, 28 MDT, 305 MEVA)
+  } -- 67 Fast Cast (37 PDT, 28 MDT, 447 MEVA)
 
   sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {
     waist="Siegel Sash",
