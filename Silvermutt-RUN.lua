@@ -114,6 +114,7 @@ function job_setup()
   blue_magic_maps.Buffs = S{'Cocoon', 'Refueling'}
 
   state.Kiting:set('On')
+  state.PhysicalDefenseMode = M{['description'] = 'Physical Defense Mode', 'PDT', 'Encumbrance'}
   state.DefenseMode:set('Physical') -- Default to PDT mode
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.CastingMode:options('Normal', 'Safe')
@@ -1048,6 +1049,26 @@ function init_gear_sets()
 
   sets.Special = {}
   sets.Special.SleepyHead = { head="Frenzy Sallet", }
+  sets.Special.Encumbrance = {
+    -- Epeolatry                  --(25)/__, _, ___, ___, __, 23
+    sub="Vallus Grip",            -- -5/ 5, __, ___, ___, __, __
+    ammo="Staunch Tathlum +1",    --  3/ 3, __, ___, ___, 11, __
+    head=gear.Nyame_B_head,       --  7/ 7,  5, 123, ___, __, __
+    body=gear.Nyame_B_body,       --  9/ 9,  8, 139, ___, __, __
+    hands="Kurys Gloves",         --  2/ 2,  2,  57, ___, __,  9
+    legs="Erilaz Leg Guards +1",  --  7/__,  6, 107, ___, __, 11
+    feet="Erilaz Greaves +1",     --  5/__,  5, 107,  25, __,  6
+    neck="Unmoving Collar +1",    -- __/__, __, ___, ___, __, 10
+    ear1="Odnowa Earring +1",     --  3/ 5, __, ___, ___, __, __
+    ear2="Cryptic Earring",       -- __/__, __, ___, ___, __,  4
+    ring1="Moonlight Ring",       --  5/ 5, __, ___, ___, __, __
+    ring2="Defending Ring",       -- 10/10, __, ___, ___, __, __
+    back=gear.RUN_HPD_Cape,       -- 10/__, __,  20, ___, __, 10
+    waist="Engraved Belt",        -- __/__, __, ___,  20, __, __
+    -- Runes                      -- __/__, __, ___, 253, __, __
+    -- Barblizzard                -- __/__, __, ___, 131, __, __
+    -- Trait                      -- __/__, 22, ___, ___, __, __
+  } -- 56(+25)PDT / 46 MDT, 48 M.Def.Bns., 553 Meva, 429 Ice Resist, 11 Status Resist, 73 Enmity
 
   sets.buff.Doom = {
     neck="Nicander's Necklace", --20
@@ -1173,6 +1194,10 @@ function job_post_precast(spell, action, spellMap, eventArgs)
     end
   end
 
+  if state.DefenseMode.value ~= 'None' and state[state.DefenseMode.value .. 'DefenseMode'].value == 'Encumbrance' then
+    equip(sets.Special.Encumbrance)
+  end
+
   -- If slot is locked, keep current equipment on
   if locked_neck then equip({ neck=player.equipment.neck }) end
   if locked_ear1 then equip({ ear1=player.equipment.ear1 }) end
@@ -1209,6 +1234,10 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     end
   end
 
+  if state.DefenseMode.value ~= 'None' and state[state.DefenseMode.value .. 'DefenseMode'].value == 'Encumbrance' then
+    equip(sets.Special.Encumbrance)
+  end
+  
   -- If slot is locked, keep current equipment on
   if locked_neck then equip({ neck=player.equipment.neck }) end
   if locked_ear1 then equip({ ear1=player.equipment.ear1 }) end
@@ -1363,6 +1392,10 @@ end
 
 -- Modify the default idle set after it was constructed.
 function customize_idle_set(idleSet)
+  if state.DefenseMode.value ~= 'None' and state[state.DefenseMode.value .. 'DefenseMode'].value == 'Encumbrance' then
+    return set_combine(idleSet, sets.Special.Encumbrance)
+  end
+
   if state.Knockback.value == true then
     idleSet = set_combine(idleSet, sets.defense.Knockback)
   end
@@ -1394,7 +1427,7 @@ function customize_idle_set(idleSet)
   if buffactive.Doom then
     idleSet = set_combine(idleSet, sets.buff.Doom)
   end
-
+  
   return idleSet
 end
 
@@ -1440,6 +1473,10 @@ function customize_melee_set(meleeSet)
 end
 
 function customize_defense_set(defenseSet)
+  if state.DefenseMode.value ~= 'None' and state[state.DefenseMode.value .. 'DefenseMode'].value == 'Encumbrance' then
+    return set_combine(defenseSet, sets.Special.Encumbrance)
+  end
+
   if buffactive['Battuta'] then
     defenseSet = set_combine(defenseSet, sets.defense.Parry)
   end
@@ -1467,7 +1504,7 @@ function customize_defense_set(defenseSet)
   if buffactive.Doom then
     defenseSet = set_combine(defenseSet, sets.buff.Doom)
   end
-
+  
   return defenseSet
 end
 
