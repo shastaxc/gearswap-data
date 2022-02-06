@@ -446,7 +446,7 @@ function init_gear_sets()
     ring1="Stikini Ring +1",        -- __,  8, __
     ring2="Defending Ring",
     back=gear.GEO_Adoulin_Cape,     -- __, 15, __
-    waist="Gishdubar Sash",
+    waist="Sekhmet Corset",
     -- body="Vedic Coat",           -- __, __, 10
     -- neck="Bagua Charm +2",       -- __, __, __; Luopan Duration +25%
     -- ear1="Mendicant's Earring",  -- __, __,  2
@@ -744,27 +744,27 @@ function init_gear_sets()
 
 	sets.midcast.Protect = set_combine(sets.midcast['Enhancing Magic'], {
     ear2="Malignance Earring",
+    waist="Sekhmet Corset",
     -- ear1="Gifted Earring",
     -- ring2="Sheltered Ring",
-    -- waist="Sekhmet Corset",
   })
 	sets.midcast.Protectra = set_combine(sets.midcast['Enhancing Magic'], {
     ear2="Malignance Earring",
+    waist="Sekhmet Corset",
     -- ear1="Gifted Earring",
     -- ring2="Sheltered Ring",
-    -- waist="Sekhmet Corset",
   })
 	sets.midcast.Shell = set_combine(sets.midcast['Enhancing Magic'], {
     ear2="Malignance Earring",
+    waist="Sekhmet Corset",
     -- ear1="Gifted Earring",
     -- ring2="Sheltered Ring",
-    -- waist="Sekhmet Corset",
   })
 	sets.midcast.Shellra = set_combine(sets.midcast['Enhancing Magic'], {
     ear2="Malignance Earring",
+    waist="Sekhmet Corset",
     -- ear1="Gifted Earring",
     -- ring2="Sheltered Ring",
-    -- waist="Sekhmet Corset",
   })
 
 
