@@ -667,7 +667,7 @@ function init_gear_sets()
     body="Mpaca's Doublet",           -- [10/__,  86] __,  5 <__,  4, __>  7,  4
     hands="Wakido Kote +3",           -- [__/__,  46]  4,  7 <__, __, __> __,  4
     legs="Tatenashi Haidate +1",      -- [__/__,  80] __,  8 <__,  3, __> __,  5
-    feet=gear.Nyame_B_feet,           -- [ 7/ 7, 150] __, __ <__, __,  2> __,  3
+    feet="Mpaca's Boots",             -- [ 6/__,  96] __, __ <__,  3, __>  3,  3
     neck="Samurai's Nodowa +2",       -- [__/__, ___] __, 14 <__, __, __> __, __
     ear1="Dedition Earring",          -- [__/__, ___] __,  8 <__, __, __> __, __
     ear2="Telos Earring",             -- [__/__, ___] __,  5 <__, __, __> __, __
@@ -676,9 +676,8 @@ function init_gear_sets()
     back=gear.SAM_TP_Cape,            -- [10/__, ___] __, __ <__, __, 10> __, __
     waist="Sailfi Belt +1",           -- [__/__, ___] __, __ <__,  2,  5> __,  9
     -- ammo="Aurgelmir Orb +1",       -- [__/__, ___] __,  5 <__, __, __> __, __
-    -- feet="Mpaca's Boots",          -- [ 6/__,  96] __, __ <__,  3, __>  3,  3
     -- [36 PDT/10 MDT, 361 MEVA] 4 Hasso, 64 STP <0 QA, 17 TA, 15 DA> 10 Crit Rate, 29 Haste
-  } -- [37 PDT/17 MDT, 415 MEVA] 4 Hasso, 63 STP <0 QA, 14 TA, 17 DA> 7 Crit Rate, 29 Haste
+  } -- [36 PDT/10 MDT, 361 MEVA] 4 Hasso, 63 STP <0 QA, 17 TA, 15 DA> 10 Crit Rate, 29 Haste
   sets.engaged.LowAcc.LightDef = sets.engaged.LightDef
   sets.engaged.MidAcc.LightDef = sets.engaged.LightDef
   sets.engaged.HighAcc.LightDef = sets.engaged.LightDef

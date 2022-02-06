@@ -372,16 +372,14 @@ function init_gear_sets()
   sets.precast.WS["Victory Smite"].MaxTP = set_combine(sets.precast.WS["Victory Smite"], {
   })
   sets.precast.WS["Victory Smite"].Safe = set_combine(sets.precast.WS["Victory Smite"], {
-    feet=gear.Nyame_B_feet,
+    feet="Mpaca's Boots",
     ear1="Odnowa Earring +1",
     ring2="Defending Ring",
-    -- feet="Mpaca's Boots",
   })
   sets.precast.WS["Victory Smite"].SafeMaxTP = set_combine(sets.precast.WS["Victory Smite"], {
-    feet=gear.Nyame_B_feet,
+    feet="Mpaca's Boots",
     ear1="Odnowa Earring +1",
     ring2="Defending Ring",
-    -- feet="Mpaca's Boots",
   })
 
   -- Shijin Spiral: 100% DEX, 1.5 fTP, 5 hit, ftp replicating
@@ -405,16 +403,14 @@ function init_gear_sets()
   sets.precast.WS["Shijin Spiral"].MaxTP = set_combine(sets.precast.WS["Shijin Spiral"], {
   })
   sets.precast.WS["Shijin Spiral"].Safe = set_combine(sets.precast.WS["Shijin Spiral"], {
-    feet=gear.Nyame_B_feet,
+    feet="Mpaca's Boots",
     ear1="Odnowa Earring +1",
     ring1="Defending Ring",
-    -- feet="Mpaca's Boots",
   })
   sets.precast.WS["Shijin Spiral"].SafeMaxTP = set_combine(sets.precast.WS["Shijin Spiral"], {
-    feet=gear.Nyame_B_feet,
+    feet="Mpaca's Boots",
     ear1="Odnowa Earring +1",
     ring1="Defending Ring",
-    -- feet="Mpaca's Boots",
   })
   
   -- Asuran Fists: 15% STR / 15% VIT, 1.25 fTP, 8 hit, ftp replicating
@@ -520,16 +516,14 @@ function init_gear_sets()
     ear2="Schere Earring",
   })
   sets.precast.WS["Howling Fist"].Safe = set_combine(sets.precast.WS["Howling Fist"], {
-    feet=gear.Nyame_B_feet,
+    feet="Mpaca's Boots",
     ear1="Odnowa Earring +1",
     ring2="Defending Ring",
-    -- feet="Mpaca's Boots",
   })
   sets.precast.WS["Howling Fist"].SafeMaxTP = set_combine(sets.precast.WS["Howling Fist"], {
-    feet=gear.Nyame_B_feet,
+    feet="Mpaca's Boots",
     ear1="Odnowa Earring +1",
     ring2="Defending Ring",
-    -- feet="Mpaca's Boots",
   })
 
   -- Dragon Kick: 50% STR / 50% DEX, ?-5 fTP, 1 hit, ftp replicating
