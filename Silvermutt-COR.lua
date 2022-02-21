@@ -1304,7 +1304,6 @@ function init_gear_sets()
   sets.engaged.DW.MidAcc.LightDef.MaxHaste = set_combine(sets.engaged.DW.MidAcc.MaxHaste, sets.LightDef)
   sets.engaged.DW.HighAcc.LightDef.MaxHaste = set_combine(sets.engaged.DW.HighAcc.MaxHaste, sets.LightDef)
 
-
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Special Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
@@ -1312,6 +1311,13 @@ function init_gear_sets()
   sets.Special = {}
   sets.Special.ElementalObi = {
     waist="Hachirin-no-Obi",
+  }
+  sets.Special.SubtleBlow = {
+    head="Adhemar Bonnet +1", --8
+    ring1="Chirich Ring +1", --10
+    neck="Bathy Choker +1", --11
+    ear1="Dignitary's Earring", --5
+    ear2="Beyla Earring", --5
   }
   sets.CP = {
     back="Mecisto. Mantle",
@@ -1980,6 +1986,14 @@ function has_item(item_name)
       return true
     elseif player.wardrobe4 and player.wardrobe4[item_name] then
       return true
+    elseif player.wardrobe5 and player.wardrobe5[item_name] then
+      return true
+    elseif player.wardrobe6 and player.wardrobe6[item_name] then
+      return true
+    elseif player.wardrobe7 and player.wardrobe7[item_name] then
+      return true
+    elseif player.wardrobe8 and player.wardrobe8[item_name] then
+      return true
     end
   end
   return false
@@ -1997,6 +2011,14 @@ function get_item(item_name)
       return player.wardrobe3[item_name]
     elseif player.wardrobe4 and player.wardrobe4[item_name] then
       return player.wardrobe4[item_name]
+    elseif player.wardrobe5 and player.wardrobe5[item_name] then
+      return player.wardrobe5[item_name]
+    elseif player.wardrobe6 and player.wardrobe6[item_name] then
+      return player.wardrobe6[item_name]
+    elseif player.wardrobe7 and player.wardrobe7[item_name] then
+      return player.wardrobe7[item_name]
+    elseif player.wardrobe8 and player.wardrobe8[item_name] then
+      return player.wardrobe8[item_name]
     end
   end
   return nil
