@@ -1196,6 +1196,9 @@ function job_post_precast(spell, action, spellMap, eventArgs)
 
   if state.DefenseMode.value ~= 'None' and state[state.DefenseMode.value .. 'DefenseMode'].value == 'Encumbrance' then
     equip(sets.Special.Encumbrance)
+    if spell.english == 'Elemental Sforzo' then
+      equip(sets.precast.JA['Elemental Sforzo'])
+    end
   end
 
   -- If slot is locked, keep current equipment on
