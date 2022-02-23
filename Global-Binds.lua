@@ -23,7 +23,7 @@
 send_command('bind @numpad7 input /item "Remedy" <me>')
 send_command('bind @numpad8 input /item "Panacea" <me>')
 send_command('bind @numpad9 input /item "Holy Water" <me>')
-send_command('bind @numpad5 input /item "Poison Potion" <me>')
+send_command('bind @numpad5 input /item "Elshimo Pachira Fruit" <me>')
 send_command('bind @numpad1 input /item "Echo Drops" <me>')
 send_command('bind @numpad2 input /item "Eye Drops" <me>')
 send_command('bind @numpad3 input /item "Antidote" <me>')
