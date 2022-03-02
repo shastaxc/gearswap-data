@@ -53,7 +53,7 @@ function job_setup()
   silibs.enable_th()
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
-  state.HybridMode:options('LightDef', 'HeavyDef', 'Normal', 'MEVA')
+  state.HybridMode:options('LightDef', 'HeavyDef', 'SubtleBlow', 'Normal')
   state.IdleMode:options('Normal', 'HeavyDef')
 
   state.CP = M(false, "Capacity Points Mode")
@@ -648,19 +648,6 @@ function init_gear_sets()
   ---------------------------------------- Hybrid Sets -------------------------------------------
   ------------------------------------------------------------------------------------------------
 
-  sets.MEVA = {
-    ammo="Staunch Tathlum +1",        --  3/ 3, ___; Status resist
-    head="Kendatsuba Jinpachi +1",    -- __/__, 101
-    body="Kendatsuba Samue +1",       -- __/__, 117
-    legs="Kendatsuba Hakama +1",      -- __/__, 139
-    feet="Kendatsuba Sune-Ate +1",    -- __/__, 139
-  }
-
-  sets.engaged.MEVA = set_combine(sets.engaged, sets.MEVA)
-  sets.engaged.LowAcc.MEVA = set_combine(sets.engaged.LowAcc, sets.MEVA)
-  sets.engaged.MidAcc.MEVA = set_combine(sets.engaged.MidAcc, sets.MEVA)
-  sets.engaged.HighAcc.MEVA = set_combine(sets.engaged.HighAcc, sets.MEVA)
-
   sets.engaged.LightDef = {
     ammo="Aurgelmir Orb",             -- [__/__, ___] __,  4 <__, __, __> __, __
     head="Flamma Zucchetto +2",       -- [__/__,  53] __,  6 <__,  5, __> __,  4
@@ -703,6 +690,24 @@ function init_gear_sets()
   sets.engaged.MidAcc.HeavyDef = sets.engaged.HeavyDef
   sets.engaged.HighAcc.HeavyDef = sets.engaged.HeavyDef
 
+  sets.engaged.SubtleBlow = {
+    ammo="Crepuscular Pebble",        -- [ 3/ 3, ___] __, __ <__, __, __> __, __, __
+    head=gear.Nyame_B_head,           -- [ 7/ 7, 123] __, __ <__, __,  2> __,  6, __
+    body="Mpaca's Doublet",           -- [10/__,  86] __,  5 <__,  4, __>  7,  4, __
+    hands="Wakido Kote +3",           -- [__/__,  46]  4,  7 <__, __, __> __,  4, __
+    legs="Mpaca's Hose",              -- [ 9/__,  96] __, __ <__,  4, __>  6,  9, (5)
+    feet=gear.Nyame_B_feet,           -- [ 7/ 7, 150] __, __ <__, __,  2> __,  3, __
+    neck="Samurai's Nodowa +2",       -- [__/__, ___] __, 14 <__, __, __> __, __, __
+    ear1="Dignitary's Earring",       -- [__/__, ___] __,  3 <__, __, __> __, __,  5
+    ear2="Odnowa Earring +1",         -- [ 3/ 5, ___] __, __ <__, __, __> __, __, __
+    ring1="Chirich Ring +1",          -- [__/__, ___] __,  6 <__, __, __> __, __, 10
+    ring2="Chirich Ring +1",          -- [__/__, ___] __,  6 <__, __, __> __, __, 10
+    back=gear.SAM_TP_Cape,            -- [10/__, ___] __, __ <__, __, 10> __, __, __
+    waist="Sailfi Belt +1",           -- [__/__, ___] __, __ <__,  2,  5> __,  9, __
+  } -- [49 PDT/22 MDT, 501 MEVA] 4 Hasso, 41 STP <0 QA, 10 TA, 19 DA> 13 Crit Rate, 35 Haste, 25(5) Subtle Blow
+  sets.engaged.LowAcc.SubtleBlow = sets.engaged.SubtleBlow
+  sets.engaged.MidAcc.SubtleBlow = sets.engaged.SubtleBlow
+  sets.engaged.HighAcc.SubtleBlow = sets.engaged.SubtleBlow
 
   -----------------------------------------------------------------------------------
   ---------------------------------------- Special Sets ------------------------------------------
