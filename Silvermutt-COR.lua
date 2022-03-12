@@ -101,7 +101,7 @@ function job_setup()
   silibs.enable_th()
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
-  state.HybridMode:options('LightDef', 'Normal')
+  state.HybridMode:options('LightDef', 'SubtleBlow', 'Normal')
   state.RangedMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.IdleMode:options('Normal', 'LightDef')
 
@@ -1303,6 +1303,69 @@ function init_gear_sets()
   sets.engaged.DW.LowAcc.LightDef.MaxHaste = set_combine(sets.engaged.DW.LowAcc.MaxHaste, sets.LightDef)
   sets.engaged.DW.MidAcc.LightDef.MaxHaste = set_combine(sets.engaged.DW.MidAcc.MaxHaste, sets.LightDef)
   sets.engaged.DW.HighAcc.LightDef.MaxHaste = set_combine(sets.engaged.DW.HighAcc.MaxHaste, sets.LightDef)
+
+  sets.engaged.SubtleBlow = {
+    ammo=gear.RAbullet,
+    head="Malignance Chapeau",    -- [ 6/ 6, 123]
+    body="Malignance Tabard",     -- [ 9/ 9, 139]
+    hands="Malignance Gloves",    -- [ 5/ 5, 112]
+    legs="Malignance Tights",     -- [ 7/ 7, 150]
+    feet="Malignance Boots",      -- [ 4/ 4, 150]
+    neck="Bathy Choker +1",       -- [__/__, ___] __, 11
+    ear1="Cessance Earring",      -- [__/__, ___]
+    ear2="Dignitary's Earring",   -- [__/__, ___] __,  5
+    ring1="Chirich Ring +1",      -- [__/__, ___] __, 10
+    ring2="Defending Ring",       -- [10/10, ___]
+    back=gear.COR_TP_Cape,        -- [10/__, ___]
+    waist="Windbuffet Belt +1",   -- [__/__, ___]
+  } -- [51 PDT/41 MDT, 674 MEVA] 0 DW, 26 Subtle Blow
+  sets.engaged.LowAcc.SubtleBlow = sets.engaged.SubtleBlow
+  sets.engaged.MidAcc.SubtleBlow = sets.engaged.SubtleBlow
+  sets.engaged.HighAcc.SubtleBlow = sets.engaged.SubtleBlow
+
+  sets.engaged.DW.SubtleBlow = {
+    ammo=gear.RAbullet,
+    head="Malignance Chapeau",    -- [ 6/ 6, 123]
+    body="Malignance Tabard",     -- [ 9/ 9, 139]
+    hands="Malignance Gloves",    -- [ 5/ 5, 112]
+    legs="Malignance Tights",     -- [ 7/ 7, 150]
+    feet="Malignance Boots",      -- [ 4/ 4, 150]
+    neck="Bathy Choker +1",       -- [__/__, ___] __, 11
+    ear1="Dignitary's Earring",   -- [__/__, ___] __,  5
+    ear2="Eabani Earring",        -- [__/__, ___]  4, __
+    ring1="Chirich Ring +1",      -- [__/__, ___] __, 10
+    ring2="Defending Ring",       -- [10/10, ___]
+    back=gear.COR_DW_Cape,        -- [10/__, ___] 10
+    waist="Reiki Yotai",          -- [__/__, ___]  7
+  } -- [51 PDT/41 MDT, 674 MEVA] 21 DW, 26 Subtle Blow
+  sets.engaged.DW.LowAcc.SubtleBlow = sets.engaged.DW.SubtleBlow
+  sets.engaged.DW.MidAcc.SubtleBlow = sets.engaged.DW.SubtleBlow
+  sets.engaged.DW.HighAcc.SubtleBlow = sets.engaged.DW.SubtleBlow
+  
+  sets.engaged.DW.SubtleBlow.LowHaste = sets.engaged.DW.SubtleBlow
+  sets.engaged.DW.LowAcc.SubtleBlow.LowHaste = sets.engaged.DW.SubtleBlow
+  sets.engaged.DW.MidAcc.SubtleBlow.LowHaste = sets.engaged.DW.SubtleBlow
+  sets.engaged.DW.HighAcc.SubtleBlow.LowHaste = sets.engaged.DW.SubtleBlow
+
+  sets.engaged.DW.SubtleBlow.MidHaste = sets.engaged.DW.SubtleBlow
+  sets.engaged.DW.LowAcc.SubtleBlow.MidHaste = sets.engaged.DW.SubtleBlow
+  sets.engaged.DW.MidAcc.SubtleBlow.MidHaste = sets.engaged.DW.SubtleBlow
+  sets.engaged.DW.HighAcc.SubtleBlow.MidHaste = sets.engaged.DW.SubtleBlow
+
+  sets.engaged.DW.SubtleBlow.HighHaste = sets.engaged.DW.SubtleBlow
+  sets.engaged.DW.LowAcc.SubtleBlow.HighHaste = sets.engaged.DW.SubtleBlow
+  sets.engaged.DW.MidAcc.SubtleBlow.HighHaste = sets.engaged.DW.SubtleBlow
+  sets.engaged.DW.HighAcc.SubtleBlow.HighHaste = sets.engaged.DW.SubtleBlow
+
+  sets.engaged.DW.SubtleBlow.SuperHaste = sets.engaged.DW.SubtleBlow
+  sets.engaged.DW.LowAcc.SubtleBlow.SuperHaste = sets.engaged.DW.SubtleBlow
+  sets.engaged.DW.MidAcc.SubtleBlow.SuperHaste = sets.engaged.DW.SubtleBlow
+  sets.engaged.DW.HighAcc.SubtleBlow.SuperHaste = sets.engaged.DW.SubtleBlow
+
+  sets.engaged.DW.SubtleBlow.MaxHaste = sets.engaged.DW.SubtleBlow
+  sets.engaged.DW.LowAcc.SubtleBlow.MaxHaste = sets.engaged.DW.SubtleBlow
+  sets.engaged.DW.MidAcc.SubtleBlow.MaxHaste = sets.engaged.DW.SubtleBlow
+  sets.engaged.DW.HighAcc.SubtleBlow.MaxHaste = sets.engaged.DW.SubtleBlow
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Special Sets ------------------------------------------
