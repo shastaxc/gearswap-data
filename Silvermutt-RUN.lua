@@ -713,16 +713,6 @@ function init_gear_sets()
     -- ear2="Vulcan's Pearl",
   })
 
-  sets.precast.WS['Upheaval'] = sets.precast.WS['Resolution']
-  sets.precast.WS['Upheaval'].Safe = sets.precast.WS['Resolution'].Safe
-  sets.precast.WS['Upheaval'].MaxTP = sets.precast.WS['Resolution'].MaxTP
-  sets.precast.WS['Upheaval'].LowAcc = sets.precast.WS['Resolution'].LowAcc
-  sets.precast.WS['Upheaval'].LowAccMaxTP = sets.precast.WS['Resolution'].LowAccMaxTP
-  sets.precast.WS['Upheaval'].MidAcc = sets.precast.WS['Resolution'].MidAcc
-  sets.precast.WS['Upheaval'].MidAccMaxTP = sets.precast.WS['Resolution'].MidAccMaxTP
-  sets.precast.WS['Upheaval'].HighAcc = sets.precast.WS['Resolution'].HighAcc
-  sets.precast.WS['Upheaval'].HighAccMaxTP = sets.precast.WS['Resolution'].HighAccMaxTP
-
   -- 80% DEX mod
   sets.precast.WS['Dimidiation'] = set_combine(sets.precast.WS, {
     ammo="Knobkierrie",
@@ -777,15 +767,39 @@ function init_gear_sets()
   sets.precast.WS['Fell Cleave'].HighAcc = set_combine(sets.precast.WS['Fell Cleave'].MidAcc, {})
   sets.precast.WS['Fell Cleave'].HighAccMaxTP = set_combine(sets.precast.WS['Fell Cleave'].HighAcc, {})
 
-  sets.precast.WS['Steel Cyclone'] = sets.precast.WS['Fell Cleave']
-  sets.precast.WS['Steel Cyclone'].Safe = sets.precast.WS['Fell Cleave'].Safe
-  sets.precast.WS['Steel Cyclone'].MaxTP = sets.precast.WS['Fell Cleave'].MaxTP
-  sets.precast.WS['Steel Cyclone'].LowAcc = sets.precast.WS['Fell Cleave'].LowAcc
-  sets.precast.WS['Steel Cyclone'].LowAccMaxTP = sets.precast.WS['Fell Cleave'].LowAccMaxTP
-  sets.precast.WS['Steel Cyclone'].MidAcc = sets.precast.WS['Fell Cleave'].MidAcc
-  sets.precast.WS['Steel Cyclone'].MidAccMaxTP = sets.precast.WS['Fell Cleave'].MidAccMaxTP
-  sets.precast.WS['Steel Cyclone'].HighAcc = sets.precast.WS['Fell Cleave'].HighAcc
-  sets.precast.WS['Steel Cyclone'].HighAccMaxTP = sets.precast.WS['Fell Cleave'].HighAccMaxTP
+  sets.precast.WS['Steel Cyclone'] = set_combine(sets.precast.WS['Fell Cleave'], {
+    ammo="Yamarang",
+    head=gear.Nyame_B_head,
+    body=gear.Nyame_B_body,
+    hands=gear.Nyame_B_hands,
+    legs=gear.Nyame_B_legs,
+    feet=gear.Nyame_B_feet,
+    neck="Anu Torque",
+    ear1="Telos Earring",
+    ear2="Dignitary's Earring",
+    ring1="Chirich Ring +1",
+    ring2="Moonlight Ring",
+    back=gear.RUN_WS2_Cape,
+    waist="Olseni Belt",
+  })
+  sets.precast.WS['Steel Cyclone'].Safe = set_combine(sets.precast.WS.Safe, {})
+  sets.precast.WS['Steel Cyclone'].MaxTP = sets.precast.WS['Steel Cyclone'].MaxTP
+  sets.precast.WS['Steel Cyclone'].LowAcc = sets.precast.WS['Steel Cyclone'].LowAcc
+  sets.precast.WS['Steel Cyclone'].LowAccMaxTP = sets.precast.WS['Steel Cyclone'].LowAccMaxTP
+  sets.precast.WS['Steel Cyclone'].MidAcc = sets.precast.WS['Steel Cyclone'].MidAcc
+  sets.precast.WS['Steel Cyclone'].MidAccMaxTP = sets.precast.WS['Steel Cyclone'].MidAccMaxTP
+  sets.precast.WS['Steel Cyclone'].HighAcc = sets.precast.WS['Steel Cyclone'].HighAcc
+  sets.precast.WS['Steel Cyclone'].HighAccMaxTP = sets.precast.WS['Steel Cyclone'].HighAccMaxTP
+
+  sets.precast.WS['Upheaval'] =  sets.precast.WS['Steel Cyclone']
+  sets.precast.WS['Upheaval'].Safe = sets.precast.WS['Steel Cyclone'].Safe
+  sets.precast.WS['Upheaval'].MaxTP = sets.precast.WS['Steel Cyclone'].MaxTP
+  sets.precast.WS['Upheaval'].LowAcc = sets.precast.WS['Steel Cyclone'].LowAcc
+  sets.precast.WS['Upheaval'].LowAccMaxTP = sets.precast.WS['Steel Cyclone'].LowAccMaxTP
+  sets.precast.WS['Upheaval'].MidAcc = sets.precast.WS['Steel Cyclone'].MidAcc
+  sets.precast.WS['Upheaval'].MidAccMaxTP = sets.precast.WS['Steel Cyclone'].MidAccMaxTP
+  sets.precast.WS['Upheaval'].HighAcc = sets.precast.WS['Steel Cyclone'].HighAcc
+  sets.precast.WS['Upheaval'].HighAccMaxTP = sets.precast.WS['Steel Cyclone'].HighAccMaxTP
 
   -- Magic accuracy required for Shockwave
   sets.precast.WS['Shockwave'] = set_combine(sets.HybridAcc, {
