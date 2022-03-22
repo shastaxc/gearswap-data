@@ -1037,10 +1037,25 @@ function init_gear_sets()
   ---------------------------------------- Hybrid Sets -------------------------------------------
   ------------------------------------------------------------------------------------------------
 
-  sets.engaged.LightDef = set_combine(sets.engaged, sets.LightDef)
-  sets.engaged.LowAcc.LightDef = set_combine(sets.engaged.LowAcc, sets.LightDef)
-  sets.engaged.MidAcc.LightDef = set_combine(sets.engaged.MidAcc, sets.LightDef)
-  sets.engaged.HighAcc.LightDef = set_combine(sets.engaged.HighAcc, sets.LightDef)
+  sets.engaged.LightDef = {
+    sub="Utu Grip",             -- __/__, ___ [ 70] __, __ <__, __, __> 30
+    ammo="Staunch Tathlum +1",  --  3/ 3, ___ [___] __, __ <__, __, __> __
+    head=gear.Nyame_B_head,     --  7/ 7, 123 [ 91]  6, __ < 2, __, __> 40
+    body=gear.Nyame_B_body,     --  9/ 9, 139 [136]  3, __ < 3, __, __> 40
+    hands=gear.Adhemar_B_hands, -- __/__,  43 [ 22]  5,  7 <__,  4, __> 32
+    legs=gear.Samnuha_legs,     -- __/__,  75 [ 41]  6,  7 < 3,  3, __> 15
+    feet=gear.Nyame_B_feet,     --  7/ 7, 150 [ 68]  3, __ < 2, __, __> 40
+    neck="Anu Torque",          -- __/__, ___ [___] __,  7 <__, __, __> __
+    waist="Ioskeha Belt +1",    -- __/__, ___ [___]  8, __ < 9, __, __> 17
+    ear1="Odnowa Earring +1",   --  3/ 5, ___ [110] __, __ <__, __, __> __
+    ear2="Sherida Earring",     -- __/__, ___ [___] __,  5 < 5, __, __> __
+    ring1="Epona's Ring",       -- __/__, ___ [___] __, __ < 3,  3, __> __
+    ring2="Defending Ring",     -- 10/10, ___ [___] __, __ <__, __, __> __
+    back=gear.RUN_TP_Cape,      -- 10/__, ___ [___] __, 10 <__, __, __> 30
+  } -- 49 PDT / 41 MDT, 530 MEVA [538 HP] 23 Haste, 36 STP <27 DA, 10 TA, 0 QA> 244 Acc
+  sets.engaged.LowAcc.LightDef = sets.engaged.LightDef
+  sets.engaged.MidAcc.LightDef = sets.engaged.LightDef
+  sets.engaged.HighAcc.LightDef = sets.engaged.LightDef
 
   -- Needs updating
   sets.engaged.Aftermath.LightDef = {
