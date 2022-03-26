@@ -870,34 +870,30 @@ function init_gear_sets()
     body="Meg. Cuirie +2",
     hands="Mummu Wrists +2",
     legs="Mummu Kecks +2",
-    feet="Oshosi Leggings",
+    feet="Oshosi Leggings +1",
     ear1="Odr Earring",
     ring1="Begrudging Ring",
     waist="K. Kachina Belt +1",
     -- legs="Darraigner's Brais",
-    -- feet="Osh. Leggings +1",
     -- ring2="Mummu Ring",
   })
 
   -- 60% from traits/gifts
   sets.TripleShot = {
+    head="Oshosi Mask +1", --5
     body="Chasseur's Frac +1", --12
-    legs="Oshosi Trousers", --5
-    feet="Oshosi Leggings", --2
+    legs="Oshosi Trousers +1", --6
+    feet="Oshosi Leggings +1", --3
     back=gear.COR_RA_Cape, --5
-    -- head="Oshosi Mask +1", --5
     -- hands="Lanun Gants +3",
-    -- legs="Osh. Trousers +1", --6
-    -- feet="Osh. Leggings +1", --3
-  } --24
+  } --31
 
   sets.TripleShot.Critical = {
     hands="Mummu Wrists +2",
-    feet="Oshosi Leggings", --2
+    feet="Oshosi Leggings +1", --3
     ear1="Odr Earring",
     ring1="Begrudging Ring",
     waist="K. Kachina Belt +1",
-    -- feet="Osh. Leggings +1", --3
     -- ring2="Mummu Ring",
   }
 
