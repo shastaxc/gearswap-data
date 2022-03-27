@@ -269,6 +269,13 @@ function init_gear_sets()
     -- 250 TP Bonus, 190 MND, 143 STR, 35 WSD, 54PDT/44MDT [43PetDT]
   })-- 250 TP Bonus, 185 MND, 138 STR, 35 WSD, 53PDT/43MDT [42PetDT]
 
+  -- Physical damage. 1 hit. Damage varies with TP.
+  -- 50% MND / 50% STR; 3.5-12fTP
+  -- TP Bonus > WSD > MND = STR
+  sets.precast.WS['Judgment'] = sets.precast.WS['Black Halo']
+  sets.precast.WS['Judgment'].MaxTP = sets.precast.WS['Black Halo'].MaxTP
+  sets.precast.WS['Judgment'].Safe = sets.precast.WS['Black Halo'].Safe
+
   -- Physical damage. 1 hit. Attack varies with TP.
   -- 50% MND / 50% INT; 1.5-4.75fTP
   -- WSD > MND > INT
@@ -489,13 +496,12 @@ function init_gear_sets()
 
 	-- Geomancy and skill have no effect on Entrust.
 	sets.buff.Entrust = set_combine(sets.midcast.Geomancy.Indi, {
+    main="Solstice",                -- __,  5,  6, 15, __
+    sub="Genmei Shield",            -- __, __, __, __, __
     ear1="Odnowa Earring +1",       -- __, __, __, __, __; DT
     ear2="Etiolation Earring",      -- __, __, __, __, __; DT
     ring1="Defending Ring",         -- __, __, __, __, __; DT
-    -- main="Solstice",                -- __,  5,  6, 15, __
-    -- sub="Genmei Shield",            -- __, __, __, __, __
-    -- 0 Geomancy, 898 geo skill, 101 Conserve MP, 56 Indi Duration, 20 Indi Duration %
-  })
+  }) -- 0 Geomancy, 898 geo skill, 101 Conserve MP, 56 Indi Duration, 20 Indi Duration %
 
   sets.midcast.Cure = {
     main="Daybreak",
@@ -1322,7 +1328,7 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
   if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
 
   -- Always put this last in job_post_midcast
-  if in_battle_mode() then
+  if in_battle_mode() and not (state.Buff.Entrust and spell.english:startswith('Indi-')) then
     equip(sets.WeaponSet[state.WeaponSet.current])
   end
 
