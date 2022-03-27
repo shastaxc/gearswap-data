@@ -450,7 +450,7 @@ function init_gear_sets()
     ammo="Staunch Tathlum +1",                        -- {__}  3/ 3, ___ [___]
     head={name="Runeist's Bandeau +3", priority=1},   -- {14} __/__,  83 [109]
     hands=gear.Leyline_Gloves,                        -- { 8} __/__,  62 [ 25]
-    legs="Agwu's Slops",                              -- { 7}  7/ 7, 134 [ 50]
+    legs="Agwu's Slops",                              -- { 7}  8/ 8, 134 [ 50]
     feet={name=gear.Carmine_D_feet.name, priority=1}, -- { 8}  4/__,  80 [ 95]
     ear2={name="Eabani Earring", priority=1},         -- {__} __/__,   8 [ 45]
     back={name=gear.RUN_FC_Cape.name,
