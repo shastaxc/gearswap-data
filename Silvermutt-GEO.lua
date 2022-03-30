@@ -1130,7 +1130,7 @@ function init_gear_sets()
     range="Dunna",
   }
   sets.WeaponSet['Maxentius'] = {
-    main="Idris",
+    main="Kaja Rod",
     sub="Genmei Shield",
     range="Dunna",
     -- main="Maxentius",
