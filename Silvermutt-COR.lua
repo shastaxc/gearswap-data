@@ -813,7 +813,7 @@ function init_gear_sets()
   -- Full STP; and more recast reduction
   sets.midcast.CorsairShot.STP = {
     ammo=gear.MAbullet,           -- __, 35, 25, __, __/__
-    head="Ikenga's Hat",          -- 29, 35, 45,  8, __/__
+    head="Blood Mask",            -- __, __,  3, __, __/__ Recast -5
     body="Malignance Tabard",     -- 42, __, 50, 11,  9/ 9
     hands="Malignance Gloves",    -- 24, __, 50, 12,  5/ 5
     legs="Ikenga's Trousers",     -- 40, __, 45, 10,  7/ 7
@@ -825,10 +825,10 @@ function init_gear_sets()
     ring2="Crepuscular Ring",     -- __, __, 10,  6, __/__
     back=gear.COR_RA_Cape,        -- 30, __, __, 10, 10/__
     waist="Reiki Yotai",          -- __, __, __,  4, __/__
-    -- head="Blood Mask",         -- Recast -5
-    -- legs="Ikenga's Trousers", --R25-- 40, __, 50, 10,  9/ 9
+    -- legs="Ikenga's Trousers",  -- 40, __, 50, 10,  9/ 9; R25
     -- ear2="Crepuscular Earring",-- __, __, 10,  5, __/__
-  } -- 214 AGI, 70 MAB, 275 M.Acc, 97 STP, 35PDT/25MDT
+    -- 185 AGI, 35 MAB, 248 M.Acc, 89 STP, 37PDT/27MDT
+  } -- 185 AGI, 35 MAB, 233 M.Acc, 89 STP, 35PDT/25MDT
 
   -- Full MAcc (to land debuff effects)
   sets.midcast.CorsairShot['Light Shot'] = {
@@ -862,8 +862,8 @@ function init_gear_sets()
 
   -- High dmg, but with empy feet for enhancement effect; and more recast reduction
   sets.midcast.CorsairShot.Enhance = {
+    head="Blood Mask", -- Recast -5
     feet="Chasseur's Bottes +1",
-    -- head="Blood Mask", -- Recast -5
   }
 
   sets.midcast.RA.Critical = set_combine(sets.midcast.RA, {
