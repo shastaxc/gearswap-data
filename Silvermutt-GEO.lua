@@ -1130,10 +1130,9 @@ function init_gear_sets()
     range="Dunna",
   }
   sets.WeaponSet['Maxentius'] = {
-    main="Kaja Rod",
+    main="Maxentius",
     sub="Genmei Shield",
     range="Dunna",
-    -- main="Maxentius",
   }
   sets.WeaponSet['Staff'] = {
     main="Malignance Pole",

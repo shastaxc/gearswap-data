@@ -826,7 +826,8 @@ function init_gear_sets()
   })
 
   sets.midcast.IntEnfeebles = set_combine(sets.midcast.MndEnfeebles, {
-    -- main="Maxentius",
+    main="Maxentius",
+    sub=empty,
     -- sub="Ammurapi Shield",
     -- back=gear.RDM_INT_Cape,
     -- waist="Acuity Belt +1",
