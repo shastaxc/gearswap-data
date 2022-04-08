@@ -600,6 +600,15 @@ function init_gear_sets()
     waist="Flume Belt +1",
   }
 
+  -- 40% DEX / 40% AGI; fTP 4.5-8.5
+  sets.precast.WS["Shark Bite"] = sets.precast.WS["Rudra's Storm"]
+  sets.precast.WS["Shark Bite"].MaxTP = sets.precast.WS["Rudra's Storm"].MaxTP
+  sets.precast.WS["Shark Bite"].AttCapped = sets.precast.WS["Rudra's Storm"].AttCapped
+  sets.precast.WS["Shark Bite"].AttCappedMaxTP = sets.precast.WS["Rudra's Storm"].AttCappedMaxTP
+  -- For Crit Dmg, not crit rate; is overlaid, don't set_combine
+  sets.precast.WS["Shark Bite"].Climactic = sets.precast.WS["Rudra's Storm"].Climactic
+  sets.precast.WS["Shark Bite"].Safe = sets.precast.WS["Rudra's Storm"].Safe
+
   sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
     ammo="Pemphredo Tathlum", --4
     head=gear.Nyame_B_head, --30
