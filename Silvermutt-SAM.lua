@@ -462,7 +462,7 @@ function init_gear_sets()
   sets.precast.WS['Impulse Drive'] = set_combine(sets.precast.WS, {
     ammo="Aurgelmir Orb",
     head=gear.Nyame_B_head,
-    body="Kendatsuba Samue +1",
+    body="Dagon Breastplate",
     hands=gear.Ryuo_A_hands,
     legs="Kendatsuba Hakama +1",
     feet=gear.Nyame_B_feet,
@@ -474,7 +474,6 @@ function init_gear_sets()
     back=gear.SAM_STR_WSD_Cape,
     waist="Sailfi belt +1",
     -- ammo="Aurgelmir Orb +1",
-    -- body="Dagon Breast.",
   })
   sets.precast.WS["Impulse Drive"].MaxTP = set_combine(sets.precast.WS["Impulse Drive"], {
   })

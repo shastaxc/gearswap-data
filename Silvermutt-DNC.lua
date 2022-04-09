@@ -106,13 +106,6 @@ function job_setup()
   Haste = 0 -- Do not modify
   DW_needed = 0 -- Do not modify
   DW = false -- Do not modify
-  retry_filtered = nil
-
-  tp_bonus_weapons = {
-    ['Fusetto +2'] = 1000,
-    ['Fusetto +3'] = 1000,
-    ['Centovente'] = 1000,
-  }
 
   state.Buff['Climactic Flourish'] = buffactive['climactic flourish'] or false
   state.Buff['Sneak Attack'] = buffactive['sneak attack'] or false
@@ -1154,10 +1147,6 @@ end
 function job_precast(spell, action, spellMap, eventArgs)
   silibs.precast_hook(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
-  if retry_filtered and spell.name == retry_filtered.action then
-    retry_filtered.action = nil
-  end
-
 
   if spellMap == 'Utsusemi' then
     if buffactive['Copy Image (3)'] or buffactive['Copy Image (4+)'] then
@@ -1329,13 +1318,18 @@ function get_custom_wsmode(spell, action, spellMap)
 
   -- Calculate if need TP bonus
   local buffer = 100
-  local main = player.equipment.main
-  local sub = player.equipment.sub
-  local weapon_bonus = (tp_bonus_weapons[main] or 0) + (tp_bonus_weapons[sub] or 0)
+  -- Start TP bonus at 0 and accumulate based on equipped gear
+  local tp_bonus_from_weapons = 0
+  for slot,gear in pairs(tp_bonus_weapons) do
+    local equipped_item = player.equipment[slot]
+    if equipped_item and gear[equipped_item] then
+      tp_bonus_from_weapons = tp_bonus_from_weapons + gear[equipped_item]
+    end
+  end
   local buff_bonus = T{
     buffactive['Crystal Blessing'] and 250 or 0,
   }:sum()
-  if player.tp > 3000-weapon_bonus-buff_bonus-buffer then
+  if player.tp > 3000-tp_bonus_from_weapons-buff_bonus-buffer then
     wsmode = wsmode..'MaxTP'
   end
 

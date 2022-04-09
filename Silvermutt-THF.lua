@@ -83,12 +83,6 @@ function job_setup()
   DW_needed = 0 -- Do not modify
   DW = false -- Do not modify
 
-  tp_bonus_weapons = {
-    ['Fusetto +2'] = 1000,
-    ['Fusetto +3'] = 1000,
-    ['Centovente'] = 1000,
-  }
-
   state.Buff['Sneak Attack'] = buffactive['sneak attack'] or false
   state.Buff['Trick Attack'] = buffactive['trick attack'] or false
   state.Buff['Feint'] = buffactive['feint'] or false
@@ -1428,13 +1422,18 @@ function get_custom_wsmode(spell, action, spellMap)
 
   -- Calculate if need TP bonus
   local buffer = 100
-  local main = player.equipment.main
-  local sub = player.equipment.sub
-  local weapon_bonus = (tp_bonus_weapons[main] or 0) + (tp_bonus_weapons[sub] or 0)
+  -- Start TP bonus at 0 and accumulate based on equipped gear
+  local tp_bonus_from_weapons = 0
+  for slot,gear in pairs(tp_bonus_weapons) do
+    local equipped_item = player.equipment[slot]
+    if equipped_item and gear[equipped_item] then
+      tp_bonus_from_weapons = tp_bonus_from_weapons + gear[equipped_item]
+    end
+  end
   local buff_bonus = T{
     buffactive['Crystal Blessing'] and 250 or 0,
   }:sum()
-  if player.tp > 3000-weapon_bonus-buff_bonus-buffer then
+  if player.tp > 3000-tp_bonus_from_weapons-buff_bonus-buffer then
     wsmode = wsmode..'MaxTP'
   end
 

@@ -82,15 +82,6 @@ function job_setup()
 
   no_swap_waists = S{"Era. Bul. Pouch", "Dev. Bul. Pouch", "Chr. Bul. Pouch", "Quelling B. Quiver",
       "Yoichi's Quiver", "Artemis's Quiver", "Chrono Quiver"}
-  tp_bonus_weapons = {
-    ['Fomalhaut'] = 500,
-    ['Anarchy +2'] = 1000,
-    ['Anarchy +3'] = 1000,
-    ['Ataktos'] = 1000,
-    ['Sparrowhawk +2'] = 1000,
-    ['Sparrowhawk +3'] = 1000,
-    ['Accipiter'] = 1000,
-  }
 
   marksman_weapon_subtypes = {
     ['Gastraphetes'] = "xbow",
@@ -1487,13 +1478,20 @@ function get_custom_wsmode(spell, action, spellMap)
     end
   end
 
+  -- Calculate if need TP bonus
   local buffer = 100
-  local rweapon = player.equipment.range
-  local weapon_bonus = tp_bonus_weapons[rweapon] or 0
+  -- Start TP bonus at 0 and accumulate based on equipped weapons
+  local tp_bonus_from_weapons = 0
+  for slot,gear in pairs(tp_bonus_weapons) do
+    local equipped_item = player.equipment[slot]
+    if equipped_item and gear[equipped_item] then
+      tp_bonus_from_weapons = tp_bonus_from_weapons + gear[equipped_item]
+    end
+  end
   local buff_bonus = T{
     buffactive['Crystal Blessing'] and 250 or 0,
   }:sum()
-  if player.tp > 3000-weapon_bonus-buff_bonus-buffer then
+  if player.tp > 3000-tp_bonus_from_weapons-buff_bonus-buffer then
     wsmode = wsmode..'MaxTP'
   end
 

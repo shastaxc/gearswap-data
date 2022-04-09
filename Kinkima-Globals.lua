@@ -46,6 +46,41 @@ classes.NoSkillSpells = S{'Haste', 'Haste II', 'Refresh', 'Refresh II', 'Refresh
     'Shellra II', 'Shellra III', 'Shellra IV', 'Shellra V', 'Raise', 'Raise II', 'Raise III', 'Arise', 'Reraise', 'Reraise II',
     'Reraise III', 'Reraise IV', 'Sneak', 'Invisible', 'Deodorize', 'Embrava', 'Silence', 'Aquaveil', 'Stoneskin', 'Blink'}
 
+tp_bonus_weapons = {
+  ['main']={
+    ['Aeneas'] = 500,
+    ['Anguta'] = 500,
+    ['Centovente'] = 1000,
+    ['Chango'] = 500,
+    ['Dojikiri Yasutsuna'] = 500,
+    ['Fusetto +2'] = 1000,
+    ['Fusetto +3'] = 1000,
+    ['Godhands'] = 500,
+    ['Heishi Shorinken'] = 500,
+    ['Khatvanga'] = 500,
+    ['Lionheart'] = 500,
+    ['Sequence'] = 500,
+    ['Tishtrya'] = 500,
+    ['Tri-edge'] = 500,
+    ['Trishula'] = 500,
+  },
+  ['sub']={
+    ['Centovente'] = 1000,
+    ['Fusetto +2'] = 1000,
+    ['Fusetto +3'] = 1000,
+  },
+  ['range']={
+    ['Accipiter'] = 1000,
+    ['Anarchy +2'] = 1000,
+    ['Anarchy +3'] = 1000,
+    ['Ataktos'] = 1000,
+    ['Fail-Not'] = 500,
+    ['Fomalhaut'] = 500,
+    ['Sparrowhawk +2'] = 1000,
+    ['Sparrowhawk +3'] = 1000,
+  }
+}
+
 locked_neck = false -- Do not modify
 locked_ear1 = false -- Do not modify
 locked_ear2 = false -- Do not modify
