@@ -509,7 +509,7 @@ function init_gear_sets()
     hands=gear.Nyame_B_hands,     -- 17, 40, 55, 40,  8, __, ___
     legs=gear.Nyame_B_legs,       -- 43, 32, 55, 40,  9, __, ___
     feet=gear.Nyame_B_feet,       -- 23, 26, 55, 40,  8, __, ___
-    neck="Anu Torque",            -- __, __, 20, __, __, __, ___
+    neck="Fotia Gorget",          -- __, __, __, __, __, __, ___; fTP+0.1
     ear1="Ishvara Earring",       -- __, __, __, __,  2, __, ___
     ear2="Moonshade Earring",     -- __, __, __,  4, __, __, 250
     ring1="Regal Ring",           -- 10, __, 20, __, __, __, ___
@@ -517,8 +517,8 @@ function init_gear_sets()
     back=gear.THF_WS2_Cape,       -- 30, __, 20, 20, 10, __, ___
     waist="Sailfi Belt +1",       -- 15, __, 15, __, __, __, ___
     -- ring1="Epaminondas's Ring",-- __, __, __, __,  5, __, ___
-    -- 214 STR, 161 MND, 359 Attack, 237 Accuracy, 60 WSD, 0 PDL, 250 TP Bonus
-  } -- 224 STR, 161 MND, 379 Attack, 237 Accuracy, 55 WSD, 0 PDL, 250 TP Bonus
+    -- 214 STR, 161 MND, 339 Attack, 237 Accuracy, 60 WSD, 0 PDL, 250 TP Bonus
+  } -- 224 STR, 161 MND, 359 Attack, 237 Accuracy, 55 WSD, 0 PDL, 250 TP Bonus
   sets.precast.WS['Savage Blade'].MaxTP = set_combine(sets.precast.WS['Savage Blade'], {
     ear2="Sherida Earring",       --  5, __, __, __, __, __, ___
   })
@@ -529,7 +529,7 @@ function init_gear_sets()
     hands=gear.Nyame_B_hands,     -- 17, 40, 55, 40,  8, __, ___
     legs=gear.Nyame_B_legs,       -- 43, 32, 55, 40,  9, __, ___
     feet=gear.Nyame_B_feet,       -- 23, 26, 55, 40,  8, __, ___
-    neck="Anu Torque",            -- __, __, 20, __, __, __, ___
+    neck="Fotia Gorget",          -- __, __, __, __, __, __, ___; fTP+0.1
     ear1="Ishvara Earring",       -- __, __, __, __,  2, __, ___
     ear2="Moonshade Earring",     -- __, __, __,  4, __, __, 250
     ring1="Regal Ring",           -- 10, __, 20, __, __, __, ___
@@ -537,8 +537,8 @@ function init_gear_sets()
     back=gear.THF_WS2_Cape,       -- 30, __, 20, 20, 10, __, ___
     waist="Sailfi Belt +1",       -- 15, __, 15, __, __, __, ___
     -- ring1="Epaminondas's Ring",-- __, __, __, __,  5, __, ___
-    -- 214 STR, 161 MND, 359 Attack, 237 Accuracy, 60 WSD, 0 PDL, 250 TP Bonus
-  } -- 224 STR, 161 MND, 379 Attack, 237 Accuracy, 55 WSD, 0 PDL, 250 TP Bonus
+    -- 214 STR, 161 MND, 339 Attack, 237 Accuracy, 60 WSD, 0 PDL, 250 TP Bonus
+  } -- 224 STR, 161 MND, 359 Attack, 237 Accuracy, 55 WSD, 0 PDL, 250 TP Bonus
   sets.precast.WS['Savage Blade'].AttCappedMaxTP = set_combine(sets.precast.WS['Savage Blade'].AttCapped, {
     ear2="Sherida Earring",       --  5, __, __, __, __, __, ___
   })
