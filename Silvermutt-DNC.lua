@@ -575,15 +575,12 @@ function init_gear_sets()
     neck="Etoile Gorget +2",        -- 25, 25, __, __, 10
     ear1="Odr Earring",             -- 10, __, __, __, __
     ear2="Moonshade Earring",       -- __, __, __, __, __; TP Bonus+250
-    ring1="Ilabrat Ring",           -- 10, __, __, 25, __
+    ring1="Epaminondas's Ring",     -- __, __,  5, __, __
     ring2="Regal Ring",             -- 10, __, __, 20, __
     back=gear.DNC_WS1_Cape,         -- 30, __, 10, 20, __; Crit dmg+5
     waist="Kentarch Belt +1",       -- 10, __, __, __, __
     -- Lustratio set bonus          -- __, __,  4, __, __
-
-    -- ring1="Epaminondas's Ring",  -- __, __,  5, __, __
-    -- 257 DEX, 102 CHR, 39 WSD, 208 Att, 22 PDL
-  })-- 267 DEX, 102 CHR, 34 WSD, 228 Att, 22 PDL
+  })-- 257 DEX, 102 CHR, 39 WSD, 208 Att, 22 PDL
   sets.precast.WS["Rudra's Storm"].AttCappedMaxTP = set_combine(sets.precast.WS["Rudra's Storm"].AttCapped, {
     ear2="Ishvara Earring",         -- __, __,  2, __, __
   })
@@ -592,7 +589,7 @@ function init_gear_sets()
     ammo="Charis Feather",
     head="Maculele Tiara +1",
     feet=gear.Nyame_B_feet,
-    -- ring1="Epaminondas's Ring",
+    ring1="Epaminondas's Ring",
   }
   sets.precast.WS["Rudra's Storm"].Safe = {
     legs=gear.Nyame_B_legs,
@@ -620,10 +617,9 @@ function init_gear_sets()
     ear1="Friomisi Earring", --10
     ear2="Moonshade Earring",
     ring1="Shiva Ring +1", --3
-    ring2="Defending Ring",
+    ring2="Epaminondas's Ring",
     back=gear.DNC_WS1_Cape,
     waist="Eschan Stone", --7
-    -- ring2="Epaminondas's Ring",
     -- waist="Orpheus's Sash",
   }) -- 40% DEX / 40% INT + MAB
   sets.precast.WS['Aeolian Edge'].MaxTP = set_combine(sets.precast.WS['Aeolian Edge'], {

@@ -425,11 +425,10 @@ function init_gear_sets()
     neck="Fotia Gorget",
     ear1="Sherida Earring",
     ear2="Ishvara Earring",
-    ring1="Niqmaddu Ring",
+    ring1="Epaminondas's Ring",
     ring2="Regal Ring",
     back=gear.MNK_STR_DA_Cape, -- WSD cape would be better
     waist="Fotia Belt",
-    -- ring1="Epaminondas's Ring",
   })
   sets.precast.WS["Asuran Fists"].MaxTP = set_combine(sets.precast.WS["Asuran Fists"], {
   })

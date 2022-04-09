@@ -253,12 +253,10 @@ function init_gear_sets()
     ear1="Regal Earring",           -- ___, 10, __, __, __/__ [__]
     ear2="Moonshade Earring",       -- 250, __, __, __, __/__ [__]
     ring1="Metamorph Ring +1",      -- ___, 16, __, __, __/__ [__]
-    ring2="Stikini Ring +1",        -- ___,  8, __, __, __/__ [__]
+    ring2="Epaminondas's Ring",     -- ___, __, __,  5, __/__ [__]
     back=gear.GEO_Idle_Cape,        -- ___, __, __, __, __/__ [__]
     waist="Fotia Belt",             -- fTP Bonus
-    -- ring2="Epaminondas's Ring",  -- ___, __, __,  5, __/__ [__]
-    -- 250 TP Bonus, 187 MND, 144 STR, 48 WSD, 48PDT/38MDT [30PetDT]
-  } -- 250 TP Bonus, 195 MND, 144 STR, 43 WSD, 48PDT/38MDT [30PetDT]
+  } -- 250 TP Bonus, 187 MND, 144 STR, 48 WSD, 48PDT/38MDT [30PetDT]
   sets.precast.WS['Black Halo'].MaxTP = set_combine(sets.precast.WS['Black Halo'], {
     ear2="Ishvara Earring",         -- ___, __, __,  2, __/__ [__]
   })
@@ -303,11 +301,10 @@ function init_gear_sets()
     ear1="Regal Earring",           -- ___, __, __, 10, __, __, __/__ [__]
     ear2="Moonshade Earring",       -- 250, __, __, __, __, __, __/__ [__]
     ring1="Metamorph Ring +1",      -- ___, __, __, 16, __, __, __/__ [__]
-    ring2="Begrudging Ring",        -- ___, __,  5,  8, __, __,-10/-10[__]
+    ring2="Epaminondas's Ring",     -- ___, __, __, __, __,  5, __/__ [__]
     back=gear.GEO_Idle_Cape,        -- ___, __, __, __, __, __, __/__ [__]
     waist="Fotia Belt",             -- fTP Bonus
-    -- ring2="Epaminondas's Ring",  -- ___, __, __, __, __,  5, __/__ [__]
-  } -- 250 TP Bonus, 0 Crit Dmg,  5 Crit Rate, 195 MND, 144 STR, 43 WSD, 38PDT/28MDT [30PetDT]
+  } -- 250 TP Bonus, 0 Crit Dmg,  0 Crit Rate, 187 MND, 144 STR, 48 WSD, 48PDT/38MDT [30PetDT]
   sets.precast.WS['Hexa Strike'].MaxTP = set_combine(sets.precast.WS['Hexa Strike'], {
     ear2="Malignance Earring",
   })
@@ -404,18 +401,17 @@ function init_gear_sets()
     ear1="Regal Earring",           -- __,  7, __, __
     ear2="Moonshade Earring",       -- __, __, __, __; TP bonus
     ring1="Archon Ring",            --  5, __, __, __
-    ring2="Shiva Ring +1",          -- __,  3, __, __
+    ring2="Epaminondas's Ring",     -- __, __, __,  5
     back="Argochampsa Mantle",      -- __, 12, __, __
     waist="Skrymir Cord",           -- __,  5, 30, __
     -- body="Agwu's Robe",          -- __, 58, 20, __; R25
     -- hands="Agwu's Gages",        -- __, 58, 20, __; R25
     -- legs="Agwu's Slops",         -- __, 58, 20, __; R25
     -- feet="Agwu's Pigaches",      -- __, 58, 20, __; R25
-    -- ring2="Epaminondas's Ring",  -- __, __, __,  5
     -- back=gear.GEO_Nuke_Cape,     -- __, 10, 20, __
     -- waist="Skrymir Cord +1",     -- __,  7, 35, __
     -- 33 Dark MAB, 229 MAB, 115 M.Dmg, 12 WSD
-  } -- 33 Dark MAB, 160 MAB, 30 M.Dmg, 34 WSD
+  } -- 33 Dark MAB, 157 MAB, 30 M.Dmg, 39 WSD
   sets.precast.WS['Cataclysm'].MaxTP = set_combine(sets.precast.WS['Cataclysm'], {
     ear2="Malignance Earring", -- __,  8, __, __
   })

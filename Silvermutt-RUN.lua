@@ -725,10 +725,9 @@ function init_gear_sets()
     waist="Grunfeld Rope",
     ear1="Sherida Earring",
     ear2="Moonshade Earring",
-    ring1="Niqmaddu Ring",
+    ring1="Epaminondas's Ring",
     ring2="Ilabrat Ring",
     back=gear.RUN_WS2_Cape,
-    -- ring1="Epaminondas's Ring",
   })
   sets.precast.WS['Dimidiation'].Safe = set_combine(sets.precast.WS.Safe, {
     ammo="Knobkierrie",
@@ -875,14 +874,13 @@ function init_gear_sets()
     ear1="Ishvara Earring",         -- __, __, __, __,  2, __, ___, __/__ [___]
     ear2="Moonshade Earring",       -- __, __, __,  4, __, __, 250, __/__ [___]
     ring1="Regal Ring",             -- 10, __, 20, __, __, __, ___, __/__ [ 50]
-    ring2="Niqmaddu Ring",          -- 10, __, __, __, __, __, ___, __/__ [___]
+    ring2="Epaminondas's Ring",     -- __, __, __, __,  5, __, ___, __/__ [___]
     back=gear.RUN_WS2_Cape,         -- __, __, 20, 20, 10, __, ___, 10/__ [___]
     waist="Sailfi Belt +1",         -- 15, __, 15, __, __, __, ___, __/__ [___]
     -- neck="Futhark Torque +2",    -- 15, 15, __, __, __, __, ___,  7/ 7 [ 60]
-    -- ring2="Epaminondas's Ring",  -- __, __, __, __,  5, __, ___, __/__ [___]
     -- back=gear.RUN_WS3_Cape,      -- 30, __, 20, 20, 10, __, ___, 10/__ [___]
     -- 214 STR, 176 MND, 353 Attack, 224 Accuracy, 66 WSD, 0 PDL, 250 TP Bonus, 55PDT/45MDT [610HP]
-  } -- 191 STR, 173 MND, 353 Attack, 224 Accuracy, 61 WSD, 0 PDL, 250 TP Bonus, 54PDT/44MDT [595HP]
+  } -- 181 STR, 173 MND, 353 Attack, 224 Accuracy, 66 WSD, 0 PDL, 250 TP Bonus, 54PDT/44MDT [595HP]
   sets.precast.WS['Savage Blade'].Safe = {
     ammo="Knobkierrie",             -- __, __, 23, __,  6, __, ___, __/__ [___]
     head=gear.Nyame_B_head,         -- 26, 26, 55, 40,  8, __, ___,  7/ 7 [ 91]

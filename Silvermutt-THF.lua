@@ -307,11 +307,10 @@ function init_gear_sets()
     ear1="Ishvara Earring",
     ear2="Moonshade Earring",
     ring1="Regal Ring",
-    ring2="Ilabrat Ring",
+    ring2="Epaminondas's Ring",
     back=gear.THF_WS1_Cape,
     waist="Fotia Belt",
     -- ammo="Aurgelmir Orb +1",
-    -- ring2="Epaminondas's Ring",
   }
   -- When Sneak Attack active, overlaid on top of normal set
   sets.precast.WS.SA = {
@@ -442,16 +441,15 @@ function init_gear_sets()
     neck="Assassin's Gorget +2",        -- 15, __, __, __
     ear1="Odr Earring",                 -- 10, __, __, __
     ear2="Moonshade Earring",           -- __, __, __, __; TP Bonus+250
-    ring1="Ilabrat Ring",               -- 10, __, 25, __
+    ring1="Epaminondas's Ring",         -- __,  5, __, __
     ring2="Regal Ring",                 -- 10, __, 20, __
     back=gear.THF_WS1_Cape,             -- 30, 10, 20, __
     waist="Kentarch Belt +1",           -- 10, __, __, __
     -- Lustratio set bonus              -- __,  4, __, __
 
     -- ammo="Cath Palug Stone",         -- 10, __, __, __
-    -- ring1="Epaminondas's Ring",      -- __,  5, __, __
     -- 288 DEX, 26 WSD, 207 Att, 15 PDL
-  } -- 293 DEX, 21 WSD, 239 Att, 15 PDL
+  } -- 283 DEX, 26 WSD, 214 Att, 15 PDL
   sets.precast.WS["Rudra's Storm"].AttCappedMaxTP = set_combine(sets.precast.WS["Rudra's Storm"].AttCapped, {
     ear2="Sherida Earring",
   })
@@ -484,11 +482,10 @@ function init_gear_sets()
     neck="Baetyl Pendant", --13
     ear1="Friomisi Earring", --10
     ear2="Moonshade Earring",
-    ring1="Shiva Ring +1", --3
+    ring1="Epaminondas's Ring",
     ring2="Dingir Ring",
     back=gear.DNC_WS1_Cape,
     waist="Skrymir Cord",
-    -- ring1="Epaminondas's Ring",
     -- waist="Skrymir Cord +1",
   }
   sets.precast.WS['Aeolian Edge'].MaxTP = set_combine(sets.precast.WS['Aeolian Edge'], {
@@ -513,12 +510,10 @@ function init_gear_sets()
     ear1="Ishvara Earring",       -- __, __, __, __,  2, __, ___
     ear2="Moonshade Earring",     -- __, __, __,  4, __, __, 250
     ring1="Regal Ring",           -- 10, __, 20, __, __, __, ___
-    ring2="Gere Ring",            -- 10, __, 16, __, __, __, ___
+    ring2="Epaminondas's Ring",   -- __, __, __, __,  5, __, ___
     back=gear.THF_WS2_Cape,       -- 30, __, 20, 20, 10, __, ___
     waist="Sailfi Belt +1",       -- 15, __, 15, __, __, __, ___
-    -- ring1="Epaminondas's Ring",-- __, __, __, __,  5, __, ___
-    -- 214 STR, 161 MND, 339 Attack, 237 Accuracy, 60 WSD, 0 PDL, 250 TP Bonus
-  } -- 224 STR, 161 MND, 359 Attack, 237 Accuracy, 55 WSD, 0 PDL, 250 TP Bonus
+  } -- 214 STR, 161 MND, 343 Attack, 237 Accuracy, 60 WSD, 0 PDL, 250 TP Bonus
   sets.precast.WS['Savage Blade'].MaxTP = set_combine(sets.precast.WS['Savage Blade'], {
     ear2="Sherida Earring",       --  5, __, __, __, __, __, ___
   })
@@ -533,12 +528,10 @@ function init_gear_sets()
     ear1="Ishvara Earring",       -- __, __, __, __,  2, __, ___
     ear2="Moonshade Earring",     -- __, __, __,  4, __, __, 250
     ring1="Regal Ring",           -- 10, __, 20, __, __, __, ___
-    ring2="Gere Ring",            -- 10, __, 16, __, __, __, ___
+    ring2="Epaminondas's Ring",   -- __, __, __, __,  5, __, ___
     back=gear.THF_WS2_Cape,       -- 30, __, 20, 20, 10, __, ___
     waist="Sailfi Belt +1",       -- 15, __, 15, __, __, __, ___
-    -- ring1="Epaminondas's Ring",-- __, __, __, __,  5, __, ___
-    -- 214 STR, 161 MND, 339 Attack, 237 Accuracy, 60 WSD, 0 PDL, 250 TP Bonus
-  } -- 224 STR, 161 MND, 359 Attack, 237 Accuracy, 55 WSD, 0 PDL, 250 TP Bonus
+  } -- 214 STR, 161 MND, 343 Attack, 237 Accuracy, 60 WSD, 0 PDL, 250 TP Bonus
   sets.precast.WS['Savage Blade'].AttCappedMaxTP = set_combine(sets.precast.WS['Savage Blade'].AttCapped, {
     ear2="Sherida Earring",       --  5, __, __, __, __, __, ___
   })
@@ -556,10 +549,9 @@ function init_gear_sets()
     ear1="Sherida Earring",
     ear2="Ishvara Earring",
     ring1="Regal Ring",
-    ring2="Gere Ring",
+    ring2="Epaminondas's Ring",
     back=gear.THF_WS2_Cape,
     waist="Fotia Belt",
-    -- ring2="Epaminondas's Ring",
   }
   sets.precast.WS['Asuran Fists'].MaxTP = sets.precast.WS['Asuran Fists']
   sets.precast.WS['Asuran Fists'].AttCapped = set_combine(sets.precast.WS['Asuran Fists'], {

@@ -261,10 +261,9 @@ function init_gear_sets()
     ear1="Thrud Earring",
     ear2="Moonshade Earring",
     ring1="Regal Ring",
-    ring2="Niqmaddu Ring",
+    ring2="Epaminondas's Ring",
     back=gear.SAM_STR_WSD_Cape,
     waist="Sailfi Belt +1",
-    -- ring2="Epaminondas's Ring",
   } -- Base WS set
 
   -- Tachi: Fudo - 80% STR
@@ -358,10 +357,9 @@ function init_gear_sets()
     ear1="Friomisi Earring",
     ear2="Moonshade Earring",
     ring1="Regal Ring",
-    ring2="Niqmaddu Ring",
+    ring2="Epaminondas's Ring",
     back=gear.SAM_STR_WSD_Cape,
     waist="Fotia Belt",
-    -- ring2="Epaminondas's Ring",
     -- waist="Orpheus's Sash",
   })
   sets.precast.WS["Tachi: Jinpu"].MaxTP = set_combine(sets.precast.WS["Tachi: Jinpu"], {
@@ -395,11 +393,10 @@ function init_gear_sets()
     ear1="Thrud Earring",
     ear2="Moonshade Earring",
     ring1="Niqmaddu Ring",
-    ring2="Flamma Ring",
+    ring2="Epaminondas's Ring",
     back=gear.SAM_STR_WSD_Cape,
     waist="Sailfi Belt +1",
     -- body="Sakonji Domaru +3",
-    -- ring2="Epaminondas's Ring",
   })
   sets.precast.WS["Tachi: Shoha"].MaxTP = set_combine(sets.precast.WS["Tachi: Shoha"], {
     ear2="Schere Earring",
@@ -472,13 +469,12 @@ function init_gear_sets()
     neck="Samurai's Nodowa +2",
     ear1="Thrud Earring",
     ear2="Moonshade Earring",
-    ring1="Regal Ring",
+    ring1="Epaminondas's Ring",
     ring2="Niqmaddu Ring",
     back=gear.SAM_STR_WSD_Cape,
     waist="Sailfi belt +1",
     -- ammo="Aurgelmir Orb +1",
     -- body="Dagon Breast.",
-    -- ring1="Epaminondas's Ring",
   })
   sets.precast.WS["Impulse Drive"].MaxTP = set_combine(sets.precast.WS["Impulse Drive"], {
   })

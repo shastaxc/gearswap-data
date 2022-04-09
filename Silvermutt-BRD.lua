@@ -292,10 +292,10 @@ function init_gear_sets()
     neck="Fotia Gorget",
     ear1="Ishvara Earring",
     ear2="Moonshade Earring",
+    ring1="Epaminondas's Ring",
     ring2="Ilabrat Ring",
     waist="Fotia Belt",
     -- range=gear.Linos_WS3,
-    -- ring1="Epaminondas's Ring",
     -- back=gear.BRD_WS1_Cape,
   }
 
@@ -305,6 +305,7 @@ function init_gear_sets()
     ear1="Regal Earring",         -- __, __, __, __, __, __, 10, __
     ear2="Ishvara Earring",       --  2, __, __, __, __, __, __, __
     ring1="Metamor. Ring +1",     -- __, __, __, __, __, __, 16, __
+    ring2="Epaminondas's Ring",   --  5, __, __, __, __, __, __, __
     waist="Kentarch Belt +1",     -- __, __, __,  3, __, 14, __, 10
     -- range=gear.Linos_WS2,      --  3, __, __, __, 15, 15,  8, __
     -- head="Bihu Roundlet +3",   -- __, __, __, __, 62, 37, 40, 24
@@ -313,7 +314,6 @@ function init_gear_sets()
     -- legs="Bihu Cannions +3",   -- __, __, __, __, 64, 39, 43, __
     -- feet="Bihu Slippers +3",   -- __, __, __, __, 61, 36, 48, 21
     -- neck="Bard's Charm +2",    -- __,  3, __, __, __, 30, 25, 25
-    -- ring2="Epaminondas's Ring",--  5, __, __, __, __, __, __, __
     -- back=gear.BRD_WS1_Cape,    -- 10, __, __, __, 20, 20, 30, __
   } -- 30 WSD, 3 QA, 0 TA, 3 DA, 377 Att, 282 Acc, 296 CHR, 159 DEX
 
@@ -325,12 +325,12 @@ function init_gear_sets()
     ear1="Moonshade Earring",       -- __, __, __, __, __,  4, __; 250 TP Bonus
     ear2="Ishvara Earring",         --  2, __, __, __, __, __, __
     ring1="Ilabrat Ring",           -- __, __, __, __, 25, __, 10
+    ring2="Epaminondas's Ring",     --  5, __, __, __, __, __, __
     waist="Kentarch Belt +1",       -- __, __, __,  3, __, 14, 10
     -- range=gear.Linos_WS3,        --  3, __, __, __, 15, 15,  8
     -- body="Bihu Jstcorps. +3",    -- 10, __, __, __, 92, 53, 41
     -- hands=gear.Lustratio_D_hands,-- __, __, __, __, __, 30, 54
     -- neck="Bard's Charm +2",      -- __,  3, __, __, __, 30, 25
-    -- ring2="Epaminondas's Ring",  --  5, __, __, __, __, __, __
     -- back=gear.BRD_WS1_Cape,      -- 10, __, __, __, 20, 20, 30
     -- Lustr. Set bonus                 8, __, __, __, __, __, __
   }) -- 38 WSD, 3 QA, 0 TA, 3 DA, 190 Att, 186 Acc, 314 DEX
@@ -387,9 +387,9 @@ function init_gear_sets()
     ear1="Moonshade Earring",     -- __, __, __, __; 250 TP Bonus
     ear2="Friomisi Earring",      -- __, __, __, 10
     ring1="Shiva Ring +1",        -- __, __,  9,  3
+    ring2="Epaminondas's Ring",   --  5, __, __, __
     waist="Skrymir Cord",         -- __, __, __,  5; +30 M.Dmg
     -- range=gear.Linos_WS1,      --  3, __,  8, 20
-    -- ring2="Epaminondas's Ring",--  5, __, __, __
     -- back=gear.BRD_WS2_Cape,    -- 10, 30, __, __
     -- 48 WSD, 166 DEX, 203 INT, 251 MAB
   })
@@ -405,15 +405,15 @@ function init_gear_sets()
     legs=gear.Nyame_B_legs,       --  9, __, __,  3, 55, 40, 43, 32
     feet=gear.Nyame_B_feet,       --  8, __, __,  2, 55, 40, 23, 26
     ear1="Moonshade Earring",     -- __, __, __, __, __,  4, __, __; 250 TP Bonus
-    ear2="Ishvara Earring",       --  2, __, __, __, __, __, __, __
+    ear2="Regal Earring",         -- __, __, __, __, __, __, __, 10
+    ring2="Epaminondas's Ring",   --  5, __, __, __, __, __, __, __
     waist="Sailfi Belt +1",       -- __, __,  2,  5, 15, __, 15, __
     -- range=gear.Linos_WS5,      --  3, __, __, __, 15, 15,  8, __
     -- body="Bihu Jstcorps. +3",  -- 10, __, __, __, 92, 53, 39, 38
     -- neck="Bard's Charm +2",    -- __,  3, __, __, __, 30, __, __
     -- ring1="Ifrit Ring +1",     -- __, __, __, __,  5, __,  9, __
-    -- ring2="Epaminondas's Ring",--  5, __, __, __, __, __, __, __
     -- back=gear.BRD_WS5_Cape,    -- 10, __, __, __, 20, 20, 30, __
-    -- 30 WSD, 3 QA, 2 TA, 5 DA, 397 Att, 272 Acc, 188 STR, 177 MND
+    -- 28 WSD, 3 QA, 2 TA, 5 DA, 397 Att, 272 Acc, 188 STR, 187 MND
   })
   sets.precast.WS['Savage Blade'].MaxTP = set_combine(sets.precast.WS['Savage Blade'], {
     -- ear1="Vulcan's Pearl",     -- __, __, __, __, __, __,  4, __
@@ -422,6 +422,7 @@ function init_gear_sets()
   -- Modifiers: 100% STR
   sets.precast.WS['Circle Blade'] = set_combine(sets.precast.WS, {
     ear2="Ishvara Earring",         --  2, __, __, __, __, __, __
+    ring2="Epaminondas's Ring",     --  5, __, __, __, __, __, __
     waist="Sailfi Belt +1",         -- __, __,  2,  5, 15, __, 15
     -- range=gear.Linos_WS5,        --  3, __, __, __, 15, 15,  8
     -- head=gear.Lustratio_A_head,  -- __, __, __,  3, 20, __, 47
@@ -432,7 +433,6 @@ function init_gear_sets()
     -- neck="Bard's Charm +2",      -- __,  3, __, __, __, 30, __
     -- ear1="Vulcan's Pearl",       -- __, __, __, __, __, __,  4
     -- ring1="Ifrit Ring +1",       -- __, __, __, __,  5, __,  9
-    -- ring2="Epaminondas's Ring",  --  5, __, __, __, __, __, __
     -- back=gear.BRD_WS5_Cape,      -- 10, __, __, __, 20, 20, 30
   }) -- 30 WSD, 3 QA, 2 TA, 14 DA, 271 Att, 157 Acc, 255 STR
 

@@ -405,10 +405,9 @@ function init_gear_sets()
     ear1="Ishvara Earring",
     ear2="Moonshade Earring",
     ring1="Regal Ring",
-    ring2="Dingir Ring",
+    ring2="Epaminondas's Ring",
     back=gear.RNG_WS2_Cape,
     waist="Fotia Belt",
-    -- ring2="Epaminondas's Ring",
   }
   sets.precast.WS.MaxTP = set_combine(sets.precast.WS, {
     ear2="Telos Earring",
@@ -500,11 +499,10 @@ function init_gear_sets()
     ear1="Ishvara Earring",
     ear2="Moonshade Earring",
     ring1="Regal Ring",
-    ring2="Dingir Ring",
+    ring2="Epaminondas's Ring",
     back=gear.RNG_WS2_Cape,
     waist="Fotia Belt",
     -- neck="Scout's Gorget +2",
-    -- ring2="Epaminondas's Ring",
   })
   sets.precast.WS['Last Stand'].MaxTP = set_combine(sets.precast.WS['Last Stand'], {
     ear2="Telos Earring",
@@ -661,13 +659,12 @@ function init_gear_sets()
     ear1="Ishvara Earring",       -- __, __, __, __,  2, __, ___
     ear2="Moonshade Earring",     -- __, __, __,  4, __, __, 250
     ring1="Regal Ring",           -- 10, __, 20, __, __, __, ___
-    ring2="Ilabrat Ring",         -- __, __, 25, __, __, __, ___
+    ring2="Epaminondas's Ring",   -- __, __, __, __,  5, __, ___
     back=gear.RNG_WS3_Cape,       -- 30, __, 20, 20, 10, __, ___
     waist="Sailfi Belt +1",       -- 15, __, 15, __, __, __, ___
     -- neck="Scout's Gorget +2",  -- __, __, __, __, __, 10, ___
-    -- ring2="Epaminondas's Ring",-- __, __, __, __,  5, __, ___
     -- 197 STR, 149 MND, 275 Attack, 184 Accuracy, 50 WSD, 17 PDL, 420 TP Bonus
-  } -- 197 STR, 149 MND, 300 Attack, 184 Accuracy, 45 WSD, 15 PDL, 420 TP Bonus
+  } -- 197 STR, 149 MND, 275 Attack, 184 Accuracy, 50 WSD, 15 PDL, 420 TP Bonus
   sets.precast.WS['Savage Blade'].MaxTP = set_combine(sets.precast.WS['Savage Blade'], {
     ear2="Telos Earring",
   })

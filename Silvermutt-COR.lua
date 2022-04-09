@@ -397,12 +397,11 @@ function init_gear_sets()
     ear1="Ishvara Earring",
     ear2="Moonshade Earring",
     ring1="Regal Ring",
-    ring2="Dingir Ring",
+    ring2="Epaminondas's Ring",
     back=gear.COR_WS2_Cape,
     waist="Fotia Belt",
     -- head="Lanun Tricorne +3",
     -- body="Laksamana's Frac +3",
-    -- ring2="Epaminondas's Ring",
     -- back=gear.COR_WS3_Cape,
   }
   sets.precast.WS.MaxTP = set_combine(sets.precast.WS, {
@@ -435,12 +434,11 @@ function init_gear_sets()
     ear1="Ishvara Earring",
     ear2="Moonshade Earring",
     ring1="Regal Ring",
-    ring2="Dingir Ring",
+    ring2="Epaminondas's Ring",
     back=gear.COR_WS1_Cape,
     waist="Fotia Belt",
     -- head="Lanun Tricorne +3",
     -- body="Laksamana's Frac +3",
-    -- ring2="Epaminondas's Ring",
     -- back=gear.COR_WS3_Cape,
   }
   sets.precast.WS['Last Stand'].MaxTP = set_combine(sets.precast.WS['Last Stand'], {
@@ -479,11 +477,10 @@ function init_gear_sets()
     ear1="Friomisi Earring", --10
     ear2="Novio Earring", --7
     ring1="Dingir Ring", --10
-    ring2="Shiva Ring +1", --3
+    ring2="Epaminondas's Ring",
     back=gear.COR_WS1_Cape, --0
     waist="Skrymir Cord", --5
     -- neck="Comm. Charm +2",
-    -- ring2="Epaminondas's Ring",
     -- waist="Skrymir Cord +1",
   }
   sets.precast.WS['Wildfire'].MaxTP = set_combine(sets.precast.WS['Wildfire'], {
@@ -605,13 +602,12 @@ function init_gear_sets()
     ear1="Ishvara Earring",       -- __, __, __, __,  2, __, ___
     ear2="Moonshade Earring",     -- __, __, __,  4, __, __, 250
     ring1="Regal Ring",           -- 10, __, 20, __, __, __, ___
-    ring2="Rufescent Ring",       --  6,  6, __,  7, __, __, ___
+    ring2="Epaminondas's Ring",   -- __, __, __, __,  5, __, ___
     back=gear.COR_WS2_Cape,       -- 30, __, 20, 20, 10, __, ___
     waist="Sailfi Belt +1",       -- 15, __, 15, __, __, __, ___
     -- neck="Commodore Charm +2", -- 15, __, __, __, __, __, ___
-    -- ring2="Epaminondas's Ring",-- __, __, __, __,  5, __, ___
     -- 212 STR, 149 MND, 275 Attack, 184 Accuracy, 50 WSD, 7 PDL, 420 TP Bonus
-  } -- 215 STR, 155 MND, 275 Attack, 191 Accuracy, 45 WSD, 7 PDL, 420 TP Bonus
+  } -- 209 STR, 149 MND, 275 Attack, 184 Accuracy, 50 WSD, 7 PDL, 420 TP Bonus
   sets.precast.WS['Savage Blade'].MaxTP = set_combine(sets.precast.WS['Savage Blade'], {
     ear2="Telos Earring",
   })
