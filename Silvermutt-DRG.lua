@@ -136,20 +136,20 @@ function init_gear_sets()
   ---------------------------------------- Precast Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
 
-  sets.precast.JA['Spirit Surge'] = {body="Ptero. Mail +3"}
-  sets.precast.JA['Call Wyvern'] = {body="Ptero. Mail +3"}
+  sets.precast.JA['Spirit Surge'] = {body="Pteroslaver Mail +3"}
+  sets.precast.JA['Call Wyvern'] = {body="Pteroslaver Mail +3"}
   sets.precast.JA['Ancient Circle'] = {legs="Vishap Brais +3"}
 
   sets.precast.JA['Spirit Link'] = {
     head="Vishap Armet +3",
-    hands="Pel. Vambraces +1",
-    feet="Ptero. Greaves +3",
+    hands="Peltast's Vambraces +1",
+    feet="Pteroslaver Greaves +3",
     ear1="Pratik Earring",
   }
 
   sets.precast.JA['Steady Wing'] = {
     legs="Vishap Brais +3",
-    feet="Ptero. Greaves +3",
+    feet="Pteroslaver Greaves +3",
     neck="Chanoix's Gorget",
     ear1="Lancer's Earring",
     ear2="Anastasi Earring",
@@ -158,15 +158,15 @@ function init_gear_sets()
 
   sets.precast.JA['Jump'] = {
     ammo="Aurgelmir Orb +1",
-    head="Flam. Zucchetto +2",
+    head="Flamma Zucchetto +2",
     body="Vishap Mail +3",
-    hands="Vis. Fng. Gaunt. +3",
-    legs="Ptero. Brais +3",
+    hands="Vishap Finger Gauntlets +3",
+    legs="Pteroslaver Brais +3",
     feet="Ostro Greaves",
     neck="Anu Torque",
     ear1="Sherida Earring",
     ear2="Telos Earring",
-    ring1={name="Chirich Ring +1", bag="wardrobe3"},
+    ring1="Chirich Ring +1",
     ring2="Niqmaddu Ring",
     back=gear.DRG_JMP_Cape,
     waist="Ioskeha Belt +1",
@@ -175,14 +175,14 @@ function init_gear_sets()
   sets.precast.JA['Spirit Jump'] = sets.precast.JA['Jump']
   sets.precast.JA['Soul Jump'] = set_combine(sets.precast.JA['Jump'], {
     body="Vishap Mail +3",
-    hands="Emi. Gauntlets +1",
+    hands="Emicho Gauntlets +1",
     legs=gear.Valo_STP_legs
   })
   sets.precast.JA['Super Jump'] = {}
 
   sets.precast.JA['Angon'] = {
     ammo="Angon",
-    hands="Ptero. Fin. G. +3"
+    hands="Pteroslaver Finger Gauntlets +3"
   }
 
   -- Fast cast sets for spells
@@ -191,12 +191,12 @@ function init_gear_sets()
     head="Carmine Mask +1", --14
     body="Sacro Breastplate", --10
     hands="Leyline Gloves", --8
-    legs="Aya. Cosciales +2", --6
+    legs="Ayanmo Cosciales +2", --6
     feet="Carmine Greaves +1", --8
     neck="Orunmila's Torque", --5
     ear1="Loquacious Earring", --2
-    ear2="Enchntr. Earring +1", --2
-    ring2="Weather. Ring +1", --6(4)
+    ear2="Enchanter's Earring +1", --2
+    ring2="Weatherspoon Ring +1", --6(4)
   }
 
 
@@ -208,9 +208,9 @@ function init_gear_sets()
     ammo="Knobkierrie",
     head=gear.Valo_WSD_head,
     body=gear.Valo_WSD_body,
-    hands="Ptero. Fin. G. +3",
+    hands="Pteroslaver Finger Gauntlets +3",
     legs="Vishap Brais +3",
-    feet="Sulev. Leggings +2",
+    feet="Sulevia's Leggings +2",
     neck="Fotia Gorget",
     ear1="Sherida Earring",
     ear2="Moonshade Earring",
@@ -223,7 +223,7 @@ function init_gear_sets()
   sets.precast.WS.Acc = set_combine(sets.precast.WS, {})
 
   sets.precast.WS["Camlann's Torment"] = set_combine(sets.precast.WS, {
-    neck="Dgn. Collar +1",
+    neck="Dragoon's Collar +1",
     ear2="Ishvara Earring",
     ring2="Epaminondas's Ring",
     waist="Sailfi Belt +1",
@@ -231,11 +231,11 @@ function init_gear_sets()
   sets.precast.WS["Camlann's Torment"].Acc = set_combine(sets.precast.WS["Camlann's Torment"], {})
 
   sets.precast.WS['Drakesbane'] = set_combine(sets.precast.WS, {
-    head="Flam. Zucchetto +2",
-    body="Hjarrandi Breast.",
+    head="Flamma Zucchetto +2",
+    body="Hjarrandi Breastplate",
     hands="Flamma Manopolas +2",
     legs="Zoar Subligar +1",
-    neck="Dgn. Collar +1",
+    neck="Dragoon's Collar +1",
     ear2="Brutal Earring",
     ring1="Begrudging Ring",
     back=gear.DRG_WS4_Cape,
@@ -247,7 +247,7 @@ function init_gear_sets()
 
   sets.precast.WS['Geirskogul'] = set_combine(sets.precast.WS, {
     head="Lustratio Cap +1",
-    legs="Lustr. Subligar +1",
+    legs="Lustratio Subligar +1",
     ear2="Mache Earring +1",
     ring2="Epaminondas's Ring",
     back=gear.DRG_WS3_Cape,
@@ -255,11 +255,11 @@ function init_gear_sets()
   sets.precast.WS['Geirskogul'].Acc = set_combine(sets.precast.WS['Geirskogul'], {})
 
   sets.precast.WS['Impulse Drive'] = set_combine(sets.precast.WS["Camlann's Torment"], {
-    head="Flam. Zucchetto +2",
-    body="Hjarrandi Breast.",
+    head="Flamma Zucchetto +2",
+    body="Hjarrandi Breastplate",
     hands="Flamma Manopolas +2",
     legs="Pelt. Cuissots +1",
-    neck="Dgn. Collar +1",
+    neck="Dragoon's Collar +1",
     ear2="Moonshade Earring",
     ring1="Begrudging Ring",
     ring2="Epaminondas's Ring",
@@ -274,7 +274,7 @@ function init_gear_sets()
   sets.precast.WS['Impulse Drive'].HighTP = set_combine(sets.precast.WS['Impulse Drive'], {
     head=gear.Valo_WSD_head,
     body=gear.Valo_WSD_body,
-    hands="Ptero. Fin. G. +3",
+    hands="Pteroslaver Finger Gauntlets +3",
     legs="Vishap Brais +3",
     back=gear.DRG_WS2_Cape,
     ear2="Ishvara Earring",
@@ -285,55 +285,55 @@ function init_gear_sets()
   sets.precast.WS['Sonic Thrust'].Acc = sets.precast.WS["Camlann's Torment"].Acc
 
   sets.precast.WS['Stardiver'] = set_combine(sets.precast.WS, {
-      head="Flam. Zucchetto +2",
-      body=gear.Valo_TP_body,
-      hands="Sulev. Gauntlets +2",
-      neck="Fotia Gorget",
-      legs="Sulev. Cuisses +2",
-      feet="Flam. Gambieras +2",
-      back=gear.DRG_WS1_Cape,
-      })
+    head="Flamma Zucchetto +2",
+    body=gear.Valo_TP_body,
+    hands="Sulevia's Gauntlets +2",
+    neck="Fotia Gorget",
+    legs="Sulevia's Cuisses +2",
+    feet="Flamma Gambieras +2",
+    back=gear.DRG_WS1_Cape,
+  })
   sets.precast.WS['Stardiver'].Acc = set_combine(sets.precast.WS['Stardiver'], {
-      head="Ptero. Armet +3",
-      feet="Ptero. Greaves +3",
-      })
+    head="Pteroslaver Armet +3",
+    feet="Pteroslaver Greaves +3",
+  })
 
   sets.precast.WS['Raiden Thrust'] = set_combine(sets.precast.WS, {
-      ammo="Pemphredo Tathlum",
-      body="Carm. Sc. Mail +1",
-      hands="Carmine Fin. Ga. +1",
-      ear1="Crematio Earring",
-      ear2="Friomisi Earring",
-      ring1="Shiva Ring +1",
-      back="Argocham. Mantle",
-      })
+    ammo="Pemphredo Tathlum",
+    body="Carm. Sc. Mail +1",
+    hands="Carmine Fin. Ga. +1",
+    ear1="Crematio Earring",
+    ear2="Friomisi Earring",
+    ring1="Shiva Ring +1",
+    back="Argochampsa Mantle",
+  })
 
   sets.precast.WS['Thunder Thrust'] = sets.precast.WS['Raiden Thrust']
 
   sets.precast.WS['Leg Sweep'] = set_combine(sets.precast.WS, {
-      ammo="Pemphredo Tathlum",
-      head="Flam. Zucchetto +2",
-      body="Flamma Korazin +2",
-      hands="Flam. Manopolas +2",
-      legs="Flamma Dirs +2",
-      feet="Flam. Gambieras +2",
-      ear1="Digni. Earring",
-      ring1="Metamor. Ring +1",
-      ring2="Weather. Ring +1",
-      })
+    ammo="Pemphredo Tathlum",
+    head="Flamma Zucchetto +2",
+    body="Flamma Korazin +2",
+    hands="Flam. Manopolas +2",
+    legs="Flamma Dirs +2",
+    feet="Flamma Gambieras +2",
+    ear1="Digni. Earring",
+    ring1="Metamor. Ring +1",
+    ring2="Weatherspoon Ring +1",
+  })
 
-      
+
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Midcast Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
 
   sets.midcast.HealingBreath = {
-    head="Ptero. Armet +3",
+    head="Pteroslaver Armet +3",
     body=gear.Acro_Pet_body,
     hands=gear.Acro_Pet_hands,
     legs="Vishap Brais +3",
-    feet="Ptero. Greaves +3",
-    neck="Dgn. Collar +1",
+    feet="Pteroslaver Greaves +3",
+    neck="Dragoon's Collar +1",
     ear1="Lancer's Earring",
     ear2="Anastasi Earring",
     back="Updraft Mantle",
@@ -341,7 +341,7 @@ function init_gear_sets()
   }
 
   sets.midcast.ElementalBreath = {
-    head="Ptero. Armet +3",
+    head="Pteroslaver Armet +3",
     body=gear.Acro_Pet_body,
     hands=gear.Acro_Pet_hands,
     neck="Lancer's Torque",
@@ -360,9 +360,9 @@ function init_gear_sets()
     ammo="Staunch Tathlum +1", --3/3
     head="Hjarrandi Helm", --10/10
     body="Sacro Breastplate",
-    hands="Sulev. Gauntlets +2", --5/5
+    hands="Sulevia's Gauntlets +2", --5/5
     legs="Carmine Cuisses +1",
-    feet="Ptero. Greaves +3",
+    feet="Pteroslaver Greaves +3",
     neck="Bathy Choker +1",
     ear1="Eabani Earring",
     ear2="Sanare Earring",
@@ -374,10 +374,10 @@ function init_gear_sets()
 
   sets.idle.DT = set_combine(sets.idle, {
     ammo="Staunch Tathlum +1", --3/3
-    body="Hjarrandi Breast.", --12/12
+    body="Hjarrandi Breastplate", --12/12
     head="Hjarrandi Helm", --10/10
     hands="Flam. Manopolas +2",
-    feet="Ptero. Greaves +3",
+    feet="Pteroslaver Greaves +3",
     neck="Loricate Torque +1", --6/6
     ear1="Sanare Earring",
     ear2="Anastasi Earring",
@@ -388,9 +388,9 @@ function init_gear_sets()
 
   sets.idle.Pet = set_combine(sets.idle, {
     body="Vishap Mail +3",
-    hands="Ptero. Fin. G. +3",
-    feet="Ptero. Greaves +3",
-    neck="Dgn. Collar +1",
+    hands="Pteroslaver Finger Gauntlets +3",
+    feet="Pteroslaver Greaves +3",
+    neck="Dragoon's Collar +1",
     ear1="Enmerkar Earring",
     ear2="Anastasi Earring",
     waist="Isa Belt",
@@ -399,8 +399,8 @@ function init_gear_sets()
   sets.idle.DT.Pet = set_combine(sets.idle.Pet, {
     head="Hjarrandi Helm", --10/10
     body="Emicho Haubert +1",
-    legs="Ptero. Brais +3",
-    neck="Dgn. Collar +1",
+    legs="Pteroslaver Brais +3",
+    neck="Dragoon's Collar +1",
     ring1="Moonlight Ring", --5/5
     ring2="Defending Ring", --10/10
     back="Moonlight Cape", --6/6
@@ -408,10 +408,10 @@ function init_gear_sets()
 
   sets.idle.Town = set_combine(sets.idle, {
     ammo="Aurgelmir Orb +1",
-    head="Ptero. Armet +3",
-    hands="Ptero. Fin. G. +3",
-    feet="Ptero. Greaves +3",
-    neck="Dgn. Collar +1",
+    head="Pteroslaver Armet +3",
+    hands="Pteroslaver Finger Gauntlets +3",
+    feet="Pteroslaver Greaves +3",
+    neck="Dragoon's Collar +1",
     ear1="Sherida Earring",
     ear2="Telos Earring",
     back=gear.DRG_TP_Cape,
@@ -440,11 +440,11 @@ function init_gear_sets()
 
   sets.engaged = {
     ammo="Aurgelmir Orb +1",
-    head="Flam. Zucchetto +2",
+    head="Flamma Zucchetto +2",
     body=gear.Valo_TP_body,
-    hands="Sulev. Gauntlets +2",
+    hands="Sulevia's Gauntlets +2",
     legs=gear.Valo_TP_legs,
-    feet="Flam. Gambieras +2",
+    feet="Flamma Gambieras +2",
     neck="Anu Torque",
     ear1="Sherida Earring",
     ear2="Brutal Earring",
@@ -470,7 +470,7 @@ function init_gear_sets()
   sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
     ammo="Amar Cluster",
     body="Emicho Haubert +1",
-    hands="Emi. Gauntlets +1",
+    hands="Emicho Gauntlets +1",
     legs=gear.Valo_STP_legs,
     ring1="Regal Ring",
   })
@@ -478,7 +478,7 @@ function init_gear_sets()
   sets.engaged.MaxAcc = set_combine(sets.engaged.HighAcc, {
     body="Vishap Mail +3",
     head="Vishap Armet +3",
-    legs="Ptero. Brais +3",
+    legs="Pteroslaver Brais +3",
     feet="Vishap Greaves +3",
     ear2="Mache Earring +1",
     ring1="Flamma Ring",
@@ -942,8 +942,4 @@ end)
 function select_default_macro_book()
   -- Default macro set/book: (set, book)
   set_macro_page(1, 1)
-end
-
-function set_lockstyle()
-    send_command('wait 2; input /lockstyleset ' .. lockstyleset)
 end
