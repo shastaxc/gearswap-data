@@ -564,6 +564,7 @@ function init_gear_sets()
 
   sets.latent_regain = {
     -- head="Valorous Mask",
+    -- head="Wakido Kabuto +3",
   }
   sets.latent_regen = {
     body="Hizamaru Haramaki +2",
