@@ -128,6 +128,11 @@ gear.Gende_CureFC_hands = {}  --  5 Cure Cast Time-, 4 PDT
 ----------------------------------------------------------------------
 
 -- Acro
+gear.Acro_STP_hands = {} -- STR/DEX+7, Att/Acc+20, STP+6
+gear.Acro_Breath_body = {} -- Pet: Breath+8, Pet Macc+25
+gear.Acro_Breath_hands = {} -- Pet: Breath+8, Pet Macc+25
+gear.Acro_Breath_legs = {} -- Pet: Breath+8, Pet Macc+25
+gear.Acro_Breath_feet = {} -- Pet: Breath+8, Pet Macc+25
 
 -- Helios
 
@@ -189,6 +194,7 @@ gear.Samnuha_legs = { name="Samnuha Tights", augments={'STR+10','DEX+10','"Dbl.A
 
 -- gear.COR_Adoulin_Cape = {}
 gear.DNC_Adoulin_Cape = { name="Toetapper Mantle", augments={'"Store TP"+1','"Dual Wield"+2','"Rev. Flourish"+28',}}
+-- gear.DRG_Adoulin_Cape = {} -- Pet: Breath+10
 gear.GEO_Adoulin_Cape = { name="Lifestream Cape", augments={'Geomancy Skill +10','Indi. eff. dur. +17','Pet: Damage taken -5%',}}
 gear.RUN_Adoulin_Cape = { name="Evasionist's Cape", augments={'Enmity+4','"Embolden"+15','"Dbl.Atk."+4',}}
 
@@ -224,6 +230,12 @@ gear.DNC_WS1_Cape = { name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 At
 gear.DNC_WS2_Cape = gear.DNC_TP_DA_Cape
 -- gear.DNC_WS3_Cape = {name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10',}}
 -- gear.DNC_WS4_Cape = {name="Senuna's Mantle", augments={'AGI+20','Accuracy+20 Attack+20','AGI+10','"Dbl.Atk."+10',}}
+
+-- gear.DRG_TP_Cape = {} -- DEX+20, Att/Acc+20, Acc+10, DA+10, PDT-10
+-- gear.DRG_Jump_Cape = {} -- STR+30, Att/Acc+20, STP+10, PDT-10
+-- gear.DRG_WS1_Cape = {} -- STR+30, Att/Acc+20, DA+10, PDT-10
+-- gear.DRG_WS2_Cape = {} -- STR+30, Att/Acc+20, WSD+10, PDT-10
+-- gear.DRG_WS3_Cape = {} -- STR+30, Att/Acc+20, Crit+10, PDT-10
 
 -- gear.GEO_Nuke_Cape = {} -- INT, MAB
 gear.GEO_Idle_Cape = { name="Nantosuelta's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Pet: "Regen"+10','Pet: "Regen"+5',}}
