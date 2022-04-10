@@ -3,17 +3,16 @@ function user_job_setup()
 	-- Options: Override default values
     state.OffenseMode:options('Normal','SomeAcc','Acc','FullAcc','Fodder')
     state.WeaponskillMode:options('Match','Normal','SomeAcc','Acc','FullAcc','Fodder')
-    state.HybridMode:options('Normal')
+    state.HybridMode:options('Normal','PDT')
     state.PhysicalDefenseMode:options('PDT', 'PDTReraise')
     state.MagicalDefenseMode:options('MDT', 'MDTReraise')
 	state.ResistDefenseMode:options('MEVA')
 	state.IdleMode:options('Normal', 'PDT','Refresh','Reraise')
     state.ExtraMeleeMode = M{['description']='Extra Melee Mode','None'}
-	state.Weapons:options('Naegling','None')
+	state.Weapons:options('Trishula','Naegling','Shining','None','Staff')
 	state.Passive = M{['description'] = 'Passive Mode','None','MP','Twilight'}
 
-    select_default_macro_book()
-	
+    
 	-- Additional local binds
 	send_command('bind ^` input /ja "Hasso" <me>')
 	send_command('bind !` input /ja "Seigan" <me>')
@@ -30,26 +29,67 @@ function init_gear_sets()
 	
 	-- Precast Sets
 	-- Precast sets to enhance JAs
-	sets.precast.JA.Angon = {ammo="Angon"} --hands="Ptero. Fin. G. +1"
-	sets.precast.JA.Jump = {ammo="Aurgelmir Orb +1",
-		head="Flam. Zucchetto +2",neck="Ganesha's Mala",ear1="Brutal Earring",ear2="Sherida Earring",
-		body=gear.valorous_wsd_body,hands=gear.valorous_acc_hands,ring1="Petrov Ring",ring2="Niqmaddu Ring",
-		back="Brigantia's Mantle",waist="Windbuffet Belt +1",legs="Sulev. Cuisses +2",feet="Flam. Gambieras +2"}
-	sets.precast.JA['Ancient Circle'] = {} --legs="Vishap Brais"
-	sets.precast.JA['High Jump'] = {ammo="Aurgelmir Orb +1",
-		head="Flam. Zucchetto +2",neck="Ganesha's Mala",ear1="Brutal Earring",ear2="Sherida Earring",
-		body=gear.valorous_wsd_body,hands=gear.valorous_acc_hands,ring1="Petrov Ring",ring2="Niqmaddu Ring",
-		back="Brigantia's Mantle",waist="Windbuffet Belt +1",legs="Sulev. Cuisses +2",feet="Flam. Gambieras +2"}
-	sets.precast.JA['Soul Jump'] = {ammo="Aurgelmir Orb +1",
-		head="Flam. Zucchetto +2",neck="Ganesha's Mala",ear1="Brutal Earring",ear2="Sherida Earring",
-		body=gear.valorous_wsd_body,hands=gear.valorous_acc_hands,ring1="Petrov Ring",ring2="Niqmaddu Ring",
-		back="Brigantia's Mantle",waist="Windbuffet Belt +1",legs="Sulev. Cuisses +2",feet="Flam. Gambieras +2"}
-	sets.precast.JA['Spirit Jump'] = {ammo="Aurgelmir Orb +1",
-		head="Flam. Zucchetto +2",neck="Ganesha's Mala",ear1="Brutal Earring",ear2="Sherida Earring",
-		body=gear.valorous_wsd_body,hands=gear.valorous_acc_hands,ring1="Petrov Ring",ring2="Niqmaddu Ring",
-		back="Brigantia's Mantle",waist="Windbuffet Belt +1",legs="Sulev. Cuisses +2",feet="Flam. Gambieras +2"}
+	sets.precast.JA.Angon = {ammo="Angon",hands="Ptero. Fin. G. +1"} --hands="Ptero. Fin. G. +1"
+	
+	sets.precast.JA.Jump = {ammo={ name="Coiste Bodhar", augments={'Path: A',}},
+    head="Flam. Zucchetto +2",
+    body="Hjarrandi Breast.",
+    hands="Crusher Gauntlets",
+    legs="Sulev. Cuisses +2",
+    feet="Flam. Gambieras +2",
+    neck={ name="Vim Torque +1", augments={'Path: A',}},
+    waist="Ioskeha Belt +1",
+    left_ear="Brutal Earring",
+    right_ear="Sherida Earring",
+    left_ring="Petrov Ring",
+    right_ring="Niqmaddu Ring",
+    back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%',}},}
+		
+	sets.precast.JA['Ancient Circle'] = {legs="Vishap Brais +1"} --legs="Vishap Brais"
+	sets.precast.JA['High Jump'] = {ammo={ name="Coiste Bodhar", augments={'Path: A',}},
+    head="Flam. Zucchetto +2",
+    body="Hjarrandi Breast.",
+    hands="Crusher Gauntlets",
+    legs="Sulev. Cuisses +2",
+    feet="Flam. Gambieras +2",
+    neck={ name="Vim Torque +1", augments={'Path: A',}},
+    waist="Ioskeha Belt +1",
+    left_ear="Brutal Earring",
+    right_ear="Sherida Earring",
+    left_ring="Petrov Ring",
+    right_ring="Niqmaddu Ring",
+    back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%',}},}
+	
+	sets.precast.JA['Soul Jump'] = {ammo={ name="Coiste Bodhar", augments={'Path: A',}},
+    head="Flam. Zucchetto +2",
+    body="Hjarrandi Breast.",
+    hands="Crusher Gauntlets",
+    legs="Sulev. Cuisses +2",
+    feet="Flam. Gambieras +2",
+    neck={ name="Vim Torque +1", augments={'Path: A',}},
+    waist="Ioskeha Belt +1",
+    left_ear="Brutal Earring",
+    right_ear="Sherida Earring",
+    left_ring="Petrov Ring",
+    right_ring="Niqmaddu Ring",
+    back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%',}},}
+	
+	sets.precast.JA['Spirit Jump'] = {ammo={ name="Coiste Bodhar", augments={'Path: A',}},
+    head="Flam. Zucchetto +2",
+    body="Hjarrandi Breast.",
+    hands="Crusher Gauntlets",
+    legs="Sulev. Cuisses +2",
+    feet="Flam. Gambieras +2",
+    neck={ name="Vim Torque +1", augments={'Path: A',}},
+    waist="Ioskeha Belt +1",
+    left_ear="Brutal Earring",
+    right_ear="Sherida Earring",
+    left_ring="Petrov Ring",
+    right_ring="Niqmaddu Ring",
+    back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%',}},}
+	
 	sets.precast.JA['Super Jump'] = {}
-	sets.precast.JA['Spirit Link'] = {head="Vishap Armet +1"} --head="Vishap Armet",hands="Lnc. Vmbrc. +2"
+	sets.precast.JA['Spirit Link'] = {head="Vishap Armet +1",feet="Pteroslaver Greaves +1"} --head="Vishap Armet",hands="Lnc. Vmbrc. +2"
 	sets.precast.JA['Call Wyvern'] = {} --body="Ptero. Mail +1"
 	sets.precast.JA['Deep Breathing'] = {} --hands="Ptero. Armet +1"
 	sets.precast.JA['Spirit Surge'] = {} --body="Ptero. Mail +1"
@@ -115,18 +155,19 @@ function init_gear_sets()
 	
 	-- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
 	sets.precast.WS['Stardiver'] = {
-	ammo={ name="Coiste Bodhar", augments={'Path: A',}},
+	ammo="Crepuscular Pebble",
     head="Flam. Zucchetto +2",
     body={ name="Gleti's Cuirass", augments={'Path: A',}},
     hands={ name="Gleti's Gauntlets", augments={'Path: A',}},
     legs={ name="Gleti's Breeches", augments={'Path: A',}},
     feet="Flam. Gambieras +2",
-    neck={ name="Dgn. Collar +1", augments={'Path: A',}},
+    neck={ name="Dgn. Collar +2", augments={'Path: A',}},
     waist="Fotia Belt",
     left_ear="Sherida Earring",
-    right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
+    right_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
     left_ring="Niqmaddu Ring",
-    right_ring="Regal Ring",
+    right_ring="Sroda Ring",
+    back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Damage taken-5%',}},
 	}
 	
 	
@@ -140,33 +181,51 @@ function init_gear_sets()
 	sets.precast.WS['Drakesbane'].Fodder = set_combine(sets.precast.WS.Fodder, {})
 
     sets.precast.WS['Impulse Drive'] = {
-	ammo="Knobkierrie",
+	 ammo="Knobkierrie",
     head={ name="Gleti's Mask", augments={'Path: A',}},
-    body={ name="Gleti's Cuirass", augments={'Path: A',}},
-    hands={ name="Gleti's Gauntlets", augments={'Path: A',}},
-    legs={ name="Gleti's Breeches", augments={'Path: A',}},
-    feet={ name="Gleti's Boots", augments={'Path: A',}},
-    neck={ name="Dgn. Collar +1", augments={'Path: A',}},
+    body={ name="Nyame Mail", augments={'Path: B',}},
+    hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+    legs={ name="Nyame Flanchard", augments={'Path: B',}},
+    feet={ name="Nyame Sollerets", augments={'Path: B',}},
+    neck={ name="Dgn. Collar +2", augments={'Path: A',}},
     waist={ name="Sailfi Belt +1", augments={'Path: A',}},
     left_ear="Thrud Earring",
-    right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
-    left_ring="Beithir Ring",
+    right_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
+    left_ring="Sroda Ring",
     right_ring="Epaminondas's Ring",
+    back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Damage taken-5%',}},
 	}
 	
 	sets.precast.WS['Savage Blade'] = {
-	ammo="Knobkierrie",
+	 ammo="Knobkierrie",
     head={ name="Gleti's Mask", augments={'Path: A',}},
     body={ name="Gleti's Cuirass", augments={'Path: A',}},
-    hands={ name="Gleti's Gauntlets", augments={'Path: A',}},
-    legs={ name="Gleti's Breeches", augments={'Path: A',}},
-    feet={ name="Gleti's Boots", augments={'Path: A',}},
-    neck={ name="Dgn. Collar +1", augments={'Path: A',}},
+    hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+    legs={ name="Nyame Flanchard", augments={'Path: B',}},
+    feet={ name="Nyame Sollerets", augments={'Path: B',}},
+    neck={ name="Dgn. Collar +2", augments={'Path: A',}},
     waist={ name="Sailfi Belt +1", augments={'Path: A',}},
     left_ear="Thrud Earring",
-    right_ear={ name="Moonshade Earring", augments={'Attack+4','TP Bonus +250',}},
-    left_ring="Beithir Ring",
+    right_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
+    left_ring="Sroda Ring",
     right_ring="Epaminondas's Ring",
+    back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Damage taken-5%',}},
+	}
+	
+	sets.precast.WS['Cataclysm'] = {
+ ammo="Pemphredo Tathlum",
+    head="Pixie Hairpin +1",
+    body={ name="Nyame Mail", augments={'Path: B',}},
+    hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+    legs={ name="Nyame Flanchard", augments={'Path: B',}},
+    feet={ name="Nyame Sollerets", augments={'Path: B',}},
+    neck={ name="Dgn. Collar +2", augments={'Path: A',}},
+    waist="Orpheus's Sash",
+    left_ear="Friomisi Earring",
+    right_ear={ name="Moonshade Earring", augments={'"Mag.Atk.Bns."+4','TP Bonus +250',}},
+    left_ring="Archon Ring",
+    right_ring="Epaminondas's Ring",
+    back={ name="Brigantia's Mantle", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Weapon skill damage +10%',}},
 	}
 	
 	-- Sets to return to when not performing an action.
@@ -178,16 +237,17 @@ function init_gear_sets()
 	sets.idle = {
 	ammo={ name="Coiste Bodhar", augments={'Path: A',}},
     head={ name="Gleti's Mask", augments={'Path: A',}},
-    body={ name="Gleti's Cuirass", augments={'Path: A',}},
+    body={ name="Nyame Mail", augments={'Path: B',}},
     hands={ name="Gleti's Gauntlets", augments={'Path: A',}},
     legs={ name="Carmine Cuisses +1", augments={'Accuracy+20','Attack+12','"Dual Wield"+6',}},
     feet={ name="Gleti's Boots", augments={'Path: A',}},
-    neck={ name="Dgn. Collar +1", augments={'Path: A',}},
-    waist="Flume Belt",
+    neck={ name="Dgn. Collar +2", augments={'Path: A',}},
+    waist="Carrier's Sash",
     left_ear="Eabani Earring",
     right_ear="Ethereal Earring",
     left_ring="Defending Ring",
-    right_ring="Moonbeam Ring",
+    right_ring="Chirich Ring +1",
+    back="Moonlight Cape",
 	}
 		
 	sets.idle.Refresh = {ammo="Staunch Tathlum +1",
@@ -227,11 +287,17 @@ function init_gear_sets()
     -- Extra defense sets.  Apply these on top of melee or defense sets.
     sets.passive.MP = {ear2="Ethereal Earring",waist="Flume Belt +1"}
     sets.passive.Twilight = {head="Twilight Helm", body="Twilight Mail"}
-	sets.TreasureHunter = set_combine(sets.TreasureHunter, {})
+	sets.TreasureHunter = set_combine(sets.TreasureHunter, {
+	head="Wh. Rarab Cap +1",
+	legs="Volte Hose",
+    feet="Volte Spats",
+	waist="Chaac Belt",})
 	
 	-- Weapons sets
 	sets.weapons.Trishula = {main="Trishula",sub="Utu Grip"}
+	sets.weapons.Shining = {main="Shining One",sub="Utu Grip"}
 	sets.weapons.Naegling = {main="Naegling",sub=""}
+	sets.weapons.Staff = {main="Reikikon",sub="Alber Strap",}
 
 	-- Swap to these on Moonshade using WS if at 3000 TP
 	sets.MaxTP = {ear1="Lugra Earring +1",ear2="Sherida Earring",}
@@ -251,18 +317,19 @@ function init_gear_sets()
 	-- Normal melee group
 
 	sets.engaged = {
-	ammo={ name="Coiste Bodhar", augments={'Path: A',}},
-    head="Flam. Zucchetto +2",
+	 ammo={ name="Coiste Bodhar", augments={'Path: A',}},
+    head={ name="Nyame Helm", augments={'Path: B',}},
     body="Hjarrandi Breast.",
-    hands="Sulev. Gauntlets +2",
-    legs="Sulev. Cuisses +2",
-    feet="Flam. Gambieras +2",
-    neck={ name="Vim Torque +1", augments={'Path: A',}},
+    hands={ name="Gleti's Gauntlets", augments={'Path: A',}},
+    legs={ name="Nyame Flanchard", augments={'Path: B',}},
+    feet={ name="Nyame Sollerets", augments={'Path: B',}},
+    neck={ name="Dgn. Collar +2", augments={'Path: A',}},
     waist="Ioskeha Belt +1",
     left_ear="Brutal Earring",
     right_ear="Sherida Earring",
-    left_ring="Niqmaddu Ring",
-    right_ring="Hetairoi Ring",
+    left_ring={name="Moonlight Ring", bag="wardrobe 1"},
+    right_ring={name="Moonlight Ring", bag="wardrobe2"},
+    back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%',}},
 	}
     sets.engaged.SomeAcc = {ammo="Aurgelmir Orb +1",
 		head="Flam. Zucchetto +2",neck="Shulmanu Collar",ear1="Brutal Earring",ear2="Sherida Earring",
@@ -287,7 +354,21 @@ function init_gear_sets()
     sets.engaged.AM.FullAcc = {}
     sets.engaged.AM.Fodder = {}
 	
-    sets.engaged.PDT = {}
+    sets.engaged.PDT = {
+	ammo={ name="Coiste Bodhar", augments={'Path: A',}},
+    head={ name="Nyame Helm", augments={'Path: B',}},
+    body={ name="Gleti's Cuirass", augments={'Path: A',}},
+    hands={ name="Nyame Gauntlets", augments={'Path: B',}},
+    legs={ name="Nyame Flanchard", augments={'Path: B',}},
+    feet={ name="Nyame Sollerets", augments={'Path: B',}},
+   neck={ name="Dgn. Collar +2", augments={'Path: A',}},
+    waist="Ioskeha Belt +1",
+    left_ear="Telos Earring",
+    right_ear="Sherida Earring",
+    left_ring="Defending Ring",
+    right_ring="Moonlight Ring",
+    back={ name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','"Dbl.Atk."+10','Damage taken-5%',}},
+	}
     sets.engaged.SomeAcc.PDT = {}
 	sets.engaged.Acc.PDT = {}
     sets.engaged.FullAcc.PDT = {}
@@ -328,16 +409,55 @@ function init_gear_sets()
 
 end
 
--- Select default macro book on initial load or subjob change.
-function select_default_macro_book()
-    -- Default macro set/book
-    if player.sub_job == 'WAR' then
-        set_macro_page(5, 13)
-    elseif player.sub_job == 'SAM' then
-        set_macro_page(3, 13)
-    elseif player.sub_job == 'BLU' then
-        set_macro_page(2, 13)
-    else
-        set_macro_page(5, 13)
-    end
+
+
+
+function user_job_precast(spell, spellMap, eventArgs)
+  -- Any non-silibs modifications should go in user_job_precast function
+  silibs.precast_hook(spell, nil, spellMap, eventArgs)
+end
+
+function extra_user_post_precast(spell, spellMap, eventArgs)
+  -- Any non-silibs modifications should go in user_job_post_precast function
+  silibs.post_precast_hook(spell, nil, spellMap, eventArgs)
+end
+
+function user_job_midcast(spell, spellMap, eventArgs)
+  -- Any non-silibs modifications should go in user_job_midcast function
+  silibs.midcast_hook(spell, nil, spellMap, eventArgs)
+end
+
+function extra_user_post_midcast(spell, spellMap, eventArgs)
+  -- Any non-silibs modifications should go in user_job_post_midcast function
+  silibs.post_midcast_hook(spell, nil, spellMap, eventArgs)
+end
+
+function extra_user_job_aftercast(spell, action, spellMap, eventArgs)
+  -- Any non-silibs modifications should go in user_job_aftercast function
+  silibs.aftercast_hook(spell, action, spellMap, eventArgs)
+end
+
+function extra_user_job_post_aftercast(spell, action, spellMap, eventArgs)
+  -- Any non-silibs modifications should go in user_job_post_aftercast function
+  silibs.post_aftercast_hook(spell, action, spellMap, eventArgs)
+end
+
+function user_job_customize_idle_set(idleSet)
+  -- Any non-silibs modifications should go in user_customize_idle_set function
+  return silibs.customize_idle_set(idleSet)
+end
+
+function user_job_customize_melee_set(meleeSet)
+  -- Any non-silibs modifications should go in user_customize_melee_set function
+  return silibs.customize_melee_set(meleeSet)
+end
+
+function user_job_customize_defense_set(defenseSet)
+  -- Any non-silibs modifications should go in user_customize_defense_set function
+  return silibs.customize_defense_set(defenseSet)
+end
+
+function user_self_command(cmdParams, eventArgs)
+  -- Any non-silibs modifications should go in user_job_self_command function
+  silibs.self_command(cmdParams, eventArgs)
 end
