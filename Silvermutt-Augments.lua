@@ -231,10 +231,10 @@ gear.DNC_WS2_Cape = gear.DNC_TP_DA_Cape
 -- gear.DNC_WS3_Cape = {name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10',}}
 -- gear.DNC_WS4_Cape = {name="Senuna's Mantle", augments={'AGI+20','Accuracy+20 Attack+20','AGI+10','"Dbl.Atk."+10',}}
 
--- gear.DRG_TP_Cape = {} -- DEX+20, Att/Acc+20, Acc+10, DA+10, PDT-10
--- gear.DRG_STP_Cape = {} -- STR+30, Att/Acc+20, STP+10, PDT-10
+gear.DRG_TP_Cape = { name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
+gear.DRG_STP_Cape = { name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Store TP"+10','Phys. dmg. taken-10%',}}
 -- gear.DRG_WS1_Cape = {} -- STR+30, Att/Acc+20, DA+10, PDT-10
--- gear.DRG_WS2_Cape = {} -- STR+30, Att/Acc+20, WSD+10, PDT-10
+gear.DRG_WS2_Cape = { name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
 -- gear.DRG_WS3_Cape = {} -- STR+30, Att/Acc+20, Crit+10, PDT-10
 
 -- gear.GEO_Nuke_Cape = {} -- INT, MAB
