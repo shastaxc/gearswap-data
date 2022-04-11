@@ -375,8 +375,8 @@ function init_gear_sets()
     head="Gleti's Mask",
     hands="Gleti's Gauntlets",
     legs="Gleti's Breeches",
+    feet="Gleti's Boots",
     ring1="Epaminondas's Ring",
-    -- feet="Gleti's Boots",
   })
   sets.precast.WS["Impulse Drive"].AttCappedMaxTP = set_combine(sets.precast.WS["Impulse Drive"].AttCapped, {
     ear2="Ishvara Earring",
@@ -400,8 +400,8 @@ function init_gear_sets()
   sets.precast.WS["Geirskogul"].AttCapped = set_combine(sets.precast.WS["Geirskogul"], {
     head="Gleti's Mask",
     body="Gleti's Cuirass",
+    feet="Gleti's Boots",
     ring2="Epaminondas's Ring",
-    -- feet="Gleti's Boots",
     -- neck="Dragoon's Collar +2",
   })
   sets.precast.WS["Geirskogul"].AttCappedMaxTP = set_combine(sets.precast.WS["Geirskogul"].AttCapped, {})
@@ -409,6 +409,7 @@ function init_gear_sets()
   sets.precast.WS["Drakesbane"] = {
     ammo="Knobkierrie",
     hands="Gleti's Gauntlets",
+    feet="Gleti's Boots",
     ear1="Thrud Earring",
     ear2="Sherida Earring",
     ring1="Regal Ring",
@@ -417,7 +418,6 @@ function init_gear_sets()
     -- head="Blistering Sallet +1",
     -- body="Hjarrandi Breastplate",
     -- legs="Peltast's Cuissots +1",
-    -- feet="Gleti's Boots",
     -- back=gear.DRG_WS3_Cape,
   }
   sets.precast.WS["Drakesbane"].MaxTP = set_combine(sets.precast.WS["Drakesbane"], {})
@@ -541,8 +541,8 @@ function init_gear_sets()
     body="Gleti's Cuirass",     --  3
     hands="Gleti's Gauntlets",  --  2
     legs="Gleti's Breeches",    --  3
+    feet="Gleti's Boots"     --  2
     -- head="Valorous Mask",    --  3
-    -- feet="Gleti's Boots"     --  2
   }
   sets.latent_regen = {
     neck="Bathy Choker +1",         --  3 {__}
@@ -912,14 +912,6 @@ function customize_melee_set(meleeSet)
   if state.CP.current == 'on' then
     meleeSet = set_combine(meleeSet, sets.CP)
   end
-  if state.EnmityMode.current == 'Low' then
-    equip(sets.Special.LowEnmity)
-  end
-
-  -- Override sets to ensure counterstance feet are equipped if Counterstance is up
-  if state.Buff['Counterstance'] then
-    meleeSet = set_combine(meleeSet, sets.Special.Counterstance)
-  end
 
   -- If slot is locked to use no-swap gear, keep it equipped
   if locked_neck then meleeSet = set_combine(meleeSet, { neck=player.equipment.neck }) end
@@ -1169,5 +1161,5 @@ end)
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
   -- Default macro set/book: (set, book)
-  set_macro_page(1, 1)
+  set_macro_page(1, 13)
 end
