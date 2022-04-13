@@ -97,7 +97,7 @@ function job_setup()
   state.AttCapped = M(true, "Attack Capped")
   state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger',
       'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
-  state.WeaponSet = M{['description']='Weapon Set', 'WhiteGlass', 'Normal', 'Naegling', 'H2H', 'Staff', 'Cleaving'}
+  state.WeaponSet = M{['description']='Weapon Set', 'WhiteGlass', 'Normal', 'Naegling', 'NaeglingAcc', 'H2H', 'Staff', 'Cleaving'}
   state.Runes = M{['description']='Runes', 'Ignis', 'Gelus', 'Flabra', 'Tellus', 'Sulpor', 'Unda', 'Lux', 'Tenebrae'}
 
   send_command('bind !s gs c faceaway')
@@ -1216,6 +1216,10 @@ function init_gear_sets()
   sets.WeaponSet['Naegling'] = {
     main="Naegling",
     sub="Centovente",
+  }
+  sets.WeaponSet['NaeglingAcc'] = {
+    main="Naegling",
+    sub="Ternion Dagger +1",
   }
   sets.WeaponSet['H2H'] = {
     main="Kaja Knuckles",
