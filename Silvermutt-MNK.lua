@@ -597,7 +597,7 @@ function init_gear_sets()
     ring1="Shiva Ring +1",          -- __,  3, __, __
     back="Argochampsa Mantle",      -- __, 12, __, __
     waist="Skrymir Cord", --5
-    -- back=gear.MNK_MAB_Cape, --10
+    -- back=gear.DRG_MAB_Cape, --10
     -- waist="Skrymir Cord +1",     -- __,  7, 35, __
   }
 
@@ -606,12 +606,11 @@ function init_gear_sets()
   sets.precast.WS['Cataclysm'] = set_combine(sets.precast.WS, sets.MAB, {
     ammo="Knobkierrie",             -- __, __, __,  6
     head="Pixie Hairpin +1",        -- 28, __, __, __
-    neck="Fotia Gorget",              -- __, __, __, __; FTP bonus
+    neck="Fotia Gorget",            -- __, __, __, __; FTP bonus
     ear2="Moonshade Earring",       -- __, __, __, __; TP bonus
     ring2="Archon Ring",            --  5, __, __, __
     waist="Skrymir Cord",           -- __,  5, 30, __
     -- ammo="Ghastly Tathlum +1",   -- __, __, 21, __
-    -- waist="Skrymir Cord +1",     -- __,  7, 35, __
   })
   sets.precast.WS['Cataclysm'].MaxTP = set_combine(sets.precast.WS['Cataclysm'], {
     ear2="Novio Earring",           -- __,  7, __, __
