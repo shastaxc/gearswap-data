@@ -431,8 +431,6 @@ function init_gear_sets()
     ring2="Epaminondas's Ring",
     back=gear.COR_WS1_Cape,
     waist="Fotia Belt",
-    -- head="Lanun Tricorne +3",
-    -- body="Laksamana's Frac +3",
     -- back=gear.COR_WS3_Cape,
   }
   sets.precast.WS['Last Stand'].MaxTP = set_combine(sets.precast.WS['Last Stand'], {
