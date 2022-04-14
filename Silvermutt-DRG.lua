@@ -504,9 +504,8 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.midcast.HealingBreath = {
-    head="Pteroslaver Armet +1",
+    head="Pteroslaver Armet +2",
     feet="Pteroslaver Greaves +1",
-    -- head="Pteroslaver Armet +2",
     -- body=gear.Acro_Breath_body,
     -- hands=gear.Acro_Breath_hands,
     -- legs="Vishap Brais +3",
@@ -518,7 +517,7 @@ function init_gear_sets()
   }
 
   sets.midcast.ElementalBreath = {
-    head="Pteroslaver Armet +1",
+    head="Pteroslaver Armet +2",
     neck="Adad Amulet",
     ear1="Enmerkar Earring",
     waist="Incarnation Sash",
