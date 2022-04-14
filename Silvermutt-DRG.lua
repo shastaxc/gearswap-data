@@ -102,15 +102,11 @@ function user_setup()
     send_command('bind ^numpad- input /ja "Hasso" <me>')
   end
 
-  -- send_command('bind !q input /ja "Jump" <t>')
-  -- send_command('bind !w input /ja "High Jump" <t>')
-  -- send_command('bind !e input /ja "Spirit Jump" <t>')
-  -- send_command('bind !1 input /ja "Soul Jump" <t>')
-  -- send_command('bind !2 input /ja "Super Jump" <t>')
-
+  send_command('bind !` input /ja "Call Wyvern" <me>')
   send_command('bind !q input /ja "Spirit Link" <me>')
-  -- send_command('bind !f input /ja "Ancient Circle" <t>')
-  -- send_command('bind !w input /ja "Dragon Breaker" <t>')
+  send_command('bind ^q input /ja "Steady Wing" <me>')
+  send_command('bind !e input /ja "Ancient Circle" <me>')
+  send_command('bind !r input /ja "Dragon Breaker" <me>')
 
   update_melee_groups()
   select_default_macro_book()
@@ -137,6 +133,12 @@ function user_unload()
   send_command('unbind ^numpad/')
   send_command('unbind ^numpad*')
   send_command('unbind ^numpad-')
+  
+  send_command('unbind !`')
+  send_command('unbind !q')
+  send_command('unbind ^q')
+  send_command('unbind !e')
+  send_command('unbind !r')
 end
 
 -- Define sets and vars used by this job file.
