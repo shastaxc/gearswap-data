@@ -163,6 +163,7 @@ function init_gear_sets()
 
   sets.precast.JA['Spirit Link'] = {
     hands="Peltast's Vambraces +1",
+    feet="Pteroslaver Greaves +1",
     -- head="Vishap Armet +3",
     -- feet="Pteroslaver Greaves +3",
     -- ear1="Pratik Earring",
@@ -171,6 +172,7 @@ function init_gear_sets()
   -- A tic must pass with the HP+ equipment still on before the HP gains are counted for the ability.
   sets.precast.JA['Steady Wing'] = {
     body=gear.Emicho_D_body,
+    feet="Pteroslaver Greaves +1",
     -- hands="Despair Finger Gauntlets",
     -- legs="Vishap Brais +3",
     -- feet="Pteroslaver Greaves +3",
@@ -252,7 +254,6 @@ function init_gear_sets()
     ring2="Epaminondas's Ring",
     back=gear.DRG_WS2_Cape,
     waist="Sailfi Belt +1",
-    -- head="Pteroslaver Armet +3",
   }
   sets.precast.WS.MaxTP = set_combine(sets.precast.WS, {
     ear2="Ishvara Earring",
@@ -285,7 +286,6 @@ function init_gear_sets()
     back=gear.DRG_WS2_Cape,
     waist="Fotia Belt",
     -- ammo="Coiste Bodhar",
-    -- head="Pteroslaver Armet +3",
     -- back=gear.DRG_WS1_Cape,
   }
   sets.precast.WS["Stardiver"].MaxTP = set_combine(sets.precast.WS.MaxTP, {
@@ -504,6 +504,8 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.midcast.HealingBreath = {
+    head="Pteroslaver Armet +1",
+    feet="Pteroslaver Greaves +1",
     -- head="Pteroslaver Armet +2",
     -- body=gear.Acro_Breath_body,
     -- hands=gear.Acro_Breath_hands,
@@ -516,6 +518,7 @@ function init_gear_sets()
   }
 
   sets.midcast.ElementalBreath = {
+    head="Pteroslaver Armet +1",
     neck="Adad Amulet",
     ear1="Enmerkar Earring",
     waist="Incarnation Sash",
@@ -577,6 +580,7 @@ function init_gear_sets()
     -- head="Valorous Mask",    --  3
   }
   sets.latent_regen = {
+    feet="Pteroslaver Greaves +1",
     neck="Bathy Choker +1",         --  3 {__}
     ear1="Infused Earring",         --  1 {__}
     ring1="Chirich Ring +1",        --  2 {__}
