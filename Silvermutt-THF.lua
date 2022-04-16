@@ -554,6 +554,14 @@ function init_gear_sets()
     ammo="Crepuscular Pebble",
   })
 
+  sets.precast.RA = {
+    legs=gear.Adhemar_D_legs,       -- 10/13
+    feet="Meg. Jam. +2",            -- 10/__
+    ring1="Crepuscular Ring",       --  3/__
+    waist="Yemaya Belt",            -- __/ 5
+  } -- 23 Snapshot / 18 Rapid Shot
+
+
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Midcast Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
@@ -578,6 +586,21 @@ function init_gear_sets()
     feet=gear.Nyame_B_feet, -- DT
     neck="Loricate Torque +1", -- SIRD + DT
     ring1="Defending Ring", -- DT
+  }
+
+  sets.midcast.RA = {
+    head="Malignance Chapeau",
+    body="Malignance Tabard",
+    hands="Malignance Gloves",
+    legs="Malignance Tights",
+    feet="Malignance Boots",
+    neck="Iskur Gorget",
+    ear1="Telos Earring",
+    ear2="Enervating Earring",
+    ring1="Crepuscular Ring",
+    ring2="Dingir Ring",
+    back=gear.THF_TP_Cape,
+    waist="Yemaya Belt",
   }
 
 
