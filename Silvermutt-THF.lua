@@ -291,7 +291,7 @@ function init_gear_sets()
 
   -- Default WS set
   sets.precast.WS = {
-    ammo="Aurgelmir Orb",
+    ammo="Coiste Bodhar",
     head=gear.Nyame_B_head,
     body=gear.Nyame_B_body,
     hands=gear.Nyame_B_hands,
@@ -304,7 +304,6 @@ function init_gear_sets()
     ring2="Epaminondas's Ring",
     back=gear.THF_WS1_Cape,
     waist="Fotia Belt",
-    -- ammo="Aurgelmir Orb +1",
   }
   -- When Sneak Attack active, overlaid on top of normal set
   sets.precast.WS.SA = {
@@ -409,7 +408,7 @@ function init_gear_sets()
     head="Gleti's Mask",                -- 28, __, 60,  6
     body="Plunderer's Vest +3",         -- 46, __, 65, __
     hands="Meghanada Gloves +2",        -- 50,  7, 43, __
-    legs=gear.Nyame_B_legs,             -- __,  9, 55, __
+    legs=gear.Nyame_B_legs,             -- __, 11, 55, __
     feet="Plunderer's Poulaines +3",    -- 37, __, 61, __
     neck="Assassin's Gorget +2",        -- 15, __, __, __
     ear1="Odr Earring",                 -- 10, __, __, __
@@ -421,7 +420,7 @@ function init_gear_sets()
     -- head="Plunderer's Bonnet +3",    -- 41, __, 62, __
     -- legs="Plunderer's Culottes +3"   -- 21,  6, 64, __
     -- 280 DEX, 23 WSD, 387 Att, __ PDL
-  } -- 246 DEX, 26 WSD, 376 Att, 6 PDL
+  } -- 246 DEX, 28 WSD, 376 Att, 6 PDL
   sets.precast.WS["Rudra's Storm"].MaxTP = set_combine(sets.precast.WS["Rudra's Storm"], {
     ear2="Sherida Earring",
   })
@@ -495,11 +494,11 @@ function init_gear_sets()
   -- 50% STR / 50% MND
   sets.precast.WS['Savage Blade'] = {
     ammo="Seething Bomblet +1",   -- 15, __, 13, 13, __, __, ___
-    head=gear.Nyame_B_head,       -- 26, 26, 55, 40,  8, __, ___
-    body=gear.Nyame_B_body,       -- 35, 37, 55, 40, 10, __, ___
-    hands=gear.Nyame_B_hands,     -- 17, 40, 55, 40,  8, __, ___
-    legs=gear.Nyame_B_legs,       -- 43, 32, 55, 40,  9, __, ___
-    feet=gear.Nyame_B_feet,       -- 23, 26, 55, 40,  8, __, ___
+    head=gear.Nyame_B_head,       -- 26, 26, 60, 40, 10, __, ___
+    body=gear.Nyame_B_body,       -- 35, 37, 60, 40, 12, __, ___
+    hands=gear.Nyame_B_hands,     -- 17, 40, 60, 40, 10, __, ___
+    legs=gear.Nyame_B_legs,       -- 43, 32, 60, 40, 11, __, ___
+    feet=gear.Nyame_B_feet,       -- 23, 26, 60, 40, 10, __, ___
     neck="Fotia Gorget",          -- __, __, __, __, __, __, ___; fTP+0.1
     ear1="Ishvara Earring",       -- __, __, __, __,  2, __, ___
     ear2="Moonshade Earring",     -- __, __, __,  4, __, __, 250
@@ -507,17 +506,17 @@ function init_gear_sets()
     ring2="Epaminondas's Ring",   -- __, __, __, __,  5, __, ___
     back=gear.THF_WS2_Cape,       -- 30, __, 20, 20, 10, __, ___
     waist="Sailfi Belt +1",       -- 15, __, 15, __, __, __, ___
-  } -- 214 STR, 161 MND, 343 Attack, 237 Accuracy, 60 WSD, 0 PDL, 250 TP Bonus
+  } -- 214 STR, 161 MND, 368 Attack, 237 Accuracy, 70 WSD, 0 PDL, 250 TP Bonus
   sets.precast.WS['Savage Blade'].MaxTP = set_combine(sets.precast.WS['Savage Blade'], {
     ear2="Sherida Earring",       --  5, __, __, __, __, __, ___
   })
   sets.precast.WS['Savage Blade'].AttCapped = {
     ammo="Seething Bomblet +1",   -- 15, __, 13, 13, __, __, ___
-    head=gear.Nyame_B_head,       -- 26, 26, 55, 40,  8, __, ___
-    body=gear.Nyame_B_body,       -- 35, 37, 55, 40, 10, __, ___
-    hands=gear.Nyame_B_hands,     -- 17, 40, 55, 40,  8, __, ___
-    legs=gear.Nyame_B_legs,       -- 43, 32, 55, 40,  9, __, ___
-    feet=gear.Nyame_B_feet,       -- 23, 26, 55, 40,  8, __, ___
+    head=gear.Nyame_B_head,       -- 26, 26, 60, 40, 10, __, ___
+    body=gear.Nyame_B_body,       -- 35, 37, 60, 40, 12, __, ___
+    hands=gear.Nyame_B_hands,     -- 17, 40, 60, 40, 10, __, ___
+    legs=gear.Nyame_B_legs,       -- 43, 32, 60, 40, 11, __, ___
+    feet=gear.Nyame_B_feet,       -- 23, 26, 60, 40, 10, __, ___
     neck="Fotia Gorget",          -- __, __, __, __, __, __, ___; fTP+0.1
     ear1="Ishvara Earring",       -- __, __, __, __,  2, __, ___
     ear2="Moonshade Earring",     -- __, __, __,  4, __, __, 250
@@ -525,7 +524,7 @@ function init_gear_sets()
     ring2="Epaminondas's Ring",   -- __, __, __, __,  5, __, ___
     back=gear.THF_WS2_Cape,       -- 30, __, 20, 20, 10, __, ___
     waist="Sailfi Belt +1",       -- 15, __, 15, __, __, __, ___
-  } -- 214 STR, 161 MND, 343 Attack, 237 Accuracy, 60 WSD, 0 PDL, 250 TP Bonus
+  } -- 214 STR, 161 MND, 368 Attack, 237 Accuracy, 70 WSD, 0 PDL, 250 TP Bonus
   sets.precast.WS['Savage Blade'].AttCappedMaxTP = set_combine(sets.precast.WS['Savage Blade'].AttCapped, {
     ear2="Sherida Earring",       --  5, __, __, __, __, __, ___
   })
@@ -720,7 +719,7 @@ function init_gear_sets()
   -- EG: sets.engaged.Dagger.Accuracy.Evasion
 
   sets.engaged = {
-    ammo="Aurgelmir Orb",
+    ammo="Coiste Bodhar",
     head=gear.Adhemar_B_head,
     body="Plunderer's Vest +3",
     hands=gear.Adhemar_B_hands,
@@ -733,7 +732,6 @@ function init_gear_sets()
     ring2="Gere Ring",
     back=gear.THF_TP_Cape,
     waist="Windbuffet Belt +1",
-    -- ammo="Aurgelmir Orb +1",
   }
   sets.engaged.LowAcc = set_combine(sets.engaged, {
     ammo="Yamarang",
@@ -779,7 +777,7 @@ function init_gear_sets()
 
   -- Low Magic/Gear/JA Haste (67% DW to cap, 37% from gear)
   sets.engaged.DW.LowHaste = {
-    ammo="Aurgelmir Orb",
+    ammo="Coiste Bodhar",
     head=gear.Adhemar_B_head,
     body=gear.Adhemar_B_body, --6
     hands="Pillager's Armlets +3", --5
@@ -792,7 +790,6 @@ function init_gear_sets()
     ring2="Gere Ring",
     back=gear.THF_DW_Cape, --10
     waist="Reiki Yotai", --7
-    -- ammo="Aurgelmir Orb +1",
   }--37
   sets.engaged.DW.LowAcc.LowHaste = set_combine(sets.engaged.DW.LowHaste, {
     ammo="Yamarang",
@@ -806,7 +803,7 @@ function init_gear_sets()
 
   -- Mid Magic/Gear/JA Haste (56% DW to cap, 26% from gear)
   sets.engaged.DW.MidHaste = {
-    ammo="Aurgelmir Orb",
+    ammo="Coiste Bodhar",
     head=gear.Adhemar_B_head,
     body="Plunderer's Vest +3",
     hands=gear.Adhemar_B_hands,
@@ -819,7 +816,6 @@ function init_gear_sets()
     ring2="Gere Ring",
     back=gear.THF_DW_Cape, --10
     waist="Reiki Yotai", --7
-    -- ammo="Aurgelmir Orb +1",
   }--26
   sets.engaged.DW.LowAcc.MidHaste = set_combine(sets.engaged.DW.MidHaste, {
     ammo="Yamarang",
@@ -835,7 +831,7 @@ function init_gear_sets()
 
   -- High Magic/Gear/JA Haste (43% DW to cap, 13% from gear)
   sets.engaged.DW.HighHaste = {
-    ammo="Aurgelmir Orb",
+    ammo="Coiste Bodhar",
     head=gear.Adhemar_B_head,
     body="Plunderer's Vest +3",
     hands=gear.Adhemar_B_hands,
@@ -848,7 +844,6 @@ function init_gear_sets()
     ring2="Gere Ring",
     back=gear.THF_TP_Cape,
     waist="Reiki Yotai", --7
-    -- ammo="Aurgelmir Orb +1",
   }--12
   sets.engaged.DW.LowAcc.HighHaste = set_combine(sets.engaged.DW.HighHaste, {
     ammo="Yamarang",
@@ -864,7 +859,7 @@ function init_gear_sets()
 
   -- High Magic/Gear/JA Haste (36% DW to cap, 6% from gear)
   sets.engaged.DW.SuperHaste = {
-    ammo="Aurgelmir Orb",
+    ammo="Coiste Bodhar",
     head=gear.Adhemar_B_head,
     body="Plunderer's Vest +3",
     hands=gear.Adhemar_B_hands,
@@ -877,7 +872,6 @@ function init_gear_sets()
     ring2="Gere Ring",
     back=gear.THF_TP_Cape,
     waist="Reiki Yotai", --7
-    -- ammo="Aurgelmir Orb +1",
   }--7
   sets.engaged.DW.LowAcc.SuperHaste = set_combine(sets.engaged.DW.SuperHaste, {
     ammo="Yamarang",
@@ -893,7 +887,7 @@ function init_gear_sets()
 
   -- Max Magic/Gear/JA Haste (0-30% DW to cap, 0% from gear)
   sets.engaged.DW.MaxHaste = {
-    ammo="Aurgelmir Orb",
+    ammo="Coiste Bodhar",
     head=gear.Adhemar_B_head,
     body="Plunderer's Vest +3",
     hands=gear.Adhemar_B_hands,
@@ -906,7 +900,6 @@ function init_gear_sets()
     ring2="Gere Ring",
     back=gear.THF_TP_Cape,
     waist="Windbuffet Belt +1",
-    -- ammo="Aurgelmir Orb +1",
   }
   sets.engaged.DW.LowAcc.MaxHaste = set_combine(sets.engaged.DW.MaxHaste, {
     ammo="Yamarang",

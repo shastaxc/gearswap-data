@@ -412,7 +412,7 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.precast.WS = {
-    ammo="Aurgelmir Orb",
+    ammo="Coiste Bodhar",
     head=gear.Nyame_B_head,
     body=gear.Nyame_B_body,
     hands=gear.Nyame_B_hands,
@@ -539,43 +539,43 @@ function init_gear_sets()
 
   -- 80% DEX
   sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {
-    ammo="Aurgelmir Orb",           --  5, __, __,  7, __
-    head=gear.Nyame_B_head,         -- 25, 24,  8, 30, __
-    body=gear.Nyame_B_body,         -- 24, 35, 10, 55, __
-    hands="Maxixi Bangles +3",      -- 45, 27, 10, 35, __
-    legs="Horos Tights +3",         -- __, 24, 10, 64, __
-    feet=gear.Nyame_B_feet,         -- 26, 38,  8, 55, __
-    neck="Etoile Gorget +2",        -- 25, 25, __, __, 10
-    ear1="Odr Earring",             -- 10, __, __, __, __
-    ear2="Moonshade Earring",       -- __, __, __, __, __; TP Bonus+250
-    ring1="Ilabrat Ring",           -- 10, __, __, 25, __
-    ring2="Regal Ring",             -- 10, __, __, 20, __
-    back=gear.DNC_WS1_Cape,         -- 30, __, 10, 20, __; Crit dmg+5
-    waist="Kentarch Belt +1",       -- 10, __, __, __, __
-    -- ammo="Aurgelmir Orb +1",     --  7, __, __, 10, __
-    -- 222 DEX, 173 CHR, 56 WSD, 314 Att, 10 PDL
-  })-- 220 DEX, 173 CHR, 56 WSD, 321 Att, 10 PDL
+    ammo="Aurgelmir Orb",           --  5, __,  7, __
+    head=gear.Nyame_B_head,         -- 25, 10, 60, __
+    body=gear.Nyame_B_body,         -- 24, 12, 60, __
+    hands="Maxixi Bangles +3",      -- 45, 10, 35, __
+    legs=gear.Nyame_B_legs,         -- __, 11, 60, __
+    feet=gear.Nyame_B_feet,         -- 26, 10, 60, __
+    neck="Etoile Gorget +2",        -- 25, __, __, 10
+    ear1="Odr Earring",             -- 10, __, __, __
+    ear2="Moonshade Earring",       -- __, __, __, __; TP Bonus+250
+    ring1="Ilabrat Ring",           -- 10, __, 25, __
+    ring2="Regal Ring",             -- 10, __, 20, __
+    back=gear.DNC_WS1_Cape,         -- 30, 10, 20, __; Crit dmg+5
+    waist="Kentarch Belt +1",       -- 10, __, __, __
+    -- ammo="Aurgelmir Orb +1",     --  7, __, 10, __
+    -- 218 DEX, 63 WSD, 344 Att, 10 PDL
+  })-- 220 DEX, 63 WSD, 347 Att, 10 PDL
   sets.precast.WS["Rudra's Storm"].MaxTP = set_combine(sets.precast.WS["Rudra's Storm"], {
-    ear2="Ishvara Earring",         -- __, __,  2, __, __
+    ear2="Ishvara Earring",         -- __,  2, __, __
   })
   sets.precast.WS["Rudra's Storm"].AttCapped = set_combine(sets.precast.WS, {
-    ammo="Crepuscular Pebble",      -- __, __, __, __,  3
-    head=gear.Lustratio_D_head,     -- 45, __, __, __, __
-    body="Gleti's Cuirass",         -- 34, 26, __, 64,  9
-    hands="Maxixi Bangles +3",      -- 45, 27, 10, 35, __
-    legs="Horos Tights +3",         -- __, 24, 10, 64, __
-    feet=gear.Lustratio_D_feet,     -- 48, __, __, __, __
-    neck="Etoile Gorget +2",        -- 25, 25, __, __, 10
-    ear1="Odr Earring",             -- 10, __, __, __, __
-    ear2="Moonshade Earring",       -- __, __, __, __, __; TP Bonus+250
-    ring1="Epaminondas's Ring",     -- __, __,  5, __, __
-    ring2="Regal Ring",             -- 10, __, __, 20, __
-    back=gear.DNC_WS1_Cape,         -- 30, __, 10, 20, __; Crit dmg+5
-    waist="Kentarch Belt +1",       -- 10, __, __, __, __
-    -- Lustratio set bonus          -- __, __,  4, __, __
-  })-- 257 DEX, 102 CHR, 39 WSD, 208 Att, 22 PDL
+    ammo="Crepuscular Pebble",      -- __, __, __,  3
+    head=gear.Lustratio_D_head,     -- 45, __, __, __
+    body="Gleti's Cuirass",         -- 34, __, 64,  9
+    hands="Maxixi Bangles +3",      -- 45, 10, 35, __
+    legs=gear.Nyame_B_legs,         -- __, 11, 60, __
+    feet=gear.Lustratio_D_feet,     -- 48, __, __, __
+    neck="Etoile Gorget +2",        -- 25, __, __, 10
+    ear1="Odr Earring",             -- 10, __, __, __
+    ear2="Moonshade Earring",       -- __, __, __, __; TP Bonus+250
+    ring1="Epaminondas's Ring",     -- __,  5, __, __
+    ring2="Regal Ring",             -- 10, __, 20, __
+    back=gear.DNC_WS1_Cape,         -- 30, 10, 20, __; Crit dmg+5
+    waist="Kentarch Belt +1",       -- 10, __, __, __
+    -- Lustratio set bonus          -- __,  4, __, __
+  })-- 257 DEX, 40 WSD, 199 Att, 22 PDL
   sets.precast.WS["Rudra's Storm"].AttCappedMaxTP = set_combine(sets.precast.WS["Rudra's Storm"].AttCapped, {
-    ear2="Ishvara Earring",         -- __, __,  2, __, __
+    ear2="Ishvara Earring",         -- __,  2, __, __
   })
   -- For Crit Dmg, not crit rate; is overlaid, don't set_combine
   sets.precast.WS["Rudra's Storm"].Climactic = {
@@ -585,7 +585,6 @@ function init_gear_sets()
     ring1="Epaminondas's Ring",
   }
   sets.precast.WS["Rudra's Storm"].Safe = {
-    legs=gear.Nyame_B_legs,
     ring2="Defending Ring",
     waist="Flume Belt +1",
   }
@@ -817,7 +816,7 @@ function init_gear_sets()
 
   -- No Magic/Gear/JA Haste (74% DW to cap, 39% from gear)
   sets.engaged.DW = {
-    ammo="Aurgelmir Orb",
+    ammo="Coiste Bodhar",
     head="Maxixi Tiara +3", -- 8
     body=gear.Adhemar_B_body, -- 6
     hands=gear.Adhemar_B_hands,
@@ -855,7 +854,7 @@ function init_gear_sets()
 
   -- Low Magic/Gear/JA Haste (60% DW to cap, 25% from gear)
   sets.engaged.DW.LowHaste = {
-    ammo="Aurgelmir Orb",
+    ammo="Coiste Bodhar",
     head=gear.Adhemar_B_head,
     body=gear.Adhemar_B_body, -- 6
     hands=gear.Adhemar_B_hands,
@@ -896,7 +895,7 @@ function init_gear_sets()
 
   -- Mid Magic/Gear/JA Haste (56% DW to cap, 21% from gear)
   sets.engaged.DW.MidHaste = {
-    ammo="Aurgelmir Orb",
+    ammo="Coiste Bodhar",
     head=gear.Adhemar_B_head,
     body="Horos Casaque +3",
     hands=gear.Adhemar_B_hands,
@@ -938,7 +937,7 @@ function init_gear_sets()
 
   -- High Magic/Gear/JA Haste (43% DW to cap, 8% from gear)
   sets.engaged.DW.HighHaste = {
-    ammo="Aurgelmir Orb",
+    ammo="Coiste Bodhar",
     head=gear.Adhemar_B_head,
     body="Horos Casaque +3",
     hands=gear.Adhemar_B_hands,
@@ -978,7 +977,7 @@ function init_gear_sets()
 
   -- Max Magic/Gear/JA Haste (0-36% DW to cap, 0-1% from gear)
   sets.engaged.DW.MaxHaste = {
-    ammo="Aurgelmir Orb",
+    ammo="Coiste Bodhar",
     head=gear.Adhemar_B_head,
     body="Horos Casaque +3",
     hands=gear.Adhemar_B_hands,

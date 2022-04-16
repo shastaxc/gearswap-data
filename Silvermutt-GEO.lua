@@ -244,11 +244,11 @@ function init_gear_sets()
     -- Assume Idris                 -- ___, __, __, __, __/__ [25]
     -- Assume Genmei Shield         -- ___, __, __, __, 10/__ [__]
     -- Assume Dunna                 -- ___, __, __, __, __/__ [ 5]
-    head=gear.Nyame_B_head,         -- ___, 26, 26,  8,  7/ 7 [__]
-    body=gear.Nyame_B_body,         -- ___, 37, 35, 10,  9/ 9 [__]
-    hands=gear.Nyame_B_hands,       -- ___, 40, 17,  8,  7/ 7 [__]
-    legs=gear.Nyame_B_legs,         -- ___, 32, 43,  9,  8/ 8 [__]
-    feet=gear.Nyame_B_feet,         -- ___, 26, 23,  8,  7/ 7 [__]
+    head=gear.Nyame_B_head,         -- ___, 26, 26, 10,  7/ 7 [__]
+    body=gear.Nyame_B_body,         -- ___, 37, 35, 12,  9/ 9 [__]
+    hands=gear.Nyame_B_hands,       -- ___, 40, 17, 10,  7/ 7 [__]
+    legs=gear.Nyame_B_legs,         -- ___, 32, 43, 11,  8/ 8 [__]
+    feet=gear.Nyame_B_feet,         -- ___, 26, 23, 10,  7/ 7 [__]
     neck="Fotia Gorget",            -- fTP Bonus
     ear1="Regal Earring",           -- ___, 10, __, __, __/__ [__]
     ear2="Moonshade Earring",       -- 250, __, __, __, __/__ [__]
@@ -256,7 +256,7 @@ function init_gear_sets()
     ring2="Epaminondas's Ring",     -- ___, __, __,  5, __/__ [__]
     back=gear.GEO_Idle_Cape,        -- ___, __, __, __, __/__ [__]
     waist="Fotia Belt",             -- fTP Bonus
-  } -- 250 TP Bonus, 187 MND, 144 STR, 48 WSD, 48PDT/38MDT [30PetDT]
+  } -- 250 TP Bonus, 187 MND, 144 STR, 58 WSD, 48PDT/38MDT [30PetDT]
   sets.precast.WS['Black Halo'].MaxTP = set_combine(sets.precast.WS['Black Halo'], {
     ear2="Ishvara Earring",         -- ___, __, __,  2, __/__ [__]
   })
@@ -292,11 +292,11 @@ function init_gear_sets()
     -- Assume Idris                 -- ___, __, __, __, __, __, __/__ [25]
     -- Assume Genmei Shield         -- ___, __, __, __, __, __, 10/__ [__]
     -- Assume Dunna                 -- ___, __, __, __, __, __, __/__ [ 5]
-    head=gear.Nyame_B_head,         -- ___, __, __, 26, 26,  8,  7/ 7 [__]
-    body=gear.Nyame_B_body,         -- ___, __, __, 37, 35, 10,  9/ 9 [__]
-    hands=gear.Nyame_B_hands,       -- ___, __, __, 40, 17,  8,  7/ 7 [__]
-    legs=gear.Nyame_B_legs,         -- ___, __, __, 32, 43,  9,  8/ 8 [__]
-    feet=gear.Nyame_B_feet,         -- ___, __, __, 26, 23,  8,  7/ 7 [__]
+    head=gear.Nyame_B_head,         -- ___, __, __, 26, 26, 10,  7/ 7 [__]
+    body=gear.Nyame_B_body,         -- ___, __, __, 37, 35, 12,  9/ 9 [__]
+    hands=gear.Nyame_B_hands,       -- ___, __, __, 40, 17, 10,  7/ 7 [__]
+    legs=gear.Nyame_B_legs,         -- ___, __, __, 32, 43, 11,  8/ 8 [__]
+    feet=gear.Nyame_B_feet,         -- ___, __, __, 26, 23, 10,  7/ 7 [__]
     neck="Fotia Gorget",            -- fTP Bonus
     ear1="Regal Earring",           -- ___, __, __, 10, __, __, __/__ [__]
     ear2="Moonshade Earring",       -- 250, __, __, __, __, __, __/__ [__]
@@ -304,7 +304,7 @@ function init_gear_sets()
     ring2="Epaminondas's Ring",     -- ___, __, __, __, __,  5, __/__ [__]
     back=gear.GEO_Idle_Cape,        -- ___, __, __, __, __, __, __/__ [__]
     waist="Fotia Belt",             -- fTP Bonus
-  } -- 250 TP Bonus, 0 Crit Dmg,  0 Crit Rate, 187 MND, 144 STR, 48 WSD, 48PDT/38MDT [30PetDT]
+  } -- 250 TP Bonus, 0 Crit Dmg,  0 Crit Rate, 187 MND, 144 STR, 58 WSD, 48PDT/38MDT [30PetDT]
   sets.precast.WS['Hexa Strike'].MaxTP = set_combine(sets.precast.WS['Hexa Strike'], {
     ear2="Malignance Earring",
   })
@@ -322,10 +322,10 @@ function init_gear_sets()
     -- Assume Genmei Shield         -- __, __, __, __, __, __, 10/__ [__]
     -- Assume Dunna                 -- __, __, __, __, __, __, __/__ [ 5]
     head="Agwu's Cap",              -- __, 35, 20, 26, 26, __, __/__ [__]
-    body=gear.Nyame_B_body,         -- __, 30, __, 37, 35, 10,  9/ 9 [__]
+    body=gear.Nyame_B_body,         -- __, 30, __, 37, 35, 12,  9/ 9 [__]
     hands="Jhakri Cuffs +2",        -- __, 40, __, 35, 18,  7, __/__ [__]
     legs="Agwu's Slops",            -- __, 55, 20, 32, 43, __,  7/ 7 [__]
-    feet=gear.Nyame_B_feet,         -- __, 30, __, 26, 23,  8,  7/ 7 [__]
+    feet=gear.Nyame_B_feet,         -- __, 30, __, 26, 23, 10,  7/ 7 [__]
     neck="Baetyl Pendant",          -- __, 13, __, __, __, __, __/__ [__]
     ear1="Regal Earring",           -- __,  7, __, 10, __, __, __/__ [__]
     ear2="Malignance Earring",      -- __,  8, __,  8, __, __, __/__ [__]
@@ -341,17 +341,17 @@ function init_gear_sets()
     -- back=gear.GEO_Nuke_Cape,     -- __, 10, 20, __, __, __, 10/__ [__]
     -- waist="Skrymir Cord +1",     -- __,  7, 35, __, __, __, __/__ [__]
     -- 10 Light MAB, 378 MAB, 385 M.Dmg, 179 MND, 137 STR, 0 WSD, 29PDT/9MDT [30PetDT]
-  } -- 10 Light MAB, 278 MAB, 287 M.Dmg, 174 MND, 145 STR, 25 WSD, 33PDT/23MDT [30PetDT]
+  } -- 10 Light MAB, 278 MAB, 287 M.Dmg, 174 MND, 145 STR, 29 WSD, 33PDT/23MDT [30PetDT]
   sets.precast.WS['Flash Nova'].MaxTP = sets.precast.WS['Flash Nova']
 	sets.precast.WS['Flash Nova'].Safe = {
     -- Assume Idris                 -- __, 40,217, __, __, __, __/__ [25]
     -- Assume Genmei Shield         -- __, __, __, __, __, __, 10/__ [__]
     -- Assume Dunna                 -- __, __, __, __, __, __, __/__ [ 5]
     head="Agwu's Cap",              -- __, 35, 20, 26, 26, __, __/__ [__]
-    body=gear.Nyame_B_body,         -- __, 30, __, 37, 35, 10,  9/ 9 [__]
+    body=gear.Nyame_B_body,         -- __, 30, __, 37, 35, 12,  9/ 9 [__]
     hands="Geomancy Mitaines +2",   -- __, __, __, 38, 11, __,  2/__ [12]
     legs="Agwu's Slops",            -- __, 55, 20, 32, 43, __,  7/ 7 [__]
-    feet=gear.Nyame_B_feet,         -- __, 30, __, 26, 23,  8,  7/ 7 [__]
+    feet=gear.Nyame_B_feet,         -- __, 30, __, 26, 23, 10,  7/ 7 [__]
     neck="Baetyl Pendant",          -- __, 13, __, __, __, __, __/__ [__]
     ear1="Regal Earring",           -- __,  7, __, 10, __, __, __/__ [__]
     ear2="Malignance Earring",      -- __,  8, __,  8, __, __, __/__ [__]
@@ -367,7 +367,7 @@ function init_gear_sets()
     -- back=gear.GEO_Nuke_Cape,     -- __, 10, 20, __, __, __, 10/__ [__]
     -- waist="Skrymir Cord +1",     -- __,  7, 35, __, __, __, __/__ [__]
     -- 10 Light MAB, 304 MAB, 345 M.Dmg, 185 MND, 136 STR, 0 WSD, 52PDT/19MDT [43PetDT]
-  } -- 10 Light MAB, 235 MAB, 287 M.Dmg, 177 MND, 138 STR, 18 WSD, 45PDT/33MDT [42PetDT]
+  } -- 10 Light MAB, 235 MAB, 287 M.Dmg, 177 MND, 138 STR, 22 WSD, 45PDT/33MDT [42PetDT]
 
   -- Magical (light). dStat=INT. 40% STR / 40% MND
   -- Damage varies with TP. 2.125-6.125 fTP
@@ -393,10 +393,10 @@ function init_gear_sets()
     -- Assume Tzacab Grip           -- __, __, __, __
     -- Assume Dunna                 -- __, __, __, __
     head="Pixie Hairpin +1",        -- 28, __, __, __
-    body=gear.Nyame_B_body,         -- __, 30, __, 10
+    body=gear.Nyame_B_body,         -- __, 30, __, 12
     hands="Jhakri Cuffs +2",        -- __, 40, __,  7
-    legs=gear.Nyame_B_legs,         -- __, 30, __,  9
-    feet=gear.Nyame_B_feet,         -- __, 30, __,  8
+    legs=gear.Nyame_B_legs,         -- __, 30, __, 11
+    feet=gear.Nyame_B_feet,         -- __, 30, __, 10
     neck="Fotia Neck",              -- __, __, __, __; FTP bonus
     ear1="Regal Earring",           -- __,  7, __, __
     ear2="Moonshade Earring",       -- __, __, __, __; TP bonus
@@ -411,7 +411,7 @@ function init_gear_sets()
     -- back=gear.GEO_Nuke_Cape,     -- __, 10, 20, __
     -- waist="Skrymir Cord +1",     -- __,  7, 35, __
     -- 33 Dark MAB, 229 MAB, 115 M.Dmg, 12 WSD
-  } -- 33 Dark MAB, 157 MAB, 30 M.Dmg, 39 WSD
+  } -- 33 Dark MAB, 157 MAB, 30 M.Dmg, 45 WSD
   sets.precast.WS['Cataclysm'].MaxTP = set_combine(sets.precast.WS['Cataclysm'], {
     ear2="Malignance Earring", -- __,  8, __, __
   })
@@ -892,11 +892,11 @@ function init_gear_sets()
 	-- Normal melee group, used when not club or staff
 	sets.engaged = {
     -- Dunna                        -- __/__ [ 5, __], __, __, __
-		head=gear.Nyame_B_head,         --  7/ 7 [__, __], 40, __,  2
-		body=gear.Nyame_B_body,         --  9/ 9 [__, __], 40, __,  3
-    hands=gear.Nyame_B_hands,       --  7/ 7 [__, __], 40, __,  2
+		head=gear.Nyame_B_head,         --  7/ 7 [__, __], 40, __,  4
+		body=gear.Nyame_B_body,         --  9/ 9 [__, __], 40, __,  5
+    hands=gear.Nyame_B_hands,       --  7/ 7 [__, __], 40, __,  4
     legs="Jhakri Slops +2",         -- __/__ [__, __], 45,  9, __
-    feet=gear.Nyame_B_feet,         --  7/ 7 [__, __], 40, __,  2
+    feet=gear.Nyame_B_feet,         --  7/ 7 [__, __], 40, __,  4
     neck="Bagua Charm +1",          -- __/__ [__, __], __, __, __; Luopan absorb dmg
     ear1="Telos Earring",           -- __/__ [__, __], 10,  5,  1
     ear2="Cessance Earring",        -- __/__ [__, __],  6,  3,  3
@@ -906,15 +906,15 @@ function init_gear_sets()
     waist="Olseni Belt",            -- __/__ [__, __], 20,  3, __
     -- hands="Gazu Bracelet +1",    -- __/__ [__, __], 96, __, __
     -- ring2="Chirich Ring +1",     -- __/__ [__, __], 10,  6, __
-    -- 23PDT/23MDT [9 Pet DT, 15 Pet Regen], 317 Acc, 32 Store TP, 11 DA
-  } -- 30PDT/30MDT [5 Pet DT, 15 Pet Regen], 251 Acc, 31 Store TP, 14 DA
+    -- 23PDT/23MDT [9 Pet DT, 15 Pet Regen], 317 Acc, 32 Store TP, 17 DA
+  } -- 30PDT/30MDT [5 Pet DT, 15 Pet Regen], 251 Acc, 31 Store TP, 22 DA
 	sets.engaged.Safe = {
     -- Dunna                        -- __/__ [ 5, __], __, __, __
-		head=gear.Nyame_B_head,         --  7/ 7 [__, __], 40, __,  2
-		body=gear.Nyame_B_body,         --  9/ 9 [__, __], 40, __,  3
+		head=gear.Nyame_B_head,         --  7/ 7 [__, __], 40, __,  4
+		body=gear.Nyame_B_body,         --  9/ 9 [__, __], 40, __,  5
     hands="Geomancy Mitaines +2",   --  2/__ [12, __], __, __, __
     legs="Jhakri Slops +2",         -- __/__ [__, __], 45,  9, __
-    feet=gear.Nyame_B_feet,         --  7/ 7 [__, __], 40, __,  2
+    feet=gear.Nyame_B_feet,         --  7/ 7 [__, __], 40, __,  4
     neck="Bagua Charm +1",          -- __/__ [__, __], __, __, __; Luopan absorb dmg
     ear1="Telos Earring",           -- __/__ [__, __], 10,  5,  1
     ear2="Cessance Earring",        -- __/__ [__, __],  6,  3,  3
@@ -926,19 +926,19 @@ function init_gear_sets()
     -- ear1="Hypaspist Earring",    -- -5/__ [ 5,  1], __, __, __
     -- ear2="Handler's Earring +1", -- __/__ [ 4, __], __, __, __
     -- ring2="Thurandaut Ring +1"   -- __/__ [ 4, __], __, __, __
-    -- 21PDT/23MDT [31 Pet DT, 16 Pet Regen], 195 Acc, 18 Store TP, 7 DA
-  } -- 25PDT/23MDT [17 Pet DT, 15 Pet Regen], 211 Acc, 31 Store TP, 12 DA
+    -- 21PDT/23MDT [31 Pet DT, 16 Pet Regen], 195 Acc, 18 Store TP, 13 DA
+  } -- 25PDT/23MDT [17 Pet DT, 15 Pet Regen], 211 Acc, 31 Store TP, 18 DA
 
   -- Used for all staves
 	sets.engaged.Staff = {
     -- Malignance Pole              -- 20/20 [__, __], 40, __, __
     -- Tzacab Grip                  -- __/__ [__, __], 10, __, __
     -- Dunna                        -- __/__ [ 5, __], __, __, __
-		head=gear.Nyame_B_head,         --  7/ 7 [__, __], 40, __,  2
-		body=gear.Nyame_B_body,         --  9/ 9 [__, __], 40, __,  3
-    hands=gear.Nyame_B_hands,       --  7/ 7 [__, __], 40, __,  2
+		head=gear.Nyame_B_head,         --  7/ 7 [__, __], 40, __,  4
+		body=gear.Nyame_B_body,         --  9/ 9 [__, __], 40, __,  5
+    hands=gear.Nyame_B_hands,       --  7/ 7 [__, __], 40, __,  4
     legs="Jhakri Slops +2",         -- __/__ [__, __], 45,  9, __
-    feet=gear.Nyame_B_feet,         --  7/ 7 [__, __], 40, __,  2
+    feet=gear.Nyame_B_feet,         --  7/ 7 [__, __], 40, __,  4
     neck="Carnal Torque",           -- __/__ [__, __], __, __, __; Staff skill
     ear1="Telos Earring",           -- __/__ [__, __], 10,  5,  1
     ear2="Cessance Earring",        -- __/__ [__, __],  6,  3,  3
@@ -948,17 +948,17 @@ function init_gear_sets()
     waist="Olseni Belt",            -- __/__ [__, __], 20,  3, __
     -- hands="Gazu Bracelet +1",    -- __/__ [__, __], 96, __, __
     -- ring2="Chirich Ring +1",     -- __/__ [__, __], 10,  6, __
-    -- 43PDT/43MDT [5 Pet DT, 15 Pet Regen], 367 Acc, 32 Store TP, 11 DA
-  } -- 50PDT/50MDT [5 Pet DT, 15 Pet Regen], 301 Acc, 31 Store TP, 14 DA
+    -- 43PDT/43MDT [5 Pet DT, 15 Pet Regen], 367 Acc, 32 Store TP, 17 DA
+  } -- 50PDT/50MDT [5 Pet DT, 15 Pet Regen], 301 Acc, 31 Store TP, 22 DA
 	sets.engaged.Staff.Safe = {
     -- Malignance Pole              -- 20/20 [__, __], 40, __, __
     -- Tzacab Grip                  -- __/__ [__, __], 10, __, __
     -- Dunna                        -- __/__ [ 5, __], __, __, __
-		head=gear.Nyame_B_head,         --  7/ 7 [__, __], 40, __,  2
-		body=gear.Nyame_B_body,         --  9/ 9 [__, __], 40, __,  3
+		head=gear.Nyame_B_head,         --  7/ 7 [__, __], 40, __,  4
+		body=gear.Nyame_B_body,         --  9/ 9 [__, __], 40, __,  5
     hands="Geomancy Mitaines +2",   --  2/__ [12, __], __, __, __
     legs="Jhakri Slops +2",         -- __/__ [__, __], 45,  9, __
-    feet=gear.Nyame_B_feet,         --  7/ 7 [__, __], 40, __,  2
+    feet=gear.Nyame_B_feet,         --  7/ 7 [__, __], 40, __,  4
     neck="Carnal Torque",           -- __/__ [__, __], __, __, __; Staff skill
     ear1="Telos Earring",           -- __/__ [__, __], 10,  5,  1
     ear2="Cessance Earring",        -- __/__ [__, __],  6,  3,  3
@@ -971,19 +971,19 @@ function init_gear_sets()
     -- ear2="Handler's Earring +1", -- __/__ [ 4, __], __, __, __
     -- ring1="Defending Ring",      -- 10/10 [__, __], __, __, __
     -- ring2="Thurandaut Ring +1"   -- __/__ [ 4, __], __, __, __
-    -- 51PDT/53MDT [31 Pet DT, 16 Pet Regen], 235 Acc, 12 Store TP, 7 DA
-  } -- 45PDT/43MDT [17 Pet DT, 15 Pet Regen], 261 Acc, 31 Store TP, 12 DA
+    -- 51PDT/53MDT [31 Pet DT, 16 Pet Regen], 235 Acc, 12 Store TP, 13 DA
+  } -- 45PDT/43MDT [17 Pet DT, 15 Pet Regen], 261 Acc, 31 Store TP, 18 DA
 
   -- Used for all clubs except Idris
 	sets.engaged.Club = {
     -- Assume Maxentius             -- __/__ [__, __], 40, __, __
     -- Genmei Shield                -- 10/__ [__, __], 15, __, __
     -- Dunna                        -- __/__ [ 5, __], __, __, __
-		head=gear.Nyame_B_head,         --  7/ 7 [__, __], 40, __,  2
-		body=gear.Nyame_B_body,         --  9/ 9 [__, __], 40, __,  3
-    hands=gear.Nyame_B_hands,       --  7/ 7 [__, __], 40, __,  2
+		head=gear.Nyame_B_head,         --  7/ 7 [__, __], 40, __,  4
+		body=gear.Nyame_B_body,         --  9/ 9 [__, __], 40, __,  5
+    hands=gear.Nyame_B_hands,       --  7/ 7 [__, __], 40, __,  4
     legs="Jhakri Slops +2",         -- __/__ [__, __], 45,  9, __
-    feet=gear.Nyame_B_feet,         --  7/ 7 [__, __], 40, __,  2
+    feet=gear.Nyame_B_feet,         --  7/ 7 [__, __], 40, __,  4
     neck="Acantha Torque",          -- __/__ [__, __], __, __, __; Club skill
     ear1="Telos Earring",           -- __/__ [__, __], 10,  5,  1
     ear2="Cessance Earring",        -- __/__ [__, __],  6,  3,  3
@@ -993,17 +993,17 @@ function init_gear_sets()
     waist="Olseni Belt",            -- __/__ [__, __], 20,  3, __
     -- hands="Gazu Bracelet +1",    -- __/__ [__, __], 96, __, __
     -- ring2="Chirich Ring +1",     -- __/__ [__, __], 10,  6, __
-    -- 33PDT/23MDT [5 Pet DT, 15 Pet Regen], 372 Acc, 32 Store TP, 11 DA
-  } -- 40PDT/30MDT [5 Pet DT, 15 Pet Regen], 306 Acc, 31 Store TP, 14 DA
+    -- 33PDT/23MDT [5 Pet DT, 15 Pet Regen], 372 Acc, 32 Store TP, 17 DA
+  } -- 40PDT/30MDT [5 Pet DT, 15 Pet Regen], 306 Acc, 31 Store TP, 22 DA
 	sets.engaged.Club.Safe = {
     -- Assume Maxentius             -- __/__ [__, __], 40, __, __
     -- Genmei Shield                -- 10/__ [__, __], 15, __, __
     -- Dunna                        -- __/__ [ 5, __], __, __, __
-		head=gear.Nyame_B_head,         --  7/ 7 [__, __], 40, __,  2
-		body=gear.Nyame_B_body,         --  9/ 9 [__, __], 40, __,  3
+		head=gear.Nyame_B_head,         --  7/ 7 [__, __], 40, __,  4
+		body=gear.Nyame_B_body,         --  9/ 9 [__, __], 40, __,  5
     hands="Geomancy Mitaines +2",   --  2/__ [12, __], __, __, __
     legs="Jhakri Slops +2",         -- __/__ [__, __], 45,  9, __
-    feet=gear.Nyame_B_feet,         --  7/ 7 [__, __], 40, __,  2
+    feet=gear.Nyame_B_feet,         --  7/ 7 [__, __], 40, __,  4
     neck="Loricate Torque +1",      --  6/ 6 [__, __], __, __, __
     ear1="Telos Earring",           -- __/__ [__, __], 10,  5,  1
     ear2="Cessance Earring",        -- __/__ [__, __],  6,  3,  3
@@ -1015,19 +1015,19 @@ function init_gear_sets()
     -- ear1="Hypaspist Earring",    -- -5/__ [ 5,  1], __, __, __
     -- ear2="Handler's Earring +1", -- __/__ [ 4, __], __, __, __
     -- ring1="Thurandaut Ring +1"   -- __/__ [ 4, __], __, __, __
-    -- 47PDT/39MDT [31 Pet DT, 16 Pet Regen], 240 Acc, 12 Store TP, 7 DA
-  } -- 51PDT/39MDT [17 Pet DT, 15 Pet Regen], 266 Acc, 26 Store TP, 11 DA
+    -- 47PDT/39MDT [31 Pet DT, 16 Pet Regen], 240 Acc, 12 Store TP, 13 DA
+  } -- 51PDT/39MDT [17 Pet DT, 15 Pet Regen], 266 Acc, 26 Store TP, 17 DA
 
   -- Used for Idris only
 	sets.engaged.Idris = {
     -- Idris                        -- __/__ [25, __], 30, __, __
     -- Genmei Shield                -- 10/__ [__, __], 15, __, __
     -- Dunna                        -- __/__ [ 5, __], __, __, __
-		head=gear.Nyame_B_head,         --  7/ 7 [__, __], 40, __,  2
-		body=gear.Nyame_B_body,         --  9/ 9 [__, __], 40, __,  3
-    hands=gear.Nyame_B_hands,       --  7/ 7 [__, __], 40, __,  2
+		head=gear.Nyame_B_head,         --  7/ 7 [__, __], 40, __,  4
+		body=gear.Nyame_B_body,         --  9/ 9 [__, __], 40, __,  5
+    hands=gear.Nyame_B_hands,       --  7/ 7 [__, __], 40, __,  4
     legs="Jhakri Slops +2",         -- __/__ [__, __], 45,  9, __
-    feet=gear.Nyame_B_feet,         --  7/ 7 [__, __], 40, __,  2
+    feet=gear.Nyame_B_feet,         --  7/ 7 [__, __], 40, __,  4
     neck="Bagua Charm +1",          -- __/__ [__, __], __, __, __; Luopan dmg absorb
     ear1="Telos Earring",           -- __/__ [__, __], 10,  5,  1
     ear2="Cessance Earring",        -- __/__ [__, __],  6,  3,  3
@@ -1038,17 +1038,17 @@ function init_gear_sets()
     -- hands="Gazu Bracelet +1",    -- __/__ [__, __], 96, __, __
     -- neck="Acantha Torque",       -- __/__ [__, __], __, __, __; Club skill
     -- ring2="Chirich Ring +1",     -- __/__ [__, __], 10,  6, __
-    -- 33PDT/23MDT [30 Pet DT, 15 Pet Regen], 362 Acc, 32 Store TP, 11 DA
-  } -- 40PDT/30MDT [30 Pet DT, 15 Pet Regen], 296 Acc, 31 Store TP, 14 DA
+    -- 33PDT/23MDT [30 Pet DT, 15 Pet Regen], 362 Acc, 32 Store TP, 17 DA
+  } -- 40PDT/30MDT [30 Pet DT, 15 Pet Regen], 296 Acc, 31 Store TP, 22 DA
   sets.engaged.Idris.Safe = {
     -- Idris                        -- __/__ [25, __], 30, __, __
     -- Genmei Shield                -- 10/__ [__, __], 15, __, __
     -- Dunna                        -- __/__ [ 5, __], __, __, __
-		head=gear.Nyame_B_head,         --  7/ 7 [__, __], 40, __,  2
-		body=gear.Nyame_B_body,         --  9/ 9 [__, __], 40, __,  3
+		head=gear.Nyame_B_head,         --  7/ 7 [__, __], 40, __,  4
+		body=gear.Nyame_B_body,         --  9/ 9 [__, __], 40, __,  5
     hands="Geomancy Mitaines +2",   --  2/__ [12, __], __, __, __
     legs="Jhakri Slops +2",         -- __/__ [__, __], 45,  9, __
-    feet=gear.Nyame_B_feet,         --  7/ 7 [__, __], 40, __,  2
+    feet=gear.Nyame_B_feet,         --  7/ 7 [__, __], 40, __,  4
     neck="Loricate Torque +1",      --  6/ 6 [__, __], __, __, __
     ear1="Telos Earring",           -- __/__ [__, __], 10,  5,  1
     ear2="Cessance Earring",        -- __/__ [__, __],  6,  3,  3
@@ -1057,8 +1057,8 @@ function init_gear_sets()
     back=gear.GEO_Idle_Cape,        -- __/__ [__, 15], __, __, __
     waist="Olseni Belt",            -- __/__ [__, __], 20,  3, __
     -- hands="Geomancy Mitaines +3",--  3/__ [13, __], __, __, __
-    -- 52PDT/39MDT [43 Pet DT, 15 Pet Regen], 256 Acc, 26 Store TP, 11 DA
-  } -- 51PDT/39MDT [42 Pet DT, 15 Pet Regen], 256 Acc, 26 Store TP, 11 DA
+    -- 52PDT/39MDT [43 Pet DT, 15 Pet Regen], 256 Acc, 26 Store TP, 17 DA
+  } -- 51PDT/39MDT [42 Pet DT, 15 Pet Regen], 256 Acc, 26 Store TP, 17 DA
 
 
 	--------------------------------------

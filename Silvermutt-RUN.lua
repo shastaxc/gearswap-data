@@ -865,11 +865,11 @@ function init_gear_sets()
 
   sets.precast.WS['Savage Blade'] = {
     ammo="Knobkierrie",             -- __, __, 23, __,  6, __, ___, __/__ [___]
-    head=gear.Nyame_B_head,         -- 26, 26, 55, 40,  8, __, ___,  7/ 7 [ 91]
-    body=gear.Nyame_B_body,         -- 35, 37, 55, 40, 10, __, ___,  9/ 9 [136]
-    hands=gear.Nyame_B_hands,       -- 17, 40, 55, 40,  8, __, ___,  7/ 7 [ 91]
-    legs=gear.Nyame_B_legs,         -- 43, 32, 55, 40,  9, __, ___,  8/ 8 [114]
-    feet=gear.Nyame_B_feet,         -- 23, 26, 55, 40,  8, __, ___,  7/ 7 [ 68]
+    head=gear.Nyame_B_head,         -- 26, 26, 60, 40, 10, __, ___,  7/ 7 [ 91]
+    body=gear.Nyame_B_body,         -- 35, 37, 60, 40, 12, __, ___,  9/ 9 [136]
+    hands=gear.Nyame_B_hands,       -- 17, 40, 60, 40, 10, __, ___,  7/ 7 [ 91]
+    legs=gear.Nyame_B_legs,         -- 43, 32, 60, 40, 11, __, ___,  8/ 8 [114]
+    feet=gear.Nyame_B_feet,         -- 23, 26, 60, 40, 10, __, ___,  7/ 7 [ 68]
     neck="Futhark Torque +1",       -- 12, 12, __, __, __, __, ___,  6/ 6 [ 45]
     ear1="Ishvara Earring",         -- __, __, __, __,  2, __, ___, __/__ [___]
     ear2="Moonshade Earring",       -- __, __, __,  4, __, __, 250, __/__ [___]
@@ -879,21 +879,21 @@ function init_gear_sets()
     waist="Sailfi Belt +1",         -- 15, __, 15, __, __, __, ___, __/__ [___]
     -- neck="Futhark Torque +2",    -- 15, 15, __, __, __, __, ___,  7/ 7 [ 60]
     -- back=gear.RUN_WS3_Cape,      -- 30, __, 20, 20, 10, __, ___, 10/__ [___]
-    -- 214 STR, 176 MND, 353 Attack, 224 Accuracy, 66 WSD, 0 PDL, 250 TP Bonus, 55PDT/45MDT [610HP]
-  } -- 181 STR, 173 MND, 353 Attack, 224 Accuracy, 66 WSD, 0 PDL, 250 TP Bonus, 54PDT/44MDT [595HP]
+    -- 214 STR, 176 MND, 378 Attack, 224 Accuracy, 76 WSD, 0 PDL, 250 TP Bonus, 55PDT/45MDT [610HP]
+  } -- 181 STR, 173 MND, 378 Attack, 224 Accuracy, 76 WSD, 0 PDL, 250 TP Bonus, 54PDT/44MDT [595HP]
   sets.precast.WS['Savage Blade'].Safe = {
     ammo="Knobkierrie",             -- __, __, 23, __,  6, __, ___, __/__ [___]
-    head=gear.Nyame_B_head,         -- 26, 26, 55, 40,  8, __, ___,  7/ 7 [ 91]
-    body=gear.Nyame_B_body,         -- 35, 37, 55, 40, 10, __, ___,  9/ 9 [136]
+    head=gear.Nyame_B_head,         -- 26, 26, 60, 40, 10, __, ___,  7/ 7 [ 91]
+    body=gear.Nyame_B_body,         -- 35, 37, 60, 40, 12, __, ___,  9/ 9 [136]
     hands={
       name=gear.Nyame_B_hands,
       priority=1
-    },                              -- 17, 40, 55, 40,  8, __, ___,  7/ 7 [ 91]
+    },                              -- 17, 40, 60, 40, 10, __, ___,  7/ 7 [ 91]
     legs={
       name=gear.Nyame_B_legs,
       priority=1
-    },                              -- 43, 32, 55, 40,  9, __, ___,  8/ 8 [114]
-    feet=gear.Nyame_B_feet,         -- 23, 26, 55, 40,  8, __, ___,  7/ 7 [ 68]
+    },                              -- 43, 32, 60, 40, 11, __, ___,  8/ 8 [114]
+    feet=gear.Nyame_B_feet,         -- 23, 26, 60, 40, 10, __, ___,  7/ 7 [ 68]
     neck="Futhark Torque +1",       -- 12, 12, __, __, __, __, ___,  6/ 6 [ 45]
     ear1="Odnowa Earring +1",       --  3, __, __, __, __, __, ___,  3/ 5 [110]
     ear2="Moonshade Earring",       -- __, __, __,  4, __, __, 250, __/__ [___]
@@ -903,8 +903,8 @@ function init_gear_sets()
     waist="Sailfi Belt +1",         -- 15, __, 15, __, __, __, ___, __/__ [___]
     -- neck="Futhark Torque +2",    -- 15, 15, __, __, __, __, ___,  7/ 7 [ 60]
     -- back=gear.RUN_WS3_Cape,      -- 30, __, 20, 20, 10, __, ___, 10/__ [___]
-    -- 207 STR, 176 MND, 341 Attack, 232 Accuracy, 59 WSD, 0 PDL, 250 TP Bonus, 70PDT/54MDT [915HP]
-  } -- 174 STR, 173 MND, 341 Attack, 232 Accuracy, 59 WSD, 0 PDL, 250 TP Bonus, 69PDT/53MDT [900HP]
+    -- 207 STR, 176 MND, 366 Attack, 232 Accuracy, 69 WSD, 0 PDL, 250 TP Bonus, 70PDT/54MDT [915HP]
+  } -- 174 STR, 173 MND, 366 Attack, 232 Accuracy, 69 WSD, 0 PDL, 250 TP Bonus, 69PDT/53MDT [900HP]
 
   sets.precast.WS['Savage Blade'].MaxTP = sets.precast.WS['Savage Blade'].MaxTP
   sets.precast.WS['Savage Blade'].LowAcc = sets.precast.WS['Savage Blade'].LowAcc
@@ -921,7 +921,7 @@ function init_gear_sets()
 
   sets.engaged = {
     sub="Utu Grip",
-    ammo="Aurgelmir Orb",
+    ammo="Coiste Bodhar",
     head=gear.Adhemar_B_head,
     body="Adhemar Jacket +1",
     hands=gear.Adhemar_B_hands,
@@ -934,7 +934,6 @@ function init_gear_sets()
     ring1="Epona's Ring",
     ring2="Niqmaddu Ring",
     back=gear.RUN_TP_Cape,
-    -- ammo="Aurgelmir Orb +1",
   }
   sets.engaged.LowAcc = set_combine(sets.engaged, {
     head="Dampening Tam",
@@ -1038,11 +1037,11 @@ function init_gear_sets()
   sets.engaged.LightDef = {
     sub="Utu Grip",             -- __/__, ___ [ 70] __, __ <__, __, __> 30
     ammo="Staunch Tathlum +1",  --  3/ 3, ___ [___] __, __ <__, __, __> __
-    head=gear.Nyame_B_head,     --  7/ 7, 123 [ 91]  6, __ < 2, __, __> 40
-    body=gear.Nyame_B_body,     --  9/ 9, 139 [136]  3, __ < 3, __, __> 40
+    head=gear.Nyame_B_head,     --  7/ 7, 123 [ 91]  6, __ < 4, __, __> 40
+    body=gear.Nyame_B_body,     --  9/ 9, 139 [136]  3, __ < 5, __, __> 40
     hands=gear.Adhemar_B_hands, -- __/__,  43 [ 22]  5,  7 <__,  4, __> 32
     legs=gear.Samnuha_legs,     -- __/__,  75 [ 41]  6,  7 < 3,  3, __> 15
-    feet=gear.Nyame_B_feet,     --  7/ 7, 150 [ 68]  3, __ < 2, __, __> 40
+    feet=gear.Nyame_B_feet,     --  7/ 7, 150 [ 68]  3, __ < 4, __, __> 40
     neck="Anu Torque",          -- __/__, ___ [___] __,  7 <__, __, __> __
     waist="Ioskeha Belt +1",    -- __/__, ___ [___]  8, __ < 9, __, __> 17
     ear1="Odnowa Earring +1",   --  3/ 5, ___ [110] __, __ <__, __, __> __
@@ -1050,7 +1049,7 @@ function init_gear_sets()
     ring1="Epona's Ring",       -- __/__, ___ [___] __, __ < 3,  3, __> __
     ring2="Defending Ring",     -- 10/10, ___ [___] __, __ <__, __, __> __
     back=gear.RUN_TP_Cape,      -- 10/__, ___ [___] __, 10 <__, __, __> 30
-  } -- 49 PDT / 41 MDT, 530 MEVA [538 HP] 23 Haste, 36 STP <27 DA, 10 TA, 0 QA> 244 Acc
+  } -- 49 PDT / 41 MDT, 530 MEVA [538 HP] 23 Haste, 36 STP <33 DA, 10 TA, 0 QA> 244 Acc
   sets.engaged.LowAcc.LightDef = sets.engaged.LightDef
   sets.engaged.MidAcc.LightDef = sets.engaged.LightDef
   sets.engaged.HighAcc.LightDef = sets.engaged.LightDef

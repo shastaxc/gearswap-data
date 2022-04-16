@@ -585,19 +585,19 @@ function init_gear_sets()
   })
 
   sets.MAB = {
-    ammo="Pemphredo Tathlum", --4
-    head=gear.Nyame_B_head, --30
+    ammo="Pemphredo Tathlum",       -- __,  4
+    head=gear.Nyame_B_head,         -- __, 30
     body=gear.Nyame_B_body,         -- __, 30, __, 10
-    hands=gear.Nyame_B_hands, --30
+    hands=gear.Nyame_B_hands,       -- __, 30
     legs=gear.Nyame_B_legs,         -- __, 30, __,  9
-    feet=gear.Herc_MAB_feet, --57
-    neck="Baetyl Pendant", --13
+    feet=gear.Herc_MAB_feet,        -- __, 57
+    neck="Baetyl Pendant",          -- __, 13
     ear1="Friomisi Earring",        -- __, 10, __, __
-    ear2="Novio Earring", --7
+    ear2="Novio Earring",           -- __,  7
     ring1="Shiva Ring +1",          -- __,  3, __, __
     back="Argochampsa Mantle",      -- __, 12, __, __
-    waist="Skrymir Cord", --5
-    -- back=gear.DRG_MAB_Cape, --10
+    waist="Skrymir Cord",           -- __,  5
+    -- back=gear.DRG_MAB_Cape,      -- __, 10
     -- waist="Skrymir Cord +1",     -- __,  7, 35, __
   }
 

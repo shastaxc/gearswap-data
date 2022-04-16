@@ -460,7 +460,7 @@ function init_gear_sets()
   -- Polearm sets use a crit build since you should be using Shining One
   -- Impulse Drive - 100% STR
   sets.precast.WS['Impulse Drive'] = set_combine(sets.precast.WS, {
-    ammo="Aurgelmir Orb",
+    ammo="Coiste Bodhar",
     head=gear.Nyame_B_head,
     body="Dagon Breastplate",
     hands=gear.Ryuo_A_hands,
@@ -473,7 +473,6 @@ function init_gear_sets()
     ring2="Niqmaddu Ring",
     back=gear.SAM_STR_WSD_Cape,
     waist="Sailfi belt +1",
-    -- ammo="Aurgelmir Orb +1",
   })
   sets.precast.WS["Impulse Drive"].MaxTP = set_combine(sets.precast.WS["Impulse Drive"], {
   })
@@ -540,7 +539,7 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.defense.PDT = {
-    ammo="Aurgelmir Orb",       -- __/__, ___
+    ammo="Coiste Bodhar",       -- __/__, ___
     head=gear.Nyame_B_head,     --  7/ 7, 123
     body=gear.Nyame_B_body,     --  9/ 9, 139
     hands="Wakido Kote +3",     -- __/__,  46
@@ -553,7 +552,6 @@ function init_gear_sets()
     ring2="Defending Ring",     -- 10/10, ___
     back=gear.SAM_TP_Cape,      -- 10/__, ___
     waist="Ioskeha Belt +1",    -- __/__, ___
-    -- ammo="Aurgelmir Orb +1", -- __/__, ___
     --51 PDT/41 MDT, 608 MEVA
   }
   sets.defense.MDT = sets.defense.PDT
@@ -608,7 +606,7 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.engaged = {
-    ammo="Aurgelmir Orb",             -- [__/__, ___] __,  4 <__, __, __> __, __
+    ammo="Coiste Bodhar",             -- [__/__, ___] __,  3 <__, __,  3> __, __
     head="Flamma Zucchetto +2",       -- [__/__,  53] __,  6 <__,  5, __> __,  4
     body="Kendatsuba Samue +1",       -- [__/__, 117] __, __ <__,  6, __>  9,  4
     hands="Wakido Kote +3",           -- [__/__,  46]  4,  7 <__, __, __> __,  4
@@ -621,10 +619,9 @@ function init_gear_sets()
     ring2="Niqmaddu Ring",            -- [__/__, ___] __, __ < 3, __, __> __, __
     back=gear.SAM_TP_Cape,            -- [10/__, ___] __, __ <__, __, 10> __, __
     waist="Sailfi Belt +1",           -- [__/__, ___] __, __ <__,  2,  5> __,  9
-    -- ammo="Aurgelmir Orb +1",       -- [__/__, ___] __,  5 <__, __, __> __, __
     -- body="Tatenashi Haramaki +1",  -- [__/__,  59] __,  9 <__,  5, __>  6,  3
-    -- [10 PDT/0 MDT, 337 MEVA] 4 Hasso, 68 STP <3 QA, 19 TA, 15 DA> 11 Crit Rate, 28 Haste
-  } -- [10 PDT/0 MDT, 435 MEVA] 4 Hasso, 58 STP <3 QA, 20 TA, 15 DA> 14 Crit Rate, 29 Haste
+    -- [10 PDT/0 MDT, 337 MEVA] 4 Hasso, 66 STP <3 QA, 19 TA, 18 DA> 11 Crit Rate, 28 Haste
+  } -- [10 PDT/0 MDT, 435 MEVA] 4 Hasso, 57 STP <3 QA, 20 TA, 18 DA> 14 Crit Rate, 29 Haste
   sets.engaged.LowAcc = set_combine(sets.engaged, {
     body="Kendatsuba Samue +1",
     feet="Flamma Gambieras +2",
@@ -645,7 +642,7 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.engaged.LightDef = {
-    ammo="Aurgelmir Orb",             -- [__/__, ___] __,  4 <__, __, __> __, __
+    ammo="Coiste Bodhar",             -- [__/__, ___] __,  3 <__, __,  3> __, __
     head="Flamma Zucchetto +2",       -- [__/__,  53] __,  6 <__,  5, __> __,  4
     body="Mpaca's Doublet",           -- [10/__,  86] __,  5 <__,  4, __>  7,  4
     hands="Wakido Kote +3",           -- [__/__,  46]  4,  7 <__, __, __> __,  4
@@ -658,20 +655,18 @@ function init_gear_sets()
     ring2="Defending Ring",           -- [10/10, ___] __, __ <__, __, __> __, __
     back=gear.SAM_TP_Cape,            -- [10/__, ___] __, __ <__, __, 10> __, __
     waist="Sailfi Belt +1",           -- [__/__, ___] __, __ <__,  2,  5> __,  9
-    -- ammo="Aurgelmir Orb +1",       -- [__/__, ___] __,  5 <__, __, __> __, __
-    -- [36 PDT/10 MDT, 361 MEVA] 4 Hasso, 64 STP <0 QA, 17 TA, 15 DA> 10 Crit Rate, 29 Haste
-  } -- [36 PDT/10 MDT, 361 MEVA] 4 Hasso, 63 STP <0 QA, 17 TA, 15 DA> 10 Crit Rate, 29 Haste
+  } -- [36 PDT/10 MDT, 361 MEVA] 4 Hasso, 62 STP <0 QA, 17 TA, 18 DA> 10 Crit Rate, 29 Haste
   sets.engaged.LowAcc.LightDef = sets.engaged.LightDef
   sets.engaged.MidAcc.LightDef = sets.engaged.LightDef
   sets.engaged.HighAcc.LightDef = sets.engaged.LightDef
 
   sets.engaged.HeavyDef = {
-    ammo="Aurgelmir Orb",             -- [__/__, ___] __,  4 <__, __, __> __, __
-    head=gear.Nyame_B_head,           -- [ 7/ 7, 123] __, __ <__, __,  2> __,  6
+    ammo="Coiste Bodhar",             -- [__/__, ___] __,  3 <__, __,  3> __, __
+    head=gear.Nyame_B_head,           -- [ 7/ 7, 123] __, __ <__, __,  4> __,  6
     body="Mpaca's Doublet",           -- [10/__,  86] __,  5 <__,  4, __>  7,  4
     hands="Wakido Kote +3",           -- [__/__,  46]  4,  7 <__, __, __> __,  4
     legs="Tatenashi Haidate +1",      -- [__/__,  80] __,  8 <__,  3, __> __,  5
-    feet=gear.Nyame_B_feet,           -- [ 7/ 7, 150] __, __ <__, __,  2> __,  3
+    feet=gear.Nyame_B_feet,           -- [ 7/ 7, 150] __, __ <__, __,  4> __,  3
     neck="Samurai's Nodowa +2",       -- [__/__, ___] __, 14 <__, __, __> __, __
     ear1="Dedition Earring",          -- [__/__, ___] __,  8 <__, __, __> __, __
     ear2="Telos Earring",             -- [__/__, ___] __,  5 <__, __, __> __, __
@@ -679,20 +674,18 @@ function init_gear_sets()
     ring2="Defending Ring",           -- [10/10, ___] __, __ <__, __, __> __, __
     back=gear.SAM_TP_Cape,            -- [10/__, ___] __, __ <__, __, 10> __, __
     waist="Sailfi Belt +1",           -- [__/__, ___] __, __ <__,  2,  5> __,  9
-    -- ammo="Aurgelmir Orb +1",       -- [__/__, ___] __,  5 <__, __, __> __, __
-    -- [51 PDT/23 MDT, 485 MEVA] 4 Hasso, 52 STP <0 QA, 9 TA, 19 DA> 7 Crit Rate, 31 Haste
-  } -- [51 PDT/23 MDT, 485 MEVA] 4 Hasso, 51 STP <0 QA, 9 TA, 19 DA> 7 Crit Rate, 31 Haste
+  } -- [51 PDT/23 MDT, 485 MEVA] 4 Hasso, 50 STP <0 QA, 9 TA, 26 DA> 7 Crit Rate, 31 Haste
   sets.engaged.LowAcc.HeavyDef = sets.engaged.HeavyDef
   sets.engaged.MidAcc.HeavyDef = sets.engaged.HeavyDef
   sets.engaged.HighAcc.HeavyDef = sets.engaged.HeavyDef
 
   sets.engaged.SubtleBlow = {
     ammo="Crepuscular Pebble",        -- [ 3/ 3, ___] __, __ <__, __, __> __, __, __
-    head=gear.Nyame_B_head,           -- [ 7/ 7, 123] __, __ <__, __,  2> __,  6, __
+    head=gear.Nyame_B_head,           -- [ 7/ 7, 123] __, __ <__, __,  4> __,  6, __
     body="Mpaca's Doublet",           -- [10/__,  86] __,  5 <__,  4, __>  7,  4, __
     hands="Wakido Kote +3",           -- [__/__,  46]  4,  7 <__, __, __> __,  4, __
     legs="Mpaca's Hose",              -- [ 9/__,  96] __, __ <__,  4, __>  6,  9, (5)
-    feet=gear.Nyame_B_feet,           -- [ 7/ 7, 150] __, __ <__, __,  2> __,  3, __
+    feet=gear.Nyame_B_feet,           -- [ 7/ 7, 150] __, __ <__, __,  4> __,  3, __
     neck="Samurai's Nodowa +2",       -- [__/__, ___] __, 14 <__, __, __> __, __, __
     ear1="Dignitary's Earring",       -- [__/__, ___] __,  3 <__, __, __> __, __,  5
     ear2="Odnowa Earring +1",         -- [ 3/ 5, ___] __, __ <__, __, __> __, __, __
@@ -700,7 +693,7 @@ function init_gear_sets()
     ring2="Chirich Ring +1",          -- [__/__, ___] __,  6 <__, __, __> __, __, 10
     back=gear.SAM_TP_Cape,            -- [10/__, ___] __, __ <__, __, 10> __, __, __
     waist="Sailfi Belt +1",           -- [__/__, ___] __, __ <__,  2,  5> __,  9, __
-  } -- [49 PDT/22 MDT, 501 MEVA] 4 Hasso, 41 STP <0 QA, 10 TA, 19 DA> 13 Crit Rate, 35 Haste, 25(5) Subtle Blow
+  } -- [49 PDT/22 MDT, 501 MEVA] 4 Hasso, 41 STP <0 QA, 10 TA, 23 DA> 13 Crit Rate, 35 Haste, 25(5) Subtle Blow
   sets.engaged.LowAcc.SubtleBlow = sets.engaged.SubtleBlow
   sets.engaged.MidAcc.SubtleBlow = sets.engaged.SubtleBlow
   sets.engaged.HighAcc.SubtleBlow = sets.engaged.SubtleBlow

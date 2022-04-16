@@ -378,11 +378,11 @@ function init_gear_sets()
 
   -- Modifiers: 40% DEX / 40% INT, Focus: MAB
   sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
-    head=gear.Nyame_B_head,       --  8, 
-    body=gear.Nyame_B_body,       -- 10, 
-    hands=gear.Nyame_B_hands,     --  8, 
-    legs=gear.Nyame_B_legs,       --  9, 
-    feet=gear.Nyame_B_feet,       --  8, 
+    head=gear.Nyame_B_head,       -- 10, 
+    body=gear.Nyame_B_body,       -- 12, 
+    hands=gear.Nyame_B_hands,     -- 10, 
+    legs=gear.Nyame_B_legs,       -- 11, 
+    feet=gear.Nyame_B_feet,       -- 10, 
     neck="Baetyl Pendant",        -- __, __, __, 13
     ear1="Moonshade Earring",     -- __, __, __, __; 250 TP Bonus
     ear2="Friomisi Earring",      -- __, __, __, 10
@@ -391,7 +391,7 @@ function init_gear_sets()
     waist="Skrymir Cord",         -- __, __, __,  5; +30 M.Dmg
     -- range=gear.Linos_WS1,      --  3, __,  8, 20
     -- back=gear.BRD_WS2_Cape,    -- 10, 30, __, __
-    -- 48 WSD, 166 DEX, 203 INT, 251 MAB
+    -- 58 WSD, 166 DEX, 203 INT, 251 MAB
   })
   sets.precast.WS['Aeolian Edge'].MaxTP = set_combine(sets.precast.WS['Aeolian Edge'], {
     ear1="Regal Earring",         -- __, __, 10,  7
@@ -399,21 +399,20 @@ function init_gear_sets()
 
   -- Modifiers: 50% STR / 50% MND
   sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
-    head=gear.Nyame_B_head,       --  8, __, __,  2, 55, 40, 26, 26
-    body=gear.Nyame_B_body,       -- 10, __, __,  3, 55, 40, 35, 37
-    hands=gear.Nyame_B_hands,     --  8, __, __,  2, 55, 40, 17, 40
-    legs=gear.Nyame_B_legs,       --  9, __, __,  3, 55, 40, 43, 32
-    feet=gear.Nyame_B_feet,       --  8, __, __,  2, 55, 40, 23, 26
+    head=gear.Nyame_B_head,       -- 10, __, __,  4, 60, 40, 26, 26
+    body=gear.Nyame_B_body,       -- 12, __, __,  5, 60, 40, 35, 37
+    hands=gear.Nyame_B_hands,     -- 10, __, __,  4, 60, 40, 17, 40
+    legs=gear.Nyame_B_legs,       -- 11, __, __,  5, 60, 40, 43, 32
+    feet=gear.Nyame_B_feet,       -- 10, __, __,  4, 60, 40, 23, 26
     ear1="Moonshade Earring",     -- __, __, __, __, __,  4, __, __; 250 TP Bonus
     ear2="Regal Earring",         -- __, __, __, __, __, __, __, 10
     ring2="Epaminondas's Ring",   --  5, __, __, __, __, __, __, __
     waist="Sailfi Belt +1",       -- __, __,  2,  5, 15, __, 15, __
     -- range=gear.Linos_WS5,      --  3, __, __, __, 15, 15,  8, __
-    -- body="Bihu Jstcorps. +3",  -- 10, __, __, __, 92, 53, 39, 38
     -- neck="Bard's Charm +2",    -- __,  3, __, __, __, 30, __, __
     -- ring1="Ifrit Ring +1",     -- __, __, __, __,  5, __,  9, __
     -- back=gear.BRD_WS5_Cape,    -- 10, __, __, __, 20, 20, 30, __
-    -- 28 WSD, 3 QA, 2 TA, 5 DA, 397 Att, 272 Acc, 188 STR, 187 MND
+    -- 71 WSD, 3 QA, 2 TA, 27 DA, 355 Att, 269 Acc, 206 STR, 171 MND
   })
   sets.precast.WS['Savage Blade'].MaxTP = set_combine(sets.precast.WS['Savage Blade'], {
     -- ear1="Vulcan's Pearl",     -- __, __, __, __, __, __,  4, __

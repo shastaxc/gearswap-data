@@ -641,11 +641,11 @@ function init_gear_sets()
   })
 
   sets.precast.WS['Savage Blade'] = {
-    head=gear.Nyame_B_head,       -- 26, 26, 55, 40,  8, __, ___
+    head=gear.Nyame_B_head,       -- 26, 26, 60, 40, 10, __, ___
     body="Ikenga's Vest",         -- 33, 25, __, __, __,  7, 170
-    hands=gear.Nyame_B_hands,     -- 17, 40, 55, 40,  8, __, ___
-    legs=gear.Nyame_B_legs,       -- 43, 32, 55, 40,  9, __, ___
-    feet=gear.Nyame_B_feet,       -- 23, 26, 55, 40,  8, __, ___
+    hands=gear.Nyame_B_hands,     -- 17, 40, 60, 40, 10, __, ___
+    legs=gear.Nyame_B_legs,       -- 43, 32, 60, 40, 11, __, ___
+    feet=gear.Nyame_B_feet,       -- 23, 26, 60, 40, 10, __, ___
     neck="Scout's Gorget +1",     -- __, __, __, __, __,  8, ___
     ear1="Ishvara Earring",       -- __, __, __, __,  2, __, ___
     ear2="Moonshade Earring",     -- __, __, __,  4, __, __, 250
@@ -654,8 +654,8 @@ function init_gear_sets()
     back=gear.RNG_WS3_Cape,       -- 30, __, 20, 20, 10, __, ___
     waist="Sailfi Belt +1",       -- 15, __, 15, __, __, __, ___
     -- neck="Scout's Gorget +2",  -- __, __, __, __, __, 10, ___
-    -- 197 STR, 149 MND, 275 Attack, 184 Accuracy, 50 WSD, 17 PDL, 420 TP Bonus
-  } -- 197 STR, 149 MND, 275 Attack, 184 Accuracy, 50 WSD, 15 PDL, 420 TP Bonus
+    -- 197 STR, 149 MND, 295 Attack, 184 Accuracy, 58 WSD, 17 PDL, 420 TP Bonus
+  } -- 197 STR, 149 MND, 295 Attack, 184 Accuracy, 58 WSD, 15 PDL, 420 TP Bonus
   sets.precast.WS['Savage Blade'].MaxTP = set_combine(sets.precast.WS['Savage Blade'], {
     ear2="Telos Earring",
   })
