@@ -709,7 +709,7 @@ function init_gear_sets()
 
   -- Stoneskin Cap, Enh Duration
   sets.midcast.Stoneskin = set_combine(sets.midcast.EnhancingDuration, {
-    -- neck="Nodens Gorget",    -- 30, __, __
+    neck="Nodens Gorget",    -- 30, __, __
     -- waist="Siegel Sash",     -- 20, __, __
     -- ear1="Earthcry Earring", -- 10, __, __
     -- +60 Stoneskin Cap, 72% Enh Duration
@@ -1002,6 +1002,7 @@ function init_gear_sets()
     body="Mallquis Saio +2",          -- 54, 46, 15, ___,  58, __, __
     legs="Mallquis Trews +2",         -- 57, 45, 15, ___,  55,  6, __
     feet="Mallquis Clogs +1",         -- 33, 36, 12, ___,  46, __, __
+    neck="Sanctity Necklace",         -- __, 10, 10, ___, ___, __, __
     ear1="Malignance Earring",        --  8, 10,  8, ___, ___, __, __
     ear2="Regal Earring",             -- 10, __,  7, ___, ___, __, __
     back=gear.SCH_MAB_Cape,
