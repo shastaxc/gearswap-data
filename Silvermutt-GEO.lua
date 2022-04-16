@@ -1184,6 +1184,7 @@ end
 function job_precast(spell, action, spellMap, eventArgs)
   silibs.precast_hook(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
+
 	if spell.english:startswith('Geo-') and pet.isvalid then
 		eventArgs.cancel = true
 		windower.chat.input('/ja "Full Circle" <me>')
@@ -1323,7 +1324,7 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
   if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
 
   -- Always put this last in job_post_midcast
-  if in_battle_mode() and not (state.Buff.Entrust and spell.english:startswith('Indi-')) then
+  if in_battle_mode() and not spell.type == 'Geomancy' then
     equip(sets.WeaponSet[state.WeaponSet.current])
   end
 
