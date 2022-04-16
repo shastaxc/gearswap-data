@@ -411,6 +411,7 @@ function init_gear_sets()
 
   sets.precast.WS["Drakesbane"] = {
     ammo="Knobkierrie",
+    body="Hjarrandi Breastplate",
     hands="Gleti's Gauntlets",
     feet="Gleti's Boots",
     ear1="Thrud Earring",
@@ -419,7 +420,6 @@ function init_gear_sets()
     ring2="Niqmaddu Ring",
     waist="Sailfi Belt +1",
     -- head="Blistering Sallet +1",
-    -- body="Hjarrandi Breastplate",
     -- legs="Peltast's Cuissots +1",
     -- back=gear.DRG_WS3_Cape,
   }
@@ -629,7 +629,7 @@ function init_gear_sets()
   sets.engaged = {
     ammo="Coiste Bodhar",           -- __,  3, 15, __, __ < 3, __, __> [__/__, ___] {__/__}
     head="Flamma Zucchetto +2",     --  4,  6, __, 44, __ <__,  5, __> [__/__,  53] {__/__}
-    body="Gleti's Cuirass",         --  3, __, 60, 45,  8 < 7, __, __> [ 9/__, 102] {__/__}
+    body="Hjarrandi Breastplate",   -- __, 10, 53, 47, 13 <__, __, __> [12/12,  69] {__/__}
     hands="Gleti's Gauntlets",      --  3,  5, 60, 45,  6 <__, __, __> [ 7/__,  75] { 8/ 8}
     legs="Gleti's Breeches",        --  5, __, 60, 45,  7 <__, __, __> [ 8/__, 112] {__/__}
     feet="Flamma Gambieras +2",     --  2,  6, __, 42, __ < 6, __, __> [__/__,  86] {__/__}
@@ -641,12 +641,11 @@ function init_gear_sets()
     back=gear.DRG_TP_Cape,          -- __, __, 20, 30, __ <10, __, __> [10/__, ___] {__/__}
     waist="Ioskeha Belt +1",        --  8, __, __, 17, __ < 9, __, __> [__/__, ___] {__/__}
     -- head="Hjarrandi Helm",       -- __,  7, 45, 41, __ < 6, __, __> [10/10,  53] {__/__}
-    -- body="Hjarrandi Breastplate",-- __, 10, 53, 47, 13 <__, __, __> [12/12,  69] {__/__}
     -- legs="Pteroslaver Brais +3", --  5, 10, 64, 39, __ <__, __, __> [__/__,  95] {11/__}
     -- neck="Vim Torque +1",        -- __, 10, __, 15, __ <__, __, __> [__/__, ___] {__/__}
     -- waist="Tempus Belt +1",      -- 15, __, __, __, __ <__, __, __> [__/__, ___] {__/__}
     -- 25 Haste, 66 STP, 275 Att, 277 Acc, 19 Crit Rate <31 DA, 0 TA, 3 QA> [44 PDT/27 MDT, 378 Meva] {19 PetPDT/8 PetMDT}
-  } -- 25 Haste, 42 STP, 253 Att, 286 Acc, 21 Crit Rate <41 DA, 5 TA, 3 QA> [39 PDT/5 MDT, 428 Meva] {8 PetPDT/8 PetMDT}
+  } -- 22 Haste, 52 STP, 246 Att, 288 Acc, 26 Crit Rate <34 DA, 5 TA, 3 QA> [42 PDT/17 MDT, 395 Meva] {8 PetPDT/8 PetMDT}
   sets.engaged.LowAcc = set_combine(sets.engaged, {
     ring1="Chirich Ring +1",
     ring2="Chirich Ring +1",
@@ -699,7 +698,7 @@ function init_gear_sets()
   sets.engaged.LightDef = set_combine(sets.engaged, {
     ammo="Coiste Bodhar",           -- __,  3, 15, __, __ < 3, __, __> [__/__, ___] {__/__}
     head="Flamma Zucchetto +2",     --  4,  6, __, 44, __ <__,  5, __> [__/__,  53] {__/__}
-    body="Gleti's Cuirass",         --  3, __, 60, 45,  8 < 7, __, __> [ 9/__, 102] {__/__}
+    body="Hjarrandi Breastplate",   -- __, 10, 53, 47, 13 <__, __, __> [12/12,  69] {__/__}
     hands="Gleti's Gauntlets",      --  3,  5, 60, 45,  6 <__, __, __> [ 7/__,  75] { 8/ 8}
     legs=gear.Nyame_B_legs,         --  5, __, 60, 40, __ < 5, __, __> [ 8/ 8, 150] {__/__}
     feet=gear.Nyame_B_feet,         --  3, __, 60, 40, __ < 4, __, __> [ 7/ 7, 150] {__/__}
@@ -710,7 +709,7 @@ function init_gear_sets()
     ring2="Moonlight Ring",         -- __,  5,  8,  8, __ <__, __, __> [ 5/ 5, ___] {__/__}
     back=gear.DRG_TP_Cape,          -- __, __, 20, 30, __ <10, __, __> [10/__, ___] {__/__}
     waist="Ioskeha Belt +1",        --  8, __, __, 17, __ < 9, __, __> [__/__, ___] {__/__}
-    -- 26 Haste, 34 STP, 326 Att, 312 Acc, 18 Crit Rate <44 DA, 5 TA, 0 QA> [51 PDT/25 MDT, 530 Meva] {33 PetPDT/33 PetMDT}
+    -- 23 Haste, 44 STP, 319 Att, 314 Acc, 23 Crit Rate <37 DA, 5 TA, 0 QA> [54 PDT/37 MDT, 497 Meva] {33 PetPDT/33 PetMDT}
 
     -- Ideal:
     -- ammo="Coiste Bodhar",           -- __,  3, 15, __, __ < 3, __, __> [__/__, ___] {__/__}
