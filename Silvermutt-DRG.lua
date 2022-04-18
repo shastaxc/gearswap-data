@@ -189,7 +189,7 @@ function init_gear_sets()
     hands="Gleti's Gauntlets",
     legs="Pteroslaver Brais +1",
     feet="Flamma Gambieras",
-    neck="Anu Torque",
+    neck="Vim Torque +1",
     ear1="Telos Earring",
     ear2="Sherida Earring",
     ring1="Petrov Ring",
@@ -200,7 +200,6 @@ function init_gear_sets()
     -- hands="Vishap Finger Gauntlets +3",
     -- legs="Pteroslaver Brais +3",
     -- feet="Ostro Greaves",
-    -- neck="Vim Torque +1",
   }
   sets.precast.JA['High Jump'] = sets.precast.JA['Jump']
   sets.precast.JA['Spirit Jump'] = set_combine(sets.precast.JA['Jump'], {
@@ -554,9 +553,8 @@ function init_gear_sets()
     ring1="Moonlight Ring",       -- [ 5/ 5, ___] {__/__}
     ring2="Defending Ring",       -- [10/10, ___] {__/__}
     back=gear.DRG_TP_Cape,        -- [10/__, ___] {__/__}
-    waist="Carrier's Sash",
+    waist="Isa Belt",             -- [__/__, ___] { 3/ 3}
     -- ear2="Anastasi Earring",   -- [__/__, ___] { 3/__}
-    -- waist="Isa Belt",          -- [__/__, ___] { 3/ 3}
   } -- 66 PDT/56 MDT, 674 MEVA {34 PetPDT/31 PetMDT}
 
   sets.defense.PDT = sets.HeavyDef
@@ -633,7 +631,7 @@ function init_gear_sets()
     hands="Gleti's Gauntlets",      --  3,  5, 60, 45,  6 <__, __, __> [ 7/__,  75] { 8/ 8}
     legs="Gleti's Breeches",        --  5, __, 60, 45,  7 <__, __, __> [ 8/__, 112] {__/__}
     feet="Flamma Gambieras +2",     --  2,  6, __, 42, __ < 6, __, __> [__/__,  86] {__/__}
-    neck="Anu Torque",              -- __,  7, 20, __, __ <__, __, __> [__/__, ___] {__/__}
+    neck="Vim Torque +1",           -- __, 10, __, 15, __ <__, __, __> [__/__, ___] {__/__}
     ear1="Telos Earring",           -- __,  5, 10, 10, __ < 1, __, __> [__/__, ___] {__/__}
     ear2="Sherida Earring",         -- __,  5, __, __, __ < 5, __, __> [__/__, ___] {__/__}
     ring1="Moonlight Ring",         -- __,  5,  8,  8, __ <__, __, __> [ 5/ 5, ___] {__/__}
@@ -642,10 +640,9 @@ function init_gear_sets()
     waist="Ioskeha Belt +1",        --  8, __, __, 17, __ < 9, __, __> [__/__, ___] {__/__}
     -- head="Hjarrandi Helm",       -- __,  7, 45, 41, __ < 6, __, __> [10/10,  53] {__/__}
     -- legs="Pteroslaver Brais +3", --  5, 10, 64, 39, __ <__, __, __> [__/__,  95] {11/__}
-    -- neck="Vim Torque +1",        -- __, 10, __, 15, __ <__, __, __> [__/__, ___] {__/__}
     -- waist="Tempus Belt +1",      -- 15, __, __, __, __ <__, __, __> [__/__, ___] {__/__}
     -- 25 Haste, 66 STP, 275 Att, 277 Acc, 19 Crit Rate <31 DA, 0 TA, 3 QA> [44 PDT/27 MDT, 378 Meva] {19 PetPDT/8 PetMDT}
-  } -- 22 Haste, 52 STP, 246 Att, 288 Acc, 26 Crit Rate <34 DA, 5 TA, 3 QA> [42 PDT/17 MDT, 395 Meva] {8 PetPDT/8 PetMDT}
+  } -- 22 Haste, 55 STP, 226 Att, 303 Acc, 26 Crit Rate <34 DA, 5 TA, 3 QA> [42 PDT/17 MDT, 395 Meva] {8 PetPDT/8 PetMDT}
   sets.engaged.LowAcc = set_combine(sets.engaged, {
     ring1="Chirich Ring +1",
     ring2="Chirich Ring +1",
@@ -666,7 +663,7 @@ function init_gear_sets()
     hands="Gleti's Gauntlets",      --  3,  5, 60, 45,  6 <__, __, __> [ 7/__,  75] { 8/ 8}
     legs=gear.Nyame_B_legs,         --  5, __, 60, 40, __ < 5, __, __> [ 8/ 8, 150] {__/__}
     feet="Flamma Gambieras +2",     --  2,  6, __, 42, __ < 6, __, __> [__/__,  86] {__/__}
-    neck="Anu Torque",              -- __,  7, 20, __, __ <__, __, __> [__/__, ___] {__/__}
+    neck="Vim Torque +1",           -- __, 10, __, 15, __ <__, __, __> [__/__, ___] {__/__}
     ear1="Odnowa Earring +1",       -- __, __, __, __, __ <__, __, __> [ 3/ 5, ___] {__/__}
     ear2="Sherida Earring",         -- __,  5, __, __, __ < 5, __, __> [__/__, ___] {__/__}
     ring1="Moonlight Ring",         -- __,  5,  8,  8, __ <__, __, __> [ 5/ 5, ___] {__/__}
@@ -674,9 +671,8 @@ function init_gear_sets()
     back=gear.DRG_TP_Cape,          -- __, __, 20, 30, __ <10, __, __> [10/__, ___] {__/__}
     waist="Ioskeha Belt +1",        --  8, __, __, 17, __ < 9, __, __> [__/__, ___] {__/__}
     -- legs="Pteroslaver Brais +3", --  5, 10, 64, 39, __ <__, __, __> [__/__,  95] {11/__}
-    -- neck="Vim Torque +1",        -- __, 10, __, 15, __ <__, __, __> [__/__, ___] {__/__}
     -- 25 Haste, 55 STP, 235 Att, 293 Acc, 14 Crit Rate <40 DA, 5 TA, 0 QA> [39 PDT/15 MDT, 411 Meva] {19 PetPDT/8 PetMDT}
-  } -- 25 Haste, 42 STP, 251 Att, 279 Acc, 14 Crit Rate <45 DA, 5 TA, 0 QA> [47 PDT/23 MDT, 466 Meva] {8 PetPDT/8 PetMDT}
+  } -- 25 Haste, 45 STP, 231 Att, 294 Acc, 14 Crit Rate <45 DA, 5 TA, 0 QA> [47 PDT/23 MDT, 466 Meva] {8 PetPDT/8 PetMDT}
   sets.engaged.LowAcc.SamRoll = set_combine(sets.engaged.SamRoll, {
     ring1="Chirich Ring +1",
     ring2="Chirich Ring +1",
