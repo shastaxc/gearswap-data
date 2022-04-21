@@ -586,7 +586,7 @@ function init_gear_sets()
 
   sets.precast.WS['Savage Blade'] = {
     head=gear.Nyame_B_head,       -- 26, 26, 60, 40, 10, __, ___
-    body="Ikenga's Vest",         -- 33, 25, __, __, __,  7, 170
+    body="Ikenga's Vest",         -- 33, 25, __, __, __,  7, 190
     hands=gear.Nyame_B_hands,     -- 17, 40, 60, 40, 10, __, ___
     legs=gear.Nyame_B_legs,       -- 43, 32, 60, 40, 11, __, ___
     feet=gear.Nyame_B_feet,       -- 23, 26, 60, 40, 10, __, ___
@@ -598,8 +598,8 @@ function init_gear_sets()
     back=gear.COR_WS2_Cape,       -- 30, __, 20, 20, 10, __, ___
     waist="Sailfi Belt +1",       -- 15, __, 15, __, __, __, ___
     -- neck="Commodore Charm +2", -- 15, __, __, __, __, __, ___
-    -- 212 STR, 149 MND, 295 Attack, 184 Accuracy, 58 WSD, 7 PDL, 420 TP Bonus
-  } -- 209 STR, 149 MND, 295 Attack, 184 Accuracy, 58 WSD, 7 PDL, 420 TP Bonus
+    -- 212 STR, 149 MND, 295 Attack, 184 Accuracy, 58 WSD, 7 PDL, 440 TP Bonus
+  } -- 209 STR, 149 MND, 295 Attack, 184 Accuracy, 58 WSD, 7 PDL, 440 TP Bonus
   sets.precast.WS['Savage Blade'].MaxTP = set_combine(sets.precast.WS['Savage Blade'], {
     ear2="Telos Earring",
   })
@@ -743,10 +743,10 @@ function init_gear_sets()
   -- Ranged gear
   sets.midcast.RA = {
     ammo=gear.RAbullet,             -- __ [__] 20/__ <_> {_} (__)
-    head="Ikenga's Hat",            -- 29 [ 8] 45/60 <_> {4} (__)
-    body="Ikenga's Vest",           -- 39 [11] 45/60 <_> {7} (__)
+    head="Ikenga's Hat",            -- 29 [ 8] 50/65 <_> {4} (__)
+    body="Ikenga's Vest",           -- 39 [11] 50/65 <_> {7} (__)
     hands="Malignance Gloves",      -- 24 [12] 50/__ <_> {4} (__)
-    legs="Ikenga's Trousers",       -- 40 [10] 45/60 <_> {6} (__)
+    legs="Ikenga's Trousers",       -- 40 [10] 50/65 <_> {6} (__)
     feet="Malignance Boots",        -- 49 [ 9] 50/__ <_> {2} (__)
     neck="Iskur Gorget",            -- __ [ 8] 30/30 <_> {_} (__)
     ear1="Enervating Earring",      -- __ [ 4]  7/ 7 <_> {_} (__)
@@ -755,25 +755,25 @@ function init_gear_sets()
     ring2="Ilabrat Ring",           -- 10 [ 5] __/__ <_> {_} (__)
     back=gear.COR_RA_Cape,          -- 30 [10] 20/20 <_> {_} (__)
     waist="Yemaya Belt",            --  7 [ 4] 10/10 <_> {_} (__)
-  } --238 AGI [86 STP] 332 racc / 282 ratt <0 crit> {23 dmg limit} (10 Recycle)
+  } --238 AGI [86 STP] 347 racc / 297 ratt <0 crit> {23 dmg limit} (10 Recycle)
   sets.midcast.RA.LowAcc = set_combine(sets.midcast.RA, {
     ear1="Beyla Earring",           -- __ [__] 15/__ <_> {_} (__)
     ring2="Crepuscular Ring",       -- __ [ 6] 10/__ <_> {_} (__)
     -- ammo=gear.RAccbullet,        -- __ [__] 35/__ <_> {_} (__)
-    --228 AGI [83 STP] 365 racc / 275 ratt <0 crit> {23 dmg limit} (10 Recycle)
+    --228 AGI [83 STP] 380 racc / 290 ratt <0 crit> {23 dmg limit} (10 Recycle)
   })
   sets.midcast.RA.MidAcc = set_combine(sets.midcast.RA.LowAcc, {
     body="Malignance Tabard",       -- 42 [11] 50/__ <_> {6} (__)
     legs=gear.Adhemar_C_legs,       -- 42 [ 8] 54/20 <_> {_} (16)
     ring1="Hajduk Ring +1",         -- __ [__] 17/__ <_> {_} (__)
-    --223 AGI [81 STP] 396 racc / 150 ratt <0 crit> {16 dmg limit} (16 Recycle)
+    --223 AGI [81 STP] 401 racc / 155 ratt <0 crit> {16 dmg limit} (16 Recycle)
   })
   sets.midcast.RA.HighAcc = set_combine(sets.midcast.RA.MidAcc, {
     waist="Kwahu Kachina Belt +1",  --  8 [__] 20/__ <5> {_} (__)
     -- body="Laksamana's Frac +3",  -- 45 [__] 57/35 <_> {_} (19)
     -- legs="Laksamana's Trews +3", -- 33 [__] 49/__ <_> {_} (__)
     -- AF set bonus                 -- __ [__] 15/__ <_> {_} (__)
-    --218 AGI [58 STP] 423 racc / 155 ratt <5 crit> {10 dmg limit} (19 Recycle)
+    --218 AGI [58 STP] 428 racc / 160 ratt <5 crit> {10 dmg limit} (19 Recycle)
   })
 
   -- Dmg is based on Gun DMG, bullet DMG, Quick Draw+ stat, elemental bonuses, MAB.
@@ -782,7 +782,7 @@ function init_gear_sets()
   -- TP returned is affected by Store TP.
   sets.midcast.CorsairShot = {
     ammo=gear.QDbullet,           -- 10, 40, __, __, __/__
-    head="Ikenga's Hat",          -- 29, 35, 45,  8, __/__
+    head="Ikenga's Hat",          -- 29, 40, 50,  8, __/__
     body="Lanun Frac +3",         -- 43, 61, 40, __,  6/__
     hands="Carmine Fin. Ga. +1",  -- 12, 42, __,  6, __/__
     legs=gear.Nyame_B_legs,       -- 34, 30, 40, __,  8/ 8
@@ -796,7 +796,7 @@ function init_gear_sets()
     waist="Eschan Stone",         -- __,  7,  7, __, __/__
     -- neck="Commodore Charm +2", -- 15,  7, 25, __, __/__
     -- back=gear.COR_QD_Cape,     -- 30, 10, 20, __, 10/__
-  } -- 229 AGI, 312 MAB, 188 M.Acc, 24 STP, 30PDT/8MDT
+  } -- 229 AGI, 317 MAB, 193 M.Acc, 24 STP, 30PDT/8MDT
 
   -- Full STP; and more recast reduction
   sets.midcast.CorsairShot.STP = {
@@ -804,7 +804,7 @@ function init_gear_sets()
     head="Blood Mask",            -- __, __,  3, __, __/__ Recast -5
     body="Malignance Tabard",     -- 42, __, 50, 11,  9/ 9
     hands="Malignance Gloves",    -- 24, __, 50, 12,  5/ 5
-    legs="Ikenga's Trousers",     -- 40, __, 45, 10,  7/ 7
+    legs="Ikenga's Trousers",     -- 40, __, 50, 10,  9/ 9
     feet="Malignance Boots",      -- 49, __, 50,  9,  4/ 4
     neck="Iskur Gorget",          -- __, __, __,  8, __/__
     ear1="Dedition Earring",      -- __, __, __,  8, __/__
@@ -813,10 +813,9 @@ function init_gear_sets()
     ring2="Crepuscular Ring",     -- __, __, 10,  6, __/__
     back=gear.COR_RA_Cape,        -- 30, __, __, 10, 10/__
     waist="Reiki Yotai",          -- __, __, __,  4, __/__
-    -- legs="Ikenga's Trousers",  -- 40, __, 50, 10,  9/ 9; R25
     -- ear2="Crepuscular Earring",-- __, __, 10,  5, __/__
     -- 185 AGI, 35 MAB, 248 M.Acc, 89 STP, 37PDT/27MDT
-  } -- 185 AGI, 35 MAB, 233 M.Acc, 89 STP, 35PDT/25MDT
+  } -- 185 AGI, 35 MAB, 238 M.Acc, 89 STP, 37PDT/27MDT
 
   -- Full MAcc (to land debuff effects)
   sets.midcast.CorsairShot['Light Shot'] = {
@@ -824,7 +823,7 @@ function init_gear_sets()
     head="Malignance Chapeau",        -- 33, __, 50,  8,  6/ 6
     body="Malignance Tabard",         -- 42, __, 50, 11,  9/ 9
     hands="Malignance Gloves",        -- 24, __, 50, __, __/__
-    legs="Malignance Tights",         -- 42, __, 50, 10,  7/ 7
+    legs="Ikenga's Trousers",         -- 40, __, 50, 10,  9/ 9
     feet="Malignance Boots",          -- 49, __, 50,  9,  4/ 4
     neck="Commodore Charm +1",        -- 12,  6, 20, __, __/__
     ear1="Hermetic Earring",          -- __,  3,  7, __, __/__
@@ -838,14 +837,13 @@ function init_gear_sets()
 
     -- head="Laksamana's Tricorne +3",-- 39, __, 56, __, __/__; Quick Draw+20
     -- hands="Laksamana's Gants +3",  -- 17, __, 57, __, __/__
-    -- legs="Ikenga's Trousers", --R25-- 40, __, 50, 10,  9/ 9
     -- feet="Laksamana's Bottes +3",  -- 49, __, 52, __, __/__; Quick Draw+20
     -- neck="Commodore Charm +2",     -- 15,  7, 25, __, __/__
     -- ear1="Crepuscular Earring",    -- __, __, 10,  5, __/__
     -- AF Set Effect                  -- __, __, 45, __, __/__
     -- M.Acc from Quick Draw+ stat    -- __, __, 40, __, __/__
     -- 250 AGI, 42 MAB, 471 M.Acc, 29 STP, 28PDT/18MDT
-  } -- 250 AGI, 44 MAB, 362 M.Acc, 47 STP, 36PDT/26MDT
+  } -- 248 AGI, 44 MAB, 363 M.Acc, 41 STP, 38PDT/28MDT
   sets.midcast.CorsairShot['Dark Shot'] = sets.midcast.CorsairShot['Light Shot']
 
   -- High dmg, but with empy feet for enhancement effect; and more recast reduction

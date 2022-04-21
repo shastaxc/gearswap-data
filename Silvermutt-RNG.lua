@@ -642,7 +642,7 @@ function init_gear_sets()
 
   sets.precast.WS['Savage Blade'] = {
     head=gear.Nyame_B_head,       -- 26, 26, 60, 40, 10, __, ___
-    body="Ikenga's Vest",         -- 33, 25, __, __, __,  7, 170
+    body="Ikenga's Vest",         -- 33, 25, __, __, __,  7, 190
     hands=gear.Nyame_B_hands,     -- 17, 40, 60, 40, 10, __, ___
     legs=gear.Nyame_B_legs,       -- 43, 32, 60, 40, 11, __, ___
     feet=gear.Nyame_B_feet,       -- 23, 26, 60, 40, 10, __, ___
@@ -654,8 +654,8 @@ function init_gear_sets()
     back=gear.RNG_WS3_Cape,       -- 30, __, 20, 20, 10, __, ___
     waist="Sailfi Belt +1",       -- 15, __, 15, __, __, __, ___
     -- neck="Scout's Gorget +2",  -- __, __, __, __, __, 10, ___
-    -- 197 STR, 149 MND, 295 Attack, 184 Accuracy, 58 WSD, 17 PDL, 420 TP Bonus
-  } -- 197 STR, 149 MND, 295 Attack, 184 Accuracy, 58 WSD, 15 PDL, 420 TP Bonus
+    -- 197 STR, 149 MND, 295 Attack, 184 Accuracy, 58 WSD, 17 PDL, 440 TP Bonus
+  } -- 197 STR, 149 MND, 295 Attack, 184 Accuracy, 58 WSD, 15 PDL, 440 TP Bonus
   sets.precast.WS['Savage Blade'].MaxTP = set_combine(sets.precast.WS['Savage Blade'], {
     ear2="Telos Earring",
   })
@@ -753,9 +753,9 @@ function init_gear_sets()
   -- Ranged sets
   sets.midcast.RA = {
     head="Arcadian Beret +2",     -- 32 [__]  27/ 47 <_> {__} (36), __/__
-    body="Ikenga's Vest",         -- 39 [11]  45/ 60 <_> { 7} (__), __/__
+    body="Ikenga's Vest",         -- 39 [11]  50/ 65 <_> { 7} (__), __/__
     hands="Malignance Gloves",    -- 24 [12]  50/ __ <_> { 4} (__),  5/ 5
-    legs="Ikenga's Trousers",     -- 40 [10]  45/ 60 <_> { 6} (__),  7/ 7
+    legs="Ikenga's Trousers",     -- 40 [10]  50/ 65 <_> { 6} (__),  9/ 9
     feet="Malignance Boots",      -- 49 [ 9]  50/ __ <_> { 2} (__),  4/ 4
     neck="Scout's Gorget +1",     -- 20 [ 6]  20/ __ <_> { 8} (__), __/__
     ear1="Telos Earring",         -- __ [ 5]  10/ 10 <_> {__} (__), __/__
@@ -766,20 +766,20 @@ function init_gear_sets()
     waist="Kwahu Kachina Belt +1",--  8 [__]  20/ __ <5> {__} (__), __/__
     -- head="Arcadian Beret +3",  -- 37 [__]  37/ 62 <_> {__} (38), __/__
     -- neck="Scout's Gorget +2",  -- 25 [ 7]  25/ __ <_> {10} (__), __/__
-    --252 AGI [84 STP] 302 racc / 202 ratt <5 crit> {29 dmg limit} (38 Recycle), 26 PDT/16 MDT
-  } --242 AGI [83 STP] 287 racc / 187 ratt <5 crit> {27 dmg limit} (36 Recycle), 26 PDT/16 MDT
+    --252 AGI [84 STP] 312 racc / 212 ratt <5 crit> {29 dmg limit} (38 Recycle), 28 PDT/18 MDT
+  } --242 AGI [83 STP] 297 racc / 197 ratt <5 crit> {27 dmg limit} (36 Recycle), 28 PDT/18 MDT
   sets.midcast.RA.LowAcc = set_combine(sets.midcast.RA, {
     ring1="Regal Ring",           -- 10 [__]  __/ 20 <_> {__} (__), __/__
     -- body="Orion Jerkin +3",    -- 40 [ 8]  60/ 41 <_> {__} (__), __/__
     -- AF set bonus                  __ [__]  15/ __ <_> {__} (__), __/__
-    --263 AGI [75 STP] 332 racc / 203 ratt <5 crit> {22 dmg limit} (38 Recycle), 26 PDT/16 MDT
+    --263 AGI [75 STP] 337 racc / 208 ratt <5 crit> {22 dmg limit} (38 Recycle), 28 PDT/18 MDT
   })
   sets.midcast.RA.MidAcc = set_combine(sets.midcast.RA.LowAcc, {
     ear2="Beyla Earring",         -- __ [__]  15/ __ <_> {__} (__), __/__
     ring1="Hajduk Ring +1",       -- __ [__]  17/ __ <_> {__} (__), __/__
     -- feet="Orion Socks +3",     -- 49 [__]  54/ 36 <_> {__} (__), __/__
     -- AF set bonus                  __ [__]  30/ __ <_> {__} (__), __/__
-    --253 AGI [58 STP] 378 racc / 229 ratt <5 crit> {20 dmg limit} (38 Recycle), 22 PDT/12 MDT
+    --253 AGI [58 STP] 398 racc / 234 ratt <5 crit> {20 dmg limit} (38 Recycle), 24 PDT/14 MDT
   })
   sets.midcast.RA.HighAcc = set_combine(sets.midcast.RA.MidAcc, {
     head="Orion Beret +3",        -- 39 [__]  47/ 34 <_> {__} (__), __/__
@@ -787,7 +787,7 @@ function init_gear_sets()
     legs=gear.Adhemar_C_legs,     -- 42 [ 8]  54/ 20 <_> {__} (16), __/__
     ring2="Regal Ring",           -- 10 [__]  __/ 20 <_> {__} (__), __/__
     -- AF set bonus                  __ [__]  60/ __ <_> {__} (__), __/__
-    --270 AGI [44 STP] 423 racc / 181 ratt <5 crit> {10 dmg limit} (16 Recycle), 10 PDT/0 MDT
+    --270 AGI [44 STP] 430 racc / 181 ratt <5 crit> {10 dmg limit} (16 Recycle), 10 PDT/0 MDT
   })
 
   sets.midcast.RA.Critical = set_combine(sets.midcast.RA, {
