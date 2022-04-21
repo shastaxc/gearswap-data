@@ -134,7 +134,7 @@ function init_gear_sets()
   sets.precast.FC = {
     -- Short Term
     main=gear.Pedagogy_C,             --  8 [__/__, ___]
-    sub="Eletta Grip",                -- __ [ 4/ 4, ___]
+    sub="Khonsu",                     -- __ [ 6/ 6, ___]
     ammo="Incantor Stone",            --  2 [__/__, ___]
     head=gear.Psycloth_D_head,        -- 10 [__/__,  75]
     body=gear.Merl_FC_body,           -- 14 [ 2/__,  91]
@@ -353,7 +353,7 @@ function init_gear_sets()
   -- Mithra SCH/RDM M20 Healing Magic Skill = 406
   sets.midcast.Cure = {
     main="Arka IV",               -- __, 24,  __,  __,  __, __, __/__, __
-    sub="Eletta Grip",            -- __, __,  __,  __,  __, __,  4/ 4,  3
+    sub="Khonsu",                 -- __, __,  __,  __,  __, __,  6/ 6,  5
     ammo="Incantor Stone",        -- __, __,  __,  __,  __,  2, __/__, __
     head=gear.Vanya_B_head,       -- __, 10,  20,  27,  18, __, __/ 5, __
     body=gear.Vanya_B_body,       -- __, __,  20,  36,  23, __,  1/ 4, __
@@ -402,7 +402,7 @@ function init_gear_sets()
   -- Mithra SCH/RDM M20 Healing Magic Skill = 406
   sets.midcast.CureWeather = {
     main="Arka IV",               -- __, 24,  __,  __,  __, __, __/__, __
-    sub="Eletta Grip",            -- __, __,  __,  __,  __, __,  4/ 4,  3
+    sub="Khonsu",                 -- __, __,  __,  __,  __, __,  6/ 6,  5
     ammo="Incantor Stone",        -- __, __,  __,  __,  __,  2, __/__, __
     head=gear.Vanya_B_head,       -- __, 10,  20,  27,  18, __, __/ 5, __
     body=gear.Merl_FC_body,       -- __, __,  __,  33,  21, 14,  2/__,  5
@@ -452,7 +452,7 @@ function init_gear_sets()
   -- Mithra SCH/RDM M20 Healing Magic Skill = 476 (w/ Light Arts)
   sets.midcast.Cure.LightArts = {
     main="Arka IV",               -- __, 24,  __,  __,  __, __, __/__, __
-    sub="Eletta Grip",            -- __, __,  __,  __,  __, __,  4/ 4,  3
+    sub="Khonsu",                 -- __, __,  __,  __,  __, __,  6/ 6,  5
     ammo="Incantor Stone",        -- __, __,  __,  __,  __,  2, __/__, __
     head=gear.Vanya_B_head,       -- __, 10,  20,  27,  18, __, __/ 5, __
     body="Shamash Robe",          -- __, __,  __,  40,  30, __, 10/__, 10
@@ -523,7 +523,7 @@ function init_gear_sets()
   -- Mithra SCH/RDM M20 Healing Magic Skill = 476 (w/ Light Arts)
   sets.midcast.CureWeather.LightArts = {
     main="Arka IV",               -- __, 24,  __,  __,  __, __, __/__, __
-    sub="Eletta Grip",            -- __, __,  __,  __,  __, __,  4/ 4,  3
+    sub="Khonsu",                 -- __, __,  __,  __,  __, __,  6/ 6,  5
     ammo="Staunch Tathlum",       -- __, __,  __,  __,  __, __,  2/ 2, __
     head=gear.Vanya_B_head,       -- __, 10,  20,  27,  18, __, __/ 5, __
     body="Shamash Robe",          -- __, __,  __,  40,  30, __, 10/__, 10
@@ -658,7 +658,7 @@ function init_gear_sets()
   -- Regen not affected by Enh Magic Skill
   sets.midcast.Regen = {
     main=gear.Pedagogy_C,               -- 20, 15, __
-    sub="Eletta Grip",                  -- __, __, __
+    sub="Khonsu",                       -- __, __, __
     head="Arbatel Bonnet +1",           --  7, __, __
     body=gear.Telchine_Regen_body,      --  3, __, 12
     hands=gear.Telchine_Regen_hands,    --  3, __, __
@@ -677,7 +677,7 @@ function init_gear_sets()
   -- opted not to do that.
   sets.midcast.RegenDuration = {
     main=gear.Pedagogy_C,               -- 20, 15, __
-    sub="Eletta Grip",                  -- __, __, __
+    sub="Khonsu",                       -- __, __, __
     head="Arbatel Bonnet +1",           --  7, __, __
     body=gear.Telchine_ENH_body,        -- __, 10, 12
     hands=gear.Telchine_ENH_hands,      -- __, 10, __
@@ -987,8 +987,7 @@ function init_gear_sets()
 
   sets.midcast.Impact = set_combine(sets.midcast['Elemental Magic'], {
     main=gear.Akademos_C,
-    sub="Eletta Grip",
-    -- sub="Khonsu",
+    sub="Khonsu",
     -- head=empty,
     -- body="Crepuscular Cloak",
     -- ring2="Archon Ring",
@@ -1066,7 +1065,7 @@ function init_gear_sets()
 
   sets.HeavyDef = {
     main="Malignance Pole",         -- 20/20, ___
-    sub="Eletta Grip",              --  4/ 4, ___
+    sub="Khonsu",                   --  6/ 6, ___
     ammo="Staunch Tathlum",         --  2/ 2, ___; Resist Status+10
     head=gear.Nyame_B_head,         --  7/ 7, 123
     body="Shamash Robe",            -- 10/__, 106; Resist Silence+90
@@ -1080,7 +1079,6 @@ function init_gear_sets()
     ring2="Defending Ring",         -- 10/10, ___
     back="Cheviot Cape",            --  5/__, ___
     waist="Carrier's Sash",         -- __/__, ___; Ele Resist+15
-    -- sub="Khonsu",                --  6/ 6, ___
     -- ammo="Staunch Tathlum +1",   --  3/ 3, ___; Resist Status+11
     -- back="Archon Cape",          -- __/__, ___
 
@@ -1101,7 +1099,7 @@ function init_gear_sets()
     -- back="Archon Cape",          -- __/__, ___
     -- waist="Carrier's Sash",      -- __/__, ___; Ele Resist+15
     -- 91 PDT / 76 MDT, 641 M.Eva
-  } -- 93 PDT / 73 MDT, 641 M.Eva
+  } -- 95 PDT / 75 MDT, 641 M.Eva
 
   sets.defense.PDT = sets.HeavyDef
   sets.defense.MDT = sets.HeavyDef

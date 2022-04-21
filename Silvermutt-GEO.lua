@@ -777,7 +777,7 @@ function init_gear_sets()
 	-- Defense sets
 	sets.defense.PDT = {
     main="Malignance Pole",         -- 20/20, ___, __/__, __
-    sub="Kaja Grip",                --  5/ 5, ___, __/__, __
+    sub="Khonsu",                   --  6/ 6, ___, __/__, __
     range="Dunna",                  -- __/__, ___, __/__, __
     ammo=empty,                     -- __/__, ___, __/__, __
     head=gear.Nyame_B_head,         --  7/ 7, 123, __/__, __
@@ -792,9 +792,8 @@ function init_gear_sets()
     ring2="Stikini Ring +1",        -- __/__, ___, __/__, __; Refresh
     back=gear.GEO_Idle_Cape,        -- __/__,  30, __/__, 15
     waist="Carrier's Sash",         -- __/__, ___, __/__, __; Ele resist+15
-    -- sub="Khonsu",                --  6/ 6, ___, __/__, __
     -- body="Shamash Robe",         -- 10/__, 106, __/__, __; Resist Silence+90
-  } -- 81 PDT / 82 MDT, 704 Meva, 0 Pet PDT / 0 Pet MDT, 15 Pet Regen
+  } -- 82 PDT / 83 MDT, 704 Meva, 0 Pet PDT / 0 Pet MDT, 15 Pet Regen
 	sets.defense.MDT = sets.defense.PDT
 
 	--------------------------------------
@@ -820,12 +819,11 @@ function init_gear_sets()
 	-- Resting sets
 	sets.resting = {
     main="Iridal Staff",
-    sub="Kaja Grip",
+    sub="Khonsu",
 		head="Befouled Crown",
 		body="Jhakri Robe +2",
     ear2="Ethereal Earring",
     ring1="Defending Ring",
-    -- sub="Khonsu",
   }
 
 	-- Idle sets
