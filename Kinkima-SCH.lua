@@ -119,16 +119,14 @@ function init_gear_sets()
   sets.precast.JA['Enlightenment'] = {
     body="Pedagogy Gown +3",
   }
-  -- Maximize HP+ (MP-to-HP conversion doesn't work)
   sets.precast.JA['Sublimation'] = {
-    main="Siriti", --1
+    main="Siriti",                    --1
     sub="Genmei Shield",
-    head="Academic's Mortarboard +2", --3
-    body="Pedagogy Gown +3", --5
-    ear1="Savant's Earring", --1
-    waist="Embla Sash", --5
-    -- head="Academic's Mortarboard +3", --4
-  }
+    head="Academic's Mortarboard +3", --4
+    body="Pedagogy Gown +3",          --5
+    ear1="Savant's Earring",          --1
+    waist="Embla Sash",               --5
+  } -- 15 Sublimation
 
   -- Fast cast sets for spells
   sets.precast.FC = {
@@ -173,10 +171,12 @@ function init_gear_sets()
     -- Ideal:
     -- main="Hvergelmir",             -- 50 [__/__, ___]
     -- sub="Khonsu",                  -- __ [ 6/ 6, ___]
+    -- head="Bunzi's Hat",            -- 10 [ 7/ 7, 123]
     -- ammo="Staunch Tathlum +1",     -- __ [ 3/ 3, ___]; Resist Status+11
     -- body="Shamash Robe",           -- __ [10/__, 106]; Resist Silence+90
-    -- hands="Academic's Bracers +3", --  9 [__/__,  57]
+    -- hands=gear.Nyame_B_hands,      -- __ [ 7/ 7, 112]
     -- legs="Pinga Pants +1",         -- 13 [__/__, 147]
+    -- feet=gear.Nyame_B_feet,        -- __ [ 7/ 7, 150]
     -- neck="Loricate Torque +1",     -- __ [ 6/ 6, ___]; DEF+60
     -- ear1="Hearty Earring",         -- __ [__/__, ___]; Resist Status+5
     -- ear2="Etiolation Earring",     --  1 [__/ 3, ___]; Resist Silence+15
@@ -184,7 +184,7 @@ function init_gear_sets()
     -- ring2="Defending Ring",        -- __ [10/10, ___]
     -- back=gear.SCH_FC_Cape,         -- 10 [10/__,  20] -- TODO: Add meva
     -- waist="Carrier's Sash",        -- __ [__/__, ___]; Ele Resist+15
-    -- 83 Fast Cast [52 PDT/27 MDT, 330 MEVA]
+    -- 84 Fast Cast [73 PDT/48 MDT, 658 MEVA]
   }
 
   -- Grimoire casting bonuses multiply separately from FC, allowing
@@ -195,13 +195,10 @@ function init_gear_sets()
     feet="Academic's Loafers +3",     -- __ [__/__, 127] 12
     -- head="Pedagogy Mortarboard +3",-- __ [__/__,  95] 13
     
-    -- Short Term
-    -- 82 Fast Cast [12 PDT/0 MDT, 487 MEVA] 25 Grimoire Reduction
-
-    -- Great
-    -- 79 Fast Cast [53 PDT/38 MDT, 474 MEVA] 25 Grimoire Reduction
-    
-    -- Ideal:
+    -- If using Hvergelmir in precast.FC...
+    -- head="Pedagogy Mortarboard +3",-- __ [__/__,  95] 13
+    -- hands="Academic's Bracers +3", --  9 [__/__,  57]
+    -- feet="Academic's Loafers +3",  -- __ [__/__, 127] 12
     -- 83 Fast Cast [52 PDT/27 MDT, 552 MEVA] 25 Grimoire Reduction + status resist, don't need /RDM
   })
   sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {
@@ -213,14 +210,6 @@ function init_gear_sets()
   sets.precast.FC['Elemental Magic'] = sets.precast.FC
   sets.precast.FC['Elemental Magic'].Grimoire = sets.precast.FC.Grimoire
 
-  sets.precast.FC.Cure = set_combine(sets.precast.FC, {
-    ear2="Mendicant's Earring", --5
-  })
-  sets.precast.FC.Cure.Grimoire = set_combine(sets.precast.FC.Grimoire, {
-    ear2="Mendicant's Earring", --5
-  })
-  sets.precast.FC.Curaga = sets.precast.FC.Cure
-  sets.precast.FC.Curaga.Grimoire = sets.precast.FC.CureGrimoire
   sets.precast.FC.Impact = set_combine(sets.precast.FC, {
     -- head=empty,
     -- body="Crepuscular Cloak",
@@ -229,43 +218,26 @@ function init_gear_sets()
   -- until Hvergelmir set is acquired
   sets.precast.FC.Impact.Grimoire = sets.precast.FC.Impact
   sets.precast.FC.Dispelga = set_combine(sets.precast.FC, {
-    -- main="Daybreak",
-    -- sub="Ammurapi Shield",
+    -- main="Daybreak",               -- __ [__/__, ___]
+    -- sub="Genmei Shield",           -- __ [10/__, ___]
 
     -- If using Hvergelmir in precast.FC...
-    -- ammo="Incantor Stone", --2
-    -- head="Amalric Coif +1", --11
-    -- body="Pinga Tunic +1", --15
-    -- hands="Academic's Bracers +3", --9
-    -- legs="Pinga Pants +1", --13
-    -- feet=gear.Merl_FC_feet, --12
-    -- neck="Orunmila's Torque", --5
-    -- ear1="Malignance Earring", --4
-    -- ear2="Enchntr. Earring +1", --2
-    -- ring1="Kishar Ring", --4
-    -- ring2="Prolix Ring", --2
-    -- back=gear.SCH_FC_Cape, --10
-    -- waist="Embla Sash", --5
+    -- ammo="Staunch Tathlum +1",     -- __ [ 3/ 3, ___]
+    -- head="Bunzi's Hat",            -- 10 [ 7/ 7, 123]
+    -- body="Pinga Tunic +1",         -- 15 [__/__, 128]
+    -- hands="Academic's Bracers +3", --  9 [__/__,  57]
+    -- legs="Pinga Pants +1",         -- 13 [__/__, 147]
+    -- feet=gear.Merl_FC_feet,        -- 12 [__/__, 118]
+    -- neck="Loricate Torque +1",     -- __ [ 6/ 6, ___]
+    -- ear1="Malignance Earring",     --  4 [__/__, ___]
+    -- ear2="Enchntr. Earring +1",    --  2 [__/__, ___]
+    -- ring1="Gelatinous Ring +1",    -- __ [ 7/-1, ___]
+    -- ring2="Defending Ring",        -- __ [10/10, ___]
+    -- back=gear.SCH_FC_Cape,         -- 10 [10/__,  20] -- TODO: Add meva
+    -- waist="Embla Sash",            --  5 [__/__, ___]
+    -- 80 Fast Cast [53 PDT/25 MDT, 593 MEVA]
   })
-  sets.precast.FC.Dispelga.Grimoire = set_combine(sets.precast.FC.Grimoire, {
-    -- main="Daybreak",
-    -- sub="Chanter's Shield", --3
-    -- head="Amalric Coif +1", --11
-
-    -- If using Hvergelmir in precast.FC...
-    -- ammo="Incantor Stone", --2
-    -- head="Amalric Coif +1", --11
-    -- body="Pinga Tunic +1", --15
-    -- hands="Academic's Bracers +3", --9
-    -- legs="Pinga Pants +1", --13
-    -- neck="Orunmila's Torque", --5
-    -- ear1="Malignance Earring", --4
-    -- ear2="Enchntr. Earring +1", --2
-    -- ring1="Kishar Ring", --4
-    -- ring2="Prolix Ring", --2
-    -- back=gear.SCH_FC_Cape, --10
-    -- waist="Embla Sash", --5
-  })
+  sets.precast.FC.Dispelga.Grimoire = sets.precast.FC.Dispelga
 
 
   ------------------------------------------------------------------------------------------------
@@ -346,229 +318,148 @@ function init_gear_sets()
   -- Initializes trusts at iLvl 119
   sets.midcast.Trust = sets.precast.FC
 
-  -- Prioritize: CPII > CP > Heal Skill, MND, VIT (to power cap) > FC (to 30%) > -DT > Enmity (to -40)
+  -- CPII, CP, Heal Skill, MND, VIT, SIRD, PDT/MDT, -Enmity
+  SIRDoptions = {
+    main="Eremite's Wand +1",     -- __, __, ___,   2, ___, 25, __/__, __
+    sub="Culminus",               -- __, __, ___, ___, ___, 10, __/__, __
+
+    sub="Magic Strap",            -- __, __, ___, ___, ___,  5, __/__, __
+    ammo="Staunch Tathlum +1",    -- __, __, ___, ___, ___, 11,  3/ 3, __
+    head=gear.Kaykaus_C_head,     -- __, 11,  16,  19,  14, 12, __/ 3, __
+    head="Agwu's Cap",            -- __, __, ___,  26,  11, 10, __/__, __
+    head="Chironic Hat",          -- __, __, ___,  29,  14, 11, __/ 2, __
+    body=gear.Kaykaus_C_body,     --  4, __, ___,  33,  20, 12, __/__, __
+    body="Rosette Jaseran +1",    -- __, __, ___,  29,  21, 25,  5/ 5, 13
+    body="Chrionic Doublet",      -- __, 13, ___,  34,  16, 11, __/__, __
+    hands="Chironic Gloves",      -- __, __, ___,  38,  20, 31, __/__, __
+    hands=gear.Amalric_B_hands,   -- __, __, ___,  34,  20, 11, __/__,  6
+    legs=gear.Kaykaus_C_legs,     -- __, 11, ___,  30,  12, 12, __/__, __
+    legs="Chironic Hose",         -- __,  8, ___,  29,   6, 11, __/__, __
+    feet=gear.Amalric_B_feet,     -- __, __, ___,  20,   6, 16, __/__,  6
+    feet="Chironic Slippers",     -- __, __, ___,  24,   6, 11,  2/__,  5
+    neck="Loricate Torque +1",    -- __, __, ___, ___, ___,  5,  6/ 6, __
+    ear1="Magnetic Earring",      -- __, __, ___, ___, ___,  8, __/__, __
+    ear1="Halasz Earring",        -- __, __, ___, ___, ___,  5, __/__,  3
+    ring1="Freke Ring",           -- __, __, ___, ___, ___, 10, __/__, __
+    ring1="Evanescence Ring",     -- __, __, ___, ___, ___,  5, __/__, __
+    back=AmbuCape1,               -- __, 10, ___,  30, ___, 10, __/__, __
+    back=AmbuCape2,               -- __, __, ___,  30, ___, 10, __/__, 10
+    waist="Emphatikos Rope",      -- __, __, ___, ___, ___, 12, __/__, __
+    waist="Sanctuary Obi +1",     -- __, __, ___, ___, ___, 10, __/__,  4
+    waist="Rumination Sash",      -- __, __, ___,   4, ___, 10, __/__, __
+    -- Merit points               -- __, __, ___, ___, ___, 10, __/__,  5
+  }
+
+  -- Prioritize: CPII > CP > Heal Skill, MND, VIT (to power cap) > SIRD > -DT > Enmity (to -40)
   -- Cap at 700 power; Power = floor(MND÷2) + floor(VIT÷4) + Healing Magic Skill
-  -- Mithra SCH/RDM M20 MND = 119
-  -- Mithra SCH/RDM M20 VIT = 113
-  -- Mithra SCH/RDM M20 Healing Magic Skill = 406
+  -- Mithra SCH/RDM M30 MND = 129
+  -- Mithra SCH/RDM M30 VIT = 123
+  -- Mithra SCH/RDM M30 Healing Magic Skill = 486 (w/ Light Arts)
+  -- For simplicity, this set assumes Light Arts is on. This set will be gimped with LA off. Use Light Arts, dummy!
   sets.midcast.Cure = {
-    main="Arka IV",               -- __, 24,  __,  __,  __, __, __/__, __
-    sub="Khonsu",                 -- __, __,  __,  __,  __, __,  6/ 6,  5
-    ammo="Incantor Stone",        -- __, __,  __,  __,  __,  2, __/__, __
+    main="Arka IV",               -- __, 24, ___, ___, ___, __, __/__, __
+    sub="Khonsu",                 -- __, __, ___, ___, ___, __,  6/ 6,  5
+    ammo="Incantor Stone",        -- __, __, ___, ___, ___, __, __/__, __
     head=gear.Vanya_B_head,       -- __, 10,  20,  27,  18, __, __/ 5, __
     body=gear.Vanya_B_body,       -- __, __,  20,  36,  23, __,  1/ 4, __
     hands="Pedagogy Bracers +3",  --  3, __,  19,  46,  35, __, __/__,  7
     legs=gear.Vanya_B_legs,       -- __, __,  20,  34,  12, __, __/ 3, __
     feet=gear.Vanya_B_feet,       -- __,  5,  40,  19,  10, __, __/ 3, __
-    ear1="Mendicant's Earring",   -- __,  5,  __,  __,  __, __, __/__, __
-    ear2="Malignance Earring",    -- __, __,  __,   8,  __,  4, __/__, __
-    ring1="Kishar Ring",          -- __, __,  __,  __,  __,  4, __/__, __
+    ear1="Mendicant's Earring",   -- __,  5, ___, ___, ___, __, __/__, __
+    ear2="Malignance Earring",    -- __, __, ___,   8, ___, __, __/__, __
+    ring1="Kishar Ring",          -- __, __, ___, ___, ___, __, __/__, __
     ring2="Sirona's Ring",        -- __, __,  10,   3,   3, __, __/__, __
-    back=gear.SCH_FC_Cape,        -- __, __,  __,  30,  __, 10, 10/__, __
-    waist="Embla Sash",           -- __, __,  __,  __,  __,  5, __/__, __
-    -- main="Daybreak",           -- __, 30,  __,  30,  __, __, __/__, __
-    -- sub="Chanter's Shield",    -- __, __,  __,  __,  __,  3, __/__, __
-    -- neck="Voltsurge Torque",   -- __, __,  __,  __,  __,  4, __/__, __
-    -- Base Stats                 -- __, __, 406, 119, 113, __, __/__, __
-    -- 3 CPII, 50 CP, 535 Heal Skill, 352 MND, 214 VIT, 32 FC, 11PDT/15MDT, 7 -Enmity
-    -- 764 Power
+    back=gear.SCH_FC_Cape,        -- __, __, ___,  30, ___, __, 10/__, __
+    waist="Embla Sash",           -- __, __, ___, ___, ___, __, __/__, __
+    -- main="Daybreak",           -- __, 30, ___,  30, ___, __, __/__, __
+    -- sub="Chanter's Shield",    -- __, __, ___, ___, ___, __, __/__, __
+    -- neck="Voltsurge Torque",   -- __, __, ___, ___, ___, __, __/__, __
+    -- Base Stats                 -- __, __, 486, 129, 123, __, __/__, __
+    -- Merit points               -- __, __, ___, ___, ___, 10, __/__,  5
+    -- 3 CPII, 50 CP, 545 Heal Skill, 362 MND, 224 VIT, 10 SIRD, 11PDT/15MDT, 7 -Enmity
+    -- 782 Power
 
-    -- Ideal
-    -- main="Malignance Pole",    -- __, __,  __,  __,  40, __, 20/20, __
-    -- sub="Khonsu",              -- __, __,  __,  __,  __, __,  6/ 6,  5
-    -- ammo="Incantor Stone",     -- __, __,  __,  __,  __,  2, __/__, __
-    -- head=gear.Kaykaus_D_head,  -- __, 11,  16,  31,  14, __, __/ 3, __
-    -- body=gear.Kaykaus_D_body,  --  4,  6,  __,  33,  20, __, __/__, __
-    -- hands="Pedagogy Bracers +3"--  3, __,  19,  46,  35, __, __/__,  7
-    -- legs=gear.Kaykaus_D_legs,  -- __, 11,  __,  30,  12,  7, __/__,  6
-    -- feet=gear.Kaykaus_D_feet,  -- __, 17,  __,  19,  10, __, __/__,  6
-    -- neck="Incanter's Torque",  -- __, __,  10,  __,  __, __, __/__, __
-    -- ear1="Meili Earring",      -- __, __,  10,  __,  __, __, __/__, __
-    -- ear2="Mendicant's Earring",-- __,  5,  __,  __,  __, __, __/__, __
-    -- ring1="Sirona's Ring",     -- __, __,  10,   3,   3, __, __/__, __
-    -- ring2="Stikini Ring +1",   -- __, __,   8,   8,  __, __, __/__, __
-    -- back=gear.SCH_FC_Cape,     -- __, __,  __,  30,  __, 10, 10/__, __
-    -- waist="Embla Sash",        -- __, __,  __,  __,  __,  5, __/__, __
-    -- Kaykaus set bonus          --  8, __,  __,  __,  __, __, __/__, __
-    -- Base Stats                 -- __, __, 406, 119, 113, __, __/__, __
-    -- 15 CPII, 50 CP, 479 Heal Skill, 319 MND, 247 VIT, 24 FC, 36PDT/29MDT, 24 -Enmity
-    -- 699 Power
+    -- Ideal:
+    -- main="Malignance Pole",    -- __, __, ___, ___,  40, __, 20/20, __
+    -- sub="Khonsu",              -- __, __, ___, ___, ___, __,  6/ 6,  5
+    -- ammo="Staunch Tathlum +1", -- __, __, ___, ___, ___, 11,  3/ 3, __
+    -- head=gear.Kaykaus_C_head,  -- __, 11,  16,  19,  14, 12, __/ 3, __
+    -- body=gear.Kaykaus_C_body,  --  4, __, ___,  33,  20, 12, __/__, __
+    -- hands="Chironic Gloves",   -- __, __, ___,  38,  20, 31, __/__, __; Can add more DT or Enmity
+    -- legs=gear.Kaykaus_C_legs,  -- __, 11, ___,  30,  12, 12, __/__, __
+    -- feet=gear.Kaykaus_D_feet,  -- __, 17, ___,  19,  10, __, __/__,  6
+    -- neck="Loricate Torque +1", -- __, __, ___, ___, ___,  5,  6/ 6, __
+    -- ear1="Novia Earring",      -- __, __, ___, ___, ___, __, __/__,  7
+    -- ear2="Halasz Earring",     -- __, __, ___, ___, ___,  5, __/__,  3
+    -- ring1="Gelatinous Ring +1",-- __, __, ___, ___,  15, __,  7/-1, __
+    -- ring2="Defending Ring",    -- __, __, ___, ___, ___, __, 10/10, __
+    -- back=gear.SCH_CP_Cape,     -- __, 10, ___,  30, ___, __, __/__, __
+    -- waist="Sanctuary Obi +1",  -- __, __, ___, ___, ___, 10, __/__,  4
+    -- Kaykaus set bonus          --  8, __, ___, ___, ___, __, __/__, __
+    -- Base Stats                 -- __, __, 486, 129, 123, __, __/__, __
+    -- Merit points               -- __, __, ___, ___, ___, 10, __/__,  5
+    -- 12 CPII, 49 CP, 502 Heal Skill, 298 MND, 254 VIT, 108 SIRD, 52PDT/47MDT, 30 -Enmity
+    -- 714 Power
   }
 
   -- Prioritize: CPII > CP > Heal Skill, MND, VIT (to power cap) > FC (to 30%) > -DT > Enmity (to -40)
   -- Cap at 700 power; Power = floor(MND÷2) + floor(VIT÷4) + Healing Magic Skill
-  -- Mithra SCH/RDM M20 MND = 119
-  -- Mithra SCH/RDM M20 VIT = 113
-  -- Mithra SCH/RDM M20 Healing Magic Skill = 406
+  -- Mithra SCH/RDM M30 MND = 129
+  -- Mithra SCH/RDM M30 VIT = 123
+  -- Mithra SCH/RDM M30 Healing Magic Skill = 416
+  -- For simplicity, this set assumes Light Arts is on. This set will be gimped with LA off. Use Light Arts, dummy!
   sets.midcast.CureWeather = {
-    main="Arka IV",               -- __, 24,  __,  __,  __, __, __/__, __
-    sub="Khonsu",                 -- __, __,  __,  __,  __, __,  6/ 6,  5
-    ammo="Incantor Stone",        -- __, __,  __,  __,  __,  2, __/__, __
-    head=gear.Vanya_B_head,       -- __, 10,  20,  27,  18, __, __/ 5, __
-    body=gear.Merl_FC_body,       -- __, __,  __,  33,  21, 14,  2/__,  5
-    hands="Pedagogy Bracers +3",  --  3, __,  19,  46,  35, __, __/__,  7
-    legs=gear.Nyame_B_legs,       -- __, __,  __,  32,  30, __,  8/ 8, __
-    feet=gear.Vanya_B_feet,       -- __,  5,  40,  19,  10, __, __/ 3, __
-    neck="Loricate Torque +1",    -- __, __,  __,  __,  __, __,  6/ 6, __
-    ear1="Mendicant's Earring",   -- __,  5,  __,  __,  __, __, __/__, __
-    ear2="Malignance Earring",    -- __, __,  __,   8,  __,  4, __/__, __
-    ring1="Kishar Ring",          -- __, __,  __,  __,  __,  4, __/__, __
-    ring2="Defending Ring",       -- __, __,  __,  __,  __, __, 10/10, __
-    back=gear.SCH_FC_Cape,        -- __, __,  __,  30,  __, 10, 10/__, __
-    waist="Hachirin-no-Obi",      -- __, __,  __,  __,  __, __, __/__, __
-    -- main="Daybreak",           -- __, 30,  __,  30,  __, __, __/__, __
-    -- sub="Chanter's Shield",    -- __, __,  __,  __,  __,  3, __/__, __
-    -- neck="Voltsurge Torque",   -- __, __,  __,  __,  __,  4, __/__, __
-    -- Base Stats                 -- __, __, 406, 119, 113, __, __/__, __
-    -- 3 CPII, 50 CP, 485 Heal Skill, 344 MND, 227 VIT, 41 FC, 30PDT/26MDT, 12 -Enmity
-    -- 713 Power
-
-    -- Ideal
-    -- main="Chatoyant Staff",    -- __, 10,  __,   5,   5, __, __/__, __
-    -- sub="Khonsu",              -- __, __,  __,  __,  __, __,  6/ 6,  5
-    -- ammo="Incantor Stone",     -- __, __,  __,  __,  __,  2, __/__, __
-    -- head=gear.Kaykaus_D_head,  -- __, 11,  16,  31,  14, __, __/ 3, __
-    -- body=gear.Kaykaus_D_body,  --  4,  6,  __,  33,  20, __, __/__, __
-    -- hands="Pedagogy Bracers +3"--  3, __,  19,  46,  35, __, __/__,  7
-    -- legs=gear.Kaykaus_D_legs,  -- __, 11,  __,  30,  12,  7, __/__,  6
-    -- feet=gear.Kaykaus_D_feet,  -- __, 17,  __,  19,  10, __, __/__,  6
-    -- neck="Incanter's Torque",  -- __, __,  10,  __,  __, __, __/__, __
-    -- ear1="Malignance Earring", -- __, __,  __,   8,  __,  4, __/__, __
-    -- ear2="Meili Earring",      -- __, __,  10,  __,  __, __, __/__, __
-    -- ring1="Stikini Ring +1",   -- __, __,   8,   8,  __, __, __/__, __
-    -- ring2="Sirona's Ring",     -- __, __,  10,   3,   3, __, __/__, __
-    -- back=gear.SCH_FC_Cape,     -- __, __,  __,  30,  __, 10, 10/__, __
-    -- waist="Hachirin-no-Obi",   -- __, __,  __,  __,  __, __, __/__, __
-    -- Kaykaus set bonus          --  8, __,  __,  __,  __, __, __/__, __
-    -- Base Stats                 -- __, __, 406, 119, 113, __, __/__, __
-    -- 15 CPII, 55 CP, 479 Heal Skill, 332 MND, 212 VIT, 23 FC, 16PDT/9MDT, 24 -Enmity
-    -- 698 Power
-  }
-
-  -- Prioritize: CPII > CP > Heal Skill, MND, VIT (to power cap) > FC (to 30%) > -DT > Enmity (to -40)
-  -- Cap at 700 power; Power = floor(MND÷2) + floor(VIT÷4) + Healing Magic Skill
-  -- Mithra SCH/RDM M20 MND = 119
-  -- Mithra SCH/RDM M20 VIT = 113
-  -- Mithra SCH/RDM M20 Healing Magic Skill = 476 (w/ Light Arts)
-  sets.midcast.Cure.LightArts = {
-    main="Arka IV",               -- __, 24,  __,  __,  __, __, __/__, __
-    sub="Khonsu",                 -- __, __,  __,  __,  __, __,  6/ 6,  5
-    ammo="Incantor Stone",        -- __, __,  __,  __,  __,  2, __/__, __
-    head=gear.Vanya_B_head,       -- __, 10,  20,  27,  18, __, __/ 5, __
-    body="Shamash Robe",          -- __, __,  __,  40,  30, __, 10/__, 10
-    hands="Pedagogy Bracers +3",  --  3, __,  19,  46,  35, __, __/__,  7
-    legs=gear.Psycloth_D_legs,    -- __, __,  __,  30,  12,  7, __/__, __
-    feet=gear.Vanya_B_feet,       -- __,  5,  40,  19,  10, __, __/ 3, __
-    neck="Loricate Torque +1",    -- __, __,  __,  __,  __, __,  6/ 6, __
-    ear1="Mendicant's Earring",   -- __,  5,  __,  __,  __, __, __/__, __
-    ear2="Malignance Earring",    -- __, __,  __,   8,  __,  4, __/__, __
-    ring1="Kishar Ring",          -- __, __,  __,  __,  __,  4, __/__, __
-    ring2="Defending Ring",       -- __, __,  __,  __,  __, __, 10/10, __
-    back=gear.SCH_FC_Cape,        -- __, __,  __,  30,  __, 10, 10/__, __
-    waist="Embla Sash",           -- __, __,  __,  __,  __,  5, __/__, __
-    -- main="Daybreak",           -- __, 30,  __,  30,  __, __, __/__, __
-    -- sub="Chanter's Shield",    -- __, __,  __,  __,  __,  3, __/__, __
-    -- neck="Voltsurge Torque",   -- __, __,  __,  __,  __,  4, __/__, __
-    -- Base Stats                 -- __, __, 476, 119, 113, __, __/__, __
-    -- 3 CPII, 50 CP, 555 Heal Skill, 349 MND, 218 VIT, 39 FC, 30PDT/18MDT, 17 -Enmity
-    -- 783 Power
-
-    -- Great
-    -- main="Malignance Pole",    -- __, __,  __,  __,  40, __, 20/20, __
-    -- sub="Khonsu",              -- __, __,  __,  __,  __, __,  6/ 6,  5
-    -- ammo="Esper Stone +1",     -- __, __,  __,  __,  __, __, __/__,  5
-    -- head=gear.Kaykaus_D_head,  -- __, 11,  16,  31,  14, __, __/ 3, __
-    -- body=gear.Kaykaus_D_body,  --  4,  6,  __,  33,  20, __, __/__, __
-    -- hands="Pedagogy Bracers +3"--  3, __,  19,  46,  35, __, __/__,  7
-    -- legs=gear.Kaykaus_D_legs,  -- __, 11,  __,  30,  12,  7, __/__,  6
-    -- feet=gear.Kaykaus_D_feet,  -- __, 17,  __,  19,  10, __, __/__,  6
-    -- neck="Loricate Torque +1", -- __, __,  __,  __,  __, __,  6/ 6, __
-    -- ear1="Malignance Earring", -- __, __,  __,   8,  __,  4, __/__, __
-    -- ear2="Mendicant's Earring",-- __,  5,  __,  __,  __, __, __/__, __
-    -- ring1="Kishar Ring",       -- __, __,  __,  __,  __,  4, __/__, __
-    -- ring2="Kuchekula Ring",    -- __, __,  __,  __,  __, __, __/__,  7
-    -- back=gear.SCH_FC_Cape,     -- __, __,  __,  30,  __, 10, 10/__, __
-    -- waist="Embla Sash",        -- __, __,  __,  __,  __,  5, __/__, __
-    -- Kaykaus set bonus          --  8, __,  __,  __,  __, __, __/__, __
-    -- Base Stats                 -- __, __, 476, 119, 113, __, __/__, __
-    -- 15 CPII, 50 CP, 511 Heal Skill, 316 MND, 244 VIT, 30 FC, 42PDT/35MDT, 36 -Enmity
-    -- 730 Power
-
-    -- Ideal
-    -- main="Hvergelmir",         -- __, __,  __,  __,  __, 50, __/__, __
-    -- sub="Khonsu",              -- __, __,  __,  __,  __, __,  6/ 6,  5
-    -- ammo="Esper Stone +1",     -- __, __,  __,  __,  __, __, __/__,  5
-    -- head=gear.Kaykaus_D_head,  -- __, 11,  16,  31,  14, __, __/ 3, __
-    -- body=gear.Kaykaus_D_body,  --  4,  6,  __,  33,  20, __, __/__, __
-    -- hands="Pedagogy Bracers +3"--  3, __,  19,  46,  35, __, __/__,  7
-    -- legs=gear.Kaykaus_D_legs,  -- __, 11,  __,  30,  12,  7, __/__,  6
-    -- feet=gear.Kaykaus_D_feet,  -- __, 17,  __,  19,  10, __, __/__,  6
-    -- neck="Loricate Torque +1", -- __, __,  __,  __,  __, __,  6/ 6, __
-    -- ear1="Mendicant's Earring",-- __,  5,  __,  __,  __, __, __/__, __
-    -- ear2="Odnowa Earring +1",  -- __, __,  __,  __,   3, __,  3/ 5, __
-    -- ring1="Gelatinus Ring +1", -- __, __,  __,  __,  15, __,  7/-1, __
-    -- ring2="Defending Ring",    -- __, __,  __,  __,  __, __, 10/10, __
-    -- back=gear.SCH_Enmity_Cape, -- __, __,  __,  30,  __, __, 10/__, 10
-    -- waist="Carrier's Sash",    -- __, __,  __,  __,  __, __, __/__, __; +15 ele resist
-    -- Kaykaus set bonus          --  8, __,  __,  __,  __, __, __/__, __
-    -- Base Stats                 -- __, __, 476, 119, 113, __, __/__, __
-    -- 15 CPII, 50 CP, 511 Heal Skill, 308 MND, 222 VIT, 57 FC, 42PDT/29MDT, 39 -Enmity
-    -- 720 Power
-  }
-
-  -- Prioritize: CPII > CP > Heal Skill, MND, VIT (to power cap) > FC (to 30%) > -DT > Enmity (to -40)
-  -- Cap at 700 power; Power = floor(MND÷2) + floor(VIT÷4) + Healing Magic Skill
-  -- Mithra SCH/RDM M20 MND = 119
-  -- Mithra SCH/RDM M20 VIT = 113
-  -- Mithra SCH/RDM M20 Healing Magic Skill = 476 (w/ Light Arts)
-  sets.midcast.CureWeather.LightArts = {
     main="Arka IV",               -- __, 24,  __,  __,  __, __, __/__, __
     sub="Khonsu",                 -- __, __,  __,  __,  __, __,  6/ 6,  5
     ammo="Staunch Tathlum",       -- __, __,  __,  __,  __, __,  2/ 2, __
     head=gear.Vanya_B_head,       -- __, 10,  20,  27,  18, __, __/ 5, __
     body="Shamash Robe",          -- __, __,  __,  40,  30, __, 10/__, 10
     hands="Pedagogy Bracers +3",  --  3, __,  19,  46,  35, __, __/__,  7
-    legs=gear.Psycloth_D_legs,    -- __, __,  __,  30,  12,  7, __/__, __
+    legs=gear.Psycloth_D_legs,    -- __, __,  __,  30,  12, __, __/__, __
     feet=gear.Vanya_B_feet,       -- __,  5,  40,  19,  10, __, __/ 3, __
-    neck="Loricate Torque +1",    -- __, __,  __,  __,  __, __,  6/ 6, __
+    neck="Loricate Torque +1",    -- __, __,  __,  __,  __,  5,  6/ 6, __
     ear1="Mendicant's Earring",   -- __,  5,  __,  __,  __, __, __/__, __
-    ear2="Malignance Earring",    -- __, __,  __,   8,  __,  4, __/__, __
-    ring1="Kishar Ring",          -- __, __,  __,  __,  __,  4, __/__, __
+    ear2="Malignance Earring",    -- __, __,  __,   8,  __, __, __/__, __
+    ring1="Kishar Ring",          -- __, __,  __,  __,  __, __, __/__, __
     ring2="Defending Ring",       -- __, __,  __,  __,  __, __, 10/10, __
-    back=gear.SCH_FC_Cape,        -- __, __,  __,  30,  __, 10, 10/__, __
+    back=gear.SCH_FC_Cape,        -- __, __,  __,  30,  __, __, 10/__, __
     waist="Hachirin-no-Obi",      -- __, __,  __,  __,  __, __, __/__, __
     -- main="Daybreak",           -- __, 30,  __,  30,  __, __, __/__, __
-    -- sub="Chanter's Shield",    -- __, __,  __,  __,  __,  3, __/__, __
-    -- neck="Voltsurge Torque",   -- __, __,  __,  __,  __,  4, __/__, __
-    -- Base Stats                 -- __, __, 476, 119, 113, __, __/__, __
-    -- 3 CPII, 50 CP, 555 Heal Skill, 349 MND, 218 VIT, 32 FC, 32PDT/20MDT, 17 -Enmity
-    -- 783 Power
+    -- sub="Genmei Shield",       -- __, __,  __,  __,  __, __, 10/__, __
+    -- Base Stats                 -- __, __, 486, 129, 123, __, __/__, __
+    -- Merit points               -- __, __, ___, ___, ___, 10, __/__,  5
+    -- 3 CPII, 50 CP, 565 Heal Skill, 359 MND, 228 VIT, 15 SIRD, 48PDT/26MDT, 22 -Enmity
+    -- 801 Power
 
     -- Ideal:
-    -- main="Chatoyant Staff",    -- __, 10,  __,   5,   5, __, __/__, __
-    -- sub="Khonsu",              -- __, __,  __,  __,  __, __,  6/ 6,  5
-    -- ammo="Staunch Tathlum +1", -- __, __,  __,  __,  __, __,  3/ 3, __
-    -- head=gear.Kaykaus_D_head,  -- __, 11,  16,  31,  14, __, __/ 3, __
-    -- body=gear.Kaykaus_D_body,  --  4,  6,  __,  33,  20, __, __/__, __
-    -- hands="Pedagogy Bracers +3"--  3, __,  19,  46,  35, __, __/__,  7
-    -- legs=gear.Kaykaus_D_legs,  -- __, 11,  __,  30,  12,  7, __/__,  6
-    -- feet=gear.Kaykaus_D_feet,  -- __, 17,  __,  19,  10, __, __/__,  6
-    -- neck="Orunmila's Torque",  -- __, __,  __,  __,  __,  5, __/__,  3
-    -- ear1="Malignance Earring", -- __, __,  __,   8,  __,  4, __/__, __
-    -- ear2="Odnowa Earring +1",  -- __, __,  __,  __,   3, __,  3/ 5, __
-    -- ring1="Kishar Ring",       -- __, __,  __,  __,  __,  4, __/__, __
-    -- ring2="Defending Ring",    -- __, __,  __,  __,  __, __, 10/10, __
-    -- back=gear.SCH_FC_Cape,     -- __, __,  __,  30,  __, 10, 10/__, __
-    -- waist="Hachirin-no-Obi",   -- __, __,  __,  __,  __, __, __/__, __
-    -- Kaykaus set bonus          --  8, __,  __,  __,  __, __, __/__, __
-    -- Base Stats                 -- __, __, 476, 119, 113, __, __/__, __
-    -- 15 CPII, 55 CP, 511 Heal Skill, 321 MND, 212 VIT, 30 FC, 32PDT/27MDT, 27 -Enmity
-    -- 724 Power
+    -- main="Chatoyant Staff",    -- __, 10, ___,   5,   5, __, __/__, __
+    -- sub="Khonsu",              -- __, __, ___, ___, ___, __,  6/ 6,  5
+    -- ammo="Staunch Tathlum +1", -- __, __, ___, ___, ___, 11,  3/ 3, __
+    -- head=gear.Kaykaus_C_head,  -- __, 11,  16,  19,  14, 12, __/ 3, __
+    -- body="Rosette Jaseran +1", -- __, __, ___,  29,  21, 25,  5/ 5, 13
+    -- hands="Chironic Gloves",   -- __, __, ___,  38,  20, 31, __/__, __; Can add more DT or Enmity
+    -- legs=gear.Kaykaus_C_legs,  -- __, 11, ___,  30,  12, 12, __/__, __
+    -- feet=gear.Kaykaus_D_feet,  -- __, 17, ___,  19,  10, __, __/__,  6
+    -- neck="Loricate Torque +1", -- __, __, ___, ___, ___,  5,  6/ 6, __
+    -- ear1="Novia Earring",      -- __, __, ___, ___, ___, __, __/__,  7
+    -- ear2="Odnowa Earring +1",  -- __, __, ___, ___,   3, __,  3/ 5, __
+    -- ring1="Gelatinous Ring +1",-- __, __, ___, ___,  15, __,  7/-1, __
+    -- ring2="Defending Ring",    -- __, __, ___, ___, ___, __, 10/10, __
+    -- back=gear.SCH_FC_Cape,     -- __, __, ___,  30, ___, __, 10/__, __
+    -- waist="Hachirin-no-Obi",   -- __, __, ___, ___, ___, __, __/__, __
+    -- Kaykaus set bonus          --  6, __, ___, ___, ___, __, __/__, __
+    -- Base Stats                 -- __, __, 486, 129, 123, __, __/__, __
+    -- Merit points               -- __, __, ___, ___, ___, 10, __/__,  5
+    -- 6 CPII, 49 CP, 502 Heal Skill, 299 MND, 223 VIT, 106 SIRD, 50PDT/37MDT, 36 -Enmity
+    -- 706 Power
   }
+
+  sets.midcast.Cure.LightArts = sets.midcast.Cure
+  sets.midcast.CureWeather.LightArts = sets.midcast.CureWeather
 
   -- Removal rate = Base Rate * (1+(y/100))
   -- Base rate = (10+(Healing Skill / 30)); y = Cursna+ stat from gear
-  -- Mithra SCH/RDM M20 Healing Magic Skill = 406
+  -- Mithra SCH/RDM M30 Healing Magic Skill = 416
   sets.midcast.Cursna = {
     main="Gada",                  -- 18, __,  6
     ammo="Incantor Stone",        -- __, __,  2
@@ -585,8 +476,8 @@ function init_gear_sets()
     waist="Embla Sash",           -- __, __,  5
     -- sub="Chanter's Shield",    -- __, __,  3
     -- back="Oretania's Cape +1", -- __,  5, __
-    -- Base stats                   406, __, __
-    -- 557 Healing skill, 70 Cursna+, 10 FC; Cursna Rate = 48.56%
+    -- Base stats                   416, __, __
+    -- 567 Healing skill, 70 Cursna+, 10 FC; Cursna Rate = 49.13%
 
     -- Ideal:
     -- main="Hvergelmir",         -- __, __, 50
@@ -604,17 +495,20 @@ function init_gear_sets()
     -- ring2="Menelaus's Ring",   -- 15, 20,-10
     -- back="Oretania's Cape +1", -- __,  5, __
     -- waist="Embla Sash",        -- __, __,  5
-    -- 539 Healing skill, 70 Cursna+, 54 FC; Cursna Rate = 47.54%
+    -- Base stats                   416, __, __
+    -- 549 Healing skill, 70 Cursna+, 54 FC; Cursna Rate = 48.11%
   }
-  -- Mithra SCH/RDM M20 Healing Magic Skill = 476 (w/ Light Arts)
+  -- Mithra SCH/RDM M30 Healing Magic Skill = 486 (w/ Light Arts)
   sets.midcast.Cursna.LightArts = set_combine(sets.midcast.Cursna, {
     legs="Academic's Pants +1",       -- 20, __, __
     -- legs="Academic's Pants +3",    -- 24, __,  9
-    -- Base stats                       476, __, __
-    -- 631 Healing skill, 70 Cursna+, 10 FC; Cursna Rate = 52.76%
+    -- Base stats                       486, __, __
+    -- 641 Healing skill, 70 Cursna+, 19 FC; Cursna Rate = 53.3%
 
     -- Ideal:
-    -- 613 Healing skill, 70 Cursna+, 63 FC; Cursna Rate = 51.74%
+    -- legs="Academic's Pants +3",    -- 24, __,  9
+    -- Base stats                       486, __, __
+    -- 623 Healing skill, 70 Cursna+, 63 FC; Cursna Rate = 52.3%
   })
 
   -- Enh Magic Skill + Enh Magic Duration > Fast Cast
@@ -746,7 +640,7 @@ function init_gear_sets()
     main="Gada",
     sub="Ammurapi Shield",              -- 38, 13, __, __
     ammo="Pemphredo Tathlum",           --  8, __, __, __
-    head="Academic's Mortarboard +2",   -- 42, 32, __, __
+    head="Academic's Mortarboard +3",   -- 52, 37, __, __
     body="Shamash Robe",                -- 45, 40, __, __
     hands="Regal Cuffs",                -- 45, 40, 20, __
     legs="Academic's Pants +1",
@@ -759,7 +653,6 @@ function init_gear_sets()
     back=gear.SCH_MND_MAcc_Cape,        -- 30, 20, __, __
     waist="Rumination Sash",            --  3,  4, __, __; Enfeeb skill+7
     -- main=gear.Gada_MND_MAcc,         -- 35, 16, __, 16; +215 M.Acc skill
-    -- head="Academic's Mortarboard +3",-- 52, 37, __, __
     -- body="Academic's Gown +3",       -- 50, 39, __, __; +24 enf skill in DA
     -- legs="Academic's Pants +3",      -- 49, 39, __, __; +24 enf skill in LA
     -- neck="Argute Stole +2",          -- 30, 15, __, __
@@ -777,7 +670,7 @@ function init_gear_sets()
     main="Gada",
     sub="Ammurapi Shield",              -- 38, 13, __, __
     ammo="Pemphredo Tathlum",           --  8,  4, __, __
-    head="Academic's Mortarboard +2",   -- 42, 32, __, __
+    head="Academic's Mortarboard +3",   -- 52, 37, __, __
     body="Shamash Robe",                -- 45, 40, __, __
     hands="Regal Cuffs",                -- 45, 40, 20, __
     legs="Academic's Pants +1",
@@ -790,7 +683,6 @@ function init_gear_sets()
     back=gear.SCH_MND_MAcc_Cape,        -- 30, 20, __, __
     waist="Rumination Sash",            --  3,  4, __, __; Enfeeb skill+7
     -- main=gear.Gada_INT_MAcc,         -- 35, 16, __, 16; +215 M.Acc skill
-    -- head="Academic's Mortarboard +3",-- 52, 37, __, __
     -- body="Academic's Gown +3",       -- 50, 44, __, __; +24 enf skill in DA
     -- legs="Academic's Pants +3",      -- 49, 39, __, __; +24 enf skill in LA
     -- neck="Argute Stole +2",          -- 30, 15, __, __
@@ -818,7 +710,7 @@ function init_gear_sets()
   sets.midcast['Dark Magic'] = {
     sub="Ammurapi Shield",                -- __, 13, 38
     ammo="Pemphredo Tathlum",             -- __,  4,  8
-    head="Academic's Mortarboard +2",     -- __, 32, 42
+    head="Academic's Mortarboard +3",     -- __, 37, 52
     body="Shamash Robe",                  -- __, 40, 45
     hands="Academic's Bracers +2",
     legs="Pedagogy Pants +1",
@@ -827,7 +719,6 @@ function init_gear_sets()
     ear2="Regal Earring",                 -- __, 10, __; Adds set effect
     back="Bookworm's Cape",               --  8,  4, __
     -- main="Rubicundity",                -- 25, 21, 30; +215 M.Acc skill
-    -- head="Academic's Mortarboard +3",  -- __, 37, 52
     -- body="Academic's Gown +3",         -- 24, 44, 50
     -- hands="Academic's Bracers +3",     -- __, 29, 48
     -- legs="Pedagogy Pants +3",          -- 19, 47, 39
@@ -858,7 +749,7 @@ function init_gear_sets()
   -- FC > M.Acc > M.Acc Skill
   sets.midcast.Stun = set_combine(sets.midcast['Dark Magic'], {
     ammo="Pemphredo Tathlum",             -- __,  8, ___
-    head="Academic's Mortarboard +2",     --  4, 42,  85
+    head="Academic's Mortarboard +3",     --  8, 52, ___
     body="Shamash Robe",
     hands="Academic's Bracers +2",
     legs="Academic's Pants +1",
@@ -1080,24 +971,8 @@ function init_gear_sets()
     back="Cheviot Cape",            --  5/__, ___
     waist="Carrier's Sash",         -- __/__, ___; Ele Resist+15
     -- ammo="Staunch Tathlum +1",   --  3/ 3, ___; Resist Status+11
+    -- head="Bunzi's Hat",          --  7/ 7, 123
     -- back="Archon Cape",          -- __/__, ___
-
-    -- Ideal:
-    -- main="Malignance Pole",      -- 20/20, ___
-    -- sub="Khonsu",                --  6/ 6, ___
-    -- ammo="Staunch Tathlum +1",   --  3/ 3, ___; Resist Status+11
-    -- head=gear.Nyame_B_head,      --  7/ 7, 123
-    -- body="Shamash Robe",         -- 10/__, 106; Resist Silence+90
-    -- hands=gear.Nyame_B_hands,    --  7/ 7, 112
-    -- legs=gear.Nyame_B_legs,      --  8/ 8, 150
-    -- feet=gear.Nyame_B_feet,      --  7/ 7, 150
-    -- neck="Loricate Torque +1",   --  6/ 6, ___; DEF+60
-    -- ear1="Hearty Earring",       -- __/__, ___; Resist Status+5
-    -- ear2="Etiolation Earring",   -- __/ 3, ___; Resist Silence+15
-    -- ring1="Gelatinous Ring +1",  --  7/-1, ___
-    -- ring2="Defending Ring",      -- 10/10, ___
-    -- back="Archon Cape",          -- __/__, ___
-    -- waist="Carrier's Sash",      -- __/__, ___; Ele Resist+15
     -- 91 PDT / 76 MDT, 641 M.Eva
   } -- 95 PDT / 75 MDT, 641 M.Eva
 
@@ -1109,37 +984,76 @@ function init_gear_sets()
   ----------------------------------------- Idle Sets --------------------------------------------
   ------------------------------------------------------------------------------------------------
 
-  -- Passive sets are applied to idle in function `customize_idle_sets`
-  sets.passive_regen = {}
-  sets.passive_regen.daytime = {}
-  sets.passive_regen.nighttime = {}
   sets.passive_refresh = {
-    main="Bolelabunga", --1
-    sub="Genmei Shield",
-    head="Befouled Crown", --1
-    body="Shamash Robe", --3
-    legs="Assiduity Pants +1",
-    -- main="Contemplator +1", --2
-    -- main="Mpaca's Staff", --2
-    -- sub="Oneiros Grip", --1; when mp<70%
-    -- hands="Volte Gloves", --1
-    -- feet="Volte Gaiters", --1
-    -- ring1="Stikini Ring +1", --1
-    -- ring2="Stikini Ring +1", --1
+    head=gear.Nyame_B_head,         --  7/ 7, 123 [__]
+    body="Shamash Robe",            -- 10/__, 106 [ 3]; Resist Silence+90
+    legs="Assiduity Pants +1",      -- __/__, 107 [ 2]
+    neck="Loricate Torque +1",      --  6/ 6, ___ [__]; DEF+60
+    ear1="Hearty Earring",          -- __/__, ___ [__]; Resist Status+5
+    ear2="Etiolation Earring",      -- __/ 3, ___ [__]; Resist Silence+15
+    ring2="Defending Ring",         -- 10/10, ___ [__]
+    back=gear.SCH_FC_Cape,          -- 10/__,  20 [__] -- TODO: Add meva
+    waist="Carrier's Sash",         -- __/__, ___ [__]; Ele Resist+15
+    -- main="Mpaca's Staff",        -- __/__, ___ [ 2]
+    -- sub="Khonsu",                --  6/ 6, ___ [__]
+    -- ammo="Staunch Tathlum +1",   --  3/ 3, ___ [__]; Resist Status+11
+    -- head="Bunzi's Hat",          --  7/ 7, 123 [__]
+    -- hands="Volte Gloves",        -- __/__,  96 [ 1]
+    -- feet="Volte Gaiters",        -- __/__, 142 [ 1]
+    -- ring1="Stikini Ring +1",     -- __/__, ___ [ 1]
+    -- 52 PDT / 35 MDT, 574 M.Eva [10 Refresh]
   }
-  sets.passive_refresh.daytime = {
-    feet="Serpentes Sabots",
-  }
-  sets.passive_refresh.nighttime = {
-    hands="Serpentes Cuffs",
-  }
-  sets.passive_refresh.sub50 = set_combine(sets.passive_refresh, {
+  sets.passive_refresh.sub50 = {
     waist="Fucho-no-Obi",
-  })
+  }
+  sets.Sublimation = {
+    main="Siriti",                      -- __/__, ___ [ 1]
+    sub="Genmei Shield",                -- 10/__, ___ [__]
+    ammo="Staunch Tathlum",             --  2/ 2, ___; Resist Status+10
+    head="Academic's Mortarboard +3",   -- __/__,  95 [ 4]
+    body="Pedagogy Gown +3",            -- __/__, 100 [ 5]
+    hands=gear.Nyame_B_hands,           --  7/ 7, 112 [__]
+    legs="Assiduity Pants +1",          -- __/__, 107; Refresh+2
+    feet=gear.Nyame_B_feet,             --  7/ 7, 150 [__]
+    neck="Loricate Torque +1",          --  6/ 6, ___ [__]; DEF+60
+    ear1="Savant's Earring",            -- __/__, ___ [ 1]
+    ear2="Etiolation Earring",          -- __/ 3, ___ [__]; Resist Silence+15
+    ring1="Gelatinous Ring +1",         --  7/-1, ___ [__]
+    ring2="Defending Ring",             -- 10/10, ___ [__]
+    back=gear.SCH_FC_Cape,
+    waist="Embla Sash",                 -- __/__, ___ [ 5]
+    -- ammo="Staunch Tathlum +1",       --  3/ 3, ___; Resist Status+11
+    -- back="Archon Cape",              -- __/__, ___ [__]
+    -- 50 PDT / 35 MDT, 564 M.Eva [16 Sublimation]
+  } -- 49 PDT / 34 MDT, 564 M.Eva [16 Sublimation]
+  sets.Sublimation.Refresh = {
+    main="Siriti",                      -- __/__, ___ [ 1, __]
+    sub="Genmei Shield",                -- 10/__, ___ [__, __]
+    ammo="Staunch Tathlum",             --  2/ 2, ___ [__, __]; Resist Status+10
+    head="Academic's Mortarboard +3",   -- __/__,  95 [ 4, __]
+    body="Pedagogy Gown +3",            -- __/__, 100 [ 5, __]
+    hands=gear.Nyame_B_hands,           --  7/ 7, 112 [__, __]
+    legs="Assiduity Pants +1",          -- __/__, 107 [__,  2]
+    feet=gear.Nyame_B_feet,             --  7/ 7, 150 [__, __]
+    neck="Loricate Torque +1",          --  6/ 6, ___ [__, __]; DEF+60
+    ear1="Savant's Earring",            -- __/__, ___ [ 1, __]
+    ear2="Etiolation Earring",          -- __/ 3, ___ [__, __]; Resist Silence+15
+    ring1="Gelatinous Ring +1",         --  7/-1, ___ [__, __]
+    ring2="Defending Ring",             -- 10/10, ___ [__, __]
+    back=gear.SCH_FC_Cape,              -- 10/__,  20 [__, __]
+    waist="Embla Sash",                 -- __/__, ___ [ 5, __]
+    -- main="Mpaca's Staff",            -- __/__, ___ [__,  2]
+    -- sub="Khonsu",                    --  6/ 6, ___ [__, __]
+    -- ammo="Staunch Tathlum +1",       --  3/ 3, ___ [__, __]; Resist Status+11
+    -- ring1="Stikini Ring +1",         -- __/__, ___ [__,  1]
+    -- 49 PDT / 42 MDT, 584 M.Eva [15 Sublimation, 5 Refresh]
+  } -- 59 PDT / 34 MDT, 584 M.Eva [16 Sublimation, 2 Refresh]
 
   sets.idle = sets.HeavyDef
-  sets.idle.HeavyDef = set_combine(sets.idle, sets.HeavyDef)
-  sets.idle.Weak = sets.HeavyDef
+  sets.idle.Sublimation = set_combine(sets.idle, sets.Sublimation)
+  sets.idle.Refresh = set_combine(sets.idle, sets.passive_refresh)
+  sets.idle.Refresh.MpSub50 = set_combine(sets.idle, sets.passive_refresh, sets.passive_refresh.sub50)
+  sets.idle.Sublimation.Refresh = set_combine(sets.idle, sets.Sublimation.Refresh)
 
   sets.resting = set_combine(sets.idle, {
     main="Chatoyant Staff",
@@ -1213,8 +1127,6 @@ function init_gear_sets()
     feet="Arbatel Loafers +1",
     ring1="Locus Ring",
   }
-
-  sets.buff.FullSublimation = sets.precast.JA['Sublimation']
 
   sets.buff.Doom = {
     -- neck="Nicander's Necklace",  --20
@@ -1495,35 +1407,11 @@ end
 function customize_idle_set(idleSet)
   -- If not in DT mode put on move speed gear
   if state.IdleMode.current == 'Normal' and state.DefenseMode.value == 'None' then
-    -- Apply regen gear
-    if classes.CustomIdleGroups:contains('Regen') then
-      idleSet = set_combine(idleSet, sets.passive_regen)
-      if classes.CustomIdleGroups:contains('Daytime') then
-        idleSet = set_combine(idleSet, sets.passive_regen.daytime)
-      elseif classes.CustomIdleGroups:contains('Nighttime') then
-        idleSet = set_combine(idleSet, sets.passive_regen.nighttime)
-      end
-    end
-    -- Apply refresh gear
-    if classes.CustomIdleGroups:contains('Refresh') then
-      idleSet = set_combine(idleSet, sets.passive_refresh)
-      if classes.CustomIdleGroups:contains('MpSub50') then
-        idleSet = set_combine(idleSet, sets.passive_refresh.sub50)
-      end
-      if classes.CustomIdleGroups:contains('Daytime') then
-        idleSet = set_combine(idleSet, sets.passive_refresh.daytime)
-      elseif classes.CustomIdleGroups:contains('Nighttime') then
-        idleSet = set_combine(idleSet, sets.passive_refresh.nighttime)
-      end
-    end
     -- Apply movement speed gear
     if classes.CustomIdleGroups:contains('Adoulin') then
       idleSet = set_combine(idleSet, sets.Kiting.Adoulin)
     else
       idleSet = set_combine(idleSet, sets.Kiting)
-    end
-    if state.Buff['Sublimation: Activated'] then
-        idleSet = set_combine(idleSet, sets.buff.FullSublimation)
     end
     if state.CP.current == 'on' then
       idleSet = set_combine(idleSet, sets.CP)
@@ -1664,6 +1552,9 @@ function update_idle_groups()
 
   classes.CustomIdleGroups:clear()
   if player.status == 'Idle' then
+    if buffactive['Sublimation: Activated'] then
+      classes.CustomIdleGroups:append('Sublimation')
+    end
     if (isRegening==true and player.hpp < 100) or (isRegening==false and player.hpp < 85) then
       classes.CustomIdleGroups:append('Regen')
     end
