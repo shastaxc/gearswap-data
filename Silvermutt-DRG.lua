@@ -212,10 +212,10 @@ function init_gear_sets()
   sets.precast.JA['Super Jump'] = {}
 
   sets.precast.JA['Angon'] = {
+    ammo="Angon",
     hands="Pteroslaver Finger Gauntlets +1",
-    -- ammo="Angon",
+    ear2="Dragoon's Earring",
     -- hands="Pteroslaver Finger Gauntlets +3",
-    -- ear2="Dragoon's Earring",
   }
 
   -- Fast cast sets for spells
@@ -333,13 +333,13 @@ function init_gear_sets()
     hands=gear.Nyame_B_hands,
     legs=gear.Nyame_B_legs,
     feet=gear.Nyame_B_feet,
+    neck="Dragoon's Collar +2",
     ear1="Thrud Earring",
     ear2="Moonshade Earring",
     ring1="Epaminondas's Ring",
     ring2="Niqmaddu Ring",
     back=gear.DRG_WS2_Cape,
     waist="Fotia Belt",
-    -- neck="Dragoon's Collar +2",
   }
   sets.precast.WS["Sonic Thrust"].MaxTP = set_combine(sets.precast.WS["Sonic Thrust"], {
     ear2="Ishvara Earring",
@@ -355,18 +355,18 @@ function init_gear_sets()
 
   sets.precast.WS["Impulse Drive"] = {
     ammo="Knobkierrie",
+    head=gear.Nyame_B_head,
     body="Gleti's Cuirass",
     hands=gear.Nyame_B_hands,
     legs="Sulevia's Cuisses +2",
     feet=gear.Nyame_B_feet,
+    neck="Dragoon's Collar +2",
     ear1="Sherida Earring",
     ear2="Moonshade Earring",
     ring1="Regal Ring",
     ring2="Niqmaddu Ring",
     back=gear.DRG_WS2_Cape,
     waist="Sailfi Belt +1",
-    -- head="Pteroslayer Armet +3",
-    -- neck="Dragoon's Collar +2",
   }
   sets.precast.WS["Impulse Drive"].MaxTP = set_combine(sets.precast.WS["Impulse Drive"], {
     ear2="Ishvara Earring",
@@ -514,6 +514,7 @@ function init_gear_sets()
     head="Pteroslaver Armet +2",
     neck="Adad Amulet",
     ear1="Enmerkar Earring",
+    ear2="Dragoon's Earring",
     waist="Incarnation Sash",
     -- ammo="Voluspa Tathlum",
     -- head="Pteroslaver Armet +3",
@@ -521,7 +522,6 @@ function init_gear_sets()
     -- hands=gear.Acro_Breath_hands,
     -- legs=gear.Acro_Breath_legs,
     -- feet=gear.Acro_Breath_feet,
-    -- ear2="Dragoon's Earring",
     -- ring1="Cath Palug Ring",
     -- back=gear.DRG_Adoulin_Cape,
   }
