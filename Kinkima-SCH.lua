@@ -368,7 +368,7 @@ function init_gear_sets()
     -- Base Stats                     -- __, __, 486, 129, 123, __, __/__, __
     -- Merit points                   -- __, __, ___, ___, ___, 10, __/__,  5
     -- 12 CPII, 49 CP, 502 Heal Skill, 298 MND, 239 VIT, 108 SIRD, 55PDT/48MDT, 37 -Enmity
-    -- 714 Power
+    -- 710 Power
   } -- 12 CPII, 39 CP, 502 Heal Skill, 302 MND, 254 VIT, 107 SIRD, 61PDT/46MDT, 19 -Enmity
     -- 722 Power
 
