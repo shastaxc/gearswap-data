@@ -343,31 +343,33 @@ function init_gear_sets()
   -- Mithra SCH/RDM M30 Healing Magic Skill = 486 (w/ Light Arts)
   -- For simplicity, this set assumes Light Arts is on. This set will be gimped with LA off. Use Light Arts, dummy!
   sets.midcast.Cure = {
-    main="Malignance Pole",       -- __, __, ___, ___,  40, __, 20/20, __
-    sub="Khonsu",                 -- __, __, ___, ___, ___, __,  6/ 6,  5
-    ammo="Staunch Tathlum",       -- __, __, ___, ___, ___, 10,  2/ 2, __
-    head=gear.Kaykaus_C_head,     -- __, 11,  16,  19,  14, 12, __/ 3, __
-    body=gear.Kaykaus_C_body,     --  4, __, ___,  33,  20, 12, __/__, __
-    hands=gear.Nyame_B_hands,     -- __, __, ___,  40,  39, __,  7/ 7, __
-    legs=gear.Kaykaus_C_legs,     -- __, 11, ___,  30,  12, 12, __/__, __
-    feet=gear.Kaykaus_D_feet,     -- __, 17, ___,  19,  10, __, __/__,  6
-    neck="Loricate Torque +1",    -- __, __, ___, ___, ___,  5,  6/ 6, __
-    ring1="Gelatinous Ring +1",   -- __, __, ___, ___,  15, __,  7/-1, __
-    ring2="Defending Ring",       -- __, __, ___, ___, ___, __, 10/10, __
-    back=gear.SCH_FC_Cape,        -- __, __, ___,  30, ___, __, 10/__, __
-    waist="Rumination Sash",      -- __, __, ___,   4, ___, 10, __/__, __
-    -- ammo="Staunch Tathlum +1", -- __, __, ___, ___, ___, 11,  3/ 3, __
-    -- hands="Chironic Gloves",   -- __, __, ___,  38,  20, 31, __/__, __; Can add more DT or Enmity
-    -- ear1="Novia Earring",      -- __, __, ___, ___, ___, __, __/__,  7
-    -- ear2="Halasz Earring",     -- __, __, ___, ___, ___,  5, __/__,  3
-    -- back=gear.SCH_CP_Cape,     -- __, 10, ___,  30, ___, __, __/__, __
-    -- waist="Sanctuary Obi +1",  -- __, __, ___, ___, ___, 10, __/__,  4
-    -- Kaykaus set bonus          --  8, __, ___, ___, ___, __, __/__, __
-    -- Base Stats                 -- __, __, 486, 129, 123, __, __/__, __
-    -- Merit points               -- __, __, ___, ___, ___, 10, __/__,  5
-    -- 12 CPII, 49 CP, 502 Heal Skill, 298 MND, 254 VIT, 108 SIRD, 52PDT/47MDT, 30 -Enmity
+    main="Malignance Pole",           -- __, __, ___, ___,  40, __, 20/20, __
+    sub="Khonsu",                     -- __, __, ___, ___, ___, __,  6/ 6,  5
+    ammo="Staunch Tathlum",           -- __, __, ___, ___, ___, 10,  2/ 2, __
+    head=gear.Kaykaus_C_head,         -- __, 11,  16,  19,  14, 12, __/ 3, __
+    body=gear.Kaykaus_C_body,         --  4, __, ___,  33,  20, 12, __/__, __
+    hands=gear.Chironic_SIRD_hands,   -- __, __, ___,  38,  20, 31, __/__, __; Can add more DT or Enmity
+    legs=gear.Kaykaus_C_legs,         -- __, 11, ___,  30,  12, 12, __/__, __
+    feet=gear.Kaykaus_D_feet,         -- __, 17, ___,  19,  10, __, __/__,  6
+    neck="Loricate Torque +1",        -- __, __, ___, ___, ___,  5,  6/ 6, __
+    ear2="Halasz Earring",            -- __, __, ___, ___, ___,  5, __/__,  3
+    ring1="Gelatinous Ring +1",       -- __, __, ___, ___,  15, __,  7/-1, __; Use Janniston if you have it
+    ring2="Defending Ring",           -- __, __, ___, ___, ___, __, 10/10, __
+    back=gear.SCH_FC_Cape,            -- __, __, ___,  30, ___, __, 10/__, __
+    waist="Rumination Sash",          -- __, __, ___,   4, ___, 10, __/__, __
+    -- Base Stats                     -- __, __, 486, 129, 123, __, __/__, __
+    -- Merit points                   -- __, __, ___, ___, ___, 10, __/__,  5
+
+    -- ammo="Staunch Tathlum +1",     -- __, __, ___, ___, ___, 11,  3/ 3, __
+    -- ear1="Novia Earring",          -- __, __, ___, ___, ___, __, __/__,  7
+    -- ring1="Kuchekula Ring",        -- __, __, ___, ___, ___, __, __/__,  7; Use Janniston if you have it
+    -- back=gear.SCH_CP_Cape,         -- __, 10, ___,  30, ___, __, 10/__, __
+    -- waist="Sanctuary Obi +1",      -- __, __, ___, ___, ___, 10, __/__,  4
+    -- Base Stats                     -- __, __, 486, 129, 123, __, __/__, __
+    -- Merit points                   -- __, __, ___, ___, ___, 10, __/__,  5
+    -- 12 CPII, 49 CP, 502 Heal Skill, 298 MND, 239 VIT, 108 SIRD, 55PDT/48MDT, 37 -Enmity
     -- 714 Power
-  } -- 12 CPII, 39 CP, 502 Heal Skill, 304 MND, 273 VIT, 61 SIRD, 68PDT/53MDT, 11 -Enmity
+  } -- 12 CPII, 39 CP, 502 Heal Skill, 302 MND, 254 VIT, 107 SIRD, 61PDT/46MDT, 19 -Enmity
     -- 722 Power
 
   -- Prioritize: CPII > CP > Heal Skill, MND, VIT (to power cap) > FC (to 30%) > -DT > Enmity (to -40)
@@ -377,30 +379,33 @@ function init_gear_sets()
   -- Mithra SCH/RDM M30 Healing Magic Skill = 416
   -- For simplicity, this set assumes Light Arts is on. This set will be gimped with LA off. Use Light Arts, dummy!
   sets.midcast.CureWeather = {
-    main="Chatoyant Staff",       -- __, 10, ___,   5,   5, __, __/__, __
-    sub="Khonsu",                 -- __, __, ___, ___, ___, __,  6/ 6,  5
-    ammo="Staunch Tathlum",       -- __, __, ___, ___, ___, 10,  2/ 2, __
-    head=gear.Kaykaus_C_head,     -- __, 11,  16,  19,  14, 12, __/ 3, __
-    body=gear.Nyame_B_body,       -- __, __, ___,  37,  35, __,  9/ 9, __
-    hands=gear.Nyame_B_hands,     -- __, __, ___,  40,  39, __,  7/ 7, __
-    legs=gear.Kaykaus_C_legs,     -- __, 11, ___,  30,  12, 12, __/__, __
-    feet=gear.Kaykaus_D_feet,     -- __, 17, ___,  19,  10, __, __/__,  6
-    neck="Loricate Torque +1",    -- __, __, ___, ___, ___,  5,  6/ 6, __
-    ring1="Gelatinous Ring +1",   -- __, __, ___, ___,  15, __,  7/-1, __
-    ring2="Defending Ring",       -- __, __, ___, ___, ___, __, 10/10, __
-    back=gear.SCH_FC_Cape,        -- __, __, ___,  30, ___, __, 10/__, __
-    waist="Hachirin-no-Obi",      -- __, __, ___, ___, ___, __, __/__, __
-    -- ammo="Staunch Tathlum +1", -- __, __, ___, ___, ___, 11,  3/ 3, __
-    -- body="Rosette Jaseran +1", -- __, __, ___,  39,  31, 25,  5/ 5, 13
-    -- hands="Chironic Gloves",   -- __, __, ___,  38,  20, 31, __/__, __; Can add more DT or Enmity
-    -- ear1="Novia Earring",      -- __, __, ___, ___, ___, __, __/__,  7
-    -- ear2="Odnowa Earring +1",  -- __, __, ___, ___,   3, __,  3/ 5, __
-    -- Kaykaus set bonus          --  6, __, ___, ___, ___, __, __/__, __
-    -- Base Stats                 -- __, __, 486, 129, 123, __, __/__, __
-    -- Merit points               -- __, __, ___, ___, ___, 10, __/__,  5
-    -- 6 CPII, 49 CP, 502 Heal Skill, 309 MND, 233 VIT, 106 SIRD, 50PDT/37MDT, 36 -Enmity
+    main="Chatoyant Staff",           -- __, 10, ___,   5,   5, __, __/__, __
+    sub="Khonsu",                     -- __, __, ___, ___, ___, __,  6/ 6,  5
+    ammo="Staunch Tathlum",           -- __, __, ___, ___, ___, 10,  2/ 2, __
+    head=gear.Kaykaus_C_head,         -- __, 11,  16,  19,  14, 12, __/ 3, __
+    body="Rosette Jaseran +1",        -- __, __, ___,  39,  31, 25,  5/ 5, 13
+    hands=gear.Chironic_SIRD_hands,   -- __, __, ___,  38,  20, 31, __/__, __; Can add more DT or Enmity
+    legs=gear.Kaykaus_C_legs,         -- __, 11, ___,  30,  12, 12, __/__, __
+    feet=gear.Kaykaus_D_feet,         -- __, 17, ___,  19,  10, __, __/__,  6
+    neck="Loricate Torque +1",        -- __, __, ___, ___, ___,  5,  6/ 6, __
+    ring1="Gelatinous Ring +1",       -- __, __, ___, ___,  15, __,  7/-1, __
+    ring2="Defending Ring",           -- __, __, ___, ___, ___, __, 10/10, __
+    back=gear.SCH_FC_Cape,            -- __, __, ___,  30, ___, __, 10/__, __
+    waist="Hachirin-no-Obi",          -- __, __, ___, ___, ___, __, __/__, __
+    -- Kaykaus set bonus              --  6, __, ___, ___, ___, __, __/__, __
+    -- Base Stats                     -- __, __, 486, 129, 123, __, __/__, __
+    -- Merit points                   -- __, __, ___, ___, ___, 10, __/__,  5
+
+    -- ammo="Staunch Tathlum +1",     -- __, __, ___, ___, ___, 11,  3/ 3, __
+    -- ear1="Novia Earring",          -- __, __, ___, ___, ___, __, __/__,  7
+    -- ear2="Odnowa Earring +1",      -- __, __, ___, ___,   3, __,  3/ 5, __
+    -- back=gear.SCH_CP_Cape,         -- __, 10, ___,  30, ___, __, 10/__, __
+    -- Kaykaus set bonus              --  6, __, ___, ___, ___, __, __/__, __
+    -- Base Stats                     -- __, __, 486, 129, 123, __, __/__, __
+    -- Merit points                   -- __, __, ___, ___, ___, 10, __/__,  5
+    -- 6 CPII, 59 CP, 502 Heal Skill, 309 MND, 233 VIT, 106 SIRD, 50PDT/37MDT, 36 -Enmity
     -- 714 Power
-  } -- 6 CPII, 49 CP, 502 Heal Skill, 309 MND, 253 VIT, 39 SIRD, 57PDT/42MDT, 11 -Enmity
+  } -- 6 CPII, 49 CP, 502 Heal Skill, 309 MND, 230 VIT, 105 SIRD, 46PDT/31MDT, 29 -Enmity
     -- 706 Power
 
   sets.midcast.Cure.LightArts = sets.midcast.Cure
