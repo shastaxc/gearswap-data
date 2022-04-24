@@ -372,11 +372,11 @@ function init_gear_sets()
   } -- 12 CPII, 39 CP, 502 Heal Skill, 302 MND, 254 VIT, 107 SIRD, 61PDT/46MDT, 19 -Enmity
     -- 722 Power
 
-  -- Prioritize: CPII > CP > Heal Skill, MND, VIT (to power cap) > FC (to 30%) > -DT > Enmity (to -40)
+  -- Prioritize: CPII > CP > Heal Skill, MND, VIT (to power cap) > SIRD > -DT > Enmity (to -40)
   -- Cap at 700 power; Power = floor(MND÷2) + floor(VIT÷4) + Healing Magic Skill
   -- Mithra SCH/RDM M30 MND = 129
   -- Mithra SCH/RDM M30 VIT = 123
-  -- Mithra SCH/RDM M30 Healing Magic Skill = 416
+  -- Mithra SCH/RDM M30 Healing Magic Skill = 486 (w/ Light Arts)
   -- For simplicity, this set assumes Light Arts is on. This set will be gimped with LA off. Use Light Arts, dummy!
   sets.midcast.CureWeather = {
     main="Chatoyant Staff",           -- __, 10, ___,   5,   5, __, __/__, __
