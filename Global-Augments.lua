@@ -407,27 +407,27 @@ gear.Eschite_D_feet = {}
 -- Kaykaus
 gear.Kaykaus_A_head = {name="Kaykaus Mitra +1", augments={'MP+80','MND+12','Mag. Acc.+20',}}
 gear.Kaykaus_B_head = {name="Kaykaus Mitra +1", augments={'MP+80','"Cure" spellcasting time -7%','Enmity-6',}}
-gear.Kaykaus_C_head = {name="Kaykaus Mitra +1", augments={'MP+80','Spell interruption rate down -12%','"Cure" spellcasting time -7%',}}
+gear.Kaykaus_C_head = {name="Kaykaus Mitra +1", augments={'MP+80','Spell interruption rate down +12%','"Cure" spellcasting time -7%',}}
 gear.Kaykaus_D_head = {name="Kaykaus Mitra +1", augments={'MND+12','Mag. Acc.+20','"Mag.Atk.Bns."+20',}}
 
 gear.Kaykaus_A_body = {name="Kaykaus Bliaut +1", augments={'MP+80','MND+12','Mag. Acc.+20',}}
 gear.Kaykaus_B_body = {name="Kaykaus Bliaut +1", augments={'MP+80','"Cure" spellcasting time -7%','Enmity-6',}}
-gear.Kaykaus_C_body = {name="Kaykaus Bliaut +1", augments={'MP+80','Spell interruption rate down -12%','"Cure" spellcasting time -7%',}}
+gear.Kaykaus_C_body = {name="Kaykaus Bliaut +1", augments={'MP+80','Spell interruption rate down +12%','"Cure" spellcasting time -7%',}}
 gear.Kaykaus_D_body = {name="Kaykaus Bliaut +1", augments={'MP+80','"Cure" potency +6','"Conserve MP"+7',}}
 
 gear.Kaykaus_A_hands = {name="Kaykaus Cuffs +1", augments={'MP+80','MND+12','Mag. Acc.+20',}}
 gear.Kaykaus_B_hands = {name="Kaykaus Cuffs +1", augments={'MP+80','"Cure" spellcasting time -7%','Enmity-6',}}
-gear.Kaykaus_C_hands = {name="Kaykaus Cuffs +1", augments={'MP+80','Spell interruption rate down -12%','"Cure" spellcasting time -7%',}}
+gear.Kaykaus_C_hands = {name="Kaykaus Cuffs +1", augments={'MP+80','Spell interruption rate down +12%','"Cure" spellcasting time -7%',}}
 gear.Kaykaus_D_hands = {name="Kaykaus Cuffs +1", augments={'MP+80','"Conserve MP"+7','"Fast Cast"+4',}}
 
 gear.Kaykaus_A_legs = {name="Kaykaus Tights +1", augments={'MP+80','MND+12','Mag. Acc.+20',}}
 gear.Kaykaus_B_legs = {name="Kaykaus Tights +1", augments={'MP+80','"Cure" spellcasting time -7%','Enmity-6',}}
-gear.Kaykaus_C_legs = {name="Kaykaus Tights +1", augments={'MP+80','Spell interruption rate down -12%','"Cure" spellcasting time -7%',}}
+gear.Kaykaus_C_legs = {name="Kaykaus Tights +1", augments={'MP+80','Spell interruption rate down +12%','"Cure" spellcasting time -7%',}}
 gear.Kaykaus_D_legs = {name="Kaykaus Tights +1", augments={'INT+12','"Mag.Atk.Bns."+20','Enmity-6',}}
 
 gear.Kaykaus_A_feet = {name="Kaykaus Boots +1", augments={'MP+80','MND+12','Mag. Acc.+20',}}
 gear.Kaykaus_B_feet = {name="Kaykaus Boots +1", augments={'MP+80','"Cure" spellcasting time -7%','Enmity-6',}}
-gear.Kaykaus_C_feet = {name="Kaykaus Boots +1", augments={'MP+80','Spell interruption rate down -12%','"Cure" spellcasting time -7%',}}
+gear.Kaykaus_C_feet = {name="Kaykaus Boots +1", augments={'MP+80','Spell interruption rate down +12%','"Cure" spellcasting time -7%',}}
 gear.Kaykaus_D_feet = {name="Kaykaus Boots +1", augments={'Mag. Acc.+20','"Cure" potency +6','"Fast Cast"+4',}}
 
 -- Lustratio
@@ -484,27 +484,27 @@ gear.Naga_D_feet = {}
 
 -- Psycloth
 gear.Psycloth_A_head = {name="Psycloth Tiara", augments={'MP+50','INT+7','"Conserve MP"+6',}}
-gear.Psycloth_B_head = {name="Psycloth Tiara", augments={'Mag. Acc.+10','Spell interruption rate down -15%','MND+7',}}
+gear.Psycloth_B_head = {name="Psycloth Tiara", augments={'Mag. Acc.+10','Spell interruption rate down +15%','MND+7',}}
 gear.Psycloth_C_head = {name="Psycloth Tiara", augments={'Pet: Attack+25','Pet: "Mag.Atk.Bns."+15','Pet: Enmity+7',}}
 gear.Psycloth_D_head = {name="Psycloth Tiara", augments={'Mag. Acc.+20','"Fast Cast"+10','INT+7',}}
 
 gear.Psycloth_A_body = {name="Psycloth Vest", augments={'MP+50','INT+7','"Conserve MP"+6',}}
-gear.Psycloth_B_body = {name="Psycloth Vest", augments={'Mag. Acc.+10','Spell interruption rate down -15%','MND+7',}}
+gear.Psycloth_B_body = {name="Psycloth Vest", augments={'Mag. Acc.+10','Spell interruption rate down +15%','MND+7',}}
 gear.Psycloth_C_body = {name="Psycloth Vest", augments={'Pet: Attack+25','Pet: "Mag.Atk.Bns."+15','Pet: Enmity+7',}}
 gear.Psycloth_D_body = {name="Psycloth Vest", augments={'Elem. magic skill +20','INT+7','Enmity-6',}}
 
 gear.Psycloth_A_hands = {name="Psycloth Manillas", augments={'MP+50','INT+7','"Conserve MP"+6',}}
-gear.Psycloth_B_hands = {name="Psycloth Manillas", augments={'Mag. Acc.+10','Spell interruption rate down -15%','MND+7',}}
+gear.Psycloth_B_hands = {name="Psycloth Manillas", augments={'Mag. Acc.+10','Spell interruption rate down +15%','MND+7',}}
 gear.Psycloth_C_hands = {name="Psycloth Manillas", augments={'Pet: Attack+25','Pet: "Mag.Atk.Bns."+15','Pet: Enmity+7',}}
 gear.Psycloth_D_hands = {name="Psycloth Manillas", augments={'MP+80','"Blood Boon"+4','Pet: "Mag.Atk.Bns."+25',}}
 
 gear.Psycloth_A_legs = {name="Psycloth Lappas", augments={'MP+50','INT+7','"Conserve MP"+6',}}
-gear.Psycloth_B_legs = {name="Psycloth Lappas", augments={'Mag. Acc.+10','Spell interruption rate down -15%','MND+7',}}
+gear.Psycloth_B_legs = {name="Psycloth Lappas", augments={'Mag. Acc.+10','Spell interruption rate down +15%','MND+7',}}
 gear.Psycloth_C_legs = {name="Psycloth Lappas", augments={'Pet: Attack+25','Pet: "Mag.Atk.Bns."+15','Pet: Enmity+7',}}
 gear.Psycloth_D_legs = {name="Psycloth Lappas", augments={'MP+80','Mag. Acc.+15','"Fast Cast"+7',}}
 
 gear.Psycloth_A_feet = {name="Psycloth Boots", augments={'MP+50','INT+7','"Conserve MP"+6',}}
-gear.Psycloth_B_feet = {name="Psycloth Boots", augments={'Mag. Acc.+10','Spell interruption rate down -15%','MND+7',}}
+gear.Psycloth_B_feet = {name="Psycloth Boots", augments={'Mag. Acc.+10','Spell interruption rate down +15%','MND+7',}}
 gear.Psycloth_C_feet = {name="Psycloth Boots", augments={'Pet: Attack+25','Pet: "Mag.Atk.Bns."+15','Pet: Enmity+7',}}
 gear.Psycloth_D_feet = {name="Psycloth Boots", augments={'Pet: M.Acc.+20','Pet: "Mag.Atk.Bns."+20','Pet: Enmity+7',}}
 

@@ -1010,7 +1010,7 @@ function init_gear_sets()
 
   sets.resting = set_combine(sets.idle, {
     main="Chatoyant Staff",
-    sub=empty
+    sub="Khonsu",
     -- waist="Shinjutsu-no-Obi +1",
   })
 
