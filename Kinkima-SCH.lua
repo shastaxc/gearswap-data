@@ -938,6 +938,8 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.passive_refresh = {
+    main="Bolelabunga",             -- __/__, ___ [ 1]
+    sub="Genmei Shield",            -- 10/__, ___ [__]
     head=gear.Nyame_B_head,         --  7/ 7, 123 [__]
     body="Shamash Robe",            -- 10/__, 106 [ 3]; Resist Silence+90
     legs="Assiduity Pants +1",      -- __/__, 107 [ 2]
