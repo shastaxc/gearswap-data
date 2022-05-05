@@ -599,7 +599,7 @@ function init_gear_sets()
     hands="Regal Cuffs",                -- 45, 40, 20, __
     legs="Academic's Pants +1",
     feet="Academic's Loafers +3",       -- 46, 29, __, __; +20 M.Acc in Grimoire
-    neck="Sanctity Necklace",           -- 10, __, __, __
+    neck="Argute Stole +2",             -- 30, 15, __, __
     ear1="Malignance Earring",          -- 10,  8, __, __
     ear2="Regal Earring",               -- __, 10, __, __; Adds set bonus
     ring1="Kishar Ring",                --  5, __, 10, __
@@ -609,7 +609,6 @@ function init_gear_sets()
     -- main=gear.Gada_MND_MAcc,         -- 35, 16, __, 16; +215 M.Acc skill
     -- body="Academic's Gown +3",       -- 50, 39, __, __; +24 enf skill in DA
     -- legs="Academic's Pants +3",      -- 49, 39, __, __; +24 enf skill in LA
-    -- neck="Argute Stole +2",          -- 30, 15, __, __
     -- waist="Luminary Sash",           -- 10, 10, __, __
     -- Academic's set bonus             -- 60, __, __, __
     -- 504 M.Acc, 291 MND, 30% Enfeebling Duration, 40 Enfeebling Skill
@@ -629,7 +628,7 @@ function init_gear_sets()
     hands="Regal Cuffs",                -- 45, 40, 20, __
     legs="Academic's Pants +1",
     feet="Academic's Loafers +3",       -- 46, 32, __, __; +20 M.Acc in Grimoire
-    neck="Sanctity Necklace",           -- 10, __, __, __
+    neck="Argute Stole +2",             -- 30, 15, __, __
     ear1="Malignance Earring",          -- 10,  8, __, __
     ear2="Regal Earring",               -- __, 10, __, __; Adds set bonus
     ring1="Kishar Ring",                --  5, __, 10, __
@@ -639,7 +638,6 @@ function init_gear_sets()
     -- main=gear.Gada_INT_MAcc,         -- 35, 16, __, 16; +215 M.Acc skill
     -- body="Academic's Gown +3",       -- 50, 44, __, __; +24 enf skill in DA
     -- legs="Academic's Pants +3",      -- 49, 39, __, __; +24 enf skill in LA
-    -- neck="Argute Stole +2",          -- 30, 15, __, __
     -- back=gear.SCH_INT_MAcc_Cape,     -- 30, 20, __, __
     -- waist="Acuity Belt +1",          -- 15, 23, __, __
     -- Academic's set bonus             -- 60, __, __, __
@@ -707,6 +705,7 @@ function init_gear_sets()
     hands="Academic's Bracers +3",        --  9, 48, ___
     legs="Academic's Pants +1",
     feet="Academic's Loafers +3",         -- __, 46, ___
+    neck="Argute Stole +2",               -- __, 30, ___
     ear1="Malignance Earring",            --  4, 10, ___
     back=gear.SCH_MAB_Cape,
 
@@ -735,6 +734,7 @@ function init_gear_sets()
     hands="Academic's Bracers +3",      -- __,  9, 48, ___
     legs="Academic's Pants +1",
     feet="Academic's Loafers +3",       -- 12, __, 46, ___; Grimoire recast-, +20M.Acc in Grimoire
+    neck="Argute Stole +2",             -- __, __, 30, ___
     ear1="Malignance Earring",          -- __,  4, 10, ___
     ear2="Regal Earring",               -- __, __, __, ___; adds set effect
 
@@ -768,7 +768,7 @@ function init_gear_sets()
     head="Pedagogy Mortarboard +1",
     body=gear.Merl_MB_body,           -- 40, 20, 20
     hands=gear.Merl_MB_hands,
-    neck="Sanctity Necklace",         -- __, 10, 10
+    neck="Argute Stole +2",           -- 15, 30, __
     ear1="Malignance Earring",        --  8, 10,  8
     ear2="Regal Earring",             -- 10, __,  7
     ring2="Metamor. Ring +1",         -- 16, 15, __
@@ -778,7 +778,6 @@ function init_gear_sets()
     -- hands=gear.Amalric_D_hands,    -- 36, 20, 53
     -- legs="Mallquis Trews +2",      -- 57, 45, 15
     -- feet=gear.Merl_MB_feet,        -- 34, 40, 55
-    -- neck="Argute Stole +2",        -- 15, 30, __
     -- ring1="Freke Ring",            -- 10, __,  8
     -- waist="Acuity Belt +1",        -- 23, 15, __
     -- 374 INT, 315 Magic Acc, 327 MAB
@@ -845,7 +844,7 @@ function init_gear_sets()
     body="Mallquis Saio +2",          -- 54, 46, 15, ___,  58, __, __
     legs="Mallquis Trews +2",         -- 57, 45, 15, ___,  55,  6, __
     feet="Mallquis Clogs +1",         -- 33, 36, 12, ___,  46, __, __
-    neck="Sanctity Necklace",         -- __, 10, 10, ___, ___, __, __
+    neck="Argute Stole +2",           -- 15, 30, __, ___,  25, 10, __; Helix Dur+10%
     ear1="Malignance Earring",        --  8, 10,  8, ___, ___, __, __
     ear2="Regal Earring",             -- 10, __,  7, ___, ___, __, __
     back=gear.SCH_MAB_Cape,
@@ -889,6 +888,7 @@ function init_gear_sets()
     body=gear.Merl_MB_body,             -- 10, __
     hands=gear.Merl_MB_hands,           --  9, __
     feet=gear.Merl_MB_feet,             --  8, __
+    neck="Argute Stole +2",             -- 10, __
     ring1="Locus Ring",                 --  5, __
     -- SCH Job trait/gifts              --  9, 13
 
