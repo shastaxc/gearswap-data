@@ -854,7 +854,7 @@ function init_gear_sets()
   sets.WeaponSet = {}
   sets.WeaponSet['Shining One'] = {main="Shining One", sub="Utu Grip"}
   sets.WeaponSet['Naegling'] = {main="Naegling", sub=empty}
-  sets.WeaponSet['Staff'] = {main="Gozuki Mezuki", sub="Utu Grip"}
+  sets.WeaponSet['Staff'] = {main="Reikikon", sub="Utu Grip"}
 end
 
 -------------------------------------------------------------------------------------------------------------------
