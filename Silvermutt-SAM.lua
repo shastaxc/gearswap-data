@@ -693,7 +693,7 @@ function init_gear_sets()
     ring2="Chirich Ring +1",          -- [__/__, ___] __,  6 <__, __, __> __, __, 10
     back=gear.SAM_TP_Cape,            -- [10/__, ___] __, __ <__, __, 10> __, __, __
     waist="Sailfi Belt +1",           -- [__/__, ___] __, __ <__,  2,  5> __,  9, __
-  } -- [49 PDT/22 MDT, 501 MEVA] 4 Hasso, 41 STP <0 QA, 10 TA, 23 DA> 13 Crit Rate, 35 Haste, 25(5) Subtle Blow
+  } -- [49 PDT/22 MDT, 501 MEVA] 4 Hasso, 43 STP <0 QA, 10 TA, 23 DA> 13 Crit Rate, 35 Haste, 25(5) Subtle Blow
   sets.engaged.LowAcc.SubtleBlow = sets.engaged.SubtleBlow
   sets.engaged.MidAcc.SubtleBlow = sets.engaged.SubtleBlow
   sets.engaged.HighAcc.SubtleBlow = sets.engaged.SubtleBlow
