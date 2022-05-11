@@ -644,7 +644,7 @@ function init_gear_sets()
   sets.engaged.LightDef = {
     ammo="Coiste Bodhar",             -- [__/__, ___] __,  3 <__, __,  3> __, __
     head="Flamma Zucchetto +2",       -- [__/__,  53] __,  6 <__,  5, __> __,  4
-    body="Mpaca's Doublet",           -- [10/__,  86] __,  5 <__,  4, __>  7,  4
+    body="Mpaca's Doublet",           -- [10/__,  86] __,  7 <__,  4, __>  7,  4
     hands="Wakido Kote +3",           -- [__/__,  46]  4,  7 <__, __, __> __,  4
     legs="Tatenashi Haidate +1",      -- [__/__,  80] __,  8 <__,  3, __> __,  5
     feet="Mpaca's Boots",             -- [ 6/__,  96] __, __ <__,  3, __>  3,  3
@@ -655,7 +655,7 @@ function init_gear_sets()
     ring2="Defending Ring",           -- [10/10, ___] __, __ <__, __, __> __, __
     back=gear.SAM_TP_Cape,            -- [10/__, ___] __, __ <__, __, 10> __, __
     waist="Sailfi Belt +1",           -- [__/__, ___] __, __ <__,  2,  5> __,  9
-  } -- [36 PDT/10 MDT, 361 MEVA] 4 Hasso, 62 STP <0 QA, 17 TA, 18 DA> 10 Crit Rate, 29 Haste
+  } -- [36 PDT/10 MDT, 361 MEVA] 4 Hasso, 64 STP <0 QA, 17 TA, 18 DA> 10 Crit Rate, 29 Haste
   sets.engaged.LowAcc.LightDef = sets.engaged.LightDef
   sets.engaged.MidAcc.LightDef = sets.engaged.LightDef
   sets.engaged.HighAcc.LightDef = sets.engaged.LightDef
@@ -663,7 +663,7 @@ function init_gear_sets()
   sets.engaged.HeavyDef = {
     ammo="Coiste Bodhar",             -- [__/__, ___] __,  3 <__, __,  3> __, __
     head=gear.Nyame_B_head,           -- [ 7/ 7, 123] __, __ <__, __,  4> __,  6
-    body="Mpaca's Doublet",           -- [10/__,  86] __,  5 <__,  4, __>  7,  4
+    body="Mpaca's Doublet",           -- [10/__,  86] __,  7 <__,  4, __>  7,  4
     hands="Wakido Kote +3",           -- [__/__,  46]  4,  7 <__, __, __> __,  4
     legs="Tatenashi Haidate +1",      -- [__/__,  80] __,  8 <__,  3, __> __,  5
     feet=gear.Nyame_B_feet,           -- [ 7/ 7, 150] __, __ <__, __,  4> __,  3
@@ -674,7 +674,7 @@ function init_gear_sets()
     ring2="Defending Ring",           -- [10/10, ___] __, __ <__, __, __> __, __
     back=gear.SAM_TP_Cape,            -- [10/__, ___] __, __ <__, __, 10> __, __
     waist="Sailfi Belt +1",           -- [__/__, ___] __, __ <__,  2,  5> __,  9
-  } -- [51 PDT/23 MDT, 485 MEVA] 4 Hasso, 50 STP <0 QA, 9 TA, 26 DA> 7 Crit Rate, 31 Haste
+  } -- [51 PDT/23 MDT, 485 MEVA] 4 Hasso, 52 STP <0 QA, 9 TA, 26 DA> 7 Crit Rate, 31 Haste
   sets.engaged.LowAcc.HeavyDef = sets.engaged.HeavyDef
   sets.engaged.MidAcc.HeavyDef = sets.engaged.HeavyDef
   sets.engaged.HighAcc.HeavyDef = sets.engaged.HeavyDef
@@ -682,7 +682,7 @@ function init_gear_sets()
   sets.engaged.SubtleBlow = {
     ammo="Crepuscular Pebble",        -- [ 3/ 3, ___] __, __ <__, __, __> __, __, __
     head=gear.Nyame_B_head,           -- [ 7/ 7, 123] __, __ <__, __,  4> __,  6, __
-    body="Mpaca's Doublet",           -- [10/__,  86] __,  5 <__,  4, __>  7,  4, __
+    body="Mpaca's Doublet",           -- [10/__,  86] __,  7 <__,  4, __>  7,  4, __
     hands="Wakido Kote +3",           -- [__/__,  46]  4,  7 <__, __, __> __,  4, __
     legs="Mpaca's Hose",              -- [ 9/__,  96] __, __ <__,  4, __>  6,  9, (5)
     feet=gear.Nyame_B_feet,           -- [ 7/ 7, 150] __, __ <__, __,  4> __,  3, __
