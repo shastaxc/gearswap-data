@@ -1238,9 +1238,8 @@ function init_gear_sets()
     sub="Ternion Dagger +1",
   }
   sets.WeaponSet['H2H'] = {
-    main="Kaja Knuckles",
+    main="Karambit",
     sub=empty,
-    -- main="Karambit",
   }
   -- sets.WeaponSet['SoloCleaving'] = {
   --   main=gear.Gandring_C,

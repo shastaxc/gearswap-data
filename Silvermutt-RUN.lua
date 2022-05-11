@@ -122,7 +122,7 @@ function job_setup()
   state.IdleMode:options('Normal', 'LightDef')
   state.Knockback = M(false, 'Knockback')
   state.DeathResist = M(false, 'Death Resist Mode')
-  state.WeaponSet = M{['description']='Weapon Set', 'Epeolatry', 'Lionheart', 'Lycurgos'}
+  state.WeaponSet = M{['description']='Weapon Set', 'Epeolatry', 'Lionheart', 'Naegling', 'Lycurgos'}
   state.AttackMode = M{['description']='Attack', 'Uncapped', 'Capped'}
   state.CP = M(false, "Capacity Points Mode")
   state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger',
@@ -507,6 +507,8 @@ function init_gear_sets()
   }
 
   sets.midcast.FastRecast = sets.precast.FC
+
+  sets.midcast.Silence = sets.HybridAcc
 
   sets.midcast['Enhancing Magic'] = set_combine(sets.HeavyDef, {
     head="Erilaz Galea +1",                         -- [ 91]
