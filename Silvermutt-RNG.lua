@@ -752,7 +752,7 @@ function init_gear_sets()
 
   -- Ranged sets
   sets.midcast.RA = {
-    head="Arcadian Beret +2",     -- 32 [__]  27/ 47 <_> {__} (36), __/__
+    head="Arcadian Beret +3",     -- 37 [__]  37/ 62 <_> {__} (38), __/__
     body="Ikenga's Vest",         -- 39 [11]  50/ 65 <_> { 7} (__), __/__
     hands="Malignance Gloves",    -- 24 [12]  50/ __ <_> { 4} (__),  5/ 5
     legs="Ikenga's Trousers",     -- 40 [10]  50/ 65 <_> { 6} (__),  9/ 9
@@ -764,10 +764,9 @@ function init_gear_sets()
     ring2="Crepuscular Ring",     -- __ [ 6]  10/ __ <_> {__} (__), __/__
     back=gear.RNG_RA_Cape,        -- 30 [10]  20/ 20 <_> {__} (__), 10/__
     waist="Kwahu Kachina Belt +1",--  8 [__]  20/ __ <5> {__} (__), __/__
-    -- head="Arcadian Beret +3",  -- 37 [__]  37/ 62 <_> {__} (38), __/__
     -- neck="Scout's Gorget +2",  -- 25 [ 7]  25/ __ <_> {10} (__), __/__
     --252 AGI [84 STP] 312 racc / 212 ratt <5 crit> {29 dmg limit} (38 Recycle), 28 PDT/18 MDT
-  } --242 AGI [83 STP] 297 racc / 197 ratt <5 crit> {27 dmg limit} (36 Recycle), 28 PDT/18 MDT
+  } --247 AGI [83 STP] 307 racc / 212 ratt <5 crit> {27 dmg limit} (38 Recycle), 28 PDT/18 MDT
   sets.midcast.RA.LowAcc = set_combine(sets.midcast.RA, {
     ring1="Regal Ring",           -- 10 [__]  __/ 20 <_> {__} (__), __/__
     -- body="Orion Jerkin +3",    -- 40 [ 8]  60/ 41 <_> {__} (__), __/__
@@ -801,20 +800,18 @@ function init_gear_sets()
   })
 
   sets.DoubleShot = {
-    head="Arcadian Beret +2",
+    head="Arcadian Beret +3",
     body="Arcadian Jerkin +3",
     hands="Oshosi Gloves", -- 4
     legs="Oshosi Trousers +1", --7
     feet="Oshosi Leggings +1", --4
-    -- head="Arcadian Beret +3",
     -- hands="Oshosi Gloves +1", -- 5
   }
   sets.DoubleShot.Acc = {
-    head="Arcadian Beret +2",
+    head="Arcadian Beret +3",
     body="Arcadian Jerkin +3",
     legs="Oshosi Trousers +1", --7
     feet="Oshosi Leggings +1", --4
-    -- head="Arcadian Beret +3",
   }
 
   sets.DoubleShot.Critical = {

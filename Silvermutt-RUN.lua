@@ -263,8 +263,7 @@ function init_gear_sets()
     ear1="Odnowa Earring +1",   --  3/ 5, ___ [110]
     ring2="Defending Ring",     -- 10/10, ___ [___]
     back=gear.RUN_TP_Cape,      -- 10/__, ___ [___]
-    --50 PDT / 42 MDT, 412 MEVA [521 HP]
-  } --50 PDT / 42 MDT, 432 MEVA [601 HP]
+  } --50 PDT / 42 MDT, 412 MEVA [521 HP]
 
   sets.defense.Knockback = {
     -- back="Repulse Mantle"
@@ -376,8 +375,7 @@ function init_gear_sets()
   })
   sets.precast.JA['Valiance'] = sets.precast.JA['Vallation']
   sets.precast.JA['Battuta'] = set_combine(sets.Enmity, {
-    head="Futhark Bandeau +2",
-    -- head="Futhark Bandeau +3",
+    head="Futhark Bandeau +3",
   })
   sets.precast.JA['Liement'] = set_combine(sets.Enmity, {
     body="Futhark Coat +3",
@@ -550,7 +548,7 @@ function init_gear_sets()
 
   sets.midcast['Phalanx'] = set_combine(sets.HeavyDef, {
     ammo="Staunch Tathlum +1",                -- _, __, 11 [ 3/ 3,   0]
-    head="Futhark Bandeau +2",                -- 6, __, __ [ 5/ 0,  46]
+    head="Futhark Bandeau +3",                -- 7, __, __ [ 6/ 0,  56]
     body=gear.Taeon_Phalanx_body,             -- 3, __, __ [ 0/ 0,  59]
     hands=gear.Taeon_Phalanx_hands,           -- 3, __, __ [ 0/ 0,  25]
     legs=gear.Taeon_Phalanx_legs,             -- 3, __, __ [ 0/ 0,  47]
@@ -562,7 +560,6 @@ function init_gear_sets()
     ring2="Defending Ring",                   -- _, __, __ [10/10,   0]
     back={name="Moonlight Cape", priority=1}, -- _, __, __ [ 6/ 6, 275]
     waist="Audumbla Sash",                    -- _, __, 10 [ 4/ 0,   0]
-    -- head="Futhark Bandeau +3",             -- 7, __, __ [ 6/ 0,  56]
     -- body=gear.Herc_Phalanx_body,           -- 5, __, __ [__/__,  61]
     -- hands=gear.Herc_Phalanx_hands,         -- 5, __, __ [ 2/__,  20]
     -- legs=gear.Herc_Phalanx_legs,           -- 5, __, __ [ 2/__,  38]
@@ -570,7 +567,7 @@ function init_gear_sets()
     -- neck="Futhark Torque +2",              -- _, __, __ [ 7/ 7,  60]
     -- ring2="Moonlight Ring",                -- _, __, __ [ 5/ 5, 110]
     -- 27 Phalanx, 10 Enh Skill, 21% Interrupt [47 PDT/25 MDT, 874 HP]
-  })-- 19 Phalanx, 10 Enh Skill, 21% Interrupt [46 PDT/29 MDT, 771 HP]
+  })-- 20 Phalanx, 10 Enh Skill, 21% Interrupt [47 PDT/29 MDT, 761 HP]
 
   sets.midcast['Aquaveil'] = sets.SIRD
 
