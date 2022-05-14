@@ -92,7 +92,7 @@ function job_setup()
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.RangedMode:options('Normal', 'Acc')
   state.HybridMode:options('LightDef', 'HeavyDef', 'Evasion', 'Normal')
-  state.IdleMode:options('Normal', 'LightDef', 'Evasion')
+  state.IdleMode:options('Normal', 'Regain', 'LightDef', 'Evasion')
   state.CP = M(false, 'Capacity Points Mode')
   state.AttCapped = M(true, "Attack Capped")
   state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger',
@@ -672,6 +672,7 @@ function init_gear_sets()
     body="Gleti's Cuirass",
     hands="Gleti's Gauntlets",
     legs="Gleti's Breeches",
+    feet="Gleti's Boots",
   }
   sets.latent_regen = {
     head="Turms Cap +1",
