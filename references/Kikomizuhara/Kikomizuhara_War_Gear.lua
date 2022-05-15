@@ -1,6 +1,6 @@
 function user_job_setup()
 	-- Options: Override default values
-    state.OffenseMode:options('Normal','PDT','AM','SB')
+    state.OffenseMode:options('Normal','PDT','Crit','AM','SB')
     state.WeaponskillMode:options('Match','PDL','PDT','Normal','SomeAcc','Acc','FullAcc','Fodder','Lowattack')
     state.HybridMode:options('Normal','PDT','PDTSomeAcc','MDT','MDTSomeAcc')
     state.PhysicalDefenseMode:options('PDT', 'PDTReraise')
@@ -185,9 +185,9 @@ function init_gear_sets()
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
     sets.precast.WS['Savage Blade'] =  {ammo="Knobkierrie",
     head={ name="Agoge Mask +3", augments={'Enhances "Savagery" effect',}},
-    body="Pumm. Lorica +3",
+    body={ name="Nyame Mail", augments={'Path: B',}},
     hands={ name="Sakpata's Gauntlets", augments={'Path: A',}},
-    legs={ name="Sakpata's Cuisses", augments={'Path: A',}},
+    legs={ name="Nyame Flanchard", augments={'Path: B',}},
     feet={ name="Nyame Sollerets", augments={'Path: B',}},
     neck={ name="War. Beads +2", augments={'Path: A',}},
     waist={ name="Sailfi Belt +1", augments={'Path: A',}},
@@ -351,17 +351,17 @@ function init_gear_sets()
     sets.precast.WS['Raging Rush'].Fodder = set_combine(sets.precast.WS.Fodder, {})
 
     sets.precast.WS["Ukko's Fury"] = {
-	ammo={ name="Coiste Bodhar", augments={'Path: A',}},
-    head={ name="Sakpata's Helm", augments={'Path: A',}},
+	ammo="Yetshila +1",
+    head={ name="Blistering Sallet +1", augments={'Path: A',}},
     body={ name="Sakpata's Plate", augments={'Path: A',}},
     hands={ name="Sakpata's Gauntlets", augments={'Path: A',}},
     legs={ name="Sakpata's Cuisses", augments={'Path: A',}},
-    feet={ name="Sakpata's Leggings", augments={'Path: A',}},
+    feet="Boii Calligae +1",
     neck={ name="War. Beads +2", augments={'Path: A',}},
     waist={ name="Sailfi Belt +1", augments={'Path: A',}},
     left_ear={ name="Schere Earring", augments={'Path: A',}},
     right_ear={ name="Lugra Earring +1", augments={'Path: A',}},
-    left_ring="Regal Ring",
+    left_ring="Niqmaddu Ring",
     right_ring="Sroda Ring",
     back={ name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
 	}
@@ -399,7 +399,7 @@ function init_gear_sets()
 }
 
  sets.precast.WS["Ukko's Fury"].PDT = {
-	ammo="Yetshila +1",
+	ammo="Crepuscular Pebble",
     head={ name="Sakpata's Helm", augments={'Path: A',}},
     body={ name="Sakpata's Plate", augments={'Path: A',}},
     hands={ name="Sakpata's Gauntlets", augments={'Path: A',}},
@@ -410,7 +410,7 @@ function init_gear_sets()
     left_ear={ name="Schere Earring", augments={'Path: A',}},
     right_ear={ name="Lugra Earring +1", augments={'Path: A',}},
     left_ring="Regal Ring",
-    right_ring="Niqmaddu Ring",
+    right_ring="Sroda Ring",
     back={ name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
 }
     sets.precast.WS["Ukko's Fury"].SomeAcc = set_combine(sets.precast.WS.SomeAcc, {})
@@ -645,34 +645,51 @@ sets.precast.WS['Cataclysm'] = {  ammo="Knobkierrie",
 
 	sets.engaged = {
 	ammo={ name="Coiste Bodhar", augments={'Path: A',}},
-    head="Hjarrandi Helm",
-    body={ name="Sakpata's Plate", augments={'Path: A',}},
+    head="Flam. Zucchetto +2",
+    body="Dagon Breast.",
     hands={ name="Sakpata's Gauntlets", augments={'Path: A',}},
-    legs={ name="Odyssean Cuisses", augments={'Attack+30','"Store TP"+8',}},
-    feet="Pumm. Calligae +3",
+    legs={ name="Tatena. Haidate +1", augments={'Path: A',}},
+    feet={ name="Tatena. Sune. +1", augments={'Path: A',}},
     neck={ name="Vim Torque +1", augments={'Path: A',}},
     waist="Ioskeha Belt +1",
     left_ear={ name="Schere Earring", augments={'Path: A',}},
     right_ear="Brutal Earring",
-    left_ring="Chirich Ring +1",
-    right_ring="Petrov Ring",
+     left_ring={name="Moonlight Ring", bag="wardrobe1"},
+    right_ring={name="Moonlight Ring", bag="wardrobe2"},
     back={ name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
 }
 
+
 	sets.engaged.AM = {
- ammo="Yetshila +1",
-    head={ name="Sakpata's Helm", augments={'Path: A',}},
-    body="Hjarrandi Breast.",
-    hands={ name="Sakpata's Gauntlets", augments={'Path: A',}},
-    legs={ name="Agoge Cuisses +3", augments={'Enhances "Warrior\'s Charge" effect',}},
-    feet={ name="Sakpata's Leggings", augments={'Path: A',}},
+  ammo={ name="Coiste Bodhar", augments={'Path: A',}},
+    head="Flam. Zucchetto +2",
+    body="Dagon Breast.",
+    hands={ name="Tatena. Gote +1", augments={'Path: A',}},
+    legs={ name="Tatena. Haidate +1", augments={'Path: A',}},
+    feet={ name="Tatena. Sune. +1", augments={'Path: A',}},
     neck={ name="Vim Torque +1", augments={'Path: A',}},
     waist="Ioskeha Belt +1",
-    left_ear={ name="Schere Earring", augments={'Path: A',}},
+    left_ear="Telos Earring",
     right_ear="Dedition Earring",
-    left_ring="Chirich Ring +1",
-    right_ring="Petrov Ring",
-    back={ name="Cichol's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}},
+    left_ring={name="Moonlight Ring", bag="wardrobe1"},
+    right_ring={name="Moonlight Ring", bag="wardrobe2"},
+    back={ name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
+}
+
+sets.engaged.Crit = {
+	ammo="Yetshila +1",
+    head={ name="Sakpata's Helm", augments={'Path: A',}},
+    body="Hjarrandi Breast.",
+    hands="Flam. Manopolas +2",
+    legs={ name="Agoge Cuisses +3", augments={'Enhances "Warrior\'s Charge" effect',}},
+    feet={ name="Valorous Greaves", augments={'Accuracy+29','Crit.hit rate+5','AGI+3',}},
+    neck={ name="Vim Torque +1", augments={'Path: A',}},
+    waist="Ioskeha Belt +1",
+    left_ear="Dedition Earring",
+    right_ear="Telos Earring",
+    left_ring="Begrudging Ring",
+    right_ring="Sroda Ring",
+    back={ name="Cichol's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10','Phys. dmg. taken-10%',}},
 }
 
 sets.engaged.SB = {
@@ -726,7 +743,7 @@ sets.engaged.Cloudsplitter.SomeAcc = {ammo={ name="Coiste Bodhar", augments={'Pa
     neck={ name="War. Beads +2", augments={'Path: A',}},
     waist="Ioskeha Belt +1",
     right_ear="Dedition Earring",
-    right_ear="Brutal Earring",
+    left_ear="Brutal Earring",
     left_ring="Chirich Ring +1",
     right_ring="Chirich Ring +1",
     back={ name="Cichol's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
@@ -763,19 +780,19 @@ sets.engaged.Cloudsplitter.SomeAcc = {ammo={ name="Coiste Bodhar", augments={'Pa
 
 
 
-	sets.engaged.PDT = {ammo={ name="Coiste Bodhar", augments={'Path: A',}},
+	sets.engaged.PDT = {  ammo="Yetshila +1",
     head={ name="Sakpata's Helm", augments={'Path: A',}},
     body={ name="Sakpata's Plate", augments={'Path: A',}},
     hands={ name="Sakpata's Gauntlets", augments={'Path: A',}},
     legs={ name="Agoge Cuisses +3", augments={'Enhances "Warrior\'s Charge" effect',}},
     feet={ name="Sakpata's Leggings", augments={'Path: A',}},
-    neck={ name="Vim Torque +1", augments={'Path: A',}},
+    neck={ name="War. Beads +2", augments={'Path: A',}},
     waist="Ioskeha Belt +1",
     left_ear={ name="Schere Earring", augments={'Path: A',}},
-    right_ear="Telos Earring",
-    left_ring={name="Moonlight Ring", bag="wardrobe 1"},
-    right_ring={name="Moonlight Ring", bag="wardrobe2"},
-    back={ name="Cichol's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}},
+    right_ear="Brutal Earring",
+    left_ring="Sroda Ring",
+    right_ring="Defending Ring",
+    back={ name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
 }
 	sets.engaged.SomeAcc.PDT = { ammo="Staunch Tathlum +1",
     head="Hjarrandi Helm",
