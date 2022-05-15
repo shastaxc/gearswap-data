@@ -174,7 +174,7 @@ function init_gear_sets()
     ear2="Loquacious Earring", --2
     ring1="Defending Ring",
     ring2="Weatherspoon Ring",
-    -- back=gear.WAR_STR_DA_Cape,
+    back=gear.WAR_STR_DA_Cape,
     waist="Flume Belt +1",
   }
 
@@ -230,7 +230,7 @@ function init_gear_sets()
     ear2="Telos Earring",
     ring1="Regal Ring",
     ring2="Chirich Ring +1",
-    -- back=gear.WAR_STR_DA_Cape,
+    back=gear.WAR_STR_DA_Cape,
     waist="Olseni Belt",
   }
   sets.precast.Flourish1 = {
@@ -254,7 +254,7 @@ function init_gear_sets()
     ear2="Moonshade Earring",
     -- ring1="Sroda Ring",
     ring2="Epaminondas's Ring",
-    -- back=gear.WAR_WSD_Cape,
+    back=gear.WAR_STR_WSD_Cape,
     waist="Sailfi Belt +1",
   }
   sets.precast.WS.MaxTP = sets.precast.WS
@@ -273,7 +273,7 @@ function init_gear_sets()
     ear2="Moonshade Earring",
     -- ring1="Sroda Ring",
     ring2="Epaminondas's Ring",
-    -- back=gear.WAR_WSD_Cape,
+    back=gear.WAR_STR_WSD_Cape,
     waist="Sailfi Belt +1",
   }
   sets.precast.WS["Savage Blade"].MaxTP = set_combine(sets.precast.WS["Savage Blade"], {
@@ -296,6 +296,7 @@ function init_gear_sets()
     ear2="Moonshade Earring",
     ring1="Regal Ring",
     ring2="Gelatinous Ring +1",
+    back=gear.WAR_STR_WSD_Cape,
     -- back=gear.WAR_VIT_WSD_Cape,
     waist="Sailfi Belt +1",
 	}
@@ -314,6 +315,7 @@ function init_gear_sets()
     ear2="Moonshade Earring",
     ring1="Regal Ring",
     ring2="Gelatinous Ring +1",
+    back=gear.WAR_STR_WSD_Cape,
     -- back=gear.WAR_VIT_WSD_Cape,
     waist="Sailfi Belt +1",
   })
@@ -334,7 +336,7 @@ function init_gear_sets()
     ear2="Moonshade Earring",
     ring1="Niqmaddu Ring",
     ring2="Regal Ring",
-    -- back=gear.WAR_STR_DA_Cape,
+    back=gear.WAR_STR_DA_Cape,
     waist="Fotia Belt",
   }
   sets.precast.WS["Resolution"].MaxTP = set_combine(sets.precast.WS["Resolution"], {
@@ -359,7 +361,7 @@ function init_gear_sets()
     ear2="Moonshade Earring",
     ring1="Niqmaddu Ring",
     ring2="Regal Ring",
-    -- back=gear.WAR_STR_DA_Cape,
+    back=gear.WAR_STR_DA_Cape,
     waist="Fotia Belt",
   }
   sets.precast.WS["Armor Break"].MaxTP = set_combine(sets.precast.WS["Armor Break"], {
@@ -384,7 +386,7 @@ function init_gear_sets()
     ear2="Moonshade Earring",
     ring1="Niqmaddu Ring",
     ring2="Regal Ring",
-    -- back=gear.WAR_STR_DA_Cape,
+    back=gear.WAR_STR_DA_Cape,
     waist="Fotia Belt",
   }
   sets.precast.WS["Full Break"].MaxTP = set_combine(sets.precast.WS["Full Break"], {
@@ -409,7 +411,7 @@ function init_gear_sets()
     ear2="Schere Earring",
     -- ring1="Sroda Ring",
     ring2="Regal Ring",
-    -- back=gear.WAR_STR_DA_Cape,
+    back=gear.WAR_STR_DA_Cape,
     waist="Fotia Belt",
   }
   sets.precast.WS["Decimation"].MaxTP = set_combine(sets.precast.WS["Decimation"], {
@@ -427,13 +429,13 @@ function init_gear_sets()
     -- body="Pummeler's Lorica +3",
     hands=gear.Nyame_B_hands,
     legs="Sakpata's Cuisses",
-    -- feet="Sulevia's Leggings +2",
+    feet=gear.Nyame_B_feet,
     -- neck="Warrior's Bead Necklace +2",
     ear1="Thrud Earring",
     ear2="Moonshade Earring",
     -- ring1="Sroda Ring",
     ring2="Epaminondas's Ring",
-    -- back=gear.WAR_WSD_Cape,
+    back=gear.WAR_STR_WSD_Cape,
     waist="Sailfi Belt +1",
   }
   sets.precast.WS["Calamity"].MaxTP = set_combine(sets.precast.WS["Calamity"], {
@@ -457,7 +459,8 @@ function init_gear_sets()
     ear2="Moonshade Earring",
     -- ring1="Beithir Ring",
     ring2="Regal Ring",
-    back=gear.WAR_MND_WSD_Cape,
+    back=gear.WAR_STR_WSD_Cape,
+    -- back=gear.WAR_MND_WSD_Cape,
     waist="Eschan Stone",
   }
   sets.precast.WS['Cloudsplitter'].MaxTP = set_combine(sets.precast.WS['Cloudsplitter'], {
@@ -481,7 +484,7 @@ function init_gear_sets()
     -- ear2="Lugra Earring +1",
     ring1="Niqmaddu Ring",
     -- ring2="Sroda Ring",
-    -- back=gear.WAR_STR_DA_Cape,
+    back=gear.WAR_STR_DA_Cape,
     waist="Sailfi Belt +1",
   }
   sets.precast.WS["Ukko's Fury"].MaxTP = set_combine(sets.precast.WS["Ukko's Fury"], {
@@ -499,7 +502,7 @@ function init_gear_sets()
     -- ear2="Lugra Earring +1",
     ring1="Regal Ring",
     -- ring2="Sroda Ring",
-    -- back=gear.WAR_STR_DA_Cape,
+    back=gear.WAR_STR_DA_Cape,
     waist="Sailfi Belt +1",
   }
   sets.precast.WS["Ukko's Fury"].AttCappedMaxTP = set_combine(sets.precast.WS["Ukko's Fury"].AttCapped, {
@@ -546,7 +549,7 @@ function init_gear_sets()
     ear2="Moonshade Earring",
     ring1="Niqmaddu Ring",
     ring2="Regal Ring",
-    -- back=gear.WAR_STR_DA_Cape,
+    back=gear.WAR_STR_DA_Cape,
     waist="Fotia Belt",
   }
   sets.precast.WS["Stardiver"].MaxTP = set_combine(sets.precast.WS["Stardiver"], {
@@ -586,7 +589,7 @@ function init_gear_sets()
     ear2="Sherida Earring",
     ring1="Niqmaddu Ring",
     ring2="Gere Ring",
-    -- back=gear.WAR_STR_DA_Cape,
+    back=gear.WAR_STR_DA_Cape,
     waist="Fotia Belt",
   }
   sets.precast.WS["Asuran Fists"].MaxTP = set_combine(sets.precast.WS["Asuran Fists"], {
@@ -610,7 +613,7 @@ function init_gear_sets()
     ear2="Moonshade Earring",
     -- ring1="Sroda Ring",
     ring2="Epaminondas's Ring",
-    -- back=gear.WAR_WSD_Cape,
+    back=gear.WAR_STR_WSD_Cape,
     waist="Sailfi Belt +1",
   }
   sets.precast.WS["Spiral Hell"].MaxTP = set_combine(sets.precast.WS["Spiral Hell"], {
@@ -726,7 +729,7 @@ function init_gear_sets()
     ear2="Brutal Earring",
     ring1="Moonlight Ring",
     ring2="Moonlight Ring",
-    -- back=gear.WAR_STR_DA_Cape,
+    back=gear.WAR_STR_DA_Cape,
     waist="Ioskeha Belt +1",
   } -- [? PDT/? MDT, ? MEVA] ? Hasso, ? STP <? QA, ? TA, ? DA> ? Crit Rate, ? Haste
   sets.engaged.LowAcc = set_combine(sets.engaged, {
@@ -742,34 +745,25 @@ function init_gear_sets()
     ear2="Telos Earring",
     ring1="Chirich Ring +1",
     ring2="Chirich Ring +1",
-    -- back=gear.WAR_STR_DA_Cape,
+    back=gear.WAR_STR_DA_Cape,
     waist="Ioskeha Belt +1",
   })
   sets.engaged.MidAcc = set_combine(sets.engaged.LowAcc, {
-    ammo="Aurgelmir Orb +1",
+    ammo="Aurgelmir Orb",
+    -- ammo="Aurgelmir Orb +1",
     head="Flamma Zucchetto +2",
-    -- legs="Sulevia's Cuisses +2",
+    legs="Sulevia's Cuisses +2",
     feet="Flamma Gambieras +2",
     -- neck="Warrior's Bead Necklace +2",
     ear1="Dignitary's Earring",
     ear2="Telos Earring",
     ring1="Flamma Ring",
     ring2="Niqmaddu Ring",
-    -- back=gear.WAR_STR_DA_Cape,
+    back=gear.WAR_STR_DA_Cape,
     waist="Ioskeha Belt +1",
   })
   sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
-    ammo="Aurgelmir Orb +1",
-    head="Flamma Zucchetto +2",
-    -- legs="Sulevia's Cuisses +2",
-    feet="Flamma Gambieras +2",
-    -- neck="Warrior's Bead Necklace +2",
-    -- ear1="Mache Earring +1",
-    ear2="Telos Earring",
-    ring1="Flamma Ring",
     -- ring2="Ramuh Ring +1",
-    -- back=gear.WAR_STR_DA_Cape,
-    waist="Ioskeha Belt +1",
   })
 
   -- For Ukon AM
@@ -785,9 +779,12 @@ function init_gear_sets()
     ear2="Dedition Earring",
     ring1="Moonlight Ring",
     ring2="Moonlight Ring",
-    -- back=gear.WAR_STR_DA_Cape,
+    back=gear.WAR_STR_DA_Cape,
     waist="Ioskeha Belt +1",
   }
+  sets.engaged.UkonvasaraAM.LowAcc = set_combine(sets.engaged.UkonvasaraAM, {})
+  sets.engaged.UkonvasaraAM.MidAcc = set_combine(sets.engaged.UkonvasaraAM.LowAcc, {})
+  sets.engaged.UkonvasaraAM.HighAcc = set_combine(sets.engaged.UkonvasaraAM.MidAcc, {})
 
   -- This set is never used. But why need separate set for Naegling?
   sets.engaged.Naegling = {
@@ -802,7 +799,7 @@ function init_gear_sets()
     ear2="Dedition Earring",
     ring1="Petrov Ring",
     ring2="Niqmaddu Ring",
-    -- back=gear.WAR_STR_DA_Cape,
+    back=gear.WAR_STR_DA_Cape,
     waist="Ioskeha Belt +1",
   }
 
@@ -827,7 +824,7 @@ function init_gear_sets()
     ear2="Brutal Earring",
     -- ring1="Sroda Ring",
     ring2="Defending Ring",           -- [10/10, ___] __ <__, __, __> __, __
-    -- back=gear.WAR_STR_DA_Cape,
+    back=gear.WAR_STR_DA_Cape,
     waist="Ioskeha Belt +1",
   } -- [? PDT/? MDT, ? MEVA] ? STP <? QA, ? TA, ? DA> ? Crit Rate, ? Haste
   sets.engaged.LowAcc.LightDef = {
@@ -842,11 +839,33 @@ function init_gear_sets()
     ear2="Telos Earring",
     ring1="Defending Ring",
     ring2="Moonlight Ring",
-    -- back=gear.WAR_STR_DA_Cape,
+    back=gear.WAR_STR_DA_Cape,
     waist="Ioskeha Belt +1",
   }
   sets.engaged.MidAcc.LightDef = sets.engaged.LowAcc.LightDef
   sets.engaged.HighAcc.LightDef = sets.engaged.LowAcc.LightDef
+
+	sets.engaged.UkonvasaraAM.LightDef = {
+    ammo="Coiste Bodhar",
+    head="Flamma Zucchetto +2",
+    body="Dagon Breastplate",
+    -- hands="Tatenashi Gote +1",
+    legs="Tatenashi Haidate +1",
+    feet="Tatenashi Sune. +1",
+    neck="Vim Torque +1",
+    ear1="Telos Earring",
+    ear2="Dedition Earring",
+    ring1="Moonlight Ring",
+    ring2="Moonlight Ring",
+    back=gear.WAR_STR_DA_Cape,
+    waist="Ioskeha Belt +1",
+  }
+	sets.engaged.UkonvasaraAM.LowAcc.LightDef = set_combine(sets.engaged.UkonvasaraAM.LightDef, {
+  })
+	sets.engaged.UkonvasaraAM.MidAcc.LightDef = set_combine(sets.engaged.UkonvasaraAM.LightDef, {
+  })
+	sets.engaged.UkonvasaraAM.HighAcc.LightDef = set_combine(sets.engaged.UkonvasaraAM.LightDef, {
+  })
 
   sets.engaged.SubtleBlow = {
     ammo="Coiste Bodhar",
@@ -860,7 +879,7 @@ function init_gear_sets()
     ear2="Dignitary's Earring",
     ring1="Niqmaddu Ring",
     ring2="Chirich Ring +1",
-    -- back=gear.WAR_STR_DA_Cape,
+    back=gear.WAR_STR_DA_Cape,
     waist="Ioskeha Belt +1",
   } -- [? PDT/? MDT, ? MEVA] ? STP <? QA, ? TA, ? DA> ? Crit Rate, ? Haste, ?(?) Subtle Blow
   sets.engaged.LowAcc.SubtleBlow = sets.engaged.SubtleBlow
