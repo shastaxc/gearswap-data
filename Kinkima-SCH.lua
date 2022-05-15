@@ -113,8 +113,7 @@ function init_gear_sets()
 
   -- Precast sets to enhance JAs
   sets.precast.JA['Tabula Rasa'] = {
-    legs="Pedagogy Pants +1",
-    -- legs="Pedagogy Pants +3",
+    legs="Pedagogy Pants +3",
   }
   sets.precast.JA['Enlightenment'] = {
     body="Pedagogy Gown +3",
@@ -247,12 +246,11 @@ function init_gear_sets()
   sets.precast.WS['Omniscience'] = set_combine(sets.precast.WS, {
     ammo="Pemphredo Tathlum",
     body="Pedagogy Gown +3",
-    legs="Pedagogy Pants +1",
+    legs="Pedagogy Pants +3",
     ear1="Malignance Earring",
     ear2="Regal Earring",
     back=gear.SCH_MAB_Cape,
     -- head="Pixie Hairpin +1",
-    -- legs="Pedagogy Pants +3",
     -- feet="Merlinic Crackows",
     -- ring2="Archon Ring",
     -- waist="Sacro Cord",
@@ -662,14 +660,13 @@ function init_gear_sets()
     head="Academic's Mortarboard +3",     -- __, 37, 52
     body="Shamash Robe",                  -- __, 40, 45
     hands="Academic's Bracers +3",        -- __, 29, 48
-    legs="Pedagogy Pants +1",
+    legs="Pedagogy Pants +3",             -- 19, 47, 39
     feet="Academic's Loafers +3",         -- __, 32, 46
     neck="Erra Pendant",                  -- 10, __, 17
     ear2="Regal Earring",                 -- __, 10, __; Adds set effect
     back="Bookworm's Cape",               --  8,  4, __
     -- main="Rubicundity",                -- 25, 21, 30; +215 M.Acc skill
     -- body="Academic's Gown +3",         -- 24, 44, 50
-    -- legs="Pedagogy Pants +3",          -- 19, 47, 39
     -- ear1="Mani Earring",               -- 10, __, __
     -- ring1="Evanescence Ring",          -- 10, __, __
     -- ring2="Stikini Ring +1",           --  8, __, 11
@@ -683,10 +680,9 @@ function init_gear_sets()
   -- Add Drain potency
   sets.midcast.Drain = set_combine(sets.midcast['Dark Magic'], {
     sub="Ammurapi Shield",          -- __, 13, 38, __
-    legs="Pedagogy Pants +1",       -- 15, 37, __, __
+    legs="Pedagogy Pants +3",       -- 19, 47, 39, 15
     waist="Fucho-no-obi",           -- __, __, __,  8
     -- main="Rubicundity",          -- 25, 21, 30, 20; +215 M.Acc skill
-    -- legs="Pedagogy Pants +3",    -- 19, 47, 39, 15
     -- ear2="Hirudinea Earring",    -- __, __, __,  3
     -- ring1="Evanescence Ring",    -- 10, __, __, 10
     -- 554 Dark magic skill, 359 INT, 384 M.Acc, 56 Drain/Aspir potency
@@ -785,7 +781,7 @@ function init_gear_sets()
     main=gear.Akademos_C,             -- 27, 15, 53
     sub="Enki Strap",                 -- 10, 10, __
     ammo="Pemphredo Tathlum",         --  4,  8,  4
-    head="Nyame Helm",                -- 28, 40, 30
+    head="Pedagogy Mortarboard +3",   -- 39, 52, 49
     body="Shamash Robe",              -- 40, 45, 45
     hands="Nyame Gauntlets",          -- 28, 40, 30
     legs="Mallquis Trews +2",         -- 57, 45, 15
@@ -799,7 +795,6 @@ function init_gear_sets()
     -- Mallquis set bonus                 8, __, __
 
     -- main="Marin Staff +1",         -- 37, 55, 68; bonus on wind dmg
-    -- head="Pedagogy Mortarboard +3",-- 39, 52, 49
     -- body=gear.Amalric_A_body,      -- 38, 53, 53
     -- hands=gear.Amalric_D_hands,    -- 36, 20, 53
     -- legs=gear.Amalric_A_legs,      -- 40, 20, 60
@@ -808,17 +803,15 @@ function init_gear_sets()
     -- waist="Refoccilation Stone",   -- __,  4, 10
     -- Amalric set bonus              -- __, __, 40
     -- 299 INT, 297 Magic Acc, 432 MAB
-  } -- 303 INT, 305 Magic Acc, 227 MAB
+  } -- 314 INT, 317 Magic Acc, 246 MAB
   sets.midcast['Elemental Magic'].Seidr = set_combine(sets.midcast['Elemental Magic'], {
-    legs="Pedagogy Pants +1",
+    legs="Pedagogy Pants +3",
     -- body="Seidr Cotehardie",
-    -- legs="Pedagogy Pants +3",
     -- waist="Acuity Belt +1",
   })
   sets.midcast['Elemental Magic'].Resistant = set_combine(sets.midcast['Elemental Magic'], {
-    legs="Pedagogy Pants +1",
+    legs="Pedagogy Pants +3",
     neck="Erra Pendant",
-    -- legs="Pedagogy Pants +3",
     -- waist="Acuity Belt +1",
   })
 
@@ -1019,10 +1012,9 @@ function init_gear_sets()
   sets.engaged = {
     head="Pedagogy Mortarboard +3",
     body="Jhakri Robe +2",
-    legs="Pedagogy Pants +1",
+    legs="Pedagogy Pants +3",
     feet="Pedagogy Loafers +1",
     -- hands="Raetic Bangles +1",
-    -- legs="Pedagogy Pants +3",
     -- feet="Pedagogy Loafers +3",
     -- neck="Combatant's Torque",
     -- ear1="Cessance Earring",
