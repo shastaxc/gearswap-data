@@ -88,7 +88,6 @@ function job_setup()
   state.Buff['Feint'] = buffactive['feint'] or false
   
   state.MainStep = M{['description']='Main Step', 'Box Step', 'Quickstep', 'Feather Step', 'Stutter Step'}
-  state.AttackMode = M{['description']='Attack', 'Capped', 'Uncapped'}
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.RangedMode:options('Normal', 'Acc')
   state.HybridMode:options('LightDef', 'HeavyDef', 'Evasion', 'Normal')
