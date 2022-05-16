@@ -55,10 +55,11 @@ function job_setup()
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.HybridMode:options('LightDef', 'SubtleBlow', 'Normal')
   state.IdleMode:options('Normal', 'HeavyDef')
+  state.AttCapped = M(true, "Attack Capped")
 
   state.CP = M(false, "Capacity Points Mode")
   state.ToyWeapons = M{['description']='Toy Weapons','None','Katana','GreatKatana','Dagger','Sword','Club','Staff','Polearm','GreatSword','Scythe'}
-  state.WeaponSet = M{['description']='Weapon Set', 'Chango', 'Ukon', 'Naegling', 'Shining One', 'Dagger', 'Staff'}
+  state.WeaponSet = M{['description']='Weapon Set', 'Chango', 'Naegling', 'Shining One', 'Dagger', 'Staff'}
   -- state.WeaponSet = M{['description']='Weapon Set', 'Chango', 'Ukon', 'Naegling', 'Shining One', 'Farsha', 'DW Axe', 'Dagger', 'Great Sword', 'Club', 'Staff'}
   state.EnmityMode = M{['description']='Enmity Mode', 'Normal', 'Low', 'Schere'}
 
@@ -69,6 +70,7 @@ function job_setup()
   send_command('bind ^insert gs c weaponset cycle')
   send_command('bind ^delete gs c weaponset cycleback')
 
+  send_command('bind ^f8 gs c toggle AttCapped')
   send_command('bind ^pageup gs c toyweapon cycle')
   send_command('bind ^pagedown gs c toyweapon cycleback')
   send_command('bind !pagedown gs c toyweapon reset')
@@ -133,6 +135,7 @@ function job_file_unload()
   send_command('unbind ^numpad-')
   send_command('unbind ^numpad0')
   send_command('unbind ^numpad.')
+  send_command('unbind ^f8')
 end
 
 -- Define sets and vars used by this job file.
@@ -1166,6 +1169,8 @@ function display_current_job_state(eventArgs)
     cf_msg = ' (' ..state.CombatForm.value.. ')'
   end
 
+  local ws_msg = (state.AttCapped.value and 'AttCapped') or state.WeaponskillMode.value
+
   local m_msg = state.OffenseMode.value
   if state.HybridMode.value ~= 'Normal' then
     m_msg = m_msg .. '/' ..state.HybridMode.value
@@ -1192,6 +1197,7 @@ function display_current_job_state(eventArgs)
   end
 
   add_to_chat(002, '| ' ..string.char(31,210).. 'Melee' ..cf_msg.. ': ' ..string.char(31,001)..m_msg.. string.char(31,002)..  ' |'
+      ..string.char(31,207).. ' WS: ' ..string.char(31,001)..ws_msg.. string.char(31,002)..  ' |'
       ..string.char(31,004).. ' Defense: ' ..string.char(31,001)..d_msg.. string.char(31,002)..  ' |'
       ..string.char(31,207).. ' Idle: ' ..string.char(31,001)..i_msg.. string.char(31,002)..  ' |'
       ..string.char(31,012).. ' Toy Weapon: ' ..string.char(31,001)..toy_msg.. string.char(31,002)..  ' |'
