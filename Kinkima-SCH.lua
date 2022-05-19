@@ -762,6 +762,7 @@ function init_gear_sets()
     body=gear.Merl_MB_body,           -- 40, 20, 20
     hands=gear.Merl_MB_hands,
     legs="Mallquis Trews +2",         -- 57, 45, 15
+    feet=gear.Merl_MB_feet,           -- 34, 40, 55
     neck="Argute Stole +2",           -- 15, 30, __
     ear1="Malignance Earring",        --  8, 10,  8
     ear2="Regal Earring",             -- 10, __,  7
@@ -769,7 +770,6 @@ function init_gear_sets()
     back=gear.SCH_MAB_Cape,           -- 30, 20, 10
     -- body=gear.Merl_MB_body,        -- 50, 60, 60
     -- hands=gear.Amalric_D_hands,    -- 36, 20, 53
-    -- feet=gear.Merl_MB_feet,        -- 34, 40, 55
     -- ring1="Freke Ring",            -- 10, __,  8
     -- waist="Acuity Belt +1",        -- 23, 15, __
     -- 374 INT, 315 Magic Acc, 327 MAB
