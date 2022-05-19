@@ -59,7 +59,7 @@ function job_setup()
 
   state.CP = M(false, "Capacity Points Mode")
   state.ToyWeapons = M{['description']='Toy Weapons','None','Katana','GreatKatana','Dagger','Sword','Club','Staff','Polearm','GreatSword','Scythe'}
-  state.WeaponSet = M{['description']='Weapon Set', 'Chango', 'Naegling', 'Shining One', 'Dagger', 'Staff'}
+  state.WeaponSet = M{['description']='Weapon Set', 'Chango', 'Naegling', 'Shining One', 'Dagger', 'Club', 'Staff'}
   -- state.WeaponSet = M{['description']='Weapon Set', 'Chango', 'Ukon', 'Naegling', 'Shining One', 'Farsha', 'DW Axe', 'Dagger', 'Great Sword', 'Club', 'Staff'}
   state.EnmityMode = M{['description']='Enmity Mode', 'Normal', 'Low', 'Schere'}
 
@@ -193,6 +193,8 @@ function init_gear_sets()
   })
 
 	sets.precast.JA['Berserk'] = {
+    body="Pummeler's Lorica +2",
+    feet="Agoge Calligae +1",
     back="Cichol's Mantle",
     -- body="Pummeler's Lorica +3",
     -- feet="Agoge Calligae +3",
@@ -205,6 +207,7 @@ function init_gear_sets()
 	sets.precast.JA['Mighty Strikes'] = {}
 	sets.precast.JA["Warrior's Charge"] = {}
 	sets.precast.JA['Tomahawk'] = {
+    feet="Agoge Calligae +1",
     -- ammo="Throwing Tomahawk",
     -- feet="Agoge Calligae +3",
   }
@@ -261,7 +264,6 @@ function init_gear_sets()
     back=gear.WAR_STR_WSD_Cape,
     waist="Sailfi Belt +1",
     -- head="Agoge Mask +3",
-    -- body="Pummeler's Lorica +3",
     -- neck="Warrior's Bead Necklace +2",
     -- ring1="Sroda Ring",
   } -- ? STR, ? MND, ? Attack, ? Accuracy, ? WSD, ? PDL, ? TP Bonus
@@ -297,7 +299,7 @@ function init_gear_sets()
 
   sets.precast.WS["Upheaval"] = set_combine(sets.precast.WS, {
     ammo="Knobkierrie",
-    body="Sakpata's Plate",
+    body="Sakpata's Breastplate",
     hands=gear.Nyame_B_hands,
     legs=gear.Nyame_B_legs,
     feet=gear.Nyame_B_feet,
@@ -317,6 +319,7 @@ function init_gear_sets()
   })
   sets.precast.WS["Upheaval"].AttCapped = set_combine(sets.precast.WS["Upheaval"], {
     ammo="Knobkierrie",
+    body=gear.Nyame_B_body,
     hands="Sakpata's Gauntlets",
     legs="Sakpata's Cuisses",
     feet="Sakpata's Leggings",
@@ -328,7 +331,6 @@ function init_gear_sets()
     back=gear.WAR_STR_WSD_Cape,
     waist="Sailfi Belt +1",
     -- head="Agoge Mask +3",
-    -- body="Pummeler's Lorica +3",
     -- neck="Warrior's Bead Necklace +2",
     -- back=gear.WAR_VIT_WSD_Cape,
   })
@@ -339,7 +341,7 @@ function init_gear_sets()
   sets.precast.WS["Resolution"] = set_combine(sets.precast.WS, {
     ammo="Coiste Bodhar",
     head="Sakpata's Helm",
-    body="Sakpata's Plate",
+    body="Sakpata's Breastplate",
     hands="Sakpata's Gauntlets",
     legs="Sakpata's Cuisses",
     feet="Sakpata's Leggings",
@@ -364,7 +366,7 @@ function init_gear_sets()
   sets.precast.WS['Armor Break'] =  set_combine(sets.precast.WS, {
     ammo="Coiste Bodhar",
     head="Sakpata's Helm",
-    body="Sakpata's Plate",
+    body="Sakpata's Breastplate",
     hands="Sakpata's Gauntlets",
     legs="Sakpata's Cuisses",
     feet="Sakpata's Leggings",
@@ -389,7 +391,7 @@ function init_gear_sets()
   sets.precast.WS['Full Break'] =  set_combine(sets.precast.WS, {
     ammo="Coiste Bodhar",
     head="Sakpata's Helm",
-    body="Sakpata's Plate",
+    body="Sakpata's Breastplate",
     hands="Sakpata's Gauntlets",
     legs="Sakpata's Cuisses",
     feet="Sakpata's Leggings",
@@ -414,7 +416,7 @@ function init_gear_sets()
   sets.precast.WS['Decimation'] =  set_combine(sets.precast.WS, {
     ammo="Coiste Bodhar",
     head="Sakpata's Helm",
-    body="Sakpata's Plate",
+    body="Sakpata's Breastplate",
     hands="Sakpata's Gauntlets",
     legs="Sakpata's Cuisses",
     feet="Sakpata's Leggings",
@@ -439,6 +441,7 @@ function init_gear_sets()
 
 	sets.precast.WS['Calamity'] =  set_combine(sets.precast.WS, {
     ammo="Knobkierrie",
+    body=gear.Nyame_B_body,
     hands=gear.Nyame_B_hands,
     legs="Sakpata's Cuisses",
     feet=gear.Nyame_B_feet,
@@ -449,7 +452,6 @@ function init_gear_sets()
     back=gear.WAR_STR_WSD_Cape,
     waist="Sailfi Belt +1",
     -- head="Agoge Mask +3",
-    -- body="Pummeler's Lorica +3",
     -- neck="Warrior's Bead Necklace +2",
     -- ring1="Sroda Ring",
   })
@@ -489,7 +491,7 @@ function init_gear_sets()
 
   sets.precast.WS["Ukko's Fury"] = set_combine(sets.precast.WS, {
     ammo="Yetshila +1",
-    body="Sakpata's Plate",
+    body="Sakpata's Breastplate",
     hands="Sakpata's Gauntlets",
     legs="Sakpata's Cuisses",
     neck="Warrior's Bead Necklace +1",
@@ -509,7 +511,7 @@ function init_gear_sets()
   sets.precast.WS["Ukko's Fury"].AttCapped = {
     ammo="Coiste Bodhar",
     head="Sakpata's Helm",
-    body="Sakpata's Plate",
+    body="Sakpata's Breastplate",
     hands="Sakpata's Gauntlets",
     legs="Sakpata's Cuisses",
     feet="Sakpata's Leggings",
@@ -530,6 +532,7 @@ function init_gear_sets()
   -- Impulse Drive - 100% STR
   sets.precast.WS['Impulse Drive'] = set_combine(sets.precast.WS, {
     ammo="Yetshila +1",
+    body=gear.Nyame_B_body,
     hands=gear.Nyame_B_hands,
     legs=gear.Nyame_B_legs,
     feet=gear.Nyame_B_feet,
@@ -541,7 +544,6 @@ function init_gear_sets()
     back=gear.WAR_Crit_Cape,
     waist="Sailfi Belt +1",
     -- head="Agoge Mask +3",
-    -- body="Pummeler's Lorica +3",
     -- neck="Warrior's Bead Necklace +2",
   })
   sets.precast.WS["Impulse Drive"].MaxTP = set_combine(sets.precast.WS["Impulse Drive"], {
@@ -557,7 +559,7 @@ function init_gear_sets()
   sets.precast.WS["Stardiver"] = set_combine(sets.precast.WS, {
     ammo="Coiste Bodhar",
     head="Sakpata's Helm",
-    body="Sakpata's Plate",
+    body="Sakpata's Breastplate",
     hands="Sakpata's Gauntlets",
     legs="Sakpata's Cuisses",
     feet="Sakpata's Leggings",
@@ -677,7 +679,7 @@ function init_gear_sets()
   sets.defense.PDT = {
     ammo="Staunch Tathlum +1",
     head="Sakpata's Helm",
-    body="Sakpata's Plate",
+    body="Sakpata's Breastplate",
     hands="Sakpata's Gauntlets",
     legs="Sakpata's Cuisses",
     feet="Sakpata's Leggings",
@@ -755,6 +757,7 @@ function init_gear_sets()
   sets.engaged.LowAcc = set_combine(sets.engaged, {
     ammo="Coiste Bodhar",
     head="Sakpata's Helm",
+    body="Sakpata's Breastplate",
     hands="Sakpata's Gauntlets",
     legs="Sakpata's Cuisses",
     feet="Sakpata's Leggings",
@@ -766,7 +769,6 @@ function init_gear_sets()
     back=gear.WAR_STR_DA_Cape,
     waist="Ioskeha Belt +1",
     -- ammo="Seething Bomblet +1",
-    -- body="Pummeler's Lorica +3",
     -- neck="Warrior's Bead Necklace +2",
   })
   sets.engaged.MidAcc = set_combine(sets.engaged.LowAcc, {
@@ -808,23 +810,6 @@ function init_gear_sets()
   sets.engaged.UkonvasaraAM.MidAcc = set_combine(sets.engaged.UkonvasaraAM.LowAcc, {})
   sets.engaged.UkonvasaraAM.HighAcc = set_combine(sets.engaged.UkonvasaraAM.MidAcc, {})
 
-  -- This set is never used. But why need separate set for Naegling?
-  sets.engaged.Naegling = {
-    ammo="Coiste Bodhar",
-    head="Sakpata's Helm",
-    body="Sakpata's Plate",
-    hands="Sakpata's Gauntlets",
-    legs="Sakpata's Cuisses",
-    neck="Vim Torque +1",
-    ear1="Schere Earring",
-    ear2="Dedition Earring",
-    ring1="Petrov Ring",
-    ring2="Niqmaddu Ring",
-    back=gear.WAR_STR_DA_Cape,
-    waist="Ioskeha Belt +1",
-    -- feet="Pummeler's Calligae +3 ",
-  }
-
   sets.engaged.DW = set_combine(sets.engaged,{
     ear2="Eabani Earring",
     -- back=gear.WAR_DW_Cape,
@@ -837,7 +822,7 @@ function init_gear_sets()
   sets.engaged.LightDef = {
     ammo="Yetshila +1",
     head="Sakpata's Helm",
-    body="Sakpata's Plate",
+    body="Sakpata's Breastplate",
     hands="Sakpata's Gauntlets",
     feet="Sakpata's Leggings",
     neck="Warrior's Bead Necklace +1",
@@ -853,7 +838,7 @@ function init_gear_sets()
   } -- [? PDT/? MDT, ? MEVA] ? STP <? QA, ? TA, ? DA> ? Crit Rate, ? Haste
   sets.engaged.LowAcc.LightDef = {
     ammo="Staunch Tathlum +1",
-    body="Sakpata's Plate",
+    body="Sakpata's Breastplate",
     neck="Warrior's Bead Necklace +1",
     ear1="Odnowa Earring +1",
     ear2="Telos Earring",
@@ -864,7 +849,7 @@ function init_gear_sets()
     -- head="Hjarrandi Helm",
     -- hands="Agoge Mufflers +3",
     -- legs="Agoge Cuisses +3",
-    -- feet="Pummeler's Calligae +3 ",
+    -- feet="Pummeler's Calligae +3",
     -- neck="Warrior's Bead Necklace +2",
   }
   sets.engaged.MidAcc.LightDef = sets.engaged.LowAcc.LightDef
@@ -980,11 +965,11 @@ function init_gear_sets()
     sub="Utu Grip",
   }
 	sets.WeaponSet['Ukon'] = {
-    main="Ukonvasara",
+    -- main="Ukonvasara",
     sub="Utu Grip",
   }
 	sets.WeaponSet['Club'] = {
-    -- main="Loxotic Mace +1",
+    main="Loxotic Mace +1",
     sub="Blurred Shield +1",
   }
 	sets.WeaponSet['Staff'] = {
