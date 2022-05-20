@@ -200,6 +200,7 @@ function init_gear_sets()
     -- feet="Agoge Calligae +3",
   }
 	sets.precast.JA['Warcry'] = {
+    head="Agoge Mask +1",
     -- head="Agoge Mask +3",
   }
 	sets.precast.JA['Defender'] = {}
@@ -212,12 +213,11 @@ function init_gear_sets()
     -- feet="Agoge Calligae +3",
   }
 	sets.precast.JA['Retaliation'] = {
-    -- feet="Boii Calligae +1",
+    feet="Boii Calligae +1",
   }
 	sets.precast.JA['Restraint'] = {}
 	sets.precast.JA['Blood Rage'] = {
-    -- body="Boii Lorica +1",
-    -- feet="Boii Calligae +1",
+    body="Boii Lorica +1",
   }
 	sets.precast.JA['Brazen Rush'] = {}
   sets.precast.JA['Provoke'] = sets.Enmity
@@ -263,7 +263,6 @@ function init_gear_sets()
     ring2="Epaminondas's Ring",   -- __, __, __, __,  5, __, ___
     back=gear.WAR_STR_WSD_Cape,
     waist="Sailfi Belt +1",
-    -- head="Agoge Mask +3",
     -- neck="Warrior's Bead Necklace +2",
     -- ring1="Sroda Ring",
   } -- ? STR, ? MND, ? Attack, ? Accuracy, ? WSD, ? PDL, ? TP Bonus
@@ -285,7 +284,6 @@ function init_gear_sets()
     ring2="Epaminondas's Ring",   -- __, __, __, __,  5, __, ___
     back=gear.WAR_STR_WSD_Cape,
     waist="Sailfi Belt +1",
-    -- head="Agoge Mask +3",
     -- neck="Warrior's Bead Necklace +2",
     -- ring1="Sroda Ring",
   } -- ? STR, ? MND, ? Attack, ? Accuracy, ? WSD, ? PDL, ? TP Bonus
@@ -310,7 +308,6 @@ function init_gear_sets()
     ring2="Gelatinous Ring +1",
     back=gear.WAR_STR_WSD_Cape,
     waist="Sailfi Belt +1",
-    -- head="Agoge Mask +3",
     -- neck="Warrior's Bead Necklace +2",
     -- back=gear.WAR_VIT_WSD_Cape,
 	})
@@ -330,7 +327,6 @@ function init_gear_sets()
     ring2="Gelatinous Ring +1",
     back=gear.WAR_STR_WSD_Cape,
     waist="Sailfi Belt +1",
-    -- head="Agoge Mask +3",
     -- neck="Warrior's Bead Necklace +2",
     -- back=gear.WAR_VIT_WSD_Cape,
   })
@@ -451,7 +447,6 @@ function init_gear_sets()
     ring2="Epaminondas's Ring",
     back=gear.WAR_STR_WSD_Cape,
     waist="Sailfi Belt +1",
-    -- head="Agoge Mask +3",
     -- neck="Warrior's Bead Necklace +2",
     -- ring1="Sroda Ring",
   })
@@ -494,13 +489,13 @@ function init_gear_sets()
     body="Sakpata's Breastplate",
     hands="Sakpata's Gauntlets",
     legs="Sakpata's Cuisses",
+    feet="Boii Calligae +1",
     neck="Warrior's Bead Necklace +1",
     ear1="Schere Earring",
     ring1="Niqmaddu Ring",
     back=gear.WAR_STR_DA_Cape,
     waist="Sailfi Belt +1",
     -- head="Blistering Sallet +1",
-    -- feet="Boii Calligae +1",
     -- neck="Warrior's Bead Necklace +2",
     -- ear2="Lugra Earring +1",
     -- ring2="Sroda Ring",
@@ -543,7 +538,6 @@ function init_gear_sets()
     ring2="Niqmaddu Ring",
     back=gear.WAR_Crit_Cape,
     waist="Sailfi Belt +1",
-    -- head="Agoge Mask +3",
     -- neck="Warrior's Bead Necklace +2",
   })
   sets.precast.WS["Impulse Drive"].MaxTP = set_combine(sets.precast.WS["Impulse Drive"], {
@@ -632,7 +626,6 @@ function init_gear_sets()
     ring2="Epaminondas's Ring",
     back=gear.WAR_STR_WSD_Cape,
     waist="Sailfi Belt +1",
-    -- head="Agoge Mask +3",
     -- neck="Warrior's Bead Necklace +2",
     -- ear1="Lugra Earring +1",
     -- ring1="Sroda Ring",
@@ -824,6 +817,7 @@ function init_gear_sets()
     head="Sakpata's Helm",
     body="Sakpata's Breastplate",
     hands="Sakpata's Gauntlets",
+    legs="Agoge Cuisses +3",
     feet="Sakpata's Leggings",
     neck="Warrior's Bead Necklace +1",
     ear1="Schere Earring",
@@ -832,28 +826,12 @@ function init_gear_sets()
     ring2="Defending Ring",           -- [10/10, ___] __ <__, __, __> __, __
     back=gear.WAR_STR_DA_Cape,
     waist="Ioskeha Belt +1",
-    -- legs="Agoge Cuisses +3",
     -- neck="Warrior's Bead Necklace +2",
     -- ring1="Sroda Ring",
   } -- [? PDT/? MDT, ? MEVA] ? STP <? QA, ? TA, ? DA> ? Crit Rate, ? Haste
-  sets.engaged.LowAcc.LightDef = {
-    ammo="Staunch Tathlum +1",
-    body="Sakpata's Breastplate",
-    neck="Warrior's Bead Necklace +1",
-    ear1="Odnowa Earring +1",
-    ear2="Telos Earring",
-    ring1="Defending Ring",
-    ring2="Moonlight Ring",
-    back=gear.WAR_STR_DA_Cape,
-    waist="Ioskeha Belt +1",
-    -- head="Hjarrandi Helm",
-    -- hands="Agoge Mufflers +3",
-    -- legs="Agoge Cuisses +3",
-    -- feet="Pummeler's Calligae +3",
-    -- neck="Warrior's Bead Necklace +2",
-  }
-  sets.engaged.MidAcc.LightDef = sets.engaged.LowAcc.LightDef
-  sets.engaged.HighAcc.LightDef = sets.engaged.LowAcc.LightDef
+  sets.engaged.LowAcc.LightDef = sets.engaged.LightDef
+  sets.engaged.MidAcc.LightDef = sets.engaged.LightDef
+  sets.engaged.HighAcc.LightDef = sets.engaged.LightDef
 
 	sets.engaged.UkonvasaraAM.LightDef = {
     ammo="Coiste Bodhar",
