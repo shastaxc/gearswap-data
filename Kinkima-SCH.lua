@@ -151,16 +151,15 @@ function init_gear_sets()
     back=gear.SCH_FC_Cape,            -- 10 [10/__,  20] -- TODO: Add meva
     waist="Carrier Sash",             -- __ [__/__, ___]; Ele Resist+15
     -- main="Malignance Pole",        -- __ [20/20, ___]
-    -- head="Bunzi's Hat",            -- 10 [ 7/ 7, 123]
     -- body="Pinga Tunic +1",         -- 15 [__/__, 128]
     -- feet=gear.Merl_FC_feet,        -- 12 [__/__, 118]
     -- neck="Orunmila's Torque",      --  5 [__/__, ___]
-    -- 81 Fast Cast [60 PDT/45 MDT, 593 MEVA]
+    -- 81 Fast Cast [53 PDT/38 MDT, 545 MEVA]
 
     -- Ideal:
     -- main="Hvergelmir",             -- 50 [__/__, ___]
     -- sub="Khonsu",                  -- __ [ 6/ 6, ___]
-    -- head="Bunzi's Hat",            -- 10 [ 7/ 7, 123]
+    -- head=gear.Psycloth_D_head,     -- 10 [__/__,  75]
     -- ammo="Staunch Tathlum +1",     -- __ [ 3/ 3, ___]; Resist Status+11
     -- body="Shamash Robe",           -- __ [10/__, 106]; Resist Silence+90
     -- hands=gear.Nyame_B_hands,      -- __ [ 7/ 7, 112]
@@ -173,7 +172,7 @@ function init_gear_sets()
     -- ring2="Defending Ring",        -- __ [10/10, ___]
     -- back=gear.SCH_FC_Cape,         -- 10 [10/__,  20] -- TODO: Add meva
     -- waist="Carrier's Sash",        -- __ [__/__, ___]; Ele Resist+15
-    -- 84 Fast Cast [73 PDT/48 MDT, 658 MEVA]
+    -- 84 Fast Cast [66 PDT/41 MDT, 610 MEVA]
   } -- 82 Fast Cast [41 PDT/24 MDT, 508 MEVA]
 
   -- Grimoire casting bonuses multiply separately from FC, allowing
@@ -212,7 +211,7 @@ function init_gear_sets()
 
     -- If using Hvergelmir in precast.FC...
     -- ammo="Staunch Tathlum +1",     -- __ [ 3/ 3, ___]
-    -- head="Bunzi's Hat",            -- 10 [ 7/ 7, 123]
+    -- head="Bunzi's Hat",            -- 10 [ 7/ 7, 123]; TODO: REPLACE, CAN'T USE BUNZI AS SCH
     -- body="Pinga Tunic +1",         -- 15 [__/__, 128]
     -- hands="Academic's Bracers +3", --  9 [__/__,  57]
     -- legs="Pinga Pants +1",         -- 13 [__/__, 147]
@@ -359,6 +358,7 @@ function init_gear_sets()
     ring2="Defending Ring",           -- __, __, ___, ___, ___, __, 10/10, __
     back=gear.SCH_FC_Cape,            -- __, __, ___,  30, ___, __, 10/__, __
     waist="Rumination Sash",          -- __, __, ___,   4, ___, 10, __/__, __
+    -- Kaykaus bonus                      8, __, ___, ___, ___, __, __/__, __
     -- Base Stats                     -- __, __, 486, 129, 123, __, __/__, __
     -- Merit points                   -- __, __, ___, ___, ___, 10, __/__,  5
 
@@ -367,6 +367,7 @@ function init_gear_sets()
     -- ring1="Kuchekula Ring",        -- __, __, ___, ___, ___, __, __/__,  7; Use Janniston if you have it
     -- back=gear.SCH_CP_Cape,         -- __, 10, ___,  30, ___, __, 10/__, __
     -- waist="Sanctuary Obi +1",      -- __, __, ___, ___, ___, 10, __/__,  4
+    -- Kaykaus bonus                      8, __, ___, ___, ___, __, __/__, __
     -- Base Stats                     -- __, __, 486, 129, 123, __, __/__, __
     -- Merit points                   -- __, __, ___, ___, ___, 10, __/__,  5
     -- 12 CPII, 49 CP, 502 Heal Skill, 298 MND, 239 VIT, 108 SIRD, 55PDT/48MDT, 37 -Enmity
@@ -918,7 +919,6 @@ function init_gear_sets()
     back="Cheviot Cape",            --  5/__, ___
     waist="Carrier's Sash",         -- __/__, ___; Ele Resist+15
     -- ammo="Staunch Tathlum +1",   --  3/ 3, ___; Resist Status+11
-    -- head="Bunzi's Hat",          --  7/ 7, 123
     -- back="Archon Cape",          -- __/__, ___
     -- 91 PDT / 76 MDT, 641 M.Eva
   } -- 95 PDT / 75 MDT, 641 M.Eva
@@ -949,7 +949,6 @@ function init_gear_sets()
     -- main="Mpaca's Staff",        -- __/__, ___ [ 2]
     -- sub="Khonsu",                --  6/ 6, ___ [__]
     -- ammo="Staunch Tathlum +1",   --  3/ 3, ___ [__]; Resist Status+11
-    -- head="Bunzi's Hat",          --  7/ 7, 123 [__]
     -- hands="Volte Gloves",        -- __/__,  96 [ 1]
     -- feet="Volte Gaiters",        -- __/__, 142 [ 1]
     -- ring1="Stikini Ring +1",     -- __/__, ___ [ 1]
