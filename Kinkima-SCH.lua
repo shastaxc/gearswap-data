@@ -63,10 +63,14 @@ function user_setup()
 
   if player.sub_job == 'RDM' then
     send_command('bind !e input /ma "Haste" <stpc>')
-    send_command('bind !o input /ma "Phalanx" <stpc>')
+    send_command('bind !u input /ma Blink <me>')
+    send_command('bind !i input /ma Stoneskin <me>')
+    send_command('bind !o input /ma "Phalanx" <me>')
     send_command('bind !\' input /ma "Refresh" <stpc>')
   elseif player.sub_job == 'WHM' then
     send_command('bind !e input /ma "Haste" <stpc>')
+    send_command('bind !u input /ma Blink <me>')
+    send_command('bind !i input /ma Stoneskin <me>')
   end
 
   select_default_macro_book()
@@ -100,6 +104,8 @@ function job_file_unload()
   send_command('unbind !;')
 
   send_command('unbind !e')
+  send_command('unbind !u')
+  send_command('unbind !i')
   send_command('unbind !o')
   send_command('unbind !\'')
 end
@@ -928,9 +934,12 @@ function init_gear_sets()
   sets.passive_refresh = {
     main="Bolelabunga",             -- __/__, ___ [ 1]
     sub="Genmei Shield",            -- 10/__, ___ [__]
+    ammo="Staunch Tathlum",         --  2/ 2, ___ [__]
     head=gear.Nyame_B_head,         --  7/ 7, 123 [__]
     body="Shamash Robe",            -- 10/__, 106 [ 3]; Resist Silence+90
+    hands=gear.Nyame_B_hands,       --  7/ 7, 112 [__]
     legs="Assiduity Pants +1",      -- __/__, 107 [ 2]
+    feet=gear.Nyame_B_feet,         --  7/ 7, 150 [__]
     neck="Loricate Torque +1",      --  6/ 6, ___ [__]; DEF+60
     ear1="Hearty Earring",          -- __/__, ___ [__]; Resist Status+5
     ear2="Etiolation Earring",      -- __/ 3, ___ [__]; Resist Silence+15
@@ -1526,13 +1535,6 @@ end
 
 function gearinfo(cmdParams, eventArgs)
   if cmdParams[1] == 'gearinfo' then
-    if type(cmdParams[4]) == 'string' then
-      if cmdParams[4] == 'true' then
-        moving = true
-      elseif cmdParams[4] == 'false' then
-        moving = false
-      end
-    end
     if not midaction() then
       job_update()
     end
@@ -1557,7 +1559,7 @@ function update_sublimation()
 end
 
 -- Equip sets appropriate to the active buffs, relative to the spell being cast.
-function apply_grimoire_bonuses(spell, action, spellMap)
+function apply_grimoire_bonuses(spell, action, spellMap, eventArgs)
   if state.Buff.Perpetuance and spell.type =='WhiteMagic' and spell.skill == 'Enhancing Magic' then
     equip(sets.buff['Perpetuance'])
   end
