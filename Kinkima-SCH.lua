@@ -343,7 +343,7 @@ function init_gear_sets()
   -- Mithra SCH/RDM M30 VIT = 123
   -- Mithra SCH/RDM M30 Healing Magic Skill = 486 (w/ Light Arts)
   -- For simplicity, this set assumes Light Arts is on. This set will be gimped with LA off. Use Light Arts, dummy!
-  sets.midcast.Cure = {
+  sets.midcast.CureNormal = {
     main="Malignance Pole",           -- __, __, ___, ___,  40, __, 20/20, __
     sub="Khonsu",                     -- __, __, ___, ___, ___, __,  6/ 6,  5
     ammo="Staunch Tathlum",           -- __, __, ___, ___, ___, 10,  2/ 2, __
@@ -411,7 +411,7 @@ function init_gear_sets()
   } -- 6 CPII, 49 CP, 502 Heal Skill, 309 MND, 233 VIT, 105 SIRD, 49PDT/36MDT, 29 -Enmity
     -- 714 Power
 
-  sets.midcast.Cure.LightArts = sets.midcast.Cure
+  sets.midcast.CureNormal.LightArts = sets.midcast.CureNormal
   sets.midcast.CureWeather.LightArts = sets.midcast.CureWeather
 
   -- Removal rate = Base Rate * (1+(y/100))
@@ -619,6 +619,11 @@ function init_gear_sets()
     -- main="Maxentius",                -- 40, 15, __, __; +250 M.Acc skill
     -- 489 M.Acc, 290 MND, 30% Enfeebling Duration, 24 Enfeebling Skill
   }
+  sets.midcast.MndEnfeebles.LightArts = set_combine(sets.midcast.MndEnfeebles, {
+    legs="Academic's Pants +1",
+    feet="Academic's Loafers +3",
+    -- legs="Academic's Pants +3",
+  })
 
   -- M.Acc > INT > Enfeebling Duration > Enfeebling Skill
   sets.midcast.IntEnfeebles = {
@@ -651,8 +656,14 @@ function init_gear_sets()
     -- 514 M.Acc, 315 INT, 30% Enfeebling Duration, 24 Enfeebling Skill
     -- +149 M.Acc from skill
   }
+  sets.midcast.IntEnfeebles.DarkArts = set_combine(sets.midcast.IntEnfeebles, {
+    body="Academic's Gown +1",
+    feet="Academic's Loafers +3",
+    -- body="Academic's Gown +3",
+  })
 
   sets.midcast.ElementalEnfeeble = sets.midcast.IntEnfeebles
+  sets.midcast.ElementalEnfeeble.DarkArts = sets.midcast.IntEnfeebles.DarkArts
   sets.midcast.Dispelga = set_combine(sets.midcast.IntEnfeebles, {
     -- main="Daybreak",
     -- sub="Ammurapi Shield",
@@ -1083,17 +1094,6 @@ function init_gear_sets()
     -- waist="Gishdubar Sash",      --10
   }
 
-  sets.LightArts = {
-    legs="Academic's Pants +1",
-    feet="Academic's Loafers +3",
-    -- legs="Academic's Pants +3",
-  }
-  sets.DarkArts = {
-    body="Academic's Gown +1",
-    feet="Academic's Loafers +3",
-    -- body="Academic's Gown +3",
-  }
-
   sets.Special = {}
   sets.Special.ElementalObi = {
     waist="Hachirin-no-Obi",
@@ -1124,29 +1124,31 @@ function job_precast(spell, action, spellMap, eventArgs)
   if spell.name:startswith('Aspir') then
     refine_various_spells(spell, action, spellMap, eventArgs)
   end
-end
 
-function job_post_precast(spell, action, spellMap, eventArgs)
-  -- If magic and grimoire is active, use Grimoire sub-set
-  local crumbs = mote_vars.set_breadcrumbs
+  -- If magic and grimoire is active, use Grimoire sub-sets
+  
   if spell.action_type == 'Magic' then
-    if (buffactive["Light Arts"] or buffactive["Addendum: White"]) or (buffactive["Dark Arts"] or buffactive["Addendum: Black"]) then
-      if (#crumbs == 3) then
-        equip(sets[crumbs[2]][crumbs[3]].Grimoire)
+    if (buffactive['Light Arts'] or buffactive['Addendum: White']) or (buffactive['Dark Arts'] or buffactive['Addendum: Black']) then
+      equipSet = select_specific_set(sets.precast.FC, spell, spellMap)
+      -- Add optional casting mode
+      if equipSet[state.CastingMode.current] then
+        equipSet = equipSet[state.CastingMode.current]
       end
-      if (#crumbs == 4) then
-        equip(sets[crumbs[2]][crumbs[3]][crumbs[4]].Grimoire)
-      end
-      if spell.name == 'Impact' then
-        equip(sets.precast.FC.Impact.Grimoire)
-      end
-    else
-      if spell.name == 'Impact' then
-        equip(sets.precast.FC.Impact)
+      if equipSet['Grimoire'] then
+        equip(equipSet['Grimoire'])
+        eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
+      elseif (buffactive['Light Arts'] or buffactive['Addendum: White']) and equipSet['LightArts'] then
+        equip(equipSet['LightArts'])
+        eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
+      elseif (buffactive['Dark Arts'] or buffactive['Addendum: Black']) and equipSet['DarkArts'] then
+        equip(equipSet['DarkArts'])
+        eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
       end
     end
   end
-  
+end
+
+function job_post_precast(spell, action, spellMap, eventArgs)
   -- Handle belts for elemental WS
   if spell.type == 'WeaponSkill' and elemental_ws:contains(spell.english) then
     local base_day_weather_mult = silibs.get_day_weather_multiplier(spell.element, false, false)
@@ -1179,6 +1181,26 @@ end
 function job_midcast(spell, action, spellMap, eventArgs)
   silibs.midcast_hook(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
+
+  if spell.action_type == 'Magic' then
+    if (buffactive['Light Arts'] or buffactive['Addendum: White']) or (buffactive['Dark Arts'] or buffactive['Addendum: Black']) then
+      equipSet = select_specific_set(sets.midcast, spell, spellMap)
+      -- Add optional casting mode
+      if equipSet[state.CastingMode.current] then
+        equipSet = equipSet[state.CastingMode.current]
+      end
+      if equipSet['Grimoire'] then
+        equip(equipSet['Grimoire'])
+        eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
+      elseif (buffactive['Light Arts'] or buffactive['Addendum: White']) and equipSet['LightArts'] then
+        equip(equipSet['LightArts'])
+        eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
+      elseif (buffactive['Dark Arts'] or buffactive['Addendum: Black']) and equipSet['DarkArts'] then
+        equip(equipSet['DarkArts'])
+        eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
+      end
+    end
+  end
 end
 
 -- Run after the general midcast() is done.
@@ -1209,13 +1231,6 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
   end
   if spell.action_type == 'Magic' then
     apply_grimoire_bonuses(spell, action, spellMap, eventArgs)
-  end
-  if spell.skill == 'Enfeebling Magic' then
-    if spell.type == "WhiteMagic" and (buffactive["Light Arts"] or buffactive["Addendum: White"]) then
-      equip(sets.LightArts)
-    elseif spell.type == "BlackMagic" and (buffactive["Dark Arts"] or buffactive["Addendum: Black"]) then
-      equip(sets.DarkArts)
-    end
   end
   if spell.english == "Kaustra" and state.MagicBurst.value then
     equip(sets.magic_burst)
@@ -1341,7 +1356,7 @@ function job_get_spell_map(spell, default_spell_map)
       if (world.weather_element == 'Light' or world.day_element == 'Light') then
         return 'CureWeather'
       else
-        return 'Cure'
+        return 'CureNormal'
       end
     elseif spell.skill == 'Enfeebling Magic' then
       if spell.type == 'WhiteMagic' then
