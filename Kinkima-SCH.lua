@@ -476,11 +476,11 @@ function init_gear_sets()
     body="Pedagogy Gown +3",          -- 19, 12, __
     hands=gear.Telchine_ENH_hands,    -- __, 10, __
     legs=gear.Telchine_ENH_legs,      -- __, 10, __
+    feet=gear.Kaykaus_D_feet,         -- 21, __,  4
     waist="Embla Sash",               -- __, 10,  5
     -- main=gear.Gada_ENH,            -- 18,  6,  6
     -- ammo="Savant's Treatise",      --  4, __, __
     -- head=gear.Telchine_ENH_head,   -- __, 10, __
-    -- feet=gear.Kaykaus_D_feet,      -- 21, __,  4
     -- neck="Incanter's Torque",      -- 10, __, __
     -- ear1="Mimir Earring",          -- 10, __, __
     -- ear2="Andoaa Earring",         --  5, __, __
@@ -1265,16 +1265,14 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     end
   end
   if spell.skill == 'Enhancing Magic' then
-    if classes.NoSkillSpells:contains(spell.english) then
+    if not sets.midcast[spell.english] and not sets.midcast[spellMap]
+        and (classes.NoSkillSpells:contains(spell.english) or classes.ShortEnhancingSpells:contains(spell.english)) then
       equip(sets.midcast.EnhancingDuration)
-      if spellMap == 'Refresh' then
-        if spell.targets.Self then
-          -- If self targeted
-          equip(sets.midcast.RefreshSelf)
-        else
-          -- If not self targeted
-          equip(sets.midcast.Refresh)
-        end
+    end
+    -- If self targeted refresh
+    if spellMap == 'Refresh' then
+      if spell.targets.Self then
+        equip(sets.midcast.RefreshSelf)
       end
     end
     if spellMap == "Regen" and state.RegenMode.value == 'Duration' then

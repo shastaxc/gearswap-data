@@ -64,7 +64,7 @@ end
 -- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
 function job_setup()
   silibs.enable_cancel_outranged_ws()
-  silibs.enable_auto_lockstyle(4)
+  silibs.enable_auto_lockstyle(5)
   silibs.enable_premade_commands()
   silibs.enable_th()
 
@@ -384,7 +384,7 @@ function init_gear_sets()
     ear2="Ishvara Earring",
     ring1="Epaminondas's Ring",
     ring2="Beithir Ring",
-    -- back=gear.BLU_WS2_Cape,
+    -- back=gear.BLU_WSD_Cape,
     waist="Fotia Belt",
   }
 
@@ -398,13 +398,13 @@ function init_gear_sets()
     -- ear2="Brutal Earring",
     -- ring1="Begrudging Ring",
     ring2="Epona's Ring",
-    -- back=gear.BLU_WS1_Cape,
+    -- back=gear.BLU_Crit_Cape,
   })
 
   sets.precast.WS['Vorpal Blade'] = sets.precast.WS['Chant du Cygne']
 
   sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
-    ammo="Coiste Bodhar", --Sub for Auggelmir Orb +1
+    ammo="Coiste Bodhar", --Sub for Aurgelmir Orb +1
     body="Nyame Mail",
     legs="Nyame Flanchard",
     hands="Nyame Gauntlets",
@@ -430,7 +430,7 @@ function init_gear_sets()
     -- ear2="Brutal Earring",
     -- ring1="Rufescent Ring",
     ring2="Epona's Ring",
-    -- back=gear.BLU_WS1_Cape,
+    -- back=gear.BLU_Crit_Cape,
     waist="Fotia Belt",
   }
 
@@ -511,7 +511,7 @@ function init_gear_sets()
     -- neck="Caro Necklace",
     -- ring1="Shukuyu Ring",
     -- ring2="Ilabrat Ring",
-    -- back=gear.BLU_WS2_Cape,
+    -- back=gear.BLU_WSD_Cape,
     waist="Sailfi Belt +1",
   }
 
@@ -532,7 +532,7 @@ function init_gear_sets()
   sets.midcast['Blue Magic'].PhysicalDex = set_combine(sets.midcast['Blue Magic'].Physical, {
     ear2="Mache Earring +1",
     ring2="Ilabrat Ring",
-    -- back=gear.BLU_WS1_Cape,
+    -- back=gear.BLU_Crit_Cape,
     waist="Grunfeld Rope",
   })
 
@@ -1428,13 +1428,26 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
         equip(sets.buff[buff])
       end
     end
-    if spellMap == 'Magical' then
-      if spell.element == world.weather_element and (get_weather_intensity() == 2 and spell.element ~= elements.weak_to[world.day_element]) then
-        equip({waist="Hachirin-no-Obi"})
-      end
-    end
     if spellMap == 'Healing' and spell.target.type == 'SELF' then
       equip(sets.midcast['Blue Magic'].HealingSelf)
+    end
+  end
+
+  -- Handle belts for elemental damage
+  if (spell.skill == 'Blue Magic' and spellMap == 'Magical') or spell.skill == 'Elemental Magic' then
+    local base_day_weather_mult = silibs.get_day_weather_multiplier(spell.element, false, false)
+    local obi_mult = silibs.get_day_weather_multiplier(spell.element, true, false)
+    local orpheus_mult = silibs.get_orpheus_multiplier(spell.element, spell.target.distance)
+    local has_obi = true -- Change if you do or don't have Hachirin-no-Obi
+    local has_orpheus = false -- Change if you do or don't have Orpheus's Sash
+
+    -- Determine which combination to use: orpheus, hachirin-no-obi, or neither
+    if has_obi and (obi_mult >= orpheus_mult or not has_orpheus) and (obi_mult > base_day_weather_mult) then
+      -- Obi is better than orpheus and better than nothing
+      equip({waist="Hachirin-no-Obi"})
+    elseif has_orpheus and (orpheus_mult > base_day_weather_mult) then
+      -- Orpheus is better than obi and better than nothing
+      equip({waist="Orpheus's Sash"})
     end
   end
 
@@ -1814,16 +1827,14 @@ function check_gear()
   end
 end
 
-
-
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
   -- Default macro set/book
   if player.sub_job == 'WAR' then
-      set_macro_page(1, 3)
+      set_macro_page(1, 5)
   elseif player.sub_job == 'RDM' then
-      set_macro_page(2, 3)
+      set_macro_page(2, 5)
   end
 
-  set_macro_page(1,3)
+  set_macro_page(1,5)
 end

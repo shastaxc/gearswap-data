@@ -73,6 +73,8 @@ gear.Chironic_AE_feet = {} -- 10 WSD > 40 MAB > 15 INT > 15 DEX
 
 gear.Chironic_SIRD_hands = { name="Chironic Gloves", augments={'Attack+6','Spell interruption rate down -11%','Mag. Acc.+1',}}
 
+gear.Chironic_MAcc_legs = {} -- 40 M.Acc Aug
+
 -- Herculean
 
 -- Merlinic
@@ -129,6 +131,7 @@ gear.Taeon_Phalanx_legs = gear.Taeon_FC_legs
 gear.Taeon_Phalanx_feet = gear.Taeon_FC_feet
 
 -- Telchine
+-- TODO: Add fast cast and meva to all enh telchine
 gear.Telchine_ENH_head = { name="Telchine Cap", augments={'"Regen"+2','Enh. Mag. eff. dur. +9',}} -- Max 25 meva, 10 enh duration
 gear.Telchine_ENH_body = { name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +10',}} -- Max 25 meva, 10 enh duration
 gear.Telchine_ENH_hands = { name="Telchine Gloves", augments={'Mag. Evasion+24','"Regen"+2','Enh. Mag. eff. dur. +10',}} -- Max 25 meva, 10 enh duration
@@ -159,6 +162,12 @@ gear.SCH_Adoulin_Helix_Cape = { name="Bookworm's Cape", augments={'INT+1','MND+1
 ----------------------------------------------------------------------
 -----------------------    Ambuscade Capes    ------------------------
 ----------------------------------------------------------------------
+-- gear.BLU_FC_Cape = { name="Rosmerta's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','MND+10','"Fast Cast"+10','Phys. dmg. taken-10%',}}
+-- gear.BLU_WSD_Cape = { name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
+-- gear.BLU_Crit_Cape = { name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10','Phys. dmg. taken-10%',}}
+-- gear.BLU_STP_Cape = { name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}}
+-- gear.BLU_DW_Cape = { name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dual Wield"+10','Phys. dmg. taken-10%',}}
+-- gear.BLU_MAB_Cape ={ name="Rosmerta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
 
 gear.SCH_MAB_Cape = { name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Mag. Evasion+15',}}
 gear.SCH_FC_Cape = { name="Lugh's Cape", augments={'MND+20','MND+10','"Fast Cast"+10','Phys. dmg. taken-10%',}}
@@ -167,7 +176,10 @@ gear.SCH_MND_MAcc_Cape = { name="Lugh's Cape", augments={'MND+20','Mag. Acc+20 /
 gear.SCH_MP_Cape = { name="Lugh's Cape", augments={'MP+60','Eva.+20 /Mag. Eva.+20','MP+20','"Regen"+5',}}
 gear.SCH_Regen_Cape = gear.SCH_MP_Cape
 -- gear.SCH_Helix_Cape = { name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Magic Damage +10','"Mag.Atk.Bns."+10',}}
--- gear.SCH_CP_Cape = {} 10 Cure potency, 30 MND, 10 PDT
+-- gear.SCH_CP_Cape = { name="Lugh's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','MND+10','"Cure" potency +10%','Phys. dmg. taken-10%',}}
+
+-- gear.WHM_FC_Cape = { name="Alaunus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','MND+10','"Fast Cast"+10','Phys. dmg. taken-10%',}}
+-- gear.WHM_CP_Cape = { name="Alaunus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','MND+10','"Cure" potency +10%','Phys. dmg. taken-10%',}}
 
 
 ----------------------------------------------------------------------
