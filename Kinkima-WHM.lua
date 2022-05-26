@@ -871,7 +871,7 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
   end
 
   -- Handle belts for elemental damage
-  if spell.skill == 'Elemental Magic' then
+  if spell.skill == 'Elemental Magic' or spell.english:contains('Holy') or spell.english:contains('Banish') then
     local base_day_weather_mult = silibs.get_day_weather_multiplier(spell.element, false, false)
     local obi_mult = silibs.get_day_weather_multiplier(spell.element, true, false)
     local orpheus_mult = silibs.get_orpheus_multiplier(spell.element, spell.target.distance)
