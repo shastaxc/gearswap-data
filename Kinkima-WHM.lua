@@ -7,6 +7,9 @@ function get_sets()
   -- Load and initialize Mote library
   mote_include_version = 2
   include('Mote-Include.lua') -- Executes job_setup, user_setup, init_gear_sets
+  coroutine.schedule(function()
+    send_command('gs reorg')
+  end, 1)
 end
 
 -- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
@@ -36,7 +39,7 @@ function job_setup()
   send_command('bind !u input /ma "Blink" <me>')
   send_command('bind !i input /ma "Stoneskin" <me>')
   send_command('bind !p input /ma "Aquaveil" <me>')
-  send_command('bind !; input /ma "Regen V" <stpc>')
+  send_command('bind !; input /ma "Regen IV" <stpc>')
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -106,7 +109,8 @@ function init_gear_sets()
     sub="Mensch Strap +1",            -- __ [ 5/__, ___]
     ammo="Incantor Stone",            --  2 [__/__, ___]
     head="Bunzi's Hat",               -- 10 [ 7/ 7, 123]
-    body=gear.Merl_FC_body,           -- 14 [ 2/__,  91]
+    body="Inyanga Jubbah +2",         -- 14 [__/ 8, 120]
+    hands=gear.Gende_SongFC_hands,    --  7 [ 3/ 2,  37]
     legs="Pinga Pants +1",            -- 13 [__/__, 147]
     feet=gear.Merl_FC_feet,           -- 11 [__/__, 118]
     neck="Cleric's Torque +1",        --  8 [__/__, ___]
@@ -114,38 +118,37 @@ function init_gear_sets()
     ear2="Etiolation Earring",        --  1 [__/ 3, ___]; Resist Silence+15
     ring1="Gelatinous Ring +1",       -- __ [ 7/-1, ___]
     ring2="Defending Ring",           -- __ [10/10, ___]
+    back=gear.WHM_FC_Cape,            -- 10 [10/__,  20]
     waist="Carrier Sash",             -- __ [__/__, ___]; Ele Resist+15
-    -- body="Inyanga Jubbah +2",      -- 14 [__/ 8, 120]
-    -- hands=gear.Gende_FC_hands,     --  7 [ 4/__,  37]
-    -- back=gear.WHM_FC_Cape,         -- 10 [10/__,  20]
+    -- hands=gear.Gende_SongFC_hands, --  7 [ 4/__,  37]
     -- 80 Fast Cast [63PDT/47MDT, 565 MEVA]
-  } -- 63 Fast Cast [51PDT/39MDT, 479 MEVA]
+  } -- 80 Fast Cast [62PDT/49MDT, 565 MEVA]
 
   -- 10% cap on Quick Magic
   sets.QuickMagic = {
     main="Malignance Pole",           -- __ [20/20, ___] __
-    sub="Mensch Strap +1",            -- __ [ 5/__, ___]
+    sub="Mensch Strap +1",            -- __ [ 5/__, ___] __
+    ammo="Impatiens",                 -- __ [__/__, ___]  2
     head="Bunzi's Hat",               -- 10 [ 7/ 7, 123] __
-    body=gear.Merl_FC_body,           -- 14 [ 2/__,  91] __
+    body="Inyanga Jubbah +2",         -- 14 [__/ 8, 120] __
+    hands=gear.Gende_SongFC_hands,    --  7 [ 3/ 2,  37] __
     legs="Pinga Pants +1",            -- 13 [__/__, 147] __
     feet=gear.Merl_FC_feet,           -- 11 [__/__, 118] __
     neck="Cleric's Torque +1",        --  8 [__/__, ___] __
     ear1="Malignance Earring",        --  4 [__/__, ___] __
     ear2="Odnowa Earring +1",         -- __ [ 3/ 5, ___] __
     ring2="Veneficium Ring",          -- __ [__/__, ___]  1
+    back=gear.WHM_FC_Cape,            -- 10 [10/__,  20] __
     waist="Witful Belt",              --  3 [__/__, ___]  3
-    -- ammo="Impatiens",              -- __ [__/__, ___]  2
-    -- body="Inyanga Jubbah +2",      -- 14 [__/ 8, 120] __
-    -- hands=gear.Gende_FC_hands,     --  7 [ 4/__,  37] __
     -- ring1="Lebeche Ring",          -- __ [__/__, ___]  2
-    -- back=gear.WHM_FC_Cape,         -- 10 [10/__,  20] __
+    -- hands=gear.Gende_SongFC_hands, --  7 [ 4/__,  37]
     -- 80 Fast Cast [49PDT/40MDT, 565 MEVA] 8 Quick Magic
-  } -- 63 Fast Cast [37PDT/32MDT, 479 MEVA] 4 Quick Magic
+  } -- 80 Fast Cast [48PDT/42MDT, 565 MEVA] 6 Quick Magic
 
-  -- Cap quick magic, but can remove some FC due to Diving Benison trait (increase defense instead)
-  sets.precast.FC.StatusRemoval = {
+  sets.precast.FC.QuickStatusRemoval = {
     main="Malignance Pole",           -- __ [20/20, ___] __
-    sub="Mensch Strap +1",            -- __ [ 5/__, ___]
+    sub="Mensch Strap +1",            -- __ [ 5/__, ___] __
+    ammo="Impatiens",                 -- __ [__/__, ___]  2
     head="Bunzi's Hat",               -- 10 [ 7/ 7, 123] __
     body="Shamash Robe",              -- __ [10/__, 106] __; Resist Silence+90
     hands=gear.Nyame_B_hands,         -- __ [ 7/ 7, 112] __
@@ -158,7 +161,6 @@ function init_gear_sets()
     waist="Witful Belt",              --  3 [__/__, ___]  3
     -- Divine Benison Trait              50
     
-    -- ammo="Impatiens",              -- __ [__/__, ___]  2
     -- ring1="Lebeche Ring",          -- __ [__/__, ___]  2
     -- back="Perimede Cape",          -- __ [__/__, ___]  4
   } -- 81 Fast Cast [72PDT/60MDT, 638 MEVA] 7 Quick Magic
@@ -308,6 +310,7 @@ function init_gear_sets()
     ear2="Halasz Earring",            -- __, __, ___, ___, ___,  5 [__/__, ___]  3
     ring1="Gelatinous Ring +1",       -- __, __, ___, ___,  15, __ [ 7/-1, ___] __
     ring2="Defending Ring",           -- __, __, ___, ___, ___, __ [10/10, ___] __
+    back=gear.WHM_CP_Cape,            -- __, 10, ___,  30, ___, __ [10/__, ___] __
     waist="Rumination Sash",          -- __, __, ___,   4, ___, 10 [__/__, ___] __
 
     -- Ideal:
@@ -324,7 +327,7 @@ function init_gear_sets()
     -- ear2="Nourishing Earring +1",  -- __,  7, ___,   4, ___,  5 [__/__, ___] __; Resist Silence +15
     -- ring1="Gelatinous Ring +1",    -- __, __, ___, ___,  15, __ [ 7/-1, ___] __
     -- ring2="Defending Ring",        -- __, __, ___, ___, ___, __ [10/10, ___] __
-    -- back=gear.WHM_CP_Cape,         -- __, 10, ___,  30, ___, __ [10/__,  20] __
+    -- back=gear.WHM_CP_Cape,         -- __, 10, ___,  30, ___, __ [10/__, ___] __
     -- waist="Sanctuary Obi +1",      -- __, __, ___, ___, ___, 10 [__/__, ___]  4
     -- Kaykaus bonus                      4, __, ___, ___, ___, __ [__/__, ___] __
     -- Base Stats                     -- __, __, 506, 129, 123, __ [__/__, ___] __
@@ -335,6 +338,24 @@ function init_gear_sets()
   -- WHM/SCH M30 Healing Magic Skill = 506
   -- Cap at 700 power; Power = floor(MND÷2) + floor(VIT÷4) + Healing Magic Skill
   sets.midcast.CureWeather = set_combine(sets.midcast.CureNormal, {
+    main="Chatoyant Staff",           -- __, 10, ___,   5,   5, __ [__/__, ???] __
+    sub="Mensch Strap +1",            -- __, __, ___, ___, ___, __ [ 5/__, ___] __
+    ammo="Staunch Tathlum",           -- __, __, ___, ___, ___, 10 [ 2/ 2, ___] __
+    head=gear.Kaykaus_C_head,         -- __, 11,  16,  19,  14, 12 [__/ 3,  75] __
+    hands=gear.Chironic_SIRD_hands,   -- __, __, ___,  38,  20, 31 [__/__, ???] __; Can add more DT or Enmity
+    body="Bunzi's Robe",              -- __, 15, ___,  43,  23, __ [10/10, 139] 10
+    legs="Ebers Pantaloons +1",       -- __, __, ___,  33,  12, __ [__/__, 107] __; 6% cure mp return
+    neck="Loricate Torque +1",        -- __, __, ___, ___, ___,  5 [ 6/ 6, ___] __
+    ear2="Odnowa Earring +1",         -- __, __, ___, ___,   3, __,  3/ 5, __
+    ring1="Gelatinous Ring +1",       -- __, __, ___, ___,  15, __ [ 7/-1, ___] __
+    ring2="Defending Ring",           -- __, __, ___, ___, ___, __ [10/10, ___] __
+    back=gear.WHM_CP_Cape,            -- __, 10, ___,  30, ___, __ [10/__, ___] __
+    waist="Hachirin-no-Obi",          -- __, __, ___, ___, ___, __ [__/__, ___] __
+    ear1="Novia Earring",             -- __, __, ___, ___, ___, __ [__/__, ___]  7
+    -- ammo="Staunch Tathlum +1",     -- __, __, ___, ___, ___, 11 [ 3/ 3, ___] __
+    -- feet="Theophany Duckbills +3", -- __, __, ___,  34,  20, 29 [__/__, 127] __
+    -- ear2="Nourishing Earring +1",  -- __,  7, ___,   4, ___,  5 [__/__, ___] __; Resist Silence +15
+    
     main="Chatoyant Staff",           -- __, 10, ___,   5,   5, __, __/__, __
     sub="Mensch Strap +1",            -- __, __, ___, ___, ___, __ [ 5/__, ___] __
     ammo="Staunch Tathlum",           -- __, __, ___, ___, ___, 10,  2/ 2, __
@@ -347,6 +368,7 @@ function init_gear_sets()
     ear2="Odnowa Earring +1",         -- __, __, ___, ___,   3, __,  3/ 5, __
     ring1="Gelatinous Ring +1",       -- __, __, ___, ___,  15, __,  7/-1, __
     ring2="Defending Ring",           -- __, __, ___, ___, ___, __, 10/10, __
+    back=gear.WHM_CP_Cape,            -- __, 10, ___,  30, ___, __ [10/__, ___] __
     waist="Hachirin-no-Obi",          -- __, __, ___, ___, ___, __, __/__, __
 
     -- Ideal:
@@ -358,16 +380,16 @@ function init_gear_sets()
     -- body="Bunzi's Robe",           -- __, 15, ___,  43,  23, __ [10/10, 139] 10
     -- legs="Ebers Pantaloons +1",    -- __, __, ___,  33,  12, __ [__/__, 107] __; 6% cure mp return
     -- feet="Theophany Duckbills +3", -- __, __, ___,  34,  20, 29 [__/__, 127] __
-    -- neck="Loricate Torque +1",     -- __, __, ___, ___, ___,  5 [ 6/ 6, ???] __
+    -- neck="Loricate Torque +1",     -- __, __, ___, ___, ___,  5 [ 6/ 6, ___] __
     -- ear1="Novia Earring",          -- __, __, ___, ___, ___, __ [__/__, ___]  7
     -- ear2="Nourishing Earring +1",  -- __,  7, ___,   4, ___,  5 [__/__, ___] __; Resist Silence +15
-    -- ring1="Gelatinous Ring +1",    -- __, __, ___, ___,  15, __ [ 7/-1, ???] __
-    -- ring2="Defending Ring",        -- __, __, ___, ___, ___, __ [10/10, ???] __
-    -- back=gear.WHM_CP_Cape,         -- __, 10, ___,  30, ___, __ [10/__, ???] __
-    -- waist="Hachirin-no-Obi",       -- __, __, ___, ___, ___, __ [__/__, ???] __
-    -- Kaykaus set bonus              -- __, __, ___, ___, ___, __ [__/__, ???] __
+    -- ring1="Gelatinous Ring +1",    -- __, __, ___, ___,  15, __ [ 7/-1, ___] __
+    -- ring2="Defending Ring",        -- __, __, ___, ___, ___, __ [10/10, ___] __
+    -- back=gear.WHM_CP_Cape,         -- __, 10, ___,  30, ___, __ [10/__, ___] __
+    -- waist="Hachirin-no-Obi",       -- __, __, ___, ___, ___, __ [__/__, ___] __
+    -- Kaykaus set bonus              -- __, __, ___, ___, ___, __ [__/__, ___] __
     -- Base Stats                     -- __, __, 506, 129, 123, __ [__/__, ___] __
-    -- Merit points                   -- __, __, ___, ___, ___, 10 [__/__, ???]  5
+    -- Merit points                   -- __, __, ___, ___, ___, 10 [__/__, ___]  5
     -- 0 CPII, 53 CP, 522 Heal Skill, 335 MND, 232 VIT, 103 SIRD, 51PDT/31MDT, 22 -Enmity
   })
 
@@ -386,7 +408,9 @@ function init_gear_sets()
     ear2="Halasz Earring",            -- __, __, ___, ___, ___,  5, __/__,  3
     ring1="Gelatinous Ring +1",       -- __, __, ___, ___,  15, __,  7/-1, __; Use Janniston if you have it
     ring2="Defending Ring",           -- __, __, ___, ___, ___, __, 10/10, __
+    back=gear.WHM_CP_Cape,            -- __, 10, ___,  30, ___, __ [10/__, ___] __
     waist="Rumination Sash",          -- __, __, ___,   4, ___, 10, __/__, __
+    -- waist="Sanctuary Obi",         -- __, __, ___, ___, ___,  8 [__/__, ___]  3
 
     -- Ideal:
     -- main="Ababinili +1",           -- __, 34,  21,  12, ___, __ [10/10, ___] __
@@ -402,7 +426,7 @@ function init_gear_sets()
     -- ear2="Odnowa Earring +1",      -- __, __, ___, ___,   3, __ [ 3/ 5, ___] __
     -- ring1="Gelatinous Ring +1",    -- __, __, ___, ___,  15, __ [ 7/-1, ___] __
     -- ring2="Defending Ring",        -- __, __, ___, ___, ___, __ [10/10, ___] __
-    -- back=gear.WHM_CP_Cape,         -- __, 10, ___,  30, ___, __ [10/__,  20] __; Solace+10
+    -- back=gear.WHM_CP_Cape,         -- __, 10, ___,  30, ___, __ [10/__, ___] __; Solace+10
     -- waist="Sanctuary Obi +1",      -- __, __, ___, ___, ___, 10 [__/__, ___]  4
     -- Base Stats                     -- __, __, 506, 129, 123, __ [__/__, ___] __
     -- Merit points                   -- __, __, ___, ___, ___, 10 [__/__, ___]  5
@@ -424,6 +448,7 @@ function init_gear_sets()
     ear2="Odnowa Earring +1",         -- __, __, ___, ___,   3, __,  3/ 5, __
     ring1="Gelatinous Ring +1",       -- __, __, ___, ___,  15, __,  7/-1, __
     ring2="Defending Ring",           -- __, __, ___, ___, ___, __, 10/10, __
+    back=gear.WHM_CP_Cape,            -- __, 10, ___,  30, ___, __ [10/__, ___] __
     waist="Hachirin-no-Obi",          -- __, __, ___, ___, ___, __, __/__, __
 
     -- Ideal:
@@ -440,7 +465,7 @@ function init_gear_sets()
     -- ear2="Halasz Earring",         -- __, __, ___, ___, ___,  5 [__/__, ___]  3
     -- ring1="Gelatinous Ring +1",    -- __, __, ___, ___,  15, __ [ 7/-1, ___] __
     -- ring2="Defending Ring",        -- __, __, ___, ___, ___, __ [10/10, ___] __
-    -- back=gear.WHM_CP_Cape,         -- __, 10, ___,  30, ___, __ [10/__,  20] __; Solace+10
+    -- back=gear.WHM_CP_Cape,         -- __, 10, ___,  30, ___, __ [10/__, ___] __; Solace+10
     -- waist="Hachirin-no-Obi",       -- __, __, ___, ___, ___, __ [__/__, ___] __
     -- Base Stats                     -- __, __, 506, 129, 123, __ [__/__, ___] __
     -- Merit points                   -- __, __, ___, ___, ___, 10 [__/__, ___]  5
@@ -458,22 +483,24 @@ function init_gear_sets()
   -- WHM/SCH M30 Healing Magic Skill = 506
   sets.midcast.Cursna = {
     main="Gada",                      -- 18, ___,  6
-    -- sub="Chanter's Shield",        -- __, ___,  3
+    sub="Genmei Shield",              -- __, ___, __
     ammo="Incantor Stone",            -- __, ___,  2
     head=gear.Vanya_B_head,           -- 20, ___, __
-    -- body="Ebers Bliaut +1",        -- 24, ___, __
-    -- hands="Fanatic Gloves",        -- 10,  15,  7
-    -- legs="Theophany Pantaloons +3",-- __,  21, __
+    body="Ebers Bliaut +1",           -- 24, ___, __
     feet=gear.Vanya_B_feet,           -- 40,   5, __
     neck="Debilis Medallion",         -- __,  15, __
     ear1="Malignance Earring",        -- __, ___,  4
     ear2="Meili Earring",             -- 10, ___, __
     ring1="Haoma's Ring",             --  8,  15, __
     ring2="Menelaus's Ring",          -- 15,  20,-10
-    -- back=gear.WHM_FC_Cape,         -- __,  25, 10
+    back=gear.WHM_FC_Cape,            -- __,  25, 10
     waist="Embla Sash",               -- __, ___,  5
+    -- sub="Chanter's Shield",        -- __, ___,  3
+    -- hands="Fanatic Gloves",        -- 10,  15,  7
+    -- legs="Theophany Pantaloons +3",-- __,  21, __
     -- Base stats                       506, ___, __
     -- 651 Healing skill, 116 Cursna+, 27 FC; Cursna Rate = 68.472%
+    
 
     -- Ideal:
     -- main="Gambanteinn",             -- __, 100, __ [__/__, ___]
@@ -495,9 +522,7 @@ function init_gear_sets()
     -- 614 Healing skill, 216 Cursna+, 7 FC [36PDT/26MDT, 505MEVA]; Cursna Rate = 96.275%
   }
 
-  sets.midcast.StatusRemoval = sets.midcast.FastRecast
-
-  sets.midcast.Erase = set_combine(sets.midcast.StatusRemoval, {
+  sets.midcast.Erase = set_combine(sets.midcast.FastRecast, {
     neck="Cleric's Torque +1",
   })
 
@@ -510,6 +535,10 @@ function init_gear_sets()
     hands=gear.Telchine_ENH_hands,    -- __, 10, __ [__/__,  61]
     legs=gear.Telchine_ENH_legs,      -- __, 10, __ [__/__, 128]
     feet=gear.Telchine_ENH_feet,      -- __,  9, __ [__/__, 107]
+    ear1="Mimir Earring",             -- 10, __, __ [__/__, ___]
+    ear2="Odnowa Earring +1",         -- __, __, __ [ 3/ 5, ___]
+    ring2="Defending Ring",           -- __, __, __ [10/10, ___]
+    back=gear.WHM_FC_Cape,            -- __, __, 10 [10/__,  20]
     waist="Embla Sash",               -- __, 10,  5 [__/__, ___]
     -- Base                             394; Includes merits
     -- Master Levels                     30
@@ -533,7 +562,7 @@ function init_gear_sets()
     -- Base                             394; Includes merits
     -- Master Levels                     30
     -- 503 Enh Skill, 55% Enh Duration, 30 FC [51 PDT/38 MDT, 521 MEVA]
-  } -- 454 Enh Skill, 68% Enh Duration, 5 FC [3 PDT/3 MDT, 451 MEVA]
+  } -- 454 Enh Skill, 68% Enh Duration, 5 FC [26 PDT/18 MDT, 471 MEVA]
 
   sets.midcast.EnhancingDuration = {
     main="Gada",                      -- 18, __, __ [__/__, ___]
@@ -544,6 +573,7 @@ function init_gear_sets()
     hands=gear.Telchine_ENH_hands,    -- __, 10, __ [__/__,  61]
     legs=gear.Telchine_ENH_legs,      -- __, 10, __ [__/__, 128]
     feet=gear.Telchine_ENH_feet,      -- __,  9, __ [__/__, 107]
+    ear1="Mimir Earring",             -- 10, __, __ [__/__, ___]
     waist="Embla Sash",               -- __, 10,  5 [__/__, ___]
     -- Base                             394; Includes merits
     -- Master Levels                     30
@@ -577,16 +607,16 @@ function init_gear_sets()
     sub="Mensch Strap +1",      -- [ 5/__, ___] __, __
     ammo="Incantor Stone",      -- [__/__, ___] __,  2
     head="Bunzi's Hat",         -- [ 7/ 7, 123] __, 10
+    body="Inyanga Jubbah +2",   -- [__/ 8, 120] __, 14
     feet=gear.Merl_FC_feet,     -- [__/__, 118] __, 11
     neck="Nodens Gorget",       -- [__/__, ___] 30, __
     ear2="Malignance Earring",  -- [__/__, ___] __,  4
     ring1="Kishar Ring",        -- [__/__, ___] __,  4
     ring2="Defending Ring",     -- [10/10, ___] __, __
-    -- body="Inyanga Jubbah +2",-- [__/ 8, 120] __, 14
+    back=gear.WHM_FC_Cape,      -- [10/__,  20] __, 10
     -- hands="Stone Mufflers",  -- [__/__, ___] 30, __
     -- legs="Shedir Seraweels", -- [__/__, ___] 35, __
     -- ear1="Earthcry Earring", -- [__/__, ___] 10, __
-    -- back=gear.WHM_FC_Cape,   -- [10/__,  20] __, 10
     -- waist="Siegel Sash",     -- [__/__, ___] 20, __
     -- [52 PDT/45 MDT, 381 MEVA] +125 Stoneskin Potency, 55 Fast Cast
   }
@@ -599,32 +629,33 @@ function init_gear_sets()
 
   -- At least 500 Enh magic skill
   sets.midcast.BarElement = {
+    main="Beneficus",                 -- 15, __ [__/__, ___] __,  5
+    sub="Genmei Shield",              -- __, __ [10/__, ___] __, __
     head=gear.Telchine_ENH_head,      -- __,  9 [__/__,  75] __, __
     body=gear.Telchine_ENH_body,      -- 12, 10 [__/__,  80] __, __
     hands=gear.Telchine_ENH_hands,    -- __, 10 [__/__,  61] __, __
     legs=gear.Telchine_ENH_legs,      -- __, 10 [__/__, 128] __, __
     feet=gear.Telchine_ENH_feet,      -- __,  9 [__/__, 107] __, __
     neck="Loricate Torque +1",        -- __, __ [ 6/ 6, ___] __, __
+    ear1="Mimir Earring",             -- 10, __, __ [__/__, ___]
     ear2="Odnowa Earring +1",         -- __, __ [ 3/ 5, ___] __, __
     ring1="Gelantinous Ring +1",      -- __, __ [ 7/-1, ___] __, __
     ring2="Defending Ring",           -- __, __ [10/10, ___] __, __
+    back=gear.WHM_FC_Cape,            -- __, __ [10/__,  20] __, __
     waist="Embla Sash",               -- __, 10 [__/__, ___] __, __
     -- Merits/JP                         16, __ [__/__, ___] 50, 10
     -- Base                             378
     -- Master Levels                     30
 
-    -- main="Beneficus",              -- 15, __ [__/__, ___] __,  5
-    -- sub="Genmei Shield",           -- __, __ [10/__, ___] __, __
     -- ammo="Staunch Tathlum +1",     -- __, __ [ 3/ 3, ___] __, __
     -- head=gear.Telchine_ENH_head,   -- __, 10 [__/__, 100] __, __
     -- body="Ebers Bliaut +1",        -- __, __ [__/__,  80] __, 14
     -- hands="Dynasty Mitts",         -- 18,  5 [__/__,  37] __, __
     -- legs="Piety Pantaloons +3",    -- 26, __ [__/__, 127] 36, __
     -- feet="Theophany Duckbills +3", -- 21, 10 [__/__, 127] __, __
-    -- ear1="Mimir Earring",          -- 10, __ [__/__, ___] __, __
     -- back=gear.WHM_FC_Cape,         -- __, __ [10/__,  20] __, __
     -- 514 Enh Skill, 35% Enh Duration [49 PDT/23 MDT, 491 MEVA] 86 Barspell Resistance, 29 Barspell M.Def
-  } -- 436 Enh Skill, 58% Enh Duration [26 PDT/20 MDT, 451 MEVA] 50 Barspell Resistance, 10 Barspell M.Def
+  } -- 436 Enh Skill, 58% Enh Duration [36 PDT/20 MDT, 471 MEVA] 50 Barspell Resistance, 10 Barspell M.Def
 
   -- TODO
   sets.midcast.Regen = set_combine(sets.midcast['Enhancing Magic'],{
@@ -636,22 +667,13 @@ function init_gear_sets()
     -- legs="Theophany Pantaloons",
   })
 
-  -- sets.midcast['Divine Magic'] = {main="Bolelabunga",sub="Genmei Shield",
-  --     head="Nahtirah Hat",neck="Colossus's Torque",ear1="Psystorm Earring",ear2="Lifestorm Earring",
-  --     body="Vanir Cotehardie",hands="Yaoyotl Gloves",ring2="Sangoma Ring",
-  --     back="Refraction Cape",waist=gear.ElementalObi,legs="Theophany Pantaloons",feet="Gendewitha Galoshes"}
-
-  -- sets.midcast['Dark Magic'] = {main="Bolelabunga", sub="Genmei Shield",
-  --     head="Nahtirah Hat",neck="Aesir Torque",ear1="Psystorm Earring",ear2="Lifestorm Earring",
-  --     body="Vanir Cotehardie",hands="Yaoyotl Gloves",ring1="Strendu Ring",ring2="Sangoma Ring",
-  --     back="Refraction Cape",waist="Demonry Sash",legs="Bokwus Slops",feet="Piety Duckbills +1"}
-
   sets.midcast.MndEnfeebles = {
     ammo="Pemphredo Tathlum",         -- __,  8, __,  4 [__/__, ___]
     head="Bunzi's Hat",               -- __, 40, 33, 34 [ 7/ 7, 123]
     body="Bunzi's Robe",              -- __, 40, 43, 48 [10/10, 139]
     ear1="Regal Earring",             -- __, __, 10, 10 [__/__, ___]
     ear2="Malignance Earring",        -- __, 10,  8,  8 [__/__, ___]
+    back=gear.WHM_MND_MAcc_Cape,      -- __, 30, 20, __ [10/__, ___]
     -- main="Daybreak",               -- __, 40, 30, __ [__/__, ___]
     -- sub="Genmei Shield",           -- __, __, __, __ [10/__, ___]
     -- hands=gear.Kaykaus_A_hands,    -- 16, 53, 47, 19 [__/__,  37]
@@ -666,36 +688,35 @@ function init_gear_sets()
     -- 76 Enfeebling skill, 382 M.Acc, 283 MND, 253 INT [27 PDT/17 MDT, 544 MEVA]
   }
 
-  sets.midcast.IntEnfeebles = sets.midcast.MndEnfeebles
+  sets.midcast.IntEnfeebles = set_combine(sets.midcast.MndEnfeebles, {
+    back=gear.WHM_INT_MAcc_Cape,
+  })
 
-  --Max Macc. Duration flat 120 + dur gear
+  -- TODO
+  -- Max Macc. Duration flat 120 + dur gear
   sets.midcast.Silence = {
-    main="Daybreak",
     ammo="Pemphredo tathlum",
-    head="Inyanga tiara +2",
     body="Inyanga Jubbah +2",
-    hands="Kaykaus Cuffs +1",
-    legs="Inyanga shalwar +2",
-    feet="Inyanga crackows +2",
     neck="Sanctity Necklace",
-    ring1={name="Stikini Ring +1",bag="wardrobe3"}, 
-    ring2={name="Stikini Ring +1",bag="wardrobe4"}, 
-    waist="Acuity Belt +1",
-    back="Aurist's Cape +1",
-    -- ear1="Regal Earring",
-    ear1="Malignance Earring",
+    ear1="Regal Earring",
     ear2="Vor Earring",
+    back=gear.WHM_MND_MAcc_Cape,
+    -- main="Daybreak",
+    -- sub="Ammurapi Shield",
+    -- head="Inyanga Tiara +2",
+    -- hands="Kaykaus Cuffs +1",
+    -- legs="Inyanga Shalwar +2",
+    -- feet="Inyanga Crackows +2",
+    -- ring1="Stikini Ring +1",
+    -- ring2="Stikini Ring +1",
+    -- back="Aurist's Cape +1",
+    -- waist="Acuity Belt +1",
   }
 
   sets.midcast.Dispelga = {
     -- main="Daybreak",
     -- sub="Genmei Shield",
   }
-
-  -- sets.midcast.IntEnfeebles = {main="Lehbrailg +2", sub="Mephitis Grip",
-  --     head="Nahtirah Hat",neck="Weike Torque",ear1="Psystorm Earring",ear2="Lifestorm Earring",
-  --     body="Vanir Cotehardie",hands="Yaoyotl Gloves",ring1="Icesoul Ring",ring2="Sangoma Ring",
-  --     back="Refraction Cape",waist="Demonry Sash",legs="Bokwus Slops",feet="Piety Duckbills +1"}
 
 
 ------------------------------------------------------------------------------------------------
@@ -757,15 +778,11 @@ function init_gear_sets()
     -- back="Mending Cape",
   }
 
+  -- Can remove from self with 100% success with this set
   sets.buff.Doom = {
-    neck="Nicander's Necklace", --20
-    ring1={name="Saida Ring", bag="wardrobe4"}, --15
-    ring2={name="Saida Ring", bag="wardrobe4"}, --15
-    -- ring1="Eshmun's Ring", --20
-    -- ring2="Eshmun's Ring", --20
-    waist="Gishdubar Sash", --10
+    -- waist="Gishdubar Sash", --10
   }
-  
+
   sets.CP = {
     back=gear.CP_Cape
   }
@@ -787,29 +804,13 @@ end
 function job_precast(spell, action, spellMap, eventArgs)
   silibs.precast_hook(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
+  if spellMap == 'StatusRemoval' and not buffactive['Divine Caress'] then
+    equip(sets.precast.FC.QuickStatusRemoval)
+    eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
+  end
 end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
-  -- If magic and grimoire is active, use Grimoire sub-set
-  local crumbs = mote_vars.set_breadcrumbs
-  if spell.action_type == 'Magic' then
-    if (buffactive["Light Arts"] or buffactive["Addendum: White"]) or (buffactive["Dark Arts"] or buffactive["Addendum: Black"]) then
-      if (#crumbs == 3) then
-        equip(sets[crumbs[2]][crumbs[3]].Grimoire)
-      end
-      if (#crumbs == 4) then
-        equip(sets[crumbs[2]][crumbs[3]][crumbs[4]].Grimoire)
-      end
-      if spell.name == 'Impact' then
-        equip(sets.precast.FC.Impact.Grimoire)
-      end
-    else
-      if spell.name == 'Impact' then
-        equip(sets.precast.FC.Impact)
-      end
-    end
-  end
-  
   -- Handle belts for elemental WS
   if spell.type == 'WeaponSkill' and elemental_ws:contains(spell.english) then
     local base_day_weather_mult = silibs.get_day_weather_multiplier(spell.element, false, false)
@@ -909,8 +910,7 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
   end
 
   -- Apply Divine Caress boosting items as highest priority over other gear, if applicable.
-  if spellMap == 'StatusRemoval' and buffactive['Divine Caress']
-      and spell.english ~= 'Erase' and spell.english ~= 'Esuna' and spell.english ~= 'Sacrifice' then
+  if spellMap == 'StatusRemoval' and buffactive['Divine Caress'] then
     equip(sets.buff['Divine Caress'])
   end
 

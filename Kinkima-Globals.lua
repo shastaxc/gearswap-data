@@ -1,5 +1,6 @@
 send_command('ev pos 1260 720')
 
+include('reorganizer-lib')
 res = include('resources')
 inspect = include('inspect')
 packets = include('packets')

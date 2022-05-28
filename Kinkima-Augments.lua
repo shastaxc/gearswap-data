@@ -98,7 +98,7 @@ gear.Merl_MB_feet = { name="Merlinic Crackows", augments={'Magic burst dmg.+8%',
 
 -- Gendewitha
 gear.Gende_SongFC_head = {} -- 5 Song Spellcasting Time-, 3 Song Recast Delay-, 4 PDT
-gear.Gende_SongFC_hands = {} -- 5 Song Spellcasting Time-, 3 Song Recast Delay-, 4 PDT
+gear.Gende_SongFC_hands = { name="Gende. Gages +1", augments={'Phys. dmg. taken -3%','Magic dmg. taken -2%','Song spellcasting time -4%',}} -- 5 Song Spellcasting Time-, 3 Song Recast Delay-, 4 PDT
 gear.Gende_SongFC_legs = {} -- 5 Song Spellcasting Time-, 3 Song Recast Delay-, 4 PDT
 gear.Gende_SongFC_feet = {} -- 5 Song Spellcasting Time-, 3 Song Recast Delay-, 4 PDT
 
@@ -169,17 +169,21 @@ gear.SCH_Adoulin_Helix_Cape = { name="Bookworm's Cape", augments={'INT+1','MND+1
 -- gear.BLU_DW_Cape = { name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dual Wield"+10','Phys. dmg. taken-10%',}}
 -- gear.BLU_MAB_Cape ={ name="Rosmerta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
 
-gear.SCH_MAB_Cape = { name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Mag. Evasion+15',}}
 gear.SCH_FC_Cape = { name="Lugh's Cape", augments={'MND+20','MND+10','"Fast Cast"+10','Phys. dmg. taken-10%',}}
--- gear.SCH_INT_MAcc_Cape = {name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc+10','"Fast Cast"+10','Mag. Evasion+15',}}
-gear.SCH_MND_MAcc_Cape = { name="Lugh's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Cure" potency +10%','Mag. Evasion+15',}}
+gear.SCH_MAB_Cape = { name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Mag. Evasion+15',}}
+gear.SCH_INT_MAcc_Cape = gear.SCH_MAB_Cape
+gear.SCH_CP_Cape = { name="Lugh's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Cure" potency +10%','Mag. Evasion+15',}} -- Change M.Eva for PDT
 gear.SCH_MP_Cape = { name="Lugh's Cape", augments={'MP+60','Eva.+20 /Mag. Eva.+20','MP+20','"Regen"+5',}}
 gear.SCH_Regen_Cape = gear.SCH_MP_Cape
+gear.SCH_MND_MAcc_Cape = gear.SCH_CP_Cape
+gear.SCH_Helix_Cape = gear.SCH_MAB_Cape
 -- gear.SCH_Helix_Cape = { name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Magic Damage +10','"Mag.Atk.Bns."+10',}}
--- gear.SCH_CP_Cape = { name="Lugh's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','MND+10','"Cure" potency +10%','Phys. dmg. taken-10%',}}
 
--- gear.WHM_FC_Cape = { name="Alaunus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','MND+10','"Fast Cast"+10','Phys. dmg. taken-10%',}}
--- gear.WHM_CP_Cape = { name="Alaunus's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','MND+10','"Cure" potency +10%','Phys. dmg. taken-10%',}}
+gear.WHM_FC_Cape = { name="Alaunus's Cape", augments={'INT+20','Eva.+20 /Mag. Eva.+20','INT+10','"Fast Cast"+10','Phys. dmg. taken-10%',}}
+-- gear.WHM_FC_Cape = { name="Alaunus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Fast Cast"+10','Phys. dmg. taken-10%',}}
+gear.WHM_INT_MAcc_Cape = gear.WHM_FC_Cape
+gear.WHM_CP_Cape = { name="Alaunus's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Cure" potency +10%','Phys. dmg. taken-10%',}}
+gear.WHM_MND_MAcc_Cape = gear.WHM_CP_Cape
 
 
 ----------------------------------------------------------------------

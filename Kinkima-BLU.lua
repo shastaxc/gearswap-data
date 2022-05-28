@@ -57,6 +57,9 @@ function get_sets()
   include('Mote-Include.lua') -- Executes job_setup, user_setup, init_gear_sets
 
   coroutine.schedule(function()
+    send_command('gs reorg')
+  end, 1)
+  coroutine.schedule(function()
     send_command('gs c weaponset current')
   end, 2)
 end
@@ -479,7 +482,7 @@ function init_gear_sets()
   sets.midcast.Trust = sets.precast.FC
 
   sets.midcast.SpellInterrupt = {
-    -- ammo="Impatiens", --10
+    ammo="Impatiens", --10
     ring1="Evanescence Ring", --5
     waist="Rumination Sash", --10
   }

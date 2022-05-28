@@ -3,6 +3,9 @@ function get_sets()
   -- Load and initialize Mote library
   mote_include_version = 2
   include('Mote-Include.lua') -- Executes job_setup, user_setup, init_gear_sets
+  coroutine.schedule(function()
+    send_command('gs reorg')
+  end, 1)
 end
 
 -- Executes on first load and main job change
@@ -477,12 +480,12 @@ function init_gear_sets()
     hands=gear.Telchine_ENH_hands,    -- __, 10, __
     legs=gear.Telchine_ENH_legs,      -- __, 10, __
     feet=gear.Kaykaus_D_feet,         -- 21, __,  4
+    ear1="Mimir Earring",             -- 10, __, __
     waist="Embla Sash",               -- __, 10,  5
     -- main=gear.Gada_ENH,            -- 18,  6,  6
     -- ammo="Savant's Treatise",      --  4, __, __
     -- head=gear.Telchine_ENH_head,   -- __, 10, __
     -- neck="Incanter's Torque",      -- 10, __, __
-    -- ear1="Mimir Earring",          -- 10, __, __
     -- ear2="Andoaa Earring",         --  5, __, __
     -- ring1="Stikini Ring +1",       --  8, __, __
     -- ring2="Stikini Ring +1",       --  8, __, __
