@@ -298,178 +298,122 @@ function init_gear_sets()
   -- WHM/SCH M30 Healing Magic Skill = 506
   -- Cap at 700 power; Power = floor(MND÷2) + floor(VIT÷4) + Healing Magic Skill
   sets.midcast.CureNormal = {
-    main="Malignance Pole",           -- __, __, ___, ___,  40, __ [20/20, ___] __
-    sub="Mensch Strap +1",            -- __, __, ___, ___, ___, __ [ 5/__, ___] __
+    main="Eremite's Wand +1",         -- __, __, ___,   2, ___, 25 [__/__, ___] __
+    sub="Genmei Shield",              -- __, __, ___, ___, ___, __ [10/__, ___] __
     ammo="Staunch Tathlum",           -- __, __, ___, ___, ___, 10 [ 2/ 2, ___] __
     head=gear.Kaykaus_C_head,         -- __, 11,  16,  19,  14, 12 [__/ 3,  75] __
-    body=gear.Kaykaus_C_body,         --  4, __, ___,  33,  20, 12 [__/__,  80] __
-    hands=gear.Chironic_SIRD_hands,   -- __, __, ___,  38,  20, 31 [__/__,  48] __; Can add more DT or Enmity
-    legs=gear.Kaykaus_C_legs,         -- __, 11, ___,  30,  12, 12 [__/__, 107] __
+    body="Rosette Jaseran +1",        -- __, __, ___,  39,  31, 25 [ 5/ 5,  80] 13
+    legs="Ebers Pantaloons +1",       -- __, __, ___,  33,  12, __ [__/__, 107] __; 6% cure mp return
     feet=gear.Kaykaus_D_feet,         -- __, 17, ___,  19,  10, __ [__/__, 107]  6
     neck="Loricate Torque +1",        -- __, __, ___, ___, ___,  5 [ 6/ 6, ___] __
-    ear2="Halasz Earring",            -- __, __, ___, ___, ___,  5 [__/__, ___]  3
     ring1="Gelatinous Ring +1",       -- __, __, ___, ___,  15, __ [ 7/-1, ___] __
     ring2="Defending Ring",           -- __, __, ___, ___, ___, __ [10/10, ___] __
     back=gear.WHM_CP_Cape,            -- __, 10, ___,  30, ___, __ [10/__, ___] __
     waist="Rumination Sash",          -- __, __, ___,   4, ___, 10 [__/__, ___] __
+    -- Kaykaus bonus                      4, __, ___, ___, ___, __ [__/__, ___] __
+    -- Base Stats                        __, __, 506, 129, 123, __ [__/__, ___] __
+    -- Merit points                      __, __, ___, ___, ___, 10 [__/__, ___]  5
+    -- 4 CPII, 38 CP, 522 Heal Skill, 275 MND, 205 VIT, 97 SIRD [50PDT/25MDT, 369 M.Eva] 24 -Enmity
 
-    -- Ideal:
-    -- main="Eremite's Wand +1",      -- __, __, ___,   2, ___, 25 [__/__, ___] __
     -- sub="Genbu's Shield",          -- __,  5, ___, ___, ___, __ [10/__, ___] __; Requires synergy aug
     -- ammo="Staunch Tathlum +1",     -- __, __, ___, ___, ___, 11 [ 3/ 3, ___] __
-    -- head=gear.Kaykaus_C_head,      -- __, 11,  16,  19,  14, 12 [__/ 3,  75] __
-    -- body="Rosette Jaseran +1",     -- __, __, ___,  39,  31, 25 [ 5/ 5,  80] 13
     -- hands="Theophany Mitts +3",    --  4, __,  21,  48,  35, __ [__/__,  47]  6
-    -- legs="Ebers Pantaloons +1",    -- __, __, ___,  33,  12, __ [__/__, 107] __; 6% cure mp return
-    -- feet=gear.Kaykaus_D_feet,      -- __, 17, ___,  19,  10, __ [__/__, 107]  6
-    -- neck="Loricate Torque +1",     -- __, __, ___, ___, ___,  5 [ 6/ 6, ___] __
     -- ear1="Novia Earring",          -- __, __, ___, ___, ___, __ [__/__, ___]  7
     -- ear2="Nourishing Earring +1",  -- __,  7, ___,   4, ___,  5 [__/__, ___] __; Resist Silence +15
-    -- ring1="Gelatinous Ring +1",    -- __, __, ___, ___,  15, __ [ 7/-1, ___] __
-    -- ring2="Defending Ring",        -- __, __, ___, ___, ___, __ [10/10, ___] __
-    -- back=gear.WHM_CP_Cape,         -- __, 10, ___,  30, ___, __ [10/__, ___] __
     -- waist="Sanctuary Obi +1",      -- __, __, ___, ___, ___, 10 [__/__, ___]  4
     -- Kaykaus bonus                      4, __, ___, ___, ___, __ [__/__, ___] __
-    -- Base Stats                     -- __, __, 506, 129, 123, __ [__/__, ___] __
-    -- Merit points                   -- __, __, ___, ___, ___, 10 [__/__, ___]  5
-    -- 8 CPII, 50 CP, 543 Heal Skill, 323 MND, 240 VIT, 103 SIRD [51PDT/26MDT, 416 MEVA] 41 -Enmity
+    -- Base Stats                        __, __, 506, 129, 123, __ [__/__, ___] __
+    -- Merit points                      __, __, ___, ___, ___, 10 [__/__, ___]  5
+    -- 8 CPII, 50 CP, 543 Heal Skill, 323 MND, 240 VIT, 103 SIRD [51PDT/26MDT, 416 M.Eva] 41 -Enmity
   }
 
   -- WHM/SCH M30 Healing Magic Skill = 506
   -- Cap at 700 power; Power = floor(MND÷2) + floor(VIT÷4) + Healing Magic Skill
   sets.midcast.CureWeather = set_combine(sets.midcast.CureNormal, {
-    main="Chatoyant Staff",           -- __, 10, ___,   5,   5, __ [__/__, ???] __
+    main="Chatoyant Staff",           -- __, 10, ___,   5,   5, __ [__/__, ___] __
     sub="Mensch Strap +1",            -- __, __, ___, ___, ___, __ [ 5/__, ___] __
     ammo="Staunch Tathlum",           -- __, __, ___, ___, ___, 10 [ 2/ 2, ___] __
     head=gear.Kaykaus_C_head,         -- __, 11,  16,  19,  14, 12 [__/ 3,  75] __
-    hands=gear.Chironic_SIRD_hands,   -- __, __, ___,  38,  20, 31 [__/__, ???] __; Can add more DT or Enmity
+    hands=gear.Chironic_SIRD_hands,   -- __, __, ___,  38,  20, 31 [__/__,  48] __; Can add more DT or Enmity
     body="Bunzi's Robe",              -- __, 15, ___,  43,  23, __ [10/10, 139] 10
     legs="Ebers Pantaloons +1",       -- __, __, ___,  33,  12, __ [__/__, 107] __; 6% cure mp return
+    feet=gear.Kaykaus_D_feet,         -- __, 17, ___,  19,  10, __ [__/__, 107]  6
     neck="Loricate Torque +1",        -- __, __, ___, ___, ___,  5 [ 6/ 6, ___] __
-    ear2="Odnowa Earring +1",         -- __, __, ___, ___,   3, __,  3/ 5, __
+    ear1="Odnowa Earring +1",         -- __, __, ___, ___,   3, __ [ 3/ 5, ___] __
     ring1="Gelatinous Ring +1",       -- __, __, ___, ___,  15, __ [ 7/-1, ___] __
     ring2="Defending Ring",           -- __, __, ___, ___, ___, __ [10/10, ___] __
     back=gear.WHM_CP_Cape,            -- __, 10, ___,  30, ___, __ [10/__, ___] __
-    waist="Hachirin-no-Obi",          -- __, __, ___, ___, ___, __ [__/__, ___] __
-    ear1="Novia Earring",             -- __, __, ___, ___, ___, __ [__/__, ___]  7
-    -- ammo="Staunch Tathlum +1",     -- __, __, ___, ___, ___, 11 [ 3/ 3, ___] __
-    -- feet="Theophany Duckbills +3", -- __, __, ___,  34,  20, 29 [__/__, 127] __
-    -- ear2="Nourishing Earring +1",  -- __,  7, ___,   4, ___,  5 [__/__, ___] __; Resist Silence +15
-    
-    main="Chatoyant Staff",           -- __, 10, ___,   5,   5, __, __/__, __
-    sub="Mensch Strap +1",            -- __, __, ___, ___, ___, __ [ 5/__, ___] __
-    ammo="Staunch Tathlum",           -- __, __, ___, ___, ___, 10,  2/ 2, __
-    head=gear.Kaykaus_C_head,         -- __, 11,  16,  19,  14, 12, __/ 3, __
-    body="Rosette Jaseran +1",        -- __, __, ___,  39,  31, 25,  5/ 5, 13
-    hands=gear.Chironic_SIRD_hands,   -- __, __, ___,  38,  20, 31, __/__, __; Can add more DT or Enmity
-    legs=gear.Kaykaus_C_legs,         -- __, 11, ___,  30,  12, 12, __/__, __
-    feet=gear.Kaykaus_D_feet,         -- __, 17, ___,  19,  10, __, __/__,  6
-    neck="Loricate Torque +1",        -- __, __, ___, ___, ___,  5,  6/ 6, __
-    ear2="Odnowa Earring +1",         -- __, __, ___, ___,   3, __,  3/ 5, __
-    ring1="Gelatinous Ring +1",       -- __, __, ___, ___,  15, __,  7/-1, __
-    ring2="Defending Ring",           -- __, __, ___, ___, ___, __, 10/10, __
-    back=gear.WHM_CP_Cape,            -- __, 10, ___,  30, ___, __ [10/__, ___] __
-    waist="Hachirin-no-Obi",          -- __, __, ___, ___, ___, __, __/__, __
-
-    -- Ideal:
-    -- main="Chatoyant Staff",        -- __, 10, ___,   5,   5, __ [__/__, ???] __
-    -- sub="Mensch Strap +1",         -- __, __, ___, ___, ___, __ [ 5/__, ___] __
-    -- ammo="Staunch Tathlum +1",     -- __, __, ___, ___, ___, 11 [ 3/ 3, ???] __
-    -- head=gear.Kaykaus_C_head,      -- __, 11,  16,  19,  14, 12 [__/ 3,  75] __
-    -- hands=gear.Chironic_SIRD_hands,-- __, __, ___,  38,  20, 31 [__/__, ???] __; Can add more DT or Enmity
-    -- body="Bunzi's Robe",           -- __, 15, ___,  43,  23, __ [10/10, 139] 10
-    -- legs="Ebers Pantaloons +1",    -- __, __, ___,  33,  12, __ [__/__, 107] __; 6% cure mp return
-    -- feet="Theophany Duckbills +3", -- __, __, ___,  34,  20, 29 [__/__, 127] __
-    -- neck="Loricate Torque +1",     -- __, __, ___, ___, ___,  5 [ 6/ 6, ___] __
-    -- ear1="Novia Earring",          -- __, __, ___, ___, ___, __ [__/__, ___]  7
-    -- ear2="Nourishing Earring +1",  -- __,  7, ___,   4, ___,  5 [__/__, ___] __; Resist Silence +15
-    -- ring1="Gelatinous Ring +1",    -- __, __, ___, ___,  15, __ [ 7/-1, ___] __
-    -- ring2="Defending Ring",        -- __, __, ___, ___, ___, __ [10/10, ___] __
-    -- back=gear.WHM_CP_Cape,         -- __, 10, ___,  30, ___, __ [10/__, ___] __
-    -- waist="Hachirin-no-Obi",       -- __, __, ___, ___, ___, __ [__/__, ___] __
+    waist="Hachirin-no-Obi",          -- __, __, ___, ___, ___, __ [__/__, ___] ____; Resist Silence +15
     -- Kaykaus set bonus              -- __, __, ___, ___, ___, __ [__/__, ___] __
     -- Base Stats                     -- __, __, 506, 129, 123, __ [__/__, ___] __
     -- Merit points                   -- __, __, ___, ___, ___, 10 [__/__, ___]  5
-    -- 0 CPII, 53 CP, 522 Heal Skill, 335 MND, 232 VIT, 103 SIRD, 51PDT/31MDT, 22 -Enmity
+    -- 0 CPII, 63 CP, 522 Heal Skill, 316 MND, 225 VIT, 68 SIRD [53PDT/35MDT, 476 M.Eva] 21 -Enmity
+
+    -- ammo="Staunch Tathlum +1",     -- __, __, ___, ___, ___, 11 [ 3/ 3, ___] __
+    -- feet="Theophany Duckbills +3", -- __, __, ___,  34,  20, 29 [__/__, 127] __
+    -- ear1="Novia Earring",          -- __, __, ___, ___, ___, __ [__/__, ___]  7
+    -- ear2="Nourishing Earring +1",  -- __,  7, ___,   4, ___,  5 [__/__, ___] __; Resist Silence +15
+    -- Kaykaus set bonus              -- __, __, ___, ___, ___, __ [__/__, ___] __
+    -- Base Stats                     -- __, __, 506, 129, 123, __ [__/__, ___] __
+    -- Merit points                   -- __, __, ___, ___, ___, 10 [__/__, ___]  5
+    -- 0 CPII, 53 CP, 522 Heal Skill, 335 MND, 232 VIT, 103 SIRD [51PDT/31MDT, 496 M.Eva] 22 -Enmity
   })
 
   -- WHM/SCH M30 Healing Magic Skill = 506
   -- Cap at 700 power; Power = floor(MND÷2) + floor(VIT÷4) + Healing Magic Skill
   sets.midcast.CureSolace = set_combine(sets.midcast.CureNormal, {
-    main="Malignance Pole",           -- __, __, ___, ___,  40, __, 20/20, __
+    main="Ababinili +1",              -- __, 34,  21,  12, ___, __ [10/10, ___] __
     sub="Mensch Strap +1",            -- __, __, ___, ___, ___, __ [ 5/__, ___] __
-    ammo="Staunch Tathlum",           -- __, __, ___, ___, ___, 10,  2/ 2, __
-    head=gear.Kaykaus_C_head,         -- __, 11,  16,  19,  14, 12, __/ 3, __
-    body=gear.Kaykaus_C_body,         --  4, __, ___,  33,  20, 12, __/__, __
-    hands=gear.Chironic_SIRD_hands,   -- __, __, ___,  38,  20, 31, __/__, __; Can add more DT or Enmity
-    legs=gear.Kaykaus_C_legs,         -- __, 11, ___,  30,  12, 12, __/__, __
-    feet=gear.Kaykaus_D_feet,         -- __, 17, ___,  19,  10, __, __/__,  6
-    neck="Loricate Torque +1",        -- __, __, ___, ___, ___,  5,  6/ 6, __
-    ear2="Halasz Earring",            -- __, __, ___, ___, ___,  5, __/__,  3
-    ring1="Gelatinous Ring +1",       -- __, __, ___, ___,  15, __,  7/-1, __; Use Janniston if you have it
-    ring2="Defending Ring",           -- __, __, ___, ___, ___, __, 10/10, __
-    back=gear.WHM_CP_Cape,            -- __, 10, ___,  30, ___, __ [10/__, ___] __
-    waist="Rumination Sash",          -- __, __, ___,   4, ___, 10, __/__, __
-    -- waist="Sanctuary Obi",         -- __, __, ___, ___, ___,  8 [__/__, ___]  3
+    ammo="Staunch Tathlum",           -- __, __, ___, ___, ___, 10 [ 2/ 2, ___] __
+    body="Ebers Bliaut +1",           -- __, __,  24,  33,  20, __ [__/__,  80] __; Solace+14
+    hands=gear.Chironic_SIRD_hands,   -- __, __, ___,  38,  20, 31 [__/__,  48] __; Can add more DT or Enmity
+    legs="Ebers Pantaloons +1",       -- __, __, ___,  33,  12, __ [__/__, 107] __; 6% cure mp return
+    neck="Cleric's Torque +1",        -- __,  7, ___,  12, ___, __ [__/__, ___] 20
+    ear2="Odnowa Earring +1",         -- __, __, ___, ___,   3, __ [ 3/ 5, ___] __
+    ring1="Gelatinous Ring +1",       -- __, __, ___, ___,  15, __ [ 7/-1, ___] __
+    ring2="Defending Ring",           -- __, __, ___, ___, ___, __ [10/10, ___] __
+    back=gear.WHM_CP_Cape,            -- __, 10, ___,  30, ___, __ [10/__, ___] __; Solace+10
+    waist="Rumination Sash",          -- __, __, ___,   4, ___, 10 [__/__, ___] __
+    -- Base Stats                     -- __, __, 506, 129, 123, __ [__/__, ___] __
+    -- Merit points                   -- __, __, ___, ___, ___, 10 [__/__, ___]  5
+    -- 0 CPII, 51 CP, 551 Heal Skill, 291 MND, 193 VIT, 61 SIRD [47PDT/26MDT, 235 M.Eva] 25 -Enmity
 
-    -- Ideal:
-    -- main="Ababinili +1",           -- __, 34,  21,  12, ___, __ [10/10, ___] __
-    -- sub="Mensch Strap +1",         -- __, __, ___, ___, ___, __ [ 5/__, ___] __
     -- ammo="Staunch Tathlum +1",     -- __, __, ___, ___, ___, 11 [ 3/ 3, ___] __
     -- head="Adhara Turban",          -- __, __, ___, ___, ___, 20 [__/__, ___]  6
-    -- body="Ebers Bliaut +1",        -- __, __,  24,  33,  20, __ [__/__,  80] __; Solace+14
-    -- hands=gear.Chironic_SIRD_hands,-- __, __, ___,  38,  20, 31 [__/__,  48] __; Can add more DT or Enmity
-    -- legs="Ebers Pantaloons +1",    -- __, __, ___,  33,  12, __ [__/__, 107] __; 6% cure mp return
     -- feet="Theophany Duckbills +3", -- __, __, ___,  34,  20, 29 [__/__, 127] __
-    -- neck="Cleric's Torque +1",     -- __,  7, ___,  12, ___, __ [__/__, ___] 20
     -- ear1="Novia Earring",          -- __, __, ___, ___, ___, __ [__/__, ___]  7
-    -- ear2="Odnowa Earring +1",      -- __, __, ___, ___,   3, __ [ 3/ 5, ___] __
-    -- ring1="Gelatinous Ring +1",    -- __, __, ___, ___,  15, __ [ 7/-1, ___] __
-    -- ring2="Defending Ring",        -- __, __, ___, ___, ___, __ [10/10, ___] __
-    -- back=gear.WHM_CP_Cape,         -- __, 10, ___,  30, ___, __ [10/__, ___] __; Solace+10
     -- waist="Sanctuary Obi +1",      -- __, __, ___, ___, ___, 10 [__/__, ___]  4
     -- Base Stats                     -- __, __, 506, 129, 123, __ [__/__, ___] __
     -- Merit points                   -- __, __, ___, ___, ___, 10 [__/__, ___]  5
-    -- 0 CPII, 51 CP, 551 Heal Skill, 321 MND, 213 VIT, 111 SIRD [48PDT/27MDT, 382] 42 -Enmity
+    -- 0 CPII, 51 CP, 551 Heal Skill, 321 MND, 213 VIT, 111 SIRD [48PDT/27MDT, 362 M.Eva] 42 -Enmity
   })
 
   -- WHM/SCH M30 Healing Magic Skill = 506
   -- Cap at 700 power; Power = floor(MND÷2) + floor(VIT÷4) + Healing Magic Skill
   sets.midcast.CureWeatherSolace = {
-    main="Chatoyant Staff",           -- __, 10, ___,   5,   5, __, __/__, __
+    main="Ababinili +1",              -- __, 34,  21,  12, ___, __ [10/10, ___] __
     sub="Mensch Strap +1",            -- __, __, ___, ___, ___, __ [ 5/__, ___] __
-    ammo="Staunch Tathlum",           -- __, __, ___, ___, ___, 10,  2/ 2, __
-    head=gear.Kaykaus_C_head,         -- __, 11,  16,  19,  14, 12, __/ 3, __
-    body="Rosette Jaseran +1",        -- __, __, ___,  39,  31, 25,  5/ 5, 13
-    hands=gear.Chironic_SIRD_hands,   -- __, __, ___,  38,  20, 31, __/__, __; Can add more DT or Enmity
-    legs=gear.Kaykaus_C_legs,         -- __, 11, ___,  30,  12, 12, __/__, __
-    feet=gear.Kaykaus_D_feet,         -- __, 17, ___,  19,  10, __, __/__,  6
-    neck="Loricate Torque +1",        -- __, __, ___, ___, ___,  5,  6/ 6, __
-    ear2="Odnowa Earring +1",         -- __, __, ___, ___,   3, __,  3/ 5, __
-    ring1="Gelatinous Ring +1",       -- __, __, ___, ___,  15, __,  7/-1, __
-    ring2="Defending Ring",           -- __, __, ___, ___, ___, __, 10/10, __
-    back=gear.WHM_CP_Cape,            -- __, 10, ___,  30, ___, __ [10/__, ___] __
-    waist="Hachirin-no-Obi",          -- __, __, ___, ___, ___, __, __/__, __
-
-    -- Ideal:
-    -- main="Ababinili +1",           -- __, 34,  21,  12, ___, __ [10/10, ___] __
-    -- sub="Mensch Strap +1",         -- __, __, ___, ___, ___, __ [ 5/__, ___] __
-    -- ammo="Staunch Tathlum +1",     -- __, __, ___, ___, ___, 11 [ 3/ 3, ___] __
-    -- head="Adhara Turban",          -- __, __, ___, ___, ___, 20 [__/__, ___]  6
-    -- body="Ebers Bliaut +1",        -- __, __,  24,  33,  20, __ [__/__,  80] __; Solace+14
-    -- hands=gear.Chironic_SIRD_hands,-- __, __, ___,  38,  20, 31 [__/__,  48] __; Can add more DT or Enmity
-    -- legs="Ebers Pantaloons +1",    -- __, __, ___,  33,  12, __ [__/__, 107] __; 6% cure mp return
-    -- feet="Theophany Duckbills +3", -- __, __, ___,  34,  20, 29 [__/__, 127] __
-    -- neck="Cleric's Torque +1",     -- __,  7, ___,  12, ___, __ [__/__, ___] 20
-    -- ear1="Odnowa Earring +1",      -- __, __, ___, ___,   3, __ [ 3/ 5, ___] __
-    -- ear2="Halasz Earring",         -- __, __, ___, ___, ___,  5 [__/__, ___]  3
-    -- ring1="Gelatinous Ring +1",    -- __, __, ___, ___,  15, __ [ 7/-1, ___] __
-    -- ring2="Defending Ring",        -- __, __, ___, ___, ___, __ [10/10, ___] __
-    -- back=gear.WHM_CP_Cape,         -- __, 10, ___,  30, ___, __ [10/__, ___] __; Solace+10
-    -- waist="Hachirin-no-Obi",       -- __, __, ___, ___, ___, __ [__/__, ___] __
+    ammo="Staunch Tathlum",           -- __, __, ___, ___, ___, 10 [ 2/ 2, ___] __
+    body="Ebers Bliaut +1",           -- __, __,  24,  33,  20, __ [__/__,  80] __; Solace+14
+    hands=gear.Chironic_SIRD_hands,   -- __, __, ___,  38,  20, 31 [__/__,  48] __; Can add more DT or Enmity
+    legs="Ebers Pantaloons +1",       -- __, __, ___,  33,  12, __ [__/__, 107] __; 6% cure mp return
+    neck="Cleric's Torque +1",        -- __,  7, ___,  12, ___, __ [__/__, ___] 20
+    ear1="Odnowa Earring +1",         -- __, __, ___, ___,   3, __ [ 3/ 5, ___] __
+    ear2="Halasz Earring",            -- __, __, ___, ___, ___,  5 [__/__, ___]  3
+    ring1="Gelatinous Ring +1",       -- __, __, ___, ___,  15, __ [ 7/-1, ___] __
+    ring2="Defending Ring",           -- __, __, ___, ___, ___, __ [10/10, ___] __
+    back=gear.WHM_CP_Cape,            -- __, 10, ___,  30, ___, __ [10/__, ___] __; Solace+10
+    waist="Hachirin-no-Obi",          -- __, __, ___, ___, ___, __ [__/__, ___] __
     -- Base Stats                     -- __, __, 506, 129, 123, __ [__/__, ___] __
     -- Merit points                   -- __, __, ___, ___, ___, 10 [__/__, ___]  5
-    -- 0 CPII, 51 CP, 551 Heal Skill, 321 MND, 213 VIT, 106 SIRD [48PDT/27MDT, 382] 34 -Enmity
+    -- 0 CPII, 51 CP, 551 Heal Skill, 287 MND, 193 VIT, 56 SIRD [47PDT/26MDT, 235 M.Eva] 28 -Enmity
+
+    -- ammo="Staunch Tathlum +1",     -- __, __, ___, ___, ___, 11 [ 3/ 3, ___] __
+    -- head="Adhara Turban",          -- __, __, ___, ___, ___, 20 [__/__, ___]  6
+    -- feet="Theophany Duckbills +3", -- __, __, ___,  34,  20, 29 [__/__, 127] __
+    -- Base Stats                     -- __, __, 506, 129, 123, __ [__/__, ___] __
+    -- Merit points                   -- __, __, ___, ___, ___, 10 [__/__, ___]  5
+    -- 0 CPII, 51 CP, 551 Heal Skill, 321 MND, 213 VIT, 106 SIRD [48PDT/27MDT, 362 M.Eva] 34 -Enmity
   }
 
   -- Cap over 960 power; Power = 3×MND + VIT + 3×floor( Healing Magic Skill÷5 )
@@ -804,7 +748,7 @@ end
 function job_precast(spell, action, spellMap, eventArgs)
   silibs.precast_hook(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
-  if spellMap == 'StatusRemoval' and not buffactive['Divine Caress'] then
+  if spellMap == 'StatusRemoval' and not buffactive['Divine Caress'] and spell.english ~= 'Erase' then
     equip(sets.precast.FC.QuickStatusRemoval)
     eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
   end
@@ -910,7 +854,7 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
   end
 
   -- Apply Divine Caress boosting items as highest priority over other gear, if applicable.
-  if spellMap == 'StatusRemoval' and buffactive['Divine Caress'] then
+  if spellMap == 'StatusRemoval' and buffactive['Divine Caress'] and spell.english ~= 'Erase' then
     equip(sets.buff['Divine Caress'])
   end
 
