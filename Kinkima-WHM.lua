@@ -748,6 +748,9 @@ end
 function job_precast(spell, action, spellMap, eventArgs)
   silibs.precast_hook(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
+
+  refine_various_spells(spell, action, spellMap, eventArgs)
+
   if spellMap == 'StatusRemoval' and not buffactive['Divine Caress'] and spell.english ~= 'Erase' then
     equip(sets.precast.FC.QuickStatusRemoval)
     eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
@@ -934,6 +937,26 @@ function job_get_spell_map(spell, default_spell_map)
       else
         return 'IntEnfeebles'
       end
+    end
+  end
+end
+
+function refine_various_spells(spell, action, spellMap, eventArgs)
+  local newSpell = spell.english
+
+  -- If target is in party and close enough then aoe, otherwise single target
+  if spell.english:startswith('Protect') and not spell.english:startswith('Protectra') then
+    if spell.target.ispartymember and spell.target.distance < 10 then
+      newSpell = 'Protectra V'
+      send_command('@input /ma "'..newSpell..'" <me>')
+      eventArgs.cancel = true
+    end
+  -- If target is in party and close enough then aoe, otherwise single target
+  elseif spell.english:startswith('Shell') and not spell.english:startswith('Shellra') then
+    if spell.target.ispartymember and spell.target.distance < 10 then
+      newSpell = 'Shellra V'
+      send_command('@input /ma "'..newSpell..'" <me>')
+      eventArgs.cancel = true
     end
   end
 end
