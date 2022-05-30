@@ -299,7 +299,7 @@ function init_gear_sets()
   -- Cap at 700 power; Power = floor(MND÷2) + floor(VIT÷4) + Healing Magic Skill
   sets.midcast.CureNormal = {
     main="Eremite's Wand +1",         -- __, __, ___,   2, ___, 25 [__/__, ___] __
-    sub="Genmei Shield",              -- __, __, ___, ___, ___, __ [10/__, ___] __
+    sub="Genbu's Shield",             -- __,  5, ___, ___, ___, __ [10/__, ___] __
     ammo="Staunch Tathlum",           -- __, __, ___, ___, ___, 10 [ 2/ 2, ___] __
     head=gear.Kaykaus_C_head,         -- __, 11,  16,  19,  14, 12 [__/ 3,  75] __
     body="Rosette Jaseran +1",        -- __, __, ___,  39,  31, 25 [ 5/ 5,  80] 13
@@ -313,9 +313,8 @@ function init_gear_sets()
     -- Kaykaus bonus                      4, __, ___, ___, ___, __ [__/__, ___] __
     -- Base Stats                        __, __, 506, 129, 123, __ [__/__, ___] __
     -- Merit points                      __, __, ___, ___, ___, 10 [__/__, ___]  5
-    -- 4 CPII, 38 CP, 522 Heal Skill, 275 MND, 205 VIT, 97 SIRD [50PDT/25MDT, 369 M.Eva] 24 -Enmity
+    -- 4 CPII, 43 CP, 522 Heal Skill, 275 MND, 205 VIT, 97 SIRD [50PDT/25MDT, 369 M.Eva] 24 -Enmity
 
-    -- sub="Genbu's Shield",          -- __,  5, ___, ___, ___, __ [10/__, ___] __; Requires synergy aug
     -- ammo="Staunch Tathlum +1",     -- __, __, ___, ___, ___, 11 [ 3/ 3, ___] __
     -- hands="Theophany Mitts +3",    --  4, __,  21,  48,  35, __ [__/__,  47]  6
     -- ear1="Novia Earring",          -- __, __, ___, ___, ___, __ [__/__, ___]  7
@@ -337,7 +336,7 @@ function init_gear_sets()
     hands=gear.Chironic_SIRD_hands,   -- __, __, ___,  38,  20, 31 [__/__,  48] __; Can add more DT or Enmity
     body="Bunzi's Robe",              -- __, 15, ___,  43,  23, __ [10/10, 139] 10
     legs="Ebers Pantaloons +1",       -- __, __, ___,  33,  12, __ [__/__, 107] __; 6% cure mp return
-    feet=gear.Kaykaus_D_feet,         -- __, 17, ___,  19,  10, __ [__/__, 107]  6
+    feet="Theophany Duckbills +3",    -- __, __, ___,  34,  20, 29 [__/__, 127] __
     neck="Loricate Torque +1",        -- __, __, ___, ___, ___,  5 [ 6/ 6, ___] __
     ear1="Odnowa Earring +1",         -- __, __, ___, ___,   3, __ [ 3/ 5, ___] __
     ring1="Gelatinous Ring +1",       -- __, __, ___, ___,  15, __ [ 7/-1, ___] __
@@ -347,10 +346,9 @@ function init_gear_sets()
     -- Kaykaus set bonus              -- __, __, ___, ___, ___, __ [__/__, ___] __
     -- Base Stats                     -- __, __, 506, 129, 123, __ [__/__, ___] __
     -- Merit points                   -- __, __, ___, ___, ___, 10 [__/__, ___]  5
-    -- 0 CPII, 63 CP, 522 Heal Skill, 316 MND, 225 VIT, 68 SIRD [53PDT/35MDT, 476 M.Eva] 21 -Enmity
+    -- 0 CPII, 46 CP, 522 Heal Skill, 331 MND, 235 VIT, 97 SIRD [53PDT/35MDT, 496 M.Eva] 15 -Enmity
 
     -- ammo="Staunch Tathlum +1",     -- __, __, ___, ___, ___, 11 [ 3/ 3, ___] __
-    -- feet="Theophany Duckbills +3", -- __, __, ___,  34,  20, 29 [__/__, 127] __
     -- ear1="Novia Earring",          -- __, __, ___, ___, ___, __ [__/__, ___]  7
     -- ear2="Nourishing Earring +1",  -- __,  7, ___,   4, ___,  5 [__/__, ___] __; Resist Silence +15
     -- Kaykaus set bonus              -- __, __, ___, ___, ___, __ [__/__, ___] __
@@ -368,6 +366,7 @@ function init_gear_sets()
     body="Ebers Bliaut +1",           -- __, __,  24,  33,  20, __ [__/__,  80] __; Solace+14
     hands=gear.Chironic_SIRD_hands,   -- __, __, ___,  38,  20, 31 [__/__,  48] __; Can add more DT or Enmity
     legs="Ebers Pantaloons +1",       -- __, __, ___,  33,  12, __ [__/__, 107] __; 6% cure mp return
+    feet="Theophany Duckbills +3",    -- __, __, ___,  34,  20, 29 [__/__, 127] __
     neck="Cleric's Torque +1",        -- __,  7, ___,  12, ___, __ [__/__, ___] 20
     ear2="Odnowa Earring +1",         -- __, __, ___, ___,   3, __ [ 3/ 5, ___] __
     ring1="Gelatinous Ring +1",       -- __, __, ___, ___,  15, __ [ 7/-1, ___] __
@@ -376,11 +375,10 @@ function init_gear_sets()
     waist="Rumination Sash",          -- __, __, ___,   4, ___, 10 [__/__, ___] __
     -- Base Stats                     -- __, __, 506, 129, 123, __ [__/__, ___] __
     -- Merit points                   -- __, __, ___, ___, ___, 10 [__/__, ___]  5
-    -- 0 CPII, 51 CP, 551 Heal Skill, 291 MND, 193 VIT, 61 SIRD [47PDT/26MDT, 235 M.Eva] 25 -Enmity
+    -- 0 CPII, 51 CP, 551 Heal Skill, 325 MND, 213 VIT, 90 SIRD [47PDT/26MDT, 362 M.Eva] 25 -Enmity
 
     -- ammo="Staunch Tathlum +1",     -- __, __, ___, ___, ___, 11 [ 3/ 3, ___] __
     -- head="Adhara Turban",          -- __, __, ___, ___, ___, 20 [__/__, ___]  6
-    -- feet="Theophany Duckbills +3", -- __, __, ___,  34,  20, 29 [__/__, 127] __
     -- ear1="Novia Earring",          -- __, __, ___, ___, ___, __ [__/__, ___]  7
     -- waist="Sanctuary Obi +1",      -- __, __, ___, ___, ___, 10 [__/__, ___]  4
     -- Base Stats                     -- __, __, 506, 129, 123, __ [__/__, ___] __
@@ -397,6 +395,7 @@ function init_gear_sets()
     body="Ebers Bliaut +1",           -- __, __,  24,  33,  20, __ [__/__,  80] __; Solace+14
     hands=gear.Chironic_SIRD_hands,   -- __, __, ___,  38,  20, 31 [__/__,  48] __; Can add more DT or Enmity
     legs="Ebers Pantaloons +1",       -- __, __, ___,  33,  12, __ [__/__, 107] __; 6% cure mp return
+    feet="Theophany Duckbills +3",    -- __, __, ___,  34,  20, 29 [__/__, 127] __
     neck="Cleric's Torque +1",        -- __,  7, ___,  12, ___, __ [__/__, ___] 20
     ear1="Odnowa Earring +1",         -- __, __, ___, ___,   3, __ [ 3/ 5, ___] __
     ear2="Halasz Earring",            -- __, __, ___, ___, ___,  5 [__/__, ___]  3
@@ -406,11 +405,10 @@ function init_gear_sets()
     waist="Hachirin-no-Obi",          -- __, __, ___, ___, ___, __ [__/__, ___] __
     -- Base Stats                     -- __, __, 506, 129, 123, __ [__/__, ___] __
     -- Merit points                   -- __, __, ___, ___, ___, 10 [__/__, ___]  5
-    -- 0 CPII, 51 CP, 551 Heal Skill, 287 MND, 193 VIT, 56 SIRD [47PDT/26MDT, 235 M.Eva] 28 -Enmity
+    -- 0 CPII, 51 CP, 551 Heal Skill, 321 MND, 213 VIT, 85 SIRD [47PDT/26MDT, 362 M.Eva] 28 -Enmity
 
     -- ammo="Staunch Tathlum +1",     -- __, __, ___, ___, ___, 11 [ 3/ 3, ___] __
     -- head="Adhara Turban",          -- __, __, ___, ___, ___, 20 [__/__, ___]  6
-    -- feet="Theophany Duckbills +3", -- __, __, ___,  34,  20, 29 [__/__, 127] __
     -- Base Stats                     -- __, __, 506, 129, 123, __ [__/__, ___] __
     -- Merit points                   -- __, __, ___, ___, ___, 10 [__/__, ___]  5
     -- 0 CPII, 51 CP, 551 Heal Skill, 321 MND, 213 VIT, 106 SIRD [48PDT/27MDT, 362 M.Eva] 34 -Enmity
@@ -478,7 +476,7 @@ function init_gear_sets()
     body=gear.Telchine_ENH_body,      -- 12, 10, __ [__/__,  80]
     hands=gear.Telchine_ENH_hands,    -- __, 10, __ [__/__,  61]
     legs=gear.Telchine_ENH_legs,      -- __, 10, __ [__/__, 128]
-    feet=gear.Telchine_ENH_feet,      -- __,  9, __ [__/__, 107]
+    feet="Theophany Duckbills +3",    -- 21, 10, __ [__/__, 127]
     ear1="Mimir Earring",             -- 10, __, __ [__/__, ___]
     ear2="Odnowa Earring +1",         -- __, __, __ [ 3/ 5, ___]
     ring2="Defending Ring",           -- __, __, __ [10/10, ___]
@@ -506,7 +504,7 @@ function init_gear_sets()
     -- Base                             394; Includes merits
     -- Master Levels                     30
     -- 503 Enh Skill, 55% Enh Duration, 30 FC [51 PDT/38 MDT, 521 MEVA]
-  } -- 454 Enh Skill, 68% Enh Duration, 5 FC [26 PDT/18 MDT, 471 MEVA]
+  } -- 485 Enh Skill, 69% Enh Duration, 15 FC [26 PDT/18 MDT, 491 MEVA]
 
   sets.midcast.EnhancingDuration = {
     main="Gada",                      -- 18, __, __ [__/__, ___]
@@ -516,7 +514,7 @@ function init_gear_sets()
     body=gear.Telchine_ENH_body,      -- 12, 10, __ [__/__,  80]
     hands=gear.Telchine_ENH_hands,    -- __, 10, __ [__/__,  61]
     legs=gear.Telchine_ENH_legs,      -- __, 10, __ [__/__, 128]
-    feet=gear.Telchine_ENH_feet,      -- __,  9, __ [__/__, 107]
+    feet="Theophany Duckbills +3",    -- 21, 10, __ [__/__, 127]
     ear1="Mimir Earring",             -- 10, __, __ [__/__, ___]
     waist="Embla Sash",               -- __, 10,  5 [__/__, ___]
     -- Base                             394; Includes merits
@@ -542,7 +540,7 @@ function init_gear_sets()
     -- Master Levels                     30
     -- Light Arts                        26
     -- 520 Enh Skill, 76% Enh Duration, 41 FC [29 PDT/23 MDT, 526 MEVA]
-  } -- 454 Enh Skill, 76% Enh Duration, 5 FC [3 PDT/3 MDT, 451 MEVA]
+  } -- 485 Enh Skill, 69% Enh Duration, 5 FC [3 PDT/3 MDT, 471 MEVA]
 
   -- Focus on SS pot, DT, and Recast time.
   -- In Odyssey endgame, no tank so WHM needs to be able to tank when spamming this.
@@ -579,7 +577,7 @@ function init_gear_sets()
     body=gear.Telchine_ENH_body,      -- 12, 10 [__/__,  80] __, __
     hands=gear.Telchine_ENH_hands,    -- __, 10 [__/__,  61] __, __
     legs=gear.Telchine_ENH_legs,      -- __, 10 [__/__, 128] __, __
-    feet=gear.Telchine_ENH_feet,      -- __,  9 [__/__, 107] __, __
+    feet="Theophany Duckbills +3",    -- 21, 10 [__/__, 127] __, __
     neck="Loricate Torque +1",        -- __, __ [ 6/ 6, ___] __, __
     ear1="Mimir Earring",             -- 10, __, __ [__/__, ___]
     ear2="Odnowa Earring +1",         -- __, __ [ 3/ 5, ___] __, __
@@ -596,10 +594,9 @@ function init_gear_sets()
     -- body="Ebers Bliaut +1",        -- __, __ [__/__,  80] __, 14
     -- hands="Dynasty Mitts",         -- 18,  5 [__/__,  37] __, __
     -- legs="Piety Pantaloons +3",    -- 26, __ [__/__, 127] 36, __
-    -- feet="Theophany Duckbills +3", -- 21, 10 [__/__, 127] __, __
     -- back=gear.WHM_FC_Cape,         -- __, __ [10/__,  20] __, __
     -- 514 Enh Skill, 35% Enh Duration [49 PDT/23 MDT, 491 MEVA] 86 Barspell Resistance, 29 Barspell M.Def
-  } -- 436 Enh Skill, 58% Enh Duration [36 PDT/20 MDT, 471 MEVA] 50 Barspell Resistance, 10 Barspell M.Def
+  } -- 482 Enh Skill, 59% Enh Duration [46 PDT/20 MDT, 491 MEVA] 50 Barspell Resistance, 15 Barspell M.Def
 
   -- TODO
   sets.midcast.Regen = set_combine(sets.midcast['Enhancing Magic'],{
@@ -615,6 +612,7 @@ function init_gear_sets()
     ammo="Pemphredo Tathlum",         -- __,  8, __,  4 [__/__, ___]
     head="Bunzi's Hat",               -- __, 40, 33, 34 [ 7/ 7, 123]
     body="Bunzi's Robe",              -- __, 40, 43, 48 [10/10, 139]
+    feet="Theophany Duckbills +3",    -- 21, 46, 34, 32 [__/__, 127]
     ear1="Regal Earring",             -- __, __, 10, 10 [__/__, ___]
     ear2="Malignance Earring",        -- __, 10,  8,  8 [__/__, ___]
     back=gear.WHM_MND_MAcc_Cape,      -- __, 30, 20, __ [10/__, ___]
@@ -622,7 +620,6 @@ function init_gear_sets()
     -- sub="Genmei Shield",           -- __, __, __, __ [10/__, ___]
     -- hands=gear.Kaykaus_A_hands,    -- 16, 53, 47, 19 [__/__,  37]
     -- legs=gear.Chironic_MAcc_legs,  -- 13, 60, 29, 42 [__/__, 118]
-    -- feet="Theophany Duckbills +3", -- 21, 46, 34, 32 [__/__, 127]
     -- neck="Incanter's Torque",      -- 10, __, __, __ [__/__, ___]
     -- ring1="Stikini Ring +1",       --  8, 11,  8, __ [__/__, ___]
     -- ring2="Stikini Ring +1",       --  8, 11,  8, __ [__/__, ___]
