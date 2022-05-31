@@ -306,6 +306,7 @@ function init_gear_sets()
     legs="Ebers Pantaloons +1",       -- __, __, ___,  33,  12, __ [__/__, 107] __; 6% cure mp return
     feet=gear.Kaykaus_D_feet,         -- __, 17, ___,  19,  10, __ [__/__, 107]  6
     neck="Loricate Torque +1",        -- __, __, ___, ___, ___,  5 [ 6/ 6, ___] __
+    ear2="Nourishing Earring +1",     -- __,  7, ___,   4, ___,  5 [__/__, ___] __; Resist Silence +15
     ring1="Gelatinous Ring +1",       -- __, __, ___, ___,  15, __ [ 7/-1, ___] __
     ring2="Defending Ring",           -- __, __, ___, ___, ___, __ [10/10, ___] __
     back=gear.WHM_CP_Cape,            -- __, 10, ___,  30, ___, __ [10/__, ___] __
@@ -313,12 +314,11 @@ function init_gear_sets()
     -- Kaykaus bonus                      4, __, ___, ___, ___, __ [__/__, ___] __
     -- Base Stats                        __, __, 506, 129, 123, __ [__/__, ___] __
     -- Merit points                      __, __, ___, ___, ___, 10 [__/__, ___]  5
-    -- 4 CPII, 43 CP, 522 Heal Skill, 275 MND, 205 VIT, 97 SIRD [50PDT/25MDT, 369 M.Eva] 24 -Enmity
+    -- 4 CPII, 50 CP, 522 Heal Skill, 279 MND, 205 VIT, 102 SIRD [50PDT/25MDT, 369 M.Eva] 24 -Enmity
 
     -- ammo="Staunch Tathlum +1",     -- __, __, ___, ___, ___, 11 [ 3/ 3, ___] __
     -- hands="Theophany Mitts +3",    --  4, __,  21,  48,  35, __ [__/__,  47]  6
     -- ear1="Novia Earring",          -- __, __, ___, ___, ___, __ [__/__, ___]  7
-    -- ear2="Nourishing Earring +1",  -- __,  7, ___,   4, ___,  5 [__/__, ___] __; Resist Silence +15
     -- waist="Sanctuary Obi +1",      -- __, __, ___, ___, ___, 10 [__/__, ___]  4
     -- Kaykaus bonus                      4, __, ___, ___, ___, __ [__/__, ___] __
     -- Base Stats                        __, __, 506, 129, 123, __ [__/__, ___] __
@@ -339,6 +339,7 @@ function init_gear_sets()
     feet="Theophany Duckbills +3",    -- __, __, ___,  34,  20, 29 [__/__, 127] __
     neck="Loricate Torque +1",        -- __, __, ___, ___, ___,  5 [ 6/ 6, ___] __
     ear1="Odnowa Earring +1",         -- __, __, ___, ___,   3, __ [ 3/ 5, ___] __
+    ear2="Nourishing Earring +1",     -- __,  7, ___,   4, ___,  5 [__/__, ___] __; Resist Silence +15
     ring1="Gelatinous Ring +1",       -- __, __, ___, ___,  15, __ [ 7/-1, ___] __
     ring2="Defending Ring",           -- __, __, ___, ___, ___, __ [10/10, ___] __
     back=gear.WHM_CP_Cape,            -- __, 10, ___,  30, ___, __ [10/__, ___] __
@@ -346,11 +347,10 @@ function init_gear_sets()
     -- Kaykaus set bonus              -- __, __, ___, ___, ___, __ [__/__, ___] __
     -- Base Stats                     -- __, __, 506, 129, 123, __ [__/__, ___] __
     -- Merit points                   -- __, __, ___, ___, ___, 10 [__/__, ___]  5
-    -- 0 CPII, 46 CP, 522 Heal Skill, 331 MND, 235 VIT, 97 SIRD [53PDT/35MDT, 496 M.Eva] 15 -Enmity
+    -- 0 CPII, 53 CP, 522 Heal Skill, 335 MND, 235 VIT, 102 SIRD [53PDT/35MDT, 496 M.Eva] 15 -Enmity
 
     -- ammo="Staunch Tathlum +1",     -- __, __, ___, ___, ___, 11 [ 3/ 3, ___] __
     -- ear1="Novia Earring",          -- __, __, ___, ___, ___, __ [__/__, ___]  7
-    -- ear2="Nourishing Earring +1",  -- __,  7, ___,   4, ___,  5 [__/__, ___] __; Resist Silence +15
     -- Kaykaus set bonus              -- __, __, ___, ___, ___, __ [__/__, ___] __
     -- Base Stats                     -- __, __, 506, 129, 123, __ [__/__, ___] __
     -- Merit points                   -- __, __, ___, ___, ___, 10 [__/__, ___]  5
