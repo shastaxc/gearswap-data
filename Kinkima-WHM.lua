@@ -27,6 +27,12 @@ function job_setup()
   state.Buff['Afflatus Solace'] = buffactive['Afflatus Solace'] or false
   state.Buff['Afflatus Misery'] = buffactive['Afflatus Misery'] or false
 
+  state.Barelement = M{['description']='Barspell','Barfira','Barblizzara','Baraera','Barstonra','Barthundra','Barwatera'}
+  state.Barstatus = M{['description']='Barsleepra','Barpoisonra','Barparalyzra','Barblindra','Barsilencera','Barpetra','Barvira','Baramnesra'}
+  state.Storm = M{['description']='Storms','Aurorastorm','Sandstorm',
+      'Rainstorm','Windstorm','Firestorm','Hailstorm','Thunderstorm','Voidstorm'}
+  state.CuragaTier = M{['description']='Curaga Tier','IV','V','I'}
+
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c usekey')
   send_command('bind @c gs c toggle CP')
@@ -34,6 +40,26 @@ function job_setup()
   send_command('bind @w gs c toggle RearmingLock')
 
   send_command('bind !` input /ja "Afflatus Solace" <me>')
+  send_command('bind !w gs c curaga')
+  send_command('bind !z gs c barelement')
+  send_command('bind !x gs c barstatus')
+  send_command('bind !c gs c storm')
+  
+  send_command('bind ^insert gs c cycle Barelement')
+  send_command('bind ^delete gs c cycleback Barelement')
+  send_command('bind !delete gs c reset Barelement')
+
+  send_command('bind ^home gs c cycle Barstatus')
+  send_command('bind ^end gs c cycleback Barstatus')
+  send_command('bind !end gs c reset Barstatus')
+
+  send_command('bind ^pageup gs c cycle Storm')
+  send_command('bind ^pagedown gs c cycleback Storm')
+  send_command('bind !pagedown gs c reset Storm')
+
+  send_command('bind ^. gs c cycle CuragaTier')
+  send_command('bind ^/ gs c cycleback CuragaTier')
+  send_command('bind !/ gs c reset CuragaTier')
 
   send_command('bind !e input /ma "Haste" <stpc>')
   send_command('bind !u input /ma "Blink" <me>')
@@ -1144,6 +1170,18 @@ function job_self_command(cmdParams, eventArgs)
   if cmdParams[1] == 'scholar' then
     handle_strategems(cmdParams)
     eventArgs.handled = true
+  elseif cmdParams[1] == 'curaga' then
+    if state.CuragaTier.current == 'I' then
+      send_command('@input /ma "Curaga" <stpc>')
+    else
+      send_command('@input /ma "Curaga '..state.CuragaTier.current..'" <stpc>')
+    end
+  elseif cmdParams[1] == 'barelement' then
+    send_command('@input /ma "'..state.Barelement.current..'" <stpc>')
+  elseif cmdParams[1] == 'barstatus' then
+    send_command('@input /ma "'..state.Barstatus.current..'" <stpc>')
+  elseif cmdParams[1] == 'storm' then
+    send_command('@input /ma "'..state.Storm.current..'" <stpc>')
   end
 end
 
