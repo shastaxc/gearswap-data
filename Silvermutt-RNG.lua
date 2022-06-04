@@ -846,7 +846,7 @@ function init_gear_sets()
     ring1="Chirich Ring +1",    -- __/__, ___
     ring2="Defending Ring",     -- 10/10, ___
     back=gear.RNG_DW_Cape,      -- __/__,  15
-    waist="Kasiri Belt",        -- __/__, ___
+    waist="Carrier's Sash",     -- __/__, ___
   } -- 50 PDT / 52 MDT, 697 MEVA
 
   sets.defense.PDT = sets.HeavyDef
