@@ -157,6 +157,7 @@ gear.Telchine_Regen_feet = { name="Telchine Pigaches", augments={'"Regen" potenc
 
 gear.SCH_Adoulin_Regen_Cape = { name="Bookworm's Cape", augments={'INT+1','MND+1','Helix eff. dur. +17','"Regen" potency+10',}}
 gear.SCH_Adoulin_Helix_Cape = { name="Bookworm's Cape", augments={'INT+1','MND+1','Helix eff. dur. +20',}}
+-- gear.BLU_Adoulin_Cape = {} -- Blue magic skill +10
 
 
 ----------------------------------------------------------------------
@@ -191,3 +192,6 @@ gear.WHM_MND_MAcc_Cape = gear.WHM_CP_Cape
 ----------------------------------------------------------------------
 
 gear.CP_Cape = { name="Mecisto. Mantle", augments={'Cap. Point+41%','Mag. Acc.+5','DEF+4',}}
+gear.Fanatic_Gloves = { name="Fanatic Gloves", augments={'MP+50','Healing magic skill +8','"Conserve MP"+5','"Fast Cast"+5',}}
+gear.Leyline_Gloves = { name="Leyline Gloves", augments={'Accuracy+7','Mag. Acc.+2',}}
+gear.Samnuha_legs = { name="Samnuha Tights", augments={'STR+8','DEX+9','"Dbl.Atk."+3','"Triple Atk."+2',}}

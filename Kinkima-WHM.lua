@@ -28,8 +28,8 @@ function job_setup()
   state.Buff['Afflatus Misery'] = buffactive['Afflatus Misery'] or false
 
   state.Barelement = M{['description']='Barspell','Barfira','Barblizzara','Baraera','Barstonra','Barthundra','Barwatera'}
-  state.Barstatus = M{['description']='Barsleepra','Barpoisonra','Barparalyzra','Barblindra','Barsilencera','Barpetra','Barvira','Baramnesra'}
-  state.Storm = M{['description']='Storms','Aurorastorm','Sandstorm',
+  state.Barstatus = M{['description']='Barstatus','Barsleepra','Barpoisonra','Barparalyzra','Barblindra','Barsilencera','Barpetra','Barvira','Baramnesra'}
+  state.Storm = M{['description']='Storm','Aurorastorm','Sandstorm',
       'Rainstorm','Windstorm','Firestorm','Hailstorm','Thunderstorm','Voidstorm'}
   state.CuragaTier = M{['description']='Curaga Tier','IV','V','I'}
 
@@ -45,20 +45,20 @@ function job_setup()
   send_command('bind !x gs c barstatus')
   send_command('bind !c gs c storm')
   
-  send_command('bind ^insert gs c cycle Barelement')
-  send_command('bind ^delete gs c cycleback Barelement')
+  send_command('bind ^insert gs c cycleback Barelement')
+  send_command('bind ^delete gs c cycle Barelement')
   send_command('bind !delete gs c reset Barelement')
 
-  send_command('bind ^home gs c cycle Barstatus')
-  send_command('bind ^end gs c cycleback Barstatus')
+  send_command('bind ^home gs c cycleback Barstatus')
+  send_command('bind ^end gs c cycle Barstatus')
   send_command('bind !end gs c reset Barstatus')
 
-  send_command('bind ^pageup gs c cycle Storm')
-  send_command('bind ^pagedown gs c cycleback Storm')
+  send_command('bind ^pageup gs c cycleback Storm')
+  send_command('bind ^pagedown gs c cycle Storm')
   send_command('bind !pagedown gs c reset Storm')
 
-  send_command('bind ^. gs c cycle CuragaTier')
-  send_command('bind ^/ gs c cycleback CuragaTier')
+  send_command('bind ^. gs c cycleback CuragaTier')
+  send_command('bind ^/ gs c cycle CuragaTier')
   send_command('bind !/ gs c reset CuragaTier')
 
   send_command('bind !e input /ma "Haste" <stpc>')
@@ -332,6 +332,7 @@ function init_gear_sets()
     legs="Ebers Pantaloons +1",       -- __, __, ___,  33,  12, __ [__/__, 107] __; 6% cure mp return
     feet=gear.Kaykaus_D_feet,         -- __, 17, ___,  19,  10, __ [__/__, 107]  6
     neck="Loricate Torque +1",        -- __, __, ___, ___, ___,  5 [ 6/ 6, ___] __
+    ear1="Novia Earring",             -- __, __, ___, ___, ___, __ [__/__, ___]  7
     ear2="Nourishing Earring +1",     -- __,  7, ___,   4, ___,  5 [__/__, ___] __; Resist Silence +15
     ring1="Gelatinous Ring +1",       -- __, __, ___, ___,  15, __ [ 7/-1, ___] __
     ring2="Defending Ring",           -- __, __, ___, ___, ___, __ [10/10, ___] __
@@ -344,7 +345,6 @@ function init_gear_sets()
 
     -- ammo="Staunch Tathlum +1",     -- __, __, ___, ___, ___, 11 [ 3/ 3, ___] __
     -- hands="Theophany Mitts +3",    --  4, __,  21,  48,  35, __ [__/__,  47]  6
-    -- ear1="Novia Earring",          -- __, __, ___, ___, ___, __ [__/__, ___]  7
     -- waist="Sanctuary Obi +1",      -- __, __, ___, ___, ___, 10 [__/__, ___]  4
     -- Kaykaus bonus                      4, __, ___, ___, ___, __ [__/__, ___] __
     -- Base Stats                        __, __, 506, 129, 123, __ [__/__, ___] __
@@ -364,24 +364,19 @@ function init_gear_sets()
     legs="Ebers Pantaloons +1",       -- __, __, ___,  33,  12, __ [__/__, 107] __; 6% cure mp return
     feet="Theophany Duckbills +3",    -- __, __, ___,  34,  20, 29 [__/__, 127] __
     neck="Loricate Torque +1",        -- __, __, ___, ___, ___,  5 [ 6/ 6, ___] __
-    ear1="Odnowa Earring +1",         -- __, __, ___, ___,   3, __ [ 3/ 5, ___] __
+    ear1="Novia Earring",             -- __, __, ___, ___, ___, __ [__/__, ___]  7
     ear2="Nourishing Earring +1",     -- __,  7, ___,   4, ___,  5 [__/__, ___] __; Resist Silence +15
     ring1="Gelatinous Ring +1",       -- __, __, ___, ___,  15, __ [ 7/-1, ___] __
     ring2="Defending Ring",           -- __, __, ___, ___, ___, __ [10/10, ___] __
     back=gear.WHM_CP_Cape,            -- __, 10, ___,  30, ___, __ [10/__, ___] __
-    waist="Hachirin-no-Obi",          -- __, __, ___, ___, ___, __ [__/__, ___] ____; Resist Silence +15
+    waist="Hachirin-no-Obi",          -- __, __, ___, ___, ___, __ [__/__, ___] __; Resist Silence +15
     -- Kaykaus set bonus              -- __, __, ___, ___, ___, __ [__/__, ___] __
     -- Base Stats                     -- __, __, 506, 129, 123, __ [__/__, ___] __
     -- Merit points                   -- __, __, ___, ___, ___, 10 [__/__, ___]  5
-    -- 0 CPII, 53 CP, 522 Heal Skill, 335 MND, 235 VIT, 102 SIRD [53PDT/35MDT, 496 M.Eva] 15 -Enmity
-
+    
     -- ammo="Staunch Tathlum +1",     -- __, __, ___, ___, ___, 11 [ 3/ 3, ___] __
-    -- ear1="Novia Earring",          -- __, __, ___, ___, ___, __ [__/__, ___]  7
-    -- Kaykaus set bonus              -- __, __, ___, ___, ___, __ [__/__, ___] __
-    -- Base Stats                     -- __, __, 506, 129, 123, __ [__/__, ___] __
-    -- Merit points                   -- __, __, ___, ___, ___, 10 [__/__, ___]  5
     -- 0 CPII, 53 CP, 522 Heal Skill, 335 MND, 232 VIT, 103 SIRD [51PDT/31MDT, 496 M.Eva] 22 -Enmity
-  })
+  })-- 0 CPII, 53 CP, 522 Heal Skill, 335 MND, 232 VIT, 102 SIRD [50PDT/30MDT, 496 M.Eva] 22 -Enmity
 
   -- WHM/SCH M30 Healing Magic Skill = 506
   -- Cap at 700 power; Power = floor(MND÷2) + floor(VIT÷4) + Healing Magic Skill
@@ -394,6 +389,7 @@ function init_gear_sets()
     legs="Ebers Pantaloons +1",       -- __, __, ___,  33,  12, __ [__/__, 107] __; 6% cure mp return
     feet="Theophany Duckbills +3",    -- __, __, ___,  34,  20, 29 [__/__, 127] __
     neck="Cleric's Torque +1",        -- __,  7, ___,  12, ___, __ [__/__, ___] 20
+    ear1="Novia Earring",             -- __, __, ___, ___, ___, __ [__/__, ___]  7
     ear2="Odnowa Earring +1",         -- __, __, ___, ___,   3, __ [ 3/ 5, ___] __
     ring1="Gelatinous Ring +1",       -- __, __, ___, ___,  15, __ [ 7/-1, ___] __
     ring2="Defending Ring",           -- __, __, ___, ___, ___, __ [10/10, ___] __
@@ -401,11 +397,10 @@ function init_gear_sets()
     waist="Rumination Sash",          -- __, __, ___,   4, ___, 10 [__/__, ___] __
     -- Base Stats                     -- __, __, 506, 129, 123, __ [__/__, ___] __
     -- Merit points                   -- __, __, ___, ___, ___, 10 [__/__, ___]  5
-    -- 0 CPII, 51 CP, 551 Heal Skill, 325 MND, 213 VIT, 90 SIRD [47PDT/26MDT, 362 M.Eva] 25 -Enmity
+    -- 0 CPII, 51 CP, 551 Heal Skill, 325 MND, 213 VIT, 90 SIRD [47PDT/26MDT, 362 M.Eva] 32 -Enmity
 
     -- ammo="Staunch Tathlum +1",     -- __, __, ___, ___, ___, 11 [ 3/ 3, ___] __
     -- head="Adhara Turban",          -- __, __, ___, ___, ___, 20 [__/__, ___]  6
-    -- ear1="Novia Earring",          -- __, __, ___, ___, ___, __ [__/__, ___]  7
     -- waist="Sanctuary Obi +1",      -- __, __, ___, ___, ___, 10 [__/__, ___]  4
     -- Base Stats                     -- __, __, 506, 129, 123, __ [__/__, ___] __
     -- Merit points                   -- __, __, ___, ___, ___, 10 [__/__, ___]  5
@@ -455,6 +450,7 @@ function init_gear_sets()
     ammo="Incantor Stone",            -- __, ___,  2
     head=gear.Vanya_B_head,           -- 20, ___, __
     body="Ebers Bliaut +1",           -- 24, ___, __
+    hands=gear.Fanatic_Gloves,        --  8,  15,  5
     feet=gear.Vanya_B_feet,           -- 40,   5, __
     neck="Debilis Medallion",         -- __,  15, __
     ear1="Malignance Earring",        -- __, ___,  4
@@ -1177,9 +1173,9 @@ function job_self_command(cmdParams, eventArgs)
       send_command('@input /ma "Curaga '..state.CuragaTier.current..'" <stpc>')
     end
   elseif cmdParams[1] == 'barelement' then
-    send_command('@input /ma "'..state.Barelement.current..'" <stpc>')
+    send_command('@input /ma "'..state.Barelement.current..'" <me>')
   elseif cmdParams[1] == 'barstatus' then
-    send_command('@input /ma "'..state.Barstatus.current..'" <stpc>')
+    send_command('@input /ma "'..state.Barstatus.current..'" <me>')
   elseif cmdParams[1] == 'storm' then
     send_command('@input /ma "'..state.Storm.current..'" <stpc>')
   end
