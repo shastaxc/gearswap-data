@@ -384,6 +384,7 @@ function init_gear_sets()
     main="Ababinili +1",              -- __, 34,  21,  12, ___, __ [10/10, ___] __
     sub="Mensch Strap +1",            -- __, __, ___, ___, ___, __ [ 5/__, ___] __
     ammo="Staunch Tathlum",           -- __, __, ___, ___, ___, 10 [ 2/ 2, ___] __
+    head="Adhara Turban",             -- __, __, ___, ___, ___, 20 [__/__, ___]  6
     body="Ebers Bliaut +1",           -- __, __,  24,  33,  20, __ [__/__,  80] __; Solace+14
     hands=gear.Chironic_SIRD_hands,   -- __, __, ___,  38,  20, 31 [__/__,  48] __; Can add more DT or Enmity
     legs="Ebers Pantaloons +1",       -- __, __, ___,  33,  12, __ [__/__, 107] __; 6% cure mp return
@@ -397,10 +398,9 @@ function init_gear_sets()
     waist="Rumination Sash",          -- __, __, ___,   4, ___, 10 [__/__, ___] __
     -- Base Stats                     -- __, __, 506, 129, 123, __ [__/__, ___] __
     -- Merit points                   -- __, __, ___, ___, ___, 10 [__/__, ___]  5
-    -- 0 CPII, 51 CP, 551 Heal Skill, 325 MND, 213 VIT, 90 SIRD [47PDT/26MDT, 362 M.Eva] 32 -Enmity
+    -- 0 CPII, 51 CP, 551 Heal Skill, 325 MND, 213 VIT, 110 SIRD [47PDT/26MDT, 362 M.Eva] 38 -Enmity
 
     -- ammo="Staunch Tathlum +1",     -- __, __, ___, ___, ___, 11 [ 3/ 3, ___] __
-    -- head="Adhara Turban",          -- __, __, ___, ___, ___, 20 [__/__, ___]  6
     -- waist="Sanctuary Obi +1",      -- __, __, ___, ___, ___, 10 [__/__, ___]  4
     -- Base Stats                     -- __, __, 506, 129, 123, __ [__/__, ___] __
     -- Merit points                   -- __, __, ___, ___, ___, 10 [__/__, ___]  5
@@ -413,6 +413,7 @@ function init_gear_sets()
     main="Ababinili +1",              -- __, 34,  21,  12, ___, __ [10/10, ___] __
     sub="Mensch Strap +1",            -- __, __, ___, ___, ___, __ [ 5/__, ___] __
     ammo="Staunch Tathlum",           -- __, __, ___, ___, ___, 10 [ 2/ 2, ___] __
+    head="Adhara Turban",             -- __, __, ___, ___, ___, 20 [__/__, ___]  6
     body="Ebers Bliaut +1",           -- __, __,  24,  33,  20, __ [__/__,  80] __; Solace+14
     hands=gear.Chironic_SIRD_hands,   -- __, __, ___,  38,  20, 31 [__/__,  48] __; Can add more DT or Enmity
     legs="Ebers Pantaloons +1",       -- __, __, ___,  33,  12, __ [__/__, 107] __; 6% cure mp return
@@ -426,10 +427,9 @@ function init_gear_sets()
     waist="Hachirin-no-Obi",          -- __, __, ___, ___, ___, __ [__/__, ___] __
     -- Base Stats                     -- __, __, 506, 129, 123, __ [__/__, ___] __
     -- Merit points                   -- __, __, ___, ___, ___, 10 [__/__, ___]  5
-    -- 0 CPII, 51 CP, 551 Heal Skill, 321 MND, 213 VIT, 85 SIRD [47PDT/26MDT, 362 M.Eva] 28 -Enmity
+    -- 0 CPII, 51 CP, 551 Heal Skill, 321 MND, 213 VIT, 105 SIRD [47PDT/26MDT, 362 M.Eva] 34 -Enmity
 
     -- ammo="Staunch Tathlum +1",     -- __, __, ___, ___, ___, 11 [ 3/ 3, ___] __
-    -- head="Adhara Turban",          -- __, __, ___, ___, ___, 20 [__/__, ___]  6
     -- Base Stats                     -- __, __, 506, 129, 123, __ [__/__, ___] __
     -- Merit points                   -- __, __, ___, ___, ___, 10 [__/__, ___]  5
     -- 0 CPII, 51 CP, 551 Heal Skill, 321 MND, 213 VIT, 106 SIRD [48PDT/27MDT, 362 M.Eva] 34 -Enmity
