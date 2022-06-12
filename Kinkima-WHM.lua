@@ -337,15 +337,14 @@ function init_gear_sets()
     ring1="Gelatinous Ring +1",       -- __, __, ___, ___,  15, __ [ 7/-1, ___] __
     ring2="Defending Ring",           -- __, __, ___, ___, ___, __ [10/10, ___] __
     back=gear.WHM_CP_Cape,            -- __, 10, ___,  30, ___, __ [10/__, ___] __
-    waist="Rumination Sash",          -- __, __, ___,   4, ___, 10 [__/__, ___] __
+    waist="Sanctuary Obi +1",         -- __, __, ___, ___, ___, 10 [__/__, ___]  4
     -- Kaykaus bonus                      4, __, ___, ___, ___, __ [__/__, ___] __
     -- Base Stats                        __, __, 506, 129, 123, __ [__/__, ___] __
     -- Merit points                      __, __, ___, ___, ___, 10 [__/__, ___]  5
-    -- 4 CPII, 50 CP, 522 Heal Skill, 279 MND, 205 VIT, 102 SIRD [50PDT/25MDT, 369 M.Eva] 24 -Enmity
+    -- 4 CPII, 50 CP, 522 Heal Skill, 275 MND, 205 VIT, 102 SIRD [50PDT/25MDT, 369 M.Eva] 28 -Enmity
 
     -- ammo="Staunch Tathlum +1",     -- __, __, ___, ___, ___, 11 [ 3/ 3, ___] __
     -- hands="Theophany Mitts +3",    --  4, __,  21,  48,  35, __ [__/__,  47]  6
-    -- waist="Sanctuary Obi +1",      -- __, __, ___, ___, ___, 10 [__/__, ___]  4
     -- Kaykaus bonus                      4, __, ___, ___, ___, __ [__/__, ___] __
     -- Base Stats                        __, __, 506, 129, 123, __ [__/__, ___] __
     -- Merit points                      __, __, ___, ___, ___, 10 [__/__, ___]  5
@@ -395,13 +394,12 @@ function init_gear_sets()
     ring1="Gelatinous Ring +1",       -- __, __, ___, ___,  15, __ [ 7/-1, ___] __
     ring2="Defending Ring",           -- __, __, ___, ___, ___, __ [10/10, ___] __
     back=gear.WHM_CP_Cape,            -- __, 10, ___,  30, ___, __ [10/__, ___] __; Solace+10
-    waist="Rumination Sash",          -- __, __, ___,   4, ___, 10 [__/__, ___] __
+    waist="Sanctuary Obi +1",         -- __, __, ___, ___, ___, 10 [__/__, ___]  4
     -- Base Stats                     -- __, __, 506, 129, 123, __ [__/__, ___] __
     -- Merit points                   -- __, __, ___, ___, ___, 10 [__/__, ___]  5
-    -- 0 CPII, 51 CP, 551 Heal Skill, 325 MND, 213 VIT, 110 SIRD [47PDT/26MDT, 362 M.Eva] 38 -Enmity
+    -- 0 CPII, 51 CP, 551 Heal Skill, 321 MND, 213 VIT, 110 SIRD [47PDT/26MDT, 362 M.Eva] 42 -Enmity
 
     -- ammo="Staunch Tathlum +1",     -- __, __, ___, ___, ___, 11 [ 3/ 3, ___] __
-    -- waist="Sanctuary Obi +1",      -- __, __, ___, ___, ___, 10 [__/__, ___]  4
     -- Base Stats                     -- __, __, 506, 129, 123, __ [__/__, ___] __
     -- Merit points                   -- __, __, ___, ___, ___, 10 [__/__, ___]  5
     -- 0 CPII, 51 CP, 551 Heal Skill, 321 MND, 213 VIT, 111 SIRD [48PDT/27MDT, 362 M.Eva] 42 -Enmity

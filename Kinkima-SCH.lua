@@ -361,7 +361,7 @@ function init_gear_sets()
     ring1="Gelatinous Ring +1",       -- __, __, ___, ___,  15, __,  7/-1, __; Use Janniston if you have it
     ring2="Defending Ring",           -- __, __, ___, ___, ___, __, 10/10, __
     back=gear.SCH_FC_Cape,            -- __, __, ___,  30, ___, __, 10/__, __
-    waist="Rumination Sash",          -- __, __, ___,   4, ___, 10, __/__, __
+    waist="Sanctuary Obi +1",         -- __, __, ___, ___, ___, 10, __/__,  4
     -- Kaykaus bonus                      8, __, ___, ___, ___, __, __/__, __
     -- Base Stats                     -- __, __, 486, 129, 123, __, __/__, __
     -- Merit points                   -- __, __, ___, ___, ___, 10, __/__,  5
@@ -369,13 +369,12 @@ function init_gear_sets()
     -- ammo="Staunch Tathlum +1",     -- __, __, ___, ___, ___, 11,  3/ 3, __
     -- ring1="Kuchekula Ring",        -- __, __, ___, ___, ___, __, __/__,  7; Use Janniston if you have it
     -- back=gear.SCH_CP_Cape,         -- __, 10, ___,  30, ___, __, 10/__, __
-    -- waist="Sanctuary Obi +1",      -- __, __, ___, ___, ___, 10, __/__,  4
     -- Kaykaus bonus                      8, __, ___, ___, ___, __, __/__, __
     -- Base Stats                     -- __, __, 486, 129, 123, __, __/__, __
     -- Merit points                   -- __, __, ___, ___, ___, 10, __/__,  5
     -- 12 CPII, 49 CP, 502 Heal Skill, 298 MND, 239 VIT, 108 SIRD, 55PDT/48MDT, 37 -Enmity
     -- 710 Power
-  } -- 12 CPII, 39 CP, 502 Heal Skill, 302 MND, 254 VIT, 107 SIRD, 61PDT/46MDT, 26 -Enmity
+  } -- 12 CPII, 39 CP, 502 Heal Skill, 298 MND, 254 VIT, 107 SIRD, 61PDT/46MDT, 30 -Enmity
     -- 722 Power
 
   -- Prioritize: CPII > CP > Heal Skill, MND, VIT (to power cap) > SIRD > -DT > Enmity (to -40)
