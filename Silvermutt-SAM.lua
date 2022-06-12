@@ -608,7 +608,7 @@ function init_gear_sets()
   sets.engaged = {
     ammo="Coiste Bodhar",             -- [__/__, ___] __,  3 <__, __,  3> __, __
     head="Flamma Zucchetto +2",       -- [__/__,  53] __,  6 <__,  5, __> __,  4
-    body="Kendatsuba Samue +1",       -- [__/__, 117] __, __ <__,  6, __>  9,  4
+    body="Tatenashi Haramaki +1",     -- [__/__,  59] __,  9 <__,  5, __>  6,  3
     hands="Wakido Kote +3",           -- [__/__,  46]  4,  7 <__, __, __> __,  4
     legs="Tatenashi Haidate +1",      -- [__/__,  80] __,  8 <__,  3, __> __,  5
     feet="Kendatsuba Sune-Ate +1",    -- [__/__, 139] __, __ <__,  4, __>  5,  3
@@ -619,9 +619,7 @@ function init_gear_sets()
     ring2="Niqmaddu Ring",            -- [__/__, ___] __, __ < 3, __, __> __, __
     back=gear.SAM_TP_Cape,            -- [10/__, ___] __, __ <__, __, 10> __, __
     waist="Sailfi Belt +1",           -- [__/__, ___] __, __ <__,  2,  5> __,  9
-    -- body="Tatenashi Haramaki +1",  -- [__/__,  59] __,  9 <__,  5, __>  6,  3
-    -- [10 PDT/0 MDT, 337 MEVA] 4 Hasso, 66 STP <3 QA, 19 TA, 18 DA> 11 Crit Rate, 28 Haste
-  } -- [10 PDT/0 MDT, 435 MEVA] 4 Hasso, 57 STP <3 QA, 20 TA, 18 DA> 14 Crit Rate, 29 Haste
+  } -- [10 PDT/0 MDT, 337 MEVA] 4 Hasso, 66 STP <3 QA, 19 TA, 18 DA> 11 Crit Rate, 28 Haste
   sets.engaged.LowAcc = set_combine(sets.engaged, {
     body="Kendatsuba Samue +1",
     feet="Flamma Gambieras +2",

@@ -330,7 +330,7 @@ function init_gear_sets()
   sets.precast.WS = {
     ammo="Knobkierrie",
     head="Mpaca's Cap",
-    body="Kendatsuba Samue +1",
+    body="Tatenashi Haramaki +1",
     hands=gear.Herc_TA_hands,
     legs="Mpaca's Hose",
     feet=gear.Herc_TA_feet,
@@ -341,7 +341,6 @@ function init_gear_sets()
     ring2="Niqmaddu Ring",
     back=gear.MNK_STR_DA_Cape,
     waist="Moonbow Belt +1",
-    -- body="Tatenashi Haramaki +1",
   } -- Base WS set
   sets.precast.WS.MaxTP = set_combine(sets.precast.WS, {
   })
@@ -497,7 +496,7 @@ function init_gear_sets()
   sets.precast.WS['Howling Fist'] = set_combine(sets.precast.WS, {
     ammo="Knobkierrie",
     head="Mpaca's Cap",
-    body="Kendatsuba Samue +1",
+    body="Tatenashi Haramaki +1",
     hands=gear.Herc_TA_hands,
     legs="Mpaca's Hose",
     feet=gear.Herc_TA_feet,
@@ -508,7 +507,6 @@ function init_gear_sets()
     ring2="Niqmaddu Ring",
     back=gear.MNK_STR_DA_Cape,
     waist="Moonbow Belt +1",
-    -- body="Tatenashi Haramaki +1",
   })
   sets.precast.WS["Howling Fist"].MaxTP = set_combine(sets.precast.WS["Howling Fist"], {
     head=gear.Adhemar_B_head,
@@ -564,7 +562,7 @@ function init_gear_sets()
   sets.precast.WS['Spinning Attack'] = set_combine(sets.precast.WS, {
     ammo="Knobkierrie",
     head=gear.Adhemar_B_head,
-    body="Kendatsuba Samue +1",
+    body="Tatenashi Haramaki +1",
     hands=gear.Adhemar_B_hands,
     legs="Mpaca's Hose",
     feet=gear.Herc_TA_feet,
@@ -575,7 +573,6 @@ function init_gear_sets()
     ring2="Niqmaddu Ring",
     back=gear.MNK_STR_DA_Cape,
     waist="Moonbow Belt +1",
-    -- body="Tatenashi Haramaki +1",
   })
   sets.precast.WS["Spinning Attack"].MaxTP = set_combine(sets.precast.WS["Spinning Attack"], {
   })
