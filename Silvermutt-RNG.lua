@@ -1797,29 +1797,66 @@ function has_item(item_name)
   return false
 end
 
-function get_item(item_name)
+-- Returns details of item if you have it. Optional get_count boolean will
+-- also return count of all instances of the item with that name that you
+-- have in all wardrobes and inventory. get_count defaults to true
+function get_item(item_name, --[[optional]]get_count)
+  if get_count == nil then
+    get_count = true
+  end
+  local item = nil
+  local count = 0
   if item_name and item_name ~= '' then
     if player.inventory[item_name] then
-      return player.inventory[item_name]
-    elseif player.wardrobe[item_name] then
-      return player.wardrobe[item_name]
-    elseif player.wardrobe2[item_name] then
-      return player.wardrobe2[item_name]
-    elseif player.wardrobe3 and player.wardrobe3[item_name] then
-      return player.wardrobe3[item_name]
-    elseif player.wardrobe4 and player.wardrobe4[item_name] then
-      return player.wardrobe4[item_name]
-    elseif player.wardrobe5 and player.wardrobe5[item_name] then
-      return player.wardrobe5[item_name]
-    elseif player.wardrobe6 and player.wardrobe6[item_name] then
-      return player.wardrobe6[item_name]
-    elseif player.wardrobe7 and player.wardrobe7[item_name] then
-      return player.wardrobe7[item_name]
-    elseif player.wardrobe8 and player.wardrobe8[item_name] then
-      return player.wardrobe8[item_name]
+      item = player.inventory[item_name]
+      if not get_count then return end
+      count = count + (item.count or 1)
+    end
+    if player.wardrobe[item_name] then
+      item = player.wardrobe[item_name]
+      if not get_count then return end
+      count = count + (item.count or 1)
+    end
+    if player.wardrobe2[item_name] then
+      item = player.wardrobe2[item_name]
+      if not get_count then return end
+      count = count + (item.count or 1)
+    end
+    if player.wardrobe3 and player.wardrobe3[item_name] then
+      item = player.wardrobe3[item_name]
+      if not get_count then return end
+      count = count + (item.count or 1)
+    end
+    if player.wardrobe4 and player.wardrobe4[item_name] then
+      item = player.wardrobe4[item_name]
+      if not get_count then return end
+      count = count + (item.count or 1)
+    end
+    if player.wardrobe5 and player.wardrobe5[item_name] then
+      item = player.wardrobe5[item_name]
+      if not get_count then return end
+      count = count + (item.count or 1)
+    end
+    if player.wardrobe6 and player.wardrobe6[item_name] then
+      item = player.wardrobe6[item_name]
+      if not get_count then return end
+      count = count + (item.count or 1)
+    end
+    if player.wardrobe7 and player.wardrobe7[item_name] then
+      item = player.wardrobe7[item_name]
+      if not get_count then return end
+      count = count + (item.count or 1)
+    end
+    if player.wardrobe8 and player.wardrobe8[item_name] then
+      item = player.wardrobe8[item_name]
+      if not get_count then return end
+      count = count + (item.count or 1)
     end
   end
-  return nil
+  if item then
+    item.count = count
+  end
+  return item
 end
 
 -- Check for proper ammo when shooting or weaponskilling
