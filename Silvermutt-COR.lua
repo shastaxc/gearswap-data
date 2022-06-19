@@ -2060,50 +2060,13 @@ function get_item(item_name, --[[optional]]get_count)
   local item = nil
   local count = 0
   if item_name and item_name ~= '' then
-    if player.inventory[item_name] then
-      item = player.inventory[item_name]
-      if not get_count then return end
-      count = count + (item.count or 1)
-    end
-    if player.wardrobe[item_name] then
-      item = player.wardrobe[item_name]
-      if not get_count then return end
-      count = count + (item.count or 1)
-    end
-    if player.wardrobe2[item_name] then
-      item = player.wardrobe2[item_name]
-      if not get_count then return end
-      count = count + (item.count or 1)
-    end
-    if player.wardrobe3 and player.wardrobe3[item_name] then
-      item = player.wardrobe3[item_name]
-      if not get_count then return end
-      count = count + (item.count or 1)
-    end
-    if player.wardrobe4 and player.wardrobe4[item_name] then
-      item = player.wardrobe4[item_name]
-      if not get_count then return end
-      count = count + (item.count or 1)
-    end
-    if player.wardrobe5 and player.wardrobe5[item_name] then
-      item = player.wardrobe5[item_name]
-      if not get_count then return end
-      count = count + (item.count or 1)
-    end
-    if player.wardrobe6 and player.wardrobe6[item_name] then
-      item = player.wardrobe6[item_name]
-      if not get_count then return end
-      count = count + (item.count or 1)
-    end
-    if player.wardrobe7 and player.wardrobe7[item_name] then
-      item = player.wardrobe7[item_name]
-      if not get_count then return end
-      count = count + (item.count or 1)
-    end
-    if player.wardrobe8 and player.wardrobe8[item_name] then
-      item = player.wardrobe8[item_name]
-      if not get_count then return end
-      count = count + (item.count or 1)
+    local bags = L{'inventory','wardrobe','wardrobe2','wardrobe3','wardrobe4','wardrobe5','wardrobe6','wardrobe7','wardrobe8'}
+    for bag,_ in bags:it() do
+      if player[bag] and player[bag][item_name] then
+        item = player[bag][item_name]
+        if not get_count then return end
+        count = count + (item.count or 1)
+      end
     end
   end
   if item then
