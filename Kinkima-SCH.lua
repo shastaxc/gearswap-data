@@ -561,8 +561,8 @@ function init_gear_sets()
   -- Stoneskin Cap, Enh Duration
   sets.midcast.Stoneskin = set_combine(sets.midcast.EnhancingDuration, {
     neck="Nodens Gorget",    -- 30, __, __
+    ear1="Earthcry Earring", -- 10, __, __
     -- waist="Siegel Sash",     -- 20, __, __
-    -- ear1="Earthcry Earring", -- 10, __, __
     -- +60 Stoneskin Cap, 72% Enh Duration
   })
 

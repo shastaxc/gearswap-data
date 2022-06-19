@@ -572,13 +572,13 @@ function init_gear_sets()
     body="Inyanga Jubbah +2",   -- [__/ 8, 120] __, 14
     feet=gear.Merl_FC_feet,     -- [__/__, 118] __, 11
     neck="Nodens Gorget",       -- [__/__, ___] 30, __
+    ear1="Earthcry Earring",    -- [__/__, ___] 10, __
     ear2="Malignance Earring",  -- [__/__, ___] __,  4
     ring1="Kishar Ring",        -- [__/__, ___] __,  4
     ring2="Defending Ring",     -- [10/10, ___] __, __
     back=gear.WHM_FC_Cape,      -- [10/__,  20] __, 10
     -- hands="Stone Mufflers",  -- [__/__, ___] 30, __
     -- legs="Shedir Seraweels", -- [__/__, ___] 35, __
-    -- ear1="Earthcry Earring", -- [__/__, ___] 10, __
     -- waist="Siegel Sash",     -- [__/__, ___] 20, __
     -- [52 PDT/45 MDT, 381 MEVA] +125 Stoneskin Potency, 55 Fast Cast
   }
