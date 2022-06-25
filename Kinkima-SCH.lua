@@ -946,8 +946,8 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.passive_refresh = {
-    main="Bolelabunga",             -- __/__, ___ [ 1]
-    sub="Genmei Shield",            -- 10/__, ___ [__]
+    main="Mpaca's Staff",           -- __/__, ___ [ 2]
+    sub="Khonsu",                   --  6/ 6, ___ [__]
     ammo="Staunch Tathlum",         --  2/ 2, ___ [__]
     head=gear.Nyame_B_head,         --  7/ 7, 123 [__]
     body="Shamash Robe",            -- 10/__, 106 [ 3]; Resist Silence+90
@@ -961,12 +961,10 @@ function init_gear_sets()
     ring2="Defending Ring",         -- 10/10, ___ [__]
     back=gear.SCH_FC_Cape,          -- 10/__,  20 [__] -- TODO: Add meva
     waist="Carrier's Sash",         -- __/__, ___ [__]; Ele Resist+15
-    -- main="Mpaca's Staff",        -- __/__, ___ [ 2]
-    -- sub="Khonsu",                --  6/ 6, ___ [__]
     -- ammo="Staunch Tathlum +1",   --  3/ 3, ___ [__]; Resist Status+11
     -- hands="Volte Gloves",        -- __/__,  96 [ 1]
     -- 52 PDT / 35 MDT, 574 M.Eva [10 Refresh]
-  }
+  } -- 58 PDT / 41 MDT, 610 M.Eva [9 Refresh]
   sets.passive_refresh.sub50 = {
     waist="Fucho-no-Obi",
   }
@@ -984,15 +982,15 @@ function init_gear_sets()
     ear2="Etiolation Earring",          -- __/ 3, ___ [__]; Resist Silence+15
     ring1="Gelatinous Ring +1",         --  7/-1, ___ [__]
     ring2="Defending Ring",             -- 10/10, ___ [__]
-    back=gear.SCH_FC_Cape,
+    back=gear.SCH_FC_Cape,              -- 10/__,  20 [__] -- TODO: Add meva
     waist="Embla Sash",                 -- __/__, ___ [ 5]
     -- ammo="Staunch Tathlum +1",       --  3/ 3, ___; Resist Status+11
     -- back="Archon Cape",              -- __/__, ___ [__]
-    -- 50 PDT / 35 MDT, 564 M.Eva [16 Sublimation]
-  } -- 49 PDT / 34 MDT, 564 M.Eva [16 Sublimation]
+    -- 50 PDT / 35 MDT, 584 M.Eva [16 Sublimation]
+  } -- 59 PDT / 34 MDT, 584 M.Eva [16 Sublimation]
   sets.Sublimation.Refresh = {
-    main="Siriti",                      -- __/__, ___ [ 1, __]
-    sub="Genmei Shield",                -- 10/__, ___ [__, __]
+    main="Mpaca's Staff",               -- __/__, ___ [__,  2]
+    sub="Khonsu",                       --  6/ 6, ___ [__, __]
     ammo="Staunch Tathlum",             --  2/ 2, ___ [__, __]; Resist Status+10
     head="Academic's Mortarboard +3",   -- __/__,  95 [ 4, __]
     body="Pedagogy Gown +3",            -- __/__, 100 [ 5, __]
@@ -1006,11 +1004,9 @@ function init_gear_sets()
     ring2="Defending Ring",             -- 10/10, ___ [__, __]
     back=gear.SCH_FC_Cape,              -- 10/__,  20 [__, __]
     waist="Embla Sash",                 -- __/__, ___ [ 5, __]
-    -- main="Mpaca's Staff",            -- __/__, ___ [__,  2]
-    -- sub="Khonsu",                    --  6/ 6, ___ [__, __]
     -- ammo="Staunch Tathlum +1",       --  3/ 3, ___ [__, __]; Resist Status+11
     -- 49 PDT / 42 MDT, 584 M.Eva [15 Sublimation, 5 Refresh]
-  } -- 52 PDT / 35 MDT, 584 M.Eva [16 Sublimation, 3 Refresh]
+  } -- 48 PDT / 41 MDT, 584 M.Eva [15 Sublimation, 5 Refresh]
 
   sets.idle = sets.HeavyDef
   sets.idle.Sublimation = set_combine(sets.idle, sets.Sublimation)
