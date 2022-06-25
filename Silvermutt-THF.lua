@@ -65,14 +65,14 @@ function get_sets()
   coroutine.schedule(function()
     send_command('gs reorg')
   end, 1)
-  coroutine.schedule(function() 
+  coroutine.schedule(function()
     send_command('gs c weaponset current')
   end, 2)
 end
 
 -- Executes on first load and main job change
 function job_setup()
-  silibs.enable_cancel_outranged_ws()
+  -- silibs.enable_cancel_outranged_ws()
   silibs.enable_cancel_on_blocking_status()
   silibs.enable_weapon_rearm()
   silibs.enable_auto_lockstyle(9)
@@ -97,7 +97,27 @@ function job_setup()
   state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger',
       'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
   state.WeaponSet = M{['description']='Weapon Set', 'WhiteGlass', 'Normal', 'Naegling', 'NaeglingAcc', 'H2H', 'Staff', 'Cleaving'}
+  state.RangedWeaponSet = M{['description']='Ranged Weapon Set', 'None', 'Throwing', 'Archery'}
   state.Runes = M{['description']='Runes', 'Ignis', 'Gelus', 'Flabra', 'Tellus', 'Sulpor', 'Unda', 'Lux', 'Tenebrae'}
+
+  -- Indicate if a marksmanship weapon is xbow or gun
+  marksman_weapon_subtypes = {
+    -- ['Gastraphetes'] = "xbow",
+    -- ['Fomalhaut'] = "gun",
+  }
+
+  DefaultAmmo = {
+    ['Ullr'] = "Eminent Arrow",
+  }
+  AccAmmo = {
+    ['Ullr'] = "Eminent Arrow",
+  }
+  WSAmmo = {
+    ['Ullr'] = "Eminent Arrow",
+  }
+  MagicAmmo = {
+    ['Ullr'] = "Eminent Arrow",
+  }
 
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c usekey')
@@ -105,6 +125,8 @@ function job_setup()
   
   send_command('bind ^insert gs c weaponset cycle')
   send_command('bind ^delete gs c weaponset cycleback')
+  send_command('bind ^home gs c rangedweaponset cycle')
+  send_command('bind ^end gs c rangedweaponset cycleback')
 
   send_command('bind ^pageup gs c toyweapon cycle')
   send_command('bind ^pagedown gs c toyweapon cycleback')
@@ -198,7 +220,6 @@ end
 -- Define sets and vars used by this job file.
 function init_gear_sets()
   sets.org.job = {}
-  sets.org.job[1] = {range="Albin Bane"}
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Precast Sets ------------------------------------------
@@ -207,6 +228,10 @@ function init_gear_sets()
   sets.TreasureHunter = {
     ammo="Perfect Lucky Egg", --1
     hands="Plunderer's Armlets +3", --4
+  }
+  sets.TreasureHunter.RA = {
+    hands="Plunderer's Armlets +3", --4
+    waist="Chaac Belt", --1
   }
 
   sets.buff['Sneak Attack'] = {}
@@ -1255,12 +1280,12 @@ function init_gear_sets()
   }
 
   -- Ranged weapon sets
-  sets.WeaponSet['Ullr'] = {
+  sets.WeaponSet['Archery'] = {
     ranged="Ullr",
     ammo="Eminent Arrow",
   }
   sets.WeaponSet['Throwing'] = {
-    ranged="Albin Bane",
+    ranged="Antitail +1",
     ammo=empty,
   }
 end
@@ -1320,6 +1345,12 @@ function job_post_precast(spell, action, spellMap, eventArgs)
     end
   end
 
+  -- Keep ranged weapon/ammo equipped if in an RA mode.
+  if state.RangedWeaponSet.current ~= 'None' then
+    equip({range=player.equipment.range, ammo=player.equipment.ammo})
+    silibs.equip_ammo(spell)
+  end
+
   -- If slot is locked, keep current equipment on
   if locked_neck then equip({ neck=player.equipment.neck }) end
   if locked_ear1 then equip({ ear1=player.equipment.ear1 }) end
@@ -1337,6 +1368,11 @@ function job_midcast(spell, action, spellMap, eventArgs)
 end
 
 function job_post_midcast(spell, action, spellMap, eventArgs)
+  -- Keep ranged weapon/ammo equipped if in an RA mode.
+  if state.RangedWeaponSet.current ~= 'None' then
+    equip({range=player.equipment.range, ammo=player.equipment.ammo})
+    silibs.equip_ammo(spell)
+  end
 
   -- If slot is locked, keep current equipment on
   if locked_neck then equip({ neck=player.equipment.neck }) end
@@ -1401,6 +1437,7 @@ end
 function job_state_change(stateField, newValue, oldValue)
 end
 
+
 -------------------------------------------------------------------------------------------------------------------
 -- User code that supplements standard library decisions.
 -------------------------------------------------------------------------------------------------------------------
@@ -1421,6 +1458,7 @@ end
 
 function job_update(cmdParams, eventArgs)
   handle_equipping_gear(player.status)
+  update_dp_type() -- Requires DistancePlus addon
 end
 
 function update_combat_form()
@@ -1472,6 +1510,14 @@ function customize_idle_set(idleSet)
     idleSet = set_combine(idleSet, sets.CP)
   end
 
+  -- Keep ranged weapon/ammo equipped if in an RA mode.
+  if state.RangedWeaponSet.current ~= 'None' then
+    idleSet = set_combine(idleSet, {
+      range=player.equipment.range,
+      ammo=player.equipment.ammo
+    })
+  end
+
   -- If slot is locked to use no-swap gear, keep it equipped
   if locked_neck then idleSet = set_combine(idleSet, { neck=player.equipment.neck }) end
   if locked_ear1 then idleSet = set_combine(idleSet, { ear1=player.equipment.ear1 }) end
@@ -1491,6 +1537,14 @@ function customize_melee_set(meleeSet)
     meleeSet = set_combine(meleeSet, sets.CP)
   end
   
+  -- Keep ranged weapon/ammo equipped if in an RA mode.
+  if state.RangedWeaponSet.current ~= 'None' then
+    meleeSet = set_combine(meleeSet, {
+      range=player.equipment.range,
+      ammo=player.equipment.ammo
+    })
+  end
+
   -- If slot is locked to use no-swap gear, keep it equipped
   if locked_neck then meleeSet = set_combine(meleeSet, { neck=player.equipment.neck }) end
   if locked_ear1 then meleeSet = set_combine(meleeSet, { ear1=player.equipment.ear1 }) end
@@ -1514,6 +1568,14 @@ function customize_defense_set(defenseSet)
     defenseSet = set_combine(defenseSet, sets.CP)
   end
   
+  -- Keep ranged weapon/ammo equipped if in an RA mode.
+  if state.RangedWeaponSet.current ~= 'None' then
+    defenseSet = set_combine(defenseSet, {
+      range=player.equipment.range,
+      ammo=player.equipment.ammo
+    })
+  end
+
   -- If slot is locked to use no-swap gear, keep it equipped
   if locked_neck then defenseSet = set_combine(defenseSet, { neck=player.equipment.neck }) end
   if locked_ear1 then defenseSet = set_combine(defenseSet, { ear1=player.equipment.ear1 }) end
@@ -1597,6 +1659,38 @@ function display_current_job_state(eventArgs)
   eventArgs.handled = true
 end
 
+-- Requires DistancePlus addon
+function update_dp_type()
+  local weapon = nil
+  local weapon_type = nil
+  local weapon_subtype = nil
+
+  -- Handle unequipped case
+  if player.equipment.ranged ~= nil and player.equipment.ranged ~= 0 and player.equipment.ranged ~= 'empty' then
+    weapon = res.items:with('name', player.equipment.ranged)
+    weapon_type = res.skills[weapon.skill].en
+    if weapon_type == 'Archery' then
+      weapon_subtype = 'bow'
+    elseif weapon_type == 'Marksmanship' then
+      weapon_subtype = marksman_weapon_subtypes[weapon.en]
+    elseif weapon_type == 'Throwing' then
+      weapon_subtype = 'throwing'
+    end
+  end
+
+  -- Update addon if weapon type changed
+  if weapon_subtype ~= current_dp_type then
+    current_dp_type = weapon_subtype
+    if current_dp_type ~= nil then
+      coroutine.schedule(function()
+        if current_dp_type ~= nil then
+          send_command('dp '..current_dp_type)
+        end
+      end,3)
+    end
+  end
+end
+
 function cycle_weapons(cycle_dir)
   if cycle_dir == 'forward' then
     state.WeaponSet:cycle()
@@ -1606,6 +1700,17 @@ function cycle_weapons(cycle_dir)
 
   add_to_chat(141, 'Weapon Set to '..string.char(31,1)..state.WeaponSet.current)
   equip(sets.WeaponSet[state.WeaponSet.current])
+end
+
+function cycle_ranged_weapons(cycle_dir)
+  if cycle_dir == 'forward' then
+    state.RangedWeaponSet:cycle()
+  elseif cycle_dir == 'back' then
+    state.RangedWeaponSet:cycleback()
+  end
+
+  add_to_chat(141, 'RA Weapon Set to '..string.char(31,1)..state.RangedWeaponSet.current)
+  equip(sets.WeaponSet[state.RangedWeaponSet.current])
 end
 
 function cycle_toy_weapons(cycle_dir)
@@ -1703,6 +1808,14 @@ function job_self_command(cmdParams, eventArgs)
       cycle_weapons('back')
     elseif cmdParams[2] == 'current' then
       cycle_weapons('current')
+    end
+  elseif cmdParams[1] == 'rangedweaponset' then
+    if cmdParams[2] == 'cycle' then
+      cycle_ranged_weapons('forward')
+    elseif cmdParams[2] == 'cycleback' then
+      cycle_ranged_weapons('back')
+    elseif cmdParams[2] == 'current' then
+      cycle_ranged_weapons('current')
     end
   elseif cmdParams[1] == 'rune' then
     send_command('@input /ja '..state.Runes.value..' <me>')

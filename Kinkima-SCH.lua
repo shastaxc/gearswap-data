@@ -479,13 +479,13 @@ function init_gear_sets()
     legs=gear.Telchine_ENH_legs,      -- __, 10, __
     feet=gear.Kaykaus_D_feet,         -- 21, __,  4
     ear1="Mimir Earring",             -- 10, __, __
+    ring1="Stikini Ring +1",          --  8, __, __
     waist="Embla Sash",               -- __, 10,  5
     -- main=gear.Gada_ENH,            -- 18,  6,  6
     -- ammo="Savant's Treatise",      --  4, __, __
     -- head=gear.Telchine_ENH_head,   -- __, 10, __
     -- neck="Incanter's Torque",      -- 10, __, __
     -- ear2="Andoaa Earring",         --  5, __, __
-    -- ring1="Stikini Ring +1",       --  8, __, __
     -- ring2="Stikini Ring +1",       --  8, __, __
     -- back="Fi Follet Cape +1",      --  9, __, 10
     -- 112 Enh Skill, 68 Enh Duration, 25 FC
@@ -683,12 +683,12 @@ function init_gear_sets()
     feet="Academic's Loafers +3",         -- __, 32, 46
     neck="Erra Pendant",                  -- 10, __, 17
     ear2="Regal Earring",                 -- __, 10, __; Adds set effect
+    ring2="Stikini Ring +1",              --  8, __, 11
     back="Bookworm's Cape",               --  8,  4, __
     -- main="Rubicundity",                -- 25, 21, 30; +215 M.Acc skill
     -- body="Academic's Gown +3",         -- 24, 44, 50
     -- ear1="Mani Earring",               -- 10, __, __
     -- ring1="Evanescence Ring",          -- 10, __, __
-    -- ring2="Stikini Ring +1",           --  8, __, 11
     -- back="Bookworm's Cape",            --  8,  5, __
     -- waist="Acuity Belt +1",            -- __, 23, __
     -- Academic's set bonus               -- __, __, 60
@@ -719,6 +719,7 @@ function init_gear_sets()
     feet="Academic's Loafers +3",         -- __, 46, ___
     neck="Argute Stole +2",               -- __, 30, ___
     ear1="Malignance Earring",            --  4, 10, ___
+    ring1="Stikini Ring +1",              -- __, 11, ___; +8 all skill
     back=gear.SCH_MAB_Cape,
 
     --Ideal:
@@ -732,7 +733,7 @@ function init_gear_sets()
     -- ear1="Malignance Earring",         --  4, 10, ___
     -- ear2="Dignitary's Earring",        -- __, 10, ___
     -- ring1="Stikini Ring +1",           -- __, 11, ___; +8 all skill
-    -- ring2="Stikini Ring +2",           -- __, 11, ___; +8 all skill
+    -- ring2="Stikini Ring +1",           -- __, 11, ___; +8 all skill
     -- back=gear.SCH_INT_MAcc_Cape,       -- 10, 30, ___
     -- waist="Acuity Belt +1",            -- __, 15, ___
     -- Academic's set bonus               -- __, 60, ___
@@ -749,6 +750,7 @@ function init_gear_sets()
     neck="Argute Stole +2",             -- __, __, 30, ___
     ear1="Malignance Earring",          -- __,  4, 10, ___
     ear2="Regal Earring",               -- __, __, __, ___; adds set effect
+    ring1="Stikini Ring +1",            -- __, __, 11, ___; +8 all skill
 
     --Ideal:
     -- main="Hvergelmir",               -- __, 50, __, 269
@@ -761,7 +763,7 @@ function init_gear_sets()
     -- ear1="Malignance Earring",       -- __,  4, 10, ___
     -- ear2="Regal Earring",            -- __, __, __, ___; adds set effect
     -- ring1="Stikini Ring +1",         -- __, __, 11, ___; +8 all skill
-    -- ring2="Stikini Ring +2",         -- __, __, 11, ___; +8 all skill
+    -- ring2="Stikini Ring +1",         -- __, __, 11, ___; +8 all skill
     -- back=gear.SCH_INT_MAcc_Cape,     -- __, 10, 30, ___
     -- waist="Witful Belt",             -- __,  3, __, ___
     -- Academic's set bonus             -- __, __, 60, ___
@@ -951,10 +953,11 @@ function init_gear_sets()
     body="Shamash Robe",            -- 10/__, 106 [ 3]; Resist Silence+90
     hands=gear.Nyame_B_hands,       --  7/ 7, 112 [__]
     legs="Assiduity Pants +1",      -- __/__, 107 [ 2]
-    feet=gear.Nyame_B_feet,         --  7/ 7, 150 [__]
+    feet="Volte Gaiters",           -- __/__, 142 [ 1]
     neck="Loricate Torque +1",      --  6/ 6, ___ [__]; DEF+60
     ear1="Hearty Earring",          -- __/__, ___ [__]; Resist Status+5
     ear2="Etiolation Earring",      -- __/ 3, ___ [__]; Resist Silence+15
+    ring1="Stikini Ring +1",        -- __/__, ___ [ 1]
     ring2="Defending Ring",         -- 10/10, ___ [__]
     back=gear.SCH_FC_Cape,          -- 10/__,  20 [__] -- TODO: Add meva
     waist="Carrier's Sash",         -- __/__, ___ [__]; Ele Resist+15
@@ -962,8 +965,6 @@ function init_gear_sets()
     -- sub="Khonsu",                --  6/ 6, ___ [__]
     -- ammo="Staunch Tathlum +1",   --  3/ 3, ___ [__]; Resist Status+11
     -- hands="Volte Gloves",        -- __/__,  96 [ 1]
-    -- feet="Volte Gaiters",        -- __/__, 142 [ 1]
-    -- ring1="Stikini Ring +1",     -- __/__, ___ [ 1]
     -- 52 PDT / 35 MDT, 574 M.Eva [10 Refresh]
   }
   sets.passive_refresh.sub50 = {
@@ -1001,16 +1002,15 @@ function init_gear_sets()
     neck="Loricate Torque +1",          --  6/ 6, ___ [__, __]; DEF+60
     ear1="Savant's Earring",            -- __/__, ___ [ 1, __]
     ear2="Etiolation Earring",          -- __/ 3, ___ [__, __]; Resist Silence+15
-    ring1="Gelatinous Ring +1",         --  7/-1, ___ [__, __]
+    ring1="Stikini Ring +1",            -- __/__, ___ [__,  1]
     ring2="Defending Ring",             -- 10/10, ___ [__, __]
     back=gear.SCH_FC_Cape,              -- 10/__,  20 [__, __]
     waist="Embla Sash",                 -- __/__, ___ [ 5, __]
     -- main="Mpaca's Staff",            -- __/__, ___ [__,  2]
     -- sub="Khonsu",                    --  6/ 6, ___ [__, __]
     -- ammo="Staunch Tathlum +1",       --  3/ 3, ___ [__, __]; Resist Status+11
-    -- ring1="Stikini Ring +1",         -- __/__, ___ [__,  1]
     -- 49 PDT / 42 MDT, 584 M.Eva [15 Sublimation, 5 Refresh]
-  } -- 59 PDT / 34 MDT, 584 M.Eva [16 Sublimation, 2 Refresh]
+  } -- 52 PDT / 35 MDT, 584 M.Eva [16 Sublimation, 3 Refresh]
 
   sets.idle = sets.HeavyDef
   sets.idle.Sublimation = set_combine(sets.idle, sets.Sublimation)

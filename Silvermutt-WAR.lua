@@ -900,6 +900,10 @@ function init_gear_sets()
     hands="Volte Bracers", --1
     waist="Chaac Belt", --1
   }
+  sets.TreasureHunter.RA = {
+    hands="Volte Bracers", --1
+    waist="Chaac Belt", --1
+  }
 
   sets.WeaponSet = {}
   sets.WeaponSet['Chango'] = {

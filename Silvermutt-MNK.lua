@@ -209,6 +209,10 @@ function init_gear_sets()
     body=gear.Herc_TH_body, --2
     hands="Volte Bracers", --1
   }
+  sets.TreasureHunter.RA = {
+    body=gear.Herc_TH_body, --2
+    hands="Volte Bracers", --1
+  }
   sets.BoostRegain = {
     waist="Ask Sash",
   }

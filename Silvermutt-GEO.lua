@@ -126,6 +126,7 @@ function init_gear_sets()
   sets.TreasureHunter = {
     waist="Chaac Belt", --1
   }
+  sets.TreasureHunter.RA = sets.TreasureHunter
 
 	--------------------------------------
 	-- Precast sets

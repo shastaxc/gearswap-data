@@ -499,6 +499,7 @@ function init_gear_sets()
     feet="Theophany Duckbills +3",    -- 21, 10, __ [__/__, 127]
     ear1="Mimir Earring",             -- 10, __, __ [__/__, ___]
     ear2="Odnowa Earring +1",         -- __, __, __ [ 3/ 5, ___]
+    ring1="Stikini Ring +1",          --  8, __, __ [__/__, ___]
     ring2="Defending Ring",           -- __, __, __ [10/10, ___]
     back=gear.WHM_FC_Cape,            -- __, __, 10 [10/__,  20]
     waist="Embla Sash",               -- __, 10,  5 [__/__, ___]
@@ -524,7 +525,7 @@ function init_gear_sets()
     -- Base                             394; Includes merits
     -- Master Levels                     30
     -- 503 Enh Skill, 55% Enh Duration, 30 FC [51 PDT/38 MDT, 521 MEVA]
-  } -- 485 Enh Skill, 69% Enh Duration, 15 FC [26 PDT/18 MDT, 491 MEVA]
+  } -- 493 Enh Skill, 69% Enh Duration, 15 FC [26 PDT/18 MDT, 491 MEVA]
 
   sets.midcast.EnhancingDuration = {
     main="Gada",                      -- 18, __, __ [__/__, ___]
@@ -635,13 +636,13 @@ function init_gear_sets()
     feet="Theophany Duckbills +3",    -- 21, 46, 34, 32 [__/__, 127]
     ear1="Regal Earring",             -- __, __, 10, 10 [__/__, ___]
     ear2="Malignance Earring",        -- __, 10,  8,  8 [__/__, ___]
+    ring1="Stikini Ring +1",          --  8, 11,  8, __ [__/__, ___]
     back=gear.WHM_MND_MAcc_Cape,      -- __, 30, 20, __ [10/__, ___]
     -- main="Daybreak",               -- __, 40, 30, __ [__/__, ___]
     -- sub="Genmei Shield",           -- __, __, __, __ [10/__, ___]
     -- hands=gear.Kaykaus_A_hands,    -- 16, 53, 47, 19 [__/__,  37]
     -- legs=gear.Chironic_MAcc_legs,  -- 13, 60, 29, 42 [__/__, 118]
     -- neck="Incanter's Torque",      -- 10, __, __, __ [__/__, ___]
-    -- ring1="Stikini Ring +1",       --  8, 11,  8, __ [__/__, ___]
     -- ring2="Stikini Ring +1",       --  8, 11,  8, __ [__/__, ___]
     -- back="Aurist's Cape +1",       -- __, 33, 33, 33 [__/__, ___]
     -- waist="Acuity Belt +1",        -- __, 15, __, 23 [__/__, ___]
@@ -661,6 +662,7 @@ function init_gear_sets()
     neck="Sanctity Necklace",
     ear1="Regal Earring",
     ear2="Vor Earring",
+    ring1="Stikini Ring +1",
     back=gear.WHM_MND_MAcc_Cape,
     -- main="Daybreak",
     -- sub="Ammurapi Shield",
@@ -668,7 +670,6 @@ function init_gear_sets()
     -- hands="Kaykaus Cuffs +1",
     -- legs="Inyanga Shalwar +2",
     -- feet="Inyanga Crackows +2",
-    -- ring1="Stikini Ring +1",
     -- ring2="Stikini Ring +1",
     -- back="Aurist's Cape +1",
     -- waist="Acuity Belt +1",
@@ -693,10 +694,11 @@ function init_gear_sets()
     body="Shamash Robe",            -- 10/__, 106 [ 3]; Resist Silence+90
     hands=gear.Nyame_B_hands,       --  7/ 7, 112 [__]
     legs="Assiduity Pants +1",      -- __/__, 107 [ 2]
-    feet=gear.Nyame_B_feet,         --  7/ 7, 150 [__]
+    feet="Volte Gaiters",           -- __/__, 142 [ 1]
     neck="Loricate Torque +1",      --  6/ 6, ___ [__]; DEF+60
     ear1="Hearty Earring",          -- __/__, ___ [__]; Resist Status+5
     ear2="Etiolation Earring",      -- __/ 3, ___ [__]; Resist Silence+15
+    ring1="Stikini Ring +1",        -- __/__, ___ [ 1]
     ring2="Defending Ring",         -- 10/10, ___ [__]
     back=gear.WHM_FC_Cape,          -- 10/__,  20 [__]
     waist="Carrier's Sash",         -- __/__, ___ [__]; Ele Resist+15
@@ -704,10 +706,8 @@ function init_gear_sets()
     -- sub="Mensch Strap +1",       --  5/__, ___ [__]
     -- ammo="Staunch Tathlum +1",   --  3/ 3, ___ [__]; Resist Status+11
     -- hands="Volte Gloves",        -- __/__,  96 [ 1]
-    -- feet="Volte Gaiters",        -- __/__, 142 [ 1]
-    -- ring1="Stikini Ring +1",     -- __/__, ___ [ 1]
     -- 51 PDT / 29 MDT, 574 M.Eva [10 Refresh]
-  } -- 69 PDT / 42 MDT, 618 M.Eva [6 Refresh]
+  } -- 62 PDT / 35 MDT, 610 M.Eva [8 Refresh]
   sets.idle.Refresh = sets.idle
   sets.idle.Refresh.MpSub50 = set_combine(sets.idle.Refresh, {
     waist="Fucho-no-Obi",

@@ -502,6 +502,7 @@ function init_gear_sets()
   sets.midcast['Blue Magic'] = {
     ear2="Odnowa Earring +1",           -- __, __ [ 3/ 5, ___]
     ring1="Gelatinous Ring +1",         -- __, __ [ 7/-1, ___]
+    ring2="Stikini Ring +1",
     -- ammo="Mavi Tathlum",             --  5, __ [__/__, ___]
     -- head="Luhlaza Keffiyeh +3",      -- 17, 37 [__/__,  73]
     -- body="Assimilator's Jubbah +3",  -- 24, __ [__/__,  84]
@@ -511,7 +512,6 @@ function init_gear_sets()
     -- neck="Mirage Stole +1",          -- 15, 20 [__/__, ___]
     -- ear1="Njordr Earring",           -- 10, __ [__/__, ___]
     -- ring1="Stikini Ring +1",
-    -- ring2="Stikini Ring +1",
     -- back=gear.BLU_Adoulin_Cape,      -- 15, 15 [__/__, ___]
     -- waist="Flume Belt +1",           -- __, __ [ 4/__, ___]
   } -- Blue skill [PDT/MDT, M.Eva]
@@ -576,8 +576,8 @@ function init_gear_sets()
   -- TODO: Update
   sets.midcast['Blue Magic'].PhysicalMnd = set_combine(sets.midcast['Blue Magic'].Physical, {
     ear2="Regal Earring",
+    ring2="Stikini Ring +1",
     -- ring1="Stikini Ring +1",
-    -- ring2="Stikini Ring +1",
   })
 
   -- TODO: Update
@@ -685,8 +685,8 @@ function init_gear_sets()
     neck="Mirage Stole +1",
     ear1="Digni. Earring",
     ear2="Regal Earring",
-    ring1={name="Stikini Ring +1", bag="wardrobe3"},
-    ring2={name="Stikini Ring +1", bag="wardrobe4"},
+    ring1="Stikini Ring +1",
+    ring2="Stikini Ring +1",
     back="Aurist's Cape +1",
     waist="Acuity Belt +1",
   }
@@ -725,9 +725,9 @@ function init_gear_sets()
     ear1="Mendicant's Earring", -- 5
     ear2="Halasz Earring", --4SIRD
     -- ring1="Lebeche Ring", -- 3
-    -- ring1={name="Stikini Ring +1", bag="wardrobe3"},
+    -- ring1="Stikini Ring +1",
     ring1="Defending Ring", --10DT
-    ring2={name="Stikini Ring +1", bag="wardrobe4"},
+    ring2="Stikini Ring +1",
     -- back="Oretan. Cape +1", --6
     waist="Flume Belt +1", --4PDT
     back=gear.BLU_FC_Cape, --10PDT
@@ -785,8 +785,8 @@ function init_gear_sets()
     ear1="Mimir Earring",
     ear2="Andoaa Earring",
     ring1="Defending Ring", --10DT
-    -- ring1={name="Stikini Ring +1", bag="wardrobe3"},
-    ring2={name="Stikini Ring +1", bag="wardrobe4"},
+    -- ring1="Stikini Ring +1",
+    ring2="Stikini Ring +1",
     -- back=gear.BLU_FC_Cape, --10PDT
     back="Fi Follet Cape +1", --9Skill
     waist="Olympus Sash",
@@ -805,7 +805,7 @@ function init_gear_sets()
     ear1="Odnowa Earring +1", --3DT
     ear2="Andoaa Earring",
     ring1="Defending Ring", --10DT
-    ring2={name="Stikini Ring +1", bag="wardrobe4"},
+    ring2="Stikini Ring +1",
     waist="Flume Belt +1", --4PDT
     back=gear.BLU_FC_Cape, --10PDT
   } --36DT, 14PDT
@@ -822,8 +822,8 @@ function init_gear_sets()
     ear1="Earthcry Earring", --10
     ear2="Andoaa Earring",
     legs="Shedir Seraweels", --35
-    -- ring1={name="Stikini Ring +1", bag="wardrobe3"}, --Defending Ring
-    ring2={name="Stikini Ring +1", bag="wardrobe4"},
+    -- ring1="Stikini Ring +1", --Defending Ring
+    ring2="Stikini Ring +1",
   })
 
   sets.midcast.Phalanx = set_combine(sets.midcast.EnhancingDuration, {
@@ -870,6 +870,7 @@ function init_gear_sets()
     neck="Loricate Torque +1",      --  6/ 6, ___ [__]; DEF+60
     ear1="Hearty Earring",          -- __/__, ___ [__]; Resist Status+5
     ear2="Etiolation Earring",      -- __/ 3, ___ [__]; Resist Silence+15
+    ring1="Stikini Ring +1",        -- __/__, ___ [ 1]
     ring2="Defending Ring",         -- 10/10, ___ [__]
     back=gear.BLU_FC_Cape,          -- 10/__,  20 [__]
     waist="Carrier's Sash",         -- __/__, ___ [__]; Ele Resist+15
@@ -877,7 +878,6 @@ function init_gear_sets()
     -- head="Rawhide Mask",         -- __/__,  53 [ 1]
     -- legs=gear.Rawhide_D_legs,    -- __/__,  69 [ 1]
     -- legs=gear.Lengo_legs,        -- __/__, 107 [ 1]
-    -- ring1="Stikini Ring +1",     -- __/__, ___ [ 1]
     -- ring2="Stikini Ring +1",     -- __/__, ___ [ 1]
     -- 53 PDT / 26 MDT, 510 M.Eva [9 Refresh]
   }
@@ -1377,6 +1377,7 @@ function init_gear_sets()
   sets.TreasureHunter = {
     feet=gear.Herc_TH_feet,
   }
+  sets.TreasureHunter.RA = sets.TreasureHunter
   sets.midcast.Dia = sets.TreasureHunter
   sets.midcast.Diaga = sets.TreasureHunter
   sets.midcast.Bio = sets.TreasureHunter

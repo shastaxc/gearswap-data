@@ -1125,6 +1125,10 @@ function init_gear_sets()
     body=gear.Herc_TH_body, --2
     waist="Chaac Belt", --1
   }
+  sets.TreasureHunter.RA = {
+    body=gear.Herc_TH_body, --2
+    waist="Chaac Belt", --1
+  }
 
   sets.WeaponSet = {}
   sets.WeaponSet['Twashtar'] = {main="Twashtar", sub={name="Centovente", priority=1}}
