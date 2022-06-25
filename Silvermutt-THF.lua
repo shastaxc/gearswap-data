@@ -72,7 +72,7 @@ end
 
 -- Executes on first load and main job change
 function job_setup()
-  -- silibs.enable_cancel_outranged_ws()
+  silibs.enable_cancel_outranged_ws()
   silibs.enable_cancel_on_blocking_status()
   silibs.enable_weapon_rearm()
   silibs.enable_auto_lockstyle(9)
