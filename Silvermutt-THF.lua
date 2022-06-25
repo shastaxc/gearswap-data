@@ -82,6 +82,7 @@ function job_setup()
   Haste = 0 -- Do not modify
   DW_needed = 0 -- Do not modify
   DW = false -- Do not modify
+  current_dp_type = nil -- Do not modify
 
   state.Buff['Sneak Attack'] = buffactive['sneak attack'] or false
   state.Buff['Trick Attack'] = buffactive['trick attack'] or false
