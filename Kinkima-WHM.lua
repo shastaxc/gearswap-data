@@ -732,8 +732,8 @@ function init_gear_sets()
   
   -- Buff sets: Gear that needs to be worn to actively enhance a current player buff.
   sets.buff['Divine Caress'] = {
+    back="Mending Cape",
     -- hands="Ebers Mitts +1",
-    -- back="Mending Cape",
   }
 
   -- Can remove from self with 100% success with this set
