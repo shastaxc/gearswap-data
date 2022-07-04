@@ -1173,7 +1173,7 @@ function init_gear_sets()
     -- ring2="Chirich Ring +1",
   })
 
-  -- High Magic/Gear/JA Haste (36% DW to cap, 11% from gear)
+  -- Super Magic/Gear/JA Haste (36% DW to cap, 11% from gear)
   sets.engaged.DW.SuperHaste = {
     ammo=gear.RAbullet,
     head=gear.Adhemar_B_head,
