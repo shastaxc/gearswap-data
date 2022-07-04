@@ -93,7 +93,7 @@ gear.Nibiru_Bow_C = {}
 gear.Nibiru_Bow_D = {}
 
 gear.Nibiru_Club_A = {}
-gear.Nibiru_Club_B = {}
+gear.Nibiru_Club_B = { name="Nibiru Cudgel", augments={'MP+50','INT+10','"Mag.Atk.Bns."+15',}}
 gear.Nibiru_Club_C = {}
 gear.Nibiru_Club_D = {}
 

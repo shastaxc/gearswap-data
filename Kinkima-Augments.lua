@@ -130,11 +130,13 @@ gear.Taeon_Phalanx_hands = gear.Taeon_FC_hands
 gear.Taeon_Phalanx_legs = gear.Taeon_FC_legs
 gear.Taeon_Phalanx_feet = gear.Taeon_FC_feet
 
+gear.Taeon_DW_feet = {} -- 5 DW, 20 M.Eva
+
 -- Telchine
--- TODO: Add fast cast and meva to all enh telchine
+-- TODO: Add fast cast and meva to all enh telchine except hands
 gear.Telchine_ENH_head = { name="Telchine Cap", augments={'"Regen"+2','Enh. Mag. eff. dur. +9',}} -- Max 25 meva, 10 enh duration
 gear.Telchine_ENH_body = { name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +10',}} -- Max 25 meva, 10 enh duration
-gear.Telchine_ENH_hands = { name="Telchine Gloves", augments={'Mag. Evasion+24','"Regen"+2','Enh. Mag. eff. dur. +10',}} -- Max 25 meva, 10 enh duration
+gear.Telchine_ENH_hands = { name="Telchine Gloves", augments={'Mag. Evasion+24','"Cure" potency +7%','Enh. Mag. eff. dur. +10',}} -- Max 25 meva, 8 CP, 10 enh duration
 gear.Telchine_ENH_legs = { name="Telchine Braconi", augments={'Mag. Evasion+21','"Regen"+2','Enh. Mag. eff. dur. +10',}} -- Max 25 meva, 10 enh duration
 gear.Telchine_ENH_feet = { name="Telchine Pigaches", augments={'Enh. Mag. eff. dur. +9',}} -- Max 25 meva, 10 enh duration
 
@@ -166,8 +168,8 @@ gear.SCH_Adoulin_Helix_Cape = { name="Bookworm's Cape", augments={'INT+1','MND+1
 -- gear.BLU_FC_Cape = { name="Rosmerta's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','MND+10','"Fast Cast"+10','Phys. dmg. taken-10%',}}
 -- gear.BLU_WSD_Cape = { name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
 -- gear.BLU_Crit_Cape = { name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10','Phys. dmg. taken-10%',}}
--- gear.BLU_STP_Cape = { name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}}
--- gear.BLU_DW_Cape = { name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dual Wield"+10','Phys. dmg. taken-10%',}}
+-- gear.BLU_STP_Cape = { name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10','Phys. dmg. taken-10%',}}
+-- gear.BLU_DW_Cape = { name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dual Wield"+10','Phys. dmg. taken-10%',}}
 -- gear.BLU_MAB_Cape ={ name="Rosmerta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
 
 gear.SCH_FC_Cape = { name="Lugh's Cape", augments={'MND+20','MND+10','"Fast Cast"+10','Phys. dmg. taken-10%',}}
