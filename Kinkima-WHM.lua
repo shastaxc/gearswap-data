@@ -358,8 +358,8 @@ function init_gear_sets()
     sub="Mensch Strap +1",            -- __, __, ___, ___, ___, __ [ 5/__, ___] __
     ammo="Staunch Tathlum",           -- __, __, ___, ___, ___, 10 [ 2/ 2, ___] __
     head=gear.Kaykaus_C_head,         -- __, 11,  16,  19,  14, 12 [__/ 3,  75] __
-    hands=gear.Chironic_SIRD_hands,   -- __, __, ___,  38,  20, 31 [__/__,  48] __; Can add more DT or Enmity
     body="Bunzi's Robe",              -- __, 15, ___,  43,  23, __ [10/10, 139] 10
+    hands=gear.Chironic_SIRD_hands,   -- __, __, ___,  38,  20, 31 [__/__,  48] __; Can add more DT or Enmity
     legs="Ebers Pantaloons +1",       -- __, __, ___,  33,  12, __ [__/__, 107] __; 6% cure mp return
     feet="Theophany Duckbills +3",    -- __, __, ___,  34,  20, 29 [__/__, 127] __
     neck="Loricate Torque +1",        -- __, __, ___, ___, ___,  5 [ 6/ 6, ___] __
