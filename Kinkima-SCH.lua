@@ -607,18 +607,18 @@ function init_gear_sets()
     ear2="Regal Earring",               -- __, 10, __, __; Adds set bonus
     ring1="Kishar Ring",                --  5, __, 10, __
     ring2="Metamor. Ring +1",           -- 16, 15, __, __
-    back=gear.SCH_MND_MAcc_Cape,        -- 30, 20, __, __
+    back="Aurist's Cape",               -- 33, 33, __, __
     waist="Rumination Sash",            --  3,  4, __, __; Enfeeb skill+7
     -- main=gear.Gada_MND_MAcc,         -- 35, 16, __, 16; +215 M.Acc skill
     -- body="Academic's Gown +3",       -- 50, 39, __, __; +24 enf skill in DA
     -- legs="Academic's Pants +3",      -- 49, 39, __, __; +24 enf skill in LA
     -- waist="Luminary Sash",           -- 10, 10, __, __
     -- Academic's set bonus             -- 60, __, __, __
-    -- 504 M.Acc, 291 MND, 30% Enfeebling Duration, 40 Enfeebling Skill
+    -- 507 M.Acc, 304 MND, 30% Enfeebling Duration, 40 Enfeebling Skill
 
     -- Ideal:
     -- main="Maxentius",                -- 40, 15, __, __; +250 M.Acc skill
-    -- 489 M.Acc, 290 MND, 30% Enfeebling Duration, 24 Enfeebling Skill
+    -- 492 M.Acc, 203 MND, 30% Enfeebling Duration, 24 Enfeebling Skill
   }
   sets.midcast.MndEnfeebles.LightArts = set_combine(sets.midcast.MndEnfeebles, {
     legs="Academic's Pants +1",
@@ -641,20 +641,18 @@ function init_gear_sets()
     ear2="Regal Earring",               -- __, 10, __, __; Adds set bonus
     ring1="Kishar Ring",                --  5, __, 10, __
     ring2="Metamor. Ring +1",           -- 16, 15, __, __
-    back=gear.SCH_MND_MAcc_Cape,        -- 30, 20, __, __
-    waist="Rumination Sash",            --  3,  4, __, __; Enfeeb skill+7
+    back="Aurist's Cape",               -- 33, 33, __, __
+    waist="Acuity Belt +1",             -- 15, 23, __, __
     -- main=gear.Gada_INT_MAcc,         -- 35, 16, __, 16; +215 M.Acc skill
     -- body="Academic's Gown +3",       -- 50, 44, __, __; +24 enf skill in DA
     -- legs="Academic's Pants +3",      -- 49, 39, __, __; +24 enf skill in LA
-    -- back=gear.SCH_INT_MAcc_Cape,     -- 30, 20, __, __
-    -- waist="Acuity Belt +1",          -- 15, 23, __, __
     -- Academic's set bonus             -- 60, __, __, __
-    -- 509 M.Acc, 316 INT, 30% Enfeebling Duration, 40 Enfeebling Skill
+    -- 512 M.Acc, 329 INT, 30% Enfeebling Duration, 40 Enfeebling Skill
     -- +147 M.Acc from skill
 
     -- Ideal:
     -- main="Maxentius",                -- 40, 15, __, __; +250 M.Acc skill
-    -- 514 M.Acc, 315 INT, 30% Enfeebling Duration, 24 Enfeebling Skill
+    -- 517 M.Acc, 328 INT, 30% Enfeebling Duration, 24 Enfeebling Skill
     -- +149 M.Acc from skill
   }
   sets.midcast.IntEnfeebles.DarkArts = set_combine(sets.midcast.IntEnfeebles, {
@@ -685,12 +683,12 @@ function init_gear_sets()
     ear2="Regal Earring",                 -- __, 10, __; Adds set effect
     ring2="Stikini Ring +1",              --  8, __, 11
     back="Bookworm's Cape",               --  8,  4, __
+    waist="Acuity Belt +1",               -- __, 23, __
     -- main="Rubicundity",                -- 25, 21, 30; +215 M.Acc skill
     -- body="Academic's Gown +3",         -- 24, 44, 50
     -- ear1="Mani Earring",               -- 10, __, __
     -- ring1="Evanescence Ring",          -- 10, __, __
     -- back="Bookworm's Cape",            --  8,  5, __
-    -- waist="Acuity Belt +1",            -- __, 23, __
     -- Academic's set bonus               -- __, __, 60
     -- Base stats                           440,127,___
     -- 554 Dark magic skill, 392 INT, 399 M.Acc
@@ -789,10 +787,10 @@ function init_gear_sets()
     ear2="Regal Earring",             -- 10, __,  7
     ring2="Metamor. Ring +1",         -- 16, 15, __
     back=gear.SCH_MAB_Cape,           -- 30, 20, 10
+    waist="Acuity Belt +1",           -- 23, 15, __
     -- body=gear.Merl_MB_body,        -- 50, 60, 60
     -- hands=gear.Amalric_D_hands,    -- 36, 20, 53
     -- ring1="Freke Ring",            -- 10, __,  8
-    -- waist="Acuity Belt +1",        -- 23, 15, __
     -- 374 INT, 315 Magic Acc, 327 MAB
   }
 
@@ -827,13 +825,13 @@ function init_gear_sets()
   } -- 314 INT, 317 Magic Acc, 246 MAB
   sets.midcast['Elemental Magic'].Seidr = set_combine(sets.midcast['Elemental Magic'], {
     legs="Pedagogy Pants +3",
+    waist="Acuity Belt +1",
     -- body="Seidr Cotehardie",
-    -- waist="Acuity Belt +1",
   })
   sets.midcast['Elemental Magic'].Resistant = set_combine(sets.midcast['Elemental Magic'], {
     legs="Pedagogy Pants +3",
     neck="Erra Pendant",
-    -- waist="Acuity Belt +1",
+    waist="Acuity Belt +1",
   })
 
   sets.midcast.Impact = set_combine(sets.midcast['Elemental Magic'].Resistant, {

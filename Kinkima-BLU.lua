@@ -427,49 +427,49 @@ function init_gear_sets()
   sets.precast.WS['Vorpal Blade'] = sets.precast.WS['Chant du Cygne']
 
   sets.precast.WS['Savage Blade'] = {
-    ammo="Coiste Bodhar", --Sub for Aurgelmir Orb +1
     head=gear.Nyame_B_head,
     body=gear.Nyame_B_body,
     hands=gear.Nyame_B_hands,
     legs=gear.Nyame_B_legs,
     feet=gear.Nyame_B_feet,
-    neck="Mirage Stole +1",
-    ear1="Ishvara Earring",
     ear2="Moonshade Earring",
-    ring1="Epaminondas's Ring",
-    ring2="Beithir Ring",
-    back=gear.BLU_WSD_Cape,
-    waist="Sailfi Belt +1",
+    -- ammo="Coiste Bodhar", --Sub for Aurgelmir Orb +1
+    -- neck="Mirage Stole +1",
+    -- ear1="Ishvara Earring",
+    -- ring1="Epaminondas's Ring",
+    -- ring2="Beithir Ring",
+    -- back=gear.BLU_WSD_Cape,
+    -- waist="Sailfi Belt +1",
   }
   sets.precast.WS['Savage Blade'].AttCapped = {
-    ammo="Crepuscular Pebble",
+    -- ammo="Crepuscular Pebble",
     head=gear.Nyame_B_head,
-    body="Gleti's Cuirass",
+    -- body="Gleti's Cuirass",
     hands=gear.Nyame_B_hands,
-    legs="Gleti's Breeches",
+    -- legs="Gleti's Breeches",
     feet=gear.Nyame_B_feet,
-    neck="Mirage Stole +1",
-    ear1="Ishvara Earring",
+    -- neck="Mirage Stole +1",
+    -- ear1="Ishvara Earring",
     ear2="Moonshade Earring",
-    ring1="Epaminondas's Ring",
-    ring2="Beithir Ring",
-    back=gear.BLU_WSD_Cape,
-    waist="Sailfi Belt +1",
+    -- ring1="Epaminondas's Ring",
+    -- ring2="Beithir Ring",
+    -- back=gear.BLU_WSD_Cape,
+    -- waist="Sailfi Belt +1",
   }
 
   sets.precast.WS['Requiescat'] = {
+    ear1="Moonshade Earring",
     -- head="Luhlaza Keffiyeh +3",
     -- body="Luhlaza Jubbah +3",
-    hands="Jhakri Cuffs +2",
+    -- hands="Jhakri Cuffs +2",
     -- legs="Luhlaza Shalwar +3",
     -- feet="Luhlaza Charuqs +3",
-    neck="Fotia Gorget",
-    ear1="Moonshade Earring",
+    -- neck="Fotia Gorget",
     -- ear2="Brutal Earring",
     -- ring1="Rufescent Ring",
-    ring2="Epona's Ring",
+    -- ring2="Epona's Ring",
     -- back=gear.BLU_Crit_Cape,
-    waist="Fotia Belt",
+    -- waist="Fotia Belt",
   }
 
   sets.precast.WS['Expiacion'] = sets.precast.WS['Savage Blade']
@@ -477,17 +477,17 @@ function init_gear_sets()
 
   sets.precast.WS['Sanguine Blade'] = {
     ammo="Pemphredo Tathlum",
-    head="Pixie Hairpin +1",
+    ear1="Moonshade Earring",
+    ear2="Regal Earring",
+    -- head="Pixie Hairpin +1",
     -- body="Amalric Doublet +1",
     -- hands="Amalric Gages +1",
     -- legs="Luhlaza Shalwar +3",
     -- feet="Amalric Nails +1",
     -- neck="Baetyl Pendant",
-    ear1="Moonshade Earring",
-    ear2="Regal Earring",
-    ring1="Epaminondas's Ring",
+    -- ring1="Epaminondas's Ring",
     -- ring2="Archon Ring",
-    back=gear.BLU_FC_Cape,
+    -- back=gear.BLU_FC_Cape,
     -- waist="Sacro Cord",
   }
 
@@ -496,17 +496,13 @@ function init_gear_sets()
   sets.precast.WS['Judgment'] = sets.precast.WS['True Strike']
   
 
-  sets.precast.WS['Black Halo'] = set_combine(sets.precast.WS['Savage Blade'], {
-    -- ear2="Regal Earring",
-    ear2="Odnowa Earring +1",
-    waist="Sailfi Belt +1",
-  })
+  sets.precast.WS['Black Halo'] = sets.precast.WS['Savage Blade']
 
   sets.precast.WS['Realmrazer'] = sets.precast.WS['Requiescat']
 
   sets.precast.WS['Flash Nova'] = set_combine(sets.precast.WS['Sanguine Blade'], {
     -- head=gear.Herc_MAB_head,
-    ring2="Weather. Ring",
+    -- ring2="Weather. Ring",
   })
 
   ------------------------------------------------------------------------------------------------
@@ -520,7 +516,7 @@ function init_gear_sets()
   sets.midcast.SpellInterrupt = {
     ammo="Staunch Tathlum", --10
     ring1="Evanescence Ring", --5
-    waist="Rumination Sash", --10
+    waist="Sanctuary Obi +1", --10
     -- ammo="Staunch Tathlum +1" --11
   }
 
@@ -626,21 +622,21 @@ function init_gear_sets()
 
   sets.midcast['Blue Magic'].Magical = {
     main="Bunzi's Rod",           -- 60, 50, 15 [__/__, ___]
-    sub="Maxentius",              -- 21, 40, 15 [__/__, ___]
+    sub=empty,
     ammo="Pemphredo Tathlum",     --  4,  8,  4 [__/__, ___]
     head=gear.Nyame_B_head,       -- 30, 40, 28 [ 7/ 7, 123]
-    body=gear.Nyame_B_body,       -- 30, 40, 42 [ 9/ 9, 139]
-    hands="Jhakri Cuffs +2",      -- 40, 43, 36 [__/__,  32]
+    body="Shamash Robe",          -- 45, 45, 40 [10/__, 106]
     legs=gear.Nyame_B_legs,       -- 30, 40, 44 [ 8/ 8, 150]
-    feet="Jhakri Pigaches +2",    -- 39, 42, 33 [__/__,  69]
     neck="Loricate Torque +1",    -- __, __, __ [ 6/ 6, ___]
     ear1="Regal Earring",         --  7, __, 10 [__/__, ___]
-    ear2="Friomisi Earring",      -- 10, __, __ [__/__, ___]
     ring1="Metamorph Ring +1",    -- __, 15, 16 [__/__, ___]
     ring2="Defending Ring",       -- __, __, __ [10/10, ___]
-    back=gear.BLU_MAB_Cape,       -- 10, 20, 30 [10/__, ___]
-    waist="Eschan Stone",         --  7,  7, __ [__/__, ___]
-    -- 288 MAB, 345 M.Acc, 273 INT [50 PDT/40 MDT, 513 M.Eva]
+    -- sub="Maxentius",           -- 21, 40, 15 [__/__, ___]
+    -- hands="Jhakri Cuffs +2",   -- 40, 43, 36 [__/__,  32]
+    -- feet="Jhakri Pigaches +2", -- 39, 42, 33 [__/__,  69]
+    -- ear2="Friomisi Earring",   -- 10, __, __ [__/__, ___]
+    -- back=gear.BLU_MAB_Cape,    -- 10, 20, 30 [10/__, ___]
+    -- waist="Eschan Stone",      --  7,  7, __ [__/__, ___]
 
     -- Ideal:
     -- main="Bunzi's Rod",        -- 60, 50, 15 [__/__, ___]
@@ -663,22 +659,23 @@ function init_gear_sets()
   }
 
   sets.midcast['Blue Magic'].Magical.Resistant = set_combine(sets.midcast['Blue Magic'].Magical, {
-    main="Bunzi's Rod",               -- 60, 50, 15 [__/__, ___]
-    sub="Maxentius",                  -- 21, 40, 15 [__/__, ___]
-    ammo="Pemphredo Tathlum",         --  4,  8,  4 [__/__, ___]
-    head="Assimilator's Keffiyeh +3", -- 28, 56, 33 [__/__,  73]
-    body="Shamash Robe",              -- 45, 45, 40 [10/__, 106]
-    hands=gear.Nyame_B_hands,         -- 30, 40, 28 [ 7/ 7, 112]
-    legs=gear.Nyame_B_legs,           -- 30, 40, 44 [ 8/ 8, 150]
-    feet=gear.Nyame_B_feet,           -- 30, 40, 25 [ 7/ 7, 150]
-    neck="Baetyl Pendant",            -- 13, __, __ [__/__, ___]
-    ear1="Regal Earring",             --  7, __, 10 [__/__, ___]
-    ear2="Friomisi Earring",          -- 10, __, __ [__/__, ___]
-    ring1="Metamorph Ring +1",        -- __, 15, 16 [__/__, ___]
-    ring2="Defending Ring",           -- __, __, __ [10/10, ___]
-    back=gear.BLU_MAB_Cape,           -- 10, 20, 30 [10/__, ___]
-    waist="Acuity Belt +1",           -- __, 15, 23 [__/__, ___]
-    -- AF set bonus                      __, 15, __ [__/__, ___]
+    main="Bunzi's Rod",                 -- 60, 50, 15 [__/__, ___]
+    sub=empty,
+    -- sub="Maxentius",                 -- 21, 40, 15 [__/__, ___]
+    ammo="Pemphredo Tathlum",           --  4,  8,  4 [__/__, ___]
+    -- head="Assimilator's Keffiyeh +3",-- 28, 56, 33 [__/__,  73]
+    body="Shamash Robe",                -- 45, 45, 40 [10/__, 106]
+    hands=gear.Nyame_B_hands,           -- 30, 40, 28 [ 7/ 7, 112]
+    legs=gear.Nyame_B_legs,             -- 30, 40, 44 [ 8/ 8, 150]
+    feet=gear.Nyame_B_feet,             -- 30, 40, 25 [ 7/ 7, 150]
+    -- neck="Baetyl Pendant",           -- 13, __, __ [__/__, ___]
+    ear1="Regal Earring",               --  7, __, 10 [__/__, ___]
+    -- ear2="Friomisi Earring",         -- 10, __, __ [__/__, ___]
+    ring1="Metamorph Ring +1",          -- __, 15, 16 [__/__, ___]
+    ring2="Defending Ring",             -- __, __, __ [10/10, ___]
+    -- back=gear.BLU_MAB_Cape,          -- 10, 20, 30 [10/__, ___]
+    waist="Acuity Belt +1",             -- __, 15, 23 [__/__, ___]
+    -- AF set bonus                        __, 15, __ [__/__, ___]
   }) -- 288 MAB, 384 M.Acc, 283 INT [52 PDT/32 MDT, 591 M.Eva]
 
   sets.midcast['Blue Magic'].MagicalDark = set_combine(sets.midcast['Blue Magic'].Magical, {
@@ -694,9 +691,9 @@ function init_gear_sets()
   })
 
   sets.midcast['Blue Magic'].MagicalDex = set_combine(sets.midcast['Blue Magic'].Magical, {
-    ear2="Mache Earring +1",
     ring2="Ilabrat Ring",
     -- ammo="Aurgelmir Orb +1",
+    -- ear2="Mache Earring +1",
   })
 
   sets.midcast['Blue Magic'].MagicalVit = set_combine(sets.midcast['Blue Magic'].Magical, {
@@ -713,22 +710,24 @@ function init_gear_sets()
     main="Bunzi's Rod", --40 macc
     sub=gear.Nibiru_Club_B,
     ammo="Pemphredo Tathlum",
-    head="Assimilator's Keffiyeh +3",
+    head="Malignance Chapeau",
     body="Malignance Tabard",
     hands="Malignance Gloves",
-    legs="Assimilator's Shalwar +3",
+    legs="Malignance Tights",
     feet="Malignance Boots",
-    neck="Mirage Stole +1",
-    ear1="Digni. Earring",
+    -- neck="Mirage Stole +1",
+    -- ear1="Digni. Earring",
     ear2="Regal Earring",
     ring1="Stikini Ring +1",
-    ring2="Stikini Ring +1",
+    -- ring2="Stikini Ring +1",
     back="Aurist's Cape +1",
     waist="Acuity Belt +1",
     -- main="Sakpata's Sword", --Needs R25 for +10 macc
     -- main="Tizona",
     -- sub="Bunzi's Rod", --40 macc
     -- sub="Maxentius", --40 macc
+    -- head="Assimilator's Keffiyeh +3",
+    -- legs="Assimilator's Shalwar +3",
   }
 
   sets.midcast['Blue Magic'].Breath = set_combine(sets.midcast['Blue Magic'].Magical, {

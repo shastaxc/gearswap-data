@@ -213,13 +213,13 @@ function init_gear_sets()
     -- hands="Yaoyotl Gloves",
     -- legs="Gendewitha Spats",
     -- feet="Gendewitha Galoshes",
-    -- neck=gear.ElementalGorget,
+    -- neck="Fotia Gorget",
     -- ear1="Bladeborn Earring",
     -- ear2="Steelflash Earring",
     -- ring1="Rajas Ring",
     -- ring2="K'ayres Ring",
     -- back="Refraction Cape",
-    -- waist=gear.ElementalBelt,
+    -- waist="Fotia Belt",
   }
   
   -- Magical (light). dStat=INT. 50% STR / 50% MND
@@ -243,19 +243,19 @@ function init_gear_sets()
   -- 70% MND / 30% STR; 3.0-9.75fTP
   -- TP Bonus > WSD > MND > STR
   sets.precast.WS['Black Halo'] = set_combine(sets.precast.WS, {
+    head="Nyame Helm",
+    body="Nyame Mail",
+    hands="Nyame Gauntlets",
+    legs="Nyame Flanchard",
+    feet="Nyame Sollerets",
+    neck="Fotia Gorget",
+    ring2="Metamorph Ring +1",
+    back="Aurist's Cape +1",
     -- ammo="Aurgelmir Orb +1",
     -- ammo="Ginsen", --Sub
-    -- head="Nyame Helm",
-    -- body="Nyame Mail",
-    -- hands="Nyame Gauntlets",
-    -- legs="Nyame Flanchard",
-    -- feet="Nyame Sollerets",
-    -- neck="Duelist's Torque +2",
     -- ear1="Moonshade Earring",
     -- ear2="Regal Earring",
     -- ring1="Rufescent Ring",
-    -- ring2="Metamorph Ring +1",
-    -- back="Aurist's Cape +1",
     -- waist="Sailfi Belt +1",
   })
   
@@ -263,19 +263,19 @@ function init_gear_sets()
   -- 50% MND / 50% STR; 3.5-12fTP
   -- TP Bonus > WSD > MND = STR
   sets.precast.WS['Judgment'] = set_combine(sets.precast.WS, {
+    head="Nyame Helm",
+    body="Nyame Mail",
+    hands="Nyame Gauntlets",
+    legs="Nyame Flanchard",
+    feet="Nyame Sollerets",
+    neck="Fotia Gorget",
+    ring2="Metamorph Ring +1",
+    back="Aurist's Cape +1",
     -- ammo="Aurgelmir Orb +1",
     -- ammo="Ginsen", --Sub
-    -- head="Nyame Helm",
-    -- body="Nyame Mail",
-    -- hands="Nyame Gauntlets",
-    -- legs="Nyame Flanchard",
-    -- feet="Nyame Sollerets",
-    -- neck="Duelist's Torque +2",
     -- ear1="Moonshade Earring",
     -- ear2="Regal Earring",
     -- ring1="Rufescent Ring",
-    -- ring2="Metamorph Ring +1",
-    -- back="Aurist's Cape +1",
     -- waist="Sailfi Belt +1",
   })
 
@@ -630,6 +630,7 @@ function init_gear_sets()
   })
 
   sets.midcast.MndEnfeebles = {
+    main="Bunzi's Rod",
     ammo="Pemphredo Tathlum",         -- __,  8, __,  4 [__/__, ___]
     head="Bunzi's Hat",               -- __, 40, 33, 34 [ 7/ 7, 123]
     body="Bunzi's Robe",              -- __, 40, 43, 48 [10/10, 139]
@@ -637,17 +638,16 @@ function init_gear_sets()
     ear1="Regal Earring",             -- __, __, 10, 10 [__/__, ___]
     ear2="Malignance Earring",        -- __, 10,  8,  8 [__/__, ___]
     ring1="Stikini Ring +1",          --  8, 11,  8, __ [__/__, ___]
-    back=gear.WHM_MND_MAcc_Cape,      -- __, 30, 20, __ [10/__, ___]
+    back="Aurist's Cape +1",          -- __, 33, 33, 33 [__/__, ___]
+    waist="Acuity Belt +1",           -- __, 15, __, 23 [__/__, ___]
     -- main="Daybreak",               -- __, 40, 30, __ [__/__, ___]
     -- sub="Genmei Shield",           -- __, __, __, __ [10/__, ___]
     -- hands=gear.Kaykaus_A_hands,    -- 16, 53, 47, 19 [__/__,  37]
     -- legs=gear.Chironic_MAcc_legs,  -- 13, 60, 29, 42 [__/__, 118]
     -- neck="Incanter's Torque",      -- 10, __, __, __ [__/__, ___]
     -- ring2="Stikini Ring +1",       --  8, 11,  8, __ [__/__, ___]
-    -- back="Aurist's Cape +1",       -- __, 33, 33, 33 [__/__, ___]
-    -- waist="Acuity Belt +1",        -- __, 15, __, 23 [__/__, ___]
     -- AF set bonus                   -- __, 15, __, __ [__/__, ___]
-    -- 76 Enfeebling skill, 382 M.Acc, 283 MND, 253 INT [27 PDT/17 MDT, 544 MEVA]
+    -- 76 Enfeebling skill, 382 M.Acc, 283 MND, 253 INT [17 PDT/17 MDT, 544 MEVA]
   }
 
   sets.midcast.IntEnfeebles = set_combine(sets.midcast.MndEnfeebles, {
@@ -663,7 +663,8 @@ function init_gear_sets()
     ear1="Regal Earring",
     ear2="Vor Earring",
     ring1="Stikini Ring +1",
-    back=gear.WHM_MND_MAcc_Cape,
+    back="Aurist's Cape +1",
+    waist="Acuity Belt +1",
     -- main="Daybreak",
     -- sub="Ammurapi Shield",
     -- head="Inyanga Tiara +2",
@@ -671,8 +672,6 @@ function init_gear_sets()
     -- legs="Inyanga Shalwar +2",
     -- feet="Inyanga Crackows +2",
     -- ring2="Stikini Ring +1",
-    -- back="Aurist's Cape +1",
-    -- waist="Acuity Belt +1",
   }
 
   sets.midcast.Dispelga = {
