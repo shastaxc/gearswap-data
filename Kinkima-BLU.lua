@@ -303,8 +303,8 @@ function init_gear_sets()
 
   -- Enmity set
   sets.Enmity = {
+    ammo="Sapience Orb", --2
     ear1="Cryptic Earring", --4
-    -- ammo="Sapience Orb", --2
     -- head="Halitus Helm", --8
     -- body="Emet Harness +1", --10
     -- hands="Kurys Gloves", --9
@@ -343,18 +343,18 @@ function init_gear_sets()
   }
 
   sets.precast.FC = {
+    ammo="Sapience Orb",          --  2 [__/__, ___]
+    head=gear.Carmine_D_head,     -- 14 [__/__,  53]
     hands=gear.Leyline_Gloves,    --  5 [__/__,  62]
     legs="Pinga Pants +1",        -- 13 [__/__, 147]
+    feet=gear.Carmine_D_feet,     --  8 [ 4/__,  80]
     neck="Loricate Torque +1",    -- __ [ 6/ 6, ___]
+    ear1="Loquacious Earring",    --  2 [__/__, ___]
     ear2="Odnowa Earring +1",     -- __ [ 3/ 5, ___]
     ring1="Kishar Ring",          --  4 [__/__, ___]
     ring2="Defending Ring",       -- __ [10/10, ___]
-    -- ammo="Sapience Orb",       --  2 [__/__, ___]
-    -- head=gear.Carmine_D_head,  -- 14 [__/__,  53]
     -- body="Pinga Tunic +1",     -- 15 [__/__, 128]
     -- hands=gear.Leyline_Gloves, --  7 [__/__,  62]
-    -- feet=gear.Carmine_D_feet,  --  8 [ 4/__,  80]
-    -- ear1="Loquacious Earring", --  2 [__/__, ___]
     -- back=gear.BLU_FC_Cape,     -- 10 [10/__,  20]
     -- waist="Flume Belt +1",     -- __ [ 4/__, ___]
     -- Blue Magic FC trait            5 [__/__, ___]
@@ -362,17 +362,17 @@ function init_gear_sets()
   }
 
   sets.precast.FC.RDM = {
+    ammo="Sapience Orb",          --  2 [__/__, ___]
+    head=gear.Carmine_D_head,     -- 14 [__/__,  53]
     hands=gear.Nyame_B_hands,     -- __ [ 7/ 7, 112]
     legs="Pinga Pants +1",        -- 13 [__/__, 147]
+    feet=gear.Carmine_D_feet,     --  8 [ 4/__,  80]
     neck="Loricate Torque +1",    -- __ [ 6/ 6, ___]
+    ear1="Loquacious Earring",    --  2 [__/__, ___]
     ear2="Odnowa Earring +1",     -- __ [ 3/ 5, ___]
     ring1="Gelatinous Ring +1",   -- __ [ 7/-1, ___]
     ring2="Defending Ring",       -- __ [10/10, ___]
-    -- ammo="Sapience Orb",       --  2 [__/__, ___]
-    -- head=gear.Carmine_D_head,  -- 14 [__/__,  53]
     -- body="Pinga Tunic +1",     -- 15 [__/__, 128]
-    -- feet=gear.Carmine_D_feet,  --  8 [ 4/__,  80]
-    -- ear1="Loquacious Earring", --  2 [__/__, ___]
     -- back=gear.BLU_FC_Cape,     -- 10 [10/__,  20]
     -- waist="Flume Belt +1",     -- __ [ 4/__, ___]
     -- Blue Magic FC trait            5 [__/__, ___]
@@ -570,6 +570,7 @@ function init_gear_sets()
 
   -- TODO: Update
   sets.midcast['Blue Magic'].PhysicalAcc = set_combine(sets.midcast['Blue Magic'].Physical, {
+    waist="Grunfeld Rope",
     -- ammo="Voluspa Tathlum",
     -- head="Carmine Mask +1",
     -- hands=gear.Adhemar_A_hands,
@@ -578,7 +579,6 @@ function init_gear_sets()
     -- neck="Mirage Stole +1",
     -- ear2="Telos Earring",
     -- back=gear.BLU_Adoulin_Cape,
-    -- waist="Grunfeld Rope",
   })
 
   -- TODO: Update
@@ -586,10 +586,10 @@ function init_gear_sets()
 
   -- TODO: Update
   sets.midcast['Blue Magic'].PhysicalDex = set_combine(sets.midcast['Blue Magic'].Physical, {
+    waist="Grunfeld Rope",
     -- ear2="Mache Earring +1",
     -- ring2="Ilabrat Ring",
     -- back=gear.BLU_Crit_Cape,
-    -- waist="Grunfeld Rope",
   })
 
   -- TODO: Update
