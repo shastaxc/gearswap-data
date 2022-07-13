@@ -184,12 +184,13 @@ function init_gear_sets()
     ear1="Malignance Earring",        --  4 [__/__, ___] __
     ear2="Etiolation Earring",        --  1 [__/ 3, ___] __; Resist Silence+15
     ring2="Defending Ring",           -- __ [10/10, ___] __
+    back="Perimede Cape",             -- __ [__/__, ___]  4
     waist="Witful Belt",              --  3 [__/__, ___]  3
     -- Divine Benison Trait              50
     
     -- ring1="Lebeche Ring",          -- __ [__/__, ___]  2
-    -- back="Perimede Cape",          -- __ [__/__, ___]  4
-  } -- 81 Fast Cast [72PDT/60MDT, 638 MEVA] 7 Quick Magic
+    -- 81 Fast Cast [72PDT/60MDT, 638 MEVA] 11 Quick Magic
+  } -- 81 Fast Cast [72PDT/60MDT, 638 MEVA] 9 Quick Magic
 
   sets.precast.FC.Arise = sets.QuickMagic
   
@@ -225,13 +226,13 @@ function init_gear_sets()
   -- Magical (light). dStat=INT. 50% STR / 50% MND
   -- Light MAB > MAB > M.Dmg > MND > STR > WSD
   sets.precast.WS['Flash Nova'] = set_combine(sets.precast.WS, {
+    ear1="Friomisi Earring",
     -- head="Nahtirah Hat",
     -- body="Vanir Cotehardie",
     -- hands="Yaoyotl Gloves",
     -- legs="Gendewitha Spats",
     -- feet="Gendewitha Galoshes",
     -- neck="Stoicheion Medal",
-    -- ear1="Friomisi Earring",
     -- ear2="Hecate's Earring",
     -- ring1="Rajas Ring",
     -- ring2="Strendu Ring",
