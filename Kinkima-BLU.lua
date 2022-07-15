@@ -412,13 +412,13 @@ function init_gear_sets()
   })
 
   sets.precast.WS['Chant du Cygne'] = {
+    neck="Mirage Stole +2",
     -- ammo="Aurgelmir Orb +1",
     -- head=gear.Adhemar_B_head,
     -- body="Gleti's Cuirass",
     -- hands=gear.Adhemar_B_hands,
     -- legs="Gleti's Breeches",
     -- feet="Gleti's Boots",
-    -- neck="Mirage Stole +2",
     -- ear1="Mache Earring +1",
     -- ear2="Odr Earring",
     -- ring1="Epona's Ring",
@@ -435,9 +435,9 @@ function init_gear_sets()
     hands=gear.Nyame_B_hands,
     legs=gear.Nyame_B_legs,
     feet=gear.Nyame_B_feet,
+    neck="Mirage Stole +2",
     ear2="Moonshade Earring",
     -- ammo="Coiste Bodhar", --Sub for Aurgelmir Orb +1
-    -- neck="Mirage Stole +1",
     -- ear1="Ishvara Earring",
     -- ring1="Epaminondas's Ring",
     -- ring2="Beithir Ring",
@@ -445,15 +445,15 @@ function init_gear_sets()
     -- waist="Sailfi Belt +1",
   }
   sets.precast.WS['Savage Blade'].AttCapped = {
-    -- ammo="Crepuscular Pebble",
     head=gear.Nyame_B_head,
-    -- body="Gleti's Cuirass",
     hands=gear.Nyame_B_hands,
-    -- legs="Gleti's Breeches",
     feet=gear.Nyame_B_feet,
-    -- neck="Mirage Stole +1",
-    -- ear1="Ishvara Earring",
+    neck="Mirage Stole +2",
     ear2="Moonshade Earring",
+    -- ammo="Crepuscular Pebble",
+    -- body="Gleti's Cuirass",
+    -- legs="Gleti's Breeches",
+    -- ear1="Ishvara Earring",
     -- ring1="Epaminondas's Ring",
     -- ring2="Beithir Ring",
     -- back=gear.BLU_WSD_Cape,
@@ -509,6 +509,7 @@ function init_gear_sets()
   }
 
   sets.midcast['Blue Magic'] = {
+    neck="Mirage Stole +2",             -- 20, 25 [__/__, ___]
     ear2="Odnowa Earring +1",           -- __, __ [ 3/ 5, ___]
     ring1="Gelatinous Ring +1",         -- __, __ [ 7/-1, ___]
     ring2="Stikini Ring +1",            --  8, 11 [__/__, ___]
@@ -518,12 +519,11 @@ function init_gear_sets()
     -- hands=gear.Rawhide_D_hands,      -- 10, 35 [__/__,  37]
     -- legs="Hashishin Tayt +1",        -- 23, __ [__/__, 112]
     -- feet="Luhlaza Charuqs +3",       -- 12, 36 [__/__,  89]
-    -- neck="Mirage Stole +1",          -- 15, 20 [__/__, ___]
     -- ear1="Njordr Earring",           -- 10, __ [__/__, ___]
     -- ring1="Stikini Ring +1",         --  8, 11 [__/__, ___]
     -- back=gear.BLU_Adoulin_Cape,      -- 15, 15 [__/__, ___]
     -- waist="Flume Belt +1",           -- __, __ [ 4/__, ___]
-  } -- 147 Blue skill, 165 M.Acc [14 PDT/4 MDT, 395 M.Eva]
+  } -- 152 Blue skill, 170 M.Acc [14 PDT/4 MDT, 395 M.Eva]
 
   sets.midcast['Blue Magic'].Physical = {
     head="Malignance Chapeau",
@@ -531,11 +531,11 @@ function init_gear_sets()
     hands="Malignance Gloves",
     legs="Malignance Tights",
     feet="Malignance Boots",
+    neck="Mirage Stole +2",
     ear1="Dignitary's Earring",
     ring2="Defending Ring",
     waist="Grunfeld Rope",
     -- ammo="Aurgelmir Orb +1",
-    -- neck="Mirage Stole +2",
     -- ear2="Telos Earring",
     -- ring1="Epona's Ring",
     -- back=gear.BLU_STP_Cape,
@@ -678,7 +678,7 @@ function init_gear_sets()
     hands="Malignance Gloves",
     legs="Malignance Tights",
     feet="Malignance Boots",
-    -- neck="Mirage Stole +1",
+    neck="Mirage Stole +2",
     ear1="Dignitary's Earring",
     ear2="Regal Earring",
     ring1="Stikini Ring +1",
@@ -703,8 +703,8 @@ function init_gear_sets()
     hands="Malignance Gloves",
     legs="Malignance Tights",
     feet="Malignance Boots",
+    neck="Mirage Stole +2",
     -- ammo="Voluspa Tathlum",
-    -- neck="Mirage Stole +1",
     -- ear2="Mache Earring +1",
     -- back=gear.BLU_STP_Cape,
     -- waist="Eschan Stone",
@@ -955,11 +955,11 @@ function init_gear_sets()
     hands="Malignance Gloves",    -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
     legs="Malignance Tights",     -- __, 10, 50 <__, __, __> [ 7/ 7, 150]
     feet="Malignance Boots",      -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
+    neck="Mirage Stole +2",       -- __,  7, 25 <__, __, __> [__/__, ___]
     ring2="Defending Ring",       -- __, __, __ <__, __, __> [10/10, ___]
     -- main="Naegling",
     -- sub=empty,
     -- ammo="Coiste Bodhar",         -- __,  3, __ < 3, __, __> [__/__, ___]
-    -- neck="Mirage Stole +2",       -- __,  7, 25 <__, __, __> [__/__, ___]
     -- ear1="Telos Earring",         -- __,  5, 10 < 1, __, __> [__/__, ___]
     -- ear2="Dedition Earring",      -- __,  8,-10 <__, __, __> [__/__, ___]
     -- ring1="Epona's Ring",         -- __, __, __ < 3,  3, __> [__/__, ___]
@@ -1003,8 +1003,8 @@ function init_gear_sets()
   } -- 47 DW, 27 STP, 237 Acc <6 DA, 7 TA, 0 QA> [37 PDT/27 MDT, 481 M.Eva]
   sets.engaged.DW.Acc = set_combine(sets.engaged.DW, {
     feet="Malignance Boots",      -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
+    neck="Mirage Stole +2",       -- __,  7, 25 <__, __, __> [__/__, ___]
     -- ammo="Voluspa Tathlum",    -- __, __, 10 <__, __, __> [__/__, ___]
-    -- neck="Mirage Stole +2",    -- __,  7, 25 <__, __, __> [__/__, ___]
     -- ring1="Chirich Ring +1",   -- __,  6, 10 <__, __, __> [__/__, ___]
   }) -- 38 DW, 46 STP, 325 Acc <0 DA, 4 TA, 0 QA> [35 PDT/25 MDT, 542 M.Eva]
 
@@ -1026,8 +1026,8 @@ function init_gear_sets()
   }) -- 42 DW, 35 STP, 227 Acc <6 DA, 7 TA, 0 QA> [37 PDT/27 MDT, 481 M.Eva]
   sets.engaged.DW.Acc.LowHaste = set_combine(sets.engaged.DW.LowHaste, {
     feet="Malignance Boots",   -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
+    neck="Mirage Stole +2",    -- __,  7, 25 <__, __, __> [__/__, ___]
     -- ammo="Voluspa Tathlum",    -- __, __, 10 <__, __, __> [__/__, ___]
-    -- neck="Mirage Stole +2",    -- __,  7, 25 <__, __, __> [__/__, ___]
     -- ear2="Suppanomimi",        --  5, __, __ <__, __, __> [__/__, ___]
     -- ring1="Chirich Ring +1",   -- __,  6, 10 <__, __, __> [__/__, ___]
   }) -- 38 DW, 46 STP, 325 Acc <0 DA, 4 TA, 0 QA> [35 PDT/25 MDT, 542 M.Eva]
@@ -1049,8 +1049,8 @@ function init_gear_sets()
     -- waist="Reiki Yotai",          --  7,  4, 10 <__, __, __> [__/__, ___]
   }) -- 32 DW, 46 STP, 275 Acc <6 DA, 7 TA, 0 QA> [48 PDT/38 MDT, 612 M.Eva]
   sets.engaged.DW.Acc.MidHaste = set_combine(sets.engaged.DW.MidHaste, {
+    neck="Mirage Stole +2",       -- __,  7, 25 <__, __, __> [__/__, ___]
     -- ammo="Voluspa Tathlum",    -- __, __, 10 <__, __, __> [__/__, ___]
-    -- neck="Mirage Stole +2",    -- __,  7, 25 <__, __, __> [__/__, ___]
     -- ring1="Chirich Ring +1",   -- __,  6, 10 <__, __, __> [__/__, ___]
   }) -- 32 DW, 56 STP, 320 Acc <0 DA, 4 TA, 0 QA> [42 PDT/32 MDT, 612 M.Eva]
 
@@ -1060,10 +1060,10 @@ function init_gear_sets()
     hands="Malignance Gloves",    -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
     legs="Malignance Tights",     -- __, 10, 50 <__, __, __> [ 7/ 7, 150]
     feet="Malignance Boots",      -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
+    neck="Mirage Stole +2",       -- __,  7, 25 <__, __, __> [__/__, ___]
     ring2="Defending Ring",       -- __, __, __ <__, __, __> [10/10, ___]
     -- ammo="Coiste Bodhar",         -- __,  3, __ < 3, __, __> [__/__, ___]
     -- body=gear.Adhemar_B_body,     --  6, __, 35 <__,  4, __> [__/__,  69]
-    -- neck="Mirage Stole +2",       -- __,  7, 25 <__, __, __> [__/__, ___]
     -- ear1="Telos Earring",         -- __,  5, 10 < 1, __, __> [__/__, ___]
     -- ear2="Suppanomimi",           --  5, __, __ <__, __, __> [__/__, ___]
     -- ring1="Epona's Ring",         -- __, __, __ < 3,  3, __> [__/__, ___]
@@ -1084,9 +1084,9 @@ function init_gear_sets()
     hands="Malignance Gloves",    -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
     legs="Malignance Tights",     -- __, 10, 50 <__, __, __> [ 7/ 7, 150]
     feet="Malignance Boots",      -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
+    neck="Mirage Stole +2",       -- __,  7, 25 <__, __, __> [__/__, ___]
     ring2="Defending Ring",       -- __, __, __ <__, __, __> [10/10, ___]
     -- ammo="Coiste Bodhar",         -- __,  3, __ < 3, __, __> [__/__, ___]
-    -- neck="Mirage Stole +2",       -- __,  7, 25 <__, __, __> [__/__, ___]
     -- ear1="Eabani Earring",        --  4, __, __ <__, __, __> [__/__,   8]
     -- ear2="Dedition Earring",      -- __,  8,-10 <__, __, __> [__/__, ___]
     -- ring1="Epona's Ring",         -- __, __, __ < 3,  3, __> [__/__, ___]
@@ -1167,9 +1167,9 @@ function init_gear_sets()
 
   sets.engaged.DW.DT.MidHaste = sets.engaged.DW.MidHaste
   sets.engaged.DW.Acc.DT.MidHaste = set_combine(sets.engaged.DW.DT.MidHaste, {
+    neck="Mirage Stole +2",       -- __,  7, 25 <__, __, __> [__/__, ___]
     ring1="Gelatinous Ring +1",   -- __, __, __ <__, __, __> [ 7/-1, ___]
     -- ammo="Voluspa Tathlum",    -- __, __, 10 <__, __, __> [__/__, ___]
-    -- neck="Mirage Stole +2",    -- __,  7, 25 <__, __, __> [__/__, ___]
   }) -- 32 DW, 50 STP, 310 Acc <0 DA, 4 TA, 0 QA> [49 PDT/31 MDT, 612 M.Eva]
 
   sets.engaged.DW.DT.HighHaste = set_combine(sets.engaged.DW.HighHaste, {

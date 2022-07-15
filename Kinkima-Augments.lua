@@ -81,7 +81,7 @@ gear.Chironic_MAcc_legs = {} -- 40 M.Acc Aug
 gear.Merl_FC_body = { name="Merlinic Jubbah", augments={'Mag. Acc.+2 "Mag.Atk.Bns."+2','VIT+5','"Fast Cast"+8',}}
 gear.Merl_FC_feet = { name="Merlinic Crackows", augments={'Accuracy+6','INT+10','"Fast Cast"+6','Mag. Acc.+3 "Mag.Atk.Bns."+3',}}
 
-gear.Merl_MB_body = { name="Merlinic Jubbah", augments={'"Subtle Blow"+1','INT+4','Magic burst dmg.+10%',}} --10 MB Dmg, 40 MAB, 40 M.Acc, 10 INT
+gear.Merl_MB_body = { name="Merlinic Jubbah", augments={'INT+3','Magic burst dmg.+11%','Accuracy+18 Attack+18',}} --10 MB Dmg, 40 MAB, 40 M.Acc, 10 INT
 gear.Merl_MB_hands = { name="Merlinic Dastanas", augments={'Accuracy+10 Attack+10','DEX+8','Magic burst dmg.+9%','Mag. Acc.+9 "Mag.Atk.Bns."+9',}}
 gear.Merl_MB_feet = { name="Merlinic Crackows", augments={'Magic burst dmg.+8%','Phys. dmg. taken -2%','INT+3 MND+3 CHR+3','Accuracy+7 Attack+7','Mag. Acc.+1 "Mag.Atk.Bns."+1',}}--Max: 10 MB Dmg, 40 MAB, 40 M.Acc, 10 INT
 
