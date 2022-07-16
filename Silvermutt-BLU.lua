@@ -201,7 +201,7 @@ function job_setup()
   send_command('bind ^f8 gs c toggle AttCapped')
   send_command('bind ^` gs c cycle treasuremode')
   send_command('bind !` gs c toggle MagicBurst')
-  send_command('bind @l gs c toggle Learning')
+  send_command('bind ^l gs c toggle Learning')
   send_command('bind ^- input /ja "Chain Affinity" <me>')
   send_command('bind ^= input /ja "Burst Affinity" <me>')
   send_command('bind ^[ input /ja "Efflux" <me>')
@@ -269,7 +269,7 @@ function user_unload()
   send_command('unbind ^f8')
   send_command('unbind ^`')
   send_command('unbind !`')
-  send_command('unbind @l')
+  send_command('unbind ^l')
   send_command('unbind ^-')
   send_command('unbind ^=')
   send_command('unbind ^[')
@@ -354,13 +354,13 @@ function init_gear_sets()
     ear2="Odnowa Earring +1",     -- __ [ 3/ 5, ___]
     ring1="Kishar Ring",          --  4 [__/__, ___]
     ring2="Defending Ring",       -- __ [10/10, ___]
+    back=gear.BLU_FC_Cape,        -- 10 [10/__, ___]
     waist="Flume Belt +1",        -- __ [ 4/__, ___]
     -- head=gear.Carmine_D_head,  -- 14 [__/__,  53]
     -- legs="Pinga Pants +1",     -- 13 [__/__, 147]
     -- body="Pinga Tunic +1",     -- 15 [__/__, 128]
-    -- back=gear.BLU_FC_Cape,     -- 10 [10/__,  20]
     -- Blue Magic FC trait            5 [__/__, ___]
-    -- 80 FC [37 PDT / 21 MDT, 490 M.Eva]
+    -- 80 FC [37 PDT / 21 MDT, 470 M.Eva]
   }
 
   sets.precast.FC.RDM = {
@@ -372,14 +372,14 @@ function init_gear_sets()
     ear2="Odnowa Earring +1",     -- __ [ 3/ 5, ___]
     ring1="Gelatinous Ring +1",   -- __ [ 7/-1, ___]
     ring2="Defending Ring",       -- __ [10/10, ___]
+    back=gear.BLU_FC_Cape,        -- 10 [10/__, ___]
     waist="Flume Belt +1",        -- __ [ 4/__, ___]
     -- head=gear.Carmine_D_head,  -- 14 [__/__,  53]
     -- legs="Pinga Pants +1",     -- 13 [__/__, 147]
     -- body="Pinga Tunic +1",     -- 15 [__/__, 128]
-    -- back=gear.BLU_FC_Cape,     -- 10 [10/__,  20]
     -- Blue Magic FC trait            5 [__/__, ___]
     -- RDM FC traits                 15
-    -- 84 FC [51 PDT / 27 MDT, 540 M.Eva]
+    -- 84 FC [51 PDT / 27 MDT, 520 M.Eva]
   }
 
   -- 10% cap on Quick Magic
@@ -471,11 +471,11 @@ function init_gear_sets()
     ear2="Regal Earring",
     ring1="Epaminondas's Ring",
     ring2="Archon Ring",
+    back=gear.BLU_FC_Cape,
     -- body="Amalric Doublet +1",
     -- hands="Amalric Gages +1",
     -- legs="Luhlaza Shalwar +3",
     -- feet="Amalric Nails +1",
-    -- back=gear.BLU_FC_Cape,
     -- waist="Sacro Cord",
   }
 
@@ -736,7 +736,7 @@ function init_gear_sets()
     -- hands=gear.Telchine_ENH_hands, -- 18, 33, __ [__/__,  62]
     -- ring2="Freke Ring",            -- __, __, 10 [__/__, ___]
     -- 51 Cure Potency, 196 MND, 71 SIRD [53 PDT / 33 MDT, 521 M.Eva]
-  } -- 47 Cure Potency, 198 MND, 57 SIRD [52 PDT / 42 MDT, 553 M.Eva]
+  } -- 47 Cure Potency, 228 MND, 57 SIRD [62 PDT / 42 MDT, 553 M.Eva]
 
   sets.midcast['Blue Magic'].HealingSelf = set_combine(sets.midcast['Blue Magic'].Healing, {
     waist="Gishdubar Sash",     -- (10)
@@ -788,13 +788,13 @@ function init_gear_sets()
     ear2="Andoaa Earring",
     ring1="Defending Ring", --10DT
     ring2="Stikini Ring +1",
+    back=gear.BLU_FC_Cape, --10PDT
     waist="Olympus Sash",
     -- main="Sakpata's Sword", --10DT
     -- head="Carmine Mask +1",
     -- body=gear.Telchine_ENH_body,
     -- hands=gear.Telchine_ENH_hands,
     -- feet=gear.Telchine_ENH_feet,
-    -- back=gear.BLU_FC_Cape, --10PDT
     -- back="Fi Follet Cape +1", --9Skill
   }
 
@@ -807,13 +807,13 @@ function init_gear_sets()
     ear2="Andoaa Earring",
     ring1="Defending Ring", --10DT
     ring2="Stikini Ring +1",
+    back=gear.BLU_FC_Cape, --10PDT
     waist="Flume Belt +1", --4PDT
     -- head=gear.Telchine_ENH_head,
     -- body=gear.Telchine_ENH_body,
     -- hands=gear.Telchine_ENH_hands,
     -- legs=gear.Telchine_ENH_legs,
     -- feet=gear.Telchine_ENH_feet,
-    -- back=gear.BLU_FC_Cape, --10PDT
   }
 
   sets.midcast.Refresh = set_combine(sets.midcast.EnhancingDuration, {
@@ -876,13 +876,13 @@ function init_gear_sets()
     ear2="Etiolation Earring",      -- __/ 3, ___ [__]; Resist Silence+15
     ring1="Stikini Ring +1",        -- __/__, ___ [ 1]
     ring2="Defending Ring",         -- 10/10, ___ [__]
+    back=gear.BLU_FC_Cape,          -- 10/__, ___ [__]
     waist="Carrier's Sash",         -- __/__, ___ [__]; Ele Resist+15
     -- body="Shamash Robe",         -- 10/__, 106 [ 3]; Resist Silence+90
     -- legs=gear.Lengo_legs,        -- __/__, 107 [ 1]
     -- ring2="Stikini Ring +1",     -- __/__, ___ [ 1]
-    -- back=gear.BLU_FC_Cape,          -- 10/__,  20 [__]
     -- 53 PDT / 26 MDT, 548 M.Eva [8 Refresh]
-  } -- 43 PDT / 36 MDT, 437 M.Eva [8 Refresh]
+  } -- 53 PDT / 36 MDT, 437 M.Eva [8 Refresh]
   sets.passive_refresh.sub50 = {
     waist="Fucho-no-Obi",
   }
@@ -1250,6 +1250,7 @@ function init_gear_sets()
   }
   sets.WeaponSet['Naegling'].DW = {
     main="Naegling",
+    sub="Maxentius",
     -- sub="Thibron",
   }
   sets.WeaponSet['Maxentius'] = {
@@ -1258,6 +1259,7 @@ function init_gear_sets()
   }
   sets.WeaponSet['Maxentius'].DW = {
     main="Maxentius",
+    sub="Naegling",
     -- sub="Thibron",
   }
   sets.WeaponSet['Tizona'] = {
@@ -1332,7 +1334,11 @@ function job_post_precast(spell, action, spellMap, eventArgs)
 
   -- Always put this last in job_post_precast
   if in_battle_mode() then
-    equip_weapons()
+    equip(select_weapons())
+  end
+
+  if state.Learning.current then
+    equip(sets.Learning)
   end
 
   -- If slot is locked, keep current equipment on
@@ -1393,9 +1399,13 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
 
   -- Always put this last in job_post_midcast
   if in_battle_mode() then
-    equip_weapons()
+    equip(select_weapons())
   end
   
+  if state.Learning.current then
+    equip(sets.Learning)
+  end
+
   -- If slot is locked, keep current equipment on
   if locked_neck then equip({ neck=player.equipment.neck }) end
   if locked_ear1 then equip({ ear1=player.equipment.ear1 }) end
@@ -1586,7 +1596,7 @@ function customize_idle_set(idleSet)
   end
 
   if in_battle_mode() then
-    idleSet = set_combine(idleSet, sets.WeaponSet[state.WeaponSet.current])
+    idleSet = set_combine(idleSet, select_weapons())
   end
 
   return idleSet
@@ -1613,7 +1623,7 @@ function customize_melee_set(meleeSet)
   end
 
   if in_battle_mode() then
-    meleeSet = set_combine(meleeSet, sets.WeaponSet[state.WeaponSet.current])
+    meleeSet = set_combine(meleeSet, select_weapons())
   end
 
   return meleeSet
@@ -1632,7 +1642,7 @@ function customize_defense_set(defenseSet)
   end
 
   if in_battle_mode() then
-    defenseSet = set_combine(defenseSet, sets.WeaponSet[state.WeaponSet.current])
+    defenseSet = set_combine(defenseSet, select_weapons())
   end
 
   return defenseSet
@@ -1799,14 +1809,14 @@ function cycle_weapons(cycle_dir)
   end
 
   add_to_chat(141, 'Weapon Set to '..string.char(31,1)..state.WeaponSet.current)
-  equip_weapons()
+  equip(select_weapons())
 end
 
-function equip_weapons()
-  if DW and sets.WeaponSet[state.WeaponSet.current].DW then
-    equip(sets.WeaponSet[state.WeaponSet.current].DW)
-  else
-    equip(sets.WeaponSet[state.WeaponSet.current])
+function select_weapons()
+  if has_dual_wield_trait() and sets.WeaponSet[state.WeaponSet.current] and sets.WeaponSet[state.WeaponSet.current].DW then
+    return sets.WeaponSet[state.WeaponSet.current].DW
+  elseif sets.WeaponSet[state.WeaponSet.current] then
+    return sets.WeaponSet[state.WeaponSet.current]
   end
 end
 
@@ -1818,12 +1828,12 @@ end
 function select_default_macro_book()
   -- Default macro set/book
   if player.sub_job == 'WAR' then
-      set_macro_page(1, 5)
+      set_macro_page(1, 3)
   elseif player.sub_job == 'RDM' then
-      set_macro_page(2, 5)
+      set_macro_page(2, 3)
   end
 
-  set_macro_page(1,5)
+  set_macro_page(1,3)
 end
 
 function check_gear()
@@ -1861,3 +1871,12 @@ windower.register_event('zone change', function()
   if locked_ring1 then equip({ ring1=empty }) end
   if locked_ring2 then equip({ ring2=empty }) end
 end)
+
+function has_dual_wield_trait()
+  local abilities = windower.ffxi.get_abilities()
+  local traits = S(abilities.job_traits)
+  if traits:contains(18) then
+    return true
+  end
+  return false
+end
