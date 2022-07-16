@@ -321,6 +321,7 @@ function init_gear_sets()
   sets.precast.JA['Provoke'] = sets.Enmity
 
   sets.buff['Burst Affinity'] = {
+    legs="Assimilator's Shalwar +2",
     -- legs="Assimilator's Shalwar +3",
     -- feet="Hashishin Basmak +1"
   }
@@ -587,7 +588,7 @@ function init_gear_sets()
     sub="Maxentius",              -- 21, 40, 15 [__/__, ___]
     ammo="Pemphredo Tathlum",     --  4,  8,  4 [__/__, ___]
     head=gear.Nyame_B_head,       -- 30, 40, 28 [ 7/ 7, 123]
-    body="Shamash Robe",          -- 45, 45, 40 [10/__, 106]
+    body=gear.Nyame_B_body,       -- 30, 40, 42 [ 9/ 9, 139]
     hands="Jhakri Cuffs +2",      -- 40, 43, 36 [__/__,  32]
     legs=gear.Nyame_B_legs,       -- 30, 40, 44 [ 8/ 8, 150]
     feet="Jhakri Pigaches +2",    -- 39, 42, 33 [__/__,  69]
@@ -623,7 +624,8 @@ function init_gear_sets()
     main="Bunzi's Rod",                 -- 60, 50, 15 [__/__, ___]
     sub="Maxentius",                    -- 21, 40, 15 [__/__, ___]
     ammo="Pemphredo Tathlum",           --  4,  8,  4 [__/__, ___]
-    body="Shamash Robe",                -- 45, 45, 40 [10/__, 106]
+    head="Assimilator's Keffiyeh +2",   -- 23, 46, 28 [__/__,  63]
+    body=gear.Nyame_B_body,             -- 30, 40, 42 [ 9/ 9, 139]
     hands=gear.Nyame_B_hands,           -- 30, 40, 28 [ 7/ 7, 112]
     legs=gear.Nyame_B_legs,             -- 30, 40, 44 [ 8/ 8, 150]
     feet=gear.Nyame_B_feet,             -- 30, 40, 25 [ 7/ 7, 150]
@@ -633,10 +635,12 @@ function init_gear_sets()
     ring1="Metamorph Ring +1",          -- __, 15, 16 [__/__, ___]
     ring2="Defending Ring",             -- __, __, __ [10/10, ___]
     -- head="Assimilator's Keffiyeh +3",-- 28, 56, 33 [__/__,  73]
+    -- body="Shamash Robe",             -- 45, 45, 40 [10/__, 106]
     -- back=gear.BLU_MAB_Cape,          -- 10, 20, 30 [10/__, ___]
     -- waist="Acuity Belt +1",          -- __, 15, 23 [__/__, ___]
     -- AF set bonus                        __, 15, __ [__/__, ___]
-  }) -- 288 MAB, 384 M.Acc, 283 INT [52 PDT/32 MDT, 591 M.Eva]
+    -- 288 MAB, 384 M.Acc, 283 INT [52 PDT/32 MDT, 591 M.Eva]
+  })-- 258 MAB, 319 M.Acc, 227 INT [41 PDT/41 MDT, 614 M.Eva]
 
   sets.midcast['Blue Magic'].MagicalDark = set_combine(sets.midcast['Blue Magic'].Magical, {
     head="Pixie Hairpin +1",
@@ -672,10 +676,10 @@ function init_gear_sets()
     main="Bunzi's Rod", --40 macc
     sub="Maxentius", --40 macc
     ammo="Pemphredo Tathlum",
-    head="Malignance Chapeau",
+    head="Assimilator's Keffiyeh +2",
     body="Malignance Tabard",
     hands="Malignance Gloves",
-    legs="Malignance Tights",
+    legs="Assimilator's Shalwar +2",
     feet="Malignance Boots",
     ear1="Dignitary's Earring",
     ear2="Regal Earring",
@@ -714,7 +718,7 @@ function init_gear_sets()
     sub=empty,
     ammo="Staunch Tathlum +1",        -- __, __, 11 [ 3/ 3, ___]
     head=gear.Nyame_B_head,           -- __, 26, __ [ 7/ 7, 123]
-    body="Shamash Robe",              -- __, 40, __ [10/__, 106]
+    body=gear.Nyame_B_body,           -- __, 37, __ [ 9/ 9, 139]
     hands=gear.Telchine_ENH_hands,    -- 17, 33, __ [__/__,  61]
     legs="Carmine Cuisses +1",        -- __, 16, 20 [__/__,  80]
     feet=gear.Nyame_B_feet,           -- __, 26, __ [ 7/ 7, 150]
@@ -725,13 +729,14 @@ function init_gear_sets()
     ring2="Stikini Ring +1",          -- __,  5, __ [__/__, ___]
     back=gear.BLU_FC_Cape,            -- __, 30, __ [10/__, ___]
     waist="Sanctuary Obi +1",         -- __, __, 10 [__/__, ___]
-    -- Merits                            __, __, 10 [__/__, ___]
+    -- Merits                            __, __,  6 [__/__, ___]
 
     -- sub="Sors Shield",             --  3, __, __ [__/__, ___]
+    -- body="Shamash Robe",           -- __, 40, __ [10/__, 106]
     -- hands=gear.Telchine_ENH_hands, -- 18, 33, __ [__/__,  62]
     -- ring2="Freke Ring",            -- __, __, 10 [__/__, ___]
     -- 51 Cure Potency, 196 MND, 71 SIRD [53 PDT / 33 MDT, 521 M.Eva]
-  } -- 47 Cure Potency, 217 MND, 40 SIRD [61 PDT / 41 MDT, 590 M.Eva]
+  } -- 47 Cure Potency, 198 MND, 57 SIRD [52 PDT / 42 MDT, 553 M.Eva]
 
   sets.midcast['Blue Magic'].HealingSelf = set_combine(sets.midcast['Blue Magic'].Healing, {
     waist="Gishdubar Sash",     -- (10)
