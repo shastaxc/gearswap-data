@@ -1209,8 +1209,7 @@ function init_gear_sets()
     body="Councilor's Garb",
   }
   sets.Learning = {
-    hands="Magus Bazubands",
-    -- hands="Assimilator's Bazubands +1",
+    hands="Assimilator's Bazubands +1",
   }
 
   sets.buff.Doom = {
