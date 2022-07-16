@@ -1271,7 +1271,7 @@ function job_precast(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
   
   -- Use special FC set if subbing RDM
-  if player.sub_job == 'RDM' then
+  if player.sub_job == 'RDM' and spell.type == 'Magic' then
     equipSet = select_specific_set(sets.precast.FC, spell, spellMap)
     -- Add optional casting mode
     if equipSet[state.CastingMode.current] then
