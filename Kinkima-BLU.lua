@@ -626,7 +626,7 @@ function init_gear_sets()
     main="Bunzi's Rod",                 -- 60, 50, 15 [__/__, ___]
     sub=empty,
     ammo="Pemphredo Tathlum",           --  4,  8,  4 [__/__, ___]
-    head="Assimilator's Keffiyeh +2",   -- 23, 46, 28 [__/__,  63]
+    head="Assimilator's Keffiyeh +3",   -- 28, 56, 33 [__/__,  73]
     body="Shamash Robe",                -- 45, 45, 40 [10/__, 106]
     hands=gear.Nyame_B_hands,           -- 30, 40, 28 [ 7/ 7, 112]
     legs=gear.Nyame_B_legs,             -- 30, 40, 44 [ 8/ 8, 150]
@@ -637,12 +637,11 @@ function init_gear_sets()
     ring2="Defending Ring",             -- __, __, __ [10/10, ___]
     waist="Acuity Belt +1",             -- __, 15, 23 [__/__, ___]
     -- sub="Maxentius",                 -- 21, 40, 15 [__/__, ___]
-    -- head="Assimilator's Keffiyeh +3",-- 28, 56, 33 [__/__,  73]
     -- neck="Baetyl Pendant",           -- 13, __, __ [__/__, ___]
     -- back=gear.BLU_MAB_Cape,          -- 10, 20, 30 [10/__, ___]
     -- AF set bonus                        __, 15, __ [__/__, ___]
     -- 288 MAB, 384 M.Acc, 283 INT [52 PDT/32 MDT, 591 M.Eva]
-  })-- 239 MAB, 299 M.Acc, 233 INT [42 PDT/32 MDT, 581 M.Eva]
+  })-- 244 MAB, 309 M.Acc, 238 INT [42 PDT/32 MDT, 591 M.Eva]
 
   sets.midcast['Blue Magic'].MagicalDark = set_combine(sets.midcast['Blue Magic'].Magical, {
     -- head="Pixie Hairpin +1",
@@ -676,7 +675,7 @@ function init_gear_sets()
     main="Bunzi's Rod", --40 macc
     sub=gear.Nibiru_Club_B,
     ammo="Pemphredo Tathlum",
-    head="Assimilator's Keffiyeh +2",
+    head="Assimilator's Keffiyeh +3",
     body="Malignance Tabard",
     hands="Malignance Gloves",
     legs="Assimilator's Shalwar +2",
@@ -692,7 +691,6 @@ function init_gear_sets()
     -- main="Tizona",
     -- sub="Bunzi's Rod", --40 macc
     -- sub="Maxentius", --40 macc
-    -- head="Assimilator's Keffiyeh +3",
     -- legs="Assimilator's Shalwar +3",
   }
 

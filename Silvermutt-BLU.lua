@@ -624,7 +624,7 @@ function init_gear_sets()
     main="Bunzi's Rod",                 -- 60, 50, 15 [__/__, ___]
     sub="Maxentius",                    -- 21, 40, 15 [__/__, ___]
     ammo="Pemphredo Tathlum",           --  4,  8,  4 [__/__, ___]
-    head="Assimilator's Keffiyeh +2",   -- 23, 46, 28 [__/__,  63]
+    head="Assimilator's Keffiyeh +3",   -- 28, 56, 33 [__/__,  73]
     body=gear.Nyame_B_body,             -- 30, 40, 42 [ 9/ 9, 139]
     hands=gear.Nyame_B_hands,           -- 30, 40, 28 [ 7/ 7, 112]
     legs=gear.Nyame_B_legs,             -- 30, 40, 44 [ 8/ 8, 150]
@@ -634,13 +634,12 @@ function init_gear_sets()
     ear2="Friomisi Earring",            -- 10, __, __ [__/__, ___]
     ring1="Metamorph Ring +1",          -- __, 15, 16 [__/__, ___]
     ring2="Defending Ring",             -- __, __, __ [10/10, ___]
-    -- head="Assimilator's Keffiyeh +3",-- 28, 56, 33 [__/__,  73]
     -- body="Shamash Robe",             -- 45, 45, 40 [10/__, 106]
     -- back=gear.BLU_MAB_Cape,          -- 10, 20, 30 [10/__, ___]
     -- waist="Acuity Belt +1",          -- __, 15, 23 [__/__, ___]
     -- AF set bonus                        __, 15, __ [__/__, ___]
     -- 288 MAB, 384 M.Acc, 283 INT [52 PDT/32 MDT, 591 M.Eva]
-  })-- 258 MAB, 319 M.Acc, 227 INT [41 PDT/41 MDT, 614 M.Eva]
+  })-- 263 MAB, 329 M.Acc, 232 INT [41 PDT/41 MDT, 624 M.Eva]
 
   sets.midcast['Blue Magic'].MagicalDark = set_combine(sets.midcast['Blue Magic'].Magical, {
     head="Pixie Hairpin +1",
@@ -676,7 +675,7 @@ function init_gear_sets()
     main="Bunzi's Rod", --40 macc
     sub="Maxentius", --40 macc
     ammo="Pemphredo Tathlum",
-    head="Assimilator's Keffiyeh +2",
+    head="Assimilator's Keffiyeh +3",
     body="Malignance Tabard",
     hands="Malignance Gloves",
     legs="Assimilator's Shalwar +2",
@@ -687,7 +686,6 @@ function init_gear_sets()
     -- ring2="Stikini Ring +1",
     -- main="Tizona",
     -- sub="Bunzi's Rod", --40 macc
-    -- head="Assimilator's Keffiyeh +3",
     -- legs="Assimilator's Shalwar +3",
     -- neck="Mirage Stole +1",
     -- back="Aurist's Cape +1",
