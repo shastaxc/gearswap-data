@@ -584,7 +584,7 @@ function init_gear_sets()
   sets.midcast['Blue Magic'].PhysicalChr = set_combine(sets.midcast['Blue Magic'].Physical, {ear1="Regal Earring", ear2="Enchanter's Earring +1"})
 
   sets.midcast['Blue Magic'].Magical = {
-    -- main="Bunzi's Rod",           -- 60, 50, 15 [__/__, ___]
+    main="Bunzi's Rod",           -- 60, 50, 15 [__/__, ___]
     sub="Maxentius",              -- 21, 40, 15 [__/__, ___]
     ammo="Pemphredo Tathlum",     --  4,  8,  4 [__/__, ___]
     head=gear.Nyame_B_head,       -- 30, 40, 28 [ 7/ 7, 123]
