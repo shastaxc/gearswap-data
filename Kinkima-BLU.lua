@@ -61,6 +61,7 @@ function get_sets()
   end, 1)
   coroutine.schedule(function()
     send_command('gs c weaponset current')
+    send_command('aset set main')
   end, 2)
 end
 
@@ -234,18 +235,6 @@ function user_setup()
   if player.sub_job == "RDM" then
     send_command('bind !o input /ma Phalanx <me>')
     send_command('bind !i input /ma Stoneskin <me>')
-
-    coroutine.schedule(function()
-      send_command('aset set soloaoe')
-    end, 2)
-  elseif player.sub_job == "DNC" or player.sub_job == "SMN" then
-    coroutine.schedule(function()
-      send_command('aset set tpdrain')
-    end, 2)
-  elseif player.sub_job == "SCH" then
-    coroutine.schedule(function()
-      send_command('aset set healing')
-    end, 2)
   elseif player.sub_job == 'WAR' then
     send_command('bind ^numpad/ input /ja "Berserk" <me>')
     send_command('bind ^numpad* input /ja "Warcry" <me>')
