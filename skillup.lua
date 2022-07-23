@@ -20,7 +20,7 @@ user_settings = {
         },
         Ninjutsu = T{},
         Singing = T{"Army's Paeon", "Army's Paeon II", "Sheepfoe Mambo", "Herb Pastoral", "Knight's Minne", "Valor Minuet"},
-        Blue = T{},
+        Blue = T{'Pollen'},
         Summoning = T{}},
     save_settings = false} --change this to true if you wish to save the last position of your skillup window
 sets.brd = {
