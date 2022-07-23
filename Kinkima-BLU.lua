@@ -500,6 +500,7 @@ function init_gear_sets()
 
   sets.midcast['Blue Magic'] = {
     neck="Mirage Stole +2",             -- 20, 25 [__/__, ___]
+    ear1="Njordr Earring",              -- 10, __ [__/__, ___]
     ear2="Odnowa Earring +1",           -- __, __ [ 3/ 5, ___]
     ring1="Gelatinous Ring +1",         -- __, __ [ 7/-1, ___]
     ring2="Stikini Ring +1",            --  8, 11 [__/__, ___]
@@ -509,7 +510,6 @@ function init_gear_sets()
     -- hands=gear.Rawhide_D_hands,      -- 10, 35 [__/__,  37]
     -- legs="Hashishin Tayt +1",        -- 23, __ [__/__, 112]
     -- feet="Luhlaza Charuqs +3",       -- 12, 36 [__/__,  89]
-    -- ear1="Njordr Earring",           -- 10, __ [__/__, ___]
     -- ring1="Stikini Ring +1",         --  8, 11 [__/__, ___]
     -- back=gear.BLU_Adoulin_Cape,      -- 15, 15 [__/__, ___]
     -- waist="Flume Belt +1",           -- __, __ [ 4/__, ___]
@@ -1310,6 +1310,10 @@ function job_post_precast(spell, action, spellMap, eventArgs)
     equip(select_weapons())
   end
 
+  if state.Learning.value then
+    equip(sets.Learning)
+  end
+
   -- If slot is locked, keep current equipment on
   if locked_neck then equip({ neck=player.equipment.neck }) end
   if locked_ear1 then equip({ ear1=player.equipment.ear1 }) end
@@ -1371,6 +1375,10 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     equip(select_weapons())
   end
   
+  if state.Learning.value then
+    equip(sets.Learning)
+  end
+
   -- If slot is locked, keep current equipment on
   if locked_neck then equip({ neck=player.equipment.neck }) end
   if locked_ear1 then equip({ ear1=player.equipment.ear1 }) end
@@ -1541,10 +1549,10 @@ function customize_idle_set(idleSet)
     else
       idleSet = set_combine(idleSet, sets.Kiting)
     end
-    if state.CP.current == 'on' then
+    if state.CP.value then
       idleSet = set_combine(idleSet, sets.CP)
     end
-    if state.Learning.current then
+    if state.Learning.value then
       idleSet = set_combine(idleSet, sets.Learning)
     end
   end
@@ -1572,7 +1580,7 @@ function customize_melee_set(meleeSet)
   if state.IdleMode.value == 'CP' then
     meleeSet = set_combine(meleeSet, sets.CP)
   end
-  if state.Learning.current then
+  if state.Learning.value then
     meleeSet = set_combine(meleeSet, sets.Learning)
   end
   

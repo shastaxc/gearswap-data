@@ -70,7 +70,7 @@ function job_setup()
   silibs.enable_cancel_outranged_ws()
   silibs.enable_auto_lockstyle(14)
   silibs.enable_premade_commands()
-  silibs.enable_th()
+  -- silibs.enable_th()
 
   state.CP = M(false, "Capacity Points Mode")
   state.WeaponSet = M{['description']='Weapon Set', 'Casting', 'Naegling', 'Maxentius'}
@@ -919,8 +919,6 @@ function init_gear_sets()
 
   sets.idle.Weak = sets.idle.DT
 
-  sets.idle.Learning = set_combine(sets.idle, sets.Learning)
-
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Engaged Sets ------------------------------------------
@@ -1324,7 +1322,7 @@ function job_post_precast(spell, action, spellMap, eventArgs)
     equip(select_weapons())
   end
 
-  if state.Learning.current then
+  if state.Learning.value then
     equip(sets.Learning)
   end
 
@@ -1389,7 +1387,7 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     equip(select_weapons())
   end
   
-  if state.Learning.current then
+  if state.Learning.value then
     equip(sets.Learning)
   end
 
@@ -1563,10 +1561,10 @@ function customize_idle_set(idleSet)
     else
       idleSet = set_combine(idleSet, sets.Kiting)
     end
-    if state.CP.current == 'on' then
+    if state.CP.value then
       idleSet = set_combine(idleSet, sets.CP)
     end
-    if state.Learning.current then
+    if state.Learning.value then
       idleSet = set_combine(idleSet, sets.Learning)
     end
   end
@@ -1594,7 +1592,7 @@ function customize_melee_set(meleeSet)
   if state.IdleMode.value == 'CP' then
     meleeSet = set_combine(meleeSet, sets.CP)
   end
-  if state.Learning.current then
+  if state.Learning.value then
     meleeSet = set_combine(meleeSet, sets.Learning)
   end
   
