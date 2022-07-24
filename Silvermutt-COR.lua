@@ -593,13 +593,13 @@ function init_gear_sets()
     neck="Commodore Charm +1",    -- 12, __, __, __, __, __, ___
     ear1="Ishvara Earring",       -- __, __, __, __,  2, __, ___
     ear2="Moonshade Earring",     -- __, __, __,  4, __, __, 250
-    ring1="Regal Ring",           -- 10, __, 20, __, __, __, ___
+    ring1="Sroda Ring",           -- 15, __, __, __, __,  3, ___
     ring2="Epaminondas's Ring",   -- __, __, __, __,  5, __, ___
     back=gear.COR_WS2_Cape,       -- 30, __, 20, 20, 10, __, ___
     waist="Sailfi Belt +1",       -- 15, __, 15, __, __, __, ___
     -- neck="Commodore Charm +2", -- 15, __, __, __, __, __, ___
-    -- 212 STR, 149 MND, 295 Attack, 184 Accuracy, 58 WSD, 7 PDL, 440 TP Bonus
-  } -- 209 STR, 149 MND, 295 Attack, 184 Accuracy, 58 WSD, 7 PDL, 440 TP Bonus
+    -- 217 STR, 149 MND, 275 Attack, 184 Accuracy, 58 WSD, 10 PDL, 440 TP Bonus
+  } -- 214 STR, 149 MND, 275 Attack, 184 Accuracy, 58 WSD, 10 PDL, 440 TP Bonus
   sets.precast.WS['Savage Blade'].MaxTP = set_combine(sets.precast.WS['Savage Blade'], {
     ear2="Telos Earring",
   })

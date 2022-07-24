@@ -430,7 +430,7 @@ function init_gear_sets()
     -- ammo="Coiste Bodhar", --Sub for Aurgelmir Orb +1
     -- ear1="Ishvara Earring",
     -- ring1="Epaminondas's Ring",
-    -- ring2="Beithir Ring",
+    -- ring2="Sroda Ring",
     -- back=gear.BLU_WSD_Cape,
     -- waist="Sailfi Belt +1",
   }
@@ -445,7 +445,7 @@ function init_gear_sets()
     -- legs="Gleti's Breeches",
     -- ear1="Ishvara Earring",
     -- ring1="Epaminondas's Ring",
-    -- ring2="Beithir Ring",
+    -- ring2="Sroda Ring",
     -- back=gear.BLU_WSD_Cape,
     -- waist="Sailfi Belt +1",
   }
@@ -886,27 +886,22 @@ function init_gear_sets()
   sets.idle = sets.passive_refresh
 
   sets.idle.Evasion = { --Focus on DT cap and evasion
-  sub="Bolelabunga", --1RF
-  ammo="Staunch Tathlum",
-  head=gear.Nyame_B_head, --7DT, 91EVA
-  body=gear.Nyame_B_body, --9DT, 102EVA
-  hands=gear.Nyame_B_hands, --7DT, 80EVA
-  legs=gear.Nyame_B_legs, --8DT, 85EVA
-  feet=gear.Nyame_B_feet, --7DT, 119EVA,
-  neck="Bathy Choker +1", --30EVA (after aug)
-  ring2="Stikini Ring +1", --1RF
-  back=gear.BLU_FC_Cape, --10PDT
     -- main="Tizona",
-    -- main="Sakpata's Sword", --10
-    -- ammo="Staunch Tathlum +1", --3DT
+    -- sub="Sakpata's Sword", --10
+    -- ammo="Amar Cluster", --10EVA
+    head="Malignance Chapeau", --7DT, 91EVA
+    body="Malignance Tabard", --9DT, 102EVA
+    hands="Malignance Gloves", --7DT, 80EVA
+    legs="Malignance Tights", --8DT, 85EVA
+    feet="Malignance Boots", --7DT, 119EVA,
+    -- neck="Bathy Choker +1", --30EVA (after aug)
     -- ear1="Infused Earring", --10EVA
-    -- ear2="Eabani Earring", --10EVA
+    ear2="Eabani Earring", --10EVA
     -- ring1="Vengeful Ring", --9EVA
-    -- ring2="Beeline Ring", --6EVA
-    -- ring1="Stikini Ring +1", --1RF
+    ring2="Gelatinous Ring +1", --7PDT
+    -- back=gear.BLU_ENM_Cape, --45EVA
     -- waist="Shetal Stone", --10EVA
-  } --60 DT, 14 PDT, 2MDT, 7RF
-
+  } --48 DT, 7PDT
 
   sets.idle.DT = set_combine(sets.idle, {
     ammo="Staunch Tathlum", --2/2
@@ -1229,7 +1224,7 @@ function init_gear_sets()
   }
   sets.WeaponSet['Maxentius'] = {
     -- main="Maxentius",
-    sub="Genmei Shield",
+    sub={name="Genmei Shield", priority=1},
   }
   sets.WeaponSet['Maxentius'].DW = {
     -- main="Maxentius",

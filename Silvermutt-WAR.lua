@@ -259,15 +259,16 @@ function init_gear_sets()
     neck="Warrior's Bead Necklace +1",
     ear1="Thrud Earring",
     ear2="Moonshade Earring",
-    ring1="Regal Ring",           -- 10, __, 20, __, __, __, ___
+    ring1="Sroda Ring",
     ring2="Epaminondas's Ring",   -- __, __, __, __,  5, __, ___
     back=gear.WAR_STR_WSD_Cape,
     waist="Sailfi Belt +1",
     -- neck="Warrior's Bead Necklace +2",
-    -- ring1="Sroda Ring",
   } -- ? STR, ? MND, ? Attack, ? Accuracy, ? WSD, ? PDL, ? TP Bonus
   sets.precast.WS.MaxTP = sets.precast.WS
-  sets.precast.WS.AttCapped = sets.precast.WS
+  sets.precast.WS.AttCapped = set_combine(sets.precast.WS, {
+    ring1="Sroda Ring",           -- 15, __, __, __, __,  3, ___
+  })
   sets.precast.WS.AttCappedMaxTP = sets.precast.WS.MaxTP
 
   sets.precast.WS["Savage Blade"] = {
@@ -280,12 +281,11 @@ function init_gear_sets()
     neck="Warrior's Bead Necklace +1",
     ear1="Thrud Earring",
     ear2="Moonshade Earring",
-    ring1="Regal Ring",           -- 10, __, 20, __, __, __, ___
+    ring1="Sroda Ring",
     ring2="Epaminondas's Ring",   -- __, __, __, __,  5, __, ___
     back=gear.WAR_STR_WSD_Cape,
     waist="Sailfi Belt +1",
     -- neck="Warrior's Bead Necklace +2",
-    -- ring1="Sroda Ring",
   } -- ? STR, ? MND, ? Attack, ? Accuracy, ? WSD, ? PDL, ? TP Bonus
   sets.precast.WS["Savage Blade"].MaxTP = set_combine(sets.precast.WS["Savage Blade"], {
     ear2="Ishvara Earring",
@@ -344,7 +344,7 @@ function init_gear_sets()
     neck="Fotia Gorget",
     ear1="Thrud Earring",
     ear2="Moonshade Earring",
-    ring1="Niqmaddu Ring",
+    ring1="Sroda Ring",           -- 15, __, __, __, __,  3, ___
     ring2="Regal Ring",
     back=gear.WAR_STR_DA_Cape,
     waist="Fotia Belt",
@@ -419,12 +419,12 @@ function init_gear_sets()
     neck="Warrior's Bead Necklace +1",
     ear1="Brutal Earring",
     ear2="Schere Earring",
+    ring1="Sroda Ring",
     ring2="Regal Ring",
     back=gear.WAR_STR_DA_Cape,
     waist="Fotia Belt",
     -- ammo="Seething Bomblet +1",
     -- neck="Warrior's Bead Necklace +2",
-    -- ring1="Sroda Ring",
   })
   sets.precast.WS["Decimation"].MaxTP = set_combine(sets.precast.WS["Decimation"], {
     ear2="Ishvara Earring",
@@ -444,11 +444,11 @@ function init_gear_sets()
     neck="Warrior's Bead Necklace +1",
     ear1="Thrud Earring",
     ear2="Moonshade Earring",
+    ring1="Sroda Ring",
     ring2="Epaminondas's Ring",
     back=gear.WAR_STR_WSD_Cape,
     waist="Sailfi Belt +1",
     -- neck="Warrior's Bead Necklace +2",
-    -- ring1="Sroda Ring",
   })
   sets.precast.WS["Calamity"].MaxTP = set_combine(sets.precast.WS["Calamity"], {
     ear2="Ishvara Earring",
@@ -469,10 +469,10 @@ function init_gear_sets()
     neck="Baetyl pendant",
     ear1="Friomisi Earring",
     ear2="Moonshade Earring",
+    ring1="Sroda Ring",
     ring2="Regal Ring",
     back=gear.WAR_STR_WSD_Cape,
     waist="Eschan Stone",
-    -- ring1="Beithir Ring",
     -- back=gear.WAR_MND_WSD_Cape,
   })
   sets.precast.WS['Cloudsplitter'].MaxTP = set_combine(sets.precast.WS['Cloudsplitter'], {
@@ -493,12 +493,12 @@ function init_gear_sets()
     neck="Warrior's Bead Necklace +1",
     ear1="Schere Earring",
     ring1="Niqmaddu Ring",
+    ring2="Sroda Ring",
     back=gear.WAR_STR_DA_Cape,
     waist="Sailfi Belt +1",
     -- head="Blistering Sallet +1",
     -- neck="Warrior's Bead Necklace +2",
     -- ear2="Lugra Earring +1",
-    -- ring2="Sroda Ring",
   })
   sets.precast.WS["Ukko's Fury"].MaxTP = set_combine(sets.precast.WS["Ukko's Fury"], {
     ear2="Ishvara Earring",
@@ -513,11 +513,11 @@ function init_gear_sets()
     neck="Warrior's Bead Necklace +1",
     ear1="Schere Earring",
     ring1="Regal Ring",
+    ring2="Sroda Ring",
     back=gear.WAR_STR_DA_Cape,
     waist="Sailfi Belt +1",
     -- neck="Warrior's Bead Necklace +2",
     -- ear2="Lugra Earring +1",
-    -- ring2="Sroda Ring",
   }
   sets.precast.WS["Ukko's Fury"].AttCappedMaxTP = set_combine(sets.precast.WS["Ukko's Fury"].AttCapped, {
     ear2="Ishvara Earring",
@@ -535,7 +535,7 @@ function init_gear_sets()
     ear1="Thrud Earring",
     ear2="Moonshade Earring",
     ring1="Regal Ring",
-    ring2="Niqmaddu Ring",
+    ring2="Sroda Ring",
     back=gear.WAR_Crit_Cape,
     waist="Sailfi Belt +1",
     -- neck="Warrior's Bead Necklace +2",
@@ -560,7 +560,7 @@ function init_gear_sets()
     neck="Fotia Gorget",
     ear1="Thrud Earring",
     ear2="Moonshade Earring",
-    ring1="Niqmaddu Ring",
+    ring1="Sroda Ring",
     ring2="Regal Ring",
     back=gear.WAR_STR_DA_Cape,
     waist="Fotia Belt",
@@ -601,7 +601,7 @@ function init_gear_sets()
     neck="Fotia Gorget",
     ear1="Moonshade earring",
     ear2="Sherida Earring",
-    ring1="Niqmaddu Ring",
+    ring1="Sroda Ring",
     ring2="Gere Ring",
     back=gear.WAR_STR_DA_Cape,
     waist="Fotia Belt",
@@ -623,12 +623,12 @@ function init_gear_sets()
     feet=gear.Nyame_B_feet,
     neck="Warrior's Bead Necklace +1",
     ear2="Moonshade Earring",
+    ring1="Sroda Ring",
     ring2="Epaminondas's Ring",
     back=gear.WAR_STR_WSD_Cape,
     waist="Sailfi Belt +1",
     -- neck="Warrior's Bead Necklace +2",
     -- ear1="Lugra Earring +1",
-    -- ring1="Sroda Ring",
   })
   sets.precast.WS["Spiral Hell"].MaxTP = set_combine(sets.precast.WS["Spiral Hell"], {
     ear2="Ishvara Earring",

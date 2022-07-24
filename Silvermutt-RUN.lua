@@ -86,6 +86,7 @@ function get_sets()
   end, 1)
   coroutine.schedule(function()
     send_command('gs c weaponset current')
+    send_command('aset set sub')
   end, 2)
 end
 
@@ -876,14 +877,14 @@ function init_gear_sets()
     neck="Futhark Torque +1",       -- 12, 12, __, __, __, __, ___,  6/ 6 [ 45]
     ear1="Ishvara Earring",         -- __, __, __, __,  2, __, ___, __/__ [___]
     ear2="Moonshade Earring",       -- __, __, __,  4, __, __, 250, __/__ [___]
-    ring1="Regal Ring",             -- 10, __, 20, __, __, __, ___, __/__ [ 50]
+    ring1="Sroda Ring",             -- 15, __, __, __, __,  3, ___, __/__ [___]
     ring2="Epaminondas's Ring",     -- __, __, __, __,  5, __, ___, __/__ [___]
     back=gear.RUN_WS2_Cape,         -- __, __, 20, 20, 10, __, ___, 10/__ [___]
     waist="Sailfi Belt +1",         -- 15, __, 15, __, __, __, ___, __/__ [___]
     -- neck="Futhark Torque +2",    -- 15, 15, __, __, __, __, ___,  7/ 7 [ 60]
     -- back=gear.RUN_WS3_Cape,      -- 30, __, 20, 20, 10, __, ___, 10/__ [___]
-    -- 214 STR, 176 MND, 378 Attack, 224 Accuracy, 76 WSD, 0 PDL, 250 TP Bonus, 55PDT/45MDT [610HP]
-  } -- 181 STR, 173 MND, 378 Attack, 224 Accuracy, 76 WSD, 0 PDL, 250 TP Bonus, 54PDT/44MDT [595HP]
+    -- 219 STR, 176 MND, 358 Attack, 224 Accuracy, 76 WSD, 0 PDL, 250 TP Bonus, 55PDT/45MDT [560HP]
+  } -- 186 STR, 173 MND, 358 Attack, 224 Accuracy, 76 WSD, 0 PDL, 250 TP Bonus, 54PDT/44MDT [545HP]
   sets.precast.WS['Savage Blade'].Safe = {
     ammo="Knobkierrie",             -- __, __, 23, __,  6, __, ___, __/__ [___]
     head=gear.Nyame_B_head,         -- 26, 26, 60, 40, 10, __, ___,  7/ 7 [ 91]

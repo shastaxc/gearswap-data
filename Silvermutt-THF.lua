@@ -527,11 +527,11 @@ function init_gear_sets()
     neck="Fotia Gorget",          -- __, __, __, __, __, __, ___; fTP+0.1
     ear1="Ishvara Earring",       -- __, __, __, __,  2, __, ___
     ear2="Moonshade Earring",     -- __, __, __,  4, __, __, 250
-    ring1="Regal Ring",           -- 10, __, 20, __, __, __, ___
+    ring1="Sroda Ring",           -- 15, __, __, __, __,  3, ___
     ring2="Epaminondas's Ring",   -- __, __, __, __,  5, __, ___
     back=gear.THF_WS2_Cape,       -- 30, __, 20, 20, 10, __, ___
     waist="Sailfi Belt +1",       -- 15, __, 15, __, __, __, ___
-  } -- 214 STR, 161 MND, 368 Attack, 237 Accuracy, 70 WSD, 0 PDL, 250 TP Bonus
+  } -- 219 STR, 161 MND, 348 Attack, 237 Accuracy, 70 WSD, 3 PDL, 250 TP Bonus
   sets.precast.WS['Savage Blade'].MaxTP = set_combine(sets.precast.WS['Savage Blade'], {
     ear2="Sherida Earring",       --  5, __, __, __, __, __, ___
   })
@@ -545,11 +545,11 @@ function init_gear_sets()
     neck="Fotia Gorget",          -- __, __, __, __, __, __, ___; fTP+0.1
     ear1="Ishvara Earring",       -- __, __, __, __,  2, __, ___
     ear2="Moonshade Earring",     -- __, __, __,  4, __, __, 250
-    ring1="Regal Ring",           -- 10, __, 20, __, __, __, ___
+    ring1="Sroda Ring",           -- 15, __, __, __, __,  3, ___
     ring2="Epaminondas's Ring",   -- __, __, __, __,  5, __, ___
     back=gear.THF_WS2_Cape,       -- 30, __, 20, 20, 10, __, ___
     waist="Sailfi Belt +1",       -- 15, __, 15, __, __, __, ___
-  } -- 214 STR, 161 MND, 368 Attack, 237 Accuracy, 70 WSD, 0 PDL, 250 TP Bonus
+  } -- 219 STR, 161 MND, 348 Attack, 237 Accuracy, 70 WSD, 3 PDL, 250 TP Bonus
   sets.precast.WS['Savage Blade'].AttCappedMaxTP = set_combine(sets.precast.WS['Savage Blade'].AttCapped, {
     ear2="Sherida Earring",       --  5, __, __, __, __, __, ___
   })

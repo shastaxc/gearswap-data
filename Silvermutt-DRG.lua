@@ -246,7 +246,7 @@ function init_gear_sets()
     neck="Dragoon's Collar +2",
     ear1="Thrud Earring",
     ear2="Moonshade Earring",
-    ring1="Regal Ring",
+    ring1="Sroda Ring",
     ring2="Epaminondas's Ring",
     back=gear.DRG_WS2_Cape,
     waist="Sailfi Belt +1",
@@ -277,7 +277,7 @@ function init_gear_sets()
     neck="Fotia Gorget",
     ear1="Sherida Earring",
     ear2="Moonshade Earring",
-    ring1="Regal Ring",
+    ring1="Sroda Ring",
     ring2="Niqmaddu Ring",
     back=gear.DRG_WS2_Cape,
     waist="Fotia Belt",
@@ -297,7 +297,7 @@ function init_gear_sets()
     neck="Dragoon's Collar +2",
     -- back=gear.DRG_WS1_Cape,
   })
-  sets.precast.WS["Stardiver"].AttCappedMaxTP = set_combine(sets.precast.WS.AttCappedMaxTP, {
+  sets.precast.WS["Stardiver"].AttCappedMaxTP = set_combine(sets.precast.WS.AttCapped, {
     ear2="Brutal Earring",
     -- back=gear.DRG_WS1_Cape,
   })
@@ -314,7 +314,7 @@ function init_gear_sets()
     ear1="Thrud Earring",
     ear2="Ishvara Earring",
     ring1="Epaminondas's Ring",
-    ring2="Niqmaddu Ring",
+    ring2="Sroda Ring",
     back=gear.DRG_WS2_Cape,
     waist="Fotia Belt",
   }
@@ -364,7 +364,7 @@ function init_gear_sets()
     ear1="Sherida Earring",
     ear2="Moonshade Earring",
     ring1="Regal Ring",
-    ring2="Niqmaddu Ring",
+    ring2="Sroda Ring",
     back=gear.DRG_WS2_Cape,
     waist="Sailfi Belt +1",
   }
@@ -414,7 +414,7 @@ function init_gear_sets()
     ear1="Thrud Earring",
     ear2="Sherida Earring",
     ring1="Regal Ring",
-    ring2="Niqmaddu Ring",
+    ring2="Sroda Ring",
     waist="Sailfi Belt +1",
     -- head="Blistering Sallet +1",
     -- legs="Peltast's Cuissots +1",
@@ -470,7 +470,7 @@ function init_gear_sets()
   sets.precast.WS["Cataclysm"].MaxTP = set_combine(sets.precast.WS["Cataclysm"], {
     ear2="Novio Earring",           -- __,  7, __, __
   })
-  sets.precast.WS["Cataclysm"].AttCapped = sets.precast.WS["Cataclysm"]
+  sets.precast.WS["Cataclysm"].AttCapped = set_combine(sets.precast.WS["Cataclysm"], {})
   sets.precast.WS["Cataclysm"].AttCappedMaxTP = set_combine(sets.precast.WS["Cataclysm"].AttCapped, {
     ear2="Novio Earring",           -- __,  7, __, __
   })

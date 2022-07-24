@@ -406,13 +406,13 @@ function init_gear_sets()
     feet=gear.Nyame_B_feet,       -- 10, __, __,  4, 60, 40, 23, 26
     ear1="Moonshade Earring",     -- __, __, __, __, __,  4, __, __; 250 TP Bonus
     ear2="Regal Earring",         -- __, __, __, __, __, __, __, 10
+    ring1="Sroda Ring",           -- __, __, __, __, __, __, 15, __
     ring2="Epaminondas's Ring",   --  5, __, __, __, __, __, __, __
     waist="Sailfi Belt +1",       -- __, __,  2,  5, 15, __, 15, __
     -- range=gear.Linos_WS5,      --  3, __, __, __, 15, 15,  8, __
     -- neck="Bard's Charm +2",    -- __,  3, __, __, __, 30, __, __
-    -- ring1="Ifrit Ring +1",     -- __, __, __, __,  5, __,  9, __
     -- back=gear.BRD_WS5_Cape,    -- 10, __, __, __, 20, 20, 30, __
-    -- 71 WSD, 3 QA, 2 TA, 27 DA, 355 Att, 269 Acc, 206 STR, 171 MND
+    -- 71 WSD, 3 QA, 2 TA, 27 DA, 350 Att, 269 Acc, 212 STR, 171 MND
   })
   sets.precast.WS['Savage Blade'].MaxTP = set_combine(sets.precast.WS['Savage Blade'], {
     -- ear1="Vulcan's Pearl",     -- __, __, __, __, __, __,  4, __

@@ -428,9 +428,9 @@ function init_gear_sets()
     ear1="Ishvara Earring",
     ear2="Moonshade Earring",
     ring1="Epaminondas's Ring",
+    ring2="Sroda Ring",
     waist="Sailfi Belt +1",
     -- neck="Mirage Stole +1",
-    -- ring2="Beithir Ring",
     -- back=gear.BLU_WSD_Cape,
   }
   sets.precast.WS['Savage Blade'].AttCapped = {
@@ -443,14 +443,23 @@ function init_gear_sets()
     ear1="Ishvara Earring",
     ear2="Moonshade Earring",
     ring1="Epaminondas's Ring",
+    ring2="Sroda Ring",
     waist="Sailfi Belt +1",
     -- neck="Mirage Stole +1",
-    -- ring2="Beithir Ring",
     -- back=gear.BLU_WSD_Cape,
   }
 
   sets.precast.WS['Expiacion'] = sets.precast.WS['Savage Blade']
   sets.precast.WS['Expiacion'].AttCapped = sets.precast.WS['Savage Blade'].AttCapped
+
+  sets.precast.WS['True Strike'] = sets.precast.WS['Savage Blade']
+  sets.precast.WS['True Strike'] = sets.precast.WS['Savage Blade'].AttCapped
+  
+  sets.precast.WS['Judgment'] = sets.precast.WS['Savage Blade']
+  sets.precast.WS['Judgment'] = sets.precast.WS['Savage Blade'].AttCapped
+
+  sets.precast.WS['Black Halo'] = sets.precast.WS['Savage Blade']
+  sets.precast.WS['Black Halo'] = sets.precast.WS['Savage Blade'].AttCapped
 
   sets.precast.WS['Sanguine Blade'] = {
     ammo="Pemphredo Tathlum",
@@ -467,13 +476,6 @@ function init_gear_sets()
     -- feet="Amalric Nails +1",
     -- waist="Sacro Cord",
   }
-
-  sets.precast.WS['True Strike'] = sets.precast.WS['Savage Blade']
-  
-  sets.precast.WS['Judgment'] = sets.precast.WS['True Strike']
-  
-
-  sets.precast.WS['Black Halo'] = sets.precast.WS['Savage Blade']
 
   sets.precast.WS['Realmrazer'] = sets.precast.WS['Requiescat']
 
@@ -878,28 +880,23 @@ function init_gear_sets()
   sets.resting = {}
 
   sets.idle = sets.passive_refresh
-
   sets.idle.Evasion = { --Focus on DT cap and evasion
-    sub="Bolelabunga", --1RF
-    ammo="Staunch Tathlum +1", --3DT
-    head=gear.Nyame_B_head, --7DT, 91EVA
-    body=gear.Nyame_B_body, --9DT, 102EVA
-    hands=gear.Nyame_B_hands, --7DT, 80EVA
-    legs=gear.Nyame_B_legs, --8DT, 85EVA
-    feet=gear.Nyame_B_feet, --7DT, 119EVA,
+    -- main="Tizona",
+    -- sub="Sakpata's Sword", --10
+    -- ammo="Amar Cluster", --10EVA
+    head="Malignance Chapeau", --7DT, 91EVA
+    body="Malignance Tabard", --9DT, 102EVA
+    hands="Malignance Gloves", --7DT, 80EVA
+    legs="Malignance Tights", --8DT, 85EVA
+    feet="Malignance Boots", --7DT, 119EVA,
     neck="Bathy Choker +1", --30EVA (after aug)
     ear1="Infused Earring", --10EVA
     ear2="Eabani Earring", --10EVA
-    -- ring1="Stikini Ring +1", --1RF
-    ring2="Stikini Ring +1", --1RF
-    -- main="Tizona",
-    -- main="Sakpata's Sword", --10
     -- ring1="Vengeful Ring", --9EVA
-    -- ring2="Beeline Ring", --6EVA
-    -- back=gear.BLU_FC_Cape, --10PDT
+    ring2="Gelatinous Ring +1", --7PDT
+    -- back=gear.BLU_ENM_Cape, --45EVA
     -- waist="Shetal Stone", --10EVA
-  } --60 DT, 14 PDT, 2MDT, 7RF
-
+  } --48 DT, 7PDT
 
   sets.idle.DT = set_combine(sets.idle, {
     ammo="Staunch Tathlum +1", --3/3
@@ -1240,7 +1237,7 @@ function init_gear_sets()
   }
   sets.WeaponSet['Maxentius'] = {
     main="Maxentius",
-    sub="Genmei Shield",
+    sub={name="Genmei Shield", priority=1},
   }
   sets.WeaponSet['Maxentius'].DW = {
     main="Maxentius",

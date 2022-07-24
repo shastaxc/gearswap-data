@@ -373,7 +373,7 @@ function init_gear_sets()
     neck="Fotia Gorget",
     ear1="Ishvara Earring",
     ear2="Moonshade Earring",
-    ring1="Rufescent Ring",
+    ring1="Sroda Ring",
     ring2="Epaminondas's Ring",
     waist="Fotia Belt",
     -- head="Viti. Chapeau +3",
@@ -382,7 +382,6 @@ function init_gear_sets()
     -- legs="Viti. Tights +3",
     -- back=gear.RDM_WS1_Cape,
   }
-
   sets.precast.WS.Acc = set_combine(sets.precast.WS, {
     body="Jhakri Robe +2",
     waist="Grunfeld Rope",
