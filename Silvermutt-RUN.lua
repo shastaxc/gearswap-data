@@ -86,7 +86,6 @@ function get_sets()
   end, 1)
   coroutine.schedule(function()
     send_command('gs c weaponset current')
-    send_command('aset set sub')
   end, 2)
 end
 
@@ -174,6 +173,9 @@ function user_setup()
     send_command('bind !q input /ma "Wild Carrot" <stpc>')
     send_command('bind !w input /ma "Cocoon" <me>')
     send_command('bind !e input /ma "Refueling" <me>')
+    coroutine.schedule(function()
+      send_command('aset set sub')
+    end, 2)
   elseif player.sub_job == 'WAR' then
     send_command('bind !w input /ja "Defender" <me>')
     send_command('bind ^numpad/ input /ja "Berserk" <me>')
