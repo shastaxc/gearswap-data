@@ -74,6 +74,8 @@ function job_setup()
 
   state.CP = M(false, "Capacity Points Mode")
   state.WeaponSet = M{['description']='Weapon Set', 'Casting', 'Naegling', 'Maxentius'}
+  state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger',
+      'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
 
   state.OffenseMode:options('Normal', 'Acc')
   state.HybridMode:options('DT', 'Normal')
@@ -200,6 +202,10 @@ function job_setup()
   send_command('bind !d gs c usekey')
   send_command('bind @c gs c toggle CP')
 
+  send_command('bind ^pageup gs c toyweapon cycle')
+  send_command('bind ^pagedown gs c toyweapon cycleback')
+  send_command('bind !pagedown gs c toyweapon reset')
+
   send_command('bind ^f8 gs c toggle AttCapped')
   send_command('bind ^` gs c cycle treasuremode')
   send_command('bind !` gs c toggle MagicBurst')
@@ -255,6 +261,10 @@ function user_unload()
   send_command('unbind !s')
   send_command('unbind !d')
   send_command('unbind @c')
+
+  send_command('unbind ^pageup')
+  send_command('unbind ^pagedown')
+  send_command('unbind !pagedown')
 
   send_command('unbind ^f8')
   send_command('unbind ^`')
@@ -1713,6 +1723,14 @@ function job_self_command(cmdParams, eventArgs)
     elseif cmdParams[2] == 'reset' then
       cycle_weapons('reset')
     end
+  elseif cmdParams[1] == 'toyweapon' then
+    if cmdParams[2] == 'cycle' then
+      cycle_toy_weapons('forward')
+    elseif cmdParams[2] == 'cycleback' then
+      cycle_toy_weapons('back')
+    elseif cmdParams[2] == 'reset' then
+      cycle_toy_weapons('reset')
+    end
 	end
   gearinfo(cmdParams, eventArgs)
 end
@@ -1781,15 +1799,19 @@ function cycle_weapons(cycle_dir)
 end
 
 function select_weapons()
-  if has_dual_wield_trait() and sets.WeaponSet[state.WeaponSet.current] and sets.WeaponSet[state.WeaponSet.current].DW then
-    return sets.WeaponSet[state.WeaponSet.current].DW
-  elseif sets.WeaponSet[state.WeaponSet.current] then
-    return sets.WeaponSet[state.WeaponSet.current]
+  if state.ToyWeapons.current ~= 'None' then
+    return sets.ToyWeapon[state.ToyWeapons.current]
+  else
+    if has_dual_wield_trait() and sets.WeaponSet[state.WeaponSet.current] and sets.WeaponSet[state.WeaponSet.current].DW then
+      return sets.WeaponSet[state.WeaponSet.current].DW
+    elseif sets.WeaponSet[state.WeaponSet.current] then
+      return sets.WeaponSet[state.WeaponSet.current]
+    end
   end
 end
 
 function in_battle_mode()
-  return state.WeaponSet.current ~= 'Casting'
+  return state.WeaponSet.current ~= 'Casting' or state.ToyWeapons.current ~= 'None'
 end
 
 -- Select default macro book on initial load or subjob change.
