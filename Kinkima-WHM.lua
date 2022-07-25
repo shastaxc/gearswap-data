@@ -639,6 +639,7 @@ function init_gear_sets()
     ear1="Regal Earring",             -- __, __, 10, 10 [__/__, ___]
     ear2="Malignance Earring",        -- __, 10,  8,  8 [__/__, ___]
     ring1="Stikini Ring +1",          --  8, 11,  8, __ [__/__, ___]
+    ring2="Stikini Ring +1",          --  8, 11,  8, __ [__/__, ___]
     back="Aurist's Cape +1",          -- __, 33, 33, 33 [__/__, ___]
     waist="Acuity Belt +1",           -- __, 15, __, 23 [__/__, ___]
     -- main="Daybreak",               -- __, 40, 30, __ [__/__, ___]
@@ -646,7 +647,6 @@ function init_gear_sets()
     -- hands=gear.Kaykaus_A_hands,    -- 16, 53, 47, 19 [__/__,  37]
     -- legs=gear.Chironic_MAcc_legs,  -- 13, 60, 29, 42 [__/__, 118]
     -- neck="Incanter's Torque",      -- 10, __, __, __ [__/__, ___]
-    -- ring2="Stikini Ring +1",       --  8, 11,  8, __ [__/__, ___]
     -- AF set bonus                   -- __, 15, __, __ [__/__, ___]
     -- 76 Enfeebling skill, 382 M.Acc, 283 MND, 253 INT [17 PDT/17 MDT, 544 MEVA]
   }
@@ -664,6 +664,7 @@ function init_gear_sets()
     ear1="Regal Earring",
     ear2="Vor Earring",
     ring1="Stikini Ring +1",
+    ring2="Stikini Ring +1",
     back="Aurist's Cape +1",
     waist="Acuity Belt +1",
     -- main="Daybreak",
@@ -672,7 +673,6 @@ function init_gear_sets()
     -- hands="Kaykaus Cuffs +1",
     -- legs="Inyanga Shalwar +2",
     -- feet="Inyanga Crackows +2",
-    -- ring2="Stikini Ring +1",
   }
 
   sets.midcast.Dispelga = {

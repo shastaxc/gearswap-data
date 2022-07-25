@@ -512,7 +512,7 @@ function init_gear_sets()
     neck="Mirage Stole +2",             -- 20, 25 [__/__, ___]
     ear1="Njordr Earring",              -- 10, __ [__/__, ___]
     ear2="Odnowa Earring +1",           -- __, __ [ 3/ 5, ___]
-    ring1="Gelatinous Ring +1",         -- __, __ [ 7/-1, ___]
+    ring1="Stikini Ring +1",            --  8, 11 [__/__, ___]
     ring2="Stikini Ring +1",            --  8, 11 [__/__, ___]
     -- ammo="Mavi Tathlum",             --  5, __ [__/__, ___]
     -- head="Luhlaza Keffiyeh +3",      -- 17, 37 [__/__,  73]
@@ -520,7 +520,6 @@ function init_gear_sets()
     -- hands=gear.Rawhide_D_hands,      -- 10, 35 [__/__,  37]
     -- legs="Hashishin Tayt +1",        -- 23, __ [__/__, 112]
     -- feet="Luhlaza Charuqs +3",       -- 12, 36 [__/__,  89]
-    -- ring1="Stikini Ring +1",         --  8, 11 [__/__, ___]
     -- back=gear.BLU_Adoulin_Cape,      -- 15, 15 [__/__, ___]
     -- waist="Flume Belt +1",           -- __, __ [ 4/__, ___]
   } -- 152 Blue skill, 170 M.Acc [14 PDT/4 MDT, 395 M.Eva]
@@ -576,8 +575,8 @@ function init_gear_sets()
   -- TODO: Update
   sets.midcast['Blue Magic'].PhysicalMnd = set_combine(sets.midcast['Blue Magic'].Physical, {
     ear2="Regal Earring",
+    ring1="Stikini Ring +1",
     ring2="Stikini Ring +1",
-    -- ring1="Stikini Ring +1",
   })
 
   -- TODO: Update
@@ -685,7 +684,7 @@ function init_gear_sets()
     ear1="Dignitary's Earring",
     ear2="Regal Earring",
     ring1="Stikini Ring +1",
-    -- ring2="Stikini Ring +1",
+    ring2="Stikini Ring +1",
     back="Aurist's Cape +1",
     waist="Acuity Belt +1",
     -- main="Sakpata's Sword", --Needs R25 for +10 macc
@@ -878,16 +877,15 @@ function init_gear_sets()
     ear1="Hearty Earring",          -- __/__, ___ [__]; Resist Status+5
     ear2="Etiolation Earring",      -- __/ 3, ___ [__]; Resist Silence+15
     ring1="Stikini Ring +1",        -- __/__, ___ [ 1]
-    ring2="Defending Ring",         -- 10/10, ___ [__]
+    ring2="Stikini Ring +1",        -- __/__, ___ [ 1]
     back=gear.BLU_FC_Cape,          -- 10/__, ___ [__]
     waist="Carrier's Sash",         -- __/__, ___ [__]; Ele Resist+15
     -- ammo="Staunch Tathlum +1",   --  3/ 3, ___ [__]; Resist Status+11
     -- head="Rawhide Mask",         -- __/__,  53 [ 1]
     -- legs=gear.Rawhide_D_legs,    -- __/__,  69 [ 1]
     -- legs=gear.Lengo_legs,        -- __/__, 107 [ 1]
-    -- ring2="Stikini Ring +1",     -- __/__, ___ [ 1]
     -- 53 PDT / 26 MDT, 528 M.Eva [8 Refresh]
-  }
+  } -- 67 PDT / 40 MDT, 641 M.Eva [6 Refresh]
   sets.passive_refresh.sub50 = {
     waist="Fucho-no-Obi",
   }

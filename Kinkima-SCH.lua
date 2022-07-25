@@ -486,7 +486,7 @@ function init_gear_sets()
     -- head=gear.Telchine_ENH_head,   -- __, 10, __
     -- neck="Incanter's Torque",      -- 10, __, __
     -- ear2="Andoaa Earring",         --  5, __, __
-    -- ring2="Stikini Ring +1",       --  8, __, __
+    ring2="Stikini Ring +1",          --  8, __, __
     -- back="Fi Follet Cape +1",      --  9, __, 10
     -- 112 Enh Skill, 68 Enh Duration, 25 FC
   }
@@ -718,6 +718,7 @@ function init_gear_sets()
     neck="Argute Stole +2",               -- __, 30, ___
     ear1="Malignance Earring",            --  4, 10, ___
     ring1="Stikini Ring +1",              -- __, 11, ___; +8 all skill
+    ring2="Stikini Ring +1",              -- __, 11, ___; +8 all skill
     back=gear.SCH_MAB_Cape,
 
     --Ideal:
@@ -749,6 +750,7 @@ function init_gear_sets()
     ear1="Malignance Earring",          -- __,  4, 10, ___
     ear2="Regal Earring",               -- __, __, __, ___; adds set effect
     ring1="Stikini Ring +1",            -- __, __, 11, ___; +8 all skill
+    ring2="Stikini Ring +1",            -- __, __, 11, ___; +8 all skill
 
     --Ideal:
     -- main="Hvergelmir",               -- __, 50, __, 269
