@@ -589,7 +589,9 @@ function init_gear_sets()
     ammo="Pemphredo Tathlum",     --  4,  8,  4 [__/__, ___]
     head=gear.Nyame_B_head,       -- 30, 40, 28 [ 7/ 7, 123]
     body="Shamash Robe",          -- 45, 45, 40 [10/__, 106]
+    hands=gear.Nyame_B_hands,
     legs=gear.Nyame_B_legs,       -- 30, 40, 44 [ 8/ 8, 150]
+    feet=gear.Nyame_B_feet,
     neck="Loricate Torque +1",    -- __, __, __ [ 6/ 6, ___]
     ear1="Regal Earring",         --  7, __, 10 [__/__, ___]
     ear2="Friomisi Earring",      -- 10, __, __ [__/__, ___]
