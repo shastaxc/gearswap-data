@@ -569,7 +569,7 @@ function init_gear_sets()
   sets.midcast['Blue Magic'].PhysicalInt = set_combine(sets.midcast['Blue Magic'].Physical, {
     ear2="Regal Earring",
     ring2="Metamorph Ring +1",
-    -- back=gear.BLU_MAB_Cape,
+    back=gear.BLU_MAB_Cape,
     -- waist="Acuity Belt +1",
     -- ring1="Shiva Ring +1",
   })
@@ -598,8 +598,8 @@ function init_gear_sets()
     ear2="Friomisi Earring",      -- 10, __, __ [__/__, ___]
     ring1="Metamorph Ring +1",    -- __, 15, 16 [__/__, ___]
     ring2="Defending Ring",       -- __, __, __ [10/10, ___]
+    back=gear.BLU_MAB_Cape,       -- 10, 20, 30 [10/__, ___]
     waist="Eschan Stone",         --  7,  7, __ [__/__, ___]
-    -- back=gear.BLU_MAB_Cape,    -- 10, 20, 30 [10/__, ___]
 
     -- Ideal:
     -- main="Bunzi's Rod",        -- 60, 50, 15 [__/__, ___]
@@ -635,12 +635,12 @@ function init_gear_sets()
     ear2="Friomisi Earring",            -- 10, __, __ [__/__, ___]
     ring1="Metamorph Ring +1",          -- __, 15, 16 [__/__, ___]
     ring2="Defending Ring",             -- __, __, __ [10/10, ___]
+    back=gear.BLU_MAB_Cape,             -- 10, 20, 30 [10/__, ___]
     -- body="Shamash Robe",             -- 45, 45, 40 [10/__, 106]
-    -- back=gear.BLU_MAB_Cape,          -- 10, 20, 30 [10/__, ___]
     -- waist="Acuity Belt +1",          -- __, 15, 23 [__/__, ___]
     -- AF set bonus                        __, 15, __ [__/__, ___]
     -- 288 MAB, 384 M.Acc, 283 INT [52 PDT/32 MDT, 591 M.Eva]
-  })-- 263 MAB, 329 M.Acc, 232 INT [41 PDT/41 MDT, 624 M.Eva]
+  })-- 273 MAB, 349 M.Acc, 262 INT [51 PDT/41 MDT, 624 M.Eva]
 
   sets.midcast['Blue Magic'].MagicalDark = set_combine(sets.midcast['Blue Magic'].Magical, {
     head="Pixie Hairpin +1",
