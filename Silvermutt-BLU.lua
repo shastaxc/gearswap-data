@@ -320,8 +320,7 @@ function init_gear_sets()
   sets.precast.JA['Provoke'] = sets.Enmity
 
   sets.buff['Burst Affinity'] = {
-    legs="Assimilator's Shalwar +2",
-    -- legs="Assimilator's Shalwar +3",
+    legs="Assimilator's Shalwar +3",
     -- feet="Hashishin Basmak +1"
   }
   sets.buff['Diffusion'] = {
@@ -679,7 +678,7 @@ function init_gear_sets()
     head="Assimilator's Keffiyeh +3",
     body="Malignance Tabard",
     hands="Malignance Gloves",
-    legs="Assimilator's Shalwar +2",
+    legs="Assimilator's Shalwar +3",
     feet="Malignance Boots",
     ear1="Dignitary's Earring",
     ear2="Regal Earring",
@@ -687,7 +686,6 @@ function init_gear_sets()
     -- ring2="Stikini Ring +1",
     -- main="Tizona",
     -- sub="Bunzi's Rod", --40 macc
-    -- legs="Assimilator's Shalwar +3",
     -- neck="Mirage Stole +1",
     -- back="Aurist's Cape +1",
     -- waist="Acuity Belt +1",
@@ -1198,9 +1196,9 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.magic_burst = set_combine(sets.midcast['Blue Magic'].Magical, {
+    legs="Assimilator's Shalwar +3", --10
     -- body="Samnuha Coat", --(8)
     -- hands="Amalric Gages +1", --(5)
-    -- legs="Assimilator's Shalwar +3", --10
     -- feet="Jhakri Pigaches +2", --5
     -- ring1="Mujin Band", --(5)
     -- back="Seshaw Cape", --5
