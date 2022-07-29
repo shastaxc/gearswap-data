@@ -61,7 +61,7 @@ function get_sets()
   end, 1)
   coroutine.schedule(function()
     send_command('gs c weaponset current')
-    send_command('aset set main')
+    send_command('aset set mage')
   end, 2)
 end
 
