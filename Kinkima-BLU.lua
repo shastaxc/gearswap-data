@@ -583,21 +583,18 @@ function init_gear_sets()
 
   sets.midcast['Blue Magic'].Magical = {
     main="Bunzi's Rod",           -- 60, 50, 15 [__/__, ___]
-    sub=empty,
+    sub="Maxentius",              -- 21, 40, 15 [__/__, ___]
     ammo="Pemphredo Tathlum",     --  4,  8,  4 [__/__, ___]
     head=gear.Nyame_B_head,       -- 30, 40, 28 [ 7/ 7, 123]
     body="Shamash Robe",          -- 45, 45, 40 [10/__, 106]
-    hands=gear.Nyame_B_hands,
+    hands="Jhakri Cuffs +2",      -- 40, 43, 36 [__/__,  32]
     legs=gear.Nyame_B_legs,       -- 30, 40, 44 [ 8/ 8, 150]
-    feet=gear.Nyame_B_feet,
+    feet="Jhakri Pigaches +2",    -- 39, 42, 33 [__/__,  69]
     neck="Loricate Torque +1",    -- __, __, __ [ 6/ 6, ___]
     ear1="Regal Earring",         --  7, __, 10 [__/__, ___]
     ear2="Friomisi Earring",      -- 10, __, __ [__/__, ___]
     ring1="Metamorph Ring +1",    -- __, 15, 16 [__/__, ___]
     ring2="Defending Ring",       -- __, __, __ [10/10, ___]
-    -- sub="Maxentius",           -- 21, 40, 15 [__/__, ___]
-    -- hands="Jhakri Cuffs +2",   -- 40, 43, 36 [__/__,  32]
-    -- feet="Jhakri Pigaches +2", -- 39, 42, 33 [__/__,  69]
     -- back=gear.BLU_MAB_Cape,    -- 10, 20, 30 [10/__, ___]
     -- waist="Eschan Stone",      --  7,  7, __ [__/__, ___]
 
@@ -623,7 +620,7 @@ function init_gear_sets()
 
   sets.midcast['Blue Magic'].Magical.Resistant = set_combine(sets.midcast['Blue Magic'].Magical, {
     main="Bunzi's Rod",                 -- 60, 50, 15 [__/__, ___]
-    sub=empty,
+    sub="Maxentius",                    -- 21, 40, 15 [__/__, ___]
     ammo="Pemphredo Tathlum",           --  4,  8,  4 [__/__, ___]
     head="Assimilator's Keffiyeh +3",   -- 28, 56, 33 [__/__,  73]
     body="Shamash Robe",                -- 45, 45, 40 [10/__, 106]
@@ -635,7 +632,6 @@ function init_gear_sets()
     ring1="Metamorph Ring +1",          -- __, 15, 16 [__/__, ___]
     ring2="Defending Ring",             -- __, __, __ [10/10, ___]
     waist="Acuity Belt +1",             -- __, 15, 23 [__/__, ___]
-    -- sub="Maxentius",                 -- 21, 40, 15 [__/__, ___]
     -- neck="Baetyl Pendant",           -- 13, __, __ [__/__, ___]
     -- back=gear.BLU_MAB_Cape,          -- 10, 20, 30 [10/__, ___]
     -- AF set bonus                        __, 15, __ [__/__, ___]
@@ -687,8 +683,8 @@ function init_gear_sets()
     back="Aurist's Cape +1",
     waist="Acuity Belt +1",
     -- main="Sakpata's Sword", --Needs R25 for +10 macc
-    -- main="Tizona",
     -- sub="Bunzi's Rod", --40 macc
+    -- main="Tizona",
     -- sub="Maxentius", --40 macc
   }
 
@@ -943,6 +939,8 @@ function init_gear_sets()
   -- EG: sets.engaged.Dagger.Accuracy.Evasion
 
   sets.engaged = {
+    main="Naegling",
+    sub=empty,
     head="Malignance Chapeau",    -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",     -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
     hands="Malignance Gloves",    -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
@@ -950,8 +948,6 @@ function init_gear_sets()
     feet="Malignance Boots",      -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
     neck="Mirage Stole +2",       -- __,  7, 25 <__, __, __> [__/__, ___]
     ring2="Defending Ring",       -- __, __, __ <__, __, __> [10/10, ___]
-    -- main="Naegling",
-    -- sub=empty,
     -- ammo="Coiste Bodhar",         -- __,  3, __ < 3, __, __> [__/__, ___]
     -- ear1="Telos Earring",         -- __,  5, 10 < 1, __, __> [__/__, ___]
     -- ear2="Dedition Earring",      -- __,  8,-10 <__, __, __> [__/__, ___]
@@ -978,12 +974,12 @@ function init_gear_sets()
 
   -- No Magic/Gear/JA Haste (74% DW to cap, 49% from gear)
   sets.engaged.DW = {
+    main="Naegling",
+    sub="Maxentius",
     head="Malignance Chapeau",    -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     hands="Malignance Gloves",    -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
     neck="Loricate Torque +1",    -- __, __, __ <__, __, __> [ 6/ 6, ___]
     ring2="Defending Ring",       -- __, __, __ <__, __, __> [10/10, ___]
-    -- main="Naegling",
-    -- sub=empty,
     -- ammo="Coiste Bodhar",         -- __,  3, __ < 3, __, __> [__/__, ___]
     -- body=gear.Adhemar_B_body,     --  6, __, 35 <__,  4, __> [__/__,  69]
     -- legs=gear.Carmine_D_legs,     --  6, __, 55 <__, __, __> [__/__,  80]
@@ -1097,11 +1093,11 @@ function init_gear_sets()
 
   -- Max Magic/Gear/JA Haste (0-25% DW to cap, 0% from gear)
   sets.engaged.DW.MaxHaste = set_combine(sets.engaged, {
-    -- main="Naegling",
+    main="Naegling",
     -- sub="Thibron",
   }) -- 0 DW, 83 STP, 307 Acc <7 DA, 5 TA, 2 QA> [51 PDT/41 MDT, 674 M.Eva]
   sets.engaged.DW.Acc.MaxHaste = set_combine(sets.engaged.Acc, {
-    -- main="Naegling",
+    main="Naegling",
     -- sub="Thibron",
   }) -- 0 DW, 84 STP, 361 Acc <4 DA, 0 TA, 0 QA> [51 PDT/41 MDT, 674 M.Eva]
 
@@ -1188,9 +1184,9 @@ function init_gear_sets()
 
   sets.magic_burst = set_combine(sets.midcast['Blue Magic'].Magical, {
     legs="Assimilator's Shalwar +3", --10
+    feet="Jhakri Pigaches +2", --5
     -- body="Samnuha Coat", --(8)
     -- hands="Amalric Gages +1", --(5)
-    -- feet="Jhakri Pigaches +2", --5
     -- ring1="Mujin Band", --(5)
     -- back="Seshaw Cape", --5
   })
@@ -1223,19 +1219,19 @@ function init_gear_sets()
 
   sets.WeaponSet = {}
   sets.WeaponSet['Naegling'] = {
-    -- main="Naegling",
+    main="Naegling",
     sub="Genmei Shield",
   }
   sets.WeaponSet['Naegling'].DW = {
     main="Naegling",
-    sub="Thibron",
+    -- sub="Thibron",
   }
   sets.WeaponSet['Maxentius'] = {
-    -- main="Maxentius",
+    main="Maxentius",
     sub={name="Genmei Shield", priority=1},
   }
   sets.WeaponSet['Maxentius'].DW = {
-    -- main="Maxentius",
+    main="Maxentius",
     sub="Thibron",
   }
   sets.WeaponSet['Tizona'] = {

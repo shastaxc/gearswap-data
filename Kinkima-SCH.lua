@@ -594,13 +594,13 @@ function init_gear_sets()
 
   -- M.Acc > MND > Enfeebling Duration > Enfeebling Skill
   sets.midcast.MndEnfeebles = {
-    main="Gada",
+    main="Maxentius",                   -- 40, 15, __, __; +250 M.Acc skill
     sub="Ammurapi Shield",              -- 38, 13, __, __
     ammo="Pemphredo Tathlum",           --  8, __, __, __
     head="Academic's Mortarboard +3",   -- 52, 37, __, __
     body="Shamash Robe",                -- 45, 40, __, __
     hands="Regal Cuffs",                -- 45, 40, 20, __
-    legs="Academic's Pants +1",
+    legs="Academic's Pants +1",         -- __, 29, __, __; +20 enf skill in LA
     feet="Academic's Loafers +3",       -- 46, 29, __, __; +20 M.Acc in Grimoire
     neck="Argute Stole +2",             -- 30, 15, __, __
     ear1="Malignance Earring",          -- 10,  8, __, __
@@ -608,33 +608,29 @@ function init_gear_sets()
     ring1="Kishar Ring",                --  5, __, 10, __
     ring2="Metamor. Ring +1",           -- 16, 15, __, __
     back="Aurist's Cape",               -- 33, 33, __, __
-    waist="Rumination Sash",            --  3,  4, __, __; Enfeeb skill+7
-    -- main=gear.Gada_MND_MAcc,         -- 35, 16, __, 16; +215 M.Acc skill
+    waist="Rumination Sash",            --  3,  4, __,  7
     -- body="Academic's Gown +3",       -- 50, 39, __, __; +24 enf skill in DA
     -- legs="Academic's Pants +3",      -- 49, 39, __, __; +24 enf skill in LA
-    -- waist="Luminary Sash",           -- 10, 10, __, __
+    -- waist="Obstinate Sash",          -- 15,  5,  5, 10
     -- Academic's set bonus             -- 60, __, __, __
-    -- 507 M.Acc, 304 MND, 30% Enfeebling Duration, 40 Enfeebling Skill
-
-    -- Ideal:
-    -- main="Maxentius",                -- 40, 15, __, __; +250 M.Acc skill
-    -- 492 M.Acc, 203 MND, 30% Enfeebling Duration, 24 Enfeebling Skill
-  }
+    -- 497 M.Acc, 298 MND, 35% Enfeebling Duration, 10 Enfeebling Skill
+  } -- 416 M.Acc, 288 MND, 30% Enfeebling Duration, 7 Enfeebling Skill
   sets.midcast.MndEnfeebles.LightArts = set_combine(sets.midcast.MndEnfeebles, {
-    legs="Academic's Pants +1",
-    feet="Academic's Loafers +3",
-    -- legs="Academic's Pants +3",
+    legs="Academic's Pants +1",         -- __, 29, __, __; +20 enf skill in LA
+    feet="Academic's Loafers +3",       -- 46, 29, __, __; +20 M.Acc in Grimoire
+    -- legs="Academic's Pants +3",      -- 49, 39, __, __; +24 enf skill in LA
+    -- 517 M.Acc, 298 MND, 35% Enfeebling Duration, 34 Enfeebling Skill
   })
 
   -- M.Acc > INT > Enfeebling Duration > Enfeebling Skill
   sets.midcast.IntEnfeebles = {
-    main="Gada",
+    main="Maxentius",                   -- 40, 15, __, __; +250 M.Acc skill
     sub="Ammurapi Shield",              -- 38, 13, __, __
     ammo="Pemphredo Tathlum",           --  8,  4, __, __
     head="Academic's Mortarboard +3",   -- 52, 37, __, __
     body="Shamash Robe",                -- 45, 40, __, __
     hands="Regal Cuffs",                -- 45, 40, 20, __
-    legs="Academic's Pants +1",
+    legs="Academic's Pants +1",         -- __, 29, __, __; +20 enf skill in LA
     feet="Academic's Loafers +3",       -- 46, 32, __, __; +20 M.Acc in Grimoire
     neck="Argute Stole +2",             -- 30, 15, __, __
     ear1="Malignance Earring",          -- 10,  8, __, __
@@ -643,23 +639,16 @@ function init_gear_sets()
     ring2="Metamor. Ring +1",           -- 16, 15, __, __
     back="Aurist's Cape",               -- 33, 33, __, __
     waist="Acuity Belt +1",             -- 15, 23, __, __
-    -- main=gear.Gada_INT_MAcc,         -- 35, 16, __, 16; +215 M.Acc skill
     -- body="Academic's Gown +3",       -- 50, 44, __, __; +24 enf skill in DA
     -- legs="Academic's Pants +3",      -- 49, 39, __, __; +24 enf skill in LA
     -- Academic's set bonus             -- 60, __, __, __
-    -- 512 M.Acc, 329 INT, 30% Enfeebling Duration, 40 Enfeebling Skill
-    -- +147 M.Acc from skill
-
-    -- Ideal:
-    -- main="Maxentius",                -- 40, 15, __, __; +250 M.Acc skill
-    -- 517 M.Acc, 328 INT, 30% Enfeebling Duration, 24 Enfeebling Skill
-    -- +149 M.Acc from skill
-  }
+    -- 497 M.Acc, 328 INT, 30% Enfeebling Duration, 0 Enfeebling Skill
+  } -- 428 M.Acc, 314 INT, 30% Enfeebling Duration, 0 Enfeebling Skill
   sets.midcast.IntEnfeebles.DarkArts = set_combine(sets.midcast.IntEnfeebles, {
-    body="Academic's Gown +1",
-    feet="Academic's Loafers +3",
-    -- body="Academic's Gown +3",
-  })
+    body="Academic's Gown +1",          -- __, 34, __, __; +20 enf skill in DA
+    feet="Academic's Loafers +3",       -- 46, 29, __, __; +20 M.Acc in Grimoire
+    -- body="Academic's Gown +3",       -- 50, 44, __, __; +24 enf skill in DA
+  })-- 517 M.Acc, 328 INT, 30% Enfeebling Duration, 24 Enfeebling Skill
 
   sets.midcast.ElementalEnfeeble = sets.midcast.IntEnfeebles
   sets.midcast.ElementalEnfeeble.DarkArts = sets.midcast.IntEnfeebles.DarkArts
