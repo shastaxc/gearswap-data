@@ -975,7 +975,7 @@ function init_gear_sets()
   -- No Magic/Gear/JA Haste (74% DW to cap, 49% from gear)
   sets.engaged.DW = {
     main="Naegling",
-    sub=empty,
+    sub="Maxentius",
     ammo="Coiste Bodhar",         -- __,  3, __ < 3, __, __> [__/__, ___]
     head="Malignance Chapeau",    -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body=gear.Adhemar_B_body,     --  6, __, 35 <__,  4, __> [__/__,  69]
