@@ -61,7 +61,7 @@ function get_sets()
   end, 1)
   coroutine.schedule(function()
     send_command('gs c weaponset current')
-    send_command('aset set mage')
+    -- send_command('aset set mage')
   end, 2)
 end
 
@@ -213,6 +213,7 @@ function job_setup()
   send_command('bind ^- input /ja "Chain Affinity" <me>')
   send_command('bind ^= input /ja "Burst Affinity" <me>')
   send_command('bind ^[ input /ja "Efflux" <me>')
+  send_command('bind !w input /ma "Cocoon" <me>')
   send_command('bind ![ input /ja "Diffusion" <me>')
   send_command('bind !] input /ja "Unbridled Learning" <me>')
   send_command('bind !q input /ma "Occultation" <me>')
@@ -273,6 +274,7 @@ function user_unload()
   send_command('unbind ^-')
   send_command('unbind ^=')
   send_command('unbind ^[')
+  send_command('unbind !w')
   send_command('unbind ![')
   send_command('unbind !]')
   send_command('unbind !q')
@@ -668,7 +670,7 @@ function init_gear_sets()
 
   sets.midcast['Blue Magic'].MagicAccuracy = {
     main="Bunzi's Rod", --40 macc
-    sub=gear.Nibiru_Club_B,
+    sub="Maxentius", --40 macc
     ammo="Pemphredo Tathlum",
     head="Assimilator's Keffiyeh +3",
     body="Malignance Tabard",
@@ -685,7 +687,6 @@ function init_gear_sets()
     -- main="Sakpata's Sword", --Needs R25 for +10 macc
     -- sub="Bunzi's Rod", --40 macc
     -- main="Tizona",
-    -- sub="Maxentius", --40 macc
   }
 
   sets.midcast['Blue Magic'].Breath = set_combine(sets.midcast['Blue Magic'].Magical, {
@@ -1224,6 +1225,7 @@ function init_gear_sets()
   }
   sets.WeaponSet['Naegling'].DW = {
     main="Naegling",
+    sub="Maxentius",
     -- sub="Thibron",
   }
   sets.WeaponSet['Maxentius'] = {
@@ -1232,7 +1234,7 @@ function init_gear_sets()
   }
   sets.WeaponSet['Maxentius'].DW = {
     main="Maxentius",
-    sub="Thibron",
+    -- sub="Thibron",
   }
   sets.WeaponSet['Tizona'] = {
     -- main="Tizona",
@@ -1240,7 +1242,7 @@ function init_gear_sets()
   }
   sets.WeaponSet['Tizona'].DW = {
     -- main="Tizona",
-    sub="Thibron",
+    -- sub="Thibron",
   }
 end
 
@@ -1792,6 +1794,23 @@ function cycle_weapons(cycle_dir)
   equip(select_weapons())
 end
 
+function cycle_toy_weapons(cycle_dir)
+  if cycle_dir == 'forward' then
+    state.ToyWeapons:cycle()
+  elseif cycle_dir == 'back' then
+    state.ToyWeapons:cycleback()
+  else
+    state.ToyWeapons:reset()
+  end
+
+  local mode_color = 001
+  if state.ToyWeapons.current == 'None' then
+    mode_color = 006
+  end
+  add_to_chat(012, 'Toy Weapon Mode: '..string.char(31,mode_color)..state.ToyWeapons.current)
+  equip(select_weapons())
+end
+
 function select_weapons()
   if state.ToyWeapons.current ~= 'None' then
     return sets.ToyWeapon[state.ToyWeapons.current]
@@ -1811,9 +1830,7 @@ end
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
   -- Default macro set/book
-  if player.sub_job == 'WAR' then
-      set_macro_page(1, 5)
-  elseif player.sub_job == 'RDM' then
+  if player.sub_job == 'RDM' then
       set_macro_page(2, 5)
   end
 

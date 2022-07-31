@@ -8,9 +8,9 @@ sets.ToyWeapon.Katana = {main="Trainee Burin",sub="Qutrub Knife"}
 sets.ToyWeapon.GreatKatana = {main="Mutsunokami",sub="Tzacab Grip"}
 -- sets.ToyWeapon.GreatKatana = {main="Lotus Katana",sub="Tzacab Grip"}
 sets.ToyWeapon.Dagger = {main="Qutrub Knife",sub="Wind Knife"}
-sets.ToyWeapon.Sword = {main="Nihility",sub="Qutrub Knife"}
-sets.ToyWeapon.Club = {main="Lady Bell",sub="Qutrub Knife"}
-sets.ToyWeapon.Staff = {main="Savage. Pole",sub="Tzacab Grip"}
+sets.ToyWeapon.Sword = {main="Nihility",sub={name="Qutrub Knife", priority=1}}
+sets.ToyWeapon.Club = {main="Eremite's Wand +1",sub="Qutrub Knife"}
+sets.ToyWeapon.Staff = {main="Sophistry",sub="Tzacab Grip"}
 sets.ToyWeapon.Polearm = {main="Pitchfork +1",sub="Tzacab Grip"}
 sets.ToyWeapon.GreatSword = {main="Lament",sub="Tzacab Grip"}
 sets.ToyWeapon.Scythe = {main="Lost Sickle",sub="Tzacab Grip"}
