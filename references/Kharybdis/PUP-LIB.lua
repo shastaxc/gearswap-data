@@ -12,6 +12,9 @@ texts = require('texts')
 
 local failedManeuvers = Q{}
 
+state.Auto_Kite = M(false, 'Auto_Kite')
+frame_count = 1
+
 --Default States
 Master_State = "Idle"
 Pet_State = "Idle"
@@ -603,6 +606,15 @@ end
 ----------Windower Hooks/Custom Gearswap------------
 ----------------------------------------------------
 
+-- Modify the default idle set after it was constructed.
+function customize_idle_set(idleSet)
+    if state.Auto_Kite.value == true then
+       idleSet = set_combine(idleSet, sets.Kiting)
+    end
+    
+    return idleSet
+end
+
 --Used to determine what Hybrid Mode to use when Player Idle and Pet is Engaged
 function user_customize_idle_set(idleSet)
     
@@ -951,6 +963,8 @@ windower.register_event(
     "prerender",
     function()
 
+        update_movement_tracking(frame_count)
+
         updatePetStats()
 
         --Items we want to check every second
@@ -1080,7 +1094,14 @@ windower.register_event(
 
             updatePetSkills()
             validateTextInformation()
-            
+
+        end
+
+        -- Increment frame_count but prevent overflows
+        if frame_count > 10000 then
+            frame_count = 1
+        else
+            frame_count = frame_count + 1
         end
     end
 )
@@ -1295,4 +1316,44 @@ end
 
 function sub_job_change(new, old)
     determinePuppetType()
+end
+
+function update_movement_tracking(frames)
+    if frames%15 == 0 and windower.ffxi.get_info().logged_in then
+        -- player object is retrieved by gearswap, we don't have to do it ourselves
+		local temp_pos = player.position
+		player.position = temp_pos
+		local moving = check_player_movement(player)
+
+        if state.DefenseMode.value == 'None' then
+            if state.Auto_Kite.value == false and moving then
+                state.Auto_Kite:set(true)
+            elseif state.Auto_Kite.value == true and moving == false then
+                state.Auto_Kite:set(false)
+            end
+        end
+    end
+end
+
+function check_player_movement(player)
+	if player.position == nul then
+		player.position = T{}
+		player.position = {x = 0, y = 0, z = 0}
+	end
+    local player_mob_obj = windower.ffxi.get_mob_by_index(player.index)
+	if player_mob_obj ~= null then
+        local current_pos_x = player_mob_obj.x
+        local current_pos_y = player_mob_obj.y
+		local current_pos_z = player_mob_obj.z
+		if player.position.x ~= current_pos_x or player.position.y ~= current_pos_y then
+			player.is_moving = true
+		else
+			player.is_moving = false
+		end
+		player.position.x = current_pos_x
+		player.position.y = current_pos_y
+		player.position.z = current_pos_z
+	end
+	
+	return player.is_moving
 end

@@ -20,6 +20,10 @@ function job_setup()
 
     info.impetus_hit_count = 0
     windower.raw_register_event('action', on_action_for_impetus)
+    
+    state.Auto_Kite = M(false, 'Auto_Kite')
+    moving = false
+    Haste = 0
 end
 
 
@@ -356,12 +360,16 @@ function customize_idle_set(idleSet)
     if player.hpp < 75 then
         idleSet = set_combine(idleSet, sets.ExtraRegen)
     end
+    if state.Auto_Kite.value == true then
+       idleSet = set_combine(idleSet, sets.Kiting)
+    end
     
     return idleSet
 end
 
 -- Called by the 'update' self-command.
 function job_update(cmdParams, eventArgs)
+    check_moving()
     update_combat_form()
     update_melee_groups()
 end
@@ -391,10 +399,44 @@ function update_melee_groups()
     end
 end
 
+function check_moving()
+    if state.DefenseMode.value == 'None' then
+        if state.Auto_Kite.value == false and moving then
+            state.Auto_Kite:set(true)
+        elseif state.Auto_Kite.value == true and moving == false then
+            state.Auto_Kite:set(false)
+        end
+    end
+end
+
 
 -------------------------------------------------------------------------------------------------------------------
 -- Custom event hooks.
 -------------------------------------------------------------------------------------------------------------------
+
+function job_self_command(cmdParams, eventArgs)
+    gearinfo(cmdParams, eventArgs)
+end
+
+function gearinfo(cmdParams, eventArgs)
+    if cmdParams[1] == 'gearinfo' then
+        if type(tonumber(cmdParams[3])) == 'number' then
+            if tonumber(cmdParams[3]) ~= Haste then
+                Haste = tonumber(cmdParams[3])
+            end
+        end
+        if type(cmdParams[4]) == 'string' then
+            if cmdParams[4] == 'true' then
+                moving = true
+            elseif cmdParams[4] == 'false' then
+                moving = false
+            end
+        end
+        if not midaction() then
+            job_update()
+        end
+    end
+end
 
 -- Keep track of the current hit count while Impetus is up.
 function on_action_for_impetus(action)
@@ -465,4 +507,4 @@ end
 
 function select_default_macro_book()
     set_macro_page(3, 14)
-end  
+end

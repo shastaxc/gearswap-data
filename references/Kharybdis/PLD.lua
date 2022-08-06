@@ -16,19 +16,22 @@ function job_setup()
     state.Buff.Cover = buffactive.cover or false
     state.Buff.Doom = buffactive.Doom or false
 	
-blue_magic_maps = {}
- 
-blue_magic_maps.Enmity = S{
-    'Blank Gaze', 'Geist Wall', 'Jettatura', 'Soporific', 'Poison Breath', 'Blitzstrahl',
-    'Sheep Song', 'Chaotic Eye'
-}
-blue_magic_maps.Cure = S{
-    'Wild Carrot', 'Healing Breeze'
-}
-blue_magic_maps.Buff = S{
-    'Cocoon', 'Refueling'
-}
+    blue_magic_maps = {}
+    
+    blue_magic_maps.Enmity = S{
+        'Blank Gaze', 'Geist Wall', 'Jettatura', 'Soporific', 'Poison Breath', 'Blitzstrahl',
+        'Sheep Song', 'Chaotic Eye'
+    }
+    blue_magic_maps.Cure = S{
+        'Wild Carrot', 'Healing Breeze'
+    }
+    blue_magic_maps.Buff = S{
+        'Cocoon', 'Refueling'
+    }
 	
+    state.Auto_Kite = M(false, 'Auto_Kite')
+    moving = false
+    Haste = 0
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -621,6 +624,31 @@ end
 -- Set eventArgs.handled to true if we don't want automatic equipping of gear.
 function job_update(cmdParams, eventArgs)
     update_defense_mode()
+    check_moving()
+end
+
+function job_self_command(cmdParams, eventArgs)
+    gearinfo(cmdParams, eventArgs)
+end
+
+function gearinfo(cmdParams, eventArgs)
+    if cmdParams[1] == 'gearinfo' then
+        if type(tonumber(cmdParams[3])) == 'number' then
+            if tonumber(cmdParams[3]) ~= Haste then
+                Haste = tonumber(cmdParams[3])
+            end
+        end
+        if type(cmdParams[4]) == 'string' then
+            if cmdParams[4] == 'true' then
+                moving = true
+            elseif cmdParams[4] == 'false' then
+                moving = false
+            end
+        end
+        if not midaction() then
+            job_update()
+        end
+    end
 end
 
 -- Modify the default idle set after it was constructed.
@@ -630,6 +658,9 @@ function customize_idle_set(idleSet)
     end
     if state.Buff.Doom then
         idleSet = set_combine(idleSet, sets.buff.Doom)
+    end
+    if state.Auto_Kite.value == true then
+       idleSet = set_combine(idleSet, sets.Kiting)
     end
     
     return idleSet
@@ -687,10 +718,6 @@ function display_current_job_state(eventArgs)
     if state.EquipShield.value == true then
         msg = msg .. ', Force Equip Shield'
     end
-    
-    if state.Kiting.value == true then
-        msg = msg .. ', Kiting'
-    end
 
     if state.PCTargetMode.value ~= 'default' then
         msg = msg .. ', Target PC: '..state.PCTargetMode.value
@@ -733,6 +760,7 @@ function job_get_spell_map(spell, default_spell_map)
         end
     end
 end
+
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
     -- Default macro set/book
@@ -744,5 +772,15 @@ function select_default_macro_book()
         set_macro_page(3, 1)
     else
         set_macro_page(2, 1)
+    end
+end
+
+function check_moving()
+    if state.DefenseMode.value == 'None' then
+        if state.Auto_Kite.value == false and moving then
+            state.Auto_Kite:set(true)
+        elseif state.Auto_Kite.value == true and moving == false then
+            state.Auto_Kite:set(false)
+        end
     end
 end
