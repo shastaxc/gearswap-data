@@ -606,15 +606,6 @@ end
 ----------Windower Hooks/Custom Gearswap------------
 ----------------------------------------------------
 
--- Modify the default idle set after it was constructed.
-function customize_idle_set(idleSet)
-    if state.Auto_Kite.value == true then
-       idleSet = set_combine(idleSet, sets.Kiting)
-    end
-    
-    return idleSet
-end
-
 --Used to determine what Hybrid Mode to use when Player Idle and Pet is Engaged
 function user_customize_idle_set(idleSet)
     
@@ -626,6 +617,9 @@ function user_customize_idle_set(idleSet)
             return idleSet
         end
     else --Otherwise return the idleSet with no changes from us
+        if state.Auto_Kite.value == true then
+           idleSet = set_combine(idleSet, sets.Kiting)
+        end
         return idleSet
     end
 end
@@ -1328,8 +1322,10 @@ function update_movement_tracking(frames)
         if state.DefenseMode.value == 'None' then
             if state.Auto_Kite.value == false and moving then
                 state.Auto_Kite:set(true)
+                handle_equipping_gear(player.status)
             elseif state.Auto_Kite.value == true and moving == false then
                 state.Auto_Kite:set(false)
+                handle_equipping_gear(player.status)
             end
         end
     end

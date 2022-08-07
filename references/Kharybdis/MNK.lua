@@ -160,7 +160,7 @@ function init_gear_sets()
     body="Volte Jupon",
     hands="Adhemar Wrist. +1", 
     legs="Mpaca's Hose",
-    feet="Herald's Gaiters",
+    feet="Mpaca's Boots",
     neck="Mnk. Nodowa +1",
     waist="Moonbow Belt +1",
     left_ear="Sherida Earring",
@@ -361,19 +361,22 @@ function customize_idle_set(idleSet)
         idleSet = set_combine(idleSet, sets.ExtraRegen)
     end
     if state.Auto_Kite.value == true then
-       idleSet = set_combine(idleSet, sets.Kiting)
+        idleSet = set_combine(idleSet, sets.Kiting)
     end
     
     return idleSet
 end
 
--- Called by the 'update' self-command.
-function job_update(cmdParams, eventArgs)
+function job_handle_equipping_gear(playerStatus, eventArgs)
     check_moving()
     update_combat_form()
     update_melee_groups()
 end
 
+function job_update(cmdParams, eventArgs)
+    handle_equipping_gear(player.status)
+end
+  
 
 -------------------------------------------------------------------------------------------------------------------
 -- Utility functions specific to this job.
