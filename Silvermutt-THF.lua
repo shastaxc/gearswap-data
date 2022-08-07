@@ -1592,7 +1592,6 @@ function customize_defense_set(defenseSet)
     defenseSet = set_combine(defenseSet, sets.buff.Doom)
   end
 
-  defenseSet = set_combine(defenseSet, silibs.customize_defense_set(defenseSet))
   return defenseSet
 end
 

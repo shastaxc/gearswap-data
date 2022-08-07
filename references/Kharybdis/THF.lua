@@ -16,6 +16,7 @@
 --              [ ALT+F12 ]         Cancel Emergency -PDT/-MDT Mode
 --              [ CTRL+` ]          Cycle Treasure Hunter Mode
 --              [ WIN+C ]           Toggle Capacity Points Mode
+--  Weapons:    [ CTRL+W ]          Toggles Weapon Lock
 --
 --  Abilities:  [ ALT+` ]           Flee
 --              [ CTRL+Numpad/ ]    Berserk
@@ -60,6 +61,9 @@ function get_sets()
 
     -- Load and initialize the include file.
     include('Mote-Include.lua')
+    coroutine.schedule(function()
+        send_command('gs c weaponset current')
+    end, 5)
 end
 
 
@@ -68,9 +72,7 @@ function job_setup()
     state.Buff['Sneak Attack'] = buffactive['sneak attack'] or false
     state.Buff['Trick Attack'] = buffactive['trick attack'] or false
     state.Buff['Feint'] = buffactive['feint'] or false
-
-    no_swap_gear = S{"Warp Ring", "Dim. Ring (Dem)", "Dim. Ring (Holla)", "Dim. Ring (Mea)", "Endorsement Ring",
-              "Trizek Ring", "Echad Ring", "Facility Ring", "Capacity Ring", "Ullr", "Demon Arrow", "Beryllium Arrow"}
+	state.WeaponLock = M(false, 'Weapon Lock')
 
     include('Mote-TreasureHunter')
 
@@ -82,8 +84,23 @@ function job_setup()
 
     state.Ambush = M(false, 'Ambush')
     state.CP = M(false, "Capacity Points Mode")
+    state.WeaponSet = M{['description']='Weapon Set', 'Normal', 'WhiteDmg', 'Naegling', 'NaeglingAcc', 'H2H', 'Staff', 'SoloCleaving', 'Cleaving'}
+    state.RangedWeaponSet = M{['description']='Ranged Weapon Set', 'None', 'Throwing', 'Archery'}
 
     lockstyleset = 18
+    
+    DefaultAmmo = {
+        ['Ullr'] = "Beryllium Arrow",
+    }
+    AccAmmo = {
+        ['Ullr'] = "Beryllium Arrow",
+    }
+    WSAmmo = {
+        ['Ullr'] = "Beryllium Arrow",
+    }
+    MagicAmmo = {
+        ['Ullr'] = "Beryllium Arrow",
+    }
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -98,14 +115,17 @@ function user_setup()
     state.WeaponskillMode:options('Normal', 'Acc', 'LowBuff')
     state.IdleMode:options('Normal', 'DT', 'Refresh')
 
-    -- Additional local binds
-
     send_command('bind ^` gs c cycle treasuremode')
     send_command('bind !` input /ja "Flee" <me>')
     send_command('bind %numpad0 gs c toggle Ambush')
-
+    send_command('bind @w gs c toggle WeaponLock')
     send_command('bind @c gs c toggle CP')
 
+    send_command('bind ^insert gs c weaponset cycle')
+    send_command('bind ^delete gs c weaponset cycleback')
+    send_command('bind ^home gs c rangedweaponset cycle')
+    send_command('bind ^end gs c rangedweaponset cycleback')
+  
     send_command('bind ^numpad7 input /ws "Exenterator" <t>')
     send_command('bind ^numpad8 input /ws "Mandalic Stab" <t>')
     send_command('bind ^numpad4 input /ws "Evisceration" <t>')
@@ -138,6 +158,12 @@ function user_unload()
     send_command('unbind numpad0')
     send_command('unbind @c')
     send_command('unbind @r')
+    
+    send_command('unbind ^insert')
+    send_command('unbind ^delete')
+    send_command('unbind ^home')
+    send_command('unbind ^end')
+
     send_command('unbind ^numlock')
     send_command('unbind ^numpad/')
     send_command('unbind ^numpad*')
@@ -200,7 +226,7 @@ function init_gear_sets()
     sets.precast.JA['Aura Steal'] = {head="Plun. Bonnet +3"}
     sets.precast.JA['Collaborator'] = set_combine(sets.TreasureHunter, {head="Skulker's Bonnet +1"})
     sets.precast.JA['Flee'] = {feet="Pill. Poulaines +1"}
-    sets.precast.JA['Hide'] = {body="Pillager's Vest +1"}
+    sets.precast.JA['Hide'] = {body="Pillager's Vest +3"}
     sets.precast.JA['Conspirator'] = set_combine(sets.TreasureHunter, {body="Skulker's Vest +1"})
 
     sets.precast.JA['Steal'] = {
@@ -211,18 +237,26 @@ function init_gear_sets()
         }
 
     sets.precast.JA['Despoil'] = {ammo="Barathrum", legs="Skulk. Culottes +1", feet="Skulk. Poulaines +1"}
-    sets.precast.JA['Perfect Dodge'] = {hands="Plun. Armlets +3"}
+    sets.precast.JA['Perfect Dodge'] = {hands="Plun. Armlets +1"}
     sets.precast.JA['Feint'] = {legs="Plun. Culottes +1"}
     --sets.precast.JA['Sneak Attack'] = sets.buff['Sneak Attack']
     --sets.precast.JA['Trick Attack'] = sets.buff['Trick Attack']
 
     sets.precast.Waltz = {
-        ammo="Yamarang",
-        body="Gleti's Cuirass",
-        legs="Dashing Subligar",
-        ring1="Asklepian Ring",
-        waist="Gishdubar Sash",
-        }
+		ammo="Yamarang",
+		head={ name="Herculean Helm", augments={'Accuracy+23','"Waltz" potency +10%','AGI+1','Attack+13',}},
+		body="Gleti's Cuirass",
+		hands={ name="Herculean Gloves", augments={'"Waltz" potency +10%','DEX+4','Accuracy+9','Attack+6',}},
+		legs="Dashing Subligar",
+		feet={ name="Nyame Sollerets", augments={'Path: B',}},
+		neck={ name="Unmoving Collar +1", augments={'Path: A',}},
+		waist="Flume Belt",
+		left_ear="Eabani Earring",
+		right_ear="Genmei Earring",
+		left_ring="Supershear Ring",
+		right_ring="Moonbeam Ring",
+		back="Moonbeam Cape",
+}
 
     sets.precast.Waltz['Healing Waltz'] = {}
 
@@ -233,7 +267,7 @@ function init_gear_sets()
         hands="Leyline Gloves", --8
         legs="Rawhide Trousers", --5
         feet=gear.Herc_MAB_feet, --2
-        neck="Orunmila's Torque", --5
+        neck="Voltsurge Torque", --5
         ear1="Loquacious Earring", --2
         ear2="Enchntr. Earring +1", --2
         ring2="Weather. Ring +1", --6(4)
@@ -276,7 +310,7 @@ function init_gear_sets()
         }
 
     sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS, {
-        head="Glet's Mask",
+        head="Gleti's Mask",
         body="Gleti's Cuirass",
         legs="Malignance Tights",
         feet="Plun. Poulaines +3",
@@ -311,7 +345,7 @@ function init_gear_sets()
 
     sets.precast.WS['Rudra\'s Storm'] = set_combine(sets.precast.WS, {
         ammo="Cath Palug Stone",
-		body="Gleti's Cuirass",  -- Replace with Relic +3
+		body="Nyame Mail",  -- Replace with Relic +3
         neck="Asn. Gorget +1",
         ear1="Sherida Earring",
 		ring2="Ilabrat Ring",
@@ -329,18 +363,18 @@ function init_gear_sets()
 
     sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
         ammo="Per. Lucky Egg",
-        head="Volte Cap",
+        head="Nyame Helm",
         body="Nyame Mail",
         hands="Nyame Gauntlets",
-        legs="Volte Hose",
-        feet="Volte Boots",
+        legs="Nyame Flanchard",
+        feet="Nyame Sollerets",
         neck="Baetyl Pendant",
-        ear1="Crematio Earring",
+        ear1="Hermetic Earring",
         ear2="Friomisi Earring",
         ring1="Dingir Ring",
         ring2="Epaminondas's Ring",
         back="Sacro Mantle",
-        waist="Chaac Belt",
+        waist="Sacro Cord",
         })
 		
     sets.precast.WS['Cyclone'] = set_combine(sets.precast.WS, {
@@ -351,7 +385,7 @@ function init_gear_sets()
         legs="Volte Hose",
         feet="Volte Boots",
         neck="Baetyl Pendant",
-        ear1="Crematio Earring",
+        ear1="Hermetic Earring",
         ear2="Friomisi Earring",
         ring1="Dingir Ring",
         ring2="Epaminondas's Ring",
@@ -362,8 +396,13 @@ function init_gear_sets()
     sets.precast.WS['Asuran Fists'] = set_combine(sets.precast.WS['Exenterator'], {
         hands="Nyame Gauntlets",
         feet="Plun. Poulaines +3",
-        ring2="Gere Ring"
+        ring2="Epona's Ring"
         })	
+		
+    sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
+        neck="Caro Necklace",
+		waist="Sailfi Belt +1",
+        })		
 
     ------------------------------------------------------------------------------------------------
     ---------------------------------------- Midcast Sets ------------------------------------------
@@ -378,7 +417,7 @@ function init_gear_sets()
         legs=gear.Taeon_Phalanx_legs, --10
         feet=gear.Taeon_Phalanx_feet, --10
         neck="Loricate Torque +1", --5
-        ear1="Halasz Earring", --5
+        ear1="Enchntr Earring +1", --5
         ear2="Magnetic Earring", --8
         ring2="Evanescence Ring", --5
         }
@@ -412,9 +451,9 @@ function init_gear_sets()
         ammo="Staunch Tathlum +1", --3/3
         head="Malignance Chapeau", --6/6
         body="Nyame Mail", --9/9
-        hands="Nayme Gauntlets", --5/5
+        hands="Nyame Gauntlets", --5/5
         legs="Malignance Tights", --7/7
-        feet="Nayme Sollerets", --4/4
+        feet="Nyame Sollerets", --4/4
         neck="Warder's Charm +1",
         ear1="Eabani Earring",
         ear2="Ethereal Earring",
@@ -431,6 +470,7 @@ function init_gear_sets()
 
     sets.idle.Town = set_combine(sets.idle, {
         ammo="Coiste Bodhar",
+		body="Councilor's Garb",
         neck="Asn. Gorget +1",
         ear1="Sherida Earring",
         ear2="Telos Earring",
@@ -460,7 +500,7 @@ function init_gear_sets()
     sets.engaged = {
         ammo="Coiste Bodhar",
         head="Adhemar Bonnet +1", 
-        body="Adhemar Jacket +1",
+        body="Pillager's Vest +3",
         hands="Adhemar Wrist. +1",
         legs="Samnuha Tights",
         feet="Plun. Poulaines +3",
@@ -481,7 +521,7 @@ function init_gear_sets()
     sets.engaged.MidAcc = set_combine(sets.engaged.LowAcc, {
         ammo="Yamarang",
         head="Dampening Tam",
-        body="Pillager's Vest +1",
+        body="Pillager's Vest +3",
         ear1="Cessance Earring",
         ring2="Ilabrat Ring",
         waist="Kentarch Belt +1",
@@ -489,7 +529,7 @@ function init_gear_sets()
 
     sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
         ammo="C. Palug Stone",
-        hands="Gazu Bracelet +1",
+        hands="Adhemar Wrist. +1",
         legs="Meg. Chausses +2",
         ear2="Mache Earring +1",
         ring1="Regal Ring",
@@ -606,7 +646,7 @@ function init_gear_sets()
     sets.engaged.DW.MidHaste = {
         ammo="Coiste Bodhar",
         head="Adhemar Bonnet +1",
-        body="Gleti's Cuirass",
+        body="Pillager's Vest +3",
         hands="Adhemar Wrist. +1",
         legs="Samnuha Tights",
         feet="Plun. Poulaines +3",
@@ -701,7 +741,7 @@ function init_gear_sets()
     sets.engaged.DW.MaxHaste = {
         ammo="Coiste Bodhar",
         head="Adhemar Bonnet +1", 
-        body="Gleti's Cuirass",
+        body="Pillager's Vest +3",
         hands="Adhemar Wrist. +1",
         legs="Samnuha Tights",
         feet="Gleti's Breeches",
@@ -813,12 +853,73 @@ function init_gear_sets()
 	
 	sets.Range = {range="Ullr", ammo="Beryllium Arrow"}
 
+    sets.WeaponSet = {}
+    sets.WeaponSet['Normal'] = {
+      main="Twashtar",
+      sub="Gleti's Knife",
+    }
+    sets.WeaponSet['WhiteDmg'] = {
+      main="Twashtar",
+      sub={name="Centovente", priority=1},
+    }
+    sets.WeaponSet['LowAtt'] = {
+      main="Vajra",
+      sub="Centovente",
+    }
+    sets.WeaponSet['Naegling'] = {
+      main="Naegling",
+      sub="Centovente",
+    }
+    sets.WeaponSet['NaeglingAcc'] = {
+      main="Naegling",
+      sub="Ternion Dagger +1",
+    }
+    sets.WeaponSet['H2H'] = {
+      main="Karambit",
+      sub="empty",
+    }
+    sets.WeaponSet['SoloCleaving'] = {
+      main="Gandring",
+      sub="Tauret",
+    }
+    sets.WeaponSet['Cleaving'] = {
+      main="Tauret",
+      sub="Twashtar",
+    }
+    sets.WeaponSet['Staff'] = {
+      main="Gozuki Mezuki",
+      sub="empty",
+    }
+  
+    -- Ranged weapon sets
+    sets.WeaponSet['Archery'] = {
+      ranged="Ullr",
+      ammo="Beryllium Arrow",
+    }
+    sets.WeaponSet['Throwing'] = {
+      ranged="Antitail +1",
+      ammo=empty,
+    }
 end
 
 
 -------------------------------------------------------------------------------------------------------------------
 -- Job-specific hooks for standard casting events.
 -------------------------------------------------------------------------------------------------------------------
+
+-- Automatically use Presto for steps when it's available and we have less than 3 finishing moves
+function job_pretarget(spell, action, spellMap, eventArgs)
+    if spell.type == 'Step' then
+        local allRecasts = windower.ffxi.get_ability_recasts()
+        local prestoCooldown = allRecasts[236]
+        local under3FMs = not buffactive['Finishing Move 3'] and not buffactive['Finishing Move 4'] and not buffactive['Finishing Move 5']
+
+        if player.main_job_level >= 77 and prestoCooldown < 1 and under3FMs then
+            cast_delay(1.1)
+            send_command('input /ja "Presto" <me>')
+        end
+    end
+end
 
 -- Run after the general precast() is done.
 function job_post_precast(spell, action, spellMap, eventArgs)
@@ -850,8 +951,36 @@ function job_post_precast(spell, action, spellMap, eventArgs)
             end
         end
     end
+    
+    -- Keep ranged weapon/ammo equipped if in an RA mode.
+    if state.RangedWeaponSet.current ~= 'None' then
+        equip({range=player.equipment.range, ammo=player.equipment.ammo})
+        silibs_equip_ammo(spell)
+    end
+
+    -- If slot is locked, keep current equipment on
+    if locked_neck then equip({ neck=player.equipment.neck }) end
+    if locked_ear1 then equip({ ear1=player.equipment.ear1 }) end
+    if locked_ear2 then equip({ ear2=player.equipment.ear2 }) end
+    if locked_ring1 then equip({ ring1=player.equipment.ring1 }) end
+    if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
 end
 
+function job_post_midcast(spell, action, spellMap, eventArgs)
+    -- Keep ranged weapon/ammo equipped if in an RA mode.
+    if state.RangedWeaponSet.current ~= 'None' then
+        equip({range=player.equipment.range, ammo=player.equipment.ammo})
+        silibs_equip_ammo(spell)
+    end
+  
+    -- If slot is locked, keep current equipment on
+    if locked_neck then equip({ neck=player.equipment.neck }) end
+    if locked_ear1 then equip({ ear1=player.equipment.ear1 }) end
+    if locked_ear2 then equip({ ear2=player.equipment.ear2 }) end
+    if locked_ring1 then equip({ ring1=player.equipment.ring1 }) end
+    if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
+end
+  
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_aftercast(spell, action, spellMap, eventArgs)
     -- Weaponskills wipe SATA/Feint.  Turn those state vars off before default gearing is attempted.
@@ -877,29 +1006,25 @@ end
 -- buff == buff gained or lost
 -- gain == true if the buff was gained, false if it was lost.
 function job_buff_change(buff,gain)
-
---    if buffactive['Reive Mark'] then
---        if gain then
---            equip(sets.Reive)
---            disable('neck')
---        else
---            enable('neck')
---        end
---    end
-
     if buff == "doom" then
         if gain then
-            equip(sets.buff.Doom)
             send_command('@input /p Doomed.')
-             disable('ring1','ring2','waist')
-        else
-            enable('ring1','ring2','waist')
-            handle_equipping_gear(player.status)
+        elseif player.hpp > 0 then
+            send_command('@input /p Doom Removed.')
         end
     end
-
+    
     if not midaction() then
         handle_equipping_gear(player.status)
+    end
+end
+
+-- Handle notifications of general user state change.
+function job_state_change(stateField, newValue, oldValue)
+    if state.WeaponLock.value == true then
+        disable('main','sub','range','ammo')
+    else
+        disable('main','sub','range','ammo')
     end
 end
 
@@ -911,11 +1036,10 @@ end
 -- Called by the 'update' self-command, for common needs.
 -- Set eventArgs.handled to true if we don't want automatic equipping of gear.
 function job_handle_equipping_gear(playerStatus, eventArgs)
-   -- check_gear()
+    check_gear()
     update_combat_form()
     determine_haste_group()
     check_moving()
-	check_range_lock()
 
     -- Check for SATA when equipping gear.  If either is active, equip
     -- that gear specifically, and block equipping default gear.
@@ -954,19 +1078,38 @@ end
 
 function customize_idle_set(idleSet)
     if state.CP.current == 'on' then
-         equip(sets.CP)
-         disable('back')
-     else
-         enable('back')
+        idleSet = set_combine(idleSet, sets.CP)
      end
     if state.Auto_Kite.value == true then
        idleSet = set_combine(idleSet, sets.Kiting)
     end
+    
+    -- Keep ranged weapon/ammo equipped if in an RA mode.
+    if state.RangedWeaponSet.current ~= 'None' then
+        idleSet = set_combine(idleSet, {
+            range=player.equipment.range,
+            ammo=player.equipment.ammo
+        })
+    end
+
+    -- If slot is locked to use no-swap gear, keep it equipped
+    if locked_neck then idleSet = set_combine(idleSet, { neck=player.equipment.neck }) end
+    if locked_ear1 then idleSet = set_combine(idleSet, { ear1=player.equipment.ear1 }) end
+    if locked_ear2 then idleSet = set_combine(idleSet, { ear2=player.equipment.ear2 }) end
+    if locked_ring1 then idleSet = set_combine(idleSet, { ring1=player.equipment.ring1 }) end
+    if locked_ring2 then idleSet = set_combine(idleSet, { ring2=player.equipment.ring2 }) end
+
+    if buffactive.Doom then
+        idleSet = set_combine(idleSet, sets.buff.Doom)
+    end    
 
     return idleSet
 end
 
 function customize_melee_set(meleeSet)
+    if state.CP.current == 'on' then
+        meleeSet = set_combine(meleeSet, sets.CP)
+    end
     if state.Ambush.value == true then
         meleeSet = set_combine(meleeSet, sets.buff['Ambush'])
     end
@@ -974,7 +1117,53 @@ function customize_melee_set(meleeSet)
         meleeSet = set_combine(meleeSet, sets.TreasureHunter)
     end
 
+    -- Keep ranged weapon/ammo equipped if in an RA mode.
+    if state.RangedWeaponSet.current ~= 'None' then
+        meleeSet = set_combine(meleeSet, {
+            range=player.equipment.range,
+            ammo=player.equipment.ammo
+        })
+    end
+
+    -- If slot is locked to use no-swap gear, keep it equipped
+    if locked_neck then meleeSet = set_combine(meleeSet, { neck=player.equipment.neck }) end
+    if locked_ear1 then meleeSet = set_combine(meleeSet, { ear1=player.equipment.ear1 }) end
+    if locked_ear2 then meleeSet = set_combine(meleeSet, { ear2=player.equipment.ear2 }) end
+    if locked_ring1 then meleeSet = set_combine(meleeSet, { ring1=player.equipment.ring1 }) end
+    if locked_ring2 then meleeSet = set_combine(meleeSet, { ring2=player.equipment.ring2 }) end
+
+    if buffactive.Doom then
+        meleeSet = set_combine(meleeSet, sets.buff.Doom)
+    end
+    
     return meleeSet
+end
+
+function customize_defense_set(defenseSet)
+    if state.CP.current == 'on' then
+        defenseSet = set_combine(defenseSet, sets.CP)
+    end
+
+    -- Keep ranged weapon/ammo equipped if in an RA mode.
+    if state.RangedWeaponSet.current ~= 'None' then
+        defenseSet = set_combine(defenseSet, {
+            range=player.equipment.range,
+            ammo=player.equipment.ammo
+        })
+    end
+
+    -- If slot is locked to use no-swap gear, keep it equipped
+    if locked_neck then defenseSet = set_combine(defenseSet, { neck=player.equipment.neck }) end
+    if locked_ear1 then defenseSet = set_combine(defenseSet, { ear1=player.equipment.ear1 }) end
+    if locked_ear2 then defenseSet = set_combine(defenseSet, { ear2=player.equipment.ear2 }) end
+    if locked_ring1 then defenseSet = set_combine(defenseSet, { ring1=player.equipment.ring1 }) end
+    if locked_ring2 then defenseSet = set_combine(defenseSet, { ring2=player.equipment.ring2 }) end
+
+    if buffactive.Doom then
+        defenseSet = set_combine(defenseSet, sets.buff.Doom)
+    end
+      
+    return defenseSet
 end
 
 -- Function to display the current relevant user state when doing an update.
@@ -1039,6 +1228,24 @@ function determine_haste_group()
 end
 
 function job_self_command(cmdParams, eventArgs)
+    if cmdParams[1] == 'weaponset' then
+        if cmdParams[2] == 'cycle' then
+            cycle_weapons('forward')
+        elseif cmdParams[2] == 'cycleback' then
+            cycle_weapons('back')
+        elseif cmdParams[2] == 'current' then
+            cycle_weapons('current')
+        end
+    elseif cmdParams[1] == 'rangedweaponset' then
+        if cmdParams[2] == 'cycle' then
+            cycle_ranged_weapons('forward')
+        elseif cmdParams[2] == 'cycleback' then
+            cycle_ranged_weapons('back')
+        elseif cmdParams[2] == 'current' then
+            cycle_ranged_weapons('current')
+        end
+    end
+
     gearinfo(cmdParams, eventArgs)
 end
 
@@ -1073,21 +1280,6 @@ function gearinfo(cmdParams, eventArgs)
     end
 end
 
-
--- Automatically use Presto for steps when it's available and we have less than 3 finishing moves
-function job_pretarget(spell, action, spellMap, eventArgs)
-    if spell.type == 'Step' then
-        local allRecasts = windower.ffxi.get_ability_recasts()
-        local prestoCooldown = allRecasts[236]
-        local under3FMs = not buffactive['Finishing Move 3'] and not buffactive['Finishing Move 4'] and not buffactive['Finishing Move 5']
-
-        if player.main_job_level >= 77 and prestoCooldown < 1 and under3FMs then
-            cast_delay(1.1)
-            send_command('input /ja "Presto" <me>')
-        end
-    end
-end
-
 -- State buff checks that will equip buff gear and mark the event as handled.
 function check_buff(buff_name, eventArgs)
     if state.Buff[buff_name] then
@@ -1098,7 +1290,6 @@ function check_buff(buff_name, eventArgs)
         eventArgs.handled = true
     end
 end
-
 
 -- Check for various actions that we've specified in user code as being used with TH gear.
 -- This will only ever be called if TreasureMode is not 'None'.
@@ -1124,31 +1315,41 @@ function check_moving()
 end
 
 function check_gear()
-    if no_swap_gear:contains(player.equipment.left_ring) then
-        disable("ring1")
+    if no_swap_necks:contains(player.equipment.neck) then
+        locked_neck = true
     else
-        enable("ring1")
+        locked_neck = false
     end
-    if no_swap_gear:contains(player.equipment.right_ring) then
-        disable("ring2")
+    if no_swap_earrings:contains(player.equipment.ear1) then
+        locked_ear1 = true
     else
-        enable("ring2")
+        locked_ear1 = false
+    end
+    if no_swap_earrings:contains(player.equipment.ear2) then
+        locked_ear2 = true
+    else
+        locked_ear2 = false
+    end
+    if no_swap_rings:contains(player.equipment.ring1) then
+        locked_ring1 = true
+    else
+        locked_ring1 = false
+    end
+    if no_swap_rings:contains(player.equipment.ring2) then
+        locked_ring2 = true
+    else
+        locked_ring2 = false
     end
 end
 
-windower.register_event('zone change',
-    function()
-        if no_swap_gear:contains(player.equipment.left_ring) then
-            enable("ring1")
-            equip(sets.idle)
-        end
-        if no_swap_gear:contains(player.equipment.right_ring) then
-            enable("ring2")
-            equip(sets.idle)
-        end
-    end
-)
-
+windower.register_event('zone change', function()
+    if locked_neck then equip({ neck=empty }) end
+    if locked_ear1 then equip({ ear1=empty }) end
+    if locked_ear2 then equip({ ear2=empty }) end
+    if locked_ring1 then equip({ ring1=empty }) end
+    if locked_ring2 then equip({ ring2=empty }) end
+end)
+  
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
     -- Default macro set/book
@@ -1167,11 +1368,26 @@ function set_lockstyle()
     send_command('wait 2; input /lockstyleset ' .. lockstyleset)
 end
 
--- Function to lock the ranged slot if we have a ranged weapon equipped.
-function check_range_lock()
-    if player.equipment.range ~= 'empty' then
-        disable('range', 'ammo')
-    else
-        enable('range', 'ammo')
+
+function cycle_weapons(cycle_dir)
+    if cycle_dir == 'forward' then
+        state.WeaponSet:cycle()
+    elseif cycle_dir == 'back' then
+        state.WeaponSet:cycleback()
     end
+  
+    add_to_chat(141, 'Weapon Set to '..string.char(31,1)..state.WeaponSet.current)
+    equip(sets.WeaponSet[state.WeaponSet.current])
 end
+  
+function cycle_ranged_weapons(cycle_dir)
+    if cycle_dir == 'forward' then
+        state.RangedWeaponSet:cycle()
+    elseif cycle_dir == 'back' then
+        state.RangedWeaponSet:cycleback()
+    end
+  
+    add_to_chat(141, 'RA Weapon Set to '..string.char(31,1)..state.RangedWeaponSet.current)
+    equip(sets.WeaponSet[state.RangedWeaponSet.current])
+end
+  
