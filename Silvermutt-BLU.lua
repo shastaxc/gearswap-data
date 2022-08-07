@@ -70,7 +70,7 @@ function job_setup()
   silibs.enable_cancel_outranged_ws()
   silibs.enable_auto_lockstyle(14)
   silibs.enable_premade_commands()
-  -- silibs.enable_th()
+  silibs.enable_th()
 
   state.CP = M(false, "Capacity Points Mode")
   state.WeaponSet = M{['description']='Weapon Set', 'Casting', 'Naegling', 'Maxentius'}
