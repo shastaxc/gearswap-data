@@ -249,8 +249,10 @@ function init_gear_sets()
     -- hands=gear.Gende_SongFC_hands, --  7,  5,  3 ( 4, __,  37)
     -- legs=gear.Gende_SongFC_legs,   -- __, 10,  3 ( 4, __, 107)
     -- feet="Volte Gaiters",          --  6, __, __ (__, __, 142); Chironic good alt
-    -- 72 Fast Cast, 15 Song Cast Time-, 6 Song Recast- (51 PDT, 34 MDT, 544 Magic Evasion)
-  } -- 53 Fast Cast, 13 Song Cast Time-, 0 Song Recast- (50 PDT, 36 MDT, 387 Magic Evasion)
+    -- ear2="Enchanter's Earring +1", --  2, __, __ (__, __, ___)
+    -- JP Gifts                          __,  5, __ (__, __, ___)
+    -- 73 Fast Cast, 20 Song Cast Time-, 6 Song Recast- (51 PDT, 31 MDT, 544 Magic Evasion)
+  } -- 53 Fast Cast, 17 Song Cast Time-, 0 Song Recast- (50 PDT, 36 MDT, 387 Magic Evasion)
 
   sets.precast.FC.SongPlaceholder = set_combine(sets.precast.FC.BardSong, {
     range=info.ExtraSongInstrument,
