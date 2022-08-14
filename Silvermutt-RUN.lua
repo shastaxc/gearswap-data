@@ -527,16 +527,17 @@ function init_gear_sets()
     back={name="Moonlight Cape", priority=1}, --  6/ 6, ___ [275] __
     waist="Engraved Belt",                    -- __/__, ___ [___] __
     -- Merits/Traits/Gifts                                        16
+    -- Master Level 50                                            50
     -- Base skill                                                 398
 
     -- head="Erilaz Galea +2",                -- __/__, 109 [101] __; Enhance JA
     -- legs="Erilaz Leg Guards +2",           -- 12/12, 147 [ 90] __
-    -- 38 PDT/40 MDT, 603 M.Eva [962 HP] 432 Divine Skill
+    -- 38 PDT/40 MDT, 603 M.Eva [962 HP] 482 Divine Skill
     
     -- Additional Options:
     -- legs="Rune. Trousers +3",              --  5/__,  99 [ 80] 19
     -- ear2="Saxnot Earring",                 -- __/__, ___ [___] 10
-  } -- 33 PDT/28 MDT, 563 M.Eva [952 HP] 432 Divine Skill
+  } -- 33 PDT/28 MDT, 563 M.Eva [952 HP] 482 Divine Skill
 
   -- Fast cast sets for spells
   sets.precast.FC = {
