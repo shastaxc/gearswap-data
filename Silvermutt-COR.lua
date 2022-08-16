@@ -347,7 +347,7 @@ function init_gear_sets()
     ring1="Weatherspoon Ring", --5
   })
 
-  -- Snapshot (70% cap)> Rapid Shot (99% cap)
+  -- Snapshot (70% cap) > Rapid Shot (99% cap)
   sets.precast.RA = {
     ammo=gear.RAbullet,
     head="Chasseur's Tricorne +1",    -- __/14 [__/__,  59]
@@ -398,8 +398,7 @@ function init_gear_sets()
     -- Merits/Traits/Gifts               10/30
     -- 69 Snapshot / 75 Rapid Shot [37 PDT/24 MDT, 392 M.Eva]
   } -- 66 Snapshot / 73 Rapid Shot [16 PDT/15 MDT, 350 M.Eva]
-
-  -- 45 Snapshot from gear to cap
+  -- Snapshot (70% cap) > Rapid Shot (99% cap)
   sets.precast.RA.Flurry1 = set_combine(sets.precast.RA, {
     -- ammo=gear.RAbullet,
     -- head="Chasseur's Tricorne +2", -- __/16 [ 9/ 9,  99]
@@ -418,11 +417,10 @@ function init_gear_sets()
     -- Flurry 1                          15/__
     -- 71 Snapshot / 84 Rapid Shot [43 PDT/30 MDT, 384 M.Eva]
   })
-
-  -- 30 Snapshot from gear to cap
+  -- Snapshot (70% cap) > Rapid Shot (99% cap)
   sets.precast.RA.Flurry2 = set_combine(sets.precast.RA.Flurry1, {
-    hands=gear.Carmine_D_hands,   --  8/11 [__/__,  43]
-    feet=gear.Pursuer_A_feet,     -- __/10 [__/__,  69]
+    hands=gear.Carmine_D_hands,       --  8/11 [__/__,  43]
+    feet=gear.Pursuer_A_feet,         -- __/10 [__/__,  69]
     -- 34 Snapshot / 73 Rapid Shot
     
     -- ammo=gear.RAbullet,
@@ -460,6 +458,72 @@ function init_gear_sets()
     -- Flurry 2                          30/__
     -- 72 Snapshot / 100 Rapid Shot [45 PDT/23 MDT, 370 M.Eva]
   })
+  
+  -- Snapshot (70% cap) > Rapid Shot (99% cap)
+  sets.precast.RA.Safe = {
+    ammo=gear.RAbullet,
+    -- head="Chasseur's Tricorne +1", -- __/14 [__/__,  59]
+    -- body="Oshosi Vest +1",         -- 14/__ [__/__, 106]
+    -- hands="Lanun Gants +3",        -- 13/__ [__/__,  57]
+    legs=gear.Adhemar_D_legs,         -- 10/13 [__/__,  75]
+    feet="Meg. Jam. +2",              -- 10/__ [ 3/__,  69]
+    neck="Loricate Torque +1",        -- __/__ [ 6/ 6, ___]
+    ear1="Genmei Earring",            -- __/__ [ 2/__, ___]
+    ear2="Odnowa Earring +1",         -- __/__ [ 3/ 5, ___]
+    ring1="Gelatinous Ring +1",       -- __/__ [ 7/-1, ___]
+    ring2="Defending Ring",           -- __/__ [10/10, ___]
+    back=gear.COR_SNP_Cape,           -- 10/__ [10/__, ___]; Respec with PDT
+    waist="Yemaya Belt",              -- __/ 5 [__/__, ___]
+    -- Merits/Traits/Gifts               10/30
+    -- 67 Snapshot / 62 Rapid Shot [41 PDT/20 MDT, 366 M.Eva]
+
+    -- head="Chasseur's Tricorne +2", -- __/16 [ 9/ 9,  99]
+    -- 67 Snapshot / 64 Rapid Shot [50 PDT/29 MDT, 406 M.Eva]
+  }
+  -- Snapshot (70% cap) > Rapid Shot (99% cap)
+  sets.precast.RA.Flurry1.Safe = {
+    ammo=gear.RAbullet,
+    -- head="Chasseur's Tricorne +1", -- __/14 [__/__,  59]
+    -- body="Laksamana's Frac +3",    -- __/20 [__/__,  84]
+    -- hands="Lanun Gants +3",        -- 13/__ [__/__,  57]
+    legs=gear.Adhemar_D_legs,         -- 10/13 [__/__,  75]
+    feet="Meg. Jam. +2",              -- 10/__ [ 3/__,  69]
+    neck="Loricate Torque +1",        -- __/__ [ 6/ 6, ___]
+    ear1="Genmei Earring",            -- __/__ [ 2/__, ___]
+    ear2="Odnowa Earring +1",         -- __/__ [ 3/ 5, ___]
+    ring1="Gelatinous Ring +1",       -- __/__ [ 7/-1, ___]
+    ring2="Defending Ring",           -- __/__ [10/10, ___]
+    back=gear.COR_SNP_Cape,           -- 10/__ [10/__, ___]; Respec with PDT
+    waist="Yemaya Belt",              -- __/ 5 [__/__, ___]
+    -- Merits/Traits/Gifts               10/30
+    -- Flurry 1                          15/__
+    -- 68 Snapshot / 82 Rapid Shot [41 PDT/20 MDT, 344 M.Eva]
+
+    -- head="Chasseur's Tricorne +2", -- __/16 [ 9/ 9,  99]
+    -- 68 Snapshot / 84 Rapid Shot [50 PDT/29 MDT, 384 M.Eva]
+  }
+  -- Snapshot (70% cap) > Rapid Shot (99% cap)
+  sets.precast.RA.Flurry2.Safe = {
+    ammo=gear.RAbullet,
+    -- head="Chasseur's Tricorne +1", -- __/14 [__/__,  59]
+    -- body="Laksamana's Frac +3",    -- __/20 [__/__,  84]
+    hands=gear.Carmine_D_hands,       --  8/11 [__/__,  43]
+    legs=gear.Adhemar_D_legs,         -- 10/13 [__/__,  75]
+    feet=gear.Pursuer_A_feet,         -- __/10 [__/__,  69]
+    neck="Commodore Charm +1",        --  3/__ [__/__, ___]
+    ear1="Genmei Earring",            -- __/__ [ 2/__, ___]
+    ear2="Odnowa Earring +1",         -- __/__ [ 3/ 5, ___]
+    ring1="Gelatinous Ring +1",       -- __/__ [ 7/-1, ___]
+    ring2="Defending Ring",           -- __/__ [10/10, ___]
+    back=gear.COR_SNP_Cape,           -- 10/__ [10/__, ___]; Respec with PDT
+    waist="Flume Belt +1",            -- __/__ [ 4/__, ___]
+    -- Merits/Traits/Gifts               10/30
+    -- Flurry 2                          30/__
+    -- 71 Snapshot / 98 Rapid Shot [36 PDT/14 MDT, 330 M.Eva]
+
+    -- head="Chasseur's Tricorne +2", -- __/16 [ 9/ 9,  99]
+    -- 71 Snapshot / 100 Rapid Shot [45 PDT/23 MDT, 370 M.Eva]
+  }
 
 
   ------------------------------------------------------------------------------------------------
@@ -1605,7 +1669,7 @@ function init_gear_sets()
     hands="Floral Gauntlets",         --  5, __, 36 <__,  3, __> [__/ 4,  37]
     legs=gear.Carmine_D_legs,         --  6, __, 55 <__, __, __> [__/__,  80]
     feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
-    -- neck="Subtlety Spectacles",    -- __, __, 15 <__, __, __> [__/__, ___]
+    neck="Subtlety Spectacles",       -- __, __, 15 <__, __, __> [__/__, ___]
     ear1="Suppanomimi",               --  5, __, __ <__, __, __> [__/__, ___]
     ear2="Odnowa Earring +1",         -- __, __, 10 <__, __, __> [ 3/ 5, ___]
     ring1="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
@@ -1622,7 +1686,7 @@ function init_gear_sets()
     hands="Malignance Gloves",        -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
     legs=gear.Carmine_D_legs,         --  6, __, 55 <__, __, __> [__/__,  80]
     feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
-    -- neck="Subtlety Spectacles",    -- __, __, 15 <__, __, __> [__/__, ___]
+    neck="Subtlety Spectacles",       -- __, __, 15 <__, __, __> [__/__, ___]
     ear1="Dignitary's Earring",       -- __,  3, 10 <__, __, __> [__/__, ___]
     ear2="Odnowa Earring +1",         -- __, __, 10 <__, __, __> [ 3/ 5, ___]
     ring1="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
@@ -1662,7 +1726,7 @@ function init_gear_sets()
     hands="Malignance Gloves",        -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
     legs="Malignance Tights",         -- __, 10, 50 <__, __, __> [ 7/ 7, 150]
     feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
-    -- neck="Subtlety Spectacles",    -- __, __, 15 <__, __, __> [__/__, ___]
+    neck="Subtlety Spectacles",       -- __, __, 15 <__, __, __> [__/__, ___]
     ear1="Suppanomimi",               --  5, __, __ <__, __, __> [__/__, ___]
     ear2="Eabani Earring",            --  4, __, __ <__, __, __> [__/__,   8]
     ring1="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
@@ -1679,7 +1743,7 @@ function init_gear_sets()
     hands="Malignance Gloves",        -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
     legs=gear.Carmine_D_legs,         --  6, __, 55 <__, __, __> [__/__,  80]
     feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
-    -- neck="Subtlety Spectacles",    -- __, __, 15 <__, __, __> [__/__, ___]
+    neck="Subtlety Spectacles",       -- __, __, 15 <__, __, __> [__/__, ___]
     ear1="Suppanomimi",               --  5, __, __ <__, __, __> [__/__, ___]
     ear2="Eabani Earring",            --  4, __, __ <__, __, __> [__/__,   8]
     ring1="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
@@ -1696,7 +1760,7 @@ function init_gear_sets()
     hands="Malignance Gloves",        -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
     legs=gear.Carmine_D_legs,         --  6, __, 55 <__, __, __> [__/__,  80]
     feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
-    -- neck="Subtlety Spectacles",    -- __, __, 15 <__, __, __> [__/__, ___]
+    neck="Subtlety Spectacles",       -- __, __, 15 <__, __, __> [__/__, ___]
     ear1="Dignitary's Earring",       -- __,  3, 10 <__, __, __> [__/__, ___]
     ear2="Telos Earring",             -- __,  5, 10 < 1, __, __> [__/__, ___]
     ring1="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
@@ -1758,7 +1822,7 @@ function init_gear_sets()
     hands="Malignance Gloves",        -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
     legs="Malignance Tights",         -- __, 10, 50 <__, __, __> [ 7/ 7, 150]
     feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
-    -- neck="Subtlety Spectacles",    -- __, __, 15 <__, __, __> [__/__, ___]
+    neck="Subtlety Spectacles",       -- __, __, 15 <__, __, __> [__/__, ___]
     ear1="Suppanomimi",               --  5, __, __ <__, __, __> [__/__, ___]
     ear2="Telos Earring",             -- __,  5, 10 < 1, __, __> [__/__, ___]
     ring1="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
@@ -1780,7 +1844,7 @@ function init_gear_sets()
     hands="Malignance Gloves",        -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
     legs=gear.Carmine_D_legs,         --  6, __, 55 <__, __, __> [__/__,  80]
     feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
-    -- neck="Subtlety Spectacles",    -- __, __, 15 <__, __, __> [__/__, ___]
+    neck="Subtlety Spectacles",       -- __, __, 15 <__, __, __> [__/__, ___]
     ear1="Dignitary's Earring",       -- __,  3, 10 <__, __, __> [__/__, ___]
     ear2="Telos Earring",             -- __,  5, 10 < 1, __, __> [__/__, ___]
     ring1="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
@@ -1820,7 +1884,7 @@ function init_gear_sets()
     hands="Malignance Gloves",        -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
     legs=gear.Carmine_D_legs,         --  6, __, 55 <__, __, __> [__/__,  80]
     feet=gear.Herc_TA_feet,           -- __, __, 23 <__,  6, __> [ 2/__,  75]
-    -- neck="Subtlety Spectacles",    -- __, __, 15 <__, __, __> [__/__, ___]
+    neck="Subtlety Spectacles",       -- __, __, 15 <__, __, __> [__/__, ___]
     ear1="Suppanomimi",               --  5, __, __ <__, __, __> [__/__, ___]
     ear2="Telos Earring",             -- __,  5, 10 < 1, __, __> [__/__, ___]
     ring1="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
@@ -1841,7 +1905,7 @@ function init_gear_sets()
     hands="Malignance Gloves",        -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
     legs=gear.Carmine_D_legs,         --  6, __, 55 <__, __, __> [__/__,  80]
     feet=gear.Herc_TA_feet,           -- __, __, 23 <__,  6, __> [ 2/__,  75]
-    -- neck="Subtlety Spectacles",    -- __, __, 15 <__, __, __> [__/__, ___]
+    neck="Subtlety Spectacles",       -- __, __, 15 <__, __, __> [__/__, ___]
     ear1="Dignitary's Earring",       -- __,  3, 10 <__, __, __> [__/__, ___]
     ear2="Telos Earring",             -- __,  5, 10 < 1, __, __> [__/__, ___]
     ring1="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
@@ -1863,7 +1927,7 @@ function init_gear_sets()
     hands="Malignance Gloves",        -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
     legs=gear.Carmine_D_legs,         --  6, __, 55 <__, __, __> [__/__,  80]
     feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
-    -- neck="Subtlety Spectacles",    -- __, __, 15 <__, __, __> [__/__, ___]
+    neck="Subtlety Spectacles",       -- __, __, 15 <__, __, __> [__/__, ___]
     ear1="Dignitary's Earring",       -- __,  3, 10 <__, __, __> [__/__, ___]
     ear2="Telos Earring",             -- __,  5, 10 < 1, __, __> [__/__, ___]
     ring1="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
