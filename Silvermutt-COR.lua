@@ -101,9 +101,9 @@ function job_setup()
   silibs.enable_th()
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
-  state.HybridMode:options('LightDef', 'SubtleBlow', 'Normal')
+  state.HybridMode:options('HeavyDef', 'SubtleBlow', 'Normal')
   state.RangedMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
-  state.IdleMode:options('Normal', 'LightDef')
+  state.IdleMode:options('Normal', 'HeavyDef')
 
   state.WeaponSet = M{['description']='Weapon Set', 'Savage Blade', 'Cleaving', 'DeathPenalty_M', 'DeathPenalty_R', 'Fomalhaut_M', 'Fomalhaut_R', 'QuickDraw'}
 
@@ -265,22 +265,26 @@ function init_gear_sets()
     body="Lanun Frac +3",
 }
 
+  -- DT > PR Potency > PR Duration; PR Potency does not stack, uses highest piece
   sets.precast.CorsairRoll = {
-    head="Lanun Tricorne +1",
-    body="Malignance Tabard", --9/9
-    hands="Chasseur's Gants +1",
-    legs=gear.Nyame_B_legs,
-    feet="Malignance Boots", --4/0
-    neck="Regal Necklace",
-    ear1="Genmei Earring", --2/0
-    ear2="Etiolation Earring", --0/3
-    ring1="Luzaf's Ring",
-    ring2="Defending Ring", --10/10
-    back=gear.COR_SNP_Cape,
-    waist="Flume Belt +1", --4/0
-    -- head="Lanun Tricorne +3",
-    -- legs="Desultor Tassets",
-  }
+    head="Lanun Tricorne +1",       -- __/__,  36 (__, __); 50% chance of job align bonus
+    body="Malignance Tabard",       --  9/ 9, 139 (__, __)
+    hands="Chasseur's Gants +1",    -- __/__,  43 (__, 50)
+    legs=gear.Nyame_B_legs,         --  8/ 8, 150 (__, __)
+    feet=gear.Nyame_B_feet,         --  7/ 7, 150 (__, __)
+    neck="Regal Necklace",          -- __/__, ___ ( 7, 20)
+    ear1="Genmei Earring",          --  2/__, ___ (__, __)
+    ear2="Etiolation Earring",      -- __/ 3, ___ (__, __)
+    ring1="Luzaf's Ring",           -- __/__, ___ (__, __); Double PR range
+    ring2="Defending Ring",         -- 10/10, ___ (__, __)
+    back=gear.COR_TP_Cape,          -- 10/__, ___ (__, 30)
+    waist="Flume Belt +1",          --  4/__, ___ (__, __)
+
+    -- head="Lanun Tricorne +3",    -- __/__,  73 (__, __); 50% chance of job align bonus
+    -- hands="Chasseur's Gants +2", -- __/__,  83 (__, 55)
+    -- legs="Desultor Tassets",     -- __/__, ___ (__, __); PR Delay -5
+    -- 45 PDT / 31 MDT, 445 M.Eva (7 PR Potency, 105 PR Duration)
+  } -- 50 PDT / 37 MDT, 518 M.Eva (7 PR Potency, 100 PR Duration)
 
   sets.precast.CorsairRoll.Duration = {
     -- main="Rostam",
@@ -343,36 +347,118 @@ function init_gear_sets()
     ring1="Weatherspoon Ring", --5
   })
 
-  -- (10% Snapshot from JP Gifts)
-  -- 60 Snapshot from gear to cap
+  -- Snapshot (70% cap)> Rapid Shot (99% cap)
   sets.precast.RA = {
     ammo=gear.RAbullet,
-    head="Chasseur's Tricorne +1",  -- __/14
-    body="Oshosi Vest",             -- 12/__
-    hands=gear.Carmine_D_hands,     --  8/11
-    legs=gear.Adhemar_D_legs,       -- 10/13
-    feet="Meg. Jam. +2",            -- 10/__
-    neck="Commodore Charm +1",      --  3/__
-    ring1="Crepuscular Ring",       --  3/__
-    back=gear.COR_SNP_Cape,         -- 10/__
-    waist="Yemaya Belt",            -- __/ 5
-    -- body="Oshosi Vest +1",       -- 14/__
-    -- hands="Lanun Gants +3",      -- 13/__
-    -- neck="Commodore Charm +2",   --  4/__
-    -- 63 Snapshot / 32 Rapid Shot
-  } -- 56 Snapshot / 43 Rapid Shot
+    head="Chasseur's Tricorne +1",    -- __/14 [__/__,  59]
+    body="Oshosi Vest",               -- 12/__ [__/__,  96]
+    hands=gear.Carmine_D_hands,       --  8/11 [__/__,  43]
+    legs=gear.Adhemar_D_legs,         -- 10/13 [__/__,  75]
+    feet="Meg. Jam. +2",              -- 10/__ [ 3/__,  69]
+    neck="Commodore Charm +1",        --  3/__ [__/__, ___]
+    ear1="Eabani Earring",            -- __/__ [__/__,   8]
+    ear2="Odnowa Earring +1",         -- __/__ [ 3/ 5, ___]
+    ring1="Crepuscular Ring",         --  3/__ [__/__, ___]
+    ring2="Defending Ring",           -- __/__ [10/10, ___]
+    back=gear.COR_SNP_Cape,           -- 10/__ [__/__, ___]; Respec with PDT
+    waist="Yemaya Belt",              -- __/ 5 [__/__, ___]
+    -- Merits/Traits/Gifts               10/30
+    
+    -- Good
+    -- ammo=gear.RAbullet,
+    -- head="Chasseur's Tricorne +2", -- __/16 [ 9/ 9,  99]
+    -- body="Oshosi Vest +1",         -- 14/__ [__/__, 106]
+    -- hands="Lanun Gants +3",        -- 13/__ [__/__,  57]
+    -- legs=gear.Adhemar_D_legs,      -- 10/13 [__/__,  75]
+    -- feet="Meg. Jam. +2",           -- 10/__ [ 3/__,  69]
+    -- neck="Loricate Torque +1",     -- __/__ [ 6/ 6, ___]
+    -- ear1="Genmei Earring",         -- __/__ [ 2/__, ___]
+    -- ear2="Odnowa Earring +1",      -- __/__ [ 3/ 5, ___]
+    -- ring1="Crepuscular Ring",      --  3/__ [__/__, ___]
+    -- ring2="Defending Ring",        -- __/__ [10/10, ___]
+    -- back=gear.COR_SNP_Cape,        -- 10/__ [10/__, ___]; Respec with PDT
+    -- waist="Yemaya Belt",           -- __/ 5 [__/__, ___]
+    -- Merits/Traits/Gifts               10/30
+    -- 70 Snapshot / 64 Rapid Shot [43 PDT/30 MDT, 406 M.Eva]
+    
+    -- Ideal
+    -- ammo=gear.RAbullet,
+    -- head="Chasseur's Tricorne +2", -- __/16 [ 9/ 9,  99]
+    -- body="Oshosi Vest +1",         -- 14/__ [__/__, 106]
+    -- hands=gear.Carmine_D_hands,    --  8/11 [__/__,  43]
+    -- legs=gear.Adhemar_D_legs,      -- 10/13 [__/__,  75]
+    -- feet="Meg. Jam. +2",           -- 10/__ [ 3/__,  69]
+    -- neck="Commodore Charm +2",     --  4/__ [__/__, ___]
+    -- ear1="Genmei Earring",         -- __/__ [ 2/__, ___]
+    -- ear2="Odnowa Earring +1",      -- __/__ [ 3/ 5, ___]
+    -- ring1="Crepuscular Ring",      --  3/__ [__/__, ___]
+    -- ring2="Defending Ring",        -- __/__ [10/10, ___]
+    -- back=gear.COR_SNP_Cape,        -- 10/__ [10/__, ___]; Respec with PDT
+    -- waist="Yemaya Belt",           -- __/ 5 [__/__, ___]
+    -- Merits/Traits/Gifts               10/30
+    -- 69 Snapshot / 75 Rapid Shot [37 PDT/24 MDT, 392 M.Eva]
+  } -- 66 Snapshot / 73 Rapid Shot [16 PDT/15 MDT, 350 M.Eva]
 
   -- 45 Snapshot from gear to cap
   sets.precast.RA.Flurry1 = set_combine(sets.precast.RA, {
-    -- body="Laksamana's Frac +3", --0/20
-    -- 49 Snapshot / 52 Rapid Shot
+    -- ammo=gear.RAbullet,
+    -- head="Chasseur's Tricorne +2", -- __/16 [ 9/ 9,  99]
+    -- body="Laksamana's Frac +3",    -- __/20 [__/__,  84]
+    -- hands="Lanun Gants +3",        -- 13/__ [__/__,  57]
+    -- legs=gear.Adhemar_D_legs,      -- 10/13 [__/__,  75]
+    -- feet="Meg. Jam. +2",           -- 10/__ [ 3/__,  69]
+    -- neck="Loricate Torque +1",     -- __/__ [ 6/ 6, ___]
+    -- ear1="Genmei Earring",         -- __/__ [ 2/__, ___]
+    -- ear2="Odnowa Earring +1",      -- __/__ [ 3/ 5, ___]
+    -- ring1="Crepuscular Ring",      --  3/__ [__/__, ___]
+    -- ring2="Defending Ring",        -- __/__ [10/10, ___]
+    -- back=gear.COR_SNP_Cape,        -- 10/__ [10/__, ___]; Respec with PDT
+    -- waist="Yemaya Belt",           -- __/ 5 [__/__, ___]
+    -- Merits/Traits/Gifts               10/30
+    -- Flurry 1                          15/__
+    -- 71 Snapshot / 84 Rapid Shot [43 PDT/30 MDT, 384 M.Eva]
   })
 
   -- 30 Snapshot from gear to cap
   sets.precast.RA.Flurry2 = set_combine(sets.precast.RA.Flurry1, {
-    hands=gear.Carmine_D_hands,   --  8/11
-    feet=gear.Pursuer_A_feet,     -- __/10
+    hands=gear.Carmine_D_hands,   --  8/11 [__/__,  43]
+    feet=gear.Pursuer_A_feet,     -- __/10 [__/__,  69]
     -- 34 Snapshot / 73 Rapid Shot
+    
+    -- ammo=gear.RAbullet,
+    -- head="Chasseur's Tricorne +1", -- __/14 [__/__,  59]
+    -- body="Laksamana's Frac +3",    -- __/20 [__/__,  84]
+    -- hands=gear.Carmine_D_hands,    --  8/11 [__/__,  43]
+    -- legs=gear.Adhemar_D_legs,      -- 10/13 [__/__,  75]
+    -- feet=gear.Pursuer_A_feet,      -- __/10 [__/__,  69]
+    -- neck="Commodore Charm +1",     --  3/__ [__/__, ___]
+    -- ear1="Eabani Earring",         -- __/__ [__/__,   8]
+    -- ear2="Odnowa Earring +1",      -- __/__ [ 3/ 5, ___]
+    -- ring1="Crepuscular Ring",      --  3/__ [__/__, ___]
+    -- ring2="Defending Ring",        -- __/__ [10/10, ___]
+    -- back=gear.COR_SNP_Cape,        -- 10/__ [__/__, ___]; Respec with PDT
+    -- waist="Yemaya Belt",           -- __/ 5 [__/__, ___]
+    -- Merits/Traits/Gifts               10/30
+    -- Flurry 2                          30/__
+    -- 74 Snapshot / 103 Rapid Shot [13 PDT/15 MDT, 338 M.Eva]
+    
+    -- Ideal
+    -- ammo=gear.RAbullet,
+    -- head="Chasseur's Tricorne +2", -- __/16 [ 9/ 9,  99]
+    -- body="Laksamana's Frac +3",    -- __/20 [__/__,  84]
+    -- hands=gear.Carmine_D_hands,    --  8/11 [__/__,  43]
+    -- legs=gear.Adhemar_D_legs,      -- 10/13 [__/__,  75]
+    -- feet=gear.Pursuer_A_feet,      -- __/10 [__/__,  69]
+    -- neck="Commodore Charm +2",     --  4/__ [__/__, ___]; +1 also fine
+    -- ear1="Genmei Earring",         -- __/__ [ 2/__, ___]
+    -- ear2="Odnowa Earring +1",      -- __/__ [ 3/ 5, ___]
+    -- ring1="Gelatinous Ring +1",    -- __/__ [ 7/-1, ___]
+    -- ring2="Defending Ring",        -- __/__ [10/10, ___]
+    -- back=gear.COR_SNP_Cape,        -- 10/__ [10/__, ___]; Respec with PDT
+    -- waist="Flume Belt +1",         -- __/__ [ 4/__, ___]
+    -- Merits/Traits/Gifts               10/30
+    -- Flurry 2                          30/__
+    -- 72 Snapshot / 100 Rapid Shot [45 PDT/23 MDT, 370 M.Eva]
   })
 
 
@@ -742,39 +828,134 @@ function init_gear_sets()
 
   -- Ranged gear
   sets.midcast.RA = {
-    ammo=gear.RAbullet,             -- __ [__] 20/__ <_> {_} (__)
-    head="Ikenga's Hat",            -- 29 [ 8] 50/65 <_> {4} (__)
-    body="Ikenga's Vest",           -- 39 [11] 50/65 <_> {7} (__)
-    hands="Malignance Gloves",      -- 24 [12] 50/__ <_> {4} (__)
-    legs="Ikenga's Trousers",       -- 40 [10] 50/65 <_> {6} (__)
-    feet="Malignance Boots",        -- 49 [ 9] 50/__ <_> {2} (__)
-    neck="Iskur Gorget",            -- __ [ 8] 30/30 <_> {_} (__)
-    ear1="Enervating Earring",      -- __ [ 4]  7/ 7 <_> {_} (__)
-    ear2="Telos Earring",           -- __ [ 5] 10/10 <_> {_} (__)
-    ring1="Dingir Ring",            -- 10 [__] __/25 <_> {_} (10)
-    ring2="Ilabrat Ring",           -- 10 [ 5] __/__ <_> {_} (__)
-    back=gear.COR_RA_Cape,          -- 30 [10] 20/20 <_> {_} (__)
-    waist="Yemaya Belt",            --  7 [ 4] 10/10 <_> {_} (__)
-  } --238 AGI [86 STP] 347 racc / 297 ratt <0 crit> {23 dmg limit} (10 Recycle)
+    ammo=gear.RAbullet,               -- __, __, 20/__ <__> {_} (__) [__/__, ___]
+    head="Ikenga's Hat",              -- 29,  8, 50/65 <__> {4} (__) [__/__,  96]
+    body="Ikenga's Vest",             -- 39, 11, 50/65 <__> {7} (__) [__/__, 112]
+    hands="Malignance Gloves",        -- 24, 12, 50/__ <__> {4} (__) [ 5/ 5, 112]
+    legs="Ikenga's Trousers",         -- 40, 10, 50/65 <__> {6} (__) [ 9/ 9, 123]
+    feet="Malignance Boots",          -- 49,  9, 50/__ <__> {2} (__) [ 4/ 4, 150]
+    neck="Iskur Gorget",              -- __,  8, 30/30 <__> {_} (__) [__/__, ___]
+    ear1="Enervating Earring",        -- __,  4,  7/ 7 <__> {_} (__) [__/__, ___]
+    ear2="Telos Earring",             -- __,  5, 10/10 <__> {_} (__) [__/__, ___]
+    ring1="Dingir Ring",              -- 10, __, __/25 <__> {_} (10) [__/__, ___]
+    ring2="Ilabrat Ring",             -- 10,  5, __/__ <__> {_} (__) [__/__, ___]
+    back=gear.COR_RA_Cape,            -- 30, 10, 20/20 <__> {_} (__) [10/__, ___]
+    waist="Yemaya Belt",              --  7,  4, 10/10 <__> {_} (__) [__/__, ___]
+    -- Merits/Traits/Gifts                                      (58)
+  } -- 238 AGI, 86 STP, 347 racc/297 ratt <0 crit> {23 PDL} (68 Recycle) [28 PDT/18 MDT, 593 M.Eva]
   sets.midcast.RA.LowAcc = set_combine(sets.midcast.RA, {
-    ear1="Beyla Earring",           -- __ [__] 15/__ <_> {_} (__)
-    ring2="Crepuscular Ring",       -- __ [ 6] 10/__ <_> {_} (__)
-    -- ammo=gear.RAccbullet,        -- __ [__] 35/__ <_> {_} (__)
-    --228 AGI [83 STP] 380 racc / 290 ratt <0 crit> {23 dmg limit} (10 Recycle)
+    ear1="Beyla Earring",             -- __, __, 15/__ <__> {_} (__) [__/__, ___]
+    ring2="Crepuscular Ring",         -- __,  6, 10/__ <__> {_} (__) [__/__, ___]
+    -- ammo=gear.RAccbullet,          -- __, __, 35/__ <__> {_} (__) [__/__, ___]
+    -- 228 AGI, 83 STP, 380 racc/290 ratt <0 crit> {23 PDL} (68 Recycle) [28 PDT/18 MDT, 593 M.Eva]
   })
   sets.midcast.RA.MidAcc = set_combine(sets.midcast.RA.LowAcc, {
-    body="Malignance Tabard",       -- 42 [11] 50/__ <_> {6} (__)
-    legs=gear.Adhemar_C_legs,       -- 42 [ 8] 54/20 <_> {_} (16)
-    ring1="Hajduk Ring +1",         -- __ [__] 17/__ <_> {_} (__)
-    --223 AGI [81 STP] 401 racc / 155 ratt <0 crit> {16 dmg limit} (16 Recycle)
+    body="Malignance Tabard",         -- 42, 11, 50/__ <__> {6} (__) [ 9/ 9, 139]
+    legs=gear.Adhemar_C_legs,         -- 42,  8, 54/20 <__> {_} (16) [__/__,  75]
+    ring1="Hajduk Ring +1",           -- __, __, 17/__ <__> {_} (__) [__/__, ___]
+    -- 223 AGI, 81 STP, 401 racc/155 ratt <0 crit> {16 PDL} (74 Recycle) [28 PDT/18 MDT, 572 M.Eva]
   })
   sets.midcast.RA.HighAcc = set_combine(sets.midcast.RA.MidAcc, {
-    waist="Kwahu Kachina Belt +1",  --  8 [__] 20/__ <5> {_} (__)
-    -- body="Laksamana's Frac +3",  -- 45 [__] 57/35 <_> {_} (19)
-    -- legs="Laksamana's Trews +3", -- 33 [__] 49/__ <_> {_} (__)
-    -- AF set bonus                 -- __ [__] 15/__ <_> {_} (__)
-    --218 AGI [58 STP] 428 racc / 160 ratt <5 crit> {10 dmg limit} (19 Recycle)
+    waist="Kwahu Kachina Belt +1",    --  8, __, 20/__ < 5> {_} (__) [__/__, ___]
+    -- body="Laksamana's Frac +3",    -- 45, __, 57/35 <__> {_} (19) [__/__,  84]
+    -- legs="Laksamana's Trews +3",   -- 33, __, 49/__ <__> {_} (__) [__/__,  89]
+    -- AF set bonus                   -- __, __, 15/__ <__> {_} (__) [__/__, ___]
+    -- 218 AGI, 58 STP, 428 racc/160 ratt <5 crit> {10 PDL} (77 Recycle) [19 PDT/9 MDT, 531 M.Eva]
   })
+
+  sets.midcast.RA.Critical = {
+    ammo=gear.RAbullet,               -- __, __, 20/__ <__> {_} (__) [__/__, ___]
+    head="Ikenga's Hat",              -- 29,  8, 50/65 <__> {4} (__) [__/__,  96]
+    body="Ikenga's Vest",             -- 39, 11, 50/65 <__> {7} (__) [__/__, 112]
+    hands="Mummu Wrists +2",          -- 22, __, 43/__ < 6> {_} (__) [__/__,  43]
+    legs="Mummu Kecks +2",            -- 45, __, 45/__ < 7> {_} (__) [ 5/ 5, 107]
+    feet="Oshosi Leggings +1",        -- 56, __, 43/__ <10> {_} (__) [__/__, 131]
+    neck="Iskur Gorget",              -- __,  8, 30/30 <__> {_} (__) [__/__, ___]
+    ear1="Odr Earring",               -- __, __, __/__ < 5> {_} (__) [__/__, ___]
+    ear2="Telos Earring",             -- __,  5, 10/10 <__> {_} (__) [__/__, ___]
+    ring1="Begrudging Ring",          -- __, __, __/__ < 5> {_} (__)[-10/__, ___]
+    ring2="Ilabrat Ring",             -- 10,  5, __/__ <__> {_} (__) [__/__, ___]
+    back=gear.COR_RA_Cape,            -- 30, 10, 20/20 <__> {_} (__) [10/__, ___]
+    waist="K. Kachina Belt +1",       --  8, __, 20/__ < 5> {_} (__) [__/__, ___]
+    -- Merits/Traits/Gifts                                      (58)
+    -- 239 AGI, 47 STP, 331 racc/190 ratt <38 crit rate> {11 PDL} (58 Recycle) [5 PDT/5 MDT, 489 M.Eva]
+    
+    -- ammo=gear.RAbullet,            -- __, __, 20/__ <__> {_} (__) [__/__, ___]
+    -- head="Ikenga's Hat",           -- 29,  8, 50/65 <__> {4} (__) [__/__,  96]
+    -- body="Ikenga's Vest",          -- 39, 11, 50/65 <__> {7} (__) [__/__, 112]
+    -- hands="Chasseur's Gants +2",   -- 21, __, 52/52 < 7> {_} (__) [__/__,  83]
+    -- legs="Mummu Kecks +2",         -- 45, __, 45/__ < 7> {_} (__) [ 5/ 5, 107]
+    -- feet="Oshosi Leggings +1",     -- 56, __, 43/__ <10> {_} (__) [__/__, 131]
+    -- neck="Iskur Gorget",           -- __,  8, 30/30 <__> {_} (__) [__/__, ___]
+    -- ear1="Odr Earring",            -- __, __, __/__ < 5> {_} (__) [__/__, ___]
+    -- ear2="Telos Earring",          -- __,  5, 10/10 <__> {_} (__) [__/__, ___]
+    -- ring1="Begrudging Ring",       -- __, __, __/__ < 5> {_} (__)[-10/__, ___]
+    -- ring2="Mummu Ring",            -- __, __,  6/__ < 3> {_} (__) [__/__, ___]
+    -- back=gear.COR_RA_Cape,         -- 30, 10, 20/20 <__> {_} (__) [10/__, ___]
+    -- waist="K. Kachina Belt +1",    --  8, __, 20/__ < 5> {_} (__) [__/__, ___]
+    -- Merits/Traits/Gifts                                      (58)
+    -- 228 AGI, 42 STP, 346 racc/242 ratt <42 crit rate> {11 PDL} (58 Recycle) [5 PDT/5 MDT, 529 M.Eva]
+  }
+
+  -- 60% from traits/gifts
+  sets.TripleShot = {
+    ammo=gear.RAbullet,               -- __, __, 20/__ <__> {_} (__) [__/__, ___] (__, __) (__, __)
+    head="Oshosi Mask +1",            -- 44, __, 45/__ <__> {_} (__) [__/__,  90] ( 6, 25) ( 5, 13)
+    body="Chasseur's Frac +1",        -- 34, __, 22/22 <__> {_} (__) [__/__,  69] (__, __) (12, __)
+    hands="Malignance Gloves",        -- 24, 12, 50/__ <__> {4} (__) [ 5/ 5, 112] (__, __) (__, __)
+    legs="Oshosi Trousers +1",        -- 43, __, 46/__ <__> {_} (__) [__/__, 131] ( 7, __) ( 6, __)
+    feet="Oshosi Leggings +1",        -- 56, __, 43/__ <10> {_} (__) [__/__, 131] ( 4, __) ( 3, __)
+    neck="Iskur Gorget",              -- __,  8, 30/30 <__> {_} (__) [__/__, ___] (__, __) (__, __)
+    ear1="Enervating Earring",        -- __,  4,  7/ 7 <__> {_} (__) [__/__, ___] (__, __) (__, __)
+    ear2="Telos Earring",             -- __,  5, 10/10 <__> {_} (__) [__/__, ___] (__, __) (__, __)
+    ring1="Dingir Ring",              -- 10, __, __/25 <__> {_} (10) [__/__, ___] (__, __) (__, __)
+    ring2="Ilabrat Ring",             -- 10,  5, __/__ <__> {_} (__) [__/__, ___] (__, __) (__, __)
+    back=gear.COR_RA_Cape,            -- 30, 10, 20/20 <__> {_} (__) [10/__, ___] (__, __) ( 5, __)
+    waist="Yemaya Belt",              --  7,  4, 10/10 <__> {_} (__) [__/__, ___] (__, __) (__, __)
+    -- JA                                                                                  (40, __)
+    -- Merits/Traits/Gifts                                      (58)                       (20, __)
+    -- 258 AGI, 48 STP, 303 racc/124 ratt <10 crit> {4 PDL} (68 Recycle) [15 PDT/5 MDT, 533 M.Eva] (17 DS Rate, 25 DS Dmg) (91 TS Rate, 13 TS Dmg)
+
+    -- body="Chasseur's Frac +2",     -- 44, __, 54/64 <__> {_} (__) [12/12, 109] (__, __) (13, __)
+    -- hands="Lanun Gants +3",        -- 22, __, 44/76 <__> {_} (__) [__/__,  84] (__, __) (__, __); Occ. Quad Shot
+    -- 266 AGI, 36 STP, 329 racc/242 ratt <10 crit> {0 PDL} (68 Recycle) [22 PDT/12 MDT, 545 M.Eva] (17 DS Rate, 25 DS Dmg) (92 TS Rate, 13 TS Dmg)
+  }
+
+  sets.TripleShot.Critical = {
+    ammo=gear.RAbullet,               -- __, __, 20/__ <__> {_} (__) [__/__, ___] (__, __) (__, __)
+    head="Oshosi Mask +1",            -- 44, __, 45/__ <__> {_} (__) [__/__,  90] ( 6, 25) ( 5, 13)
+    body="Chasseur's Frac +1",        -- 34, __, 22/22 <__> {_} (__) [__/__,  69] (__, __) (12, __)
+    hands="Mummu Wrists +2",          -- 22, __, 43/__ < 6> {_} (__) [__/__,  43] (__, __) (__, __)
+    legs="Mummu Kecks +2",            -- 45, __, 45/__ < 7> {_} (__) [ 5/ 5, 107] (__, __) (__, __)
+    feet="Oshosi Leggings +1",        -- 56, __, 43/__ <10> {_} (__) [__/__, 131] ( 4, __) ( 3, __)
+    neck="Iskur Gorget",              -- __,  8, 30/30 <__> {_} (__) [__/__, ___] (__, __) (__, __)
+    ear1="Odr Earring",               -- __, __, __/__ < 5> {_} (__) [__/__, ___] (__, __) (__, __)
+    ear2="Telos Earring",             -- __,  5, 10/10 <__> {_} (__) [__/__, ___] (__, __) (__, __)
+    ring1="Begrudging Ring",          -- __, __, __/__ < 5> {_} (__)[-10/__, ___] (__, __) (__, __)
+    ring2="Ilabrat Ring",             -- 10,  5, __/__ <__> {_} (__) [__/__, ___] (__, __) (__, __)
+    back=gear.COR_RA_Cape,            -- 30, 10, 20/20 <__> {_} (__) [10/__, ___] (__, __) ( 5, __)
+    waist="K. Kachina Belt +1",       --  8, __, 20/__ < 5> {_} (__) [__/__, ___] (__, __) (__, __)
+    -- JA                                                                                  (40, __)
+    -- Merits/Traits/Gifts                                      (58)                       (20, __)
+    -- 249 AGI, 28 STP, 298 racc/82 ratt <38 crit> {0 PDL} (58 Recycle) [5 PDT/5 MDT, 440 M.Eva] (10 DS Rate, 25 DS Dmg) (85 TS Rate, 13 TS Dmg)
+    
+    -- ammo=gear.RAbullet,            -- __, __, 20/__ <__> {_} (__) [__/__, ___] (__, __) (__, __)
+    -- head="Oshosi Mask +1",         -- 44, __, 45/__ <__> {_} (__) [__/__,  90] ( 6, 25) ( 5, 13)
+    -- body="Chasseur's Frac +2",     -- 44, __, 54/64 <__> {_} (__) [12/12, 109] (__, __) (13, __)
+    -- hands="Chasseur's Gants +2",   -- 21, __, 52/52 < 7> {_} (__) [__/__,  83] (__, __) (__, __)
+    -- legs="Mummu Kecks +2",         -- 45, __, 45/__ < 7> {_} (__) [ 5/ 5, 107] (__, __) (__, __)
+    -- feet="Oshosi Leggings +1",     -- 56, __, 43/__ <10> {_} (__) [__/__, 131] ( 4, __) ( 3, __)
+    -- neck="Iskur Gorget",           -- __,  8, 30/30 <__> {_} (__) [__/__, ___] (__, __) (__, __)
+    -- ear1="Odr Earring",            -- __, __, __/__ < 5> {_} (__) [__/__, ___] (__, __) (__, __)
+    -- ear2="Telos Earring",          -- __,  5, 10/10 <__> {_} (__) [__/__, ___] (__, __) (__, __)
+    -- ring1="Begrudging Ring",       -- __, __, __/__ < 5> {_} (__)[-10/__, ___] (__, __) (__, __)
+    -- ring2="Mummu Ring",            -- __, __,  6/__ < 3> {_} (__) [__/__, ___] (__, __) (__, __)
+    -- back=gear.COR_RA_Cape,         -- 30, 10, 20/20 <__> {_} (__) [10/__, ___] (__, __) ( 5, __)
+    -- waist="K. Kachina Belt +1",    --  8, __, 20/__ < 5> {_} (__) [__/__, ___] (__, __) (__, __)
+    -- JA                                                                                  (40, __)
+    -- Merits/Traits/Gifts                                      (58)                       (20, __)
+    -- 248 AGI, 23 STP, 345 racc/176 ratt <42 crit> {0 PDL} (58 Recycle) [17 PDT/17 MDT, 520 M.Eva] (10 DS Rate, 25 DS Dmg) (86 TS Rate, 13 TS Dmg)
+  }
 
   -- Dmg is based on Gun DMG, bullet DMG, Quick Draw+ stat, elemental bonuses, MAB.
   -- Acc is based on AGI & M.Acc only.
@@ -846,41 +1027,10 @@ function init_gear_sets()
   } -- 248 AGI, 44 MAB, 363 M.Acc, 41 STP, 38PDT/28MDT
   sets.midcast.CorsairShot['Dark Shot'] = sets.midcast.CorsairShot['Light Shot']
 
-  -- High dmg, but with empy feet for enhancement effect; and more recast reduction
+  -- Empy feet for enhancement effect; and more recast reduction
   sets.midcast.CorsairShot.Enhance = {
     head="Blood Mask", -- Recast -5
     feet="Chasseur's Bottes +1",
-  }
-
-  sets.midcast.RA.Critical = set_combine(sets.midcast.RA, {
-    body="Meg. Cuirie +2",
-    hands="Mummu Wrists +2",
-    legs="Mummu Kecks +2",
-    feet="Oshosi Leggings +1",
-    ear1="Odr Earring",
-    ring1="Begrudging Ring",
-    waist="K. Kachina Belt +1",
-    -- legs="Darraigner's Brais",
-    -- ring2="Mummu Ring",
-  })
-
-  -- 60% from traits/gifts
-  sets.TripleShot = {
-    head="Oshosi Mask +1", --5
-    body="Chasseur's Frac +1", --12
-    legs="Oshosi Trousers +1", --6
-    feet="Oshosi Leggings +1", --3
-    back=gear.COR_RA_Cape, --5
-    -- hands="Lanun Gants +3",
-  } --31
-
-  sets.TripleShot.Critical = {
-    hands="Mummu Wrists +2",
-    feet="Oshosi Leggings +1", --3
-    ear1="Odr Earring",
-    ring1="Begrudging Ring",
-    waist="K. Kachina Belt +1",
-    -- ring2="Mummu Ring",
   }
 
   sets.midcast.Cure = {
@@ -897,14 +1047,17 @@ function init_gear_sets()
   ---------------------------------------- Defense Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
 
-  sets.LightDef = {
-    head="Malignance Chapeau",    --  6/ 6, 123
-    body="Malignance Tabard",     --  9/ 9, 139
-    hands="Malignance Gloves",    --  5/ 5, 112
-    legs="Malignance Tights",     --  7/ 7, 150
-    feet="Malignance Boots",      --  4/ 4, 150
-    ring2="Defending Ring",       -- 10/10, ___
+  sets.HybridDT = {
+    head="Malignance Chapeau",        --  6/ 6, 123
+    body="Malignance Tabard",         --  9/ 9, 139
+    hands="Malignance Gloves",        --  5/ 5, 112
+    legs="Malignance Tights",         --  7/ 7, 150
+    feet="Malignance Boots",          --  4/ 4, 150
+    ring2="Defending Ring",           -- 10/10, ___
     -- 10 PDT from JSE cape
+
+    -- legs="Chasseur's Culottes +2", -- 11/11, 115; Remove feet
+    -- 55 PDT / 45 MDT, 639 MEVA
   } -- 51 PDT / 41 MDT, 674 MEVA
 
   sets.HeavyDef = {
@@ -919,7 +1072,7 @@ function init_gear_sets()
     ring1="Chirich Ring +1",    -- __/__, ___
     ring2="Defending Ring",     -- 10/10, ___
     back=gear.COR_TP_Cape,      -- 10/__, ___
-    waist="Carrier's Sash",      -- __/__, ___; Ele Resist+15
+    waist="Carrier's Sash",     -- __/__, ___; Ele Resist+15
   } -- 60 PDT / 52 MDT, 697 MEVA
 
   sets.defense.PDT = sets.HeavyDef
@@ -965,18 +1118,18 @@ function init_gear_sets()
   sets.idle.Regain.Regen.Refresh = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh)
   sets.idle.Regain.Regen.RefreshSub50 = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh_sub50)
 
-  sets.idle.LightDef = set_combine(sets.idle, sets.LightDef)
-  sets.idle.LightDef.Regain = set_combine(sets.idle.Regain, sets.LightDef)
-  sets.idle.LightDef.Regen = set_combine(sets.idle.Regen, sets.LightDef)
-  sets.idle.LightDef.Refresh = set_combine(sets.idle.Refresh, sets.LightDef)
-  sets.idle.LightDef.RefreshSub50 = set_combine(sets.idle.RefreshSub50, sets.LightDef)
-  sets.idle.LightDef.Regain.Regen = set_combine(sets.idle.Regain.Regen, sets.LightDef)
-  sets.idle.LightDef.Regain.Refresh = set_combine(sets.idle.Regain.Refresh, sets.LightDef)
-  sets.idle.LightDef.Regain.RefreshSub50 = set_combine(sets.idle.Regain.RefreshSub50, sets.LightDef)
-  sets.idle.LightDef.Regen.Refresh = set_combine(sets.idle.Regen.Refresh, sets.LightDef)
-  sets.idle.LightDef.Regen.RefreshSub50 = set_combine(sets.idle.Regen.RefreshSub50, sets.LightDef)
-  sets.idle.LightDef.Regain.Regen.Refresh = set_combine(sets.idle.Regain.Regen.Refresh, sets.LightDef)
-  sets.idle.LightDef.Regain.Regen.RefreshSub50 = set_combine(sets.idle.Regain.Regen.RefreshSub50, sets.LightDef)
+  sets.idle.HeavyDef = set_combine(sets.idle, sets.HybridDT)
+  sets.idle.HeavyDef.Regain = set_combine(sets.idle.Regain, sets.HybridDT)
+  sets.idle.HeavyDef.Regen = set_combine(sets.idle.Regen, sets.HybridDT)
+  sets.idle.HeavyDef.Refresh = set_combine(sets.idle.Refresh, sets.HybridDT)
+  sets.idle.HeavyDef.RefreshSub50 = set_combine(sets.idle.RefreshSub50, sets.HybridDT)
+  sets.idle.HeavyDef.Regain.Regen = set_combine(sets.idle.Regain.Regen, sets.HybridDT)
+  sets.idle.HeavyDef.Regain.Refresh = set_combine(sets.idle.Regain.Refresh, sets.HybridDT)
+  sets.idle.HeavyDef.Regain.RefreshSub50 = set_combine(sets.idle.Regain.RefreshSub50, sets.HybridDT)
+  sets.idle.HeavyDef.Regen.Refresh = set_combine(sets.idle.Regen.Refresh, sets.HybridDT)
+  sets.idle.HeavyDef.Regen.RefreshSub50 = set_combine(sets.idle.Regen.RefreshSub50, sets.HybridDT)
+  sets.idle.HeavyDef.Regain.Regen.Refresh = set_combine(sets.idle.Regain.Regen.Refresh, sets.HybridDT)
+  sets.idle.HeavyDef.Regain.Regen.RefreshSub50 = set_combine(sets.idle.Regain.Regen.RefreshSub50, sets.HybridDT)
 
   sets.idle.Weak = set_combine(sets.HeavyDef, {
     neck="Loricate Torque +1",  --  6/ 6, ___
@@ -996,295 +1149,740 @@ function init_gear_sets()
 
   sets.engaged = {
     ammo=gear.RAbullet,
-    head=gear.Adhemar_B_head,
-    body=gear.Adhemar_B_body,
-    hands=gear.Adhemar_B_hands,
-    legs=gear.Samnuha_legs,
-    feet=gear.Herc_TA_feet,
-    neck="Iskur Gorget",
-    ear1="Cessance Earring",
-    ear2="Brutal Earring",
-    ring1="Epona's Ring",
-    ring2="Petrov Ring",
-    back=gear.COR_TP_Cape,
-    waist="Windbuffet Belt +1",
-  }
+    head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
+    body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
+    hands=gear.Adhemar_B_hands,       -- __,  7, 32 <__,  4, __> [__/__,  43]
+    legs=gear.Samnuha_legs,           -- __,  7, 15 < 3,  3, __> [__/__,  75]
+    feet=gear.Herc_TA_feet,           -- __, __, 23 <__,  6, __> [ 2/__,  75]
+    neck="Iskur Gorget",              -- __,  8, __ <__, __, __> [__/__, ___]
+    ear1="Cessance Earring",          -- __,  3,  6 < 3, __, __> [__/__, ___]
+    ear2="Brutal Earring",            -- __,  1, __ < 5, __, __> [__/__, ___]
+    ring1="Epona's Ring",             -- __, __, __ < 3,  3, __> [__/__, ___]
+    ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
+    back=gear.COR_TP_Cape,            -- __, __, 20 <10, __, __> [10/__, ___]
+    waist="Windbuffet Belt +1",       -- __, __,  2 <__,  2,  2> [__/__, ___]
+  } -- 0 DW, 45 STP, 198 Acc <24 DA, 18 TA, 2 QA> [37 PDT/25 MDT, 455 M.Eva]
   sets.engaged.LowAcc = set_combine(sets.engaged, {
-    head="Dampening Tam",
-    ring1="Chirich Ring +1",
-    -- hands=gear.Adhemar_A_hands,
-    -- neck="Combatant's Torque",
+    feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
+    ring1="Chirich Ring +1",          -- __,  6, 10 <__, __, __> [__/__, ___]
+    -- hands=gear.Adhemar_A_hands,    -- __,  7, 52 <__,  4, __> [__/__,  43]
+    -- 0 DW, 60 STP, 255 Acc <21 DA, 9 TA, 2 QA> [39 PDT/29 MDT, 530 M.Eva]
   })
   sets.engaged.MidAcc = set_combine(sets.engaged.LowAcc, {
-    ear2="Telos Earring",
-    waist="Kentarch Belt +1",
+    ear2="Telos Earring",             -- __,  5, 10 < 1, __, __> [__/__, ___]
+    waist="Kentarch Belt +1",         -- __,  5, 14 < 3, __, __> [__/__, ___]
+    -- 0 DW, 69 STP, 277 Acc <20 DA, 7 TA, 0 QA> [39 PDT/29 MDT, 530 M.Eva]
   })
   sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
-    ear1="Dignitary's Earring",
-    ear2="Telos Earring",
-    waist="Olseni Belt",
-    -- head="Carmine Mask +1",
-    -- ear1="Mache Earring +1",
-    -- ring2="Chirich Ring +1",
+    ear1="Dignitary's Earring",       -- __,  3, 10 <__, __, __> [__/__, ___]
+    waist="Olseni Belt",              -- __,  3, 20 <__, __, __> [__/__, ___]
+    -- legs="Chasseur's Culottes +2", -- __, 11, 53 <__, __, __> [11/11, 115]
+    -- 0 DW, 71 STP, 325 Acc <11 DA, 4 TA, 0 QA> [50 PDT/40 MDT, 570 M.Eva]
   })
 
 
   -- * DNC Subjob DW Trait: +15%
-  -- * NIN Subjob DW Trait: +25%
+  -- * NIN Subjob DW Trait: +25% (assumed)
 
   -- No Magic/Gear/JA Haste (74% DW to cap, 49% from gear)
   sets.engaged.DW = {
     ammo=gear.RAbullet,
-    head=gear.Adhemar_B_head,
-    body=gear.Adhemar_B_body, --6
-    hands="Floral Gauntlets", --5
-    legs=gear.Carmine_D_legs, --6
-    feet=gear.Taeon_DW_feet, --9
-    neck="Iskur Gorget",
-    ear1="Suppanomimi", --5
-    ear2="Brutal Earring",
-    ring1="Epona's Ring",
-    ring2="Petrov Ring",
-    back=gear.COR_DW_Cape, --10
-    waist="Reiki Yotai", --7
-  } -- 48%
+    head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
+    body=gear.Adhemar_B_body,         --  6, __, 35 <__,  4, __> [__/__,  69]
+    hands="Floral Gauntlets",         --  5, __, 36 <__,  3, __> [__/ 4,  37]
+    legs=gear.Carmine_D_legs,         --  6, __, 55 <__, __, __> [__/__,  80]
+    feet=gear.Taeon_DW_feet,          --  9, __, 22 <__, __, __> [__/__,  69]
+    neck="Iskur Gorget",              -- __,  8, __ <__, __, __> [__/__, ___]
+    ear1="Suppanomimi",               --  5, __, __ <__, __, __> [__/__, ___]
+    ear2="Dedition Earring",          -- __,  8,-10 <__, __, __> [__/__, ___]
+    ring1="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
+    ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
+    back=gear.COR_DW_Cape,            -- 10, __, 20 <__, __, __> [10/__, ___]
+    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
+    -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
+    -- 73 DW, 28 STP, 218 Acc <0 DA, 7 TA, 0 QA> [33 PDT/19 MDT, 378 MEVA]
+  }
   sets.engaged.DW.LowAcc = set_combine(sets.engaged.DW, {
-    head="Dampening Tam",
-    ring1="Chirich Ring +1",
+    ring1="Chirich Ring +1",          -- __,  6, 10 <__, __, __> [__/__, ___]
     -- neck="Combatant's Torque",
   })
   sets.engaged.DW.MidAcc = set_combine(sets.engaged.DW.LowAcc, {
-    ear1="Cessance Earring",
-    ear2="Telos Earring",
-    waist="Kentarch Belt +1",
-    -- hands=gear.Adhemar_A_hands,
+    ear1="Cessance Earring",          -- __,  3,  6 < 3, __, __> [__/__, ___]
+    ear2="Telos Earring",             -- __,  5, 10 < 1, __, __> [__/__, ___]
+    waist="Kentarch Belt +1",         -- __,  5, 14 < 3, __, __> [__/__, ___]
+    -- hands=gear.Adhemar_A_hands,    -- __,  7, 52 <__,  4, __> [__/__,  43]
   })
   sets.engaged.DW.HighAcc = set_combine(sets.engaged.DW.MidAcc, {
-    ear1="Dignitary's Earring",
-    ear2="Telos Earring",
+    ear1="Dignitary's Earring",       -- __,  3, 10 <__, __, __> [__/__, ___]
+    ear2="Telos Earring",             -- __,  5, 10 < 1, __, __> [__/__, ___]
     -- head="Carmine Mask +1",
     -- ear1="Mache Earring +1",
-    -- ring2="Chirich Ring +1",
+    -- ring2="Chirich Ring +1",       -- __,  6, 10 <__, __, __> [__/__, ___]
   })
 
   -- Low Magic/Gear/JA Haste (67% DW to cap, 42% from gear)
   sets.engaged.DW.LowHaste = {
     ammo=gear.RAbullet,
-    head=gear.Adhemar_B_head,
-    body=gear.Adhemar_B_body, --6
-    hands=gear.Adhemar_B_hands,
-    legs=gear.Carmine_D_legs, --6
-    feet=gear.Taeon_DW_feet, --9
-    neck="Iskur Gorget",
-    ear1="Cessance Earring",
-    ear2="Eabani Earring", --4
-    ring1="Epona's Ring",
-    ring2="Petrov Ring",
-    back=gear.COR_DW_Cape, --10
-    waist="Reiki Yotai", --7
-  } -- 42%
+    head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
+    body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
+    hands="Floral Gauntlets",         --  5, __, 36 <__,  3, __> [__/ 4,  37]
+    legs=gear.Carmine_D_legs,         --  6, __, 55 <__, __, __> [__/__,  80]
+    feet=gear.Taeon_DW_feet,          --  9, __, 22 <__, __, __> [__/__,  69]
+    neck="Iskur Gorget",              -- __,  8, __ <__, __, __> [__/__, ___]
+    ear1="Suppanomimi",               --  5, __, __ <__, __, __> [__/__, ___]
+    ear2="Dedition Earring",          -- __,  8,-10 <__, __, __> [__/__, ___]
+    ring1="Epona's Ring",             -- __, __, __ < 3,  3, __> [__/__, ___]
+    ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
+    back=gear.COR_DW_Cape,            -- 10, __, 20 <__, __, __> [10/__, ___]
+    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
+    -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
+    -- 67 DW, 39 STP, 233 Acc <3 DA, 6 TA, 0 QA> [35 PDT/29 MDT, 448 MEVA]
+  }
   sets.engaged.DW.LowAcc.LowHaste = set_combine(sets.engaged.DW.LowHaste, {
-    head="Dampening Tam",
-    ring1="Chirich Ring +1",
+    ring1="Chirich Ring +1",          -- __,  6, 10 <__, __, __> [__/__, ___]
     -- neck="Combatant's Torque",
   })
   sets.engaged.DW.MidAcc.LowHaste = set_combine(sets.engaged.DW.LowAcc.LowHaste, {
-    ear2="Telos Earring",
-    waist="Kentarch Belt +1",
-    -- hands=gear.Adhemar_A_hands,
+    ear2="Telos Earring",             -- __,  5, 10 < 1, __, __> [__/__, ___]
+    waist="Kentarch Belt +1",         -- __,  5, 14 < 3, __, __> [__/__, ___]
+    -- hands=gear.Adhemar_A_hands,    -- __,  7, 52 <__,  4, __> [__/__,  43]
   })
   sets.engaged.DW.HighAcc.LowHaste = set_combine(sets.engaged.DW.MidAcc.LowHaste, {
-    ear1="Dignitary's Earring",
-    ear2="Telos Earring",
+    ear1="Dignitary's Earring",       -- __,  3, 10 <__, __, __> [__/__, ___]
+    ear2="Telos Earring",             -- __,  5, 10 < 1, __, __> [__/__, ___]
     -- head="Carmine Mask +1",
     -- ear1="Mache Earring +1",
-    -- ring2="Chirich Ring +1",
+    -- ring2="Chirich Ring +1",       -- __,  6, 10 <__, __, __> [__/__, ___]
   })
 
   -- Mid Magic/Gear/JA Haste (56% DW to cap, 31% from gear)
   sets.engaged.DW.MidHaste = {
     ammo=gear.RAbullet,
-    head=gear.Adhemar_B_head,
-    body=gear.Adhemar_B_body, --6
-    hands=gear.Adhemar_B_hands,
-    legs=gear.Samnuha_legs,
-    feet=gear.Taeon_DW_feet, --9
-    neck="Iskur Gorget",
-    ear1="Suppanomimi", --5
-    ear2="Eabani Earring", --4
-    ring1="Epona's Ring",
-    ring2="Petrov Ring",
-    back=gear.COR_TP_Cape,
-    waist="Reiki Yotai", --7
-  } -- 31%
+    head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
+    body=gear.Adhemar_B_body,         --  6, __, 35 <__,  4, __> [__/__,  69]
+    hands=gear.Adhemar_B_hands,       -- __,  7, 32 <__,  4, __> [__/__,  43]
+    legs="Malignance Tights",         -- __, 10, 50 <__, __, __> [ 7/ 7, 150]
+    feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
+    neck="Iskur Gorget",              -- __,  8, __ <__, __, __> [__/__, ___]
+    ear1="Suppanomimi",               --  5, __, __ <__, __, __> [__/__, ___]
+    ear2="Eabani Earring",            --  4, __, __ <__, __, __> [__/__,   8]
+    ring1="Epona's Ring",             -- __, __, __ < 3,  3, __> [__/__, ___]
+    ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
+    back=gear.COR_DW_Cape,            -- 10, __, 20 <__, __, __> [10/__, ___]
+    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
+    -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
+    -- 57 DW, 46 STP, 247 Acc <3 DA, 11 TA, 0 QA> [37 PDT/27 MDT, 543 MEVA]
+
+    -- legs="Chasseur's Culottes +2", -- __, 11, 53 <__, __, __> [11/11, 115]
+    -- feet=gear.Herc_TA_feet,        -- __, __, 23 <__,  6, __> [ 2/__,  75]
+    -- 57 DW, 38 STP, 223 Acc <3 DA, 17 TA, 0 QA> [39 PDT/27 MDT, 433 MEVA]
+  }
   sets.engaged.DW.LowAcc.MidHaste = set_combine(sets.engaged.DW.MidHaste, {
-    head="Dampening Tam",
-    ring1="Chirich Ring +1",
-    -- hands=gear.Adhemar_A_hands,
+    ring1="Chirich Ring +1",          -- __,  6, 10 <__, __, __> [__/__, ___]
+    -- hands=gear.Adhemar_A_hands,    -- __,  7, 52 <__,  4, __> [__/__,  43]
     -- neck="Combatant's Torque",
   })
   sets.engaged.DW.MidAcc.MidHaste = set_combine(sets.engaged.DW.LowAcc.MidHaste, {
     legs="Meg. Chausses +2",
-    ear2="Telos Earring",
-    waist="Kentarch Belt +1",
+    ear2="Telos Earring",             -- __,  5, 10 < 1, __, __> [__/__, ___]
+    waist="Kentarch Belt +1",         -- __,  5, 14 < 3, __, __> [__/__, ___]
   })
   sets.engaged.DW.HighAcc.MidHaste = set_combine(sets.engaged.DW.MidAcc.MidHaste, {
-    legs=gear.Carmine_D_legs, --6
-    ear1="Dignitary's Earring",
-    ear2="Telos Earring",
+    legs=gear.Carmine_D_legs,         --  6, __, 55 <__, __, __> [__/__,  80]
+    ear1="Dignitary's Earring",       -- __,  3, 10 <__, __, __> [__/__, ___]
+    ear2="Telos Earring",             -- __,  5, 10 < 1, __, __> [__/__, ___]
     -- head="Carmine Mask +1",
     -- ear1="Mache Earring +1",
-    -- ring2="Chirich Ring +1",
+    -- ring2="Chirich Ring +1",       -- __,  6, 10 <__, __, __> [__/__, ___]
   })
 
   -- High Magic/Gear/JA Haste (43% DW to cap, 18% from gear)
   sets.engaged.DW.HighHaste = {
     ammo=gear.RAbullet,
-    head=gear.Adhemar_B_head,
-    body=gear.Adhemar_B_body, --6
-    hands=gear.Adhemar_B_hands,
-    legs=gear.Samnuha_legs,
-    feet=gear.Herc_TA_feet,
-    neck="Iskur Gorget",
-    ear1="Suppanomimi", --5
-    ear2="Brutal Earring",
-    ring1="Epona's Ring",
-    ring2="Petrov Ring",
-    back=gear.COR_TP_Cape,
-    waist="Reiki Yotai", --7
-  } -- 18%
+    head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
+    body=gear.Adhemar_B_body,         --  6, __, 35 <__,  4, __> [__/__,  69]
+    hands=gear.Adhemar_B_hands,       -- __,  7, 32 <__,  4, __> [__/__,  43]
+    legs="Malignance Tights",         -- __, 10, 50 <__, __, __> [ 7/ 7, 150]
+    feet=gear.Herc_TA_feet,           -- __, __, 23 <__,  6, __> [ 2/__,  75]
+    neck="Iskur Gorget",              -- __,  8, __ <__, __, __> [__/__, ___]
+    ear1="Suppanomimi",               --  5, __, __ <__, __, __> [__/__, ___]
+    ear2="Brutal Earring",            -- __,  1, __ < 5, __, __> [__/__, ___]
+    ring1="Epona's Ring",             -- __, __, __ < 3,  3, __> [__/__, ___]
+    ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
+    back=gear.COR_TP_Cape,            -- __, __, 20 <10, __, __> [10/__, ___]
+    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
+    -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
+    -- 43 DW, 38 STP, 220 Acc <18 DA, 17 TA, 0 QA> [35 PDT/23 MDT, 460 MEVA]
+
+    -- legs="Chasseur's Culottes +2", -- __, 11, 53 <__, __, __> [11/11, 115]
+    -- 43 DW, 39 STP, 223 Acc <18 DA, 17 TA, 0 QA> [39 PDT/27 MDT, 425 MEVA]
+  }
   sets.engaged.DW.LowAcc.HighHaste = set_combine(sets.engaged.DW.HighHaste, {
-    head="Dampening Tam",
-    ring1="Chirich Ring +1",
-    -- hands=gear.Adhemar_A_hands,
+    ring1="Chirich Ring +1",          -- __,  6, 10 <__, __, __> [__/__, ___]
+    -- hands=gear.Adhemar_A_hands,    -- __,  7, 52 <__,  4, __> [__/__,  43]
     -- neck="Combatant's Torque",
   })
   sets.engaged.DW.MidAcc.HighHaste = set_combine(sets.engaged.DW.LowAcc.HighHaste, {
     legs="Meg. Chausses +2",
-    ear2="Telos Earring",
-    waist="Kentarch Belt +1",
+    ear2="Telos Earring",             -- __,  5, 10 < 1, __, __> [__/__, ___]
+    waist="Kentarch Belt +1",         -- __,  5, 14 < 3, __, __> [__/__, ___]
   })
   sets.engaged.DW.HighAcc.HighHaste = set_combine(sets.engaged.DW.MidAcc.HighHaste, {
-    legs=gear.Carmine_D_legs, --6
-    ear1="Dignitary's Earring",
-    ear2="Telos Earring",
+    legs=gear.Carmine_D_legs,         --  6, __, 55 <__, __, __> [__/__,  80]
+    ear1="Dignitary's Earring",       -- __,  3, 10 <__, __, __> [__/__, ___]
+    ear2="Telos Earring",             -- __,  5, 10 < 1, __, __> [__/__, ___]
     -- head="Carmine Mask +1",
     -- ear1="Mache Earring +1",
-    -- ring2="Chirich Ring +1",
+    -- ring2="Chirich Ring +1",       -- __,  6, 10 <__, __, __> [__/__, ___]
   })
 
   -- Super Magic/Gear/JA Haste (36% DW to cap, 11% from gear)
   sets.engaged.DW.SuperHaste = {
     ammo=gear.RAbullet,
-    head=gear.Adhemar_B_head,
-    body=gear.Adhemar_B_body, --6
-    hands=gear.Adhemar_B_hands,
-    legs=gear.Samnuha_legs,
-    feet=gear.Herc_DW_feet, --5
-    neck="Iskur Gorget",
-    ear1="Cessance Earring",
-    ear2="Telos Earring",
-    ring1="Epona's Ring",
-    ring2="Petrov Ring",
-    back=gear.COR_TP_Cape,
-    waist="Windbuffet Belt +1",
-  } -- 11%
+    head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
+    body=gear.Adhemar_B_body,         --  6, __, 35 <__,  4, __> [__/__,  69]
+    hands=gear.Adhemar_B_hands,       -- __,  7, 32 <__,  4, __> [__/__,  43]
+    legs="Malignance Tights",         -- __, 10, 50 <__, __, __> [ 7/ 7, 150]
+    feet=gear.Herc_TA_feet,           -- __, __, 23 <__,  6, __> [ 2/__,  75]
+    neck="Iskur Gorget",              -- __,  8, __ <__, __, __> [__/__, ___]
+    ear1="Suppanomimi",               --  5, __, __ <__, __, __> [__/__, ___]
+    ear2="Telos Earring",             -- __,  5, 10 < 1, __, __> [__/__, ___]
+    ring1="Epona's Ring",             -- __, __, __ < 3,  3, __> [__/__, ___]
+    ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
+    back=gear.COR_TP_Cape,            -- __, __, 20 <10, __, __> [10/__, ___]
+    waist="Windbuffet Belt +1",       -- __, __,  2 <__,  2,  2> [__/__, ___]
+    -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
+    -- 36 DW, 38 STP, 222 Acc <14 DA, 19 TA, 2 QA> [35 PDT/23 MDT, 460 MEVA]
+
+    -- legs="Chasseur's Culottes +2", -- __, 11, 53 <__, __, __> [11/11, 115]
+    -- 36 DW, 39 STP, 225 Acc <14 DA, 19 TA, 2 QA> [39 PDT/27 MDT, 425 MEVA]
+  }
   sets.engaged.DW.LowAcc.SuperHaste = set_combine(sets.engaged.DW.SuperHaste, {
-    head="Dampening Tam",
-    ring1="Chirich Ring +1",
-    waist="Kentarch Belt +1",
-    -- hands=gear.Adhemar_A_hands,
+    ring1="Chirich Ring +1",          -- __,  6, 10 <__, __, __> [__/__, ___]
+    waist="Kentarch Belt +1",         -- __,  5, 14 < 3, __, __> [__/__, ___]
+    -- hands=gear.Adhemar_A_hands,    -- __,  7, 52 <__,  4, __> [__/__,  43]
   })
   sets.engaged.DW.MidAcc.SuperHaste = set_combine(sets.engaged.DW.LowAcc.SuperHaste, {
     legs="Meg. Chausses +2",
-    ear1="Cessance Earring",
+    ear1="Cessance Earring",          -- __,  3,  6 < 3, __, __> [__/__, ___]
     -- head="Carmine Mask +1",
     -- neck="Combatant's Torque",
   })
   sets.engaged.DW.HighAcc.SuperHaste = set_combine(sets.engaged.DW.MidAcc.SuperHaste, {
-    legs=gear.Carmine_D_legs, --6
-    ear1="Dignitary's Earring",
-    ear2="Telos Earring",
-    waist="Olseni Belt",
+    legs=gear.Carmine_D_legs,         --  6, __, 55 <__, __, __> [__/__,  80]
+    ear1="Dignitary's Earring",       -- __,  3, 10 <__, __, __> [__/__, ___]
+    ear2="Telos Earring",             -- __,  5, 10 < 1, __, __> [__/__, ___]
+    waist="Olseni Belt",              -- __,  3, 20 <__, __, __> [__/__, ___]
     -- ear1="Mache Earring +1",
-    -- ring2="Chirich Ring +1",
+    -- ring2="Chirich Ring +1",       -- __,  6, 10 <__, __, __> [__/__, ___]
   })
 
   -- Max Magic/Gear/JA Haste (0-25% DW to cap, 0% from gear)
-  sets.engaged.DW.MaxHaste = {
-    ammo=gear.RAbullet,
-    head=gear.Adhemar_B_head,
-    body=gear.Adhemar_B_body, --6
-    hands=gear.Adhemar_B_hands,
-    legs=gear.Samnuha_legs,
-    feet=gear.Herc_TA_feet,
-    neck="Iskur Gorget",
-    ear1="Brutal Earring",
-    ear2="Telos Earring",
-    ring1="Epona's Ring",
-    ring2="Petrov Ring",
-    back=gear.COR_TP_Cape,
-    waist="Windbuffet Belt +1",
-  }--6
-  sets.engaged.DW.LowAcc.MaxHaste = set_combine(sets.engaged.DW.LowAcc.MaxHaste, {
-    head="Dampening Tam",
-    ring1="Chirich Ring +1",
-    waist="Kentarch Belt +1",
-    -- hands=gear.Adhemar_A_hands,
-  })
-  sets.engaged.DW.MidAcc.MaxHaste = set_combine(sets.engaged.DW.MidAcc.MaxHaste, {
-    legs="Meg. Chausses +2",
-    ear1="Cessance Earring",
-    -- neck="Combatant's Torque",
-  })
-  sets.engaged.DW.HighAcc.MaxHaste = set_combine(sets.engaged.DW.HighAcc.MaxHaste, {
-    legs=gear.Carmine_D_legs, --6
-    ear1="Dignitary's Earring",
-    ear2="Telos Earring",
-    waist="Olseni Belt",
-    -- ear1="Mache Earring +1",
-    -- ring2="Chirich Ring +1",
-  })
+  sets.engaged.DW.MaxHaste = sets.engaged
+  -- 0 DW, 45 STP, 198 Acc <24 DA, 18 TA, 2 QA> [37 PDT/25 MDT, 455 M.Eva]
+  sets.engaged.DW.LowAcc.MaxHaste = sets.engaged.LowAcc
+  -- 0 DW, 60 STP, 255 Acc <21 DA, 9 TA, 2 QA> [39 PDT/29 MDT, 530 M.Eva]
+  sets.engaged.DW.MidAcc.MaxHaste = sets.engaged.MidAcc
+  -- 0 DW, 69 STP, 277 Acc <20 DA, 7 TA, 0 QA> [39 PDT/29 MDT, 530 M.Eva]
+  sets.engaged.DW.HighAcc.MaxHaste = sets.engaged.HighAcc
+  -- 0 DW, 71 STP, 325 Acc <11 DA, 4 TA, 0 QA> [50 PDT/40 MDT, 570 M.Eva]
 
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Hybrid Sets -------------------------------------------
   ------------------------------------------------------------------------------------------------
 
-  sets.engaged.LightDef = set_combine(sets.engaged, sets.LightDef)
-  sets.engaged.LowAcc.LightDef = set_combine(sets.engaged.LowAcc, sets.LightDef)
-  sets.engaged.MidAcc.LightDef = set_combine(sets.engaged.MidAcc, sets.LightDef)
-  sets.engaged.HighAcc.LightDef = set_combine(sets.engaged.HighAcc, sets.LightDef)
+  sets.engaged.HeavyDef = {
+    ammo=gear.RAbullet,
+    head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
+    body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
+    hands=gear.Adhemar_B_hands,       -- __,  7, 32 <__,  4, __> [__/__,  43]
+    legs="Malignance Tights",         -- __, 10, 50 <__, __, __> [ 7/ 7, 150]
+    feet=gear.Herc_TA_feet,           -- __, __, 23 <__,  6, __> [ 2/__,  75]
+    neck="Iskur Gorget",              -- __,  8, __ <__, __, __> [__/__, ___]
+    ear1="Cessance Earring",          -- __,  3,  6 < 3, __, __> [__/__, ___]
+    ear2="Brutal Earring",            -- __,  1, __ < 5, __, __> [__/__, ___]
+    ring1="Epona's Ring",             -- __, __, __ < 3,  3, __> [__/__, ___]
+    ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
+    back=gear.COR_TP_Cape,            -- __, __, 20 <10, __, __> [10/__, ___]
+    waist="Flume Belt +1",            -- __, __, __ <__, __, __> [ 4/__, ___]
+    -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
+    -- 25 DW, 48 STP, 231 Acc <21 DA, 13 TA, 0 QA> [48 PDT / 32 MDT, 530 MEVA]
+    
+    -- legs="Chasseur's Culottes +2", -- __, 11, 53 <__, __, __> [11/11, 115]
+    -- 25 DW, 49 STP, 234 Acc <21 DA, 13 TA, 0 QA> [52 PDT/36 MDT, 495 MEVA]
+  }
+  sets.engaged.LowAcc.HeavyDef = {
+    ammo=gear.RAbullet,
+    head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
+    body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
+    hands=gear.Adhemar_B_hands,       -- __,  7, 32 <__,  4, __> [__/__,  43]
+    legs="Malignance Tights",         -- __, 10, 50 <__, __, __> [ 7/ 7, 150]
+    feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
+    neck="Iskur Gorget",              -- __,  8, __ <__, __, __> [__/__, ___]
+    ear1="Cessance Earring",          -- __,  3,  6 < 3, __, __> [__/__, ___]
+    ear2="Brutal Earring",            -- __,  1, __ < 5, __, __> [__/__, ___]
+    ring1="Epona's Ring",             -- __, __, __ < 3,  3, __> [__/__, ___]
+    ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
+    back=gear.COR_TP_Cape,            -- __, __, 20 <10, __, __> [10/__, ___]
+    waist="Flume Belt +1",            -- __, __, __ <__, __, __> [ 4/__, ___]
+    -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
+    -- 25 DW, 57 STP, 258 Acc <21 DA, 7 TA, 0 QA> [50 PDT/36 MDT, 605 M.Eva]
 
-  sets.engaged.DW.LightDef = set_combine(sets.engaged.DW, sets.LightDef)
-  sets.engaged.DW.LowAcc.LightDef = set_combine(sets.engaged.DW.LowAcc, sets.LightDef)
-  sets.engaged.DW.MidAcc.LightDef = set_combine(sets.engaged.DW.MidAcc, sets.LightDef)
-  sets.engaged.DW.HighAcc.LightDef = set_combine(sets.engaged.DW.HighAcc, sets.LightDef)
+    -- legs="Chasseur's Culottes +2", -- __, 11, 53 <__, __, __> [11/11, 115]
+    -- waist="Windbuffet Belt +1",    -- __, __,  2 <__,  2,  2> [__/__, ___]
+    -- 25 DW, 58 STP, 263 Acc <21 DA, 9 TA, 2 QA> [50 PDT/40 MDT, 570 M.Eva]
+  }
+  sets.engaged.MidAcc.HeavyDef = {
+    ammo=gear.RAbullet,
+    head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
+    body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
+    hands="Malignance Gloves",        -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
+    legs="Malignance Tights",         -- __, 10, 50 <__, __, __> [ 7/ 7, 150]
+    feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
+    neck="Iskur Gorget",              -- __,  8, __ <__, __, __> [__/__, ___]
+    ear1="Cessance Earring",          -- __,  3,  6 < 3, __, __> [__/__, ___]
+    ear2="Brutal Earring",            -- __,  1, __ < 5, __, __> [__/__, ___]
+    ring1="Epona's Ring",             -- __, __, __ < 3,  3, __> [__/__, ___]
+    ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
+    back=gear.COR_TP_Cape,            -- __, __, 20 <10, __, __> [10/__, ___]
+    waist="Kentarch Belt +1",         -- __,  5, 14 < 3, __, __> [__/__, ___]
+    -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
+    -- 25 DW, 67 STP, 290 Acc <24 DA, 3 TA, 0 QA> [51 PDT/41 MDT, 674 M.Eva]
 
-  sets.engaged.DW.LightDef.LowHaste = set_combine(sets.engaged.DW.LowHaste, sets.LightDef)
-  sets.engaged.DW.LowAcc.LightDef.LowHaste = set_combine(sets.engaged.DW.LowAcc.LowHaste, sets.LightDef)
-  sets.engaged.DW.MidAcc.LightDef.LowHaste = set_combine(sets.engaged.DW.MidAcc.LowHaste, sets.LightDef)
-  sets.engaged.DW.HighAcc.LightDef.LowHaste = set_combine(sets.engaged.DW.HighAcc.LowHaste, sets.LightDef)
+    -- legs="Chasseur's Culottes +2", -- __, 11, 53 <__, __, __> [11/11, 115]
+    -- ring2="Gelatinous Ring +1",    -- __, __, __ <__, __, __> [ 7/-1, ___]
+    -- waist="Kentarch Belt +1",      -- __,  5, 14 < 3, __, __> [__/__, ___]
+    -- 25 DW, 68 STP, 293 Acc <24 DA, 3 TA, 0 QA> [52 PDT/34 MDT, 639 M.Eva]
+  }
+  sets.engaged.HighAcc.HeavyDef = {
+    ammo=gear.RAbullet,
+    head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
+    body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
+    hands="Malignance Gloves",        -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
+    legs="Malignance Tights",         -- __, 10, 50 <__, __, __> [ 7/ 7, 150]
+    feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
+    neck="Iskur Gorget",              -- __,  8, __ <__, __, __> [__/__, ___]
+    ear1="Dignitary's Earring",       -- __,  3, 10 <__, __, __> [__/__, ___]
+    ear2="Telos Earring",             -- __,  5, 10 < 1, __, __> [__/__, ___]
+    ring1="Chirich Ring +1",          -- __,  6, 10 <__, __, __> [__/__, ___]
+    ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
+    back=gear.COR_TP_Cape,            -- __, __, 20 <10, __, __> [10/__, ___]
+    waist="Olseni Belt",              -- __,  3, 20 <__, __, __> [__/__, ___]
+    -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
+    -- 25 DW, 75 STP, 320 Acc <11 DA, 0 TA, 0 QA> [51 PDT/41 MDT, 674 M.Eva]
 
-  sets.engaged.DW.LightDef.MidHaste = set_combine(sets.engaged.DW.MidHaste, sets.LightDef)
-  sets.engaged.DW.LowAcc.LightDef.MidHaste = set_combine(sets.engaged.DW.LowAcc.MidHaste, sets.LightDef)
-  sets.engaged.DW.MidAcc.LightDef.MidHaste = set_combine(sets.engaged.DW.MidAcc.MidHaste, sets.LightDef)
-  sets.engaged.DW.HighAcc.LightDef.MidHaste = set_combine(sets.engaged.DW.HighAcc.MidHaste, sets.LightDef)
+    -- legs="Chasseur's Culottes +2", -- __, 11, 53 <__, __, __> [11/11, 115]
+    -- ring2="Gelatinous Ring +1",    -- __, __, __ <__, __, __> [ 7/-1, ___]
+    -- waist="Kentarch Belt +1",      -- __,  5, 14 < 3, __, __> [__/__, ___]
+    -- 25 DW, 76 STP, 323 Acc <11 DA, 0 TA, 0 QA> [52 PDT/34 MDT, 639 M.Eva]
+  }
 
-  sets.engaged.DW.LightDef.HighHaste = set_combine(sets.engaged.DW.HighHaste, sets.LightDef)
-  sets.engaged.DW.LowAcc.LightDef.HighHaste = set_combine(sets.engaged.DW.LowAcc.HighHaste, sets.LightDef)
-  sets.engaged.DW.MidAcc.LightDef.HighHaste = set_combine(sets.engaged.DW.MidAcc.HighHaste, sets.LightDef)
-  sets.engaged.DW.HighAcc.LightDef.HighHaste = set_combine(sets.engaged.DW.HighAcc.HighHaste, sets.LightDef)
+  -- No Magic/Gear/JA Haste (74% DW to cap, 49% from gear)
+  sets.engaged.DW.HeavyDef = {
+    ammo=gear.RAbullet,
+    head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
+    body=gear.Adhemar_B_body,         --  6, __, 35 <__,  4, __> [__/__,  69]
+    hands=gear.Nyame_B_hands,         -- __, __, 40 < 4, __, __> [ 7/ 7, 112]
+    legs=gear.Carmine_D_legs,         --  6, __, 55 <__, __, __> [__/__,  80]
+    feet=gear.Taeon_DW_feet,          --  9, __, 22 <__, __, __> [__/__,  69]
+    neck="Loricate Torque +1",        -- __, __, __ <__, __, __> [ 6/ 6, ___]
+    ear1="Suppanomimi",               --  5, __, __ <__, __, __> [__/__, ___]
+    ear2="Odnowa Earring +1",         -- __, __, 10 <__, __, __> [ 3/ 5, ___]
+    ring1="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
+    ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
+    back=gear.COR_DW_Cape,            -- 10, __, 20 <__, __, __> [10/__, ___]
+    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
+    -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
+    -- 68 DW, 12 STP, 242 Acc <4 DA, 4 TA, 0 QA> [49 PDT/33 MDT, 453 MEVA]
+  }
+  sets.engaged.DW.LowAcc.HeavyDef = {
+    ammo=gear.RAbullet,
+    head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
+    body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
+    hands="Malignance Gloves",        -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
+    legs=gear.Carmine_D_legs,         --  6, __, 55 <__, __, __> [__/__,  80]
+    feet=gear.Taeon_DW_feet,          --  9, __, 22 <__, __, __> [__/__,  69]
+    neck="Loricate Torque +1",        -- __, __, __ <__, __, __> [ 6/ 6, ___]
+    ear1="Suppanomimi",               --  5, __, __ <__, __, __> [__/__, ___]
+    ear2="Eabani Earring",            --  4, __, __ <__, __, __> [__/__,   8]
+    ring1="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
+    ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
+    back=gear.COR_DW_Cape,            -- 10, __, 20 <__, __, __> [10/__, ___]
+    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
+    -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
+    -- 66 DW, 35 STP, 257 Acc <0 DA, 0 TA, 0 QA> [53 PDT/35 MDT, 531 MEVA]
+  }
+  sets.engaged.DW.MidAcc.HeavyDef = {
+    ammo=gear.RAbullet,
+    head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
+    body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
+    hands="Malignance Gloves",        -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
+    legs=gear.Carmine_D_legs,         --  6, __, 55 <__, __, __> [__/__,  80]
+    feet=gear.Taeon_DW_feet,          --  9, __, 22 <__, __, __> [__/__,  69]
+    neck="Loricate Torque +1",        -- __, __, __ <__, __, __> [ 6/ 6, ___]
+    ear1="Suppanomimi",               --  5, __, __ <__, __, __> [__/__, ___]
+    ear2="Eabani Earring",            --  4, __, __ <__, __, __> [__/__,   8]
+    ring1="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
+    ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
+    back=gear.COR_DW_Cape,            -- 10, __, 20 <__, __, __> [10/__, ___]
+    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
+    -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
+    -- 66 DW, 35 STP, 257 Acc <0 DA, 0 TA, 0 QA> [53 PDT/35 MDT, 531 MEVA]
+    
+    -- legs="Chasseur's Culottes +2", -- __, 11, 53 <__, __, __> [11/11, 115]
+    -- neck="Subtlety Spectacles",    -- __, __, 15 <__, __, __> [__/__, ___]
+    -- ring1="Chirich Ring +1",       -- __,  6, 10 <__, __, __> [__/__, ___]
+    -- 60 DW, 52 STP, 280 Acc <0 DA, 0 TA, 0 QA> [51 PDT/41 MDT, 566 MEVA]
+  }
+  sets.engaged.DW.HighAcc.HeavyDef = {
+    ammo=gear.RAbullet,
+    head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
+    body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
+    hands="Malignance Gloves",        -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
+    legs=gear.Carmine_D_legs,         --  6, __, 55 <__, __, __> [__/__,  80]
+    feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
+    neck="Loricate Torque +1",        -- __, __, __ <__, __, __> [ 6/ 6, ___]
+    ear1="Suppanomimi",               --  5, __, __ <__, __, __> [__/__, ___]
+    ear2="Eabani Earring",            --  4, __, __ <__, __, __> [__/__,   8]
+    ring1="Chirich Ring +1",          -- __,  6, 10 <__, __, __> [__/__, ___]
+    ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
+    back=gear.COR_DW_Cape,            -- 10, __, 20 <__, __, __> [10/__, ___]
+    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
+    -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
+    -- 57 DW, 50 STP, 295 Acc <0 DA, 0 TA, 0 QA> [50 PDT/40 MDT, 612 MEVA]
+    
+    -- legs="Chasseur's Culottes +2", -- __, 11, 53 <__, __, __> [11/11, 115]
+    -- feet=gear.Taeon_DW_feet,       --  9, __, 22 <__, __, __> [__/__,  69]
+    -- neck="Subtlety Spectacles",    -- __, __, 15 <__, __, __> [__/__, ___]
+    -- 60 DW, 52 STP, 280 Acc <0 DA, 0 TA, 0 QA> [51 PDT/41 MDT, 566 MEVA]
+  }
 
-  sets.engaged.DW.LightDef.SuperHaste = set_combine(sets.engaged.DW.SuperHaste, sets.LightDef)
-  sets.engaged.DW.LowAcc.LightDef.SuperHaste = set_combine(sets.engaged.DW.LowAcc.SuperHaste, sets.LightDef)
-  sets.engaged.DW.MidAcc.LightDef.SuperHaste = set_combine(sets.engaged.DW.MidAcc.SuperHaste, sets.LightDef)
-  sets.engaged.DW.HighAcc.LightDef.SuperHaste = set_combine(sets.engaged.DW.HighAcc.SuperHaste, sets.LightDef)
+  -- Low Magic/Gear/JA Haste (67% DW to cap, 42% from gear)
+  sets.engaged.DW.HeavyDef.LowHaste = {
+    ammo=gear.RAbullet,
+    head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
+    body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
+    hands="Floral Gauntlets",         --  5, __, 36 <__,  3, __> [__/ 4,  37]
+    legs=gear.Carmine_D_legs,         --  6, __, 55 <__, __, __> [__/__,  80]
+    feet=gear.Taeon_DW_feet,          --  9, __, 22 <__, __, __> [__/__,  69]
+    neck="Loricate Torque +1",        -- __, __, __ <__, __, __> [ 6/ 6, ___]
+    ear1="Suppanomimi",               --  5, __, __ <__, __, __> [__/__, ___]
+    ear2="Odnowa Earring +1",         -- __, __, 10 <__, __, __> [ 3/ 5, ___]
+    ring1="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
+    ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
+    back=gear.COR_DW_Cape,            -- 10, __, 20 <__, __, __> [10/__, ___]
+    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
+    -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
+    -- 67 DW, 23 STP, 253 Acc <0 DA, 3 TA, 0 QA> [51 PDT/39 MDT, 448 MEVA]
+    
+    -- body=gear.Adhemar_B_body,      --  6, __, 35 <__,  4, __> [__/__,  69]
+    -- legs="Chasseur's Culottes +2", -- __, 11, 53 <__, __, __> [11/11, 115]
+    -- ear2="Dedition Earring",       -- __,  8,-10 <__, __, __> [__/__, ___]
+    -- 67 DW, 31 STP, 216 Acc <0 DA, 7 TA, 0 QA> [50 PDT/36 MDT, 413 MEVA]
+  }
+  sets.engaged.DW.LowAcc.HeavyDef.LowHaste = {
+    ammo=gear.RAbullet,
+    head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
+    body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
+    hands="Floral Gauntlets",         --  5, __, 36 <__,  3, __> [__/ 4,  37]
+    legs=gear.Carmine_D_legs,         --  6, __, 55 <__, __, __> [__/__,  80]
+    feet=gear.Taeon_DW_feet,          --  9, __, 22 <__, __, __> [__/__,  69]
+    neck="Loricate Torque +1",        -- __, __, __ <__, __, __> [ 6/ 6, ___]
+    ear1="Suppanomimi",               --  5, __, __ <__, __, __> [__/__, ___]
+    ear2="Odnowa Earring +1",         -- __, __, 10 <__, __, __> [ 3/ 5, ___]
+    ring1="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
+    ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
+    back=gear.COR_DW_Cape,            -- 10, __, 20 <__, __, __> [10/__, ___]
+    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
+    -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
+    -- 67 DW, 23 STP, 253 Acc <0 DA, 3 TA, 0 QA> [51 PDT/39 MDT, 448 MEVA]
+  }
+  sets.engaged.DW.MidAcc.HeavyDef.LowHaste = {
+    ammo=gear.RAbullet,
+    head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
+    body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
+    hands="Floral Gauntlets",         --  5, __, 36 <__,  3, __> [__/ 4,  37]
+    legs=gear.Carmine_D_legs,         --  6, __, 55 <__, __, __> [__/__,  80]
+    feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
+    -- neck="Subtlety Spectacles",    -- __, __, 15 <__, __, __> [__/__, ___]
+    ear1="Suppanomimi",               --  5, __, __ <__, __, __> [__/__, ___]
+    ear2="Odnowa Earring +1",         -- __, __, 10 <__, __, __> [ 3/ 5, ___]
+    ring1="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
+    ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
+    back=gear.COR_DW_Cape,            -- 10, __, 20 <__, __, __> [10/__, ___]
+    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
+    -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
+    -- 58 DW, 32 STP, 296 Acc <0 DA, 3 TA, 0 QA> [49 PDT/37 MDT, 529 MEVA]
+  }
+  sets.engaged.DW.HighAcc.HeavyDef.LowHaste = {
+    ammo=gear.RAbullet,
+    head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
+    body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
+    hands="Malignance Gloves",        -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
+    legs=gear.Carmine_D_legs,         --  6, __, 55 <__, __, __> [__/__,  80]
+    feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
+    -- neck="Subtlety Spectacles",    -- __, __, 15 <__, __, __> [__/__, ___]
+    ear1="Dignitary's Earring",       -- __,  3, 10 <__, __, __> [__/__, ___]
+    ear2="Odnowa Earring +1",         -- __, __, 10 <__, __, __> [ 3/ 5, ___]
+    ring1="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
+    ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
+    back=gear.COR_DW_Cape,            -- 10, __, 20 <__, __, __> [10/__, ___]
+    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
+    -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
+    -- 48 DW, 47 STP, 320 Acc <0 DA, 0 TA, 0 QA> [54 PDT/38 MDT, 604 MEVA]
+  }
 
-  sets.engaged.DW.LightDef.MaxHaste = set_combine(sets.engaged.DW.MaxHaste, sets.LightDef)
-  sets.engaged.DW.LowAcc.LightDef.MaxHaste = set_combine(sets.engaged.DW.LowAcc.MaxHaste, sets.LightDef)
-  sets.engaged.DW.MidAcc.LightDef.MaxHaste = set_combine(sets.engaged.DW.MidAcc.MaxHaste, sets.LightDef)
-  sets.engaged.DW.HighAcc.LightDef.MaxHaste = set_combine(sets.engaged.DW.HighAcc.MaxHaste, sets.LightDef)
+  -- Mid Magic/Gear/JA Haste (56% DW to cap, 31% from gear)
+  sets.engaged.DW.HeavyDef.MidHaste = {
+    ammo=gear.RAbullet,
+    head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
+    body=gear.Adhemar_B_body,         --  6, __, 35 <__,  4, __> [__/__,  69]
+    hands=gear.Adhemar_B_hands,       -- __,  7, 32 <__,  4, __> [__/__,  43]
+    legs="Malignance Tights",         -- __, 10, 50 <__, __, __> [ 7/ 7, 150]
+    feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
+    neck="Loricate Torque +1",        -- __, __, __ <__, __, __> [ 6/ 6, ___]
+    ear1="Suppanomimi",               --  5, __, __ <__, __, __> [__/__, ___]
+    ear2="Eabani Earring",            --  4, __, __ <__, __, __> [__/__,   8]
+    ring1="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
+    ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
+    back=gear.COR_DW_Cape,            -- 10, __, 20 <__, __, __> [10/__, ___]
+    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
+    -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
+    -- 57 DW, 38 STP, 247 Acc <0 DA, 8 TA, 0 QA> [50 PDT/32 MDT, 543 MEVA]
+
+    -- legs="Chasseur's Culottes +2", -- __, 11, 53 <__, __, __> [11/11, 115]
+    -- feet=gear.Herc_TA_feet,        -- __, __, 23 <__,  6, __> [ 2/__,  75]
+    -- 57 DW, 30 STP, 223 Acc <0 DA, 14 TA, 0 QA> [52 PDT/32 MDT, 433 MEVA]
+  }
+  sets.engaged.DW.LowAcc.HeavyDef.MidHaste = {
+    ammo=gear.RAbullet,
+    head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
+    body=gear.Adhemar_B_body,         --  6, __, 35 <__,  4, __> [__/__,  69]
+    hands="Malignance Gloves",        -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
+    legs="Malignance Tights",         -- __, 10, 50 <__, __, __> [ 7/ 7, 150]
+    feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
+    -- neck="Subtlety Spectacles",    -- __, __, 15 <__, __, __> [__/__, ___]
+    ear1="Suppanomimi",               --  5, __, __ <__, __, __> [__/__, ___]
+    ear2="Eabani Earring",            --  4, __, __ <__, __, __> [__/__,   8]
+    ring1="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
+    ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
+    back=gear.COR_DW_Cape,            -- 10, __, 20 <__, __, __> [10/__, ___]
+    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
+    -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
+    -- 57 DW, 43 STP, 280 Acc <0 DA, 4 TA, 0 QA> [49 PDT/31 MDT, 612 MEVA]
+  }
+  sets.engaged.DW.MidAcc.HeavyDef.MidHaste = {
+    ammo=gear.RAbullet,
+    head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
+    body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
+    hands="Malignance Gloves",        -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
+    legs=gear.Carmine_D_legs,         --  6, __, 55 <__, __, __> [__/__,  80]
+    feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
+    -- neck="Subtlety Spectacles",    -- __, __, 15 <__, __, __> [__/__, ___]
+    ear1="Suppanomimi",               --  5, __, __ <__, __, __> [__/__, ___]
+    ear2="Eabani Earring",            --  4, __, __ <__, __, __> [__/__,   8]
+    ring1="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
+    ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
+    back=gear.COR_DW_Cape,            -- 10, __, 20 <__, __, __> [10/__, ___]
+    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
+    -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
+    -- 57 DW, 44 STP, 300 Acc <0 DA, 0 TA, 0 QA> [51 PDT/33 MDT, 612 MEVA]
+  }
+  sets.engaged.DW.HighAcc.HeavyDef.MidHaste = {
+    ammo=gear.RAbullet,
+    head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
+    body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
+    hands="Malignance Gloves",        -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
+    legs=gear.Carmine_D_legs,         --  6, __, 55 <__, __, __> [__/__,  80]
+    feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
+    -- neck="Subtlety Spectacles",    -- __, __, 15 <__, __, __> [__/__, ___]
+    ear1="Dignitary's Earring",       -- __,  3, 10 <__, __, __> [__/__, ___]
+    ear2="Telos Earring",             -- __,  5, 10 < 1, __, __> [__/__, ___]
+    ring1="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
+    ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
+    back=gear.COR_DW_Cape,            -- 10, __, 20 <__, __, __> [10/__, ___]
+    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
+    -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
+    -- 48 DW, 52 STP, 320 Acc <1 DA, 0 TA, 0 QA> [51 PDT/33 MDT, 604 MEVA]
+  }
+
+  -- High Magic/Gear/JA Haste (43% DW to cap, 18% from gear)
+  sets.engaged.DW.HeavyDef.HighHaste = {
+    ammo=gear.RAbullet,
+    head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
+    body=gear.Adhemar_B_body,         --  6, __, 35 <__,  4, __> [__/__,  69]
+    hands=gear.Adhemar_B_hands,       -- __,  7, 32 <__,  4, __> [__/__,  43]
+    legs="Malignance Tights",         -- __, 10, 50 <__, __, __> [ 7/ 7, 150]
+    feet=gear.Herc_TA_feet,           -- __, __, 23 <__,  6, __> [ 2/__,  75]
+    neck="Loricate Torque +1",        -- __, __, __ <__, __, __> [ 6/ 6, ___]
+    ear1="Suppanomimi",               --  5, __, __ <__, __, __> [__/__, ___]
+    ear2="Odnowa Earring +1",         -- __, __, 10 <__, __, __> [ 3/ 5, ___]
+    ring1="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
+    ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
+    back=gear.COR_TP_Cape,            -- __, __, 20 <10, __, __> [10/__, ___]
+    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
+    -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
+    -- 43 DW, 29 STP, 230 Acc <10 DA, 14 TA, 0 QA> [51 PDT/33 MDT, 460 MEVA]
+    
+    -- legs="Chasseur's Culottes +2", -- __, 11, 53 <__, __, __> [11/11, 115]
+    -- ear2="Telos Earring",          -- __,  5, 10 < 1, __, __> [__/__, ___]
+    -- 43 DW, 35 STP, 233 Acc <11 DA, 14 TA, 0 QA> [52 PDT/32 MDT, 425 MEVA]
+  }
+  sets.engaged.DW.LowAcc.HeavyDef.HighHaste = {
+    ammo=gear.RAbullet,
+    head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
+    body=gear.Adhemar_B_body,         --  6, __, 35 <__,  4, __> [__/__,  69]
+    hands=gear.Adhemar_B_hands,       -- __,  7, 32 <__,  4, __> [__/__,  43]
+    legs="Malignance Tights",         -- __, 10, 50 <__, __, __> [ 7/ 7, 150]
+    feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
+    neck="Loricate Torque +1",        -- __, __, __ <__, __, __> [ 6/ 6, ___]
+    ear1="Suppanomimi",               --  5, __, __ <__, __, __> [__/__, ___]
+    ear2="Telos Earring",             -- __,  5, 10 < 1, __, __> [__/__, ___]
+    ring1="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
+    ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
+    back=gear.COR_TP_Cape,            -- __, __, 20 <10, __, __> [10/__, ___]
+    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
+    -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
+    -- 43 DW, 43 STP, 257 Acc <11 DA, 8 TA, 0 QA> [50 PDT/32 MDT, 535 MEVA]
+    
+    -- hands="Malignance Gloves",     -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
+    -- legs="Chasseur's Culottes +2", -- __, 11, 53 <__, __, __> [11/11, 115]
+    -- ring1="Chirich Ring +1",       -- __,  6, 10 <__, __, __> [__/__, ___]
+    -- 43 DW, 46 STP, 261 Acc <11 DA, 10 TA, 0 QA> [50 PDT/38 MDT, 494 MEVA]
+  }
+  sets.engaged.DW.MidAcc.HeavyDef.HighHaste = {
+    ammo=gear.RAbullet,
+    head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
+    body=gear.Adhemar_B_body,         --  6, __, 35 <__,  4, __> [__/__,  69]
+    hands="Malignance Gloves",        -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
+    legs="Malignance Tights",         -- __, 10, 50 <__, __, __> [ 7/ 7, 150]
+    feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
+    -- neck="Subtlety Spectacles",    -- __, __, 15 <__, __, __> [__/__, ___]
+    ear1="Suppanomimi",               --  5, __, __ <__, __, __> [__/__, ___]
+    ear2="Telos Earring",             -- __,  5, 10 < 1, __, __> [__/__, ___]
+    ring1="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
+    ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
+    back=gear.COR_TP_Cape,            -- __, __, 20 <10, __, __> [10/__, ___]
+    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
+    -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
+    -- 43 DW, 48 STP, 290 Acc <11 DA, 4 TA, 0 QA> [49 PDT/31 MDT, 604 MEVA]
+    
+    -- legs="Chasseur's Culottes +2", -- __, 11, 53 <__, __, __> [11/11, 115]
+    -- neck="Loricate Torque +1",     -- __, __, __ <__, __, __> [ 6/ 6, ___]
+    -- ring1="Chirich Ring +1",       -- __,  6, 10 <__, __, __> [__/__, ___]
+    -- 43 DW, 46 STP, 261 Acc <11 DA, 10 TA, 0 QA> [50 PDT/38 MDT, 494 MEVA]
+  }
+  sets.engaged.DW.HighAcc.HeavyDef.HighHaste = {
+    ammo=gear.RAbullet,
+    head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
+    body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
+    hands="Malignance Gloves",        -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
+    legs=gear.Carmine_D_legs,         --  6, __, 55 <__, __, __> [__/__,  80]
+    feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
+    -- neck="Subtlety Spectacles",    -- __, __, 15 <__, __, __> [__/__, ___]
+    ear1="Dignitary's Earring",       -- __,  3, 10 <__, __, __> [__/__, ___]
+    ear2="Telos Earring",             -- __,  5, 10 < 1, __, __> [__/__, ___]
+    ring1="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
+    ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
+    back=gear.COR_DW_Cape,            -- 10, __, 20 <__, __, __> [10/__, ___]
+    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
+    -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
+    -- 48 DW, 52 STP, 320 Acc <1 DA, 4 TA, 0 QA> [51 PDT/33 MDT, 604 MEVA]
+  }
+
+  -- Super Magic/Gear/JA Haste (36% DW to cap, 11% from gear)
+  sets.engaged.DW.HeavyDef.SuperHaste = {
+    ammo=gear.RAbullet,
+    head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
+    body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
+    hands=gear.Adhemar_B_hands,       -- __,  7, 32 <__,  4, __> [__/__,  43]
+    legs=gear.Carmine_D_legs,         --  6, __, 55 <__, __, __> [__/__,  80]
+    feet=gear.Herc_TA_feet,           -- __, __, 23 <__,  6, __> [ 2/__,  75]
+    neck="Loricate Torque +1",        -- __, __, __ <__, __, __> [ 6/ 6, ___]
+    ear1="Suppanomimi",               --  5, __, __ <__, __, __> [__/__, ___]
+    ear2="Telos Earring",             -- __,  5, 10 < 1, __, __> [__/__, ___]
+    ring1="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
+    ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
+    back=gear.COR_TP_Cape,            -- __, __, 20 <10, __, __> [10/__, ___]
+    waist="Windbuffet Belt +1",       -- __, __,  2 <__,  2,  2> [__/__, ___]
+    -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
+    -- 36 DW, 31 STP, 242 Acc <11 DA, 12 TA, 2 QA> [50 PDT/30 MDT, 460 MEVA]
+
+    -- body=gear.Adhemar_B_body,      --  6, __, 35 <__,  4, __> [__/__,  69]
+    -- legs="Chasseur's Culottes +2", -- __, 11, 53 <__, __, __> [11/11, 115]
+    -- 36 DW, 31 STP, 225 Acc <11 DA, 16 TA, 2 QA> [52 PDT/32 MDT, 425 MEVA]
+  }
+  sets.engaged.DW.LowAcc.HeavyDef.SuperHaste = {
+    ammo=gear.RAbullet,
+    head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
+    body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
+    hands="Malignance Gloves",        -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
+    legs=gear.Carmine_D_legs,         --  6, __, 55 <__, __, __> [__/__,  80]
+    feet=gear.Herc_TA_feet,           -- __, __, 23 <__,  6, __> [ 2/__,  75]
+    -- neck="Subtlety Spectacles",    -- __, __, 15 <__, __, __> [__/__, ___]
+    ear1="Suppanomimi",               --  5, __, __ <__, __, __> [__/__, ___]
+    ear2="Telos Earring",             -- __,  5, 10 < 1, __, __> [__/__, ___]
+    ring1="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
+    ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
+    back=gear.COR_TP_Cape,            -- __, __, 20 <10, __, __> [10/__, ___]
+    waist="Windbuffet Belt +1",       -- __, __,  2 <__,  2,  2> [__/__, ___]
+    -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
+    -- 36 DW, 36 STP, 275 Acc <11 DA, 8 TA, 2 QA> [49 PDT/29 MDT, 529 MEVA]
+    
+    -- body=gear.Adhemar_B_body,      --  6, __, 35 <__,  4, __> [__/__,  69]
+    -- legs="Chasseur's Culottes +2", -- __, 11, 53 <__, __, __> [11/11, 115]
+    -- 36 DW, 36 STP, 258 Acc <11 DA, 12 TA, 2 QA> [51 PDT/31 MDT, 494 MEVA]
+  }
+  sets.engaged.DW.MidAcc.HeavyDef.SuperHaste = {
+    ammo=gear.RAbullet,
+    head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
+    body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
+    hands="Malignance Gloves",        -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
+    legs=gear.Carmine_D_legs,         --  6, __, 55 <__, __, __> [__/__,  80]
+    feet=gear.Herc_TA_feet,           -- __, __, 23 <__,  6, __> [ 2/__,  75]
+    -- neck="Subtlety Spectacles",    -- __, __, 15 <__, __, __> [__/__, ___]
+    ear1="Dignitary's Earring",       -- __,  3, 10 <__, __, __> [__/__, ___]
+    ear2="Telos Earring",             -- __,  5, 10 < 1, __, __> [__/__, ___]
+    ring1="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
+    ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
+    back=gear.COR_TP_Cape,            -- __, __, 20 <10, __, __> [10/__, ___]
+    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
+    -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
+    -- 38 DW, 43 STP, 293 Acc <11 DA, 6 TA, 0 QA> [49 PDT/29 MDT, 529 MEVA]
+    
+    -- legs="Chasseur's Culottes +2", -- __, 11, 53 <__, __, __> [11/11, 115]
+    -- ear1="Suppanomimi",            --  5, __, __ <__, __, __> [__/__, ___]
+    -- ring1="Chirich Ring +1",       -- __,  6, 10 <__, __, __> [__/__, ___]
+    -- 37 DW, 57 STP, 291 Acc <11 DA, 6 TA, 0 QA> [53 PDT/41 MDT, 564 MEVA]
+  }
+  sets.engaged.DW.HighAcc.HeavyDef.SuperHaste = {
+    ammo=gear.RAbullet,
+    head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
+    body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
+    hands="Malignance Gloves",        -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
+    legs=gear.Carmine_D_legs,         --  6, __, 55 <__, __, __> [__/__,  80]
+    feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
+    -- neck="Subtlety Spectacles",    -- __, __, 15 <__, __, __> [__/__, ___]
+    ear1="Dignitary's Earring",       -- __,  3, 10 <__, __, __> [__/__, ___]
+    ear2="Telos Earring",             -- __,  5, 10 < 1, __, __> [__/__, ___]
+    ring1="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
+    ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
+    back=gear.COR_TP_Cape,            -- __, __, 20 <10, __, __> [10/__, ___]
+    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
+    -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
+    -- 38 DW, 52 STP, 320 Acc <11 DA, 0 TA, 0 QA> [51 PDT/33 MDT, 604 MEVA]
+    
+    -- legs="Chasseur's Culottes +2", -- __, 11, 53 <__, __, __> [11/11, 115]
+    -- ear1="Suppanomimi",            --  5, __, __ <__, __, __> [__/__, ___]
+    -- ring1="Chirich Ring +1",       -- __,  6, 10 <__, __, __> [__/__, ___]
+    -- 37 DW, 66 STP, 318 Acc <11 DA, 0 TA, 0 QA> [55 PDT/45 MDT, 639 MEVA]
+  }
+
+  sets.engaged.DW.HeavyDef.MaxHaste = sets.engaged.HeavyDef
+  sets.engaged.DW.LowAcc.HeavyDef.MaxHaste = sets.engaged.LowAcc.HeavyDef
+  sets.engaged.DW.MidAcc.HeavyDef.MaxHaste = sets.engaged.MidAcc.HeavyDef
+  sets.engaged.DW.HighAcc.HeavyDef.MaxHaste = sets.engaged.HighAcc.HeavyDef
 
   sets.engaged.SubtleBlow = {
     ammo=gear.RAbullet,
