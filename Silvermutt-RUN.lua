@@ -522,8 +522,8 @@ function init_gear_sets()
     neck="Incanter's Torque",                 -- __/__, ___ [___] 10
     ear1="Odnowa Earring +1",                 --  3/ 5, ___ [110] __
     ear2="Ethereal Earring",                  -- __/__, ___ [___] __
-    ring1="Stikini Ring +1",                  -- __/__, ___ [___]  8
-    ring2="Moonlight Ring",                   --  5/ 5, ___ [110] __
+    ring1="Gelatinous Ring +1",               --  7/-1, ___ [135] __
+    ring2="Defending Ring",                   -- 10/10, ___ [___] __
     back={name="Moonlight Cape", priority=1}, --  6/ 6, ___ [275] __
     waist="Engraved Belt",                    -- __/__, ___ [___] __
     -- Merits/Traits/Gifts                                        16
@@ -532,12 +532,8 @@ function init_gear_sets()
 
     -- head="Erilaz Galea +2",                -- __/__, 109 [101] __; Enhance JA
     -- legs="Erilaz Leg Guards +2",           -- 12/12, 147 [ 90] __
-    -- 38 PDT/40 MDT, 603 M.Eva [962 HP] 482 Divine Skill
-    
-    -- Additional Options:
-    -- legs="Rune. Trousers +3",              --  5/__,  99 [ 80] 19
-    -- ear2="Saxnot Earring",                 -- __/__, ___ [___] 10
-  } -- 33 PDT/28 MDT, 563 M.Eva [952 HP] 482 Divine Skill
+    -- 50 PDT/44 MDT, 643 M.Eva [997 HP] 474 Divine Skill
+  } -- 45 PDT/32 MDT, 563 M.Eva [977 HP] 474 Divine Skill
 
   -- Fast cast sets for spells
   sets.precast.FC = {
