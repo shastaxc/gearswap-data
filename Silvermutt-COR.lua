@@ -101,7 +101,7 @@ function job_setup()
   silibs.enable_th()
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
-  state.HybridMode:options('HeavyDef', 'SubtleBlow', 'Normal')
+  state.HybridMode:options('HeavyDef', 'Safe', 'SubtleBlow', 'Normal')
   state.RangedMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.IdleMode:options('Normal', 'HeavyDef')
 
@@ -313,8 +313,7 @@ function init_gear_sets()
     ring1="Luzaf's Ring",
   }
   sets.precast.FoldDoubleBust = {
-    hands="Lanun Gants +1",
-    -- hands="Lanun Gants +3",
+    hands="Lanun Gants +3",
   }
 
   sets.precast.Waltz = {
@@ -464,7 +463,7 @@ function init_gear_sets()
     ammo=gear.RAbullet,
     -- head="Chasseur's Tricorne +1", -- __/14 [__/__,  59]
     -- body="Oshosi Vest +1",         -- 14/__ [__/__, 106]
-    -- hands="Lanun Gants +3",        -- 13/__ [__/__,  57]
+    hands="Lanun Gants +3",           -- 13/__ [__/__,  57]
     legs=gear.Adhemar_D_legs,         -- 10/13 [__/__,  75]
     feet="Meg. Jam. +2",              -- 10/__ [ 3/__,  69]
     neck="Loricate Torque +1",        -- __/__ [ 6/ 6, ___]
@@ -484,8 +483,8 @@ function init_gear_sets()
   sets.precast.RA.Flurry1.Safe = {
     ammo=gear.RAbullet,
     -- head="Chasseur's Tricorne +1", -- __/14 [__/__,  59]
-    -- body="Laksamana's Frac +3",    -- __/20 [__/__,  84]
-    -- hands="Lanun Gants +3",        -- 13/__ [__/__,  57]
+    body="Laksamana's Frac +3",       -- __/20 [__/__,  84]
+    hands="Lanun Gants +3",           -- 13/__ [__/__,  57]
     legs=gear.Adhemar_D_legs,         -- 10/13 [__/__,  75]
     feet="Meg. Jam. +2",              -- 10/__ [ 3/__,  69]
     neck="Loricate Torque +1",        -- __/__ [ 6/ 6, ___]
@@ -506,7 +505,7 @@ function init_gear_sets()
   sets.precast.RA.Flurry2.Safe = {
     ammo=gear.RAbullet,
     -- head="Chasseur's Tricorne +1", -- __/14 [__/__,  59]
-    -- body="Laksamana's Frac +3",    -- __/20 [__/__,  84]
+    body="Laksamana's Frac +3",       -- __/20 [__/__,  84]
     hands=gear.Carmine_D_hands,       --  8/11 [__/__,  43]
     legs=gear.Adhemar_D_legs,         -- 10/13 [__/__,  75]
     feet=gear.Pursuer_A_feet,         -- __/10 [__/__,  69]
@@ -544,8 +543,6 @@ function init_gear_sets()
     ring2="Epaminondas's Ring",
     back=gear.COR_WS2_Cape,
     waist="Fotia Belt",
-    -- head="Lanun Tricorne +3",
-    -- body="Laksamana's Frac +3",
     -- back=gear.COR_WS3_Cape,
   }
   sets.precast.WS.MaxTP = set_combine(sets.precast.WS, {
@@ -834,7 +831,7 @@ function init_gear_sets()
   sets.precast.WS['Sniper Shot'] = {
     ammo=gear.RAccbullet,
     head="Malignance Chapeau",    -- 33, 50
-    body="Malignance Tabard",     -- 42, 50
+    body="Laksamana's Frac +3",   -- 45, 57
     hands="Malignance Gloves",    -- 24, 50
     legs="Malignance Tights",     -- 42, 50
     feet="Malignance Boots",      -- 49, 50
@@ -845,7 +842,6 @@ function init_gear_sets()
     ring2="Hajduk Ring +1",       -- __, 17
     back=gear.COR_RA_Cape,        -- 30, 20
     waist="Kwahu Kachina Belt +1",  --  8, 20
-    -- body="Laksamana's Frac +3",  -- 45, 57
     -- legs="Laksamana's Trews +3", -- 33, 49
     -- AF+Regal set bonus           -- __, 30
   } -- 236 AGI, 360 R.Acc
@@ -921,11 +917,28 @@ function init_gear_sets()
   })
   sets.midcast.RA.HighAcc = set_combine(sets.midcast.RA.MidAcc, {
     waist="Kwahu Kachina Belt +1",    --  8, __, 20/__ < 5> {_} (__) [__/__, ___]
-    -- body="Laksamana's Frac +3",    -- 45, __, 57/35 <__> {_} (19) [__/__,  84]
+    body="Laksamana's Frac +3",       -- 45, __, 57/35 <__> {_} (19) [__/__,  84]
     -- legs="Laksamana's Trews +3",   -- 33, __, 49/__ <__> {_} (__) [__/__,  89]
     -- AF set bonus                   -- __, __, 15/__ <__> {_} (__) [__/__, ___]
     -- 218 AGI, 58 STP, 428 racc/160 ratt <5 crit> {10 PDL} (77 Recycle) [19 PDT/9 MDT, 531 M.Eva]
   })
+  
+  sets.midcast.RA.Safe = {
+    ammo=gear.RAbullet,               -- __, __, 20/__ <__> {_} (__) [__/__, ___]
+    head="Ikenga's Hat",              -- 29,  8, 50/65 <__> {4} (__) [__/__,  96]
+    body="Ikenga's Vest",             -- 39, 11, 50/65 <__> {7} (__) [__/__, 112]
+    hands="Malignance Gloves",        -- 24, 12, 50/__ <__> {4} (__) [ 5/ 5, 112]
+    legs="Ikenga's Trousers",         -- 40, 10, 50/65 <__> {6} (__) [ 9/ 9, 123]
+    feet="Malignance Boots",          -- 49,  9, 50/__ <__> {2} (__) [ 4/ 4, 150]
+    neck="Iskur Gorget",              -- __,  8, 30/30 <__> {_} (__) [__/__, ___]
+    ear1="Odnowa Earring +1",         -- __, __, __/__ <__> {_} (__) [ 3/ 5, ___]
+    ear2="Telos Earring",             -- __,  5, 10/10 <__> {_} (__) [__/__, ___]
+    ring1="Gelatinous Ring +1",       -- __, __, __/__ <__> {_} (__) [ 7/-1, ___]
+    ring2="Defending Ring",           -- __, __, __/__ <__> {_} (__) [10/10, ___]
+    back=gear.COR_RA_Cape,            -- 30, 10, 20/20 <__> {_} (__) [10/__, ___]
+    waist="Yemaya Belt",              --  7,  4, 10/10 <__> {_} (__) [__/__, ___]
+    -- Merits/Traits/Gifts                                      (58)
+  } -- 218 AGI, 77 STP, 340 racc/265 ratt <0 crit> {23 PDL} (58 Recycle) [48 PDT/32 MDT, 593 M.Eva]
 
   sets.midcast.RA.Critical = {
     ammo=gear.RAbullet,               -- __, __, 20/__ <__> {_} (__) [__/__, ___]
@@ -944,21 +957,31 @@ function init_gear_sets()
     -- Merits/Traits/Gifts                                      (58)
     -- 239 AGI, 47 STP, 331 racc/190 ratt <38 crit rate> {11 PDL} (58 Recycle) [5 PDT/5 MDT, 489 M.Eva]
     
-    -- ammo=gear.RAbullet,            -- __, __, 20/__ <__> {_} (__) [__/__, ___]
-    -- head="Ikenga's Hat",           -- 29,  8, 50/65 <__> {4} (__) [__/__,  96]
-    -- body="Ikenga's Vest",          -- 39, 11, 50/65 <__> {7} (__) [__/__, 112]
     -- hands="Chasseur's Gants +2",   -- 21, __, 52/52 < 7> {_} (__) [__/__,  83]
-    -- legs="Mummu Kecks +2",         -- 45, __, 45/__ < 7> {_} (__) [ 5/ 5, 107]
-    -- feet="Oshosi Leggings +1",     -- 56, __, 43/__ <10> {_} (__) [__/__, 131]
-    -- neck="Iskur Gorget",           -- __,  8, 30/30 <__> {_} (__) [__/__, ___]
-    -- ear1="Odr Earring",            -- __, __, __/__ < 5> {_} (__) [__/__, ___]
-    -- ear2="Telos Earring",          -- __,  5, 10/10 <__> {_} (__) [__/__, ___]
-    -- ring1="Begrudging Ring",       -- __, __, __/__ < 5> {_} (__)[-10/__, ___]
     -- ring2="Mummu Ring",            -- __, __,  6/__ < 3> {_} (__) [__/__, ___]
-    -- back=gear.COR_RA_Cape,         -- 30, 10, 20/20 <__> {_} (__) [10/__, ___]
-    -- waist="K. Kachina Belt +1",    --  8, __, 20/__ < 5> {_} (__) [__/__, ___]
-    -- Merits/Traits/Gifts                                      (58)
     -- 228 AGI, 42 STP, 346 racc/242 ratt <42 crit rate> {11 PDL} (58 Recycle) [5 PDT/5 MDT, 529 M.Eva]
+  }
+  sets.midcast.RA.Critical.Safe = {
+    ammo=gear.RAbullet,               -- __, __, 20/__ <__> {_} (__) [__/__, ___]
+    head="Malignance Chapeau",        -- 33,  8, 50/__ <__> {3} (__) [ 6/ 6, 123]
+    body="Malignance Tabard",         -- 42, 11, 50/__ <__> {6} (__) [ 9/ 9, 139]
+    hands="Mummu Wrists +2",          -- 22, __, 43/__ < 6> {_} (__) [__/__,  43]
+    legs="Mummu Kecks +2",            -- 45, __, 45/__ < 7> {_} (__) [ 5/ 5, 107]
+    feet="Oshosi Leggings +1",        -- 56, __, 43/__ <10> {_} (__) [__/__, 131]
+    neck="Iskur Gorget",              -- __,  8, 30/30 <__> {_} (__) [__/__, ___]
+    ear1="Odr Earring",               -- __, __, __/__ < 5> {_} (__) [__/__, ___]
+    ear2="Odnowa Earring +1",         -- __, __, __/__ <__> {_} (__) [ 3/ 5, ___]
+    ring1="Gelatinous Ring +1",       -- __, __, __/__ <__> {_} (__) [ 7/-1, ___]
+    ring2="Defending Ring",           -- __, __, __/__ <__> {_} (__) [10/10, ___]
+    back=gear.COR_RA_Cape,            -- 30, 10, 20/20 <__> {_} (__) [10/__, ___]
+    waist="K. Kachina Belt +1",       --  8, __, 20/__ < 5> {_} (__) [__/__, ___]
+    -- Merits/Traits/Gifts                                      (58)
+    -- 236 AGI, 37 STP, 321 racc/50 ratt <33 crit rate> {9 PDL} (58 Recycle) [50 PDT/34 MDT, 543 M.Eva]
+    
+    -- hands="Chasseur's Gants +2",   -- 21, __, 52/52 < 7> {_} (__) [__/__,  83]
+    -- neck="Loricate Torque +1",     -- __, __, __/__ <__> {_} (__) [ 6/ 6, ___]
+    -- ring1="Mummu Ring",            -- __, __,  6/__ < 3> {_} (__) [__/__, ___]
+    -- 235 AGI, 29 STP, 306 racc/72 ratt <37 crit rate> {9 PDL} (58 Recycle) [49 PDT/41 MDT, 583 M.Eva]
   }
 
   -- 60% from traits/gifts
@@ -984,6 +1007,29 @@ function init_gear_sets()
     -- hands="Lanun Gants +3",        -- 22, __, 44/76 <__> {_} (__) [__/__,  84] (__, __) (__, __); Occ. Quad Shot
     -- 266 AGI, 36 STP, 329 racc/242 ratt <10 crit> {0 PDL} (68 Recycle) [22 PDT/12 MDT, 545 M.Eva] (17 DS Rate, 25 DS Dmg) (92 TS Rate, 13 TS Dmg)
   }
+  sets.TripleShot.Safe = {
+    ammo=gear.RAbullet,               -- __, __, 20/__ <__> {_} (__) [__/__, ___] (__, __) (__, __)
+    head="Oshosi Mask +1",            -- 44, __, 45/__ <__> {_} (__) [__/__,  90] ( 6, 25) ( 5, 13)
+    body="Chasseur's Frac +1",        -- 34, __, 22/22 <__> {_} (__) [__/__,  69] (__, __) (12, __)
+    hands="Malignance Gloves",        -- 24, 12, 50/__ <__> {4} (__) [ 5/ 5, 112] (__, __) (__, __)
+    legs="Oshosi Trousers +1",        -- 43, __, 46/__ <__> {_} (__) [__/__, 131] ( 7, __) ( 6, __)
+    feet="Oshosi Leggings +1",        -- 56, __, 43/__ <10> {_} (__) [__/__, 131] ( 4, __) ( 3, __)
+    neck="Iskur Gorget",              -- __,  8, 30/30 <__> {_} (__) [__/__, ___] (__, __) (__, __)
+    ear1="Odnowa Earring +1",         -- __, __, __/__ <__> {_} (__) [ 3/ 5, ___] (__, __) (__, __)
+    ear2="Telos Earring",             -- __,  5, 10/10 <__> {_} (__) [__/__, ___] (__, __) (__, __)
+    ring1="Gelatinous Ring +1",       -- __, __, __/__ <__> {_} (__) [ 7,-1, ___] (__, __) (__, __)
+    ring2="Defending Ring",           -- __, __, __/__ <__> {_} (__) [10/10, ___] (__, __) (__, __)
+    back=gear.COR_RA_Cape,            -- 30, 10, 20/20 <__> {_} (__) [10/__, ___] (__, __) ( 5, __)
+    waist="Yemaya Belt",              --  7,  4, 10/10 <__> {_} (__) [__/__, ___] (__, __) (__, __)
+    -- JA                                                                                  (40, __)
+    -- Merits/Traits/Gifts                                      (58)                       (20, __)
+    -- 238 AGI, 39 STP, 296 racc/92 ratt <10 crit> {4 PDL} (58 Recycle) [35 PDT/19 MDT, 533 M.Eva] (17 DS Rate, 25 DS Dmg) (91 TS Rate, 13 TS Dmg)
+    
+    -- body="Chasseur's Frac +2",     -- 44, __, 54/64 <__> {_} (__) [12/12, 109] (__, __) (13, __)
+    -- hands="Lanun Gants +3",        -- 22, __, 44/76 <__> {_} (__) [__/__,  84] (__, __) (__, __); Occ. Quad Shot
+    -- ear1="Enervating Earring",     -- __,  4,  7/ 7 <__> {_} (__) [__/__, ___] (__, __) (__, __)
+    -- 246 AGI, 31 STP, 329 racc/217 ratt <10 crit> {0 PDL} (58 Recycle) [39 PDT/21 MDT, 545 M.Eva] (17 DS Rate, 25 DS Dmg) (92 TS Rate, 13 TS Dmg)
+  }
 
   sets.TripleShot.Critical = {
     ammo=gear.RAbullet,               -- __, __, 20/__ <__> {_} (__) [__/__, ___] (__, __) (__, __)
@@ -1003,22 +1049,33 @@ function init_gear_sets()
     -- Merits/Traits/Gifts                                      (58)                       (20, __)
     -- 249 AGI, 28 STP, 298 racc/82 ratt <38 crit> {0 PDL} (58 Recycle) [5 PDT/5 MDT, 440 M.Eva] (10 DS Rate, 25 DS Dmg) (85 TS Rate, 13 TS Dmg)
     
-    -- ammo=gear.RAbullet,            -- __, __, 20/__ <__> {_} (__) [__/__, ___] (__, __) (__, __)
-    -- head="Oshosi Mask +1",         -- 44, __, 45/__ <__> {_} (__) [__/__,  90] ( 6, 25) ( 5, 13)
     -- body="Chasseur's Frac +2",     -- 44, __, 54/64 <__> {_} (__) [12/12, 109] (__, __) (13, __)
     -- hands="Chasseur's Gants +2",   -- 21, __, 52/52 < 7> {_} (__) [__/__,  83] (__, __) (__, __)
-    -- legs="Mummu Kecks +2",         -- 45, __, 45/__ < 7> {_} (__) [ 5/ 5, 107] (__, __) (__, __)
-    -- feet="Oshosi Leggings +1",     -- 56, __, 43/__ <10> {_} (__) [__/__, 131] ( 4, __) ( 3, __)
-    -- neck="Iskur Gorget",           -- __,  8, 30/30 <__> {_} (__) [__/__, ___] (__, __) (__, __)
-    -- ear1="Odr Earring",            -- __, __, __/__ < 5> {_} (__) [__/__, ___] (__, __) (__, __)
-    -- ear2="Telos Earring",          -- __,  5, 10/10 <__> {_} (__) [__/__, ___] (__, __) (__, __)
-    -- ring1="Begrudging Ring",       -- __, __, __/__ < 5> {_} (__)[-10/__, ___] (__, __) (__, __)
     -- ring2="Mummu Ring",            -- __, __,  6/__ < 3> {_} (__) [__/__, ___] (__, __) (__, __)
-    -- back=gear.COR_RA_Cape,         -- 30, 10, 20/20 <__> {_} (__) [10/__, ___] (__, __) ( 5, __)
-    -- waist="K. Kachina Belt +1",    --  8, __, 20/__ < 5> {_} (__) [__/__, ___] (__, __) (__, __)
+    -- 248 AGI, 23 STP, 345 racc/176 ratt <42 crit> {0 PDL} (58 Recycle) [17 PDT/17 MDT, 520 M.Eva] (10 DS Rate, 25 DS Dmg) (86 TS Rate, 13 TS Dmg)
+  }
+  sets.TripleShot.Critical.Safe = {
+    ammo=gear.RAbullet,               -- __, __, 20/__ <__> {_} (__) [__/__, ___] (__, __) (__, __)
+    head="Oshosi Mask +1",            -- 44, __, 45/__ <__> {_} (__) [__/__,  90] ( 6, 25) ( 5, 13)
+    body="Chasseur's Frac +1",        -- 34, __, 22/22 <__> {_} (__) [__/__,  69] (__, __) (12, __)
+    hands="Mummu Wrists +2",          -- 22, __, 43/__ < 6> {_} (__) [__/__,  43] (__, __) (__, __)
+    legs="Mummu Kecks +2",            -- 45, __, 45/__ < 7> {_} (__) [ 5/ 5, 107] (__, __) (__, __)
+    feet="Oshosi Leggings +1",        -- 56, __, 43/__ <10> {_} (__) [__/__, 131] ( 4, __) ( 3, __)
+    neck="Loricate Torque +1",        -- __, __, __/__ <__> {_} (__) [ 6/ 6, ___] (__, __) (__, __)
+    ear1="Odr Earring",               -- __, __, __/__ < 5> {_} (__) [__/__, ___] (__, __) (__, __)
+    ear2="Telos Earring",             -- __,  5, 10/10 <__> {_} (__) [__/__, ___] (__, __) (__, __)
+    ring1="Gelatinous Ring +1",       -- __, __, __/__ <__> {_} (__) [ 7,-1, ___] (__, __) (__, __)
+    ring2="Defending Ring",           -- __, __, __/__ <__> {_} (__) [10/10, ___] (__, __) (__, __)
+    back=gear.COR_RA_Cape,            -- 30, 10, 20/20 <__> {_} (__) [10/__, ___] (__, __) ( 5, __)
+    waist="K. Kachina Belt +1",       --  8, __, 20/__ < 5> {_} (__) [__/__, ___] (__, __) (__, __)
     -- JA                                                                                  (40, __)
     -- Merits/Traits/Gifts                                      (58)                       (20, __)
-    -- 248 AGI, 23 STP, 345 racc/176 ratt <42 crit> {0 PDL} (58 Recycle) [17 PDT/17 MDT, 520 M.Eva] (10 DS Rate, 25 DS Dmg) (86 TS Rate, 13 TS Dmg)
+    -- 239 AGI, 15 STP, 268 racc/52 ratt <33 crit> {0 PDL} (58 Recycle) [38 PDT/20 MDT, 440 M.Eva] (10 DS Rate, 25 DS Dmg) (85 TS Rate, 13 TS Dmg)
+    
+    -- body="Chasseur's Frac +2",     -- 44, __, 54/64 <__> {_} (__) [12/12, 109] (__, __) (13, __)
+    -- hands="Chasseur's Gants +2",   -- 21, __, 52/52 < 7> {_} (__) [__/__,  83] (__, __) (__, __)
+    neck="Iskur Gorget",              -- __,  8, 30/30 <__> {_} (__) [__/__, ___] (__, __) (__, __)
+    -- 248 AGI, 23 STP, 339 racc/176 ratt <34 crit> {0 PDL} (58 Recycle) [44 PDT/26 MDT, 520 M.Eva] (10 DS Rate, 25 DS Dmg) (86 TS Rate, 13 TS Dmg)
   }
 
   -- Dmg is based on Gun DMG, bullet DMG, Quick Draw+ stat, elemental bonuses, MAB.
@@ -1948,6 +2005,41 @@ function init_gear_sets()
   sets.engaged.DW.MidAcc.HeavyDef.MaxHaste = sets.engaged.MidAcc.HeavyDef
   sets.engaged.DW.HighAcc.HeavyDef.MaxHaste = sets.engaged.HighAcc.HeavyDef
 
+  sets.engaged.Safe = sets.engaged.HeavyDef
+  sets.engaged.LowAcc.Safe = sets.engaged.LowAcc.HeavyDef
+  sets.engaged.MidAcc.Safe = sets.engaged.MidAcc.HeavyDef
+  sets.engaged.HighAcc.Safe = sets.engaged.HighAcc.HeavyDef
+
+  sets.engaged.DW.Safe = sets.engaged.DW.HeavyDef
+  sets.engaged.DW.LowAcc.Safe = sets.engaged.DW.LowAcc.HeavyDef
+  sets.engaged.DW.MidAcc.Safe = sets.engaged.DW.MidAcc.HeavyDef
+  sets.engaged.DW.HighAcc.Safe = sets.engaged.DW.HighAcc.HeavyDef
+  
+  sets.engaged.DW.Safe.LowHaste = sets.engaged.DW.HeavyDef.LowHaste
+  sets.engaged.DW.LowAcc.Safe.LowHaste = sets.engaged.DW.LowAcc.HeavyDef.LowHaste
+  sets.engaged.DW.MidAcc.Safe.LowHaste = sets.engaged.DW.MidAcc.HeavyDef.LowHaste
+  sets.engaged.DW.HighAcc.Safe.LowHaste = sets.engaged.DW.HighAcc.HeavyDef.LowHaste
+
+  sets.engaged.DW.Safe.MidHaste = sets.engaged.DW.HeavyDef.MidHaste
+  sets.engaged.DW.LowAcc.Safe.MidHaste = sets.engaged.DW.LowAcc.HeavyDef.MidHaste
+  sets.engaged.DW.MidAcc.Safe.MidHaste = sets.engaged.DW.MidAcc.HeavyDef.MidHaste
+  sets.engaged.DW.HighAcc.Safe.MidHaste = sets.engaged.DW.HighAcc.HeavyDef.MidHaste
+
+  sets.engaged.DW.Safe.HighHaste = sets.engaged.DW.HeavyDef.HighHaste
+  sets.engaged.DW.LowAcc.Safe.HighHaste = sets.engaged.DW.LowAcc.HeavyDef.HighHaste
+  sets.engaged.DW.MidAcc.Safe.HighHaste = sets.engaged.DW.MidAcc.HeavyDef.HighHaste
+  sets.engaged.DW.HighAcc.Safe.HighHaste = sets.engaged.DW.HighAcc.HeavyDef.HighHaste
+
+  sets.engaged.DW.Safe.SuperHaste = sets.engaged.DW.HeavyDef.SuperHaste
+  sets.engaged.DW.LowAcc.Safe.SuperHaste = sets.engaged.DW.LowAcc.HeavyDef.SuperHaste
+  sets.engaged.DW.MidAcc.Safe.SuperHaste = sets.engaged.DW.MidAcc.HeavyDef.SuperHaste
+  sets.engaged.DW.HighAcc.Safe.SuperHaste = sets.engaged.DW.HighAcc.HeavyDef.SuperHaste
+
+  sets.engaged.DW.Safe.MaxHaste = sets.engaged.DW.HeavyDef.MaxHaste
+  sets.engaged.DW.LowAcc.Safe.MaxHaste = sets.engaged.DW.LowAcc.HeavyDef.MaxHaste
+  sets.engaged.DW.MidAcc.Safe.MaxHaste = sets.engaged.DW.MidAcc.HeavyDef.MaxHaste
+  sets.engaged.DW.HighAcc.Safe.MaxHaste = sets.engaged.DW.HighAcc.HeavyDef.MaxHaste
+
   sets.engaged.SubtleBlow = {
     ammo=gear.RAbullet,
     head="Malignance Chapeau",    -- [ 6/ 6, 123]
@@ -2144,10 +2236,22 @@ end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
   if spell.action_type == 'Ranged Attack' then
-    if flurry == 2 then
-      equip(sets.precast.RA.Flurry2)
-    elseif flurry == 1 then
-      equip(sets.precast.RA.Flurry1)
+    if state.DefenseMode.value ~= 'None' or state.HybridMode.value == 'HeavyDef' then
+      if flurry == 0 then
+        equip(sets.precast.RA.Safe)
+      elseif flurry == 1 then
+        equip(sets.precast.RA.Flurry1.Safe)
+      elseif flurry == 2 then
+        equip(sets.precast.RA.Flurry2.Safe)
+      end
+    else
+      if flurry == 0 then
+        equip(sets.precast.RA)
+      elseif flurry == 1 then
+        equip(sets.precast.RA.Flurry1)
+      elseif flurry == 2 then
+        equip(sets.precast.RA.Flurry2)
+      end
     end
   elseif spell.type == 'WeaponSkill' then
     -- Handle belts for elemental WS
@@ -2191,6 +2295,9 @@ function job_midcast(spell, action, spellMap, eventArgs)
 end
 
 function job_post_midcast(spell, action, spellMap, eventArgs)
+  if spell.action_type == 'Ranged Attack' then
+  end
+
   if spell.type == 'CorsairShot' and (spell.english ~= 'Light Shot' and spell.english ~= 'Dark Shot') then
     -- Equip elemental waist
     local base_day_weather_mult = silibs.get_day_weather_multiplier(spell.element, false, false)
@@ -2214,13 +2321,35 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
       equip(sets.midcast.CorsairShot.STP)
     end
   elseif spell.action_type == 'Ranged Attack' then
-    if buffactive['Triple Shot'] then
-      equip(sets.TripleShot)
-      if (buffactive['Aftermath: Lv.3'] and player.equipment.ranged == "Armageddon") or state.CritMode.current == 'on' then
+    -- Equip safe sets if available
+    if buffactive['Triple Shot'] and ((player.equipment.ranged == 'Armageddon' and buffactive['Aftermath: Lv.3']) or state.CritMode.current == 'on') then
+      if (state.DefenseMode.value ~= 'None' or state.HybridMode.value == 'HeavyDef') and sets.TripleShot.Critical.Safe then
+        equip(sets.TripleShot.Critical.Safe)
+      else
         equip(sets.TripleShot.Critical)
       end
-    elseif (buffactive['Aftermath: Lv.3'] and player.equipment.ranged == "Armageddon") or state.CritMode.current == 'on' then
-      equip(sets.midcast.RA.Critical)
+    elseif buffactive['Triple Shot'] then
+      if (state.DefenseMode.value ~= 'None' or state.HybridMode.value == 'HeavyDef') and sets.TripleShot.Safe then
+        equip(sets.TripleShot.Safe)
+      else
+        equip(sets.TripleShot)
+      end
+    elseif (player.equipment.ranged == 'Armageddon' and buffactive['Aftermath: Lv.3']) or state.CritMode.current == 'on' then
+      if (state.DefenseMode.value ~= 'None' or state.HybridMode.value == 'HeavyDef') and sets.midcast.RA.Critical.Safe then
+        equip(sets.midcast.RA.Critical.Safe)
+      else
+        equip(sets.midcast.RA.Critical)
+      end
+    else
+      if (state.DefenseMode.value ~= 'None' or state.HybridMode.value == 'HeavyDef') and sets.midcast.RA[state.RangedMode.value].Safe then
+        equip(sets.midcast.RA[state.RangedMode.value].Safe)
+      elseif (state.DefenseMode.value ~= 'None' or state.HybridMode.value == 'HeavyDef') and sets.midcast.RA.Safe then
+        equip(sets.midcast.RA.Safe)
+      elseif sets.midcast.RA[state.RangedMode.value] then
+        equip(sets.midcast.RA[state.RangedMode.value])
+      else
+        equip(sets.midcast.RA)
+      end
     end
   end
 
@@ -2240,6 +2369,8 @@ end
 function job_aftercast(spell, action, spellMap, eventArgs)
   silibs.aftercast_hook(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
+
+  state.CastingMode:reset()
 
   if (spell.type == 'CorsairRoll' or spell.english == "Double-Up") and not spell.interrupted then
     display_roll_info(spell)
