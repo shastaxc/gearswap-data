@@ -1074,7 +1074,7 @@ function init_gear_sets()
     
     -- body="Chasseur's Frac +2",     -- 44, __, 54/64 <__> {_} (__) [12/12, 109] (__, __) (13, __)
     -- hands="Chasseur's Gants +2",   -- 21, __, 52/52 < 7> {_} (__) [__/__,  83] (__, __) (__, __)
-    neck="Iskur Gorget",              -- __,  8, 30/30 <__> {_} (__) [__/__, ___] (__, __) (__, __)
+    -- neck="Iskur Gorget",           -- __,  8, 30/30 <__> {_} (__) [__/__, ___] (__, __) (__, __)
     -- 248 AGI, 23 STP, 339 racc/176 ratt <34 crit> {0 PDL} (58 Recycle) [44 PDT/26 MDT, 520 M.Eva] (10 DS Rate, 25 DS Dmg) (86 TS Rate, 13 TS Dmg)
   }
 
@@ -1152,6 +1152,8 @@ function init_gear_sets()
   sets.midcast.CorsairShot.Enhance = {
     head="Blood Mask", -- Recast -5
     feet="Chasseur's Bottes +1",
+    
+    -- feet="Chasseur's Bottes +2",
   }
 
   sets.midcast.Cure = {
