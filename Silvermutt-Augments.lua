@@ -89,6 +89,7 @@ gear.Herc_Refresh_feet = { name="Herculean Boots", augments={'Crit.hit rate+1','
 
 gear.Herc_DW_feet = { name="Herculean Boots", augments={'"Dual Wield"+5','Pet: Attack+15 Pet: Rng.Atk.+15','Chance of successful block +1','Accuracy+13 Attack+13','Mag. Acc.+1 "Mag.Atk.Bns."+1',}}
 
+gear.Herc_Phalanx_legs = { name="Herculean Trousers", augments={'MND+8','STR+5','Phalanx +5','Mag. Acc.+19 "Mag.Atk.Bns."+19',}}
 gear.Herc_Phalanx_feet = { name="Herculean Boots", augments={'Pet: INT+8','"Dbl.Atk."+1','Phalanx +4','Accuracy+2 Attack+2','Mag. Acc.+16 "Mag.Atk.Bns."+16',}}
 
 -- Merlinic

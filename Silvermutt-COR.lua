@@ -2910,11 +2910,7 @@ end
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
   -- Default macro set/book: (set, book)
-  if player.sub_job == 'DNC' then
-    set_macro_page(2, 11)
-  else
-    set_macro_page(1, 11)
-  end
+  set_macro_page(2, 11)
 end
 
 function test()

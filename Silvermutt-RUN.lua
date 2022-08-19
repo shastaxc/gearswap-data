@@ -656,7 +656,7 @@ function init_gear_sets()
     head="Futhark Bandeau +3",                -- 7, __, __ [ 6/ 0,  56]
     body=gear.Taeon_Phalanx_body,             -- 3, __, __ [ 0/ 0,  59]
     hands=gear.Taeon_Phalanx_hands,           -- 3, __, __ [ 0/ 0,  25]
-    legs=gear.Taeon_Phalanx_legs,             -- 3, __, __ [ 0/ 0,  47]
+    legs=gear.Herc_Phalanx_legs,              -- 5, __, __ [ 2/__,  38]
     feet=gear.Herc_Phalanx_feet,              -- 4, __, __ [ 2/__,   9]
     neck="Futhark Torque +1",                 -- _, __, __ [ 6/ 6,  45]
     ear1="Odnowa Earring +1",                 -- _, __, __ [ 3/ 5, 110]
@@ -667,12 +667,11 @@ function init_gear_sets()
     waist="Audumbla Sash",                    -- _, __, 10 [ 4/ 0,   0]
     -- body=gear.Herc_Phalanx_body,           -- 5, __, __ [__/__,  61]
     -- hands=gear.Herc_Phalanx_hands,         -- 5, __, __ [ 2/__,  20]
-    -- legs=gear.Herc_Phalanx_legs,           -- 5, __, __ [ 2/__,  38]
     -- feet=gear.Herc_Phalanx_feet,           -- 5, __, __ [ 2/__,   9]
     -- neck="Futhark Torque +2",              -- _, __, __ [ 7/ 7,  60]
     -- ring2="Moonlight Ring",                -- _, __, __ [ 5/ 5, 110]
     -- 27 Phalanx, 10 Enh Skill, 21% Interrupt [47 PDT/25 MDT, 874 HP]
-  })-- 20 Phalanx, 10 Enh Skill, 21% Interrupt [47 PDT/29 MDT, 761 HP]
+  })-- 22 Phalanx, 10 Enh Skill, 21% Interrupt [49 PDT/29 MDT, 752 HP]
 
   sets.midcast['Aquaveil'] = sets.SIRD
 
@@ -2025,11 +2024,9 @@ end)
 function select_default_macro_book()
   -- Default macro set/book: (set, book)
   if player.sub_job == 'BLU' then
-    set_macro_page(1, 5)
+    set_macro_page(5, 5)
   elseif player.sub_job == 'DRK' or player.sub_job == 'BLM' then
     set_macro_page(2, 5)
-  elseif player.sub_job == 'WHM' then
-    set_macro_page(3, 5)
   elseif player.sub_job == 'WAR' then
     set_macro_page(4, 5)
   else

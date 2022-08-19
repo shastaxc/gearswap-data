@@ -1834,7 +1834,7 @@ function select_default_macro_book()
       set_macro_page(2, 5)
   end
 
-  set_macro_page(1,5)
+  set_macro_page(3,5)
 end
 
 function check_gear()
