@@ -2343,7 +2343,7 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
         equip(sets.midcast.RA.Critical)
       end
     else
-      if (state.DefenseMode.value ~= 'None' or state.HybridMode.value == 'HeavyDef') and sets.midcast.RA[state.RangedMode.value].Safe then
+      if (state.DefenseMode.value ~= 'None' or state.HybridMode.value == 'HeavyDef') and sets.midcast.RA[state.RangedMode.value] and sets.midcast.RA[state.RangedMode.value].Safe then
         equip(sets.midcast.RA[state.RangedMode.value].Safe)
       elseif (state.DefenseMode.value ~= 'None' or state.HybridMode.value == 'HeavyDef') and sets.midcast.RA.Safe then
         equip(sets.midcast.RA.Safe)
