@@ -108,6 +108,15 @@ locked_ring1 = false -- Do not modify
 locked_ring2 = false -- Do not modify
 
 function define_global_sets()
+  sets.org = {}
+  sets.org.global = {}
+  sets.org.global[1] = {ring1="Dimensional Ring (Holla)"}
+  sets.org.global[2] = {ring1="Dimensional Ring (Dem)"}
+  sets.org.global[3] = {ring1="Dimensional Ring (Mea)"}
+  sets.org.global[4] = {ring1="Warp Ring"}
+  sets.org.global[5] = {ear1="Reraise Earring"}
+  sets.org.global[6] = {head="Shobuhouou Kabuto"}
+  sets.org.global[7] = {back="Nexus Cape"}
   include('Global-Augments.lua')
   include('Kinkima-Augments.lua')
 end
