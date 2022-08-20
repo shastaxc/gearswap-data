@@ -96,7 +96,7 @@ function job_setup()
   silibs.enable_cancel_outranged_ws()
   silibs.enable_cancel_on_blocking_status()
   silibs.enable_weapon_rearm()
-  silibs.enable_auto_lockstyle(8)
+  silibs.enable_auto_lockstyle(1)
   silibs.enable_premade_commands()
   silibs.enable_th()
 
@@ -2141,7 +2141,7 @@ function init_gear_sets()
   }
 
   sets.Kiting = {
-    legs=gear.Carmine_A_legs,
+    ring1="Shneddick Ring",
   }
   sets.Kiting.Adoulin = {
     body="Councilor's Garb",
@@ -2183,8 +2183,10 @@ function init_gear_sets()
   }
   sets.WeaponSet["Savage Blade"] = {
     main="Naegling",
-    sub="Blurred Knife +1",
-    ranged="Anarchy +2",
+    sub="Qutrub Knife",
+    ranged="Holliday",
+    -- sub="Blurred Knife +1",
+    -- ranged="Anarchy +2",
   }
   sets.WeaponSet.Cleaving = {
     main="Lanun Knife",
@@ -2907,7 +2909,7 @@ end
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
   -- Default macro set/book: (set, book)
-  set_macro_page(2, 11)
+  set_macro_page(2, 3)
 end
 
 function test()
