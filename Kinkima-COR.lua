@@ -2183,9 +2183,8 @@ function init_gear_sets()
   }
   sets.WeaponSet["Savage Blade"] = {
     main="Naegling",
-    sub="Qutrub Knife",
+    sub="Blurred Knife +1",
     ranged="Holliday",
-    -- sub="Blurred Knife +1",
     -- ranged="Anarchy +2",
   }
   sets.WeaponSet.Cleaving = {
