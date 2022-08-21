@@ -178,7 +178,7 @@ function init_gear_sets()
     ammo="Impatiens",                 -- __ [__/__, ___]  2, __
     head="Bunzi's Hat",               -- 10 [ 7/ 7, 123] __, __
     body="Shamash Robe",              -- __ [10/__, 106] __, __; Resist Silence+90
-    hands=gear.Nyame_B_hands          -- __ [ 7/ 7, 112] __, __
+    hands=gear.Nyame_B_hands,         -- __ [ 7/ 7, 112] __, __
     legs="Ebers Pantaloons +1",       -- 20 [12/12, 147] __, __; FC from Divine Benison
     feet=gear.Nyame_B_feet,           -- __ [ 7/ 7, 150] __, __
     neck="Loricate Torque +1",        -- __ [ 6/ 6, ___] __, __; +Defense
