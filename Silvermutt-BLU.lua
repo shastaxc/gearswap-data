@@ -239,8 +239,9 @@ function user_setup()
   include('Global-Binds.lua') -- Additional local binds
 
   if player.sub_job == "RDM" then
-    send_command('bind !o input /ma Phalanx <me>')
     send_command('bind !i input /ma Stoneskin <me>')
+    send_command('bind !o input /ma Phalanx <me>')
+    send_command('bind !p input /ma Aquaveil <me>')
   elseif player.sub_job == 'WAR' then
     send_command('bind ^numpad/ input /ja "Berserk" <me>')
     send_command('bind ^numpad* input /ja "Warcry" <me>')
@@ -286,8 +287,9 @@ function user_unload()
   send_command('unbind !delete')
 
   send_command('unbind !e')
-  send_command('unbind !o')
   send_command('unbind !i')
+  send_command('unbind !o')
+  send_command('unbind !p')
   send_command('unbind !\'')
 
   send_command('unbind ^numpad/')
