@@ -801,7 +801,7 @@ function init_gear_sets()
   sets.engaged.DW = {
     ammo="Yamarang",
     head=gear.Adhemar_B_head,
-    body=gear.Adhemar_B_body, -- 6
+    body=gear.Adhemar_A_body, -- 6
     hands="Pillager's Armlets +3", --5
     legs=gear.Samnuha_legs,
     feet=gear.Herc_DW_feet, --5
@@ -828,7 +828,7 @@ function init_gear_sets()
   sets.engaged.DW.LowHaste = {
     ammo="Coiste Bodhar",
     head=gear.Adhemar_B_head,
-    body=gear.Adhemar_B_body, --6
+    body=gear.Adhemar_A_body, --6
     hands="Pillager's Armlets +3", --5
     legs=gear.Samnuha_legs,
     feet="Plunderer's Poulaines +3",

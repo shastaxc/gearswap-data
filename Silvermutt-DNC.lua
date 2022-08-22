@@ -458,7 +458,7 @@ function init_gear_sets()
   sets.precast.WS['Pyrrhic Kleos'] = set_combine(sets.precast.WS, {
     ammo="Aurgelmir Orb",           --  5,  5, __,  7, __
     head=gear.Lustratio_D_head,     -- 47, 45, __, __, __
-    body=gear.Adhemar_B_body,       -- 38, 45, __, 55, __
+    body="Gleti's Cuirass",         -- 39, 34, __, 60,  9
     hands=gear.Adhemar_B_hands,     -- 27, 56, __, 52, __
     legs="Gleti's Breeches",        -- 49, __, __, 60,  8
     feet=gear.Lustratio_D_feet,     -- 47, 48, __, __, __
@@ -472,8 +472,9 @@ function init_gear_sets()
     -- Lustratio set bonus          -- __, __,  4, __, __
 
     -- ammo="Aurgelmir Orb +1",     --  7,  7, __, 10, __
+    -- body=gear.Adhemar_B_body,    -- 38, 45, __, 55, __
     -- 240 STR, 281 DEX, 4 WSD, 233 Att, 18 PDL
-  })-- 238 STR, 279 DEX, 4 WSD, 230 Att, 18 PDL
+  })-- 239 STR, 268 DEX, 4 WSD, 235 Att, 27 PDL
   sets.precast.WS['Pyrrhic Kleos'].MaxTP = set_combine(sets.precast.WS['Pyrrhic Kleos'], {})
   sets.precast.WS['Pyrrhic Kleos'].AttCapped = set_combine(sets.precast.WS, {
     ammo="Crepuscular Pebble",      --  3, __, __, __,  3
@@ -808,7 +809,7 @@ function init_gear_sets()
   sets.engaged.DW = {
     ammo="Coiste Bodhar",           -- __,  3, __ < 3, __, __> [__/__, ___] __(__)
     head="Maxixi Tiara +3",         --  8, __, 47 <__, __, __> [__/__,  73] __(__)
-    body=gear.Adhemar_B_body,       --  6, __, 35 <__,  4, __> [__/__,  69] __(__)
+    body=gear.Adhemar_A_body,       --  6, __, 55 <__,  4, __> [__/__,  69] __(__)
     hands=gear.Adhemar_B_hands,     -- __,  7, 32 <__,  4, __> [__/__,  43] __(__)
     legs=gear.Samnuha_legs,         -- __,  7, 15 < 3,  3, __> [__/__,  75] __(__)
     feet="Horos Toe Shoes +3",      -- __,  7, 42 <__, __, __> [__/__,  89] __(__)
@@ -825,7 +826,7 @@ function init_gear_sets()
     -- body="Maculele Casaque +2",  -- 11, __, __ <__, __, __> [13/13,  99] 13(__)
     -- feet="Maculele Toe Shoes +2",-- __, 11, 50 <__, __, __> [ 9/ 9, 105] __(__); Remove Close Position merits
     -- 72 DW, 47 STP, 202 Acc <9 DA, 15 TA, 0 QA> [38 PDT/28 MDT, 453 M.Eva] 46 Subtle Blow
-  } -- 75 DW, 35 STP, 226 Acc <9 DA, 19 TA, 0 QA> [10 PDT/0 MDT, 357 M.Eva] 33 Subtle Blow
+  } -- 75 DW, 35 STP, 246 Acc <9 DA, 19 TA, 0 QA> [10 PDT/0 MDT, 357 M.Eva] 33 Subtle Blow
   sets.engaged.DW.LowAcc = set_combine(sets.engaged.DW, {
     ammo="Yamarang",                -- __,  3, 15 <__, __, __> [__/__,  15] __(__)
     ring1="Chirich Ring +1",
@@ -852,7 +853,7 @@ function init_gear_sets()
   sets.engaged.DW.LowHaste = {
     ammo="Coiste Bodhar",           -- __,  3, __ < 3, __, __> [__/__, ___] __(__)
     head="Malignance Chapeau",      -- __,  8, 50 <__, __, __> [ 6/ 6, 123] __(__)
-    body=gear.Adhemar_B_body,       --  6, __, 35 <__,  4, __> [__/__,  69] __(__)
+    body=gear.Adhemar_A_body,       --  6, __, 55 <__,  4, __> [__/__,  69] __(__)
     hands=gear.Adhemar_B_hands,     -- __,  7, 32 <__,  4, __> [__/__,  43] __(__)
     legs=gear.Samnuha_legs,         -- __,  7, 15 < 3,  3, __> [__/__,  75] __(__)
     feet="Horos Toe Shoes +3",      -- __,  7, 42 <__, __, __> [__/__,  89] __(__)
@@ -869,7 +870,7 @@ function init_gear_sets()
     -- feet="Maculele Toe Shoes +2",-- __, 11, 50 <__, __, __> [ 9/ 9, 105] __(__); Remove Close Position merits
     -- ear1="Telos Earring",        -- __,  5, 10 < 1, __, __> [__/__, ___] __(__)
     -- 63 DW, 57 STP, 212 Acc <15 DA, 15 TA, 0 QA> [38 PDT/28 MDT, 445 M.Eva] 51 Subtle Blow
-  } -- 62 DW, 48 STP, 229 Acc <14 DA, 19 TA, 0 QA> [16 PDT/6 MDT, 407 M.Eva] 38 Subtle Blow
+  } -- 62 DW, 48 STP, 249 Acc <14 DA, 19 TA, 0 QA> [16 PDT/6 MDT, 407 M.Eva] 38 Subtle Blow
   sets.engaged.DW.LowAcc.LowHaste = set_combine(sets.engaged.DW.LowHaste, {
     ammo="Yamarang",                -- __,  3, 15 <__, __, __> [__/__,  15] __(__)
     head="Dampening Tam",
@@ -1052,7 +1053,7 @@ function init_gear_sets()
   sets.engaged.DW.HeavyDef.LowHaste = {
     ammo="Staunch Tathlum",         -- __, __, __ <__, __, __> [ 3/ 3, ___] __(__)
     head="Malignance Chapeau",      -- __,  8, 50 <__, __, __> [ 6/ 6, 123] __(__)
-    body=gear.Adhemar_B_body,       --  6, __, 35 <__,  4, __> [__/__,  69] __(__)
+    body=gear.Adhemar_A_body,       --  6, __, 55 <__,  4, __> [__/__,  69] __(__)
     hands="Malignance Gloves",      -- __, 12, 50 <__, __, __> [ 5/ 5, 112] __(__)
     legs="Malignance Tights",       -- __, 10, 50 <__, __, __> [ 7/ 7, 150] __(__)
     feet="Malignance Boots",        -- __,  9, 50 <__, __, __> [ 4/ 4, 150] __(__)
@@ -1081,7 +1082,7 @@ function init_gear_sets()
     -- waist="Reiki Yotai",            --  7,  4, 10 <__, __, __> [__/__, ___] __(__)
     -- Traits/Merits/Gifts                35, __, __ <__, __, __> [__/__, ___] 33(__)
     -- 63 DW, 54 STP, 212 Acc <9 DA, 12 TA, 0 QA> [51 PDT/41 MDT, 445 M.Eva] 51 Subtle Blow
-  } -- 62 DW, 60 STP, 290 Acc <5 DA, 4 TA, 0 QA> [50 PDT/40 MDT, 612 M.Eva] 38 Subtle Blow
+  } -- 62 DW, 60 STP, 310 Acc <5 DA, 4 TA, 0 QA> [50 PDT/40 MDT, 612 M.Eva] 38 Subtle Blow
   sets.engaged.DW.LowAcc.HeavyDef.LowHaste = set_combine(sets.engaged.DW.HeavyDef.LowHaste, {})
   sets.engaged.DW.MidAcc.HeavyDef.LowHaste = set_combine(sets.engaged.DW.LowAcc.HeavyDef.LowHaste, {})
   sets.engaged.DW.HighAcc.HeavyDef.LowHaste = set_combine(sets.engaged.DW.MidAcc.HeavyDef.LowHaste, {})

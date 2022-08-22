@@ -315,7 +315,7 @@ function init_gear_sets()
   sets.precast.WS['Exenterator'] = {
     ammo="Seething Bomblet +1",
     head=gear.Adhemar_B_head,
-    body=gear.Adhemar_B_body,
+    body=gear.Adhemar_A_body,
     hands="Meghanada Gloves +2",
     legs="Meghanada Chausses +2",
     feet="Meg. Jam. +2",
@@ -671,7 +671,7 @@ function init_gear_sets()
   sets.engaged = {
     ammo="Yetshila +1",
     head=gear.Adhemar_B_head,
-    body=gear.Adhemar_B_body,
+    body=gear.Adhemar_A_body,
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha_legs,
     feet="Plunderer's Poulaines +2",
@@ -707,7 +707,7 @@ function init_gear_sets()
   sets.engaged.DW = {
     ammo="Yetshila +1",
     head=gear.Adhemar_B_head,
-    body=gear.Adhemar_B_body, -- 6
+    body=gear.Adhemar_A_body, -- 6
     hands=gear.Floral_Gauntlets, --5
     legs=gear.Samnuha_legs,
     feet=gear.Taeon_DW_feet, --9
@@ -739,7 +739,7 @@ function init_gear_sets()
   sets.engaged.DW.LowHaste = {
     ammo="Yetshila +1",
     head=gear.Adhemar_B_head,
-    body=gear.Adhemar_B_body, -- 6
+    body=gear.Adhemar_A_body, -- 6
     hands=gear.Floral_Gauntlets, --5
     legs=gear.Samnuha_legs,
     feet="Plunderer's Poulaines +2",
@@ -776,7 +776,7 @@ function init_gear_sets()
   sets.engaged.DW.MidHaste = {
     ammo="Yetshila +1",
     head=gear.Adhemar_B_head,
-    body=gear.Adhemar_B_body, --6
+    body=gear.Adhemar_A_body, --6
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha_legs,
     feet="Plunderer's Poulaines +2",
@@ -811,7 +811,7 @@ function init_gear_sets()
   sets.engaged.DW.HighHaste = {
     ammo="Yetshila +1",
     head=gear.Adhemar_B_head,
-    body=gear.Adhemar_B_body, --6
+    body=gear.Adhemar_A_body, --6
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha_legs,
     feet="Plunderer's Poulaines +2",
@@ -845,7 +845,7 @@ function init_gear_sets()
   sets.engaged.DW.SuperHaste = {
     ammo="Yetshila +1",
     head=gear.Adhemar_B_head,
-    body=gear.Adhemar_B_body, --6
+    body=gear.Adhemar_A_body, --6
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha_legs,
     feet="Plunderer's Poulaines +2",
@@ -879,7 +879,7 @@ function init_gear_sets()
   sets.engaged.DW.MaxHaste = {
     ammo="Yetshila +1",
     head=gear.Adhemar_B_head,
-    body=gear.Adhemar_B_body, --6
+    body=gear.Adhemar_A_body, --6
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha_legs,
     feet="Plunderer's Poulaines +2",

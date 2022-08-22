@@ -631,7 +631,7 @@ function init_gear_sets()
   })
   sets.precast.WS['Evisceration'].MidAcc = set_combine(sets.precast.WS['Evisceration'].LowAcc, {
     ear2="Dignitary's Earring",
-    body=gear.Adhemar_B_body,
+    body=gear.Adhemar_A_body,
   })
   sets.precast.WS['Evisceration'].MidAccMaxTP = set_combine(sets.precast.WS['Evisceration'].MidAcc, {
   })
@@ -924,7 +924,7 @@ function init_gear_sets()
 
   sets.engaged = {
     head=gear.Adhemar_B_head,
-    body=gear.Adhemar_B_body,
+    body=gear.Adhemar_A_body,
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha_legs,
     feet=gear.Herc_TA_feet,
@@ -959,7 +959,7 @@ function init_gear_sets()
   -- No Magic/Gear/JA Haste (74% DW to cap, 49% from gear)
   sets.engaged.DW = {
     head=gear.Adhemar_B_head,
-    body=gear.Adhemar_B_body, --6
+    body=gear.Adhemar_A_body, --6
     hands=gear.Floral_Gauntlets, --5
     legs=gear.Carmine_D_legs, --6
     feet=gear.Taeon_DW_feet, --9
@@ -992,7 +992,7 @@ function init_gear_sets()
   -- Low Magic/Gear/JA Haste (67% DW to cap, 42% from gear)
   sets.engaged.DW.LowHaste = {
     head=gear.Adhemar_B_head,
-    body=gear.Adhemar_B_body, --6
+    body=gear.Adhemar_A_body, --6
     hands=gear.Floral_Gauntlets, --5
     legs=gear.Carmine_D_legs, --6
     feet=gear.Taeon_DW_feet, --9
@@ -1025,7 +1025,7 @@ function init_gear_sets()
   -- Mid Magic/Gear/JA Haste (56% DW to cap, 31% from gear)
   sets.engaged.DW.MidHaste = {
     head=gear.Adhemar_B_head,
-    body=gear.Adhemar_B_body, --6
+    body=gear.Adhemar_A_body, --6
     hands=gear.Floral_Gauntlets, --5
     legs=gear.Carmine_D_legs, --6
     feet=gear.Herc_TA_feet,
@@ -1059,7 +1059,7 @@ function init_gear_sets()
   -- High Magic/Gear/JA Haste (43% DW to cap, 18% from gear)
   sets.engaged.DW.HighHaste = {
     head=gear.Adhemar_B_head,
-    body=gear.Adhemar_B_body, --6
+    body=gear.Adhemar_A_body, --6
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha_legs,
     feet=gear.Herc_TA_feet,
@@ -1092,7 +1092,7 @@ function init_gear_sets()
   -- High Magic/Gear/JA Haste (36% DW to cap, 11% from gear)
   sets.engaged.DW.SuperHaste = {
     head=gear.Adhemar_B_head,
-    body=gear.Adhemar_B_body, --6
+    body=gear.Adhemar_A_body, --6
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha_legs,
     feet=gear.Herc_TA_feet,
@@ -1117,7 +1117,7 @@ function init_gear_sets()
   -- Max Magic/Gear/JA Haste (0-25% DW to cap, 0% from gear)
   sets.engaged.DW.MaxHaste = {
     head=gear.Adhemar_B_head,
-    body=gear.Adhemar_B_body, --6
+    body=gear.Adhemar_A_body, --6
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha_legs,
     feet=gear.Herc_TA_feet,

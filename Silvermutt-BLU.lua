@@ -985,7 +985,7 @@ function init_gear_sets()
     sub="Maxentius",
     ammo="Coiste Bodhar",         -- __,  3, __ < 3, __, __> [__/__, ___]
     head="Malignance Chapeau",    -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
-    body=gear.Adhemar_B_body,     --  6, __, 35 <__,  4, __> [__/__,  69]
+    body=gear.Adhemar_A_body,     --  6, __, 55 <__,  4, __> [__/__,  69]
     hands="Malignance Gloves",    -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
     legs=gear.Carmine_D_legs,     --  6, __, 55 <__, __, __> [__/__,  80]
     feet=gear.Taeon_DW_feet,      --  9, __,  7 <__, __, __> [__/__,  89]
@@ -996,22 +996,22 @@ function init_gear_sets()
     ring2="Defending Ring",       -- __, __, __ <__, __, __> [10/10, ___]
     waist="Reiki Yotai",          --  7,  4, 10 <__, __, __> [__/__, ___]
     -- back=gear.BLU_DW_Cape,     -- 10, __, 30 <__, __, __> [10/__, ___]
-    -- 47 DW, 27 STP, 237 Acc <6 DA, 7 TA, 0 QA> [37 PDT/27 MDT, 481 M.Eva]
-  } -- 37 DW, 27 STP, 207 Acc <6 DA, 7 TA, 0 QA> [27 PDT/27 MDT, 481 M.Eva]
+    -- 47 DW, 27 STP, 257 Acc <6 DA, 7 TA, 0 QA> [37 PDT/27 MDT, 481 M.Eva]
+  } -- 37 DW, 27 STP, 227 Acc <6 DA, 7 TA, 0 QA> [27 PDT/27 MDT, 481 M.Eva]
   sets.engaged.DW.Acc = set_combine(sets.engaged.DW, {
     feet="Malignance Boots",      -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
     neck="Mirage Stole +1",       -- __,  6, 20 <__, __, __> [__/__, ___]
     ring1="Chirich Ring +1",      -- __,  6, 10 <__, __, __> [__/__, ___]
     -- ammo="Voluspa Tathlum",    -- __, __, 10 <__, __, __> [__/__, ___]
     -- neck="Mirage Stole +2",    -- __,  7, 25 <__, __, __> [__/__, ___]
-    -- 38 DW, 46 STP, 325 Acc <0 DA, 4 TA, 0 QA> [35 PDT/25 MDT, 542 M.Eva]
+    -- 38 DW, 46 STP, 345 Acc <0 DA, 4 TA, 0 QA> [35 PDT/25 MDT, 542 M.Eva]
   })
 
   -- Low Magic/Gear/JA Haste (67% DW to cap, 42% from gear)
   sets.engaged.DW.LowHaste = set_combine(sets.engaged.DW, {
     ammo="Coiste Bodhar",         -- __,  3, __ < 3, __, __> [__/__, ___]
     head="Malignance Chapeau",    -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
-    body=gear.Adhemar_B_body,     --  6, __, 35 <__,  4, __> [__/__,  69]
+    body=gear.Adhemar_A_body,     --  6, __, 55 <__,  4, __> [__/__,  69]
     hands="Malignance Gloves",    -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
     legs=gear.Carmine_D_legs,     --  6, __, 55 <__, __, __> [__/__,  80]
     feet=gear.Taeon_DW_feet,      --  9, __,  7 <__, __, __> [__/__,  89]
@@ -1022,8 +1022,8 @@ function init_gear_sets()
     ring2="Defending Ring",       -- __, __, __ <__, __, __> [10/10, ___]
     waist="Reiki Yotai",          --  7,  4, 10 <__, __, __> [__/__, ___]
     -- back=gear.BLU_DW_Cape,     -- 10, __, 30 <__, __, __> [10/__, ___]
-    -- 32 DW, 35 STP, 197 Acc <6 DA, 7 TA, 0 QA> [27 PDT/27 MDT, 481 M.Eva]
-  })-- 22 DW, 35 STP, 167 Acc <6 DA, 7 TA, 0 QA> [17 PDT/27 MDT, 481 M.Eva]
+    -- 32 DW, 35 STP, 217 Acc <6 DA, 7 TA, 0 QA> [27 PDT/27 MDT, 481 M.Eva]
+  })-- 22 DW, 35 STP, 187 Acc <6 DA, 7 TA, 0 QA> [17 PDT/27 MDT, 481 M.Eva]
   sets.engaged.DW.Acc.LowHaste = set_combine(sets.engaged.DW.LowHaste, {
     feet="Malignance Boots",      -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
     neck="Mirage Stole +1",       -- __,  6, 20 <__, __, __> [__/__, ___]
@@ -1031,14 +1031,14 @@ function init_gear_sets()
     ring1="Chirich Ring +1",      -- __,  6, 10 <__, __, __> [__/__, ___]
     -- ammo="Voluspa Tathlum",    -- __, __, 10 <__, __, __> [__/__, ___]
     -- neck="Mirage Stole +2",    -- __,  7, 25 <__, __, __> [__/__, ___]
-    -- 38 DW, 46 STP, 325 Acc <0 DA, 4 TA, 0 QA> [35 PDT/25 MDT, 542 M.Eva]
+    -- 38 DW, 46 STP, 345 Acc <0 DA, 4 TA, 0 QA> [35 PDT/25 MDT, 542 M.Eva]
   })
 
   -- Mid Magic/Gear/JA Haste (56% DW to cap, 31% from gear)
   sets.engaged.DW.MidHaste = set_combine(sets.engaged.DW.LowHaste, {
     ammo="Coiste Bodhar",         -- __,  3, __ < 3, __, __> [__/__, ___]
     head="Malignance Chapeau",    -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
-    body=gear.Adhemar_B_body,     --  6, __, 35 <__,  4, __> [__/__,  69]
+    body=gear.Adhemar_A_body,     --  6, __, 55 <__,  4, __> [__/__,  69]
     hands="Malignance Gloves",    -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
     legs="Malignance Tights",     -- __, 10, 50 <__, __, __> [ 7/ 7, 150]
     feet="Malignance Boots",      -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
@@ -1049,21 +1049,21 @@ function init_gear_sets()
     ring2="Defending Ring",       -- __, __, __ <__, __, __> [10/10, ___]
     waist="Reiki Yotai",          --  7,  4, 10 <__, __, __> [__/__, ___]
     -- back=gear.BLU_DW_Cape,     -- 10, __, 30 <__, __, __> [10/__, ___]
-    -- 32 DW, 46 STP, 275 Acc <6 DA, 7 TA, 0 QA> [48 PDT/38 MDT, 612 M.Eva]
-  })-- 22 DW, 46 STP, 245 Acc <6 DA, 7 TA, 0 QA> [38 PDT/38 MDT, 612 M.Eva]
+    -- 32 DW, 46 STP, 295 Acc <6 DA, 7 TA, 0 QA> [48 PDT/38 MDT, 612 M.Eva]
+  })-- 22 DW, 46 STP, 265 Acc <6 DA, 7 TA, 0 QA> [38 PDT/38 MDT, 612 M.Eva]
   sets.engaged.DW.Acc.MidHaste = set_combine(sets.engaged.DW.MidHaste, {
     neck="Mirage Stole +1",       -- __,  6, 20 <__, __, __> [__/__, ___]
     ring1="Chirich Ring +1",      -- __,  6, 10 <__, __, __> [__/__, ___]
     -- ammo="Voluspa Tathlum",    -- __, __, 10 <__, __, __> [__/__, ___]
     -- neck="Mirage Stole +2",    -- __,  7, 25 <__, __, __> [__/__, ___]
-    -- 32 DW, 56 STP, 320 Acc <0 DA, 4 TA, 0 QA> [42 PDT/32 MDT, 612 M.Eva]
+    -- 32 DW, 56 STP, 340 Acc <0 DA, 4 TA, 0 QA> [42 PDT/32 MDT, 612 M.Eva]
   })
 
   -- High Magic/Gear/JA Haste (43% DW to cap, 18% from gear)
   sets.engaged.DW.HighHaste = set_combine(sets.engaged.DW.MidHaste, {
     ammo="Coiste Bodhar",         -- __,  3, __ < 3, __, __> [__/__, ___]
     head="Malignance Chapeau",    -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
-    body=gear.Adhemar_B_body,     --  6, __, 35 <__,  4, __> [__/__,  69]
+    body=gear.Adhemar_A_body,     --  6, __, 55 <__,  4, __> [__/__,  69]
     hands="Malignance Gloves",    -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
     legs="Malignance Tights",     -- __, 10, 50 <__, __, __> [ 7/ 7, 150]
     feet="Malignance Boots",      -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
@@ -1075,14 +1075,14 @@ function init_gear_sets()
     waist="Reiki Yotai",          --  7,  4, 10 <__, __, __> [__/__, ___]
     -- neck="Mirage Stole +2",    -- __,  7, 25 <__, __, __> [__/__, ___]
     -- back=gear.BLU_STP_Cape,    -- __, 10, 30 <__, __, __> [10/__, ___]
-    -- 18 DW, 68 STP, 310 Acc <7 DA, 7 TA, 0 QA> [42 PDT/32 MDT, 604 M.Eva]
-  })-- 18 DW, 57 STP, 275 Acc <7 DA, 7 TA, 0 QA> [32 PDT/32 MDT, 604 M.Eva]
+    -- 18 DW, 68 STP, 330 Acc <7 DA, 7 TA, 0 QA> [42 PDT/32 MDT, 604 M.Eva]
+  })-- 18 DW, 57 STP, 295 Acc <7 DA, 7 TA, 0 QA> [32 PDT/32 MDT, 604 M.Eva]
   sets.engaged.DW.Acc.HighHaste = set_combine(sets.engaged.DW.HighHaste, {
     -- ammo="Voluspa Tathlum",    -- __, __, 10 <__, __, __> [__/__, ___]
     body="Malignance Tabard",     -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
     ear2="Cessance Earring",      -- __,  3,  6 < 3, __, __> [__/__, ___]
     ring1="Chirich Ring +1",      -- __,  6, 10 <__, __, __> [__/__, ___]
-    -- 17 DW, 75 STP, 351 Acc <7 DA, 0 TA, 0 QA> [51 PDT/41 MDT, 674 M.Eva]
+    -- 17 DW, 75 STP, 371 Acc <7 DA, 0 TA, 0 QA> [51 PDT/41 MDT, 674 M.Eva]
   })
 
   -- Super Magic/Gear/JA Haste (36% DW to cap, 11% from gear)
@@ -1136,7 +1136,7 @@ function init_gear_sets()
   sets.engaged.DW.DT = set_combine(sets.engaged.DW, {
     ammo="Staunch Tathlum +1",    -- __, __, __ <__, __, __> [ 3/ 3, ___]
     head="Malignance Chapeau",    -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
-    body=gear.Adhemar_B_body,     --  6, __, 35 <__,  4, __> [__/__,  69]
+    body=gear.Adhemar_A_body,     --  6, __, 55 <__,  4, __> [__/__,  69]
     hands="Malignance Gloves",    -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
     legs=gear.Carmine_D_legs,     --  6, __, 55 <__, __, __> [__/__,  80]
     feet=gear.Taeon_DW_feet,      --  9, __,  7 <__, __, __> [__/__,  89]
@@ -1147,18 +1147,18 @@ function init_gear_sets()
     ring2="Defending Ring",       -- __, __, __ <__, __, __> [10/10, ___]
     waist="Reiki Yotai",          --  7,  4, 10 <__, __, __> [__/__, ___]
     -- back=gear.BLU_DW_Cape,     -- 10, __, 30 <__, __, __> [10/__, ___]
-    -- 47 DW, 24 STP, 237 Acc <0 DA, 4 TA, 0 QA> [47 PDT/29 MDT, 481 M.Eva]
-  })-- 37 DW, 24 STP, 207 Acc <0 DA, 4 TA, 0 QA> [37 PDT/29 MDT, 481 M.Eva]
+    -- 47 DW, 24 STP, 257 Acc <0 DA, 4 TA, 0 QA> [47 PDT/29 MDT, 481 M.Eva]
+  })-- 37 DW, 24 STP, 227 Acc <0 DA, 4 TA, 0 QA> [37 PDT/29 MDT, 481 M.Eva]
   sets.engaged.DW.Acc.DT = set_combine(sets.engaged.DW.DT, {
     feet="Malignance Boots",      -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
     -- ammo="Voluspa Tathlum",    -- __, __, 10 <__, __, __> [__/__, ___]
-    -- 38 DW, 33 STP, 290 Acc <0 DA, 4 TA, 0 QA> [48 PDT/30 MDT, 542 M.Eva]
+    -- 38 DW, 33 STP, 310 Acc <0 DA, 4 TA, 0 QA> [48 PDT/30 MDT, 542 M.Eva]
   })
 
   sets.engaged.DW.DT.LowHaste = set_combine(sets.engaged.DW.LowHaste, {
     ammo="Staunch Tathlum +1",    -- __, __, __ <__, __, __> [ 3/ 3, ___]
     head="Malignance Chapeau",    -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
-    body=gear.Adhemar_B_body,     --  6, __, 35 <__,  4, __> [__/__,  69]
+    body=gear.Adhemar_A_body,     --  6, __, 55 <__,  4, __> [__/__,  69]
     hands="Malignance Gloves",    -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
     legs=gear.Carmine_D_legs,     --  6, __, 55 <__, __, __> [__/__,  80]
     feet=gear.Taeon_DW_feet,      --  9, __,  7 <__, __, __> [__/__,  89]
@@ -1169,13 +1169,13 @@ function init_gear_sets()
     ring2="Defending Ring",       -- __, __, __ <__, __, __> [10/10, ___]
     waist="Reiki Yotai",          --  7,  4, 10 <__, __, __> [__/__, ___]
     -- back=gear.BLU_DW_Cape,     -- 10, __, 30 <__, __, __> [10/__, ___]
-    -- 32 DW, 24 STP, 207 Acc <0 DA, 4 TA, 0 QA> [40 PDT/34 MDT, 481 M.Eva]
-  })-- 42 DW, 24 STP, 237 Acc <0 DA, 4 TA, 0 QA> [50 PDT/34 MDT, 481 M.Eva]
+    -- 32 DW, 24 STP, 227 Acc <0 DA, 4 TA, 0 QA> [40 PDT/34 MDT, 481 M.Eva]
+  })-- 42 DW, 24 STP, 257 Acc <0 DA, 4 TA, 0 QA> [50 PDT/34 MDT, 481 M.Eva]
   sets.engaged.DW.Acc.DT.LowHaste = set_combine(sets.engaged.DW.DT.LowHaste, {
     feet="Malignance Boots",      -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
     ear2="Suppanomimi",           --  5, __, __ <__, __, __> [__/__, ___]
     -- ammo="Voluspa Tathlum",    -- __, __, 10 <__, __, __> [__/__, ___]
-    -- 38 DW, 33 STP, 290 Acc <0 DA, 4 TA, 0 QA> [48 PDT/25 MDT, 542 M.Eva]
+    -- 38 DW, 33 STP, 310 Acc <0 DA, 4 TA, 0 QA> [48 PDT/25 MDT, 542 M.Eva]
   })
 
   sets.engaged.DW.DT.MidHaste = sets.engaged.DW.MidHaste
