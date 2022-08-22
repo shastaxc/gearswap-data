@@ -131,7 +131,7 @@ gear.Taeon_Phalanx_hands = gear.Taeon_FC_hands
 gear.Taeon_Phalanx_legs = gear.Taeon_FC_legs
 gear.Taeon_Phalanx_feet = gear.Taeon_FC_feet
 
-gear.Taeon_DW_feet = {} -- 5 DW, 20 M.Eva
+gear.Taeon_DW_feet = { name="Taeon Boots", augments={'Accuracy+19','"Dual Wield"+5',}}
 
 -- Telchine
 -- TODO: Add fast cast and meva to all enh telchine except hands
