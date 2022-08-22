@@ -76,6 +76,7 @@ gear.Chironic_SIRD_hands = { name="Chironic Gloves", augments={'Attack+6','Spell
 gear.Chironic_MAcc_legs = {} -- 40 M.Acc Aug
 
 -- Herculean
+gear.Herc_TA_feet = { name="Herculean Boots", augments={'Accuracy+30','"Triple Atk."+4','Attack+2',}}
 
 -- Merlinic
 gear.Merl_FC_body = { name="Merlinic Jubbah", augments={'Mag. Acc.+2 "Mag.Atk.Bns."+2','VIT+5','"Fast Cast"+8',}}
