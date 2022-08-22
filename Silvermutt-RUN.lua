@@ -351,10 +351,9 @@ function init_gear_sets()
 
   sets.defense.Parry = {
     hands="Turms Mittens +1",       -- Parry: Recover HP+100
-    legs="Erilaz Leg Guards +1",    -- Inquartata+2
+    legs="Erilaz Leg Guards +2",    -- Inquartata+3
     feet="Turms Leggings +1",       -- Inquartata+5
     back=gear.RUN_HPP_Cape,         -- Parry Rate+5
-    -- legs="Erilaz Leg Guards +2", -- Inquartata+3
   }
 
 
@@ -690,7 +689,7 @@ function init_gear_sets()
     head=gear.Nyame_B_head,                   --  7/ 7, 123 [ 91] __
     body=gear.Nyame_B_body,                   --  9/ 9, 139 [136] __
     hands="Turms Mittens +1",                 -- __/__, 101 [ 74] __
-    legs="Erilaz Leg Guards +1",              --  7/__, 107 [ 80] __
+    legs="Erilaz Leg Guards +2",              -- 12/12, 147 [ 90] __
     feet="Turms Leggings +1",                 -- __/__, 147 [ 76] __
     neck="Futhark Torque +1",                 --  6/ 6,  25 [ 45] __
     ear1="Odnowa Earring +1",                 --  3/ 5, ___ [110] __
@@ -701,10 +700,9 @@ function init_gear_sets()
     waist="Siegel Sash",                      -- __/__, ___ [___] 20
 
     -- hands="Stone Mufflers",                -- __/__, ___ [ 10] 30
-    -- legs="Erilaz Leg Guards +2",           -- 12/12, 147 [ 90] __
     -- neck="Futhark Torque +2",              --  7/ 7,  30 [ 60] __
     -- 53 PDT/47 MDT, 602 M.Eva [898 HP] 50 Stoneskin Potency
-  } -- 47 PDT/34 MDT, 662 M.Eva [937 HP] 20 Stoneskin Potency
+  } -- 58 PDT/52 MDT, 682 M.Eva [1142 HP] 20 Stoneskin Potency
   sets.midcast.Protect = {
     ammo="Staunch Tathlum +1",                      --  3/ 3, ___ [___] (__, __)
     head="Erilaz Galea +1",                         -- __/__,  69 [ 91] (15, __)
