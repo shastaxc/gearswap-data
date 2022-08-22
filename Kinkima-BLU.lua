@@ -310,8 +310,8 @@ function init_gear_sets()
   -- Enmity set
   sets.Enmity = {
     ammo="Sapience Orb", --2
+    head="Halitus Helm", --8
     ear1="Cryptic Earring", --4
-    -- head="Halitus Helm", --8
     -- body="Emet Harness +1", --10
     -- hands="Kurys Gloves", --9
     -- feet="Ahosi Leggings", --7
@@ -468,6 +468,7 @@ function init_gear_sets()
 
   sets.precast.WS['Sanguine Blade'] = {
     ammo="Pemphredo Tathlum",
+    neck="Baetyl Pendant",
     ear1="Moonshade Earring",
     ear2="Regal Earring",
     back=gear.BLU_FC_Cape,
@@ -476,7 +477,6 @@ function init_gear_sets()
     -- hands="Amalric Gages +1",
     -- legs="Luhlaza Shalwar +3",
     -- feet="Amalric Nails +1",
-    -- neck="Baetyl Pendant",
     -- ring1="Epaminondas's Ring",
     -- ring2="Archon Ring",
     -- waist="Sacro Cord",
@@ -631,16 +631,16 @@ function init_gear_sets()
     hands=gear.Nyame_B_hands,           -- 30, 40, 28 [ 7/ 7, 112]
     legs=gear.Nyame_B_legs,             -- 30, 40, 44 [ 8/ 8, 150]
     feet=gear.Nyame_B_feet,             -- 30, 40, 25 [ 7/ 7, 150]
+    neck="Baetyl Pendant",              -- 13, __, __ [__/__, ___]
     ear1="Regal Earring",               --  7, __, 10 [__/__, ___]
     ear2="Friomisi Earring",            -- 10, __, __ [__/__, ___]
     ring1="Metamorph Ring +1",          -- __, 15, 16 [__/__, ___]
     ring2="Defending Ring",             -- __, __, __ [10/10, ___]
     waist="Acuity Belt +1",             -- __, 15, 23 [__/__, ___]
-    -- neck="Baetyl Pendant",           -- 13, __, __ [__/__, ___]
     -- back=gear.BLU_MAB_Cape,          -- 10, 20, 30 [10/__, ___]
     -- AF set bonus                        __, 15, __ [__/__, ___]
     -- 288 MAB, 384 M.Acc, 283 INT [52 PDT/32 MDT, 591 M.Eva]
-  })-- 244 MAB, 309 M.Acc, 238 INT [42 PDT/32 MDT, 591 M.Eva]
+  })-- 257 MAB, 309 M.Acc, 238 INT [42 PDT/32 MDT, 591 M.Eva]
 
   sets.midcast['Blue Magic'].MagicalDark = set_combine(sets.midcast['Blue Magic'].Magical, {
     -- head="Pixie Hairpin +1",
