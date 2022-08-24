@@ -777,7 +777,7 @@ function init_gear_sets()
     -- ear1="Cessance Earring",
     -- ear2="Brutal Earring",
     -- ring1="Regal Ring",
-    -- ring2="Epona's Ring",
+    ring2="Epona's Ring",
     -- back=gear.COR_WS2_Cape,
     -- waist="Fotia Belt",
   })
