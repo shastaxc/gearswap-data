@@ -624,7 +624,7 @@ function init_gear_sets()
 
   sets.engaged = {
     ammo="Coiste Bodhar",           -- __,  3, 15, __, __ < 3, __, __> [__/__, ___] {__/__}
-    head="Flamma Zucchetto +2",     --  4,  6, __, 44, __ <__,  5, __> [__/__,  53] {__/__}
+    head="Hjarrandi Helm",          -- __,  7, 45, 41, __ < 6, __, __> [10/10,  53] {__/__}
     body="Hjarrandi Breastplate",   -- __, 10, 53, 47, 13 <__, __, __> [12/12,  69] {__/__}
     hands="Gleti's Gauntlets",      --  3,  5, 60, 45,  6 <__, __, __> [ 7/__,  75] { 8/ 8}
     legs="Pteroslaver Brais +3",    --  5, 10, 64, 39, __ <__, __, __> [__/__,  95] {11/__}
@@ -636,9 +636,7 @@ function init_gear_sets()
     ring2="Niqmaddu Ring",          -- __, __, __, __, __ <__, __,  3> [__/__, ___] {__/__}
     back=gear.DRG_TP_Cape,          -- __, __, 20, 30, __ <10, __, __> [10/__, ___] {__/__}
     waist="Tempus Belt +1",         -- 15, __, __, __, __ <__, __, __> [__/__, ___] {__/__}
-    -- head="Hjarrandi Helm",       -- __,  7, 45, 41, __ < 6, __, __> [10/10,  53] {__/__}
-    -- 25 Haste, 66 STP, 275 Att, 277 Acc, 19 Crit Rate <31 DA, 0 TA, 3 QA> [44 PDT/27 MDT, 378 Meva] {19 PetPDT/8 PetMDT}
-  } -- 29 Haste, 65 STP, 230 Att, 280 Acc, 19 Crit Rate <25 DA, 5 TA, 3 QA> [34 PDT/17 MDT, 378 Meva] {19 PetPDT/8 PetMDT}
+  } -- 25 Haste, 66 STP, 275 Att, 277 Acc, 19 Crit Rate <31 DA, 0 TA, 3 QA> [44 PDT/27 MDT, 378 Meva] {19 PetPDT/8 PetMDT}
   sets.engaged.LowAcc = set_combine(sets.engaged, {
     ring1="Chirich Ring +1",
     ring2="Chirich Ring +1",
@@ -687,7 +685,7 @@ function init_gear_sets()
 
   sets.engaged.LightDef = set_combine(sets.engaged, {
     ammo="Coiste Bodhar",           -- __,  3, 15, __, __ < 3, __, __> [__/__, ___] {__/__}
-    head="Flamma Zucchetto +2",     --  4,  6, __, 44, __ <__,  5, __> [__/__,  53] {__/__}
+    head="Hjarrandi Helm",          -- __,  7, 45, 41, __ < 6, __, __> [10/10,  53] {__/__}
     body="Hjarrandi Breastplate",   -- __, 10, 53, 47, 13 <__, __, __> [12/12,  69] {__/__}
     hands="Gleti's Gauntlets",      --  3,  5, 60, 45,  6 <__, __, __> [ 7/__,  75] { 8/ 8}
     legs="Pteroslaver Brais +3",    --  5, 10, 64, 39, __ <__, __, __> [__/__,  95] {11/__}
@@ -696,27 +694,10 @@ function init_gear_sets()
     ear1="Telos Earring",           -- __,  5, 10, 10, __ < 1, __, __> [__/__, ___] {__/__}
     ear2="Sherida Earring",         -- __,  5, __, __, __ < 5, __, __> [__/__, ___] {__/__}
     ring1="Moonlight Ring",         -- __,  5,  8,  8, __ <__, __, __> [ 5/ 5, ___] {__/__}
-    ring2="Moonlight Ring",         -- __,  5,  8,  8, __ <__, __, __> [ 5/ 5, ___] {__/__}
+    ring2="Niqmaddu Ring",          -- __, __, __, __, __ <__, __,  3> [__/__, ___] {__/__}
     back=gear.DRG_TP_Cape,          -- __, __, 20, 30, __ <10, __, __> [10/__, ___] {__/__}
-    waist="Ioskeha Belt +1",        --  8, __, __, 17, __ < 9, __, __> [__/__, ___] {__/__}
-    -- 23 Haste, 54 STP, 323 Att, 313 Acc, 23 Crit Rate <32 DA, 5 TA, 0 QA> [46 PDT/29 MDT, 442 Meva] {44 PetPDT/33 PetMDT}
-
-    -- Ideal:
-    -- ammo="Coiste Bodhar",           -- __,  3, 15, __, __ < 3, __, __> [__/__, ___] {__/__}
-    -- head="Hjarrandi Helm",          -- __,  7, 45, 41, __ < 6, __, __> [10/10,  53] {__/__}
-    -- body="Hjarrandi Breastplate",   -- __, 10, 53, 47, 13 <__, __, __> [12/12,  69] {__/__}
-    -- hands="Gleti's Gauntlets",      --  3,  5, 60, 45,  6 <__, __, __> [ 7/__,  75] { 8/ 8}
-    -- legs="Pteroslaver Brais +3",    --  5, 10, 64, 39, __ <__, __, __> [__/__,  95] {11/__}
-    -- feet=gear.Nyame_B_feet,         --  3, __, 60, 40, __ < 4, __, __> [ 7/ 7, 150] {__/__}
-    -- neck="Dragoon's Collar +2",     -- __, __, 25, 25,  4 <__, __, __> [__/__, ___] {25/25}
-    -- ear1="Telos Earring",           -- __,  5, 10, 10, __ < 1, __, __> [__/__, ___] {__/__}
-    -- ear2="Sherida Earring",         -- __,  5, __, __, __ < 5, __, __> [__/__, ___] {__/__}
-    -- ring1="Moonlight Ring",         -- __,  5,  8,  8, __ <__, __, __> [ 5/ 5, ___] {__/__}
-    -- ring2="Niqmaddu Ring",          -- __, __, __, __, __ <__, __,  3> [__/__, ___] {__/__}
-    -- back=gear.DRG_TP_Cape,          -- __, __, 20, 30, __ <10, __, __> [10/__, ___] {__/__}
-    -- waist="Tempus Belt +1",         -- 15, __, __, __, __ <__, __, __> [__/__, ___] {__/__}
-    -- 26 Haste, 50 STP, 360 Att, 285 Acc, 23 Crit Rate <29 DA, 0 TA, 3 QA> [51 PDT/34 MDT, 442 Meva] {44 PetPDT/33 PetMDT}
-  })
+    waist="Tempus Belt +1",         -- 15, __, __, __, __ <__, __, __> [__/__, ___] {__/__}
+  })-- 26 Haste, 50 STP, 360 Att, 285 Acc, 23 Crit Rate <29 DA, 0 TA, 3 QA> [51 PDT/34 MDT, 442 Meva] {44 PetPDT/33 PetMDT}
   sets.engaged.LowAcc.LightDef = set_combine(sets.engaged.LowAcc, {
     ammo="Coiste Bodhar",           -- __,  3, 15, __, __ < 3, __, __> [__/__, ___] {__/__}
     head="Flamma Zucchetto +2",     --  4,  6, __, 44, __ <__,  5, __> [__/__,  53] {__/__}
