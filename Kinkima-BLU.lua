@@ -868,7 +868,7 @@ function init_gear_sets()
     head=gear.Nyame_B_head,         --  7/ 7, 123 [__]
     body="Shamash Robe",            -- 10/__, 106 [ 3]; Resist Silence+90
     hands=gear.Nyame_B_hands,       --  7/ 7, 112 [__]
-    legs=gear.Nyame_B_legs,         --  8/ 8, 150 [__]
+    legs=gear.Rawhide_D_legs,       -- __/__,  69 [ 1]
     feet=gear.Nyame_B_feet,         --  7/ 7, 150 [__]
     neck="Loricate Torque +1",      --  6/ 6, ___ [__]; DEF+60
     ear1="Hearty Earring",          -- __/__, ___ [__]; Resist Status+5
@@ -877,12 +877,12 @@ function init_gear_sets()
     ring2="Stikini Ring +1",        -- __/__, ___ [ 1]
     back=gear.BLU_FC_Cape,          -- 10/__, ___ [__]
     waist="Carrier's Sash",         -- __/__, ___ [__]; Ele Resist+15
+
     -- ammo="Staunch Tathlum +1",   --  3/ 3, ___ [__]; Resist Status+11
     -- head="Rawhide Mask",         -- __/__,  53 [ 1]
-    -- legs=gear.Rawhide_D_legs,    -- __/__,  69 [ 1]
     -- legs=gear.Lengo_legs,        -- __/__, 107 [ 1]
     -- 53 PDT / 26 MDT, 528 M.Eva [8 Refresh]
-  } -- 67 PDT / 40 MDT, 641 M.Eva [6 Refresh]
+  } -- 59 PDT / 32 MDT, 560 M.Eva [7 Refresh]
   sets.passive_refresh.sub50 = {
     waist="Fucho-no-Obi",
   }

@@ -350,7 +350,7 @@ function init_gear_sets()
   sets.precast.RA = {
     ammo=gear.RAbullet,
     -- head="Chasseur's Tricorne +1",    -- __/14 [__/__,  59]
-    -- body="Oshosi Vest",               -- 12/__ [__/__,  96]
+    body="Oshosi Vest",               -- 12/__ [__/__,  96]
     -- hands=gear.Carmine_D_hands,       --  8/11 [__/__,  43]
     -- legs=gear.Adhemar_D_legs,         -- 10/13 [__/__,  75]
     -- feet="Meg. Jam. +2",              -- 10/__ [ 3/__,  69]
@@ -1214,8 +1214,8 @@ function init_gear_sets()
     -- ring2="Chirich Ring +1",
   }
   sets.latent_refresh = {
+    legs="Rawhide Trousers",
     -- head=gear.Herc_Refresh_head,
-    -- legs="Rawhide Trousers",
     -- feet=gear.Herc_Refresh_feet,
   }
   sets.latent_refresh_sub50 = set_combine(sets.latent_refresh, {
