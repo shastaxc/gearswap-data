@@ -128,7 +128,7 @@ function job_setup()
   no_swap_waists = S{"Era. Bul. Pouch", "Dev. Bul. Pouch", "Chr. Bul. Pouch", "Quelling B. Quiver",
       "Yoichi's Quiver", "Artemis's Quiver", "Chrono Quiver", "Liv. Bul. Pouch"}
 
-  gear.RAbullet = "Chrono Bullet"
+  gear.RAbullet = "Eminent Bullet"
   gear.RAccbullet = "Devastating Bullet"
   gear.WSbullet = "Chrono Bullet"
   gear.MAbullet = "Living Bullet"
@@ -608,14 +608,16 @@ function init_gear_sets()
   sets.precast.WS['Wildfire'] = {
     ammo=gear.MAbullet,
     head=gear.Nyame_B_head, --30; WSD
-    -- body="Lanun Frac +3", --61
+    body=gear.Nyame_B_body, --30; WSD
     hands=gear.Nyame_B_hands, --30; WSD
     legs=gear.Nyame_B_legs, --30; WSD
-    -- feet="Lanun Bottes +3", --55; WSD
+    feet=gear.Nyame_B_feet, --30; WSD
     neck="Commodore Charm +1", --6
     ear1="Friomisi Earring", --10
     ear2="Novio Earring", --7
     ring1="Dingir Ring", --10
+    -- body="Lanun Frac +3", --61
+    -- feet="Lanun Bottes +3", --55; WSD
     -- ring2="Epaminondas's Ring",
     -- back=gear.COR_WS1_Cape, --0
     -- waist="Skrymir Cord", --5
