@@ -794,8 +794,8 @@ function init_gear_sets()
   sets.precast.WS['Swift Blade'].MidAccMaxTP = set_combine(sets.precast.WS['Swift Blade'].MidAcc, {
   })
   sets.precast.WS['Swift Blade'].HighAcc = set_combine(sets.precast.WS['Swift Blade'].MidAcc, {
+    hands=gear.Adhemar_A_hands,
     -- head="Meghanada Visor +2",
-    -- hands=gear.Adhemar_A_hands,
     -- ear2="Telos Earring",
   })
   sets.precast.WS['Swift Blade'].HighAccMaxTP = set_combine(sets.precast.WS['Swift Blade'].HighAcc, {
@@ -1286,9 +1286,9 @@ function init_gear_sets()
     waist="Windbuffet Belt +1",       -- __, __,  2 <__,  2,  2> [__/__, ___]
   } -- 0 DW, 45 STP, 198 Acc <24 DA, 18 TA, 2 QA> [37 PDT/25 MDT, 455 M.Eva]
   sets.engaged.LowAcc = set_combine(sets.engaged, {
+    hands=gear.Adhemar_A_hands,       -- __,  7, 52 <__,  4, __> [__/__,  43]
     feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
     ring1="Chirich Ring +1",          -- __,  6, 10 <__, __, __> [__/__, ___]
-    -- hands=gear.Adhemar_A_hands,    -- __,  7, 52 <__,  4, __> [__/__,  43]
     -- 0 DW, 60 STP, 255 Acc <21 DA, 9 TA, 2 QA> [39 PDT/29 MDT, 530 M.Eva]
   })
   sets.engaged.MidAcc = set_combine(sets.engaged.LowAcc, {
@@ -1330,10 +1330,10 @@ function init_gear_sets()
     -- neck="Combatant's Torque",
   })
   sets.engaged.DW.MidAcc = set_combine(sets.engaged.DW.LowAcc, {
+    hands=gear.Adhemar_A_hands,       -- __,  7, 52 <__,  4, __> [__/__,  43]
     ear1="Cessance Earring",          -- __,  3,  6 < 3, __, __> [__/__, ___]
     ear2="Telos Earring",             -- __,  5, 10 < 1, __, __> [__/__, ___]
     waist="Kentarch Belt +1",         -- __,  5, 14 < 3, __, __> [__/__, ___]
-    -- hands=gear.Adhemar_A_hands,    -- __,  7, 52 <__,  4, __> [__/__,  43]
   })
   sets.engaged.DW.HighAcc = set_combine(sets.engaged.DW.MidAcc, {
     ear1="Dignitary's Earring",       -- __,  3, 10 <__, __, __> [__/__, ___]
@@ -1366,9 +1366,9 @@ function init_gear_sets()
     -- neck="Combatant's Torque",
   })
   sets.engaged.DW.MidAcc.LowHaste = set_combine(sets.engaged.DW.LowAcc.LowHaste, {
+    hands=gear.Adhemar_A_hands,       -- __,  7, 52 <__,  4, __> [__/__,  43]
     ear2="Telos Earring",             -- __,  5, 10 < 1, __, __> [__/__, ___]
     waist="Kentarch Belt +1",         -- __,  5, 14 < 3, __, __> [__/__, ___]
-    -- hands=gear.Adhemar_A_hands,    -- __,  7, 52 <__,  4, __> [__/__,  43]
   })
   sets.engaged.DW.HighAcc.LowHaste = set_combine(sets.engaged.DW.MidAcc.LowHaste, {
     ear1="Dignitary's Earring",       -- __,  3, 10 <__, __, __> [__/__, ___]
@@ -1401,8 +1401,8 @@ function init_gear_sets()
     -- 57 DW, 38 STP, 243 Acc <3 DA, 17 TA, 0 QA> [39 PDT/27 MDT, 433 MEVA]
   }
   sets.engaged.DW.LowAcc.MidHaste = set_combine(sets.engaged.DW.MidHaste, {
+    hands=gear.Adhemar_A_hands,       -- __,  7, 52 <__,  4, __> [__/__,  43]
     ring1="Chirich Ring +1",          -- __,  6, 10 <__, __, __> [__/__, ___]
-    -- hands=gear.Adhemar_A_hands,    -- __,  7, 52 <__,  4, __> [__/__,  43]
     -- neck="Combatant's Torque",
   })
   sets.engaged.DW.MidAcc.MidHaste = set_combine(sets.engaged.DW.LowAcc.MidHaste, {
@@ -1441,8 +1441,8 @@ function init_gear_sets()
     -- 43 DW, 39 STP, 243 Acc <18 DA, 17 TA, 0 QA> [39 PDT/27 MDT, 425 MEVA]
   }
   sets.engaged.DW.LowAcc.HighHaste = set_combine(sets.engaged.DW.HighHaste, {
+    hands=gear.Adhemar_A_hands,       -- __,  7, 52 <__,  4, __> [__/__,  43]
     ring1="Chirich Ring +1",          -- __,  6, 10 <__, __, __> [__/__, ___]
-    -- hands=gear.Adhemar_A_hands,    -- __,  7, 52 <__,  4, __> [__/__,  43]
     -- neck="Combatant's Torque",
   })
   sets.engaged.DW.MidAcc.HighHaste = set_combine(sets.engaged.DW.LowAcc.HighHaste, {
@@ -1481,9 +1481,9 @@ function init_gear_sets()
     -- 36 DW, 39 STP, 245 Acc <14 DA, 19 TA, 2 QA> [39 PDT/27 MDT, 425 MEVA]
   }
   sets.engaged.DW.LowAcc.SuperHaste = set_combine(sets.engaged.DW.SuperHaste, {
+    hands=gear.Adhemar_A_hands,       -- __,  7, 52 <__,  4, __> [__/__,  43]
     ring1="Chirich Ring +1",          -- __,  6, 10 <__, __, __> [__/__, ___]
     waist="Kentarch Belt +1",         -- __,  5, 14 < 3, __, __> [__/__, ___]
-    -- hands=gear.Adhemar_A_hands,    -- __,  7, 52 <__,  4, __> [__/__,  43]
   })
   sets.engaged.DW.MidAcc.SuperHaste = set_combine(sets.engaged.DW.LowAcc.SuperHaste, {
     legs="Meg. Chausses +2",

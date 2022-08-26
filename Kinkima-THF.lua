@@ -691,8 +691,8 @@ function init_gear_sets()
     ear1="Telos Earring",
   })
   sets.engaged.MidAcc = set_combine(sets.engaged.LowAcc, {
+    hands=gear.Adhemar_A_hands,
     -- head="Plunderer's Bonnet +3",
-    -- hands=gear.Adhemar_A_hands,
   })
   sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
     ring2="Regal Ring",
@@ -725,8 +725,8 @@ function init_gear_sets()
     ear1="Telos Earring",
   })
   sets.engaged.DW.MidAcc = set_combine(sets.engaged.DW.LowAcc, {
+    hands=gear.Adhemar_A_hands,
     -- head="Plunderer's Bonnet +3",
-    -- hands=gear.Adhemar_A_hands,
   })
   sets.engaged.DW.HighAcc = set_combine(sets.engaged.DW.MidAcc, {
     ring2="Regal Ring",
@@ -761,8 +761,8 @@ function init_gear_sets()
   })
 
   sets.engaged.DW.MidAcc.LowHaste = set_combine(sets.engaged.DW.LowAcc.LowHaste, {
+    hands=gear.Adhemar_A_hands,
     -- head="Plunderer's Bonnet +3",
-    -- hands=gear.Adhemar_A_hands,
   })
 
   sets.engaged.DW.HighAcc.LowHaste = set_combine(sets.engaged.DW.MidAcc.LowHaste, {
@@ -797,8 +797,8 @@ function init_gear_sets()
     ear1="Telos Earring",
   })
   sets.engaged.DW.MidAcc.MidHaste = set_combine(sets.engaged.DW.LowAcc.MidHaste, {
+    hands=gear.Adhemar_A_hands,
     -- head="Plunderer's Bonnet +3",
-    -- hands=gear.Adhemar_A_hands,
   })
   sets.engaged.DW.HighAcc.MidHaste = set_combine(sets.engaged.DW.MidAcc.MidHaste, {
     ring2="Regal Ring",
@@ -831,8 +831,8 @@ function init_gear_sets()
     ear1="Telos Earring",
   })
   sets.engaged.DW.MidAcc.HighHaste = set_combine(sets.engaged.DW.LowAcc.HighHaste, {
+    hands=gear.Adhemar_A_hands,
     -- head="Plunderer's Bonnet +3",
-    -- hands=gear.Adhemar_A_hands,
   })
   sets.engaged.DW.HighAcc.HighHaste = set_combine(sets.engaged.DW.MidAcc.HighHaste, {
     ring2="Regal Ring",
@@ -865,8 +865,8 @@ function init_gear_sets()
     ear1="Telos Earring",
   })
   sets.engaged.DW.MidAcc.SuperHaste = set_combine(sets.engaged.DW.LowAcc.SuperHaste, {
+    hands=gear.Adhemar_A_hands,
     -- head="Plunderer's Bonnet +3",
-    -- hands=gear.Adhemar_A_hands,
   })
   sets.engaged.DW.HighAcc.SuperHaste = set_combine(sets.engaged.DW.MidAcc.SuperHaste, {
     ring2="Regal Ring",
@@ -899,8 +899,8 @@ function init_gear_sets()
     ear1="Telos Earring",
   })
   sets.engaged.DW.MidAcc.MaxHaste = set_combine(sets.engaged.DW.LowAcc.MaxHaste, {
+    hands=gear.Adhemar_A_hands,
     -- head="Plunderer's Bonnet +3",
-    -- hands=gear.Adhemar_A_hands,
   })
   sets.engaged.DW.HighAcc.MaxHaste = set_combine(sets.engaged.DW.MidAcc.MaxHaste, {
     ring2="Regal Ring",
