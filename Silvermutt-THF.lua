@@ -781,6 +781,7 @@ function init_gear_sets()
     ring2="Gere Ring",
     back=gear.THF_TP_Cape,
     waist="Windbuffet Belt +1",
+    -- body="Pillager's Vest +3",
   }
   sets.engaged.LowAcc = set_combine(sets.engaged, {
     ammo="Yamarang",
@@ -865,6 +866,7 @@ function init_gear_sets()
     ring2="Gere Ring",
     back=gear.THF_DW_Cape, --10
     waist="Reiki Yotai", --7
+    -- body="Pillager's Vest +3",
   }--26
   sets.engaged.DW.LowAcc.MidHaste = set_combine(sets.engaged.DW.MidHaste, {
     ammo="Yamarang",
@@ -893,6 +895,7 @@ function init_gear_sets()
     ring2="Gere Ring",
     back=gear.THF_TP_Cape,
     waist="Reiki Yotai", --7
+    -- body="Pillager's Vest +3",
   }--12
   sets.engaged.DW.LowAcc.HighHaste = set_combine(sets.engaged.DW.HighHaste, {
     ammo="Yamarang",
@@ -921,6 +924,7 @@ function init_gear_sets()
     ring2="Gere Ring",
     back=gear.THF_TP_Cape,
     waist="Reiki Yotai", --7
+    -- body="Pillager's Vest +3",
   }--7
   sets.engaged.DW.LowAcc.SuperHaste = set_combine(sets.engaged.DW.SuperHaste, {
     ammo="Yamarang",
@@ -949,6 +953,7 @@ function init_gear_sets()
     ring2="Gere Ring",
     back=gear.THF_TP_Cape,
     waist="Windbuffet Belt +1",
+    -- body="Pillager's Vest +3",
   }
   sets.engaged.DW.LowAcc.MaxHaste = set_combine(sets.engaged.DW.MaxHaste, {
     ammo="Yamarang",

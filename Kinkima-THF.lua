@@ -682,7 +682,7 @@ function init_gear_sets()
     ring2="Gere Ring",
     back=gear.THF_TP_Cape,
     waist="Windbuffet Belt +1",
-    -- body="Plunderer's Vest +3",
+    -- body="Pillager's Vest +3",
     -- legs="Pillager's Culottes +3",
     -- feet="Plunderer's Poulaines +3",
   }
@@ -787,7 +787,7 @@ function init_gear_sets()
     ring2="Gere Ring",
     back=gear.THF_TP_Cape,
     waist="Reiki Yotai", --7
-    -- body="Plunderer's Vest +3",
+    -- body="Pillager's Vest +3",
     -- legs="Pillager's Culottes +3",
     -- feet="Plunderer's Poulaines +3",
     -- back=gear.THF_DW_Cape, --10
@@ -822,7 +822,7 @@ function init_gear_sets()
     ring2="Gere Ring",
     back=gear.THF_TP_Cape,
     waist="Reiki Yotai", --7
-    -- body="Plunderer's Vest +3",
+    -- body="Pillager's Vest +3",
     -- legs="Pillager's Culottes +3",
     -- feet="Plunderer's Poulaines +3",
   }
@@ -856,7 +856,7 @@ function init_gear_sets()
     ring2="Gere Ring",
     back=gear.THF_TP_Cape,
     waist="Reiki Yotai", --7
-    -- body="Plunderer's Vest +3",
+    -- body="Pillager's Vest +3",
     -- legs="Pillager's Culottes +3",
     -- feet="Plunderer's Poulaines +3",
   }
@@ -890,7 +890,7 @@ function init_gear_sets()
     ring2="Gere Ring",
     back=gear.THF_TP_Cape,
     waist="Windbuffet Belt +1",
-    -- body="Plunderer's Vest +3",
+    -- body="Pillager's Vest +3",
     -- legs="Pillager's Culottes +3",
     -- feet="Plunderer's Poulaines +3",
   }
