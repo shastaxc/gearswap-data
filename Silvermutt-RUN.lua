@@ -363,12 +363,12 @@ function init_gear_sets()
 
   -- Enmity sets, caps at +200
   sets.Enmity = {
-    ammo="Staunch Tathlum +1",                          --  3/ 3, ___ [___] <__>
+    ammo="Sapience Orb",                                -- __/__, ___ [___] < 2>
     head="Halitus Helm",                                -- __/__,  43 [ 88] < 8>
     body="Emet Harness +1",                             --  6/__,  64 [ 61] <10>
     hands="Kurys Gloves",                               --  2/ 2,  57 [ 25] < 9>
-    legs="Erilaz Leg Guards +1",                        --  7/__, 107 [ 80] <11>
-    feet="Erilaz Greaves +1",                           --  5/__, 107 [ 18] < 6>
+    legs="Erilaz Leg Guards +2",                        -- 12/12, 147 [ 90] <12>
+    feet="Erilaz Greaves +2",                           -- 10/10, 147 [ 38] < 7>
     neck={name="Unmoving Collar +1", priority=1},       -- __/__, ___ [200] <10>
     ear1="Odnowa Earring +1",                           --  3/ 5, ___ [110] <__>
     ear2={name="Cryptic Earring", priority=1},          -- __/__, ___ [ 40] < 4>
@@ -377,12 +377,8 @@ function init_gear_sets()
     back={name=gear.RUN_HPD_Cape,
       augments=gear.RUN_HPD_Cape.augments, priority=1}, -- 10/__,  20 [ 80] <10>
     waist={name="Kasiri Belt", priority=1},             -- __/__, ___ [ 30] < 3>
-    
-    -- ammo="Sapience Orb",                             -- __/__, ___ [___] < 2>
-    -- legs="Erilaz Leg Guards +2",                     -- 12/12, 147 [ 90] <12>
-    -- feet="Erilaz Greaves +2",                        -- 10/10, 147 [ 38] < 7>
     -- 53 PDT / 39 MDT, 478 M.Eva [982 HP] <75 Enmity>
-  } -- 46 PDT / 20 MDT, 398 M.Eva [952 HP] <71 Enmity>
+  }
 
   -- SIRD options
   sets.SIRD_options = {
@@ -430,12 +426,12 @@ function init_gear_sets()
   sets.precast.JA = sets.Enmity;
 
   sets.precast.JA['Vallation'] = {
-    ammo="Staunch Tathlum +1",                          --  3/ 3, ___ [___] <__>
+    ammo="Sapience Orb",                                -- __/__, ___ [___] < 2>
     head="Halitus Helm",                                -- __/__,  43 [ 88] < 8>
     body={name="Runeist's Coat +3", priority=1},        -- __/__,  94 [218] <__>; Augments Valiance/Vallation
     hands="Kurys Gloves",                               --  2/ 2,  57 [ 25] < 9>
-    legs="Erilaz Leg Guards +1",                        --  7/__, 107 [ 80] <11>
-    feet="Erilaz Greaves +1",                           --  5/__, 107 [ 18] < 6>
+    legs="Erilaz Leg Guards +2",                        -- 12/12, 147 [ 90] <12>
+    feet="Erilaz Greaves +2",                           -- 10/10, 147 [ 38] < 7>
     neck={name="Unmoving Collar +1", priority=1},       -- __/__, ___ [200] <10>
     ear1="Odnowa Earring +1",                           --  3/ 5, ___ [110] <__>
     ear2={name="Cryptic Earring", priority=1},          -- __/__, ___ [ 40] < 4>
@@ -444,12 +440,8 @@ function init_gear_sets()
     back={name=gear.RUN_HPD_Cape,
       augments=gear.RUN_HPD_Cape.augments, priority=1}, -- 10/__,  20 [ 80] <10>
     waist={name="Kasiri Belt", priority=1},             -- __/__, ___ [ 30] < 3>
-
-    -- ammo="Sapience Orb",                             -- __/__, ___ [___] < 2>
-    -- legs="Erilaz Leg Guards +2",                     -- 12/12, 147 [ 90] <12>
-    -- feet="Erilaz Greaves +2",                        -- 10/10, 147 [ 38] < 7>
     -- 52 PDT / 44 MDT, 508 M.Eva [1029 HP] <65 Enmity>
-  } -- 45 PDT / 25 MDT, 428 M.Eva [999 HP] <61 Enmity>
+  }
   sets.precast.JA['Valiance'] = sets.precast.JA['Vallation']
   sets.precast.JA['Battuta'] = set_combine(sets.Enmity, {
     head="Futhark Bandeau +3",
