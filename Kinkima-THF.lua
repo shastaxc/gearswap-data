@@ -1,4 +1,4 @@
--- Original: Motenten/Arislan || Modified: Silvermutt
+-- Author: Silvermutt
 -- Haste/DW Detection Requires Gearinfo Addon
 
 -------------------------------------------------------------------------------------------------------------------
@@ -9,48 +9,60 @@
 --              [ CTRL+F9 ]         Cycle Hybrid Modes
 --              [ WIN+F9 ]          Cycle Weapon Skill Modes
 --              [ F10 ]             Emergency -PDT Mode
---              [ ALT+F10 ]         Toggle Kiting Mode
 --              [ F11 ]             Emergency -MDT Mode
 --              [ F12 ]             Update Current Gear / Report Current Status
 --              [ CTRL+F12 ]        Cycle Idle Modes
 --              [ ALT+F12 ]         Cancel Emergency -PDT/-MDT Mode
 --              [ CTRL+` ]          Cycle Treasure Hunter Mode
 --              [ WIN+C ]           Toggle Capacity Points Mode
---              [ CTRL+PageUp ]     Cycle Toy Weapon Mode
---              [ CTRL+PageDown ]   Cycleback Toy Weapon Mode
---              [ ALT+PageDown ]    Reset Toy Weapon Mode
+--              [ CTRL+F8 ]         Toggle Attack Capped mode
 --              [ WIN+W ]           Toggle Rearming Lock
 --                                  (off = re-equip previous weapons if you go barehanded)
 --                                  (on = prevent weapon auto-equipping)
 --
 --  Abilities:  [ ALT+` ]           Flee
+--              [ CTRL+Numpad0 ]    Sneak Attack
+--              [ CTRL+Numpad. ]    Trick Attack
+-- 
+--  Subjob:     == WAR ==
+--              [ ALT+W ]           Defender
 --              [ CTRL+Numpad/ ]    Berserk
 --              [ CTRL+Numpad* ]    Warcry
 --              [ CTRL+Numpad- ]    Aggressor
---              [ CTRL+Numpad0 ]    Sneak Attack
---              [ CTRL+Numpad. ]    Trick Attack
---
---  Spells:     [ WIN+, ]           Utsusemi: Ichi
---              [ WIN+. ]           Utsusemi: Ni
+--              == SAM ==
+--              [ ALT+W ]           Third Eye
+--              [ CTRL+Numpad/ ]    Meditate
+--              [ CTRL+Numpad* ]    Sekkanoki
+--              [ CTRL+Numpad- ]    Hasso
+--              == DNC ==
+--              [ CTRL+- ]          Cycle Step Mode
+--              [ CTRL+= ]          Cycleback Step Mode
+--              [ Numpad0 ]         Execute Step
+--              [ CTRL+Numlock ]    Reverse Flourish
+--              == NIN ==
+--              [ Numpad0 ]         Utsusemi: Ichi
+--              [ Numpad. ]         Utsusemi: Ni
+--              == RUN ==
+--              [ CTRL+- ]          Cycle Rune Mode
+--              [ CTRL+= ]          Cycleback Rune Mode
+--              [ Numpad0 ]         Execute Rune
+--              == DRG ==
+--              [ ALT+W ]           Ancient Circle
+--              [ CTRL+Numpad/ ]    Jump
+--              [ CTRL+Numpad* ]    High Jump
+--              [ CTRL+Numpad- ]    Super Jump
 --
 --  Other:      [ ALT+D ]           Cancel Invisible/Hide & Use Key on <t>
 --              [ ALT+S ]           Turn 180 degrees in place
+--              [ CTRL+Insert ]     Cycle Main/Sub Weapon
+--              [ CTRL+Delete ]     Cycleback Main/Sub Weapon
+--              [ ALT+Delete ]      Reset Main/Sub Weapon
+--              [ CTRL+PageUp ]     Cycle Toy Weapon
+--              [ CTRL+PageDown ]   Cycleback Toy Weapon
+--              [ ALT+PageDown ]    Reset Toy Weapon
 --
 --
 --              (Global-Binds.lua contains additional non-job-related keybinds)
-
-
--------------------------------------------------------------------------------------------------------------------
---  Custom Commands (preface with /console to use these in macros)
--------------------------------------------------------------------------------------------------------------------
-
---  gs c cycle treasuremode (set on ctrl-= by default): Cycles through the available treasure hunter modes.
---
---  TH Modes:  None                 Will never equip TH gear
---             Tag                  Will equip TH gear sufficient for initial contact with a mob (either melee,
---
---             SATA - Will equip TH gear sufficient for initial contact with a mob, and when using SATA
---             Fulltime - Will keep TH gear equipped fulltime
 
 
 -------------------------------------------------------------------------------------------------------------------
@@ -67,7 +79,7 @@ function get_sets()
   end, 1)
   coroutine.schedule(function() 
     send_command('gs c weaponset current')
-  end, 2)
+  end, 5)
 end
 
 -- Executes on first load and main job change
@@ -103,9 +115,10 @@ function job_setup()
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c usekey')
   send_command('bind @w gs c toggle RearmingLock')
-  
+
   send_command('bind ^insert gs c weaponset cycle')
   send_command('bind ^delete gs c weaponset cycleback')
+  send_command('bind !delete gs c weaponset reset')
 
   send_command('bind ^pageup gs c toyweapon cycle')
   send_command('bind ^pagedown gs c toyweapon cycleback')
@@ -134,7 +147,7 @@ function user_setup()
     send_command('bind !w input /ja "Third Eye" <me>')
     send_command('bind ^numpad/ input /ja "Meditate" <me>')
     send_command('bind ^numpad* input /ja "Sekkanoki" <me>')
-    send_command('bind ^numpad- input /ja "Third Eye" <me>')
+    send_command('bind ^numpad- input /ja "Hasso" <me>')
   elseif player.sub_job == 'DNC' then
     send_command('bind ^- gs c cycleback mainstep')
     send_command('bind ^= gs c cycle mainstep')
@@ -1347,6 +1360,8 @@ function cycle_weapons(cycle_dir)
     state.WeaponSet:cycle()
   elseif cycle_dir == 'back' then
     state.WeaponSet:cycleback()
+  else
+    state.WeaponSet:reset()
   end
 
   add_to_chat(141, 'Weapon Set to '..string.char(31,1)..state.WeaponSet.current)
@@ -1446,6 +1461,8 @@ function job_self_command(cmdParams, eventArgs)
       cycle_weapons('forward')
     elseif cmdParams[2] == 'cycleback' then
       cycle_weapons('back')
+    elseif cmdParams[2] == 'reset' then
+      cycle_weapons('reset')
     elseif cmdParams[2] == 'current' then
       cycle_weapons('current')
     end
