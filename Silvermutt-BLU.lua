@@ -590,74 +590,79 @@ function init_gear_sets()
   sets.midcast['Blue Magic'].PhysicalChr = set_combine(sets.midcast['Blue Magic'].Physical, {ear1="Regal Earring", ear2="Enchanter's Earring +1"})
 
   sets.midcast['Blue Magic'].Magical = {
-    main="Bunzi's Rod",           -- 60, 50, 15 [__/__, ___]
-    sub="Maxentius",              -- 21, 40, 15 [__/__, ___]
-    ammo="Pemphredo Tathlum",     --  4,  8,  4 [__/__, ___]
-    head=gear.Nyame_B_head,       -- 30, 40, 28 [ 7/ 7, 123]
-    body=gear.Nyame_B_body,       -- 30, 40, 42 [ 9/ 9, 139]
-    hands="Jhakri Cuffs +2",      -- 40, 43, 36 [__/__,  32]
-    legs=gear.Nyame_B_legs,       -- 30, 40, 44 [ 8/ 8, 150]
-    feet="Jhakri Pigaches +2",    -- 39, 42, 33 [__/__,  69]
-    neck="Loricate Torque +1",    -- __, __, __ [ 6/ 6, ___]
-    ear1="Regal Earring",         --  7, __, 10 [__/__, ___]
-    ear2="Friomisi Earring",      -- 10, __, __ [__/__, ___]
-    ring1="Metamorph Ring +1",    -- __, 15, 16 [__/__, ___]
-    ring2="Defending Ring",       -- __, __, __ [10/10, ___]
-    back=gear.BLU_MAB_Cape,       -- 10, 20, 30 [10/__, ___]
-    waist="Eschan Stone",         --  7,  7, __ [__/__, ___]
+    main="Bunzi's Rod",               -- 60, 50, 15 [__/__, ___] __
+    sub="Maxentius",                  -- 21, 40, 15 [__/__, ___] __
+    ammo="Pemphredo Tathlum",         --  4,  8,  4 [__/__, ___] __
+    head=gear.Nyame_B_head,           -- 30, 40, 28 [ 7/ 7, 123] __
+    body=gear.Nyame_B_body,           -- 30, 40, 42 [ 9/ 9, 139] __
+    hands="Jhakri Cuffs +2",          -- 40, 43, 36 [__/__,  32] __
+    legs=gear.Nyame_B_legs,           -- 30, 40, 44 [ 8/ 8, 150] __
+    feet="Jhakri Pigaches +2",        -- 39, 42, 33 [__/__,  69] __
+    neck="Loricate Torque +1",        -- __, __, __ [ 6/ 6, ___] __
+    ear1="Regal Earring",             --  7, __, 10 [__/__, ___] __
+    ear2="Friomisi Earring",          -- 10, __, __ [__/__, ___] -2
+    ring1="Metamorph Ring +1",        -- __, 15, 16 [__/__, ___] __
+    ring2="Defending Ring",           -- __, __, __ [10/10, ___] __
+    back=gear.BLU_MAB_Cape,           -- 10, 20, 30 [10/__, ___] __
+    waist="Eschan Stone",             --  7,  7, __ [__/__, ___] __
+    -- 288 MAB, 345 M.Acc, 273 INT [50 PDT/40 MDT, 513 M.Eva] -2 Enmity-
+
+    -- Great:
+    -- main="Bunzi's Rod",            -- 60, 50, 15 [__/__, ___] __
+    -- sub="Maxentius",               -- 21, 40, 15 [__/__, ___] __
+    -- ammo="Pemphredo Tathlum",      --  4,  8,  4 [__/__, ___] __
+    -- head="Hashishin Kavuk +2",     -- 46, 51, 29 [__/__, 115] __
+    -- body=gear.Nyame_B_body,        -- 30, 40, 42 [ 9/ 9, 139] __
+    -- hands="Hashishin Bazubands +2",-- 52, 52, 28 [ 9/ 9,  77]  5; Blue magic recast -15%
+    -- legs="Hashishin Tayt +2",      -- 48, 53, 43 [11/11, 152] __
+    -- feet="Hashishin Basmak +2",    -- 50, 50, 34 [__/__, 147]  9
+    -- neck="Lasaia Pendant",         -- __,  1, __ [__/__, ___]  8
+    -- ear1="Regal Earring",          --  7, __, 10 [__/__, ___] __
+    -- ear2="Halasz Earring",         -- __, __, __ [__/__, ___]  3; Magic crit rate +14%
+    -- ring1="Metamorph Ring +1",     -- __, 15, 16 [__/__, ___] __
+    -- ring2="Defending Ring",        -- __, __, __ [10/10, ___] __
+    -- back=gear.BLU_MAB_Cape,        -- 10, 20, 30 [10/__, ___] __
+    -- waist="Sanctuary Obi +1",      -- __, __,  6 [__/__, ___]  4
+    -- 328 MAB, 380 M.Acc, 272 INT [49 PDT/39 MDT, 630 M.Eva] 29 Enmity-
 
     -- Ideal:
-    -- main="Bunzi's Rod",        -- 60, 50, 15 [__/__, ___]
-    -- sub="Maxentius",           -- 21, 40, 15 [__/__, ___]
-    -- ammo="Pemphredo Tathlum",  --  4,  8,  4 [__/__, ___]
-    -- head=gear.Nyame_B_head,    -- 30, 40, 28 [ 7/ 7, 123]
-    -- body="Shamash Robe",       -- 45, 45, 40 [10/__, 106]
-    -- hands=gear.Amalric_D_hands,-- 53, 20, 36 [__/__,  48]
-    -- legs=gear.Nyame_B_legs,    -- 30, 40, 44 [ 8/ 8, 150]
-    -- feet=gear.Amalric_D_feet,  -- 52, 20, 21 [__/__, 118]
-    -- neck="Loricate Torque +1", -- __, __, __ [ 6/ 6, ___]
-    -- ear1="Regal Earring",      --  7, __, 10 [__/__, ___]
-    -- ear2="Friomisi Earring",   -- 10, __, __ [__/__, ___]
-    -- ring1="Metamorph Ring +1", -- __, 15, 16 [__/__, ___]
-    -- ring2="Defending Ring",    -- __, __, __ [10/10, ___]
-    -- back=gear.BLU_MAB_Cape,    -- 10, 20, 30 [10/__, ___]
-    -- waist="Eschan Stone",      --  7,  7, __ [__/__, ___]
-    -- Amalric set bonus             20, __, __ [__/__, ___]
-    -- 349 MAB, 305 M.Acc, 259 INT [51 PDT/31 MDT, 545 M.Eva]
+    -- main="Bunzi's Rod",            -- 60, 50, 15 [__/__, ___] __
+    -- sub="Maxentius",               -- 21, 40, 15 [__/__, ___] __
+    -- ammo="Pemphredo Tathlum",      --  4,  8,  4 [__/__, ___] __
+    -- head="Hashishin Kavuk +2",     -- 46, 51, 29 [__/__, 115] __
+    -- body="Shamash Robe",           -- 45, 45, 40 [10/__, 106] 10
+    -- hands="Hashishin Bazubands +2",-- 52, 52, 28 [ 9/ 9,  77]  5; Blue magic recast -15%
+    -- legs="Hashishin Tayt +2",      -- 48, 53, 43 [11/11, 152] __
+    -- feet="Hashishin Basmak +2",    -- 50, 50, 34 [__/__, 147]  9
+    -- neck="Lasaia Pendant",         -- __,  1, __ [__/__, ___]  8
+    -- ear1="Regal Earring",          --  7, __, 10 [__/__, ___] __
+    -- ear2="Halasz Earring",         -- __, __, __ [__/__, ___]  3; Magic crit rate +14%
+    -- ring1="Metamorph Ring +1",     -- __, 15, 16 [__/__, ___] __
+    -- ring2="Defending Ring",        -- __, __, __ [10/10, ___] __
+    -- back=gear.BLU_MAB_Cape,        -- 10, 20, 30 [10/__, ___] __
+    -- waist="Sanctuary Obi +1",      -- __, __,  6 [__/__, ___]  4
+    -- 343 MAB, 385 M.Acc, 270 INT [50 PDT/30 MDT, 597 M.Eva] 39 Enmity-
   }
 
   sets.midcast['Blue Magic'].Magical.Resistant = set_combine(sets.midcast['Blue Magic'].Magical, {
-    main="Bunzi's Rod",                 -- 60, 50, 15 [__/__, ___]
-    sub="Maxentius",                    -- 21, 40, 15 [__/__, ___]
-    ammo="Pemphredo Tathlum",           --  4,  8,  4 [__/__, ___]
-    head="Assimilator's Keffiyeh +3",   -- 28, 56, 33 [__/__,  73]
-    body=gear.Nyame_B_body,             -- 30, 40, 42 [ 9/ 9, 139]
-    hands=gear.Nyame_B_hands,           -- 30, 40, 28 [ 7/ 7, 112]
-    legs=gear.Nyame_B_legs,             -- 30, 40, 44 [ 8/ 8, 150]
-    feet=gear.Nyame_B_feet,             -- 30, 40, 25 [ 7/ 7, 150]
-    neck="Baetyl Pendant",              -- 13, __, __ [__/__, ___]
-    ear1="Regal Earring",               --  7, __, 10 [__/__, ___]
-    ear2="Friomisi Earring",            -- 10, __, __ [__/__, ___]
-    ring1="Metamorph Ring +1",          -- __, 15, 16 [__/__, ___]
-    ring2="Defending Ring",             -- __, __, __ [10/10, ___]
-    back=gear.BLU_MAB_Cape,             -- 10, 20, 30 [10/__, ___]
-    -- body="Shamash Robe",             -- 45, 45, 40 [10/__, 106]
-    -- waist="Acuity Belt +1",          -- __, 15, 23 [__/__, ___]
-    -- AF set bonus                        __, 15, __ [__/__, ___]
-    -- 288 MAB, 384 M.Acc, 283 INT [52 PDT/32 MDT, 591 M.Eva]
-  })-- 273 MAB, 349 M.Acc, 262 INT [51 PDT/41 MDT, 624 M.Eva]
+    -- waist="Acuity Belt +1",        -- __, 15, 23 [__/__, ___] __
+    -- 343 MAB, 400 M.Acc, 287 INT [50 PDT/30 MDT, 597 M.Eva] 35 Enmity-
+  })
 
   sets.midcast['Blue Magic'].MagicalDark = set_combine(sets.midcast['Blue Magic'].Magical, {
     head="Pixie Hairpin +1",
     ring1="Archon Ring",
   })
+  sets.midcast['Blue Magic'].MagicalDark.Resistant = sets.midcast['Blue Magic'].Magical.Resistant
 
   sets.midcast['Blue Magic'].MagicalLight = set_combine(sets.midcast['Blue Magic'].Magical, {
     ring1="Weatherspoon Ring"
   })
+  sets.midcast['Blue Magic'].MagicalLight.Resistant = sets.midcast['Blue Magic'].Magical.Resistant
 
   sets.midcast['Blue Magic'].MagicalMnd = set_combine(sets.midcast['Blue Magic'].Magical, {
   })
+  sets.midcast['Blue Magic'].MagicalMnd.Resistant = sets.midcast['Blue Magic'].Magical.Resistant
 
   sets.midcast['Blue Magic'].MagicalDex = set_combine(sets.midcast['Blue Magic'].Magical, {
     ammo="Aurgelmir Orb",
@@ -665,17 +670,20 @@ function init_gear_sets()
     -- ammo="Aurgelmir Orb +1",
     -- ear2="Mache Earring +1",
   })
+  sets.midcast['Blue Magic'].MagicalDex.Resistant = sets.midcast['Blue Magic'].Magical.Resistant
 
   sets.midcast['Blue Magic'].MagicalVit = set_combine(sets.midcast['Blue Magic'].Magical, {
     ammo="Aurgelmir Orb",
     -- ammo="Aurgelmir Orb +1",
   })
+  sets.midcast['Blue Magic'].MagicalVit.Resistant = sets.midcast['Blue Magic'].Magical.Resistant
 
   sets.midcast['Blue Magic'].MagicalChr = set_combine(sets.midcast['Blue Magic'].Magical, {
     ear1="Regal Earring",
     -- ammo="Voluspa Tathlum",
     -- ear2="Enchanter's Earring +1"
   })
+  sets.midcast['Blue Magic'].MagicalChr.Resistant = sets.midcast['Blue Magic'].Magical.Resistant
 
   sets.midcast['Blue Magic'].MagicAccuracy = {
     main="Bunzi's Rod", --40 macc

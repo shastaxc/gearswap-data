@@ -339,14 +339,14 @@ function init_gear_sets()
     -- hands="Erilaz Gauntlets +2", -- 10/10,  77 [ 49] ( 7, __)
     -- legs="Erilaz Leg Guards +2", -- 12/12, 147 [ 90] (__, __)
     -- feet="Erilaz Greaves +2",    -- 10/10, 147 [ 38] (__, 30)
-    -- neck="Futhark Torque +2",    --  7/ 7,  30 [ 60] (__, __)
+    -- neck="Unmoving Collar +1",   -- __/__, ___ [200] (__, __)
     -- ear1="Odnowa Earring +1",    --  3/ 5, ___ [110] (__, __)
     -- ear2="Sanare Earring",       -- __/__,   6 [___] (__, __); M. Def Bonus+4
     -- ring1="Gelatinous Ring +1",  --  7/-1, ___ [135] (__, __)
     -- ring2="Moonlight Ring",      --  5/ 5, ___ [110] (__, __)
     -- back=gear.RUN_HPME_Cape,     -- __/__,  45 [ 60] (__, __)
     -- waist="Engraved Belt",       -- __/__, ___ [___] (__, 20)
-    --64 PDT / 58 MDT, 695 MEVA [946 HP] (18 Status Resist, 50 Element Resist)
+    --57 PDT / 51 MDT, 665 MEVA [1086 HP] (18 Status Resist, 50 Element Resist)
   } --50 PDT / 52 MDT, 731 MEVA [1053 HP] (11 Status Resist, 20 Element Resist)
 
   sets.defense.Parry = {
