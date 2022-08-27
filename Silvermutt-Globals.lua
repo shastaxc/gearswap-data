@@ -98,6 +98,23 @@ locked_ear2 = false -- Do not modify
 locked_ring1 = false -- Do not modify
 locked_ring2 = false -- Do not modify
 
+----------------------------------------------------------------------
+-----------------------      Toy Weapons      ------------------------
+----------------------------------------------------------------------
+
+sets.ToyWeapon = {} --DO NOT MODIFY
+sets.ToyWeapon.None = {main=nil, sub=nil} --DO NOT MODIFY
+sets.ToyWeapon.Katana = {main="Trainee Burin",sub="Wind Knife"}
+sets.ToyWeapon.GreatKatana = {main="Mutsunokami",sub="Tzacab Grip"}
+-- sets.ToyWeapon.GreatKatana = {main="Lotus Katana",sub="Tzacab Grip"}
+sets.ToyWeapon.Dagger = {main="Qutrub Knife",sub="Wind Knife"}
+sets.ToyWeapon.Sword = {main="Nihility",sub="Wind Knife"}
+sets.ToyWeapon.Club = {main="Lady Bell",sub="Wind Knife"}
+sets.ToyWeapon.Staff = {main="Levin",sub="Tzacab Grip"}
+sets.ToyWeapon.Polearm = {main="Pitchfork +1",sub="Tzacab Grip"}
+sets.ToyWeapon.GreatSword = {main="Lament",sub="Tzacab Grip"}
+sets.ToyWeapon.Scythe = {main="Lost Sickle",sub="Tzacab Grip"}
+
 function define_global_sets()
   sets.org = {}
   sets.org.global = {}
