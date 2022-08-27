@@ -1,4 +1,4 @@
--- Original: Motenten/Arislan || Modified: Silvermutt
+-- Author: Silvermutt
 -- Haste/DW Detection Requires Gearinfo Addon
 
 -------------------------------------------------------------------------------------------------------------------
@@ -9,48 +9,64 @@
 --              [ CTRL+F9 ]         Cycle Hybrid Modes
 --              [ WIN+F9 ]          Cycle Weapon Skill Modes
 --              [ F10 ]             Emergency -PDT Mode
---              [ ALT+F10 ]         Toggle Kiting Mode
 --              [ F11 ]             Emergency -MDT Mode
 --              [ F12 ]             Update Current Gear / Report Current Status
 --              [ CTRL+F12 ]        Cycle Idle Modes
 --              [ ALT+F12 ]         Cancel Emergency -PDT/-MDT Mode
 --              [ CTRL+` ]          Cycle Treasure Hunter Mode
 --              [ WIN+C ]           Toggle Capacity Points Mode
---              [ CTRL+PageUp ]     Cycle Toy Weapon Mode
---              [ CTRL+PageDown ]   Cycleback Toy Weapon Mode
---              [ ALT+PageDown ]    Reset Toy Weapon Mode
+--              [ CTRL+F8 ]         Toggle Attack Capped mode
 --              [ WIN+W ]           Toggle Rearming Lock
 --                                  (off = re-equip previous weapons if you go barehanded)
 --                                  (on = prevent weapon auto-equipping)
 --
 --  Abilities:  [ ALT+` ]           Flee
+--              [ CTRL+Numpad0 ]    Sneak Attack
+--              [ CTRL+Numpad. ]    Trick Attack
+-- 
+--  Subjob:     == WAR ==
+--              [ ALT+W ]           Defender
 --              [ CTRL+Numpad/ ]    Berserk
 --              [ CTRL+Numpad* ]    Warcry
 --              [ CTRL+Numpad- ]    Aggressor
---              [ CTRL+Numpad0 ]    Sneak Attack
---              [ CTRL+Numpad. ]    Trick Attack
---
---  Spells:     [ WIN+, ]           Utsusemi: Ichi
---              [ WIN+. ]           Utsusemi: Ni
+--              == SAM ==
+--              [ ALT+W ]           Third Eye
+--              [ CTRL+Numpad/ ]    Meditate
+--              [ CTRL+Numpad* ]    Sekkanoki
+--              [ CTRL+Numpad- ]    Hasso
+--              == DNC ==
+--              [ CTRL+- ]          Cycle Step Mode
+--              [ CTRL+= ]          Cycleback Step Mode
+--              [ Numpad0 ]         Execute Step
+--              [ CTRL+Numlock ]    Reverse Flourish
+--              == NIN ==
+--              [ Numpad0 ]         Utsusemi: Ichi
+--              [ Numpad. ]         Utsusemi: Ni
+--              == RUN ==
+--              [ CTRL+- ]          Cycle Rune Mode
+--              [ CTRL+= ]          Cycleback Rune Mode
+--              [ Numpad0 ]         Execute Rune
+--              == DRG ==
+--              [ ALT+W ]           Ancient Circle
+--              [ CTRL+Numpad/ ]    Jump
+--              [ CTRL+Numpad* ]    High Jump
+--              [ CTRL+Numpad- ]    Super Jump
 --
 --  Other:      [ ALT+D ]           Cancel Invisible/Hide & Use Key on <t>
 --              [ ALT+S ]           Turn 180 degrees in place
+--              [ CTRL+Insert ]     Cycle Main/Sub Weapon
+--              [ CTRL+Delete ]     Cycleback Main/Sub Weapon
+--              [ ALT+Delete ]      Reset Main/Sub Weapon
+--              [ CTRL+Home ]       Cycle Ranged Weapon
+--              [ CTRL+End ]        Cycleback Ranged Weapon
+--              [ ALT+End ]         Reset Ranged Weapon
+--              [ CTRL+PageUp ]     Cycle Toy Weapon
+--              [ CTRL+PageDown ]   Cycleback Toy Weapon
+--              [ ALT+PageDown ]    Reset Toy Weapon
+--              [ E ]               Ranged Attack Current Target
 --
 --
 --              (Global-Binds.lua contains additional non-job-related keybinds)
-
-
--------------------------------------------------------------------------------------------------------------------
---  Custom Commands (preface with /console to use these in macros)
--------------------------------------------------------------------------------------------------------------------
-
---  gs c cycle treasuremode (set on ctrl-= by default): Cycles through the available treasure hunter modes.
---
---  TH Modes:  None                 Will never equip TH gear
---             Tag                  Will equip TH gear sufficient for initial contact with a mob (either melee,
---
---             SATA - Will equip TH gear sufficient for initial contact with a mob, and when using SATA
---             Fulltime - Will keep TH gear equipped fulltime
 
 
 -------------------------------------------------------------------------------------------------------------------
@@ -67,7 +83,7 @@ function get_sets()
   end, 1)
   coroutine.schedule(function()
     send_command('gs c weaponset current')
-  end, 2)
+  end, 5)
 end
 
 -- Executes on first load and main job change
@@ -95,13 +111,15 @@ function job_setup()
   state.IdleMode:options('Normal', 'Regain', 'LightDef', 'Evasion')
   state.CP = M(false, 'Capacity Points Mode')
   state.AttCapped = M(true, "Attack Capped")
+  state.Runes = M{['description']='Runes', 'Ignis', 'Gelus', 'Flabra', 'Tellus', 'Sulpor', 'Unda', 'Lux', 'Tenebrae'}
   state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger',
       'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
+  
+  -- Customizable Weapon Sets. Name must match set name (far below)
   state.WeaponSet = M{['description']='Weapon Set', 'WhiteGlass', 'Normal', 'Naegling', 'NaeglingAcc', 'H2H', 'Staff', 'Cleaving'}
   state.RangedWeaponSet = M{['description']='Ranged Weapon Set', 'None', 'Throwing', 'Archery'}
-  state.Runes = M{['description']='Runes', 'Ignis', 'Gelus', 'Flabra', 'Tellus', 'Sulpor', 'Unda', 'Lux', 'Tenebrae'}
 
-  -- Indicate if a marksmanship weapon is xbow or gun
+  -- Indicate if a marksmanship weapon is xbow or gun (archery and throwing not needed here)
   marksman_weapon_subtypes = {
     -- ['Gastraphetes'] = "xbow",
     -- ['Fomalhaut'] = "gun",
@@ -120,14 +138,17 @@ function job_setup()
     ['Ullr'] = "Eminent Arrow",
   }
 
+  -- Main job keybinds
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c usekey')
   send_command('bind @w gs c toggle RearmingLock')
   
   send_command('bind ^insert gs c weaponset cycle')
   send_command('bind ^delete gs c weaponset cycleback')
+  send_command('bind !delete gs c weaponset reset')
   send_command('bind ^home gs c rangedweaponset cycle')
   send_command('bind ^end gs c rangedweaponset cycleback')
+  send_command('bind !end gs c rangedweaponset reset')
 
   send_command('bind ^pageup gs c toyweapon cycle')
   send_command('bind ^pagedown gs c toyweapon cycleback')
@@ -148,6 +169,7 @@ function user_setup()
   silibs.user_setup_hook()
   include('Global-Binds.lua') -- Additional local binds
 
+  -- Subjob keybinds
   if player.sub_job == 'WAR' then
     send_command('bind !w input /ja "Defender" <me>')
     send_command('bind ^numpad/ input /ja "Berserk" <me>')
@@ -157,7 +179,7 @@ function user_setup()
     send_command('bind !w input /ja "Third Eye" <me>')
     send_command('bind ^numpad/ input /ja "Meditate" <me>')
     send_command('bind ^numpad* input /ja "Sekkanoki" <me>')
-    send_command('bind ^numpad- input /ja "Third Eye" <me>')
+    send_command('bind ^numpad- input /ja "Hasso" <me>')
   elseif player.sub_job == 'DNC' then
     send_command('bind ^- gs c cycleback mainstep')
     send_command('bind ^= gs c cycle mainstep')
@@ -226,10 +248,12 @@ function init_gear_sets()
   ---------------------------------------- Precast Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
 
+  -- Set to use in normal TH situations
   sets.TreasureHunter = {
     ammo="Perfect Lucky Egg", --1
     hands="Plunderer's Armlets +3", --4
   }
+  -- Set to use with TH enabled while performing ranged attacks
   sets.TreasureHunter.RA = {
     hands="Plunderer's Armlets +3", --4
     waist="Chaac Belt", --1
@@ -757,6 +781,23 @@ function init_gear_sets()
     back="Moonlight Cape",      --  6/ 6, ___
   })
 
+  -- Gear to show off when in cities. Optional.
+  sets.idle.Town = {
+    ammo="Coiste Bodhar",
+    head="Gleti's Mask",
+    body=gear.Nyame_B_body,
+    hands="Plunderer's Armlets +3",
+    legs=gear.Samnuha_legs,
+    feet="Gleti's Boots",
+    neck="Assassin's Gorget +2",
+    ear1="Telos Earring",
+    ear2="Sherida Earring",
+    ring1="Sroda Ring",
+    ring2="Epaminondas's Ring",
+    back="Moonlight Cape",
+    waist="Reiki Yotai",
+  }
+  
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Engaged Sets ------------------------------------------
@@ -1272,10 +1313,10 @@ function init_gear_sets()
     main="Karambit",
     sub=empty,
   }
-  -- sets.WeaponSet['SoloCleaving'] = {
+  sets.WeaponSet['SoloCleaving'] = {
   --   main=gear.Gandring_C,
   --   sub="Tauret",
-  -- }
+  }
   sets.WeaponSet['Cleaving'] = {
     main="Tauret",
     sub="Twashtar",
@@ -1701,6 +1742,8 @@ function cycle_weapons(cycle_dir)
     state.WeaponSet:cycle()
   elseif cycle_dir == 'back' then
     state.WeaponSet:cycleback()
+  else
+    state.WeaponSet:reset()
   end
 
   add_to_chat(141, 'Weapon Set to '..string.char(31,1)..state.WeaponSet.current)
@@ -1712,6 +1755,8 @@ function cycle_ranged_weapons(cycle_dir)
     state.RangedWeaponSet:cycle()
   elseif cycle_dir == 'back' then
     state.RangedWeaponSet:cycleback()
+  else
+    state.RangedWeaponSet:reset()
   end
 
   add_to_chat(141, 'RA Weapon Set to '..string.char(31,1)..state.RangedWeaponSet.current)
@@ -1805,12 +1850,16 @@ function job_self_command(cmdParams, eventArgs)
       cycle_toy_weapons('back')
     elseif cmdParams[2] == 'reset' then
       cycle_toy_weapons('reset')
+    elseif cmdParams[2] == 'current' then
+      cycle_toy_weapons('current')
     end
   elseif cmdParams[1] == 'weaponset' then
     if cmdParams[2] == 'cycle' then
       cycle_weapons('forward')
     elseif cmdParams[2] == 'cycleback' then
       cycle_weapons('back')
+    elseif cmdParams[2] == 'reset' then
+      cycle_weapons('reset')
     elseif cmdParams[2] == 'current' then
       cycle_weapons('current')
     end
@@ -1819,6 +1868,8 @@ function job_self_command(cmdParams, eventArgs)
       cycle_ranged_weapons('forward')
     elseif cmdParams[2] == 'cycleback' then
       cycle_ranged_weapons('back')
+    elseif cmdParams[2] == 'reset' then
+      cycle_ranged_weapons('reset')
     elseif cmdParams[2] == 'current' then
       cycle_ranged_weapons('current')
     end
