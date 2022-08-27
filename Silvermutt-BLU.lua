@@ -1242,14 +1242,11 @@ function init_gear_sets()
   }
 
   sets.TreasureHunter = {
-    ammo="Perfect Lucky Egg", --1
     body=gear.Herc_TH_body, --2
-    hands="Volte Bracers", --1
+    hands=gear.Herc_TH_hands, --2
   }
-  sets.TreasureHunter.RA = {
-    body=gear.Herc_TH_body, --2
-    hands="Volte Bracers", --1
-  }
+  sets.TreasureHunter.RA = sets.TreasureHunter
+  
   sets.midcast.Dia = sets.TreasureHunter
   sets.midcast.Diaga = sets.TreasureHunter
   sets.midcast.Bio = sets.TreasureHunter

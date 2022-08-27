@@ -248,14 +248,10 @@ function init_gear_sets()
   sets.org.job = {}
   
   sets.TreasureHunter = {
-    ammo="Perfect Lucky Egg", --1
     body=gear.Herc_TH_body, --2
-    waist="Chaac Belt", --1
+    hands=gear.Herc_TH_hands, --2
   }
-  sets.TreasureHunter.RA = {
-    body=gear.Herc_TH_body, --2
-    waist="Chaac Belt", --1
-  }
+  sets.TreasureHunter.RA = sets.TreasureHunter
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Defense Sets ------------------------------------------

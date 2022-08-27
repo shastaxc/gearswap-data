@@ -1223,8 +1223,7 @@ function init_gear_sets()
   }
   sets.TreasureHunter = {
     body=gear.Herc_TH_body, --2
-    hands="Volte Bracers", --1
-    waist="Chaac Belt", --1
+    hands=gear.Herc_TH_hands, --2
   }
   sets.TreasureHunter.RA = sets.TreasureHunter
 
