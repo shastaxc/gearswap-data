@@ -60,7 +60,7 @@ function get_sets()
   end, 1)
   coroutine.schedule(function()
     send_command('gs c weaponset current')
-  end, 2)
+  end, 5)
 end
 
 -- Executes on first load and main job change

@@ -62,7 +62,7 @@ function get_sets()
   coroutine.schedule(function()
     send_command('gs c weaponset current')
     -- send_command('aset set mage')
-  end, 2)
+  end, 5)
 end
 
 -- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.

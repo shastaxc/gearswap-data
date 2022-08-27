@@ -88,7 +88,7 @@ function get_sets()
   coroutine.schedule(function()
     send_command('gs c equipweapons')
     send_command('gs c equiprangedweapons')
-  end, 2)
+  end, 5)
 end
 
 -- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.

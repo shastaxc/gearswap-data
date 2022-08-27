@@ -50,7 +50,7 @@ function get_sets()
   coroutine.schedule(function()
     send_command('gs c equipweapons')
     send_command('gs c equiprangedweapons')
-  end, 2)
+  end, 5)
 end
 
 -- Executes on first load and main job change
