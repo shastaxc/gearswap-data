@@ -579,7 +579,7 @@ gear.Rawhide_D_hands = {}
 gear.Rawhide_A_legs = {}
 gear.Rawhide_B_legs = {}
 gear.Rawhide_C_legs = {}
-gear.Rawhide_D_legs = {}
+gear.Rawhide_D_legs = { name="Rawhide Trousers", augments={'MP+50','"Fast Cast"+5','"Refresh"+1',}}
 
 gear.Rawhide_A_feet = {}
 gear.Rawhide_B_feet = {}
