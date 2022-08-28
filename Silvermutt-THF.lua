@@ -114,10 +114,10 @@ function job_setup()
   state.Runes = M{['description']='Runes', 'Ignis', 'Gelus', 'Flabra', 'Tellus', 'Sulpor', 'Unda', 'Lux', 'Tenebrae'}
   state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger',
       'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
-  
+
   -- Customizable Weapon Sets. Name must match set name (far below)
   state.WeaponSet = M{['description']='Weapon Set', 'WhiteGlass', 'Normal', 'Naegling', 'NaeglingAcc', 'H2H', 'Staff', 'Cleaving'}
-  state.RangedWeaponSet = M{['description']='Ranged Weapon Set', 'None', 'Throwing', 'Archery'}
+  state.RangedWeaponSet = M{['description']='Ranged Weapon Set', 'None', 'Throwing', 'Pulling', 'Archery'}
 
   -- Indicate if a marksmanship weapon is xbow or gun (archery and throwing not needed here)
   marksman_weapon_subtypes = {
@@ -817,7 +817,7 @@ function init_gear_sets()
     feet="Plunderer's Poulaines +3",
     neck="Assassin's Gorget +2",
     ear1="Dedition Earring",
-    ear2="Sherida Earring",
+    ear2="Skulker's Earring",
     ring1="Hetairoi Ring",
     ring2="Gere Ring",
     back=gear.THF_TP_Cape,
@@ -931,7 +931,7 @@ function init_gear_sets()
     feet="Plunderer's Poulaines +3",
     neck="Assassin's Gorget +2",
     ear1="Suppanomimi", --5
-    ear2="Sherida Earring",
+    ear2="Skulker's Earring",
     ring1="Hetairoi Ring",
     ring2="Gere Ring",
     back=gear.THF_TP_Cape,
@@ -960,7 +960,7 @@ function init_gear_sets()
     feet="Plunderer's Poulaines +3",
     neck="Assassin's Gorget +2",
     ear1="Dedition Earring",
-    ear2="Sherida Earring",
+    ear2="Skulker's Earring",
     ring1="Hetairoi Ring",
     ring2="Gere Ring",
     back=gear.THF_TP_Cape,
@@ -989,7 +989,7 @@ function init_gear_sets()
     feet="Plunderer's Poulaines +3",
     neck="Assassin's Gorget +2",
     ear1="Dedition Earring",
-    ear2="Sherida Earring",
+    ear2="Skulker's Earring",
     ring1="Hetairoi Ring",
     ring2="Gere Ring",
     back=gear.THF_TP_Cape,
@@ -1333,6 +1333,10 @@ function init_gear_sets()
   }
   sets.WeaponSet['Throwing'] = {
     ranged="Antitail +1",
+    ammo=empty,
+  }
+  sets.WeaponSet['Pulling'] = {
+    ranged="Jinx Discus",
     ammo=empty,
   }
 end
