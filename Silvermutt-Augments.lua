@@ -210,8 +210,7 @@ gear.COR_WS1_Cape = { name="Camulus's Mantle", augments={'AGI+20','Mag. Acc+20 /
 gear.COR_WS2_Cape = { name="Camulus's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
 -- gear.COR_WS3_Cape = {} -- 30 AGI, 20 R.Acc/R.Att, 10 WSD, 10 PDT
 -- gear.COR_WS4_Cape = {} -- 30 INT, 20 M.Dmg/M.Acc, 10 MAB, 10 PDT
-gear.COR_SNP_Cape = { name="Camulus's Mantle", augments={'"Snapshot"+10','"Regen"+5',}}
-gear.COR_Regen_Cape = gear.COR_SNP_Cape
+gear.COR_SNP_Cape = { name="Camulus's Mantle", augments={'"Snapshot"+10','Phys. dmg. taken-10%',}
 gear.COR_RA_Cape = { name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','"Store TP"+10','Phys. dmg. taken-10%',}}
 gear.COR_DW_Cape = { name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dual Wield"+10','Phys. dmg. taken-10%',}}
 -- gear.COR_QD_Cape = {} -- 30 AGI, 20 M.Dmg/M.Acc, 10 MAB, 10 PDT
