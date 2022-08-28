@@ -367,6 +367,7 @@ function init_gear_sets()
     ring2="Sroda Ring",
     back=gear.DRG_WS2_Cape,
     waist="Sailfi Belt +1",
+    -- legs="Peltast's Cuissots +2",
   }
   sets.precast.WS["Impulse Drive"].MaxTP = set_combine(sets.precast.WS["Impulse Drive"], {
     ear2="Ishvara Earring",
