@@ -151,13 +151,13 @@ function init_gear_sets()
     ear2="Etiolation Earring",        --  1 [__/ 3, ___]; Resist Silence+15
     ring1="Gelatinous Ring +1",       -- __ [ 7/-1, ___]
     ring2="Defending Ring",           -- __ [10/10, ___]
-    back=gear.SCH_FC_Cape,            -- 10 [10/__,  20] -- TODO: Add meva
+    back=gear.SCH_FC_Cape,            -- 10 [10/__,  30]
     waist="Carrier Sash",             -- __ [__/__, ___]; Ele Resist+15
     -- main="Malignance Pole",        -- __ [20/20, ___]
     -- body="Pinga Tunic +1",         -- 15 [__/__, 128]
     -- feet=gear.Merl_FC_feet,        -- 12 [__/__, 118]
     -- neck="Orunmila's Torque",      --  5 [__/__, ___]
-    -- 81 Fast Cast [53 PDT/38 MDT, 545 MEVA]
+    -- 81 Fast Cast [53 PDT/38 MDT, 555 MEVA]
 
     -- Ideal:
     -- main="Hvergelmir",             -- 50 [__/__, ___]
@@ -173,10 +173,10 @@ function init_gear_sets()
     -- ear2="Etiolation Earring",     --  1 [__/ 3, ___]; Resist Silence+15
     -- ring1="Gelatinous Ring +1",    -- __ [ 7/-1, ___]
     -- ring2="Defending Ring",        -- __ [10/10, ___]
-    -- back=gear.SCH_FC_Cape,         -- 10 [10/__,  20] -- TODO: Add meva
+    -- back=gear.SCH_FC_Cape,         -- 10 [10/__,  30]
     -- waist="Carrier's Sash",        -- __ [__/__, ___]; Ele Resist+15
-    -- 84 Fast Cast [66 PDT/41 MDT, 610 MEVA]
-  } -- 82 Fast Cast [41 PDT/24 MDT, 508 MEVA]
+    -- 84 Fast Cast [66 PDT/41 MDT, 620 MEVA]
+  } -- 82 Fast Cast [41 PDT/24 MDT, 518 MEVA]
 
   -- Grimoire casting bonuses multiply separately from FC, allowing
   -- breaking the normal 80% cast time reduction cap.
@@ -224,9 +224,9 @@ function init_gear_sets()
     -- ear2="Enchntr. Earring +1",    --  2 [__/__, ___]
     -- ring1="Gelatinous Ring +1",    -- __ [ 7/-1, ___]
     -- ring2="Defending Ring",        -- __ [10/10, ___]
-    -- back=gear.SCH_FC_Cape,         -- 10 [10/__,  20] -- TODO: Add meva
+    -- back=gear.SCH_FC_Cape,         -- 10 [10/__,  30]
     -- waist="Embla Sash",            --  5 [__/__, ___]
-    -- 80 Fast Cast [53 PDT/25 MDT, 593 MEVA]
+    -- 80 Fast Cast [53 PDT/25 MDT, 603 MEVA]
   })
   sets.precast.FC.Dispelga.Grimoire = sets.precast.FC.Dispelga
 
@@ -360,7 +360,7 @@ function init_gear_sets()
     ear2="Halasz Earring",            -- __, __, ___, ___, ___,  5, __/__,  3
     ring1="Kuchekula Ring",           -- __, __, ___, ___, ___, __, __/__,  7; Use Janniston if you have it
     ring2="Defending Ring",           -- __, __, ___, ___, ___, __, 10/10, __
-    back=gear.SCH_FC_Cape,            -- __, __, ___,  30, ___, __, 10/__, __
+    back=gear.SCH_FC_Cape,            -- __, __, ___,  10, ___, __, 10/__, __
     waist="Sanctuary Obi +1",         -- __, __, ___, ___, ___, 10, __/__,  4
     -- Kaykaus bonus                      8, __, ___, ___, ___, __, __/__, __
     -- Base Stats                     -- __, __, 486, 129, 123, __, __/__, __
@@ -373,8 +373,8 @@ function init_gear_sets()
     -- Merit points                   -- __, __, ___, ___, ___, 10, __/__,  5
     -- 12 CPII, 49 CP, 502 Heal Skill, 298 MND, 239 VIT, 108 SIRD, 55PDT/48MDT, 37 -Enmity
     -- 710 Power
-  } -- 12 CPII, 39 CP, 502 Heal Skill, 298 MND, 239 VIT, 107 SIRD, 54PDT/47MDT, 37 -Enmity
-    -- 722 Power
+  } -- 12 CPII, 39 CP, 502 Heal Skill, 278 MND, 239 VIT, 107 SIRD, 54PDT/47MDT, 37 -Enmity
+    -- 712 Power
 
   -- Prioritize: CPII > CP > Heal Skill, MND, VIT (to power cap) > SIRD > -DT > Enmity (to -40)
   -- Cap at 700 power; Power = floor(MND÷2) + floor(VIT÷4) + Healing Magic Skill
@@ -396,7 +396,7 @@ function init_gear_sets()
     ear2="Odnowa Earring +1",         -- __, __, ___, ___,   3, __,  3/ 5, __
     ring1="Gelatinous Ring +1",       -- __, __, ___, ___,  15, __,  7/-1, __
     ring2="Defending Ring",           -- __, __, ___, ___, ___, __, 10/10, __
-    back=gear.SCH_FC_Cape,            -- __, __, ___,  30, ___, __, 10/__, __
+    back=gear.SCH_FC_Cape,            -- __, __, ___,  10, ___, __, 10/__, __
     waist="Hachirin-no-Obi",          -- __, __, ___, ___, ___, __, __/__, __
     -- Kaykaus set bonus              --  6, __, ___, ___, ___, __, __/__, __
     -- Base Stats                     -- __, __, 486, 129, 123, __, __/__, __
@@ -410,7 +410,7 @@ function init_gear_sets()
     -- 6 CPII, 59 CP, 502 Heal Skill, 309 MND, 233 VIT, 106 SIRD, 50PDT/37MDT, 36 -Enmity
     -- 714 Power
   } -- 6 CPII, 49 CP, 502 Heal Skill, 309 MND, 233 VIT, 105 SIRD, 49PDT/36MDT, 36 -Enmity
-    -- 714 Power
+    -- 704 Power
 
   sets.midcast.CureNormal.LightArts = sets.midcast.CureNormal
   sets.midcast.CureWeather.LightArts = sets.midcast.CureWeather
@@ -948,35 +948,35 @@ function init_gear_sets()
     ear2="Etiolation Earring",      -- __/ 3, ___ [__]; Resist Silence+15
     ring1="Stikini Ring +1",        -- __/__, ___ [ 1]
     ring2="Defending Ring",         -- 10/10, ___ [__]
-    back=gear.SCH_FC_Cape,          -- 10/__,  20 [__] -- TODO: Add meva
+    back=gear.SCH_FC_Cape,          -- 10/__,  30 [__]
     waist="Carrier's Sash",         -- __/__, ___ [__]; Ele Resist+15
     -- ammo="Staunch Tathlum +1",   --  3/ 3, ___ [__]; Resist Status+11
     -- hands="Volte Gloves",        -- __/__,  96 [ 1]
-    -- 52 PDT / 35 MDT, 574 M.Eva [10 Refresh]
-  } -- 58 PDT / 41 MDT, 610 M.Eva [9 Refresh]
+    -- 52 PDT / 35 MDT, 584 M.Eva [10 Refresh]
+  } -- 58 PDT / 41 MDT, 620 M.Eva [9 Refresh]
   sets.passive_refresh.sub50 = {
     waist="Fucho-no-Obi",
   }
   sets.Sublimation = {
-    main="Siriti",                      -- __/__, ___ [ 1]
-    sub="Genmei Shield",                -- 10/__, ___ [__]
-    ammo="Staunch Tathlum",             --  2/ 2, ___; Resist Status+10
-    head="Academic's Mortarboard +3",   -- __/__,  95 [ 4]
-    body="Pedagogy Gown +3",            -- __/__, 100 [ 5]
-    hands=gear.Nyame_B_hands,           --  7/ 7, 112 [__]
-    legs="Assiduity Pants +1",          -- __/__, 107; Refresh+2
-    feet=gear.Nyame_B_feet,             --  7/ 7, 150 [__]
-    neck="Loricate Torque +1",          --  6/ 6, ___ [__]; DEF+60
-    ear1="Savant's Earring",            -- __/__, ___ [ 1]
-    ear2="Etiolation Earring",          -- __/ 3, ___ [__]; Resist Silence+15
-    ring1="Gelatinous Ring +1",         --  7/-1, ___ [__]
-    ring2="Defending Ring",             -- 10/10, ___ [__]
-    back=gear.SCH_FC_Cape,              -- 10/__,  20 [__] -- TODO: Add meva
-    waist="Embla Sash",                 -- __/__, ___ [ 5]
-    -- ammo="Staunch Tathlum +1",       --  3/ 3, ___; Resist Status+11
-    -- back="Archon Cape",              -- __/__, ___ [__]
-    -- 50 PDT / 35 MDT, 584 M.Eva [16 Sublimation]
-  } -- 59 PDT / 34 MDT, 584 M.Eva [16 Sublimation]
+    main="Siriti",                      -- __/__, ___ [ 1, __]
+    sub="Genmei Shield",                -- 10/__, ___ [__, __]
+    ammo="Staunch Tathlum",             --  2/ 2, ___ [__, __]; Resist Status+10
+    head="Academic's Mortarboard +3",   -- __/__,  95 [ 4, __]
+    body="Pedagogy Gown +3",            -- __/__, 100 [ 5, __]
+    hands=gear.Nyame_B_hands,           --  7/ 7, 112 [__, __]
+    legs="Assiduity Pants +1",          -- __/__, 107 [__,  2]
+    feet=gear.Nyame_B_feet,             --  7/ 7, 150 [__, __]
+    neck="Loricate Torque +1",          --  6/ 6, ___ [__, __]; DEF+60
+    ear1="Savant's Earring",            -- __/__, ___ [ 1, __]
+    ear2="Etiolation Earring",          -- __/ 3, ___ [__, __]; Resist Silence+15
+    ring1="Gelatinous Ring +1",         --  7/-1, ___ [__, __]
+    ring2="Defending Ring",             -- 10/10, ___ [__, __]
+    back=gear.SCH_FC_Cape,              -- 10/__,  30 [__, __]
+    waist="Embla Sash",                 -- __/__, ___ [ 5, __]
+    -- ammo="Staunch Tathlum +1",       --  3/ 3, ___ [__, __]; Resist Status+11
+    -- back="Archon Cape",              -- __/__, ___ [__, __]
+    -- 50 PDT / 35 MDT, 564 M.Eva [16 Sublimation, 2 Refresh]
+  } -- 59 PDT / 34 MDT, 594 M.Eva [16 Sublimation, 2 Refresh]
   sets.Sublimation.Refresh = {
     main="Mpaca's Staff",               -- __/__, ___ [__,  2]
     sub="Khonsu",                       --  6/ 6, ___ [__, __]
@@ -991,11 +991,11 @@ function init_gear_sets()
     ear2="Etiolation Earring",          -- __/ 3, ___ [__, __]; Resist Silence+15
     ring1="Stikini Ring +1",            -- __/__, ___ [__,  1]
     ring2="Defending Ring",             -- 10/10, ___ [__, __]
-    back=gear.SCH_FC_Cape,              -- 10/__,  20 [__, __]
+    back=gear.SCH_FC_Cape,              -- 10/__,  30 [__, __]
     waist="Embla Sash",                 -- __/__, ___ [ 5, __]
     -- ammo="Staunch Tathlum +1",       --  3/ 3, ___ [__, __]; Resist Status+11
-    -- 49 PDT / 42 MDT, 584 M.Eva [15 Sublimation, 5 Refresh]
-  } -- 48 PDT / 41 MDT, 584 M.Eva [15 Sublimation, 5 Refresh]
+    -- 49 PDT / 42 MDT, 594 M.Eva [15 Sublimation, 5 Refresh]
+  } -- 48 PDT / 41 MDT, 594 M.Eva [15 Sublimation, 5 Refresh]
 
   sets.idle = sets.HeavyDef
   sets.idle.Sublimation = set_combine(sets.idle, sets.Sublimation)
