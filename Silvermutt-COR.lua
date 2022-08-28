@@ -359,7 +359,7 @@ function init_gear_sets()
     ear2="Odnowa Earring +1",         -- __/__ [ 3/ 5, ___]
     ring1="Crepuscular Ring",         --  3/__ [__/__, ___]
     ring2="Defending Ring",           -- __/__ [10/10, ___]
-    back=gear.COR_SNP_Cape,           -- 10/__ [10/__, ___]; Respec with PDT
+    back=gear.COR_SNP_Cape,           -- 10/__ [10/__, ___]
     waist="Yemaya Belt",              -- __/ 5 [__/__, ___]
     -- Merits/Traits/Gifts               10/30
     -- 68 Snapshot / 73 Rapid Shot [28 PDT/15 MDT, 352 M.Eva]
@@ -381,7 +381,7 @@ function init_gear_sets()
     ear2="Odnowa Earring +1",         -- __/__ [ 3/ 5, ___]
     ring1="Crepuscular Ring",         --  3/__ [__/__, ___]
     ring2="Defending Ring",           -- __/__ [10/10, ___]
-    back=gear.COR_SNP_Cape,           -- 10/__ [10/__, ___]; Respec with PDT
+    back=gear.COR_SNP_Cape,           -- 10/__ [10/__, ___]
     waist="Yemaya Belt",              -- __/ 5 [__/__, ___]
     -- Merits/Traits/Gifts               10/30
     -- Flurry 1                          15/__
@@ -1169,7 +1169,6 @@ function init_gear_sets()
     neck="Bathy Choker +1",
     ear1="Infused Earring",
     ring1="Chirich Ring +1",
-    back=gear.COR_Regen_Cape,
     -- ring2="Chirich Ring +1",
   }
   sets.latent_refresh = {
@@ -2011,7 +2010,7 @@ function init_gear_sets()
     hands=gear.Herc_TH_hands, --2
   }
   sets.TreasureHunter.RA = sets.TreasureHunter
-  
+
   sets.buff.Doom = {
     neck="Nicander's Necklace", --20
     ring1="Eshmun's Ring", --20
@@ -2100,40 +2099,43 @@ function job_precast(spell, action, spellMap, eventArgs)
     if state.LuzafRing.value then
       equip(sets.precast.LuzafRing)
     end
-  end
-
-  if spell.english == 'Fold' and buffactive['Bust'] == 2 then
+  elseif spell.english == 'Fold' and buffactive['Bust'] == 2 then
     if sets.precast.FoldDoubleBust then
       equip(sets.precast.FoldDoubleBust)
       eventArgs.handled = true
     end
-  end
-  if spellMap == 'Utsusemi' and spell.english == 'Utsusemi: Ichi' and
+  elseif spellMap == 'Utsusemi' and spell.english == 'Utsusemi: Ichi' and
       (buffactive['Copy Image'] or buffactive['Copy Image (2)']) then
     send_command('cancel 66; cancel 444; cancel Copy Image; cancel Copy Image (2)')
-  end
-end
-
-function job_post_precast(spell, action, spellMap, eventArgs)
-  if spell.action_type == 'Ranged Attack' then
+  elseif spell.action_type == 'Ranged Attack' then
     if state.DefenseMode.value ~= 'None' or state.HybridMode.value == 'HeavyDef' then
       if flurry == 0 then
         equip(sets.precast.RA.Safe)
+        eventArgs.handled = true
       elseif flurry == 1 then
         equip(sets.precast.RA.Flurry1.Safe)
+        eventArgs.handled = true
       elseif flurry == 2 then
         equip(sets.precast.RA.Flurry2.Safe)
+        eventArgs.handled = true
       end
     else
       if flurry == 0 then
         equip(sets.precast.RA)
+        eventArgs.handled = true
       elseif flurry == 1 then
         equip(sets.precast.RA.Flurry1)
+        eventArgs.handled = true
       elseif flurry == 2 then
         equip(sets.precast.RA.Flurry2)
+        eventArgs.handled = true
       end
     end
-  elseif spell.type == 'WeaponSkill' then
+  end
+end
+
+function job_post_precast(spell, action, spellMap, eventArgs)
+  if spell.type == 'WeaponSkill' then
     -- Handle belts for elemental WS
     if elemental_ws:contains(spell.english) then
       local base_day_weather_mult = silibs.get_day_weather_multiplier(spell.element, false, false)
