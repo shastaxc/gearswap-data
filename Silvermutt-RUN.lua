@@ -726,7 +726,7 @@ function init_gear_sets()
   sets.precast.WS['Resolution'] = set_combine(sets.precast.WS, {
     ammo="Seething Bomblet +1",
     head=gear.Adhemar_B_head,
-    body=gear.Adhemar_B_body,
+    body=gear.Adhemar_A_body,
     hands=gear.Adhemar_B_hands,
     legs=gear.Samnuha_legs,
     feet=gear.Herc_TA_feet,
