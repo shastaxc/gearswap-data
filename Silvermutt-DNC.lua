@@ -501,7 +501,7 @@ function init_gear_sets()
     feet=gear.Lustratio_D_feet,     -- 47, 48, __, __, __
     neck="Etoile Gorget +2",        -- __, 25, __, __, 10
     ear1="Sherida Earring",         --  5,  5, __, __, __
-    ear2="Odr Earring",             -- __, 10, __, __, __
+    ear2="Maculele Earring",        -- __, __, __, __,  9
     ring1="Gere Ring",              -- 10, __, __, 16, __
     ring2="Regal Ring",             -- 10, 10, __, 20, __
     back=gear.DNC_WS2_Cape,         -- __, 30, __, 20, __
@@ -582,14 +582,14 @@ function init_gear_sets()
     feet=gear.Lustratio_D_feet,     -- 48, __, __, __
     neck="Etoile Gorget +2",        -- 25, __, __, 10
     ear1="Moonshade Earring",       -- __, __, __, __; TP Bonus+250
-    ear2="Odr Earring",             -- 10, __, __, __
+    ear2="Maculele Earring",        -- __, __, __,  9
     ring1="Epaminondas's Ring",     -- __,  5, __, __
     ring2="Regal Ring",             -- 10, __, 20, __
     back=gear.DNC_WS1_Cape,         -- 30, 10, 20, __; Crit dmg+5
     waist="Kentarch Belt +1",       -- 10, __, __, __
     -- Lustratio set bonus          -- __,  4, __, __
     
-    -- ear2="Maculele Earring +2",  -- __, __, __, __,  9
+    -- ear2="Maculele Earring +2",  -- __, __, __,  9
   })-- 257 DEX, 40 WSD, 199 Att, 22 PDL
   sets.precast.WS["Rudra's Storm"].AttCappedMaxTP = set_combine(sets.precast.WS["Rudra's Storm"].AttCapped, {
     ear1="Ishvara Earring",         -- __,  2, __, __
@@ -601,7 +601,9 @@ function init_gear_sets()
     ammo="Charis Feather",
     head="Maculele Tiara +1",
     feet=gear.Nyame_B_feet,
+    ear2="Maculele Earring",        -- __, __, __,  9
     ring1="Epaminondas's Ring",
+
     -- ear2="Maculele Earring +2",  -- __, __, __, __,  9
   }
   sets.precast.WS["Rudra's Storm"].Safe = {
