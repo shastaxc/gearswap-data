@@ -451,11 +451,11 @@ function init_gear_sets()
     ear1="Sherida Earring",
     ear2="Moonshade Earring",
     ring1="Begrudging Ring",
+    ring2="Mummu Ring",
     back=gear.RNG_WS2_Cape,
     waist="Fotia Belt",
     -- body="Abnoba Kaftan",
     -- feet="Thereoid Greaves",
-    -- ring2="Mummu Ring",
   })
   sets.precast.WS['Jishnu\'s Radiance'].MaxTP = set_combine(sets.precast.WS['Jishnu\'s Radiance'], {
   })
