@@ -708,7 +708,7 @@ function init_gear_sets()
   sets.idle = {
     main="Mpaca's Staff",           -- __/__, ___ [ 2]
     sub="Mensch Strap +1",          --  5/__, ___ [__]
-    ammo="Staunch Tathlum",         --  2/ 2, ___ [__]
+    ammo="Staunch Tathlum +1",      --  3/ 3, ___ [__]; Resist Status+11
     head=gear.Nyame_B_head,         --  7/ 7, 123 [__]
     body="Shamash Robe",            -- 10/__, 106 [ 3]; Resist Silence+90
     hands=gear.Nyame_B_hands,       --  7/ 7, 112 [__]
@@ -721,10 +721,9 @@ function init_gear_sets()
     ring2="Defending Ring",         -- 10/10, ___ [__]
     back=gear.WHM_FC_Cape,          -- 10/__,  20 [__]
     waist="Carrier's Sash",         -- __/__, ___ [__]; Ele Resist+15
-    -- ammo="Staunch Tathlum +1",   --  3/ 3, ___ [__]; Resist Status+11
     -- hands="Volte Gloves",        -- __/__,  96 [ 1]
     -- 51 PDT / 29 MDT, 574 M.Eva [10 Refresh]
-  } -- 57 PDT / 35 MDT, 610 M.Eva [9 Refresh]
+  } -- 58 PDT / 36 MDT, 610 M.Eva [9 Refresh]
   sets.idle.Refresh = sets.idle
   sets.idle.Refresh.MpSub50 = set_combine(sets.idle.Refresh, {
     waist="Fucho-no-Obi",

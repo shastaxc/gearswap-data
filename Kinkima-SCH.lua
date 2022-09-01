@@ -384,7 +384,7 @@ function init_gear_sets()
   sets.midcast.CureWeather = {
     main="Chatoyant Staff",           -- __, 10, ___,   5,   5, __, __/__, __
     sub="Khonsu",                     -- __, __, ___, ___, ___, __,  6/ 6,  5
-    ammo="Staunch Tathlum",           -- __, __, ___, ___, ___, 10,  2/ 2, __
+    ammo="Staunch Tathlum +1",        -- __, __, ___, ___, ___, 11,  3/ 3, __
     head=gear.Kaykaus_C_head,         -- __, 11,  16,  19,  14, 12, __/ 3, __
     body="Rosette Jaseran +1",        -- __, __, ___,  39,  31, 25,  5/ 5, 13
     hands=gear.Chironic_SIRD_hands,   -- __, __, ___,  38,  20, 31, __/__, __; Can add more DT or Enmity
@@ -401,14 +401,13 @@ function init_gear_sets()
     -- Base Stats                     -- __, __, 486, 129, 123, __, __/__, __
     -- Merit points                   -- __, __, ___, ___, ___, 10, __/__,  5
 
-    -- ammo="Staunch Tathlum +1",     -- __, __, ___, ___, ___, 11,  3/ 3, __
     -- back=gear.SCH_CP_Cape,         -- __, 10, ___,  30, ___, __, 10/__, __
     -- Kaykaus set bonus              --  6, __, ___, ___, ___, __, __/__, __
     -- Base Stats                     -- __, __, 486, 129, 123, __, __/__, __
     -- Merit points                   -- __, __, ___, ___, ___, 10, __/__,  5
     -- 6 CPII, 59 CP, 502 Heal Skill, 309 MND, 233 VIT, 106 SIRD, 50PDT/37MDT, 36 -Enmity
     -- 714 Power
-  } -- 6 CPII, 49 CP, 502 Heal Skill, 309 MND, 233 VIT, 105 SIRD, 49PDT/36MDT, 36 -Enmity
+  } -- 6 CPII, 49 CP, 502 Heal Skill, 309 MND, 233 VIT, 106 SIRD, 50PDT/37MDT, 36 -Enmity
     -- 704 Power
 
   sets.midcast.CureNormal.LightArts = sets.midcast.CureNormal
@@ -935,7 +934,7 @@ function init_gear_sets()
   sets.passive_refresh = {
     main="Mpaca's Staff",           -- __/__, ___ [ 2]
     sub="Khonsu",                   --  6/ 6, ___ [__]
-    ammo="Staunch Tathlum",         --  2/ 2, ___ [__]
+    ammo="Staunch Tathlum +1",      --  3/ 3, ___ [__]; Resist Status+11
     head=gear.Nyame_B_head,         --  7/ 7, 123 [__]
     body="Shamash Robe",            -- 10/__, 106 [ 3]; Resist Silence+90
     hands=gear.Nyame_B_hands,       --  7/ 7, 112 [__]
@@ -948,10 +947,9 @@ function init_gear_sets()
     ring2="Defending Ring",         -- 10/10, ___ [__]
     back=gear.SCH_FC_Cape,          -- 10/__,  30 [__]
     waist="Carrier's Sash",         -- __/__, ___ [__]; Ele Resist+15
-    -- ammo="Staunch Tathlum +1",   --  3/ 3, ___ [__]; Resist Status+11
     -- hands="Volte Gloves",        -- __/__,  96 [ 1]
     -- 52 PDT / 35 MDT, 584 M.Eva [10 Refresh]
-  } -- 58 PDT / 41 MDT, 620 M.Eva [9 Refresh]
+  } -- 59 PDT / 42 MDT, 620 M.Eva [9 Refresh]
   sets.passive_refresh.sub50 = {
     waist="Fucho-no-Obi",
   }
@@ -977,7 +975,7 @@ function init_gear_sets()
   sets.Sublimation.Refresh = {
     main="Mpaca's Staff",               -- __/__, ___ [__,  2]
     sub="Khonsu",                       --  6/ 6, ___ [__, __]
-    ammo="Staunch Tathlum",             --  2/ 2, ___ [__, __]; Resist Status+10
+    ammo="Staunch Tathlum +1",          --  3/ 3, ___ [__, __]; Resist Status+11
     head="Academic's Mortarboard +3",   -- __/__,  95 [ 4, __]
     body="Pedagogy Gown +3",            -- __/__, 100 [ 5, __]
     hands=gear.Nyame_B_hands,           --  7/ 7, 112 [__, __]
@@ -990,9 +988,8 @@ function init_gear_sets()
     ring2="Defending Ring",             -- 10/10, ___ [__, __]
     back=gear.SCH_FC_Cape,              -- 10/__,  30 [__, __]
     waist="Embla Sash",                 -- __/__, ___ [ 5, __]
-    -- ammo="Staunch Tathlum +1",       --  3/ 3, ___ [__, __]; Resist Status+11
     -- 49 PDT / 42 MDT, 594 M.Eva [15 Sublimation, 5 Refresh]
-  } -- 48 PDT / 41 MDT, 594 M.Eva [15 Sublimation, 5 Refresh]
+  } -- 49 PDT / 42 MDT, 594 M.Eva [15 Sublimation, 5 Refresh]
 
   sets.idle = sets.HeavyDef
   sets.idle.Sublimation = set_combine(sets.idle, sets.Sublimation)

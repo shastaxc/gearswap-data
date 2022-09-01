@@ -690,7 +690,7 @@ function init_gear_sets()
   sets.midcast['Blue Magic'].Healing = { --Focus cure potency
     main="Bunzi's Rod",               -- 30, 15, __ [__/__, ___]
     sub=empty,
-    ammo="Staunch Tathlum",           -- __, __, 10 [ 3/ 3, ___]
+    ammo="Staunch Tathlum +1",        -- __, __, 11 [ 3/ 3, ___]
     head=gear.Nyame_B_head,           -- __, 26, __ [ 7/ 7, 123]
     body="Shamash Robe",              -- __, 40, __ [10/__, 106]
     hands=gear.Telchine_ENH_hands,    -- 17, 33, __ [__/__,  61]
@@ -706,12 +706,11 @@ function init_gear_sets()
     -- Merits                            __, __, 10 [__/__, ___]
 
     -- sub="Sors Shield",             --  3, __, __ [__/__, ___]
-    -- ammo="Staunch Tathlum +1",     -- __, __, 11 [ 3/ 3, ___]
     -- hands=gear.Telchine_ENH_hands, -- 18, 33, __ [__/__,  62]
     -- legs="Carmine Cuisses +1",     -- __, 16, 20 [__/__,  80]
     -- ring2="Freke Ring",            -- __, __, 10 [__/__, ___]
     -- 51 Cure Potency, 196 MND, 71 SIRD [53 PDT / 33 MDT, 521 M.Eva]
-  } -- 47 Cure Potency, 217 MND, 40 SIRD [61 PDT / 41 MDT, 590 M.Eva]
+  } -- 47 Cure Potency, 217 MND, 41 SIRD [61 PDT / 41 MDT, 590 M.Eva]
 
   sets.midcast['Blue Magic'].HealingSelf = set_combine(sets.midcast['Blue Magic'].Healing, {
     ear2="Mendicant's Earring", -- (5)
@@ -774,7 +773,7 @@ function init_gear_sets()
 
   sets.midcast.EnhancingDuration = {
     sub=gear.Colada_ENH,
-    ammo="Staunch Tathlum",
+    ammo="Staunch Tathlum +1", --3DT
     head=gear.Telchine_ENH_head,
     body=gear.Telchine_ENH_body,
     hands=gear.Telchine_ENH_hands,
@@ -786,7 +785,6 @@ function init_gear_sets()
     ring2="Stikini Ring +1",
     back=gear.BLU_FC_Cape, --10PDT
     -- main="Sakpata's Sword", --10DT
-    -- ammo="Staunch Tathlum +1", --3DT
     -- ear2="Andoaa Earring",
     -- waist="Flume Belt +1", --4PDT
   } --36DT, 14PDT
@@ -886,14 +884,13 @@ function init_gear_sets()
   } --48 DT, 7PDT
 
   sets.idle.DT = set_combine(sets.idle, {
-    ammo="Staunch Tathlum", --2/2
+    ammo="Staunch Tathlum +1", --3/3
     head="Malignance Chapeau", --6/6
     body="Malignance Tabard", --9/9
     hands="Malignance Gloves", --5/5
     legs="Malignance Tights", --7/7
     feet="Malignance Boots", --4/4
     ring2="Defending Ring", --10/10
-    -- ammo="Staunch Tathlum +1", --3/3
     -- neck="Warder's Charm +1",
     -- ring1="Purity Ring", --0/4
     -- back="Moonlight Cape", --6/6
@@ -1110,7 +1107,7 @@ function init_gear_sets()
   }) -- 38 DW, 33 STP, 310 Acc <0 DA, 4 TA, 0 QA> [48 PDT/30 MDT, 542 M.Eva]
 
   sets.engaged.DW.DT.LowHaste = set_combine(sets.engaged.DW.LowHaste, {
-    ammo="Staunch Tathlum",       -- __, __, __ <__, __, __> [ 2/ 2, ___]
+    ammo="Staunch Tathlum +1",    -- __, __, __ <__, __, __> [ 3/ 3, ___]
     head="Malignance Chapeau",    -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body=gear.Adhemar_A_body,     --  6, __, 55 <__,  4, __> [__/__,  69]
     hands="Malignance Gloves",    -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
@@ -1120,7 +1117,6 @@ function init_gear_sets()
     ear2="Odnowa Earring +1",     -- __, __, __ <__, __, __> [ 3/ 5, ___]
     ring1="Gelatinous Ring +1",   -- __, __, __ <__, __, __> [ 7/-1, ___]
     ring2="Defending Ring",       -- __, __, __ <__, __, __> [10/10, ___]
-    -- ammo="Staunch Tathlum +1",    -- __, __, __ <__, __, __> [ 3/ 3, ___]
     -- ear1="Eabani Earring",        --  4, __, __ <__, __, __> [__/__,   8]
     -- back=gear.BLU_DW_Cape,        -- 10, __, 30 <__, __, __> [10/__, ___]
     -- waist="Reiki Yotai",          --  7,  4, 10 <__, __, __> [__/__, ___]
