@@ -75,6 +75,8 @@ gear.Herc_DW_feet = { name="Herculean Boots", augments={'"Dual Wield"+5','Pet: A
 gear.Herc_Phalanx_legs = { name="Herculean Trousers", augments={'MND+8','STR+5','Phalanx +5','Mag. Acc.+19 "Mag.Atk.Bns."+19',}}
 gear.Herc_Phalanx_feet = { name="Herculean Boots", augments={'Pet: INT+8','"Dbl.Atk."+1','Phalanx +4','Accuracy+2 Attack+2','Mag. Acc.+16 "Mag.Atk.Bns."+16',}}
 
+gear.Herc_Snap_head = { name="Herculean Helm", augments={'Rng.Acc.+1','"Snapshot"+6','Rng.Atk.+8',}}
+
 -- Merlinic
 
 gear.Merl_FC_head = { name="Merlinic Hood", augments={'Mag. Acc.+4 "Mag.Atk.Bns."+4','"Fast Cast"+5','Mag. Acc.+4',}}

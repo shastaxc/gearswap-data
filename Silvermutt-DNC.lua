@@ -129,6 +129,7 @@ function job_setup()
 
   state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger',
       'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
+  state.RangedWeaponSet = M{['description']='Ranged Weapon Set', 'None', 'Throwing', 'Pulling'}
 
   send_command('bind !a gs c test')
   send_command('bind !s gs c faceaway')
@@ -137,6 +138,10 @@ function job_setup()
 
   send_command('bind ^insert gs c weaponset cycle')
   send_command('bind ^delete gs c weaponset cycleback')
+  send_command('bind !delete gs c weaponset reset')
+  send_command('bind ^home gs c rangedweaponset cycle')
+  send_command('bind ^end gs c rangedweaponset cycleback')
+  send_command('bind !end gs c rangedweaponset reset')
 
   send_command('bind ^pageup gs c toyweapon cycle')
   send_command('bind ^pagedown gs c toyweapon cycleback')
@@ -211,7 +216,10 @@ function job_file_unload()
 
   send_command('unbind ^insert')
   send_command('unbind ^delete')
-
+  send_command('unbind !delete')
+  send_command('unbind ^home')
+  send_command('unbind ^end')
+  send_command('unbind !end')
   send_command('unbind ^pageup')
   send_command('unbind ^pagedown')
   send_command('unbind !pagedown')
@@ -401,6 +409,14 @@ function init_gear_sets()
     ammo="Impatiens",
     ring1="Weatherspoon Ring", --5
   })
+
+  sets.precast.RA = {
+    gear.Herc_Snap_head,            --  6/__
+    legs=gear.Adhemar_D_legs,       -- 10/13
+    feet="Meg. Jam. +2",            -- 10/__
+    ring1="Crepuscular Ring",       --  3/__
+    waist="Yemaya Belt",            -- __/ 5
+  } -- 29 Snapshot / 18 Rapid Shot
 
 
   ------------------------------------------------------------------------------------------------
@@ -673,6 +689,21 @@ function init_gear_sets()
     feet=gear.Nyame_B_feet, -- DT
     neck="Loricate Torque +1", -- SIRD + DT
     ring1="Defending Ring", -- DT
+  }
+
+  sets.midcast.RA = {
+    head="Malignance Chapeau",
+    body="Malignance Tabard",
+    hands="Malignance Gloves",
+    legs="Malignance Tights",
+    feet="Malignance Boots",
+    neck="Etoile Gorget +2",
+    ear1="Telos Earring",
+    ear2="Enervating Earring",
+    ring1="Crepuscular Ring",
+    ring2="Defending Ring",
+    back=gear.DNC_TP_DA_Cape,
+    waist="Yemaya Belt",
   }
 
 
@@ -1250,6 +1281,16 @@ function init_gear_sets()
   sets.WeaponSet['Healing'] = {main="Enchufla", sub="Blurred Knife +1"}
   sets.WeaponSet['Staff'] = {main="Gozuki Mezuki", sub="Tzacab Grip"}
   sets.WeaponSet['Cleaving'] = {main="Tauret", sub="Twashtar"}
+
+  -- Ranged weapon sets
+  sets.WeaponSet['Throwing'] = {
+    ranged="Albin Bane",
+    ammo=empty,
+  }
+  sets.WeaponSet['Pulling'] = {
+    ranged="Jinx Discus",
+    ammo=empty,
+  }
 end
 
 
@@ -1319,6 +1360,12 @@ function job_post_precast(spell, action, spellMap, eventArgs)
     end
   end
 
+  -- Keep ranged weapon/ammo equipped if in an RA mode.
+  if state.RangedWeaponSet.current ~= 'None' then
+    equip({range=player.equipment.range, ammo=player.equipment.ammo})
+    silibs.equip_ammo(spell)
+  end
+
   -- If slot is locked, keep current equipment on
   if locked_neck then equip({ neck=player.equipment.neck }) end
   if locked_ear1 then equip({ ear1=player.equipment.ear1 }) end
@@ -1336,6 +1383,12 @@ function job_midcast(spell, action, spellMap, eventArgs)
 end
 
 function job_post_midcast(spell, action, spellMap, eventArgs)
+  -- Keep ranged weapon/ammo equipped if in an RA mode.
+  if state.RangedWeaponSet.current ~= 'None' then
+    equip({range=player.equipment.range, ammo=player.equipment.ammo})
+    silibs.equip_ammo(spell)
+  end
+
   -- If slot is locked, keep current equipment on
   if locked_neck then equip({ neck=player.equipment.neck }) end
   if locked_ear1 then equip({ ear1=player.equipment.ear1 }) end
@@ -1413,6 +1466,7 @@ end
 
 function job_update(cmdParams, eventArgs)
   handle_equipping_gear(player.status)
+  update_dp_type() -- Requires DistancePlus addon
 end
 
 function update_combat_form()
@@ -1464,6 +1518,14 @@ function customize_idle_set(idleSet)
     idleSet = set_combine(idleSet, sets.CP)
   end
 
+  -- Keep ranged weapon/ammo equipped if in an RA mode.
+  if state.RangedWeaponSet.current ~= 'None' then
+    idleSet = set_combine(idleSet, {
+      range=player.equipment.range,
+      ammo=player.equipment.ammo
+    })
+  end
+
   -- If slot is locked to use no-swap gear, keep it equipped
   if locked_neck then idleSet = set_combine(idleSet, { neck=player.equipment.neck }) end
   if locked_ear1 then idleSet = set_combine(idleSet, { ear1=player.equipment.ear1 }) end
@@ -1486,6 +1548,14 @@ function customize_melee_set(meleeSet)
     meleeSet = set_combine(meleeSet, sets.CP)
   end
 
+  -- Keep ranged weapon/ammo equipped if in an RA mode.
+  if state.RangedWeaponSet.current ~= 'None' then
+    meleeSet = set_combine(meleeSet, {
+      range=player.equipment.range,
+      ammo=player.equipment.ammo
+    })
+  end
+
   -- If slot is locked to use no-swap gear, keep it equipped
   if locked_neck then meleeSet = set_combine(meleeSet, { neck=player.equipment.neck }) end
   if locked_ear1 then meleeSet = set_combine(meleeSet, { ear1=player.equipment.ear1 }) end
@@ -1503,6 +1573,14 @@ end
 function customize_defense_set(defenseSet)
   if state.CP.current == 'on' then
     defenseSet = set_combine(defenseSet, sets.CP)
+  end
+
+  -- Keep ranged weapon/ammo equipped if in an RA mode.
+  if state.RangedWeaponSet.current ~= 'None' then
+    defenseSet = set_combine(defenseSet, {
+      range=player.equipment.range,
+      ammo=player.equipment.ammo
+    })
   end
 
   -- If slot is locked to use no-swap gear, keep it equipped
@@ -1598,15 +1676,58 @@ function display_current_job_state(eventArgs)
   eventArgs.handled = true
 end
 
+-- Requires DistancePlus addon
+function update_dp_type()
+  local weapon = nil
+  local weapon_type = nil
+  local weapon_subtype = nil
+
+  -- Handle unequipped case
+  if player.equipment.ranged ~= nil and player.equipment.ranged ~= 0 and player.equipment.ranged ~= 'empty' then
+    weapon = res.items:with('name', player.equipment.ranged)
+    weapon_type = res.skills[weapon.skill].en
+    if weapon_type == 'Throwing' then
+      weapon_subtype = 'throwing'
+    end
+  end
+
+  -- Update addon if weapon type changed
+  if weapon_subtype ~= current_dp_type then
+    current_dp_type = weapon_subtype
+    if current_dp_type ~= nil then
+      coroutine.schedule(function()
+        if current_dp_type ~= nil then
+          send_command('dp '..current_dp_type)
+        end
+      end,3)
+    end
+  end
+end
+
 function cycle_weapons(cycle_dir)
   if cycle_dir == 'forward' then
     state.WeaponSet:cycle()
   elseif cycle_dir == 'back' then
     state.WeaponSet:cycleback()
+  else
+    state.WeaponSet:reset()
   end
 
   add_to_chat(141, 'Weapon Set to '..string.char(31,1)..state.WeaponSet.current)
   equip(sets.WeaponSet[state.WeaponSet.current])
+end
+
+function cycle_ranged_weapons(cycle_dir)
+  if cycle_dir == 'forward' then
+    state.RangedWeaponSet:cycle()
+  elseif cycle_dir == 'back' then
+    state.RangedWeaponSet:cycleback()
+  else
+    state.RangedWeaponSet:reset()
+  end
+
+  add_to_chat(141, 'RA Weapon Set to '..string.char(31,1)..state.RangedWeaponSet.current)
+  equip(sets.WeaponSet[state.RangedWeaponSet.current])
 end
 
 function cycle_toy_weapons(cycle_dir)
@@ -1717,8 +1838,20 @@ function job_self_command(cmdParams, eventArgs)
         cycle_weapons('forward')
       elseif cmdParams[2] == 'cycleback' then
         cycle_weapons('back')
+      elseif cmdParams[2] == 'reset' then
+        cycle_weapons('reset')
       elseif cmdParams[2] == 'current' then
         cycle_weapons('current')
+      end
+    elseif cmdParams[1] == 'rangedweaponset' then
+      if cmdParams[2] == 'cycle' then
+        cycle_ranged_weapons('forward')
+      elseif cmdParams[2] == 'cycleback' then
+        cycle_ranged_weapons('back')
+      elseif cmdParams[2] == 'reset' then
+        cycle_ranged_weapons('reset')
+      elseif cmdParams[2] == 'current' then
+        cycle_ranged_weapons('current')
       end
     elseif cmdParams[1] == 'test' then
       test()

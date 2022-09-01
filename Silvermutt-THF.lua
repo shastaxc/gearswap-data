@@ -149,7 +149,6 @@ function job_setup()
   send_command('bind ^home gs c rangedweaponset cycle')
   send_command('bind ^end gs c rangedweaponset cycleback')
   send_command('bind !end gs c rangedweaponset reset')
-
   send_command('bind ^pageup gs c toyweapon cycle')
   send_command('bind ^pagedown gs c toyweapon cycleback')
   send_command('bind !pagedown gs c toyweapon reset')
@@ -252,6 +251,7 @@ function init_gear_sets()
   sets.TreasureHunter = {
     ammo="Perfect Lucky Egg", --1
     hands="Plunderer's Armlets +3", --4
+    -- feet="Skulker's Poulaines +2", --4; remove egg
   }
   -- Set to use with TH enabled while performing ranged attacks
   sets.TreasureHunter.RA = {
@@ -604,11 +604,12 @@ function init_gear_sets()
   })
 
   sets.precast.RA = {
+    gear.Herc_Snap_head,            --  6/__
     legs=gear.Adhemar_D_legs,       -- 10/13
     feet="Meg. Jam. +2",            -- 10/__
     ring1="Crepuscular Ring",       --  3/__
     waist="Yemaya Belt",            -- __/ 5
-  } -- 23 Snapshot / 18 Rapid Shot
+  } -- 29 Snapshot / 18 Rapid Shot
 
 
   ------------------------------------------------------------------------------------------------
