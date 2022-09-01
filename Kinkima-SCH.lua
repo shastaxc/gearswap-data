@@ -349,7 +349,7 @@ function init_gear_sets()
   sets.midcast.CureNormal = {
     main="Malignance Pole",           -- __, __, ___, ___,  40, __, 20/20, __
     sub="Khonsu",                     -- __, __, ___, ___, ___, __,  6/ 6,  5
-    ammo="Staunch Tathlum",           -- __, __, ___, ___, ___, 10,  2/ 2, __
+    ammo="Staunch Tathlum +1",        -- __, __, ___, ___, ___, 11,  3/ 3, __
     head=gear.Kaykaus_C_head,         -- __, 11,  16,  19,  14, 12, __/ 3, __
     body=gear.Kaykaus_C_body,         --  4, __, ___,  33,  20, 12, __/__, __
     hands=gear.Chironic_SIRD_hands,   -- __, __, ___,  38,  20, 31, __/__, __; Can add more DT or Enmity
@@ -366,14 +366,13 @@ function init_gear_sets()
     -- Base Stats                     -- __, __, 486, 129, 123, __, __/__, __
     -- Merit points                   -- __, __, ___, ___, ___, 10, __/__,  5
 
-    -- ammo="Staunch Tathlum +1",     -- __, __, ___, ___, ___, 11,  3/ 3, __
     -- back=gear.SCH_CP_Cape,         -- __, 10, ___,  30, ___, __, 10/__, __
     -- Kaykaus bonus                      8, __, ___, ___, ___, __, __/__, __
     -- Base Stats                     -- __, __, 486, 129, 123, __, __/__, __
     -- Merit points                   -- __, __, ___, ___, ___, 10, __/__,  5
     -- 12 CPII, 49 CP, 502 Heal Skill, 298 MND, 239 VIT, 108 SIRD, 55PDT/48MDT, 37 -Enmity
     -- 710 Power
-  } -- 12 CPII, 39 CP, 502 Heal Skill, 278 MND, 239 VIT, 107 SIRD, 54PDT/47MDT, 37 -Enmity
+  } -- 12 CPII, 39 CP, 502 Heal Skill, 278 MND, 239 VIT, 108 SIRD, 55PDT/48MDT, 37 -Enmity
     -- 712 Power
 
   -- Prioritize: CPII > CP > Heal Skill, MND, VIT (to power cap) > SIRD > -DT > Enmity (to -40)
@@ -908,7 +907,7 @@ function init_gear_sets()
   sets.HeavyDef = {
     main="Malignance Pole",         -- 20/20, ___
     sub="Khonsu",                   --  6/ 6, ___
-    ammo="Staunch Tathlum",         --  2/ 2, ___; Resist Status+10
+    ammo="Staunch Tathlum +1",      --  3/ 3, ___; Resist Status+11
     head=gear.Nyame_B_head,         --  7/ 7, 123
     body="Shamash Robe",            -- 10/__, 106; Resist Silence+90
     hands=gear.Nyame_B_hands,       --  7/ 7, 112
@@ -921,10 +920,9 @@ function init_gear_sets()
     ring2="Defending Ring",         -- 10/10, ___
     back="Cheviot Cape",            --  5/__, ___
     waist="Carrier's Sash",         -- __/__, ___; Ele Resist+15
-    -- ammo="Staunch Tathlum +1",   --  3/ 3, ___; Resist Status+11
     -- back="Archon Cape",          -- __/__, ___
     -- 91 PDT / 76 MDT, 641 M.Eva
-  } -- 95 PDT / 75 MDT, 641 M.Eva
+  } -- 96 PDT / 76 MDT, 641 M.Eva
 
   sets.defense.PDT = sets.HeavyDef
   sets.defense.MDT = sets.HeavyDef
@@ -960,7 +958,7 @@ function init_gear_sets()
   sets.Sublimation = {
     main="Siriti",                      -- __/__, ___ [ 1, __]
     sub="Genmei Shield",                -- 10/__, ___ [__, __]
-    ammo="Staunch Tathlum",             --  2/ 2, ___ [__, __]; Resist Status+10
+    ammo="Staunch Tathlum +1",          --  3/ 3, ___ [__, __]; Resist Status+11
     head="Academic's Mortarboard +3",   -- __/__,  95 [ 4, __]
     body="Pedagogy Gown +3",            -- __/__, 100 [ 5, __]
     hands=gear.Nyame_B_hands,           --  7/ 7, 112 [__, __]
@@ -973,10 +971,9 @@ function init_gear_sets()
     ring2="Defending Ring",             -- 10/10, ___ [__, __]
     back=gear.SCH_FC_Cape,              -- 10/__,  30 [__, __]
     waist="Embla Sash",                 -- __/__, ___ [ 5, __]
-    -- ammo="Staunch Tathlum +1",       --  3/ 3, ___ [__, __]; Resist Status+11
     -- back="Archon Cape",              -- __/__, ___ [__, __]
     -- 50 PDT / 35 MDT, 564 M.Eva [16 Sublimation, 2 Refresh]
-  } -- 59 PDT / 34 MDT, 594 M.Eva [16 Sublimation, 2 Refresh]
+  } -- 60 PDT / 35 MDT, 594 M.Eva [16 Sublimation, 2 Refresh]
   sets.Sublimation.Refresh = {
     main="Mpaca's Staff",               -- __/__, ___ [__,  2]
     sub="Khonsu",                       --  6/ 6, ___ [__, __]

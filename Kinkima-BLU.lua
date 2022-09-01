@@ -326,13 +326,13 @@ function init_gear_sets()
 
   sets.buff['Burst Affinity'] = {
     legs="Assimilator's Shalwar +3",
-    -- feet="Hashishin Basmak +1"
+    feet="Hashishin Basmak +2",
   }
   sets.buff['Diffusion'] = {
     -- feet="Luhlaza Charuqs +3"
   }
   sets.buff['Efflux'] = {
-    -- legs="Hashishin Tayt +1"
+    legs="Hashishin Tayt +2",
   }
 
   sets.precast.JA['Azure Lore'] = {
@@ -505,27 +505,29 @@ function init_gear_sets()
   sets.midcast.Trust = sets.precast.FC
 
   sets.midcast.SpellInterrupt = {
-    ammo="Staunch Tathlum", --10
+    ammo="Staunch Tathlum +1", --11
     ring1="Evanescence Ring", --5
     waist="Sanctuary Obi +1", --10
-    -- ammo="Staunch Tathlum +1", --11
   }
 
   sets.midcast['Blue Magic'] = {
+    legs="Hashishin Tayt +2",           -- 28, 53 [11/11, 152]
     neck="Mirage Stole +2",             -- 20, 25 [__/__, ___]
     ear1="Njordr Earring",              -- 10, __ [__/__, ___]
     ear2="Odnowa Earring +1",           -- __, __ [ 3/ 5, ___]
     ring1="Stikini Ring +1",            --  8, 11 [__/__, ___]
     ring2="Stikini Ring +1",            --  8, 11 [__/__, ___]
+    -- 74 Blue skill, 100 M.Acc [14 PDT/16 MDT, 152 M.Eva]
+
     -- ammo="Mavi Tathlum",             --  5, __ [__/__, ___]
     -- head="Luhlaza Keffiyeh +3",      -- 17, 37 [__/__,  73]
     -- body="Assimilator's Jubbah +3",  -- 24, __ [__/__,  84]
     -- hands=gear.Rawhide_D_hands,      -- 10, 35 [__/__,  37]
-    -- legs="Hashishin Tayt +1",        -- 23, __ [__/__, 112]
     -- feet="Luhlaza Charuqs +3",       -- 12, 36 [__/__,  89]
     -- back=gear.BLU_Adoulin_Cape,      -- 15, 15 [__/__, ___]
     -- waist="Flume Belt +1",           -- __, __ [ 4/__, ___]
-  } -- 152 Blue skill, 170 M.Acc [14 PDT/4 MDT, 395 M.Eva]
+    -- 157 Blue skill, 223 M.Acc [18 PDT/16 MDT, 435 M.Eva]
+  }
 
   sets.midcast['Blue Magic'].Physical = {
     head="Malignance Chapeau",
@@ -589,11 +591,11 @@ function init_gear_sets()
     main="Bunzi's Rod",               -- 60, 50, 15 [__/__, ___] __
     sub="Maxentius",                  -- 21, 40, 15 [__/__, ___] __
     ammo="Pemphredo Tathlum",         --  4,  8,  4 [__/__, ___] __
-    head=gear.Nyame_B_head,           -- 30, 40, 28 [ 7/ 7, 123] __
+    head="Hashishin Kavuk +2",        -- 46, 51, 29 [__/__, 115] __
     body="Shamash Robe",              -- 45, 45, 40 [10/__, 106] 10
     hands="Hashishin Bazubands +2",   -- 52, 52, 28 [ 9/ 9,  77]  5; Blue magic recast -15%
     legs="Hashishin Tayt +2",         -- 48, 53, 43 [11/11, 152] __
-    feet="Jhakri Pigaches +2",        -- 39, 42, 33 [__/__,  69] __
+    feet="Hashishin Basmak +2",       -- 50, 50, 34 [__/__, 147]  9
     neck="Lasaia Pendant",            -- __,  1, __ [__/__, ___]  8
     ear1="Regal Earring",             --  7, __, 10 [__/__, ___] __
     ear2="Halasz Earring",            -- __, __, __ [__/__, ___]  3; Magic crit rate +14%
@@ -601,12 +603,6 @@ function init_gear_sets()
     ring2="Defending Ring",           -- __, __, __ [10/10, ___] __
     back=gear.BLU_MAB_Cape,           -- 10, 20, 30 [10/__, ___] __
     waist="Sanctuary Obi +1",         -- __, __,  6 [__/__, ___]  4
-    -- 316 MAB, 366 M.Acc, 268 INT [57 PDT/37 MDT, 527 M.Eva] 30 Enmity-
-
-    -- Ideal:
-    -- head="Hashishin Kavuk +2",     -- 46, 51, 29 [__/__, 115] __
-    -- feet="Hashishin Basmak +2",    -- 50, 50, 34 [__/__, 147]  9
-    -- back=gear.BLU_MAB_Cape,        -- 10, 20, 30 [10/__, ___] __
     -- 343 MAB, 385 M.Acc, 270 INT [50 PDT/30 MDT, 597 M.Eva] 39 Enmity-
   }
 
@@ -747,7 +743,7 @@ function init_gear_sets()
   sets.midcast['Blue Magic'].SkillBasedBuff = sets.midcast['Blue Magic']
 
   sets.midcast['Blue Magic']['Occultation'] = set_combine(sets.midcast['Blue Magic'], {
-    -- hands="Hashishin Bazu. +1",
+    hands="Hashishin Bazubands +2",
     -- neck="Incanter's torque",
     -- ear1="Njordr Earring",
     -- ear2="Enchanter's Earring +1",
@@ -760,7 +756,7 @@ function init_gear_sets()
   })
 
   sets.midcast['Enhancing Magic'] = {
-    ammo="Staunch Tathlum",
+    ammo="Staunch Tathlum +1", --3DT
     head="Carmine Mask +1",
     body=gear.Telchine_ENH_body,
     hands=gear.Telchine_ENH_hands,
@@ -771,7 +767,6 @@ function init_gear_sets()
     ring2="Stikini Ring +1",
     back=gear.BLU_FC_Cape, --10PDT
     -- main="Sakpata's Sword", --10DT
-    -- ammo="Staunch Tathlum +1", --3DT
     -- neck="Incanter's Torque",
     -- ear2="Andoaa Earring",
     -- waist="Olympus Sash",
@@ -845,7 +840,7 @@ function init_gear_sets()
   sets.passive_refresh = {
     main="Bolelabunga",             -- __/__, ___ [ 1]
     sub="Genmei Shield",            -- 10/__, ___ [__]
-    ammo="Staunch Tathlum",         --  2/ 2, ___ [__]
+    ammo="Staunch Tathlum +1",      --  3/ 3, ___ [__]; Resist Status+11
     head=gear.Nyame_B_head,         --  7/ 7, 123 [__]
     body="Shamash Robe",            -- 10/__, 106 [ 3]; Resist Silence+90
     hands=gear.Nyame_B_hands,       --  7/ 7, 112 [__]
@@ -859,11 +854,10 @@ function init_gear_sets()
     back=gear.BLU_FC_Cape,          -- 10/__, ___ [__]
     waist="Carrier's Sash",         -- __/__, ___ [__]; Ele Resist+15
 
-    -- ammo="Staunch Tathlum +1",   --  3/ 3, ___ [__]; Resist Status+11
     -- head="Rawhide Mask",         -- __/__,  53 [ 1]
     -- legs=gear.Lengo_legs,        -- __/__, 107 [ 1]
     -- 53 PDT / 26 MDT, 528 M.Eva [8 Refresh]
-  } -- 59 PDT / 32 MDT, 560 M.Eva [7 Refresh]
+  } -- 60 PDT / 33 MDT, 560 M.Eva [7 Refresh]
   sets.passive_refresh.sub50 = {
     waist="Fucho-no-Obi",
   }
@@ -1096,7 +1090,7 @@ function init_gear_sets()
   -- 0 DW, 84 STP, 361 Acc <4 DA, 0 TA, 0 QA> [51 PDT/41 MDT, 674 M.Eva]
 
   sets.engaged.DW.DT = set_combine(sets.engaged.DW, {
-    ammo="Staunch Tathlum",       -- __, __, __ <__, __, __> [ 2/ 2, ___]
+    ammo="Staunch Tathlum +1",    -- __, __, __ <__, __, __> [ 3/ 3, ___]
     body=gear.Adhemar_A_body,     --  6, __, 55 <__,  4, __> [__/__,  69]
     head="Malignance Chapeau",    -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     hands="Malignance Gloves",    -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
@@ -1105,7 +1099,6 @@ function init_gear_sets()
     neck="Loricate Torque +1",    -- __, __, __ <__, __, __> [ 6/ 6, ___]
     ring1="Gelatinous Ring +1",   -- __, __, __ <__, __, __> [ 7/-1, ___]
     ring2="Defending Ring",       -- __, __, __ <__, __, __> [10/10, ___]
-    -- ammo="Staunch Tathlum +1",    -- __, __, __ <__, __, __> [ 3/ 3, ___]
     -- ear1="Eabani Earring",        --  4, __, __ <__, __, __> [__/__,   8]
     -- ear2="Suppanomimi",           --  5, __, __ <__, __, __> [__/__, ___]
     -- back=gear.BLU_DW_Cape,        -- 10, __, 30 <__, __, __> [10/__, ___]
