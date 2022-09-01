@@ -300,7 +300,7 @@ function init_gear_sets()
     feet="Chasseur's Bottes +1",
   })
   sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {
-    head="Chasseur's Tricorne +1",
+    head="Chasseur's Tricorne +2",
   })
   sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {
     body="Chasseur's Frac +1",
@@ -349,7 +349,7 @@ function init_gear_sets()
   -- Snapshot (70% cap) > Rapid Shot (99% cap)
   sets.precast.RA = {
     ammo=gear.RAbullet,
-    head="Chasseur's Tricorne +1",    -- __/14 [__/__,  59]
+    head="Chasseur's Tricorne +2",    -- __/16 [ 9/ 9,  99]
     body="Oshosi Vest +1",            -- 14/__ [__/__, 106]
     hands=gear.Carmine_D_hands,       --  8/11 [__/__,  43]
     legs=gear.Adhemar_D_legs,         -- 10/13 [__/__,  75]
@@ -362,16 +362,15 @@ function init_gear_sets()
     back=gear.COR_SNP_Cape,           -- 10/__ [10/__, ___]
     waist="Yemaya Belt",              -- __/ 5 [__/__, ___]
     -- Merits/Traits/Gifts               10/30
-    -- 68 Snapshot / 73 Rapid Shot [28 PDT/15 MDT, 352 M.Eva]
+    -- 68 Snapshot / 75 Rapid Shot [37 PDT/24 MDT, 392 M.Eva]
     
-    -- head="Chasseur's Tricorne +2", -- __/16 [ 9/ 9,  99]
     -- neck="Commodore Charm +2",     --  4/__ [__/__, ___]
     -- 69 Snapshot / 75 Rapid Shot [37 PDT/24 MDT, 392 M.Eva]
   }
   -- Snapshot (70% cap) > Rapid Shot (99% cap)
   sets.precast.RA.Flurry1 = set_combine(sets.precast.RA, {
     ammo=gear.RAbullet,
-    head="Chasseur's Tricorne +1",    -- __/14 [__/__,  59]
+    head="Chasseur's Tricorne +2",    -- __/16 [ 9/ 9,  99]
     body="Laksamana's Frac +3",       -- __/20 [__/__,  84]
     hands="Lanun Gants +3",           -- 13/__ [__/__,  57]
     legs=gear.Adhemar_D_legs,         -- 10/13 [__/__,  75]
@@ -385,35 +384,28 @@ function init_gear_sets()
     waist="Yemaya Belt",              -- __/ 5 [__/__, ___]
     -- Merits/Traits/Gifts               10/30
     -- Flurry 1                          15/__
-    -- 71 Snapshot / 82 Rapid Shot [34 PDT/21 MDT, 344 M.Eva]
-
-    -- head="Chasseur's Tricorne +2", -- __/16 [ 9/ 9,  99]
     -- 71 Snapshot / 84 Rapid Shot [43 PDT/30 MDT, 384 M.Eva]
   })
   -- Snapshot (70% cap) > Rapid Shot (99% cap)
   sets.precast.RA.Flurry2 = set_combine(sets.precast.RA.Flurry1, {
     ammo=gear.RAbullet,
-    head="Chasseur's Tricorne +1",    -- __/14 [__/__,  59]
+    head="Chasseur's Tricorne +2",    -- __/16 [ 9/ 9,  99]
     body="Laksamana's Frac +3",       -- __/20 [__/__,  84]
     hands=gear.Carmine_D_hands,       --  8/11 [__/__,  43]
     legs=gear.Adhemar_D_legs,         -- 10/13 [__/__,  75]
     feet=gear.Pursuer_A_feet,         -- __/10 [__/__,  69]
     neck="Commodore Charm +1",        --  3/__ [__/__, ___]
-    ear1="Eabani Earring",            -- __/__ [__/__,   8]
+    ear1="Genmei Earring",            -- __/__ [ 2/__, ___]
     ear2="Odnowa Earring +1",         -- __/__ [ 3/ 5, ___]
-    ring1="Crepuscular Ring",         --  3/__ [__/__, ___]
+    ring1="Gelatinous Ring +1",       -- __/__ [ 7/-1, ___]
     ring2="Defending Ring",           -- __/__ [10/10, ___]
-    back=gear.COR_SNP_Cape,           -- 10/__ [__/__, ___]; Respec with PDT
-    waist="Yemaya Belt",              -- __/ 5 [__/__, ___]
+    back=gear.COR_SNP_Cape,           -- 10/__ [10/__, ___]
+    waist="Flume Belt +1",            -- __/__ [ 4/__, ___]
     -- Merits/Traits/Gifts               10/30
     -- Flurry 2                          30/__
-    -- 74 Snapshot / 103 Rapid Shot [13 PDT/15 MDT, 338 M.Eva]
+    -- 71 Snapshot / 100 Rapid Shot [45 PDT/23 MDT, 370 M.Eva]
     
-    -- head="Chasseur's Tricorne +2", -- __/16 [ 9/ 9,  99]
     -- neck="Commodore Charm +2",     --  4/__ [__/__, ___]; +1 also fine
-    -- ear1="Genmei Earring",         -- __/__ [ 2/__, ___]
-    -- ring1="Gelatinous Ring +1",    -- __/__ [ 7/-1, ___]
-    -- waist="Flume Belt +1",         -- __/__ [ 4/__, ___]
     -- Merits/Traits/Gifts               10/30
     -- Flurry 2                          30/__
     -- 72 Snapshot / 100 Rapid Shot [45 PDT/23 MDT, 370 M.Eva]
@@ -422,7 +414,7 @@ function init_gear_sets()
   -- Snapshot (70% cap) > Rapid Shot (99% cap)
   sets.precast.RA.Safe = {
     ammo=gear.RAbullet,
-    head="Chasseur's Tricorne +1",    -- __/14 [__/__,  59]
+    head="Chasseur's Tricorne +2",    -- __/16 [ 9/ 9,  99]
     body="Oshosi Vest +1",            -- 14/__ [__/__, 106]
     hands="Lanun Gants +3",           -- 13/__ [__/__,  57]
     legs=gear.Adhemar_D_legs,         -- 10/13 [__/__,  75]
@@ -432,18 +424,15 @@ function init_gear_sets()
     ear2="Odnowa Earring +1",         -- __/__ [ 3/ 5, ___]
     ring1="Gelatinous Ring +1",       -- __/__ [ 7/-1, ___]
     ring2="Defending Ring",           -- __/__ [10/10, ___]
-    back=gear.COR_SNP_Cape,           -- 10/__ [10/__, ___]; Respec with PDT
+    back=gear.COR_SNP_Cape,           -- 10/__ [10/__, ___]
     waist="Yemaya Belt",              -- __/ 5 [__/__, ___]
     -- Merits/Traits/Gifts               10/30
-    -- 67 Snapshot / 62 Rapid Shot [41 PDT/20 MDT, 366 M.Eva]
-
-    -- head="Chasseur's Tricorne +2", -- __/16 [ 9/ 9,  99]
     -- 67 Snapshot / 64 Rapid Shot [50 PDT/29 MDT, 406 M.Eva]
   }
   -- Snapshot (70% cap) > Rapid Shot (99% cap)
   sets.precast.RA.Flurry1.Safe = {
     ammo=gear.RAbullet,
-    head="Chasseur's Tricorne +1",    -- __/14 [__/__,  59]
+    head="Chasseur's Tricorne +2",    -- __/16 [ 9/ 9,  99]
     body="Laksamana's Frac +3",       -- __/20 [__/__,  84]
     hands="Lanun Gants +3",           -- 13/__ [__/__,  57]
     legs=gear.Adhemar_D_legs,         -- 10/13 [__/__,  75]
@@ -453,19 +442,16 @@ function init_gear_sets()
     ear2="Odnowa Earring +1",         -- __/__ [ 3/ 5, ___]
     ring1="Gelatinous Ring +1",       -- __/__ [ 7/-1, ___]
     ring2="Defending Ring",           -- __/__ [10/10, ___]
-    back=gear.COR_SNP_Cape,           -- 10/__ [10/__, ___]; Respec with PDT
+    back=gear.COR_SNP_Cape,           -- 10/__ [10/__, ___]
     waist="Yemaya Belt",              -- __/ 5 [__/__, ___]
     -- Merits/Traits/Gifts               10/30
     -- Flurry 1                          15/__
-    -- 68 Snapshot / 82 Rapid Shot [41 PDT/20 MDT, 344 M.Eva]
-
-    -- head="Chasseur's Tricorne +2", -- __/16 [ 9/ 9,  99]
     -- 68 Snapshot / 84 Rapid Shot [50 PDT/29 MDT, 384 M.Eva]
   }
   -- Snapshot (70% cap) > Rapid Shot (99% cap)
   sets.precast.RA.Flurry2.Safe = {
     ammo=gear.RAbullet,
-    head="Chasseur's Tricorne +1",    -- __/14 [__/__,  59]
+    head="Chasseur's Tricorne +2",    -- __/16 [ 9/ 9,  99]
     body="Laksamana's Frac +3",       -- __/20 [__/__,  84]
     hands=gear.Carmine_D_hands,       --  8/11 [__/__,  43]
     legs=gear.Adhemar_D_legs,         -- 10/13 [__/__,  75]
@@ -475,13 +461,10 @@ function init_gear_sets()
     ear2="Odnowa Earring +1",         -- __/__ [ 3/ 5, ___]
     ring1="Gelatinous Ring +1",       -- __/__ [ 7/-1, ___]
     ring2="Defending Ring",           -- __/__ [10/10, ___]
-    back=gear.COR_SNP_Cape,           -- 10/__ [10/__, ___]; Respec with PDT
+    back=gear.COR_SNP_Cape,           -- 10/__ [10/__, ___]
     waist="Flume Belt +1",            -- __/__ [ 4/__, ___]
     -- Merits/Traits/Gifts               10/30
     -- Flurry 2                          30/__
-    -- 71 Snapshot / 98 Rapid Shot [36 PDT/14 MDT, 330 M.Eva]
-
-    -- head="Chasseur's Tricorne +2", -- __/16 [ 9/ 9,  99]
     -- 71 Snapshot / 100 Rapid Shot [45 PDT/23 MDT, 370 M.Eva]
   }
 
