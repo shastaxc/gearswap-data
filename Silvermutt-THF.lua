@@ -249,14 +249,13 @@ function init_gear_sets()
 
   -- Set to use in normal TH situations
   sets.TreasureHunter = {
-    ammo="Perfect Lucky Egg", --1
     hands="Plunderer's Armlets +3", --4
-    -- feet="Skulker's Poulaines +2", --4; remove egg
+    feet="Skulker's Poulaines +2", --4
   }
   -- Set to use with TH enabled while performing ranged attacks
   sets.TreasureHunter.RA = {
     hands="Plunderer's Armlets +3", --4
-    waist="Chaac Belt", --1
+    feet="Skulker's Poulaines +2", --4
   }
 
   sets.buff['Sneak Attack'] = {}
@@ -291,9 +290,9 @@ function init_gear_sets()
   }
 
   sets.precast.JA['Despoil'] = {
-    feet="Skulk. Poulaines +1",
+    feet="Skulker's Poulaines +2",
     -- ammo="Barathrum",
-    -- legs="Skulk. Culottes +1",
+    -- legs="Skulker's Culottes +1",
   }
   sets.precast.JA['Perfect Dodge'] = {
     hands="Plunderer's Armlets +3",
