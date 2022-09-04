@@ -256,9 +256,10 @@ function init_gear_sets()
   })
   sets.precast.WS.AttCapped = set_combine(sets.precast.WS, {
     head="Gleti's Mask",
+    ear1="Peltast's Earring",
   })
   sets.precast.WS.AttCappedMaxTP = set_combine(sets.precast.WS.AttCapped, {
-    ear2="Ishvara Earring",
+    ear2="Peltast's Earring",
   })
   
   sets.precast.WS["Savage Blade"] = sets.precast.WS
@@ -323,6 +324,7 @@ function init_gear_sets()
     head="Gleti's Mask",
     body="Gleti's Cuirass",
     legs="Gleti's Breeches",
+    ear2="Peltast's Earring",
   })
   sets.precast.WS["Camlann's Torment"].AttCappedMaxTP = set_combine(sets.precast.WS["Camlann's Torment"].AttCapped, {})
 
@@ -348,6 +350,7 @@ function init_gear_sets()
     head="Gleti's Mask",
     body="Gleti's Cuirass",
     legs="Gleti's Breeches",
+    ear2="Peltast's Earring",
   })
   sets.precast.WS["Sonic Thrust"].AttCappedMaxTP = set_combine(sets.precast.WS["Sonic Thrust"].AttCapped, {
     ear2="Ishvara Earring",
@@ -378,6 +381,7 @@ function init_gear_sets()
     legs="Gleti's Breeches",
     feet="Gleti's Boots",
     ring1="Epaminondas's Ring",
+    ear1="Peltast's Earring",
   })
   sets.precast.WS["Impulse Drive"].AttCappedMaxTP = set_combine(sets.precast.WS["Impulse Drive"].AttCapped, {
     ear2="Ishvara Earring",
@@ -403,6 +407,7 @@ function init_gear_sets()
     body="Gleti's Cuirass",
     feet="Gleti's Boots",
     ring2="Epaminondas's Ring",
+    ear2="Peltast's Earring",
     -- neck="Dragoon's Collar +2",
   })
   sets.precast.WS["Geirskogul"].AttCappedMaxTP = set_combine(sets.precast.WS["Geirskogul"].AttCapped, {})
@@ -426,6 +431,7 @@ function init_gear_sets()
     ammo="Crepuscular Pebble",
     head="Gleti's Mask",
     body="Gleti's Cuirass",
+    ear2="Peltast's Earring",
   })
   sets.precast.WS["Drakesbane"].AttCappedMaxTP = set_combine(sets.precast.WS["Drakesbane"].AttCapped, {})
 
