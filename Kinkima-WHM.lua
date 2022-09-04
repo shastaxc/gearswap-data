@@ -61,6 +61,7 @@ function job_setup()
   send_command('bind ^/ gs c cycle CuragaTier')
   send_command('bind !/ gs c reset CuragaTier')
 
+  send_command('bind !r input /ma "Auspice" <me>')
   send_command('bind !e input /ma "Haste" <stpc>')
   send_command('bind !u input /ma "Blink" <me>')
   send_command('bind !i input /ma "Stoneskin" <me>')
@@ -103,6 +104,7 @@ function user_unload()
   
   send_command('unbind !`')
 
+  send_command('unbind !r')
   send_command('unbind !e')
   send_command('unbind !u')
   send_command('unbind !i')
@@ -172,9 +174,10 @@ function init_gear_sets()
   } -- 80 Fast Cast [48PDT/42MDT, 565 MEVA] 6 Quick Magic
 
   -- Include divine caress gear in case of quick magic proc
+  -- TODO: Add yagrush
   sets.precast.FC.QuickStatusRemoval = {
-    main="Malignance Pole",           -- __ [20/20, ___] __, __
-    sub="Mensch Strap +1",            -- __ [ 5/__, ___] __, __
+    main="Yagrush",                   -- __ [__/__, ___] __, __
+    sub="Genmei Shield",              -- __ [10/__, ___] __, __
     ammo="Impatiens",                 -- __ [__/__, ___]  2, __
     head="Bunzi's Hat",               -- 10 [ 7/ 7, 123] __, __
     body="Shamash Robe",              -- __ [10/__, 106] __, __; Resist Silence+90
@@ -188,11 +191,11 @@ function init_gear_sets()
     back="Perimede Cape",             -- __ [__/__, ___]  4, __
     waist="Witful Belt",              --  3 [__/__, ___]  3, __
     -- Divine Benison Trait              50
-    -- 98 Fast Cast [84PDT/72MDT, 638 MEVA] 9 Quick Magic, 0 Divine Caress
+    -- 98 Fast Cast [69PDT/52MDT, 638 MEVA] 9 Quick Magic, 0 Divine Caress
     
     -- hands="Ebers Mitts +2",        -- __ [10/10,  77] __,  4
     -- ring1="Lebeche Ring",          -- __ [__/__, ___]  2, __
-    -- 98 Fast Cast [87PDT/75MDT, 603 MEVA] 11 Quick Magic, 4 Divine Caress
+    -- 98 Fast Cast [72PDT/55MDT, 603 MEVA] 11 Quick Magic, 4 Divine Caress
   }
 
   sets.precast.FC.Arise = sets.QuickMagic
@@ -486,8 +489,15 @@ function init_gear_sets()
   }
 
   sets.midcast.Erase = set_combine(sets.midcast.FastRecast, {
+    main="Yagrush",
+    sub="Genmei Shield",
     neck="Cleric's Torque +1",
   })
+
+  sets.midcast.StatusRemoval = {
+    main="Yagrush",
+    sub="Genmei Shield",
+  }
 
   sets.midcast['Enhancing Magic'] = {
     main="Gada",                      -- 18, __, __ [__/__, ___]
@@ -597,9 +607,9 @@ function init_gear_sets()
     sub="Genmei Shield",              -- __, __ [10/__, ___] __, __
     ammo="Staunch Tathlum +1",        -- __, __ [ 3/ 3, ___] __, __
     head=gear.Telchine_ENH_head,      -- __,  9 [__/__,  75] __, __
-    body=gear.Telchine_ENH_body,      -- 12, 10 [__/__,  80] __, __
+    body="Ebers Bliaut +2",           -- __, __ [__/__, 120] __, 16; Set bonus
     hands=gear.Telchine_ENH_hands,    -- __, 10 [__/__,  61] __, __
-    legs=gear.Telchine_ENH_legs,      -- __, 10 [__/__, 128] __, __
+    legs="Piety Pantaloons +1",       -- 22, __ [__/__, 107] 30, __
     feet="Theophany Duckbills +3",    -- 21, 10 [__/__, 127] __, __
     neck="Loricate Torque +1",        -- __, __ [ 6/ 6, ___] __, __
     ear1="Mimir Earring",             -- 10, __ [__/__, ___] __, __
@@ -751,6 +761,8 @@ function init_gear_sets()
   
   -- Buff sets: Gear that needs to be worn to actively enhance a current player buff.
   sets.buff['Divine Caress'] = {
+    main="Yagrush",
+    sub="Genmei Shield",
     back="Mending Cape",
     -- hands="Ebers Mitts +2",
   }
