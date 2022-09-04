@@ -657,17 +657,13 @@ function init_gear_sets()
     feet="Anchorite's Gaiters +3",  -- __, 46, __, __, __ <__, __, __> [__/__,  84] (120, 10) __, __, __(__)
     neck="Monk's Nodowa +2",        -- __, 30, 10, __, __ <__, __, __> [__/__, ___] ( 20, 25) __, __, __(__)
     ear1="Sherida Earring",         --  5, __, __, __, __ < 5, __, __> [__/__, ___] (___, __) __, __, __( 5)
-    ear2="Telos Earring",           --  5, 10, __, __, __ < 1, __, __> [__/__, ___] (___, __) __, __, __(__)
+    ear2="Bhikku Earring +1",       --  4, 15, __, __, __ <__, __, __> [__/__, ___] (___, __) __,  8, __(__)
     ring1="Gere Ring",              -- __, __, __, __, __ <__,  5, __> [__/__, ___] (___, __) __, __, __(__)
     ring2="Niqmaddu Ring",          -- __, __, __, __, __ <__, __,  3> [__/__, ___] (___, __) __, __, __( 5)
     back=gear.MNK_DEX_DA_Cape,      -- __, 20, __, __, __ <10, __, __> [10/__, ___] ( 25, 10) __, __, __(__)
     waist="Moonbow Belt +1",        -- __, __, __, __, __ <__,  8, __> [ 6/ 6, ___] (___, __) __, __, __(15)
     -- Merits/Traits/Gifts             __, __, __,  5, __ <__, __, __> [__/__, ___] (___, 19)  9, 27, 35(__)
-    -- 17 STP, 229 Acc, 13 PDL, 22 Crit Rate, 6 Crit Dmg <16 DA, 27 TA, 3 QA> [21 PDT/11 MDT, 387 M.Eva] (165 Kick Dmg, 83 Kick Rate) 9 Martial Arts, 27 Counter, 75 Subtle Blow
-
-    -- Good:
-    -- ear2="Bhikku Earring +1",    --  5, 15, __, __, __ <__, __, __> [__/__, ___] (___, __) __,  8, __(__)
-    -- 17 STP, 234 Acc, 13 PDL, 22 Crit Rate, 6 Crit Dmg <15 DA, 27 TA, 3 QA> [21 PDT/11 MDT, 387 M.Eva] (165 Kick Dmg, 83 Kick Rate) 9 Martial Arts, 35 Counter, 75 Subtle Blow
+    -- 16 STP, 234 Acc, 13 PDL, 22 Crit Rate, 6 Crit Dmg <15 DA, 27 TA, 3 QA> [19 PDT/9 MDT, 387 M.Eva] (165 Kick Dmg, 83 Kick Rate) 9 Martial Arts, 35 Counter, 75 Subtle Blow
     
     -- Ideal:
     -- ear2="Bhikku Earring +2",    --  6, 20, __, __, __ <__, __, __> [__/__, ___] (___, __) __,  9, __(__)
@@ -813,17 +809,13 @@ function init_gear_sets()
     feet="Anchorite's Gaiters +3",  -- __, 46, __, __, __ <__, __, __> [__/__,  84] (120, 10) __, __, __(__)
     neck="Monk's Nodowa +2",        -- __, 30, 10, __, __ <__, __, __> [__/__, ___] ( 20, 25) __, __, __(__)
     ear1="Sherida Earring",         --  5, __, __, __, __ < 5, __, __> [__/__, ___] (___, __) __, __, __( 5)
-    ear2="Telos Earring",           --  5, 10, __, __, __ < 1, __, __> [__/__, ___] (___, __) __, __, __(__)
+    ear2="Bhikku Earring +1",       --  4, 15, __, __, __ <__, __, __> [__/__, ___] (___, __) __,  8, __(__)
     ring1="Gere Ring",              -- __, __, __, __, __ <__,  5, __> [__/__, ___] (___, __) __, __, __(__)
     ring2="Niqmaddu Ring",          -- __, __, __, __, __ <__, __,  3> [__/__, ___] (___, __) __, __, __( 5)
     back=gear.MNK_DEX_DA_Cape,      -- __, 20, __, __, __ <10, __, __> [10/__, ___] ( 25, 10) __, __, __(__)
     waist="Moonbow Belt +1",        -- __, __, __, __, __ <__,  8, __> [ 6/ 6, ___] (___, __) __, __, __(15)
     -- Merits/Traits/Gifts             __, __, __,  5, __ <__, __, __> [__/__, ___] (___, 19)  9, 27, 35(__)
-    -- 41 STP, 295 Acc, 26 PDL, 13 Crit Rate, 0 Crit Dmg <16 DA, 13 TA, 3 QA> [39 PDT/29 MDT, 542 M.Eva] (165 Kick Dmg, 83 Kick Rate) 9 Martial Arts, 27 Counter, 70 Subtle Blow
-
-    -- Good:
-    -- ear2="Bhikku Earring +1",    --  5, 15, __, __, __ <__, __, __> [__/__, ___] (___, __) __,  8, __(__)
-    -- 41 STP, 300 Acc, 26 PDL, 13 Crit Rate, 6 Crit Dmg <15 DA, 13 TA, 3 QA> [39 PDT/29 MDT, 542 M.Eva] (165 Kick Dmg, 83 Kick Rate) 9 Martial Arts, 35 Counter, 70 Subtle Blow
+    -- 40 STP, 300 Acc, 26 PDL, 13 Crit Rate, 6 Crit Dmg <15 DA, 13 TA, 3 QA> [39 PDT/29 MDT, 542 M.Eva] (165 Kick Dmg, 83 Kick Rate) 9 Martial Arts, 35 Counter, 70 Subtle Blow
 
     -- Ideal:
     -- ear2="Bhikku Earring +2",    --  6, 20, __, __, __ <__, __, __> [__/__, ___] (___, __) __,  9, __(__)
@@ -832,9 +824,6 @@ function init_gear_sets()
   sets.engaged.LightDef.Impetus = set_combine(sets.engaged.LightDef, {
     body="Bhikku Cyclas +2",        -- __, 54, __, __, __ <__, __, __> [__/__,  99] (___, __)  7, __, __(__)
     legs="Bhikku Hose +2",          --  9, 52, __, __, __ <__, __, __> [13/13, 109] (___, 25) __, __, __(__)
-    -- 39 STP, 312 Acc, 20 PDL,  5 Crit Rate, 0 Crit Dmg <16 DA, 13 TA, 3 QA> [43 PDT/33 MDT, 527 M.Eva] (165 Kick Dmg, 83 Kick Rate) 16 Martial Arts, 27 Counter, 60 Subtle Blow
-
-    -- Good:
     -- 30 STP, 273 Acc, 20 PDL, 13 Crit Rate, 0 Crit Dmg <15 DA, 13 TA, 3 QA> [30 PDT/20 MDT, 462 M.Eva] (165 Kick Dmg, 83 Kick Rate) 15 Martial Arts, 35 Counter, 70 Subtle Blow
 
     -- Ideal:
@@ -867,17 +856,13 @@ function init_gear_sets()
     feet="Anchorite's Gaiters +3",  -- __, 46, __, __, __ <__, __, __> [__/__,  84] (120, 10) __, __, __(__)
     neck="Monk's Nodowa +2",        -- __, 30, 10, __, __ <__, __, __> [__/__, ___] ( 20, 25) __, __, __(__)
     ear1="Sherida Earring",         --  5, __, __, __, __ < 5, __, __> [__/__, ___] (___, __) __, __, __( 5)
-    ear2="Telos Earring",           --  5, 10, __, __, __ < 1, __, __> [__/__, ___] (___, __) __, __, __(__)
+    ear2="Bhikku Earring +1",       --  4, 15, __, __, __ <__, __, __> [__/__, ___] (___, __) __,  8, __(__)
     ring1="Gere Ring",              -- __, __, __, __, __ <__,  5, __> [__/__, ___] (___, __) __, __, __(__)
     ring2="Niqmaddu Ring",          -- __, __, __, __, __ <__, __,  3> [__/__, ___] (___, __) __, __, __( 5)
     back=gear.MNK_DEX_DA_Cape,      -- __, 20, __, __, __ <10, __, __> [10/__, ___] ( 25, 10) __, __, __(__)
     waist="Moonbow Belt +1",        -- __, __, __, __, __ <__,  8, __> [ 6/ 6, ___] (___, __) __, __, __(15)
     -- Merits/Traits/Gifts             __, __, __,  5, __ <__, __, __> [__/__, ___] (___, 19)  9, 27, 35(__)
-    -- 41 STP, 295 Acc, 26 PDL, 13 Crit Rate, 0 Crit Dmg <16 DA, 13 TA, 0 QA> [49 PDT/39 MDT, 542 M.Eva] (165 Kick Dmg, 83 Kick Rate) 9 Martial Arts, 27 Counter, 65 Subtle Blow
-
-    -- Good:
-    -- ear2="Bhikku Earring +1",    --  5, 15, __, __, __ <__, __, __> [__/__, ___] (___, __) __,  8, __(__)
-    -- 50 STP, 313 Acc, 26 PDL,  5 Crit Rate, 0 Crit Dmg <15 DA, 13 TA, 3 QA> [52 PDT/42 MDT, 567 M.Eva] (165 Kick Dmg, 89 Kick Rate) 9 Martial Arts, 35 Counter, 60 Subtle Blow
+    -- 49 STP, 313 Acc, 26 PDL,  5 Crit Rate, 0 Crit Dmg <15 DA, 13 TA, 3 QA> [52 PDT/42 MDT, 567 M.Eva] (165 Kick Dmg, 89 Kick Rate) 9 Martial Arts, 35 Counter, 60 Subtle Blow
 
     -- Ideal:
     -- ear2="Bhikku Earring +2",    --  6, 20, __, __, __ <__, __, __> [__/__, ___] (___, __) __,  9, __(__)
@@ -887,9 +872,6 @@ function init_gear_sets()
     body="Bhikku Cyclas +2",        -- __, 54, __, __, __ <__, __, __> [__/__,  99] (___, __)  7, __, __(__)
     legs="Bhikku Hose +2",          --  9, 52, __, __, __ <__, __, __> [13/13, 109] (___, 25) __, __, __(__)
     ring2="Defending Ring",         -- __, __, __, __, __ <__, __, __> [10/10, ___] (___, __) __, __, __(__)
-    -- 39 STP, 312 Acc, 20 PDL,  5 Crit Rate, 0 Crit Dmg <16 DA, 13 TA, 0 QA> [53 PDT/43 MDT, 527 M.Eva] (165 Kick Dmg, 89 Kick Rate) 16 Martial Arts, 27 Counter, 55 Subtle Blow
-
-    -- Good:
     -- 39 STP, 317 Acc, 20 PDL,  5 Crit Rate, 0 Crit Dmg <15 DA, 13 TA, 0 QA> [53 PDT/43 MDT, 527 M.Eva] (165 Kick Dmg, 89 Kick Rate) 16 Martial Arts, 35 Counter, 55 Subtle Blow
 
     -- Ideal:
