@@ -506,10 +506,11 @@ function init_gear_sets()
   } -- 75 Enh Duration, 13 FC
 
   -- Regen not affected by Enh Magic Skill
+  -- Regen % pieces apply to base value, floored, then +1.
   sets.midcast.Regen = {
-    main=gear.Pedagogy_C,               -- 20, 15, __
+    main=gear.Pedagogy_C,               --  9, 15, __
     sub="Khonsu",                       -- __, __, __
-    head="Arbatel Bonnet +1",           --  7, __, __
+    head="Arbatel Bonnet +2",           --  9, __, __
     body=gear.Telchine_Regen_body,      --  3, __, 12
     hands=gear.Telchine_Regen_hands,    --  3, __, __
     legs=gear.Telchine_Regen_legs,      --  3, __, __
@@ -517,18 +518,18 @@ function init_gear_sets()
     back=gear.SCH_Adoulin_Regen_Cape,   -- 10, __, __
     waist="Embla Sash",                 -- __, 10,  5
     -- Base Potency (w/ Light Arts)        64, __, __
+    -- 104 Regen Potency, 25 Enh Duration %, 17 Regen Duration
 
-    -- main=gear.Musa_C,                -- 25, 20, __
-    -- sub="Khonsu",                    -- __, __, __
-    -- 118 Regen Potency, 30 Enh Duration %, 17 Regen Duration
-  } -- 113 Regen Potency, 25 Enh Duration %, 17 Regen Duration
+    -- main=gear.Musa_C,                -- 11, 20, __
+    -- 106 Regen Potency, 30 Enh Duration %, 17 Regen Duration
+  }
 
   -- Can get longer duration, but potency takes a significant hit, so
   -- opted not to do that.
   sets.midcast.RegenDuration = {
-    main=gear.Pedagogy_C,               -- 20, 15, __
+    main=gear.Pedagogy_C,               --  9, 15, __
     sub="Khonsu",                       -- __, __, __
-    head="Arbatel Bonnet +1",           --  7, __, __
+    head="Arbatel Bonnet +2",           --  9, __, __
     body=gear.Telchine_ENH_body,        -- __, 10, 12
     hands=gear.Telchine_ENH_hands,      -- __, 10, __
     legs=gear.Telchine_ENH_legs,        -- __, 10, __
@@ -536,11 +537,12 @@ function init_gear_sets()
     back=gear.SCH_Adoulin_Regen_Cape,   -- 10, __, __
     waist="Embla Sash",                 -- __, 10,  5
     -- Base Potency (w/ Light Arts)        64, __, __
+    -- 92 Regen Potency, 64 Enh Duration %, 17 Regen Duration
 
-    -- main=gear.Musa_C,                -- 25, 20, __
+    -- main=gear.Musa_C,                -- 11, 20, __
     -- feet=gear.Telchine_ENH_feet,     -- __, 10, __
-    -- 106 Regen Potency, 70 Enh Duration %, 17 Regen Duration
-  } -- 101 Regen Potency, 64 Enh Duration %, 17 Regen Duration
+    -- 94 Regen Potency, 70 Enh Duration %, 17 Regen Duration
+  }
 
   sets.midcast.Haste = sets.midcast.EnhancingDuration
 
@@ -760,70 +762,8 @@ function init_gear_sets()
   })
   sets.midcast.Stun.LightArts = sets.midcast.Stun.DarkArts
 
-  -- INT, Magic Acc, MAB
-  -- More emphasis on INT
-  sets.midcast.Kaustra = {
-    main=gear.Akademos_C,             -- 27, 15, 53
-    sub="Enki Strap",                 -- 10, 10, __
-    ammo="Pemphredo Tathlum",         --  4,  8,  4
-    head="Pedagogy Mortarboard +3",   -- 39, 52, 49
-    body=gear.Merl_MB_body,           -- 40, 20, 20
-    hands=gear.Merl_MB_hands,
-    legs="Mallquis Trews +2",         -- 57, 45, 15
-    feet=gear.Merl_MB_feet,           -- 34, 40, 55
-    neck="Argute Stole +2",           -- 15, 30, __
-    ear1="Malignance Earring",        --  8, 10,  8
-    ear2="Regal Earring",             -- 10, __,  7
-    ring2="Metamor. Ring +1",         -- 16, 15, __
-    back=gear.SCH_MAB_Cape,           -- 30, 20, 10
-    waist="Acuity Belt +1",           -- 23, 15, __
-    -- body=gear.Merl_MB_body,        -- 50, 60, 60
-    -- hands=gear.Amalric_D_hands,    -- 36, 20, 53
-    -- ring1="Freke Ring",            -- 10, __,  8
-    -- 374 INT, 315 Magic Acc, 327 MAB
-  }
-
-  -- INT, Magic Acc, MAB
-  -- More emphasis on MAB
-  sets.midcast['Elemental Magic'] = {
-    main=gear.Akademos_C,             -- 27, 15, 53
-    sub="Enki Strap",                 -- 10, 10, __
-    ammo="Pemphredo Tathlum",         --  4,  8,  4
-    head="Pedagogy Mortarboard +3",   -- 39, 52, 49
-    body="Shamash Robe",              -- 40, 45, 45
-    hands="Nyame Gauntlets",          -- 28, 40, 30
-    legs="Mallquis Trews +2",         -- 57, 45, 15
-    feet="Mallquis Clogs +2",         -- 37, 42, 15
-    neck="Sanctity Necklace",         -- __, 10, 10
-    ear1="Malignance Earring",        --  8, 10,  8
-    ear2="Regal Earring",             -- 10, __,  7
-    ring1="Kishar Ring",              -- __,  5, __
-    ring2="Metamor. Ring +1",         -- 16, 15, __
-    back=gear.SCH_MAB_Cape,           -- 30, 20, 10
-    -- Mallquis set bonus                 8, __, __
-
-    -- main="Marin Staff +1",         -- 37, 55, 68; bonus on wind dmg
-    -- body=gear.Amalric_A_body,      -- 38, 53, 53
-    -- hands=gear.Amalric_D_hands,    -- 36, 20, 53
-    -- legs=gear.Amalric_A_legs,      -- 40, 20, 60
-    -- feet=gear.Amalric_D_feet,      -- 21, 20, 52
-    -- ring1="Freke Ring",            -- 10, __,  8
-    -- waist="Refoccilation Stone",   -- __,  4, 10
-    -- Amalric set bonus              -- __, __, 40
-    -- 299 INT, 297 Magic Acc, 432 MAB
-  } -- 314 INT, 317 Magic Acc, 246 MAB
-  sets.midcast['Elemental Magic'].Seidr = set_combine(sets.midcast['Elemental Magic'], {
-    legs="Pedagogy Pants +3",
-    waist="Acuity Belt +1",
-    -- body="Seidr Cotehardie",
-  })
-  sets.midcast['Elemental Magic'].Resistant = set_combine(sets.midcast['Elemental Magic'], {
-    legs="Pedagogy Pants +3",
-    neck="Erra Pendant",
-    waist="Acuity Belt +1",
-  })
-
-  sets.midcast.Impact = set_combine(sets.midcast['Elemental Magic'].Resistant, {
+  -- Focus INT and Magic Accuracy only
+  sets.midcast.Impact = {
     main=gear.Akademos_C,
     sub="Khonsu",
     -- head=empty,
@@ -832,72 +772,204 @@ function init_gear_sets()
     -- waist="Shinjutsu-no-Obi +1",
   })
 
+  -- Magic burst options
+  -- INT, MAcc, MAB, MAccSk, MDmg, MB Dmg%, MB2 Dmg%
+  MB_options = {
+    -- main="Bunzi's Rod",            -- 15, 45, 55, 255, 248, 10, __
+    -- sub="Ammurapi Shield",         -- 13, 38, 38, ___, ___, __, __
+    
+    -- main=gear.Akademos_C,          -- 27, 25, 53, 228, 217, 10, __
+    -- sub="Enki Strap",              -- 10, 10, __, ___, ___, __, __
+
+    -- head="Pedagogy Mortarboard +3",-- 39, 37, 49, ___, ___, __,  4
+    -- head="Agwu's Cap",             -- 33, 50, 58, ___,  33,  7, __
+    -- head=gear.Nyame_B_head,        -- 28, 40, 30, ___, ___,  5, __
+    -- body="Academic's Gown +3",     -- 44, 50, __, ___, ___, 10, __
+    -- body="Agwu's Robe",            -- 47, 50, 58, ___,  20, 10, __
+    -- body=gear.Nyame_B_body,        -- 42, 40, 30, ___, ___,  7, __
+    -- body=gear.Merl_MB_body,        -- 43, 20, 20, ___, ___, 11, __
+    -- hands=gear.Merl_MB_hands,      -- 26,  9, 29, ___, ___,  9, __
+    -- hands=gear.Nyame_B_hands,      -- 28, 40, 30, ___, ___,  5, __
+    -- hands=gear.Amalric_D_hands,    -- 24, 20, 53, ___, ___, __,  6
+    -- hands="Arbatel Bracers +2",    -- 31, 52, 47, ___,  22, 10, __
+    -- hands="Agwu's Gages",          -- 33, 50, 58, ___,  20,  8,  5
+    -- legs="Mallquis Trews +2",      -- 57, 45, 15, ___,  55,  6, __
+    -- legs=gear.Nyame_B_legs,        -- 44, 40, 30, ___, ___,  6, __
+    -- legs="Agwu's Slops",           -- 49, 50, 58, ___,  20,  9, __
+    -- feet="Arbatel Loafers +2",     -- 29, 50, 45, ___,  20, __,  4; Elemental skill +28
+    -- feet="Jhakri Pigaches +2",     -- 33, 42, 39, ___, ___,  7, __
+    -- feet=gear.Nyame_B_feet,        -- 25, 40, 30, ___, ___,  5, __
+    -- feet="Agwu's Pigaches",        -- 30, 50, 58, ___,  20,  6, __
+    -- feet=gear.Merl_MB_feet,        -- 27,  1, 16, ___, ___,  8, __
+    -- neck="Argute Stole +2",        -- 15, 30, __, ___,  25, 10, __; Helix dur +10%
+    -- neck="Mizukage-No-Kubikazari", --  4, __,  8, ___, ___, 10, __
+    -- ear1="Static Earring",         -- __, __, __, ___, ___,  5, __
+    -- ring1="Mujin Band",            -- __, __, __, ___, ___, __,  5
+    -- ring1="Jhakri Ring",           -- __,  6,  3, ___, ___,  2, __
+    -- ring1="Locus Ring",            -- __, __, __, ___, ___,  5, __
+    -- back="Seshaw Cape +1",         -- __, __, 12, ___, ___,  6, __
+  }
+
+  -- INT, Magic Acc, MAB
+  -- More emphasis on MAB
+  sets.midcast['Elemental Magic'] = {
+    main=gear.Akademos_C,             -- 27, 25, 53, 228, 217, 10, __
+    sub="Enki Strap",                 -- 10, 10, __, ___, ___, __, __
+    ammo="Pemphredo Tathlum",         --  4,  8,  4, ___, ___, __, __
+    head="Pedagogy Mortarboard +3",   -- 39, 37, 49, ___, ___, __,  4
+    body="Shamash Robe",              -- 40, 45, 45, ___, ___, __, __
+    hands=gear.Nyame_B_hands,         -- 28, 40, 30, ___, ___,  5, __
+    legs="Pedagogy Pants +3",         -- 47, 39, 51, ___, ___, __, __; Elemental skill +19
+    feet="Arbatel Loafers +2",        -- 29, 50, 45, ___,  20, __,  4; Elemental skill +28
+    neck="Sanctity Necklace",         -- __, 10, 10, ___, ___, __, __
+    ear1="Malignance Earring",        --  8, 10,  8, ___, ___, __, __
+    ear2="Regal Earring",             -- 10, __,  7, ___, ___, __, __
+    ring1="Stikini Ring +1",          -- __, 11, __, ___, ___, __, __
+    ring2="Metamorph Ring +1",        -- 16, 15, __, ___, ___, __, __
+    back=gear.SCH_MAB_Cape,           -- 30, 20, 10, ___,  20, __, __
+    waist="Refoccilation Stone",      -- __,  4, 10, ___, ___, __, __
+    -- 288 INT, 324 MAcc, 322 MAB, 228 MAccSk, 257 MDmg, 15 MB Dmg%, 8 MB2 Dmg%
+    
+    -- Ideal:
+    -- main="Bunzi's Rod",            -- 15, 45, 55, 255, 248, 10, __
+    -- sub="Ammurapi Shield",         -- 13, 38, 38, ___, ___, __, __
+    -- ammo="Pemphredo Tathlum",      --  4,  8,  4, ___, ___, __, __
+    -- head="Agwu's Cap",             -- 33, 50, 58, ___,  33,  7, __
+    -- body="Agwu's Robe",            -- 47, 50, 58, ___,  20, 10, __
+    -- hands="Agwu's Gages",          -- 33, 50, 58, ___,  20,  8,  5
+    -- legs="Agwu's Slops",           -- 49, 50, 58, ___,  20,  9, __
+    -- feet="Agwu's Pigaches",        -- 30, 50, 58, ___,  20,  6, __
+    -- neck="Sanctity Necklace",      -- __, 10, 10, ___, ___, __, __
+    -- ear1="Malignance Earring",     --  8, 10,  8, ___, ___, __, __
+    -- ear2="Regal Earring",          -- 10, __,  7, ___, ___, __, __
+    -- ring1="Freke Ring",            -- 10, __,  8, ___, ___, __, __
+    -- ring2="Metamorph Ring +1",     -- 16, 15, __, ___, ___, __, __
+    -- back=gear.SCH_MAB_Cape,        -- 30, 20, 10, ___,  20, __, __
+    -- waist="Refoccilation Stone",   -- __,  4, 10, ___, ___, __, __
+    -- 298 INT, 400 MAcc, 440 MAB, 255 MAccSk, 381 MDmg, 50 MB Dmg%, 5 MB2 Dmg%
+  }
+  sets.midcast['Elemental Magic'].MB = set_combine(sets.midcast['Elemental Magic'], {
+    -- main="Bunzi's Rod",            -- 15, 45, 55, 255, 248, 10, __
+    -- sub="Ammurapi Shield",         -- 13, 38, 38, ___, ___, __, __
+    -- ammo="Pemphredo Tathlum",      --  4,  8,  4, ___, ___, __, __
+    -- head="Pedagogy Mortarboard +3",-- 39, 37, 49, ___, ___, __,  4
+    -- body="Agwu's Robe",            -- 47, 50, 58, ___,  20, 10, __
+    -- hands="Agwu's Gages",          -- 33, 50, 58, ___,  20,  8,  5
+    -- legs="Agwu's Slops",           -- 49, 50, 58, ___,  20,  9, __
+    -- feet="Arbatel Loafers +2",     -- 29, 50, 45, ___,  20, __,  4; Elemental skill +28
+    -- neck="Argute Stole +2",        -- 15, 30, __, ___,  25, 10, __
+    -- ear1="Malignance Earring",     --  8, 10,  8, ___, ___, __, __
+    -- ear2="Regal Earring",          -- 10, __,  7, ___, ___, __, __
+    -- ring1="Freke Ring",            -- 10, __,  8, ___, ___, __, __
+    -- ring2="Mujin Band",            -- __, __, __, ___, ___, __,  5
+    -- back=gear.SCH_MAB_Cape,        -- 30, 20, 10, ___,  20, __, __
+    -- waist="Refoccilation Stone",   -- __,  4, 10, ___, ___, __, __
+    -- 302 INT, 392 MAcc, 408 MAB, 255 MAccSk, 373 MDmg, 47 MB Dmg%, 18 MB2 Dmg%
+  })
+  sets.midcast['Elemental Magic'].Seidr = set_combine(sets.midcast['Elemental Magic'], {
+    body="Seidr Cotehardie",          -- __, 13,  7, ___, ___, __, __; Convert 2% dmg to MP
+    waist="Acuity Belt +1",           -- 23, 15, __, ___, ___, __, __
+  })
+  sets.midcast['Elemental Magic'].Seidr.MB = set_combine(sets.midcast['Elemental Magic'].MB, {
+    body="Seidr Cotehardie",          -- __, 13,  7, ___, ___, __, __; Convert 2% dmg to MP
+    waist="Acuity Belt +1",           -- 23, 15, __, ___, ___, __, __
+    
+    -- main="Bunzi's Rod",            -- 15, 45, 55, 255, 248, 10, __
+    -- sub="Ammurapi Shield",         -- 13, 38, 38, ___, ___, __, __
+    -- ammo="Pemphredo Tathlum",      --  4,  8,  4, ___, ___, __, __
+    -- head="Pedagogy Mortarboard +3",-- 39, 37, 49, ___, ___, __,  4
+    -- body="Seidr Cotehardie",       -- __, 13,  7, ___, ___, __, __; Convert 2% dmg to MP
+    -- hands="Agwu's Gages",          -- 33, 50, 58, ___,  20,  8,  5
+    -- legs="Agwu's Slops",           -- 49, 50, 58, ___,  20,  9, __
+    -- feet="Arbatel Loafers +2",     -- 29, 50, 45, ___,  20, __,  4; Elemental skill +28
+    -- neck="Argute Stole +2",        -- 15, 30, __, ___,  25, 10, __
+    -- ear1="Malignance Earring",     --  8, 10,  8, ___, ___, __, __
+    -- ear2="Regal Earring",          -- 10, __,  7, ___, ___, __, __
+    -- ring1="Locus Ring",            -- __, __, __, ___, ___,  5, __
+    -- ring2="Mujin Band",            -- __, __, __, ___, ___, __,  5
+    -- back=gear.SCH_MAB_Cape,        -- 30, 20, 10, ___,  20, __, __
+    -- waist="Acuity Belt +1",        -- 23, 15, __, ___, ___, __, __
+    -- 268 INT, 366 MAcc, 339 MAB, 255 MAccSk, 353 MDmg, 42 MB Dmg%, 18 MB2 Dmg%
+  })
+  sets.midcast['Elemental Magic'].Resistant = set_combine(sets.midcast['Elemental Magic'], {
+    legs="Pedagogy Pants +3",         -- 47, 39, 51, ___, ___, __, __; Elemental skill +19
+    feet="Arbatel Loafers +2",        -- 29, 50, 45, ___,  20, __,  4; Elemental skill +28
+    neck="Argute Stole +2",           -- 15, 30, __, ___,  25, 10, __
+    waist="Acuity Belt +1",           -- 23, 15, __, ___, ___, __, __
+    
+    -- main="Bunzi's Rod",            -- 15, 45, 55, 255, 248, 10, __
+    -- sub="Ammurapi Shield",         -- 13, 38, 38, ___, ___, __, __
+    -- ammo="Pemphredo Tathlum",      --  4,  8,  4, ___, ___, __, __
+    -- head="Agwu's Cap",             -- 33, 50, 58, ___,  33,  7, __
+    -- body="Agwu's Robe",            -- 47, 50, 58, ___,  20, 10, __
+    -- hands="Agwu's Gages",          -- 33, 50, 58, ___,  20,  8,  5
+    -- legs="Pedagogy Pants +3",      -- 47, 39, 51, ___, ___, __, __; Elemental skill +19
+    -- feet="Arbatel Loafers +2",     -- 29, 50, 45, ___,  20, __,  4; Elemental skill +28
+    -- neck="Argute Stole +2",        -- 15, 30, __, ___,  25, 10, __
+    -- ear1="Malignance Earring",     --  8, 10,  8, ___, ___, __, __
+    -- ear2="Regal Earring",          -- 10, __,  7, ___, ___, __, __
+    -- ring1="Freke Ring",            -- 10, __,  8, ___, ___, __, __
+    -- ring2="Metamorph Ring +1",     -- 16, 15, __, ___, ___, __, __
+    -- back=gear.SCH_MAB_Cape,        -- 30, 20, 10, ___,  20, __, __
+    -- waist="Acuity Belt +1",        -- 23, 15, __, ___, ___, __, __
+    -- 333 INT, 420 MAcc, 400 MAB, 255 MAccSk, 386 MDmg, 45 MB Dmg%, 9 MB2 Dmg%
+  })
+
+  sets.midcast.Kaustra = sets.midcast['Elemental Magic']
+  sets.midcast.Kaustra.MB = sets.midcast['Elemental Magic'].MB
+  sets.midcast.Kaustra.Resistant = sets.midcast['Elemental Magic'].Resistant
+
   sets.midcast.Helix = {
     main=gear.Akademos_C,             -- 27, 25, 53, 228, 217, 10, __
     sub="Enki Strap",                 -- 10, 10, __, ___, ___, __, __
+    ammo="Pemphredo Tathlum",         --  4,  8,  4, ___, ___, __, __
     head="Pedagogy Mortarboard +3",   -- 39, 37, 49, ___, ___, __,  4
     body="Mallquis Saio +2",          -- 54, 46, 15, ___,  58, __, __
+    hands=gear.Nyame_B_hands,         -- 28, 40, 30, ___, ___, __, __
     legs="Mallquis Trews +2",         -- 57, 45, 15, ___,  55,  6, __
     feet="Mallquis Clogs +2",         -- 37, 42, 15, ___,  46, __, __
     neck="Argute Stole +2",           -- 15, 30, __, ___,  25, 10, __; Helix Dur+10%
     ear1="Malignance Earring",        --  8, 10,  8, ___, ___, __, __
     ear2="Regal Earring",             -- 10, __,  7, ___, ___, __, __
     ring1="Locus Ring",               -- __, __, __, ___, ___,  5, __
-    back=gear.SCH_MAB_Cape,
+    ring2="Metamorph Ring +1",        -- 16, 15, __, ___, ___, __, __
+    back=gear.SCH_MAB_Cape,           -- 30, 20, 10, ___,  20, __, __
+    waist="Acuity Belt +1",           -- 23, 15, __, ___, ___, __, __
+    -- 358 INT, 343 MAcc, 206 MAB, 228 MAccSk, 421 MDmg, 31 MB Dmg%, 4 MB2 Dmg%
+
     -- main="Daybreak",               -- __, 40, 40, 242, 241, __, __
     -- sub="Ammurapi Shield",         -- 13, 38, 38, ___, ___, __, __
     -- waist="Skrymir Cord",          -- __,  5,  5, ___,  30, __, __
+    -- 307 INT, 368 MAcc, 232 MAB, 242 MAccSk, 475 MDmg, 21 MB Dmg%, 4 MB2 Dmg%
 
     -- Ideal:
     -- main="Bunzi's Rod",            -- 15, 45, 55, 255, 248, 10, __
     -- sub="Ammurapi Shield",         -- 13, 38, 38, ___, ___, __, __
     -- ammo="Ghastly Tathlum +1",     -- 11, __, __, ___,  21, __, __
-    -- head="Pedagogy Mortarboard +3",-- 39, 37, 49, ___, ___, __,  4
+    -- head="Agwu's Cap",             -- 33, 50, 58, ___,  33,  7, __
     -- body="Mallquis Saio +2",       -- 54, 46, 15, ___,  58, __, __
-    -- hands=gear.Amalric_D_hands,    -- 24, 20, 53, ___, ___, __,  6
+    -- hands="Agwu's Gages",          -- 33, 50, 58, ___,  20,  8,  5
     -- legs="Mallquis Trews +2",      -- 57, 45, 15, ___,  55,  6, __
-    -- feet="Mallquis Clogs +2",      -- 37, 42, 15, ___,  46, __, __
-    -- neck="Argute Stole +2",        -- 15, 30, __, ___,  25, 10, __; Helix Dur+10%
+    -- feet="Arbatel Loafers +2",     -- 29, 50, 45, ___,  20, __,  4; Elemental skill +28
+    -- neck="Argute Stole +2",        -- 15, 30, __, ___,  25, 10, __; Helix dur +10%
     -- ear1="Malignance Earring",     --  8, 10,  8, ___, ___, __, __
     -- ear2="Regal Earring",          -- 10, __,  7, ___, ___, __, __
-    -- ring1="Locus Ring",            -- __, __, __, ___, ___,  5, __
+    -- ring1="Metamorph Ring +1",     -- 16, 15, __, ___, ___, __, __
     -- ring2="Mujin Band",            -- __, __, __, ___, ___, __,  5
     -- back=gear.SCH_Helix_Cape,      -- 20, 20, 10, ___,  30, __, __
     -- waist="Skrymir Cord +1",       -- __,  7,  7, ___,  35, __, __
-    -- Mallquis set bonus             -- 16, __, __, ___, ___, __, __
-    -- SCH Job trait/gifts            -- __, __, __, ___, ___,  9, 13
-    -- 319 INT, 340 MAcc, 272 MAB, 255 MAccSk, 518 MDmg, 40 MB Dmg%, 28 MB2 Dmg%
+    -- Mallquis set bonus             --  8, __, __, ___, ___, __, __
+    -- 322 INT, 406 MAcc, 316 MAB, 255 MAccSk, 545 MDmg, 41 MB Dmg%, 14 MB2 Dmg%
   }
   sets.midcast.DarkHelix = set_combine(sets.midcast.Helix, {
-    -- head="Pixie Hairpin +1",
     -- ring1="Archon Ring",
   })
   sets.midcast.LightHelix = set_combine(sets.midcast.Helix, {
     -- main="Daybreak",
     -- sub="Ammurapi Shield",
+    -- body="Agwu's Robe",
   })
 
-  -- This is applied on top of other sets when appropriate
-  -- MB cap is 40%
-  sets.magic_burst = {
-    head="Pedagogy Mortarboard +3",     -- __,  4
-    body=gear.Merl_MB_body,             -- 10, __
-    hands=gear.Merl_MB_hands,           --  9, __
-    feet=gear.Merl_MB_feet,             --  8, __
-    neck="Argute Stole +2",             -- 10, __
-    ring1="Locus Ring",                 --  5, __
-    -- SCH Job trait/gifts              --  9, 13
-
-    -- Ideal:
-    -- head="Pedagogy Mortarboard +3",  -- __,  4
-    -- body=gear.Merl_MB_body,          -- 10, __
-    -- hands="Amalric Gages +1",        -- __,  6
-    -- feet="Merlinic Crackows",        -- 10, __
-    -- neck="Argute Stole +2",          -- 10, __
-    -- ring2="Mujin Band",              -- __,  5
-    -- SCH Job trait/gifts              --  9, 13
-    -- 39 MB, 28 MB2
-  } -- 41 MB, 13 MB2
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Defense Sets ------------------------------------------
@@ -1029,10 +1101,10 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.buff['Ebullience'] = {
-    head="Arbatel Bonnet +1",
+    head="Arbatel Bonnet +2",
   }
   sets.buff['Rapture'] = {
-    head="Arbatel Bonnet +1",
+    head="Arbatel Bonnet +2",
   }
   sets.buff['Perpetuance'] = {
     hands="Arbatel Bracers",
@@ -1060,12 +1132,7 @@ function init_gear_sets()
     -- feet="Pedagogy Loafers +3",
   }
   sets.buff['Klimaform'] = {
-    feet="Arbatel Loafers +1",
-  }
-  sets.buff['Klimaform'].MB = {
-    legs=gear.Merl_MB_legs,
-    feet="Arbatel Loafers +1",
-    ring1="Locus Ring",
+    feet="Arbatel Loafers +2",
   }
 
   sets.buff.Doom = {
@@ -1169,6 +1236,8 @@ function job_midcast(spell, action, spellMap, eventArgs)
       if equipSet[state.CastingMode.current] then
         equipSet = equipSet[state.CastingMode.current]
       end
+
+      -- Add Grimoire set if exists
       if equipSet['Grimoire'] then
         equip(equipSet['Grimoire'])
         eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
@@ -1179,6 +1248,11 @@ function job_midcast(spell, action, spellMap, eventArgs)
         equip(equipSet['DarkArts'])
         eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
       end
+
+      -- Add magic burst set if exists
+      if state.MagicBurst.value and (spell.english == 'Kaustra' or spell.skill == 'Elemental Magic') and equipSet['MB'] then
+        equip(equipSet['MB'])
+      end
     end
   end
 end
@@ -1187,7 +1261,6 @@ end
 function job_post_midcast(spell, action, spellMap, eventArgs)
   if spell.skill == 'Elemental Magic' then
     if spellMap == "Helix" then
-      equip(sets.midcast['Elemental Magic'])
       if spell.english:startswith('Lumino') then
         equip(sets.midcast.LightHelix)
       elseif spell.english:startswith('Nocto') then
@@ -1198,28 +1271,10 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
       if state.HelixMode.value == 'Duration' then
         equip(sets.Bookworm)
       end
-      if buffactive['Klimaform'] and spell.element == world.weather_element then
-        equip(sets.buff['Klimaform'])
-      end
-    elseif buffactive['Klimaform'] and spell.element == world.weather_element then
-      if state.MagicBurst.current then
-        equip(sets.buff['Klimaform'].MB)
-      else
-        equip(sets.buff['Klimaform'])
-      end
     end
   end
   if spell.action_type == 'Magic' then
     apply_grimoire_bonuses(spell, action, spellMap, eventArgs)
-  end
-  if spell.english == "Kaustra" and state.MagicBurst.value then
-    equip(sets.magic_burst)
-  end
-  if spell.skill == 'Elemental Magic' and state.MagicBurst.value then
-    equip(sets.magic_burst)
-    if spell.english == "Impact" then
-      equip(sets.midcast.Impact)
-    end
   end
   -- Handle belts for elemental damage
   if spell.skill == 'Elemental Magic' or spell.english == 'Kaustra' then
@@ -1232,16 +1287,16 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     -- Determine which combination to use: orpheus, hachirin-no-obi, or neither
     if has_obi and (obi_mult >= orpheus_mult or not has_orpheus) and (obi_mult > base_day_weather_mult) then
       -- Obi is better than orpheus and better than nothing
-      equip({waist="Hachirin-no-Obi"})
+      equip({waist='Hachirin-no-Obi'})
     elseif has_orpheus and (orpheus_mult > base_day_weather_mult) then
       -- Orpheus is better than obi and better than nothing
-      equip({waist="Orpheus's Sash"})
+      equip({waist='Orpheus\'s Sash'})
     end
   end
   if spell.english == 'Drain' or 'Aspir' then
     local obi_mult = silibs.get_day_weather_multiplier(spell.element, true, false)
     if obi_mult > 1.08 then -- Must beat Fucho-no-Obi
-      equip({waist="Hachirin-no-Obi"})
+      equip({waist='Hachirin-no-Obi'})
     end
   end
   if spell.skill == 'Enhancing Magic' then
@@ -1255,13 +1310,13 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
         equip(sets.midcast.RefreshSelf)
       end
     end
-    if spellMap == "Regen" and state.RegenMode.value == 'Duration' then
+    if spellMap == 'Regen' and state.RegenMode.value == 'Duration' then
       equip(sets.midcast.RegenDuration)
     end
     if state.Buff.Perpetuance then
       equip(sets.buff['Perpetuance'])
     end
-    if spellMap == "Storm" and player.merits.stormsurge > 0 then
+    if spellMap == 'Storm' and player.merits.stormsurge > 0 then
       equip (sets.midcast.Stormsurge)
     end
   end
