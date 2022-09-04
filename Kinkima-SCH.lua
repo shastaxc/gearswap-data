@@ -594,8 +594,8 @@ function init_gear_sets()
 
   -- M.Acc > MND > Enfeebling Duration > Enfeebling Skill
   sets.midcast.MndEnfeebles = {
-    main="Maxentius",                   -- 40, 15, __, __; +250 M.Acc skill
-    sub="Ammurapi Shield",              -- 38, 13, __, __
+    main="Contemplator +1",             -- 70, 22, __, 20; +228 M.Acc skill
+    sub="Khonsu",                       -- 30, __, __, __
     ammo="Pemphredo Tathlum",           --  8, __, __, __
     head="Academic's Mortarboard +3",   -- 52, 37, __, __
     body="Shamash Robe",                -- 45, 40, __, __
@@ -603,29 +603,33 @@ function init_gear_sets()
     legs="Academic's Pants +1",         -- __, 29, __, __; +20 enf skill in LA
     feet="Academic's Loafers +3",       -- 46, 29, __, __; +20 M.Acc in Grimoire
     neck="Argute Stole +2",             -- 30, 15, __, __
-    ear1="Malignance Earring",          -- 10,  8, __, __
-    ear2="Regal Earring",               -- __, 10, __, __; Adds set bonus
+    ear1="Regal Earring",               -- __, 10, __, __; Adds set bonus
+    ear2="Malignance Earring",          -- 10,  8, __, __
     ring1="Kishar Ring",                --  5, __, 10, __
-    ring2="Metamor. Ring +1",           -- 16, 15, __, __
+    ring2="Metamorph Ring +1",          -- 16, 15, __, __
     back="Aurist's Cape",               -- 33, 33, __, __
     waist="Rumination Sash",            --  3,  4, __,  7
+    -- Academic's set bonus             -- 60, __, __, __
+    -- 453 M.Acc, 282 MND, 30% Enfeebling Duration, 27 Enfeebling Skill
+
     -- body="Academic's Gown +3",       -- 50, 39, __, __; +24 enf skill in DA
-    -- legs="Academic's Pants +3",      -- 49, 39, __, __; +24 enf skill in LA
+    -- legs="Arbatel Pants +2",         -- 53, 33, __, 23; +31 m.acc in Grimoire
+    -- ear2="Arbatel Earring +2",       -- 20, 15, __, __
     -- waist="Obstinate Sash",          -- 15,  5,  5, 10
     -- Academic's set bonus             -- 60, __, __, __
-    -- 497 M.Acc, 298 MND, 35% Enfeebling Duration, 10 Enfeebling Skill
-  } -- 416 M.Acc, 288 MND, 30% Enfeebling Duration, 7 Enfeebling Skill
+    -- 533 M.Acc, 293 MND, 35% Enfeebling Duration, 53 Enfeebling Skill
+  }
   sets.midcast.MndEnfeebles.LightArts = set_combine(sets.midcast.MndEnfeebles, {
     legs="Academic's Pants +1",         -- __, 29, __, __; +20 enf skill in LA
     feet="Academic's Loafers +3",       -- 46, 29, __, __; +20 M.Acc in Grimoire
-    -- legs="Academic's Pants +3",      -- 49, 39, __, __; +24 enf skill in LA
-    -- 517 M.Acc, 298 MND, 35% Enfeebling Duration, 34 Enfeebling Skill
+    -- legs="Arbatel Pants +2",         -- 53, 33, __, 23; +31 m.acc in Grimoire
+    -- 533 M.Acc, 293 MND, 35% Enfeebling Duration, 53 Enfeebling Skill
   })
 
   -- M.Acc > INT > Enfeebling Duration > Enfeebling Skill
   sets.midcast.IntEnfeebles = {
-    main="Maxentius",                   -- 40, 15, __, __; +250 M.Acc skill
-    sub="Ammurapi Shield",              -- 38, 13, __, __
+    main="Contemplator +1",             -- 70, 12, __, 20; +228 M.Acc skill
+    sub="Khonsu",                       -- 30, __, __, __
     ammo="Pemphredo Tathlum",           --  8,  4, __, __
     head="Academic's Mortarboard +3",   -- 52, 37, __, __
     body="Shamash Robe",                -- 45, 40, __, __
@@ -633,22 +637,29 @@ function init_gear_sets()
     legs="Academic's Pants +1",         -- __, 29, __, __; +20 enf skill in LA
     feet="Academic's Loafers +3",       -- 46, 32, __, __; +20 M.Acc in Grimoire
     neck="Argute Stole +2",             -- 30, 15, __, __
-    ear1="Malignance Earring",          -- 10,  8, __, __
-    ear2="Regal Earring",               -- __, 10, __, __; Adds set bonus
+    ear1="Regal Earring",               -- __, 10, __, __; Adds set bonus
+    ear2="Malignance Earring",          -- 10,  8, __, __
     ring1="Kishar Ring",                --  5, __, 10, __
-    ring2="Metamor. Ring +1",           -- 16, 15, __, __
+    ring2="Metamorph Ring +1",          -- 16, 15, __, __
     back="Aurist's Cape",               -- 33, 33, __, __
     waist="Acuity Belt +1",             -- 15, 23, __, __
-    -- body="Academic's Gown +3",       -- 50, 44, __, __; +24 enf skill in DA
-    -- legs="Academic's Pants +3",      -- 49, 39, __, __; +24 enf skill in LA
     -- Academic's set bonus             -- 60, __, __, __
-    -- 497 M.Acc, 328 INT, 30% Enfeebling Duration, 0 Enfeebling Skill
-  } -- 428 M.Acc, 314 INT, 30% Enfeebling Duration, 0 Enfeebling Skill
+    -- 465 M.Acc, 298 INT, 30% Enfeebling Duration, 20 Enfeebling Skill
+
+    -- body="Academic's Gown +3",       -- 50, 44, __, __; +24 enf skill in DA
+    -- legs="Arbatel Pants +2",         -- 53, 33, __, 23; +31 m.acc in Grimoire
+    -- ear2="Arbatel Earring +2",       -- 20, 15, __, __
+    -- waist="Obstinate Sash",          -- 15,  5,  5, 10
+    -- Academic's set bonus             -- 60, __, __, __
+    -- 533 M.Acc, 295 INT, 35% Enfeebling Duration, 53 Enfeebling Skill
+  }
   sets.midcast.IntEnfeebles.DarkArts = set_combine(sets.midcast.IntEnfeebles, {
     body="Academic's Gown +1",          -- __, 34, __, __; +20 enf skill in DA
     feet="Academic's Loafers +3",       -- 46, 29, __, __; +20 M.Acc in Grimoire
     -- body="Academic's Gown +3",       -- 50, 44, __, __; +24 enf skill in DA
-  })-- 517 M.Acc, 328 INT, 30% Enfeebling Duration, 24 Enfeebling Skill
+    -- legs="Arbatel Pants +2",         -- 53, 33, __, 23; +31 m.acc in Grimoire
+    -- 533 M.Acc, 295 INT, 35% Enfeebling Duration, 53 Enfeebling Skill
+  })
 
   sets.midcast.ElementalEnfeeble = sets.midcast.IntEnfeebles
   sets.midcast.ElementalEnfeeble.DarkArts = sets.midcast.IntEnfeebles.DarkArts
@@ -762,17 +773,26 @@ function init_gear_sets()
   })
   sets.midcast.Stun.LightArts = sets.midcast.Stun.DarkArts
 
-  -- Focus INT and Magic Accuracy only
+  -- Focus INT, Magic Accuracy, magic accuracy skill, elemental magic skill, Conserve MP
   sets.midcast.Impact = {
-    main=gear.Akademos_C,
-    sub="Khonsu",
+    -- main="Bunzi's Rod",            -- 15, 45, 255, ___, __
+    -- sub="Ammurapi Shield",         -- 13, 38, ___, ___, __
     -- head=empty,
-    -- body="Crepuscular Cloak",
-    -- ring2="Archon Ring",
-    -- waist="Shinjutsu-no-Obi +1",
-  })
+    -- body="Crepuscular Cloak",      -- 80, 85, ___, ___, __
+    -- hands="Academic's Bracers +3", -- 29, 48, ___, ___,  8
+    -- legs="Academic's Pants +3",    -- 44, 49, ___, ___, __
+    -- feet="Academic's Loafers +3",  -- 32, 46, ___, ___, __
+    -- neck="Argute Stole +2",        -- 15, 30, ___, ___, __
+    -- ear1="Regal Earring",          -- 10, __, ___, ___, __
+    -- ear2="Arbatel Earring +2",     -- 15, 20, ___, ___, __
+    -- ring1="Mephitas's Ring +1",    --  5, __, ___, ___, 15
+    -- ring2="Metamorph Ring +1",     -- 16, 15, ___, ___, __
+    -- back="Aurist's Cape +1",       -- 33, 33, ___, ___,  5
+    -- waist="Acuity Belt +1",        -- 23, 15, ___, ___, __
+    -- AF set bonus                          45
+    -- 330 INT, 469 M.Acc, 255 M.Acc Skill, 0 Elemental Skill, 28 Conserve MP
+  }
 
-  -- Magic burst options
   -- INT, MAcc, MAB, MAccSk, MDmg, MB Dmg%, MB2 Dmg%
   MB_options = {
     -- main="Bunzi's Rod",            -- 15, 45, 55, 255, 248, 10, __
@@ -841,12 +861,12 @@ function init_gear_sets()
     -- feet="Agwu's Pigaches",        -- 30, 50, 58, ___,  20,  6, __
     -- neck="Sanctity Necklace",      -- __, 10, 10, ___, ___, __, __
     -- ear1="Malignance Earring",     --  8, 10,  8, ___, ___, __, __
-    -- ear2="Regal Earring",          -- 10, __,  7, ___, ___, __, __
+    -- ear2="Arbatel Earring +2",     -- 15, 20,  9, ___,   9, __, __
     -- ring1="Freke Ring",            -- 10, __,  8, ___, ___, __, __
     -- ring2="Metamorph Ring +1",     -- 16, 15, __, ___, ___, __, __
     -- back=gear.SCH_MAB_Cape,        -- 30, 20, 10, ___,  20, __, __
     -- waist="Refoccilation Stone",   -- __,  4, 10, ___, ___, __, __
-    -- 298 INT, 400 MAcc, 440 MAB, 255 MAccSk, 381 MDmg, 50 MB Dmg%, 5 MB2 Dmg%
+    -- 303 INT, 420 MAcc, 442 MAB, 255 MAccSk, 390 MDmg, 50 MB Dmg%, 5 MB2 Dmg%
   }
   sets.midcast['Elemental Magic'].MB = set_combine(sets.midcast['Elemental Magic'], {
     -- main="Bunzi's Rod",            -- 15, 45, 55, 255, 248, 10, __
@@ -859,12 +879,12 @@ function init_gear_sets()
     -- feet="Arbatel Loafers +2",     -- 29, 50, 45, ___,  20, __,  4; Elemental skill +28
     -- neck="Argute Stole +2",        -- 15, 30, __, ___,  25, 10, __
     -- ear1="Malignance Earring",     --  8, 10,  8, ___, ___, __, __
-    -- ear2="Regal Earring",          -- 10, __,  7, ___, ___, __, __
+    -- ear2="Arbatel Earring +2",     -- 15, 20,  9, ___,   9, __, __
     -- ring1="Freke Ring",            -- 10, __,  8, ___, ___, __, __
     -- ring2="Mujin Band",            -- __, __, __, ___, ___, __,  5
     -- back=gear.SCH_MAB_Cape,        -- 30, 20, 10, ___,  20, __, __
     -- waist="Refoccilation Stone",   -- __,  4, 10, ___, ___, __, __
-    -- 302 INT, 392 MAcc, 408 MAB, 255 MAccSk, 373 MDmg, 47 MB Dmg%, 18 MB2 Dmg%
+    -- 307 INT, 412 MAcc, 410 MAB, 255 MAccSk, 382 MDmg, 47 MB Dmg%, 18 MB2 Dmg%
   })
   sets.midcast['Elemental Magic'].Seidr = set_combine(sets.midcast['Elemental Magic'], {
     body="Seidr Cotehardie",          -- __, 13,  7, ___, ___, __, __; Convert 2% dmg to MP
@@ -884,12 +904,12 @@ function init_gear_sets()
     -- feet="Arbatel Loafers +2",     -- 29, 50, 45, ___,  20, __,  4; Elemental skill +28
     -- neck="Argute Stole +2",        -- 15, 30, __, ___,  25, 10, __
     -- ear1="Malignance Earring",     --  8, 10,  8, ___, ___, __, __
-    -- ear2="Regal Earring",          -- 10, __,  7, ___, ___, __, __
+    -- ear2="Arbatel Earring +2",     -- 15, 20,  9, ___,   9, __, __
     -- ring1="Locus Ring",            -- __, __, __, ___, ___,  5, __
     -- ring2="Mujin Band",            -- __, __, __, ___, ___, __,  5
     -- back=gear.SCH_MAB_Cape,        -- 30, 20, 10, ___,  20, __, __
     -- waist="Acuity Belt +1",        -- 23, 15, __, ___, ___, __, __
-    -- 268 INT, 366 MAcc, 339 MAB, 255 MAccSk, 353 MDmg, 42 MB Dmg%, 18 MB2 Dmg%
+    -- 273 INT, 386 MAcc, 341 MAB, 255 MAccSk, 362 MDmg, 42 MB Dmg%, 18 MB2 Dmg%
   })
   sets.midcast['Elemental Magic'].Resistant = set_combine(sets.midcast['Elemental Magic'], {
     legs="Pedagogy Pants +3",         -- 47, 39, 51, ___, ___, __, __; Elemental skill +19
@@ -907,12 +927,12 @@ function init_gear_sets()
     -- feet="Arbatel Loafers +2",     -- 29, 50, 45, ___,  20, __,  4; Elemental skill +28
     -- neck="Argute Stole +2",        -- 15, 30, __, ___,  25, 10, __
     -- ear1="Malignance Earring",     --  8, 10,  8, ___, ___, __, __
-    -- ear2="Regal Earring",          -- 10, __,  7, ___, ___, __, __
+    -- ear2="Arbatel Earring +2",     -- 15, 20,  9, ___,   9, __, __
     -- ring1="Freke Ring",            -- 10, __,  8, ___, ___, __, __
     -- ring2="Metamorph Ring +1",     -- 16, 15, __, ___, ___, __, __
     -- back=gear.SCH_MAB_Cape,        -- 30, 20, 10, ___,  20, __, __
     -- waist="Acuity Belt +1",        -- 23, 15, __, ___, ___, __, __
-    -- 333 INT, 420 MAcc, 400 MAB, 255 MAccSk, 386 MDmg, 45 MB Dmg%, 9 MB2 Dmg%
+    -- 338 INT, 440 MAcc, 402 MAB, 255 MAccSk, 395 MDmg, 45 MB Dmg%, 9 MB2 Dmg%
   })
 
   sets.midcast.Kaustra = sets.midcast['Elemental Magic']
@@ -953,13 +973,13 @@ function init_gear_sets()
     -- feet="Arbatel Loafers +2",     -- 29, 50, 45, ___,  20, __,  4; Elemental skill +28
     -- neck="Argute Stole +2",        -- 15, 30, __, ___,  25, 10, __; Helix dur +10%
     -- ear1="Malignance Earring",     --  8, 10,  8, ___, ___, __, __
-    -- ear2="Regal Earring",          -- 10, __,  7, ___, ___, __, __
+    -- ear2="Arbatel Earring +2",     -- 15, 20,  9, ___,   9, __, __
     -- ring1="Metamorph Ring +1",     -- 16, 15, __, ___, ___, __, __
     -- ring2="Mujin Band",            -- __, __, __, ___, ___, __,  5
     -- back=gear.SCH_Helix_Cape,      -- 20, 20, 10, ___,  30, __, __
     -- waist="Skrymir Cord +1",       -- __,  7,  7, ___,  35, __, __
     -- Mallquis set bonus             --  8, __, __, ___, ___, __, __
-    -- 322 INT, 406 MAcc, 316 MAB, 255 MAccSk, 545 MDmg, 41 MB Dmg%, 14 MB2 Dmg%
+    -- 327 INT, 426 MAcc, 318 MAB, 255 MAccSk, 554 MDmg, 41 MB Dmg%, 14 MB2 Dmg%
   }
   sets.midcast.DarkHelix = set_combine(sets.midcast.Helix, {
     -- ring1="Archon Ring",
