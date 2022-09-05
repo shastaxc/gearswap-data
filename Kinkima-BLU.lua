@@ -714,7 +714,7 @@ function init_gear_sets()
 
   sets.midcast['Blue Magic'].HealingSelf = set_combine(sets.midcast['Blue Magic'].Healing, {
     ear2="Mendicant's Earring", -- (5)
-    -- waist="Gishdubar Sash",     -- (10)
+    waist="Gishdubar Sash",     -- (10)
   })
 
   sets.midcast['Blue Magic']['White Wind'] = set_combine(sets.midcast['Blue Magic'].Healing, {

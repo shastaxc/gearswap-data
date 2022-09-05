@@ -596,7 +596,7 @@ function init_gear_sets()
   }
 
   sets.midcast.Auspice = set_combine(sets.midcast.EnhancingDuration, {
-    -- feet="Ebers Duckbills +1", -- Auspice+15
+    feet="Ebers Duckbills +2", -- Auspice+17
   })
 
   sets.midcast.Arise = sets.midcast.FastRecast
@@ -610,7 +610,7 @@ function init_gear_sets()
     body="Ebers Bliaut +2",           -- __, __ [__/__, 120] __, 16; Set bonus
     hands=gear.Telchine_ENH_hands,    -- __, 10 [__/__,  61] __, __
     legs="Piety Pantaloons +1",       -- 22, __ [__/__, 107] 30, __
-    feet="Theophany Duckbills +3",    -- 21, 10 [__/__, 127] __, __
+    feet="Ebers Duckbills +2",        -- 30, __ [10/10, 147] __, __; Set bonus
     neck="Loricate Torque +1",        -- __, __ [ 6/ 6, ___] __, __
     ear1="Mimir Earring",             -- 10, __ [__/__, ___] __, __
     ear2="Odnowa Earring +1",         -- __, __ [ 3/ 5, ___] __, __
@@ -623,7 +623,7 @@ function init_gear_sets()
     -- Light Arts                        26
     -- Master Levels                      0
     -- Afflatus Solace                                       __,  5
-    -- 478 Enh Skill, 59% Enh Duration [49 PDT/23 MDT, 491 MEVA] 50 Barspell Resistance, 20 Barspell M.Def
+    -- 497 Enh Skill, 29% Enh Duration [59 PDT/33 MDT, 530 MEVA] 80 Barspell Resistance, 31 Barspell M.Def
 
     -- main="Beneficus",              -- 15, __ [__/__, ___] __,  5
     -- sub="Genmei Shield",           -- __, __ [10/__, ___] __, __
@@ -646,8 +646,7 @@ function init_gear_sets()
     -- Light Arts                        26
     -- Master Levels                     50
     -- Afflatus Solace                                       __,  5
-
-    -- 551 Enh Skill, 10% Enh Duration [52 PDT/44 MDT, 586 MEVA] 86 Barspell Resistance, 36 Barspell M.Def
+    -- 551 Enh Skill, 10% Enh Duration [52 PDT/44 MDT, 586 MEVA] 86 Barspell Resistance, 31 Barspell M.Def
   }
 
   -- TODO
@@ -769,7 +768,7 @@ function init_gear_sets()
 
   -- Can remove from self with 100% success with this set
   sets.buff.Doom = {
-    -- waist="Gishdubar Sash", --10
+    waist="Gishdubar Sash", --10
   }
 
   sets.CP = {

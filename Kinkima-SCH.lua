@@ -553,7 +553,7 @@ function init_gear_sets()
   })
 
   sets.midcast.RefreshSelf = set_combine(sets.midcast.Refresh, {
-    -- waist="Gishdubar Sash",  -- __, __, 20
+    waist="Gishdubar Sash",  -- __, __, 20
     -- back="Grapevine Cape",   -- __, __, 30
     -- 2 Ref Potency, 62 Enh Duration%, 50 Ref Duration
   })
@@ -958,13 +958,12 @@ function init_gear_sets()
     -- 358 INT, 343 MAcc, 206 MAB, 228 MAccSk, 421 MDmg, 31 MB Dmg%, 4 MB2 Dmg%
 
     -- main="Daybreak",               -- __, 40, 40, 242, 241, __, __
-    -- sub="Ammurapi Shield",         -- 13, 38, 38, ___, ___, __, __
     -- waist="Skrymir Cord",          -- __,  5,  5, ___,  30, __, __
     -- 307 INT, 368 MAcc, 232 MAB, 242 MAccSk, 475 MDmg, 21 MB Dmg%, 4 MB2 Dmg%
 
     -- Ideal:
     -- main="Bunzi's Rod",            -- 15, 45, 55, 255, 248, 10, __
-    -- sub="Ammurapi Shield",         -- 13, 38, 38, ___, ___, __, __
+    -- sub="Culminus",                -- __, __, 20, ___,  75, __, __
     -- ammo="Ghastly Tathlum +1",     -- 11, __, __, ___,  21, __, __
     -- head="Agwu's Cap",             -- 33, 50, 58, ___,  33,  7, __
     -- body="Mallquis Saio +2",       -- 54, 46, 15, ___,  58, __, __
@@ -977,9 +976,9 @@ function init_gear_sets()
     -- ring1="Metamorph Ring +1",     -- 16, 15, __, ___, ___, __, __
     -- ring2="Mujin Band",            -- __, __, __, ___, ___, __,  5
     -- back=gear.SCH_Helix_Cape,      -- 20, 20, 10, ___,  30, __, __
-    -- waist="Skrymir Cord +1",       -- __,  7,  7, ___,  35, __, __
+    -- waist="Acuity Belt +1",        -- 23, 15, __, ___, ___, __, __
     -- Mallquis set bonus             --  8, __, __, ___, ___, __, __
-    -- 327 INT, 426 MAcc, 318 MAB, 255 MAccSk, 554 MDmg, 41 MB Dmg%, 14 MB2 Dmg%
+    -- 337 INT, 396 MAcc, 293 MAB, 255 MAccSk, 594 MDmg, 41 MB Dmg%, 14 MB2 Dmg%
   }
   sets.midcast.DarkHelix = set_combine(sets.midcast.Helix, {
     -- ring1="Archon Ring",
@@ -1156,9 +1155,9 @@ function init_gear_sets()
   }
 
   sets.buff.Doom = {
+    waist="Gishdubar Sash",         --10
     -- neck="Nicander's Necklace",  --20
     -- ring1="Eshmun's Ring",       --20
-    -- waist="Gishdubar Sash",      --10
   }
 
   sets.Special = {}
