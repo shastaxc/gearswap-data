@@ -181,7 +181,7 @@ function init_gear_sets()
     ammo="Impatiens",                 -- __ [__/__, ___]  2, __
     head="Bunzi's Hat",               -- 10 [ 7/ 7, 123] __, __
     body="Shamash Robe",              -- __ [10/__, 106] __, __; Resist Silence+90
-    hands=gear.Nyame_B_hands,         -- __ [ 7/ 7, 112] __, __
+    hands="Ebers Mitts +1",
     legs="Ebers Pantaloons +2",       -- 30 [12/12, 147] __, __; FC from Divine Benison
     feet=gear.Nyame_B_feet,           -- __ [ 7/ 7, 150] __, __
     neck="Loricate Torque +1",        -- __ [ 6/ 6, ___] __, __; +Defense
@@ -258,12 +258,12 @@ function init_gear_sets()
     neck="Fotia Gorget",
     ring2="Metamorph Ring +1",
     back="Aurist's Cape +1",
+    waist="Sailfi Belt +1",
     -- ammo="Aurgelmir Orb +1",
     -- ammo="Ginsen", --Sub
     -- ear1="Moonshade Earring",
     -- ear2="Regal Earring",
     -- ring1="Rufescent Ring",
-    -- waist="Sailfi Belt +1",
   })
   
   -- Physical damage. 1 hit. Damage varies with TP.
@@ -606,9 +606,9 @@ function init_gear_sets()
     main="Beneficus",                 -- 15, __ [__/__, ___] __,  5
     sub="Genmei Shield",              -- __, __ [10/__, ___] __, __
     ammo="Staunch Tathlum +1",        -- __, __ [ 3/ 3, ___] __, __
-    head=gear.Telchine_ENH_head,      -- __,  9 [__/__,  75] __, __
+    head="Ebers Cap +1",              -- __, __ [__/__,  75] __, __; Set bonus
     body="Ebers Bliaut +2",           -- __, __ [__/__, 120] __, 16; Set bonus
-    hands=gear.Telchine_ENH_hands,    -- __, 10 [__/__,  61] __, __
+    hands="Ebers Mitts +1",           -- __, __ [__/__,  37] __, __; Set bonus
     legs="Piety Pantaloons +1",       -- 22, __ [__/__, 107] 30, __
     feet="Ebers Duckbills +2",        -- 30, __ [10/10, 147] __, __; Set bonus
     neck="Loricate Torque +1",        -- __, __ [ 6/ 6, ___] __, __
@@ -623,7 +623,7 @@ function init_gear_sets()
     -- Light Arts                        26
     -- Master Levels                      0
     -- Afflatus Solace                                       __,  5
-    -- 497 Enh Skill, 29% Enh Duration [59 PDT/33 MDT, 530 MEVA] 80 Barspell Resistance, 31 Barspell M.Def
+    -- 497 Enh Skill, 10% Enh Duration [59 PDT/33 MDT, 506 MEVA] 80 Barspell Resistance, 36 Barspell M.Def
 
     -- main="Beneficus",              -- 15, __ [__/__, ___] __,  5
     -- sub="Genmei Shield",           -- __, __ [10/__, ___] __, __
@@ -646,7 +646,7 @@ function init_gear_sets()
     -- Light Arts                        26
     -- Master Levels                     50
     -- Afflatus Solace                                       __,  5
-    -- 551 Enh Skill, 10% Enh Duration [52 PDT/44 MDT, 586 MEVA] 86 Barspell Resistance, 31 Barspell M.Def
+    -- 551 Enh Skill, 10% Enh Duration [52 PDT/44 MDT, 586 MEVA] 86 Barspell Resistance, 36 Barspell M.Def
   }
 
   -- TODO
@@ -762,6 +762,7 @@ function init_gear_sets()
   sets.buff['Divine Caress'] = {
     main="Yagrush",
     sub="Genmei Shield",
+    hands="Ebers Mitts +1",
     back="Mending Cape",
     -- hands="Ebers Mitts +2",
   }
