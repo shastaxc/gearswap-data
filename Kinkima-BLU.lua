@@ -402,12 +402,12 @@ function init_gear_sets()
     legs=gear.Nyame_B_legs,
     feet=gear.Nyame_B_feet,
     ear1="Moonshade Earring",
+    back=gear.BLU_WSD_Cape,
     -- ammo="Aurgelmir Orb +1",
     -- neck="Fotia Gorget",
     -- ear2="Ishvara Earring",
     -- ring1="Epaminondas's Ring",
     -- ring2="Beithir Ring",
-    -- back=gear.BLU_WSD_Cape,
     -- waist="Fotia Belt",
   }
   sets.precast.WS.AttCapped = set_combine(sets.precast.WS, {
@@ -433,34 +433,40 @@ function init_gear_sets()
   sets.precast.WS['Vorpal Blade'] = sets.precast.WS['Chant du Cygne']
 
   sets.precast.WS['Savage Blade'] = {
-    head=gear.Nyame_B_head,
-    body=gear.Nyame_B_body,
-    hands=gear.Nyame_B_hands,
-    legs=gear.Nyame_B_legs,
-    feet=gear.Nyame_B_feet,
+    head=gear.Nyame_B_head,       -- 26, 26, 60, 40, 10, __, ___
+    body=gear.Nyame_B_body,       -- 35, 37, 60, 40, 12, __, ___
+    hands=gear.Nyame_B_hands,     -- 17, 40, 60, 40, 10, __, ___
+    legs=gear.Nyame_B_legs,       -- 43, 32, 60, 40, 11, __, ___
+    feet=gear.Nyame_B_feet,       -- 23, 26, 60, 40, 10, __, ___
     neck="Mirage Stole +2",
-    ear2="Moonshade Earring",
+    ear2="Moonshade Earring",     -- __, __, __,  4, __, __, 250
+    ring1="Regal Ring",           -- 10, __, 20, __, __, __, ___
+    ring2="Rufescent Ring",       --  6,  6, __,  7, __, __, ___
+    back=gear.BLU_WSD_Cape,
+    waist="Sailfi Belt +1",       -- Needs further augmenting
     -- ammo="Coiste Bodhar", --Sub for Aurgelmir Orb +1
     -- ear1="Ishvara Earring",
     -- ring1="Epaminondas's Ring",
     -- ring2="Sroda Ring",
-    -- back=gear.BLU_WSD_Cape,
-    -- waist="Sailfi Belt +1",
   }
   sets.precast.WS['Savage Blade'].AttCapped = {
-    head=gear.Nyame_B_head,
-    hands=gear.Nyame_B_hands,
-    feet=gear.Nyame_B_feet,
+    head=gear.Nyame_B_head,       -- 26, 26, 60, 40, 10, __, ___
+    body=gear.Nyame_B_body,       -- 35, 37, 60, 40, 12, __, ___
+    hands=gear.Nyame_B_hands,     -- 17, 40, 60, 40, 10, __, ___
+    legs=gear.Nyame_B_legs,       -- 43, 32, 60, 40, 11, __, ___
+    feet=gear.Nyame_B_feet,       -- 23, 26, 60, 40, 10, __, ___
     neck="Mirage Stole +2",
-    ear2="Moonshade Earring",
+    ear2="Moonshade Earring",     -- __, __, __,  4, __, __, 250
+    ring1="Regal Ring",           -- 10, __, 20, __, __, __, ___
+    ring2="Rufescent Ring",       --  6,  6, __,  7, __, __, ___
+    back=gear.BLU_WSD_Cape,
+    waist="Sailfi Belt +1",       -- Needs further augmenting
     -- ammo="Crepuscular Pebble",
     -- body="Gleti's Cuirass",
     -- legs="Gleti's Breeches",
     -- ear1="Ishvara Earring",
     -- ring1="Epaminondas's Ring",
     -- ring2="Sroda Ring",
-    -- back=gear.BLU_WSD_Cape,
-    -- waist="Sailfi Belt +1",
   }
 
   sets.precast.WS['Expiacion'] = sets.precast.WS['Savage Blade']

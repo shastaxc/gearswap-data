@@ -149,8 +149,18 @@ gear.SCH_Adoulin_Helix_Cape = { name="Bookworm's Cape", augments={'INT+1','MND+1
 -----------------------    Ambuscade Capes    ------------------------
 ----------------------------------------------------------------------
 
+-- gear.COR_TP_Cape = { name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}}
+-- gear.COR_WS1_Cape = { name="Camulus's Mantle", augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','AGI+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
+gear.COR_WS2_Cape = { name="Camulus's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Weapon skill damage +10%','Phys. dmg. taken-10%',}} -- Needs STR+10 (dye)
+-- gear.COR_WS3_Cape = {} -- 30 AGI, 20 R.Acc/R.Att, 10 WSD, 10 PDT
+-- gear.COR_WS4_Cape = {} -- 30 INT, 20 M.Dmg/M.Acc, 10 MAB, 10 PDT
+-- gear.COR_SNP_Cape = { name="Camulus's Mantle", augments={'"Snapshot"+10','Phys. dmg. taken-10%',}}
+-- gear.COR_RA_Cape = { name="Camulus's Mantle", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','"Store TP"+10','Phys. dmg. taken-10%',}}
+-- gear.COR_DW_Cape = { name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dual Wield"+10','Phys. dmg. taken-10%',}}
+-- gear.COR_QD_Cape = {} -- 30 AGI, 20 M.Dmg/M.Acc, 10 MAB, 10 PDT
+
 gear.BLU_FC_Cape = { name="Rosmerta's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','"Fast Cast"+10','Phys. dmg. taken-10%',}}
--- gear.BLU_WSD_Cape = { name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
+gear.BLU_WSD_Cape = { name="Rosmerta's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
 -- gear.BLU_Crit_Cape = { name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Crit.hit rate+10','Phys. dmg. taken-10%',}}
 -- gear.BLU_STP_Cape = { name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10','Phys. dmg. taken-10%',}}
 -- gear.BLU_DW_Cape = { name="Rosmerta's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dual Wield"+10','Phys. dmg. taken-10%',}}
