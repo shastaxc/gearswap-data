@@ -533,15 +533,17 @@ function init_gear_sets()
     ammo=gear.WSbullet,
     head=gear.Nyame_B_head,
     body=gear.Nyame_B_body,
-    -- hands="Meg. Gloves +2",
+    hands=gear.Nyame_B_hands,
     legs=gear.Nyame_B_legs,
+    feet=gear.Nyame_B_feet,
+    ear2="Moonshade Earring",
+    back=gear.COR_WS2_Cape,
+    -- hands="Meg. Gloves +2",
     -- feet="Lanun Bottes +3",
     -- neck="Fotia Gorget",
     -- ear1="Ishvara Earring",
-    ear2="Moonshade Earring",
     -- ring1="Regal Ring",
     -- ring2="Epaminondas's Ring",
-    -- back=gear.COR_WS2_Cape,
     -- waist="Fotia Belt",
     -- back=gear.COR_WS3_Cape,
   }
@@ -741,13 +743,13 @@ function init_gear_sets()
     ear2="Moonshade Earring",     -- __, __, __,  4, __, __, 250
     ring1="Regal Ring",           -- 10, __, 20, __, __, __, ___
     ring2="Rufescent Ring",       --  6,  6, __,  7, __, __, ___
+    back=gear.COR_WS2_Cape,       -- 30, __, 20, 20, 10, __, ___
     waist="Sailfi Belt +1",       -- Needs further augmenting
 
     -- body="Ikenga's Vest",         -- 33, 25, __, __, __,  7, 190
     -- ear1="Ishvara Earring",       -- __, __, __, __,  2, __, ___
     -- ring1="Sroda Ring",           -- 15, __, __, __, __,  3, ___
     -- ring2="Epaminondas's Ring",   -- __, __, __, __,  5, __, ___
-    -- back=gear.COR_WS2_Cape,       -- 30, __, 20, 20, 10, __, ___
     -- waist="Sailfi Belt +1",       -- 15, __, 15, __, __, __, ___
     -- neck="Commodore Charm +2", -- 15, __, __, __, __, __, ___
     -- 217 STR, 149 MND, 275 Attack, 184 Accuracy, 58 WSD, 10 PDL, 440 TP Bonus
@@ -785,7 +787,7 @@ function init_gear_sets()
     -- ear2="Brutal Earring",
     -- ring1="Regal Ring",
     ring2="Epona's Ring",
-    -- back=gear.COR_WS2_Cape,
+    back=gear.COR_WS2_Cape,
     -- waist="Fotia Belt",
   })
   sets.precast.WS['Swift Blade'].MaxTP = set_combine(sets.precast.WS['Swift Blade'], {
