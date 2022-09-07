@@ -447,7 +447,8 @@ function init_gear_sets()
   -- Base rate = (10+(Healing Skill / 30)); y = Cursna+ stat from gear
   -- WHM/SCH M30 Healing Magic Skill = 506
   sets.midcast.Cursna = {
-    main="Gada",                      -- 18, ___,  6
+    main="Yagrush",
+    -- main="Gada",                      -- 18, ___,  6
     sub="Genmei Shield",              -- __, ___, __
     ammo="Incantor Stone",            -- __, ___,  2
     head=gear.Vanya_B_head,           -- 20, ___, __
@@ -609,7 +610,7 @@ function init_gear_sets()
     head="Ebers Cap +1",              -- __, __ [__/__,  75] __, __; Set bonus
     body="Ebers Bliaut +2",           -- __, __ [__/__, 120] __, 16; Set bonus
     hands="Ebers Mitts +1",           -- __, __ [__/__,  37] __, __; Set bonus
-    legs="Piety Pantaloons +1",       -- 22, __ [__/__, 107] 30, __
+    legs="Piety Pantaloons +2",       -- 24, __ [__/__, 117] 33, __
     feet="Ebers Duckbills +2",        -- 30, __ [10/10, 147] __, __; Set bonus
     neck="Loricate Torque +1",        -- __, __ [ 6/ 6, ___] __, __
     ear1="Mimir Earring",             -- 10, __ [__/__, ___] __, __
@@ -623,7 +624,7 @@ function init_gear_sets()
     -- Light Arts                        26
     -- Master Levels                      0
     -- Afflatus Solace                                       __,  5
-    -- 497 Enh Skill, 10% Enh Duration [59 PDT/33 MDT, 506 MEVA] 80 Barspell Resistance, 36 Barspell M.Def
+    -- 499 Enh Skill, 10% Enh Duration [59 PDT/33 MDT, 506 MEVA] 83 Barspell Resistance, 36 Barspell M.Def
 
     -- main="Beneficus",              -- 15, __ [__/__, ___] __,  5
     -- sub="Genmei Shield",           -- __, __ [10/__, ___] __, __
