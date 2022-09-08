@@ -799,19 +799,21 @@ function init_gear_sets()
     legs="Tatenashi Haidate +1",          -- [__/__,  80]  8 <__,  3, __> __,  5
     feet="Sakpata's Leggings",            -- [ 6/ 6, 150] __ <__, __,  4> __,  2
     neck="Warrior's Bead Necklace +1",    -- [__/__, ___] __ <__, __,  6> __, __
-    ear1="Schere Earring",                -- [__/__, ___] __ <__, __,  6> __, __
+    ear1="Dedition Earring",              -- [__/__, ___]  8 <__, __, __> __, __
     ear2="Telos Earring",                 -- [__/__, ___]  5 <__, __,  1> __, __
     ring1="Moonlight Ring",               -- [ 5/ 5, ___]  5 <__, __, __> __, __
     ring2="Moonlight Ring",               -- [ 5/ 5, ___]  5 <__, __, __> __, __
     back=gear.WAR_STR_DA_Cape,            -- [10/__, ___] __ <__, __, 10> __, __; DA dmg+20%
     waist="Ioskeha Belt +1",              -- [__/__, ___] __ <__, __,  9> __,  8
     -- WAR Traits                            [__/__, ___] __ <__, __, 33> __, __
+    -- [53 PDT/43 MDT, 534 MEVA] 51 STP <0 QA, 3 TA, 83 DA> 13 Crit Rate, 23 Haste; DA dmg+33%
 
     -- ammo="Seething Bomblet +1",        -- [__/__, ___] __ <__, __, __> __,  5
+    -- body="Boii Lorica +2",             -- [13/13,  99] 10 <__, __, __> __,  3
     -- neck="Warrior's Bead Necklace +2", -- [__/__, ___] __ <__, __,  7> __, __
     -- back=gear.WAR_STP_Cape,            -- [10/__, ___] 10 <__, __, __> __, __; DA dmg+20%
-    -- [53 PDT/43 MDT, 534 MEVA] 50 STP <0 QA, 3 TA, 71 DA> 13 Crit Rate, 28 Haste; DA dmg+33%
-  } -- [53 PDT/43 MDT, 534 MEVA] 43 STP <0 QA, 3 TA, 83 DA> 13 Crit Rate, 23 Haste; DA dmg+33%
+    -- [54 PDT/44 MDT, 564 MEVA] 61 STP <0 QA, 3 TA, 68 DA> 0 Crit Rate, 26 Haste; DA dmg+33%
+  }
   sets.engaged.LowAcc.LightDef = sets.engaged.LightDef
   sets.engaged.MidAcc.LightDef = sets.engaged.LightDef
   sets.engaged.HighAcc.LightDef = sets.engaged.LightDef
@@ -826,14 +828,18 @@ function init_gear_sets()
     neck="Warrior's Bead Necklace +1",    -- [__/__, ___] __ <__, __,  6> __, __
     ear1="Schere Earring",                -- [__/__, ___] __ <__, __,  6> __, __
     ear2="Brutal Earring",                -- [__/__, ___]  1 <__, __,  5> __, __
-    ring1="Chirich Ring +1",              -- [__/__, ___]  6 <__, __, __> __, __
-    ring2="Defending Ring",               -- [10/10, ___] __ <__, __, __> __, __
+    ring1="Moonlight Ring",               -- [ 5/ 5, ___]  5 <__, __, __> __, __
+    ring2="Moonlight Ring",               -- [ 5/ 5, ___]  5 <__, __, __> __, __
     back=gear.WAR_STR_DA_Cape,            -- [10/__, ___] __ <__, __, 10> __, __; DA dmg+20%
     waist="Ioskeha Belt +1",              -- [__/__, ___] __ <__, __,  9> __,  8
     -- WAR Traits                            [__/__, ___] __ <__, __, 33> __, __
+    -- [51 PDT/41 MDT, 624 MEVA] 21 STP <0 QA, 0 TA, 101 DA> 0 Crit Rate, 26 Haste; DA dmg+44%
 
+    -- ammo="Yetshila +1",                -- [__/__, ___] __ <__, __, __>  2, __
     -- neck="Warrior's Bead Necklace +2", -- [__/__, ___] __ <__, __,  7> __, __
-  } -- [51 PDT/41 MDT, 624 MEVA] 17 STP <0 QA, 0 TA, 101 DA> 0 Crit Rate, 26 Haste; DA dmg+44%
+    -- ear2="Boii Earring +2",            -- [__/__, ___] __ <__, __,  9>  8, __
+    -- [51 PDT/41 MDT, 624 MEVA] 17 STP <0 QA, 0 TA, 103 DA> 10 Crit Rate, 26 Haste; DA dmg+44%
+  }
 	sets.engaged.UkonvasaraAM.LowAcc.LightDef = set_combine(sets.engaged.UkonvasaraAM.LightDef, {
   })
 	sets.engaged.UkonvasaraAM.MidAcc.LightDef = set_combine(sets.engaged.UkonvasaraAM.LightDef, {
