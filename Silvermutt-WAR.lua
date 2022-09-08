@@ -63,6 +63,16 @@ function job_setup()
   -- state.WeaponSet = M{['description']='Weapon Set', 'Chango', 'Ukon', 'Naegling', 'Shining One', 'Farsha', 'DW Axe', 'Dagger', 'Great Sword', 'Club', 'Staff'}
   state.EnmityMode = M{['description']='Enmity Mode', 'Normal', 'Low', 'Schere'}
 
+  skill_ids_2h = S{4, 6, 7, 8, 10, 12}
+  
+  activate_AM_mode = {
+    ["Conqueror"] = S{"Aftermath: Lv.3"},
+    ["Bravura"] = S{"Aftermath: Lv.1", "Aftermath: Lv.2", "Aftermath: Lv.3"},
+    ["Ragnarok"] = S{"Aftermath: Lv.1", "Aftermath: Lv.2", "Aftermath: Lv.3"},
+    ["Farsha"] = S{"Aftermath: Lv.1", "Aftermath: Lv.2", "Aftermath: Lv.3"},
+    ["Ukonvasara"] = S{"Aftermath: Lv.1", "Aftermath: Lv.2", "Aftermath: Lv.3"},
+  }
+
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c usekey')
   send_command('bind @w gs c toggle RearmingLock')
@@ -80,14 +90,6 @@ function job_setup()
 
   send_command('bind !e input /ja "Hasso" <me>')
   send_command('bind !q input /ja "Meditate" <me>')
-  
-  activate_AM_mode = {
-    ["Conqueror"] = S{"Aftermath: Lv.3"},
-    ["Bravura"] = S{"Aftermath: Lv.1", "Aftermath: Lv.2", "Aftermath: Lv.3"},
-    ["Ragnarok"] = S{"Aftermath: Lv.1", "Aftermath: Lv.2", "Aftermath: Lv.3"},
-    ["Farsha"] = S{"Aftermath: Lv.1", "Aftermath: Lv.2", "Aftermath: Lv.3"},
-    ["Ukonvasara"] = S{"Aftermath: Lv.1", "Aftermath: Lv.2", "Aftermath: Lv.3"},
-  }
 end
 
 -- Executes on first load, main job change, **and sub job change**
@@ -217,7 +219,7 @@ function init_gear_sets()
   }
 	sets.precast.JA['Restraint'] = {}
 	sets.precast.JA['Blood Rage'] = {
-    body="Boii Lorica +1",
+    body="Boii Lorica +2",
   }
 	sets.precast.JA['Brazen Rush'] = {}
   sets.precast.JA['Provoke'] = sets.Enmity
@@ -732,6 +734,7 @@ function init_gear_sets()
   ---------------------------------------- Engaged Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
 
+  -- Focus STP > DA
   sets.engaged = {
     ammo="Coiste Bodhar",             -- [__/__, ___]  3 <__, __,  3> __, __
     head="Flamma Zucchetto +2",       -- [__/__,  53]  6 <__,  5, __> __,  4
@@ -747,11 +750,12 @@ function init_gear_sets()
     back=gear.WAR_STR_DA_Cape,        -- [10/__, ___] __ <__, __, 10> __, __; DA dmg+20%
     waist="Sailfi Belt +1",           -- [__/__, ___] __ <__,  2,  5> __,  9
     -- WAR Traits                        [__/__, ___] __ <__, __, 33> __, __
+    -- [40 PDT/30 MDT, 400 MEVA] 65 STP <0 QA, 10 TA, 70 DA> 13 Crit Rate, 24 Haste; DA dmg+20%
 
     -- feet="Tatenashi Sune-ate +1",  -- [__/__,  80]  8 <__,  3, __> __,  3
     -- back=gear.WAR_STP_Cape,        -- [10/__, ___] 10 <__, __, __> __, __; DA dmg+20%
     -- [40 PDT/30 MDT, 394 MEVA] 77 STP <0 QA, 13 TA, 54 DA> 13 Crit Rate, 25 Haste; DA dmg+20%
-  } -- [40 PDT/30 MDT, 400 MEVA] 65 STP <0 QA, 10 TA, 70 DA> 13 Crit Rate, 24 Haste; DA dmg+20%
+  }
   sets.engaged.LowAcc = set_combine(sets.engaged, {
   })
   sets.engaged.MidAcc = set_combine(sets.engaged.LowAcc, {
@@ -759,7 +763,49 @@ function init_gear_sets()
   sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
   })
 
-  -- For Ukon AM
+  -- Focus capped DA > STP
+	sets.engaged.TwoHanded = {
+    ammo="Coiste Bodhar",                 -- [__/__, ___]  3 <__, __,  3> __, __
+    head="Hjarrandi Helm",                -- [10/10,  53]  7 <__, __,  6> __, __
+    body="Boii Lorica +2",                -- [13/13,  99] 10 <__, __, __> __,  3
+    hands="Sakpata's Gauntlets",          -- [ 8/ 8, 112]  7 <__, __,  6> __,  4
+    legs="Agoge Cuisses +3",              -- [__/__, 100] __ <__, __,  6> __,  6; DA dmg+11%
+    feet="Sakpata's Leggings",            -- [ 6/ 6, 150] __ <__, __,  4> __,  2
+    neck="Warrior's Bead Necklace +1",    -- [__/__, ___] __ <__, __,  6> __, __
+    ear1="Schere Earring",                -- [__/__, ___] __ <__, __,  6> __, __
+    ear2="Boii Earring",                  -- [__/__, ___] __ <__, __,  7> __, __
+    ring1="Moonlight Ring",               -- [ 5/ 5, ___]  5 <__, __, __> __, __
+    ring2="Chirich Ring +1",              -- [__/__, ___]  6 <__, __, __> __, __
+    back=gear.WAR_STR_DA_Cape,            -- [10/__, ___] __ <__, __, 10> __, __; DA dmg+20%
+    waist="Ioskeha Belt +1",              -- [__/__, ___] __ <__, __,  9> __,  8
+    -- WAR Traits                            [__/__, ___] __ <__, __, 33> __, __
+    -- [52 PDT/42 MDT, 514 MEVA] 38 STP <0 QA, 0 TA, 96 DA> 0 Crit Rate, 23 Haste; DA dmg+31%
+
+    -- feet="Pummeler's Calligae +3",     -- [__/__, 100]  4 <__, __,  9> __,  4
+    -- ring2="Moonlight Ring",            -- [ 5/ 5, ___]  5 <__, __, __> __, __
+    -- [51 PDT/41 MDT, 464 MEVA] 41 STP <0 QA, 0 TA, 101 DA> 0 Crit Rate, 25 Haste; DA dmg+31%
+
+    -- ammo="Coiste Bodhar",              -- [__/__, ___]  3 <__, __,  3> __, __
+    -- head="Hjarrandi Helm",             -- [10/10,  53]  7 <__, __,  6> __, __
+    -- body="Boii Lorica +2",             -- [13/13,  99] 10 <__, __, __> __,  3
+    -- hands="Sakpata's Gauntlets",       -- [ 8/ 8, 112]  7 <__, __,  6> __,  4
+    -- legs=gear.Odyssean_STP_legs,       -- [__/__,  86] 13 <__, __,  2> __,  5
+    -- feet="Pummeler's Calligae +3",     -- [__/__, 100]  4 <__, __,  9> __,  4
+    -- neck="Warrior's Bead Necklace +2", -- [__/__, ___] __ <__, __,  7> __, __
+    -- ear1="Schere Earring",             -- [__/__, ___] __ <__, __,  6> __, __
+    -- ear2="Boii Earring +2",            -- [__/__, ___] __ <__, __,  9> __, __
+    -- ring1="Moonlight Ring",            -- [ 5/ 5, ___]  5 <__, __, __> __, __
+    -- ring2="Moonlight Ring",            -- [ 5/ 5, ___]  5 <__, __, __> __, __
+    -- back=gear.WAR_STR_DA_Cape,         -- [10/__, ___] __ <__, __, 10> __, __; DA dmg+20%
+    -- waist="Ioskeha Belt +1",           -- [__/__, ___] __ <__, __,  9> __,  8
+    -- WAR Traits                            [__/__, ___] __ <__, __, 33> __, __
+    -- [51 PDT/41 MDT, 450 MEVA] 54 STP <0 QA, 0 TA, 100 DA> 0 Crit Rate, 24 Haste; DA dmg+31%
+  }
+  sets.engaged.TwoHanded.LowAcc = set_combine(sets.engaged.TwoHanded, {})
+  sets.engaged.TwoHanded.MidAcc = set_combine(sets.engaged.TwoHanded.LowAcc, {})
+  sets.engaged.TwoHanded.HighAcc = set_combine(sets.engaged.TwoHanded.MidAcc, {})
+
+  -- Focus white damage
 	sets.engaged.UkonvasaraAM = {
     ammo="Coiste Bodhar",                 -- [__/__, ___]  3 <__, __,  3> __, __
     head="Sakpata's Helm",                -- [ 7/ 7, 123] __ <__, __,  5> __,  4; DA dmg+13%
@@ -775,9 +821,11 @@ function init_gear_sets()
     back=gear.WAR_STR_DA_Cape,            -- [10/__, ___] __ <__, __, 10> __, __; DA dmg+20%
     waist="Ioskeha Belt +1",              -- [__/__, ___] __ <__, __,  9> __,  8
     -- WAR Traits                            [__/__, ___] __ <__, __, 33> __, __
+    -- [41 PDT/31 MDT, 624 MEVA] 23 STP <0 QA, 0 TA, 101 DA> 0 Crit Rate, 26 Haste; DA dmg+44%
 
     -- neck="Warrior's Bead Necklace +2", -- [__/__, ___] __ <__, __,  7> __, __
-  } -- [41 PDT/31 MDT, 624 MEVA] 23 STP <0 QA, 0 TA, 101 DA> 0 Crit Rate, 26 Haste; DA dmg+44%
+    -- [41 PDT/31 MDT, 624 MEVA] 23 STP <0 QA, 0 TA, 102 DA> 0 Crit Rate, 26 Haste; DA dmg+44%
+  }
   sets.engaged.UkonvasaraAM.LowAcc = set_combine(sets.engaged.UkonvasaraAM, {})
   sets.engaged.UkonvasaraAM.MidAcc = set_combine(sets.engaged.UkonvasaraAM.LowAcc, {})
   sets.engaged.UkonvasaraAM.HighAcc = set_combine(sets.engaged.UkonvasaraAM.MidAcc, {})
@@ -806,17 +854,58 @@ function init_gear_sets()
     back=gear.WAR_STR_DA_Cape,            -- [10/__, ___] __ <__, __, 10> __, __; DA dmg+20%
     waist="Ioskeha Belt +1",              -- [__/__, ___] __ <__, __,  9> __,  8
     -- WAR Traits                            [__/__, ___] __ <__, __, 33> __, __
-    -- [53 PDT/43 MDT, 534 MEVA] 51 STP <0 QA, 3 TA, 83 DA> 13 Crit Rate, 23 Haste; DA dmg+33%
+    -- [53 PDT/43 MDT, 534 MEVA] 51 STP <0 QA, 3 TA, 77 DA> 13 Crit Rate, 23 Haste; DA dmg+33%
 
-    -- ammo="Seething Bomblet +1",        -- [__/__, ___] __ <__, __, __> __,  5
     -- body="Boii Lorica +2",             -- [13/13,  99] 10 <__, __, __> __,  3
-    -- neck="Warrior's Bead Necklace +2", -- [__/__, ___] __ <__, __,  7> __, __
+    -- legs=gear.Odyssean_STP_legs,       -- [__/__,  86] 13 <__, __,  2> __,  5
+    -- neck="Ainia Collar",               -- [__/__, ___]  8 <__, __, __> __, __
     -- back=gear.WAR_STP_Cape,            -- [10/__, ___] 10 <__, __, __> __, __; DA dmg+20%
-    -- [54 PDT/44 MDT, 564 MEVA] 61 STP <0 QA, 3 TA, 68 DA> 0 Crit Rate, 26 Haste; DA dmg+33%
+    -- [54 PDT/44 MDT, 570 MEVA] 74 STP <0 QA, 0 TA, 63 DA> 0 Crit Rate, 26 Haste; DA dmg+33%
   }
   sets.engaged.LowAcc.LightDef = sets.engaged.LightDef
   sets.engaged.MidAcc.LightDef = sets.engaged.LightDef
   sets.engaged.HighAcc.LightDef = sets.engaged.LightDef
+
+  -- Focus capped DA > STP
+	sets.engaged.TwoHanded.LightDef = {
+    ammo="Coiste Bodhar",                 -- [__/__, ___]  3 <__, __,  3> __, __
+    head="Hjarrandi Helm",                -- [10/10,  53]  7 <__, __,  6> __, __
+    body="Boii Lorica +2",                -- [13/13,  99] 10 <__, __, __> __,  3
+    hands="Sakpata's Gauntlets",          -- [ 8/ 8, 112]  7 <__, __,  6> __,  4
+    legs="Agoge Cuisses +3",              -- [__/__, 100] __ <__, __,  6> __,  6; DA dmg+11%
+    feet="Sakpata's Leggings",            -- [ 6/ 6, 150] __ <__, __,  4> __,  2
+    neck="Warrior's Bead Necklace +1",    -- [__/__, ___] __ <__, __,  6> __, __
+    ear1="Schere Earring",                -- [__/__, ___] __ <__, __,  6> __, __
+    ear2="Boii Earring",                  -- [__/__, ___] __ <__, __,  7> __, __
+    ring1="Moonlight Ring",               -- [ 5/ 5, ___]  5 <__, __, __> __, __
+    ring2="Chirich Ring +1",              -- [__/__, ___]  6 <__, __, __> __, __
+    back=gear.WAR_STR_DA_Cape,            -- [10/__, ___] __ <__, __, 10> __, __; DA dmg+20%
+    waist="Ioskeha Belt +1",              -- [__/__, ___] __ <__, __,  9> __,  8
+    -- WAR Traits                            [__/__, ___] __ <__, __, 33> __, __
+    -- [52 PDT/42 MDT, 514 MEVA] 38 STP <0 QA, 0 TA, 96 DA> 0 Crit Rate, 23 Haste; DA dmg+31%
+
+    -- ammo="Coiste Bodhar",              -- [__/__, ___]  3 <__, __,  3> __, __
+    -- head="Sakpata's Helm",             -- [ 7/ 7, 123] __ <__, __,  5> __,  4; DA dmg+13%
+    -- body="Sakpata's Breastplate",      -- [10/10, 139] __ <__, __,  8> __,  2
+    -- hands="Sakpata's Gauntlets",       -- [ 8/ 8, 112]  7 <__, __,  6> __,  4
+    -- legs=gear.Odyssean_STP_legs,       -- [__/__,  86] 13 <__, __,  2> __,  5
+    -- feet="Sakpata's Leggings",         -- [ 6/ 6, 150] __ <__, __,  4> __,  2
+    -- neck="Warrior's Bead Necklace +2", -- [__/__, ___] __ <__, __,  7> __, __
+    -- ear1="Schere Earring",             -- [__/__, ___] __ <__, __,  6> __, __
+    -- ear2="Boii Earring +2",            -- [__/__, ___] __ <__, __,  9> __, __
+    -- ring1="Moonlight Ring",            -- [ 5/ 5, ___]  5 <__, __, __> __, __
+    -- ring2="Moonlight Ring",            -- [ 5/ 5, ___]  5 <__, __, __> __, __
+    -- back=gear.WAR_STR_DA_Cape,         -- [10/__, ___] __ <__, __, 10> __, __; DA dmg+20%
+    -- waist="Ioskeha Belt +1",           -- [__/__, ___] __ <__, __,  9> __,  8
+    -- WAR Traits                            [__/__, ___] __ <__, __, 33> __, __
+    -- [51 PDT/41 MDT, 610 MEVA] 33 STP <0 QA, 0 TA, 102 DA> 0 Crit Rate, 25 Haste; DA dmg+31%
+  }
+	sets.engaged.TwoHanded.LowAcc.LightDef = set_combine(sets.engaged.TwoHanded.LightDef, {
+  })
+	sets.engaged.TwoHanded.MidAcc.LightDef = set_combine(sets.engaged.TwoHanded.LightDef, {
+  })
+	sets.engaged.TwoHanded.HighAcc.LightDef = set_combine(sets.engaged.TwoHanded.LightDef, {
+  })
 
 	sets.engaged.UkonvasaraAM.LightDef = {
     ammo="Coiste Bodhar",                 -- [__/__, ___]  3 <__, __,  3> __, __
@@ -827,13 +916,13 @@ function init_gear_sets()
     feet="Sakpata's Leggings",            -- [ 6/ 6, 150] __ <__, __,  4> __,  2
     neck="Warrior's Bead Necklace +1",    -- [__/__, ___] __ <__, __,  6> __, __
     ear1="Schere Earring",                -- [__/__, ___] __ <__, __,  6> __, __
-    ear2="Brutal Earring",                -- [__/__, ___]  1 <__, __,  5> __, __
+    ear2="Boii Earring",                  -- [__/__, ___] __ <__, __,  7> __, __
     ring1="Moonlight Ring",               -- [ 5/ 5, ___]  5 <__, __, __> __, __
     ring2="Moonlight Ring",               -- [ 5/ 5, ___]  5 <__, __, __> __, __
     back=gear.WAR_STR_DA_Cape,            -- [10/__, ___] __ <__, __, 10> __, __; DA dmg+20%
     waist="Ioskeha Belt +1",              -- [__/__, ___] __ <__, __,  9> __,  8
     -- WAR Traits                            [__/__, ___] __ <__, __, 33> __, __
-    -- [51 PDT/41 MDT, 624 MEVA] 21 STP <0 QA, 0 TA, 101 DA> 0 Crit Rate, 26 Haste; DA dmg+44%
+    -- [51 PDT/41 MDT, 624 MEVA] 20 STP <0 QA, 0 TA, 103 DA> 0 Crit Rate, 26 Haste; DA dmg+44%
 
     -- ammo="Yetshila +1",                -- [__/__, ___] __ <__, __, __>  2, __
     -- neck="Warrior's Bead Necklace +2", -- [__/__, ___] __ <__, __,  7> __, __
@@ -856,18 +945,30 @@ function init_gear_sets()
     feet="Sakpata's Leggings",            -- [ 6/ 6, 150] __ <__, __,  4> __,  2, 13(__)
     neck="Loricate Torque +1",            -- [ 6/ 6, ___] __ <__, __, __> __, __, __(__)
     ear1="Schere Earring",                -- [__/__, ___] __ <__, __,  6> __, __,  3(__)
-    ear2="Dignitary's Earring",           -- [__/__, ___]  3 <__, __, __> __, __,  5(__)
+    ear2="Boii Earring",                  -- [__/__, ___] __ <__, __,  7> __, __,  5(__)
     ring1="Chirich Ring +1",              -- [__/__, ___]  6 <__, __, __> __, __, 10(__)
     ring2="Niqmaddu Ring",                -- [__/__, ___] __ < 3, __, __> __, __, __( 5)
     back=gear.WAR_STR_DA_Cape,            -- [10/__, ___] __ <__, __, 10> __, __, __(__); DA dmg+20%
     waist="Ioskeha Belt +1",              -- [__/__, ___] __ <__, __,  9> __,  8, __(__)
     -- WAR Traits                            [__/__, ___] __ <__, __, 33> __, __, __(__)
+    -- [46 PDT/36 MDT, 621 MEVA] 13 STP <3 QA, 5 TA, 87 DA> 4 Crit Rate, 28 Haste, 39(15) Subtle Blow
 
+    -- ammo="Seething Bomblet +1",        -- [__/__, ___] __ <__, __, __> __,  5, __(__)
+    -- head="Sakpata's Helm",             -- [ 7/ 7, 123] __ <__, __,  5> __,  4, __(__); DA dmg+13%
+    -- body="Dagon Breastplate",          -- [__/__,  86] __ <__,  5, __>  4,  1, __(10)
+    -- hands="Sakpata's Gauntlets",       -- [ 8/ 8, 112]  7 <__, __,  6> __,  4,  8(__)
     -- legs="Volte Tights",               -- [__/__, 107]  8 <__, __, __> __,  9,  8(__)
+    -- feet="Sakpata's Leggings",         -- [ 6/ 6, 150] __ <__, __,  4> __,  2, 13(__)
+    -- neck="Loricate Torque +1",         -- [ 6/ 6, ___] __ <__, __, __> __, __, __(__)
+    -- ear1="Schere Earring",             -- [__/__, ___] __ <__, __,  6> __, __,  3(__)
+    -- ear2="Boii Earring +2",            -- [__/__, ___] __ <__, __,  9>  8, __,  7(__)
+    -- ring1="Defending Ring",            -- [10/10, ___] __ <__, __, __> __, __, __(__)
+    -- ring2="Niqmaddu Ring",             -- [__/__, ___] __ < 3, __, __> __, __, __( 5)
     -- back=gear.WAR_STP_Cape,            -- [10/__, ___] 10 <__, __, __> __, __, __(__); DA dmg+20%
     -- waist="Peiste Belt +1",            -- [__/__, ___] __ <__, __, __> __, __, 10(__)
-    -- [47 PDT/37 MDT, 578 MEVA] 28 STP <3 QA, 5 TA, 54 DA> 4 Crit Rate, 25 Haste, 47(15) Subtle Blow
-  } -- [46 PDT/36 MDT, 621 MEVA] 16 STP <3 QA, 5 TA, 80 DA> 4 Crit Rate, 28 Haste, 39(15) Subtle Blow
+    -- WAR Traits                            [__/__, ___] __ <__, __, 33> __, __, __(__)
+    -- [47 PDT/37 MDT, 578 MEVA] 25 STP <3 QA, 5 TA, 63 DA> 12 Crit Rate, 25 Haste, 49(15) Subtle Blow
+  }
   sets.engaged.LowAcc.SubtleBlow = sets.engaged.SubtleBlow
   sets.engaged.MidAcc.SubtleBlow = sets.engaged.SubtleBlow
   sets.engaged.HighAcc.SubtleBlow = sets.engaged.SubtleBlow
@@ -1395,6 +1496,16 @@ function update_melee_groups()
           end
         end
       end
+    end
+
+    -- If no AM melee group, check for 2 handed weapon
+    if not classes.CustomMeleeGroups:map(function(group)
+        return group:slice(#group-2)
+      end):contains('AM') then
+        local main_weapon_skill = res.items:with('en', player.equipment.main).skill
+        if skill_ids_2h:contains(main_weapon_skill) then
+          classes.CustomMeleeGroups:append('TwoHanded')
+        end
     end
 	end
 end
