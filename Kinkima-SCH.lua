@@ -19,7 +19,7 @@ function job_setup()
   state.OffenseMode:options('Normal', 'Acc')
   state.CastingMode:options('Normal', 'Seidr', 'Resistant')
   state.IdleMode:options('Normal', 'HeavyDef')
-  state.MagicBurst = M(false, 'Magic Burst')
+  state.MagicBurst = M(true, 'Magic Burst')
 
   info.addendumNukes = S{"Stone IV", "Water IV", "Aero IV", "Fire IV", "Blizzard IV", "Thunder IV",
   "Stone V", "Water V", "Aero V", "Fire V", "Blizzard V", "Thunder V"}
