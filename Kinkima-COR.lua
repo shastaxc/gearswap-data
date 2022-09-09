@@ -128,7 +128,7 @@ function job_setup()
   no_swap_waists = S{"Era. Bul. Pouch", "Dev. Bul. Pouch", "Chr. Bul. Pouch", "Quelling B. Quiver",
       "Yoichi's Quiver", "Artemis's Quiver", "Chrono Quiver", "Liv. Bul. Pouch"}
 
-  gear.RAbullet = "Eminent Bullet"
+  gear.RAbullet = "Bronze Bullet"
   gear.RAccbullet = "Devastating Bullet"
   gear.WSbullet = "Chrono Bullet"
   gear.MAbullet = "Living Bullet"

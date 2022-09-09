@@ -1195,19 +1195,19 @@ function job_precast(spell, action, spellMap, eventArgs)
   
   if spell.action_type == 'Magic' then
     if (buffactive['Light Arts'] or buffactive['Addendum: White']) or (buffactive['Dark Arts'] or buffactive['Addendum: Black']) then
-      equipSet = select_specific_set(sets.precast.FC, spell, spellMap)
+      local customEquipSet = select_specific_set(sets.precast.FC, spell, spellMap)
       -- Add optional casting mode
-      if equipSet[state.CastingMode.current] then
-        equipSet = equipSet[state.CastingMode.current]
+      if customEquipSet[state.CastingMode.current] then
+        customEquipSet = customEquipSet[state.CastingMode.current]
       end
-      if equipSet['Grimoire'] then
-        equip(equipSet['Grimoire'])
+      if customEquipSet['Grimoire'] then
+        equip(customEquipSet['Grimoire'])
         eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
-      elseif (buffactive['Light Arts'] or buffactive['Addendum: White']) and equipSet['LightArts'] then
-        equip(equipSet['LightArts'])
+      elseif (buffactive['Light Arts'] or buffactive['Addendum: White']) and customEquipSet['LightArts'] then
+        equip(customEquipSet['LightArts'])
         eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
-      elseif (buffactive['Dark Arts'] or buffactive['Addendum: Black']) and equipSet['DarkArts'] then
-        equip(equipSet['DarkArts'])
+      elseif (buffactive['Dark Arts'] or buffactive['Addendum: Black']) and customEquipSet['DarkArts'] then
+        equip(customEquipSet['DarkArts'])
         eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
       end
     end
@@ -1250,27 +1250,28 @@ function job_midcast(spell, action, spellMap, eventArgs)
 
   if spell.action_type == 'Magic' then
     if (buffactive['Light Arts'] or buffactive['Addendum: White']) or (buffactive['Dark Arts'] or buffactive['Addendum: Black']) then
-      equipSet = select_specific_set(sets.midcast, spell, spellMap)
+      local customEquipSet = select_specific_set(sets.midcast, spell, spellMap)
       -- Add optional casting mode
-      if equipSet[state.CastingMode.current] then
-        equipSet = equipSet[state.CastingMode.current]
+      if customEquipSet[state.CastingMode.current] then
+        customEquipSet = customEquipSet[state.CastingMode.current]
       end
 
       -- Add Grimoire set if exists
-      if equipSet['Grimoire'] then
-        equip(equipSet['Grimoire'])
+      if customEquipSet['Grimoire'] then
+        equip(customEquipSet['Grimoire'])
         eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
-      elseif (buffactive['Light Arts'] or buffactive['Addendum: White']) and equipSet['LightArts'] then
-        equip(equipSet['LightArts'])
+      elseif (buffactive['Light Arts'] or buffactive['Addendum: White']) and customEquipSet['LightArts'] then
+        equip(customEquipSet['LightArts'])
         eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
-      elseif (buffactive['Dark Arts'] or buffactive['Addendum: Black']) and equipSet['DarkArts'] then
-        equip(equipSet['DarkArts'])
+      elseif (buffactive['Dark Arts'] or buffactive['Addendum: Black']) and customEquipSet['DarkArts'] then
+        equip(customEquipSet['DarkArts'])
         eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
       end
 
       -- Add magic burst set if exists
       if state.MagicBurst.value and (spell.english == 'Kaustra' or spell.skill == 'Elemental Magic') and equipSet['MB'] then
-        equip(equipSet['MB'])
+        equip(customEquipSet['MB'])
+        eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
       end
     end
   end
@@ -1279,7 +1280,7 @@ end
 -- Run after the general midcast() is done.
 function job_post_midcast(spell, action, spellMap, eventArgs)
   if spell.skill == 'Elemental Magic' then
-    if spellMap == "Helix" then
+    if spellMap == 'Helix' then
       if spell.english:startswith('Lumino') then
         equip(sets.midcast.LightHelix)
       elseif spell.english:startswith('Nocto') then
@@ -1291,9 +1292,6 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
         equip(sets.Bookworm)
       end
     end
-  end
-  if spell.action_type == 'Magic' then
-    apply_grimoire_bonuses(spell, action, spellMap, eventArgs)
   end
   -- Handle belts for elemental damage
   if spell.skill == 'Elemental Magic' or spell.english == 'Kaustra' then
@@ -1312,12 +1310,14 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
       equip({waist='Orpheus\'s Sash'})
     end
   end
+
   if spell.english == 'Drain' or 'Aspir' then
     local obi_mult = silibs.get_day_weather_multiplier(spell.element, true, false)
     if obi_mult > 1.08 then -- Must beat Fucho-no-Obi
       equip({waist='Hachirin-no-Obi'})
     end
   end
+
   if spell.skill == 'Enhancing Magic' then
     if not sets.midcast[spell.english] and not sets.midcast[spellMap]
         and (classes.NoSkillSpells:contains(spell.english) or classes.ShortEnhancingSpells:contains(spell.english)) then
@@ -1332,12 +1332,13 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     if spellMap == 'Regen' and state.RegenMode.value == 'Duration' then
       equip(sets.midcast.RegenDuration)
     end
-    if state.Buff.Perpetuance then
-      equip(sets.buff['Perpetuance'])
-    end
     if spellMap == 'Storm' and player.merits.stormsurge > 0 then
-      equip (sets.midcast.Stormsurge)
+      equip(sets.midcast.Stormsurge)
     end
+  end
+
+  if spell.action_type == 'Magic' then
+    apply_grimoire_bonuses(spell, action, spellMap, eventArgs)
   end
 
   -- If slot is locked, keep current equipment on

@@ -839,16 +839,16 @@ function job_midcast(spell, action, spellMap, eventArgs)
 
   if spell.action_type == 'Magic' then
     if (buffactive['Light Arts'] or buffactive['Addendum: White']) or (buffactive['Dark Arts'] or buffactive['Addendum: Black']) then
-      equipSet = select_specific_set(sets.midcast, spell, spellMap)
+      local customEquipSet = select_specific_set(sets.midcast, spell, spellMap)
       -- Add optional casting mode
-      if equipSet[state.CastingMode.current] then
-        equipSet = equipSet[state.CastingMode.current]
+      if customEquipSet[state.CastingMode.current] then
+        customEquipSet = customEquipSet[state.CastingMode.current]
       end
-      if (buffactive['Light Arts'] or buffactive['Addendum: White']) and equipSet['LightArts'] then
-        equip(equipSet['LightArts'])
+      if (buffactive['Light Arts'] or buffactive['Addendum: White']) and customEquipSet['LightArts'] then
+        equip(customEquipSet['LightArts'])
         eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
-      elseif (buffactive['Dark Arts'] or buffactive['Addendum: Black']) and equipSet['DarkArts'] then
-        equip(equipSet['DarkArts'])
+      elseif (buffactive['Dark Arts'] or buffactive['Addendum: Black']) and customEquipSet['DarkArts'] then
+        equip(customEquipSet['DarkArts'])
         eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
       end
     end

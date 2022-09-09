@@ -1238,13 +1238,13 @@ function job_precast(spell, action, spellMap, eventArgs)
   
   -- Use special FC set if subbing RDM
   if player.sub_job == 'RDM' and spell.type == 'Magic' then
-    equipSet = select_specific_set(sets.precast.FC, spell, spellMap)
+    local customEquipSet = select_specific_set(sets.precast.FC, spell, spellMap)
     -- Add optional casting mode
-    if equipSet[state.CastingMode.current] then
-      equipSet = equipSet[state.CastingMode.current]
+    if customEquipSet[state.CastingMode.current] then
+      customEquipSet = customEquipSet[state.CastingMode.current]
     end
-    if equipSet['RDM'] then
-      equip(equipSet['RDM'])
+    if customEquipSet['RDM'] then
+      equip(customEquipSet['RDM'])
       eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
     end
   end
