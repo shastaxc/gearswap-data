@@ -1269,7 +1269,7 @@ function job_midcast(spell, action, spellMap, eventArgs)
       end
 
       -- Add magic burst set if exists
-      if state.MagicBurst.value and (spell.english == 'Kaustra' or spell.skill == 'Elemental Magic') and equipSet['MB'] then
+      if state.MagicBurst.value and (spell.english == 'Kaustra' or spell.skill == 'Elemental Magic') and customEquipSet['MB'] then
         equip(customEquipSet['MB'])
         eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
       end
