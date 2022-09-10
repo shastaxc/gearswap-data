@@ -1499,13 +1499,15 @@ function update_melee_groups()
     end
 
     -- If no AM melee group, check for 2 handed weapon
-    if not classes.CustomMeleeGroups:map(function(group)
-        return group:slice(#group-2)
-      end):contains('AM') then
+    if player.equipment.main then
+      if not classes.CustomMeleeGroups:map(function(group)
+            return group:slice(#group-2)
+          end):contains('AM') then
         local main_weapon_skill = res.items:with('en', player.equipment.main).skill
         if skill_ids_2h:contains(main_weapon_skill) then
           classes.CustomMeleeGroups:append('TwoHanded')
         end
+      end
     end
 	end
 end
