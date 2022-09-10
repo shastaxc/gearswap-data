@@ -525,7 +525,7 @@ function init_gear_sets()
     ear2="Moonshade Earring",
     ring1="Epaminondas's Ring",
     ring2="Dingir Ring",
-    back=gear.DNC_WS1_Cape,
+    back=gear.THF_WS1_Cape,
     waist="Skrymir Cord",
     -- waist="Skrymir Cord +1",
   }
