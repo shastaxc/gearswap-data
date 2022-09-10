@@ -309,7 +309,7 @@ function init_gear_sets()
     legs=gear.Nyame_B_legs,
     feet=gear.Nyame_B_feet,
     -- neck="Fotia Gorget",
-    -- ear1="Ishvara Earring",
+    ear1="Ishvara Earring",
     ear2="Moonshade Earring",
     -- ring1="Regal Ring",
     ring2="Ilabrat Ring",
@@ -514,7 +514,7 @@ function init_gear_sets()
     legs=gear.Nyame_B_legs,       -- 43, 32, 55, 40,  9, __, ___
     feet=gear.Nyame_B_feet,       -- 23, 26, 55, 40,  8, __, ___
     neck="Anu Torque",            -- __, __, 20, __, __, __, ___
-    -- ear1="Ishvara Earring",       -- __, __, __, __,  2, __, ___
+    ear1="Ishvara Earring",       -- __, __, __, __,  2, __, ___
     ear2="Moonshade Earring",     -- __, __, __,  4, __, __, 250
     -- ring1="Regal Ring",           -- 10, __, 20, __, __, __, ___
     -- ring2="Gere Ring",            -- 10, __, 16, __, __, __, ___
@@ -536,7 +536,7 @@ function init_gear_sets()
     legs=gear.Nyame_B_legs,       -- 43, 32, 55, 40,  9, __, ___
     feet=gear.Nyame_B_feet,       -- 23, 26, 55, 40,  8, __, ___
     neck="Anu Torque",            -- __, __, 20, __, __, __, ___
-    -- ear1="Ishvara Earring",       -- __, __, __, __,  2, __, ___
+    ear1="Ishvara Earring",       -- __, __, __, __,  2, __, ___
     ear2="Moonshade Earring",     -- __, __, __,  4, __, __, 250
     -- ring1="Regal Ring",           -- 10, __, 20, __, __, __, ___
     -- ring2="Gere Ring",            -- 10, __, 16, __, __, __, ___
@@ -697,7 +697,7 @@ function init_gear_sets()
     -- legs=gear.Samnuha_legs,
     -- feet="Plunderer's Poulaines +3",
     -- neck="Assassin's Gorget +2",
-    -- ear1="Dedition Earring",
+    ear1="Dedition Earring",
     -- ear2="Skulker's Earring",
     -- ring1="Hetairoi Ring",
     -- ring2="Gere Ring",
@@ -842,7 +842,7 @@ function init_gear_sets()
     -- legs=gear.Samnuha_legs,
     -- feet="Plunderer's Poulaines +3",
     -- neck="Assassin's Gorget +2",
-    -- ear1="Dedition Earring",
+    ear1="Dedition Earring",
     -- ear2="Skulker's Earring",
     -- ring1="Hetairoi Ring",
     -- ring2="Gere Ring",
@@ -872,7 +872,7 @@ function init_gear_sets()
     -- legs=gear.Samnuha_legs,
     -- feet="Plunderer's Poulaines +3",
     -- neck="Assassin's Gorget +2",
-    -- ear1="Dedition Earring",
+    ear1="Dedition Earring",
     -- ear2="Skulker's Earring",
     -- ring1="Hetairoi Ring",
     -- ring2="Gere Ring",

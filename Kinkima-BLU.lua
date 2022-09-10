@@ -402,10 +402,10 @@ function init_gear_sets()
     legs=gear.Nyame_B_legs,
     feet=gear.Nyame_B_feet,
     ear1="Moonshade Earring",
+    ear2="Ishvara Earring",
     back=gear.BLU_WSD_Cape,
     -- ammo="Aurgelmir Orb +1",
     -- neck="Fotia Gorget",
-    -- ear2="Ishvara Earring",
     -- ring1="Epaminondas's Ring",
     -- ring2="Beithir Ring",
     -- waist="Fotia Belt",
@@ -439,13 +439,13 @@ function init_gear_sets()
     legs=gear.Nyame_B_legs,       -- 43, 32, 60, 40, 11, __, ___
     feet=gear.Nyame_B_feet,       -- 23, 26, 60, 40, 10, __, ___
     neck="Mirage Stole +2",
+    ear1="Ishvara Earring",
     ear2="Moonshade Earring",     -- __, __, __,  4, __, __, 250
-    ring1="Regal Ring",           -- 10, __, 20, __, __, __, ___
-    ring2="Rufescent Ring",       --  6,  6, __,  7, __, __, ___
+    -- ring1="Regal Ring",           -- 10, __, 20, __, __, __, ___
+    -- ring2="Rufescent Ring",       --  6,  6, __,  7, __, __, ___
     back=gear.BLU_WSD_Cape,
     waist="Sailfi Belt +1",       -- Needs further augmenting
     -- ammo="Coiste Bodhar", --Sub for Aurgelmir Orb +1
-    -- ear1="Ishvara Earring",
     -- ring1="Epaminondas's Ring",
     -- ring2="Sroda Ring",
   }
@@ -456,15 +456,15 @@ function init_gear_sets()
     legs=gear.Nyame_B_legs,       -- 43, 32, 60, 40, 11, __, ___
     feet=gear.Nyame_B_feet,       -- 23, 26, 60, 40, 10, __, ___
     neck="Mirage Stole +2",
+    ear1="Ishvara Earring",
     ear2="Moonshade Earring",     -- __, __, __,  4, __, __, 250
-    ring1="Regal Ring",           -- 10, __, 20, __, __, __, ___
-    ring2="Rufescent Ring",       --  6,  6, __,  7, __, __, ___
+    -- ring1="Regal Ring",           -- 10, __, 20, __, __, __, ___
+    -- ring2="Rufescent Ring",       --  6,  6, __,  7, __, __, ___
     back=gear.BLU_WSD_Cape,
     waist="Sailfi Belt +1",       -- Needs further augmenting
     -- ammo="Crepuscular Pebble",
     -- body="Gleti's Cuirass",
     -- legs="Gleti's Breeches",
-    -- ear1="Ishvara Earring",
     -- ring1="Epaminondas's Ring",
     -- ring2="Sroda Ring",
   }
@@ -928,11 +928,11 @@ function init_gear_sets()
     legs="Malignance Tights",     -- __, 10, 50 <__, __, __> [ 7/ 7, 150]
     feet="Malignance Boots",      -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
     neck="Mirage Stole +2",       -- __,  7, 25 <__, __, __> [__/__, ___]
+    ear2="Dedition Earring",      -- __,  8,-10 <__, __, __> [__/__, ___]
     ring1="Epona's Ring",         -- __, __, __ < 3,  3, __> [__/__, ___]
     ring2="Defending Ring",       -- __, __, __ <__, __, __> [10/10, ___]
     -- ammo="Coiste Bodhar",         -- __,  3, __ < 3, __, __> [__/__, ___]
     -- ear1="Telos Earring",         -- __,  5, 10 < 1, __, __> [__/__, ___]
-    -- ear2="Dedition Earring",      -- __,  8,-10 <__, __, __> [__/__, ___]
     -- back=gear.BLU_STP_Cape,       -- __, 10, 30 <__, __, __> [10/__, ___]
     -- waist="Windbuffet Belt +1",   -- __, __,  2 <__,  2,  2> [__/__, ___]
   } -- 0 DW, 83 STP, 307 Acc <7 DA, 5 TA, 2 QA> [51 PDT/41 MDT, 674 M.Eva]
@@ -985,12 +985,12 @@ function init_gear_sets()
     hands="Malignance Gloves",    -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
     legs=gear.Carmine_D_legs,     --  6, __, 55 <__, __, __> [__/__,  80]
     feet=gear.Taeon_DW_feet,      --  9, __, 26 <__, __, __> [__/__,  69]
+    ear2="Dedition Earring",      -- __,  8,-10 <__, __, __> [__/__, ___]
     neck="Loricate Torque +1",    -- __, __, __ <__, __, __> [ 6/ 6, ___]
     ring1="Epona's Ring",         -- __, __, __ < 3,  3, __> [__/__, ___]
     ring2="Defending Ring",       -- __, __, __ <__, __, __> [10/10, ___]
     -- ammo="Coiste Bodhar",         -- __,  3, __ < 3, __, __> [__/__, ___]
     -- ear1="Eabani Earring",        --  4, __, __ <__, __, __> [__/__,   8]
-    -- ear2="Dedition Earring",      -- __,  8,-10 <__, __, __> [__/__, ___]
     -- back=gear.BLU_DW_Cape,        -- 10, __, 30 <__, __, __> [10/__, ___]
     -- waist="Reiki Yotai",          --  7,  4, 10 <__, __, __> [__/__, ___]
   }) -- 42 DW, 35 STP, 266 Acc <6 DA, 7 TA, 0 QA> [37 PDT/27 MDT, 461 M.Eva]
@@ -1055,11 +1055,11 @@ function init_gear_sets()
     legs="Malignance Tights",     -- __, 10, 50 <__, __, __> [ 7/ 7, 150]
     feet="Malignance Boots",      -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
     neck="Mirage Stole +2",       -- __,  7, 25 <__, __, __> [__/__, ___]
+    ear2="Dedition Earring",      -- __,  8,-10 <__, __, __> [__/__, ___]
     ring1="Epona's Ring",         -- __, __, __ < 3,  3, __> [__/__, ___]
     ring2="Defending Ring",       -- __, __, __ <__, __, __> [10/10, ___]
     -- ammo="Coiste Bodhar",         -- __,  3, __ < 3, __, __> [__/__, ___]
     -- ear1="Eabani Earring",        --  4, __, __ <__, __, __> [__/__,   8]
-    -- ear2="Dedition Earring",      -- __,  8,-10 <__, __, __> [__/__, ___]
     -- back=gear.BLU_STP_Cape,       -- __, 10, 30 <__, __, __> [10/__, ___]
     -- waist="Reiki Yotai",          --  7,  4, 10 <__, __, __> [__/__, ___]
   }) -- 11 DW, 82 STP, 305 Acc <6 DA, 3 TA, 0 QA> [51 PDT/41 MDT, 682 M.Eva]
