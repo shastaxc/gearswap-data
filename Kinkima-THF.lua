@@ -1195,10 +1195,10 @@ function init_gear_sets()
     sub=empty,
     -- main="Karambit",
   }
-  -- sets.WeaponSet['SoloCleaving'] = {
-  --   main=gear.Gandring_C,
-  --   sub="Tauret",
-  -- }
+  sets.WeaponSet['SoloCleaving'] = {
+    -- main=gear.Gandring_C,
+    -- sub="Tauret",
+  }
   sets.WeaponSet['Cleaving'] = {
     main="Kaja Knife",
     sub="Twashtar",
