@@ -442,7 +442,7 @@ function init_gear_sets()
     ear1="Ishvara Earring",
     ear2="Moonshade Earring",     -- __, __, __,  4, __, __, 250
     -- ring1="Regal Ring",           -- 10, __, 20, __, __, __, ___
-    -- ring2="Rufescent Ring",       --  6,  6, __,  7, __, __, ___
+    ring2="Rufescent Ring",       --  6,  6, __,  7, __, __, ___
     back=gear.BLU_WSD_Cape,
     waist="Sailfi Belt +1",       -- Needs further augmenting
     -- ammo="Coiste Bodhar", --Sub for Aurgelmir Orb +1
@@ -459,7 +459,7 @@ function init_gear_sets()
     ear1="Ishvara Earring",
     ear2="Moonshade Earring",     -- __, __, __,  4, __, __, 250
     -- ring1="Regal Ring",           -- 10, __, 20, __, __, __, ___
-    -- ring2="Rufescent Ring",       --  6,  6, __,  7, __, __, ___
+    ring2="Rufescent Ring",       --  6,  6, __,  7, __, __, ___
     back=gear.BLU_WSD_Cape,
     waist="Sailfi Belt +1",       -- Needs further augmenting
     -- ammo="Crepuscular Pebble",

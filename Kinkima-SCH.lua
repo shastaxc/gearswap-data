@@ -239,6 +239,7 @@ function init_gear_sets()
     body="Jhakri Robe +2",
     legs=gear.Telchine_ENH_legs,
     ear1="Moonshade Earring",
+    ring2="Rufescent Ring",
     -- ammo="Floestone",
     -- head="Jhakri Coronal +2",
     -- hands="Jhakri Cuffs +2",
@@ -246,7 +247,6 @@ function init_gear_sets()
     -- neck="Fotia Gorget",
     -- ear2="Telos Earring",
     -- ring1="Epaminondas's Ring",
-    -- ring2="Rufescent Ring",
     -- back="Relucent Cape",
     -- waist="Fotia Belt",
   }

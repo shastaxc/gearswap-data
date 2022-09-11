@@ -811,7 +811,7 @@ function init_gear_sets()
     -- hands="Meg. Gloves +2",
     -- ear1="Telos Earring",
     ear2="Moonshade Earring",
-    -- ring2="Rufescent Ring",
+    ring2="Rufescent Ring",
   }) --MND
   sets.precast.WS['Requiescat'].MaxTP = set_combine(sets.precast.WS['Requiescat'], {
     ear2="Ishvara Earring",

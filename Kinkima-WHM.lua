@@ -256,6 +256,7 @@ function init_gear_sets()
     legs="Nyame Flanchard",
     feet="Nyame Sollerets",
     neck="Fotia Gorget",
+    ring1="Rufescent Ring",
     ring2="Metamorph Ring +1",
     back="Aurist's Cape +1",
     waist="Sailfi Belt +1",
@@ -263,7 +264,6 @@ function init_gear_sets()
     -- ammo="Ginsen", --Sub
     -- ear1="Moonshade Earring",
     -- ear2="Regal Earring",
-    -- ring1="Rufescent Ring",
   })
   
   -- Physical damage. 1 hit. Damage varies with TP.
@@ -276,13 +276,13 @@ function init_gear_sets()
     legs="Nyame Flanchard",
     feet="Nyame Sollerets",
     neck="Fotia Gorget",
+    ring1="Rufescent Ring",
     ring2="Metamorph Ring +1",
     back="Aurist's Cape +1",
     -- ammo="Aurgelmir Orb +1",
     -- ammo="Ginsen", --Sub
     -- ear1="Moonshade Earring",
     -- ear2="Regal Earring",
-    -- ring1="Rufescent Ring",
     -- waist="Sailfi Belt +1",
   })
 
