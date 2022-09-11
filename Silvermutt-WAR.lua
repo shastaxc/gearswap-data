@@ -1499,7 +1499,7 @@ function update_melee_groups()
     end
 
     -- If no AM melee group, check for 2 handed weapon
-    if player.equipment.main then
+    if player and player.equipment and player.equipment.main and player.equipment.main ~= 'empty' then
       if not classes.CustomMeleeGroups:map(function(group)
             return group:slice(#group-2)
           end):contains('AM') then
