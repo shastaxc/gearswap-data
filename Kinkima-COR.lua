@@ -317,8 +317,8 @@ function init_gear_sets()
   }
 
   sets.precast.Waltz = {
+    body="Passion Jacket",
     waist="Gishdubar Sash",
-    -- body="Passion Jacket",
   }
 
   sets.precast.Waltz['Healing Waltz'] = {}
@@ -336,7 +336,7 @@ function init_gear_sets()
   }
 
   sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {
-    -- body="Passion Jacket", --10
+    body="Passion Jacket", --10
     -- neck="Magoraga Beads", --10
     ear2="Odnowa Earring +1",
     ring1="Defending Ring",

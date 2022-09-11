@@ -271,8 +271,8 @@ function init_gear_sets()
 
   sets.precast.Waltz = {
     ammo="Yamarang",
+    body="Passion Jacket",
     waist="Gishdubar Sash",
-    -- body="Passion Jacket",
     -- legs="Dashing Subligar",
   }
 
