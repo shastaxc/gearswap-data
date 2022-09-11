@@ -845,7 +845,7 @@ function init_gear_sets()
     main="Bolelabunga",             -- __/__, ___ [ 1]
     sub="Genmei Shield",            -- 10/__, ___ [__]
     ammo="Staunch Tathlum +1",      --  3/ 3, ___ [__]; Resist Status+11
-    head=gear.Nyame_B_head,         --  7/ 7, 123 [__]
+    head="Rawhide Mask",            -- __/__,  53 [ 1]
     body="Shamash Robe",            -- 10/__, 106 [ 3]; Resist Silence+90
     hands=gear.Nyame_B_hands,       --  7/ 7, 112 [__]
     legs=gear.Rawhide_D_legs,       -- __/__,  69 [ 1]
@@ -857,11 +857,11 @@ function init_gear_sets()
     ring2="Stikini Ring +1",        -- __/__, ___ [ 1]
     back=gear.BLU_FC_Cape,          -- 10/__, ___ [__]
     waist="Carrier's Sash",         -- __/__, ___ [__]; Ele Resist+15
+    -- 53 PDT / 26 MDT, 490 M.Eva [8 Refresh]
 
-    -- head="Rawhide Mask",         -- __/__,  53 [ 1]
     -- legs=gear.Lengo_legs,        -- __/__, 107 [ 1]
     -- 53 PDT / 26 MDT, 528 M.Eva [8 Refresh]
-  } -- 60 PDT / 33 MDT, 560 M.Eva [7 Refresh]
+  }
   sets.passive_refresh.sub50 = {
     waist="Fucho-no-Obi",
   }
