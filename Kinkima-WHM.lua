@@ -509,6 +509,7 @@ function init_gear_sets()
     hands=gear.Telchine_ENH_hands,    -- __, 10, __ [__/__,  61]
     legs=gear.Telchine_ENH_legs,      -- __, 10, __ [__/__, 128]
     feet="Theophany Duckbills +3",    -- 21, 10, __ [__/__, 127]
+    neck="Incanter's Torque",         -- 10, __, __ [__/__, ___]
     ear1="Mimir Earring",             -- 10, __, __ [__/__, ___]
     ear2="Odnowa Earring +1",         -- __, __, __ [ 3/ 5, ___]
     ring1="Stikini Ring +1",          --  8, __, __ [__/__, ___]
@@ -516,7 +517,8 @@ function init_gear_sets()
     back=gear.WHM_FC_Cape,            -- __, __, 10 [10/__,  20]
     waist="Embla Sash",               -- __, 10,  5 [__/__, ___]
     -- Base                             394; Includes merits
-    -- Master Levels                     30
+    -- Master Levels                      0
+    -- 473 Enh Skill, 69% Enh Duration, 15 FC [26 PDT/18 MDT, 491 MEVA]
 
     -- Ideal:
     -- main="Malignance Pole",        -- __, __, __ [20/20, ___]
@@ -535,9 +537,9 @@ function init_gear_sets()
     -- back=gear.WHM_FC_Cape,         -- __, __, 10 [10/__,  20]
     -- waist="Embla Sash",            -- __, 10,  5 [__/__, ___]
     -- Base                             394; Includes merits
-    -- Master Levels                     30
-    -- 503 Enh Skill, 55% Enh Duration, 30 FC [51 PDT/38 MDT, 521 MEVA]
-  } -- 493 Enh Skill, 69% Enh Duration, 15 FC [26 PDT/18 MDT, 491 MEVA]
+    -- Master Levels                     50
+    -- 523 Enh Skill, 55% Enh Duration, 30 FC [51 PDT/38 MDT, 521 MEVA]
+  }
 
   sets.midcast.EnhancingDuration = {
     main="Gada",                      -- 18, __, __ [__/__, ___]
@@ -666,6 +668,7 @@ function init_gear_sets()
     head="Bunzi's Hat",               -- __, 40, 33, 34 [ 7/ 7, 123]
     body="Bunzi's Robe",              -- __, 40, 43, 48 [10/10, 139]
     feet="Theophany Duckbills +3",    -- 21, 46, 34, 32 [__/__, 127]
+    neck="Incanter's Torque",         -- 10, __, __, __ [__/__, ___]
     ear1="Regal Earring",             -- __, __, 10, 10 [__/__, ___]
     ear2="Malignance Earring",        -- __, 10,  8,  8 [__/__, ___]
     ring1="Stikini Ring +1",          --  8, 11,  8, __ [__/__, ___]
@@ -676,7 +679,6 @@ function init_gear_sets()
     -- sub="Genmei Shield",           -- __, __, __, __ [10/__, ___]
     -- hands=gear.Kaykaus_A_hands,    -- 16, 53, 47, 19 [__/__,  37]
     -- legs=gear.Chironic_MAcc_legs,  -- 13, 60, 29, 42 [__/__, 118]
-    -- neck="Incanter's Torque",      -- 10, __, __, __ [__/__, ___]
     -- AF set bonus                   -- __, 15, __, __ [__/__, ___]
     -- 76 Enfeebling skill, 382 M.Acc, 283 MND, 253 INT [17 PDT/17 MDT, 544 MEVA]
   }

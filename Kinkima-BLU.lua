@@ -541,6 +541,7 @@ function init_gear_sets()
   sets.midcast['Blue Magic'] = {
     ammo="Mavi Tathlum",                --  5, __ [__/__, ___]
     body="Assimilator's Jubbah +1",     -- 20, __ [__/__,  64]
+    hands="Hashishin Bazubands +2",     -- __, 52 [ 9/ 9,  77]
     legs="Hashishin Tayt +2",           -- 28, 53 [11/11, 152]
     neck="Mirage Stole +2",             -- 20, 25 [__/__, ___]
     ear1="Njordr Earring",              -- 10, __ [__/__, ___]
@@ -548,14 +549,18 @@ function init_gear_sets()
     ring1="Stikini Ring +1",            --  8, 11 [__/__, ___]
     ring2="Stikini Ring +1",            --  8, 11 [__/__, ___]
     waist="Flume Belt +1",              -- __, __ [ 4/__, ___]
-    -- 99 Blue skill, 100 M.Acc [18 PDT/16 MDT, 216 M.Eva]
+    -- Base                               424
+    -- Trait/merit/gift                    36
+    -- ML  0                                0
+    -- 559 Blue skill, 152 M.Acc [27 PDT/25 MDT, 293 M.Eva]
 
     -- head="Luhlaza Keffiyeh +3",      -- 17, 37 [__/__,  73]
     -- body="Assimilator's Jubbah +3",  -- 24, __ [__/__,  84]
     -- hands=gear.Rawhide_D_hands,      -- 10, 35 [__/__,  37]
     -- feet="Luhlaza Charuqs +3",       -- 12, 36 [__/__,  89]
     -- back=gear.BLU_Adoulin_Cape,      -- 15, 15 [__/__, ___]
-    -- 157 Blue skill, 223 M.Acc [18 PDT/16 MDT, 435 M.Eva]
+    -- ML 50                               50
+    -- 667 Blue skill, 223 M.Acc [18 PDT/16 MDT, 435 M.Eva]
   }
 
   sets.midcast['Blue Magic'].Physical = {
@@ -773,7 +778,6 @@ function init_gear_sets()
   sets.midcast['Blue Magic']['Occultation'] = set_combine(sets.midcast['Blue Magic'], {
     hands="Hashishin Bazubands +2",
     ear1="Njordr Earring",
-    -- neck="Incanter's torque",
     -- ear2="Enchanter's Earring +1",
     -- ring2="Weatherspoon Ring",
   }) -- 1 shadow per 50 skill
@@ -790,12 +794,12 @@ function init_gear_sets()
     hands=gear.Telchine_ENH_hands,
     legs="Carmine Cuisses +1",
     feet=gear.Telchine_ENH_feet,
+    neck="Incanter's Torque",
     ear1="Mimir Earring",
     ring1="Defending Ring", --10DT
     ring2="Stikini Ring +1",
     back=gear.BLU_FC_Cape, --10PDT
     -- main="Sakpata's Sword", --10DT
-    -- neck="Incanter's Torque",
     -- ear2="Andoaa Earring",
     -- waist="Olympus Sash",
   }

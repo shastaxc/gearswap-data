@@ -477,15 +477,15 @@ function init_gear_sets()
     hands=gear.Telchine_ENH_hands,    -- __, 10, __
     legs=gear.Telchine_ENH_legs,      -- __, 10, __
     feet=gear.Kaykaus_D_feet,         -- 21, __,  4
+    neck="Incanter's Torque",      -- 10, __, __
     ear1="Mimir Earring",             -- 10, __, __
     ring1="Stikini Ring +1",          --  8, __, __
+    ring2="Stikini Ring +1",          --  8, __, __
     waist="Embla Sash",               -- __, 10,  5
     -- main=gear.Gada_ENH,            -- 18,  6,  6
     -- ammo="Savant's Treatise",      --  4, __, __
     -- head=gear.Telchine_ENH_head,   -- __, 10, __
-    -- neck="Incanter's Torque",      -- 10, __, __
     -- ear2="Andoaa Earring",         --  5, __, __
-    ring2="Stikini Ring +1",          --  8, __, __
     -- back="Fi Follet Cape +1",      --  9, __, 10
     -- 112 Enh Skill, 68 Enh Duration, 25 FC
   }
@@ -958,9 +958,10 @@ function init_gear_sets()
     waist="Acuity Belt +1",           -- 23, 15, __, ___, ___, __, __
     -- 358 INT, 343 MAcc, 206 MAB, 228 MAccSk, 421 MDmg, 31 MB Dmg%, 4 MB2 Dmg%
 
-    -- main="Daybreak",               -- __, 40, 40, 242, 241, __, __
+    -- main="Bunzi's Rod",            -- 15, 45, 55, 255, 248, 10, __
+    -- sub="Culminus",                -- __, __, 20, ___,  75, __, __
     -- waist="Skrymir Cord",          -- __,  5,  5, ___,  30, __, __
-    -- 307 INT, 368 MAcc, 232 MAB, 242 MAccSk, 475 MDmg, 21 MB Dmg%, 4 MB2 Dmg%
+    -- 313 INT, 343 MAcc, 233 MAB, 255 MAccSk, 557 MDmg, 31 MB Dmg%, 4 MB2 Dmg%
 
     -- Ideal:
     -- main="Bunzi's Rod",            -- 15, 45, 55, 255, 248, 10, __
