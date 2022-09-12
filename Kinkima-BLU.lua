@@ -571,6 +571,7 @@ function init_gear_sets()
     feet="Malignance Boots",
     neck="Mirage Stole +2",
     ear1="Dignitary's Earring",
+    ear2="Cessance Earring",
     ring1="Epona's Ring",
     ring2="Defending Ring",
     waist="Grunfeld Rope",
@@ -955,6 +956,7 @@ function init_gear_sets()
     legs="Malignance Tights",     -- __, 10, 50 <__, __, __> [ 7/ 7, 150]
     feet="Malignance Boots",      -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
     neck="Mirage Stole +2",       -- __,  7, 25 <__, __, __> [__/__, ___]
+    ear1="Cessance Earring",      -- __,  3,  6 < 3, __, __> [__/__, ___]
     ear2="Dedition Earring",      -- __,  8,-10 <__, __, __> [__/__, ___]
     ring1="Epona's Ring",         -- __, __, __ < 3,  3, __> [__/__, ___]
     ring2="Defending Ring",       -- __, __, __ <__, __, __> [10/10, ___]
@@ -964,9 +966,9 @@ function init_gear_sets()
     -- waist="Windbuffet Belt +1",   -- __, __,  2 <__,  2,  2> [__/__, ___]
   } -- 0 DW, 83 STP, 307 Acc <7 DA, 5 TA, 2 QA> [51 PDT/41 MDT, 674 M.Eva]
   sets.engaged.Acc = set_combine(sets.engaged, {
+    ear2="Cessance Earring",      -- __,  3,  6 < 3, __, __> [__/__, ___]
     waist="Olseni Belt",          -- __,  3, 20 <__, __, __> [__/__, ___]
     -- ammo="Voluspa Tathlum",    -- __, __, 10 <__, __, __> [__/__, ___]
-    -- ear2="Cessance Earring",   -- __,  3,  6 < 3, __, __> [__/__, ___]
     -- ring1="Chirich Ring +1",   -- __,  6, 10 <__, __, __> [__/__, ___]
   }) -- 0 DW, 84 STP, 361 Acc <4 DA, 0 TA, 0 QA> [51 PDT/41 MDT, 674 M.Eva]
 
@@ -1059,6 +1061,7 @@ function init_gear_sets()
     legs="Malignance Tights",     -- __, 10, 50 <__, __, __> [ 7/ 7, 150]
     feet="Malignance Boots",      -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
     neck="Mirage Stole +2",       -- __,  7, 25 <__, __, __> [__/__, ___]
+    ear1="Cessance Earring",      -- __,  3,  6 < 3, __, __> [__/__, ___]
     ring1="Epona's Ring",         -- __, __, __ < 3,  3, __> [__/__, ___]
     ring2="Defending Ring",       -- __, __, __ <__, __, __> [10/10, ___]
     -- ammo="Coiste Bodhar",         -- __,  3, __ < 3, __, __> [__/__, ___]
@@ -1069,8 +1072,8 @@ function init_gear_sets()
   }) -- 18 DW, 68 STP, 330 Acc <7 DA, 7 TA, 0 QA> [42 PDT/32 MDT, 604 M.Eva]
   sets.engaged.DW.Acc.HighHaste = set_combine(sets.engaged.DW.HighHaste, {
     body="Malignance Tabard",     -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
+    ear2="Cessance Earring",      -- __,  3,  6 < 3, __, __> [__/__, ___]
     -- ammo="Voluspa Tathlum",    -- __, __, 10 <__, __, __> [__/__, ___]
-    -- ear2="Cessance Earring",   -- __,  3,  6 < 3, __, __> [__/__, ___]
     -- ring1="Chirich Ring +1",   -- __,  6, 10 <__, __, __> [__/__, ___]
   }) -- 17 DW, 75 STP, 351 Acc <7 DA, 0 TA, 0 QA> [51 PDT/41 MDT, 674 M.Eva]
 
@@ -1091,10 +1094,10 @@ function init_gear_sets()
     -- waist="Reiki Yotai",          --  7,  4, 10 <__, __, __> [__/__, ___]
   }) -- 11 DW, 82 STP, 305 Acc <6 DA, 3 TA, 0 QA> [51 PDT/41 MDT, 682 M.Eva]
   sets.engaged.DW.SuperHaste.Acc = set_combine(sets.engaged.DW.SuperHaste, {
+    ear1="Cessance Earring",      -- __,  3,  6 < 3, __, __> [__/__, ___]
     waist="Olseni Belt",          -- __,  3, 20 <__, __, __> [__/__, ___]
     -- ammo="Voluspa Tathlum",    -- __, __, 10 <__, __, __> [__/__, ___]
     -- ear1="Telos Earring",      -- __,  5, 10 < 1, __, __> [__/__, ___]
-    -- ear2="Cessance Earring",   -- __,  3,  6 < 3, __, __> [__/__, ___]
     -- ring1="Chirich Ring +1",   -- __,  6, 10 <__, __, __> [__/__, ___]
     -- back=gear.BLU_DW_Cape,     -- 10, __, 30 <__, __, __> [10/__, ___]
   }) -- 10 DW, 74 STP, 361 Acc <4 DA, 0 TA, 0 QA> [51 PDT/41 MDT, 674 M.Eva]

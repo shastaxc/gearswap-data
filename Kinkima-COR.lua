@@ -782,7 +782,7 @@ function init_gear_sets()
     -- legs="Meg. Chausses +2",
     feet=gear.Herc_TA_feet,
     -- neck="Fotia Gorget",
-    -- ear1="Cessance Earring",
+    ear1="Cessance Earring",
     -- ear2="Brutal Earring",
     -- ring1="Regal Ring",
     ring2="Epona's Ring",
@@ -827,8 +827,8 @@ function init_gear_sets()
     ear2="Ishvara Earring",
   })
   sets.precast.WS['Requiescat'].HighAcc = set_combine(sets.precast.WS['Requiescat'].MidAcc, {
+    ear1="Cessance Earring",
     -- head="Meghanada Visor +2",
-    -- ear1="Cessance Earring",
   })
   sets.precast.WS['Requiescat'].HighAccMaxTP = set_combine(sets.precast.WS['Requiescat'].HighAcc, {
     ear2="Ishvara Earring",
@@ -1115,6 +1115,7 @@ function init_gear_sets()
     legs="Ikenga's Trousers",     -- 40, __, 50, 10,  9/ 9
     feet="Malignance Boots",      -- 49, __, 50,  9,  4/ 4
     ear1="Dedition Earring",      -- __, __, __,  8, __/__
+    ear2="Cessance Earring",      -- __, __, __,  3, __/__
     -- neck="Iskur Gorget",          -- __, __, __,  8, __/__
     -- ear2="Telos Earring",         -- __, __, __,  5, __/__
     -- ring1="Chirich Ring +1",      -- __, __, __,  6, __/__
@@ -1289,6 +1290,7 @@ function init_gear_sets()
     -- 0 DW, 60 STP, 255 Acc <21 DA, 9 TA, 2 QA> [39 PDT/29 MDT, 530 M.Eva]
   })
   sets.engaged.MidAcc = set_combine(sets.engaged.LowAcc, {
+    ear2="Cessance Earring",          -- __,  3,  6 < 3, __, __> [__/__, ___]
     -- ear2="Telos Earring",             -- __,  5, 10 < 1, __, __> [__/__, ___]
     waist="Kentarch Belt +1",         -- __,  5, 14 < 3, __, __> [__/__, ___]
     -- 0 DW, 69 STP, 277 Acc <20 DA, 7 TA, 0 QA> [39 PDT/29 MDT, 530 M.Eva]
@@ -1364,6 +1366,7 @@ function init_gear_sets()
   })
   sets.engaged.DW.MidAcc.LowHaste = set_combine(sets.engaged.DW.LowAcc.LowHaste, {
     hands=gear.Adhemar_A_hands,       -- __,  7, 52 <__,  4, __> [__/__,  43]
+    ear2="Cessance Earring",          -- __,  3,  6 < 3, __, __> [__/__, ___]
     -- ear2="Telos Earring",             -- __,  5, 10 < 1, __, __> [__/__, ___]
     waist="Kentarch Belt +1",         -- __,  5, 14 < 3, __, __> [__/__, ___]
   })
@@ -1404,6 +1407,7 @@ function init_gear_sets()
   })
   sets.engaged.DW.MidAcc.MidHaste = set_combine(sets.engaged.DW.LowAcc.MidHaste, {
     legs="Meg. Chausses +2",
+    ear2="Cessance Earring",          -- __,  3,  6 < 3, __, __> [__/__, ___]
     -- ear2="Telos Earring",             -- __,  5, 10 < 1, __, __> [__/__, ___]
     waist="Kentarch Belt +1",         -- __,  5, 14 < 3, __, __> [__/__, ___]
   })
@@ -1444,6 +1448,7 @@ function init_gear_sets()
   })
   sets.engaged.DW.MidAcc.HighHaste = set_combine(sets.engaged.DW.LowAcc.HighHaste, {
     legs="Meg. Chausses +2",
+    ear2="Cessance Earring",          -- __,  3,  6 < 3, __, __> [__/__, ___]
     -- ear2="Telos Earring",             -- __,  5, 10 < 1, __, __> [__/__, ___]
     waist="Kentarch Belt +1",         -- __,  5, 14 < 3, __, __> [__/__, ___]
   })
@@ -1467,6 +1472,7 @@ function init_gear_sets()
     -- neck="Iskur Gorget",              -- __,  8, __ <__, __, __> [__/__, ___]
     -- ear1="Suppanomimi",               --  5, __, __ <__, __, __> [__/__, ___]
     -- ear2="Telos Earring",             -- __,  5, 10 < 1, __, __> [__/__, ___]
+    ear2="Cessance Earring",          -- __,  3,  6 < 3, __, __> [__/__, ___]
     ring1="Epona's Ring",             -- __, __, __ < 3,  3, __> [__/__, ___]
     ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
     -- back=gear.COR_TP_Cape,            -- __, __, 20 <10, __, __> [10/__, ___]
@@ -1584,6 +1590,7 @@ function init_gear_sets()
     feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
     -- neck="Iskur Gorget",              -- __,  8, __ <__, __, __> [__/__, ___]
     ear1="Dignitary's Earring",       -- __,  3, 10 <__, __, __> [__/__, ___]
+    ear2="Cessance Earring",          -- __,  3,  6 < 3, __, __> [__/__, ___]
     -- ear2="Telos Earring",             -- __,  5, 10 < 1, __, __> [__/__, ___]
     ring1="Chirich Ring +1",          -- __,  6, 10 <__, __, __> [__/__, ___]
     ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
@@ -1818,6 +1825,7 @@ function init_gear_sets()
     feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
     neck="Subtlety Spectacles",       -- __, __, 15 <__, __, __> [__/__, ___]
     ear1="Dignitary's Earring",       -- __,  3, 10 <__, __, __> [__/__, ___]
+    ear2="Cessance Earring",          -- __,  3,  6 < 3, __, __> [__/__, ___]
     -- ear2="Telos Earring",             -- __,  5, 10 < 1, __, __> [__/__, ___]
     ring1="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
     ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
@@ -1859,6 +1867,7 @@ function init_gear_sets()
     neck="Loricate Torque +1",        -- __, __, __ <__, __, __> [ 6/ 6, ___]
     -- ear1="Suppanomimi",               --  5, __, __ <__, __, __> [__/__, ___]
     -- ear2="Telos Earring",             -- __,  5, 10 < 1, __, __> [__/__, ___]
+    ear2="Cessance Earring",          -- __,  3,  6 < 3, __, __> [__/__, ___]
     ring1="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
     ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
     -- back=gear.COR_TP_Cape,            -- __, __, 20 <10, __, __> [10/__, ___]
@@ -1881,6 +1890,7 @@ function init_gear_sets()
     neck="Subtlety Spectacles",       -- __, __, 15 <__, __, __> [__/__, ___]
     -- ear1="Suppanomimi",               --  5, __, __ <__, __, __> [__/__, ___]
     -- ear2="Telos Earring",             -- __,  5, 10 < 1, __, __> [__/__, ___]
+    ear2="Cessance Earring",          -- __,  3,  6 < 3, __, __> [__/__, ___]
     ring1="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
     ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
     -- back=gear.COR_TP_Cape,            -- __, __, 20 <10, __, __> [10/__, ___]
@@ -1922,6 +1932,7 @@ function init_gear_sets()
     neck="Loricate Torque +1",        -- __, __, __ <__, __, __> [ 6/ 6, ___]
     -- ear1="Suppanomimi",               --  5, __, __ <__, __, __> [__/__, ___]
     -- ear2="Telos Earring",             -- __,  5, 10 < 1, __, __> [__/__, ___]
+    ear2="Cessance Earring",          -- __,  3,  6 < 3, __, __> [__/__, ___]
     ring1="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
     ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
     -- back=gear.COR_TP_Cape,            -- __, __, 20 <10, __, __> [10/__, ___]
@@ -1943,6 +1954,7 @@ function init_gear_sets()
     neck="Subtlety Spectacles",       -- __, __, 15 <__, __, __> [__/__, ___]
     -- ear1="Suppanomimi",               --  5, __, __ <__, __, __> [__/__, ___]
     -- ear2="Telos Earring",             -- __,  5, 10 < 1, __, __> [__/__, ___]
+    ear2="Cessance Earring",          -- __,  3,  6 < 3, __, __> [__/__, ___]
     ring1="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
     ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
     -- back=gear.COR_TP_Cape,            -- __, __, 20 <10, __, __> [10/__, ___]
@@ -1963,6 +1975,7 @@ function init_gear_sets()
     feet=gear.Herc_TA_feet,           -- __, __, 23 <__,  6, __> [ 2/__,  75]
     neck="Subtlety Spectacles",       -- __, __, 15 <__, __, __> [__/__, ___]
     ear1="Dignitary's Earring",       -- __,  3, 10 <__, __, __> [__/__, ___]
+    ear2="Cessance Earring",          -- __,  3,  6 < 3, __, __> [__/__, ___]
     -- ear2="Telos Earring",             -- __,  5, 10 < 1, __, __> [__/__, ___]
     ring1="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
     ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
@@ -1985,6 +1998,7 @@ function init_gear_sets()
     feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
     neck="Subtlety Spectacles",       -- __, __, 15 <__, __, __> [__/__, ___]
     ear1="Dignitary's Earring",       -- __,  3, 10 <__, __, __> [__/__, ___]
+    ear2="Cessance Earring",          -- __,  3,  6 < 3, __, __> [__/__, ___]
     -- ear2="Telos Earring",             -- __,  5, 10 < 1, __, __> [__/__, ___]
     ring1="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
     ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
