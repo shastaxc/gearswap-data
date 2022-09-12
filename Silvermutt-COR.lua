@@ -1071,15 +1071,6 @@ function init_gear_sets()
     -- feet="Chasseur's Bottes +2",
   }
 
-  sets.midcast.Cure = {
-    neck="Incanter's Torque",
-    ring1="Lebeche Ring",
-    -- ear1="Roundel Earring",
-    -- ear2="Mendi. Earring",
-    -- ring2="Haoma's Ring",
-    -- waist="Bishop's Sash",
-  }
-
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Defense Sets ------------------------------------------
