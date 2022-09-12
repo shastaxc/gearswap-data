@@ -372,7 +372,7 @@ function init_gear_sets()
 
   -- Used when casting blue magic spells, and not sub RDM.
   sets.precast.FC['Blue Magic'] = {
-    ammo="Perfect Lucky Egg",          --  2 [__/__, ___]
+    ammo="Sapience Orb",          --  2 [__/__, ___]
     head=gear.Carmine_D_head,     -- 14 [__/__,  53]
     hands=gear.Leyline_Gloves,    --  5 [__/__,  62]
     legs="Pinga Pants +1",        -- 13 [__/__, 147]
