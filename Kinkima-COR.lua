@@ -904,7 +904,7 @@ function init_gear_sets()
     ear1="Enervating Earring",        -- __,  4,  7/ 7 <__> {_} (__) [__/__, ___]
     -- ear2="Telos Earring",             -- __,  5, 10/10 <__> {_} (__) [__/__, ___]
     ring1="Dingir Ring",              -- 10, __, __/25 <__> {_} (10) [__/__, ___]
-    -- ring2="Ilabrat Ring",             -- 10,  5, __/__ <__> {_} (__) [__/__, ___]
+    ring2="Ilabrat Ring",             -- 10,  5, __/__ <__> {_} (__) [__/__, ___]
     -- back=gear.COR_RA_Cape,            -- 30, 10, 20/20 <__> {_} (__) [10/__, ___]
     -- waist="Yemaya Belt",              --  7,  4, 10/10 <__> {_} (__) [__/__, ___]
     -- Merits/Traits/Gifts                                      (58)
