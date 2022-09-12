@@ -355,7 +355,7 @@ function init_gear_sets()
     -- legs=gear.Adhemar_D_legs,         -- 10/13 [__/__,  75]
     feet="Meg. Jam. +2",              -- 10/__ [ 3/__,  69]
     neck="Commodore Charm +1",        --  3/__ [__/__, ___]
-    -- ear1="Eabani Earring",            -- __/__ [__/__,   8]
+    ear1="Eabani Earring",            -- __/__ [__/__,   8]
     ear2="Odnowa Earring +1",         -- __/__ [ 3/ 5, ___]
     -- ring1="Crepuscular Ring",         --  3/__ [__/__, ___]
     ring2="Defending Ring",           -- __/__ [10/10, ___]
@@ -1196,7 +1196,7 @@ function init_gear_sets()
     legs="Malignance Tights",   --  7/ 7, 150
     feet="Malignance Boots",    --  4/ 4, 150
     neck="Loricate Torque +1",  --  6/ 6, ___
-    -- ear1="Eabani Earring",      -- __/__,   8
+    ear1="Eabani Earring",      -- __/__,   8
     ear2="Odnowa Earring +1",   --  3/ 5, ___
     -- ring1="Chirich Ring +1",    -- __/__, ___
     ring2="Defending Ring",     -- 10/10, ___

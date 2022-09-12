@@ -588,7 +588,7 @@ function init_gear_sets()
     legs="Malignance Tights",     --  7/ 7, 150,  85
     feet="Malignance Boots",      --  4/ 4, 150, 119
     -- neck="Assassin's Gorget +2",  -- __/__, ___,  25
-    -- ear1="Eabani Earring",        -- __/__,   8,  15
+    ear1="Eabani Earring",        -- __/__,   8,  15
     -- ear2="Infused Earring",       -- __/__, ___,  10
     -- ring1="Moonlight Ring",       --  5/ 5, ___, ___
     -- ring2="Chirich Ring +1",      -- __/__, ___, ___
@@ -605,7 +605,7 @@ function init_gear_sets()
     legs=gear.Nyame_B_legs,     --  8/ 8, 150
     feet=gear.Nyame_B_feet,     --  7/ 7, 150
     neck="Loricate Torque +1",  --  6/ 6, ___
-    -- ear1="Eabani Earring",      -- __/__,   8
+    ear1="Eabani Earring",      -- __/__,   8
     -- ear2="Odnowa Earring +1",   --  3/ 5, ___
     -- ring1="Moonlight Ring",     --  5/ 5, ___
     ring2="Defending Ring",     -- 10/10, ___
@@ -731,7 +731,7 @@ function init_gear_sets()
     -- feet=gear.Herc_DW_feet, --5
     -- neck="Assassin's Gorget +2",
     -- ear1="Suppanomimi", --5
-    -- ear2="Eabani Earring", --4
+    ear2="Eabani Earring", --4
     -- ring1="Hetairoi Ring",
     -- ring2="Gere Ring",
     -- back=gear.THF_DW_Cape, --10
@@ -758,7 +758,7 @@ function init_gear_sets()
     -- feet="Plunderer's Poulaines +3",
     -- neck="Assassin's Gorget +2",
     -- ear1="Suppanomimi", --5
-    -- ear2="Eabani Earring", --4
+    ear2="Eabani Earring", --4
     -- ring1="Hetairoi Ring",
     -- ring2="Gere Ring",
     -- back=gear.THF_DW_Cape, --10
@@ -784,7 +784,7 @@ function init_gear_sets()
     -- feet="Plunderer's Poulaines +3",
     -- neck="Assassin's Gorget +2",
     -- ear1="Suppanomimi", --5
-    -- ear2="Eabani Earring", --4
+    ear2="Eabani Earring", --4
     -- ring1="Hetairoi Ring",
     -- ring2="Gere Ring",
     -- back=gear.THF_DW_Cape, --10
