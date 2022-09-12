@@ -515,7 +515,7 @@ function init_gear_sets()
     ring1="Gelatinous Ring +1",       -- __/__ [ 7/-1, ___]
     ring2="Defending Ring",           -- __/__ [10/10, ___]
     -- back=gear.COR_SNP_Cape,           -- 10/__ [10/__, ___]; Respec with PDT
-    -- waist="Flume Belt +1",            -- __/__ [ 4/__, ___]
+    waist="Flume Belt +1",            -- __/__ [ 4/__, ___]
     -- Merits/Traits/Gifts               10/30
     -- Flurry 2                          30/__
     -- 71 Snapshot / 98 Rapid Shot [36 PDT/14 MDT, 330 M.Eva]

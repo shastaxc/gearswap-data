@@ -348,6 +348,7 @@ function init_gear_sets()
     -- body="Luhlaza Jubbah +3"
   }
 
+  -- Used when casting non-blu spells and not sub RDM (rarely used)
   sets.precast.FC = {
     ammo="Sapience Orb",          --  2 [__/__, ___]
     head=gear.Carmine_D_head,     -- 14 [__/__,  53]
@@ -360,13 +361,38 @@ function init_gear_sets()
     ring1="Kishar Ring",          --  4 [__/__, ___]
     ring2="Defending Ring",       -- __ [10/10, ___]
     back=gear.BLU_FC_Cape,        -- 10 [10/__, ___]
+    waist="Flume Belt +1",        -- __ [ 4/__, ___]
+    -- Blue Magic FC trait            5 [__/__, ___]
+    -- 63 FC [37 PDT / 21 MDT, 342 M.Eva]
+
     -- body="Pinga Tunic +1",     -- 15 [__/__, 128]
     -- hands=gear.Leyline_Gloves, --  7 [__/__,  62]
-    -- waist="Flume Belt +1",     -- __ [ 4/__, ___]
-    -- Blue Magic FC trait            5 [__/__, ___]
     -- 80 FC [37 PDT / 21 MDT, 470 M.Eva]
   }
 
+  -- Used when casting blue magic spells, and not sub RDM.
+  sets.precast.FC['Blue Magic'] = {
+    ammo="Perfect Lucky Egg",          --  2 [__/__, ___]
+    head=gear.Carmine_D_head,     -- 14 [__/__,  53]
+    hands=gear.Leyline_Gloves,    --  5 [__/__,  62]
+    legs="Pinga Pants +1",        -- 13 [__/__, 147]
+    feet=gear.Carmine_D_feet,     --  8 [ 4/__,  80]
+    neck="Loricate Torque +1",    -- __ [ 6/ 6, ___]
+    ear1="Loquacious Earring",    --  2 [__/__, ___]
+    ear2="Odnowa Earring +1",     -- __ [ 3/ 5, ___]
+    ring1="Kishar Ring",          --  4 [__/__, ___]
+    ring2="Defending Ring",       -- __ [10/10, ___]
+    back=gear.BLU_FC_Cape,        -- 10 [10/__, ___]
+    waist="Flume Belt +1",        -- __ [ 4/__, ___]
+    -- Blue Magic FC trait            5 [__/__, ___]
+    -- 63 FC [37 PDT / 21 MDT, 342 M.Eva]
+
+    -- body="Hashishin Mintan +2",-- 15 [12/12, 126]
+    -- hands=gear.Leyline_Gloves, --  7 [__/__,  62]
+    -- 80 FC [49 PDT / 33 MDT, 468 M.Eva]
+  }
+
+  -- Always used when sub RDM
   sets.precast.FC.RDM = {
     ammo="Sapience Orb",          --  2 [__/__, ___]
     head=gear.Carmine_D_head,     -- 14 [__/__,  53]
@@ -379,16 +405,14 @@ function init_gear_sets()
     ring1="Gelatinous Ring +1",   -- __ [ 7/-1, ___]
     ring2="Defending Ring",       -- __ [10/10, ___]
     back=gear.BLU_FC_Cape,        -- 10 [10/__, ___]
-    -- body="Pinga Tunic +1",     -- 15 [__/__, 128]
-    -- waist="Flume Belt +1",     -- __ [ 4/__, ___]
+    waist="Flume Belt +1",        -- __ [ 4/__, ___]
     -- Blue Magic FC trait            5 [__/__, ___]
     -- RDM FC traits                 15
+    -- 69 FC [51 PDT / 27 MDT, 392 M.Eva]
+
+    -- body="Pinga Tunic +1",     -- 15 [__/__, 128]
     -- 84 FC [51 PDT / 27 MDT, 520 M.Eva]
   }
-
-  -- 10% cap on Quick Magic
-  sets.QuickMagic = {}
-  sets.QuickMagic.RDM = {}
 
 
   ------------------------------------------------------------------------------------------------
@@ -517,13 +541,15 @@ function init_gear_sets()
   }
 
   sets.midcast['Blue Magic'] = {
+    body="Assimilator's Jubbah +1",     -- 20, __ [__/__,  64]
     legs="Hashishin Tayt +2",           -- 28, 53 [11/11, 152]
     neck="Mirage Stole +2",             -- 20, 25 [__/__, ___]
     ear1="Njordr Earring",              -- 10, __ [__/__, ___]
     ear2="Odnowa Earring +1",           -- __, __ [ 3/ 5, ___]
     ring1="Stikini Ring +1",            --  8, 11 [__/__, ___]
     ring2="Stikini Ring +1",            --  8, 11 [__/__, ___]
-    -- 74 Blue skill, 100 M.Acc [14 PDT/16 MDT, 152 M.Eva]
+    waist="Flume Belt +1",              -- __, __ [ 4/__, ___]
+    -- 94 Blue skill, 100 M.Acc [18 PDT/16 MDT, 216 M.Eva]
 
     -- ammo="Mavi Tathlum",             --  5, __ [__/__, ___]
     -- head="Luhlaza Keffiyeh +3",      -- 17, 37 [__/__,  73]
@@ -531,7 +557,6 @@ function init_gear_sets()
     -- hands=gear.Rawhide_D_hands,      -- 10, 35 [__/__,  37]
     -- feet="Luhlaza Charuqs +3",       -- 12, 36 [__/__,  89]
     -- back=gear.BLU_Adoulin_Cape,      -- 15, 15 [__/__, ___]
-    -- waist="Flume Belt +1",           -- __, __ [ 4/__, ___]
     -- 157 Blue skill, 223 M.Acc [18 PDT/16 MDT, 435 M.Eva]
   }
 
@@ -790,9 +815,9 @@ function init_gear_sets()
     ring1="Defending Ring", --10DT
     ring2="Stikini Ring +1",
     back=gear.BLU_FC_Cape, --10PDT
+    waist="Flume Belt +1", --4PDT
     -- main="Sakpata's Sword", --10DT
     -- ear2="Andoaa Earring",
-    -- waist="Flume Belt +1", --4PDT
   } --36DT, 14PDT
 
   sets.midcast.Refresh = set_combine(sets.midcast.EnhancingDuration, {
