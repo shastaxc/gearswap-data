@@ -142,7 +142,7 @@ function init_gear_sets()
     sub="Khonsu",                     -- __ [ 6/ 6, ___]
     ammo="Incantor Stone",            --  2 [__/__, ___]
     head=gear.Psycloth_D_head,        -- 10 [__/__,  75]
-    body=gear.Merl_FC_body,           -- 14 [ 2/__,  91]
+    body="Pinga Tunic +1",            -- 15 [__/__, 128]
     hands="Academic's Bracers +3",    --  9 [__/__,  57]
     legs="Pinga Pants +1",            -- 13 [__/__, 147]
     feet=gear.Merl_FC_feet,           -- 11 [__/__, 118]
@@ -153,8 +153,9 @@ function init_gear_sets()
     ring2="Defending Ring",           -- __ [10/10, ___]
     back=gear.SCH_FC_Cape,            -- 10 [10/__,  30]
     waist="Carrier Sash",             -- __ [__/__, ___]; Ele Resist+15
+    -- 83 Fast Cast [39 PDT/24 MDT, 555 MEVA]
+
     -- main="Malignance Pole",        -- __ [20/20, ___]
-    -- body="Pinga Tunic +1",         -- 15 [__/__, 128]
     -- feet=gear.Merl_FC_feet,        -- 12 [__/__, 118]
     -- neck="Orunmila's Torque",      --  5 [__/__, ___]
     -- 81 Fast Cast [53 PDT/38 MDT, 555 MEVA]
@@ -176,7 +177,7 @@ function init_gear_sets()
     -- back=gear.SCH_FC_Cape,         -- 10 [10/__,  30]
     -- waist="Carrier's Sash",        -- __ [__/__, ___]; Ele Resist+15
     -- 84 Fast Cast [66 PDT/41 MDT, 620 MEVA]
-  } -- 82 Fast Cast [41 PDT/24 MDT, 518 MEVA]
+  }
 
   -- Grimoire casting bonuses multiply separately from FC, allowing
   -- breaking the normal 80% cast time reduction cap.

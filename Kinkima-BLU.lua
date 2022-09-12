@@ -352,6 +352,7 @@ function init_gear_sets()
   sets.precast.FC = {
     ammo="Sapience Orb",          --  2 [__/__, ___]
     head=gear.Carmine_D_head,     -- 14 [__/__,  53]
+    body="Pinga Tunic +1",        -- 15 [__/__, 128]
     hands=gear.Leyline_Gloves,    --  5 [__/__,  62]
     legs="Pinga Pants +1",        -- 13 [__/__, 147]
     feet=gear.Carmine_D_feet,     --  8 [ 4/__,  80]
@@ -363,9 +364,8 @@ function init_gear_sets()
     back=gear.BLU_FC_Cape,        -- 10 [10/__, ___]
     waist="Flume Belt +1",        -- __ [ 4/__, ___]
     -- Blue Magic FC trait            5 [__/__, ___]
-    -- 63 FC [37 PDT / 21 MDT, 342 M.Eva]
+    -- 78 FC [37 PDT / 21 MDT, 470 M.Eva]
 
-    -- body="Pinga Tunic +1",     -- 15 [__/__, 128]
     -- hands=gear.Leyline_Gloves, --  7 [__/__,  62]
     -- 80 FC [37 PDT / 21 MDT, 470 M.Eva]
   }
@@ -396,6 +396,7 @@ function init_gear_sets()
   sets.precast.FC.RDM = {
     ammo="Sapience Orb",          --  2 [__/__, ___]
     head=gear.Carmine_D_head,     -- 14 [__/__,  53]
+    body="Pinga Tunic +1",        -- 15 [__/__, 128]
     hands=gear.Nyame_B_hands,     -- __ [ 7/ 7, 112]
     legs="Pinga Pants +1",        -- 13 [__/__, 147]
     feet=gear.Carmine_D_feet,     --  8 [ 4/__,  80]
@@ -408,9 +409,6 @@ function init_gear_sets()
     waist="Flume Belt +1",        -- __ [ 4/__, ___]
     -- Blue Magic FC trait            5 [__/__, ___]
     -- RDM FC traits                 15
-    -- 69 FC [51 PDT / 27 MDT, 392 M.Eva]
-
-    -- body="Pinga Tunic +1",     -- 15 [__/__, 128]
     -- 84 FC [51 PDT / 27 MDT, 520 M.Eva]
   }
 
@@ -749,13 +747,13 @@ function init_gear_sets()
   })
 
   sets.midcast['Blue Magic']['White Wind'] = set_combine(sets.midcast['Blue Magic'].Healing, {
+    body="Pinga Tunic +1",
     legs="Pinga Pants +1",
     feet=gear.Nyame_B_feet,
     ear2="Odnowa Earring +1",
     ring1="Gelatinous Ring +1",
     -- ammo="Egoist's Tathlum",
     -- head=gear.Telchine_Cure_head,
-    -- body="Pinga Tunic +1",
     -- hands=gear.Telchine_Cure_hands,
     -- neck="Unmoving Collar +1",
     -- ear1="Tuisto Earring",
