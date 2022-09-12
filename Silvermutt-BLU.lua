@@ -1315,19 +1315,6 @@ end
 function job_precast(spell, action, spellMap, eventArgs)
   silibs.precast_hook(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
-  
-  -- Use special FC set if subbing RDM
-  if player.sub_job == 'RDM' and spell.type == 'Magic' then
-    local customEquipSet = select_specific_set(sets.precast.FC, spell, spellMap)
-    -- Add optional casting mode
-    if customEquipSet[state.CastingMode.current] then
-      customEquipSet = customEquipSet[state.CastingMode.current]
-    end
-    if customEquipSet['RDM'] then
-      equip(customEquipSet['RDM'])
-      eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
-    end
-  end
 
   if unbridled_spells:contains(spell.english) and not state.Buff['Unbridled Learning'] then
     eventArgs.cancel = true

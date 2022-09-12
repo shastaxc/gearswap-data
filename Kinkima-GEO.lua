@@ -132,47 +132,20 @@ function init_gear_sets()
 	-- Precast sets
 	--------------------------------------
 
-	-- Precast sets to enhance JAs
-	sets.precast.JA.Bolster = {
-    body="Bagua Tunic +1",
-  }
-	sets.precast.JA['Life Cycle'] = {
-    body="Geomancy Tunic +1",
-    back=gear.GEO_Idle_Cape,
-    -- body="Geomancy Tunic +3",
-  }
-	sets.precast.JA['Radial Arcana'] = {
-    feet="Bagua Sandals +1",
-  }
-	sets.precast.JA['Mending Halation'] = {
-    legs="Bagua Pants +1",
-  }
-	sets.precast.JA['Full Circle'] = {
-    head="Azimuth Hood +1",
-    hands="Bagua Mitaines +1",
-  }
-  sets.precast.JA['Concentric Pulse'] = {
-    head="Bagua Galero +1",
-  }
-
-	-- Relic hat for Blaze of Glory HP increase.
-	sets.buff['Blaze of Glory'] = {}
-
 	-- Fast cast sets for spells
 	sets.precast.FC = {
-    range="Dunna",                  --  3
+    range="Dunna",                  --  3 [__/__, ___] { 5, __}
     ammo=empty,
-    head=gear.Merl_FC_head,         -- 13
-    hands=gear.Merl_FC_hands,       --  5
-    legs="Geomancy Pants +2",       -- 13
-    neck="Orunmila's Torque",       --  5
-    ear1="Loquac. Earring",         --  2
-    ear2="Malignance Earring",      --  4
-    ring1="Kishar Ring",            --  4
-    ring2="Prolix Ring",            --  2
-    back=gear.GEO_FC_Cape,          -- 10
-    -- 61 FC
-    
+    body=gear.Merl_FC_body,         -- 14 [ 2/__,  91] {__, __}
+    feet=gear.Merl_FC_feet,         -- 11 [__/__, 118] {__, __}
+    neck="Loricate Torque +1",      -- __ [ 6/ 6, ___] {__, __}
+    ear1="Loquacious Earring",      --  2 [__/__, ___] {__, __}
+    ear2="Malignance Earring",      --  4 [__/__, ___] {__, __}
+    ring1="Defending Ring",         -- __ [10/10, ___] {__, __}
+    ring2="Kishar Ring",            --  4 [__/__, ___] {__, __}
+    waist="Embla Sash",             --  5 [__/__, ___] {__, __}
+    -- 43 FC
+
     -- Ideal:
     -- Assume Idris                 -- __ [__/__, ___] {25, __}
     -- Assume Genmei Shield         -- __ [10/__, ___] {__, __}
@@ -194,6 +167,7 @@ function init_gear_sets()
   }
 
 	sets.precast.FC.RDM = set_combine(sets.precast.FC, {
+    ammo="Perfect Lucky Egg"
     -- Assume Idris                 -- __ [__/__, ___] {25, __}
     -- Assume Genmei Shield         -- __ [10/__, ___] {__, __}
     -- range="Dunna",               --  3 [__/__, ___] { 5, __}
@@ -223,6 +197,40 @@ function init_gear_sets()
     main="Daybreak",
     sub="Genmei Shield",
   })
+
+
+  -----------------------------------------------------------------------------------------------
+  ---------------------------------------- Job Abilities ----------------------------------------
+  -----------------------------------------------------------------------------------------------
+
+	-- Precast sets to enhance JAs
+	sets.precast.JA.Bolster = {
+    -- body="Bagua Tunic +1",
+  }
+	sets.precast.JA['Life Cycle'] = {
+    -- body="Geomancy Tunic +3",
+    -- back=gear.GEO_Idle_Cape,
+  }
+	sets.precast.JA['Radial Arcana'] = {
+    -- feet="Bagua Sandals +1",
+  }
+	sets.precast.JA['Mending Halation'] = {
+    -- legs="Bagua Pants +1",
+  }
+	sets.precast.JA['Full Circle'] = {
+    -- head="Azimuth Hood +1",
+    -- hands="Bagua Mitaines +1",
+  }
+  sets.precast.JA['Concentric Pulse'] = {
+    -- head="Bagua Galero +1",
+  }
+
+	-- Relic hat for Blaze of Glory HP increase.
+	sets.buff['Blaze of Glory'] = {}
+
+  ----------------------------------------------------------------------------------------------
+  ---------------------------------------- Weaponskills ----------------------------------------
+  ----------------------------------------------------------------------------------------------
 
 	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined

@@ -539,6 +539,7 @@ function init_gear_sets()
   }
 
   sets.midcast['Blue Magic'] = {
+    ammo="Mavi Tathlum",                --  5, __ [__/__, ___]
     body="Assimilator's Jubbah +1",     -- 20, __ [__/__,  64]
     legs="Hashishin Tayt +2",           -- 28, 53 [11/11, 152]
     neck="Mirage Stole +2",             -- 20, 25 [__/__, ___]
@@ -547,9 +548,8 @@ function init_gear_sets()
     ring1="Stikini Ring +1",            --  8, 11 [__/__, ___]
     ring2="Stikini Ring +1",            --  8, 11 [__/__, ___]
     waist="Flume Belt +1",              -- __, __ [ 4/__, ___]
-    -- 94 Blue skill, 100 M.Acc [18 PDT/16 MDT, 216 M.Eva]
+    -- 99 Blue skill, 100 M.Acc [18 PDT/16 MDT, 216 M.Eva]
 
-    -- ammo="Mavi Tathlum",             --  5, __ [__/__, ___]
     -- head="Luhlaza Keffiyeh +3",      -- 17, 37 [__/__,  73]
     -- body="Assimilator's Jubbah +3",  -- 24, __ [__/__,  84]
     -- hands=gear.Rawhide_D_hands,      -- 10, 35 [__/__,  37]
@@ -772,8 +772,8 @@ function init_gear_sets()
 
   sets.midcast['Blue Magic']['Occultation'] = set_combine(sets.midcast['Blue Magic'], {
     hands="Hashishin Bazubands +2",
+    ear1="Njordr Earring",
     -- neck="Incanter's torque",
-    -- ear1="Njordr Earring",
     -- ear2="Enchanter's Earring +1",
     -- ring2="Weatherspoon Ring",
   }) -- 1 shadow per 50 skill
@@ -1258,19 +1258,6 @@ end
 function job_precast(spell, action, spellMap, eventArgs)
   silibs.precast_hook(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
-  
-  -- Use special FC set if subbing RDM
-  if player.sub_job == 'RDM' and spell.type == 'Magic' then
-    local customEquipSet = select_specific_set(sets.precast.FC, spell, spellMap)
-    -- Add optional casting mode
-    if customEquipSet[state.CastingMode.current] then
-      customEquipSet = customEquipSet[state.CastingMode.current]
-    end
-    if customEquipSet['RDM'] then
-      equip(customEquipSet['RDM'])
-      eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
-    end
-  end
 
   if unbridled_spells:contains(spell.english) and not state.Buff['Unbridled Learning'] then
     eventArgs.cancel = true
