@@ -347,6 +347,7 @@ function init_gear_sets()
     -- body="Luhlaza Jubbah +3"
   }
 
+  -- Used when casting non-blu spells and not sub RDM (rarely used)
   sets.precast.FC = {
     ammo="Sapience Orb",          --  2 [__/__, ___]
     hands=gear.Leyline_Gloves,    --  7 [__/__,  62]
@@ -358,13 +359,38 @@ function init_gear_sets()
     ring2="Defending Ring",       -- __ [10/10, ___]
     back=gear.BLU_FC_Cape,        -- 10 [10/__, ___]
     waist="Flume Belt +1",        -- __ [ 4/__, ___]
+    -- Blue Magic FC trait            5 [__/__, ___]
+    -- 38 FC [37 PDT / 21 MDT, 142 M.Eva]
+
     -- head=gear.Carmine_D_head,  -- 14 [__/__,  53]
     -- legs="Pinga Pants +1",     -- 13 [__/__, 147]
     -- body="Pinga Tunic +1",     -- 15 [__/__, 128]
-    -- Blue Magic FC trait            5 [__/__, ___]
     -- 80 FC [37 PDT / 21 MDT, 470 M.Eva]
   }
 
+  -- Used when casting blue magic spells, and not sub RDM.
+  sets.precast.FC['Blue Magic'] = {
+    ammo="Sapience Orb",          --  2 [__/__, ___]
+    head=gear.Carmine_D_head,     -- 14 [__/__,  53]
+    hands=gear.Leyline_Gloves,    --  5 [__/__,  62]
+    legs="Pinga Pants +1",        -- 13 [__/__, 147]
+    feet=gear.Carmine_D_feet,     --  8 [ 4/__,  80]
+    neck="Loricate Torque +1",    -- __ [ 6/ 6, ___]
+    ear1="Loquacious Earring",    --  2 [__/__, ___]
+    ear2="Odnowa Earring +1",     -- __ [ 3/ 5, ___]
+    ring1="Kishar Ring",          --  4 [__/__, ___]
+    ring2="Defending Ring",       -- __ [10/10, ___]
+    back=gear.BLU_FC_Cape,        -- 10 [10/__, ___]
+    waist="Flume Belt +1",        -- __ [ 4/__, ___]
+    -- Blue Magic FC trait            5 [__/__, ___]
+    -- 63 FC [37 PDT / 21 MDT, 342 M.Eva]
+
+    -- body="Hashishin Mintan +2",-- 15 [12/12, 126]
+    -- hands=gear.Leyline_Gloves, --  7 [__/__,  62]
+    -- 80 FC [49 PDT / 33 MDT, 468 M.Eva]
+  }
+
+  -- Always used when sub RDM
   sets.precast.FC.RDM = {
     ammo="Sapience Orb",          --  2 [__/__, ___]
     hands=gear.Nyame_B_hands,     -- __ [ 7/ 7, 112]
@@ -376,17 +402,15 @@ function init_gear_sets()
     ring2="Defending Ring",       -- __ [10/10, ___]
     back=gear.BLU_FC_Cape,        -- 10 [10/__, ___]
     waist="Flume Belt +1",        -- __ [ 4/__, ___]
+    -- Blue Magic FC trait            5 [__/__, ___]
+    -- RDM FC traits                 15
+    -- 42 FC [51 PDT / 27 MDT, 192 M.Eva]
+
     -- head=gear.Carmine_D_head,  -- 14 [__/__,  53]
     -- legs="Pinga Pants +1",     -- 13 [__/__, 147]
     -- body="Pinga Tunic +1",     -- 15 [__/__, 128]
-    -- Blue Magic FC trait            5 [__/__, ___]
-    -- RDM FC traits                 15
     -- 84 FC [51 PDT / 27 MDT, 520 M.Eva]
   }
-
-  -- 10% cap on Quick Magic
-  sets.QuickMagic = {}
-  sets.QuickMagic.RDM = {}
 
 
   ------------------------------------------------------------------------------------------------
