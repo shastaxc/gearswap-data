@@ -374,6 +374,7 @@ function init_gear_sets()
   sets.precast.FC['Blue Magic'] = {
     ammo="Sapience Orb",          --  2 [__/__, ___]
     head=gear.Carmine_D_head,     -- 14 [__/__,  53]
+    body="Hashishin Mintan +2",   -- 15 [12/12, 126]
     hands=gear.Leyline_Gloves,    --  5 [__/__,  62]
     legs="Pinga Pants +1",        -- 13 [__/__, 147]
     feet=gear.Carmine_D_feet,     --  8 [ 4/__,  80]
@@ -385,9 +386,8 @@ function init_gear_sets()
     back=gear.BLU_FC_Cape,        -- 10 [10/__, ___]
     waist="Flume Belt +1",        -- __ [ 4/__, ___]
     -- Blue Magic FC trait            5 [__/__, ___]
-    -- 63 FC [37 PDT / 21 MDT, 342 M.Eva]
+    -- 78 FC [49 PDT / 33 MDT, 468 M.Eva]
 
-    -- body="Hashishin Mintan +2",-- 15 [12/12, 126]
     -- hands=gear.Leyline_Gloves, --  7 [__/__,  62]
     -- 80 FC [49 PDT / 33 MDT, 468 M.Eva]
   }
