@@ -1131,11 +1131,8 @@ function init_gear_sets()
     hands="Arbatel Bracers",
     -- hands="Arbatel Bracers +1",
   }
-  sets.buff['Immanence'] = {
-    hands="Arbatel Bracers",
-    -- hands="Arbatel Bracers +1",
-    -- back="Lugh's Cape",
-  }
+  -- Cap SIRD and DT
+  sets.buff['Immanence'] = sets.midcast.CureNormal
   sets.buff['Penury'] = {
     legs="Arbatel Pants",
     -- legs="Arbatel Pants +1",
