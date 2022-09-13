@@ -167,7 +167,6 @@ function init_gear_sets()
   }
 
 	sets.precast.FC.RDM = set_combine(sets.precast.FC, {
-    ammo="Perfect Lucky Egg"
     -- Assume Idris                 -- __ [__/__, ___] {25, __}
     -- Assume Genmei Shield         -- __ [10/__, ___] {__, __}
     -- range="Dunna",               --  3 [__/__, ___] { 5, __}
