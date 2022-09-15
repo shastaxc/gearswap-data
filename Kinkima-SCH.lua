@@ -1030,7 +1030,7 @@ function init_gear_sets()
     ammo="Staunch Tathlum +1",      --  3/ 3, ___ [__]; Resist Status+11
     head=gear.Nyame_B_head,         --  7/ 7, 123 [__]
     body="Shamash Robe",            -- 10/__, 106 [ 3]; Resist Silence+90
-    hands=gear.Nyame_B_hands,       --  7/ 7, 112 [__]
+    hands="Volte Gloves",           -- __/__,  96 [ 1]
     legs="Assiduity Pants +1",      -- __/__, 107 [ 2]
     feet="Volte Gaiters",           -- __/__, 142 [ 1]
     neck="Loricate Torque +1",      --  6/ 6, ___ [__]; DEF+60
@@ -1040,9 +1040,8 @@ function init_gear_sets()
     ring2="Defending Ring",         -- 10/10, ___ [__]
     back=gear.SCH_FC_Cape,          -- 10/__,  30 [__]
     waist="Carrier's Sash",         -- __/__, ___ [__]; Ele Resist+15
-    -- hands="Volte Gloves",        -- __/__,  96 [ 1]
     -- 52 PDT / 35 MDT, 584 M.Eva [10 Refresh]
-  } -- 59 PDT / 42 MDT, 620 M.Eva [9 Refresh]
+  }
   sets.passive_refresh.sub50 = {
     waist="Fucho-no-Obi",
   }
@@ -1062,9 +1061,11 @@ function init_gear_sets()
     ring2="Defending Ring",             -- 10/10, ___ [__, __]
     back=gear.SCH_FC_Cape,              -- 10/__,  30 [__, __]
     waist="Embla Sash",                 -- __/__, ___ [ 5, __]
+    -- 60 PDT / 35 MDT, 594 M.Eva [16 Sublimation, 2 Refresh]
+
     -- back="Archon Cape",              -- __/__, ___ [__, __]
     -- 50 PDT / 35 MDT, 564 M.Eva [16 Sublimation, 2 Refresh]
-  } -- 60 PDT / 35 MDT, 594 M.Eva [16 Sublimation, 2 Refresh]
+  }
   sets.Sublimation.Refresh = {
     main="Mpaca's Staff",               -- __/__, ___ [__,  2]
     sub="Khonsu",                       --  6/ 6, ___ [__, __]
@@ -1082,7 +1083,7 @@ function init_gear_sets()
     back=gear.SCH_FC_Cape,              -- 10/__,  30 [__, __]
     waist="Embla Sash",                 -- __/__, ___ [ 5, __]
     -- 49 PDT / 42 MDT, 594 M.Eva [15 Sublimation, 5 Refresh]
-  } -- 49 PDT / 42 MDT, 594 M.Eva [15 Sublimation, 5 Refresh]
+  }
 
   sets.idle = sets.HeavyDef
   sets.idle.Sublimation = set_combine(sets.idle, sets.Sublimation)

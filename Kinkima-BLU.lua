@@ -967,7 +967,7 @@ function init_gear_sets()
   } -- 0 DW, 83 STP, 307 Acc <7 DA, 5 TA, 2 QA> [51 PDT/41 MDT, 674 M.Eva]
   sets.engaged.Acc = set_combine(sets.engaged, {
     ear2="Cessance Earring",      -- __,  3,  6 < 3, __, __> [__/__, ___]
-    waist="Olseni Belt",          -- __,  3, 20 <__, __, __> [__/__, ___]
+    -- waist="Olseni Belt",          -- __,  3, 20 <__, __, __> [__/__, ___]
     -- ammo="Voluspa Tathlum",    -- __, __, 10 <__, __, __> [__/__, ___]
     -- ring1="Chirich Ring +1",   -- __,  6, 10 <__, __, __> [__/__, ___]
   }) -- 0 DW, 84 STP, 361 Acc <4 DA, 0 TA, 0 QA> [51 PDT/41 MDT, 674 M.Eva]
@@ -1095,7 +1095,7 @@ function init_gear_sets()
   }) -- 11 DW, 82 STP, 305 Acc <6 DA, 3 TA, 0 QA> [51 PDT/41 MDT, 682 M.Eva]
   sets.engaged.DW.SuperHaste.Acc = set_combine(sets.engaged.DW.SuperHaste, {
     ear1="Cessance Earring",      -- __,  3,  6 < 3, __, __> [__/__, ___]
-    waist="Olseni Belt",          -- __,  3, 20 <__, __, __> [__/__, ___]
+    -- waist="Olseni Belt",          -- __,  3, 20 <__, __, __> [__/__, ___]
     -- ammo="Voluspa Tathlum",    -- __, __, 10 <__, __, __> [__/__, ___]
     -- ear1="Telos Earring",      -- __,  5, 10 < 1, __, __> [__/__, ___]
     -- ring1="Chirich Ring +1",   -- __,  6, 10 <__, __, __> [__/__, ___]
