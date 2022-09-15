@@ -701,8 +701,8 @@ function init_gear_sets()
 
   sets.precast.WS['Evisceration'] = {
     -- head=gear.Adhemar_B_head,
-    -- hands="Mummu Wrists +2",
-    -- feet="Mummu Gamash. +2",
+    hands="Mummu Wrists +2",
+    feet="Mummu Gamash. +2",
     -- neck="Fotia Gorget",
     -- ear1="Odr Earring",
     ear2="Moonshade Earring",
@@ -951,7 +951,7 @@ function init_gear_sets()
     ammo=gear.RAbullet,               -- __, __, 20/__ <__> {_} (__) [__/__, ___]
     head="Ikenga's Hat",              -- 29,  8, 50/65 <__> {4} (__) [__/__,  96]
     body="Ikenga's Vest",             -- 39, 11, 50/65 <__> {7} (__) [__/__, 112]
-    -- hands="Mummu Wrists +2",          -- 22, __, 43/__ < 6> {_} (__) [__/__,  43]
+    hands="Mummu Wrists +2",          -- 22, __, 43/__ < 6> {_} (__) [__/__,  43]
     -- legs="Mummu Kecks +2",            -- 45, __, 45/__ < 7> {_} (__) [ 5/ 5, 107]
     -- feet="Oshosi Leggings +1",        -- 56, __, 43/__ <10> {_} (__) [__/__, 131]
     -- neck="Iskur Gorget",              -- __,  8, 30/30 <__> {_} (__) [__/__, ___]
@@ -972,7 +972,7 @@ function init_gear_sets()
     ammo=gear.RAbullet,               -- __, __, 20/__ <__> {_} (__) [__/__, ___]
     head="Malignance Chapeau",        -- 33,  8, 50/__ <__> {3} (__) [ 6/ 6, 123]
     body="Malignance Tabard",         -- 42, 11, 50/__ <__> {6} (__) [ 9/ 9, 139]
-    -- hands="Mummu Wrists +2",          -- 22, __, 43/__ < 6> {_} (__) [__/__,  43]
+    hands="Mummu Wrists +2",          -- 22, __, 43/__ < 6> {_} (__) [__/__,  43]
     -- legs="Mummu Kecks +2",            -- 45, __, 45/__ < 7> {_} (__) [ 5/ 5, 107]
     -- feet="Oshosi Leggings +1",        -- 56, __, 43/__ <10> {_} (__) [__/__, 131]
     -- neck="Iskur Gorget",              -- __,  8, 30/30 <__> {_} (__) [__/__, ___]
@@ -1042,7 +1042,7 @@ function init_gear_sets()
     ammo=gear.RAbullet,               -- __, __, 20/__ <__> {_} (__) [__/__, ___] (__, __) (__, __)
     -- head="Oshosi Mask +1",            -- 44, __, 45/__ <__> {_} (__) [__/__,  90] ( 6, 25) ( 5, 13)
     -- body="Chasseur's Frac +1",        -- 34, __, 22/22 <__> {_} (__) [__/__,  69] (__, __) (12, __)
-    -- hands="Mummu Wrists +2",          -- 22, __, 43/__ < 6> {_} (__) [__/__,  43] (__, __) (__, __)
+    hands="Mummu Wrists +2",          -- 22, __, 43/__ < 6> {_} (__) [__/__,  43] (__, __) (__, __)
     -- legs="Mummu Kecks +2",            -- 45, __, 45/__ < 7> {_} (__) [ 5/ 5, 107] (__, __) (__, __)
     -- feet="Oshosi Leggings +1",        -- 56, __, 43/__ <10> {_} (__) [__/__, 131] ( 4, __) ( 3, __)
     -- neck="Iskur Gorget",              -- __,  8, 30/30 <__> {_} (__) [__/__, ___] (__, __) (__, __)
@@ -1065,7 +1065,7 @@ function init_gear_sets()
     ammo=gear.RAbullet,               -- __, __, 20/__ <__> {_} (__) [__/__, ___] (__, __) (__, __)
     -- head="Oshosi Mask +1",            -- 44, __, 45/__ <__> {_} (__) [__/__,  90] ( 6, 25) ( 5, 13)
     -- body="Chasseur's Frac +1",        -- 34, __, 22/22 <__> {_} (__) [__/__,  69] (__, __) (12, __)
-    -- hands="Mummu Wrists +2",          -- 22, __, 43/__ < 6> {_} (__) [__/__,  43] (__, __) (__, __)
+    hands="Mummu Wrists +2",          -- 22, __, 43/__ < 6> {_} (__) [__/__,  43] (__, __) (__, __)
     -- legs="Mummu Kecks +2",            -- 45, __, 45/__ < 7> {_} (__) [ 5/ 5, 107] (__, __) (__, __)
     -- feet="Oshosi Leggings +1",        -- 56, __, 43/__ <10> {_} (__) [__/__, 131] ( 4, __) ( 3, __)
     neck="Loricate Torque +1",        -- __, __, __/__ <__> {_} (__) [ 6/ 6, ___] (__, __) (__, __)
@@ -1407,7 +1407,7 @@ function init_gear_sets()
     -- neck="Combatant's Torque",
   })
   sets.engaged.DW.MidAcc.MidHaste = set_combine(sets.engaged.DW.LowAcc.MidHaste, {
-    legs="Meg. Chausses +2",
+    -- legs="Meg. Chausses +2",
     ear2="Cessance Earring",          -- __,  3,  6 < 3, __, __> [__/__, ___]
     -- ear2="Telos Earring",             -- __,  5, 10 < 1, __, __> [__/__, ___]
     -- waist="Kentarch Belt +1",         -- __,  5, 14 < 3, __, __> [__/__, ___]
@@ -1448,7 +1448,7 @@ function init_gear_sets()
     -- neck="Combatant's Torque",
   })
   sets.engaged.DW.MidAcc.HighHaste = set_combine(sets.engaged.DW.LowAcc.HighHaste, {
-    legs="Meg. Chausses +2",
+    -- legs="Meg. Chausses +2",
     ear2="Cessance Earring",          -- __,  3,  6 < 3, __, __> [__/__, ___]
     -- ear2="Telos Earring",             -- __,  5, 10 < 1, __, __> [__/__, ___]
     -- waist="Kentarch Belt +1",         -- __,  5, 14 < 3, __, __> [__/__, ___]
@@ -1490,7 +1490,7 @@ function init_gear_sets()
     -- waist="Kentarch Belt +1",         -- __,  5, 14 < 3, __, __> [__/__, ___]
   })
   sets.engaged.DW.MidAcc.SuperHaste = set_combine(sets.engaged.DW.LowAcc.SuperHaste, {
-    legs="Meg. Chausses +2",
+    -- legs="Meg. Chausses +2",
     ear1="Cessance Earring",          -- __,  3,  6 < 3, __, __> [__/__, ___]
     -- head="Carmine Mask +1",
     -- neck="Combatant's Torque",
