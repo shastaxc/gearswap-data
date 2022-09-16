@@ -1245,13 +1245,9 @@ function init_gear_sets()
     main="Ternion Dagger +1",
     sub="Nusku Shield",
   }
-  sets.WeaponSet['PhysRA NoBuff'] = {
-    -- main="Perun +1",
-    sub="Nusku Shield",
-  }
   sets.WeaponSet['Melee'] = {
     main="Naegling",
-    sub="Ternion Dagger +1",
+    sub={name="Ternion Dagger +1",priority=1},
   }
   sets.WeaponSet['CritRA'] = {
     -- main="Oneiros Knife",
