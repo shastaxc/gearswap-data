@@ -496,17 +496,21 @@ function init_gear_sets()
 
   sets.precast.WS['Sanguine Blade'] = {
     ammo="Pemphredo Tathlum",
+    head="Pixie Hairpin +1",
+    body=gear.Nyame_B_body,
+    hands=gear.Nyame_B_hands,
+    legs=gear.Nyame_B_legs,
+    feet=gear.Nyame_B_feet,
     neck="Baetyl Pendant",
     ear1="Moonshade Earring",
     ear2="Regal Earring",
+    ring2="Archon Ring",
     back=gear.BLU_FC_Cape,
-    -- head="Pixie Hairpin +1",
     -- body="Amalric Doublet +1",
     -- hands="Amalric Gages +1",
     -- legs="Luhlaza Shalwar +3",
     -- feet="Amalric Nails +1",
     -- ring1="Epaminondas's Ring",
-    -- ring2="Archon Ring",
     -- waist="Sacro Cord",
   }
 

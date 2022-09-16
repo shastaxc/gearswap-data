@@ -391,25 +391,25 @@ function init_gear_sets()
 
   sets.precast.WS['Omniscience'] = set_combine(sets.precast.WS, {
     ammo="Pemphredo Tathlum",
+    head="Pixie Hairpin +1",
     body="Pedagogy Gown +3",
     legs="Pedagogy Pants +3",
     ear1="Malignance Earring",
     ear2="Regal Earring",
+    ring2="Archon Ring",
     back=gear.SCH_MAB_Cape,
-    -- head="Pixie Hairpin +1",
     -- feet="Merlinic Crackows",
-    -- ring2="Archon Ring",
     -- waist="Sacro Cord",
   })
 
   -- Max MP
   sets.precast.WS['Myrkr'] = {
     ammo="Strobilus",               --  45
+    head="Pixie Hairpin +1",        -- 120
     body="Academic's Gown +1",      -- 109
     legs=gear.Psycloth_D_legs,      -- 109
     ear2="Etiolation Earring",      --  50
     back=gear.SCH_MP_Cape,          --  80
-    -- head="Pixie Hairpin +1",       -- 120
     -- body="Academic's Gown +3",     -- 173
     -- hands="Thrift Gloves +1 ",     --  99
     -- feet=gear.Psycloth_A_feet,     -- 124
@@ -1123,7 +1123,7 @@ function init_gear_sets()
     -- 337 INT, 396 MAcc, 293 MAB, 255 MAccSk, 594 MDmg, 41 MB Dmg%, 14 MB2 Dmg%
   }
   sets.midcast.DarkHelix = set_combine(sets.midcast.Helix, {
-    -- ring1="Archon Ring",
+    ring1="Archon Ring",
   })
   sets.midcast.LightHelix = set_combine(sets.midcast.Helix, {
     -- main="Daybreak",
@@ -1203,8 +1203,8 @@ function init_gear_sets()
     waist="Embla Sash",                 -- __/__, ___ [ 5, __]
     -- 60 PDT / 35 MDT, 594 M.Eva [16 Sublimation, 2 Refresh]
 
-    -- back="Archon Cape",              -- __/__, ___ [__, __]
-    -- 50 PDT / 35 MDT, 564 M.Eva [16 Sublimation, 2 Refresh]
+    -- ring1="Shadow Ring",             -- __/__, ___ [__, __]; Annuls magic dmg
+    -- 53 PDT / 36 MDT, 564 M.Eva [16 Sublimation, 2 Refresh]
   }
   sets.Sublimation.Refresh = {
     main="Mpaca's Staff",               -- __/__, ___ [__,  2]

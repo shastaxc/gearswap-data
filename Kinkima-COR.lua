@@ -667,9 +667,9 @@ function init_gear_sets()
   })
 
   sets.precast.WS['Leaden Salute'] = set_combine(sets.precast.WS['Wildfire'], {
-    -- head="Pixie Hairpin +1",
+    head="Pixie Hairpin +1",
     ear2="Moonshade Earring",
-    -- ring1="Archon Ring",
+    ring1="Archon Ring",
   })
   sets.precast.WS['Leaden Salute'].MaxTP = set_combine(sets.precast.WS['Leaden Salute'], {
     ear2="Novio Earring",
