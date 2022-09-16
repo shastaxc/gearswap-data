@@ -1083,8 +1083,8 @@ function init_gear_sets()
   sets.midcast.Kaustra.Resistant = sets.midcast['Elemental Magic'].Resistant
 
   sets.midcast.Helix = {
-    main=gear.Akademos_C,             -- 27, 25, 53, 228, 217, 10, __
-    sub="Enki Strap",                 -- 10, 10, __, ___, ___, __, __
+    main="Bunzi's Rod",               -- 15, 45, 55, 255, 248, 10, __
+    sub="Culminus",                   -- __, __, 20, ___,  75, __, __
     ammo="Pemphredo Tathlum",         --  4,  8,  4, ___, ___, __, __
     head="Pedagogy Mortarboard +3",   -- 39, 37, 49, ___, ___, __,  4
     body="Mallquis Saio +2",          -- 54, 46, 15, ___,  58, __, __
@@ -1098,10 +1098,8 @@ function init_gear_sets()
     ring2="Metamorph Ring +1",        -- 16, 15, __, ___, ___, __, __
     back=gear.SCH_MAB_Cape,           -- 30, 20, 10, ___,  20, __, __
     waist="Acuity Belt +1",           -- 23, 15, __, ___, ___, __, __
-    -- 358 INT, 343 MAcc, 206 MAB, 228 MAccSk, 421 MDmg, 31 MB Dmg%, 4 MB2 Dmg%
+    -- 336 INT, 353 MAcc, 228 MAB, 255 MAccSk, 527 MDmg, 31 MB Dmg%, 4 MB2 Dmg%
 
-    -- main="Bunzi's Rod",            -- 15, 45, 55, 255, 248, 10, __
-    -- sub="Culminus",                -- __, __, 20, ___,  75, __, __
     -- waist="Skrymir Cord",          -- __,  5,  5, ___,  30, __, __
     -- 313 INT, 343 MAcc, 233 MAB, 255 MAccSk, 557 MDmg, 31 MB Dmg%, 4 MB2 Dmg%
 
