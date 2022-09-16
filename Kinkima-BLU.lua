@@ -728,7 +728,7 @@ function init_gear_sets()
 
   sets.midcast['Blue Magic'].Healing = { --Focus cure potency
     main="Bunzi's Rod",               -- 30, 15, __ [__/__, ___]
-    sub=empty,
+    sub="Sors Shield",                --  3, __, __ [__/__, ___]
     ammo="Staunch Tathlum +1",        -- __, __, 11 [ 3/ 3, ___]
     head=gear.Nyame_B_head,           -- __, 26, __ [ 7/ 7, 123]
     body="Shamash Robe",              -- __, 40, __ [10/__, 106]
@@ -743,8 +743,6 @@ function init_gear_sets()
     back=gear.BLU_FC_Cape,            -- __, 30, __ [10/__, ___]
     waist="Sanctuary Obi +1",         -- __, __, 10 [__/__, ___]
     -- Merits                            __, __, 10 [__/__, ___]
-
-    -- sub="Sors Shield",             --  3, __, __ [__/__, ___]
     -- hands=gear.Telchine_ENH_hands, -- 18, 33, __ [__/__,  62]
     -- legs="Carmine Cuisses +1",     -- __, 16, 20 [__/__,  80]
     -- ring2="Freke Ring",            -- __, __, 10 [__/__, ___]
