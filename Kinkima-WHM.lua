@@ -153,7 +153,7 @@ function init_gear_sets()
   } -- 80 Fast Cast [62PDT/49MDT, 565 MEVA]
 
   -- 10% cap on Quick Magic
-  sets.QuickMagic = {
+  sets.precast.FC.QuickMagic = {
     main="Malignance Pole",           -- __ [20/20, ___] __
     sub="Mensch Strap +1",            -- __ [ 5/__, ___] __
     ammo="Impatiens",                 -- __ [__/__, ___]  2
@@ -169,12 +169,11 @@ function init_gear_sets()
     back=gear.WHM_FC_Cape,            -- 10 [10/__,  20] __
     waist="Witful Belt",              --  3 [__/__, ___]  3
     -- ring1="Lebeche Ring",          -- __ [__/__, ___]  2
-    -- hands=gear.Gende_SongFC_hands, --  7 [ 4/__,  37]
+    -- hands=gear.Gende_SongFC_hands, --  7 [ 4/__,  37] __
     -- 80 Fast Cast [49PDT/40MDT, 565 MEVA] 8 Quick Magic
   } -- 80 Fast Cast [48PDT/42MDT, 565 MEVA] 6 Quick Magic
 
   -- Include divine caress gear in case of quick magic proc
-  -- TODO: Add yagrush
   sets.precast.FC.QuickStatusRemoval = {
     main="Yagrush",                   -- __ [__/__, ___] __, __
     sub="Genmei Shield",              -- __ [10/__, ___] __, __
@@ -198,8 +197,6 @@ function init_gear_sets()
     -- 98 Fast Cast [72PDT/55MDT, 603 MEVA] 11 Quick Magic, 4 Divine Caress
   }
 
-  sets.precast.FC.Arise = sets.QuickMagic
-  
   sets.precast.FC.Dispelga = set_combine(sets.precast.FC, {
     -- main="Daybreak",
     -- sub="Genmei Shield",
@@ -711,6 +708,11 @@ function init_gear_sets()
     -- main="Daybreak",
     -- sub="Genmei Shield",
   }
+
+  -- Divine magic skill
+  -- sets.midcast.Repose = {
+
+  -- }
 
 
 ------------------------------------------------------------------------------------------------

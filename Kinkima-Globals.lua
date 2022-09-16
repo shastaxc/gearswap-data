@@ -40,13 +40,18 @@ elemental_ws = S{'Aeolian Edge', 'Sanguine Blade', 'Cloudsplitter', 'Seraph Blad
     'Shining Strike', 'Seraph Strike', 'Flash Nova', 'Rock Crusher', 'Earth Crusher', 'Starburst', 'Sunburst', 'Vidohunir',
     'Garland of Bliss', 'Omniscience', 'Flaming Arrow', 'Hot Shot'}
 
+-- Blue magic spells that should use conserve MP midcast set.
+classes.BluConserveSpells = S{'Refueling', 'Warm-Up', 'Saline Coat', 'Reactor Cool', 'Plasma Charge', 'Animating Wail',
+                              'Nat. Meditation', 'Carcharian Verve', 'Erratic Flutter', 'Mighty Guard'}
+
 -- Spells that don't scale with skill. Overrides Mote lib.
 classes.NoSkillSpells = S{'Adloquium', 'Haste', 'Haste II', 'Refresh', 'Refresh II', 'Refresh III', 'Regen', 'Regen II', 'Regen III',
     'Regen IV', 'Regen V', 'Protect', 'Protect II', 'Protect III', 'Protect IV', 'Protect V', 'Protectra', 'Protectra II',
     'Protectra III', 'Protectra IV', 'Protectra V', 'Shell', 'Shell II', 'Shell III', 'Shell IV', 'Shell V', 'Shellra',
     'Shellra II', 'Shellra III', 'Shellra IV', 'Shellra V', 'Raise', 'Raise II', 'Raise III', 'Arise', 'Reraise', 'Reraise II',
-    'Reraise III', 'Reraise IV', 'Sneak', 'Invisible', 'Deodorize', 'Embrava', 'Silence', 'Aquaveil', 'Stoneskin', 'Blink', 'Auspice'}
+    'Reraise III', 'Reraise IV', 'Sneak', 'Invisible', 'Deodorize', 'Embrava', 'Aquaveil', 'Stoneskin', 'Blink', 'Auspice'}
 
+-- Enhancing magic spells that have short duration.
 classes.ShortEnhancingSpells = S{'Blaze Spikes', 'Ice Spikes', 'Shock Spikes', 'Boost-AGI', 'Boost-CHR', 'Boost-DEX', 'Boost-INT',
     'Boost-MND', 'Boost-STR', 'Boost-VIT', 'Enaero', 'Enaero II', 'Enblizzard', 'Enblizzard II', 'Enfire', 'Enfire II', 'Enstone',
     'Enstone II', 'Enthunder', 'Enthunder II', 'Enwater', 'Enwater II', 'Firestorm', 'Firestorm II', 'Hailstorm', 'Hailstorm II',

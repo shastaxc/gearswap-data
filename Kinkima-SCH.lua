@@ -178,37 +178,157 @@ function init_gear_sets()
     -- waist="Carrier's Sash",        -- __ [__/__, ___]; Ele Resist+15
     -- 84 Fast Cast [66 PDT/41 MDT, 620 MEVA]
   }
-
   -- Grimoire casting bonuses multiply separately from FC, allowing
   -- breaking the normal 80% cast time reduction cap.
   -- Cast Time = Base Cast Time x (1 - FC)x(1 - magian staff cast bonus)x(1 - Grimoire reduction)
   sets.precast.FC.Grimoire = set_combine(sets.precast.FC, {
-    head="Pedagogy Mortarboard +3",   -- __ [__/__,  95] 13
-    feet="Academic's Loafers +3",     -- __ [__/__, 127] 12
-    waist="Embla Sash",               --  5 [__/__, ___]
+    -- main="Malignance Pole",        -- __ [20/20, ___]
+    -- sub="Khonsu",                     -- __ [ 6/ 6, ___]
+    -- ammo="Incantor Stone",            --  2 [__/__, ___]
+    -- head="Pedagogy Mortarboard +3",   -- __ [__/__,  95] 13
+    -- body="Pinga Tunic +1",            -- 15 [__/__, 128]
+    -- hands="Academic's Bracers +3",    --  9 [__/__,  57]
+    -- legs="Pinga Pants +1",            -- 13 [__/__, 147]
+    -- feet=gear.Merl_FC_feet,        -- 12 [__/__, 118]
+    -- neck="Orunmila's Torque",      --  5 [__/__, ___]
+    -- ear1="Malignance Earring",        --  4 [__/__, ___]
+    -- ear2="Etiolation Earring",        --  1 [__/ 3, ___]; Resist Silence+15
+    -- ring1="Kishar Ring",              --  4 [__/__, ___]
+    -- ring2="Defending Ring",           -- __ [10/10, ___]
+    -- back=gear.SCH_FC_Cape,            -- 10 [10/__,  30]
+    -- waist="Embla Sash",               --  5 [__/__, ___]
+    -- 80 Fast Cast [46 PDT/39 MDT, 575 MEVA] 13 Grimoire Reduction + status resist
     
     -- If using Hvergelmir in precast.FC...
     -- head="Pedagogy Mortarboard +3",-- __ [__/__,  95] 13
     -- hands="Academic's Bracers +3", --  9 [__/__,  57]
     -- feet="Academic's Loafers +3",  -- __ [__/__, 127] 12
-    -- 83 Fast Cast [52 PDT/27 MDT, 552 MEVA] 25 Grimoire Reduction + status resist, don't need /RDM
+    -- 83 Fast Cast [52 PDT/27 MDT, 552 MEVA] 25 Grimoire Reduction + status resist
   })
-  sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {
-    -- waist="Siegel Sash",
-  })
-  sets.precast.FC['Enhancing Magic'].Grimoire = set_combine(sets.precast.FC.Grimoire, {
-    -- waist="Siegel Sash", --8
-  })
-  sets.precast.FC['Elemental Magic'] = sets.precast.FC
-  sets.precast.FC['Elemental Magic'].Grimoire = sets.precast.FC.Grimoire
+  -- 10% cap on Quick Magic
+  sets.precast.FC.QuickMagic = {
+    main=gear.Pedagogy_C,             --  8 [__/__, ___]
+    sub="Khonsu",                     -- __ [ 6/ 6, ___] __
+    ammo="Impatiens",                 -- __ [__/__, ___]  2
+    head=gear.Psycloth_D_head,        -- 10 [__/__,  75] __
+    body="Pinga Tunic +1",            -- 15 [__/__, 128] __
+    hands="Academic's Bracers +3",    --  9 [__/__,  57] __
+    legs="Pinga Pants +1",            -- 13 [__/__, 147] __
+    feet=gear.Merl_FC_feet,           -- 11 [__/__, 118] __
+    neck="Loricate Torque +1",        -- __ [ 6/ 6, ___]; DEF+60
+    ear1="Malignance Earring",        --  4 [__/__, ___] __
+    ear2="Odnowa Earring +1",         -- __ [ 3/ 5, ___] __
+    ring1="Gelatinous Ring +1",       -- __ [ 7/-1, ___] __
+    ring2="Defending Ring",           -- __ [10/10, ___] __
+    back=gear.SCH_FC_Cape,            -- 10 [10/__,  30] __
+    waist="Witful Belt",              --  3 [__/__, ___]  3
+    -- 83 Fast Cast [42PDT/47MDT, 555 MEVA] 5 Quick Magic
+    
+    -- main="Malignance Pole",        -- __ [20/20, ___] __
+    -- sub="Khonsu",                  -- __ [ 6/ 6, ___] __
+    -- ammo="Impatiens",              -- __ [__/__, ___]  2
+    -- head=gear.Psycloth_D_head,     -- 10 [__/__,  75] __
+    -- body="Pinga Tunic +1",         -- 15 [__/__, 128] __
+    -- hands="Academic's Bracers +3", --  9 [__/__,  57] __
+    -- legs="Pinga Pants +1",         -- 13 [__/__, 147] __
+    -- feet=gear.Merl_FC_feet,        -- 11 [__/__, 118] __
+    -- neck="Orunmila's Torque",      --  5 [__/__, ___] __
+    -- ear1="Malignance Earring",     --  4 [__/__, ___] __
+    -- ear2="Odnowa Earring +1",      -- __ [ 3/ 5, ___] __
+    -- ring1="Lebeche Ring",          -- __ [__/__, ___]  2
+    -- ring2="Defending Ring",        -- __ [10/10, ___] __
+    -- back=gear.SCH_FC_Cape,         -- 10 [10/__,  30] __
+    -- waist="Witful Belt",           --  3 [__/__, ___]  3
+    -- 80 Fast Cast [49PDT/41MDT, 555 MEVA] 7 Quick Magic
+  }
+  -- No point in this set until normal sets.precast.FC.QuickMagic can cap stats
+  -- sets.precast.FC.QuickMagic.Grimoire = {}
+
+  sets.precast.FC.RDM = {
+    main=gear.Pedagogy_C,             --  8 [__/__, ___]
+    sub="Khonsu",                     -- __ [ 6/ 6, ___]
+    ammo="Staunch Tathlum +1",        -- __ [ 3/ 3, ___]; Resist status+11
+    head=gear.Psycloth_D_head,        -- 10 [__/__,  75]
+    body="Shamash Robe",              -- __ [10/__, 106]; Resist Silence+90
+    hands="Academic's Bracers +3",    --  9 [__/__,  57]
+    legs="Pinga Pants +1",            -- 13 [__/__, 147]
+    feet=gear.Merl_FC_feet,           -- 11 [__/__, 118]
+    neck="Loricate Torque +1",        -- __ [ 6/ 6, ___]; DEF+60
+    ear1="Malignance Earring",        --  4 [__/__, ___]
+    ear2="Etiolation Earring",        --  1 [__/ 3, ___]; Resist Silence+15
+    ring1="Gelatinous Ring +1",       -- __ [ 7/-1, ___]
+    ring2="Defending Ring",           -- __ [10/10, ___]
+    back=gear.SCH_FC_Cape,            -- 10 [10/__,  30]
+    waist="Carrier Sash",             -- __ [__/__, ___]; Ele Resist+15
+    -- Sub RDM trait                  -- 15
+    -- 81 Fast Cast [52 PDT/27 MDT, 533 MEVA]
+  }
+  sets.precast.FC.QuickMagic.RDM = {
+    main=gear.Pedagogy_C,             --  8 [__/__, ___]
+    sub="Khonsu",                     -- __ [ 6/ 6, ___] __
+    ammo="Impatiens",                 -- __ [__/__, ___]  2
+    head=gear.Psycloth_D_head,        -- 10 [__/__,  75] __
+    body="Pinga Tunic +1",            -- 15 [__/__, 128] __
+    hands="Academic's Bracers +3",    --  9 [__/__,  57] __
+    legs="Pinga Pants +1",            -- 13 [__/__, 147] __
+    feet=gear.Merl_FC_feet,           -- 11 [__/__, 118] __
+    neck="Loricate Torque +1",        -- __ [ 6/ 6, ___]; DEF+60
+    ear1="Malignance Earring",        --  4 [__/__, ___] __
+    ear2="Odnowa Earring +1",         -- __ [ 3/ 5, ___] __
+    ring1="Gelatinous Ring +1",       -- __ [ 7/-1, ___] __
+    ring2="Defending Ring",           -- __ [10/10, ___] __
+    back="Perimede Cape",             -- __ [__/__, ___]  4
+    waist="Witful Belt",              --  3 [__/__, ___]  3
+    -- Sub RDM trait                  -- 15
+    -- 88 Fast Cast [42PDT/47MDT, 555 MEVA] 9 Quick Magic
+    
+    -- main="Malignance Pole",        -- __ [20/20, ___] __
+    -- sub="Khonsu",                  -- __ [ 6/ 6, ___] __
+    -- ammo="Impatiens",              -- __ [__/__, ___]  2
+    -- head=gear.Psycloth_D_head,     -- 10 [__/__,  75] __
+    -- body="Pinga Tunic +1",         -- 15 [__/__, 128] __
+    -- hands=gear.Gende_SongFC_hands, --  7 [ 4/__,  37] __
+    -- legs="Pinga Pants +1",         -- 13 [__/__, 147] __
+    -- feet=gear.Merl_FC_feet,        -- 11 [__/__, 118] __
+    -- neck="Orunmila's Torque",      --  5 [__/__, ___] __
+    -- ear1="Malignance Earring",     --  4 [__/__, ___] __
+    -- ear2="Odnowa Earring +1",      -- __ [ 3/ 5, ___] __
+    -- ring1="Lebeche Ring",          -- __ [__/__, ___]  2
+    -- ring2="Defending Ring",        -- __ [10/10, ___] __
+    -- back="Perimede Cape",          -- __ [__/__, ___]  4
+    -- waist="Witful Belt",           --  3 [__/__, ___]  3
+    -- Sub RDM trait                  -- 15
+    -- 83 Fast Cast [43PDT/41MDT, 505 MEVA] 11 Quick Magic
+  }
+  sets.precast.FC.RDM.Grimoire = {
+    main=gear.Pedagogy_C,             --  8 [__/__, ___] __
+    sub="Khonsu",                     -- __ [ 6/ 6, ___] __
+    ammo="Incantor Stone",            --  2 [__/__, ___] __
+    head="Pedagogy Mortarboard +3",   -- __ [__/__,  95] 13
+    body="Pinga Tunic +1",            -- 15 [__/__, 128] __
+    hands="Academic's Bracers +3",    --  9 [__/__,  57] __
+    legs="Pinga Pants +1",            -- 13 [__/__, 147] __
+    feet="Academic's Loafers +3",     -- __ [__/__, 127] 12
+    neck="Loricate Torque +1",        -- __ [ 6/ 6, ___] __; DEF+60
+    ear1="Malignance Earring",        --  4 [__/__, ___] __
+    ear2="Etiolation Earring",        --  1 [__/ 3, ___] __; Resist Silence+15
+    ring1="Gelatinous Ring +1",       -- __ [ 7/-1, ___] __
+    ring2="Defending Ring",           -- __ [10/10, ___] __
+    back=gear.SCH_FC_Cape,            -- 10 [10/__,  30] __
+    waist="Embla Sash",               --  5 [__/__, ___] __
+    -- Sub RDM trait                  -- 15
+    -- 82 Fast Cast [39 PDT/24 MDT, 584 MEVA] 25 Grimoire Speed
+
+    -- hands=gear.Gende_SongFC_hands, --  7 [ 4/__,  37] __
+    -- 80 Fast Cast [43 PDT/24 MDT, 564 MEVA] 25 Grimoire Speed
+  }
+  -- No point in using this set until sets.precast.FC.QuickMagic.RDM can cap stats
+  -- sets.precast.FC.QuickMagic.RDM.Grimoire = {}
 
   sets.precast.FC.Impact = set_combine(sets.precast.FC, {
     -- head=empty,
     -- body="Crepuscular Cloak",
   })
-  -- Without head & body, cannot use Grimoire gear and hit 80% FC
-  -- until Hvergelmir set is acquired
-  sets.precast.FC.Impact.Grimoire = sets.precast.FC.Impact
   sets.precast.FC.Dispelga = set_combine(sets.precast.FC, {
     -- main="Daybreak",               -- __ [__/__, ___]
     -- sub="Genmei Shield",           -- __ [10/__, ___]
@@ -228,8 +348,25 @@ function init_gear_sets()
     -- back=gear.SCH_FC_Cape,         -- 10 [10/__,  30]
     -- waist="Embla Sash",            --  5 [__/__, ___]
     -- 80 Fast Cast [53 PDT/25 MDT, 603 MEVA]
+    
+    -- Ideal:
+    -- main="Hvergelmir",             -- 50 [__/__, ___]
+    -- sub="Khonsu",                  -- __ [ 6/ 6, ___]
+    -- head=gear.Psycloth_D_head,     -- 10 [__/__,  75]
+    -- ammo="Staunch Tathlum +1",     -- __ [ 3/ 3, ___]; Resist Status+11
+    -- body="Shamash Robe",           -- __ [10/__, 106]; Resist Silence+90
+    -- hands=gear.Nyame_B_hands,      -- __ [ 7/ 7, 112]
+    -- legs="Pinga Pants +1",         -- 13 [__/__, 147]
+    -- feet=gear.Nyame_B_feet,        -- __ [ 7/ 7, 150]
+    -- neck="Loricate Torque +1",     -- __ [ 6/ 6, ___]; DEF+60
+    -- ear1="Hearty Earring",         -- __ [__/__, ___]; Resist Status+5
+    -- ear2="Etiolation Earring",     --  1 [__/ 3, ___]; Resist Silence+15
+    -- ring1="Gelatinous Ring +1",    -- __ [ 7/-1, ___]
+    -- ring2="Defending Ring",        -- __ [10/10, ___]
+    -- back=gear.SCH_FC_Cape,         -- 10 [10/__,  30]
+    -- waist="Carrier's Sash",        -- __ [__/__, ___]; Ele Resist+15
+    -- 84 Fast Cast [66 PDT/41 MDT, 620 MEVA]
   })
-  sets.precast.FC.Dispelga.Grimoire = sets.precast.FC.Dispelga
 
 
   ------------------------------------------------------------------------------------------------
@@ -308,6 +445,11 @@ function init_gear_sets()
   sets.midcast.FastRecast = sets.precast.FC
   -- Initializes trusts at iLvl 119
   sets.midcast.Trust = sets.precast.FC
+
+  -- Must keep this gear equipped until spell goes off
+  -- TODO: Add magic accuracy
+  sets.midcast.Impact = sets.precast.FC.Impact
+  sets.midcast.Dispelga = sets.precast.FC.Dispelga
 
   -- CPII, CP, Heal Skill, MND, VIT, SIRD, PDT/MDT, -Enmity
   SIRDoptions = {
@@ -1190,28 +1332,6 @@ function job_precast(spell, action, spellMap, eventArgs)
   if spell.name:startswith('Aspir') then
     refine_various_spells(spell, action, spellMap, eventArgs)
   end
-
-  -- If magic and grimoire is active, use Grimoire sub-sets
-  
-  if spell.action_type == 'Magic' then
-    if (buffactive['Light Arts'] or buffactive['Addendum: White']) or (buffactive['Dark Arts'] or buffactive['Addendum: Black']) then
-      local customEquipSet = select_specific_set(sets.precast.FC, spell, spellMap)
-      -- Add optional casting mode
-      if customEquipSet[state.CastingMode.current] then
-        customEquipSet = customEquipSet[state.CastingMode.current]
-      end
-      if customEquipSet['Grimoire'] then
-        equip(customEquipSet['Grimoire'])
-        eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
-      elseif (buffactive['Light Arts'] or buffactive['Addendum: White']) and customEquipSet['LightArts'] then
-        equip(customEquipSet['LightArts'])
-        eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
-      elseif (buffactive['Dark Arts'] or buffactive['Addendum: Black']) and customEquipSet['DarkArts'] then
-        equip(customEquipSet['DarkArts'])
-        eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
-      end
-    end
-  end
 end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
@@ -1249,30 +1369,35 @@ function job_midcast(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
 
   if spell.action_type == 'Magic' then
-    if (buffactive['Light Arts'] or buffactive['Addendum: White']) or (buffactive['Dark Arts'] or buffactive['Addendum: Black']) then
-      local customEquipSet = select_specific_set(sets.midcast, spell, spellMap)
-      -- Add optional casting mode
-      if customEquipSet[state.CastingMode.current] then
-        customEquipSet = customEquipSet[state.CastingMode.current]
-      end
+    local customEquipSet = select_specific_set(sets.midcast, spell, spellMap)
+    -- Add optional casting mode
+    if customEquipSet[state.CastingMode.current] then
+      customEquipSet = customEquipSet[state.CastingMode.current]
+    end
 
+    if spell.type == 'WhiteMagic' and (buffactive['Light Arts'] or buffactive['Addendum: White']) then
+      if customEquipSet['Grimoire'] then
+        equip(customEquipSet['Grimoire'])
+        eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
+      elseif customEquipSet['LightArts'] then
+        equip(customEquipSet['LightArts'])
+        eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
+      end
+    elseif spell.type == 'BlackMagic' and (buffactive['Dark Arts'] or buffactive['Addendum: Black']) then
       -- Add Grimoire set if exists
       if customEquipSet['Grimoire'] then
         equip(customEquipSet['Grimoire'])
         eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
-      elseif (buffactive['Light Arts'] or buffactive['Addendum: White']) and customEquipSet['LightArts'] then
-        equip(customEquipSet['LightArts'])
-        eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
-      elseif (buffactive['Dark Arts'] or buffactive['Addendum: Black']) and customEquipSet['DarkArts'] then
+      elseif customEquipSet['DarkArts'] then
         equip(customEquipSet['DarkArts'])
         eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
       end
+    end
 
-      -- Add magic burst set if exists
-      if state.MagicBurst.value and (spell.english == 'Kaustra' or spell.skill == 'Elemental Magic') and customEquipSet['MB'] then
-        equip(customEquipSet['MB'])
-        eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
-      end
+    -- Add magic burst set if exists
+    if state.MagicBurst.value and (spell.english == 'Kaustra' or spell.skill == 'Elemental Magic') and customEquipSet['MB'] then
+      equip(customEquipSet['MB'])
+      eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
     end
   end
 end
@@ -1318,22 +1443,34 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     end
   end
 
-  if spell.skill == 'Enhancing Magic' then
-    if not sets.midcast[spell.english] and not sets.midcast[spellMap]
-        and (classes.NoSkillSpells:contains(spell.english) or classes.ShortEnhancingSpells:contains(spell.english)) then
-      equip(sets.midcast.EnhancingDuration)
-    end
-    -- If self targeted refresh
-    if spellMap == 'Refresh' then
-      if spell.targets.Self then
-        equip(sets.midcast.RefreshSelf)
+  -- If no explicit set defined for this spell
+  if not sets.midcast[spell.english] and (not sets.midcast[spellMap] or classes.NoSkillSpells:contains(spell.english)) then
+    if spell.skill == 'Enhancing Magic' then
+      -- Use enhancing duration gear if on NoSkillSpells and ShortEnhancingSpells lists
+      if classes.NoSkillSpells:contains(spell.english) or classes.ShortEnhancingSpells:contains(spell.english) then
+        equip(sets.midcast.EnhancingDuration)
       end
-    end
-    if spellMap == 'Regen' and state.RegenMode.value == 'Duration' then
-      equip(sets.midcast.RegenDuration)
-    end
-    if spellMap == 'Storm' and player.merits.stormsurge > 0 then
-      equip(sets.midcast.Stormsurge)
+      -- If self targeted refresh
+      if spellMap == 'Refresh' then
+        if spell.targets.Self then
+          equip(sets.midcast.RefreshSelf)
+        end
+      end
+      if spellMap == 'Regen' and state.RegenMode.value == 'Duration' then
+        equip(sets.midcast.RegenDuration)
+      end
+      if spellMap == 'Storm' and player.merits.stormsurge > 0 then
+        equip(sets.midcast.Stormsurge)
+      end
+    else -- Use precast set for faster recast
+      local customEquipSet = select_specific_set(sets.precast.FC, spell, spellMap)
+      -- Add optional casting mode
+      if customEquipSet[state.CastingMode.current] then
+        customEquipSet = customEquipSet[state.CastingMode.current]
+      end
+      if customEquipSet['RDM'] then
+        equip(customEquipSet['RDM'])
+      end
     end
   end
 
