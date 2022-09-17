@@ -350,7 +350,7 @@ function init_gear_sets()
     ammo=gear.RAbullet,
     -- head="Chasseur's Tricorne +1",    -- __/14 [__/__,  59]
     body="Oshosi Vest",               -- 12/__ [__/__,  96]
-    -- hands=gear.Carmine_D_hands,       --  8/11 [__/__,  43]
+    hands=gear.Carmine_D_hands,       --  8/11 [__/__,  43]
     legs=gear.Adhemar_D_legs,         -- 10/13 [__/__,  75]
     feet="Meg. Jam. +2",              -- 10/__ [ 3/__,  69]
     neck="Commodore Charm +1",        --  3/__ [__/__, ___]
@@ -506,7 +506,7 @@ function init_gear_sets()
     ammo=gear.RAbullet,
     -- head="Chasseur's Tricorne +1", -- __/14 [__/__,  59]
     -- body="Laksamana's Frac +3",       -- __/20 [__/__,  84]
-    -- hands=gear.Carmine_D_hands,       --  8/11 [__/__,  43]
+    hands=gear.Carmine_D_hands,       --  8/11 [__/__,  43]
     legs=gear.Adhemar_D_legs,         -- 10/13 [__/__,  75]
     -- feet=gear.Pursuer_A_feet,         -- __/10 [__/__,  69]
     neck="Commodore Charm +1",        --  3/__ [__/__, ___]
