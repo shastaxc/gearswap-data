@@ -709,12 +709,13 @@ function init_gear_sets()
     ring2="Niqmaddu Ring",            -- [__/__, ___] __, __ < 3, __, __> __, __, __( 5)
     back=gear.SAM_TP_Cape,            -- [10/__, ___] __, __ <__, __, 10> __, __, __(__)
     waist="Sailfi Belt +1",           -- [__/__, ___] __, __ <__,  2,  5> __,  9, __(__)
+    -- [39 PDT/22 MDT, 556 MEVA] 0 Hasso, 9 STP <3 QA, 15 TA, 23 DA> 15 Crit Rate, 31 Haste, 34(20) Subtle Blow
 
     -- head="Kasuga Kabuto +2",       -- [ 9/ 9,  88] __, 11 <__, __, __> __,  7, __(__)
     -- ring1="Defending Ring",        -- [10/10, ___] __, __ <__, __, __> __, __, __(__)
     -- waist="Peiste Belt +1",        -- [__/__, ___] __, __ <__, __, __> __, __, 10(__)
     -- [51 PDT/34 MDT, 521 MEVA] 0 Hasso, 14 STP <3 QA, 13 TA, 14 DA> 15 Crit Rate, 23 Haste, 34(20) Subtle Blow
-  } -- [39 PDT/22 MDT, 556 MEVA] 0 Hasso, 9 STP <3 QA, 15 TA, 23 DA> 15 Crit Rate, 31 Haste, 34(20) Subtle Blow
+  }
   sets.engaged.LowAcc.SubtleBlow = sets.engaged.SubtleBlow
   sets.engaged.MidAcc.SubtleBlow = sets.engaged.SubtleBlow
   sets.engaged.HighAcc.SubtleBlow = sets.engaged.SubtleBlow
