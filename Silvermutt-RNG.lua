@@ -428,7 +428,7 @@ function init_gear_sets()
   -- Snapshot (70% cap) > Velocity Shot (no cap) > Rapid Shot (99% cap)
   sets.precast.RA.Velocity = {
     head=gear.Taeon_RA_head,        -- 10/__ [__/__,  53] {__}
-    body="Amini Caban +1",          -- __/__ [__/__,  69] { 7}
+    body="Amini Caban +2",          -- __/__ [__/__, 109] { 9}
     hands=gear.Carmine_D_hands,     --  8/11 [__/__,  43] {__}
     legs="Orion Braccae +3",        -- 15/__ [__/__,  89] {__}
     feet="Meg. Jam. +2",            -- 10/__ [ 3/__,  69] {__}
@@ -441,16 +441,15 @@ function init_gear_sets()
     waist="Impulse Belt",           --  3/__ [__/__, ___] {__}
     -- Merits/Traits/Gifts             10/35 [__/__, ___] {10}
     -- Velocity Shot Ability           __/__ [__/__, ___] {15}
-    -- 72 Snapshot / 46 Rapid Shot [28 PDT/15 MDT, 343 M.Eva] {34% Velocity Shot}
+    -- 72 Snapshot / 46 Rapid Shot [28 PDT/15 MDT, 383 M.Eva] {36% Velocity Shot}
 
-    -- body="Amini Caban +2",       -- __/__ [__/__, 109] { 9}
     -- neck="Scout's Gorget +2",    --  4/__ [__/__, ___] {__}
     -- waist="Yemaya Belt",         -- __/ 5 [__/__, ___] {__}
     -- 70 Snapshot / 51 Rapid Shot [28 PDT/15 MDT, 383 M.Eva] {36% Velocity Shot}
   }
   sets.precast.RA.Flurry10.Velocity = {
     head="Orion Beret +3",          -- __/18 [__/__,  73] {__}
-    body="Amini Caban +1",          -- __/__ [__/__,  69] { 7}
+    body="Amini Caban +2",          -- __/__ [__/__, 109] { 9}
     hands=gear.Carmine_D_hands,     --  8/11 [__/__,  43] {__}
     legs="Orion Braccae +3",        -- 15/__ [__/__,  89] {__}
     feet="Meg. Jam. +2",            -- 10/__ [ 3/__,  69] {__}
@@ -464,16 +463,15 @@ function init_gear_sets()
     -- Merits/Traits/Gifts             10/35 [__/__, ___] {10}
     -- Velocity Shot Ability           __/__ [__/__, ___] {15}
     -- Flurry (weapons/magic)          10/__
-    -- 72 Snapshot / 64 Rapid Shot [28 PDT/15 MDT, 363 M.Eva] {34% Velocity Shot}
+    -- 72 Snapshot / 64 Rapid Shot [28 PDT/15 MDT, 403 M.Eva] {36% Velocity Shot}
 
-    -- body="Amini Caban +2",       -- __/__ [__/__, 109] { 9}
     -- neck="Scout's Gorget +2",    --  4/__ [__/__, ___] {__}
     -- waist="Yemaya Belt",         -- __/ 5 [__/__, ___] {__}
     -- 70 Snapshot / 69 Rapid Shot [28 PDT/15 MDT, 403 M.Eva] {36% Velocity Shot}
   }
   sets.precast.RA.Flurry15.Velocity = {
     head="Orion Beret +3",          -- __/18 [__/__,  73] {__}
-    body="Amini Caban +1",          -- __/__ [__/__,  69] { 7}
+    body="Amini Caban +2",          -- __/__ [__/__, 109] { 9}
     hands=gear.Carmine_D_hands,     --  8/11 [__/__,  43] {__}
     legs=gear.Adhemar_D_legs,       -- 10/13 [__/__,  75] {__}
     feet="Meg. Jam. +2",            -- 10/__ [ 3/__,  69] {__}
@@ -487,16 +485,15 @@ function init_gear_sets()
     -- Merits/Traits/Gifts             10/35 [__/__, ___] {10}
     -- Velocity Shot Ability           __/__ [__/__, ___] {15}
     -- Flurry (weapons/magic)          15/__
-    -- 72 Snapshot / 77 Rapid Shot [28 PDT/15 MDT, 329 M.Eva] {34% Velocity Shot}
+    -- 72 Snapshot / 77 Rapid Shot [28 PDT/15 MDT, 369 M.Eva] {36% Velocity Shot}
 
-    -- body="Amini Caban +2",       -- __/__ [__/__, 109] { 9}
     -- neck="Scout's Gorget +2",    --  4/__ [__/__, ___] {__}
     -- waist="Yemaya Belt",         -- __/ 5 [__/__, ___] {__}
     -- 70 Snapshot / 82 Rapid Shot [28 PDT/15 MDT, 389 M.Eva] {36% Velocity Shot}
   }
   sets.precast.RA.Flurry25.Velocity = {
     head="Orion Beret +3",          -- __/18 [__/__,  73] {__}
-    body="Amini Caban +1",          -- __/__ [__/__,  69] { 7}
+    body="Amini Caban +2",          -- __/__ [__/__, 109] { 9}
     hands=gear.Carmine_D_hands,     --  8/11 [__/__,  43] {__}
     legs=gear.Adhemar_D_legs,       -- 10/13 [__/__,  75] {__}
     feet="Arcadian Socks +3",       -- __/10 [__/__,  89] {__}
@@ -510,16 +507,15 @@ function init_gear_sets()
     -- Merits/Traits/Gifts             10/35 [__/__, ___] {10}
     -- Velocity Shot Ability           __/__ [__/__, ___] {15}
     -- Flurry (weapons/magic)          25/__
-    -- 72 Snapshot / 87 Rapid Shot [25 PDT/15 MDT, 369 M.Eva] {34% Velocity Shot}
+    -- 72 Snapshot / 87 Rapid Shot [25 PDT/15 MDT, 409 M.Eva] {36% Velocity Shot}
 
-    -- body="Amini Caban +2",       -- __/__ [__/__, 109] { 9}
     -- neck="Scout's Gorget +2",    --  4/__ [__/__, ___] {__}
     -- waist="Yemaya Belt",         -- __/ 5 [__/__, ___] {__}
     -- 70 Snapshot / 92 Rapid Shot [25 PDT/15 MDT, 409 M.Eva] {36% Velocity Shot}
   }
   sets.precast.RA.Flurry30.Velocity = {
     head="Orion Beret +3",          -- __/18 [__/__,  73] {__}
-    body="Amini Caban +1",          -- __/__ [__/__,  69] { 7}
+    body="Amini Caban +2",          -- __/__ [__/__, 109] { 9}
     hands=gear.Carmine_D_hands,     --  8/11 [__/__,  43] {__}
     legs=gear.Adhemar_D_legs,       -- 10/13 [__/__,  75] {__}
     feet="Arcadian Socks +3",       -- __/10 [__/__,  89] {__}
@@ -533,15 +529,14 @@ function init_gear_sets()
     -- Merits/Traits/Gifts             10/35 [__/__, ___] {10}
     -- Velocity Shot Ability           __/__ [__/__, ___] {15}
     -- Flurry (weapons/magic)          30/__
-    -- 74 Snapshot / 92 Rapid Shot [25 PDT/15 MDT, 369 M.Eva] {34% Velocity Shot}
+    -- 74 Snapshot / 92 Rapid Shot [25 PDT/15 MDT, 409 M.Eva] {36% Velocity Shot}
 
-    -- body="Amini Caban +2",       -- __/__ [__/__, 109] { 9}
     -- neck="Scout's Gorget +2",    --  4/__ [__/__, ___] {__}
     -- 75 Snapshot / 92 Rapid Shot [25 PDT/15 MDT, 409 M.Eva] {36% Velocity Shot}
   }
   sets.precast.RA.Flurry40.Velocity = {
     head="Orion Beret +3",          -- __/18 [__/__,  73] {__}
-    body="Amini Caban +1",          -- __/__ [__/__,  69] { 7}
+    body="Amini Caban +2",          -- __/__ [__/__, 109] { 9}
     hands=gear.Carmine_D_hands,     --  8/11 [__/__,  43] {__}
     legs=gear.Pursuer_A_legs,       -- __/19 [__/__,  69] {__}
     feet="Arcadian Socks +3",       -- __/10 [__/__,  89] {__}
@@ -555,9 +550,8 @@ function init_gear_sets()
     -- Merits/Traits/Gifts             10/35 [__/__, ___] {10}
     -- Velocity Shot Ability           __/__ [__/__, ___] {15}
     -- Flurry (weapons/magic)          40/__
-    -- 74 Snapshot / 98 Rapid Shot [25 PDT/15 MDT, 363 M.Eva] {34% Velocity Shot}
+    -- 74 Snapshot / 98 Rapid Shot [25 PDT/15 MDT, 403 M.Eva] {36% Velocity Shot}
 
-    -- body="Amini Caban +2",       -- __/__ [__/__, 109] { 9}
     -- neck="Scout's Gorget +2",    --  4/__ [__/__, ___] {__}
     -- 75 Snapshot / 98 Rapid Shot [25 PDT/15 MDT, 403 M.Eva] {36% Velocity Shot}
   }
@@ -1380,7 +1374,7 @@ function init_gear_sets()
     hands="Orion Bracers +3"
   }
   sets.buff['Velocity Shot'] = set_combine(sets.midcast.RA, {
-    body="Amini Caban +1", -- +7% ranged attack
+    body="Amini Caban +2",
   })
   sets.buff.Camouflage = {
     body="Orion Jerkin +1"
