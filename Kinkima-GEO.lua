@@ -161,7 +161,7 @@ function init_gear_sets()
     -- ear2="Azimuth Earring +2",   -- __ [ 7/ 7, ___] {__, __}
     -- ring1="Defending Ring",      -- __ [10/10, ___] {__, __}
     -- ring2="Kishar Ring",         --  4 [__/__, ___] {__, __}
-    -- back=gear.GEO_FC_Cape,       -- 10 [10/__, ___] {__, __} -- Respec to PDT
+    -- back=gear.GEO_FC_Cape,       -- 10 [10/__, ___] {__, __}
     -- waist="Embla Sash",          --  5 [__/__, ___] {__, __}
     -- 82 FC [48 PDT / 23 MDT, 479 M.Eva] {43 Pet DT, 0 Pet Regen}
   }
@@ -181,7 +181,7 @@ function init_gear_sets()
     -- ear2="Etiolation Earring",   --  1 [__/ 3, ___] {__, __}; Resist Silence+15
     -- ring1="Defending Ring",      -- __ [10/10, ___] {__, __}
     -- ring2="Gelatinous Ring +1",  -- __ [ 7/-1, ___] {__, __}
-    -- back=gear.GEO_FC_Cape,       -- 10 [10/__, ___] {__, __} -- Respec to PDT
+    -- back=gear.GEO_FC_Cape,       -- 10 [10/__, ___] {__, __}
     -- waist="Embla Sash",          --  5 [__/__, ___] {__, __}
     -- RDM FC traits                   15
     -- 82 FC [52 PDT / 22 MDT, 519 Meva] {43 Pet DT, 0 Pet Regen}

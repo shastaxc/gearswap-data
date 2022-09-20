@@ -358,7 +358,7 @@ function init_gear_sets()
     ear2="Odnowa Earring +1",         -- __/__ [ 3/ 5, ___]
     -- ring1="Crepuscular Ring",         --  3/__ [__/__, ___]
     ring2="Defending Ring",           -- __/__ [10/10, ___]
-    -- back=gear.COR_SNP_Cape,           -- 10/__ [10/__, ___]
+    back=gear.COR_SNP_Cape,           -- 10/__ [10/__, ___]
     -- waist="Yemaya Belt",              -- __/ 5 [__/__, ___]
     -- Merits/Traits/Gifts               10/30
     -- 66 Snapshot / 73 Rapid Shot [26 PDT/15 MDT, 350 M.Eva]
@@ -410,7 +410,7 @@ function init_gear_sets()
     -- ear2="Odnowa Earring +1",      -- __/__ [ 3/ 5, ___]
     -- ring1="Crepuscular Ring",      --  3/__ [__/__, ___]
     -- ring2="Defending Ring",        -- __/__ [10/10, ___]
-    -- back=gear.COR_SNP_Cape,        -- 10/__ [10/__, ___]
+    back=gear.COR_SNP_Cape,        -- 10/__ [10/__, ___]
     -- waist="Yemaya Belt",           -- __/ 5 [__/__, ___]
     -- Merits/Traits/Gifts               10/30
     -- Flurry 1                          15/__
@@ -471,7 +471,7 @@ function init_gear_sets()
     ear2="Odnowa Earring +1",         -- __/__ [ 3/ 5, ___]
     ring1="Gelatinous Ring +1",       -- __/__ [ 7/-1, ___]
     ring2="Defending Ring",           -- __/__ [10/10, ___]
-    -- back=gear.COR_SNP_Cape,           -- 10/__ [10/__, ___]
+    back=gear.COR_SNP_Cape,           -- 10/__ [10/__, ___]
     -- waist="Yemaya Belt",              -- __/ 5 [__/__, ___]
     -- Merits/Traits/Gifts               10/30
     -- 67 Snapshot / 62 Rapid Shot [41 PDT/20 MDT, 366 M.Eva]
@@ -492,7 +492,7 @@ function init_gear_sets()
     ear2="Odnowa Earring +1",         -- __/__ [ 3/ 5, ___]
     ring1="Gelatinous Ring +1",       -- __/__ [ 7/-1, ___]
     ring2="Defending Ring",           -- __/__ [10/10, ___]
-    -- back=gear.COR_SNP_Cape,           -- 10/__ [10/__, ___]
+    back=gear.COR_SNP_Cape,           -- 10/__ [10/__, ___]
     -- waist="Yemaya Belt",              -- __/ 5 [__/__, ___]
     -- Merits/Traits/Gifts               10/30
     -- Flurry 1                          15/__
@@ -514,7 +514,7 @@ function init_gear_sets()
     ear2="Odnowa Earring +1",         -- __/__ [ 3/ 5, ___]
     ring1="Gelatinous Ring +1",       -- __/__ [ 7/-1, ___]
     ring2="Defending Ring",           -- __/__ [10/10, ___]
-    -- back=gear.COR_SNP_Cape,           -- 10/__ [10/__, ___]
+    back=gear.COR_SNP_Cape,           -- 10/__ [10/__, ___]
     waist="Flume Belt +1",            -- __/__ [ 4/__, ___]
     -- Merits/Traits/Gifts               10/30
     -- Flurry 2                          30/__
@@ -566,6 +566,20 @@ function init_gear_sets()
     -- ear2="Telos Earring",
   })
 
+  sets.precast.WS.Detonator = {
+    head=empty,
+    body=empty,
+    hands=empty,
+    legs=empty,
+    feet=empty,
+    ear1="Enervating Earring",
+    ear2="Odnowa Earring +1",
+    ring1="Rufescent Ring",
+    ring2="Defending Ring",
+    back=gear.COR_TP_Cape,
+    waist="Flume Belt +1",
+  }
+
   sets.precast.WS['Last Stand'] = {
     ammo=gear.WSbullet,
     head=gear.Nyame_B_head,
@@ -578,7 +592,7 @@ function init_gear_sets()
     ear2="Moonshade Earring",
     -- ring1="Regal Ring",
     -- ring2="Epaminondas's Ring",
-    -- back=gear.COR_WS1_Cape,
+    back=gear.COR_WS1_Cape,
     -- waist="Fotia Belt",
     -- back=gear.COR_WS3_Cape,
   }
@@ -621,7 +635,7 @@ function init_gear_sets()
     -- body="Lanun Frac +3", --61
     -- feet="Lanun Bottes +3", --55; WSD
     -- ring2="Epaminondas's Ring",
-    -- back=gear.COR_WS1_Cape, --0
+    back=gear.COR_WS1_Cape, --0
     -- waist="Skrymir Cord", --5
 
     -- neck="Comm. Charm +2",
@@ -1140,7 +1154,7 @@ function init_gear_sets()
     ear2="Dignitary's Earring",       -- __, __, 10,  3, __/__
     -- ring1="Regal Ring",               -- 10, __, __, __, __/__
     ring2="Stikini Ring +1",          -- __, __, 11, __, __/__
-    -- back=gear.COR_WS1_Cape,           -- 30, __, 20, __, 10/__
+    back=gear.COR_WS1_Cape,           -- 30, __, 20, __, 10/__
     -- waist="K. Kachina Belt +1",       --  8, __, 20, __, __/__
     -- AF Set Effect                  -- __, __, __, __, __/__
     -- M.Acc from Quick Draw+ stat    -- __, __, __, __, __/__
