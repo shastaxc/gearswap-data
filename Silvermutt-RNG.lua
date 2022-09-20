@@ -943,9 +943,11 @@ function init_gear_sets()
     ring2="Crepuscular Ring",     -- __ [ 6]  10/ __ <_> {__} (__), __/__
     back=gear.RNG_RA_Cape,        -- 30 [10]  20/ 20 <_> {__} (__), 10/__
     waist="Kwahu Kachina Belt +1",--  8 [__]  20/ __ <5> {__} (__), __/__
+    --247 AGI [83 STP] 307 racc / 212 ratt <5 crit> {27 dmg limit} (38 Recycle), 28 PDT/18 MDT
+    
     -- neck="Scout's Gorget +2",  -- 25 [ 7]  25/ __ <_> {10} (__), __/__
     --252 AGI [84 STP] 312 racc / 212 ratt <5 crit> {29 dmg limit} (38 Recycle), 28 PDT/18 MDT
-  } --247 AGI [83 STP] 307 racc / 212 ratt <5 crit> {27 dmg limit} (38 Recycle), 28 PDT/18 MDT
+  }
   sets.midcast.RA.LowAcc = set_combine(sets.midcast.RA, {
     ring1="Regal Ring",           -- 10 [__]  __/ 20 <_> {__} (__), __/__
     -- body="Orion Jerkin +3",    -- 40 [ 8]  60/ 41 <_> {__} (__), __/__
