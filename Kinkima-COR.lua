@@ -128,7 +128,7 @@ function job_setup()
   no_swap_waists = S{"Era. Bul. Pouch", "Dev. Bul. Pouch", "Chr. Bul. Pouch", "Quelling B. Quiver",
       "Yoichi's Quiver", "Artemis's Quiver", "Chrono Quiver", "Liv. Bul. Pouch"}
 
-  gear.RAbullet = "Bronze Bullet"
+  gear.RAbullet = "Chrono Bullet"
   gear.RAccbullet = "Devastating Bullet"
   gear.WSbullet = "Chrono Bullet"
   gear.MAbullet = "Living Bullet"
@@ -2212,7 +2212,7 @@ function init_gear_sets()
   sets.WeaponSet["Savage Blade"] = {
     main="Naegling",
     sub="Blurred Knife +1",
-    ranged="Holliday",
+    ranged="Fomalhaut",
     -- ranged="Anarchy +2",
   }
   sets.WeaponSet.Cleaving = {
