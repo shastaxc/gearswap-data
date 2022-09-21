@@ -237,29 +237,34 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.precast.WS = {
-    ammo="Knobkierrie",
-    head=gear.Nyame_B_head,
-    body="Gleti's Cuirass",
-    hands=gear.Nyame_B_hands,
-    legs=gear.Nyame_B_legs,
-    feet=gear.Nyame_B_feet,
-    neck="Dragoon's Collar +2",
-    ear1="Thrud Earring",
-    ear2="Moonshade Earring",
-    ring1="Sroda Ring",
-    ring2="Epaminondas's Ring",
-    back=gear.DRG_WS2_Cape,
-    waist="Sailfi Belt +1",
+    ammo="Knobkierrie",           -- __, __, 23, __,  6, __, ___
+    head=gear.Nyame_B_head,       -- 26, 26, 60, 40, 10, __, ___
+    body="Gleti's Cuirass",       -- 39, 26, 65, 50, __,  9, ___
+    hands=gear.Nyame_B_hands,     -- 17, 40, 60, 40, 10, __, ___
+    legs=gear.Nyame_B_legs,       -- 43, 32, 60, 40, 11, __, ___
+    feet=gear.Nyame_B_feet,       -- 23, 26, 60, 40, 10, __, ___
+    neck="Dragoon's Collar +2",   -- 15, __, 25, 25, __, 10, ___
+    ear1="Thrud Earring",         -- 10, __, __, __,  3, __, ___
+    ear2="Moonshade Earring",     -- __, __, __,  4, __, __, 250
+    ring1="Sroda Ring",           -- 15, __, __, __, __,  3, ___
+    ring2="Epaminondas's Ring",   -- __, __, __, __,  5, __, ___
+    back=gear.DRG_WS2_Cape,       -- 30, __, 20, 20, 10, __, ___
+    waist="Sailfi Belt +1",       -- 15, __, 15, __, __, __, ___
+    -- 233 STR, 150 MND, 388 Attack, 259 Accuracy, 65 WSD, 22 PDL, 250 TP Bonus
   }
   sets.precast.WS.MaxTP = set_combine(sets.precast.WS, {
-    ear2="Ishvara Earring",
+    ear2="Ishvara Earring",       -- __, __, __, __,  2, __, ___
+    -- 233 STR, 150 MND, 388 Attack, 255 Accuracy, 67 WSD, 22 PDL, 250 TP Bonus
   })
   sets.precast.WS.AttCapped = set_combine(sets.precast.WS, {
-    head="Gleti's Mask",
-    ear1="Peltast's Earring",
+    head="Gleti's Mask",          -- 33, 19, 65, 50, __,  6, ___
+    ear1="Peltast's Earring",     -- __, __, __,  6, __,  7, ___
+    -- 230 STR, 143 MND, 393 Attack, 275 Accuracy, 52 WSD, 35 PDL, 250 TP Bonus
   })
   sets.precast.WS.AttCappedMaxTP = set_combine(sets.precast.WS.AttCapped, {
-    ear2="Peltast's Earring",
+    ear1="Thrud Earring",         -- 10, __, __, __,  3, __, ___
+    ear2="Peltast's Earring",     -- __, __, __,  6, __,  7, ___
+    -- 240 STR, 143 MND, 393 Attack, 271 Accuracy, 55 WSD, 35 PDL, 0 TP Bonus
   })
   
   sets.precast.WS["Savage Blade"] = sets.precast.WS
@@ -643,7 +648,8 @@ function init_gear_sets()
     ring2="Niqmaddu Ring",          -- __, __, __, __, __ <__, __,  3> [__/__, ___] {__/__}
     back=gear.DRG_TP_Cape,          -- __, __, 20, 30, __ <10, __, __> [10/__, ___] {__/__}
     waist="Tempus Belt +1",         -- 15, __, __, __, __ <__, __, __> [__/__, ___] {__/__}
-  } -- 25 Haste, 66 STP, 275 Att, 277 Acc, 19 Crit Rate <31 DA, 0 TA, 3 QA> [44 PDT/27 MDT, 378 Meva] {19 PetPDT/8 PetMDT}
+    -- 25 Haste, 66 STP, 275 Att, 277 Acc, 19 Crit Rate <31 DA, 0 TA, 3 QA> [44 PDT/27 MDT, 378 Meva] {19 PetPDT/8 PetMDT}
+  }
   sets.engaged.LowAcc = set_combine(sets.engaged, {
     ring1="Chirich Ring +1",
     ring2="Chirich Ring +1",
@@ -671,7 +677,8 @@ function init_gear_sets()
     ring2="Moonlight Ring",         -- __,  5,  8,  8, __ <__, __, __> [ 5/ 5, ___] {__/__}
     back=gear.DRG_TP_Cape,          -- __, __, 20, 30, __ <10, __, __> [10/__, ___] {__/__}
     waist="Ioskeha Belt +1",        --  8, __, __, 17, __ < 9, __, __> [__/__, ___] {__/__}
-  } -- 25 Haste, 55 STP, 235 Att, 293 Acc, 14 Crit Rate <40 DA, 5 TA, 0 QA> [39 PDT/15 MDT, 411 Meva] {19 PetPDT/8 PetMDT}
+    -- 25 Haste, 55 STP, 235 Att, 293 Acc, 14 Crit Rate <40 DA, 5 TA, 0 QA> [39 PDT/15 MDT, 411 Meva] {19 PetPDT/8 PetMDT}
+  }
   sets.engaged.LowAcc.SamRoll = set_combine(sets.engaged.SamRoll, {
     ring1="Chirich Ring +1",
     ring2="Chirich Ring +1",
@@ -704,7 +711,8 @@ function init_gear_sets()
     ring2="Niqmaddu Ring",          -- __, __, __, __, __ <__, __,  3> [__/__, ___] {__/__}
     back=gear.DRG_TP_Cape,          -- __, __, 20, 30, __ <10, __, __> [10/__, ___] {__/__}
     waist="Tempus Belt +1",         -- 15, __, __, __, __ <__, __, __> [__/__, ___] {__/__}
-  })-- 26 Haste, 50 STP, 360 Att, 285 Acc, 23 Crit Rate <29 DA, 0 TA, 3 QA> [51 PDT/34 MDT, 442 Meva] {44 PetPDT/33 PetMDT}
+    -- 26 Haste, 50 STP, 360 Att, 285 Acc, 23 Crit Rate <29 DA, 0 TA, 3 QA> [51 PDT/34 MDT, 442 Meva] {44 PetPDT/33 PetMDT}
+  })
   sets.engaged.LowAcc.LightDef = set_combine(sets.engaged.LowAcc, {
     ammo="Coiste Bodhar",           -- __,  3, 15, __, __ < 3, __, __> [__/__, ___] {__/__}
     head="Flamma Zucchetto +2",     --  4,  6, __, 44, __ <__,  5, __> [__/__,  53] {__/__}
