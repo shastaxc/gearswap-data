@@ -215,7 +215,7 @@ function init_gear_sets()
     -- feet="Agoge Calligae +3",
   }
 	sets.precast.JA['Retaliation'] = {
-    feet="Boii Calligae +1",
+    feet="Boii Calligae +2",
   }
 	sets.precast.JA['Restraint'] = {}
 	sets.precast.JA['Blood Rage'] = {
@@ -491,7 +491,7 @@ function init_gear_sets()
     body="Sakpata's Breastplate",
     hands="Sakpata's Gauntlets",
     legs="Sakpata's Cuisses",
-    feet="Boii Calligae +1",
+    feet="Boii Calligae +2",
     neck="Warrior's Bead Necklace +1",
     ear1="Schere Earring",
     ring1="Niqmaddu Ring",
