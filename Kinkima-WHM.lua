@@ -1213,11 +1213,9 @@ end
 
 function gearinfo(cmdParams, eventArgs)
   if cmdParams[1] == 'gearinfo' then
-    -- print('gearinfo[2]: '..cmdParams[2])
     if type(tonumber(cmdParams[2])) == 'number' then
       if tonumber(cmdParams[2]) ~= DW_needed then
         DW_needed = tonumber(cmdParams[2])
-        -- print(DW_needed)
         DW = true
       end
     elseif type(cmdParams[2]) == 'string' then
