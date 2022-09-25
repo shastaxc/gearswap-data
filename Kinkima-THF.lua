@@ -311,7 +311,7 @@ function init_gear_sets()
     -- neck="Fotia Gorget",
     ear1="Ishvara Earring",
     ear2="Moonshade Earring",
-    -- ring1="Regal Ring",
+    ring1="Regal Ring",
     ring2="Ilabrat Ring",
     -- back=gear.THF_WS1_Cape,
     -- waist="Fotia Belt",
@@ -336,7 +336,7 @@ function init_gear_sets()
     -- neck="Fotia Gorget",
     ear1="Sherida Earring",
     -- ear2="Telos Earring",
-    -- ring1="Regal Ring",
+    ring1="Regal Ring",
     ring2="Ilabrat Ring",
     -- back=gear.THF_WS1_Cape,
     -- waist="Fotia Belt",
@@ -359,7 +359,7 @@ function init_gear_sets()
     -- neck="Fotia Gorget",
     ear1="Sherida Earring",
     -- ear2="Brutal Earring",
-    -- ring1="Regal Ring",
+    ring1="Regal Ring",
     ring2="Ilabrat Ring",
     -- back=gear.THF_WS1_Cape,
     -- waist="Fotia Belt",
@@ -384,7 +384,7 @@ function init_gear_sets()
     ear1="Moonshade Earring",
     -- ear2="Odr Earring",
     ring1="Ilabrat Ring",
-    -- ring2="Regal Ring",
+    ring2="Regal Ring",
     -- waist="Fotia Belt",
     -- back=gear.THF_WS1_Cape,
 
@@ -408,7 +408,7 @@ function init_gear_sets()
     ear1="Moonshade Earring",
     -- ear2="Odr Earring",
     ring1="Ilabrat Ring",
-    -- ring2="Regal Ring",
+    ring2="Regal Ring",
     -- waist="Fotia Belt",
     -- back=gear.THF_WS1_Cape,
 
@@ -433,7 +433,7 @@ function init_gear_sets()
     -- ear1="Odr Earring",                 -- 10, __, __, __
     ear2="Moonshade Earring",           -- __, __, __, __; TP Bonus+250
     ring1="Ilabrat Ring",               -- 10, __, 25, __
-    -- ring2="Regal Ring",                 -- 10, __, 20, __
+    ring2="Regal Ring",                 -- 10, __, 20, __
     -- back=gear.THF_WS1_Cape,             -- 30, 10, 20, __
     waist="Grunfeld Rope",              --  5, __, 20, __
 
@@ -457,7 +457,7 @@ function init_gear_sets()
     -- ear1="Odr Earring",                 -- 10, __, __, __
     ear2="Moonshade Earring",           -- __, __, __, __; TP Bonus+250
     ring1="Ilabrat Ring",               -- 10, __, 25, __
-    -- ring2="Regal Ring",                 -- 10, __, 20, __
+    ring2="Regal Ring",                 -- 10, __, 20, __
     -- back=gear.THF_WS1_Cape,             -- 30, 10, 20, __
     waist="Grunfeld Rope",              --  5, __, 20, __
     -- Lustratio set bonus              -- __,  4, __, __
@@ -516,7 +516,7 @@ function init_gear_sets()
     neck="Anu Torque",            -- __, __, 20, __, __, __, ___
     ear1="Ishvara Earring",       -- __, __, __, __,  2, __, ___
     ear2="Moonshade Earring",     -- __, __, __,  4, __, __, 250
-    -- ring1="Regal Ring",           -- 10, __, 20, __, __, __, ___
+    ring1="Regal Ring",           -- 10, __, 20, __, __, __, ___
     -- ring2="Gere Ring",            -- 10, __, 16, __, __, __, ___
     -- back=gear.THF_WS2_Cape,       -- 30, __, 20, 20, 10, __, ___
     waist="Sailfi Belt +1",       -- 15, __, 15, __, __, __, ___
@@ -538,7 +538,7 @@ function init_gear_sets()
     neck="Anu Torque",            -- __, __, 20, __, __, __, ___
     ear1="Ishvara Earring",       -- __, __, __, __,  2, __, ___
     ear2="Moonshade Earring",     -- __, __, __,  4, __, __, 250
-    -- ring1="Regal Ring",           -- 10, __, 20, __, __, __, ___
+    ring1="Regal Ring",           -- 10, __, 20, __, __, __, ___
     -- ring2="Gere Ring",            -- 10, __, 16, __, __, __, ___
     -- back=gear.THF_WS2_Cape,       -- 30, __, 20, 20, 10, __, ___
     waist="Sailfi Belt +1",       -- 15, __, 15, __, __, __, ___
@@ -715,7 +715,7 @@ function init_gear_sets()
   })
   sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
     -- hands="Pillager's Armlets +3",
-    -- ring1="Regal Ring",
+    ring1="Regal Ring",
   })
 
   -- * THF Native DW Trait: 25% DW
@@ -745,7 +745,7 @@ function init_gear_sets()
   })
   sets.engaged.DW.HighAcc = set_combine(sets.engaged.DW.MidAcc, {
     -- ear1="Telos Earring",
-    -- ring1="Regal Ring",
+    ring1="Regal Ring",
   })
 
   -- Low Magic/Gear/JA Haste (67% DW to cap, 37% from gear)
@@ -771,7 +771,7 @@ function init_gear_sets()
     legs="Malignance Tights",
   })
   sets.engaged.DW.HighAcc.LowHaste = set_combine(sets.engaged.DW.MidAcc.LowHaste, {
-    -- ring1="Regal Ring",
+    ring1="Regal Ring",
   })
 
   -- Mid Magic/Gear/JA Haste (56% DW to cap, 26% from gear)
@@ -800,7 +800,7 @@ function init_gear_sets()
   sets.engaged.DW.HighAcc.MidHaste = set_combine(sets.engaged.DW.MidAcc.MidHaste, {
     -- hands="Pillager's Armlets +3", --5
     -- ear1="Telos Earring",
-    -- ring1="Regal Ring",
+    ring1="Regal Ring",
   })
 
   -- High Magic/Gear/JA Haste (43% DW to cap, 13% from gear)
@@ -830,7 +830,7 @@ function init_gear_sets()
   sets.engaged.DW.HighAcc.HighHaste = set_combine(sets.engaged.DW.MidAcc.HighHaste, {
     -- hands="Pillager's Armlets +3", --5
     -- ear1="Telos Earring",
-    -- ring1="Regal Ring",
+    ring1="Regal Ring",
   })
 
   -- High Magic/Gear/JA Haste (36% DW to cap, 6% from gear)
@@ -860,7 +860,7 @@ function init_gear_sets()
   })
   sets.engaged.DW.HighAcc.SuperHaste = set_combine(sets.engaged.DW.MidAcc.SuperHaste, {
     -- legs="Pillager's Culottes +3",
-    -- ring1="Regal Ring",
+    ring1="Regal Ring",
   })
 
   -- Max Magic/Gear/JA Haste (0-30% DW to cap, 0% from gear)
@@ -890,7 +890,7 @@ function init_gear_sets()
   })
   sets.engaged.DW.HighAcc.MaxHaste = set_combine(sets.engaged.DW.MidAcc.MaxHaste, {
     -- legs="Pillager's Culottes +3",
-    -- ring1="Regal Ring",
+    ring1="Regal Ring",
   })
 
 

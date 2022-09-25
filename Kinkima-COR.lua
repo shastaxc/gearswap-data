@@ -538,11 +538,11 @@ function init_gear_sets()
     feet=gear.Nyame_B_feet,
     ear1="Ishvara Earring",
     ear2="Moonshade Earring",
+    ring1="Regal Ring",
     back=gear.COR_WS2_Cape,
     -- hands="Meg. Gloves +2",
     -- feet="Lanun Bottes +3",
     -- neck="Fotia Gorget",
-    -- ring1="Regal Ring",
     -- ring2="Epaminondas's Ring",
     -- waist="Fotia Belt",
     -- back=gear.COR_WS3_Cape,
@@ -590,7 +590,7 @@ function init_gear_sets()
     -- neck="Fotia Gorget",
     ear1="Ishvara Earring",
     ear2="Moonshade Earring",
-    -- ring1="Regal Ring",
+    ring1="Regal Ring",
     -- ring2="Epaminondas's Ring",
     back=gear.COR_WS1_Cape,
     -- waist="Fotia Belt",
@@ -720,7 +720,7 @@ function init_gear_sets()
     -- neck="Fotia Gorget",
     -- ear1="Odr Earring",
     ear2="Moonshade Earring",
-    -- ring1="Regal Ring",
+    ring1="Regal Ring",
     back=gear.COR_TP_Cape,
     -- waist="Fotia Belt",
   }
@@ -749,18 +749,19 @@ function init_gear_sets()
 
   sets.precast.WS['Savage Blade'] = {
     head=gear.Nyame_B_head,       -- 26, 26, 60, 40, 10, __, ___
-    body="Ikenga's Vest",         -- 33, 25, __, __, __,  7, 190
+    body=gear.Nyame_B_body,       -- 35, 37, 60, 40, 12, __, ___
     hands=gear.Nyame_B_hands,     -- 17, 40, 60, 40, 10, __, ___
     legs=gear.Nyame_B_legs,       -- 43, 32, 60, 40, 11, __, ___
     feet=gear.Nyame_B_feet,       -- 23, 26, 60, 40, 10, __, ___
     neck="Commodore Charm +1",    -- 12, __, __, __, __, __, ___
     ear1="Ishvara Earring",       -- __, __, __, __,  2, __, ___
     ear2="Moonshade Earring",     -- __, __, __,  4, __, __, 250
+    ring1="Regal Ring",           -- 10, __, 20, __, __, __, ___
     ring2="Rufescent Ring",       --  6,  6, __,  7, __, __, ___
     back=gear.COR_WS2_Cape,       -- 30, __, 20, 20, 10, __, ___
     waist="Sailfi Belt +1",       -- Needs further augmenting
-    -- ring1="Regal Ring",        -- 10, __, 20, __, __, __, ___
 
+    -- body="Ikenga's Vest",         -- 33, 25, __, __, __,  7, 190
     -- ring1="Sroda Ring",           -- 15, __, __, __, __,  3, ___
     -- ring2="Epaminondas's Ring",   -- __, __, __, __,  5, __, ___
     -- waist="Sailfi Belt +1",       -- 15, __, 15, __, __, __, ___
@@ -798,7 +799,7 @@ function init_gear_sets()
     -- neck="Fotia Gorget",
     ear1="Cessance Earring",
     -- ear2="Brutal Earring",
-    -- ring1="Regal Ring",
+    ring1="Regal Ring",
     ring2="Epona's Ring",
     back=gear.COR_WS2_Cape,
     -- waist="Fotia Belt",
@@ -858,7 +859,7 @@ function init_gear_sets()
     -- neck="Iskur Gorget",          -- __, 30
     -- ear1="Beyla Earring",         -- __, 15
     -- ear2="Telos Earring",         -- __, 10
-    -- ring1="Regal Ring",           -- 10, __
+    ring1="Regal Ring",           -- 10, __
     -- ring2="Hajduk Ring +1",       -- __, 17
     -- back=gear.COR_RA_Cape,        -- 30, 20
     -- waist="Kwahu Kachina Belt +1",  --  8, 20
@@ -1152,7 +1153,7 @@ function init_gear_sets()
     neck="Commodore Charm +1",        -- 12,  6, 20, __, __/__
     -- ear1="Hermetic Earring",          -- __,  3,  7, __, __/__
     ear2="Dignitary's Earring",       -- __, __, 10,  3, __/__
-    -- ring1="Regal Ring",               -- 10, __, __, __, __/__
+    ring1="Regal Ring",               -- 10, __, __, __, __/__
     ring2="Stikini Ring +1",          -- __, __, 11, __, __/__
     back=gear.COR_WS1_Cape,           -- 30, __, 20, __, 10/__
     -- waist="K. Kachina Belt +1",       --  8, __, 20, __, __/__

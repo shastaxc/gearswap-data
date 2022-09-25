@@ -463,7 +463,7 @@ function init_gear_sets()
     neck="Mirage Stole +2",
     ear1="Ishvara Earring",
     ear2="Moonshade Earring",     -- __, __, __,  4, __, __, 250
-    -- ring1="Regal Ring",           -- 10, __, 20, __, __, __, ___
+    ring1="Regal Ring",           -- 10, __, 20, __, __, __, ___
     ring2="Rufescent Ring",       --  6,  6, __,  7, __, __, ___
     back=gear.BLU_WSD_Cape,
     waist="Sailfi Belt +1",       -- Needs further augmenting
@@ -480,7 +480,7 @@ function init_gear_sets()
     neck="Mirage Stole +2",
     ear1="Ishvara Earring",
     ear2="Moonshade Earring",     -- __, __, __,  4, __, __, 250
-    -- ring1="Regal Ring",           -- 10, __, 20, __, __, __, ___
+    ring1="Regal Ring",           -- 10, __, 20, __, __, __, ___
     ring2="Rufescent Ring",       --  6,  6, __,  7, __, __, ___
     back=gear.BLU_WSD_Cape,
     waist="Sailfi Belt +1",       -- Needs further augmenting
@@ -913,7 +913,7 @@ function init_gear_sets()
     -- neck="Bathy Choker +1", --30EVA (after aug)
     -- ear1="Infused Earring", --10EVA
     ear2="Eabani Earring", --10EVA
-    -- ring1="Vengeful Ring", --9EVA
+    ring1="Vengeful Ring", --9EVA
     ring2="Gelatinous Ring +1", --7PDT
     -- back=gear.BLU_ENM_Cape, --45EVA
     -- waist="Shetal Stone", --10EVA
