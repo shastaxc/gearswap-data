@@ -730,7 +730,7 @@ function init_gear_sets()
     -- legs=gear.Samnuha_legs,
     -- feet=gear.Herc_DW_feet, --5
     -- neck="Assassin's Gorget +2",
-    -- ear1="Suppanomimi", --5
+    ear1="Suppanomimi", --5
     ear2="Eabani Earring", --4
     -- ring1="Hetairoi Ring",
     -- ring2="Gere Ring",
@@ -757,7 +757,7 @@ function init_gear_sets()
     -- legs=gear.Samnuha_legs,
     -- feet="Plunderer's Poulaines +3",
     -- neck="Assassin's Gorget +2",
-    -- ear1="Suppanomimi", --5
+    ear1="Suppanomimi", --5
     ear2="Eabani Earring", --4
     -- ring1="Hetairoi Ring",
     -- ring2="Gere Ring",
@@ -783,7 +783,7 @@ function init_gear_sets()
     -- legs=gear.Samnuha_legs,
     -- feet="Plunderer's Poulaines +3",
     -- neck="Assassin's Gorget +2",
-    -- ear1="Suppanomimi", --5
+    ear1="Suppanomimi", --5
     ear2="Eabani Earring", --4
     -- ring1="Hetairoi Ring",
     -- ring2="Gere Ring",
@@ -812,7 +812,7 @@ function init_gear_sets()
     -- legs=gear.Samnuha_legs,
     -- feet="Plunderer's Poulaines +3",
     -- neck="Assassin's Gorget +2",
-    -- ear1="Suppanomimi", --5
+    ear1="Suppanomimi", --5
     -- ear2="Skulker's Earring",
     -- ring1="Hetairoi Ring",
     -- ring2="Gere Ring",
