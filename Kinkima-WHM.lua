@@ -147,7 +147,7 @@ function init_gear_sets()
     ring1="Gelatinous Ring +1",       -- __ [ 7/-1, ___]
     ring2="Defending Ring",           -- __ [10/10, ___]
     back=gear.WHM_FC_Cape,            -- 10 [10/__,  20]
-    waist="Carrier Sash",             -- __ [__/__, ___]; Ele Resist+15
+    waist="Carrier's Sash",           -- __ [__/__, ___]; Ele Resist+15
     -- hands=gear.Gende_SongFC_hands, --  7 [ 4/__,  37]
     -- 80 Fast Cast [63PDT/47MDT, 565 MEVA]
   } -- 80 Fast Cast [62PDT/49MDT, 565 MEVA]
@@ -252,13 +252,13 @@ function init_gear_sets()
     hands="Nyame Gauntlets",
     legs="Nyame Flanchard",
     feet="Nyame Sollerets",
-    neck="Fotia Gorget",
     ring1="Rufescent Ring",
     ring2="Metamorph Ring +1",
     back="Aurist's Cape +1",
     waist="Sailfi Belt +1",
     -- ammo="Aurgelmir Orb +1",
     -- ammo="Ginsen", --Sub
+    -- neck="Fotia Gorget",
     -- ear1="Moonshade Earring",
     -- ear2="Regal Earring",
   })
@@ -272,12 +272,12 @@ function init_gear_sets()
     hands="Nyame Gauntlets",
     legs="Nyame Flanchard",
     feet="Nyame Sollerets",
-    neck="Fotia Gorget",
     ring1="Rufescent Ring",
     ring2="Metamorph Ring +1",
     back="Aurist's Cape +1",
     -- ammo="Aurgelmir Orb +1",
     -- ammo="Ginsen", --Sub
+    -- neck="Fotia Gorget",
     -- ear1="Moonshade Earring",
     -- ear2="Regal Earring",
     -- waist="Sailfi Belt +1",
@@ -614,7 +614,7 @@ function init_gear_sets()
     neck="Loricate Torque +1",        -- __, __ [ 6/ 6, ___] __, __
     ear1="Mimir Earring",             -- 10, __ [__/__, ___] __, __
     ear2="Odnowa Earring +1",         -- __, __ [ 3/ 5, ___] __, __
-    ring1="Gelantinous Ring +1",      -- __, __ [ 7/-1, ___] __, __
+    ring1="Gelatinous Ring +1",       -- __, __ [ 7/-1, ___] __, __
     ring2="Defending Ring",           -- __, __ [10/10, ___] __, __
     back=gear.WHM_FC_Cape,            -- __, __ [10/__,  20] __, __
     waist="Embla Sash",               -- __, 10 [__/__, ___] __, __

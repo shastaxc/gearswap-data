@@ -152,7 +152,7 @@ function init_gear_sets()
     ring1="Gelatinous Ring +1",       -- __ [ 7/-1, ___]
     ring2="Defending Ring",           -- __ [10/10, ___]
     back=gear.SCH_FC_Cape,            -- 10 [10/__,  30]
-    waist="Carrier Sash",             -- __ [__/__, ___]; Ele Resist+15
+    waist="Carrier's Sash",           -- __ [__/__, ___]; Ele Resist+15
     -- 83 Fast Cast [39 PDT/24 MDT, 555 MEVA]
 
     -- main="Malignance Pole",        -- __ [20/20, ___]
@@ -259,7 +259,7 @@ function init_gear_sets()
     ring1="Gelatinous Ring +1",       -- __ [ 7/-1, ___]
     ring2="Defending Ring",           -- __ [10/10, ___]
     back=gear.SCH_FC_Cape,            -- 10 [10/__,  30]
-    waist="Carrier Sash",             -- __ [__/__, ___]; Ele Resist+15
+    waist="Carrier's Sash",           -- __ [__/__, ___]; Ele Resist+15
     -- Sub RDM trait                  -- 15
     -- 81 Fast Cast [52 PDT/27 MDT, 533 MEVA]
   }
@@ -750,7 +750,7 @@ function init_gear_sets()
     ear2="Malignance Earring",          -- 10,  8, __, __
     ring1="Kishar Ring",                --  5, __, 10, __
     ring2="Metamorph Ring +1",          -- 16, 15, __, __
-    back="Aurist's Cape",               -- 33, 33, __, __
+    back="Aurist's Cape +1",            -- 33, 33, __, __
     waist="Rumination Sash",            --  3,  4, __,  7
     -- Academic's set bonus             -- 60, __, __, __
     -- 453 M.Acc, 282 MND, 30% Enfeebling Duration, 27 Enfeebling Skill
@@ -784,7 +784,7 @@ function init_gear_sets()
     ear2="Malignance Earring",          -- 10,  8, __, __
     ring1="Kishar Ring",                --  5, __, 10, __
     ring2="Metamorph Ring +1",          -- 16, 15, __, __
-    back="Aurist's Cape",               -- 33, 33, __, __
+    back="Aurist's Cape +1",            -- 33, 33, __, __
     waist="Acuity Belt +1",             -- 15, 23, __, __
     -- Academic's set bonus             -- 60, __, __, __
     -- 465 M.Acc, 298 INT, 30% Enfeebling Duration, 20 Enfeebling Skill
@@ -1295,9 +1295,9 @@ function init_gear_sets()
   }
 
   sets.buff.Doom = {
+    ring1="Eshmun's Ring",          --20
     waist="Gishdubar Sash",         --10
     -- neck="Nicander's Necklace",  --20
-    -- ring1="Eshmun's Ring",       --20
   }
 
   sets.Special = {}

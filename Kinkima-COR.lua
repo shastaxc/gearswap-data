@@ -2162,7 +2162,7 @@ function init_gear_sets()
   sets.TreasureHunter.RA = sets.TreasureHunter
 
   sets.buff.Doom = {
-    neck="Nicander's Necklace", --20
+    -- neck="Nicander's Necklace", --20
     ring1="Eshmun's Ring", --20
     waist="Gishdubar Sash", --10
   }

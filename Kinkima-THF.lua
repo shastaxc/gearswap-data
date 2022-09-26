@@ -1152,7 +1152,7 @@ function init_gear_sets()
   sets.Special.SleepyHead = { head="Frenzy Sallet", }
 
   sets.buff.Doom = {
-    neck="Nicander's Necklace", --20
+    -- neck="Nicander's Necklace", --20
     ring2="Eshmun's Ring", --20
     waist="Gishdubar Sash", --10
   }

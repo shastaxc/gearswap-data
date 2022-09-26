@@ -624,7 +624,10 @@ function init_gear_sets()
   })
 
   -- TODO: Update
-  sets.midcast['Blue Magic'].PhysicalChr = set_combine(sets.midcast['Blue Magic'].Physical, {ear1="Regal Earring", ear2="Enchanter's Earring +1"})
+  sets.midcast['Blue Magic'].PhysicalChr = set_combine(sets.midcast['Blue Magic'].Physical, {
+    ear1="Regal Earring",
+    -- ear2="Enchanter's Earring +1"
+  })
 
   sets.midcast['Blue Magic'].Magical = {
     main="Bunzi's Rod",               -- 60, 50, 15 [__/__, ___] __
@@ -657,7 +660,7 @@ function init_gear_sets()
   sets.midcast['Blue Magic'].MagicalDark.Resistant = sets.midcast['Blue Magic'].Magical.Resistant
 
   sets.midcast['Blue Magic'].MagicalLight = set_combine(sets.midcast['Blue Magic'].Magical, {
-    ring1="Weatherspoon Ring"
+    -- ring1="Weatherspoon Ring"
   })
   sets.midcast['Blue Magic'].MagicalLight.Resistant = sets.midcast['Blue Magic'].Magical.Resistant
 
@@ -666,7 +669,6 @@ function init_gear_sets()
   sets.midcast['Blue Magic'].MagicalMnd.Resistant = sets.midcast['Blue Magic'].Magical.Resistant
 
   sets.midcast['Blue Magic'].MagicalDex = set_combine(sets.midcast['Blue Magic'].Magical, {
-    ammo="Aurgelmir Orb",
     ring2="Ilabrat Ring",
     -- ammo="Aurgelmir Orb +1",
     -- ear2="Mache Earring +1",
@@ -674,7 +676,6 @@ function init_gear_sets()
   sets.midcast['Blue Magic'].MagicalDex.Resistant = sets.midcast['Blue Magic'].Magical.Resistant
 
   sets.midcast['Blue Magic'].MagicalVit = set_combine(sets.midcast['Blue Magic'].Magical, {
-    ammo="Aurgelmir Orb",
     -- ammo="Aurgelmir Orb +1",
   })
   sets.midcast['Blue Magic'].MagicalVit.Resistant = sets.midcast['Blue Magic'].Magical.Resistant
@@ -827,8 +828,8 @@ function init_gear_sets()
 
   sets.midcast.Refresh = set_combine(sets.midcast.EnhancingDuration, {
     waist="Gishdubar Sash",
-    back="Grapevine Cape",
     -- head="Amalric Coif +1",
+    -- back="Grapevine Cape",
   })
 
   sets.midcast.Stoneskin = set_combine(sets.midcast.EnhancingDuration, {
@@ -1213,7 +1214,7 @@ function init_gear_sets()
   }
 
   sets.buff.Doom = {
-    neck="Nicander's Necklace", --20
+    -- neck="Nicander's Necklace", --20
     ring1="Eshmun's Ring", --20
     waist="Gishdubar Sash", --10
   }
