@@ -1213,7 +1213,7 @@ function init_gear_sets()
     ammo=gear.RAbullet,
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body=gear.Adhemar_A_body,         --  6, __, 55 <__,  4, __> [__/__,  69]
-    hands="Floral Gauntlets",         --  5, __, 36 <__,  3, __> [__/ 4,  37]
+    hands=gear.Floral_Gauntlets,      --  5, __, 36 <__,  3, __> [__/ 4,  37]
     legs=gear.Carmine_D_legs,         --  6, __, 55 <__, __, __> [__/__,  80]
     feet=gear.Taeon_DW_feet,          --  9, __, 22 <__, __, __> [__/__,  69]
     neck="Iskur Gorget",              -- __,  8, __ <__, __, __> [__/__, ___]
@@ -1249,7 +1249,7 @@ function init_gear_sets()
     ammo=gear.RAbullet,
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
-    hands="Floral Gauntlets",         --  5, __, 36 <__,  3, __> [__/ 4,  37]
+    hands=gear.Floral_Gauntlets,      --  5, __, 36 <__,  3, __> [__/ 4,  37]
     legs=gear.Carmine_D_legs,         --  6, __, 55 <__, __, __> [__/__,  80]
     feet=gear.Taeon_DW_feet,          --  9, __, 22 <__, __, __> [__/__,  69]
     neck="Iskur Gorget",              -- __,  8, __ <__, __, __> [__/__, ___]
@@ -1550,7 +1550,7 @@ function init_gear_sets()
     ammo=gear.RAbullet,
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body=gear.Adhemar_A_body,         --  6, __, 55 <__,  4, __> [__/__,  69]
-    hands="Floral Gauntlets",         --  5, __, 36 <__,  3, __> [__/ 4,  37]
+    hands=gear.Floral_Gauntlets,      --  5, __, 36 <__,  3, __> [__/ 4,  37]
     legs="Chasseur's Culottes +2",    -- __, 11, 53 <__, __, __> [11/11, 115]
     feet=gear.Taeon_DW_feet,          --  9, __, 22 <__, __, __> [__/__,  69]
     neck="Loricate Torque +1",        -- __, __, __ <__, __, __> [ 6/ 6, ___]
@@ -1567,7 +1567,7 @@ function init_gear_sets()
     ammo=gear.RAbullet,
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
-    hands="Floral Gauntlets",         --  5, __, 36 <__,  3, __> [__/ 4,  37]
+    hands=gear.Floral_Gauntlets,      --  5, __, 36 <__,  3, __> [__/ 4,  37]
     legs=gear.Carmine_D_legs,         --  6, __, 55 <__, __, __> [__/__,  80]
     feet=gear.Taeon_DW_feet,          --  9, __, 22 <__, __, __> [__/__,  69]
     neck="Loricate Torque +1",        -- __, __, __ <__, __, __> [ 6/ 6, ___]
@@ -1584,7 +1584,7 @@ function init_gear_sets()
     ammo=gear.RAbullet,
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
-    hands="Floral Gauntlets",         --  5, __, 36 <__,  3, __> [__/ 4,  37]
+    hands=gear.Floral_Gauntlets,      --  5, __, 36 <__,  3, __> [__/ 4,  37]
     legs=gear.Carmine_D_legs,         --  6, __, 55 <__, __, __> [__/__,  80]
     feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
     neck="Subtlety Spectacles",       -- __, __, 15 <__, __, __> [__/__, ___]

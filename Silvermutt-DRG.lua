@@ -188,7 +188,7 @@ function init_gear_sets()
     body="Pteroslaver Mail +1",
     hands="Gleti's Gauntlets",
     legs="Pteroslaver Brais +3",
-    feet="Flamma Gambieras",
+    feet="Flamma Gambieras +2",
     neck="Vim Torque +1",
     ear1="Telos Earring",
     ear2="Sherida Earring",
@@ -647,7 +647,7 @@ function init_gear_sets()
     ring1="Moonlight Ring",         -- __,  5,  8,  8, __ <__, __, __> [ 5/ 5, ___] {__/__}
     ring2="Niqmaddu Ring",          -- __, __, __, __, __ <__, __,  3> [__/__, ___] {__/__}
     back=gear.DRG_TP_Cape,          -- __, __, 20, 30, __ <10, __, __> [10/__, ___] {__/__}
-    waist="Tempus Belt +1",         -- 15, __, __, __, __ <__, __, __> [__/__, ___] {__/__}
+    waist="Tempus Fugit +1",        -- 15, __, __, __, __ <__, __, __> [__/__, ___] {__/__}
     -- 25 Haste, 66 STP, 275 Att, 277 Acc, 19 Crit Rate <31 DA, 0 TA, 3 QA> [44 PDT/27 MDT, 378 Meva] {19 PetPDT/8 PetMDT}
   }
   sets.engaged.LowAcc = set_combine(sets.engaged, {
@@ -710,7 +710,7 @@ function init_gear_sets()
     ring1="Moonlight Ring",         -- __,  5,  8,  8, __ <__, __, __> [ 5/ 5, ___] {__/__}
     ring2="Niqmaddu Ring",          -- __, __, __, __, __ <__, __,  3> [__/__, ___] {__/__}
     back=gear.DRG_TP_Cape,          -- __, __, 20, 30, __ <10, __, __> [10/__, ___] {__/__}
-    waist="Tempus Belt +1",         -- 15, __, __, __, __ <__, __, __> [__/__, ___] {__/__}
+    waist="Tempus Fugit +1",        -- 15, __, __, __, __ <__, __, __> [__/__, ___] {__/__}
     -- 26 Haste, 50 STP, 360 Att, 285 Acc, 23 Crit Rate <29 DA, 0 TA, 3 QA> [51 PDT/34 MDT, 442 Meva] {44 PetPDT/33 PetMDT}
   })
   sets.engaged.LowAcc.LightDef = set_combine(sets.engaged.LowAcc, {
