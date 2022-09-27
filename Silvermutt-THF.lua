@@ -1328,8 +1328,8 @@ function init_gear_sets()
 
   -- Ranged weapon sets
   sets.WeaponSet['Archery'] = {
-    ranged="Ullr",
-    ammo="Eminent Arrow",
+    -- ranged="Ullr",
+    -- ammo="Eminent Arrow",
   }
   sets.WeaponSet['Throwing'] = {
     ranged="Antitail +1",

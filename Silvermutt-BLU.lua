@@ -192,6 +192,10 @@ function job_setup()
 
   blue_magic_maps.Refresh = S{'Battery Charge'}
 
+  -- Blue magic spells that should use conserve MP midcast set.
+  blue_magic_maps.ConserveMP = S{'Refueling', 'Warm-Up', 'Saline Coat', 'Reactor Cool', 'Plasma Charge', 'Animating Wail',
+  'Nat. Meditation', 'Carcharian Verve', 'Erratic Flutter', 'Mighty Guard'}
+
   -- Spells that require Unbridled Learning to cast.
   unbridled_spells = S{'Absolute Terror','Bilgestorm','Blistering Roar','Bloodrake','Carcharian Verve','Cesspool',
       'Crashing Thunder','Cruel Joke','Droning Whirlwind','Gates of Hades','Harden Shell','Mighty Guard',
@@ -371,9 +375,7 @@ function init_gear_sets()
   -- Used when casting blue magic spells, and not sub RDM.
   sets.precast.FC['Blue Magic'] = {
     ammo="Sapience Orb",          --  2 [__/__, ___]
-    head=gear.Carmine_D_head,     -- 14 [__/__,  53]
     hands=gear.Leyline_Gloves,    --  5 [__/__,  62]
-    legs="Pinga Pants +1",        -- 13 [__/__, 147]
     feet=gear.Carmine_D_feet,     --  8 [ 4/__,  80]
     neck="Loricate Torque +1",    -- __ [ 6/ 6, ___]
     ear1="Loquacious Earring",    --  2 [__/__, ___]
@@ -383,10 +385,12 @@ function init_gear_sets()
     back=gear.BLU_FC_Cape,        -- 10 [10/__, ___]
     waist="Flume Belt +1",        -- __ [ 4/__, ___]
     -- Blue Magic FC trait            5 [__/__, ___]
-    -- 63 FC [37 PDT / 21 MDT, 342 M.Eva]
+    -- 36 FC [37 PDT / 21 MDT, 142 M.Eva]
 
+    -- head=gear.Carmine_D_head,  -- 14 [__/__,  53]
     -- body="Hashishin Mintan +2",-- 15 [12/12, 126]
     -- hands=gear.Leyline_Gloves, --  7 [__/__,  62]
+    -- legs="Pinga Pants +1",     -- 13 [__/__, 147]
     -- 80 FC [49 PDT / 33 MDT, 468 M.Eva]
   }
 
@@ -532,8 +536,8 @@ function init_gear_sets()
 
   sets.midcast.SpellInterrupt = {
     ammo="Staunch Tathlum +1", --11
-    ring1="Evanescence Ring", --5
-    waist="Sanctuary Obi +1", --10
+    -- ring1="Evanescence Ring", --5
+    -- waist="Sanctuary Obi +1", --10
   }
 
   sets.midcast['Blue Magic'] = {
@@ -611,7 +615,10 @@ function init_gear_sets()
   })
 
   -- TODO: Update
-  sets.midcast['Blue Magic'].PhysicalChr = set_combine(sets.midcast['Blue Magic'].Physical, {ear1="Regal Earring", ear2="Enchanter's Earring +1"})
+  sets.midcast['Blue Magic'].PhysicalChr = set_combine(sets.midcast['Blue Magic'].Physical, {
+    ear1="Regal Earring",
+    -- ear2="Enchanter's Earring +1"
+  })
 
   sets.midcast['Blue Magic'].Magical = {
     main="Bunzi's Rod",               -- 60, 50, 15 [__/__, ___] __
@@ -763,15 +770,16 @@ function init_gear_sets()
     ring1="Defending Ring",           -- __, __, __ [10/10, ___]
     ring2="Stikini Ring +1",          -- __,  5, __ [__/__, ___]
     back=gear.BLU_FC_Cape,            -- __, 30, __ [10/__, ___]
-    waist="Sanctuary Obi +1",         -- __, __, 10 [__/__, ___]
     -- Merits                            __, __,  6 [__/__, ___]
+    -- 47 Cure Potency, 228 MND, 47 SIRD [62 PDT / 42 MDT, 553 M.Eva]
 
     -- sub="Sors Shield",             --  3, __, __ [__/__, ___]
     -- body="Shamash Robe",           -- __, 40, __ [10/__, 106]
     -- hands=gear.Telchine_ENH_hands, -- 18, 33, __ [__/__,  62]
     -- ring2="Freke Ring",            -- __, __, 10 [__/__, ___]
+    -- waist="Sanctuary Obi +1",      -- __, __, 10 [__/__, ___]
     -- 51 Cure Potency, 196 MND, 71 SIRD [53 PDT / 33 MDT, 521 M.Eva]
-  } -- 47 Cure Potency, 228 MND, 57 SIRD [62 PDT / 42 MDT, 553 M.Eva]
+  }
 
   sets.midcast['Blue Magic'].HealingSelf = set_combine(sets.midcast['Blue Magic'].Healing, {
     waist="Gishdubar Sash",     -- (10)
@@ -815,6 +823,8 @@ function init_gear_sets()
     -- waist="Emphatikos Rope",
   })
 
+  sets.midcast['Blue Magic']['ConserveMP'] = {}
+
   sets.midcast['Enhancing Magic'] = {
     ammo="Staunch Tathlum +1", --3DT
     legs="Carmine Cuisses +1",
@@ -834,7 +844,7 @@ function init_gear_sets()
   }
 
   sets.midcast.EnhancingDuration = {
-    main="Sakpata's Sword", --10DT
+    main="Bunzi's Rod",
     sub=gear.Colada_ENH,
     ammo="Staunch Tathlum +1", --3DT
     neck="Loricate Torque +1", --6DT
@@ -844,6 +854,7 @@ function init_gear_sets()
     ring2="Stikini Ring +1",
     back=gear.BLU_FC_Cape, --10PDT
     waist="Flume Belt +1", --4PDT
+    -- main="Sakpata's Sword", --10DT
     -- head=gear.Telchine_ENH_head,
     -- body=gear.Telchine_ENH_body,
     -- hands=gear.Telchine_ENH_hands,

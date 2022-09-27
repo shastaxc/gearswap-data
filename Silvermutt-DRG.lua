@@ -221,13 +221,13 @@ function init_gear_sets()
   -- Fast cast sets for spells
   sets.precast.FC = {
     hands=gear.Leyline_Gloves, --8
-    legs="Ayanmo Cosciales +2", --6
     feet=gear.Carmine_D_feet, --8
     neck="Orunmila's Torque", --5
     ear1="Loquacious Earring", --2
     -- ammo="Sapience Orb", --2
     -- head=gear.Carmine_D_head, --14
     -- body="Sacro Breastplate", --10
+    -- legs="Ayanmo Cosciales +2", --6
     -- ear2="Enchanter's Earring +1", --2
   }
 
@@ -527,7 +527,6 @@ function init_gear_sets()
     neck="Adad Amulet",
     ear1="Enmerkar Earring",
     ear2="Dragoon's Earring",
-    waist="Incarnation Sash",
     -- ammo="Voluspa Tathlum",
     -- head="Pteroslaver Armet +3",
     -- body=gear.Acro_Breath_body,
@@ -536,6 +535,7 @@ function init_gear_sets()
     -- feet=gear.Acro_Breath_feet,
     -- ring1="Cath Palug Ring",
     -- back=gear.DRG_Adoulin_Cape,
+    -- waist="Incarnation Sash",
   }
 
   ------------------------------------------------------------------------------------------------

@@ -1103,19 +1103,22 @@ function init_gear_sets()
   -- EG: sets.engaged.Dagger.Accuracy.Evasion
 
   sets.engaged = {
-    head=gear.Adhemar_B_head,
-    body=gear.Adhemar_A_body,
-    hands=gear.Adhemar_B_hands,
-    legs=gear.Samnuha_legs,
-    feet=gear.Herc_TA_feet,
-    neck="Iskur Gorget",
-    ear1="Sherida Earring",
-    ear2="Telos Earring",
-    ring1="Ilabrat Ring",
-    ring2="Epona's Ring",
-    back=gear.RNG_DW_Cape,
-    waist="Windbuffet Belt +1",
-    -- back=gear.RNG_DA_Cape,
+    head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
+    body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
+    hands=gear.Adhemar_B_hands,       -- __,  7, 32 <__,  4, __> [__/__,  43]
+    legs=gear.Samnuha_legs,           -- __,  7, 15 < 3,  3, __> [__/__,  75]
+    feet=gear.Herc_TA_feet,           -- __, __, 23 <__,  6, __> [ 2/__,  75]
+    neck="Iskur Gorget",              -- __,  8, __ <__, __, __> [__/__, ___]
+    ear1="Sherida Earring",           -- __,  5, __ < 5, __, __> [__/__, ___]
+    ear2="Telos Earring",             -- __,  5, 10 < 1, __, __> [__/__, ___]
+    ring1="Ilabrat Ring",             -- __,  5, __ <__, __, __> [__/__, ___]
+    ring2="Epona's Ring",             -- __, __, __ < 3,  3, __> [__/__, ___]
+    back=gear.RNG_DW_Cape,            -- 10, __, 20 <__, __, __> [10/__, ___]
+    waist="Windbuffet Belt +1",       -- __, __,  2 <__,  2,  2> [__/__, ___]
+    -- 10 DW, 66 STP, 202 Acc <12 DA, 18 TA, 2 QA> [27 PDT/15 MDT, 455 M.Eva]
+
+    -- back=gear.RNG_STP_Cape,        -- __, 10, 20 <__, __, __> [10/__, ___]
+    -- 0 DW, 76 STP, 202 Acc <12 DA, 18 TA, 2 QA> [27 PDT/15 MDT, 455 M.Eva]
   }
   sets.engaged.LowAcc = set_combine(sets.engaged, {
     head="Dampening Tam",
@@ -1138,19 +1141,21 @@ function init_gear_sets()
 
   -- No Magic/Gear/JA Haste (74% DW to cap, 49% from gear)
   sets.engaged.DW = {
-    head=gear.Adhemar_B_head,
-    body=gear.Adhemar_A_body, --6
-    hands=gear.Floral_Gauntlets, --5
-    legs=gear.Carmine_D_legs, --6
-    feet=gear.Taeon_DW_feet, --9
-    neck="Iskur Gorget",
-    ear1="Eabani Earring", --4
-    ear2="Suppanomimi", --5
-    ring1="Ilabrat Ring",
-    ring2="Epona's Ring",
-    back=gear.RNG_DW_Cape, --10
-    waist="Windbuffet Belt +1",
-  } -- 45%
+    head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
+    body=gear.Adhemar_A_body,         --  6, __, 55 <__,  4, __> [__/__,  69]
+    hands=gear.Floral_Gauntlets,      --  5, __, 36 <__,  3, __> [__/ 4,  37]
+    legs=gear.Carmine_D_legs,         --  6, __, 55 <__, __, __> [__/__,  80]
+    feet=gear.Taeon_DW_feet,          --  9, __, 22 <__, __, __> [__/__,  69]
+    neck="Iskur Gorget",              -- __,  8, __ <__, __, __> [__/__, ___]
+    ear1="Suppanomimi",               --  5, __, __ <__, __, __> [__/__, ___]
+    ear2="Sherida Earring",           -- __,  5, __ < 5, __, __> [__/__, ___]
+    ring1="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
+    ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
+    back=gear.RNG_DW_Cape,            -- 10, __, 20 <__, __, __> [10/__, ___]
+    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
+    -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
+    -- 73 DW, 25 STP, 238 Acc <5 DA, 7 TA, 0 QA> [33 PDT/19 MDT, 378 MEVA]
+  }
   sets.engaged.DW.LowAcc = set_combine(sets.engaged.DW, {
     head="Dampening Tam",
     ring1="Chirich Ring +1",
@@ -1171,19 +1176,21 @@ function init_gear_sets()
 
   -- Low Magic/Gear/JA Haste (67% DW to cap, 42% from gear)
   sets.engaged.DW.LowHaste = {
-    head=gear.Adhemar_B_head,
-    body=gear.Adhemar_A_body, --6
-    hands=gear.Floral_Gauntlets, --5
-    legs=gear.Carmine_D_legs, --6
-    feet=gear.Taeon_DW_feet, --9
-    neck="Iskur Gorget",
-    ear1="Eabani Earring", --4
-    ear2="Suppanomimi", --5
-    ring1="Ilabrat Ring",
-    ring2="Epona's Ring",
-    back=gear.RNG_DW_Cape, --10
-    waist="Windbuffet Belt +1",
-  } -- 42%
+    head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
+    body=gear.Adhemar_A_body,         --  6, __, 55 <__,  4, __> [__/__,  69]
+    hands=gear.Floral_Gauntlets,      --  5, __, 36 <__,  3, __> [__/ 4,  37]
+    legs="Amini Bragues +2",          -- __, 11, 53 <__, __, __> [12/12, 115]
+    feet=gear.Taeon_DW_feet,          --  9, __, 22 <__, __, __> [__/__,  69]
+    neck="Iskur Gorget",              -- __,  8, __ <__, __, __> [__/__, ___]
+    ear1="Suppanomimi",               --  5, __, __ <__, __, __> [__/__, ___]
+    ear2="Dedition Earring",          -- __,  8,-10 <__, __, __> [__/__, ___]
+    ring1="Epona's Ring",             -- __, __, __ < 3,  3, __> [__/__, ___]
+    ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
+    back=gear.RNG_DW_Cape,            -- 10, __, 20 <__, __, __> [10/__, ___]
+    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
+    -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
+    -- 67 DW, 39 STP, 236 Acc <3 DA, 10 TA, 0 QA> [38 PDT/32 MDT, 413 MEVA]
+  }
   sets.engaged.DW.LowAcc.LowHaste = set_combine(sets.engaged.DW.LowHaste, {
     head="Dampening Tam",
     ring1="Chirich Ring +1",
@@ -1204,19 +1211,21 @@ function init_gear_sets()
 
   -- Mid Magic/Gear/JA Haste (56% DW to cap, 31% from gear)
   sets.engaged.DW.MidHaste = {
-    head=gear.Adhemar_B_head,
-    body=gear.Adhemar_A_body, --6
-    hands=gear.Floral_Gauntlets, --5
-    legs=gear.Carmine_D_legs, --6
-    feet=gear.Herc_TA_feet,
-    neck="Iskur Gorget",
-    ear1="Sherida Earring",
-    ear2="Suppanomimi", --5
-    ring1="Ilabrat Ring",
-    ring2="Epona's Ring",
-    back=gear.RNG_DW_Cape, --10
-    waist="Windbuffet Belt +1",
-  } -- 32%
+    head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
+    body=gear.Adhemar_A_body,         --  6, __, 55 <__,  4, __> [__/__,  69]
+    hands=gear.Adhemar_B_hands,       -- __,  7, 32 <__,  4, __> [__/__,  43]
+    legs="Amini Bragues +2",          -- __, 11, 53 <__, __, __> [12/12, 115]
+    feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
+    neck="Iskur Gorget",              -- __,  8, __ <__, __, __> [__/__, ___]
+    ear1="Suppanomimi",               --  5, __, __ <__, __, __> [__/__, ___]
+    ear2="Eabani Earring",            --  4, __, __ <__, __, __> [__/__,   8]
+    ring1="Ilabrat Ring",             -- __,  5, __ <__, __, __> [__/__, ___]
+    ring2="Epona's Ring",             -- __, __, __ < 3,  3, __> [__/__, ___]
+    back=gear.RNG_DW_Cape,            -- 10, __, 20 <__, __, __> [10/__, ___]
+    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
+    -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
+    -- 57 DW, 52 STP, 270 Acc <3 DA, 11 TA, 0 QA> [32 PDT/22 MDT, 508 MEVA]
+  }
   sets.engaged.DW.LowAcc.MidHaste = set_combine(sets.engaged.DW.MidHaste, {
     head="Dampening Tam",
     ring1="Chirich Ring +1",
@@ -1284,7 +1293,7 @@ function init_gear_sets()
     back=gear.RNG_DW_Cape, --10
     waist="Windbuffet Belt +1",
     -- ear2="Suppanomimi", --5
-    -- back=gear.RNG_DA_Cape,
+    -- back=gear.RNG_STP_Cape,
   } -- 21%
   sets.engaged.DW.LowAcc.SuperHaste = {
   }
@@ -1308,7 +1317,7 @@ function init_gear_sets()
     ring2="Epona's Ring",
     back=gear.RNG_DW_Cape, --10
     waist="Windbuffet Belt +1",
-    -- back=gear.RNG_DA_Cape,
+    -- back=gear.RNG_STP_Cape,
   } -- 16%
   sets.engaged.DW.LowAcc.MaxHaste = set_combine(sets.engaged.DW.MaxHaste, {
     head="Dampening Tam",

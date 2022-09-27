@@ -787,7 +787,7 @@ function init_gear_sets()
     legs="Bhikku Hose +2",
     feet="Mpaca's Boots",
     neck="Monk's Nodowa +2",
-    ear1="Sherida's Earring",
+    ear1="Sherida Earring",
     ear2="Schere Earring",
     ring1="Sroda Ring",
     ring2="Epaminondas's Ring",
