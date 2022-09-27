@@ -193,6 +193,10 @@ function job_setup()
 
   blue_magic_maps.Refresh = S{'Battery Charge'}
 
+  -- Blue magic spells that should use conserve MP midcast set.
+  blue_magic_maps.ConserveMP = S{'Refueling', 'Warm-Up', 'Saline Coat', 'Reactor Cool', 'Plasma Charge', 'Animating Wail',
+  'Nat. Meditation', 'Carcharian Verve', 'Erratic Flutter', 'Mighty Guard'}
+
   -- Spells that require Unbridled Learning to cast.
   unbridled_spells = S{'Absolute Terror','Bilgestorm','Blistering Roar','Bloodrake','Carcharian Verve','Cesspool',
       'Crashing Thunder','Cruel Joke','Droning Whirlwind','Gates of Hades','Harden Shell','Mighty Guard',
@@ -790,6 +794,8 @@ function init_gear_sets()
     -- head="Amalric Coif +1",
     -- waist="Emphatikos Rope",
   })
+
+  sets.midcast['Blue Magic']['ConserveMP'] = {}
 
   sets.midcast['Enhancing Magic'] = {
     ammo="Staunch Tathlum +1", --3DT

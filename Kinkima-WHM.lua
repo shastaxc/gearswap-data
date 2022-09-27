@@ -33,6 +33,15 @@ function job_setup()
       'Rainstorm','Windstorm','Firestorm','Hailstorm','Thunderstorm','Voidstorm'}
   state.CuragaTier = M{['description']='Curaga Tier','IV','V','I'}
 
+  -- Spells that don't scale with skill. Overrides Mote lib.
+  classes.EnhancingDurSpells = S{'Adloquium', 'Haste', 'Haste II', 'Flurry', 'Flurry II', 'Protect', 'Protect II', 'Protect III',
+      'Protect IV', 'Protect V', 'Protectra', 'Protectra II', 'Protectra III', 'Protectra IV', 'Protectra V', 'Shell', 'Shell II',
+      'Shell III', 'Shell IV', 'Shell V', 'Shellra', 'Shellra II', 'Shellra III', 'Shellra IV', 'Shellra V', 'Blaze Spikes',
+      'Ice Spikes', 'Shock Spikes', 'Enaero', 'Enaero II', 'Enblizzard', 'Enblizzard II', 'Enfire', 'Enfire II', 'Enstone',
+      'Enstone II', 'Enthunder', 'Enthunder II', 'Enwater', 'Enwater II', 'Firestorm', 'Firestorm II', 'Hailstorm', 'Hailstorm II',
+      'Rainstorm', 'Rainstorm II', 'Sandstorm', 'Sandstorm II', 'Thunderstorm', 'Thunderstorm II', 'Voidstorm', 'Voidstorm II',
+      'Windstorm', 'Windstorm II'}
+
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c usekey')
   send_command('bind @c gs c toggle CP')
@@ -892,16 +901,14 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     end
   end
 
+  -- If no explicit set defined for this spell
   if spell.skill == 'Enhancing Magic' then
-    if not sets.midcast[spell.english] and not sets.midcast[spellMap]
-        and (classes.NoSkillSpells:contains(spell.english) or classes.ShortEnhancingSpells:contains(spell.english)) then
+    if classes.EnhancingDurSpells:contains(spell.english) and sets.midcast.EnhancingDuration then
       equip(sets.midcast.EnhancingDuration)
     end
     -- If self targeted refresh
-    if spellMap == 'Refresh' then
-      if spell.targets.Self then
-        equip(sets.midcast.RefreshSelf)
-      end
+    if spellMap == 'Refresh' and spell.targets.Self and sets.midcast.RefreshSelf then
+      equip(sets.midcast.RefreshSelf)
     end
   end
 

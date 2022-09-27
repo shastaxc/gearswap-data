@@ -40,25 +40,6 @@ elemental_ws = S{'Aeolian Edge', 'Sanguine Blade', 'Cloudsplitter', 'Seraph Blad
     'Shining Strike', 'Seraph Strike', 'Flash Nova', 'Rock Crusher', 'Earth Crusher', 'Starburst', 'Sunburst', 'Vidohunir',
     'Garland of Bliss', 'Omniscience', 'Flaming Arrow', 'Hot Shot'}
 
--- Blue magic spells that should use conserve MP midcast set.
-classes.BluConserveSpells = S{'Refueling', 'Warm-Up', 'Saline Coat', 'Reactor Cool', 'Plasma Charge', 'Animating Wail',
-                              'Nat. Meditation', 'Carcharian Verve', 'Erratic Flutter', 'Mighty Guard'}
-
--- Spells that don't scale with skill. Overrides Mote lib.
-classes.NoSkillSpells = S{'Adloquium', 'Haste', 'Haste II', 'Refresh', 'Refresh II', 'Refresh III', 'Regen', 'Regen II', 'Regen III',
-    'Regen IV', 'Regen V', 'Protect', 'Protect II', 'Protect III', 'Protect IV', 'Protect V', 'Protectra', 'Protectra II',
-    'Protectra III', 'Protectra IV', 'Protectra V', 'Shell', 'Shell II', 'Shell III', 'Shell IV', 'Shell V', 'Shellra',
-    'Shellra II', 'Shellra III', 'Shellra IV', 'Shellra V', 'Raise', 'Raise II', 'Raise III', 'Arise', 'Reraise', 'Reraise II',
-    'Reraise III', 'Reraise IV', 'Sneak', 'Invisible', 'Deodorize', 'Embrava', 'Aquaveil', 'Stoneskin', 'Blink', 'Auspice'}
-
--- Enhancing magic spells that have short duration.
-classes.ShortEnhancingSpells = S{'Blaze Spikes', 'Ice Spikes', 'Shock Spikes', 'Boost-AGI', 'Boost-CHR', 'Boost-DEX', 'Boost-INT',
-    'Boost-MND', 'Boost-STR', 'Boost-VIT', 'Enaero', 'Enaero II', 'Enblizzard', 'Enblizzard II', 'Enfire', 'Enfire II', 'Enstone',
-    'Enstone II', 'Enthunder', 'Enthunder II', 'Enwater', 'Enwater II', 'Firestorm', 'Firestorm II', 'Hailstorm', 'Hailstorm II',
-    'Rainstorm', 'Rainstorm II', 'Sandstorm', 'Sandstorm II', 'Thunderstorm', 'Thunderstorm II', 'Voidstorm', 'Voidstorm II',
-    'Windstorm', 'Windstorm II', 'Flurry', 'Flurry II', 'Haste', 'Haste II', 'Phalanx', 'Refresh', 'Refresh II', 'Refresh III', 'Regen',
-    'Regen II', 'Regen III', 'Regen IV', 'Regen V', 'Reprisal', 'Temper', 'Temper II', 'Auspice'}
-
 tp_bonus_weapons = {
   ['main']={
     ['Aeneas'] = 500,
@@ -146,9 +127,8 @@ function define_global_sets()
   sets.org.global[2] = {ring1="Dimensional Ring (Dem)"}
   sets.org.global[3] = {ring1="Dimensional Ring (Mea)"}
   sets.org.global[4] = {ring1="Warp Ring"}
-  sets.org.global[5] = {ear1="Reraise Earring"}
-  sets.org.global[6] = {head="Shobuhouou Kabuto"}
-  sets.org.global[7] = {back="Nexus Cape"}
+  sets.org.global[5] = {head="Shobuhouou Kabuto"}
+  sets.org.global[6] = {back="Nexus Cape"}
   include('Global-Augments.lua')
   include('Kinkima-Augments.lua')
 end

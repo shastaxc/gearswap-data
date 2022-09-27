@@ -31,6 +31,13 @@ function job_setup()
     ['Aspirs'] = {'Aspir','Aspir II'}
   }
 
+  -- Spells that don't scale with skill. Overrides Mote lib.
+  classes.EnhancingDurSpells = S{'Adloquium', 'Haste', 'Haste II', 'Flurry', 'Flurry II', 'Protect', 'Protect II',
+      'Protect III', 'Protect IV', 'Protect V', 'Protectra', 'Protectra II', 'Protectra III', 'Protectra IV', 'Protectra V',
+      'Shell', 'Shell II', 'Shell III', 'Shell IV', 'Shell V', 'Shellra', 'Shellra II', 'Shellra III', 'Shellra IV',
+      'Shellra V', 'Embrava', 'Blaze Spikes', 'Ice Spikes', 'Shock Spikes', 'Enaero', 'Enaero II', 'Enblizzard',
+      'Enblizzard II', 'Enfire', 'Enfire II', 'Enstone', 'Enstone II', 'Enthunder', 'Enthunder II', 'Enwater', 'Enwater II'}
+
   update_active_strategems()
 
   send_command('bind !s gs c faceaway')
@@ -1442,33 +1449,19 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
   end
 
   -- If no explicit set defined for this spell
-  if not sets.midcast[spell.english] and (not sets.midcast[spellMap] or classes.NoSkillSpells:contains(spell.english)) then
-    if spell.skill == 'Enhancing Magic' then
-      -- Use enhancing duration gear if on NoSkillSpells and ShortEnhancingSpells lists
-      if classes.NoSkillSpells:contains(spell.english) or classes.ShortEnhancingSpells:contains(spell.english) then
-        equip(sets.midcast.EnhancingDuration)
-      end
-      -- If self targeted refresh
-      if spellMap == 'Refresh' then
-        if spell.targets.Self then
-          equip(sets.midcast.RefreshSelf)
-        end
-      end
-      if spellMap == 'Regen' and state.RegenMode.value == 'Duration' then
-        equip(sets.midcast.RegenDuration)
-      end
-      if spellMap == 'Storm' and player.merits.stormsurge > 0 then
-        equip(sets.midcast.Stormsurge)
-      end
-    else -- Use precast set for faster recast
-      local customEquipSet = select_specific_set(sets.precast.FC, spell, spellMap)
-      -- Add optional casting mode
-      if customEquipSet[state.CastingMode.current] then
-        customEquipSet = customEquipSet[state.CastingMode.current]
-      end
-      if customEquipSet['RDM'] then
-        equip(customEquipSet['RDM'])
-      end
+  if spell.skill == 'Enhancing Magic' then
+    if classes.EnhancingDurSpells:contains(spell.english) and sets.midcast.EnhancingDuration then
+      equip(sets.midcast.EnhancingDuration)
+    end
+    -- If self targeted refresh
+    if spellMap == 'Refresh' and spell.targets.Self and sets.midcast.RefreshSelf then
+      equip(sets.midcast.RefreshSelf)
+    end
+    if spellMap == 'Regen' and state.RegenMode.value == 'Duration' and sets.midcast.RegenDuration then
+      equip(sets.midcast.RegenDuration)
+    end
+    if spellMap == 'Storm' and player.merits.stormsurge > 0 and sets.midcast.Stormsurge then
+      equip(sets.midcast.Stormsurge)
     end
   end
 
