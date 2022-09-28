@@ -1768,7 +1768,7 @@ function apply_grimoire_bonuses(spell, action, spellMap, eventArgs)
     if state.Buff.Immanence then
       equip(sets.buff['Immanence'])
     end
-    if state.Buff.Klimaform and spell.element == world.weather_element then
+    if state.Buff.Klimaform and spell.skill == 'Elemental Magic' and spell.element == world.weather_element then
       equip(sets.buff['Klimaform'])
     end
   end
