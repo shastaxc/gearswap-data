@@ -809,9 +809,9 @@ function init_gear_sets()
     ring1="Defending Ring", --10DT
     ring2="Stikini Ring +1",
     back=gear.BLU_FC_Cape, --10PDT
+    waist="Olympus Sash",
     -- main="Sakpata's Sword", --10DT
     -- ear2="Andoaa Earring",
-    -- waist="Olympus Sash",
   }
 
   sets.midcast.EnhancingDuration = {
