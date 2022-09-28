@@ -1083,7 +1083,7 @@ function init_gear_sets()
     legs="Chasseur's Culottes +2",    -- 11/11, 115
     ring2="Defending Ring",           -- 10/10, ___
     -- 10 PDT from JSE cape
-  } -- 55 PDT / 45 MDT, 639 MEVA
+  } -- 51 PDT / 41 MDT, 489 MEVA
 
   sets.HeavyDef = {
     head="Malignance Chapeau",  --  6/ 6, 123
@@ -1480,18 +1480,18 @@ function init_gear_sets()
     ammo=gear.RAbullet,
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body=gear.Adhemar_A_body,         --  6, __, 55 <__,  4, __> [__/__,  69]
-    hands=gear.Nyame_B_hands,         -- __, __, 40 < 4, __, __> [ 7/ 7, 112]
-    legs=gear.Carmine_D_legs,         --  6, __, 55 <__, __, __> [__/__,  80]
+    hands=gear.Floral_Gauntlets,      --  5, __, 36 <__,  3, __> [__/ 4,  37]
+    legs="Chasseur's Culottes +2",    -- __, 11, 53 <__, __, __> [11/11, 115]
     feet=gear.Taeon_DW_feet,          --  9, __, 22 <__, __, __> [__/__,  69]
     neck="Loricate Torque +1",        -- __, __, __ <__, __, __> [ 6/ 6, ___]
     ear1="Suppanomimi",               --  5, __, __ <__, __, __> [__/__, ___]
-    ear2="Odnowa Earring +1",         -- __, __, 10 <__, __, __> [ 3/ 5, ___]
+    ear2="Eabani Earring",            --  4, __, __ <__, __, __> [__/__,   8]
     ring1="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
     ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
     back=gear.COR_DW_Cape,            -- 10, __, 20 <__, __, __> [10/__, ___]
     waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
     -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
-    -- 68 DW, 12 STP, 262 Acc <4 DA, 4 TA, 0 QA> [49 PDT/33 MDT, 453 MEVA]
+    -- 71 DW, 23 STP, 246 Acc <0 DA, 7 TA, 0 QA> [50 PDT/36 MDT, 421 MEVA]
   }
   sets.engaged.DW.LowAcc.HeavyDef = {
     ammo=gear.RAbullet,
@@ -2053,7 +2053,7 @@ function job_precast(spell, action, spellMap, eventArgs)
       (buffactive['Copy Image'] or buffactive['Copy Image (2)']) then
     send_command('cancel 66; cancel 444; cancel Copy Image; cancel Copy Image (2)')
   elseif spell.action_type == 'Ranged Attack' then
-    if state.DefenseMode.value ~= 'None' or state.HybridMode.value == 'HeavyDef' then
+    if state.DefenseMode.value ~= 'None' or state.HybridMode.value == 'Safe' then
       if flurry == 0 then
         equip(sets.precast.RA.Safe)
         eventArgs.handled = true
@@ -2147,27 +2147,27 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
   elseif spell.action_type == 'Ranged Attack' then
     -- Equip safe sets if available
     if buffactive['Triple Shot'] and ((player.equipment.ranged == 'Armageddon' and buffactive['Aftermath: Lv.3']) or state.CritMode.current == 'on') then
-      if (state.DefenseMode.value ~= 'None' or state.HybridMode.value == 'HeavyDef') and sets.TripleShot.Critical.Safe then
+      if (state.DefenseMode.value ~= 'None' or state.HybridMode.value == 'Safe') and sets.TripleShot.Critical.Safe then
         equip(sets.TripleShot.Critical.Safe)
       else
         equip(sets.TripleShot.Critical)
       end
     elseif buffactive['Triple Shot'] then
-      if (state.DefenseMode.value ~= 'None' or state.HybridMode.value == 'HeavyDef') and sets.TripleShot.Safe then
+      if (state.DefenseMode.value ~= 'None' or state.HybridMode.value == 'Safe') and sets.TripleShot.Safe then
         equip(sets.TripleShot.Safe)
       else
         equip(sets.TripleShot)
       end
     elseif (player.equipment.ranged == 'Armageddon' and buffactive['Aftermath: Lv.3']) or state.CritMode.current == 'on' then
-      if (state.DefenseMode.value ~= 'None' or state.HybridMode.value == 'HeavyDef') and sets.midcast.RA.Critical.Safe then
+      if (state.DefenseMode.value ~= 'None' or state.HybridMode.value == 'Safe') and sets.midcast.RA.Critical.Safe then
         equip(sets.midcast.RA.Critical.Safe)
       else
         equip(sets.midcast.RA.Critical)
       end
     else
-      if (state.DefenseMode.value ~= 'None' or state.HybridMode.value == 'HeavyDef') and sets.midcast.RA[state.RangedMode.value] and sets.midcast.RA[state.RangedMode.value].Safe then
+      if (state.DefenseMode.value ~= 'None' or state.HybridMode.value == 'Safe') and sets.midcast.RA[state.RangedMode.value] and sets.midcast.RA[state.RangedMode.value].Safe then
         equip(sets.midcast.RA[state.RangedMode.value].Safe)
-      elseif (state.DefenseMode.value ~= 'None' or state.HybridMode.value == 'HeavyDef') and sets.midcast.RA.Safe then
+      elseif (state.DefenseMode.value ~= 'None' or state.HybridMode.value == 'Safe') and sets.midcast.RA.Safe then
         equip(sets.midcast.RA.Safe)
       elseif sets.midcast.RA[state.RangedMode.value] then
         equip(sets.midcast.RA[state.RangedMode.value])
