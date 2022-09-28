@@ -454,7 +454,6 @@ function init_gear_sets()
   -- WHM/SCH M30 Healing Magic Skill = 506
   sets.midcast.Cursna = {
     main="Yagrush",
-    -- main="Gada",                      -- 18, ___,  6
     sub="Genmei Shield",              -- __, ___, __
     ammo="Incantor Stone",            -- __, ___,  2
     head=gear.Vanya_B_head,           -- 20, ___, __
@@ -473,7 +472,6 @@ function init_gear_sets()
     -- legs="Theophany Pantaloons +3",-- __,  21, __
     -- Base stats                       506, ___, __
     -- 654 Healing skill, 116 Cursna+, 27 FC; Cursna Rate = 68.688%
-    
 
     -- Ideal:
     -- main="Gambanteinn",             -- __, 100, __ [__/__, ___]
