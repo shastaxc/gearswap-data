@@ -83,12 +83,6 @@ function job_setup()
   no_swap_waists = S{"Era. Bul. Pouch", "Dev. Bul. Pouch", "Chr. Bul. Pouch", "Quelling B. Quiver",
       "Yoichi's Quiver", "Artemis's Quiver", "Chrono Quiver"}
 
-  marksman_weapon_subtypes = {
-    ['Gastraphetes'] = "xbow",
-    ['Fomalhaut'] = "gun",
-    ['Anarchy'] = "gun",
-  }
-
   DefaultAmmo = {
     ['Yoichinoyumi'] = "Chrono Arrow",
     ['Gandiva'] = "Chrono Arrow",
@@ -2022,26 +2016,17 @@ end
 
 -- Requires DistancePlus addon
 function update_dp_type()
-  local weapon = nil
-  local weapon_type = nil
-  local weapon_subtype = nil
+  local weapon = player.equipment.ranged ~= nil and player.equipment.ranged ~= 'empty' and res.items:with('name', player.equipment.ranged)
+  local range_type = (weapon and weapon.range_type) or nil -- Either: Crossbow, Gun, Bow
 
-  -- Handle unequipped case
-  if player.equipment.ranged ~= nil and player.equipment.ranged ~= 0 and player.equipment.ranged ~= 'empty' then
-    weapon = res.items:with('name', player.equipment.ranged)
-    weapon_type = res.skills[weapon.skill].en
-    if weapon_type == 'Archery' then
-      weapon_subtype = 'bow'
-    elseif weapon_type == 'Marksmanship' then
-      weapon_subtype = marksman_weapon_subtypes[weapon.en]
-    elseif weapon_type == 'Throwing' then
-      weapon_subtype = 'throwing'
-    end
+  -- Account for command discrepancy between items value 'Crossbow' and distanceplus accepted command 'xbow'
+  if range_type == 'Crossbow' then
+    range_type = 'xbow'
   end
 
   -- Update addon if weapon type changed
-  if weapon_subtype ~= current_dp_type then
-    current_dp_type = weapon_subtype
+  if range_type ~= current_dp_type then
+    current_dp_type = range_type
     if current_dp_type ~= nil then
       coroutine.schedule(function()
         if current_dp_type ~= nil then
