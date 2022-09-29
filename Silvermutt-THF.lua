@@ -1399,7 +1399,7 @@ function job_post_precast(spell, action, spellMap, eventArgs)
   -- Keep ranged weapon/ammo equipped if in an RA mode.
   if state.RangedWeaponSet.current ~= 'None' then
     equip({range=player.equipment.range, ammo=player.equipment.ammo})
-    silibs.equip_ammo(spell)
+    silibs.equip_ammo(spell, action, spellMap, eventArgs)
   end
 
   -- If slot is locked, keep current equipment on
@@ -1422,7 +1422,7 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
   -- Keep ranged weapon/ammo equipped if in an RA mode.
   if state.RangedWeaponSet.current ~= 'None' then
     equip({range=player.equipment.range, ammo=player.equipment.ammo})
-    silibs.equip_ammo(spell)
+    silibs.equip_ammo(spell, action, spellMap, eventArgs)
   end
 
   -- If slot is locked, keep current equipment on

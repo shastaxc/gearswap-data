@@ -1472,7 +1472,7 @@ function job_precast(spell, action, spellMap, eventArgs)
   end
 
   -- Check that proper ammo is available and equip it.
-  silibs.equip_ammo(spell)
+  silibs.equip_ammo(spell, action, spellMap, eventArgs)
 end
 
 function job_post_precast(spell, action, spellMap, eventArgs)

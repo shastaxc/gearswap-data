@@ -2244,7 +2244,7 @@ function job_precast(spell, action, spellMap, eventArgs)
 
   -- Check that proper ammo is available if we're using ranged attacks or similar.
   if spell.action_type == 'Ranged Attack' or spell.type == 'WeaponSkill' or spell.type == 'CorsairShot' then
-    silibs.equip_ammo(spell)
+    silibs.equip_ammo(spell, action, spellMap, eventArgs)
   end
 
   -- Gear
