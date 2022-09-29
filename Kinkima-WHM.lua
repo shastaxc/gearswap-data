@@ -427,14 +427,14 @@ function init_gear_sets()
   sets.midcast.CureWeatherSolace = {
     main="Ababinili +1",              -- __, 34, __ [10/10, ___] __
     sub="Mensch Strap +1",            -- __, __, __ [ 5/__, ___] __
-    ammo="Staunch Tathlum",           -- __, __, 10 [ 2/ 2, ___] __
+    ammo="Staunch Tathlum +1",        -- __, __, 11 [ 3/ 3, ___] __
     head="Adhara Turban",             -- __, __, 20 [__/__, ___]  6
     body="Ebers Bliaut +2",           -- __, __, __ [__/__, 120] __; Solace+16
     hands=gear.Chironic_SIRD_hands,   -- __, __, 31 [__/__,  48] __; Can add more DT or Enmity
-    legs="Ebers Pantaloons +1",       -- __, __, __ [__/__, 107] __; 6% cure mp return
+    legs="Ebers Pantaloons +2",       -- __, __, __ [12/12, 147] __; 7% healing to MP
     feet="Theophany Duckbills +3",    -- __, __, 29 [__/__, 127] __
     neck="Cleric's Torque +1",        -- __,  7, __ [__/__, ___] 20
-    ear1="Odnowa Earring +1",         -- __, __, __ [ 3/ 5, ___] __
+    ear1="Novia Earring",             -- __, __, __ [__/__, ___]  7
     ear2="Halasz Earring",            -- __, __,  5 [__/__, ___]  3
     ring1="Gelatinous Ring +1",       -- __, __, __ [ 7/-1, ___] __
     ring2="Defending Ring",           -- __, __, __ [10/10, ___] __
@@ -442,23 +442,23 @@ function init_gear_sets()
     waist="Hachirin-no-Obi",          -- __, __, __ [__/__, ___] __
     -- Kaykaus set bonus              -- __, __, __ [__/__, ___] __
     -- Merit points                   -- __, __, 10 [__/__, ___]  5
-    -- 0 CPII, 51 CP, 105 SIRD [47PDT/26MDT, 402 M.Eva] 34 -Enmity
+    -- 0 CPII, 51 CP, 106 SIRD [57PDT/34MDT, 442 M.Eva] 41 -Enmity
 
-    -- main="Chatoyant Staff",           -- __, 10, __ [__/__, ___] __
-    -- sub="Mensch Strap +1",            -- __, __, __ [ 5/__, ___] __
-    -- ammo="Staunch Tathlum +1",        -- __, __, 11 [ 3/ 3, ___] __
-    -- head=gear.Kaykaus_C_head,         -- __, 11, 12 [__/ 3,  75] __
-    -- body="Ebers Bliaut +2",           -- __, __, __ [__/__, 120] __; Solace+16
-    -- hands=gear.Chironic_SIRD_hands,   -- __, __, 31 [__/__,  48] __; Can add more DT or Enmity
-    -- legs="Ebers Pantaloons +2",       -- __, __, __ [12/12, 147] __; 7% healing to MP
-    -- feet="Theophany Duckbills +3",    -- __, __, 29 [__/__, 127] __
-    -- neck="Cleric's Torque +2",        -- __, 10, __ [__/__, ___] 25
-    -- ear1="Nourishing Earring +1",     -- __,  7,  5 [__/__, ___] __; Resist Silence +15
-    -- ear2="Halasz Earring",            -- __, __,  5 [__/__, ___]  3
-    -- ring1="Gelatinous Ring +1",       -- __, __, __ [ 7/-1, ___] __
-    -- ring2="Defending Ring",           -- __, __, __ [10/10, ___] __
-    -- back=gear.WHM_CP_Cape,            -- __, 10, __ [10/__, ___] __
-    -- waist="Hachirin-no-Obi",          -- __, __, __ [__/__, ___] __
+    -- main="Chatoyant Staff",        -- __, 10, __ [__/__, ___] __
+    -- sub="Mensch Strap +1",         -- __, __, __ [ 5/__, ___] __
+    -- ammo="Staunch Tathlum +1",     -- __, __, 11 [ 3/ 3, ___] __
+    -- head=gear.Kaykaus_C_head,      -- __, 11, 12 [__/ 3,  75] __
+    -- body="Ebers Bliaut +2",        -- __, __, __ [__/__, 120] __; Solace+16
+    -- hands=gear.Chironic_SIRD_hands,-- __, __, 31 [__/__,  48] __; Can add more DT or Enmity
+    -- legs="Ebers Pantaloons +2",    -- __, __, __ [12/12, 147] __; 7% healing to MP
+    -- feet="Theophany Duckbills +3", -- __, __, 29 [__/__, 127] __
+    -- neck="Cleric's Torque +2",     -- __, 10, __ [__/__, ___] 25
+    -- ear1="Nourishing Earring +1",  -- __,  7,  5 [__/__, ___] __; Resist Silence +15
+    -- ear2="Halasz Earring",         -- __, __,  5 [__/__, ___]  3
+    -- ring1="Gelatinous Ring +1",    -- __, __, __ [ 7/-1, ___] __
+    -- ring2="Defending Ring",        -- __, __, __ [10/10, ___] __
+    -- back=gear.WHM_CP_Cape,         -- __, 10, __ [10/__, ___] __
+    -- waist="Hachirin-no-Obi",       -- __, __, __ [__/__, ___] __
     -- Kaykaus set bonus              -- __, __, __ [__/__, ___] __
     -- Merit points                   -- __, __, 10 [__/__, ___]  5
     -- 0 CPII, 48 CP, 103 SIRD [47PDT/27MDT, 517 M.Eva] 33 -Enmity
