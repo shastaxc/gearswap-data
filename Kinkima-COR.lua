@@ -105,7 +105,7 @@ function job_setup()
   state.RangedMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.IdleMode:options('Normal', 'HeavyDef')
 
-  state.WeaponSet = M{['description']='Weapon Set', 'Savage Blade', 'Cleaving', 'DeathPenalty_M', 'DeathPenalty_R', 'Fomalhaut_M', 'Fomalhaut_R', 'QuickDraw'}
+  state.WeaponSet = M{['description']='Weapon Set', 'Savage Blade', 'Cleaving', 'Fomalhaut_M', 'Fomalhaut_R', 'QuickDraw'}
 
   state.CP = M(false, "Capacity Points Mode")
 
@@ -272,6 +272,7 @@ function init_gear_sets()
 
   -- DT > PR Potency > PR Duration; PR Potency does not stack, uses highest piece
   sets.precast.CorsairRoll = {
+    head="Lanun Tricorne +1",       -- __/__,  53 (__, __); 50% chance of job align bonus
     body="Malignance Tabard",       --  9/ 9, 139 (__, __)
     hands="Nvrch. Gants +1",        -- __/__, ___ (__, 20)
     legs=gear.Nyame_B_legs,         --  8/ 8, 150 (__, __)
@@ -282,7 +283,7 @@ function init_gear_sets()
     ring2="Defending Ring",         -- 10/10, ___ (__, __)
     back=gear.COR_TP_Cape,          -- 10/__, ___ (__, 30)
     waist="Flume Belt +1",          --  4/__, ___ (__, __)
-    -- 48 PDT / 37 MDT, 439 M.Eva (7 PR Potency, 70 PR Duration)
+    -- 48 PDT / 37 MDT, 492 M.Eva (7 PR Potency, 70 PR Duration)
 
     -- head="Lanun Tricorne +3",    -- __/__,  73 (__, __); 50% chance of job align bonus
     -- hands="Chasseur's Gants +2", -- __/__,  83 (__, 55)
@@ -2198,20 +2199,20 @@ function init_gear_sets()
     ranged="Fomalhaut",
   }
   sets.WeaponSet.Fomalhaut_R = {
-    -- main="Lanun Knife",
+    main="Kaja Knife",
     sub="Nusku Shield",
     ranged="Fomalhaut",
+    -- main="Lanun Knife",
   }
   sets.WeaponSet["Savage Blade"] = {
     main="Naegling",
     sub="Blurred Knife +1",
-    ranged="Fomalhaut",
-    -- ranged="Anarchy +2",
+    ranged="Anarchy +2",
   }
   sets.WeaponSet.Cleaving = {
     main="Kaja Knife",
     sub="Blurred Knife +1",
-    -- ranged="Anarchy +2",
+    ranged="Anarchy +2",
     -- main="Lanun Knife",
     -- sub="Tauret",
   }
