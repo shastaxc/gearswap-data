@@ -131,7 +131,13 @@ function job_setup()
   gear.RAccbullet = "Chrono Bullet"
   gear.WSbullet = "Chrono Bullet"
   gear.MAbullet = "Chrono Bullet"
-  gear.QDbullet = "Hauksbok Bullet"
+  gear.QDbullet = "Chrono Bullet"
+  
+  -- gear.RAbullet = "Chrono Bullet"
+  -- gear.RAccbullet = "Devastating Bullet"
+  -- gear.WSbullet = "Chrono Bullet"
+  -- gear.MAbullet = "Living Bullet"
+  -- gear.QDbullet = "Hauksbok Bullet"
   options.ammo_warning_limit = 10
 
   -- Update DistancePlus addon with weapon type
@@ -267,6 +273,7 @@ function init_gear_sets()
   -- DT > PR Potency > PR Duration; PR Potency does not stack, uses highest piece
   sets.precast.CorsairRoll = {
     body="Malignance Tabard",       --  9/ 9, 139 (__, __)
+    hands="Nvrch. Gants +1",        -- __/__, ___ (__, 20)
     legs=gear.Nyame_B_legs,         --  8/ 8, 150 (__, __)
     feet=gear.Nyame_B_feet,         --  7/ 7, 150 (__, __)
     neck="Regal Necklace",          -- __/__, ___ ( 7, 20)
@@ -275,7 +282,7 @@ function init_gear_sets()
     ring2="Defending Ring",         -- 10/10, ___ (__, __)
     back=gear.COR_TP_Cape,          -- 10/__, ___ (__, 30)
     waist="Flume Belt +1",          --  4/__, ___ (__, __)
-    -- 48 PDT / 37 MDT, 439 M.Eva (7 PR Potency, 50 PR Duration)
+    -- 48 PDT / 37 MDT, 439 M.Eva (7 PR Potency, 70 PR Duration)
 
     -- head="Lanun Tricorne +3",    -- __/__,  73 (__, __); 50% chance of job align bonus
     -- hands="Chasseur's Gants +2", -- __/__,  83 (__, 55)
@@ -564,20 +571,6 @@ function init_gear_sets()
   sets.precast.WS.HighAccMaxTP = set_combine(sets.precast.WS.HighAcc, {
     -- ear2="Telos Earring",
   })
-
-  sets.precast.WS.Detonator = {
-    head=empty,
-    body=empty,
-    hands=empty,
-    legs=empty,
-    feet=empty,
-    ear1="Enervating Earring",
-    ear2="Odnowa Earring +1",
-    ring1="Rufescent Ring",
-    ring2="Defending Ring",
-    back=gear.COR_TP_Cape,
-    waist="Flume Belt +1",
-  }
 
   sets.precast.WS['Last Stand'] = {
     ammo=gear.WSbullet,
