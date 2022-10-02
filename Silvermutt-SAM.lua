@@ -619,12 +619,13 @@ function init_gear_sets()
     ring2="Niqmaddu Ring",            -- [__/__, ___] __, __ < 3, __, __> __, __
     back=gear.SAM_TP_Cape,            -- [10/__, ___] __, __ <__, __, 10> __, __
     waist="Sailfi Belt +1",           -- [__/__, ___] __, __ <__,  2,  5> __,  9
+    -- [10 PDT/0 MDT, 337 MEVA] 4 Hasso, 66 STP <3 QA, 19 TA, 19 DA> 11 Crit Rate, 28 Haste
 
     -- hands="Tatenashi Gote +1",     -- [__/__,  32] __,  8 <__,  4, __> __,  4
     -- legs="Kasuga Haidate +2",      -- [10/10, 120]  3, 10 <__, __, __> __,  5
     -- ear2="Kasuga Earring +2",      -- [__/__, ___] __,  9 <__, __, __> __, __
     -- [20 PDT/10 MDT, 403 MEVA] 3 Hasso, 73 STP <3 QA, 20 TA, 18 DA> 11 Crit Rate, 28 Haste
-  } -- [10 PDT/0 MDT, 337 MEVA] 4 Hasso, 66 STP <3 QA, 19 TA, 19 DA> 11 Crit Rate, 28 Haste
+  }
   sets.engaged.LowAcc = set_combine(sets.engaged, {
     body="Kendatsuba Samue +1",
     feet="Flamma Gambieras +2",
@@ -658,12 +659,13 @@ function init_gear_sets()
     ring2="Defending Ring",           -- [10/10, ___] __, __ <__, __, __> __, __
     back=gear.SAM_TP_Cape,            -- [10/__, ___] __, __ <__, __, 10> __, __
     waist="Sailfi Belt +1",           -- [__/__, ___] __, __ <__,  2,  5> __,  9
+    -- [36 PDT/10 MDT, 361 MEVA] 4 Hasso, 64 STP <0 QA, 17 TA, 19 DA> 10 Crit Rate, 29 Haste
 
     -- hands="Mpaca's Gloves",        -- [ 8/__,  59] __, __ <__,  3, __>  5,  4; TA Dmg+9%
     -- legs="Kasuga Haidate +2",      -- [10/10, 120]  3, 10 <__, __, __> __,  5
     -- ear2="Kasuga Earring +2",      -- [__/__, ___] __,  9 <__, __, __> __, __
     -- [54 PDT/20 MDT, 414 MEVA] 3 Hasso, 63 STP <0 QA, 17 TA, 18 DA> 15 Crit Rate, 29 Haste
-  } -- [36 PDT/10 MDT, 361 MEVA] 4 Hasso, 64 STP <0 QA, 17 TA, 19 DA> 10 Crit Rate, 29 Haste
+  }
   sets.engaged.LowAcc.LightDef = sets.engaged.LightDef
   sets.engaged.MidAcc.LightDef = sets.engaged.LightDef
   sets.engaged.HighAcc.LightDef = sets.engaged.LightDef
@@ -682,6 +684,7 @@ function init_gear_sets()
     ring2="Defending Ring",           -- [10/10, ___] __, __ <__, __, __> __, __
     back=gear.SAM_TP_Cape,            -- [10/__, ___] __, __ <__, __, 10> __, __
     waist="Sailfi Belt +1",           -- [__/__, ___] __, __ <__,  2,  5> __,  9
+    -- [51 PDT/23 MDT, 485 MEVA] 4 Hasso, 52 STP <0 QA, 9 TA, 27 DA> 7 Crit Rate, 31 Haste
 
     -- head="Flamma Zucchetto +2",    -- [__/__,  53] __,  6 <__,  5, __> __,  4
     -- hands=gear.Nyame_B_hands,      -- [ 7/ 7, 112] __, __ <__, __,  4> __,  3
@@ -690,7 +693,7 @@ function init_gear_sets()
     -- ear2="Kasuga Earring +2",      -- [__/__, ___] __,  9 <__, __, __> __, __
     -- ring1="Niqmaddu Ring",         -- [__/__, ___] __, __ < 3, __, __> __, __
     -- [53 PDT/27 MDT, 467 MEVA] 3 Hasso, 57 STP <3 QA, 14 TA, 22 DA> 10 Crit Rate, 28 Haste
-  } -- [51 PDT/23 MDT, 485 MEVA] 4 Hasso, 52 STP <0 QA, 9 TA, 27 DA> 7 Crit Rate, 31 Haste
+  }
   sets.engaged.LowAcc.HeavyDef = sets.engaged.HeavyDef
   sets.engaged.MidAcc.HeavyDef = sets.engaged.HeavyDef
   sets.engaged.HighAcc.HeavyDef = sets.engaged.HeavyDef
