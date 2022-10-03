@@ -1,10 +1,13 @@
 send_command('ev pos 1260 720')
+send_command('gi brd 8')
+send_command('gi geo 10')
 
 include('reorganizer-lib')
 res = include('resources')
 inspect = include('inspect')
 packets = include('packets')
 silibs = include('SilverLibs')
+
 -------------------------------------------------------------------------------------------------------------------
 -- Modify the sets table.  Any gear sets that are added to the sets table need to
 -- be defined within this function, because sets isn't available until after the
