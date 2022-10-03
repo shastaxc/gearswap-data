@@ -127,17 +127,14 @@ function job_setup()
   no_swap_waists = S{"Era. Bul. Pouch", "Dev. Bul. Pouch", "Chr. Bul. Pouch", "Quelling B. Quiver",
       "Yoichi's Quiver", "Artemis's Quiver", "Chrono Quiver", "Liv. Bul. Pouch"}
 
+  
   gear.RAbullet = "Chrono Bullet"
   gear.RAccbullet = "Chrono Bullet"
   gear.WSbullet = "Chrono Bullet"
   gear.MAbullet = "Chrono Bullet"
-  gear.QDbullet = "Chrono Bullet"
-  
-  -- gear.RAbullet = "Chrono Bullet"
+  gear.QDbullet = "Hauksbok Bullet"
   -- gear.RAccbullet = "Devastating Bullet"
-  -- gear.WSbullet = "Chrono Bullet"
   -- gear.MAbullet = "Living Bullet"
-  -- gear.QDbullet = "Hauksbok Bullet"
   options.ammo_warning_limit = 10
 
   -- Update DistancePlus addon with weapon type
