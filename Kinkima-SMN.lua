@@ -623,70 +623,73 @@ function init_gear_sets()
 
   -- Default set for any weaponskill that isn't any more specifically defined
   sets.precast.WS = {
-    -- head="Beckoner's Horn +2",
-    -- body="Tali'ah Manteel +1",
-    -- hands="Gazu Bracelet",
-    legs="Assid. Pants +1",
-    -- feet="Battlecast Gaiters",
+    head=gear.Nyame_B_head,
+    body=gear.Nyame_B_body,
+    hands=gear.Nyame_B_hands,
+    legs=gear.Nyame_B_legs,
+    feet=gear.Nyame_B_feet,
     -- neck="Fotia Gorget",
     -- ear1="Telos Earring",
-    -- ear2="Mache Earring",
+    ear2="Moonshade Earring",
     ring1="Rufescent Ring",
     -- ring2="Karieyh Ring +1",
-    -- back={ name="Campestres's Cape", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10',}},
+    back="Aurist's Cape +1",
     -- waist="Fotia Belt",
   }
 
-  -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
-  sets.precast.WS['Myrkr'] = {
-    -- head="Nahtirah Hat",
-    -- body="Convoker's Doublet",
-    -- hands="Caller's Bracers +2",
-    -- legs="Nares Trews",
-    -- feet="Chelona Boots +1",
-    -- ear1="Gifted Earring",
-    ear2="Loquacious Earring",
-    -- ring1="Evoker's Ring",
-    -- ring2="Sangoma Ring",
-    -- back="Pahtli Cape",
-    waist="Fucho-no-Obi",
-  }
+  -- Only affected by TP Bonus, cap out DT
+  sets.precast.WS['Myrkr'] = set_combine(sets.precast.WS, {
+    ring1="Gelatinous Ring +1",
+    ring2="Defending Ring",
+  })
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Midcast Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
 
-  sets.midcast.FastRecast = {
-    -- head="Nahtirah Hat",
-    -- body="Vanir Cotehardie",
-    -- hands="Bokwus Gloves",
-    -- legs="Hagondes Pants",
-    -- feet="Hagondes Sabots",
-    ear2="Loquacious Earring",
-    -- ring1="Prolix Ring",
-    -- back="Swith Cape +1",
-    waist="Witful Belt",
+  sets.midcast.FastRecast = sets.precast.FC.NirvAM
+
+  -- Ensure trusts get summoned at max ilvl
+  sets.midcast.Trust = {
+    head=gear.Nyame_B_head,
+    body=gear.Nyame_B_body,
+    hands=gear.Nyame_B_hands,
+    legs=gear.Nyame_B_legs,
+    feet=gear.Nyame_B_feet,
   }
 
+  -- Cap at 700 power; Power = floor(MND÷2) + floor(VIT÷4) + Healing Magic Skill
   sets.midcast.Cure = {
-    main="Bunzi's Rod",
-    sub="Genbu's Shield",
-    -- head="Nahtirah Hat",
-    -- body="Heka's Kalasiris",
-    -- hands="Bokwus Gloves",
-    -- legs="Hagondes Pants",
-    -- feet="Hagondes Sabots",
-    ear2="Loquacious Earring",
-    -- ring1="Prolix Ring",
-    ring2="Sirona's Ring",
-    -- back="Swith Cape +1",
-    waist="Witful Belt",
+    main=gear.Gada_MND,         -- 18, 21, __,  18 [__/__, ___] __
+    sub="Genbu's Shield",       --  5, __, __, ___ [10/__, ___] __
+    head=gear.Vanya_B_head,     -- 10, 27, 18,  20 [__/ 5,  75] __
+    body=gear.Vanya_B_body,     -- __, 36, 23,  20 [ 1/ 4,  80] __
+    hands="Bunzi's Gloves",     -- __, 47, 26, ___ [ 8/ 8, 112]  8
+    legs=gear.Vanya_B_legs,     -- __, 34, 12,  20 [__/__, 107] __
+    feet=gear.Vayna_B_feet,     --  5, 19, 10,  40 [__/__, 107] __
+    neck="Incanter's Torque",   -- __, __, __,  10 [__/__, ___] __
+    ear1="Meili Earring",       -- __, __, __,  10 [__/__, ___] __
+    ear2="Mendicant's Earring", --  5, __, __, ___ [__/__, ___] __
+    ring1="Sirona's Ring",      -- __,  3,  3,  10 [__/__, ___] __
+    ring2="Defending Ring",     -- __, __, __, ___ [10/10, ___] __
+    back=gear.SMN_Cure_Cape,    -- 10, 30, __, ___ [10/__, ___] __
+    waist="Luminary Sash",      -- __, 10, __, ___ [__/__, ___] __
+    -- Traits/Merits/Gifts         __,101, 89,  16
+    -- Subjob                      __, __, __, 139
+    -- 53 CP, 328 MND, 181 VIT, 303 Healing Skill [39 PDT/27 MDT, 481 M.Eva] 8 -Enmity
+    -- 847 HP Cure IV
   }
+  sets.midcast.CureWeather = set_combine(sets.midcast.Cure, {
+    waist="Hachirin-no-obi",
+    -- 903 HP to 1044 Cure IV depending on weather/day
+  })
 
+  -- TODO: update set
   sets.midcast.Stoneskin = {
     -- waist="Siegel Sash"
   }
 
+  -- TODO: update set
   sets.midcast['Elemental Magic'] = {
     -- main="Lehbrailg +2",
     -- sub="Wizzan Grip",
@@ -704,6 +707,7 @@ function init_gear_sets()
     waist="Refoccilation Stone",
   }
 
+  -- TODO: update set
   sets.midcast['Dark Magic'] = {
     -- main="Lehbrailg +2",
     -- sub="Wizzan Grip",
@@ -720,6 +724,7 @@ function init_gear_sets()
     waist="Fuchi-no-Obi",
   }
 
+  -- TODO: update set
   -- Avatar pact sets.  All pacts are Ability type.
   sets.midcast.Pet.BloodPactWard = {
     -- main="Soulscourge",
@@ -734,6 +739,7 @@ function init_gear_sets()
     -- waist="Diabolos's Rope",
   }
 
+  -- TODO: update set
   sets.midcast.Pet.DebuffBloodPactWard = {
     -- main="Soulscourge",
     -- ammo="Seraphicaller",
@@ -747,8 +753,7 @@ function init_gear_sets()
     -- waist="Diabolos's Rope",
   }
 
-  sets.midcast.Pet.DebuffBloodPactWard.Acc = sets.midcast.Pet.DebuffBloodPactWard
-
+  -- TODO: update set
   sets.midcast.Pet.PhysicalBloodPactRage = {
     -- ammo="Sancus Sachet +1",
     -- head={ name="Helios Band", augments={'Pet: Attack+30 Pet: Rng.Atk.+30','Pet: "Dbl. Atk."+8','Blood Pact Dmg.+7',}},
@@ -765,8 +770,7 @@ function init_gear_sets()
     waist="Incarnation Sash",
   }
 
-  sets.midcast.Pet.PhysicalBloodPactRage.Acc = sets.midcast.Pet.PhysicalBloodPactRage
-
+  -- TODO: update set
   sets.midcast.Pet.MagicalBloodPactRage = {
     -- main={ name="Grioavolr", augments={'Blood Pact Dmg.+4','Pet: INT+10','Pet: Mag. Acc.+9','Pet: "Mag.Atk.Bns."+23',}},
     -- head={ name="Apogee Crown", augments={'Pet: Attack+20','Pet: "Mag.Atk.Bns."+20','Blood Pact Dmg.+7',}},
@@ -783,8 +787,7 @@ function init_gear_sets()
     waist="Incarnation Sash",
   }
 
-  sets.midcast.Pet.MagicalBloodPactRage.Acc = sets.midcast.Pet.MagicalBloodPactRage
-
+  -- TODO: update set
   sets.midcast.Pet.HybridBloodPactRage = {
     -- main="Nirvana",
     -- sub=empty,
@@ -802,11 +805,13 @@ function init_gear_sets()
     waist="Regal Belt",
   }
 
+  -- TODO: update set
   -- Spirits cast magic spells, which can be identified in standard ways.
   sets.midcast.Pet.WhiteMagic = {
     -- legs="Summoner's Spats"
   }
 
+  -- TODO: update set
   sets.midcast.Pet['Elemental Magic'] = set_combine(sets.midcast.Pet.BloodPactRage, {
     -- legs="Summoner's Spats",
   })
@@ -816,6 +821,7 @@ function init_gear_sets()
   -------------------------------------- Idle/Defense Sets ----------------------------------------
   ------------------------------------------------------------------------------------------------=
 
+  -- TODO: update set
   -- sets.resting = {main=gear.Staff.HMP,ammo="Seraphicaller",
   --     head="Convoker's Horn",neck="Wiglen Gorget",ear1="Gifted Earring",ear2="Loquacious Earring",
   --     body="Hagondes Coat",hands="Serpentes Cuffs",ring1="Sheltered Ring",ring2="Paguroidea Ring",
@@ -930,8 +936,10 @@ function init_gear_sets()
     -- 70 HP [53 PDT/43 MDT, 500 M.Eva] (19 Refresh, 8 Perp Cost) {Pet: 101 Lv, 0 Regain, 7 PDT/7 MDT}
   }
 
+  -- TODO: update set
   -- sets.idle.Avatar.Melee = {hands="Regimen Mittens",back="Samanisi Cape",waist="Kuku Stone",legs="Convoker's Spats"}
 
+  -- TODO: update set
   -- sets.idle.Town = {
   --   head="Beckoner's Horn +2",
   --   body={ name="Apogee Dalmatica", augments={'Pet: Attack+20','Pet: "Mag.Atk.Bns."+20','Blood Pact Dmg.+7',}},
@@ -952,7 +960,7 @@ function init_gear_sets()
   ---------------------------------------- Engaged Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
 
-  -- Normal melee group
+  -- TODO: update set
   sets.engaged = {
     -- head="Beckoner's Horn +2",
     -- body="Tali'ah Manteel +1",
@@ -1133,6 +1141,17 @@ function job_get_spell_map(spell)
     end
   elseif spell.type == 'BloodPactWard' and spell.target.type == 'MONSTER' then
     return 'DebuffBloodPactWard'
+  end
+
+  if spell.action_type == 'Magic' then
+    if default_spell_map == 'Cure' then
+      if (world.weather_element == 'Light' and not (get_weather_intensity() < 2 and world.weather_element == 'Dark'))
+          or (world.day_element == 'Light' and not world.weather_element == 'Dark') then
+        return 'CureWeather'
+      else
+        return 'CureNormal'
+      end
+    end
   end
 end
 
