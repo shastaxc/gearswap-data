@@ -57,7 +57,7 @@ function job_setup()
   state.Storm = M{['description']='Storm','Aurorastorm','Sandstorm',
       'Rainstorm','Windstorm','Firestorm','Hailstorm','Thunderstorm','Voidstorm'}
   state.OffenseMode:options('None', 'Normal', 'Acc')
-  state.CastingMode:options('Normal')
+  state.CastingMode:options('Normal', 'NirvAM')
   state.IdleMode:options('Normal')
   
   state.Storm = M{['description']='Storm','Aurorastorm','Sandstorm',
@@ -229,63 +229,398 @@ function init_gear_sets()
   ---------------------------------------- Precast Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
 
-  -- Precast sets to enhance JAs
+  -- Fast cast sets for spells
+  sets.precast.FC = {
+    main="Malignance Pole",           -- __ [20/20, ___]
+    sub="Khonsu",                     -- __ [ 6/ 6, ___]
+    ammo="Sapience Orb",              --  2 [__/__, ___]
+    head="Bunzi's Hat",               -- 10 [ 7/ 7, 123]
+    body=gear.Merl_FC_body,           -- 14 [ 2/__,  91]
+    hands="Volte Gloves",             --  6 [__/__,  96]; merlinic alt
+    feet=gear.Merl_FC_feet,           -- 11 [__/__, 118]
+    ear1="Malignance Earring",        --  4 [__/__, ___]
+    ear2="Locquacious Earring",       --  2 [__/__, ___]
+    ring1="Kishar Ring",              --  4 [__/__, ___]
+    ring2="Defending Ring",           -- __ [10/10, ___]
+    -- 53 Fast Cast [45 PDT/43 MDT, 428 M.Eva]
+    
+    -- legs=gear.Merl_FC_legs,        --  7 [__/__, 118]
+    -- legs="Volte Brais",            --  8 [__/__, 142]; merlinic alt
+    -- neck="Orunmila's Torque",      --  5 [__/__, ___]
+    -- back=gear.SMN_FC_Cape          -- 10 [10/__, ___]
+    -- waist="Shinjutsu-no-obi +1",   --  5 [__/__, ___]
+    -- 81 Fast Cast [55 PDT/53 MDT, 570 M.Eva]
+  }
+  sets.precast.FC.QuickMagic = {
+    main="Malignance Pole",           -- __ [20/20, ___]
+    sub="Khonsu",                     -- __ [ 6/ 6, ___]
+    ammo="Sapience Orb",              --  2 [__/__, ___]
+    head="Bunzi's Hat",               -- 10 [ 7/ 7, 123]
+    body=gear.Merl_FC_body,           -- 14 [ 2/__,  91]
+    hands="Volte Gloves",             --  6 [__/__,  96]; merlinic alt
+    feet=gear.Merl_FC_feet,           -- 11 [__/__, 118]
+    ear1="Malignance Earring",        --  4 [__/__, ___]
+    ear2="Locquacious Earring",       --  2 [__/__, ___]
+    ring1="Kishar Ring",              --  4 [__/__, ___]
+    ring2="Defending Ring",           -- __ [10/10, ___]
+    waist="Witful Belt",              --  3 [__/__, ___]  3
+    -- 56 Fast Cast [45 PDT/43 MDT, 428 M.Eva] 3 Quick Magic
+    
+    -- legs=gear.Merl_FC_legs,        --  7 [__/__, 118]
+    -- legs="Volte Brais",            --  8 [__/__, 142]; merlinic alt
+    -- feet=gear.Merl_FC_feet,        -- 12 [__/__, 118]
+    -- neck="Orunmila's Torque",      --  5 [__/__, ___]
+    -- back=gear.SMN_FC_Cape          -- 10 [10/__, ___]
+    -- 80 Fast Cast [55 PDT/53 MDT, 570 M.Eva]
+    
+    -- main="Malignance Pole",        -- __ [20/20, ___]
+    -- sub="Khonsu",                  -- __ [ 6/ 6, ___]
+    -- ammo="Impatiens",              -- __ [__/__, ___]  2
+    -- head=gear.Merl_FC_head,        -- 15 [__/__,  86]
+    -- body=gear.Merl_FC_body,        -- 14 [ 2/__,  91]
+    -- hands="Volte Gloves",          --  6 [__/__,  96]; merlinic alt
+    -- legs="Volte Brais",            --  8 [__/__, 142]; merlinic alt
+    -- feet=gear.Merl_FC_feet,        -- 12 [__/__, 118]
+    -- neck="Orunmila's Torque",      --  5 [__/__, ___]
+    -- ear1="Malignance Earring",     --  4 [__/__, ___]
+    -- ear2="Locquacious Earring",    --  2 [__/__, ___]
+    -- ring1="Lebeche Ring",          -- __ [__/__, ___]  2
+    -- ring2="Defending Ring",        -- __ [10/10, ___]
+    -- back=gear.SMN_FC_Cape          -- 10 [10/__, ___]
+    -- waist="Witful Belt",           --  3 [__/__, ___]  3
+    -- 79 Fast Cast [48 PDT/36 MDT, 533 M.Eva] 7 Quick Magic
+  }
+  
+  sets.precast.FC.RDM = {
+    main="Malignance Pole",           -- __ [20/20, ___]
+    sub="Khonsu",                     -- __ [ 6/ 6, ___]
+    ammo="Sapience Orb",              --  2 [__/__, ___]
+    head="Bunzi's Hat",               -- 10 [ 7/ 7, 123]
+    body=gear.Merl_FC_body,           -- 14 [ 2/__,  91]
+    hands="Volte Gloves",             --  6 [__/__,  96]; merlinic alt
+    feet=gear.Merl_FC_feet,           -- 11 [__/__, 118]
+    ear1="Malignance Earring",        --  4 [__/__, ___]
+    ear2="Locquacious Earring",       --  2 [__/__, ___]
+    ring1="Kishar Ring",              --  4 [__/__, ___]
+    ring2="Defending Ring",           -- __ [10/10, ___]
+    -- RDM Trait                         15
+    -- 53 Fast Cast [45 PDT/43 MDT, 428 M.Eva]
+    
+    -- legs=gear.Merl_FC_legs,        --  7 [__/__, 118]
+    -- legs="Volte Brais",            --  8 [__/__, 142]; merlinic alt
+    -- neck="Orunmila's Torque",      --  5 [__/__, ___]
+    -- back=gear.SMN_FC_Cape          -- 10 [10/__, ___]
+    -- waist="Shinjutsu-no-obi +1",   --  5 [__/__, ___]
+    -- 81 Fast Cast [55 PDT/53 MDT, 570 M.Eva]
+  }
+  sets.precast.FC.QuickMagic.RDM = {
+    main="Malignance Pole",           -- __ [20/20, ___]
+    sub="Khonsu",                     -- __ [ 6/ 6, ___]
+    ammo="Impatiens",                 -- __ [__/__, ___]  2
+    body=gear.Merl_FC_body,           -- 14 [ 2/__,  91]
+    hands="Volte Gloves",             --  6 [__/__,  96]; merlinic alt
+    feet=gear.Merl_FC_feet,           -- 11 [__/__, 118]
+    ear1="Malignance Earring",        --  4 [__/__, ___]
+    ear2="Locquacious Earring",       --  2 [__/__, ___]
+    ring1="Kishar Ring",              --  4 [__/__, ___]
+    ring2="Defending Ring",           -- __ [10/10, ___]
+    back="Perimede Cape",             -- __ [__/__, ___]  4
+    waist="Witful Belt",              --  3 [__/__, ___]  3
+    -- RDM Trait                         15
+    -- 59 Fast Cast [38 PDT/36 MDT, 305 M.Eva] 9 Quick Magic
+    
+    -- head=gear.Merl_FC_head,        -- 15 [__/__,  86]
+    -- legs="Beckoner's Spats +2",    -- __ [11/11, 147]
+    -- feet=gear.Merl_FC_feet,        -- 12 [__/__, 118]
+    -- neck="Orunmila's Torque",      --  5 [__/__, ___]
+    -- 80 Fast Cast [49 PDT/47 MDT, 538 M.Eva] 9 Quick Magic
+  }
+  
+  -- Fast cast sets for spells
+  sets.precast.FC.NirvAM = {
+    ammo="Staunch Tathlum +1",        -- __ [ 3/ 3, ___]
+    head="Bunzi's Hat",               -- 10 [ 7/ 7, 123]
+    body=gear.Merl_FC_body,           -- 14 [ 2/__,  91]
+    hands="Volte Gloves",             --  6 [__/__,  96]; merlinic alt
+    feet=gear.Merl_FC_feet,           -- 11 [__/__, 118]
+    ear1="Malignance Earring",        --  4 [__/__, ___]
+    ear2="Locquacious Earring",       --  2 [__/__, ___]
+    ring1="Kishar Ring",              --  4 [__/__, ___]
+    ring2="Defending Ring",           -- __ [10/10, ___]
+    -- 51 Fast Cast [22 PDT/20 MDT, 428 M.Eva]
+    
+    -- main="Nirvana",                -- __ [__/__, ___]
+    -- sub="Elan Strap +1",           -- __ [__/__, ___]
+    -- legs="Volte Brais",            --  8 [__/__, 142]; merlinic alt
+    -- feet=gear.Merl_FC_feet,        -- 12 [__/__, 118]
+    -- neck="Orunmila's Torque",      --  5 [__/__, ___]
+    -- back=gear.SMN_FC_Cape          -- 10 [10/__, ___]
+    -- waist="Shinjutsu-no-obi +1",   --  5 [__/__, ___]
+    -- 80 Fast Cast [32 PDT/20 MDT, 570 M.Eva]
+  }
+  sets.precast.FC.NirvAM.QuickMagic = {
+    ammo="Staunch Tathlum +1",        -- __ [ 3/ 3, ___]
+    head="Bunzi's Hat",               -- 10 [ 7/ 7, 123]
+    body=gear.Merl_FC_body,           -- 14 [ 2/__,  91]
+    hands="Volte Gloves",             --  6 [__/__,  96]; merlinic alt
+    feet=gear.Merl_FC_feet,           -- 11 [__/__, 118]
+    ear1="Malignance Earring",        --  4 [__/__, ___]
+    ear2="Locquacious Earring",       --  2 [__/__, ___]
+    ring1="Kishar Ring",              --  4 [__/__, ___]
+    ring2="Defending Ring",           -- __ [10/10, ___]
+    waist="Witful Belt",              --  3 [__/__, ___] 3
+    -- 54 Fast Cast [22 PDT/20 MDT, 428 M.Eva] 3 Quick Magic
+
+    -- main="Nirvana",                -- __ [__/__, ___]
+    -- sub="Elan Strap +1",           -- __ [__/__, ___]
+    -- legs="Volte Brais",            --  8 [__/__, 142]; merlinic alt
+    -- feet=gear.Merl_FC_feet,        -- 12 [__/__, 118]
+    -- neck="Orunmila's Torque",      --  5 [__/__, ___]
+    -- back=gear.SMN_FC_Cape          -- 10 [10/__, ___]
+    -- 78 Fast Cast [32 PDT/20 MDT, 570 M.Eva] 3 Quick Magic
+  }
+
+  sets.precast.FC.NirvAM.RDM = {
+    ammo="Sapience Orb",              --  2 [__/__, ___]
+    head="Bunzi's Hat",               -- 10 [ 7/ 7, 123]
+    body=gear.Merl_FC_body,           -- 14 [ 2/__,  91]
+    feet=gear.Merl_FC_feet,           -- 11 [__/__, 118]
+    ear1="Malignance Earring",        --  4 [__/__, ___]
+    ear2="Locquacious Earring",       --  2 [__/__, ___]
+    ring1="Gelatinous Ring +1",       -- __ [ 7/-1, ___]
+    ring2="Defending Ring",           -- __ [10/10, ___]
+    waist="Regal Belt",               -- __ [ 3/ 3, ___]
+    -- RDM Trait                         15
+    -- 58 Fast Cast [29 PDT/19 MDT, 332 M.Eva]
+    
+    -- main="Nirvana",                -- __ [__/__, ___]
+    -- sub="Elan Strap +1",           -- __ [__/__, ___]
+    -- hands="Volte Gloves",          --  6 [__/__,  96]; merlinic alt
+    -- legs="Beckoner's Spats +2",    -- __ [11/11, 147]
+    -- feet=gear.Merl_FC_feet,        -- 12 [__/__, 118]
+    -- neck="Orunmila's Torque",      --  5 [__/__, ___]
+    -- back=gear.SMN_FC_Cape          -- 10 [10/__, ___]
+    -- 80 Fast Cast [50 PDT/30 MDT, 575 M.Eva]
+  }
+  sets.precast.FC.NirvAM.QuickMagic.RDM = {
+    ammo="Impatiens",                 -- __ [__/__, ___]  2
+    head="Bunzi's Hat",               -- 10 [ 7/ 7, 123]
+    body=gear.Merl_FC_body,           -- 14 [ 2/__,  91]
+    feet=gear.Merl_FC_feet,           -- 11 [__/__, 118]
+    ear1="Malignance Earring",        --  4 [__/__, ___]
+    ear2="Locquacious Earring",       --  2 [__/__, ___]
+    ring1="Gelatinous Ring +1",       -- __ [ 7/-1, ___]
+    ring2="Defending Ring",           -- __ [10/10, ___]
+    waist="Witful Belt",              --  3 [__/__, ___]  3
+    -- RDM Trait                         15
+    -- 59 Fast Cast [26 PDT/16 MDT, 332 M.Eva] 5 Quick Magic
+
+    -- main="Nirvana",                -- __ [__/__, ___]
+    -- sub="Elan Strap +1",           -- __ [__/__, ___]
+    -- hands="Volte Gloves",          --  6 [__/__,  96]; merlinic alt
+    -- legs="Beckoner's Spats +2",    -- __ [11/11, 147]
+    -- feet=gear.Merl_FC_feet,        -- 12 [__/__, 118]
+    -- neck="Orunmila's Torque",      --  5 [__/__, ___]
+    -- back=gear.SMN_FC_Cape          -- 10 [10/__, ___]
+    -- 81 Fast Cast [47 PDT/27 MDT, 575 M.Eva] 5 Quick Magic
+  }
+
+
+  -----------------------------------------------------------------------------------------------
+  ------------------------------------- Job Ability Sets ----------------------------------------
+  -----------------------------------------------------------------------------------------------
+
   sets.precast.JA['Astral Flow'] = {
     -- head="Glyphic Horn",
   }
 
+  -- MP Siphoned = (Summoning Skill - 50 + Base Siphon Equipment) * (1.0 + Siphon Equip Multipliers ± Weather/Day bonuses)
+  -- Hachirin-no-obi has no effect; day/weather bonuses always apply.
   sets.precast.JA['Elemental Siphon'] = {
-    -- main="Soulscourge",
-    -- head="Convoker's Horn",
-    -- body="Caller's Doublet +2",
-    -- hands="Glyphic Bracers",
-    -- legs="Marduk's Shalwar +1",
-    -- feet="Caller's Pigaches +2",
-    -- neck="Caller's Pendant",
-    -- ring1="Evoker's Ring",
-    -- ring2="Fervor Ring",
+    main="Chatoyant Staff",             -- __, __, 10 [__/__, ___]
+    sub="Khonsu",                       -- __, __, __ [ 6/ 6, ___]
+    -- ammo="Esper stone +1",           -- 20, __, __ [__/__, ___]
+    -- head="Beckoner's Horn +2",       -- __, 18, __ [ 9/ 9, 120]
+    -- body="Beckoner's Doublet +2",    -- __, 19, __ [12/12, 120]
+    -- hands="Baayami Cuffs +1",        -- __, 33, __ [__/__,  93]
+    -- legs="Beckoner's Spats +2",      -- __, 25, __ [11/11, 147]
+    -- feet="Beckoner's Pigaches +2",   -- 70, __, __ [__/__, 158]
+    neck="Incanter's Torque",           -- __, 10, __ [__/__, ___]
+    -- ear1="Lodurr Earring",           -- __, 10, __ [__/__, ___]
+    ear2="Beckoner's Earring +1",       -- __, __, __ [ 4/ 4, ___]
+    -- ring1="Zodiac Ring",             -- __, __,  3 [__/__, ___]
+    ring2="Defending Ring",             -- __, __, __ [10/10, ___]
+    back="Twilight Cape",               -- __, __,  5 [__/__, ___]
+    -- waist="Ligeia Sash",             -- 10, __, __ [__/__, ___]
+    -- Traits/Merits/Gifts                 60,469, __ [__/__, ___]
+    -- Assume minimum day/weather          __, __, 10
+    -- 160 Base Siphon, 584 Summoning Skill, 28 Siphon Multiplier [52 PDT/52 MDT, 638 M.Eva]
+    -- MP Siphoned = 888 to 1061 (depending on day/weather)
+  }
+  sets.precast.JA['Elemental Siphon'].NirvAM = {
+    -- main="Nirvana",                  -- __, __, __ [__/__, ___]
+    -- sub="Elan Strap +1",             -- __, __, __ [__/__, ___]
+    -- ammo="Esper stone +1",           -- 20, __, __ [__/__, ___]
+    -- head="Beckoner's Horn +2",       -- __, 18, __ [ 9/ 9, 120]
+    -- body="Beckoner's Doublet +2",    -- __, 19, __ [12/12, 120]
+    -- hands="Baayami Cuffs +1",        -- __, 33, __ [__/__,  93]
+    -- legs="Beckoner's Spats +2",      -- __, 25, __ [11/11, 147]
+    -- feet="Beckoner's Pigaches +2",   -- 70, __, __ [__/__, 158]
+    neck="Incanter's Torque",           -- __, 10, __ [__/__, ___]
+    -- ear1="Lodurr Earring",           -- __, 10, __ [__/__, ___]
+    ear2="Beckoner's Earring +1",       -- __, __, __ [ 4/ 4, ___]
+    -- ring1="Zodiac Ring",             -- __, __,  3 [__/__, ___]
+    ring2="Defending Ring",             -- __, __, __ [10/10, ___]
+    back="Twilight Cape",               -- __, __,  5 [__/__, ___]
+    -- waist="Ligeia Sash",             -- 10, __, __ [__/__, ___]
+    -- Traits/Merits/Gifts                 60,469, __ [__/__, ___]
+    -- Assume minimum day/weather          __, __, 10
+    -- 160 Base Siphon, 584 Summoning Skill, 18 Siphon Multiplier [46 PDT/46 MDT, 638 M.Eva]
+    -- MP Siphoned = 888 to 1061 (depending on day/weather)
   }
 
   sets.precast.JA['Mana Cede'] = {
-    -- hands="Caller's Bracers +2",
+    -- hands="Caller's Bracers +2", -- This and gifts cap out the effect; no need to reforge
   }
 
-  -- Pact delay reduction gear: summoning skill, favor+ gear
+  -- Pact delay reduction gear: summoning skill, -BP Delay, -BP Delay II
+  -- Caps: summoning skill @670, -BP Delay @15, -BP Delay II @15, -BP Delay Total @30 (including the 10s from gifts)
   sets.precast.BloodPactWard = {
-    -- ammo="Sancus Sachet +1",
-    -- head="Beckoner's Horn +2",
-    -- body="Baayami Robe",
-    -- hands="Baayami Cuffs",
-    -- legs="Baayami Slops",
-    -- feet="Baayami Sabots",
-    neck="Incanter's Torque",
-    -- ear1="Lodurr Earring",
-    -- ear2="Evans Earring",
-    ring1="Stikini Ring +1",
-    -- ring2="Evoker's Ring",
-    -- back=gear.SMN_FC_Cape,
-    -- waist="Kobo Obi",
+    main="Malignance Pole",         -- __, __, __, __ [20/20, ___]
+    sub="Vox Grip",                 --  3, __, __, __ [__/__, ___]
+    ammo="Epitaph",                 -- __, __,  5, __ [__/__, ___]
+    -- head="Beckoner's Horn +2",   -- 18, __, __, __ [ 9/ 9, 120]; Keep on for Favor bonus
+    -- body="Baayami Robe",         -- 32, __, __, __ [__/__, 112]
+    -- hands="Baayami Cuffs +1",    -- 33,  7, __, __ [__/__,  93]; maybe swap for Glyphic Bracers +3
+    -- legs="Baayami Slops +1",     -- 35,  8, __, __ [__/__, 139]
+    -- feet="Baayami Sabots +1",    -- 29, __, __, __ [__/__, 139]
+    neck="Incanter's Torque",       -- 10, __, __, __ [__/__, ___]
+    -- ear1="Lodurr Earring",       -- 10, __, __, __ [__/__, ___]
+    -- ear2="Cath Palug Earring",   --  5, __, __, __ [__/__, ___]
+    -- ring1="Evoker's Ring",       -- 10, __, __, __ [__/__, ___]
+    ring2="Stikini Ring +1",        --  8, __, __, __ [__/__, ___]
+    -- back=gear.SMN_Pre_BP_Cape,   --  8, __,  5, __ [__/__, ___]
+    -- Traits/Merits/Gifts            469, __, __, 10
+    -- 670 Summon Skill, 15 -BP Delay, 10 -BP Delay II, 10 -BP Delay III [29 PDT/29 MDT, 603 M.Eva]
+    
+    -- main="Malignance Pole",      -- __, __, __, __ [20/20, ___]
+    -- sub="Khonsu",                -- __, __, __, __ [ 6/ 6, ___]
+    -- ammo="Epitaph",              -- __, __,  5, __ [__/__, ___]
+    -- head="Beckoner's Horn +2",   -- 18, __, __, __ [ 9/ 9, 120]; Keep on for Favor bonus
+    -- body="Beckoner's Doublet +2",-- 19, __, __, __ [12/12, 120]
+    -- hands="Baayami Cuffs +1",    -- 33,  7, __, __ [__/__,  93]; maybe swap for Glyphic Bracers +3
+    -- legs="Baayami Slops +1",     -- 35,  8, __, __ [__/__, 139]
+    -- feet="Baayami Sabots +1",    -- 29, __, __, __ [__/__, 139]
+    -- neck="Incanter's Torque",    -- 10, __, __, __ [__/__, ___]
+    -- ear1="Lodurr Earring",       -- 10, __, __, __ [__/__, ___]
+    -- ear2="Cath Palug Earring",   --  5, __, __, __ [__/__, ___]
+    -- ring1="Evoker's Ring",       -- 10, __, __, __ [__/__, ___]
+    -- ring2="Stikini Ring +1",     --  8, __, __, __ [__/__, ___]
+    -- back=gear.SMN_Pre_BP_Cape,   -- 13, __,  5, __ [__/__, ___]
+    -- Traits/Merits/Gifts            469, __, __, 10
+    -- Master Levels                   11
+    -- 670 Summon Skill, 15 -BP Delay, 10 -BP Delay II, 10 -BP Delay III [47 PDT/47 MDT, 611 M.Eva]
+    
+    -- main="Malignance Pole",      -- __, __, __, __ [20/20, ___]
+    -- sub="Vox Grip",              --  3, __, __, __ [__/__, ___]
+    -- ammo="Epitaph",              -- __, __,  5, __ [__/__, ___]
+    -- head="Beckoner's Horn +2",   -- 18, __, __, __ [ 9/ 9, 120]; Keep on for Favor bonus
+    -- body="Beckoner's Doublet +2",-- 19, __, __, __ [12/12, 120]
+    -- hands="Baayami Cuffs +1",    -- 33,  7, __, __ [__/__,  93]; maybe swap for Glyphic Bracers +3
+    -- legs="Baayami Slops +1",     -- 35,  8, __, __ [__/__, 139]
+    -- feet="Baayami Sabots +1",    -- 29, __, __, __ [__/__, 139]
+    -- neck="Incanter's Torque",    -- 10, __, __, __ [__/__, ___]
+    -- ear1="Lodurr Earring",       -- 10, __, __, __ [__/__, ___]
+    -- ear2="Cath Palug Earring",   --  5, __, __, __ [__/__, ___]
+    -- ring1="Evoker's Ring",       -- 10, __, __, __ [__/__, ___]
+    -- ring2="Stikini Ring +1",     --  8, __, __, __ [__/__, ___]
+    -- back=gear.SMN_FC_Cape,       -- __, __, __, __ [10/__, ___]
+    -- Traits/Merits/Gifts            469, __, __, 10
+    -- Master Levels                   21
+    -- 670 Summon Skill, 15 -BP Delay, 5 -BP Delay II, 10 -BP Delay III [51 PDT/41 MDT, 611 M.Eva]
   }
-
   sets.precast.BloodPactRage = sets.precast.BloodPactWard
 
-  -- Fast cast sets for spells
-  sets.precast.FC = {
-    -- body="Baayami Robe",
-    -- hands="Baayami Cuffs",
-    feet="Regal Pumps +1",
-    -- neck="Caller's Pendant",
-    -- ear1="Lodurr Earring",
-    ring1="Kishar Ring",
-    -- back={ name="Campestres's Cape", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Eva.+20 /Mag. Eva.+20','Pet: Magic Damage+5','"Fast Cast"+10',}},
-    waist="Witful Belt",
+  sets.precast.BloodPactWard.NirvAM = {
+    -- main="Nirvana",              -- __, __, __, __ [__/__, ___]
+    -- sub="Elan Strap +1",         -- __, __, __, __ [__/__, ___]
+    -- ammo="Epitaph",              -- __, __,  5, __ [__/__, ___]
+    -- head="Beckoner's Horn +2",   -- 18, __, __, __ [ 9/ 9, 120]; Keep on for Favor bonus
+    -- body="Baayami Robe",         -- 32, __, __, __ [__/__, 112]
+    -- hands="Baayami Cuffs +1",    -- 33,  7, __, __ [__/__,  93]; maybe swap for Glyphic Bracers +3
+    -- legs="Baayami Slops +1",     -- 35,  8, __, __ [__/__, 139]
+    -- feet="Baayami Sabots +1",    -- 29, __, __, __ [__/__, 139]
+    -- neck="Incanter's Torque",    -- 10, __, __, __ [__/__, ___]
+    -- ear1="Lodurr Earring",       -- 10, __, __, __ [__/__, ___]
+    -- ear2="Cath Palug Earring",   --  5, __, __, __ [__/__, ___]
+    -- ring1="Evoker's Ring",       -- 10, __, __, __ [__/__, ___]
+    -- ring2="Stikini Ring +1",     --  8, __, __, __ [__/__, ___]
+    -- back=gear.SMN_Pre_BP_Cape,   --  8, __,  5, __ [__/__, ___]
+    -- Traits/Merits/Gifts            469, __, __, 10
+    -- Master Levels                    3
+    -- 670 Summon Skill, 15 -BP Delay, 10 -BP Delay II, 10 -BP Delay III [9 PDT/9 MDT, 603 M.Eva]
+    
+    -- main="Nirvana",              -- __, __, __, __ [__/__, ___]
+    -- sub="Elan Strap +1",         -- __, __, __, __ [__/__, ___]
+    -- ammo="Epitaph",              -- __, __,  5, __ [__/__, ___]
+    -- head="Beckoner's Horn +2",   -- 18, __, __, __ [ 9/ 9, 120]; Keep on for Favor bonus
+    -- body="Baayami Robe",         -- 32, __, __, __ [__/__, 112]
+    -- hands="Baayami Cuffs +1",    -- 33,  7, __, __ [__/__,  93]; maybe swap for Glyphic Bracers +3
+    -- legs="Baayami Slops +1",     -- 35,  8, __, __ [__/__, 139]
+    -- feet="Baayami Sabots +1",    -- 29, __, __, __ [__/__, 139]
+    -- neck="Incanter's Torque",    -- 10, __, __, __ [__/__, ___]
+    -- ear1="Lodurr Earring",       -- 10, __, __, __ [__/__, ___]
+    -- ear2="Cath Palug Earring",   --  5, __, __, __ [__/__, ___]
+    -- ring1="Evoker's Ring",       -- 10, __, __, __ [__/__, ___]
+    -- ring2="Defending Ring",      -- __, __, __, __ [10/10, ___]
+    -- back=gear.SMN_Pre_BP_Cape,   --  8, __,  5, __ [__/__, ___]
+    -- Traits/Merits/Gifts            469, __, __, 10
+    -- Master Levels                   11
+    -- 670 Summon Skill, 15 -BP Delay, 10 -BP Delay II, 10 -BP Delay III [19 PDT/19 MDT, 603 M.Eva]
+
+    -- main="Nirvana",              -- __, __, __, __ [__/__, ___]
+    -- sub="Elan Strap +1",         -- __, __, __, __ [__/__, ___]
+    -- ammo="Epitaph",              -- __, __,  5, __ [__/__, ___]
+    -- head="Beckoner's Horn +2",   -- 18, __, __, __ [ 9/ 9, 120]; Keep on for Favor bonus
+    -- body="Beckoner's Doublet +2",-- 19, __, __, __ [12/12, 120]
+    -- hands="Baayami Cuffs +1",    -- 33,  7, __, __ [__/__,  93]; maybe swap for Glyphic Bracers +3
+    -- legs="Baayami Slops +1",     -- 35,  8, __, __ [__/__, 139]
+    -- feet="Baayami Sabots +1",    -- 29, __, __, __ [__/__, 139]
+    -- neck="Incanter's Torque",    -- 10, __, __, __ [__/__, ___]
+    -- ear1="Lodurr Earring",       -- 10, __, __, __ [__/__, ___]
+    -- ear2="Cath Palug Earring",   --  5, __, __, __ [__/__, ___]
+    -- ring1="Evoker's Ring",       -- 10, __, __, __ [__/__, ___]
+    -- ring2="Stikini Ring +1",     --  8, __, __, __ [__/__, ___]
+    -- back=gear.SMN_Pre_BP_Cape,   --  8, __,  5, __ [__/__, ___]
+    -- Traits/Merits/Gifts            469, __, __, 10
+    -- Master Levels                   16
+    -- 670 Summon Skill, 15 -BP Delay, 10 -BP Delay II, 10 -BP Delay III [21 PDT/21 MDT, 611 M.Eva]
+
+    -- main="Nirvana",              -- __, __, __, __ [__/__, ___]
+    -- sub="Elan Strap +1",         -- __, __, __, __ [__/__, ___]
+    -- ammo="Epitaph",              -- __, __,  5, __ [__/__, ___]
+    -- head="Beckoner's Horn +2",   -- 18, __, __, __ [ 9/ 9, 120]; Keep on for Favor bonus
+    -- body="Beckoner's Doublet +2",-- 19, __, __, __ [12/12, 120]
+    -- hands="Baayami Cuffs +1",    -- 33,  7, __, __ [__/__,  93]; maybe swap for Glyphic Bracers +3
+    -- legs="Baayami Slops +1",     -- 35,  8, __, __ [__/__, 139]
+    -- feet="Baayami Sabots +1",    -- 29, __, __, __ [__/__, 139]
+    -- neck="Incanter's Torque",    -- 10, __, __, __ [__/__, ___]
+    -- ear1="Lodurr Earring",       -- 10, __, __, __ [__/__, ___]
+    -- ear2="Cath Palug Earring",   --  5, __, __, __ [__/__, ___]
+    -- ring1="Evoker's Ring",       -- 10, __, __, __ [__/__, ___]
+    -- ring2="Defending Ring",      -- __, __, __, __ [10/10, ___]
+    -- back=gear.SMN_FC_Cape,       -- __, __, __, __ [10/__, ___]
+    -- Traits/Merits/Gifts            469, __, __, 10
+    -- Master Levels                   32
+    -- 670 Summon Skill, 15 -BP Delay, 5 -BP Delay II, 10 -BP Delay III [41 PDT/31 MDT, 611 M.Eva]
   }
+  sets.precast.BloodPactRage.NirvAM = sets.precast.BloodPactWard.NirvAM
 
-  sets.precast.FC['Enhancing Magic'] = set_combine(sets.precast.FC, {
-    -- waist="Siegel Sash"
-  })
 
-  -- Weaponskill sets
+  ------------------------------------------------------------------------------------------------
+  ------------------------------------- Weapon Skill Sets ----------------------------------------
+  ------------------------------------------------------------------------------------------------
+
   -- Default set for any weaponskill that isn't any more specifically defined
   sets.precast.WS = {
     -- head="Beckoner's Horn +2",
@@ -501,10 +836,10 @@ function init_gear_sets()
     ear2="Beckoner's Earring +1",   -- ____ [ 4/ 4, ___] ( 2, __) {  1, __, __/__}
     ring1="Stikini Ring +1",        -- ____ [__/__, ___] ( 1, __) {___, __, __/__}
     ring2="Defending Ring",         -- ____ [10/10, ___] (__, __) {___, __, __/__}
-    -- back=gear.SMN_FC_Cape,       -- ____ [10/__,  20] (__, __) {  1, __, __/__}
+    -- back=gear.SMN_FC_Cape,       -- ____ [10/__, ___] (__, __) {  1, __, __/__}
     waist="Regal Belt",             --   88 [ 3/ 3, ___] (__, __) {___, __, __/__}
     -- Traits/Merits/JP Gifts                                       99, __,  7/ 7
-    -- 120 HP [51 PDT/44 MDT, 520 M.Eva] (19 Refresh, 3 Perp Cost) {Pet: 101 Lv, 0 Regain, 7 PDT/7 MDT}
+    -- 120 HP [51 PDT/44 MDT, 500 M.Eva] (19 Refresh, 3 Perp Cost) {Pet: 101 Lv, 0 Regain, 7 PDT/7 MDT}
 
     -- main="Mpaca's Staff",        -- ____ [__/__, ___] ( 2, __) {___, __, __/__}
     -- sub="Khonsu",                -- ____ [ 6/ 6, ___] (__, __) {___, __, __/__}
@@ -519,10 +854,10 @@ function init_gear_sets()
     -- ear2="Beckoner's Earring +2",-- ____ [ 6/ 6, ___] ( 3, __) {  1, __, __/__}
     -- ring1="Stikini Ring +1",     -- ____ [__/__, ___] ( 1, __) {___, __, __/__}
     -- ring2="Defending Ring",      -- ____ [10/10, ___] (__, __) {___, __, __/__}
-    -- back=gear.SMN_FC_Cape,       -- ____ [10/__,  20] (__, __) {  1, __, __/__}
+    -- back=gear.SMN_FC_Cape,       -- ____ [10/__, ___] (__, __) {  1, __, __/__}
     -- waist="Regal Belt",          --   88 [ 3/ 3, ___] (__, __) {___, __, __/__}
     -- Traits/Merits/JP Gifts                                       99, __,  7/ 7
-    -- 70 HP [53 PDT/43 MDT, 520 M.Eva] (21 Refresh, 3 Perp Cost) {Pet: 101 Lv, Regain, 7 PDT/7 MDT}
+    -- 70 HP [53 PDT/43 MDT, 500 M.Eva] (21 Refresh, 3 Perp Cost) {Pet: 101 Lv, Regain, 7 PDT/7 MDT}
   }
 
   -- perp costs:
@@ -550,10 +885,10 @@ function init_gear_sets()
     ear2="Beckoner's Earring +1",   -- ____ [ 4/ 4, ___] ( 2, __) {  1, __, __/__}
     ring1="Stikini Ring +1",        -- ____ [__/__, ___] ( 1, __) {___, __, __/__}
     ring2="Defending Ring",         -- ____ [10/10, ___] (__, __) {___, __, __/__}
-    -- back=gear.SMN_FC_Cape,       -- ____ [10/__,  20] (__, __) {  1, __, __/__}
+    -- back=gear.SMN_FC_Cape,       -- ____ [10/__, ___] (__, __) {  1, __, __/__}
     -- waist="Isa Belt",            -- ____ [__/__, ___] (__, __) {___, __,  3/ 3}
     -- Traits/Merits/JP Gifts                                      ___, __,  7/ 7
-    -- 216 HP [51 PDT/41 MDT, 549 M.Eva] (13 Refresh, 15 Perp Cost) {Pet: 121 Lv, 25 Regain, 13 PDT/13 MDT}
+    -- 216 HP [51 PDT/41 MDT, 529 M.Eva] (13 Refresh, 15 Perp Cost) {Pet: 121 Lv, 25 Regain, 13 PDT/13 MDT}
 
     -- main="Gridarvor",            -- ____ [__/__, ___] (__,  5) {___, __, __/__}
     -- sub="Khonsu",                -- ____ [ 6/ 6, ___] (__, __) {___, __, __/__}
@@ -568,10 +903,10 @@ function init_gear_sets()
     -- ear2="Beckoner's Earring +2",-- ____ [ 6/ 6, ___] ( 3, __) {  1, __, __/__}
     -- ring1="Stikini Ring +1",     -- ____ [__/__, ___] ( 1, __) {___, __, __/__}
     -- ring2="Defending Ring",      -- ____ [10/10, ___] (__, __) {___, __, __/__}
-    -- back=gear.SMN_FC_Cape,       -- ____ [10/__,  20] (__, __) {  1, __, __/__}
+    -- back=gear.SMN_FC_Cape,       -- ____ [10/__, ___] (__, __) {  1, __, __/__}
     -- waist="Isa Belt",            -- ____ [__/__, ___] (__, __) {___, __,  3/ 3}
     -- Traits/Merits/JP Gifts                                      ___, __,  7/ 7
-    -- 216 HP [53 PDT/43 MDT, 549 M.Eva] (14 Refresh, 15 Perp Cost) {Pet: 121 Lv, 25 Regain, 13 PDT/13 MDT}
+    -- 216 HP [53 PDT/43 MDT, 529 M.Eva] (14 Refresh, 15 Perp Cost) {Pet: 121 Lv, 25 Regain, 13 PDT/13 MDT}
   }
 
   -- Need -6 perp cost
@@ -589,10 +924,10 @@ function init_gear_sets()
     -- ear2="Beckoner's Earring +2",-- ____ [ 6/ 6, ___] ( 3, __) {  1, __, __/__}
     -- ring1="Stikini Ring +1",     -- ____ [__/__, ___] ( 1, __) {___, __, __/__}
     -- ring2="Defending Ring",      -- ____ [10/10, ___] (__, __) {___, __, __/__}
-    -- back=gear.SMN_FC_Cape,       -- ____ [10/__,  20] (__, __) {  1, __, __/__}
+    -- back=gear.SMN_FC_Cape,       -- ____ [10/__, ___] (__, __) {  1, __, __/__}
     -- waist="Regal Belt",          --   88 [ 3/ 3, ___] (__, __) {___, __, __/__}
     -- Traits/Merits/JP Gifts                                       99, __,  7/ 7
-    -- 70 HP [53 PDT/43 MDT, 520 M.Eva] (19 Refresh, 8 Perp Cost) {Pet: 101 Lv, 0 Regain, 7 PDT/7 MDT}
+    -- 70 HP [53 PDT/43 MDT, 500 M.Eva] (19 Refresh, 8 Perp Cost) {Pet: 101 Lv, 0 Regain, 7 PDT/7 MDT}
   }
 
   -- sets.idle.Avatar.Melee = {hands="Regimen Mittens",back="Samanisi Cape",waist="Kuku Stone",legs="Convoker's Spats"}
@@ -666,6 +1001,14 @@ function job_precast(spell, action, spellMap, eventArgs)
 
   if state.Buff['Astral Conduit'] then
     eventArgs.useMidcastGear = true
+  elseif state.CastingMode.current == 'NirvAM' then
+    if spell.type == 'BloodPactWard' or spell.type == 'BloodPactRage' then
+      equip(sets.precast.BloodPactWard.NirvAM)
+      eventArgs.handled = true
+    elseif spell.english == 'Elemental Siphon' then
+      equip(sets.precast.JA['Elemental Siphon'].NirvAM)
+      eventArgs.handled = true
+    end
   end
 end
 
