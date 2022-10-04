@@ -684,10 +684,20 @@ function init_gear_sets()
     -- 903 HP to 1044 Cure IV depending on weather/day
   })
 
-  -- TODO: update set
   sets.midcast.Stoneskin = {
-    -- waist="Siegel Sash"
-  }
+    ammo="Epitaph",               -- __ [__/__, ___]
+    head="Bunzi's Hat",           -- __ [ 7/ 7, 123]
+    body=gear.Nyame_B_body,       -- __ [ 9/ 9, 139]
+    hands=gear.Nyame_B_hands,     -- __ [ 7/ 7, 112]
+    -- legs="Shedir Seraweels",   -- 35 [__/__, ___]
+    feet=gear.Nyame_B_feet,       -- __ [ 7/ 7, 150]
+    -- neck="Stone Gorget",       -- 30 [__/__, ___]
+    -- ear1="Earthcry Earring",   -- 10 [__/__, ___]
+    ring1="Gelatinous Ring +1",   -- __ [ 7/-1, ___]
+    ring2="Defending Ring",       -- __ [10/10, ___]
+    -- back=gear.SMN_Cure_Cape,   -- __ [10/__,  20]
+    -- waist="Siegel Sash",       -- 20 [__/__, ___]
+  } -- 95 +Stoneskin [50 PDT/39 MDT, 544 M.Eva]
 
   -- TODO: update set
   sets.midcast['Elemental Magic'] = {
@@ -766,7 +776,7 @@ function init_gear_sets()
     ear2="Lugalbanda Earring",
     -- ring1="Varar Ring +1",
     -- ring2="Varar Ring +1",
-    -- back={ name="Campestres's Cape", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10',}},
+    -- back=gear.SMN_Phys_BP_Cape,
     waist="Incarnation Sash",
   }
 
@@ -783,7 +793,7 @@ function init_gear_sets()
     ear2="Lugalbanda Earring",
     -- ring1="Varar Ring +1",
     -- ring2="Varar Ring +1",
-    -- back={ name="Campestres's Cape", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Eva.+20 /Mag. Eva.+20','Pet: Magic Damage+5','"Fast Cast"+10',}},
+    -- back=gear.SMN_Magic_BP_Cape,
     waist="Incarnation Sash",
   }
 
@@ -801,7 +811,7 @@ function init_gear_sets()
     ear2="Lugalbanda Earring",
     -- ring1="Varar Ring +1",
     -- ring2="Varar Ring +1",
-    -- back={ name="Campestres's Cape", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Eva.+20 /Mag. Eva.+20','Pet: Magic Damage+5','"Fast Cast"+10',}},
+    -- back=gear.SMN_Magic_BP_Cape,
     waist="Regal Belt",
   }
 
@@ -951,7 +961,7 @@ function init_gear_sets()
   --   ear2="Evans Earring",
   --   ring1="Stikini Ring +1",
   --   ring2="Evoker's Ring",
-  --   back={ name="Campestres's Cape", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10',}},
+  --   back=gear.SMN_Phys_BP_Cape,
   --   waist="Fucho-no-Obi",
   -- }
 
@@ -972,7 +982,7 @@ function init_gear_sets()
     ear2="Cessance Earring",
     -- ring1="Petrov Ring",
     -- ring2="Apate Ring",
-    -- back={ name="Campestres's Cape", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10',}},
+    -- back=gear.SMN_Phys_BP_Cape,
     waist="Grunfeld Rope",
   }
   
