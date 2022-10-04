@@ -61,7 +61,9 @@ gear.Chironic_MAcc_legs = {} -- 40 M.Acc Aug
 gear.Herc_TA_feet = { name="Herculean Boots", augments={'Accuracy+30','"Triple Atk."+4','Attack+2',}}
 
 -- Merlinic
+-- gear.Merl_FC_head = {} -- FC+7
 gear.Merl_FC_body = { name="Merlinic Jubbah", augments={'Mag. Acc.+2 "Mag.Atk.Bns."+2','VIT+5','"Fast Cast"+8',}}
+-- gear.Merl_FC_legs = {} -- FC+7
 gear.Merl_FC_feet = { name="Merlinic Crackows", augments={'Accuracy+6','INT+10','"Fast Cast"+6','Mag. Acc.+3 "Mag.Atk.Bns."+3',}}
 
 gear.Merl_MB_body = { name="Merlinic Jubbah", augments={'INT+3','Magic burst dmg.+11%','Accuracy+18 Attack+18',}} --10 MB Dmg, 40 MAB, 40 M.Acc, 10 INT
@@ -142,7 +144,10 @@ gear.Telchine_Regen_feet = { name="Telchine Pigaches", augments={'"Regen" potenc
 
 gear.SCH_Adoulin_Regen_Cape = { name="Bookworm's Cape", augments={'INT+1','MND+1','Helix eff. dur. +17','"Regen" potency+10',}}
 gear.SCH_Adoulin_Helix_Cape = { name="Bookworm's Cape", augments={'INT+1','MND+1','Helix eff. dur. +20',}}
+
 -- gear.BLU_Adoulin_Cape = {} -- Blue magic skill +10
+
+-- gear.SMN_Pre_BP_Cape = {} -- BP Delay II -3, summoning skill +5
 
 
 ----------------------------------------------------------------------
@@ -178,6 +183,11 @@ gear.SCH_Regen_Cape = gear.SCH_MP_Cape
 gear.SCH_MND_MAcc_Cape = gear.SCH_CP_Cape
 gear.SCH_Helix_Cape = gear.SCH_MAB_Cape
 -- gear.SCH_Helix_Cape = { name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Magic Damage +10','"Mag.Atk.Bns."+10',}}
+
+-- gear.SMN_Magic_BP_Cape = { name="Campestres's Cape", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Eva.+20 /Mag. Eva.+20','Pet: Magic Damage+5','"Fast Cast"+10','Phys. dmg. taken-10%',}}
+-- gear.SMN_Phys_BP_Cape = { name="Campestres's Cape", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Phys. dmg. taken-10%',}}
+-- gear.SMN_FC_Cape = gear.SMN_Magic_BP_Cape
+-- gear.SMN_Cure_Cape = { name="Campestres's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','MND+10','"Cure" potency +10%','Phys. dmg. taken-10%',}}
 
 gear.WHM_FC_Cape = { name="Alaunus's Cape", augments={'INT+20','Eva.+20 /Mag. Eva.+20','INT+10','"Fast Cast"+10','Phys. dmg. taken-10%',}}
 -- gear.WHM_FC_Cape = { name="Alaunus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Fast Cast"+10','Phys. dmg. taken-10%',}}
