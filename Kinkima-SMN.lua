@@ -7,9 +7,6 @@
 --[[
   Custom commands:
 
-  gs c petweather
-    Automatically casts the storm appropriate for the current avatar, if possible.
-
   gs c siphon
     Automatically run the process to: dismiss the current avatar; cast appropriate
     weather; summon the appropriate spirit; Elemental Siphon; release the spirit;
@@ -27,6 +24,7 @@
       buffOffense
       buffDefense
       buffSpecial
+      buffSpecial2
       debuff1
       debuff2
       sleep
@@ -34,6 +32,7 @@
       nuke4
       bp70
       bp75 (merits and lvl 75-80 pacts)
+      bp99
       astralflow
 --]]
 
@@ -53,6 +52,16 @@ function job_setup()
   silibs.enable_cancel_outranged_ws()
   silibs.enable_auto_lockstyle(1)
   silibs.enable_premade_commands()
+
+  state.CP = M(false, "Capacity Points Mode")
+  state.Storm = M{['description']='Storm','Aurorastorm','Sandstorm',
+      'Rainstorm','Windstorm','Firestorm','Hailstorm','Thunderstorm','Voidstorm'}
+  state.OffenseMode:options('None', 'Normal', 'Acc')
+  state.CastingMode:options('Normal')
+  state.IdleMode:options('Normal')
+  
+  state.Storm = M{['description']='Storm','Aurorastorm','Sandstorm',
+  'Rainstorm','Windstorm','Firestorm','Hailstorm','Thunderstorm','Voidstorm'}
 
   state.Buff["Avatar's Favor"] = buffactive["Avatar's Favor"] or false
   state.Buff["Astral Conduit"] = buffactive["Astral Conduit"] or false
@@ -79,6 +88,7 @@ function job_setup()
       ['Ramuh']='Lightning Armor', ['Fenrir']='Ecliptic Howl', ['Diabolos']='Noctoshield', ['Cait Sith']='Reraise II'}
   pacts.buffspecial = {['Ifrit']='Inferno Howl', ['Garuda']='Fleet Wind', ['Titan']='Earthen Armor', ['Diabolos']='Dream Shroud',
       ['Carbuncle']='Soothing Ruby', ['Fenrir']='Heavenward Howl', ['Cait Sith']='Raise II'}
+  pacts.buffspecial2 = {['Carbuncle']='Pacifying Ruby',['Leviathan']='Soothing Current',['Shiva']='Crystal Blessing'}
   pacts.debuff1 = {['Shiva']='Diamond Storm', ['Ramuh']='Shock Squall', ['Leviathan']='Tidal Roar', ['Fenrir']='Lunar Cry',
       ['Diabolos']='Pavor Nocturnus', ['Cait Sith']='Eerie Eye'}
   pacts.debuff2 = {['Shiva']='Sleepga', ['Leviathan']='Slowga', ['Fenrir']='Lunar Roar', ['Diabolos']='Somnolence'}
@@ -93,6 +103,7 @@ function job_setup()
   pacts.bp75 = {['Ifrit']='Meteor Strike', ['Shiva']='Heavenly Strike', ['Garuda']='Wind Blade', ['Titan']='Geocrush',
       ['Ramuh']='Thunderstorm', ['Leviathan']='Grand Fall', ['Carbuncle']='Holy Mist', ['Fenrir']='Lunar Bay',
       ['Diabolos']='Night Terror', ['Cait Sith']='Level ? Holy'}
+  pacts.bp99 = {['Ifrit']='Conflag Strike',['Titan']='Crag Throw',['Ramuh']='Volt Strike', ['Siren']='Hysteric Assault'}
   pacts.astralflow = {['Ifrit']='Inferno', ['Shiva']='Diamond Dust', ['Garuda']='Aerial Blast', ['Titan']='Earthen Fury',
       ['Ramuh']='Judgment Bolt', ['Leviathan']='Tidal Wave', ['Carbuncle']='Searing Light', ['Fenrir']='Howling Moon',
       ['Diabolos']='Ruinous Omen', ['Cait Sith']="Altana's Favor"}
@@ -123,21 +134,93 @@ function job_setup()
   -- Flags for code to get around the issue of slow skill updates.
   wards.flag = false
   wards.spell = ''
+
+  send_command('bind !s gs c faceaway')
+  send_command('bind !d gs c usekey')
+  send_command('bind @c gs c toggle CP')
+  send_command('bind @w gs c toggle RearmingLock')
+
+  send_command('bind !q input /ja "Assault" <t>')
+  send_command('bind !w input /ja "Retreat" <me>')
+  send_command('bind !e input /ja "Release" <me>')
+  send_command('bind !r input /ja "Avatar\'s Favor" <me>')
+
+  send_command('bind !` gs c pact buffSpecial')
+  send_command('bind ^numlock gs c pact bp99')
+  send_command('bind ^numpad/ gs c pact bp70')
+  send_command('bind ^numpad* gs c pact bp75')
+  send_command('bind ^numpad- gs c pact astralflow')
+  
 end
 
--------------------------------------------------------------------------------------------------------------------
--- User setup functions for this job.  Recommend that these be overridden in a sidecar file.
--------------------------------------------------------------------------------------------------------------------
-
--- Setup vars that are user-dependent.  Can override this function in a sidecar file.
+-- Executes on first load, main job change, **and sub job change**
 function user_setup()
-  state.OffenseMode:options('None', 'Normal', 'Acc')
-  state.CastingMode:options('Normal', 'Resistant')
-  state.IdleMode:options('Normal', 'PDT')
+  silibs.user_setup_hook()
+  include('Global-Binds.lua') -- Additional local binds
 
-  gear.perp_staff = {name=""}
+  if player.sub_job == 'SCH' then
+    send_command('bind ^- gs c scholar light')
+    send_command('bind ^= gs c scholar dark')
+    send_command('bind ^\\\\ gs c scholar cost')
+    send_command('bind ![ gs c scholar aoe')
+    send_command('bind !\\\\ gs c scholar speed')
 
+    send_command('bind !c gs c storm')
+    send_command('bind ^pageup gs c cycleback Storm')
+    send_command('bind ^pagedown gs c cycle Storm')
+    send_command('bind !pagedown gs c reset Storm')
+    
+    send_command('bind !u input /ma "Blink" <me>')
+    send_command('bind !i input /ma "Stoneskin" <me>')
+    send_command('bind !p input /ma "Aquaveil" <me>')
+  elseif player.sub_job == 'RDM' then
+    send_command('bind !u input /ma "Blink" <me>')
+    send_command('bind !i input /ma "Stoneskin" <me>')
+    send_command('bind !o input /ma "Phalanx" <me>')
+    send_command('bind !p input /ma "Aquaveil" <me>')
+    send_command('bind !\' input /ma "Refresh" <stpc>')
+  elseif player.sub_job == 'WHM' then
+    send_command('bind !u input /ma "Blink" <me>')
+    send_command('bind !i input /ma "Stoneskin" <me>')
+    send_command('bind !p input /ma "Aquaveil" <me>')
+  end
+  
   select_default_macro_book()
+end
+
+-- Called when this job file is unloaded (eg: job change)
+function user_unload()
+  send_command('unbind !s')
+  send_command('unbind !d')
+  send_command('unbind @c')
+  send_command('unbind @w')
+  
+  send_command('unbind !q')
+  send_command('unbind !w')
+  send_command('unbind !e')
+  send_command('unbind !r')
+
+  send_command('unbind !`')
+  send_command('unbind ^numlock')
+  send_command('unbind ^numpad/')
+  send_command('unbind ^numpad*')
+  send_command('unbind ^numpad-')
+  
+  send_command('unbind ^-')
+  send_command('unbind ^=')
+  send_command('unbind ^\\\\')
+  send_command('unbind ![')
+  send_command('unbind !\\\\')
+
+  send_command('unbind !c')
+  send_command('unbind ^pageup')
+  send_command('unbind ^pagedown')
+  send_command('unbind !pagedown')
+
+  send_command('unbind !u')
+  send_command('unbind !i')
+  send_command('unbind !o')
+  send_command('unbind !p')
 end
 
 -- Define sets and vars used by this job file.
@@ -393,8 +476,6 @@ function init_gear_sets()
     -- legs="Summoner's Spats",
   })
 
-  sets.midcast.Pet['Elemental Magic'].Resistant = {}
-
 
   ------------------------------------------------------------------------------------------------=
   -------------------------------------- Idle/Defense Sets ----------------------------------------
@@ -444,8 +525,6 @@ function init_gear_sets()
     -- 70 HP [53 PDT/43 MDT, 520 M.Eva] (21 Refresh, 3 Perp Cost) {Pet: 101 Lv, Regain, 7 PDT/7 MDT}
   }
 
-  sets.idle.PDT = sets.idle
-
   -- perp costs:
   -- spirits: 7
   -- carby: 11 (5 with mitts)
@@ -455,14 +534,6 @@ function init_gear_sets()
 
   -- Max useful -perp gear is 1 less than the perp cost (can't be reduced below 1)
   -- Aim for -14 perp, and refresh in other slots.
-
-  -- -perp gear:
-  -- Gridarvor: -5
-  -- Glyphic Horn: -4
-  -- Caller's Doublet +2/Glyphic Doublet: -4
-  -- Evoker's Ring: -1
-  -- Convoker's Pigaches: -4
-  -- total: -18
 
   -- Need -14 perp cost
   sets.idle.Avatar = {
@@ -503,19 +574,6 @@ function init_gear_sets()
     -- 216 HP [53 PDT/43 MDT, 549 M.Eva] (14 Refresh, 15 Perp Cost) {Pet: 121 Lv, 25 Regain, 13 PDT/13 MDT}
   }
 
-  --sets.idle.PDT.Avatar = {head="Beckoner's Horn +2",
-  --body={ name="Apogee Dalmatica", augments={'Pet: Attack+20','Pet: "Mag.Atk.Bns."+20','Blood Pact Dmg.+7',}},
-  --hands={ name="Glyphic Bracers +1", augments={'Inc. Sp. "Blood Pact" magic burst dmg.',}},
-  --legs="Assid. Pants +1",
-  --feet="Baayami Sabots",
-  --neck="Caller's Pendant",
-  --waist="Fucho-no-Obi",
-  --left_ear="Enmerkar Earring",
-  --right_ear="Evans Earring",
-  --left_ring="Stikini Ring +1",
-  --right_ring="Evoker's Ring",
-  --back={ name="Campestres's Cape", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10',}}}
-
   -- Need -6 perp cost
   sets.idle.Spirit = {
     -- main="Gridarvor",            -- ____ [__/__, ___] (__,  5) {___, __, __/__}
@@ -554,40 +612,6 @@ function init_gear_sets()
   --   waist="Fucho-no-Obi",
   -- }
 
-  sets.perp = {}
-  -- Caller's Bracer's halve the perp cost after other costs are accounted for.
-  -- Using -10 (Gridavor, ring, Conv.feet), standard avatars would then cost 5, halved to 2.
-  -- We can then use Hagondes Coat and end up with the same net MP cost, but significantly better defense.
-  -- Weather is the same, but we can also use the latent on the pendant to negate the last point lost.
-  --sets.perp.Day = {body="Hagondes Coat",hands="Caller's Bracers +2"}
-  --sets.perp.Weather = {neck="Caller's Pendant",body="Hagondes Coat",hands="Caller's Bracers +2"}
-  -- Carby: Mitts+Conv.feet = 1/tick perp.  Everything else should be +refresh
-  --sets.perp.Carbuncle = {main="Bolelabunga",sub="Genbu's Shield",
-      --head="Convoker's Horn",body="Hagondes Coat",hands="Carbuncle Mitts",legs="Nares Trews",feet="Convoker's Pigaches"}
-  -- Diabolos's Rope doesn't gain us anything at this time
-  --sets.perp.Diabolos = {waist="Diabolos's Rope"}
-  --sets.perp.Alexander = sets.midcast.Pet.BloodPactWard
-
-  --sets.perp.staff_and_grip = {main=gear.perp_staff,sub="Achaq Grip"}
-
-  -- Defense sets
-  --sets.defense.PDT = {main=gear.Staff.PDT,
-      --head="Hagondes Hat",neck="Wiglen Gorget",ear1="Gifted Earring",ear2="Loquacious Earring",
-      --body="Hagondes Coat",hands="Yaoyotl Gloves",ring1="Defending Ring",ring2=gear.DarkRing.physical,
-      --back="Umbra Cape",waist="Fucho-no-Obi",legs="Hagondes Pants",feet="Hagondes Sabots"}
-
-  --sets.defense.MDT = {
-      --head="Hagondes Hat",neck="Twilight Torque",ear1="Gifted Earring",ear2="Loquacious Earring",
-      --body="Vanir Cotehardie",hands="Yaoyotl Gloves",ring1="Defending Ring",ring2="Shadow Ring",
-      --back="Umbra Cape",waist="Fucho-no-Obi",legs="Bokwus Slops",feet="Hagondes Sabots"}
-
-  sets.Kiting = {
-    ring1="Shneddick Ring",
-  }
-  sets.Kiting.Adoulin = {
-    body="Councilor's Garb",
-  }
-
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Engaged Sets ------------------------------------------
@@ -608,6 +632,26 @@ function init_gear_sets()
     -- back={ name="Campestres's Cape", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10',}},
     waist="Grunfeld Rope",
   }
+  
+
+  ------------------------------------------------------------------------------------------------
+  ---------------------------------------- Special Sets ------------------------------------------
+  ------------------------------------------------------------------------------------------------
+
+  sets.buff.Doom = {
+    ring1="Eshmun's Ring",          --20
+    waist="Gishdubar Sash",         --10
+    -- neck="Nicander's Necklace",  --20
+  }
+  sets.CP = {
+    back=gear.CP_Cape
+  }
+  sets.Kiting = {
+    ring1="Shneddick Ring",
+  }
+  sets.Kiting.Adoulin = {
+    body="Councilor's Garb",
+  }
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -617,15 +661,60 @@ end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
 function job_precast(spell, action, spellMap, eventArgs)
-  if state.Buff['Astral Conduit'] and pet_midaction() then
+  silibs.precast_hook(spell, action, spellMap, eventArgs)
+  ----------- Non-silibs content goes below this line -----------
+
+  if state.Buff['Astral Conduit'] then
+    eventArgs.useMidcastGear = true
+  end
+end
+
+function job_post_precast(spell, action, spellMap, eventArgs)
+  -- If slot is locked, keep current equipment on
+  if locked_neck then equip({ neck=player.equipment.neck }) end
+  if locked_ear1 then equip({ ear1=player.equipment.ear1 }) end
+  if locked_ear2 then equip({ ear2=player.equipment.ear2 }) end
+  if locked_ring1 then equip({ ring1=player.equipment.ring1 }) end
+  if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
+
+  ----------- Non-silibs content goes above this line -----------
+  silibs.post_precast_hook(spell, action, spellMap, eventArgs)
+end
+
+function job_midcast(spell, action, spellMap, eventArgs)
+  silibs.midcast_hook(spell, action, spellMap, eventArgs)
+  ----------- Non-silibs content goes below this line -----------
+
+  if state.Buff['Astral Conduit'] and spell.type == 'BloodPactRage' then
+    equip(sets.midcast[spellMap])
     eventArgs.handled = true
   end
 end
 
-function job_midcast(spell, action, spellMap, eventArgs)
-  if state.Buff['Astral Conduit'] and pet_midaction() then
+function job_post_midcast(spell, action, spellMap, eventArgs)
+  -- If slot is locked, keep current equipment on
+  if locked_neck then equip({ neck=player.equipment.neck }) end
+  if locked_ear1 then equip({ ear1=player.equipment.ear1 }) end
+  if locked_ear2 then equip({ ear2=player.equipment.ear2 }) end
+  if locked_ring1 then equip({ ring1=player.equipment.ring1 }) end
+  if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
+
+  ----------- Non-silibs content goes above this line -----------
+  silibs.post_midcast_hook(spell, action, spellMap, eventArgs)
+end
+
+function job_aftercast(spell, action, spellMap, eventArgs)
+  silibs.aftercast_hook(spell, action, spellMap, eventArgs)
+  ----------- Non-silibs content goes below this line -----------
+
+  if state.Buff['Astral Conduit'] then
     eventArgs.handled = true
   end
+end
+
+function job_post_aftercast(spell, action, spellMap, eventArgs)
+  ----------- Non-silibs content goes above this line -----------
+  silibs.post_aftercast_hook(spell, action, spellMap, eventArgs)
 end
 
 -- Runs when pet completes an action.
@@ -641,6 +730,13 @@ end
 -- Job-specific hooks for non-casting events.
 -------------------------------------------------------------------------------------------------------------------
 
+function job_handle_equipping_gear(playerStatus, eventArgs)
+  check_gear()
+  update_idle_groups()
+  update_active_strategems()
+  update_sublimation()
+end
+
 -- Called when a player gains or loses a buff.
 -- buff == buff gained or lost
 -- gain == true if the buff was gained, false if it was lost.
@@ -652,7 +748,6 @@ function job_buff_change(buff, gain)
   end
 end
 
-
 -- Called when the player's pet's status changes.
 -- This is also called after pet_change after a pet is released.  Check for pet validity.
 function job_pet_status_change(newStatus, oldStatus, eventArgs)
@@ -661,20 +756,21 @@ function job_pet_status_change(newStatus, oldStatus, eventArgs)
   end
 end
 
-
 -- Called when a player gains or loses a pet.
 -- pet == pet structure
 -- gain == true if the pet was gained, false if it was lost.
 function job_pet_change(petparam, gain)
+  job_update()
+end
+
+function update_idle_groups()
   classes.CustomIdleGroups:clear()
-  if gain then
+  if pet.isvalid then
     if avatars:contains(pet.name) then
       classes.CustomIdleGroups:append('Avatar')
     elseif spirits:contains(pet.name) then
       classes.CustomIdleGroups:append('Spirit')
     end
-  else
-    select_default_macro_book('reset')
   end
 end
 
@@ -700,19 +796,6 @@ end
 -- Modify the default idle set after it was constructed.
 function customize_idle_set(idleSet)
   if pet.isvalid then
-    if pet.element == world.day_element then
-      idleSet = set_combine(idleSet, sets.perp.Day)
-    end
-    if pet.element == world.weather_element then
-      idleSet = set_combine(idleSet, sets.perp.Weather)
-    end
-    if sets.perp[pet.name] then
-      idleSet = set_combine(idleSet, sets.perp[pet.name])
-    end
-    gear.perp_staff.name = elements.perpetuance_staff_of[pet.element]
-    if gear.perp_staff.name and (player.inventory[gear.perp_staff.name] or player.wardrobe[gear.perp_staff.name]) then
-      idleSet = set_combine(idleSet, sets.perp.staff_and_grip)
-    end
     if pet.status == 'Engaged' then
       idleSet = set_combine(idleSet, sets.idle.Avatar.Melee)
     end
@@ -720,32 +803,108 @@ function customize_idle_set(idleSet)
 
   -- If not in DT mode put on move speed gear
   if state.IdleMode.current == 'Normal' and state.DefenseMode.value == 'None' then
+    -- Apply movement speed gear
     if classes.CustomIdleGroups:contains('Adoulin') then
       idleSet = set_combine(idleSet, sets.Kiting.Adoulin)
     else
       idleSet = set_combine(idleSet, sets.Kiting)
     end
+    if state.CP.current == 'on' then
+      idleSet = set_combine(idleSet, sets.CP)
+    end
+  end
+
+  -- If slot is locked to use no-swap gear, keep it equipped
+  if locked_neck then idleSet = set_combine(idleSet, { neck=player.equipment.neck }) end
+  if locked_ear1 then idleSet = set_combine(idleSet, { ear1=player.equipment.ear1 }) end
+  if locked_ear2 then idleSet = set_combine(idleSet, { ear2=player.equipment.ear2 }) end
+  if locked_ring1 then idleSet = set_combine(idleSet, { ring1=player.equipment.ring1 }) end
+  if locked_ring2 then idleSet = set_combine(idleSet, { ring2=player.equipment.ring2 }) end
+
+  if buffactive.Doom then
+    idleSet = set_combine(idleSet, sets.buff.Doom)
   end
 
   return idleSet
 end
 
+function customize_melee_set(meleeSet)
+  if state.CP.current == 'on' then
+    meleeSet = set_combine(meleeSet, sets.CP)
+  end
+
+  -- If slot is locked to use no-swap gear, keep it equipped
+  if locked_neck then meleeSet = set_combine(meleeSet, { neck=player.equipment.neck }) end
+  if locked_ear1 then meleeSet = set_combine(meleeSet, { ear1=player.equipment.ear1 }) end
+  if locked_ear2 then meleeSet = set_combine(meleeSet, { ear2=player.equipment.ear2 }) end
+  if locked_ring1 then meleeSet = set_combine(meleeSet, { ring1=player.equipment.ring1 }) end
+  if locked_ring2 then meleeSet = set_combine(meleeSet, { ring2=player.equipment.ring2 }) end
+
+  if buffactive.Doom then
+    meleeSet = set_combine(meleeSet, sets.buff.Doom)
+  end
+
+  return meleeSet
+end
+
+function customize_defense_set(defenseSet)
+  if state.CP.current == 'on' then
+    defenseSet = set_combine(defenseSet, sets.CP)
+  end
+
+  -- If slot is locked to use no-swap gear, keep it equipped
+  if locked_neck then defenseSet = set_combine(defenseSet, { neck=player.equipment.neck }) end
+  if locked_ear1 then defenseSet = set_combine(defenseSet, { ear1=player.equipment.ear1 }) end
+  if locked_ear2 then defenseSet = set_combine(defenseSet, { ear2=player.equipment.ear2 }) end
+  if locked_ring1 then defenseSet = set_combine(defenseSet, { ring1=player.equipment.ring1 }) end
+  if locked_ring2 then defenseSet = set_combine(defenseSet, { ring2=player.equipment.ring2 }) end
+
+  if buffactive.Doom then
+    defenseSet = set_combine(defenseSet, sets.buff.Doom)
+  end
+
+  return defenseSet
+end
+
+function user_customize_idle_set(idleSet)
+  -- Any non-silibs modifications should go in customize_idle_set function
+  return silibs.customize_idle_set(idleSet)
+end
+
+function user_customize_melee_set(meleeSet)
+  -- Any non-silibs modifications should go in customize_melee_set function
+  return silibs.customize_melee_set(meleeSet)
+end
+
+function user_customize_defense_set(defenseSet)
+  -- Any non-silibs modifications should go in customize_defense_set function
+  return silibs.customize_defense_set(defenseSet)
+end
+
 -- Called by the 'update' self-command, for common needs.
 -- Set eventArgs.handled to true if we don't want automatic equipping of gear.
 function job_update(cmdParams, eventArgs)
-  classes.CustomIdleGroups:clear()
-  if pet.isvalid then
-    if avatars:contains(pet.name) then
-      classes.CustomIdleGroups:append('Avatar')
-    elseif spirits:contains(pet.name) then
-      classes.CustomIdleGroups:append('Spirit')
-    end
-  end
+  handle_equipping_gear(player.status)
 end
 
+-- Function to display the current relevant user state when doing an update.
 -- Set eventArgs.handled to true if we don't want the automatic display to be run.
 function display_current_job_state(eventArgs)
+  local c_msg = state.CastingMode.value
 
+  local d_msg = 'None'
+  if state.DefenseMode.value ~= 'None' then
+    d_msg = state.DefenseMode.value .. state[state.DefenseMode.value .. 'DefenseMode'].value
+  end
+
+  local i_msg = state.IdleMode.value
+
+  add_to_chat(060, '| Magic: ' ..string.char(31,001)..c_msg.. string.char(31,002)..  ' |'
+      ..string.char(31,004).. ' Defense: ' ..string.char(31,001)..d_msg.. string.char(31,002)..  ' |'
+      ..string.char(31,008).. ' Idle: ' ..string.char(31,001)..i_msg.. string.char(31,002)
+    )
+
+  eventArgs.handled = true
 end
 
 
@@ -755,10 +914,7 @@ end
 
 -- Called for custom player commands.
 function job_self_command(cmdParams, eventArgs)
-  if cmdParams[1]:lower() == 'petweather' then
-    handle_petweather()
-    eventArgs.handled = true
-  elseif cmdParams[1]:lower() == 'siphon' then
+  if cmdParams[1]:lower() == 'siphon' then
     handle_siphoning()
     eventArgs.handled = true
   elseif cmdParams[1]:lower() == 'pact' then
@@ -768,6 +924,11 @@ function job_self_command(cmdParams, eventArgs)
     wards.flag = false
     wards.spell = ''
     eventArgs.handled = true
+  elseif cmdParams[1] == 'scholar' then
+    handle_strategems(cmdParams)
+    eventArgs.handled = true
+  elseif cmdParams[1] == 'storm' then
+    send_command('@input /ma "'..state.Storm.current..'" <stpc>')
   end
 
   gearinfo(cmdParams, eventArgs)
@@ -781,41 +942,26 @@ function gearinfo(cmdParams, eventArgs)
   end
 end
 
+-- Reset the state vars tracking strategems.
+function update_active_strategems()
+  state.Buff['Ebullience'] = buffactive['Ebullience'] or false
+  state.Buff['Rapture'] = buffactive['Rapture'] or false
+  state.Buff['Perpetuance'] = buffactive['Perpetuance'] or false
+  state.Buff['Immanence'] = buffactive['Immanence'] or false
+  state.Buff['Penury'] = buffactive['Penury'] or false
+  state.Buff['Parsimony'] = buffactive['Parsimony'] or false
+  state.Buff['Celerity'] = buffactive['Celerity'] or false
+  state.Buff['Alacrity'] = buffactive['Alacrity'] or false
+  state.Buff['Klimaform'] = buffactive['Klimaform'] or false
+end
+
+function update_sublimation()
+  state.Buff['Sublimation: Activated'] = buffactive['Sublimation: Activated'] or false
+end
 
 -------------------------------------------------------------------------------------------------------------------
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
-
--- Cast the appopriate storm for the currently summoned avatar, if possible.
-function handle_petweather()
-  if player.sub_job ~= 'SCH' then
-    add_to_chat(122, "You can not cast storm spells")
-    return
-  end
-
-  if not pet.isvalid then
-    add_to_chat(122, "You do not have an active avatar.")
-    return
-  end
-
-  local element = pet.element
-  if element == 'Thunder' then
-    element = 'Lightning'
-  end
-
-  if S{'Light','Dark','Lightning'}:contains(element) then
-    add_to_chat(122, 'You do not have access to '..elements.storm_of[element]..'.')
-    return
-  end
-
-  local storm = elements.storm_of[element]
-
-  if storm then
-    send_command('@input /ma "'..elements.storm_of[element]..'" <me>')
-  else
-    add_to_chat(123, 'Error: Unknown element ('..tostring(element)..')')
-  end
-end
 
 -- Custom uber-handling of Elemental Siphon
 function handle_siphoning()
@@ -835,9 +981,7 @@ function handle_siphoning()
     dontRelease = true
     -- If current weather doesn't match the spirit, but the spirit matches the day, try to cast the storm.
     if player.sub_job == 'SCH' and pet.element == world.day_element and pet.element ~= world.weather_element then
-      if not S{'Light','Dark','Lightning'}:contains(pet.element) then
-        stormElementToUse = pet.element
-      end
+      stormElementToUse = pet.element
     end
   -- If we're subbing /sch, there are some conditions where we want to make sure specific weather is up.
   -- If current (single) weather is opposed by the current day, we want to change the weather to match
@@ -853,12 +997,7 @@ function handle_siphoning()
       -- perpetuation), don't change it; just accept the penalty on Siphon.
       if world.weather_element == elements.weak_to[world.day_element] and
           (not pet.isvalid or world.weather_element ~= pet.element) then
-        -- We can't cast lightning/dark/light weather, so use a neutral element
-        if S{'Light','Dark','Lightning'}:contains(world.day_element) then
-          stormElementToUse = 'Wind'
-        else
-          stormElementToUse = world.day_element
-        end
+        stormElementToUse = world.day_element
       end
     end
   end
@@ -921,12 +1060,6 @@ function handle_pacts(cmdParams)
     return
   end
 
-  if not pet.isvalid then
-    add_to_chat(122,'No avatar currently available. Returning to default macro set.')
-    select_default_macro_book('reset')
-    return
-  end
-
   if spirits:contains(pet.name) then
     add_to_chat(122,'Cannot use pacts with spirits.')
     return
@@ -957,19 +1090,6 @@ function handle_pacts(cmdParams)
   end
 end
 
-
--- Event handler for updates to player skill, since we can't rely on skill being
--- correct at pet_aftercast for the creation of custom timers.
-windower.raw_register_event('incoming chunk', function (id)
-  if id == 0x62 then
-    if wards.flag then
-      create_pact_timer(wards.spell)
-      wards.flag = false
-      wards.spell = ''
-    end
-  end
-end)
-
 -- Function to create custom timers using the Timers addon.  Calculates ward duration
 -- based on player skill and base pact duration (defined in job_setup).
 function create_pact_timer(spell_name)
@@ -997,13 +1117,133 @@ function create_pact_timer(spell_name)
   end
 end
 
+-- General handling of strategems in an Arts-agnostic way.
+-- Format: gs c scholar <strategem>
+function handle_strategems(cmdParams)
+  -- cmdParams[1] == 'scholar'
+  -- cmdParams[2] == strategem to use
+
+  if not cmdParams[2] then
+    add_to_chat(123,'Error: No strategem command given.')
+    return
+  end
+  local strategem = cmdParams[2]
+
+  if strategem == 'light' then
+    if buffactive['light arts'] then
+      send_command('input /ja "Addendum: White" <me>')
+    elseif buffactive['addendum: white'] then
+      add_to_chat(122,'Error: Addendum: White is already active.')
+    else
+      send_command('input /ja "Light Arts" <me>')
+    end
+  elseif strategem == 'dark' then
+    if buffactive['dark arts'] then
+      send_command('input /ja "Addendum: Black" <me>')
+    elseif buffactive['addendum: black'] then
+      add_to_chat(122,'Error: Addendum: Black is already active.')
+    else
+      send_command('input /ja "Dark Arts" <me>')
+    end
+  elseif buffactive['light arts'] or buffactive['addendum: white'] then
+    if strategem == 'cost' then
+      send_command('input /ja Penury <me>')
+    elseif strategem == 'speed' then
+      send_command('input /ja Celerity <me>')
+    elseif strategem == 'aoe' then
+      send_command('input /ja Accession <me>')
+    elseif strategem == 'power' then
+      send_command('input /ja Rapture <me>')
+    elseif strategem == 'duration' then
+      send_command('input /ja Perpetuance <me>')
+    elseif strategem == 'accuracy' then
+      send_command('input /ja Altruism <me>')
+    elseif strategem == 'enmity' then
+      send_command('input /ja Tranquility <me>')
+    elseif strategem == 'skillchain' then
+      add_to_chat(122,'Error: Light Arts does not have a skillchain strategem.')
+    elseif strategem == 'addendum' then
+      send_command('input /ja "Addendum: White" <me>')
+    else
+      add_to_chat(123,'Error: Unknown strategem ['..strategem..']')
+    end
+  elseif buffactive['dark arts']  or buffactive['addendum: black'] then
+    if strategem == 'cost' then
+      send_command('input /ja Parsimony <me>')
+    elseif strategem == 'speed' then
+      send_command('input /ja Alacrity <me>')
+    elseif strategem == 'aoe' then
+      send_command('input /ja Manifestation <me>')
+    elseif strategem == 'power' then
+      send_command('input /ja Ebullience <me>')
+    elseif strategem == 'duration' then
+      add_to_chat(122,'Error: Dark Arts does not have a duration strategem.')
+    elseif strategem == 'accuracy' then
+      send_command('input /ja Focalization <me>')
+    elseif strategem == 'enmity' then
+      send_command('input /ja Equanimity <me>')
+    elseif strategem == 'skillchain' then
+      send_command('input /ja Immanence <me>')
+    elseif strategem == 'addendum' then
+      send_command('input /ja "Addendum: Black" <me>')
+    else
+      add_to_chat(123,'Error: Unknown strategem ['..strategem..']')
+    end
+  else
+    add_to_chat(123,'No arts has been activated yet.')
+  end
+end
+
+function check_gear()
+  if no_swap_necks:contains(player.equipment.neck) then
+    locked_neck = true
+  else
+    locked_neck = false
+  end
+  if no_swap_earrings:contains(player.equipment.ear1) then
+    locked_ear1 = true
+  else
+    locked_ear1 = false
+  end
+  if no_swap_earrings:contains(player.equipment.ear2) then
+    locked_ear2 = true
+  else
+    locked_ear2 = false
+  end
+  if no_swap_rings:contains(player.equipment.ring1) then
+    locked_ring1 = true
+  else
+    locked_ring1 = false
+  end
+  if no_swap_rings:contains(player.equipment.ring2) then
+    locked_ring2 = true
+  else
+    locked_ring2 = false
+  end
+end
+
+windower.register_event('zone change', function()
+  if locked_neck then equip({ neck=empty }) end
+  if locked_ear1 then equip({ ear1=empty }) end
+  if locked_ear2 then equip({ ear2=empty }) end
+  if locked_ring1 then equip({ ring1=empty }) end
+  if locked_ring2 then equip({ ring2=empty }) end
+end)
+
+-- Event handler for updates to player skill, since we can't rely on skill being
+-- correct at pet_aftercast for the creation of custom timers.
+windower.raw_register_event('incoming chunk', function (id)
+  if id == 0x62 then
+    if wards.flag then
+      create_pact_timer(wards.spell)
+      wards.flag = false
+      wards.spell = ''
+    end
+  end
+end)
 
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book(reset)
-  if reset == 'reset' then
-    -- lost pet, or tried to use pact when pet is gone
-  end
-
   -- Default macro set/book
-  set_macro_page(4, 16)
+  set_macro_page(2, 6)
 end
