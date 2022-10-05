@@ -500,8 +500,9 @@ function init_gear_sets()
     -- ring1="Evoker's Ring",       -- 10, __, __, __ [__/__, ___]
     ring2="Stikini Ring +1",        --  8, __, __, __ [__/__, ___]
     -- back=gear.SMN_Pre_BP_Cape,   --  8, __,  5, __ [__/__, ___]
+    waist="Regal Belt",             -- __, __, __, __ [ 3/ 3, ___]
     -- Traits/Merits/Gifts            469, __, __, 10
-    -- 670 Summon Skill, 15 -BP Delay, 10 -BP Delay II, 10 -BP Delay III [29 PDT/29 MDT, 603 M.Eva]
+    -- 670 Summon Skill, 15 -BP Delay, 10 -BP Delay II, 10 -BP Delay III [32 PDT/32 MDT, 603 M.Eva]
     
     -- main="Malignance Pole",      -- __, __, __, __ [20/20, ___]
     -- sub="Khonsu",                -- __, __, __, __ [ 6/ 6, ___]
@@ -517,8 +518,9 @@ function init_gear_sets()
     -- ring1="Evoker's Ring",       -- 10, __, __, __ [__/__, ___]
     -- ring2="Stikini Ring +1",     --  8, __, __, __ [__/__, ___]
     -- back=gear.SMN_Pre_BP_Cape,   -- 13, __,  5, __ [__/__, ___]
+    -- waist="Kobo Obi",            --  8, __, __, __ [__/__, ___]
     -- Traits/Merits/Gifts            469, __, __, 10
-    -- Master Levels                   11
+    -- Master Levels                    3
     -- 670 Summon Skill, 15 -BP Delay, 10 -BP Delay II, 10 -BP Delay III [47 PDT/47 MDT, 611 M.Eva]
     
     -- main="Malignance Pole",      -- __, __, __, __ [20/20, ___]
@@ -535,8 +537,9 @@ function init_gear_sets()
     -- ring1="Evoker's Ring",       -- 10, __, __, __ [__/__, ___]
     -- ring2="Stikini Ring +1",     --  8, __, __, __ [__/__, ___]
     -- back=gear.SMN_FC_Cape,       -- __, __, __, __ [10/__, ___]
+    -- waist="Kobo Obi",            --  8, __, __, __ [__/__, ___]
     -- Traits/Merits/Gifts            469, __, __, 10
-    -- Master Levels                   21
+    -- Master Levels                   13
     -- 670 Summon Skill, 15 -BP Delay, 5 -BP Delay II, 10 -BP Delay III [51 PDT/41 MDT, 611 M.Eva]
   }
   sets.precast.BloodPactRage = sets.precast.BloodPactWard
@@ -556,9 +559,10 @@ function init_gear_sets()
     -- ring1="Evoker's Ring",       -- 10, __, __, __ [__/__, ___]
     -- ring2="Stikini Ring +1",     --  8, __, __, __ [__/__, ___]
     -- back=gear.SMN_Pre_BP_Cape,   --  8, __,  5, __ [__/__, ___]
+    -- waist="Regal Belt",          -- __, __, __, __ [ 3/ 3, ___]
     -- Traits/Merits/Gifts            469, __, __, 10
     -- Master Levels                    3
-    -- 670 Summon Skill, 15 -BP Delay, 10 -BP Delay II, 10 -BP Delay III [9 PDT/9 MDT, 603 M.Eva]
+    -- 670 Summon Skill, 15 -BP Delay, 10 -BP Delay II, 10 -BP Delay III [12 PDT/12 MDT, 603 M.Eva]
     
     -- main="Nirvana",              -- __, __, __, __ [__/__, ___]
     -- sub="Elan Strap +1",         -- __, __, __, __ [__/__, ___]
@@ -574,8 +578,9 @@ function init_gear_sets()
     -- ring1="Evoker's Ring",       -- 10, __, __, __ [__/__, ___]
     -- ring2="Defending Ring",      -- __, __, __, __ [10/10, ___]
     -- back=gear.SMN_Pre_BP_Cape,   --  8, __,  5, __ [__/__, ___]
+    -- waist="Kobo Obi",            --  8, __, __, __ [__/__, ___]
     -- Traits/Merits/Gifts            469, __, __, 10
-    -- Master Levels                   11
+    -- Master Levels                    3
     -- 670 Summon Skill, 15 -BP Delay, 10 -BP Delay II, 10 -BP Delay III [19 PDT/19 MDT, 603 M.Eva]
 
     -- main="Nirvana",              -- __, __, __, __ [__/__, ___]
@@ -592,8 +597,9 @@ function init_gear_sets()
     -- ring1="Evoker's Ring",       -- 10, __, __, __ [__/__, ___]
     -- ring2="Stikini Ring +1",     --  8, __, __, __ [__/__, ___]
     -- back=gear.SMN_Pre_BP_Cape,   --  8, __,  5, __ [__/__, ___]
+    -- waist="Kobo Obi",            --  8, __, __, __ [__/__, ___]
     -- Traits/Merits/Gifts            469, __, __, 10
-    -- Master Levels                   16
+    -- Master Levels                    8
     -- 670 Summon Skill, 15 -BP Delay, 10 -BP Delay II, 10 -BP Delay III [21 PDT/21 MDT, 611 M.Eva]
 
     -- main="Nirvana",              -- __, __, __, __ [__/__, ___]
@@ -610,8 +616,9 @@ function init_gear_sets()
     -- ring1="Evoker's Ring",       -- 10, __, __, __ [__/__, ___]
     -- ring2="Defending Ring",      -- __, __, __, __ [10/10, ___]
     -- back=gear.SMN_FC_Cape,       -- __, __, __, __ [10/__, ___]
+    -- waist="Kobo Obi",            --  8, __, __, __ [__/__, ___]
     -- Traits/Merits/Gifts            469, __, __, 10
-    -- Master Levels                   32
+    -- Master Levels                   24
     -- 670 Summon Skill, 15 -BP Delay, 5 -BP Delay II, 10 -BP Delay III [41 PDT/31 MDT, 611 M.Eva]
   }
   sets.precast.BloodPactRage.NirvAM = sets.precast.BloodPactWard.NirvAM
@@ -660,11 +667,10 @@ function init_gear_sets()
 
   -- Cap at 700 power; Power = floor(MND÷2) + floor(VIT÷4) + Healing Magic Skill
   sets.midcast.Cure = {
-    main=gear.Gada_MND,         -- 18, 21, __,  18 [__/__, ___] __
+    main="Bunzi's Rod",         -- 30, 15, __, ___ [__/__, ___] __
     sub="Genbu's Shield",       --  5, __, __, ___ [10/__, ___] __
     head=gear.Vanya_B_head,     -- 10, 27, 18,  20 [__/ 5,  75] __
     body=gear.Vanya_B_body,     -- __, 36, 23,  20 [ 1/ 4,  80] __
-    hands="Bunzi's Gloves",     -- __, 47, 26, ___ [ 8/ 8, 112]  8
     legs=gear.Vanya_B_legs,     -- __, 34, 12,  20 [__/__, 107] __
     feet=gear.Vayna_B_feet,     --  5, 19, 10,  40 [__/__, 107] __
     neck="Incanter's Torque",   -- __, __, __,  10 [__/__, ___] __
@@ -672,10 +678,14 @@ function init_gear_sets()
     ear2="Mendicant's Earring", --  5, __, __, ___ [__/__, ___] __
     ring1="Sirona's Ring",      -- __,  3,  3,  10 [__/__, ___] __
     ring2="Defending Ring",     -- __, __, __, ___ [10/10, ___] __
-    back=gear.SMN_Cure_Cape,    -- 10, 30, __, ___ [10/__, ___] __
-    waist="Luminary Sash",      -- __, 10, __, ___ [__/__, ___] __
     -- Traits/Merits/Gifts         __,101, 89,  16
     -- Subjob                      __, __, __, 139
+    -- 55 CP, 235 MND, 155 VIT, 285 Healing Skill [21 PDT/19 MDT, 369 M.Eva] 0 -Enmity
+    
+    -- main=gear.Gada_MND,      -- 18, 21, __,  18 [__/__, ___] __
+    -- hands="Bunzi's Gloves",  -- __, 47, 26, ___ [ 8/ 8, 112]  8
+    -- back=gear.SMN_Cure_Cape, -- 10, 30, __, ___ [10/__, ___] __
+    -- waist="Luminary Sash",   -- __, 10, __, ___ [__/__, ___] __
     -- 53 CP, 328 MND, 181 VIT, 303 Healing Skill [39 PDT/27 MDT, 481 M.Eva] 8 -Enmity
     -- 847 HP Cure IV
   }
@@ -689,15 +699,18 @@ function init_gear_sets()
     head="Bunzi's Hat",           -- __ [ 7/ 7, 123]
     body=gear.Nyame_B_body,       -- __ [ 9/ 9, 139]
     hands=gear.Nyame_B_hands,     -- __ [ 7/ 7, 112]
-    -- legs="Shedir Seraweels",   -- 35 [__/__, ___]
     feet=gear.Nyame_B_feet,       -- __ [ 7/ 7, 150]
-    -- neck="Stone Gorget",       -- 30 [__/__, ___]
-    -- ear1="Earthcry Earring",   -- 10 [__/__, ___]
+    neck="Nodens Gorget",         -- 30 [__/__, ___]
+    ear1="Earthcry Earring",      -- 10 [__/__, ___]
     ring1="Gelatinous Ring +1",   -- __ [ 7/-1, ___]
     ring2="Defending Ring",       -- __ [10/10, ___]
+    -- 40 +Stoneskin [47 PDT/39 MDT, 524 M.Eva]
+
+    -- legs="Shedir Seraweels",   -- 35 [__/__, ___]
     -- back=gear.SMN_Cure_Cape,   -- __ [10/__,  20]
     -- waist="Siegel Sash",       -- 20 [__/__, ___]
-  } -- 95 +Stoneskin [50 PDT/39 MDT, 544 M.Eva]
+    -- 95 +Stoneskin [50 PDT/39 MDT, 544 M.Eva]
+  }
 
   -- TODO: update set
   sets.midcast['Elemental Magic'] = {
@@ -734,19 +747,24 @@ function init_gear_sets()
     waist="Fuchi-no-Obi",
   }
 
-  -- TODO: update set
-  -- Avatar pact sets.  All pacts are Ability type.
   sets.midcast.Pet.BloodPactWard = {
-    -- main="Soulscourge",
-    -- ammo="Seraphicaller",
-    -- head="Convoker's Horn",
-    -- body="Caller's Doublet +2",
-    -- hands="Glyphic Bracers",
-    -- legs="Marduk's Shalwar +1",
-    -- neck="Caller's Pendant",
-    -- ring1="Evoker's Ring",
-    -- ring2="Fervor Ring",
-    -- waist="Diabolos's Rope",
+    -- main=gear.Espiritus_B,         -- 15 [__/__, ___]
+    -- sub="Khonsu",                  -- __ [ 6/ 6, ___]
+    ammo="Staunch Tathlum +1",        -- __ [ 3/ 3, ___]
+    -- head="Beckoner's Horn +2",     -- 18 [ 9/ 9, 120]
+    -- body="Beckoner's Doublet +2",  -- 19 [12/12, 120]
+    -- hands="Baayami Cuffs +1",      -- 33 [__/__,  93]
+    -- legs="Beckoner's Spats +2",    -- 25 [11/11, 147]
+    -- feet="Baayami Sabots +1",      -- 29 [__/__, 139]
+    neck="Incanter's Torque",         -- 10 [__/__, ___]
+    -- ear1="Lodurr Earring",         -- 10 [__/__, ___]
+    -- ear2="Cath Palug Earring",     --  5 [__/__, ___]
+    -- ring1="Evoker's Ring",         -- 10 [__/__, ___]
+    ring2="Defending Ring",           -- __ [10/10, ___]
+    -- back=gear.SMN_Skill_Cape,      -- 13 [__/__, ___]
+    -- waist="Kobo Obi",              --  8 [__/__, ___]
+    -- Traits/Merits/Gifts              469
+    -- 664 Summon Skill [51/51, 619 M.Eva]
   }
 
   -- TODO: update set
@@ -763,57 +781,95 @@ function init_gear_sets()
     -- waist="Diabolos's Rope",
   }
 
-  -- TODO: update set
   sets.midcast.Pet.PhysicalBloodPactRage = {
-    -- ammo="Sancus Sachet +1",
-    -- head={ name="Helios Band", augments={'Pet: Attack+30 Pet: Rng.Atk.+30','Pet: "Dbl. Atk."+8','Blood Pact Dmg.+7',}},
-    -- body="Con. Doublet +3",
-    -- hands={ name="Merlinic Dastanas", augments={'Pet: Attack+17 Pet: Rng.Atk.+17','Blood Pact Dmg.+8','Pet: DEX+10','Pet: Mag. Acc.+4',}},
-    -- legs={ name="Apogee Slacks +1", augments={'Pet: STR+20','Blood Pact Dmg.+14','Pet: "Dbl. Atk."+4',}},
-    -- feet={ name="Apogee Pumps +1", augments={'Pet: Attack+25','Pet: "Mag.Atk.Bns."+25','Blood Pact Dmg.+8',}},
-    neck="Smn. Collar +2",
-    -- ear1="Gelos Earring",
-    ear2="Lugalbanda Earring",
-    -- ring1="Varar Ring +1",
-    -- ring2="Varar Ring +1",
-    -- back=gear.SMN_Phys_BP_Cape,
-    waist="Incarnation Sash",
+    main="Gridarvor",                   -- ___, __ {___, __, __, __ / 70, 95, __, 15} [__/__, ___]
+    sub="Elan Strap +1",                -- ___,  5 {___, __, __, __ / __, __, __, __} [__/__, ___]
+    ammo="Sancus Sachet +1",            -- 119, 15 {___, 20, __, __ / __, 20, __, __} [__/__, ___]
+    -- head=gear.Helios_Phys_BP_head,   -- ___,  7 {___, __, __, __ / 30, __, __,  8} [__/__,  75]
+    -- body="Convoker's Doublet +3",    -- ___, 16 {___, 45, __, __ / __, 45, __, __} [__/__, 100]
+    -- hands=gear.Merl_Phys_BP_hands,   -- ___, 15 {___, 20, __, __ / 40, __, __, __} [__/__,  48]
+    -- legs=gear.Apogee_D_legs,         -- ___, 21 {___, __, __, __ / __, __, 20,  4} [__/__, 118]
+    -- feet=gear.Apogee_B_feet,         -- ___, 10 {___, __, __, __ / 35, __, __, __} [__/__, 118]
+    neck="Summoner's Collar +2",        -- ___, 10 {___, 25, 25, __ / __, 25, 25, __} [ 5/ 5, ___]
+    ear1="Lugalbanda Earring",          -- ___, 10 {___, 15, __, __ / __, 15, __, __} [__/__,  10]
+    ear2="Beckoner's Earring +1",       --   1,  4 {___, 12, __, __ / __, 12, __, __} [ 4/ 4, ___]
+    ring1="Varar Ring +1",              -- ___,  4 {___, __, __, __ / __, 10, __, __} [__/__, ___]
+    ring2="Varar Ring +1",              -- ___,  4 {___, __, __, __ / __, 10, __, __} [__/__, ___]
+    -- back=gear.SMN_Phys_BP_Cape,      --   1,  5 {___, __, __, __ / 20, 30, __, __} [10/__, ___]
+    waist="Incarnation Sash",           -- ___, __ {___, 15, __, __ / __, 15, __,  4} [__/__, ___]
+    -- 121 Pet Lv, 126 BP Dmg {Pet: 0 MAB, 152 M.Acc, 25 INT, 0 M.Dmg / 195 Att, 277 Acc, 55 STR, 31 DA} [19 PDT/9 MDT, 469 M.Eva]
+    
+    -- main="Nirvana",                  --   2, 40 {___, 30, __, __ / __, 30, __, __} [__/__, ___]
+    -- sub="Elan Strap +1",             -- ___,  5 {___, __, __, __ / __, __, __, __} [__/__, ___]
+    -- ammo="Epitaph",                  -- 119, 16 {___, 25, 10, __ / __, 25, 10, __} [__/__, ___]; R20+
+    -- head=gear.Helios_Phys_BP_head,   -- ___,  7 {___, __, __, __ / __, 30, __,  8} [__/__,  75]
+    -- body="Convoker's Doublet +3",    -- ___, 16 {___, 45, __, __ / __, 45, __, __} [__/__, 100]
+    -- hands=gear.Merl_Phys_BP_hands,   -- ___, 15 {___, 20, __, __ / 40, __, __, __} [__/__,  48]
+    -- legs=gear.Apogee_D_legs,         -- ___, 21 {___, __, __, __ / __, __, 20,  4} [__/__, 118]
+    -- feet=gear.Apogee_B_feet,         -- ___, 10 {___, __, __, __ / 35, __, __, __} [__/__, 118]
+    -- neck="Summoner's Collar +2",     -- ___, 10 {___, 25, 25, __ / __, 25, 25, __} [ 5/ 5, ___]
+    -- ear1="Lugalbanda Earring",       -- ___, 10 {___, 15, __, __ / __, 15, __, __} [__/__,  10]
+    -- ear2="Beckoner's Earring +2",    --   1,  5 {___, 20, __, __ / __, 20, __, __} [ 6/ 6, ___]
+    -- ring1="Varar Ring +1",           -- ___,  4 {___, __, __, __ / __, 10, __, __} [__/__, ___]
+    -- ring2="Varar Ring +1",           -- ___,  4 {___, __, __, __ / __, 10, __, __} [__/__, ___]
+    -- back=gear.SMN_Phys_BP_Cape,      --   1,  5 {___, __, __, __ / 20, 30, __, __} [10/__, ___]
+    -- waist="Incarnation Sash",        -- ___, __ {___, 15, __, __ / __, 15, __,  4} [__/__, ___]
+    -- 123 Pet Lv, 168 BP Dmg {Pet: 0 MAB, 195 M.Acc, 35 INT, 0 M.Dmg / 125 Att, 225 Acc, 55 STR, 16 DA} [21 PDT/11 MDT, 469 M.Eva]
   }
 
-  -- TODO: update set
   sets.midcast.Pet.MagicalBloodPactRage = {
-    -- main={ name="Grioavolr", augments={'Blood Pact Dmg.+4','Pet: INT+10','Pet: Mag. Acc.+9','Pet: "Mag.Atk.Bns."+23',}},
-    -- head={ name="Apogee Crown", augments={'Pet: Attack+20','Pet: "Mag.Atk.Bns."+20','Blood Pact Dmg.+7',}},
-    -- body={ name="Apogee Dalmatica", augments={'Pet: Attack+20','Pet: "Mag.Atk.Bns."+20','Blood Pact Dmg.+7',}},
-    -- hands={ name="Merlinic Dastanas", augments={'Pet: "Mag.Atk.Bns."+13','Blood Pact Dmg.+8','Pet: INT+8','Pet: Mag. Acc.+14',}},
-    -- legs={ name="Enticer's Pants", augments={'MP+30','Pet: Accuracy+9 Pet: Rng. Acc.+9',}},
-    -- feet={ name="Apogee Pumps", augments={'Pet: Attack+20','Pet: "Mag.Atk.Bns."+20','Blood Pact Dmg.+7',}},
-    neck="Adad Amulet",
-    -- ear1="Gelos Earring",
-    ear2="Lugalbanda Earring",
-    -- ring1="Varar Ring +1",
-    -- ring2="Varar Ring +1",
-    -- back=gear.SMN_Magic_BP_Cape,
-    waist="Incarnation Sash",
+    -- main=gear.Grioavolr_Magic_BP,    -- ___, 10 {135, 35, __, __ / __, __, __, __} [__/__, ___]
+    sub="Elan Strap +1",                -- ___,  5 {___, __, __, __ / __, __, __, __} [__/__, ___]
+    ammo="Sancus Sachet +1",            -- 119, 15 {___, 20, __, __ / __, 20, __, __} [__/__, ___]
+    -- head="Cath Palug Crown",         -- ___, 10 { 38, 38, __, __ / __, 38, __, __} [__/__,  86]
+    -- body=gear.Apogee_A_body,         -- ___,  8 { 35, __, __, __ / __, __, __, __} [__/__,  91]
+    -- hands=gear.Merl_Mag_BP_hands,    -- ___, 15 { 40, __, __, __ / 20, __, __, __} [__/__,  48]
+    -- legs=gear.Enticer_legs,          -- ___, 12 {___, 15, __, __ / __, 15, __, __} [__/__, 107]; Pet TP Bonus
+    -- feet=gear.Apogee_A_feet,         -- ___, 10 { 35, __, __, __ / __, __, __, __} [__/__, 118]
+    neck="Summoner's Collar +2",        -- ___, 10 {___, 25, 25, __ / __, 25, 25, __} [ 5/ 5, ___]
+    ear1="Lugalbanda Earring",          -- ___, 10 {___, 15, __, __ / __, 15, __, __} [__/__,  10]
+    ear2="Beckoner's Earring +1",       --   1,  4 {___, 12, __, __ / __, 12, __, __} [ 4/ 4, ___]
+    ring1="Varar Ring +1",              -- ___,  4 {___, __, __, __ / __, 10, __, __} [__/__, ___]
+    ring2="Varar Ring +1",              -- ___,  4 {___, __, __, __ / __, 10, __, __} [__/__, ___]
+    -- back=gear.SMN_Magic_BP_Cape,     --   1,  5 {___, 20, __, 25 / __, __, __, __} [__/__, ___]
+    waist="Regal Belt",                 -- ___, __ { 10, __, __, __ / 20, __, __, __} [ 3/ 3, ___]
+    -- 121 Pet Lv, 122 BP Dmg {Pet: 293 MAB, 185 M.Acc, 35 INT, 25 M.Dmg / 40 Att, 150 Acc, 35 STR, 0 DA} [12 PDT/12 MDT, 460 M.Eva]
+    
+    -- main=gear.Grioavolr_Magic_BP,    -- ___, 10 {135, 35, __, __ / __, __, __, __} [__/__, ___]
+    -- sub="Elan Strap +1",             -- ___,  5 {___, __, __, __ / __, __, __, __} [__/__, ___]
+    -- ammo="Epitaph",                  -- 119, 16 {___, 25, 10, __ / __, 25, 10, __} [__/__, ___]; R20+
+    -- head="Cath Palug Crown",         -- ___, 10 { 38, 38, __, __ / __, 38, __, __} [__/__,  86]
+    -- body=gear.Apogee_A_body,         -- ___,  8 { 35, __, __, __ / __, __, __, __} [__/__,  91]
+    -- hands=gear.Merl_Mag_BP_hands,    -- ___, 15 { 40, __, __, __ / 20, __, __, __} [__/__,  48]
+    -- legs=gear.Enticer_legs,          -- ___, 12 {___, 15, __, __ / __, 15, __, __} [__/__, 107]; Pet TP Bonus
+    -- feet=gear.Apogee_A_feet,         -- ___, 10 { 35, __, __, __ / __, __, __, __} [__/__, 118]
+    -- neck="Summoner's Collar +2",     -- ___, 10 {___, 25, 25, __ / __, 25, 25, __} [ 5/ 5, ___]
+    -- ear1="Lugalbanda Earring",       -- ___, 10 {___, 15, __, __ / __, 15, __, __} [__/__,  10]
+    -- ear2="Beckoner's Earring +2",    --   1,  5 {___, 20, __, __ / __, 20, __, __} [ 6/ 6, ___]
+    -- ring1="Varar Ring +1",           -- ___,  4 {___, __, __, __ / __, 10, __, __} [__/__, ___]
+    -- ring2="Varar Ring +1",           -- ___,  4 {___, __, __, __ / __, 10, __, __} [__/__, ___]
+    -- back=gear.SMN_Magic_BP_Cape,     --   1,  5 {___, 20, __, 25 / __, __, __, __} [__/__, ___]
+    -- waist="Regal Belt",              -- ___, __ { 10, __, __, __ / 20, __, __, __} [ 3/ 3, ___]
+    -- 121 Pet Lv, 124 BP Dmg {Pet: 293 MAB, 188 M.Acc, 25 INT, 25 M.Dmg / 40 Att, 153 Acc, 25 STR, 0 DA} [14 PDT/14 MDT, 460 M.Eva]
   }
 
-  -- TODO: update set
-  sets.midcast.Pet.HybridBloodPactRage = {
-    -- main="Nirvana",
-    -- sub=empty,
-    -- head="C. Palug Crown",
-    -- body="Con. Doublet +3",
-    -- hands={ name="Merlinic Dastanas", augments={'Pet: Attack+9 Pet: Rng.Atk.+9','Blood Pact Dmg.+6','Pet: STR+1','Pet: "Mag.Atk.Bns."+10',}},
-    -- legs={ name="Apogee Slacks", augments={'Pet: STR+15','Blood Pact Dmg.+13','Pet: "Dbl. Atk."+3',}},
-    -- feet={ name="Apogee Pumps", augments={'Pet: Attack+20','Pet: "Mag.Atk.Bns."+20','Blood Pact Dmg.+7',}},
-    neck="Smn. Collar +2",
-    -- ear1="Gelos Earring",
-    ear2="Lugalbanda Earring",
-    -- ring1="Varar Ring +1",
-    -- ring2="Varar Ring +1",
-    -- back=gear.SMN_Magic_BP_Cape,
-    waist="Regal Belt",
-  }
+  sets.midcast.Pet.HybridBloodPactRage = set_combine(sets.midcast.Pet.MagicalBloodPactRage, {
+    -- main="Nirvana",                  --   2, 40 {___, 30, __, __ / __, 30, __, __} [__/__, ___]
+    -- sub="Elan Strap +1",             -- ___,  5 {___, __, __, __ / __, __, __, __} [__/__, ___]
+    -- ammo="Epitaph",                  -- 119, 16 {___, 25, 10, __ / __, 25, 10, __} [__/__, ___]; R20+
+    -- head="Cath Palug Crown",         -- ___, 10 { 38, 38, __, __ / __, 38, __, __} [__/__,  86]
+    -- body=gear.Apogee_A_body,         -- ___,  8 { 35, __, __, __ / __, __, __, __} [__/__,  91]
+    -- hands=gear.Merl_Mag_BP_hands,    -- ___, 15 { 40, __, __, __ / 20, __, __, __} [__/__,  48]
+    -- hands=gear.Merl_Mag_BP_hands,    -- ___, 15 { 40, __, __, __ / 20, __, __, __} [__/__,  48]
+    -- feet=gear.Apogee_A_feet,         -- ___, 10 { 35, __, __, __ / __, __, __, __} [__/__, 118]
+    -- neck="Summoner's Collar +2",     -- ___, 10 {___, 25, 25, __ / __, 25, 25, __} [ 5/ 5, ___]
+    -- ear1="Lugalbanda Earring",       -- ___, 10 {___, 15, __, __ / __, 15, __, __} [__/__,  10]
+    -- ear2="Beckoner's Earring +2",    --   1,  5 {___, 20, __, __ / __, 20, __, __} [ 6/ 6, ___]
+    -- ring1="Varar Ring +1",           -- ___,  4 {___, __, __, __ / __, 10, __, __} [__/__, ___]
+    -- ring2="Varar Ring +1",           -- ___,  4 {___, __, __, __ / __, 10, __, __} [__/__, ___]
+    -- back=gear.SMN_Magic_BP_Cape,     --   1,  5 {___, 20, __, 25 / __, __, __, __} [__/__, ___]
+    -- waist="Regal Belt",              -- ___, __ { 10, __, __, __ / 20, __, __, __} [ 3/ 3, ___]
+  })
 
   -- TODO: update set
   -- Spirits cast magic spells, which can be identified in standard ways.
@@ -843,7 +899,7 @@ function init_gear_sets()
     sub="Khonsu",                   -- ____ [ 6/ 6, ___] (__, __) {___, __, __/__}
     ammo="Staunch Tathlum +1",      -- ____ [ 3/ 3, ___] (__, __) {___, __, __/__}; Resist Status+11
     -- head="Beckoner's Horn +2",   --   51 [ 9/ 9, 120] ( 3, __) {___, __, __/__}
-    -- body=gear.Apogee_C_body,     -- -160 [__/__,  91] ( 4, __) {___, __, __/__}
+    -- body=gear.Apogee_A_body,     -- -160 [__/__,  91] ( 4, __) {___, __, __/__}
     -- hands="Asteria Mitts +1",    --   18 [__/__,  43] ( 2, __) {___, __, __/__}
     legs="Assiduity Pants +1",      --   43 [__/__, 107] ( 2,  3) {___, __, __/__}
     -- feet="Baayami Sabots +1",    --   30 [__/__, 139] ( 3, __) {___, __, __/__}
@@ -861,7 +917,7 @@ function init_gear_sets()
     -- sub="Khonsu",                -- ____ [ 6/ 6, ___] (__, __) {___, __, __/__}
     -- ammo="Staunch Tathlum +1",   -- ____ [ 3/ 3, ___] (__, __) {___, __, __/__}; Resist Status+11
     -- head="Beckoner's Horn +2",   --   51 [ 9/ 9, 120] ( 3, __) {___, __, __/__}
-    -- body=gear.Apogee_C_body,     -- -160 [__/__,  91] ( 4, __) {___, __, __/__}
+    -- body=gear.Apogee_A_body,     -- -160 [__/__,  91] ( 4, __) {___, __, __/__}
     -- hands="Asteria Mitts +1",    --   18 [__/__,  43] ( 2, __) {___, __, __/__}
     -- legs="Assiduity Pants +1",   --   43 [__/__, 107] ( 2,  3) {___, __, __/__}
     -- feet="Baayami Sabots +1",    --   30 [__/__, 139] ( 3, __) {___, __, __/__}
@@ -888,9 +944,9 @@ function init_gear_sets()
 
   -- Need -14 perp cost
   sets.idle.Avatar = {
-    -- main="Gridarvor",            -- ____ [__/__, ___] (__,  5) {___, __, __/__}
-    -- sub="Khonsu",                -- ____ [ 6/ 6, ___] (__, __) {___, __, __/__}
-    -- ammo="Sancus Sachet +1",     -- ____ [__/__, ___] (__, __) {119, __, __/__}
+    main="Gridarvor",               -- ____ [__/__, ___] (__,  5) {___, __, __/__}
+    sub="Khonsu",                   -- ____ [ 6/ 6, ___] (__, __) {___, __, __/__}
+    ammo="Sancus Sachet +1",        -- ____ [__/__, ___] (__, __) {119, __, __/__}
     -- head="Beckoner's Horn +2",   --   51 [ 9/ 9, 120] ( 3, __) {___, __, __/__}
     -- body="Beckoner's Doublet +2",--   74 [12/12, 120] (__,  7) {___, __, __/__}
     -- hands="Asteria Mitts +1",    --   18 [__/__,  43] ( 2, __) {___, __, __/__}
@@ -927,22 +983,25 @@ function init_gear_sets()
 
   -- Need -6 perp cost
   sets.idle.Spirit = {
-    -- main="Gridarvor",            -- ____ [__/__, ___] (__,  5) {___, __, __/__}
-    -- sub="Khonsu",                -- ____ [ 6/ 6, ___] (__, __) {___, __, __/__}
-    -- ammo="Staunch Tathlum +1",   -- ____ [ 3/ 3, ___] (__, __) {___, __, __/__}; Resist Status+11
+    main="Gridarvor",               -- ____ [__/__, ___] (__,  5) {___, __, __/__}
+    sub="Khonsu",                   -- ____ [ 6/ 6, ___] (__, __) {___, __, __/__}
+    ammo="Staunch Tathlum +1",      -- ____ [ 3/ 3, ___] (__, __) {___, __, __/__}; Resist Status+11
     -- head="Beckoner's Horn +2",   --   51 [ 9/ 9, 120] ( 3, __) {___, __, __/__}
-    -- body=gear.Apogee_C_body,     -- -160 [__/__,  91] ( 4, __) {___, __, __/__}
+    -- body=gear.Apogee_A_body,     -- -160 [__/__,  91] ( 4, __) {___, __, __/__}
     -- hands="Asteria Mitts +1",    --   18 [__/__,  43] ( 2, __) {___, __, __/__}
-    -- legs="Assiduity Pants +1",   --   43 [__/__, 107] ( 2,  3) {___, __, __/__}
+    legs="Assiduity Pants +1",      --   43 [__/__, 107] ( 2,  3) {___, __, __/__}
     -- feet="Baayami Sabots +1",    --   30 [__/__, 139] ( 3, __) {___, __, __/__}
-    -- neck="Loricate Torque +1",   -- ____ [ 6/ 6, ___] (__, __) {___, __, __/__}; DEF+60
+    neck="Loricate Torque +1",      -- ____ [ 6/ 6, ___] (__, __) {___, __, __/__}; DEF+60
     -- ear1="Cath Palug Earring",   -- ____ [__/__, ___] ( 1, __) {___, __, __/__}
-    -- ear2="Beckoner's Earring +2",-- ____ [ 6/ 6, ___] ( 3, __) {  1, __, __/__}
-    -- ring1="Stikini Ring +1",     -- ____ [__/__, ___] ( 1, __) {___, __, __/__}
-    -- ring2="Defending Ring",      -- ____ [10/10, ___] (__, __) {___, __, __/__}
+    ear2="Beckoner's Earring +1",   -- ____ [ 4/ 4, ___] ( 2, __) {  1, __, __/__}
+    ring1="Stikini Ring +1",        -- ____ [__/__, ___] ( 1, __) {___, __, __/__}
+    ring2="Defending Ring",         -- ____ [10/10, ___] (__, __) {___, __, __/__}
     -- back=gear.SMN_FC_Cape,       -- ____ [10/__, ___] (__, __) {  1, __, __/__}
-    -- waist="Regal Belt",          --   88 [ 3/ 3, ___] (__, __) {___, __, __/__}
+    waist="Regal Belt",             --   88 [ 3/ 3, ___] (__, __) {___, __, __/__}
     -- Traits/Merits/JP Gifts                                       99, __,  7/ 7
+    -- 70 HP [51 PDT/41 MDT, 500 M.Eva] (18 Refresh, 8 Perp Cost) {Pet: 101 Lv, 0 Regain, 7 PDT/7 MDT}
+
+    -- ear2="Beckoner's Earring +2",-- ____ [ 6/ 6, ___] ( 3, __) {  1, __, __/__}
     -- 70 HP [53 PDT/43 MDT, 500 M.Eva] (19 Refresh, 8 Perp Cost) {Pet: 101 Lv, 0 Regain, 7 PDT/7 MDT}
   }
 
@@ -1286,6 +1345,9 @@ end
 
 -- Called for custom player commands.
 function job_self_command(cmdParams, eventArgs)
+  silibs.self_command(cmdParams, eventArgs)
+  ----------- Non-silibs content goes below this line -----------
+  
   if cmdParams[1]:lower() == 'siphon' then
     handle_siphoning()
     eventArgs.handled = true

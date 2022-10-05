@@ -11,15 +11,17 @@
 -- Digirbalag
 
 -- Gada
-gear.Gada_ENH = {} -- 6 Enh Duration, 6 FC
-gear.Gada_MND_MAcc = {} -- 10 MND, 25 MAcc
-gear.Gada_INT_MAcc = {} -- 10 INT, 25 MAcc
+-- gear.Gada_MND = {} -- 15 MND (2 CP would also be great)
+-- gear.Gada_ENH = {} -- 6 Enh Duration, 6 FC
+-- gear.Gada_MND_MAcc = {} -- 10 MND, 25 MAcc
+-- gear.Gada_INT_MAcc = {} -- 10 INT, 25 MAcc
 
 -- Grioavolr
-gear.Grioavolr_MND = {} -- MND, Enfeeb skill, M.Acc
-gear.Grioavolr_MP = {} -- 100 MP
-gear.Grioavolr_MB = {} --MB Dmg, MAB, M.Acc, INT
-gear.Grioavolr_FC = {} --7 FC
+-- gear.Grioavolr_MND = {} -- MND, Enfeeb skill, M.Acc
+-- gear.Grioavolr_MP = {} -- 100 MP
+-- gear.Grioavolr_MB = {} --MB Dmg, MAB, M.Acc, INT
+-- gear.Grioavolr_FC = {} --7 FC
+-- gear.Grioavolr_Magic_BP = {} -- BP dmg 8~10, Pet MAB 17~20
 
 -- Holliday
 
@@ -43,19 +45,19 @@ gear.Grioavolr_FC = {} --7 FC
 ----------------------------------------------------------------------
 
 -- Chironic
-gear.Chironic_QA_hands = {} -- 3 QA > 10 DEX > 30 ACC > 32 ATT
-gear.Chironic_QA_feet = {} -- 3 QA > 10 DEX > 30 ACC > 32 ATT
+-- gear.Chironic_QA_hands = {} -- 3 QA > 10 DEX > 30 ACC > 32 ATT
+-- gear.Chironic_QA_feet = {} -- 3 QA > 10 DEX > 30 ACC > 32 ATT
 
-gear.Chironic_Refresh_head = {} -- 2 Refresh
-gear.Chironic_Refresh_hands = {} -- 2 Refresh
-gear.Chironic_Refresh_feet = {} -- 2 Refresh
+-- gear.Chironic_Refresh_head = {} -- 2 Refresh
+-- gear.Chironic_Refresh_hands = {} -- 2 Refresh
+-- gear.Chironic_Refresh_feet = {} -- 2 Refresh
 
-gear.Chironic_AE_hands = { }-- 10 WSD > 40 MAB > 15 INT > 15 DEX
-gear.Chironic_AE_feet = {} -- 10 WSD > 40 MAB > 15 INT > 15 DEX
+-- gear.Chironic_AE_hands = { }-- 10 WSD > 40 MAB > 15 INT > 15 DEX
+-- gear.Chironic_AE_feet = {} -- 10 WSD > 40 MAB > 15 INT > 15 DEX
 
 gear.Chironic_SIRD_hands = { name="Chironic Gloves", augments={'Attack+6','Spell interruption rate down -11%','Mag. Acc.+1',}}
 
-gear.Chironic_MAcc_legs = {} -- 40 M.Acc Aug
+-- gear.Chironic_MAcc_legs = {} -- 40 M.Acc Aug
 
 -- Herculean
 gear.Herc_TA_feet = { name="Herculean Boots", augments={'Accuracy+30','"Triple Atk."+4','Attack+2',}}
@@ -70,6 +72,9 @@ gear.Merl_MB_body = { name="Merlinic Jubbah", augments={'INT+3','Magic burst dmg
 gear.Merl_MB_hands = { name="Merlinic Dastanas", augments={'Accuracy+10 Attack+10','DEX+8','Magic burst dmg.+9%','Mag. Acc.+9 "Mag.Atk.Bns."+9',}}
 gear.Merl_MB_feet = { name="Merlinic Crackows", augments={'Magic burst dmg.+8%','Phys. dmg. taken -2%','INT+3 MND+3 CHR+3','Accuracy+7 Attack+7','Mag. Acc.+1 "Mag.Atk.Bns."+1',}}--Max: 10 MB Dmg, 40 MAB, 40 M.Acc, 10 INT
 
+-- gear.Merl_Mag_BP_hands = {} -- 10 BP dmg, 20 Pet MAB
+-- gear.Merl_Phys_BP_hands = {} -- 10 BP dmg, 20 Pet Att
+
 -- Odyssean
 
 -- Valorous
@@ -82,10 +87,10 @@ gear.Merl_MB_feet = { name="Merlinic Crackows", augments={'Magic burst dmg.+8%',
 -- Cizin
 
 -- Gendewitha
-gear.Gende_SongFC_head = {} -- 5 Song Spellcasting Time-, 3 Song Recast Delay-, 4 PDT
+-- gear.Gende_SongFC_head = {} -- 5 Song Spellcasting Time-, 3 Song Recast Delay-, 4 PDT
 gear.Gende_SongFC_hands = { name="Gende. Gages +1", augments={'Phys. dmg. taken -3%','Magic dmg. taken -2%','Song spellcasting time -4%',}} -- 5 Song Spellcasting Time-, 3 Song Recast Delay-, 4 PDT
-gear.Gende_SongFC_legs = {} -- 5 Song Spellcasting Time-, 3 Song Recast Delay-, 4 PDT
-gear.Gende_SongFC_feet = {} -- 5 Song Spellcasting Time-, 3 Song Recast Delay-, 4 PDT
+-- gear.Gende_SongFC_legs = {} -- 5 Song Spellcasting Time-, 3 Song Recast Delay-, 4 PDT
+-- gear.Gende_SongFC_feet = {} -- 5 Song Spellcasting Time-, 3 Song Recast Delay-, 4 PDT
 
 -- Hagondes
 
@@ -103,17 +108,18 @@ gear.Gende_SongFC_feet = {} -- 5 Song Spellcasting Time-, 3 Song Recast Delay-, 
 -- Acro
 
 -- Helios
+-- gear.Helios_Phys_BP_head = {} -- 7 BP Dmg, 30 Pet Acc, 8 Pet DA
 
 -- Taeon
-gear.Taeon_FC_body = {} -- 5 FC, 3 Phalanx
-gear.Taeon_FC_hands = {} -- 5 FC, 3 Phalanx
-gear.Taeon_FC_legs = {} -- 5 FC, 3 Phalanx
-gear.Taeon_FC_feet = {} -- 5 FC, 3 Phalanx
+-- gear.Taeon_FC_body = {} -- 5 FC, 3 Phalanx
+-- gear.Taeon_FC_hands = {} -- 5 FC, 3 Phalanx
+-- gear.Taeon_FC_legs = {} -- 5 FC, 3 Phalanx
+-- gear.Taeon_FC_feet = {} -- 5 FC, 3 Phalanx
 
-gear.Taeon_Phalanx_body = gear.Taeon_FC_body
-gear.Taeon_Phalanx_hands = gear.Taeon_FC_hands
-gear.Taeon_Phalanx_legs = gear.Taeon_FC_legs
-gear.Taeon_Phalanx_feet = gear.Taeon_FC_feet
+-- gear.Taeon_Phalanx_body = gear.Taeon_FC_body
+-- gear.Taeon_Phalanx_hands = gear.Taeon_FC_hands
+-- gear.Taeon_Phalanx_legs = gear.Taeon_FC_legs
+-- gear.Taeon_Phalanx_feet = gear.Taeon_FC_feet
 
 gear.Taeon_DW_feet = { name="Taeon Boots", augments={'Accuracy+19','"Dual Wield"+5',}}
 
@@ -204,3 +210,4 @@ gear.CP_Cape = { name="Mecisto. Mantle", augments={'Cap. Point+41%','Mag. Acc.+5
 gear.Fanatic_Gloves = { name="Fanatic Gloves", augments={'MP+50','Healing magic skill +8','"Conserve MP"+5','"Fast Cast"+5',}}
 gear.Leyline_Gloves = { name="Leyline Gloves", augments={'Accuracy+7','Mag. Acc.+2',}}
 gear.Samnuha_legs = { name="Samnuha Tights", augments={'STR+8','DEX+9','"Dbl.Atk."+3','"Triple Atk."+2',}}
+-- gear.Enticer_legs = {}
