@@ -767,18 +767,41 @@ function init_gear_sets()
     -- 664 Summon Skill [51/51, 619 M.Eva]
   }
 
-  -- TODO: update set
+  -- Need Pet M.Acc, Summoning Skill to land debuffs
   sets.midcast.Pet.DebuffBloodPactWard = {
-    -- main="Soulscourge",
-    -- ammo="Seraphicaller",
-    -- head="Convoker's Horn",
-    -- body="Caller's Doublet +2",
-    -- hands="Glyphic Bracers",
-    -- legs="Marduk's Shalwar +1",
-    -- neck="Caller's Pendant",
-    -- ring1="Evoker's Ring",
-    -- ring2="Fervor Ring",
-    -- waist="Diabolos's Rope",
+    -- main=gear.Espiritus_B,         -- ___, 45, 15 [__/__, ___]
+    -- sub="Vox Grip",                -- ___, __,  3 [__/__, ___]
+    ammo="Epitaph",                   -- 119, 25, __ [__/__, ___]
+    -- head="Beckoner's Horn +2",     -- ___, 51, 18 [ 9/ 9, 120]
+    -- body="Beckoner's Doublet +2",  -- ___, 54, 19 [12/12, 120]
+    -- hands="Beckoner's Bracers +2", -- ___, 52, __ [__/__,  83]
+    -- legs="Beckoner's Spats +2",    -- ___, 53, 25 [11/11, 147]
+    -- feet="Beckoner's Pigaches +2", -- ___, 50, __ [__/__, 158]
+    neck="Summoner's Collar +2",      -- ___, 25, __ [ 5/ 5, ___]
+    ear1="Enmerkar Earring",          -- ___, 15, __ [__/__, ___]
+    ear2="Beckoner's Earring +1",     --   1, 12, __ [ 4/ 4, ___]
+    -- ring1="Evoker's Ring",         -- ___, __, 10 [__/__, ___]
+    -- ring2="Cath Palug Ring",       -- ___, 12, __ [ 5/ 5, ___]
+    -- back=gear.SMN_Magic_BP_Cape,   --   1, 20, __ [10/__,  20]
+    waist="Incarnation Sash",         -- ___, 15, __ [__/__, ___]
+    -- 121 Pet Lv, 429 Pet M.Acc, 90 Summon Skill [56 PDT/46 MDT, 648 M.Eva]
+    
+    -- main="Nirvana",                --   2, 30, __ [__/__, ___]
+    -- sub="Vox Grip",                -- ___, __,  3 [__/__, ___]
+    -- ammo="Epitaph",                -- 119, 25, __ [__/__, ___]
+    -- head="Beckoner's Horn +2",     -- ___, 51, 18 [ 9/ 9, 120]
+    -- body="Beckoner's Doublet +2",  -- ___, 54, 19 [12/12, 120]
+    -- hands="Beckoner's Bracers +2", -- ___, 52, __ [__/__,  83]
+    -- legs="Beckoner's Spats +2",    -- ___, 53, 25 [11/11, 147]
+    -- feet="Beckoner's Pigaches +2", -- ___, 50, __ [__/__, 158]
+    -- neck="Summoner's Collar +2",   -- ___, 25, __ [ 5/ 5, ___]
+    -- ear1="Enmerkar Earring",       -- ___, 15, __ [__/__, ___]
+    -- ear2="Beckoner's Earring +2",  --   1, 20, __ [ 6/ 6, ___]
+    -- ring1="Evoker's Ring",         -- ___, __, 10 [__/__, ___]
+    -- ring2="Cath Palug Ring",       -- ___, 12, __ [ 5/ 5, ___]
+    -- back=gear.SMN_Magic_BP_Cape,   --   1, 20, __ [10/__,  20]
+    -- waist="Incarnation Sash",      -- ___, 15, __ [__/__, ___]
+    -- 123 Pet Lv, 422 Pet M.Acc, 75 Summon Skill [58 PDT/48 MDT, 648 M.Eva]
   }
 
   sets.midcast.Pet.PhysicalBloodPactRage = {
@@ -1112,6 +1135,10 @@ function job_midcast(spell, action, spellMap, eventArgs)
 end
 
 function job_post_midcast(spell, action, spellMap, eventArgs)
+  if state.CastingMode.current == 'NirvAM' then
+    equip({ main="Nirvana", sub="Elan Strap +1",})
+  end
+
   -- If slot is locked, keep current equipment on
   if locked_neck then equip({ neck=player.equipment.neck }) end
   if locked_ear1 then equip({ ear1=player.equipment.ear1 }) end
@@ -1124,6 +1151,10 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
 end
 
 function job_aftercast(spell, action, spellMap, eventArgs)
+  if state.CastingMode.current == 'NirvAM' then
+    equip({ main="Nirvana", sub="Elan Strap +1",})
+  end
+
   silibs.aftercast_hook(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
 
