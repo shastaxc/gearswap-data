@@ -666,7 +666,7 @@ function init_gear_sets()
   }
 
   -- Cap at 700 power; Power = floor(MND÷2) + floor(VIT÷4) + Healing Magic Skill
-  sets.midcast.Cure = {
+  sets.midcast.CureNormal = {
     main="Bunzi's Rod",         -- 30, 15, __, ___ [__/__, ___] __
     sub="Genbu's Shield",       --  5, __, __, ___ [10/__, ___] __
     head=gear.Vanya_B_head,     -- 10, 27, 18,  20 [__/ 5,  75] __
