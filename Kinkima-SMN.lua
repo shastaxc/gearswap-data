@@ -482,7 +482,7 @@ function init_gear_sets()
   sets.precast.BloodPactWard = {
     main="Malignance Pole",         -- __, __, __, __ [20/20, ___]
     sub="Vox Grip",                 --  3, __, __, __ [__/__, ___]
-    ammo="Epitaph",                 -- __, __,  5, __ [__/__, ___]
+    ammo="Sancus Sachet +1",        -- __, __,  7, __ [__/__, ___]
     -- head="Beckoner's Horn +2",   -- 18, __, __, __ [ 9/ 9, 120]; Keep on for Favor bonus
     -- body="Baayami Robe",         -- 32, __, __, __ [__/__, 112]
     -- hands="Baayami Cuffs +1",    -- 33,  7, __, __ [__/__,  93]; maybe swap for Glyphic Bracers +3
@@ -496,6 +496,9 @@ function init_gear_sets()
     -- back=gear.SMN_Pre_BP_Cape,   --  8, __,  5, __ [__/__, ___]
     waist="Regal Belt",             -- __, __, __, __ [ 3/ 3, ___]
     -- Traits/Merits/Gifts            469, __, __, 10
+    -- 670 Summon Skill, 15 -BP Delay, 12 -BP Delay II, 10 -BP Delay III [32 PDT/32 MDT, 603 M.Eva]
+    
+    -- ammo="Epitaph",              -- __, __,  5, __ [__/__, ___]
     -- 670 Summon Skill, 15 -BP Delay, 10 -BP Delay II, 10 -BP Delay III [32 PDT/32 MDT, 603 M.Eva]
     
     -- main="Malignance Pole",      -- __, __, __, __ [20/20, ___]
@@ -689,7 +692,7 @@ function init_gear_sets()
   })
 
   sets.midcast.Stoneskin = {
-    ammo="Epitaph",               -- __ [__/__, ___]
+    ammo="Sancus Sachet +1",      -- __ [__/__, ___]
     head="Bunzi's Hat",           -- __ [ 7/ 7, 123]
     body=gear.Nyame_B_body,       -- __ [ 9/ 9, 139]
     hands=gear.Nyame_B_hands,     -- __ [ 7/ 7, 112]
@@ -700,6 +703,7 @@ function init_gear_sets()
     ring2="Defending Ring",       -- __ [10/10, ___]
     -- 40 +Stoneskin [47 PDT/39 MDT, 524 M.Eva]
 
+    -- ammo="Epitaph",            -- __ [__/__, ___]
     -- legs="Shedir Seraweels",   -- 35 [__/__, ___]
     -- back=gear.SMN_Cure_Cape,   -- __ [10/__,  20]
     -- waist="Siegel Sash",       -- 20 [__/__, ___]
@@ -765,7 +769,7 @@ function init_gear_sets()
   sets.midcast.Pet.DebuffBloodPactWard = {
     -- main=gear.Espiritus_B,         -- ___, 45, 15 [__/__, ___]
     -- sub="Vox Grip",                -- ___, __,  3 [__/__, ___]
-    ammo="Epitaph",                   -- 119, 25, __ [__/__, ___]
+    ammo="Sancus Sachet +1",          -- 119, 20, __ [__/__, ___]
     -- head="Beckoner's Horn +2",     -- ___, 51, 18 [ 9/ 9, 120]
     -- body="Beckoner's Doublet +2",  -- ___, 54, 19 [12/12, 120]
     -- hands="Beckoner's Bracers +2", -- ___, 52, __ [__/__,  83]
@@ -778,6 +782,9 @@ function init_gear_sets()
     -- ring2="Cath Palug Ring",       -- ___, 12, __ [ 5/ 5, ___]
     -- back=gear.SMN_Magic_BP_Cape,   --   1, 20, __ [10/__,  20]
     waist="Incarnation Sash",         -- ___, 15, __ [__/__, ___]
+    -- 121 Pet Lv, 424 Pet M.Acc, 90 Summon Skill [56 PDT/46 MDT, 648 M.Eva]
+
+    -- ammo="Epitaph",                -- 119, 25, __ [__/__, ___]
     -- 121 Pet Lv, 429 Pet M.Acc, 90 Summon Skill [56 PDT/46 MDT, 648 M.Eva]
     
     -- main="Nirvana",                --   2, 30, __ [__/__, ___]
