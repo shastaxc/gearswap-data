@@ -237,7 +237,7 @@ function init_gear_sets()
     head="Bunzi's Hat",               -- 10 [ 7/ 7, 123]
     body=gear.Merl_FC_body,           -- 14 [ 2/__,  91]
     hands="Volte Gloves",             --  6 [__/__,  96]; merlinic alt
-    feet=gear.Merl_FC_feet,           -- 11 [__/__, 118]
+    feet=gear.Merl_FC_feet,           -- 12 [__/__, 118]
     ear1="Malignance Earring",        --  4 [__/__, ___]
     ear2="Locquacious Earring",       --  2 [__/__, ___]
     ring1="Kishar Ring",              --  4 [__/__, ___]
@@ -258,17 +258,16 @@ function init_gear_sets()
     head="Bunzi's Hat",               -- 10 [ 7/ 7, 123]
     body=gear.Merl_FC_body,           -- 14 [ 2/__,  91]
     hands="Volte Gloves",             --  6 [__/__,  96]; merlinic alt
-    feet=gear.Merl_FC_feet,           -- 11 [__/__, 118]
+    feet=gear.Merl_FC_feet,           -- 12 [__/__, 118]
     ear1="Malignance Earring",        --  4 [__/__, ___]
     ear2="Locquacious Earring",       --  2 [__/__, ___]
     ring1="Kishar Ring",              --  4 [__/__, ___]
     ring2="Defending Ring",           -- __ [10/10, ___]
     waist="Witful Belt",              --  3 [__/__, ___]  3
-    -- 56 Fast Cast [45 PDT/43 MDT, 428 M.Eva] 3 Quick Magic
+    -- 57 Fast Cast [45 PDT/43 MDT, 428 M.Eva] 3 Quick Magic
     
     -- legs=gear.Merl_FC_legs,        --  7 [__/__, 118]
     -- legs="Volte Brais",            --  8 [__/__, 142]; merlinic alt
-    -- feet=gear.Merl_FC_feet,        -- 12 [__/__, 118]
     -- neck="Orunmila's Torque",      --  5 [__/__, ___]
     -- back=gear.SMN_FC_Cape          -- 10 [10/__, ___]
     -- 80 Fast Cast [55 PDT/53 MDT, 570 M.Eva]
@@ -298,13 +297,13 @@ function init_gear_sets()
     head="Bunzi's Hat",               -- 10 [ 7/ 7, 123]
     body=gear.Merl_FC_body,           -- 14 [ 2/__,  91]
     hands="Volte Gloves",             --  6 [__/__,  96]; merlinic alt
-    feet=gear.Merl_FC_feet,           -- 11 [__/__, 118]
+    feet=gear.Merl_FC_feet,           -- 12 [__/__, 118]
     ear1="Malignance Earring",        --  4 [__/__, ___]
     ear2="Locquacious Earring",       --  2 [__/__, ___]
     ring1="Kishar Ring",              --  4 [__/__, ___]
     ring2="Defending Ring",           -- __ [10/10, ___]
     -- RDM Trait                         15
-    -- 53 Fast Cast [45 PDT/43 MDT, 428 M.Eva]
+    -- 54 Fast Cast [45 PDT/43 MDT, 428 M.Eva]
     
     -- legs=gear.Merl_FC_legs,        --  7 [__/__, 118]
     -- legs="Volte Brais",            --  8 [__/__, 142]; merlinic alt
@@ -319,7 +318,7 @@ function init_gear_sets()
     ammo="Impatiens",                 -- __ [__/__, ___]  2
     body=gear.Merl_FC_body,           -- 14 [ 2/__,  91]
     hands="Volte Gloves",             --  6 [__/__,  96]; merlinic alt
-    feet=gear.Merl_FC_feet,           -- 11 [__/__, 118]
+    feet=gear.Merl_FC_feet,           -- 12 [__/__, 118]
     ear1="Malignance Earring",        --  4 [__/__, ___]
     ear2="Locquacious Earring",       --  2 [__/__, ___]
     ring1="Kishar Ring",              --  4 [__/__, ___]
@@ -327,11 +326,10 @@ function init_gear_sets()
     back="Perimede Cape",             -- __ [__/__, ___]  4
     waist="Witful Belt",              --  3 [__/__, ___]  3
     -- RDM Trait                         15
-    -- 59 Fast Cast [38 PDT/36 MDT, 305 M.Eva] 9 Quick Magic
+    -- 60 Fast Cast [38 PDT/36 MDT, 305 M.Eva] 9 Quick Magic
     
     -- head=gear.Merl_FC_head,        -- 15 [__/__,  86]
     -- legs="Beckoner's Spats +2",    -- __ [11/11, 147]
-    -- feet=gear.Merl_FC_feet,        -- 12 [__/__, 118]
     -- neck="Orunmila's Torque",      --  5 [__/__, ___]
     -- 80 Fast Cast [49 PDT/47 MDT, 538 M.Eva] 9 Quick Magic
   }
@@ -342,17 +340,16 @@ function init_gear_sets()
     head="Bunzi's Hat",               -- 10 [ 7/ 7, 123]
     body=gear.Merl_FC_body,           -- 14 [ 2/__,  91]
     hands="Volte Gloves",             --  6 [__/__,  96]; merlinic alt
-    feet=gear.Merl_FC_feet,           -- 11 [__/__, 118]
+    feet=gear.Merl_FC_feet,           -- 12 [__/__, 118]
     ear1="Malignance Earring",        --  4 [__/__, ___]
     ear2="Locquacious Earring",       --  2 [__/__, ___]
     ring1="Kishar Ring",              --  4 [__/__, ___]
     ring2="Defending Ring",           -- __ [10/10, ___]
-    -- 51 Fast Cast [22 PDT/20 MDT, 428 M.Eva]
+    -- 52 Fast Cast [22 PDT/20 MDT, 428 M.Eva]
     
     -- main="Nirvana",                -- __ [__/__, ___]
     -- sub="Elan Strap +1",           -- __ [__/__, ___]
     -- legs="Volte Brais",            --  8 [__/__, 142]; merlinic alt
-    -- feet=gear.Merl_FC_feet,        -- 12 [__/__, 118]
     -- neck="Orunmila's Torque",      --  5 [__/__, ___]
     -- back=gear.SMN_FC_Cape          -- 10 [10/__, ___]
     -- waist="Shinjutsu-no-obi +1",   --  5 [__/__, ___]
@@ -363,18 +360,17 @@ function init_gear_sets()
     head="Bunzi's Hat",               -- 10 [ 7/ 7, 123]
     body=gear.Merl_FC_body,           -- 14 [ 2/__,  91]
     hands="Volte Gloves",             --  6 [__/__,  96]; merlinic alt
-    feet=gear.Merl_FC_feet,           -- 11 [__/__, 118]
+    feet=gear.Merl_FC_feet,           -- 12 [__/__, 118]
     ear1="Malignance Earring",        --  4 [__/__, ___]
     ear2="Locquacious Earring",       --  2 [__/__, ___]
     ring1="Kishar Ring",              --  4 [__/__, ___]
     ring2="Defending Ring",           -- __ [10/10, ___]
     waist="Witful Belt",              --  3 [__/__, ___] 3
-    -- 54 Fast Cast [22 PDT/20 MDT, 428 M.Eva] 3 Quick Magic
+    -- 55 Fast Cast [22 PDT/20 MDT, 428 M.Eva] 3 Quick Magic
 
     -- main="Nirvana",                -- __ [__/__, ___]
     -- sub="Elan Strap +1",           -- __ [__/__, ___]
     -- legs="Volte Brais",            --  8 [__/__, 142]; merlinic alt
-    -- feet=gear.Merl_FC_feet,        -- 12 [__/__, 118]
     -- neck="Orunmila's Torque",      --  5 [__/__, ___]
     -- back=gear.SMN_FC_Cape          -- 10 [10/__, ___]
     -- 78 Fast Cast [32 PDT/20 MDT, 570 M.Eva] 3 Quick Magic
@@ -384,20 +380,19 @@ function init_gear_sets()
     ammo="Sapience Orb",              --  2 [__/__, ___]
     head="Bunzi's Hat",               -- 10 [ 7/ 7, 123]
     body=gear.Merl_FC_body,           -- 14 [ 2/__,  91]
-    feet=gear.Merl_FC_feet,           -- 11 [__/__, 118]
+    feet=gear.Merl_FC_feet,           -- 12 [__/__, 118]
     ear1="Malignance Earring",        --  4 [__/__, ___]
     ear2="Locquacious Earring",       --  2 [__/__, ___]
     ring1="Gelatinous Ring +1",       -- __ [ 7/-1, ___]
     ring2="Defending Ring",           -- __ [10/10, ___]
     waist="Regal Belt",               -- __ [ 3/ 3, ___]
     -- RDM Trait                         15
-    -- 58 Fast Cast [29 PDT/19 MDT, 332 M.Eva]
+    -- 59 Fast Cast [29 PDT/19 MDT, 332 M.Eva]
     
     -- main="Nirvana",                -- __ [__/__, ___]
     -- sub="Elan Strap +1",           -- __ [__/__, ___]
     -- hands="Volte Gloves",          --  6 [__/__,  96]; merlinic alt
     -- legs="Beckoner's Spats +2",    -- __ [11/11, 147]
-    -- feet=gear.Merl_FC_feet,        -- 12 [__/__, 118]
     -- neck="Orunmila's Torque",      --  5 [__/__, ___]
     -- back=gear.SMN_FC_Cape          -- 10 [10/__, ___]
     -- 80 Fast Cast [50 PDT/30 MDT, 575 M.Eva]
@@ -406,20 +401,19 @@ function init_gear_sets()
     ammo="Impatiens",                 -- __ [__/__, ___]  2
     head="Bunzi's Hat",               -- 10 [ 7/ 7, 123]
     body=gear.Merl_FC_body,           -- 14 [ 2/__,  91]
-    feet=gear.Merl_FC_feet,           -- 11 [__/__, 118]
+    feet=gear.Merl_FC_feet,           -- 12 [__/__, 118]
     ear1="Malignance Earring",        --  4 [__/__, ___]
     ear2="Locquacious Earring",       --  2 [__/__, ___]
     ring1="Gelatinous Ring +1",       -- __ [ 7/-1, ___]
     ring2="Defending Ring",           -- __ [10/10, ___]
     waist="Witful Belt",              --  3 [__/__, ___]  3
     -- RDM Trait                         15
-    -- 59 Fast Cast [26 PDT/16 MDT, 332 M.Eva] 5 Quick Magic
+    -- 60 Fast Cast [26 PDT/16 MDT, 332 M.Eva] 5 Quick Magic
 
     -- main="Nirvana",                -- __ [__/__, ___]
     -- sub="Elan Strap +1",           -- __ [__/__, ___]
     -- hands="Volte Gloves",          --  6 [__/__,  96]; merlinic alt
     -- legs="Beckoner's Spats +2",    -- __ [11/11, 147]
-    -- feet=gear.Merl_FC_feet,        -- 12 [__/__, 118]
     -- neck="Orunmila's Torque",      --  5 [__/__, ___]
     -- back=gear.SMN_FC_Cape          -- 10 [10/__, ___]
     -- 81 Fast Cast [47 PDT/27 MDT, 575 M.Eva] 5 Quick Magic

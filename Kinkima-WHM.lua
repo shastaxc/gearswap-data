@@ -149,7 +149,7 @@ function init_gear_sets()
     body="Inyanga Jubbah +2",         -- 14 [__/ 8, 120]
     hands=gear.Gende_SongFC_hands,    --  7 [ 3/ 2,  37]
     legs="Pinga Pants +1",            -- 13 [__/__, 147]
-    feet=gear.Merl_FC_feet,           -- 11 [__/__, 118]
+    feet=gear.Merl_FC_feet,           -- 12 [__/__, 118]
     neck="Cleric's Torque +1",        --  8 [__/__, ___]
     ear1="Malignance Earring",        --  4 [__/__, ___]
     ear2="Etiolation Earring",        --  1 [__/ 3, ___]; Resist Silence+15
@@ -157,9 +157,11 @@ function init_gear_sets()
     ring2="Defending Ring",           -- __ [10/10, ___]
     back=gear.WHM_FC_Cape,            -- 10 [10/__,  20]
     waist="Carrier's Sash",           -- __ [__/__, ___]; Ele Resist+15
+    -- 81 Fast Cast [62PDT/49MDT, 565 MEVA]
+
     -- hands=gear.Gende_SongFC_hands, --  7 [ 4/__,  37]
-    -- 80 Fast Cast [63PDT/47MDT, 565 MEVA]
-  } -- 80 Fast Cast [62PDT/49MDT, 565 MEVA]
+    -- 81 Fast Cast [63PDT/47MDT, 565 MEVA]
+  }
 
   -- 10% cap on Quick Magic
   sets.precast.FC.QuickMagic = {
@@ -170,17 +172,19 @@ function init_gear_sets()
     body="Inyanga Jubbah +2",         -- 14 [__/ 8, 120] __
     hands=gear.Gende_SongFC_hands,    --  7 [ 3/ 2,  37] __
     legs="Pinga Pants +1",            -- 13 [__/__, 147] __
-    feet=gear.Merl_FC_feet,           -- 11 [__/__, 118] __
+    feet=gear.Merl_FC_feet,           -- 12 [__/__, 118] __
     neck="Cleric's Torque +1",        --  8 [__/__, ___] __
     ear1="Malignance Earring",        --  4 [__/__, ___] __
     ear2="Odnowa Earring +1",         -- __ [ 3/ 5, ___] __
     ring2="Veneficium Ring",          -- __ [__/__, ___]  1
     back=gear.WHM_FC_Cape,            -- 10 [10/__,  20] __
     waist="Witful Belt",              --  3 [__/__, ___]  3
+    -- 81 Fast Cast [48PDT/42MDT, 565 MEVA] 6 Quick Magic
+
     -- ring1="Lebeche Ring",          -- __ [__/__, ___]  2
     -- hands=gear.Gende_SongFC_hands, --  7 [ 4/__,  37] __
-    -- 80 Fast Cast [49PDT/40MDT, 565 MEVA] 8 Quick Magic
-  } -- 80 Fast Cast [48PDT/42MDT, 565 MEVA] 6 Quick Magic
+    -- 81 Fast Cast [49PDT/40MDT, 565 MEVA] 8 Quick Magic
+  }
 
   -- Include divine caress gear in case of quick magic proc
   sets.precast.FC.QuickStatusRemoval = {
@@ -608,7 +612,7 @@ function init_gear_sets()
     ammo="Incantor Stone",      -- [__/__, ___] __,  2
     head="Bunzi's Hat",         -- [ 7/ 7, 123] __, 10
     body="Inyanga Jubbah +2",   -- [__/ 8, 120] __, 14
-    feet=gear.Merl_FC_feet,     -- [__/__, 118] __, 11
+    feet=gear.Merl_FC_feet,     -- [__/__, 118] __, 12
     neck="Nodens Gorget",       -- [__/__, ___] 30, __
     ear1="Earthcry Earring",    -- [__/__, ___] 10, __
     ear2="Malignance Earring",  -- [__/__, ___] __,  4
@@ -618,7 +622,7 @@ function init_gear_sets()
     -- hands="Stone Mufflers",  -- [__/__, ___] 30, __
     -- legs="Shedir Seraweels", -- [__/__, ___] 35, __
     -- waist="Siegel Sash",     -- [__/__, ___] 20, __
-    -- [52 PDT/45 MDT, 381 MEVA] +125 Stoneskin Potency, 55 Fast Cast
+    -- [52 PDT/45 MDT, 381 MEVA] +125 Stoneskin Potency, 56 Fast Cast
   }
 
   sets.midcast.Auspice = set_combine(sets.midcast.EnhancingDuration, {

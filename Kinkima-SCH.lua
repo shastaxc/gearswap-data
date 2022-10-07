@@ -152,7 +152,7 @@ function init_gear_sets()
     body="Pinga Tunic +1",            -- 15 [__/__, 128]
     hands="Academic's Bracers +3",    --  9 [__/__,  57]
     legs="Pinga Pants +1",            -- 13 [__/__, 147]
-    feet=gear.Merl_FC_feet,           -- 11 [__/__, 118]
+    feet=gear.Merl_FC_feet,           -- 12 [__/__, 118]
     neck="Loricate Torque +1",        -- __ [ 6/ 6, ___]; DEF+60
     ear1="Malignance Earring",        --  4 [__/__, ___]
     ear2="Etiolation Earring",        --  1 [__/ 3, ___]; Resist Silence+15
@@ -160,10 +160,9 @@ function init_gear_sets()
     ring2="Defending Ring",           -- __ [10/10, ___]
     back=gear.SCH_FC_Cape,            -- 10 [10/__,  30]
     waist="Carrier's Sash",           -- __ [__/__, ___]; Ele Resist+15
-    -- 83 Fast Cast [39 PDT/24 MDT, 555 MEVA]
+    -- 84 Fast Cast [39 PDT/24 MDT, 555 MEVA]
 
     -- main="Malignance Pole",        -- __ [20/20, ___]
-    -- feet=gear.Merl_FC_feet,        -- 12 [__/__, 118]
     -- neck="Orunmila's Torque",      --  5 [__/__, ___]
     -- 81 Fast Cast [53 PDT/38 MDT, 555 MEVA]
 
@@ -221,7 +220,7 @@ function init_gear_sets()
     body="Pinga Tunic +1",            -- 15 [__/__, 128] __
     hands="Academic's Bracers +3",    --  9 [__/__,  57] __
     legs="Pinga Pants +1",            -- 13 [__/__, 147] __
-    feet=gear.Merl_FC_feet,           -- 11 [__/__, 118] __
+    feet=gear.Merl_FC_feet,           -- 12 [__/__, 118] __
     neck="Loricate Torque +1",        -- __ [ 6/ 6, ___]; DEF+60
     ear1="Malignance Earring",        --  4 [__/__, ___] __
     ear2="Odnowa Earring +1",         -- __ [ 3/ 5, ___] __
@@ -229,7 +228,7 @@ function init_gear_sets()
     ring2="Defending Ring",           -- __ [10/10, ___] __
     back=gear.SCH_FC_Cape,            -- 10 [10/__,  30] __
     waist="Witful Belt",              --  3 [__/__, ___]  3
-    -- 83 Fast Cast [42PDT/47MDT, 555 MEVA] 5 Quick Magic
+    -- 84 Fast Cast [42PDT/47MDT, 555 MEVA] 5 Quick Magic
     
     -- main="Malignance Pole",        -- __ [20/20, ___] __
     -- sub="Khonsu",                  -- __ [ 6/ 6, ___] __
@@ -238,7 +237,7 @@ function init_gear_sets()
     -- body="Pinga Tunic +1",         -- 15 [__/__, 128] __
     -- hands="Academic's Bracers +3", --  9 [__/__,  57] __
     -- legs="Pinga Pants +1",         -- 13 [__/__, 147] __
-    -- feet=gear.Merl_FC_feet,        -- 11 [__/__, 118] __
+    -- feet=gear.Merl_FC_feet,        -- 12 [__/__, 118] __
     -- neck="Orunmila's Torque",      --  5 [__/__, ___] __
     -- ear1="Malignance Earring",     --  4 [__/__, ___] __
     -- ear2="Odnowa Earring +1",      -- __ [ 3/ 5, ___] __
@@ -246,7 +245,7 @@ function init_gear_sets()
     -- ring2="Defending Ring",        -- __ [10/10, ___] __
     -- back=gear.SCH_FC_Cape,         -- 10 [10/__,  30] __
     -- waist="Witful Belt",           --  3 [__/__, ___]  3
-    -- 80 Fast Cast [49PDT/41MDT, 555 MEVA] 7 Quick Magic
+    -- 81 Fast Cast [49PDT/41MDT, 555 MEVA] 7 Quick Magic
   }
   -- No point in this set until normal sets.precast.FC.QuickMagic can cap stats
   -- sets.precast.FC.QuickMagic.Grimoire = {}
@@ -259,7 +258,7 @@ function init_gear_sets()
     body="Shamash Robe",              -- __ [10/__, 106]; Resist Silence+90
     hands="Academic's Bracers +3",    --  9 [__/__,  57]
     legs="Pinga Pants +1",            -- 13 [__/__, 147]
-    feet=gear.Merl_FC_feet,           -- 11 [__/__, 118]
+    feet=gear.Merl_FC_feet,           -- 12 [__/__, 118]
     neck="Loricate Torque +1",        -- __ [ 6/ 6, ___]; DEF+60
     ear1="Malignance Earring",        --  4 [__/__, ___]
     ear2="Etiolation Earring",        --  1 [__/ 3, ___]; Resist Silence+15
@@ -268,7 +267,7 @@ function init_gear_sets()
     back=gear.SCH_FC_Cape,            -- 10 [10/__,  30]
     waist="Carrier's Sash",           -- __ [__/__, ___]; Ele Resist+15
     -- Sub RDM trait                  -- 15
-    -- 81 Fast Cast [52 PDT/27 MDT, 533 MEVA]
+    -- 82 Fast Cast [52 PDT/27 MDT, 533 MEVA]
   }
   sets.precast.FC.QuickMagic.RDM = {
     main=gear.Pedagogy_C,             --  8 [__/__, ___]
@@ -278,7 +277,7 @@ function init_gear_sets()
     body="Pinga Tunic +1",            -- 15 [__/__, 128] __
     hands="Academic's Bracers +3",    --  9 [__/__,  57] __
     legs="Pinga Pants +1",            -- 13 [__/__, 147] __
-    feet=gear.Merl_FC_feet,           -- 11 [__/__, 118] __
+    feet=gear.Merl_FC_feet,           -- 12 [__/__, 118] __
     neck="Loricate Torque +1",        -- __ [ 6/ 6, ___]; DEF+60
     ear1="Malignance Earring",        --  4 [__/__, ___] __
     ear2="Odnowa Earring +1",         -- __ [ 3/ 5, ___] __
@@ -287,7 +286,7 @@ function init_gear_sets()
     back="Perimede Cape",             -- __ [__/__, ___]  4
     waist="Witful Belt",              --  3 [__/__, ___]  3
     -- Sub RDM trait                  -- 15
-    -- 88 Fast Cast [42PDT/47MDT, 555 MEVA] 9 Quick Magic
+    -- 89 Fast Cast [42PDT/47MDT, 555 MEVA] 9 Quick Magic
     
     -- main="Malignance Pole",        -- __ [20/20, ___] __
     -- sub="Khonsu",                  -- __ [ 6/ 6, ___] __
@@ -296,16 +295,16 @@ function init_gear_sets()
     -- body="Pinga Tunic +1",         -- 15 [__/__, 128] __
     -- hands=gear.Gende_SongFC_hands, --  7 [ 4/__,  37] __
     -- legs="Pinga Pants +1",         -- 13 [__/__, 147] __
-    -- feet=gear.Merl_FC_feet,        -- 11 [__/__, 118] __
+    -- feet=gear.Merl_FC_feet,        -- 12 [__/__, 118] __
     -- neck="Orunmila's Torque",      --  5 [__/__, ___] __
-    -- ear1="Malignance Earring",     --  4 [__/__, ___] __
+    -- ear1="Genmei Earring",         -- __ [ 2/__, ___] __
     -- ear2="Odnowa Earring +1",      -- __ [ 3/ 5, ___] __
     -- ring1="Lebeche Ring",          -- __ [__/__, ___]  2
     -- ring2="Defending Ring",        -- __ [10/10, ___] __
     -- back="Perimede Cape",          -- __ [__/__, ___]  4
     -- waist="Witful Belt",           --  3 [__/__, ___]  3
     -- Sub RDM trait                  -- 15
-    -- 83 Fast Cast [43PDT/41MDT, 505 MEVA] 11 Quick Magic
+    -- 80 Fast Cast [45PDT/41MDT, 505 MEVA] 11 Quick Magic
   }
   sets.precast.FC.RDM.Grimoire = {
     main=gear.Pedagogy_C,             --  8 [__/__, ___] __

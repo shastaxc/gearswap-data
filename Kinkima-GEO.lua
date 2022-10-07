@@ -146,14 +146,14 @@ function init_gear_sets()
     range="Dunna",                  --  3 [__/__, ___] { 5, __}
     ammo=empty,
     body=gear.Merl_FC_body,         -- 14 [ 2/__,  91] {__, __}
-    feet=gear.Merl_FC_feet,         -- 11 [__/__, 118] {__, __}
+    feet=gear.Merl_FC_feet,         -- 12 [__/__, 118] {__, __}
     neck="Loricate Torque +1",      -- __ [ 6/ 6, ___] {__, __}
     ear1="Loquacious Earring",      --  2 [__/__, ___] {__, __}
     ear2="Malignance Earring",      --  4 [__/__, ___] {__, __}
     ring1="Defending Ring",         -- __ [10/10, ___] {__, __}
     ring2="Kishar Ring",            --  4 [__/__, ___] {__, __}
     waist="Embla Sash",             --  5 [__/__, ___] {__, __}
-    -- 43 FC
+    -- 44 FC
 
     -- Ideal:
     -- Assume Idris                 -- __ [__/__, ___] {25, __}
