@@ -63,7 +63,7 @@ gear.Chironic_SIRD_hands = { name="Chironic Gloves", augments={'Attack+6','Spell
 gear.Herc_TA_feet = { name="Herculean Boots", augments={'Accuracy+30','"Triple Atk."+4','Attack+2',}}
 
 -- Merlinic
-gear.Merl_FC_head = { name="Merlinic Hood", augments={'"Fast Cast"+6',}} -- FC+7
+gear.Merl_FC_head = { name="Merlinic Hood", augments={'"Fast Cast"+7','CHR+7','Mag. Acc.+10','"Mag.Atk.Bns."+8',}}
 gear.Merl_FC_body = { name="Merlinic Jubbah", augments={'Mag. Acc.+2 "Mag.Atk.Bns."+2','VIT+5','"Fast Cast"+8',}}
 gear.Merl_FC_legs = { name="Merlinic Shalwar", augments={'Accuracy+8','"Fast Cast"+7','Mag. Acc.+15',}}
 gear.Merl_FC_feet = { name="Merlinic Crackows", augments={'Mag. Acc.+8','"Fast Cast"+7','CHR+2',}}

@@ -145,7 +145,7 @@ function init_gear_sets()
 	sets.precast.FC = {
     range="Dunna",                  --  3 [__/__, ___] { 5, __}
     ammo=empty,
-    head=gear.Merl_FC_head,         -- 14 [__/__,  86] {__, __}
+    head=gear.Merl_FC_head,         -- 15 [__/__,  86] {__, __}
     body=gear.Merl_FC_body,         -- 14 [ 2/__,  91] {__, __}
     feet=gear.Merl_FC_feet,         -- 12 [__/__, 118] {__, __}
     neck="Loricate Torque +1",      -- __ [ 6/ 6, ___] {__, __}
