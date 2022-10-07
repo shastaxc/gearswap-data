@@ -292,7 +292,11 @@ function init_gear_sets()
   sets.precast.WS["Savage Blade"].MaxTP = set_combine(sets.precast.WS["Savage Blade"], {
     ear2="Ishvara Earring",
   })
-  sets.precast.WS["Savage Blade"].AttCapped = set_combine(sets.precast.WS["Savage Blade"], {})
+  sets.precast.WS["Savage Blade"].AttCapped = set_combine(sets.precast.WS["Savage Blade"], {
+    head="Sakpata's Helm",
+    hands="Sakpata's Gauntlets",
+    feet="Sakpata's Leggings",
+  })
   sets.precast.WS["Savage Blade"].AttCappedMaxTP = set_combine(sets.precast.WS["Savage Blade"].AttCapped, {
     ear2="Ishvara Earring",
   })
@@ -815,16 +819,19 @@ function init_gear_sets()
     feet="Sakpata's Leggings",            -- [ 6/ 6, 150] __ <__, __,  4> __,  2
     neck="Warrior's Bead Necklace +1",    -- [__/__, ___] __ <__, __,  6> __, __
     ear1="Schere Earring",                -- [__/__, ___] __ <__, __,  6> __, __
-    ear2="Brutal Earring",                -- [__/__, ___]  1 <__, __,  5> __, __
+    ear2="Boii Earring",                  -- [__/__, ___] __ <__, __,  7> __, __
     ring1="Chirich Ring +1",              -- [__/__, ___]  6 <__, __, __> __, __
     ring2="Chirich Ring +1",              -- [__/__, ___]  6 <__, __, __> __, __
     back=gear.WAR_STR_DA_Cape,            -- [10/__, ___] __ <__, __, 10> __, __; DA dmg+20%
     waist="Ioskeha Belt +1",              -- [__/__, ___] __ <__, __,  9> __,  8
     -- WAR Traits                            [__/__, ___] __ <__, __, 33> __, __
-    -- [41 PDT/31 MDT, 624 MEVA] 23 STP <0 QA, 0 TA, 101 DA> 0 Crit Rate, 26 Haste; DA dmg+44%
+    -- [41 PDT/31 MDT, 624 MEVA] 22 STP <0 QA, 0 TA, 103 DA> 0 Crit Rate, 26 Haste; DA dmg+44%
 
+    -- body="Boii Lorica +2",             -- [13/13,  99] 10 <__, __, __> __,  3
+    -- feet="Pummeler's Calligae +3",     -- [__/__, 100]  4 <__, __,  9> __,  4
     -- neck="Warrior's Bead Necklace +2", -- [__/__, ___] __ <__, __,  7> __, __
-    -- [41 PDT/31 MDT, 624 MEVA] 23 STP <0 QA, 0 TA, 102 DA> 0 Crit Rate, 26 Haste; DA dmg+44%
+    -- ear2="Boii Earring +2",            -- [__/__, ___] __ <__, __,  9> __, __
+    -- [38 PDT/28 MDT, 534 MEVA] 36 STP <0 QA, 0 TA, 103 DA> 0 Crit Rate, 29 Haste; DA dmg+44%
   }
   sets.engaged.UkonvasaraAM.LowAcc = set_combine(sets.engaged.UkonvasaraAM, {})
   sets.engaged.UkonvasaraAM.MidAcc = set_combine(sets.engaged.UkonvasaraAM.LowAcc, {})
