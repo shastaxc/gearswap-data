@@ -1093,15 +1093,32 @@ function job_precast(spell, action, spellMap, eventArgs)
   silibs.precast_hook(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
 
+  -- Warn if trying to do blood pact without enough mp
+
+	if pet.name == spell.english and pet.hpp > 50 then
+		add_to_chat(122, "You already have that avatar active!")
+		eventArgs.cancel = true
+	elseif avatars:contains(spell.english) and pet.isvalid then
+		eventArgs.cancel = true
+		windower.chat.input('/pet Release <me>')
+		windower.chat.input:schedule(2,'/ma "'..spell.english..'" <me>')
+	end
+
   if state.Buff['Astral Conduit'] then
     eventArgs.useMidcastGear = true
-  elseif state.CastingMode.current == 'NirvAM' then
-    if spell.type == 'BloodPactWard' or spell.type == 'BloodPactRage' then
-      equip(sets.precast.BloodPactWard.NirvAM)
-      eventArgs.handled = true
-    elseif spell.english == 'Elemental Siphon' then
-      equip(sets.precast.JA['Elemental Siphon'].NirvAM)
-      eventArgs.handled = true
+  else
+    if pet_midaction() then
+      eventArgs.cancel = true
+      add_to_chat(122, 'Action canceled because pet was midaction.')
+    end
+    if state.CastingMode.current == 'NirvAM' then
+      if spell.type == 'BloodPactWard' or spell.type == 'BloodPactRage' then
+        equip(sets.precast.BloodPactWard.NirvAM)
+        eventArgs.handled = true
+      elseif spell.english == 'Elemental Siphon' then
+        equip(sets.precast.JA['Elemental Siphon'].NirvAM)
+        eventArgs.handled = true
+      end
     end
   end
 end
@@ -1251,23 +1268,25 @@ end
 
 -- Modify the default idle set after it was constructed.
 function customize_idle_set(idleSet)
-  if pet.isvalid then
-    if pet.status == 'Engaged' then
-      idleSet = set_combine(idleSet, sets.idle.Avatar.Melee)
+  if not pet_midaction() then
+    if pet.isvalid then
+      if pet.status == 'Engaged' then
+        idleSet = set_combine(idleSet, sets.idle.Avatar.Melee)
+      end
     end
-  end
-
-  -- If not in DT mode put on move speed gear
-  if state.IdleMode.current == 'Normal' and state.DefenseMode.value == 'None' then
-    -- Apply movement speed gear
-    if classes.CustomIdleGroups:contains('Adoulin') then
-      idleSet = set_combine(idleSet, sets.Kiting.Adoulin)
-    else
-      idleSet = set_combine(idleSet, sets.Kiting)
-    end
-    if state.CP.current == 'on' then
-      idleSet = set_combine(idleSet, sets.CP)
-    end
+  
+    -- If not in DT mode put on move speed gear
+    if state.IdleMode.current == 'Normal' and state.DefenseMode.value == 'None' then
+      -- Apply movement speed gear
+      if classes.CustomIdleGroups:contains('Adoulin') then
+        idleSet = set_combine(idleSet, sets.Kiting.Adoulin)
+      else
+        idleSet = set_combine(idleSet, sets.Kiting)
+      end
+      if state.CP.current == 'on' then
+        idleSet = set_combine(idleSet, sets.CP)
+      end
+    end  
   end
 
   -- If slot is locked to use no-swap gear, keep it equipped
@@ -1285,8 +1304,10 @@ function customize_idle_set(idleSet)
 end
 
 function customize_melee_set(meleeSet)
-  if state.CP.current == 'on' then
-    meleeSet = set_combine(meleeSet, sets.CP)
+  if not pet_midaction() then
+    if state.CP.current == 'on' then
+      meleeSet = set_combine(meleeSet, sets.CP)
+    end
   end
 
   -- If slot is locked to use no-swap gear, keep it equipped
@@ -1304,8 +1325,10 @@ function customize_melee_set(meleeSet)
 end
 
 function customize_defense_set(defenseSet)
-  if state.CP.current == 'on' then
-    defenseSet = set_combine(defenseSet, sets.CP)
+  if not pet_midaction() then
+    if state.CP.current == 'on' then
+      defenseSet = set_combine(defenseSet, sets.CP)
+    end
   end
 
   -- If slot is locked to use no-swap gear, keep it equipped
@@ -1395,7 +1418,7 @@ end
 
 function gearinfo(cmdParams, eventArgs)
   if cmdParams[1] == 'gearinfo' then
-    if not midaction() then
+    if not midaction() and not pet_midaction() then
       job_update()
     end
   end
