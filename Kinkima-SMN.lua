@@ -434,7 +434,7 @@ function init_gear_sets()
     main="Chatoyant Staff",             -- __, __, 10 [__/__, ___]
     sub="Khonsu",                       -- __, __, __ [ 6/ 6, ___]
     -- ammo="Esper stone +1",           -- 20, __, __ [__/__, ___]
-    -- head="Beckoner's Horn +2",       -- __, 18, __ [ 9/ 9, 120]
+    head="Beckoner's Horn +2",          -- __, 18, __ [ 9/ 9, 120]
     -- body="Beckoner's Doublet +2",    -- __, 19, __ [12/12, 120]
     -- hands="Baayami Cuffs +1",        -- __, 33, __ [__/__,  93]
     -- legs="Beckoner's Spats +2",      -- __, 25, __ [11/11, 147]
@@ -455,7 +455,7 @@ function init_gear_sets()
     -- main="Nirvana",                  -- __, __, __ [__/__, ___]
     -- sub="Elan Strap +1",             -- __, __, __ [__/__, ___]
     -- ammo="Esper stone +1",           -- 20, __, __ [__/__, ___]
-    -- head="Beckoner's Horn +2",       -- __, 18, __ [ 9/ 9, 120]
+    head="Beckoner's Horn +2",          -- __, 18, __ [ 9/ 9, 120]
     -- body="Beckoner's Doublet +2",    -- __, 19, __ [12/12, 120]
     -- hands="Baayami Cuffs +1",        -- __, 33, __ [__/__,  93]
     -- legs="Beckoner's Spats +2",      -- __, 25, __ [11/11, 147]
@@ -483,7 +483,7 @@ function init_gear_sets()
     main="Malignance Pole",         -- __, __, __, __ [20/20, ___]
     sub="Vox Grip",                 --  3, __, __, __ [__/__, ___]
     ammo="Sancus Sachet +1",        -- __, __,  7, __ [__/__, ___]
-    -- head="Beckoner's Horn +2",   -- 18, __, __, __ [ 9/ 9, 120]; Keep on for Favor bonus
+    head="Beckoner's Horn +2",      -- 18, __, __, __ [ 9/ 9, 120]; Keep on for Favor bonus
     -- body="Baayami Robe",         -- 32, __, __, __ [__/__, 112]
     -- hands="Baayami Cuffs +1",    -- 33,  7, __, __ [__/__,  93]; maybe swap for Glyphic Bracers +3
     -- legs="Baayami Slops +1",     -- 35,  8, __, __ [__/__, 139]
@@ -749,7 +749,7 @@ function init_gear_sets()
     -- main=gear.Espiritus_B,         -- 15 [__/__, ___]
     -- sub="Khonsu",                  -- __ [ 6/ 6, ___]
     ammo="Staunch Tathlum +1",        -- __ [ 3/ 3, ___]
-    -- head="Beckoner's Horn +2",     -- 18 [ 9/ 9, 120]
+    head="Beckoner's Horn +2",        -- 18 [ 9/ 9, 120]
     -- body="Beckoner's Doublet +2",  -- 19 [12/12, 120]
     -- hands="Baayami Cuffs +1",      -- 33 [__/__,  93]
     -- legs="Beckoner's Spats +2",    -- 25 [11/11, 147]
@@ -770,7 +770,7 @@ function init_gear_sets()
     -- main=gear.Espiritus_B,         -- ___, 45, 15 [__/__, ___]
     sub="Vox Grip",                   -- ___, __,  3 [__/__, ___]
     ammo="Sancus Sachet +1",          -- 119, 20, __ [__/__, ___]
-    -- head="Beckoner's Horn +2",     -- ___, 51, 18 [ 9/ 9, 120]
+    head="Beckoner's Horn +2",        -- ___, 51, 18 [ 9/ 9, 120]
     -- body="Beckoner's Doublet +2",  -- ___, 54, 19 [12/12, 120]
     -- hands="Beckoner's Bracers +2", -- ___, 52, __ [__/__,  83]
     -- legs="Beckoner's Spats +2",    -- ___, 53, 25 [11/11, 147]
@@ -922,7 +922,7 @@ function init_gear_sets()
     main="Mpaca's Staff",           -- ____ [__/__, ___] ( 2, __) {___, __, __/__}
     sub="Khonsu",                   -- ____ [ 6/ 6, ___] (__, __) {___, __, __/__}
     ammo="Staunch Tathlum +1",      -- ____ [ 3/ 3, ___] (__, __) {___, __, __/__}; Resist Status+11
-    -- head="Beckoner's Horn +2",   --   51 [ 9/ 9, 120] ( 3, __) {___, __, __/__}
+    head="Beckoner's Horn +2",      --   51 [ 9/ 9, 120] ( 3, __) {___, __, __/__}
     -- body=gear.Apogee_A_body,     -- -160 [__/__,  91] ( 4, __) {___, __, __/__}
     -- hands="Asteria Mitts +1",    --   18 [__/__,  43] ( 2, __) {___, __, __/__}
     legs="Assiduity Pants +1",      --   43 [__/__, 107] ( 2,  3) {___, __, __/__}
@@ -971,7 +971,7 @@ function init_gear_sets()
     main="Gridarvor",               -- ____ [__/__, ___] (__,  5) {___, __, __/__}
     sub="Khonsu",                   -- ____ [ 6/ 6, ___] (__, __) {___, __, __/__}
     ammo="Sancus Sachet +1",        -- ____ [__/__, ___] (__, __) {119, __, __/__}
-    -- head="Beckoner's Horn +2",   --   51 [ 9/ 9, 120] ( 3, __) {___, __, __/__}
+    head="Beckoner's Horn +2",      --   51 [ 9/ 9, 120] ( 3, __) {___, __, __/__}
     -- body="Beckoner's Doublet +2",--   74 [12/12, 120] (__,  7) {___, __, __/__}
     -- hands="Asteria Mitts +1",    --   18 [__/__,  43] ( 2, __) {___, __, __/__}
     legs="Assiduity Pants +1",      --   43 [__/__, 107] ( 2,  3) {___, __, __/__}
@@ -1010,7 +1010,7 @@ function init_gear_sets()
     main="Gridarvor",               -- ____ [__/__, ___] (__,  5) {___, __, __/__}
     sub="Khonsu",                   -- ____ [ 6/ 6, ___] (__, __) {___, __, __/__}
     ammo="Staunch Tathlum +1",      -- ____ [ 3/ 3, ___] (__, __) {___, __, __/__}; Resist Status+11
-    -- head="Beckoner's Horn +2",   --   51 [ 9/ 9, 120] ( 3, __) {___, __, __/__}
+    head="Beckoner's Horn +2",      --   51 [ 9/ 9, 120] ( 3, __) {___, __, __/__}
     -- body=gear.Apogee_A_body,     -- -160 [__/__,  91] ( 4, __) {___, __, __/__}
     -- hands="Asteria Mitts +1",    --   18 [__/__,  43] ( 2, __) {___, __, __/__}
     legs="Assiduity Pants +1",      --   43 [__/__, 107] ( 2,  3) {___, __, __/__}
@@ -1055,7 +1055,7 @@ function init_gear_sets()
 
   -- TODO: update set
   sets.engaged = {
-    -- head="Beckoner's Horn +2",
+    head="Beckoner's Horn +2",
     -- body="Tali'ah Manteel +1",
     -- hands="Gazu Bracelet",
     legs="Assid. Pants +1",
