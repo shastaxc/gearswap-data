@@ -435,7 +435,7 @@ function init_gear_sets()
     sub="Khonsu",                       -- __, __, __ [ 6/ 6, ___]
     -- ammo="Esper stone +1",           -- 20, __, __ [__/__, ___]
     head="Beckoner's Horn +2",          -- __, 18, __ [ 9/ 9, 120]
-    -- body="Beckoner's Doublet +2",    -- __, 19, __ [12/12, 120]
+    body="Beckoner's Doublet +2",       -- __, 19, __ [12/12, 120]
     -- hands="Baayami Cuffs +1",        -- __, 33, __ [__/__,  93]
     -- legs="Beckoner's Spats +2",      -- __, 25, __ [11/11, 147]
     -- feet="Beckoner's Pigaches +2",   -- 70, __, __ [__/__, 158]
@@ -456,7 +456,7 @@ function init_gear_sets()
     -- sub="Elan Strap +1",             -- __, __, __ [__/__, ___]
     -- ammo="Esper stone +1",           -- 20, __, __ [__/__, ___]
     head="Beckoner's Horn +2",          -- __, 18, __ [ 9/ 9, 120]
-    -- body="Beckoner's Doublet +2",    -- __, 19, __ [12/12, 120]
+    body="Beckoner's Doublet +2",       -- __, 19, __ [12/12, 120]
     -- hands="Baayami Cuffs +1",        -- __, 33, __ [__/__,  93]
     -- legs="Beckoner's Spats +2",      -- __, 25, __ [11/11, 147]
     -- feet="Beckoner's Pigaches +2",   -- 70, __, __ [__/__, 158]
@@ -750,7 +750,7 @@ function init_gear_sets()
     -- sub="Khonsu",                  -- __ [ 6/ 6, ___]
     ammo="Staunch Tathlum +1",        -- __ [ 3/ 3, ___]
     head="Beckoner's Horn +2",        -- 18 [ 9/ 9, 120]
-    -- body="Beckoner's Doublet +2",  -- 19 [12/12, 120]
+    body="Beckoner's Doublet +2",     -- 19 [12/12, 120]
     -- hands="Baayami Cuffs +1",      -- 33 [__/__,  93]
     -- legs="Beckoner's Spats +2",    -- 25 [11/11, 147]
     -- feet="Baayami Sabots +1",      -- 29 [__/__, 139]
@@ -771,7 +771,7 @@ function init_gear_sets()
     sub="Vox Grip",                   -- ___, __,  3 [__/__, ___]
     ammo="Sancus Sachet +1",          -- 119, 20, __ [__/__, ___]
     head="Beckoner's Horn +2",        -- ___, 51, 18 [ 9/ 9, 120]
-    -- body="Beckoner's Doublet +2",  -- ___, 54, 19 [12/12, 120]
+    body="Beckoner's Doublet +2",     -- ___, 54, 19 [12/12, 120]
     -- hands="Beckoner's Bracers +2", -- ___, 52, __ [__/__,  83]
     -- legs="Beckoner's Spats +2",    -- ___, 53, 25 [11/11, 147]
     -- feet="Beckoner's Pigaches +2", -- ___, 50, __ [__/__, 158]
@@ -972,7 +972,7 @@ function init_gear_sets()
     sub="Khonsu",                   -- ____ [ 6/ 6, ___] (__, __) {___, __, __/__}
     ammo="Sancus Sachet +1",        -- ____ [__/__, ___] (__, __) {119, __, __/__}
     head="Beckoner's Horn +2",      --   51 [ 9/ 9, 120] ( 3, __) {___, __, __/__}
-    -- body="Beckoner's Doublet +2",--   74 [12/12, 120] (__,  7) {___, __, __/__}
+    body="Beckoner's Doublet +2",   --   74 [12/12, 120] (__,  7) {___, __, __/__}
     -- hands="Asteria Mitts +1",    --   18 [__/__,  43] ( 2, __) {___, __, __/__}
     legs="Assiduity Pants +1",      --   43 [__/__, 107] ( 2,  3) {___, __, __/__}
     -- feet="Baayami Sabots +1",    --   30 [__/__, 139] ( 3, __) {___, __, __/__}
