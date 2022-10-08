@@ -240,7 +240,7 @@ function init_gear_sets()
     legs=gear.Merl_FC_legs,           --  7 [__/__, 118]
     feet=gear.Merl_FC_feet,           -- 12 [__/__, 118]
     ear1="Malignance Earring",        --  4 [__/__, ___]
-    ear2="Locquacious Earring",       --  2 [__/__, ___]
+    ear2="Loquacious Earring",        --  2 [__/__, ___]
     ring1="Kishar Ring",              --  4 [__/__, ___]
     ring2="Defending Ring",           -- __ [10/10, ___]
     -- 61 Fast Cast [45 PDT/43 MDT, 428 M.Eva]
@@ -261,7 +261,7 @@ function init_gear_sets()
     legs=gear.Merl_FC_legs,           --  7 [__/__, 118]
     feet=gear.Merl_FC_feet,           -- 12 [__/__, 118]
     ear1="Malignance Earring",        --  4 [__/__, ___]
-    ear2="Locquacious Earring",       --  2 [__/__, ___]
+    ear2="Loquacious Earring",        --  2 [__/__, ___]
     ring1="Kishar Ring",              --  4 [__/__, ___]
     ring2="Defending Ring",           -- __ [10/10, ___]
     waist="Witful Belt",              --  3 [__/__, ___]  3
@@ -282,7 +282,7 @@ function init_gear_sets()
     -- feet=gear.Merl_FC_feet,        -- 12 [__/__, 118]
     -- neck="Orunmila's Torque",      --  5 [__/__, ___]
     -- ear1="Malignance Earring",     --  4 [__/__, ___]
-    -- ear2="Locquacious Earring",    --  2 [__/__, ___]
+    -- ear2="Loquacious Earring",     --  2 [__/__, ___]
     -- ring1="Lebeche Ring",          -- __ [__/__, ___]  2
     -- ring2="Defending Ring",        -- __ [10/10, ___]
     -- back=gear.SMN_FC_Cape          -- 10 [10/__, ___]
@@ -300,7 +300,7 @@ function init_gear_sets()
     legs=gear.Merl_FC_legs,           --  7 [__/__, 118]
     feet=gear.Merl_FC_feet,           -- 12 [__/__, 118]
     ear1="Malignance Earring",        --  4 [__/__, ___]
-    ear2="Locquacious Earring",       --  2 [__/__, ___]
+    ear2="Loquacious Earring",        --  2 [__/__, ___]
     ring1="Kishar Ring",              --  4 [__/__, ___]
     ring2="Defending Ring",           -- __ [10/10, ___]
     -- RDM Trait                         15
@@ -321,7 +321,7 @@ function init_gear_sets()
     hands="Volte Gloves",             --  6 [__/__,  96]; merlinic alt
     feet=gear.Merl_FC_feet,           -- 12 [__/__, 118]
     ear1="Malignance Earring",        --  4 [__/__, ___]
-    ear2="Locquacious Earring",       --  2 [__/__, ___]
+    ear2="Loquacious Earring",        --  2 [__/__, ___]
     ring1="Kishar Ring",              --  4 [__/__, ___]
     ring2="Defending Ring",           -- __ [10/10, ___]
     back="Perimede Cape",             -- __ [__/__, ___]  4
@@ -342,7 +342,7 @@ function init_gear_sets()
     hands="Volte Gloves",             --  6 [__/__,  96]; merlinic alt
     feet=gear.Merl_FC_feet,           -- 12 [__/__, 118]
     ear1="Malignance Earring",        --  4 [__/__, ___]
-    ear2="Locquacious Earring",       --  2 [__/__, ___]
+    ear2="Loquacious Earring",        --  2 [__/__, ___]
     ring1="Kishar Ring",              --  4 [__/__, ___]
     ring2="Defending Ring",           -- __ [10/10, ___]
     -- 52 Fast Cast [22 PDT/20 MDT, 428 M.Eva]
@@ -362,7 +362,7 @@ function init_gear_sets()
     hands="Volte Gloves",             --  6 [__/__,  96]; merlinic alt
     feet=gear.Merl_FC_feet,           -- 12 [__/__, 118]
     ear1="Malignance Earring",        --  4 [__/__, ___]
-    ear2="Locquacious Earring",       --  2 [__/__, ___]
+    ear2="Loquacious Earring",        --  2 [__/__, ___]
     ring1="Kishar Ring",              --  4 [__/__, ___]
     ring2="Defending Ring",           -- __ [10/10, ___]
     waist="Witful Belt",              --  3 [__/__, ___] 3
@@ -382,7 +382,7 @@ function init_gear_sets()
     body=gear.Merl_FC_body,           -- 14 [ 2/__,  91]
     feet=gear.Merl_FC_feet,           -- 12 [__/__, 118]
     ear1="Malignance Earring",        --  4 [__/__, ___]
-    ear2="Locquacious Earring",       --  2 [__/__, ___]
+    ear2="Loquacious Earring",        --  2 [__/__, ___]
     ring1="Gelatinous Ring +1",       -- __ [ 7/-1, ___]
     ring2="Defending Ring",           -- __ [10/10, ___]
     waist="Regal Belt",               -- __ [ 3/ 3, ___]
@@ -403,7 +403,7 @@ function init_gear_sets()
     body=gear.Merl_FC_body,           -- 14 [ 2/__,  91]
     feet=gear.Merl_FC_feet,           -- 12 [__/__, 118]
     ear1="Malignance Earring",        --  4 [__/__, ___]
-    ear2="Locquacious Earring",       --  2 [__/__, ___]
+    ear2="Loquacious Earring",        --  2 [__/__, ___]
     ring1="Gelatinous Ring +1",       -- __ [ 7/-1, ___]
     ring2="Defending Ring",           -- __ [10/10, ___]
     waist="Witful Belt",              --  3 [__/__, ___]  3
@@ -708,24 +708,6 @@ function init_gear_sets()
     -- back=gear.SMN_Cure_Cape,   -- __ [10/__,  20]
     -- waist="Siegel Sash",       -- 20 [__/__, ___]
     -- 95 +Stoneskin [50 PDT/39 MDT, 544 M.Eva]
-  }
-
-  -- TODO: update set
-  sets.midcast['Elemental Magic'] = {
-    -- main="Lehbrailg +2",
-    -- sub="Wizzan Grip",
-    -- head="Hagondes Hat",
-    -- body="Hagondes Coat",
-    -- hands="Yaoyotl Gloves",
-    -- legs="Hagondes Pants",
-    -- feet="Hagondes Sabots",
-    -- neck="Stoicheion Medal",
-    ear1="Friomisi Earring",
-    -- ear2="Hecate's Earring",
-    -- ring1="Icesoul Ring",
-    -- ring2="Acumen Ring",
-    -- back="Toro Cape",
-    waist="Refoccilation Stone",
   }
 
   -- TODO: update set
