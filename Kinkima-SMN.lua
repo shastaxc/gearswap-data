@@ -724,7 +724,7 @@ function init_gear_sets()
     -- ear2="Psystorm Earring",
     -- ring1="Excelsis Ring",
     -- ring2="Sangoma Ring",
-    waist="Fuchi-no-Obi",
+    waist="Fucho-no-Obi",
   }
 
   sets.midcast.Pet.BloodPactWard = {
@@ -958,7 +958,7 @@ function init_gear_sets()
     -- hands="Asteria Mitts +1",    --   18 [__/__,  43] ( 2, __) {___, __, __/__}
     legs="Assiduity Pants +1",      --   43 [__/__, 107] ( 2,  3) {___, __, __/__}
     -- feet="Baayami Sabots +1",    --   30 [__/__, 139] ( 3, __) {___, __, __/__}
-    -- neck="Caller's Pendant",     -- ____ [__/__, ___] (__, __) {___, 25, __/__}
+    neck="Caller's Pendant",        -- ____ [__/__, ___] (__, __) {___, 25, __/__}
     ear1="Enmerkar Earring",        -- ____ [__/__, ___] (__, __) {___, __,  3/ 3}
     ear2="Beckoner's Earring +1",   -- ____ [ 4/ 4, ___] ( 2, __) {  1, __, __/__}
     ring1="Stikini Ring +1",        -- ____ [__/__, ___] ( 1, __) {___, __, __/__}
