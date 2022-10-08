@@ -730,8 +730,7 @@ function init_gear_sets()
   sets.midcast.Storm = sets.midcast.EnhancingDuration
 
   sets.midcast.Stormsurge = set_combine(sets.midcast.Storm, {
-    feet="Pedagogy Loafers +1",
-    -- feet="Pedagogy Loafers +3",
+    feet="Pedagogy Loafers +3",
   })
 
   sets.midcast.Protect = set_combine(sets.midcast.EnhancingDuration, {
@@ -1252,10 +1251,9 @@ function init_gear_sets()
     head="Pedagogy Mortarboard +3",
     body="Jhakri Robe +2",
     legs="Pedagogy Pants +3",
-    feet="Pedagogy Loafers +1",
+    feet="Pedagogy Loafers +3",
     ear1="Cessance Earring",
     -- hands="Raetic Bangles +1",
-    -- feet="Pedagogy Loafers +3",
     -- neck="Combatant's Torque",
     -- ear2="Telos Earring",
     -- ring1="Hetairoi Ring",
@@ -1289,12 +1287,10 @@ function init_gear_sets()
     -- legs="Arbatel Pants +1",
   }
   sets.buff['Celerity'] = {
-    feet="Pedagogy Loafers +1",
-    -- feet="Pedagogy Loafers +3",
+    feet="Pedagogy Loafers +3",
   }
   sets.buff['Alacrity'] = {
-    feet="Pedagogy Loafers +1",
-    -- feet="Pedagogy Loafers +3",
+    feet="Pedagogy Loafers +3",
   }
   sets.buff['Klimaform'] = {
     feet="Arbatel Loafers +2",
