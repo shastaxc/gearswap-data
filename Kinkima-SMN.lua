@@ -772,7 +772,7 @@ function init_gear_sets()
     ammo="Sancus Sachet +1",          -- 119, 20, __ [__/__, ___]
     head="Beckoner's Horn +2",        -- ___, 51, 18 [ 9/ 9, 120]
     body="Beckoner's Doublet +2",     -- ___, 54, 19 [12/12, 120]
-    -- hands="Beckoner's Bracers +2", -- ___, 52, __ [__/__,  83]
+    hands="Beckoner's Bracers +2",    -- ___, 52, __ [__/__,  83]
     -- legs="Beckoner's Spats +2",    -- ___, 53, 25 [11/11, 147]
     -- feet="Beckoner's Pigaches +2", -- ___, 50, __ [__/__, 158]
     neck="Summoner's Collar +2",      -- ___, 25, __ [ 5/ 5, ___]
