@@ -768,7 +768,7 @@ function init_gear_sets()
   -- Need Pet M.Acc, Summoning Skill to land debuffs
   sets.midcast.Pet.DebuffBloodPactWard = {
     -- main=gear.Espiritus_B,         -- ___, 45, 15 [__/__, ___]
-    -- sub="Vox Grip",                -- ___, __,  3 [__/__, ___]
+    sub="Vox Grip",                   -- ___, __,  3 [__/__, ___]
     ammo="Sancus Sachet +1",          -- 119, 20, __ [__/__, ___]
     -- head="Beckoner's Horn +2",     -- ___, 51, 18 [ 9/ 9, 120]
     -- body="Beckoner's Doublet +2",  -- ___, 54, 19 [12/12, 120]
