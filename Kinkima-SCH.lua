@@ -1333,6 +1333,12 @@ function job_precast(spell, action, spellMap, eventArgs)
   silibs.precast_hook(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
 
+  -- If targeting self with Caper, cancel spell
+  if spell.english == 'Caper Emissarius' and spell.target.type == 'SELF' then
+    add_to_chat(167, 'Cancelling Caper Emissarius due to targeting self.')
+    eventArgs.cancel = true
+  end
+
   if spell.name:startswith('Aspir') then
     refine_various_spells(spell, action, spellMap, eventArgs)
   end
