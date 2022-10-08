@@ -674,7 +674,7 @@ function init_gear_sets()
     body="Cohort Cloak +1",
     hands="Geomancy Mitaines +2",
     legs="Geomancy Pants +2",
-    feet="Geomancy Sandals +2",
+    feet="Geomancy Sandals +3",
     neck="Bagua Charm +1",
     ear1="Regal Earring",
     ear2="Malignance Earring",
@@ -683,7 +683,6 @@ function init_gear_sets()
     -- sub="Ammurapi Shield",
     -- hands="Geomancy Mitaines +3",
     -- legs="Geomancy Pants +3",
-    -- feet="Geomancy Sandals +3",
     -- neck="Bagua Charm +2",
     -- back="Aurist's Cape +1",
     -- waist="Acuity Belt +1",
@@ -1105,8 +1104,7 @@ function init_gear_sets()
   }
 
   sets.Kiting = {
-    feet="Herald's Gaiters",
-    -- feet="Geomancy Sandals +3",
+    feet="Geomancy Sandals +3",
   }
   sets.Kiting.Adoulin = {
     body="Councilor's Garb",
