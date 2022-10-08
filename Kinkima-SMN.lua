@@ -319,6 +319,7 @@ function init_gear_sets()
     head=gear.Merl_FC_head,           -- 15 [__/__,  86]
     body=gear.Merl_FC_body,           -- 14 [ 2/__,  91]
     hands="Volte Gloves",             --  6 [__/__,  96]; merlinic alt
+    legs="Beckoner's Spats +2",       -- __ [11/11, 147]
     feet=gear.Merl_FC_feet,           -- 12 [__/__, 118]
     ear1="Malignance Earring",        --  4 [__/__, ___]
     ear2="Loquacious Earring",        --  2 [__/__, ___]
@@ -327,9 +328,8 @@ function init_gear_sets()
     back="Perimede Cape",             -- __ [__/__, ___]  4
     waist="Witful Belt",              --  3 [__/__, ___]  3
     -- RDM Trait                         15
-    -- 75 Fast Cast [38 PDT/36 MDT, 305 M.Eva] 9 Quick Magic
+    -- 75 Fast Cast [49 PDT/47 MDT, 538 M.Eva] 9 Quick Magic
     
-    -- legs="Beckoner's Spats +2",    -- __ [11/11, 147]
     -- neck="Orunmila's Torque",      --  5 [__/__, ___]
     -- 80 Fast Cast [49 PDT/47 MDT, 538 M.Eva] 9 Quick Magic
   }
@@ -380,6 +380,8 @@ function init_gear_sets()
     ammo="Sapience Orb",              --  2 [__/__, ___]
     head="Bunzi's Hat",               -- 10 [ 7/ 7, 123]
     body=gear.Merl_FC_body,           -- 14 [ 2/__,  91]
+    hands="Volte Gloves",             --  6 [__/__,  96]; merlinic alt
+    legs="Beckoner's Spats +2",       -- __ [11/11, 147]
     feet=gear.Merl_FC_feet,           -- 12 [__/__, 118]
     ear1="Malignance Earring",        --  4 [__/__, ___]
     ear2="Loquacious Earring",        --  2 [__/__, ___]
@@ -387,12 +389,10 @@ function init_gear_sets()
     ring2="Defending Ring",           -- __ [10/10, ___]
     waist="Regal Belt",               -- __ [ 3/ 3, ___]
     -- RDM Trait                         15
-    -- 59 Fast Cast [29 PDT/19 MDT, 332 M.Eva]
+    -- 65 Fast Cast [40 PDT/30 MDT, 575 M.Eva]
     
     -- main="Nirvana",                -- __ [__/__, ___]
     -- sub="Elan Strap +1",           -- __ [__/__, ___]
-    -- hands="Volte Gloves",          --  6 [__/__,  96]; merlinic alt
-    -- legs="Beckoner's Spats +2",    -- __ [11/11, 147]
     -- neck="Orunmila's Torque",      --  5 [__/__, ___]
     -- back=gear.SMN_FC_Cape          -- 10 [10/__, ___]
     -- 80 Fast Cast [50 PDT/30 MDT, 575 M.Eva]
@@ -401,6 +401,8 @@ function init_gear_sets()
     ammo="Impatiens",                 -- __ [__/__, ___]  2
     head="Bunzi's Hat",               -- 10 [ 7/ 7, 123]
     body=gear.Merl_FC_body,           -- 14 [ 2/__,  91]
+    hands="Volte Gloves",             --  6 [__/__,  96]; merlinic alt
+    legs="Beckoner's Spats +2",       -- __ [11/11, 147]
     feet=gear.Merl_FC_feet,           -- 12 [__/__, 118]
     ear1="Malignance Earring",        --  4 [__/__, ___]
     ear2="Loquacious Earring",        --  2 [__/__, ___]
@@ -408,12 +410,10 @@ function init_gear_sets()
     ring2="Defending Ring",           -- __ [10/10, ___]
     waist="Witful Belt",              --  3 [__/__, ___]  3
     -- RDM Trait                         15
-    -- 60 Fast Cast [26 PDT/16 MDT, 332 M.Eva] 5 Quick Magic
+    -- 66 Fast Cast [37 PDT/27 MDT, 575 M.Eva] 5 Quick Magic
 
     -- main="Nirvana",                -- __ [__/__, ___]
     -- sub="Elan Strap +1",           -- __ [__/__, ___]
-    -- hands="Volte Gloves",          --  6 [__/__,  96]; merlinic alt
-    -- legs="Beckoner's Spats +2",    -- __ [11/11, 147]
     -- neck="Orunmila's Torque",      --  5 [__/__, ___]
     -- back=gear.SMN_FC_Cape          -- 10 [10/__, ___]
     -- 81 Fast Cast [47 PDT/27 MDT, 575 M.Eva] 5 Quick Magic
@@ -437,7 +437,7 @@ function init_gear_sets()
     head="Beckoner's Horn +2",          -- __, 18, __ [ 9/ 9, 120]
     body="Beckoner's Doublet +2",       -- __, 19, __ [12/12, 120]
     -- hands="Baayami Cuffs +1",        -- __, 33, __ [__/__,  93]
-    -- legs="Beckoner's Spats +2",      -- __, 25, __ [11/11, 147]
+    legs="Beckoner's Spats +2",         -- __, 25, __ [11/11, 147]
     -- feet="Beckoner's Pigaches +2",   -- 70, __, __ [__/__, 158]
     neck="Incanter's Torque",           -- __, 10, __ [__/__, ___]
     -- ear1="Lodurr Earring",           -- __, 10, __ [__/__, ___]
@@ -458,7 +458,7 @@ function init_gear_sets()
     head="Beckoner's Horn +2",          -- __, 18, __ [ 9/ 9, 120]
     body="Beckoner's Doublet +2",       -- __, 19, __ [12/12, 120]
     -- hands="Baayami Cuffs +1",        -- __, 33, __ [__/__,  93]
-    -- legs="Beckoner's Spats +2",      -- __, 25, __ [11/11, 147]
+    legs="Beckoner's Spats +2",         -- __, 25, __ [11/11, 147]
     -- feet="Beckoner's Pigaches +2",   -- 70, __, __ [__/__, 158]
     neck="Incanter's Torque",           -- __, 10, __ [__/__, ___]
     -- ear1="Lodurr Earring",           -- __, 10, __ [__/__, ___]
@@ -734,7 +734,7 @@ function init_gear_sets()
     head="Beckoner's Horn +2",        -- 18 [ 9/ 9, 120]
     body="Beckoner's Doublet +2",     -- 19 [12/12, 120]
     -- hands="Baayami Cuffs +1",      -- 33 [__/__,  93]
-    -- legs="Beckoner's Spats +2",    -- 25 [11/11, 147]
+    legs="Beckoner's Spats +2",       -- 25 [11/11, 147]
     -- feet="Baayami Sabots +1",      -- 29 [__/__, 139]
     neck="Incanter's Torque",         -- 10 [__/__, ___]
     -- ear1="Lodurr Earring",         -- 10 [__/__, ___]
@@ -755,7 +755,7 @@ function init_gear_sets()
     head="Beckoner's Horn +2",        -- ___, 51, 18 [ 9/ 9, 120]
     body="Beckoner's Doublet +2",     -- ___, 54, 19 [12/12, 120]
     hands="Beckoner's Bracers +2",    -- ___, 52, __ [__/__,  83]
-    -- legs="Beckoner's Spats +2",    -- ___, 53, 25 [11/11, 147]
+    legs="Beckoner's Spats +2",       -- ___, 53, 25 [11/11, 147]
     -- feet="Beckoner's Pigaches +2", -- ___, 50, __ [__/__, 158]
     neck="Summoner's Collar +2",      -- ___, 25, __ [ 5/ 5, ___]
     ear1="Enmerkar Earring",          -- ___, 15, __ [__/__, ___]
