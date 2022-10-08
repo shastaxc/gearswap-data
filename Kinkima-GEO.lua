@@ -1122,7 +1122,7 @@ function init_gear_sets()
   }
 
   sets.Kiting = {
-    feet="Herald's Gaiters",
+    ring1="Shneddick Ring",
     -- feet="Geomancy Sandals +3",
   }
   sets.Kiting.Adoulin = {
