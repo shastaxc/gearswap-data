@@ -193,7 +193,7 @@ function init_gear_sets()
     ammo="Impatiens",                 -- __ [__/__, ___]  2, __
     head="Bunzi's Hat",               -- 10 [ 7/ 7, 123] __, __
     body="Shamash Robe",              -- __ [10/__, 106] __, __; Resist Silence+90
-    hands="Ebers Mitts +1",
+    hands="Ebers Mitts +2",           -- __ [10/10,  77] __,  4
     legs="Ebers Pantaloons +2",       -- 30 [12/12, 147] __, __; FC from Divine Benison
     feet=gear.Nyame_B_feet,           -- __ [ 7/ 7, 150] __, __
     neck="Loricate Torque +1",        -- __ [ 6/ 6, ___] __, __; +Defense
@@ -203,9 +203,8 @@ function init_gear_sets()
     back="Perimede Cape",             -- __ [__/__, ___]  4, __
     waist="Witful Belt",              --  3 [__/__, ___]  3, __
     -- Divine Benison Trait              50
-    -- 98 Fast Cast [69PDT/52MDT, 638 MEVA] 9 Quick Magic, 0 Divine Caress
+    -- 98 Fast Cast [72PDT/55MDT, 603 MEVA] 9 Quick Magic, 4 Divine Caress
     
-    -- hands="Ebers Mitts +2",        -- __ [10/10,  77] __,  4
     -- ring1="Lebeche Ring",          -- __ [__/__, ___]  2, __
     -- 98 Fast Cast [72PDT/55MDT, 603 MEVA] 11 Quick Magic, 4 Divine Caress
   }
@@ -638,7 +637,7 @@ function init_gear_sets()
     ammo="Staunch Tathlum +1",        -- __, __ [ 3/ 3, ___] __, __
     head="Ebers Cap +1",              -- __, __ [__/__,  75] __, __; Set bonus
     body="Ebers Bliaut +2",           -- __, __ [__/__, 120] __, 16; Set bonus
-    hands="Ebers Mitts +1",           -- __, __ [__/__,  37] __, __; Set bonus
+    hands="Ebers Mitts +2",           -- __, __ [10/10,  77] __, __; Set bonus
     legs="Piety Pantaloons +2",       -- 24, __ [__/__, 117] 33, __
     feet="Ebers Duckbills +2",        -- 30, __ [10/10, 147] __, __; Set bonus
     neck="Loricate Torque +1",        -- __, __ [ 6/ 6, ___] __, __
@@ -651,9 +650,9 @@ function init_gear_sets()
     -- Merits/JP                         16, __ [__/__, ___] 50, 10
     -- Base                             378
     -- Light Arts                        26
-    -- Master Levels                      0
+    -- Master Levels                      7
     -- Afflatus Solace                                       __,  5
-    -- 499 Enh Skill, 10% Enh Duration [59 PDT/33 MDT, 506 MEVA] 83 Barspell Resistance, 36 Barspell M.Def
+    -- 506 Enh Skill, 10% Enh Duration [69 PDT/43 MDT, 556 MEVA] 83 Barspell Resistance, 36 Barspell M.Def
 
     -- main="Beneficus",              -- 15, __ [__/__, ___] __,  5
     -- sub="Genmei Shield",           -- __, __ [10/__, ___] __, __
@@ -796,9 +795,8 @@ function init_gear_sets()
   sets.buff['Divine Caress'] = {
     main="Yagrush",
     sub="Genmei Shield",
-    hands="Ebers Mitts +1",
+    hands="Ebers Mitts +2",
     back="Mending Cape",
-    -- hands="Ebers Mitts +2",
   }
 
   -- Can remove from self with 100% success with this set
