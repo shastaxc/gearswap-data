@@ -438,7 +438,7 @@ function init_gear_sets()
     body="Beckoner's Doublet +2",       -- __, 19, __ [12/12, 120]
     -- hands="Baayami Cuffs +1",        -- __, 33, __ [__/__,  93]
     legs="Beckoner's Spats +2",         -- __, 25, __ [11/11, 147]
-    -- feet="Beckoner's Pigaches +2",   -- 70, __, __ [__/__, 158]
+    feet="Beckoner's Pigaches +2",      -- 70, __, __ [__/__, 158]
     neck="Incanter's Torque",           -- __, 10, __ [__/__, ___]
     -- ear1="Lodurr Earring",           -- __, 10, __ [__/__, ___]
     ear2="Beckoner's Earring +1",       -- __, __, __ [ 4/ 4, ___]
@@ -459,7 +459,7 @@ function init_gear_sets()
     body="Beckoner's Doublet +2",       -- __, 19, __ [12/12, 120]
     -- hands="Baayami Cuffs +1",        -- __, 33, __ [__/__,  93]
     legs="Beckoner's Spats +2",         -- __, 25, __ [11/11, 147]
-    -- feet="Beckoner's Pigaches +2",   -- 70, __, __ [__/__, 158]
+    feet="Beckoner's Pigaches +2",      -- 70, __, __ [__/__, 158]
     neck="Incanter's Torque",           -- __, 10, __ [__/__, ___]
     -- ear1="Lodurr Earring",           -- __, 10, __ [__/__, ___]
     ear2="Beckoner's Earring +1",       -- __, __, __ [ 4/ 4, ___]
@@ -756,7 +756,7 @@ function init_gear_sets()
     body="Beckoner's Doublet +2",     -- ___, 54, 19 [12/12, 120]
     hands="Beckoner's Bracers +2",    -- ___, 52, __ [__/__,  83]
     legs="Beckoner's Spats +2",       -- ___, 53, 25 [11/11, 147]
-    -- feet="Beckoner's Pigaches +2", -- ___, 50, __ [__/__, 158]
+    feet="Beckoner's Pigaches +2",    -- ___, 50, __ [__/__, 158]
     neck="Summoner's Collar +2",      -- ___, 25, __ [ 5/ 5, ___]
     ear1="Enmerkar Earring",          -- ___, 15, __ [__/__, ___]
     ear2="Beckoner's Earring +1",     --   1, 12, __ [ 4/ 4, ___]
@@ -880,12 +880,11 @@ function init_gear_sets()
   -- TODO: update set
   -- Spirits cast magic spells, which can be identified in standard ways.
   sets.midcast.Pet.WhiteMagic = {
-    -- legs="Summoner's Spats"
+    -- legs="Glyphic Spats +3" -- Shorten recast time for spirits
   }
 
-  -- TODO: update set
   sets.midcast.Pet['Elemental Magic'] = set_combine(sets.midcast.Pet.BloodPactRage, {
-    -- legs="Summoner's Spats",
+    -- legs="Glyphic Spats +3", -- Shorten recast time for spirits
   })
 
 
