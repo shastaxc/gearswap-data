@@ -667,99 +667,105 @@ gear.Vanya_D_feet = {}
 ----------------------------------------------------------------------
 -----------------------      Su4 Weapons      ------------------------
 ----------------------------------------------------------------------
-gear.Pedagogy_C = { name="Pedagogy Staff", augments={'Path: C',}}
+gear.Lanun_A = {name="Lanun Knife", augments={'Path: A',}}
+gear.Lanun_B = {name="Lanun Knife", augments={'Path: B',}}
+gear.Lanun_C = {name="Lanun Knife", augments={'Path: C',}}
+
+gear.Pedagogy_A = {name="Pedagogy Staff", augments={'Path: A',}}
+gear.Pedagogy_B = {name="Pedagogy Staff", augments={'Path: B',}}
+gear.Pedagogy_C = {name="Pedagogy Staff", augments={'Path: C',}}
 
 ----------------------------------------------------------------------
 -----------------------      Su5 Weapons      ------------------------
 ----------------------------------------------------------------------
 
-gear.Aram_A = {}
-gear.Aram_B = {}
-gear.Aram_C = {}
+gear.Aram_A = {name="Aram", augments={'Path: A',}}
+gear.Aram_B = {name="Aram", augments={'Path: B',}}
+gear.Aram_C = {name="Aram", augments={'Path: C',}}
 
-gear.Asclepius_A = {}
-gear.Asclepius_B = {}
-gear.Asclepius_C = {}
+gear.Asclepius_A = {name="Asclepius", augments={'Path: A',}}
+gear.Asclepius_B = {name="Asclepius", augments={'Path: B',}}
+gear.Asclepius_C = {name="Asclepius", augments={'Path: C',}}
 
-gear.Barfawc_A = {}
-gear.Barfawc_B = {}
-gear.Barfawc_C = {}
+gear.Barfawc_A = {name="Barfawc", augments={'Path: A',}}
+gear.Barfawc_B = {name="Barfawc", augments={'Path: B',}}
+gear.Barfawc_C = {name="Barfawc", augments={'Path: C',}}
 
-gear.Bhima_A = {}
-gear.Bhima_B = {}
-gear.Bhima_C = {}
+gear.Bhima_A = {name="Bhima", augments={'Path: A',}}
+gear.Bhima_B = {name="Bhima", augments={'Path: B',}}
+gear.Bhima_C = {name="Bhima", augments={'Path: C',}}
 
-gear.Crocea_Mors_A = {}
-gear.Crocea_Mors_B = {}
-gear.Crocea_Mors_C = {}
+gear.Crocea_Mors_A = {name="Crocea Mors", augments={'Path: A',}}
+gear.Crocea_Mors_B = {name="Crocea Mors", augments={'Path: B',}}
+gear.Crocea_Mors_C = {name="Crocea Mors", augments={'Path: C',}}
 
-gear.Draumstafir_A = {}
-gear.Draumstafir_B = {}
-gear.Draumstafir_C = {}
+gear.Draumstafir_A = {name="Draumstafir", augments={'Path: A',}}
+gear.Draumstafir_B = {name="Draumstafir", augments={'Path: B',}}
+gear.Draumstafir_C = {name="Draumstafir", augments={'Path: C',}}
 
-gear.Father_Time_A = {}
-gear.Father_Time_B = {}
-gear.Father_Time_C = {}
+gear.Father_Time_A = {name="Father Time", augments={'Path: A',}}
+gear.Father_Time_B = {name="Father Time", augments={'Path: B',}}
+gear.Father_Time_C = {name="Father Time", augments={'Path: C',}}
 
-gear.Fudo_Masamune_A = {}
-gear.Fudo_Masamune_B = {}
-gear.Fudo_Masamune_C = {}
+gear.Fudo_Masamune_A = {name="Fudo Masamune", augments={'Path: A',}}
+gear.Fudo_Masamune_B = {name="Fudo Masamune", augments={'Path: B',}}
+gear.Fudo_Masamune_C = {name="Fudo Masamune", augments={'Path: C',}}
 
-gear.Fusenaikyo_A = {}
-gear.Fusenaikyo_B = {}
-gear.Fusenaikyo_C = {}
+gear.Fusenaikyo_A = {name="Fusenaikyo", augments={'Path: A',}}
+gear.Fusenaikyo_B = {name="Fusenaikyo", augments={'Path: B',}}
+gear.Fusenaikyo_C = {name="Fusenaikyo", augments={'Path: C',}}
 
-gear.Gandring_A = {}
-gear.Gandring_B = {}
-gear.Gandring_C = {}
+gear.Gandring_A = {name="Gandring", augments={'Path: A',}}
+gear.Gandring_B = {name="Gandring", augments={'Path: B',}}
+gear.Gandring_C = {name="Gandring", augments={'Path: C',}}
 
-gear.Kaumodaki_A = {}
-gear.Kaumodaki_B = {}
-gear.Kaumodaki_C = {}
+gear.Kaumodaki_A = {name="Kaumodaki", augments={'Path: A',}}
+gear.Kaumodaki_B = {name="Kaumodaki", augments={'Path: B',}}
+gear.Kaumodaki_C = {name="Kaumodaki", augments={'Path: C',}}
 
-gear.Labraunda_A = {}
-gear.Labraunda_B = {}
-gear.Labraunda_C = {}
+gear.Labraunda_A = {name="Labraunda", augments={'Path: A',}}
+gear.Labraunda_B = {name="Labraunda", augments={'Path: B',}}
+gear.Labraunda_C = {name="Labraunda", augments={'Path: C',}}
 
-gear.Moralltach_A = {}
-gear.Moralltach_B = {}
-gear.Moralltach_C = {}
+gear.Moralltach_A = {name="Moralltach", augments={'Path: A',}}
+gear.Moralltach_B = {name="Moralltach", augments={'Path: B',}}
+gear.Moralltach_C = {name="Moralltach", augments={'Path: C',}}
 
-gear.Morgelai_A = {}
-gear.Morgelai_B = {}
-gear.Morgelai_C = {}
+gear.Morgelai_A = {name="Morgelai", augments={'Path: A',}}
+gear.Morgelai_B = {name="Morgelai", augments={'Path: B',}}
+gear.Morgelai_C = {name="Morgelai", augments={'Path: C',}}
 
-gear.Musa_A = {}
-gear.Musa_B = {}
-gear.Musa_C = {} --Regen potency +25, Cure potency +25%, Fast Cast +10%
+gear.Musa_A = {name="Musa", augments={'Path: A',}}
+gear.Musa_B = {name="Musa", augments={'Path: B',}}
+gear.Musa_C = {name="Musa", augments={'Path: C',}}
 
-gear.Pangu_A = {}
-gear.Pangu_B = {}
-gear.Pangu_C = {}
+gear.Pangu_A = {name="Pangu", augments={'Path: A',}}
+gear.Pangu_B = {name="Pangu", augments={'Path: B',}}
+gear.Pangu_C = {name="Pangu", augments={'Path: C',}}
 
-gear.Rostam_A = {}
-gear.Rostam_B = {}
-gear.Rostam_C = {}
+gear.Rostam_A = {name="Rostam", augments={'Path: A',}}
+gear.Rostam_B = {name="Rostam", augments={'Path: B',}}
+gear.Rostam_C = {name="Rostam", augments={'Path: C',}}
 
-gear.Sagitta_A = {}
-gear.Sagitta_B = {}
-gear.Sagitta_C = {}
+gear.Sagitta_A = {name="Sagitta", augments={'Path: A',}}
+gear.Sagitta_B = {name="Sagitta", augments={'Path: B',}}
+gear.Sagitta_C = {name="Sagitta", augments={'Path: C',}}
 
-gear.Setan_Kober_A = {}
-gear.Setan_Kober_B = {}
-gear.Setan_Kober_C = {}
+gear.Setan_Kober_A = {name="Setan Kober", augments={'Path: A',}}
+gear.Setan_Kober_B = {name="Setan Kober", augments={'Path: B',}}
+gear.Setan_Kober_C = {name="Setan Kober", augments={'Path: C',}}
 
-gear.Sharanga_A = {}
-gear.Sharanga_B = {}
-gear.Sharanga_C = {}
+gear.Sharanga_A = {name="Sharanga", augments={'Path: A',}}
+gear.Sharanga_B = {name="Sharanga", augments={'Path: B',}}
+gear.Sharanga_C = {name="Sharanga", augments={'Path: C',}}
 
-gear.Xiucoatl_A = {}
-gear.Xiucoatl_B = {}
-gear.Xiucoatl_C = {}
+gear.Xiucoatl_A = {name="Xiucoatl", augments={'Path: A',}}
+gear.Xiucoatl_B = {name="Xiucoatl", augments={'Path: B',}}
+gear.Xiucoatl_C = {name="Xiucoatl", augments={'Path: C',}}
 
-gear.Zomorrodnegar_A = {}
-gear.Zomorrodnegar_B = {}
-gear.Zomorrodnegar_C = {}
+gear.Zomorrodnegar_A = {name="Zomorrodnegar", augments={'Path: A',}}
+gear.Zomorrodnegar_B = {name="Zomorrodnegar", augments={'Path: B',}}
+gear.Zomorrodnegar_C = {name="Zomorrodnegar", augments={'Path: C',}}
 
 
 ----------------------------------------------------------------------

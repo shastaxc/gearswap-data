@@ -1970,19 +1970,19 @@ function init_gear_sets()
 
   sets.WeaponSet = {}
   sets.WeaponSet.DeathPenalty_M = {
-    main="Lanun Knife",
+    main=gear.Lanun_A,
     sub="Tauret",
     ranged="Death Penalty",
     -- main="Rostam",
   }
   sets.WeaponSet.DeathPenalty_R = {
-    main="Lanun Knife",
+    main=gear.Lanun_A,
     sub="Nusku Shield",
     ranged="Death Penalty",
     -- main="Rostam",
   }
   sets.WeaponSet.Armageddon_M = {
-    main="Lanun Knife",
+    main=gear.Lanun_A,
     sub="Tauret",
     -- main="Rostam",
     -- ranged="Armageddon",
@@ -1998,7 +1998,7 @@ function init_gear_sets()
     ranged="Fomalhaut",
   }
   sets.WeaponSet.Fomalhaut_R = {
-    main="Lanun Knife",
+    main=gear.Lanun_A,
     sub="Nusku Shield",
     ranged="Fomalhaut",
   }
@@ -2008,7 +2008,7 @@ function init_gear_sets()
     ranged="Anarchy +2",
   }
   sets.WeaponSet.Cleaving = {
-    main="Lanun Knife",
+    main=gear.Lanun_A,
     sub="Tauret",
     ranged="Anarchy +2",
   }
