@@ -38,8 +38,8 @@ gear.Enchufla_C = {name="Enchufla", augments={'DMG:+15','DEX+15','"Subtle Blow"+
 gear.Enchufla_D = {name="Enchufla", augments={'DMG:+17','Evasion+15','Mag. Evasion+15',}}
 
 gear.Espiritus_A = {name="Espiritus", augments={'Enmity-6','Pet: "Mag.Atk.Bns."+30','Pet: Damage taken -4%',}}
-gear.Espiritus_B = {name="Espiritus", augments={'Summoning magic skill +15','Pet: M.Acc.+30','Pet: Damage taken -4%',}}
-gear.Espiritus_C = {name="Espiritus", augments={'MP+50','Pet: "Mag.Atk.Bns."+20','Pet: M.Acc.+20',}}
+gear.Espiritus_B = {name="Espiritus", augments={'Summoning magic skill +15','Pet: Mag. Acc.+30','Pet: Damage taken -4%',}}
+gear.Espiritus_C = {name="Espiritus", augments={'MP+50','Pet: "Mag.Atk.Bns."+20','Pet: Mag. Acc.+20',}}
 gear.Espiritus_D = {name="Espiritus", augments={'Pet: STR+15','Pet: Attack+25','Pet: "Dbl. Atk."+4',}}
 
 gear.Hammerfists_A = {}
@@ -506,7 +506,7 @@ gear.Psycloth_D_legs = {name="Psycloth Lappas", augments={'MP+80','Mag. Acc.+15'
 gear.Psycloth_A_feet = {name="Psycloth Boots", augments={'MP+50','INT+7','"Conserve MP"+6',}}
 gear.Psycloth_B_feet = {name="Psycloth Boots", augments={'Mag. Acc.+10','Spell interruption rate down +15%','MND+7',}}
 gear.Psycloth_C_feet = {name="Psycloth Boots", augments={'Pet: Attack+25','Pet: "Mag.Atk.Bns."+15','Pet: Enmity+7',}}
-gear.Psycloth_D_feet = {name="Psycloth Boots", augments={'Pet: M.Acc.+20','Pet: "Mag.Atk.Bns."+20','Pet: Enmity+7',}}
+gear.Psycloth_D_feet = {name="Psycloth Boots", augments={'Pet: Mag. Acc.+20','Pet: "Mag.Atk.Bns."+20','Pet: Enmity+7',}}
 
 -- Pursuer's
 gear.Pursuer_A_head = {name="Pursuer's Beret", augments={'AGI+10','"Rapid Shot"+10','"Subtle Blow"+7',}}
