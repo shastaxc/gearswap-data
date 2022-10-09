@@ -21,7 +21,7 @@
 -- gear.Grioavolr_MP = {} -- 100 MP
 -- gear.Grioavolr_MB = {} --MB Dmg, MAB, M.Acc, INT
 -- gear.Grioavolr_FC = {} --7 FC
--- gear.Grioavolr_Magic_BP = {} -- BP dmg 8~10, Pet MAB 17~20
+gear.Grioavolr_Magic_BP = { name="Grioavolr", augments={'Blood Pact Dmg.+9','Pet: STR+9','Pet: Mag. Acc.+19','Pet: "Mag.Atk.Bns."+25',}}
 
 -- Holliday
 

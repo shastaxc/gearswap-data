@@ -824,7 +824,7 @@ function init_gear_sets()
   }
 
   sets.midcast.Pet.MagicalBloodPactRage = {
-    -- main=gear.Grioavolr_Magic_BP,    -- ___, 10 {135, 35, __, __ / __, __, __, __} [__/__, ___]
+    main=gear.Grioavolr_Magic_BP,       -- ___, 10 {135, 35, __, __ / __, __, __, __} [__/__, ___]
     sub="Elan Strap +1",                -- ___,  5 {___, __, __, __ / __, __, __, __} [__/__, ___]
     ammo="Sancus Sachet +1",            -- 119, 15 {___, 20, __, __ / __, 20, __, __} [__/__, ___]
     -- head="Cath Palug Crown",         -- ___, 10 { 38, 38, __, __ / __, 38, __, __} [__/__,  86]
