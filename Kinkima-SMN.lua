@@ -824,12 +824,12 @@ function init_gear_sets()
   }
 
   sets.midcast.Pet.MagicalBloodPactRage = {
-    main=gear.Grioavolr_Magic_BP,       -- ___, 10 {135, 35, __, __ / __, __, __, __} [__/__, ___]
+    main=gear.Grioavolr_Magic_BP,       -- ___,  9 {140, 54, __, __ / __, __, __, __} [__/__, ___]
     sub="Elan Strap +1",                -- ___,  5 {___, __, __, __ / __, __, __, __} [__/__, ___]
     ammo="Sancus Sachet +1",            -- 119, 15 {___, 20, __, __ / __, 20, __, __} [__/__, ___]
     -- head="Cath Palug Crown",         -- ___, 10 { 38, 38, __, __ / __, 38, __, __} [__/__,  86]
     -- body=gear.Apogee_A_body,         -- ___,  8 { 35, __, __, __ / __, __, __, __} [__/__,  91]
-    -- hands=gear.Merl_Mag_BP_hands,    -- ___, 15 { 40, __, __, __ / 20, __, __, __} [__/__,  48]
+    hands=gear.Merl_Mag_BP_hands,       -- ___, 15 { 39, 15,  9, __ / 20, __, __, __} [__/__,  48]
     -- legs=gear.Enticer_legs,          -- ___, 12 {___, 15, __, __ / __, 15, __, __} [__/__, 107]; Pet TP Bonus
     -- feet=gear.Apogee_A_feet,         -- ___, 10 { 35, __, __, __ / __, __, __, __} [__/__, 118]
     neck="Summoner's Collar +2",        -- ___, 10 {___, 25, 25, __ / __, 25, 25, __} [ 5/ 5, ___]
@@ -839,14 +839,14 @@ function init_gear_sets()
     ring2="Varar Ring +1",              -- ___,  4 {___, __, __, __ / __, 10, __, __} [__/__, ___]
     -- back=gear.SMN_Magic_BP_Cape,     --   1,  5 {___, 20, __, 25 / __, __, __, __} [__/__, ___]
     waist="Regal Belt",                 -- ___, __ { 10, __, __, __ / 20, __, __, __} [ 3/ 3, ___]
-    -- 121 Pet Lv, 122 BP Dmg {Pet: 293 MAB, 185 M.Acc, 35 INT, 25 M.Dmg / 40 Att, 150 Acc, 35 STR, 0 DA} [12 PDT/12 MDT, 460 M.Eva]
+    -- 121 Pet Lv, 121 BP Dmg {Pet: 297 MAB, 214 M.Acc, 44 INT, 25 M.Dmg / 40 Att, 150 Acc, 35 STR, 0 DA} [12 PDT/12 MDT, 460 M.Eva]
     
-    -- main=gear.Grioavolr_Magic_BP,    -- ___, 10 {135, 35, __, __ / __, __, __, __} [__/__, ___]
+    main=gear.Grioavolr_Magic_BP,       -- ___,  9 {140, 54, __, __ / __, __, __, __} [__/__, ___]
     -- sub="Elan Strap +1",             -- ___,  5 {___, __, __, __ / __, __, __, __} [__/__, ___]
     -- ammo="Epitaph",                  -- 119, 16 {___, 25, 10, __ / __, 25, 10, __} [__/__, ___]; R20+
     -- head="Cath Palug Crown",         -- ___, 10 { 38, 38, __, __ / __, 38, __, __} [__/__,  86]
     -- body=gear.Apogee_A_body,         -- ___,  8 { 35, __, __, __ / __, __, __, __} [__/__,  91]
-    -- hands=gear.Merl_Mag_BP_hands,    -- ___, 15 { 40, __, __, __ / 20, __, __, __} [__/__,  48]
+    -- hands=gear.Merl_Mag_BP_hands,    -- ___, 15 { 39, 15,  9, __ / 20, __, __, __} [__/__,  48]
     -- legs=gear.Enticer_legs,          -- ___, 12 {___, 15, __, __ / __, 15, __, __} [__/__, 107]; Pet TP Bonus
     -- feet=gear.Apogee_A_feet,         -- ___, 10 { 35, __, __, __ / __, __, __, __} [__/__, 118]
     -- neck="Summoner's Collar +2",     -- ___, 10 {___, 25, 25, __ / __, 25, 25, __} [ 5/ 5, ___]
@@ -856,7 +856,7 @@ function init_gear_sets()
     -- ring2="Varar Ring +1",           -- ___,  4 {___, __, __, __ / __, 10, __, __} [__/__, ___]
     -- back=gear.SMN_Magic_BP_Cape,     --   1,  5 {___, 20, __, 25 / __, __, __, __} [__/__, ___]
     -- waist="Regal Belt",              -- ___, __ { 10, __, __, __ / 20, __, __, __} [ 3/ 3, ___]
-    -- 121 Pet Lv, 124 BP Dmg {Pet: 293 MAB, 188 M.Acc, 25 INT, 25 M.Dmg / 40 Att, 153 Acc, 25 STR, 0 DA} [14 PDT/14 MDT, 460 M.Eva]
+    -- 121 Pet Lv, 123 BP Dmg {Pet: 287 MAB, 227 M.Acc, 34 INT, 25 M.Dmg / 40 Att, 153 Acc, 25 STR, 0 DA} [14 PDT/14 MDT, 460 M.Eva]
   }
 
   sets.midcast.Pet.HybridBloodPactRage = set_combine(sets.midcast.Pet.MagicalBloodPactRage, {
@@ -865,8 +865,8 @@ function init_gear_sets()
     -- ammo="Epitaph",                  -- 119, 16 {___, 25, 10, __ / __, 25, 10, __} [__/__, ___]; R20+
     -- head="Cath Palug Crown",         -- ___, 10 { 38, 38, __, __ / __, 38, __, __} [__/__,  86]
     -- body=gear.Apogee_A_body,         -- ___,  8 { 35, __, __, __ / __, __, __, __} [__/__,  91]
-    -- hands=gear.Merl_Mag_BP_hands,    -- ___, 15 { 40, __, __, __ / 20, __, __, __} [__/__,  48]
-    -- hands=gear.Merl_Mag_BP_hands,    -- ___, 15 { 40, __, __, __ / 20, __, __, __} [__/__,  48]
+    -- hands=gear.Merl_Mag_BP_hands,    -- ___, 15 { 39, 15,  9, __ / 20, __, __, __} [__/__,  48]
+    -- legs=??? TODO
     -- feet=gear.Apogee_A_feet,         -- ___, 10 { 35, __, __, __ / __, __, __, __} [__/__, 118]
     -- neck="Summoner's Collar +2",     -- ___, 10 {___, 25, 25, __ / __, 25, 25, __} [ 5/ 5, ___]
     -- ear1="Lugalbanda Earring",       -- ___, 10 {___, 15, __, __ / __, 15, __, __} [__/__,  10]
