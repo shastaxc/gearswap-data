@@ -439,7 +439,7 @@ function init_gear_sets()
     -- ammo="Esper stone +1",           -- 20, __, __ [__/__, ___]
     head="Beckoner's Horn +2",          -- __, 18, __ [ 9/ 9, 120]
     body="Beckoner's Doublet +2",       -- __, 19, __ [12/12, 120]
-    -- hands="Baayami Cuffs +1",        -- __, 33, __ [__/__,  93]
+    hands="Baayami Cuffs +1",           -- __, 33, __ [__/__,  93]
     legs="Beckoner's Spats +2",         -- __, 25, __ [11/11, 147]
     feet="Beckoner's Pigaches +2",      -- 70, __, __ [__/__, 158]
     neck="Incanter's Torque",           -- __, 10, __ [__/__, ___]
@@ -468,7 +468,7 @@ function init_gear_sets()
     -- ammo="Esper stone +1",           -- 20, __, __ [__/__, ___]
     head="Beckoner's Horn +2",          -- __, 18, __ [ 9/ 9, 120]
     body="Beckoner's Doublet +2",       -- __, 19, __ [12/12, 120]
-    -- hands="Baayami Cuffs +1",        -- __, 33, __ [__/__,  93]
+    hands="Baayami Cuffs +1",           -- __, 33, __ [__/__,  93]
     legs="Beckoner's Spats +2",         -- __, 25, __ [11/11, 147]
     feet="Beckoner's Pigaches +2",      -- 70, __, __ [__/__, 158]
     neck="Incanter's Torque",           -- __, 10, __ [__/__, ___]
@@ -503,9 +503,9 @@ function init_gear_sets()
     ammo="Sancus Sachet +1",        -- __, __,  7, __ [__/__, ___]
     head="Beckoner's Horn +2",      -- 18, __, __, __ [ 9/ 9, 120]; Keep on for Favor bonus
     -- body="Baayami Robe",         -- 32, __, __, __ [__/__, 112]
-    -- hands="Baayami Cuffs +1",    -- 33,  7, __, __ [__/__,  93]; maybe swap for Glyphic Bracers +3
-    -- legs="Baayami Slops +1",     -- 35,  8, __, __ [__/__, 139]
-    -- feet="Baayami Sabots +1",    -- 29, __, __, __ [__/__, 139]
+    hands="Baayami Cuffs +1",       -- 33,  7, __, __ [__/__,  93]; maybe swap for Glyphic Bracers +3
+    legs="Baayami Slops +1",        -- 35,  8, __, __ [__/__, 139]
+    feet="Baayami Sabots +1",       -- 29, __, __, __ [__/__, 139]
     neck="Incanter's Torque",       -- 10, __, __, __ [__/__, ___]
     -- ear1="Lodurr Earring",       -- 10, __, __, __ [__/__, ___]
     -- ear2="Cath Palug Earring",   --  5, __, __, __ [__/__, ___]
@@ -544,19 +544,19 @@ function init_gear_sets()
   sets.precast.BloodPactWard.NirvAM = {
     -- main="Nirvana",              -- __, __, __, __ [__/__, ___]
     -- sub="Elan Strap +1",         -- __, __, __, __ [__/__, ___]
-    -- ammo="Epitaph",              -- __, __,  5, __ [__/__, ___]
+    ammo="Epitaph",                 -- __, __,  5, __ [__/__, ___]
     -- head="Beckoner's Horn +3",   -- 23, __, __, __ [10/10, 130]; Keep on for Favor bonus
     -- body="Baayami Robe",         -- 32, __, __, __ [__/__, 112]
-    -- hands="Baayami Cuffs +1",    -- 33,  7, __, __ [__/__,  93]; maybe swap for Glyphic Bracers +3
-    -- legs="Baayami Slops +1",     -- 35,  8, __, __ [__/__, 139]
-    -- feet="Baayami Sabots +1",    -- 29, __, __, __ [__/__, 139]
-    -- neck="Incanter's Torque",    -- 10, __, __, __ [__/__, ___]
+    hands="Baayami Cuffs +1",       -- 33,  7, __, __ [__/__,  93]; maybe swap for Glyphic Bracers +3
+    legs="Baayami Slops +1",        -- 35,  8, __, __ [__/__, 139]
+    feet="Baayami Sabots +1",       -- 29, __, __, __ [__/__, 139]
+    neck="Incanter's Torque",       -- 10, __, __, __ [__/__, ___]
     -- ear1="Lodurr Earring",       -- 10, __, __, __ [__/__, ___]
     -- ear2="Cath Palug Earring",   --  5, __, __, __ [__/__, ___]
     -- ring1="Evoker's Ring",       -- 10, __, __, __ [__/__, ___]
-    -- ring2="Stikini Ring +1",     --  8, __, __, __ [__/__, ___]
+    ring2="Stikini Ring +1",        --  8, __, __, __ [__/__, ___]
     -- back=gear.SMN_Pre_BP_Cape,   --  8, __,  5, __ [__/__, ___]
-    -- waist="Regal Belt",          -- __, __, __, __ [ 3/ 3, ___]
+    waist="Regal Belt",             -- __, __, __, __ [ 3/ 3, ___]
     -- Traits/Merits/Gifts            469, __, __, 10
     -- 672 Summon Skill, 15 -BP Delay, 10 -BP Delay II, 10 -BP Delay III [13 PDT/13 MDT, 613 M.Eva]
     
@@ -730,9 +730,9 @@ function init_gear_sets()
     ammo="Staunch Tathlum +1",        -- __ [ 3/ 3, ___]
     head="Beckoner's Horn +2",        -- 18 [ 9/ 9, 120]
     body="Beckoner's Doublet +2",     -- 19 [12/12, 120]
-    -- hands="Baayami Cuffs +1",      -- 33 [__/__,  93]
+    hands="Baayami Cuffs +1",         -- 33 [__/__,  93]
     legs="Beckoner's Spats +2",       -- 25 [11/11, 147]
-    -- feet="Baayami Sabots +1",      -- 29 [__/__, 139]
+    feet="Baayami Sabots +1",         -- 29 [__/__, 139]
     neck="Incanter's Torque",         -- 10 [__/__, ___]
     -- ear1="Lodurr Earring",         -- 10 [__/__, ___]
     -- ear2="Cath Palug Earring",     --  5 [__/__, ___]
@@ -909,7 +909,7 @@ function init_gear_sets()
     -- body=gear.Apogee_A_body,     -- -160 [__/__,  91] ( 4, __) {___, __, __/__}
     -- hands="Asteria Mitts +1",    --   18 [__/__,  43] ( 2, __) {___, __, __/__}
     legs="Assiduity Pants +1",      --   43 [__/__, 107] ( 2,  3) {___, __, __/__}
-    -- feet="Baayami Sabots +1",    --   30 [__/__, 139] ( 3, __) {___, __, __/__}
+    feet="Baayami Sabots +1",       --   30 [__/__, 139] ( 3, __) {___, __, __/__}
     neck="Loricate Torque +1",      -- ____ [ 6/ 6, ___] (__, __) {___, __, __/__}; DEF+60
     ear1="Etiolation Earring",      --   50 [__/ 3, ___] (__, __) {___, __, __/__}; Resist Silence+15
     ear2="Beckoner's Earring +1",   -- ____ [ 4/ 4, ___] ( 2, __) {  1, __, __/__}
@@ -958,7 +958,7 @@ function init_gear_sets()
     body="Beckoner's Doublet +2",   --   74 [12/12, 120] (__,  7) {___, __, __/__}
     -- hands="Asteria Mitts +1",    --   18 [__/__,  43] ( 2, __) {___, __, __/__}
     legs="Assiduity Pants +1",      --   43 [__/__, 107] ( 2,  3) {___, __, __/__}
-    -- feet="Baayami Sabots +1",    --   30 [__/__, 139] ( 3, __) {___, __, __/__}
+    feet="Baayami Sabots +1",       --   30 [__/__, 139] ( 3, __) {___, __, __/__}
     neck="Caller's Pendant",        -- ____ [__/__, ___] (__, __) {___, 25, __/__}
     ear1="Enmerkar Earring",        -- ____ [__/__, ___] (__, __) {___, __,  3/ 3}
     ear2="Beckoner's Earring +1",   -- ____ [ 4/ 4, ___] ( 2, __) {  1, __, __/__}
@@ -997,7 +997,7 @@ function init_gear_sets()
     -- body=gear.Apogee_A_body,     -- -160 [__/__,  91] ( 4, __) {___, __, __/__}
     -- hands="Asteria Mitts +1",    --   18 [__/__,  43] ( 2, __) {___, __, __/__}
     legs="Assiduity Pants +1",      --   43 [__/__, 107] ( 2,  3) {___, __, __/__}
-    -- feet="Baayami Sabots +1",    --   30 [__/__, 139] ( 3, __) {___, __, __/__}
+    feet="Baayami Sabots +1",       --   30 [__/__, 139] ( 3, __) {___, __, __/__}
     neck="Loricate Torque +1",      -- ____ [ 6/ 6, ___] (__, __) {___, __, __/__}; DEF+60
     -- ear1="Cath Palug Earring",   -- ____ [__/__, ___] ( 1, __) {___, __, __/__}
     ear2="Beckoner's Earring +1",   -- ____ [ 4/ 4, ___] ( 2, __) {  1, __, __/__}
@@ -1016,22 +1016,6 @@ function init_gear_sets()
 
   -- TODO: update set
   -- sets.idle.Avatar.Melee = {hands="Regimen Mittens",back="Samanisi Cape",waist="Kuku Stone",legs="Convoker's Spats"}
-
-  -- TODO: update set
-  -- sets.idle.Town = {
-  --   head="Beckoner's Horn +2",
-  --   body={ name="Apogee Dalmatica", augments={'Pet: Attack+20','Pet: "Mag.Atk.Bns."+20','Blood Pact Dmg.+7',}},
-  --   hands={ name="Glyphic Bracers +1", augments={'Inc. Sp. "Blood Pact" magic burst dmg.',}},
-  --   legs="Assid. Pants +1",
-  --   feet="Baayami Sabots",
-  --   neck="Caller's Pendant",
-  --   ear1="Enmerkar Earring",
-  --   ear2="Evans Earring",
-  --   ring1="Stikini Ring +1",
-  --   ring2="Evoker's Ring",
-  --   back=gear.SMN_Phys_BP_Cape,
-  --   waist="Fucho-no-Obi",
-  -- }
 
 
   ------------------------------------------------------------------------------------------------
