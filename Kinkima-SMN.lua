@@ -151,6 +151,8 @@ function job_setup()
   send_command('bind ^numpad* gs c pact bp75')
   send_command('bind ^numpad- gs c pact astralflow')
   
+  send_command('bind numpad0 input /ja "Shock Strike" <t>')
+  
 end
 
 -- Executes on first load, main job change, **and sub job change**
