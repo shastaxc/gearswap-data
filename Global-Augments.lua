@@ -267,7 +267,7 @@ gear.Apogee_D_hands = {name="Apogee Mitts +1", augments={'Pet: Mag. Acc.+25','"B
 gear.Apogee_A_legs = {name="Apogee Slacks +1", augments={'MP+80','Pet: "Mag.Atk.Bns."+35','Blood Pact Dmg.+8',}}
 gear.Apogee_B_legs = {name="Apogee Slacks +1", augments={'MP+80','Pet: Attack+35','Blood Pact Dmg.+8',}}
 gear.Apogee_C_legs = {name="Apogee Slacks +1", augments={'Pet: Attack+25','Pet: "Mag.Atk.Bns."+25','Blood Pact Dmg.+8',}}
-gear.Apogee_D_legs = {name="Apogee Slacks +1", augments={'Pet: STR+20','Pet: "Dbl. Atk."+4','Blood Pact Dmg.+14',}}
+gear.Apogee_D_legs = {name="Apogee Slacks +1", augments={'Pet: STR+20','Blood Pact Dmg.+14','Pet: "Dbl. Atk."+4',}}
 
 gear.Apogee_A_feet = {name="Apogee Pumps +1", augments={'MP+80','Pet: "Mag.Atk.Bns."+35','Blood Pact Dmg.+8',}}
 gear.Apogee_B_feet = {name="Apogee Pumps +1", augments={'MP+80','Pet: Attack+35','Blood Pact Dmg.+8',}}
