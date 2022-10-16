@@ -154,7 +154,7 @@ function init_gear_sets()
     ring1="Defending Ring",         -- __ [10/10, ___] {__, __}
     ring2="Kishar Ring",            --  4 [__/__, ___] {__, __}
     waist="Embla Sash",             --  5 [__/__, ___] {__, __}
-    -- 44 FC
+    -- 59 FC [18 PDT / 16 MDT, 295 M.Eva] {5 Pet DT, 0 Pet Regen}
 
     -- Ideal:
     -- Assume Idris                 -- __ [__/__, ___] {25, __}
