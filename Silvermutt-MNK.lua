@@ -432,6 +432,7 @@ function init_gear_sets()
     ring2="Sroda Ring",
     back=gear.MNK_STR_DA_Cape, -- WSD cape would be better
     waist="Fotia Belt",
+    -- body="Bhikku Cyclas +3",
   })
   sets.precast.WS["Asuran Fists"].MaxTP = set_combine(sets.precast.WS["Asuran Fists"], {
   })
