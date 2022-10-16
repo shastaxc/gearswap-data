@@ -258,7 +258,8 @@ function init_gear_sets()
   })
   sets.precast.WS.AttCapped = set_combine(sets.precast.WS, {
     head="Gleti's Mask",          -- 33, 19, 65, 50, __,  6, ___
-    ear1="Peltast's Earring",     -- __, __, __,  6, __,  7, ___
+    ear1="Moonshade Earring",     -- __, __, __,  4, __, __, 250
+    ear2="Peltast's Earring",     -- __, __, __,  6, __,  7, ___
     -- 230 STR, 143 MND, 393 Attack, 275 Accuracy, 52 WSD, 35 PDL, 250 TP Bonus
   })
   sets.precast.WS.AttCappedMaxTP = set_combine(sets.precast.WS.AttCapped, {
@@ -386,10 +387,11 @@ function init_gear_sets()
     legs="Gleti's Breeches",
     feet="Gleti's Boots",
     ring1="Epaminondas's Ring",
-    ear1="Peltast's Earring",
+    ear1="Moonshade Earring",
+    ear2="Peltast's Earring",
   })
   sets.precast.WS["Impulse Drive"].AttCappedMaxTP = set_combine(sets.precast.WS["Impulse Drive"].AttCapped, {
-    ear2="Ishvara Earring",
+    ear1="Ishvara Earring",
   })
 
   sets.precast.WS["Geirskogul"] = {
