@@ -216,10 +216,12 @@ function init_gear_sets()
   }
 	sets.precast.JA['Retaliation'] = {
     feet="Boii Calligae +2",
+    -- feet="Boii Calligae +3",
   }
 	sets.precast.JA['Restraint'] = {}
 	sets.precast.JA['Blood Rage'] = {
     body="Boii Lorica +2",
+    -- body="Boii Lorica +3",
   }
 	sets.precast.JA['Brazen Rush'] = {}
   sets.precast.JA['Provoke'] = sets.Enmity
@@ -503,6 +505,7 @@ function init_gear_sets()
     back=gear.WAR_STR_DA_Cape,
     waist="Sailfi Belt +1",
     -- head="Blistering Sallet +1",
+    -- feet="Boii Calligae +3",
     -- neck="Warrior's Bead Necklace +2",
     -- ear2="Lugra Earring +1",
   })
@@ -785,13 +788,14 @@ function init_gear_sets()
     -- WAR Traits                            [__/__, ___] __ <__, __, 33> __, __
     -- [52 PDT/42 MDT, 514 MEVA] 38 STP <0 QA, 0 TA, 96 DA> 0 Crit Rate, 23 Haste; DA dmg+31%
 
+    -- body="Boii Lorica +3",             -- [14/14, 109] 11 <__, __, __> __,  3
     -- feet="Pummeler's Calligae +3",     -- [__/__, 100]  4 <__, __,  9> __,  4
     -- ring2="Moonlight Ring",            -- [ 5/ 5, ___]  5 <__, __, __> __, __
-    -- [51 PDT/41 MDT, 464 MEVA] 41 STP <0 QA, 0 TA, 101 DA> 0 Crit Rate, 25 Haste; DA dmg+31%
+    -- [52 PDT/42 MDT, 474 MEVA] 42 STP <0 QA, 0 TA, 101 DA> 0 Crit Rate, 25 Haste; DA dmg+31%
 
     -- ammo="Coiste Bodhar",              -- [__/__, ___]  3 <__, __,  3> __, __
     -- head="Hjarrandi Helm",             -- [10/10,  53]  7 <__, __,  6> __, __
-    -- body="Boii Lorica +2",             -- [13/13,  99] 10 <__, __, __> __,  3
+    -- body="Boii Lorica +3",             -- [14/14, 109] 11 <__, __, __> __,  3
     -- hands="Sakpata's Gauntlets",       -- [ 8/ 8, 112]  7 <__, __,  6> __,  4
     -- legs=gear.Odyssean_STP_legs,       -- [__/__,  86] 13 <__, __,  2> __,  5
     -- feet="Pummeler's Calligae +3",     -- [__/__, 100]  4 <__, __,  9> __,  4
@@ -803,7 +807,7 @@ function init_gear_sets()
     -- back=gear.WAR_STR_DA_Cape,         -- [10/__, ___] __ <__, __, 10> __, __; DA dmg+20%
     -- waist="Ioskeha Belt +1",           -- [__/__, ___] __ <__, __,  9> __,  8
     -- WAR Traits                            [__/__, ___] __ <__, __, 33> __, __
-    -- [51 PDT/41 MDT, 450 MEVA] 54 STP <0 QA, 0 TA, 100 DA> 0 Crit Rate, 24 Haste; DA dmg+31%
+    -- [52 PDT/42 MDT, 460 MEVA] 55 STP <0 QA, 0 TA, 100 DA> 0 Crit Rate, 24 Haste; DA dmg+31%
   }
   sets.engaged.TwoHanded.LowAcc = set_combine(sets.engaged.TwoHanded, {})
   sets.engaged.TwoHanded.MidAcc = set_combine(sets.engaged.TwoHanded.LowAcc, {})
@@ -827,11 +831,11 @@ function init_gear_sets()
     -- WAR Traits                            [__/__, ___] __ <__, __, 33> __, __
     -- [41 PDT/31 MDT, 624 MEVA] 22 STP <0 QA, 0 TA, 103 DA> 0 Crit Rate, 26 Haste; DA dmg+44%
 
-    -- body="Boii Lorica +2",             -- [13/13,  99] 10 <__, __, __> __,  3
+    -- body="Boii Lorica +2",             -- [14/14, 109] 11 <__, __, __> __,  3
     -- feet="Pummeler's Calligae +3",     -- [__/__, 100]  4 <__, __,  9> __,  4
     -- neck="Warrior's Bead Necklace +2", -- [__/__, ___] __ <__, __,  7> __, __
     -- ear2="Boii Earring +2",            -- [__/__, ___] __ <__, __,  9> __, __
-    -- [38 PDT/28 MDT, 534 MEVA] 36 STP <0 QA, 0 TA, 103 DA> 0 Crit Rate, 29 Haste; DA dmg+44%
+    -- [39 PDT/29 MDT, 544 MEVA] 37 STP <0 QA, 0 TA, 103 DA> 0 Crit Rate, 29 Haste; DA dmg+44%
   }
   sets.engaged.UkonvasaraAM.LowAcc = set_combine(sets.engaged.UkonvasaraAM, {})
   sets.engaged.UkonvasaraAM.MidAcc = set_combine(sets.engaged.UkonvasaraAM.LowAcc, {})
@@ -863,11 +867,12 @@ function init_gear_sets()
     -- WAR Traits                            [__/__, ___] __ <__, __, 33> __, __
     -- [53 PDT/43 MDT, 534 MEVA] 51 STP <0 QA, 3 TA, 77 DA> 13 Crit Rate, 23 Haste; DA dmg+33%
 
-    -- body="Boii Lorica +2",             -- [13/13,  99] 10 <__, __, __> __,  3
+    -- body="Boii Lorica +3",             -- [14/14, 109] 11 <__, __, __> __,  3
     -- legs=gear.Odyssean_STP_legs,       -- [__/__,  86] 13 <__, __,  2> __,  5
     -- neck="Ainia Collar",               -- [__/__, ___]  8 <__, __, __> __, __
+    -- ring1="Epona's Ring",              -- [__/__, ___] __ <__,  3,  3> __, __
     -- back=gear.WAR_STP_Cape,            -- [10/__, ___] 10 <__, __, __> __, __; DA dmg+20%
-    -- [54 PDT/44 MDT, 570 MEVA] 74 STP <0 QA, 0 TA, 63 DA> 0 Crit Rate, 26 Haste; DA dmg+33%
+    -- [50 PDT/40 MDT, 580 MEVA] 70 STP <0 QA, 3 TA, 66 DA> 0 Crit Rate, 26 Haste; DA dmg+33%
   }
   sets.engaged.LowAcc.LightDef = sets.engaged.LightDef
   sets.engaged.MidAcc.LightDef = sets.engaged.LightDef
@@ -890,6 +895,11 @@ function init_gear_sets()
     waist="Ioskeha Belt +1",              -- [__/__, ___] __ <__, __,  9> __,  8
     -- WAR Traits                            [__/__, ___] __ <__, __, 33> __, __
     -- [52 PDT/42 MDT, 514 MEVA] 38 STP <0 QA, 0 TA, 96 DA> 0 Crit Rate, 23 Haste; DA dmg+31%
+    
+    -- body="Boii Lorica +3",             -- [14/14, 109] 11 <__, __, __> __,  3
+    -- feet="Pummeler's Calligae +3",     -- [__/__, 100]  4 <__, __,  9> __,  4
+    -- ring2="Moonlight Ring",            -- [ 5/ 5, ___]  5 <__, __, __> __, __
+    -- [52 PDT/42 MDT, 474 MEVA] 42 STP <0 QA, 0 TA, 101 DA> 0 Crit Rate, 25 Haste; DA dmg+31%
 
     -- ammo="Coiste Bodhar",              -- [__/__, ___]  3 <__, __,  3> __, __
     -- head="Sakpata's Helm",             -- [ 7/ 7, 123] __ <__, __,  5> __,  4; DA dmg+13%
@@ -905,7 +915,7 @@ function init_gear_sets()
     -- back=gear.WAR_STR_DA_Cape,         -- [10/__, ___] __ <__, __, 10> __, __; DA dmg+20%
     -- waist="Ioskeha Belt +1",           -- [__/__, ___] __ <__, __,  9> __,  8
     -- WAR Traits                            [__/__, ___] __ <__, __, 33> __, __
-    -- [51 PDT/41 MDT, 610 MEVA] 33 STP <0 QA, 0 TA, 102 DA> 0 Crit Rate, 25 Haste; DA dmg+31%
+    -- [51 PDT/41 MDT, 610 MEVA] 33 STP <0 QA, 0 TA, 102 DA> 0 Crit Rate, 25 Haste; DA dmg+33%
   }
 	sets.engaged.TwoHanded.LowAcc.LightDef = set_combine(sets.engaged.TwoHanded.LightDef, {
   })
@@ -935,6 +945,22 @@ function init_gear_sets()
     -- neck="Warrior's Bead Necklace +2", -- [__/__, ___] __ <__, __,  7> __, __
     -- ear2="Boii Earring +2",            -- [__/__, ___] __ <__, __,  9>  8, __
     -- [51 PDT/41 MDT, 624 MEVA] 17 STP <0 QA, 0 TA, 103 DA> 10 Crit Rate, 26 Haste; DA dmg+44%
+    
+    -- ammo="Yetshila +1",                -- [__/__, ___] __ <__, __, __>  2, __
+    -- head="Sakpata's Helm",             -- [ 7/ 7, 123] __ <__, __,  5> __,  4; DA dmg+13%
+    -- body="Sakpata's Breastplate",      -- [10/10, 139] __ <__, __,  8> __,  2
+    -- hands="Sakpata's Gauntlets",       -- [ 8/ 8, 112]  7 <__, __,  6> __,  4
+    -- legs=gear.Odyssean_STP_legs,       -- [__/__,  86] 13 <__, __,  2> __,  5
+    -- feet="Sakpata's Leggings",         -- [ 6/ 6, 150] __ <__, __,  4> __,  2
+    -- neck="Warrior's Bead Necklace +2", -- [__/__, ___] __ <__, __,  7> __, __
+    -- ear1="Schere Earring",             -- [__/__, ___] __ <__, __,  6> __, __
+    -- ear2="Boii Earring +2",            -- [__/__, ___] __ <__, __,  9>  8, __
+    -- ring1="Moonlight Ring",            -- [ 5/ 5, ___]  5 <__, __, __> __, __
+    -- ring2="Moonlight Ring",            -- [ 5/ 5, ___]  5 <__, __, __> __, __
+    -- back=gear.WAR_STR_DA_Cape,         -- [10/__, ___] __ <__, __, 10> __, __; DA dmg+20%
+    -- waist="Ioskeha Belt +1",           -- [__/__, ___] __ <__, __,  9> __,  8
+    -- WAR Traits                            [__/__, ___] __ <__, __, 33> __, __
+    -- [51 PDT/41 MDT, 610 MEVA] 30 STP <0 QA, 0 TA, 99 DA> 10 Crit Rate, 25 Haste; DA dmg+33%
   }
 	sets.engaged.UkonvasaraAM.LowAcc.LightDef = set_combine(sets.engaged.UkonvasaraAM.LightDef, {
   })
@@ -1032,11 +1058,11 @@ function init_gear_sets()
     main="Shining One",
     sub="Utu Grip",
   }
-	sets.WeaponSet['Farsha'] = {
+	sets.WeaponSet['Mag Axe'] = {
     -- main="Farsha",
     sub="Blurred Shield +1",
   }
-	sets.WeaponSet['DW Axe'] = {
+	sets.WeaponSet['Phys Axe'] = {
     -- main="Dolichenus",
     sub="Blurred Shield +1",
   }
@@ -1046,7 +1072,7 @@ function init_gear_sets()
   }
 	sets.WeaponSet['DW Dagger'] = {
     main="Malevolence",
-    sub="Levante Dagger",
+    sub="Malevolence",
   }
 	sets.WeaponSet['Great Sword'] = {
     -- main="Montante +1",
