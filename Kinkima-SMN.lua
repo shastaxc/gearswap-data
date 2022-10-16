@@ -135,6 +135,8 @@ function job_setup()
   wards.flag = false
   wards.spell = ''
 
+  latestAvatar = pet.name or nil
+
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c usekey')
   send_command('bind @c gs c toggle CP')
@@ -1200,6 +1202,9 @@ end
 -- pet == pet structure
 -- gain == true if the pet was gained, false if it was lost.
 function job_pet_change(petparam, gain)
+  if gain and avatars:contains(petparam.name) then
+    latestAvatar = petparam.name
+  end
   job_update()
 end
 
@@ -1537,16 +1542,23 @@ function handle_pacts(cmdParams)
     return
   end
 
-  if pacts[pact][pet.name] then
-    if pact == 'astralflow' and not buffactive['astral flow'] then
-      add_to_chat(122,'Cannot use Astral Flow pacts at this time.')
-      return
-    end
+  if pet.name then
+    if pacts[pact][pet.name] then
+      if pact == 'astralflow' and not buffactive['astral flow'] then
+        add_to_chat(122,'Cannot use Astral Flow pacts at this time.')
+        return
+      end
 
-    -- Leave out target; let Shortcuts auto-determine it.
-    send_command('@input /pet "'..pacts[pact][pet.name]..'"')
+      -- Leave out target; let Shortcuts auto-determine it.
+      send_command('@input /pet "'..pacts[pact][pet.name]..'"')
+    else
+      add_to_chat(122,pet.name..' does not have a pact of type ['..pact..'].')
+    end
+  elseif latestAvatar then
+    -- Pet is currently dead, so summon a new one
+    send_command('@input /ma "'..latestAvatar..'" <me>')
   else
-    add_to_chat(122,pet.name..' does not have a pact of type ['..pact..'].')
+    add_to_chat(122,'No current pet, and cannot determine latest avatar.')
   end
 end
 
