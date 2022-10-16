@@ -678,7 +678,7 @@ function init_gear_sets()
     -- 551 Enh Skill, 10% Enh Duration [52 PDT/44 MDT, 586 MEVA] 86 Barspell Resistance, 36 Barspell M.Def
   }
 
-  -- TODO
+  -- TODO: update
   sets.midcast.Regen = set_combine(sets.midcast['Enhancing Magic'],{
     main="Bolelabunga",
     legs=gear.Telchine_RGN_legs,
