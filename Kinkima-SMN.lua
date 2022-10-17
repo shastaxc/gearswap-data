@@ -149,8 +149,8 @@ function job_setup()
 
   send_command('bind !` gs c pact buffSpecial')
   send_command('bind ^numlock gs c pact bp99')
-  send_command('bind ^numpad/ gs c pact bp70')
-  send_command('bind ^numpad* gs c pact bp75')
+  send_command('bind ^numpad/ gs c pact bp75')
+  send_command('bind ^numpad* gs c pact bp70')
   send_command('bind ^numpad- gs c pact astralflow')
   
   send_command('bind numpad0 input /ja "Shock Strike" <t>')
@@ -1067,6 +1067,14 @@ end
 -- Job-specific hooks for standard casting events.
 -------------------------------------------------------------------------------------------------------------------
 
+function job_pretarget(spell, action, spellMap, eventArgs)
+  -- If targeting self for rage blood pact, change its target to <bt> (battle target)
+  if spell.type == 'BloodPactRage' and (spell.target.type == 'SELF' or spell.target.type == nil) then
+    eventArgs.cancel = true -- Prevent sending command to game that was targeting self
+    send_command('input /ja "'..spell.english..'" <bt>') -- Re-issue command to target <bt>
+  end
+end
+
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
 function job_precast(spell, action, spellMap, eventArgs)
@@ -1394,6 +1402,8 @@ function job_self_command(cmdParams, eventArgs)
     eventArgs.handled = true
   elseif cmdParams[1] == 'storm' then
     send_command('@input /ma "'..state.Storm.current..'" <stpc>')
+  elseif cmdParams[1] == 'test' then
+    test()
   end
 
   gearinfo(cmdParams, eventArgs)
@@ -1718,4 +1728,8 @@ end)
 function select_default_macro_book(reset)
   -- Default macro set/book
   set_macro_page(2, 6)
+end
+
+function test()
+  print('pet'..inspect(pet,{depth=1}))
 end
