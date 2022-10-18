@@ -75,6 +75,10 @@ gear.Merl_MB_feet = { name="Merlinic Crackows", augments={'Magic burst dmg.+8%',
 gear.Merl_Mag_BP_hands = { name="Merlinic Dastanas", augments={'Pet: "Mag.Atk.Bns."+19','Blood Pact Dmg.+10','Pet: INT+9','Pet: Mag. Acc.+15',}}
 gear.Merl_Phys_BP_hands = { name="Merlinic Dastanas", augments={'Pet: Attack+17 Pet: Rng.Atk.+17','Blood Pact Dmg.+10','Pet: DEX+10','Pet: Mag. Acc.+10',}}
 
+gear.Merl_Phalanx_head = { name="Merlinic Hood", augments={'Spell interruption rate down -1%','INT+2','Phalanx +5','Accuracy+9 Attack+9',}}
+
+gear.Merl_TH_body = { name="Merlinic Jubbah", augments={'CHR+7','"Drain" and "Aspir" potency +6','"Treasure Hunter"+2','Mag. Acc.+8 "Mag.Atk.Bns."+8',}}
+
 -- Odyssean
 
 -- Valorous
