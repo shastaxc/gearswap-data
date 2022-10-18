@@ -205,7 +205,6 @@ function init_gear_sets()
         legs="Volte Hose", --4
         feet="Skulk. Poulaines +1", --3
         waist="Chaac Belt", --1
-		ammo="Per. Lucky Egg",
         }
 
     sets.buff['Sneak Attack'] = {}
@@ -400,7 +399,7 @@ function init_gear_sets()
         })	
 		
     sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
-        neck="Caro Necklace",
+        neck="Rep. Plat. Medal",
 		waist="Sailfi Belt +1",
         })		
 
@@ -855,15 +854,15 @@ function init_gear_sets()
 
     sets.WeaponSet = {}
     sets.WeaponSet['Normal'] = {
-      main="Twashtar",
+      main="Aeneas",
       sub="Gleti's Knife",
     }
     sets.WeaponSet['WhiteDmg'] = {
-      main="Twashtar",
-      sub={name="Centovente", priority=1},
+      main="Gleti's Knife",
+      sub={name="Ternion Dagger +1", priority=1},
     }
     sets.WeaponSet['LowAtt'] = {
-      main="Vajra",
+      main="Aeneas",
       sub="Centovente",
     }
     sets.WeaponSet['Naegling'] = {
@@ -897,7 +896,7 @@ function init_gear_sets()
       ammo="Beryllium Arrow",
     }
     sets.WeaponSet['Throwing'] = {
-      ranged="Antitail +1",
+      ranged="Grudge",
       ammo=empty,
     }
 end

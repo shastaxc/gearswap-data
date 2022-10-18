@@ -256,7 +256,7 @@ function init_gear_sets()
     left_ring={name="Moonbeam Ring", bag="wardrobe2"},
     right_ring={name="Moonbeam Ring", bag="wardrobe3", priority=4},
     back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','HP+20','"Cure" potency +10%',}},
-	}
+	}--27
 	
 	sets.midcast.Cure.Interrupt = {
     ammo="Staunch Tathlum +1",
@@ -272,7 +272,7 @@ function init_gear_sets()
     left_ring="Defending Ring",
     right_ring={name="Gelatinous Ring +1", priority=1},
     back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','HP+20','"Fast Cast"+10',}},
-	}
+	}--47
 	
 	sets.midcast['Blue Magic'] = {
     ammo="Staunch Tathlum +1",
@@ -384,7 +384,7 @@ function init_gear_sets()
     sets.idle = {ammo="Homiliary",
         head="Souveran Schaller +1",neck="Bathy Choker +1",ear1="Odnowa Earring +1",ear2="Etiolation Earring",
         body="Sacro Breastplate",hands="Regal Gauntlets",left_ring="Apeile Ring +1",right_ring="Gelatinous Ring +1",
-        back="Moonbeam Cape",waist="Flume Belt",legs="Carmine Cuisses +1",feet="Volte Sollerets"}
+        back="Moonbeam Cape",waist="Flume Belt",legs="Carmine Cuisses +1",feet="Volte Sollerets"} --27
 		
     sets.idle.Town = {ammo="Homiliary",
         head="Souv. Schaller +1",neck="Loricate Torque +1",ear2="Odnowa Earring +1",ear1="Tuisto Earring",
@@ -414,7 +414,7 @@ function init_gear_sets()
 	sets.idle.PDT = {ammo="Staunch Tathlum +1",
         head="Souv. Schaller +1",neck="Loricate Torque +1",ear2="Odnowa Earring +1",ear1="Etiolation Earring",
         body="Souv. Cuirass +1",hands="Souv. Handsch. +1",left_ring="Gelatinous Ring +1",right_ring={name="Moonbeam Ring", bag="wardrobe3"},
-        back="Moonbeam Cape",waist="Creed Baudrier",legs="Souv. Diechlings +1",feet="Souveran Schuhs +1"}	
+        back="Moonbeam Cape",waist="Creed Baudrier",legs="Souv. Diechlings +1",feet="Souveran Schuhs +1"}	 --47
 				
     
     sets.Kiting = {legs="Carmine Cuisses +1"}

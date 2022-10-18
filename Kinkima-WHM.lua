@@ -515,12 +515,14 @@ function init_gear_sets()
     -- 614 Healing skill, 216 Cursna+, 7 FC [36PDT/26MDT, 505MEVA]; Cursna Rate = 96.275%
   }
 
+  -- TODO: Ensure DT is capped. Maybe add SIRD but keep some FC
   sets.midcast.Erase = set_combine(sets.midcast.FastRecast, {
     main="Yagrush",
     sub="Genmei Shield",
     neck="Cleric's Torque +1",
   })
 
+  -- TODO: Add SIRD and DT
   sets.midcast.StatusRemoval = {
     main="Yagrush",
     sub="Genmei Shield",
