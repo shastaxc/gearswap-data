@@ -153,7 +153,7 @@ function job_setup()
   send_command('bind ^numpad* gs c pact bp70')
   send_command('bind ^numpad- gs c pact astralflow')
   
-  send_command('bind numpad0 input /ja "Shock Strike" <t>')
+  send_command('bind %numpad0 input /ja "Shock Strike" <t>')
   
 end
 
@@ -225,6 +225,8 @@ function user_unload()
   send_command('unbind !i')
   send_command('unbind !o')
   send_command('unbind !p')
+
+  send_command('unbind %numpad0')
 end
 
 -- Define sets and vars used by this job file.
