@@ -1084,7 +1084,13 @@ end
 
 function job_pretarget(spell, action, spellMap, eventArgs)
   -- If targeting self for rage blood pact, change its target to <bt> (battle target)
-  if (spell.type == 'BloodPactRage' or pacts.debuff1:contains(spell.english) or pacts.debuff2:contains(spell.english))
+  if (spell.type == 'BloodPactRage'
+          or (pet and pet.name and pacts.sleep[pet.name] and pacts.sleep[pet.name] == spell.english)
+          or (pet and pet.name and pacts.nuke2[pet.name] and pacts.nuke2[pet.name] == spell.english)
+          or (pet and pet.name and pacts.nuke4[pet.name] and pacts.nuke4[pet.name] == spell.english)
+          or (pet and pet.name and pacts.astralflow[pet.name] and pacts.astralflow[pet.name] == spell.english)
+          or (pet and pet.name and pacts.debuff1[pet.name] and pacts.debuff1[pet.name] == spell.english)
+          or (pet and pet.name and pacts.debuff2[pet.name] and pacts.debuff2[pet.name] == spell.english))
       and (spell.target.type == 'SELF' or spell.target.type == nil) and spell.target.raw ~= '<bt>' then
     eventArgs.cancel = true -- Prevent sending command to game that was targeting self
     send_command('@input /ja "'..spell.english..'" <bt>') -- Re-issue command to target <bt>
