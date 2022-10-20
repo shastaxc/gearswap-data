@@ -118,8 +118,8 @@ sets.ToyWeapon.GreatSword = {
   -- sub="Tzacab Grip"
 }
 sets.ToyWeapon.Scythe = {
-  -- main="Lost Sickle",
-  -- sub="Tzacab Grip"
+  main="Lost Sickle",
+  sub="Tzacab Grip"
 }
 
 
