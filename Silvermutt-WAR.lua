@@ -481,7 +481,7 @@ function init_gear_sets()
     ring2="Regal Ring",
     back=gear.WAR_STR_WSD_Cape,
     waist="Eschan Stone",
-    -- back=gear.WAR_MND_WSD_Cape,
+    -- back=gear.WAR_MAB_Cape,
   })
   sets.precast.WS['Cloudsplitter'].MaxTP = set_combine(sets.precast.WS['Cloudsplitter'], {
     ear2="Ishvara Earring",
@@ -590,10 +590,22 @@ function init_gear_sets()
   sets.precast.WS["Sonic Thrust"].AttCapped = sets.precast.WS["Impulse Drive"].AttCapped
   sets.precast.WS["Sonic Thrust"].AttCappedMaxTP = sets.precast.WS["Impulse Drive"].AttCappedMaxTP
 
-	sets.precast.WS['Cataclysm'] = sets.precast.WS['Cloudsplitter']
-	sets.precast.WS['Cataclysm'].MaxTP = sets.precast.WS['Cloudsplitter'].MaxTP
-	sets.precast.WS['Cataclysm'].AttCapped = sets.precast.WS['Cloudsplitter'].AttCapped
-	sets.precast.WS['Cataclysm'].AttCappedMaxTP = sets.precast.WS['Cloudsplitter'].AttCappedMaxTP
+	sets.precast.WS['Cataclysm'] = set_combine(sets.precast.WS['Cloudsplitter'], {
+    head="Pixie Hairpin +1",
+    ring2="Archon Ring",
+  })
+	sets.precast.WS['Cataclysm'].MaxTP = set_combine(sets.precast.WS['Cloudsplitter'].MaxTP, {
+    head="Pixie Hairpin +1",
+    ring2="Archon Ring",
+  })
+	sets.precast.WS['Cataclysm'].AttCapped = set_combine(sets.precast.WS['Cloudsplitter'].AttCapped, {
+    head="Pixie Hairpin +1",
+    ring2="Archon Ring",
+  })
+	sets.precast.WS['Cataclysm'].AttCappedMaxTP = set_combine(sets.precast.WS['Cloudsplitter'].AttCappedMaxTP, {
+    head="Pixie Hairpin +1",
+    ring2="Archon Ring",
+  })
 
 	sets.precast.WS['Aeolian Edge'] = sets.precast.WS['Cloudsplitter']
 	sets.precast.WS['Aeolian Edge'].MaxTP = sets.precast.WS['Cloudsplitter'].MaxTP
