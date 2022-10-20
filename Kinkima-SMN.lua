@@ -921,7 +921,7 @@ function init_gear_sets()
     ammo="Staunch Tathlum +1",      -- ____ [ 3/ 3, ___] (__, __) {___, __, __/__}; Resist Status+11
     head="Beckoner's Horn +2",      --   51 [ 9/ 9, 120] ( 3, __) {___, __, __/__}
     body=gear.Nyame_B_body,
-    hands=gear.Nyame_B_hands,
+    hands="Asteria Mitts +1",       --   18 [__/__,  43] ( 2, __) {___, __, __/__}
     legs="Assiduity Pants +1",      --   43 [__/__, 107] ( 2,  3) {___, __, __/__}
     feet="Baayami Sabots +1",       --   30 [__/__, 139] ( 3, __) {___, __, __/__}
     neck="Loricate Torque +1",      -- ____ [ 6/ 6, ___] (__, __) {___, __, __/__}; DEF+60
@@ -931,7 +931,6 @@ function init_gear_sets()
     ring2="Defending Ring",         -- ____ [10/10, ___] (__, __) {___, __, __/__}
     waist="Regal Belt",             --   88 [ 3/ 3, ___] (__, __) {___, __, __/__}
     -- body=gear.Apogee_A_body,     -- -160 [__/__,  91] ( 4, __) {___, __, __/__}
-    -- hands="Asteria Mitts +1",    --   18 [__/__,  43] ( 2, __) {___, __, __/__}
     -- back=gear.SMN_FC_Cape,       -- ____ [10/__, ___] (__, __) {  1, __, __/__}
     -- Traits/Merits/JP Gifts                                       99, __,  7/ 7
     -- 120 HP [51 PDT/44 MDT, 500 M.Eva] (19 Refresh, 3 Perp Cost) {Pet: 101 Lv, 0 Regain, 7 PDT/7 MDT}
@@ -972,7 +971,7 @@ function init_gear_sets()
     ammo="Sancus Sachet +1",        -- ____ [__/__, ___] (__, __) {119, __, __/__}
     head="Beckoner's Horn +2",      --   51 [ 9/ 9, 120] ( 3, __) {___, __, __/__}
     body="Beckoner's Doublet +2",   --   74 [12/12, 120] (__,  7) {___, __, __/__}
-    hands=gear.Nyame_B_hands,
+    hands="Asteria Mitts +1",       --   18 [__/__,  43] ( 2, __) {___, __, __/__}
     legs="Assiduity Pants +1",      --   43 [__/__, 107] ( 2,  3) {___, __, __/__}
     feet="Baayami Sabots +1",       --   30 [__/__, 139] ( 3, __) {___, __, __/__}
     neck="Caller's Pendant",        -- ____ [__/__, ___] (__, __) {___, 25, __/__}
@@ -981,7 +980,6 @@ function init_gear_sets()
     ring1="Stikini Ring +1",        -- ____ [__/__, ___] ( 1, __) {___, __, __/__}
     ring2="Defending Ring",         -- ____ [10/10, ___] (__, __) {___, __, __/__}
     waist="Isa Belt",               -- ____ [__/__, ___] (__, __) {___, __,  3/ 3}
-    -- hands="Asteria Mitts +1",    --   18 [__/__,  43] ( 2, __) {___, __, __/__}
     -- back=gear.SMN_FC_Cape,       -- ____ [10/__, ___] (__, __) {  1, __, __/__}
     -- Traits/Merits/JP Gifts                                      ___, __,  7/ 7
     -- 216 HP [51 PDT/41 MDT, 529 M.Eva] (13 Refresh, 15 Perp Cost) {Pet: 121 Lv, 25 Regain, 13 PDT/13 MDT}
@@ -1012,7 +1010,7 @@ function init_gear_sets()
     ammo="Sancus Sachet +1",        -- ____ [__/__, ___] (__, __) {119, __, __/__}
     head="Beckoner's Horn +2",      --   51 [ 9/ 9, 120] ( 3, __) {___, __, __/__}
     body=gear.Nyame_B_body,
-    hands=gear.Nyame_B_hands,
+    hands="Asteria Mitts +1",       --   18 [__/__,  43] ( 2, __) {___, __, __/__}
     legs="Assiduity Pants +1",      --   43 [__/__, 107] ( 2,  3) {___, __, __/__}
     feet="Baayami Sabots +1",       --   30 [__/__, 139] ( 3, __) {___, __, __/__}
     neck="Loricate Torque +1",      -- ____ [ 6/ 6, ___] (__, __) {___, __, __/__}; DEF+60
@@ -1021,7 +1019,6 @@ function init_gear_sets()
     ring2="Defending Ring",         -- ____ [10/10, ___] (__, __) {___, __, __/__}
     waist="Regal Belt",             --   88 [ 3/ 3, ___] (__, __) {___, __, __/__}
     -- body=gear.Apogee_A_body,     -- -160 [__/__,  91] ( 4, __) {___, __, __/__}
-    -- hands="Asteria Mitts +1",    --   18 [__/__,  43] ( 2, __) {___, __, __/__}
     -- ear1="Cath Palug Earring",   -- ____ [__/__, ___] ( 1, __) {___, __, __/__}
     -- back=gear.SMN_FC_Cape,       -- ____ [10/__, ___] (__, __) {  1, __, __/__}
     -- Traits/Merits/JP Gifts                                      ___, __,  7/ 7
