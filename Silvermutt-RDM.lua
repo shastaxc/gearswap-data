@@ -161,7 +161,7 @@ function job_setup()
   state.WeaponSet = M{['description']='Weapon Set', 'Casting', 'Temp', 'Croc', 'Naegling', 'Cleaving',}
 
   send_command('bind !s gs c faceaway')
-  send_command('bind !d gs c usekey')
+  send_command('bind !d gs c interact')
   
   send_command('bind ^pageup gs c toyweapon cycle')
   send_command('bind ^pagedown gs c toyweapon cycleback')

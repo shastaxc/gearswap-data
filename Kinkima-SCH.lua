@@ -41,7 +41,7 @@ function job_setup()
   update_active_strategems()
 
   send_command('bind !s gs c faceaway')
-  send_command('bind !d gs c usekey')
+  send_command('bind !d gs c interact')
   send_command('bind @c gs c toggle CP')
 
   send_command('bind ^` input /ja Immanence <me>')

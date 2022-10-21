@@ -130,7 +130,7 @@ function job_setup()
   state.Runes = M{['description']='Runes', 'Ignis', 'Gelus', 'Flabra', 'Tellus', 'Sulpor', 'Unda', 'Lux', 'Tenebrae'}
 
   send_command('bind !s gs c faceaway')
-  send_command('bind !d gs c usekey')
+  send_command('bind !d gs c interact')
 
   send_command('bind @w gs c toggle RearmingLock')
   send_command('bind ^insert gs c weaponset cycle')
@@ -378,7 +378,7 @@ function init_gear_sets()
     waist="Audumbla Sash",                                --  4/__, ___ [___] {10}
     -- SIRD merits                                                            { 6}
     -- 46 PDT / 26 MDT, 500 M.Eva [960 HP] {102 SIRD}
-    
+
     -- ammo="Staunch Tathlum +1",                            --  3/ 3, ___ [___] {11}
     -- head="Erilaz Galea +3",                               -- __/__, 119 [111] {20}
     -- body=gear.Nyame_B_body,                               --  9/ 9, 139 [136] {__}

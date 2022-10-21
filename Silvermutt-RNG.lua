@@ -153,7 +153,7 @@ function job_setup()
   }
 
   send_command('bind !s gs c faceaway')
-  send_command('bind !d gs c usekey')
+  send_command('bind !d gs c interact')
   send_command('bind @w gs c toggle RearmingLock')
 
   send_command('bind ^pageup gs c toyweapon cycle')

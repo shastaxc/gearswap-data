@@ -108,7 +108,7 @@ function job_setup()
   state.WeaponLock = M(false, 'Weapon Lock')
 
   send_command('bind !s gs c faceaway')
-  send_command('bind !d gs c usekey')
+  send_command('bind !d gs c interact')
   send_command('bind @w gs c toggle WeaponLock')
   send_command('bind ^b gs c toggle BattleMode')
 

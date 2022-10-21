@@ -202,7 +202,7 @@ function job_setup()
       'Polar Roar','Pyric Bulwark','Tearing Gust','Thunderbolt','Tourbillion','Uproot'}
 
   send_command('bind !s gs c faceaway')
-  send_command('bind !d gs c usekey')
+  send_command('bind !d gs c interact')
   send_command('bind @c gs c toggle CP')
 
   send_command('bind ^pageup gs c toyweapon cycle')

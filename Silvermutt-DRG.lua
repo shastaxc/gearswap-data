@@ -56,7 +56,7 @@ function job_setup()
       'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
   
   send_command('bind !s gs c faceaway')
-  send_command('bind !d gs c usekey')
+  send_command('bind !d gs c interact')
   send_command('bind @w gs c toggle RearmingLock')
 
   send_command('bind ^insert gs c weaponset cycle')

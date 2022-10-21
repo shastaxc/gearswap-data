@@ -138,7 +138,7 @@ function job_setup()
   latestAvatar = pet.name or nil
 
   send_command('bind !s gs c faceaway')
-  send_command('bind !d gs c usekey')
+  send_command('bind !d gs c interact')
   send_command('bind @c gs c toggle CP')
   send_command('bind @w gs c toggle RearmingLock')
 

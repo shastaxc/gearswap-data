@@ -142,3 +142,5 @@ windower.register_event('zone change', function()
     send_command('lua l omen')
   end
 end)
+
+send_command('alias mount input /mount "Spheroid" <me>')
