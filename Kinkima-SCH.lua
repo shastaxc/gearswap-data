@@ -416,6 +416,7 @@ function init_gear_sets()
     legs=gear.Psycloth_D_legs,      -- 109
     ear2="Etiolation Earring",      --  50
     back=gear.SCH_MP_Cape,          --  80
+    waist="Shinjutsu-no-Obi +1",    --  85
     -- body="Academic's Gown +3",     -- 173
     -- hands="Thrift Gloves +1 ",     --  99
     -- feet=gear.Psycloth_A_feet,     -- 124
@@ -423,7 +424,6 @@ function init_gear_sets()
     -- ear1="Evans Earring",          --  50
     -- ring1="Persis ring ",          --  80
     -- ring2="Mephitas's Ring",       -- 100
-    -- waist="Shinjutsu-no-Obi +1",   --  85
     -- 1175 MP
 
     -- Ideal:
@@ -814,7 +814,7 @@ function init_gear_sets()
   sets.midcast.Dispelga = set_combine(sets.midcast.IntEnfeebles, {
     -- main="Daybreak",
     -- sub="Ammurapi Shield",
-    -- waist="Shinjutsu-no-Obi +1",
+    waist="Shinjutsu-no-Obi +1",
   })
 
   -- SCH Dark Magic = 386, with Dark Arts = 456
@@ -1239,7 +1239,7 @@ function init_gear_sets()
   sets.resting = set_combine(sets.idle, {
     main="Chatoyant Staff",
     sub="Khonsu",
-    -- waist="Shinjutsu-no-Obi +1",
+    waist="Shinjutsu-no-Obi +1",
   })
 
 

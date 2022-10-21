@@ -249,12 +249,12 @@ function init_gear_sets()
     ear2="Loquacious Earring",        --  2 [__/__, ___]
     ring1="Kishar Ring",              --  4 [__/__, ___]
     ring2="Defending Ring",           -- __ [10/10, ___]
-    -- 61 Fast Cast [45 PDT/43 MDT, 428 M.Eva]
+    waist="Shinjutsu-no-obi +1",      --  5 [__/__, ___]
+    -- 66 Fast Cast [45 PDT/43 MDT, 428 M.Eva]
     
     -- legs="Volte Brais",            --  8 [__/__, 142]; merlinic alt
     -- neck="Orunmila's Torque",      --  5 [__/__, ___]
     -- back=gear.SMN_FC_Cape          -- 10 [10/__, ___]
-    -- waist="Shinjutsu-no-obi +1",   --  5 [__/__, ___]
     -- 81 Fast Cast [55 PDT/53 MDT, 570 M.Eva]
   }
   sets.precast.FC.QuickMagic = {
@@ -309,13 +309,13 @@ function init_gear_sets()
     ear2="Loquacious Earring",        --  2 [__/__, ___]
     ring1="Kishar Ring",              --  4 [__/__, ___]
     ring2="Defending Ring",           -- __ [10/10, ___]
+    waist="Shinjutsu-no-obi +1",      --  5 [__/__, ___]
     -- RDM Trait                         15
-    -- 76 Fast Cast [45 PDT/43 MDT, 428 M.Eva]
+    -- 81 Fast Cast [45 PDT/43 MDT, 428 M.Eva]
     
     -- legs="Volte Brais",            --  8 [__/__, 142]; merlinic alt
     -- neck="Orunmila's Torque",      --  5 [__/__, ___]
     -- back=gear.SMN_FC_Cape          -- 10 [10/__, ___]
-    -- waist="Shinjutsu-no-obi +1",   --  5 [__/__, ___]
     -- 81 Fast Cast [55 PDT/53 MDT, 570 M.Eva]
   }
   sets.precast.FC.QuickMagic.RDM = {
@@ -352,14 +352,14 @@ function init_gear_sets()
     ear2="Loquacious Earring",        --  2 [__/__, ___]
     ring1="Kishar Ring",              --  4 [__/__, ___]
     ring2="Defending Ring",           -- __ [10/10, ___]
-    -- 52 Fast Cast [22 PDT/20 MDT, 428 M.Eva]
+    waist="Shinjutsu-no-obi +1",      --  5 [__/__, ___]
+    -- 57 Fast Cast [22 PDT/20 MDT, 428 M.Eva]
     
     -- main="Nirvana",                -- __ [__/__, ___]
     -- sub="Elan Strap +1",           -- __ [__/__, ___]
     -- legs="Volte Brais",            --  8 [__/__, 142]; merlinic alt
     -- neck="Orunmila's Torque",      --  5 [__/__, ___]
     -- back=gear.SMN_FC_Cape          -- 10 [10/__, ___]
-    -- waist="Shinjutsu-no-obi +1",   --  5 [__/__, ___]
     -- 80 Fast Cast [32 PDT/20 MDT, 570 M.Eva]
   }
   sets.precast.FC.NirvAM.QuickMagic = {
