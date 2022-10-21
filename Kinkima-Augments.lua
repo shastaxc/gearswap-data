@@ -157,7 +157,8 @@ gear.SCH_Adoulin_Helix_Cape = { name="Bookworm's Cape", augments={'INT+1','MND+1
 
 -- gear.BLU_Adoulin_Cape = {} -- Blue magic skill +10
 
--- gear.SMN_Pre_BP_Cape = {} -- BP Delay II -3, summoning skill +5
+-- gear.SMN_Pre_BP_Cape = {} -- BP Delay II -5
+gear.SMN_Skill_Cape = { name="Conveyance Cape", augments={'Summoning magic skill +5','Pet: Enmity+11','Blood Pact Dmg.+5','Blood Pact ab. del. II -2',}}
 
 
 ----------------------------------------------------------------------
