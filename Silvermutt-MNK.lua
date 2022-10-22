@@ -71,6 +71,7 @@ function job_setup()
       'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
   state.WeaponSet = M{['description']='Weapon Set', 'Verethragna', 'Piercing', 'Slashing', 'Cleaving'}
   state.EnmityMode = M{['description']='Enmity Mode', 'Normal', 'Low', 'Schere'}
+  state.Runes = M{['description']='Runes', 'Ignis', 'Gelus', 'Flabra', 'Tellus', 'Sulpor', 'Unda', 'Lux', 'Tenebrae'}
 
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c interact')
@@ -115,6 +116,10 @@ function user_setup()
   elseif player.sub_job == 'NIN' then
     send_command('bind ^numpad0 input /ma "Utsusemi: Ichi" <me>')
     send_command('bind ^numpad. input /ma "Utsusemi: Ni" <me>')
+  elseif player.sub_job == 'RUN' then
+    send_command('bind %numpad0 input //gs c rune')
+    send_command('bind ^- gs c cycleback Runes')
+    send_command('bind ^= gs c cycle Runes')
   end
 
   update_melee_groups()
@@ -146,6 +151,10 @@ function job_file_unload()
   send_command('unbind ^numpad+')
   send_command('unbind ^numpad0')
   send_command('unbind ^numpad.')
+
+  send_command('unbind %numpad0')
+  send_command('unbind ^-')
+  send_command('unbind ^=')
 end
 
 -- Define sets and vars used by this job file.
@@ -944,6 +953,20 @@ function job_precast(spell, action, spellMap, eventArgs)
     end
   end
 
+  -- Use Vallation if Valiance is on cooldown
+  if spell.english == 'Valiance' then
+    local abil_recasts = windower.ffxi.get_ability_recasts()
+    if abil_recasts[spell.recast_id] > 0 then
+      send_command('input /jobability "Vallation" <me>')
+      eventArgs.cancel = true
+      return
+    -- Cancel Vallation if using Valiance
+    elseif spell.english == 'Valiance' and buffactive['vallation'] then
+      cast_delay(0.2)
+      send_command('cancel Vallation') -- command requires 'cancel' add-on to work
+    end
+  end
+
   if spellMap == 'Utsusemi' and spell.english == 'Utsusemi: Ichi' and
       (buffactive['Copy Image'] or buffactive['Copy Image (2)']) then
     send_command('cancel 66; cancel 444; cancel Copy Image; cancel Copy Image (2)')
@@ -1393,6 +1416,8 @@ function job_self_command(cmdParams, eventArgs)
     elseif cmdParams[2] == 'reset' then
       cycle_weapons('reset')
     end
+  elseif cmdParams[1] == 'rune' then
+    send_command('@input /ja '..state.Runes.value..' <me>')
   elseif cmdParams[1] == 'test' then
     test()
   end
@@ -1448,6 +1473,9 @@ end)
 function select_default_macro_book()
   -- Default macro set/book: (set, book)
   set_macro_page(2, 1)
+  if player.sub_job == 'RUN' then
+    set_macro_page(3, 1)
+  end
 end
 
 
