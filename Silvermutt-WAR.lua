@@ -305,6 +305,7 @@ function init_gear_sets()
 
   sets.precast.WS["Upheaval"] = set_combine(sets.precast.WS, {
     ammo="Knobkierrie",
+    head=gear.Nyame_B_head,
     body="Sakpata's Breastplate",
     hands=gear.Nyame_B_hands,
     legs=gear.Nyame_B_legs,
@@ -324,6 +325,7 @@ function init_gear_sets()
   })
   sets.precast.WS["Upheaval"].AttCapped = set_combine(sets.precast.WS["Upheaval"], {
     ammo="Knobkierrie",
+    head="Sakpata's Helm",
     body=gear.Nyame_B_body,
     hands="Sakpata's Gauntlets",
     legs="Sakpata's Cuisses",
