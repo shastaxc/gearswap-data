@@ -65,6 +65,7 @@ function job_setup()
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.HybridMode:options('LightDef', 'HeavyDef', 'Normal')
   state.IdleMode:options('Normal', 'HeavyDef')
+  state.PhysicalDefenseMode = M{['description'] = 'Physical Defense Mode', 'PDT', 'Cait Sith'}
 
   state.CP = M(false, "Capacity Points Mode")
   state.ToyWeapons = M{['description']='Toy Weapons','None',
@@ -198,6 +199,23 @@ function init_gear_sets()
   sets.Special.SleepyHead = { head="Frenzy Sallet", }
   sets.Special.LowEnmity = { ear2="Novia Earring", } -- Assumes -Enmity merits and Dirge
   sets.Special.Schere = { ear2="Schere Earring", }
+  sets.Special.CaitSith = {
+    ammo="Crepuscular Pebble",      -- __, __,  3, __, __ <__, __, __> [ 3/ 3, ___] (___, __) __, __, __(__)
+    head="Malignance Chapeau",      --  8, 50,  3, __, __ <__, __, __> [ 6/ 6, 123] (___, __) __, __, __(__)
+    body="Bhikku Cyclas +2",        -- __, 54, __, __, __ <__, __, __> [__/__,  99] (___, __)  7, __, __(__)
+    hands="Malignance Gloves",      -- 12, 50,  4, __, __ <__, __, __> [ 5/ 5, 112] (___, __) __, __, __(__)
+    legs="Bhikku Hose +2",          --  9, 53, __, __, __ <__, __, __> [13/13, 109] (___, 25) __, __, __(__)
+    feet="Anchorite's Gaiters +3",  -- __, 46, __, __, __ <__, __, __> [__/__,  84] (120, 10) __, __, __(__)
+    neck="Monk's Nodowa +2",        -- __, 30, 10, __, __ <__, __, __> [__/__, ___] ( 20, 25) __, __, __(__)
+    ear1="Sherida Earring",         --  5, __, __, __, __ < 5, __, __> [__/__, ___] (___, __) __, __, __( 5)
+    ear2="Bhikku Earring +1",       --  4, 15, __, __, __ <__, __, __> [__/__, ___] (___, __) __,  8, __(__)
+    ring1="Gere Ring",              -- __, __, __, __, __ <__,  5, __> [__/__, ___] (___, __) __, __, __(__)
+    ring2="Copper Ring",            -- __, __, __, __, __ <__, __, __> [__/__, ___] (___, __) __, __, __(__)
+    back=gear.MNK_DEX_DA_Cape,      -- __, 20, __, __, __ <10, __, __> [10/__, ___] ( 25, 10) __, __, __(__)
+    waist="Moonbow Belt +1",        -- __, __, __, __, __ <__,  8, __> [ 6/ 6, ___] (___, __) __, __, __(15)
+    -- Merits/Traits/Gifts             __, __, __,  5, __ <__, __, __> [__/__, ___] (___, 19)  9, 27, 35(__)
+    -- 38 STP, 318 Acc, 20 PDL, 5 Crit Rate, 6 Crit Dmg <15 DA, 13 TA, 0 QA> [43 PDT/33 MDT, 527 M.Eva] (165 Kick Dmg, 89 Kick Rate) 16 Martial Arts, 35 Counter, 55 Subtle Blow
+  }
   sets.buff.Doom = {
     neck="Nicander's Necklace", --20
     ring2="Eshmun's Ring", --20
@@ -311,6 +329,8 @@ function init_gear_sets()
 
   sets.precast.JA['Chi Blast'] = {
     head="Hesychast's Crown +1", -- 15, Enhance Penance
+    body=gear.Herc_TH_body, --2
+    hands=gear.Herc_TH_hands, --2
   } -- MND
 
   sets.precast.JA['Chakra'] = {
@@ -1321,6 +1341,10 @@ function customize_defense_set(defenseSet)
 
   if buffactive.Doom then
     defenseSet = set_combine(defenseSet, sets.buff.Doom)
+  end
+
+  if state.PhysicalDefenseMode.current == 'Cait Sith' then
+    defenseSet = set_combine(defenseSet, sets.Special.CaitSith)
   end
 
   return defenseSet
