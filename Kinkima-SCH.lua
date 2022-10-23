@@ -19,6 +19,7 @@ function job_setup()
   state.OffenseMode:options('Normal', 'Acc')
   state.CastingMode:options('Normal', 'Seidr', 'Resistant')
   state.IdleMode:options('Normal', 'HeavyDef')
+  state.PhysicalDefenseMode = M{['description'] = 'Physical Defense Mode', 'PDT', 'Cait Sith'}
   state.MagicBurst = M(true, 'Magic Burst')
 
   info.addendumNukes = S{"Stone IV", "Water IV", "Aero IV", "Fire IV", "Blizzard IV", "Thunder IV",
@@ -1306,6 +1307,24 @@ function init_gear_sets()
   sets.Special.ElementalObi = {
     waist="Hachirin-no-Obi",
   }
+  sets.Special.CaitSith = {
+    main="Bunzi's Rod",                 -- Cure Potency
+    sub="Khonsu",                       --  6/ 6, ___ [__, __]
+    ammo="Staunch Tathlum +1",          --  3/ 3, ___ [__, __]; Resist Status+11
+    head="Academic's Mortarboard +3",   -- __/__,  95 [ 4, __]
+    body="Pedagogy Gown +3",            -- __/__, 100 [ 5, __]
+    hands=gear.Nyame_B_hands,           --  7/ 7, 112 [__, __]
+    legs="Assiduity Pants +1",          -- __/__, 107 [__,  2]
+    feet=gear.Nyame_B_feet,             --  7/ 7, 150 [__, __]
+    neck="Loricate Torque +1",          --  6/ 6, ___ [__, __]; DEF+60
+    ear1="Savant's Earring",            -- __/__, ___ [ 1, __]
+    ear2="Etiolation Earring",          -- __/ 3, ___ [__, __]; Resist Silence+15
+    ring1="Stikini Ring +1",            -- __/__, ___ [__,  1]
+    ring2="Defending Ring",             -- 10/10, ___ [__, __]
+    back=gear.SCH_FC_Cape,              -- 10/__,  30 [__, __]
+    waist="Embla Sash",                 -- __/__, ___ [ 5, __]
+    -- 49 PDT / 42 MDT, 594 M.Eva [15 Sublimation, 3 Refresh]
+  }
   sets.Bookworm = {
     back="Bookworm's Cape",
   }
@@ -1365,6 +1384,10 @@ function job_post_precast(spell, action, spellMap, eventArgs)
   if locked_ear2 then equip({ ear2=player.equipment.ear2 }) end
   if locked_ring1 then equip({ ring1=player.equipment.ring1 }) end
   if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
+
+  if state.PhysicalDefenseMode.current == 'Cait Sith' then
+    equip(sets.Special.CaitSith)
+  end
 
   ----------- Non-silibs content goes above this line -----------
   silibs.post_precast_hook(spell, action, spellMap, eventArgs)
@@ -1476,6 +1499,10 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
   if locked_ring1 then equip({ ring1=player.equipment.ring1 }) end
   if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
 
+  if state.PhysicalDefenseMode.current == 'Cait Sith' then
+    equip(sets.Special.CaitSith)
+  end
+  
   ----------- Non-silibs content goes above this line -----------
   silibs.post_midcast_hook(spell, action, spellMap, eventArgs)
 end
@@ -1611,6 +1638,10 @@ function customize_defense_set(defenseSet)
 
   if buffactive.Doom then
     defenseSet = set_combine(defenseSet, sets.buff.Doom)
+  end
+
+  if state.PhysicalDefenseMode.current == 'Cait Sith' then
+    defenseSet = set_combine(defenseSet, sets.Special.CaitSith)
   end
 
   return defenseSet
