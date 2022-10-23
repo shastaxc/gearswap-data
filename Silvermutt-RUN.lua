@@ -393,7 +393,7 @@ function init_gear_sets()
     -- ring2="Defending Ring",                               -- 10/10, ___ [___] {__}
     -- back={name="Moonlight Cape", priority=1},             --  6/ 6, ___ [275] {__}
     -- waist="Audumbla Sash",                                --  4/__, ___ [___] {10}
-    -- SIRD merits                                                            { 6}
+    -- SIRD merits                                                               { 6}
     -- 52 PDT / 42 MDT, 547 M.Eva [1020 HP] {102 SIRD}
   }
 
