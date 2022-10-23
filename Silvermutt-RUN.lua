@@ -385,7 +385,7 @@ function init_gear_sets()
     -- hands=gear.Rawhide_B_hands,                           -- __/__,  37 [ 75] {15}
     -- legs={name=gear.Carmine_A_legs.name,
     --   augments=gear.Carmine_A_legs.augments, priority=1}, -- __/__,  80 [130] {20}
-    -- feet="Erilaz Greaves +3",                             -- 10/10, 157 [ 48] {__}
+    -- feet="Erilaz Greaves +3",                             -- 11/11, 157 [ 48] {__}
     -- neck="Moonlight Necklace",                            -- __/__,  15 [___] {15}
     -- ear1="Odnowa Earring +1",                             --  3/ 5, ___ [110] {__}
     -- ear2="Halasz Earring",                                -- __/__, ___ [___] { 5}
@@ -394,7 +394,7 @@ function init_gear_sets()
     -- back={name="Moonlight Cape", priority=1},             --  6/ 6, ___ [275] {__}
     -- waist="Audumbla Sash",                                --  4/__, ___ [___] {10}
     -- SIRD merits                                                               { 6}
-    -- 52 PDT / 42 MDT, 547 M.Eva [1020 HP] {102 SIRD}
+    -- 53 PDT / 43 MDT, 547 M.Eva [1020 HP] {102 SIRD}
   }
 
   sets.precast.JA = sets.Enmity;
