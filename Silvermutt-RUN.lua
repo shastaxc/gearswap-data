@@ -310,17 +310,22 @@ function init_gear_sets()
     feet="Erilaz Greaves +2",       -- 10/10, 147 [ 38] (__, 30)
     neck="Unmoving Collar +1",      -- __/__, ___ [200] (__, __)
     ear1="Odnowa Earring +1",       --  3/ 5, ___ [110] (__, __)
-    ear2="Eabani Earring",          -- __/__,   8 [ 45] (__, __)
+    ear2="Erilaz Earring",          -- __/__,  10 [___] (__, __)
     ring1="Gelatinous Ring +1",     --  7/-1, ___ [135] (__, __)
     ring2="Moonlight Ring",         --  5/ 5, ___ [110] (__, __)
     back=gear.RUN_HPP_Cape,         -- __/__,  20 [ 80] (__, __)
     waist="Engraved Belt",          -- __/__, ___ [___] (__, 20)
     --47 PDT / 41 MDT, 666 MEVA [1176 HP] (11 Status Resist, 50 Element Resist)
 
-    -- hands="Erilaz Gauntlets +2", -- 10/10,  77 [ 49] ( 7, __)
+    -- head="Erilaz Galea +3",      -- __/__, 119 [111] (__, __)
+    -- body="Erilaz Surcoat +3",    -- __/__, 130 [143] (__, __); Retain enmity; Convert dmg to MP
+    -- hands="Erilaz Gauntlets +3", -- 11/11,  87 [ 59] ( 8, __)
+    -- legs="Erilaz Leg Guards +3", -- 13/13, 157 [ 90] (__, __)
+    -- feet="Erilaz Greaves +3",    -- 11/11, 157 [ 48] (__, 35)
+    -- ear1="Arete del Luna +1",    -- __/__, ___ [___] (__, __); Resist stun, bind, gravity, sleep, charm, light
     -- ear2="Sanare Earring",       -- __/__,   6 [___] (__, __); M. Def Bonus+4
     -- back=gear.RUN_HPME_Cape,     -- __/__,  45 [ 60] (__, __)
-    --57 PDT / 51 MDT, 665 MEVA [1086 HP] (18 Status Resist, 50 Element Resist)
+    --50 PDT / 42 MDT, 701 MEVA [1026 HP] (19 Status Resist, 55 Element Resist)
   }
 
   sets.defense.Parry = {
@@ -633,14 +638,33 @@ function init_gear_sets()
 
   sets.midcast['Aquaveil'] = sets.SIRD
 
-  sets.midcast['Regen'] = set_combine(sets.HeavyDef, sets.midcast.EnhancingDuration, {
-    head="Runeist's Bandeau +3",
-    -- neck="Sacro Gorget"
-  })
+  sets.midcast['Regen'] = {
+    head="Runeist's Bandeau +3",                    -- 27, __, __, __ [__/__,  83] 109
+    body=gear.Nyame_B_body,                         -- __, __, __, __ [ 9/ 9, 139] 136
+    hands="Regal Gauntlets",                        -- __, __, 20, __ [__/__,  48] 205
+    legs="Futhark Trousers +3",                     -- __, __, 30, __ [__/__,  89] 107
+    ear1="Odnowa Earring +1",                       -- __, __, __, __ [ 3/ 5, ___] 110
+    ring1="Gelatinous Ring +1",                     -- __, __, __, __ [ 7/-1, ___] 135
+    ring2="Defending Ring",                         -- __, __, __, __ [10/10, ___] ___
+    back=gear.RUN_HPD_Cape,                         -- __, __, __, __ [10/__,  20]  80
+
+    -- main=gear.Morgelai_C,                        -- 25, __, __, __ [__/__, ___] 130
+    -- sub=empty,
+    -- feet="Erilaz Greaves +3",                    -- __, __, __, __ [11/11, 157] 100
+    -- neck="Sacro Gorget",                         -- __, 10, __, __ [__/__, ___]  50
+    -- ear2="Erilaz Earring +2",                    -- 12, __, __, __ [ 6/ 6,  12] ___
+    -- waist="Sroda Belt",                          -- __, 20, __, __ [__/__, ___] ___
+    -- Regen IV base                                   30, __, __, 60
+    -- Merits/Traits/Gifts                             __, __, 20, __
+    -- 94 Regen Potency, 30% Regen Potency, 70 Enh Duration %, 60 Regen Duration [56 PDT/40 MDT, 409 M.Eva] 1162 HP
+    -- Total regen = 122 HP/tic for 102 sec; Possibly 103 HP/tic if the 30% bonus only applies to base 30HP Regen IV
+  }
+
   sets.midcast.Refresh = set_combine(sets.HeavyDef, sets.midcast.EnhancingDuration, {
     head="Erilaz Galea +2",
     waist="Gishdubar Sash",
   })
+
   -- TODO: Set priorities
   sets.midcast.Stoneskin = {
     ammo="Staunch Tathlum +1",                --  3/ 3, ___ [___] __
