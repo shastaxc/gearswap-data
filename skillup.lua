@@ -19,7 +19,7 @@ user_settings = {
           'Barfire', 'Barblizzard', 'Baraero', 'Barstone', 'Barthunder', 'Barwater'
         },
         Ninjutsu = T{},
-        Singing = T{"Army's Paeon", "Army's Paeon II", "Sheepfoe Mambo", "Herb Pastoral", "Knight's Minne", "Valor Minuet"},
+        Singing = T{'Fire Carol', 'Ice Carol', 'Wind Carol', 'Earth Carol', 'Lightning Carol', 'Water Carol', 'Light Carol', 'Dark Carol'},
         Blue = T{'Pollen'},
         Summoning = T{'Carbuncle'}},
     save_settings = false} --change this to true if you wish to save the last position of your skillup window
