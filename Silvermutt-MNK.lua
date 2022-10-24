@@ -343,7 +343,10 @@ function init_gear_sets()
     -- hands="Hesychast's Gloves +3", -- Enhances Chakra
   } -- VIT
 
-  sets.precast.JA['Provoke'] = sets.Enmity
+  sets.precast.JA['Provoke'] = set_combine(sets.Enmity, {
+    body=gear.Herc_TH_body, --2
+    hands=gear.Herc_TH_hands, --2
+  })
 
   -- Waltz set (chr and vit)
   sets.precast.Waltz = {
