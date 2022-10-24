@@ -514,7 +514,7 @@ function init_gear_sets()
     feet="Baayami Sabots +1",       -- 29, __, __, __ [__/__, 139]
     neck="Incanter's Torque",       -- 10, __, __, __ [__/__, ___]
     -- ear1="Lodurr Earring",       -- 10, __, __, __ [__/__, ___]
-    -- ear2="Cath Palug Earring",   --  5, __, __, __ [__/__, ___]
+    ear2="Cath Palug Earring",      --  5, __, __, __ [__/__, ___]
     -- ring1="Evoker's Ring",       -- 10, __, __, __ [__/__, ___]
     ring2="Stikini Ring +1",        --  8, __, __, __ [__/__, ___]
     -- back=gear.SMN_Pre_BP_Cape,   --  8, __,  5, __ [__/__, ___]
@@ -558,7 +558,7 @@ function init_gear_sets()
     feet="Baayami Sabots +1",       -- 29, __, __, __ [__/__, 139]
     neck="Incanter's Torque",       -- 10, __, __, __ [__/__, ___]
     -- ear1="Lodurr Earring",       -- 10, __, __, __ [__/__, ___]
-    -- ear2="Cath Palug Earring",   --  5, __, __, __ [__/__, ___]
+    ear2="Cath Palug Earring",      --  5, __, __, __ [__/__, ___]
     -- ring1="Evoker's Ring",       -- 10, __, __, __ [__/__, ___]
     ring2="Stikini Ring +1",        --  8, __, __, __ [__/__, ___]
     -- back=gear.SMN_Pre_BP_Cape,   --  8, __,  5, __ [__/__, ___]
@@ -740,11 +740,11 @@ function init_gear_sets()
     legs="Beckoner's Spats +2",       -- 25 [11/11, 147]
     feet="Baayami Sabots +1",         -- 29 [__/__, 139]
     neck="Incanter's Torque",         -- 10 [__/__, ___]
+    ear2="Cath Palug Earring",        --  5 [__/__, ___]
     ring1="Stikini Ring +1",
     ring2="Defending Ring",           -- __ [10/10, ___]
     back=gear.SMN_Skill_Cape,         -- 13 [__/__, ___]
     -- ear1="Lodurr Earring",         -- 10 [__/__, ___]
-    -- ear2="Cath Palug Earring",     --  5 [__/__, ___]
     -- ring1="Evoker's Ring",         -- 10 [__/__, ___]
     -- waist="Kobo Obi",              --  8 [__/__, ___]
     -- Traits/Merits/Gifts              469
@@ -1014,12 +1014,12 @@ function init_gear_sets()
     legs="Assiduity Pants +1",      --   43 [__/__, 107] ( 2,  3) {___, __, __/__}
     feet="Baayami Sabots +1",       --   30 [__/__, 139] ( 3, __) {___, __, __/__}
     neck="Loricate Torque +1",      -- ____ [ 6/ 6, ___] (__, __) {___, __, __/__}; DEF+60
+    ear1="Cath Palug Earring",      -- ____ [__/__, ___] ( 1, __) {___, __, __/__}
     ear2="Beckoner's Earring +1",   -- ____ [ 4/ 4, ___] ( 2, __) {  1, __, __/__}
     ring1="Stikini Ring +1",        -- ____ [__/__, ___] ( 1, __) {___, __, __/__}
     ring2="Defending Ring",         -- ____ [10/10, ___] (__, __) {___, __, __/__}
     waist="Regal Belt",             --   88 [ 3/ 3, ___] (__, __) {___, __, __/__}
     -- body=gear.Apogee_A_body,     -- -160 [__/__,  91] ( 4, __) {___, __, __/__}
-    -- ear1="Cath Palug Earring",   -- ____ [__/__, ___] ( 1, __) {___, __, __/__}
     -- back=gear.SMN_FC_Cape,       -- ____ [10/__, ___] (__, __) {  1, __, __/__}
     -- Traits/Merits/JP Gifts                                      ___, __,  7/ 7
     -- 70 HP [48 PDT/38 MDT, 500 M.Eva] (18 Refresh, 8 Perp Cost) {Pet: 121 Lv, 0 Regain, 7 PDT/7 MDT}
