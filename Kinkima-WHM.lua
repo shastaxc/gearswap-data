@@ -42,6 +42,9 @@ function job_setup()
       'Rainstorm', 'Rainstorm II', 'Sandstorm', 'Sandstorm II', 'Thunderstorm', 'Thunderstorm II', 'Voidstorm', 'Voidstorm II',
       'Windstorm', 'Windstorm II'}
 
+  bar_status_spells = S{'Baramnesra', 'Barvira', 'Barparalyzra', 'Barsilencera', 'Barpetra', 'Barpoisonra', 'Barblindra', 'Barsleepra',
+      'Baramnesia', 'Barvirus', 'Barparalyze', 'Barsilence', 'Barpetrify', 'Barpoison', 'Barblind', 'Barsleep'}
+
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c interact')
   send_command('bind @c gs c toggle CP')
@@ -681,6 +684,11 @@ function init_gear_sets()
   }
 
   -- TODO: update
+  sets.midcast.BarStatus = set_combine(sets.midcast.EnhancingDuration, {
+    neck="Sroda Necklace",
+  })
+
+  -- TODO: update
   sets.midcast.Regen = set_combine(sets.midcast['Enhancing Magic'],{
     main="Bolelabunga",
     legs=gear.Telchine_RGN_legs,
@@ -1008,9 +1016,9 @@ function job_get_spell_map(spell, default_spell_map)
       else
         return 'CuragaNormal'
       end
-    end
-
-    if spell.skill == 'Enfeebling Magic' then
+    elseif bar_status_spells:contains(spell.english) then
+      return 'BarStatus'
+    elseif spell.skill == 'Enfeebling Magic' then
       if spell.type == 'WhiteMagic' then
         return 'MndEnfeebles'
       else
