@@ -1319,7 +1319,7 @@ function init_gear_sets()
     neck="Loricate Torque +1",          --  6/ 6, ___ [__, __]; DEF+60
     ear1="Savant's Earring",            -- __/__, ___ [ 1, __]
     ear2="Etiolation Earring",          -- __/ 3, ___ [__, __]; Resist Silence+15
-    ring1="Stikini Ring +1",            -- __/__, ___ [__,  1]
+    ring1="Copper Ring",                -- __/__, ___ [__, __]
     ring2="Defending Ring",             -- 10/10, ___ [__, __]
     back=gear.SCH_FC_Cape,              -- 10/__,  30 [__, __]
     waist="Embla Sash",                 -- __/__, ___ [ 5, __]
@@ -1502,7 +1502,7 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
   if state.PhysicalDefenseMode.current == 'Cait Sith' then
     equip(sets.Special.CaitSith)
   end
-  
+
   ----------- Non-silibs content goes above this line -----------
   silibs.post_midcast_hook(spell, action, spellMap, eventArgs)
 end
