@@ -741,19 +741,21 @@ function init_gear_sets()
     feet="Baayami Sabots +1",         -- 29 [__/__, 139]
     neck="Incanter's Torque",         -- 10 [__/__, ___]
     ear2="Cath Palug Earring",        --  5 [__/__, ___]
-    ring1="Stikini Ring +1",
+    ring1="Stikini Ring +1",          --  8 [__/__, ___]
     ring2="Defending Ring",           -- __ [10/10, ___]
     back=gear.SMN_Skill_Cape,         -- 13 [__/__, ___]
+    waist="Kobo Obi",                 --  8 [__/__, ___]
+    -- Traits/Merits/Gifts              469
+    -- 652 Summon Skill [51 PDT/51 MDT, 619 M.Eva]
+
     -- ear1="Lodurr Earring",         -- 10 [__/__, ___]
     -- ring1="Evoker's Ring",         -- 10 [__/__, ___]
-    -- waist="Kobo Obi",              --  8 [__/__, ___]
-    -- Traits/Merits/Gifts              469
-    -- 664 Summon Skill [51/51, 619 M.Eva]
+    -- 664 Summon Skill [51 PDT/51 MDT, 619 M.Eva]
     
     -- ammo="Epitaph",                -- __ [__/__, ___]
     -- head="Beckoner's Horn +3",     -- 23 [10/10, 130]
     -- body="Beckoner's Doublet +3",  -- 24 [13/13, 130]
-    -- 674 Summon Skill [50/50, 639 M.Eva]
+    -- 674 Summon Skill [50 PDT/50 MDT, 639 M.Eva]
   }
 
   -- Need Pet M.Acc, Summoning Skill to land debuffs
