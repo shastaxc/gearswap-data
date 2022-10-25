@@ -1110,22 +1110,24 @@ function init_gear_sets()
   -- Full STP; and more recast reduction
   sets.midcast.CorsairShot.STP = {
     ammo=gear.MAbullet,           -- __, 35, 25, __, __/__
-    -- head="Blood Mask",            -- __, __,  3, __, __/__ Recast -5
     body="Malignance Tabard",     -- 42, __, 50, 11,  9/ 9
     hands="Malignance Gloves",    -- 24, __, 50, 12,  5/ 5
     legs="Ikenga's Trousers",     -- 40, __, 50, 10,  9/ 9
     feet="Malignance Boots",      -- 49, __, 50,  9,  4/ 4
     ear1="Dedition Earring",      -- __, __, __,  8, __/__
     ear2="Cessance Earring",      -- __, __, __,  3, __/__
+    waist="Reiki Yotai",          -- __, __, __,  4, __/__
+    -- 155 AGI, 35 MAB, 225 M.Acc, 57 STP, 27PDT/27MDT
+
+    -- head="Blood Mask",            -- __, __,  3, __, __/__ Recast -5
     -- neck="Iskur Gorget",          -- __, __, __,  8, __/__
     -- ear2="Telos Earring",         -- __, __, __,  5, __/__
     -- ring1="Chirich Ring +1",      -- __, __, __,  6, __/__
     -- ring2="Crepuscular Ring",     -- __, __, 10,  6, __/__
     -- back=gear.COR_RA_Cape,        -- 30, __, __, 10, 10/__
-    -- waist="Reiki Yotai",          -- __, __, __,  4, __/__
     -- ear2="Crepuscular Earring",-- __, __, 10,  5, __/__
     -- 185 AGI, 35 MAB, 248 M.Acc, 89 STP, 37PDT/27MDT
-  } -- 185 AGI, 35 MAB, 238 M.Acc, 89 STP, 37PDT/27MDT
+  }
 
   -- Full MAcc (to land debuff effects)
   sets.midcast.CorsairShot['Light Shot'] = {
@@ -1321,7 +1323,7 @@ function init_gear_sets()
     ring1="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
     ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
     -- back=gear.COR_DW_Cape,            -- 10, __, 20 <__, __, __> [10/__, ___]
-    -- waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
+    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
     -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
     -- 73 DW, 28 STP, 242 Acc <0 DA, 7 TA, 0 QA> [33 PDT/19 MDT, 378 MEVA]
   }
@@ -1357,7 +1359,7 @@ function init_gear_sets()
     ring1="Epona's Ring",             -- __, __, __ < 3,  3, __> [__/__, ___]
     ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
     -- back=gear.COR_DW_Cape,            -- 10, __, 20 <__, __, __> [10/__, ___]
-    -- waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
+    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
     -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
     -- 67 DW, 39 STP, 237 Acc <3 DA, 6 TA, 0 QA> [35 PDT/29 MDT, 448 MEVA]
   }
@@ -1393,7 +1395,7 @@ function init_gear_sets()
     ring1="Epona's Ring",             -- __, __, __ < 3,  3, __> [__/__, ___]
     ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
     -- back=gear.COR_DW_Cape,            -- 10, __, 20 <__, __, __> [10/__, ___]
-    -- waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
+    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
     -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
     -- 57 DW, 46 STP, 287 Acc <3 DA, 11 TA, 0 QA> [37 PDT/27 MDT, 543 MEVA]
 
@@ -1435,7 +1437,7 @@ function init_gear_sets()
     ring1="Epona's Ring",             -- __, __, __ < 3,  3, __> [__/__, ___]
     ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
     back=gear.COR_TP_Cape,            -- __, __, 20 <10, __, __> [10/__, ___]
-    -- waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
+    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
     -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
     -- 43 DW, 38 STP, 260 Acc <18 DA, 17 TA, 0 QA> [35 PDT/23 MDT, 460 MEVA]
 
@@ -1620,7 +1622,7 @@ function init_gear_sets()
     ring1="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
     ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
     -- back=gear.COR_DW_Cape,            -- 10, __, 20 <__, __, __> [10/__, ___]
-    -- waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
+    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
     -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
     -- 68 DW, 12 STP, 266 Acc <4 DA, 4 TA, 0 QA> [49 PDT/33 MDT, 453 MEVA]
   }
@@ -1637,7 +1639,7 @@ function init_gear_sets()
     ring1="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
     ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
     -- back=gear.COR_DW_Cape,            -- 10, __, 20 <__, __, __> [10/__, ___]
-    -- waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
+    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
     -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
     -- 66 DW, 35 STP, 261 Acc <0 DA, 0 TA, 0 QA> [53 PDT/35 MDT, 531 MEVA]
   }
@@ -1654,7 +1656,7 @@ function init_gear_sets()
     ring1="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
     ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
     -- back=gear.COR_DW_Cape,            -- 10, __, 20 <__, __, __> [10/__, ___]
-    -- waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
+    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
     -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
     -- 66 DW, 35 STP, 261 Acc <0 DA, 0 TA, 0 QA> [53 PDT/35 MDT, 531 MEVA]
     
@@ -1676,7 +1678,7 @@ function init_gear_sets()
     -- ring1="Chirich Ring +1",          -- __,  6, 10 <__, __, __> [__/__, ___]
     ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
     -- back=gear.COR_DW_Cape,            -- 10, __, 20 <__, __, __> [10/__, ___]
-    -- waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
+    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
     -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
     -- 57 DW, 50 STP, 295 Acc <0 DA, 0 TA, 0 QA> [50 PDT/40 MDT, 612 MEVA]
     
@@ -1700,7 +1702,7 @@ function init_gear_sets()
     ring1="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
     ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
     -- back=gear.COR_DW_Cape,            -- 10, __, 20 <__, __, __> [10/__, ___]
-    -- waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
+    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
     -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
     -- 67 DW, 23 STP, 257 Acc <0 DA, 3 TA, 0 QA> [51 PDT/39 MDT, 448 MEVA]
     
@@ -1722,7 +1724,7 @@ function init_gear_sets()
     ring1="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
     ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
     -- back=gear.COR_DW_Cape,            -- 10, __, 20 <__, __, __> [10/__, ___]
-    -- waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
+    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
     -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
     -- 67 DW, 23 STP, 257 Acc <0 DA, 3 TA, 0 QA> [51 PDT/39 MDT, 448 MEVA]
   }
@@ -1739,7 +1741,7 @@ function init_gear_sets()
     ring1="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
     ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
     -- back=gear.COR_DW_Cape,            -- 10, __, 20 <__, __, __> [10/__, ___]
-    -- waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
+    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
     -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
     -- 58 DW, 32 STP, 296 Acc <0 DA, 3 TA, 0 QA> [49 PDT/37 MDT, 529 MEVA]
   }
@@ -1756,7 +1758,7 @@ function init_gear_sets()
     ring1="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
     ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
     -- back=gear.COR_DW_Cape,            -- 10, __, 20 <__, __, __> [10/__, ___]
-    -- waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
+    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
     -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
     -- 48 DW, 47 STP, 320 Acc <0 DA, 0 TA, 0 QA> [54 PDT/38 MDT, 604 MEVA]
   }
@@ -1775,7 +1777,7 @@ function init_gear_sets()
     ring1="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
     ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
     -- back=gear.COR_DW_Cape,            -- 10, __, 20 <__, __, __> [10/__, ___]
-    -- waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
+    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
     -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
     -- 57 DW, 38 STP, 287 Acc <0 DA, 8 TA, 0 QA> [50 PDT/32 MDT, 543 MEVA]
 
@@ -1796,7 +1798,7 @@ function init_gear_sets()
     ring1="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
     ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
     -- back=gear.COR_DW_Cape,            -- 10, __, 20 <__, __, __> [10/__, ___]
-    -- waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
+    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
     -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
     -- 57 DW, 43 STP, 300 Acc <0 DA, 4 TA, 0 QA> [49 PDT/31 MDT, 612 MEVA]
   }
@@ -1813,7 +1815,7 @@ function init_gear_sets()
     ring1="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
     ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
     -- back=gear.COR_DW_Cape,            -- 10, __, 20 <__, __, __> [10/__, ___]
-    -- waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
+    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
     -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
     -- 57 DW, 44 STP, 300 Acc <0 DA, 0 TA, 0 QA> [51 PDT/33 MDT, 612 MEVA]
   }
@@ -1831,7 +1833,7 @@ function init_gear_sets()
     ring1="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
     ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
     -- back=gear.COR_DW_Cape,            -- 10, __, 20 <__, __, __> [10/__, ___]
-    -- waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
+    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
     -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
     -- 48 DW, 52 STP, 320 Acc <1 DA, 0 TA, 0 QA> [51 PDT/33 MDT, 604 MEVA]
   }
@@ -1850,7 +1852,7 @@ function init_gear_sets()
     ring1="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
     ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
     back=gear.COR_TP_Cape,            -- __, __, 20 <10, __, __> [10/__, ___]
-    -- waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
+    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
     -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
     -- 43 DW, 29 STP, 270 Acc <10 DA, 14 TA, 0 QA> [51 PDT/33 MDT, 460 MEVA]
     
@@ -1872,7 +1874,7 @@ function init_gear_sets()
     ring1="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
     ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
     back=gear.COR_TP_Cape,            -- __, __, 20 <10, __, __> [10/__, ___]
-    -- waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
+    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
     -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
     -- 43 DW, 43 STP, 297 Acc <11 DA, 8 TA, 0 QA> [50 PDT/32 MDT, 535 MEVA]
     
@@ -1895,7 +1897,7 @@ function init_gear_sets()
     ring1="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
     ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
     back=gear.COR_TP_Cape,            -- __, __, 20 <10, __, __> [10/__, ___]
-    -- waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
+    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
     -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
     -- 43 DW, 48 STP, 310 Acc <11 DA, 4 TA, 0 QA> [49 PDT/31 MDT, 604 MEVA]
     
@@ -1917,7 +1919,7 @@ function init_gear_sets()
     ring1="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
     ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
     -- back=gear.COR_DW_Cape,            -- 10, __, 20 <__, __, __> [10/__, ___]
-    -- waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
+    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
     -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
     -- 48 DW, 52 STP, 320 Acc <1 DA, 4 TA, 0 QA> [51 PDT/33 MDT, 604 MEVA]
   }
@@ -1981,7 +1983,7 @@ function init_gear_sets()
     ring1="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
     ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
     back=gear.COR_TP_Cape,            -- __, __, 20 <10, __, __> [10/__, ___]
-    -- waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
+    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
     -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
     -- 38 DW, 43 STP, 293 Acc <11 DA, 6 TA, 0 QA> [49 PDT/29 MDT, 529 MEVA]
     
@@ -2004,7 +2006,7 @@ function init_gear_sets()
     ring1="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
     ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
     back=gear.COR_TP_Cape,            -- __, __, 20 <10, __, __> [10/__, ___]
-    -- waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
+    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
     -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
     -- 38 DW, 52 STP, 320 Acc <11 DA, 0 TA, 0 QA> [51 PDT/33 MDT, 604 MEVA]
     
@@ -2086,7 +2088,7 @@ function init_gear_sets()
     -- ring1="Chirich Ring +1",      -- [__/__, ___] __, 10
     ring2="Defending Ring",       -- [10/10, ___]
     -- back=gear.COR_DW_Cape,        -- [10/__, ___] 10
-    -- waist="Reiki Yotai",          -- [__/__, ___]  7
+    waist="Reiki Yotai",          -- [__/__, ___]  7
   } -- [51 PDT/41 MDT, 674 MEVA] 21 DW, 26 Subtle Blow
   sets.engaged.DW.LowAcc.SubtleBlow = sets.engaged.DW.SubtleBlow
   sets.engaged.DW.MidAcc.SubtleBlow = sets.engaged.DW.SubtleBlow

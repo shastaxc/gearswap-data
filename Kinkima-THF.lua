@@ -735,7 +735,7 @@ function init_gear_sets()
     -- ring1="Hetairoi Ring",
     -- ring2="Gere Ring",
     -- back=gear.THF_DW_Cape, --10
-    -- waist="Reiki Yotai", --7
+    waist="Reiki Yotai", --7
   }--46
   sets.engaged.DW.LowAcc = set_combine(sets.engaged.DW, {
     -- ammo="Yamarang",
@@ -762,7 +762,7 @@ function init_gear_sets()
     -- ring1="Hetairoi Ring",
     -- ring2="Gere Ring",
     -- back=gear.THF_DW_Cape, --10
-    -- waist="Reiki Yotai", --7
+    waist="Reiki Yotai", --7
   }--37
   sets.engaged.DW.LowAcc.LowHaste = set_combine(sets.engaged.DW.LowHaste, {
     -- ammo="Yamarang",
@@ -788,7 +788,8 @@ function init_gear_sets()
     -- ring1="Hetairoi Ring",
     -- ring2="Gere Ring",
     -- back=gear.THF_DW_Cape, --10
-    -- waist="Reiki Yotai", --7
+    waist="Reiki Yotai", --7
+
     -- body="Pillager's Vest +3",
   }--26
   sets.engaged.DW.LowAcc.MidHaste = set_combine(sets.engaged.DW.MidHaste, {
@@ -817,7 +818,7 @@ function init_gear_sets()
     -- ring1="Hetairoi Ring",
     -- ring2="Gere Ring",
     -- back=gear.THF_TP_Cape,
-    -- waist="Reiki Yotai", --7
+    waist="Reiki Yotai", --7
 
     -- body="Pillager's Vest +3",
   }--12
@@ -847,7 +848,7 @@ function init_gear_sets()
     -- ring1="Hetairoi Ring",
     -- ring2="Gere Ring",
     -- back=gear.THF_TP_Cape,
-    -- waist="Reiki Yotai", --7
+    waist="Reiki Yotai", --7
 
     -- body="Pillager's Vest +3",
   }--7
