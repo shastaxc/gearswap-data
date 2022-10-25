@@ -769,14 +769,14 @@ function init_gear_sets()
     neck="Summoner's Collar +2",      -- ___, 25, __ [ 5/ 5, ___]
     ear1="Enmerkar Earring",          -- ___, 15, __ [__/__, ___]
     ear2="Beckoner's Earring +1",     --   1, 12, __ [ 4/ 4, ___]
-    ring1="Stikini Ring +1",
+    ring1="Stikini Ring +1",          -- ___, __,  8 [__/__, ___]
     ring2="Cath Palug Ring",          -- ___, 12, __ [ 5/ 5, ___]
     waist="Incarnation Sash",         -- ___, 15, __ [__/__, ___]
-    -- ring1="Evoker's Ring",         -- ___, __, 10 [__/__, ___]
-    -- back=gear.SMN_Magic_BP_Cape,   --   1, 20, __ [10/__,  20]
-    -- 121 Pet Lv, 424 Pet M.Acc, 90 Summon Skill [56 PDT/46 MDT, 648 M.Eva]
+    -- 120 Pet Lv, 404 Pet M.Acc, 88 Summon Skill [46 PDT/46 MDT, 628 M.Eva]
 
     -- ammo="Epitaph",                -- 119, 25, __ [__/__, ___]
+    -- ring1="Evoker's Ring",         -- ___, __, 10 [__/__, ___]
+    -- back=gear.SMN_Magic_BP_Cape,   --   1, 20, __ [10/__,  20]
     -- 121 Pet Lv, 429 Pet M.Acc, 90 Summon Skill [56 PDT/46 MDT, 648 M.Eva]
     
     -- main="Nirvana",                --   2, 30, __ [__/__, ___]
