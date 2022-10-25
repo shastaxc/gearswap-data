@@ -366,7 +366,7 @@ function init_gear_sets()
 
   -- 73-85% AGI
   sets.precast.WS['Exenterator'] = {
-    ammo="Seething Bomblet +1",
+    ammo="Cath Palug Stone",
     head=gear.Adhemar_B_head,
     body="Plunderer's Vest +3",
     hands="Meghanada Gloves +2",
@@ -379,14 +379,13 @@ function init_gear_sets()
     ring2="Ilabrat Ring",
     back=gear.THF_WS1_Cape,
     waist="Fotia Belt",
-    -- ammo="Cath Palug Stone",
     -- head="Plunderer's Bonnet +3",
     -- back=gear.THF_WS3_Cape
   }
   sets.precast.WS['Exenterator'].MaxTP = set_combine(sets.precast.WS['Exenterator'], {
   })
   sets.precast.WS['Exenterator'].AttCapped = {
-    ammo="Seething Bomblet +1",
+    ammo="Cath Palug Stone",
     head=gear.Adhemar_B_head,
     body="Gleti's Cuirass",
     hands="Malignance Gloves",
@@ -399,7 +398,6 @@ function init_gear_sets()
     ring2="Ilabrat Ring",
     back=gear.THF_WS1_Cape,
     waist="Fotia Belt",
-    -- ammo="Cath Palug Stone",
     -- head="Plunderer's Bonnet +3",
     -- back=gear.THF_WS3_Cape
   }
@@ -465,15 +463,17 @@ function init_gear_sets()
     ring2="Regal Ring",                 -- 10, __, 20, __
     back=gear.THF_WS1_Cape,             -- 30, 10, 20, __
     waist="Grunfeld Rope",              --  5, __, 20, __
+    -- 246 DEX, 28 WSD, 376 Att, 6 PDL
+    
     -- head="Plunderer's Bonnet +3",    -- 41, __, 62, __
     -- legs="Plunderer's Culottes +3"   -- 21,  6, 64, __
     -- 280 DEX, 23 WSD, 387 Att, __ PDL
-  } -- 246 DEX, 28 WSD, 376 Att, 6 PDL
+  }
   sets.precast.WS["Rudra's Storm"].MaxTP = set_combine(sets.precast.WS["Rudra's Storm"], {
     ear2="Sherida Earring",
   })
   sets.precast.WS["Rudra's Storm"].AttCapped = {
-    ammo="Aurgelmir Orb",               --  5, __,  7, __
+    ammo="Cath Palug Stone",            -- 10, __, __, __
     head="Gleti's Mask",                -- 28, __, 60,  6
     body="Gleti's Cuirass",             -- 34, __, 64,  9
     hands="Meghanada Gloves +2",        -- 50,  7, 43, __
@@ -487,10 +487,8 @@ function init_gear_sets()
     back=gear.THF_WS1_Cape,             -- 30, 10, 20, __
     waist="Kentarch Belt +1",           -- 10, __, __, __
     -- Lustratio set bonus              -- __,  4, __, __
-
-    -- ammo="Cath Palug Stone",         -- 10, __, __, __
     -- 288 DEX, 26 WSD, 207 Att, 15 PDL
-  } -- 283 DEX, 26 WSD, 214 Att, 15 PDL
+  }
   sets.precast.WS["Rudra's Storm"].AttCappedMaxTP = set_combine(sets.precast.WS["Rudra's Storm"].AttCapped, {
     ear2="Sherida Earring",
   })

@@ -450,7 +450,7 @@ function init_gear_sets()
   -- 73-85% AGI, 1.0 FTP, ftp replicating
   -- Multihit > AGI
   sets.precast.WS['Exenterator'] = set_combine(sets.precast.WS, {
-    ammo="Charis Feather",
+    ammo="Cath Palug Stone",
     head=gear.Adhemar_B_head,
     body="Horos Casaque +3",
     hands=gear.Herc_TA_hands,
@@ -463,7 +463,6 @@ function init_gear_sets()
     ring2="Regal Ring",
     back=gear.DNC_TP_DA_Cape,
     waist="Fotia Belt",
-    -- ammo="C. Palug Stone",
     -- head=gear.Herc_TA_head,
     -- back=gear.DNC_WS4_Cape,
   }) -- Multihit > AGI
@@ -567,14 +566,16 @@ function init_gear_sets()
     ring2="Regal Ring",             -- 10, __, 20, __
     back=gear.DNC_WS1_Cape,         -- 30, 10, 20, __; Crit dmg+5
     waist="Kentarch Belt +1",       -- 10, __, __, __
+    -- 220 DEX, 63 WSD, 347 Att, 10 PDL
+
     -- ammo="Aurgelmir Orb +1",     --  7, __, 10, __
-    -- 218 DEX, 63 WSD, 344 Att, 10 PDL
-  })-- 220 DEX, 63 WSD, 347 Att, 10 PDL
+    -- 222 DEX, 63 WSD, 350 Att, 10 PDL
+  })
   sets.precast.WS["Rudra's Storm"].MaxTP = set_combine(sets.precast.WS["Rudra's Storm"], {
     ear1="Ishvara Earring",         -- __,  2, __, __
   })
   sets.precast.WS["Rudra's Storm"].AttCapped = set_combine(sets.precast.WS, {
-    ammo="Crepuscular Pebble",      -- __, __, __,  3
+    ammo="Cath Palug Stone",        -- 10, __, __, __
     head=gear.Lustratio_D_head,     -- 45, __, __, __
     body="Gleti's Cuirass",         -- 34, __, 64,  9
     hands="Maxixi Bangles +3",      -- 45, 10, 35, __
@@ -582,19 +583,20 @@ function init_gear_sets()
     feet=gear.Lustratio_D_feet,     -- 48, __, __, __
     neck="Etoile Gorget +2",        -- 25, __, __, 10
     ear1="Moonshade Earring",       -- __, __, __, __; TP Bonus+250
-    ear2="Maculele Earring",        -- __, __, __,  9
+    ear2="Maculele Earring",        -- __, __, __,  7
     ring1="Epaminondas's Ring",     -- __,  5, __, __
     ring2="Regal Ring",             -- 10, __, 20, __
     back=gear.DNC_WS1_Cape,         -- 30, 10, 20, __; Crit dmg+5
     waist="Kentarch Belt +1",       -- 10, __, __, __
     -- Lustratio set bonus          -- __,  4, __, __
+    -- 257 DEX, 40 WSD, 199 Att, 26 PDL
     
     -- ear2="Maculele Earring +2",  -- __, __, __,  9
-  })-- 257 DEX, 40 WSD, 199 Att, 22 PDL
+    -- 257 DEX, 40 WSD, 199 Att, 28 PDL
+  })
   sets.precast.WS["Rudra's Storm"].AttCappedMaxTP = set_combine(sets.precast.WS["Rudra's Storm"].AttCapped, {
     ear1="Ishvara Earring",         -- __,  2, __, __
-    
-    -- ear1="Odr Earring",             -- 10, __, __, __
+    -- ear1="Odr Earring",          -- 10, __, __, __
   })
   -- For Crit Dmg, not crit rate; is overlaid, don't set_combine
   sets.precast.WS["Rudra's Storm"].Climactic = {
@@ -822,7 +824,7 @@ function init_gear_sets()
     -- ammo="Voluspa Tathlum",
   })
   sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
-    ammo="Falcon Eye",
+    ammo="Cath Palug Stone",
     body="Maxixi Casaque +3",
     legs="Malignance Tights",       -- __, 10, 50 <__, __, __> [ 7/ 7, 150] __(__)
     ear1="Telos Earring",           -- __,  5, 10 < 1, __, __> [__/__, ___] __(__)
@@ -830,7 +832,6 @@ function init_gear_sets()
     ring1="Chirich Ring +1",
     ring2="Regal Ring",
     waist="Olseni Belt",
-    -- ammo="C. Palug Stone",
   })
 
   -- * DNC Native DW Trait: 30% DW
@@ -866,13 +867,12 @@ function init_gear_sets()
   })
   sets.engaged.DW.HighAcc = set_combine(sets.engaged.DW.MidAcc, {
     -- TODO: Re-evaluate to avoid dropping DW
-    ammo="Falcon Eye",
+    ammo="Cath Palug Stone",
     body="Maxixi Casaque +3",
     hands="Mummu Wrists +2",
     legs="Malignance Tights",       -- __, 10, 50 <__, __, __> [ 7/ 7, 150] __(__)
     ear2="Dignitary's Earring",
     ring2="Regal Ring",
-    -- ammo="C. Palug Stone",
     -- waist="Olseni Belt",
   })
 
@@ -909,13 +909,12 @@ function init_gear_sets()
   })
   sets.engaged.DW.HighAcc.LowHaste = set_combine(sets.engaged.DW.MidAcc.LowHaste, {
     -- TODO: Re-evaluate to avoid dropping DW
-    ammo="Falcon Eye",
+    ammo="Cath Palug Stone",
     body="Maxixi Casaque +3",
     hands="Mummu Wrists +2",
     legs="Malignance Tights",       -- __, 10, 50 <__, __, __> [ 7/ 7, 150] __(__)
     ear1="Dignitary's Earring",
     ring2="Regal Ring",
-    -- ammo="C. Palug Stone",
     -- waist="Olseni Belt",
   })
 
@@ -953,13 +952,12 @@ function init_gear_sets()
     -- ammo="Voluspa Tathlum",
   })
   sets.engaged.DW.HighAcc.MidHaste = set_combine(sets.engaged.DW.MidAcc.MidHaste, {
-    ammo="Falcon Eye",
+    ammo="Cath Palug Stone",
     body="Maxixi Casaque +3",
     legs="Malignance Tights",       -- __, 10, 50 <__, __, __> [ 7/ 7, 150] __(__)
     ear2="Dignitary's Earring",
     ring1="Chirich Ring +1",
     ring2="Regal Ring",
-    -- ammo="C. Palug Stone",
     -- waist="Olseni Belt",
   })
 
@@ -995,13 +993,12 @@ function init_gear_sets()
     -- ammo="Voluspa Tathlum",
   })
   sets.engaged.DW.HighAcc.HighHaste = set_combine(sets.engaged.DW.MidAcc.HighHaste, {
-    ammo="Falcon Eye",
+    ammo="Cath Palug Stone",
     head="Maxixi Tiara +3",         --  8, __, 47 <__, __, __> [__/__,  73] __(__)
     body="Maxixi Casaque +3",
     legs="Malignance Tights",       -- __, 10, 50 <__, __, __> [ 7/ 7, 150] __(__)
     ear2="Dignitary's Earring",
     ring2="Regal Ring",
-    -- ammo="C. Palug Stone",
     -- waist="Olseni Belt",
   })
 

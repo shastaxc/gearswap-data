@@ -1051,11 +1051,10 @@ function init_gear_sets()
     ring1="Chirich Ring +1",
   })
   sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
-    ammo="Falcon Eye",
+    ammo="Cath Palug Stone",
     legs=gear.Carmine_D_legs,
     ear1="Odr Earring",
     ear2="Dignitary's Earring",
-    -- ammo="C. Palug Stone",
     -- head="Carmine Mask +1",
     -- body="Carm. Sc. Mail +1",
     -- hands="Runeist's Mitons +3",
