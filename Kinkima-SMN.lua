@@ -770,10 +770,9 @@ function init_gear_sets()
     ear1="Enmerkar Earring",          -- ___, 15, __ [__/__, ___]
     ear2="Beckoner's Earring +1",     --   1, 12, __ [ 4/ 4, ___]
     ring1="Stikini Ring +1",
-    ring2="Stikini Ring +1",
+    ring2="Cath Palug Ring",          -- ___, 12, __ [ 5/ 5, ___]
     waist="Incarnation Sash",         -- ___, 15, __ [__/__, ___]
     -- ring1="Evoker's Ring",         -- ___, __, 10 [__/__, ___]
-    -- ring2="Cath Palug Ring",       -- ___, 12, __ [ 5/ 5, ___]
     -- back=gear.SMN_Magic_BP_Cape,   --   1, 20, __ [10/__,  20]
     -- 121 Pet Lv, 424 Pet M.Acc, 90 Summon Skill [56 PDT/46 MDT, 648 M.Eva]
 
