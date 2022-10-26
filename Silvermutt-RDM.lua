@@ -746,8 +746,8 @@ function init_gear_sets()
   }
 
   sets.midcast.Stoneskin = set_combine(sets.midcast.EnhancingDuration, {
+    neck="Nodens Gorget",
     waist="Siegel Sash",
-    -- neck="Nodens Gorget",
   })
 
   sets.midcast['Phalanx'] = set_combine(sets.midcast.EnhancingDuration, {

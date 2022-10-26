@@ -653,9 +653,9 @@ function init_gear_sets()
     back="Grapevine Cape",
   })
   sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {
+    neck="Nodens Gorget",
     waist="Siegel Sash",
     -- legs="Shedir Seraweels",
-    -- neck="Nodens Gorget",
   })
   sets.midcast.Aquaveil = set_combine(sets.midcast['Enhancing Magic'], {
     -- head="Chironic Hat",

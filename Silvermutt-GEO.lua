@@ -625,6 +625,7 @@ function init_gear_sets()
     main="Daybreak",
     sub=empty,
     legs="Geomancy Pants +2",
+    neck="Nodens Gorget",
     ring1="Stikini Ring +1",
     waist="Hachirin-no-Obi",
     -- main="Chatoyant Staff",
@@ -636,7 +637,6 @@ function init_gear_sets()
     -- hands=gear.Vanya_B_hands,
     -- legs=gear.Vanya_B_legs,
     -- feet=gear.Vanya_B_feet,
-    -- neck="Nodens Gorget",
     -- ear1="Mendicant's Earring",
     -- ear2="Meili Earring",
     -- ring2="Menelaus's Ring",
@@ -822,9 +822,9 @@ function init_gear_sets()
 	sets.midcast['Enhancing Magic'] = {}
 
 	sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {
+    neck="Nodens Gorget",
     waist="Siegel Sash",
     -- legs="Shedir Seraweels",
-    -- neck="Nodens Gorget",
     -- ear2="Earthcry Earring",
   })
 
