@@ -760,7 +760,6 @@ function init_gear_sets()
     ear2="Telos Earring",
   })
   sets.precast.WS['Savage Blade'].HighAcc = set_combine(sets.precast.WS['Savage Blade'].MidAcc, {
-    body=gear.Herc_WSD_body,      -- 28, 20, 20, 35, 10, __, ___
     ring1="Rufescent Ring",       --  6,  6, __,  7, __, __, ___
     ear1="Telos Earring",         -- __, __, 10, 10, __, __, ___
   })
