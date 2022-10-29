@@ -42,7 +42,7 @@ end
 
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
-    state.OffenseMode:options('Normal', 'Acc', 'TH')
+    state.OffenseMode:options('Normal', 'Acc')
     state.HybridMode:options('Normal', 'Evasion', 'PDT')
     state.RangedMode:options('Normal', 'Acc')
     state.WeaponskillMode:options('Normal', 'Acc')
@@ -74,19 +74,10 @@ function init_gear_sets()
     --------------------------------------
 
     sets.TreasureHunter = {
-    ammo="Per. Lucky Egg",
-    head="Malignance Chapeau",
-    body="Malignance Tabard",
-    hands={ name="Plun. Armlets +1", augments={'Enhances "Perfect Dodge" effect',}},
-    legs={ name="Nyame Flanchard", augments={'Path: B',}},
-    feet="Skulk. Poulaines +1",
-    --neck="Anu Torque",
-    waist="Chaac Belt",
-    left_ear="Telos Earring",
-    right_ear="Sherida Earring",
-    left_ring="Defending Ring",
-    right_ring="Ilabrat Ring",
-    back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Damage taken-5%',}},
+--        ammo="Per. Lucky Egg",
+        hands="Plun. Armlets +1",
+        feet="Skulk. Poulaines +1",
+--        waist="Chaac Belt",
     }
     sets.ExtraRegen = {head="Ocelomeh Headpiece +1"}
     sets.Kiting = {feet="Jute Boots"}
@@ -289,16 +280,16 @@ function init_gear_sets()
     hands={ name="Nyame Gauntlets", augments={'Path: B',}},
     legs={ name="Nyame Flanchard", augments={'Path: B',}},
     feet={ name="Nyame Sollerets", augments={'Path: B',}},
-    --neck="Sibyl Scarf",
+    neck="Sibyl Scarf",
     waist="Skrymir Cord",
-    left_ear="Ishvara Earring",
+    left_ear="Friomisi Earring",
     right_ear="Novio Earring",
-    left_ring="Acumen Ring",
+    left_ring="Dingir Ring",
     right_ring="Karieyh Ring",
     back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%','Damage taken-5%',}},
 }
 	
-sets.precast.WS['Cyclone'] = set_combine(sets.engaged.TH, {back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%','Damage taken-5%',}},})
+sets.precast.WS['Cyclone'] = set_combine(sets.precast.WS['Aeolian Edge'], sets.TreasureHunter)
 
     --------------------------------------
     -- Midcast sets
@@ -358,7 +349,7 @@ sets.precast.WS['Cyclone'] = set_combine(sets.engaged.TH, {back={ name="Toutatis
     hands="Nyame Gauntlets",
     legs="Nyame Flanchard",
     feet="Malignance boots",
-    --neck="Anu Torque",
+    neck={ name="Asn. Gorget +2", augments={'Path: A',}},
     waist="Windbuffet Belt +1",
     left_ear="Telos Earring",
     right_ear="Sherida Earring",
@@ -407,36 +398,21 @@ sets.precast.WS['Cyclone'] = set_combine(sets.engaged.TH, {back={ name="Toutatis
 
     -- Normal melee group
     sets.engaged =	{
-    ammo="Per. Lucky Egg",
+    ammo="Aurgelmir Orb",
     head="Malignance Chapeau",
     body="Malignance Tabard",
-    hands={ name="Plun. Armlets +1", augments={'Enhances "Perfect Dodge" effect',}},
+    hands="Malignance Gloves",
     legs={ name="Nyame Flanchard", augments={'Path: B',}},
-    feet="Skulk. Poulaines +1",
-    --neck={ name="Unmoving Collar +1", augments={'Path: A',}},
-    waist="Chaac Belt",
-    left_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
+    feet="Malignance Boots",
+    neck={ name="Asn. Gorget +2", augments={'Path: A',}},
+    waist="Patentia Sash", -- 5 DW
+    left_ear="Eabani Earring", -- 4 DW
     right_ear={ name="Skulk. Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+12','Mag. Acc.+12','"Store TP"+4',}},
     left_ring="Defending Ring",
-    right_ring="Moonlight Ring",
+    right_ring="Gere Ring",
     back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Damage taken-5%',}},
 }
 	
-	sets.engaged.TH = {
-    ammo="Per. Lucky Egg",
-    head="Malignance Chapeau",
-    body="Malignance Tabard",
-    hands={ name="Plun. Armlets +1", augments={'Enhances "Perfect Dodge" effect',}},
-    legs={ name="Nyame Flanchard", augments={'Path: B',}},
-    feet="Skulk. Poulaines +1",
-    --neck={ name="Unmoving Collar +1", augments={'Path: A',}},
-    waist="Chaac Belt",
-    left_ear={ name="Odnowa Earring +1", augments={'Path: A',}},
-    right_ear={ name="Skulk. Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+12','Mag. Acc.+12','"Store TP"+4',}},
-    left_ring="Defending Ring",
-    right_ring="Moonlight Ring",
-    back={ name="Toutatis's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Damage taken-5%',}},
-}
 
     sets.engaged.Acc = {
     ammo="Yamarang",
@@ -463,13 +439,11 @@ end
 
 -- Run after the general precast() is done.
 function job_post_precast(spell, action, spellMap, eventArgs)
-    if spell.english == 'Aeolian Edge' and state.TreasureMode.value ~= 'None' then
-        equip(sets.TreasureHunter)
-    elseif spell.english=='Sneak Attack' or spell.english=='Trick Attack' or spell.type == 'WeaponSkill' then
-        if state.TreasureMode.value == 'SATA' or state.TreasureMode.value == 'Fulltime' then
-            equip(sets.TreasureHunter)
-        end
-    end
+  if spell.english=='Sneak Attack' or spell.english=='Trick Attack' then
+      if state.TreasureMode.value == 'SATA' or state.TreasureMode.value == 'Fulltime' then
+          equip(sets.TreasureHunter)
+      end
+  end
 end
 
 -- Run after the general midcast() set is constructed.
@@ -611,13 +585,13 @@ end
 
 -- State buff checks that will equip buff gear and mark the event as handled.
 function check_buff(buff_name, eventArgs)
-    if state.Buff[buff_name] then
-        equip(sets.buff[buff_name] or {})
-        if state.TreasureMode.value == 'SATA' or state.TreasureMode.value == 'Fulltime' then
-            equip(sets.TreasureHunter)
-        end
-        eventArgs.handled = true
-    end
+  if state.Buff[buff_name] then
+      equip(sets.buff[buff_name] or {})
+      if state.TreasureMode.value == 'SATA' or state.TreasureMode.value == 'Fulltime' then
+          equip(sets.TreasureHunter)
+      end
+      eventArgs.handled = true
+  end
 end
 
 
