@@ -1,5 +1,9 @@
--- Original: Motenten / Modified: Arislan
--- Haste/DW Detection Requires Gearinfo Addon
+-- File Status: Good. Silvermutt's COR is better. Need to update sets with empy+3.
+
+-- Author: Silvermutt
+-- Required external libraries: SilverLibs
+-- Required addons: GearInfo, DistancePlus
+-- Recommended addons: WSBinder, Reorganizer
 
 -------------------------------------------------------------------------------------------------------------------
 --  Keybinds

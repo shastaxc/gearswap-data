@@ -1,5 +1,9 @@
--- Original: Motenten/Arislan || Modified: Silvermutt
--- Haste/DW Detection Requires Gearinfo Addon
+-- File Status: THIS FILE IS NOT USED FOR HIGH LEVEL PLAY
+
+-- Author: Silvermutt
+-- Required external libraries: SilverLibs
+-- Required addons: GearInfo
+-- Recommended addons: WSBinder, Reorganizer
 
 -------------------------------------------------------------------------------------------------------------------
 --  Keybinds

@@ -1,3 +1,10 @@
+-- File Status: Good
+
+-- Author: Silvermutt
+-- Required external libraries: SilverLibs
+-- Required addons: GearInfo
+-- Recommended addons: WSBinder, Reorganizer, PartyBuffs
+
 -------------------------------------------------------------------------------------------------------------------
 -- Setup functions for this job.  Generally should not be modified.
 -------------------------------------------------------------------------------------------------------------------

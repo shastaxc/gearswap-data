@@ -1,5 +1,9 @@
--- Original: Motenten / Modified: Arislan
--- Haste/DW Detection Requires Gearinfo Addon
+-- File Status: Good
+
+-- Author: Silvermutt
+-- Required external libraries: SilverLibs
+-- Required addons: GearInfo, DistancePlus
+-- Recommended addons: WSBinder, Reorganizer
 
 -------------------------------------------------------------------------------------------------------------------
 --  Keybinds

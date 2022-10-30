@@ -1,3 +1,10 @@
+-- File Status: Good. Kinkima's GEO is better.
+
+-- Author: Silvermutt
+-- Required external libraries: SilverLibs
+-- Required addons: GearInfo
+-- Recommended addons: WSBinder, Reorganizer
+
 -------------------------------------------------------------------------------------------------------------------
 -- Setup functions for this job.  Generally should not be modified.
 -------------------------------------------------------------------------------------------------------------------

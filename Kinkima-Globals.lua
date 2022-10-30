@@ -4,7 +4,6 @@ send_command('gi geo 10')
 
 include('reorganizer-lib')
 res = include('resources')
-inspect = include('inspect')
 packets = include('packets')
 silibs = include('SilverLibs')
 

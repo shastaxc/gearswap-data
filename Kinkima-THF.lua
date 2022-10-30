@@ -1,5 +1,9 @@
+-- File Status: Ok. Missing SuperHaste sets for LightDef and HeavyDef hybrid modes. Want to revamp engaged sets.
+
 -- Author: Silvermutt
--- Haste/DW Detection Requires Gearinfo Addon
+-- Required external libraries: SilverLibs
+-- Required addons: GearInfo
+-- Recommended addons: WSBinder, Reorganizer
 
 -------------------------------------------------------------------------------------------------------------------
 --  Keybinds

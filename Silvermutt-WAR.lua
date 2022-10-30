@@ -1,4 +1,9 @@
+-- File Status: Good
+
 -- Author: Silvermutt
+-- Required external libraries: SilverLibs
+-- Required addons: GearInfo
+-- Recommended addons: WSBinder, Reorganizer
 
 -------------------------------------------------------------------------------------------------------------------
 --  Keybinds

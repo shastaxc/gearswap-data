@@ -1,3 +1,10 @@
+-- File Status: Still testing sets under Astral Conduit.
+
+-- Author: Silvermutt
+-- Required external libraries: SilverLibs
+-- Required addons: GearInfo
+-- Recommended addons: WSBinder, Reorganizer
+
 -------------------------------------------------------------------------------------------------------------------
 -- Setup functions for this job.  Generally should not be modified.
 -------------------------------------------------------------------------------------------------------------------
@@ -1095,8 +1102,10 @@ function job_precast(spell, action, spellMap, eventArgs)
 		windower.chat.input:schedule(2,'/ma "'..spell.english..'" <me>')
 	end
 
-  if state.Buff['Astral Conduit'] then
-    eventArgs.useMidcastGear = true
+  if state.Buff['Astral Conduit'] and spell.type == 'BloodPactRage' then
+    print('trigger AC logic')
+    equip(sets.midcast[spellMap])
+    eventArgs.handled = true
   else
     if pet_midaction() then
       eventArgs.cancel = true
@@ -1266,6 +1275,14 @@ end
 
 -- Modify the default idle set after it was constructed.
 function customize_idle_set(idleSet)
+  if state.Buff['Astral Conduit'] then
+    if pet and pet.name == 'Ifrit' then
+      idleSet = set_combine(idleSet, sets.midcast.HybridBloodPactRage)
+    else
+      idleSet = set_combine(idleSet, sets.midcast.PhysicalBloodPactRage)
+    end
+    return idleSet
+  end
   if not pet_midaction() then
     if pet.isvalid then
       if pet.status == 'Engaged' then
@@ -1302,6 +1319,14 @@ function customize_idle_set(idleSet)
 end
 
 function customize_melee_set(meleeSet)
+  if state.Buff['Astral Conduit'] then
+    if pet and pet.name == 'Ifrit' then
+      meleeSet = set_combine(meleeSet, sets.midcast.HybridBloodPactRage)
+    else
+      meleeSet = set_combine(meleeSet, sets.midcast.PhysicalBloodPactRage)
+    end
+    return meleeSet
+  end
   if not pet_midaction() then
     if state.CP.current == 'on' then
       meleeSet = set_combine(meleeSet, sets.CP)
@@ -1323,6 +1348,14 @@ function customize_melee_set(meleeSet)
 end
 
 function customize_defense_set(defenseSet)
+  if state.Buff['Astral Conduit'] then
+    if pet and pet.name == 'Ifrit' then
+      defenseSet = set_combine(defenseSet, sets.midcast.HybridBloodPactRage)
+    else
+      defenseSet = set_combine(defenseSet, sets.midcast.PhysicalBloodPactRage)
+    end
+    return defenseSet
+  end
   if not pet_midaction() then
     if state.CP.current == 'on' then
       defenseSet = set_combine(defenseSet, sets.CP)

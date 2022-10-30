@@ -1,3 +1,10 @@
+-- File Status: Ok. Sets are outdated since Sortie release. Never actually used this lua, more hypothetical than practical.
+
+-- Author: Silvermutt
+-- Required external libraries: SilverLibs
+-- Required addons: GearInfo
+-- Recommended addons: WSBinder, Reorganizer
+
 -------------------------------------------------------------------------------------------------------------------
 --  Keybinds
 -------------------------------------------------------------------------------------------------------------------

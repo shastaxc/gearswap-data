@@ -1,3 +1,10 @@
+-- File Status: Good. Need to update sets with empy+3.
+
+-- Author: Silvermutt
+-- Required external libraries: SilverLibs
+-- Required addons: GearInfo
+-- Recommended addons: WSBinder, Reorganizer, PartyBuffs
+
 -- Initialization function for this job file.
 function get_sets()
   -- Load and initialize Mote library

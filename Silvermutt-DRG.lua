@@ -1,4 +1,9 @@
--- Original: Motenten/Arislan || Modified: Silvermutt
+-- File Status: Good. Need to update sets with empy+3.
+
+-- Author: Silvermutt
+-- Required external libraries: SilverLibs
+-- Required addons: GearInfo
+-- Recommended addons: WSBinder, Reorganizer
 
 -------------------------------------------------------------------------------------------------------------------
 --  Keybinds

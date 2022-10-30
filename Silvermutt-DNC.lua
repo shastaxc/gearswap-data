@@ -1,5 +1,9 @@
--- Original: Motenten/Arislan || Modified: Silvermutt
--- Haste/DW Detection Requires Gearinfo Addon
+-- File Status: Good. Need to update with empy+3. Acc modes for engaged sets are outdated.
+
+-- Author: Silvermutt
+-- Required external libraries: SilverLibs
+-- Required addons: GearInfo, DistancePlus
+-- Recommended addons: WSBinder, Reorganizer
 
 -------------------------------------------------------------------------------------------------------------------
 --  Keybinds
