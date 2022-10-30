@@ -27,7 +27,7 @@ end
 function job_setup()
   silibs.enable_cancel_on_blocking_status()
   silibs.enable_weapon_rearm()
-  silibs.enable_auto_lockstyle(10)
+  silibs.enable_auto_lockstyle(6)
   silibs.enable_premade_commands()
 
   state.OffenseMode:options('Safe', 'Normal')
@@ -154,6 +154,8 @@ function init_gear_sets()
     ammo=empty,
     head=gear.Merl_FC_head,         -- 15 [__/__,  86] {__, __}
     body=gear.Merl_FC_body,         -- 14 [ 2/__,  91] {__, __}
+    hands="Geomancy Mitaines +1",   -- __ [ 1/__,  37] {11, __}
+    legs="Geomancy Pants +1",       -- 11 [__/__, 107] {__, __}
     feet=gear.Merl_FC_feet,         -- 12 [__/__, 118] {__, __}
     neck="Loricate Torque +1",      -- __ [ 6/ 6, ___] {__, __}
     ear1="Loquacious Earring",      --  2 [__/__, ___] {__, __}
@@ -161,7 +163,7 @@ function init_gear_sets()
     ring1="Defending Ring",         -- __ [10/10, ___] {__, __}
     ring2="Kishar Ring",            --  4 [__/__, ___] {__, __}
     waist="Embla Sash",             --  5 [__/__, ___] {__, __}
-    -- 59 FC [18 PDT / 16 MDT, 295 M.Eva] {5 Pet DT, 0 Pet Regen}
+    -- 70 FC [19 PDT / 16 MDT, 439 M.Eva] {16 Pet DT, 0 Pet Regen}
 
     -- Ideal:
     -- Assume Idris                 -- __ [__/__, ___] {25, __}
@@ -985,7 +987,7 @@ function init_gear_sets()
     ammo=empty,                     -- __/__, ___, [__, __]
     -- head="Azimuth Hood +1",         -- __/__,  86, [__,  3]
     body="Shamash Robe",            -- 10/__, 106, [__, __]; Resist Silence+90
-    -- hands="Geomancy Mitaines +2",   --  2/__,  47, [12, __]
+    hands="Geomancy Mitaines +1",   --  1/__,  37, [11, __]
     legs=gear.Nyame_B_legs,         --  8/ 8, 150, [__, __]
     -- feet="Bagua Sandals +1",        -- __/__, 107, [__,  3]
     -- neck="Bagua Charm +1",          -- __/__, ___, [__, __]; Absorb Dmg+8
@@ -995,7 +997,7 @@ function init_gear_sets()
     ring2="Gelatinous Ring +1",     --  7/-1, ___, [__, __]
     -- back=gear.GEO_Idle_Cape,        -- __/__,  30, [__, 15]
     waist="Carrier's Sash",         -- __/__, ___, [__, __]; Ele resist+15
-    -- 49 PDT / 20 MDT, 526 Meva, [42 Pet DT, 21 Pet Regen]
+    -- 48 PDT / 20 MDT, 516 Meva, [41 Pet DT, 21 Pet Regen]
 
     -- head="Azimuth Hood +3",      -- 12/12, 136, [__,  5]
     -- hands="Geomancy Mitaines +3",--  3/__,  57, [13, __]
@@ -1963,7 +1965,7 @@ end
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
   -- Default macro set/book: (set, book)
-  set_macro_page(2, 12)
+  set_macro_page(2, 7)
 end
 
 function seconds_to_clock(seconds)
