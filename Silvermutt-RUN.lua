@@ -1,4 +1,4 @@
--- File Status: Good. Need to update sets with empy+3.
+-- File Status: Good. Need to update sets with empy+3. Fix HP balance.
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs
