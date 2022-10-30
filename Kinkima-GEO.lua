@@ -670,14 +670,13 @@ function init_gear_sets()
 
 	sets.midcast.Cursna =  set_combine(sets.midcast.Cure, {})
 
-  -- TODO: update
   sets.midcast['Elemental Magic'] = {
-    main="Daybreak",
-    sub=empty,
+    main="Bunzi's Rod",
+    sub="Ammurapi Shield",
     range=empty,
     ammo="Pemphredo Tathlum", --4
-    head=empty,
-    body="Cohort Cloak +1", --100
+    head=gear.Nyame_B_head,
+    body=gear.Nyame_B_body,
     hands="Jhakri Cuffs +2",
     legs="Jhakri Slops +2",
     feet="Jhakri Pigaches +2",
@@ -685,55 +684,73 @@ function init_gear_sets()
     ear1="Malignance Earring", --8
     ear2="Regal Earring", --7
     ring1="Metamorph Ring +1",
-    ring2="Shiva Ring +1", --3
+    ring2="Stikini Ring +1",
     back="Argochampsa Mantle", --12
-    waist="Eschan Stone", --7
+    waist="Refoccilation Stone", --10
+    
+    -- main="Bunzi's Rod",
     -- sub="Ammurapi Shield",
-    -- head="Bagua Galero +3",
-    -- body=gear.Amalric_A_body,
-    -- hands=gear.Amalric_D_hands,
-    -- legs=gear.Amalric_A_legs,
-    -- feet=gear.Amalric_D_feet,
-    -- neck="Sanctity Necklace",
-    -- ring1="Freke Ring",
+    -- range=empty,
+    -- ammo="Ghastly Tathlum +1",
+    -- head="Azimuth Hood +2",
+    -- body="Azimuth Coat +2",
+    -- hands="Azimuth Gloves +2",
+    -- legs="Agwu's Slops",
+    -- feet="Azimuth Gaiters +2",
+    -- neck="Sibyl Scarf",
+    -- ear1="Malignance Earring",
+    -- ear2="Azimuth Earring +2",        --Regal earring alt
+    -- ring1="Metamor. Ring +1",
+    -- ring2="Freke Ring",
     -- back=gear.GEO_Nuke_Cape,
-    -- waist="Sacro Cord",
+    -- waist="Refoccilation Stone",
   }
+  sets.midcast['Elemental Magic'].MB = set_combine(sets.midcast['Elemental Magic'], {
+    -- head="Ea Hat +1",
+    -- hands="Agwu's Gages",
+  }) -- Not set up to be used
   sets.midcast['Elemental Magic'].Resistant = set_combine(sets.midcast['Elemental Magic'], {})
   sets.midcast['Elemental Magic'].Proc = set_combine(sets.midcast['Elemental Magic'], {})
   sets.midcast['Elemental Magic'].HighTierNuke = set_combine(sets.midcast['Elemental Magic'], {})
   sets.midcast['Elemental Magic'].HighTierNuke.Resistant = set_combine(sets.midcast['Elemental Magic'], {})
 
-  -- TODO: update
-  sets.midcast['Dark Magic'] = {
-    ammo="Pemphredo Tathlum",
-    neck="Erra Pendant",
-    ear2="Malignance Earring",
-    ring1="Metamor. Ring +1",
-  }
-
-  -- TODO: update
-  sets.midcast.Drain = {
+  sets.midcast['Drain'] = set_combine(sets.midcast.IntEnfeebling, {
+    main="Bunzi's Rod",
+    sub="Ammurapi Shield",
     range=empty,
     ammo="Pemphredo Tathlum",
-    head="Pixie Hairpin +1",
+    head=gear.Nyame_B_head,
     body=gear.Nyame_B_body,
     hands=gear.Nyame_B_hands,
     legs=gear.Nyame_B_legs,
     feet=gear.Nyame_B_feet,
     neck="Erra Pendant",
-    ear1="Malignance Earring",
-    ear2="Digni. Earring",
+    ear1="Dignitary's Earring",
+    ear2="Malignance Earring",
     ring1="Archon Ring",
-    waist="Fucho-no-obi",
-    -- main="Rubicundicity",
+    ring2="Evanescence Ring",
+    waist="Fucho-no-Obi",
+
+    -- main="Rubicundity",
     -- sub="Ammurapi Shield",
+    -- range=empty,
+    -- ammo="Pemphredo Tathlum",
     -- head="Bagua Galero +3",
+    -- body="Geomancy Tunic +3",
+    -- hands="Azimuth Gloves +2",
+    -- legs="Azimuth Tights +2",
+    -- feet="Agwu's Pigaches",
+    -- neck="Erra Pendant",
+    -- ear1="Hirudinea Earring",
+    -- ear2="Malignance Earring",
+    -- ring1="Archon Ring",
     -- ring2="Evanescence Ring",
     -- back=gear.GEO_Nuke_Cape,
-  }
+    -- waist="Fucho-no-Obi",
+  })
 
   sets.midcast.Aspir = sets.midcast.Drain
+  sets.midcast['Aspir III'] = sets.midcast.Drain
 
   -- TODO: update
 	sets.midcast.Stun = {
