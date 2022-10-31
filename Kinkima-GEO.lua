@@ -230,11 +230,11 @@ function init_gear_sets()
   }
 	sets.precast.JA['Full Circle'] = {
     head="Azimuth Hood +2",
+    hands="Bagua Mitaines +1",
     -- head="Azimuth Hood +3",
-    -- hands="Bagua Mitaines +1",
   }
   sets.precast.JA['Concentric Pulse'] = {
-    -- head="Bagua Galero +1",
+    head="Bagua Galero +1",
   }
 
 	-- Relic hat for Blaze of Glory HP increase.
@@ -962,22 +962,10 @@ function init_gear_sets()
 	-- Idle/resting/etc sets
 	--------------------------------------
 
-  -- TODO: update
-  -- Overlaid when MP is needed and defense is not
-  sets.passive_refresh = {
-    main="Mpaca's Staff", --2
-    sub="Khonsu",
-		head="Befouled Crown",
-    body="Shamash Robe",
-    ring1="Stikini Ring +1",
-    ring2="Stikini Ring +1",
-    -- sub="Oneiros Grip", --1; when mp<70%
-    -- hands="Bagua Mitaines +3", --2
-    -- neck="Chrys. Torque",
-  }
-	sets.passive_refresh_sub50 = set_combine(sets.passive_refresh, {
+  -- Overlaid when MP is needed
+	sets.passive_refresh_sub50 = {
     waist="Fucho-no-obi",
-  })
+  }
 
   -- TODO: update
 	-- Resting sets
@@ -1052,68 +1040,58 @@ function init_gear_sets()
   -- When you need to be safe (disables move speed gear)
 	sets.idle.HeavyDef = sets.idle
 
-  -- TODO: update with more refresh if possible
-	-- When Luopan is present, but not expecting to take much dmg
-  -- Maximize Pet Regen
+	-- Pet -38% DT is needed in order to cap at -87.5% (has innate -50% DT)
 	sets.idle.Pet = {
     main="Idris",                   -- __ [__/__, ___] {25/25, __}
     sub="Genmei Shield",            -- __ [10/__, ___] {__/__, __}
-    range="Dunna",                  -- __ [__/__, ___] { 5/ 5, __}
-    ammo=empty,                     -- __ [__/__, ___] {__/__, __}
+    range=empty,
+    ammo="Staunch Tathlum +1",      -- __ [ 3/ 3, ___] {__/__, __}; Status Resist+11
     head="Azimuth Hood +2",         -- __ [11/11, 126] {__/__,  4}
     body="Shamash Robe",            --  3 [10/__, 106] {__/__, __}; Resist Silence+90
     hands="Geomancy Mitaines +2",   -- __ [ 2/__,  47] {12/12, __}
-    legs=gear.Nyame_B_legs,         -- __ [ 8/ 8, 150] {__/__, __}
+    legs="Assiduity Pants +1",      --  2 [__/__, 107] {__/__, __}
+    feet="Bagua Sandals +1",        -- __ [__/__, 107] {__/__,  3}
     neck="Bagua Charm +1",          -- __ [__/__, ___] {__/__, __}; Absorb Dmg+8
     ear1="Genmei Earring",          -- __ [ 2/__, ___] {__/__, __}
-    ear2="Etiolation Earring",      -- __ [__/ 3, ___] {__/__, __}; Resist Silence+15
-    ring1="Gelatinous Ring +1",     -- __ [ 7/-1, ___] {__/__, __}
+    ear2="Hearty Earring",          -- __ [__/__, ___] {__/__, __}; Status Resist+5
+    ring1="Stikini Ring +1",        --  1 [__/__, ___] {__/__, __}
     ring2="Defending Ring",         -- __ [10/10, ___] {__/__, __}
-    waist="Carrier's Sash",         -- __ [__/__, ___] {__/__, __}; Ele resist+15
-    -- 3 Refresh [60 PDT/31 MDT, 429 M.Eva] {Pet: 42 PDT/42 MDT, 4 Regen}
+    waist="Isa Belt",               -- __ [__/__, ___] { 3/ 3,  1}; Prefer refresh if it existed
+    -- 6 Refresh [48 PDT/24 MDT, 493 M.Eva] {Pet: 40 PDT/40 MDT, 8 Regen}
 
+    -- main="Idris",                -- __ [__/__, ___] {25/25, __}
+    -- sub="Genmei Shield",         -- __ [10/__, ___] {__/__, __}
+    -- range=empty,
+    -- ammo="Staunch Tathlum +1",   -- __ [ 3/ 3, ___] {__/__, __}; Status Resist+11
     -- head="Azimuth Hood +3",      -- __ [12/12, 136] {__/__,  5}
+    -- body="Shamash Robe",         --  3 [10/__, 106] {__/__, __}; Resist Silence+90
     -- hands="Geomancy Mitaines +3",-- __ [ 3/__,  57] {13/13, __}
+    -- legs="Assiduity Pants +1",   --  2 [__/__, 107] {__/__, __}
     -- feet="Bagua Sandals +3",     -- __ [__/__, 127] {__/__,  5}
     -- neck="Bagua Charm +2",       -- __ [__/__, ___] {__/__, __}; Absorb Dmg+10
-    -- ear1="Hearty Earring",       -- __ [__/__, ___] {__/__, __}; Status Resist+5
-    -- ring1="Shadow Ring",         -- __ [__/__, ___] {__/__, __}; Annul magic dmg
+    -- ear1="Genmei Earring",       -- __ [ 2/__, ___] {__/__, __}
+    -- ear2="Hearty Earring",       -- __ [__/__, ___] {__/__, __}; Status Resist+5
+    -- ring1="Stikini Ring +1",     --  1 [__/__, ___] {__/__, __}
+    -- ring2="Defending Ring",      -- __ [10/10, ___] {__/__, __}
     -- back=gear.GEO_Idle_Cape,     -- __ [__/__,  30] {__/__, 15}
-    -- 3 Refresh [53 PDT/33 MDT, 606 M.Eva] {Pet: 43 PDT/43 MDT, 25 Regen}
-
-    -- main="Idris",                -- __/__, ___, [25, __]
-    -- sub="Genmei Shield",         -- 10/__, ___, [__, __]
-    -- range="Dunna",               -- __/__, ___, [ 5, __]
-    -- ammo=empty,                  -- __/__, ___, [__, __]
-    -- head="Azimuth Hood +3",      -- 12/12, 136, [__,  5]
-    -- body="Shamash Robe",         -- 10/__, 106, [__, __]; Resist Silence+90
-    -- hands="Geomancy Mitaines +3",--  3/__,  57, [13, __]
-    -- legs=gear.Nyame_B_legs,      --  8/ 8, 150, [__, __]
-    -- feet="Bagua Sandals +3",     -- __/__, 127, [__,  5]
-    -- neck="Bagua Charm +2",       -- __/__, ___, [__, __]; Absorb Dmg+10
-    -- ear1="Hearty Earring",       -- __/__, ___, [__, __]; Status Resist+5
-    -- ear2="Etiolation Earring",   -- __/ 3, ___, [__, __]; Resist Silence+15
-    -- ring1="Defending Ring",      -- 10/10, ___, [__, __]
-    -- ring2="Shadow Ring",         -- __/__, ___, [__, __]; Annul magic dmg
-    -- back=gear.GEO_Idle_Cape,     -- __/__,  30, [__, 15]
-    -- waist="Carrier's Sash",      -- __/__, ___, [__, __]; Ele resist+15
-    -- 53 PDT / 33 MDT, 576 Meva, [43 Pet DT, 25 Pet Regen]
+    -- waist="Isa Belt",            -- __ [__/__, ___] { 3/ 3,  1}; Prefer refresh if it existed
+    -- 6 Refresh [50 PDT/25 MDT, 563 M.Eva] {Pet: 41 PDT/41 MDT, 26 Regen}
   }
 
-	-- When Luopan is present, and you are expecting to take dmg
 	sets.idle.HeavyDef.Pet = sets.idle.Pet
 
   -- Handle refresh
-  sets.idle.Refresh = set_combine(sets.idle, sets.passive_refresh)
+  sets.idle.Refresh = sets.idle
   sets.idle.RefreshSub50 = set_combine(sets.idle, sets.passive_refresh_sub50)
+  sets.idle.Pet.Refresh = sets.idle.Pet
+  sets.idle.Pet.RefreshSub50 = set_combine(sets.idle.Pet, sets.passive_refresh_sub50)
+
   sets.idle.HeavyDef.Refresh = sets.idle.HeavyDef
   sets.idle.HeavyDef.RefreshSub50 = sets.idle.HeavyDef
-  sets.idle.Pet.Refresh = sets.idle.Pet
-  sets.idle.Pet.RefreshSub50 = sets.idle.Pet
   sets.idle.HeavyDef.Pet.Refresh = sets.idle.HeavyDef.Pet
   sets.idle.HeavyDef.Pet.RefreshSub50 = sets.idle.HeavyDef.Pet
 
-	sets.idle.Weak = sets.defense.PDT
+	sets.idle.Weak = sets.idle.HeavyDef.Pet
 
 
 	--------------------------------------
