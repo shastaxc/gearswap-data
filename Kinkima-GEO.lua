@@ -751,7 +751,7 @@ function init_gear_sets()
     head=gear.Nyame_B_head,
     body=gear.Nyame_B_body,
     hands="Azimuth Gloves +2",
-    legs=gear.Nyame_B_legs,
+    legs="Azimuth Tights +1",
     feet=gear.Nyame_B_feet,
     neck="Erra Pendant",
     ear1="Dignitary's Earring",
