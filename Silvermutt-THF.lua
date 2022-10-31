@@ -1,4 +1,4 @@
--- File Status: Ok. Missing SuperHaste sets for LightDef and HeavyDef hybrid modes. Want to revamp engaged sets.
+-- File Status: Ok. Want to revamp engaged sets.
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs
@@ -1178,6 +1178,11 @@ function init_gear_sets()
     back=gear.THF_TP_Cape,      -- 10/__, ___
   })-- 36/26
 
+  sets.engaged.DW.LightDef.SuperHaste = set_combine(sets.engaged.DW.LightDef.HighHaste, {})
+  sets.engaged.DW.LowAcc.LightDef.SuperHaste = set_combine(sets.engaged.DW.LowAcc.LightDef.HighHaste, {})
+  sets.engaged.DW.MidAcc.LightDef.SuperHaste = set_combine(sets.engaged.DW.MidAcc.LightDef.HighHaste, {})
+  sets.engaged.DW.HighAcc.LightDef.SuperHaste = set_combine(sets.engaged.DW.HighAcc.LightDef.HighHaste, {})
+
   -- Max Magic/Gear/JA Haste (0-30% DW to cap, 0% from gear)
   sets.engaged.DW.LightDef.MaxHaste = set_combine(sets.engaged.DW.MaxHaste, {
     ammo="Staunch Tathlum +1",  --  3/ 3, ___
@@ -1237,6 +1242,11 @@ function init_gear_sets()
   sets.engaged.DW.LowAcc.HeavyDef.HighHaste = set_combine(sets.engaged.DW.LowAcc.HighHaste, sets.HeavyDef)
   sets.engaged.DW.MidAcc.HeavyDef.HighHaste = set_combine(sets.engaged.DW.MidAcc.HighHaste, sets.HeavyDef)
   sets.engaged.DW.HighAcc.HeavyDef.HighHaste = set_combine(sets.engaged.DW.HighAcc.HighHaste, sets.HeavyDef)
+
+  sets.engaged.DW.HeavyDef.SuperHaste = set_combine(sets.engaged.DW.SuperHaste, sets.HeavyDef)
+  sets.engaged.DW.LowAcc.HeavyDef.SuperHaste = set_combine(sets.engaged.DW.LowAcc.SuperHaste, sets.HeavyDef)
+  sets.engaged.DW.MidAcc.HeavyDef.SuperHaste = set_combine(sets.engaged.DW.MidAcc.SuperHaste, sets.HeavyDef)
+  sets.engaged.DW.HighAcc.HeavyDef.SuperHaste = set_combine(sets.engaged.DW.HighAcc.SuperHaste, sets.HeavyDef)
 
   sets.engaged.DW.HeavyDef.MaxHaste = set_combine(sets.engaged.DW.MaxHaste, sets.HeavyDef)
   sets.engaged.DW.LowAcc.HeavyDef.MaxHaste = set_combine(sets.engaged.DW.LowAcc.MaxHaste, sets.HeavyDef)
