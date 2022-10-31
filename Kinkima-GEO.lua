@@ -229,6 +229,7 @@ function init_gear_sets()
     legs="Bagua Pants +1",
   }
 	sets.precast.JA['Full Circle'] = {
+    head="Azimuth Hood +2",
     -- head="Azimuth Hood +3",
     -- hands="Bagua Mitaines +1",
   }
@@ -466,20 +467,20 @@ function init_gear_sets()
     sub="Genmei Shield",            -- __, __, __ [10/__, ___]
     range="Dunna",                  -- __, 18, __ [__/__, ___]
     ammo=empty,
-    -- head="Azimuth Hood +1",         -- __, 15, __ [12/12, 136]; Set bonus
+    head="Azimuth Hood +2",         -- __, 20, __ [11/11, 126]; Set bonus
     body=gear.Nyame_B_body,         -- __, __, __ [ 9/ 9, 139]
-    -- hands="Azimuth Gloves +1",      -- __, __, __ [12/12,  98]; Set bonus
+    hands="Azimuth Gloves +2",      -- __, __, __ [11/11,  88]; Set bonus
     legs=gear.Vanya_C_legs,         -- __, __, 12 [__/__, 107]
-    -- feet="Azimuth Gaiters +1",      -- __, __, __ [11/11, 168]; Set bonus
-    -- neck="Bagua Charm +1",          --  6, __, __ [__/__, ___]; Luopan Duration +20%
+    -- feet="Azimuth Gaiters +1",   -- __, __, __ [11/11, 168]; Set bonus
+    -- neck="Bagua Charm +1",       --  6, __, __ [__/__, ___]; Luopan Duration +20%
     ear1="Eabani Earring",          -- __, __, __ [__/__,   8]
     ear2="Halasz Earring",          -- __, __, __ [__/__, ___]
     ring1="Stikini Ring +1",        -- __,  8, __ [__/__, ___]
     ring2="Defending Ring",         -- __, __, __ [10/10, ___]
-    -- back=gear.GEO_Adoulin_Cape,     -- __, 15, __ [__/__, ___]
-    -- waist="Sekhmet Corset",         -- __, __,  3 [__/__, ___]
+    -- back=gear.GEO_Adoulin_Cape,  -- __, 15, __ [__/__, ___]
+    -- waist="Sekhmet Corset",      -- __, __,  3 [__/__, ___]
     -- Base stats                   -- __,850, 43
-    -- 10 Geomancy, 906 geo skill, 58 Conserve MP [64 PDT/54 MDT, 656 M.Eva]
+    -- 10 Geomancy, 911 geo skill, 58 Conserve MP [62 PDT/52 MDT, 636 M.Eva]
 
     -- main="Idris",                -- 10, __, __ [__/__, ___]
     -- sub="Genmei Shield",         -- __, __, __ [10/__, ___]
@@ -549,7 +550,7 @@ function init_gear_sets()
     ammo=empty,
     -- head=gear.Vanya_C_head,      -- __, __, 12, __, __ [__/ 2,  75] {__, __}
     body=gear.Nyame_B_body,         -- __, __, __, __, __ [ 9/ 9, 139] {__, __}
-    -- hands="Azimuth Gloves +3",   -- __, __, __, __, __ [12/12,  98] {__, __}; Set bonus: save MP
+    hands="Azimuth Gloves +2",      -- __, __, __, __, __ [11/11,  88] {__, __}; Set bonus: save MP
     legs="Bagua Pants +1",
     -- feet="Azimuth Gaiters +3",   -- __, __, __, 30, __ [11/11, 168] {__, __}; Set bonus: save MP
     neck="Incanter's Torque",       -- __, 10, __, __, __ [__/__, ___] {__, __}; Save MP
@@ -559,6 +560,25 @@ function init_gear_sets()
     -- ring2="Mephitas's Ring +1",  -- __, __, 15, __, __ [__/__, ___] {__, __}
     -- back=gear.GEO_Adoulin_Cape,  -- __, 15, __, __, 20 [__/__, ___] {__, __}
     waist="Shinjutsu-no-Obi +1",    -- __, __, 15, __, __ [__/__, ___] {__, __}
+    -- Base stats                   -- __,850, 43,220, __ [__/__, ___] {50, __}
+    -- 10 Geomancy, 901 geo skill, 91 Conserve MP, 250 Indi Duration, 20 Indi Duration % [41 PDT/ 43 MDT, 470 M.Eva] {Pet: 80 DT, 0 Regen}
+    
+    -- main="Idris",                -- 10, __, __, __, __ [__/__, ___] {25, __}
+    -- sub="Genmei Shield",         -- __, __, __, __, __ [10/__, ___] {__, __}
+    -- range="Dunna",               -- __, 18, __, __, __ [__/__, ___] { 5, __}
+    -- ammo=empty,
+    -- head=gear.Vanya_C_head,      -- __, __, 12, __, __ [__/ 2,  75] {__, __}
+    -- body=gear.Nyame_B_body,      -- __, __, __, __, __ [ 9/ 9, 139] {__, __}
+    -- hands="Azimuth Gloves +3",   -- __, __, __, __, __ [12/12,  98] {__, __}; Set bonus: save MP
+    -- legs="Bagua Pants +3",       -- __, __, __, 21, __ [__/__, 127] {__, __}
+    -- feet="Azimuth Gaiters +3",   -- __, __, __, 30, __ [11/11, 168] {__, __}; Set bonus: save MP
+    -- neck="Incanter's Torque",    -- __, 10, __, __, __ [__/__, ___] {__, __}; Save MP
+    -- ear1="Mendicant's Earring",  -- __, __,  2, __, __ [__/__, ___] {__, __}
+    -- ear2="Calamitous Earring",   -- __, __,  4, __, __ [__/__, ___] {__, __}
+    -- ring1="Stikini Ring +1",     -- __,  8, __, __, __ [__/__, ___] {__, __}
+    -- ring2="Mephitas's Ring +1",  -- __, __, 15, __, __ [__/__, ___] {__, __}
+    -- back=gear.GEO_Adoulin_Cape,  -- __, 15, __, __, 20 [__/__, ___] {__, __}
+    -- waist="Shinjutsu-no-Obi +1", -- __, __, 15, __, __ [__/__, ___] {__, __}
     -- Base stats                   -- __,850, 43,220, __ [__/__, ___] {50, __}
     -- 10 Geomancy, 901 geo skill, 91 Conserve MP, 250 Indi Duration, 20 Indi Duration % [42 PDT/ 44 MDT, 480 M.Eva] {Pet: 80 DT, 0 Regen}
     
@@ -605,27 +625,35 @@ function init_gear_sets()
 
 	-- Geomancy and skill have no effect on Entrust.
 	sets.buff.Entrust = set_combine(sets.midcast.Geomancy.Indi, {
+    ammo="Pemphredo Tathlum",       -- __, __,  4, __, __ [__/__, ___] {__, __}
+    head="Azimuth Hood +2",         -- __, 20, __, __, __ [11/11, 126] {__,  4}; Set bonus
+    hands="Azimuth Gloves +3",      -- __, __, __, __, __ [11/11,  88] {__, __}; Set bonus: save MP
+    legs="Bagua Pants +1",          -- __, __, __, 15, __ [__/__, 107] {__, __}
+    neck="Reti Pendant",            -- __, __,  4, __, __ [__/__, ___] {__, __}; Save MP
+    ear1="Mendicant's Earring",     -- __, __,  2, __, __ [__/__, ___] {__, __}
+    ring1="Defending Ring",         -- __, __, __, __, __ [10/10, ___] {__, __}
+    waist="Shinjutsu-no-Obi +1",    -- __, __, 15, __, __ [__/__, ___] {__, __}
+    -- Base stats                   -- __,850, 43,220, __ [__/__, ___] {50, __}
+    -- Ideal: 0 Geomancy, 870 geo skill, 68 Conserve MP, 235 Indi Duration, 20 Indi Duration % [32 PDT/ 32 MDT, 322 M.Eva] {Pet: 50 DT, 4 Regen}
+    
     -- main=gear.Solstice_D,        -- __,  5,  6, 15, __ [__/__, ___] { 4, __} -- Need to add augs
     -- sub="Genmei Shield",         -- __, __, __, __, __ [10/__, ___] {__, __}
     -- range=empty
-    ammo="Pemphredo Tathlum",       -- __, __,  4, __, __ [__/__, ___] {__, __}
+    -- ammo="Pemphredo Tathlum",    -- __, __,  4, __, __ [__/__, ___] {__, __}
     -- head="Azimuth Hood +3",      -- __, 25, __, __, __ [12/12, 136] {__,  5}; Set bonus: save MP
     -- body=gear.Merl_ConMP_body,   -- __, __,  6, __, __ [ 2/__,  91] {__, __}
     -- hands="Azimuth Gloves +3",   -- __, __, __, __, __ [12/12,  98] {__, __}; Set bonus: save MP
-    legs="Bagua Pants +1",
+    -- legs="Bagua Pants +3",       -- __, __, __, 21, __ [__/__, 127] {__, __}
     -- feet="Azimuth Gaiters +3",   -- __, __, __, 30, __ [11/11, 168] {__, __}; Set bonus: save MP
-    neck="Reti Pendant",            -- __, __,  4, __, __ [__/__, ___] {__, __}; Save MP
-    ear1="Mendicant's Earring",     -- __, __,  2, __, __ [__/__, ___] {__, __}
+    -- neck="Reti Pendant",         -- __, __,  4, __, __ [__/__, ___] {__, __}; Save MP
+    -- ear1="Mendicant's Earring",  -- __, __,  2, __, __ [__/__, ___] {__, __}
     -- ear2="Calamitous Earring",   -- __, __,  4, __, __ [__/__, ___] {__, __}
-    ring1="Defending Ring",         -- __, __, __, __, __ [10/10, ___] {__, __}
+    -- ring1="Defending Ring",      -- __, __, __, __, __ [10/10, ___] {__, __}
     -- ring2="Mephitas's Ring +1",  -- __, __, 15, __, __ [__/__, ___] {__, __}
     -- back=gear.GEO_Adoulin_Cape,  -- __,  5, __, __, 20 [__/__, ___] { 5, __}
-    waist="Shinjutsu-no-Obi +1",    -- __, __, 15, __, __ [__/__, ___] {__, __}
+    -- waist="Shinjutsu-no-Obi +1", -- __, __, 15, __, __ [__/__, ___] {__, __}
     -- Base stats                   -- __,850, 43,220, __ [__/__, ___] {50, __}
     -- Master level 8               -- __, 16
-    -- Ideal: 0 Geomancy, 901 geo skill, 99 Conserve MP, 265 Indi Duration, 20 Indi Duration % [57 PDT/ 45 MDT, 493 M.Eva] {Pet: 59 DT, 5 Regen}
-    
-    -- legs="Bagua Pants +3",       -- __, __, __, 21, __ [__/__, 127] {__, __}
     -- Ideal: 0 Geomancy, 901 geo skill, 99 Conserve MP, 286 Indi Duration, 20 Indi Duration % [57 PDT/ 45 MDT, 620 M.Eva] {Pet: 59 DT, 5 Regen}
   })
 
@@ -680,9 +708,9 @@ function init_gear_sets()
     sub="Ammurapi Shield",
     range=empty,
     ammo="Pemphredo Tathlum", --4
-    head=gear.Nyame_B_head,
+    head="Azimuth Hood +2",
     body="Azimuth Coat +2",
-    hands="Jhakri Cuffs +2",
+    hands="Azimuth Gloves +2",
     legs=gear.Nyame_B_legs,
     feet="Jhakri Pigaches +2",
     neck="Baetyl Pendant", --13
@@ -726,7 +754,7 @@ function init_gear_sets()
     ammo="Pemphredo Tathlum",
     head=gear.Nyame_B_head,
     body=gear.Nyame_B_body,
-    hands=gear.Nyame_B_hands,
+    hands="Azimuth Gloves +2",
     legs=gear.Nyame_B_legs,
     feet=gear.Nyame_B_feet,
     neck="Erra Pendant",
@@ -998,18 +1026,17 @@ function init_gear_sets()
     sub="Genmei Shield",            -- __ [10/__, ___] {__/__, __}
     range="Dunna",                  -- __ [__/__, ___] { 5/ 5, __}
     ammo=empty,                     -- __ [__/__, ___] {__/__, __}
-    -- head="Azimuth Hood +1",      -- __ [__/__,  86] {__/__,  3}
+    head="Azimuth Hood +2",         -- __ [11/11, 126] {__/__,  4}
     body="Shamash Robe",            --  3 [10/__, 106] {__/__, __}; Resist Silence+90
     hands="Geomancy Mitaines +2",   -- __ [ 2/__,  47] {12/12, __}
     legs=gear.Nyame_B_legs,         -- __ [ 8/ 8, 150] {__/__, __}
-    -- feet="Bagua Sandals +1",     -- __ [__/__, 107] {__/__,  3}
-    -- neck="Bagua Charm +1",       -- __ [__/__, ___] {__/__, __}; Absorb Dmg+8
+    neck="Bagua Charm +1",          -- __ [__/__, ___] {__/__, __}; Absorb Dmg+8
     ear1="Genmei Earring",          -- __ [ 2/__, ___] {__/__, __}
     ear2="Etiolation Earring",      -- __ [__/ 3, ___] {__/__, __}; Resist Silence+15
     ring1="Gelatinous Ring +1",     -- __ [ 7/-1, ___] {__/__, __}
     ring2="Defending Ring",         -- __ [10/10, ___] {__/__, __}
     waist="Carrier's Sash",         -- __ [__/__, ___] {__/__, __}; Ele resist+15
-    -- 3 Refresh [49 PDT/20 MDT, 496 M.Eva] {Pet: 42 PDT/42 MDT, 6 Regen}
+    -- 3 Refresh [60 PDT/31 MDT, 429 M.Eva] {Pet: 42 PDT/42 MDT, 4 Regen}
 
     -- head="Azimuth Hood +3",      -- __ [12/12, 136] {__/__,  5}
     -- hands="Geomancy Mitaines +3",-- __ [ 3/__,  57] {13/13, __}
