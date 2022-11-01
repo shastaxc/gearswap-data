@@ -267,7 +267,7 @@ function init_gear_sets()
     legs="Arcadian Braccae +3",
   }
   sets.precast.JA['Bounty Shot'] = {
-    -- hands="Amini Glove. +1"
+    -- hands="Amini Glovelettes +1"
   }
   sets.precast.JA['Camouflage'] = {
     body="Orion Jerkin +1"
