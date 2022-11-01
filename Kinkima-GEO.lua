@@ -794,10 +794,10 @@ function init_gear_sets()
     neck="Bagua Charm +1",            -- 25, __, __, __ [__/__, ___] {__/__, __}
     ear1="Malignance Earring",        -- 10, __,  8,  4 [__/__, ___] {__/__, __}
     ear2="Regal Earring",             -- __, __, 10, __ [__/__, ___] {__/__, __}; Set bonus
-    ring1="Stikini Ring +1",          -- 11,  8, __, __ [__/__, ___] {__/__, __}
+    ring1="Metamorph Ring +1",        -- 15, __, 16, __ [__/__, ___] {__/__, __}
     ring2="Stikini Ring +1",          -- 11,  8, __, __ [__/__, ___] {__/__, __}
     waist="Witful Belt",              -- __, __, __,  3 [__/__, ___] {__/__, __}
-    -- 289 M.Acc, 16 Dark Magic Skill, 188 INT, 64 FC [10 PDT/6 MDT, 459 M.Eva] {Pet: 17 PDT/17 MDT, 0 Regen}
+    -- 293 M.Acc, 8 Dark Magic Skill, 204 INT, 64 FC [10 PDT/6 MDT, 459 M.Eva] {Pet: 17 PDT/17 MDT, 0 Regen}
 
     -- main="Contemplator +1",        -- 70, __, 12, __ [__/__, ___] {__/__, __}
     -- sub="Khonsu",                  -- 30, __, __, __ [ 6/ 6, ___] {__/__, __}
@@ -811,25 +811,50 @@ function init_gear_sets()
     -- neck="Bagua Charm +2",         -- 30, __, __, __ [__/__, ___] {__/__, __}
     -- ear1="Malignance Earring",     -- 10, __,  8,  4 [__/__, ___] {__/__, __}
     -- ear2="Azimuth Earring +2",     -- 20, __, 15, __ [ 7/ 7, ___] {__/__, __}
-    -- ring1="Stikini Ring +1",       -- 11,  8, __, __ [__/__, ___] {__/__, __}
+    -- ring1="Metamorph Ring +1",     -- 15, __, 16, __ [__/__, ___] {__/__, __}
     -- ring2="Stikini Ring +1",       -- 11,  8, __, __ [__/__, ___] {__/__, __}
     -- back=gear.GEO_FC_Cape,         -- __, __, __, 10 [10/__, ___] {__/__, __}
     -- waist="Witful Belt",           -- __, __, __,  3 [__/__, ___] {__/__, __}
     -- AF set bonuses                 -- 15
-    -- 372 M.Acc, 16 Dark Magic Skill, 201 INT, 75 FC [26 PDT/13 MDT, 474 M.Eva] {Pet: 18 PDT/18 MDT, 0 Regen}
+    -- 376 M.Acc, 8 Dark Magic Skill, 217 INT, 75 FC [26 PDT/13 MDT, 474 M.Eva] {Pet: 18 PDT/18 MDT, 0 Regen}
   }
 	sets.midcast.Stun.Resistant = set_combine(sets.midcast.Stun, {})
 
-  -- TODO: update
 	sets.midcast.Impact = {
-    ammo="Pemphredo Tathlum",
-    neck="Erra Pendant",
-    ear2="Malignance Earring",
-    ring1="Metamor. Ring +1",
-    -- main="Daybreak",
-    -- sub="Ammurapi Shield",
-		-- body="Twilight Cloak",
-    -- hands="Regal Cuffs",
+    main="Contemplator +1",           -- 70, __, 12 [__/__, ___] {__/__, __}; M.Acc skill+228
+    sub="Khonsu",                     -- 30, __, __ [ 6/ 6, ___] {__/__, __}
+    range="Dunna",                    -- 10, __, __ [__/__, ___] { 5/ 5, __}
+    ammo=empty,                       -- __, __, __ [__/__, ___] {__/__, __}
+    hands="Geomancy Mitaines +2",     -- 38, __, 24 [ 2/__,  57] {12/12, __}; Set bonus
+    legs=gear.Nyame_B_legs,           -- 40, __, 44 [ 8/ 8, 150] {__/__, __}
+    feet=gear.Nyame_B_feet,           -- 40, __, 25 [ 7/ 7, 150] {__/__, __}
+    neck="Bagua Charm +1",            -- 25, __, __ [__/__, ___] {__/__, __}
+    ear1="Regal Earring",             -- __, __, 10 [__/__, ___] {__/__, __}; Set bonus
+    ear2="Malignance Earring",        -- 10, __,  8 [__/__, ___] {__/__, __}
+    ring1="Metamorph Ring +1",        -- 15, __, 16 [__/__, ___] {__/__, __}
+    ring2="Stikini Ring +1",          -- 11,  8, __ [__/__, ___] {__/__, __}
+    waist="Acuity Belt +1",           -- 15, __, 23 [__/__, ___] {__/__, __}
+    -- AF set bonuses                 -- 15
+    -- 319 M.Acc, 8 Elemental Skill, 162 INT [23 PDT/21 MDT, 357 M.Eva] {Pet: 17 PDT/17 MDT, 0 Regen}
+
+    -- main="Idris",                  -- 70, __, __ [__/__, ___] {__/__, __}; M.Acc skill+255
+    -- sub="Ammurapi Shield",         -- 38, __, 13 [__/__, ___] {__/__, __}
+    -- range="Dunna",                 -- 10, __, __ [__/__, ___] { 5/ 5, __}
+    -- ammo=empty,                    -- __, __, __ [__/__, ___] {__/__, __}
+    -- head=empty,
+    -- body="Crepuscular Cloak",      -- 85, __, 80 [__/__, 231] {__/__, __}
+    -- hands="Geomancy Mitaines +3",  -- 48, __, 29 [ 3/__,  57] {13/13, __}; Set bonus
+    -- legs="Agwu's Slops",           -- 50, __, 49 [ 9/ 9, 134] {__/__, __}
+    -- feet="Azimuth Gaiters +3",     -- 63, __, 34 [11/11, 168] {__/__, __}
+    -- neck="Bagua Charm +2",         -- 30, __, __ [__/__, ___] {__/__, __}
+    -- ear1="Regal Earring",          -- __, __, 10 [__/__, ___] {__/__, __}; Set bonus
+    -- ear2="Azimuth Earring +2",     -- 20, __, 15 [ 7/ 7, ___] {__/__, __}
+    -- ring1="Metamorph Ring +1",     -- 15, __, 16 [__/__, ___] {__/__, __}
+    -- ring2="Stikini Ring +1",       -- 11,  8, __ [__/__, ___] {__/__, __}
+    -- back=gear.GEO_Nuke_Cape,       -- 30, __, 20 [10/__, ___] {__/__, __}
+    -- waist="Acuity Belt +1",        -- 15, __, 23 [__/__, ___] {__/__, __}
+    -- AF set bonuses                 -- 15
+    -- 500 M.Acc, 8 Elemental Skill, 289 INT [40 PDT/27 MDT, 590 M.Eva] {Pet: 18 PDT/18 MDT, 0 Regen}
   }
 
   -- TODO: update
