@@ -908,12 +908,14 @@ function init_gear_sets()
     hands="Malignance Gloves",        -- 24, 12, 50/__ <__> {4} (__) [ 5/ 5, 112]
     legs="Ikenga's Trousers",         -- 40, 10, 50/65 <__> {6} (__) [ 9/ 9, 123]
     feet="Malignance Boots",          -- 49,  9, 50/__ <__> {2} (__) [ 4/ 4, 150]
-    -- neck="Iskur Gorget",              -- __,  8, 30/30 <__> {_} (__) [__/__, ___]
+    neck="Commodore Charm +1",
     ear1="Enervating Earring",        -- __,  4,  7/ 7 <__> {_} (__) [__/__, ___]
-    -- ear2="Telos Earring",             -- __,  5, 10/10 <__> {_} (__) [__/__, ___]
     ring1="Dingir Ring",              -- 10, __, __/25 <__> {_} (10) [__/__, ___]
     ring2="Ilabrat Ring",             -- 10,  5, __/__ <__> {_} (__) [__/__, ___]
     back=gear.COR_TP_Cape,
+    waist="Reiki Yotai",
+    -- neck="Iskur Gorget",              -- __,  8, 30/30 <__> {_} (__) [__/__, ___]
+    -- ear2="Telos Earring",             -- __,  5, 10/10 <__> {_} (__) [__/__, ___]
     -- back=gear.COR_RA_Cape,            -- 30, 10, 20/20 <__> {_} (__) [10/__, ___]
     -- waist="Yemaya Belt",              --  7,  4, 10/10 <__> {_} (__) [__/__, ___]
     -- Merits/Traits/Gifts                                      (58)
