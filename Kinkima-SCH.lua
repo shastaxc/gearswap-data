@@ -782,6 +782,8 @@ function init_gear_sets()
     -- 533 M.Acc, 293 MND, 35% Enfeebling Duration, 53 Enfeebling Skill
   })
 
+  sets.midcast.Dia = sets.midcast.MndEnfeebles
+
   -- M.Acc > INT > Enfeebling Duration > Enfeebling Skill
   sets.midcast.IntEnfeebles = {
     main="Contemplator +1",             -- 70, 12, __, 20; +228 M.Acc skill
@@ -1575,7 +1577,9 @@ function job_get_spell_map(spell, default_spell_map)
         return 'CureNormal'
       end
     elseif spell.skill == 'Enfeebling Magic' then
-      if spell.type == 'WhiteMagic' then
+      if spell.english:startswith('Dia') then
+        return "Dia"
+      elseif spell.type == "WhiteMagic" or spell.english:startswith('Frazzle') or spell.english:startswith('Distract') then
         return 'MndEnfeebles'
       else
         return 'IntEnfeebles'

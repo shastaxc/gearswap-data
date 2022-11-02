@@ -726,6 +726,8 @@ function init_gear_sets()
     -- 76 Enfeebling skill, 382 M.Acc, 283 MND, 253 INT [17 PDT/17 MDT, 544 MEVA]
   }
 
+  sets.midcast.Dia = sets.midcast.MndEnfeebles
+
   sets.midcast.IntEnfeebles = set_combine(sets.midcast.MndEnfeebles, {
     back=gear.WHM_INT_MAcc_Cape,
   })
@@ -1026,7 +1028,9 @@ function job_get_spell_map(spell, default_spell_map)
     elseif bar_status_spells:contains(spell.english) then
       return 'BarStatus'
     elseif spell.skill == 'Enfeebling Magic' then
-      if spell.type == 'WhiteMagic' then
+      if spell.english:startswith('Dia') then
+        return "Dia"
+      elseif spell.type == "WhiteMagic" or spell.english:startswith('Frazzle') or spell.english:startswith('Distract') then
         return 'MndEnfeebles'
       else
         return 'IntEnfeebles'

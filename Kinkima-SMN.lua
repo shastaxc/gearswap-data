@@ -690,13 +690,15 @@ function init_gear_sets()
     -- 55 CP, 235 MND, 155 VIT, 285 Healing Skill [21 PDT/19 MDT, 369 M.Eva] 0 -Enmity
     
     -- main=gear.Gada_MND,      -- 18, 21, __,  18 [__/__, ___] __
+    -- range=empty,
+    -- ammo="Esper Stone +1",   -- __, __, __, ___ [__/__, ___]  5
     -- hands="Bunzi's Gloves",  -- __, 47, 26, ___ [ 8/ 8, 112]  8
     -- back=gear.SMN_Cure_Cape, -- 10, 30, __, ___ [10/__, ___] __
     -- waist="Luminary Sash",   -- __, 10, __, ___ [__/__, ___] __
-    -- 53 CP, 328 MND, 181 VIT, 303 Healing Skill [39 PDT/27 MDT, 481 M.Eva] 8 -Enmity
+    -- 53 CP, 328 MND, 181 VIT, 303 Healing Skill [39 PDT/27 MDT, 481 M.Eva] 13 -Enmity
     -- 847 HP Cure IV
   }
-  sets.midcast.CureWeather = set_combine(sets.midcast.Cure, {
+  sets.midcast.CureWeather = set_combine(sets.midcast.CureNormal, {
     waist="Hachirin-no-obi",
     -- 903 HP to 1044 Cure IV depending on weather/day
   })
