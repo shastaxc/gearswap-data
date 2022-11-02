@@ -140,9 +140,15 @@ function init_gear_sets()
   sets.org.job = {}
 
   sets.TreasureHunter = {
+    range=empty,
+    ammo="Perfect Lucky Egg", --1
+    body=gear.Merl_TH_body, --2
     waist="Chaac Belt", --1
   }
-  sets.TreasureHunter.RA = sets.TreasureHunter
+  sets.TreasureHunter.RA = {
+    body=gear.Merl_TH_body, --2
+    waist="Chaac Belt", --1
+  }
 
 	--------------------------------------
 	-- Precast sets
@@ -653,51 +659,40 @@ function init_gear_sets()
     -- Ideal: 0 Geomancy, 901 geo skill, 99 Conserve MP, 286 Indi Duration, 20 Indi Duration % [57 PDT/ 45 MDT, 620 M.Eva] {Pet: 59 DT, 5 Regen}
   })
 
-  sets.midcast.Cure = {
-    neck="Incanter's Torque",
-    ring1="Stikini Ring +1",
-    -- main="Daybreak",
-    -- sub="Ammurapi Shield",
+  -- Cap at 700 power; Power = floor(MND÷2) + floor(VIT÷4) + Healing Magic Skill
+  sets.midcast.CureNormal = {
+    main="Bunzi's Rod",             -- 30, 15, __, ___ [__/__, ___] __
+    sub="Genbu's Shield",           --  5, __, __, ___ [10/__, ___] __
+    head=gear.Vanya_B_head,         -- 10, 27, 18,  20 [__/ 5,  75] __
+    body=gear.Vanya_B_body,         -- __, 36, 23,  20 [ 1/ 4,  80] __
+    legs=gear.Vanya_B_legs,         -- __, 34, 12,  20 [__/__, 107] __
+    feet=gear.Vayna_B_feet,         --  5, 19, 10,  40 [__/__, 107] __
+    neck="Incanter's Torque",       -- __, __, __,  10 [__/__, ___] __
+    ear1="Meili Earring",           -- __, __, __,  10 [__/__, ___] __
+    ear2="Mendicant's Earring",     --  5, __, __, ___ [__/__, ___] __
+    ring1="Sirona's Ring",          -- __,  3,  3,  10 [__/__, ___] __
+    ring2="Defending Ring",         -- __, __, __, ___ [10/10, ___] __
+    -- Traits/Merits/Gifts             __,103, 95,  16
+    -- RDM Subjob                      __, __, __, 139
+    -- 55 CP, 237 MND, 161 VIT, 285 Healing Skill [21 PDT/19 MDT, 369 M.Eva] 0 -Enmity
+    
+    -- main=gear.Gada_MND,          -- 18, 21, __,  18 [__/__, ___] __
     -- range=empty,
-    -- ammo="Esper Stone +1",
-    -- head=gear.Vanya_B_head,
-    -- body=gear.Vanya_B_body,
-    -- hands=gear.Vanya_B_hands,
-    -- legs=gear.Vanya_B_legs,
-    -- feet=gear.Vanya_B_feet,
-    -- ear1="Mendicant's Earring",
-    -- ear2="Meili Earring",
-    -- ring2="Lebeche Ring",
-    -- back="Tempered Cape +1",
-    -- waist="Luminary Sash",
+    -- ammo="Esper Stone +1",       -- __, __, __, ___ [__/__, ___]  5
+    -- hands="Bunzi's Gloves",      -- __, 47, 26, ___ [ 8/ 8, 112]  8
+    -- back=gear.GEO_Cure_Cape,     -- 10, 30, __, ___ [10/__, ___] __
+    -- waist="Luminary Sash",       -- __, 10, __, ___ [__/__, ___] __
+    -- 53 CP, 330 MND, 187 VIT, 303 Healing Skill [39 PDT/27 MDT, 481 M.Eva] 13 -Enmity
+    -- 848 HP Cure IV
   }
+  sets.midcast.CureWeather = set_combine(sets.midcast.CureNormal, {
+    waist="Hachirin-no-obi",
+    -- 53 CP, 320 MND, 187 VIT, 303 Healing Skill [39 PDT/27 MDT, 481 M.Eva] 13 -Enmity
+    -- 900 HP to 1041 Cure IV depending on weather/day
+  })
 
-  sets.midcast.LightWeatherCure = {
-    ring1="Stikini Ring +1",
-    waist="Hachirin-no-Obi",
-    -- main="Chatoyant Staff",
-    -- sub="Khonsu",
-    -- range=empty,
-    -- ammo="Esper Stone +1",
-    -- head=gear.Vanya_B_head,
-    -- body="Annointed Kalasiris",
-    -- hands=gear.Vanya_B_hands,
-    -- legs=gear.Vanya_B_legs,
-    -- feet=gear.Vanya_B_feet,
-    -- neck="Nodens Gorget",
-    -- ear1="Mendicant's Earring",
-    -- ear2="Meili Earring",
-    -- ring2="Menelaus's Ring",
-    -- back="Twilight Cape",
-    -- waist="Hachirin-no-Obi",
-  }
-
-  --Cureset for if it's not light weather but is light day.
-  sets.midcast.LightDayCure = sets.midcast.LightWeatherCure
-
-  sets.midcast.Curaga = set_combine(sets.midcast.Cure, {})
-
-	sets.midcast.Cursna =  set_combine(sets.midcast.Cure, {})
+  -- TODO: update
+	sets.midcast.Cursna = sets.midcast.CureNormal
 
   sets.midcast['Elemental Magic'] = {
     main="Bunzi's Rod",
@@ -813,10 +808,10 @@ function init_gear_sets()
     -- ear2="Azimuth Earring +2",     -- 20, __, 15, __ [ 7/ 7, ___] {__/__, __}
     -- ring1="Metamorph Ring +1",     -- 15, __, 16, __ [__/__, ___] {__/__, __}
     -- ring2="Stikini Ring +1",       -- 11,  8, __, __ [__/__, ___] {__/__, __}
-    -- back=gear.GEO_FC_Cape,         -- __, __, __, 10 [10/__, ___] {__/__, __}
+    -- back=gear.GEO_FC_Cape,         -- 20, __, 30, 10 [10/__, ___] {__/__, __}
     -- waist="Witful Belt",           -- __, __, __,  3 [__/__, ___] {__/__, __}
     -- AF set bonuses                 -- 15
-    -- 376 M.Acc, 8 Dark Magic Skill, 217 INT, 75 FC [26 PDT/13 MDT, 474 M.Eva] {Pet: 18 PDT/18 MDT, 0 Regen}
+    -- 396 M.Acc, 8 Dark Magic Skill, 247 INT, 75 FC [26 PDT/13 MDT, 474 M.Eva] {Pet: 18 PDT/18 MDT, 0 Regen}
   }
 	sets.midcast.Stun.Resistant = set_combine(sets.midcast.Stun, {})
 
@@ -837,7 +832,7 @@ function init_gear_sets()
     -- AF set bonuses                 -- 15
     -- 319 M.Acc, 8 Elemental Skill, 162 INT [23 PDT/21 MDT, 357 M.Eva] {Pet: 17 PDT/17 MDT, 0 Regen}
 
-    -- main="Idris",                  -- 70, __, __ [__/__, ___] {__/__, __}; M.Acc skill+255
+    -- main="Idris",                  -- 70, __, __ [__/__, ___] {25/25, __}; M.Acc skill+255
     -- sub="Ammurapi Shield",         -- 38, __, 13 [__/__, ___] {__/__, __}
     -- range="Dunna",                 -- 10, __, __ [__/__, ___] { 5/ 5, __}
     -- ammo=empty,                    -- __, __, __ [__/__, ___] {__/__, __}
@@ -854,75 +849,250 @@ function init_gear_sets()
     -- back=gear.GEO_Nuke_Cape,       -- 30, __, 20 [10/__, ___] {__/__, __}
     -- waist="Acuity Belt +1",        -- 15, __, 23 [__/__, ___] {__/__, __}
     -- AF set bonuses                 -- 15
-    -- 500 M.Acc, 8 Elemental Skill, 289 INT [40 PDT/27 MDT, 590 M.Eva] {Pet: 18 PDT/18 MDT, 0 Regen}
+    -- 500 M.Acc, 8 Elemental Skill, 289 INT [40 PDT/27 MDT, 590 M.Eva] {Pet: 43 PDT/43 MDT, 0 Regen}
   }
 
-  -- TODO: update
 	sets.midcast.Dispel = {
-    ammo="Pemphredo Tathlum",
-    neck="Erra Pendant",
-    ear2="Malignance Earring",
-    ring1="Metamor. Ring +1",
-    -- main="Daybreak",
-    -- sub="Ammurapi Shield",
+    main="Contemplator +1",           -- 70, 20, 12 [__/__, ___] {__/__, __}; M.Acc skill+228
+    sub="Khonsu",                     -- 30, __, __ [ 6/ 6, ___] {__/__, __}
+    range="Dunna",                    -- 10, __, __ [__/__, ___] { 5/ 5, __}
+    ammo=empty,                       -- __, __, __ [__/__, ___] {__/__, __}
+    head="Azimuth Hood +2",           -- 51, __, 34 [11/11, 126] {__/__,  4}
+    body="Azimuth Coat +2",           -- 54, __, 45 [__/__, 131] {__/__, __}
+    hands="Azimuth Gloves +2",        -- 52, 23, 31 [11/11,  88] {__/__, __}
+    legs="Geomancy Pants +2",         -- 39, __, 39 [__/__, 117] {__/__, __}
+    feet=gear.Nyame_B_feet,           -- 40, __, 25 [ 7/ 7, 150] {__/__, __}
+    neck="Bagua Charm +1",            -- 25, __, __ [__/__, ___] {__/__, __}
+    ear1="Regal Earring",             -- __, __, 10 [__/__, ___] {__/__, __}; Set bonus
+    ear2="Malignance Earring",        -- 10, __,  8 [__/__, ___] {__/__, __}
+    ring1="Metamorph Ring +1",        -- 15, __, 16 [__/__, ___] {__/__, __}
+    ring2="Stikini Ring +1",          -- 11,  8, __ [__/__, ___] {__/__, __}
+    waist="Obstinate Sash",           -- 15, 10, __ [__/__, ___] {__/__, __}
+    -- AF set bonuses                 -- 15
+    -- 437 M.Acc, 61 Enfeebling Skill, 220 INT [35 PDT/35 MDT, 612 M.Eva] {Pet: 5 PDT/5 MDT, 4 Regen}
+
+    -- main="Idris",                  -- 70, __, __ [__/__, ___] {25/25, __}; M.Acc skill+255
+    -- sub="Ammurapi Shield",         -- 38, __, 13 [__/__, ___] {__/__, __}
+    -- head="Azimuth Hood +3",        -- 61, __, 39 [12/12, 136] {__/__,  5}
+    -- body="Azimuth Coat +3",        -- 64, __, 49 [__/__, 141] {__/__, __}
+    -- hands="Azimuth Gloves +3",     -- 62, 28, 36 [12/12,  98] {__/__, __}
+    -- legs="Geomancy Pants +3",      -- 49, __, 44 [__/__, 127] {__/__, __}
+    -- feet="Azimuth Gaiters +3",     -- 63, __, 34 [11/11, 168] {__/__, __}
+    -- neck="Bagua Charm +2",         -- 30, __, __ [__/__, ___] {__/__, __}
+    -- ear2="Azimuth Earring +2",     -- 20, __, 15 [ 7/ 7, ___] {__/__, __}
+    -- back=gear.GEO_Nuke_Cape,       -- 30, __, 20 [10/__, ___] {__/__, __}
+    -- AF set bonuses                 -- 15
+    -- 553 M.Acc, 46 Enfeebling Skill, 276 INT [52 PDT/42 MDT, 670 M.Eva] {Pet: 5 PDT/5 MDT, 5 Regen}
   }
 
-  -- TODO: update
 	sets.midcast.Dispelga = set_combine(sets.midcast.Dispel, {
-    -- main="Daybreak",
-    -- sub="Ammurapi Shield",
+    -- main="Daybreak",               -- 40, __, __ [__/__,  30] {__/__, __}; Needed to cast dispelga
+    -- sub="Ammurapi Shield",         -- 38, __, 13 [__/__, ___] {__/__, __}
   })
 
-  -- TODO: update
 	sets.midcast['Enfeebling Magic'] = {
-    range="Dunna",
-    ammo=empty,
-    ear1="Regal Earring",
-    ear2="Malignance Earring",
-    ring1="Stikini Ring +1",
-    ring2="Metamorph Ring +1",
-    -- main="Daybreak",
-    -- sub="Ammurapi Shield",
-    -- head=empty,
-    -- body="Cohort Cloak +1",
-    -- hands="Geomancy Mitaines +3",
-    -- legs="Geomancy Pants +3",
-    -- feet="Geomancy Sandals +3",
-    -- neck="Bagua Charm +2",
-    -- back="Aurist's Cape +1",
-    -- waist="Acuity Belt +1",
-  }
-	sets.midcast['Enfeebling Magic'].Resistant = set_combine(sets.midcast['Enfeebling Magic'], {})
+    main="Contemplator +1",           -- 70, 20, 12, 22, __ [__/__, ___] {__/__, __}; M.Acc skill+228
+    sub="Khonsu",                     -- 30, __, __, __, __ [ 6/ 6, ___] {__/__, __}
+    range="Dunna",                    -- 10, __, __, __, __ [__/__, ___] { 5/ 5, __}
+    ammo=empty,                       -- __, __, __, __, __ [__/__, ___] {__/__, __}
+    head="Azimuth Hood +2",           -- 51, __, 34, 27, __ [11/11, 126] {__/__,  4}
+    body="Azimuth Coat +2",           -- 54, __, 45, 38, __ [__/__, 131] {__/__, __}
+    hands="Regal Cuffs",              -- 45, __, 40, 40, 20 [__/__,  53] {__/__, __}
+    legs="Geomancy Pants +2",         -- 39, __, 39, 29, __ [__/__, 117] {__/__, __}
+    feet=gear.Nyame_B_feet,           -- 40, __, 25, 26, __ [ 7/ 7, 150] {__/__, __}
+    neck="Bagua Charm +2",            -- 25, __, __, __, __ [__/__, ___] {__/__, __}
+    ear1="Regal Earring",             -- __, __, 10, 10, __ [__/__, ___] {__/__, __}; Set bonus
+    ear2="Malignance Earring",        -- 10, __,  8,  8, __ [__/__, ___] {__/__, __}
+    ring1="Metamorph Ring +1",        -- 15, __, 16, 16, __ [__/__, ___] {__/__, __}
+    back="Aurist's Cape +1",          -- 33, __, 33, 33, __ [__/__, ___] {__/__, __}
+    waist="Obstinate Sash",           -- 15, 10, __,  5,  5 [__/__, ___] {__/__, __}
+    -- AF set bonuses                 -- 15
+    -- 452 M.Acc, 30 Enfeebling Skill, 262 INT, 254, 25 [24 PDT/24 MDT, 577 M.Eva] {Pet: 5 PDT/5 MDT, 4 Regen}
 
-  -- TODO: update
+    -- main="Idris",                  -- 70, __, __, __, __ [__/__, ___] {25/25, __}; M.Acc skill+255
+    -- sub="Ammurapi Shield",         -- 38, __, 13, 13, 10 [__/__, ___] {__/__, __}
+    -- range="Dunna",                 -- 10, __, __, __, __ [__/__, ___] { 5/ 5, __}
+    -- ammo=empty,                    -- __, __, __, __, __ [__/__, ___] {__/__, __}
+    -- head="Azimuth Hood +3",        -- 61, __, 39, 32, __ [12/12, 136] {__/__,  5}
+    -- body="Azimuth Coat +3",        -- 64, __, 49, 43, __ [__/__, 141] {__/__, __}
+    -- hands="Regal Cuffs",           -- 45, __, 40, 40, 20 [__/__,  53] {__/__, __}
+    -- legs="Geomancy Pants +3",      -- 49, __, 44, 34, __ [__/__, 127] {__/__, __}
+    -- feet="Azimuth Gaiters +3",     -- 63, __, 34, 32, __ [11/11, 168] {__/__, __}
+    -- neck="Bagua Charm +2",         -- 30, __, __, __, __ [__/__, ___] {__/__, __}
+    -- ear1="Regal Earring",          -- __, __, 10, 10, __ [__/__, ___] {__/__, __}; Set bonus
+    -- ear2="Azimuth Earring +2",     -- 20, __, 15, 15, __ [ 7/ 7, ___] {__/__, __}
+    -- ring1="Metamorph Ring +1",     -- 15, __, 16, 16, __ [__/__, ___] {__/__, __}
+    -- ring2="Kishar Ring",           --  5, __, __, __, 10 [__/__, ___] {__/__, __}
+    -- back="Aurist's Cape +1",       -- 33, __, 33, 33, __ [__/__, ___] {__/__, __}
+    -- waist="Obstinate Sash",        -- 15, 10, __,  5,  5 [__/__, ___] {__/__, __}
+    -- AF set bonuses                 -- 15
+    -- 533 M.Acc, 10 Enfeebling Skill, 293 INT, 273 MND, 45% Enf Duration [30 PDT/30 MDT, 625 M.Eva] {Pet: 30 PDT/30 MDT, 5 Regen}
+  }
+	sets.midcast['Enfeebling Magic'].Resistant = set_combine(sets.midcast['Enfeebling Magic'], {
+    -- main="Idris",                  -- 70, __, __, __, __ [__/__, ___] {25/25, __}; M.Acc skill+255
+    -- sub="Ammurapi Shield",         -- 38, __, 13, 13, 10 [__/__, ___] {__/__, __}
+    -- range="Dunna",                 -- 10, __, __, __, __ [__/__, ___] { 5/ 5, __}
+    -- ammo=empty,                    -- __, __, __, __, __ [__/__, ___] {__/__, __}
+    -- head="Azimuth Hood +3",        -- 61, __, 39, 32, __ [12/12, 136] {__/__,  5}
+    -- body="Azimuth Coat +3",        -- 64, __, 49, 43, __ [__/__, 141] {__/__, __}
+    -- hands="Azimuth Gloves +3",     -- 62, 28, 36, 47, __ [12/12,  98] {__/__, __}
+    -- legs="Geomancy Pants +3",      -- 49, __, 44, 34, __ [__/__, 127] {__/__, __}
+    -- feet="Azimuth Gaiters +3",     -- 63, __, 34, 32, __ [11/11, 168] {__/__, __}
+    -- neck="Bagua Charm +2",         -- 30, __, __, __, __ [__/__, ___] {__/__, __}
+    -- ear1="Regal Earring",          -- __, __, 10, 10, __ [__/__, ___] {__/__, __}; Set bonus
+    -- ear2="Azimuth Earring +2",     -- 20, __, 15, 15, __ [ 7/ 7, ___] {__/__, __}
+    -- ring1="Metamorph Ring +1",     -- 15, __, 16, 16, __ [__/__, ___] {__/__, __}
+    -- ring2="Stikini Ring +1",       -- 11,  8, __,  8, __ [__/__, ___] {__/__, __}
+    -- back="Aurist's Cape +1",       -- 33, __, 33, 33, __ [__/__, ___] {__/__, __}
+    -- waist="Obstinate Sash",        -- 15, 10, __,  5,  5 [__/__, ___] {__/__, __}
+    -- AF set bonuses                 -- 15
+    -- 556 M.Acc, 46 Enfeebling Skill, 289 INT, 288 MND, 15% Enf Duration [42 PDT/42 MDT, 625 M.Eva] {Pet: 30 PDT/30 MDT, 5 Regen}
+  })
+
   sets.midcast.ElementalEnfeeble = set_combine(sets.midcast['Enfeebling Magic'], {
+    main="Contemplator +1",           -- 70, 20, 12, 22, __ [__/__, ___] {__/__, __}; M.Acc skill+228
+    sub="Khonsu",                     -- 30, __, __, __, __ [ 6/ 6, ___] {__/__, __}
+    range="Dunna",                    -- 10, __, __, __, __ [__/__, ___] { 5/ 5, __}
+    ammo=empty,                       -- __, __, __, __, __ [__/__, ___] {__/__, __}
+    head="Azimuth Hood +2",           -- 51, __, 34, 27, __ [11/11, 126] {__/__,  4}
+    body="Azimuth Coat +2",           -- 54, __, 45, 38, __ [__/__, 131] {__/__, __}
+    hands="Regal Cuffs",              -- 45, __, 40, 40, 20 [__/__,  53] {__/__, __}
+    legs="Geomancy Pants +2",         -- 39, __, 39, 29, __ [__/__, 117] {__/__, __}
+    feet=gear.Nyame_B_feet,           -- 40, __, 25, 26, __ [ 7/ 7, 150] {__/__, __}
+    neck="Bagua Charm +2",            -- 25, __, __, __, __ [__/__, ___] {__/__, __}
+    ear1="Regal Earring",             -- __, __, 10, 10, __ [__/__, ___] {__/__, __}; Set bonus
+    ear2="Malignance Earring",        -- 10, __,  8,  8, __ [__/__, ___] {__/__, __}
+    ring1="Metamorph Ring +1",        -- 15, __, 16, 16, __ [__/__, ___] {__/__, __}
+    back="Aurist's Cape +1",          -- 33, __, 33, 33, __ [__/__, ___] {__/__, __}
+    waist="Obstinate Sash",           -- 15, 10, __,  5,  5 [__/__, ___] {__/__, __}
+    -- AF set bonuses                 -- 15
+    -- 452 M.Acc, 30 Enfeebling Skill, 254 INT, 254, 25 [24 PDT/24 MDT, 577 M.Eva] {Pet: 5 PDT/5 MDT, 4 Regen}
+
+    -- main="Idris",                  -- 70, __, __, __, __ [__/__, ___] {25/25, __}; M.Acc skill+255
+    -- sub="Ammurapi Shield",         -- 38, __, 13, 13, 10 [__/__, ___] {__/__, __}
+    -- range="Dunna",                 -- 10, __, __, __, __ [__/__, ___] { 5/ 5, __}
+    -- ammo=empty,                    -- __, __, __, __, __ [__/__, ___] {__/__, __}
+    -- head="Azimuth Hood +3",        -- 61, __, 39, 32, __ [12/12, 136] {__/__,  5}
+    -- body="Azimuth Coat +3",        -- 64, __, 49, 43, __ [__/__, 141] {__/__, __}
+    -- hands="Regal Cuffs",           -- 45, __, 40, 40, 20 [__/__,  53] {__/__, __}
+    -- legs="Geomancy Pants +3",      -- 49, __, 44, 34, __ [__/__, 127] {__/__, __}
+    -- feet="Azimuth Gaiters +3",     -- 63, __, 34, 32, __ [11/11, 168] {__/__, __}
+    -- neck="Bagua Charm +2",         -- 30, __, __, __, __ [__/__, ___] {__/__, __}
+    -- ear1="Regal Earring",          -- __, __, 10, 10, __ [__/__, ___] {__/__, __}; Set bonus
+    -- ear2="Azimuth Earring +2",     -- 20, __, 15, 15, __ [ 7/ 7, ___] {__/__, __}
+    -- ring1="Metamorph Ring +1",     -- 15, __, 16, 16, __ [__/__, ___] {__/__, __}
+    -- ring2="Kishar Ring",           --  5, __, __, __, 10 [__/__, ___] {__/__, __}
+    -- back="Aurist's Cape +1",       -- 33, __, 33, 33, __ [__/__, ___] {__/__, __}
+    -- waist="Obstinate Sash",        -- 15, 10, __,  5,  5 [__/__, ___] {__/__, __}
+    -- AF set bonuses                 -- 15
+    -- 533 M.Acc, 10 Enfeebling Skill, 293 INT, 273 MND, 45% Enf Duration [30 PDT/30 MDT, 625 M.Eva] {Pet: 30 PDT/30 MDT, 5 Regen}
   })
   sets.midcast.ElementalEnfeeble.Resistant = set_combine(sets.midcast['Enfeebling Magic'].Resistant, {
+    main="Maxentius",                 -- 40, __, 15, 15, __ [__/__, ___] {__/__, __}
+    sub="Ammurapi Shield",            -- 38, __, 13, 13, 10 [__/__, ___] {__/__, __}
+    range=empty,
+    ammo="Pemphredo Tathlum",         --  8, __,  4, __, __ [__/__, ___] {__/__, __}
+    head="Azimuth Hood +2",           -- 51, __, 34, 27, __ [11/11, 126] {__/__,  4}
+    body="Azimuth Coat +2",           -- 54, __, 45, 38, __ [__/__, 131] {__/__, __}
+    hands="Azimuth Gloves +2",        -- 52, __, 31, 42, __ [11/11,  88] {__/__, __}
+    legs="Geomancy Pants +2",         -- 39, __, 39, 29, __ [__/__, 117] {__/__, __}; Set bonus
+    feet=gear.Nyame_B_feet,           -- 40, __, 25, 26, __ [ 7/ 7, 150] {__/__, __}
+    neck="Bagua Charm +1",            -- 25, __, __, __, __ [__/__, ___] {__/__, __}
+    ear1="Malignance Earring",        -- 10, __,  8,  8, __ [__/__, ___] {__/__, __}
+    ear2="Regal Earring",             -- __, __, 10, 10, __ [__/__, ___] {__/__, __}; Set bonus
+    ring1="Metamorph Ring +1",        -- 15, __, 16, 16, __ [__/__, ___] {__/__, __}
+    ring2="Stikini Ring +1",          -- 11,  8, __,  8, __ [__/__, ___] {__/__, __}
+    back="Aurist's Cape +1",          -- 33, __, 33, 33, __ [__/__, ___] {__/__, __}
+    waist="Acuity Belt +1",           -- 15, __, 23, __, __ [__/__, ___] {__/__, __}
+    -- AF set bonuses                 -- 15
+    -- 446 M.Acc, 8 Enfeebling Skill, 296 INT, 265 MND, 10% Enf Duration [29 PDT/29 MDT, 612 M.Eva] {Pet: 0 PDT/0 MDT, 4 Regen}
+
+    -- main="Idris",                  -- 70, __, __, __, __ [__/__, ___] {25/25, __}; M.Acc skill+255
+    -- sub="Ammurapi Shield",         -- 38, __, 13, 13, 10 [__/__, ___] {__/__, __}
+    -- range=empty,
+    -- ammo="Pemphredo Tathlum",      --  8, __,  4, __, __ [__/__, ___] {__/__, __}
+    -- head="Azimuth Hood +3",        -- 61, __, 39, 32, __ [12/12, 136] {__/__,  5}
+    -- body="Azimuth Coat +3",        -- 64, __, 49, 43, __ [__/__, 141] {__/__, __}
+    -- hands="Azimuth Gloves +3",     -- 62, 28, 36, 47, __ [12/12,  98] {__/__, __}
+    -- legs="Agwu's Slops",           -- 50, __, 49, 32, __ [ 9/ 9, 134] {__/__, __}; Elemental status +10
+    -- feet="Azimuth Gaiters +3",     -- 63, __, 34, 32, __ [11/11, 168] {__/__, __}
+    -- neck="Bagua Charm +2",         -- 30, __, __, __, __ [__/__, ___] {__/__, __}
+    -- ear1="Malignance Earring",     -- 10, __,  8,  8, __ [__/__, ___] {__/__, __}
+    -- ear2="Azimuth Earring +2",     -- 20, __, 15, 15, __ [ 7/ 7, ___] {__/__, __}
+    -- ring1="Metamorph Ring +1",     -- 15, __, 16, 16, __ [__/__, ___] {__/__, __}
+    -- ring2="Stikini Ring +1",       -- 11,  8, __,  8, __ [__/__, ___] {__/__, __}
+    -- back="Aurist's Cape +1",       -- 33, __, 33, 33, __ [__/__, ___] {__/__, __}
+    -- waist="Acuity Belt +1",        -- 15, __, 23, __, __ [__/__, ___] {__/__, __}
+    -- 550 M.Acc, 36 Enfeebling Skill, 319 INT, 279 MND, 10% Enf Duration [51 PDT/51 MDT, 677 M.Eva] {Pet: 25 PDT/25 MDT, 5 Regen}
   })
 
-  -- TODO: update
-	sets.midcast.IntEnfeebles = set_combine(sets.midcast['Enfeebling Magic'], {
-  })
+	sets.midcast.IntEnfeebles = set_combine(sets.midcast['Enfeebling Magic'], {})
 	sets.midcast.IntEnfeebles.Resistant = set_combine(sets.midcast['Enfeebling Magic'].Resistant, {
+    -- main="Idris",                  -- 70, __, __, __, __ [__/__, ___] {25/25, __}; M.Acc skill+255
+    -- sub="Ammurapi Shield",         -- 38, __, 13, 13, 10 [__/__, ___] {__/__, __}
+    -- range=empty,
+    -- ammo="Pemphredo Tathlum",      --  8, __,  4, __, __ [__/__, ___] {__/__, __}
+    -- head="Azimuth Hood +3",        -- 61, __, 39, 32, __ [12/12, 136] {__/__,  5}
+    -- body="Azimuth Coat +3",        -- 64, __, 49, 43, __ [__/__, 141] {__/__, __}
+    -- hands="Azimuth Gloves +3",     -- 62, 28, 36, 47, __ [12/12,  98] {__/__, __}
+    -- legs="Agwu's Slops",           -- 50, __, 49, 32, __ [ 9/ 9, 134] {__/__, __}; Elemental status +10
+    -- feet="Azimuth Gaiters +3",     -- 63, __, 34, 32, __ [11/11, 168] {__/__, __}
+    -- neck="Bagua Charm +2",         -- 30, __, __, __, __ [__/__, ___] {__/__, __}
+    -- ear1="Malignance Earring",     -- 10, __,  8,  8, __ [__/__, ___] {__/__, __}
+    -- ear2="Azimuth Earring +2",     -- 20, __, 15, 15, __ [ 7/ 7, ___] {__/__, __}
+    -- ring1="Metamorph Ring +1",     -- 15, __, 16, 16, __ [__/__, ___] {__/__, __}
+    -- ring2="Stikini Ring +1",       -- 11,  8, __,  8, __ [__/__, ___] {__/__, __}
+    -- back="Aurist's Cape +1",       -- 33, __, 33, 33, __ [__/__, ___] {__/__, __}
+    -- waist="Acuity Belt +1",        -- 15, __, 23, __, __ [__/__, ___] {__/__, __}
+    -- 550 M.Acc, 36 Enfeebling Skill, 319 INT, 279 MND, 10% Enf Duration [51 PDT/51 MDT, 677 M.Eva] {Pet: 25 PDT/25 MDT, 5 Regen}
   })
+
+	sets.midcast.MndEnfeebles = set_combine(sets.midcast['Enfeebling Magic'], {})
+	sets.midcast.MndEnfeebles.Resistant = set_combine(sets.midcast['Enfeebling Magic'].Resistant, {})
+
+	sets.midcast.Dia = {
+    main="Idris",                     -- __, __ [__/__, ___] {25/25, __}; M.Acc skill+255
+    sub="Ammurapi Shield",            -- __, 10 [__/__, ___] {__/__, __}
+    range=empty,
+    ammo="Perfect Lucky Egg",         --  1, __ [__/__, ___] {__/__, __}
+    head="Azimuth Hood +2",           -- __, __ [11/11, 126] {__/__,  4}
+    body=gear.Merl_TH_body,           --  2, __ [ 2/__,  91] {__/__, __}
+    hands="Regal Cuffs",              -- __, 20 [__/__,  53] {__/__, __}
+    legs=gear.Nyame_B_legs,           -- __, __ [ 8/ 8, 150] {__/__, __}
+    feet=gear.Nyame_B_feet,           -- __, __ [ 7/ 7, 150] {__/__, __}
+    neck="Bagua Charm +1",            -- __, __ [__/__, ___] {__/__, __}
+    ear1="Hearty Earring",            -- __, __ [__/__, ___] {__/__, __}; Status Resist +5
+    ear2="Genmei Earring",            -- __, __ [ 2/__, ___] {__/__, __}
+    ring1="Defending Ring",           -- __, __ [10/10, ___] {__/__, __}
+    ring2="Kishar Ring",              -- __, 10 [__/__, ___] {__/__, __}
+    waist="Chaac Belt",               --  1, __ [__/__, ___] {__/__, __}
+    -- 4 TH, 40% Enf Duration [40 PDT/36 MDT, 570 M.Eva] {Pet: 25 PDT/25 MDT, 4 Regen}
+
+    -- main="Idris",                  -- __, __ [__/__, ___] {25/25, __}; M.Acc skill+255
+    -- sub="Ammurapi Shield",         -- __, 10 [__/__, ___] {__/__, __}
+    -- range="Dunna",                 -- __, __ [__/__, ___] { 5/ 5, __}
+    -- ammo=empty,
+    -- head="Azimuth Hood +3",        -- __, __ [12/12, 136] {__/__,  5}
+    -- body=gear.Merl_TH_body,        --  2, __ [ 2/__,  91] {__/__, __}
+    -- hands="Regal Cuffs",           -- __, 20 [__/__,  53] {__/__, __}
+    -- legs=gear.Merl_TH_legs,        --  2, __ [__/__, 118] {__/__, __}
+    -- feet="Azimuth Gaiters +3",     -- __, __ [11/11, 168] {__/__, __}
+    -- neck="Bagua Charm +2",         -- __, __ [__/__, ___] {__/__, __}
+    -- ear1="Hearty Earring",         -- __, __ [__/__, ___] {__/__, __}; Status Resist +5
+    -- ear2="Azimuth Earring +2",     -- __, __ [ 7/ 7, ___] {__/__, __}
+    -- ring1="Defending Ring",        -- __, __ [10/10, ___] {__/__, __}
+    -- ring2="Kishar Ring",           -- __, 10 [__/__, ___] {__/__, __}
+    -- back=gear.GEO_FC_Cape,         -- __, __ [10/__, ___] {__/__, __}
+    -- waist="Obstinate Sash",        -- __,  5 [__/__, ___] {__/__, __}
+    -- 4 TH, 45% Enf Duration [52 PDT/40 MDT, 566 M.Eva] {Pet: 30 PDT/30 MDT, 5 Regen}
+  }
+	sets.midcast['Dia II'] = sets.midcast.Dia
+  sets.midcast['Diaga'] = sets.midcast.Dia
+
+	sets.midcast.Bio = sets.midcast.Dia
+	sets.midcast['Bio II'] = sets.midcast.Dia
 
   -- TODO: update
-	sets.midcast.MndEnfeebles = set_combine(sets.midcast['Enfeebling Magic'], {
-  })
-	sets.midcast.MndEnfeebles.Resistant = set_combine(sets.midcast['Enfeebling Magic'].Resistant, {
-  })
-
-	sets.midcast.Dia = set_combine(sets.midcast['Enfeebling Magic'], sets.TreasureHunter)
-	sets.midcast['Dia II'] = set_combine(sets.midcast['Enfeebling Magic'], sets.TreasureHunter)
-
-	sets.midcast.Bio = set_combine(sets.midcast['Enfeebling Magic'], sets.TreasureHunter)
-	sets.midcast['Bio II'] = set_combine(sets.midcast['Enfeebling Magic'], sets.TreasureHunter)
-
-  -- TODO: update
-	sets.midcast['Divine Magic'] = set_combine(sets.midcast['Enfeebling Magic'], {
-    ring1="Stikini Ring +1",
-  })
-
 	sets.midcast['Enhancing Magic'] = {}
 
   -- TODO: update
@@ -954,6 +1124,7 @@ function init_gear_sets()
   })
 
   -- TODO: update
+  -- Sheltered ring, enh duration, conserve mp
 	sets.midcast.Protect = set_combine(sets.midcast['Enhancing Magic'], {
     ear2="Malignance Earring",
     -- ear1="Gifted Earring",
@@ -962,6 +1133,7 @@ function init_gear_sets()
   })
 	sets.midcast.Protectra = sets.midcast.Protect
   -- TODO: update
+  -- Sheltered ring, enh duration, conserve mp
 	sets.midcast.Shell = set_combine(sets.midcast['Enhancing Magic'], {
     ear2="Malignance Earring",
     -- ear1="Gifted Earring",
@@ -1110,7 +1282,6 @@ function init_gear_sets()
 	-- Defense sets
 	--------------------------------------
 
-	-- Defense sets
 	sets.defense.PDT = sets.idle.Pet
 	sets.defense.MDT = sets.idle.Pet
 
@@ -1657,33 +1828,36 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 function job_get_spell_map(spell, default_spell_map)
-	if  default_spell_map == 'Cure' or default_spell_map == 'Curaga'  then
-		if world.weather_element == 'Light' then
-      return 'LightWeatherCure'
-		elseif world.day_element == 'Light' then
-      return 'LightDayCure'
+  if spell.action_type == 'Magic' then
+    if default_spell_map == 'Cure' or default_spell_map == 'Curaga' then
+      if (world.weather_element == 'Light' and not (get_weather_intensity() < 2 and world.weather_element == 'Dark'))
+          or (world.day_element == 'Light' and not world.weather_element == 'Dark') then
+        return 'CureWeather'
+      else
+        return 'CureNormal'
+      end
+    elseif spell.skill == "Enfeebling Magic" then
+      if spell.english:startswith('Dia') then
+        return "Dia"
+      elseif spell.type == "WhiteMagic" or spell.english:startswith('Frazzle') or spell.english:startswith('Distract') then
+        return 'MndEnfeebles'
+      else
+        return 'IntEnfeebles'
+      end
+    elseif spell.skill == 'Geomancy' then
+      if spell.english:startswith('Indi') then
+        return 'Indi'
+      end
+    elseif spell.skill == 'Elemental Magic' then
+      if default_spell_map == 'ElementalEnfeeble' or spell.english:contains('helix') then
+        return
+      elseif LowTierNukes:contains(spell.english) then
+        return 'LowTierNuke'
+      else
+        return 'HighTierNuke'
+      end
     end
-	elseif spell.skill == "Enfeebling Magic" then
-		if spell.english:startswith('Dia') then
-			return "Dia"
-		elseif spell.type == "WhiteMagic" or spell.english:startswith('Frazzle') or spell.english:startswith('Distract') then
-			return 'MndEnfeebles'
-		else
-			return 'IntEnfeebles'
-		end
-	elseif spell.skill == 'Geomancy' then
-		if spell.english:startswith('Indi') then
-			return 'Indi'
-		end
-  elseif spell.skill == 'Elemental Magic' then
-    if default_spell_map == 'ElementalEnfeeble' or spell.english:contains('helix') then
-      return
-    elseif LowTierNukes:contains(spell.english) then
-      return 'LowTierNuke'
-    else
-      return 'HighTierNuke'
-    end
-	end
+  end
 end
 
 function customize_idle_set(idleSet)
