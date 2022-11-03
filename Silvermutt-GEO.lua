@@ -1099,7 +1099,7 @@ function init_gear_sets()
     -- back=gear.GEO_Nuke_Cape,     -- __ [10/__, ___] {__/__, __}
     -- waist="Carrier's Sash",      -- __ [__/__, ___] {__/__, __}; Ele resist+15
     -- 13 Refresh [51 PDT/24 MDT, 548 M.Eva] {Pet: 0 PDT/0 MDT, 5 Regen}
-  })
+  }
 
   -- When you need to be safe (disables move speed gear)
 	sets.idle.HeavyDef = sets.idle
