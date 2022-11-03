@@ -170,14 +170,14 @@ function init_gear_sets()
     ear2="Loquacious Earring",      --  2 [__/__, ___] {__, __}
     ring1="Defending Ring",         -- __ [10/10, ___] {__, __}
     ring2="Kishar Ring",            --  4 [__/__, ___] {__, __}
+    back=gear.GEO_FC_Cape,          -- 10 [10/__, ___] {__, __}
     waist="Embla Sash",             --  5 [__/__, ___] {__, __}
-    -- 72 FC [30 PDT / 16 MDT, 459 M.Eva] {42 Pet DT, 0 Pet Regen}
+    -- 82 FC [40 PDT / 16 MDT, 459 M.Eva] {42 Pet DT, 0 Pet Regen}
 
     -- Ideal:
     -- hands="Geomancy Mitaines +3",-- __ [ 3/__,  57] {13, __}
     -- legs="Geomancy Pants +3",    -- 15 [__/__, 127] {__, __}
     -- ear2="Azimuth Earring +2",   -- __ [ 7/ 7, ___] {__, __}
-    -- back=gear.GEO_FC_Cape,       -- 10 [10/__, ___] {__, __}
     -- 82 FC [48 PDT / 23 MDT, 479 M.Eva] {43 Pet DT, 0 Pet Regen}
   }
 
@@ -192,6 +192,7 @@ function init_gear_sets()
     ear2="Etiolation Earring",      --  1 [__/ 3, ___] {__, __}; Resist Silence+15
     ring1="Defending Ring",         -- __ [10/10, ___] {__, __}
     ring2="Gelatinous Ring +1",     -- __ [ 7/-1, ___] {__, __}
+    back=gear.GEO_FC_Cape,          -- 10 [10/__, ___] {__, __}
     waist="Embla Sash",             --  5 [__/__, ___] {__, __}
     -- RDM FC traits                   15
     
@@ -200,7 +201,6 @@ function init_gear_sets()
     -- legs="Geomancy Pants +3",    -- 15 [__/__, 127] {__, __}
     -- feet="Azimuth Gaiters +3",   -- __ [11/11, 168] {__, __}
     -- neck="Bagua Charm +2",       -- __ [__/__, ___] {__, __}; Absorb Dmg+10
-    -- back=gear.GEO_FC_Cape,       -- 10 [10/__, ___] {__, __}
     -- 82 FC [53 PDT / 23 MDT, 529 Meva] {43 Pet DT, 0 Pet Regen}
   })
 
@@ -225,8 +225,8 @@ function init_gear_sets()
   }
 	sets.precast.JA['Life Cycle'] = {
     body="Geomancy Tunic +1",
+    back=gear.GEO_Idle_Cape,
     -- body="Geomancy Tunic +3",
-    -- back=gear.GEO_Idle_Cape,
   }
 	sets.precast.JA['Radial Arcana'] = {
     feet="Bagua Sandals +1",
@@ -277,7 +277,7 @@ function init_gear_sets()
     ear2="Moonshade Earring",       -- 250, __, __, __, __/__ [__]
     ring1="Metamorph Ring +1",      -- ___, 16, __, __, __/__ [__]
     -- ring2="Epaminondas's Ring",     -- ___, __, __,  5, __/__ [__]
-    -- back=gear.GEO_Idle_Cape,        -- ___, __, __, __, __/__ [__]
+    back=gear.GEO_Idle_Cape,        -- ___, __, __, __, __/__ [__]
     -- waist="Fotia Belt",             -- fTP Bonus
     -- 250 TP Bonus, 187 MND, 144 STR, 58 WSD, 48PDT/38MDT [30PetDT]
   }
@@ -328,7 +328,7 @@ function init_gear_sets()
     ear2="Moonshade Earring",       -- 250, __, __, __, __, __, __/__ [__]
     ring1="Metamorph Ring +1",      -- ___, __, __, 16, __, __, __/__ [__]
     -- ring2="Epaminondas's Ring",     -- ___, __, __, __, __,  5, __/__ [__]
-    -- back=gear.GEO_Idle_Cape,        -- ___, __, __, __, __, __, __/__ [__]
+    back=gear.GEO_Idle_Cape,        -- ___, __, __, __, __, __, __/__ [__]
     -- waist="Fotia Belt",             -- fTP Bonus
     -- 250 TP Bonus, 0 Crit Dmg,  0 Crit Rate, 187 MND, 144 STR, 58 WSD, 48PDT/38MDT [30PetDT]
   }
@@ -791,8 +791,9 @@ function init_gear_sets()
     ear2="Regal Earring",             -- __, __, 10, __ [__/__, ___] {__/__, __}; Set bonus
     ring1="Metamorph Ring +1",        -- 15, __, 16, __ [__/__, ___] {__/__, __}
     ring2="Stikini Ring +1",          -- 11,  8, __, __ [__/__, ___] {__/__, __}
+    back=gear.GEO_FC_Cape,            -- 20, __, 30, 10 [10/__, ___] {__/__, __}
     waist="Witful Belt",              -- __, __, __,  3 [__/__, ___] {__/__, __}
-    -- 293 M.Acc, 8 Dark Magic Skill, 204 INT, 64 FC [10 PDT/6 MDT, 459 M.Eva] {Pet: 17 PDT/17 MDT, 0 Regen}
+    -- 313 M.Acc, 8 Dark Magic Skill, 234 INT, 74 FC [20 PDT/6 MDT, 459 M.Eva] {Pet: 17 PDT/17 MDT, 0 Regen}
 
     -- main="Contemplator +1",        -- 70, __, 12, __ [__/__, ___] {__/__, __}
     -- sub="Khonsu",                  -- 30, __, __, __ [ 6/ 6, ___] {__/__, __}
@@ -1065,8 +1066,9 @@ function init_gear_sets()
     ear2="Genmei Earring",            -- __, __ [ 2/__, ___] {__/__, __}
     ring1="Defending Ring",           -- __, __ [10/10, ___] {__/__, __}
     ring2="Kishar Ring",              -- __, 10 [__/__, ___] {__/__, __}
+    back=gear.GEO_FC_Cape,            -- __, __ [10/__, ___] {__/__, __}
     waist="Chaac Belt",               --  1, __ [__/__, ___] {__/__, __}
-    -- 4 TH, 40% Enf Duration [40 PDT/36 MDT, 570 M.Eva] {Pet: 25 PDT/25 MDT, 4 Regen}
+    -- 4 TH, 40% Enf Duration [50 PDT/36 MDT, 570 M.Eva] {Pet: 25 PDT/25 MDT, 4 Regen}
 
     -- main="Idris",                  -- __, __ [__/__, ___] {25/25, __}; M.Acc skill+255
     -- sub="Ammurapi Shield",         -- __, 10 [__/__, ___] {__/__, __}
@@ -1241,8 +1243,9 @@ function init_gear_sets()
     ear2="Hearty Earring",          -- __ [__/__, ___] {__/__, __}; Status Resist+5
     ring1="Stikini Ring +1",        --  1 [__/__, ___] {__/__, __}
     ring2="Defending Ring",         -- __ [10/10, ___] {__/__, __}
+    back=gear.GEO_Idle_Cape,        -- __ [__/__,  30] {__/__, 15}
     waist="Isa Belt",               -- __ [__/__, ___] { 3/ 3,  1}; Prefer refresh if it existed
-    -- 6 Refresh [48 PDT/24 MDT, 493 M.Eva] {Pet: 40 PDT/40 MDT, 8 Regen}
+    -- 6 Refresh [48 PDT/24 MDT, 523 M.Eva] {Pet: 40 PDT/40 MDT, 23 Regen}
 
     -- main="Idris",                -- __ [__/__, ___] {25/25, __}
     -- sub="Genmei Shield",         -- __ [10/__, ___] {__/__, __}
@@ -1310,7 +1313,7 @@ function init_gear_sets()
     ear2="Cessance Earring",        -- __/__ [__, __],  6,  3,  3
     -- ring1="Chirich Ring +1",        -- __/__ [__, __], 10,  6, __
     -- ring2="Petrov Ring",            -- __/__ [__, __], __,  5,  1
-    -- back=gear.GEO_Idle_Cape,        -- __/__ [__, 15], __, __, __
+    back=gear.GEO_Idle_Cape,        -- __/__ [__, 15], __, __, __
     -- waist="Olseni Belt",            -- __/__ [__, __], 20,  3, __
     -- 30PDT/30MDT [5 Pet DT, 15 Pet Regen], 251 Acc, 31 Store TP, 22 DA
 
@@ -1331,7 +1334,7 @@ function init_gear_sets()
     ear2="Cessance Earring",        -- __/__ [__, __],  6,  3,  3
     -- ring1="Chirich Ring +1",        -- __/__ [__, __], 10,  6, __
     -- ring2="Petrov Ring",            -- __/__ [__, __], __,  5,  1
-    -- back=gear.GEO_Idle_Cape,        -- __/__ [__, 15], __, __, __
+    back=gear.GEO_Idle_Cape,        -- __/__ [__, 15], __, __, __
     -- waist="Olseni Belt",            -- __/__ [__, __], 20,  3, __
     -- 25PDT/23MDT [17 Pet DT, 15 Pet Regen], 211 Acc, 31 Store TP, 18 DA
 
@@ -1358,7 +1361,7 @@ function init_gear_sets()
     ear2="Cessance Earring",        -- __/__ [__, __],  6,  3,  3
     -- ring1="Chirich Ring +1",        -- __/__ [__, __], 10,  6, __
     -- ring2="Petrov Ring",            -- __/__ [__, __], __,  5,  1
-    -- back=gear.GEO_Idle_Cape,        -- __/__ [__, 15], __, __, __
+    back=gear.GEO_Idle_Cape,        -- __/__ [__, 15], __, __, __
     -- waist="Olseni Belt",            -- __/__ [__, __], 20,  3, __
     -- 50PDT/50MDT [5 Pet DT, 15 Pet Regen], 301 Acc, 31 Store TP, 22 DA
 
@@ -1381,7 +1384,7 @@ function init_gear_sets()
     ear2="Cessance Earring",        -- __/__ [__, __],  6,  3,  3
     -- ring1="Chirich Ring +1",        -- __/__ [__, __], 10,  6, __
     -- ring2="Petrov Ring",            -- __/__ [__, __], __,  5,  1
-    -- back=gear.GEO_Idle_Cape,        -- __/__ [__, 15], __, __, __
+    back=gear.GEO_Idle_Cape,        -- __/__ [__, 15], __, __, __
     -- waist="Olseni Belt",            -- __/__ [__, __], 20,  3, __
     -- 45PDT/43MDT [17 Pet DT, 15 Pet Regen], 261 Acc, 31 Store TP, 18 DA
 
@@ -1409,7 +1412,7 @@ function init_gear_sets()
     ear2="Cessance Earring",        -- __/__ [__, __],  6,  3,  3
     -- ring1="Chirich Ring +1",        -- __/__ [__, __], 10,  6, __
     -- ring2="Petrov Ring",            -- __/__ [__, __], __,  5,  1
-    -- back=gear.GEO_Idle_Cape,        -- __/__ [__, 15], __, __, __
+    back=gear.GEO_Idle_Cape,        -- __/__ [__, 15], __, __, __
     -- waist="Olseni Belt",            -- __/__ [__, __], 20,  3, __
     -- 40PDT/30MDT [5 Pet DT, 15 Pet Regen], 306 Acc, 31 Store TP, 22 DA
 
@@ -1432,7 +1435,7 @@ function init_gear_sets()
     ear2="Cessance Earring",        -- __/__ [__, __],  6,  3,  3
     -- ring1="Chirich Ring +1",        -- __/__ [__, __], 10,  6, __
     ring2="Defending Ring",         -- 10/10 [__, __], __, __, __
-    -- back=gear.GEO_Idle_Cape,        -- __/__ [__, 15], __, __, __
+    back=gear.GEO_Idle_Cape,        -- __/__ [__, 15], __, __, __
     -- waist="Olseni Belt",            -- __/__ [__, __], 20,  3, __
     -- 51PDT/39MDT [17 Pet DT, 15 Pet Regen], 266 Acc, 26 Store TP, 17 DA
 
@@ -1459,7 +1462,7 @@ function init_gear_sets()
     ear2="Cessance Earring",        -- __/__ [__, __],  6,  3,  3
     -- ring1="Chirich Ring +1",        -- __/__ [__, __], 10,  6, __
     -- ring2="Petrov Ring",            -- __/__ [__, __], __,  5,  1
-    -- back=gear.GEO_Idle_Cape,        -- __/__ [__, 15], __, __, __
+    back=gear.GEO_Idle_Cape,        -- __/__ [__, 15], __, __, __
     -- waist="Olseni Belt",            -- __/__ [__, __], 20,  3, __
     -- 40PDT/30MDT [30 Pet DT, 15 Pet Regen], 296 Acc, 31 Store TP, 22 DA
 
@@ -1483,7 +1486,7 @@ function init_gear_sets()
     ear2="Cessance Earring",        -- __/__ [__, __],  6,  3,  3
     -- ring1="Chirich Ring +1",        -- __/__ [__, __], 10,  6, __
     ring2="Defending Ring",         -- 10/10 [__, __], __, __, __
-    -- back=gear.GEO_Idle_Cape,        -- __/__ [__, 15], __, __, __
+    back=gear.GEO_Idle_Cape,        -- __/__ [__, 15], __, __, __
     -- waist="Olseni Belt",            -- __/__ [__, __], 20,  3, __
     -- 51PDT/39MDT [42 Pet DT, 15 Pet Regen], 256 Acc, 26 Store TP, 17 DA
 

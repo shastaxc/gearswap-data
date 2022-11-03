@@ -821,10 +821,10 @@ function init_gear_sets()
     ear2="Beckoner's Earring +1",       --   1,  4 {___, 12, __, __ / __, 12, __, __} [ 4/ 4, ___]
     ring1="Varar Ring +1",              -- ___,  4 {___, __, __, __ / __, 10, __, __} [__/__, ___]
     ring2="Varar Ring +1",              -- ___,  4 {___, __, __, __ / __, 10, __, __} [__/__, ___]
+    back=gear.SMN_Phys_BP_Cape,         --   1,  5 {___, __, __, __ / 20, 30, __, __} [10/__, ___]
     waist="Incarnation Sash",           -- ___, __ {___, 15, __, __ / __, 15, __,  4} [__/__, ___]
     -- head=gear.Helios_Phys_BP_head,   -- ___,  7 {___, __, __, __ / 30, __, __,  8} [__/__,  75]
     -- body="Convoker's Doublet +3",    -- ___, 16 {___, 45, __, __ / __, 45, __, __} [__/__, 100]
-    -- back=gear.SMN_Phys_BP_Cape,      --   1,  5 {___, __, __, __ / 20, 30, __, __} [10/__, ___]
     -- 121 Pet Lv, 126 BP Dmg {Pet: 0 MAB, 152 M.Acc, 25 INT, 0 M.Dmg / 195 Att, 277 Acc, 55 STR, 31 DA} [19 PDT/9 MDT, 469 M.Eva]
     
     -- main="Nirvana",                  --   2, 40 {___, 30, __, __ / __, 30, __, __} [__/__, ___]
@@ -973,6 +973,7 @@ function init_gear_sets()
     ear2="Beckoner's Earring +1",   -- ____ [ 4/ 4, ___] ( 2, __) {  1, __, __/__}
     ring1="Stikini Ring +1",        -- ____ [__/__, ___] ( 1, __) {___, __, __/__}
     ring2="Defending Ring",         -- ____ [10/10, ___] (__, __) {___, __, __/__}
+    back=gear.SMN_Phys_BP_Cape,     -- ____ [10/__, ___] (__, __) {  1, __, __/__}; Pet Haste+10
     waist="Isa Belt",               -- ____ [__/__, ___] (__, __) {___, __,  3/ 3}
     -- back=gear.SMN_FC_Cape,       -- ____ [10/__, ___] (__, __) {  1, __, __/__}
     -- Traits/Merits/JP Gifts                                      ___, __,  7/ 7
@@ -991,7 +992,7 @@ function init_gear_sets()
     -- ear2="Beckoner's Earring +2",-- ____ [ 6/ 6, ___] ( 3, __) {  1, __, __/__}
     -- ring1="Stikini Ring +1",     -- ____ [__/__, ___] ( 1, __) {___, __, __/__}
     -- ring2="Defending Ring",      -- ____ [10/10, ___] (__, __) {___, __, __/__}
-    -- back=gear.SMN_FC_Cape,       -- ____ [10/__, ___] (__, __) {  1, __, __/__}
+    -- back=gear.SMN_Phys_BP_Cape,  -- ____ [10/__, ___] (__, __) {  1, __, __/__}; Pet Haste+10
     -- waist="Isa Belt",            -- ____ [__/__, ___] (__, __) {___, __,  3/ 3}
     -- Traits/Merits/JP Gifts                                      ___, __,  7/ 7
     -- 236 HP [55 PDT/45 MDT, 549 M.Eva] (15 Refresh, 16 Perp Cost) {Pet: 121 Lv, 25 Regain, 13 PDT/13 MDT}
@@ -1043,7 +1044,7 @@ function init_gear_sets()
     ear2="Cessance Earring",
     -- ring1="Petrov Ring",
     -- ring2="Apate Ring",
-    -- back=gear.SMN_Phys_BP_Cape,
+    back=gear.SMN_Phys_BP_Cape,
     waist="Grunfeld Rope",
   }
   
