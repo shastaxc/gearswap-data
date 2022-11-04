@@ -42,8 +42,6 @@ function job_setup()
 
 	state.Buff.Entrust = buffactive.Entrust or false
 
-	state.UseCustomTimers = M(true, 'Use Custom Timers')
-
   indi_timer = '' -- DO NOT MODIFY
   indi_duration = 255 -- Update with your actual indi duration
   indi_entrust_duration = 255 -- Update with your actual indi duration for entrusted spells
@@ -1652,20 +1650,18 @@ function job_aftercast(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
   if not spell.interrupted then
     if spell.english:startswith('Indi-') then
-			if state.UseCustomTimers.value then
-				send_command('@timers d "'..spell.target.name..': '..indi_timer..'"')
-				indi_timer = spell.english
-        if spell.target.type == 'SELF' then -- If not entrusted
-				  send_command('@timers c "'..spell.target.name..': '..indi_timer..'" '..indi_duration..' down spells/00136.png')
-        else -- If entrusted
-          send_command('@timers c "'..spell.target.name..': '..indi_timer..'" '..indi_entrust_duration..' down spells/00136.png')
-        end
-			end
+      send_command('@timers d "'..spell.target.name..': '..indi_timer..'"')
+      indi_timer = spell.english
+      if spell.target.type == 'SELF' then -- If not entrusted
+        send_command('@timers c "'..spell.target.name..': '..indi_timer..'" '..indi_duration..' down spells/00136.png')
+      else -- If entrusted
+        send_command('@timers c "'..spell.target.name..': '..indi_timer..'" '..indi_entrust_duration..' down spells/00136.png')
+      end
 		elseif spell.english:startswith('Geo-') or spell.english == "Mending Halation" or spell.english == "Radial Arcana" then
 			eventArgs.handled = true
-    elseif state.UseCustomTimers.value and spell.english == 'Sleep' or spell.english == 'Sleepga' then
+    elseif spell.english == 'Sleep' or spell.english == 'Sleepga' then
       send_command('@timers c "'..spell.english..' ['..spell.target.name..']" 60 down spells/00220.png')
-    elseif state.UseCustomTimers.value and spell.english == 'Sleep II' or spell.english == 'Sleepga II' then
+    elseif spell.english == 'Sleep II' or spell.english == 'Sleepga II' then
       send_command('@timers c "'..spell.english..' ['..spell.target.name..']" 90 down spells/00220.png')
 		end
   end
