@@ -657,7 +657,7 @@ function init_gear_sets()
   sets.midcast.Haste = sets.midcast['Enhancing Magic']
   sets.midcast.Refresh = set_combine(sets.midcast['Enhancing Magic'], {
     waist="Gishdubar Sash",
-    back="Grapevine Cape",
+    -- back="Grapevine Cape",
   })
   sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {
     neck="Nodens Gorget",

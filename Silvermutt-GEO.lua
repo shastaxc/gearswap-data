@@ -1057,9 +1057,9 @@ function init_gear_sets()
     ear2="Azimuth Earring +1",        -- __, __, __ [ 3/ 3, ___] {__/__, __}
     ring1="Gelantinous Ring +1",      -- __, __, __ [ 7/-1, ___] {__/__, __}
     ring2="Defending Ring",           -- __, __, __ [10/10, ___] {__/__, __}
-    back=gear.GEO_FC_Cape,            -- __, __, __ [10/__, ___] {__/__, __}
-    waist="Gishdubar Sash",           -- __, 20, __ [__/__, ___] {__/__, __}
-    -- 2 Refresh Potency, 20 Refresh, 10% Enh Duration [79 PDT/59 MDT, 674 M.Eva] {Pet: 25 PDT/25 MDT, 0 Regen}
+    back=gear.GEO_Idle_Cape,          -- __, __, __ [__/__,  30] {__/__, 15}
+    waist="Embla Sash",               -- __, __, 10 [__/__, ___] {__/__, __}
+    -- 2 Refresh Potency, 0 Refresh, 20% Enh Duration [69 PDT/59 MDT, 704 M.Eva] {Pet: 25 PDT/25 MDT, 15 Regen}
     
     -- main=gear.Gada_ENH,            -- __, __,  6 [__/__, ___] {__/__, __}
     -- sub="Ammurapi Shield",         -- __, __, 10 [__/__, ___] {__/__, __}
@@ -1075,10 +1075,15 @@ function init_gear_sets()
     -- ear2="Azimuth Earring +2",     -- __, __, __ [ 7/ 7, ___] {__/__, __}
     -- ring1="Gelantinous Ring +1",   -- __, __, __ [ 7/-1, ___] {__/__, __}
     -- ring2="Defending Ring",        -- __, __, __ [10/10, ___] {__/__, __}
-    -- back="Grapevine Cape",         -- __, 30, __ [__/__, ___] {__/__, __}
-    -- waist="Gishdubar Sash",        -- __, 20, __ [__/__, ___] {__/__, __}
-    -- 2 Refresh Potency, 65 Refresh, 36% Enh Duration [47 PDT/37 MDT, 489 M.Eva] {Pet: 0 PDT/0 MDT, 6 Regen}
+    -- back=gear.GEO_Idle_Cape,       -- __, __, __ [__/__,  30] {__/__, 15}
+    -- waist="Embla Sash",            -- __, __, 10 [__/__, ___] {__/__, __}
+    -- 2 Refresh Potency, 15 Refresh Duration, 46% Enh Duration [47 PDT/37 MDT, 489 M.Eva] {Pet: 0 PDT/0 MDT, 21 Regen}
   }
+  sets.midcast.RefreshSelf = set_combine(sets.midcast.Refresh, {
+    back="Grapevine Cape",            -- __, 30, __ [__/__, ___] {__/__, __}
+    waist="Gishdubar Sash",           -- __, 20, __ [__/__, ___] {__/__, __}
+    -- 2 Refresh Potency, 65 Refresh Duration, 36% Enh Duration [47 PDT/37 MDT, 489 M.Eva] {Pet: 0 PDT/0 MDT, 6 Regen}
+  })
 
   -- GEO cannot realistically get to 355 enh skill for +2 aquaveil, so don't try
   -- Focus on Aquaveil+ gear and defensive stats
@@ -1456,7 +1461,7 @@ function init_gear_sets()
     back=gear.GEO_Idle_Cape,        -- __/__ [__, 15], __, __, __
     waist="Olseni Belt",            -- __/__ [__, __], 20,  3, __
     -- 51PDT/39MDT [42 Pet DT, 15 Pet Regen], 256 Acc, 26 Store TP, 17 DA
-    
+
     -- hands="Geomancy Mitaines +3",--  3/__ [13, __], __, __, __
     -- 52PDT/39MDT [43 Pet DT, 15 Pet Regen], 256 Acc, 26 Store TP, 17 DA
   }
@@ -1643,6 +1648,11 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
 
   elseif spell.skill == 'Geomancy' and state.Buff.Entrust and spell.english:startswith('Indi-') and sets.buff.Entrust then
     equip(sets.buff.Entrust)
+  elseif spell.skill == 'Enhancing Magic' then
+    -- If self targeted refresh
+    if spellMap == 'Refresh' and spell.targets.Self and sets.midcast.RefreshSelf then
+      equip(sets.midcast.RefreshSelf)
+    end
   end
 
   -- If slot is locked, keep current equipment on

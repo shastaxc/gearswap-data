@@ -746,7 +746,7 @@ function init_gear_sets()
 
   sets.midcast.RefreshSelf = {
     waist="Gishdubar Sash",
-    back="Grapevine Cape"
+    -- back="Grapevine Cape"
   }
 
   sets.midcast.Stoneskin = set_combine(sets.midcast.EnhancingDuration, {
