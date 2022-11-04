@@ -45,8 +45,8 @@ function job_setup()
 	state.Buff.Entrust = buffactive.Entrust or false
 
   indi_timer = '' -- DO NOT MODIFY
-  indi_duration = 255 -- Update with your actual indi duration
-  indi_entrust_duration = 255 -- Update with your actual indi duration for entrusted spells
+  indi_duration = 298 -- Update with your actual indi duration
+  indi_entrust_duration = 320 -- Update with your actual indi duration for entrusted spells
 
   -- Spells that don't scale with skill. Overrides Mote lib.
   classes.EnhancingDurSpells = S{'Adloquium', 'Haste', 'Haste II', 'Flurry', 'Flurry II', 'Protect', 'Protect II', 'Protect III',
@@ -549,7 +549,7 @@ function init_gear_sets()
     sub="Genmei Shield",            -- __, __, __, __, __ [10/__, ___] {__, __}
     range="Dunna",                  -- __, 18, __, __, __ [__/__, ___] { 5, __}
     ammo=empty,
-    head="Azimuth Hood +1",         -- __, 15, __, __, __ [12/12, 136] {__,  3}; Set bonus
+    head="Azimuth Hood +1",         -- __, 15, __, __, __ [__/__,  86] {__,  3}
     body=gear.Nyame_B_body,         -- __, __, __, __, __ [ 9/ 9, 139] {__, __}
     hands="Azimuth Gloves +1",      -- __, __, __, __, __ [__/__,  48] {__, __}
     legs="Bagua Pants +1",          -- __, __, __, 15, __ [__/__, 107] {__, __}
@@ -562,7 +562,8 @@ function init_gear_sets()
     back=gear.GEO_Adoulin_Cape,     -- __, 15, __, __, 17 [__/__, ___] {__, __}
     waist="Gishdubar Sash",         -- __, __, __, __, __ [__/__, ___] {__, __}
     -- Base stats                   -- __,850, 43,220, __ [__/__, ___] {50, __}
-    -- 10 Geomancy, 916 geo skill, 43 Conserve MP, 255 Indi Duration, 17 Indi Duration % [45 PDT/ 31 MDT, 556 M.Eva] {Pet: 80 DT, 3 Regen}
+    -- Master level 14              -- __, 28
+    -- 10 Geomancy, 954 geo skill, 43 Conserve MP, 255 Indi Duration, 17 Indi Duration % [33 PDT/19 MDT, 506 M.Eva] {Pet: 80 DT, 3 Regen}
     
     -- hands="Azimuth Gloves +3",   -- __, __, __, __, __ [12/12,  98] {__, __}; Set bonus: save MP
     -- feet="Azimuth Gaiters +3",   -- __, __, __, 30, __ [11/11, 168] {__, __}; Set bonus: save MP
@@ -610,27 +611,41 @@ function init_gear_sets()
   }
 
 	-- Geomancy and skill have no effect on Entrust.
-	sets.buff.Entrust = set_combine(sets.midcast.Geomancy.Indi, {
-    -- main=gear.Solstice_D,        -- __,  5,  6, 15, __ [__/__, ___] { 4, __} -- Need to add augs
-    -- sub="Genmei Shield",         -- __, __, __, __, __ [10/__, ___] {__, __}
-    -- range=empty
-    -- ammo="Pemphredo Tathlum",    -- __, __,  4, __, __ [__/__, ___] {__, __}
+	sets.buff.Entrust = {
+    main=gear.Solstice_D,           -- __,  5,  6, 15, __ [__/__, ___] { 4, __} -- Need to add augs
+    sub="Genmei Shield",            -- __, __, __, __, __ [10/__, ___] {__, __}
+    range=empty,
+    ammo="Pemphredo Tathlum",       -- __, __,  4, __, __ [__/__, ___] {__, __}
+    head="Azimuth Hood +1",         -- __, 15, __, __, __ [__/__,  86] {__,  3}
+    body=gear.Nyame_B_body,         -- __, __, __, __, __ [ 9/ 9, 139] {__, __}
+    hands="Azimuth Gloves +1",      -- __, __, __, __, __ [__/__,  48] {__, __}
+    legs="Bagua Pants +1",          -- __, __, __, 15, __ [__/__, 107] {__, __}
+    feet="Azimuth Gaiters +1",      -- __, __, __, 20, __ [ 4/__, 118] {__, __}
+    neck="Reti Pendant",            -- __, __,  4, __, __ [__/__, ___] {__, __}; Save MP
+    ear1="Eabani Earring",          -- __, __, __, __, __ [__/__,   8] {__, __}
+    ear2="Halasz Earring",          -- __, __, __, __, __ [__/__, ___] {__, __}
+    ring1="Defending Ring",         -- __, __, __, __, __ [10/10, ___] {__, __}
+    ring2="Stikini Ring +1",        -- __,  8, __, __, __ [__/__, ___] {__, __}
+    back=gear.GEO_Adoulin_Cape,     -- __, 15, __, __, 17 [__/__, ___] {__, __}
+    waist="Gishdubar Sash",         -- __, __, __, __, __ [__/__, ___] {__, __}
+    -- Base stats                   -- __,850, 43,220, __ [__/__, ___] {50, __}
+    -- Master level 14              -- __, 28
+    -- Ideal: 0 Geomancy, 911 geo skill, 57 Conserve MP, 267 Indi Duration, 20 Indi Duration % [33 PDT/19 MDT, 506 M.Eva] {Pet: 59 DT, 3 Regen}
+
     -- head="Azimuth Hood +3",      -- __, 25, __, __, __ [12/12, 136] {__,  5}; Set bonus: save MP
     -- body=gear.Merl_ConMP_body,   -- __, __,  6, __, __ [ 2/__,  91] {__, __}
     -- hands="Azimuth Gloves +3",   -- __, __, __, __, __ [12/12,  98] {__, __}; Set bonus: save MP
     -- legs="Bagua Pants +3",       -- __, __, __, 21, __ [__/__, 127] {__, __}
     -- feet="Azimuth Gaiters +3",   -- __, __, __, 30, __ [11/11, 168] {__, __}; Set bonus: save MP
-    -- neck="Reti Pendant",         -- __, __,  4, __, __ [__/__, ___] {__, __}; Save MP
     -- ear1="Mendicant's Earring",  -- __, __,  2, __, __ [__/__, ___] {__, __}
     -- ear2="Calamitous Earring",   -- __, __,  4, __, __ [__/__, ___] {__, __}
-    -- ring1="Defending Ring",      -- __, __, __, __, __ [10/10, ___] {__, __}
     -- ring2="Mephitas's Ring +1",  -- __, __, 15, __, __ [__/__, ___] {__, __}
     -- back=gear.GEO_Adoulin_Cape,  -- __,  5, __, __, 20 [__/__, ___] { 5, __}
     -- waist="Shinjutsu-no-Obi +1", -- __, __, 15, __, __ [__/__, ___] {__, __}
     -- Base stats                   -- __,850, 43,220, __ [__/__, ___] {50, __}
     -- Master level 8               -- __, 16
     -- Ideal: 0 Geomancy, 901 geo skill, 99 Conserve MP, 286 Indi Duration, 20 Indi Duration % [57 PDT/ 45 MDT, 620 M.Eva] {Pet: 59 DT, 5 Regen}
-  })
+  }
 
   -- Cap at 700 power; Power = floor(MND÷2) + floor(VIT÷4) + Healing Magic Skill
   sets.midcast.CureNormal = {

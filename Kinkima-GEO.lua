@@ -635,6 +635,7 @@ function init_gear_sets()
 
 	-- Geomancy and skill have no effect on Entrust.
 	sets.buff.Entrust = set_combine(sets.midcast.Geomancy.Indi, {
+    range=empty,
     ammo="Pemphredo Tathlum",       -- __, __,  4, __, __ [__/__, ___] {__, __}
     head="Azimuth Hood +2",         -- __, 20, __, __, __ [11/11, 126] {__,  4}; Set bonus
     hands="Azimuth Gloves +3",      -- __, __, __, __, __ [11/11,  88] {__, __}; Set bonus: save MP
@@ -645,11 +646,11 @@ function init_gear_sets()
     ring1="Defending Ring",         -- __, __, __, __, __ [10/10, ___] {__, __}
     waist="Shinjutsu-no-Obi +1",    -- __, __, 15, __, __ [__/__, ___] {__, __}
     -- Base stats                   -- __,850, 43,220, __ [__/__, ___] {50, __}
-    -- Ideal: 0 Geomancy, 870 geo skill, 68 Conserve MP, 255 Indi Duration, 20 Indi Duration % [36 PDT/ 32 MDT, 440 M.Eva] {Pet: 50 DT, 4 Regen}
+    -- Ideal: 0 Geomancy, 870 geo skill, 68 Conserve MP, 255 Indi Duration, 0 Indi Duration % [36 PDT/ 32 MDT, 440 M.Eva] {Pet: 50 DT, 4 Regen}
     
     -- main=gear.Solstice_D,        -- __,  5,  6, 15, __ [__/__, ___] { 4, __} -- Need to add augs
     -- sub="Genmei Shield",         -- __, __, __, __, __ [10/__, ___] {__, __}
-    -- range=empty
+    -- range=empty,
     -- ammo="Pemphredo Tathlum",    -- __, __,  4, __, __ [__/__, ___] {__, __}
     -- head="Azimuth Hood +3",      -- __, 25, __, __, __ [12/12, 136] {__,  5}; Set bonus: save MP
     -- body=gear.Merl_ConMP_body,   -- __, __,  6, __, __ [ 2/__,  91] {__, __}
