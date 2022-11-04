@@ -34,6 +34,8 @@ function job_setup()
   state.Buff['Sublimation: Activated'] = buffactive['Sublimation: Activated'] or false
   state.HelixMode = M{['description']='Helix Mode', 'Potency', 'Duration'}
   state.RegenMode = M{['description']='Regen Mode', 'Duration', 'Potency'}
+  state.Storm = M{['description']='Storm','Aurorastorm','Sandstorm',
+      'Rainstorm','Windstorm','Firestorm','Hailstorm','Thunderstorm','Voidstorm'}
 
   degrade_array = {
     ['Aspirs'] = {'Aspir','Aspir II'}
@@ -51,6 +53,11 @@ function job_setup()
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c interact')
   send_command('bind @c gs c toggle CP')
+
+  send_command('bind !c gs c storm')
+  send_command('bind ^pageup gs c cycleback Storm')
+  send_command('bind ^pagedown gs c cycle Storm')
+  send_command('bind !pagedown gs c reset Storm')
 
   send_command('bind ^` input /ja Immanence <me>')
   send_command('bind !` gs c toggle MagicBurst')
@@ -100,6 +107,11 @@ function job_file_unload()
   send_command('unbind !d')
   send_command('unbind @c')
 
+  send_command('unbind !c')
+  send_command('unbind ^pageup')
+  send_command('unbind ^pagedown')
+  send_command('unbind !pagedown')
+  
   send_command('unbind ^`')
   send_command('unbind !`')
   send_command('unbind ^-')
@@ -1725,6 +1737,8 @@ function job_self_command(cmdParams, eventArgs)
   elseif cmdParams[1] == 'nuke' then
     handle_nuking(cmdParams)
     eventArgs.handled = true
+  elseif cmdParams[1] == 'storm' then
+    send_command('@input /ma "'..state.Storm.current..' II" <stpc>')
   elseif cmdParams[1] == 'test' then
     test()
   end
