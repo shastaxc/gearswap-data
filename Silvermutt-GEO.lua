@@ -1999,7 +1999,7 @@ function handle_elemental(cmdParams)
 	local target = '<t>'
 	if cmdParams[3] then
 		if tonumber(cmdParams[3]) then
-			target = tonumber(cmdParams[3])
+			target = cmdParams[3]
 		else
 			target = table.concat(cmdParams, ' ', 3)
 			target = get_closest_mob_id_by_name(target) or '<t>'
