@@ -1119,6 +1119,12 @@ function init_gear_sets()
     -- 95 +Stoneskin [59 PDT/36 MDT, 467 M.Eva] {Pet: 38 PDT/38 MDT, 5 Regen}
   }
 
+  -- Ref Potency > Enh Duration %, Ref Duration
+  sets.midcast.Refresh = set_combine(sets.midcast.EnhancingDuration, {
+    -- head="Amalric Coif +1",  --  2, __, __
+    -- 2 Ref Potency, 72 Enh Duration%, 0 Ref Duration
+  })
+
 	sets.midcast.Refresh = {
     main=gear.Gada_ENH,               -- __, __,  6 [__/__, ___] {__/__, __}
     sub="Ammurapi Shield",            -- __, __, 10 [__/__, ___] {__/__, __}
@@ -1134,9 +1140,9 @@ function init_gear_sets()
     ear2="Hearty Earring",            -- __, __, __ [__/__, ___] {__/__, __}
     ring1="Gelantinous Ring +1",      -- __, __, __ [ 7/-1, ___] {__/__, __}
     ring2="Defending Ring",           -- __, __, __ [10/10, ___] {__/__, __}
-    back=gear.GEO_FC_Cape,            -- __, __, __ [10/__, ___] {__/__, __}
-    waist="Gishdubar Sash",           -- __, 20, __ [__/__, ___] {__/__, __}
-    -- 0 Refresh Potency, 20 Refresh, 36% Enh Duration [62 PDT/40 MDT, 519 M.Eva] {Pet: 0 PDT/0 MDT, 4 Regen}
+    back=gear.GEO_Idle_Cape,          -- __, __, __ [__/__,  30] {__/__, 15}
+    waist="Embla Sash",               -- __, __, 10 [__/__, ___] {__/__, __}
+    -- 0 Refresh Potency, 0 Refresh Duration, 46% Enh Duration [52 PDT/40 MDT, 549 M.Eva] {Pet: 0 PDT/0 MDT, 19 Regen}
     
     -- head="Amalric Coif +1",        --  2, __, __ [__/__,  86] {__/__, __}
     -- body=gear.Telchine_ENH_body,   -- __, __, 10 [__/__,  80] {__/__,  3}
@@ -1145,9 +1151,13 @@ function init_gear_sets()
     -- feet="Inspirited Boots",       -- __, 15, __ [__/__, 118] {__/__, __}
     -- ear1="Genmei Earring",         -- __, __, __ [ 2/__, ___] {__/__, __}
     -- ear2="Azimuth Earring +2",     -- __, __, __ [ 7/ 7, ___] {__/__, __}
-    -- back="Grapevine Cape",         -- __, 30, __ [__/__, ___] {__/__, __}
-    -- 2 Refresh Potency, 65 Refresh, 36% Enh Duration [47 PDT/37 MDT, 489 M.Eva] {Pet: 0 PDT/0 MDT, 6 Regen}
+    -- 2 Refresh Potency, 15 Refresh Duration, 46% Enh Duration [47 PDT/37 MDT, 489 M.Eva] {Pet: 0 PDT/0 MDT, 21 Regen}
   }
+  sets.midcast.RefreshSelf = set_combine(sets.midcast.Refresh, {
+    back="Grapevine Cape",            -- __, 30, __ [__/__, ___] {__/__, __}
+    waist="Gishdubar Sash",           -- __, 20, __ [__/__, ___] {__/__, __}
+    -- 2 Refresh Potency, 65 Refresh Duration, 36% Enh Duration [47 PDT/37 MDT, 489 M.Eva] {Pet: 0 PDT/0 MDT, 6 Regen}
+  })
 
   -- GEO cannot realistically get to 355 enh skill for +2 aquaveil, so don't try
   -- Focus on Aquaveil+ gear and defensive stats
@@ -1354,13 +1364,13 @@ function init_gear_sets()
     hands=gear.Nyame_B_hands,       --  7/ 7 [__, __], 40, __,  4
     -- legs="Jhakri Slops +2",         -- __/__ [__, __], 45,  9, __
     feet=gear.Nyame_B_feet,         --  7/ 7 [__, __], 40, __,  4
-    -- neck="Bagua Charm +1",          -- __/__ [__, __], __, __, __; Luopan absorb dmg
+    neck="Bagua Charm +1",          -- __/__ [__, __], __, __, __; Luopan absorb dmg
     -- ear1="Telos Earring",           -- __/__ [__, __], 10,  5,  1
     ear2="Cessance Earring",        -- __/__ [__, __],  6,  3,  3
     -- ring1="Chirich Ring +1",        -- __/__ [__, __], 10,  6, __
     -- ring2="Petrov Ring",            -- __/__ [__, __], __,  5,  1
     back=gear.GEO_Idle_Cape,        -- __/__ [__, 15], __, __, __
-    -- waist="Olseni Belt",            -- __/__ [__, __], 20,  3, __
+    waist="Olseni Belt",            -- __/__ [__, __], 20,  3, __
     -- 30PDT/30MDT [5 Pet DT, 15 Pet Regen], 251 Acc, 31 Store TP, 22 DA
 
     -- hands="Gazu Bracelet +1",    -- __/__ [__, __], 96, __, __
@@ -1374,13 +1384,13 @@ function init_gear_sets()
 		body=gear.Nyame_B_body,         --  9/ 9 [__, __], 40, __,  5
     hands="Geomancy Mitaines +3",   --  3/__ [13, __], __, __, __
     feet=gear.Nyame_B_feet,         --  7/ 7 [__, __], 40, __,  4
+    neck="Bagua Charm +1",          -- __/__ [__, __], __, __, __; Luopan absorb dmg
     ear2="Cessance Earring",        -- __/__ [__, __],  6,  3,  3
     back=gear.GEO_Idle_Cape,        -- __/__ [__, 15], __, __, __
     waist="Olseni Belt",            -- __/__ [__, __], 20,  3, __
     -- 26PDT/23MDT [18 Pet DT, 15 Pet Regen], 146 Acc, 6 Store TP, 16 DA
 
     -- legs="Jhakri Slops +2",      -- __/__ [__, __], 45,  9, __
-    -- neck="Bagua Charm +1",       -- __/__ [__, __], __, __, __; Luopan absorb dmg
     -- ear1="Telos Earring",        -- __/__ [__, __], 10,  5,  1
     -- ear1="Hypaspist Earring",    -- -5/__ [ 5,  1], __, __, __
     -- ear2="Handler's Earring +1", -- __/__ [ 4, __], __, __, __
@@ -1406,7 +1416,7 @@ function init_gear_sets()
     -- ring1="Chirich Ring +1",        -- __/__ [__, __], 10,  6, __
     -- ring2="Petrov Ring",            -- __/__ [__, __], __,  5,  1
     back=gear.GEO_Idle_Cape,        -- __/__ [__, 15], __, __, __
-    -- waist="Olseni Belt",            -- __/__ [__, __], 20,  3, __
+    waist="Olseni Belt",            -- __/__ [__, __], 20,  3, __
     -- 50PDT/50MDT [5 Pet DT, 15 Pet Regen], 301 Acc, 31 Store TP, 22 DA
 
     -- hands="Gazu Bracelet +1",    -- __/__ [__, __], 96, __, __
@@ -1454,7 +1464,7 @@ function init_gear_sets()
     -- ring1="Chirich Ring +1",        -- __/__ [__, __], 10,  6, __
     -- ring2="Petrov Ring",            -- __/__ [__, __], __,  5,  1
     back=gear.GEO_Idle_Cape,        -- __/__ [__, 15], __, __, __
-    -- waist="Olseni Belt",            -- __/__ [__, __], 20,  3, __
+    waist="Olseni Belt",            -- __/__ [__, __], 20,  3, __
     -- 40PDT/30MDT [5 Pet DT, 15 Pet Regen], 306 Acc, 31 Store TP, 22 DA
 
     -- hands="Gazu Bracelet +1",    -- __/__ [__, __], 96, __, __
@@ -1496,13 +1506,13 @@ function init_gear_sets()
     hands=gear.Nyame_B_hands,       --  7/ 7 [__, __], 40, __,  4
     -- legs="Jhakri Slops +2",         -- __/__ [__, __], 45,  9, __
     feet=gear.Nyame_B_feet,         --  7/ 7 [__, __], 40, __,  4
-    -- neck="Bagua Charm +1",          -- __/__ [__, __], __, __, __; Luopan dmg absorb
+    neck="Bagua Charm +1",          -- __/__ [__, __], __, __, __; Luopan dmg absorb
     -- ear1="Telos Earring",           -- __/__ [__, __], 10,  5,  1
     ear2="Cessance Earring",        -- __/__ [__, __],  6,  3,  3
     -- ring1="Chirich Ring +1",        -- __/__ [__, __], 10,  6, __
     -- ring2="Petrov Ring",            -- __/__ [__, __], __,  5,  1
     back=gear.GEO_Idle_Cape,        -- __/__ [__, 15], __, __, __
-    -- waist="Olseni Belt",            -- __/__ [__, __], 20,  3, __
+    waist="Olseni Belt",            -- __/__ [__, __], 20,  3, __
     -- 40PDT/30MDT [30 Pet DT, 15 Pet Regen], 296 Acc, 31 Store TP, 22 DA
 
     -- hands="Gazu Bracelet +1",    -- __/__ [__, __], 96, __, __
@@ -1715,6 +1725,11 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
 
   elseif spell.skill == 'Geomancy' and state.Buff.Entrust and spell.english:startswith('Indi-') and sets.buff.Entrust then
     equip(sets.buff.Entrust)
+  elseif spell.skill == 'Enhancing Magic' then
+    -- If self targeted refresh
+    if spellMap == 'Refresh' and spell.targets.Self and sets.midcast.RefreshSelf then
+      equip(sets.midcast.RefreshSelf)
+    end
   end
 
   -- If slot is locked, keep current equipment on

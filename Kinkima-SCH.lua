@@ -725,8 +725,8 @@ function init_gear_sets()
   })
 
   sets.midcast.RefreshSelf = set_combine(sets.midcast.Refresh, {
+    back="Grapevine Cape",   -- __, __, 30
     waist="Gishdubar Sash",  -- __, __, 20
-    -- back="Grapevine Cape",   -- __, __, 30
     -- 2 Ref Potency, 62 Enh Duration%, 50 Ref Duration
   })
 
