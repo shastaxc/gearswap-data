@@ -140,10 +140,10 @@ gear.Taeon_RA_head = { name="Taeon Chapeau", augments={'"Snapshot"+5','"Snapshot
 
 -- Telchine
 gear.Telchine_DA_legs = {}
-gear.Telchine_ENH_body = {} -- 20 MEVA, 10 Enh Duration
 gear.Telchine_STP_hands = {} -- 20 Acc, 6 STP, 10 DEX
 gear.Telchine_STP_feet = {} -- 20 Acc, 6 STP, 10 DEX
 
+gear.Telchine_ENH_body = {} -- Max 25 meva, 10 enh duration, 3 pet regen
 gear.Telchine_ENH_hands = {} -- Max 25 meva, 8 CP, 10 enh duration
 
 -- Yorium

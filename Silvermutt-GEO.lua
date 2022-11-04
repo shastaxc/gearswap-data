@@ -37,27 +37,25 @@ function job_setup()
   state.WeaponSet = M{['description']='Weapon Set', 'Casting', 'Idris', 'Maxentius', 'Staff'}
   state.CP = M(false, "Capacity Points Mode")
 	state.RecoverMode = M('Always', '60%', '35%', 'Never')
-	state.MagicBurstMode = M{['description'] = 'Magic Burst Mode', 'Off', 'Single', 'Lock'}
+  state.MagicBurst = M(true, 'Magic Burst')
 	state.ElementalMode = M{['description'] = 'Elemental Mode', 'Fire','Ice','Wind','Earth','Lightning','Water'}
 
 	state.Buff.Entrust = buffactive.Entrust or false
-	state.Buff['Blaze of Glory'] = buffactive['Blaze of Glory'] or false
 
-  LowTierNukes = S{'Stone', 'Water', 'Aero', 'Fire', 'Blizzard', 'Thunder',
-      'Stone II', 'Water II', 'Aero II', 'Fire II', 'Blizzard II', 'Thunder II',
-      'Stonega', 'Waterga', 'Aeroga', 'Firaga', 'Blizzaga', 'Thundaga'}
-
-	autoentrust = 'Fury'
-	blazelocked = false
-	used_ecliptic = false
-
-	state.AutoEntrust = M(false, 'AutoEntrust Mode')
-	state.CombatEntrustOnly = M(false, 'Combat Entrust Only Mode')
-	state.AutoGeoAbilities = M(false, 'Use Geo Abilities Automatically')
 	state.UseCustomTimers = M(true, 'Use Custom Timers')
 
-  indi_timer = ''
-  indi_duration = 180
+  indi_timer = '' -- DO NOT MODIFY
+  indi_duration = 180 -- Update with your actual indi duration
+  indi_entrust_duration = 180 -- Update with your actual indi duration for entrusted spells
+
+  -- Spells that don't scale with skill. Overrides Mote lib.
+  classes.EnhancingDurSpells = S{'Adloquium', 'Haste', 'Haste II', 'Flurry', 'Flurry II', 'Protect', 'Protect II', 'Protect III',
+      'Protect IV', 'Protect V', 'Protectra', 'Protectra II', 'Protectra III', 'Protectra IV', 'Protectra V', 'Shell', 'Shell II',
+      'Shell III', 'Shell IV', 'Shell V', 'Shellra', 'Shellra II', 'Shellra III', 'Shellra IV', 'Shellra V', 'Blaze Spikes',
+      'Ice Spikes', 'Shock Spikes', 'Enaero', 'Enaero II', 'Enblizzard', 'Enblizzard II', 'Enfire', 'Enfire II', 'Enstone',
+      'Enstone II', 'Enthunder', 'Enthunder II', 'Enwater', 'Enwater II', 'Firestorm', 'Firestorm II', 'Hailstorm', 'Hailstorm II',
+      'Rainstorm', 'Rainstorm II', 'Sandstorm', 'Sandstorm II', 'Thunderstorm', 'Thunderstorm II', 'Voidstorm', 'Voidstorm II',
+      'Windstorm', 'Windstorm II'}
 
   send_command('bind !a gs c test')
   send_command('bind !s gs c faceaway')
@@ -74,7 +72,7 @@ function job_setup()
   send_command('bind ^delete gs c weaponset cycleback')
 
   send_command('bind @c gs c toggle CP')
-	send_command('bind @` gs c cycle MagicBurstMode')
+	send_command('bind !` gs c toggle MagicBurst')
 	send_command('bind @q gs c cycle RecoverMode')
 
   send_command('bind ^- gs c cycleback ElementalMode')
@@ -112,7 +110,7 @@ function job_file_unload()
   send_command('unbind ^delete')
 
   send_command('unbind @c')
-	send_command('unbind @`')
+	send_command('unbind !`')
 	send_command('unbind @q')
 
   send_command('unbind !e')
@@ -139,6 +137,82 @@ function init_gear_sets()
 	-- Precast sets
 	--------------------------------------
 
+	-- Fast cast sets for spells
+	sets.precast.FC = {
+    range="Dunna",                  --  3
+    ammo=empty,
+    head=gear.Merl_FC_head,         -- 13
+    hands=gear.Merl_FC_hands,       --  5
+    legs="Geomancy Pants +2",       -- 13
+    neck="Orunmila's Torque",       --  5
+    ear1="Loquac. Earring",         --  2
+    ear2="Malignance Earring",      --  4
+    ring1="Kishar Ring",            --  4
+    ring2="Prolix Ring",            --  2
+    back=gear.GEO_FC_Cape,          -- 10
+    -- 61 FC
+    
+    -- Ideal:
+    -- main="Idris",                -- __ [__/__, ___] {25, __}
+    -- sub="Genmei Shield",         -- __ [10/__, ___] {__, __}
+    -- range="Dunna",               --  3 [__/__, ___] { 5, __}
+    -- ammo=empty,
+    -- head=gear.Merl_FC_head,      -- 15 [__/__,  86] {__, __}
+    -- body=gear.Merl_FC_body,      -- 14 [ 2/__,  91] {__, __}
+    -- hands="Geomancy Mitaines +3",-- __ [ 3/__,  57] {13, __}
+    -- legs="Geomancy Pants +3",    -- 15 [__/__, 127] {__, __}
+    -- feet=gear.Merl_FC_feet,      -- 12 [__/__, 118] {__, __}
+    -- neck="Loricate Torque +1",   -- __ [ 6/ 6, ___] {__, __}
+    -- ear1="Malignance Earring",   --  4 [__/__, ___] {__, __}
+    -- ear2="Azimuth Earring +2",   -- __ [ 7/ 7, ___] {__, __}
+    -- ring1="Defending Ring",      -- __ [10/10, ___] {__, __}
+    -- ring2="Kishar Ring",         --  4 [__/__, ___] {__, __}
+    -- back=gear.GEO_FC_Cape,       -- 10 [10/__, ___] {__, __}
+    -- waist="Embla Sash",          --  5 [__/__, ___] {__, __}
+    -- 82 FC [48 PDT / 23 MDT, 479 M.Eva] {43 Pet DT, 0 Pet Regen}
+  }
+
+	sets.precast.FC.RDM = set_combine(sets.precast.FC, {
+    -- main="Idris",                -- __ [__/__, ___] {25, __}
+    -- sub="Genmei Shield",         -- __ [10/__, ___] {__, __}
+    -- range="Dunna",               --  3 [__/__, ___] { 5, __}
+    -- ammo=empty,
+    -- head=gear.Merl_FC_head,      -- 15 [__/__,  86] {__, __}
+    -- body=gear.Merl_FC_body,      -- 14 [ 2/__,  91] {__, __}
+    -- hands="Geomancy Mitaines +3",-- __ [ 3/__,  57] {13, __}
+    -- legs="Geomancy Pants +3",    -- 15 [__/__, 127] {__, __}
+    -- feet="Azimuth Gaiters +3",   -- __ [11/11, 168] {__, __}
+    -- neck="Bagua Charm +2",       -- __ [__/__, ___] {__, __}; Absorb Dmg+10
+    -- ear1="Malignance Earring",   --  4 [__/__, ___] {__, __}
+    -- ear2="Etiolation Earring",   --  1 [__/ 3, ___] {__, __}; Resist Silence+15
+    -- ring1="Defending Ring",      -- __ [10/10, ___] {__, __}
+    -- ring2="Gelatinous Ring +1",  -- __ [ 7/-1, ___] {__, __}
+    -- back=gear.GEO_FC_Cape,       -- 10 [10/__, ___] {__, __}
+    -- waist="Embla Sash",          --  5 [__/__, ___] {__, __}
+    -- RDM FC traits                   15
+    -- 82 FC [53 PDT / 23 MDT, 529 Meva] {43 Pet DT, 0 Pet Regen}
+  })
+
+  -- TODO: Update
+	sets.precast.FC.Impact = set_combine(sets.precast.FC, {
+		-- head=empty,
+		-- body="Crepuscular Cloak",
+  })
+  -- TODO: Update
+	sets.precast.FC.Impact.RDM = set_combine(sets.precast.FC, {
+		-- head=empty,
+		-- body="Crepuscular Cloak",
+  })
+
+	sets.precast.FC.Dispelga = set_combine(sets.precast.FC, {
+    main="Daybreak",
+    sub="Genmei Shield",
+  })
+
+  -----------------------------------------------------------------------------------------------
+  ---------------------------------------- Job Abilities ----------------------------------------
+  -----------------------------------------------------------------------------------------------
+
 	-- Precast sets to enhance JAs
 	sets.precast.JA.Bolster = {
     body="Bagua Tunic +1",
@@ -163,76 +237,11 @@ function init_gear_sets()
     head="Bagua Galero +1",
   }
 
-	-- Relic hat for Blaze of Glory HP increase.
-	sets.buff['Blaze of Glory'] = {}
+  
+  ----------------------------------------------------------------------------------------------
+  ---------------------------------------- Weaponskills ----------------------------------------
+  ----------------------------------------------------------------------------------------------
 
-	-- Fast cast sets for spells
-	sets.precast.FC = {
-    range="Dunna",                  --  3
-    ammo=empty,
-    head=gear.Merl_FC_head,         -- 13
-    hands=gear.Merl_FC_hands,       --  5
-    legs="Geomancy Pants +2",       -- 13
-    neck="Orunmila's Torque",       --  5
-    ear1="Loquac. Earring",         --  2
-    ear2="Malignance Earring",      --  4
-    ring1="Kishar Ring",            --  4
-    ring2="Prolix Ring",            --  2
-    back=gear.GEO_FC_Cape,          -- 10
-    -- 61 FC
-    
-    -- Ideal:
-    -- Assume Idris                 -- __ [__/__, ___] {25, __}
-    -- Assume Genmei Shield         -- __ [10/__, ___] {__, __}
-    -- range="Dunna",               --  3 [__/__, ___] { 5, __}
-    -- ammo=empty,
-    -- head=gear.Merl_FC_head,      -- 15 [__/__,  86] {__, __}
-    -- body=gear.Merl_FC_body,      -- 14 [ 2/__,  91] {__, __}
-    -- hands="Geomancy Mitaines +3",-- __ [ 3/__,  57] {13, __}
-    -- legs="Geomancy Pants +3",    -- 15 [__/__, 127] {__, __}
-    -- feet=gear.Merl_FC_feet,      -- 12 [__/__, 118] {__, __}
-    -- neck="Loricate Torque +1",   -- __ [ 6/ 6, ___] {__, __}
-    -- ear1="Malignance Earring",   --  4 [__/__, ___] {__, __}
-    -- ear2="Azimuth Earring +2",   -- __ [ 7/ 7, ___] {__, __}
-    -- ring1="Defending Ring",      -- __ [10/10, ___] {__, __}
-    -- ring2="Kishar Ring",         --  4 [__/__, ___] {__, __}
-    -- back=gear.GEO_FC_Cape,       -- 10 [10/__, ___] {__, __}
-    -- waist="Embla Sash",          --  5 [__/__, ___] {__, __}
-    -- 82 FC [48 PDT / 23 MDT, 479 M.Eva] {43 Pet DT, 0 Pet Regen}
-  }
-
-	sets.precast.FC.RDM = set_combine(sets.precast.FC, {
-    -- Assume Idris                 -- __ [__/__, ___] {25, __}
-    -- Assume Genmei Shield         -- __ [10/__, ___] {__, __}
-    -- range="Dunna",               --  3 [__/__, ___] { 5, __}
-    -- ammo=empty,
-    -- head=gear.Merl_FC_head,      -- 15 [__/__,  86] {__, __}
-    -- body=gear.Merl_FC_body,      -- 14 [ 2/__,  91] {__, __}
-    -- hands="Geomancy Mitaines +3",-- __ [ 3/__,  57] {13, __}
-    -- legs="Geomancy Pants +3",    -- 15 [__/__, 127] {__, __}
-    -- feet="Azimuth Gaiters +3",   -- __ [11/11, 168] {__, __}
-    -- neck="Bagua Charm +2",       -- __ [__/__, ___] {__, __}; Absorb Dmg+10
-    -- ear1="Malignance Earring",   --  4 [__/__, ___] {__, __}
-    -- ear2="Etiolation Earring",   --  1 [__/ 3, ___] {__, __}; Resist Silence+15
-    -- ring1="Defending Ring",      -- __ [10/10, ___] {__, __}
-    -- ring2="Gelatinous Ring +1",  -- __ [ 7/-1, ___] {__, __}
-    -- back=gear.GEO_FC_Cape,       -- 10 [10/__, ___] {__, __}
-    -- waist="Embla Sash",          --  5 [__/__, ___] {__, __}
-    -- RDM FC traits                   15
-    -- 82 FC [53 PDT / 23 MDT, 529 Meva] {43 Pet DT, 0 Pet Regen}
-  })
-
-	sets.precast.FC.Impact = set_combine(sets.precast.FC, {
-		-- head=empty,
-		-- body="Twilight Cloak",
-  })
-
-	sets.precast.FC.Dispelga = set_combine(sets.precast.FC, {
-    main="Daybreak",
-    sub="Genmei Shield",
-  })
-
-	-- Weaponskill sets
 	-- Default set for any weaponskill that isn't any more specifically defined
 	sets.precast.WS = {
     head=gear.Nyame_B_head,
@@ -623,7 +632,7 @@ function init_gear_sets()
     -- ammo="Esper Stone +1",          -- __, __, __, ___ [__/__, ___]  5
     -- head=gear.Vanya_B_head,         -- 10, 27, 18,  20 [__/ 5,  75] __
     -- body=gear.Vanya_B_body,         -- __, 36, 23,  20 [ 1/ 4,  80] __
-    -- hands="Bunzi's Gloves",         -- __, 47, 26, ___ [ 8/ 8, 112]  8
+    -- hands="Azimuth Gloves +3",   -- __, 47, 38, ___ [12/12,  98] 13
     -- legs=gear.Vanya_B_legs,         -- __, 34, 12,  20 [__/__, 107] __
     -- feet=gear.Vayna_B_feet,         --  5, 19, 10,  40 [__/__, 107] __
     -- ear1="Meili Earring",           -- __, __, __,  10 [__/__, ___] __
@@ -631,19 +640,18 @@ function init_gear_sets()
     -- ring1="Sirona's Ring",          -- __,  3,  3,  10 [__/__, ___] __
     -- back=gear.GEO_Cure_Cape,        -- 10, 30, __, ___ [10/__, ___] __
     -- waist="Luminary Sash",          -- __, 10, __, ___ [__/__, ___] __
-    -- 53 CP, 330 MND, 187 VIT, 303 Healing Skill [39 PDT/27 MDT, 481 M.Eva] 13 -Enmity
-    -- 848 HP Cure IV
+    -- 53 CP, 330 MND, 199 VIT, 303 Healing Skill [43 PDT/31 MDT, 467 M.Eva] 18 -Enmity
+    -- 849 HP Cure IV
   }
   sets.midcast.CureWeather = set_combine(sets.midcast.CureNormal, {
     waist="Hachirin-no-obi",
-    -- 53 CP, 320 MND, 187 VIT, 303 Healing Skill [39 PDT/27 MDT, 481 M.Eva] 13 -Enmity
-    -- 900 HP to 1041 Cure IV depending on weather/day
+    -- 53 CP, 320 MND, 199 VIT, 303 Healing Skill [43 PDT/31 MDT, 467 M.Eva] 18 -Enmity
+    -- 902 HP to 1043 Cure IV depending on weather/day
   })
 
-	sets.midcast.StatusRemoval = set_combine(sets.midcast.FastRecast, {
-    -- main=gear.Grioavolr_FC,
-    -- sub="Clemency Grip",
-  })
+  -- TODO: update
+	sets.midcast.Cursna = sets.midcast.CureNormal
+
 
   sets.midcast['Elemental Magic'] = {
     main="Daybreak",
@@ -686,8 +694,6 @@ function init_gear_sets()
   }) -- Not set up to be used
   sets.midcast['Elemental Magic'].Resistant = set_combine(sets.midcast['Elemental Magic'], {})
   sets.midcast['Elemental Magic'].Proc = set_combine(sets.midcast['Elemental Magic'], {})
-  sets.midcast['Elemental Magic'].HighTierNuke = set_combine(sets.midcast['Elemental Magic'], {})
-  sets.midcast['Elemental Magic'].HighTierNuke.Resistant = set_combine(sets.midcast['Elemental Magic'], {})
 
   sets.midcast['Drain'] = set_combine(sets.midcast.IntEnfeebling, {
     main="Bunzi's Rod",
@@ -973,55 +979,159 @@ function init_gear_sets()
 	sets.midcast.Bio = sets.midcast.Dia
 	sets.midcast['Bio II'] = sets.midcast.Dia
 
-  -- TODO: update
-	sets.midcast['Enhancing Magic'] = {}
+  sets.midcast['Enhancing Magic'] = {
+    main="Idris",                     -- __, __, __ [__/__, ___] {25/25, __}
+    sub="Genmei Shield",              -- __, __, __ [10/__, ___] {__/__, __}
+    range="Dunna",                    -- __, __,  3 [__/__, ___] { 5/ 5, __}
+    ammo=empty,
+    head=gear.Nyame_B_head,           -- __, __, __ [ 7/ 7, 123] {__/__, __}
+    body=gear.Nyame_B_body,           -- __, __, __ [ 9/ 9, 139] {__/__, __}
+    hands=gear.Nyame_B_hands,         -- __, __, __ [ 7/ 7, 112] {__/__, __}
+    legs=gear.Nyame_B_legs,           -- __, __, __ [ 8/ 8, 150] {__/__, __}
+    feet=gear.Nyame_B_feet,           -- __, __, __ [ 7/ 7, 150] {__/__, __}
+    neck="Incanter's Torque",         -- 10, __, __ [__/__, ___] {__/__, __}
+    ear1="Mimir Earring",             -- 10, __, __ [__/__, ___] {__/__, __}
+    ear2="Azimuth Earring +1",        -- __, __, __ [ 3/ 3, ___] {__/__, __}
+    ring1="Stikini Ring +1",          --  8, __, __ [__/__, ___] {__/__, __}
+    ring2="Defending Ring",           -- __, __, __ [10/10, ___] {__/__, __}
+    back=gear.GEO_FC_Cape,            -- __, __, 10 [10/__, ___] {__/__, __}
+    waist="Embla Sash",               -- __, 10,  5 [__/__, ___] {__/__, __}
+    -- Subjob                           144
+    -- 172 Enh Skill, 10 Enh Duration, 18 FC [71 PDT/51 MDT, 674 M.Eva] {Pet: 30 PDT/30 MDT, 0 Regen}
 
-  -- TODO: update
-	sets.midcast.Stoneskin = set_combine(sets.midcast['Enhancing Magic'], {
-    neck="Nodens Gorget",
-    waist="Siegel Sash",
-    -- legs="Shedir Seraweels",
-    -- ear2="Earthcry Earring",
-  })
+    -- main=gear.Gada_ENH,            -- 18,  6,  6 [__/__, ___] {__/__, __}
+    -- sub="Ammurapi Shield",         -- __, 10, __ [__/__, ___] {__/__, __}
+    -- range="Dunna",                 -- __, __,  3 [__/__, ___] { 5/ 5, __}
+    -- ammo=empty,
+    -- head="Azimuth Hood +3",        -- __, __, __ [12/12, 136] {__/__,  5}
+    -- body=gear.Telchine_ENH_body,   -- 12, 10, __ [__/__,  80] {__/__,  3}
+    -- hands=gear.Telchine_ENH_hands, -- __, 10, __ [__/__,  37] {__/__, __}
+    -- legs=gear.Telchine_ENH_legs,   -- __, 10, __ [__/__, 107] {__/__,  3}
+    -- feet="Azimuth Gaiters +3",     -- __, __, __ [11/11, 168] {__/__, __}
+    -- neck="Incanter's Torque",      -- 10, __, __ [__/__, ___] {__/__, __}
+    -- ear1="Mimir Earring",          -- 10, __, __ [__/__, ___] {__/__, __}
+    -- ear2="Azimuth Earring +2",     -- __, __, __ [ 7/ 7, ___] {__/__, __}
+    -- ring1="Stikini Ring +1",       --  8, __, __ [__/__, ___] {__/__, __}
+    -- ring2="Defending Ring",        -- __, __, __ [10/10, ___] {__/__, __}
+    -- back=gear.GEO_FC_Cape,         -- __, __, 10 [10/__, ___] {__/__, __}
+    -- waist="Embla Sash",            -- __, 10,  5 [__/__, ___] {__/__, __}
+    -- Subjob                           144
+    -- 202 Enh Skill, 56 Enh Duration, 24 FC [50 PDT/40 MDT, 528 M.Eva] {Pet: 5 PDT/5 MDT, 11 Regen}
+  }
 
-  -- TODO: update
-	sets.midcast.Refresh = set_combine(sets.midcast['Enhancing Magic'], {
-    -- head="Amalric Coif +1",
-  })
+  sets.midcast.Stoneskin = {
+    main="Idris",                     -- __ [__/__, ___] {25/25, __}
+    sub="Genmei Shield",              -- __ [10/__, ___] {__/__, __}
+    range=empty,
+    ammo="Staunch Tathlum +1",        -- __ [ 3/ 3, ___] {__/__, __}; Status Resist +11
+    head=gear.Nyame_B_head,           -- __ [ 7/ 7, 123] {__/__, __}
+    body=gear.Nyame_B_body,           -- __ [ 9/ 9, 139] {__/__, __}
+    hands=gear.Nyame_B_hands,         -- __ [ 7/ 7, 112] {__/__, __}
+    legs=gear.Nyame_B_legs,           -- __ [ 8/ 8, 150] {__/__, __}
+    feet=gear.Nyame_B_feet,           -- __ [ 7/ 7, 150] {__/__, __}
+    neck="Nodens Gorget",             -- 30 [__/__, ___] {__/__, __}
+    ear2="Hearty Earring",            -- __ [__/__, ___] {__/__, __}; Status Resist +5
+    ring2="Defending Ring",           -- __ [10/10, ___] {__/__, __}
+    waist="Siegel Sash",              -- 20 [__/__, ___] {__/__, __}
+    -- 50 +Stoneskin [61 PDT/51 MDT, 674 M.Eva] {Pet: 25 PDT/25 MDT, 0 Regen}
+    
+    -- head="Azimuth Hood +3",        -- __ [12/12, 136] {__/__,  5}
+    -- body="Shamash Robe",           -- __ [10/__, 106] {__/__, __}
+    -- hands="Geomancy Mitaines +3",  -- __ [ 3/__,  57] {13/13, __}
+    -- legs="Shedir Seraweels",       -- 35 [__/__, ___] {__/__, __}
+    -- feet="Azimuth Gaiters +3",     -- __ [11/11, 168] {__/__, __}
+    -- ear1="Earthcry Earring",       -- 10 [__/__, ___] {__/__, __}
+    -- ring1="Shadow Ring",           -- __ [__/__, ___] {__/__, __}; Annul dmg
+    -- back="Shadow Mantle",          -- __ [__/__, ___] {__/__, __}; Annul dmg
+    -- 95 +Stoneskin [59 PDT/36 MDT, 467 M.Eva] {Pet: 38 PDT/38 MDT, 5 Regen}
+  }
 
-  -- TODO: update
-	sets.midcast.Aquaveil = set_combine(sets.midcast['Enhancing Magic'], {
-    -- main="Vadose Rod",
-    -- sub="Genmei Shield",
-    -- head="Amalric Coif +1",
-    -- hands="Regal Cuffs",
-    -- legs="Shedir Seraweels",
-    -- waist="Emphatikos Rope",
-  })
+	sets.midcast.Refresh = {
+    main="Idris",                     -- __, __, __ [__/__, ___] {25/25, __}
+    sub="Ammurapi Shield",            -- __, __, 10 [__/__, ___] {__/__, __}
+    range=empty,
+    ammo="Staunch Tathlum +1",        -- __, __, __ [ 3/ 3, ___] {__/__, __}
+    head=gear.Nyame_B_head,           -- __, __, __ [ 7/ 7, 123] {__/__, __}
+    body=gear.Nyame_B_body,           -- __, __, __ [ 9/ 9, 139] {__/__, __}
+    hands=gear.Nyame_B_hands,         -- __, __, __ [ 7/ 7, 112] {__/__, __}
+    legs=gear.Nyame_B_legs,           -- __, __, __ [ 8/ 8, 150] {__/__, __}
+    feet=gear.Nyame_B_feet,           -- __, __, __ [ 7/ 7, 150] {__/__, __}
+    neck="Loricate Torque +1",        -- __, __, __ [ 6/ 6, ___] {__/__, __}
+    ear1="Genmei Earring",            -- __, __, __ [ 2/__, ___] {__/__, __}
+    ear2="Azimuth Earring +1",        -- __, __, __ [ 3/ 3, ___] {__/__, __}
+    ring1="Gelantinous Ring +1",      -- __, __, __ [ 7/-1, ___] {__/__, __}
+    ring2="Defending Ring",           -- __, __, __ [10/10, ___] {__/__, __}
+    back=gear.GEO_FC_Cape,            -- __, __, __ [10/__, ___] {__/__, __}
+    waist="Gishdubar Sash",           -- __, 20, __ [__/__, ___] {__/__, __}
+    -- 2 Refresh Potency, 20 Refresh, 10% Enh Duration [79 PDT/59 MDT, 674 M.Eva] {Pet: 25 PDT/25 MDT, 0 Regen}
+    
+    -- main=gear.Gada_ENH,            -- __, __,  6 [__/__, ___] {__/__, __}
+    -- sub="Ammurapi Shield",         -- __, __, 10 [__/__, ___] {__/__, __}
+    -- range=empty,
+    -- ammo="Staunch Tathlum +1",     -- __, __, __ [ 3/ 3, ___] {__/__, __}
+    -- head="Amalric Coif +1",        --  2, __, __ [__/__,  86] {__/__, __}
+    -- body=gear.Telchine_ENH_body,   -- __, __, 10 [__/__,  80] {__/__,  3}
+    -- hands="Azimuth Gloves +3",     -- __, __, __ [12/12,  98] {__/__, __}
+    -- legs=gear.Telchine_ENH_legs,   -- __, __, 10 [__/__, 107] {__/__,  3}
+    -- feet="Inspirited Boots",       -- __, 15, __ [__/__, 118] {__/__, __}
+    -- neck="Loricate Torque +1",     -- __, __, __ [ 6/ 6, ___] {__/__, __}
+    -- ear1="Genmei Earring",         -- __, __, __ [ 2/__, ___] {__/__, __}
+    -- ear2="Azimuth Earring +2",     -- __, __, __ [ 7/ 7, ___] {__/__, __}
+    -- ring1="Gelantinous Ring +1",   -- __, __, __ [ 7/-1, ___] {__/__, __}
+    -- ring2="Defending Ring",        -- __, __, __ [10/10, ___] {__/__, __}
+    -- back="Grapevine Cape",         -- __, 30, __ [__/__, ___] {__/__, __}
+    -- waist="Gishdubar Sash",        -- __, 20, __ [__/__, ___] {__/__, __}
+    -- 2 Refresh Potency, 65 Refresh, 36% Enh Duration [47 PDT/37 MDT, 489 M.Eva] {Pet: 0 PDT/0 MDT, 6 Regen}
+  }
 
-  -- TODO: update
-	sets.midcast.BarElement = set_combine(sets.precast.FC['Enhancing Magic'], {
-    -- legs="Shedir Seraweels",
-  })
+  -- GEO cannot realistically get to 355 enh skill for +2 aquaveil, so don't try
+  -- Focus on Aquaveil+ gear and defensive stats
+	sets.midcast.Aquaveil = {
+    -- main="Vadose Rod",             --  1, __ [__/__, ___] {__/__, __}
+    -- sub="Ammurapi Shield",         -- __, 10 [__/__, ___] {__/__, __}
+    range="Dunna",                    -- __, __ [__/__, ___] { 5/ 5, __}
+    ammo=empty,
+    -- head="Amalric Coif +1",        --  2, __ [__/__,  86] {__/__, __}
+    -- body=gear.Telchine_ENH_body,   -- __, 10 [__/__,  80] {__/__,  3}
+    -- hands="Regal Cuffs",              --  2, __ [__/__,  53] {__/__, __}
+    -- legs="Shedir Seraweels",       --  1, __ [__/__, ___] {__/__, __}
+    -- feet="Azimuth Gaiters +3",        -- __, __ [11/11, 168] {__/__, __}
+    neck="Loricate Torque +1",        -- __, __ [ 6/ 6, ___] {__/__, __}
+    ear1="Genmei Earring",            -- __, __ [ 2/__, ___] {__/__, __}
+    -- ear2="Azimuth Earring +2",        -- __, __ [ 7/ 7, ___] {__/__, __}
+    ring1="Gelatinous Ring +1",       -- __, __ [ 7/-1, ___] {__/__, __}
+    ring2="Defending Ring",           -- __, __ [10/10, ___] {__/__, __}
+    back=gear.GEO_FC_Cape,            -- __, __ [10/__, ___] {__/__, __}
+    -- waist="Emphatikos Rope",       --  1, __ [__/__, ___] {__/__, __}
+    -- Base                               1
+    -- 8 Aquaveil, 20% Enh Duration [53 PDT/33 MDT, 387 M.Eva] {Pet: 5 PDT/5 MDT, 3 Regen}
+  }
 
-  -- TODO: update
-  -- Sheltered ring, enh duration, conserve mp
-	sets.midcast.Protect = set_combine(sets.midcast['Enhancing Magic'], {
-    ear2="Malignance Earring",
-    -- ear1="Gifted Earring",
-    -- ring2="Sheltered Ring",
-    -- waist="Sekhmet Corset",
-  })
+  -- Protect+ gear, enh duration, conserve mp
+	sets.midcast.Protect = {
+    -- main=gear.Gada_ENH,            --  6, __ [__/__, ___] {__/__, __}
+    -- sub="Ammurapi Shield",         -- 10, __ [__/__, ___] {__/__, __}
+    -- range=empty,
+    -- ammo="Pemphredo Tathlum",      -- __,  4 [__/__, ___] {__/__, __}
+    -- head="Azimuth Hood +3",        -- __, __ [12/12, 136] {__/__,  5}
+    -- body=gear.Telchine_ENH_body,   -- 10, __ [__/__,  80] {__/__,  3}
+    -- hands=gear.Telchine_ENH_hands, -- 10, __ [__/__,  37] {__/__, __}
+    -- legs=gear.Telchine_ENH_legs,   -- 10, __ [__/__, 107] {__/__,  3}
+    -- feet="Azimuth Gaiters +3",     -- __, __ [11/11, 168] {__/__, __}
+    -- neck="Bagua Charm +2",         -- __, __ [__/__, ___] {__/__, __}; Luopan Duration +25%
+    -- ear1="Brachyura Earring",      -- __, __ [__/__, ___] {__/__, __}; Enhance Protect/Shell
+    -- ear2="Azimuth Earring +2",     -- __, __ [ 7/ 7, ___] {__/__, __}
+    -- ring1="Mephitas's Ring +1",    -- __, 15 [__/__, ___] {__/__, __}
+    -- ring2="Defending Ring",        -- __, __ [10/10, ___] {__/__, __}
+    -- back=gear.GEO_FC_Cape,         -- __, __ [10/__, ___] {__/__, __}
+    -- waist="Embla Sash",            -- 10, __ [__/__, ___] {__/__, __}
+    -- Base                              __, 43
+    -- 56 Enh Duration, 62 Conserve MP [50 PDT/40 MDT, 528 M.Eva] {Pet: 5 PDT/5 MDT, 11 Regen}
+  }
 	sets.midcast.Protectra = sets.midcast.Protect
-  -- TODO: update
-  -- Sheltered ring, enh duration, conserve mp
-	sets.midcast.Shell = set_combine(sets.midcast['Enhancing Magic'], {
-    ear2="Malignance Earring",
-    -- ear1="Gifted Earring",
-    -- ring2="Sheltered Ring",
-    -- waist="Sekhmet Corset",
-  })
-	sets.midcast.Shellra = sets.midcast.Shell
+  -- Shell+ gear, enh duration, conserve mp
+	sets.midcast.Shell = sets.midcast.Protect
+	sets.midcast.Shellra = sets.midcast.Protect
 
 
 	--------------------------------------
@@ -1031,17 +1141,6 @@ function init_gear_sets()
   -- Overlaid when MP is needed and defense is not
 	sets.passive_refresh_sub50 = {
     waist="Fucho-no-obi",
-  }
-
-  -- TODO: update
-	-- Resting sets
-	sets.resting = {
-    main="Iridal Staff",
-    sub="Khonsu",
-		head="Befouled Crown",
-		body="Jhakri Robe +2",
-    ear2="Ethereal Earring",
-    ring1="Defending Ring",
   }
 
   -- When luopan is not existing
@@ -1158,6 +1257,12 @@ function init_gear_sets()
 
 	sets.idle.Weak = sets.idle.HeavyDef.Pet
 
+	sets.resting = set_combine(sets.idle.HeavyDef.Pet, {
+    main="Chatoyant Staff",
+    sub="Khonsu",
+  })
+
+
 	--------------------------------------
 	-- Defense sets
 	--------------------------------------
@@ -1169,11 +1274,6 @@ function init_gear_sets()
 	--------------------------------------
 	-- Engaged sets
 	--------------------------------------
-
-	-- Variations for TP weapon and (optional) offense/defense modes.  Code will fall back on previous
-	-- sets if more refined versions aren't defined.
-	-- If you create a set with both offense and defense modes, the offense mode should be first.
-	-- EG: sets.engaged.Dagger.Accuracy.Evasion
 
   -- Need 38 pet DT to cap
 	-- Normal melee group, used when not club or staff
@@ -1354,31 +1454,10 @@ function init_gear_sets()
 
 	-- Gear that converts elemental damage done to recover MP.
 	sets.RecoverMP = {
-    head=gear.Nyame_B_head,
     body="Seidr Cotehardie",
   }
 
-	-- Gear for Magic Burst mode.
-  sets.MagicBurst = {
-    main="Iridal Staff",
-    sub="Alber Strap",
-    feet="Jhakri Pigaches +2",
-    -- main="Bunzi's Rod",
-    -- sub="Ammurapi Shield",
-    -- range=empty,
-    -- ammo="Ghastly Tathlum +1",
-    -- head="Ea Hat +1",
-    -- body="Ea Houppelande +1",
-    -- legs="Ea Slops +1",
-    -- neck="Mizukage-no-Kubikazari",
-    -- ring2="Mujin Band",
-  }
-	sets.ResistantMagicBurst = sets.MagicBurst
-
 	sets.buff.Sublimation = {
-    waist="Embla Sash"
-  }
-  sets.buff.DTSublimation = {
     waist="Embla Sash"
   }
 
@@ -1411,16 +1490,19 @@ function init_gear_sets()
     main="Idris",
     sub="Genmei Shield",
     range="Dunna",
+    ammo=empty,
   }
   sets.WeaponSet['Maxentius'] = {
     main="Maxentius",
     sub="Genmei Shield",
     range="Dunna",
+    ammo=empty,
   }
   sets.WeaponSet['Staff'] = {
     main="Malignance Pole",
     sub="Tzacab Grip",
     range="Dunna",
+    ammo=empty,
   }
 end
 
@@ -1440,19 +1522,7 @@ function job_pretarget(spell, action, spellMap, eventArgs)
 					eventArgs.cancel = true
 				end
 			elseif spell.target.type ~= 'SELF' then
-				if state.AutoEntrust.value and ((spell.target.type == 'PLAYER' and not spell.target.charmed) or (spell.target.type == 'NPC')) and spell.target.in_party then
-					local spell_recasts = windower.ffxi.get_spell_recasts()
-					local abil_recasts = windower.ffxi.get_ability_recasts()
-					eventArgs.cancel = true
-
-					if spell_recasts[spell.recast_id] > 1.5 then
-						add_to_chat(123,'Abort: ['..spell.english..'] waiting on recast. ('..seconds_to_clock(spell_recasts[spell.recast_id]/60)..')')
-					elseif abil_recasts[93] > 0 then
-						add_to_chat(123,'Abort: [Entrust] waiting on recast. ('..seconds_to_clock(abil_recasts[93])..')')
-					else
-						send_command('@input /ja "Entrust" <me>; wait 1.1; input /ma "'..spell.name..'" '..spell.target.name)
-					end
-				elseif spell.target.raw == '<t>' then
+				if spell.target.raw == '<t>' then
 					change_target('<me>')
 				end
 			end
@@ -1532,61 +1602,16 @@ end
 
 function job_post_midcast(spell, action, spellMap, eventArgs)
 	if spell.skill == 'Elemental Magic' and default_spell_map ~= 'ElementalEnfeeble' and spell.english ~= 'Impact' then
-		if state.MagicBurstMode.value ~= 'Off' then
-			if state.CastingMode.value:contains('Resistant') and sets.ResistantMagicBurst then
-				equip(sets.ResistantMagicBurst)
-			else
-				equip(sets.MagicBurst)
-			end
-		end
-		if spell.element == world.weather_element or spell.element == world.day_element then
-			if state.CastingMode.value == 'Normal' then
-				if spell.element == world.day_element then
-					if item_available('Zodiac Ring') then
-						sets.ZodiacRing = {ring2="Zodiac Ring"}
-						equip(sets.ZodiacRing)
-					end
-				end
-			end
+		if state.MagicBurst.value and sets.midcast['Elemental Magic'].MB then
+      equip(sets.midcast['Elemental Magic'].MB)
 		end
 
-		if spell.element and sets.element and sets.element[spell.element] then
-			equip(sets.element[spell.element])
+		if sets.RecoverMP and state.RecoverMode.value ~= 'Never' and
+        (state.RecoverMode.value == 'Always' or tonumber(state.RecoverMode.value:sub(1, -2)) > player.mpp) then
+      equip(sets.RecoverMP)
 		end
-
-		if state.RecoverMode.value ~= 'Never' and (state.RecoverMode.value == 'Always' or tonumber(state.RecoverMode.value:sub(1, -2)) > player.mpp) then
-			if state.MagicBurstMode.value ~= 'Off' then
-				if state.CastingMode.value:contains('Resistant') and sets.ResistantRecoverBurst then
-					equip(sets.ResistantRecoverBurst)
-				elseif sets.RecoverBurst then
-					equip(sets.RecoverBurst)
-				elseif sets.RecoverMP then
-					equip(sets.RecoverMP)
-				end
-			elseif sets.RecoverMP then
-				equip(sets.RecoverMP)
-			end
-		end
-
-    elseif spell.skill == 'Geomancy' then
-		if spell.english:startswith('Geo-') then
-			if state.Buff['Blaze of Glory'] and sets.buff['Blaze of Glory'] then
-				equip(sets.buff['Blaze of Glory'])
-				disable('head')
-				blazelocked = true
-			end
-		elseif state.Buff.Entrust and spell.english:startswith('Indi-') then
-			if player.equipment.main ~= 'Solstice' and item_available('Solstice') then
-				equip({main="Solstice"})
-			end
-      if sets.buff.Entrust then
-        equip(sets.buff.Entrust)
-      end
-		end
-  end
-
-  -- Handle belts for elemental damage
-  if spell.skill == 'Elemental Magic' then
+    
+    -- Handle belts for elemental damage
     local base_day_weather_mult = silibs.get_day_weather_multiplier(spell.element, false, false)
     local obi_mult = silibs.get_day_weather_multiplier(spell.element, true, false)
     local orpheus_mult = silibs.get_orpheus_multiplier(spell.element, spell.target.distance)
@@ -1601,6 +1626,9 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
       -- Orpheus is better than obi and better than nothing
       equip({waist="Orpheus's Sash"})
     end
+
+  elseif spell.skill == 'Geomancy' and state.Buff.Entrust and spell.english:startswith('Indi-') and sets.buff.Entrust then
+    equip(sets.buff.Entrust)
   end
 
   -- If slot is locked, keep current equipment on
@@ -1627,7 +1655,11 @@ function job_aftercast(spell, action, spellMap, eventArgs)
 			if state.UseCustomTimers.value then
 				send_command('@timers d "'..spell.target.name..': '..indi_timer..'"')
 				indi_timer = spell.english
-				send_command('@timers c "'..spell.target.name..': '..indi_timer..'" '..indi_duration..' down spells/00136.png')
+        if spell.target.type == 'SELF' then -- If not entrusted
+				  send_command('@timers c "'..spell.target.name..': '..indi_timer..'" '..indi_duration..' down spells/00136.png')
+        else -- If entrusted
+          send_command('@timers c "'..spell.target.name..': '..indi_timer..'" '..indi_entrust_duration..' down spells/00136.png')
+        end
 			end
 		elseif spell.english:startswith('Geo-') or spell.english == "Mending Halation" or spell.english == "Radial Arcana" then
 			eventArgs.handled = true
@@ -1635,11 +1667,6 @@ function job_aftercast(spell, action, spellMap, eventArgs)
       send_command('@timers c "'..spell.english..' ['..spell.target.name..']" 60 down spells/00220.png')
     elseif state.UseCustomTimers.value and spell.english == 'Sleep II' or spell.english == 'Sleepga II' then
       send_command('@timers c "'..spell.english..' ['..spell.target.name..']" 90 down spells/00220.png')
-    elseif spell.skill == 'Elemental Magic' and state.MagicBurstMode.value == 'Single' then
-      state.MagicBurstMode:reset()
-			if state.DisplayMode.value then
-        update_job_states()
-      end
 		end
   end
 
@@ -1689,14 +1716,6 @@ function job_get_spell_map(spell, default_spell_map)
       if spell.english:startswith('Indi') then
         return 'Indi'
       end
-    elseif spell.skill == 'Elemental Magic' then
-      if default_spell_map == 'ElementalEnfeeble' or spell.english:contains('helix') then
-        return
-      elseif LowTierNukes:contains(spell.english) then
-        return 'LowTierNuke'
-      else
-        return 'HighTierNuke'
-      end
     end
   end
 end
@@ -1716,10 +1735,8 @@ function customize_idle_set(idleSet)
   end
 
   if buffactive['Sublimation: Activated'] then
-    if (state.IdleMode.value == 'Normal' or state.IdleMode.value:contains('Sphere')) and sets.buff.Sublimation then
+    if sets.buff.Sublimation then
       idleSet = set_combine(idleSet, sets.buff.Sublimation)
-    elseif state.IdleMode.value:contains('DT') and sets.buff.DTSublimation then
-      idleSet = set_combine(idleSet, sets.buff.DTSublimation)
     end
   end
 
@@ -1910,14 +1927,6 @@ end
 
 -- Function that watches pet gain and loss.
 function job_pet_change(pet, gain)
-	if not gain then
-		used_ecliptic = false
-	end
-
-  if blazelocked then
-		enable('head')
-		blazelocked = false
-	end
 end
 
 function job_self_command(cmdParams, eventArgs)
