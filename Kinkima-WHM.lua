@@ -580,7 +580,7 @@ function init_gear_sets()
   }
 
   sets.midcast.EnhancingDuration = {
-    main="Gada",                      -- 18, __, __ [__/__, ___]
+    main=gear.Gada_ENH,               -- 18,  6, __ [__/__, ___]
     sub="Ammurapi Shield",            -- __, 10, __ [__/__, ___]
     ammo="Staunch Tathlum +1",        -- __, __, __ [ 3/ 3, ___]
     head=gear.Telchine_ENH_head,      -- __,  9, __ [__/__,  75]
@@ -590,8 +590,10 @@ function init_gear_sets()
     feet="Theophany Duckbills +3",    -- 21, 10, __ [__/__, 127]
     ear1="Mimir Earring",             -- 10, __, __ [__/__, ___]
     waist="Embla Sash",               -- __, 10,  5 [__/__, ___]
-    -- Base                             394; Includes merits
-    -- Master Levels                     30
+    -- Traits/Merits/Gifts              394
+    -- Master Levels                     14
+    -- Light Arts                        26
+    -- 495 Enh Skill, 75% Enh Duration, 5 FC [3 PDT/3 MDT, 471 MEVA]
 
     -- Ideal:
     -- main=gear.Gada_ENH,            -- 18,  6,  6 [__/__, ___]
@@ -609,11 +611,11 @@ function init_gear_sets()
     -- ring2="Defending Ring",        -- __, __, __ [10/10, ___]
     -- back="Fi Follet Cape +1",      --  9, __, 10 [__/__, ___]
     -- waist="Embla Sash",            -- __, 10,  5 [__/__, ___]
-    -- Base                             394; Includes merits
+    -- Traits/Merits/Gifts              394
     -- Master Levels                     30
     -- Light Arts                        26
     -- 520 Enh Skill, 76% Enh Duration, 41 FC [29 PDT/23 MDT, 526 MEVA]
-  } -- 485 Enh Skill, 69% Enh Duration, 5 FC [3 PDT/3 MDT, 471 MEVA]
+  }
 
   -- Focus on SS pot, DT, and Recast time.
   -- In Odyssey endgame, no tank so WHM needs to be able to tank when spamming this.

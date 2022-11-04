@@ -52,6 +52,7 @@ function job_setup()
 
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c interact')
+  send_command('bind @w gs c toggle RearmingLock')
   send_command('bind @c gs c toggle CP')
 
   send_command('bind !c gs c storm')
@@ -105,6 +106,7 @@ end
 function job_file_unload()
   send_command('unbind !s')
   send_command('unbind !d')
+  send_command('unbind @w')
   send_command('unbind @c')
 
   send_command('unbind !c')
@@ -638,18 +640,19 @@ function init_gear_sets()
 
   -- Enh Magic Skill + Enh Magic Duration > Fast Cast
   sets.midcast['Enhancing Magic'] = {
-    main="Gada",
+    main=gear.Gada_ENH,               -- 18,  6, __
     sub="Ammurapi Shield",            -- __, 10, __
     head=gear.Telchine_ENH_head,      -- __,  9, __
     body="Pedagogy Gown +3",          -- 19, 12, __
     hands=gear.Telchine_ENH_hands,    -- __, 10, __
     legs=gear.Telchine_ENH_legs,      -- __, 10, __
     feet=gear.Kaykaus_D_feet,         -- 21, __,  4
-    neck="Incanter's Torque",      -- 10, __, __
+    neck="Incanter's Torque",         -- 10, __, __
     ear1="Mimir Earring",             -- 10, __, __
     ring1="Stikini Ring +1",          --  8, __, __
     ring2="Stikini Ring +1",          --  8, __, __
     waist="Embla Sash",               -- __, 10,  5
+
     -- main=gear.Gada_ENH,            -- 18,  6,  6
     -- ammo="Savant's Treatise",      --  4, __, __
     -- head=gear.Telchine_ENH_head,   -- __, 10, __
