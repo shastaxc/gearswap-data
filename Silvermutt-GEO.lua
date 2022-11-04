@@ -45,8 +45,8 @@ function job_setup()
 	state.UseCustomTimers = M(true, 'Use Custom Timers')
 
   indi_timer = '' -- DO NOT MODIFY
-  indi_duration = 180 -- Update with your actual indi duration
-  indi_entrust_duration = 180 -- Update with your actual indi duration for entrusted spells
+  indi_duration = 255 -- Update with your actual indi duration
+  indi_entrust_duration = 255 -- Update with your actual indi duration for entrusted spells
 
   -- Spells that don't scale with skill. Overrides Mote lib.
   classes.EnhancingDurSpells = S{'Adloquium', 'Haste', 'Haste II', 'Flurry', 'Flurry II', 'Protect', 'Protect II', 'Protect III',
@@ -1518,7 +1518,7 @@ function job_pretarget(spell, action, spellMap, eventArgs)
 		if spell.english:startswith('Indi') then
 			if state.Buff.Entrust then
 				if spell.target.type == 'SELF' then
-					add_to_chat(204, 'Entrust active - You can\'t entrust yourself.')
+					add_to_chat(167, 'Entrust active - You can\'t entrust yourself.')
 					eventArgs.cancel = true
 				end
 			elseif spell.target.type ~= 'SELF' then
@@ -2078,7 +2078,11 @@ end
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
   -- Default macro set/book: (set, book)
-  set_macro_page(2, 12)
+  if player.sub_job == 'SCH' then
+    set_macro_page(3, 7)
+  else
+    set_macro_page(2, 7)
+  end
 end
 
 function seconds_to_clock(seconds)
