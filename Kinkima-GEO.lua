@@ -39,6 +39,8 @@ function job_setup()
 	state.RecoverMode = M('Always', '60%', '35%', 'Never')
   state.MagicBurst = M(true, 'Magic Burst')
 	state.ElementalMode = M{['description'] = 'Elemental Mode', 'Fire','Ice','Wind','Earth','Lightning','Water'}
+  state.Storm = M{['description']='Storm','Aurorastorm','Sandstorm',
+      'Rainstorm','Windstorm','Firestorm','Hailstorm','Thunderstorm','Voidstorm'}
 
 	state.Buff.Entrust = buffactive.Entrust or false
 
@@ -92,6 +94,12 @@ function user_setup()
   if player.sub_job == 'RDM' then
     send_command('bind !\' input /ma "Refresh" <stpc>')
   end
+  if player.sub_job == 'SCH' then
+    send_command('bind !c gs c storm')
+    send_command('bind ^pageup gs c cycleback Storm')
+    send_command('bind ^pagedown gs c cycle Storm')
+    send_command('bind !pagedown gs c reset Storm')
+  end
 
   select_default_macro_book()
 end
@@ -103,6 +111,16 @@ function job_file_unload()
   send_command('unbind !d')
   send_command('unbind @w')
   send_command('unbind ^u')
+
+  send_command('unbind !c')
+  send_command('unbind ^pageup')
+  send_command('unbind ^pagedown')
+  send_command('unbind !pagedown')
+  
+  send_command('unbind !q')
+  send_command('unbind !w')
+  send_command('unbind !e')
+  send_command('unbind !r')
 
   send_command('unbind ^insert')
   send_command('unbind ^delete')
@@ -2075,6 +2093,8 @@ function job_self_command(cmdParams, eventArgs)
     elseif cmdParams[2] == 'reset' then
       cycle_weapons('reset')
     end
+  elseif cmdParams[1] == 'storm' then
+    send_command('@input /ma "'..state.Storm.current..'" <stpc>')
 	end
 
   if not midaction() then
