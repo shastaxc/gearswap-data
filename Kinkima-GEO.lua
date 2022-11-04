@@ -45,8 +45,8 @@ function job_setup()
 	state.Buff.Entrust = buffactive.Entrust or false
 
   indi_timer = '' -- DO NOT MODIFY
-  indi_duration = 258 -- Update with your actual indi duration
-  indi_entrust_duration = 255 -- Update with your actual indi duration for entrusted spells
+  indi_duration = 261 -- Update with your actual indi duration
+  indi_entrust_duration = 276 -- Update with your actual indi duration for entrusted spells
 
   -- Spells that don't scale with skill. Overrides Mote lib.
   classes.EnhancingDurSpells = S{'Adloquium', 'Haste', 'Haste II', 'Flurry', 'Flurry II', 'Protect', 'Protect II', 'Protect III',
@@ -167,7 +167,7 @@ function init_gear_sets()
     ammo=empty,
     head=gear.Merl_FC_head,         -- 15 [__/__,  86] {__, __}
     body=gear.Merl_FC_body,         -- 14 [ 2/__,  91] {__, __}
-    hands="Geomancy Mitaines +2",   -- __ [ 2/__,  47] {12, __}
+    hands="Geomancy Mitaines +3",   -- __ [ 3/__,  57] {13, __}
     legs="Geomancy Pants +2",       -- 13 [__/__, 117] {__, __}
     feet=gear.Merl_FC_feet,         -- 12 [__/__, 118] {__, __}
     neck="Loricate Torque +1",      -- __ [ 6/ 6, ___] {__, __}
@@ -177,10 +177,8 @@ function init_gear_sets()
     ring2="Kishar Ring",            --  4 [__/__, ___] {__, __}
     back=gear.GEO_FC_Cape,          -- 10 [10/__, ___] {__, __}
     waist="Embla Sash",             --  5 [__/__, ___] {__, __}
-    -- 82 FC [40 PDT / 16 MDT, 459 M.Eva] {42 Pet DT, 0 Pet Regen}
+    -- 82 FC [41 PDT / 16 MDT, 469 M.Eva] {43 Pet DT, 0 Pet Regen}
 
-    -- Ideal:
-    -- hands="Geomancy Mitaines +3",-- __ [ 3/__,  57] {13, __}
     -- legs="Geomancy Pants +3",    -- 15 [__/__, 127] {__, __}
     -- ear2="Azimuth Earring +2",   -- __ [ 7/ 7, ___] {__, __}
     -- 82 FC [48 PDT / 23 MDT, 479 M.Eva] {43 Pet DT, 0 Pet Regen}
@@ -193,6 +191,10 @@ function init_gear_sets()
     ammo=empty,
     head=gear.Merl_FC_head,         -- 15 [__/__,  86] {__, __}
     body=gear.Merl_FC_body,         -- 14 [ 2/__,  91] {__, __}
+    hands="Geomancy Mitaines +3",   -- __ [ 3/__,  57] {13, __}
+    legs="Geomancy Pants +2",       -- 13 [__/__, 117] {__, __}
+    feet=gear.Merl_FC_feet,         -- 12 [__/__, 118] {__, __}
+    neck="Bagua Charm +1",          -- __ [__/__, ___] {__, __}; Absorb Dmg+8
     ear1="Malignance Earring",      --  4 [__/__, ___] {__, __}
     ear2="Etiolation Earring",      --  1 [__/ 3, ___] {__, __}; Resist Silence+15
     ring1="Defending Ring",         -- __ [10/10, ___] {__, __}
@@ -200,9 +202,8 @@ function init_gear_sets()
     back=gear.GEO_FC_Cape,          -- 10 [10/__, ___] {__, __}
     waist="Embla Sash",             --  5 [__/__, ___] {__, __}
     -- RDM FC traits                   15
+    -- 92 FC [42 PDT/12 MDT, 469 Meva] {43 Pet DT, 0 Pet Regen}
     
-    -- Ideal:
-    -- hands="Geomancy Mitaines +3",-- __ [ 3/__,  57] {13, __}
     -- legs="Geomancy Pants +3",    -- 15 [__/__, 127] {__, __}
     -- feet="Azimuth Gaiters +3",   -- __ [11/11, 168] {__, __}
     -- neck="Bagua Charm +2",       -- __ [__/__, ___] {__, __}; Absorb Dmg+10
@@ -243,7 +244,7 @@ function init_gear_sets()
     feet="Bagua Sandals +1",
   }
 	sets.precast.JA['Mending Halation'] = {
-    legs="Bagua Pants +2",
+    legs="Bagua Pants +3",
   }
 	sets.precast.JA['Full Circle'] = {
     head="Azimuth Hood +2",
@@ -294,11 +295,8 @@ function init_gear_sets()
     ear2="Ishvara Earring",         -- ___, __, __,  2, __/__ [__]
   })
   sets.precast.WS['Black Halo'].Safe = set_combine(sets.precast.WS['Black Halo'], {
-    hands="Geomancy Mitaines +2",   -- ___, 38, 11, __,  2/__ [12]
+    hands="Geomancy Mitaines +3",   -- ___, 43, 16, __,  3/__ [13]
     ring2="Defending Ring",         -- ___, __, __, __, 10/10 [__]
-    -- 250 TP Bonus, 185 MND, 138 STR, 35 WSD, 53PDT/43MDT [42PetDT]
-
-    -- hands="Geomancy Mitaines +3",-- ___, 43, 16, __,  3/__ [13]
     -- 250 TP Bonus, 190 MND, 143 STR, 35 WSD, 54PDT/44MDT [43PetDT]
   })
 
@@ -345,11 +343,8 @@ function init_gear_sets()
     ear2="Malignance Earring",
   })
 	sets.precast.WS['Hexa Strike'].Safe = set_combine(sets.precast.WS['Hexa Strike'], {
-    hands="Geomancy Mitaines +2",   -- ___, 38, 11, __,  2/__ [12]
+    hands="Geomancy Mitaines +3",   -- ___, 43, 16, __,  3/__ [13]
     ring2="Defending Ring",         -- ___, __, __, __, 10/10 [__]
-    -- 250 TP Bonus, 0 Crit Dmg,  0 Crit Rate, 185 MND, 138 STR, 35 WSD, 53PDT/41MDT [42PetDT]
-
-    -- hands="Geomancy Mitaines +3",-- ___, 43, 16, __,  3/__ [13]
     -- 250 TP Bonus, 0 Crit Dmg,  0 Crit Rate, 190 MND, 143 STR, 35 WSD, 54PDT/42MDT [43PetDT]
   })
 
@@ -384,31 +379,26 @@ function init_gear_sets()
   }
   sets.precast.WS['Flash Nova'].MaxTP = sets.precast.WS['Flash Nova']
 	sets.precast.WS['Flash Nova'].Safe = {
-    -- Assume Idris                 -- __, 40,217, __, __, __, __/__ [25]
-    -- Assume Genmei Shield         -- __, __, __, __, __, __, 10/__ [__]
-    -- Assume Dunna                 -- __, __, __, __, __, __, __/__ [ 5]
-    -- head="Agwu's Cap",              -- __, 35, 20, 26, 26, __, __/__ [__]
-    body=gear.Nyame_B_body,         -- __, 30, __, 37, 35, 12,  9/ 9 [__]
-    hands="Geomancy Mitaines +2",   -- __, __, __, 38, 11, __,  2/__ [12]
-    -- legs="Agwu's Slops",            -- __, 55, 20, 32, 43, __,  7/ 7 [__]
-    feet=gear.Nyame_B_feet,         -- __, 30, __, 26, 23, 10,  7/ 7 [__]
-    neck="Baetyl Pendant",          -- __, 13, __, __, __, __, __/__ [__]
-    ear1="Regal Earring",           -- __,  7, __, 10, __, __, __/__ [__]
-    ear2="Malignance Earring",      -- __,  8, __,  8, __, __, __/__ [__]
-    -- ring1="Weatherspoon Ring",      -- 10, __, __, __, __, __, __/__ [__]
-    ring2="Defending Ring",         -- __, __, __, __, __, __, 10/10 [__]
-    -- back="Argochampsa Mantle",      -- __, 12, __, __, __, __, __/__ [__]
-    -- waist="Skrymir Cord",           -- __,  5, 30, __, __, __, __/__ [__]
-    -- 10 Light MAB, 235 MAB, 287 M.Dmg, 177 MND, 138 STR, 22 WSD, 45PDT/33MDT [42PetDT]
+    -- Assume Idris                 -- 40,217, __, __, __, __/__ [25]
+    -- Assume Genmei Shield         -- __, __, __, __, __, 10/__ [__]
+    -- Assume Dunna                 -- __, __, __, __, __, __/__ [ 5]
+    body="Shamash Robe",            -- 45, __, 40, 30, __, 10/10 [__]
+    hands="Geomancy Mitaines +3",   -- __, __, 43, 16, __,  3/__ [13]
+    feet=gear.Nyame_B_feet,         -- 30, __, 26, 23, 10,  7/ 7 [__]
+    neck="Baetyl Pendant",          -- 13, __, __, __, __, __/__ [__]
+    ear1="Regal Earring",           --  7, __, 10, __, __, __/__ [__]
+    ear2="Malignance Earring",      --  8, __,  8, __, __, __/__ [__]
+    ring2="Defending Ring",         -- __, __, __, __, __, 10/10 [__]
+    -- 143 MAB, 217 M.Dmg, 127 MND, 69 STR, 10 WSD, 40PDT/27MDT [43PetDT]
 
-    -- head="Agwu's Cap",           -- __, 58, 33, 26, 26, __, __/__ [__]; R25
-    -- body="Shamash Robe",         -- __, 45, __, 40, 30, __, 10/10 [__]
-    -- hands="Geomancy Mitaines +3",-- __, __, __, 43, 16, __,  3/__ [13]
-    -- legs="Agwu's Slops",         -- __, 58, 20, 32, 43, __,  9/ 9 [__]; R25
-    -- feet="Agwu's Pigaches",      -- __, 58, 20, 26, 21, __, __/__ [__]; R25
-    -- back=gear.GEO_Nuke_Cape,     -- __, 10, 20, __, __, __, 10/__ [__]
-    -- waist="Skrymir Cord +1",     -- __,  7, 35, __, __, __, __/__ [__]
-    -- 10 Light MAB, 304 MAB, 345 M.Dmg, 185 MND, 136 STR, 0 WSD, 52PDT/19MDT [43PetDT]
+    -- head="Agwu's Cap",           -- 58, 33, 26, 26, __, __/__ [__]; R25
+    -- legs="Agwu's Slops",         -- 58, 20, 32, 43, __,  9/ 9 [__]; R25
+    -- legs="Agwu's Slops",         -- 55, 20, 32, 43, __,  7/ 7 [__]; R25
+    -- feet="Agwu's Pigaches",      -- 58, 20, 26, 21, __, __/__ [__]; R25
+    -- ring1="Weatherspoon Ring",   -- __, __, __, __, __, __/__ [__]; 10 Light MAB
+    -- back=gear.GEO_Nuke_Cape,     -- 10, 20, __, __, __, 10/__ [__]
+    -- waist="Skrymir Cord +1",     --  7, 35, __, __, __, __/__ [__]
+    -- 304 MAB, 345 M.Dmg, 185 MND, 136 STR, 0 WSD, 52PDT/19MDT [43PetDT]
   }
 
   -- Magical (light). dStat=INT. 40% STR / 40% MND
@@ -565,13 +555,13 @@ function init_gear_sets()
     ammo=empty,
     body=gear.Nyame_B_body,         -- __, __, __, __, __ [ 9/ 9, 139] {__, __}
     hands="Azimuth Gloves +2",      -- __, __, __, __, __ [11/11,  88] {__, __}; Set bonus: save MP
-    legs="Bagua Pants +2",          -- __, __, __, 18, __ [__/__, 117] {__, __}
+    legs="Bagua Pants +3",          -- __, __, __, 21, __ [__/__, 127] {__, __}
     feet="Azimuth Gaiters +1",      -- __, __, __, 20, __ [ 4/__, 118] {__, __}; Set bonus: save MP
     neck="Incanter's Torque",       -- __, 10, __, __, __ [__/__, ___] {__, __}; Save MP
     ring1="Stikini Ring +1",        -- __,  8, __, __, __ [__/__, ___] {__, __}
     waist="Shinjutsu-no-Obi +1",    -- __, __, 15, __, __ [__/__, ___] {__, __}
     -- Base stats                   -- __,850, 43,220, __ [__/__, ___] {50, __}
-    -- 10 Geomancy, 886 geo skill, 58 Conserve MP, 258 Indi Duration, 0 Indi Duration % [34 PDT/ 20 MDT, 462 M.Eva] {Pet: 80 DT, 0 Regen}
+    -- 10 Geomancy, 886 geo skill, 58 Conserve MP, 261 Indi Duration, 0 Indi Duration % [34 PDT/ 20 MDT, 472 M.Eva] {Pet: 80 DT, 0 Regen}
     
     -- main="Idris",                -- 10, __, __, __, __ [__/__, ___] {25, __}
     -- sub="Genmei Shield",         -- __, __, __, __, __ [10/__, ___] {__, __}
@@ -633,34 +623,28 @@ function init_gear_sets()
     -- 10 Geomancy, 901 geo skill, 99 Conserve MP, 271 Indi Duration, 20 Indi Duration % [52 PDT/ 44 MDT, 607 M.Eva] {Pet: 80 DT, 0 Regen}
   }
 
-	-- Geomancy and skill have no effect on Entrust.
+	-- Geomancy has no effect on Entrust, skill and duration do.
 	sets.buff.Entrust = set_combine(sets.midcast.Geomancy.Indi, {
+    main=gear.Solstice_D,           -- __,  5,  6, 15, __ [__/__, ___] { 4, __} -- Need to add augs
+    sub="Genmei Shield",            -- __, __, __, __, __ [10/__, ___] {__, __}
     range=empty,
     ammo="Pemphredo Tathlum",       -- __, __,  4, __, __ [__/__, ___] {__, __}
     head="Azimuth Hood +2",         -- __, 20, __, __, __ [11/11, 126] {__,  4}; Set bonus
     hands="Azimuth Gloves +3",      -- __, __, __, __, __ [11/11,  88] {__, __}; Set bonus: save MP
-    legs="Bagua Pants +1",          -- __, __, __, 15, __ [__/__, 107] {__, __}
+    legs="Bagua Pants +3",          -- __, __, __, 21, __ [__/__, 127] {__, __}
     feet="Azimuth Gaiters +1",      -- __, __, __, 20, __ [ 4/__, 118] {__, __}
     neck="Reti Pendant",            -- __, __,  4, __, __ [__/__, ___] {__, __}; Save MP
     ear1="Mendicant's Earring",     -- __, __,  2, __, __ [__/__, ___] {__, __}
     ring1="Defending Ring",         -- __, __, __, __, __ [10/10, ___] {__, __}
     waist="Shinjutsu-no-Obi +1",    -- __, __, 15, __, __ [__/__, ___] {__, __}
     -- Base stats                   -- __,850, 43,220, __ [__/__, ___] {50, __}
-    -- Ideal: 0 Geomancy, 870 geo skill, 68 Conserve MP, 255 Indi Duration, 0 Indi Duration % [36 PDT/ 32 MDT, 440 M.Eva] {Pet: 50 DT, 4 Regen}
+    -- Ideal: 0 Geomancy, 875 geo skill, 74 Conserve MP, 276 Indi Duration, 0 Indi Duration % [46 PDT/ 32 MDT, 459 M.Eva] {Pet: 54 DT, 4 Regen}
     
-    -- main=gear.Solstice_D,        -- __,  5,  6, 15, __ [__/__, ___] { 4, __} -- Need to add augs
-    -- sub="Genmei Shield",         -- __, __, __, __, __ [10/__, ___] {__, __}
-    -- range=empty,
-    -- ammo="Pemphredo Tathlum",    -- __, __,  4, __, __ [__/__, ___] {__, __}
     -- head="Azimuth Hood +3",      -- __, 25, __, __, __ [12/12, 136] {__,  5}; Set bonus: save MP
     -- body=gear.Merl_ConMP_body,   -- __, __,  6, __, __ [ 2/__,  91] {__, __}
     -- hands="Azimuth Gloves +3",   -- __, __, __, __, __ [12/12,  98] {__, __}; Set bonus: save MP
-    -- legs="Bagua Pants +3",       -- __, __, __, 21, __ [__/__, 127] {__, __}
     -- feet="Azimuth Gaiters +3",   -- __, __, __, 30, __ [11/11, 168] {__, __}; Set bonus: save MP
-    -- neck="Reti Pendant",         -- __, __,  4, __, __ [__/__, ___] {__, __}; Save MP
-    -- ear1="Mendicant's Earring",  -- __, __,  2, __, __ [__/__, ___] {__, __}
     -- ear2="Calamitous Earring",   -- __, __,  4, __, __ [__/__, ___] {__, __}
-    -- ring1="Defending Ring",      -- __, __, __, __, __ [10/10, ___] {__, __}
     -- ring2="Mephitas's Ring +1",  -- __, __, 15, __, __ [__/__, ___] {__, __}
     -- back=gear.GEO_Adoulin_Cape,  -- __,  5, __, __, 20 [__/__, ___] { 5, __}
     -- waist="Shinjutsu-no-Obi +1", -- __, __, 15, __, __ [__/__, ___] {__, __}
@@ -791,7 +775,7 @@ function init_gear_sets()
     ammo=empty,                       -- __, __, __, __ [__/__, ___] {__/__, __}
     head=gear.Merl_FC_head,           -- 15, __, 29, 15 [__/__,  86] {__/__, __}
     body=gear.Merl_FC_body,           -- 22, __, 40, 14 [ 2/__,  91] {__/__, __}
-    hands="Geomancy Mitaines +2",     -- 38, __, 24, __ [ 2/__,  47] {12/12, __}
+    hands="Geomancy Mitaines +3",     -- 48, __, 29, __ [ 3/__,  57] {13/13, __}; Set bonus
     legs="Geomancy Pants +2",         -- 39, __, 39, 13 [__/__, 117] {__/__, __}
     feet=gear.Merl_FC_feet,           --  8, __, 26, 12 [__/__, 118] {__/__, __}
     neck="Bagua Charm +1",            -- 25, __, __, __ [__/__, ___] {__/__, __}
@@ -801,25 +785,13 @@ function init_gear_sets()
     ring2="Stikini Ring +1",          -- 11,  8, __, __ [__/__, ___] {__/__, __}
     back=gear.GEO_FC_Cape,            -- 20, __, 30, 10 [10/__, ___] {__/__, __}
     waist="Witful Belt",              -- __, __, __,  3 [__/__, ___] {__/__, __}
-    -- 313 M.Acc, 8 Dark Magic Skill, 234 INT, 74 FC [20 PDT/6 MDT, 459 M.Eva] {Pet: 17 PDT/17 MDT, 0 Regen}
-
-    -- main="Contemplator +1",        -- 70, __, 12, __ [__/__, ___] {__/__, __}
-    -- sub="Khonsu",                  -- 30, __, __, __ [ 6/ 6, ___] {__/__, __}
-    -- range="Dunna",                 -- 10, __, __,  3 [__/__, ___] { 5/ 5, __}
-    -- ammo=empty,                    -- __, __, __, __ [__/__, ___] {__/__, __}
-    -- head=gear.Merl_FC_head,        -- 15, __, 29, 15 [__/__,  86] {__/__, __}
-    -- body="Zendik Robe",            -- 45, __, 38, 13 [__/__,  86] {__/__, __}
-    -- hands="Geomancy Mitaines +3",  -- 48, __, 29, __ [ 3/__,  57] {13/13, __}; Set bonus
-    -- legs="Geomancy Pants +3",      -- 49, __, 44, 15 [__/__, 127] {__/__, __}; Set bonus
-    -- feet=gear.Merl_FC_feet,        --  8, __, 26, 12 [__/__, 118] {__/__, __}
-    -- neck="Bagua Charm +2",         -- 30, __, __, __ [__/__, ___] {__/__, __}
-    -- ear1="Malignance Earring",     -- 10, __,  8,  4 [__/__, ___] {__/__, __}
-    -- ear2="Azimuth Earring +2",     -- 20, __, 15, __ [ 7/ 7, ___] {__/__, __}
-    -- ring1="Metamorph Ring +1",     -- 15, __, 16, __ [__/__, ___] {__/__, __}
-    -- ring2="Stikini Ring +1",       -- 11,  8, __, __ [__/__, ___] {__/__, __}
-    -- back=gear.GEO_FC_Cape,         -- 20, __, 30, 10 [10/__, ___] {__/__, __}
-    -- waist="Witful Belt",           -- __, __, __,  3 [__/__, ___] {__/__, __}
     -- AF set bonuses                 -- 15
+    -- 338 M.Acc, 8 Dark Magic Skill, 239 INT, 74 FC [21 PDT/6 MDT, 469 M.Eva] {Pet: 18 PDT/18 MDT, 0 Regen}
+
+    -- body="Zendik Robe",            -- 45, __, 38, 13 [__/__,  86] {__/__, __}
+    -- legs="Geomancy Pants +3",      -- 49, __, 44, 15 [__/__, 127] {__/__, __}; Set bonus
+    -- neck="Bagua Charm +2",         -- 30, __, __, __ [__/__, ___] {__/__, __}
+    -- ear2="Azimuth Earring +2",     -- 20, __, 15, __ [ 7/ 7, ___] {__/__, __}
     -- 396 M.Acc, 8 Dark Magic Skill, 247 INT, 75 FC [26 PDT/13 MDT, 474 M.Eva] {Pet: 18 PDT/18 MDT, 0 Regen}
   }
 	sets.midcast.Stun.Resistant = set_combine(sets.midcast.Stun, {})
@@ -829,7 +801,7 @@ function init_gear_sets()
     sub="Khonsu",                     -- 30, __, __ [ 6/ 6, ___] {__/__, __}
     range="Dunna",                    -- 10, __, __ [__/__, ___] { 5/ 5, __}
     ammo=empty,                       -- __, __, __ [__/__, ___] {__/__, __}
-    hands="Geomancy Mitaines +2",     -- 38, __, 24 [ 2/__,  57] {12/12, __}; Set bonus
+    hands="Geomancy Mitaines +3",     -- 48, __, 29 [ 3/__,  57] {13/13, __}; Set bonus
     legs=gear.Nyame_B_legs,           -- 40, __, 44 [ 8/ 8, 150] {__/__, __}
     feet=gear.Nyame_B_feet,           -- 40, __, 25 [ 7/ 7, 150] {__/__, __}
     neck="Bagua Charm +1",            -- 25, __, __ [__/__, ___] {__/__, __}
@@ -839,24 +811,17 @@ function init_gear_sets()
     ring2="Stikini Ring +1",          -- 11,  8, __ [__/__, ___] {__/__, __}
     waist="Acuity Belt +1",           -- 15, __, 23 [__/__, ___] {__/__, __}
     -- AF set bonuses                 -- 15
-    -- 319 M.Acc, 8 Elemental Skill, 162 INT [23 PDT/21 MDT, 357 M.Eva] {Pet: 17 PDT/17 MDT, 0 Regen}
+    -- 329 M.Acc, 8 Elemental Skill, 167 INT [24 PDT/21 MDT, 357 M.Eva] {Pet: 18 PDT/18 MDT, 0 Regen}
 
-    -- main="Idris",                  -- 70, __, __ [__/__, ___] {25/25, __}; M.Acc skill+255
+    -- main="Idris",                  -- 70, __, __ [__/__, ___] {25/25, __}; M.Acc skill+255, R15
     -- sub="Ammurapi Shield",         -- 38, __, 13 [__/__, ___] {__/__, __}
-    -- range="Dunna",                 -- 10, __, __ [__/__, ___] { 5/ 5, __}
-    -- ammo=empty,                    -- __, __, __ [__/__, ___] {__/__, __}
     -- head=empty,
     -- body="Crepuscular Cloak",      -- 85, __, 80 [__/__, 231] {__/__, __}
-    -- hands="Geomancy Mitaines +3",  -- 48, __, 29 [ 3/__,  57] {13/13, __}; Set bonus
     -- legs="Agwu's Slops",           -- 50, __, 49 [ 9/ 9, 134] {__/__, __}
     -- feet="Azimuth Gaiters +3",     -- 63, __, 34 [11/11, 168] {__/__, __}
     -- neck="Bagua Charm +2",         -- 30, __, __ [__/__, ___] {__/__, __}
-    -- ear1="Regal Earring",          -- __, __, 10 [__/__, ___] {__/__, __}; Set bonus
     -- ear2="Azimuth Earring +2",     -- 20, __, 15 [ 7/ 7, ___] {__/__, __}
-    -- ring1="Metamorph Ring +1",     -- 15, __, 16 [__/__, ___] {__/__, __}
-    -- ring2="Stikini Ring +1",       -- 11,  8, __ [__/__, ___] {__/__, __}
     -- back=gear.GEO_Nuke_Cape,       -- 30, __, 20 [10/__, ___] {__/__, __}
-    -- waist="Acuity Belt +1",        -- 15, __, 23 [__/__, ___] {__/__, __}
     -- AF set bonuses                 -- 15
     -- 500 M.Acc, 8 Elemental Skill, 289 INT [40 PDT/27 MDT, 590 M.Eva] {Pet: 43 PDT/43 MDT, 0 Regen}
   }
@@ -880,7 +845,7 @@ function init_gear_sets()
     -- AF set bonuses                 -- 15
     -- 437 M.Acc, 61 Enfeebling Skill, 220 INT [35 PDT/35 MDT, 612 M.Eva] {Pet: 5 PDT/5 MDT, 4 Regen}
 
-    -- main="Idris",                  -- 70, __, __ [__/__, ___] {25/25, __}; M.Acc skill+255
+    -- main="Idris",                  -- 70, __, __ [__/__, ___] {25/25, __}; M.Acc skill+255, R15
     -- sub="Ammurapi Shield",         -- 38, __, 13 [__/__, ___] {__/__, __}
     -- head="Azimuth Hood +3",        -- 61, __, 39 [12/12, 136] {__/__,  5}
     -- body="Azimuth Coat +3",        -- 64, __, 49 [__/__, 141] {__/__, __}
@@ -918,7 +883,7 @@ function init_gear_sets()
     -- AF set bonuses                 -- 15
     -- 452 M.Acc, 30 Enfeebling Skill, 262 INT, 254, 25 [24 PDT/24 MDT, 577 M.Eva] {Pet: 5 PDT/5 MDT, 4 Regen}
 
-    -- main="Idris",                  -- 70, __, __, __, __ [__/__, ___] {25/25, __}; M.Acc skill+255
+    -- main="Idris",                  -- 70, __, __, __, __ [__/__, ___] {25/25, __}; M.Acc skill+255, R15
     -- sub="Ammurapi Shield",         -- 38, __, 13, 13, 10 [__/__, ___] {__/__, __}
     -- range="Dunna",                 -- 10, __, __, __, __ [__/__, ___] { 5/ 5, __}
     -- ammo=empty,                    -- __, __, __, __, __ [__/__, ___] {__/__, __}
@@ -938,7 +903,7 @@ function init_gear_sets()
     -- 533 M.Acc, 10 Enfeebling Skill, 293 INT, 273 MND, 45% Enf Duration [30 PDT/30 MDT, 625 M.Eva] {Pet: 30 PDT/30 MDT, 5 Regen}
   }
 	sets.midcast['Enfeebling Magic'].Resistant = set_combine(sets.midcast['Enfeebling Magic'], {
-    -- main="Idris",                  -- 70, __, __, __, __ [__/__, ___] {25/25, __}; M.Acc skill+255
+    -- main="Idris",                  -- 70, __, __, __, __ [__/__, ___] {25/25, __}; M.Acc skill+255, R15
     -- sub="Ammurapi Shield",         -- 38, __, 13, 13, 10 [__/__, ___] {__/__, __}
     -- range="Dunna",                 -- 10, __, __, __, __ [__/__, ___] { 5/ 5, __}
     -- ammo=empty,                    -- __, __, __, __, __ [__/__, ___] {__/__, __}
@@ -977,7 +942,7 @@ function init_gear_sets()
     -- AF set bonuses                 -- 15
     -- 452 M.Acc, 30 Enfeebling Skill, 254 INT, 254, 25 [24 PDT/24 MDT, 577 M.Eva] {Pet: 5 PDT/5 MDT, 4 Regen}
 
-    -- main="Idris",                  -- 70, __, __, __, __ [__/__, ___] {25/25, __}; M.Acc skill+255
+    -- main="Idris",                  -- 70, __, __, __, __ [__/__, ___] {25/25, __}; M.Acc skill+255, R15
     -- sub="Ammurapi Shield",         -- 38, __, 13, 13, 10 [__/__, ___] {__/__, __}
     -- range="Dunna",                 -- 10, __, __, __, __ [__/__, ___] { 5/ 5, __}
     -- ammo=empty,                    -- __, __, __, __, __ [__/__, ___] {__/__, __}
@@ -1016,7 +981,7 @@ function init_gear_sets()
     -- AF set bonuses                 -- 15
     -- 446 M.Acc, 8 Enfeebling Skill, 296 INT, 265 MND, 10% Enf Duration [29 PDT/29 MDT, 612 M.Eva] {Pet: 0 PDT/0 MDT, 4 Regen}
 
-    -- main="Idris",                  -- 70, __, __, __, __ [__/__, ___] {25/25, __}; M.Acc skill+255
+    -- main="Idris",                  -- 70, __, __, __, __ [__/__, ___] {25/25, __}; M.Acc skill+255, R15
     -- sub="Ammurapi Shield",         -- 38, __, 13, 13, 10 [__/__, ___] {__/__, __}
     -- range=empty,
     -- ammo="Pemphredo Tathlum",      --  8, __,  4, __, __ [__/__, ___] {__/__, __}
@@ -1037,7 +1002,7 @@ function init_gear_sets()
 
 	sets.midcast.IntEnfeebles = set_combine(sets.midcast['Enfeebling Magic'], {})
 	sets.midcast.IntEnfeebles.Resistant = set_combine(sets.midcast['Enfeebling Magic'].Resistant, {
-    -- main="Idris",                  -- 70, __, __, __, __ [__/__, ___] {25/25, __}; M.Acc skill+255
+    -- main="Idris",                  -- 70, __, __, __, __ [__/__, ___] {25/25, __}; M.Acc skill+255, R15
     -- sub="Ammurapi Shield",         -- 38, __, 13, 13, 10 [__/__, ___] {__/__, __}
     -- range=empty,
     -- ammo="Pemphredo Tathlum",      --  8, __,  4, __, __ [__/__, ___] {__/__, __}
@@ -1137,16 +1102,15 @@ function init_gear_sets()
     ammo="Staunch Tathlum +1",        -- __ [ 3/ 3, ___] {__/__, __}; Status Resist +11
     head="Azimuth Hood +2",           -- __ [11/11, 126] {__/__,  4}
     body="Shamash Robe",              -- __ [10/__, 106] {__/__, __}
-    hands="Geomancy Mitaines +2",     -- __ [ 2/__,  47] {12/12, __}
+    hands="Geomancy Mitaines +3",     -- __ [ 3/__,  57] {13/13, __}
     feet="Azimuth Gaiters +1",        -- __ [ 4/__, 118] {__/__, __}
     neck="Nodens Gorget",             -- 30 [__/__, ___] {__/__, __}
     ear1="Earthcry Earring",          -- 10 [__/__, ___] {__/__, __}
     ear2="Hearty Earring",            -- __ [__/__, ___] {__/__, __}; Status Resist +5
     ring2="Defending Ring",           -- __ [10/10, ___] {__/__, __}
-    -- 40 +Stoneskin [50 PDT/24 MDT, 397 M.Eva] {Pet: 37 PDT/37 MDT, 4 Regen}
+    -- 40 +Stoneskin [51 PDT/24 MDT, 407 M.Eva] {Pet: 38 PDT/38 MDT, 4 Regen}
 
     -- head="Azimuth Hood +3",        -- __ [12/12, 136] {__/__,  5}
-    -- hands="Geomancy Mitaines +3",  -- __ [ 3/__,  57] {13/13, __}
     -- legs="Shedir Seraweels",       -- 35 [__/__, ___] {__/__, __}
     -- feet="Azimuth Gaiters +3",     -- __ [11/11, 168] {__/__, __}
     -- back="Shadow Mantle",          -- __ [__/__, ___] {__/__, __}; Annul dmg
@@ -1337,34 +1301,21 @@ function init_gear_sets()
     ammo="Staunch Tathlum +1",      -- __ [ 3/ 3, ___] {__/__, __}; Status Resist+11
     head="Azimuth Hood +2",         -- __ [11/11, 126] {__/__,  4}
     body="Shamash Robe",            --  3 [10/__, 106] {__/__, __}; Resist Silence+90
-    hands="Geomancy Mitaines +2",   -- __ [ 2/__,  47] {12/12, __}
+    hands="Geomancy Mitaines +3",   -- __ [ 3/__,  57] {13/13, __}
     legs="Assiduity Pants +1",      --  2 [__/__, 107] {__/__, __}
     feet="Bagua Sandals +1",        -- __ [__/__, 107] {__/__,  3}
     neck="Bagua Charm +1",          -- __ [__/__, ___] {__/__, __}; Absorb Dmg+8
-    ear1="Genmei Earring",          -- __ [ 2/__, ___] {__/__, __}
     ear2="Hearty Earring",          -- __ [__/__, ___] {__/__, __}; Status Resist+5
     ring1="Stikini Ring +1",        --  1 [__/__, ___] {__/__, __}
     ring2="Defending Ring",         -- __ [10/10, ___] {__/__, __}
     back=gear.GEO_Idle_Cape,        -- __ [__/__,  30] {__/__, 15}
     waist="Isa Belt",               -- __ [__/__, ___] { 3/ 3,  1}; Prefer refresh if it existed
-    -- 6 Refresh [48 PDT/24 MDT, 523 M.Eva] {Pet: 40 PDT/40 MDT, 23 Regen}
+    -- 6 Refresh [47 PDT/24 MDT, 533 M.Eva] {Pet: 41 PDT/41 MDT, 23 Regen}
 
-    -- main="Idris",                -- __ [__/__, ___] {25/25, __}
-    -- sub="Genmei Shield",         -- __ [10/__, ___] {__/__, __}
-    -- range=empty,
-    -- ammo="Staunch Tathlum +1",   -- __ [ 3/ 3, ___] {__/__, __}; Status Resist+11
     -- head="Azimuth Hood +3",      -- __ [12/12, 136] {__/__,  5}
-    -- body="Shamash Robe",         --  3 [10/__, 106] {__/__, __}; Resist Silence+90
-    -- hands="Geomancy Mitaines +3",-- __ [ 3/__,  57] {13/13, __}
-    -- legs="Assiduity Pants +1",   --  2 [__/__, 107] {__/__, __}
     -- feet="Bagua Sandals +3",     -- __ [__/__, 127] {__/__,  5}
     -- neck="Bagua Charm +2",       -- __ [__/__, ___] {__/__, __}; Absorb Dmg+10
     -- ear1="Genmei Earring",       -- __ [ 2/__, ___] {__/__, __}
-    -- ear2="Hearty Earring",       -- __ [__/__, ___] {__/__, __}; Status Resist+5
-    -- ring1="Stikini Ring +1",     --  1 [__/__, ___] {__/__, __}
-    -- ring2="Defending Ring",      -- __ [10/10, ___] {__/__, __}
-    -- back=gear.GEO_Idle_Cape,     -- __ [__/__,  30] {__/__, 15}
-    -- waist="Isa Belt",            -- __ [__/__, ___] { 3/ 3,  1}; Prefer refresh if it existed
     -- 6 Refresh [50 PDT/25 MDT, 563 M.Eva] {Pet: 41 PDT/41 MDT, 26 Regen}
   }
 
@@ -1403,7 +1354,7 @@ function init_gear_sets()
 
   -- TODO: update
   -- Need 38 pet DT to cap
-	-- Normal melee group, used when not club or staff
+	-- Normal melee group, used when not weapon locked
 	sets.engaged = {
     -- Dunna                        -- __/__ [ 5, __], __, __, __
 		head=gear.Nyame_B_head,         --  7/ 7 [__, __], 40, __,  4
@@ -1426,24 +1377,22 @@ function init_gear_sets()
   }
   -- TODO: update
 	sets.engaged.Safe = {
-    -- Dunna                        -- __/__ [ 5, __], __, __, __
+    -- Assume Dunna                 -- __/__ [ 5, __], __, __, __
 		head=gear.Nyame_B_head,         --  7/ 7 [__, __], 40, __,  4
 		body=gear.Nyame_B_body,         --  9/ 9 [__, __], 40, __,  5
-    hands="Geomancy Mitaines +2",   --  2/__ [12, __], __, __, __
-    -- legs="Jhakri Slops +2",         -- __/__ [__, __], 45,  9, __
+    hands="Geomancy Mitaines +3",   --  3/__ [13, __], __, __, __
     feet=gear.Nyame_B_feet,         --  7/ 7 [__, __], 40, __,  4
-    -- neck="Bagua Charm +1",          -- __/__ [__, __], __, __, __; Luopan absorb dmg
-    -- ear1="Telos Earring",           -- __/__ [__, __], 10,  5,  1
     ear2="Cessance Earring",        -- __/__ [__, __],  6,  3,  3
-    -- ring1="Chirich Ring +1",        -- __/__ [__, __], 10,  6, __
-    -- ring2="Petrov Ring",            -- __/__ [__, __], __,  5,  1
     back=gear.GEO_Idle_Cape,        -- __/__ [__, 15], __, __, __
-    -- waist="Olseni Belt",            -- __/__ [__, __], 20,  3, __
-    -- 25PDT/23MDT [17 Pet DT, 15 Pet Regen], 211 Acc, 31 Store TP, 18 DA
+    waist="Olseni Belt",            -- __/__ [__, __], 20,  3, __
+    -- 26PDT/23MDT [18 Pet DT, 15 Pet Regen], 146 Acc, 6 Store TP, 16 DA
 
-    -- hands="Geomancy Mitaines +3",--  3/__ [13, __], __, __, __
+    -- legs="Jhakri Slops +2",      -- __/__ [__, __], 45,  9, __
+    -- neck="Bagua Charm +1",       -- __/__ [__, __], __, __, __; Luopan absorb dmg
+    -- ear1="Telos Earring",        -- __/__ [__, __], 10,  5,  1
     -- ear1="Hypaspist Earring",    -- -5/__ [ 5,  1], __, __, __
     -- ear2="Handler's Earring +1", -- __/__ [ 4, __], __, __, __
+    -- ring1="Chirich Ring +1",     -- __/__ [__, __], 10,  6, __
     -- ring2="Thurandaut Ring +1"   -- __/__ [ 4, __], __, __, __
     -- 21PDT/23MDT [31 Pet DT, 16 Pet Regen], 195 Acc, 18 Store TP, 13 DA
   }
@@ -1479,22 +1428,19 @@ function init_gear_sets()
     -- Dunna                        -- __/__ [ 5, __], __, __, __
 		head=gear.Nyame_B_head,         --  7/ 7 [__, __], 40, __,  4
 		body=gear.Nyame_B_body,         --  9/ 9 [__, __], 40, __,  5
-    hands="Geomancy Mitaines +2",   --  2/__ [12, __], __, __, __
-    -- legs="Jhakri Slops +2",         -- __/__ [__, __], 45,  9, __
+    hands="Geomancy Mitaines +3",   --  3/__ [13, __], __, __, __
     feet=gear.Nyame_B_feet,         --  7/ 7 [__, __], 40, __,  4
-    -- neck="Carnal Torque",           -- __/__ [__, __], __, __, __; Staff skill
-    -- ear1="Telos Earring",           -- __/__ [__, __], 10,  5,  1
     ear2="Cessance Earring",        -- __/__ [__, __],  6,  3,  3
-    -- ring1="Chirich Ring +1",        -- __/__ [__, __], 10,  6, __
-    -- ring2="Petrov Ring",            -- __/__ [__, __], __,  5,  1
+    ring1="Defending Ring",         -- 10/10 [__, __], __, __, __
     back=gear.GEO_Idle_Cape,        -- __/__ [__, 15], __, __, __
-    -- waist="Olseni Belt",            -- __/__ [__, __], 20,  3, __
-    -- 45PDT/43MDT [17 Pet DT, 15 Pet Regen], 261 Acc, 31 Store TP, 18 DA
+    waist="Olseni Belt",            -- __/__ [__, __], 20,  3, __
+    -- 56PDT/53MDT [18 Pet DT, 15 Pet Regen], 196 Acc, 6 Store TP, 16 DA
 
-    -- hands="Geomancy Mitaines +3",--  3/__ [13, __], __, __, __
+    -- legs="Jhakri Slops +2",      -- __/__ [__, __], 45,  9, __
+    -- neck="Carnal Torque",        -- __/__ [__, __], __, __, __; Staff skill
+    -- ear1="Telos Earring",        -- __/__ [__, __], 10,  5,  1
     -- ear1="Hypaspist Earring",    -- -5/__ [ 5,  1], __, __, __
     -- ear2="Handler's Earring +1", -- __/__ [ 4, __], __, __, __
-    -- ring1="Defending Ring",      -- 10/10 [__, __], __, __, __
     -- ring2="Thurandaut Ring +1"   -- __/__ [ 4, __], __, __, __
     -- 51PDT/53MDT [31 Pet DT, 16 Pet Regen], 235 Acc, 12 Store TP, 13 DA
   }
@@ -1530,19 +1476,16 @@ function init_gear_sets()
     -- Dunna                        -- __/__ [ 5, __], __, __, __
 		head=gear.Nyame_B_head,         --  7/ 7 [__, __], 40, __,  4
 		body=gear.Nyame_B_body,         --  9/ 9 [__, __], 40, __,  5
-    hands="Geomancy Mitaines +2",   --  2/__ [12, __], __, __, __
-    -- legs="Jhakri Slops +2",         -- __/__ [__, __], 45,  9, __
+    hands="Geomancy Mitaines +3",   --  3/__ [13, __], __, __, __
     feet=gear.Nyame_B_feet,         --  7/ 7 [__, __], 40, __,  4
     neck="Loricate Torque +1",      --  6/ 6 [__, __], __, __, __
-    -- ear1="Telos Earring",           -- __/__ [__, __], 10,  5,  1
     ear2="Cessance Earring",        -- __/__ [__, __],  6,  3,  3
-    -- ring1="Chirich Ring +1",        -- __/__ [__, __], 10,  6, __
     ring2="Defending Ring",         -- 10/10 [__, __], __, __, __
     back=gear.GEO_Idle_Cape,        -- __/__ [__, 15], __, __, __
-    -- waist="Olseni Belt",            -- __/__ [__, __], 20,  3, __
-    -- 51PDT/39MDT [17 Pet DT, 15 Pet Regen], 266 Acc, 26 Store TP, 17 DA
+    waist="Olseni Belt",            -- __/__ [__, __], 20,  3, __
+    -- 52PDT/39MDT [18 Pet DT, 15 Pet Regen], 201 Acc, 6 Store TP, 16 DA
 
-    -- hands="Geomancy Mitaines +3",--  3/__ [13, __], __, __, __
+    -- legs="Jhakri Slops +2",      -- __/__ [__, __], 45,  9, __
     -- ear1="Hypaspist Earring",    -- -5/__ [ 5,  1], __, __, __
     -- ear2="Handler's Earring +1", -- __/__ [ 4, __], __, __, __
     -- ring1="Thurandaut Ring +1"   -- __/__ [ 4, __], __, __, __
@@ -1555,6 +1498,7 @@ function init_gear_sets()
     main="Idris",                   -- __/__ [25, __], 30, __, __
     sub="Genmei Shield",            -- 10/__ [__, __], 15, __, __
     range="Dunna",                  -- __/__ [ 5, __], __, __, __
+    ammo=empty,
 		head=gear.Nyame_B_head,         --  7/ 7 [__, __], 40, __,  4
 		body=gear.Nyame_B_body,         --  9/ 9 [__, __], 40, __,  5
     hands=gear.Nyame_B_hands,       --  7/ 7 [__, __], 40, __,  4
@@ -1579,21 +1523,21 @@ function init_gear_sets()
     main="Idris",                   -- __/__ [25, __], 30, __, __
     sub="Genmei Shield",            -- 10/__ [__, __], 15, __, __
     range="Dunna",                  -- __/__ [ 5, __], __, __, __
+    ammo=empty,
 		head=gear.Nyame_B_head,         --  7/ 7 [__, __], 40, __,  4
 		body=gear.Nyame_B_body,         --  9/ 9 [__, __], 40, __,  5
-    hands="Geomancy Mitaines +2",   --  2/__ [12, __], __, __, __
-    -- legs="Jhakri Slops +2",         -- __/__ [__, __], 45,  9, __
+    hands="Geomancy Mitaines +3",   --  3/__ [13, __], __, __, __
     feet=gear.Nyame_B_feet,         --  7/ 7 [__, __], 40, __,  4
     neck="Loricate Torque +1",      --  6/ 6 [__, __], __, __, __
-    -- ear1="Telos Earring",           -- __/__ [__, __], 10,  5,  1
     ear2="Cessance Earring",        -- __/__ [__, __],  6,  3,  3
-    -- ring1="Chirich Ring +1",        -- __/__ [__, __], 10,  6, __
     ring2="Defending Ring",         -- 10/10 [__, __], __, __, __
     back=gear.GEO_Idle_Cape,        -- __/__ [__, 15], __, __, __
-    -- waist="Olseni Belt",            -- __/__ [__, __], 20,  3, __
-    -- 51PDT/39MDT [42 Pet DT, 15 Pet Regen], 256 Acc, 26 Store TP, 17 DA
+    waist="Olseni Belt",            -- __/__ [__, __], 20,  3, __
+    -- 52PDT/39MDT [43 Pet DT, 15 Pet Regen], 191 Acc, 6 Store TP, 16 DA
 
-    -- hands="Geomancy Mitaines +3",--  3/__ [13, __], __, __, __
+    -- legs="Jhakri Slops +2",      -- __/__ [__, __], 45,  9, __
+    -- ear1="Telos Earring",        -- __/__ [__, __], 10,  5,  1
+    -- ring1="Chirich Ring +1",     -- __/__ [__, __], 10,  6, __
     -- 52PDT/39MDT [43 Pet DT, 15 Pet Regen], 256 Acc, 26 Store TP, 17 DA
   }
 
