@@ -7,11 +7,15 @@ res = include('resources')
 packets = include('packets')
 silibs = include('SilverLibs')
 
--------------------------------------------------------------------------------------------------------------------
--- Modify the sets table.  Any gear sets that are added to the sets table need to
--- be defined within this function, because sets isn't available until after the
--- include is complete.  It is called at the end of basic initialization in Mote-Include.
--------------------------------------------------------------------------------------------------------------------
+-- Additional mappings that Mote lib is missing
+elements.nuke_of = {['Fire']='Fire', ['Ice']='Blizzard', ['Wind']='Aero', ['Earth']='Stone',
+    ['Lightning']='Thunder', ['Water']='Water', ['Light']='Banish', ['Dark']='Bio',}
+elements.helix_of = {['Fire']='Pyro', ['Ice']='Cryo', ['Wind']='Anemo', ['Earth']='Geo',
+    ['Lightning']='Iono', ['Water']='Hydro', ['Light']='Lumino', ['Dark']='Nocto',}
+elements.storm_of = {['Light']="Aurorastorm", ['Dark']="Voidstorm", ['Fire']="Firestorm", ['Earth']="Sandstorm",
+        ['Water']="Rainstorm", ['Wind']="Windstorm", ['Ice']="Hailstorm", ['Lightning']="Thunderstorm",}
+elements.nukera_of = {['Fire']='Fi', ['Ice']='Blizza', ['Wind']='Ae', ['Earth']='Stone',
+        ['Lightning']='Thunda', ['Water']='Wate',}
 
 no_swap_necks = S{"Reraise Gorget", "Chocobo Pullus Torque", "Federation Stables Scarf",
     "Kingdom Stables Collar", "Republic Stables Medal", "Chocobo Whistle", "Wing Gorget", "Stoneskin Torque",
@@ -135,5 +139,39 @@ windower.register_event('zone change', function()
     send_command('lua l omen')
   end
 end)
+
+function get_spell_table_by_name(spell_name)
+	for k in pairs(res.spells) do
+		if res.spells[k]['en'] == spell_name then
+			return res.spells[k]
+		end
+	end
+	return false
+end
+
+function actual_cost(spell)
+  local cost = spell.mp_cost
+  if buffactive["Manafont"] or buffactive["Manawell"] then
+    return 0
+  elseif spell.type=="WhiteMagic" then
+      if buffactive["Penury"] then
+          return cost*.5
+      elseif state.Buff['Light Arts'] or state.Buff['Addendum: White'] then
+          return cost*.9
+      elseif state.Buff['Dark Arts'] or state.Buff['Addendum: Black'] then
+          return cost*1.1
+      end
+  elseif spell.type=="BlackMagic" then
+      if buffactive["Parsimony"] then
+          return cost*.5
+      elseif state.Buff['Dark Arts'] or state.Buff['Addendum: Black'] then
+          return cost*.9
+      elseif state.Buff['Light Arts'] or state.Buff['Addendum: White'] then
+          return cost*1.1
+      end
+  end
+  return cost
+end
+
 
 send_command('alias mount input /mount "Spheroid" <me>')

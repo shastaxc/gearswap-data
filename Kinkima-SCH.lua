@@ -2,7 +2,7 @@
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs
--- Required addons: GearInfo
+-- Required addons: GearInfo, Shortcuts
 -- Recommended addons: WSBinder, Reorganizer, PartyBuffs
 
 -- Initialization function for this job file.
@@ -29,13 +29,10 @@ function job_setup()
   state.PhysicalDefenseMode = M{['description'] = 'Physical Defense Mode', 'PDT', 'Cait Sith'}
   state.MagicBurst = M(true, 'Magic Burst')
 
-  info.addendumNukes = S{"Stone IV", "Water IV", "Aero IV", "Fire IV", "Blizzard IV", "Thunder IV",
-  "Stone V", "Water V", "Aero V", "Fire V", "Blizzard V", "Thunder V"}
   state.Buff['Sublimation: Activated'] = buffactive['Sublimation: Activated'] or false
   state.HelixMode = M{['description']='Helix Mode', 'Potency', 'Duration'}
   state.RegenMode = M{['description']='Regen Mode', 'Duration', 'Potency'}
-  state.Storm = M{['description']='Storm','Aurorastorm','Sandstorm',
-      'Rainstorm','Windstorm','Firestorm','Hailstorm','Thunderstorm','Voidstorm'}
+	state.ElementalMode = M{['description'] = 'Elemental Mode', 'Light','Dark','Fire','Ice','Wind','Earth','Lightning','Water'}
 
   degrade_array = {
     ['Aspirs'] = {'Aspir','Aspir II'}
@@ -55,11 +52,6 @@ function job_setup()
   send_command('bind @w gs c toggle RearmingLock')
   send_command('bind @c gs c toggle CP')
 
-  send_command('bind !c gs c storm')
-  send_command('bind ^pageup gs c cycleback Storm')
-  send_command('bind ^pagedown gs c cycle Storm')
-  send_command('bind !pagedown gs c reset Storm')
-
   send_command('bind ^` input /ja Immanence <me>')
   send_command('bind !` gs c toggle MagicBurst')
   send_command('bind ^- gs c scholar light')
@@ -70,16 +62,25 @@ function job_setup()
   send_command('bind ![ gs c scholar aoe')
   send_command('bind !] gs c scholar duration')
   send_command('bind !\\\\ gs c scholar speed')
-  send_command('bind !w input /ma "Aspir II" <t>')
   send_command('bind @h gs c cycle HelixMode')
   send_command('bind @r gs c cycle RegenMode')
 
-  send_command('bind !q input /ja "Sublimation" <me>')
+  send_command('bind !r input /ja "Sublimation" <me>')
   send_command('bind !u input /ma "Blink" <me>')
   send_command('bind !i input /ma "Stoneskin" <me>')
   send_command('bind !p input /ma "Aquaveil" <me>')
   send_command('bind !; input /ma "Regen V" <stpc>')
   send_command('bind !/ input /ma "Klimaform" <me>')
+  
+  send_command('bind ^pageup gs c cycleback ElementalMode')
+  send_command('bind ^pagedown gs c cycle ElementalMode')
+  send_command('bind !pagedown gs c reset ElementalMode')
+  
+  send_command('bind !q gs c elemental tier4')
+  send_command('bind !w gs c elemental tier5')
+  send_command('bind !z gs c elemental helix')
+  send_command('bind !c gs c elemental storm')
+
 end
 
 -- Executes on first load, main job change, **and sub job change**
@@ -109,11 +110,6 @@ function job_file_unload()
   send_command('unbind @w')
   send_command('unbind @c')
 
-  send_command('unbind !c')
-  send_command('unbind ^pageup')
-  send_command('unbind ^pagedown')
-  send_command('unbind !pagedown')
-  
   send_command('unbind ^`')
   send_command('unbind !`')
   send_command('unbind ^-')
@@ -129,7 +125,7 @@ function job_file_unload()
   send_command('unbind @r')
   send_command('unbind @s')
 
-  send_command('unbind !q')
+  send_command('unbind !r')
   send_command('unbind !u')
   send_command('unbind !i')
   send_command('unbind !p')
@@ -140,6 +136,15 @@ function job_file_unload()
   send_command('unbind !i')
   send_command('unbind !o')
   send_command('unbind !\'')
+  
+  send_command('unbind ^pageup')
+  send_command('unbind ^pagedown')
+  send_command('unbind !pagedown')
+
+  send_command('unbind !q')
+  send_command('unbind !w')
+  send_command('unbind !z')
+  send_command('unbind !c')
 end
 
 -- Define sets and vars used by this job file.
@@ -1737,11 +1742,9 @@ function job_self_command(cmdParams, eventArgs)
   if cmdParams[1] == 'scholar' then
     handle_strategems(cmdParams)
     eventArgs.handled = true
-  elseif cmdParams[1] == 'nuke' then
-    handle_nuking(cmdParams)
+  elseif cmdParams[1] == 'elemental' then
+    handle_elemental(cmdParams)
     eventArgs.handled = true
-  elseif cmdParams[1] == 'storm' then
-    send_command('@input /ma "'..state.Storm.current..' II" <stpc>')
   elseif cmdParams[1] == 'test' then
     test()
   end
@@ -1913,6 +1916,40 @@ function handle_strategems(cmdParams)
     end
   else
     add_to_chat(123,'No arts has been activated yet.')
+  end
+end
+
+function handle_elemental(cmdParams)
+  if not cmdParams[2] then
+    add_to_chat(123,'Error: No elemental command given.')
+    return
+  end
+  local command = cmdParams[2]:lower()
+
+  if command == 'storm' then
+    -- Leave out target. Let shortcuts addon determine target.
+    windower.chat.input('/ma "'..elements.storm_of[state.ElementalMode.value]..' II"')
+    return
+  end
+
+	local target = '<t>'
+	if cmdParams[3] then
+		if tonumber(cmdParams[3]) then
+			target = cmdParams[3]
+		else
+			target = table.concat(cmdParams, ' ', 3)
+			target = get_closest_mob_id_by_name(target) or '<t>'
+		end
+	end
+  if command:contains('tier') then
+		local spell_recasts = windower.ffxi.get_spell_recasts()
+		local tierlist = {['tier1']='',['tier2']=' II',['tier3']=' III',['tier4']=' IV',['tier5']=' V',['tier6']=' VI'}
+
+		windower.chat.input('/ma "'..elements.nuke_of[state.ElementalMode.value]..tierlist[command]..'" '..target..'')
+	elseif command == 'helix' then
+		windower.chat.input('/ma "'..elements.helix_of[state.ElementalMode.value]..'helix II" '..target..'')
+  else
+    add_to_chat(123,'Unrecognized elemental command.')
   end
 end
 
