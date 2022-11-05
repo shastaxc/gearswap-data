@@ -1,4 +1,4 @@
--- File Status: Good. Engaged sets could use work.
+-- File Status: Good.
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs
