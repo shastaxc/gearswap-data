@@ -1275,191 +1275,280 @@ function init_gear_sets()
   -- Need 38 pet DT to cap
 	-- Normal melee group, used when not weapon locked
 	sets.engaged = {
-    -- Dunna                        -- __/__ [ 5, __], __, __, __
-		head=gear.Nyame_B_head,         --  7/ 7 [__, __], 40, __,  4
-		body=gear.Nyame_B_body,         --  9/ 9 [__, __], 40, __,  5
-    hands=gear.Nyame_B_hands,       --  7/ 7 [__, __], 40, __,  4
-    legs="Jhakri Slops +2",         -- __/__ [__, __], 45,  9, __
-    feet=gear.Nyame_B_feet,         --  7/ 7 [__, __], 40, __,  4
-    neck="Bagua Charm +1",          -- __/__ [__, __], __, __, __; Luopan absorb dmg
-    ear1="Telos Earring",           -- __/__ [__, __], 10,  5,  1
-    ear2="Cessance Earring",        -- __/__ [__, __],  6,  3,  3
-    ring1="Chirich Ring +1",        -- __/__ [__, __], 10,  6, __
-    ring2="Petrov Ring",            -- __/__ [__, __], __,  5,  1
-    back=gear.GEO_Idle_Cape,        -- __/__ [__, 15], __, __, __
-    waist="Olseni Belt",            -- __/__ [__, __], 20,  3, __
-    -- 30PDT/30MDT [5 Pet DT, 15 Pet Regen], 251 Acc, 31 Store TP, 22 DA
+    -- Assume White Tathlum         -- __,  2, __, __ [__/__, ___] {__/__, __}
+		head=gear.Nyame_B_head,         -- 40, __,  4,  6 [ 7/ 7, 123] {__/__, __}
+		body=gear.Nyame_B_body,         -- 40, __,  5,  3 [ 9/ 9, 139] {__/__, __}
+    hands=gear.Nyame_B_hands,       -- 40, __,  4,  3 [ 7/ 7, 112] {__/__, __}
+    legs="Jhakri Slops +2",         -- 45,  9, __,  2 [__/__,  69] {__/__, __}
+    feet=gear.Nyame_B_feet,         -- 40, __,  4,  3 [ 7/ 7, 150] {__/__, __}
+    neck="Bagua Charm +1",          -- __, __, __, __ [__/__, ___] {__/__, __}; Luopan absorb dmg
+    ear1="Telos Earring",           -- 10,  5,  1, __ [__/__, ___] {__/__, __}
+    ear2="Cessance Earring",        --  6,  3,  3, __ [__/__, ___] {__/__, __}
+    ring1="Chirich Ring +1",        -- 10,  6, __, __ [__/__, ___] {__/__, __}
+    ring2="Chirich Ring +1",        -- 10,  6, __, __ [__/__, ___] {__/__, __}
+    back=gear.GEO_Idle_Cape,        -- __, __, __, __ [__/__,  30] {__/__, 15}
+    waist="Olseni Belt",            -- 20,  3, __, __ [__/__, ___] {__/__, __}
+    -- 261 Acc, 34 Store TP, 21 DA, 17 Haste [30 PDT/30 MDT, 623 M.Eva] {Pet: 0 PDT/0 MDT, 15 Regen}
 
-    -- hands="Gazu Bracelet +1",    -- __/__ [__, __], 96, __, __
-    -- ring2="Chirich Ring +1",     -- __/__ [__, __], 10,  6, __
-    -- 23PDT/23MDT [9 Pet DT, 15 Pet Regen], 317 Acc, 32 Store TP, 17 DA
+    -- Assume White Tathlum         -- __,  2, __, __ [__/__, ___] {__/__, __}
+		-- head="Blistering Sallet +1", -- 53, __,  3,  8 [ 3/__,  53] {__/__, __}
+		-- body=gear.Nyame_B_body,      -- 40, __,  5,  3 [ 9/ 9, 139] {__/__, __}
+    -- hands="Gazu Bracelet +1",    -- 96, __, __,  5 [__/__,  43] {__/__, __}
+    -- legs="Jhakri Slops +2",      -- 45,  9, __,  2 [__/__,  69] {__/__, __}
+    -- feet=gear.Nyame_B_feet,      -- 40, __,  4,  3 [ 7/ 7, 150] {__/__, __}
+    -- neck="Combatant's Torque",   -- __,  4, __, __ [__/__, ___] {__/__, __}; Skill+15
+    -- ear1="Telos Earring",        -- 10,  5,  1, __ [__/__, ___] {__/__, __}
+    -- ear2="Cessance Earring",     --  6,  3,  3, __ [__/__, ___] {__/__, __}
+    -- ring1="Chirich Ring +1",     -- 10,  6, __, __ [__/__, ___] {__/__, __}
+    -- ring2="Chirich Ring +1",     -- 10,  6, __, __ [__/__, ___] {__/__, __}
+    -- back=gear.GEO_Idle_Cape,     -- __, __, __, __ [__/__,  30] {__/__, 15}
+    -- waist="Goading Belt",        -- __,  5, __,  5 [__/__, ___] {__/__, __}
+    -- 310 Acc, 40 Store TP, 16 DA, 26 Haste [19 PDT/16 MDT, 484 M.Eva] {Pet: 0 PDT/0 MDT, 15 Regen}
   }
 	sets.engaged.Safe = {
-    -- Dunna                        -- __/__ [ 5, __], __, __, __
-		head=gear.Nyame_B_head,         --  7/ 7 [__, __], 40, __,  4
-		body=gear.Nyame_B_body,         --  9/ 9 [__, __], 40, __,  5
-    hands="Geomancy Mitaines +2",   --  2/__ [12, __], __, __, __
-    legs="Jhakri Slops +2",         -- __/__ [__, __], 45,  9, __
-    feet=gear.Nyame_B_feet,         --  7/ 7 [__, __], 40, __,  4
-    neck="Bagua Charm +1",          -- __/__ [__, __], __, __, __; Luopan absorb dmg
-    ear1="Telos Earring",           -- __/__ [__, __], 10,  5,  1
-    ear2="Cessance Earring",        -- __/__ [__, __],  6,  3,  3
-    ring1="Chirich Ring +1",        -- __/__ [__, __], 10,  6, __
-    ring2="Petrov Ring",            -- __/__ [__, __], __,  5,  1
-    back=gear.GEO_Idle_Cape,        -- __/__ [__, 15], __, __, __
-    waist="Olseni Belt",            -- __/__ [__, __], 20,  3, __
-    -- 25PDT/23MDT [17 Pet DT, 15 Pet Regen], 211 Acc, 31 Store TP, 18 DA
-
-    -- hands="Geomancy Mitaines +3",--  3/__ [13, __], __, __, __
-    -- ear1="Hypaspist Earring",    -- -5/__ [ 5,  1], __, __, __
-    -- ear2="Handler's Earring +1", -- __/__ [ 4, __], __, __, __
-    -- ring2="Thurandaut Ring +1"   -- __/__ [ 4, __], __, __, __
-    -- 21PDT/23MDT [31 Pet DT, 16 Pet Regen], 195 Acc, 18 Store TP, 13 DA
+    -- Assume Dunna                 -- __, __, __, __ [__/__, ___] { 5/ 5, __}
+		head=gear.Nyame_B_head,         -- 40, __,  4,  6 [ 7/ 7, 123] {__/__, __}
+		body=gear.Nyame_B_body,         -- 40, __,  5,  3 [ 9/ 9, 139] {__/__, __}
+    hands="Geomancy Mitaines +2",   -- __, __, __,  3 [ 2/__,  47] {12/12, __}
+    legs=gear.Nyame_B_legs,         -- 40, __,  5,  5 [ 8/ 8, 150] {__/__, __}
+    feet=gear.Nyame_B_feet,         -- 40, __,  4,  3 [ 7/ 7, 150] {__/__, __}
+    neck="Bagua Charm +1",          -- __, __, __, __ [__/__, ___] {__/__, __}; Luopan absorb dmg
+    ear1="Telos Earring",           -- 10,  5,  1, __ [__/__, ___] {__/__, __}
+    ear2="Cessance Earring",        --  6,  3,  3, __ [__/__, ___] {__/__, __}
+    ring1="Chirich Ring +1",        -- 10,  6, __, __ [__/__, ___] {__/__, __}
+    ring2="Chirich Ring +1",        -- 10,  6, __, __ [__/__, ___] {__/__, __}
+    back=gear.GEO_Idle_Cape,        -- __, __, __, __ [__/__,  30] {__/__, 15}
+    waist="Olseni Belt",            -- 20,  3, __, __ [__/__, ___] {__/__, __}
+    -- 216 Acc, 23 Store TP, 22 DA, 20 Haste [33 PDT/31 MDT, 639 M.Eva] {Pet: 17 PDT/17 MDT, 15 Regen}
+    
+    -- Assume Dunna                 -- __, __, __, __ [__/__, ___] { 5/ 5, __}
+		-- head="Azimuth Hood +3",      -- 61, __, __,  6 [12/12, 136] {__/__,  5}
+		-- body=gear.Nyame_B_body,      -- 40, __,  5,  3 [ 9/ 9, 139] {__/__, __}
+    -- hands="Geomancy Mitaines +3",-- __, __, __,  3 [ 3/__,  57] {13/13, __}
+    -- legs=gear.Nyame_B_legs,      -- 40, __,  5,  5 [ 8/ 8, 150] {__/__, __}
+    -- feet="Azimuth Gaiters +3",   -- 60, __, __,  3 [11/11, 168] {__/__, __}
+    -- neck="Bagua Charm +1",       -- __, __, __, __ [__/__, ___] {__/__, __}; Luopan absorb dmg
+    -- ear1="Telos Earring",        -- 10,  5,  1, __ [__/__, ___] {__/__, __}
+    -- ear2="Azimuth Earring +2",   -- __, __, __, __ [ 7/ 7, ___] {__/__, __}
+    -- ring1="Chirich Ring +1",     -- 10,  6, __, __ [__/__, ___] {__/__, __}
+    -- ring2="Chirich Ring +1",     -- 10,  6, __, __ [__/__, ___] {__/__, __}
+    -- back=gear.GEO_Idle_Cape,     -- __, __, __, __ [__/__,  30] {__/__, 15}
+    -- waist="Olseni Belt",         -- 20,  3, __, __ [__/__, ___] {__/__, __}
+    -- 251 Acc, 20 Store TP, 11 DA, 20 Haste [50 PDT/47 MDT, 680 M.Eva] {Pet: 18 PDT/18 MDT, 20 Regen}
   }
 
   -- Used for all staves
 	sets.engaged.Staff = {
-    -- Malignance Pole              -- 20/20 [__, __], 40, __, __
-    -- Tzacab Grip                  -- __/__ [__, __], 10, __, __
-    -- Dunna                        -- __/__ [ 5, __], __, __, __
-		head=gear.Nyame_B_head,         --  7/ 7 [__, __], 40, __,  4
-		body=gear.Nyame_B_body,         --  9/ 9 [__, __], 40, __,  5
-    hands=gear.Nyame_B_hands,       --  7/ 7 [__, __], 40, __,  4
-    legs="Jhakri Slops +2",         -- __/__ [__, __], 45,  9, __
-    feet=gear.Nyame_B_feet,         --  7/ 7 [__, __], 40, __,  4
-    neck="Carnal Torque",           -- __/__ [__, __], __, __, __; Staff skill
-    ear1="Telos Earring",           -- __/__ [__, __], 10,  5,  1
-    ear2="Cessance Earring",        -- __/__ [__, __],  6,  3,  3
-    ring1="Chirich Ring +1",        -- __/__ [__, __], 10,  6, __
-    ring2="Petrov Ring",            -- __/__ [__, __], __,  5,  1
-    back=gear.GEO_Idle_Cape,        -- __/__ [__, 15], __, __, __
-    waist="Olseni Belt",            -- __/__ [__, __], 20,  3, __
-    -- 50PDT/50MDT [5 Pet DT, 15 Pet Regen], 301 Acc, 31 Store TP, 22 DA
+    -- Assume Mpaca's Staff         -- 50, __, __, __ [__/__, ___] {__/__, __}
+    -- Assume Khonsu                -- 30, __, __,  4 [ 6/ 6, ___] {__/__, __}
+    -- Assume White Tathlum         -- __,  2, __, __ [__/__, ___] {__/__, __}
+		head=gear.Nyame_B_head,         -- 40, __,  4,  6 [ 7/ 7, 123] {__/__, __}
+		body=gear.Nyame_B_body,         -- 40, __,  5,  3 [ 9/ 9, 139] {__/__, __}
+    hands=gear.Nyame_B_hands,       -- 40, __,  4,  3 [ 7/ 7, 112] {__/__, __}
+    legs="Jhakri Slops +2",         -- 45,  9, __,  2 [__/__,  69] {__/__, __}
+    feet=gear.Nyame_B_feet,         -- 40, __,  4,  3 [ 7/ 7, 150] {__/__, __}
+    neck="Bagua Charm +1",          -- __, __, __, __ [__/__, ___] {__/__, __}; Luopan absorb dmg
+    ear1="Telos Earring",           -- 10,  5,  1, __ [__/__, ___] {__/__, __}
+    ear2="Cessance Earring",        --  6,  3,  3, __ [__/__, ___] {__/__, __}
+    ring1="Chirich Ring +1",        -- 10,  6, __, __ [__/__, ___] {__/__, __}
+    ring2="Chirich Ring +1",        -- 10,  6, __, __ [__/__, ___] {__/__, __}
+    back=gear.GEO_Idle_Cape,        -- __, __, __, __ [__/__,  30] {__/__, 15}
+    waist="Olseni Belt",            -- 20,  3, __, __ [__/__, ___] {__/__, __}
+    -- 341 Acc, 34 Store TP, 21 DA, 21 Haste [36 PDT/36 MDT, 623 M.Eva] {Pet: 0 PDT/0 MDT, 15 Regen}
 
-    -- hands="Gazu Bracelet +1",    -- __/__ [__, __], 96, __, __
-    -- ring2="Chirich Ring +1",     -- __/__ [__, __], 10,  6, __
-    -- 43PDT/43MDT [5 Pet DT, 15 Pet Regen], 367 Acc, 32 Store TP, 17 DA
+    -- Assume Mpaca's Staff         -- 50, __, __, __ [__/__, ___] {__/__, __}
+    -- Assume Khonsu                -- 30, __, __,  4 [ 6/ 6, ___] {__/__, __}
+    -- Assume White Tathlum         -- __,  2, __, __ [__/__, ___] {__/__, __}
+		-- head="Blistering Sallet +1", -- 53, __,  3,  8 [ 3/__,  53] {__/__, __}
+		-- body=gear.Nyame_B_body,      -- 40, __,  5,  3 [ 9/ 9, 139] {__/__, __}
+    -- hands="Gazu Bracelet +1",    -- 96, __, __,  5 [__/__,  43] {__/__, __}
+    -- legs="Jhakri Slops +2",      -- 45,  9, __,  2 [__/__,  69] {__/__, __}
+    -- feet=gear.Nyame_B_feet,      -- 40, __,  4,  3 [ 7/ 7, 150] {__/__, __}
+    -- neck="Combatant's Torque",   -- __,  4, __, __ [__/__, ___] {__/__, __}; Skill+15
+    -- ear1="Telos Earring",        -- 10,  5,  1, __ [__/__, ___] {__/__, __}
+    -- ear2="Cessance Earring",     --  6,  3,  3, __ [__/__, ___] {__/__, __}
+    -- ring1="Chirich Ring +1",     -- 10,  6, __, __ [__/__, ___] {__/__, __}
+    -- ring2="Chirich Ring +1",     -- 10,  6, __, __ [__/__, ___] {__/__, __}
+    -- back=gear.GEO_Idle_Cape,     -- __, __, __, __ [__/__,  30] {__/__, 15}
+    -- waist="Olseni Belt",         -- 20,  3, __, __ [__/__, ___] {__/__, __}
+    -- 410 Acc, 38 Store TP, 16 DA, 25 Haste [25 PDT/22 MDT, 484 M.Eva] {Pet: 0 PDT/0 MDT, 15 Regen}
   }
 	sets.engaged.Staff.Safe = {
-    -- Malignance Pole              -- 20/20 [__, __], 40, __, __
-    -- Tzacab Grip                  -- __/__ [__, __], 10, __, __
-    -- Dunna                        -- __/__ [ 5, __], __, __, __
-		head=gear.Nyame_B_head,         --  7/ 7 [__, __], 40, __,  4
-		body=gear.Nyame_B_body,         --  9/ 9 [__, __], 40, __,  5
-    hands="Geomancy Mitaines +2",   --  2/__ [12, __], __, __, __
-    legs="Jhakri Slops +2",         -- __/__ [__, __], 45,  9, __
-    feet=gear.Nyame_B_feet,         --  7/ 7 [__, __], 40, __,  4
-    neck="Carnal Torque",           -- __/__ [__, __], __, __, __; Staff skill
-    ear1="Telos Earring",           -- __/__ [__, __], 10,  5,  1
-    ear2="Cessance Earring",        -- __/__ [__, __],  6,  3,  3
-    ring1="Chirich Ring +1",        -- __/__ [__, __], 10,  6, __
-    ring2="Petrov Ring",            -- __/__ [__, __], __,  5,  1
-    back=gear.GEO_Idle_Cape,        -- __/__ [__, 15], __, __, __
-    waist="Olseni Belt",            -- __/__ [__, __], 20,  3, __
-    -- 45PDT/43MDT [17 Pet DT, 15 Pet Regen], 261 Acc, 31 Store TP, 18 DA
+    -- Assume Mpaca's Staff         -- 50, __, __, __ [__/__, ___] {__/__, __}
+    -- Assume Khonsu                -- 30, __, __,  4 [ 6/ 6, ___] {__/__, __}
+    -- Assume Dunna                 -- __, __, __, __ [__/__, ___] { 5/ 5, __}
+		head=gear.Nyame_B_head,         -- 40, __,  4,  6 [ 7/ 7, 123] {__/__, __}
+		body=gear.Nyame_B_body,         -- 40, __,  5,  3 [ 9/ 9, 139] {__/__, __}
+    hands="Geomancy Mitaines +2",   -- __, __, __,  3 [ 2/__,  47] {12/12, __}
+    legs=gear.Nyame_B_legs,         -- 40, __,  5,  5 [ 8/ 8, 150] {__/__, __}
+    feet=gear.Nyame_B_feet,         -- 40, __,  4,  3 [ 7/ 7, 150] {__/__, __}
+    neck="Bagua Charm +1",          -- __, __, __, __ [__/__, ___] {__/__, __}; Luopan absorb dmg
+    ear1="Telos Earring",           -- 10,  5,  1, __ [__/__, ___] {__/__, __}
+    ear2="Cessance Earring",        --  6,  3,  3, __ [__/__, ___] {__/__, __}
+    ring1="Chirich Ring +1",        -- 10,  6, __, __ [__/__, ___] {__/__, __}
+    ring2="Chirich Ring +1",        -- 10,  6, __, __ [__/__, ___] {__/__, __}
+    back=gear.GEO_Idle_Cape,        -- __, __, __, __ [__/__,  30] {__/__, 15}
+    waist="Olseni Belt",            -- 20,  3, __, __ [__/__, ___] {__/__, __}
+    -- 296 Acc, 23 Store TP, 22 DA, 24 Haste [39 PDT/37 MDT, 639 M.Eva] {Pet: 17 PDT/17 MDT, 15 Regen}
 
-    -- hands="Geomancy Mitaines +3",--  3/__ [13, __], __, __, __
-    -- ear1="Hypaspist Earring",    -- -5/__ [ 5,  1], __, __, __
-    -- ear2="Handler's Earring +1", -- __/__ [ 4, __], __, __, __
-    -- ring1="Defending Ring",      -- 10/10 [__, __], __, __, __
-    -- ring2="Thurandaut Ring +1"   -- __/__ [ 4, __], __, __, __
-    -- 51PDT/53MDT [31 Pet DT, 16 Pet Regen], 235 Acc, 12 Store TP, 13 DA
+    -- Assume Mpaca's Staff         -- 50, __, __, __ [__/__, ___] {__/__, __}
+    -- Assume Khonsu                -- 30, __, __,  4 [ 6/ 6, ___] {__/__, __}
+    -- Assume Dunna                 -- __, __, __, __ [__/__, ___] { 5/ 5, __}
+		-- head=gear.Nyame_B_head,      -- 40, __,  4,  6 [ 7/ 7, 123] {__/__, __}
+		-- body=gear.Nyame_B_body,      -- 40, __,  5,  3 [ 9/ 9, 139] {__/__, __}
+    -- hands="Geomancy Mitaines +3",-- __, __, __,  3 [ 3/__,  57] {13/13, __}
+    -- legs=gear.Nyame_B_legs,      -- 40, __,  5,  5 [ 8/ 8, 150] {__/__, __}
+    -- feet=gear.Nyame_B_feet,      -- 40, __,  4,  3 [ 7/ 7, 150] {__/__, __}
+    -- neck="Bagua Charm +1",       -- __, __, __, __ [__/__, ___] {__/__, __}; Luopan absorb dmg
+    -- ear1="Telos Earring",        -- 10,  5,  1, __ [__/__, ___] {__/__, __}
+    -- ear2="Azimuth Earring +2",   -- __, __, __, __ [ 7/ 7, ___] {__/__, __}
+    -- ring1="Chirich Ring +1",     -- 10,  6, __, __ [__/__, ___] {__/__, __}
+    -- ring2="Chirich Ring +1",     -- 10,  6, __, __ [__/__, ___] {__/__, __}
+    -- back=gear.GEO_Idle_Cape,     -- __, __, __, __ [__/__,  30] {__/__, 15}
+    -- waist="Olseni Belt",         -- 20,  3, __, __ [__/__, ___] {__/__, __}
+    -- 290 Acc, 20 Store TP, 19 DA, 24 Haste [47 PDT/44 MDT, 619 M.Eva] {Pet: 18 PDT/18 MDT, 15 Regen}
   }
 
-  -- Used for all clubs except Idris
-	sets.engaged.Club = {
-    -- Assume Maxentius             -- __/__ [__, __], 40, __, __
-    -- Genmei Shield                -- 10/__ [__, __], 15, __, __
-    -- Dunna                        -- __/__ [ 5, __], __, __, __
-		head=gear.Nyame_B_head,         --  7/ 7 [__, __], 40, __,  4
-		body=gear.Nyame_B_body,         --  9/ 9 [__, __], 40, __,  5
-    hands=gear.Nyame_B_hands,       --  7/ 7 [__, __], 40, __,  4
-    legs="Jhakri Slops +2",         -- __/__ [__, __], 45,  9, __
-    feet=gear.Nyame_B_feet,         --  7/ 7 [__, __], 40, __,  4
-    neck="Acantha Torque",          -- __/__ [__, __], __, __, __; Club skill
-    ear1="Telos Earring",           -- __/__ [__, __], 10,  5,  1
-    ear2="Cessance Earring",        -- __/__ [__, __],  6,  3,  3
-    ring1="Chirich Ring +1",        -- __/__ [__, __], 10,  6, __
-    ring2="Petrov Ring",            -- __/__ [__, __], __,  5,  1
-    back=gear.GEO_Idle_Cape,        -- __/__ [__, 15], __, __, __
-    waist="Olseni Belt",            -- __/__ [__, __], 20,  3, __
-    -- 40PDT/30MDT [5 Pet DT, 15 Pet Regen], 306 Acc, 31 Store TP, 22 DA
+	sets.engaged.Maxentius = {
+    -- Assume Maxentius             -- 40, __, __, __ [__/__, ___] {__/__, __}
+    -- Assume Genmei Shield         -- 15, __, __, __ [10/__, ___] {__/__, __}
+    -- Assume White Tathlum         -- __,  2, __, __ [__/__, ___] {__/__, __}
+		head=gear.Nyame_B_head,         -- 40, __,  4,  6 [ 7/ 7, 123] {__/__, __}
+		body=gear.Nyame_B_body,         -- 40, __,  5,  3 [ 9/ 9, 139] {__/__, __}
+    hands=gear.Nyame_B_hands,       -- 40, __,  4,  3 [ 7/ 7, 112] {__/__, __}
+    legs="Jhakri Slops +2",         -- 45,  9, __,  2 [__/__,  69] {__/__, __}
+    feet=gear.Nyame_B_feet,         -- 40, __,  4,  3 [ 7/ 7, 150] {__/__, __}
+    neck="Bagua Charm +1",          -- __, __, __, __ [__/__, ___] {__/__, __}; Luopan absorb dmg
+    ear1="Telos Earring",           -- 10,  5,  1, __ [__/__, ___] {__/__, __}
+    ear2="Cessance Earring",        --  6,  3,  3, __ [__/__, ___] {__/__, __}
+    ring1="Chirich Ring +1",        -- 10,  6, __, __ [__/__, ___] {__/__, __}
+    ring2="Chirich Ring +1",        -- 10,  6, __, __ [__/__, ___] {__/__, __}
+    back=gear.GEO_Idle_Cape,        -- __, __, __, __ [__/__,  30] {__/__, 15}
+    waist="Olseni Belt",            -- 20,  3, __, __ [__/__, ___] {__/__, __}
+    -- 316 Acc, 34 Store TP, 21 DA, 17 Haste [40 PDT/30 MDT, 623 M.Eva] {Pet: 0 PDT/0 MDT, 15 Regen}
 
-    -- hands="Gazu Bracelet +1",    -- __/__ [__, __], 96, __, __
-    -- ring2="Chirich Ring +1",     -- __/__ [__, __], 10,  6, __
-    -- 33PDT/23MDT [5 Pet DT, 15 Pet Regen], 372 Acc, 32 Store TP, 17 DA
+    -- Assume Maxentius             -- 40, __, __, __ [__/__, ___] {__/__, __}
+    -- Assume Genmei Shield         -- 15, __, __, __ [10/__, ___] {__/__, __}
+    -- Assume White Tathlum         -- __,  2, __, __ [__/__, ___] {__/__, __}
+		-- head="Blistering Sallet +1", -- 53, __,  3,  8 [ 3/__,  53] {__/__, __}
+		-- body=gear.Nyame_B_body,      -- 40, __,  5,  3 [ 9/ 9, 139] {__/__, __}
+    -- hands="Gazu Bracelet +1",    -- 96, __, __,  5 [__/__,  43] {__/__, __}
+    -- legs="Jhakri Slops +2",      -- 45,  9, __,  2 [__/__,  69] {__/__, __}
+    -- feet=gear.Nyame_B_feet,      -- 40, __,  4,  3 [ 7/ 7, 150] {__/__, __}
+    -- neck="Combatant's Torque",   -- __,  4, __, __ [__/__, ___] {__/__, __}; Skill+15
+    -- ear1="Telos Earring",        -- 10,  5,  1, __ [__/__, ___] {__/__, __}
+    -- ear2="Cessance Earring",     --  6,  3,  3, __ [__/__, ___] {__/__, __}
+    -- ring1="Chirich Ring +1",     -- 10,  6, __, __ [__/__, ___] {__/__, __}
+    -- ring2="Chirich Ring +1",     -- 10,  6, __, __ [__/__, ___] {__/__, __}
+    -- back=gear.GEO_Idle_Cape,     -- __, __, __, __ [__/__,  30] {__/__, 15}
+    -- waist="Goading Belt",        -- __,  5, __,  5 [__/__, ___] {__/__, __}
+    -- 365 Acc, 40 Store TP, 16 DA, 26 Haste [29 PDT/16 MDT, 484 M.Eva] {Pet: 0 PDT/0 MDT, 15 Regen}
   }
-	sets.engaged.Club.Safe = {
-    -- Assume Maxentius             -- __/__ [__, __], 40, __, __
-    -- Genmei Shield                -- 10/__ [__, __], 15, __, __
-    -- Dunna                        -- __/__ [ 5, __], __, __, __
-		head=gear.Nyame_B_head,         --  7/ 7 [__, __], 40, __,  4
-		body=gear.Nyame_B_body,         --  9/ 9 [__, __], 40, __,  5
-    hands="Geomancy Mitaines +2",   --  2/__ [12, __], __, __, __
-    legs="Jhakri Slops +2",         -- __/__ [__, __], 45,  9, __
-    feet=gear.Nyame_B_feet,         --  7/ 7 [__, __], 40, __,  4
-    neck="Loricate Torque +1",      --  6/ 6 [__, __], __, __, __
-    ear1="Telos Earring",           -- __/__ [__, __], 10,  5,  1
-    ear2="Cessance Earring",        -- __/__ [__, __],  6,  3,  3
-    ring1="Chirich Ring +1",        -- __/__ [__, __], 10,  6, __
-    ring2="Defending Ring",         -- 10/10 [__, __], __, __, __
-    back=gear.GEO_Idle_Cape,        -- __/__ [__, 15], __, __, __
-    waist="Olseni Belt",            -- __/__ [__, __], 20,  3, __
-    -- 51PDT/39MDT [17 Pet DT, 15 Pet Regen], 266 Acc, 26 Store TP, 17 DA
+	sets.engaged.Maxentius.Safe = {
+    -- Assume Maxentius             -- 40, __, __, __ [__/__, ___] {__/__, __}
+    -- Assume Genmei Shield         -- 15, __, __, __ [10/__, ___] {__/__, __}
+    -- Assume Dunna                 -- __, __, __, __ [__/__, ___] { 5/ 5, __}
+		head=gear.Nyame_B_head,         -- 40, __,  4,  6 [ 7/ 7, 123] {__/__, __}
+		body=gear.Nyame_B_body,         -- 40, __,  5,  3 [ 9/ 9, 139] {__/__, __}
+    hands="Geomancy Mitaines +2",   -- __, __, __,  3 [ 2/__,  47] {12/12, __}
+    legs=gear.Nyame_B_legs,         -- 40, __,  5,  5 [ 8/ 8, 150] {__/__, __}
+    feet=gear.Nyame_B_feet,         -- 40, __,  4,  3 [ 7/ 7, 150] {__/__, __}
+    neck="Bagua Charm +1",          -- __, __, __, __ [__/__, ___] {__/__, __}; Luopan absorb dmg
+    ear1="Telos Earring",           -- 10,  5,  1, __ [__/__, ___] {__/__, __}
+    ear2="Cessance Earring",        --  6,  3,  3, __ [__/__, ___] {__/__, __}
+    ring1="Chirich Ring +1",        -- 10,  6, __, __ [__/__, ___] {__/__, __}
+    ring2="Chirich Ring +1",        -- 10,  6, __, __ [__/__, ___] {__/__, __}
+    back=gear.GEO_Idle_Cape,        -- __, __, __, __ [__/__,  30] {__/__, 15}
+    waist="Olseni Belt",            -- 20,  3, __, __ [__/__, ___] {__/__, __}
+    -- 271 Acc, 23 Store TP, 22 DA, 20 Haste [43 PDT/31 MDT, 639 M.Eva] {Pet: 17 PDT/17 MDT, 15 Regen}
 
-    -- hands="Geomancy Mitaines +3",--  3/__ [13, __], __, __, __
-    -- ear1="Hypaspist Earring",    -- -5/__ [ 5,  1], __, __, __
-    -- ear2="Handler's Earring +1", -- __/__ [ 4, __], __, __, __
-    -- ring1="Thurandaut Ring +1"   -- __/__ [ 4, __], __, __, __
-    -- 47PDT/39MDT [31 Pet DT, 16 Pet Regen], 240 Acc, 12 Store TP, 13 DA
+    -- Assume Maxentius             -- 40, __, __, __ [__/__, ___] {__/__, __}
+    -- Assume Genmei Shield         -- 15, __, __, __ [10/__, ___] {__/__, __}
+    -- Assume Dunna                 -- __, __, __, __ [__/__, ___] { 5/ 5, __}
+		-- head="Azimuth Hood +3",      -- 61, __, __,  6 [12/12, 136] {__/__,  5}
+		-- body=gear.Nyame_B_body,      -- 40, __,  5,  3 [ 9/ 9, 139] {__/__, __}
+    -- hands="Geomancy Mitaines +3",-- __, __, __,  3 [ 3/__,  57] {13/13, __}
+    -- legs=gear.Nyame_B_legs,      -- 40, __,  5,  5 [ 8/ 8, 150] {__/__, __}
+    -- feet="Azimuth Gaiters +3",   -- 60, __, __,  3 [11/11, 168] {__/__, __}
+    -- neck="Bagua Charm +1",       -- __, __, __, __ [__/__, ___] {__/__, __}; Luopan absorb dmg
+    -- ear1="Telos Earring",        -- 10,  5,  1, __ [__/__, ___] {__/__, __}
+    -- ear2="Cessance Earring",     --  6,  3,  3, __ [__/__, ___] {__/__, __}
+    -- ring1="Chirich Ring +1",     -- 10,  6, __, __ [__/__, ___] {__/__, __}
+    -- ring2="Chirich Ring +1",     -- 10,  6, __, __ [__/__, ___] {__/__, __}
+    -- back=gear.GEO_Idle_Cape,     -- __, __, __, __ [__/__,  30] {__/__, 15}
+    -- waist="Goading Belt",        -- __,  5, __,  5 [__/__, ___] {__/__, __}
+    -- 292 Acc, 25 Store TP, 14 DA, 25 Haste [53 PDT/40 MDT, 680 M.Eva] {Pet: 18 PDT/18 MDT, 20 Regen}
   }
 
-  -- Used for Idris only
 	sets.engaged.Idris = {
-    main="Idris",                   -- __/__ [25, __], 30, __, __
-    sub="Genmei Shield",            -- 10/__ [__, __], 15, __, __
-    range="Dunna",                  -- __/__ [ 5, __], __, __, __
-    ammo=empty,
-		head=gear.Nyame_B_head,         --  7/ 7 [__, __], 40, __,  4
-		body=gear.Nyame_B_body,         --  9/ 9 [__, __], 40, __,  5
-    hands=gear.Nyame_B_hands,       --  7/ 7 [__, __], 40, __,  4
-    legs="Jhakri Slops +2",         -- __/__ [__, __], 45,  9, __
-    feet=gear.Nyame_B_feet,         --  7/ 7 [__, __], 40, __,  4
-    neck="Bagua Charm +1",          -- __/__ [__, __], __, __, __; Luopan dmg absorb
-    ear1="Telos Earring",           -- __/__ [__, __], 10,  5,  1
-    ear2="Cessance Earring",        -- __/__ [__, __],  6,  3,  3
-    ring1="Chirich Ring +1",        -- __/__ [__, __], 10,  6, __
-    ring2="Petrov Ring",            -- __/__ [__, __], __,  5,  1
-    back=gear.GEO_Idle_Cape,        -- __/__ [__, 15], __, __, __
-    waist="Olseni Belt",            -- __/__ [__, __], 20,  3, __
-    -- 40PDT/30MDT [30 Pet DT, 15 Pet Regen], 296 Acc, 31 Store TP, 22 DA
+    -- Assume Idris                 -- 30, __, __, __ [__/__, ___] {25/25, __}
+    -- Assume Genmei Shield         -- 15, __, __, __ [10/__, ___] {__/__, __}
+    -- Assume White Tathlum         -- __,  2, __, __ [__/__, ___] {__/__, __}
+		head=gear.Nyame_B_head,         -- 40, __,  4,  6 [ 7/ 7, 123] {__/__, __}
+		body=gear.Nyame_B_body,         -- 40, __,  5,  3 [ 9/ 9, 139] {__/__, __}
+    hands=gear.Nyame_B_hands,       -- 40, __,  4,  3 [ 7/ 7, 112] {__/__, __}
+    legs="Jhakri Slops +2",         -- 45,  9, __,  2 [__/__,  69] {__/__, __}
+    feet=gear.Nyame_B_feet,         -- 40, __,  4,  3 [ 7/ 7, 150] {__/__, __}
+    neck="Bagua Charm +1",          -- __, __, __, __ [__/__, ___] {__/__, __}; Luopan absorb dmg
+    ear1="Telos Earring",           -- 10,  5,  1, __ [__/__, ___] {__/__, __}
+    ear2="Cessance Earring",        --  6,  3,  3, __ [__/__, ___] {__/__, __}
+    ring1="Chirich Ring +1",        -- 10,  6, __, __ [__/__, ___] {__/__, __}
+    ring2="Chirich Ring +1",        -- 10,  6, __, __ [__/__, ___] {__/__, __}
+    back=gear.GEO_Idle_Cape,        -- __, __, __, __ [__/__,  30] {__/__, 15}
+    waist="Olseni Belt",            -- 20,  3, __, __ [__/__, ___] {__/__, __}
+    -- 306 Acc, 34 Store TP, 21 DA, 17 Haste [40 PDT/30 MDT, 623 M.Eva] {Pet: 25 PDT/25 MDT, 15 Regen}
 
-    -- hands="Gazu Bracelet +1",    -- __/__ [__, __], 96, __, __
-    -- neck="Acantha Torque",       -- __/__ [__, __], __, __, __; Club skill
-    -- ring2="Chirich Ring +1",     -- __/__ [__, __], 10,  6, __
-    -- 33PDT/23MDT [30 Pet DT, 15 Pet Regen], 362 Acc, 32 Store TP, 17 DA
+    -- Assume Idris                 -- 30, __, __, __ [__/__, ___] {25/25, __}
+    -- Assume Genmei Shield         -- 15, __, __, __ [10/__, ___] {__/__, __}
+    -- Assume White Tathlum         -- __,  2, __, __ [__/__, ___] {__/__, __}
+		-- head="Blistering Sallet +1", -- 53, __,  3,  8 [ 3/__,  53] {__/__, __}
+		-- body=gear.Nyame_B_body,      -- 40, __,  5,  3 [ 9/ 9, 139] {__/__, __}
+    -- hands="Gazu Bracelet +1",    -- 96, __, __,  5 [__/__,  43] {__/__, __}
+    -- legs="Jhakri Slops +2",      -- 45,  9, __,  2 [__/__,  69] {__/__, __}
+    -- feet=gear.Nyame_B_feet,      -- 40, __,  4,  3 [ 7/ 7, 150] {__/__, __}
+    -- neck="Combatant's Torque",   -- __,  4, __, __ [__/__, ___] {__/__, __}; Skill+15
+    -- ear1="Telos Earring",        -- 10,  5,  1, __ [__/__, ___] {__/__, __}
+    -- ear2="Cessance Earring",     --  6,  3,  3, __ [__/__, ___] {__/__, __}
+    -- ring1="Chirich Ring +1",     -- 10,  6, __, __ [__/__, ___] {__/__, __}
+    -- ring2="Chirich Ring +1",     -- 10,  6, __, __ [__/__, ___] {__/__, __}
+    -- back=gear.GEO_Idle_Cape,     -- __, __, __, __ [__/__,  30] {__/__, 15}
+    -- waist="Goading Belt",        -- __,  5, __,  5 [__/__, ___] {__/__, __}
+    -- 355 Acc, 40 Store TP, 16 DA, 26 Haste [29 PDT/16 MDT, 484 M.Eva] {Pet: 25 PDT/25 MDT, 15 Regen}
   }
   sets.engaged.Idris.Safe = {
-    main="Idris",                   -- __/__ [25, __], 30, __, __
-    sub="Genmei Shield",            -- 10/__ [__, __], 15, __, __
-    range="Dunna",                  -- __/__ [ 5, __], __, __, __
-    ammo=empty,
-		head=gear.Nyame_B_head,         --  7/ 7 [__, __], 40, __,  4
-		body=gear.Nyame_B_body,         --  9/ 9 [__, __], 40, __,  5
-    hands="Geomancy Mitaines +2",   --  2/__ [12, __], __, __, __
-    legs="Jhakri Slops +2",         -- __/__ [__, __], 45,  9, __
-    feet=gear.Nyame_B_feet,         --  7/ 7 [__, __], 40, __,  4
-    neck="Loricate Torque +1",      --  6/ 6 [__, __], __, __, __
-    ear1="Telos Earring",           -- __/__ [__, __], 10,  5,  1
-    ear2="Cessance Earring",        -- __/__ [__, __],  6,  3,  3
-    ring1="Chirich Ring +1",        -- __/__ [__, __], 10,  6, __
-    ring2="Defending Ring",         -- 10/10 [__, __], __, __, __
-    back=gear.GEO_Idle_Cape,        -- __/__ [__, 15], __, __, __
-    waist="Olseni Belt",            -- __/__ [__, __], 20,  3, __
-    -- 51PDT/39MDT [42 Pet DT, 15 Pet Regen], 256 Acc, 26 Store TP, 17 DA
+    -- Assume Idris                 -- 30, __, __, __ [__/__, ___] {25/25, __}
+    -- Assume Genmei Shield         -- 15, __, __, __ [10/__, ___] {__/__, __}
+    -- Assume White Tathlum         -- __,  2, __, __ [__/__, ___] {__/__, __}
+		head=gear.Nyame_B_head,         -- 40, __,  4,  6 [ 7/ 7, 123] {__/__, __}
+		body=gear.Nyame_B_body,         -- 40, __,  5,  3 [ 9/ 9, 139] {__/__, __}
+    hands="Geomancy Mitaines +2",   -- __, __, __,  3 [ 2/__,  47] {12/12, __}
+    legs=gear.Nyame_B_legs,         -- 40, __,  5,  5 [ 8/ 8, 150] {__/__, __}
+    feet=gear.Nyame_B_feet,         -- 40, __,  4,  3 [ 7/ 7, 150] {__/__, __}
+    neck="Bagua Charm +1",          -- __, __, __, __ [__/__, ___] {__/__, __}; Luopan absorb dmg
+    ear1="Telos Earring",           -- 10,  5,  1, __ [__/__, ___] {__/__, __}
+    ear2="Cessance Earring",        --  6,  3,  3, __ [__/__, ___] {__/__, __}
+    ring1="Chirich Ring +1",        -- 10,  6, __, __ [__/__, ___] {__/__, __}
+    ring2="Chirich Ring +1",        -- 10,  6, __, __ [__/__, ___] {__/__, __}
+    back=gear.GEO_Idle_Cape,        -- __, __, __, __ [__/__,  30] {__/__, 15}
+    waist="Olseni Belt",            -- 20,  3, __, __ [__/__, ___] {__/__, __}
+    -- 261 Acc, 25 Store TP, 22 DA, 20 Haste [43 PDT/31 MDT, 639 M.Eva] {Pet: 37 PDT/37 MDT, 15 Regen}
 
-    -- hands="Geomancy Mitaines +3",--  3/__ [13, __], __, __, __
-    -- 52PDT/39MDT [43 Pet DT, 15 Pet Regen], 256 Acc, 26 Store TP, 17 DA
+    -- Assume Idris                 -- 30, __, __, __ [__/__, ___] {25/25, __}
+    -- Assume Genmei Shield         -- 15, __, __, __ [10/__, ___] {__/__, __}
+    -- Assume White Tathlum         -- __,  2, __, __ [__/__, ___] {__/__, __}
+		-- head="Azimuth Hood +3",      -- 61, __, __,  6 [12/12, 136] {__/__,  5}
+		-- body=gear.Nyame_B_body,      -- 40, __,  5,  3 [ 9/ 9, 139] {__/__, __}
+    -- hands="Geomancy Mitaines +3",-- __, __, __,  3 [ 3/__,  57] {13/13, __}
+    -- legs=gear.Nyame_B_legs,      -- 40, __,  5,  5 [ 8/ 8, 150] {__/__, __}
+    -- feet="Azimuth Gaiters +3",   -- 60, __, __,  3 [11/11, 168] {__/__, __}
+    -- neck="Bagua Charm +1",       -- __, __, __, __ [__/__, ___] {__/__, __}; Luopan absorb dmg
+    -- ear1="Telos Earring",        -- 10,  5,  1, __ [__/__, ___] {__/__, __}
+    -- ear2="Cessance Earring",     --  6,  3,  3, __ [__/__, ___] {__/__, __}
+    -- ring1="Chirich Ring +1",     -- 10,  6, __, __ [__/__, ___] {__/__, __}
+    -- ring2="Chirich Ring +1",     -- 10,  6, __, __ [__/__, ___] {__/__, __}
+    -- back=gear.GEO_Idle_Cape,     -- __, __, __, __ [__/__,  30] {__/__, 15}
+    -- waist="Goading Belt",        -- __,  5, __,  5 [__/__, ___] {__/__, __}
+    -- 282 Acc, 27 Store TP, 14 DA, 25 Haste [53 PDT/40 MDT, 680 M.Eva] {Pet: 38 PDT/38 MDT, 20 Regen}
   }
 
 
@@ -1501,23 +1590,45 @@ function init_gear_sets()
   }
 
   sets.WeaponSet = {}
-  sets.WeaponSet['Idris'] = {
-    main="Idris",
-    sub="Genmei Shield",
+  sets.WeaponSet['Staff'] = {
+    main="Xoanon",
+    sub="Khonsu",
+    range=empty,
+    ammo="Staunch Tathlum +1",
+    -- ammo="White Tathlum",
+  }
+  sets.WeaponSet['Staff'].Safe = {
+    main="Xoanon",
+    sub="Khonsu",
     range="Dunna",
     ammo=empty,
   }
   sets.WeaponSet['Maxentius'] = {
     main="Maxentius",
     sub="Genmei Shield",
+    range=empty,
+    ammo="Staunch Tathlum +1",
+    -- ammo="White Tathlum",
+  }
+  sets.WeaponSet['Maxentius'].Safe = {
+    main="Maxentius",
+    sub="Genmei Shield",
     range="Dunna",
     ammo=empty,
   }
-  sets.WeaponSet['Staff'] = {
-    main="Malignance Pole",
-    sub="Tzacab Grip",
-    range="Dunna",
-    ammo=empty,
+  sets.WeaponSet['Idris'] = {
+    main="Idris",
+    sub="Genmei Shield",
+    range=empty,
+    ammo="Staunch Tathlum +1",
+    -- ammo="White Tathlum",
+  }
+  sets.WeaponSet['Idris'].Safe = {
+    main="Idris",
+    sub="Genmei Shield",
+    range=empty,
+    ammo="Staunch Tathlum +1",
+    -- ammo="White Tathlum",
   }
 end
 
@@ -1603,7 +1714,7 @@ function job_post_precast(spell, action, spellMap, eventArgs)
 
   -- Always put this last in job_post_precast
   if in_battle_mode() then
-    equip(sets.WeaponSet[state.WeaponSet.current])
+    equip(select_weapons())
   end
 
   ----------- Non-silibs content goes above this line -----------
@@ -1660,7 +1771,7 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
 
   -- Always put this last in job_post_midcast
   if in_battle_mode() and not spell.type == 'Geomancy' then
-    equip(sets.WeaponSet[state.WeaponSet.current])
+    equip(select_weapons())
   end
 
   ----------- Non-silibs content goes above this line -----------
@@ -1689,7 +1800,7 @@ function job_aftercast(spell, action, spellMap, eventArgs)
   end
 
   if in_battle_mode() then
-    equip(sets.WeaponSet[state.WeaponSet.current])
+    equip(select_weapons())
   end
 end
 
@@ -1770,39 +1881,13 @@ function customize_idle_set(idleSet)
   end
 
   if in_battle_mode() then
-    idleSet = set_combine(idleSet, sets.WeaponSet[state.WeaponSet.current])
+    idleSet = set_combine(idleSet, select_weapons())
   end
 
   return idleSet
 end
 
 function customize_melee_set(meleeSet)
-  if player.equipment.main == 'Idris' then
-    if state.OffenseMode.value == 'Safe' then
-      meleeSet = set_combine(meleeSet, sets.engaged.Idris.Safe)
-    else
-      meleeSet = set_combine(meleeSet, sets.engaged.Idris)
-    end
-  else
-    local _, weapon = res.items:find(function(item)
-      return item.en == player.equipment.main
-    end)
-    if weapon.skill == 12 then
-      -- If staff equipped, use staff engaged set
-      if state.OffenseMode.value == 'Safe' then
-        meleeSet = set_combine(meleeSet, sets.engaged.Staff.Safe)
-      else
-        meleeSet = set_combine(meleeSet, sets.engaged.Staff)
-      end
-    elseif weapon.skill == 11 then
-      -- If club equipped, use club engaged set
-      if state.OffenseMode.value == 'Safe' then
-        meleeSet = set_combine(meleeSet, sets.engaged.Club.Safe)
-      else
-        meleeSet = set_combine(meleeSet, sets.engaged.Club)
-      end
-    end
-  end
   if state.CP.current == 'on' then
     meleeSet = set_combine(meleeSet, sets.CP)
   end
@@ -1819,27 +1904,13 @@ function customize_melee_set(meleeSet)
   end
 
   if in_battle_mode() then
-    meleeSet = set_combine(meleeSet, sets.WeaponSet[state.WeaponSet.current])
+    meleeSet = set_combine(meleeSet, select_weapons())
   end
 
   return meleeSet
 end
 
 function customize_defense_set(defenseSet)
-  if player.equipment.main == 'Idris' then
-    defenseSet = set_combine(defenseSet, sets.engaged.Idris.Safe)
-  else
-    local _, weapon = res.items:find(function(item)
-      return item.en == player.equipment.main
-    end)
-    if weapon.skill == 12 then
-      -- If staff equipped, use staff engaged set
-      defenseSet = set_combine(defenseSet, sets.engaged.Staff.Safe)
-    elseif weapon.skill == 11 then
-      -- If club equipped, use club engaged set
-      defenseSet = set_combine(defenseSet, sets.engaged.Club.Safe)
-    end
-  end
   if state.CP.current == 'on' then
     defenseSet = set_combine(defenseSet, sets.CP)
   end
@@ -1856,7 +1927,7 @@ function customize_defense_set(defenseSet)
   end
 
   if in_battle_mode() then
-    defenseSet = set_combine(defenseSet, sets.WeaponSet[state.WeaponSet.current])
+    defenseSet = set_combine(defenseSet, select_weapons())
   end
 
   return defenseSet
@@ -2131,4 +2202,16 @@ function item_available(item)
 	else
 		return false
 	end
+end
+
+function select_weapons()
+  if sets.WeaponSet[state.WeaponSet.current] then
+    if state.OffenseMode.current == 'Safe' and sets.WeaponSet[state.WeaponSet.current].Safe then
+      return sets.WeaponSet[state.WeaponSet.current].Safe
+    else
+      return sets.WeaponSet[state.WeaponSet.current]
+    end
+  else
+    return {}
+  end
 end
