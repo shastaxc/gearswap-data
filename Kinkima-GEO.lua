@@ -35,11 +35,11 @@ function job_setup()
 
   state.WeaponSet = M{['description']='Weapon Set', 'Casting', 'Idris', 'Maxentius', 'Staff'}
   state.CP = M(false, "Capacity Points Mode")
-	state.RecoverMode = M('Always', '60%', '35%', 'Never')
+  state.RecoverMode = M('Always', '60%', '35%', 'Never')
   state.MagicBurst = M(true, 'Magic Burst')
-	state.ElementalMode = M{['description'] = 'Elemental Mode', 'Light','Dark','Fire','Ice','Wind','Earth','Lightning','Water'}
+  state.ElementalMode = M{['description'] = 'Elemental Mode', 'Light','Dark','Fire','Ice','Wind','Earth','Lightning','Water'}
 
-	state.Buff.Entrust = buffactive.Entrust or false
+  state.Buff.Entrust = buffactive.Entrust or false
 
   indi_timer = '' -- DO NOT MODIFY
   indi_duration = 266 -- Update with your actual indi duration
@@ -69,16 +69,16 @@ function job_setup()
   send_command('bind ^delete gs c weaponset cycleback')
 
   send_command('bind @c gs c toggle CP')
-	send_command('bind !` gs c toggle MagicBurst')
-	send_command('bind @q gs c cycle RecoverMode')
+  send_command('bind !` gs c toggle MagicBurst')
+  send_command('bind @q gs c cycle RecoverMode')
 
   send_command('bind ^pageup gs c cycleback ElementalMode')
   send_command('bind ^pagedown gs c cycle ElementalMode')
   send_command('bind !pagedown gs c reset ElementalMode')
   
-	send_command('bind !` input /ja "Full Circle" <me>')
-	send_command('bind ^backspace input /ja "Entrust" <me>')
-	send_command('bind !backspace input /ja "Life Cycle" <me>')
+  send_command('bind !` input /ja "Full Circle" <me>')
+  send_command('bind ^backspace input /ja "Entrust" <me>')
+  send_command('bind !backspace input /ja "Life Cycle" <me>')
 end
 
 -- Executes on first load, main job change, **and sub job change**
@@ -118,8 +118,8 @@ function job_file_unload()
   send_command('unbind ^delete')
 
   send_command('unbind @c')
-	send_command('unbind !`')
-	send_command('unbind @q')
+  send_command('unbind !`')
+  send_command('unbind @q')
 
   send_command('unbind !e')
   send_command('unbind !\'')
@@ -128,9 +128,9 @@ function job_file_unload()
   send_command('unbind ^pagedown')
   send_command('unbind !pagedown')
 
-	send_command('unbind !`')
-	send_command('unbind ^backspace')
-	send_command('unbind !backspace')
+  send_command('unbind !`')
+  send_command('unbind ^backspace')
+  send_command('unbind !backspace')
 end
 
 -- Define sets and vars used by this job file.
@@ -148,12 +148,12 @@ function init_gear_sets()
     waist="Chaac Belt", --1
   }
 
-	--------------------------------------
-	-- Precast sets
-	--------------------------------------
+  --------------------------------------
+  -- Precast sets
+  --------------------------------------
 
-	-- Fast cast sets for spells
-	sets.precast.FC = {
+  -- Fast cast sets for spells
+  sets.precast.FC = {
     main="Idris",                   -- __ [__/__, ___] {25, __}
     sub="Genmei Shield",            -- __ [10/__, ___] {__, __}
     range="Dunna",                  --  3 [__/__, ___] { 5, __}
@@ -177,7 +177,7 @@ function init_gear_sets()
     -- 82 FC [48 PDT / 23 MDT, 479 M.Eva] {43 Pet DT, 0 Pet Regen}
   }
 
-	sets.precast.FC.RDM = set_combine(sets.precast.FC, {
+  sets.precast.FC.RDM = set_combine(sets.precast.FC, {
     main="Idris",                   -- __ [__/__, ___] {25, __}
     sub="Genmei Shield",            -- __ [10/__, ___] {__, __}
     range="Dunna",                  --  3 [__/__, ___] { 5, __}
@@ -204,17 +204,17 @@ function init_gear_sets()
   })
 
   -- TODO: Update
-	sets.precast.FC.Impact = set_combine(sets.precast.FC, {
-		-- head=empty,
-		-- body="Crepuscular Cloak",
+  sets.precast.FC.Impact = set_combine(sets.precast.FC, {
+    -- head=empty,
+    -- body="Crepuscular Cloak",
   })
   -- TODO: Update
-	sets.precast.FC.Impact.RDM = set_combine(sets.precast.FC, {
-		-- head=empty,
-		-- body="Crepuscular Cloak",
+  sets.precast.FC.Impact.RDM = set_combine(sets.precast.FC, {
+    -- head=empty,
+    -- body="Crepuscular Cloak",
   })
 
-	sets.precast.FC.Dispelga = set_combine(sets.precast.FC, {
+  sets.precast.FC.Dispelga = set_combine(sets.precast.FC, {
     main="Daybreak",
     sub="Genmei Shield",
   })
@@ -224,22 +224,22 @@ function init_gear_sets()
   ---------------------------------------- Job Abilities ----------------------------------------
   -----------------------------------------------------------------------------------------------
 
-	-- Precast sets to enhance JAs
-	sets.precast.JA.Bolster = {
+  -- Precast sets to enhance JAs
+  sets.precast.JA.Bolster = {
     body="Bagua Tunic +1",
   }
-	sets.precast.JA['Life Cycle'] = {
+  sets.precast.JA['Life Cycle'] = {
     body="Geomancy Tunic +1",
     back=gear.GEO_Idle_Cape,
     -- body="Geomancy Tunic +3",
   }
-	sets.precast.JA['Radial Arcana'] = {
+  sets.precast.JA['Radial Arcana'] = {
     feet="Bagua Sandals +1",
   }
-	sets.precast.JA['Mending Halation'] = {
+  sets.precast.JA['Mending Halation'] = {
     legs="Bagua Pants +3",
   }
-	sets.precast.JA['Full Circle'] = {
+  sets.precast.JA['Full Circle'] = {
     head="Azimuth Hood +2",
     hands="Bagua Mitaines +1",
     -- head="Azimuth Hood +3",
@@ -253,9 +253,9 @@ function init_gear_sets()
   ---------------------------------------- Weaponskills ----------------------------------------
   ----------------------------------------------------------------------------------------------
 
-	-- Weaponskill sets
-	-- Default set for any weaponskill that isn't any more specifically defined
-	sets.precast.WS = {
+  -- Weaponskill sets
+  -- Default set for any weaponskill that isn't any more specifically defined
+  sets.precast.WS = {
     head=gear.Nyame_B_head,
     body=gear.Nyame_B_body,
     hands=gear.Nyame_B_hands,
@@ -266,7 +266,7 @@ function init_gear_sets()
   -- Physical damage. 2 hit. Damage varies with TP.
   -- 70% MND / 30% STR; 3.0-9.75fTP
   -- TP Bonus > WSD > MND > STR
-	sets.precast.WS['Black Halo'] = {
+  sets.precast.WS['Black Halo'] = {
     -- Assume Idris                 -- ___, __, __, __, __/__ [25]
     -- Assume Genmei Shield         -- ___, __, __, __, 10/__ [__]
     -- Assume Dunna                 -- ___, __, __, __, __/__ [ 5]
@@ -303,7 +303,7 @@ function init_gear_sets()
   -- Physical damage. 1 hit. Attack varies with TP.
   -- 50% MND / 50% INT; 1.5-4.75fTP
   -- WSD > MND > INT
-	sets.precast.WS['Exudiation'] = set_combine(sets.precast.WS['Black Halo'], {
+  sets.precast.WS['Exudiation'] = set_combine(sets.precast.WS['Black Halo'], {
     ear2="Ishvara Earring",
   })
   sets.precast.WS['Exudiation'].MaxTP = sets.precast.WS['Exudiation']
@@ -335,7 +335,7 @@ function init_gear_sets()
   sets.precast.WS['Hexa Strike'].MaxTP = set_combine(sets.precast.WS['Hexa Strike'], {
     ear2="Malignance Earring",
   })
-	sets.precast.WS['Hexa Strike'].Safe = set_combine(sets.precast.WS['Hexa Strike'], {
+  sets.precast.WS['Hexa Strike'].Safe = set_combine(sets.precast.WS['Hexa Strike'], {
     hands="Geomancy Mitaines +3",   -- ___, 43, 16, __,  3/__ [13]
     ring2="Defending Ring",         -- ___, __, __, __, 10/10 [__]
     -- 250 TP Bonus, 0 Crit Dmg,  0 Crit Rate, 190 MND, 143 STR, 35 WSD, 54PDT/42MDT [43PetDT]
@@ -343,7 +343,7 @@ function init_gear_sets()
 
   -- Magical (light). dStat=INT. 50% STR / 50% MND
   -- Light MAB > MAB > M.Dmg > MND > STR > WSD
-	sets.precast.WS['Flash Nova'] = {
+  sets.precast.WS['Flash Nova'] = {
     -- Assume Idris                 -- __, 40,217, __, __, __, __/__ [25]
     -- Assume Genmei Shield         -- __, __, __, __, __, __, 10/__ [__]
     -- Assume Dunna                 -- __, __, __, __, __, __, __/__ [ 5]
@@ -371,7 +371,7 @@ function init_gear_sets()
     -- 10 Light MAB, 378 MAB, 385 M.Dmg, 179 MND, 137 STR, 0 WSD, 29PDT/9MDT [30PetDT]
   }
   sets.precast.WS['Flash Nova'].MaxTP = sets.precast.WS['Flash Nova']
-	sets.precast.WS['Flash Nova'].Safe = {
+  sets.precast.WS['Flash Nova'].Safe = {
     -- Assume Idris                 -- 40,217, __, __, __, __/__ [25]
     -- Assume Genmei Shield         -- __, __, __, __, __, 10/__ [__]
     -- Assume Dunna                 -- __, __, __, __, __, __/__ [ 5]
@@ -397,7 +397,7 @@ function init_gear_sets()
   -- Magical (light). dStat=INT. 40% STR / 40% MND
   -- Damage varies with TP. 2.125-6.125 fTP
   -- TP Bonus > Fotia > Light MAB > MAB > M.Dmg > MND > STR > WSD
-	sets.precast.WS['Seraph Strike'] = set_combine(sets.precast.WS['Flash Nova'], {
+  sets.precast.WS['Seraph Strike'] = set_combine(sets.precast.WS['Flash Nova'], {
     -- neck="Fotia Neck",              -- __, __, __, __, __, __, __/__ [__]; FTP bonus
     ear2="Moonshade Earring",       -- __, __, __, __, __, __, __/__ [__]; TP bonus
     -- waist="Fotia Belt",             -- __, __, __, __, __, __, __/__ [__]; FTP bonus
@@ -443,9 +443,9 @@ function init_gear_sets()
     ear2="Malignance Earring", -- __,  8, __, __
   })
 
-	--------------------------------------
-	-- Midcast sets
-	--------------------------------------
+  --------------------------------------
+  -- Midcast sets
+  --------------------------------------
 
   sets.midcast.FastRecast = sets.precast.FC
 
@@ -460,7 +460,7 @@ function init_gear_sets()
 
   -- Master GEO with full merits = 850 geo skill base (cap at 900)
   -- Lv 99 GEO = 43 Conserve MP base (cap at 100)
-	sets.midcast.Geomancy = {
+  sets.midcast.Geomancy = {
     main="Idris",                   -- 10, __, __ [__/__, ___]
     sub="Genmei Shield",            -- __, __, __ [10/__, ___]
     range="Dunna",                  -- __, 18, __ [__/__, ___]
@@ -538,10 +538,10 @@ function init_gear_sets()
     -- Base stats                   -- __,850, 43
     -- Master level 13              -- __, 26, __
     -- 10 Geomancy, 901 geo skill, 100 Conserve MP [59 PDT/49 MDT, 650 M.Eva]
-	}
+  }
 
-	--Extra Indi duration as long as you can keep your 900 skill cap.
-	sets.midcast.Geomancy.Indi = {
+  --Extra Indi duration as long as you can keep your 900 skill cap.
+  sets.midcast.Geomancy.Indi = {
     main="Idris",                   -- 10, __, __, __, __ [__/__, ___] {25, __}
     sub="Genmei Shield",            -- __, __, __, __, __ [10/__, ___] {__, __}
     range="Dunna",                  -- __, 18, __, __, __ [__/__, ___] { 5, __}
@@ -616,8 +616,8 @@ function init_gear_sets()
     -- 10 Geomancy, 901 geo skill, 99 Conserve MP, 271 Indi Duration, 20 Indi Duration % [52 PDT/ 44 MDT, 607 M.Eva] {Pet: 80 DT, 0 Regen}
   }
 
-	-- Geomancy has no effect on Entrust, skill and duration do.
-	sets.buff.Entrust = set_combine(sets.midcast.Geomancy.Indi, {
+  -- Geomancy has no effect on Entrust, skill and duration do.
+  sets.buff.Entrust = set_combine(sets.midcast.Geomancy.Indi, {
     main=gear.Solstice_D,           -- __,  5,  6, 15, __ [__/__, ___] { 4, __} -- Need to add augs
     sub="Genmei Shield",            -- __, __, __, __, __ [10/__, ___] {__, __}
     range=empty,
@@ -679,7 +679,7 @@ function init_gear_sets()
   })
 
   -- TODO: update
-	sets.midcast.Cursna = sets.midcast.CureNormal
+  sets.midcast.Cursna = sets.midcast.CureNormal
 
   sets.midcast['Elemental Magic'] = {
     main="Bunzi's Rod",
@@ -761,7 +761,7 @@ function init_gear_sets()
   sets.midcast.Aspir = sets.midcast.Drain
   sets.midcast['Aspir III'] = sets.midcast.Drain
 
-	sets.midcast.Stun = {
+  sets.midcast.Stun = {
     main="Contemplator +1",           -- 70, __, 12, __ [__/__, ___] {__/__, __}
     sub="Khonsu",                     -- 30, __, __, __ [ 6/ 6, ___] {__/__, __}
     range="Dunna",                    -- 10, __, __,  3 [__/__, ___] { 5/ 5, __}
@@ -787,9 +787,9 @@ function init_gear_sets()
     -- ear2="Azimuth Earring +2",     -- 20, __, 15, __ [ 7/ 7, ___] {__/__, __}
     -- 396 M.Acc, 8 Dark Magic Skill, 247 INT, 75 FC [26 PDT/13 MDT, 474 M.Eva] {Pet: 18 PDT/18 MDT, 0 Regen}
   }
-	sets.midcast.Stun.Resistant = set_combine(sets.midcast.Stun, {})
+  sets.midcast.Stun.Resistant = set_combine(sets.midcast.Stun, {})
 
-	sets.midcast.Impact = {
+  sets.midcast.Impact = {
     main="Contemplator +1",           -- 70, __, 12 [__/__, ___] {__/__, __}; M.Acc skill+228
     sub="Khonsu",                     -- 30, __, __ [ 6/ 6, ___] {__/__, __}
     range="Dunna",                    -- 10, __, __ [__/__, ___] { 5/ 5, __}
@@ -819,7 +819,7 @@ function init_gear_sets()
     -- 500 M.Acc, 8 Elemental Skill, 289 INT [40 PDT/27 MDT, 590 M.Eva] {Pet: 43 PDT/43 MDT, 0 Regen}
   }
 
-	sets.midcast.Dispel = {
+  sets.midcast.Dispel = {
     main="Contemplator +1",           -- 70, 20, 12 [__/__, ___] {__/__, __}; M.Acc skill+228
     sub="Khonsu",                     -- 30, __, __ [ 6/ 6, ___] {__/__, __}
     range="Dunna",                    -- 10, __, __ [__/__, ___] { 5/ 5, __}
@@ -852,12 +852,12 @@ function init_gear_sets()
     -- 553 M.Acc, 46 Enfeebling Skill, 276 INT [52 PDT/42 MDT, 670 M.Eva] {Pet: 5 PDT/5 MDT, 5 Regen}
   }
 
-	sets.midcast.Dispelga = set_combine(sets.midcast.Dispel, {
+  sets.midcast.Dispelga = set_combine(sets.midcast.Dispel, {
     -- main="Daybreak",               -- 40, __, __ [__/__,  30] {__/__, __}; Needed to cast dispelga
     -- sub="Ammurapi Shield",         -- 38, __, 13 [__/__, ___] {__/__, __}
   })
 
-	sets.midcast['Enfeebling Magic'] = {
+  sets.midcast['Enfeebling Magic'] = {
     main="Contemplator +1",           -- 70, 20, 12, 22, __ [__/__, ___] {__/__, __}; M.Acc skill+228
     sub="Khonsu",                     -- 30, __, __, __, __ [ 6/ 6, ___] {__/__, __}
     range="Dunna",                    -- 10, __, __, __, __ [__/__, ___] { 5/ 5, __}
@@ -895,7 +895,7 @@ function init_gear_sets()
     -- AF set bonuses                 -- 15
     -- 533 M.Acc, 10 Enfeebling Skill, 293 INT, 273 MND, 45% Enf Duration [30 PDT/30 MDT, 625 M.Eva] {Pet: 30 PDT/30 MDT, 5 Regen}
   }
-	sets.midcast['Enfeebling Magic'].Resistant = set_combine(sets.midcast['Enfeebling Magic'], {
+  sets.midcast['Enfeebling Magic'].Resistant = set_combine(sets.midcast['Enfeebling Magic'], {
     -- main="Idris",                  -- 70, __, __, __, __ [__/__, ___] {25/25, __}; M.Acc skill+255, R15
     -- sub="Ammurapi Shield",         -- 38, __, 13, 13, 10 [__/__, ___] {__/__, __}
     -- range="Dunna",                 -- 10, __, __, __, __ [__/__, ___] { 5/ 5, __}
@@ -993,8 +993,8 @@ function init_gear_sets()
     -- 550 M.Acc, 36 Enfeebling Skill, 319 INT, 279 MND, 10% Enf Duration [51 PDT/51 MDT, 677 M.Eva] {Pet: 25 PDT/25 MDT, 5 Regen}
   })
 
-	sets.midcast.IntEnfeebles = set_combine(sets.midcast['Enfeebling Magic'], {})
-	sets.midcast.IntEnfeebles.Resistant = set_combine(sets.midcast['Enfeebling Magic'].Resistant, {
+  sets.midcast.IntEnfeebles = set_combine(sets.midcast['Enfeebling Magic'], {})
+  sets.midcast.IntEnfeebles.Resistant = set_combine(sets.midcast['Enfeebling Magic'].Resistant, {
     -- main="Idris",                  -- 70, __, __, __, __ [__/__, ___] {25/25, __}; M.Acc skill+255, R15
     -- sub="Ammurapi Shield",         -- 38, __, 13, 13, 10 [__/__, ___] {__/__, __}
     -- range=empty,
@@ -1014,10 +1014,10 @@ function init_gear_sets()
     -- 550 M.Acc, 36 Enfeebling Skill, 319 INT, 279 MND, 10% Enf Duration [51 PDT/51 MDT, 677 M.Eva] {Pet: 25 PDT/25 MDT, 5 Regen}
   })
 
-	sets.midcast.MndEnfeebles = set_combine(sets.midcast['Enfeebling Magic'], {})
-	sets.midcast.MndEnfeebles.Resistant = set_combine(sets.midcast['Enfeebling Magic'].Resistant, {})
+  sets.midcast.MndEnfeebles = set_combine(sets.midcast['Enfeebling Magic'], {})
+  sets.midcast.MndEnfeebles.Resistant = set_combine(sets.midcast['Enfeebling Magic'].Resistant, {})
 
-	sets.midcast.Dia = {
+  sets.midcast.Dia = {
     main="Idris",                     -- __, __ [__/__, ___] {25/25, __}; M.Acc skill+255
     sub="Ammurapi Shield",            -- __, 10 [__/__, ___] {__/__, __}
     range=empty,
@@ -1054,11 +1054,11 @@ function init_gear_sets()
     -- waist="Obstinate Sash",        -- __,  5 [__/__, ___] {__/__, __}
     -- 4 TH, 45% Enf Duration [52 PDT/40 MDT, 566 M.Eva] {Pet: 30 PDT/30 MDT, 5 Regen}
   }
-	sets.midcast['Dia II'] = sets.midcast.Dia
+  sets.midcast['Dia II'] = sets.midcast.Dia
   sets.midcast['Diaga'] = sets.midcast.Dia
 
-	sets.midcast.Bio = sets.midcast.Dia
-	sets.midcast['Bio II'] = sets.midcast.Dia
+  sets.midcast.Bio = sets.midcast.Dia
+  sets.midcast['Bio II'] = sets.midcast.Dia
 
   sets.midcast['Enhancing Magic'] = {
     main=gear.Gada_ENH,               -- 18,  6, __ [__/__, ___] {__/__, __}
@@ -1120,7 +1120,7 @@ function init_gear_sets()
     -- 2 Ref Potency, 72 Enh Duration%, 0 Ref Duration
   })
 
-	sets.midcast.Refresh = {
+  sets.midcast.Refresh = {
     main=gear.Gada_ENH,               -- __, __,  6 [__/__, ___] {__/__, __}
     sub="Ammurapi Shield",            -- __, __, 10 [__/__, ___] {__/__, __}
     range=empty,
@@ -1156,7 +1156,7 @@ function init_gear_sets()
 
   -- GEO cannot realistically get to 355 enh skill for +2 aquaveil, so don't try
   -- Focus on Aquaveil+ gear and defensive stats
-	sets.midcast.Aquaveil = {
+  sets.midcast.Aquaveil = {
     main="Idris",                     -- __, __ [__/__, ___] {25/25, __}
     sub="Ammurapi Shield",            -- __, 10 [__/__, ___] {__/__, __}
     range="Dunna",                    -- __, __ [__/__, ___] { 5/ 5, __}
@@ -1187,7 +1187,7 @@ function init_gear_sets()
   }
 
   -- Protect+ gear, enh duration, conserve mp
-	sets.midcast.Protect = {
+  sets.midcast.Protect = {
     main=gear.Gada_ENH,               --  6, __ [__/__, ___] {__/__, __}
     sub="Ammurapi Shield",            -- 10, __ [__/__, ___] {__/__, __}
     range=empty,
@@ -1214,23 +1214,23 @@ function init_gear_sets()
     -- Base                              __, 43
     -- 56 Enh Duration, 62 Conserve MP [50 PDT/40 MDT, 528 M.Eva] {Pet: 5 PDT/5 MDT, 11 Regen}
   }
-	sets.midcast.Protectra = sets.midcast.Protect
+  sets.midcast.Protectra = sets.midcast.Protect
   -- Shell+ gear, enh duration, conserve mp
-	sets.midcast.Shell = sets.midcast.Protect
-	sets.midcast.Shellra = sets.midcast.Protect
+  sets.midcast.Shell = sets.midcast.Protect
+  sets.midcast.Shellra = sets.midcast.Protect
 
 
-	--------------------------------------
-	-- Idle/resting/etc sets
-	--------------------------------------
+  --------------------------------------
+  -- Idle/resting/etc sets
+  --------------------------------------
 
   -- Overlaid when MP is needed
-	sets.passive_refresh_sub50 = {
+  sets.passive_refresh_sub50 = {
     waist="Fucho-no-obi",
   }
 
   -- When luopan is not existing
-	sets.idle = {
+  sets.idle = {
     main="Bolelabunga",             --  1 [__/__, ___] {__/__, __}
     sub="Genmei Shield",            -- __ [10/__, ___] {__/__, __}
     range=empty,                    -- __ [__/__, ___] {__/__, __}
@@ -1289,10 +1289,10 @@ function init_gear_sets()
   }
 
   -- When you need to be safe (disables move speed gear)
-	sets.idle.HeavyDef = sets.idle
+  sets.idle.HeavyDef = sets.idle
 
-	-- Pet -38% DT is needed in order to cap at -87.5% (has innate -50% DT)
-	sets.idle.Pet = {
+  -- Pet -38% DT is needed in order to cap at -87.5% (has innate -50% DT)
+  sets.idle.Pet = {
     main="Idris",                   -- __ [__/__, ___] {25/25, __}
     sub="Genmei Shield",            -- __ [10/__, ___] {__/__, __}
     range=empty,
@@ -1317,7 +1317,7 @@ function init_gear_sets()
     -- 6 Refresh [50 PDT/25 MDT, 563 M.Eva] {Pet: 41 PDT/41 MDT, 26 Regen}
   }
 
-	sets.idle.HeavyDef.Pet = sets.idle.Pet
+  sets.idle.HeavyDef.Pet = sets.idle.Pet
 
   -- Handle refresh
   sets.idle.Refresh = sets.idle
@@ -1330,32 +1330,32 @@ function init_gear_sets()
   sets.idle.HeavyDef.Pet.Refresh = sets.idle.HeavyDef.Pet
   sets.idle.HeavyDef.Pet.RefreshSub50 = sets.idle.HeavyDef.Pet
 
-	sets.idle.Weak = sets.idle.HeavyDef.Pet
+  sets.idle.Weak = sets.idle.HeavyDef.Pet
   
-	sets.resting = set_combine(sets.idle.HeavyDef.Pet, {
+  sets.resting = set_combine(sets.idle.HeavyDef.Pet, {
     main="Chatoyant Staff",
     sub="Khonsu",
   })
 
 
-	--------------------------------------
-	-- Defense sets
-	--------------------------------------
+  --------------------------------------
+  -- Defense sets
+  --------------------------------------
 
-	sets.defense.PDT = sets.idle.Pet
-	sets.defense.MDT = sets.idle.Pet
+  sets.defense.PDT = sets.idle.Pet
+  sets.defense.MDT = sets.idle.Pet
 
 
-	--------------------------------------
-	-- Engaged sets
-	--------------------------------------
+  --------------------------------------
+  -- Engaged sets
+  --------------------------------------
 
   -- Need 38 pet DT to cap
-	-- Normal melee group, used when not weapon locked
-	sets.engaged = {
+  -- Normal melee group, used when not weapon locked
+  sets.engaged = {
     -- Assume White Tathlum         -- __,  2, __, __ [__/__, ___] {__/__, __}
-		head=gear.Nyame_B_head,         -- 40, __,  4,  6 [ 7/ 7, 123] {__/__, __}
-		body=gear.Nyame_B_body,         -- 40, __,  5,  3 [ 9/ 9, 139] {__/__, __}
+    head=gear.Nyame_B_head,         -- 40, __,  4,  6 [ 7/ 7, 123] {__/__, __}
+    body=gear.Nyame_B_body,         -- 40, __,  5,  3 [ 9/ 9, 139] {__/__, __}
     hands=gear.Nyame_B_hands,       -- 40, __,  4,  3 [ 7/ 7, 112] {__/__, __}
     legs=gear.Nyame_B_legs,         -- 40, __,  5,  5 [ 8/ 8, 150] {__/__, __}
     feet=gear.Nyame_B_feet,         -- 40, __,  4,  3 [ 7/ 7, 150] {__/__, __}
@@ -1367,8 +1367,8 @@ function init_gear_sets()
     -- 226 Acc, 8 Store TP, 25 DA, 20 Haste [48 PDT/48 MDT, 704 M.Eva] {Pet: 0 PDT/0 MDT, 15 Regen}
 
     -- Assume White Tathlum         -- __,  2, __, __ [__/__, ___] {__/__, __}
-		-- head="Blistering Sallet +1", -- 53, __,  3,  8 [ 3/__,  53] {__/__, __}
-		-- body=gear.Nyame_B_body,      -- 40, __,  5,  3 [ 9/ 9, 139] {__/__, __}
+    -- head="Blistering Sallet +1", -- 53, __,  3,  8 [ 3/__,  53] {__/__, __}
+    -- body=gear.Nyame_B_body,      -- 40, __,  5,  3 [ 9/ 9, 139] {__/__, __}
     -- hands="Gazu Bracelet +1",    -- 96, __, __,  5 [__/__,  43] {__/__, __}
     -- legs="Jhakri Slops +2",      -- 45,  9, __,  2 [__/__,  69] {__/__, __}
     -- feet=gear.Nyame_B_feet,      -- 40, __,  4,  3 [ 7/ 7, 150] {__/__, __}
@@ -1381,10 +1381,10 @@ function init_gear_sets()
     -- waist="Goading Belt",        -- __,  5, __,  5 [__/__, ___] {__/__, __}
     -- 310 Acc, 40 Store TP, 16 DA, 26 Haste [19 PDT/16 MDT, 484 M.Eva] {Pet: 0 PDT/0 MDT, 15 Regen}
   }
-	sets.engaged.Safe = {
+  sets.engaged.Safe = {
     -- Assume Dunna                 -- __, __, __, __ [__/__, ___] { 5/ 5, __}
-		head="Azimuth Hood +2",         -- 51, __, __,  6 [11/11, 126] {__/__,  4}
-		body=gear.Nyame_B_body,         -- 40, __,  5,  3 [ 9/ 9, 139] {__/__, __}
+    head="Azimuth Hood +2",         -- 51, __, __,  6 [11/11, 126] {__/__,  4}
+    body=gear.Nyame_B_body,         -- 40, __,  5,  3 [ 9/ 9, 139] {__/__, __}
     hands="Geomancy Mitaines +3",   -- __, __, __,  3 [ 3/__,  57] {13/13, __}
     legs=gear.Nyame_B_legs,         -- 40, __,  5,  5 [ 8/ 8, 150] {__/__, __}
     feet="Azimuth Gaiters +2",      -- 50, __, __,  3 [10/10, 158] {__/__, __}
@@ -1395,8 +1395,8 @@ function init_gear_sets()
     -- 251 Acc, 20 Store TP, 11 DA, 20 Haste [50 PDT/47 MDT, 680 M.Eva] {Pet: 18 PDT/18 MDT, 20 Regen}
     
     -- Assume Dunna                 -- __, __, __, __ [__/__, ___] { 5/ 5, __}
-		-- head="Azimuth Hood +3",      -- 61, __, __,  6 [12/12, 136] {__/__,  5}
-		-- body=gear.Nyame_B_body,      -- 40, __,  5,  3 [ 9/ 9, 139] {__/__, __}
+    -- head="Azimuth Hood +3",      -- 61, __, __,  6 [12/12, 136] {__/__,  5}
+    -- body=gear.Nyame_B_body,      -- 40, __,  5,  3 [ 9/ 9, 139] {__/__, __}
     -- hands="Geomancy Mitaines +3",-- __, __, __,  3 [ 3/__,  57] {13/13, __}
     -- legs=gear.Nyame_B_legs,      -- 40, __,  5,  5 [ 8/ 8, 150] {__/__, __}
     -- feet="Azimuth Gaiters +3",   -- 60, __, __,  3 [11/11, 168] {__/__, __}
@@ -1410,13 +1410,12 @@ function init_gear_sets()
     -- 251 Acc, 20 Store TP, 11 DA, 20 Haste [50 PDT/47 MDT, 680 M.Eva] {Pet: 18 PDT/18 MDT, 20 Regen}
   }
 
-  -- Used for all staves
-	sets.engaged.Staff = {
+  sets.engaged.Staff = {
     -- Assume Mpaca's Staff         -- 50, __, __, __ [__/__, ___] {__/__, __}
     -- Assume Khonsu                -- 30, __, __,  4 [ 6/ 6, ___] {__/__, __}
     -- Assume White Tathlum         -- __,  2, __, __ [__/__, ___] {__/__, __}
-		head=gear.Nyame_B_head,         -- 40, __,  4,  6 [ 7/ 7, 123] {__/__, __}
-		body=gear.Nyame_B_body,         -- 40, __,  5,  3 [ 9/ 9, 139] {__/__, __}
+    head=gear.Nyame_B_head,         -- 40, __,  4,  6 [ 7/ 7, 123] {__/__, __}
+    body=gear.Nyame_B_body,         -- 40, __,  5,  3 [ 9/ 9, 139] {__/__, __}
     hands=gear.Nyame_B_hands,       -- 40, __,  4,  3 [ 7/ 7, 112] {__/__, __}
     legs=gear.Nyame_B_legs,         -- 40, __,  5,  5 [ 8/ 8, 150] {__/__, __}
     feet=gear.Nyame_B_feet,         -- 40, __,  4,  3 [ 7/ 7, 150] {__/__, __}
@@ -1430,8 +1429,8 @@ function init_gear_sets()
     -- Assume Mpaca's Staff         -- 50, __, __, __ [__/__, ___] {__/__, __}
     -- Assume Khonsu                -- 30, __, __,  4 [ 6/ 6, ___] {__/__, __}
     -- Assume White Tathlum         -- __,  2, __, __ [__/__, ___] {__/__, __}
-		-- head="Blistering Sallet +1", -- 53, __,  3,  8 [ 3/__,  53] {__/__, __}
-		-- body=gear.Nyame_B_body,      -- 40, __,  5,  3 [ 9/ 9, 139] {__/__, __}
+    -- head="Blistering Sallet +1", -- 53, __,  3,  8 [ 3/__,  53] {__/__, __}
+    -- body=gear.Nyame_B_body,      -- 40, __,  5,  3 [ 9/ 9, 139] {__/__, __}
     -- hands="Gazu Bracelet +1",    -- 96, __, __,  5 [__/__,  43] {__/__, __}
     -- legs="Jhakri Slops +2",      -- 45,  9, __,  2 [__/__,  69] {__/__, __}
     -- feet=gear.Nyame_B_feet,      -- 40, __,  4,  3 [ 7/ 7, 150] {__/__, __}
@@ -1444,12 +1443,12 @@ function init_gear_sets()
     -- waist="Olseni Belt",         -- 20,  3, __, __ [__/__, ___] {__/__, __}
     -- 410 Acc, 38 Store TP, 16 DA, 25 Haste [25 PDT/22 MDT, 484 M.Eva] {Pet: 0 PDT/0 MDT, 15 Regen}
   }
-	sets.engaged.Staff.Safe = {
+  sets.engaged.Staff.Safe = {
     -- Assume Mpaca's Staff         -- 50, __, __, __ [__/__, ___] {__/__, __}
     -- Assume Khonsu                -- 30, __, __,  4 [ 6/ 6, ___] {__/__, __}
     -- Assume Dunna                 -- __, __, __, __ [__/__, ___] { 5/ 5, __}
-		head=gear.Nyame_B_head,         -- 40, __,  4,  6 [ 7/ 7, 123] {__/__, __}
-		body=gear.Nyame_B_body,         -- 40, __,  5,  3 [ 9/ 9, 139] {__/__, __}
+    head=gear.Nyame_B_head,         -- 40, __,  4,  6 [ 7/ 7, 123] {__/__, __}
+    body=gear.Nyame_B_body,         -- 40, __,  5,  3 [ 9/ 9, 139] {__/__, __}
     hands="Geomancy Mitaines +3",   -- __, __, __,  3 [ 3/__,  57] {13/13, __}
     legs=gear.Nyame_B_legs,         -- 40, __,  5,  5 [ 8/ 8, 150] {__/__, __}
     feet=gear.Nyame_B_feet,         -- 40, __,  4,  3 [ 7/ 7, 150] {__/__, __}
@@ -1463,8 +1462,8 @@ function init_gear_sets()
     -- Assume Mpaca's Staff         -- 50, __, __, __ [__/__, ___] {__/__, __}
     -- Assume Khonsu                -- 30, __, __,  4 [ 6/ 6, ___] {__/__, __}
     -- Assume Dunna                 -- __, __, __, __ [__/__, ___] { 5/ 5, __}
-		-- head=gear.Nyame_B_head,      -- 40, __,  4,  6 [ 7/ 7, 123] {__/__, __}
-		-- body=gear.Nyame_B_body,      -- 40, __,  5,  3 [ 9/ 9, 139] {__/__, __}
+    -- head=gear.Nyame_B_head,      -- 40, __,  4,  6 [ 7/ 7, 123] {__/__, __}
+    -- body=gear.Nyame_B_body,      -- 40, __,  5,  3 [ 9/ 9, 139] {__/__, __}
     -- hands="Geomancy Mitaines +3",-- __, __, __,  3 [ 3/__,  57] {13/13, __}
     -- legs=gear.Nyame_B_legs,      -- 40, __,  5,  5 [ 8/ 8, 150] {__/__, __}
     -- feet=gear.Nyame_B_feet,      -- 40, __,  4,  3 [ 7/ 7, 150] {__/__, __}
@@ -1478,12 +1477,12 @@ function init_gear_sets()
     -- 290 Acc, 20 Store TP, 19 DA, 24 Haste [47 PDT/44 MDT, 619 M.Eva] {Pet: 18 PDT/18 MDT, 15 Regen}
   }
 
-	sets.engaged.Maxentius = {
+  sets.engaged.Maxentius = {
     -- Assume Maxentius             -- 40, __, __, __ [__/__, ___] {__/__, __}
     -- Assume Genmei Shield         -- 15, __, __, __ [10/__, ___] {__/__, __}
     -- Assume White Tathlum         -- __,  2, __, __ [__/__, ___] {__/__, __}
-		head=gear.Nyame_B_head,         -- 40, __,  4,  6 [ 7/ 7, 123] {__/__, __}
-		body=gear.Nyame_B_body,         -- 40, __,  5,  3 [ 9/ 9, 139] {__/__, __}
+    head=gear.Nyame_B_head,         -- 40, __,  4,  6 [ 7/ 7, 123] {__/__, __}
+    body=gear.Nyame_B_body,         -- 40, __,  5,  3 [ 9/ 9, 139] {__/__, __}
     hands=gear.Nyame_B_hands,       -- 40, __,  4,  3 [ 7/ 7, 112] {__/__, __}
     legs=gear.Nyame_B_legs,         -- 40, __,  5,  5 [ 8/ 8, 150] {__/__, __}
     feet=gear.Nyame_B_feet,         -- 40, __,  4,  3 [ 7/ 7, 150] {__/__, __}
@@ -1496,8 +1495,8 @@ function init_gear_sets()
     -- Assume Maxentius             -- 40, __, __, __ [__/__, ___] {__/__, __}
     -- Assume Genmei Shield         -- 15, __, __, __ [10/__, ___] {__/__, __}
     -- Assume White Tathlum         -- __,  2, __, __ [__/__, ___] {__/__, __}
-		-- head="Blistering Sallet +1", -- 53, __,  3,  8 [ 3/__,  53] {__/__, __}
-		-- body=gear.Nyame_B_body,      -- 40, __,  5,  3 [ 9/ 9, 139] {__/__, __}
+    -- head="Blistering Sallet +1", -- 53, __,  3,  8 [ 3/__,  53] {__/__, __}
+    -- body=gear.Nyame_B_body,      -- 40, __,  5,  3 [ 9/ 9, 139] {__/__, __}
     -- hands="Gazu Bracelet +1",    -- 96, __, __,  5 [__/__,  43] {__/__, __}
     -- legs="Jhakri Slops +2",      -- 45,  9, __,  2 [__/__,  69] {__/__, __}
     -- feet=gear.Nyame_B_feet,      -- 40, __,  4,  3 [ 7/ 7, 150] {__/__, __}
@@ -1510,12 +1509,12 @@ function init_gear_sets()
     -- waist="Goading Belt",        -- __,  5, __,  5 [__/__, ___] {__/__, __}
     -- 365 Acc, 40 Store TP, 16 DA, 26 Haste [29 PDT/16 MDT, 484 M.Eva] {Pet: 0 PDT/0 MDT, 15 Regen}
   }
-	sets.engaged.Maxentius.Safe = {
+  sets.engaged.Maxentius.Safe = {
     -- Assume Maxentius             -- 40, __, __, __ [__/__, ___] {__/__, __}
     -- Assume Genmei Shield         -- 15, __, __, __ [10/__, ___] {__/__, __}
     -- Assume Dunna                 -- __, __, __, __ [__/__, ___] { 5/ 5, __}
-		head=gear.Nyame_B_head,         -- 40, __,  4,  6 [ 7/ 7, 123] {__/__, __}
-		body=gear.Nyame_B_body,         -- 40, __,  5,  3 [ 9/ 9, 139] {__/__, __}
+    head=gear.Nyame_B_head,         -- 40, __,  4,  6 [ 7/ 7, 123] {__/__, __}
+    body=gear.Nyame_B_body,         -- 40, __,  5,  3 [ 9/ 9, 139] {__/__, __}
     hands="Geomancy Mitaines +3",   -- __, __, __,  3 [ 3/__,  57] {13/13, __}
     legs=gear.Nyame_B_legs,         -- 40, __,  5,  5 [ 8/ 8, 150] {__/__, __}
     feet=gear.Nyame_B_feet,         -- 40, __,  4,  3 [ 7/ 7, 150] {__/__, __}
@@ -1529,8 +1528,8 @@ function init_gear_sets()
     -- Assume Maxentius             -- 40, __, __, __ [__/__, ___] {__/__, __}
     -- Assume Genmei Shield         -- 15, __, __, __ [10/__, ___] {__/__, __}
     -- Assume Dunna                 -- __, __, __, __ [__/__, ___] { 5/ 5, __}
-		-- head="Azimuth Hood +3",      -- 61, __, __,  6 [12/12, 136] {__/__,  5}
-		-- body=gear.Nyame_B_body,      -- 40, __,  5,  3 [ 9/ 9, 139] {__/__, __}
+    -- head="Azimuth Hood +3",      -- 61, __, __,  6 [12/12, 136] {__/__,  5}
+    -- body=gear.Nyame_B_body,      -- 40, __,  5,  3 [ 9/ 9, 139] {__/__, __}
     -- hands="Geomancy Mitaines +3",-- __, __, __,  3 [ 3/__,  57] {13/13, __}
     -- legs=gear.Nyame_B_legs,      -- 40, __,  5,  5 [ 8/ 8, 150] {__/__, __}
     -- feet="Azimuth Gaiters +3",   -- 60, __, __,  3 [11/11, 168] {__/__, __}
@@ -1544,12 +1543,12 @@ function init_gear_sets()
     -- 292 Acc, 25 Store TP, 14 DA, 25 Haste [53 PDT/40 MDT, 680 M.Eva] {Pet: 18 PDT/18 MDT, 20 Regen}
   }
 
-	sets.engaged.Idris = {
+  sets.engaged.Idris = {
     -- Assume Idris                 -- 30, __, __, __ [__/__, ___] {25/25, __}
     -- Assume Genmei Shield         -- 15, __, __, __ [10/__, ___] {__/__, __}
     -- Assume White Tathlum         -- __,  2, __, __ [__/__, ___] {__/__, __}
-		head=gear.Nyame_B_head,         -- 40, __,  4,  6 [ 7/ 7, 123] {__/__, __}
-		body=gear.Nyame_B_body,         -- 40, __,  5,  3 [ 9/ 9, 139] {__/__, __}
+    head=gear.Nyame_B_head,         -- 40, __,  4,  6 [ 7/ 7, 123] {__/__, __}
+    body=gear.Nyame_B_body,         -- 40, __,  5,  3 [ 9/ 9, 139] {__/__, __}
     hands=gear.Nyame_B_hands,       -- 40, __,  4,  3 [ 7/ 7, 112] {__/__, __}
     legs=gear.Nyame_B_legs,         -- 40, __,  5,  5 [ 8/ 8, 150] {__/__, __}
     feet=gear.Nyame_B_feet,         -- 40, __,  4,  3 [ 7/ 7, 150] {__/__, __}
@@ -1562,8 +1561,8 @@ function init_gear_sets()
     -- Assume Idris                 -- 30, __, __, __ [__/__, ___] {25/25, __}
     -- Assume Genmei Shield         -- 15, __, __, __ [10/__, ___] {__/__, __}
     -- Assume White Tathlum         -- __,  2, __, __ [__/__, ___] {__/__, __}
-		-- head="Blistering Sallet +1", -- 53, __,  3,  8 [ 3/__,  53] {__/__, __}
-		-- body=gear.Nyame_B_body,      -- 40, __,  5,  3 [ 9/ 9, 139] {__/__, __}
+    -- head="Blistering Sallet +1", -- 53, __,  3,  8 [ 3/__,  53] {__/__, __}
+    -- body=gear.Nyame_B_body,      -- 40, __,  5,  3 [ 9/ 9, 139] {__/__, __}
     -- hands="Gazu Bracelet +1",    -- 96, __, __,  5 [__/__,  43] {__/__, __}
     -- legs="Jhakri Slops +2",      -- 45,  9, __,  2 [__/__,  69] {__/__, __}
     -- feet=gear.Nyame_B_feet,      -- 40, __,  4,  3 [ 7/ 7, 150] {__/__, __}
@@ -1580,8 +1579,8 @@ function init_gear_sets()
     -- Assume Idris                 -- 30, __, __, __ [__/__, ___] {25/25, __}
     -- Assume Genmei Shield         -- 15, __, __, __ [10/__, ___] {__/__, __}
     -- Assume White Tathlum         -- __,  2, __, __ [__/__, ___] {__/__, __}
-		head=gear.Nyame_B_head,         -- 40, __,  4,  6 [ 7/ 7, 123] {__/__, __}
-		body=gear.Nyame_B_body,         -- 40, __,  5,  3 [ 9/ 9, 139] {__/__, __}
+    head=gear.Nyame_B_head,         -- 40, __,  4,  6 [ 7/ 7, 123] {__/__, __}
+    body=gear.Nyame_B_body,         -- 40, __,  5,  3 [ 9/ 9, 139] {__/__, __}
     hands="Geomancy Mitaines +3",   -- __, __, __,  3 [ 3/__,  57] {13/13, __}
     legs=gear.Nyame_B_legs,         -- 40, __,  5,  5 [ 8/ 8, 150] {__/__, __}
     feet=gear.Nyame_B_feet,         -- 40, __,  4,  3 [ 7/ 7, 150] {__/__, __}
@@ -1594,8 +1593,8 @@ function init_gear_sets()
     -- Assume Idris                 -- 30, __, __, __ [__/__, ___] {25/25, __}
     -- Assume Genmei Shield         -- 15, __, __, __ [10/__, ___] {__/__, __}
     -- Assume White Tathlum         -- __,  2, __, __ [__/__, ___] {__/__, __}
-		-- head="Azimuth Hood +3",      -- 61, __, __,  6 [12/12, 136] {__/__,  5}
-		-- body=gear.Nyame_B_body,      -- 40, __,  5,  3 [ 9/ 9, 139] {__/__, __}
+    -- head="Azimuth Hood +3",      -- 61, __, __,  6 [12/12, 136] {__/__,  5}
+    -- body=gear.Nyame_B_body,      -- 40, __,  5,  3 [ 9/ 9, 139] {__/__, __}
     -- hands="Geomancy Mitaines +3",-- __, __, __,  3 [ 3/__,  57] {13/13, __}
     -- legs=gear.Nyame_B_legs,      -- 40, __,  5,  5 [ 8/ 8, 150] {__/__, __}
     -- feet="Azimuth Gaiters +3",   -- 60, __, __,  3 [11/11, 168] {__/__, __}
@@ -1610,16 +1609,16 @@ function init_gear_sets()
   }
 
 
-	--------------------------------------
-	-- Custom buff sets
-	--------------------------------------
+  --------------------------------------
+  -- Custom buff sets
+  --------------------------------------
 
-	-- Gear that converts elemental damage done to recover MP.
-	sets.RecoverMP = {
+  -- Gear that converts elemental damage done to recover MP.
+  sets.RecoverMP = {
     body="Seidr Cotehardie",
   }
 
-	sets.buff.Sublimation = {
+  sets.buff.Sublimation = {
     waist="Embla Sash"
   }
 
@@ -1695,42 +1694,42 @@ end
 
 function job_pretarget(spell, action, spellMap, eventArgs)
   if spell.type == 'Geomancy' then
-		if spell.english:startswith('Indi') then
-			if state.Buff.Entrust then
-				if spell.target.type == 'SELF' then
-					add_to_chat(167, 'Entrust active - You can\'t entrust yourself.')
-					eventArgs.cancel = true
-				end
-			elseif spell.target.type ~= 'SELF' then
-				if spell.target.raw == '<t>' then
-					change_target('<me>')
-				end
-			end
-		elseif spell.english:startswith('Geo') then
-			if set.contains(spell.targets, 'Enemy') then
-				if ((spell.target.type == 'PLAYER' and not spell.target.charmed) or (spell.target.type == 'NPC' and spell.target.in_party)) then
-					eventArgs.cancel = true
-				end
-			elseif not ((spell.target.type == 'PLAYER' and not spell.target.charmed and spell.target.in_party) or (spell.target.type == 'NPC' and spell.target.in_party) or (spell.target.raw == '<stpt>' or spell.target.raw == '<stal>' or spell.target.raw == '<st>')) then
-				change_target('<me>')
-			end
-		end
-	end
+    if spell.english:startswith('Indi') then
+      if state.Buff.Entrust then
+        if spell.target.type == 'SELF' then
+          add_to_chat(167, 'Entrust active - You can\'t entrust yourself.')
+          eventArgs.cancel = true
+        end
+      elseif spell.target.type ~= 'SELF' then
+        if spell.target.raw == '<t>' then
+          change_target('<me>')
+        end
+      end
+    elseif spell.english:startswith('Geo') then
+      if set.contains(spell.targets, 'Enemy') then
+        if ((spell.target.type == 'PLAYER' and not spell.target.charmed) or (spell.target.type == 'NPC' and spell.target.in_party)) then
+          eventArgs.cancel = true
+        end
+      elseif not ((spell.target.type == 'PLAYER' and not spell.target.charmed and spell.target.in_party) or (spell.target.type == 'NPC' and spell.target.in_party) or (spell.target.raw == '<stpt>' or spell.target.raw == '<stal>' or spell.target.raw == '<st>')) then
+        change_target('<me>')
+      end
+    end
+  end
 end
 
 function job_precast(spell, action, spellMap, eventArgs)
   silibs.precast_hook(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
 
-	if spell.english:startswith('Geo-') and pet.isvalid then
-		eventArgs.cancel = true
-		windower.chat.input('/ja "Full Circle" <me>')
-		windower.chat.input:schedule(1.3,'/ma "'..spell.english..'" '..spell.target.raw..'')
-	end
+  if spell.english:startswith('Geo-') and pet.isvalid then
+    eventArgs.cancel = true
+    windower.chat.input('/ja "Full Circle" <me>')
+    windower.chat.input:schedule(1.3,'/ma "'..spell.english..'" '..spell.target.raw..'')
+  end
 
-	if spell.action_type ~= 'Magic' and buffactive.Bolster and (spell.english == 'Blaze of Glory' or spell.english == 'Ecliptic Attrition') then
-		eventArgs.cancel = true
-		add_to_chat(123,'Abort: Bolster maxes the strength of bubbles.')
+  if spell.action_type ~= 'Magic' and buffactive.Bolster and (spell.english == 'Blaze of Glory' or spell.english == 'Ecliptic Attrition') then
+    eventArgs.cancel = true
+    add_to_chat(123,'Abort: Bolster maxes the strength of bubbles.')
   end
 end
 
@@ -1781,15 +1780,15 @@ function job_midcast(spell, action, spellMap, eventArgs)
 end
 
 function job_post_midcast(spell, action, spellMap, eventArgs)
-	if spell.skill == 'Elemental Magic' and default_spell_map ~= 'ElementalEnfeeble' and spell.english ~= 'Impact' then
-		if state.MagicBurst.value and sets.midcast['Elemental Magic'].MB then
+  if spell.skill == 'Elemental Magic' and default_spell_map ~= 'ElementalEnfeeble' and spell.english ~= 'Impact' then
+    if state.MagicBurst.value and sets.midcast['Elemental Magic'].MB then
       equip(sets.midcast['Elemental Magic'].MB)
-		end
+    end
 
-		if sets.RecoverMP and state.RecoverMode.value ~= 'Never' and
+    if sets.RecoverMP and state.RecoverMode.value ~= 'Never' and
         (state.RecoverMode.value == 'Always' or tonumber(state.RecoverMode.value:sub(1, -2)) > player.mpp) then
       equip(sets.RecoverMP)
-		end
+    end
     
     -- Handle belts for elemental damage
     local base_day_weather_mult = silibs.get_day_weather_multiplier(spell.element, false, false)
@@ -1844,13 +1843,13 @@ function job_aftercast(spell, action, spellMap, eventArgs)
       else -- If entrusted
         send_command('@timers c "'..spell.target.name..': '..indi_timer..'" '..indi_entrust_duration..' down spells/00136.png')
       end
-		elseif spell.english:startswith('Geo-') or spell.english == "Mending Halation" or spell.english == "Radial Arcana" then
-			eventArgs.handled = true
+    elseif spell.english:startswith('Geo-') or spell.english == "Mending Halation" or spell.english == "Radial Arcana" then
+      eventArgs.handled = true
     elseif spell.english == 'Sleep' or spell.english == 'Sleepga' then
       send_command('@timers c "'..spell.english..' ['..spell.target.name..']" 60 down spells/00220.png')
     elseif spell.english == 'Sleep II' or spell.english == 'Sleepga II' then
       send_command('@timers c "'..spell.english..' ['..spell.target.name..']" 90 down spells/00220.png')
-		end
+    end
   end
 
   if in_battle_mode() then
@@ -2050,7 +2049,7 @@ function update_idle_groups(cmdParams, eventArgs)
 
   classes.CustomIdleGroups:clear()
   if player.status == 'Idle' then
-		if pet.isvalid and pet.distance:sqrt() < 50 then
+    if pet.isvalid and pet.distance:sqrt() < 50 then
       classes.CustomIdleGroups:append('Pet')
     end
     
@@ -2076,9 +2075,9 @@ function job_self_command(cmdParams, eventArgs)
   silibs.self_command(cmdParams, eventArgs)
   ----------- Non-silibs content goes below this line -----------
 
-	if cmdParams[1] == 'elemental' then
-		handle_elemental(cmdParams)
-		eventArgs.handled = true
+  if cmdParams[1] == 'elemental' then
+    handle_elemental(cmdParams)
+    eventArgs.handled = true
   elseif cmdParams[1] == 'weaponset' then
     if cmdParams[2] == 'cycle' then
       cycle_weapons('forward')
@@ -2089,7 +2088,7 @@ function job_self_command(cmdParams, eventArgs)
     elseif cmdParams[2] == 'reset' then
       cycle_weapons('reset')
     end
-	end
+  end
 
   if not midaction() then
     job_update()
@@ -2118,39 +2117,39 @@ function handle_elemental(cmdParams)
   end
   local command = cmdParams[2]:lower()
 
-	if command == 'storm' then
+  if command == 'storm' then
     windower.chat.input('/ma "'..elements.storm_of[state.ElementalMode.value]..'"')
-		return
-	end
+    return
+  end
 
-	local target = '<t>'
-	if cmdParams[3] then
-		if tonumber(cmdParams[3]) then
-			target = cmdParams[3]
-		else
-			target = table.concat(cmdParams, ' ', 3)
-			target = get_closest_mob_id_by_name(target) or '<t>'
-		end
-	end
+  local target = '<t>'
+  if cmdParams[3] then
+    if tonumber(cmdParams[3]) then
+      target = cmdParams[3]
+    else
+      target = table.concat(cmdParams, ' ', 3)
+      target = get_closest_mob_id_by_name(target) or '<t>'
+    end
+  end
   if command:contains('tier') then
-		local spell_recasts = windower.ffxi.get_spell_recasts()
-		local tierlist = {['tier1']='',['tier2']=' II',['tier3']=' III',['tier4']=' IV',['tier5']=' V',['tier6']=' VI'}
+    local spell_recasts = windower.ffxi.get_spell_recasts()
+    local tierlist = {['tier1']='',['tier2']=' II',['tier3']=' III',['tier4']=' IV',['tier5']=' V',['tier6']=' VI'}
 
-		windower.chat.input('/ma "'..elements.nuke_of[state.ElementalMode.value]..tierlist[command]..'" '..target..'')
-	elseif command:contains('ara') then
-		local spell_recasts = windower.ffxi.get_spell_recasts()
-		local tierkey = {'ara3','ara2','ara'}
-		local tierlist = {['ara3']='ra III',['ara2']='ra II',['ara']='ra'}
-		if command == 'ara' then
-			for i in ipairs(tierkey) do
-				if actual_cost(get_spell_table_by_name(elements.nukera_of[state.ElementalMode.value]..''..tierlist[tierkey[i]]..'')) < player.mp then
-					windower.chat.input('/ma "'..elements.nukera_of[state.ElementalMode.value]..''..tierlist[tierkey[i]]..'" '..target..'')
-					return
-				end
-			end
-		else
-			windower.chat.input('/ma "'..elements.nukera_of[state.ElementalMode.value]..tierlist[command]..'" '..target..'')
-		end
+    windower.chat.input('/ma "'..elements.nuke_of[state.ElementalMode.value]..tierlist[command]..'" '..target..'')
+  elseif command:contains('ara') then
+    local spell_recasts = windower.ffxi.get_spell_recasts()
+    local tierkey = {'ara3','ara2','ara'}
+    local tierlist = {['ara3']='ra III',['ara2']='ra II',['ara']='ra'}
+    if command == 'ara' then
+      for i in ipairs(tierkey) do
+        if actual_cost(get_spell_table_by_name(elements.nukera_of[state.ElementalMode.value]..''..tierlist[tierkey[i]]..'')) < player.mp then
+          windower.chat.input('/ma "'..elements.nukera_of[state.ElementalMode.value]..''..tierlist[tierkey[i]]..'" '..target..'')
+          return
+        end
+      end
+    else
+      windower.chat.input('/ma "'..elements.nukera_of[state.ElementalMode.value]..tierlist[command]..'" '..target..'')
+    end
   else
     add_to_chat(123,'Unrecognized elemental command.')
   end
@@ -2251,11 +2250,11 @@ function get_item_table(item)
 end
 
 function item_available(item)
-	if player.inventory[item] or player.wardrobe[item] or player.wardrobe2[item] or player.wardrobe3[item] or player.wardrobe4[item] then
-		return true
-	else
-		return false
-	end
+  if player.inventory[item] or player.wardrobe[item] or player.wardrobe2[item] or player.wardrobe3[item] or player.wardrobe4[item] then
+    return true
+  else
+    return false
+  end
 end
 
 function select_weapons()

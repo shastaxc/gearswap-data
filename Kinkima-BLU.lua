@@ -1734,7 +1734,7 @@ function job_self_command(cmdParams, eventArgs)
     elseif cmdParams[2] == 'reset' then
       cycle_toy_weapons('reset')
     end
-	end
+  end
   gearinfo(cmdParams, eventArgs)
 end
 

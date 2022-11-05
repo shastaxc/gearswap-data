@@ -154,4 +154,37 @@ windower.register_event('zone change', function()
   end
 end)
 
+function get_spell_table_by_name(spell_name)
+  for k in pairs(res.spells) do
+    if res.spells[k]['en'] == spell_name then
+      return res.spells[k]
+    end
+  end
+  return false
+end
+
+function actual_cost(spell)
+  local cost = spell.mp_cost
+  if buffactive["Manafont"] or buffactive["Manawell"] then
+    return 0
+  elseif spell.type=="WhiteMagic" then
+      if buffactive["Penury"] then
+          return cost*.5
+      elseif state.Buff['Light Arts'] or state.Buff['Addendum: White'] then
+          return cost*.9
+      elseif state.Buff['Dark Arts'] or state.Buff['Addendum: Black'] then
+          return cost*1.1
+      end
+  elseif spell.type=="BlackMagic" then
+      if buffactive["Parsimony"] then
+          return cost*.5
+      elseif state.Buff['Dark Arts'] or state.Buff['Addendum: Black'] then
+          return cost*.9
+      elseif state.Buff['Light Arts'] or state.Buff['Addendum: White'] then
+          return cost*1.1
+      end
+  end
+  return cost
+end
+
 send_command('alias mount input /mount "Crawler" <me>')

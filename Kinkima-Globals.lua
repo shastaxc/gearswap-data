@@ -141,12 +141,12 @@ windower.register_event('zone change', function()
 end)
 
 function get_spell_table_by_name(spell_name)
-	for k in pairs(res.spells) do
-		if res.spells[k]['en'] == spell_name then
-			return res.spells[k]
-		end
-	end
-	return false
+  for k in pairs(res.spells) do
+    if res.spells[k]['en'] == spell_name then
+      return res.spells[k]
+    end
+  end
+  return false
 end
 
 function actual_cost(spell)
@@ -172,6 +172,5 @@ function actual_cost(spell)
   end
   return cost
 end
-
 
 send_command('alias mount input /mount "Spheroid" <me>')

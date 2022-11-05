@@ -1096,14 +1096,14 @@ function job_precast(spell, action, spellMap, eventArgs)
 
   -- Warn if trying to do blood pact without enough mp
 
-	if pet.name == spell.english and pet.hpp > 50 then
-		add_to_chat(122, "You already have that avatar active!")
-		eventArgs.cancel = true
-	elseif avatars:contains(spell.english) and pet.isvalid then
-		eventArgs.cancel = true
-		windower.chat.input('/pet Release <me>')
-		windower.chat.input:schedule(2,'/ma "'..spell.english..'" <me>')
-	end
+  if pet.name == spell.english and pet.hpp > 50 then
+    add_to_chat(122, "You already have that avatar active!")
+    eventArgs.cancel = true
+  elseif avatars:contains(spell.english) and pet.isvalid then
+    eventArgs.cancel = true
+    windower.chat.input('/pet Release <me>')
+    windower.chat.input:schedule(2,'/ma "'..spell.english..'" <me>')
+  end
 
   if state.Buff['Astral Conduit'] and spell.type == 'BloodPactRage' then
     print('trigger AC logic')

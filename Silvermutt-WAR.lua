@@ -172,7 +172,7 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   -- Fast cast sets for spells
-	sets.precast.FC = {
+  sets.precast.FC = {
     ammo="Sapience Orb",
     -- head="Volte Salade",
     -- body={ name="Odyss. Chestplate", augments={'Mag. Acc.+19 "Mag.Atk.Bns."+19','AGI+1','Mag. Acc.+13','"Mag.Atk.Bns."+14',}},
@@ -199,36 +199,36 @@ function init_gear_sets()
     ring1="Weatherspoon Ring", --5
   })
 
-	sets.precast.JA['Berserk'] = {
+  sets.precast.JA['Berserk'] = {
     body="Pummeler's Lorica +2",
     feet="Agoge Calligae +1",
     back="Cichol's Mantle",
     -- body="Pummeler's Lorica +3",
     -- feet="Agoge Calligae +3",
   }
-	sets.precast.JA['Warcry'] = {
+  sets.precast.JA['Warcry'] = {
     head="Agoge Mask +1",
     -- head="Agoge Mask +3",
   }
-	sets.precast.JA['Defender'] = {}
-	sets.precast.JA['Aggressor'] = {}
-	sets.precast.JA['Mighty Strikes'] = {}
-	sets.precast.JA["Warrior's Charge"] = {}
-	sets.precast.JA['Tomahawk'] = {
+  sets.precast.JA['Defender'] = {}
+  sets.precast.JA['Aggressor'] = {}
+  sets.precast.JA['Mighty Strikes'] = {}
+  sets.precast.JA["Warrior's Charge"] = {}
+  sets.precast.JA['Tomahawk'] = {
     feet="Agoge Calligae +1",
     -- ammo="Throwing Tomahawk",
     -- feet="Agoge Calligae +3",
   }
-	sets.precast.JA['Retaliation'] = {
+  sets.precast.JA['Retaliation'] = {
     feet="Boii Calligae +2",
     -- feet="Boii Calligae +3",
   }
-	sets.precast.JA['Restraint'] = {}
-	sets.precast.JA['Blood Rage'] = {
+  sets.precast.JA['Restraint'] = {}
+  sets.precast.JA['Blood Rage'] = {
     body="Boii Lorica +2",
     -- body="Boii Lorica +3",
   }
-	sets.precast.JA['Brazen Rush'] = {}
+  sets.precast.JA['Brazen Rush'] = {}
   sets.precast.JA['Provoke'] = sets.Enmity
 
   -- Waltz set (chr and vit)
@@ -324,7 +324,7 @@ function init_gear_sets()
     waist="Sailfi Belt +1",
     -- neck="Warrior's Bead Necklace +2",
     -- back=gear.WAR_VIT_WSD_Cape,
-	})
+  })
   sets.precast.WS["Upheaval"].MaxTP = set_combine(sets.precast.WS["Upheaval"], {
     ear2="Ishvara Earring",
   })
@@ -450,7 +450,7 @@ function init_gear_sets()
     ear2="Ishvara Earring",
   })
 
-	sets.precast.WS['Calamity'] =  set_combine(sets.precast.WS, {
+  sets.precast.WS['Calamity'] =  set_combine(sets.precast.WS, {
     ammo="Knobkierrie",
     body=gear.Nyame_B_body,
     hands=gear.Nyame_B_hands,
@@ -474,7 +474,7 @@ function init_gear_sets()
     ear2="Ishvara Earring",
   })
   
-	sets.precast.WS['Cloudsplitter'] = set_combine(sets.precast.WS, {
+  sets.precast.WS['Cloudsplitter'] = set_combine(sets.precast.WS, {
     ammo="Knobkierrie",
     head=gear.Nyame_B_head,
     body=gear.Nyame_B_body,
@@ -597,29 +597,29 @@ function init_gear_sets()
   sets.precast.WS["Sonic Thrust"].AttCapped = sets.precast.WS["Impulse Drive"].AttCapped
   sets.precast.WS["Sonic Thrust"].AttCappedMaxTP = sets.precast.WS["Impulse Drive"].AttCappedMaxTP
 
-	sets.precast.WS['Cataclysm'] = set_combine(sets.precast.WS['Cloudsplitter'], {
+  sets.precast.WS['Cataclysm'] = set_combine(sets.precast.WS['Cloudsplitter'], {
     head="Pixie Hairpin +1",
     ring2="Archon Ring",
   })
-	sets.precast.WS['Cataclysm'].MaxTP = set_combine(sets.precast.WS['Cloudsplitter'].MaxTP, {
+  sets.precast.WS['Cataclysm'].MaxTP = set_combine(sets.precast.WS['Cloudsplitter'].MaxTP, {
     head="Pixie Hairpin +1",
     ring2="Archon Ring",
   })
-	sets.precast.WS['Cataclysm'].AttCapped = set_combine(sets.precast.WS['Cloudsplitter'].AttCapped, {
+  sets.precast.WS['Cataclysm'].AttCapped = set_combine(sets.precast.WS['Cloudsplitter'].AttCapped, {
     head="Pixie Hairpin +1",
     ring2="Archon Ring",
   })
-	sets.precast.WS['Cataclysm'].AttCappedMaxTP = set_combine(sets.precast.WS['Cloudsplitter'].AttCappedMaxTP, {
+  sets.precast.WS['Cataclysm'].AttCappedMaxTP = set_combine(sets.precast.WS['Cloudsplitter'].AttCappedMaxTP, {
     head="Pixie Hairpin +1",
     ring2="Archon Ring",
   })
 
-	sets.precast.WS['Aeolian Edge'] = sets.precast.WS['Cloudsplitter']
-	sets.precast.WS['Aeolian Edge'].MaxTP = sets.precast.WS['Cloudsplitter'].MaxTP
-	sets.precast.WS['Aeolian Edge'].AttCapped = sets.precast.WS['Cloudsplitter'].AttCapped
-	sets.precast.WS['Aeolian Edge'].AttCappedMaxTP = sets.precast.WS['Cloudsplitter'].AttCappedMaxTP
+  sets.precast.WS['Aeolian Edge'] = sets.precast.WS['Cloudsplitter']
+  sets.precast.WS['Aeolian Edge'].MaxTP = sets.precast.WS['Cloudsplitter'].MaxTP
+  sets.precast.WS['Aeolian Edge'].AttCapped = sets.precast.WS['Cloudsplitter'].AttCapped
+  sets.precast.WS['Aeolian Edge'].AttCappedMaxTP = sets.precast.WS['Cloudsplitter'].AttCappedMaxTP
 
-	sets.precast.WS['Asuran Fists'] = set_combine(sets.precast.WS, {
+  sets.precast.WS['Asuran Fists'] = set_combine(sets.precast.WS, {
     ammo="Knobkierrie",
     head=gear.Nyame_B_head,
     body=gear.Nyame_B_body,
@@ -643,7 +643,7 @@ function init_gear_sets()
     ear2="Ishvara Earring",
   })
 
-	sets.precast.WS['Spiral Hell'] = set_combine(sets.precast.WS, {
+  sets.precast.WS['Spiral Hell'] = set_combine(sets.precast.WS, {
     ammo="Knobkierrie",
     body=gear.Nyame_B_body,
     hands=gear.Nyame_B_hands,
@@ -790,7 +790,7 @@ function init_gear_sets()
   })
 
   -- Focus capped DA > STP
-	sets.engaged.TwoHanded = {
+  sets.engaged.TwoHanded = {
     ammo="Coiste Bodhar",                 -- [__/__, ___]  3 <__, __,  3> __, __
     head="Hjarrandi Helm",                -- [10/10,  53]  7 <__, __,  6> __, __
     body="Boii Lorica +2",                -- [13/13,  99] 10 <__, __, __> __,  3
@@ -833,7 +833,7 @@ function init_gear_sets()
   sets.engaged.TwoHanded.HighAcc = set_combine(sets.engaged.TwoHanded.MidAcc, {})
 
   -- Focus white damage
-	sets.engaged.UkonvasaraAM = {
+  sets.engaged.UkonvasaraAM = {
     ammo="Coiste Bodhar",                 -- [__/__, ___]  3 <__, __,  3> __, __
     head="Sakpata's Helm",                -- [ 7/ 7, 123] __ <__, __,  5> __,  4; DA dmg+13%
     body="Sakpata's Breastplate",         -- [10/10, 139] __ <__, __,  8> __,  2
@@ -898,7 +898,7 @@ function init_gear_sets()
   sets.engaged.HighAcc.LightDef = sets.engaged.LightDef
 
   -- Focus capped DA > STP
-	sets.engaged.TwoHanded.LightDef = {
+  sets.engaged.TwoHanded.LightDef = {
     ammo="Coiste Bodhar",                 -- [__/__, ___]  3 <__, __,  3> __, __
     head="Hjarrandi Helm",                -- [10/10,  53]  7 <__, __,  6> __, __
     body="Boii Lorica +2",                -- [13/13,  99] 10 <__, __, __> __,  3
@@ -936,14 +936,14 @@ function init_gear_sets()
     -- WAR Traits                            [__/__, ___] __ <__, __, 33> __, __
     -- [51 PDT/41 MDT, 610 MEVA] 33 STP <0 QA, 0 TA, 102 DA> 0 Crit Rate, 25 Haste; DA dmg+33%
   }
-	sets.engaged.TwoHanded.LowAcc.LightDef = set_combine(sets.engaged.TwoHanded.LightDef, {
+  sets.engaged.TwoHanded.LowAcc.LightDef = set_combine(sets.engaged.TwoHanded.LightDef, {
   })
-	sets.engaged.TwoHanded.MidAcc.LightDef = set_combine(sets.engaged.TwoHanded.LightDef, {
+  sets.engaged.TwoHanded.MidAcc.LightDef = set_combine(sets.engaged.TwoHanded.LightDef, {
   })
-	sets.engaged.TwoHanded.HighAcc.LightDef = set_combine(sets.engaged.TwoHanded.LightDef, {
+  sets.engaged.TwoHanded.HighAcc.LightDef = set_combine(sets.engaged.TwoHanded.LightDef, {
   })
 
-	sets.engaged.UkonvasaraAM.LightDef = {
+  sets.engaged.UkonvasaraAM.LightDef = {
     ammo="Coiste Bodhar",                 -- [__/__, ___]  3 <__, __,  3> __, __
     head="Sakpata's Helm",                -- [ 7/ 7, 123] __ <__, __,  5> __,  4; DA dmg+13%
     body="Sakpata's Breastplate",         -- [10/10, 139] __ <__, __,  8> __,  2
@@ -981,11 +981,11 @@ function init_gear_sets()
     -- WAR Traits                            [__/__, ___] __ <__, __, 33> __, __
     -- [51 PDT/41 MDT, 610 MEVA] 30 STP <0 QA, 0 TA, 99 DA> 10 Crit Rate, 25 Haste; DA dmg+33%
   }
-	sets.engaged.UkonvasaraAM.LowAcc.LightDef = set_combine(sets.engaged.UkonvasaraAM.LightDef, {
+  sets.engaged.UkonvasaraAM.LowAcc.LightDef = set_combine(sets.engaged.UkonvasaraAM.LightDef, {
   })
-	sets.engaged.UkonvasaraAM.MidAcc.LightDef = set_combine(sets.engaged.UkonvasaraAM.LightDef, {
+  sets.engaged.UkonvasaraAM.MidAcc.LightDef = set_combine(sets.engaged.UkonvasaraAM.LightDef, {
   })
-	sets.engaged.UkonvasaraAM.HighAcc.LightDef = set_combine(sets.engaged.UkonvasaraAM.LightDef, {
+  sets.engaged.UkonvasaraAM.HighAcc.LightDef = set_combine(sets.engaged.UkonvasaraAM.LightDef, {
   })
 
   sets.engaged.SubtleBlow = {
@@ -1077,35 +1077,35 @@ function init_gear_sets()
     main="Shining One",
     sub="Utu Grip",
   }
-	sets.WeaponSet['Mag Axe'] = {
+  sets.WeaponSet['Mag Axe'] = {
     -- main="Farsha",
     sub="Blurred Shield +1",
   }
-	sets.WeaponSet['Phys Axe'] = {
+  sets.WeaponSet['Phys Axe'] = {
     -- main="Dolichenus",
     sub="Blurred Shield +1",
   }
-	sets.WeaponSet['Dagger'] = {
+  sets.WeaponSet['Dagger'] = {
     main="Malevolence",
     sub="Blurred Shield +1",
   }
-	sets.WeaponSet['DW Dagger'] = {
+  sets.WeaponSet['DW Dagger'] = {
     main="Malevolence",
     sub="Malevolence",
   }
-	sets.WeaponSet['Great Sword'] = {
+  sets.WeaponSet['Great Sword'] = {
     -- main="Montante +1",
     sub="Utu Grip",
   }
-	sets.WeaponSet['Ukon'] = {
+  sets.WeaponSet['Ukon'] = {
     -- main="Ukonvasara",
     sub="Utu Grip",
   }
-	sets.WeaponSet['Club'] = {
+  sets.WeaponSet['Club'] = {
     main="Loxotic Mace +1",
     sub="Blurred Shield +1",
   }
-	sets.WeaponSet['Staff'] = {
+  sets.WeaponSet['Staff'] = {
     main="Xoanon",
     sub="Utu Grip",
   }
@@ -1530,15 +1530,15 @@ end
 
 function update_melee_groups()
   if player then
-		classes.CustomMeleeGroups:clear()
+    classes.CustomMeleeGroups:clear()
 
-		if state.Buff['Brazen Rush'] or state.Buff["Warrior's Charge"] then
-			classes.CustomMeleeGroups:append('Charge')
-		end
+    if state.Buff['Brazen Rush'] or state.Buff["Warrior's Charge"] then
+      classes.CustomMeleeGroups:append('Charge')
+    end
 
-		if state.Buff['Mighty Strikes'] then
-			classes.CustomMeleeGroups:append('Mighty')
-		end
+    if state.Buff['Mighty Strikes'] then
+      classes.CustomMeleeGroups:append('Mighty')
+    end
 
     for weapon,am_list in pairs(activate_AM_mode) do
       if player.equipment.main == weapon or player.equipment.ranged == weapon then
@@ -1561,7 +1561,7 @@ function update_melee_groups()
         end
       end
     end
-	end
+  end
 end
 
 function job_self_command(cmdParams, eventArgs)

@@ -32,7 +32,7 @@ function job_setup()
   state.Buff['Sublimation: Activated'] = buffactive['Sublimation: Activated'] or false
   state.HelixMode = M{['description']='Helix Mode', 'Potency', 'Duration'}
   state.RegenMode = M{['description']='Regen Mode', 'Duration', 'Potency'}
-	state.ElementalMode = M{['description'] = 'Elemental Mode', 'Light','Dark','Fire','Ice','Wind','Earth','Lightning','Water'}
+  state.ElementalMode = M{['description'] = 'Elemental Mode', 'Light','Dark','Fire','Ice','Wind','Earth','Lightning','Water'}
 
   degrade_array = {
     ['Aspirs'] = {'Aspir','Aspir II'}
@@ -1932,22 +1932,22 @@ function handle_elemental(cmdParams)
     return
   end
 
-	local target = '<t>'
-	if cmdParams[3] then
-		if tonumber(cmdParams[3]) then
-			target = cmdParams[3]
-		else
-			target = table.concat(cmdParams, ' ', 3)
-			target = get_closest_mob_id_by_name(target) or '<t>'
-		end
-	end
+  local target = '<t>'
+  if cmdParams[3] then
+    if tonumber(cmdParams[3]) then
+      target = cmdParams[3]
+    else
+      target = table.concat(cmdParams, ' ', 3)
+      target = get_closest_mob_id_by_name(target) or '<t>'
+    end
+  end
   if command:contains('tier') then
-		local spell_recasts = windower.ffxi.get_spell_recasts()
-		local tierlist = {['tier1']='',['tier2']=' II',['tier3']=' III',['tier4']=' IV',['tier5']=' V',['tier6']=' VI'}
+    local spell_recasts = windower.ffxi.get_spell_recasts()
+    local tierlist = {['tier1']='',['tier2']=' II',['tier3']=' III',['tier4']=' IV',['tier5']=' V',['tier6']=' VI'}
 
-		windower.chat.input('/ma "'..elements.nuke_of[state.ElementalMode.value]..tierlist[command]..'" '..target..'')
-	elseif command == 'helix' then
-		windower.chat.input('/ma "'..elements.helix_of[state.ElementalMode.value]..'helix II" '..target..'')
+    windower.chat.input('/ma "'..elements.nuke_of[state.ElementalMode.value]..tierlist[command]..'" '..target..'')
+  elseif command == 'helix' then
+    windower.chat.input('/ma "'..elements.helix_of[state.ElementalMode.value]..'helix II" '..target..'')
   else
     add_to_chat(123,'Unrecognized elemental command.')
   end
