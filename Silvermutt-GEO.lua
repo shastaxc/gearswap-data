@@ -42,8 +42,8 @@ function job_setup()
   state.Buff.Entrust = buffactive.Entrust or false
 
   indi_timer = '' -- DO NOT MODIFY
-  indi_duration = 298 -- Update with your actual indi duration
-  indi_entrust_duration = 320 -- Update with your actual indi duration for entrusted spells
+  indi_duration = 304 -- Update with your actual indi duration
+  indi_entrust_duration = 321 -- Update with your actual indi duration for entrusted spells
 
   -- Spells that don't scale with skill. Overrides Mote lib.
   classes.EnhancingDurSpells = S{'Adloquium', 'Haste', 'Haste II', 'Flurry', 'Flurry II', 'Protect', 'Protect II', 'Protect III',
@@ -241,7 +241,7 @@ function init_gear_sets()
     legs="Bagua Pants +1",
   }
   sets.precast.JA['Full Circle'] = {
-    head="Azimuth Hood +1",
+    head="Azimuth Hood +2",
     hands="Bagua Mitaines +1",
     -- head="Azimuth Hood +3",
   }
@@ -468,11 +468,11 @@ function init_gear_sets()
     sub="Genmei Shield",            -- __, __, __ [10/__, ___]
     range="Dunna",                  -- __, 18, __ [__/__, ___]
     ammo=empty,
-    head="Azimuth Hood +1",         -- __, 15, __ [12/12, 136]; Set bonus
+    head="Azimuth Hood +2",         -- __, 20, __ [11/11, 126]; Set bonus
     body=gear.Nyame_B_body,         -- __, __, __ [ 9/ 9, 139]
     hands="Azimuth Gloves +1",      -- __, __, __ [12/12,  98]; Set bonus
     legs=gear.Vanya_C_legs,         -- __, __, 12 [__/__, 107]
-    feet="Azimuth Gaiters +1",      -- __, __, __ [11/11, 168]; Set bonus
+    feet="Azimuth Gaiters +2",      -- __, __, __ [10/10, 158]; Set bonus
     neck="Bagua Charm +1",          --  6, __, __ [__/__, ___]; Luopan Duration +20%
     ear1="Eabani Earring",          -- __, __, __ [__/__,   8]
     ear2="Halasz Earring",          -- __, __, __ [__/__, ___]
@@ -481,7 +481,7 @@ function init_gear_sets()
     back=gear.GEO_Adoulin_Cape,     -- __, 15, __ [__/__, ___]
     waist="Sekhmet Corset",         -- __, __,  3 [__/__, ___]
     -- Base stats                   -- __,850, 43
-    -- 10 Geomancy, 906 geo skill, 58 Conserve MP [64 PDT/54 MDT, 656 M.Eva]
+    -- 10 Geomancy, 911 geo skill, 58 Conserve MP [62 PDT/52 MDT, 636 M.Eva]
 
     -- main="Idris",                -- 10, __, __ [__/__, ___]
     -- sub="Genmei Shield",         -- __, __, __ [10/__, ___]
@@ -510,11 +510,11 @@ function init_gear_sets()
     sub="Genmei Shield",            -- __, __, __, __, __ [10/__, ___] {__, __}
     range="Dunna",                  -- __, 18, __, __, __ [__/__, ___] { 5, __}
     ammo=empty,
-    head="Azimuth Hood +1",         -- __, 15, __, __, __ [__/__,  86] {__,  3}
+    head="Azimuth Hood +2",         -- __, 20, __, __, __ [11/11, 126] {__,  4}
     body=gear.Nyame_B_body,         -- __, __, __, __, __ [ 9/ 9, 139] {__, __}
     hands="Azimuth Gloves +1",      -- __, __, __, __, __ [__/__,  48] {__, __}
     legs="Bagua Pants +1",          -- __, __, __, 15, __ [__/__, 107] {__, __}
-    feet="Azimuth Gaiters +1",      -- __, __, __, 20, __ [ 4/__, 118] {__, __}
+    feet="Azimuth Gaiters +2",      -- __, __, __, 25, __ [10/10, 158] {__, __}
     neck="Incanter's Torque",       -- __, 10, __, __, __ [__/__, ___] {__, __}; Save MP
     ear1="Eabani Earring",          -- __, __, __, __, __ [__/__,   8] {__, __}
     ear2="Halasz Earring",          -- __, __, __, __, __ [__/__, ___] {__, __}
@@ -524,7 +524,7 @@ function init_gear_sets()
     waist="Gishdubar Sash",         -- __, __, __, __, __ [__/__, ___] {__, __}
     -- Base stats                   -- __,850, 43,220, __ [__/__, ___] {50, __}
     -- Master level 14              -- __, 28
-    -- 10 Geomancy, 954 geo skill, 43 Conserve MP, 255 Indi Duration, 17 Indi Duration % [33 PDT/19 MDT, 506 M.Eva] {Pet: 80 DT, 3 Regen}
+    -- 10 Geomancy, 949 geo skill, 43 Conserve MP, 260 Indi Duration, 17 Indi Duration % [50 PDT/40 MDT, 586 M.Eva] {Pet: 80 DT, 4 Regen}
     
     -- hands="Azimuth Gloves +3",   -- __, __, __, __, __ [12/12,  98] {__, __}; Set bonus: save MP
     -- feet="Azimuth Gaiters +3",   -- __, __, __, 30, __ [11/11, 168] {__, __}; Set bonus: save MP
@@ -577,11 +577,11 @@ function init_gear_sets()
     sub="Genmei Shield",            -- __, __, __, __, __ [10/__, ___] {__, __}
     range=empty,
     ammo="Pemphredo Tathlum",       -- __, __,  4, __, __ [__/__, ___] {__, __}
-    head="Azimuth Hood +1",         -- __, 15, __, __, __ [__/__,  86] {__,  3}
+    head="Azimuth Hood +2",         -- __, 20, __, __, __ [__/__, 126] {__,  4}
     body=gear.Nyame_B_body,         -- __, __, __, __, __ [ 9/ 9, 139] {__, __}
     hands="Azimuth Gloves +1",      -- __, __, __, __, __ [__/__,  48] {__, __}
     legs="Bagua Pants +1",          -- __, __, __, 15, __ [__/__, 107] {__, __}
-    feet="Azimuth Gaiters +1",      -- __, __, __, 20, __ [ 4/__, 118] {__, __}
+    feet="Azimuth Gaiters +2",      -- __, __, __, 25, __ [10/10, 158] {__, __}
     neck="Reti Pendant",            -- __, __,  4, __, __ [__/__, ___] {__, __}; Save MP
     ear1="Eabani Earring",          -- __, __, __, __, __ [__/__,   8] {__, __}
     ear2="Halasz Earring",          -- __, __, __, __, __ [__/__, ___] {__, __}
@@ -591,7 +591,7 @@ function init_gear_sets()
     waist="Gishdubar Sash",         -- __, __, __, __, __ [__/__, ___] {__, __}
     -- Base stats                   -- __,850, 43,220, __ [__/__, ___] {50, __}
     -- Master level 14              -- __, 28
-    -- Ideal: 0 Geomancy, 911 geo skill, 57 Conserve MP, 267 Indi Duration, 20 Indi Duration % [33 PDT/19 MDT, 506 M.Eva] {Pet: 59 DT, 3 Regen}
+    -- Ideal: 0 Geomancy, 926 geo skill, 57 Conserve MP, 275 Indi Duration, 17 Indi Duration % [39 PDT/29 MDT, 586 M.Eva] {Pet: 54 DT, 4 Regen}
 
     -- head="Azimuth Hood +3",      -- __, 25, __, __, __ [12/12, 136] {__,  5}; Set bonus: save MP
     -- body=gear.Merl_ConMP_body,   -- __, __,  6, __, __ [ 2/__,  91] {__, __}
@@ -654,7 +654,7 @@ function init_gear_sets()
     body="Cohort Cloak +1", --100
     hands="Jhakri Cuffs +2",
     legs="Jhakri Slops +2",
-    feet="Jhakri Pigaches +2",
+    feet="Azimuth Gaiters +2",
     neck="Baetyl Pendant", --13
     ear1="Malignance Earring", --8
     ear2="Regal Earring", --7
@@ -1206,7 +1206,7 @@ function init_gear_sets()
     sub="Genmei Shield",            -- __ [10/__, ___] {__/__, __}
     range=empty,
     ammo="Staunch Tathlum +1",      -- __ [ 3/ 3, ___] {__/__, __}; Status Resist+11
-    head="Azimuth Hood +1",         -- __ [__/__,  86] {__/__,  3}
+    head="Azimuth Hood +2",         -- __ [11/11, 126] {__/__,  4}
     body=gear.Nyame_B_body,         -- __ [ 9/ 9, 139] {__/__, __}
     hands="Geomancy Mitaines +2",   -- __ [ 2/__,  47] {12/12, __}
     legs=gear.Nyame_B_legs,         -- __ [ 8/ 8, 150] {__/__, __}
@@ -1218,7 +1218,7 @@ function init_gear_sets()
     ring2="Defending Ring",         -- __ [10/10, ___] {__/__, __}
     back=gear.GEO_Idle_Cape,        -- __ [__/__,  30] {__/__, 15}
     waist="Isa Belt",               -- __ [__/__, ___] { 3/ 3,  1}; Prefer refresh if it existed
-    -- 0 Refresh [51 PDT/33 MDT, 559 M.Eva] {Pet: 40 PDT/40 MDT, 22 Regen}
+    -- 0 Refresh [62 PDT/43 MDT, 599 M.Eva] {Pet: 40 PDT/40 MDT, 23 Regen}
     
     -- main="Idris",                -- __ [__/__, ___] {25/25, __}
     -- sub="Genmei Shield",         -- __ [10/__, ___] {__/__, __}
