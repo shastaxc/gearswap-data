@@ -524,14 +524,14 @@ function init_gear_sets()
     ear2="Cath Palug Earring",      --  5, __, __, __ [__/__, ___]
     -- ring1="Evoker's Ring",       -- 10, __, __, __ [__/__, ___]
     ring2="Stikini Ring +1",        --  8, __, __, __ [__/__, ___]
-    -- back=gear.SMN_Pre_BP_Cape,   --  8, __,  5, __ [__/__, ___]
+    back=gear.SMN_Skill_Cape,       --  8, __,  2, __ [__/__, ___]
     waist="Regal Belt",             -- __, __, __, __ [ 3/ 3, ___]
     -- Traits/Merits/Gifts            469, __, __, 10
-    -- 670 Summon Skill, 15 -BP Delay, 12 -BP Delay II, 10 -BP Delay III [32 PDT/32 MDT, 603 M.Eva]
+    -- 670 Summon Skill, 15 -BP Delay, 9 -BP Delay II, 10 -BP Delay III [32 PDT/32 MDT, 603 M.Eva]
     
     -- ammo="Epitaph",              -- __, __,  5, __ [__/__, ___]
     -- head="Beckoner's Horn +3",   -- 23, __, __, __ [10/10, 130]; Keep on for Favor bonus
-    -- 675 Summon Skill, 15 -BP Delay, 10 -BP Delay II, 10 -BP Delay III [33 PDT/33 MDT, 613 M.Eva]
+    -- 675 Summon Skill, 15 -BP Delay, 8 -BP Delay II, 10 -BP Delay III [33 PDT/33 MDT, 613 M.Eva]
     
     -- main="Malignance Pole",      -- __, __, __, __ [20/20, ___]
     -- sub="Vox Grip",              --  3, __, __, __ [__/__, ___]
@@ -568,10 +568,10 @@ function init_gear_sets()
     ear2="Cath Palug Earring",      --  5, __, __, __ [__/__, ___]
     -- ring1="Evoker's Ring",       -- 10, __, __, __ [__/__, ___]
     ring2="Stikini Ring +1",        --  8, __, __, __ [__/__, ___]
-    -- back=gear.SMN_Pre_BP_Cape,   --  8, __,  5, __ [__/__, ___]
+    back=gear.SMN_Skill_Cape,       --  8, __,  2, __ [__/__, ___]
     waist="Regal Belt",             -- __, __, __, __ [ 3/ 3, ___]
     -- Traits/Merits/Gifts            469, __, __, 10
-    -- 672 Summon Skill, 15 -BP Delay, 10 -BP Delay II, 10 -BP Delay III [13 PDT/13 MDT, 613 M.Eva]
+    -- 672 Summon Skill, 15 -BP Delay, 7 -BP Delay II, 10 -BP Delay III [13 PDT/13 MDT, 613 M.Eva]
     
     -- main="Nirvana",              -- __, __, __, __ [__/__, ___]
     -- sub="Elan Strap +1",         -- __, __, __, __ [__/__, ___]
@@ -586,10 +586,10 @@ function init_gear_sets()
     -- ear2="Cath Palug Earring",   --  5, __, __, __ [__/__, ___]
     -- ring1="Evoker's Ring",       -- 10, __, __, __ [__/__, ___]
     -- ring2="Defending Ring",      -- __, __, __, __ [10/10, ___]
-    -- back=gear.SMN_Pre_BP_Cape,   --  8, __,  5, __ [__/__, ___]
+    -- back=gear.SMN_Skill_Cape,    --  8, __,  2, __ [__/__, ___]
     -- waist="Kobo Obi",            --  8, __, __, __ [__/__, ___]
     -- Traits/Merits/Gifts            469, __, __, 10
-    -- 672 Summon Skill, 15 -BP Delay, 10 -BP Delay II, 10 -BP Delay III [20 PDT/20 MDT, 613 M.Eva]
+    -- 672 Summon Skill, 15 -BP Delay, 7 -BP Delay II, 10 -BP Delay III [20 PDT/20 MDT, 613 M.Eva]
 
     -- main="Nirvana",              -- __, __, __, __ [__/__, ___]
     -- sub="Elan Strap +1",         -- __, __, __, __ [__/__, ___]
@@ -604,10 +604,10 @@ function init_gear_sets()
     -- ear2="Cath Palug Earring",   --  5, __, __, __ [__/__, ___]
     -- ring1="Evoker's Ring",       -- 10, __, __, __ [__/__, ___]
     -- ring2="Stikini Ring +1",     --  8, __, __, __ [__/__, ___]
-    -- back=gear.SMN_Pre_BP_Cape,   --  8, __,  5, __ [__/__, ___]
+    -- back=gear.SMN_Skill_Cape,    --  8, __,  2, __ [__/__, ___]
     -- waist="Kobo Obi",            --  8, __, __, __ [__/__, ___]
     -- Traits/Merits/Gifts            469, __, __, 10
-    -- 672 Summon Skill, 15 -BP Delay, 10 -BP Delay II, 10 -BP Delay III [23 PDT/23 MDT, 631 M.Eva]
+    -- 672 Summon Skill, 15 -BP Delay, 7 -BP Delay II, 10 -BP Delay III [23 PDT/23 MDT, 631 M.Eva]
 
     -- main="Nirvana",              -- __, __, __, __ [__/__, ___]
     -- sub="Elan Strap +1",         -- __, __, __, __ [__/__, ___]

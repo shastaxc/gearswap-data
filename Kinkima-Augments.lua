@@ -159,7 +159,6 @@ gear.SCH_Adoulin_Helix_Cape = { name="Bookworm's Cape", augments={'INT+1','MND+1
 
 gear.GEO_Adoulin_Cape = { name="Lifestream Cape", augments={'Geomancy Skill +9','Indi. eff. dur. +20','Pet: Damage taken -4%',}}
 
--- gear.SMN_Pre_BP_Cape = {} -- BP Delay II -5
 gear.SMN_Skill_Cape = { name="Conveyance Cape", augments={'Summoning magic skill +5','Pet: Enmity+11','Blood Pact Dmg.+5','Blood Pact ab. del. II -2',}}
 
 
