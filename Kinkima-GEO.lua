@@ -1247,10 +1247,8 @@ function init_gear_sets()
     ear2="Etiolation Earring",      -- __ [__/ 3, ___] {__/__, __}; Resist Silence+15
     ring1="Stikini Ring +1",        --  1 [__/__, ___] {__/__, __}
     ring2="Stikini Ring +1",        --  1 [__/__, ___] {__/__, __}
+    back=gear.GEO_FC_Cape,          -- __ [10/__, ___] {__/__, __}
     waist="Carrier's Sash",         -- __ [__/__, ___] {__/__, __}; Ele resist+15
-    -- 10 Refresh [40 PDT/23 MDT, 518 M.Eva] {Pet: 0 PDT/0 MDT, 4 Regen}
-    
-    -- back=gear.GEO_Nuke_Cape,     -- __ [10/__, ___] {__/__, __}
     -- 10 Refresh [50 PDT/23 MDT, 518 M.Eva] {Pet: 0 PDT/0 MDT, 4 Regen}
 
     -- main="Daybreak",             --  1 [__/__,  30] {__/__, __}
