@@ -470,7 +470,7 @@ function init_gear_sets()
     ammo=empty,
     head="Azimuth Hood +2",         -- __, 20, __ [11/11, 126]; Set bonus
     body=gear.Nyame_B_body,         -- __, __, __ [ 9/ 9, 139]
-    hands="Azimuth Gloves +1",      -- __, __, __ [12/12,  98]; Set bonus
+    hands="Azimuth Gloves +2",      -- __, __, __ [11/11,  88]; Set bonus
     legs=gear.Vanya_C_legs,         -- __, __, 12 [__/__, 107]
     feet="Azimuth Gaiters +2",      -- __, __, __ [10/10, 158]; Set bonus
     neck="Bagua Charm +1",          --  6, __, __ [__/__, ___]; Luopan Duration +20%
@@ -481,7 +481,7 @@ function init_gear_sets()
     back=gear.GEO_Adoulin_Cape,     -- __, 15, __ [__/__, ___]
     waist="Sekhmet Corset",         -- __, __,  3 [__/__, ___]
     -- Base stats                   -- __,850, 43
-    -- 10 Geomancy, 911 geo skill, 58 Conserve MP [62 PDT/52 MDT, 636 M.Eva]
+    -- 10 Geomancy, 911 geo skill, 58 Conserve MP [61 PDT/51 MDT, 626 M.Eva]
 
     -- main="Idris",                -- 10, __, __ [__/__, ___]
     -- sub="Genmei Shield",         -- __, __, __ [10/__, ___]
@@ -512,7 +512,7 @@ function init_gear_sets()
     ammo=empty,
     head="Azimuth Hood +2",         -- __, 20, __, __, __ [11/11, 126] {__,  4}
     body=gear.Nyame_B_body,         -- __, __, __, __, __ [ 9/ 9, 139] {__, __}
-    hands="Azimuth Gloves +1",      -- __, __, __, __, __ [__/__,  48] {__, __}
+    hands="Azimuth Gloves +2",      -- __, __, __, __, __ [11/11,  88] {__, __}
     legs="Bagua Pants +1",          -- __, __, __, 15, __ [__/__, 107] {__, __}
     feet="Azimuth Gaiters +2",      -- __, __, __, 25, __ [10/10, 158] {__, __}
     neck="Incanter's Torque",       -- __, 10, __, __, __ [__/__, ___] {__, __}; Save MP
@@ -524,7 +524,7 @@ function init_gear_sets()
     waist="Gishdubar Sash",         -- __, __, __, __, __ [__/__, ___] {__, __}
     -- Base stats                   -- __,850, 43,220, __ [__/__, ___] {50, __}
     -- Master level 14              -- __, 28
-    -- 10 Geomancy, 949 geo skill, 43 Conserve MP, 260 Indi Duration, 17 Indi Duration % [50 PDT/40 MDT, 586 M.Eva] {Pet: 80 DT, 4 Regen}
+    -- 10 Geomancy, 949 geo skill, 43 Conserve MP, 260 Indi Duration, 17 Indi Duration % [61 PDT/51 MDT, 626 M.Eva] {Pet: 80 DT, 4 Regen}
     
     -- hands="Azimuth Gloves +3",   -- __, __, __, __, __ [12/12,  98] {__, __}; Set bonus: save MP
     -- feet="Azimuth Gaiters +3",   -- __, __, __, 30, __ [11/11, 168] {__, __}; Set bonus: save MP
@@ -579,7 +579,7 @@ function init_gear_sets()
     ammo="Pemphredo Tathlum",       -- __, __,  4, __, __ [__/__, ___] {__, __}
     head="Azimuth Hood +2",         -- __, 20, __, __, __ [__/__, 126] {__,  4}
     body=gear.Nyame_B_body,         -- __, __, __, __, __ [ 9/ 9, 139] {__, __}
-    hands="Azimuth Gloves +1",      -- __, __, __, __, __ [__/__,  48] {__, __}
+    hands="Azimuth Gloves +2",      -- __, __, __, __, __ [11/11,  88] {__, __}
     legs="Bagua Pants +1",          -- __, __, __, 15, __ [__/__, 107] {__, __}
     feet="Azimuth Gaiters +2",      -- __, __, __, 25, __ [10/10, 158] {__, __}
     neck="Reti Pendant",            -- __, __,  4, __, __ [__/__, ___] {__, __}; Save MP
@@ -591,7 +591,7 @@ function init_gear_sets()
     waist="Gishdubar Sash",         -- __, __, __, __, __ [__/__, ___] {__, __}
     -- Base stats                   -- __,850, 43,220, __ [__/__, ___] {50, __}
     -- Master level 14              -- __, 28
-    -- Ideal: 0 Geomancy, 926 geo skill, 57 Conserve MP, 275 Indi Duration, 17 Indi Duration % [39 PDT/29 MDT, 586 M.Eva] {Pet: 54 DT, 4 Regen}
+    -- Ideal: 0 Geomancy, 926 geo skill, 57 Conserve MP, 275 Indi Duration, 17 Indi Duration % [50 PDT/40 MDT, 626 M.Eva] {Pet: 54 DT, 4 Regen}
 
     -- head="Azimuth Hood +3",      -- __, 25, __, __, __ [12/12, 136] {__,  5}; Set bonus: save MP
     -- body=gear.Merl_ConMP_body,   -- __, __,  6, __, __ [ 2/__,  91] {__, __}
@@ -652,7 +652,7 @@ function init_gear_sets()
     ammo="Pemphredo Tathlum", --4
     head=empty,
     body="Cohort Cloak +1", --100
-    hands="Jhakri Cuffs +2",
+    hands="Azimuth Gloves +2",
     legs="Jhakri Slops +2",
     feet="Azimuth Gaiters +2",
     neck="Baetyl Pendant", --13
@@ -694,7 +694,7 @@ function init_gear_sets()
     ammo="Pemphredo Tathlum",
     head=gear.Nyame_B_head,
     body=gear.Nyame_B_body,
-    hands=gear.Nyame_B_hands,
+    hands="Azimuth Gloves +2",
     legs=gear.Nyame_B_legs,
     feet=gear.Nyame_B_feet,
     neck="Erra Pendant",
