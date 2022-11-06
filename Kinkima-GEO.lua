@@ -42,8 +42,8 @@ function job_setup()
   state.Buff.Entrust = buffactive.Entrust or false
 
   indi_timer = '' -- DO NOT MODIFY
-  indi_duration = 266 -- Update with your actual indi duration
-  indi_entrust_duration = 281 -- Update with your actual indi duration for entrusted spells
+  indi_duration = 319 -- Update with your actual indi duration
+  indi_entrust_duration = 337 -- Update with your actual indi duration for entrusted spells
 
   -- Spells that don't scale with skill. Overrides Mote lib.
   classes.EnhancingDurSpells = S{'Adloquium', 'Haste', 'Haste II', 'Flurry', 'Flurry II', 'Protect', 'Protect II', 'Protect III',
@@ -475,10 +475,10 @@ function init_gear_sets()
     ear2="Halasz Earring",          -- __, __, __ [__/__, ___]
     ring1="Stikini Ring +1",        -- __,  8, __ [__/__, ___]
     ring2="Defending Ring",         -- __, __, __ [10/10, ___]
-    -- back=gear.GEO_Adoulin_Cape,  -- __, 15, __ [__/__, ___]
+    -- back=gear.GEO_Adoulin_Cape,  -- __, 14, __ [__/__, ___]
     -- waist="Sekhmet Corset",      -- __, __,  3 [__/__, ___]
     -- Base stats                   -- __,850, 43
-    -- 10 Geomancy, 911 geo skill, 58 Conserve MP [61 PDT/51 MDT, 626 M.Eva]
+    -- 10 Geomancy, 910 geo skill, 58 Conserve MP [61 PDT/51 MDT, 626 M.Eva]
 
     -- main="Idris",                -- 10, __, __ [__/__, ___]
     -- sub="Genmei Shield",         -- __, __, __ [10/__, ___]
@@ -551,10 +551,12 @@ function init_gear_sets()
     legs="Bagua Pants +3",          -- __, __, __, 21, __ [__/__, 127] {__, __}
     feet="Azimuth Gaiters +2",      -- __, __, __, 25, __ [10/10, 158] {__, __}; Set bonus: save MP
     neck="Incanter's Torque",       -- __, 10, __, __, __ [__/__, ___] {__, __}; Save MP
+    ear1="Mendicant's Earring",     -- __, __,  2, __, __ [__/__, ___] {__, __}
     ring1="Stikini Ring +1",        -- __,  8, __, __, __ [__/__, ___] {__, __}
+    back=gear.GEO_Adoulin_Cape,     -- __, 14, __, __, 20 [__/__, ___] { 4, __}
     waist="Shinjutsu-no-Obi +1",    -- __, __, 15, __, __ [__/__, ___] {__, __}
     -- Base stats                   -- __,850, 43,220, __ [__/__, ___] {50, __}
-    -- 10 Geomancy, 886 geo skill, 58 Conserve MP, 266 Indi Duration, 0 Indi Duration % [40 PDT/ 30 MDT, 512 M.Eva] {Pet: 80 DT, 0 Regen}
+    -- 10 Geomancy, 900 geo skill, 60 Conserve MP, 266 Indi Duration, 20 Indi Duration % [40 PDT/ 30 MDT, 512 M.Eva] {Pet: 84 DT, 0 Regen}
     
     -- main="Idris",                -- 10, __, __, __, __ [__/__, ___] {25, __}
     -- sub="Genmei Shield",         -- __, __, __, __, __ [10/__, ___] {__, __}
@@ -570,10 +572,10 @@ function init_gear_sets()
     -- ear2="Calamitous Earring",   -- __, __,  4, __, __ [__/__, ___] {__, __}
     -- ring1="Stikini Ring +1",     -- __,  8, __, __, __ [__/__, ___] {__, __}
     -- ring2="Mephitas's Ring +1",  -- __, __, 15, __, __ [__/__, ___] {__, __}
-    -- back=gear.GEO_Adoulin_Cape,  -- __, 15, __, __, 20 [__/__, ___] {__, __}
+    -- back=gear.GEO_Adoulin_Cape,  -- __, 14, __, __, 20 [__/__, ___] { 4, __}
     -- waist="Shinjutsu-no-Obi +1", -- __, __, 15, __, __ [__/__, ___] {__, __}
     -- Base stats                   -- __,850, 43,220, __ [__/__, ___] {50, __}
-    -- 10 Geomancy, 901 geo skill, 91 Conserve MP, 250 Indi Duration, 20 Indi Duration % [42 PDT/ 44 MDT, 480 M.Eva] {Pet: 80 DT, 0 Regen}
+    -- 10 Geomancy, 900 geo skill, 91 Conserve MP, 250 Indi Duration, 20 Indi Duration % [42 PDT/ 44 MDT, 480 M.Eva] {Pet: 84 DT, 0 Regen}
     
     -- main="Idris",                -- 10, __, __, __, __ [__/__, ___] {25, __}
     -- sub="Genmei Shield",         -- __, __, __, __, __ [10/__, ___] {__, __}
@@ -589,11 +591,11 @@ function init_gear_sets()
     -- ear2="Calamitous Earring",   -- __, __,  4, __, __ [__/__, ___] {__, __}
     -- ring1="Defending Ring",      -- __, __, __, __, __ [10/10, ___] {__, __}
     -- ring2="Mephitas's Ring +1",  -- __, __, 15, __, __ [__/__, ___] {__, __}
-    -- back=gear.GEO_Adoulin_Cape,  -- __, 15, __, __, 20 [__/__, ___] {__, __}
+    -- back=gear.GEO_Adoulin_Cape,  -- __, 14, __, __, 20 [__/__, ___] { 4, __}
     -- waist="Shinjutsu-no-Obi +1", -- __, __, 15, __, __ [__/__, ___] {__, __}
     -- Base stats                   -- __,850, 43,220, __ [__/__, ___] {50, __}
     -- Master level 4               -- __,  8
-    -- 10 Geomancy, 901 geo skill, 91 Conserve MP, 271 Indi Duration, 20 Indi Duration % [52 PDT/ 44 MDT, 607 M.Eva] {Pet: 80 DT, 0 Regen}
+    -- 10 Geomancy, 900 geo skill, 91 Conserve MP, 271 Indi Duration, 20 Indi Duration % [52 PDT/ 44 MDT, 607 M.Eva] {Pet: 84 DT, 0 Regen}
     
     -- main="Idris",                -- 10, __, __, __, __ [__/__, ___] {25, __}
     -- sub="Genmei Shield",         -- __, __, __, __, __ [10/__, ___] {__, __}
@@ -609,11 +611,11 @@ function init_gear_sets()
     -- ear2="Calamitous Earring",   -- __, __,  4, __, __ [__/__, ___] {__, __}
     -- ring1="Defending Ring",      -- __, __, __, __, __ [10/10, ___] {__, __}
     -- ring2="Mephitas's Ring +1",  -- __, __, 15, __, __ [__/__, ___] {__, __}
-    -- back=gear.GEO_Adoulin_Cape,  -- __,  5, __, __, 20 [__/__, ___] { 5, __}
+    -- back=gear.GEO_Adoulin_Cape,  -- __, 14, __, __, 20 [__/__, ___] { 4, __}
     -- waist="Shinjutsu-no-Obi +1", -- __, __, 15, __, __ [__/__, ___] {__, __}
     -- Base stats                   -- __,850, 43,220, __ [__/__, ___] {50, __}
-    -- Master level 23              -- __, 46
-    -- 10 Geomancy, 901 geo skill, 99 Conserve MP, 271 Indi Duration, 20 Indi Duration % [52 PDT/ 44 MDT, 607 M.Eva] {Pet: 80 DT, 0 Regen}
+    -- Master level 18              -- __, 36
+    -- 10 Geomancy, 900 geo skill, 99 Conserve MP, 271 Indi Duration, 20 Indi Duration % [52 PDT/ 44 MDT, 607 M.Eva] {Pet: 79 DT, 0 Regen}
   }
 
   -- Geomancy has no effect on Entrust, skill and duration do.
@@ -629,9 +631,10 @@ function init_gear_sets()
     neck="Reti Pendant",            -- __, __,  4, __, __ [__/__, ___] {__, __}; Save MP
     ear1="Mendicant's Earring",     -- __, __,  2, __, __ [__/__, ___] {__, __}
     ring1="Defending Ring",         -- __, __, __, __, __ [10/10, ___] {__, __}
+    back=gear.GEO_Adoulin_Cape,     -- __, 14, __, __, 20 [__/__, ___] { 4, __}
     waist="Shinjutsu-no-Obi +1",    -- __, __, 15, __, __ [__/__, ___] {__, __}
     -- Base stats                   -- __,850, 43,220, __ [__/__, ___] {50, __}
-    -- Ideal: 0 Geomancy, 875 geo skill, 74 Conserve MP, 281 Indi Duration, 0 Indi Duration % [52 PDT/ 42 MDT, 499 M.Eva] {Pet: 54 DT, 4 Regen}
+    -- Ideal: 0 Geomancy, 889 geo skill, 74 Conserve MP, 281 Indi Duration, 20 Indi Duration % [52 PDT/ 42 MDT, 499 M.Eva] {Pet: 58 DT, 4 Regen}
     
     -- head="Azimuth Hood +3",      -- __, 25, __, __, __ [12/12, 136] {__,  5}; Set bonus: save MP
     -- body=gear.Merl_ConMP_body,   -- __, __,  6, __, __ [ 2/__,  91] {__, __}
@@ -639,11 +642,10 @@ function init_gear_sets()
     -- feet="Azimuth Gaiters +3",   -- __, __, __, 30, __ [11/11, 168] {__, __}; Set bonus: save MP
     -- ear2="Calamitous Earring",   -- __, __,  4, __, __ [__/__, ___] {__, __}
     -- ring2="Mephitas's Ring +1",  -- __, __, 15, __, __ [__/__, ___] {__, __}
-    -- back=gear.GEO_Adoulin_Cape,  -- __,  5, __, __, 20 [__/__, ___] { 5, __}
     -- waist="Shinjutsu-no-Obi +1", -- __, __, 15, __, __ [__/__, ___] {__, __}
     -- Base stats                   -- __,850, 43,220, __ [__/__, ___] {50, __}
-    -- Master level 8               -- __, 16
-    -- Ideal: 0 Geomancy, 901 geo skill, 99 Conserve MP, 286 Indi Duration, 20 Indi Duration % [57 PDT/ 45 MDT, 620 M.Eva] {Pet: 59 DT, 5 Regen}
+    -- Master level 3               -- __,  6
+    -- Ideal: 0 Geomancy, 900 geo skill, 99 Conserve MP, 286 Indi Duration, 20 Indi Duration % [57 PDT/ 45 MDT, 620 M.Eva] {Pet: 59 DT, 5 Regen}
   })
 
   -- Cap at 700 power; Power = floor(MND÷2) + floor(VIT÷4) + Healing Magic Skill
