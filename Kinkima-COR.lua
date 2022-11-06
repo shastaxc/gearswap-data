@@ -271,33 +271,29 @@ function init_gear_sets()
     -- body="Lanun Frac +3",
 }
 
-  -- DT > PR Potency > PR Duration; PR Potency does not stack, uses highest piece
   sets.precast.CorsairRoll = {
-    head="Lanun Tricorne +1",       -- __/__,  53 (__, __); 50% chance of job align bonus
-    body="Malignance Tabard",       --  9/ 9, 139 (__, __)
-    hands="Chasseur's Gants +2",    -- __/__,  83 (__, 55)
-    legs=gear.Nyame_B_legs,         --  8/ 8, 150 (__, __)
-    feet=gear.Nyame_B_feet,         --  7/ 7, 150 (__, __)
-    neck="Regal Necklace",          -- __/__, ___ ( 7, 20)
-    ear2="Etiolation Earring",      -- __/ 3, ___ (__, __)
-    ring1="Luzaf's Ring",           -- __/__, ___ (__, __); Double PR range
-    ring2="Defending Ring",         -- 10/10, ___ (__, __)
-    back=gear.COR_TP_Cape,          -- 10/__, ___ (__, 30)
-    waist="Flume Belt +1",          --  4/__, ___ (__, __)
-    -- 48 PDT / 37 MDT, 492 M.Eva (7 PR Potency, 70 PR Duration)
+    head="Lanun Tricorne +1",       -- __/__,  36 (__, __, __); 50% chance of job align bonus
+    body="Malignance Tabard",       --  9/ 9, 139 (__, __, __)
+    hands="Chasseur's Gants +2",    -- __/__,  83 (__, 55, __)
+    legs=gear.Nyame_B_legs,         --  8/ 8, 150 (__, __, __)
+    feet=gear.Nyame_B_feet,         --  7/ 7, 150 (__, __, __)
+    neck="Regal Necklace",          -- __/__, ___ ( 7, 20, __)
+    ear2="Etiolation Earring",      -- __/ 3, ___ (__, __, __)
+    ring1="Luzaf's Ring",           -- __/__, ___ (__, __, __); Double PR range
+    ring2="Defending Ring",         -- 10/10, ___ (__, __, __)
+    back=gear.COR_TP_Cape,          -- 10/__, ___ (__, 30, __)
+    waist="Flume Belt +1",          --  4/__, ___ (__, __, __)
+    -- 48 PDT / 37 MDT, 518 M.Eva (7 PR Potency, 105 PR Duration, 0 PR Delay)
 
-    -- head="Lanun Tricorne +3",    -- __/__,  73 (__, __); 50% chance of job align bonus
-    -- legs="Desultor Tassets",     -- __/__, ___ (__, __); PR Delay -5
-    -- ear1="Genmei Earring",       --  2/__, ___ (__, __)
-    -- 45 PDT / 31 MDT, 445 M.Eva (7 PR Potency, 105 PR Duration)
+    -- head="Lanun Tricorne +3",    -- __/__,  73 (__, __, __); 50% chance of job align bonus
+    -- legs="Desultor Tassets",     -- __/__, ___ (__, __,  5); PR Delay -5
+    -- ear1="Genmei Earring",       --  2/__, ___ (__, __, __)
+    -- 45 PDT / 31 MDT, 445 M.Eva (7 PR Potency, 105 PR Duration, 5 PR Delay)
   }
-
   sets.precast.CorsairRoll.Duration = {
-    -- main="Rostam",
-    -- range="Compensator",
-  }
-  sets.precast.CorsairRoll.LowerDelay = {
-    -- back=gear.COR_Adoulin_Cape,
+    -- main=gear.Rostam_C,          -- __/__, ___ ( 8, 60, __)
+    -- range="Compensator",         -- __/__, ___ (__, 20, __)
+    -- 45 PDT / 31 MDT, 445 M.Eva (7 PR Potency, 185 PR Duration, 5 PR Delay)
   }
   sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {
     -- legs="Chasseur's Culottes +1",

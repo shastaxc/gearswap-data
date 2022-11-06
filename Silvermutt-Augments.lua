@@ -179,7 +179,6 @@ gear.Samnuha_legs = { name="Samnuha Tights", augments={'STR+10','DEX+10','"Dbl.A
 -----------------------      Adoulin Capes     -----------------------
 ----------------------------------------------------------------------
 
--- gear.COR_Adoulin_Cape = {}
 gear.DNC_Adoulin_Cape = { name="Toetapper Mantle", augments={'"Store TP"+1','"Dual Wield"+2','"Rev. Flourish"+28',}}
 -- gear.DRG_Adoulin_Cape = {} -- Pet: Breath+10
 gear.GEO_Adoulin_Cape = { name="Lifestream Cape", augments={'Geomancy Skill +10','Indi. eff. dur. +17','Pet: Damage taken -5%',}}
