@@ -415,12 +415,18 @@ function init_gear_sets()
   })
 
   sets.precast.RA = {
-    gear.Herc_Snap_head,            --  6/__
-    legs=gear.Adhemar_D_legs,       -- 10/13
-    feet="Meg. Jam. +2",            -- 10/__
-    ring1="Crepuscular Ring",       --  3/__
-    waist="Yemaya Belt",            -- __/ 5
-  } -- 29 Snapshot / 18 Rapid Shot
+    head=gear.Herc_Snap_head,           --  6/__
+    legs=gear.Adhemar_D_legs,           -- 10/13
+    feet="Meg. Jam. +2",                -- 10/__
+    ring1="Crepuscular Ring",           --  3/__
+    waist="Yemaya Belt",                -- __/ 5
+    -- 29 Snapshot / 18 Rapid Shot
+
+    -- body=gear.Herc_Snap_body,        --  6/__
+    -- hands=gear.Herc_Snap_hands,      --  6/__
+    -- back=gear.THF_Snapshot_Cape,     -- 10/__
+    -- 51 Snapshot / 18 Rapid Shot
+  }
 
 
   ------------------------------------------------------------------------------------------------
@@ -567,7 +573,7 @@ function init_gear_sets()
     ear1="Moonshade Earring",       -- __, __, __, __; TP Bonus+250
     ear2="Odr Earring",             -- 10, __, __, __
     ring1="Ilabrat Ring",           -- 10, __, 25, __
-    ring2="Regal Ring",             -- 10, __, 20, __
+    ring2="Epaminondas's Ring",     -- __,  5, __, __
     back=gear.DNC_WS1_Cape,         -- 30, 10, 20, __; Crit dmg+5
     waist="Kentarch Belt +1",       -- 10, __, __, __
     -- 220 DEX, 63 WSD, 347 Att, 10 PDL
