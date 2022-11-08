@@ -1,4 +1,4 @@
--- File Status: Still testing sets under Astral Conduit.
+-- File Status: Good.
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs
@@ -1106,8 +1106,7 @@ function job_precast(spell, action, spellMap, eventArgs)
   end
 
   if state.Buff['Astral Conduit'] and spell.type == 'BloodPactRage' then
-    print('trigger AC logic')
-    equip(sets.midcast[spellMap])
+    equip(sets.midcast.Pet[spellMap])
     eventArgs.handled = true
   else
     if pet_midaction() then
@@ -1127,6 +1126,11 @@ function job_precast(spell, action, spellMap, eventArgs)
 end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
+  if state.Buff['Astral Conduit'] and spell.type == 'BloodPactRage' then
+    equip(sets.midcast.Pet[spellMap])
+    eventArgs.handled = true
+  end
+
   -- If slot is locked, keep current equipment on
   if locked_neck then equip({ neck=player.equipment.neck }) end
   if locked_ear1 then equip({ ear1=player.equipment.ear1 }) end
@@ -1143,7 +1147,7 @@ function job_midcast(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
 
   if state.Buff['Astral Conduit'] and spell.type == 'BloodPactRage' then
-    equip(sets.midcast[spellMap])
+    equip(sets.midcast.Pet[spellMap])
     eventArgs.handled = true
   end
 end
@@ -1151,6 +1155,11 @@ end
 function job_post_midcast(spell, action, spellMap, eventArgs)
   if state.CastingMode.current == 'NirvAM' then
     equip({ main="Nirvana", sub="Elan Strap +1",})
+  end
+
+  if state.Buff['Astral Conduit'] and spell.type == 'BloodPactRage' then
+    equip(sets.midcast.Pet[spellMap])
+    eventArgs.handled = true
   end
 
   -- If slot is locked, keep current equipment on
@@ -1165,16 +1174,18 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
 end
 
 function job_aftercast(spell, action, spellMap, eventArgs)
+  silibs.aftercast_hook(spell, action, spellMap, eventArgs)
+  ----------- Non-silibs content goes below this line -----------
+
   if state.CastingMode.current == 'NirvAM' then
     equip({ main="Nirvana", sub="Elan Strap +1",})
   end
 
-  silibs.aftercast_hook(spell, action, spellMap, eventArgs)
-  ----------- Non-silibs content goes below this line -----------
-
-  if state.Buff['Astral Conduit'] then
+  if state.Buff['Astral Conduit'] and spell.type == 'BloodPactRage' then
+    equip(sets.midcast.Pet[spellMap])
     eventArgs.handled = true
   end
+  
 end
 
 function job_post_aftercast(spell, action, spellMap, eventArgs)
@@ -1280,9 +1291,9 @@ end
 function customize_idle_set(idleSet)
   if state.Buff['Astral Conduit'] then
     if pet and pet.name == 'Ifrit' then
-      idleSet = set_combine(idleSet, sets.midcast.HybridBloodPactRage)
+      idleSet = set_combine(idleSet, sets.midcast.Pet.HybridBloodPactRage)
     else
-      idleSet = set_combine(idleSet, sets.midcast.PhysicalBloodPactRage)
+      idleSet = set_combine(idleSet, sets.midcast.Pet.PhysicalBloodPactRage)
     end
     return idleSet
   end
@@ -1324,9 +1335,9 @@ end
 function customize_melee_set(meleeSet)
   if state.Buff['Astral Conduit'] then
     if pet and pet.name == 'Ifrit' then
-      meleeSet = set_combine(meleeSet, sets.midcast.HybridBloodPactRage)
+      meleeSet = set_combine(meleeSet, sets.midcast.Pet.HybridBloodPactRage)
     else
-      meleeSet = set_combine(meleeSet, sets.midcast.PhysicalBloodPactRage)
+      meleeSet = set_combine(meleeSet, sets.midcast.Pet.PhysicalBloodPactRage)
     end
     return meleeSet
   end
@@ -1353,9 +1364,9 @@ end
 function customize_defense_set(defenseSet)
   if state.Buff['Astral Conduit'] then
     if pet and pet.name == 'Ifrit' then
-      defenseSet = set_combine(defenseSet, sets.midcast.HybridBloodPactRage)
+      defenseSet = set_combine(defenseSet, sets.midcast.Pet.HybridBloodPactRage)
     else
-      defenseSet = set_combine(defenseSet, sets.midcast.PhysicalBloodPactRage)
+      defenseSet = set_combine(defenseSet, sets.midcast.Pet.PhysicalBloodPactRage)
     end
     return defenseSet
   end
