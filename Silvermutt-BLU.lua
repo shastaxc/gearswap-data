@@ -1,4 +1,4 @@
--- File Status: Good
+-- File Status: Good. Kinkima's BLU is better. Need to update sets with empy+3.
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs
