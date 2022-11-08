@@ -302,7 +302,7 @@ function init_gear_sets()
     hands="Plunderer's Armlets +3",
   }
   sets.precast.JA['Feint'] = {
-    -- legs="Plunderer's Culottes +3",
+    -- legs="Plunderer's Culottes +3", -- This needs to be kept equipped for the hit that applies Feint
   }
 
   sets.precast.Waltz = {
