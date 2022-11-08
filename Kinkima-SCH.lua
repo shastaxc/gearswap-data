@@ -442,6 +442,7 @@ function init_gear_sets()
     body="Academic's Gown +1",      -- 109
     legs=gear.Psycloth_D_legs,      -- 109
     ear2="Etiolation Earring",      --  50
+    ring1="Mephitas's Ring +1",     -- 110
     back=gear.SCH_MP_Cape,          --  80
     waist="Shinjutsu-no-Obi +1",    --  85
     -- body="Academic's Gown +3",     -- 173
