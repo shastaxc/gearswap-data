@@ -303,6 +303,7 @@ function init_gear_sets()
     head="Sakpata's Helm",
     hands="Sakpata's Gauntlets",
     feet="Sakpata's Leggings",
+    -- feet="Boii Cuisses +3",
   })
   sets.precast.WS["Savage Blade"].AttCappedMaxTP = set_combine(sets.precast.WS["Savage Blade"].AttCapped, {
     ear2="Ishvara Earring",
@@ -445,6 +446,7 @@ function init_gear_sets()
     ear2="Ishvara Earring",
   })
   sets.precast.WS["Decimation"].AttCapped = set_combine(sets.precast.WS["Decimation"], {
+    -- legs="Boii Cuisses +3",
   })
   sets.precast.WS["Decimation"].AttCappedMaxTP = set_combine(sets.precast.WS["Decimation"].AttCapped, {
     ear2="Ishvara Earring",
@@ -452,6 +454,7 @@ function init_gear_sets()
 
   sets.precast.WS['Calamity'] =  set_combine(sets.precast.WS, {
     ammo="Knobkierrie",
+    head=gear.Nyame_B_head,
     body=gear.Nyame_B_body,
     hands=gear.Nyame_B_hands,
     legs="Sakpata's Cuisses",
@@ -469,6 +472,7 @@ function init_gear_sets()
     ear2="Ishvara Earring",
   })
   sets.precast.WS["Calamity"].AttCapped = set_combine(sets.precast.WS["Calamity"], {
+    -- legs="Boii Cuisses +3",
   })
   sets.precast.WS["Calamity"].AttCappedMaxTP = set_combine(sets.precast.WS["Calamity"].AttCapped, {
     ear2="Ishvara Earring",
