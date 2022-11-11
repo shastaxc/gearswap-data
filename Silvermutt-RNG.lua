@@ -998,7 +998,7 @@ function init_gear_sets()
   sets.engaged = {
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
-    hands=gear.Adhemar_B_hands,       -- __,  7, 32 <__,  4, __> [__/__,  43]
+    hands=gear.Adhemar_A_hands,       -- __,  7, 52 <__,  4, __> [__/__,  43]
     legs=gear.Samnuha_legs,           -- __,  7, 15 < 3,  3, __> [__/__,  75]
     feet=gear.Herc_TA_feet,           -- __, __, 23 <__,  6, __> [ 2/__,  75]
     neck="Iskur Gorget",              -- __,  8, __ <__, __, __> [__/__, ___]
@@ -1008,12 +1008,11 @@ function init_gear_sets()
     ring2="Epona's Ring",             -- __, __, __ < 3,  3, __> [__/__, ___]
     back=gear.RNG_STP_Cape,           -- __, 10, 20 <__, __, __> [10/__, ___]
     waist="Windbuffet Belt +1",       -- __, __,  2 <__,  2,  2> [__/__, ___]
-    -- 0 DW, 76 STP, 202 Acc <12 DA, 18 TA, 2 QA> [27 PDT/15 MDT, 455 M.Eva]
+    -- 0 DW, 76 STP, 222 Acc <12 DA, 18 TA, 2 QA> [27 PDT/15 MDT, 455 M.Eva]
   }
   sets.engaged.LowAcc = set_combine(sets.engaged, {
     head="Dampening Tam",
     ring1="Chirich Ring +1",
-    -- hands=gear.Adhemar_A_hands,
   })
   sets.engaged.MidAcc = set_combine(sets.engaged.LowAcc, {
     ring1="Regal Ring",
@@ -1054,7 +1053,6 @@ function init_gear_sets()
     feet="Malignance Boots",
     hands="Malignance Gloves",
     waist="Kentarch Belt +1",
-    -- hands=gear.Adhemar_A_hands,
   })
   sets.engaged.DW.HighAcc = set_combine(sets.engaged.DW.MidAcc, {
     head="Malignance Chapeau",
@@ -1090,7 +1088,6 @@ function init_gear_sets()
     hands="Malignance Gloves",
     ring2="Ilabrat Ring",
     waist="Olseni Belt",
-    -- hands=gear.Adhemar_A_hands,
   })
   sets.engaged.DW.HighAcc.LowHaste = set_combine(sets.engaged.DW.MidAcc.LowHaste, {
     head="Malignance Chapeau",
@@ -1103,7 +1100,7 @@ function init_gear_sets()
   sets.engaged.DW.MidHaste = {
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body=gear.Adhemar_A_body,         --  6, __, 55 <__,  4, __> [__/__,  69]
-    hands=gear.Adhemar_B_hands,       -- __,  7, 32 <__,  4, __> [__/__,  43]
+    hands=gear.Adhemar_A_hands,       -- __,  7, 52 <__,  4, __> [__/__,  43]
     legs="Amini Bragues +2",          -- __, 11, 53 <__, __, __> [12/12, 115]
     feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
     neck="Iskur Gorget",              -- __,  8, __ <__, __, __> [__/__, ___]
@@ -1114,12 +1111,11 @@ function init_gear_sets()
     back=gear.RNG_DW_Cape,            -- 10, __, 20 <__, __, __> [10/__, ___]
     waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
     -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
-    -- 57 DW, 52 STP, 270 Acc <3 DA, 11 TA, 0 QA> [32 PDT/22 MDT, 508 MEVA]
+    -- 57 DW, 52 STP, 290 Acc <3 DA, 11 TA, 0 QA> [32 PDT/22 MDT, 508 MEVA]
   }
   sets.engaged.DW.LowAcc.MidHaste = set_combine(sets.engaged.DW.MidHaste, {
     head="Dampening Tam",
     ring1="Chirich Ring +1",
-    -- hands=gear.Adhemar_A_hands,
   })
   sets.engaged.DW.MidAcc.MidHaste = set_combine(sets.engaged.DW.LowAcc.MidHaste, {
     feet="Malignance Boots",
@@ -1139,7 +1135,7 @@ function init_gear_sets()
   sets.engaged.DW.HighHaste = {
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body=gear.Adhemar_A_body,         --  6, __, 55 <__,  4, __> [__/__,  69]
-    hands=gear.Adhemar_B_hands,       -- __,  7, 32 <__,  4, __> [__/__,  43]
+    hands=gear.Adhemar_A_hands,       -- __,  7, 52 <__,  4, __> [__/__,  43]
     legs="Amini Bragues +2",          -- __, 11, 53 <__, __, __> [12/12, 115]
     feet=gear.Herc_TA_feet,           -- __, __, 23 <__,  6, __> [ 2/__,  75]
     neck="Iskur Gorget",              -- __,  8, __ <__, __, __> [__/__, ___]
@@ -1150,12 +1146,11 @@ function init_gear_sets()
     back=gear.RNG_STP_Cape,           -- __, __, 20 <10, __, __> [10/__, ___]
     waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
     -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
-    -- 43 DW, 43 STP, 243 Acc <18 DA, 17 TA, 0 QA> [40 PDT/28 MDT, 425 MEVA]
+    -- 43 DW, 43 STP, 263 Acc <18 DA, 17 TA, 0 QA> [40 PDT/28 MDT, 425 MEVA]
   }
   sets.engaged.DW.LowAcc.HighHaste = set_combine(sets.engaged.DW.HighHaste, {
     head="Dampening Tam",
     ring1="Chirich Ring +1",
-    -- hands=gear.Adhemar_A_hands,
   })
   sets.engaged.DW.MidAcc.HighHaste = set_combine(sets.engaged.DW.LowAcc.HighHaste, {
     feet="Malignance Boots",
@@ -1174,7 +1169,7 @@ function init_gear_sets()
   sets.engaged.DW.SuperHaste = {
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body=gear.Adhemar_A_body,         --  6, __, 55 <__,  4, __> [__/__,  69]
-    hands=gear.Adhemar_B_hands,       -- __,  7, 32 <__,  4, __> [__/__,  43]
+    hands=gear.Adhemar_A_hands,       -- __,  7, 52 <__,  4, __> [__/__,  43]
     legs="Amini Bragues +2",          -- __, 11, 53 <__, __, __> [12/12, 115]
     feet=gear.Herc_TA_feet,           -- __, __, 23 <__,  6, __> [ 2/__,  75]
     neck="Iskur Gorget",              -- __,  8, __ <__, __, __> [__/__, ___]
@@ -1185,7 +1180,7 @@ function init_gear_sets()
     back=gear.RNG_STP_Cape,           -- __, __, 20 <10, __, __> [10/__, ___]
     waist="Windbuffet Belt +1",       -- __, __,  2 <__,  2,  2> [__/__, ___]
     -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
-    -- 36 DW, 39 STP, 235 Acc <18 DA, 19 TA, 2 QA> [40 PDT/28 MDT, 425 MEVA]
+    -- 36 DW, 39 STP, 255 Acc <18 DA, 19 TA, 2 QA> [40 PDT/28 MDT, 425 MEVA]
   }
   sets.engaged.DW.LowAcc.SuperHaste = {
   }
@@ -1209,7 +1204,7 @@ function init_gear_sets()
   sets.engaged.HeavyDef = {
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
-    hands=gear.Adhemar_B_hands,       -- __,  7, 32 <__,  4, __> [__/__,  43]
+    hands=gear.Adhemar_A_hands,       -- __,  7, 52 <__,  4, __> [__/__,  43]
     legs="Amini Bragues +2",          -- __, 11, 53 <__, __, __> [12/12, 115]
     feet=gear.Herc_TA_feet,           -- __, __, 23 <__,  6, __> [ 2/__,  75]
     neck="Iskur Gorget",              -- __,  8, __ <__, __, __> [__/__, ___]
@@ -1219,7 +1214,7 @@ function init_gear_sets()
     ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
     back=gear.RNG_STP_Cape,           -- __, 10, 20 <__, __, __> [10/__, ___]
     waist="Windbuffet Belt +1",       -- __, __,  2 <__,  2,  2> [__/__, ___]
-    -- 0 DW, 65 STP, 240 Acc <9 DA, 15 TA, 2 QA> [49 PDT/37 MDT, 495 M.Eva]
+    -- 0 DW, 65 STP, 260 Acc <9 DA, 15 TA, 2 QA> [49 PDT/37 MDT, 495 M.Eva]
   }
   sets.engaged.LowAcc.HeavyDef = sets.engaged.HeavyDef
   sets.engaged.MidAcc.HeavyDef = sets.engaged.HeavyDef
@@ -1271,7 +1266,7 @@ function init_gear_sets()
   sets.engaged.DW.HeavyDef.MidHaste = {
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body=gear.Adhemar_A_body,         --  6, __, 55 <__,  4, __> [__/__,  69]
-    hands=gear.Adhemar_B_hands,       -- __,  7, 32 <__,  4, __> [__/__,  43]
+    hands=gear.Adhemar_A_hands,       -- __,  7, 52 <__,  4, __> [__/__,  43]
     legs="Amini Bragues +2",          -- __, 11, 53 <__, __, __> [12/12, 115]
     feet=gear.Herc_TA_feet,           -- __, __, 23 <__,  6, __> [ 2/__,  75]
     neck="Loricate Torque +1",        -- __, __, __ <__, __, __> [ 6/ 6, ___]
@@ -1282,7 +1277,7 @@ function init_gear_sets()
     back=gear.RNG_DW_Cape,            -- 10, __, 20 <__, __, __> [10/__, ___]
     waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
     -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
-    -- 57 DW, 30 STP, 243 Acc <0 DA, 14 TA, 0 QA> [53 PDT/33 MDT, 433 MEVA]
+    -- 57 DW, 30 STP, 263 Acc <0 DA, 14 TA, 0 QA> [53 PDT/33 MDT, 433 MEVA]
   }
   sets.engaged.DW.LowAcc.HeavyDef.MidHaste = sets.engaged.DW.HeavyDef.MidHaste
   sets.engaged.DW.MidAcc.HeavyDef.MidHaste = sets.engaged.DW.HeavyDef.MidHaste
@@ -1292,7 +1287,7 @@ function init_gear_sets()
   sets.engaged.DW.HeavyDef.HighHaste = {
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body=gear.Adhemar_A_body,         --  6, __, 55 <__,  4, __> [__/__,  69]
-    hands=gear.Adhemar_B_hands,       -- __,  7, 32 <__,  4, __> [__/__,  43]
+    hands=gear.Adhemar_A_hands,       -- __,  7, 52 <__,  4, __> [__/__,  43]
     legs="Amini Bragues +2",          -- __, 11, 53 <__, __, __> [12/12, 115]
     feet=gear.Herc_TA_feet,           -- __, __, 23 <__,  6, __> [ 2/__,  75]
     neck="Loricate Torque +1",        -- __, __, __ <__, __, __> [ 6/ 6, ___]
@@ -1303,7 +1298,7 @@ function init_gear_sets()
     back=gear.RNG_STP_Cape,           -- __, 10, 20 <__, __, __> [10/__, ___]
     waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
     -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
-    -- 43 DW, 45 STP, 243 Acc <5 DA, 14 TA, 0 QA> [53 PDT/33 MDT, 425 MEVA]
+    -- 43 DW, 45 STP, 263 Acc <5 DA, 14 TA, 0 QA> [53 PDT/33 MDT, 425 MEVA]
   }
   sets.engaged.DW.LowAcc.HeavyDef.HighHaste = sets.engaged.DW.HeavyDef.HighHaste
   sets.engaged.DW.MidAcc.HeavyDef.HighHaste = sets.engaged.DW.HeavyDef.HighHaste
@@ -1313,7 +1308,7 @@ function init_gear_sets()
   sets.engaged.DW.HeavyDef.SuperHaste = {
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body=gear.Adhemar_A_body,         --  6, __, 55 <__,  4, __> [__/__,  69]
-    hands=gear.Adhemar_B_hands,       -- __,  7, 32 <__,  4, __> [__/__,  43]
+    hands=gear.Adhemar_A_hands,       -- __,  7, 52 <__,  4, __> [__/__,  43]
     legs="Amini Bragues +2",          -- __, 11, 53 <__, __, __> [12/12, 115]
     feet=gear.Herc_TA_feet,           -- __, __, 23 <__,  6, __> [ 2/__,  75]
     neck="Loricate Torque +1",        -- __, __, __ <__, __, __> [ 6/ 6, ___]
@@ -1324,7 +1319,7 @@ function init_gear_sets()
     back=gear.RNG_STP_Cape,           -- __, 10, 20 <__, __, __> [10/__, ___]
     waist="Windbuffet Belt +1",       -- __, __,  2 <__,  2,  2> [__/__, ___]
     -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
-    -- 36 DW, 41 STP, 235 Acc <5 DA, 16 TA, 2 QA> [53 PDT/33 MDT, 425 MEVA]
+    -- 36 DW, 41 STP, 255 Acc <5 DA, 16 TA, 2 QA> [53 PDT/33 MDT, 425 MEVA]
   }
   sets.engaged.DW.LowAcc.HeavyDef.SuperHaste = sets.engaged.DW.HeavyDef.SuperHaste
   sets.engaged.DW.MidAcc.HeavyDef.SuperHaste = sets.engaged.DW.HeavyDef.SuperHaste

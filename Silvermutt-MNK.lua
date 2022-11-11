@@ -694,7 +694,7 @@ function init_gear_sets()
     ammo="Crepuscular Pebble",      -- __, __,  3, __, __ <__, __, __> [ 3/ 3, ___] (___, __) __, __, __(__)
     head=gear.Adhemar_B_head,       -- __, __, __, __,  6 <__,  4, __> [__/__,  59] (___, __) __, __, __(__)
     body="Kendatsuba Samue +1",     -- __, 52, __,  9, __ <__,  6, __> [__/__, 117] (___, __) __, __, 12(__)
-    hands=gear.Adhemar_B_hands,     --  7, 32, __, __, __ <__,  4, __> [__/__,  43] (___, __) __, __, __(__)
+    hands=gear.Adhemar_A_hands,     --  7, 52, __, __, __ <__,  4, __> [__/__,  43] (___, __) __, __, __(__)
     legs="Hesychast's Hose +3",     -- __, 39, __,  8, __ <__, __, __> [__/__,  84] (___, 19) __, __, 10(__)
     feet="Anchorite's Gaiters +3",  -- __, 46, __, __, __ <__, __, __> [__/__,  84] (120, 10) __, __, __(__)
     neck="Monk's Nodowa +2",        -- __, 30, 10, __, __ <__, __, __> [__/__, ___] ( 20, 25) __, __, __(__)
@@ -705,11 +705,11 @@ function init_gear_sets()
     back=gear.MNK_DEX_DA_Cape,      -- __, 20, __, __, __ <10, __, __> [10/__, ___] ( 25, 10) __, __, __(__)
     waist="Moonbow Belt +1",        -- __, __, __, __, __ <__,  8, __> [ 6/ 6, ___] (___, __) __, __, __(15)
     -- Merits/Traits/Gifts             __, __, __,  5, __ <__, __, __> [__/__, ___] (___, 19)  9, 27, 35(__)
-    -- 16 STP, 234 Acc, 13 PDL, 22 Crit Rate, 6 Crit Dmg <15 DA, 27 TA, 3 QA> [19 PDT/9 MDT, 387 M.Eva] (165 Kick Dmg, 83 Kick Rate) 9 Martial Arts, 35 Counter, 75 Subtle Blow
+    -- 16 STP, 254 Acc, 13 PDL, 22 Crit Rate, 6 Crit Dmg <15 DA, 27 TA, 3 QA> [19 PDT/9 MDT, 387 M.Eva] (165 Kick Dmg, 83 Kick Rate) 9 Martial Arts, 35 Counter, 75 Subtle Blow
     
     -- Ideal:
     -- ear2="Bhikku Earring +2",    --  6, 20, __, __, __ <__, __, __> [__/__, ___] (___, __) __,  9, __(__)
-    -- 18 STP, 239 Acc, 13 PDL, 22 Crit Rate, 6 Crit Dmg <15 DA, 27 TA, 3 QA> [21 PDT/11 MDT, 387 M.Eva] (165 Kick Dmg, 83 Kick Rate) 9 Martial Arts, 36 Counter, 75 Subtle Blow
+    -- 18 STP, 259 Acc, 13 PDL, 22 Crit Rate, 6 Crit Dmg <15 DA, 27 TA, 3 QA> [21 PDT/11 MDT, 387 M.Eva] (165 Kick Dmg, 83 Kick Rate) 9 Martial Arts, 36 Counter, 75 Subtle Blow
   }
   sets.engaged.LowAcc = set_combine(sets.engaged, {
     ammo="Ginsen",

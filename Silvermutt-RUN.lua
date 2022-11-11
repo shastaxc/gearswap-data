@@ -817,7 +817,6 @@ function init_gear_sets()
     ammo="Seething Bomblet +1",
     waist="Fotia Belt",
     -- head=gear.Adhemar_A_head,
-    -- hands=gear.Adhemar_A_hands,
   })
   sets.precast.WS['Resolution'].MaxTP = set_combine(sets.precast.WS['Resolution'], {
     neck="Caro Necklace",
@@ -1061,7 +1060,7 @@ function init_gear_sets()
     ammo="Coiste Bodhar",
     head=gear.Adhemar_B_head,
     body="Adhemar Jacket +1",
-    hands=gear.Adhemar_B_hands,
+    hands=gear.Adhemar_A_hands,
     legs=gear.Samnuha_legs,
     feet=gear.Herc_TA_feet,
     neck="Anu Torque",
@@ -1074,7 +1073,6 @@ function init_gear_sets()
   }
   sets.engaged.LowAcc = set_combine(sets.engaged, {
     head="Dampening Tam",
-    -- hands=gear.Adhemar_A_hands,
     -- neck="Combatant's Torque",
     waist="Ioskeha Belt +1",
   })
@@ -1175,7 +1173,7 @@ function init_gear_sets()
     ammo="Staunch Tathlum +1",  --  3/ 3, ___ [___] __, __ <__, __, __> __
     head=gear.Nyame_B_head,     --  7/ 7, 123 [ 91]  6, __ < 4, __, __> 40
     body=gear.Nyame_B_body,     --  9/ 9, 139 [136]  3, __ < 5, __, __> 40
-    hands=gear.Adhemar_B_hands, -- __/__,  43 [ 22]  5,  7 <__,  4, __> 32
+    hands=gear.Adhemar_A_hands, -- __/__,  43 [ 22]  5,  7 <__,  4, __> 52
     legs=gear.Samnuha_legs,     -- __/__,  75 [ 41]  6,  7 < 3,  3, __> 15
     feet="Erilaz Greaves +2",   -- 10/10, 147 [ 38]  4, __ <__, __, __> 50
     neck="Anu Torque",          -- __/__, ___ [___] __,  7 <__, __, __> __
@@ -1185,7 +1183,8 @@ function init_gear_sets()
     ring1="Moonlight Ring",     --  5/ 5, ___ [110] __,  5 <__, __, __>  8
     ring2="Moonlight Ring",     --  5/ 5, ___ [110] __,  5 <__, __, __>  8
     back=gear.RUN_TP_Cape,      -- 10/__, ___ [___] __, 10 <__, __, __> 30
-  } -- 49 PDT / 39 MDT, 527 MEVA [618 HP] 32 Haste, 51 STP <27 DA, 7 TA, 0 QA> 280 Acc
+    -- 49 PDT / 39 MDT, 527 MEVA [618 HP] 32 Haste, 51 STP <27 DA, 7 TA, 0 QA> 300 Acc
+  }
   sets.engaged.LowAcc.LightDef = sets.engaged.LightDef
   sets.engaged.MidAcc.LightDef = sets.engaged.LightDef
   sets.engaged.HighAcc.LightDef = sets.engaged.LightDef
@@ -1193,6 +1192,7 @@ function init_gear_sets()
   -- TODO: Needs updating
   sets.engaged.Aftermath.LightDef = {
     head="Ayanmo Zucchetto +2",
+    hands=gear.Adhemar_A_hands,
     legs="Meghanada Chausses +2",
     ear1="Sherida Earring",
     ear2="Dedition Earring",
@@ -1201,7 +1201,6 @@ function init_gear_sets()
     back=gear.RUN_TP_Cape,
     waist="Sailfi Belt +1",
     -- body="Ashera Harness",
-    -- hands=gear.Adhemar_A_hands,
     -- neck="Futhark Torque +2",
   }
 

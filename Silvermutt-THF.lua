@@ -377,7 +377,7 @@ function init_gear_sets()
     ammo="Cath Palug Stone",            -- 10, __, __, __ <__, __, __> [__/__, ___] __
     head=gear.Adhemar_B_head,           -- 19, __, 56, __ <__,  4, __> [__/__,  59] __
     body=gear.Nyame_B_body,             -- 33, 12, 60, __ < 5, __, __> [ 9/ 9, 139] __
-    hands=gear.Adhemar_B_hands,         --  7, __, 20, __ <__,  4, __> [__/__,  43] __
+    hands=gear.Adhemar_A_hands,         -- 19, __, 20, __ <__,  4, __> [__/__,  43] __
     legs="Meghanada Chausses +2",       -- 42, __, 45, __ <__,  5, __> [__/__,  69] __
     feet="Plunderer's Poulaines +3",    -- 47, __, 61, 11 <__,  5, __> [__/__,  89] __
     neck="Fotia Gorget",                -- __, __, __, __ <__, __, __> [__/__, ___] __; ftp+
@@ -388,13 +388,13 @@ function init_gear_sets()
     back=gear.THF_WS1_Cape,             -- 30, 10, 20, 20 <__, __, __> [10/__, ___] __
     waist="Fotia Belt",                 -- __, __, __, __ <__, __, __> [__/__, ___] __; ftp+
     -- Traits/Merits/Gifts              -- __, __, __, __ <__, 19, __> [__/__, ___] __
-    -- 198 AGI, 22 WSD, 303 Att, 31 TA Dmg <10 DA, 45 TA, 0 QA> [19 PDT/9 MDT, 399 M.Eva] 0 PDL
+    -- 210 AGI, 22 WSD, 303 Att, 31 TA Dmg <10 DA, 45 TA, 0 QA> [19 PDT/9 MDT, 399 M.Eva] 0 PDL
 
     -- head="Skulker's Bonnet +3",      -- 39, __, 61, __ <__,  6, __> [__/__, 109] 10
     -- body="Pillager's Vest +3",       -- 38, __, __, __ <__,  7, __> [__/__,  94] __
     -- ear2="Skulker's Earring +2",     -- 15, __, __, __ <__,  5, __> [__/__, ___] __
     -- back=gear.THF_WS3_Cape,          -- 30, __, 20, 20 <10, __, __> [10/__, ___] __
-    -- 238 AGI, 0 WSD, 248 Att, 31 TA Dmg <15 DA, 56 TA, 0 QA> [10 PDT/0 MDT, 404 M.Eva] 10 PDL
+    -- 250 AGI, 0 WSD, 248 Att, 31 TA Dmg <15 DA, 56 TA, 0 QA> [10 PDT/0 MDT, 404 M.Eva] 10 PDL
   }
   sets.precast.WS['Exenterator'].MaxTP = sets.precast.WS['Exenterator']
   sets.precast.WS['Exenterator'].AttCapped = sets.precast.WS['Exenterator']
@@ -858,7 +858,7 @@ function init_gear_sets()
     ammo="Coiste Bodhar",               -- __,  3, __, __ < 3, __, __> (__, __) [__/__, ___] __
     head="Malignance Chapeau",          -- __,  8, 50, __ <__, __, __> (__, __) [ 6/ 6, 123]  3
     body="Malignance Tabard",           -- __, 11, 50, __ <__, __, __> (__, __) [ 9/ 9, 139]  6
-    hands=gear.Adhemar_B_hands,         -- __,  7, 32, __ <__,  4, __> (__, __) [__/__,  43] __
+    hands=gear.Adhemar_A_hands,         -- __,  7, 52, __ <__,  4, __> (__, __) [__/__,  43] __
     legs="Malignance Tights",           -- __, 10, 50, __ <__, __, __> (__, __) [ 7/ 7, 150]  5
     feet="Plunderer's Poulaines +3",    -- __, __, 36, 11 <__,  5, __> (__, __) [__/__,  89] __
     neck="Assassin's Gorget +2",        -- __, __, 25,  5 <__,  4, __> (__, __) [__/__, ___] __
@@ -869,10 +869,10 @@ function init_gear_sets()
     back=gear.THF_TP_Cape,              -- __, 10, 20, 20 <__, __, __> (__, __) [10/__, ___] __
     waist="Chiner's Belt +1",           -- __, __, __,  5 <__,  2, __> (__, __) [__/__, ___] __
     -- Traits/Merits/Gifts              -- 30, __, __, 20 <__, 19, __> (__, 22) [__/__, ___] __
-    -- 30 DW, 62 STP, 261 Acc, 61 TA Dmg <3 DA, 42 TA, 0 QA> (0 Crit Rate, 22 Crit Dmg) [37 PDT/27 MDT, 544 MEVA] 14 PDL
+    -- 30 DW, 62 STP, 281 Acc, 61 TA Dmg <3 DA, 42 TA, 0 QA> (0 Crit Rate, 22 Crit Dmg) [37 PDT/27 MDT, 544 MEVA] 14 PDL
 
     -- ear2="Skulker's Earring +2",     -- __,  8, 20, __ <__,  5, __> (__, __) [__/__, ___] __
-    -- 30 DW, 70 STP, 281 Acc, 61 TA Dmg <3 DA, 44 TA, 0 QA> (0 Crit Rate, 22 Crit Dmg) [37 PDT/27 MDT, 544 MEVA] 14 PDL
+    -- 30 DW, 70 STP, 301 Acc, 61 TA Dmg <3 DA, 44 TA, 0 QA> (0 Crit Rate, 22 Crit Dmg) [37 PDT/27 MDT, 544 MEVA] 14 PDL
   }
   sets.engaged.LowAcc = set_combine(sets.engaged, {
     ammo="Yamarang",                    -- __,  3, 15, __ <__, __, __> (__, __) [__/__,  15] __
@@ -960,7 +960,7 @@ function init_gear_sets()
     ammo="Coiste Bodhar",               -- __,  3, __, __ < 3, __, __> (__, __) [__/__, ___] __
     head="Malignance Chapeau",          -- __,  8, 50, __ <__, __, __> (__, __) [ 6/ 6, 123]  3
     body="Plunderer's Vest +3",         -- __, __, 40, 10 <__, __, __> ( 6,  5) [__/__,  84] __; 5% TA from behind target
-    hands=gear.Adhemar_B_hands,         -- __,  7, 32, __ <__,  4, __> (__, __) [__/__,  43] __
+    hands=gear.Adhemar_A_hands,         -- __,  7, 52, __ <__,  4, __> (__, __) [__/__,  43] __
     legs="Malignance Tights",           -- __, 10, 50, __ <__, __, __> (__, __) [ 7/ 7, 150]  5
     feet="Plunderer's Poulaines +3",    -- __, __, 36, 11 <__,  5, __> (__, __) [__/__,  89] __
     neck="Assassin's Gorget +2",        -- __, __, 25,  5 <__,  4, __> (__, __) [__/__, ___] __
@@ -971,7 +971,7 @@ function init_gear_sets()
     back=gear.THF_DW_Cape,              -- 10, __, 20, 20 <__, __, __> (__, __) [10/__, ___] __
     waist="Reiki Yotai",                --  7,  4, 10, __ <__, __, __> (__, __) [__/__, ___] __
     -- Traits/Merits/Gifts              -- 30, __, __, 20 <__, 19, __> (__, 22) [__/__, ___] __
-    -- 56 DW, 32 STP, 263 Acc, 66 TA Dmg <3 DA, 37 TA, 0 QA> (6 Crit Rate, 27 Crit Dmg) [33 PDT/23 MDT, 497 MEVA] 8 PDL
+    -- 56 DW, 32 STP, 283 Acc, 66 TA Dmg <3 DA, 37 TA, 0 QA> (6 Crit Rate, 27 Crit Dmg) [33 PDT/23 MDT, 497 MEVA] 8 PDL
   }
   sets.engaged.DW.LowAcc.MidHaste = set_combine(sets.engaged.DW.MidHaste, {
     ammo="Yamarang",                    -- __,  3, 15, __ <__, __, __> (__, __) [__/__,  15] __
@@ -994,7 +994,7 @@ function init_gear_sets()
     ammo="Coiste Bodhar",               -- __,  3, __, __ < 3, __, __> (__, __) [__/__, ___] __
     head="Malignance Chapeau",          -- __,  8, 50, __ <__, __, __> (__, __) [ 6/ 6, 123]  3
     body="Plunderer's Vest +3",         -- __, __, 40, 10 <__, __, __> ( 6,  5) [__/__,  84] __; 5% TA from behind target
-    hands=gear.Adhemar_B_hands,         -- __,  7, 32, __ <__,  4, __> (__, __) [__/__,  43] __
+    hands=gear.Adhemar_A_hands,         -- __,  7, 52, __ <__,  4, __> (__, __) [__/__,  43] __
     legs="Malignance Tights",           -- __, 10, 50, __ <__, __, __> (__, __) [ 7/ 7, 150]  5
     feet="Plunderer's Poulaines +3",    -- __, __, 36, 11 <__,  5, __> (__, __) [__/__,  89] __
     neck="Assassin's Gorget +2",        -- __, __, 25,  5 <__,  4, __> (__, __) [__/__, ___] __
@@ -1005,10 +1005,10 @@ function init_gear_sets()
     back=gear.THF_TP_Cape,              -- __, 10, 20, 20 <__, __, __> (__, __) [10/__, ___] __
     waist="Reiki Yotai",                --  7,  4, 10, __ <__, __, __> (__, __) [__/__, ___] __
     -- Traits/Merits/Gifts              -- 30, __, __, 20 <__, 19, __> (__, 22) [__/__, ___] __
-    -- 42 DW, 42 STP, 263 Acc, 66 TA Dmg <3 DA, 40 TA, 0 QA> (6 Crit Rate, 27 Crit Dmg) [33 PDT/23 MDT, 489 MEVA] 8 PDL
+    -- 42 DW, 42 STP, 283 Acc, 66 TA Dmg <3 DA, 40 TA, 0 QA> (6 Crit Rate, 27 Crit Dmg) [33 PDT/23 MDT, 489 MEVA] 8 PDL
     
     -- ear2="Skulker's Earring +2",     -- __,  8, 20, __ <__,  5, __> (__, __) [__/__, ___] __
-    -- 42 DW, 50 STP, 283 Acc, 66 TA Dmg <3 DA, 42 TA, 0 QA> (6 Crit Rate, 27 Crit Dmg) [33 PDT/23 MDT, 489 MEVA] 8 PDL
+    -- 42 DW, 50 STP, 303 Acc, 66 TA Dmg <3 DA, 42 TA, 0 QA> (6 Crit Rate, 27 Crit Dmg) [33 PDT/23 MDT, 489 MEVA] 8 PDL
   }
   sets.engaged.DW.LowAcc.HighHaste = set_combine(sets.engaged.DW.HighHaste, {
     ammo="Yamarang",                    -- __,  3, 15, __ <__, __, __> (__, __) [__/__,  15] __
@@ -1031,7 +1031,7 @@ function init_gear_sets()
     ammo="Coiste Bodhar",               -- __,  3, __, __ < 3, __, __> (__, __) [__/__, ___] __
     head="Malignance Chapeau",          -- __,  8, 50, __ <__, __, __> (__, __) [ 6/ 6, 123]  3
     body="Plunderer's Vest +3",         -- __, __, 40, 10 <__, __, __> ( 6,  5) [__/__,  84] __; 5% TA from behind target
-    hands=gear.Adhemar_B_hands,         -- __,  7, 32, __ <__,  4, __> (__, __) [__/__,  43] __
+    hands=gear.Adhemar_A_hands,         -- __,  7, 52, __ <__,  4, __> (__, __) [__/__,  43] __
     legs="Malignance Tights",           -- __, 10, 50, __ <__, __, __> (__, __) [ 7/ 7, 150]  5
     feet="Plunderer's Poulaines +3",    -- __, __, 36, 11 <__,  5, __> (__, __) [__/__,  89] __
     neck="Assassin's Gorget +2",        -- __, __, 25,  5 <__,  4, __> (__, __) [__/__, ___] __
@@ -1042,10 +1042,10 @@ function init_gear_sets()
     back=gear.THF_TP_Cape,              -- __, 10, 20, 20 <__, __, __> (__, __) [10/__, ___] __
     waist="Reiki Yotai",                --  7,  4, 10, __ <__, __, __> (__, __) [__/__, ___] __
     -- Traits/Merits/Gifts              -- 30, __, __, 20 <__, 19, __> (__, 22) [__/__, ___] __
-    -- 37 DW, 50 STP, 253 Acc, 66 TA Dmg <3 DA, 40 TA, 0 QA> (6 Crit Rate, 27 Crit Dmg) [33 PDT/23 MDT, 489 MEVA] 8 PDL
+    -- 37 DW, 50 STP, 273 Acc, 66 TA Dmg <3 DA, 40 TA, 0 QA> (6 Crit Rate, 27 Crit Dmg) [33 PDT/23 MDT, 489 MEVA] 8 PDL
     
     -- ear2="Skulker's Earring +2",     -- __,  8, 20, __ <__,  5, __> (__, __) [__/__, ___] __
-    -- 37 DW, 58 STP, 273 Acc, 66 TA Dmg <3 DA, 40 TA, 0 QA> (6 Crit Rate, 27 Crit Dmg) [33 PDT/23 MDT, 489 MEVA] 8 PDL
+    -- 37 DW, 58 STP, 293 Acc, 66 TA Dmg <3 DA, 40 TA, 0 QA> (6 Crit Rate, 27 Crit Dmg) [33 PDT/23 MDT, 489 MEVA] 8 PDL
   }
   sets.engaged.DW.LowAcc.SuperHaste = set_combine(sets.engaged.DW.SuperHaste, {
     ammo="Yamarang",                    -- __,  3, 15, __ <__, __, __> (__, __) [__/__,  15] __

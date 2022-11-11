@@ -754,7 +754,6 @@ function init_gear_sets()
   sets.precast.WS['Swift Blade'].HighAcc = set_combine(sets.precast.WS['Swift Blade'].MidAcc, {
     head="Meghanada Visor +2",
     ear2="Telos Earring",
-    -- hands=gear.Adhemar_A_hands,
   })
   sets.precast.WS['Swift Blade'].HighAccMaxTP = set_combine(sets.precast.WS['Swift Blade'].HighAcc, {
   })
@@ -1210,7 +1209,7 @@ function init_gear_sets()
     ammo=gear.RAbullet,
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
-    hands=gear.Adhemar_B_hands,       -- __,  7, 32 <__,  4, __> [__/__,  43]
+    hands=gear.Adhemar_A_hands,       -- __,  7, 52 <__,  4, __> [__/__,  43]
     legs=gear.Samnuha_legs,           -- __,  7, 15 < 3,  3, __> [__/__,  75]
     feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
     neck="Iskur Gorget",              -- __,  8, __ <__, __, __> [__/__, ___]
@@ -1220,9 +1219,6 @@ function init_gear_sets()
     ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
     back=gear.COR_TP_Cape,            -- __, __, 20 <10, __, __> [10/__, ___]
     waist="Windbuffet Belt +1",       -- __, __,  2 <__,  2,  2> [__/__, ___]
-    -- 0 DW, 58 STP, 235 Acc <20 DA, 12 TA, 2 QA> [39 PDT/29 MDT, 530 M.Eva]
-    
-    -- hands=gear.Adhemar_A_hands,    -- __,  7, 52 <__,  4, __> [__/__,  43]
     -- 0 DW, 58 STP, 255 Acc <20 DA, 12 TA, 2 QA> [39 PDT/29 MDT, 530 M.Eva]
   }
   sets.engaged.LowAcc = set_combine(sets.engaged, {
@@ -1275,8 +1271,8 @@ function init_gear_sets()
     -- 73 DW, 21 STP, 258 Acc <1 DA, 7 TA, 0 QA> [33 PDT/19 MDT, 378 MEVA]
   })
   sets.engaged.DW.HighAcc = set_combine(sets.engaged.DW.MidAcc, {
+    hands=gear.Adhemar_A_hands,       -- __,  7, 52 <__,  4, __> [__/__,  43]
     ear1="Dignitary's Earring",       -- __,  3, 10 <__, __, __> [__/__, ___]
-    -- hands=gear.Adhemar_A_hands,    -- __,  7, 52 <__,  4, __> [__/__,  43]
     -- 63 DW, 31 STP, 284 Acc <1 DA, 8 TA, 0 QA> [33 PDT/15 MDT, 384 MEVA]
   })
 
@@ -1309,7 +1305,7 @@ function init_gear_sets()
   })
   sets.engaged.DW.HighAcc.LowHaste = set_combine(sets.engaged.DW.MidAcc.LowHaste, {
     body=gear.Adhemar_A_body,         --  6, __, 55 <__,  4, __> [__/__,  69]
-    -- hands=gear.Adhemar_A_hands,    -- __,  7, 52 <__,  4, __> [__/__,  43]
+    hands=gear.Adhemar_A_hands,       -- __,  7, 52 <__,  4, __> [__/__,  43]
     ear1="Dignitary's Earring",       -- __,  3, 10 <__, __, __> [__/__, ___]
     -- 63 DW, 37 STP, 294 Acc <1 DA, 8 TA, 0 QA> [26 PDT/16 MDT, 384 MEVA]
   })
@@ -1319,7 +1315,7 @@ function init_gear_sets()
     ammo=gear.RAbullet,
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body=gear.Adhemar_A_body,         --  6, __, 55 <__,  4, __> [__/__,  69]
-    hands=gear.Adhemar_B_hands,       -- __,  7, 32 <__,  4, __> [__/__,  43]
+    hands=gear.Adhemar_A_hands,       -- __,  7, 52 <__,  4, __> [__/__,  43]
     legs="Chasseur's Culottes +2",    -- __, 11, 53 <__, __, __> [11/11, 115]
     feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
     neck="Iskur Gorget",              -- __,  8, __ <__, __, __> [__/__, ___]
@@ -1330,9 +1326,8 @@ function init_gear_sets()
     back=gear.COR_DW_Cape,            -- 10, __, 20 <__, __, __> [10/__, ___]
     waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
     -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
-    -- 57 DW, 47 STP, 270 Acc <3 DA, 11 TA, 0 QA> [41 PDT/31 MDT, 508 MEVA]
+    -- 57 DW, 47 STP, 290 Acc <3 DA, 11 TA, 0 QA> [41 PDT/31 MDT, 508 MEVA]
     
-    -- hands=gear.Adhemar_A_hands,    -- __,  7, 52 <__,  4, __> [__/__,  43]
     -- legs="Chasseur's Culottes +3", -- __, 12, 63 <__, __, __> [12/12, 125]
     -- 57 DW, 48 STP, 300 Acc <3 DA, 11 TA, 0 QA> [42 PDT/32 MDT, 518 MEVA]
   }
@@ -1355,7 +1350,7 @@ function init_gear_sets()
     ammo=gear.RAbullet,
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body=gear.Adhemar_A_body,         --  6, __, 55 <__,  4, __> [__/__,  69]
-    hands=gear.Adhemar_B_hands,       -- __,  7, 32 <__,  4, __> [__/__,  43]
+    hands=gear.Adhemar_A_hands,       -- __,  7, 52 <__,  4, __> [__/__,  43]
     legs="Chasseur's Culottes +2",    -- __, 11, 53 <__, __, __> [11/11, 115]
     feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
     neck="Iskur Gorget",              -- __,  8, __ <__, __, __> [__/__, ___]
@@ -1366,9 +1361,8 @@ function init_gear_sets()
     back=gear.COR_TP_Cape,            -- __, __, 20 <10, __, __> [10/__, ___]
     waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
     -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
-    -- 43 DW, 55 STP, 260 Acc <13 DA, 11 TA, 0 QA> [41 PDT/31 MDT, 500 MEVA]
+    -- 43 DW, 55 STP, 280 Acc <13 DA, 11 TA, 0 QA> [41 PDT/31 MDT, 500 MEVA]
     
-    -- hands=gear.Adhemar_A_hands,    -- __,  7, 52 <__,  4, __> [__/__,  43]
     -- legs="Chasseur's Culottes +3", -- __, 12, 63 <__, __, __> [12/12, 125]
     -- 43 DW, 56 STP, 290 Acc <13 DA, 11 TA, 0 QA> [42 PDT/32 MDT, 510 MEVA]
   }
@@ -1391,7 +1385,7 @@ function init_gear_sets()
     ammo=gear.RAbullet,
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body=gear.Adhemar_A_body,         --  6, __, 55 <__,  4, __> [__/__,  69]
-    hands=gear.Adhemar_B_hands,       -- __,  7, 32 <__,  4, __> [__/__,  43]
+    hands=gear.Adhemar_A_hands,       -- __,  7, 52 <__,  4, __> [__/__,  43]
     legs="Chasseur's Culottes +2",    -- __, 11, 53 <__, __, __> [11/11, 115]
     feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
     neck="Iskur Gorget",              -- __,  8, __ <__, __, __> [__/__, ___]
@@ -1402,9 +1396,8 @@ function init_gear_sets()
     back=gear.COR_TP_Cape,            -- __, __, 20 <10, __, __> [10/__, ___]
     waist="Windbuffet Belt +1",       -- __, __,  2 <__,  2,  2> [__/__, ___]
     -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
-    -- 36 DW, 51 STP, 272 Acc <13 DA, 13 TA, 2 QA> [41 PDT/31 MDT, 500 MEVA]
+    -- 36 DW, 51 STP, 292 Acc <13 DA, 13 TA, 2 QA> [41 PDT/31 MDT, 500 MEVA]
     
-    -- hands=gear.Adhemar_A_hands,    -- __,  7, 52 <__,  4, __> [__/__,  43]
     -- legs="Chasseur's Culottes +3", -- __, 12, 63 <__, __, __> [12/12, 125]
     -- 36 DW, 52 STP, 282 Acc <13 DA, 13 TA, 2 QA> [42 PDT/32 MDT, 510 MEVA]
   }
@@ -1438,7 +1431,7 @@ function init_gear_sets()
     ammo=gear.RAbullet,
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
-    hands=gear.Adhemar_B_hands,       -- __,  7, 32 <__,  4, __> [__/__,  43]
+    hands=gear.Adhemar_A_hands,       -- __,  7, 52 <__,  4, __> [__/__,  43]
     legs="Chasseur's Culottes +2",    -- __, 11, 53 <__, __, __> [11/11, 115]
     feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
     neck="Iskur Gorget",              -- __,  8, __ <__, __, __> [__/__, ___]
@@ -1449,9 +1442,8 @@ function init_gear_sets()
     back=gear.COR_TP_Cape,            -- __, __, 20 <10, __, __> [10/__, ___]
     waist="Windbuffet Belt +1",       -- __, __,  2 <__,  2,  2> [__/__, ___]
     -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
-    -- 25 DW, 67 STP, 257 Acc <14 DA, 9 TA, 2 QA> [50 PDT/40 MDT, 570 MEVA]
+    -- 25 DW, 67 STP, 277 Acc <14 DA, 9 TA, 2 QA> [50 PDT/40 MDT, 570 MEVA]
     
-    -- hands=gear.Adhemar_A_hands,    -- __,  7, 52 <__,  4, __> [__/__,  43]
     -- legs="Chasseur's Culottes +3", -- __, 12, 63 <__, __, __> [12/12, 125]
     -- 25 DW, 68 STP, 287 Acc <14 DA, 9 TA, 2 QA> [51 PDT/41 MDT, 580 MEVA]
   }
@@ -1459,7 +1451,7 @@ function init_gear_sets()
     ammo=gear.RAbullet,
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
-    hands=gear.Adhemar_B_hands,       -- __,  7, 32 <__,  4, __> [__/__,  43]
+    hands=gear.Adhemar_A_hands,       -- __,  7, 52 <__,  4, __> [__/__,  43]
     legs="Chasseur's Culottes +2",    -- __, 11, 53 <__, __, __> [11/11, 115]
     feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
     neck="Iskur Gorget",              -- __,  8, __ <__, __, __> [__/__, ___]
@@ -1470,9 +1462,8 @@ function init_gear_sets()
     back=gear.COR_TP_Cape,            -- __, __, 20 <10, __, __> [10/__, ___]
     waist="Windbuffet Belt +1",       -- __, __,  2 <__,  2,  2> [__/__, ___]
     -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
-    -- 25 DW, 67 STP, 257 Acc <14 DA, 9 TA, 2 QA> [50 PDT/40 MDT, 570 M.Eva]
+    -- 25 DW, 67 STP, 277 Acc <14 DA, 9 TA, 2 QA> [50 PDT/40 MDT, 570 M.Eva]
     
-    -- hands=gear.Adhemar_A_hands,    -- __,  7, 52 <__,  4, __> [__/__,  43]
     -- legs="Chasseur's Culottes +3", -- __, 12, 63 <__, __, __> [12/12, 125]
     -- 25 DW, 68 STP, 287 Acc <14 DA, 9 TA, 2 QA> [51 PDT/41 MDT, 580 M.Eva]
   }
@@ -1674,7 +1665,7 @@ function init_gear_sets()
     ammo=gear.RAbullet,
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body=gear.Adhemar_A_body,         --  6, __, 55 <__,  4, __> [__/__,  69]
-    hands=gear.Adhemar_B_hands,       -- __,  7, 32 <__,  4, __> [__/__,  43]
+    hands=gear.Adhemar_A_hands,       -- __,  7, 52 <__,  4, __> [__/__,  43]
     legs="Chasseur's Culottes +2",    -- __, 11, 53 <__, __, __> [11/11, 115]
     feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
     neck="Loricate Torque +1",        -- __, __, __ <__, __, __> [ 6/ 6, ___]
@@ -1685,7 +1676,7 @@ function init_gear_sets()
     back=gear.COR_DW_Cape,            -- 10, __, 20 <__, __, __> [10/__, ___]
     waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
     -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
-    -- 57 DW, 39 STP, 270 Acc <0 DA, 8 TA, 0 QA> [54 PDT/36 MDT, 508 MEVA]
+    -- 57 DW, 39 STP, 290 Acc <0 DA, 8 TA, 0 QA> [54 PDT/36 MDT, 508 MEVA]
     
     -- legs="Chasseur's Culottes +3", -- __, 12, 63 <__, __, __> [12/12, 125]
     -- 57 DW, 40 STP, 280 Acc <0 DA, 8 TA, 0 QA> [55 PDT/37 MDT, 518 MEVA]
@@ -1750,7 +1741,7 @@ function init_gear_sets()
     ammo=gear.RAbullet,
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body=gear.Adhemar_A_body,         --  6, __, 55 <__,  4, __> [__/__,  69]
-    hands=gear.Adhemar_B_hands,       -- __,  7, 32 <__,  4, __> [__/__,  43]
+    hands=gear.Adhemar_A_hands,       -- __,  7, 52 <__,  4, __> [__/__,  43]
     legs="Chasseur's Culottes +2",    -- __, 11, 53 <__, __, __> [11/11, 115]
     feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
     neck="Loricate Torque +1",        -- __, __, __ <__, __, __> [ 6/ 6, ___]
@@ -1761,9 +1752,8 @@ function init_gear_sets()
     back=gear.COR_TP_Cape,            -- __, __, 20 <10, __, __> [10/__, ___]
     waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
     -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
-    -- 43 DW, 47 STP, 260 Acc <10 DA, 8 TA, 0 QA> [54 PDT/36 MDT, 500 MEVA]
+    -- 43 DW, 47 STP, 280 Acc <10 DA, 8 TA, 0 QA> [54 PDT/36 MDT, 500 MEVA]
     
-    -- hands=gear.Adhemar_A_hands,    -- __,  7, 52 <__,  4, __> [__/__,  43]
     -- legs="Chasseur's Culottes +3", -- __, 12, 63 <__, __, __> [12/12, 125]
     -- 43 DW, 48 STP, 290 Acc <10 DA, 8 TA, 0 QA> [55 PDT/37 MDT, 510 MEVA]
   }
@@ -1830,7 +1820,7 @@ function init_gear_sets()
     ammo=gear.RAbullet,
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body=gear.Adhemar_A_body,         --  6, __, 55 <__,  4, __> [__/__,  69]
-    hands=gear.Adhemar_B_hands,       -- __,  7, 32 <__,  4, __> [__/__,  43]
+    hands=gear.Adhemar_A_hands,       -- __,  7, 52 <__,  4, __> [__/__,  43]
     legs="Chasseur's Culottes +2",    -- __, 11, 53 <__, __, __> [11/11, 115]
     feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
     neck="Loricate Torque +1",        -- __, __, __ <__, __, __> [ 6/ 6, ___]
@@ -1841,9 +1831,8 @@ function init_gear_sets()
     back=gear.COR_TP_Cape,            -- __, __, 20 <10, __, __> [10/__, ___]
     waist="Windbuffet Belt +1",       -- __, __,  2 <__,  2,  2> [__/__, ___]
     -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
-    -- 36 DW, 43 STP, 252 Acc <10 DA, 10 TA, 2 QA> [54 PDT/36 MDT, 500 MEVA]
+    -- 36 DW, 43 STP, 272 Acc <10 DA, 10 TA, 2 QA> [54 PDT/36 MDT, 500 MEVA]
     
-    -- hands=gear.Adhemar_A_hands,    -- __,  7, 52 <__,  4, __> [__/__,  43]
     -- legs="Chasseur's Culottes +3", -- __, 12, 63 <__, __, __> [12/12, 125]
     -- 36 DW, 44 STP, 282 Acc <10 DA, 10 TA, 2 QA> [55 PDT/37 MDT, 510 MEVA]
   }
