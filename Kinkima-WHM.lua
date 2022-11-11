@@ -898,8 +898,8 @@ function init_gear_sets()
   sets.midcast.Dia = sets.midcast.MndEnfeebles
 
   sets.midcast.Dispelga = set_combine(sets.midcast.IntEnfeebles, {
-    -- main="Daybreak",
-    -- sub="Ammurapi Shield",
+    main="Daybreak",
+    sub="Ammurapi Shield",
     ring1="Stikini Ring +1",          -- __,  8, 11,  8, __ [__/__, ___]
   })
 
