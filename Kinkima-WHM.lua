@@ -239,8 +239,8 @@ function init_gear_sets()
   }
 
   sets.precast.FC.Dispelga = {
-    -- main="Daybreak",               -- __ [__/__,  30]
-    -- sub="Genmei Shield",           -- __ [10/__, ___]
+    main="Daybreak",                  -- __ [__/__,  30]
+    sub="Genmei Shield",              -- __ [10/__, ___]
     ammo="Staunch Tathlum +1",        -- __ [ 3/ 3, ___]; Resist Status +11
     head="Bunzi's Hat",               -- 10 [ 7/ 7, 123]
     body="Pinga Tunic +1",            -- 15 [__/__, 128]

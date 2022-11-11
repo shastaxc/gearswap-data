@@ -855,8 +855,8 @@ function init_gear_sets()
   }
 
   sets.midcast.Dispelga = set_combine(sets.midcast.Dispel, {
-    -- main="Daybreak",               -- 40, __, __ [__/__,  30] {__/__, __}; Needed to cast dispelga
-    -- sub="Ammurapi Shield",         -- 38, __, 13 [__/__, ___] {__/__, __}
+    main="Daybreak",                  -- 40, __, __ [__/__,  30] {__/__, __}; Needed to cast dispelga
+    sub="Ammurapi Shield",            -- 38, __, 13 [__/__, ___] {__/__, __}
   })
 
   sets.midcast['Enfeebling Magic'] = {
@@ -1233,7 +1233,7 @@ function init_gear_sets()
 
   -- When luopan is not existing
   sets.idle = {
-    main="Bolelabunga",             --  1 [__/__, ___] {__/__, __}
+    main="Daybreak",                --  1 [__/__,  30] {__/__, __}
     sub="Genmei Shield",            -- __ [10/__, ___] {__/__, __}
     range=empty,                    -- __ [__/__, ___] {__/__, __}
     ammo="Staunch Tathlum +1",      -- __ [ 3/ 3, ___] {__/__, __}; Status Resist+11
@@ -1249,24 +1249,10 @@ function init_gear_sets()
     ring2="Stikini Ring +1",        --  1 [__/__, ___] {__/__, __}
     back=gear.GEO_FC_Cape,          -- __ [10/__, ___] {__/__, __}
     waist="Carrier's Sash",         -- __ [__/__, ___] {__/__, __}; Ele resist+15
-    -- 10 Refresh [50 PDT/23 MDT, 518 M.Eva] {Pet: 0 PDT/0 MDT, 4 Regen}
+    -- 10 Refresh [50 PDT/23 MDT, 548 M.Eva] {Pet: 0 PDT/0 MDT, 4 Regen}
 
-    -- main="Daybreak",             --  1 [__/__,  30] {__/__, __}
-    -- sub="Genmei Shield",         -- __ [10/__, ___] {__/__, __}
-    -- range=empty,                 -- __ [__/__, ___] {__/__, __}
-    -- ammo="Staunch Tathlum +1",   -- __ [ 3/ 3, ___] {__/__, __}; Status Resist+11
     -- head="Azimuth Hood +3",      -- __ [12/12, 136] {__/__,  5}
-    -- body="Shamash Robe",         --  3 [10/__, 106] {__/__, __}; Resist Silence+90
-    -- hands="Bagua Mitaines +3",   --  2 [__/__,  57] {__/__, __}
-    -- legs="Assiduity Pants +1",   --  2 [__/__, 107] {__/__, __}
-    -- feet="Volte Gaiters",        --  1 [__/__, 142] {__/__, __}; Refresh Merlinic good alt
-    -- neck="Loricate Torque +1",   -- __ [ 6/ 6, ___] {__/__, __}
-    -- ear1="Hearty Earring",       -- __ [__/__, ___] {__/__, __}; Resist All Status+5
-    -- ear2="Etiolation Earring",   -- __ [__/ 3, ___] {__/__, __}; Resist Silence+15
-    -- ring1="Stikini Ring +1",     --  1 [__/__, ___] {__/__, __}
-    -- ring2="Stikini Ring +1",     --  1 [__/__, ___] {__/__, __}
     -- back=gear.GEO_Nuke_Cape,     -- __ [10/__, ___] {__/__, __}
-    -- waist="Carrier's Sash",      -- __ [__/__, ___] {__/__, __}; Ele resist+15
     -- 11 Refresh [51 PDT/24 MDT, 578 M.Eva] {Pet: 0 PDT/0 MDT, 5 Regen}
     
     -- main="Bhima",                --  3 [__/__, ___] {__/__, __}

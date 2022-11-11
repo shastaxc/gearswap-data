@@ -363,42 +363,22 @@ function init_gear_sets()
     -- body="Crepuscular Cloak",
   })
   sets.precast.FC.Dispelga = set_combine(sets.precast.FC, {
-    -- main="Daybreak",               -- __ [__/__, ___]
-    -- sub="Genmei Shield",           -- __ [10/__, ___]
-
-    -- If using Hvergelmir in precast.FC...
-    -- ammo="Staunch Tathlum +1",     -- __ [ 3/ 3, ___]
-    -- head="Bunzi's Hat",            -- 10 [ 7/ 7, 123]; TODO: REPLACE, CAN'T USE BUNZI AS SCH
-    -- body="Pinga Tunic +1",         -- 15 [__/__, 128]
-    -- hands="Academic's Bracers +3", --  9 [__/__,  57]
-    -- legs="Pinga Pants +1",         -- 13 [__/__, 147]
-    -- feet=gear.Merl_FC_feet,        -- 12 [__/__, 118]
-    -- neck="Loricate Torque +1",     -- __ [ 6/ 6, ___]
-    -- ear1="Malignance Earring",     --  4 [__/__, ___]
-    -- ear2="Enchntr. Earring +1",    --  2 [__/__, ___]
-    -- ring1="Gelatinous Ring +1",    -- __ [ 7/-1, ___]
-    -- ring2="Defending Ring",        -- __ [10/10, ___]
-    -- back=gear.SCH_FC_Cape,         -- 10 [10/__,  30]
-    -- waist="Embla Sash",            --  5 [__/__, ___]
-    -- 80 Fast Cast [53 PDT/25 MDT, 603 MEVA]
-    
-    -- Ideal:
-    -- main="Hvergelmir",             -- 50 [__/__, ___]
-    -- sub="Khonsu",                  -- __ [ 6/ 6, ___]
-    -- head=gear.Psycloth_D_head,     -- 10 [__/__,  75]
-    -- ammo="Staunch Tathlum +1",     -- __ [ 3/ 3, ___]; Resist Status+11
-    -- body="Shamash Robe",           -- __ [10/__, 106]; Resist Silence+90
-    -- hands=gear.Nyame_B_hands,      -- __ [ 7/ 7, 112]
-    -- legs="Pinga Pants +1",         -- 13 [__/__, 147]
-    -- feet=gear.Nyame_B_feet,        -- __ [ 7/ 7, 150]
-    -- neck="Loricate Torque +1",     -- __ [ 6/ 6, ___]; DEF+60
-    -- ear1="Hearty Earring",         -- __ [__/__, ___]; Resist Status+5
-    -- ear2="Etiolation Earring",     --  1 [__/ 3, ___]; Resist Silence+15
-    -- ring1="Gelatinous Ring +1",    -- __ [ 7/-1, ___]
-    -- ring2="Defending Ring",        -- __ [10/10, ___]
-    -- back=gear.SCH_FC_Cape,         -- 10 [10/__,  30]
-    -- waist="Carrier's Sash",        -- __ [__/__, ___]; Ele Resist+15
-    -- 84 Fast Cast [66 PDT/41 MDT, 620 MEVA]
+    main="Daybreak",                  -- __ [__/__, ___]
+    sub="Genmei Shield",              -- __ [10/__, ___]
+    ammo="Staunch Tathlum +1",        -- __ [ 3/ 3, ___]
+    head=gear.Psycloth_D_head,        -- 10 [__/__,  75]
+    body="Pinga Tunic +1",            -- 15 [__/__, 128]
+    hands="Academic's Bracers +3",    --  9 [__/__,  57]
+    legs="Pinga Pants +1",            -- 13 [__/__, 147]
+    feet=gear.Merl_FC_feet,           -- 12 [__/__, 118]
+    neck="Loricate Torque +1",        -- __ [ 6/ 6, ___]
+    ear1="Malignance Earring",        --  4 [__/__, ___]
+    ear2="Loquacious Earring",        --  2 [__/__, ___]
+    ring1="Gelatinous Ring +1",       -- __ [ 7/-1, ___]
+    ring2="Defending Ring",           -- __ [10/10, ___]
+    back=gear.SCH_FC_Cape,            -- 10 [10/__,  30]
+    waist="Embla Sash",               --  5 [__/__, ___]
+    -- 80 Fast Cast [46 PDT/18 MDT, 606 MEVA]
   })
 
 
@@ -843,8 +823,8 @@ function init_gear_sets()
   sets.midcast.ElementalEnfeeble = sets.midcast.IntEnfeebles
   sets.midcast.ElementalEnfeeble.DarkArts = sets.midcast.IntEnfeebles.DarkArts
   sets.midcast.Dispelga = set_combine(sets.midcast.IntEnfeebles, {
-    -- main="Daybreak",
-    -- sub="Ammurapi Shield",
+    main="Daybreak",
+    sub="Ammurapi Shield",
     waist="Shinjutsu-no-Obi +1",
   })
 
@@ -1162,8 +1142,8 @@ function init_gear_sets()
     ring1="Archon Ring",
   })
   sets.midcast.LightHelix = set_combine(sets.midcast.Helix, {
-    -- main="Daybreak",
-    -- sub="Ammurapi Shield",
+    main="Daybreak",
+    sub="Ammurapi Shield",
     -- body="Agwu's Robe",
   })
 
