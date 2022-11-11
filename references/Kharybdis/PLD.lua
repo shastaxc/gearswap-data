@@ -44,9 +44,10 @@ function user_setup()
     state.HybridMode:options('Normal', 'MDT', 'PDT', 'Reraise', 'DD')
     state.WeaponskillMode:options('Normal', 'Acc', 'HP')
     state.PhysicalDefenseMode:options('PDT', 'Reraise')
-	state.CastingMode:options('Normal', 'Interrupt')
+    state.DefenseMode:set('Physical') -- Default to PDT mode
+	  state.CastingMode:options('Normal', 'Interrupt')
     state.MagicalDefenseMode:options('MDT')
-	state.IdleMode:options('Normal', 'PDT', 'Refresh')
+	  state.IdleMode:options('Normal', 'PDT', 'Refresh')
     
     state.ExtraDefenseMode = M{['description']='Extra Defense Mode', 'None', 'MP', 'Knockback', 'MP_Knockback'}
     state.EquipShield = M(false, 'Equip Shield w/Defense')
@@ -76,49 +77,49 @@ function init_gear_sets()
     
     -- Precast sets to enhance JAs
     sets.precast.JA['Invincible'] = {ammo="Sapience Orb",head="Souv. Schaller +1",neck="Warder's Charm +1",ear1="Eabani Earring",ear2="Friomis Earring",
-									 body="Souv. Cuirass +1",hands="Souv. Handsch. +1",left_ring="Eihwaz Ring",right_ring={name="Moonbeam Ring", bag="wardrobe3"},
+									 body="Souv. Cuirass +1",hands="Souv. Handsch. +1",left_ring="Eihwaz Ring",right_ring={name="Moonlight Ring", bag="wardrobe3"},
 									 back="Moonbeam Cape",waist="Creed Baudrier",legs="Cab. Breeches +3",feet="Souveran Schuhs +1"}		
 									 
     sets.precast.JA['Provoke'] = {ammo="Sapience Orb",head="Souv. Schaller +1",neck="Warder's Charm +1",ear1="Eabani Earring",ear2="Friomis Earring",
-									 body="Souv. Cuirass +1",hands="Souv. Handsch. +1",left_ring="Eihwaz Ring",right_ring={name="Moonbeam Ring", bag="wardrobe3"},
+									 body="Souv. Cuirass +1",hands="Souv. Handsch. +1",left_ring="Eihwaz Ring",right_ring={name="Moonlight Ring", bag="wardrobe3"},
 									 back="Moonbeam Cape",waist="Creed Baudrier",legs="Souv. Diechlings +1",feet="Souveran Schuhs +1"}		
 									 
     sets.precast.JA['Warcry'] = {ammo="Sapience Orb",head="Souv. Schaller +1",neck="Warder's Charm +1",ear1="Eabani Earring",ear2="Friomis Earring",
-									 body="Souv. Cuirass +1",hands="Souv. Handsch. +1",left_ring="Eihwaz Ring",right_ring={name="Moonbeam Ring", bag="wardrobe3"},
+									 body="Souv. Cuirass +1",hands="Souv. Handsch. +1",left_ring="Eihwaz Ring",right_ring={name="Moonlight Ring", bag="wardrobe3"},
 									 back="Moonbeam Cape",waist="Creed Baudrier",legs="Souv. Diechlings +1",feet="Souveran Schuhs +1"}		
 									 
     sets.precast.JA['Holy Circle'] = {ammo="Sapience Orb",head="Souv. Schaller +1",neck="Warder's Charm +1",ear1="Eabani Earring",ear2="Friomis Earring",
-									 body="Souv. Cuirass +1",hands="Souv. Handsch. +1",left_ring="Eihwaz Ring",right_ring={name="Moonbeam Ring", bag="wardrobe3"},
-									 back="Moonbeam Cape",waist="Creed Baudrier",legs="Souv. Diechlings +1",feet="Rev. Leggings +2"}		
+									 body="Souv. Cuirass +1",hands="Souv. Handsch. +1",left_ring="Eihwaz Ring",right_ring={name="Moonlight Ring", bag="wardrobe3"},
+									 back="Moonbeam Cape",waist="Creed Baudrier",legs="Souv. Diechlings +1",feet="Rev. Leggings +3"}		
 									 
     sets.precast.JA['Shield Bash'] = {ammo="Sapience Orb",head="Souv. Schaller +1",neck="Warder's Charm +1",ear1="Eabani Earring",ear2="Friomis Earring",
 									 body="Souv. Cuirass +1",hands="Cab. Gauntlets +3",left_ring="Eihwaz Ring",right_ring={name="Supershear Ring", bag="wardrobe3"},
 									 back="Moonbeam Cape",waist="Creed Baudrier",legs="Souv. Diechlings +1",feet="Souveran Schuhs +1"}		
 									 
     sets.precast.JA['Sentinel'] = {ammo="Sapience Orb",head="Souv. Schaller +1",neck="Warder's Charm +1",ear1="Eabani Earring",ear2="Friomis Earring",
-									 body="Souv. Cuirass +1",hands="Souv. Handsch. +1",left_ring="Eihwaz Ring",right_ring={name="Moonbeam Ring", bag="wardrobe3"},
+									 body="Souv. Cuirass +1",hands="Souv. Handsch. +1",left_ring="Eihwaz Ring",right_ring={name="Moonlight Ring", bag="wardrobe3"},
 									 back="Moonbeam Cape",waist="Creed Baudrier",legs="Souv. Diechlings +1",feet="Cab. Leggings +3"}		
 									 
     sets.precast.JA['Rampart'] = {ammo="Sapience Orb",head="Cab. Coronet +3",neck="Warder's Charm +1",ear1="Eabani Earring",ear2="Friomis Earring",
-									 body="Souv. Cuirass +1",hands="Souv. Handsch. +1",left_ring="Eihwaz Ring",right_ring={name="Moonbeam Ring", bag="wardrobe3"},
+									 body="Souv. Cuirass +1",hands="Souv. Handsch. +1",left_ring="Eihwaz Ring",right_ring={name="Moonlight Ring", bag="wardrobe3"},
 									 back="Moonbeam Cape",waist="Creed Baudrier",legs="Souv. Diechlings +1",feet="Souveran Schuhs +1"}		
 									 
     sets.precast.JA['Fealty'] = {ammo="Sapience Orb",head="Souv. Schaller +1",neck="Warder's Charm +1",ear1="Eabani Earring",ear2="Friomis Earring",
-									 body="Cab. Surcoat +3",hands="Souv. Handsch. +1",left_ring="Eihwaz Ring",right_ring={name="Moonbeam Ring", bag="wardrobe3"},
+									 body="Cab. Surcoat +3",hands="Souv. Handsch. +1",left_ring="Eihwaz Ring",right_ring={name="Moonlight Ring", bag="wardrobe3"},
 									 back="Moonbeam Cape",waist="Creed Baudrier",legs="Souv. Diechlings +1",feet="Souveran Schuhs +1"}		
 	
     sets.precast.JA['Divine Emblem'] = {ammo="Sapience Orb",head="Souv. Schaller +1",neck="Warder's Charm +1",ear1="Eabani Earring",ear2="Friomis Earring",
-									 body="Souv. Cuirass +1",hands="Souv. Handsch. +1",left_ring="Eihwaz Ring",right_ring={name="Moonbeam Ring", bag="wardrobe3"},
+									 body="Souv. Cuirass +1",hands="Souv. Handsch. +1",left_ring="Eihwaz Ring",right_ring={name="Moonlight Ring", bag="wardrobe3"},
 									 back="Moonbeam Cape",waist="Creed Baudrier",legs="Souv. Diechlings +1",feet="Chevalier's Sabatons +1"}		
 	
     sets.precast.JA['Cover'] = {ammo="Sapience Orb",head="Rev. Coronet +1",neck="Warder's Charm +1",ear1="Eabani Earring",ear2="Friomis Earring",
-									 body="Souv. Cuirass +1",hands="Souv. Handsch. +1",left_ring="Eihwaz Ring",right_ring={name="Moonbeam Ring", bag="wardrobe3"},
+									 body="Souv. Cuirass +1",hands="Souv. Handsch. +1",left_ring="Eihwaz Ring",right_ring={name="Moonlight Ring", bag="wardrobe3"},
 									 back="Moonbeam Cape",waist="Creed Baudrier",legs="Souv. Diechlings +1",feet="Souveran Schuhs +1"}		
 	
 
     -- add mnd for Chivalry
     sets.precast.JA['Chivalry'] = {ammo="Sapience Orb", head="Carmine Mask +1",neck="Warder's Charm +1",ear2="Friomis Earring",
-									 body="Souv. Cuirass +1",hands="Cab. Gauntlets +3",left_ring="Stikini Ring +1",right_ring={name="Moonbeam Ring", bag="wardrobe3"},
+									 body="Souv. Cuirass +1",hands="Cab. Gauntlets +3",left_ring="Stikini Ring +1",right_ring={name="Moonlight Ring", bag="wardrobe3"},
 									 back="Moonbeam Cape",waist="Creed Baudrier",legs="Souv. Diechlings +1", feet="Souveran Schuhs +1"}
 					 
     
@@ -145,9 +146,9 @@ function init_gear_sets()
     waist="Creed Baudrier",
     right_ear="Etiolation Earring",
     left_ear="Tuisto Earring",
-    left_ring={name="Moonbeam Ring", bag="wardrobe2"}, 
+    left_ring={name="Moonlight Ring", bag="wardrobe2"}, 
     right_ring="Kishar Ring",
-    back={ name="Rudianos's Mantle", augments={'HP+60','HP+20','"Fast Cast"+10',}}}
+    back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','HP+20','"Fast Cast"+10',}},}
 		
 	sets.precast.FC.Cure = sets.precast.FC
 
@@ -169,7 +170,7 @@ function init_gear_sets()
     -- Specific weaponskill sets.  Uses the base set if an appropriate WSMod version isn't found.
     sets.precast.WS['Requiescat'] = set_combine(sets.precast.WS, {})
     sets.precast.WS['Requiescat'].Acc = set_combine(sets.precast.WS.Acc, {})
-	sets.precast.WS['Requiescat'].HP = set_combine(sets.precast.WS.Acc, {ammo="Sapience Orb",right_ring={name="Moonbeam Ring", bag="wardrobe3"},left_ring="Eihwaz Ring",hands="Souv. Handsch. +1",back="Moonbeam Cape",ear2="Friomis Earring",ear1="Etiolation Earring",legs="Souv. Diechlings +1",body="Souv. Cuirass +1"})
+	sets.precast.WS['Requiescat'].HP = set_combine(sets.precast.WS.Acc, {ammo="Sapience Orb",right_ring={name="Moonlight Ring", bag="wardrobe3"},left_ring="Eihwaz Ring",hands="Souv. Handsch. +1",back="Moonbeam Cape",ear2="Friomis Earring",ear1="Etiolation Earring",legs="Souv. Diechlings +1",body="Souv. Cuirass +1"})
 
     sets.precast.WS['Chant du Cygne'] = set_combine(sets.precast.WS, {head="Blistering Sallet +1", feet="Thereoid Greaves"})
     sets.precast.WS['Chant du Cygne'].Acc = set_combine(sets.precast.WS.Acc, {})
@@ -178,7 +179,7 @@ function init_gear_sets()
 	
     sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {neck="Caro Necklace",waist="Sailfi Belt +1",head="Lustratio Cap +1",body="Lustr. Harness +1"})
     sets.precast.WS['Savage Blade'].Acc = set_combine(sets.precast.WS.Acc, {})
-    sets.precast.WS['Savage Blade'].HP = set_combine(sets.precast.WS['Savage Blade'], {ammo="Sapience Orb",right_ring={name="Moonbeam Ring", bag="wardrobe3"},left_ring={name="Moonbeam Ring", bag="wardrobe2"},hands="Regal Gauntlets",back="Moonbeam Cape",ear1="Tuisto Earring",ear2="Odnowa Earring +1",neck="Sanctity Necklace"})	
+    sets.precast.WS['Savage Blade'].HP = set_combine(sets.precast.WS['Savage Blade'], {ammo="Sapience Orb",right_ring={name="Moonlight Ring", bag="wardrobe3"},left_ring={name="Moonlight Ring", bag="wardrobe2"},hands="Regal Gauntlets",back="Moonbeam Cape",ear1="Tuisto Earring",ear2="Odnowa Earring +1",neck="Sanctity Necklace"})	
 
     sets.precast.WS['Sanguine Blade'] = set_combine(sets.precast.WS, {ammo="Ghastly Tathlum +1",
         head="Pixie Hairpin +1",body="Nayme Mail",hands="Leyline Gloves",ear1="Friomisi Earring",ear2="Crematio Earring",left_ring="Shiva Ring +1",right_ring="Archon Ring",
@@ -202,7 +203,7 @@ function init_gear_sets()
     right_ear="Thrud Earring",
     left_ear="Tuisto Earring",
     left_ring="Epaminondas's Ring",
-    right_ring={name="Moonbeam Ring", bag="wardrobe3"},
+    right_ring={name="Moonlight Ring", bag="wardrobe3"},
     back={ name="Rudianos's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%',}}}
     
     --------------------------------------
@@ -220,9 +221,9 @@ function init_gear_sets()
     waist="Creed Baudrier",
     left_ear="Etiolation Earring",
     right_ear="Tuisto Earring",
-    left_ring={name="Moonbeam Ring", bag="wardrobe2"},
-    right_ring={name="Moonbeam Ring", bag="wardrobe3"},
-    back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','HP+20','"Cure" potency +10%',}}}
+    left_ring={name="Moonlight Ring", bag="wardrobe2"},
+    right_ring={name="Moonlight Ring", bag="wardrobe3"},
+    back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','HP+20','"Cure" potency +10%','Spell interruption rate down-10%',}},}
         
 
     sets.midcast.Flash = {
@@ -250,13 +251,13 @@ function init_gear_sets()
     legs={ name="Souv. Diechlings +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}, priority=2},
     feet={ name="Souveran Schuhs +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}, priority=3},
     neck="Phalaina Locket",
-    waist="Creed Baudrier",
+    waist="Sroda Belt",
     left_ear="Tuisto Earring",
     right_ear="Nourish. Earring +1",
-    left_ring={name="Moonbeam Ring", bag="wardrobe2"},
-    right_ring={name="Moonbeam Ring", bag="wardrobe3", priority=4},
-    back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','HP+20','"Cure" potency +10%',}},
-	}--27
+    left_ring={name="Moonlight Ring", bag="wardrobe2"},
+    right_ring={name="Moonlight Ring", bag="wardrobe3", priority=4},
+    back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','HP+20','"Cure" potency +10%','Spell interruption rate down-10%',}},
+	}
 	
 	sets.midcast.Cure.Interrupt = {
     ammo="Staunch Tathlum +1",
@@ -266,13 +267,13 @@ function init_gear_sets()
     legs="Founder's Hose",
     feet="Eschite Greaves",
     neck="Unmoving Collar +1",
-    waist="Audumbla Sash",
+    waist="Sroda Belt",
     left_ear="Odnowa Earring +1",
     right_ear="Nourish. Earring +1",
     left_ring="Defending Ring",
     right_ring={name="Gelatinous Ring +1", priority=1},
-    back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','HP+20','"Fast Cast"+10',}},
-	}--47
+    back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','HP+20','"Cure" potency +10%','Spell interruption rate down-10%',}},
+	}
 	
 	sets.midcast['Blue Magic'] = {
     ammo="Staunch Tathlum +1",
@@ -285,7 +286,7 @@ function init_gear_sets()
     waist="Audumbla Sash",
     left_ear="Odnowa Earring +1",
     right_ear="Nourish. Earring +1",
-    left_ring={name="Moonbeam Ring", bag="wardrobe3", priority=4},
+    left_ring={name="Moonlight Ring", bag="wardrobe3", priority=4},
     right_ring="Gelatinous Ring +1",
     back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','HP+20','"Fast Cast"+10',}},
 	}
@@ -303,12 +304,12 @@ function init_gear_sets()
 	feet={name="Souveran Schuhs +1", priority=1},
 	hands={name="Regal Gauntlets", priority=3},
 	left_ring="Gelatinous Ring +1",
-	right_ring={name="Moonbeam Ring", bag="wardrobe3", priority=2}
+	right_ring={name="Moonlight Ring", bag="wardrobe3", priority=2}
 	}
 	
     sets.midcast['Phalanx'] = {
 	ammo="Sapience Orb",
-	head="Carmine Mask +1",
+	head="Odyssean Helm",
 	ear2="Andoaa Earring",
 	waist="Creed Baudrier",
 	ear1="Tuisto Earring",
@@ -319,7 +320,7 @@ function init_gear_sets()
 	feet={name="Souveran Schuhs +1", priority=1},
 	hands={name="Souv. Handsch. +1", priority=3},
 	left_ring="Gelatinous Ring +1",
-	right_ring={name="Moonbeam Ring", bag="wardrobe3", priority=2}
+	right_ring={name="Moonlight Ring", bag="wardrobe3", priority=2}
 	}	
 									   
     sets.midcast['Enhancing Magic'].Interrupt = {
@@ -334,8 +335,8 @@ function init_gear_sets()
 	back="Weard Mantle",
 	feet="Odyssean Greaves",
 	hands={name="Regal Gauntlets", priority=3},
-	left_ring={name="Moonbeam Ring", bag="wardrobe2"},
-	right_ring={name="Moonbeam Ring", bag="wardrobe3", priority=2}
+	left_ring={name="Moonlight Ring", bag="wardrobe2"},
+	right_ring={name="Moonlight Ring", bag="wardrobe3", priority=2}
 	}									   
     
 	sets.midcast['Divine Magic'] = {
@@ -362,8 +363,8 @@ function init_gear_sets()
 	back={ name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','HP+20','"Fast Cast"+10',}},
 	feet={name="Souveran Schuhs +1", priority=1},
 	hands={name="Regal Gauntlets", priority=3},
-	left_ring={name="Moonbeam Ring", bag="wardrobe2"},
-	right_ring={name="Moonbeam Ring", bag="wardrobe3", priority=2}}
+	left_ring={name="Moonlight Ring", bag="wardrobe2"},
+	right_ring={name="Moonlight Ring", bag="wardrobe3", priority=2}}
 	
 	
     sets.midcast.Protect = {left_ring="Sheltered Ring"}
@@ -384,11 +385,11 @@ function init_gear_sets()
     sets.idle = {ammo="Homiliary",
         head="Souveran Schaller +1",neck="Bathy Choker +1",ear1="Odnowa Earring +1",ear2="Etiolation Earring",
         body="Sacro Breastplate",hands="Regal Gauntlets",left_ring="Apeile Ring +1",right_ring="Gelatinous Ring +1",
-        back="Moonbeam Cape",waist="Flume Belt",legs="Carmine Cuisses +1",feet="Volte Sollerets"} --27
+        back="Moonbeam Cape",waist="Flume Belt +1",legs="Carmine Cuisses +1",feet="Volte Sollerets"}
 		
     sets.idle.Town = {ammo="Homiliary",
         head="Souv. Schaller +1",neck="Loricate Torque +1",ear2="Odnowa Earring +1",ear1="Tuisto Earring",
-        body="Councilor's Garb",hands="Regal Gauntlets",left_ring="Gelatinous Ring +1",right_ring={name="Moonbeam Ring", bag="wardrobe3"},
+        body="Councilor's Garb",hands="Regal Gauntlets",left_ring="Gelatinous Ring +1",right_ring={name="Moonlight Ring", bag="wardrobe3"},
         back="Moonbeam Cape",waist="Creed Baudrier",legs="Carmine Cuisses +1",feet="Souveran Schuhs +1"}	
 
 	sets.idle.DD = {
@@ -409,12 +410,12 @@ function init_gear_sets()
     sets.idle.Refresh = {ammo="Homiliary",
         head="Souv. Schaller +1",neck="Bathy Choker +1",ear1="Tuisto Earring",ear2="Odnowa Earring +1",
         body="Sacro Breastplate",hands="Regal Gauntlets",left_ring="Gelatinous Ring +1",right_ring="Apeile Ring +1",
-        back="Moonbeam Cape",waist="Flume Belt",legs="Volte Brayettes",feet="Souveran Schuhs +1"}
+        back="Moonbeam Cape",waist="Flume Belt +1",legs="Volte Brayettes",feet="Souveran Schuhs +1"}
 		
 	sets.idle.PDT = {ammo="Staunch Tathlum +1",
-        head="Souv. Schaller +1",neck="Loricate Torque +1",ear2="Odnowa Earring +1",ear1="Etiolation Earring",
-        body="Souv. Cuirass +1",hands="Souv. Handsch. +1",left_ring="Gelatinous Ring +1",right_ring={name="Moonbeam Ring", bag="wardrobe3"},
-        back="Moonbeam Cape",waist="Creed Baudrier",legs="Souv. Diechlings +1",feet="Souveran Schuhs +1"}	 --47
+        head="Souv. Schaller +1",neck="Loricate Torque +1",ear2="Odnowa Earring +1",ear1="Tuisto Earring",
+        body="Souv. Cuirass +1",hands="Souv. Handsch. +1",left_ring="Gelatinous Ring +1",right_ring={name="Moonlight Ring", bag="wardrobe3"},
+        back="Moonbeam Cape",waist="Creed Baudrier",legs="Souv. Diechlings +1",feet="Souveran Schuhs +1"}	
 				
     
     sets.Kiting = {legs="Carmine Cuisses +1"}
@@ -427,8 +428,8 @@ function init_gear_sets()
     
     -- Extra defense sets.  Apply these on top of melee or defense sets.
 	sets.Knockback = {back="Repulse Mantle"}
-    sets.MP = {head="Chev. Armet +1", feet="Rev. Leggings +2",waist="Flume Belt",ear1="ThureousEarring", back={ name="Rudianos's Mantle", augments={'HP+60','HP+20','"Fast Cast"+10',}}}
-    sets.MP_Knockback = {neck="Creed Collar",waist="Flume Belt",back="Repulse Mantle"}
+    sets.MP = {head="Chev. Armet +2", feet="Rev. Leggings +3",waist="Flume Belt +1",ear1="Thureous Earring", back={ name="Rudianos's Mantle", augments={'HP+60','HP+20','"Fast Cast"+10',}}}
+    sets.MP_Knockback = {neck="Creed Collar",waist="Flume Belt +1",back="Repulse Mantle"}
 
     -- If EquipShield toggle is on (Win+F10 or Win+F11), equip the weapon/shield combos here
     -- when activating or changing defense mode:
@@ -439,11 +440,11 @@ function init_gear_sets()
         
     sets.defense.PDT = {ammo="Sapience Orb",
         head="Souv. Schaller +1",neck="Loricate Torque +1",ear2="Odnowa Earring +1",ear1="Tuisto Earring",
-        body="Souv. Cuirass +1",hands="Souv. Handsch. +1",left_ring="Gelatinous Ring +1",right_ring={name="Moonbeam Ring", bag="wardrobe3"},
+        body="Souv. Cuirass +1",hands="Souv. Handsch. +1",left_ring="Gelatinous Ring +1",right_ring={name="Moonlight Ring", bag="wardrobe3"},
         back="Moonbeam Cape",waist="Creed Baudrier",legs="Souv. Diechlings +1",feet="Souveran Schuhs +1"}	
     sets.defense.Reraise = {ammo="Sapience Orb",
         head="Twilight Helm",neck="Loricate Torque +1",ear2="Odnowa Earring +1",ear1="Tuisto Earring",
-        body="Twilight Mail",hands="Souv. Handsch. +1",left_ring={name="Moonbeam Ring", bag="wardrobe2"},right_ring="Defending Ring",
+        body="Twilight Mail",hands="Souv. Handsch. +1",left_ring={name="Moonlight Ring", bag="wardrobe2"},right_ring="Defending Ring",
         back="Moonbeam Cape",waist="Creed Baudrier",legs="Souv. Diechlings +1",feet="Souveran Schuhs +1"}
     -- To cap MDT with Shell IV (52/256), need 76/256 in gear.
     -- Shellra V can provide 75/256, which would need another 53/256 in gear.
@@ -468,8 +469,8 @@ function init_gear_sets()
     waist={ name="Sailfi Belt +1", augments={'Path: A',}},
     left_ear="Cessance Earring",
     right_ear="Odnowa Earring +1",
-    left_ring={name="Moonbeam Ring", bag="wardrobe2"},
-    right_ring={name="Moonbeam Ring", bag="wardrobe3"},
+    left_ring={name="Moonlight Ring", bag="wardrobe2"},
+    right_ring={name="Moonlight Ring", bag="wardrobe3"},
     back={ name="Rudianos's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10',}}}
 
     sets.engaged.Acc = {
@@ -483,14 +484,14 @@ function init_gear_sets()
     waist={ name="Sailfi Belt +1", augments={'Path: A',}},
     left_ear="Cessance Earring",
     right_ear="Telos Earring",
-    left_ring={name="Moonbeam Ring", bag="wardrobe2"},
-    right_ring={name="Moonbeam Ring", bag="wardrobe3"},
+    left_ring={name="Moonlight Ring", bag="wardrobe2"},
+    right_ring={name="Moonlight Ring", bag="wardrobe3"},
     back={ name="Rudianos's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10',}}}
 	
     sets.engaged.PDT = {
 	ammo="Staunch Tathlum +1",
         head="Souv. Schaller +1",neck="Sanctity Necklace",ear2="Odnowa Earring +1",ear1="Tuisto Earring",
-        body="Souv. Cuirass +1",hands="Souv. Handsch. +1",left_ring={name="Moonbeam Ring", bag="wardrobe2"},right_ring={name="Moonbeam Ring", bag="wardrobe3"},
+        body="Souv. Cuirass +1",hands="Souv. Handsch. +1",left_ring={name="Moonlight Ring", bag="wardrobe2"},right_ring={name="Moonlight Ring", bag="wardrobe3"},
         back="Moonbeam Cape",waist="Creed Baudrier",legs="Souv. Diechlings +1",feet="Souveran Schuhs +1"}
 		
 	sets.engaged.DD = {
@@ -534,8 +535,8 @@ function init_gear_sets()
     waist={ name="Sailfi Belt +1", augments={'Path: A',}},
     left_ear="Cessance Earring",
     right_ear="Telos Earring",
-    left_ring={name="Moonbeam Ring", bag="wardrobe2"},
-    right_ring={name="Moonbeam Ring", bag="wardrobe3"},
+    left_ring={name="Moonlight Ring", bag="wardrobe2"},
+    right_ring={name="Moonlight Ring", bag="wardrobe3"},
     back={ name="Rudianos's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10',}}}
 		
     sets.engaged.MDT = {
