@@ -1,4 +1,4 @@
--- File Status: Good. Need to update sets with empy+3.
+-- File Status: Good.
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs
@@ -153,24 +153,26 @@ function init_gear_sets()
   -- Fast cast sets for spells
   sets.precast.FC = {
     main="Malignance Pole",           -- __ [20/20, ___]
-    sub="Mensch Strap +1",            -- __ [ 5/__, ___]
-    ammo="Incantor Stone",            --  2 [__/__, ___]
+    sub="Clerisy Strap +1",           --  3 [__/__, ___]
+    ammo="Staunch Tathlum +1",        -- __ [ 3/ 3, ___]; Resist Status +11
     head="Bunzi's Hat",               -- 10 [ 7/ 7, 123]
-    body="Inyanga Jubbah +2",         -- 14 [__/ 8, 120]
+    body="Pinga Tunic +1",            -- 15 [__/__, 128]
     hands=gear.Gende_SongFC_hands,    --  7 [ 3/ 2,  37]
     legs="Pinga Pants +1",            -- 13 [__/__, 147]
     feet=gear.Merl_FC_feet,           -- 12 [__/__, 118]
     neck="Cleric's Torque +1",        --  8 [__/__, ___]
     ear1="Malignance Earring",        --  4 [__/__, ___]
-    ear2="Etiolation Earring",        --  1 [__/ 3, ___]; Resist Silence+15
+    ear2="Etiolation Earring",        --  1 [__/ 3, ___]; Resist Silence +15
     ring1="Gelatinous Ring +1",       -- __ [ 7/-1, ___]
     ring2="Defending Ring",           -- __ [10/10, ___]
     back=gear.WHM_FC_Cape,            -- 10 [10/__,  20]
-    waist="Carrier's Sash",           -- __ [__/__, ___]; Ele Resist+15
-    -- 81 Fast Cast [62PDT/49MDT, 565 MEVA]
+    waist="Carrier's Sash",           -- __ [__/__, ___]; Ele Resist +15
+    -- 83 Fast Cast [60 PDT/44 MDT, 573 MEVA]
 
-    -- hands=gear.Gende_SongFC_hands, --  7 [ 4/__,  37]
-    -- 81 Fast Cast [63PDT/47MDT, 565 MEVA]
+    -- neck="Cleric's Torque +2",     -- 10 [__/__, ___]
+    -- ear1="Hearty Earring",         -- __ [__/__, ___]; Resist Status +5
+    -- ring1="Shadow Ring",           -- __ [__/__, ___]; Annuls magic dmg
+    -- 81 Fast Cast [54 PDT/43 MDT, 573 MEVA]
   }
 
   -- 10% cap on Quick Magic
@@ -179,50 +181,87 @@ function init_gear_sets()
     sub="Mensch Strap +1",            -- __ [ 5/__, ___] __
     ammo="Impatiens",                 -- __ [__/__, ___]  2
     head="Bunzi's Hat",               -- 10 [ 7/ 7, 123] __
-    body="Inyanga Jubbah +2",         -- 14 [__/ 8, 120] __
+    body="Pinga Tunic +1",            -- 15 [__/__, 128] __
     hands=gear.Gende_SongFC_hands,    --  7 [ 3/ 2,  37] __
     legs="Pinga Pants +1",            -- 13 [__/__, 147] __
     feet=gear.Merl_FC_feet,           -- 12 [__/__, 118] __
     neck="Cleric's Torque +1",        --  8 [__/__, ___] __
     ear1="Malignance Earring",        --  4 [__/__, ___] __
     ear2="Odnowa Earring +1",         -- __ [ 3/ 5, ___] __
-    ring2="Veneficium Ring",          -- __ [__/__, ___]  1
+    ring1="Veneficium Ring",          -- __ [__/__, ___]  1
+    ring2="Defending Ring",           -- __ [10/10, ___] __
     back=gear.WHM_FC_Cape,            -- 10 [10/__,  20] __
     waist="Witful Belt",              --  3 [__/__, ___]  3
-    -- 81 Fast Cast [48PDT/42MDT, 565 MEVA] 6 Quick Magic
+    -- 82 Fast Cast [58 PDT/44 MDT, 573 MEVA] 6 Quick Magic
 
-    -- ring1="Lebeche Ring",          -- __ [__/__, ___]  2
+    -- main="Malignance Pole",        -- __ [20/20, ___] __
+    -- sub="Clerisy Strap +1",        --  3 [__/__, ___] __
+    -- ammo="Impatiens",              -- __ [__/__, ___]  2
+    -- head="Bunzi's Hat",            -- 10 [ 7/ 7, 123] __
+    -- body="Pinga Tunic +1",         -- 15 [__/__, 128] __
     -- hands=gear.Gende_SongFC_hands, --  7 [ 4/__,  37] __
-    -- 81 Fast Cast [49PDT/40MDT, 565 MEVA] 8 Quick Magic
+    -- legs="Pinga Pants +1",         -- 13 [__/__, 147] __
+    -- feet=gear.Merl_FC_feet,        -- 12 [__/__, 118] __
+    -- neck="Cleric's Torque +2",     -- 10 [__/__, ___] __
+    -- ear1="Malignance Earring",     --  4 [__/__, ___] __
+    -- ear2="Ebers Earring +2",       -- __ [ 8/ 8, ___] __
+    -- ring1="Kishar Ring",           --  4 [__/__, ___] __
+    -- ring2="Defending Ring",        -- __ [10/10, ___] __
+    -- back="Perimede Cape",          -- __ [__/__, ___]  4
+    -- waist="Witful Belt",           --  3 [__/__, ___]  3
+    -- 81 Fast Cast [49 PDT/45 MDT, 553 MEVA] 9 Quick Magic
   }
 
   -- Include divine caress gear in case of quick magic proc
   sets.precast.FC.QuickStatusRemoval = {
-    main="Yagrush",                   -- __ [__/__, ___] __, __
-    sub="Genmei Shield",              -- __ [10/__, ___] __, __
-    ammo="Impatiens",                 -- __ [__/__, ___]  2, __
-    head="Bunzi's Hat",               -- 10 [ 7/ 7, 123] __, __
-    body="Shamash Robe",              -- __ [10/__, 106] __, __; Resist Silence+90
-    hands="Ebers Mitts +2",           -- __ [10/10,  77] __,  4
-    legs="Ebers Pantaloons +2",       -- 30 [12/12, 147] __, __; FC from Divine Benison
-    feet=gear.Nyame_B_feet,           -- __ [ 7/ 7, 150] __, __
-    neck="Loricate Torque +1",        -- __ [ 6/ 6, ___] __, __; +Defense
-    ear1="Malignance Earring",        --  4 [__/__, ___] __, __
-    ear2="Etiolation Earring",        --  1 [__/ 3, ___] __, __; Resist Silence+15
-    ring2="Defending Ring",           -- __ [10/10, ___] __, __
-    back="Perimede Cape",             -- __ [__/__, ___]  4, __
-    waist="Witful Belt",              --  3 [__/__, ___]  3, __
+    main="Yagrush",                   -- 20 [__/__, ___] __, __, __
+    sub="Genmei Shield",              -- __ [10/__, ___] __, __, __
+    ammo="Impatiens",                 -- __ [__/__, ___]  2, __, 10
+    head="Adhara Turban",             -- __ [__/__, ___] __, __, 20
+    body="Rosette Jaseran +1",        -- __ [ 5/ 5,  80] __, __, 25
+    hands="Ebers Mitts +2",           -- __ [10/10,  77] __,  4, __
+    legs="Ebers Pantaloons +2",       -- 30 [12/12, 147] __, __, __; FC from Divine Benison
+    feet="Theophany Duckbills +3",    -- __ [__/__, 127] __, __, 29
+    neck="Loricate Torque +1",        -- __ [ 6/ 6, ___] __, __,  5; +Defense
+    ear1="Halasz Earring",            -- __ [__/__, ___] __, __,  5
+    ear2="Nourishing Earring +1",     -- __ [__/__, ___] __, __,  5; Resist Silence +15
+    ring2="Defending Ring",           -- __ [10/10, ___] __, __, __
+    back="Perimede Cape",             -- __ [__/__, ___]  4, __, __
+    waist="Witful Belt",              --  3 [__/__, ___]  3, __, __
     -- Divine Benison Trait              50
-    -- 98 Fast Cast [72PDT/55MDT, 603 MEVA] 9 Quick Magic, 4 Divine Caress
+    -- Merits                                                    10
+    -- 103 Fast Cast [53 PDT/43 MDT, 431 MEVA] 9 Quick Magic, 4 Divine Caress, 109 SIRD
     
-    -- ring1="Lebeche Ring",          -- __ [__/__, ___]  2, __
-    -- 98 Fast Cast [72PDT/55MDT, 603 MEVA] 11 Quick Magic, 4 Divine Caress
+    -- hands="Ebers Mitts +3",        -- __ [11/11,  87] __,  5, __
+    -- legs="Ebers Pantaloons +3",    -- 30 [13/13, 157] __, __, __; FC from Divine Benison
+    -- ring1="Lebeche Ring",          -- __ [__/__, ___]  2, __, __
+    -- 103 Fast Cast [55 PDT/52 MDT, 451 MEVA] 11 Quick Magic, 5 Divine Caress, 109 SIRD
   }
 
-  sets.precast.FC.Dispelga = set_combine(sets.precast.FC, {
-    -- main="Daybreak",
-    -- sub="Genmei Shield",
-  })
+  sets.precast.FC.Dispelga = {
+    -- main="Daybreak",               -- __ [__/__,  30]
+    -- sub="Genmei Shield",           -- __ [10/__, ___]
+    ammo="Staunch Tathlum +1",        -- __ [ 3/ 3, ___]; Resist Status +11
+    head="Bunzi's Hat",               -- 10 [ 7/ 7, 123]
+    body="Pinga Tunic +1",            -- 15 [__/__, 128]
+    hands=gear.Gende_SongFC_hands,    --  7 [ 3/ 2,  37]
+    legs="Pinga Pants +1",            -- 13 [__/__, 147]
+    feet=gear.Merl_FC_feet,           -- 12 [__/__, 118]
+    neck="Cleric's Torque +1",        --  8 [__/__, ___]
+    ear1="Etiolation Earring",        --  1 [__/ 3, ___]; Resist Silence +15
+    ear2="Malignance Earring",        --  4 [__/__, ___]
+    ring1="Gelatinous Ring +1",       -- __ [ 7/-1, ___]
+    ring2="Defending Ring",           -- __ [10/10, ___]
+    back=gear.WHM_FC_Cape,            -- 10 [10/__,  20]
+    waist="Carrier's Sash",           -- __ [__/__, ___]; Ele Resist +15
+    -- 80 Fast Cast [50 PDT/24 MDT, 603 MEVA]
+
+    -- hands=gear.Gende_SongFC_hands, --  7 [ 4/__,  37]
+    -- neck="Cleric's Torque +2",     -- 10 [__/__, ___]
+    -- ear2="Ebers Earring +2",       -- __ [ 8/ 8, ___]
+    -- ring1="Kishar Ring",           --  4 [__/__, ___]
+    -- 82 Fast Cast [52 PDT/31 MDT, 603 MEVA]
+  }
 
   sets.precast.JA.Benediction = {
     -- body="Piety Briault"
@@ -233,6 +272,7 @@ function init_gear_sets()
 ------------------------------------- Weapon Skill Sets ----------------------------------------
 ------------------------------------------------------------------------------------------------
 
+  -- TODO: Update
   sets.precast.WS = {
     -- head="Nahtirah Hat",
     -- body="Vanir Cotehardie",
@@ -248,6 +288,7 @@ function init_gear_sets()
     -- waist="Fotia Belt",
   }
   
+  -- TODO: Update
   -- Magical (light). dStat=INT. 50% STR / 50% MND
   -- Light MAB > MAB > M.Dmg > MND > STR > WSD
   sets.precast.WS['Flash Nova'] = set_combine(sets.precast.WS, {
@@ -265,6 +306,7 @@ function init_gear_sets()
     -- waist="Thunder Belt",
   })
   
+  -- TODO: Update
   -- Physical damage. 2 hit. Damage varies with TP.
   -- 70% MND / 30% STR; 3.0-9.75fTP
   -- TP Bonus > WSD > MND > STR
@@ -285,6 +327,7 @@ function init_gear_sets()
     -- ear2="Regal Earring",
   })
   
+  -- TODO: Update
   -- Physical damage. 1 hit. Damage varies with TP.
   -- 50% MND / 50% STR; 3.5-12fTP
   -- TP Bonus > WSD > MND = STR
@@ -367,14 +410,21 @@ function init_gear_sets()
     waist="Sanctuary Obi +1",         -- __, __, 10 [__/__, ___]  4
     -- Kaykaus bonus                      6, __, __ [__/__, ___] __
     -- Merit points                      __, __, 10 [__/__, ___]  5
-    -- 10 CPII, 50 CP, 111 SIRD [52PDT/27MDT, 457 M.Eva] 49 -Enmity
-
-    -- ear2="Ebers Earring +2",       -- __, __, __ [ 7/ 7, ___]  9
-    -- 10 CPII, 50 CP, 111 SIRD [59PDT/34MDT, 457 M.Eva] 51 -Enmity
+    -- 10 CPII, 50 CP, 111 SIRD [52 PDT/27 MDT, 457 M.Eva] 49 -Enmity
+    
+    -- sub="Genmei Shield",           -- __, __, __ [10/__, ___] __
+    -- hands=gear.Kaykaus_C_hands,    -- __, 11, 12 [__/__,  37]  6
+    -- legs="Ebers Pantaloons +3",    -- __, __, __ [13/13, 157] __; 8% healing to MP
+    -- neck="Cleric's Torque +2",     -- __, 10, __ [__/__, ___] 25
+    -- ear1="Etiolation Earring",     -- __, __, __ [__/ 3, ___] __; Resist Silence +15
+    -- ear2="Ebers Earring +2",       -- __, __, __ [ 8/ 8, ___]  9
+    -- ring1="Freke Ring",            -- __, __, 10 [__/__, ___] __
+    -- Kaykaus bonus                      8, __, __ [__/__, ___] __
+    -- 12 CPII, 59 CP, 102 SIRD [54 PDT/40 MDT, 456 M.Eva] 55 -Enmity
   }
 
   sets.midcast.CureWeather = set_combine(sets.midcast.CureNormal, {
-    main="Chatoyant Staff",           -- __, 10, __ [__/__, ___] __
+    main="Chatoyant Staff",           -- __, 10, __ [__/__, ___] __; Weather bonus
     sub="Mensch Strap +1",            -- __, __, __ [ 5/__, ___] __
     ammo="Staunch Tathlum +1",        -- __, __, 11 [ 3/ 3, ___] __
     head=gear.Kaykaus_C_head,         -- __, 11, 12 [__/ 3,  75] __
@@ -388,13 +438,15 @@ function init_gear_sets()
     ring1="Gelatinous Ring +1",       -- __, __, __ [ 7/-1, ___] __
     ring2="Defending Ring",           -- __, __, __ [10/10, ___] __
     back=gear.WHM_CP_Cape,            -- __, 10, __ [10/__, ___] __
-    waist="Hachirin-no-Obi",          -- __, __, __ [__/__, ___] __
+    waist="Hachirin-no-Obi",          -- __, __, __ [__/__, ___] __; Weather bonus
     -- Kaykaus set bonus              --  4, __, __ [__/__, ___] __
     -- Merit points                   -- __, __, 10 [__/__, ___]  5
-    -- 4 CPII, 56 CP, 104 SIRD [52PDT/32MDT, 466 M.Eva] 51 -Enmity
+    -- 4 CPII, 56 CP, 104 SIRD [52 PDT/32 MDT, 466 M.Eva] 51 -Enmity
 
-    -- ear2="Ebers Earring +2",       -- __, __, __ [ 7/ 7, ___]  9
-    -- 4 CPII, 56 CP, 104 SIRD [59PDT/39MDT, 466 M.Eva] 53 -Enmity
+    -- legs="Ebers Pantaloons +3",    -- __, __, __ [13/13, 157] __; 8% healing to MP
+    -- neck="Cleric's Torque +2",     -- __, 10, __ [__/__, ___] 25
+    -- ear2="Ebers Earring +2",       -- __, __, __ [ 8/ 8, ___]  9
+    -- 4 CPII, 56 CP, 104 SIRD [61 PDT/41 MDT, 476 M.Eva] 53 -Enmity
   })
 
   sets.midcast.CureSolace = set_combine(sets.midcast.CureNormal, {
@@ -418,23 +470,23 @@ function init_gear_sets()
     -- 4 CPII, 50 CP, 104 SIRD [52PDT/27MDT, 497 M.Eva] 45 -Enmity
     
     -- main="Eremite's Wand +1",      -- __, __, 25 [__/__, ___] __
-    -- sub="Genbu's Shield",          -- __,  5, __ [10/__, ___] __
+    -- sub="Culminus",                -- __, __, 10 [__/__, ___] __
     -- ammo="Staunch Tathlum +1",     -- __, __, 11 [ 3/ 3, ___] __
     -- head=gear.Kaykaus_C_head,      -- __, 11, 12 [__/ 3,  75] __
-    -- body="Ebers Bliaut +2",        -- __, __, __ [__/__, 120] __; Solace+16
-    -- hands=gear.Chironic_SIRD_hands,-- __, __, 31 [__/__,  48] __; Can add more DT or Enmity
-    -- legs="Ebers Pantaloons +2",    -- __, __, __ [12/12, 147] __; 7% healing to MP
-    -- feet=gear.Kaykaus_D_feet,      -- __, 17, __ [__/__, 107]  6
-    -- neck="Cleric's Torque +1",     -- __,  7, __ [__/__, ___] 20
+    -- body="Ebers Bliaut +3",        -- __, __, __ [__/__, 130] __; Solace+18
+    -- hands=gear.Kaykaus_C_hands,    -- __, 11, 12 [__/__,  37]  6
+    -- legs="Ebers Pantaloons +3",    -- __, __, __ [13/13, 157] __; 8% healing to MP
+    -- feet=gear.Kaykaus_C_feet,      -- __, 11, 12 [__/__, 107]  6
+    -- neck="Cleric's Torque +2",     -- __, 10, __ [__/__, ___] 25
     -- ear1="Halasz Earring",         -- __, __,  5 [__/__, ___]  3
-    -- ear2="Ebers Earring +2",       -- __, __, __ [ 7/ 7, ___]  9
+    -- ear2="Ebers Earring +2",       -- __, __, __ [ 8/ 8, ___]  9
     -- ring1="Gelatinous Ring +1",    -- __, __, __ [ 7/-1, ___] __
     -- ring2="Defending Ring",        -- __, __, __ [10/10, ___] __
     -- back=gear.WHM_CP_Cape,         -- __, 10, __ [10/__, ___] __
     -- waist="Sanctuary Obi +1",      -- __, __, 10 [__/__, ___]  4
-    -- Kaykaus bonus                      4, __, __ [__/__, ___] __
+    -- Kaykaus bonus                      6, __, __ [__/__, ___] __
     -- Merit points                      __, __, 10 [__/__, ___]  5
-    -- 4 CPII, 50 CP, 104 SIRD [59PDT/34MDT, 497 M.Eva] 47 -Enmity
+    -- 6 CPII, 53 CP, 107 SIRD [51PDT/36MDT, 506 M.Eva] 58 -Enmity
   })
 
   sets.midcast.CureWeatherSolace = {
@@ -461,20 +513,20 @@ function init_gear_sets()
     -- sub="Mensch Strap +1",         -- __, __, __ [ 5/__, ___] __
     -- ammo="Staunch Tathlum +1",     -- __, __, 11 [ 3/ 3, ___] __
     -- head=gear.Kaykaus_C_head,      -- __, 11, 12 [__/ 3,  75] __
-    -- body="Ebers Bliaut +2",        -- __, __, __ [__/__, 120] __; Solace+16
+    -- body="Ebers Bliaut +3",        -- __, __, __ [__/__, 130] __; Solace+18
     -- hands=gear.Chironic_SIRD_hands,-- __, __, 31 [__/__,  48] __; Can add more DT or Enmity
-    -- legs="Ebers Pantaloons +2",    -- __, __, __ [12/12, 147] __; 7% healing to MP
+    -- legs="Ebers Pantaloons +3",    -- __, __, __ [13/13, 157] __; 7% healing to MP
     -- feet="Theophany Duckbills +3", -- __, __, 29 [__/__, 127] __
     -- neck="Cleric's Torque +2",     -- __, 10, __ [__/__, ___] 25
     -- ear1="Nourishing Earring +1",  -- __,  7,  5 [__/__, ___] __; Resist Silence +15
-    -- ear2="Halasz Earring",         -- __, __,  5 [__/__, ___]  3
-    -- ring1="Gelatinous Ring +1",    -- __, __, __ [ 7/-1, ___] __
+    -- ear2="Ebers Earring +2",       -- __, __, __ [ 8/ 8, ___]  9
+    -- ring1="Freke Ring",            -- __, __, 10 [__/__, ___] __
     -- ring2="Defending Ring",        -- __, __, __ [10/10, ___] __
     -- back=gear.WHM_CP_Cape,         -- __, 10, __ [10/__, ___] __
     -- waist="Hachirin-no-Obi",       -- __, __, __ [__/__, ___] __
     -- Kaykaus set bonus              -- __, __, __ [__/__, ___] __
     -- Merit points                   -- __, __, 10 [__/__, ___]  5
-    -- 0 CPII, 48 CP, 103 SIRD [47PDT/27MDT, 517 M.Eva] 33 -Enmity
+    -- 0 CPII, 48 CP, 108 SIRD [49PDT/37MDT, 537 M.Eva] 39 -Enmity
   }
 
   -- Cap over 960 power; Power = 3×MND + VIT + 3×floor( Healing Magic Skill÷5 )
@@ -483,59 +535,135 @@ function init_gear_sets()
 
   -- Removal rate = Base Rate * (1+(y/100))
   -- Base rate = (10+(Healing Skill / 30)); y = Cursna+ stat from gear
-  -- WHM/SCH M30 Healing Magic Skill = 506
   sets.midcast.Cursna = {
     main="Yagrush",
-    sub="Genmei Shield",              -- __, ___, __
-    ammo="Incantor Stone",            -- __, ___,  2
-    head=gear.Vanya_B_head,           -- 20, ___, __
-    body="Ebers Bliaut +2",           -- 29, ___, __
-    hands=gear.Fanatic_Gloves,        --  8,  15,  5
-    feet=gear.Vanya_B_feet,           -- 40,   5, __
-    neck="Debilis Medallion",         -- __,  15, __
-    ear1="Malignance Earring",        -- __, ___,  4
-    ear2="Meili Earring",             -- 10, ___, __
-    ring1="Haoma's Ring",             --  8,  15, __
-    ring2="Menelaus's Ring",          -- 15,  20,-10
-    back=gear.WHM_FC_Cape,            -- __,  25, 10
-    waist="Embla Sash",               -- __, ___,  5
-    -- sub="Chanter's Shield",        -- __, ___,  3
-    -- hands="Fanatic Gloves",        -- 10,  15,  7
-    -- legs="Theophany Pantaloons +3",-- __,  21, __
-    -- Base stats                       506, ___, __
-    -- 654 Healing skill, 116 Cursna+, 27 FC; Cursna Rate = 68.688%
+    sub="Genmei Shield",              -- __, __, __
+    ammo="Incantor Stone",            -- __, __,  2
+    head=gear.Vanya_B_head,           -- 20, __, __
+    body="Ebers Bliaut +2",           -- 29, __, __
+    hands=gear.Fanatic_Gloves,        --  8, 15,  5
+    legs="Theophany Pantaloons +3",   -- __, 21, __
+    feet=gear.Vanya_B_feet,           -- 40,  5, __
+    neck="Debilis Medallion",         -- __, 15, __
+    ear1="Malignance Earring",        -- __, __,  4
+    ear2="Meili Earring",             -- 10, __, __
+    ring1="Haoma's Ring",             --  8, 15, __
+    ring2="Menelaus's Ring",          -- 15, 20,-10
+    back=gear.WHM_FC_Cape,            -- __, 25, 10
+    waist="Embla Sash",               -- __, __,  5
+    -- Base stats                       440, __, __
+    -- JP Gifts                          36
+    -- Master levels                     15
+    -- 621 Healing skill, 116 Cursna+, 16 FC; Cursna Rate = 66.312%
 
-    -- Ideal:
-    -- main="Gambanteinn",             -- __, 100, __ [__/__, ___]
-    -- sub="Genmei Shield",            -- __, ___, __ [10/__, ___]
-    -- ammo="Staunch Tathlum +1",      -- __, ___, __ [ 3/ 3, ___]
-    -- head=gear.Vanya_B_head,         -- 20, ___, __ [__/ 5,  75]
-    -- body="Bunzi's Robe",            -- __, ___, __ [10/10, 139]
-    -- hands="Fanatic Gloves",         -- 10,  15,  7 [__/__,  37]
-    -- legs="Theophany Pantaloons +3", -- __,  21, __ [__/__, 127]
-    -- feet=gear.Vanya_B_feet,         -- 40,   5, __ [__/ 3, 107]
-    -- neck="Debilis Medallion",       -- __,  15, __ [__/__, ___]
-    -- ear1="Odnowa Earring +1",       -- __, ___, __ [ 3/ 5, ___]
-    -- ear2="Meili Earring",           -- 10, ___, __ [__/__, ___]
-    -- ring1="Haoma's Ring",           --  8,  15, __ [__/__, ___]
-    -- ring2="Menelaus's Ring",        -- 15,  20,-10 [__/__, ___]
-    -- back=gear.WHM_FC_Cape,          -- __,  25, 10 [10/__,  20]
-    -- waist="Bishop's Sash",          --  5, ___, __ [__/__, ___]
-    -- Base stats                        506, ___, __ [__/__, ___]
-    -- 614 Healing skill, 216 Cursna+, 7 FC [36PDT/26MDT, 505MEVA]; Cursna Rate = 96.275%
+    -- sub="Chanter's Shield",        -- __, __,  3
+    -- hands="Fanatic Gloves",        -- 10, 15,  7
+    -- 623 Healing skill, 116 Cursna+, 21 FC; Cursna Rate = 66.456%
+
+    -- main="Gambanteinn",            -- __, 100, __ [__/__, ___]
+    -- sub="Genmei Shield",           -- __, ___, __ [10/__, ___]
+    -- ammo="Staunch Tathlum +1",     -- __, ___, __ [ 3/ 3, ___]
+    -- head=gear.Vanya_B_head,        -- 20, ___, __ [__/ 5,  75]
+    -- body="Ebers Bliaut +3",        -- 34, ___, __ [__/__, 130]
+    -- hands="Fanatic Gloves",        -- 10,  15,  7 [__/__,  37]
+    -- legs="Theophany Pantaloons +3",-- __,  21, __ [__/__, 127]
+    -- feet=gear.Vanya_B_feet,        -- 40,   5, __ [__/ 3, 107]
+    -- neck="Debilis Medallion",      -- __,  15, __ [__/__, ___]
+    -- ear1="Meili Earring",          -- 10, ___, __ [__/__, ___]
+    -- ear2="Ebers Earring +2",       -- 12, ___, __ [ 8/ 8, ___]
+    -- ring1="Haoma's Ring",          --  8,  15, __ [__/__, ___]
+    -- ring2="Menelaus's Ring",       -- 15,  20,-10 [__/__, ___]
+    -- back=gear.WHM_FC_Cape,         -- __,  25, 10 [10/__,  20]
+    -- waist="Bishop's Sash",         --  5, ___, __ [__/__, ___]
+    -- Base stats                       440, ___, __ [__/__, ___]
+    -- JP Gifts                          36
+    -- Master levels                     25
+    -- 655 Healing skill, 216 Cursna+, 10 FC [31 PDT/19 MDT, 496 M.Eva]; Cursna Rate = 100.59%
+    
+    -- main="Gambanteinn",            -- __, 100, __ [__/__, ___]
+    -- sub="Genmei Shield",           -- __, ___, __ [10/__, ___]
+    -- ammo="Staunch Tathlum +1",     -- __, ___, __ [ 3/ 3, ___]
+    -- head="Bunzi's Hat",            -- __, ___, 10 [ 7/ 7, 123]
+    -- body="Ebers Bliaut +3",        -- 34, ___, __ [__/__, 130]
+    -- hands="Fanatic Gloves",        -- 10,  15,  7 [__/__,  37]
+    -- legs="Theophany Pantaloons +3",-- __,  21, __ [__/__, 127]
+    -- feet=gear.Vanya_B_feet,        -- 40,   5, __ [__/ 3, 107]
+    -- neck="Debilis Medallion",      -- __,  15, __ [__/__, ___]
+    -- ear1="Meili Earring",          -- 10, ___, __ [__/__, ___]
+    -- ear2="Ebers Earring +2",       -- 12, ___, __ [ 8/ 8, ___]
+    -- ring1="Haoma's Ring",          --  8,  15, __ [__/__, ___]
+    -- ring2="Menelaus's Ring",       -- 15,  20,-10 [__/__, ___]
+    -- back=gear.WHM_FC_Cape,         -- __,  25, 10 [10/__,  20]
+    -- waist="Witful Belt",           -- __, ___,  3 [__/__, ___]
+    -- Base stats                       440, ___, __ [__/__, ___]
+    -- JP Gifts                          36
+    -- Master levels                     50
+    -- 655 Healing skill, 216 Cursna+, 20 FC [38 PDT/21 MDT, 544 M.Eva]; Cursna Rate = 100.59%
   }
 
-  -- TODO: Ensure DT is capped. Maybe add SIRD but keep some FC
-  sets.midcast.Erase = set_combine(sets.midcast.FastRecast, {
-    main="Yagrush",
-    sub="Genmei Shield",
-    neck="Cleric's Torque +1",
-  })
+  -- Ensure DT is capped. Add SIRD but keep some FC
+  sets.midcast.Erase = {
+    main="Yagrush",                   -- __ [__/__, ___] __, __; AoE status removal
+    sub="Culminus",                   -- __ [__/__, ___] 10, __
+    ammo="Staunch Tathlum +1",        -- __ [ 3/ 3, ___] 11, __; Resist status +11
+    head=gear.Kaykaus_C_head,         -- __ [__/ 3,  75] 12, __
+    body=gear.Merl_FC_body,           -- 14 [ 2/__,  91] __,  5
+    hands="Ebers Mitts +2",           -- __ [10/10,  77] __, 11
+    legs="Ebers Pantaloons +2",       -- __ [12/12, 147] __, __
+    feet="Theophany Duckbills +3",    -- __ [__/__, 127] 29, __
+    neck="Cleric's Torque +1",        --  7 [__/__, ___] __, 20; Erase+1
+    ear1="Halasz Earring",            -- __ [__/__, ___]  5,  3
+    ear2="Nourishing Earring +1",     -- __ [__/__, ___]  5, __; Resist Silence +15
+    ring1="Gelatinous Ring +1",       -- __ [ 7/-1, ___] __, __
+    ring2="Defending Ring",           -- __ [10/10, ___] __, __
+    back=gear.WHM_FC_Cape,            -- 10 [10/__,  20] __, __
+    waist="Sanctuary Obi +1",         -- __ [__/__, ___] 10,  4
+    -- Merits                                            10,  5
+    -- 31 FC [54 PDT/37 MDT, 537 MEVA] 92 SIRD, 48 -Enmity
+    
+    -- hands="Ebers Mitts +3",        -- __ [11/11,  87] __, 12
+    -- legs="Ebers Pantaloons +3",    -- __ [13/13, 157] __, __
+    -- neck="Cleric's Torque +2",     -- 10 [__/__, ___] __, 25; Erase+1
+    -- ring1="Freke Ring",            -- __ [__/__, ___] 10, __
+    -- Merits                                            10,  5
+    -- 34 FC [49 PDT/40 MDT, 557 MEVA] 102 SIRD, 54 -Enmity
+  }
 
-  -- TODO: Add SIRD and DT
   sets.midcast.StatusRemoval = {
-    main="Yagrush",
-    sub="Genmei Shield",
+    main="Yagrush",                   -- [__/__, ___] __, __, __; AoE status removal
+    sub="Culminus",                   -- [__/__, ___] __, 10, __
+    ammo="Staunch Tathlum +1",        -- [ 3/ 3, ___] __, 11, __; Resist status +11
+    head=gear.Kaykaus_C_head,         -- [__/ 3,  75] __, 12, __
+    body="Shamash Robe",              -- [10/__, 106] __, __, 10; Resist Silence+90
+    hands="Ebers Mitts +2",           -- [10/10,  77]  4, __, 11
+    legs="Ebers Pantaloons +2",       -- [12/12, 147] __, __, __
+    feet="Theophany Duckbills +3",    -- [__/__, 127] __, 29, __
+    neck="Loricate Torque +1",        -- [ 6/ 6, ___] __,  5, __; +Defense
+    ear1="Halasz Earring",            -- [__/__, ___] __,  5,  3
+    ear2="Novia Earring",             -- [__/__, ___] __, __,  7
+    ring2="Defending Ring",           -- [10/10, ___] __, __, __
+    back="Mending Cape",              -- [__/__, ___]  1, __,  6
+    waist="Sanctuary Obi +1",         -- [__/__, ___] __, 10,  4
+    -- Merits                                             10,  5
+    -- [51PDT/44MDT, 532 MEVA] 5 Divine Caress, 92 SIRD, 46 -Enmity
+    
+    -- main="Yagrush",                -- [__/__, ___] __, __, __; AoE status removal
+    -- sub="Culminus",                -- [__/__, ___] __, 10, __
+    -- ammo="Staunch Tathlum +1",     -- [ 3/ 3, ___] __, 11, __; Resist status +11
+    -- head=gear.Kaykaus_C_head,      -- [__/ 3,  75] __, 12, __
+    -- body="Shamash Robe",           -- [10/__, 106] __, __, 10; Resist Silence+90
+    -- hands="Ebers Mitts +3",        -- [11/11,  87]  5, __, 12
+    -- legs="Ebers Pantaloons +3",    -- [13/13, 157] __, __, __
+    -- feet="Theophany Duckbills +3", -- [__/__, 127] __, 29, __
+    -- neck="Loricate Torque +1",     -- [ 6/ 6, ___] __,  5, __; +Defense
+    -- ear1="Halasz Earring",         -- [__/__, ___] __,  5,  3
+    -- ear2="Novia Earring",          -- [__/__, ___] __, __,  7
+    -- ring1="Freke Ring",            -- [__/__, ___] __, 10, __
+    -- ring2="Defending Ring",        -- [10/10, ___] __, __, __
+    -- back="Mending Cape",           -- [__/__, ___]  1, __,  6
+    -- waist="Sanctuary Obi +1",      -- [__/__, ___] __, 10,  4
+    -- Merits                                             10,  5
+    -- [53PDT/46MDT, 552 MEVA] 6 Divine Caress, 102 SIRD, 47 -Enmity
   }
 
   sets.midcast['Enhancing Magic'] = {
@@ -555,8 +683,8 @@ function init_gear_sets()
     back=gear.WHM_FC_Cape,            -- __, __, 10 [10/__,  20]
     waist="Embla Sash",               -- __, 10,  5 [__/__, ___]
     -- Base                             394; Includes merits
-    -- Master Levels                      0
-    -- 473 Enh Skill, 69% Enh Duration, 15 FC [26 PDT/18 MDT, 491 MEVA]
+    -- Master Levels                     15
+    -- 488 Enh Skill, 69% Enh Duration, 15 FC [26 PDT/18 MDT, 491 MEVA]
 
     -- Ideal:
     -- main="Malignance Pole",        -- __, __, __ [20/20, ___]
@@ -575,8 +703,8 @@ function init_gear_sets()
     -- back=gear.WHM_FC_Cape,         -- __, __, 10 [10/__,  20]
     -- waist="Embla Sash",            -- __, 10,  5 [__/__, ___]
     -- Base                             394; Includes merits
-    -- Master Levels                     50
-    -- 523 Enh Skill, 55% Enh Duration, 30 FC [51 PDT/38 MDT, 521 MEVA]
+    -- Master Levels                     27
+    -- 500 Enh Skill, 55% Enh Duration, 30 FC [51 PDT/38 MDT, 521 MEVA]
   }
 
   sets.midcast.EnhancingDuration = {
@@ -588,12 +716,17 @@ function init_gear_sets()
     hands=gear.Telchine_ENH_hands,    -- __, 10, __ [__/__,  61]
     legs=gear.Telchine_ENH_legs,      -- __, 10, __ [__/__, 128]
     feet="Theophany Duckbills +3",    -- 21, 10, __ [__/__, 127]
-    ear1="Mimir Earring",             -- 10, __, __ [__/__, ___]
+    neck="Loricate Torque +1",        -- __, __, __ [ 6/ 6, ___]
+    ear1="Odnowa Earring +1",         -- __, __, __ [ 3/ 5, ___]
+    ear2="Mimir Earring",             -- 10, __, __ [__/__, ___]
+    ring1="Gelatinous Ring +1",       -- __, __, __ [ 7/-1, ___]
+    ring2="Defending Ring",           -- __, __, __ [10/10, ___]
+    back=gear.WHM_FC_Cape,            -- __, __, 10 [10/__,  20]
     waist="Embla Sash",               -- __, 10,  5 [__/__, ___]
     -- Traits/Merits/Gifts              394
-    -- Master Levels                     14
+    -- Master Levels                     15
     -- Light Arts                        26
-    -- 495 Enh Skill, 75% Enh Duration, 5 FC [3 PDT/3 MDT, 471 MEVA]
+    -- 496 Enh Skill, 75% Enh Duration, 15 FC [39 PDT/23 MDT, 491 MEVA]
 
     -- Ideal:
     -- main=gear.Gada_ENH,            -- 18,  6,  6 [__/__, ___]
@@ -605,20 +738,19 @@ function init_gear_sets()
     -- legs=gear.Telchine_ENH_legs,   -- __, 10,  5 [__/__, 132]
     -- feet="Theophany Duckbills +3", -- 21, 10, __ [__/__, 127]
     -- neck="Loricate Torque +1",     -- __, __, __ [ 6/ 6, ___]
-    -- ear1="Mimir Earring",          -- 10, __, __ [__/__, ___]
-    -- ear2="Odnowa Earring +1",      -- __, __, __ [ 3/ 5, ___]
+    -- ear1="Odnowa Earring +1",      -- __, __, __ [ 3/ 5, ___]
+    -- ear2="Ebers Earring +2",       -- __, __, __ [ 8/ 8, ___]
     -- ring1="Gelatinous Ring +1",    -- __, __, __ [ 7/-1, ___]
     -- ring2="Defending Ring",        -- __, __, __ [10/10, ___]
-    -- back="Fi Follet Cape +1",      --  9, __, 10 [__/__, ___]
+    -- back=gear.WHM_FC_Cape,         -- __, __, 10 [10/__,  20]
     -- waist="Embla Sash",            -- __, 10,  5 [__/__, ___]
     -- Traits/Merits/Gifts              394
-    -- Master Levels                     30
+    -- Master Levels                     29
     -- Light Arts                        26
-    -- 520 Enh Skill, 76% Enh Duration, 41 FC [29 PDT/23 MDT, 526 MEVA]
+    -- 500 Enh Skill, 76% Enh Duration, 41 FC [47 PDT/31 MDT, 546 MEVA]
   }
 
   -- Focus on SS pot, DT, and Recast time.
-  -- In Odyssey endgame, no tank so WHM needs to be able to tank when spamming this.
   sets.midcast.Stoneskin = {
     main="Malignance Pole",     -- [20/20, ___] __, __
     sub="Mensch Strap +1",      -- [ 5/__, ___] __, __
@@ -640,23 +772,24 @@ function init_gear_sets()
 
   sets.midcast.Auspice = set_combine(sets.midcast.EnhancingDuration, {
     feet="Ebers Duckbills +2", -- Auspice+17
+    -- feet="Ebers Duckbills +3", -- Auspice+19
   })
 
   sets.midcast.Arise = sets.midcast.FastRecast
 
-  -- At least 500 Enh magic skill
+  -- Cap at 500 Enh magic skill
   sets.midcast.BarElement = {
     main="Beneficus",                 -- 15, __ [__/__, ___] __,  5
     sub="Genmei Shield",              -- __, __ [10/__, ___] __, __
     ammo="Staunch Tathlum +1",        -- __, __ [ 3/ 3, ___] __, __
-    head="Ebers Cap +1",              -- __, __ [__/__,  75] __, __; Set bonus
+    head="Ebers Cap +2",              -- __, __ [__/__, 115] __, __; Set bonus
     body="Ebers Bliaut +2",           -- __, __ [__/__, 120] __, 16; Set bonus
     hands="Ebers Mitts +2",           -- __, __ [10/10,  77] __, __; Set bonus
     legs="Piety Pantaloons +2",       -- 24, __ [__/__, 117] 33, __
     feet="Ebers Duckbills +2",        -- 30, __ [10/10, 147] __, __; Set bonus
     neck="Loricate Torque +1",        -- __, __ [ 6/ 6, ___] __, __
-    ear1="Mimir Earring",             -- 10, __ [__/__, ___] __, __
-    ear2="Odnowa Earring +1",         -- __, __ [ 3/ 5, ___] __, __
+    ear1="Odnowa Earring +1",         -- __, __ [ 3/ 5, ___] __, __
+    ear2="Mimir Earring",             -- 10, __ [__/__, ___] __, __
     ring1="Gelatinous Ring +1",       -- __, __ [ 7/-1, ___] __, __
     ring2="Defending Ring",           -- __, __ [10/10, ___] __, __
     back=gear.WHM_FC_Cape,            -- __, __ [10/__,  20] __, __
@@ -664,105 +797,148 @@ function init_gear_sets()
     -- Merits/JP                         16, __ [__/__, ___] 50, 10
     -- Base                             378
     -- Light Arts                        26
-    -- Master Levels                      7
+    -- Master Levels                     15
     -- Afflatus Solace                                       __,  5
-    -- 506 Enh Skill, 10% Enh Duration [69 PDT/43 MDT, 556 MEVA] 83 Barspell Resistance, 36 Barspell M.Def
+    -- 514 Enh Skill, 10% Enh Duration [69 PDT/43 MDT, 596 MEVA] 83 Barspell Resistance, 36 Barspell M.Def
 
     -- main="Beneficus",              -- 15, __ [__/__, ___] __,  5
-    -- sub="Genmei Shield",           -- __, __ [10/__, ___] __, __
+    -- sub="Ammurapi Shield",         -- __, 10 [__/__, ___] __, __
     -- ammo="Staunch Tathlum +1",     -- __, __ [ 3/ 3, ___] __, __
-    -- head="Ebers Cap +2",           -- __, __ [__/__, 115] __, __; Set bonus
-    -- body="Ebers Bliaut +2",        -- __, __ [__/__, 120] __, 16; Set bonus
-    -- hands="Ebers Mitts +2",        -- __, __ [10/10,  77] __, __; Set bonus
+    -- head="Ebers Cap +3",           -- __, __ [__/__, 125] __, __; Set bonus
+    -- body="Ebers Bliaut +3",        -- __, __ [__/__, 130] __, 18; Set bonus
+    -- hands="Ebers Mitts +3",        -- __, __ [11/11,  87] __, __; Set bonus
     -- legs="Piety Pantaloons +3",    -- 26, __ [__/__, 127] 36, __
-    -- feet="Ebers Duckbills +2",     -- 30, __ [10/10, 147] __, __; Set bonus
+    -- feet="Ebers Duckbills +3",     -- 35, __ [11/11, 157] __, __; Set bonus
     -- neck="Loricate Torque +1",     -- __, __ [ 6/ 6, ___] __, __
-    -- ear1="Mimir Earring",          -- 10, __ [__/__, ___] __, __
-    -- ear2="Odnowa Earring +1",      -- __, __ [ 3/ 5, ___] __, __
-    -- ring1="Shadow Ring",           -- __, __ [__/__, ___] __, __
+    -- ear1="Odnowa Earring +1",      -- __, __ [ 3/ 5, ___] __, __
+    -- ear2="Ebers Earring +2",       -- __, __ [ 8/ 8, ___] __, __
+    -- ring1="Shadow Ring",           -- __, __ [__/__, ___] __, __; Annul magic dmg
     -- ring2="Defending Ring",        -- __, __ [10/10, ___] __, __
-    -- back="Shadow Mantle",          -- __, __ [__/__, ___] __, __
+    -- back="Shadow Mantle",          -- __, __ [__/__, ___] __, __; Annul phys dmg
     -- waist="Embla Sash",            -- __, 10 [__/__, ___] __, __
     -- Ebers Set Bonus                                             ; 8% chance of nullify dmg
     -- Merits/JP                         16, __ [__/__, ___] 50, 10
     -- Base                             378
     -- Light Arts                        26
-    -- Master Levels                     50
+    -- Master Levels                      4
     -- Afflatus Solace                                       __,  5
-    -- 551 Enh Skill, 10% Enh Duration [52 PDT/44 MDT, 586 MEVA] 86 Barspell Resistance, 36 Barspell M.Def
+    -- 500 Enh Skill, 20% Enh Duration [52 PDT/54 MDT, 626 MEVA] 86 Barspell Resistance, 38 Barspell M.Def
   }
 
-  -- TODO: update
   sets.midcast.BarStatus = set_combine(sets.midcast.EnhancingDuration, {
     neck="Sroda Necklace",
   })
 
-  -- TODO: update
-  sets.midcast.Regen = set_combine(sets.midcast['Enhancing Magic'],{
-    main="Bolelabunga",
-    legs=gear.Telchine_RGN_legs,
-    -- sub="Genmei Shield",
-    -- body="Piety Briault",
-    -- hands="Orison Mitts +2",
-    -- legs="Theophany Pantaloons",
-  })
+  -- Regen 4 base potency 30 hp/tic. Base duration 60s.
+  sets.midcast.Regen = {
+    main="Bolelabunga",                 -- __, 10, __, __ [__/__, ___]
+    sub="Ammurapi Shield",              -- __, __, __, 10 [__/__, ___]
+    ammo="Staunch Tathlum +1",          -- __, __, __, __ [ 3/ 3, ___]
+    head="Inyanga Tiara +2",            -- 14, __, __, __ [__/ 5, 114]
+    hands="Ebers Mitts +2",             -- __, __, 24, __ [10/10,  77]
+    legs="Theophany Pantaloons +3",     -- __, 24, __, __ [__/__, 127]
+    feet="Theophany Duckbills +3",      -- __, __, __, 10 [__/__, 127]
+    neck="Loricate Torque +1",          -- __, __, __, __ [ 6/ 6, ___]
+    ear1="Odnowa Earring +1",           -- __, __, __, __ [ 3/ 5, ___]
+    ring1="Gelatinous Ring +1",         -- __, __, __, __ [ 7/-1, ___]
+    ring2="Defending Ring",             -- __, __, __, __ [10/10, ___]
+    back=gear.WHM_FC_Cape,              -- __, __, __, __ [10/__,  20]
+    waist="Embla Sash",                 -- __, __, __, 10 [__/__, ___]
+    -- Merits/JP/Gifts                     __, 10, 60, __ [__/__, ___]
+    -- 14% Regen Potency, 44 Regen Potency, 84 Regen Duration, 30% Enh Duration [49 PDT/38 MDT, 465 M.Eva]
+    -- Regen IV 78 hp/tic @187 sec
+    
+    -- body="Piety Bliaut +3",          -- 52, __, __, __ [__/__, 100]
+    -- hands="Ebers Mitts +3",          -- __, __, 26, __ [11/11,  87]
+    -- ear2="Ebers Earring +2",         -- __, __, __, __ [ 8/ 8, ___]
+    -- 66% Regen Potency, 44 Regen Potency, 86 Regen Duration, 30% Enh Duration [58 PDT/47 MDT, 575 M.Eva]
+    -- Regen IV 93 hp/tic @189 sec
+  }
 
   sets.midcast.MndEnfeebles = {
-    main="Bunzi's Rod",
-    ammo="Pemphredo Tathlum",         -- __,  8, __,  4 [__/__, ___]
-    head="Bunzi's Hat",               -- __, 40, 33, 34 [ 7/ 7, 123]
-    body="Bunzi's Robe",              -- __, 40, 43, 48 [10/10, 139]
-    feet="Theophany Duckbills +3",    -- 21, 46, 34, 32 [__/__, 127]
-    neck="Incanter's Torque",         -- 10, __, __, __ [__/__, ___]
-    ear1="Regal Earring",             -- __, __, 10, 10 [__/__, ___]
-    ear2="Malignance Earring",        -- __, 10,  8,  8 [__/__, ___]
-    ring1="Stikini Ring +1",          --  8, 11,  8, __ [__/__, ___]
-    ring2="Stikini Ring +1",          --  8, 11,  8, __ [__/__, ___]
-    back="Aurist's Cape +1",          -- __, 33, 33, 33 [__/__, ___]
-    waist="Acuity Belt +1",           -- __, 15, __, 23 [__/__, ___]
-    -- main="Daybreak",               -- __, 40, 30, __ [__/__, ___]
-    -- sub="Genmei Shield",           -- __, __, __, __ [10/__, ___]
-    -- hands=gear.Kaykaus_A_hands,    -- 16, 53, 47, 19 [__/__,  37]
-    -- legs=gear.Chironic_MAcc_legs,  -- 13, 60, 29, 42 [__/__, 118]
-    -- AF set bonus                   -- __, 15, __, __ [__/__, ___]
-    -- 76 Enfeebling skill, 382 M.Acc, 283 MND, 253 INT [17 PDT/17 MDT, 544 MEVA]
+    main="Contemplator +1",           -- __, 20, 70, 22, 12 [__/__, ___]
+    sub="Mensch Strap +1",            -- __, __, __, __, __ [ 5/__, ___]
+    ammo="Pemphredo Tathlum",         -- __, __,  8, __,  4 [__/__, ___]
+    head="Ebers Cap +2",              -- __, __, 51, 29, 29 [__/__, 115]
+    body="Ebers Bliaut +2",           -- __, __, 54, 43, 40 [__/__, 120]
+    hands="Ebers Mitts +2",           -- __, __, 52, 45, 29 [10/10,  77]
+    legs="Ebers Pantaloons +2",       -- __, __, 53, 40, 42 [12/12, 147]
+    feet="Theophany Duckbills +3",    -- __, 21, 46, 34, 32 [__/__, 127]
+    neck="Incanter's Torque",         -- __, 10, __, __, __ [__/__, ___]
+    ear1="Malignance Earring",        -- __, __, 10,  8,  8 [__/__, ___]
+    ear2="Dignitary's Earring",       -- __, __, 10, __, __ [__/__, ___]
+    ring1="Stikini Ring +1",          -- __,  8, 11,  8, __ [__/__, ___]
+    ring2="Stikini Ring +1",          -- __,  8, 11,  8, __ [__/__, ___]
+    back="Aurist's Cape +1",          -- __, __, 33, 33, 33 [__/__, ___]
+    waist="Obstinate Sash",           --  5, 10, 15,  5, __ [__/__, ___]
+    -- AF set bonus                      __, __, 15, __, __
+    -- 5 Enf Duration, 77 Enfeebling skill, 439 M.Acc, 275 MND, 229 INT [27 PDT/22 MDT, 586 MEVA]
+    
+    -- main="Contemplator +1",        -- __, 20, 70, 22, 12 [__/__, ___]
+    -- sub="Mensch Strap +1",         -- __, __, __, __, __ [ 5/__, ___]
+    -- ammo="Pemphredo Tathlum",      -- __, __,  8, __,  4 [__/__, ___]
+    -- head="Ebers Cap +3",           -- __, __, 61, 34, 34 [__/__, 125]
+    -- body="Ebers Bliaut +3",        -- __, __, 64, 48, 45 [__/__, 130]
+    -- hands="Ebers Mitts +3",        -- __, __, 62, 50, 34 [11/11,  87]
+    -- legs="Ebers Pantaloons +3",    -- __, __, 63, 45, 47 [13/13, 157]
+    -- feet="Ebers Duckbills +3",     -- __, __, 60, 34, 32 [11/11, 157]
+    -- neck="Incanter's Torque",      -- __, 10, __, __, __ [__/__, ___]
+    -- ear1="Malignance Earring",     -- __, __, 10,  8,  8 [__/__, ___]
+    -- ear2="Ebers Earring +2",       -- __, __, 20, 15, __ [ 8/ 8, ___]
+    -- ring1="Kishar Ring",           -- 10, __,  5, __, __ [__/__, ___]
+    -- ring2="Stikini Ring +1",       -- __,  8, 11,  8, __ [__/__, ___]
+    -- back="Aurist's Cape +1",       -- __, __, 33, 33, 33 [__/__, ___]
+    -- waist="Obstinate Sash",        --  5, 10, 15,  5, __ [__/__, ___]
+    -- 15 Enf Duration, 48 Enf skill, 482 M.Acc, 302 MND, 249 INT [48 PDT/43 MDT, 656 MEVA]
   }
+  sets.midcast.IntEnfeebles = set_combine(sets.midcast.MndEnfeebles, {
+    waist="Acuity Belt +1",           -- __, __, 15, __, 23 [__/__, ___]
+  })
 
   sets.midcast.Dia = sets.midcast.MndEnfeebles
 
-  sets.midcast.IntEnfeebles = set_combine(sets.midcast.MndEnfeebles, {
-    back=gear.WHM_INT_MAcc_Cape,
-  })
-
-  -- TODO
-  -- Max Macc. Duration flat 120 + dur gear
-  sets.midcast.Silence = {
-    ammo="Pemphredo tathlum",
-    body="Inyanga Jubbah +2",
-    neck="Sanctity Necklace",
-    ear1="Regal Earring",
-    ear2="Vor Earring",
-    ring1="Stikini Ring +1",
-    ring2="Stikini Ring +1",
-    back="Aurist's Cape +1",
-    waist="Acuity Belt +1",
+  sets.midcast.Dispelga = set_combine(sets.midcast.IntEnfeebles, {
     -- main="Daybreak",
     -- sub="Ammurapi Shield",
-    -- head="Inyanga Tiara +2",
-    -- hands="Kaykaus Cuffs +1",
-    -- legs="Inyanga Shalwar +2",
-    -- feet="Inyanga Crackows +2",
-  }
-
-  sets.midcast.Dispelga = {
-    -- main="Daybreak",
-    -- sub="Genmei Shield",
-  }
+    ring1="Stikini Ring +1",          -- __,  8, 11,  8, __ [__/__, ___]
+  })
 
   -- Divine magic skill
-  -- sets.midcast.Repose = {
+  sets.midcast.Repose = {
+    main="Bunzi's Rod",               -- __, 50, 15, 15 [__/__, ___]
+    sub="Ammurapi Shield",            -- __, 38, 13, 13 [__/__, ___]
+    ammo="Pemphredo Tathlum",         -- __,  8, __,  4 [__/__, ___]
+    head="Ebers Cap +2",              -- __, 51, 29, 29 [__/__, 115]
+    body="Ebers Bliaut +2",           -- __, 54, 43, 40 [__/__, 120]
+    hands="Ebers Mitts +2",           -- __, 52, 45, 29 [10/10,  77]
+    legs="Ebers Pantaloons +2",       -- __, 53, 40, 42 [12/12, 147]
+    feet="Ebers Duckbills +2",        -- __, 50, 29, 27 [10/10, 147]
+    neck="Incanter's Torque",         -- 10, __, __, __ [__/__, ___]
+    ear1="Malignance Earring",        -- __, 10,  8,  8 [__/__, ___]
+    ear2="Dignitary's Earring",       -- __, 10, __, __ [__/__, ___]
+    ring1="Stikini Ring +1",          --  8, 11,  8, __ [__/__, ___]
+    ring2="Stikini Ring +1",          --  8, 11,  8, __ [__/__, ___]
+    back="Aurist's Cape +1",          -- __, 33, 33, 33 [__/__, ___]
+    waist="Obstinate Sash",           -- __, 15,  5, __ [__/__, ___]
+    -- 26 Divine skill, 446 M.Acc, 276 MND, 240 INT [32 PDT/32 MDT, 606 MEVA]
 
-  -- }
+    -- main="Bunzi's Rod",            -- __, 50, 15, 15 [__/__, ___]
+    -- sub="Ammurapi Shield",         -- __, 38, 13, 13 [__/__, ___]
+    -- ammo="Pemphredo Tathlum",      -- __,  8, __,  4 [__/__, ___]
+    -- head="Ebers Cap +3",           -- __, 61, 34, 34 [__/__, 125]
+    -- body="Ebers Bliaut +3",        -- __, 64, 48, 45 [__/__, 130]
+    -- hands="Ebers Mitts +3",        -- __, 62, 50, 34 [11/11,  87]
+    -- legs="Ebers Pantaloons +3",    -- __, 63, 45, 47 [13/13, 157]
+    -- feet="Ebers Duckbills +3",     -- __, 60, 34, 32 [11/11, 157]
+    -- neck="Incanter's Torque",      -- 10, __, __, __ [__/__, ___]
+    -- ear1="Malignance Earring",     -- __, 10,  8,  8 [__/__, ___]
+    -- ear2="Ebers Earring +2",       -- __, 20, 15, __ [ 8/ 8, ___]
+    -- ring1="Stikini Ring +1",       --  8, 11,  8, __ [__/__, ___]
+    -- ring2="Stikini Ring +1",       --  8, 11,  8, __ [__/__, ___]
+    -- back="Aurist's Cape +1",       -- __, 33, 33, 33 [__/__, ___]
+    -- waist="Obstinate Sash",        -- __, 15,  5, __ [__/__, ___]
+    -- 26 Divine skill, 506 M.Acc, 316 MND, 265 INT [43 PDT/43 MDT, 656 MEVA]
+  }
 
 
 ------------------------------------------------------------------------------------------------
@@ -786,6 +962,10 @@ function init_gear_sets()
     back=gear.WHM_FC_Cape,          -- 10/__,  20 [__]
     waist="Carrier's Sash",         -- __/__, ___ [__]; Ele Resist+15
     -- 51 PDT / 29 MDT, 594 M.Eva [10 Refresh]
+    
+    -- head="Volte Beret",          -- __/__, 104 [ 1]
+    -- ear2="Ebers Earring +2",     --  8/ 8, ___ [__]
+    -- 52 PDT / 27 MDT, 575 M.Eva [11 Refresh]
   }
   sets.idle.Refresh = sets.idle
   sets.idle.Refresh.MpSub50 = set_combine(sets.idle.Refresh, {
@@ -801,6 +981,7 @@ function init_gear_sets()
 ---------------------------------------- Engaged Sets ------------------------------------------
 ------------------------------------------------------------------------------------------------
 
+  -- TODO: Update
   sets.engaged = {
     -- head="Nahtirah Hat",neck="Asperity Necklace",ear1="Bladeborn Earring",ear2="Steelflash Earring",
     -- body="Vanir Cotehardie",hands="Dynasty Mitts",ring1="Rajas Ring",ring2="K'ayres Ring",
@@ -812,15 +993,7 @@ function init_gear_sets()
 ---------------------------------------- Special Sets ------------------------------------------
 ------------------------------------------------------------------------------------------------
   
-  -- Buff sets: Gear that needs to be worn to actively enhance a current player buff.
-  sets.buff['Divine Caress'] = {
-    main="Yagrush",
-    sub="Genmei Shield",
-    hands="Ebers Mitts +2",
-    back="Mending Cape",
-  }
-
-  -- Can remove from self with 100% success with this set
+  -- Can remove from self with 100% success when combined with cursna set
   sets.buff.Doom = {
     waist="Gishdubar Sash", --10
   }
