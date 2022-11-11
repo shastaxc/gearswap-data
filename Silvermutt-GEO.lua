@@ -1051,7 +1051,7 @@ function init_gear_sets()
     neck="Loricate Torque +1",        -- __, __, __ [ 6/ 6, ___] {__/__, __}
     ear1="Genmei Earring",            -- __, __, __ [ 2/__, ___] {__/__, __}
     ear2="Azimuth Earring +1",        -- __, __, __ [ 3/ 3, ___] {__/__, __}
-    ring1="Gelantinous Ring +1",      -- __, __, __ [ 7/-1, ___] {__/__, __}
+    ring1="Gelatinous Ring +1",       -- __, __, __ [ 7/-1, ___] {__/__, __}
     ring2="Defending Ring",           -- __, __, __ [10/10, ___] {__/__, __}
     back=gear.GEO_Idle_Cape,          -- __, __, __ [__/__,  30] {__/__, 15}
     waist="Embla Sash",               -- __, __, 10 [__/__, ___] {__/__, __}
@@ -1069,7 +1069,7 @@ function init_gear_sets()
     -- neck="Loricate Torque +1",     -- __, __, __ [ 6/ 6, ___] {__/__, __}
     -- ear1="Genmei Earring",         -- __, __, __ [ 2/__, ___] {__/__, __}
     -- ear2="Azimuth Earring +2",     -- __, __, __ [ 7/ 7, ___] {__/__, __}
-    -- ring1="Gelantinous Ring +1",   -- __, __, __ [ 7/-1, ___] {__/__, __}
+    -- ring1="Gelatinous Ring +1",    -- __, __, __ [ 7/-1, ___] {__/__, __}
     -- ring2="Defending Ring",        -- __, __, __ [10/10, ___] {__/__, __}
     -- back=gear.GEO_Idle_Cape,       -- __, __, __ [__/__,  30] {__/__, 15}
     -- waist="Embla Sash",            -- __, __, 10 [__/__, ___] {__/__, __}

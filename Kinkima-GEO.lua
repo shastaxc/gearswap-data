@@ -626,7 +626,7 @@ function init_gear_sets()
     range=empty,
     ammo="Pemphredo Tathlum",       -- __, __,  4, __, __ [__/__, ___] {__, __}
     head="Azimuth Hood +2",         -- __, 20, __, __, __ [11/11, 126] {__,  4}; Set bonus
-    hands="Azimuth Gloves +3",      -- __, __, __, __, __ [11/11,  88] {__, __}; Set bonus: save MP
+    hands="Azimuth Gloves +2",      -- __, __, __, __, __ [11/11,  88] {__, __}; Set bonus: save MP
     legs="Bagua Pants +3",          -- __, __, __, 21, __ [__/__, 127] {__, __}
     feet="Azimuth Gaiters +2",      -- __, __, __, 25, __ [10/10, 158] {__, __}; Set bonus: save MP
     neck="Reti Pendant",            -- __, __,  4, __, __ [__/__, ___] {__, __}; Save MP
@@ -698,7 +698,7 @@ function init_gear_sets()
     ear2="Regal Earring", --7
     ring1="Metamorph Ring +1",
     ring2="Stikini Ring +1",
-    back="Argochampsa Mantle", --12
+    back=gear.GEO_FC_Cape,
     waist="Refoccilation Stone", --10
     
     -- main="Bunzi's Rod",
@@ -869,7 +869,7 @@ function init_gear_sets()
     hands="Regal Cuffs",              -- 45, __, 40, 40, 20 [__/__,  53] {__/__, __}
     legs="Geomancy Pants +2",         -- 39, __, 39, 29, __ [__/__, 117] {__/__, __}
     feet="Azimuth Gaiters +2",        -- 50, __, 29, 27, __ [10/10, 158] {__/__, __}
-    neck="Bagua Charm +2",            -- 25, __, __, __, __ [__/__, ___] {__/__, __}
+    neck="Bagua Charm +1",            -- 25, __, __, __, __ [__/__, ___] {__/__, __}
     ear1="Regal Earring",             -- __, __, 10, 10, __ [__/__, ___] {__/__, __}; Set bonus
     ear2="Malignance Earring",        -- 10, __,  8,  8, __ [__/__, ___] {__/__, __}
     ring1="Metamorph Ring +1",        -- 15, __, 16, 16, __ [__/__, ___] {__/__, __}
@@ -928,7 +928,7 @@ function init_gear_sets()
     hands="Regal Cuffs",              -- 45, __, 40, 40, 20 [__/__,  53] {__/__, __}
     legs="Geomancy Pants +2",         -- 39, __, 39, 29, __ [__/__, 117] {__/__, __}
     feet="Azimuth Gaiters +2",        -- 50, __, 29, 27, __ [10/10, 158] {__/__, __}
-    neck="Bagua Charm +2",            -- 25, __, __, __, __ [__/__, ___] {__/__, __}
+    neck="Bagua Charm +1",            -- 25, __, __, __, __ [__/__, ___] {__/__, __}
     ear1="Regal Earring",             -- __, __, 10, 10, __ [__/__, ___] {__/__, __}; Set bonus
     ear2="Malignance Earring",        -- 10, __,  8,  8, __ [__/__, ___] {__/__, __}
     ring1="Metamorph Ring +1",        -- 15, __, 16, 16, __ [__/__, ___] {__/__, __}
@@ -1031,11 +1031,10 @@ function init_gear_sets()
     feet="Azimuth Gaiters +2",        -- __, __ [10/10, 158] {__/__, __}
     neck="Bagua Charm +1",            -- __, __ [__/__, ___] {__/__, __}
     ear1="Hearty Earring",            -- __, __ [__/__, ___] {__/__, __}; Status Resist +5
-    ear2="Genmei Earring",            -- __, __ [ 2/__, ___] {__/__, __}
     ring1="Defending Ring",           -- __, __ [10/10, ___] {__/__, __}
     ring2="Kishar Ring",              -- __, 10 [__/__, ___] {__/__, __}
     back=gear.GEO_FC_Cape,            -- __, __ [10/__, ___] {__/__, __}
-    waist="Chaac Belt",               --  1, __ [__/__, ___] {__/__, __}
+    waist="Obstinate Sash",           -- __,  5 [__/__, ___] {__/__, __}
     -- 4 TH, 40% Enf Duration [53 PDT/39 MDT, 578 M.Eva] {Pet: 25 PDT/25 MDT, 4 Regen}
 
     -- main="Idris",                  -- __, __ [__/__, ___] {25/25, __}; M.Acc skill+255
@@ -1135,7 +1134,7 @@ function init_gear_sets()
     neck="Loricate Torque +1",        -- __, __, __ [ 6/ 6, ___] {__/__, __}
     ear1="Mimir Earring",             -- __, __, __ [__/__, ___] {__/__, __}
     ear2="Hearty Earring",            -- __, __, __ [__/__, ___] {__/__, __}
-    ring1="Gelantinous Ring +1",      -- __, __, __ [ 7/-1, ___] {__/__, __}
+    ring1="Gelatinous Ring +1",       -- __, __, __ [ 7/-1, ___] {__/__, __}
     ring2="Defending Ring",           -- __, __, __ [10/10, ___] {__/__, __}
     back=gear.GEO_Idle_Cape,          -- __, __, __ [__/__,  30] {__/__, 15}
     waist="Embla Sash",               -- __, __, 10 [__/__, ___] {__/__, __}
@@ -1194,12 +1193,12 @@ function init_gear_sets()
     sub="Ammurapi Shield",            -- 10, __ [__/__, ___] {__/__, __}
     range=empty,
     ammo="Pemphredo Tathlum",         -- __,  4 [__/__, ___] {__/__, __}
-    head="Azimuth Hood +3",           -- __, __ [11/11, 126] {__/__,  4}
+    head="Azimuth Hood +2",           -- __, __ [11/11, 126] {__/__,  4}
     body=gear.Telchine_ENH_body,      -- 10, __ [__/__,  80] {__/__, __}
     hands=gear.Telchine_ENH_hands,    -- 10, __ [__/__,  37] {__/__, __}
     legs=gear.Telchine_ENH_legs,      -- 10, __ [__/__, 107] {__/__, __}
     feet="Azimuth Gaiters +2",        -- __, __ [10/10, 158] {__/__, __}
-    neck="Bagua Charm +2",            -- __, __ [__/__, ___] {__/__, __}; Luopan Duration +25%
+    neck="Bagua Charm +1",            -- __, __ [__/__, ___] {__/__, __}; Luopan Duration +20%
     ring1="Mephitas's Ring +1",       -- __, 15 [__/__, ___] {__/__, __}
     ring2="Defending Ring",           -- __, __ [10/10, ___] {__/__, __}
     back=gear.GEO_FC_Cape,            -- __, __ [10/__, ___] {__/__, __}
@@ -1211,6 +1210,7 @@ function init_gear_sets()
     -- body=gear.Telchine_ENH_body,   -- 10, __ [__/__,  80] {__/__,  3}
     -- legs=gear.Telchine_ENH_legs,   -- 10, __ [__/__, 107] {__/__,  3}
     -- feet="Azimuth Gaiters +3",     -- __, __ [11/11, 168] {__/__, __}
+    -- neck="Bagua Charm +2",         -- __, __ [__/__, ___] {__/__, __}; Luopan Duration +25%
     -- ear1="Brachyura Earring",      -- __, __ [__/__, ___] {__/__, __}; Enhance Protect/Shell
     -- ear2="Azimuth Earring +2",     -- __, __ [ 7/ 7, ___] {__/__, __}
     -- Base                              __, 43
