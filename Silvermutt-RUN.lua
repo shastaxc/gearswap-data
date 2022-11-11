@@ -622,7 +622,7 @@ function init_gear_sets()
   sets.midcast['Phalanx'] = set_combine(sets.HeavyDef, {
     ammo="Staunch Tathlum +1",                  -- _, __, 11 [ 3/ 3,   0]
     head="Futhark Bandeau +3",                  -- 7, __, __ [ 6/ 0,  56]
-    body=gear.Taeon_Phalanx_body,               -- 3, __, __ [ 0/ 0,  59]
+    body=gear.Herc_Phalanx_body,                -- 5, __, __ [__/__,  61]
     hands=gear.Herc_Phalanx_hands,              -- 4, __, __ [ 2/__,  20]
     legs=gear.Herc_Phalanx_legs,                -- 5, __, __ [ 2/__,  38]
     feet=gear.Herc_Phalanx_feet,                -- 4, __, __ [ 2/__,   9]
@@ -635,10 +635,9 @@ function init_gear_sets()
     waist="Audumbla Sash",                      -- _, __, 10 [ 4/ 0,   0]
     -- Base/Traits/Gifts                           _,440,  6 [__/__, ___]
     -- Master Levels                                  23
-    -- 23 Phalanx, 473 Enh Skill, 27% Interrupt [51 PDT/29 MDT, 747 HP]
-    -- 57 Total Phalanx
+    -- 25 Phalanx, 473 Enh Skill, 27% Interrupt [51 PDT/29 MDT, 747 HP]
+    -- 59 Total Phalanx
 
-    -- body=gear.Herc_Phalanx_body,             -- 5, __, __ [__/__,  61]
     -- hands=gear.Herc_Phalanx_hands,           -- 5, __, __ [ 2/__,  20]
     -- feet=gear.Herc_Phalanx_feet,             -- 5, __, __ [ 2/__,   9]
     -- neck="Futhark Torque +2",                -- _, __, __ [ 7/ 7,  60]
@@ -669,26 +668,30 @@ function init_gear_sets()
 
   sets.midcast['Aquaveil'] = sets.SIRD
 
+  -- Regen 4 base potency 30 hp/tic. Base duration 60s.
   sets.midcast['Regen'] = {
-    head="Runeist's Bandeau +3",                    -- 27, __, __, __ [__/__,  83] 109
+    head="Runeist's Bandeau +3",                    -- __, 27, __, __ [__/__,  83] 109
     body=gear.Nyame_B_body,                         -- __, __, __, __ [ 9/ 9, 139] 136
     hands="Regal Gauntlets",                        -- __, __, 20, __ [__/__,  48] 205
     legs="Futhark Trousers +3",                     -- __, __, 30, __ [__/__,  89] 107
+    feet="Erilaz Greaves +2",                       -- __, __, __, __ [10/10, 147]  38
     ear1="Odnowa Earring +1",                       -- __, __, __, __ [ 3/ 5, ___] 110
+    ear2="Erilaz Earring",                          -- __, 10, __, __ [__/__,  10] ___
     ring1="Gelatinous Ring +1",                     -- __, __, __, __ [ 7/-1, ___] 135
     ring2="Defending Ring",                         -- __, __, __, __ [10/10, ___] ___
     back=gear.RUN_HPD_Cape,                         -- __, __, __, __ [10/__,  20]  80
+    -- Merits/Traits/Gifts                             __, __, 20, __
+    -- 30% Regen Potency, 64 Regen Potency, 70 Enh Duration %, 0 Regen Duration [56 PDT/40 MDT, 409 M.Eva] 1162 HP
+    -- Regen IV 67 hp/tic @102 sec
 
-    -- main=gear.Morgelai_C,                        -- 25, __, __, __ [__/__, ___] 130
+    -- main=gear.Morgelai_C,                        -- __, 25, __, __ [__/__, ___] 130
     -- sub=empty,
     -- feet="Erilaz Greaves +3",                    -- __, __, __, __ [11/11, 157] 100
-    -- neck="Sacro Gorget",                         -- __, 10, __, __ [__/__, ___]  50
-    -- ear2="Erilaz Earring +2",                    -- 12, __, __, __ [ 6/ 6,  12] ___
-    -- waist="Sroda Belt",                          -- __, 20, __, __ [__/__, ___] ___
-    -- Regen IV base                                   30, __, __, 60
-    -- Merits/Traits/Gifts                             __, __, 20, __
-    -- 94 Regen Potency, 30% Regen Potency, 70 Enh Duration %, 60 Regen Duration [56 PDT/40 MDT, 409 M.Eva] 1162 HP
-    -- Total regen = 122 HP/tic for 102 sec; Possibly 103 HP/tic if the 30% bonus only applies to base 30HP Regen IV
+    -- neck="Sacro Gorget",                         -- 10, __, __, __ [__/__, ___]  50
+    -- ear2="Erilaz Earring +2",                    -- __, 12, __, __ [ 6/ 6,  12] ___
+    -- waist="Sroda Belt",                          -- 20, __, __, __ [__/__, ___] ___
+    -- 30% Regen Potency, 64 Regen Potency, 70 Enh Duration %, 0 Regen Duration [56 PDT/40 MDT, 409 M.Eva] 1162 HP
+    -- Regen IV 103 hp/tic @102 sec
   }
 
   sets.midcast.Refresh = set_combine(sets.HeavyDef, sets.midcast.EnhancingDuration, {
