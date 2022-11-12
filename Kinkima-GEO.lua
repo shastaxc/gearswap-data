@@ -398,17 +398,17 @@ function init_gear_sets()
   -- Damage varies with TP. 2.125-6.125 fTP
   -- TP Bonus > Fotia > Light MAB > MAB > M.Dmg > MND > STR > WSD
   sets.precast.WS['Seraph Strike'] = set_combine(sets.precast.WS['Flash Nova'], {
-    -- neck="Fotia Neck",              -- __, __, __, __, __, __, __/__ [__]; FTP bonus
+    -- neck="Fotia Gorget",         -- __, __, __, __, __, __, __/__ [__]; FTP bonus
     ear2="Moonshade Earring",       -- __, __, __, __, __, __, __/__ [__]; TP bonus
-    -- waist="Fotia Belt",             -- __, __, __, __, __, __, __/__ [__]; FTP bonus
+    -- waist="Fotia Belt",          -- __, __, __, __, __, __, __/__ [__]; FTP bonus
   })
   sets.precast.WS['Seraph Strike'].MaxTP = set_combine(sets.precast.WS['Seraph Strike'].MaxTP, {
     ear2="Malignance Earring",      -- __,  8, __,  8, __, __, __/__ [__]
   })
   sets.precast.WS['Seraph Strike'].Safe = set_combine(sets.precast.WS['Flash Nova'].Safe, {
-    -- neck="Fotia Neck",              -- __, __, __, __, __, __, __/__ [__]; FTP bonus
+    -- neck="Fotia Gorget",         -- __, __, __, __, __, __, __/__ [__]; FTP bonus
     ear2="Moonshade Earring",       -- __, __, __, __, __, __, __/__ [__]; TP bonus
-    -- waist="Fotia Belt",             -- __, __, __, __, __, __, __/__ [__]; FTP bonus
+    -- waist="Fotia Belt",          -- __, __, __, __, __, __, __/__ [__]; FTP bonus
   })
 
   -- Cataclysm: 30% STR/30% INT, 2.75-5.0 fTP, 1 hit (aoe-magical)
@@ -422,7 +422,7 @@ function init_gear_sets()
     hands="Jhakri Cuffs +2",        -- __, 40, __,  7
     legs=gear.Nyame_B_legs,         -- __, 30, __, 11
     feet=gear.Nyame_B_feet,         -- __, 30, __, 10
-    -- neck="Fotia Neck",              -- __, __, __, __; FTP bonus
+    -- neck="Fotia Gorget",              -- __, __, __, __; FTP bonus
     ear1="Regal Earring",           -- __,  7, __, __
     ear2="Moonshade Earring",       -- __, __, __, __; TP bonus
     ring1="Archon Ring",            --  5, __, __, __

@@ -403,7 +403,7 @@ function init_gear_sets()
   -- Damage varies with TP. 2.125-6.125 fTP
   -- TP Bonus > Fotia > Light MAB > MAB > M.Dmg > MND > STR > WSD
   sets.precast.WS['Seraph Strike'] = set_combine(sets.precast.WS['Flash Nova'], {
-    neck="Fotia Neck",              -- __, __, __, __, __, __, __/__ [__]; FTP bonus
+    neck="Fotia Gorget",            -- __, __, __, __, __, __, __/__ [__]; FTP bonus
     ear2="Moonshade Earring",       -- __, __, __, __, __, __, __/__ [__]; TP bonus
     waist="Fotia Belt",             -- __, __, __, __, __, __, __/__ [__]; FTP bonus
   })
@@ -411,7 +411,7 @@ function init_gear_sets()
     ear2="Malignance Earring",      -- __,  8, __,  8, __, __, __/__ [__]
   })
   sets.precast.WS['Seraph Strike'].Safe = set_combine(sets.precast.WS['Flash Nova'].Safe, {
-    neck="Fotia Neck",              -- __, __, __, __, __, __, __/__ [__]; FTP bonus
+    neck="Fotia Gorget",            -- __, __, __, __, __, __, __/__ [__]; FTP bonus
     ear2="Moonshade Earring",       -- __, __, __, __, __, __, __/__ [__]; TP bonus
     waist="Fotia Belt",             -- __, __, __, __, __, __, __/__ [__]; FTP bonus
   })
@@ -427,7 +427,7 @@ function init_gear_sets()
     hands="Jhakri Cuffs +2",        -- __, 40, __,  7
     legs=gear.Nyame_B_legs,         -- __, 30, __, 11
     feet=gear.Nyame_B_feet,         -- __, 30, __, 10
-    neck="Fotia Neck",              -- __, __, __, __; FTP bonus
+    neck="Fotia Gorget",            -- __, __, __, __; FTP bonus
     ear1="Regal Earring",           -- __,  7, __, __
     ear2="Moonshade Earring",       -- __, __, __, __; TP bonus
     ring1="Archon Ring",            --  5, __, __, __
@@ -689,7 +689,7 @@ function init_gear_sets()
 
   sets.midcast['Drain'] = set_combine(sets.midcast.IntEnfeebling, {
     main="Bunzi's Rod",
-    sub="Ammurapi Shield",
+    sub="Genmei Shield",
     range=empty,
     ammo="Pemphredo Tathlum",
     head=gear.Nyame_B_head,
@@ -758,20 +758,6 @@ function init_gear_sets()
   sets.midcast.Stun.Resistant = set_combine(sets.midcast.Stun, {})
 
   sets.midcast.Impact = {
-    main="Contemplator +1",           -- 70, __, 12 [__/__, ___] {__/__, __}; M.Acc skill+228
-    sub="Khonsu",                     -- 30, __, __ [ 6/ 6, ___] {__/__, __}
-    range="Dunna",                    -- 10, __, __ [__/__, ___] { 5/ 5, __}
-    ammo=empty,                       -- __, __, __ [__/__, ___] {__/__, __}
-    hands="Geomancy Mitaines +2",     -- 38, __, 24 [ 2/__,  57] {12/12, __}; Set bonus
-    legs=gear.Nyame_B_legs,           -- 40, __, 44 [ 8/ 8, 150] {__/__, __}
-    feet=gear.Nyame_B_feet,           -- 40, __, 25 [ 7/ 7, 150] {__/__, __}
-    neck="Bagua Charm +1",            -- 25, __, __ [__/__, ___] {__/__, __}
-    ear1="Regal Earring",             -- __, __, 10 [__/__, ___] {__/__, __}; Set bonus
-    ear2="Malignance Earring",        -- 10, __,  8 [__/__, ___] {__/__, __}
-    ring2="Stikini Ring +1",          -- 11,  8, __ [__/__, ___] {__/__, __}
-    -- AF set bonuses                 -- 15
-    -- 289 M.Acc, 8 Elemental Skill, 123 INT [23 PDT/21 MDT, 357 M.Eva] {Pet: 17 PDT/17 MDT, 0 Regen}
-
     -- main="Idris",                  -- 70, __, __ [__/__, ___] {25/25, __}; M.Acc skill+255
     -- sub="Ammurapi Shield",         -- 38, __, 13 [__/__, ___] {__/__, __}
     -- range="Dunna",                 -- 10, __, __ [__/__, ___] { 5/ 5, __}
@@ -1040,7 +1026,7 @@ function init_gear_sets()
 
   sets.midcast.Refresh = {
     main="Idris",                     -- __, __, __ [__/__, ___] {25/25, __}
-    sub="Ammurapi Shield",            -- __, __, 10 [__/__, ___] {__/__, __}
+    sub="Genmei Shield",              -- __, __, __ [10/__, ___] {__/__, __}
     range=empty,
     ammo="Staunch Tathlum +1",        -- __, __, __ [ 3/ 3, ___] {__/__, __}
     head=gear.Nyame_B_head,           -- __, __, __ [ 7/ 7, 123] {__/__, __}
@@ -1055,7 +1041,7 @@ function init_gear_sets()
     ring2="Defending Ring",           -- __, __, __ [10/10, ___] {__/__, __}
     back=gear.GEO_Idle_Cape,          -- __, __, __ [__/__,  30] {__/__, 15}
     waist="Embla Sash",               -- __, __, 10 [__/__, ___] {__/__, __}
-    -- 2 Refresh Potency, 0 Refresh, 20% Enh Duration [69 PDT/59 MDT, 704 M.Eva] {Pet: 25 PDT/25 MDT, 15 Regen}
+    -- 2 Refresh Potency, 0 Refresh, 10% Enh Duration [79 PDT/59 MDT, 704 M.Eva] {Pet: 25 PDT/25 MDT, 15 Regen}
     
     -- main=gear.Gada_ENH,            -- __, __,  6 [__/__, ___] {__/__, __}
     -- sub="Ammurapi Shield",         -- __, __, 10 [__/__, ___] {__/__, __}
@@ -1076,7 +1062,7 @@ function init_gear_sets()
     -- 2 Refresh Potency, 15 Refresh Duration, 46% Enh Duration [47 PDT/37 MDT, 489 M.Eva] {Pet: 0 PDT/0 MDT, 21 Regen}
   }
   sets.midcast.RefreshSelf = set_combine(sets.midcast.Refresh, {
-    back="Grapevine Cape",            -- __, 30, __ [__/__, ___] {__/__, __}
+    -- back="Grapevine Cape",         -- __, 30, __ [__/__, ___] {__/__, __}
     waist="Gishdubar Sash",           -- __, 20, __ [__/__, ___] {__/__, __}
     -- 2 Refresh Potency, 65 Refresh Duration, 36% Enh Duration [47 PDT/37 MDT, 489 M.Eva] {Pet: 0 PDT/0 MDT, 6 Regen}
   })
@@ -1255,8 +1241,9 @@ function init_gear_sets()
   sets.idle.Weak = sets.idle.HeavyDef.Pet
 
   sets.resting = set_combine(sets.idle.HeavyDef.Pet, {
-    main="Chatoyant Staff",
+    main="Iridal Staff",
     sub="Khonsu",
+    -- main="Chatoyant Staff",
   })
 
 
