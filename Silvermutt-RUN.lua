@@ -568,10 +568,11 @@ function init_gear_sets()
     feet=gear.Nyame_B_feet,     -- 40, 40
     neck="Erra Pendant",        -- __, 17
     ear1="Dignitary's Earring", -- 10, 10
-    ring1="Etana Ring",         -- 10, 10
+    ear2="Erilaz Earring",
+    -- ring1="Etana Ring",         -- 10, 10
     ring2="Metamorph Ring +1",  -- __, 16
     back=gear.RUN_WS2_Cape,     -- 20, __
-    waist="Luminary Sash",      -- __, 10
+    -- waist="Luminary Sash",      -- __, 10
     -- ear2="Crepuscular Earring", -- 10, 10
   } -- 250 Acc, 279 Magic Acc
 
@@ -730,7 +731,7 @@ function init_gear_sets()
     ear1="Odnowa Earring +1",                       --  3/ 5, ___ [110] (__, __)
     ear2="Ethereal Earring",                        -- __/__, ___ [___] (__, __)
     ring1="Gelatinous Ring +1",                     --  7/-1, ___ [135] (__, __)
-    ring2="Sheltered Ring",                         -- __/__, ___ [___] (__, __); Enhances Protect
+    -- ring2="Sheltered Ring",                         -- __/__, ___ [___] (__, __); Enhances Protect
     back={name="Moonlight Cape", priority=1},       --  6/ 6, ___ [275] (__, __)
     waist="Audumbla Sash",                          --  4/__, ___ [___] (__, __)
     -- 38 PDT/28 MDT, 557 M.Eva [1190 HP] (70 Enh Duration, N/A Enh Skill)
@@ -942,19 +943,23 @@ function init_gear_sets()
   })
   sets.precast.WS['Shockwave'].Safe = sets.Enmity
   sets.precast.WS['Shockwave'].MaxTP = set_combine(sets.precast.WS['Shockwave'], {
-    ear2=sets.HybridAcc.ear2,
+    ear2="Erilaz Earring",
+    -- ear2="Crepuscular Earring", -- 10, 10
   })
   sets.precast.WS['Shockwave'].LowAcc = set_combine(sets.precast.WS['Shockwave'], {})
   sets.precast.WS['Shockwave'].LowAccMaxTP = set_combine(sets.precast.WS['Shockwave'].LowAcc, {
-    ear2=sets.HybridAcc.ear2,
+    ear2="Erilaz Earring",
+    -- ear2="Crepuscular Earring", -- 10, 10
   })
   sets.precast.WS['Shockwave'].MidAcc = set_combine(sets.precast.WS['Shockwave'].LowAcc, {})
   sets.precast.WS['Shockwave'].MidAccMaxTP = set_combine(sets.precast.WS['Shockwave'].MidAcc, {
-    ear2=sets.HybridAcc.ear2,
+    ear2="Erilaz Earring",
+    -- ear2="Crepuscular Earring", -- 10, 10
   })
   sets.precast.WS['Shockwave'].HighAcc = set_combine(sets.precast.WS['Shockwave'].MidAcc, {})
   sets.precast.WS['Shockwave'].HighAccMaxTP = set_combine(sets.precast.WS['Shockwave'].HighAcc, {
-    ear2=sets.HybridAcc.ear2,
+    ear2="Erilaz Earring",
+    -- ear2="Crepuscular Earring", -- 10, 10
   })
 
   sets.precast.WS['Herculean Slash'] = sets.precast.WS['Shockwave']
