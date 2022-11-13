@@ -882,10 +882,10 @@ function init_gear_sets()
 
   sets.midcast.Phalanx = set_combine(sets.midcast.EnhancingDuration, {
     -- main="Sakpata's Sword", --5
-    body=gear.Taeon_Phalanx_body, --3(10)
-    hands=gear.Taeon_Phalanx_hands, --3(10)
-    legs=gear.Herc_Phalanx_legs,              -- 5, __, __ [ 2/__,  38]
-    feet=gear.Herc_Phalanx_feet,              -- 4, __, __ [ 2/__,   9]
+    body=gear.Herc_Phalanx_body,                -- 5, __, __ [__/__,  61]
+    hands=gear.Herc_Phalanx_hands,              -- 4, __, __ [ 2/__,  20]
+    legs=gear.Herc_Phalanx_legs,                -- 5, __, __ [ 2/__,  38]
+    feet=gear.Herc_Phalanx_feet,                -- 5, __, __ [ 2/__,   9]
   })
 
   sets.midcast.Aquaveil = set_combine(sets.midcast.EnhancingDuration, {

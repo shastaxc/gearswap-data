@@ -73,7 +73,7 @@ gear.Herc_DW_feet = { name="Herculean Boots", augments={'"Dual Wield"+5','Pet: A
 gear.Herc_Phalanx_body = { name="Herculean Vest", augments={'"Drain" and "Aspir" potency +6','Crit.hit rate+1','Phalanx +5','Accuracy+12 Attack+12','Mag. Acc.+3 "Mag.Atk.Bns."+3',}}
 gear.Herc_Phalanx_hands = { name="Herculean Gloves", augments={'Mag. Acc.+24','Pet: MND+4','Phalanx +4',}}
 gear.Herc_Phalanx_legs = { name="Herculean Trousers", augments={'MND+8','STR+5','Phalanx +5','Mag. Acc.+19 "Mag.Atk.Bns."+19',}}
-gear.Herc_Phalanx_feet = { name="Herculean Boots", augments={'Pet: INT+8','"Dbl.Atk."+1','Phalanx +4','Accuracy+2 Attack+2','Mag. Acc.+16 "Mag.Atk.Bns."+16',}}
+gear.Herc_Phalanx_feet = { name="Herculean Boots", augments={'MND+14','Weapon skill damage +3%','Phalanx +5','Mag. Acc.+8 "Mag.Atk.Bns."+8',}}
 
 gear.Herc_Snap_head = { name="Herculean Helm", augments={'Rng.Acc.+1','"Snapshot"+6','Rng.Atk.+8',}}
 
