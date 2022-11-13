@@ -161,7 +161,7 @@ function init_gear_sets()
     head=gear.Merl_FC_head,         -- 15 [__/__,  86] {__, __}
     body=gear.Merl_FC_body,         -- 14 [ 2/__,  91] {__, __}
     hands="Geomancy Mitaines +3",   -- __ [ 3/__,  57] {13, __}
-    legs="Geomancy Pants +2",       -- 13 [__/__, 117] {__, __}
+    legs="Geomancy Pants +3",       -- 15 [__/__, 127] {__, __}
     feet=gear.Merl_FC_feet,         -- 12 [__/__, 118] {__, __}
     neck="Loricate Torque +1",      -- __ [ 6/ 6, ___] {__, __}
     ear1="Malignance Earring",      --  4 [__/__, ___] {__, __}
@@ -170,9 +170,8 @@ function init_gear_sets()
     ring2="Kishar Ring",            --  4 [__/__, ___] {__, __}
     back=gear.GEO_FC_Cape,          -- 10 [10/__, ___] {__, __}
     waist="Embla Sash",             --  5 [__/__, ___] {__, __}
-    -- 82 FC [41 PDT / 16 MDT, 469 M.Eva] {43 Pet DT, 0 Pet Regen}
+    -- 84 FC [41 PDT / 16 MDT, 479 M.Eva] {43 Pet DT, 0 Pet Regen}
 
-    -- legs="Geomancy Pants +3",    -- 15 [__/__, 127] {__, __}
     -- ear2="Azimuth Earring +2",   -- __ [ 7/ 7, ___] {__, __}
     -- 82 FC [48 PDT / 23 MDT, 479 M.Eva] {43 Pet DT, 0 Pet Regen}
   }
@@ -185,7 +184,7 @@ function init_gear_sets()
     head=gear.Merl_FC_head,         -- 15 [__/__,  86] {__, __}
     body=gear.Merl_FC_body,         -- 14 [ 2/__,  91] {__, __}
     hands="Geomancy Mitaines +3",   -- __ [ 3/__,  57] {13, __}
-    legs="Geomancy Pants +2",       -- 13 [__/__, 117] {__, __}
+    legs="Geomancy Pants +3",       -- 15 [__/__, 127] {__, __}
     feet="Azimuth Gaiters +2",      -- __ [10/10, 158] {__, __}
     neck="Bagua Charm +1",          -- __ [__/__, ___] {__, __}; Absorb Dmg+8
     ear1="Malignance Earring",      --  4 [__/__, ___] {__, __}
@@ -195,9 +194,8 @@ function init_gear_sets()
     back=gear.GEO_FC_Cape,          -- 10 [10/__, ___] {__, __}
     waist="Embla Sash",             --  5 [__/__, ___] {__, __}
     -- RDM FC traits                   15
-    -- 80 FC [52 PDT/12 MDT, 469 Meva] {43 Pet DT, 0 Pet Regen}
+    -- 82 FC [52 PDT/12 MDT, 479 Meva] {43 Pet DT, 0 Pet Regen}
     
-    -- legs="Geomancy Pants +3",    -- 15 [__/__, 127] {__, __}
     -- feet="Azimuth Gaiters +3",   -- __ [11/11, 168] {__, __}
     -- neck="Bagua Charm +2",       -- __ [__/__, ___] {__, __}; Absorb Dmg+10
     -- 82 FC [53 PDT / 22 MDT, 529 Meva] {43 Pet DT, 0 Pet Regen}
@@ -771,7 +769,7 @@ function init_gear_sets()
     head=gear.Merl_FC_head,           -- 15, __, 29, 15 [__/__,  86] {__/__, __}
     body=gear.Merl_FC_body,           -- 22, __, 40, 14 [ 2/__,  91] {__/__, __}
     hands="Geomancy Mitaines +3",     -- 48, __, 29, __ [ 3/__,  57] {13/13, __}; Set bonus
-    legs="Geomancy Pants +2",         -- 39, __, 39, 13 [__/__, 117] {__/__, __}
+    legs="Geomancy Pants +3",         -- 49, __, 44, 15 [__/__, 127] {__/__, __}; Set bonus
     feet=gear.Merl_FC_feet,           --  8, __, 26, 12 [__/__, 118] {__/__, __}
     neck="Bagua Charm +1",            -- 25, __, __, __ [__/__, ___] {__/__, __}
     ear1="Malignance Earring",        -- 10, __,  8,  4 [__/__, ___] {__/__, __}
@@ -781,10 +779,9 @@ function init_gear_sets()
     back=gear.GEO_FC_Cape,            -- 20, __, 30, 10 [10/__, ___] {__/__, __}
     waist="Witful Belt",              -- __, __, __,  3 [__/__, ___] {__/__, __}
     -- AF set bonuses                 -- 15
-    -- 338 M.Acc, 8 Dark Magic Skill, 239 INT, 74 FC [21 PDT/6 MDT, 469 M.Eva] {Pet: 18 PDT/18 MDT, 0 Regen}
+    -- 348 M.Acc, 8 Dark Magic Skill, 244 INT, 76 FC [21 PDT/6 MDT, 479 M.Eva] {Pet: 18 PDT/18 MDT, 0 Regen}
 
     -- body="Zendik Robe",            -- 45, __, 38, 13 [__/__,  86] {__/__, __}
-    -- legs="Geomancy Pants +3",      -- 49, __, 44, 15 [__/__, 127] {__/__, __}; Set bonus
     -- neck="Bagua Charm +2",         -- 30, __, __, __ [__/__, ___] {__/__, __}
     -- ear2="Azimuth Earring +2",     -- 20, __, 15, __ [ 7/ 7, ___] {__/__, __}
     -- 396 M.Acc, 8 Dark Magic Skill, 247 INT, 75 FC [26 PDT/13 MDT, 474 M.Eva] {Pet: 18 PDT/18 MDT, 0 Regen}
@@ -829,7 +826,7 @@ function init_gear_sets()
     head="Azimuth Hood +2",           -- 51, __, 34 [11/11, 126] {__/__,  4}
     body="Azimuth Coat +2",           -- 54, __, 45 [__/__, 131] {__/__, __}
     hands="Azimuth Gloves +2",        -- 52, 23, 31 [11/11,  88] {__/__, __}
-    legs="Geomancy Pants +2",         -- 39, __, 39 [__/__, 117] {__/__, __}
+    legs="Geomancy Pants +3",         -- 49, __, 44 [__/__, 127] {__/__, __}
     feet="Azimuth Gaiters +2",        -- 50, __, 29 [10/10, 158] {__/__, __}
     neck="Bagua Charm +1",            -- 25, __, __ [__/__, ___] {__/__, __}
     ear1="Regal Earring",             -- __, __, 10 [__/__, ___] {__/__, __}; Set bonus
@@ -838,14 +835,13 @@ function init_gear_sets()
     ring2="Stikini Ring +1",          -- 11,  8, __ [__/__, ___] {__/__, __}
     waist="Obstinate Sash",           -- 15, 10, __ [__/__, ___] {__/__, __}
     -- AF set bonuses                 -- 15
-    -- 447 M.Acc, 61 Enfeebling Skill, 224 INT [38 PDT/38 MDT, 620 M.Eva] {Pet: 5 PDT/5 MDT, 4 Regen}
+    -- 457 M.Acc, 61 Enfeebling Skill, 229 INT [38 PDT/38 MDT, 630 M.Eva] {Pet: 5 PDT/5 MDT, 4 Regen}
 
     -- main="Idris",                  -- 70, __, __ [__/__, ___] {25/25, __}; M.Acc skill+255, R15
     -- sub="Ammurapi Shield",         -- 38, __, 13 [__/__, ___] {__/__, __}
     -- head="Azimuth Hood +3",        -- 61, __, 39 [12/12, 136] {__/__,  5}
     -- body="Azimuth Coat +3",        -- 64, __, 49 [__/__, 141] {__/__, __}
     -- hands="Azimuth Gloves +3",     -- 62, 28, 36 [12/12,  98] {__/__, __}
-    -- legs="Geomancy Pants +3",      -- 49, __, 44 [__/__, 127] {__/__, __}
     -- feet="Azimuth Gaiters +3",     -- 63, __, 34 [11/11, 168] {__/__, __}
     -- neck="Bagua Charm +2",         -- 30, __, __ [__/__, ___] {__/__, __}
     -- ear2="Azimuth Earring +2",     -- 20, __, 15 [ 7/ 7, ___] {__/__, __}
@@ -867,7 +863,7 @@ function init_gear_sets()
     head="Azimuth Hood +2",           -- 51, __, 34, 27, __ [11/11, 126] {__/__,  4}
     body="Azimuth Coat +2",           -- 54, __, 45, 38, __ [__/__, 131] {__/__, __}
     hands="Regal Cuffs",              -- 45, __, 40, 40, 20 [__/__,  53] {__/__, __}
-    legs="Geomancy Pants +2",         -- 39, __, 39, 29, __ [__/__, 117] {__/__, __}
+    legs="Geomancy Pants +3",         -- 49, __, 44, 34, __ [__/__, 127] {__/__, __}
     feet="Azimuth Gaiters +2",        -- 50, __, 29, 27, __ [10/10, 158] {__/__, __}
     neck="Bagua Charm +1",            -- 25, __, __, __, __ [__/__, ___] {__/__, __}
     ear1="Regal Earring",             -- __, __, 10, 10, __ [__/__, ___] {__/__, __}; Set bonus
@@ -876,7 +872,7 @@ function init_gear_sets()
     back="Aurist's Cape +1",          -- 33, __, 33, 33, __ [__/__, ___] {__/__, __}
     waist="Obstinate Sash",           -- 15, 10, __,  5,  5 [__/__, ___] {__/__, __}
     -- AF set bonuses                 -- 15
-    -- 462 M.Acc, 30 Enfeebling Skill, 266 INT, 255 MND, 25% Enf Duration [27 PDT/27 MDT, 585 M.Eva] {Pet: 5 PDT/5 MDT, 4 Regen}
+    -- 472 M.Acc, 30 Enfeebling Skill, 271 INT, 260 MND, 25% Enf Duration [27 PDT/27 MDT, 595 M.Eva] {Pet: 5 PDT/5 MDT, 4 Regen}
 
     -- main="Idris",                  -- 70, __, __, __, __ [__/__, ___] {25/25, __}; M.Acc skill+255, R15
     -- sub="Ammurapi Shield",         -- 38, __, 13, 13, 10 [__/__, ___] {__/__, __}
@@ -926,7 +922,7 @@ function init_gear_sets()
     head="Azimuth Hood +2",           -- 51, __, 34, 27, __ [11/11, 126] {__/__,  4}
     body="Azimuth Coat +2",           -- 54, __, 45, 38, __ [__/__, 131] {__/__, __}
     hands="Regal Cuffs",              -- 45, __, 40, 40, 20 [__/__,  53] {__/__, __}
-    legs="Geomancy Pants +2",         -- 39, __, 39, 29, __ [__/__, 117] {__/__, __}
+    legs="Geomancy Pants +3",         -- 49, __, 44, 34, __ [__/__, 127] {__/__, __}
     feet="Azimuth Gaiters +2",        -- 50, __, 29, 27, __ [10/10, 158] {__/__, __}
     neck="Bagua Charm +1",            -- 25, __, __, __, __ [__/__, ___] {__/__, __}
     ear1="Regal Earring",             -- __, __, 10, 10, __ [__/__, ___] {__/__, __}; Set bonus
@@ -935,7 +931,7 @@ function init_gear_sets()
     back="Aurist's Cape +1",          -- 33, __, 33, 33, __ [__/__, ___] {__/__, __}
     waist="Obstinate Sash",           -- 15, 10, __,  5,  5 [__/__, ___] {__/__, __}
     -- AF set bonuses                 -- 15
-    -- 462 M.Acc, 30 Enfeebling Skill, 266 INT, 255 MND, 25% Enf Duration [27 PDT/27 MDT, 585 M.Eva] {Pet: 5 PDT/5 MDT, 4 Regen}
+    -- 472 M.Acc, 30 Enfeebling Skill, 271 INT, 260 MND, 25% Enf Duration [27 PDT/27 MDT, 595 M.Eva] {Pet: 5 PDT/5 MDT, 4 Regen}
 
     -- main="Idris",                  -- 70, __, __, __, __ [__/__, ___] {25/25, __}; M.Acc skill+255, R15
     -- sub="Ammurapi Shield",         -- 38, __, 13, 13, 10 [__/__, ___] {__/__, __}
@@ -964,7 +960,7 @@ function init_gear_sets()
     head="Azimuth Hood +2",           -- 51, __, 34, 27, __ [11/11, 126] {__/__,  4}
     body="Azimuth Coat +2",           -- 54, __, 45, 38, __ [__/__, 131] {__/__, __}
     hands="Azimuth Gloves +2",        -- 52, __, 31, 42, __ [11/11,  88] {__/__, __}
-    legs="Geomancy Pants +2",         -- 39, __, 39, 29, __ [__/__, 117] {__/__, __}; Set bonus
+    legs="Geomancy Pants +3",         -- 49, __, 44, 34, __ [__/__, 127] {__/__, __}; Set bonus
     feet="Azimuth Gaiters +2",        -- 50, __, 29, 27, __ [10/10, 158] {__/__, __}
     neck="Bagua Charm +1",            -- 25, __, __, __, __ [__/__, ___] {__/__, __}
     ear1="Malignance Earring",        -- 10, __,  8,  8, __ [__/__, ___] {__/__, __}
@@ -974,7 +970,7 @@ function init_gear_sets()
     back="Aurist's Cape +1",          -- 33, __, 33, 33, __ [__/__, ___] {__/__, __}
     waist="Acuity Belt +1",           -- 15, __, 23, __, __ [__/__, ___] {__/__, __}
     -- AF set bonuses                 -- 15
-    -- 456 M.Acc, 8 Enfeebling Skill, 300 INT, 266 MND, 10% Enf Duration [32 PDT/32 MDT, 620 M.Eva] {Pet: 0 PDT/0 MDT, 4 Regen}
+    -- 466 M.Acc, 8 Enfeebling Skill, 305 INT, 271 MND, 10% Enf Duration [32 PDT/32 MDT, 630 M.Eva] {Pet: 0 PDT/0 MDT, 4 Regen}
 
     -- main="Idris",                  -- 70, __, __, __, __ [__/__, ___] {25/25, __}; M.Acc skill+255, R15
     -- sub="Ammurapi Shield",         -- 38, __, 13, 13, 10 [__/__, ___] {__/__, __}
