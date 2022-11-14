@@ -267,21 +267,21 @@ function init_gear_sets()
     legs="Arcadian Braccae +3",
   }
   sets.precast.JA['Bounty Shot'] = {
-    -- hands="Amini Glovelettes +1"
+    hands="Amini Glovelettes +2",
   }
   sets.precast.JA['Camouflage'] = {
-    body="Orion Jerkin +1"
-    -- body="Orion Jerkin +3"
+    body="Orion Jerkin +1",
+    -- body="Orion Jerkin +3",
   }
   sets.precast.JA['Scavenge'] = {
-    feet="Orion Socks +1"
-    -- feet="Orion Socks +3"
+    feet="Orion Socks +1",
+    -- feet="Orion Socks +3",
   }
   sets.precast.JA['Shadowbind'] = {
-    hands="Orion Bracers +3"
+    hands="Orion Bracers +3",
   }
   sets.precast.JA['Sharpshot'] = {
-    legs="Orion Braccae +3"
+    legs="Orion Braccae +3",
   }
 
   sets.precast.Waltz = {
@@ -1298,10 +1298,9 @@ function init_gear_sets()
     -- 71 DW, 24 STP, 256 Acc <0 DA, 7 TA, 0 QA> [52 PDT/38 MDT, 431 MEVA]
   }
   sets.engaged.DW.LowAcc.HeavyDef = set_combine(sets.engaged.DW.HeavyDef, {
-    hands="Malignance Gloves",        -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
-    -- hands="Amini Glovelettes +3",  -- __, 11, 62 <__, __, __> [11/11,  93]
+    hands="Amini Glovelettes +3",     -- __, 11, 62 <__, __, __> [11/11,  93]
+    ring1="Epona's Ring",             -- __, __, __ < 3,  3, __> [__/__, ___]
     -- neck="Combatant's Torque",     -- __,  4, __ <__, __, __> [__/__, ___]; Combat skills +15
-    -- ring1="Epona's Ring",          -- __, __, __ < 3,  3, __> [__/__, ___]
     -- 66 DW, 39 STP, 282 Acc <3 DA, 7 TA, 0 QA> [50 PDT/40 MDT, 487 MEVA]
   })
   sets.engaged.DW.MidAcc.HeavyDef = set_combine(sets.engaged.DW.LowAcc.HeavyDef, {
@@ -1341,9 +1340,9 @@ function init_gear_sets()
     -- 67 DW, 29 STP, 266 Acc <1 DA, 7 TA, 0 QA> [52 PDT/38 MDT, 423 MEVA]
   })
   sets.engaged.DW.MidAcc.HeavyDef.LowHaste = set_combine(sets.engaged.DW.LowAcc.HeavyDef.LowHaste, {
-    -- hands="Amini Glovelettes +3",  -- __, 11, 62 <__, __, __> [11/11,  93]
+    hands="Amini Glovelettes +3",     -- __, 11, 62 <__, __, __> [11/11,  93]
+    ring1="Epona's Ring",             -- __, __, __ < 3,  3, __> [__/__, ___]
     -- neck="Combatant's Torque",     -- __,  4, __ <__, __, __> [__/__, ___]; Combat skills +15
-    -- ring1="Epona's Ring",          -- __, __, __ < 3,  3, __> [__/__, ___]
     -- 62 DW, 44 STP, 292 Acc <4 DA, 7 TA, 0 QA> [50 PDT/40 MDT, 479 MEVA]
   })
   sets.engaged.DW.HighAcc.HeavyDef.LowHaste = set_combine(sets.engaged.DW.HighAcc.HeavyDef.LowHaste, {
@@ -1375,9 +1374,9 @@ function init_gear_sets()
     -- 57 DW, 31 STP, 273 Acc <0 DA, 14 TA, 0 QA> [54 PDT/34 MDT, 443 MEVA]
   }
   sets.engaged.DW.LowAcc.HeavyDef.MidHaste = set_combine(sets.engaged.DW.HeavyDef.MidHaste, {
-    -- hands="Amini Glovelettes +3",  -- __, 11, 62 <__, __, __> [11/11,  93]
+    hands="Amini Glovelettes +3",     -- __, 11, 62 <__, __, __> [11/11,  93]
+    ring1="Epona's Ring",             -- __, __, __ < 3,  3, __> [__/__, ___]
     -- neck="Combatant's Torque",     -- __,  4, __ <__, __, __> [__/__, ___]; Combat skills +15
-    -- ring1="Epona's Ring",          -- __, __, __ < 3,  3, __> [__/__, ___]
     -- 57 DW, 39 STP, 283 Acc <3 DA, 13 TA, 0 QA> [52 PDT/40 MDT, 493 MEVA]
   })
   sets.engaged.DW.MidAcc.HeavyDef.MidHaste = set_combine(sets.engaged.DW.LowAcc.HeavyDef.MidHaste, {
@@ -1413,16 +1412,16 @@ function init_gear_sets()
     -- 43 DW, 46 STP, 273 Acc <5 DA, 14 TA, 0 QA> [54 PDT/34 MDT, 435 MEVA]
   }
   sets.engaged.DW.LowAcc.HeavyDef.HighHaste = set_combine(sets.engaged.DW.HeavyDef.HighHaste, {
-    -- hands="Amini Glovelettes +3",  -- __, 11, 62 <__, __, __> [11/11,  93]
-    -- neck="Iskur Gorget",           -- __,  8, __ <__, __, __> [__/__, ___]
+    hands="Amini Glovelettes +3",     -- __, 11, 62 <__, __, __> [11/11,  93]
+    neck="Iskur Gorget",              -- __,  8, __ <__, __, __> [__/__, ___]
     ear2="Telos Earring",             -- __,  5, 10 < 1, __, __> [__/__, ___]
-    -- ring1="Epona's Ring",          -- __, __, __ < 3,  3, __> [__/__, ___]
+    ring1="Epona's Ring",             -- __, __, __ < 3,  3, __> [__/__, ___]
     -- 43 DW, 58 STP, 293 Acc <4 DA, 13 TA, 0 QA> [52 PDT/40 MDT, 485 MEVA]
   })
   sets.engaged.DW.MidAcc.HeavyDef.HighHaste = set_combine(sets.engaged.DW.LowAcc.HeavyDef.HighHaste, {
-    -- feet="Malignance Boots",       -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
-    -- neck="Combatant's Torque",     -- __,  4, __ <__, __, __> [__/__, ___]; Combat skills +15
+    feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
     ring1="Chirich Ring +1",          -- __,  6, 10 <__, __, __> [__/__, ___]
+    -- neck="Combatant's Torque",     -- __,  4, __ <__, __, __> [__/__, ___]; Combat skills +15
     -- 43 DW, 69 STP, 330 Acc <1 DA, 4 TA, 0 QA> [54 PDT/44 MDT, 560 MEVA]
   })
   sets.engaged.DW.HighAcc.HeavyDef.HighHaste = set_combine(sets.engaged.DW.MidAcc.HeavyDef.HighHaste, {
@@ -1458,16 +1457,16 @@ function init_gear_sets()
     -- 36 DW, 47 STP, 287 Acc <4 DA, 14 TA, 0 QA> [54 PDT/34 MDT, 435 MEVA]
   })
   sets.engaged.DW.MidAcc.HeavyDef.SuperHaste = set_combine(sets.engaged.DW.LowAcc.HeavyDef.SuperHaste, {
-    -- hands="Amini Glovelettes +3",  -- __, 11, 62 <__, __, __> [11/11,  93]
-    -- neck="Iskur Gorget",           -- __,  8, __ <__, __, __> [__/__, ___]
-    -- ring1="Epona's Ring",          -- __, __, __ < 3,  3, __> [__/__, ___]
+    hands="Amini Glovelettes +3",     -- __, 11, 62 <__, __, __> [11/11,  93]
+    neck="Iskur Gorget",              -- __,  8, __ <__, __, __> [__/__, ___]
+    ring1="Epona's Ring",             -- __, __, __ < 3,  3, __> [__/__, ___]
     -- 36 DW, 59 STP, 297 Acc <7 DA, 13 TA, 0 QA> [52 PDT/40 MDT, 485 MEVA]
   })
   sets.engaged.DW.HighAcc.HeavyDef.SuperHaste = set_combine(sets.engaged.DW.MidAcc.HeavyDef.SuperHaste, {
-    -- feet="Malignance Boots",       -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
+    feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
+    ear1="Cessance Earring",          -- __,  3,  6 < 3, __, __> [__/__, ___]
+    waist="Olseni Belt",              -- __,  3, 20 <__, __, __> [__/__, ___]
     -- neck="Combatant's Torque",     -- __,  4, __ <__, __, __> [__/__, ___]; Combat skills +15
-    -- ear1="Cessance Earring",       -- __,  3,  6 < 3, __, __> [__/__, ___]
-    -- waist="Olseni Belt",           -- __,  3, 20 <__, __, __> [__/__, ___]
     -- 31 DW, 65 STP, 336 Acc <7 DA, 7 TA, 0 QA> [54 PDT/44 MDT, 560 MEVA]
   })
 
