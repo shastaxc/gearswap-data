@@ -109,7 +109,7 @@ function job_setup()
   state.RangedMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.IdleMode:options('Normal', 'HeavyDef')
 
-  state.WeaponSet = M{['description']='Weapon Set', 'Savage Blade', 'Cleaving', 'DeathPenalty_M', 'DeathPenalty_R', 'Fomalhaut_M', 'Fomalhaut_R', 'QuickDraw'}
+  state.WeaponSet = M{['description']='Weapon Set', 'Savage Blade', 'DeathPenalty_M', 'DeathPenalty_R', 'Fomalhaut_M', 'Fomalhaut_R', 'Cleaving', 'QuickDraw'}
 
   state.CP = M(false, "Capacity Points Mode")
 
@@ -2045,7 +2045,7 @@ function init_gear_sets()
   sets.WeaponSet = {}
   sets.WeaponSet.DeathPenalty_M = {
     main=gear.Lanun_A,
-    sub="Tauret",
+    sub="Gleti's Knife",
     ranged="Death Penalty",
     -- main="Rostam",
   }
@@ -2057,7 +2057,7 @@ function init_gear_sets()
   }
   sets.WeaponSet.Armageddon_M = {
     main=gear.Lanun_A,
-    sub="Tauret",
+    sub="Gleti's Knife",
     -- main="Rostam",
     -- ranged="Armageddon",
   }
@@ -2068,7 +2068,7 @@ function init_gear_sets()
   }
   sets.WeaponSet.Fomalhaut_M = {
     main="Naegling",
-    sub="Blurred Knife +1",
+    sub="Gleti's Knife",
     ranged="Fomalhaut",
   }
   sets.WeaponSet.Fomalhaut_R = {
@@ -2078,12 +2078,12 @@ function init_gear_sets()
   }
   sets.WeaponSet["Savage Blade"] = {
     main="Naegling",
-    sub="Blurred Knife +1",
+    sub="Gleti's Knife",
     ranged="Anarchy +2",
   }
   sets.WeaponSet.Cleaving = {
     main=gear.Lanun_A,
-    sub="Tauret",
+    sub="Gleti's Knife",
     ranged="Anarchy +2",
   }
   sets.WeaponSet.QuickDraw = {
