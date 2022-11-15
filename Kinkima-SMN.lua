@@ -907,7 +907,7 @@ function init_gear_sets()
     -- legs="Glyphic Spats +3" -- Shorten recast time for spirits
   }
 
-  sets.midcast.Pet['Elemental Magic'] = set_combine(sets.midcast.Pet.BloodPactRage, {
+  sets.midcast.Pet['Elemental Magic'] = set_combine(sets.midcast.Pet.MagicalBloodPactRage, {
     -- legs="Glyphic Spats +3", -- Shorten recast time for spirits
   })
 
