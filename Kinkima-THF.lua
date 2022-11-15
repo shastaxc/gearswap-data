@@ -1479,7 +1479,6 @@ end
 
 function job_update(cmdParams, eventArgs)
   handle_equipping_gear(player.status)
-  update_dp_type() -- Requires DistancePlus addon
 end
 
 function update_combat_form()
