@@ -449,7 +449,7 @@ function init_gear_sets()
   sets.precast.JA['Elemental Siphon'] = {
     main="Chatoyant Staff",             -- __, __, 10 [__/__, ___]
     sub="Khonsu",                       -- __, __, __ [ 6/ 6, ___]
-    -- ammo="Esper Stone +1",           -- 20, __, __ [__/__, ___]
+    ammo="Esper Stone +1",              -- 20, __, __ [__/__, ___]
     head="Beckoner's Horn +2",          -- __, 18, __ [ 9/ 9, 120]
     body="Beckoner's Doublet +2",       -- __, 19, __ [12/12, 120]
     hands="Baayami Cuffs +1",           -- __, 33, __ [__/__,  93]
@@ -478,7 +478,7 @@ function init_gear_sets()
   sets.precast.JA['Elemental Siphon'].NirvAM = {
     -- main="Nirvana",                  -- __, __, __ [__/__, ___]
     -- sub="Elan Strap +1",             -- __, __, __ [__/__, ___]
-    -- ammo="Esper Stone +1",           -- 20, __, __ [__/__, ___]
+    ammo="Esper Stone +1",              -- 20, __, __ [__/__, ___]
     head="Beckoner's Horn +2",          -- __, 18, __ [ 9/ 9, 120]
     body="Beckoner's Doublet +2",       -- __, 19, __ [12/12, 120]
     hands="Baayami Cuffs +1",           -- __, 33, __ [__/__,  93]
@@ -676,6 +676,7 @@ function init_gear_sets()
   sets.midcast.CureNormal = {
     main="Bunzi's Rod",         -- 30, 15, __, ___ [__/__, ___] __
     sub="Genbu's Shield",       --  5, __, __, ___ [10/__, ___] __
+    ammo="Esper Stone +1",      -- __, __, __, ___ [__/__, ___]  5
     head=gear.Vanya_B_head,     -- 10, 27, 18,  20 [__/ 5,  75] __
     body=gear.Vanya_B_body,     -- __, 36, 23,  20 [ 1/ 4,  80] __
     legs=gear.Vanya_B_legs,     -- __, 34, 12,  20 [__/__, 107] __
@@ -687,11 +688,9 @@ function init_gear_sets()
     ring2="Defending Ring",     -- __, __, __, ___ [10/10, ___] __
     -- Traits/Merits/Gifts         __,101, 89,  16
     -- Subjob                      __, __, __, 139
-    -- 55 CP, 235 MND, 155 VIT, 285 Healing Skill [21 PDT/19 MDT, 369 M.Eva] 0 -Enmity
+    -- 55 CP, 235 MND, 155 VIT, 285 Healing Skill [21 PDT/19 MDT, 369 M.Eva] 5 -Enmity
     
     -- main=gear.Gada_MND,      -- 18, 21, __,  18 [__/__, ___] __
-    -- range=empty,
-    -- ammo="Esper Stone +1",   -- __, __, __, ___ [__/__, ___]  5
     -- hands="Bunzi's Gloves",  -- __, 47, 26, ___ [ 8/ 8, 112]  8
     -- back=gear.SMN_Cure_Cape, -- 10, 30, __, ___ [10/__, ___] __
     -- waist="Luminary Sash",   -- __, 10, __, ___ [__/__, ___] __

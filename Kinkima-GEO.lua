@@ -165,12 +165,12 @@ function init_gear_sets()
     feet=gear.Merl_FC_feet,         -- 12 [__/__, 118] {__, __}
     neck="Loricate Torque +1",      -- __ [ 6/ 6, ___] {__, __}
     ear1="Malignance Earring",      --  4 [__/__, ___] {__, __}
-    ear2="Loquacious Earring",      --  2 [__/__, ___] {__, __}
+    ear2="Odnowa Earring +1",       -- __ [ 3/ 5, ___] {__, __}
     ring1="Defending Ring",         -- __ [10/10, ___] {__, __}
     ring2="Kishar Ring",            --  4 [__/__, ___] {__, __}
     back=gear.GEO_FC_Cape,          -- 10 [10/__, ___] {__, __}
     waist="Embla Sash",             --  5 [__/__, ___] {__, __}
-    -- 84 FC [41 PDT / 16 MDT, 479 M.Eva] {43 Pet DT, 0 Pet Regen}
+    -- 82 FC [44 PDT / 21 MDT, 479 M.Eva] {43 Pet DT, 0 Pet Regen}
 
     -- ear2="Azimuth Earring +2",   -- __ [ 7/ 7, ___] {__, __}
     -- 82 FC [48 PDT / 23 MDT, 479 M.Eva] {43 Pet DT, 0 Pet Regen}
@@ -194,11 +194,11 @@ function init_gear_sets()
     back=gear.GEO_FC_Cape,          -- 10 [10/__, ___] {__, __}
     waist="Embla Sash",             --  5 [__/__, ___] {__, __}
     -- RDM FC traits                   15
-    -- 82 FC [52 PDT/12 MDT, 479 Meva] {43 Pet DT, 0 Pet Regen}
+    -- 82 FC [52 PDT/22 MDT, 519 Meva] {43 Pet DT, 0 Pet Regen}
     
     -- feet="Azimuth Gaiters +3",   -- __ [11/11, 168] {__, __}
     -- neck="Bagua Charm +2",       -- __ [__/__, ___] {__, __}; Absorb Dmg+10
-    -- 82 FC [53 PDT / 22 MDT, 529 Meva] {43 Pet DT, 0 Pet Regen}
+    -- 82 FC [53 PDT/22 MDT, 529 Meva] {43 Pet DT, 0 Pet Regen}
   })
 
   -- TODO: Update
@@ -650,8 +650,11 @@ function init_gear_sets()
   sets.midcast.CureNormal = {
     main="Bunzi's Rod",             -- 30, 15, __, ___ [__/__, ___] __
     sub="Genbu's Shield",           --  5, __, __, ___ [10/__, ___] __
+    range=empty,
+    ammo="Esper Stone +1",          -- __, __, __, ___ [__/__, ___]  5
     head=gear.Vanya_B_head,         -- 10, 27, 18,  20 [__/ 5,  75] __
     body=gear.Vanya_B_body,         -- __, 36, 23,  20 [ 1/ 4,  80] __
+    hands="Azimuth Gloves +2",      -- __, 42, 33, ___ [11/11,  88] 12
     legs=gear.Vanya_B_legs,         -- __, 34, 12,  20 [__/__, 107] __
     feet=gear.Vayna_B_feet,         --  5, 19, 10,  40 [__/__, 107] __
     neck="Incanter's Torque",       -- __, __, __,  10 [__/__, ___] __
@@ -661,11 +664,9 @@ function init_gear_sets()
     ring2="Defending Ring",         -- __, __, __, ___ [10/10, ___] __
     -- Traits/Merits/Gifts             __,103, 95,  16
     -- RDM Subjob                      __, __, __, 139
-    -- 55 CP, 237 MND, 161 VIT, 285 Healing Skill [21 PDT/19 MDT, 369 M.Eva] 0 -Enmity
+    -- 55 CP, 279 MND, 194 VIT, 285 Healing Skill [32 PDT/30 MDT, 457 M.Eva] 17 -Enmity
     
     -- main=gear.Gada_MND,          -- 18, 21, __,  18 [__/__, ___] __
-    -- range=empty,
-    -- ammo="Esper Stone +1",       -- __, __, __, ___ [__/__, ___]  5
     -- hands="Azimuth Gloves +3",   -- __, 47, 38, ___ [12/12,  98] 13
     -- back=gear.GEO_Cure_Cape,     -- 10, 30, __, ___ [10/__, ___] __
     -- waist="Luminary Sash",       -- __, 10, __, ___ [__/__, ___] __
