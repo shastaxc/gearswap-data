@@ -54,7 +54,7 @@ gear.Chironic_AE_feet = {} -- 10 WSD > 40 MAB > 15 INT > 15 DEX
 
 
 -- Herculean
-gear.Herc_TA_hands = { name="Herculean Gloves", augments={'Attack+26','"Triple Atk."+3','DEX+1',}}
+gear.Herc_TA_hands = { name="Herculean Gloves", augments={'Attack+4','"Triple Atk."+4','Accuracy+12',}}
 gear.Herc_TA_feet = { name="Herculean Boots", augments={'Accuracy+13','"Triple Atk."+4','Attack+4',}}
 
 gear.Herc_MAB_feet = { name="Herculean Boots", augments={'"Mag.Atk.Bns."+29','Accuracy+3','Accuracy+5 Attack+5','Mag. Acc.+18 "Mag.Atk.Bns."+18',}}
