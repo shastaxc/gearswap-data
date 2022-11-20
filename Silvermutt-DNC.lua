@@ -303,15 +303,21 @@ function init_gear_sets()
     ring2="Defending Ring",         -- 10/10 | __(_), __, __ <__>
     back=gear.DNC_WTZ_Cape,         -- 10/__ | __(_), 30, __ <__>; Enmity-10
     waist="Aristo Belt",            -- __/__ | __(_),  8, __ <__>
-  } -- 35/25 | 53 Potency (8 Self Potency), 191 CHR, 116 VIT <-4 Delay>
+    -- 35/25 | 53 Potency (8 Self Potency), 191 CHR, 116 VIT <-4 Delay>
+
+    -- hands="Maculele Bangles +3", -- 11/11 | __(_), 28, 40 <__>
+    -- 39/29 | 53 Potency (8 Self Potency), 195 CHR, 117 VIT <-4 Delay>
+  }
   -- Waltz effects received
   sets.precast.WaltzSelf = set_combine(sets.precast.Waltz, {
     body="Maxixi Casaque +3",       -- __/__ | 19(8), 33, 34 <-2>
-  })-- 35/25 | 53 Potency (8 Self Potency), 191 CHR, 116 VIT <-4 Delay>
+    -- 39/29 | 53 Potency (8 Self Potency), 195 CHR, 117 VIT <-4 Delay>
+  })
   sets.precast.WaltzSafe = {
     ring1="Gelatinous Ring +1",     --  7/-1 | __(_), __, 15 <__>
     waist="Flume Belt +1",          --  4/__ | __(_), __, __ <__>
-  } -- 46/24 | 53 Potency (8 Self Potency), 167 CHR, 146 VIT <-4 Delay>
+    -- 50/28 | 53 Potency (8 Self Potency), 171 CHR, 147 VIT <-4 Delay>
+  }
 
   -- Waltz delay
   sets.precast.Waltz['Healing Waltz'] = {
