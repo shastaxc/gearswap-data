@@ -1,4 +1,4 @@
--- File Status: Good. Need to update sets with empy+3.
+-- File Status: Good. Missing acc sets.
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs
@@ -60,6 +60,7 @@ function job_setup()
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.HybridMode:options('Normal', 'HeavyDef', 'SubtleBlow')
   state.IdleMode:options('Normal', 'HeavyDef')
+  state.AttCapped = M(true, "Attack Capped")
 
   state.CP = M(false, "Capacity Points Mode")
   state.ToyWeapons = M{['description']='Toy Weapons','None','GreatKatana','Staff','Polearm','GreatSword','Scythe'}
@@ -77,6 +78,7 @@ function job_setup()
   send_command('bind ^pagedown gs c toyweapon cycleback')
   send_command('bind !pagedown gs c toyweapon reset')
 
+  send_command('bind ^f8 gs c toggle AttCapped')
   send_command('bind ^` gs c cycle treasuremode')
   send_command('bind @c gs c toggle CP')
 
@@ -122,6 +124,7 @@ function job_file_unload()
   send_command('unbind ^pagedown')
   send_command('unbind !pagedown')
 
+  send_command('unbind ^f8')
   send_command('unbind @c')
   send_command('unbind !w')
   send_command('unbind ^numpad/')
@@ -263,94 +266,117 @@ function init_gear_sets()
     legs=gear.Nyame_B_legs,
     feet=gear.Nyame_B_feet,
     neck="Samurai's Nodowa +2",
-    ear1="Thrud Earring",
-    ear2="Moonshade Earring",
+    ear1="Moonshade Earring",
+    ear2="Thrud Earring",
     ring1="Sroda Ring",
     ring2="Epaminondas's Ring",
     back=gear.SAM_STR_WSD_Cape,
     waist="Sailfi Belt +1",
-  } -- Base WS set
+    
+    -- hands="Kasuga Kote +3",
+    -- ear2="Kasuga Earring +2",
+  }
+  sets.precast.WS.MaxTP = set_combine(sets.precast.WS, {
+    head=gear.Nyame_B_head,
+    ear1="Ishvara Earring",
+    ear2="Thrud Earring",
 
-  -- Tachi: Fudo - 80% STR
-  sets.precast.WS["Tachi: Fudo"] = sets.precast.WS
-  sets.precast.WS["Tachi: Fudo"].MaxTP = set_combine(sets.precast.WS["Tachi: Fudo"], {
-    ear2="Ishvara Earring",
+    -- ear1="Thrud Earring",
+    -- ear2="Kasuga Earring +2",
   })
-  sets.precast.WS["Tachi: Fudo"].LowAcc = set_combine(sets.precast.WS["Tachi: Fudo"], {
-    hands="Wakido Kote +3",
-    ring1="Regal Ring",
-    -- head=gear.Rao_A_head,
+  sets.precast.WS.AttCapped = set_combine(sets.precast.WS, {
+    ammo="Crepuscular Pebble",
+    legs="Mpaca's Hose",
+
+    -- feet="Kasuga Sune-Ate +3",
   })
-  sets.precast.WS["Tachi: Fudo"].LowAccMaxTP = set_combine(sets.precast.WS["Tachi: Fudo"].LowAcc, {
-    ear2="Telos Earring",
-  })
-  sets.precast.WS["Tachi: Fudo"].MidAcc = set_combine(sets.precast.WS["Tachi: Fudo"].LowAcc, {
-    neck="Fotia Gorget",
-    -- feet="Sakonji Sune-Ate +3",
-  })
-  sets.precast.WS["Tachi: Fudo"].MidAccMaxTP = set_combine(sets.precast.WS["Tachi: Fudo"].MidAcc, {
-    ear2="Telos Earring",
-  })
-  sets.precast.WS["Tachi: Fudo"].HighAcc = set_combine(sets.precast.WS["Tachi: Fudo"].MidAcc, {
-    ear1="Telos Earring",
-    -- head="Sakonji Kabuto +3"
-  })
-  sets.precast.WS["Tachi: Fudo"].HighAccMaxTP = set_combine(sets.precast.WS["Tachi: Fudo"].HighAcc, {
-    ear1="Thrud Earring",
-    ear2="Telos Earring",
+  sets.precast.WS.AttCappedMaxTP = set_combine(sets.precast.WS.AttCapped, {
+    head=gear.Nyame_B_head,
+    ear1="Ishvara Earring",
+    ear2="Thrud Earring",
+
+    -- ear1="Thrud Earring",
+    -- ear2="Kasuga Earring +2",
   })
 
-  -- Tachi: Kaiten - 80% STR
-  sets.precast.WS["Tachi: Kaiten"] = sets.precast.WS["Tachi: Fudo"]
-  sets.precast.WS["Tachi: Kaiten"].MaxTP = sets.precast.WS["Tachi: Fudo"].MaxTP
-  sets.precast.WS["Tachi: Kaiten"].LowAcc = sets.precast.WS["Tachi: Fudo"].LowAcc
-  sets.precast.WS["Tachi: Kaiten"].LowAccMaxTP = sets.precast.WS["Tachi: Fudo"].LowAccMaxTP
-  sets.precast.WS["Tachi: Kaiten"].MidAcc = sets.precast.WS["Tachi: Fudo"].MidAcc
-  sets.precast.WS["Tachi: Kaiten"].MidAccMaxTP = sets.precast.WS["Tachi: Fudo"].MidAccMaxTP
-  sets.precast.WS["Tachi: Kaiten"].HighAcc = sets.precast.WS["Tachi: Fudo"].HighAcc
-  sets.precast.WS["Tachi: Kaiten"].HighAccMaxTP = sets.precast.WS["Tachi: Fudo"].HighAccMaxTP
+  -- 80% STR; dmg varies with TP
+  sets.precast.WS['Tachi: Fudo'] = sets.precast.WS
+  sets.precast.WS['Tachi: Fudo'].MaxTP = sets.precast.WS.MaxTP
+  sets.precast.WS['Tachi: Fudo'].AttCapped = sets.precast.WS.AttCapped
+  sets.precast.WS['Tachi: Fudo'].AttCappedMaxTP = sets.precast.WS.AttCappedMaxTP
 
-  -- Tachi: Gekko - 75% STR
-  sets.precast.WS["Tachi: Gekko"] = sets.precast.WS["Tachi: Fudo"]
-  sets.precast.WS["Tachi: Gekko"].MaxTP = sets.precast.WS["Tachi: Fudo"].MaxTP
-  sets.precast.WS["Tachi: Gekko"].LowAcc = sets.precast.WS["Tachi: Fudo"].LowAcc
-  sets.precast.WS["Tachi: Gekko"].LowAccMaxTP = sets.precast.WS["Tachi: Fudo"].LowAccMaxTP
-  sets.precast.WS["Tachi: Gekko"].MidAcc = sets.precast.WS["Tachi: Fudo"].MidAcc
-  sets.precast.WS["Tachi: Gekko"].MidAccMaxTP = sets.precast.WS["Tachi: Fudo"].MidAccMaxTP
-  sets.precast.WS["Tachi: Gekko"].HighAcc = sets.precast.WS["Tachi: Fudo"].HighAcc
-  sets.precast.WS["Tachi: Gekko"].HighAccMaxTP = sets.precast.WS["Tachi: Fudo"].HighAccMaxTP
+  -- 80% STR; STP scales with TP (aftermath effect)
+  sets.precast.WS['Tachi: Kaiten'] = sets.precast.WS
+  sets.precast.WS['Tachi: Kaiten'].MaxTP = sets.precast.WS.MaxTP
+  sets.precast.WS['Tachi: Kaiten'].AttCapped = sets.precast.WS.AttCapped
+  sets.precast.WS['Tachi: Kaiten'].AttCappedMaxTP = sets.precast.WS.AttCappedMaxTP
 
-  -- Tachi: Yukikaze - 75% STR
-  sets.precast.WS["Tachi: Yukikaze"] = sets.precast.WS["Tachi: Fudo"]
-  sets.precast.WS["Tachi: Yukikaze"].MaxTP = sets.precast.WS["Tachi: Fudo"].MaxTP
-  sets.precast.WS["Tachi: Yukikaze"].LowAcc = sets.precast.WS["Tachi: Fudo"].LowAcc
-  sets.precast.WS["Tachi: Yukikaze"].LowAccMaxTP = sets.precast.WS["Tachi: Fudo"].LowAccMaxTP
-  sets.precast.WS["Tachi: Yukikaze"].MidAcc = sets.precast.WS["Tachi: Fudo"].MidAcc
-  sets.precast.WS["Tachi: Yukikaze"].MidAccMaxTP = sets.precast.WS["Tachi: Fudo"].MidAccMaxTP
-  sets.precast.WS["Tachi: Yukikaze"].HighAcc = sets.precast.WS["Tachi: Fudo"].HighAcc
-  sets.precast.WS["Tachi: Yukikaze"].HighAccMaxTP = sets.precast.WS["Tachi: Fudo"].HighAccMaxTP
+  -- 75% STR; dmg varies with TP
+  sets.precast.WS['Tachi: Gekko'] = sets.precast.WS
+  sets.precast.WS['Tachi: Gekko'].MaxTP = sets.precast.WS.MaxTP
+  sets.precast.WS['Tachi: Gekko'].AttCapped = sets.precast.WS.AttCapped
+  sets.precast.WS['Tachi: Gekko'].AttCappedMaxTP = sets.precast.WS.AttCappedMaxTP
 
-  -- Tachi: Rana - 50% STR
-  sets.precast.WS["Tachi: Rana"] = sets.precast.WS["Tachi: Fudo"]
-  sets.precast.WS["Tachi: Rana"].MaxTP = sets.precast.WS["Tachi: Fudo"].MaxTP
-  sets.precast.WS["Tachi: Rana"].LowAcc = sets.precast.WS["Tachi: Fudo"].LowAcc
-  sets.precast.WS["Tachi: Rana"].LowAccMaxTP = sets.precast.WS["Tachi: Fudo"].LowAccMaxTP
-  sets.precast.WS["Tachi: Rana"].MidAcc = sets.precast.WS["Tachi: Fudo"].MidAcc
-  sets.precast.WS["Tachi: Rana"].MidAccMaxTP = sets.precast.WS["Tachi: Fudo"].MidAccMaxTP
-  sets.precast.WS["Tachi: Rana"].HighAcc = sets.precast.WS["Tachi: Fudo"].HighAcc
-  sets.precast.WS["Tachi: Rana"].HighAccMaxTP = sets.precast.WS["Tachi: Fudo"].HighAccMaxTP
+  -- 75% STR; dmg varies with TP
+  sets.precast.WS['Tachi: Yukikaze'] = sets.precast.WS
+  sets.precast.WS['Tachi: Yukikaze'].MaxTP = sets.precast.WS.MaxTP
+  sets.precast.WS['Tachi: Yukikaze'].AttCapped = sets.precast.WS.AttCapped
+  sets.precast.WS['Tachi: Yukikaze'].AttCappedMaxTP = sets.precast.WS.AttCappedMaxTP
 
-  -- Tachi: Kasha - 75% STR
-  sets.precast.WS["Tachi: Kasha"] = sets.precast.WS["Tachi: Fudo"]
-  sets.precast.WS["Tachi: Kasha"].MaxTP = sets.precast.WS["Tachi: Fudo"].MaxTP
-  sets.precast.WS["Tachi: Kasha"].LowAcc = sets.precast.WS["Tachi: Fudo"].LowAcc
-  sets.precast.WS["Tachi: Kasha"].LowAccMaxTP = sets.precast.WS["Tachi: Fudo"].LowAccMaxTP
-  sets.precast.WS["Tachi: Kasha"].MidAcc = sets.precast.WS["Tachi: Fudo"].MidAcc
-  sets.precast.WS["Tachi: Kasha"].MidAccMaxTP = sets.precast.WS["Tachi: Fudo"].MidAccMaxTP
-  sets.precast.WS["Tachi: Kasha"].HighAcc = sets.precast.WS["Tachi: Fudo"].HighAcc
-  sets.precast.WS["Tachi: Kasha"].HighAccMaxTP = sets.precast.WS["Tachi: Fudo"].HighAccMaxTP
+  -- 75% STR; dmg varies with TP
+  sets.precast.WS['Tachi: Kasha'] = sets.precast.WS
+  sets.precast.WS['Tachi: Kasha'].MaxTP = sets.precast.WS.MaxTP
+  sets.precast.WS['Tachi: Kasha'].AttCapped = sets.precast.WS.AttCapped
+  sets.precast.WS['Tachi: Kasha'].AttCappedMaxTP = sets.precast.WS.AttCappedMaxTP
 
-  -- Tachi: Jinpu - 30% STR
+  -- 85% STR; 2 hit, dmg varies with TP
+  sets.precast.WS['Tachi: Shoha'] = set_combine(sets.precast.WS, {
+    ammo="Knobkierrie",
+    head="Mpaca's Cap",
+    body=gear.Nyame_B_body,
+    hands=gear.Nyame_B_hands,
+    legs=gear.Nyame_B_legs,
+    feet=gear.Nyame_B_feet,
+    neck="Samurai's Nodowa +2",
+    ear1="Moonshade Earring",
+    ear2="Thrud Earring",
+    ring1="Niqmaddu Ring",
+    ring2="Epaminondas's Ring",
+    back=gear.SAM_STR_WSD_Cape,
+    waist="Sailfi Belt +1",
+    
+    -- ear2="Kasuga Earring +2",
+  })
+  sets.precast.WS['Tachi: Shoha'].MaxTP = set_combine(sets.precast.WS['Tachi: Shoha'], {
+    ear1="Schere Earring",
+    ear2="Thrud Earring",
+    
+    -- ear1="Thrud Earring",
+    -- ear2="Kasuga Earring +2",
+  })
+  sets.precast.WS['Tachi: Shoha'].AttCapped = set_combine(sets.precast.WS['Tachi: Shoha'], {
+    ammo="Crepuscular Pebble",
+    legs="Mpaca's Hose",
+    ring1="Sroda Ring",
+
+    -- feet="Kasuga Sune-Ate +3",
+  })
+  sets.precast.WS['Tachi: Shoha'].AttCappedMaxTP = set_combine(sets.precast.WS['Tachi: Shoha'].AttCapped, {
+    head=gear.Nyame_B_head,
+    ear1="Schere Earring",
+    ear2="Thrud Earring",
+    
+    -- ear1="Thrud Earring",
+    -- ear2="Kasuga Earring +2",
+  })
+
+  -- 50% STR; 3 hit, acc varies with TP
+  sets.precast.WS['Tachi: Rana'] = sets.precast.WS['Tachi: Shoha'].MaxTP
+  sets.precast.WS['Tachi: Rana'].MaxTP = sets.precast.WS['Tachi: Shoha'].MaxTP
+  sets.precast.WS['Tachi: Rana'].AttCapped = sets.precast.WS['Tachi: Shoha'].AttCappedMaxTP
+  sets.precast.WS['Tachi: Rana'].AttCappedMaxTP = sets.precast.WS['Tachi: Shoha'].AttCappedMaxTP
+
+  -- 30% STR; 2 hit, hybrid wind elemental, dmg varies with TP
   sets.precast.WS['Tachi: Jinpu'] = set_combine(sets.precast.WS, {
     ammo="Knobkierrie",
     head=gear.Nyame_B_head,
@@ -359,160 +385,132 @@ function init_gear_sets()
     legs=gear.Nyame_B_legs,
     feet=gear.Nyame_B_feet,
     neck="Samurai's Nodowa +2",
-    ear1="Friomisi Earring",
-    ear2="Moonshade Earring",
+    ear1="Moonshade Earring",
+    ear2="Friomisi Earring",
     ring1="Sroda Ring",
     ring2="Epaminondas's Ring",
     back=gear.SAM_STR_WSD_Cape,
     waist="Fotia Belt",
     -- waist="Orpheus's Sash",
   })
-  sets.precast.WS["Tachi: Jinpu"].MaxTP = set_combine(sets.precast.WS["Tachi: Jinpu"], {
-    ear2="Novio Earring",
+  sets.precast.WS['Tachi: Jinpu'].MaxTP = set_combine(sets.precast.WS['Tachi: Jinpu'], {
+    ear1="Novio Earring",
   })
-  sets.precast.WS["Tachi: Jinpu"].LowAcc = set_combine(sets.precast.WS["Tachi: Jinpu"], {
-  })
-  sets.precast.WS["Tachi: Jinpu"].LowAccMaxTP = set_combine(sets.precast.WS["Tachi: Jinpu"].LowAcc, {
-    ear2="Novio Earring",
-  })
-  sets.precast.WS["Tachi: Jinpu"].MidAcc = set_combine(sets.precast.WS["Tachi: Jinpu"].LowAcc, {
-  })
-  sets.precast.WS["Tachi: Jinpu"].MidAccMaxTP = set_combine(sets.precast.WS["Tachi: Jinpu"].MidAcc, {
-    ear2="Novio Earring",
-  })
-  sets.precast.WS["Tachi: Jinpu"].HighAcc = set_combine(sets.precast.WS["Tachi: Jinpu"].MidAcc, {
-  })
-  sets.precast.WS["Tachi: Jinpu"].HighAccMaxTP = set_combine(sets.precast.WS["Tachi: Jinpu"].HighAcc, {
-    ear2="Novio Earring",
-  })
+  sets.precast.WS['Tachi: Jinpu'].AttCapped = sets.precast.WS['Tachi: Jinpu']
+  sets.precast.WS['Tachi: Jinpu'].AttCappedMaxTP = sets.precast.WS['Tachi: Jinpu'].MaxTP
 
-  -- Tachi: Shoha - 85% STR; Benefits more from multihit
-  sets.precast.WS['Tachi: Shoha'] = set_combine(sets.precast.WS, {
-    ammo="Knobkierrie",
-    head="Mpaca's Cap",
-    body="Kendatsuba Samue +1",
-    hands=gear.Nyame_B_hands,
-    legs=gear.Nyame_B_legs,
-    feet=gear.Nyame_B_feet,
-    neck="Samurai's Nodowa +2",
-    ear1="Thrud Earring",
-    ear2="Moonshade Earring",
-    ring1="Sroda Ring",
-    ring2="Epaminondas's Ring",
-    back=gear.SAM_STR_WSD_Cape,
-    waist="Sailfi Belt +1",
-    -- body="Sakonji Domaru +3",
-  })
-  sets.precast.WS["Tachi: Shoha"].MaxTP = set_combine(sets.precast.WS["Tachi: Shoha"], {
-    ear2="Schere Earring",
-  })
-  sets.precast.WS["Tachi: Shoha"].LowAcc = set_combine(sets.precast.WS["Tachi: Shoha"], {
-    ring1="Regal Ring",
-  })
-  sets.precast.WS["Tachi: Shoha"].LowAccMaxTP = set_combine(sets.precast.WS["Tachi: Shoha"].LowAcc, {
-    ear2="Schere Earring",
-  })
-  sets.precast.WS["Tachi: Shoha"].MidAcc = set_combine(sets.precast.WS["Tachi: Shoha"].LowAcc, {
-    neck="Fotia Gorget",
-  })
-  sets.precast.WS["Tachi: Shoha"].MidAccMaxTP = set_combine(sets.precast.WS["Tachi: Shoha"].MidAcc, {
-    ear2="Telos Earring",
-  })
-  sets.precast.WS["Tachi: Shoha"].HighAcc = set_combine(sets.precast.WS["Tachi: Shoha"].MidAcc, {
-    ear1="Telos Earring",
-  })
-  sets.precast.WS["Tachi: Shoha"].HighAccMaxTP = set_combine(sets.precast.WS["Tachi: Shoha"].HighAcc, {
-    ear1="Thrud Earring",
-    ear2="Telos Earring",
-  })
-
-  -- Tachi: Ageha - 60% CHR / 40% STR; More important to stack magic acc
-  -- to ensure the defense down effect lands
-  sets.precast.WS['Tachi: Ageha'] = set_combine(sets.precast.WS, {
+  -- 60% CHR / 40% STR; More important to stack magic acc to ensure the defense down effect lands
+  sets.precast.WS['Tachi: Ageha'] = {
     ammo="Pemphredo Tathlum",
     head="Mpaca's Cap",
-    body="Flamma Korazin +2",
-    hands="Flamma Manopolas +2",
-    legs="Flamma Dirs +2",
-    feet="Flamma Gambieras +2",
+    body="Kasuga Domaru +2",
+    hands="Mpaca's Gloves",
+    legs="Mpaca's Hose",
+    feet="Mpaca's Boots",
+    neck="Samurai's Nodowa +2",
     ear1="Dignitary's Earring",
     ear2="Moonshade Earring",
     ring1="Metamorph Ring +1",
-    ring2="Weatherspoon Ring",
+    ring2="Stikini Ring +1",
+    back=gear.SAM_TP_Cape,
     waist="Eschan Stone",
+
+    -- body="Kasuga Domaru +3",
+    -- hands="Kasuga Kote +3",
+    -- legs="Kasuga Haidate +3",
+    -- feet="Kasuga Sune-Ate +3",
     -- neck="Sanctity Necklace",
-    -- ring2="Stikini Ring +1",
-  })
-  sets.precast.WS["Tachi: Ageha"].MaxTP = set_combine(sets.precast.WS["Tachi: Ageha"], {
     -- ear2="Crepuscular Earring",
-  })
-  sets.precast.WS["Tachi: Ageha"].LowAcc = set_combine(sets.precast.WS["Tachi: Ageha"], {
-  })
-  sets.precast.WS["Tachi: Ageha"].LowAccMaxTP = set_combine(sets.precast.WS["Tachi: Ageha"].LowAcc, {
-    -- ear2="Crepuscular Earring",
-  })
-  sets.precast.WS["Tachi: Ageha"].MidAcc = set_combine(sets.precast.WS["Tachi: Ageha"].LowAcc, {
-  })
-  sets.precast.WS["Tachi: Ageha"].MidAccMaxTP = set_combine(sets.precast.WS["Tachi: Ageha"].MidAcc, {
-    -- ear2="Crepuscular Earring",
-  })
-  sets.precast.WS["Tachi: Ageha"].HighAcc = set_combine(sets.precast.WS["Tachi: Ageha"].MidAcc, {
-  })
-  sets.precast.WS["Tachi: Ageha"].HighAccMaxTP = set_combine(sets.precast.WS["Tachi: Ageha"].HighAcc, {
-    -- ear2="Crepuscular Earring",
-  })
+  }
 
   -- Polearm sets use a crit build since you should be using Shining One
-  -- Impulse Drive - 100% STR
+  -- 100% STR; 2 hit, dmg varies with TP
   sets.precast.WS['Impulse Drive'] = set_combine(sets.precast.WS, {
-    ammo="Coiste Bodhar",
-    head=gear.Nyame_B_head,
-    body="Dagon Breastplate",
+    ammo="Knobkierrie",
+    head="Mpaca's Cap",
+    body=gear.Nyame_B_body,
     hands=gear.Ryuo_A_hands,
-    legs="Kendatsuba Hakama +1",
+    legs=gear.Nyame_B_legs,
     feet=gear.Nyame_B_feet,
     neck="Samurai's Nodowa +2",
-    ear1="Thrud Earring",
-    ear2="Moonshade Earring",
-    ring1="Sroda Ring",
+    ear1="Moonshade Earring",
+    ear2="Schere Earring",
+    ring1="Niqmaddu Ring",
     ring2="Epaminondas's Ring",
     back=gear.SAM_STR_WSD_Cape,
     waist="Sailfi belt +1",
+
+    -- hands="Kasuga Kote +3",
+    -- ear2="Kasuga Earring +2",
   })
-  sets.precast.WS["Impulse Drive"].MaxTP = set_combine(sets.precast.WS["Impulse Drive"], {
+  sets.precast.WS['Impulse Drive'].MaxTP = set_combine(sets.precast.WS['Impulse Drive'], {
+    head=gear.Nyame_B_head,
+    ear1="Thrud Earring",
+    ear2="Schere Earring",
+    
+    -- ear1="Schere Earring",
+    -- ear2="Kasuga Earring +2",
   })
-  sets.precast.WS["Impulse Drive"].LowAcc = set_combine(sets.precast.WS["Impulse Drive"], {
+  sets.precast.WS['Impulse Drive'].AttCapped = set_combine(sets.precast.WS['Impulse Drive'], {
+    ammo="Crepuscular Pebble",
+    legs="Mpaca's Hose",
+    ring2="Sroda Ring",
+
+    -- feet="Kasuga Sune-Ate +3",
   })
-  sets.precast.WS["Impulse Drive"].LowAccMaxTP = set_combine(sets.precast.WS["Impulse Drive"].LowAcc, {
-  })
-  sets.precast.WS["Impulse Drive"].MidAcc = set_combine(sets.precast.WS["Impulse Drive"].LowAcc, {
-  })
-  sets.precast.WS["Impulse Drive"].MidAccMaxTP = set_combine(sets.precast.WS["Impulse Drive"].MidAcc, {
-  })
-  sets.precast.WS["Impulse Drive"].HighAcc = set_combine(sets.precast.WS["Impulse Drive"].MidAcc, {
-  })
-  sets.precast.WS["Impulse Drive"].HighAccMaxTP = set_combine(sets.precast.WS["Impulse Drive"].HighAcc, {
+  sets.precast.WS['Impulse Drive'].AttCappedMaxTP = set_combine(sets.precast.WS['Impulse Drive'].AttCapped, {
+    head=gear.Nyame_B_head,
+    ear1="Thrud Earring",
+    ear2="Schere Earring",
+    
+    -- ear1="Schere Earring",
+    -- ear2="Kasuga Earring +2",
   })
 
-  -- Stardiver - 85% STR
-  sets.precast.WS["Stardiver"] = sets.precast.WS["Impulse Drive"]
-  sets.precast.WS["Stardiver"].MaxTP = sets.precast.WS["Impulse Drive"].MaxTP
-  sets.precast.WS["Stardiver"].LowAcc = sets.precast.WS["Impulse Drive"].LowAcc
-  sets.precast.WS["Stardiver"].LowAccMaxTP = sets.precast.WS["Impulse Drive"].LowAccMaxTP
-  sets.precast.WS["Stardiver"].MidAcc = sets.precast.WS["Impulse Drive"].MidAcc
-  sets.precast.WS["Stardiver"].MidAccMaxTP = sets.precast.WS["Impulse Drive"].MidAccMaxTP
-  sets.precast.WS["Stardiver"].HighAcc = sets.precast.WS["Impulse Drive"].HighAcc
-  sets.precast.WS["Stardiver"].HighAccMaxTP = sets.precast.WS["Impulse Drive"].HighAccMaxTP
+  -- 40% STR / 40% DEX; aoe, dmg varies with TP
+  sets.precast.WS['Sonic Thrust'] = sets.precast.WS['Impulse Drive']
+  sets.precast.WS['Sonic Thrust'].MaxTP = sets.precast.WS['Impulse Drive'].MaxTP
+  sets.precast.WS['Sonic Thrust'].AttCapped = sets.precast.WS['Impulse Drive'].AttCapped
+  sets.precast.WS['Sonic Thrust'].AttCappedMaxTP = sets.precast.WS['Impulse Drive'].AttCappedMaxTP
 
-  -- Sonic Thrust - 40% STR / 40% DEX
-  sets.precast.WS["Sonic Thrust"] = sets.precast.WS["Impulse Drive"]
-  sets.precast.WS["Sonic Thrust"].MaxTP = sets.precast.WS["Impulse Drive"].MaxTP
-  sets.precast.WS["Sonic Thrust"].LowAcc = sets.precast.WS["Impulse Drive"].LowAcc
-  sets.precast.WS["Sonic Thrust"].LowAccMaxTP = sets.precast.WS["Impulse Drive"].LowAccMaxTP
-  sets.precast.WS["Sonic Thrust"].MidAcc = sets.precast.WS["Impulse Drive"].MidAcc
-  sets.precast.WS["Sonic Thrust"].MidAccMaxTP = sets.precast.WS["Impulse Drive"].MidAccMaxTP
-  sets.precast.WS["Sonic Thrust"].HighAcc = sets.precast.WS["Impulse Drive"].HighAcc
-  sets.precast.WS["Sonic Thrust"].HighAccMaxTP = sets.precast.WS["Impulse Drive"].HighAccMaxTP
+  -- 85% STR; 4 hit, dmg varies with TP
+  sets.precast.WS['Stardiver'] = {
+    ammo="Coiste Bodhar",
+    head="Mpaca's Cap",
+    body="Tatenashi Haramaki +1",
+    hands=gear.Ryuo_A_hands,
+    legs="Mpaca's Hose",
+    feet=gear.Nyame_B_feet,
+    neck="Samurai's Nodowa +2",
+    ear1="Schere Earring",
+    ear2="Moonshade Earring",
+    ring1="Niqmaddu Ring",
+    ring2="Regal Ring",
+    back=gear.SAM_STR_WSD_Cape,
+    waist="Fotia Belt",
+
+    -- feet=gear.Valo_Crit_feet,
+    -- back=gear.SAM_STR_DA_Cape,
+  }
+  sets.precast.WS['Stardiver'].MaxTP = set_combine(sets.precast.WS['Stardiver'], {
+    head=gear.Nyame_B_head,
+    ear2="Thrud Earring",
+
+    -- ear2="Kasuga Earring +2",
+  })
+  sets.precast.WS['Stardiver'].AttCapped = set_combine(sets.precast.WS['Stardiver'], {
+    ammo="Crepuscular Pebble",
+    ring2="Sroda Ring",
+
+    -- feet="Kasuga Sune-Ate +3",
+  })
+  sets.precast.WS['Stardiver'].AttCappedMaxTP = set_combine(sets.precast.WS['Stardiver'].AttCapped, {
+    head=gear.Nyame_B_head,
+    ear2="Thrud Earring",
+
+    -- ear2="Kasuga Earring +2",
+  })
+
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Midcast Sets ------------------------------------------
@@ -626,8 +624,10 @@ function init_gear_sets()
     waist="Sailfi Belt +1",           -- [__/__, ___] __, __ <__,  2,  5> __,  9
     -- [54 PDT/20 MDT, 414 MEVA] 3 Hasso, 59 STP <0 QA, 17 TA, 19 DA> 15 Crit Rate, 29 Haste
 
+    -- legs="Kasuga Haidate +3",      -- [11/11, 130]  3, 11 <__, __, __> __,  5
+    -- feet="Tatenashi Sune-Ate +1",  -- [__/__,  80] __,  8 <__,  3, __> __,  3
     -- ear2="Kasuga Earring +2",      -- [__/__, ___] __,  9 <__, __, __> __, __
-    -- [54 PDT/20 MDT, 414 MEVA] 3 Hasso, 63 STP <0 QA, 17 TA, 18 DA> 15 Crit Rate, 29 Haste
+    -- [49 PDT/21 MDT, 408 MEVA] 3 Hasso, 72 STP <0 QA, 17 TA, 18 DA> 12 Crit Rate, 29 Haste
   }
   sets.engaged.LowAcc = sets.engaged
   sets.engaged.MidAcc = sets.engaged
@@ -655,8 +655,9 @@ function init_gear_sets()
     waist="Sailfi Belt +1",           -- [__/__, ___] __, __ <__,  2,  5> __,  9
     -- [53 PDT/27 MDT, 467 MEVA] 3 Hasso, 53 STP <3 QA, 14 TA, 23 DA> 10 Crit Rate, 28 Haste
 
+    -- legs="Kasuga Haidate +3",      -- [11/11, 130]  3, 11 <__, __, __> __,  5
     -- ear2="Kasuga Earring +2",      -- [__/__, ___] __,  9 <__, __, __> __, __
-    -- [53 PDT/27 MDT, 467 MEVA] 3 Hasso, 57 STP <3 QA, 14 TA, 22 DA> 10 Crit Rate, 28 Haste
+    -- [54 PDT/28 MDT, 477 MEVA] 3 Hasso, 58 STP <3 QA, 14 TA, 22 DA> 10 Crit Rate, 28 Haste
   }
   sets.engaged.LowAcc.HeavyDef = sets.engaged.HeavyDef
   sets.engaged.MidAcc.HeavyDef = sets.engaged.HeavyDef
@@ -677,6 +678,9 @@ function init_gear_sets()
     back=gear.SAM_TP_Cape,            -- [10/__, ___] __, __ <__, __, 10> __, __, __(__)
     waist="Peiste Belt +1",           -- [__/__, ___] __, __ <__, __, __> __, __, 10(__)
     -- [51 PDT/34 MDT, 521 MEVA] 0 Hasso, 14 STP <3 QA, 13 TA, 14 DA> 15 Crit Rate, 23 Haste, 34(20) Subtle Blow
+    
+    -- head="Kasuga Kabuto +3",       -- [10/10,  98] __, 12 <__, __, __> __,  7, __(__)
+    -- [52 PDT/35 MDT, 531 MEVA] 0 Hasso, 15 STP <3 QA, 13 TA, 14 DA> 15 Crit Rate, 23 Haste, 34(20) Subtle Blow
   }
   sets.engaged.LowAcc.SubtleBlow = sets.engaged.SubtleBlow
   sets.engaged.MidAcc.SubtleBlow = sets.engaged.SubtleBlow
@@ -974,11 +978,26 @@ end
 function get_custom_wsmode(spell, action, spellMap)
   local wsmode = ''
 
-  if state.OffenseMode.value ~= 'Normal' then
-    wsmode = state.OffenseMode.value
+  -- Determine if attack capped
+  if state.AttCapped.value then
+    wsmode = 'AttCapped'
   end
 
-  if player.tp > 2900 then
+  -- TODO: Update for WAR buffs/traits
+  -- Calculate if need TP bonus
+  local buffer = 100
+  -- Start TP bonus at 0 and accumulate based on equipped gear
+  local tp_bonus_from_weapons = 0
+  for slot,gear in pairs(tp_bonus_weapons) do
+    local equipped_item = player.equipment[slot]
+    if equipped_item and gear[equipped_item] then
+      tp_bonus_from_weapons = tp_bonus_from_weapons + gear[equipped_item]
+    end
+  end
+  local buff_bonus = T{
+    buffactive['Crystal Blessing'] and 250 or 0,
+  }:sum()
+  if player.tp > 3000-tp_bonus_from_weapons-buff_bonus-buffer then
     wsmode = wsmode..'MaxTP'
   end
 
