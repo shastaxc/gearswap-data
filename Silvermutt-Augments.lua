@@ -270,11 +270,11 @@ gear.THF_WS2_Cape = { name="Toutatis's Cape", augments={'STR+20','Accuracy+20 At
 -- gear.THF_WS6_Cape = { name="Toutatis's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
 
 gear.WAR_STR_DA_Cape = { name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
--- gear.WAR_Crit_Cape = { name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Crit.hit rate+10','Phys. dmg. taken-10%',}}
 -- gear.WAR_DW_Cape = { name="Cichol's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dual Wield"+10','Phys. dmg. taken-10%',}}
 gear.WAR_STR_WSD_Cape = { name="Cichol's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
--- gear.WAR_MND_WSD_Cape = { name="Cichol's Mantle", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
 -- gear.WAR_VIT_WSD_Cape = { name="Cichol's Mantle", augments={'VIT+20','Accuracy+20 Attack+20','VIT+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
+-- gear.WAR_VIT_DA_Cape = { name="Cichol's Mantle", augments={'VIT+20','Accuracy+20 Attack+20','VIT+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
+-- gear.WAR_STR_MAB_Cape = { name="Cichol's Mantle", augments={'STR+20','Mag. Acc+20 /Mag. Dmg.+20','STR+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
 
 
 ----------------------------------------------------------------------
