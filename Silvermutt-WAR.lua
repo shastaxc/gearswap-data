@@ -68,10 +68,15 @@ function job_setup()
   -- state.WeaponSet = M{['description']='Weapon Set', 'Ukon', 'Chango', 'Naegling', 'Shining One', 'Club', 'Dagger', 'Magic Axe', 'Phys Axe', 'Great Sword', 'Staff'}
   state.EnmityMode = M{['description']='Enmity Mode', 'Normal', 'Low', 'Schere'}
 
-  skill_ids_2h = S{4, 6, 7, 8, 10, 12}
-  fencer_tp_info = {200, 300, 400, 450, 500, 550, 600, 630}
-  warcry_self = buffactive['Warcry'] or false
+  -- Set to 'True' if you want to dual wield weapons if you have the trait available
+  -- You may not want to dual wield because it will disable the Fencer trait
+  use_dw_if_available = false
+
+  skill_ids_2h = S{4, 6, 7, 8, 10, 12} -- DO NOT MODIFY
+  fencer_tp_bonus = {200, 300, 400, 450, 500, 550, 600, 630} -- DO NOT MODIFY
+  warcry_self = buffactive['Warcry'] or false -- DO NOT MODIFY
   
+  -- DO NOT MODIFY
   activate_AM_mode = {
     ["Conqueror"] = S{"Aftermath: Lv.3"},
     ["Bravura"] = S{"Aftermath: Lv.1", "Aftermath: Lv.2", "Aftermath: Lv.3"},
@@ -1315,7 +1320,7 @@ function select_weapons()
     return sets.ToyWeapon[state.ToyWeapons.current]
   else
     if sets.WeaponSet[state.WeaponSet.current] then
-      if has_dual_wield_trait() and sets.WeaponSet[state.WeaponSet.current].DW then
+      if use_dw_if_available and has_dual_wield_trait() and sets.WeaponSet[state.WeaponSet.current].DW then
         return sets.WeaponSet[state.WeaponSet.current].DW
       else
         return sets.WeaponSet[state.WeaponSet.current]
@@ -1667,11 +1672,24 @@ function calc_fencer_tier()
 end
 
 function calc_fencer_tp_bonus()
+  local total_fencer_tp_bonus = 0
   local fencer_tier = calc_fencer_tier()
-  if fencer_tier == 0 then
-    return 0
+  if fencer_tier > 0 then
+    -- Add Fencer TP bonus based on base trait
+    total_fencer_tp_bonus = fencer_tp_bonus[fencer_tier]
+    -- Add TP Bonus based on JP gifts
+    local jp_spent = self.job_points.war.jp_spent
+    if jp_spent >= 1805 then
+      total_fencer_tp_bonus = total_fencer_tp_bonus + 230
+    elseif jp_spent >= 980 then
+      total_fencer_tp_bonus = total_fencer_tp_bonus + 160
+    elseif jp_spent >= 405 then
+      total_fencer_tp_bonus = total_fencer_tp_bonus + 100
+    elseif jp_spent >= 80 then
+      total_fencer_tp_bonus = total_fencer_tp_bonus + 50
+    end
   end
-  return fencer_tp_info[fencer_tier]
+  return total_fencer_tp_bonus
 end
 
 function test()
