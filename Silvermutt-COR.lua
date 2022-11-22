@@ -229,6 +229,7 @@ function user_unload()
   send_command('unbind ^p')
   send_command('unbind ^l')
   send_command('unbind @`')
+  send_command('unbind ^/')
 
   send_command('unbind !q')
   send_command('unbind !`')
