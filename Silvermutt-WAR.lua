@@ -311,21 +311,21 @@ function init_gear_sets()
   sets.precast.WS['Savage Blade'].AttCappedMaxTP = sets.precast.WS.AttCappedMaxTP
 
   -- 85% VIT; 4 hit, dmg varies with TP
+  -- DA Dmg does not apply to WS, but DA itself will cause the WS to deal more dmg
   sets.precast.WS['Upheaval'] = {
-    -- WSD Build
-    -- ammo="Knobkierrie",                -- __, 23, __,  6, __ <__, __, __> [__/__, ___]
-    -- head=gear.Nyame_B_head,            -- 24, 60, 40, 10, __ < 4, __, __> [ 7/ 7, 123]
-    -- body=gear.Nyame_B_body,            -- 35, 60, 40, 12, __ < 5, __, __> [ 9/ 9, 139]
-    -- hands=gear.Nyame_B_hands,          -- 39, 60, 40, 10, __ < 4, __, __> [ 7/ 7, 112]
-    -- legs=gear.Nyame_B_legs,            -- 30, 60, 40, 11, __ < 5, __, __> [ 8/ 8, 150]
-    -- feet=gear.Nyame_B_feet,            -- 24, 60, 40, 10, __ < 4, __, __> [ 7/ 7, 150]
-    -- neck="Warrior's Bead Necklace +1", -- __, 20, 20, __, __ < 6, __, __> [__/__, ___]
-    -- ear1="Moonshade Earring",          -- __, __,  4, __, __ <__, __, __> [__/__, ___]; TP bonus+250
-    -- ear2="Thrud Earring",              -- 10, __, __,  3, __ <__, __, __> [__/__, ___]
-    -- ring1="Regal Ring",                -- 10, 20, __, __, __ <__, __, __> [__/__, ___]
-    -- ring2="Gelatinous Ring +1",        -- 15, __, __, __, __ <__, __, __> [ 7/-1, ___]
-    -- back=gear.WAR_STR_WSD_Cape,        -- __, 20, 20, 10, __ <__, __, __> [10/__, ___]; DA Dmg +20%
-    -- waist="Ioskeha Belt +1",           -- __, __, 17, __, __ < 9, __, __> [__/__, ___]
+    ammo="Knobkierrie",                   -- __, 23, __,  6, __ <__, __, __> [__/__, ___]
+    head=gear.Nyame_B_head,               -- 24, 60, 40, 10, __ < 4, __, __> [ 7/ 7, 123]
+    body=gear.Nyame_B_body,               -- 35, 60, 40, 12, __ < 5, __, __> [ 9/ 9, 139]
+    hands=gear.Nyame_B_hands,             -- 39, 60, 40, 10, __ < 4, __, __> [ 7/ 7, 112]
+    legs=gear.Nyame_B_legs,               -- 30, 60, 40, 11, __ < 5, __, __> [ 8/ 8, 150]
+    feet=gear.Nyame_B_feet,               -- 24, 60, 40, 10, __ < 4, __, __> [ 7/ 7, 150]
+    neck="Warrior's Bead Necklace +1",    -- __, 20, 20, __, __ < 6, __, __> [__/__, ___]
+    ear1="Moonshade Earring",             -- __, __,  4, __, __ <__, __, __> [__/__, ___]; TP bonus+250
+    ear2="Thrud Earring",                 -- 10, __, __,  3, __ <__, __, __> [__/__, ___]
+    ring1="Regal Ring",                   -- 10, 20, __, __, __ <__, __, __> [__/__, ___]
+    ring2="Gelatinous Ring +1",           -- 15, __, __, __, __ <__, __, __> [ 7/-1, ___]
+    back=gear.WAR_STR_WSD_Cape,           -- __, 20, 20, 10, __ <__, __, __> [10/__, ___]; DA Dmg +20%
+    waist="Ioskeha Belt +1",              -- __, __, 17, __, __ < 9, __, __> [__/__, ___]
     -- WAR Traits                            __, __, __, __, __ <33, __, __> [__/__, ___]
     -- 187 VIT, 398 Attack, 244 Accuracy, 72 WSD, 0 PDL <61 DA, 2 TA, QA> [55 PDT/37 MDT, 674 M.Eva]
 
@@ -333,47 +333,24 @@ function init_gear_sets()
     -- hands="Boii Mufflers +3",          -- 47, 62, 62, 12, __ <__, __, __> [__/__,  82]
     -- back=gear.WAR_VIT_WSD_Cape,        -- 30, 20, 20, 10, __ <__, __, __> [10/__, ___]; DA Dmg +20%
     -- 225 VIT, 390 Attack, 288 Accuracy, 74 WSD, 0 PDL <67 DA, 0 TA, QA> [48 PDT/30 MDT, 644 M.Eva]
-    -------------------------------------------------------------------------------------------------------
-    -- DA Build
-    ammo="Coiste Bodhar",                 -- __, 15, __, __, __ < 3, __, __> [__/__, ___]
-    head="Sakpata's Helm",                -- 40, 65, 50, __,  5 < 5, __, __> [ 7/ 7, 123]; DA Dmg +13%
-    body=gear.Nyame_B_body,               -- 35, 60, 40, 12, __ < 5, __, __> [ 9/ 9, 139]
-    hands=gear.Nyame_B_hands,             -- 39, 60, 40, 10, __ < 4, __, __> [ 7/ 7, 112]
-    legs="Agoge Cuisses +3",              -- 30, 64, 39, __, __ < 6, __, __> [__/__, 100]; DA Dmg +11%
-    feet=gear.Nyame_B_feet,               -- 24, 60, 40, 10, __ < 4, __, __> [ 7/ 7, 150]
-    neck="Warrior's Bead Necklace +1",    -- __, 20, 20, __, __ < 6, __, __> [__/__, ___]
-    ear1="Schere Earring",                -- __, 10, 15, __, __ < 6, __, __> [__/__, ___]
-    ear2="Boii Earring",                  -- __, __, __, __, __ < 7, __, __> [__/__, ___]
-    ring1="Epaminondas's Ring",           -- __, __, __,  5, __ <__, __, __> [__/__, ___]
-    ring2="Gelatinous Ring +1",           -- 15, __, __, __, __ <__, __, __> [ 7/-1, ___]
-    back=gear.WAR_STR_DA_Cape,            -- __, 20, 20, __, __ <10, __, __> [10/__, ___]
-    waist="Ioskeha Belt +1",              -- __, __, 17, __, __ < 9, __, __> [__/__, ___]
-    -- WAR Traits                            __, __, __, __, __ <33, __, __> [__/__, ___]
-    -- 183 VIT, 374 Attack, 281 Accuracy, 37 WSD, 5 PDL <98 DA, 0 TA, 0 QA> [47 PDT/29 MDT, 624 M.Eva]
-
-    -- neck="Warrior's Bead Necklace +2", -- __, 25, 25, __, __ < 7, __, __> [__/__, ___]
-    -- ear2="Boii Earring +2",            -- 15, __, 20, __, __ < 9, __, __> [__/__, ___]
-    -- back=gear.WAR_VIT_DA_Cape,         -- 30, 20, 20, __, __ <10, __, __> [10/__, ___]; DA Dmg +20%
-    -- 228 VIT, 379 Attack, 306 Accuracy, 37 WSD, 5 PDL <101 DA, 0 TA, 0 QA> [47 PDT/29 MDT, 624 M.Eva]
   }
   sets.precast.WS['Upheaval'].MaxTP = set_combine(sets.precast.WS['Upheaval'], {
     ear1="Schere Earring",                -- __, 10, 15, __, __ < 6, __, __> [__/__, ___]
   })
   sets.precast.WS['Upheaval'].AttCapped = set_combine(sets.precast.WS['Upheaval'], {
-    -- WSD Build
-    -- ammo="Knobkierrie",                -- __, 23, __,  6, __ <__, __, __> [__/__, ___]
-    -- head="Sakpata's Helm",             -- 40, 65, 50, __,  5 < 5, __, __> [ 7/ 7, 123]; DA Dmg +13%
-    -- body="Sakpata's Breastplate",      -- 42, 65, 50, __,  8 < 8, __, __> [10/10, 139]
-    -- hands=gear.Nyame_B_hands,          -- 39, 60, 40, 10, __ < 4, __, __> [ 7/ 7, 112]
-    -- legs="Sakpata's Cuisses",          -- 34, 65, 50, __,  7 < 7, __, __> [ 9/ 9, 150]
-    -- feet=gear.Nyame_B_feet,            -- 24, 60, 40, 10, __ < 4, __, __> [ 7/ 7, 150]
-    -- neck="Warrior's Bead Necklace +1", -- __, 20, 20, __, __ < 6, __, __> [__/__, ___]
-    -- ear1="Moonshade Earring",          -- __, __,  4, __, __ <__, __, __> [__/__, ___]; TP bonus+250
-    -- ear2="Thrud Earring",              -- 10, __, __,  3, __ <__, __, __> [__/__, ___]
-    -- ring1="Regal Ring",                -- 10, 20, __, __, __ <__, __, __> [__/__, ___]
-    -- ring2="Gelatinous Ring +1",        -- 15, __, __, __, __ <__, __, __> [ 7/-1, ___]
-    -- back=gear.WAR_STR_WSD_Cape,        -- __, 20, 20, 10, __ <__, __, __> [10/__, ___]; DA Dmg +20%
-    -- waist="Ioskeha Belt +1",           -- __, __, 17, __, __ < 9, __, __> [__/__, ___]
+    ammo="Knobkierrie",                   -- __, 23, __,  6, __ <__, __, __> [__/__, ___]
+    head="Sakpata's Helm",                -- 40, 65, 50, __,  5 < 5, __, __> [ 7/ 7, 123]; DA Dmg +13%
+    body="Sakpata's Breastplate",         -- 42, 65, 50, __,  8 < 8, __, __> [10/10, 139]
+    hands=gear.Nyame_B_hands,             -- 39, 60, 40, 10, __ < 4, __, __> [ 7/ 7, 112]
+    legs="Sakpata's Cuisses",             -- 34, 65, 50, __,  7 < 7, __, __> [ 9/ 9, 150]
+    feet=gear.Nyame_B_feet,               -- 24, 60, 40, 10, __ < 4, __, __> [ 7/ 7, 150]
+    neck="Warrior's Bead Necklace +1",    -- __, 20, 20, __, __ < 6, __, __> [__/__, ___]
+    ear1="Moonshade Earring",             -- __, __,  4, __, __ <__, __, __> [__/__, ___]; TP bonus+250
+    ear2="Thrud Earring",                 -- 10, __, __,  3, __ <__, __, __> [__/__, ___]
+    ring1="Regal Ring",                   -- 10, 20, __, __, __ <__, __, __> [__/__, ___]
+    ring2="Gelatinous Ring +1",           -- 15, __, __, __, __ <__, __, __> [ 7/-1, ___]
+    back=gear.WAR_STR_WSD_Cape,           -- __, 20, 20, 10, __ <__, __, __> [10/__, ___]; DA Dmg +20%
+    waist="Ioskeha Belt +1",              -- __, __, 17, __, __ < 9, __, __> [__/__, ___]
     -- WAR Traits                            __, __, __, __, __ <33, __, __> [__/__, ___]
     -- 214 VIT, 398 Attack, 291 Accuracy, 39 WSD, 20 PDL <76 DA, 0 TA, 0 QA> [57 PDT/39 MDT, 674 M.Eva]
 
@@ -382,40 +359,6 @@ function init_gear_sets()
     -- neck="Warrior's Bead Necklace +2", -- __, 25, 25, __, __ < 7, __, __> [__/__, ___]
     -- back=gear.WAR_VIT_WSD_Cape,        -- 30, 20, 20, 10, __ <__, __, __> [10/__, ___]; DA Dmg +20%
     -- 258 VIT, 413 Attack, 331 Accuracy, 41 WSD, 23 PDL <74 DA, 0 TA, 0 QA> [41 PDT/23 MDT, 624 M.Eva]
-    -------------------------------------------------------------------------------------------------------
-    -- DA Build
-    ammo="Coiste Bodhar",                 -- __, 15, __, __, __ < 3, __, __> [__/__, ___]
-    head="Sakpata's Helm",                -- 40, 65, 50, __,  5 < 5, __, __> [ 7/ 7, 123]; DA Dmg +13%
-    body="Sakpata's Breastplate",         -- 42, 65, 50, __,  8 < 8, __, __> [10/10, 139]
-    hands=gear.Nyame_B_hands,             -- 39, 60, 40, 10, __ < 4, __, __> [ 7/ 7, 112]
-    legs="Agoge Cuisses +3",              -- 30, 64, 39, __, __ < 6, __, __> [__/__, 100]; DA Dmg +11%
-    feet=gear.Nyame_B_feet,               -- 24, 60, 40, 10, __ < 4, __, __> [ 7/ 7, 150]
-    neck="Warrior's Bead Necklace +1",    -- __, 20, 20, __, __ < 6, __, __> [__/__, ___]
-    ear1="Schere Earring",                -- __, 10, 15, __, __ < 6, __, __> [__/__, ___]
-    ear2="Boii Earring",                  -- __, __, __, __, __ < 7, __, __> [__/__, ___]
-    ring1="Epaminondas's Ring",           -- __, __, __,  5, __ <__, __, __> [__/__, ___]
-    ring2="Gelatinous Ring +1",           -- 15, __, __, __, __ <__, __, __> [ 7/-1, ___]
-    back=gear.WAR_STR_DA_Cape,            -- __, 20, 20, __, __ <10, __, __> [10/__, ___]
-    waist="Ioskeha Belt +1",              -- __, __, 17, __, __ < 9, __, __> [__/__, ___]
-    -- WAR Traits                            __, __, __, __, __ <33, __, __> [__/__, ___]
-    -- 190 VIT, 379 Attack, 291 Accuracy, 25 WSD, 13 PDL <101 DA, 0 TA, 0 QA> [48 PDT/30 MDT, 624 M.Eva]
-
-    -- Ideal DA Build
-    -- ammo="Knobkierrie",                -- __, 23, __,  6, __ <__, __, __> [__/__, ___]
-    -- head="Sakpata's Helm",             -- 40, 65, 50, __,  5 < 5, __, __> [ 7/ 7, 123]; DA Dmg +13%
-    -- body="Sakpata's Breastplate",      -- 42, 65, 50, __,  8 < 8, __, __> [10/10, 139]
-    -- hands=gear.Nyame_B_hands,          -- 39, 60, 40, 10, __ < 4, __, __> [ 7/ 7, 112]
-    -- legs="Boii Cuisses +3",            -- 40, 73, 63, __, 10 < 8, __, __> [__/__, 130]; TP Bonus+100
-    -- feet=gear.Nyame_B_feet,            -- 24, 60, 40, 10, __ < 4, __, __> [ 7/ 7, 150]
-    -- neck="Warrior's Bead Necklace +2", -- __, 25, 25, __, __ < 7, __, __> [__/__, ___]
-    -- ear1="Schere Earring",             -- __, 10, 15, __, __ < 6, __, __> [__/__, ___]
-    -- ear2="Boii Earring",               -- __, __, __, __, __ < 7, __, __> [__/__, ___]
-    -- ring1="Sroda Ring",                -- __, __, __, __,  3 <__, __, __> [__/__, ___]
-    -- ring2="Gelatinous Ring +1",        -- 15, __, __, __, __ <__, __, __> [ 7/-1, ___]
-    -- back=gear.WAR_VIT_DA_Cape,         -- 30, 20, 20, __, __ <10, __, __> [10/__, ___]; DA Dmg +20%
-    -- waist="Ioskeha Belt +1",           -- __, __, 17, __, __ < 9, __, __> [__/__, ___]
-    -- WAR Traits                            __, __, __, __, __ <33, __, __> [__/__, ___]
-    -- 230 VIT, 401 Attack, 320 Accuracy, 26 WSD, 26 PDL <101 DA, 0 TA, 0 QA> [48 PDT/30 MDT, 654 M.Eva]
   })
   sets.precast.WS['Upheaval'].AttCappedMaxTP = set_combine(sets.precast.WS['Upheaval'].AttCapped, {
     ear1="Schere Earring",                -- __, 10, 15, __, __ < 6, __, __> [__/__, ___]
