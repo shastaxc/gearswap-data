@@ -69,6 +69,8 @@ function job_setup()
   state.EnmityMode = M{['description']='Enmity Mode', 'Normal', 'Low', 'Schere'}
 
   skill_ids_2h = S{4, 6, 7, 8, 10, 12}
+  fencer_tp_info = {200, 300, 400, 450, 500, 550, 600, 630}
+  warcry_self = buffactive['Warcry'] or false
   
   activate_AM_mode = {
     ["Conqueror"] = S{"Aftermath: Lv.3"},
@@ -1164,6 +1166,10 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
 end
 
 function job_aftercast(spell, action, spellMap, eventArgs)
+  if spell.english == 'Warcry' and not spell.interrupted then
+    warcry_self = true
+  end
+
   silibs.aftercast_hook(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
 end
@@ -1230,6 +1236,10 @@ function job_buff_change(buff,gain)
       else
           send_command('timers delete "Aftermath Tier I";gs c -cd AM3 Lost!!!')
       end
+  end
+
+  if buff == 'Warcry' and not gain and warcry_self then
+    warcry_self = false
   end
 end
 
@@ -1367,9 +1377,13 @@ function get_custom_wsmode(spell, action, spellMap)
     end
   end
   local buff_bonus = T{
+    warcry_self and 700 or 0,
     buffactive['Crystal Blessing'] and 250 or 0,
   }:sum()
-  if player.tp > 3000-tp_bonus_from_weapons-buff_bonus-buffer then
+  local trait_bonus = T{
+    calc_fencer_tp_bonus()
+  }:sum()
+  if player.tp > 3000-tp_bonus_from_weapons-buff_bonus-trait_bonus-buffer then
     wsmode = wsmode..'MaxTP'
   end
 
@@ -1476,9 +1490,6 @@ end
 function user_customize_defense_set(defenseSet)
   -- Any non-silibs modifications should go in customize_defense_set function
   return silibs.customize_defense_set(defenseSet)
-end
-
-function test()
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -1629,4 +1640,39 @@ end)
 function select_default_macro_book()
   -- Default macro set/book: (set, book)
   set_macro_page(2, 14)
+end
+
+-- Calculate Fencer tier. Fencer active if not two-handed weapon, and offhand is empty or shield.
+function calc_fencer_tier()
+  local fencer = 0
+  if not classes.CustomMeleeGroups:contains('TwoHanded') then
+    if player.equipment.sub == 'empty' then
+      fencer = 5
+    else
+      local is_using_shield = res.items:with('en', player.equipment.sub).category == 'Armor'
+      if is_using_shield then
+        fencer = 5
+        if player.equipment.sub == 'Blurred Shield +1' then
+          fencer = fencer + 1
+        end
+      end
+    end
+  end
+  if fencer > 0 then
+    -- Can also assume any single handed ws will use JSE neck for another fencer+1
+    fencer = fencer + 1
+  end
+  -- Fencer caps at level 8
+  return math.min(fencer, 8)
+end
+
+function calc_fencer_tp_bonus()
+  local fencer_tier = calc_fencer_tier()
+  if fencer_tier == 0 then
+    return 0
+  end
+  return fencer_tp_info[fencer_tier]
+end
+
+function test()
 end
