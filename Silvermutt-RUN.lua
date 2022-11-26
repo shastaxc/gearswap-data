@@ -624,7 +624,7 @@ function init_gear_sets()
     ammo="Staunch Tathlum +1",                  -- _, __, 11 [ 3/ 3,   0]
     head="Futhark Bandeau +3",                  -- 7, __, __ [ 6/ 0,  56]
     body=gear.Herc_Phalanx_body,                -- 5, __, __ [__/__,  61]
-    hands=gear.Herc_Phalanx_hands,              -- 4, __, __ [ 2/__,  20]
+    hands=gear.Herc_Phalanx_hands,              -- 5, __, __ [ 2/__,  20]
     legs=gear.Herc_Phalanx_legs,                -- 5, __, __ [ 2/__,  38]
     feet=gear.Herc_Phalanx_feet,                -- 5, __, __ [ 2/__,   9]
     neck="Futhark Torque +1",                   -- _, __, __ [ 6/ 6,  45]
@@ -636,10 +636,9 @@ function init_gear_sets()
     waist="Audumbla Sash",                      -- _, __, 10 [ 4/ 0,   0]
     -- Base/Traits/Gifts                           _,440,  6 [__/__, ___]
     -- Master Levels                                  23
-    -- 26 Phalanx, 473 Enh Skill, 27% Interrupt [51 PDT/29 MDT, 747 HP]
-    -- 60 Total Phalanx
+    -- 27 Phalanx, 473 Enh Skill, 27% Interrupt [51 PDT/29 MDT, 747 HP]
+    -- 61 Total Phalanx
 
-    -- hands=gear.Herc_Phalanx_hands,           -- 5, __, __ [ 2/__,  20]
     -- neck="Futhark Torque +2",                -- _, __, __ [ 7/ 7,  60]
     -- ring2="Moonlight Ring",                  -- _, __, __ [ 5/ 5, 110]
     -- Base/Traits/Gifts                           _,440,  6 [__/__, ___]
