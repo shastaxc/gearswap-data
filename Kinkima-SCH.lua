@@ -2020,5 +2020,4 @@ function select_default_macro_book()
 end
 
 function test()
-  print('classes.NoSkillSpells:contains(Embrava): '..tostring(classes.NoSkillSpells:contains('Embrava')))
 end
