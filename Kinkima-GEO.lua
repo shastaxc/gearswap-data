@@ -2071,6 +2071,8 @@ function job_self_command(cmdParams, eventArgs)
     elseif cmdParams[2] == 'reset' then
       cycle_weapons('reset')
     end
+  elseif cmdParams[1] == 'test' then
+    test()
   end
 
   if not midaction() then
@@ -2250,4 +2252,7 @@ function select_weapons()
   else
     return {}
   end
+end
+
+function test()
 end
