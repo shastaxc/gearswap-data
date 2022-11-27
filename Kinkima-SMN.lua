@@ -89,7 +89,7 @@ function job_setup()
   pacts = {}
   pacts.cure = {['Carbuncle']='Healing Ruby'}
   pacts.curaga = {['Carbuncle']='Healing Ruby II', ['Garuda']='Whispering Wind', ['Leviathan']='Spring Water'}
-  pacts.buffoffense = {['Carbuncle']='Glittering Ruby', ['Ifrit']='Crimson Howl', ['Garuda']='Hastega', ['Ramuh']='Rolling Thunder',
+  pacts.buffoffense = {['Carbuncle']='Glittering Ruby', ['Ifrit']='Crimson Howl', ['Garuda']='Hastega II', ['Ramuh']='Rolling Thunder',
       ['Fenrir']='Ecliptic Growl'}
   pacts.buffdefense = {['Carbuncle']='Shining Ruby', ['Shiva']='Frost Armor', ['Garuda']='Aerial Armor', ['Titan']='Earthen Ward',
       ['Ramuh']='Lightning Armor', ['Fenrir']='Ecliptic Howl', ['Diabolos']='Noctoshield', ['Cait Sith']='Reraise II'}
@@ -121,7 +121,7 @@ function job_setup()
   wards.durations = {
       ['Crimson Howl'] = 60, ['Earthen Armor'] = 60, ['Inferno Howl'] = 60, ['Heavenward Howl'] = 60,
       ['Rolling Thunder'] = 120, ['Fleet Wind'] = 120, ['Shining Ruby'] = 180, ['Frost Armor'] = 180,
-      ['Lightning Armor'] = 180, ['Ecliptic Growl'] = 180, ['Glittering Ruby'] = 180, ['Hastega'] = 180,
+      ['Lightning Armor'] = 180, ['Ecliptic Growl'] = 180, ['Glittering Ruby'] = 180, ['Hastega II'] = 180,
       ['Noctoshield'] = 180, ['Ecliptic Howl'] = 180, ['Dream Shroud'] = 180, ['Reraise II'] = 3600
   }
   -- Icons to use when creating the custom timer.
@@ -131,7 +131,7 @@ function job_setup()
       ['Dream Shroud']    = 'spells/00304.png', -- 00304 for Diabolos
       ['Noctoshield']     = 'spells/00106.png', -- 00106 for Phalanx
       ['Inferno Howl']    = 'spells/00298.png', -- 00298 for Ifrit
-      ['Hastega']         = 'spells/00358.png', -- 00358 for Hastega
+      ['Hastega II']      = 'spells/00358.png', -- 00358 for Hastega
       ['Rolling Thunder'] = 'spells/00104.png', -- 00358 for Enthunder
       ['Frost Armor']     = 'spells/00250.png', -- 00250 for Ice Spikes
       ['Lightning Armor'] = 'spells/00251.png', -- 00251 for Shock Spikes
