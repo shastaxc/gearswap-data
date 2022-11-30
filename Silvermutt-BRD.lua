@@ -1336,6 +1336,8 @@ function job_self_command(cmdParams, eventArgs)
     send_command('@input /ma '..state.Carol.value..' <stpc>')
   elseif cmdParams[1] == 'threnody' then
     send_command('@input /ma '..state.Threnody.value..' <stnpc>')
+  elseif cmdParams[1] == 'test' then
+    test()
   end
 
   gearinfo(cmdParams, eventArgs)
@@ -1731,4 +1733,7 @@ function set_lockstyle()
       send_command('input /lockstyleset '..lockstyleset)
     end
   end, 10)
+end
+
+function test()
 end

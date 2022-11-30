@@ -1106,8 +1106,6 @@ function user_customize_defense_set(defenseSet)
   return silibs.customize_defense_set(defenseSet)
 end
 
-function test()
-end
 
 -------------------------------------------------------------------------------------------------------------------
 -- Utility functions specific to this job.
@@ -1225,4 +1223,7 @@ end)
 function select_default_macro_book()
   -- Default macro set/book: (set, book)
   set_macro_page(2, 10)
+end
+
+function test()
 end

@@ -1451,6 +1451,8 @@ function job_self_command(cmdParams, eventArgs)
     send_command('@input /ma "'..state.Barstatus.current..'" <me>')
   elseif cmdParams[1] == 'storm' then
     send_command('@input /ma "'..state.Storm.current..'" <stpc>')
+  elseif cmdParams[1] == 'test' then
+    test()
   end
 end
 
@@ -1559,4 +1561,7 @@ end
 function select_default_macro_book()
   -- Default macro set/book
   set_macro_page(2, 4)
+end
+
+function test()
 end

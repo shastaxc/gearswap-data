@@ -1787,6 +1787,8 @@ function job_self_command(cmdParams, eventArgs)
     elseif cmdParams[2] == 'reset' then
       cycle_toy_weapons('reset')
     end
+  elseif cmdParams[1] == 'test' then
+    test()
   end
   gearinfo(cmdParams, eventArgs)
 end
@@ -1940,4 +1942,7 @@ function has_dual_wield_trait()
     return true
   end
   return false
+end
+
+function test()
 end

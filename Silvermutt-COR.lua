@@ -2810,5 +2810,4 @@ function select_default_macro_book()
 end
 
 function test()
-  print('mob_list: '..inspect(windower.ffxi.get_mob_list('Pilgrim Moogle')))
 end
