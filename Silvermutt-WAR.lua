@@ -293,15 +293,17 @@ function init_gear_sets()
     ammo="Crepuscular Pebble",            --  3, __, __, __, __,  3 [ 3/ 3, ___]
     head="Sakpata's Helm",                -- 33, 23, 65, 50, __,  5 [ 7/ 7, 123]
     body="Sakpata's Breastplate",         -- 42, 28, 65, 50, __,  8 [10/10, 139]
+    hands="Sakpata's Gauntlets",          -- 24, 33, 65, 50, __,  6 [ 8/ 8, 112]
     legs="Sakpata's Cuisses",             -- 48, 21, 65, 50, __,  7 [ 9/ 9, 150]
-    -- 258 STR, 136 MND, 377 Attack, 301 Accuracy, 40 WSD, 26 PDL [46 PDT/36 MDT, 644 M.Eva]
+    feet="Sakpata's Leggings",            -- 29, 19, 65, 50, __,  4 [ 6/ 6, 150]
+    -- 264 STR, 124 MND, 385 Attack, 299 Accuracy, 18 WSD, 36 PDL [53 PDT/43 MDT, 674 M.Eva]
 
     -- legs="Boii Cuisses +3",            -- 53, 27, 73, 63, __, 10 [__/__, 130]; TP Bonus+100
-    -- 263 STR, 142 MND, 385 Attack, 314 Accuracy, 40 WSD, 29 PDL [37 PDT/27 MDT, 624 M.Eva]
+    -- 269 STR, 130 MND, 328 Attack, 312 Accuracy, 18 WSD, 39 PDL [44 PDT/34 MDT, 654 M.Eva]
   })
   sets.precast.WS.AttCappedMaxTP = set_combine(sets.precast.WS.AttCapped, {
     ear2="Ishvara Earring",               -- __, __, __, __,  2, __ [__/__, ___]
-    -- 236 STR, 159 MND, 385 Attack, 267 Accuracy, 81 WSD, 3 PDL [41 PDT/31 MDT, 644 M.Eva]
+    -- 269 STR, 130 MND, 328 Attack, 308 Accuracy, 20 WSD, 39 PDL [44 PDT/34 MDT, 654 M.Eva]
   })
 
   -- 50% STR/50% MND
@@ -341,9 +343,9 @@ function init_gear_sets()
     ammo="Knobkierrie",                   -- __, 23, __,  6, __ <__, __, __> [__/__, ___]
     head="Sakpata's Helm",                -- 40, 65, 50, __,  5 < 5, __, __> [ 7/ 7, 123]; DA Dmg +13%
     body="Sakpata's Breastplate",         -- 42, 65, 50, __,  8 < 8, __, __> [10/10, 139]
-    hands=gear.Nyame_B_hands,             -- 39, 60, 40, 10, __ < 4, __, __> [ 7/ 7, 112]
+    hands="Sakpata's Gauntlets",          -- 46, 65, 50, __,  6 < 6, __, __> [ 8/ 8, 112]
     legs="Sakpata's Cuisses",             -- 34, 65, 50, __,  7 < 7, __, __> [ 9/ 9, 150]
-    feet=gear.Nyame_B_feet,               -- 24, 60, 40, 10, __ < 4, __, __> [ 7/ 7, 150]
+    feet="Sakpata's Leggings",            -- 30, 65, 50, __,  4 < 4, __, __> [ 6/ 6, 150]
     neck="Warrior's Bead Necklace +1",    -- __, 20, 20, __, __ < 6, __, __> [__/__, ___]
     ear1="Moonshade Earring",             -- __, __,  4, __, __ <__, __, __> [__/__, ___]; TP bonus+250
     ear2="Thrud Earring",                 -- 10, __, __,  3, __ <__, __, __> [__/__, ___]
@@ -352,13 +354,13 @@ function init_gear_sets()
     back=gear.WAR_STR_WSD_Cape,           -- __, 20, 20, 10, __ <__, __, __> [10/__, ___]; DA Dmg +20%
     waist="Ioskeha Belt +1",              -- __, __, 17, __, __ < 9, __, __> [__/__, ___]
     -- WAR Traits                            __, __, __, __, __ <33, __, __> [__/__, ___]
-    -- 214 VIT, 398 Attack, 291 Accuracy, 39 WSD, 20 PDL <76 DA, 0 TA, 0 QA> [57 PDT/39 MDT, 674 M.Eva]
+    -- 227 VIT, 408 Attack, 311 Accuracy, 19 WSD, 30 PDL <78 DA, 0 TA, 0 QA> [57 PDT/39 MDT, 674 M.Eva]
 
     -- hands="Boii Mufflers +3",          -- 47, 62, 62, 12, __ <__, __, __> [__/__,  82]
     -- legs="Boii Cuisses +3",            -- 40, 73, 63, __, 10 < 8, __, __> [__/__, 130]; TP Bonus+100
     -- neck="Warrior's Bead Necklace +2", -- __, 25, 25, __, __ < 7, __, __> [__/__, ___]
     -- back=gear.WAR_VIT_WSD_Cape,        -- 30, 20, 20, 10, __ <__, __, __> [10/__, ___]; DA Dmg +20%
-    -- 258 VIT, 413 Attack, 331 Accuracy, 41 WSD, 23 PDL <74 DA, 0 TA, 0 QA> [41 PDT/23 MDT, 624 M.Eva]
+    -- 264 VIT, 418 Attack, 341 Accuracy, 31 WSD, 27 PDL <74 DA, 0 TA, 0 QA> [40 PDT/22 MDT, 624 M.Eva]
   })
   sets.precast.WS['Upheaval'].AttCappedMaxTP = set_combine(sets.precast.WS['Upheaval'].AttCapped, {
     ear1="Schere Earring",                -- __, 10, 15, __, __ < 6, __, __> [__/__, ___]
@@ -459,7 +461,7 @@ function init_gear_sets()
     body="Sakpata's Breastplate",         -- 42, 65, 50, __,  8 < 8, __, __> [10/10, 139]
     hands="Sakpata's Gauntlets",          -- 24, 65, 50, __,  6 < 6, __, __> [ 8/ 8, 112]
     legs="Sakpata's Cuisses",             -- 48, 65, 50, __,  7 < 7, __, __> [ 9/ 9, 150]
-    feet=gear.Nyame_B_feet,               -- 23, 60, 40, 10, __ < 4, __, __> [ 7/ 7, 150]
+    feet="Sakpata's Leggings",            -- 30, 65, 50, __,  4 < 4, __, __> [ 6/ 6, 150]
     neck="Fotia Gorget",                  -- __, __, __, __, __ <__, __, __> [__/__, ___]; ftp+
     ear1="Moonshade Earring",             -- __,  4, __, __, __ <__, __, __> [__/__, ___]; TP Bonus+250
     ear2="Thrud Earring",                 -- 10, __, __,  3, __ <__, __, __> [__/__, ___]
@@ -468,10 +470,10 @@ function init_gear_sets()
     back=gear.WAR_STR_WSD_Cape,           -- 30, 20, 20, 10, __ <__, __, __> [10/__, ___]; DA Dmg+20%
     waist="Fotia Belt",                   -- __, __, __, __, __ <__, __, __> [__/__, ___]; ftp+
     -- WAR Traits                            __, __, __, __, __ <33, __, __> [__/__, ___]
-    -- 250 STR, 357 Attack, 273 Accuracy, 23 WSD, 29 PDL <63 DA, 0 TA, 3 QA> [51 PDT/41 MDT, 674 M.Eva]
+    -- 257 STR, 362 Attack, 283 Accuracy, 13 WSD, 33 PDL <63 DA, 0 TA, 3 QA> [50 PDT/40 MDT, 674 M.Eva]
     
     -- legs="Boii Cuisses +3",            -- 53, 73, 63, __, 10 < 8, __, __> [__/__, 130]; TP Bonus+100
-    -- 255 STR, 365 Attack, 286 Accuracy, 23 WSD, 32 PDL <64 DA, 0 TA, 3 QA> [42 PDT/32 MDT, 654 M.Eva]
+    -- 262 STR, 370 Attack, 296 Accuracy, 13 WSD, 36 PDL <64 DA, 0 TA, 3 QA> [41 PDT/31 MDT, 654 M.Eva]
   })
   sets.precast.WS['Resolution'].AttCappedMaxTP = set_combine(sets.precast.WS['Resolution'].AttCapped, {
     ear1="Ishvara Earring",               -- __, __, __,  2, __ <__, __, __> [__/__, ___]
@@ -1621,7 +1623,7 @@ function calc_fencer_tp_bonus()
     -- Add Fencer TP bonus based on base trait
     total_fencer_tp_bonus = fencer_tp_bonus[fencer_tier]
     -- Add TP Bonus based on JP gifts
-    local jp_spent = self.job_points.war.jp_spent
+    local jp_spent = player.job_points.war.jp_spent
     if jp_spent >= 1805 then
       total_fencer_tp_bonus = total_fencer_tp_bonus + 230
     elseif jp_spent >= 980 then
