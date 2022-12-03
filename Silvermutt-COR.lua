@@ -1,8 +1,8 @@
--- File Status: Good.
+-- File Status: Good. Experimenting with HasteInfo instead of GearInfo.
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs
--- Required addons: GearInfo, DistancePlus
+-- Required addons: HasteInfo, DistancePlus
 -- Recommended addons: WSBinder, Reorganizer
 
 -------------------------------------------------------------------------------------------------------------------
@@ -88,6 +88,7 @@ function get_sets()
   include('Mote-Include.lua') -- Executes job_setup, user_setup, init_gear_sets
   coroutine.schedule(function()
     send_command('gs reorg')
+    send_command('hi report')
   end, 1)
   coroutine.schedule(function()
     send_command('gs c equipweapons')
@@ -182,8 +183,7 @@ end
 function user_setup()
   silibs.user_setup_hook()
   Haste = 0
-  DW_needed = 0
-  DW = false
+  dw_needed = 0
   current_dp_type = nil -- Do not modify
   locked_waist = false -- Do not modify
 
@@ -2327,9 +2327,9 @@ function job_update(cmdParams, eventArgs)
 end
 
 function update_combat_form()
-  if DW == true then
+  if dw_needed >= 0 then
     state.CombatForm:set('DW')
-  elseif DW == false then
+  else
     state.CombatForm:reset()
   end
 end
@@ -2592,18 +2592,18 @@ windower.register_event('action',
 
 function determine_haste_group()
   classes.CustomMeleeGroups:clear()
-  if DW == true then
-    if DW_needed <= 0 then
+  if dw_needed >= 0 then
+    if dw_needed == 0 then
       classes.CustomMeleeGroups:append('MaxHaste')
-    elseif DW_needed > 0 and DW_needed <= 11 then
+    elseif dw_needed > 0 and dw_needed <= 11 then
       classes.CustomMeleeGroups:append('SuperHaste')
-    elseif DW_needed > 11 and DW_needed <= 18 then
+    elseif dw_needed > 11 and dw_needed <= 18 then
       classes.CustomMeleeGroups:append('HighHaste')
-    elseif DW_needed > 18 and DW_needed <= 31 then
+    elseif dw_needed > 18 and dw_needed <= 31 then
       classes.CustomMeleeGroups:append('MidHaste')
-    elseif DW_needed > 31 and DW_needed <= 42 then
+    elseif dw_needed > 31 and dw_needed <= 42 then
       classes.CustomMeleeGroups:append('LowHaste')
-    elseif DW_needed > 42 then
+    elseif dw_needed > 42 then
       classes.CustomMeleeGroups:append('')
     end
   end
@@ -2641,28 +2641,14 @@ function job_self_command(cmdParams, eventArgs)
     test()
   end
 
-  gearinfo(cmdParams, eventArgs)
+  process_hasteinfo(cmdParams, eventArgs)
 end
 
-function gearinfo(cmdParams, eventArgs)
-  if cmdParams[1] == 'gearinfo' then
-    if type(tonumber(cmdParams[2])) == 'number' then
-      if tonumber(cmdParams[2]) ~= DW_needed then
-        DW_needed = tonumber(cmdParams[2])
-        DW = true
-      end
-    elseif type(cmdParams[2]) == 'string' then
-      if cmdParams[2] == 'false' then
-        DW_needed = 0
-        DW = false
-      end
-    end
-    if type(tonumber(cmdParams[3])) == 'number' then
-      if tonumber(cmdParams[3]) ~= Haste then
-        Haste = tonumber(cmdParams[3])
-      end
-    end
-    if not midaction() then
+function process_hasteinfo(cmdParams, eventArgs)
+  if cmdParams[1] == 'hasteinfo' then
+    cmdParams[2] = tonumber(cmdParams[2])
+    if dw_needed ~= cmdParams[2] then
+      dw_needed = cmdParams[2]
       job_update()
     end
   end
@@ -2808,6 +2794,26 @@ function select_default_macro_book()
   -- Default macro set/book: (set, book)
   set_macro_page(2, 11)
 end
+
+windower.register_event("prerender", function()
+  if not frame_count then
+    frame_count = 1
+  end
+  -- Increment frame_count but prevent overflows
+  if frame_count > 10000 then
+    frame_count = 1
+  else
+    frame_count = frame_count + 1
+  end
+
+  if windower.ffxi.get_info().logged_in and windower.ffxi.get_player() then
+    -- Use frame count to limit execution rate
+    -- Every 15 frames (roughly 0.5 seconds depending on FPS)
+    if frame_count%15 == 0 then
+      job_update()
+    end
+  end
+end)
 
 function test()
 end
