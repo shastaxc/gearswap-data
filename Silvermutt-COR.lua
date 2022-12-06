@@ -2649,7 +2649,9 @@ function process_hasteinfo(cmdParams, eventArgs)
     cmdParams[2] = tonumber(cmdParams[2])
     if dw_needed ~= cmdParams[2] then
       dw_needed = cmdParams[2]
-      job_update()
+      if not midaction() then
+        job_update()
+      end
     end
   end
 end
