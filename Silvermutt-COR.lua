@@ -98,6 +98,7 @@ end
 
 -- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
 function job_setup()
+  silibs.enable_equip_loop()
   silibs.enable_cancel_outranged_ws()
   silibs.enable_cancel_on_blocking_status()
   silibs.enable_weapon_rearm()
@@ -2796,26 +2797,6 @@ function select_default_macro_book()
   -- Default macro set/book: (set, book)
   set_macro_page(2, 11)
 end
-
-windower.register_event("prerender", function()
-  if not frame_count then
-    frame_count = 1
-  end
-  -- Increment frame_count but prevent overflows
-  if frame_count > 10000 then
-    frame_count = 1
-  else
-    frame_count = frame_count + 1
-  end
-
-  if windower.ffxi.get_info().logged_in and windower.ffxi.get_player() then
-    -- Use frame count to limit execution rate
-    -- Every 15 frames (roughly 0.5 seconds depending on FPS)
-    if frame_count%15 == 0 then
-      job_update()
-    end
-  end
-end)
 
 function test()
 end
