@@ -17,12 +17,18 @@
 --              [ F12 ]             Update Current Gear / Report Current Status
 --              [ CTRL+F12 ]        Cycle Idle Modes
 --              [ ALT+F12 ]         Cancel Emergency -PDT/-MDT Mode
---              [ CTRL+` ]          Cycle Treasure Hunter Mode
 --              [ WIN+C ]           Toggle Capacity Points Mode
 --              [ CTRL+F8 ]         Toggle Attack Capped mode
---              [ WIN+W ]           Toggle Rearming Lock
---                                  (off = re-equip previous weapons if you go barehanded)
---                                  (on = prevent weapon auto-equipping)
+--
+--  Weapons:    [ CTRL+Insert ]     Cycle Main/Sub Weapon
+--              [ CTRL+Delete ]     Cycleback Main/Sub Weapon
+--              [ ALT+Delete ]      Reset Main/Sub Weapon
+--              [ CTRL+Home ]       Cycle Ranged Weapon
+--              [ CTRL+End ]        Cycleback Ranged Weapon
+--              [ ALT+End ]         Reset Ranged Weapon
+--              [ CTRL+PageUp ]     Cycle Toy Weapon
+--              [ CTRL+PageDown ]   Cycleback Toy Weapon
+--              [ ALT+PageDown ]    Reset Toy Weapon
 --
 --  Abilities:  [ ALT+` ]           Flee
 --              [ CTRL+Numpad0 ]    Sneak Attack
@@ -56,21 +62,19 @@
 --              [ CTRL+Numpad* ]    High Jump
 --              [ CTRL+Numpad- ]    Super Jump
 --
---  Other:      [ ALT+D ]           Cancel Invisible/Hide & Use Key on <t>
+--  Other:      [ E ]               Ranged Attack Current Target
+--
+--  SilverLibs keybinds:
+--              [ ALT+D ]           Interact
 --              [ ALT+S ]           Turn 180 degrees in place
---              [ CTRL+Insert ]     Cycle Main/Sub Weapon
---              [ CTRL+Delete ]     Cycleback Main/Sub Weapon
---              [ ALT+Delete ]      Reset Main/Sub Weapon
---              [ CTRL+Home ]       Cycle Ranged Weapon
---              [ CTRL+End ]        Cycleback Ranged Weapon
---              [ ALT+End ]         Reset Ranged Weapon
---              [ CTRL+PageUp ]     Cycle Toy Weapon
---              [ CTRL+PageDown ]   Cycleback Toy Weapon
---              [ ALT+PageDown ]    Reset Toy Weapon
---              [ E ]               Ranged Attack Current Target
+--              [ WIN+W ]           Toggle Rearming Lock
+--                                  (off = re-equip previous weapons if you go barehanded)
+--                                  (on = prevent weapon auto-equipping)
+--              [ CTRL+` ]          Cycle Treasure Hunter Mode
+--  For more info and available functions, see SilverLibs documentation at:
+--  https://github.com/shastaxc/silver-libs
 --
---
---              (Global-Binds.lua contains additional non-job-related keybinds)
+--  Global-Binds.lua contains additional non-job-related keybinds
 
 
 -------------------------------------------------------------------------------------------------------------------
@@ -216,30 +220,35 @@ function job_file_unload()
 
   send_command('unbind ^insert')
   send_command('unbind ^delete')
+  send_command('unbind !delete')
+
+  send_command('unbind ^home')
+  send_command('unbind ^end')
+  send_command('unbind !end')
 
   send_command('unbind ^pageup')
   send_command('unbind ^pagedown')
   send_command('unbind !pagedown')
 
+  send_command('unbind ^f8')
   send_command('unbind ^`')
   send_command('unbind !`')
   send_command('unbind @c')
 
+  send_command('bind ^numpad0 input /ja "Sneak Attack" <me>')
+  send_command('bind ^numpad. input /ja "Trick Attack" <me>')
+  send_command('bind %e input /ra <t>')
+
   send_command('unbind !w')
-  send_command('unbind ^numlock')
   send_command('unbind ^numpad/')
   send_command('unbind ^numpad*')
   send_command('unbind ^numpad-')
-  send_command('unbind ^numpad0')
-  send_command('unbind ^numpad.')
-  send_command('unbind %numpad0')
-
   send_command('unbind ^-')
   send_command('unbind ^=')
+  send_command('unbind %numpad0')
+  send_command('unbind ^numlock')
   send_command('unbind !numpad0')
   send_command('unbind !numpad.')
-  send_command('unbind ^f8')
-  send_command('unbind %e')
 end
 
 

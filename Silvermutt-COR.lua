@@ -9,72 +9,91 @@
 --  Keybinds
 -------------------------------------------------------------------------------------------------------------------
 
---  Modes:      [ F9 ]              Cycle Offense Modes
---              [ CTRL+F9 ]         Cycle Hybrid Modes
---              [ ALT+F9 ]          Cycle Ranged Modes
---              [ WIN+F9 ]          Cycle Weapon Skill Modes
+--  Modes:      [ F9 ]              Cycle Melee Accuracy Modes
+--              [ CTRL+F9 ]         Cycle Melee Defense Modes
+--              [ ALT+F9 ]          Cycle Ranged Accuracy Modes
 --              [ F10 ]             Emergency -PDT Mode
---              [ ALT+F10 ]         Toggle Kiting Mode
+--              [ ALT+F10 ]         Toggle Kiting Mode (on = move speed gear always equipped)
 --              [ F11 ]             Emergency -MDT Mode
 --              [ F12 ]             Update Current Gear / Report Current Status
 --              [ CTRL+F12 ]        Cycle Idle Modes
 --              [ ALT+F12 ]         Cancel Emergency -PDT/-MDT Mode
 --              [ WIN+C ]           Toggle Capacity Points Mode
---              [ WIN+` ]           Toggle use of Luzaf Ring.
---              [ WIN+Q ]           Quick Draw shot mode selector.
+--
+--  Weapons:    [ CTRL+Insert ]     Cycle Weapon Sets
+--              [ CTRL+Delete ]     Cycleback Weapon Sets
+--              [ ALT+Delete ]      Reset to default Weapon Set
+--              [ CTRL+PageUp ]     Cycle Toy Weapon Sets
+--              [ CTRL+PageDown ]   Cycleback Toy Weapon Sets
+--              [ ALT+PageDown ]    Reset to default Toy Weapon Set
 --
 --  Abilities:  [ CTRL+- ]          Quick Draw primary shot element cycle forward.
 --              [ CTRL+= ]          Quick Draw primary shot element cycle backward.
 --              [ ALT+- ]           Quick Draw secondary shot element cycle forward.
 --              [ ALT+= ]           Quick Draw secondary shot element cycle backward.
---              [ CTRL+[ ]          Quick Draw toggle target type.
---              [ CTRL+] ]          Quick Draw toggle use secondary shot.
---
---              [ CTRL+C ]          Crooked Cards
---              [ CTRL+` ]          Double-Up
---              [ CTRL+X ]          Fold
---              [ CTRL+S ]          Snake Eye
+--              [ CTRL+\ ]          Quick Draw mode cycle (affects gear equipped for QD)
+--              [ WIN+` ]           Toggle use of Luzaf Ring for Phantom Roll.
+--              [ ALT+` ]           Bolter's Roll
+--              [ ALT+Q ]           Double-Up
+--              [ ALT+E ]           Random Deal
 --              [ CTRL+NumLock ]    Triple Shot
+--
+--  RA:         [ Numpad0 ]         Ranged Attack
+--              [ CTRL+/ ]          Toggle RA Crit mode
+
+--  Subjob:     == WAR ==
+--              [ ALT+W ]           Defender
 --              [ CTRL+Numpad/ ]    Berserk
 --              [ CTRL+Numpad* ]    Warcry
 --              [ CTRL+Numpad- ]    Aggressor
+--              == NIN ==
+--              [ Numpad0 ]         Utsusemi: Ichi
+--              [ Numpad. ]         Utsusemi: Ni
+--              == DRG ==
+--              [ ALT+W ]           Ancient Circle
+--              [ CTRL+Numpad/ ]    Jump
+--              [ CTRL+Numpad* ]    High Jump
+--              [ CTRL+Numpad- ]    Super Jump
+-- 
+--  SilverLibs keybinds:
+--              [ ALT+D ]           Interact
+--              [ ALT+S ]           Turn 180 degrees in place
+--              [ WIN+W ]           Toggle Rearming Lock
+--                                  (off = re-equip previous weapons if you go barehanded)
+--                                  (on = prevent weapon auto-equipping)
+--              [ CTRL+` ]          Cycle Treasure Hunter Mode
+--  For more info and available functions, see SilverLibs documentation at:
+--  https://github.com/shastaxc/silver-libs
 --
---  Spells:     [ WIN+, ]           Utsusemi: Ichi
---              [ WIN+. ]           Utsusemi: Ni
---
---  Weapons:    [ WIN+E/R ]         Cycles between available Weapon Sets
---              [ WIN+W ]           Toggle Ranged Weapon Lock
---
---  WS:         [ CTRL+Numpad7 ]    Savage Blade
---              [ CTRL+Numpad8 ]    Last Stand
---              [ CTRL+Numpad4 ]    Leaden Salute
---              [ CTRL+Numpad5 ]    Requiescat
---              [ CTRL+Numpad6 ]    Wildfire
---              [ CTRL+Numpad1 ]    Aeolian Edge
---              [ CTRL+Numpad2 ]    Evisceration
---
---  RA:         [ Numpad0 ]         Ranged Attack
---
---
---              (Global-Binds.lua contains additional non-job-related keybinds)
+--  Global-Binds.lua contains additional non-job-related keybinds
 
 
 -------------------------------------------------------------------------------------------------------------------
 --  Custom Commands (preface with /console to use these in macros)
 -------------------------------------------------------------------------------------------------------------------
 
---  gs c qd                         Uses the currently configured shot on the target, with either <t> or
---                                  <stnpc> depending on setting.
---  gs c qd t                       Uses the currently configured shot on the target, but forces use of <t>.
---
---  gs c cycle mainqd               Cycles through the available steps to use as the primary shot when using
---                                  one of the above commands.
---  gs c cycle altqd                Cycles through the available steps to use for alternating with the
---                                  configured main shot.
---  gs c toggle usealtqd            Toggles whether or not to use an alternate shot.
---  gs c toggle selectqdtarget      Toggles whether or not to use <stnpc> (as opposed to <t>) when using a shot.
---
---  gs c toggle LuzafRing           Toggles use of Luzaf Ring on and off
+--  gs c qd                         Uses the currently-selected primary Quick Draw shot on current target <t>.
+--  gs c qd main                    Same as above
+--  gs c qd main t                  Same as above
+--  gs c qd main stnpc              Uses the currently-selected primary Quick Draw shot on select target <stnpc>.
+--  gs c qd alt                     Uses the currently-selected alternate Quick Draw shot on current target <t>.
+--  gs c qd alt t                   Same as above
+--  gs c qd alt stnpc               Uses the currently-selected alternate Quick Draw shot on select target <stnpc>.
+--  (More commands available through SilverLibs)
+
+
+-------------------------------------------------------------------------------------------------------------------
+--  Recommended In-game Macros
+-------------------------------------------------------------------------------------------------------------------
+--  Snake Eye                       /ja "Snake Eye" <me>
+--  Fold                            /ja "Fold" <me>
+--  Crooked Cards                   /ja "Crooked Cards" <me>
+--  Roll1
+--  Roll2
+--  QD                              /console gs c qd main t
+--  QD2                             /console gs c qd alt t
+--  Wild Cards                      /ja "Wild Card" <me>
+--  Cutting Cards                   /ja "Cutting Cards" <stpc>
 
 
 -------------------------------------------------------------------------------------------------------------------
@@ -88,8 +107,10 @@ function get_sets()
   include('Mote-Include.lua') -- Executes job_setup, user_setup, init_gear_sets
   coroutine.schedule(function()
     send_command('gs reorg')
-    send_command('hi report')
   end, 1)
+  coroutine.schedule(function()
+    send_command('hi report')
+  end, 3)
   coroutine.schedule(function()
     send_command('gs c equipweapons')
     send_command('gs c equiprangedweapons')
@@ -116,13 +137,10 @@ function job_setup()
   state.CP = M(false, "Capacity Points Mode")
 
   -- QuickDraw Selector
-  state.Mainqd = M{['description']='Primary Shot', 'Fire Shot', 'Ice Shot', 'Wind Shot', 'Earth Shot', 'Thunder Shot', 'Water Shot', 'Light Shot', 'Dark Shot',}
-  state.Altqd = M{['description']='Secondary Shot', 'Fire Shot', 'Ice Shot', 'Wind Shot', 'Earth Shot', 'Thunder Shot', 'Water Shot', 'Light Shot', 'Dark Shot',}
-  state.UseAltqd = M(false, 'Use Secondary Shot')
-  state.SelectqdTarget = M(false, 'Select Quick Draw Target')
-  state.IgnoreTargetting = M(false, 'Ignore Targetting')
+  state.Mainqd = M{['description']='Primary Shot', 'Fire', 'Ice', 'Wind', 'Earth', 'Thunder', 'Water', 'Light', 'Dark'}
+  state.Altqd = M{['description']='Secondary Shot', 'Fire', 'Ice', 'Wind', 'Earth', 'Thunder', 'Water', 'Light', 'Dark'}
+  state.Altqd:set('Dark') -- Set default alt QD element
   state.QDMode = M{['description']='Quick Draw Mode', 'Potency', 'STP', 'Enhance'}
-  state.Currentqd = M{['description']='Current Quick Draw', 'Main', 'Alt'}
   state.CritMode = M(false, 'Crit')
 
   -- Whether to use Luzaf's Ring
@@ -130,6 +148,7 @@ function job_setup()
   state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger',
       'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
 
+  -- Put any "consumable" belts here
   no_swap_waists = S{"Era. Bul. Pouch", "Dev. Bul. Pouch", "Chr. Bul. Pouch", "Quelling B. Quiver",
       "Yoichi's Quiver", "Artemis's Quiver", "Chrono Quiver", "Liv. Bul. Pouch"}
 
@@ -158,14 +177,13 @@ function job_setup()
   send_command('bind @c gs c toggle CP')
   send_command('bind ^insert gs c cycle WeaponSet')
   send_command('bind ^delete gs c cycleback WeaponSet')
+  send_command('bind !delete gs c reset WeaponSet')
 
   send_command('bind ^\\\\ gs c cycle QDMode')
-  send_command('bind ^[ gs c cycleback mainqd')
-  send_command('bind ^] gs c cycle mainqd')
-  send_command('bind ^; gs c cycleback altqd')
-  send_command('bind ^\' gs c cycle altqd')
-  send_command('bind ^p c toggle selectqdtarget')
-  send_command('bind ^l gs c toggle usealtqd')
+  send_command('bind ^- gs c cycleback mainqd')
+  send_command('bind ^= gs c cycle mainqd')
+  send_command('bind !- gs c cycleback altqd')
+  send_command('bind != gs c cycle altqd')
   send_command('bind @` gs c toggle LuzafRing')
   send_command('bind ^/ gs c toggle critmode')
 
@@ -183,7 +201,6 @@ end
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
   silibs.user_setup_hook()
-  Haste = 0
   dw_needed = 0
   current_dp_type = nil -- Do not modify
   locked_waist = false -- Do not modify
@@ -198,6 +215,11 @@ function user_setup()
   elseif player.sub_job == 'NIN' then
     send_command('bind ^numpad0 input /ma "Utsusemi: Ichi" <me>')
     send_command('bind ^numpad. input /ma "Utsusemi: Ni" <me>')
+  elseif player.sub_job == 'DRG' then
+    send_command('bind !w input /ja "Ancient Circle" <me>')
+    send_command('bind ^numpad/ input /ja "Jump" <t>')
+    send_command('bind ^numpad* input /ja "High Jump" <t>')
+    send_command('bind ^numpad- input /ja "Super Jump" <t>')
   end
 
   update_combat_form()
@@ -279,21 +301,21 @@ function init_gear_sets()
     neck="Regal Necklace",          -- __/__, ___ ( 7, 20, __)
     ear1="Genmei Earring",          --  2/__, ___ (__, __, __)
     ear2="Etiolation Earring",      -- __/ 3, ___ (__, __, __)
-    ring1="Luzaf's Ring",           -- __/__, ___ (__, __, __); Double PR range
+    ring1="Gelatinous Ring +1",     --  7/-1, ___ (__, __, __)
     ring2="Defending Ring",         -- 10/10, ___ (__, __, __)
     back=gear.COR_TP_Cape,          -- 10/__, ___ (__, 30, __)
     waist="Flume Belt +1",          --  4/__, ___ (__, __, __)
-    -- 50 PDT / 37 MDT, 518 M.Eva (7 PR Potency, 105 PR Duration, 0 PR Delay)
+    -- 57 PDT / 36 MDT, 518 M.Eva (7 PR Potency, 105 PR Duration, 0 PR Delay)
 
     -- head="Lanun Tricorne +3",    -- __/__,  73 (__, __, __); 50% chance of job align bonus
     -- hands="Chasseur's Gants +3", -- __/__,  93 (__, 60, __)
     -- legs="Desultor Tassets",     -- __/__, ___ (__, __,  5); PR Delay -5
-    -- 45 PDT / 31 MDT, 445 M.Eva (7 PR Potency, 110 PR Duration, 5 PR Delay)
+    -- 52 PDT / 30 MDT, 445 M.Eva (7 PR Potency, 110 PR Duration, 5 PR Delay)
   }
   sets.precast.CorsairRoll.Duration = {
     -- main=gear.Rostam_C,          -- __/__, ___ ( 8, 60, __)
     -- range="Compensator",         -- __/__, ___ (__, 20, __)
-    -- 45 PDT / 31 MDT, 445 M.Eva (7 PR Potency, 190 PR Duration, 5 PR Delay)
+    -- 52 PDT / 30 MDT, 445 M.Eva (7 PR Potency, 190 PR Duration, 5 PR Delay)
   }
   sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {
     legs="Chasseur's Culottes +2",
@@ -312,7 +334,7 @@ function init_gear_sets()
   })
 
   sets.precast.LuzafRing = {
-    ring1="Luzaf's Ring",
+    ring1="Luzaf's Ring",           -- __/__, ___ (__, __, __); Double PR range
   }
   sets.precast.FoldDoubleBust = {
     hands="Lanun Gants +3",
@@ -1203,8 +1225,6 @@ function init_gear_sets()
 
   -- Variations for TP weapon and (optional) offense/defense modes.  Code will fall back on previous
   -- sets if more refined versions aren't defined.
-  -- If you create a set with both offense and defense modes, the offense mode should be first.
-  -- EG: sets.engaged.Dagger.Accuracy.Evasion
 
   -- No DW (0 needed from gear)
   sets.engaged = {
@@ -1440,7 +1460,7 @@ function init_gear_sets()
     -- legs="Chasseur's Culottes +3", -- __, 12, 63 <__, __, __> [12/12, 125]
     -- 25 DW, 68 STP, 287 Acc <14 DA, 9 TA, 2 QA> [51 PDT/41 MDT, 580 MEVA]
   }
-  sets.engaged.LowAcc.HeavyDef = {
+  sets.engaged.HeavyDef.LowAcc = {
     ammo=gear.RAbullet,
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
@@ -1460,7 +1480,7 @@ function init_gear_sets()
     -- legs="Chasseur's Culottes +3", -- __, 12, 63 <__, __, __> [12/12, 125]
     -- 25 DW, 68 STP, 287 Acc <14 DA, 9 TA, 2 QA> [51 PDT/41 MDT, 580 M.Eva]
   }
-  sets.engaged.MidAcc.HeavyDef = {
+  sets.engaged.HeavyDef.MidAcc = {
     ammo=gear.RAbullet,
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
@@ -1480,7 +1500,7 @@ function init_gear_sets()
     -- legs="Chasseur's Culottes +3", -- __, 12, 63 <__, __, __> [12/12, 125]
     -- 25 DW, 73 STP, 313 Acc <20 DA, 3 TA, 0 QA> [53 PDT/35 MDT, 649 M.Eva]
   }
-  sets.engaged.HighAcc.HeavyDef = {
+  sets.engaged.HeavyDef.HighAcc = {
     ammo=gear.RAbullet,
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
@@ -1522,7 +1542,7 @@ function init_gear_sets()
     -- legs="Chasseur's Culottes +3", -- __, 12, 63 <__, __, __> [12/12, 125]
     -- 36 DW, 44 STP, 282 Acc <10 DA, 10 TA, 2 QA> [55 PDT/37 MDT, 510 MEVA]
   }
-  sets.engaged.LowDW.LowAcc.HeavyDef = {
+  sets.engaged.LowDW.HeavyDef.LowAcc = {
     ammo=gear.RAbullet,
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body=gear.Adhemar_A_body,         --  6, __, 55 <__,  4, __> [__/__,  69]
@@ -1543,7 +1563,7 @@ function init_gear_sets()
     -- neck="Combatant's Torque",     -- __,  4, __ <__, __, __> [__/__, ___]; Combat skill +15
     -- 36 DW, 50 STP, 300 Acc <11 DA, 6 TA, 2 QA> [54 PDT/36 MDT, 579 MEVA]
   }
-  sets.engaged.LowDW.MidAcc.HeavyDef = {
+  sets.engaged.LowDW.HeavyDef.MidAcc = {
     ammo=gear.RAbullet,
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
@@ -1563,7 +1583,7 @@ function init_gear_sets()
     -- legs="Chasseur's Culottes +3", -- __, 12, 63 <__, __, __> [12/12, 125]
     -- 37 DW, 67 STP, 328 Acc <11 DA, 0 TA, 0 QA> [56 PDT/46 MDT, 649 MEVA]
   }
-  sets.engaged.LowDW.HighAcc.HeavyDef = {
+  sets.engaged.LowDW.HeavyDef.HighAcc = {
     ammo=gear.RAbullet,
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
@@ -1605,7 +1625,7 @@ function init_gear_sets()
     -- legs="Chasseur's Culottes +3", -- __, 12, 63 <__, __, __> [12/12, 125]
     -- 43 DW, 48 STP, 290 Acc <10 DA, 8 TA, 0 QA> [55 PDT/37 MDT, 510 MEVA]
   }
-  sets.engaged.MidDW.LowAcc.HeavyDef = {
+  sets.engaged.MidDW.HeavyDef.LowAcc = {
     ammo=gear.RAbullet,
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body=gear.Adhemar_A_body,         --  6, __, 55 <__,  4, __> [__/__,  69]
@@ -1625,7 +1645,7 @@ function init_gear_sets()
     -- legs="Chasseur's Culottes +3", -- __, 12, 63 <__, __, __> [12/12, 125]
     -- 43 DW, 47 STP, 291 Acc <11 DA, 10 TA, 0 QA> [51 PDT/39 MDT, 504 MEVA]
   }
-  sets.engaged.MidDW.MidAcc.HeavyDef = {
+  sets.engaged.MidDW.HeavyDef.MidAcc = {
     ammo=gear.RAbullet,
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body=gear.Adhemar_A_body,         --  6, __, 55 <__,  4, __> [__/__,  69]
@@ -1645,7 +1665,7 @@ function init_gear_sets()
     -- legs="Chasseur's Culottes +3", -- __, 12, 63 <__, __, __> [12/12, 125]
     -- 43 DW, 47 STP, 282 Acc <11 DA, 10 TA, 0 QA> [51 PDT/39 MDT, 504 MEVA]
   }
-  sets.engaged.MidDW.HighAcc.HeavyDef = {
+  sets.engaged.MidDW.HeavyDef.HighAcc = {
     ammo=gear.RAbullet,
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
@@ -1684,7 +1704,7 @@ function init_gear_sets()
     -- legs="Chasseur's Culottes +3", -- __, 12, 63 <__, __, __> [12/12, 125]
     -- 57 DW, 40 STP, 280 Acc <0 DA, 8 TA, 0 QA> [55 PDT/37 MDT, 518 MEVA]
   }
-  sets.engaged.HighDW.LowAcc.HeavyDef = {
+  sets.engaged.HighDW.HeavyDef.LowAcc = {
     ammo=gear.RAbullet,
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body=gear.Adhemar_A_body,         --  6, __, 55 <__,  4, __> [__/__,  69]
@@ -1704,7 +1724,7 @@ function init_gear_sets()
     -- neck="Combatant's Torque",     -- __,  4, __ <__, __, __> [__/__, ___]; Combat skill +15
     -- 57 DW, 47 STP, 285 Acc <0 DA, 4 TA, 0 QA> [49 PDT/31 MDT, 612 MEVA]
   }
-  sets.engaged.HighDW.MidAcc.HeavyDef = {
+  sets.engaged.HighDW.HeavyDef.MidAcc = {
     ammo=gear.RAbullet,
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
@@ -1721,7 +1741,7 @@ function init_gear_sets()
     -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
     -- 57 DW, 44 STP, 300 Acc <0 DA, 0 TA, 0 QA> [51 PDT/33 MDT, 612 MEVA]
   }
-  sets.engaged.HighDW.HighAcc.HeavyDef = {
+  sets.engaged.HighDW.HeavyDef.HighAcc = {
     ammo=gear.RAbullet,
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
@@ -1760,7 +1780,7 @@ function init_gear_sets()
     -- legs="Chasseur's Culottes +3", -- __, 12, 63 <__, __, __> [12/12, 125]
     -- 67 DW, 32 STP, 246 Acc <0 DA, 7 TA, 0 QA> [51 PDT/37 MDT, 423 MEVA]
   }
-  sets.engaged.SuperDW.LowAcc.HeavyDef = {
+  sets.engaged.SuperDW.HeavyDef.LowAcc = {
     ammo=gear.RAbullet,
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
@@ -1777,7 +1797,7 @@ function init_gear_sets()
     -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
     -- 67 DW, 23 STP, 253 Acc <0 DA, 3 TA, 0 QA> [51 PDT/39 MDT, 448 MEVA]
   }
-  sets.engaged.SuperDW.MidAcc.HeavyDef = {
+  sets.engaged.SuperDW.HeavyDef.MidAcc = {
     ammo=gear.RAbullet,
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
@@ -1794,7 +1814,7 @@ function init_gear_sets()
     -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
     -- 58 DW, 32 STP, 296 Acc <0 DA, 3 TA, 0 QA> [49 PDT/37 MDT, 529 MEVA]
   }
-  sets.engaged.SuperDW.HighAcc.HeavyDef = {
+  sets.engaged.SuperDW.HeavyDef.HighAcc = {
     ammo=gear.RAbullet,
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
@@ -1833,7 +1853,7 @@ function init_gear_sets()
     -- legs="Chasseur's Culottes +3", -- __, 12, 63 <__, __, __> [12/12, 125]
     -- 71 DW, 24 STP, 256 Acc <0 DA, 7 TA, 0 QA> [51 PDT/37 MDT, 431 MEVA]
   }
-  sets.engaged.MaxDW.LowAcc.HeavyDef = {
+  sets.engaged.MaxDW.HeavyDef.LowAcc = {
     ammo=gear.RAbullet,
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
@@ -1850,7 +1870,7 @@ function init_gear_sets()
     -- Traits/Merits/Gifts               25, __, __ <__, __, __> [__/__, ___]
     -- 66 DW, 35 STP, 257 Acc <0 DA, 0 TA, 0 QA> [53 PDT/35 MDT, 531 MEVA]
   }
-  sets.engaged.MaxDW.MidAcc.HeavyDef = {
+  sets.engaged.MaxDW.HeavyDef.MidAcc = {
     ammo=gear.RAbullet,
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
@@ -1870,7 +1890,7 @@ function init_gear_sets()
     -- legs="Chasseur's Culottes +3", -- __, 12, 63 <__, __, __> [12/12, 125]
     -- 60 DW, 53 STP, 290 Acc <0 DA, 0 TA, 0 QA> [52 PDT/42 MDT, 576 MEVA]
   }
-  sets.engaged.MaxDW.HighAcc.HeavyDef = {
+  sets.engaged.MaxDW.HeavyDef.HighAcc = {
     ammo=gear.RAbullet,
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
@@ -1892,34 +1912,34 @@ function init_gear_sets()
   }
 
   sets.engaged.Safe = sets.engaged.HeavyDef
-  sets.engaged.LowAcc.Safe = sets.engaged.LowAcc.HeavyDef
-  sets.engaged.MidAcc.Safe = sets.engaged.MidAcc.HeavyDef
-  sets.engaged.HighAcc.Safe = sets.engaged.HighAcc.HeavyDef
+  sets.engaged.Safe.LowAcc = sets.engaged.HeavyDef.LowAcc
+  sets.engaged.Safe.MidAcc = sets.engaged.HeavyDef.MidAcc
+  sets.engaged.Safe.HighAcc = sets.engaged.HeavyDef.HighAcc
 
   sets.engaged.LowDW.Safe = sets.engaged.LowDW.HeavyDef
-  sets.engaged.LowDW.LowAcc.Safe = sets.engaged.LowDW.LowAcc.HeavyDef
-  sets.engaged.LowDW.MidAcc.Safe = sets.engaged.LowDW.MidAcc.HeavyDef
-  sets.engaged.LowDW.HighAcc.Safe = sets.engaged.LowDW.HighAcc.HeavyDef
+  sets.engaged.LowDW.Safe.LowAcc = sets.engaged.LowDW.HeavyDef.LowAcc
+  sets.engaged.LowDW.Safe.MidAcc = sets.engaged.LowDW.HeavyDef.MidAcc
+  sets.engaged.LowDW.Safe.HighAcc = sets.engaged.LowDW.HeavyDef.HighAcc
 
   sets.engaged.MidDW.Safe = sets.engaged.MidDW.HeavyDef
-  sets.engaged.MidDW.LowAcc.Safe = sets.engaged.MidDW.LowAcc.HeavyDef
-  sets.engaged.MidDW.MidAcc.Safe = sets.engaged.MidDW.MidAcc.HeavyDef
-  sets.engaged.MidDW.HighAcc.Safe = sets.engaged.MidDW.HighAcc.HeavyDef
+  sets.engaged.MidDW.Safe.LowAcc = sets.engaged.MidDW.HeavyDef.LowAcc
+  sets.engaged.MidDW.Safe.MidAcc = sets.engaged.MidDW.HeavyDef.MidAcc
+  sets.engaged.MidDW.Safe.HighAcc = sets.engaged.MidDW.HeavyDef.HighAcc
 
   sets.engaged.HighDW.Safe = sets.engaged.HighDW.HeavyDef
-  sets.engaged.HighDW.LowAcc.Safe = sets.engaged.HighDW.LowAcc.HeavyDef
-  sets.engaged.HighDW.MidAcc.Safe = sets.engaged.HighDW.MidAcc.HeavyDef
-  sets.engaged.HighDW.HighAcc.Safe = sets.engaged.HighDW.HighAcc.HeavyDef
+  sets.engaged.HighDW.Safe.LowAcc = sets.engaged.HighDW.HeavyDef.LowAcc
+  sets.engaged.HighDW.Safe.MidAcc = sets.engaged.HighDW.HeavyDef.MidAcc
+  sets.engaged.HighDW.Safe.HighAcc = sets.engaged.HighDW.HeavyDef.HighAcc
 
   sets.engaged.SuperDW.Safe = sets.engaged.SuperDW.HeavyDef
-  sets.engaged.SuperDW.LowAcc.Safe = sets.engaged.SuperDW.LowAcc.HeavyDef
-  sets.engaged.SuperDW.MidAcc.Safe = sets.engaged.SuperDW.MidAcc.HeavyDef
-  sets.engaged.SuperDW.HighAcc.Safe = sets.engaged.SuperDW.HighAcc.HeavyDef
+  sets.engaged.SuperDW.Safe.LowAcc = sets.engaged.SuperDW.HeavyDef.LowAcc
+  sets.engaged.SuperDW.Safe.MidAcc = sets.engaged.SuperDW.HeavyDef.MidAcc
+  sets.engaged.SuperDW.Safe.HighAcc = sets.engaged.SuperDW.HeavyDef.HighAcc
 
   sets.engaged.MaxDW.Safe = sets.engaged.MaxDW.HeavyDef
-  sets.engaged.MaxDW.LowAcc.Safe = sets.engaged.MaxDW.LowAcc.HeavyDef
-  sets.engaged.MaxDW.MidAcc.Safe = sets.engaged.MaxDW.MidAcc.HeavyDef
-  sets.engaged.MaxDW.HighAcc.Safe = sets.engaged.MaxDW.HighAcc.HeavyDef
+  sets.engaged.MaxDW.Safe.LowAcc = sets.engaged.MaxDW.HeavyDef.LowAcc
+  sets.engaged.MaxDW.Safe.MidAcc = sets.engaged.MaxDW.HeavyDef.MidAcc
+  sets.engaged.MaxDW.Safe.HighAcc = sets.engaged.MaxDW.HeavyDef.HighAcc
   
   sets.engaged.SubtleBlow = {
     ammo=gear.RAbullet,
@@ -1936,29 +1956,29 @@ function init_gear_sets()
     back=gear.COR_TP_Cape,        -- [10/__, ___]
     waist="Windbuffet Belt +1",   -- [__/__, ___]
   } -- [51 PDT/41 MDT, 674 MEVA] 0 DW, 26 Subtle Blow
-  sets.engaged.LowAcc.SubtleBlow = sets.engaged.SubtleBlow
-  sets.engaged.MidAcc.SubtleBlow = sets.engaged.SubtleBlow
-  sets.engaged.HighAcc.SubtleBlow = sets.engaged.SubtleBlow
+  sets.engaged.SubtleBlow.LowAcc = sets.engaged.SubtleBlow
+  sets.engaged.SubtleBlow.MidAcc = sets.engaged.SubtleBlow
+  sets.engaged.SubtleBlow.HighAcc = sets.engaged.SubtleBlow
 
-  sets.engaged.LowDW.SubtleBlow = sets.engaged.MaxDW.SubtleBlow
-  sets.engaged.LowDW.LowAcc.SubtleBlow = sets.engaged.MaxDW.SubtleBlow
-  sets.engaged.LowDW.MidAcc.SubtleBlow = sets.engaged.MaxDW.SubtleBlow
-  sets.engaged.LowDW.HighAcc.SubtleBlow = sets.engaged.MaxDW.SubtleBlow
+  sets.engaged.LowDW.SubtleBlow = sets.engaged.SubtleBlow
+  sets.engaged.LowDW.SubtleBlow.LowAcc = sets.engaged.SubtleBlow
+  sets.engaged.LowDW.SubtleBlow.MidAcc = sets.engaged.SubtleBlow
+  sets.engaged.LowDW.SubtleBlow.HighAcc = sets.engaged.SubtleBlow
 
-  sets.engaged.MidDW.SubtleBlow = sets.engaged.MaxDW.SubtleBlow
-  sets.engaged.MidDW.LowAcc.SubtleBlow = sets.engaged.MaxDW.SubtleBlow
-  sets.engaged.MidDW.MidAcc.SubtleBlow = sets.engaged.MaxDW.SubtleBlow
-  sets.engaged.MidDW.HighAcc.SubtleBlow = sets.engaged.MaxDW.SubtleBlow
+  sets.engaged.MidDW.SubtleBlow = sets.engaged.SubtleBlow
+  sets.engaged.MidDW.SubtleBlow.LowAcc = sets.engaged.SubtleBlow
+  sets.engaged.MidDW.SubtleBlow.MidAcc = sets.engaged.SubtleBlow
+  sets.engaged.MidDW.SubtleBlow.HighAcc = sets.engaged.SubtleBlow
 
-  sets.engaged.HighDW.SubtleBlow = sets.engaged.MaxDW.SubtleBlow
-  sets.engaged.HighDW.LowAcc.SubtleBlow = sets.engaged.MaxDW.SubtleBlow
-  sets.engaged.HighDW.MidAcc.SubtleBlow = sets.engaged.MaxDW.SubtleBlow
-  sets.engaged.HighDW.HighAcc.SubtleBlow = sets.engaged.MaxDW.SubtleBlow
+  sets.engaged.HighDW.SubtleBlow = sets.engaged.SubtleBlow
+  sets.engaged.HighDW.SubtleBlow.LowAcc = sets.engaged.SubtleBlow
+  sets.engaged.HighDW.SubtleBlow.MidAcc = sets.engaged.SubtleBlow
+  sets.engaged.HighDW.SubtleBlow.HighAcc = sets.engaged.SubtleBlow
 
-  sets.engaged.SuperDW.SubtleBlow = sets.engaged.MaxDW.SubtleBlow
-  sets.engaged.SuperDW.LowAcc.SubtleBlow = sets.engaged.MaxDW.SubtleBlow
-  sets.engaged.SuperDW.MidAcc.SubtleBlow = sets.engaged.MaxDW.SubtleBlow
-  sets.engaged.SuperDW.HighAcc.SubtleBlow = sets.engaged.MaxDW.SubtleBlow
+  sets.engaged.SuperDW.SubtleBlow = sets.engaged.SubtleBlow
+  sets.engaged.SuperDW.SubtleBlow.LowAcc = sets.engaged.SubtleBlow
+  sets.engaged.SuperDW.SubtleBlow.MidAcc = sets.engaged.SubtleBlow
+  sets.engaged.SuperDW.SubtleBlow.HighAcc = sets.engaged.SubtleBlow
 
   sets.engaged.MaxDW.SubtleBlow = {
     ammo=gear.RAbullet,
@@ -1975,9 +1995,9 @@ function init_gear_sets()
     back=gear.COR_DW_Cape,        -- [10/__, ___] 10
     waist="Reiki Yotai",          -- [__/__, ___]  7
   } -- [51 PDT/41 MDT, 674 MEVA] 21 DW, 26 Subtle Blow
-  sets.engaged.MaxDW.LowAcc.SubtleBlow = sets.engaged.MaxDW.SubtleBlow
-  sets.engaged.MaxDW.MidAcc.SubtleBlow = sets.engaged.MaxDW.SubtleBlow
-  sets.engaged.MaxDW.HighAcc.SubtleBlow = sets.engaged.MaxDW.SubtleBlow
+  sets.engaged.MaxDW.SubtleBlow.LowAcc = sets.engaged.MaxDW.SubtleBlow
+  sets.engaged.MaxDW.SubtleBlow.MidAcc = sets.engaged.MaxDW.SubtleBlow
+  sets.engaged.MaxDW.SubtleBlow.HighAcc = sets.engaged.MaxDW.SubtleBlow
   
 
   ------------------------------------------------------------------------------------------------
@@ -2089,14 +2109,7 @@ function job_precast(spell, action, spellMap, eventArgs)
   end
 
   -- Gear
-  if (spell.type == 'CorsairRoll' or spell.english == "Double-Up") then
-    if player.status ~= 'Engaged' then
-      equip(sets.precast.CorsairRoll.Duration)
-    end
-    if state.LuzafRing.value then
-      equip(sets.precast.LuzafRing)
-    end
-  elseif spell.english == 'Fold' and buffactive['Bust'] == 2 then
+  if spell.english == 'Fold' and buffactive['Bust'] == 2 then
     if sets.precast.FoldDoubleBust then
       equip(sets.precast.FoldDoubleBust)
       eventArgs.handled = true
@@ -2132,7 +2145,14 @@ function job_precast(spell, action, spellMap, eventArgs)
 end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
-  if spell.type == 'WeaponSkill' then
+  if (spell.type == 'CorsairRoll' or spell.english == "Double-Up") then
+    if player.status ~= 'Engaged' then
+      equip(sets.precast.CorsairRoll.Duration)
+    end
+    if state.LuzafRing.value then
+      equip(sets.precast.LuzafRing)
+    end
+  elseif spell.type == 'WeaponSkill' then
     -- Handle belts for elemental WS
     if elemental_ws:contains(spell.english) then
       local base_day_weather_mult = silibs.get_day_weather_multiplier(spell.element, false, false)
@@ -2438,18 +2458,6 @@ function user_customize_defense_set(defenseSet)
   return silibs.customize_defense_set(defenseSet)
 end
 
--- Handle auto-targetting based on local setup.
-function job_auto_change_target(spell, action, spellMap, eventArgs)
-  if spell.type == 'CorsairShot' then
-    if state.IgnoreTargetting.value == true then
-      state.IgnoreTargetting:reset()
-      eventArgs.handled = true
-    end
-
-    eventArgs.SelectNPCTargets = state.SelectqdTarget.value
-  end
-end
-
 -- Set eventArgs.handled to true if we don't want the automatic display to be run.
 function display_current_job_state(eventArgs)
   local cf_msg = ''
@@ -2462,14 +2470,8 @@ function display_current_job_state(eventArgs)
     m_msg = m_msg .. '/' ..state.HybridMode.value
   end
 
-  local ws_msg = state.WeaponskillMode.value
-
-  local qd_msg = '(' ..string.sub(state.QDMode.value,1,1).. ')'
-
-  local e_msg = state.Mainqd.current
-  if state.UseAltqd.value == true then
-    e_msg = e_msg .. '/'..state.Altqd.current
-  end
+  local qd_msg = state.Mainqd.current
+  qd_msg = qd_msg .. '/'..state.Altqd.current
 
   local d_msg = 'None'
   if state.DefenseMode.value ~= 'None' then
@@ -2487,8 +2489,7 @@ function display_current_job_state(eventArgs)
   end
 
   add_to_chat(002, '| ' ..string.char(31,210).. 'Melee' ..cf_msg.. ': ' ..string.char(31,001)..m_msg.. string.char(31,002)..  ' |'
-      ..string.char(31,207).. ' WS: ' ..string.char(31,001)..ws_msg.. string.char(31,002)..  ' |'
-      ..string.char(31,060).. ' QD' ..qd_msg.. ': '  ..string.char(31,001)..e_msg.. string.char(31,002)..  ' |'
+      ..string.char(31,060).. ' QD: '  ..string.char(31,001)..qd_msg.. string.char(31,002)..  ' |'
       ..string.char(31,004).. ' Defense: ' ..string.char(31,001)..d_msg.. string.char(31,002)..  ' |'
       ..string.char(31,008).. ' Idle: ' ..string.char(31,001)..i_msg.. string.char(31,002)..  ' |'
       ..string.char(31,002)..msg)
@@ -2582,19 +2583,18 @@ function job_self_command(cmdParams, eventArgs)
   ----------- Non-silibs content goes below this line -----------
 
   if cmdParams[1] == 'qd' then
-    if cmdParams[2] == 't' then
-      state.IgnoreTargetting:set()
-    end
 
-    local doqd = ''
-    if state.UseAltqd.value == true then
-      doqd = state[state.Currentqd.current..'qd'].current
-      state.Currentqd:cycle()
+    local qd = ''
+    local use_alt = cmdParams[2] and S{'alt', 'second', 'secondary', '2'}:contains(cmdParams[2])
+    if use_alt then
+      qd = state.Altqd.current
     else
-      doqd = state.Mainqd.current
+      qd = state.Mainqd.current
     end
 
-    send_command('@input /ja "'..doqd..'" <t>')
+    local target = cmdParams[3] or 't'
+
+    send_command('@input /ja "'..qd..' Shot" <'..target..'>')
   elseif cmdParams[1] == 'equipweapons' then
     equip_weapons()
   elseif cmdParams[1] == 'toyweapon' then
