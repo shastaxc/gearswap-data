@@ -2,8 +2,9 @@
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs
--- Required addons: GearInfo
+-- Required addons: N/A
 -- Recommended addons: WSBinder, Reorganizer
+-- Misc Recommendations: Disable RollTracker
 
 -------------------------------------------------------------------------------------------------------------------
 --  Keybinds
@@ -56,6 +57,8 @@ function job_setup()
   silibs.enable_auto_lockstyle(7)
   silibs.enable_premade_commands()
   silibs.enable_th()
+  silibs.enable_custom_roll_text()
+  silibs.enable_equip_loop()
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.HybridMode:options('Normal', 'HeavyDef', 'SubtleBlow')
@@ -106,7 +109,6 @@ function user_setup()
     send_command('bind ^numpad- input /ja "Super Jump" <t>')
   end
 
-  update_combat_form()
   update_melee_groups()
 
   select_default_macro_book()
@@ -839,7 +841,6 @@ end
 -- gain == true if the buff was gained, false if it was lost.
 -- Theory: debuffs must be lowercase and buffs must begin with uppercase
 function job_buff_change(buff,gain)
-  state.CombatForm:reset()
   classes.CustomMeleeGroups:clear()
 
   if buff == 'sleep' and gain and player.vitals.hp > 500 and player.status == 'Engaged' then
@@ -894,7 +895,6 @@ end
 function job_handle_equipping_gear(playerStatus, eventArgs)
   check_gear()
   update_idle_groups()
-  update_combat_form()
   update_melee_groups()
 end
 
@@ -902,11 +902,6 @@ end
 -- Function to display the current relevant user state when doing an update.
 -- Set eventArgs.handled to true if display was handled, and you don't want the default info shown.
 function display_current_job_state(eventArgs)
-  local cf_msg = ''
-  if state.CombatForm.has_value then
-    cf_msg = ' (' ..state.CombatForm.value.. ')'
-  end
-
   local m_msg = state.OffenseMode.value
   if state.HybridMode.value ~= 'Normal' then
     m_msg = m_msg .. '/' ..state.HybridMode.value
@@ -932,7 +927,7 @@ function display_current_job_state(eventArgs)
     msg = msg .. ' CP Mode: On |'
   end
 
-  add_to_chat(002, '| ' ..string.char(31,210).. 'Melee' ..cf_msg.. ': ' ..string.char(31,001)..m_msg.. string.char(31,002)..  ' |'
+  add_to_chat(002, '| '
       ..string.char(31,004).. ' Defense: ' ..string.char(31,001)..d_msg.. string.char(31,002)..  ' |'
       ..string.char(31,207).. ' Idle: ' ..string.char(31,001)..i_msg.. string.char(31,002)..  ' |'
       ..string.char(31,012).. ' Toy Weapon: ' ..string.char(31,001)..toy_msg.. string.char(31,002)..  ' |'
@@ -1008,10 +1003,6 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- User code that supplements self-commands.
 -------------------------------------------------------------------------------------------------------------------
-
-function job_update(cmdParams, eventArgs)
-  handle_equipping_gear(player.status)
-end
 
 -- Modify the default idle set after it was constructed.
 function customize_idle_set(idleSet)
@@ -1140,10 +1131,6 @@ function update_idle_groups()
   end
 end
 
-function update_combat_form()
-  state.CombatForm:reset()
-end
-
 function update_melee_groups()
   classes.CustomMeleeGroups:clear()
 end
@@ -1170,16 +1157,6 @@ function job_self_command(cmdParams, eventArgs)
     end
   elseif cmdParams[1] == 'test' then
     test()
-  end
-
-  gearinfo(cmdParams, eventArgs)
-end
-
-function gearinfo(cmdParams, eventArgs)
-  if cmdParams[1] == 'gearinfo' then
-    if not midaction() then
-      job_update()
-    end
   end
 end
 
