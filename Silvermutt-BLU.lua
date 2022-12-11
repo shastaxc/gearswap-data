@@ -100,109 +100,78 @@ function job_setup()
   state.Buff.Efflux = buffactive.Efflux or false
   state.Buff['Unbridled Learning'] = buffactive['Unbridled Learning'] or false
 
-  blue_magic_maps = {}
-
   -- Mappings for gear sets to use for various blue magic spells.
   -- While Str isn't listed for each, it's generally assumed as being at least
   -- moderately signficant, even for spells with other mods.
-
-  -- Physical spells with no particular (or known) stat mods
-  blue_magic_maps.Physical = S{'Bilgestorm'}
-
-  -- Spells with heavy accuracy penalties, that need to prioritize accuracy first.
-  blue_magic_maps.PhysicalAcc = S{'Heavy Strike'}
-
-  -- Physical spells with Str stat mod
-  blue_magic_maps.PhysicalStr = S{'Battle Dance','Bloodrake','Death Scissors','Dimensional Death',
-      'Empty Thrash','Quadrastrike','Saurian Slide','Sinker Drill','Spinal Cleave','Sweeping Gouge',
-      'Uppercut','Vertical Cleave'}
-
-  -- Physical spells with Dex stat mod
-  blue_magic_maps.PhysicalDex = S{'Amorphic Spikes','Asuran Claws','Barbed Crescent','Claw Cyclone',
-      'Disseverment','Foot Kick','Frenetic Rip','Goblin Rush','Hysteric Barrage','Paralyzing Triad',
-      'Seedspray','Sickle Slash','Smite of Rage','Terror Touch','Thrashing Assault','Vanity Dive'}
-
-  -- Physical spells with Vit stat mod
-  blue_magic_maps.PhysicalVit = S{'Body Slam','Cannonball','Delta Thrust','Glutinous Dart','Grand Slam',
-      'Power Attack','Quad. Continuum','Sprout Smack','Sub-zero Smash'}
-
-  -- Physical spells with Agi stat mod
-  blue_magic_maps.PhysicalAgi = S{'Benthic Typhoon','Feather Storm','Helldive','Hydro Shot','Jet Stream',
-      'Pinecone Bomb','Spiral Spin','Wild Oats'}
-
-  -- Physical spells with Int stat mod
-  blue_magic_maps.PhysicalInt = S{'Mandibular Bite','Queasyshroom'}
-
-  -- Physical spells with Mnd stat mod
-  blue_magic_maps.PhysicalMnd = S{'Ram Charge','Screwdriver','Tourbillion'}
-
-  -- Physical spells with Chr stat mod
-  blue_magic_maps.PhysicalChr = S{'Bludgeon'}
-
-  -- Physical spells with HP stat mod
-  blue_magic_maps.PhysicalHP = S{'Final Sting'}
-
-  -- Magical spells with the typical Int mod
-  blue_magic_maps.Magical = S{'Anvil Lightning','Blazing Bound','Bomb Toss','Cursed Sphere',
-      'Droning Whirlwind','Embalming Earth','Entomb','Firespit','Foul Waters','Ice Break','Leafstorm',
-      'Maelstrom','Molting Plumage','Nectarous Deluge','Regurgitation','Rending Deluge','Scouring Spate',
-      'Silent Storm','Spectral Floe','Subduction','Tem. Upheaval','Water Bomb'}
-
-  blue_magic_maps.MagicalDark = S{'Dark Orb','Death Ray','Eyes On Me','Evryone. Grudge','Palling Salvo',
-      'Tenebral Crush'}
-
-  blue_magic_maps.MagicalLight = S{'Blinding Fulgor','Diffusion Ray','Radiant Breath','Rail Cannon',
-      'Retinal Glare'}
-
-  -- Magical spells with a primary Mnd mod
-  blue_magic_maps.MagicalMnd = S{'Acrid Stream','Magic Hammer','Mind Blast'}
-
-  -- Magical spells with a primary Chr mod
-  blue_magic_maps.MagicalChr = S{'Mysterious Light'}
-
-  -- Magical spells with a Vit stat mod (on top of Int)
-  blue_magic_maps.MagicalVit = S{'Thermal Pulse'}
-
-  -- Magical spells with a Dex stat mod (on top of Int)
-  blue_magic_maps.MagicalDex = S{'Charged Whisker','Gates of Hades'}
-
-  -- Magical spells (generally debuffs) that we want to focus on magic accuracy over damage.
-  -- Add Int for damage where available, though.
-  blue_magic_maps.MagicAccuracy = S{'1000 Needles','Absolute Terror','Actinic Burst','Atra. Libations',
-      'Auroral Drape','Awful Eye', 'Blank Gaze','Blastbomb','Blistering Roar','Blood Saber','Chaotic Eye',
-      'Cimicine Discharge','Cold Wave','Corrosive Ooze','Demoralizing Roar','Digest','Dream Flower',
-      'Enervation','Feather Tickle','Filamented Hold','Frightful Roar','Geist Wall','Hecatomb Wave',
-      'Infrasonics','Jettatura','Light of Penance','Lowing','Mind Blast','Mortal Ray','MP Drainkiss',
-      'Osmosis','Reaving Wind','Sandspin','Sandspray','Sheep Song','Soporific','Sound Blast',
-      'Stinking Gas','Sub-zero Smash','Venom Shell','Voracious Trunk','Yawn','Cruel Joke'}
-
-  -- Breath-based spells
-  blue_magic_maps.Breath = S{'Bad Breath','Flying Hip Press','Frost Breath','Heat Breath','Hecatomb Wave',
-      'Magnetite Cloud','Poison Breath','Self-Destruct','Thunder Breath','Vapor Spray','Wind Breath'}
-
-  -- Stun spells
-  blue_magic_maps.StunPhysical = S{'Frypan','Head Butt','Sudden Lunge','Tail slap','Whirl of Rage'}
-  blue_magic_maps.StunMagical = S{'Blitzstrahl','Temporal Shift','Thunderbolt'}
-
-  -- Healing spells
-  blue_magic_maps.Healing = S{'Healing Breeze','Magic Fruit','Plenilune Embrace','Pollen','Restoral',
-      'Wild Carrot'}
-
-  -- Buffs that depend on blue magic skill
-  blue_magic_maps.SkillBasedBuff = S{'Barrier Tusk','Diamondhide','Magic Barrier','Metallic Body',
-      'Plasma Charge','Pyric Bulwark','Reactor Cool','Occultation'}
-
-  -- Other general buffs
-  blue_magic_maps.Buff = S{'Amplification','Animating Wail','Carcharian Verve','Cocoon',
-      'Erratic Flutter','Exuviation','Fantod','Feather Barrier','Harden Shell','Memento Mori',
-      'Nat. Meditation','Orcish Counterstance','Refueling','Regeneration','Saline Coat','Triumphant Roar',
-      'Warm-Up','Winds of Promyvion','Zephyr Mantle'}
-
-  blue_magic_maps.Refresh = S{'Battery Charge'}
-
-  -- Blue magic spells that should use conserve MP midcast set.
-  blue_magic_maps.ConserveMP = S{'Refueling', 'Warm-Up', 'Saline Coat', 'Reactor Cool', 'Plasma Charge', 'Animating Wail',
-  'Nat. Meditation', 'Carcharian Verve', 'Erratic Flutter', 'Mighty Guard'}
+  blue_magic_maps = {
+    -- Physical spells with no particular (or known) stat mods
+    Physical = S{'Bilgestorm'},
+    -- Spells with heavy accuracy penalties, that need to prioritize accuracy first.
+    PhysicalAcc = S{'Heavy Strike'},
+    -- Physical spells with Str stat mod
+    PhysicalStr = S{'Battle Dance','Bloodrake','Death Scissors','Dimensional Death','Empty Thrash',
+        'Quadrastrike','Saurian Slide','Sinker Drill','Spinal Cleave','Sweeping Gouge','Uppercut',
+        'Vertical Cleave'},
+    -- Physical spells with Dex stat mod
+    PhysicalDex = S{'Amorphic Spikes','Asuran Claws','Barbed Crescent','Claw Cyclone','Disseverment',
+        'Foot Kick','Frenetic Rip','Goblin Rush','Hysteric Barrage','Paralyzing Triad','Seedspray',
+        'Sickle Slash','Smite of Rage','Terror Touch','Thrashing Assault','Vanity Dive'},
+    -- Physical spells with Vit stat mod
+    PhysicalVit = S{'Body Slam','Cannonball','Delta Thrust','Glutinous Dart','Grand Slam','Power Attack',
+        'Quad. Continuum','Sprout Smack','Sub-zero Smash'},
+    -- Physical spells with Agi stat mod
+    PhysicalAgi = S{'Benthic Typhoon','Feather Storm','Helldive','Hydro Shot','Jet Stream',
+        'Pinecone Bomb','Spiral Spin','Wild Oats'},
+    -- Physical spells with Int stat mod
+    PhysicalInt = S{'Mandibular Bite','Queasyshroom'},
+    -- Physical spells with Mnd stat mod
+    PhysicalMnd = S{'Ram Charge','Screwdriver','Tourbillion'},
+    -- Physical spells with Chr stat mod
+    PhysicalChr = S{'Bludgeon'},
+    -- Physical spells with HP stat mod
+    PhysicalHP = S{'Final Sting'},
+    -- Magical spells with the typical Int mod
+    Magical = S{'Anvil Lightning','Blazing Bound','Bomb Toss','Cursed Sphere','Droning Whirlwind',
+        'Embalming Earth','Entomb','Firespit','Foul Waters','Ice Break','Leafstorm','Maelstrom',
+        'Molting Plumage','Nectarous Deluge','Regurgitation','Rending Deluge','Scouring Spate',
+        'Silent Storm','Spectral Floe','Subduction','Tem. Upheaval','Water Bomb'},
+    MagicalDark = S{'Dark Orb','Death Ray','Eyes On Me','Evryone. Grudge','Palling Salvo','Tenebral Crush'},
+    MagicalLight = S{'Blinding Fulgor','Diffusion Ray','Radiant Breath','Rail Cannon','Retinal Glare'},
+    -- Magical spells with a primary Mnd mod
+    MagicalMnd = S{'Acrid Stream','Magic Hammer','Mind Blast'},
+    -- Magical spells with a primary Chr mod
+    MagicalChr = S{'Mysterious Light'},
+    -- Magical spells with a Vit stat mod (on top of Int)
+    MagicalVit = S{'Thermal Pulse'},
+    -- Magical spells with a Dex stat mod (on top of Int)
+    MagicalDex = S{'Charged Whisker','Gates of Hades'},
+    -- Magical spells (generally debuffs) that we want to focus on magic accuracy over damage.
+    -- Add Int for damage where available, though.
+    MagicAccuracy = S{'1000 Needles','Absolute Terror','Actinic Burst','Atra. Libations','Auroral Drape',
+        'Awful Eye', 'Blank Gaze','Blastbomb','Blistering Roar','Blood Saber','Chaotic Eye','Cimicine Discharge',
+        'Cold Wave','Corrosive Ooze','Demoralizing Roar','Digest','Dream Flower','Enervation','Feather Tickle',
+        'Filamented Hold','Frightful Roar','Geist Wall','Hecatomb Wave','Infrasonics','Jettatura',
+        'Light of Penance','Lowing','Mind Blast','Mortal Ray','MP Drainkiss','Osmosis','Reaving Wind','Sandspin',
+        'Sandspray','Sheep Song','Soporific','Sound Blast','Stinking Gas','Sub-zero Smash','Venom Shell',
+        'Voracious Trunk','Yawn','Cruel Joke'},
+    -- Breath-based spells
+    Breath = S{'Bad Breath','Flying Hip Press','Frost Breath','Heat Breath','Hecatomb Wave','Magnetite Cloud',
+        'Poison Breath','Self-Destruct','Thunder Breath','Vapor Spray','Wind Breath'},
+    -- Stun spells
+    StunPhysical = S{'Frypan','Head Butt','Sudden Lunge','Tail slap','Whirl of Rage'},
+    StunMagical = S{'Blitzstrahl','Temporal Shift','Thunderbolt'},
+    -- Healing spells
+    Healing = S{'Healing Breeze','Magic Fruit','Plenilune Embrace','Pollen','Restoral','Wild Carrot'},
+    -- Buffs that depend on blue magic skill
+    SkillBasedBuff = S{'Barrier Tusk','Diamondhide','Magic Barrier','Metallic Body','Pyric Bulwark','Occultation'},
+    -- Other general buffs
+    Buff = S{'Amplification','Cocoon','Exuviation','Fantod','Feather Barrier','Harden Shell','Memento Mori',
+        'Orcish Counterstance','Regeneration','Triumphant Roar','Winds of Promyvion','Zephyr Mantle'},
+    Refresh = S{'Battery Charge'},
+    -- Blue magic spells that should use conserve MP midcast set.
+    ConserveMP = S{'Refueling', 'Warm-Up', 'Saline Coat', 'Reactor Cool', 'Plasma Charge', 'Animating Wail',
+        'Nat. Meditation', 'Carcharian Verve', 'Erratic Flutter', 'Mighty Guard'},
+  }
 
   -- Spells that require Unbridled Learning to cast.
   unbridled_spells = S{'Absolute Terror','Bilgestorm','Blistering Roar','Bloodrake','Carcharian Verve','Cesspool',
@@ -986,7 +955,7 @@ function init_gear_sets()
   -- No DW (0 needed from gear)
   sets.engaged = {
     main="Naegling",
-    sub=empty,
+    sub="Maxentius",
     -- sub="Thibron",
     ammo="Coiste Bodhar",         -- __,  3, __ < 3, __, __> [__/__, ___]
     head="Malignance Chapeau",    -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
