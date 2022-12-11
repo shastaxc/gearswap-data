@@ -2,8 +2,9 @@
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs
--- Required addons: GearInfo
+-- Required addons: HasteInfo
 -- Recommended addons: WSBinder, Reorganizer
+-- Misc Recommendations: Disable GearInfo, disable RollTracker
 
 -------------------------------------------------------------------------------------------------------------------
 --  Keybinds
@@ -78,15 +79,14 @@ function job_setup()
   silibs.enable_auto_lockstyle(11)
   silibs.enable_premade_commands()
   silibs.enable_th()
+  silibs.enable_custom_roll_text()
+  silibs.enable_equip_loop()
+  silibs.enable_haste_info()
 
   -- Adjust this if using the Terpander (new +song instrument)
   info.ExtraSongInstrument = 'Daurdabla'
   -- How many extra songs we can keep from Daurdabla/Terpander
   info.ExtraSongs = 2
-
-  Haste = 0 -- Do not modify
-  DW_needed = 0 -- Do not modify
-  DW = false -- Do not modify
 
   state.Buff['Pianissimo'] = buffactive['pianissimo'] or false
 
@@ -146,9 +146,6 @@ function user_setup()
   silibs.user_setup_hook()
   -- Additional local binds
   include('Global-Binds.lua')
-
-  update_combat_form()
-  determine_haste_group()
 
   select_default_macro_book()
   set_lockstyle()
@@ -789,13 +786,10 @@ function init_gear_sets()
   ---------------------------------------- Engaged Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
 
-  -- Engaged sets
-
   -- Variations for TP weapon and (optional) offense/defense modes.  Code will fall back on previous
   -- sets if more refined versions aren't defined.
-  -- If you create a set with both offense and defense modes, the offense mode should be first.
-  -- EG: sets.engaged.Dagger.Accuracy.Evasion
 
+  -- No DW (0 needed from gear)
   sets.engaged = {
     -- Acceptable
     head="Aya. Zucchetto +2",         -- __,  6, __, __, __, __, 44,  3/ 3
@@ -839,104 +833,8 @@ function init_gear_sets()
     -- Ideal: 0 DW, 74 STP, 6 QA, 0 TA, 1 DA, 70 Att, 354 Acc, 25PDT/15MDT
   })
 
-  -- * DNC Subjob DW Trait: +15%
-  -- * NIN Subjob DW Trait: +25%
-
-  -- No Magic/Gear/JA Haste (49% from gear to cap)
-  sets.engaged.DW = {
-    -- Acceptable
-    head="Aya. Zucchetto +2",         -- __,  6, __, __, __, __, 44,  3/ 3
-    body="Ayanmo Corazza +2",         -- __, __, __, __,  7, __, 46,  6/ 6
-    legs="Aya. Cosciales +2",         -- __, __, __, __, __, __, 45,  5/ 5
-    ear1="Eabani Earring",            --  4, __, __, __, __, __, __, __/__
-    ear2="Suppanomimi",               --  5, __, __, __, __, __, __, __/__
-    ring1="Ilabrat Ring",             -- __,  5, __, __, __, 25, __, __/__
-    ring2="Chirich Ring +1",          -- __,  6, __, __, __, __, 10, __/__
-    waist="Reiki Yotai",              --  7,  4, __, __, __, __, 10, __/__
-    -- range=gear.Linos_TP,           -- __,  4,  3, __, __, __, 20, __/__
-    -- hands=gear.Chironic_QA_hands,  -- __,  3, __, __, __, 32, 45, __/__
-    -- feet=gear.Chironic_QA_feet,    -- __,  3, __, __, __, 52, 30,  2/__
-    -- neck="Bard's Charm +1",        -- __,  6,  2, __, __, __, 25, __/__
-    -- back=gear.BRD_DW_Cape,         -- 10, __, __, __, __, 20, 30, 10/__
-    -- Acceptable: 26 DW, 37 STP, 5 QA, 0 TA, 7 DA, 129 Att, 305 Acc, 26PDT/14MDT
-
-    -- Ideal
-    -- range=gear.Linos_TP,           -- __,  4,  3, __, __, __, 20, __/__
-    -- head="Aya. Zucchetto +2",      -- __,  6, __, __, __, __, 44,  3/ 3
-    -- body="Ashera Harness",         -- __, 10, __, __, __, 45, 45,  7/ 7
-    -- hands="Volte Mittens",         -- __,  6, __, __, __, __, 36, __/__
-    -- legs="Volte Tights",           -- __,  8, __, __, __, __, 38, __/__
-    -- feet="Volte Spats",            -- __,  6, __, __, __, __, 35, __/__
-    -- neck="Bard's Charm +2",        -- __,  7,  3, __, __, __, 30, __/__
-    -- ear1="Eabani Earring",         --  4, __, __, __, __, __, __, __/__
-    -- ear2="Suppanomimi",            --  5, __, __, __, __, __, __, __/__
-    -- ring1="Ilabrat Ring",          -- __,  5, __, __, __, 25, __, __/__
-    -- ring2="Chirich Ring +1",       -- __,  6, __, __, __, __, 10, __/__
-    -- back=gear.BRD_DW_Cape,         -- 10, __, __, __, __, 20, 30, 10/__
-    -- waist="Reiki Yotai",           --  7,  4, __, __, __, __, 10, __/__
-    -- Ideal: 26 DW, 62 STP, 6 QA, 0 TA, 0 DA, 90 Att, 298 Acc, 20PDT/10MDT
-  } -- Only 26% DW; doesn't cap but can't get much better
-  sets.engaged.DW.Acc = set_combine(sets.engaged.DW, {
-    legs="Aya. Cosciales +2",         -- __, __, __, __, __, __, 45,  5/ 5
-    ear1="Dignitary's Earring",       -- __,  3, __, __, __, __, 10, __/__
-    ring1="Chirich Ring +1",          -- __,  6, __, __, __, __, 10, __/__
-    -- hands="Raetic Bangles +1",     -- __, __, __, __, __, __, 55, __/__
-    -- Acceptable: 26 DW, 38 STP, 5 QA, 0 TA, 7 DA, 72 Att, 335 Acc, 26PDT/14MDT
-    -- Ideal: 26 DW, 52 STP, 6 QA, 0 TA, 0 DA, 65 Att, 344 Acc, 25PDT/15MDT
-  })
-
-  -- Low Magic/Gear/JA Haste (42% from gear to cap)
-  sets.engaged.DW.LowHaste = sets.engaged.DW
-  sets.engaged.DW.Acc.LowHaste = sets.engaged.DW.Acc
-
-  -- Mid Magic/Gear/JA Haste (31% from gear to cap)
-  sets.engaged.DW.MidHaste = sets.engaged.DW
-  sets.engaged.DW.Acc.MidHaste = sets.engaged.DW.Acc
-
-  -- High Magic/Gear/JA Haste (21% from gear to cap)
-  sets.engaged.DW.HighHaste = {
-    -- Acceptable
-    head="Aya. Zucchetto +2",         -- __,  6, __, __, __, __, 44,  3/ 3
-    body="Ayanmo Corazza +2",         -- __, __, __, __,  7, __, 46,  6/ 6
-    legs="Aya. Cosciales +2",         -- __, __, __, __, __, __, 45,  5/ 5
-    ear1="Eabani Earring",            --  4, __, __, __, __, __, __, __/__
-    ear2="Telos Earring",             -- __,  5, __, __,  1, 10, 10, __/__
-    ring1="Ilabrat Ring",             -- __,  5, __, __, __, 25, __, __/__
-    ring2="Chirich Ring +1",          -- __,  6, __, __, __, __, 10, __/__
-    waist="Reiki Yotai",              --  7,  4, __, __, __, __, 10, __/__
-    -- range=gear.Linos_TP,           -- __,  4,  3, __, __, __, 20, __/__
-    -- hands=gear.Chironic_QA_hands,  -- __,  3, __, __, __, 32, 45, __/__
-    -- feet=gear.Chironic_QA_feet,    -- __,  3, __, __, __, 52, 30,  2/__
-    -- neck="Bard's Charm +1",        -- __,  6,  2, __, __, __, 25, __/__
-    -- back=gear.BRD_DW_Cape,         -- 10, __, __, __, __, 20, 30, 10/__
-    -- Acceptable: 21 DW, 42 STP, 5 QA, 0 TA, 8 DA, 139 Att, 315 Acc, 26PDT/14MDT
-
-    -- Ideal
-    -- range=gear.Linos_TP,           -- __,  4,  3, __, __, __, 20, __/__
-    -- head="Aya. Zucchetto +2",      -- __,  6, __, __, __, __, 44,  3/ 3
-    -- body="Ashera Harness",         -- __, 10, __, __, __, 45, 45,  7/ 7
-    -- hands="Volte Mittens",         -- __,  6, __, __, __, __, 36, __/__
-    -- legs="Volte Tights",           -- __,  8, __, __, __, __, 38, __/__
-    -- feet="Volte Spats",            -- __,  6, __, __, __, __, 35, __/__
-    -- neck="Bard's Charm +2",        -- __,  7,  3, __, __, __, 30, __/__
-    -- ear1="Eabani Earring",         --  4, __, __, __, __, __, __, __/__
-    -- ear2="Telos Earring",          -- __,  5, __, __,  1, 10, 10, __/__
-    -- ring1="Ilabrat Ring",          -- __,  5, __, __, __, 25, __, __/__
-    -- ring2="Chirich Ring +1",       -- __,  6, __, __, __, __, 10, __/__
-    -- back=gear.BRD_DW_Cape,         -- 10, __, __, __, __, 20, 30, 10/__
-    -- waist="Reiki Yotai",           --  7,  4, __, __, __, __, 10, __/__
-    -- 21 DW, 67 STP, 6 QA, 0 TA, 1 DA, 100 Att, 308 Acc, 20PDT/10MDT
-  }
-  sets.engaged.DW.Acc.HighHaste = set_combine(sets.engaged.DW.HighHaste, {
-    legs="Aya. Cosciales +2",         -- __, __, __, __, __, __, 45,  5/ 5
-    ring1="Chirich Ring +1",          -- __,  6, __, __, __, __, 10, __/__
-    -- hands="Raetic Bangles +1",     -- __, __, __, __, __, __, 55, __/__
-    -- Acceptable: 21 DW, 40 STP, 5 QA, 0 TA, 8 DA, 82 Att, 335 Acc, 26PDT/14MDT
-    -- Ideal: 21 DW, 66 STP, 6 QA, 0 TA, 1 DA, 75 Att, 344 Acc, 25PDT/15MDT
-  })
-
-  -- Super Magic/Gear/JA Haste (11% from gear to cap)
-  sets.engaged.DW.SuperHaste = {
+  -- Low DW (11 needed from gear)
+  sets.engaged.LowDW = {
     -- Acceptable
     head="Aya. Zucchetto +2",         -- __,  6, __, __, __, __, 44,  3/ 3
     body="Ayanmo Corazza +2",         -- __, __, __, __,  7, __, 46,  6/ 6
@@ -969,7 +867,7 @@ function init_gear_sets()
     -- waist="Reiki Yotai",           --  7,  4, __, __, __, __, 10, __/__
     -- 11 DW, 77 STP, 6 QA, 0 TA, 1 DA, 100 Att, 298 Acc, 20PDT/10MDT
   }
-  sets.engaged.DW.Acc.SuperHaste = set_combine(sets.engaged.DW.SuperHaste, {
+  sets.engaged.LowDW.Acc = set_combine(sets.engaged.LowDW, {
     legs="Aya. Cosciales +2",         -- __, __, __, __, __, __, 45, ??/??
     ring1="Chirich Ring +1",          -- __,  6, __, __, __, __, 10, ??/??
     -- hands="Raetic Bangles +1",     -- __, __, __, __, __, __, 55, ??/??
@@ -977,9 +875,98 @@ function init_gear_sets()
     -- Ideal: 11 DW, 64 STP, 6 QA, 0 TA, 1 DA, 75 Att, 334 Acc, 25PDT/15MDT
   })
 
-  -- Max Magic/Gear/JA Haste (1% from gear to cap)
-  sets.engaged.DW.MaxHaste = sets.engaged
-  sets.engaged.DW.MaxHaste.Acc = sets.engaged.Acc
+  -- Mid DW (18 needed from gear)
+  sets.engaged.MidDW = {
+    -- Acceptable
+    head="Aya. Zucchetto +2",         -- __,  6, __, __, __, __, 44,  3/ 3
+    body="Ayanmo Corazza +2",         -- __, __, __, __,  7, __, 46,  6/ 6
+    legs="Aya. Cosciales +2",         -- __, __, __, __, __, __, 45,  5/ 5
+    ear1="Eabani Earring",            --  4, __, __, __, __, __, __, __/__
+    ear2="Telos Earring",             -- __,  5, __, __,  1, 10, 10, __/__
+    ring1="Ilabrat Ring",             -- __,  5, __, __, __, 25, __, __/__
+    ring2="Chirich Ring +1",          -- __,  6, __, __, __, __, 10, __/__
+    waist="Reiki Yotai",              --  7,  4, __, __, __, __, 10, __/__
+    -- range=gear.Linos_TP,           -- __,  4,  3, __, __, __, 20, __/__
+    -- hands=gear.Chironic_QA_hands,  -- __,  3, __, __, __, 32, 45, __/__
+    -- feet=gear.Chironic_QA_feet,    -- __,  3, __, __, __, 52, 30,  2/__
+    -- neck="Bard's Charm +1",        -- __,  6,  2, __, __, __, 25, __/__
+    -- back=gear.BRD_DW_Cape,         -- 10, __, __, __, __, 20, 30, 10/__
+    -- Acceptable: 21 DW, 42 STP, 5 QA, 0 TA, 8 DA, 139 Att, 315 Acc, 26PDT/14MDT
+
+    -- Ideal
+    -- range=gear.Linos_TP,           -- __,  4,  3, __, __, __, 20, __/__
+    -- head="Aya. Zucchetto +2",      -- __,  6, __, __, __, __, 44,  3/ 3
+    -- body="Ashera Harness",         -- __, 10, __, __, __, 45, 45,  7/ 7
+    -- hands="Volte Mittens",         -- __,  6, __, __, __, __, 36, __/__
+    -- legs="Volte Tights",           -- __,  8, __, __, __, __, 38, __/__
+    -- feet="Volte Spats",            -- __,  6, __, __, __, __, 35, __/__
+    -- neck="Bard's Charm +2",        -- __,  7,  3, __, __, __, 30, __/__
+    -- ear1="Eabani Earring",         --  4, __, __, __, __, __, __, __/__
+    -- ear2="Telos Earring",          -- __,  5, __, __,  1, 10, 10, __/__
+    -- ring1="Ilabrat Ring",          -- __,  5, __, __, __, 25, __, __/__
+    -- ring2="Chirich Ring +1",       -- __,  6, __, __, __, __, 10, __/__
+    -- back=gear.BRD_DW_Cape,         -- 10, __, __, __, __, 20, 30, 10/__
+    -- waist="Reiki Yotai",           --  7,  4, __, __, __, __, 10, __/__
+    -- 21 DW, 67 STP, 6 QA, 0 TA, 1 DA, 100 Att, 308 Acc, 20PDT/10MDT
+  }
+  sets.engaged.MidDW.Acc = set_combine(sets.engaged.MidDW, {
+    legs="Aya. Cosciales +2",         -- __, __, __, __, __, __, 45,  5/ 5
+    ring1="Chirich Ring +1",          -- __,  6, __, __, __, __, 10, __/__
+    -- hands="Raetic Bangles +1",     -- __, __, __, __, __, __, 55, __/__
+    -- Acceptable: 21 DW, 40 STP, 5 QA, 0 TA, 8 DA, 82 Att, 335 Acc, 26PDT/14MDT
+    -- Ideal: 21 DW, 66 STP, 6 QA, 0 TA, 1 DA, 75 Att, 344 Acc, 25PDT/15MDT
+  })
+
+  -- High DW (31 needed from gear)
+  sets.engaged.HighDW = sets.engaged.MidDW
+  sets.engaged.HighDW.Acc = sets.engaged.MidDW.Acc
+
+  -- Super DW (42 needed from gear)
+  sets.engaged.SuperDW = sets.engaged.HighDW
+  sets.engaged.SuperDW.Acc = sets.engaged.HighDW.Acc
+
+  -- Max DW (49 needed from gear)
+  sets.engaged.MaxDW = {
+    -- Acceptable
+    head="Aya. Zucchetto +2",         -- __,  6, __, __, __, __, 44,  3/ 3
+    body="Ayanmo Corazza +2",         -- __, __, __, __,  7, __, 46,  6/ 6
+    legs="Aya. Cosciales +2",         -- __, __, __, __, __, __, 45,  5/ 5
+    ear1="Eabani Earring",            --  4, __, __, __, __, __, __, __/__
+    ear2="Suppanomimi",               --  5, __, __, __, __, __, __, __/__
+    ring1="Ilabrat Ring",             -- __,  5, __, __, __, 25, __, __/__
+    ring2="Chirich Ring +1",          -- __,  6, __, __, __, __, 10, __/__
+    waist="Reiki Yotai",              --  7,  4, __, __, __, __, 10, __/__
+    -- range=gear.Linos_TP,           -- __,  4,  3, __, __, __, 20, __/__
+    -- hands=gear.Chironic_QA_hands,  -- __,  3, __, __, __, 32, 45, __/__
+    -- feet=gear.Chironic_QA_feet,    -- __,  3, __, __, __, 52, 30,  2/__
+    -- neck="Bard's Charm +1",        -- __,  6,  2, __, __, __, 25, __/__
+    -- back=gear.BRD_DW_Cape,         -- 10, __, __, __, __, 20, 30, 10/__
+    -- Acceptable: 26 DW, 37 STP, 5 QA, 0 TA, 7 DA, 129 Att, 305 Acc, 26PDT/14MDT
+
+    -- Ideal
+    -- range=gear.Linos_TP,           -- __,  4,  3, __, __, __, 20, __/__
+    -- head="Aya. Zucchetto +2",      -- __,  6, __, __, __, __, 44,  3/ 3
+    -- body="Ashera Harness",         -- __, 10, __, __, __, 45, 45,  7/ 7
+    -- hands="Volte Mittens",         -- __,  6, __, __, __, __, 36, __/__
+    -- legs="Volte Tights",           -- __,  8, __, __, __, __, 38, __/__
+    -- feet="Volte Spats",            -- __,  6, __, __, __, __, 35, __/__
+    -- neck="Bard's Charm +2",        -- __,  7,  3, __, __, __, 30, __/__
+    -- ear1="Eabani Earring",         --  4, __, __, __, __, __, __, __/__
+    -- ear2="Suppanomimi",            --  5, __, __, __, __, __, __, __/__
+    -- ring1="Ilabrat Ring",          -- __,  5, __, __, __, 25, __, __/__
+    -- ring2="Chirich Ring +1",       -- __,  6, __, __, __, __, 10, __/__
+    -- back=gear.BRD_DW_Cape,         -- 10, __, __, __, __, 20, 30, 10/__
+    -- waist="Reiki Yotai",           --  7,  4, __, __, __, __, 10, __/__
+    -- Ideal: 26 DW, 62 STP, 6 QA, 0 TA, 0 DA, 90 Att, 298 Acc, 20PDT/10MDT
+  } -- Only 26% DW; doesn't cap but can't get much better
+  sets.engaged.MaxDW.Acc = set_combine(sets.engaged.MaxDW, {
+    legs="Aya. Cosciales +2",         -- __, __, __, __, __, __, 45,  5/ 5
+    ear1="Dignitary's Earring",       -- __,  3, __, __, __, __, 10, __/__
+    ring1="Chirich Ring +1",          -- __,  6, __, __, __, __, 10, __/__
+    -- hands="Raetic Bangles +1",     -- __, __, __, __, __, __, 55, __/__
+    -- Acceptable: 26 DW, 38 STP, 5 QA, 0 TA, 7 DA, 72 Att, 335 Acc, 26PDT/14MDT
+    -- Ideal: 26 DW, 52 STP, 6 QA, 0 TA, 0 DA, 65 Att, 344 Acc, 25PDT/15MDT
+  })
 
   sets.engaged.Aftermath = {
     head="Aya. Zucchetto +2",
@@ -1004,25 +991,22 @@ function init_gear_sets()
   }
 
   sets.engaged.DT = set_combine(sets.engaged, sets.engaged.Hybrid)
-  sets.engaged.Acc.DT = set_combine(sets.engaged.Acc, sets.engaged.Hybrid)
+  sets.engaged.DT.Acc = set_combine(sets.engaged.Acc, sets.engaged.Hybrid)
 
-  sets.engaged.DW.DT = set_combine(sets.engaged.DW, sets.engaged.Hybrid)
-  sets.engaged.DW.Acc.DT = set_combine(sets.engaged.DW.Acc, sets.engaged.Hybrid)
+  sets.engaged.LowDW.DT = set_combine(sets.engaged.LowDW, sets.engaged.Hybrid)
+  sets.engaged.LowDW.DT.Acc = set_combine(sets.engaged.LowDW.Acc, sets.engaged.Hybrid)
 
-  sets.engaged.DW.DT.LowHaste = set_combine(sets.engaged.DW.LowHaste, sets.engaged.Hybrid)
-  sets.engaged.DW.Acc.DT.LowHaste = set_combine(sets.engaged.DW.Acc.LowHaste, sets.engaged.Hybrid)
+  sets.engaged.MidDW.DT = set_combine(sets.engaged.MidDW, sets.engaged.Hybrid)
+  sets.engaged.MidDW.DT.Acc = set_combine(sets.engaged.MidDW.Acc, sets.engaged.Hybrid)
 
-  sets.engaged.DW.DT.MidHaste = set_combine(sets.engaged.DW.MidHaste, sets.engaged.Hybrid)
-  sets.engaged.DW.Acc.DT.MidHaste = set_combine(sets.engaged.DW.Acc.MidHaste, sets.engaged.Hybrid)
+  sets.engaged.HighDW.DT = set_combine(sets.engaged.HighDW, sets.engaged.Hybrid)
+  sets.engaged.HighDW.DT.Acc = set_combine(sets.engaged.HighDW.Acc, sets.engaged.Hybrid)
 
-  sets.engaged.DW.DT.HighHaste = set_combine(sets.engaged.DW.HighHaste, sets.engaged.Hybrid)
-  sets.engaged.DW.Acc.DT.HighHaste = set_combine(sets.engaged.DW.Acc.HighHaste, sets.engaged.Hybrid)
+  sets.engaged.SuperDW.DT = set_combine(sets.engaged.SuperDW, sets.engaged.Hybrid)
+  sets.engaged.SuperDW.DT.Acc = set_combine(sets.engaged.SuperDW.Acc, sets.engaged.Hybrid)
 
-  sets.engaged.DW.DT.MaxHaste = set_combine(sets.engaged.DW.MaxHaste, sets.engaged.Hybrid)
-  sets.engaged.DW.Acc.DT.MaxHaste = set_combine(sets.engaged.DW.Acc.MaxHaste, sets.engaged.Hybrid)
-
-  sets.engaged.DW.DT.SuperHaste = set_combine(sets.engaged.DW.SuperHaste, sets.engaged.Hybrid)
-  sets.engaged.DW.Acc.DT.SuperHaste = set_combine(sets.engaged.DW.Acc.SuperHaste, sets.engaged.Hybrid)
+  sets.engaged.MaxDW.DT = set_combine(sets.engaged.MaxDW, sets.engaged.Hybrid)
+  sets.engaged.MaxDW.DT.Acc = set_combine(sets.engaged.MaxDW.Acc, sets.engaged.Hybrid)
 
 
   ------------------------------------------------------------------------------------------------
@@ -1300,21 +1284,8 @@ end
 -- Set eventArgs.handled to true if we don't want automatic equipping of gear.
 function job_handle_equipping_gear(playerStatus, eventArgs)
   check_gear()
-  update_combat_form()
   update_idle_groups()
-  determine_haste_group()
-end
-
-function job_update(cmdParams, eventArgs)
-  handle_equipping_gear(player.status)
-end
-
-function update_combat_form()
-  if DW == true then
-    state.CombatForm:set('DW')
-  elseif DW == false then
-    state.CombatForm:reset()
-  end
+  silibs.update_combat_form()
 end
 
 -- Called for direct player commands.
@@ -1338,32 +1309,6 @@ function job_self_command(cmdParams, eventArgs)
     send_command('@input /ma '..state.Threnody.value..' <stnpc>')
   elseif cmdParams[1] == 'test' then
     test()
-  end
-
-  gearinfo(cmdParams, eventArgs)
-end
-
-function gearinfo(cmdParams, eventArgs)
-  if cmdParams[1] == 'gearinfo' then
-    if type(tonumber(cmdParams[2])) == 'number' then
-      if tonumber(cmdParams[2]) ~= DW_needed then
-      DW_needed = tonumber(cmdParams[2])
-      DW = true
-      end
-    elseif type(cmdParams[2]) == 'string' then
-      if cmdParams[2] == 'false' then
-        DW_needed = 0
-        DW = false
-      end
-    end
-    if type(tonumber(cmdParams[3])) == 'number' then
-      if tonumber(cmdParams[3]) ~= Haste then
-        Haste = tonumber(cmdParams[3])
-      end
-    end
-    if not midaction() then
-      job_update()
-    end
   end
 end
 
@@ -1652,25 +1597,6 @@ function get_lullaby_duration(spell)
     send_command('@timers c "Lullaby II ['..spell.target.name..']" ' ..totalDuration.. ' down spells/00377.png')
   elseif spell.english == "Foe Lullaby" or spell.english == "Horde Lullaby" then
     send_command('@timers c "Lullaby ['..spell.target.name..']" ' ..totalDuration.. ' down spells/00376.png')
-  end
-end
-
-function determine_haste_group()
-  classes.CustomMeleeGroups:clear()
-  if DW == true then
-    if DW_needed <= 1 then
-      classes.CustomMeleeGroups:append('MaxHaste')
-    elseif DW_needed > 1 and DW_needed <= 11 then
-      classes.CustomMeleeGroups:append('SuperHaste')
-    elseif DW_needed > 11 and DW_needed <= 21 then
-      classes.CustomMeleeGroups:append('HighHaste')
-    elseif DW_needed > 21 and DW_needed <= 31 then
-      classes.CustomMeleeGroups:append('MidHaste')
-    elseif DW_needed > 31 and DW_needed <= 42 then
-      classes.CustomMeleeGroups:append('LowHaste')
-    elseif DW_needed > 42 then
-      classes.CustomMeleeGroups:append('')
-    end
   end
 end
 
