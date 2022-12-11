@@ -1150,7 +1150,6 @@ end
 -- gain == true if the buff was gained, false if it was lost.
 -- Theory: debuffs must be lowercase and buffs must begin with uppercase
 function job_buff_change(buff,gain)
-  state.CombatForm:reset()
   classes.CustomMeleeGroups:clear()
 
   if buff == 'sleep' and gain and player.vitals.hp > 500 and player.status == 'Engaged' then
