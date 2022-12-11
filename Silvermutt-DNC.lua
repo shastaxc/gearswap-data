@@ -1,4 +1,4 @@
--- File Status: Good. Need to update with empy+3. Acc modes for engaged sets are outdated.
+-- File Status: Good. Need to update with empy+3. Acc modes for engaged sets are outdated. Need to update MaxDW sets.
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs
