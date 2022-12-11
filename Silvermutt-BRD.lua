@@ -1141,7 +1141,7 @@ function job_post_precast(spell, action, spellMap, eventArgs)
 
   if state.BattleMode.value == true then
     -- Keep weapons the same, to avoid losing TP
-    if state.CombatForm.value == 'DW' then
+    if silibs.can_dual_wield() then
       equip(sets.WeaponSet[state.WeaponSet.value])
     else
       equip({ main=sets.WeaponSet[state.WeaponSet.value].main })
@@ -1189,14 +1189,14 @@ end
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 function job_post_midcast(spell, action, spellMap, eventArgs)
   if spell.type == 'BardSong' then
-    if state.CombatForm.current == 'DW' then
+    if silibs.can_dual_wield() then
       equip(sets.SongDWDuration)
     end
   end
 
   if state.BattleMode.value == true then
     -- Keep weapons the same, to avoid losing TP
-    if state.CombatForm.value == 'DW' then
+    if silibs.can_dual_wield() then
       equip(sets.WeaponSet[state.WeaponSet.value])
     else
       equip({ main=sets.WeaponSet[state.WeaponSet.value].main })
@@ -1331,7 +1331,7 @@ function customize_idle_set(idleSet)
 
   if state.BattleMode.value == true then
     -- Keep weapons the same, to avoid losing TP
-    if state.CombatForm.value == 'DW' then
+    if silibs.can_dual_wield() then
       idleSet = set_combine(idleSet, sets.WeaponSet[state.WeaponSet.value])
     else
       idleSet = set_combine(idleSet, { main=sets.WeaponSet[state.WeaponSet.value].main })
@@ -1363,7 +1363,7 @@ function customize_melee_set(meleeSet)
 
   if state.BattleMode.value == true then
     -- Keep weapons the same, to avoid losing TP
-    if state.CombatForm.value == 'DW' then
+    if silibs.can_dual_wield() then
       meleeSet = set_combine(meleeSet, sets.WeaponSet[state.WeaponSet.value])
     else
       meleeSet = set_combine(meleeSet, { main=sets.WeaponSet[state.WeaponSet.value].main })
@@ -1391,7 +1391,7 @@ function customize_defense_set(defenseSet)
 
   if state.BattleMode.value == true then
     -- Keep weapons the same, to avoid losing TP
-    if state.CombatForm.value == 'DW' then
+    if silibs.can_dual_wield() then
       defenseSet = set_combine(defenseSet, sets.WeaponSet[state.WeaponSet.value])
     else
       defenseSet = set_combine(defenseSet, { main=sets.WeaponSet[state.WeaponSet.value].main })
@@ -1491,7 +1491,7 @@ function cycle_weapons(cycle_dir)
   end
 
   add_to_chat(141, 'Weapon Set to '..string.char(31,1)..state.WeaponSet.current)
-  if state.CombatForm.value == 'DW' then
+  if silibs.can_dual_wield() then
     equip(sets.WeaponSet[state.WeaponSet.value])
   else
     equip({ main=sets.WeaponSet[state.WeaponSet.value].main })
