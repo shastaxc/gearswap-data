@@ -2,8 +2,9 @@
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs
--- Required addons: GearInfo
+-- Required addons: N/A
 -- Recommended addons: WSBinder, Reorganizer
+-- Misc Recommendations: Disable RollTracker
 
 -------------------------------------------------------------------------------------------------------------------
 --  Keybinds
@@ -59,13 +60,14 @@ function job_setup()
   silibs.enable_auto_lockstyle(5)
   silibs.enable_premade_commands()
   silibs.enable_th()
+  silibs.enable_custom_roll_text()
+  silibs.enable_equip_loop()
 
   state.Buff.Footwork = buffactive.Footwork or false
   state.Buff.Impetus = buffactive.Impetus or false
 
   info.impetus_hit_count = 0 -- Do not modify
   info.boost_temp_lock = false -- Do not modify
-  windower.raw_register_event('action', on_action_for_impetus)
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.HybridMode:options('LightDef', 'HeavyDef', 'Normal')
@@ -1168,7 +1170,6 @@ function job_handle_equipping_gear(playerStatus, eventArgs)
   update_melee_groups()
 end
 
-
 -- Function to display the current relevant user state when doing an update.
 -- Set eventArgs.handled to true if display was handled, and you don't want the default info shown.
 function display_current_job_state(eventArgs)
@@ -1260,10 +1261,6 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- User code that supplements self-commands.
 -------------------------------------------------------------------------------------------------------------------
-
-function job_update(cmdParams, eventArgs)
-  handle_equipping_gear(player.status)
-end
 
 -- Modify the default idle set after it was constructed.
 function customize_idle_set(idleSet)
@@ -1453,16 +1450,6 @@ function job_self_command(cmdParams, eventArgs)
   elseif cmdParams[1] == 'test' then
     test()
   end
-
-  gearinfo(cmdParams, eventArgs)
-end
-
-function gearinfo(cmdParams, eventArgs)
-  if cmdParams[1] == 'gearinfo' then
-    if not midaction() then
-      job_update()
-    end
-  end
 end
 
 function check_gear()
@@ -1581,3 +1568,4 @@ function on_action_for_impetus(action)
 
 end
 
+windower.raw_register_event('action', on_action_for_impetus)
