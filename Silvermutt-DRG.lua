@@ -4,6 +4,7 @@
 -- Required external libraries: SilverLibs
 -- Required addons: N/A
 -- Recommended addons: WSBinder, Reorganizer
+-- Misc Recommendations: Disable RollTracker
 
 -------------------------------------------------------------------------------------------------------------------
 --  Keybinds
