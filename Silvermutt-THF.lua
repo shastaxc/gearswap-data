@@ -896,7 +896,7 @@ function init_gear_sets()
     -- ear2="Skulker's Earring +2",     -- __,  8, 20, __ <__,  5, __> (__, __) [__/__, ___] __
   })
 
-  -- Low DW (11 needed from gear)
+  -- Low DW (6 needed from gear)
   sets.engaged.LowDW = {
     ammo="Coiste Bodhar",               -- __,  3, __, __ < 3, __, __> (__, __) [__/__, ___] __
     head="Malignance Chapeau",          -- __,  8, 50, __ <__, __, __> (__, __) [ 6/ 6, 123]  3
@@ -932,7 +932,7 @@ function init_gear_sets()
     -- ear2="Skulker's Earring +2",     -- __,  8, 20, __ <__,  5, __> (__, __) [__/__, ___] __
   })
 
-  -- Mid DW (18 needed from gear)
+  -- Mid DW (13 needed from gear)
   sets.engaged.MidDW = {
     ammo="Coiste Bodhar",               -- __,  3, __, __ < 3, __, __> (__, __) [__/__, ___] __
     head="Malignance Chapeau",          -- __,  8, 50, __ <__, __, __> (__, __) [ 6/ 6, 123]  3
@@ -969,7 +969,7 @@ function init_gear_sets()
     -- ear2="Skulker's Earring +2",     -- __,  8, 20, __ <__,  5, __> (__, __) [__/__, ___] __
   })
 
-  -- High DW (31 needed from gear)
+  -- High DW (26 needed from gear)
   sets.engaged.HighDW = {
     ammo="Coiste Bodhar",               -- __,  3, __, __ < 3, __, __> (__, __) [__/__, ___] __
     head="Malignance Chapeau",          -- __,  8, 50, __ <__, __, __> (__, __) [ 6/ 6, 123]  3
@@ -1003,7 +1003,7 @@ function init_gear_sets()
     -- ear2="Skulker's Earring +2",     -- __,  8, 20, __ <__,  5, __> (__, __) [__/__, ___] __
   })
 
-  -- Super DW (42 needed from gear)
+  -- Super DW (37 needed from gear)
   sets.engaged.SuperDW = {
     ammo="Coiste Bodhar",               -- __,  3, __, __ < 3, __, __> (__, __) [__/__, ___] __
     head="Malignance Chapeau",          -- __,  8, 50, __ <__, __, __> (__, __) [ 6/ 6, 123]  3
@@ -1035,7 +1035,7 @@ function init_gear_sets()
     -- ear2="Skulker's Earring +2",     -- __,  8, 20, __ <__,  5, __> (__, __) [__/__, ___] __
   })
 
-  -- Max DW (49 needed from gear)
+  -- Max DW (44 needed from gear)
   sets.engaged.MaxDW = {
     ammo="Coiste Bodhar",               -- __,  3, __, __ < 3, __, __> (__, __) [__/__, ___] __
     head="Malignance Chapeau",          -- __,  8, 50, __ <__, __, __> (__, __) [ 6/ 6, 123]  3
