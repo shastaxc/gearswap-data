@@ -2,8 +2,9 @@
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs
--- Required addons: GearInfo, DistancePlus
+-- Required addons: HasteInfo, DistancePlus
 -- Recommended addons: WSBinder, Reorganizer
+-- Misc Recommendations: Disable GearInfo, disable RollTracker
 
 -------------------------------------------------------------------------------------------------------------------
 --  Keybinds
@@ -106,6 +107,9 @@ function job_setup()
   })
   silibs.enable_premade_commands()
   silibs.enable_th()
+  silibs.enable_custom_roll_text()
+  silibs.enable_equip_loop()
+  silibs.enable_haste_info()
 
   Haste = 0 -- Do not modify
   DW_needed = 0 -- Do not modify
@@ -205,9 +209,6 @@ function user_setup()
     send_command('bind ^numpad* input /ja "High Jump" <t>')
     send_command('bind ^numpad- input /ja "Super Jump" <t>')
   end
-
-  update_combat_form()
-  determine_haste_group()
 
   select_default_macro_book()
 end
@@ -808,9 +809,8 @@ function init_gear_sets()
 
   -- Variations for TP weapon and (optional) offense/defense modes.  Code will fall back on previous
   -- sets if more refined versions aren't defined.
-  -- If you create a set with both offense and defense modes, the offense mode should be first.
-  -- EG: sets.engaged.Dagger.Accuracy.Evasion
 
+  -- No DW (0-1 needed from gear)
   sets.engaged = {
     ammo="Coiste Bodhar",           -- __,  3, __ < 3, __, __> [__/__, ___] __(__)
     head="Malignance Chapeau",      -- __,  8, 50 <__, __, __> [ 6/ 6, 123] __(__)
@@ -825,8 +825,8 @@ function init_gear_sets()
     ring2="Gere Ring",              -- __, __, __ <__,  5, __> [__/__, ___] __(__)
     back=gear.DNC_TP_DA_Cape,       -- __, __, 20 <10, __, __> [10/__, ___] __(__)
     waist="Windbuffet Belt +1",     -- __,  2, __ <__,  2,  2> [__/__, ___] __(__)
-    -- Traits/Merits/Gifts             35, __, __ <__, __, __> [__/__, ___] 33(__)
-    -- 35 DW, 66 STP, 272 Acc <25 DA, 17 TA, 2 QA> [34 PDT/24 MDT, 485 M.Eva] 38 Subtle Blow
+    -- Traits/Merits/Gifts             __, __, __ <__, __, __> [__/__, ___] 33(__)
+    -- 0 DW, 66 STP, 272 Acc <25 DA, 17 TA, 2 QA> [34 PDT/24 MDT, 485 M.Eva] 38 Subtle Blow
   }
   sets.engaged.LowAcc = set_combine(sets.engaged, {
     ammo="Yamarang",                -- __,  3, 15 <__, __, __> [__/__,  15] __(__)
@@ -849,132 +849,8 @@ function init_gear_sets()
     waist="Olseni Belt",
   })
 
-  -- * DNC Native DW Trait: 30% DW
-  -- * DNC Job Points DW Gift: 5% DW
-
-  -- No Magic/Gear/JA Haste (74% DW to cap, 39% from gear)
-  sets.engaged.DW = {
-    ammo="Coiste Bodhar",           -- __,  3, __ < 3, __, __> [__/__, ___] __(__)
-    head="Malignance Chapeau",      -- __,  8, 50 <__, __, __> [ 6/ 6, 123] __(__)
-    body="Maculele Casaque +2",     -- 11, __, __ <__, __, __> [13/13,  99] 13(__)
-    hands=gear.Adhemar_A_hands,     -- __,  7, 52 <__,  4, __> [__/__,  43] __(__)
-    legs=gear.Samnuha_legs,         -- __,  7, 15 < 3,  3, __> [__/__,  75] __(__)
-    feet="Maculele Toe Shoes +2",   -- __, 11, 50 <__, __, __> [ 9/ 9, 105] __(__); Remove Close Position merits
-    neck="Etoile Gorget +2",        -- __,  7, 25 <__, __, __> [__/__, ___] __(__)
-    ear1="Suppanomimi",             --  5, __, __ <__, __, __> [__/__, ___] __(__)
-    ear2="Eabani Earring",          --  4, __, __ <__, __, __> [__/__,   8] __(__)
-    ring1="Epona's Ring",           -- __, __, __ < 3,  3, __> [__/__, ___] __(__)
-    ring2="Gere Ring",              -- __, __, __ <__,  5, __> [__/__, ___] __(__)
-    back=gear.DNC_TP_DW_Cape,       -- 10, __, 20 <__, __, __> [10/__, ___] __(__)
-    waist="Reiki Yotai",            --  7,  4, 10 <__, __, __> [__/__, ___] __(__)
-    -- Traits/Merits/Gifts             35, __, __ <__, __, __> [__/__, ___] 33(__)
-    -- 72 DW, 47 STP, 222 Acc <9 DA, 15 TA, 0 QA> [38 PDT/28 MDT, 453 M.Eva] 46 Subtle Blow
-  }
-  sets.engaged.DW.LowAcc = set_combine(sets.engaged.DW, {
-    ammo="Yamarang",                -- __,  3, 15 <__, __, __> [__/__,  15] __(__)
-    ring1="Chirich Ring +1",
-  })
-  sets.engaged.DW.MidAcc = set_combine(sets.engaged.DW.LowAcc, {
-    legs="Horos Tights +3",
-    waist="Kentarch Belt +1",
-    -- ammo="Voluspa Tathlum",
-  })
-  sets.engaged.DW.HighAcc = set_combine(sets.engaged.DW.MidAcc, {
-    -- TODO: Re-evaluate to avoid dropping DW
-    ammo="Cath Palug Stone",
-    body="Maxixi Casaque +3",
-    hands="Mummu Wrists +2",
-    legs="Malignance Tights",       -- __, 10, 50 <__, __, __> [ 7/ 7, 150] __(__)
-    ear2="Dignitary's Earring",
-    ring2="Regal Ring",
-    -- waist="Olseni Belt",
-  })
-
-  -- Low Magic/Gear/JA Haste (60% DW to cap, 25% from gear)
-  sets.engaged.DW.LowHaste = {
-    ammo="Coiste Bodhar",           -- __,  3, __ < 3, __, __> [__/__, ___] __(__)
-    head="Malignance Chapeau",      -- __,  8, 50 <__, __, __> [ 6/ 6, 123] __(__)
-    body="Maculele Casaque +2",     -- 11, __, __ <__, __, __> [13/13,  99] 13(__)
-    hands=gear.Adhemar_A_hands,     -- __,  7, 52 <__,  4, __> [__/__,  43] __(__)
-    legs=gear.Samnuha_legs,         -- __,  7, 15 < 3,  3, __> [__/__,  75] __(__)
-    feet="Maculele Toe Shoes +2",   -- __, 11, 50 <__, __, __> [ 9/ 9, 105] __(__); Remove Close Position merits
-    neck="Etoile Gorget +2",        -- __,  7, 25 <__, __, __> [__/__, ___] __(__)
-    ear1="Telos Earring",           -- __,  5, 10 < 1, __, __> [__/__, ___] __(__)
-    ear2="Sherida Earring",         -- __,  5, __ < 5, __, __> [__/__, ___] __( 5)
-    ring1="Epona's Ring",           -- __, __, __ < 3,  3, __> [__/__, ___] __(__)
-    ring2="Gere Ring",              -- __, __, __ <__,  5, __> [__/__, ___] __(__)
-    back=gear.DNC_TP_DW_Cape,       -- 10, __, 20 <__, __, __> [10/__, ___] __(__)
-    waist="Reiki Yotai",            --  7,  4, 10 <__, __, __> [__/__, ___] __(__)
-    -- Traits/Merits/Gifts             35, __, __ <__, __, __> [__/__, ___] 33(__)
-    -- 63 DW, 57 STP, 232 Acc <15 DA, 15 TA, 0 QA> [38 PDT/28 MDT, 445 M.Eva] 51 Subtle Blow
-  }
-  sets.engaged.DW.LowAcc.LowHaste = set_combine(sets.engaged.DW.LowHaste, {
-    ammo="Yamarang",                -- __,  3, 15 <__, __, __> [__/__,  15] __(__)
-    head="Dampening Tam",
-  })
-  sets.engaged.DW.MidAcc.LowHaste = set_combine(sets.engaged.DW.LowAcc.LowHaste, {
-    head="Maxixi Tiara +3",         --  8, __, 47 <__, __, __> [__/__,  73] __(__)
-    body="Horos Casaque +3",        -- __, __, 50 <__,  4, __> [ 6/__,  84] __(__)
-    legs="Horos Tights +3",
-    ring1="Chirich Ring +1",
-    waist="Kentarch Belt +1",
-    -- ammo="Voluspa Tathlum",
-  })
-  sets.engaged.DW.HighAcc.LowHaste = set_combine(sets.engaged.DW.MidAcc.LowHaste, {
-    -- TODO: Re-evaluate to avoid dropping DW
-    ammo="Cath Palug Stone",
-    body="Maxixi Casaque +3",
-    hands="Mummu Wrists +2",
-    legs="Malignance Tights",       -- __, 10, 50 <__, __, __> [ 7/ 7, 150] __(__)
-    ear1="Dignitary's Earring",
-    ring2="Regal Ring",
-    -- waist="Olseni Belt",
-  })
-
-  -- Mid Magic/Gear/JA Haste (56% DW to cap, 21% from gear)
-  sets.engaged.DW.MidHaste = {
-    ammo="Coiste Bodhar",           -- __,  3, __ < 3, __, __> [__/__, ___] __(__)
-    head="Malignance Chapeau",      -- __,  8, 50 <__, __, __> [ 6/ 6, 123] __(__)
-    body="Malignance Tabard",       -- __, 11, 50 <__, __, __> [ 9/ 9, 139] __(__)
-    hands=gear.Adhemar_A_hands,     -- __,  7, 52 <__,  4, __> [__/__,  43] __(__)
-    legs=gear.Samnuha_legs,         -- __,  7, 15 < 3,  3, __> [__/__,  75] __(__)
-    feet="Maculele Toe Shoes +2",   -- __, 11, 50 <__, __, __> [ 9/ 9, 105] __(__); Remove Close Position merits
-    neck="Etoile Gorget +2",        -- __,  7, 25 <__, __, __> [__/__, ___] __(__)
-    ear1="Eabani Earring",          --  4, __, __ <__, __, __> [__/__,   8] __(__)
-    ear2="Sherida Earring",         -- __,  5, __ < 5, __, __> [__/__, ___] __( 5)
-    ring1="Epona's Ring",           -- __, __, __ < 3,  3, __> [__/__, ___] __(__)
-    ring2="Gere Ring",              -- __, __, __ <__,  5, __> [__/__, ___] __(__)
-    back=gear.DNC_TP_DW_Cape,       -- 10, __, 20 <__, __, __> [10/__, ___] __(__)
-    waist="Reiki Yotai",            --  7,  4, 10 <__, __, __> [__/__, ___] __(__)
-    -- Traits/Merits/Gifts             35, __, __ <__, __, __> [__/__, ___] 33(__)
-    -- 56 DW, 63 STP, 272 Acc <14 DA, 15 TA, 0 QA> [34 PDT/24 MDT, 493 M.Eva] 38 Subtle Blow
-  }
-  sets.engaged.DW.LowAcc.MidHaste = set_combine(sets.engaged.DW.MidHaste, {
-    ammo="Yamarang",                -- __,  3, 15 <__, __, __> [__/__,  15] __(__)
-    head="Dampening Tam",
-    hands="Mummu Wrists +2",
-  })
-  sets.engaged.DW.MidAcc.MidHaste = set_combine(sets.engaged.DW.LowAcc.MidHaste, {
-    head="Maxixi Tiara +3",         --  8, __, 47 <__, __, __> [__/__,  73] __(__)
-    body="Horos Casaque +3",        -- __, __, 50 <__,  4, __> [ 6/__,  84] __(__)
-    legs="Horos Tights +3",
-    ear1="Telos Earring",           -- __,  5, 10 < 1, __, __> [__/__, ___] __(__)
-    ring1="Chirich Ring +1",
-    waist="Kentarch Belt +1",
-    -- ammo="Voluspa Tathlum",
-  })
-  sets.engaged.DW.HighAcc.MidHaste = set_combine(sets.engaged.DW.MidAcc.MidHaste, {
-    ammo="Cath Palug Stone",
-    body="Maxixi Casaque +3",
-    legs="Malignance Tights",       -- __, 10, 50 <__, __, __> [ 7/ 7, 150] __(__)
-    ear2="Dignitary's Earring",
-    ring1="Chirich Ring +1",
-    ring2="Regal Ring",
-    -- waist="Olseni Belt",
-  })
-
-  -- High Magic/Gear/JA Haste (43% DW to cap, 8% from gear)
-  sets.engaged.DW.HighHaste = {
+  -- Low DW (8 needed from gear)
+  sets.engaged.LowDW = {
     ammo="Coiste Bodhar",           -- __,  3, __ < 3, __, __> [__/__, ___] __(__)
     head="Malignance Chapeau",      -- __,  8, 50 <__, __, __> [ 6/ 6, 123] __(__)
     body="Malignance Tabard",       -- __, 11, 50 <__, __, __> [ 9/ 9, 139] __(__)
@@ -988,22 +864,22 @@ function init_gear_sets()
     ring2="Gere Ring",              -- __, __, __ <__,  5, __> [__/__, ___] __(__)
     back=gear.DNC_TP_DA_Cape,       -- __, __, 20 <10, __, __> [10/__, ___] __(__)
     waist="Reiki Yotai",            --  7,  4, 10 <__, __, __> [__/__, ___] __(__)
-    -- Traits/Merits/Gifts             35, __, __ <__, __, __> [__/__, ___] 33(__)
-    -- 42 DW, 68 STP, 282 Acc <25 DA, 15 TA, 0 QA> [34 PDT/24 MDT, 485 M.Eva] 38 Subtle Blow
+    -- Traits/Merits/Gifts             __, __, __ <__, __, __> [__/__, ___] 33(__)
+    -- 7 DW, 68 STP, 282 Acc <25 DA, 15 TA, 0 QA> [34 PDT/24 MDT, 485 M.Eva] 38 Subtle Blow
   }
-  sets.engaged.DW.LowAcc.HighHaste = set_combine(sets.engaged.DW.HighHaste, {
+  sets.engaged.LowDW.LowAcc = set_combine(sets.engaged.LowDW, {
     ammo="Yamarang",                -- __,  3, 15 <__, __, __> [__/__,  15] __(__)
     head="Dampening Tam",
     ring1="Chirich Ring +1",
   })
-  sets.engaged.DW.MidAcc.HighHaste = set_combine(sets.engaged.DW.LowAcc.HighHaste, {
+  sets.engaged.LowDW.MidAcc = set_combine(sets.engaged.LowDW.LowAcc, {
     body="Horos Casaque +3",        -- __, __, 50 <__,  4, __> [ 6/__,  84] __(__)
     hands="Mummu Wrists +2",
     legs="Horos Tights +3",
     waist="Kentarch Belt +1",
     -- ammo="Voluspa Tathlum",
   })
-  sets.engaged.DW.HighAcc.HighHaste = set_combine(sets.engaged.DW.MidAcc.HighHaste, {
+  sets.engaged.LowDW.HighAcc = set_combine(sets.engaged.LowDW.MidAcc, {
     ammo="Cath Palug Stone",
     head="Maxixi Tiara +3",         --  8, __, 47 <__, __, __> [__/__,  73] __(__)
     body="Maxixi Casaque +3",
@@ -1013,17 +889,159 @@ function init_gear_sets()
     -- waist="Olseni Belt",
   })
 
-  -- Max Magic/Gear/JA Haste (0-36% DW to cap, 0-1% from gear)
-  sets.engaged.DW.MaxHaste = sets.engaged
-  sets.engaged.DW.LowAcc.MaxHaste = sets.engaged.LowAcc
-  sets.engaged.DW.MidAcc.MaxHaste = sets.engaged.MidAcc
-  sets.engaged.DW.HighAcc.MaxHaste = sets.engaged.HighAcc
+  -- Mid DW (21 needed from gear)
+  sets.engaged.MidDW = {
+    ammo="Coiste Bodhar",           -- __,  3, __ < 3, __, __> [__/__, ___] __(__)
+    head="Malignance Chapeau",      -- __,  8, 50 <__, __, __> [ 6/ 6, 123] __(__)
+    body="Malignance Tabard",       -- __, 11, 50 <__, __, __> [ 9/ 9, 139] __(__)
+    hands=gear.Adhemar_A_hands,     -- __,  7, 52 <__,  4, __> [__/__,  43] __(__)
+    legs=gear.Samnuha_legs,         -- __,  7, 15 < 3,  3, __> [__/__,  75] __(__)
+    feet="Maculele Toe Shoes +2",   -- __, 11, 50 <__, __, __> [ 9/ 9, 105] __(__); Remove Close Position merits
+    neck="Etoile Gorget +2",        -- __,  7, 25 <__, __, __> [__/__, ___] __(__)
+    ear1="Eabani Earring",          --  4, __, __ <__, __, __> [__/__,   8] __(__)
+    ear2="Sherida Earring",         -- __,  5, __ < 5, __, __> [__/__, ___] __( 5)
+    ring1="Epona's Ring",           -- __, __, __ < 3,  3, __> [__/__, ___] __(__)
+    ring2="Gere Ring",              -- __, __, __ <__,  5, __> [__/__, ___] __(__)
+    back=gear.DNC_TP_DW_Cape,       -- 10, __, 20 <__, __, __> [10/__, ___] __(__)
+    waist="Reiki Yotai",            --  7,  4, 10 <__, __, __> [__/__, ___] __(__)
+    -- Traits/Merits/Gifts             __, __, __ <__, __, __> [__/__, ___] 33(__)
+    -- 21 DW, 63 STP, 272 Acc <14 DA, 15 TA, 0 QA> [34 PDT/24 MDT, 493 M.Eva] 38 Subtle Blow
+  }
+  sets.engaged.MidDW.LowAcc = set_combine(sets.engaged.MidDW, {
+    ammo="Yamarang",                -- __,  3, 15 <__, __, __> [__/__,  15] __(__)
+    head="Dampening Tam",
+    hands="Mummu Wrists +2",
+  })
+  sets.engaged.MidDW.MidAcc = set_combine(sets.engaged.MidDW.LowAcc, {
+    head="Maxixi Tiara +3",         --  8, __, 47 <__, __, __> [__/__,  73] __(__)
+    body="Horos Casaque +3",        -- __, __, 50 <__,  4, __> [ 6/__,  84] __(__)
+    legs="Horos Tights +3",
+    ear1="Telos Earring",           -- __,  5, 10 < 1, __, __> [__/__, ___] __(__)
+    ring1="Chirich Ring +1",
+    waist="Kentarch Belt +1",
+    -- ammo="Voluspa Tathlum",
+  })
+  sets.engaged.MidDW.HighAcc = set_combine(sets.engaged.MidDW.MidAcc, {
+    ammo="Cath Palug Stone",
+    body="Maxixi Casaque +3",
+    legs="Malignance Tights",       -- __, 10, 50 <__, __, __> [ 7/ 7, 150] __(__)
+    ear2="Dignitary's Earring",
+    ring1="Chirich Ring +1",
+    ring2="Regal Ring",
+    -- waist="Olseni Belt",
+  })
+
+  -- High DW (28 needed from gear)
+  sets.engaged.HighDW = {
+    ammo="Coiste Bodhar",           -- __,  3, __ < 3, __, __> [__/__, ___] __(__)
+    head="Malignance Chapeau",      -- __,  8, 50 <__, __, __> [ 6/ 6, 123] __(__)
+    body="Maculele Casaque +2",     -- 11, __, __ <__, __, __> [13/13,  99] 13(__)
+    hands=gear.Adhemar_A_hands,     -- __,  7, 52 <__,  4, __> [__/__,  43] __(__)
+    legs=gear.Samnuha_legs,         -- __,  7, 15 < 3,  3, __> [__/__,  75] __(__)
+    feet="Maculele Toe Shoes +2",   -- __, 11, 50 <__, __, __> [ 9/ 9, 105] __(__); Remove Close Position merits
+    neck="Etoile Gorget +2",        -- __,  7, 25 <__, __, __> [__/__, ___] __(__)
+    ear1="Telos Earring",           -- __,  5, 10 < 1, __, __> [__/__, ___] __(__)
+    ear2="Sherida Earring",         -- __,  5, __ < 5, __, __> [__/__, ___] __( 5)
+    ring1="Epona's Ring",           -- __, __, __ < 3,  3, __> [__/__, ___] __(__)
+    ring2="Gere Ring",              -- __, __, __ <__,  5, __> [__/__, ___] __(__)
+    back=gear.DNC_TP_DW_Cape,       -- 10, __, 20 <__, __, __> [10/__, ___] __(__)
+    waist="Reiki Yotai",            --  7,  4, 10 <__, __, __> [__/__, ___] __(__)
+    -- Traits/Merits/Gifts             __, __, __ <__, __, __> [__/__, ___] 33(__)
+    -- 28 DW, 57 STP, 232 Acc <15 DA, 15 TA, 0 QA> [38 PDT/28 MDT, 445 M.Eva] 51 Subtle Blow
+  }
+  sets.engaged.HighDW.LowAcc = set_combine(sets.engaged.HighDW, {
+    ammo="Yamarang",                -- __,  3, 15 <__, __, __> [__/__,  15] __(__)
+    head="Dampening Tam",
+  })
+  sets.engaged.HighDW.MidAcc = set_combine(sets.engaged.HighDW.LowAcc, {
+    head="Maxixi Tiara +3",         --  8, __, 47 <__, __, __> [__/__,  73] __(__)
+    body="Horos Casaque +3",        -- __, __, 50 <__,  4, __> [ 6/__,  84] __(__)
+    legs="Horos Tights +3",
+    ring1="Chirich Ring +1",
+    waist="Kentarch Belt +1",
+    -- ammo="Voluspa Tathlum",
+  })
+  sets.engaged.HighDW.HighAcc = set_combine(sets.engaged.HighDW.MidAcc, {
+    -- TODO: Re-evaluate to avoid dropping DW
+    ammo="Cath Palug Stone",
+    body="Maxixi Casaque +3",
+    hands="Mummu Wrists +2",
+    legs="Malignance Tights",       -- __, 10, 50 <__, __, __> [ 7/ 7, 150] __(__)
+    ear1="Dignitary's Earring",
+    ring2="Regal Ring",
+    -- waist="Olseni Belt",
+  })
+
+  -- Super DW (39 needed from gear)
+  sets.engaged.SuperDW = {
+    ammo="Coiste Bodhar",           -- __,  3, __ < 3, __, __> [__/__, ___] __(__)
+    head="Malignance Chapeau",      -- __,  8, 50 <__, __, __> [ 6/ 6, 123] __(__)
+    body="Maculele Casaque +2",     -- 11, __, __ <__, __, __> [13/13,  99] 13(__)
+    hands=gear.Adhemar_A_hands,     -- __,  7, 52 <__,  4, __> [__/__,  43] __(__)
+    legs=gear.Samnuha_legs,         -- __,  7, 15 < 3,  3, __> [__/__,  75] __(__)
+    feet="Maculele Toe Shoes +2",   -- __, 11, 50 <__, __, __> [ 9/ 9, 105] __(__); Remove Close Position merits
+    neck="Etoile Gorget +2",        -- __,  7, 25 <__, __, __> [__/__, ___] __(__)
+    ear1="Suppanomimi",             --  5, __, __ <__, __, __> [__/__, ___] __(__)
+    ear2="Eabani Earring",          --  4, __, __ <__, __, __> [__/__,   8] __(__)
+    ring1="Epona's Ring",           -- __, __, __ < 3,  3, __> [__/__, ___] __(__)
+    ring2="Gere Ring",              -- __, __, __ <__,  5, __> [__/__, ___] __(__)
+    back=gear.DNC_TP_DW_Cape,       -- 10, __, 20 <__, __, __> [10/__, ___] __(__)
+    waist="Reiki Yotai",            --  7,  4, 10 <__, __, __> [__/__, ___] __(__)
+    -- Traits/Merits/Gifts             __, __, __ <__, __, __> [__/__, ___] 33(__)
+    -- 37 DW, 47 STP, 222 Acc <9 DA, 15 TA, 0 QA> [38 PDT/28 MDT, 453 M.Eva] 46 Subtle Blow
+  }
+  sets.engaged.SuperDW.LowAcc = set_combine(sets.engaged.SuperDW, {
+    ammo="Yamarang",                -- __,  3, 15 <__, __, __> [__/__,  15] __(__)
+    ring1="Chirich Ring +1",
+  })
+  sets.engaged.SuperDW.MidAcc = set_combine(sets.engaged.SuperDW.LowAcc, {
+    legs="Horos Tights +3",
+    waist="Kentarch Belt +1",
+    -- ammo="Voluspa Tathlum",
+  })
+  sets.engaged.SuperDW.HighAcc = set_combine(sets.engaged.SuperDW.MidAcc, {
+    -- TODO: Re-evaluate to avoid dropping DW
+    ammo="Cath Palug Stone",
+    body="Maxixi Casaque +3",
+    hands="Mummu Wrists +2",
+    legs="Malignance Tights",       -- __, 10, 50 <__, __, __> [ 7/ 7, 150] __(__)
+    ear2="Dignitary's Earring",
+    ring2="Regal Ring",
+    -- waist="Olseni Belt",
+  })
+
+  -- TODO
+  -- Max DW (46 needed from gear)
+  sets.engaged.MaxDW = {
+    ammo="Coiste Bodhar",           -- __,  3, __ < 3, __, __> [__/__, ___] __(__)
+    head="Malignance Chapeau",      -- __,  8, 50 <__, __, __> [ 6/ 6, 123] __(__)
+    body="Maculele Casaque +2",     -- 11, __, __ <__, __, __> [13/13,  99] 13(__)
+    hands=gear.Adhemar_A_hands,     -- __,  7, 52 <__,  4, __> [__/__,  43] __(__)
+    legs=gear.Samnuha_legs,         -- __,  7, 15 < 3,  3, __> [__/__,  75] __(__)
+    feet="Maculele Toe Shoes +2",   -- __, 11, 50 <__, __, __> [ 9/ 9, 105] __(__); Remove Close Position merits
+    neck="Etoile Gorget +2",        -- __,  7, 25 <__, __, __> [__/__, ___] __(__)
+    ear1="Suppanomimi",             --  5, __, __ <__, __, __> [__/__, ___] __(__)
+    ear2="Eabani Earring",          --  4, __, __ <__, __, __> [__/__,   8] __(__)
+    ring1="Epona's Ring",           -- __, __, __ < 3,  3, __> [__/__, ___] __(__)
+    ring2="Gere Ring",              -- __, __, __ <__,  5, __> [__/__, ___] __(__)
+    back=gear.DNC_TP_DW_Cape,       -- 10, __, 20 <__, __, __> [10/__, ___] __(__)
+    waist="Reiki Yotai",            --  7,  4, 10 <__, __, __> [__/__, ___] __(__)
+    -- Traits/Merits/Gifts             __, __, __ <__, __, __> [__/__, ___] 33(__)
+    -- 37 DW, 47 STP, 222 Acc <9 DA, 15 TA, 0 QA> [38 PDT/28 MDT, 453 M.Eva] 46 Subtle Blow
+  }
+  sets.engaged.MaxDW.LowAcc = set_combine(sets.engaged.MaxDW, {
+  })
+  sets.engaged.MaxDW.MidAcc = set_combine(sets.engaged.MaxDW.LowAcc, {
+  })
+  sets.engaged.MaxDW.HighAcc = set_combine(sets.engaged.MaxDW.MidAcc, {
+  })
 
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Hybrid Sets -------------------------------------------
   ------------------------------------------------------------------------------------------------
 
+  -- No DW (0-1 needed from gear)
   sets.engaged.HeavyDef = {
     ammo="Coiste Bodhar",           -- __,  3, __ < 3, __, __> [__/__, ___] __(__)
     head="Malignance Chapeau",      -- __,  8, 50 <__, __, __> [ 6/ 6, 123] __(__)
@@ -1041,78 +1059,12 @@ function init_gear_sets()
     -- Traits/Merits/Gifts             35, __, __ <__, __, __> [__/__, ___] 33(__)
     -- 35 DW, 79 STP, 305 Acc <19 DA, 7 TA, 2 QA> [51 PDT/41 MDT, 629 M.Eva] 38 Subtle Blow
   }
-  sets.engaged.LowAcc.HeavyDef = set_combine(sets.engaged.HeavyDef, {})
-  sets.engaged.MidAcc.HeavyDef = set_combine(sets.engaged.LowAcc.HeavyDef, {})
-  sets.engaged.HighAcc.HeavyDef = set_combine(sets.engaged.MidAcc.HeavyDef, {})
+  sets.engaged.HeavyDef.LowAcc = set_combine(sets.engaged.HeavyDef, {})
+  sets.engaged.HeavyDef.MidAcc = set_combine(sets.engaged.HeavyDef.LowAcc, {})
+  sets.engaged.HeavyDef.HighAcc = set_combine(sets.engaged.HeavyDef.MidAcc, {})
 
-  -- No Magic/Gear/JA Haste (74% DW to cap, 39% from gear)
-  sets.engaged.DW.HeavyDef = {
-    ammo="Coiste Bodhar",           -- __,  3, __ < 3, __, __> [__/__, ___] __(__)
-    head="Malignance Chapeau",      -- __,  8, 50 <__, __, __> [ 6/ 6, 123] __(__)
-    body="Maculele Casaque +2",     -- 11, __, __ <__, __, __> [13/13,  99] 13(__)
-    hands="Malignance Gloves",      -- __, 12, 50 <__, __, __> [ 5/ 5, 112] __(__)
-    legs="Malignance Tights",       -- __, 10, 50 <__, __, __> [ 7/ 7, 150] __(__)
-    feet="Maculele Toe Shoes +2",   -- __, 11, 50 <__, __, __> [ 9/ 9, 105] __(__); Remove Close Position merits
-    neck="Etoile Gorget +2",        -- __,  7, 25 <__, __, __> [__/__, ___] __(__)
-    ear1="Suppanomimi",             --  5, __, __ <__, __, __> [__/__, ___] __(__)
-    ear2="Eabani Earring",          --  4, __, __ <__, __, __> [__/__,   8] __(__)
-    ring1="Defending Ring",         -- __, __, __ <__, __, __> [10/10, ___] __(__)
-    ring2="Moonlight Ring",         -- __,  5, __ <__, __, __> [ 5/ 5, ___] __(__)
-    back=gear.DNC_TP_DW_Cape,       -- 10, __, 20 <__, __, __> [10/__, ___] __(__)
-    waist="Reiki Yotai",            --  7,  4, 10 <__, __, __> [__/__, ___] __(__)
-    -- Traits/Merits/Gifts             35, __, __ <__, __, __> [__/__, ___] 33(__)
-    -- 72 DW, 52 STP, 220 Acc <6 DA, 8 TA, 0 QA> [53 PDT/43 MDT, 522 M.Eva] 46 Subtle Blow
-  }
-  sets.engaged.DW.LowAcc.HeavyDef = set_combine(sets.engaged.DW.HeavyDef, {})
-  sets.engaged.DW.MidAcc.HeavyDef = set_combine(sets.engaged.DW.LowAcc.HeavyDef, {})
-  sets.engaged.DW.HighAcc.HeavyDef = set_combine(sets.engaged.DW.MidAcc.HeavyDef,{})
-
-  -- Low Magic/Gear/JA Haste (60% DW to cap, 25% from gear)
-  sets.engaged.DW.HeavyDef.LowHaste = {
-    ammo="Staunch Tathlum +1",      -- __, __, __ <__, __, __> [ 3/ 3, ___] __(__)
-    head="Malignance Chapeau",      -- __,  8, 50 <__, __, __> [ 6/ 6, 123] __(__)
-    body="Maculele Casaque +2",     -- 11, __, __ <__, __, __> [13/13,  99] 13(__)
-    hands=gear.Adhemar_A_hands,     -- __,  7, 52 <__,  4, __> [__/__,  43] __(__)
-    legs=gear.Samnuha_legs,         -- __,  7, 15 < 3,  3, __> [__/__,  75] __(__)
-    feet="Maculele Toe Shoes +2",   -- __, 11, 50 <__, __, __> [ 9/ 9, 105] __(__); Remove Close Position merits
-    neck="Etoile Gorget +2",        -- __,  7, 25 <__, __, __> [__/__, ___] __(__)
-    ear1="Telos Earring",           -- __,  5, 10 < 1, __, __> [__/__, ___] __(__)
-    ear2="Sherida Earring",         -- __,  5, __ < 5, __, __> [__/__, ___] __( 5)
-    ring1="Defending Ring",         -- __, __, __ <__, __, __> [10/10, ___] __(__)
-    ring2="Gere Ring",              -- __, __, __ <__,  5, __> [__/__, ___] __(__)
-    back=gear.DNC_TP_DW_Cape,       -- 10, __, 20 <__, __, __> [10/__, ___] __(__)
-    waist="Reiki Yotai",            --  7,  4, 10 <__, __, __> [__/__, ___] __(__)
-    -- Traits/Merits/Gifts             35, __, __ <__, __, __> [__/__, ___] 33(__)
-    -- 63 DW, 54 STP, 232 Acc <9 DA, 12 TA, 0 QA> [51 PDT/41 MDT, 445 M.Eva] 51 Subtle Blow
-  }
-  sets.engaged.DW.LowAcc.HeavyDef.LowHaste = set_combine(sets.engaged.DW.HeavyDef.LowHaste, {})
-  sets.engaged.DW.MidAcc.HeavyDef.LowHaste = set_combine(sets.engaged.DW.LowAcc.HeavyDef.LowHaste, {})
-  sets.engaged.DW.HighAcc.HeavyDef.LowHaste = set_combine(sets.engaged.DW.MidAcc.HeavyDef.LowHaste, {})
-
-  -- Mid Magic/Gear/JA Haste (56% DW to cap, 21% from gear)
-  sets.engaged.DW.HeavyDef.MidHaste = {
-    ammo="Coiste Bodhar",           -- __,  3, __ < 3, __, __> [__/__, ___] __(__)
-    head="Malignance Chapeau",      -- __,  8, 50 <__, __, __> [ 6/ 6, 123] __(__)
-    body="Malignance Tabard",       -- __, 11, 50 <__, __, __> [ 9/ 9, 139] __(__)
-    hands="Malignance Gloves",      -- __, 12, 50 <__, __, __> [ 5/ 5, 112] __(__)
-    legs=gear.Samnuha_legs,         -- __,  7, 15 < 3,  3, __> [__/__,  75] __(__)
-    feet="Maculele Toe Shoes +2",   -- __, 11, 50 <__, __, __> [ 9/ 9, 105] __(__); Remove Close Position merits
-    neck="Etoile Gorget +2",        -- __,  7, 25 <__, __, __> [__/__, ___] __(__)
-    ear1="Eabani Earring",          --  4, __, __ <__, __, __> [__/__,   8] __(__)
-    ear2="Sherida Earring",         -- __,  5, __ < 5, __, __> [__/__, ___] __( 5)
-    ring1="Defending Ring",         -- __, __, __ <__, __, __> [10/10, ___] __(__)
-    ring2="Gere Ring",              -- __, __, __ <__,  5, __> [__/__, ___] __(__)
-    back=gear.DNC_TP_DW_Cape,       -- 10, __, 20 <__, __, __> [10/__, ___] __(__)
-    waist="Reiki Yotai",            --  7,  4, 10 <__, __, __> [__/__, ___] __(__)
-    -- Traits/Merits/Gifts          -- 35, __, __ <__, __, __> [__/__, ___] 33(__)
-    -- 56 DW, 68 STP, 240 Acc <11 DA, 8 TA, 0 QA> [49 PDT/39 MDT, 562 M.Eva] 38 Subtle Blow
-  }
-  sets.engaged.DW.LowAcc.HeavyDef.MidHaste = set_combine(sets.engaged.DW.HeavyDef.MidHaste, {})
-  sets.engaged.DW.MidAcc.HeavyDef.MidHaste = set_combine(sets.engaged.DW.LowAcc.HeavyDef.MidHaste, {})
-  sets.engaged.DW.HighAcc.HeavyDef.MidHaste = set_combine(sets.engaged.DW.MidAcc.HeavyDef.MidHaste,{})
-
-  -- High Magic/Gear/JA Haste (43% DW to cap, 8% from gear)
-  sets.engaged.DW.HeavyDef.HighHaste = {
+  -- Low DW (8 needed from gear)
+  sets.engaged.LowDW.HeavyDef = {
     ammo="Coiste Bodhar",           -- __,  3, __ < 3, __, __> [__/__, ___] __(__)
     head="Malignance Chapeau",      -- __,  8, 50 <__, __, __> [ 6/ 6, 123] __(__)
     body="Malignance Tabard",       -- __, 11, 50 <__, __, __> [ 9/ 9, 139] __(__)
@@ -1126,48 +1078,132 @@ function init_gear_sets()
     ring2="Gere Ring",              -- __, __, __ <__,  5, __> [__/__, ___] __(__)
     back=gear.DNC_TP_DA_Cape,       -- __, __, 20 <10, __, __> [10/__, ___] __(__)
     waist="Reiki Yotai",            --  7,  4, 10 <__, __, __> [__/__, ___] __(__)
-    -- Traits/Merits/Gifts                35, __, __ <__, __, __> [__/__, ___] 33(__)
-    -- 42 DW, 73 STP, 280 Acc <22 DA, 8 TA, 0 QA> [49 PDT/39 MDT, 554 M.Eva] 38 Subtle Blow
+    -- Traits/Merits/Gifts             __, __, __ <__, __, __> [__/__, ___] 33(__)
+    -- 7 DW, 73 STP, 280 Acc <22 DA, 8 TA, 0 QA> [49 PDT/39 MDT, 554 M.Eva] 38 Subtle Blow
   }
-  sets.engaged.DW.LowAcc.HeavyDef.HighHaste = set_combine(sets.engaged.DW.HeavyDef.HighHaste, {})
-  sets.engaged.DW.MidAcc.HeavyDef.HighHaste = set_combine(sets.engaged.DW.LowAcc.HeavyDef.HighHaste, {})
-  sets.engaged.DW.HighAcc.HeavyDef.HighHaste = set_combine(sets.engaged.DW.MidAcc.HeavyDef.HighHaste, {})
+  sets.engaged.LowDW.HeavyDef.LowAcc = set_combine(sets.engaged.LowDW.HeavyDef, {})
+  sets.engaged.LowDW.HeavyDef.MidAcc = set_combine(sets.engaged.LowDW.HeavyDef.LowAcc, {})
+  sets.engaged.LowDW.HeavyDef.HighAcc = set_combine(sets.engaged.LowDW.HeavyDef.MidAcc, {})
 
-  -- Max Magic/Gear/JA Haste (0-36% DW to cap, 0-1% from gear)
-  sets.engaged.DW.HeavyDef.MaxHaste = sets.engaged.HeavyDef
-  sets.engaged.DW.LowAcc.HeavyDef.MaxHaste = sets.engaged.LowAcc.HeavyDef
-  sets.engaged.DW.MidAcc.HeavyDef.MaxHaste = sets.engaged.MidAcc.HeavyDef
-  sets.engaged.DW.HighAcc.HeavyDef.MaxHaste = sets.engaged.HighAcc.HeavyDef
+  -- Mid DW (21 needed from gear)
+  sets.engaged.MidDW.HeavyDef = {
+    ammo="Coiste Bodhar",           -- __,  3, __ < 3, __, __> [__/__, ___] __(__)
+    head="Malignance Chapeau",      -- __,  8, 50 <__, __, __> [ 6/ 6, 123] __(__)
+    body="Malignance Tabard",       -- __, 11, 50 <__, __, __> [ 9/ 9, 139] __(__)
+    hands="Malignance Gloves",      -- __, 12, 50 <__, __, __> [ 5/ 5, 112] __(__)
+    legs=gear.Samnuha_legs,         -- __,  7, 15 < 3,  3, __> [__/__,  75] __(__)
+    feet="Maculele Toe Shoes +2",   -- __, 11, 50 <__, __, __> [ 9/ 9, 105] __(__); Remove Close Position merits
+    neck="Etoile Gorget +2",        -- __,  7, 25 <__, __, __> [__/__, ___] __(__)
+    ear1="Eabani Earring",          --  4, __, __ <__, __, __> [__/__,   8] __(__)
+    ear2="Sherida Earring",         -- __,  5, __ < 5, __, __> [__/__, ___] __( 5)
+    ring1="Defending Ring",         -- __, __, __ <__, __, __> [10/10, ___] __(__)
+    ring2="Gere Ring",              -- __, __, __ <__,  5, __> [__/__, ___] __(__)
+    back=gear.DNC_TP_DW_Cape,       -- 10, __, 20 <__, __, __> [10/__, ___] __(__)
+    waist="Reiki Yotai",            --  7,  4, 10 <__, __, __> [__/__, ___] __(__)
+    -- Traits/Merits/Gifts          -- __, __, __ <__, __, __> [__/__, ___] 33(__)
+    -- 21 DW, 68 STP, 240 Acc <11 DA, 8 TA, 0 QA> [49 PDT/39 MDT, 562 M.Eva] 38 Subtle Blow
+  }
+  sets.engaged.MidDW.HeavyDef.LowAcc = set_combine(sets.engaged.MidDW.HeavyDef, {})
+  sets.engaged.MidDW.HeavyDef.MidAcc = set_combine(sets.engaged.MidDW.HeavyDef.LowAcc, {})
+  sets.engaged.MidDW.HeavyDef.HighAcc = set_combine(sets.engaged.MidDW.HeavyDef.MidAcc,{})
+
+  -- High DW (28 needed from gear)
+  sets.engaged.HighDW.HeavyDef = {
+    ammo="Staunch Tathlum +1",      -- __, __, __ <__, __, __> [ 3/ 3, ___] __(__)
+    head="Malignance Chapeau",      -- __,  8, 50 <__, __, __> [ 6/ 6, 123] __(__)
+    body="Maculele Casaque +2",     -- 11, __, __ <__, __, __> [13/13,  99] 13(__)
+    hands=gear.Adhemar_A_hands,     -- __,  7, 52 <__,  4, __> [__/__,  43] __(__)
+    legs=gear.Samnuha_legs,         -- __,  7, 15 < 3,  3, __> [__/__,  75] __(__)
+    feet="Maculele Toe Shoes +2",   -- __, 11, 50 <__, __, __> [ 9/ 9, 105] __(__); Remove Close Position merits
+    neck="Etoile Gorget +2",        -- __,  7, 25 <__, __, __> [__/__, ___] __(__)
+    ear1="Telos Earring",           -- __,  5, 10 < 1, __, __> [__/__, ___] __(__)
+    ear2="Sherida Earring",         -- __,  5, __ < 5, __, __> [__/__, ___] __( 5)
+    ring1="Defending Ring",         -- __, __, __ <__, __, __> [10/10, ___] __(__)
+    ring2="Gere Ring",              -- __, __, __ <__,  5, __> [__/__, ___] __(__)
+    back=gear.DNC_TP_DW_Cape,       -- 10, __, 20 <__, __, __> [10/__, ___] __(__)
+    waist="Reiki Yotai",            --  7,  4, 10 <__, __, __> [__/__, ___] __(__)
+    -- Traits/Merits/Gifts             __, __, __ <__, __, __> [__/__, ___] 33(__)
+    -- 28 DW, 54 STP, 232 Acc <9 DA, 12 TA, 0 QA> [51 PDT/41 MDT, 445 M.Eva] 51 Subtle Blow
+  }
+  sets.engaged.HighDW.HeavyDef.LowAcc = set_combine(sets.engaged.HighDW.HeavyDef, {})
+  sets.engaged.HighDW.HeavyDef.MidAcc = set_combine(sets.engaged.HighDW.HeavyDef.LowAcc, {})
+  sets.engaged.HighDW.HeavyDef.HighAcc = set_combine(sets.engaged.HighDW.HeavyDef.MidAcc, {})
+
+  -- Super DW (39 needed from gear)
+  sets.engaged.SuperDW.HeavyDef = {
+    ammo="Coiste Bodhar",           -- __,  3, __ < 3, __, __> [__/__, ___] __(__)
+    head="Malignance Chapeau",      -- __,  8, 50 <__, __, __> [ 6/ 6, 123] __(__)
+    body="Maculele Casaque +2",     -- 11, __, __ <__, __, __> [13/13,  99] 13(__)
+    hands="Malignance Gloves",      -- __, 12, 50 <__, __, __> [ 5/ 5, 112] __(__)
+    legs="Malignance Tights",       -- __, 10, 50 <__, __, __> [ 7/ 7, 150] __(__)
+    feet="Maculele Toe Shoes +2",   -- __, 11, 50 <__, __, __> [ 9/ 9, 105] __(__); Remove Close Position merits
+    neck="Etoile Gorget +2",        -- __,  7, 25 <__, __, __> [__/__, ___] __(__)
+    ear1="Suppanomimi",             --  5, __, __ <__, __, __> [__/__, ___] __(__)
+    ear2="Eabani Earring",          --  4, __, __ <__, __, __> [__/__,   8] __(__)
+    ring1="Defending Ring",         -- __, __, __ <__, __, __> [10/10, ___] __(__)
+    ring2="Moonlight Ring",         -- __,  5, __ <__, __, __> [ 5/ 5, ___] __(__)
+    back=gear.DNC_TP_DW_Cape,       -- 10, __, 20 <__, __, __> [10/__, ___] __(__)
+    waist="Reiki Yotai",            --  7,  4, 10 <__, __, __> [__/__, ___] __(__)
+    -- Traits/Merits/Gifts             __, __, __ <__, __, __> [__/__, ___] 33(__)
+    -- 37 DW, 52 STP, 220 Acc <6 DA, 8 TA, 0 QA> [53 PDT/43 MDT, 522 M.Eva] 46 Subtle Blow
+  }
+  sets.engaged.SuperDW.HeavyDef.LowAcc = set_combine(sets.engaged.SuperDW.HeavyDef, {})
+  sets.engaged.SuperDW.HeavyDef.MidAcc = set_combine(sets.engaged.SuperDW.HeavyDef.LowAcc, {})
+  sets.engaged.SuperDW.HeavyDef.HighAcc = set_combine(sets.engaged.SuperDW.HeavyDef.MidAcc,{})
+
+  -- TODO
+  -- Max DW (46 needed from gear)
+  sets.engaged.MaxDW.HeavyDef = {
+    ammo="Coiste Bodhar",           -- __,  3, __ < 3, __, __> [__/__, ___] __(__)
+    head="Malignance Chapeau",      -- __,  8, 50 <__, __, __> [ 6/ 6, 123] __(__)
+    body="Maculele Casaque +2",     -- 11, __, __ <__, __, __> [13/13,  99] 13(__)
+    hands="Malignance Gloves",      -- __, 12, 50 <__, __, __> [ 5/ 5, 112] __(__)
+    legs="Malignance Tights",       -- __, 10, 50 <__, __, __> [ 7/ 7, 150] __(__)
+    feet="Maculele Toe Shoes +2",   -- __, 11, 50 <__, __, __> [ 9/ 9, 105] __(__); Remove Close Position merits
+    neck="Etoile Gorget +2",        -- __,  7, 25 <__, __, __> [__/__, ___] __(__)
+    ear1="Suppanomimi",             --  5, __, __ <__, __, __> [__/__, ___] __(__)
+    ear2="Eabani Earring",          --  4, __, __ <__, __, __> [__/__,   8] __(__)
+    ring1="Defending Ring",         -- __, __, __ <__, __, __> [10/10, ___] __(__)
+    ring2="Moonlight Ring",         -- __,  5, __ <__, __, __> [ 5/ 5, ___] __(__)
+    back=gear.DNC_TP_DW_Cape,       -- 10, __, 20 <__, __, __> [10/__, ___] __(__)
+    waist="Reiki Yotai",            --  7,  4, 10 <__, __, __> [__/__, ___] __(__)
+    -- Traits/Merits/Gifts             __, __, __ <__, __, __> [__/__, ___] 33(__)
+    -- 37 DW, 52 STP, 220 Acc <6 DA, 8 TA, 0 QA> [53 PDT/43 MDT, 522 M.Eva] 46 Subtle Blow
+  }
+  sets.engaged.MaxDW.HeavyDef.LowAcc = set_combine(sets.engaged.MaxDW.HeavyDef, {})
+  sets.engaged.MaxDW.HeavyDef.MidAcc = set_combine(sets.engaged.MaxDW.HeavyDef.LowAcc, {})
+  sets.engaged.MaxDW.HeavyDef.HighAcc = set_combine(sets.engaged.MaxDW.HeavyDef.MidAcc,{})
+
 
   sets.engaged.Safe = sets.engaged.HeavyDef
-  sets.engaged.LowAcc.Safe = sets.engaged.LowAcc.HeavyDef
-  sets.engaged.MidAcc.Safe = sets.engaged.MidAcc.HeavyDef
-  sets.engaged.HighAcc.Safe = sets.engaged.HighAcc.HeavyDef
+  sets.engaged.Safe.LowAcc = sets.engaged.HeavyDef.LowAcc
+  sets.engaged.Safe.MidAcc = sets.engaged.HeavyDef.MidAcc
+  sets.engaged.Safe.HighAcc = sets.engaged.HeavyDef.HighAcc
 
-  sets.engaged.DW.Safe = sets.engaged.DW.HeavyDef
-  sets.engaged.DW.LowAcc.Safe = sets.engaged.DW.LowAcc.HeavyDef
-  sets.engaged.DW.MidAcc.Safe = sets.engaged.DW.MidAcc.HeavyDef
-  sets.engaged.DW.HighAcc.Safe = sets.engaged.DW.HighAcc.HeavyDef
+  sets.engaged.LowDW.Safe = sets.engaged.LowDW.HeavyDef
+  sets.engaged.LowDW.Safe.LowAcc = sets.engaged.LowDW.HeavyDef.LowAcc
+  sets.engaged.LowDW.Safe.MidAcc = sets.engaged.LowDW.HeavyDef.MidAcc
+  sets.engaged.LowDW.Safe.HighAcc = sets.engaged.LowDW.HeavyDef.HighAcc
 
-  sets.engaged.DW.Safe.LowHaste = sets.engaged.DW.HeavyDef.LowHaste
-  sets.engaged.DW.LowAcc.Safe.LowHaste = sets.engaged.DW.LowAcc.HeavyDef.LowHaste
-  sets.engaged.DW.MidAcc.Safe.LowHaste = sets.engaged.DW.MidAcc.HeavyDef.LowHaste
-  sets.engaged.DW.HighAcc.Safe.LowHaste = sets.engaged.DW.HighAcc.HeavyDef.LowHaste
+  sets.engaged.MidDW.Safe = sets.engaged.MidDW.HeavyDef
+  sets.engaged.MidDW.Safe.LowAcc = sets.engaged.MidDW.HeavyDef.LowAcc
+  sets.engaged.MidDW.Safe.MidAcc = sets.engaged.MidDW.HeavyDef.MidAcc
+  sets.engaged.MidDW.Safe.HighAcc = sets.engaged.MidDW.HeavyDef.HighAcc
 
-  sets.engaged.DW.Safe.MidHaste = sets.engaged.DW.HeavyDef.MidHaste
-  sets.engaged.DW.LowAcc.Safe.MidHaste = sets.engaged.DW.LowAcc.HeavyDef.MidHaste
-  sets.engaged.DW.MidAcc.Safe.MidHaste = sets.engaged.DW.MidAcc.HeavyDef.MidHaste
-  sets.engaged.DW.HighAcc.Safe.MidHaste = sets.engaged.DW.HighAcc.HeavyDef.MidHaste
+  sets.engaged.HighDW.Safe = sets.engaged.HighDW.HeavyDef
+  sets.engaged.HighDW.Safe.LowAcc = sets.engaged.HighDW.HeavyDef.LowAcc
+  sets.engaged.HighDW.Safe.MidAcc = sets.engaged.HighDW.HeavyDef.MidAcc
+  sets.engaged.HighDW.Safe.HighAcc = sets.engaged.HighDW.HeavyDef.HighAcc
 
-  sets.engaged.DW.Safe.HighHaste = sets.engaged.DW.HeavyDef.HighHaste
-  sets.engaged.DW.LowAcc.Safe.HighHaste = sets.engaged.DW.LowAcc.HeavyDef.HighHaste
-  sets.engaged.DW.MidAcc.Safe.HighHaste = sets.engaged.DW.MidAcc.HeavyDef.HighHaste
-  sets.engaged.DW.HighAcc.Safe.HighHaste = sets.engaged.DW.HighAcc.HeavyDef.HighHaste
+  sets.engaged.SuperDW.Safe = sets.engaged.SuperDW.HeavyDef
+  sets.engaged.SuperDW.Safe.LowAcc = sets.engaged.SuperDW.HeavyDef.LowAcc
+  sets.engaged.SuperDW.Safe.MidAcc = sets.engaged.SuperDW.HeavyDef.MidAcc
+  sets.engaged.SuperDW.Safe.HighAcc = sets.engaged.SuperDW.HeavyDef.HighAcc
 
-  sets.engaged.DW.Safe.MaxHaste = sets.engaged.DW.HeavyDef.MaxHaste
-  sets.engaged.DW.LowAcc.Safe.MaxHaste = sets.engaged.DW.LowAcc.HeavyDef.MaxHaste
-  sets.engaged.DW.MidAcc.Safe.MaxHaste = sets.engaged.DW.MidAcc.HeavyDef.MaxHaste
-  sets.engaged.DW.HighAcc.Safe.MaxHaste = sets.engaged.DW.HighAcc.HeavyDef.MaxHaste
+  sets.engaged.MaxDW.Safe = sets.engaged.MaxDW.HeavyDef
+  sets.engaged.MaxDW.Safe.LowAcc = sets.engaged.MaxDW.HeavyDef.LowAcc
+  sets.engaged.MaxDW.Safe.MidAcc = sets.engaged.MaxDW.HeavyDef.MidAcc
+  sets.engaged.MaxDW.Safe.HighAcc = sets.engaged.MaxDW.HeavyDef.HighAcc
 
 
   ------------------------------------------------------------------------------------------------
@@ -1236,6 +1272,19 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- Job-specific hooks for standard casting events.
 -------------------------------------------------------------------------------------------------------------------
+
+-- Automatically use Presto for steps when it's available
+function job_pretarget(spell, action, spellMap, eventArgs)
+  if spell.type == 'Step' then
+    local allRecasts = windower.ffxi.get_ability_recasts()
+    local prestoCooldown = allRecasts[236]
+
+    if player.main_job_level >= 77 and prestoCooldown < 1 and not buffactive.Presto then
+      cast_delay(1.1)
+      send_command('input /ja "Presto" <me>')
+    end
+  end
+end
 
 -- Set eventArgs.handled to true if we don't want any automatic gear equipping to be done.
 -- Set eventArgs.useMidcastGear to true if we want midcast gear equipped on precast.
@@ -1397,25 +1446,29 @@ end
 -- Called by the 'update' self-command, for common needs.
 -- Set eventArgs.handled to true if we don't want automatic equipping of gear.
 function job_handle_equipping_gear(playerStatus, eventArgs)
+  update_dp_type() -- Requires DistancePlus addon
   check_gear()
   update_idle_groups()
   update_combat_form()
-  determine_haste_group()
-end
-
-function job_update(cmdParams, eventArgs)
-  handle_equipping_gear(player.status)
-  update_dp_type() -- Requires DistancePlus addon
 end
 
 function update_combat_form()
-  if DW == true then
-    state.CombatForm:set('DW')
-  elseif DW == false then
+  if silibs.get_dual_wield_needed() <= 1 or not silibs.is_dual_wielding() then
     state.CombatForm:reset()
+  else
+    if silibs.get_dual_wield_needed() > 1 and silibs.get_dual_wield_needed() <= 8 then
+      state.CombatForm:set('LowDW')
+    elseif silibs.get_dual_wield_needed() > 8 and silibs.get_dual_wield_needed() <= 21 then
+      state.CombatForm:set('MidDW')
+    elseif silibs.get_dual_wield_needed() > 21 and silibs.get_dual_wield_needed() <= 28 then
+      state.CombatForm:set('HighDW')
+    elseif silibs.get_dual_wield_needed() > 28 and silibs.get_dual_wield_needed() <= 39 then
+      state.CombatForm:set('SuperDW')
+    elseif silibs.get_dual_wield_needed() > 39 then
+      state.CombatForm:set('MaxDW')
+    end
   end
 end
-
 function get_custom_wsmode(spell, action, spellMap)
   local wsmode = ''
 
@@ -1562,7 +1615,6 @@ function job_auto_change_target(spell, action, spellMap, eventArgs)
     eventArgs.SelectNPCTargets = state.SelectStepTarget.value
   end
 end
-
 
 -- Function to display the current relevant user state when doing an update.
 -- Set eventArgs.handled to true if display was handled, and you don't want the default info shown.
@@ -1728,23 +1780,6 @@ function update_idle_groups()
   end
 end
 
-function determine_haste_group()
-  classes.CustomMeleeGroups:clear()
-  if DW == true then
-    if DW_needed <= 1 then
-      classes.CustomMeleeGroups:append('MaxHaste')
-    elseif DW_needed > 1 and DW_needed <= 8 then
-      classes.CustomMeleeGroups:append('HighHaste')
-    elseif DW_needed > 8 and DW_needed <= 25 then
-      classes.CustomMeleeGroups:append('MidHaste')
-    elseif DW_needed > 25 and DW_needed <= 39 then
-      classes.CustomMeleeGroups:append('LowHaste')
-    elseif DW_needed > 39 then
-      classes.CustomMeleeGroups:append('')
-    end
-  end
-end
-
 function job_self_command(cmdParams, eventArgs)
   silibs.self_command(cmdParams, eventArgs)
   ----------- Non-silibs content goes below this line -----------
@@ -1794,46 +1829,6 @@ function job_self_command(cmdParams, eventArgs)
       end
     elseif cmdParams[1] == 'test' then
       test()
-    end
-
-    gearinfo(cmdParams, eventArgs)
-  end
-end
-
-function gearinfo(cmdParams, eventArgs)
-  if cmdParams[1] == 'gearinfo' then
-    if type(tonumber(cmdParams[2])) == 'number' then
-      if tonumber(cmdParams[2]) ~= DW_needed then
-        DW_needed = tonumber(cmdParams[2])
-        DW = true
-      end
-    elseif type(cmdParams[2]) == 'string' then
-      if cmdParams[2] == 'false' then
-        DW_needed = 0
-        DW = false
-      end
-    end
-    if type(tonumber(cmdParams[3])) == 'number' then
-      if tonumber(cmdParams[3]) ~= Haste then
-        Haste = tonumber(cmdParams[3])
-      end
-    end
-    if not midaction() then
-      job_update()
-    end
-  end
-end
-
-
--- Automatically use Presto for steps when it's available
-function job_pretarget(spell, action, spellMap, eventArgs)
-  if spell.type == 'Step' then
-    local allRecasts = windower.ffxi.get_ability_recasts()
-    local prestoCooldown = allRecasts[236]
-
-    if player.main_job_level >= 77 and prestoCooldown < 1 and not buffactive.Presto then
-      cast_delay(1.1)
-      send_command('input /ja "Presto" <me>')
     end
   end
 end
