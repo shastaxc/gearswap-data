@@ -111,10 +111,6 @@ function job_setup()
   silibs.enable_equip_loop()
   silibs.enable_haste_info()
 
-  Haste = 0 -- Do not modify
-  DW_needed = 0 -- Do not modify
-  DW = false -- Do not modify
-
   state.Buff['Climactic Flourish'] = buffactive['climactic flourish'] or false
   state.Buff['Sneak Attack'] = buffactive['sneak attack'] or false
   state.Buff['Trick Attack'] = buffactive['trick attack'] or false
