@@ -2,7 +2,7 @@
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs
--- Required addons: GearInfo
+-- Required addons: N/A
 -- Recommended addons: WSBinder, Reorganizer
 
 -------------------------------------------------------------------------------------------------------------------
@@ -49,6 +49,8 @@ function job_setup()
   silibs.enable_auto_lockstyle(12)
   silibs.enable_premade_commands()
   silibs.enable_th()
+  silibs.enable_custom_roll_text()
+  silibs.enable_equip_loop()
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.WeaponskillMode:options('Normal', 'Acc')
@@ -1126,10 +1128,6 @@ function job_handle_equipping_gear(playerStatus, eventArgs)
   update_melee_groups()
 end
 
-function job_update(cmdParams, eventArgs)
-  handle_equipping_gear(player.status)
-end
-
 function get_custom_wsmode(spell, action, spellMap)
   local wsmode = ''
 
@@ -1383,16 +1381,6 @@ function job_self_command(cmdParams, eventArgs)
     end
   elseif cmdParams[1] == 'test' then
     test()
-  end
-
-  gearinfo(cmdParams, eventArgs)
-end
-
-function gearinfo(cmdParams, eventArgs)
-  if cmdParams[1] == 'gearinfo' then
-    if not midaction() then
-      job_update()
-    end
   end
 end
 
