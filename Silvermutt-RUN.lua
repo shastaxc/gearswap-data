@@ -2,8 +2,9 @@
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs
--- Required addons: GearInfo
+-- Required addons: N/A
 -- Recommended addons: WSBinder, Reorganizer
+-- Misc Recommendations: Disable RollTracker
 
 -------------------------------------------------------------------------------------------------------------------
 --  Keybinds
@@ -101,6 +102,8 @@ function job_setup()
   silibs.enable_weapon_rearm()
   silibs.enable_auto_lockstyle(3)
   silibs.enable_premade_commands()
+  silibs.enable_custom_roll_text()
+  silibs.enable_equip_loop()
 
   rayke_duration = 46
   gambit_duration = 92
@@ -1554,10 +1557,6 @@ function job_handle_equipping_gear(playerStatus, eventArgs)
   update_idle_groups()
 end
 
-function job_update(cmdParams, eventArgs)
-  handle_equipping_gear(player.status)
-end
-
 -- Modify the default idle set after it was constructed.
 function customize_idle_set(idleSet)
   if state.DefenseMode.value ~= 'None' and state[state.DefenseMode.value .. 'DefenseMode'].value == 'Encumbrance' then
@@ -1695,7 +1694,7 @@ end
 -- Set eventArgs.handled to true if display was handled, and you don't want the default info shown.
 function display_current_job_state(eventArgs)
   local r_msg = state.Runes.current
-  local r_color = ''
+  local r_color = 1
   if state.Runes.current == 'Ignis' then r_color = 167
   elseif state.Runes.current == 'Gelus' then r_color = 210
   elseif state.Runes.current == 'Flabra' then r_color = 204
@@ -1704,11 +1703,6 @@ function display_current_job_state(eventArgs)
   elseif state.Runes.current == 'Unda' then r_color = 207
   elseif state.Runes.current == 'Lux' then r_color = 001
   elseif state.Runes.current == 'Tenebrae' then r_color = 160 end
-
-  local cf_msg = ''
-  if state.CombatForm.has_value then
-    cf_msg = ' (' ..state.CombatForm.value.. ')'
-  end
 
   local m_msg = state.OffenseMode.value
   if state.HybridMode.value ~= 'Normal' then
@@ -1741,7 +1735,6 @@ function display_current_job_state(eventArgs)
   end
 
   add_to_chat(r_color, string.char(129,121).. '  ' ..string.upper(r_msg).. '  ' ..string.char(129,122)
-      ..string.char(31,210).. ' Melee' ..cf_msg.. ': ' ..string.char(31,001)..m_msg.. string.char(31,002).. ' |'
       ..string.char(31,004).. ' Defense: ' ..string.char(31,001)..d_msg.. string.char(31,002).. ' |'
       ..string.char(31,207).. ' Idle: ' ..string.char(31,001)..i_msg.. string.char(31,002).. ' |'
       ..string.char(31,012).. ' Toy Weapon: ' ..string.char(31,001)..toy_msg.. string.char(31,002)..  ' |'
@@ -1927,7 +1920,6 @@ function job_self_command(cmdParams, eventArgs)
   silibs.self_command(cmdParams, eventArgs)
   ----------- Non-silibs content goes below this line -----------
 
-  gearinfo(cmdParams, eventArgs)
   if cmdParams[1] == 'rune' then
     send_command('@input /ja '..state.Runes.value..' <me>')
   elseif cmdParams[1] == 'toyweapon' then
@@ -1948,14 +1940,6 @@ function job_self_command(cmdParams, eventArgs)
     end
   elseif cmdParams[1] == 'test' then
     test()
-  end
-end
-
-function gearinfo(cmdParams, eventArgs)
-  if cmdParams[1] == 'gearinfo' then
-    if not midaction() then
-      job_update()
-    end
   end
 end
 
