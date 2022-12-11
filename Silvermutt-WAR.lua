@@ -2,8 +2,9 @@
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs
--- Required addons: GearInfo
+-- Required addons: HasteInfo
 -- Recommended addons: WSBinder, Reorganizer
+-- Misc Recommendations: Disable GearInfo, disable RollTracker
 
 -------------------------------------------------------------------------------------------------------------------
 --  Keybinds
@@ -56,6 +57,9 @@ function job_setup()
   silibs.enable_auto_lockstyle(13)
   silibs.enable_premade_commands()
   silibs.enable_th()
+  silibs.enable_custom_roll_text()
+  silibs.enable_equip_loop()
+  silibs.enable_haste_info()
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.HybridMode:options('LightDef', 'SubtleBlow', 'Normal')
@@ -124,7 +128,6 @@ function user_setup()
     send_command('bind ^numpad- input /ja "Super Jump" <t>')
   end
 
-  update_combat_form()
   update_melee_groups()
 
   select_default_macro_book()
@@ -696,6 +699,15 @@ function init_gear_sets()
   sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
   })
 
+  sets.engaged.LowDW = set_combine(sets.engaged,{
+    ear2="Eabani Earring",
+    -- back=gear.WAR_DW_Cape,
+  })
+  sets.engaged.MidDW = sets.engaged.LowDW
+  sets.engaged.HighDW = sets.engaged.LowDW
+  sets.engaged.SuperDW = sets.engaged.LowDW
+  sets.engaged.MaxDW = sets.engaged.LowDW
+
   -- Focus capped DA > STP
   sets.engaged.TwoHanded = {
     ammo="Coiste Bodhar",                 -- [__/__, ___]  3 <__, __,  3> __, __
@@ -761,10 +773,6 @@ function init_gear_sets()
   sets.engaged.UkonvasaraAM.MidAcc = set_combine(sets.engaged.UkonvasaraAM.LowAcc, {})
   sets.engaged.UkonvasaraAM.HighAcc = set_combine(sets.engaged.UkonvasaraAM.MidAcc, {})
 
-  sets.engaged.DW = set_combine(sets.engaged,{
-    ear2="Eabani Earring",
-    -- back=gear.WAR_DW_Cape,
-  })
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Hybrid Sets -------------------------------------------
@@ -1201,10 +1209,27 @@ end
 function job_handle_equipping_gear(playerStatus, eventArgs)
   check_gear()
   update_idle_groups()
-  update_combat_form()
   update_melee_groups()
+  update_combat_form()
 end
 
+function update_combat_form()
+  if not use_dw_if_available or silibs.get_dual_wield_needed() <= 0 or not silibs.is_dual_wielding() then
+    state.CombatForm:reset()
+  else
+    if silibs.get_dual_wield_needed() > 0 and silibs.get_dual_wield_needed() <= 6 then
+      state.CombatForm:set('LowDW')
+    elseif silibs.get_dual_wield_needed() > 6 and silibs.get_dual_wield_needed() <= 13 then
+      state.CombatForm:set('MidDW')
+    elseif silibs.get_dual_wield_needed() > 13 and silibs.get_dual_wield_needed() <= 26 then
+      state.CombatForm:set('HighDW')
+    elseif silibs.get_dual_wield_needed() > 26 and silibs.get_dual_wield_needed() <= 37 then
+      state.CombatForm:set('SuperDW')
+    elseif silibs.get_dual_wield_needed() > 37 then
+      state.CombatForm:set('MaxDW')
+    end
+  end
+end
 
 -- Function to display the current relevant user state when doing an update.
 -- Set eventArgs.handled to true if display was handled, and you don't want the default info shown.
@@ -1251,21 +1276,12 @@ function display_current_job_state(eventArgs)
   eventArgs.handled = true
 end
 
-function has_dual_wield_trait()
-  local abilities = windower.ffxi.get_abilities()
-  local traits = S(abilities.job_traits)
-  if traits:contains(18) then
-    return true
-  end
-  return false
-end
-
 function select_weapons()
   if state.ToyWeapons.current ~= 'None' then
     return sets.ToyWeapon[state.ToyWeapons.current]
   else
     if sets.WeaponSet[state.WeaponSet.current] then
-      if use_dw_if_available and has_dual_wield_trait() and sets.WeaponSet[state.WeaponSet.current].DW then
+      if use_dw_if_available and silibs.can_dual_wield() and sets.WeaponSet[state.WeaponSet.current].DW then
         return sets.WeaponSet[state.WeaponSet.current].DW
       else
         return sets.WeaponSet[state.WeaponSet.current]
@@ -1344,10 +1360,6 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- User code that supplements self-commands.
 -------------------------------------------------------------------------------------------------------------------
-
-function job_update(cmdParams, eventArgs)
-  handle_equipping_gear(player.status)
-end
 
 -- Modify the default idle set after it was constructed.
 function customize_idle_set(idleSet)
@@ -1475,10 +1487,6 @@ function update_idle_groups()
   end
 end
 
-function update_combat_form()
-  state.CombatForm:reset()
-end
-
 function update_melee_groups()
   if player then
     classes.CustomMeleeGroups:clear()
@@ -1537,16 +1545,6 @@ function job_self_command(cmdParams, eventArgs)
     end
   elseif cmdParams[1] == 'test' then
     test()
-  end
-
-  gearinfo(cmdParams, eventArgs)
-end
-
-function gearinfo(cmdParams, eventArgs)
-  if cmdParams[1] == 'gearinfo' then
-    if not midaction() then
-      job_update()
-    end
   end
 end
 

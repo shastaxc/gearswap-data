@@ -4,6 +4,7 @@
 -- Required external libraries: SilverLibs
 -- Required addons: HasteInfo, DistancePlus
 -- Recommended addons: WSBinder, Reorganizer
+-- Misc Recommendations: Disable GearInfo, disable RollTracker
 
 -------------------------------------------------------------------------------------------------------------------
 --  Keybinds
@@ -88,8 +89,8 @@
 --  Snake Eye                       /ja "Snake Eye" <me>
 --  Fold                            /ja "Fold" <me>
 --  Crooked Cards                   /ja "Crooked Cards" <me>
---  Roll1
---  Roll2
+--  Roll1                           TODO
+--  Roll2                           TODO
 --  QD                              /console gs c qd main t
 --  QD2                             /console gs c qd alt t
 --  Wild Cards                      /ja "Wild Card" <me>
@@ -119,13 +120,14 @@ end
 
 -- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
 function job_setup()
-  silibs.enable_equip_loop()
   silibs.enable_cancel_outranged_ws()
   silibs.enable_cancel_on_blocking_status()
   silibs.enable_weapon_rearm()
   silibs.enable_auto_lockstyle(8)
   silibs.enable_premade_commands()
   silibs.enable_th()
+  silibs.enable_equip_loop()
+  silibs.enable_custom_roll_text()
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.HybridMode:options('HeavyDef', 'Safe', 'SubtleBlow', 'Normal')
@@ -162,8 +164,6 @@ function job_setup()
   -- Update DistancePlus addon with weapon type
   -- Corsair only uses guns for ranged weapons
   send_command('dp gun')
-
-  define_roll_values()
 
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c interact')
@@ -1912,34 +1912,11 @@ function init_gear_sets()
   }
 
   sets.engaged.Safe = sets.engaged.HeavyDef
-  sets.engaged.Safe.LowAcc = sets.engaged.HeavyDef.LowAcc
-  sets.engaged.Safe.MidAcc = sets.engaged.HeavyDef.MidAcc
-  sets.engaged.Safe.HighAcc = sets.engaged.HeavyDef.HighAcc
-
   sets.engaged.LowDW.Safe = sets.engaged.LowDW.HeavyDef
-  sets.engaged.LowDW.Safe.LowAcc = sets.engaged.LowDW.HeavyDef.LowAcc
-  sets.engaged.LowDW.Safe.MidAcc = sets.engaged.LowDW.HeavyDef.MidAcc
-  sets.engaged.LowDW.Safe.HighAcc = sets.engaged.LowDW.HeavyDef.HighAcc
-
   sets.engaged.MidDW.Safe = sets.engaged.MidDW.HeavyDef
-  sets.engaged.MidDW.Safe.LowAcc = sets.engaged.MidDW.HeavyDef.LowAcc
-  sets.engaged.MidDW.Safe.MidAcc = sets.engaged.MidDW.HeavyDef.MidAcc
-  sets.engaged.MidDW.Safe.HighAcc = sets.engaged.MidDW.HeavyDef.HighAcc
-
   sets.engaged.HighDW.Safe = sets.engaged.HighDW.HeavyDef
-  sets.engaged.HighDW.Safe.LowAcc = sets.engaged.HighDW.HeavyDef.LowAcc
-  sets.engaged.HighDW.Safe.MidAcc = sets.engaged.HighDW.HeavyDef.MidAcc
-  sets.engaged.HighDW.Safe.HighAcc = sets.engaged.HighDW.HeavyDef.HighAcc
-
   sets.engaged.SuperDW.Safe = sets.engaged.SuperDW.HeavyDef
-  sets.engaged.SuperDW.Safe.LowAcc = sets.engaged.SuperDW.HeavyDef.LowAcc
-  sets.engaged.SuperDW.Safe.MidAcc = sets.engaged.SuperDW.HeavyDef.MidAcc
-  sets.engaged.SuperDW.Safe.HighAcc = sets.engaged.SuperDW.HeavyDef.HighAcc
-
   sets.engaged.MaxDW.Safe = sets.engaged.MaxDW.HeavyDef
-  sets.engaged.MaxDW.Safe.LowAcc = sets.engaged.MaxDW.HeavyDef.LowAcc
-  sets.engaged.MaxDW.Safe.MidAcc = sets.engaged.MaxDW.HeavyDef.MidAcc
-  sets.engaged.MaxDW.Safe.HighAcc = sets.engaged.MaxDW.HeavyDef.HighAcc
   
   sets.engaged.SubtleBlow = {
     ammo=gear.RAbullet,
@@ -1956,31 +1933,9 @@ function init_gear_sets()
     back=gear.COR_TP_Cape,        -- [10/__, ___]
     waist="Windbuffet Belt +1",   -- [__/__, ___]
   } -- [51 PDT/41 MDT, 674 MEVA] 0 DW, 26 Subtle Blow
-  sets.engaged.SubtleBlow.LowAcc = sets.engaged.SubtleBlow
-  sets.engaged.SubtleBlow.MidAcc = sets.engaged.SubtleBlow
-  sets.engaged.SubtleBlow.HighAcc = sets.engaged.SubtleBlow
-
   sets.engaged.LowDW.SubtleBlow = sets.engaged.SubtleBlow
-  sets.engaged.LowDW.SubtleBlow.LowAcc = sets.engaged.SubtleBlow
-  sets.engaged.LowDW.SubtleBlow.MidAcc = sets.engaged.SubtleBlow
-  sets.engaged.LowDW.SubtleBlow.HighAcc = sets.engaged.SubtleBlow
-
   sets.engaged.MidDW.SubtleBlow = sets.engaged.SubtleBlow
-  sets.engaged.MidDW.SubtleBlow.LowAcc = sets.engaged.SubtleBlow
-  sets.engaged.MidDW.SubtleBlow.MidAcc = sets.engaged.SubtleBlow
-  sets.engaged.MidDW.SubtleBlow.HighAcc = sets.engaged.SubtleBlow
-
-  sets.engaged.HighDW.SubtleBlow = sets.engaged.SubtleBlow
-  sets.engaged.HighDW.SubtleBlow.LowAcc = sets.engaged.SubtleBlow
-  sets.engaged.HighDW.SubtleBlow.MidAcc = sets.engaged.SubtleBlow
-  sets.engaged.HighDW.SubtleBlow.HighAcc = sets.engaged.SubtleBlow
-
-  sets.engaged.SuperDW.SubtleBlow = sets.engaged.SubtleBlow
-  sets.engaged.SuperDW.SubtleBlow.LowAcc = sets.engaged.SubtleBlow
-  sets.engaged.SuperDW.SubtleBlow.MidAcc = sets.engaged.SubtleBlow
-  sets.engaged.SuperDW.SubtleBlow.HighAcc = sets.engaged.SubtleBlow
-
-  sets.engaged.MaxDW.SubtleBlow = {
+  sets.engaged.HighDW.SubtleBlow = {
     ammo=gear.RAbullet,
     head="Malignance Chapeau",    -- [ 6/ 6, 123]
     body="Malignance Tabard",     -- [ 9/ 9, 139]
@@ -1995,10 +1950,9 @@ function init_gear_sets()
     back=gear.COR_DW_Cape,        -- [10/__, ___] 10
     waist="Reiki Yotai",          -- [__/__, ___]  7
   } -- [51 PDT/41 MDT, 674 MEVA] 21 DW, 26 Subtle Blow
-  sets.engaged.MaxDW.SubtleBlow.LowAcc = sets.engaged.MaxDW.SubtleBlow
-  sets.engaged.MaxDW.SubtleBlow.MidAcc = sets.engaged.MaxDW.SubtleBlow
-  sets.engaged.MaxDW.SubtleBlow.HighAcc = sets.engaged.MaxDW.SubtleBlow
-  
+  sets.engaged.SuperDW.SubtleBlow = sets.engaged.HighDW.SubtleBlow
+  sets.engaged.MaxDW.SubtleBlow = sets.engaged.HighDW.SubtleBlow
+
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Special Sets ------------------------------------------
@@ -2268,9 +2222,6 @@ function job_aftercast(spell, action, spellMap, eventArgs)
 
   state.CastingMode:reset()
 
-  if (spell.type == 'CorsairRoll' or spell.english == "Double-Up") and not spell.interrupted then
-    display_roll_info(spell)
-  end
   if spell.english == "Light Shot" then
     send_command('@timers c "Light Shot ['..spell.target.name..']" 60 down abilities/00195.png')
   end
@@ -2319,12 +2270,8 @@ function job_handle_equipping_gear(playerStatus, eventArgs)
   update_combat_form()
 end
 
-function job_update(cmdParams, eventArgs)
-  handle_equipping_gear(player.status)
-end
-
 function update_combat_form()
-  if dw_needed == 0 then
+  if dw_needed <= 0 then
     state.CombatForm:reset()
   else
     if dw_needed > 0 and dw_needed <= 11 then
@@ -2616,57 +2563,8 @@ function process_hasteinfo(cmdParams, eventArgs)
   if cmdParams[1] == 'hasteinfo' then
     dw_needed = tonumber(cmdParams[2])
     if not midaction() then
-      job_update()
+      handle_equipping_gear(player.status)
     end
-  end
-end
-
-function define_roll_values()
-  rolls = {
-    ["Corsair's Roll"] =    {lucky=5, unlucky=9, bonus="Experience Points"},
-    ["Ninja Roll"] =        {lucky=4, unlucky=8, bonus="Evasion"},
-    ["Hunter's Roll"] =     {lucky=4, unlucky=8, bonus="Accuracy"},
-    ["Chaos Roll"] =        {lucky=4, unlucky=8, bonus="Attack"},
-    ["Magus's Roll"] =      {lucky=2, unlucky=6, bonus="Magic Defense"},
-    ["Healer's Roll"] =     {lucky=3, unlucky=7, bonus="Cure Potency Received"},
-    ["Drachen Roll"] =      {lucky=4, unlucky=8, bonus="Pet Magic Accuracy/Attack"},
-    ["Choral Roll"] =       {lucky=2, unlucky=6, bonus="Spell Interruption Rate"},
-    ["Monk's Roll"] =       {lucky=3, unlucky=7, bonus="Subtle Blow"},
-    ["Beast Roll"] =        {lucky=4, unlucky=8, bonus="Pet Attack"},
-    ["Samurai Roll"] =      {lucky=2, unlucky=6, bonus="Store TP"},
-    ["Evoker's Roll"] =     {lucky=5, unlucky=9, bonus="Refresh"},
-    ["Rogue's Roll"] =      {lucky=5, unlucky=9, bonus="Critical Hit Rate"},
-    ["Warlock's Roll"] =    {lucky=4, unlucky=8, bonus="Magic Accuracy"},
-    ["Fighter's Roll"] =    {lucky=5, unlucky=9, bonus="Double Attack Rate"},
-    ["Puppet Roll"] =       {lucky=3, unlucky=7, bonus="Pet Magic Attack/Accuracy"},
-    ["Gallant's Roll"] =    {lucky=3, unlucky=7, bonus="Defense"},
-    ["Wizard's Roll"] =     {lucky=5, unlucky=9, bonus="Magic Attack"},
-    ["Dancer's Roll"] =     {lucky=3, unlucky=7, bonus="Regen"},
-    ["Scholar's Roll"] =    {lucky=2, unlucky=6, bonus="Conserve MP"},
-    ["Naturalist's Roll"] = {lucky=3, unlucky=7, bonus="Enh. Magic Duration"},
-    ["Runeist's Roll"] =    {lucky=4, unlucky=8, bonus="Magic Evasion"},
-    ["Bolter's Roll"] =     {lucky=3, unlucky=9, bonus="Movement Speed"},
-    ["Caster's Roll"] =     {lucky=2, unlucky=7, bonus="Fast Cast"},
-    ["Courser's Roll"] =    {lucky=3, unlucky=9, bonus="Snapshot"},
-    ["Blitzer's Roll"] =    {lucky=4, unlucky=9, bonus="Attack Delay"},
-    ["Tactician's Roll"] =  {lucky=5, unlucky=8, bonus="Regain"},
-    ["Allies' Roll"] =      {lucky=3, unlucky=10, bonus="Skillchain Damage"},
-    ["Miser's Roll"] =      {lucky=5, unlucky=7, bonus="Save TP"},
-    ["Companion's Roll"] =  {lucky=2, unlucky=10, bonus="Pet Regain and Regen"},
-    ["Avenger's Roll"] =    {lucky=4, unlucky=8, bonus="Counter Rate"},
-  }
-end
-
-function display_roll_info(spell)
-  rollinfo = rolls[spell.english]
-  local rollsize = (state.LuzafRing.value and string.char(129,157)) or ''
-
-  if rollinfo then
-    add_to_chat(001, string.char(129,115).. '  ' ..string.char(31,210)..spell.english..string.char(31,001)..
-        ' : '..rollinfo.bonus.. ' ' ..string.char(129,116).. ' ' ..string.char(129,195)..
-        '  Lucky: ' ..string.char(31,204).. tostring(rollinfo.lucky)..string.char(31,001).. ' /' ..
-        ' Unlucky: ' ..string.char(31,167).. tostring(rollinfo.unlucky)..string.char(31,002)..
-        '  ' ..rollsize)
   end
 end
 

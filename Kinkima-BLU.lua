@@ -1822,7 +1822,7 @@ function select_weapons()
   if state.ToyWeapons.current ~= 'None' then
     return sets.ToyWeapon[state.ToyWeapons.current]
   else
-    if has_dual_wield_trait() and sets.WeaponSet[state.WeaponSet.current] and sets.WeaponSet[state.WeaponSet.current].DW then
+    if silibs.can_dual_wield() and sets.WeaponSet[state.WeaponSet.current] and sets.WeaponSet[state.WeaponSet.current].DW then
       return sets.WeaponSet[state.WeaponSet.current].DW
     elseif sets.WeaponSet[state.WeaponSet.current] then
       return sets.WeaponSet[state.WeaponSet.current]
@@ -1879,12 +1879,3 @@ windower.register_event('zone change', function()
   if locked_ring1 then equip({ ring1=empty }) end
   if locked_ring2 then equip({ ring2=empty }) end
 end)
-
-function has_dual_wield_trait()
-  local abilities = windower.ffxi.get_abilities()
-  local traits = S(abilities.job_traits)
-  if traits:contains(18) then
-    return true
-  end
-  return false
-end
