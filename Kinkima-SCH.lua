@@ -36,6 +36,11 @@ function job_setup()
   state.HelixMode = M{['description']='Helix Mode', 'Potency', 'Duration'}
   state.RegenMode = M{['description']='Regen Mode', 'Duration', 'Potency'}
   state.ElementalMode = M{['description'] = 'Elemental Mode', 'Light','Dark','Fire','Ice','Wind','Earth','Lightning','Water'}
+  
+  state.Buff['Light Arts'] = buffactive['Light Arts'] or false
+  state.Buff['Dark Arts'] = buffactive['Dark Arts'] or false
+  state.Buff['Addendum: White'] = buffactive['Addendum: White'] or false
+  state.Buff['Addendum: Black'] = buffactive['Addendum: Black'] or false
 
   degrade_array = {
     ['Aspirs'] = {'Aspir','Aspir II'}
@@ -1365,9 +1370,11 @@ function job_precast(spell, action, spellMap, eventArgs)
   if spell.english == 'Caper Emissarius' and spell.target.type == 'SELF' then
     add_to_chat(167, 'Cancelling Caper Emissarius due to targeting self.')
     eventArgs.cancel = true
-  end
-
-  if spell.name:startswith('Aspir') then
+  elseif spell.english == 'Addendum: White' and not state.Buff['Light Arts'] then
+    eventArgs.cancel = true
+  elseif spell.english == 'Addendum: White' and not state.Buff['Light Arts'] then
+    eventArgs.cancel = true
+  elseif spell.english:startswith('Aspir') then
     refine_various_spells(spell, action, spellMap, eventArgs)
   end
 end
@@ -1430,7 +1437,7 @@ function job_midcast(spell, action, spellMap, eventArgs)
         customEquipSet = customEquipSet[state.CastingMode.current]
       end
 
-      if spell.type == 'WhiteMagic' and (buffactive['Light Arts'] or buffactive['Addendum: White']) then
+      if spell.type == 'WhiteMagic' and (state.Buff['Light Arts'] or state.Buff['Addendum: White']) then
         if customEquipSet['Grimoire'] then
           equip(customEquipSet['Grimoire'])
           eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
@@ -1438,7 +1445,7 @@ function job_midcast(spell, action, spellMap, eventArgs)
           equip(customEquipSet['LightArts'])
           eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
         end
-      elseif spell.type == 'BlackMagic' and (buffactive['Dark Arts'] or buffactive['Addendum: Black']) then
+      elseif spell.type == 'BlackMagic' and (state.Buff['Dark Arts'] or state.Buff['Addendum: Black']) then
         -- Add Grimoire set if exists
         if customEquipSet['Grimoire'] then
           equip(customEquipSet['Grimoire'])
@@ -1531,6 +1538,26 @@ function job_aftercast(spell, action, spellMap, eventArgs)
       send_command('@timers c "Sleep ['..spell.target.name..']" 60 down spells/00253.png')
     elseif spell.english == "Break" then
       send_command('@timers c "Break ['..spell.target.name..']" 30 down spells/00255.png')
+    elseif spell.english == 'Light Arts' then
+      state.Buff['Light Arts'] = true
+      state.Buff['Dark Arts'] = false
+      state.Buff['Addendum: White'] = false
+      state.Buff['Addendum: Black'] = false
+    elseif spell.english == 'Dark Arts' then
+      state.Buff['Light Arts'] = false
+      state.Buff['Dark Arts'] = true
+      state.Buff['Addendum: White'] = false
+      state.Buff['Addendum: Black'] = false
+    elseif spell.english == 'Addendum: White' then
+      state.Buff['Light Arts'] = false
+      state.Buff['Dark Arts'] = false
+      state.Buff['Addendum: White'] = true
+      state.Buff['Addendum: Black'] = false
+    elseif spell.english == 'Addendum: Black' then
+      state.Buff['Light Arts'] = false
+      state.Buff['Dark Arts'] = false
+      state.Buff['Addendum: White'] = false
+      state.Buff['Addendum: Black'] = true
     end
   end
 end
@@ -1824,22 +1851,22 @@ function handle_strategems(cmdParams)
   local strategem = cmdParams[2]
 
   if strategem == 'light' then
-    if buffactive['light arts'] then
+    if state.Buff['Light Arts'] then
       send_command('input /ja "Addendum: White" <me>')
-    elseif buffactive['addendum: white'] then
+    elseif state.Buff['Addendum: White'] then
       add_to_chat(122,'Error: Addendum: White is already active.')
     else
       send_command('input /ja "Light Arts" <me>')
     end
   elseif strategem == 'dark' then
-    if buffactive['dark arts'] then
+    if state.Buff['Dark Arts'] then
       send_command('input /ja "Addendum: Black" <me>')
-    elseif buffactive['addendum: black'] then
+    elseif state.Buff['Addendum: Black'] then
       add_to_chat(122,'Error: Addendum: Black is already active.')
     else
       send_command('input /ja "Dark Arts" <me>')
     end
-  elseif buffactive['light arts'] or buffactive['addendum: white'] then
+  elseif state.Buff['Light Arts'] or state.Buff['Addendum: White'] then
     if strategem == 'cost' then
       send_command('input /ja Penury <me>')
     elseif strategem == 'speed' then
@@ -1861,7 +1888,7 @@ function handle_strategems(cmdParams)
     else
       add_to_chat(123,'Error: Unknown strategem ['..strategem..']')
     end
-  elseif buffactive['dark arts']  or buffactive['addendum: black'] then
+  elseif state.Buff['Dark Arts'] or state.Buff['Addendum: Black'] then
     if strategem == 'cost' then
       send_command('input /ja Parsimony <me>')
     elseif strategem == 'speed' then
