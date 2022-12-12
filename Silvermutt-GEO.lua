@@ -30,6 +30,7 @@ function job_setup()
   silibs.enable_auto_lockstyle(10)
   silibs.enable_premade_commands()
   silibs.enable_custom_roll_text()
+  silibs.enable_equip_loop()
 
   state.OffenseMode:options('Safe', 'Normal')
   state.CastingMode:options('Normal', 'Resistant', 'Proc')
