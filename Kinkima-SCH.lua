@@ -2,8 +2,9 @@
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs
--- Required addons: GearInfo, Shortcuts
+-- Required addons: Shortcuts
 -- Recommended addons: WSBinder, Reorganizer, PartyBuffs
+-- Misc Recommendations: Disable RollTracker
 
 -- Initialization function for this job file.
 function get_sets()
@@ -20,6 +21,8 @@ function job_setup()
   silibs.enable_cancel_outranged_ws()
   silibs.enable_auto_lockstyle(3)
   silibs.enable_premade_commands()
+  silibs.enable_custom_roll_text()
+  silibs.enable_equip_loop()
 
   state.CP = M(false, "Capacity Points Mode")
 
@@ -1562,11 +1565,6 @@ function job_handle_equipping_gear(playerStatus, eventArgs)
   update_sublimation()
 end
 
--- Called by the 'update' self-command.
-function job_update(cmdParams, eventArgs)
-  handle_equipping_gear(player.status)
-end
-
 -- Custom spell mapping.
 function job_get_spell_map(spell, default_spell_map)
   if spell.action_type == 'Magic' then
@@ -1718,8 +1716,6 @@ function job_self_command(cmdParams, eventArgs)
   silibs.self_command(cmdParams, eventArgs)
   ----------- Non-silibs content goes below this line -----------
 
-  gearinfo(cmdParams, eventArgs)
-
   if cmdParams[1] == 'scholar' then
     handle_strategems(cmdParams)
     eventArgs.handled = true
@@ -1768,14 +1764,6 @@ function update_idle_groups()
       end
     elseif (world.time >= (18*60) or world.time < (6*60)) then
       classes.CustomIdleGroups:append('Nighttime')
-    end
-  end
-end
-
-function gearinfo(cmdParams, eventArgs)
-  if cmdParams[1] == 'gearinfo' then
-    if not midaction() then
-      job_update()
     end
   end
 end
