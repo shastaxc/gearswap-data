@@ -249,7 +249,6 @@ function job_file_unload()
   send_command('unbind !numpad.')
 end
 
-
 -- Define sets and vars used by this job file.
 function init_gear_sets()
   sets.org.job = {}
