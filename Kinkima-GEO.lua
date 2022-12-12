@@ -2,8 +2,9 @@
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs
--- Required addons: GearInfo, Shortcuts
+-- Required addons: Shortcuts
 -- Recommended addons: WSBinder, Reorganizer
+-- Misc Recommendations: Disable RollTracker
 
 -------------------------------------------------------------------------------------------------------------------
 -- Setup functions for this job.  Generally should not be modified.
@@ -28,6 +29,7 @@ function job_setup()
   silibs.enable_weapon_rearm()
   silibs.enable_auto_lockstyle(6)
   silibs.enable_premade_commands()
+  silibs.enable_custom_roll_text()
 
   state.OffenseMode:options('Safe', 'Normal')
   state.CastingMode:options('Normal', 'Resistant', 'Proc')
@@ -2021,11 +2023,6 @@ function job_handle_equipping_gear(playerStatus, eventArgs)
 end
 
 -- Called by the 'update' self-command.
-function job_update(cmdParams, eventArgs)
-  handle_equipping_gear(player.status)
-end
-
--- Called by the 'update' self-command.
 function update_idle_groups(cmdParams, eventArgs)
   local isRegening = classes.CustomIdleGroups:contains('Regen')
   local isRefreshing = classes.CustomIdleGroups:contains('Refresh')
@@ -2076,7 +2073,7 @@ function job_self_command(cmdParams, eventArgs)
   end
 
   if not midaction() then
-    job_update()
+    handle_equipping_gear(player.status)
   end
 end
 
