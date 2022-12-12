@@ -2,8 +2,9 @@
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs
--- Required addons: GearInfo
--- Recommended addons: WSBinder, Reorganizer, PartyBuffs
+-- Required addons: N/A
+-- Recommended addons: WSBinder, Reorganizer, PartyBuffs, Shortcuts
+-- Misc Recommendations: Disable RollTracker
 
 -------------------------------------------------------------------------------------------------------------------
 -- Setup functions for this job.  Generally should not be modified.
@@ -24,6 +25,11 @@ function job_setup()
   silibs.enable_cancel_outranged_ws()
   silibs.enable_auto_lockstyle(4)
   silibs.enable_premade_commands()
+  silibs.enable_custom_roll_text()
+  silibs.enable_equip_loop()
+
+  auto_solace = true -- Change to false if you don't want Afflatus Solace auto-applied
+  auto_arts = true -- Change to false if you don't want Light Arts auto-applied
 
   state.CP = M(false, "Capacity Points Mode")
 
@@ -1319,21 +1325,24 @@ function customize_defense_set(defenseSet)
   return defenseSet
 end
 
--- Called by the 'update' self-command.
-function job_update(cmdParams, eventArgs)
-  if cmdParams[1] == 'user' and not areas.Cities:contains(world.area) then
-    local needsArts = player.sub_job:lower() == 'sch' and
-        not buffactive['Light Arts'] and
-        not buffactive['Addendum: White'] and
-        not buffactive['Dark Arts'] and
-        not buffactive['Addendum: Black']
-        
-    if not buffactive['Afflatus Solace'] and not buffactive['Afflatus Misery'] then
-      if needsArts then
-        send_command('@input /ja "Afflatus Solace" <me>;wait 1.2;input /ja "Light Arts" <me>')
-      else
-        send_command('@input /ja "Afflatus Solace" <me>')
-      end
+function auto_solace_and_arts()
+  if not areas.Cities:contains(world.area) then
+    local needs_solace = auto_solace
+        and not state.Buff['Afflatus Solace']
+        and not state.Buff['Afflatus Misery']
+    local needs_arts = auto_arts
+        and player.sub_job:lower() == 'sch'
+        and not buffactive['Light Arts']
+        and not buffactive['Addendum: White']
+        and not buffactive['Dark Arts']
+        and not buffactive['Addendum: Black']
+
+    if needs_solace and needs_arts then
+      send_command('@input /ja "Afflatus Solace" <me>;wait 1.2;@input /ja "Light Arts" <me>')
+    elseif needs_solace and not needs_arts then
+      send_command('@input /ja "Afflatus Solace" <me>')
+    elseif not needs_solace and needs_arts then
+      send_command('@input /ja "Light Arts" <me>')
     end
   end
 end
@@ -1384,10 +1393,7 @@ end
 function job_handle_equipping_gear(playerStatus, eventArgs)
   check_gear()
   update_idle_groups()
-end
-
-function job_update(cmdParams, eventArgs)
-  handle_equipping_gear(player.status)
+  auto_solace_and_arts()
 end
 
 function check_gear()
