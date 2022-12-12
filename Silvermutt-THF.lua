@@ -233,9 +233,9 @@ function job_file_unload()
   send_command('unbind !`')
   send_command('unbind @c')
 
-  send_command('bind ^numpad0 input /ja "Sneak Attack" <me>')
-  send_command('bind ^numpad. input /ja "Trick Attack" <me>')
-  send_command('bind %e input /ra <t>')
+  send_command('unbind ^numpad0')
+  send_command('unbind ^numpad.')
+  send_command('unbind %e')
 
   send_command('unbind !w')
   send_command('unbind ^numpad/')
