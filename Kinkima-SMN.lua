@@ -2,8 +2,9 @@
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs
--- Required addons: GearInfo
--- Recommended addons: WSBinder, Reorganizer
+-- Required addons: N/A
+-- Recommended addons: WSBinder, Reorganizer, Shortcuts
+-- Misc Recommendations: Disable RollTracker
 
 -------------------------------------------------------------------------------------------------------------------
 -- Setup functions for this job.  Generally should not be modified.
@@ -59,6 +60,8 @@ function job_setup()
   silibs.enable_cancel_outranged_ws()
   silibs.enable_auto_lockstyle(1)
   silibs.enable_premade_commands()
+  silibs.enable_custom_roll_text()
+  silibs.enable_equip_loop()
 
   state.CP = M(false, "Capacity Points Mode")
   state.Storm = M{['description']='Storm','Aurorastorm','Sandstorm',
@@ -1238,7 +1241,7 @@ function job_pet_change(petparam, gain)
   if gain and avatars:contains(petparam.name) then
     latestAvatar = petparam.name
   end
-  job_update()
+  handle_equipping_gear(player.status)
 end
 
 function update_idle_groups()
@@ -1404,12 +1407,6 @@ function user_customize_defense_set(defenseSet)
   return silibs.customize_defense_set(defenseSet)
 end
 
--- Called by the 'update' self-command, for common needs.
--- Set eventArgs.handled to true if we don't want automatic equipping of gear.
-function job_update(cmdParams, eventArgs)
-  handle_equipping_gear(player.status)
-end
-
 -- Function to display the current relevant user state when doing an update.
 -- Set eventArgs.handled to true if we don't want the automatic display to be run.
 function display_current_job_state(eventArgs)
@@ -1457,16 +1454,6 @@ function job_self_command(cmdParams, eventArgs)
     send_command('@input /ma "'..state.Storm.current..'" <stpc>')
   elseif cmdParams[1] == 'test' then
     test()
-  end
-
-  gearinfo(cmdParams, eventArgs)
-end
-
-function gearinfo(cmdParams, eventArgs)
-  if cmdParams[1] == 'gearinfo' then
-    if not midaction() and not pet_midaction() then
-      job_update()
-    end
   end
 end
 
