@@ -1038,7 +1038,7 @@ function init_gear_sets()
   sets.engaged = {
     head="Beckoner's Horn +2",
     -- body="Tali'ah Manteel +1",
-    -- hands="Gazu Bracelet",
+    -- hands="Gazu Bracelets",
     legs="Assid. Pants +1",
     -- feet="Battlecast Gaiters",
     -- neck="Lissome Necklace",

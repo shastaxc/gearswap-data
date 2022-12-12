@@ -811,7 +811,7 @@ function init_gear_sets()
   })
   sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
     -- body="Vishap Mail +3",
-    -- hands="Gazu Bracelet +1",
+    -- hands="Gazu Bracelets +1",
   })
 
   sets.engaged.SamRoll = {
@@ -840,7 +840,7 @@ function init_gear_sets()
   })
   sets.engaged.HighAcc.SamRoll = set_combine(sets.engaged.MidAcc.SamRoll, {
     -- body="Vishap Mail +3",
-    -- hands="Gazu Bracelet +1",
+    -- hands="Gazu Bracelets +1",
   })
 
 

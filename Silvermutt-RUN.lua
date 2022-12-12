@@ -415,7 +415,7 @@ function init_gear_sets()
   sets.precast.JA['Vallation'] = {
     ammo="Sapience Orb",                                -- __/__, ___ [___] < 2>
     head="Halitus Helm",                                -- __/__,  43 [ 88] < 8>
-    body={name="Runeist's Coat +3", priority=1},        -- __/__,  94 [218] <__>; Augments Valiance/Vallation
+    body={name="Runeist Coat +3", priority=1},        -- __/__,  94 [218] <__>; Augments Valiance/Vallation
     hands="Kurys Gloves",                               --  2/ 2,  57 [ 25] < 9>
     legs="Erilaz Leg Guards +2",                        -- 12/12, 147 [ 90] <12>
     feet="Erilaz Greaves +2",                           -- 10/10, 147 [ 38] < 7>
@@ -477,7 +477,7 @@ function init_gear_sets()
   sets.precast.JA['Swipe'].Safe = sets.precast.JA['Lunge'].Safe
 
   sets.precast.JA['Gambit'] = set_combine(sets.Enmity, {
-    hands="Runeist's Mitons +3"
+    hands="Runeist Mitons +3"
   })
   sets.precast.JA['Rayke'] = set_combine(sets.Enmity, {
     feet="Futhark Boots +1"
@@ -513,7 +513,7 @@ function init_gear_sets()
   -- Fast cast sets for spells
   sets.precast.FC = {
     ammo="Staunch Tathlum +1",                        -- {__}  3/ 3, ___ [___]
-    head={name="Runeist's Bandeau +3", priority=1},   -- {14} __/__,  83 [109]
+    head={name="Runeist Bandeau +3", priority=1},   -- {14} __/__,  83 [109]
     body="Erilaz Surcoat +2",                         -- {10} __/__, 120 [133]
     hands=gear.Leyline_Gloves,                        -- { 8} __/__,  62 [ 25]
     legs="Agwu's Slops",                              -- { 7}  8/ 8, 134 [ 50]
@@ -534,7 +534,7 @@ function init_gear_sets()
 
   sets.precast.FC['Enhancing Magic'] = {
     ammo="Staunch Tathlum +1",                        -- {__}  3/ 3, ___ [___]
-    head={name="Runeist's Bandeau +3", priority=1},   -- {14} __/__,  83 [109]
+    head={name="Runeist Bandeau +3", priority=1},   -- {14} __/__,  83 [109]
     body=gear.Nyame_B_body,                           -- {__}  9/ 9, 139 [136]
     hands=gear.Leyline_Gloves,                        -- { 8} __/__,  62 [ 25]
     legs={name="Futhark Trousers +3", priority=1},    -- {15} __/__,  89 [107]
@@ -601,7 +601,7 @@ function init_gear_sets()
     ammo="Staunch Tathlum +1",                      --  3/ 3, ___ [___] (__, __)
     head="Erilaz Galea +2",                         -- __/__, 109 [101] (20, __)
     body=gear.Nyame_B_body,                         --  9/ 9, 139 [136] (__, __)
-    hands={name="Runeist's Mitons +3", priority=1}, --  3/__,  67 [ 85] (__, 19)
+    hands={name="Runeist Mitons +3", priority=1}, --  3/__,  67 [ 85] (__, 19)
     legs=gear.Carmine_D_legs,                       -- __/__,  80 [ 50] (__, 18)
     feet="Turms Leggings +1",                       -- __/__, 147 [ 76] (__, __)
     neck="Incanter's Torque",                       -- __/__, ___ [___] (__, 10)
@@ -672,7 +672,7 @@ function init_gear_sets()
 
   -- Regen 4 base potency 30 hp/tic. Base duration 60s.
   sets.midcast['Regen'] = {
-    head="Runeist's Bandeau +3",                    -- __, 27, __, __ [__/__,  83] 109
+    head="Runeist Bandeau +3",                    -- __, 27, __, __ [__/__,  83] 109
     body=gear.Nyame_B_body,                         -- __, __, __, __ [ 9/ 9, 139] 136
     hands="Regal Gauntlets",                        -- __, __, 20, __ [__/__,  48] 205
     legs="Futhark Trousers +3",                     -- __, __, 30, __ [__/__,  89] 107
@@ -1095,7 +1095,7 @@ function init_gear_sets()
     ear2="Dignitary's Earring",
     -- head="Carmine Mask +1",
     -- body="Carm. Sc. Mail +1",
-    -- hands="Runeist's Mitons +3",
+    -- hands="Runeist Mitons +3",
     -- waist="Olseni Belt",
   })
   sets.engaged.Aftermath = {
@@ -1129,7 +1129,7 @@ function init_gear_sets()
   sets.latent_refresh = {
     ammo="Homiliary", --1
     head=gear.Herc_Refresh_head, --1
-    body="Runeist's Coat +3", --3
+    body="Runeist Coat +3", --3
     hands="Regal Gauntlets", --1
     legs="Rawhide Trousers", --1
     feet=gear.Herc_Refresh_feet, --2

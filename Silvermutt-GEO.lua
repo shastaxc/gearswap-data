@@ -1283,7 +1283,7 @@ function init_gear_sets()
     -- Assume White Tathlum         -- __,  2, __, __ [__/__, ___] {__/__, __}
     -- head="Blistering Sallet +1", -- 53, __,  3,  8 [ 3/__,  53] {__/__, __}
     -- body=gear.Nyame_B_body,      -- 40, __,  5,  3 [ 9/ 9, 139] {__/__, __}
-    -- hands="Gazu Bracelet +1",    -- 96, __, __,  5 [__/__,  43] {__/__, __}
+    -- hands="Gazu Bracelets +1",    -- 96, __, __,  5 [__/__,  43] {__/__, __}
     -- legs="Jhakri Slops +2",      -- 45,  9, __,  2 [__/__,  69] {__/__, __}
     -- feet=gear.Nyame_B_feet,      -- 40, __,  4,  3 [ 7/ 7, 150] {__/__, __}
     -- neck="Combatant's Torque",   -- __,  4, __, __ [__/__, ___] {__/__, __}; Skill+15
@@ -1351,7 +1351,7 @@ function init_gear_sets()
     -- Assume White Tathlum         -- __,  2, __, __ [__/__, ___] {__/__, __}
     -- head="Blistering Sallet +1", -- 53, __,  3,  8 [ 3/__,  53] {__/__, __}
     -- body=gear.Nyame_B_body,      -- 40, __,  5,  3 [ 9/ 9, 139] {__/__, __}
-    -- hands="Gazu Bracelet +1",    -- 96, __, __,  5 [__/__,  43] {__/__, __}
+    -- hands="Gazu Bracelets +1",    -- 96, __, __,  5 [__/__,  43] {__/__, __}
     -- legs="Jhakri Slops +2",      -- 45,  9, __,  2 [__/__,  69] {__/__, __}
     -- feet=gear.Nyame_B_feet,      -- 40, __,  4,  3 [ 7/ 7, 150] {__/__, __}
     -- neck="Combatant's Torque",   -- __,  4, __, __ [__/__, ___] {__/__, __}; Skill+15
@@ -1422,7 +1422,7 @@ function init_gear_sets()
     -- Assume White Tathlum         -- __,  2, __, __ [__/__, ___] {__/__, __}
     -- head="Blistering Sallet +1", -- 53, __,  3,  8 [ 3/__,  53] {__/__, __}
     -- body=gear.Nyame_B_body,      -- 40, __,  5,  3 [ 9/ 9, 139] {__/__, __}
-    -- hands="Gazu Bracelet +1",    -- 96, __, __,  5 [__/__,  43] {__/__, __}
+    -- hands="Gazu Bracelets +1",    -- 96, __, __,  5 [__/__,  43] {__/__, __}
     -- legs="Jhakri Slops +2",      -- 45,  9, __,  2 [__/__,  69] {__/__, __}
     -- feet=gear.Nyame_B_feet,      -- 40, __,  4,  3 [ 7/ 7, 150] {__/__, __}
     -- neck="Combatant's Torque",   -- __,  4, __, __ [__/__, ___] {__/__, __}; Skill+15
@@ -1493,7 +1493,7 @@ function init_gear_sets()
     -- Assume White Tathlum         -- __,  2, __, __ [__/__, ___] {__/__, __}
     -- head="Blistering Sallet +1", -- 53, __,  3,  8 [ 3/__,  53] {__/__, __}
     -- body=gear.Nyame_B_body,      -- 40, __,  5,  3 [ 9/ 9, 139] {__/__, __}
-    -- hands="Gazu Bracelet +1",    -- 96, __, __,  5 [__/__,  43] {__/__, __}
+    -- hands="Gazu Bracelets +1",    -- 96, __, __,  5 [__/__,  43] {__/__, __}
     -- legs="Jhakri Slops +2",      -- 45,  9, __,  2 [__/__,  69] {__/__, __}
     -- feet=gear.Nyame_B_feet,      -- 40, __,  4,  3 [ 7/ 7, 150] {__/__, __}
     -- neck="Combatant's Torque",   -- __,  4, __, __ [__/__, ___] {__/__, __}; Skill+15
