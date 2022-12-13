@@ -592,7 +592,7 @@ function init_gear_sets()
   })
 
   sets.midcast['Blue Magic'].Magical = {
-    main="Bunzi's Rod",               -- 60, 50, 15 [__/__, ___] __
+    main="Bunzi's Rod",               -- 65, 55, 15 [__/__, ___]  5
     sub="Maxentius",                  -- 21, 40, 15 [__/__, ___] __
     ammo="Pemphredo Tathlum",         --  4,  8,  4 [__/__, ___] __
     head=gear.Nyame_B_head,           -- 30, 40, 28 [ 7/ 7, 123] __
@@ -607,10 +607,10 @@ function init_gear_sets()
     ring2="Defending Ring",           -- __, __, __ [10/10, ___] __
     back=gear.BLU_MAB_Cape,           -- 10, 20, 30 [10/__, ___] __
     waist="Eschan Stone",             --  7,  7, __ [__/__, ___] __
-    -- 288 MAB, 345 M.Acc, 273 INT [50 PDT/40 MDT, 513 M.Eva] -2 Enmity-
+    -- 293 MAB, 350 M.Acc, 273 INT [50 PDT/40 MDT, 513 M.Eva] 3 Enmity-
 
     -- Great:
-    -- main="Bunzi's Rod",            -- 60, 50, 15 [__/__, ___] __
+    -- main="Bunzi's Rod",            -- 65, 55, 15 [__/__, ___]  5
     -- sub="Maxentius",               -- 21, 40, 15 [__/__, ___] __
     -- ammo="Pemphredo Tathlum",      --  4,  8,  4 [__/__, ___] __
     -- head="Hashishin Kavuk +2",     -- 46, 51, 29 [__/__, 115] __
@@ -625,10 +625,10 @@ function init_gear_sets()
     -- ring2="Defending Ring",        -- __, __, __ [10/10, ___] __
     -- back=gear.BLU_MAB_Cape,        -- 10, 20, 30 [10/__, ___] __
     -- waist="Sanctuary Obi +1",      -- __, __,  6 [__/__, ___]  4
-    -- 328 MAB, 380 M.Acc, 272 INT [49 PDT/39 MDT, 630 M.Eva] 29 Enmity-
+    -- 333 MAB, 385 M.Acc, 272 INT [49 PDT/39 MDT, 630 M.Eva] 34 Enmity-
 
     -- Ideal:
-    -- main="Bunzi's Rod",            -- 60, 50, 15 [__/__, ___] __
+    -- main="Bunzi's Rod",            -- 65, 55, 15 [__/__, ___]  5
     -- sub="Maxentius",               -- 21, 40, 15 [__/__, ___] __
     -- ammo="Pemphredo Tathlum",      --  4,  8,  4 [__/__, ___] __
     -- head="Hashishin Kavuk +2",     -- 46, 51, 29 [__/__, 115] __
@@ -643,12 +643,12 @@ function init_gear_sets()
     -- ring2="Defending Ring",        -- __, __, __ [10/10, ___] __
     -- back=gear.BLU_MAB_Cape,        -- 10, 20, 30 [10/__, ___] __
     -- waist="Sanctuary Obi +1",      -- __, __,  6 [__/__, ___]  4
-    -- 343 MAB, 385 M.Acc, 270 INT [50 PDT/30 MDT, 597 M.Eva] 39 Enmity-
+    -- 348 MAB, 390 M.Acc, 270 INT [50 PDT/30 MDT, 597 M.Eva] 44 Enmity-
   }
 
   sets.midcast['Blue Magic'].Magical.Resistant = set_combine(sets.midcast['Blue Magic'].Magical, {
     -- waist="Acuity Belt +1",        -- __, 15, 23 [__/__, ___] __
-    -- 343 MAB, 400 M.Acc, 287 INT [50 PDT/30 MDT, 597 M.Eva] 35 Enmity-
+    -- 348 MAB, 405 M.Acc, 287 INT [50 PDT/30 MDT, 597 M.Eva] 40 Enmity-
   })
 
   sets.midcast['Blue Magic'].MagicalDark = set_combine(sets.midcast['Blue Magic'].Magical, {
@@ -688,7 +688,7 @@ function init_gear_sets()
   sets.midcast['Blue Magic'].MagicalChr.Resistant = sets.midcast['Blue Magic'].Magical.Resistant
 
   sets.midcast['Blue Magic'].MagicAccuracy = {
-    main="Bunzi's Rod", --40 macc
+    main="Bunzi's Rod", --55 macc
     sub="Maxentius", --40 macc
     ammo="Pemphredo Tathlum",
     head="Assimilator's Keffiyeh +3",
@@ -702,7 +702,7 @@ function init_gear_sets()
     ring1="Stikini Ring +1",
     -- ring2="Stikini Ring +1",
     -- main="Tizona",
-    -- sub="Bunzi's Rod", --40 macc
+    -- sub="Bunzi's Rod", --55 macc
     -- back="Aurist's Cape +1",
     -- waist="Acuity Belt +1",
   }

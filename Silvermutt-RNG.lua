@@ -748,11 +748,11 @@ function init_gear_sets()
   })
 
   sets.precast.WS['Savage Blade'] = {
-    head=gear.Nyame_B_head,       -- 26, 26, 60, 40, 10, __, ___
-    body="Ikenga's Vest",         -- 33, 25, __, __, __,  7, 190
-    hands=gear.Nyame_B_hands,     -- 17, 40, 60, 40, 10, __, ___
-    legs=gear.Nyame_B_legs,       -- 43, 32, 60, 40, 11, __, ___
-    feet=gear.Nyame_B_feet,       -- 23, 26, 60, 40, 10, __, ___
+    head=gear.Nyame_B_head,       -- 26, 26, 65, 50, 11, __, ___
+    body="Ikenga's Vest",         -- 33, 25, __, __, __,  7, 200
+    hands=gear.Nyame_B_hands,     -- 17, 40, 65, 40, 11, __, ___
+    legs=gear.Nyame_B_legs,       -- 58, 32, 65, 40, 12, __, ___
+    feet=gear.Nyame_B_feet,       -- 23, 26, 65, 53, 11, __, ___
     neck="Scout's Gorget +1",     -- __, __, __, __, __,  8, ___
     ear1="Moonshade Earring",     -- __, __, __,  4, __, __, 250
     ear2="Amini Earring",         -- __, __, __, __, __,  7, ___
@@ -760,11 +760,11 @@ function init_gear_sets()
     ring2="Epaminondas's Ring",   -- __, __, __, __,  5, __, ___
     back=gear.RNG_WS3_Cape,       -- 30, __, 20, 20, 10, __, ___
     waist="Sailfi Belt +1",       -- 15, __, 15, __, __, __, ___
-    -- 202 STR, 149 MND, 275 Attack, 184 Accuracy, 58 WSD, 18 PDL, 440 TP Bonus
+    -- 217 STR, 149 MND, 295 Attack, 207 Accuracy, 62 WSD, 18 PDL, 450 TP Bonus
 
     -- neck="Scout's Gorget +2",  -- __, __, __, __, __, 10, ___
     -- ear2="Amini Earring +2",   -- 15, __, __, 20, __,  9, ___
-    -- 217 STR, 149 MND, 275 Attack, 204 Accuracy, 58 WSD, 20 PDL, 440 TP Bonus
+    -- 232 STR, 149 MND, 295 Attack, 217 Accuracy, 62 WSD, 20 PDL, 450 TP Bonus
   }
   sets.precast.WS['Savage Blade'].MaxTP = set_combine(sets.precast.WS['Savage Blade'], {
     ear2="Telos Earring",
@@ -833,43 +833,44 @@ function init_gear_sets()
 
   -- Ranged sets
   sets.midcast.RA = {
-    head="Arcadian Beret +3",     -- 37 [__]  37/ 62 <_> {__} (38), __/__
-    body="Ikenga's Vest",         -- 39 [11]  50/ 65 <_> { 7} (__), __/__
-    hands="Malignance Gloves",    -- 24 [12]  50/ __ <_> { 4} (__),  5/ 5
-    legs="Ikenga's Trousers",     -- 40 [10]  50/ 65 <_> { 6} (__),  9/ 9
-    feet="Malignance Boots",      -- 49 [ 9]  50/ __ <_> { 2} (__),  4/ 4
-    neck="Scout's Gorget +1",     -- 20 [ 6]  20/ __ <_> { 8} (__), __/__
-    ear1="Dedition Earring",      -- __ [ 8] -10/-10 <_> {__} (__), __/__
-    ear2="Telos Earring",         -- __ [ 5]  10/ 10 <_> {__} (__), __/__
-    ring1="Chirich Ring +1",      -- __ [ 6]  __/ __ <_> {__} (__), __/__
-    ring2="Crepuscular Ring",     -- __ [ 6]  10/ __ <_> {__} (__), __/__
-    back=gear.RNG_RA_Cape,        -- 30 [10]  20/ 20 <_> {__} (__), 10/__
-    waist="Kwahu Kachina Belt +1",--  8 [__]  20/ __ <5> {__} (__), __/__
-    --247 AGI [83 STP] 307 racc / 212 ratt <5 crit> {27 dmg limit} (38 Recycle), 28 PDT/18 MDT
+    head="Arcadian Beret +3",       -- 37 [__]  37/ 62 <_> {__} (38) __/__
+    body="Ikenga's Vest",           -- 39 [11]  55/ 70 <5> { 7} (__) __/__
+    hands="Malignance Gloves",      -- 24 [12]  50/ __ <_> { 4} (__)  5/ 5
+    legs="Ikenga's Trousers",       -- 40 [10]  55/ 70 <_> { 6} (__) 10/10
+    feet="Malignance Boots",        -- 49 [ 9]  50/ __ <_> { 2} (__)  4/ 4
+    neck="Scout's Gorget +1",       -- 20 [ 6]  20/ __ <_> { 8} (__) __/__
+    ear1="Dedition Earring",        -- __ [ 8] -10/-10 <_> {__} (__) __/__
+    ear2="Telos Earring",           -- __ [ 5]  10/ 10 <_> {__} (__) __/__
+    ring1="Crepuscular Ring",       -- __ [ 6]  10/ __ <_> {__} (__) __/__
+    ring2="Chirich Ring +1",        -- __ [ 6]  __/ __ <_> {__} (__) __/__
+    back=gear.RNG_RA_Cape,          -- 30 [10]  20/ 20 <_> {__} (__) 10/__
+    waist="Kwahu Kachina Belt +1",  --  8 [__]  20/ __ <5> {__} (__) __/__
+    -- Merits/Traits/Gifts                                      (55)
+    -- 247 AGI [83 STP] 317 racc / 222 ratt <10 crit> {27 PDL} (93 Recycle) 29 PDT/19 MDT
     
-    -- neck="Scout's Gorget +2",  -- 25 [ 7]  25/ __ <_> {10} (__), __/__
-    --252 AGI [84 STP] 312 racc / 212 ratt <5 crit> {29 dmg limit} (38 Recycle), 28 PDT/18 MDT
+    -- hands="Amini Glovelettes +3",-- 26 [11]  62/ 62 <_> {__} (__) 11/11; Archery+38
+    -- neck="Scout's Gorget +2",    -- 25 [ 7]  25/ __ <_> {10} (__) __/__
+    -- 254 AGI [83 STP] 334 racc / 284 ratt <10 crit> {25 PDL} (93 Recycle) 35 PDT/25 MDT
   }
   sets.midcast.RA.LowAcc = set_combine(sets.midcast.RA, {
-    ring1="Regal Ring",           -- 10 [__]  __/ 20 <_> {__} (__), __/__
-    -- body="Orion Jerkin +3",    -- 40 [ 8]  60/ 41 <_> {__} (__), __/__
-    -- AF set bonus                  __ [__]  15/ __ <_> {__} (__), __/__
-    --263 AGI [75 STP] 337 racc / 208 ratt <5 crit> {22 dmg limit} (38 Recycle), 28 PDT/18 MDT
+    ring2="Regal Ring",             -- 10 [__]  __/ 20 <_> {__} (__) __/__
+    -- body="Orion Jerkin +3",      -- 40 [ 8]  60/ 41 <_> {__} (__) __/__
+    -- AF set bonus                    __ [__]  15/ __ <_> {__} (__) __/__
+    -- 265 AGI [74 STP] 354 racc / 275 ratt <5 crit> {18 PDL} (93 Recycle) 35 PDT/25 MDT
   })
   sets.midcast.RA.MidAcc = set_combine(sets.midcast.RA.LowAcc, {
-    ear1="Beyla Earring",         -- __ [__]  15/ __ <_> {__} (__), __/__
-    ring1="Hajduk Ring +1",       -- __ [__]  17/ __ <_> {__} (__), __/__
-    -- feet="Orion Socks +3",     -- 49 [__]  54/ 36 <_> {__} (__), __/__
-    -- AF set bonus                  __ [__]  30/ __ <_> {__} (__), __/__
-    --253 AGI [58 STP] 398 racc / 234 ratt <5 crit> {20 dmg limit} (38 Recycle), 24 PDT/14 MDT
+    ear1="Beyla Earring",           -- __ [__]  15/ __ <_> {__} (__) __/__
+    -- feet="Amini Bottillons +3",  -- 56 [__]  60/ 60 <_> {__} (__) __/__; Marksmanship+38
+    -- AF set bonus                    __ [__]  15/ __ <_> {__} (__) __/__
+    -- 272 AGI [57 STP] 389 racc / 345 ratt <5 crit> {16 PDL} (93 Recycle) 31 PDT/21 MDT
   })
   sets.midcast.RA.HighAcc = set_combine(sets.midcast.RA.MidAcc, {
-    head="Orion Beret +3",        -- 39 [__]  47/ 34 <_> {__} (__), __/__
-    hands="Orion Bracers +3",     -- 27 [__]  48/ __ <_> {__} (__), __/__
-    legs=gear.Adhemar_C_legs,     -- 42 [ 8]  54/ 20 <_> {__} (16), __/__
-    ring2="Regal Ring",           -- 10 [__]  __/ 20 <_> {__} (__), __/__
-    -- AF set bonus                  __ [__]  60/ __ <_> {__} (__), __/__
-    --270 AGI [44 STP] 430 racc / 181 ratt <5 crit> {10 dmg limit} (16 Recycle), 10 PDT/0 MDT
+    head="Orion Beret +3",          -- 39 [__]  47/ 34 <_> {__} (__) __/__
+    ring1="Hajduk Ring +1",         -- __ [__]  17/ __ <_> {__} (__) __/__
+    ring2="Regal Ring",             -- 10 [__]  __/ 20 <_> {__} (__) __/__
+    -- feet="Amini Bottillons +3",  -- 56 [__]  60/ 60 <_> {__} (__) __/__; Marksmanship+38
+    -- AF set bonus                    __ [__]  30/ __ <_> {__} (__) __/__
+    -- 274 AGI [51 STP] 421 racc / 317 ratt <5 crit> {16 PDL} (55 Recycle) 31 PDT/21 MDT
   })
 
   sets.midcast.RA.Critical = set_combine(sets.midcast.RA, {

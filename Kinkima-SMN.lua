@@ -677,7 +677,7 @@ function init_gear_sets()
 
   -- Cap at 700 power; Power = floor(MND÷2) + floor(VIT÷4) + Healing Magic Skill
   sets.midcast.CureNormal = {
-    main="Bunzi's Rod",         -- 30, 15, __, ___ [__/__, ___] __
+    main="Bunzi's Rod",         -- 30, 15, __, ___ [__/__, ___]  5
     sub="Genbu's Shield",       --  5, __, __, ___ [10/__, ___] __
     ammo="Esper Stone +1",      -- __, __, __, ___ [__/__, ___]  5
     head=gear.Vanya_B_head,     -- 10, 27, 18,  20 [__/ 5,  75] __
@@ -691,18 +691,18 @@ function init_gear_sets()
     ring2="Defending Ring",     -- __, __, __, ___ [10/10, ___] __
     -- Traits/Merits/Gifts         __,101, 89,  16
     -- Subjob                      __, __, __, 139
-    -- 55 CP, 235 MND, 155 VIT, 285 Healing Skill [21 PDT/19 MDT, 369 M.Eva] 5 -Enmity
+    -- 55 CP, 235 MND, 155 VIT, 285 Healing Skill [21 PDT/19 MDT, 369 M.Eva] 10 -Enmity
     
     -- main=gear.Gada_MND,      -- 18, 21, __,  18 [__/__, ___] __
-    -- hands="Bunzi's Gloves",  -- __, 47, 26, ___ [ 8/ 8, 112]  8
+    -- hands="Bunzi's Gloves",  -- __, 52, 26, ___ [ 8/ 8, 112]  8
     -- back=gear.SMN_Cure_Cape, -- 10, 30, __, ___ [10/__, ___] __
     -- waist="Luminary Sash",   -- __, 10, __, ___ [__/__, ___] __
-    -- 53 CP, 328 MND, 181 VIT, 303 Healing Skill [39 PDT/27 MDT, 481 M.Eva] 13 -Enmity
+    -- 53 CP, 333 MND, 181 VIT, 303 Healing Skill [39 PDT/27 MDT, 481 M.Eva] 13 -Enmity
     -- 847 HP Cure IV
   }
   sets.midcast.CureWeather = set_combine(sets.midcast.CureNormal, {
     waist="Hachirin-no-obi",
-    -- 903 HP to 1044 Cure IV depending on weather/day
+    -- 904 HP to 1045 Cure IV depending on weather/day
   })
 
   sets.midcast.Stoneskin = {
@@ -797,8 +797,8 @@ function init_gear_sets()
     -- head="Beckoner's Horn +3",     -- ___, 61, 23 [10/10, 130]
     -- body="Beckoner's Doublet +3",  -- ___, 64, 24 [13/13, 130]
     -- hands="Beckoner's Bracers +3", -- ___, 62, __ [__/__,  93]
-    -- legs="Beckoner's Spats +2",    -- ___, 63, 30 [12/12, 157]
-    -- feet="Beckoner's Pigaches +2", -- ___, 60, __ [__/__, 168]
+    -- legs="Beckoner's Spats +3",    -- ___, 63, 30 [12/12, 157]
+    -- feet="Bunzi's Sabots",         --   1, 50, __ [ 6/ 6, 150]; Pet attr+10
     -- neck="Summoner's Collar +2",   -- ___, 25, __ [ 5/ 5, ___]
     -- ear1="Enmerkar Earring",       -- ___, 15, __ [__/__, ___]
     -- ear2="Beckoner's Earring +2",  --   1, 20, __ [ 6/ 6, ___]
@@ -806,7 +806,7 @@ function init_gear_sets()
     -- ring2="Cath Palug Ring",       -- ___, 12, __ [ 5/ 5, ___]
     -- back=gear.SMN_Magic_BP_Cape,   --   1, 20, __ [10/__,  20]
     -- waist="Incarnation Sash",      -- ___, 15, __ [__/__, ___]
-    -- 123 Pet Lv, 472 Pet M.Acc, 90 Summon Skill [61 PDT/51 MDT, 698 M.Eva]
+    -- 124 Pet Lv, 462 Pet M.Acc, 90 Summon Skill [67 PDT/57 MDT, 680 M.Eva]
   }
 
   sets.midcast.Pet.PhysicalBloodPactRage = {
@@ -831,7 +831,7 @@ function init_gear_sets()
     
     -- main="Nirvana",                  --   2, 40 {___, 30, __, __ / __, 30, __, __} [__/__, ___]
     -- sub="Elan Strap +1",             -- ___,  5 {___, __, __, __ / __, __, __, __} [__/__, ___]
-    -- ammo="Epitaph",                  -- 119, 16 {___, 25, 10, __ / __, 25, 10, __} [__/__, ___]; R20+
+    -- ammo="Epitaph",                  -- 119, 16 {___, 30, 15, __ / __, 30, 15, __} [__/__, ___]; R20+ before using
     -- head=gear.Helios_Phys_BP_head,   -- ___,  7 {___, __, __, __ / __, 30, __,  8} [__/__,  75]
     -- body="Convoker's Doublet +3",    -- ___, 16 {___, 45, __, __ / __, 45, __, __} [__/__, 100]
     -- hands=gear.Merl_Phys_BP_hands,   -- ___, 15 {___, 20, __, __ / 40, __, __, __} [__/__,  48]
@@ -869,7 +869,7 @@ function init_gear_sets()
     
     -- main=gear.Grioavolr_Magic_BP,    -- ___,  9 {140, 54, __, __ / __, __, __, __} [__/__, ___]
     -- sub="Elan Strap +1",             -- ___,  5 {___, __, __, __ / __, __, __, __} [__/__, ___]
-    -- ammo="Epitaph",                  -- 119, 16 {___, 25, 10, __ / __, 25, 10, __} [__/__, ___]; R20+
+    -- ammo="Epitaph",                  -- 119, 16 {___, 30, 15, __ / __, 30, 15, __} [__/__, ___]; R20+ before using
     -- head="Cath Palug Crown",         -- ___, 10 { 38, 38, __, __ / __, 38, __, __} [__/__,  86]
     -- body=gear.Apogee_A_body,         -- ___,  8 { 35, __, __, __ / __, __, __, __} [__/__,  91]
     -- hands=gear.Merl_Mag_BP_hands,    -- ___, 15 { 39, 15,  9, __ / 20, __, __, __} [__/__,  48]
@@ -888,7 +888,7 @@ function init_gear_sets()
   sets.midcast.Pet.HybridBloodPactRage = set_combine(sets.midcast.Pet.MagicalBloodPactRage, {
     -- main="Nirvana",                  --   2, 40 {___, 30, __, __ / __, 30, __, __} [__/__, ___]
     -- sub="Elan Strap +1",             -- ___,  5 {___, __, __, __ / __, __, __, __} [__/__, ___]
-    -- ammo="Epitaph",                  -- 119, 16 {___, 25, 10, __ / __, 25, 10, __} [__/__, ___]; R20+
+    -- ammo="Epitaph",                  -- 119, 16 {___, 30, 15, __ / __, 30, 15, __} [__/__, ___]; R20+ before using
     -- head="Cath Palug Crown",         -- ___, 10 { 38, 38, __, __ / __, 38, __, __} [__/__,  86]
     body=gear.Apogee_A_body,            -- ___,  8 { 35, __, __, __ / __, __, __, __} [__/__,  91]
     hands=gear.Merl_Mag_BP_hands,       -- ___, 15 { 39, 15,  9, __ / 20, __, __, __} [__/__,  48]

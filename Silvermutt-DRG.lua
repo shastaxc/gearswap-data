@@ -195,7 +195,7 @@ function init_gear_sets()
     ammo="Coiste Bodhar",                 --  3 < 3, __, __>
     head="Flamma Zucchetto +2",           --  6 <__,  5, __>
     body="Hjarrandi Breastplate",         -- 10 <__, __, __>
-    hands="Gleti's Gauntlets",            --  5 <__, __, __>
+    hands="Gleti's Gauntlets",            --  8 <__, __, __>
     legs="Pteroslaver Brais +3",          -- 10 <__, __, __>
     feet="Flamma Gambieras +2",           --  6 < 6, __, __>
     neck="Vim Torque +1",                 -- 10 <__, __, __>
@@ -205,7 +205,7 @@ function init_gear_sets()
     ring2="Niqmaddu Ring",                -- __ <__, __,  3>
     back=gear.DRG_STP_Cape,               -- 10 <__, __, __>
     waist="Ioskeha Belt +1",              -- __ < 9, __, __>
-    -- 75 STP <25 DA, 5 TA, 3 QA>
+    -- 78 STP <25 DA, 5 TA, 3 QA>
 
     -- body="Vishap Mail +3",             --  8 <__, __, __>; Jump TP +39
     -- hands="Vishap Finger Gauntlets +3",-- __ <__, __, __>; Jump TP +34
@@ -246,11 +246,11 @@ function init_gear_sets()
 
   sets.precast.WS = {
     ammo="Knobkierrie",                 -- __, __, 23, __,  6, __
-    head=gear.Nyame_B_head,             -- 26, 26, 60, 40, 10, __
-    body=gear.Nyame_B_body,             -- 35, 37, 60, 40, 12, __
-    hands=gear.Nyame_B_hands,           -- 17, 40, 60, 40, 10, __
-    legs=gear.Nyame_B_legs,             -- 43, 32, 60, 40, 11, __
-    feet=gear.Nyame_B_feet,             -- 23, 26, 60, 40, 10, __
+    head=gear.Nyame_B_head,             -- 26, 26, 65, 50, 11, __
+    body=gear.Nyame_B_body,             -- 45, 37, 65, 40, 13, __
+    hands=gear.Nyame_B_hands,           -- 17, 40, 65, 40, 11, __
+    legs=gear.Nyame_B_legs,             -- 58, 32, 65, 40, 12, __
+    feet=gear.Nyame_B_feet,             -- 23, 26, 65, 53, 11, __
     neck="Dragoon's Collar +2",         -- 15, __, 25, 25, __, 10
     ear1="Thrud Earring",               -- 10, __, __, __,  3, __
     ear2="Moonshade Earring",           -- __, __, __,  4, __, __; tp bonus +250
@@ -258,22 +258,22 @@ function init_gear_sets()
     ring2="Epaminondas's Ring",         -- __, __, __, __,  5, __
     back=gear.DRG_WS2_Cape,             -- 30, __, 20, 20, 10, __
     waist="Sailfi Belt +1",             -- 15, __, 15, __, __, __
-    -- 229 STR, 161 MND, 383 Attack, 249 Accuracy, 77 WSD, 13 PDL
+    -- 254 STR, 161 MND, 408 Attack, 272 Accuracy, 82 WSD, 13 PDL
 
     -- head="Peltast's Mezail +3",      -- 36, 26, 71, 61, 12, __
-    -- 239 STR, 161 MND, 394 Attack, 270 Accuracy, 79 WSD, 13 PDL
+    -- 264 STR, 161 MND, 414 Attack, 283 Accuracy, 83 WSD, 13 PDL
   }
   sets.precast.WS.MaxTP = set_combine(sets.precast.WS, {
     ear2="Ishvara Earring",       -- __, __, __, __,  2, __
-    -- 239 STR, 161 MND, 394 Attack, 270 Accuracy, 81 WSD, 13 PDL
+    -- 249 STR, 161 MND, 394 Attack, 283 Accuracy, 81 WSD, 13 PDL
   })
   sets.precast.WS.AttCapped = {
     ammo="Knobkierrie",                 -- __, __, 23, __,  6, __
-    head=gear.Nyame_B_head,             -- 26, 25, 60, 40, 10, __
-    body="Gleti's Cuirass",             -- 39, 34, 65, 50, __,  9
-    hands="Gleti's Gauntlets",          -- 20, 42, 65, 50, __,  7
-    legs=gear.Nyame_B_legs,             -- 43, __, 60, 40, 11, __
-    feet=gear.Nyame_B_feet,             -- 23, 26, 60, 40, 10, __
+    head=gear.Nyame_B_head,             -- 26, 25, 65, 50, 11, __
+    body="Gleti's Cuirass",             -- 39, 34, 70, 55, __,  9
+    hands="Gleti's Gauntlets",          -- 20, 30, 70, 55, __,  7
+    legs=gear.Nyame_B_legs,             -- 58, __, 65, 40, 12, __
+    feet=gear.Nyame_B_feet,             -- 23, 26, 65, 53, 11, __
     neck="Dragoon's Collar +2",         -- 15, __, 25, 25, __, 10
     ear1="Moonshade Earring",           -- __, __, __,  4, __, __; tp bonus +250
     ear2="Peltast's Earring",           -- __, __, __,  6, __,  7
@@ -281,19 +281,17 @@ function init_gear_sets()
     ring2="Epaminondas's Ring",         -- __, __, __, __,  5, __
     back=gear.DRG_WS2_Cape,             -- 30, __, 20, 20, 10, __
     waist="Sailfi Belt +1",             -- 15, __, 15, __, __, __
-    -- 226 STR, 127 MND, 393 Att, 275 Acc, 52 WSD, 36 PDL
+    -- 241 STR, 115 MND, 418 Att, 308 Acc, 55 WSD, 36 PDL
     
     -- head="Peltast's Mezail +3",      -- 36, 32, 71, 61, 12, __
     -- body="Peltast's Plackart +3",    -- 43, 34, 74, 64, __, 10
     -- ear2="Peltast's Earring +2",     -- 15, __, __, 20, __,  9
-    -- 256 STR, 154 MND, 424 Att, 310 Acc, 49 WSD, 35 PDL
-    -- 255 STR, 134 MND, 413 Att, 324 Acc, 54 WSD, 39 PDL
-    
+    -- 270 STR, 122 MND, 428 Att, 342 Acc, 56 WSD, 39 PDL
   }
   sets.precast.WS.AttCappedMaxTP = set_combine(sets.precast.WS.AttCapped, {
     ear1="Thrud Earring",               -- 10, __, __, __,  3, __
     ear2="Peltast's Earring",           -- __, __, __,  6, __,  7
-    -- 250 STR, 148 MND, 413 Attack, 306 Accuracy, 57 WSD, 37 PDL
+    -- 265 STR, 122 MND, 428 Att, 324 Acc, 59 WSD, 37 PDL
   })
   
   sets.precast.WS["Savage Blade"] = sets.precast.WS
@@ -304,12 +302,12 @@ function init_gear_sets()
   -- 85% STR; 0.75-1.75 fTP; 4 hit physical
   -- Multihit > WSD > STR
   sets.precast.WS["Stardiver"] = {
-    ammo="Coiste Bodhar",               --  8, 15, __, __, __ < 3, __, __>
+    ammo="Coiste Bodhar",               -- 10, 15, __, __, __ < 3, __, __>
     head="Pteroslaver Armet +3",        -- 37, 77, 44, __, __ <__,  4, __>
-    body="Gleti's Cuirass",             -- 39, 65, 50, __,  9 < 9, __, __>
-    hands=gear.Nyame_B_hands,           -- 17, 60, 40, 10, __ < 4, __, __>
-    legs=gear.Nyame_B_legs,             -- 43, 60, 40, 11, __ < 5, __, __>
-    feet=gear.Nyame_B_feet,             -- 23, 60, 40, 10, __ < 4, __, __>
+    body="Gleti's Cuirass",             -- 39, 70, 55, __,  9 <10, __, __>
+    hands=gear.Nyame_B_hands,           -- 17, 65, 40, 11, __ < 5, __, __>
+    legs=gear.Nyame_B_legs,             -- 58, 65, 40, 12, __ < 6, __, __>
+    feet=gear.Nyame_B_feet,             -- 23, 65, 53, 11, __ < 5, __, __>
     neck="Fotia Gorget",                -- __, __, __, __, __ <__, __, __>; ftp+
     ear1="Moonshade Earring",           -- __, __,  4, __, __ <__, __, __>; tp bonus +250
     ear2="Sherida Earring",             --  5, __, __, __, __ < 5, __, __>
@@ -317,21 +315,21 @@ function init_gear_sets()
     ring2="Niqmaddu Ring",              -- 10, __, __, __, __ <__, __,  3>
     back=gear.DRG_WS2_Cape,             -- 30, 20, 20, 10, __ <__, __, __>
     waist="Fotia Belt",                 -- __, __, __, __, __ <__, __, __>; ftp+
-    -- 227 STR, 357 Att, 238 Acc, 41 WSD, 12 PDL <30 DA, 4 TA, 3 QA>
+    -- 244 STR, 377 Att, 256 Acc, 43 WSD, 12 PDL <34 DA, 4 TA, 3 QA>
 
     -- back=gear.DRG_WS1_Cape,          -- 30, 20, 20, __, __ <10, __, __>
-    -- 227 STR, 357 Att, 238 Acc, 31 WSD, 12 PDL <40 DA, 4 TA, 3 QA>
+    -- 244 STR, 377 Att, 256 Acc, 34 WSD, 12 PDL <44 DA, 4 TA, 3 QA>
   }
   sets.precast.WS["Stardiver"].MaxTP = set_combine(sets.precast.WS["Stardiver"], {
     ear1="Brutal Earring",              -- __, __, __, __, __ < 5, __, __>
-    -- 227 STR, 357 Att, 234 Acc, 31 WSD, 12 PDL <45 DA, 4 TA, 3 QA>
+    -- 244 STR, 377 Att, 252 Acc, 34 WSD, 12 PDL <46 DA, 4 TA, 3 QA>
   })
   sets.precast.WS["Stardiver"].AttCapped = {
     ammo="Crepuscular Pebble",          --  3, __, __, __,  3 <__, __, __>
     head="Flamma Zucchetto +2",         -- 36, __, 44, __, __ <__,  5, __>
-    body="Gleti's Cuirass",             -- 39, 65, 50, __,  9 < 9, __, __>
-    hands="Gleti's Gauntlets",          -- 20, 65, 50, __,  7 <__, __, __>
-    legs="Gleti's Breeches",            -- 49, 65, 50, __,  8 <__, __, __>
+    body="Gleti's Cuirass",             -- 39, 70, 55, __,  9 <10, __, __>
+    hands="Gleti's Gauntlets",          -- 20, 70, 55, __,  7 <__, __, __>
+    legs="Gleti's Breeches",            -- 49, 70, 55, __,  8 <__,  5, __>
     feet="Flamma Gambieras +2",         -- 31, __, 42, __, __ < 6, __, __>
     neck="Fotia Gorget",                -- __, __, __, __, __ <__, __, __>; ftp+
     ear1="Moonshade Earring",           -- __, __,  4, __, __ <__, __, __>; tp bonus +250
@@ -340,26 +338,26 @@ function init_gear_sets()
     ring2="Niqmaddu Ring",              -- 10, __, __, __, __ <__, __,  3>
     back=gear.DRG_WS2_Cape,             -- 30, 20, 20, 10, __ <__, __, __>
     waist="Fotia Belt",                 -- __, __, __, __, __ <__, __, __>; ftp+
-    -- 233 STR, 195 Att, 266 Acc, 10 WSD, 37 PDL <15 DA, 5 TA, 3 QA>
+    -- 233 STR, 210 Att, 281 Acc, 10 WSD, 37 PDL <16 DA, 10 TA, 3 QA>
 
     -- back=gear.DRG_WS1_Cape,          -- 30, 20, 20, __, __ <10, __, __>
     -- ear2="Peltast's Earring +2",     -- 15, __, 20, __,  9 <__, __, __>
-    -- 248 STR, 195 Att, 280 Acc, 0 WSD, 39 PDL <25 DA, 5 TA, 3 QA>
+    -- 248 STR, 210 Att, 295 Acc, 0 WSD, 39 PDL <26 DA, 10 TA, 3 QA>
   }
   sets.precast.WS["Stardiver"].AttCappedMaxTP = set_combine(sets.precast.WS["Stardiver"].AttCapped, {
     ear1="Brutal Earring",
-    -- 233 STR, 195 Att, 262 Acc, 0 WSD, 37 PDL <30 DA, 5 TA, 3 QA>
+    -- 233 STR, 205 Att, 272 Acc, 0 WSD, 37 PDL <31 DA, 5 TA, 3 QA>
   })
 
   -- 60% STR / 60% VIT; 1 hit physical; Ignores 12.5-62.5% defense based on TP
   -- WSD > STR/VIT
   sets.precast.WS["Camlann's Torment"] = {
     ammo="Knobkierrie",                 -- __, __, 23, __,  6, __
-    head=gear.Nyame_B_head,             -- 26, 24, 60, 40, 10, __
-    body=gear.Nyame_B_body,             -- 35, 35, 60, 40, 12, __
-    hands=gear.Nyame_B_hands,           -- 17, 39, 60, 40, 10, __
-    legs=gear.Nyame_B_legs,             -- 43, 30, 60, 40, 11, __
-    feet=gear.Nyame_B_feet,             -- 23, 24, 60, 40, 10, __
+    head=gear.Nyame_B_head,             -- 26, 24, 65, 50, 11, __
+    body=gear.Nyame_B_body,             -- 45, 35, 65, 40, 13, __
+    hands=gear.Nyame_B_hands,           -- 17, 54, 65, 40, 11, __
+    legs=gear.Nyame_B_legs,             -- 58, 30, 65, 40, 12, __
+    feet=gear.Nyame_B_feet,             -- 23, 24, 65, 53, 11, __
     neck="Dragoon's Collar +2",         -- 15, 15, 25, 25, __, 10
     ear1="Thrud Earring",               -- 10, 10, __, __,  3, __
     ear2="Ishvara Earring",             -- __, __, __, __,  2, __
@@ -367,20 +365,20 @@ function init_gear_sets()
     ring2="Sroda Ring",                 -- 15, __, __, __, __,  3
     back=gear.DRG_WS2_Cape,             -- 30, __, 20, 20, 10, __
     waist="Fotia Belt",                 -- __, __, __, __, __, __; ftp+
-    -- 233 STR, VIT, 195 Att, 256 Acc, 0 WSD, 37 PDL
+    -- 239 STR, 192 VIT, 393 Att, 268 Acc, 84 WSD, 13 PDL
     
     -- head="Peltast's Mezail +3",      -- 36, 35, 71, 61, 12, __
     -- ear2="Peltast's Earring +2",     -- 15, 15, __, 20, __,  9
-    -- 239 STR, 203 VIT, 379 Att, 286 Acc, 79 WSD, 22 PDL
+    -- 264 STR, 218 VIT, 399 Att, 299 Acc, 83 WSD, 22 PDL
   }
   sets.precast.WS["Camlann's Torment"].MaxTP = sets.precast.WS["Camlann's Torment"]
   sets.precast.WS["Camlann's Torment"].AttCapped = {
     ammo="Knobkierrie",                 -- __, __, 23, __,  6, __
-    head=gear.Nyame_B_head,             -- 26, 24, 60, 40, 10, __
-    body="Gleti's Cuirass",             -- 39, 39, 65, 50, __,  9
-    hands="Gleti's Gauntlets",          -- 20, 43, 65, 50, __,  7
-    legs=gear.Nyame_B_legs,             -- 43, 30, 60, 40, 11, __
-    feet=gear.Nyame_B_feet,             -- 23, 24, 60, 40, 10, __
+    head=gear.Nyame_B_head,             -- 26, 24, 65, 50, 11, __
+    body="Gleti's Cuirass",             -- 39, 39, 70, 55, __,  9
+    hands="Gleti's Gauntlets",          -- 20, 43, 70, 55, __,  7
+    legs=gear.Nyame_B_legs,             -- 58, 30, 65, 40, 12, __
+    feet=gear.Nyame_B_feet,             -- 23, 24, 65, 53, 11, __
     neck="Dragoon's Collar +2",         -- 15, 15, 25, 25, __, 10
     ear1="Thrud Earring",               -- 10, 10, __, __,  3, __
     ear2="Peltast's Earring",           -- __, __, __,  6, __,  7
@@ -388,12 +386,12 @@ function init_gear_sets()
     ring2="Sroda Ring",                 -- 15, __, __, __, __,  3
     back=gear.DRG_WS2_Cape,             -- 30, __, 20, 20, 10, __
     waist="Fotia Belt",                 -- __, __, __, __, __, __; ftp+
-    -- 221 STR, 185 VIT, 378 Att, 271 Acc, 55 WSD, 36 PDL
+    -- 236 STR, 185 VIT, 403 Att, 304 Acc, 58 WSD, 36 PDL
     
     -- head="Peltast's Mezail +3",      -- 36, 35, 71, 61, 12, __
     -- body="Peltast's Plackart +3",    -- 43, 43, 74, 64, __, 10
     -- ear2="Peltast's Earring +2",     -- 15, 15, __, 20, __,  9
-    -- 250 STR, 215 VIT, 398 Att, 320 Acc, 57 WSD, 39 PDL
+    -- 265 STR, 215 VIT, 413 Att, 338 Acc, 59 WSD, 39 PDL
   }
   sets.precast.WS["Camlann's Torment"].AttCappedMaxTP = sets.precast.WS["Camlann's Torment"].AttCapped
 
@@ -401,11 +399,11 @@ function init_gear_sets()
   -- WSD > STR <> DEX
   sets.precast.WS["Sonic Thrust"] = {
     ammo="Knobkierrie",                 -- __, __, 23, __,  6, __
-    head=gear.Nyame_B_head,             -- 26, 25, 60, 40, 10, __
-    body=gear.Nyame_B_body,             -- 35, 24, 60, 40, 12, __
-    hands=gear.Nyame_B_hands,           -- 17, 42, 60, 40, 10, __
-    legs=gear.Nyame_B_legs,             -- 43, __, 60, 40, 11, __
-    feet=gear.Nyame_B_feet,             -- 23, 26, 60, 40, 10, __
+    head=gear.Nyame_B_head,             -- 26, 25, 65, 50, 11, __
+    body=gear.Nyame_B_body,             -- 45, 24, 65, 40, 13, __
+    hands=gear.Nyame_B_hands,           -- 17, 42, 65, 40, 11, __
+    legs=gear.Nyame_B_legs,             -- 58, __, 65, 40, 12, __
+    feet=gear.Nyame_B_feet,             -- 23, 26, 65, 53, 11, __
     neck="Dragoon's Collar +2",         -- 15, __, 25, 25, __, 10
     ear1="Moonshade Earring",           -- __, __, __,  4, __, __; tp bonus +250
     ear2="Thrud Earring",               -- 10, __, __, __,  3, __
@@ -413,27 +411,27 @@ function init_gear_sets()
     ring2="Niqmaddu Ring",              -- 10, 10, __, __, __, __
     back=gear.DRG_WS2_Cape,             -- 30, __, 20, 20, 10, __
     waist="Sailfi Belt +1",             -- 15, __, 15, __, __, __
-    -- 234 STR, 137 DEX, 403 Att, 249 Acc, 72 WSD, 10 PDL
+    -- 259 STR, 137 DEX, 428 Att, 272 Acc, 77 WSD, 10 PDL
 
     -- head="Peltast's Mezail +3",      -- 36, 32, 71, 61, 12, __
-    -- 244 STR, 144 DEX, 414 Att, 270 Acc, 74 WSD, 10 PDL
+    -- 269 STR, 144 DEX, 434 Att, 283 Acc, 78 WSD, 10 PDL
   }
   sets.precast.WS["Sonic Thrust"].MaxTP = set_combine(sets.precast.WS["Sonic Thrust"], {
     ear1="Ishvara Earring",             -- __, __, __, __,  2, __
     ear2="Thrud Earring",               -- 10, __, __, __,  3, __
-    -- 251 STR, 154 DEX, 424 Att, 286 Acc, 54 WSD, 26 PDL
+    -- 276 STR, 154 DEX, 444 Att, 299 Acc, 58 WSD, 26 PDL
 
     -- ear1="Thrud Earring",            -- 10, __, __, __,  3, __
     -- ear2="Peltast's Earring +2",     -- 15, __, __, 20, __,  9
-    -- 266 STR, 154 DEX, 424 Att, 306 Acc, 52 WSD, 35 PDL
+    -- 291 STR, 154 DEX, 444 Att, 319 Acc, 56 WSD, 35 PDL
   })
   sets.precast.WS["Sonic Thrust"].AttCapped = {
     ammo="Knobkierrie",                 -- __, __, 23, __,  6, __
-    head=gear.Nyame_B_head,             -- 26, 25, 60, 40, 10, __
-    body="Gleti's Cuirass",             -- 39, 34, 65, 50, __,  9
-    hands="Gleti's Gauntlets",          -- 20, 42, 65, 50, __,  7
-    legs=gear.Nyame_B_legs,             -- 43, __, 60, 40, 11, __
-    feet=gear.Nyame_B_feet,             -- 23, 26, 60, 40, 10, __
+    head=gear.Nyame_B_head,             -- 26, 25, 65, 50, 11, __
+    body="Gleti's Cuirass",             -- 39, 34, 70, 55, __,  9
+    hands="Gleti's Gauntlets",          -- 20, 47, 70, 55, __,  7
+    legs=gear.Nyame_B_legs,             -- 58, __, 65, 40, 12, __
+    feet=gear.Nyame_B_feet,             -- 23, 26, 65, 53, 11, __
     neck="Dragoon's Collar +2",         -- 15, __, 25, 25, __, 10
     ear1="Moonshade Earring",           -- __, __, __,  4, __, __; tp bonus +250
     ear2="Thrud Earring",               -- 10, __, __, __,  3, __
@@ -441,11 +439,11 @@ function init_gear_sets()
     ring2="Niqmaddu Ring",              -- 10, 10, __, __, __, __
     back=gear.DRG_WS2_Cape,             -- 30, __, 20, 20, 10, __
     waist="Sailfi Belt +1",             -- 15, __, 15, __, __, __
-    -- 241 STR, 147 DEX, 413 Att, 269 Acc, 50 WSD, 26 PDL
+    -- 256 STR, 152 DEX, 438 Att, 302 Acc, 53 WSD, 26 PDL
     
     -- head="Peltast's Mezail +3",      -- 36, 32, 71, 61, 12, __
     -- ear2="Peltast's Earring +2",     -- 15, __, __, 20, __,  9
-    -- 256 STR, 154 DEX, 424 Att, 310 Acc, 49 WSD, 35 PDL
+    -- 271 STR, 159 DEX, 444 Att, 333 Acc, 51 WSD, 35 PDL
   }
   sets.precast.WS["Sonic Thrust"].AttCappedMaxTP = set_combine(sets.precast.WS["Sonic Thrust"].AttCapped, {
     ear1="Ishvara Earring",             -- __, __, __, __,  2, __
@@ -459,11 +457,11 @@ function init_gear_sets()
   -- WSD <> STR; if used with shining one, crit rate/dmg also good
   sets.precast.WS["Impulse Drive"] = {
     ammo="Knobkierrie",                 -- __, 23, __,  6, __ (__, __)
-    head=gear.Nyame_B_head,             -- 26, 60, 40, 10, __ (__, __)
-    body="Gleti's Cuirass",             -- 39, 65, 50, __,  9 ( 8, __)
-    hands=gear.Nyame_B_hands,           -- 17, 60, 40, 10, __ (__, __)
+    head=gear.Nyame_B_head,             -- 26, 65, 50, 11, __ (__, __)
+    body="Gleti's Cuirass",             -- 39, 70, 55, __,  9 ( 8, __)
+    hands=gear.Nyame_B_hands,           -- 17, 65, 40, 11, __ (__, __)
     legs="Peltast's Cuissots +2",       -- 48, 63, 53, __, __ (__, 12)
-    feet=gear.Nyame_B_feet,             -- 23, 60, 40, 10, __ (__, __)
+    feet=gear.Nyame_B_feet,             -- 23, 65, 53, 11, __ (__, __)
     neck="Dragoon's Collar +2",         -- 15, 25, 25, __, 10 ( 4, __)
     ear1="Moonshade Earring",           -- __, __,  4, __, __ (__, __); tp bonus +250
     ear2="Thrud Earring",               -- 10, __, __,  3, __ (__, __)
@@ -471,11 +469,11 @@ function init_gear_sets()
     ring2="Sroda Ring",                 -- 15, __, __, __,  3 (__, __)
     back=gear.DRG_WS2_Cape,             -- 30, 20, 20, 10, __ (__, __)
     waist="Sailfi Belt +1",             -- 15, 15, __, __, __ (__, __)
-    -- 248 STR, 411 Att, 272 Acc, 49 WSD, 22 PDL (12 Crit Rate, 12 Crit Dmg)
+    -- 248 STR, 431 Att, 300 Acc, 52 WSD, 22 PDL (12 Crit Rate, 12 Crit Dmg)
 
     -- head="Peltast's Mezail +3",      -- 36, 71, 61, 12, __ (__, __)
     -- legs="Peltast's Cuissots +3",    -- 53, 73, 63, __, __ (__, 13)
-    -- 263 STR, 432 Att, 303 Acc, 51 WSD, 22 PDL (12 Crit Rate, 13 Crit Dmg)
+    -- 263 STR, 447 Att, 321 Acc, 52 WSD, 22 PDL (12 Crit Rate, 13 Crit Dmg)
   }
   sets.precast.WS["Impulse Drive"].MaxTP = set_combine(sets.precast.WS["Impulse Drive"], {
     ear1="Ishvara Earring",             -- __, __, __,  2, __ (__, __)
@@ -485,11 +483,11 @@ function init_gear_sets()
   })
   sets.precast.WS["Impulse Drive"].AttCapped = {
     ammo="Knobkierrie",                 -- __, 23, __,  6, __ (__, __)
-    head="Gleti's Mask",                -- 33, 65, 50, __,  6 ( 5, __)
-    body="Gleti's Cuirass",             -- 39, 65, 50, __,  9 ( 8, __)
-    hands="Gleti's Gauntlets",          -- 20, 65, 50, __,  7 ( 6, __)
-    legs="Gleti's Breeches",            -- 49, 65, 50, __,  8 ( 7, __)
-    feet="Gleti's Boots",               -- 28, 65, 50, __,  5 ( 4, __)
+    head="Gleti's Mask",                -- 33, 70, 55, __,  6 ( 5, __)
+    body="Gleti's Cuirass",             -- 39, 70, 55, __,  9 ( 8, __)
+    hands="Gleti's Gauntlets",          -- 20, 70, 55, __,  7 ( 6, __)
+    legs="Gleti's Breeches",            -- 49, 70, 55, __,  8 ( 7, __)
+    feet="Gleti's Boots",               -- 33, 70, 55, __,  5 ( 4, __)
     neck="Dragoon's Collar +2",         -- 15, 25, 25, __, 10 ( 4, __)
     ear1="Moonshade Earring",           -- __, __,  4, __, __ (__, __); tp bonus +250
     ear2="Peltast's Earring",           -- __, __,  6, __,  7 (__, __)
@@ -497,10 +495,10 @@ function init_gear_sets()
     ring2="Sroda Ring",                 -- 15, __, __, __,  3 (__, __)
     back=gear.DRG_WS2_Cape,             -- 30, 20, 20, 10, __ (__, __)
     waist="Sailfi Belt +1",             -- 15, 15, __, __, __ (__, __)
-    -- 254 STR, 408 Att, 305 Acc, 16 WSD, 55 PDL (34 Crit Rate, 0 Crit Dmg)
+    -- 259 STR, 433 Att, 328 Acc, 16 WSD, 55 PDL (34 Crit Rate, 0 Crit Dmg)
     
     -- ear2="Peltast's Earring +2",     -- 15, __, 20, __,  9 ( 6, __)
-    -- 269 STR, 408 Att, 319 Acc, 16 WSD, 57 PDL (40 Crit Rate, 0 Crit Dmg)
+    -- 274 STR, 433 Att, 344 Acc, 16 WSD, 57 PDL (40 Crit Rate, 0 Crit Dmg)
   }
   sets.precast.WS["Impulse Drive"].AttCappedMaxTP = set_combine(sets.precast.WS["Impulse Drive"].AttCapped, {
     ear1="Thrud Earring",               -- 10, __, __,  3, __ (__, __)
@@ -509,9 +507,9 @@ function init_gear_sets()
   -- 80% DEX
   sets.precast.WS["Geirskogul"] = {
     ammo="Knobkierrie",                 -- __, 23, __,  6, __
-    head=gear.Nyame_B_head,             -- 25, 60, 40, 10, __
-    body=gear.Nyame_B_body,             -- 24, 60, 40, 12, __
-    hands=gear.Nyame_B_hands,           -- 42, 60, 40, 10, __
+    head=gear.Nyame_B_head,             -- 25, 65, 50, 11, __
+    body=gear.Nyame_B_body,             -- 24, 65, 40, 13, __
+    hands=gear.Nyame_B_hands,           -- 42, 65, 40, 11, __
     legs=gear.Lustratio_B_legs,         -- 43, 38, 20, __, __
     feet=gear.Lustratio_D_feet,         -- 48, __, __, __, __
     neck="Fotia Gorget",                -- __, __, __, __, __; ftp+
@@ -522,39 +520,39 @@ function init_gear_sets()
     back=gear.DRG_WS2_Cape,             -- __, 20, 20, 10, __
     waist="Kentarch Belt +1",           -- 10, __, 14, __, __
     -- Lustratio set effect                __, __, __,  4, __
-    -- 212 DEX, 261 Attack, 178 Accuracy, 57 WSD, 0 PDL
+    -- 212 DEX, 276 Attack, 188 Accuracy, 60 WSD, 0 PDL
 
     -- head="Peltast's Mezail +3",      -- 32, 71, 61, 12, __
     -- back=gear.DRG_WS4_Cape,          -- 30, 20, 20, 10, __
-    -- 249 DEX, 272 Attack, 199 Accuracy, 59 WSD, 0 PDL
+    -- 249 DEX, 282 Attack, 199 Accuracy, 61 WSD, 0 PDL
   }
   sets.precast.WS["Geirskogul"].MaxTP = set_combine(sets.precast.WS["Geirskogul"], {
     ear2="Thrud Earring",               -- __, __, __,  3, __
-    -- 249 DEX, 272 Attack, 195 Accuracy, 62 WSD, 0 PDL
+    -- 249 DEX, 282 Attack, 195 Accuracy, 62 WSD, 0 PDL
   })
   sets.precast.WS["Geirskogul"].AttCapped = set_combine(sets.precast.WS["Geirskogul"], {
-    body="Gleti's Cuirass",             -- 34, 65, 50, __,  9
-    feet="Gleti's Boots",               -- 29, 65, 50, __,  5
+    body="Gleti's Cuirass",             -- 34, 70, 55, __,  9
+    feet="Gleti's Boots",               -- 29, 70, 55, __,  5
     neck="Dragoon's Collar +2",         -- __, 25, 25, __, 10
     ring2="Epaminondas's Ring",         -- __, __, __,  5, __
     ear1="Moonshade Earring",           -- __, __,  4, __, __; tp bonus +250
     ear2="Peltast's Earring",           -- __, __, __, __,  7
-    -- 230 DEX, 367 Attack, 284 Accuracy, 47 WSD, 31 PDL
+    -- 230 DEX, 352 Attack, 294 Accuracy, 48 WSD, 31 PDL
   })
   sets.precast.WS["Geirskogul"].AttCappedMaxTP = set_combine(sets.precast.WS["Geirskogul"].AttCapped, {
     ear1="Odr Earring",                 -- 10, __, __, __, __
     ear2="Peltast's Earring",           -- __, __,  6, __,  7
-    -- 240 DEX, 367 Attack, 286 Accuracy, 47 WSD, 31 PDL
+    -- 240 DEX, 352 Attack, 296 Accuracy, 48 WSD, 31 PDL
   })
 
   -- 50% STR; can crit
   sets.precast.WS["Drakesbane"] = {
-    ammo="Coiste Bodhar",               --  8, __, 15, __ (__, __)
-    head="Gleti's Mask",                -- 33, __, 65,  6 ( 5, __)
+    ammo="Coiste Bodhar",               -- 10, __, 15, __ (__, __)
+    head="Gleti's Mask",                -- 33, __, 70,  6 ( 5, __)
     body="Hjarrandi Breastplate",       -- 38, __, 53, __ (13, __)
-    hands="Gleti's Gauntlets",          -- 20, __, 65,  7 ( 6, __)
+    hands="Gleti's Gauntlets",          -- 20, __, 70,  7 ( 6, __)
     legs="Peltast's Cuissots +2",       -- 48, __, 63, __ (__, 12)
-    feet="Gleti's Boots",               -- 28, __, 65,  5 ( 4, __)
+    feet="Gleti's Boots",               -- 33, __, 70,  5 ( 4, __)
     neck="Dragoon's Collar +2",         -- 15, __, 25, 10 ( 4, __)
     ear1="Thrud Earring",               -- 10,  3, __, __ (__, __)
     ear2="Sherida Earring",             --  5, __, __, __ (__, __)
@@ -562,22 +560,22 @@ function init_gear_sets()
     ring2="Sroda Ring",                 -- 15, __, __, __ (__, __)
     back=gear.DRG_WS2_Cape,             -- 30, 10, 20, __ (__, __)
     waist="Sailfi Belt +1",             -- 15, __, 15, __ (__, __)
-    -- 275 STR, 13 WSD, 406 Att, 28 PDL (32 Crit Rate, 12 Crit Dmg)
+    -- 282 STR, 13 WSD, 421 Att, 28 PDL (32 Crit Rate, 12 Crit Dmg)
 
     -- head="Blistering Sallet +1",     -- 41, __, __, __ (10, __)
     -- legs="Peltast's Cuissots +3",    -- 53, __, 73, __ (__, 13)
     -- ear2="Peltast's Earring +2",     -- 15, __, __,  9 ( 6, __)
     -- back=gear.DRG_WS3_Cape,          -- 30, __, 20, __ (10, __)
-    -- 298 STR, 3 WSD, 351 Att, 31 PDL (53 Crit Rate, 13 Crit Dmg)
+    -- 305 STR, 3 WSD, 361 Att, 31 PDL (53 Crit Rate, 13 Crit Dmg)
   }
   sets.precast.WS["Drakesbane"].MaxTP = sets.precast.WS["Drakesbane"]
   sets.precast.WS["Drakesbane"].AttCapped = {
     ammo="Crepuscular Pebble",          --  3, __, __,  3 (__, __)
-    head="Gleti's Mask",                -- 33, __, 65,  6 ( 5, __)
-    body="Gleti's Cuirass",             -- 39, __, 65,  9 ( 8, __)
-    hands="Gleti's Gauntlets",          -- 20, __, 65,  7 ( 6, __)
+    head="Gleti's Mask",                -- 33, __, 70,  6 ( 5, __)
+    body="Gleti's Cuirass",             -- 39, __, 70,  9 ( 8, __)
+    hands="Gleti's Gauntlets",          -- 20, __, 70,  7 ( 6, __)
     legs="Peltast's Cuissots +2",       -- 48, __, 63, __ (__, 12)
-    feet="Gleti's Boots",               -- 28, __, 65,  5 ( 4, __)
+    feet="Gleti's Boots",               -- 33, __, 70,  5 ( 4, __)
     neck="Dragoon's Collar +2",         -- 15, __, 25, 10 ( 4, __)
     ear1="Thrud Earring",               -- 10,  3, __, __ (__, __)
     ear2="Peltast's Earring",           -- __, __, __,  7 (__, __)
@@ -585,12 +583,12 @@ function init_gear_sets()
     ring2="Sroda Ring",                 -- 15, __, __, __ (__, __)
     back=gear.DRG_WS2_Cape,             -- 30, 10, 20, __ (__, __)
     waist="Sailfi Belt +1",             -- 15, __, 15, __ (__, __)
-    -- 266 STR, 13 WSD, 403 Att, 47 PDL (27 Crit Rate, 12 Crit Dmg)
+    -- 271 STR, 13 WSD, 423 Att, 47 PDL (27 Crit Rate, 12 Crit Dmg)
 
     -- legs="Peltast's Cuissots +3",    -- 53, __, 73, __ (__, 13)
     -- ear2="Peltast's Earring +2",     -- 15, __, __,  9 ( 6, __)
     -- back=gear.DRG_WS3_Cape,          -- 30, __, 20, __ (10, __)
-    -- 286 STR, 3 WSD, 413 Att, 49 PDL (43 Crit Rate, 13 Crit Dmg)
+    -- 291 STR, 3 WSD, 433 Att, 49 PDL (43 Crit Rate, 13 Crit Dmg)
   }
   sets.precast.WS["Drakesbane"].AttCappedMaxTP = sets.precast.WS["Drakesbane"].AttCapped
 
@@ -731,23 +729,22 @@ function init_gear_sets()
     body="Gleti's Cuirass",     --  3
     hands="Gleti's Gauntlets",  --  2
     legs="Gleti's Breeches",    --  3
-    feet="Gleti's Boots"     --  2
+    feet="Gleti's Boots"        --  2
     -- head="Valorous Mask",    --  3
   }
   sets.latent_regen = {
-    feet="Pteroslaver Greaves +1",
-    neck="Bathy Choker +1",         --  3 {__}
-    ear1="Infused Earring",         --  1 {__}
-    ring1="Chirich Ring +1",        --  2 {__}
-    ring2="Chirich Ring +1",        --  2 {__}
-    -- head="Crepuscular Helm",        --  3 {__}
-    -- body="Sacro Breastplate",       -- 13 {__}
-    -- feet="Pteroslaver Greaves +3",  -- __ {10}
-  }
+    head="Gleti's Mask",              --  3
+    neck="Bathy Choker +1",           --  3 {__}
+    ear1="Infused Earring",           --  1 {__}
+    ring1="Chirich Ring +1",          --  2 {__}
+    ring2="Chirich Ring +1",          --  2 {__}
+    -- body="Sacro Breastplate",      -- 13 {__}
+    -- feet="Pteroslaver Greaves +3", -- __ {10}
+  } -- 24 Regen {10 Pet Regen}
   sets.latent_refresh = {
     ring1="Stikini Ring +1",      --  1
     -- body="Chozoron Coselete",  --  2
-    -- ring2="Stikini Ring +1",      --  1
+    -- ring2="Stikini Ring +1",   --  1
   }
 
   sets.resting = {}
@@ -789,7 +786,7 @@ function init_gear_sets()
     ammo="Coiste Bodhar",           -- __,  3, 15, __, __ < 3, __, __> [__/__, ___] {__/__}
     head="Hjarrandi Helm",          -- __,  7, 45, 41, __ < 6, __, __> [10/10,  53] {__/__}
     body="Hjarrandi Breastplate",   -- __, 10, 53, 47, 13 <__, __, __> [12/12,  69] {__/__}
-    hands="Gleti's Gauntlets",      --  3,  5, 60, 45,  6 <__, __, __> [ 7/__,  75] { 8/ 8}
+    hands="Gleti's Gauntlets",      --  3,  8, 70, 55,  6 <__, __, __> [ 7/__,  75] { 8/ 8}
     legs="Pteroslaver Brais +3",    --  5, 10, 64, 39, __ <__, __, __> [__/__,  95] {11/__}
     feet="Flamma Gambieras +2",     --  2,  6, __, 42, __ < 6, __, __> [__/__,  86] {__/__}
     neck="Vim Torque +1",           -- __, 10, __, 15, __ <__, __, __> [__/__, ___] {__/__}
@@ -799,7 +796,7 @@ function init_gear_sets()
     ring2="Niqmaddu Ring",          -- __, __, __, __, __ <__, __,  3> [__/__, ___] {__/__}
     back=gear.DRG_TP_Cape,          -- __, __, 20, 30, __ <10, __, __> [10/__, ___] {__/__}
     waist="Tempus Fugit +1",        -- 15, __, __, __, __ <__, __, __> [__/__, ___] {__/__}
-    -- 25 Haste, 66 STP, 275 Att, 277 Acc, 19 Crit Rate <31 DA, 0 TA, 3 QA> [44 PDT/27 MDT, 378 Meva] {19 PetPDT/8 PetMDT}
+    -- 25 Haste, 69 STP, 285 Att, 287 Acc, 19 Crit Rate <31 DA, 0 TA, 3 QA> [44 PDT/27 MDT, 378 Meva] {19 PetPDT/8 PetMDT}
   }
   sets.engaged.LowAcc = set_combine(sets.engaged, {
     ring1="Chirich Ring +1",
@@ -817,8 +814,8 @@ function init_gear_sets()
   sets.engaged.SamRoll = {
     ammo="Coiste Bodhar",           -- __,  3, 15, __, __ < 3, __, __> [__/__, ___] {__/__}
     head="Flamma Zucchetto +2",     --  4,  6, __, 44, __ <__,  5, __> [__/__,  53] {__/__}
-    body="Gleti's Cuirass",         --  3, __, 60, 45,  8 < 7, __, __> [ 9/__, 102] {__/__}
-    hands="Gleti's Gauntlets",      --  3,  5, 60, 45,  6 <__, __, __> [ 7/__,  75] { 8/ 8}
+    body="Gleti's Cuirass",         --  3, __, 70, 55,  8 <10, __, __> [ 9/__, 102] {__/__}
+    hands="Gleti's Gauntlets",      --  3,  8, 70, 55,  6 <__, __, __> [ 7/__,  75] { 8/ 8}
     legs="Pteroslaver Brais +3",    --  5, 10, 64, 39, __ <__, __, __> [__/__,  95] {11/__}
     feet="Flamma Gambieras +2",     --  2,  6, __, 42, __ < 6, __, __> [__/__,  86] {__/__}
     neck="Vim Torque +1",           -- __, 10, __, 15, __ <__, __, __> [__/__, ___] {__/__}
@@ -828,7 +825,7 @@ function init_gear_sets()
     ring2="Moonlight Ring",         -- __,  5,  8,  8, __ <__, __, __> [ 5/ 5, ___] {__/__}
     back=gear.DRG_TP_Cape,          -- __, __, 20, 30, __ <10, __, __> [10/__, ___] {__/__}
     waist="Ioskeha Belt +1",        --  8, __, __, 17, __ < 9, __, __> [__/__, ___] {__/__}
-    -- 25 Haste, 55 STP, 235 Att, 293 Acc, 14 Crit Rate <40 DA, 5 TA, 0 QA> [39 PDT/15 MDT, 411 Meva] {19 PetPDT/8 PetMDT}
+    -- 25 Haste, 58 STP, 255 Att, 313 Acc, 14 Crit Rate <43 DA, 5 TA, 0 QA> [39 PDT/15 MDT, 411 Meva] {19 PetPDT/8 PetMDT}
   }
   sets.engaged.LowAcc.SamRoll = set_combine(sets.engaged.SamRoll, {
     ring1="Chirich Ring +1",
@@ -852,9 +849,9 @@ function init_gear_sets()
     ammo="Coiste Bodhar",           -- __,  3, 15, __, __ < 3, __, __> [__/__, ___] {__/__}
     head="Hjarrandi Helm",          -- __,  7, 45, 41, __ < 6, __, __> [10/10,  53] {__/__}
     body="Hjarrandi Breastplate",   -- __, 10, 53, 47, 13 <__, __, __> [12/12,  69] {__/__}
-    hands="Gleti's Gauntlets",      --  3,  5, 60, 45,  6 <__, __, __> [ 7/__,  75] { 8/ 8}
+    hands="Gleti's Gauntlets",      --  3,  8, 70, 55,  6 <__, __, __> [ 7/__,  75] { 8/ 8}
     legs="Pteroslaver Brais +3",    --  5, 10, 64, 39, __ <__, __, __> [__/__,  95] {11/__}
-    feet=gear.Nyame_B_feet,         --  3, __, 60, 40, __ < 4, __, __> [ 7/ 7, 150] {__/__}
+    feet=gear.Nyame_B_feet,         --  3, __, 65, 53, __ < 5, __, __> [ 7/ 7, 150] {__/__}
     neck="Dragoon's Collar +2",     -- __, __, 25, 25,  4 <__, __, __> [__/__, ___] {25/25}
     ear1="Telos Earring",           -- __,  5, 10, 10, __ < 1, __, __> [__/__, ___] {__/__}
     ear2="Sherida Earring",         -- __,  5, __, __, __ < 5, __, __> [__/__, ___] {__/__}
@@ -862,15 +859,15 @@ function init_gear_sets()
     ring2="Niqmaddu Ring",          -- __, __, __, __, __ <__, __,  3> [__/__, ___] {__/__}
     back=gear.DRG_TP_Cape,          -- __, __, 20, 30, __ <10, __, __> [10/__, ___] {__/__}
     waist="Tempus Fugit +1",        -- 15, __, __, __, __ <__, __, __> [__/__, ___] {__/__}
-    -- 26 Haste, 50 STP, 360 Att, 285 Acc, 23 Crit Rate <29 DA, 0 TA, 3 QA> [51 PDT/34 MDT, 442 Meva] {44 PetPDT/33 PetMDT}
+    -- 26 Haste, 53 STP, 375 Att, 308 Acc, 23 Crit Rate <30 DA, 0 TA, 3 QA> [51 PDT/34 MDT, 442 Meva] {44 PetPDT/33 PetMDT}
   })
   sets.engaged.LowAcc.LightDef = set_combine(sets.engaged.LowAcc, {
     ammo="Coiste Bodhar",           -- __,  3, 15, __, __ < 3, __, __> [__/__, ___] {__/__}
     head="Flamma Zucchetto +2",     --  4,  6, __, 44, __ <__,  5, __> [__/__,  53] {__/__}
-    body="Gleti's Cuirass",         --  3, __, 60, 45,  8 < 7, __, __> [ 9/__, 102] {__/__}
-    hands="Gleti's Gauntlets",      --  3,  5, 60, 45,  6 <__, __, __> [ 7/__,  75] { 8/ 8}
-    legs=gear.Nyame_B_legs,         --  5, __, 60, 40, __ < 5, __, __> [ 8/ 8, 150] {__/__}
-    feet=gear.Nyame_B_feet,         --  3, __, 60, 40, __ < 4, __, __> [ 7/ 7, 150] {__/__}
+    body="Gleti's Cuirass",         --  3, __, 70, 55,  8 <10, __, __> [ 9/__, 102] {__/__}
+    hands="Gleti's Gauntlets",      --  3,  8, 70, 55,  6 <__, __, __> [ 7/__,  75] { 8/ 8}
+    legs=gear.Nyame_B_legs,         --  5, __, 65, 40, __ < 6, __, __> [ 8/ 8, 150] {__/__}
+    feet=gear.Nyame_B_feet,         --  3, __, 65, 53, __ < 5, __, __> [ 7/ 7, 150] {__/__}
     neck="Dragoon's Collar +2",     -- __, __, 25, 25,  4 <__, __, __> [__/__, ___] {25/25}
     ear1="Telos Earring",           -- __,  5, 10, 10, __ < 1, __, __> [__/__, ___] {__/__}
     ear2="Sherida Earring",         -- __,  5, __, __, __ < 5, __, __> [__/__, ___] {__/__}
@@ -878,48 +875,18 @@ function init_gear_sets()
     ring2="Moonlight Ring",         -- __,  5,  8,  8, __ <__, __, __> [ 5/ 5, ___] {__/__}
     back=gear.DRG_TP_Cape,          -- __, __, 20, 30, __ <10, __, __> [10/__, ___] {__/__}
     waist="Ioskeha Belt +1",        --  8, __, __, 17, __ < 9, __, __> [__/__, ___] {__/__}
-    -- 26 Haste, 34 STP, 326 Att, 312 Acc, 18 Crit Rate <44 DA, 5 TA, 0 QA> [51 PDT/25 MDT, 530 Meva] {33 PetPDT/33 PetMDT}
+    -- 26 Haste, 37 STP, 356 Att, 345 Acc, 18 Crit Rate <49 DA, 5 TA, 0 QA> [51 PDT/25 MDT, 530 Meva] {33 PetPDT/33 PetMDT}
   })
-  sets.engaged.MidAcc.LightDef = set_combine(sets.engaged.MidAcc, {
-    ammo="Coiste Bodhar",           -- __,  3, 15, __, __ < 3, __, __> [__/__, ___] {__/__}
-    head="Flamma Zucchetto +2",     --  4,  6, __, 44, __ <__,  5, __> [__/__,  53] {__/__}
-    body="Gleti's Cuirass",         --  3, __, 60, 45,  8 < 7, __, __> [ 9/__, 102] {__/__}
-    hands="Gleti's Gauntlets",      --  3,  5, 60, 45,  6 <__, __, __> [ 7/__,  75] { 8/ 8}
-    legs=gear.Nyame_B_legs,         --  5, __, 60, 40, __ < 5, __, __> [ 8/ 8, 150] {__/__}
-    feet=gear.Nyame_B_feet,         --  3, __, 60, 40, __ < 4, __, __> [ 7/ 7, 150] {__/__}
-    neck="Dragoon's Collar +2",     -- __, __, 25, 25,  4 <__, __, __> [__/__, ___] {25/25}
-    ear1="Telos Earring",           -- __,  5, 10, 10, __ < 1, __, __> [__/__, ___] {__/__}
-    ear2="Sherida Earring",         -- __,  5, __, __, __ < 5, __, __> [__/__, ___] {__/__}
-    ring1="Moonlight Ring",         -- __,  5,  8,  8, __ <__, __, __> [ 5/ 5, ___] {__/__}
-    ring2="Moonlight Ring",         -- __,  5,  8,  8, __ <__, __, __> [ 5/ 5, ___] {__/__}
-    back=gear.DRG_TP_Cape,          -- __, __, 20, 30, __ <10, __, __> [10/__, ___] {__/__}
-    waist="Ioskeha Belt +1",        --  8, __, __, 17, __ < 9, __, __> [__/__, ___] {__/__}
-    -- 26 Haste, 34 STP, 326 Att, 312 Acc, 18 Crit Rate <44 DA, 5 TA, 0 QA> [51 PDT/25 MDT, 530 Meva] {33 PetPDT/33 PetMDT}
-  })
-  sets.engaged.HighAcc.LightDef = set_combine(sets.engaged.HighAcc, {
-    ammo="Coiste Bodhar",           -- __,  3, 15, __, __ < 3, __, __> [__/__, ___] {__/__}
-    head="Flamma Zucchetto +2",     --  4,  6, __, 44, __ <__,  5, __> [__/__,  53] {__/__}
-    body="Gleti's Cuirass",         --  3, __, 60, 45,  8 < 7, __, __> [ 9/__, 102] {__/__}
-    hands="Gleti's Gauntlets",      --  3,  5, 60, 45,  6 <__, __, __> [ 7/__,  75] { 8/ 8}
-    legs=gear.Nyame_B_legs,         --  5, __, 60, 40, __ < 5, __, __> [ 8/ 8, 150] {__/__}
-    feet=gear.Nyame_B_feet,         --  3, __, 60, 40, __ < 4, __, __> [ 7/ 7, 150] {__/__}
-    neck="Dragoon's Collar +2",     -- __, __, 25, 25,  4 <__, __, __> [__/__, ___] {25/25}
-    ear1="Telos Earring",           -- __,  5, 10, 10, __ < 1, __, __> [__/__, ___] {__/__}
-    ear2="Sherida Earring",         -- __,  5, __, __, __ < 5, __, __> [__/__, ___] {__/__}
-    ring1="Moonlight Ring",         -- __,  5,  8,  8, __ <__, __, __> [ 5/ 5, ___] {__/__}
-    ring2="Moonlight Ring",         -- __,  5,  8,  8, __ <__, __, __> [ 5/ 5, ___] {__/__}
-    back=gear.DRG_TP_Cape,          -- __, __, 20, 30, __ <10, __, __> [10/__, ___] {__/__}
-    waist="Ioskeha Belt +1",        --  8, __, __, 17, __ < 9, __, __> [__/__, ___] {__/__}
-    -- 26 Haste, 34 STP, 326 Att, 312 Acc, 18 Crit Rate <44 DA, 5 TA, 0 QA> [51 PDT/25 MDT, 530 Meva] {33 PetPDT/33 PetMDT}
-  })
+  sets.engaged.MidAcc.LightDef = sets.engaged.LowAcc.LightDef
+  sets.engaged.HighAcc.LightDef = sets.engaged.LowAcc.LightDef
 
   sets.engaged.SamRoll.LightDef = set_combine(sets.engaged.SamRoll, {
     ammo="Coiste Bodhar",           -- __,  3, 15, __, __ < 3, __, __> [__/__, ___] {__/__}
     head="Flamma Zucchetto +2",     --  4,  6, __, 44, __ <__,  5, __> [__/__,  53] {__/__}
-    body="Gleti's Cuirass",         --  3, __, 60, 45,  8 < 7, __, __> [ 9/__, 102] {__/__}
-    hands="Gleti's Gauntlets",      --  3,  5, 60, 45,  6 <__, __, __> [ 7/__,  75] { 8/ 8}
-    legs=gear.Nyame_B_legs,         --  5, __, 60, 40, __ < 5, __, __> [ 8/ 8, 150] {__/__}
-    feet=gear.Nyame_B_feet,         --  3, __, 60, 40, __ < 4, __, __> [ 7/ 7, 150] {__/__}
+    body="Gleti's Cuirass",         --  3, __, 70, 55,  8 <10, __, __> [ 9/__, 102] {__/__}
+    hands="Gleti's Gauntlets",      --  3,  8, 70, 55,  6 <__, __, __> [ 7/__,  75] { 8/ 8}
+    legs=gear.Nyame_B_legs,         --  5, __, 65, 40, __ < 6, __, __> [ 8/ 8, 150] {__/__}
+    feet=gear.Nyame_B_feet,         --  3, __, 65, 53, __ < 5, __, __> [ 7/ 7, 150] {__/__}
     neck="Dragoon's Collar +2",     -- __, __, 25, 25,  4 <__, __, __> [__/__, ___] {25/25}
     ear1="Telos Earring",           -- __,  5, 10, 10, __ < 1, __, __> [__/__, ___] {__/__}
     ear2="Sherida Earring",         -- __,  5, __, __, __ < 5, __, __> [__/__, ___] {__/__}
@@ -927,56 +894,12 @@ function init_gear_sets()
     ring2="Moonlight Ring",         -- __,  5,  8,  8, __ <__, __, __> [ 5/ 5, ___] {__/__}
     back=gear.DRG_TP_Cape,          -- __, __, 20, 30, __ <10, __, __> [10/__, ___] {__/__}
     waist="Ioskeha Belt +1",        --  8, __, __, 17, __ < 9, __, __> [__/__, ___] {__/__}
-    -- 26 Haste, 34 STP, 326 Att, 312 Acc, 18 Crit Rate <44 DA, 5 TA, 0 QA> [51 PDT/25 MDT, 530 Meva] {33 PetPDT/33 PetMDT}
+    -- 26 Haste, 37 STP, 356 Att, 345 Acc, 18 Crit Rate <49 DA, 5 TA, 0 QA> [51 PDT/25 MDT, 530 Meva] {33 PetPDT/33 PetMDT}
   })
-  sets.engaged.LowAcc.SamRoll.LightDef = set_combine(sets.engaged.LowAcc.SamRoll, {
-    ammo="Coiste Bodhar",           -- __,  3, 15, __, __ < 3, __, __> [__/__, ___] {__/__}
-    head="Flamma Zucchetto +2",     --  4,  6, __, 44, __ <__,  5, __> [__/__,  53] {__/__}
-    body="Gleti's Cuirass",         --  3, __, 60, 45,  8 < 7, __, __> [ 9/__, 102] {__/__}
-    hands="Gleti's Gauntlets",      --  3,  5, 60, 45,  6 <__, __, __> [ 7/__,  75] { 8/ 8}
-    legs=gear.Nyame_B_legs,         --  5, __, 60, 40, __ < 5, __, __> [ 8/ 8, 150] {__/__}
-    feet=gear.Nyame_B_feet,         --  3, __, 60, 40, __ < 4, __, __> [ 7/ 7, 150] {__/__}
-    neck="Dragoon's Collar +2",     -- __, __, 25, 25,  4 <__, __, __> [__/__, ___] {25/25}
-    ear1="Telos Earring",           -- __,  5, 10, 10, __ < 1, __, __> [__/__, ___] {__/__}
-    ear2="Sherida Earring",         -- __,  5, __, __, __ < 5, __, __> [__/__, ___] {__/__}
-    ring1="Moonlight Ring",         -- __,  5,  8,  8, __ <__, __, __> [ 5/ 5, ___] {__/__}
-    ring2="Moonlight Ring",         -- __,  5,  8,  8, __ <__, __, __> [ 5/ 5, ___] {__/__}
-    back=gear.DRG_TP_Cape,          -- __, __, 20, 30, __ <10, __, __> [10/__, ___] {__/__}
-    waist="Ioskeha Belt +1",        --  8, __, __, 17, __ < 9, __, __> [__/__, ___] {__/__}
-    -- 26 Haste, 34 STP, 326 Att, 312 Acc, 18 Crit Rate <44 DA, 5 TA, 0 QA> [51 PDT/25 MDT, 530 Meva] {33 PetPDT/33 PetMDT}
-  })
-  sets.engaged.MidAcc.SamRoll.LightDef = set_combine(sets.engaged.MidAcc.SamRoll, {
-    ammo="Coiste Bodhar",           -- __,  3, 15, __, __ < 3, __, __> [__/__, ___] {__/__}
-    head="Flamma Zucchetto +2",     --  4,  6, __, 44, __ <__,  5, __> [__/__,  53] {__/__}
-    body="Gleti's Cuirass",         --  3, __, 60, 45,  8 < 7, __, __> [ 9/__, 102] {__/__}
-    hands="Gleti's Gauntlets",      --  3,  5, 60, 45,  6 <__, __, __> [ 7/__,  75] { 8/ 8}
-    legs=gear.Nyame_B_legs,         --  5, __, 60, 40, __ < 5, __, __> [ 8/ 8, 150] {__/__}
-    feet=gear.Nyame_B_feet,         --  3, __, 60, 40, __ < 4, __, __> [ 7/ 7, 150] {__/__}
-    neck="Dragoon's Collar +2",     -- __, __, 25, 25,  4 <__, __, __> [__/__, ___] {25/25}
-    ear1="Telos Earring",           -- __,  5, 10, 10, __ < 1, __, __> [__/__, ___] {__/__}
-    ear2="Sherida Earring",         -- __,  5, __, __, __ < 5, __, __> [__/__, ___] {__/__}
-    ring1="Moonlight Ring",         -- __,  5,  8,  8, __ <__, __, __> [ 5/ 5, ___] {__/__}
-    ring2="Moonlight Ring",         -- __,  5,  8,  8, __ <__, __, __> [ 5/ 5, ___] {__/__}
-    back=gear.DRG_TP_Cape,          -- __, __, 20, 30, __ <10, __, __> [10/__, ___] {__/__}
-    waist="Ioskeha Belt +1",        --  8, __, __, 17, __ < 9, __, __> [__/__, ___] {__/__}
-    -- 26 Haste, 34 STP, 326 Att, 312 Acc, 18 Crit Rate <44 DA, 5 TA, 0 QA> [51 PDT/25 MDT, 530 Meva] {33 PetPDT/33 PetMDT}
-  })
-  sets.engaged.HighAcc.SamRoll.LightDef = set_combine(sets.engaged.HighAcc.SamRoll, {
-    ammo="Coiste Bodhar",           -- __,  3, 15, __, __ < 3, __, __> [__/__, ___] {__/__}
-    head="Flamma Zucchetto +2",     --  4,  6, __, 44, __ <__,  5, __> [__/__,  53] {__/__}
-    body="Gleti's Cuirass",         --  3, __, 60, 45,  8 < 7, __, __> [ 9/__, 102] {__/__}
-    hands="Gleti's Gauntlets",      --  3,  5, 60, 45,  6 <__, __, __> [ 7/__,  75] { 8/ 8}
-    legs=gear.Nyame_B_legs,         --  5, __, 60, 40, __ < 5, __, __> [ 8/ 8, 150] {__/__}
-    feet=gear.Nyame_B_feet,         --  3, __, 60, 40, __ < 4, __, __> [ 7/ 7, 150] {__/__}
-    neck="Dragoon's Collar +2",     -- __, __, 25, 25,  4 <__, __, __> [__/__, ___] {25/25}
-    ear1="Telos Earring",           -- __,  5, 10, 10, __ < 1, __, __> [__/__, ___] {__/__}
-    ear2="Sherida Earring",         -- __,  5, __, __, __ < 5, __, __> [__/__, ___] {__/__}
-    ring1="Moonlight Ring",         -- __,  5,  8,  8, __ <__, __, __> [ 5/ 5, ___] {__/__}
-    ring2="Moonlight Ring",         -- __,  5,  8,  8, __ <__, __, __> [ 5/ 5, ___] {__/__}
-    back=gear.DRG_TP_Cape,          -- __, __, 20, 30, __ <10, __, __> [10/__, ___] {__/__}
-    waist="Ioskeha Belt +1",        --  8, __, __, 17, __ < 9, __, __> [__/__, ___] {__/__}
-    -- 26 Haste, 34 STP, 326 Att, 312 Acc, 18 Crit Rate <44 DA, 5 TA, 0 QA> [51 PDT/25 MDT, 530 Meva] {33 PetPDT/33 PetMDT}
-  })
+  sets.engaged.LowAcc.SamRoll.LightDef = sets.engaged.SamRoll.LightDef
+  sets.engaged.MidAcc.SamRoll.LightDef = sets.engaged.SamRoll.LightDef
+  sets.engaged.HighAcc.SamRoll.LightDef = sets.engaged.SamRoll.LightDef
+
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Special Sets ------------------------------------------

@@ -611,25 +611,25 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.engaged = {
-    ammo="Coiste Bodhar",             -- [__/__, ___] __,  3 <__, __,  3> __, __
+    ammo="Coiste Bodhar",             -- [__/__, ___] __,  3 < 3, __, __> __, __
     head="Flamma Zucchetto +2",       -- [__/__,  53] __,  6 <__,  5, __> __,  4
-    body="Mpaca's Doublet",           -- [10/__,  86] __,  7 <__,  4, __>  7,  4
-    hands="Mpaca's Gloves",           -- [ 8/__,  59] __, __ <__,  3, __>  5,  4; TA Dmg+9%
+    body="Mpaca's Doublet",           -- [10/__,  86] __,  8 <__,  4, __>  7,  4
+    hands="Mpaca's Gloves",           -- [ 8/__,  59] __, __ <__,  4, __>  5,  4; TA Dmg+9%
     legs="Kasuga Haidate +2",         -- [10/10, 120]  3, 10 <__, __, __> __,  5
     feet="Mpaca's Boots",             -- [ 6/__,  96] __, __ <__,  3, __>  3,  3
     neck="Samurai's Nodowa +2",       -- [__/__, ___] __, 14 <__, __, __> __, __
     ear1="Dedition Earring",          -- [__/__, ___] __,  8 <__, __, __> __, __
-    ear2="Telos Earring",             -- [__/__, ___] __,  5 <__, __,  1> __, __
+    ear2="Telos Earring",             -- [__/__, ___] __,  5 < 1, __, __> __, __
     ring1="Chirich Ring +1",          -- [__/__, ___] __,  6 <__, __, __> __, __
     ring2="Defending Ring",           -- [10/10, ___] __, __ <__, __, __> __, __
-    back=gear.SAM_TP_Cape,            -- [10/__, ___] __, __ <__, __, 10> __, __
-    waist="Sailfi Belt +1",           -- [__/__, ___] __, __ <__,  2,  5> __,  9
-    -- [54 PDT/20 MDT, 414 MEVA] 3 Hasso, 59 STP <0 QA, 17 TA, 19 DA> 15 Crit Rate, 29 Haste
+    back=gear.SAM_TP_Cape,            -- [10/__, ___] __, __ <10, __, __> __, __
+    waist="Sailfi Belt +1",           -- [__/__, ___] __, __ < 5,  2, __> __,  9
+    -- [54 PDT/20 MDT, 414 MEVA] 3 Hasso, 60 STP <19 DA, 18 TA, 0 QA> 15 Crit Rate, 29 Haste
 
     -- legs="Kasuga Haidate +3",      -- [11/11, 130]  3, 11 <__, __, __> __,  5
     -- feet="Tatenashi Sune-Ate +1",  -- [__/__,  80] __,  8 <__,  3, __> __,  3
     -- ear2="Kasuga Earring +2",      -- [__/__, ___] __,  9 <__, __, __> __, __
-    -- [49 PDT/21 MDT, 408 MEVA] 3 Hasso, 72 STP <0 QA, 17 TA, 18 DA> 12 Crit Rate, 29 Haste
+    -- [49 PDT/21 MDT, 408 MEVA] 3 Hasso, 73 STP <18 DA, 18 TA, 0 QA> 12 Crit Rate, 29 Haste
   }
   sets.engaged.LowAcc = sets.engaged
   sets.engaged.MidAcc = sets.engaged
@@ -642,24 +642,24 @@ function init_gear_sets()
 
 
   sets.engaged.HeavyDef = {
-    ammo="Coiste Bodhar",             -- [__/__, ___] __,  3 <__, __,  3> __, __
+    ammo="Coiste Bodhar",             -- [__/__, ___] __,  3 < 3, __, __> __, __
     head="Flamma Zucchetto +2",       -- [__/__,  53] __,  6 <__,  5, __> __,  4
-    body="Mpaca's Doublet",           -- [10/__,  86] __,  7 <__,  4, __>  7,  4
-    hands=gear.Nyame_B_hands,         -- [ 7/ 7, 112] __, __ <__, __,  4> __,  3
+    body="Mpaca's Doublet",           -- [10/__,  86] __,  8 <__,  4, __>  7,  4
+    hands=gear.Nyame_B_hands,         -- [ 7/ 7, 112] __, __ < 5, __, __> __,  3
     legs="Kasuga Haidate +2",         -- [10/10, 120]  3, 10 <__, __, __> __,  5
     feet="Mpaca's Boots",             -- [ 6/__,  96] __, __ <__,  3, __>  3,  3
     neck="Samurai's Nodowa +2",       -- [__/__, ___] __, 14 <__, __, __> __, __
     ear1="Dedition Earring",          -- [__/__, ___] __,  8 <__, __, __> __, __
-    ear2="Telos Earring",             -- [__/__, ___] __,  5 <__, __,  1> __, __
-    ring1="Niqmaddu Ring",            -- [__/__, ___] __, __ < 3, __, __> __, __
+    ear2="Telos Earring",             -- [__/__, ___] __,  5 < 1, __, __> __, __
+    ring1="Niqmaddu Ring",            -- [__/__, ___] __, __ <__, __,  3> __, __
     ring2="Defending Ring",           -- [10/10, ___] __, __ <__, __, __> __, __
-    back=gear.SAM_TP_Cape,            -- [10/__, ___] __, __ <__, __, 10> __, __
-    waist="Sailfi Belt +1",           -- [__/__, ___] __, __ <__,  2,  5> __,  9
-    -- [53 PDT/27 MDT, 467 MEVA] 3 Hasso, 53 STP <3 QA, 14 TA, 23 DA> 10 Crit Rate, 28 Haste
+    back=gear.SAM_TP_Cape,            -- [10/__, ___] __, __ <10, __, __> __, __
+    waist="Sailfi Belt +1",           -- [__/__, ___] __, __ < 5,  2, __> __,  9
+    -- [53 PDT/27 MDT, 467 MEVA] 3 Hasso, 54 STP <24 DA, 14 TA, 3 DA> 10 Crit Rate, 28 Haste
 
     -- legs="Kasuga Haidate +3",      -- [11/11, 130]  3, 11 <__, __, __> __,  5
     -- ear2="Kasuga Earring +2",      -- [__/__, ___] __,  9 <__, __, __> __, __
-    -- [54 PDT/28 MDT, 477 MEVA] 3 Hasso, 58 STP <3 QA, 14 TA, 22 DA> 10 Crit Rate, 28 Haste
+    -- [54 PDT/28 MDT, 477 MEVA] 3 Hasso, 59 STP <23 DA, 14 TA, 3 QA> 10 Crit Rate, 28 Haste
   }
   sets.engaged.LowAcc.HeavyDef = sets.engaged.HeavyDef
   sets.engaged.MidAcc.HeavyDef = sets.engaged.HeavyDef
@@ -669,20 +669,20 @@ function init_gear_sets()
     ammo="Crepuscular Pebble",        -- [ 3/ 3, ___] __, __ <__, __, __> __, __, __(__)
     head="Kasuga Kabuto +2",          -- [ 9/ 9,  88] __, 11 <__, __, __> __,  7, __(__)
     body="Dagon Breastplate",         -- [__/__,  86] __, __ <__,  5, __>  4,  1, __(10)
-    hands=gear.Nyame_B_hands,         -- [ 7/ 7, 112] __, __ <__, __,  4> __,  3, __(__)
-    legs="Mpaca's Hose",              -- [ 9/__,  96] __, __ <__,  4, __>  6,  9, __( 5)
+    hands=gear.Nyame_B_hands,         -- [ 7/ 7, 112] __, __ < 5, __, __> __,  3, __(__)
+    legs="Mpaca's Hose",              -- [ 9/__, 106] __, __ <__,  4, __>  6,  9, __( 5)
     feet="Kendatsuba Sune-Ate +1",    -- [__/__, 139] __, __ <__,  4, __>  5,  3,  8(__)
     neck="Bathy Choker +1",           -- [__/__, ___] __, __ <__, __, __> __, __, 11(__)
     ear1="Dignitary's Earring",       -- [__/__, ___] __,  3 <__, __, __> __, __,  5(__)
     ear2="Odnowa Earring +1",         -- [ 3/ 5, ___] __, __ <__, __, __> __, __, __(__)
     ring1="Defending Ring",           -- [10/10, ___] __, __ <__, __, __> __, __, __(__)
-    ring2="Niqmaddu Ring",            -- [__/__, ___] __, __ < 3, __, __> __, __, __( 5)
-    back=gear.SAM_TP_Cape,            -- [10/__, ___] __, __ <__, __, 10> __, __, __(__)
+    ring2="Niqmaddu Ring",            -- [__/__, ___] __, __ <__, __,  3> __, __, __( 5)
+    back=gear.SAM_TP_Cape,            -- [10/__, ___] __, __ <10, __, __> __, __, __(__)
     waist="Peiste Belt +1",           -- [__/__, ___] __, __ <__, __, __> __, __, 10(__)
-    -- [51 PDT/34 MDT, 521 MEVA] 0 Hasso, 14 STP <3 QA, 13 TA, 14 DA> 15 Crit Rate, 23 Haste, 34(20) Subtle Blow
+    -- [51 PDT/34 MDT, 531 MEVA] 0 Hasso, 14 STP <15 DA, 13 TA, 3 QA> 15 Crit Rate, 23 Haste, 34(20) Subtle Blow
     
     -- head="Kasuga Kabuto +3",       -- [10/10,  98] __, 12 <__, __, __> __,  7, __(__)
-    -- [52 PDT/35 MDT, 531 MEVA] 0 Hasso, 15 STP <3 QA, 13 TA, 14 DA> 15 Crit Rate, 23 Haste, 34(20) Subtle Blow
+    -- [52 PDT/35 MDT, 541 MEVA] 0 Hasso, 15 STP <15 DA, 13 TA, 3 QA> 15 Crit Rate, 23 Haste, 34(20) Subtle Blow
   }
   sets.engaged.LowAcc.SubtleBlow = sets.engaged.SubtleBlow
   sets.engaged.MidAcc.SubtleBlow = sets.engaged.SubtleBlow

@@ -405,11 +405,11 @@ function init_gear_sets()
 
   -- Modifiers: 50% STR / 50% MND
   sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
-    head=gear.Nyame_B_head,       -- 10, __, __,  4, 60, 40, 26, 26
-    body=gear.Nyame_B_body,       -- 12, __, __,  5, 60, 40, 35, 37
-    hands=gear.Nyame_B_hands,     -- 10, __, __,  4, 60, 40, 17, 40
-    legs=gear.Nyame_B_legs,       -- 11, __, __,  5, 60, 40, 43, 32
-    feet=gear.Nyame_B_feet,       -- 10, __, __,  4, 60, 40, 23, 26
+    head=gear.Nyame_B_head,       -- 10, __, __,  5, 65, 50, 26, 26
+    body=gear.Nyame_B_body,       -- 12, __, __,  7, 65, 40, 45, 37
+    hands=gear.Nyame_B_hands,     -- 10, __, __,  5, 65, 40, 17, 40
+    legs=gear.Nyame_B_legs,       -- 11, __, __,  6, 65, 40, 58, 32
+    feet=gear.Nyame_B_feet,       -- 10, __, __,  5, 65, 53, 23, 26
     ear1="Moonshade Earring",     -- __, __, __, __, __,  4, __, __; 250 TP Bonus
     ear2="Regal Earring",         -- __, __, __, __, __, __, __, 10
     ring1="Sroda Ring",           -- __, __, __, __, __, __, 15, __
@@ -418,7 +418,7 @@ function init_gear_sets()
     -- range=gear.Linos_WS5,      --  3, __, __, __, 15, 15,  8, __
     -- neck="Bard's Charm +2",    -- __,  3, __, __, __, 30, __, __
     -- back=gear.BRD_WS5_Cape,    -- 10, __, __, __, 20, 20, 30, __
-    -- 71 WSD, 3 QA, 2 TA, 27 DA, 350 Att, 269 Acc, 212 STR, 171 MND
+    -- 71 WSD, 3 QA, 2 TA, 33 DA, 375 Att, 292 Acc, 237 STR, 171 MND
   })
   sets.precast.WS['Savage Blade'].MaxTP = set_combine(sets.precast.WS['Savage Blade'], {
     -- ear1="Vulcan's Pearl",     -- __, __, __, __, __, __,  4, __

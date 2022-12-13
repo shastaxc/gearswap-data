@@ -367,10 +367,11 @@ function init_gear_sets()
     -- 53 PDT / 39 MDT, 478 M.Eva [982 HP] <75 Enmity>
   }
 
-  -- SIRD options
-  sets.SIRD_options = {
+  -- PDT/MDT, M.Eva [HP] {SIRD}
+  SIRD_options = {
     -- head="Erilaz Galea +2",                            -- __/__, 109 [101] {15}
     -- hands="Regal Gauntlets",                           -- __/__,  48 [205] {10}
+    -- feet="Agwu's Pigaches",                            -- __/__, 134 [ 27] {10}
   }
 
   -- 102% SIRD required to cap; can get 10% from merits
@@ -442,7 +443,7 @@ function init_gear_sets()
     head="Agwu's Cap",          -- 35, __/__ [ 38]; R0
     body=gear.Nyame_B_body,     -- 30,  9/ 9 [136]
     hands=gear.Carmine_D_hands, -- 42, __/__ [ 27]
-    legs="Agwu's Slops",        -- 55,  7/ 7 [ 50]
+    legs="Agwu's Slops",        -- 55,  8/ 8 [ 50]
     feet=gear.Herc_MAB_feet,    -- 57,  2/__ [  9]
     neck="Baetyl Pendant",      -- 13, __/__ [___]
     ear1="Friomisi Earring",    -- 10, __/__ [___]
@@ -451,12 +452,15 @@ function init_gear_sets()
     ring2="Shiva Ring +1",      --  3, __/__ [___]
     back="Argochampsa Mantle",  -- 12, __/__ [___]
     waist="Eschan Stone",       --  7, __/__ [ 20]
-    -- head="Agwu's Cap",       -- 55, __/__ [ 38]
-    -- body="Agwu's Robe",      -- 55, __/__ [ 61]
-    -- hands="Agwu's Gages",    -- 55, __/__ [ 38]
-    -- feet="Agwu's Pigaches",  -- 55, __/__ [ 27]
-    -- 334 MAB, 14 PDT / 6 MDT [369 HP]
-  } -- 271 MAB, 25 PDT / 15 MDT [415 HP]
+    -- 271 MAB, 26 PDT / 16 MDT [415 HP]
+
+    -- head="Agwu's Cap",       -- 60, __/__ [ 38]; R30
+    -- body="Agwu's Robe",      -- 60, __/__ [ 61]; R30
+    -- hands="Agwu's Gages",    -- 60, __/__ [ 38]; R30
+    -- legs="Agwu's Slops",     -- 60, 10/10 [ 50]; R30
+    -- feet="Agwu's Pigaches",  -- 60, __/__ [ 27]; R30
+    -- 354 MAB, 17 PDT / 9 MDT [369 HP]
+  }
   sets.precast.JA['Lunge'].Safe = {
     ammo="Seething Bomblet +1",                   --  7, __/__ [___]
     head=gear.Nyame_B_head,                       -- 30,  7/ 7 [ 91]
@@ -513,7 +517,7 @@ function init_gear_sets()
   -- Fast cast sets for spells
   sets.precast.FC = {
     ammo="Staunch Tathlum +1",                        -- {__}  3/ 3, ___ [___]
-    head={name="Runeist Bandeau +3", priority=1},   -- {14} __/__,  83 [109]
+    head={name="Runeist Bandeau +3", priority=1},     -- {14} __/__,  83 [109]
     body="Erilaz Surcoat +2",                         -- {10} __/__, 120 [133]
     hands=gear.Leyline_Gloves,                        -- { 8} __/__,  62 [ 25]
     legs="Agwu's Slops",                              -- { 7}  8/ 8, 134 [ 50]
@@ -528,8 +532,9 @@ function init_gear_sets()
     waist="Flume Belt +1",                            -- {__}  4/__, ___ [___]
     -- 57% Fast Cast, 50 PDT/26 MDT, 532 M.Eva [937 HP]
 
+    -- legs="Agwu's Slops",                           -- { 7} 10/10, 134 [ 50]; R30
     -- neck="Futhark Torque +2",                      -- {__}  7/ 7,  30 [ 60]
-    -- 57% Fast Cast, 51 PDT/27 MDT, 537 M.Eva [952 HP]
+    -- 57% Fast Cast, 53 PDT/29 MDT, 537 M.Eva [952 HP]
   }
 
   sets.precast.FC['Enhancing Magic'] = {
@@ -564,11 +569,11 @@ function init_gear_sets()
 
   sets.HybridAcc = {
     ammo="Hydrocera",           -- __,  6
-    head=gear.Nyame_B_head,     -- 40, 40
+    head=gear.Nyame_B_head,     -- 50, 40
     body=gear.Nyame_B_body,     -- 40, 40
     hands=gear.Nyame_B_hands,   -- 40, 40
     legs=gear.Nyame_B_legs,     -- 40, 40
-    feet=gear.Nyame_B_feet,     -- 40, 40
+    feet=gear.Nyame_B_feet,     -- 53, 40
     neck="Erra Pendant",        -- __, 17
     ear1="Dignitary's Earring", -- 10, 10
     ear2="Erilaz Earring",
@@ -577,7 +582,7 @@ function init_gear_sets()
     back=gear.RUN_WS2_Cape,     -- 20, __
     -- waist="Luminary Sash",      -- __, 10
     -- ear2="Crepuscular Earring", -- 10, 10
-  } -- 250 Acc, 279 Magic Acc
+  } -- 273 Acc, 279 Magic Acc
 
 
   ------------------------------------------------------------------------------------------------
@@ -1007,11 +1012,11 @@ function init_gear_sets()
 
   sets.precast.WS['Savage Blade'] = {
     ammo="Knobkierrie",             -- __, __, 23, __,  6, __, ___, __/__ [___]
-    head=gear.Nyame_B_head,         -- 26, 26, 60, 40, 10, __, ___,  7/ 7 [ 91]
-    body=gear.Nyame_B_body,         -- 35, 37, 60, 40, 12, __, ___,  9/ 9 [136]
-    hands=gear.Nyame_B_hands,       -- 17, 40, 60, 40, 10, __, ___,  7/ 7 [ 91]
-    legs=gear.Nyame_B_legs,         -- 43, 32, 60, 40, 11, __, ___,  8/ 8 [114]
-    feet=gear.Nyame_B_feet,         -- 23, 26, 60, 40, 10, __, ___,  7/ 7 [ 68]
+    head=gear.Nyame_B_head,         -- 26, 26, 65, 50, 11, __, ___,  7/ 7 [ 91]
+    body=gear.Nyame_B_body,         -- 35, 37, 65, 40, 13, __, ___,  9/ 9 [136]
+    hands=gear.Nyame_B_hands,       -- 17, 40, 65, 40, 11, __, ___,  7/ 7 [ 91]
+    legs=gear.Nyame_B_legs,         -- 58, 32, 65, 40, 12, __, ___,  8/ 8 [114]
+    feet=gear.Nyame_B_feet,         -- 23, 26, 65, 53, 11, __, ___,  7/ 7 [ 68]
     neck="Futhark Torque +1",       -- 12, 12, __, __, __, __, ___,  6/ 6 [ 45]
     ear1="Ishvara Earring",         -- __, __, __, __,  2, __, ___, __/__ [___]
     ear2="Moonshade Earring",       -- __, __, __,  4, __, __, 250, __/__ [___]
@@ -1019,23 +1024,25 @@ function init_gear_sets()
     ring2="Epaminondas's Ring",     -- __, __, __, __,  5, __, ___, __/__ [___]
     back=gear.RUN_WS2_Cape,         -- __, __, 20, 20, 10, __, ___, 10/__ [___]
     waist="Sailfi Belt +1",         -- 15, __, 15, __, __, __, ___, __/__ [___]
+    -- 201 STR, 173 MND, 383 Attack, 247 Accuracy, 81 WSD, 0 PDL, 250 TP Bonus, 54PDT/44MDT [545HP]
+
     -- neck="Futhark Torque +2",    -- 15, 15, __, __, __, __, ___,  7/ 7 [ 60]
     -- back=gear.RUN_WS3_Cape,      -- 30, __, 20, 20, 10, __, ___, 10/__ [___]
-    -- 219 STR, 176 MND, 358 Attack, 224 Accuracy, 76 WSD, 0 PDL, 250 TP Bonus, 55PDT/45MDT [560HP]
-  } -- 186 STR, 173 MND, 358 Attack, 224 Accuracy, 76 WSD, 0 PDL, 250 TP Bonus, 54PDT/44MDT [545HP]
+    -- 234 STR, 176 MND, 383 Attack, 247 Accuracy, 76 WSD, 0 PDL, 250 TP Bonus, 55PDT/45MDT [560HP]
+  }
   sets.precast.WS['Savage Blade'].Safe = {
     ammo="Knobkierrie",             -- __, __, 23, __,  6, __, ___, __/__ [___]
-    head=gear.Nyame_B_head,         -- 26, 26, 60, 40, 10, __, ___,  7/ 7 [ 91]
-    body=gear.Nyame_B_body,         -- 35, 37, 60, 40, 12, __, ___,  9/ 9 [136]
+    head=gear.Nyame_B_head,         -- 26, 26, 65, 50, 11, __, ___,  7/ 7 [ 91]
+    body=gear.Nyame_B_body,         -- 45, 37, 65, 40, 13, __, ___,  9/ 9 [136]
     hands={
       name=gear.Nyame_B_hands,
       priority=1
-    },                              -- 17, 40, 60, 40, 10, __, ___,  7/ 7 [ 91]
+    },                              -- 17, 40, 65, 40, 11, __, ___,  7/ 7 [ 91]
     legs={
       name=gear.Nyame_B_legs,
       priority=1
-    },                              -- 43, 32, 60, 40, 11, __, ___,  8/ 8 [114]
-    feet=gear.Nyame_B_feet,         -- 23, 26, 60, 40, 10, __, ___,  7/ 7 [ 68]
+    },                              -- 43, 32, 65, 40, 12, __, ___,  8/ 8 [114]
+    feet=gear.Nyame_B_feet,         -- 23, 26, 65, 53, 11, __, ___,  7/ 7 [ 68]
     neck="Futhark Torque +1",       -- 12, 12, __, __, __, __, ___,  6/ 6 [ 45]
     ear1="Odnowa Earring +1",       --  3, __, __, __, __, __, ___,  3/ 5 [110]
     ear2="Moonshade Earring",       -- __, __, __,  4, __, __, 250, __/__ [___]
@@ -1043,10 +1050,12 @@ function init_gear_sets()
     ring2="Moonlight Ring",         -- __, __,  8,  8, __, __, ___,  5/ 5 [110]
     back=gear.RUN_WS2_Cape,         -- __, __, 20, 20, 10, __, ___, 10/__ [___]
     waist="Sailfi Belt +1",         -- 15, __, 15, __, __, __, ___, __/__ [___]
+    -- 184 STR, 173 MND, 391 Attack, 255 Accuracy, 74 WSD, 0 PDL, 250 TP Bonus, 69PDT/53MDT [900HP]
+
     -- neck="Futhark Torque +2",    -- 15, 15, __, __, __, __, ___,  7/ 7 [ 60]
     -- back=gear.RUN_WS3_Cape,      -- 30, __, 20, 20, 10, __, ___, 10/__ [___]
-    -- 207 STR, 176 MND, 366 Attack, 232 Accuracy, 69 WSD, 0 PDL, 250 TP Bonus, 70PDT/54MDT [915HP]
-  } -- 174 STR, 173 MND, 366 Attack, 232 Accuracy, 69 WSD, 0 PDL, 250 TP Bonus, 69PDT/53MDT [900HP]
+    -- 217 STR, 176 MND, 391 Attack, 255 Accuracy, 74 WSD, 0 PDL, 250 TP Bonus, 70PDT/54MDT [915HP]
+  }
 
   sets.precast.WS['Savage Blade'].MaxTP = sets.precast.WS['Savage Blade'].MaxTP
   sets.precast.WS['Savage Blade'].LowAcc = sets.precast.WS['Savage Blade'].LowAcc
@@ -1177,8 +1186,8 @@ function init_gear_sets()
   sets.engaged.LightDef = {
     sub="Utu Grip",             -- __/__, ___ [ 70] __, __ <__, __, __> 30
     ammo="Staunch Tathlum +1",  --  3/ 3, ___ [___] __, __ <__, __, __> __
-    head=gear.Nyame_B_head,     --  7/ 7, 123 [ 91]  6, __ < 4, __, __> 40
-    body=gear.Nyame_B_body,     --  9/ 9, 139 [136]  3, __ < 5, __, __> 40
+    head=gear.Nyame_B_head,     --  7/ 7, 123 [ 91]  6, __ < 5, __, __> 40
+    body=gear.Nyame_B_body,     --  9/ 9, 139 [136]  3, __ < 7, __, __> 40
     hands=gear.Adhemar_A_hands, -- __/__,  43 [ 22]  5,  7 <__,  4, __> 52
     legs=gear.Samnuha_legs,     -- __/__,  75 [ 41]  6,  7 < 3,  3, __> 15
     feet="Erilaz Greaves +2",   -- 10/10, 147 [ 38]  4, __ <__, __, __> 50
@@ -1189,7 +1198,7 @@ function init_gear_sets()
     ring1="Moonlight Ring",     --  5/ 5, ___ [110] __,  5 <__, __, __>  8
     ring2="Moonlight Ring",     --  5/ 5, ___ [110] __,  5 <__, __, __>  8
     back=gear.RUN_TP_Cape,      -- 10/__, ___ [___] __, 10 <__, __, __> 30
-    -- 49 PDT / 39 MDT, 527 MEVA [618 HP] 32 Haste, 51 STP <27 DA, 7 TA, 0 QA> 300 Acc
+    -- 49 PDT / 39 MDT, 527 MEVA [618 HP] 32 Haste, 51 STP <30 DA, 7 TA, 0 QA> 300 Acc
   }
   sets.engaged.LowAcc.LightDef = sets.engaged.LightDef
   sets.engaged.MidAcc.LightDef = sets.engaged.LightDef

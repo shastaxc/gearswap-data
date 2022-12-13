@@ -336,11 +336,11 @@ function init_gear_sets()
   -- 70% MND / 30% STR; 3.0-9.75fTP
   -- TP Bonus > WSD > MND > STR
   sets.precast.WS['Black Halo'] = set_combine(sets.precast.WS, {
-    head="Nyame Helm",
-    body="Nyame Mail",
-    hands="Nyame Gauntlets",
-    legs="Nyame Flanchard",
-    feet="Nyame Sollerets",
+    head=gear.Nyame_B_head,
+    body=gear.Nyame_B_body,
+    hands=gear.Nyame_B_hands,
+    legs=gear.Nyame_B_legs,
+    feet=gear.Nyame_B_feet,
     ring1="Rufescent Ring",
     ring2="Metamorph Ring +1",
     back="Aurist's Cape +1",
@@ -357,11 +357,11 @@ function init_gear_sets()
   -- 50% MND / 50% STR; 3.5-12fTP
   -- TP Bonus > WSD > MND = STR
   sets.precast.WS['Judgment'] = set_combine(sets.precast.WS, {
-    head="Nyame Helm",
-    body="Nyame Mail",
-    hands="Nyame Gauntlets",
-    legs="Nyame Flanchard",
-    feet="Nyame Sollerets",
+    head=gear.Nyame_B_head,
+    body=gear.Nyame_B_body,
+    hands=gear.Nyame_B_hands,
+    legs=gear.Nyame_B_legs,
+    feet=gear.Nyame_B_feet,
     ring1="Rufescent Ring",
     ring2="Metamorph Ring +1",
     back="Aurist's Cape +1",
@@ -384,7 +384,7 @@ function init_gear_sets()
   -- Cure sets
 
   -- CPII, CP, Heal Skill, MND, VIT, SIRD, PDT/MDT, -Enmity
-  SIRDoptions = {
+  SIRD_options = {
     -- main="Eremite's Wand +1",      -- __, __, 25 [__/__, ???] __
     -- sub="Culminus",                -- __, __, 10 [__/__, ???] __
 
@@ -875,9 +875,10 @@ function init_gear_sets()
     
     -- body="Piety Bliaut +3",          -- 52, __, __, __ [__/__, 100]
     -- hands="Ebers Mitts +3",          -- __, __, 26, __ [11/11,  87]
+    -- feet="Bunzi's Sabots",           -- __, 10, __, __ [ 6/ 6, 150]; R30
     -- ear2="Ebers Earring +2",         -- __, __, __, __ [ 8/ 8, ___]
-    -- 66% Regen Potency, 44 Regen Potency, 86 Regen Duration, 30% Enh Duration [58 PDT/47 MDT, 575 M.Eva]
-    -- Regen IV 93 hp/tic @189 sec
+    -- 66% Regen Potency, 54 Regen Potency, 86 Regen Duration, 20% Enh Duration [64 PDT/53 MDT, 598 M.Eva]
+    -- Regen IV 103 hp/tic @175 sec
   }
 
   sets.midcast.MndEnfeebles = {
@@ -895,9 +896,9 @@ function init_gear_sets()
     ring1="Stikini Ring +1",          -- __,  8, 11,  8, __ [__/__, ___]
     ring2="Stikini Ring +1",          -- __,  8, 11,  8, __ [__/__, ___]
     back="Aurist's Cape +1",          -- __, __, 33, 33, 33 [__/__, ___]
-    waist="Obstinate Sash",           --  5, 10, 15,  5, __ [__/__, ___]
+    waist="Obstinate Sash",           --  5, 15, 15,  5, __ [__/__, ___]
     -- AF set bonus                      __, __, 15, __, __
-    -- 5 Enf Duration, 77 Enfeebling skill, 439 M.Acc, 275 MND, 229 INT [27 PDT/22 MDT, 586 MEVA]
+    -- 5 Enf Duration, 82 Enfeebling skill, 439 M.Acc, 275 MND, 229 INT [27 PDT/22 MDT, 586 MEVA]
     
     -- main="Contemplator +1",        -- __, 20, 70, 22, 12 [__/__, ___]
     -- sub="Mensch Strap +1",         -- __, __, __, __, __ [ 5/__, ___]
@@ -913,8 +914,8 @@ function init_gear_sets()
     -- ring1="Kishar Ring",           -- 10, __,  5, __, __ [__/__, ___]
     -- ring2="Stikini Ring +1",       -- __,  8, 11,  8, __ [__/__, ___]
     -- back="Aurist's Cape +1",       -- __, __, 33, 33, 33 [__/__, ___]
-    -- waist="Obstinate Sash",        --  5, 10, 15,  5, __ [__/__, ___]
-    -- 15 Enf Duration, 48 Enf skill, 482 M.Acc, 302 MND, 249 INT [48 PDT/43 MDT, 656 MEVA]
+    -- waist="Obstinate Sash",        --  5, 15, 15,  5, __ [__/__, ___]
+    -- 15 Enf Duration, 53 Enf skill, 482 M.Acc, 302 MND, 249 INT [48 PDT/43 MDT, 656 MEVA]
   }
   sets.midcast.IntEnfeebles = set_combine(sets.midcast.MndEnfeebles, {
     waist="Acuity Belt +1",           -- __, __, 15, __, 23 [__/__, ___]
@@ -930,7 +931,7 @@ function init_gear_sets()
 
   -- Divine magic skill
   sets.midcast.Repose = {
-    main="Bunzi's Rod",               -- __, 50, 15, 15 [__/__, ___]
+    main="Bunzi's Rod",               -- __, 55, 15, 15 [__/__, ___]
     sub="Ammurapi Shield",            -- __, 38, 13, 13 [__/__, ___]
     ammo="Pemphredo Tathlum",         -- __,  8, __,  4 [__/__, ___]
     head="Ebers Cap +2",              -- __, 51, 29, 29 [__/__, 115]
@@ -945,9 +946,9 @@ function init_gear_sets()
     ring2="Stikini Ring +1",          --  8, 11,  8, __ [__/__, ___]
     back="Aurist's Cape +1",          -- __, 33, 33, 33 [__/__, ___]
     waist="Obstinate Sash",           -- __, 15,  5, __ [__/__, ___]
-    -- 26 Divine skill, 446 M.Acc, 276 MND, 240 INT [32 PDT/32 MDT, 606 MEVA]
+    -- 26 Divine skill, 451 M.Acc, 276 MND, 240 INT [32 PDT/32 MDT, 606 MEVA]
 
-    -- main="Bunzi's Rod",            -- __, 50, 15, 15 [__/__, ___]
+    -- main="Bunzi's Rod",            -- __, 55, 15, 15 [__/__, ___]
     -- sub="Ammurapi Shield",         -- __, 38, 13, 13 [__/__, ___]
     -- ammo="Pemphredo Tathlum",      -- __,  8, __,  4 [__/__, ___]
     -- head="Ebers Cap +3",           -- __, 61, 34, 34 [__/__, 125]
@@ -962,7 +963,7 @@ function init_gear_sets()
     -- ring2="Stikini Ring +1",       --  8, 11,  8, __ [__/__, ___]
     -- back="Aurist's Cape +1",       -- __, 33, 33, 33 [__/__, ___]
     -- waist="Obstinate Sash",        -- __, 15,  5, __ [__/__, ___]
-    -- 26 Divine skill, 506 M.Acc, 316 MND, 265 INT [43 PDT/43 MDT, 656 MEVA]
+    -- 26 Divine skill, 511 M.Acc, 316 MND, 265 INT [43 PDT/43 MDT, 656 MEVA]
   }
 
 
