@@ -1248,10 +1248,10 @@ function init_gear_sets()
 
   sets.WeaponSet = {}
   sets.WeaponSet['Twashtar'] = {main="Twashtar", sub={name="Centovente", priority=1}}
-  sets.WeaponSet['TwashtarAcc'] = {main="Twashtar", sub={name="Taming Sari", priority=1}}
+  sets.WeaponSet['TwashtarAcc'] = {main="Twashtar", sub={name="Gleti's Knife", priority=1}}
   sets.WeaponSet['Terpsichore'] = {main="Terpsichore", sub="Twashtar"}
   sets.WeaponSet['H2H'] = {main="Karambit", sub=empty}
-  sets.WeaponSet['Healing'] = {main="Enchufla", sub="Blurred Knife +1"}
+  sets.WeaponSet['Healing'] = {main="Enchufla", sub="Gleti's Knife"}
   sets.WeaponSet['Staff'] = {main="Gozuki Mezuki", sub="Tzacab Grip"}
   sets.WeaponSet['Cleaving'] = {main="Tauret", sub="Twashtar"}
 
