@@ -381,11 +381,11 @@ function init_gear_sets()
   -- Multihit > AGI > WSD
   sets.precast.WS['Exenterator'] = {
     ammo="Cath Palug Stone",            -- 10, __, __, __ <__, __, __> [__/__, ___] __
-    head=gear.Adhemar_B_head,           -- 19, __, 56, __ <__,  4, __> [__/__,  59] __
+    head=gear.Nyame_B_head,
     body=gear.Nyame_B_body,             -- 33, 13, 65, __ < 7, __, __> [ 9/ 9, 139] __
-    hands=gear.Adhemar_A_hands,         -- 19, __, 20, __ <__,  4, __> [__/__,  43] __
-    legs="Meghanada Chausses +2",       -- 42, __, 45, __ <__,  5, __> [__/__,  69] __
-    feet="Plunderer's Poulaines +3",    -- 47, __, 61, 11 <__,  5, __> [__/__,  89] __
+    hands=gear.Nyame_B_hands,
+    legs=gear.Nyame_B_legs,
+    feet=gear.Nyame_B_feet,
     neck="Fotia Gorget",                -- __, __, __, __ <__, __, __> [__/__, ___] __; ftp+
     ear1="Sherida Earring",             -- __, __, __, __ < 5, __, __> [__/__, ___] __
     ear2="Skulker's Earring",           -- __, __, __, __ <__,  3, __> [__/__, ___] __
@@ -396,8 +396,6 @@ function init_gear_sets()
     -- Traits/Merits/Gifts              -- __, __, __, __ <__, 19, __> [__/__, ___] __
     -- 210 AGI, 23 WSD, 308 Att, 31 TA Dmg <12 DA, 45 TA, 0 QA> [19 PDT/9 MDT, 399 M.Eva] 0 PDL
 
-    -- head="Skulker's Bonnet +3",      -- 39, __, 61, __ <__,  6, __> [__/__, 109] 10
-    -- body="Pillager's Vest +3",       -- 38, __, __, __ <__,  7, __> [__/__,  94] __
     -- ear2="Skulker's Earring +2",     -- 15, __, __, __ <__,  5, __> [__/__, ___] __
     -- back=gear.THF_WS3_Cape,          -- 30, __, 20, 20 <10, __, __> [10/__, ___] __
     -- 250 AGI, 0 WSD, 248 Att, 31 TA Dmg <15 DA, 56 TA, 0 QA> [10 PDT/0 MDT, 404 M.Eva] 10 PDL
