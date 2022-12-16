@@ -1196,6 +1196,20 @@ end
 function job_state_change(stateField, newValue, oldValue)
 end
 
+-- Called when a player gains or loses a buff.
+-- buff == buff gained or lost
+-- gain == true if the buff was gained, false if it was lost.
+-- Theory: debuffs must be lowercase and buffs must begin with uppercase
+function job_buff_change(buff,gain)
+  if buff == "doom" then
+    if gain then
+      send_command('@input /p Doomed.')
+    elseif player.hpp > 0 then
+      send_command('@input /p Doom Removed.')
+    end
+  end
+end
+
 
 -------------------------------------------------------------------------------------------------------------------
 -- User code that supplements standard library decisions.
@@ -1337,13 +1351,12 @@ function auto_solace_and_arts()
         and not buffactive['Addendum: White']
         and not buffactive['Dark Arts']
         and not buffactive['Addendum: Black']
-
     if needs_solace and needs_arts then
-      send_command('@input /ja "Afflatus Solace" <me>;wait 1.2;@input /ja "Light Arts" <me>')
+      send_command('input /ja "Afflatus Solace" <me>;wait 1.2;input /ja "Light Arts" <me>')
     elseif needs_solace and not needs_arts then
-      send_command('@input /ja "Afflatus Solace" <me>')
+      send_command('input /ja "Afflatus Solace" <me>')
     elseif not needs_solace and needs_arts then
-      send_command('@input /ja "Light Arts" <me>')
+      send_command('input /ja "Light Arts" <me>')
     end
   end
 end
