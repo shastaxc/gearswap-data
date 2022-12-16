@@ -798,9 +798,10 @@ function init_gear_sets()
     -- body="Boii Lorica +3",             -- [14/14, 109] 11 <__, __, __> __,  3
     -- legs=gear.Odyssean_STP_legs,       -- [__/__,  86] 13 <__, __,  2> __,  5
     -- neck="Ainia Collar",               -- [__/__, ___]  8 <__, __, __> __, __
+    -- ear2="Schere Earring",             -- [__/__, ___]  5 <__, __,  6> __, __; R30
     -- ring1="Epona's Ring",              -- [__/__, ___] __ <__,  3,  3> __, __
     -- back=gear.WAR_STP_Cape,            -- [10/__, ___] 10 <__, __, __> __, __; DA dmg+20%
-    -- [50 PDT/40 MDT, 580 MEVA] 71 STP <0 QA, 3 TA, 66 DA> 0 Crit Rate, 26 Haste; DA dmg+35%
+    -- [50 PDT/40 MDT, 580 MEVA] 71 STP <0 QA, 3 TA, 71 DA> 0 Crit Rate, 26 Haste; DA dmg+35%
   }
   sets.engaged.LowAcc.LightDef = sets.engaged.LightDef
   sets.engaged.MidAcc.LightDef = sets.engaged.LightDef
