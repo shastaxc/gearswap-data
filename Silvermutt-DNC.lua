@@ -606,8 +606,9 @@ function init_gear_sets()
     -- Lustratio set bonus          -- __,  4, __, __
     -- 257 DEX, 41 WSD, 205 Att, 26 PDL
     
+    -- ammo="Coiste Bodhar",        -- 10, __, 15, __; R30
     -- ear2="Maculele Earring +2",  -- __, __, __,  9
-    -- 257 DEX, 41 WSD, 205 Att, 28 PDL
+    -- 257 DEX, 41 WSD, 220 Att, 28 PDL
   })
   sets.precast.WS["Rudra's Storm"].AttCappedMaxTP = set_combine(sets.precast.WS["Rudra's Storm"].AttCapped, {
     ear1="Ishvara Earring",         -- __,  2, __, __

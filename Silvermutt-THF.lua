@@ -477,6 +477,7 @@ function init_gear_sets()
     -- Traits/Merits/Gifts              -- __, __, __ [__/__, ___] __
     -- 202 DEX, 73 WSD, 370 Att [48 PDT/38 MDT, 674 M.Eva] 0 PDL
     
+    -- ammo="Coiste Bodhar",            -- 10, __, 15 [__/__, ___] __; R30
     -- body="Skulker's Vest +3",        -- 51, 12, 64 [__/__, 119] __
     -- legs="Plunderer's Culottes +3",  -- 21,  6, 64 [__/__,  89] __
     -- ear2="Skulker's Earring +2",     -- 15, __, __ [__/__, ___] __
@@ -504,6 +505,7 @@ function init_gear_sets()
     -- Traits/Merits/Gifts              -- __, __, __ [__/__, ___] __
     -- 267 DEX, 54 WSD, 278 Att [33 PDT/23 MDT, 374 M.Eva] 0 PDL
     
+    -- ammo="Coiste Bodhar",            -- 10, __, 15 [__/__, ___] __; R30
     -- head="Skulker's Bonnet +3",      -- 43, __, 61 [__/__, 109] 10
     -- ear2="Skulker's Earring +2",     -- 15, __, __ [__/__, ___] __
     -- 290 DEX, 43 WSD, 274 Att [26 PDT/16 MDT, 360 M.Eva] 10 PDL
