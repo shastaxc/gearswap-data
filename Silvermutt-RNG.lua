@@ -268,7 +268,7 @@ function init_gear_sets()
     hands="Amini Glovelettes +2",
   }
   sets.precast.JA['Camouflage'] = {
-    body="Orion Jerkin +1",
+    body="Orion Jerkin +2",
     -- body="Orion Jerkin +3",
   }
   sets.precast.JA['Scavenge'] = {
@@ -1463,7 +1463,7 @@ function init_gear_sets()
     body="Amini Caban +2",
   })
   sets.buff.Camouflage = {
-    body="Orion Jerkin +1"
+    body="Orion Jerkin +2"
     -- body="Orion Jerkin +3"
   }
 
