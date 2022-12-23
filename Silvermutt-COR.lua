@@ -874,7 +874,7 @@ function init_gear_sets()
     head="Ikenga's Hat",              -- 29,  8, 55/70 <__> {4} (__) [__/__,  96]
     body="Ikenga's Vest",             -- 39, 11, 55/70 < 5> {7} (__) [__/__, 112]
     hands="Malignance Gloves",        -- 24, 12, 50/__ <__> {4} (__) [ 5/ 5, 112]
-    legs="Ikenga's Trousers",         -- 40, 10, 55/70 <__> {6} (__) [10/10, 123]
+    legs="Chasseur's Culottes +3",    -- 43, 12, 63/63 <__> {_} (__) [12/12, 125]
     feet="Malignance Boots",          -- 49,  9, 50/__ <__> {2} (__) [ 4/ 4, 150]
     neck="Iskur Gorget",              -- __,  8, 30/30 <__> {_} (__) [__/__, ___]
     ear1="Enervating Earring",        -- __,  4,  7/ 7 <__> {_} (__) [__/__, ___]
@@ -884,24 +884,28 @@ function init_gear_sets()
     back=gear.COR_RA_Cape,            -- 30, 10, 20/20 <__> {_} (__) [10/__, ___]
     waist="Yemaya Belt",              --  7,  4, 10/10 <__> {_} (__) [__/__, ___]
     -- Merits/Traits/Gifts                                      (58)
-    -- 238 AGI, 86 STP, 362 racc/312 ratt <5 crit> {23 PDL} (68 Recycle) [29 PDT/19 MDT, 593 M.Eva]
+    -- 241 AGI, 88 STP, 370 racc/305 ratt <5 crit> {17 PDL} (68 Recycle) [31 PDT/21 MDT, 595 M.Eva]
   }
   sets.midcast.RA.LowAcc = set_combine(sets.midcast.RA, {
     ear1="Beyla Earring",             -- __, __, 15/__ <__> {_} (__) [__/__, ___]
     ring2="Crepuscular Ring",         -- __,  6, 10/__ <__> {_} (__) [__/__, ___]
     -- ammo=gear.RAccbullet,          -- __, __, 35/__ <__> {_} (__) [__/__, ___]
-    -- 228 AGI, 83 STP, 395 racc/305 ratt <5 crit> {23 PDL} (68 Recycle) [29 PDT/19 MDT, 593 M.Eva]
+    -- 231 AGI, 85 STP, 403 racc/298 ratt <5 crit> {17 PDL} (68 Recycle) [31 PDT/21 MDT, 595 M.Eva]
   })
   sets.midcast.RA.MidAcc = set_combine(sets.midcast.RA.LowAcc, {
     ring1="Hajduk Ring +1",           -- __, __, 17/__ <__> {_} (__) [__/__, ___]
     waist="Kwahu Kachina Belt +1",    --  8, __, 20/__ < 5> {_} (__) [__/__, ___]
-    -- 219 AGI, 79 STP, 422 racc/270 ratt <10 crit> {23 PDL} (58 Recycle) [29 PDT/19 MDT, 593 M.Eva]
+    -- 222 AGI, 81 STP, 430 racc/263 ratt <10 crit> {17 PDL} (58 Recycle) [31 PDT/21 MDT, 595 M.Eva]
   })
   sets.midcast.RA.HighAcc = set_combine(sets.midcast.RA.MidAcc, {
-    body="Laksamana's Frac +3",       -- 45, __, 57/35 <__> {_} (19) [__/__,  84]
-    -- legs="Laksamana's Trews +3",   -- 33, __, 49/__ <__> {_} (__) [__/__,  89]
-    -- AF set bonus                   -- __, __, 15/__ <__> {_} (__) [__/__, ___]
-    -- 218 AGI, 58 STP, 433 racc/165 ratt <5 crit> {10 PDL} (77 Recycle) [19 PDT/9 MDT, 531 M.Eva]
+    body="Chasseur's Frac +2",        -- 44, __, 54/64 <__> {_} (__) [12/12, 109]
+    hands="Ikenga's Gloves",          -- 19,  9, 55/70 <__> {5} (10) [__/__,  86]
+    feet="Ikenga's Clogs",            -- 57,  7, 55/70 <__> {3} (__) [__/__, 123]
+    -- 230 AGI, 65 STP, 439 racc/397 ratt <5 crit> {12 PDL} (68 Recycle) [34 PDT/24 MDT, 539 M.Eva]
+    
+    -- body="Chasseur's Frac +3",     -- 49, __, 64/74 <__> {_} (__) [13/13, 119]
+    -- 235 AGI, 65 STP, 449 racc/407 ratt <5 crit> {12 PDL} (68 Recycle) [35 PDT/25 MDT, 549 M.Eva]
+    
   })
   
   sets.midcast.RA.Safe = {
@@ -909,7 +913,7 @@ function init_gear_sets()
     head="Ikenga's Hat",              -- 29,  8, 55/70 <__> {4} (__) [__/__,  96]
     body="Ikenga's Vest",             -- 39, 11, 55/70 < 5> {7} (__) [__/__, 112]
     hands="Malignance Gloves",        -- 24, 12, 50/__ <__> {4} (__) [ 5/ 5, 112]
-    legs="Ikenga's Trousers",         -- 40, 10, 55/70 <__> {6} (__) [10/10, 123]
+    legs="Chasseur's Culottes +3",    -- 43, 12, 63/63 <__> {_} (__) [12/12, 125]
     feet="Malignance Boots",          -- 49,  9, 50/__ <__> {2} (__) [ 4/ 4, 150]
     neck="Iskur Gorget",              -- __,  8, 30/30 <__> {_} (__) [__/__, ___]
     ear1="Odnowa Earring +1",         -- __, __, __/__ <__> {_} (__) [ 3/ 5, ___]
@@ -919,7 +923,8 @@ function init_gear_sets()
     back=gear.COR_RA_Cape,            -- 30, 10, 20/20 <__> {_} (__) [10/__, ___]
     waist="Yemaya Belt",              --  7,  4, 10/10 <__> {_} (__) [__/__, ___]
     -- Merits/Traits/Gifts                                      (58)
-  } -- 218 AGI, 77 STP, 355 racc/280 ratt <5 crit> {23 PDL} (58 Recycle) [49 PDT/33 MDT, 593 M.Eva]
+    -- 221 AGI, 79 STP, 363 racc/273 ratt <5 crit> {17 PDL} (58 Recycle) [51 PDT/35 MDT, 595 M.Eva]
+  }
 
   sets.midcast.RA.Critical = {
     ammo=gear.RAbullet,               -- __, __, 20/__ <__> {_} (__) [__/__, ___]
