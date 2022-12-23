@@ -708,13 +708,16 @@ function init_gear_sets()
     feet=gear.Nyame_B_feet,       -- [ 7/ 7, 150] {__/__}
     neck="Dragoon's Collar +2",   -- [__/__, ___] {25/25}
     ear1="Enmerkar Earring",      -- [__/__, ___] { 3/ 3}
-    ear2="Odnowa Earring +1",
+    ear2="Odnowa Earring +1",     -- [ 3/ 5, ___] {__/__}
     ring1="Moonlight Ring",       -- [ 5/ 5, ___] {__/__}
     ring2="Defending Ring",       -- [10/10, ___] {__/__}
     back=gear.DRG_TP_Cape,        -- [10/__, ___] {__/__}
     waist="Isa Belt",             -- [__/__, ___] { 3/ 3}
+    -- 69 PDT/61 MDT, 674 MEVA {31 PetPDT/31 PetMDT}
+
     -- ear2="Anastasi Earring",   -- [__/__, ___] { 3/__}
-  } -- 66 PDT/56 MDT, 674 MEVA {34 PetPDT/31 PetMDT}
+    -- 66 PDT/56 MDT, 674 MEVA {34 PetPDT/31 PetMDT}
+  }
 
   sets.defense.PDT = sets.HeavyDef
   sets.defense.MDT = sets.HeavyDef
