@@ -1059,7 +1059,7 @@ function init_gear_sets()
     head="Blood Mask",            -- __, __,  3, __, __/__ Recast -5
     body="Malignance Tabard",     -- 42, __, 50, 11,  9/ 9
     hands="Malignance Gloves",    -- 24, __, 50, 12,  5/ 5
-    legs="Ikenga's Trousers",     -- 40, __, 55, 10, 10/10
+    legs="Chasseur's Culottes +3",-- 43, __, 63, 12, 12/12
     feet="Malignance Boots",      -- 49, __, 50,  9,  4/ 4
     neck="Iskur Gorget",          -- __, __, __,  8, __/__
     ear1="Dedition Earring",      -- __, __, __,  8, __/__
@@ -1068,39 +1068,39 @@ function init_gear_sets()
     ring2="Crepuscular Ring",     -- __, __, 10,  6, __/__
     back=gear.COR_RA_Cape,        -- 30, __, __, 10, 10/__
     waist="Reiki Yotai",          -- __, __, __,  4, __/__
-    -- 185 AGI, 35 MAB, 253 M.Acc, 89 STP, 38PDT/28MDT
+    -- 188 AGI, 35 MAB, 251 M.Acc, 91 STP, 40PDT/30MDT
 
     -- ear2="Crepuscular Earring",-- __, __, 10,  5, __/__
-    -- 185 AGI, 35 MAB, 253 M.Acc, 89 STP, 38PDT/28MDT
+    -- 188 AGI, 35 MAB, 261 M.Acc, 91 STP, 40PDT/30MDT
   }
 
   -- Full MAcc (to land debuff effects)
   sets.midcast.CorsairShot['Light Shot'] = {
-    ammo=gear.MAbullet,               -- __, 35, 25, __, __/__
-    head="Malignance Chapeau",        -- 33, __, 50,  8,  6/ 6
-    body="Malignance Tabard",         -- 42, __, 50, 11,  9/ 9
-    hands="Malignance Gloves",        -- 24, __, 50, __, __/__
-    legs="Ikenga's Trousers",         -- 40, __, 55, 10, 10/10
-    feet="Malignance Boots",          -- 49, __, 50,  9,  4/ 4
-    neck="Commodore Charm +1",        -- 12,  6, 20, __, __/__
-    ear1="Hermetic Earring",          -- __,  3,  7, __, __/__
-    ear2="Dignitary's Earring",       -- __, __, 10,  3, __/__
-    ring1="Regal Ring",               -- 10, __, __, __, __/__
-    ring2="Stikini Ring +1",          -- __, __, 11, __, __/__
-    back=gear.COR_WS1_Cape,           -- 30, __, 20, __, 10/__
-    waist="K. Kachina Belt +1",       --  8, __, 20, __, __/__
-    -- AF Set Effect                  -- __, __, __, __, __/__
-    -- M.Acc from Quick Draw+ stat    -- __, __, __, __, __/__
-    -- 248 AGI, 44 MAB, 368 M.Acc, 41 STP, 39PDT/29MDT
+    ammo=gear.MAbullet,               -- __, 25, __/__
+    head="Chasseur's Tricorne +2",    -- 35, 51,  9/ 9
+    body="Chasseur's Frac +2",        -- 44, 54, 12/12
+    hands="Chasseur's Gants +2",      -- 21, 52, __/__
+    legs="Chasseur's Culottes +3",    -- 43, 63, 12/12
+    feet="Malignance Boots",          -- 49, 50,  4/ 4
+    neck="Commodore Charm +1",        -- 12, 20, __/__
+    ear1="Hermetic Earring",          -- __,  7, __/__
+    ear2="Dignitary's Earring",       -- __, 10, __/__
+    ring1="Regal Ring",               -- 10, __, __/__
+    ring2="Stikini Ring +1",          -- __, 11, __/__
+    back=gear.COR_WS1_Cape,           -- 30, 20, 10/__
+    waist="K. Kachina Belt +1",       --  8, 20, __/__
+    -- AF Set Effect                  -- __, __, __/__
+    -- M.Acc from Quick Draw+ stat    -- __, __, __/__
+    -- 252 AGI, 383 M.Acc, 47PDT/37MDT
 
-    -- head="Laksamana's Tricorne +3",-- 39, __, 56, __, __/__; Quick Draw+20
-    -- hands="Laksamana's Gants +3",  -- 17, __, 57, __, __/__
-    -- feet="Laksamana's Bottes +3",  -- 49, __, 52, __, __/__; Quick Draw+20
-    -- neck="Commodore Charm +2",     -- 15,  7, 25, __, __/__
-    -- ear1="Crepuscular Earring",    -- __, __, 10,  5, __/__
-    -- AF Set Effect                  -- __, __, 45, __, __/__
-    -- M.Acc from Quick Draw+ stat    -- __, __, 40, __, __/__
-    -- 250 AGI, 42 MAB, 476 M.Acc, 29 STP, 29PDT/19MDT
+    -- head="Laksamana's Tricorne +3",-- 39, 56, __/__; Quick Draw+20
+    -- hands="Laksamana's Gants +3",  -- 17, 57, __/__
+    -- feet="Laksamana's Bottes +3",  -- 49, 52, __/__; Quick Draw+20
+    -- neck="Commodore Charm +2",     -- 15, 25, __/__
+    -- ear1="Crepuscular Earring",    -- __, 10, __/__
+    -- AF Set Effect                  -- __, 45, __/__
+    -- M.Acc from Quick Draw+ stat    -- __, 40, __/__
+    -- 255 AGI, 488 M.Acc, 34PDT/24MDT
   }
   sets.midcast.CorsairShot['Dark Shot'] = sets.midcast.CorsairShot['Light Shot']
 
