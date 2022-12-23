@@ -362,6 +362,11 @@ function init_gear_sets()
     -- ring1="Weatherspoon Ring", --5
   })
 
+
+  ------------------------------------------------------------------------------------------------
+  ---------------------------------------- Ranged Sets -------------------------------------------
+  ------------------------------------------------------------------------------------------------
+
   -- Snapshot (70% cap) > Rapid Shot (99% cap)
   sets.precast.RA = {
     ammo=gear.RAbullet,
@@ -539,6 +544,208 @@ function init_gear_sets()
 
     -- head="Chasseur's Tricorne +2", -- __/16 [ 9/ 9,  99]
     -- 71 Snapshot / 100 Rapid Shot [45 PDT/23 MDT, 370 M.Eva]
+  }
+
+  sets.midcast.RA = {
+    ammo=gear.RAbullet,               -- __, __, 20/__ <__> {_} (__) [__/__, ___]
+    head="Ikenga's Hat",              -- 29,  8, 55/70 <__> {4} (__) [__/__,  96]
+    body="Ikenga's Vest",             -- 39, 11, 55/70 < 5> {7} (__) [__/__, 112]
+    hands="Malignance Gloves",        -- 24, 12, 50/__ <__> {4} (__) [ 5/ 5, 112]
+    legs="Ikenga's Trousers",         -- 40, 10, 55/70 <__> {6} (__) [10/10, 123]
+    feet="Malignance Boots",          -- 49,  9, 50/__ <__> {2} (__) [ 4/ 4, 150]
+    neck="Commodore Charm +1",        -- 12, __, 20/__ <__> {_} (__) [__/__, ___]
+    ear1="Enervating Earring",        -- __,  4,  7/ 7 <__> {_} (__) [__/__, ___]
+    ring1="Dingir Ring",              -- 10, __, __/25 <__> {_} (10) [__/__, ___]
+    ring2="Ilabrat Ring",             -- 10,  5, __/__ <__> {_} (__) [__/__, ___]
+    back=gear.COR_TP_Cape,            -- __, 10, __/__ <__> {_} (__) [10/__, ___]
+    waist="Reiki Yotai",              -- __,  4, 10/__ <__> {_} (__) [__/__, ___]
+    -- Merits/Traits/Gifts                                      (58)
+    -- 213 AGI, 73 STP, 322 racc/242 ratt <5 crit> {23 PDL} (68 Recycle) [29 PDT/19 MDT, 593 M.Eva]
+    
+    -- legs="Chasseur's Culottes +3", -- 43, 12, 63/63 <__> {_} (__) [12/12, 125]
+    -- neck="Iskur Gorget",           -- __,  8, 30/30 <__> {_} (__) [__/__, ___]
+    -- ear2="Telos Earring",          -- __,  5, 10/10 <__> {_} (__) [__/__, ___]
+    -- back=gear.COR_RA_Cape,         -- 30, 10, 20/20 <__> {_} (__) [10/__, ___]
+    -- waist="Yemaya Belt",           --  7,  4, 10/10 <__> {_} (__) [__/__, ___]
+    -- 241 AGI, 88 STP, 370 racc/305 ratt <5 crit> {17 PDL} (68 Recycle) [31 PDT/21 MDT, 595 M.Eva]
+  }
+  sets.midcast.RA.LowAcc = set_combine(sets.midcast.RA, {
+    -- ammo=gear.RAccbullet,          -- __, __, 35/__ <__> {_} (__) [__/__, ___]
+    -- ear1="Beyla Earring",          -- __, __, 15/__ <__> {_} (__) [__/__, ___]
+    -- ring2="Crepuscular Ring",      -- __,  6, 10/__ <__> {_} (__) [__/__, ___]
+    -- 231 AGI, 85 STP, 403 racc/298 ratt <5 crit> {17 PDL} (68 Recycle) [31 PDT/21 MDT, 595 M.Eva]
+  })
+  sets.midcast.RA.MidAcc = set_combine(sets.midcast.RA.LowAcc, {
+    -- ring1="Hajduk Ring +1",        -- __, __, 17/__ <__> {_} (__) [__/__, ___]
+    -- waist="Kwahu Kachina Belt +1", --  8, __, 20/__ < 5> {_} (__) [__/__, ___]
+    -- 222 AGI, 81 STP, 430 racc/263 ratt <10 crit> {17 PDL} (58 Recycle) [31 PDT/21 MDT, 595 M.Eva]
+  })
+  sets.midcast.RA.HighAcc = set_combine(sets.midcast.RA.MidAcc, {
+    hands="Ikenga's Gloves",          -- 19,  9, 55/70 <__> {5} (10) [__/__,  86]
+    feet="Ikenga's Clogs",            -- 57,  7, 55/70 <__> {3} (__) [__/__, 123]
+
+    -- body="Chasseur's Frac +2",     -- 44, __, 54/64 <__> {_} (__) [12/12, 109]
+    -- body="Chasseur's Frac +3",     -- 49, __, 64/74 <__> {_} (__) [13/13, 119]
+    -- 235 AGI, 65 STP, 449 racc/407 ratt <5 crit> {12 PDL} (68 Recycle) [35 PDT/25 MDT, 549 M.Eva]
+  })
+  
+  sets.midcast.RA.Safe = {
+    ammo=gear.RAbullet,               -- __, __, 20/__ <__> {_} (__) [__/__, ___]
+    head="Ikenga's Hat",              -- 29,  8, 55/70 <__> {4} (__) [__/__,  96]
+    body="Ikenga's Vest",             -- 39, 11, 55/70 < 5> {7} (__) [__/__, 112]
+    hands="Malignance Gloves",        -- 24, 12, 50/__ <__> {4} (__) [ 5/ 5, 112]
+    legs="Ikenga's Trousers",         -- 40, 10, 55/70 <__> {6} (__) [10/10, 123]
+    feet="Malignance Boots",          -- 49,  9, 50/__ <__> {2} (__) [ 4/ 4, 150]
+    neck="Commodore Charm +1",        -- 12, __, 20/__ <__> {_} (__) [__/__, ___]
+    ear1="Odnowa Earring +1",         -- __, __, __/__ <__> {_} (__) [ 3/ 5, ___]
+    ring1="Gelatinous Ring +1",       -- __, __, __/__ <__> {_} (__) [ 7/-1, ___]
+    ring2="Defending Ring",           -- __, __, __/__ <__> {_} (__) [10/10, ___]
+    back=gear.COR_TP_Cape,            -- __, 10, __/__ <__> {_} (__) [10/__, ___]
+    waist="Reiki Yotai",              -- __,  4, 10/__ <__> {_} (__) [__/__, ___]
+    -- Merits/Traits/Gifts                                      (58)
+    -- 193 AGI, 64 STP, 315 racc/210 ratt <5 crit> {23 PDL} (58 Recycle) [49 PDT/33 MDT, 593 M.Eva]
+
+    -- legs="Chasseur's Culottes +3", -- 43, 12, 63/63 <__> {_} (__) [12/12, 125]
+    -- neck="Iskur Gorget",           -- __,  8, 30/30 <__> {_} (__) [__/__, ___]
+    -- ear2="Telos Earring",          -- __,  5, 10/10 <__> {_} (__) [__/__, ___]
+    -- back=gear.COR_RA_Cape,         -- 30, 10, 20/20 <__> {_} (__) [10/__, ___]
+    -- waist="Yemaya Belt",           --  7,  4, 10/10 <__> {_} (__) [__/__, ___]
+    -- Merits/Traits/Gifts                                      (58)
+    -- 221 AGI, 79 STP, 363 racc/273 ratt <5 crit> {17 PDL} (58 Recycle) [51 PDT/35 MDT, 595 M.Eva]
+  }
+
+  sets.midcast.RA.Critical = {
+    ammo=gear.RAbullet,               -- __, __, 20/__ <__> {_} (__) [__/__, ___]
+    head="Ikenga's Hat",              -- 29,  8, 55/70 <__> {4} (__) [__/__,  96]
+    body="Ikenga's Vest",             -- 39, 11, 55/70 < 5> {7} (__) [__/__, 112]
+    hands="Chasseur's Gants +2",      -- 21, __, 52/52 < 7> {_} (__) [__/__,  83]
+    -- legs="Mummu Kecks +2",         -- 45, __, 45/__ < 7> {_} (__) [ 5/ 5, 107]
+    -- feet="Oshosi Leggings +1",     -- 56, __, 43/__ <10> {_} (__) [__/__, 131]
+    -- neck="Iskur Gorget",           -- __,  8, 30/30 <__> {_} (__) [__/__, ___]
+    -- ear1="Odr Earring",            -- __, __, __/__ < 5> {_} (__) [__/__, ___]
+    -- ear2="Telos Earring",          -- __,  5, 10/10 <__> {_} (__) [__/__, ___]
+    -- ring1="Begrudging Ring",       -- __, __, __/__ < 5> {_} (__)[-10/__, ___]
+    ring2="Ilabrat Ring",             -- 10,  5, __/__ <__> {_} (__) [__/__, ___]
+    -- back=gear.COR_RA_Cape,         -- 30, 10, 20/20 <__> {_} (__) [10/__, ___]
+    -- waist="K. Kachina Belt +1",    --  8, __, 20/__ < 5> {_} (__) [__/__, ___]
+    -- Merits/Traits/Gifts                                      (58)
+    -- 238 AGI, 47 STP, 350 racc/252 ratt <44 crit rate> {11 PDL} (58 Recycle) [5 PDT/5 MDT, 529 M.Eva]
+    
+    -- ring2="Mummu Ring",            -- __, __,  6/__ < 3> {_} (__) [__/__, ___]
+    -- 228 AGI, 42 STP, 356 racc/252 ratt <47 crit rate> {11 PDL} (58 Recycle) [5 PDT/5 MDT, 529 M.Eva]
+  }
+  sets.midcast.RA.Critical.Safe = {
+    ammo=gear.RAbullet,               -- __, __, 20/__ <__> {_} (__) [__/__, ___]
+    head="Malignance Chapeau",        -- 33,  8, 50/__ <__> {3} (__) [ 6/ 6, 123]
+    body="Malignance Tabard",         -- 42, 11, 50/__ <__> {6} (__) [ 9/ 9, 139]
+    hands="Chasseur's Gants +2",      -- 21, __, 52/52 < 7> {_} (__) [__/__,  83]
+    -- legs="Mummu Kecks +2",         -- 45, __, 45/__ < 7> {_} (__) [ 5/ 5, 107]
+    -- feet="Oshosi Leggings +1",     -- 56, __, 43/__ <10> {_} (__) [__/__, 131]
+    -- neck="Iskur Gorget",           -- __,  8, 30/30 <__> {_} (__) [__/__, ___]
+    -- ear1="Odr Earring",            -- __, __, __/__ < 5> {_} (__) [__/__, ___]
+    ear2="Odnowa Earring +1",         -- __, __, __/__ <__> {_} (__) [ 3/ 5, ___]
+    ring1="Gelatinous Ring +1",       -- __, __, __/__ <__> {_} (__) [ 7/-1, ___]
+    ring2="Defending Ring",           -- __, __, __/__ <__> {_} (__) [10/10, ___]
+    -- back=gear.COR_RA_Cape,         -- 30, 10, 20/20 <__> {_} (__) [10/__, ___]
+    -- waist="K. Kachina Belt +1",    --  8, __, 20/__ < 5> {_} (__) [__/__, ___]
+    -- Merits/Traits/Gifts                                      (58)
+    -- 235 AGI, 37 STP, 330 racc/102 ratt <34 crit rate> {9 PDL} (58 Recycle) [50 PDT/34 MDT, 583 M.Eva]
+    
+    -- neck="Loricate Torque +1",     -- __, __, __/__ <__> {_} (__) [ 6/ 6, ___]
+    -- ring1="Mummu Ring",            -- __, __,  6/__ < 3> {_} (__) [__/__, ___]
+    -- 235 AGI, 29 STP, 306 racc/72 ratt <37 crit rate> {9 PDL} (58 Recycle) [49 PDT/41 MDT, 583 M.Eva]
+  }
+
+  -- 60% from traits/gifts
+  sets.TripleShot = {
+    ammo=gear.RAbullet,               -- __, __, 20/__ <__> {_} (__) [__/__, ___] (__, __) (__, __)
+    -- head="Oshosi Mask +1",            -- 44, __, 45/__ <__> {_} (__) [__/__,  90] ( 6, 25) ( 5, 13)
+    -- body="Chasseur's Frac +1",        -- 34, __, 22/22 <__> {_} (__) [__/__,  69] (__, __) (12, __)
+    hands="Malignance Gloves",        -- 24, 12, 50/__ <__> {4} (__) [ 5/ 5, 112] (__, __) (__, __)
+    -- legs="Oshosi Trousers +1",        -- 43, __, 46/__ <__> {_} (__) [__/__, 131] ( 7, __) ( 6, __)
+    -- feet="Oshosi Leggings +1",        -- 56, __, 43/__ <10> {_} (__) [__/__, 131] ( 4, __) ( 3, __)
+    -- neck="Iskur Gorget",              -- __,  8, 30/30 <__> {_} (__) [__/__, ___] (__, __) (__, __)
+    ear1="Enervating Earring",        -- __,  4,  7/ 7 <__> {_} (__) [__/__, ___] (__, __) (__, __)
+    -- ear2="Telos Earring",             -- __,  5, 10/10 <__> {_} (__) [__/__, ___] (__, __) (__, __)
+    ring1="Dingir Ring",              -- 10, __, __/25 <__> {_} (10) [__/__, ___] (__, __) (__, __)
+    ring2="Ilabrat Ring",             -- 10,  5, __/__ <__> {_} (__) [__/__, ___] (__, __) (__, __)
+    -- back=gear.COR_RA_Cape,            -- 30, 10, 20/20 <__> {_} (__) [10/__, ___] (__, __) ( 5, __)
+    -- waist="Yemaya Belt",              --  7,  4, 10/10 <__> {_} (__) [__/__, ___] (__, __) (__, __)
+    -- JA                                                                                  (40, __)
+    -- Merits/Traits/Gifts                                      (58)                       (20, __)
+    -- 258 AGI, 48 STP, 303 racc/124 ratt <10 crit> {4 PDL} (68 Recycle) [15 PDT/5 MDT, 533 M.Eva] (17 DS Rate, 25 DS Dmg) (91 TS Rate, 13 TS Dmg)
+
+    -- body="Chasseur's Frac +2",     -- 44, __, 54/64 <__> {_} (__) [12/12, 109] (__, __) (13, __)
+    -- hands="Lanun Gants +3",        -- 22, __, 44/76 <__> {_} (__) [__/__,  84] (__, __) (__, __); Occ. Quad Shot
+    -- 266 AGI, 36 STP, 329 racc/242 ratt <10 crit> {0 PDL} (68 Recycle) [22 PDT/12 MDT, 545 M.Eva] (17 DS Rate, 25 DS Dmg) (92 TS Rate, 13 TS Dmg)
+  }
+  sets.TripleShot.Safe = {
+    ammo=gear.RAbullet,               -- __, __, 20/__ <__> {_} (__) [__/__, ___] (__, __) (__, __)
+    -- head="Oshosi Mask +1",            -- 44, __, 45/__ <__> {_} (__) [__/__,  90] ( 6, 25) ( 5, 13)
+    -- body="Chasseur's Frac +1",        -- 34, __, 22/22 <__> {_} (__) [__/__,  69] (__, __) (12, __)
+    hands="Malignance Gloves",        -- 24, 12, 50/__ <__> {4} (__) [ 5/ 5, 112] (__, __) (__, __)
+    -- legs="Oshosi Trousers +1",        -- 43, __, 46/__ <__> {_} (__) [__/__, 131] ( 7, __) ( 6, __)
+    -- feet="Oshosi Leggings +1",        -- 56, __, 43/__ <10> {_} (__) [__/__, 131] ( 4, __) ( 3, __)
+    -- neck="Iskur Gorget",              -- __,  8, 30/30 <__> {_} (__) [__/__, ___] (__, __) (__, __)
+    ear1="Odnowa Earring +1",         -- __, __, __/__ <__> {_} (__) [ 3/ 5, ___] (__, __) (__, __)
+    -- ear2="Telos Earring",             -- __,  5, 10/10 <__> {_} (__) [__/__, ___] (__, __) (__, __)
+    ring1="Gelatinous Ring +1",       -- __, __, __/__ <__> {_} (__) [ 7,-1, ___] (__, __) (__, __)
+    ring2="Defending Ring",           -- __, __, __/__ <__> {_} (__) [10/10, ___] (__, __) (__, __)
+    -- back=gear.COR_RA_Cape,            -- 30, 10, 20/20 <__> {_} (__) [10/__, ___] (__, __) ( 5, __)
+    -- waist="Yemaya Belt",              --  7,  4, 10/10 <__> {_} (__) [__/__, ___] (__, __) (__, __)
+    -- JA                                                                                  (40, __)
+    -- Merits/Traits/Gifts                                      (58)                       (20, __)
+    -- 238 AGI, 39 STP, 296 racc/92 ratt <10 crit> {4 PDL} (58 Recycle) [35 PDT/19 MDT, 533 M.Eva] (17 DS Rate, 25 DS Dmg) (91 TS Rate, 13 TS Dmg)
+    
+    -- body="Chasseur's Frac +2",     -- 44, __, 54/64 <__> {_} (__) [12/12, 109] (__, __) (13, __)
+    -- hands="Lanun Gants +3",        -- 22, __, 44/76 <__> {_} (__) [__/__,  84] (__, __) (__, __); Occ. Quad Shot
+    -- ear1="Enervating Earring",     -- __,  4,  7/ 7 <__> {_} (__) [__/__, ___] (__, __) (__, __)
+    -- 246 AGI, 31 STP, 329 racc/217 ratt <10 crit> {0 PDL} (58 Recycle) [39 PDT/21 MDT, 545 M.Eva] (17 DS Rate, 25 DS Dmg) (92 TS Rate, 13 TS Dmg)
+  }
+
+  sets.TripleShot.Critical = {
+    ammo=gear.RAbullet,               -- __, __, 20/__ <__> {_} (__) [__/__, ___] (__, __) (__, __)
+    -- head="Oshosi Mask +1",            -- 44, __, 45/__ <__> {_} (__) [__/__,  90] ( 6, 25) ( 5, 13)
+    -- body="Chasseur's Frac +1",        -- 34, __, 22/22 <__> {_} (__) [__/__,  69] (__, __) (12, __)
+    hands="Chasseur's Gants +2",      -- 21, __, 52/52 < 7> {_} (__) [__/__,  83] (__, __) (__, __)
+    -- legs="Mummu Kecks +2",            -- 45, __, 45/__ < 7> {_} (__) [ 5/ 5, 107] (__, __) (__, __)
+    -- feet="Oshosi Leggings +1",        -- 56, __, 43/__ <10> {_} (__) [__/__, 131] ( 4, __) ( 3, __)
+    -- neck="Iskur Gorget",              -- __,  8, 30/30 <__> {_} (__) [__/__, ___] (__, __) (__, __)
+    -- ear1="Odr Earring",               -- __, __, __/__ < 5> {_} (__) [__/__, ___] (__, __) (__, __)
+    -- ear2="Telos Earring",             -- __,  5, 10/10 <__> {_} (__) [__/__, ___] (__, __) (__, __)
+    -- ring1="Begrudging Ring",          -- __, __, __/__ < 5> {_} (__)[-10/__, ___] (__, __) (__, __)
+    ring2="Ilabrat Ring",             -- 10,  5, __/__ <__> {_} (__) [__/__, ___] (__, __) (__, __)
+    -- back=gear.COR_RA_Cape,            -- 30, 10, 20/20 <__> {_} (__) [10/__, ___] (__, __) ( 5, __)
+    -- waist="K. Kachina Belt +1",       --  8, __, 20/__ < 5> {_} (__) [__/__, ___] (__, __) (__, __)
+    -- JA                                                                                  (40, __)
+    -- Merits/Traits/Gifts                                      (58)                       (20, __)
+    -- 248 AGI, 28 STP, 307 racc/134 ratt <39 crit> {0 PDL} (58 Recycle) [5 PDT/5 MDT, 480 M.Eva] (10 DS Rate, 25 DS Dmg) (85 TS Rate, 13 TS Dmg)
+    
+    -- body="Chasseur's Frac +2",     -- 44, __, 54/64 <__> {_} (__) [12/12, 109] (__, __) (13, __)
+    -- ring2="Mummu Ring",            -- __, __,  6/__ < 3> {_} (__) [__/__, ___] (__, __) (__, __)
+    -- 248 AGI, 23 STP, 345 racc/176 ratt <42 crit> {0 PDL} (58 Recycle) [17 PDT/17 MDT, 520 M.Eva] (10 DS Rate, 25 DS Dmg) (86 TS Rate, 13 TS Dmg)
+  }
+  sets.TripleShot.Critical.Safe = {
+    ammo=gear.RAbullet,               -- __, __, 20/__ <__> {_} (__) [__/__, ___] (__, __) (__, __)
+    -- head="Oshosi Mask +1",            -- 44, __, 45/__ <__> {_} (__) [__/__,  90] ( 6, 25) ( 5, 13)
+    -- body="Chasseur's Frac +1",        -- 34, __, 22/22 <__> {_} (__) [__/__,  69] (__, __) (12, __)
+    hands="Chasseur's Gants +2",      -- 21, __, 52/52 < 7> {_} (__) [__/__,  83] (__, __) (__, __)
+    -- legs="Mummu Kecks +2",            -- 45, __, 45/__ < 7> {_} (__) [ 5/ 5, 107] (__, __) (__, __)
+    -- feet="Oshosi Leggings +1",        -- 56, __, 43/__ <10> {_} (__) [__/__, 131] ( 4, __) ( 3, __)
+    neck="Loricate Torque +1",        -- __, __, __/__ <__> {_} (__) [ 6/ 6, ___] (__, __) (__, __)
+    -- ear1="Odr Earring",               -- __, __, __/__ < 5> {_} (__) [__/__, ___] (__, __) (__, __)
+    -- ear2="Telos Earring",             -- __,  5, 10/10 <__> {_} (__) [__/__, ___] (__, __) (__, __)
+    ring1="Gelatinous Ring +1",       -- __, __, __/__ <__> {_} (__) [ 7,-1, ___] (__, __) (__, __)
+    ring2="Defending Ring",           -- __, __, __/__ <__> {_} (__) [10/10, ___] (__, __) (__, __)
+    -- back=gear.COR_RA_Cape,            -- 30, 10, 20/20 <__> {_} (__) [10/__, ___] (__, __) ( 5, __)
+    -- waist="K. Kachina Belt +1",       --  8, __, 20/__ < 5> {_} (__) [__/__, ___] (__, __) (__, __)
+    -- JA                                                                                  (40, __)
+    -- Merits/Traits/Gifts                                      (58)                       (20, __)
+    -- 238 AGI, 15 STP, 277 racc/104 ratt <34 crit> {0 PDL} (58 Recycle) [38 PDT/20 MDT, 480 M.Eva] (10 DS Rate, 25 DS Dmg) (85 TS Rate, 13 TS Dmg)
+    
+    -- body="Chasseur's Frac +2",     -- 44, __, 54/64 <__> {_} (__) [12/12, 109] (__, __) (13, __)
+    -- neck="Iskur Gorget",           -- __,  8, 30/30 <__> {_} (__) [__/__, ___] (__, __) (__, __)
+    -- 248 AGI, 23 STP, 339 racc/176 ratt <34 crit> {0 PDL} (58 Recycle) [44 PDT/26 MDT, 520 M.Eva] (10 DS Rate, 25 DS Dmg) (86 TS Rate, 13 TS Dmg)
   }
 
 
@@ -853,37 +1060,8 @@ function init_gear_sets()
     ear2="Ishvara Earring",
   })
 
-  sets.precast.WS['Sniper Shot'] = {
-    ammo=gear.RAccbullet,
-    head="Malignance Chapeau",    -- 33, 50
-    -- body="Laksamana's Frac +3",   -- 45, 57
-    hands="Malignance Gloves",    -- 24, 50
-    legs="Malignance Tights",     -- 42, 50
-    feet="Malignance Boots",      -- 49, 50
-    -- neck="Iskur Gorget",          -- __, 30
-    -- ear1="Beyla Earring",         -- __, 15
-    -- ear2="Telos Earring",         -- __, 10
-    ring1="Regal Ring",           -- 10, __
-    -- ring2="Hajduk Ring +1",       -- __, 17
-    -- back=gear.COR_RA_Cape,        -- 30, 20
-    -- waist="Kwahu Kachina Belt +1",  --  8, 20
-    -- legs="Laksamana's Trews +3", -- 33, 49
-    -- AF+Regal set bonus           -- __, 30
-  } -- 236 AGI, 360 R.Acc
-  sets.precast.WS['Sniper Shot'].MaxTP = set_combine(sets.precast.WS['Sniper Shot'], {
-  })
-  sets.precast.WS['Sniper Shot'].LowAcc = set_combine(sets.precast.WS['Sniper Shot'], {
-  })
-  sets.precast.WS['Sniper Shot'].LowAccMaxTP = set_combine(sets.precast.WS['Sniper Shot'].LowAcc, {
-  })
-  sets.precast.WS['Sniper Shot'].MidAcc = set_combine(sets.precast.WS['Sniper Shot'].LowAcc, {
-  })
-  sets.precast.WS['Sniper Shot'].MidAccMaxTP = set_combine(sets.precast.WS['Sniper Shot'].MidAcc, {
-  })
-  sets.precast.WS['Sniper Shot'].HighAcc = set_combine(sets.precast.WS['Sniper Shot'].MidAcc, {
-  })
-  sets.precast.WS['Sniper Shot'].HighAccMaxTP = set_combine(sets.precast.WS['Sniper Shot'].HighAcc, {
-  })
+  sets.precast.WS['Sniper Shot'] = sets.midcast.RA.HighAcc
+
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Midcast Sets ------------------------------------------
@@ -909,195 +1087,6 @@ function init_gear_sets()
     neck="Loricate Torque +1", -- SIRD + DT
     ear2="Odnowa Earring +1", -- DT
     ring1="Defending Ring", -- DT
-  }
-
-  -- Ranged gear
-  sets.midcast.RA = {
-    ammo=gear.RAbullet,               -- __, __, 20/__ <__> {_} (__) [__/__, ___]
-    head="Ikenga's Hat",              -- 29,  8, 55/70 <__> {4} (__) [__/__,  96]
-    body="Ikenga's Vest",             -- 39, 11, 55/70 < 5> {7} (__) [__/__, 112]
-    hands="Malignance Gloves",        -- 24, 12, 50/__ <__> {4} (__) [ 5/ 5, 112]
-    legs="Ikenga's Trousers",         -- 40, 10, 55/70 <__> {6} (__) [10/10, 123]
-    feet="Malignance Boots",          -- 49,  9, 50/__ <__> {2} (__) [ 4/ 4, 150]
-    neck="Commodore Charm +1",        -- 12, __, 20/__ <__> {_} (__) [__/__, ___]
-    ear1="Enervating Earring",        -- __,  4,  7/ 7 <__> {_} (__) [__/__, ___]
-    ring1="Dingir Ring",              -- 10, __, __/25 <__> {_} (10) [__/__, ___]
-    ring2="Ilabrat Ring",             -- 10,  5, __/__ <__> {_} (__) [__/__, ___]
-    back=gear.COR_TP_Cape,            -- __, 10, __/__ <__> {_} (__) [10/__, ___]
-    waist="Reiki Yotai",              -- __,  4, 10/__ <__> {_} (__) [__/__, ___]
-    -- neck="Iskur Gorget",           -- __,  8, 30/30 <__> {_} (__) [__/__, ___]
-    -- ear2="Telos Earring",          -- __,  5, 10/10 <__> {_} (__) [__/__, ___]
-    -- back=gear.COR_RA_Cape,         -- 30, 10, 20/20 <__> {_} (__) [10/__, ___]
-    -- waist="Yemaya Belt",           --  7,  4, 10/10 <__> {_} (__) [__/__, ___]
-    -- Merits/Traits/Gifts                                      (58)
-  } -- 238 AGI, 86 STP, 362 racc/312 ratt <5 crit> {23 PDL} (68 Recycle) [29 PDT/19 MDT, 593 M.Eva]
-  sets.midcast.RA.LowAcc = set_combine(sets.midcast.RA, {
-    -- ear1="Beyla Earring",          -- __, __, 15/__ <__> {_} (__) [__/__, ___]
-    -- ring2="Crepuscular Ring",      -- __,  6, 10/__ <__> {_} (__) [__/__, ___]
-    -- ammo=gear.RAccbullet,          -- __, __, 35/__ <__> {_} (__) [__/__, ___]
-    -- 228 AGI, 83 STP, 395 racc/305 ratt <5 crit> {23 PDL} (68 Recycle) [29 PDT/19 MDT, 593 M.Eva]
-  })
-  sets.midcast.RA.MidAcc = set_combine(sets.midcast.RA.LowAcc, {
-    -- ring1="Hajduk Ring +1",        -- __, __, 17/__ <__> {_} (__) [__/__, ___]
-    -- waist="Kwahu Kachina Belt +1", --  8, __, 20/__ < 5> {_} (__) [__/__, ___]
-    -- 238 AGI, 93 STP, 452 racc/280 ratt <10 crit> {23 PDL} (58 Recycle) [39 PDT/19 MDT, 593 M.Eva]
-  })
-  sets.midcast.RA.HighAcc = set_combine(sets.midcast.RA.MidAcc, {
-    -- body="Laksamana's Frac +3",    -- 45, __, 57/35 <__> {_} (19) [__/__,  84]
-    -- legs="Laksamana's Trews +3",   -- 33, __, 49/__ <__> {_} (__) [__/__,  89]
-    -- AF set bonus                   -- __, __, 15/__ <__> {_} (__) [__/__, ___]
-    -- 237 AGI, 72 STP, 463 racc/175 ratt <5 crit> {10 PDL} (77 Recycle) [29 PDT/9 MDT, 531 M.Eva]
-  })
-  
-  sets.midcast.RA.Safe = {
-    ammo=gear.RAbullet,               -- __, __, 20/__ <__> {_} (__) [__/__, ___]
-    head="Ikenga's Hat",              -- 29,  8, 55/70 <__> {4} (__) [__/__,  96]
-    body="Ikenga's Vest",             -- 39, 11, 55/70 < 5> {7} (__) [__/__, 112]
-    hands="Malignance Gloves",        -- 24, 12, 50/__ <__> {4} (__) [ 5/ 5, 112]
-    legs="Ikenga's Trousers",         -- 40, 10, 55/70 <__> {6} (__) [10/10, 123]
-    feet="Malignance Boots",          -- 49,  9, 50/__ <__> {2} (__) [ 4/ 4, 150]
-    -- neck="Iskur Gorget",           -- __,  8, 30/30 <__> {_} (__) [__/__, ___]
-    ear1="Odnowa Earring +1",         -- __, __, __/__ <__> {_} (__) [ 3/ 5, ___]
-    -- ear2="Telos Earring",          -- __,  5, 10/10 <__> {_} (__) [__/__, ___]
-    ring1="Gelatinous Ring +1",       -- __, __, __/__ <__> {_} (__) [ 7/-1, ___]
-    ring2="Defending Ring",           -- __, __, __/__ <__> {_} (__) [10/10, ___]
-    -- back=gear.COR_RA_Cape,         -- 30, 10, 20/20 <__> {_} (__) [10/__, ___]
-    -- waist="Yemaya Belt",           --  7,  4, 10/10 <__> {_} (__) [__/__, ___]
-    -- Merits/Traits/Gifts                                      (58)
-  } -- 218 AGI, 77 STP, 355 racc/280 ratt <5 crit> {23 PDL} (58 Recycle) [49 PDT/33 MDT, 593 M.Eva]
-
-  sets.midcast.RA.Critical = {
-    ammo=gear.RAbullet,               -- __, __, 20/__ <__> {_} (__) [__/__, ___]
-    head="Ikenga's Hat",              -- 29,  8, 55/70 <__> {4} (__) [__/__,  96]
-    body="Ikenga's Vest",             -- 39, 11, 55/70 < 5> {7} (__) [__/__, 112]
-    hands="Chasseur's Gants +2",      -- 21, __, 52/52 < 7> {_} (__) [__/__,  83]
-    -- legs="Mummu Kecks +2",         -- 45, __, 45/__ < 7> {_} (__) [ 5/ 5, 107]
-    -- feet="Oshosi Leggings +1",     -- 56, __, 43/__ <10> {_} (__) [__/__, 131]
-    -- neck="Iskur Gorget",           -- __,  8, 30/30 <__> {_} (__) [__/__, ___]
-    -- ear1="Odr Earring",            -- __, __, __/__ < 5> {_} (__) [__/__, ___]
-    -- ear2="Telos Earring",          -- __,  5, 10/10 <__> {_} (__) [__/__, ___]
-    -- ring1="Begrudging Ring",       -- __, __, __/__ < 5> {_} (__)[-10/__, ___]
-    ring2="Ilabrat Ring",             -- 10,  5, __/__ <__> {_} (__) [__/__, ___]
-    -- back=gear.COR_RA_Cape,         -- 30, 10, 20/20 <__> {_} (__) [10/__, ___]
-    -- waist="K. Kachina Belt +1",    --  8, __, 20/__ < 5> {_} (__) [__/__, ___]
-    -- Merits/Traits/Gifts                                      (58)
-    -- 238 AGI, 47 STP, 350 racc/252 ratt <44 crit rate> {11 PDL} (58 Recycle) [5 PDT/5 MDT, 529 M.Eva]
-    
-    -- ring2="Mummu Ring",            -- __, __,  6/__ < 3> {_} (__) [__/__, ___]
-    -- 228 AGI, 42 STP, 356 racc/252 ratt <47 crit rate> {11 PDL} (58 Recycle) [5 PDT/5 MDT, 529 M.Eva]
-  }
-  sets.midcast.RA.Critical.Safe = {
-    ammo=gear.RAbullet,               -- __, __, 20/__ <__> {_} (__) [__/__, ___]
-    head="Malignance Chapeau",        -- 33,  8, 50/__ <__> {3} (__) [ 6/ 6, 123]
-    body="Malignance Tabard",         -- 42, 11, 50/__ <__> {6} (__) [ 9/ 9, 139]
-    hands="Chasseur's Gants +2",      -- 21, __, 52/52 < 7> {_} (__) [__/__,  83]
-    -- legs="Mummu Kecks +2",         -- 45, __, 45/__ < 7> {_} (__) [ 5/ 5, 107]
-    -- feet="Oshosi Leggings +1",     -- 56, __, 43/__ <10> {_} (__) [__/__, 131]
-    -- neck="Iskur Gorget",           -- __,  8, 30/30 <__> {_} (__) [__/__, ___]
-    -- ear1="Odr Earring",            -- __, __, __/__ < 5> {_} (__) [__/__, ___]
-    ear2="Odnowa Earring +1",         -- __, __, __/__ <__> {_} (__) [ 3/ 5, ___]
-    ring1="Gelatinous Ring +1",       -- __, __, __/__ <__> {_} (__) [ 7/-1, ___]
-    ring2="Defending Ring",           -- __, __, __/__ <__> {_} (__) [10/10, ___]
-    -- back=gear.COR_RA_Cape,         -- 30, 10, 20/20 <__> {_} (__) [10/__, ___]
-    -- waist="K. Kachina Belt +1",    --  8, __, 20/__ < 5> {_} (__) [__/__, ___]
-    -- Merits/Traits/Gifts                                      (58)
-    -- 235 AGI, 37 STP, 330 racc/102 ratt <34 crit rate> {9 PDL} (58 Recycle) [50 PDT/34 MDT, 583 M.Eva]
-    
-    -- neck="Loricate Torque +1",     -- __, __, __/__ <__> {_} (__) [ 6/ 6, ___]
-    -- ring1="Mummu Ring",            -- __, __,  6/__ < 3> {_} (__) [__/__, ___]
-    -- 235 AGI, 29 STP, 306 racc/72 ratt <37 crit rate> {9 PDL} (58 Recycle) [49 PDT/41 MDT, 583 M.Eva]
-  }
-
-  -- 60% from traits/gifts
-  sets.TripleShot = {
-    ammo=gear.RAbullet,               -- __, __, 20/__ <__> {_} (__) [__/__, ___] (__, __) (__, __)
-    -- head="Oshosi Mask +1",            -- 44, __, 45/__ <__> {_} (__) [__/__,  90] ( 6, 25) ( 5, 13)
-    -- body="Chasseur's Frac +1",        -- 34, __, 22/22 <__> {_} (__) [__/__,  69] (__, __) (12, __)
-    hands="Malignance Gloves",        -- 24, 12, 50/__ <__> {4} (__) [ 5/ 5, 112] (__, __) (__, __)
-    -- legs="Oshosi Trousers +1",        -- 43, __, 46/__ <__> {_} (__) [__/__, 131] ( 7, __) ( 6, __)
-    -- feet="Oshosi Leggings +1",        -- 56, __, 43/__ <10> {_} (__) [__/__, 131] ( 4, __) ( 3, __)
-    -- neck="Iskur Gorget",              -- __,  8, 30/30 <__> {_} (__) [__/__, ___] (__, __) (__, __)
-    ear1="Enervating Earring",        -- __,  4,  7/ 7 <__> {_} (__) [__/__, ___] (__, __) (__, __)
-    -- ear2="Telos Earring",             -- __,  5, 10/10 <__> {_} (__) [__/__, ___] (__, __) (__, __)
-    ring1="Dingir Ring",              -- 10, __, __/25 <__> {_} (10) [__/__, ___] (__, __) (__, __)
-    ring2="Ilabrat Ring",             -- 10,  5, __/__ <__> {_} (__) [__/__, ___] (__, __) (__, __)
-    -- back=gear.COR_RA_Cape,            -- 30, 10, 20/20 <__> {_} (__) [10/__, ___] (__, __) ( 5, __)
-    -- waist="Yemaya Belt",              --  7,  4, 10/10 <__> {_} (__) [__/__, ___] (__, __) (__, __)
-    -- JA                                                                                  (40, __)
-    -- Merits/Traits/Gifts                                      (58)                       (20, __)
-    -- 258 AGI, 48 STP, 303 racc/124 ratt <10 crit> {4 PDL} (68 Recycle) [15 PDT/5 MDT, 533 M.Eva] (17 DS Rate, 25 DS Dmg) (91 TS Rate, 13 TS Dmg)
-
-    -- body="Chasseur's Frac +2",     -- 44, __, 54/64 <__> {_} (__) [12/12, 109] (__, __) (13, __)
-    -- hands="Lanun Gants +3",        -- 22, __, 44/76 <__> {_} (__) [__/__,  84] (__, __) (__, __); Occ. Quad Shot
-    -- 266 AGI, 36 STP, 329 racc/242 ratt <10 crit> {0 PDL} (68 Recycle) [22 PDT/12 MDT, 545 M.Eva] (17 DS Rate, 25 DS Dmg) (92 TS Rate, 13 TS Dmg)
-  }
-  sets.TripleShot.Safe = {
-    ammo=gear.RAbullet,               -- __, __, 20/__ <__> {_} (__) [__/__, ___] (__, __) (__, __)
-    -- head="Oshosi Mask +1",            -- 44, __, 45/__ <__> {_} (__) [__/__,  90] ( 6, 25) ( 5, 13)
-    -- body="Chasseur's Frac +1",        -- 34, __, 22/22 <__> {_} (__) [__/__,  69] (__, __) (12, __)
-    hands="Malignance Gloves",        -- 24, 12, 50/__ <__> {4} (__) [ 5/ 5, 112] (__, __) (__, __)
-    -- legs="Oshosi Trousers +1",        -- 43, __, 46/__ <__> {_} (__) [__/__, 131] ( 7, __) ( 6, __)
-    -- feet="Oshosi Leggings +1",        -- 56, __, 43/__ <10> {_} (__) [__/__, 131] ( 4, __) ( 3, __)
-    -- neck="Iskur Gorget",              -- __,  8, 30/30 <__> {_} (__) [__/__, ___] (__, __) (__, __)
-    ear1="Odnowa Earring +1",         -- __, __, __/__ <__> {_} (__) [ 3/ 5, ___] (__, __) (__, __)
-    -- ear2="Telos Earring",             -- __,  5, 10/10 <__> {_} (__) [__/__, ___] (__, __) (__, __)
-    ring1="Gelatinous Ring +1",       -- __, __, __/__ <__> {_} (__) [ 7,-1, ___] (__, __) (__, __)
-    ring2="Defending Ring",           -- __, __, __/__ <__> {_} (__) [10/10, ___] (__, __) (__, __)
-    -- back=gear.COR_RA_Cape,            -- 30, 10, 20/20 <__> {_} (__) [10/__, ___] (__, __) ( 5, __)
-    -- waist="Yemaya Belt",              --  7,  4, 10/10 <__> {_} (__) [__/__, ___] (__, __) (__, __)
-    -- JA                                                                                  (40, __)
-    -- Merits/Traits/Gifts                                      (58)                       (20, __)
-    -- 238 AGI, 39 STP, 296 racc/92 ratt <10 crit> {4 PDL} (58 Recycle) [35 PDT/19 MDT, 533 M.Eva] (17 DS Rate, 25 DS Dmg) (91 TS Rate, 13 TS Dmg)
-    
-    -- body="Chasseur's Frac +2",     -- 44, __, 54/64 <__> {_} (__) [12/12, 109] (__, __) (13, __)
-    -- hands="Lanun Gants +3",        -- 22, __, 44/76 <__> {_} (__) [__/__,  84] (__, __) (__, __); Occ. Quad Shot
-    -- ear1="Enervating Earring",     -- __,  4,  7/ 7 <__> {_} (__) [__/__, ___] (__, __) (__, __)
-    -- 246 AGI, 31 STP, 329 racc/217 ratt <10 crit> {0 PDL} (58 Recycle) [39 PDT/21 MDT, 545 M.Eva] (17 DS Rate, 25 DS Dmg) (92 TS Rate, 13 TS Dmg)
-  }
-
-  sets.TripleShot.Critical = {
-    ammo=gear.RAbullet,               -- __, __, 20/__ <__> {_} (__) [__/__, ___] (__, __) (__, __)
-    -- head="Oshosi Mask +1",            -- 44, __, 45/__ <__> {_} (__) [__/__,  90] ( 6, 25) ( 5, 13)
-    -- body="Chasseur's Frac +1",        -- 34, __, 22/22 <__> {_} (__) [__/__,  69] (__, __) (12, __)
-    hands="Chasseur's Gants +2",      -- 21, __, 52/52 < 7> {_} (__) [__/__,  83] (__, __) (__, __)
-    -- legs="Mummu Kecks +2",            -- 45, __, 45/__ < 7> {_} (__) [ 5/ 5, 107] (__, __) (__, __)
-    -- feet="Oshosi Leggings +1",        -- 56, __, 43/__ <10> {_} (__) [__/__, 131] ( 4, __) ( 3, __)
-    -- neck="Iskur Gorget",              -- __,  8, 30/30 <__> {_} (__) [__/__, ___] (__, __) (__, __)
-    -- ear1="Odr Earring",               -- __, __, __/__ < 5> {_} (__) [__/__, ___] (__, __) (__, __)
-    -- ear2="Telos Earring",             -- __,  5, 10/10 <__> {_} (__) [__/__, ___] (__, __) (__, __)
-    -- ring1="Begrudging Ring",          -- __, __, __/__ < 5> {_} (__)[-10/__, ___] (__, __) (__, __)
-    ring2="Ilabrat Ring",             -- 10,  5, __/__ <__> {_} (__) [__/__, ___] (__, __) (__, __)
-    -- back=gear.COR_RA_Cape,            -- 30, 10, 20/20 <__> {_} (__) [10/__, ___] (__, __) ( 5, __)
-    -- waist="K. Kachina Belt +1",       --  8, __, 20/__ < 5> {_} (__) [__/__, ___] (__, __) (__, __)
-    -- JA                                                                                  (40, __)
-    -- Merits/Traits/Gifts                                      (58)                       (20, __)
-    -- 248 AGI, 28 STP, 307 racc/134 ratt <39 crit> {0 PDL} (58 Recycle) [5 PDT/5 MDT, 480 M.Eva] (10 DS Rate, 25 DS Dmg) (85 TS Rate, 13 TS Dmg)
-    
-    -- body="Chasseur's Frac +2",     -- 44, __, 54/64 <__> {_} (__) [12/12, 109] (__, __) (13, __)
-    -- ring2="Mummu Ring",            -- __, __,  6/__ < 3> {_} (__) [__/__, ___] (__, __) (__, __)
-    -- 248 AGI, 23 STP, 345 racc/176 ratt <42 crit> {0 PDL} (58 Recycle) [17 PDT/17 MDT, 520 M.Eva] (10 DS Rate, 25 DS Dmg) (86 TS Rate, 13 TS Dmg)
-  }
-  sets.TripleShot.Critical.Safe = {
-    ammo=gear.RAbullet,               -- __, __, 20/__ <__> {_} (__) [__/__, ___] (__, __) (__, __)
-    -- head="Oshosi Mask +1",            -- 44, __, 45/__ <__> {_} (__) [__/__,  90] ( 6, 25) ( 5, 13)
-    -- body="Chasseur's Frac +1",        -- 34, __, 22/22 <__> {_} (__) [__/__,  69] (__, __) (12, __)
-    hands="Chasseur's Gants +2",      -- 21, __, 52/52 < 7> {_} (__) [__/__,  83] (__, __) (__, __)
-    -- legs="Mummu Kecks +2",            -- 45, __, 45/__ < 7> {_} (__) [ 5/ 5, 107] (__, __) (__, __)
-    -- feet="Oshosi Leggings +1",        -- 56, __, 43/__ <10> {_} (__) [__/__, 131] ( 4, __) ( 3, __)
-    neck="Loricate Torque +1",        -- __, __, __/__ <__> {_} (__) [ 6/ 6, ___] (__, __) (__, __)
-    -- ear1="Odr Earring",               -- __, __, __/__ < 5> {_} (__) [__/__, ___] (__, __) (__, __)
-    -- ear2="Telos Earring",             -- __,  5, 10/10 <__> {_} (__) [__/__, ___] (__, __) (__, __)
-    ring1="Gelatinous Ring +1",       -- __, __, __/__ <__> {_} (__) [ 7,-1, ___] (__, __) (__, __)
-    ring2="Defending Ring",           -- __, __, __/__ <__> {_} (__) [10/10, ___] (__, __) (__, __)
-    -- back=gear.COR_RA_Cape,            -- 30, 10, 20/20 <__> {_} (__) [10/__, ___] (__, __) ( 5, __)
-    -- waist="K. Kachina Belt +1",       --  8, __, 20/__ < 5> {_} (__) [__/__, ___] (__, __) (__, __)
-    -- JA                                                                                  (40, __)
-    -- Merits/Traits/Gifts                                      (58)                       (20, __)
-    -- 238 AGI, 15 STP, 277 racc/104 ratt <34 crit> {0 PDL} (58 Recycle) [38 PDT/20 MDT, 480 M.Eva] (10 DS Rate, 25 DS Dmg) (85 TS Rate, 13 TS Dmg)
-    
-    -- body="Chasseur's Frac +2",     -- 44, __, 54/64 <__> {_} (__) [12/12, 109] (__, __) (13, __)
-    -- neck="Iskur Gorget",           -- __,  8, 30/30 <__> {_} (__) [__/__, ___] (__, __) (__, __)
-    -- 248 AGI, 23 STP, 339 racc/176 ratt <34 crit> {0 PDL} (58 Recycle) [44 PDT/26 MDT, 520 M.Eva] (10 DS Rate, 25 DS Dmg) (86 TS Rate, 13 TS Dmg)
   }
 
   -- Dmg is based on Gun DMG, bullet DMG, Quick Draw+ stat, elemental bonuses, MAB.
