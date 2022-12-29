@@ -656,7 +656,7 @@ gear.Vanya_D_hands = {}
 
 gear.Vanya_A_legs = {}
 gear.Vanya_B_legs = {name="Vanya Slops", augments={'Healing magic skill +20','"Cure" spellcasting time -7%','Magic dmg. taken -3',}}
-gear.Vanya_C_legs = {}
+gear.Vanya_C_legs = {name="Vanya Slops", augments={'MND+10','Spell interruption rate down +15%','"Conserve MP"+6',}}
 gear.Vanya_D_legs = {}
 
 gear.Vanya_A_feet = {}
