@@ -2198,7 +2198,7 @@ function job_handle_equipping_gear(playerStatus, eventArgs)
 end
 
 function update_combat_form()
-  if dw_needed <= 0 then
+  if dw_needed <= 0 or not is_dual_wielding() then
     state.CombatForm:reset()
   else
     if dw_needed > 0 and dw_needed <= 11 then
@@ -2397,6 +2397,18 @@ end
 -------------------------------------------------------------------------------------------------------------------
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
+
+-- Check sub slot to see if you currently have equipped weapons in a dual wielding configuration
+function is_dual_wielding()
+  local sub_weapon_name = player and player.equipment and player.equipment.sub
+  if sub_weapon_name then
+    local item = res.items:with('en', sub_weapon_name)
+    if item and item.category == 'Weapon' then
+      return true
+    end
+  end
+  return false
+end
 
 function update_idle_groups()
   local isRegening = classes.CustomIdleGroups:contains('Regen')
