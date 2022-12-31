@@ -340,8 +340,8 @@ function init_gear_sets()
     -- legs="Kaykaus Tights +1", --7
   })
 
-  sets.precast.FC.Curaga = sets.precast.FC.Cure
-  sets.precast.FC['Healing Magic'] = sets.precast.FC.Cure
+  sets.precast.FC.Curaga = set_combine(sets.precast.FC.Cure, {})
+  sets.precast.FC['Healing Magic'] = set_combine(sets.precast.FC.Cure, {})
   sets.precast.FC['Elemental Magic'] = set_combine(sets.precast.FC, {})
 
   sets.precast.FC.Impact = set_combine(sets.precast.FC, {
@@ -424,14 +424,14 @@ function init_gear_sets()
   sets.precast.WS['Chant du Cygne'].HighAccMaxTP = set_combine(sets.precast.WS['Chant du Cygne'].HighAcc, {
   })
 
-  sets.precast.WS['Vorpal Blade'] = sets.precast.WS['Chant du Cygne']
-  sets.precast.WS['Vorpal Blade'].MaxTP = sets.precast.WS['Chant du Cygne'].MaxTP
-  sets.precast.WS['Vorpal Blade'].LowAcc = sets.precast.WS['Chant du Cygne'].LowAcc
-  sets.precast.WS['Vorpal Blade'].LowAccMaxTP = sets.precast.WS['Chant du Cygne'].LowAccMaxTP
-  sets.precast.WS['Vorpal Blade'].MidAcc = sets.precast.WS['Chant du Cygne'].MidAcc
-  sets.precast.WS['Vorpal Blade'].MidAccMaxTP = sets.precast.WS['Chant du Cygne'].MidAccMaxTP
-  sets.precast.WS['Vorpal Blade'].HighAcc = sets.precast.WS['Chant du Cygne'].HighAcc
-  sets.precast.WS['Vorpal Blade'].HighAccMaxTP = sets.precast.WS['Chant du Cygne'].HighAccMaxTP
+  sets.precast.WS['Vorpal Blade'] = set_combine(sets.precast.WS['Chant du Cygne'], {})
+  sets.precast.WS['Vorpal Blade'].MaxTP = set_combine(sets.precast.WS['Chant du Cygne'].MaxTP, {})
+  sets.precast.WS['Vorpal Blade'].LowAcc = set_combine(sets.precast.WS['Chant du Cygne'].LowAcc, {})
+  sets.precast.WS['Vorpal Blade'].LowAccMaxTP = set_combine(sets.precast.WS['Chant du Cygne'].LowAccMaxTP, {})
+  sets.precast.WS['Vorpal Blade'].MidAcc = set_combine(sets.precast.WS['Chant du Cygne'].MidAcc, {})
+  sets.precast.WS['Vorpal Blade'].MidAccMaxTP = set_combine(sets.precast.WS['Chant du Cygne'].MidAccMaxTP, {})
+  sets.precast.WS['Vorpal Blade'].HighAcc = set_combine(sets.precast.WS['Chant du Cygne'].HighAcc, {})
+  sets.precast.WS['Vorpal Blade'].HighAccMaxTP = set_combine(sets.precast.WS['Chant du Cygne'].HighAccMaxTP, {})
 
   sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
     -- neck="Dls. Torque +2",
@@ -455,14 +455,14 @@ function init_gear_sets()
   sets.precast.WS['Savage Blade'].HighAccMaxTP = set_combine(sets.precast.WS['Savage Blade'].HighAcc, {
   })
 
-  sets.precast.WS['Death Blossom'] = sets.precast.WS['Savage Blade']
-  sets.precast.WS['Death Blossom'].MaxTP = sets.precast.WS['Savage Blade'].MaxTP
-  sets.precast.WS['Death Blossom'].LowAcc = sets.precast.WS['Savage Blade'].LowAcc
-  sets.precast.WS['Death Blossom'].LowAccMaxTP = sets.precast.WS['Savage Blade'].LowAccMaxTP
-  sets.precast.WS['Death Blossom'].MidAcc = sets.precast.WS['Savage Blade'].MidAcc
-  sets.precast.WS['Death Blossom'].MidAccMaxTP = sets.precast.WS['Savage Blade'].MidAccMaxTP
-  sets.precast.WS['Death Blossom'].HighAcc = sets.precast.WS['Savage Blade'].HighAcc
-  sets.precast.WS['Death Blossom'].HighAccMaxTP = sets.precast.WS['Savage Blade'].HighAccMaxTP
+  sets.precast.WS['Death Blossom'] = set_combine(sets.precast.WS['Savage Blade'], {})
+  sets.precast.WS['Death Blossom'].MaxTP = set_combine(sets.precast.WS['Savage Blade'].MaxTP, {})
+  sets.precast.WS['Death Blossom'].LowAcc = set_combine(sets.precast.WS['Savage Blade'].LowAcc, {})
+  sets.precast.WS['Death Blossom'].LowAccMaxTP = set_combine(sets.precast.WS['Savage Blade'].LowAccMaxTP, {})
+  sets.precast.WS['Death Blossom'].MidAcc = set_combine(sets.precast.WS['Savage Blade'].MidAcc, {})
+  sets.precast.WS['Death Blossom'].MidAccMaxTP = set_combine(sets.precast.WS['Savage Blade'].MidAccMaxTP, {})
+  sets.precast.WS['Death Blossom'].HighAcc = set_combine(sets.precast.WS['Savage Blade'].HighAcc, {})
+  sets.precast.WS['Death Blossom'].HighAccMaxTP = set_combine(sets.precast.WS['Savage Blade'].HighAccMaxTP, {})
 
   sets.precast.WS['Requiescat'] = set_combine(sets.precast.WS, {
     ear2="Sherida Earring",
@@ -607,7 +607,7 @@ function init_gear_sets()
   ---------------------------------------- Midcast Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
 
-  sets.midcast.FastRecast = sets.precast.FC
+  sets.midcast.FastRecast = set_combine(sets.precast.FC, {})
 
   -- Initializes trusts at iLvl 119
   sets.midcast.Trust = {
@@ -771,7 +771,7 @@ function init_gear_sets()
     -- waist="Emphatikos Rope",
   })
 
-  sets.midcast.Storm = sets.midcast.EnhancingDuration
+  sets.midcast.Storm = set_combine(sets.midcast.EnhancingDuration, {})
   sets.midcast.GainSpell = {
     -- hands="Viti. Gloves +3",
   }
@@ -782,9 +782,9 @@ function init_gear_sets()
   sets.midcast.Protect = set_combine(sets.midcast.EnhancingDuration, {
     -- ring2="Sheltered Ring",
   })
-  sets.midcast.Protectra = sets.midcast.Protect
-  sets.midcast.Shell = sets.midcast.Protect
-  sets.midcast.Shellra = sets.midcast.Shell
+  sets.midcast.Protectra = set_combine(sets.midcast.Protect, {})
+  sets.midcast.Shell = set_combine(sets.midcast.Protect, {})
+  sets.midcast.Shellra = set_combine(sets.midcast.Shell, {})
 
 
   -- Custom spell classes
@@ -884,7 +884,7 @@ function init_gear_sets()
     -- feet="Leth. Houseaux +1",
   })
 
-  sets.midcast.ElementalEnfeeble = sets.midcast.IntEnfeebles
+  sets.midcast.ElementalEnfeeble = set_combine(sets.midcast.IntEnfeebles, {})
   sets.midcast.Dispelga = set_combine(sets.midcast.IntEnfeeblesAcc, {
     main="Daybreak",
     -- sub="Ammurapi Shield",
@@ -919,7 +919,7 @@ function init_gear_sets()
     -- back="Perimede Cape",
   })
 
-  sets.midcast.Aspir = sets.midcast.Drain
+  sets.midcast.Aspir = set_combine(sets.midcast.Drain, {})
   sets.midcast.Stun = set_combine(sets.midcast['Dark Magic'], {
     -- waist="Luminary Sash",
   })
@@ -1032,8 +1032,8 @@ function init_gear_sets()
     -- back=gear.RDM_INT_Cape,
   } --51 PDT / 43 MDT, 682 MEVA
 
-  sets.defense.PDT = sets.HeavyDef
-  sets.defense.MDT = sets.HeavyDef
+  sets.defense.PDT = set_combine(sets.HeavyDef, {})
+  sets.defense.MDT = set_combine(sets.HeavyDef, {})
 
 
   ------------------------------------------------------------------------------------------------
@@ -1062,7 +1062,7 @@ function init_gear_sets()
     -- waist="Shinjutsu-no-Obi +1",
   }
 
-  sets.idle = sets.HeavyDef
+  sets.idle = set_combine(sets.HeavyDef, {})
 
   sets.idle.Regain = set_combine(sets.idle, sets.latent_regain)
   sets.idle.Regen = set_combine(sets.idle, sets.latent_regen)
@@ -1089,7 +1089,7 @@ function init_gear_sets()
   sets.idle.LightDef.Regain.Regen.Refresh = set_combine(sets.idle.Regain.Regen.Refresh, sets.LightDef)
   sets.idle.LightDef.Regain.Regen.RefreshSub50 = set_combine(sets.idle.Regain.Regen.RefreshSub50, sets.LightDef)
 
-  sets.idle.Weak = sets.HeavyDef
+  sets.idle.Weak = set_combine(sets.HeavyDef, {})
 
 
   ------------------------------------------------------------------------------------------------

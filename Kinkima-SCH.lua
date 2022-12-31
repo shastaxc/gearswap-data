@@ -464,14 +464,14 @@ function init_gear_sets()
   ---------------------------------------- Midcast Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
 
-  sets.midcast.FastRecast = sets.precast.FC
+  sets.midcast.FastRecast = set_combine(sets.precast.FC, {})
   -- Initializes trusts at iLvl 119
-  sets.midcast.Trust = sets.precast.FC
+  sets.midcast.Trust = set_combine(sets.precast.FC, {})
 
   -- Must keep this gear equipped until spell goes off
   -- TODO: Add magic accuracy
-  sets.midcast.Impact = sets.precast.FC.Impact
-  sets.midcast.Dispelga = sets.precast.FC.Dispelga
+  sets.midcast.Impact = set_combine(sets.precast.FC.Impact, {})
+  sets.midcast.Dispelga = set_combine(sets.precast.FC.Dispelga, {})
 
   -- CPII, CP, Heal Skill, MND, VIT, SIRD, PDT/MDT, -Enmity
   SIRD_options = {
@@ -576,8 +576,8 @@ function init_gear_sets()
   } -- 6 CPII, 49 CP, 502 Heal Skill, 309 MND, 233 VIT, 106 SIRD, 50PDT/37MDT, 36 -Enmity
     -- 704 Power
 
-  sets.midcast.CureNormal.LightArts = sets.midcast.CureNormal
-  sets.midcast.CureWeather.LightArts = sets.midcast.CureWeather
+  sets.midcast.CureNormal.LightArts = set_combine(sets.midcast.CureNormal, {})
+  sets.midcast.CureWeather.LightArts = set_combine(sets.midcast.CureWeather, {})
 
   -- Removal rate = Base Rate * (1+(y/100))
   -- Base rate = (10+(Healing Skill / 30)); y = Cursna+ stat from gear
@@ -711,7 +711,7 @@ function init_gear_sets()
     -- 94 Regen Potency, 70 Enh Duration %, 17 Regen Duration
   }
 
-  sets.midcast.Haste = sets.midcast.EnhancingDuration
+  sets.midcast.Haste = set_combine(sets.midcast.EnhancingDuration, {})
 
   -- Ref Potency > Enh Duration %, Ref Duration
   sets.midcast.Refresh = set_combine(sets.midcast.EnhancingDuration, {
@@ -745,7 +745,7 @@ function init_gear_sets()
     -- +6 Aquaveil, 32% Enh Duration
   })
 
-  sets.midcast.Storm = sets.midcast.EnhancingDuration
+  sets.midcast.Storm = set_combine(sets.midcast.EnhancingDuration, {})
 
   sets.midcast.Stormsurge = set_combine(sets.midcast.Storm, {
     feet="Pedagogy Loafers +3",
@@ -754,9 +754,9 @@ function init_gear_sets()
   sets.midcast.Protect = set_combine(sets.midcast.EnhancingDuration, {
     ring2="Sheltered Ring",
   })
-  sets.midcast.Protectra = sets.midcast.Protect
-  sets.midcast.Shell = sets.midcast.Protect
-  sets.midcast.Shellra = sets.midcast.Shell
+  sets.midcast.Protectra = set_combine(sets.midcast.Protect, {})
+  sets.midcast.Shell = set_combine(sets.midcast.Protect, {})
+  sets.midcast.Shellra = set_combine(sets.midcast.Shell, {})
 
   -- M.Acc > MND > Enfeebling Duration > Enfeebling Skill
   sets.midcast.MndEnfeebles = {
@@ -792,7 +792,7 @@ function init_gear_sets()
     -- 533 M.Acc, 293 MND, 35% Enfeebling Duration, 58 Enfeebling Skill
   })
 
-  sets.midcast.Dia = sets.midcast.MndEnfeebles
+  sets.midcast.Dia = set_combine(sets.midcast.MndEnfeebles, {})
 
   -- M.Acc > INT > Enfeebling Duration > Enfeebling Skill
   sets.midcast.IntEnfeebles = {
@@ -829,8 +829,8 @@ function init_gear_sets()
     -- 533 M.Acc, 295 INT, 35% Enfeebling Duration, 58 Enfeebling Skill
   })
 
-  sets.midcast.ElementalEnfeeble = sets.midcast.IntEnfeebles
-  sets.midcast.ElementalEnfeeble.DarkArts = sets.midcast.IntEnfeebles.DarkArts
+  sets.midcast.ElementalEnfeeble = set_combine(sets.midcast.IntEnfeebles, {})
+  sets.midcast.ElementalEnfeeble.DarkArts = set_combine(sets.midcast.IntEnfeebles.DarkArts, {})
   sets.midcast.Dispelga = set_combine(sets.midcast.IntEnfeebles, {
     main="Daybreak",
     sub="Ammurapi Shield",
@@ -873,7 +873,7 @@ function init_gear_sets()
     -- 554 Dark magic skill, 359 INT, 384 M.Acc, 56 Drain/Aspir potency
   })
 
-  sets.midcast.Aspir = sets.midcast.Drain
+  sets.midcast.Aspir = set_combine(sets.midcast.Drain, {})
 
   -- FC > M.Acc > M.Acc Skill
   sets.midcast.Stun = set_combine(sets.midcast['Dark Magic'], {
@@ -939,7 +939,7 @@ function init_gear_sets()
     -- Add 10% Grimoire Recast from Dark Arts
     -- Hits 90% recast reduction cap even without Haste spell/JA
   })
-  sets.midcast.Stun.LightArts = sets.midcast.Stun.DarkArts
+  sets.midcast.Stun.LightArts = set_combine(sets.midcast.Stun.DarkArts, {})
 
   -- Focus INT, Magic Accuracy, magic accuracy skill, elemental magic skill, Conserve MP
   sets.midcast.Impact = {
@@ -1103,9 +1103,9 @@ function init_gear_sets()
     -- 338 INT, 465 MAcc, 418 MAB, 255 MAccSk, 407 MDmg, 45 MB Dmg%, 10 MB2 Dmg%
   })
 
-  sets.midcast.Kaustra = sets.midcast['Elemental Magic']
-  sets.midcast.Kaustra.MB = sets.midcast['Elemental Magic'].MB
-  sets.midcast.Kaustra.Resistant = sets.midcast['Elemental Magic'].Resistant
+  sets.midcast.Kaustra = set_combine(sets.midcast['Elemental Magic'], {})
+  sets.midcast.Kaustra.MB = set_combine(sets.midcast['Elemental Magic'].MB, {})
+  sets.midcast.Kaustra.Resistant = set_combine(sets.midcast['Elemental Magic'].Resistant, {})
 
   sets.midcast.Helix = {
     main="Bunzi's Rod",               -- 15, 55, 65, 255, 248, 10, __
@@ -1183,8 +1183,8 @@ function init_gear_sets()
     -- 91 PDT / 76 MDT, 641 M.Eva
   }
 
-  sets.defense.PDT = sets.HeavyDef
-  sets.defense.MDT = sets.HeavyDef
+  sets.defense.PDT = set_combine(sets.HeavyDef, {})
+  sets.defense.MDT = set_combine(sets.HeavyDef, {})
 
 
   ------------------------------------------------------------------------------------------------
@@ -1252,7 +1252,7 @@ function init_gear_sets()
     -- 49 PDT / 42 MDT, 594 M.Eva [15 Sublimation, 5 Refresh]
   }
 
-  sets.idle = sets.HeavyDef
+  sets.idle = set_combine(sets.HeavyDef, {})
   sets.idle.Sublimation = set_combine(sets.idle, sets.Sublimation)
   sets.idle.Refresh = set_combine(sets.idle, sets.passive_refresh)
   sets.idle.Refresh.MpSub50 = set_combine(sets.idle, sets.passive_refresh, sets.passive_refresh.sub50)
@@ -1299,7 +1299,7 @@ function init_gear_sets()
     -- hands="Arbatel Bracers +1",
   }
   -- Cap SIRD and DT
-  sets.buff['Immanence'] = sets.midcast.CureNormal
+  sets.buff['Immanence'] = set_combine(sets.midcast.CureNormal, {})
   sets.buff['Penury'] = {
     legs="Arbatel Pants",
     -- legs="Arbatel Pants +1",

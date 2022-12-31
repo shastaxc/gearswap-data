@@ -244,7 +244,7 @@ function init_gear_sets()
     body=gear.Herc_TH_body, --2
     hands=gear.Herc_TH_hands, --2
   }
-  sets.TreasureHunter.RA = sets.TreasureHunter
+  sets.TreasureHunter.RA = set_combine(sets.TreasureHunter, {})
   sets.BoostRegain = {
     waist="Ask Sash",
   }
@@ -760,7 +760,7 @@ function init_gear_sets()
     back=gear.MNK_DEX_DA_Cape,  -- 10/__, ___
     waist="Moonbow Belt +1",    --  6/ 6, ___
   }
-  sets.defense.MDT = sets.defense.PDT
+  sets.defense.MDT = set_combine(sets.defense.PDT, {})
 
 
   ------------------------------------------------------------------------------------------------
@@ -784,7 +784,7 @@ function init_gear_sets()
     waist="Fucho-no-Obi",
   })
 
-  sets.idle = sets.defense.PDT
+  sets.idle = set_combine(sets.defense.PDT, {})
 
   sets.idle.Regain = set_combine(sets.idle, sets.latent_regain)
   sets.idle.Regen = set_combine(sets.idle, sets.latent_regen)
@@ -829,7 +829,7 @@ function init_gear_sets()
   sets.idle.HeavyDef.Regain.Regen.Refresh = set_combine(sets.idle.Regain.Regen.Refresh, sets.HeavyDefForIdle)
   sets.idle.HeavyDef.Regain.Regen.RefreshSub50 = set_combine(sets.idle.Regain.Regen.RefreshSub50, sets.HeavyDefForIdle)
 
-  sets.idle.Weak = sets.defense.PDT
+  sets.idle.Weak = set_combine(sets.defense.PDT, {})
 
   sets.idle.Town = {
     ammo="Coiste Bodhar",
@@ -886,8 +886,8 @@ function init_gear_sets()
     -- Ideal:
     -- 40 STP, 343 Acc, 20 PDL,  5 Crit Rate, 0 Crit Dmg <15 DA, 13 TA, 3 QA> [44 PDT/34 MDT, 547 M.Eva] (165 Kick Dmg, 94 Kick Rate) 17 Martial Arts, 36 Counter, 60 Subtle Blow
   })
-  sets.engaged.LightDef.Footwork = sets.engaged.LightDef
-  sets.engaged.LightDef.Impetus.Footwork = sets.engaged.LightDef.Impetus
+  sets.engaged.LightDef.Footwork = set_combine(sets.engaged.LightDef, {})
+  sets.engaged.LightDef.Impetus.Footwork = set_combine(sets.engaged.LightDef.Impetus, {})
 
   sets.engaged.LowAcc.LightDef = set_combine(sets.engaged.LightDef, {})
   sets.engaged.LowAcc.LightDef.Impetus = set_combine(sets.engaged.LightDef.Impetus, {})
@@ -939,8 +939,8 @@ function init_gear_sets()
     -- Ideal:
     -- 40 STP, 343 Acc, 20 PDL,  5 Crit Rate, 0 Crit Dmg <15 DA, 13 TA, 0 QA> [54 PDT/44 MDT, 547 M.Eva] (165 Kick Dmg, 94 Kick Rate) 17 Martial Arts, 36 Counter, 55 Subtle Blow
   })
-  sets.engaged.HeavyDef.Footwork = sets.engaged.HeavyDef
-  sets.engaged.HeavyDef.Impetus.Footwork = sets.engaged.HeavyDef.Impetus
+  sets.engaged.HeavyDef.Footwork = set_combine(sets.engaged.HeavyDef, {})
+  sets.engaged.HeavyDef.Impetus.Footwork = set_combine(sets.engaged.HeavyDef.Impetus, {})
 
   sets.engaged.LowAcc.HeavyDef = set_combine(sets.engaged.HeavyDef, {})
   sets.engaged.LowAcc.HeavyDef.Impetus = set_combine(sets.engaged.HeavyDef.Impetus, {})

@@ -296,7 +296,7 @@ function init_gear_sets()
     -- waist="Kasiri Belt", --3
   }
 
-  sets.precast.JA['Provoke'] = sets.Enmity
+  sets.precast.JA['Provoke'] = set_combine(sets.Enmity, {})
 
   sets.buff['Burst Affinity'] = {
     legs="Assimilator's Shalwar +3",
@@ -426,7 +426,7 @@ function init_gear_sets()
     -- waist="Fotia Belt",
   }
 
-  sets.precast.WS['Vorpal Blade'] = sets.precast.WS['Chant du Cygne']
+  sets.precast.WS['Vorpal Blade'] = set_combine(sets.precast.WS['Chant du Cygne'], {})
 
   sets.precast.WS['Savage Blade'] = {
     head=gear.Nyame_B_head,       -- 26, 26, 65, 50, 11, __, ___
@@ -471,8 +471,8 @@ function init_gear_sets()
     -- STR, MND, Attack, Accuracy, WSD, PDL [PDT/MDT, M.Eva]
   }
 
-  sets.precast.WS['Expiacion'] = sets.precast.WS['Savage Blade']
-  sets.precast.WS['Expiacion'].AttCapped = sets.precast.WS['Savage Blade'].AttCapped
+  sets.precast.WS['Expiacion'] = set_combine(sets.precast.WS['Savage Blade'], {})
+  sets.precast.WS['Expiacion'].AttCapped = set_combine(sets.precast.WS['Savage Blade'].AttCapped, {})
 
   sets.precast.WS['Sanguine Blade'] = {
     ammo="Pemphredo Tathlum",
@@ -494,14 +494,14 @@ function init_gear_sets()
     -- waist="Sacro Cord",
   }
 
-  sets.precast.WS['True Strike'] = sets.precast.WS['Savage Blade']
+  sets.precast.WS['True Strike'] = set_combine(sets.precast.WS['Savage Blade'], {})
   
-  sets.precast.WS['Judgment'] = sets.precast.WS['True Strike']
+  sets.precast.WS['Judgment'] = set_combine(sets.precast.WS['True Strike'], {})
   
 
-  sets.precast.WS['Black Halo'] = sets.precast.WS['Savage Blade']
+  sets.precast.WS['Black Halo'] = set_combine(sets.precast.WS['Savage Blade'], {})
 
-  sets.precast.WS['Realmrazer'] = sets.precast.WS['Requiescat']
+  sets.precast.WS['Realmrazer'] = set_combine(sets.precast.WS['Requiescat'], {})
 
   sets.precast.WS['Flash Nova'] = set_combine(sets.precast.WS['Sanguine Blade'], {
     head=gear.Nyame_B_head,
@@ -512,9 +512,9 @@ function init_gear_sets()
   ---------------------------------------- Midcast Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
 
-  sets.midcast.FastRecast = sets.precast.FC
+  sets.midcast.FastRecast = set_combine(sets.precast.FC, {})
   -- Initializes trusts at iLvl 119
-  sets.midcast.Trust = sets.precast.FC
+  sets.midcast.Trust = set_combine(sets.precast.FC, {})
 
   sets.midcast.SpellInterrupt = {
     ammo="Staunch Tathlum +1", --11
@@ -569,7 +569,7 @@ function init_gear_sets()
   })
 
   -- TODO: Update
-  sets.midcast['Blue Magic'].PhysicalStr = sets.midcast['Blue Magic'].Physical
+  sets.midcast['Blue Magic'].PhysicalStr = set_combine(sets.midcast['Blue Magic'].Physical, {})
 
   -- TODO: Update
   sets.midcast['Blue Magic'].PhysicalDex = set_combine(sets.midcast['Blue Magic'].Physical, {
@@ -580,7 +580,7 @@ function init_gear_sets()
   })
 
   -- TODO: Update
-  sets.midcast['Blue Magic'].PhysicalVit = sets.midcast['Blue Magic'].Physical
+  sets.midcast['Blue Magic'].PhysicalVit = set_combine(sets.midcast['Blue Magic'].Physical, {})
 
   -- TODO: Update
   sets.midcast['Blue Magic'].PhysicalAgi = set_combine(sets.midcast['Blue Magic'].Physical, {
@@ -637,35 +637,35 @@ function init_gear_sets()
     head="Pixie Hairpin +1",
     ring1="Archon Ring",
   })
-  sets.midcast['Blue Magic'].MagicalDark.Resistant = sets.midcast['Blue Magic'].Magical.Resistant
+  sets.midcast['Blue Magic'].MagicalDark.Resistant = set_combine(sets.midcast['Blue Magic'].Magical.Resistant, {})
 
   sets.midcast['Blue Magic'].MagicalLight = set_combine(sets.midcast['Blue Magic'].Magical, {
     -- ring1="Weatherspoon Ring"
   })
-  sets.midcast['Blue Magic'].MagicalLight.Resistant = sets.midcast['Blue Magic'].Magical.Resistant
+  sets.midcast['Blue Magic'].MagicalLight.Resistant = set_combine(sets.midcast['Blue Magic'].Magical.Resistant, {})
 
   sets.midcast['Blue Magic'].MagicalMnd = set_combine(sets.midcast['Blue Magic'].Magical, {
   })
-  sets.midcast['Blue Magic'].MagicalMnd.Resistant = sets.midcast['Blue Magic'].Magical.Resistant
+  sets.midcast['Blue Magic'].MagicalMnd.Resistant = set_combine(sets.midcast['Blue Magic'].Magical.Resistant, {})
 
   sets.midcast['Blue Magic'].MagicalDex = set_combine(sets.midcast['Blue Magic'].Magical, {
     ring2="Ilabrat Ring",
     -- ammo="Aurgelmir Orb +1",
     -- ear2="Mache Earring +1",
   })
-  sets.midcast['Blue Magic'].MagicalDex.Resistant = sets.midcast['Blue Magic'].Magical.Resistant
+  sets.midcast['Blue Magic'].MagicalDex.Resistant = set_combine(sets.midcast['Blue Magic'].Magical.Resistant, {})
 
   sets.midcast['Blue Magic'].MagicalVit = set_combine(sets.midcast['Blue Magic'].Magical, {
     -- ammo="Aurgelmir Orb +1",
   })
-  sets.midcast['Blue Magic'].MagicalVit.Resistant = sets.midcast['Blue Magic'].Magical.Resistant
+  sets.midcast['Blue Magic'].MagicalVit.Resistant = set_combine(sets.midcast['Blue Magic'].Magical.Resistant, {})
 
   sets.midcast['Blue Magic'].MagicalChr = set_combine(sets.midcast['Blue Magic'].Magical, {
     ear1="Regal Earring",
     -- ammo="Voluspa Tathlum",
     -- ear2="Enchanter's Earring +1"
   })
-  sets.midcast['Blue Magic'].MagicalChr.Resistant = sets.midcast['Blue Magic'].Magical.Resistant
+  sets.midcast['Blue Magic'].MagicalChr.Resistant = set_combine(sets.midcast['Blue Magic'].Magical.Resistant, {})
 
   sets.midcast['Blue Magic'].MagicAccuracy = {
     main="Bunzi's Rod", --55 macc
@@ -706,7 +706,7 @@ function init_gear_sets()
     -- waist="Eschan Stone",
   })
 
-  sets.midcast['Blue Magic'].StunMagical = sets.midcast['Blue Magic'].MagicAccuracy
+  sets.midcast['Blue Magic'].StunMagical = set_combine(sets.midcast['Blue Magic'].MagicAccuracy, {})
 
   sets.midcast['Blue Magic'].Healing = { --Focus cure potency
     main="Bunzi's Rod",               -- 30, 15, __ [__/__, ___]
@@ -752,13 +752,13 @@ function init_gear_sets()
     -- waist="Steppe Sash",
   })
 
-  sets.midcast['Blue Magic'].Buff = sets.midcast['Blue Magic']
+  sets.midcast['Blue Magic'].Buff = set_combine(sets.midcast['Blue Magic'], {})
   sets.midcast['Blue Magic'].Refresh = set_combine(sets.midcast['Blue Magic'], {
     back="Grapevine Cape",
     waist="Gishdubar Sash",
     -- head="Amalric Coif +1",
   })
-  sets.midcast['Blue Magic'].SkillBasedBuff = sets.midcast['Blue Magic']
+  sets.midcast['Blue Magic'].SkillBasedBuff = set_combine(sets.midcast['Blue Magic'], {})
 
   sets.midcast['Blue Magic']['Occultation'] = set_combine(sets.midcast['Blue Magic'], {
     hands="Hashishin Bazubands +2",
@@ -841,15 +841,15 @@ function init_gear_sets()
   sets.midcast.Protect = set_combine(sets.midcast.EnhancingDuration, {
     ring1="Sheltered Ring"
   })
-  sets.midcast.Protectra = sets.midcast.Protect
-  sets.midcast.Shell = sets.midcast.Protect
-  sets.midcast.Shellra = sets.midcast.Protect
+  sets.midcast.Protectra = set_combine(sets.midcast.Protect, {})
+  sets.midcast.Shell = set_combine(sets.midcast.Protect, {})
+  sets.midcast.Shellra = set_combine(sets.midcast.Protect, {})
 
   sets.midcast['Enfeebling Magic'] = set_combine(sets.midcast['Blue Magic'].MagicAccuracy, {
     ear2="Vor Earring",
   })
 
-  sets.midcast.Utsusemi = sets.midcast.SpellInterrupt
+  sets.midcast.Utsusemi = set_combine(sets.midcast.SpellInterrupt, {})
 
   ------------------------------------------------------------------------------------------------
   ----------------------------------------- Idle Sets --------------------------------------------
@@ -883,7 +883,7 @@ function init_gear_sets()
   -- Resting sets
   sets.resting = {}
 
-  sets.idle = sets.passive_refresh
+  sets.idle = set_combine(sets.passive_refresh, {})
 
   sets.idle.Evasion = { --Focus on DT cap and evasion
     -- main="Tizona",
@@ -919,7 +919,7 @@ function init_gear_sets()
   sets.idle.Refresh = set_combine(sets.idle, sets.passive_refresh)
   sets.idle.Refresh.MpSub50 = set_combine(sets.idle, sets.passive_refresh, sets.passive_refresh.sub50)
 
-  sets.idle.Weak = sets.idle.DT
+  sets.idle.Weak = set_combine(sets.idle.DT, {})
 
 
   ------------------------------------------------------------------------------------------------
@@ -1080,20 +1080,20 @@ function init_gear_sets()
   ---------------------------------------- Hybrid Sets -------------------------------------------
   ------------------------------------------------------------------------------------------------
 
-  sets.engaged.DT = sets.engaged
-  sets.engaged.DT.Acc = sets.engaged.Acc
+  sets.engaged.DT = set_combine(sets.engaged, {})
+  sets.engaged.DT.Acc = set_combine(sets.engaged.Acc, {})
 
   sets.engaged.LowDW.DT = set_combine(sets.engaged.LowDW, {
     ring1="Gelatinous Ring +1",   -- __, __, __ <__, __, __> [ 7/-1, ___]
   })
-  sets.engaged.LowDW.DT.Acc = sets.engaged.LowDW.DT
+  sets.engaged.LowDW.DT.Acc = set_combine(sets.engaged.LowDW.DT, {})
 
   sets.engaged.MidDW.DT = set_combine(sets.engaged.MidDW, {
     ring1="Gelatinous Ring +1",   -- __, __, __ <__, __, __> [ 7/-1, ___]
   })
-  sets.engaged.MidDW.DT.Acc = sets.engaged.MidDW.DT
+  sets.engaged.MidDW.DT.Acc = set_combine(sets.engaged.MidDW.DT, {})
 
-  sets.engaged.HighDW.DT = sets.engaged.MidDW.DT
+  sets.engaged.HighDW.DT = set_combine(sets.engaged.MidDW.DT, {})
   sets.engaged.HighDW.DT.Acc = set_combine(sets.engaged.HighDW.DT, {
     neck="Mirage Stole +2",       -- __,  7, 25 <__, __, __> [__/__, ___]
     ring1="Gelatinous Ring +1",   -- __, __, __ <__, __, __> [ 7/-1, ___]
@@ -1175,10 +1175,10 @@ function init_gear_sets()
     ammo="Perfect Lucky Egg",
     waist="Chaac Belt",
   }
-  sets.TreasureHunter.RA = sets.TreasureHunter
-  sets.midcast.Dia = sets.TreasureHunter
-  sets.midcast.Diaga = sets.TreasureHunter
-  sets.midcast.Bio = sets.TreasureHunter
+  sets.TreasureHunter.RA = set_combine(sets.TreasureHunter, {})
+  sets.midcast.Dia = set_combine(sets.TreasureHunter, {})
+  sets.midcast.Diaga = set_combine(sets.TreasureHunter, {})
+  sets.midcast.Bio = set_combine(sets.TreasureHunter, {})
 
   sets.WeaponSet = {}
   sets.WeaponSet['Naegling'] = {

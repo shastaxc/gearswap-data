@@ -231,7 +231,7 @@ function init_gear_sets()
     feet="Kasuga Sune-ate +1",
   }
 
-  sets.precast.JA['Provoke'] = sets.Enmity
+  sets.precast.JA['Provoke'] = set_combine(sets.Enmity, {})
 
   -- Waltz set (chr and vit)
   sets.precast.Waltz = {
@@ -302,34 +302,34 @@ function init_gear_sets()
   })
 
   -- 80% STR; dmg varies with TP
-  sets.precast.WS['Tachi: Fudo'] = sets.precast.WS
-  sets.precast.WS['Tachi: Fudo'].MaxTP = sets.precast.WS.MaxTP
-  sets.precast.WS['Tachi: Fudo'].AttCapped = sets.precast.WS.AttCapped
-  sets.precast.WS['Tachi: Fudo'].AttCappedMaxTP = sets.precast.WS.AttCappedMaxTP
+  sets.precast.WS['Tachi: Fudo'] = set_combine(sets.precast.WS, {})
+  sets.precast.WS['Tachi: Fudo'].MaxTP = set_combine(sets.precast.WS.MaxTP, {})
+  sets.precast.WS['Tachi: Fudo'].AttCapped = set_combine(sets.precast.WS.AttCapped, {})
+  sets.precast.WS['Tachi: Fudo'].AttCappedMaxTP = set_combine(sets.precast.WS.AttCappedMaxTP, {})
 
   -- 80% STR; STP scales with TP (aftermath effect)
-  sets.precast.WS['Tachi: Kaiten'] = sets.precast.WS
-  sets.precast.WS['Tachi: Kaiten'].MaxTP = sets.precast.WS.MaxTP
-  sets.precast.WS['Tachi: Kaiten'].AttCapped = sets.precast.WS.AttCapped
-  sets.precast.WS['Tachi: Kaiten'].AttCappedMaxTP = sets.precast.WS.AttCappedMaxTP
+  sets.precast.WS['Tachi: Kaiten'] = set_combine(sets.precast.WS, {})
+  sets.precast.WS['Tachi: Kaiten'].MaxTP = set_combine(sets.precast.WS.MaxTP, {})
+  sets.precast.WS['Tachi: Kaiten'].AttCapped = set_combine(sets.precast.WS.AttCapped, {})
+  sets.precast.WS['Tachi: Kaiten'].AttCappedMaxTP = set_combine(sets.precast.WS.AttCappedMaxTP, {})
 
   -- 75% STR; dmg varies with TP
-  sets.precast.WS['Tachi: Gekko'] = sets.precast.WS
-  sets.precast.WS['Tachi: Gekko'].MaxTP = sets.precast.WS.MaxTP
-  sets.precast.WS['Tachi: Gekko'].AttCapped = sets.precast.WS.AttCapped
-  sets.precast.WS['Tachi: Gekko'].AttCappedMaxTP = sets.precast.WS.AttCappedMaxTP
+  sets.precast.WS['Tachi: Gekko'] = set_combine(sets.precast.WS, {})
+  sets.precast.WS['Tachi: Gekko'].MaxTP = set_combine(sets.precast.WS.MaxTP, {})
+  sets.precast.WS['Tachi: Gekko'].AttCapped = set_combine(sets.precast.WS.AttCapped, {})
+  sets.precast.WS['Tachi: Gekko'].AttCappedMaxTP = set_combine(sets.precast.WS.AttCappedMaxTP, {})
 
   -- 75% STR; dmg varies with TP
-  sets.precast.WS['Tachi: Yukikaze'] = sets.precast.WS
-  sets.precast.WS['Tachi: Yukikaze'].MaxTP = sets.precast.WS.MaxTP
-  sets.precast.WS['Tachi: Yukikaze'].AttCapped = sets.precast.WS.AttCapped
-  sets.precast.WS['Tachi: Yukikaze'].AttCappedMaxTP = sets.precast.WS.AttCappedMaxTP
+  sets.precast.WS['Tachi: Yukikaze'] = set_combine(sets.precast.WS, {})
+  sets.precast.WS['Tachi: Yukikaze'].MaxTP = set_combine(sets.precast.WS.MaxTP, {})
+  sets.precast.WS['Tachi: Yukikaze'].AttCapped = set_combine(sets.precast.WS.AttCapped, {})
+  sets.precast.WS['Tachi: Yukikaze'].AttCappedMaxTP = set_combine(sets.precast.WS.AttCappedMaxTP, {})
 
   -- 75% STR; dmg varies with TP
-  sets.precast.WS['Tachi: Kasha'] = sets.precast.WS
-  sets.precast.WS['Tachi: Kasha'].MaxTP = sets.precast.WS.MaxTP
-  sets.precast.WS['Tachi: Kasha'].AttCapped = sets.precast.WS.AttCapped
-  sets.precast.WS['Tachi: Kasha'].AttCappedMaxTP = sets.precast.WS.AttCappedMaxTP
+  sets.precast.WS['Tachi: Kasha'] = set_combine(sets.precast.WS, {})
+  sets.precast.WS['Tachi: Kasha'].MaxTP = set_combine(sets.precast.WS.MaxTP, {})
+  sets.precast.WS['Tachi: Kasha'].AttCapped = set_combine(sets.precast.WS.AttCapped, {})
+  sets.precast.WS['Tachi: Kasha'].AttCappedMaxTP = set_combine(sets.precast.WS.AttCappedMaxTP, {})
 
   -- 85% STR; 2 hit, dmg varies with TP
   sets.precast.WS['Tachi: Shoha'] = set_combine(sets.precast.WS, {
@@ -373,10 +373,10 @@ function init_gear_sets()
   })
 
   -- 50% STR; 3 hit, acc varies with TP
-  sets.precast.WS['Tachi: Rana'] = sets.precast.WS['Tachi: Shoha'].MaxTP
-  sets.precast.WS['Tachi: Rana'].MaxTP = sets.precast.WS['Tachi: Shoha'].MaxTP
-  sets.precast.WS['Tachi: Rana'].AttCapped = sets.precast.WS['Tachi: Shoha'].AttCappedMaxTP
-  sets.precast.WS['Tachi: Rana'].AttCappedMaxTP = sets.precast.WS['Tachi: Shoha'].AttCappedMaxTP
+  sets.precast.WS['Tachi: Rana'] = set_combine(sets.precast.WS['Tachi: Shoha'].MaxTP, {})
+  sets.precast.WS['Tachi: Rana'].MaxTP = set_combine(sets.precast.WS['Tachi: Shoha'].MaxTP, {})
+  sets.precast.WS['Tachi: Rana'].AttCapped = set_combine(sets.precast.WS['Tachi: Shoha'].AttCappedMaxTP, {})
+  sets.precast.WS['Tachi: Rana'].AttCappedMaxTP = set_combine(sets.precast.WS['Tachi: Shoha'].AttCappedMaxTP, {})
 
   -- 30% STR; 2 hit, hybrid wind elemental, dmg varies with TP
   sets.precast.WS['Tachi: Jinpu'] = set_combine(sets.precast.WS, {
@@ -398,8 +398,8 @@ function init_gear_sets()
   sets.precast.WS['Tachi: Jinpu'].MaxTP = set_combine(sets.precast.WS['Tachi: Jinpu'], {
     ear1="Novio Earring",
   })
-  sets.precast.WS['Tachi: Jinpu'].AttCapped = sets.precast.WS['Tachi: Jinpu']
-  sets.precast.WS['Tachi: Jinpu'].AttCappedMaxTP = sets.precast.WS['Tachi: Jinpu'].MaxTP
+  sets.precast.WS['Tachi: Jinpu'].AttCapped = set_combine(sets.precast.WS['Tachi: Jinpu'], {})
+  sets.precast.WS['Tachi: Jinpu'].AttCappedMaxTP = set_combine(sets.precast.WS['Tachi: Jinpu'].MaxTP, {})
 
   -- 60% CHR / 40% STR; More important to stack magic acc to ensure the defense down effect lands
   sets.precast.WS['Tachi: Ageha'] = {
@@ -470,10 +470,10 @@ function init_gear_sets()
   })
 
   -- 40% STR / 40% DEX; aoe, dmg varies with TP
-  sets.precast.WS['Sonic Thrust'] = sets.precast.WS['Impulse Drive']
-  sets.precast.WS['Sonic Thrust'].MaxTP = sets.precast.WS['Impulse Drive'].MaxTP
-  sets.precast.WS['Sonic Thrust'].AttCapped = sets.precast.WS['Impulse Drive'].AttCapped
-  sets.precast.WS['Sonic Thrust'].AttCappedMaxTP = sets.precast.WS['Impulse Drive'].AttCappedMaxTP
+  sets.precast.WS['Sonic Thrust'] = set_combine(sets.precast.WS['Impulse Drive'], {})
+  sets.precast.WS['Sonic Thrust'].MaxTP = set_combine(sets.precast.WS['Impulse Drive'].MaxTP, {})
+  sets.precast.WS['Sonic Thrust'].AttCapped = set_combine(sets.precast.WS['Impulse Drive'].AttCapped, {})
+  sets.precast.WS['Sonic Thrust'].AttCappedMaxTP = set_combine(sets.precast.WS['Impulse Drive'].AttCappedMaxTP, {})
 
   -- 85% STR; 4 hit, dmg varies with TP
   sets.precast.WS['Stardiver'] = {
@@ -559,7 +559,7 @@ function init_gear_sets()
     waist="Ioskeha Belt +1",    -- __/__, ___
     --51 PDT/41 MDT, 608 MEVA
   }
-  sets.defense.MDT = sets.defense.PDT
+  sets.defense.MDT = set_combine(sets.defense.PDT, {})
 
   ------------------------------------------------------------------------------------------------
   ----------------------------------------- Idle Sets --------------------------------------------
@@ -587,7 +587,7 @@ function init_gear_sets()
   sets.latent_refresh_sub50 = set_combine(sets.latent_refresh, {
   })
 
-  sets.idle = sets.defense.PDT
+  sets.idle = set_combine(sets.defense.PDT, {})
 
   sets.idle.Regain = set_combine(sets.idle, sets.latent_regain)
   sets.idle.Regen = set_combine(sets.idle, sets.latent_regen)
@@ -601,9 +601,9 @@ function init_gear_sets()
   sets.idle.Regain.Regen.Refresh = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh)
   sets.idle.Regain.Regen.RefreshSub50 = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh_sub50)
 
-  sets.idle.HeavyDef = sets.defense.PDT
+  sets.idle.HeavyDef = set_combine(sets.defense.PDT, {})
 
-  sets.idle.Weak = sets.defense.PDT
+  sets.idle.Weak = set_combine(sets.defense.PDT, {})
 
 
   ------------------------------------------------------------------------------------------------
@@ -631,9 +631,9 @@ function init_gear_sets()
     -- ear2="Kasuga Earring +2",      -- [__/__, ___] __,  9 <__, __, __> __, __
     -- [49 PDT/21 MDT, 408 MEVA] 3 Hasso, 73 STP <18 DA, 18 TA, 0 QA> 12 Crit Rate, 29 Haste
   }
-  sets.engaged.LowAcc = sets.engaged
-  sets.engaged.MidAcc = sets.engaged
-  sets.engaged.HighAcc = sets.engaged
+  sets.engaged.LowAcc = set_combine(sets.engaged, {})
+  sets.engaged.MidAcc = set_combine(sets.engaged, {})
+  sets.engaged.HighAcc = set_combine(sets.engaged, {})
 
 
   ------------------------------------------------------------------------------------------------
@@ -661,9 +661,9 @@ function init_gear_sets()
     -- ear2="Kasuga Earring +2",      -- [__/__, ___] __,  9 <__, __, __> __, __
     -- [54 PDT/28 MDT, 477 MEVA] 3 Hasso, 59 STP <23 DA, 14 TA, 3 QA> 10 Crit Rate, 28 Haste
   }
-  sets.engaged.LowAcc.HeavyDef = sets.engaged.HeavyDef
-  sets.engaged.MidAcc.HeavyDef = sets.engaged.HeavyDef
-  sets.engaged.HighAcc.HeavyDef = sets.engaged.HeavyDef
+  sets.engaged.LowAcc.HeavyDef = set_combine(sets.engaged.HeavyDef, {})
+  sets.engaged.MidAcc.HeavyDef = set_combine(sets.engaged.HeavyDef, {})
+  sets.engaged.HighAcc.HeavyDef = set_combine(sets.engaged.HeavyDef, {})
 
   sets.engaged.SubtleBlow = {
     ammo="Crepuscular Pebble",        -- [ 3/ 3, ___] __, __ <__, __, __> __, __, __(__)
@@ -684,9 +684,9 @@ function init_gear_sets()
     -- head="Kasuga Kabuto +3",       -- [10/10,  98] __, 12 <__, __, __> __,  7, __(__)
     -- [52 PDT/35 MDT, 541 MEVA] 0 Hasso, 15 STP <15 DA, 13 TA, 3 QA> 15 Crit Rate, 23 Haste, 34(20) Subtle Blow
   }
-  sets.engaged.LowAcc.SubtleBlow = sets.engaged.SubtleBlow
-  sets.engaged.MidAcc.SubtleBlow = sets.engaged.SubtleBlow
-  sets.engaged.HighAcc.SubtleBlow = sets.engaged.SubtleBlow
+  sets.engaged.LowAcc.SubtleBlow = set_combine(sets.engaged.SubtleBlow, {})
+  sets.engaged.MidAcc.SubtleBlow = set_combine(sets.engaged.SubtleBlow, {})
+  sets.engaged.HighAcc.SubtleBlow = set_combine(sets.engaged.SubtleBlow, {})
 
   -----------------------------------------------------------------------------------
   ---------------------------------------- Special Sets ------------------------------------------

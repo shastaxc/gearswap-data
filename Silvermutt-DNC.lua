@@ -277,7 +277,7 @@ function init_gear_sets()
     -- back="Agema Cape", --5
   }
 
-  sets.precast.JA['Provoke'] = sets.Enmity
+  sets.precast.JA['Provoke'] = set_combine(sets.Enmity, {})
   sets.precast.JA['No Foot Rise'] = {
     body="Horos Casaque +3",
   }
@@ -352,7 +352,7 @@ function init_gear_sets()
     feet="Maculele Toe Shoes +2",
   })
   sets.precast.Flourish1 = {}
-  sets.precast.Flourish1['Animated Flourish'] = sets.Enmity
+  sets.precast.Flourish1['Animated Flourish'] = set_combine(sets.Enmity, {})
 
   -- Magic Accuracy
   sets.precast.Flourish1['Violent Flourish'] = {
@@ -624,13 +624,13 @@ function init_gear_sets()
   }
 
   -- 40% DEX / 40% AGI; fTP 4.5-8.5
-  sets.precast.WS["Shark Bite"] = sets.precast.WS["Rudra's Storm"]
-  sets.precast.WS["Shark Bite"].MaxTP = sets.precast.WS["Rudra's Storm"].MaxTP
-  sets.precast.WS["Shark Bite"].AttCapped = sets.precast.WS["Rudra's Storm"].AttCapped
-  sets.precast.WS["Shark Bite"].AttCappedMaxTP = sets.precast.WS["Rudra's Storm"].AttCappedMaxTP
+  sets.precast.WS["Shark Bite"] = set_combine(sets.precast.WS["Rudra's Storm"], {})
+  sets.precast.WS["Shark Bite"].MaxTP = set_combine(sets.precast.WS["Rudra's Storm"].MaxTP, {})
+  sets.precast.WS["Shark Bite"].AttCapped = set_combine(sets.precast.WS["Rudra's Storm"].AttCapped, {})
+  sets.precast.WS["Shark Bite"].AttCappedMaxTP = set_combine(sets.precast.WS["Rudra's Storm"].AttCappedMaxTP, {})
   -- For Crit Dmg, not crit rate; is overlaid, don't set_combine
-  sets.precast.WS["Shark Bite"].Climactic = sets.precast.WS["Rudra's Storm"].Climactic
-  sets.precast.WS["Shark Bite"].Safe = sets.precast.WS["Rudra's Storm"].Safe
+  sets.precast.WS["Shark Bite"].Climactic = set_combine(sets.precast.WS["Rudra's Storm"].Climactic, {})
+  sets.precast.WS["Shark Bite"].Safe = set_combine(sets.precast.WS["Rudra's Storm"].Safe, {})
 
   sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
     ammo="Pemphredo Tathlum", --4
@@ -683,7 +683,7 @@ function init_gear_sets()
   ---------------------------------------- Midcast Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
 
-  sets.midcast.FastRecast = sets.precast.FC
+  sets.midcast.FastRecast = set_combine(sets.precast.FC, {})
 
   -- Initializes trusts at iLvl 119
   sets.midcast.Trust = {
@@ -742,8 +742,8 @@ function init_gear_sets()
     waist="Engraved Belt",      -- __/__, ___
   } --63 PDT/55 MDT, 697 MEVA
 
-  sets.defense.PDT = sets.HeavyDef
-  sets.defense.MDT = sets.HeavyDef
+  sets.defense.PDT = set_combine(sets.HeavyDef, {})
+  sets.defense.MDT = set_combine(sets.HeavyDef, {})
 
   ------------------------------------------------------------------------------------------------
   ----------------------------------------- Idle Sets --------------------------------------------
@@ -786,7 +786,7 @@ function init_gear_sets()
   sets.idle.Regen.Refresh = set_combine(sets.idle, sets.latent_regen, sets.latent_refresh)
   sets.idle.Regain.Regen.Refresh = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh)
 
-  sets.idle.HeavyDef = sets.HeavyDef
+  sets.idle.HeavyDef = set_combine(sets.HeavyDef, {})
 
   sets.idle.Weak = set_combine(sets.HeavyDef, {
     neck="Loricate Torque +1",  --  6/ 6, ___
@@ -1168,35 +1168,35 @@ function init_gear_sets()
   sets.engaged.MaxDW.HeavyDef.HighAcc = set_combine(sets.engaged.MaxDW.HeavyDef.MidAcc,{})
 
 
-  sets.engaged.Safe = sets.engaged.HeavyDef
-  sets.engaged.Safe.LowAcc = sets.engaged.HeavyDef.LowAcc
-  sets.engaged.Safe.MidAcc = sets.engaged.HeavyDef.MidAcc
-  sets.engaged.Safe.HighAcc = sets.engaged.HeavyDef.HighAcc
+  sets.engaged.Safe = set_combine(sets.engaged.HeavyDef, {})
+  sets.engaged.Safe.LowAcc = set_combine(sets.engaged.HeavyDef.LowAcc, {})
+  sets.engaged.Safe.MidAcc = set_combine(sets.engaged.HeavyDef.MidAcc, {})
+  sets.engaged.Safe.HighAcc = set_combine(sets.engaged.HeavyDef.HighAcc, {})
 
-  sets.engaged.LowDW.Safe = sets.engaged.LowDW.HeavyDef
-  sets.engaged.LowDW.Safe.LowAcc = sets.engaged.LowDW.HeavyDef.LowAcc
-  sets.engaged.LowDW.Safe.MidAcc = sets.engaged.LowDW.HeavyDef.MidAcc
-  sets.engaged.LowDW.Safe.HighAcc = sets.engaged.LowDW.HeavyDef.HighAcc
+  sets.engaged.LowDW.Safe = set_combine(sets.engaged.LowDW.HeavyDef, {})
+  sets.engaged.LowDW.Safe.LowAcc = set_combine(sets.engaged.LowDW.HeavyDef.LowAcc, {})
+  sets.engaged.LowDW.Safe.MidAcc = set_combine(sets.engaged.LowDW.HeavyDef.MidAcc, {})
+  sets.engaged.LowDW.Safe.HighAcc = set_combine(sets.engaged.LowDW.HeavyDef.HighAcc, {})
 
-  sets.engaged.MidDW.Safe = sets.engaged.MidDW.HeavyDef
-  sets.engaged.MidDW.Safe.LowAcc = sets.engaged.MidDW.HeavyDef.LowAcc
-  sets.engaged.MidDW.Safe.MidAcc = sets.engaged.MidDW.HeavyDef.MidAcc
-  sets.engaged.MidDW.Safe.HighAcc = sets.engaged.MidDW.HeavyDef.HighAcc
+  sets.engaged.MidDW.Safe = set_combine(sets.engaged.MidDW.HeavyDef, {})
+  sets.engaged.MidDW.Safe.LowAcc = set_combine(sets.engaged.MidDW.HeavyDef.LowAcc, {})
+  sets.engaged.MidDW.Safe.MidAcc = set_combine(sets.engaged.MidDW.HeavyDef.MidAcc, {})
+  sets.engaged.MidDW.Safe.HighAcc = set_combine(sets.engaged.MidDW.HeavyDef.HighAcc, {})
 
-  sets.engaged.HighDW.Safe = sets.engaged.HighDW.HeavyDef
-  sets.engaged.HighDW.Safe.LowAcc = sets.engaged.HighDW.HeavyDef.LowAcc
-  sets.engaged.HighDW.Safe.MidAcc = sets.engaged.HighDW.HeavyDef.MidAcc
-  sets.engaged.HighDW.Safe.HighAcc = sets.engaged.HighDW.HeavyDef.HighAcc
+  sets.engaged.HighDW.Safe = set_combine(sets.engaged.HighDW.HeavyDef, {})
+  sets.engaged.HighDW.Safe.LowAcc = set_combine(sets.engaged.HighDW.HeavyDef.LowAcc, {})
+  sets.engaged.HighDW.Safe.MidAcc = set_combine(sets.engaged.HighDW.HeavyDef.MidAcc, {})
+  sets.engaged.HighDW.Safe.HighAcc = set_combine(sets.engaged.HighDW.HeavyDef.HighAcc, {})
 
-  sets.engaged.SuperDW.Safe = sets.engaged.SuperDW.HeavyDef
-  sets.engaged.SuperDW.Safe.LowAcc = sets.engaged.SuperDW.HeavyDef.LowAcc
-  sets.engaged.SuperDW.Safe.MidAcc = sets.engaged.SuperDW.HeavyDef.MidAcc
-  sets.engaged.SuperDW.Safe.HighAcc = sets.engaged.SuperDW.HeavyDef.HighAcc
+  sets.engaged.SuperDW.Safe = set_combine(sets.engaged.SuperDW.HeavyDef, {})
+  sets.engaged.SuperDW.Safe.LowAcc = set_combine(sets.engaged.SuperDW.HeavyDef.LowAcc, {})
+  sets.engaged.SuperDW.Safe.MidAcc = set_combine(sets.engaged.SuperDW.HeavyDef.MidAcc, {})
+  sets.engaged.SuperDW.Safe.HighAcc = set_combine(sets.engaged.SuperDW.HeavyDef.HighAcc, {})
 
-  sets.engaged.MaxDW.Safe = sets.engaged.MaxDW.HeavyDef
-  sets.engaged.MaxDW.Safe.LowAcc = sets.engaged.MaxDW.HeavyDef.LowAcc
-  sets.engaged.MaxDW.Safe.MidAcc = sets.engaged.MaxDW.HeavyDef.MidAcc
-  sets.engaged.MaxDW.Safe.HighAcc = sets.engaged.MaxDW.HeavyDef.HighAcc
+  sets.engaged.MaxDW.Safe = set_combine(sets.engaged.MaxDW.HeavyDef, {})
+  sets.engaged.MaxDW.Safe.LowAcc = set_combine(sets.engaged.MaxDW.HeavyDef.LowAcc, {})
+  sets.engaged.MaxDW.Safe.MidAcc = set_combine(sets.engaged.MaxDW.HeavyDef.MidAcc, {})
+  sets.engaged.MaxDW.Safe.HighAcc = set_combine(sets.engaged.MaxDW.HeavyDef.HighAcc, {})
 
 
   ------------------------------------------------------------------------------------------------
@@ -1239,7 +1239,7 @@ function init_gear_sets()
     body=gear.Herc_TH_body, --2
     hands=gear.Herc_TH_hands, --2
   }
-  sets.TreasureHunter.RA = sets.TreasureHunter
+  sets.TreasureHunter.RA = set_combine(sets.TreasureHunter, {})
 
   sets.WeaponSet = {}
   sets.WeaponSet['Twashtar'] = {main="Twashtar", sub={name="Centovente", priority=1}}

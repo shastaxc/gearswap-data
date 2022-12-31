@@ -259,7 +259,7 @@ function init_gear_sets()
     body=gear.Herc_TH_body, --2
     hands=gear.Herc_TH_hands, --2
   }
-  sets.TreasureHunter.RA = sets.TreasureHunter
+  sets.TreasureHunter.RA = set_combine(sets.TreasureHunter, {})
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Defense Sets ------------------------------------------
@@ -408,7 +408,7 @@ function init_gear_sets()
     -- 53 PDT / 43 MDT, 547 M.Eva [1020 HP] {102 SIRD}
   }
 
-  sets.precast.JA = sets.Enmity;
+  sets.precast.JA = set_combine(sets.Enmity, {})
 
   sets.precast.JA['Vallation'] = {
     ammo="Sapience Orb",                                -- __/__, ___ [___] < 2>
@@ -427,7 +427,7 @@ function init_gear_sets()
     waist={name="Kasiri Belt", priority=1},             -- __/__, ___ [ 30] < 3>
     -- 52 PDT / 44 MDT, 508 M.Eva [1029 HP] <65 Enmity>
   }
-  sets.precast.JA['Valiance'] = sets.precast.JA['Vallation']
+  sets.precast.JA['Valiance'] = set_combine(sets.precast.JA['Vallation'], {})
   sets.precast.JA['Battuta'] = set_combine(sets.Enmity, {
     head="Futhark Bandeau +3",
   })
@@ -474,8 +474,8 @@ function init_gear_sets()
     waist={name="Eschan Stone", priority=1},      --  7, __/__ [ 20]
   } -- 213 MAB, 51 PDT / 41 MDT [977 HP]
 
-  sets.precast.JA['Swipe'] = sets.precast.JA['Lunge']
-  sets.precast.JA['Swipe'].Safe = sets.precast.JA['Lunge'].Safe
+  sets.precast.JA['Swipe'] = set_combine(sets.precast.JA['Lunge'], {})
+  sets.precast.JA['Swipe'].Safe = set_combine(sets.precast.JA['Lunge'].Safe, {})
 
   sets.precast.JA['Gambit'] = set_combine(sets.Enmity, {
     hands="Runeist Mitons +3"
@@ -551,8 +551,8 @@ function init_gear_sets()
     -- 55% Fast Cast, 48 PDT/28 MDT, 511 M.Eva [1042 HP]
   }
   
-  sets.precast.FC['Geist Wall'] = sets.SIRD
-  sets.precast.FC['Poisonga'] = sets.SIRD
+  sets.precast.FC['Geist Wall'] = set_combine(sets.SIRD, {})
+  sets.precast.FC['Poisonga'] = set_combine(sets.SIRD, {})
 
   -- Add quick magic
   sets.precast.FC.Trust = set_combine(sets.precast.FC, {
@@ -592,9 +592,9 @@ function init_gear_sets()
     feet=gear.Nyame_B_feet,
   }
 
-  sets.midcast.FastRecast = sets.precast.FC
+  sets.midcast.FastRecast = set_combine(sets.precast.FC, {})
 
-  sets.midcast.Silence = sets.HybridAcc
+  sets.midcast.Silence = set_combine(sets.HybridAcc, {})
 
   sets.midcast['Enhancing Magic'] = {
     ammo="Staunch Tathlum +1",                      --  3/ 3, ___ [___] (__, __)
@@ -660,7 +660,7 @@ function init_gear_sets()
     -- 62 Total Phalanx
   })
 
-  sets.midcast['Aquaveil'] = sets.SIRD
+  sets.midcast['Aquaveil'] = set_combine(sets.SIRD, {})
 
   -- Regen 4 base potency 30 hp/tic. Base duration 60s.
   sets.midcast['Regen'] = {
@@ -729,24 +729,24 @@ function init_gear_sets()
     waist="Audumbla Sash",                          --  4/__, ___ [___] (__, __)
     -- 38 PDT/28 MDT, 557 M.Eva [1190 HP] (70 Enh Duration, N/A Enh Skill)
   }
-  sets.midcast.Shell = sets.midcast.Protect
+  sets.midcast.Shell = set_combine(sets.midcast.Protect, {})
 
-  sets.midcast.Flash = sets.Enmity
-  sets.midcast.Foil = sets.Enmity
-  sets.midcast.Stun = sets.Enmity
+  sets.midcast.Flash = set_combine(sets.Enmity, {})
+  sets.midcast.Foil = set_combine(sets.Enmity, {})
+  sets.midcast.Stun = set_combine(sets.Enmity, {})
 
-  sets.midcast.Utsusemi = sets.SIRD
-  sets.midcast['Geist Wall'] = sets.SIRD
+  sets.midcast.Utsusemi = set_combine(sets.SIRD, {})
+  sets.midcast['Geist Wall'] = set_combine(sets.SIRD, {})
   sets.midcast['Bomb Toss'] = set_combine(sets.SIRD, sets.TreasureHunter)
-  sets.midcast['Poisonga'] = sets.SIRD
+  sets.midcast['Poisonga'] = set_combine(sets.SIRD, {})
 
-  sets.midcast['Dia'] = sets.SIRD
-  sets.midcast['Dia II'] = sets.SIRD
-  sets.midcast['Diaga'] = sets.SIRD
+  sets.midcast['Dia'] = set_combine(sets.SIRD, {})
+  sets.midcast['Dia II'] = set_combine(sets.SIRD, {})
+  sets.midcast['Diaga'] = set_combine(sets.SIRD, {})
 
   sets.midcast['Blue Magic'] = {}
-  sets.midcast['Blue Magic'].Enmity = sets.Enmity
-  sets.midcast['Blue Magic'].Buffs = sets.SIRD
+  sets.midcast['Blue Magic'].Enmity = set_combine(sets.Enmity, {})
+  sets.midcast['Blue Magic'].Buffs = set_combine(sets.SIRD, {})
   sets.midcast['Blue Magic'].Cure = {
     ring1="Lebeche Ring", -- 3
     waist="Gishdubar Sash", --(10)
@@ -787,7 +787,7 @@ function init_gear_sets()
     waist="Fotia Belt",
   }
 
-  sets.precast.WS.Safe = sets.Enmity
+  sets.precast.WS.Safe = set_combine(sets.Enmity, {})
 
   -- 85% STR mod, 0.718-2.25 FTP, ftp replicating
   sets.precast.WS['Resolution'] = set_combine(sets.precast.WS, {
@@ -910,29 +910,29 @@ function init_gear_sets()
     waist="Olseni Belt",
   })
   sets.precast.WS['Steel Cyclone'].Safe = set_combine(sets.precast.WS.Safe, {})
-  sets.precast.WS['Steel Cyclone'].MaxTP = sets.precast.WS['Steel Cyclone'].MaxTP
-  sets.precast.WS['Steel Cyclone'].LowAcc = sets.precast.WS['Steel Cyclone'].LowAcc
-  sets.precast.WS['Steel Cyclone'].LowAccMaxTP = sets.precast.WS['Steel Cyclone'].LowAccMaxTP
-  sets.precast.WS['Steel Cyclone'].MidAcc = sets.precast.WS['Steel Cyclone'].MidAcc
-  sets.precast.WS['Steel Cyclone'].MidAccMaxTP = sets.precast.WS['Steel Cyclone'].MidAccMaxTP
-  sets.precast.WS['Steel Cyclone'].HighAcc = sets.precast.WS['Steel Cyclone'].HighAcc
-  sets.precast.WS['Steel Cyclone'].HighAccMaxTP = sets.precast.WS['Steel Cyclone'].HighAccMaxTP
+  sets.precast.WS['Steel Cyclone'].MaxTP = set_combine(sets.precast.WS['Steel Cyclone'].MaxTP, {})
+  sets.precast.WS['Steel Cyclone'].LowAcc = set_combine(sets.precast.WS['Steel Cyclone'].LowAcc, {})
+  sets.precast.WS['Steel Cyclone'].LowAccMaxTP = set_combine(sets.precast.WS['Steel Cyclone'].LowAccMaxTP, {})
+  sets.precast.WS['Steel Cyclone'].MidAcc = set_combine(sets.precast.WS['Steel Cyclone'].MidAcc, {})
+  sets.precast.WS['Steel Cyclone'].MidAccMaxTP = set_combine(sets.precast.WS['Steel Cyclone'].MidAccMaxTP, {})
+  sets.precast.WS['Steel Cyclone'].HighAcc = set_combine(sets.precast.WS['Steel Cyclone'].HighAcc, {})
+  sets.precast.WS['Steel Cyclone'].HighAccMaxTP = set_combine(sets.precast.WS['Steel Cyclone'].HighAccMaxTP, {})
 
-  sets.precast.WS['Upheaval'] =  sets.precast.WS['Steel Cyclone']
-  sets.precast.WS['Upheaval'].Safe = sets.precast.WS['Steel Cyclone'].Safe
-  sets.precast.WS['Upheaval'].MaxTP = sets.precast.WS['Steel Cyclone'].MaxTP
-  sets.precast.WS['Upheaval'].LowAcc = sets.precast.WS['Steel Cyclone'].LowAcc
-  sets.precast.WS['Upheaval'].LowAccMaxTP = sets.precast.WS['Steel Cyclone'].LowAccMaxTP
-  sets.precast.WS['Upheaval'].MidAcc = sets.precast.WS['Steel Cyclone'].MidAcc
-  sets.precast.WS['Upheaval'].MidAccMaxTP = sets.precast.WS['Steel Cyclone'].MidAccMaxTP
-  sets.precast.WS['Upheaval'].HighAcc = sets.precast.WS['Steel Cyclone'].HighAcc
-  sets.precast.WS['Upheaval'].HighAccMaxTP = sets.precast.WS['Steel Cyclone'].HighAccMaxTP
+  sets.precast.WS['Upheaval'] = set_combine(sets.precast.WS['Steel Cyclone'], {})
+  sets.precast.WS['Upheaval'].Safe = set_combine(sets.precast.WS['Steel Cyclone'].Safe, {})
+  sets.precast.WS['Upheaval'].MaxTP = set_combine(sets.precast.WS['Steel Cyclone'].MaxTP, {})
+  sets.precast.WS['Upheaval'].LowAcc = set_combine(sets.precast.WS['Steel Cyclone'].LowAcc, {})
+  sets.precast.WS['Upheaval'].LowAccMaxTP = set_combine(sets.precast.WS['Steel Cyclone'].LowAccMaxTP, {})
+  sets.precast.WS['Upheaval'].MidAcc = set_combine(sets.precast.WS['Steel Cyclone'].MidAcc, {})
+  sets.precast.WS['Upheaval'].MidAccMaxTP = set_combine(sets.precast.WS['Steel Cyclone'].MidAccMaxTP, {})
+  sets.precast.WS['Upheaval'].HighAcc = set_combine(sets.precast.WS['Steel Cyclone'].HighAcc, {})
+  sets.precast.WS['Upheaval'].HighAccMaxTP = set_combine(sets.precast.WS['Steel Cyclone'].HighAccMaxTP, {})
 
   -- Magic accuracy required for Shockwave
   sets.precast.WS['Shockwave'] = set_combine(sets.HybridAcc, {
     ear2="Moonshade Earring",
   })
-  sets.precast.WS['Shockwave'].Safe = sets.Enmity
+  sets.precast.WS['Shockwave'].Safe = set_combine(sets.Enmity, {})
   sets.precast.WS['Shockwave'].MaxTP = set_combine(sets.precast.WS['Shockwave'], {
     ear2="Erilaz Earring",
     -- ear2="Crepuscular Earring", -- 10, 10
@@ -953,45 +953,45 @@ function init_gear_sets()
     -- ear2="Crepuscular Earring", -- 10, 10
   })
 
-  sets.precast.WS['Herculean Slash'] = sets.precast.WS['Shockwave']
-  sets.precast.WS['Herculean Slash'].Safe = sets.precast.WS['Shockwave'].Safe
-  sets.precast.WS['Herculean Slash'].MaxTP = sets.precast.WS['Shockwave'].MaxTP
-  sets.precast.WS['Herculean Slash'].LowAcc = sets.precast.WS['Shockwave'].LowAcc
-  sets.precast.WS['Herculean Slash'].LowAccMaxTP = sets.precast.WS['Shockwave'].LowAccMaxTP
-  sets.precast.WS['Herculean Slash'].MidAcc = sets.precast.WS['Shockwave'].MidAcc
-  sets.precast.WS['Herculean Slash'].MidAccMaxTP = sets.precast.WS['Shockwave'].MidAccMaxTP
-  sets.precast.WS['Herculean Slash'].HighAcc = sets.precast.WS['Shockwave'].HighAcc
-  sets.precast.WS['Herculean Slash'].HighAccMaxTP = sets.precast.WS['Shockwave'].HighAccMaxTP
+  sets.precast.WS['Herculean Slash'] = set_combine(sets.precast.WS['Shockwave'], {})
+  sets.precast.WS['Herculean Slash'].Safe = set_combine(sets.precast.WS['Shockwave'].Safe, {})
+  sets.precast.WS['Herculean Slash'].MaxTP = set_combine(sets.precast.WS['Shockwave'].MaxTP, {})
+  sets.precast.WS['Herculean Slash'].LowAcc = set_combine(sets.precast.WS['Shockwave'].LowAcc, {})
+  sets.precast.WS['Herculean Slash'].LowAccMaxTP = set_combine(sets.precast.WS['Shockwave'].LowAccMaxTP, {})
+  sets.precast.WS['Herculean Slash'].MidAcc = set_combine(sets.precast.WS['Shockwave'].MidAcc, {})
+  sets.precast.WS['Herculean Slash'].MidAccMaxTP = set_combine(sets.precast.WS['Shockwave'].MidAccMaxTP, {})
+  sets.precast.WS['Herculean Slash'].HighAcc = set_combine(sets.precast.WS['Shockwave'].HighAcc, {})
+  sets.precast.WS['Herculean Slash'].HighAccMaxTP = set_combine(sets.precast.WS['Shockwave'].HighAccMaxTP, {})
 
-  sets.precast.WS['Armor Break'] = sets.precast.WS['Shockwave']
-  sets.precast.WS['Armor Break'].Safe = sets.precast.WS['Shockwave'].Safe
-  sets.precast.WS['Armor Break'].MaxTP = sets.precast.WS['Shockwave'].MaxTP
-  sets.precast.WS['Armor Break'].LowAcc = sets.precast.WS['Shockwave'].LowAcc
-  sets.precast.WS['Armor Break'].LowAccMaxTP = sets.precast.WS['Shockwave'].LowAccMaxTP
-  sets.precast.WS['Armor Break'].MidAcc = sets.precast.WS['Shockwave'].MidAcc
-  sets.precast.WS['Armor Break'].MidAccMaxTP = sets.precast.WS['Shockwave'].MidAccMaxTP
-  sets.precast.WS['Armor Break'].HighAcc = sets.precast.WS['Shockwave'].HighAcc
-  sets.precast.WS['Armor Break'].HighAccMaxTP = sets.precast.WS['Shockwave'].HighAccMaxTP
+  sets.precast.WS['Armor Break'] = set_combine(sets.precast.WS['Shockwave'], {})
+  sets.precast.WS['Armor Break'].Safe = set_combine(sets.precast.WS['Shockwave'].Safe, {})
+  sets.precast.WS['Armor Break'].MaxTP = set_combine(sets.precast.WS['Shockwave'].MaxTP, {})
+  sets.precast.WS['Armor Break'].LowAcc = set_combine(sets.precast.WS['Shockwave'].LowAcc, {})
+  sets.precast.WS['Armor Break'].LowAccMaxTP = set_combine(sets.precast.WS['Shockwave'].LowAccMaxTP, {})
+  sets.precast.WS['Armor Break'].MidAcc = set_combine(sets.precast.WS['Shockwave'].MidAcc, {})
+  sets.precast.WS['Armor Break'].MidAccMaxTP = set_combine(sets.precast.WS['Shockwave'].MidAccMaxTP, {})
+  sets.precast.WS['Armor Break'].HighAcc = set_combine(sets.precast.WS['Shockwave'].HighAcc, {})
+  sets.precast.WS['Armor Break'].HighAccMaxTP = set_combine(sets.precast.WS['Shockwave'].HighAccMaxTP, {})
 
-  sets.precast.WS['Weapon Break'] = sets.precast.WS['Shockwave']
-  sets.precast.WS['Weapon Break'].Safe = sets.precast.WS['Shockwave'].Safe
-  sets.precast.WS['Weapon Break'].MaxTP = sets.precast.WS['Shockwave'].MaxTP
-  sets.precast.WS['Weapon Break'].LowAcc = sets.precast.WS['Shockwave'].LowAcc
-  sets.precast.WS['Weapon Break'].LowAccMaxTP = sets.precast.WS['Shockwave'].LowAccMaxTP
-  sets.precast.WS['Weapon Break'].MidAcc = sets.precast.WS['Shockwave'].MidAcc
-  sets.precast.WS['Weapon Break'].MidAccMaxTP = sets.precast.WS['Shockwave'].MidAccMaxTP
-  sets.precast.WS['Weapon Break'].HighAcc = sets.precast.WS['Shockwave'].HighAcc
-  sets.precast.WS['Weapon Break'].HighAccMaxTP = sets.precast.WS['Shockwave'].HighAccMaxTP
+  sets.precast.WS['Weapon Break'] = set_combine(sets.precast.WS['Shockwave'], {})
+  sets.precast.WS['Weapon Break'].Safe = set_combine(sets.precast.WS['Shockwave'].Safe, {})
+  sets.precast.WS['Weapon Break'].MaxTP = set_combine(sets.precast.WS['Shockwave'].MaxTP, {})
+  sets.precast.WS['Weapon Break'].LowAcc = set_combine(sets.precast.WS['Shockwave'].LowAcc, {})
+  sets.precast.WS['Weapon Break'].LowAccMaxTP = set_combine(sets.precast.WS['Shockwave'].LowAccMaxTP, {})
+  sets.precast.WS['Weapon Break'].MidAcc = set_combine(sets.precast.WS['Shockwave'].MidAcc, {})
+  sets.precast.WS['Weapon Break'].MidAccMaxTP = set_combine(sets.precast.WS['Shockwave'].MidAccMaxTP, {})
+  sets.precast.WS['Weapon Break'].HighAcc = set_combine(sets.precast.WS['Shockwave'].HighAcc, {})
+  sets.precast.WS['Weapon Break'].HighAccMaxTP = set_combine(sets.precast.WS['Shockwave'].HighAccMaxTP, {})
 
-  sets.precast.WS['Full Break'] = sets.precast.WS['Shockwave']
-  sets.precast.WS['Full Break'].Safe = sets.precast.WS['Shockwave'].Safe
-  sets.precast.WS['Full Break'].MaxTP = sets.precast.WS['Shockwave'].MaxTP
-  sets.precast.WS['Full Break'].LowAcc = sets.precast.WS['Shockwave'].LowAcc
-  sets.precast.WS['Full Break'].LowAccMaxTP = sets.precast.WS['Shockwave'].LowAccMaxTP
-  sets.precast.WS['Full Break'].MidAcc = sets.precast.WS['Shockwave'].MidAcc
-  sets.precast.WS['Full Break'].MidAccMaxTP = sets.precast.WS['Shockwave'].MidAccMaxTP
-  sets.precast.WS['Full Break'].HighAcc = sets.precast.WS['Shockwave'].HighAcc
-  sets.precast.WS['Full Break'].HighAccMaxTP = sets.precast.WS['Shockwave'].HighAccMaxTP
+  sets.precast.WS['Full Break'] = set_combine(sets.precast.WS['Shockwave'], {})
+  sets.precast.WS['Full Break'].Safe = set_combine(sets.precast.WS['Shockwave'].Safe, {})
+  sets.precast.WS['Full Break'].MaxTP = set_combine(sets.precast.WS['Shockwave'].MaxTP, {})
+  sets.precast.WS['Full Break'].LowAcc = set_combine(sets.precast.WS['Shockwave'].LowAcc, {})
+  sets.precast.WS['Full Break'].LowAccMaxTP = set_combine(sets.precast.WS['Shockwave'].LowAccMaxTP, {})
+  sets.precast.WS['Full Break'].MidAcc = set_combine(sets.precast.WS['Shockwave'].MidAcc, {})
+  sets.precast.WS['Full Break'].MidAccMaxTP = set_combine(sets.precast.WS['Shockwave'].MidAccMaxTP, {})
+  sets.precast.WS['Full Break'].HighAcc = set_combine(sets.precast.WS['Shockwave'].HighAcc, {})
+  sets.precast.WS['Full Break'].HighAccMaxTP = set_combine(sets.precast.WS['Shockwave'].HighAccMaxTP, {})
 
   sets.precast.WS['Freezebite'] = set_combine(sets.HeavyDef, sets.TreasureHunter)
 
@@ -1040,13 +1040,13 @@ function init_gear_sets()
     -- 217 STR, 176 MND, 391 Attack, 255 Accuracy, 74 WSD, 0 PDL, 250 TP Bonus, 70PDT/54MDT [915HP]
   }
 
-  sets.precast.WS['Savage Blade'].MaxTP = sets.precast.WS['Savage Blade'].MaxTP
-  sets.precast.WS['Savage Blade'].LowAcc = sets.precast.WS['Savage Blade'].LowAcc
-  sets.precast.WS['Savage Blade'].LowAccMaxTP = sets.precast.WS['Savage Blade'].LowAccMaxTP
-  sets.precast.WS['Savage Blade'].MidAcc = sets.precast.WS['Savage Blade'].MidAcc
-  sets.precast.WS['Savage Blade'].MidAccMaxTP = sets.precast.WS['Savage Blade'].MidAccMaxTP
-  sets.precast.WS['Savage Blade'].HighAcc = sets.precast.WS['Savage Blade'].HighAcc
-  sets.precast.WS['Savage Blade'].HighAccMaxTP = sets.precast.WS['Savage Blade'].HighAccMaxTP
+  sets.precast.WS['Savage Blade'].MaxTP = set_combine(sets.precast.WS['Savage Blade'].MaxTP, {})
+  sets.precast.WS['Savage Blade'].LowAcc = set_combine(sets.precast.WS['Savage Blade'].LowAcc, {})
+  sets.precast.WS['Savage Blade'].LowAccMaxTP = set_combine(sets.precast.WS['Savage Blade'].LowAccMaxTP, {})
+  sets.precast.WS['Savage Blade'].MidAcc = set_combine(sets.precast.WS['Savage Blade'].MidAcc, {})
+  sets.precast.WS['Savage Blade'].MidAccMaxTP = set_combine(sets.precast.WS['Savage Blade'].MidAccMaxTP, {})
+  sets.precast.WS['Savage Blade'].HighAcc = set_combine(sets.precast.WS['Savage Blade'].HighAcc, {})
+  sets.precast.WS['Savage Blade'].HighAccMaxTP = set_combine(sets.precast.WS['Savage Blade'].HighAccMaxTP, {})
 
 
   ------------------------------------------------------------------------------------------------
@@ -1132,7 +1132,7 @@ function init_gear_sets()
     waist="Fucho-no-Obi",
   })
 
-  sets.idle = sets.defense.MDT
+  sets.idle = set_combine(sets.defense.MDT, {})
 
   sets.idle.Regain = set_combine(sets.idle, sets.latent_regain)
   sets.idle.Regen = set_combine(sets.idle, sets.latent_regen)
@@ -1159,7 +1159,7 @@ function init_gear_sets()
   sets.idle.LightDef.Regain.Regen.Refresh = set_combine(sets.idle.Regain.Regen.Refresh, sets.LightDef)
   sets.idle.LightDef.Regain.Regen.RefreshSub50 = set_combine(sets.idle.Regain.Regen.RefreshSub50, sets.LightDef)
 
-  sets.idle.Weak = sets.defense.MDT
+  sets.idle.Weak = set_combine(sets.defense.MDT, {})
 
 
   ------------------------------------------------------------------------------------------------
@@ -1183,9 +1183,9 @@ function init_gear_sets()
     back=gear.RUN_TP_Cape,      -- 10/__, ___ [___] __, 10 <__, __, __> 30
     -- 49 PDT / 39 MDT, 527 MEVA [618 HP] 32 Haste, 51 STP <30 DA, 7 TA, 0 QA> 300 Acc
   }
-  sets.engaged.LowAcc.LightDef = sets.engaged.LightDef
-  sets.engaged.MidAcc.LightDef = sets.engaged.LightDef
-  sets.engaged.HighAcc.LightDef = sets.engaged.LightDef
+  sets.engaged.LowAcc.LightDef = set_combine(sets.engaged.LightDef, {})
+  sets.engaged.MidAcc.LightDef = set_combine(sets.engaged.LightDef, {})
+  sets.engaged.HighAcc.LightDef = set_combine(sets.engaged.LightDef, {})
 
   -- TODO: Needs updating
   sets.engaged.Aftermath.LightDef = {

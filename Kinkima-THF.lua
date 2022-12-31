@@ -378,9 +378,9 @@ function init_gear_sets()
     -- Traits/Merits/Gifts              -- __, __, __, __ <__, 19, __> [__/__, ___] __
     -- 238 AGI, 0 WSD, 248 Att, 31 TA Dmg <15 DA, 56 TA, 0 QA> [10 PDT/0 MDT, 404 M.Eva] 10 PDL
   }
-  sets.precast.WS['Exenterator'].MaxTP = sets.precast.WS['Exenterator']
-  sets.precast.WS['Exenterator'].AttCapped = sets.precast.WS['Exenterator']
-  sets.precast.WS['Exenterator'].AttCappedMaxTP = sets.precast.WS['Exenterator'].AttCapped
+  sets.precast.WS['Exenterator'].MaxTP = set_combine(sets.precast.WS['Exenterator'], {})
+  sets.precast.WS['Exenterator'].AttCapped = set_combine(sets.precast.WS['Exenterator'], {})
+  sets.precast.WS['Exenterator'].AttCappedMaxTP = set_combine(sets.precast.WS['Exenterator'].AttCapped, {})
   
   -- 50% DEX, 1.25 FTP, can crit, ftp replicating
   sets.precast.WS['Evisceration'] = {
@@ -514,8 +514,8 @@ function init_gear_sets()
 
   -- 40% DEX / 40% AGI; fTP 4.5-8.5
   -- Since it uses dex and agi, lustratio is not ideal
-  sets.precast.WS["Shark Bite"] = sets.precast.WS["Rudra's Storm"]
-  sets.precast.WS["Shark Bite"].MaxTP = sets.precast.WS["Rudra's Storm"].MaxTP
+  sets.precast.WS["Shark Bite"] = set_combine(sets.precast.WS["Rudra's Storm"], {})
+  sets.precast.WS["Shark Bite"].MaxTP = set_combine(sets.precast.WS["Rudra's Storm"].MaxTP, {})
   sets.precast.WS["Shark Bite"].AttCapped = set_combine(sets.precast.WS["Rudra's Storm"].AttCapped, {
     feet=gear.Nyame_B_feet,             -- 26, 11, 65 [ 7/ 7, 150] __
     -- legs="Plunderer's Culottes +3",  -- 21,  6, 64 [__/__,  89] __
@@ -525,10 +525,10 @@ function init_gear_sets()
     -- legs="Plunderer's Culottes +3",  -- 21,  6, 64 [__/__,  89] __
   })
 
-  sets.precast.WS['Mandalic Stab'] = sets.precast.WS["Rudra's Storm"]
-  sets.precast.WS['Mandalic Stab'].MaxTP = sets.precast.WS["Rudra's Storm"].MaxTP
-  sets.precast.WS['Mandalic Stab'].AttCapped = sets.precast.WS["Rudra's Storm"].AttCapped
-  sets.precast.WS['Mandalic Stab'].AttCappedMaxTP = sets.precast.WS["Rudra's Storm"].AttCappedMaxTP
+  sets.precast.WS['Mandalic Stab'] = set_combine(sets.precast.WS["Rudra's Storm"], {})
+  sets.precast.WS['Mandalic Stab'].MaxTP = set_combine(sets.precast.WS["Rudra's Storm"].MaxTP, {})
+  sets.precast.WS['Mandalic Stab'].AttCapped = set_combine(sets.precast.WS["Rudra's Storm"].AttCapped, {})
+  sets.precast.WS['Mandalic Stab'].AttCappedMaxTP = set_combine(sets.precast.WS["Rudra's Storm"].AttCappedMaxTP, {})
   
   -- 40% DEX / 40% INT + MAB
   sets.precast.WS['Aeolian Edge'] = {
@@ -552,7 +552,7 @@ function init_gear_sets()
   sets.precast.WS['Aeolian Edge'].MaxTP = set_combine(sets.precast.WS['Aeolian Edge'], {
     ear2="Novio Earring",               -- __, __, __,  7 [__/__, ___]
   })
-  sets.precast.WS['Aeolian Edge'].AttCapped = sets.precast.WS['Aeolian Edge']
+  sets.precast.WS['Aeolian Edge'].AttCapped = set_combine(sets.precast.WS['Aeolian Edge'], {})
   sets.precast.WS['Aeolian Edge'].AttCappedMaxTP = set_combine(sets.precast.WS['Aeolian Edge'], {
     ear2="Novio Earring",               -- __, __, __,  7 [__/__, ___]
   })
@@ -613,7 +613,7 @@ function init_gear_sets()
   ---------------------------------------- Midcast Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
 
-  sets.midcast.FastRecast = sets.precast.FC
+  sets.midcast.FastRecast = set_combine(sets.precast.FC, {})
 
   -- Initializes trusts at ilvl 119
   sets.midcast.Trust = {
@@ -699,7 +699,7 @@ function init_gear_sets()
     -- waist="Engraved Belt",      -- __/__, ___
     -- 54 PDT/46 MDT, 697 MEVA
   }
-  sets.defense.MDT = sets.defense.PDT
+  sets.defense.MDT = set_combine(sets.defense.PDT, {})
 
 
   ------------------------------------------------------------------------------------------------
@@ -741,7 +741,7 @@ function init_gear_sets()
     -- 63 PDT/26 MDT, 533 M.Eva
   }
 
-  sets.idle.Regain = sets.idle
+  sets.idle.Regain = set_combine(sets.idle, {})
   sets.idle.Regen = set_combine(sets.idle, sets.latent_regen)
   sets.idle.Refresh = set_combine(sets.idle, sets.latent_refresh)
   sets.idle.Regain.Regen = set_combine(sets.idle, sets.latent_regen)

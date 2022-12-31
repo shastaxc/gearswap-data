@@ -447,7 +447,7 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   -- General set for recast times.
-  sets.midcast.FastRecast = sets.precast.FC
+  sets.midcast.FastRecast = set_combine(sets.precast.FC, {})
 
   -- Initializes trusts at iLvl 119
   sets.midcast.Trust = {
@@ -606,7 +606,7 @@ function init_gear_sets()
     -- 50 CP, 174 Heal Skill, 23 Conserve MP, 272 MND
   }
 
-  sets.midcast.Curaga = sets.midcast.Cure
+  sets.midcast.Curaga = set_combine(sets.midcast.Cure, {})
 
   -- Removal rate = Base Rate * (1+(y/100))
   -- Base rate = (10+(Healing Skill / 30)); y = Cursna+ stat from gear
@@ -651,7 +651,7 @@ function init_gear_sets()
   sets.midcast.Regen = set_combine(sets.midcast['Enhancing Magic'], {
     -- head="Inyanga Tiara +2",
   })
-  sets.midcast.Haste = sets.midcast['Enhancing Magic']
+  sets.midcast.Haste = set_combine(sets.midcast['Enhancing Magic'], {})
   sets.midcast.Refresh = set_combine(sets.midcast['Enhancing Magic'], {
     waist="Gishdubar Sash",
     -- back="Grapevine Cape",
@@ -669,9 +669,9 @@ function init_gear_sets()
   sets.midcast.Protect = set_combine(sets.midcast['Enhancing Magic'], {
     -- ring2="Sheltered Ring",
   })
-  sets.midcast.Protectra = sets.midcast.Protect
-  sets.midcast.Shell = sets.midcast.Protect
-  sets.midcast.Shellra = sets.midcast.Shell
+  sets.midcast.Protectra = set_combine(sets.midcast.Protect, {})
+  sets.midcast.Shell = set_combine(sets.midcast.Protect, {})
+  sets.midcast.Shellra = set_combine(sets.midcast.Shell, {})
 
   sets.midcast['Enfeebling Magic'] = {
     ear1="Digni. Earring",        -- ___, 10, __, __
@@ -756,7 +756,7 @@ function init_gear_sets()
     -- 94 PDT, 78 MDT, 646 MEVA
   }
 
-  sets.idle = sets.HeavyDef
+  sets.idle = set_combine(sets.HeavyDef, {})
   sets.idle.Regain = set_combine(sets.idle, sets.latent_regain)
   sets.idle.Regen = set_combine(sets.idle, sets.latent_regen)
   sets.idle.Refresh = set_combine(sets.idle, sets.latent_refresh)
@@ -770,16 +770,16 @@ function init_gear_sets()
   sets.idle.Regain.Regen.RefreshSub50 = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh_sub50)
 
   -- DT mode disables move speed, regain, regen, refresh
-  sets.idle.DT = sets.HeavyDef
+  sets.idle.DT = set_combine(sets.HeavyDef, {})
   
-  sets.idle.Weak = sets.HeavyDef
+  sets.idle.Weak = set_combine(sets.HeavyDef, {})
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Defense Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
 
-  sets.defense.PDT = sets.HeavyDef
-  sets.defense.MDT = sets.HeavyDef
+  sets.defense.PDT = set_combine(sets.HeavyDef, {})
+  sets.defense.MDT = set_combine(sets.HeavyDef, {})
 
 
   ------------------------------------------------------------------------------------------------
@@ -918,12 +918,12 @@ function init_gear_sets()
   })
 
   -- High DW (31 needed from gear)
-  sets.engaged.HighDW = sets.engaged.MidDW
-  sets.engaged.HighDW.Acc = sets.engaged.MidDW.Acc
+  sets.engaged.HighDW = set_combine(sets.engaged.MidDW, {})
+  sets.engaged.HighDW.Acc = set_combine(sets.engaged.MidDW.Acc, {})
 
   -- Super DW (42 needed from gear)
-  sets.engaged.SuperDW = sets.engaged.HighDW
-  sets.engaged.SuperDW.Acc = sets.engaged.HighDW.Acc
+  sets.engaged.SuperDW = set_combine(sets.engaged.HighDW, {})
+  sets.engaged.SuperDW.Acc = set_combine(sets.engaged.HighDW.Acc, {})
 
   -- Max DW (49 needed from gear)
   sets.engaged.MaxDW = {

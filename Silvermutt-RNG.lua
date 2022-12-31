@@ -417,9 +417,9 @@ function init_gear_sets()
     -- Flurry (weapons/magic)          40/__
     -- 77 Snapshot / 99 Rapid Shot [25 PDT/15 MDT, 406 M.Eva] {12% Velocity Shot}
   }
-  sets.precast.RA.Flurry50 = sets.precast.RA.Flurry40
-  sets.precast.RA.Flurry55 = sets.precast.RA.Flurry40
-  sets.precast.RA.Flurry65 = sets.precast.RA.Flurry40
+  sets.precast.RA.Flurry50 = set_combine(sets.precast.RA.Flurry40, {})
+  sets.precast.RA.Flurry55 = set_combine(sets.precast.RA.Flurry40, {})
+  sets.precast.RA.Flurry65 = set_combine(sets.precast.RA.Flurry40, {})
 
   -- Snapshot (70% cap) > Velocity Shot (no cap) > Rapid Shot (99% cap)
   sets.precast.RA.Velocity = {
@@ -557,9 +557,9 @@ function init_gear_sets()
     -- neck="Scout's Gorget +2",    --  4/__ [__/__, ___] {__}
     -- 75 Snapshot / 98 Rapid Shot [25 PDT/15 MDT, 413 M.Eva] {38% Velocity Shot}
   }
-  sets.precast.RA.Flurry50.Velocity = sets.precast.RA.Flurry40.Velocity
-  sets.precast.RA.Flurry55.Velocity = sets.precast.RA.Flurry40.Velocity
-  sets.precast.RA.Flurry65.Velocity = sets.precast.RA.Flurry40.Velocity
+  sets.precast.RA.Flurry50.Velocity = set_combine(sets.precast.RA.Flurry40.Velocity, {})
+  sets.precast.RA.Flurry55.Velocity = set_combine(sets.precast.RA.Flurry40.Velocity, {})
+  sets.precast.RA.Flurry65.Velocity = set_combine(sets.precast.RA.Flurry40.Velocity, {})
 
 
 
@@ -593,7 +593,7 @@ function init_gear_sets()
     ear2="Telos Earring",
   })
 
-  sets.precast.WS['Apex Arrow'] = sets.precast.WS
+  sets.precast.WS['Apex Arrow'] = set_combine(sets.precast.WS, {})
   sets.precast.WS['Apex Arrow'].MaxTP = set_combine(sets.precast.WS['Apex Arrow'], {
   })
   sets.precast.WS['Apex Arrow'].HighAcc = set_combine(sets.precast.WS['Apex Arrow'], {
@@ -783,9 +783,9 @@ function init_gear_sets()
   sets.precast.WS['Rampage'] = set_combine(sets.precast.WS['Evisceration'], {
     feet=gear.Herc_TA_feet
   })
-  sets.precast.WS['Rampage'].MaxTP = sets.precast.WS['Evisceration']
-  sets.precast.WS['Rampage'].HighAcc = sets.precast.WS['Evisceration']
-  sets.precast.WS['Rampage'].HighAccMaxTP = sets.precast.WS['Evisceration'].HighAcc
+  sets.precast.WS['Rampage'].MaxTP = set_combine(sets.precast.WS['Evisceration'], {})
+  sets.precast.WS['Rampage'].HighAcc = set_combine(sets.precast.WS['Evisceration'], {})
+  sets.precast.WS['Rampage'].HighAccMaxTP = set_combine(sets.precast.WS['Evisceration'].HighAcc, {})
 
   sets.precast.WS["Aeolian Edge"] = set_combine(sets.precast.WS["Trueflight"], {
     neck="Baetyl Pendant", --13
@@ -809,7 +809,7 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   -- Fast recast for spells
-  sets.midcast.FastRecast = sets.precast.FC
+  sets.midcast.FastRecast = set_combine(sets.precast.FC, {})
 
   -- Initializes trusts at iLvl 119
   sets.midcast.Trust = {
@@ -935,8 +935,8 @@ function init_gear_sets()
     waist="Carrier's Sash",     -- __/__, ___
   } -- 50 PDT / 52 MDT, 697 MEVA
 
-  sets.defense.PDT = sets.HeavyDef
-  sets.defense.MDT = sets.HeavyDef
+  sets.defense.PDT = set_combine(sets.HeavyDef, {})
+  sets.defense.MDT = set_combine(sets.HeavyDef, {})
 
 
   ------------------------------------------------------------------------------------------------
@@ -962,7 +962,7 @@ function init_gear_sets()
   sets.resting = {}
 
   -- Idle sets
-  sets.idle = sets.HeavyDef
+  sets.idle = set_combine(sets.HeavyDef, {})
 
   sets.idle.Regain = set_combine(sets.idle, sets.latent_regain)
   sets.idle.Regen = set_combine(sets.idle, sets.latent_regen)
@@ -1489,7 +1489,7 @@ function init_gear_sets()
     body=gear.Herc_TH_body, --2
     hands=gear.Herc_TH_hands, --2
   }
-  sets.TreasureHunter.RA = sets.TreasureHunter
+  sets.TreasureHunter.RA = set_combine(sets.TreasureHunter, {})
 
   sets.Special.ElementalObi = {
     waist="Hachirin-no-Obi"

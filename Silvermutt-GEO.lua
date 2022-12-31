@@ -146,7 +146,7 @@ function init_gear_sets()
   sets.TreasureHunter = {
     waist="Chaac Belt", --1
   }
-  sets.TreasureHunter.RA = sets.TreasureHunter
+  sets.TreasureHunter.RA = set_combine(sets.TreasureHunter, {})
 
   --------------------------------------
   -- Precast sets
@@ -301,9 +301,9 @@ function init_gear_sets()
   -- Physical damage. 1 hit. Damage varies with TP.
   -- 50% MND / 50% STR; 3.5-12fTP
   -- TP Bonus > WSD > MND = STR
-  sets.precast.WS['Judgment'] = sets.precast.WS['Black Halo']
-  sets.precast.WS['Judgment'].MaxTP = sets.precast.WS['Black Halo'].MaxTP
-  sets.precast.WS['Judgment'].Safe = sets.precast.WS['Black Halo'].Safe
+  sets.precast.WS['Judgment'] = set_combine(sets.precast.WS['Black Halo'], {})
+  sets.precast.WS['Judgment'].MaxTP = set_combine(sets.precast.WS['Black Halo'].MaxTP, {})
+  sets.precast.WS['Judgment'].Safe = set_combine(sets.precast.WS['Black Halo'].Safe, {})
 
   -- Physical damage. 1 hit. Attack varies with TP.
   -- 50% MND / 50% INT; 1.5-4.75fTP
@@ -311,7 +311,7 @@ function init_gear_sets()
   sets.precast.WS['Exudiation'] = set_combine(sets.precast.WS['Black Halo'], {
     ear2="Ishvara Earring",
   })
-  sets.precast.WS['Exudiation'].MaxTP = sets.precast.WS['Exudiation']
+  sets.precast.WS['Exudiation'].MaxTP = set_combine(sets.precast.WS['Exudiation'], {})
   sets.precast.WS['Exudiation'].Safe = set_combine(sets.precast.WS['Black Halo'].Safe, {
     ear2="Ishvara Earring",
   })
@@ -377,7 +377,7 @@ function init_gear_sets()
     -- waist="Skrymir Cord +1",     --  7, 35, __, __, __, __/__ [__]
     -- 388 MAB, 397 M.Dmg, 184 MND, 137 STR, 0 WSD, 30PDT/10MDT [30PetDT]
   }
-  sets.precast.WS['Flash Nova'].MaxTP = sets.precast.WS['Flash Nova']
+  sets.precast.WS['Flash Nova'].MaxTP = set_combine(sets.precast.WS['Flash Nova'], {})
   sets.precast.WS['Flash Nova'].Safe = {
     -- Assume Idris                 -- 40,217, __, __, __, __/__ [25]
     -- Assume Genmei Shield         -- __, __, __, __, __, 10/__ [__]
@@ -459,7 +459,7 @@ function init_gear_sets()
   -- Midcast sets
   --------------------------------------
 
-  sets.midcast.FastRecast = sets.precast.FC
+  sets.midcast.FastRecast = set_combine(sets.precast.FC, {})
 
   -- Initializes trusts at iLvl 119
   sets.midcast.Trust = {
@@ -651,7 +651,7 @@ function init_gear_sets()
   })
 
   -- TODO: update
-  sets.midcast.Cursna = sets.midcast.CureNormal
+  sets.midcast.Cursna = set_combine(sets.midcast.CureNormal, {})
 
 
   sets.midcast['Elemental Magic'] = {
@@ -731,8 +731,8 @@ function init_gear_sets()
     -- waist="Fucho-no-Obi",
   })
 
-  sets.midcast.Aspir = sets.midcast.Drain
-  sets.midcast['Aspir III'] = sets.midcast.Drain
+  sets.midcast.Aspir = set_combine(sets.midcast.Drain, {})
+  sets.midcast['Aspir III'] = set_combine(sets.midcast.Drain, {})
 
   sets.midcast.Stun = {
     range="Dunna",
@@ -960,11 +960,11 @@ function init_gear_sets()
     -- waist="Obstinate Sash",        -- __,  5 [__/__, ___] {__/__, __}
     -- 4 TH, 45% Enf Duration [52 PDT/40 MDT, 566 M.Eva] {Pet: 30 PDT/30 MDT, 5 Regen}
   }
-  sets.midcast['Dia II'] = sets.midcast.Dia
-  sets.midcast['Diaga'] = sets.midcast.Dia
+  sets.midcast['Dia II'] = set_combine(sets.midcast.Dia, {})
+  sets.midcast['Diaga'] = set_combine(sets.midcast.Dia, {})
 
-  sets.midcast.Bio = sets.midcast.Dia
-  sets.midcast['Bio II'] = sets.midcast.Dia
+  sets.midcast.Bio = set_combine(sets.midcast.Dia, {})
+  sets.midcast['Bio II'] = set_combine(sets.midcast.Dia, {})
 
   sets.midcast['Enhancing Magic'] = {
     main="Idris",                     -- __, __, __ [__/__, ___] {25/25, __}
@@ -1120,10 +1120,10 @@ function init_gear_sets()
     -- Base                              __, 43
     -- 56 Enh Duration, 62 Conserve MP [50 PDT/40 MDT, 528 M.Eva] {Pet: 5 PDT/5 MDT, 11 Regen}
   }
-  sets.midcast.Protectra = sets.midcast.Protect
+  sets.midcast.Protectra = set_combine(sets.midcast.Protect, {})
   -- Shell+ gear, enh duration, conserve mp
-  sets.midcast.Shell = sets.midcast.Protect
-  sets.midcast.Shellra = sets.midcast.Protect
+  sets.midcast.Shell = set_combine(sets.midcast.Protect, {})
+  sets.midcast.Shellra = set_combine(sets.midcast.Protect, {})
 
 
   --------------------------------------
@@ -1193,7 +1193,7 @@ function init_gear_sets()
   }
 
   -- When you need to be safe (disables move speed gear)
-  sets.idle.HeavyDef = sets.idle
+  sets.idle.HeavyDef = set_combine(sets.idle, {})
 
   -- Pet -38% DT is needed in order to cap at -87.5% (has innate -50% DT)
   sets.idle.Pet = {
@@ -1234,20 +1234,20 @@ function init_gear_sets()
     -- 6 Refresh [50 PDT/25 MDT, 563 M.Eva] {Pet: 41 PDT/41 MDT, 26 Regen}
   }
 
-  sets.idle.HeavyDef.Pet = sets.idle.Pet
+  sets.idle.HeavyDef.Pet = set_combine(sets.idle.Pet, {})
 
   -- Handle refresh
-  sets.idle.Refresh = sets.idle
+  sets.idle.Refresh = set_combine(sets.idle, {})
   sets.idle.RefreshSub50 = set_combine(sets.idle, sets.passive_refresh_sub50)
-  sets.idle.Pet.Refresh = sets.idle.Pet
+  sets.idle.Pet.Refresh = set_combine(sets.idle.Pet, {})
   sets.idle.Pet.RefreshSub50 = set_combine(sets.idle.Pet, sets.passive_refresh_sub50)
 
-  sets.idle.HeavyDef.Refresh = sets.idle.HeavyDef
-  sets.idle.HeavyDef.RefreshSub50 = sets.idle.HeavyDef
-  sets.idle.HeavyDef.Pet.Refresh = sets.idle.HeavyDef.Pet
-  sets.idle.HeavyDef.Pet.RefreshSub50 = sets.idle.HeavyDef.Pet
+  sets.idle.HeavyDef.Refresh = set_combine(sets.idle.HeavyDef, {})
+  sets.idle.HeavyDef.RefreshSub50 = set_combine(sets.idle.HeavyDef, {})
+  sets.idle.HeavyDef.Pet.Refresh = set_combine(sets.idle.HeavyDef.Pet, {})
+  sets.idle.HeavyDef.Pet.RefreshSub50 = set_combine(sets.idle.HeavyDef.Pet, {})
 
-  sets.idle.Weak = sets.idle.HeavyDef.Pet
+  sets.idle.Weak = set_combine(sets.idle.HeavyDef.Pet, {})
 
   sets.resting = set_combine(sets.idle.HeavyDef.Pet, {
     main="Iridal Staff",
@@ -1260,8 +1260,8 @@ function init_gear_sets()
   -- Defense sets
   --------------------------------------
 
-  sets.defense.PDT = sets.idle.Pet
-  sets.defense.MDT = sets.idle.Pet
+  sets.defense.PDT = set_combine(sets.idle.Pet, {})
+  sets.defense.MDT = set_combine(sets.idle.Pet, {})
 
 
   --------------------------------------

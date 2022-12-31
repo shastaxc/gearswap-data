@@ -379,7 +379,7 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   -- Midcast Sets
-  sets.midcast.FastRecast = sets.precast.FC
+  sets.midcast.FastRecast = set_combine(sets.precast.FC, {})
   
   -- Cure sets
 
@@ -555,8 +555,8 @@ function init_gear_sets()
   }
 
   -- Cap over 960 power; Power = 3×MND + VIT + 3×floor( Healing Magic Skill÷5 )
-  sets.midcast.CuragaNormal = sets.midcast.CureNormal
-  sets.midcast.CuragaWeather = sets.midcast.CureWeather
+  sets.midcast.CuragaNormal = set_combine(sets.midcast.CureNormal, {})
+  sets.midcast.CuragaWeather = set_combine(sets.midcast.CureWeather, {})
 
   -- Removal rate = Base Rate * (1+(y/100))
   -- Base rate = (10+(Healing Skill / 30)); y = Cursna+ stat from gear
@@ -800,7 +800,7 @@ function init_gear_sets()
     -- feet="Ebers Duckbills +3", -- Auspice+19
   })
 
-  sets.midcast.Arise = sets.midcast.FastRecast
+  sets.midcast.Arise = set_combine(sets.midcast.FastRecast, {})
 
   -- Cap at 500 Enh magic skill
   sets.midcast.BarElement = {
@@ -921,7 +921,7 @@ function init_gear_sets()
     waist="Acuity Belt +1",           -- __, __, 15, __, 23 [__/__, ___]
   })
 
-  sets.midcast.Dia = sets.midcast.MndEnfeebles
+  sets.midcast.Dia = set_combine(sets.midcast.MndEnfeebles, {})
 
   sets.midcast.Dispelga = set_combine(sets.midcast.IntEnfeebles, {
     main="Daybreak",
@@ -993,14 +993,14 @@ function init_gear_sets()
     -- ear2="Ebers Earring +2",     --  8/ 8, ___ [__]
     -- 52 PDT / 27 MDT, 575 M.Eva [11 Refresh]
   }
-  sets.idle.Refresh = sets.idle
+  sets.idle.Refresh = set_combine(sets.idle, {})
   sets.idle.Refresh.MpSub50 = set_combine(sets.idle.Refresh, {
     waist="Fucho-no-Obi",
   })
   sets.idle.Sublimation = set_combine(sets.idle, {
     waist="Embla Sash",
   })
-  sets.idle.Sublimation.Refresh = sets.idle.Sublimation
+  sets.idle.Sublimation.Refresh = set_combine(sets.idle.Sublimation, {})
 
   
 ------------------------------------------------------------------------------------------------

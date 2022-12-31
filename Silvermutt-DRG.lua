@@ -212,11 +212,11 @@ function init_gear_sets()
     -- feet="Ostro Greaves",              -- __ < 2, __, __>; Jump TP +40
     -- 62 STP <21 DA, 5 TA, 3 QA>
   }
-  sets.precast.JA['High Jump'] = sets.precast.JA['Jump']
+  sets.precast.JA['High Jump'] = set_combine(sets.precast.JA['Jump'], {})
   sets.precast.JA['Spirit Jump'] = set_combine(sets.precast.JA['Jump'], {
     feet="Peltast's Schynbalds +1",
   })
-  sets.precast.JA['Soul Jump'] = sets.precast.JA['Jump']
+  sets.precast.JA['Soul Jump'] = set_combine(sets.precast.JA['Jump'], {})
   sets.precast.JA['Super Jump'] = {}
 
   sets.precast.JA['Angon'] = {
@@ -294,10 +294,10 @@ function init_gear_sets()
     -- 265 STR, 122 MND, 428 Att, 324 Acc, 59 WSD, 37 PDL
   })
   
-  sets.precast.WS["Savage Blade"] = sets.precast.WS
-  sets.precast.WS["Savage Blade"].MaxTP = sets.precast.WS.MaxTP
-  sets.precast.WS["Savage Blade"].AttCapped = sets.precast.WS.AttCapped
-  sets.precast.WS["Savage Blade"].AttCappedMaxTP = sets.precast.WS.AttCappedMaxTP
+  sets.precast.WS["Savage Blade"] = set_combine(sets.precast.WS, {})
+  sets.precast.WS["Savage Blade"].MaxTP = set_combine(sets.precast.WS.MaxTP, {})
+  sets.precast.WS["Savage Blade"].AttCapped = set_combine(sets.precast.WS.AttCapped, {})
+  sets.precast.WS["Savage Blade"].AttCappedMaxTP = set_combine(sets.precast.WS.AttCappedMaxTP, {})
 
   -- 85% STR; 0.75-1.75 fTP; 4 hit physical
   -- Multihit > WSD > STR
@@ -371,7 +371,7 @@ function init_gear_sets()
     -- ear2="Peltast's Earring +2",     -- 15, 15, __, 20, __,  9
     -- 264 STR, 218 VIT, 399 Att, 299 Acc, 83 WSD, 22 PDL
   }
-  sets.precast.WS["Camlann's Torment"].MaxTP = sets.precast.WS["Camlann's Torment"]
+  sets.precast.WS["Camlann's Torment"].MaxTP = set_combine(sets.precast.WS["Camlann's Torment"], {})
   sets.precast.WS["Camlann's Torment"].AttCapped = {
     ammo="Knobkierrie",                 -- __, __, 23, __,  6, __
     head=gear.Nyame_B_head,             -- 26, 24, 65, 50, 11, __
@@ -393,7 +393,7 @@ function init_gear_sets()
     -- ear2="Peltast's Earring +2",     -- 15, 15, __, 20, __,  9
     -- 265 STR, 215 VIT, 413 Att, 338 Acc, 59 WSD, 39 PDL
   }
-  sets.precast.WS["Camlann's Torment"].AttCappedMaxTP = sets.precast.WS["Camlann's Torment"].AttCapped
+  sets.precast.WS["Camlann's Torment"].AttCappedMaxTP = set_combine(sets.precast.WS["Camlann's Torment"].AttCapped, {})
 
   -- 40% STR/40% DEX
   -- WSD > STR <> DEX
@@ -568,7 +568,7 @@ function init_gear_sets()
     -- back=gear.DRG_WS3_Cape,          -- 30, __, 20, __ (10, __)
     -- 305 STR, 3 WSD, 361 Att, 31 PDL (53 Crit Rate, 13 Crit Dmg)
   }
-  sets.precast.WS["Drakesbane"].MaxTP = sets.precast.WS["Drakesbane"]
+  sets.precast.WS["Drakesbane"].MaxTP = set_combine(sets.precast.WS["Drakesbane"], {})
   sets.precast.WS["Drakesbane"].AttCapped = {
     ammo="Crepuscular Pebble",          --  3, __, __,  3 (__, __)
     head="Gleti's Mask",                -- 33, __, 70,  6 ( 5, __)
@@ -590,7 +590,7 @@ function init_gear_sets()
     -- back=gear.DRG_WS3_Cape,          -- 30, __, 20, __ (10, __)
     -- 291 STR, 3 WSD, 433 Att, 49 PDL (43 Crit Rate, 13 Crit Dmg)
   }
-  sets.precast.WS["Drakesbane"].AttCappedMaxTP = sets.precast.WS["Drakesbane"].AttCapped
+  sets.precast.WS["Drakesbane"].AttCappedMaxTP = set_combine(sets.precast.WS["Drakesbane"].AttCapped, {})
 
   -- Deals lightning elemental damage. Damage varies with TP. 1.0-3.0 fTP
   sets.precast.WS["Raiden Thrust"] = set_combine(sets.precast.WS, {
@@ -614,7 +614,7 @@ function init_gear_sets()
   sets.precast.WS["Raiden Thrust"].AttCapped = set_combine(sets.precast.WS["Raiden Thrust"], {})
   sets.precast.WS["Raiden Thrust"].AttCappedMaxTP = set_combine(sets.precast.WS["Raiden Thrust"].AttCapped, {})
 
-  sets.precast.WS["Thunder Thrust"] = sets.precast.WS["Raiden Thrust"]
+  sets.precast.WS["Thunder Thrust"] = set_combine(sets.precast.WS["Raiden Thrust"], {})
   sets.precast.WS["Thunder Thrust"].MaxTP = set_combine(sets.precast.WS["Raiden Thrust"], {})
   sets.precast.WS["Thunder Thrust"].AttCapped = set_combine(sets.precast.WS["Raiden Thrust"], {})
   sets.precast.WS["Thunder Thrust"].AttCappedMaxTP = set_combine(sets.precast.WS["Raiden Thrust"].AttCapped, {})
@@ -719,8 +719,8 @@ function init_gear_sets()
     -- 66 PDT/56 MDT, 674 MEVA {34 PetPDT/31 PetMDT}
   }
 
-  sets.defense.PDT = sets.HeavyDef
-  sets.defense.MDT = sets.HeavyDef
+  sets.defense.PDT = set_combine(sets.HeavyDef, {})
+  sets.defense.MDT = set_combine(sets.HeavyDef, {})
 
 
   ------------------------------------------------------------------------------------------------
@@ -752,7 +752,7 @@ function init_gear_sets()
 
   sets.resting = {}
 
-  sets.idle = sets.HeavyDef
+  sets.idle = set_combine(sets.HeavyDef, {})
 
   sets.idle.Regain = set_combine(sets.idle, sets.latent_regain)
   sets.idle.Regen = set_combine(sets.idle, sets.latent_regen)
@@ -771,7 +771,7 @@ function init_gear_sets()
   sets.idle.LightDef.Regen.Refresh = set_combine(sets.idle.Regen.Refresh, sets.LightDef)
   sets.idle.LightDef.Regain.Regen.Refresh = set_combine(sets.idle.Regain.Regen.Refresh, sets.LightDef)
 
-  sets.idle.Weak = sets.HeavyDef
+  sets.idle.Weak = set_combine(sets.HeavyDef, {})
 
   sets.Kiting = {
     legs="Carmine Cuisses +1"
@@ -880,8 +880,8 @@ function init_gear_sets()
     waist="Ioskeha Belt +1",        --  8, __, __, 17, __ < 9, __, __> [__/__, ___] {__/__}
     -- 26 Haste, 37 STP, 356 Att, 345 Acc, 18 Crit Rate <49 DA, 5 TA, 0 QA> [51 PDT/25 MDT, 530 Meva] {33 PetPDT/33 PetMDT}
   })
-  sets.engaged.MidAcc.LightDef = sets.engaged.LowAcc.LightDef
-  sets.engaged.HighAcc.LightDef = sets.engaged.LowAcc.LightDef
+  sets.engaged.MidAcc.LightDef = set_combine(sets.engaged.LowAcc.LightDef, {})
+  sets.engaged.HighAcc.LightDef = set_combine(sets.engaged.LowAcc.LightDef, {})
 
   sets.engaged.SamRoll.LightDef = set_combine(sets.engaged.SamRoll, {
     ammo="Coiste Bodhar",           -- __,  3, 15, __, __ < 3, __, __> [__/__, ___] {__/__}
@@ -899,9 +899,9 @@ function init_gear_sets()
     waist="Ioskeha Belt +1",        --  8, __, __, 17, __ < 9, __, __> [__/__, ___] {__/__}
     -- 26 Haste, 37 STP, 356 Att, 345 Acc, 18 Crit Rate <49 DA, 5 TA, 0 QA> [51 PDT/25 MDT, 530 Meva] {33 PetPDT/33 PetMDT}
   })
-  sets.engaged.LowAcc.SamRoll.LightDef = sets.engaged.SamRoll.LightDef
-  sets.engaged.MidAcc.SamRoll.LightDef = sets.engaged.SamRoll.LightDef
-  sets.engaged.HighAcc.SamRoll.LightDef = sets.engaged.SamRoll.LightDef
+  sets.engaged.LowAcc.SamRoll.LightDef = set_combine(sets.engaged.SamRoll.LightDef, {})
+  sets.engaged.MidAcc.SamRoll.LightDef = set_combine(sets.engaged.SamRoll.LightDef, {})
+  sets.engaged.HighAcc.SamRoll.LightDef = set_combine(sets.engaged.SamRoll.LightDef, {})
 
 
   ------------------------------------------------------------------------------------------------

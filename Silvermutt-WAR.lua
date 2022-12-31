@@ -239,7 +239,7 @@ function init_gear_sets()
     -- body="Boii Lorica +3",
   }
   sets.precast.JA['Brazen Rush'] = {}
-  sets.precast.JA['Provoke'] = sets.Enmity
+  sets.precast.JA['Provoke'] = set_combine(sets.Enmity, {})
 
   -- Waltz set (chr and vit)
   sets.precast.Waltz = {
@@ -310,10 +310,10 @@ function init_gear_sets()
   })
 
   -- 50% STR/50% MND
-  sets.precast.WS['Savage Blade'] = sets.precast.WS
-  sets.precast.WS['Savage Blade'].MaxTP = sets.precast.WS.MaxTP
-  sets.precast.WS['Savage Blade'].AttCapped = sets.precast.WS.AttCapped
-  sets.precast.WS['Savage Blade'].AttCappedMaxTP = sets.precast.WS.AttCappedMaxTP
+  sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {})
+  sets.precast.WS['Savage Blade'].MaxTP = set_combine(sets.precast.WS.MaxTP, {})
+  sets.precast.WS['Savage Blade'].AttCapped = set_combine(sets.precast.WS.AttCapped, {})
+  sets.precast.WS['Savage Blade'].AttCappedMaxTP = set_combine(sets.precast.WS.AttCappedMaxTP, {})
 
   -- 85% VIT; 4 hit, dmg varies with TP
   -- DA Dmg does not apply to WS, but DA itself will cause the WS to deal more dmg
@@ -487,10 +487,10 @@ function init_gear_sets()
   })
 
   -- 50% STR; 3 hits, transfers ftp, acc varies with tp
-  sets.precast.WS['Decimation'] = sets.precast.WS['Resolution']
-  sets.precast.WS['Decimation'].MaxTP = sets.precast.WS['Resolution'].MaxTP
-  sets.precast.WS['Decimation'].AttCapped = sets.precast.WS['Resolution'].AttCapped
-  sets.precast.WS['Decimation'].AttCappedMaxTP = sets.precast.WS['Resolution'].AttCappedMaxTP
+  sets.precast.WS['Decimation'] = set_combine(sets.precast.WS['Resolution'], {})
+  sets.precast.WS['Decimation'].MaxTP = set_combine(sets.precast.WS['Resolution'].MaxTP, {})
+  sets.precast.WS['Decimation'].AttCapped = set_combine(sets.precast.WS['Resolution'].AttCapped, {})
+  sets.precast.WS['Decimation'].AttCappedMaxTP = set_combine(sets.precast.WS['Resolution'].AttCappedMaxTP, {})
   
   -- 40% STR/40% MND; lightning elemental, dmg varies with TP
   sets.precast.WS['Cloudsplitter'] = {
@@ -516,7 +516,7 @@ function init_gear_sets()
   sets.precast.WS['Cloudsplitter'].MaxTP = set_combine(sets.precast.WS['Cloudsplitter'], {
     ear2="Novio Earring",
   })
-  sets.precast.WS['Cloudsplitter'].AttCapped = sets.precast.WS['Cloudsplitter']
+  sets.precast.WS['Cloudsplitter'].AttCapped = set_combine(sets.precast.WS['Cloudsplitter'], {})
   sets.precast.WS['Cloudsplitter'].AttCappedMaxTP = set_combine(sets.precast.WS['Cloudsplitter'].AttCapped, {
     ear2="Novio Earring",
   })
@@ -544,23 +544,23 @@ function init_gear_sets()
   })
 
   -- 40% DEX/40% INT; wind elemental, dmg varies with TP
-  sets.precast.WS['Aeolian Edge'] = sets.precast.WS['Cataclysm']
-  sets.precast.WS['Aeolian Edge'].MaxTP = sets.precast.WS['Cataclysm'].MaxTP
-  sets.precast.WS['Aeolian Edge'].AttCapped = sets.precast.WS['Cataclysm'].AttCapped
-  sets.precast.WS['Aeolian Edge'].AttCappedMaxTP = sets.precast.WS['Cataclysm'].AttCappedMaxTP
+  sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS['Cataclysm'], {})
+  sets.precast.WS['Aeolian Edge'].MaxTP = set_combine(sets.precast.WS['Cataclysm'].MaxTP, {})
+  sets.precast.WS['Aeolian Edge'].AttCapped = set_combine(sets.precast.WS['Cataclysm'].AttCapped, {})
+  sets.precast.WS['Aeolian Edge'].AttCappedMaxTP = set_combine(sets.precast.WS['Cataclysm'].AttCappedMaxTP, {})
 
   -- Polearm sets use a crit build since you should be using Shining One
   -- 100% STR; 2 hit, dmg varies with TP
-  sets.precast.WS['Impulse Drive'] = sets.precast.WS["Ukko's Fury"]
-  sets.precast.WS['Impulse Drive'].MaxTP = sets.precast.WS["Ukko's Fury"].MaxTP
-  sets.precast.WS['Impulse Drive'].AttCapped = sets.precast.WS["Ukko's Fury"].AttCapped
-  sets.precast.WS['Impulse Drive'].AttCappedMaxTP = sets.precast.WS["Ukko's Fury"].AttCappedMaxTP
+  sets.precast.WS['Impulse Drive'] = set_combine(sets.precast.WS["Ukko's Fury"], {})
+  sets.precast.WS['Impulse Drive'].MaxTP = set_combine(sets.precast.WS["Ukko's Fury"].MaxTP, {})
+  sets.precast.WS['Impulse Drive'].AttCapped = set_combine(sets.precast.WS["Ukko's Fury"].AttCapped, {})
+  sets.precast.WS['Impulse Drive'].AttCappedMaxTP = set_combine(sets.precast.WS["Ukko's Fury"].AttCappedMaxTP, {})
 
   -- 85% STR; 4 hit, dmg varies with TP
-  sets.precast.WS['Stardiver'] = sets.precast.WS["Ukko's Fury"]
-  sets.precast.WS['Stardiver'].MaxTP = sets.precast.WS["Ukko's Fury"].MaxTP
-  sets.precast.WS['Stardiver'].AttCapped = sets.precast.WS["Ukko's Fury"].AttCapped
-  sets.precast.WS['Stardiver'].AttCappedMaxTP = sets.precast.WS["Ukko's Fury"].AttCappedMaxTP
+  sets.precast.WS['Stardiver'] = set_combine(sets.precast.WS["Ukko's Fury"], {})
+  sets.precast.WS['Stardiver'].MaxTP = set_combine(sets.precast.WS["Ukko's Fury"].MaxTP, {})
+  sets.precast.WS['Stardiver'].AttCapped = set_combine(sets.precast.WS["Ukko's Fury"].AttCapped, {})
+  sets.precast.WS['Stardiver'].AttCappedMaxTP = set_combine(sets.precast.WS["Ukko's Fury"].AttCappedMaxTP, {})
 
   -- 40% STR / 40% DEX; aoe, dmg varies with TP
   sets.precast.WS['Sonic Thrust'] = set_combine(sets.precast.WS["Ukko's Fury"], {
@@ -623,7 +623,7 @@ function init_gear_sets()
     waist="Carrier's Sash",
     -- neck="Warrior's Bead Necklace +2",
   }
-  sets.defense.MDT = sets.defense.PDT
+  sets.defense.MDT = set_combine(sets.defense.PDT, {})
 
   ------------------------------------------------------------------------------------------------
   ----------------------------------------- Idle Sets --------------------------------------------
@@ -647,7 +647,7 @@ function init_gear_sets()
   sets.latent_refresh_sub50 = set_combine(sets.latent_refresh, {
   })
 
-  sets.idle = sets.defense.PDT
+  sets.idle = set_combine(sets.defense.PDT, {})
 
   sets.idle.Regain = set_combine(sets.idle, sets.latent_regain)
   sets.idle.Regen = set_combine(sets.idle, sets.latent_regen)
@@ -661,9 +661,9 @@ function init_gear_sets()
   sets.idle.Regain.Regen.Refresh = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh)
   sets.idle.Regain.Regen.RefreshSub50 = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh_sub50)
 
-  sets.idle.HeavyDef = sets.defense.PDT
+  sets.idle.HeavyDef = set_combine(sets.defense.PDT, {})
 
-  sets.idle.Weak = sets.defense.PDT
+  sets.idle.Weak = set_combine(sets.defense.PDT, {})
 
 
   ------------------------------------------------------------------------------------------------
@@ -703,10 +703,10 @@ function init_gear_sets()
     ear2="Eabani Earring",
     -- back=gear.WAR_DW_Cape,
   })
-  sets.engaged.MidDW = sets.engaged.LowDW
-  sets.engaged.HighDW = sets.engaged.LowDW
-  sets.engaged.SuperDW = sets.engaged.LowDW
-  sets.engaged.MaxDW = sets.engaged.LowDW
+  sets.engaged.MidDW = set_combine(sets.engaged.LowDW, {})
+  sets.engaged.HighDW = set_combine(sets.engaged.LowDW, {})
+  sets.engaged.SuperDW = set_combine(sets.engaged.LowDW, {})
+  sets.engaged.MaxDW = set_combine(sets.engaged.LowDW, {})
 
   -- Focus capped DA > STP
   sets.engaged.TwoHanded = {
@@ -803,9 +803,9 @@ function init_gear_sets()
     -- back=gear.WAR_STP_Cape,            -- [10/__, ___] 10 <__, __, __> __, __; DA dmg+20%
     -- [50 PDT/40 MDT, 580 MEVA] 71 STP <0 QA, 3 TA, 71 DA> 0 Crit Rate, 26 Haste; DA dmg+35%
   }
-  sets.engaged.LowAcc.LightDef = sets.engaged.LightDef
-  sets.engaged.MidAcc.LightDef = sets.engaged.LightDef
-  sets.engaged.HighAcc.LightDef = sets.engaged.LightDef
+  sets.engaged.LowAcc.LightDef = set_combine(sets.engaged.LightDef, {})
+  sets.engaged.MidAcc.LightDef = set_combine(sets.engaged.LightDef, {})
+  sets.engaged.HighAcc.LightDef = set_combine(sets.engaged.LightDef, {})
 
   -- Focus capped DA > STP
   sets.engaged.TwoHanded.LightDef = {
@@ -931,10 +931,9 @@ function init_gear_sets()
     -- WAR Traits                            [__/__, ___] __ <__, __, 33> __, __, __(__)
     -- [47 PDT/37 MDT, 578 MEVA] 31 STP <3 QA, 5 TA, 63 DA> 12 Crit Rate, 25 Haste, 49(15) Subtle Blow; DA dmg+35%
   }
-  sets.engaged.LowAcc.SubtleBlow = sets.engaged.SubtleBlow
-  sets.engaged.MidAcc.SubtleBlow = sets.engaged.SubtleBlow
-  sets.engaged.HighAcc.SubtleBlow = sets.engaged.SubtleBlow
-
+  sets.engaged.LowAcc.SubtleBlow = set_combine(sets.engaged.SubtleBlow, {})
+  sets.engaged.MidAcc.SubtleBlow = set_combine(sets.engaged.SubtleBlow, {})
+  sets.engaged.HighAcc.SubtleBlow = set_combine(sets.engaged.SubtleBlow, {})
 
   -----------------------------------------------------------------------------------
   ---------------------------------------- Special Sets ------------------------------------------

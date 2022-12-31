@@ -553,7 +553,7 @@ function init_gear_sets()
     -- Master Levels                    3
     -- 670 Summon Skill, 15 -BP Delay, 5 -BP Delay II, 10 -BP Delay III [53 PDT/43 MDT, 631 M.Eva]
   }
-  sets.precast.BloodPactRage = sets.precast.BloodPactWard
+  sets.precast.BloodPactRage = set_combine(sets.precast.BloodPactWard, {})
 
   sets.precast.BloodPactWard.NirvAM = {
     -- main="Nirvana",              -- __, __, __, __ [__/__, ___]
@@ -629,7 +629,7 @@ function init_gear_sets()
     -- Master Levels                   14
     -- 670 Summon Skill, 15 -BP Delay, 5 -BP Delay II, 10 -BP Delay III [43 PDT/33 MDT, 631 M.Eva]
   }
-  sets.precast.BloodPactRage.NirvAM = sets.precast.BloodPactWard.NirvAM
+  sets.precast.BloodPactRage.NirvAM = set_combine(sets.precast.BloodPactWard.NirvAM, {})
 
 
   ------------------------------------------------------------------------------------------------
@@ -662,7 +662,7 @@ function init_gear_sets()
   ---------------------------------------- Midcast Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
 
-  sets.midcast.FastRecast = sets.precast.FC.NirvAM
+  sets.midcast.FastRecast = set_combine(sets.precast.FC.NirvAM, {})
 
   -- Ensure trusts get summoned at max ilvl
   sets.midcast.Trust = {
