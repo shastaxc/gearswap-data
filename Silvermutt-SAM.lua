@@ -405,7 +405,7 @@ function init_gear_sets()
   sets.precast.WS['Tachi: Ageha'] = {
     ammo="Pemphredo Tathlum",
     head="Mpaca's Cap",
-    body="Kasuga Domaru +2",
+    body="Mpaca's Doublet",
     hands="Mpaca's Gloves",
     legs="Mpaca's Hose",
     feet="Mpaca's Boots",

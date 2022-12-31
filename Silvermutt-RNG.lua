@@ -1284,9 +1284,11 @@ function init_gear_sets()
     -- 11 DW, 47 STP, 287 Acc <4 DA, 14 TA, 0 QA> [54 PDT/34 MDT, 435 MEVA]
   })
   sets.engaged.LowDW.HeavyDef.MidAcc = set_combine(sets.engaged.LowDW.HeavyDef.LowAcc, {
-    hands="Amini Glovelettes +3",     -- __, 11, 62 <__, __, __> [11/11,  93]
+    hands="Amini Glovelettes +2",     -- __, 10, 52 <__, __, __> [10/10,  83]
     neck="Iskur Gorget",              -- __,  8, __ <__, __, __> [__/__, ___]
     ring1="Epona's Ring",             -- __, __, __ < 3,  3, __> [__/__, ___]
+    
+    -- hands="Amini Glovelettes +3",  -- __, 11, 62 <__, __, __> [11/11,  93]
     -- 11 DW, 59 STP, 297 Acc <7 DA, 13 TA, 0 QA> [52 PDT/40 MDT, 485 MEVA]
   })
   sets.engaged.LowDW.HighAcc.HeavyDef = set_combine(sets.engaged.LowDW.HeavyDef.MidAcc, {
@@ -1317,10 +1319,12 @@ function init_gear_sets()
     -- 18 DW, 46 STP, 273 Acc <5 DA, 14 TA, 0 QA> [54 PDT/34 MDT, 435 MEVA]
   }
   sets.engaged.MidDW.HeavyDef.LowAcc = set_combine(sets.engaged.MidDW.HeavyDef, {
-    hands="Amini Glovelettes +3",     -- __, 11, 62 <__, __, __> [11/11,  93]
+    hands="Amini Glovelettes +2",     -- __, 10, 52 <__, __, __> [10/10,  83]
     neck="Iskur Gorget",              -- __,  8, __ <__, __, __> [__/__, ___]
     ear2="Telos Earring",             -- __,  5, 10 < 1, __, __> [__/__, ___]
     ring1="Epona's Ring",             -- __, __, __ < 3,  3, __> [__/__, ___]
+    
+    -- hands="Amini Glovelettes +3",  -- __, 11, 62 <__, __, __> [11/11,  93]
     -- 18 DW, 58 STP, 293 Acc <4 DA, 13 TA, 0 QA> [52 PDT/40 MDT, 485 MEVA]
   })
   sets.engaged.MidDW.HeavyDef.MidAcc = set_combine(sets.engaged.MidDW.HeavyDef.LowAcc, {
@@ -1355,8 +1359,10 @@ function init_gear_sets()
     -- 32 DW, 31 STP, 273 Acc <0 DA, 14 TA, 0 QA> [54 PDT/34 MDT, 443 MEVA]
   }
   sets.engaged.HighDW.HeavyDef.LowAcc = set_combine(sets.engaged.HighDW.HeavyDef, {
-    hands="Amini Glovelettes +3",     -- __, 11, 62 <__, __, __> [11/11,  93]
+    hands="Amini Glovelettes +2",     -- __, 10, 52 <__, __, __> [10/10,  83]
     ring1="Epona's Ring",             -- __, __, __ < 3,  3, __> [__/__, ___]
+
+    -- hands="Amini Glovelettes +3",  -- __, 11, 62 <__, __, __> [11/11,  93]
     -- neck="Combatant's Torque",     -- __,  4, __ <__, __, __> [__/__, ___]; Combat skills +15
     -- 32 DW, 39 STP, 283 Acc <3 DA, 13 TA, 0 QA> [52 PDT/40 MDT, 493 MEVA]
   })
@@ -1396,8 +1402,10 @@ function init_gear_sets()
     -- 42 DW, 29 STP, 266 Acc <1 DA, 7 TA, 0 QA> [52 PDT/38 MDT, 423 MEVA]
   })
   sets.engaged.SuperDW.HeavyDef.MidAcc = set_combine(sets.engaged.SuperDW.HeavyDef.LowAcc, {
-    hands="Amini Glovelettes +3",     -- __, 11, 62 <__, __, __> [11/11,  93]
+    hands="Amini Glovelettes +2",     -- __, 10, 52 <__, __, __> [10/10,  83]
     ring1="Epona's Ring",             -- __, __, __ < 3,  3, __> [__/__, ___]
+    
+    -- hands="Amini Glovelettes +3",  -- __, 11, 62 <__, __, __> [11/11,  93]
     -- neck="Combatant's Torque",     -- __,  4, __ <__, __, __> [__/__, ___]; Combat skills +15
     -- 37 DW, 44 STP, 292 Acc <4 DA, 7 TA, 0 QA> [50 PDT/40 MDT, 479 MEVA]
   })
@@ -1429,8 +1437,10 @@ function init_gear_sets()
     -- 46 DW, 24 STP, 256 Acc <0 DA, 7 TA, 0 QA> [52 PDT/38 MDT, 431 MEVA]
   }
   sets.engaged.MaxDW.HeavyDef.LowAcc = set_combine(sets.engaged.MaxDW.HeavyDef, {
-    hands="Amini Glovelettes +3",     -- __, 11, 62 <__, __, __> [11/11,  93]
+    hands="Amini Glovelettes +2",     -- __, 10, 52 <__, __, __> [10/10,  83]
     ring1="Epona's Ring",             -- __, __, __ < 3,  3, __> [__/__, ___]
+    
+    -- hands="Amini Glovelettes +3",  -- __, 11, 62 <__, __, __> [11/11,  93]
     -- neck="Combatant's Torque",     -- __,  4, __ <__, __, __> [__/__, ___]; Combat skills +15
     -- 41 DW, 39 STP, 282 Acc <3 DA, 7 TA, 0 QA> [50 PDT/40 MDT, 487 MEVA]
   })
