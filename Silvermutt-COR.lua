@@ -318,7 +318,7 @@ function init_gear_sets()
     -- 52 PDT / 30 MDT, 445 M.Eva (7 PR Potency, 190 PR Duration, 5 PR Delay)
   }
   sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {
-    legs="Chasseur's Culottes +2",
+    legs="Chasseur's Culottes +3",
   })
   sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {
     feet="Chasseur's Bottes +1",
@@ -1121,10 +1121,10 @@ function init_gear_sets()
     head="Malignance Chapeau",        --  6/ 6, 123
     body="Malignance Tabard",         --  9/ 9, 139
     hands="Malignance Gloves",        --  5/ 5, 112
-    legs="Chasseur's Culottes +2",    -- 11/11, 115
+    legs="Chasseur's Culottes +3",    -- 12/12, 125
     ring2="Defending Ring",           -- 10/10, ___
     -- 10 PDT from JSE cape
-  } -- 51 PDT / 41 MDT, 489 MEVA
+  } -- 52 PDT / 42 MDT, 499 MEVA
 
   sets.HeavyDef = {
     head="Malignance Chapeau",  --  6/ 6, 123
