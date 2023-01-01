@@ -1959,7 +1959,7 @@ function update_idle_groups()
 end
 
 --Read incoming packet to differentiate between Haste/Flurry I and II
-windower.register_event('action', function(act)
+windower.raw_register_event('action', function(act)
   --check if you are a target of spell
   local actionTargets = act.targets
   playerId = windower.ffxi.get_player().id
