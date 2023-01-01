@@ -758,13 +758,7 @@ function init_gear_sets()
     -- ear2="Mendi. Earring", -- 5
     -- back="Solemnity Cape", -- 7
   }
-  sets.midcast['Blue Magic'].Cure.Safe = set_combine(sets.HeavyDef, sets.midcast['Blue Magic'].Cure, {
-    ammo="Staunch Tathlum +1",
-    waist="Audumbla Sash",
-    ring1={name="Gelatinous Ring +1", priority=1},
-    ring2="Defending Ring",
-    back={name="Moonlight Cape", priority=2},
-  })
+  sets.midcast['Blue Magic'].Cure.Safe = set_combine(sets.SIRD, {})
 
 
   ------------------------------------------------------------------------------------------------
