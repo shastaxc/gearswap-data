@@ -199,9 +199,9 @@ gear.SCH_MND_MAcc_Cape = gear.SCH_CP_Cape
 gear.SCH_Helix_Cape = gear.SCH_MAB_Cape
 -- gear.SCH_Helix_Cape = { name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','Magic Damage +10','"Mag.Atk.Bns."+10',}}
 
--- gear.SMN_Magic_BP_Cape = { name="Campestres's Cape", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Eva.+20 /Mag. Eva.+20','Pet: Magic Damage+5','"Fast Cast"+10','Phys. dmg. taken-10%',}}
+gear.SMN_Magic_BP_Cape = { name="Campestres's Cape", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Eva.+20 /Mag. Eva.+20','Pet: Magic Damage+10','"Fast Cast"+10','Phys. dmg. taken-10%',}}
 gear.SMN_Phys_BP_Cape = { name="Campestres's Cape", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Phys. dmg. taken-10%',}}
--- gear.SMN_FC_Cape = gear.SMN_Magic_BP_Cape
+gear.SMN_FC_Cape = gear.SMN_Magic_BP_Cape
 -- gear.SMN_Cure_Cape = { name="Campestres's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','MND+10','"Cure" potency +10%','Phys. dmg. taken-10%',}}
 
 gear.WHM_FC_Cape = { name="Alaunus's Cape", augments={'INT+20','Eva.+20 /Mag. Eva.+20','INT+10','"Fast Cast"+10','Phys. dmg. taken-10%',}}

@@ -259,12 +259,12 @@ function init_gear_sets()
     ear2="Loquacious Earring",        --  2 [__/__, ___]
     ring1="Kishar Ring",              --  4 [__/__, ___]
     ring2="Defending Ring",           -- __ [10/10, ___]
+    back=gear.SMN_FC_Cape,            -- 10 [10/__, ___]
     waist="Shinjutsu-no-obi +1",      --  5 [__/__, ___]
-    -- 66 Fast Cast [45 PDT/43 MDT, 428 M.Eva]
+    -- 76 Fast Cast [55 PDT/43 MDT, 428 M.Eva]
     
     -- legs="Volte Brais",            --  8 [__/__, 142]; merlinic alt
     -- neck="Orunmila's Torque",      --  5 [__/__, ___]
-    -- back=gear.SMN_FC_Cape          -- 10 [10/__, ___]
     -- 81 Fast Cast [55 PDT/53 MDT, 570 M.Eva]
   }
   sets.precast.FC.QuickMagic = {
@@ -280,12 +280,12 @@ function init_gear_sets()
     ear2="Loquacious Earring",        --  2 [__/__, ___]
     ring1="Kishar Ring",              --  4 [__/__, ___]
     ring2="Defending Ring",           -- __ [10/10, ___]
+    back=gear.SMN_FC_Cape,            -- 10 [10/__, ___]
     waist="Witful Belt",              --  3 [__/__, ___]  3
-    -- 64 Fast Cast [45 PDT/43 MDT, 428 M.Eva] 3 Quick Magic
+    -- 74 Fast Cast [55 PDT/43 MDT, 428 M.Eva] 3 Quick Magic
     
     -- legs="Volte Brais",            --  8 [__/__, 142]; merlinic alt
     -- neck="Orunmila's Torque",      --  5 [__/__, ___]
-    -- back=gear.SMN_FC_Cape          -- 10 [10/__, ___]
     -- 80 Fast Cast [55 PDT/53 MDT, 570 M.Eva]
     
     -- main="Malignance Pole",        -- __ [20/20, ___]
@@ -301,7 +301,7 @@ function init_gear_sets()
     -- ear2="Loquacious Earring",     --  2 [__/__, ___]
     -- ring1="Lebeche Ring",          -- __ [__/__, ___]  2
     -- ring2="Defending Ring",        -- __ [10/10, ___]
-    -- back=gear.SMN_FC_Cape          -- 10 [10/__, ___]
+    -- back=gear.SMN_FC_Cape,         -- 10 [10/__, ___]
     -- waist="Witful Belt",           --  3 [__/__, ___]  3
     -- 79 Fast Cast [48 PDT/36 MDT, 533 M.Eva] 7 Quick Magic
   }
@@ -314,19 +314,20 @@ function init_gear_sets()
     body=gear.Merl_FC_body,           -- 14 [ 2/__,  91]
     hands="Volte Gloves",             --  6 [__/__,  96]; merlinic alt
     legs=gear.Merl_FC_legs,           --  7 [__/__, 118]
-    feet=gear.Merl_FC_feet,           -- 12 [__/__, 118]
+    feet="Beckoner's Pigaches +2",    -- __ [__/__, 158]
     ear1="Malignance Earring",        --  4 [__/__, ___]
     ear2="Loquacious Earring",        --  2 [__/__, ___]
     ring1="Kishar Ring",              --  4 [__/__, ___]
     ring2="Defending Ring",           -- __ [10/10, ___]
+    back=gear.SMN_FC_Cape,            -- 10 [10/__, ___]
     waist="Shinjutsu-no-obi +1",      --  5 [__/__, ___]
     -- RDM Trait                         15
-    -- 81 Fast Cast [45 PDT/43 MDT, 428 M.Eva]
+    -- 79 Fast Cast [55 PDT/43 MDT, 586 M.Eva]
     
     -- legs="Volte Brais",            --  8 [__/__, 142]; merlinic alt
+    -- feet="Beckoner's Pigaches +3", -- __ [__/__, 168]
     -- neck="Orunmila's Torque",      --  5 [__/__, ___]
-    -- back=gear.SMN_FC_Cape          -- 10 [10/__, ___]
-    -- 81 Fast Cast [55 PDT/53 MDT, 570 M.Eva]
+    -- 85 Fast Cast [55 PDT/43 MDT, 620 M.Eva]
   }
   sets.precast.FC.QuickMagic.RDM = {
     main="Malignance Pole",           -- __ [20/20, ___]
@@ -362,14 +363,14 @@ function init_gear_sets()
     ear2="Loquacious Earring",        --  2 [__/__, ___]
     ring1="Kishar Ring",              --  4 [__/__, ___]
     ring2="Defending Ring",           -- __ [10/10, ___]
+    back=gear.SMN_FC_Cape,            -- 10 [10/__, ___]
     waist="Shinjutsu-no-obi +1",      --  5 [__/__, ___]
-    -- 57 Fast Cast [22 PDT/20 MDT, 428 M.Eva]
+    -- 67 Fast Cast [32 PDT/20 MDT, 428 M.Eva]
     
     -- main="Nirvana",                -- __ [__/__, ___]
     -- sub="Elan Strap +1",           -- __ [__/__, ___]
     -- legs="Volte Brais",            --  8 [__/__, 142]; merlinic alt
     -- neck="Orunmila's Torque",      --  5 [__/__, ___]
-    -- back=gear.SMN_FC_Cape          -- 10 [10/__, ___]
     -- 80 Fast Cast [32 PDT/20 MDT, 570 M.Eva]
   }
   sets.precast.FC.NirvAM.QuickMagic = {
@@ -382,14 +383,14 @@ function init_gear_sets()
     ear2="Loquacious Earring",        --  2 [__/__, ___]
     ring1="Kishar Ring",              --  4 [__/__, ___]
     ring2="Defending Ring",           -- __ [10/10, ___]
+    back=gear.SMN_FC_Cape,            -- 10 [10/__, ___]
     waist="Witful Belt",              --  3 [__/__, ___] 3
-    -- 55 Fast Cast [22 PDT/20 MDT, 428 M.Eva] 3 Quick Magic
+    -- 65 Fast Cast [32 PDT/20 MDT, 428 M.Eva] 3 Quick Magic
 
     -- main="Nirvana",                -- __ [__/__, ___]
     -- sub="Elan Strap +1",           -- __ [__/__, ___]
     -- legs="Volte Brais",            --  8 [__/__, 142]; merlinic alt
     -- neck="Orunmila's Torque",      --  5 [__/__, ___]
-    -- back=gear.SMN_FC_Cape          -- 10 [10/__, ___]
     -- 78 Fast Cast [32 PDT/20 MDT, 570 M.Eva] 3 Quick Magic
   }
 
@@ -404,15 +405,15 @@ function init_gear_sets()
     ear2="Loquacious Earring",        --  2 [__/__, ___]
     ring1="Gelatinous Ring +1",       -- __ [ 7/-1, ___]
     ring2="Defending Ring",           -- __ [10/10, ___]
+    back=gear.SMN_FC_Cape,            -- 10 [10/__, ___]
     waist="Regal Belt",               -- __ [ 3/ 3, ___]
     -- RDM Trait                         15
-    -- 65 Fast Cast [40 PDT/30 MDT, 575 M.Eva]
+    -- 75 Fast Cast [50 PDT/30 MDT, 575 M.Eva]
     
     -- main="Nirvana",                -- __ [__/__, ___]
     -- sub="Elan Strap +1",           -- __ [__/__, ___]
     -- legs="Beckoner's Spats +3",    -- __ [12/12, 157]
     -- neck="Orunmila's Torque",      --  5 [__/__, ___]
-    -- back=gear.SMN_FC_Cape          -- 10 [10/__, ___]
     -- 80 Fast Cast [51 PDT/31 MDT, 585 M.Eva]
   }
   sets.precast.FC.NirvAM.QuickMagic.RDM = {
@@ -426,18 +427,40 @@ function init_gear_sets()
     ear2="Loquacious Earring",        --  2 [__/__, ___]
     ring1="Gelatinous Ring +1",       -- __ [ 7/-1, ___]
     ring2="Defending Ring",           -- __ [10/10, ___]
+    back=gear.SMN_FC_Cape,            -- 10 [10/__, ___]
     waist="Witful Belt",              --  3 [__/__, ___]  3
     -- RDM Trait                         15
-    -- 66 Fast Cast [37 PDT/27 MDT, 575 M.Eva] 5 Quick Magic
+    -- 76 Fast Cast [47 PDT/27 MDT, 575 M.Eva] 5 Quick Magic
 
     -- main="Nirvana",                -- __ [__/__, ___]
     -- sub="Elan Strap +1",           -- __ [__/__, ___]
     -- legs="Beckoner's Spats +3",    -- __ [12/12, 157]
     -- neck="Orunmila's Torque",      --  5 [__/__, ___]
-    -- back=gear.SMN_FC_Cape          -- 10 [10/__, ___]
     -- 81 Fast Cast [48 PDT/28 MDT, 585 M.Eva] 5 Quick Magic
   }
 
+  sets.precast.FC.Dispelga = set_combine(sets.precast.FC, {
+    main="Daybreak",                  -- __ [__/__, ___]
+    sub="Genmei Shield",              -- __ [10/__, ___]    
+    ammo="Staunch Tathlum +1",        -- __ [ 3/ 3, ___]
+    head="Bunzi's Hat",               -- 10 [ 7/ 7, 123]
+    body=gear.Merl_FC_body,           -- 14 [ 2/__,  91]
+    hands="Volte Gloves",             --  6 [__/__,  96]; merlinic alt
+    legs=gear.Merl_FC_legs,           --  7 [__/__, 118]
+    feet=gear.Merl_FC_feet,           -- 12 [__/__, 118]
+    neck="Loricate Torque +1",        -- __ [ 6/ 6, ___]
+    ear1="Malignance Earring",        --  4 [__/__, ___]
+    ear2="Loquacious Earring",        --  2 [__/__, ___]
+    ring1="Gelatinous Ring +1",       -- __ [ 7/-1, ___]
+    ring2="Defending Ring",           -- __ [10/10, ___]
+    back=gear.SMN_FC_Cape,            -- 10 [10/__, ___]
+    waist="Shinjutsu-no-obi +1",      --  5 [__/__, ___]
+    -- 70 Fast Cast [55 PDT/25 MDT, 546 M.Eva]
+    
+    -- legs="Volte Brais",            --  8 [__/__, 142]; merlinic alt
+    -- neck="Orunmila's Torque",      --  5 [__/__, ___]
+    -- 76 Fast Cast [49 PDT/19 MDT, 570 M.Eva]
+  })
 
   -----------------------------------------------------------------------------------------------
   ------------------------------------- Job Ability Sets ----------------------------------------
@@ -673,6 +696,8 @@ function init_gear_sets()
     feet=gear.Nyame_B_feet,
   }
 
+  sets.midcast.Dispelga = set_combine(sets.precast.FC.Dispelga, {})
+
   -- Cap at 700 power; Power = floor(MND÷2) + floor(VIT÷4) + Healing Magic Skill
   sets.midcast.CureNormal = {
     main="Bunzi's Rod",         -- 30, 15, __, ___ [__/__, ___]  5
@@ -779,11 +804,11 @@ function init_gear_sets()
     ear2="Beckoner's Earring +1",     --   1, 12, __ [ 4/ 4, ___]
     ring1="Stikini Ring +1",          -- ___, __,  8 [__/__, ___]
     ring2="Cath Palug Ring",          -- ___, 12, __ [ 5/ 5, ___]
+    back=gear.SMN_Magic_BP_Cape,      --   1, 20, __ [10/__,  20]
     waist="Incarnation Sash",         -- ___, 15, __ [__/__, ___]
-    -- 120 Pet Lv, 409 Pet M.Acc, 88 Summon Skill [46 PDT/46 MDT, 628 M.Eva]
+    -- 121 Pet Lv, 429 Pet M.Acc, 88 Summon Skill [56 PDT/46 MDT, 648 M.Eva]
 
     -- ring1="Evoker's Ring",         -- ___, __, 10 [__/__, ___]
-    -- back=gear.SMN_Magic_BP_Cape,   --   1, 20, __ [10/__,  20]
     -- 121 Pet Lv, 429 Pet M.Acc, 90 Summon Skill [56 PDT/46 MDT, 648 M.Eva]
     
     -- main="Nirvana",                --   2, 30, __ [__/__, ___]
@@ -856,12 +881,11 @@ function init_gear_sets()
     ear2="Beckoner's Earring +1",       --   1,  4 {___, 12, __, __ / __, 12, __, __} [ 4/ 4, ___]
     ring1="Varar Ring +1",              -- ___,  4 {___, __, __, __ / __, 10, __, __} [__/__, ___]
     ring2="Varar Ring +1",              -- ___,  4 {___, __, __, __ / __, 10, __, __} [__/__, ___]
-    back=gear.SMN_Phys_BP_Cape,         --   1,  5 {___, __, __, __ / 20, 30, __, __} [10/__, ___]
+    back=gear.SMN_Magic_BP_Cape,        --   1,  5 {___, 20, __, 25 / __, __, __, __} [__/__, ___]
     waist="Regal Belt",                 -- ___, __ { 10, __, __, __ / 20, __, __, __} [ 3/ 3, ___]
 
     -- head="Cath Palug Crown",         -- ___, 10 { 38, 38, __, __ / __, 38, __, __} [__/__,  86]
     -- legs=gear.Enticer_legs,          -- ___, 12 {___, 15, __, __ / __, 15, __, __} [__/__, 107]; Pet TP Bonus
-    -- back=gear.SMN_Magic_BP_Cape,     --   1,  5 {___, 20, __, 25 / __, __, __, __} [__/__, ___]
     -- 121 Pet Lv, 122 BP Dmg {Pet: 297 MAB, 224 M.Acc, 59 INT, 25 M.Dmg / 40 Att, 180 Acc, 50 STR, 0 DA} [12 PDT/12 MDT, 460 M.Eva]
     
     -- main=gear.Grioavolr_Magic_BP,    -- ___,  9 {140, 54, __, __ / __, __, __, __} [__/__, ___]
@@ -896,7 +920,7 @@ function init_gear_sets()
     ear2="Beckoner's Earring +1",       --   1,  4 {___, 12, __, __ / __, 12, __, __} [ 4/ 4, ___]
     ring1="Varar Ring +1",              -- ___,  4 {___, __, __, __ / __, 10, __, __} [__/__, ___]
     ring2="Varar Ring +1",              -- ___,  4 {___, __, __, __ / __, 10, __, __} [__/__, ___]
-    back=gear.SMN_Phys_BP_Cape,         --   1,  5 {___, __, __, __ / 20, 30, __, __} [10/__, ___]
+    back=gear.SMN_Magic_BP_Cape,        --   1,  5 {___, 20, __, 25 / __, __, __, __} [__/__, ___]
     waist="Regal Belt",                 -- ___, __ { 10, __, __, __ / 20, __, __, __} [ 3/ 3, ___]
     -- 121 Pet Lv, 100 BP Dmg {Pet: 259 MAB, 251 M.Acc, 49 INT, 0 M.Dmg / 60 Att, 232 Acc, 40 STR, 0 DA} [37 PDT/27 MDT, 540 M.Eva]
     
@@ -904,7 +928,6 @@ function init_gear_sets()
     -- head="Cath Palug Crown",         -- ___, 10 { 38, 38, __, __ / __, 38, __, __} [__/__,  86]
     -- legs=gear.Enticer_legs,          -- ___, 12 {___, 15, __, __ / __, 15, __, __} [__/__, 107]; Pet TP Bonus
     -- ear2="Beckoner's Earring +2",    --   1,  5 {___, 20, __, __ / __, 20, __, __} [ 6/ 6, ___]
-    -- back=gear.SMN_Magic_BP_Cape,     --   1,  5 {___, 20, __, 25 / __, __, __, __} [__/__, ___]
     -- 123 Pet Lv, 154 BP Dmg {Pet: 157 MAB, 208 M.Acc, 49 INT, 25 M.Dmg / 40 Att, 193 Acc, 40 STR, 0 DA} [14 PDT/14 MDT, 460 M.Eva]
   })
 
@@ -944,13 +967,13 @@ function init_gear_sets()
     ear2="Beckoner's Earring +1",   -- ____ [ 4/ 4, ___] ( 2, __) {  1, __, __/__}
     ring1="Stikini Ring +1",        -- ____ [__/__, ___] ( 1, __) {___, __, __/__}
     ring2="Defending Ring",         -- ____ [10/10, ___] (__, __) {___, __, __/__}
+    back=gear.SMN_FC_Cape,          -- ____ [10/__, ___] (__, __) {  1, __, __/__}
     waist="Regal Belt",             --   88 [ 3/ 3, ___] (__, __) {___, __, __/__}
     -- Traits/Merits/JP Gifts                                       99, __,  7/ 7
-    -- 70 HP [41 PDT/41 MDT, 500 M.Eva] (20 Refresh, 3 Perp Cost) {Pet: 100 Lv, 0 Regain, 7 PDT/7 MDT}
+    -- 70 HP [51 PDT/41 MDT, 500 M.Eva] (20 Refresh, 3 Perp Cost) {Pet: 101 Lv, 0 Regain, 7 PDT/7 MDT}
 
     -- head="Beckoner's Horn +3",   --   61 [10/10, 130] ( 4, __) {___, __, __/__}
     -- ear2="Beckoner's Earring +2",-- ____ [ 6/ 6, ___] ( 3, __) {  1, __, __/__}
-    -- back=gear.SMN_FC_Cape,       -- ____ [10/__, ___] (__, __) {  1, __, __/__}
     -- Traits/Merits/JP Gifts                                       99, __,  7/ 7
     -- 80 HP [54 PDT/44 MDT, 510 M.Eva] (22 Refresh, 3 Perp Cost) {Pet: 101 Lv, Regain, 7 PDT/7 MDT}
   }
@@ -980,9 +1003,8 @@ function init_gear_sets()
     ear2="Beckoner's Earring +1",   -- ____ [ 4/ 4, ___] ( 2, __) {  1, __, __/__}
     ring1="Stikini Ring +1",        -- ____ [__/__, ___] ( 1, __) {___, __, __/__}
     ring2="Defending Ring",         -- ____ [10/10, ___] (__, __) {___, __, __/__}
-    back=gear.SMN_Phys_BP_Cape,     -- ____ [10/__, ___] (__, __) {  1, __, __/__}; Pet Haste+10
+    back=gear.SMN_FC_Cape,          -- ____ [10/__, ___] (__, __) {  1, __, __/__}
     waist="Isa Belt",               -- ____ [__/__, ___] (__, __) {___, __,  3/ 3}
-    -- back=gear.SMN_FC_Cape,       -- ____ [10/__, ___] (__, __) {  1, __, __/__}
     -- Traits/Merits/JP Gifts                                      ___, __,  7/ 7
     -- 216 HP [51 PDT/41 MDT, 529 M.Eva] (13 Refresh, 15 Perp Cost) {Pet: 121 Lv, 25 Regain, 13 PDT/13 MDT}
 
@@ -1020,13 +1042,13 @@ function init_gear_sets()
     ear2="Beckoner's Earring +1",   -- ____ [ 4/ 4, ___] ( 2, __) {  1, __, __/__}
     ring1="Stikini Ring +1",        -- ____ [__/__, ___] ( 1, __) {___, __, __/__}
     ring2="Defending Ring",         -- ____ [10/10, ___] (__, __) {___, __, __/__}
+    back=gear.SMN_FC_Cape,          -- ____ [10/__, ___] (__, __) {  1, __, __/__}
     waist="Regal Belt",             --   88 [ 3/ 3, ___] (__, __) {___, __, __/__}
     -- Traits/Merits/JP Gifts                                      ___, __,  7/ 7
-    -- 70 HP [38 PDT/38 MDT, 500 M.Eva] (18 Refresh, 8 Perp Cost) {Pet: 120 Lv, 0 Regain, 7 PDT/7 MDT}
+    -- 70 HP [48 PDT/38 MDT, 500 M.Eva] (18 Refresh, 8 Perp Cost) {Pet: 121 Lv, 0 Regain, 7 PDT/7 MDT}
 
     -- head="Beckoner's Horn +3",   --   61 [10/10, 130] ( 4, __) {___, __, __/__}
     -- ear2="Beckoner's Earring +2",-- ____ [ 6/ 6, ___] ( 3, __) {  1, __, __/__}
-    -- back=gear.SMN_FC_Cape,       -- ____ [10/__, ___] (__, __) {  1, __, __/__}
     -- 80 HP [51 PDT/41 MDT, 510 M.Eva] (20 Refresh, 8 Perp Cost) {Pet: 121 Lv, 0 Regain, 7 PDT/7 MDT}
   }
 
