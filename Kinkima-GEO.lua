@@ -358,16 +358,15 @@ function init_gear_sets()
     ear2="Malignance Earring",      -- __,  8, __,  8, __, __, __/__ [__]
     -- ring1="Weatherspoon Ring",   -- 10, __, __, __, __, __, __/__ [__]
     -- ring2="Shiva Ring +1",       -- __,  3, __, __, __, __, __/__ [__]
-    -- back="Argochampsa Mantle",   -- __, 12, __, __, __, __, __/__ [__]
+    back=gear.GEO_Nuke_Cape,        -- __, 10, 20, __, __, __, 10/__ [__]
     -- waist="Skrymir Cord",        -- __,  5, 30, __, __, __, __/__ [__]
-    -- 10 Light MAB, 248 MAB, 247 M.Dmg, 174 MND, 170 STR, 54 WSD, 41PDT/31MDT [30PetDT]
+    -- 10 Light MAB, 246 MAB, 267 M.Dmg, 174 MND, 170 STR, 54 WSD, 51PDT/31MDT [30PetDT]
 
     -- head="Agwu's Cap",           -- __, 60, 35, 26, 26, __, __/__ [__]; R30
     -- body="Agwu's Robe",          -- __, 60, 30, 37, 33, __, __/__ [__]; R30
     -- hands="Agwu's Gages",        -- __, 60, 20, 45, 14, __, __/__ [__]; R30
     -- legs="Agwu's Slops",         -- __, 60, 20, 32, 43, __, 10/10 [__]; R30
     -- feet="Agwu's Pigaches",      -- __, 60, 20, 26, 21, __, __/__ [__]; R30
-    -- back=gear.GEO_Nuke_Cape,     -- __, 10, 20, __, __, __, 10/__ [__]
     -- waist="Skrymir Cord +1",     -- __,  7, 35, __, __, __, __/__ [__]
     -- 10 Light MAB, 388 MAB, 397 M.Dmg, 184 MND, 137 STR, 0 WSD, 30PDT/10MDT [30PetDT]
   }
@@ -383,13 +382,13 @@ function init_gear_sets()
     ear1="Regal Earring",           --  7, __, 10, __, __, __/__ [__]
     ear2="Malignance Earring",      --  8, __,  8, __, __, __/__ [__]
     ring2="Defending Ring",         -- __, __, __, __, __, 10/10 [__]
-    -- 143 MAB, 217 M.Dmg, 127 MND, 69 STR, 11 WSD, 40PDT/27MDT [43PetDT]
+    back=gear.GEO_Nuke_Cape,        -- 10, 20, __, __, __, 10/__ [__]
+    -- 153 MAB, 237 M.Dmg, 127 MND, 69 STR, 11 WSD, 50PDT/27MDT [43PetDT]
 
     -- head="Agwu's Cap",           -- 60, 35, 26, 26, __, __/__ [__]; R30
     -- legs="Agwu's Slops",         -- 60, 20, 32, 43, __, 10/10 [__]; R30
     -- feet="Agwu's Pigaches",      -- 60, 20, 26, 21, __, __/__ [__]; R30
     -- ring1="Weatherspoon Ring",   -- __, __, __, __, __, __/__ [__]; 10 Light MAB
-    -- back=gear.GEO_Nuke_Cape,     -- 10, 20, __, __, __, 10/__ [__]
     -- waist="Skrymir Cord +1",     --  7, 35, __, __, __, __/__ [__]
     -- 310 MAB, 347 M.Dmg, 185 MND, 136 STR, 0 WSD, 53PDT/30MDT [43PetDT]
   }
@@ -427,15 +426,14 @@ function init_gear_sets()
     ear2="Moonshade Earring",       -- __, __, __, __; TP bonus
     ring1="Archon Ring",            --  5, __, __, __
     -- ring2="Epaminondas's Ring",  -- __, __, __,  5
-    -- back="Argochampsa Mantle",   -- __, 12, __, __
+    back=gear.GEO_Nuke_Cape,        -- __, 10, 20, __
     -- waist="Skrymir Cord",        -- __,  5, 30, __
-    -- 33 Dark MAB, 157 MAB, 30 M.Dmg, 48 WSD
+    -- 33 Dark MAB, 155 MAB, 50 M.Dmg, 48 WSD
 
     -- body="Agwu's Robe",          -- __, 60, 30, __; R30
     -- hands="Agwu's Gages",        -- __, 60, 20, __; R30
     -- legs="Agwu's Slops",         -- __, 60, 20, __; R30
     -- feet="Agwu's Pigaches",      -- __, 60, 20, __; R30
-    -- back=gear.GEO_Nuke_Cape,     -- __, 10, 20, __
     -- waist="Skrymir Cord +1",     -- __,  7, 35, __
     -- 33 Dark MAB, 237 MAB, 125 M.Dmg, 12 WSD
   }
@@ -699,7 +697,7 @@ function init_gear_sets()
     ear2="Regal Earring", --7
     ring1="Metamorph Ring +1",
     ring2="Stikini Ring +1",
-    back=gear.GEO_FC_Cape,
+    back=gear.GEO_Nuke_Cape,
     waist="Refoccilation Stone", --10
     
     -- main="Bunzi's Rod",
@@ -741,6 +739,7 @@ function init_gear_sets()
     ear2="Malignance Earring",
     ring1="Archon Ring",
     ring2="Evanescence Ring",
+    back=gear.GEO_Nuke_Cape,
     waist="Fucho-no-Obi",
 
     -- main="Rubicundity",
@@ -804,9 +803,10 @@ function init_gear_sets()
     ear2="Malignance Earring",        -- 10, __,  8 [__/__, ___] {__/__, __}
     ring1="Metamorph Ring +1",        -- 15, __, 16 [__/__, ___] {__/__, __}
     ring2="Stikini Ring +1",          -- 11,  8, __ [__/__, ___] {__/__, __}
+    back=gear.GEO_Nuke_Cape,          -- 20, __, 30 [10/__, ___] {__/__, __}
     waist="Acuity Belt +1",           -- 15, __, 23 [__/__, ___] {__/__, __}
     -- AF set bonuses                 -- 15
-    -- 339 M.Acc, 8 Elemental Skill, 171 INT [27 PDT/24 MDT, 365 M.Eva] {Pet: 18 PDT/18 MDT, 0 Regen}
+    -- 359 M.Acc, 8 Elemental Skill, 201 INT [37 PDT/24 MDT, 365 M.Eva] {Pet: 18 PDT/18 MDT, 0 Regen}
 
     -- main="Idris",                  -- 70, __, __ [__/__, ___] {25/25, __}; M.Acc skill+255, R15
     -- sub="Ammurapi Shield",         -- 38, __, 13 [__/__, ___] {__/__, __}
@@ -816,9 +816,8 @@ function init_gear_sets()
     -- feet="Azimuth Gaiters +3",     -- 63, __, 34 [11/11, 168] {__/__, __}
     -- neck="Bagua Charm +2",         -- 30, __, __ [__/__, ___] {__/__, __}
     -- ear2="Azimuth Earring +2",     -- 20, __, 15 [ 7/ 7, ___] {__/__, __}
-    -- back=gear.GEO_Nuke_Cape,       -- 30, __, 20 [10/__, ___] {__/__, __}
     -- AF set bonuses                 -- 15
-    -- 505 M.Acc, 8 Elemental Skill, 294 INT [41 PDT/28 MDT, 590 M.Eva] {Pet: 43 PDT/43 MDT, 0 Regen}
+    -- 495 M.Acc, 8 Elemental Skill, 304 INT [41 PDT/28 MDT, 590 M.Eva] {Pet: 43 PDT/43 MDT, 0 Regen}
   }
 
   sets.midcast.Dispel = {
@@ -836,9 +835,10 @@ function init_gear_sets()
     ear2="Malignance Earring",        -- 10, __,  8 [__/__, ___] {__/__, __}
     ring1="Metamorph Ring +1",        -- 15, __, 16 [__/__, ___] {__/__, __}
     ring2="Stikini Ring +1",          -- 11,  8, __ [__/__, ___] {__/__, __}
+    back=gear.GEO_Nuke_Cape,          -- 20, __, 30 [10/__, ___] {__/__, __}
     waist="Obstinate Sash",           -- 15, 15, __ [__/__, ___] {__/__, __}
     -- AF set bonuses                 -- 15
-    -- 457 M.Acc, 66 Enfeebling Skill, 229 INT [38 PDT/38 MDT, 630 M.Eva] {Pet: 5 PDT/5 MDT, 4 Regen}
+    -- 477 M.Acc, 66 Enfeebling Skill, 259 INT [48 PDT/38 MDT, 630 M.Eva] {Pet: 5 PDT/5 MDT, 4 Regen}
 
     -- main="Idris",                  -- 70, __, __ [__/__, ___] {25/25, __}; M.Acc skill+255, R15
     -- sub="Ammurapi Shield",         -- 38, __, 13 [__/__, ___] {__/__, __}
@@ -848,9 +848,8 @@ function init_gear_sets()
     -- feet="Azimuth Gaiters +3",     -- 63, __, 34 [11/11, 168] {__/__, __}
     -- neck="Bagua Charm +2",         -- 30, __, __ [__/__, ___] {__/__, __}
     -- ear2="Azimuth Earring +2",     -- 20, __, 15 [ 7/ 7, ___] {__/__, __}
-    -- back=gear.GEO_Nuke_Cape,       -- 30, __, 20 [10/__, ___] {__/__, __}
     -- AF set bonuses                 -- 15
-    -- 553 M.Acc, 51 Enfeebling Skill, 276 INT [52 PDT/42 MDT, 670 M.Eva] {Pet: 5 PDT/5 MDT, 5 Regen}
+    -- 543 M.Acc, 51 Enfeebling Skill, 286 INT [52 PDT/42 MDT, 670 M.Eva] {Pet: 5 PDT/5 MDT, 5 Regen}
   }
 
   sets.midcast.Dispelga = set_combine(sets.midcast.Dispel, {
@@ -1246,12 +1245,11 @@ function init_gear_sets()
     ear2="Etiolation Earring",      -- __ [__/ 3, ___] {__/__, __}; Resist Silence+15
     ring1="Stikini Ring +1",        --  1 [__/__, ___] {__/__, __}
     ring2="Stikini Ring +1",        --  1 [__/__, ___] {__/__, __}
-    back=gear.GEO_FC_Cape,          -- __ [10/__, ___] {__/__, __}
+    back=gear.GEO_Nuke_Cape,        -- __ [10/__, ___] {__/__, __}
     waist="Carrier's Sash",         -- __ [__/__, ___] {__/__, __}; Ele resist+15
     -- 10 Refresh [50 PDT/23 MDT, 548 M.Eva] {Pet: 0 PDT/0 MDT, 4 Regen}
 
     -- head="Azimuth Hood +3",      -- __ [12/12, 136] {__/__,  5}
-    -- back=gear.GEO_Nuke_Cape,     -- __ [10/__, ___] {__/__, __}
     -- 11 Refresh [51 PDT/24 MDT, 578 M.Eva] {Pet: 0 PDT/0 MDT, 5 Regen}
     
     -- main="Bhima",                --  3 [__/__, ___] {__/__, __}
