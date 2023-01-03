@@ -781,10 +781,10 @@ function init_gear_sets()
     -- ear2="Azimuth Earring +2",     -- 20, __, 15 [ 7/ 7, ___] {__/__, __}
     -- ring1="Metamorph Ring +1",     -- 15, __, 16 [__/__, ___] {__/__, __}
     -- ring2="Stikini Ring +1",       -- 11,  8, __ [__/__, ___] {__/__, __}
-    -- back=gear.GEO_Nuke_Cape,       -- 30, __, 20 [10/__, ___] {__/__, __}
+    -- back=gear.GEO_Nuke_Cape,       -- 20, __, 30 [10/__, ___] {__/__, __}
     -- waist="Acuity Belt +1",        -- 15, __, 23 [__/__, ___] {__/__, __}
     -- AF set bonuses                 -- 15
-    -- 505 M.Acc, 8 Elemental Skill, 294 INT [41 PDT/28 MDT, 590 M.Eva] {Pet: 43 PDT/43 MDT, 0 Regen}
+    -- 495 M.Acc, 8 Elemental Skill, 304 INT [41 PDT/28 MDT, 590 M.Eva] {Pet: 43 PDT/43 MDT, 0 Regen}
   }
 
   sets.midcast.Dispel = {
@@ -809,10 +809,10 @@ function init_gear_sets()
     -- ear2="Azimuth Earring +2",     -- 20, __, 15 [ 7/ 7, ___] {__/__, __}
     -- ring1="Metamorph Ring +1",     -- 15, __, 16 [__/__, ___] {__/__, __}
     -- ring2="Stikini Ring +1",       -- 11,  8, __ [__/__, ___] {__/__, __}
-    -- back=gear.GEO_Nuke_Cape,       -- 30, __, 20 [10/__, ___] {__/__, __}
+    -- back=gear.GEO_Nuke_Cape,       -- 20, __, 30 [10/__, ___] {__/__, __}
     -- waist="Obstinate Sash",        -- 15, 15, __ [__/__, ___] {__/__, __}
     -- AF set bonuses                 -- 15
-    -- 553 M.Acc, 51 Enfeebling Skill, 276 INT [52 PDT/42 MDT, 670 M.Eva] {Pet: 5 PDT/5 MDT, 5 Regen}
+    -- 543 M.Acc, 51 Enfeebling Skill, 286 INT [52 PDT/42 MDT, 670 M.Eva] {Pet: 5 PDT/5 MDT, 5 Regen}
   }
 
   sets.midcast.Dispelga = set_combine(sets.midcast.Dispel, {
