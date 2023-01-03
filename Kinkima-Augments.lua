@@ -205,10 +205,7 @@ gear.SMN_FC_Cape = gear.SMN_Magic_BP_Cape
 -- gear.SMN_Cure_Cape = { name="Campestres's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','MND+10','"Cure" potency +10%','Phys. dmg. taken-10%',}}
 
 gear.WHM_FC_Cape = { name="Alaunus's Cape", augments={'INT+20','Eva.+20 /Mag. Eva.+20','INT+10','"Fast Cast"+10','Phys. dmg. taken-10%',}}
--- gear.WHM_FC_Cape = { name="Alaunus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Fast Cast"+10','Phys. dmg. taken-10%',}}
-gear.WHM_INT_MAcc_Cape = gear.WHM_FC_Cape
 gear.WHM_CP_Cape = { name="Alaunus's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Cure" potency +10%','Phys. dmg. taken-10%',}}
-gear.WHM_MND_MAcc_Cape = gear.WHM_CP_Cape
 
 
 ----------------------------------------------------------------------
