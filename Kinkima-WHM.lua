@@ -1108,13 +1108,6 @@ end
 
 -- Run after the general midcast() is done.
 function job_post_midcast(spell, action, spellMap, eventArgs)
-  if spell.skill == 'Elemental Magic' and state.MagicBurst.value then
-    equip(sets.magic_burst)
-    if spell.english == "Impact" then
-      equip(sets.midcast.Impact)
-    end
-  end
-
   -- Handle belts for elemental damage
   if spell.skill == 'Elemental Magic' or spell.english:contains('Holy') or spell.english:contains('Banish') then
     local base_day_weather_mult = silibs.get_day_weather_multiplier(spell.element, false, false)
