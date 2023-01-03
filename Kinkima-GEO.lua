@@ -466,13 +466,13 @@ function init_gear_sets()
     head="Azimuth Hood +2",         -- __, 20, __ [11/11, 126]; Set bonus
     body=gear.Nyame_B_body,         -- __, __, __ [ 9/ 9, 139]
     hands="Azimuth Gloves +2",      -- __, __, __ [11/11,  88]; Set bonus
-    legs=gear.Vanya_C_legs,         -- __, __, 12 [__/__, 107]
     feet="Azimuth Gaiters +2",      -- __, __, __ [10/10, 158]; Set bonus
     neck="Bagua Charm +1",          --  6, __, __ [__/__, ___]; Luopan Duration +20%
     ear1="Eabani Earring",          -- __, __, __ [__/__,   8]
     ear2="Halasz Earring",          -- __, __, __ [__/__, ___]
     ring1="Stikini Ring +1",        -- __,  8, __ [__/__, ___]
     ring2="Mephitas's Ring +1",     -- __, __, 15 [__/__, ___]
+    -- legs=gear.Vanya_C_legs,      -- __, __, 12 [__/__, 107]
     -- back=gear.GEO_Adoulin_Cape,  -- __, 14, __ [__/__, ___]
     -- waist="Sekhmet Corset",      -- __, __,  3 [__/__, ___]
     -- Base stats                   -- __,850, 43
