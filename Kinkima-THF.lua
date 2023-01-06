@@ -1306,12 +1306,11 @@ function init_gear_sets()
   }
   sets.WeaponSet['SoloCleaving'] = {
     -- main=gear.Gandring_C,
-    -- sub="Tauret",
+    sub="Tauret",
   }
   sets.WeaponSet['Cleaving'] = {
-    main="Kaja Knife",
+    main="Tauret",
     sub="Twashtar",
-    -- main="Tauret",
   }
   sets.WeaponSet['Staff'] = {
     main="Gozuki Mezuki",

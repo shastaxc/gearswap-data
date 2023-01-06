@@ -2079,10 +2079,9 @@ function init_gear_sets()
   sets.WeaponSet = {}
   sets.WeaponSet.DeathPenalty_M = {
     -- main=gear.Lanun_A,
-    sub="Kaja Knife",
+    sub="Tauret",
     -- ranged="Death Penalty",
     -- main="Rostam",
-    -- sub="Tauret",
   }
   sets.WeaponSet.DeathPenalty_R = {
     -- main=gear.Lanun_A,
@@ -2092,9 +2091,8 @@ function init_gear_sets()
   }
   sets.WeaponSet.Armageddon_M = {
     -- main=gear.Lanun_A,
-    sub="Kaja Knife",
+    sub="Tauret",
     -- main="Rostam",
-    -- sub="Tauret",
     -- ranged="Armageddon",
   }
   sets.WeaponSet.Armageddon_R = {
@@ -2108,7 +2106,7 @@ function init_gear_sets()
     ranged="Fomalhaut",
   }
   sets.WeaponSet.Fomalhaut_R = {
-    main="Kaja Knife",
+    main="Tauret",
     sub="Nusku Shield",
     ranged="Fomalhaut",
     -- main=gear.Lanun_A,
@@ -2119,7 +2117,7 @@ function init_gear_sets()
     ranged="Anarchy +2",
   }
   sets.WeaponSet.Cleaving = {
-    main="Kaja Knife",
+    main="Tauret",
     sub="Blurred Knife +1",
     ranged="Anarchy +2",
     -- main=gear.Lanun_A,
@@ -2127,9 +2125,8 @@ function init_gear_sets()
   }
   sets.WeaponSet.QuickDraw = {
     main="Naegling",
-    sub="Kaja Knife",
+    sub="Tauret",
     -- ranged="Death Penalty",
-    -- sub="Tauret",
   }
 end
 
