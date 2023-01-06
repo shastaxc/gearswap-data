@@ -817,8 +817,8 @@ function init_gear_sets()
 
   sets.midcast.Stoneskin = set_combine(sets.midcast.EnhancingDuration, {
     ear1="Earthcry Earring", --10
+    waist="Siegel Sash", --20
     -- hands="Stone Mufflers", --30
-    -- waist="Siegel Sash", --20
     -- ear2="Andoaa Earring",
     -- legs="Shedir Seraweels", --35
   })

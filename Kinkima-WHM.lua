@@ -789,9 +789,9 @@ function init_gear_sets()
     ring1="Kishar Ring",        -- [__/__, ___] __,  4
     ring2="Defending Ring",     -- [10/10, ___] __, __
     back=gear.WHM_FC_Cape,      -- [10/__,  20] __, 10
+    waist="Siegel Sash",        -- [__/__, ___] 20, __
     -- hands="Stone Mufflers",  -- [__/__, ___] 30, __
     -- legs="Shedir Seraweels", -- [__/__, ___] 35, __
-    -- waist="Siegel Sash",     -- [__/__, ___] 20, __
     -- [52 PDT/45 MDT, 381 MEVA] +125 Stoneskin Potency, 56 Fast Cast
   }
 

@@ -738,11 +738,11 @@ function init_gear_sets()
     ear1="Earthcry Earring",      -- 10 [__/__, ___]
     ring1="Gelatinous Ring +1",   -- __ [ 7/-1, ___]
     ring2="Defending Ring",       -- __ [10/10, ___]
-    -- 40 +Stoneskin [47 PDT/39 MDT, 524 M.Eva]
+    waist="Siegel Sash",          -- 20 [__/__, ___]
+    -- 60 +Stoneskin [47 PDT/39 MDT, 524 M.Eva]
 
     -- legs="Shedir Seraweels",   -- 35 [__/__, ___]
     -- back=gear.SMN_Cure_Cape,   -- __ [10/__,  20]
-    -- waist="Siegel Sash",       -- 20 [__/__, ___]
     -- 95 +Stoneskin [50 PDT/39 MDT, 544 M.Eva]
   }
 
