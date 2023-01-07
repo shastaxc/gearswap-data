@@ -94,7 +94,6 @@ function job_setup()
   state.Buff.Futae = buffactive.Futae or false
   state.Buff.Sange = buffactive.Sange or false
 
-  lugra_ws = S{'Blade: Kamu', 'Blade: Shun', 'Blade: Ten'}
   options.ninja_tool_warning_limit = 10
   state.warned = M(false) -- Whether a warning has been given for low ninja tools
 
@@ -203,7 +202,8 @@ function init_gear_sets()
     legs="Mochi. Hakama +3"
   }
   sets.precast.JA['Futae'] = {
-    hands="Hattori Tekko +1"
+    hands="Hattori Tekko +1",
+    -- hands="Hattori Tekko +3",
   }
   sets.precast.JA['Sange'] = {
     body="Mochi. Chainmail +3"
@@ -269,99 +269,382 @@ function init_gear_sets()
     right_ring="Regal Ring",
     back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
   }
+  sets.precast.WS.MaxTP = set_combine(sets.precast.WS, {})
+  sets.precast.WS.AttCapped = set_combine(sets.precast.WS, {})
+  sets.precast.WS.AttCappedMaxTP = set_combine(sets.precast.WS.AttCapped, {})
 
-  sets.precast.WS['Blade: Hi'] = set_combine(sets.precast.WS, {
-    ammo="Yetshila +1",
-    head=gear.Adhemar_B_head,
-    body="Ken. Samue +1",
-    hands="Mummu Wrists +2",
-    feet="Mummu Gamash. +2",
-    neck="Ninja Nodowa +2",
-    ear1="Odr Earring",
-    ear2="Lugra Earring +1",
-    ring2="Gere Ring",
-    back=gear.NIN_WS2_Cape,
-  })
-
-  sets.precast.WS['Blade: Metsu'] = set_combine(sets.precast.WS, {
-    ammo="Aurgelmir Orb +1",
-    neck="Ninja Nodowa +2",
-    ear1="Odr Earring",
-    ear2="Lugra Earring +1",
-    waist="Sailfi Belt +1",
-    back=gear.NIN_WS3_Cape,
-  })
-
-  sets.precast.WS['Blade: Ten'] = set_combine(sets.precast.WS, {
-    neck="Ninja Nodowa +2",
-    back=gear.NIN_WS2_Cape,
-    waist="Sailfi Belt +1",
-  })
-
-  sets.precast.WS['Blade: Ten'].Acc = set_combine(sets.precast.WS['Blade: Ten'], {
-    ammo="Voluspa Tathlum",
-    ear2="Telos Earring",
-  })
-
-  sets.precast.WS['Blade: Shun'] = set_combine(sets.precast.WS, {
-    ammo="C. Palug Stone",
-    head="Ken. Jinpachi +1",
-    body="Ken. Samue +1",
-    hands="Ken. Tekko +1",
-    legs="Jokushu Haidate",
-    feet="Ken. Sune-Ate +1",
-    ear1="Mache Earring +1",
+  sets.HybridWS = {
+    ammo="Seething Bomblet +1",
+    head="Mochi. Hatsuburi +3",
+    body=gear.Nyame_B_body,
+    hands=gear.Nyame_B_hands,
+    legs=gear.Nyame_B_legs,
+    feet=gear.Nyame_B_feet,
+    neck="Fotia Gorget",
+    ear1="Moonshade Earring",
     ear2="Lugra Earring +1",
     ring1="Gere Ring",
-    ring2="Ilabrat Ring",
-    back=gear.NIN_WS1_Cape,
-  })
-
-  sets.precast.WS['Blade: Shun'].Acc = set_combine(sets.precast.WS['Blade: Shun'], {
-    ammo="Voluspa Tathlum",
-    legs="Ken. Hakama +1",
-  })
-
-  sets.precast.WS['Blade: Ku'] = set_combine(sets.precast.WS['Blade: Shun'], {})
-
-  sets.precast.WS['Blade: Ku'].Acc = set_combine(sets.precast.WS['Blade: Ku'], {})
-
-  sets.precast.WS['Blade: Kamu'] = set_combine(sets.precast.WS, {
-    ring2="Ilabrat Ring",
-  })
-
-  sets.precast.WS['Blade: Yu'] = set_combine(sets.precast.WS, {
-    ammo="Seeth. Bomblet +1",
-    head="Hachiya Hatsu. +3",
-    body="Samnuha Coat",
-    hands="Leyline Gloves",
-    legs=gear.Herc_WSD_legs,
-    feet=gear.Herc_MAB_feet,
-    neck="Baetyl Pendant",
-    ear1="Crematio Earring",
-    ear2="Friomisi Earring",
-    ring1="Dingir Ring",
-    back=gear.NIN_MAB_Cape,
+    ring2="Epaminondas's Ring",
+    back=gear.NIN_WSD_STR_Cape,
     waist="Eschan Stone",
+  }
+  sets.HybridWS.MaxTP = set_combine(sets.HybridWS, {})
+  sets.HybridWS.AttCapped = set_combine(sets.HybridWS, {})
+  sets.HybridWS.AttCappedMaxTP = set_combine(sets.HybridWS.AttCapped, {})
+
+  sets.precast.WS['Blade: To'] = set_combine(sets.HybridWS, {})
+  sets.precast.WS['Blade: To'].MaxTP = set_combine(sets.HybridWS.MaxTP, {})
+  sets.precast.WS['Blade: To'].AttCapped = set_combine(sets.HybridWS.AttCapped, {})
+  sets.precast.WS['Blade: To'].AttCappedMaxTP = set_combine(sets.HybridWS.AttCappedMaxTP, {})
+
+  sets.precast.WS['Blade: Teki'] = set_combine(sets.HybridWS, {})
+  sets.precast.WS['Blade: Teki'].MaxTP = set_combine(sets.HybridWS.MaxTP, {})
+  sets.precast.WS['Blade: Teki'].AttCapped = set_combine(sets.HybridWS.AttCapped, {})
+  sets.precast.WS['Blade: Teki'].AttCappedMaxTP = set_combine(sets.HybridWS.AttCappedMaxTP, {})
+
+  sets.precast.WS['Blade: Chi'] = set_combine(sets.HybridWS, {})
+  sets.precast.WS['Blade: Chi'].MaxTP = set_combine(sets.HybridWS.MaxTP, {})
+  sets.precast.WS['Blade: Chi'].AttCapped = set_combine(sets.HybridWS.AttCapped, {})
+  sets.precast.WS['Blade: Chi'].AttCappedMaxTP = set_combine(sets.HybridWS.AttCappedMaxTP, {})
+
+  sets.precast.WS['Blade: Ei'] = {
+    ammo="Seething Bomblet +1",
+    head="Pixie Hairpin +1",
+    body=gear.Nyame_B_body,
+    hands=gear.Nyame_B_hands,
+    legs=gear.Nyame_B_legs,
+    feet=gear.Nyame_B_feet,
+    neck="Baetyl Pendant",
+    ear1="Moonshade Earring",
+    ear2="Friomisi Earring",
+    ring1="Archon Ring",
+    ring2="Epaminondas's Ring",
+    back=gear.NIN_WSD_INT_Cape,
+    waist="Eschan Stone",
+    
+    -- neck="Sibyl Scarf",
+  }
+  sets.precast.WS['Blade: Ei'].MaxTP = set_combine(sets.precast.WS['Blade: Ei'], {
+    ear1="Novio Earring",
+  })
+  sets.precast.WS['Blade: Ei'].AttCapped = set_combine(sets.precast.WS['Blade: Ei'], {})
+  sets.precast.WS['Blade: Ei'].AttCappedMaxTP = set_combine(sets.precast.WS['Blade: Ei'].AttCapped, {
+    ear1="Novio Earring",
   })
 
   sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
-    --ammo="Seeth. Bomblet +1",
-    head={ name="Nyame Helm", augments={'Path: B',}},
-    body={ name="Nyame Mail", augments={'Path: B',}},
-    hands={ name="Nyame Gauntlets", augments={'Path: B',}},
-    legs={ name="Nyame Flanchard", augments={'Path: B',}},
-    feet={ name="Nyame Sollerets", augments={'Path: B',}},
-    neck="Sibyl Scarf",
-    waist="Orpheus's Sash",
-    left_ear="Friomisi Earring",
-    right_ear="Hecate's Earring",
-    left_ring="Regal Ring",
-    right_ring="Epaminondas's Ring",
-    back={ name="Andartia's Mantle", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}},
+    ammo="Ghastly Tathlum +1",
+    head=gear.Nyame_B_head,
+    body=gear.Nyame_B_body,
+    hands=gear.Nyame_B_hands,
+    legs=gear.Nyame_B_legs,
+    feet=gear.Nyame_B_feet,
+    neck="Baetyl Pendant",
+    ear1="Moonshade Earring",
+    ear2="Friomisi Earring",
+    ring1="Dingir Ring",
+    ring2="Epaminondas's Ring",
+    back=gear.NIN_WSD_INT_Cape,
+    waist="Eschan Stone",
+
+    -- head="Mochi. Hatsuburi +3",
+  })
+  sets.precast.WS['Aeolian Edge'].MaxTP = set_combine(sets.precast.WS['Aeolian Edge'], {
+    ear1="Novio Earring",
+  })
+  sets.precast.WS['Aeolian Edge'].AttCapped = set_combine(sets.precast.WS['Aeolian Edge'], {})
+  sets.precast.WS['Aeolian Edge'].AttCappedMaxTP = set_combine(sets.precast.WS['Aeolian Edge'].AttCapped, {
+    ear1="Novio Earring",
+  })
+  
+  sets.precast.WS['Blade: Yu'] = set_combine(sets.precast.WS['Aeolian Edge'], {})
+  sets.precast.WS['Blade: Yu'].MaxTP = set_combine(sets.precast.WS['Aeolian Edge'].MaxTP, {})
+  sets.precast.WS['Blade: Yu'].AttCapped = set_combine(sets.precast.WS['Aeolian Edge'].AttCapped, {})
+  sets.precast.WS['Blade: Yu'].AttCappedMaxTP = set_combine(sets.precast.WS['Aeolian Edge'].AttCappedMaxTP, {})
+
+  sets.precast.WS['Blade: Hi'] = {
+    ammo="Yetshila +1",
+    head="Mpaca's Cap",
+    body="Hattori Ningi +3",
+    hands=gear.Nyame_B_hands,
+    legs=gear.Nyame_B_legs,
+    feet="Hattori Kyahan +3",
+    neck="Ninja Nodowa +2",
+    ear1="Odr Earring",
+    ear2="Hattori Earring +2",
+    ring1="Begrudging Ring",
+    ring2="Regal Ring",
+    back=gear.NIN_Crit_AGI_Cape,
+    waist="Sailfi Belt +1",
+
+    -- head="Blistering Sallet +1",
+  }
+  sets.precast.WS['Blade: Hi'].MaxTP = set_combine(sets.precast.WS['Blade: Hi'], {})
+  sets.precast.WS['Blade: Hi'].AttCapped = {
+    ammo="Yetshila +1",
+    head="Hachiya Hatsu. +3",
+    body=gear.Nyame_B_body,
+    hands=gear.Nyame_B_hands,
+    legs="Mpaca's Hose",
+    feet="Hattori Kyahan +3",
+    neck="Ninja Nodowa +2",
+    ear1="Odr Earring",
+    ear2="Hattori Earring +2",
+    ring1="Epaminondas's Ring",
+    ring2="Sroda Ring",
+    back=gear.NIN_WSD_AGI_Cape,
+    waist="Sailfi Belt +1",
+  }
+  sets.precast.WS['Blade: Hi'].AttCappedMaxTP = set_combine(sets.precast.WS['Blade: Hi'].AttCapped, {})
+  
+  sets.precast.WS['Blade: Kamu'] = {
+    ammo="Seething Bomblet +1",
+    head=gear.Nyame_B_head,
+    body=gear.Nyame_B_body,
+    hands=gear.Nyame_B_hands,
+    legs=gear.Nyame_B_legs,
+    feet=gear.Nyame_B_feet,
+    neck="Ninja Nodowa +2",
+    ear1="Lugra Earring +1",
+    ear2="Hattori Earring +2",
+    ring1="Sroda Ring",
+    ring2="Gere Ring",
+    back=gear.NIN_WSD_STR_Cape,
+    waist="Sailfi Belt +1",
+  }
+  sets.precast.WS['Blade: Kamu'].MaxTP = set_combine(sets.precast.WS['Blade: Kamu'], {})
+  sets.precast.WS['Blade: Kamu'].AttCapped = {
+    ammo="Crepuscular Pebble",
+    head="Hachiya Hatsu. +3",
+    body=gear.Nyame_B_body,
+    hands=gear.Nyame_B_hands,
+    legs="Mpaca's Hose",
+    feet=gear.Nyame_B_feet,
+    neck="Ninja Nodowa +2",
+    ear1="Lugra Earring +1",
+    ear2="Hattori Earring +2",
+    ring1="Sroda Ring",
+    ring2="Gere Ring",
+    back=gear.NIN_WSD_STR_Cape,
+    waist="Sailfi Belt +1",
+  }
+  sets.precast.WS['Blade: Kamu'].AttCappedMaxTP = set_combine(sets.precast.WS['Blade: Kamu'].AttCapped, {})
+
+  sets.precast.WS['Blade: Ku'] = {
+    ammo="Coiste Bodhar",
+    head="Mpaca's Cap",
+    body=gear.Nyame_B_body,
+    hands="Mochizuki Tekko +3",
+    legs=gear.Nyame_B_legs,
+    feet="Hattori Kyahan +3",
+    neck="Fotia Gorget",
+    ear1="Lugra Earring +1",
+    ear2="Hattori Earring +2",
+    ring1="Gere Ring",
+    ring2="Regal Ring",
+    back=gear.NIN_DA_STR_Cape,
+    waist="Fotia Belt",
+  }
+  sets.precast.WS['Blade: Ku'].MaxTP = set_combine(sets.precast.WS['Blade: Ku'], {})
+  sets.precast.WS['Blade: Ku'].AttCapped = {
+    ammo="Crepuscular Pebble",
+    head="Blistering Sallet +1",
+    body=gear.Nyame_B_body,
+    hands="Malignance Gloves",
+    legs="Mpaca's Hose",
+    feet="Hattori Kyahan +3",
+    neck="Ninja Nodowa +2",
+    ear1="Lugra Earring +1",
+    ear2="Hattori Earring +2",
+    ring1="Sroda Ring",
+    ring2="Gere Ring",
+    back=gear.NIN_DA_STR_Cape,
+    waist="Fotia Belt",
+  }
+  sets.precast.WS['Blade: Ku'].AttCappedMaxTP = set_combine(sets.precast.WS['Blade: Ku'].AttCapped, {})
+
+  sets.precast.WS['Blade: Metsu'] = {
+    ammo="Coiste Bodhar",
+    head=gear.Nyame_B_head,
+    body=gear.Nyame_B_body,
+    hands=gear.Nyame_B_hands,
+    legs=gear.Nyame_B_legs,
+    feet="Hattori Kyahan +3",
+    neck="Ninja Nodowa +2",
+    ear1="Lugra Earring +1",
+    ear2="Hattori Earring +2",
+    ring1="Gere Ring",
+    ring2="Regal Ring",
+    back=gear.NIN_WSD_DEX_Cape,
+    waist="Sailfi Belt +1",
+  }
+  sets.precast.WS['Blade: Metsu'].MaxTP = set_combine(sets.precast.WS['Blade: Metsu'], {})
+  sets.precast.WS['Blade: Metsu'].AttCapped = {
+    ammo="Crepuscular Pebble",
+    head="Hachiya Hatsu. +3",
+    body=gear.Nyame_B_body,
+    hands=gear.Nyame_B_hands,
+    legs="Mpaca's Hose",
+    feet="Hattori Kyahan +3",
+    neck="Ninja Nodowa +2",
+    ear1="Lugra Earring +1",
+    ear2="Hattori Earring +2",
+    ring1="Gere Ring",
+    ring2="Epaminondas's Ring",
+    back=gear.NIN_WSD_DEX_Cape,
+    waist="Kentarch Belt +1",
+  }
+  sets.precast.WS['Blade: Metsu'].AttCappedMaxTP = set_combine(sets.precast.WS['Blade: Metsu'].AttCapped, {})
+
+  sets.precast.WS['Blade: Shun'] = {
+    ammo="Coiste Bodhar",
+    head="Mpaca's Cap",
+    body="Hattori Ningi +3",
+    hands="Hattori Tekko +3",
+    legs=gear.Nyame_B_legs,
+    feet="Hattori Kyahan +3",
+    neck="Fotia Gorget",
+    ear1="Moonshade Earring",
+    ear2="Lugra Earring +1",
+    ring1="Gere Ring",
+    ring2="Regal Ring",
+    back=gear.NIN_DA_DEX_Cape,
+    waist="Fotia Belt",
+  }
+  sets.precast.WS['Blade: Shun'].MaxTP = set_combine(sets.precast.WS['Blade: Shun'], {
+    ear1="Lugra Earring +1",
+    ear2="Hattori Earring +2",
+  })
+  sets.precast.WS['Blade: Shun'].AttCapped = {
+    ammo="Crepuscular Pebble",
+    head="Ken. Jinpachi +1",
+    body="Malignance Tabard",
+    hands="Malignance Gloves",
+    legs="Mpaca's Hose",
+    feet="Hattori Kyahan +3",
+    neck="Ninja Nodowa +2",
+    ear1="Moonshade Earring",
+    ear2="Lugra Earring +1",
+    ring1="Gere Ring",
+    ring2="Regal Ring",
+    back=gear.NIN_DA_DEX_Cape,
+    waist="Fotia Belt",
+  }
+  sets.precast.WS['Blade: Shun'].AttCappedMaxTP = set_combine(sets.precast.WS['Blade: Shun'].AttCapped, {
+    ear1="Lugra Earring +1",
+    ear2="Hattori Earring +2",
   })
 
-  sets.Lugra = {ear2="Lugra Earring +1"}
+  sets.precast.WS['Blade: Ten'] = {
+    ammo="Coiste Bodhar",
+    head="Mpaca's Cap",
+    body=gear.Nyame_B_body,
+    hands=gear.Nyame_B_hands,
+    legs=gear.Nyame_B_legs,
+    feet="Hattori Kyahan +3",
+    neck="Ninja Nodowa +2",
+    ear1="Moonshade Earring",
+    ear2="Lugra Earring +1",
+    ring1="Gere Ring",
+    ring2="Regal Ring",
+    back=gear.NIN_WSD_STR_Cape,
+    waist="Sailfi Belt +1",
+  }
+  sets.precast.WS['Blade: Ten'].MaxTP = set_combine(sets.precast.WS['Blade: Ten'], {
+    ear1="Lugra Earring +1",
+    ear2="Hattori Earring +2",
+  })
+  sets.precast.WS['Blade: Ten'].AttCapped = {
+    ammo="Crepuscular Pebble",
+    head="Mpaca's Cap",
+    body=gear.Nyame_B_body,
+    hands=gear.Nyame_B_hands,
+    legs=gear.Nyame_B_legs,
+    feet="Hattori Kyahan +3",
+    neck="Ninja Nodowa +2",
+    ear1="Moonshade Earring",
+    ear2="Lugra Earring +1",
+    ring1="Sroda Ring",
+    ring2="Epaminondas's Ring",
+    back=gear.NIN_WSD_STR_Cape,
+    waist="Sailfi Belt +1",
+  }
+  sets.precast.WS['Blade: Ten'].AttCappedMaxTP = set_combine(sets.precast.WS['Blade: Ten'].AttCapped, {
+    ear1="Lugra Earring +1",
+    ear2="Hattori Earring +2",
+  })
+
+  sets.precast.WS['Evisceration'] = {
+    ammo="Yetshila +1",
+    head="Blistering Sallet +1",
+    body="Hattori Ningi +3",
+    hands=gear.Ryuo_A_hands,
+    legs="Mpaca's Hose",
+    feet="Ken. Sune-Ate +1",
+    neck="Fotia Gorget",
+    ear1="Odr Earring",
+    ear2="Lugra Earring +1",
+    ring1="Gere Ring",
+    ring2="Regal Ring",
+    back=gear.NIN_Crit_DEX_Cape,
+    waist="Fotia Belt",
+  }
+  sets.precast.WS['Evisceration'].MaxTP = set_combine(sets.precast.WS['Evisceration'], {})
+  sets.precast.WS['Evisceration'].AttCapped = {
+    ammo="Yetshila +1",
+    head="Blistering Sallet +1",
+    body="Ken. Samue +1",
+    hands=gear.Ryuo_A_hands,
+    legs="Mpaca's Hose",
+    feet="Ken. Sune-Ate +1",
+    neck="Ninja Nodowa +2",
+    ear1="Odr Earring",
+    ear2="Hattori Earring +2",
+    ring1="Gere Ring",
+    ring2="Regal Ring",
+    back=gear.NIN_Crit_DEX_Cape,
+    waist="Fotia Belt",
+  }
+  sets.precast.WS['Evisceration'].AttCappedMaxTP = set_combine(sets.precast.WS['Evisceration'].AttCapped, {})
+  
+  sets.precast.WS['Savage Blade'] = {
+    ammo="Yetshila +1",
+    head="Mpaca's Cap",
+    body=gear.Nyame_B_body,
+    hands=gear.Nyame_B_hands,
+    legs=gear.Nyame_B_legs,
+    feet="Hattori Kyahan +3",
+    neck="Ninja Nodowa +2",
+    ear1="Moonshade Earring",
+    ear2="Lugra Earring +1",
+    ring1="Gere Ring",
+    ring2="Regal Ring",
+    back=gear.NIN_WSD_STR_Cape,
+    waist="Sailfi Belt +1",
+  }
+  sets.precast.WS['Savage Blade'].MaxTP = set_combine(sets.precast.WS['Savage Blade'], {
+    ear1="Lugra Earring +1",
+    ear2="Hattori Earring +2",
+  })
+  sets.precast.WS['Savage Blade'].AttCapped = {
+    ammo="Crepuscular Pebble",
+    head="Hachiya Hatsu. +3",
+    body=gear.Nyame_B_body,
+    hands=gear.Nyame_B_hands,
+    legs=gear.Nyame_B_legs,
+    feet="Hattori Kyahan +3",
+    neck="Ninja Nodowa +2",
+    ear1="Moonshade Earring",
+    ear2="Hattori Earring +2",
+    ring1="Sroda Ring",
+    ring2="Epaminondas's Ring",
+    back=gear.NIN_WSD_STR_Cape,
+    waist="Sailfi Belt +1",
+  }
+  sets.precast.WS['Savage Blade'].AttCappedMaxTP = set_combine(sets.precast.WS['Savage Blade'].AttCapped, {
+    ear1="Lugra Earring +1",
+    ear2="Hattori Earring +2",
+  })
 
 
   ------------------------------------------------------------------------------------------------
@@ -399,28 +682,50 @@ function init_gear_sets()
     back=gear.NIN_FC_Cape,
   })
 
-  sets.midcast.ElementalNinjutsu = {
+  sets.midcast.ElementalNinjutsu = {}
+
+  sets.midcast.ElementalNinjutsu.Ichi = {
     ammo="Ghastly Tathlum +1",
     head="Mochi. Hatsuburi +3",
-    body="Samnuha Coat",
-    hands="Leyline Gloves",
-    legs=gear.Herc_MAB_legs,
-    feet=gear.Herc_MAB_feet,
-    neck="Baetyl Pendant",
+    body=gear.Nyame_B_body,
+    hands=gear.Nyame_B_hands,
+    legs=gear.Nyame_B_legs,
+    feet="Mochi. Kyahan +3",
+    neck="Sibyl Scarf",
     ear1="Crematio Earring",
     ear2="Friomisi Earring",
     ring1="Shiva Ring +1",
-    ring2="Metamor. Ring +1",
-    back=gear.NIN_MAB_Cape,
+    ring2="Dingir Ring",
+    back=gear.NIN_Nuke_Cape,
     waist="Eschan Stone",
   }
+  sets.midcast.ElementalNinjutsu.Ni = set_combine(sets.midcast.ElementalNinjutsu.Ichi, {
+    ring1="Metamorph Ring +1",
+  })
+  sets.midcast.ElementalNinjutsu.San = set_combine(sets.midcast.ElementalNinjutsu.Ni, {
+    ring2="Shiva Ring +1",
+  })
 
-  sets.midcast.ElementalNinjutsu.Resistant = set_combine(sets.midcast.ElementalNinjutsu, {
-    ammo="Pemphredo Tathlum",
-    neck="Sanctity Necklace",
-    ring1={name="Stikini Ring +1", bag="wardrobe3"},
-    ring2={name="Stikini Ring +1", bag="wardrobe4"},
-    ear1="Enchntr. Earring +1",
+  sets.midcast.ElementalNinjutsu.Ichi.MB = {
+    ammo="Ghastly Tathlum +1",
+    head="Mochi. Hatsuburi +3",
+    body=gear.Nyame_B_body,
+    hands="Hattori Tekko +3",
+    legs=gear.Nyame_B_legs,
+    feet="Mochi. Kyahan +3",
+    neck="Warder's Charm +1",
+    ear1="Crematio Earring",
+    ear2="Friomisi Earring",
+    ring1="Dingir Ring",
+    ring2="Mujin Band",
+    back=gear.NIN_Nuke_Cape,
+    waist="Eschan Stone",
+  }
+  sets.midcast.ElementalNinjutsu.Ni.MB = set_combine(sets.midcast.ElementalNinjutsu.Ichi.MB, {
+    neck="Sibyl Scarf",
+  })
+  sets.midcast.ElementalNinjutsu.San.MB = set_combine(sets.midcast.ElementalNinjutsu.Ni.MB, {
+    ring1="Metamorph Ring +1",
   })
 
   sets.midcast.EnfeeblingNinjutsu = {
@@ -576,36 +881,8 @@ function init_gear_sets()
     waist="Olseni Belt",
   })
 
-  -- Low DW (15 needed from gear)
+  -- Low DW (21 needed from gear)
   sets.engaged.LowDW = {
-    ammo="Seki Shuriken",
-    head="Ken. Jinpachi +1",
-    body="Ken. Samue +1",
-    hands=gear.Adhemar_B_hands,
-    legs="Ken. Hakama +1",
-    feet="Ken. Sune-Ate +1",
-    neck="Ninja Nodowa +2",
-    ear1="Eabani Earring", --4
-    ear2="Suppanomimi", --5
-    ring1="Gere Ring",
-    ring2="Epona's Ring",
-    back=gear.NIN_TP_Cape,
-    waist="Reiki Yotai", --7
-  } -- 16%
-  sets.engaged.LowDW.LowAcc = set_combine(sets.engaged.LowDW, {
-    hands=gear.Adhemar_A_hands,
-  })
-  sets.engaged.LowDW.MidAcc = set_combine(sets.engaged.LowDW.LowAcc, {
-    ring1={name="Chirich Ring +1", bag="wardrobe3"},
-    ring2="Ilabrat Ring",
-  })
-  sets.engaged.LowDW.HighAcc = set_combine(sets.engaged.LowDW.MidAcc, {
-    ring1="Regal Ring",
-    ring2={name="Chirich Ring +1", bag="wardrobe4"},
-  })
-
-  -- Mid DW (25 needed from gear)
-  sets.engaged.MidDW = {
     ammo="Seki Shuriken",
     head="Ken. Jinpachi +1",
     body="Mochi. Chainmail +3", --9
@@ -620,16 +897,26 @@ function init_gear_sets()
     back=gear.NIN_TP_Cape,
     waist="Reiki Yotai", --7
   } -- 21%
-  sets.engaged.MidDW.LowAcc = set_combine(sets.engaged.MidDW, {
+  sets.engaged.LowDW.LowAcc = set_combine(sets.engaged.LowDW, {
     hands=gear.Adhemar_A_hands,
   })
-  sets.engaged.MidDW.MidAcc = set_combine(sets.engaged.MidDW.LowAcc, {
+  sets.engaged.LowDW.MidAcc = set_combine(sets.engaged.LowDW.LowAcc, {
     ring1={name="Chirich Ring +1", bag="wardrobe3"},
     ring2="Ilabrat Ring",
   })
-  sets.engaged.MidDW.HighAcc = set_combine(sets.engaged.MidDW.MidAcc, {
+  sets.engaged.LowDW.HighAcc = set_combine(sets.engaged.LowDW.MidAcc, {
     ring1="Regal Ring",
     ring2={name="Chirich Ring +1", bag="wardrobe4"},
+  })
+
+  -- Mid DW (25 needed from gear)
+  sets.engaged.MidDW = {
+  }
+  sets.engaged.MidDW.LowAcc = set_combine(sets.engaged.MidDW, {
+  })
+  sets.engaged.MidDW.MidAcc = set_combine(sets.engaged.MidDW.LowAcc, {
+  })
+  sets.engaged.MidDW.HighAcc = set_combine(sets.engaged.MidDW.MidAcc, {
   })
 
   -- High DW (32 needed from gear)
@@ -713,7 +1000,7 @@ function init_gear_sets()
   sets.engaged.HeavyDef.HighAcc = set_combine(sets.engaged.HeavyDef.MidAcc, {
   })
 
-  -- Low DW (15 needed from gear)
+  -- Low DW (21 needed from gear)
   sets.engaged.LowDW.HeavyDef = {
   }
   sets.engaged.LowDW.HeavyDef.LowAcc = set_combine(sets.engaged.LowDW.HeavyDef, {
@@ -775,12 +1062,6 @@ function init_gear_sets()
   sets.buff.Innin = {}
   sets.buff.Sange = {
     ammo="Hachiya Shuriken"
-  }
-
-  sets.magic_burst = {
-    feet="Hachiya Kyahan +3",
-    ring1="Locus Ring",
-    ring2="Mujin Band", --(5)
   }
 
   sets.buff.Migawari = {
@@ -846,11 +1127,7 @@ function job_precast(spell, action, spellMap, eventArgs)
 end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
-  if spell.type == 'WeaponSkill' then
-    if lugra_ws:contains(spell.english) and (world.time >= (17*60) or world.time <= (7*60)) then
-      equip(sets.Lugra)
-    end
-    
+  if spell.type == 'WeaponSkill' then    
     -- Handle belts for elemental WS
     if elemental_ws:contains(spell.english) then
       local base_day_weather_mult = silibs.get_day_weather_multiplier(spell.element, false, false)
@@ -894,14 +1171,43 @@ end
 -- eventArgs is the same one used in job_midcast, in case information needs to be persisted.
 function job_post_midcast(spell, action, spellMap, eventArgs)
   if spellMap == 'ElementalNinjutsu' then
-    if state.MagicBurst.value then
-      equip(sets.magic_burst)
+    -- Select set based on tier of nuke and whether MB mode is on or off
+    if not state.MagicBurst.value then
+      if spell:endswith('Ichi') then
+        equip(sets.midcast.ElementalNinjutsu.Ichi)
+      elseif spell:endswith('Ni') then
+        equip(sets.midcast.ElementalNinjutsu.Ni)
+      else
+        equip(sets.midcast.ElementalNinjutsu.San)
+      end
+    else
+      if spell:endswith('Ichi') then
+        equip(sets.midcast.ElementalNinjutsu.Ichi.MB)
+      elseif spell:endswith('Ni') then
+        equip(sets.midcast.ElementalNinjutsu.Ni.MB)
+      else
+        equip(sets.midcast.ElementalNinjutsu.San.MB)
+      end
     end
-    if (spell.element == world.day_element or spell.element == world.weather_element) then
-      equip(sets.Obi)
-    end
+
     if state.Buff.Futae then
       equip(sets.precast.JA['Futae'])
+    end
+    
+    -- Handle belts for elemental damage
+    local base_day_weather_mult = silibs.get_day_weather_multiplier(spell.element, false, false)
+    local obi_mult = silibs.get_day_weather_multiplier(spell.element, true, false)
+    local orpheus_mult = silibs.get_orpheus_multiplier(spell.element, spell.target.distance)
+    local has_obi = true -- Change if you do or don't have Hachirin-no-Obi
+    local has_orpheus = false -- Change if you do or don't have Orpheus's Sash
+
+    -- Determine which combination to use: orpheus, hachirin-no-obi, or neither
+    if has_obi and (obi_mult >= orpheus_mult or not has_orpheus) and (obi_mult > base_day_weather_mult) then
+      -- Obi is better than orpheus and better than nothing
+      equip({waist='Hachirin-no-Obi'})
+    elseif has_orpheus and (orpheus_mult > base_day_weather_mult) then
+      -- Orpheus is better than obi and better than nothing
+      equip({waist='Orpheus\'s Sash'})
     end
   end
 
@@ -976,9 +1282,9 @@ function update_combat_form()
   if silibs.get_dual_wield_needed() <= 1 or not silibs.is_dual_wielding() then
     state.CombatForm:reset()
   else
-    if silibs.get_dual_wield_needed() > 1 and silibs.get_dual_wield_needed() <= 15 then
+    if silibs.get_dual_wield_needed() > 1 and silibs.get_dual_wield_needed() <= 21 then
       state.CombatForm:set('LowDW')
-    elseif silibs.get_dual_wield_needed() > 15 and silibs.get_dual_wield_needed() <= 25 then
+    elseif silibs.get_dual_wield_needed() > 21 and silibs.get_dual_wield_needed() <= 25 then
       state.CombatForm:set('MidDW')
     elseif silibs.get_dual_wield_needed() > 25 and silibs.get_dual_wield_needed() <= 32 then
       state.CombatForm:set('HighDW')
@@ -1276,7 +1582,7 @@ function do_ninja_tool_checks(spell, spellMap, eventArgs)
     end
   end
 
-  local available_ninja_tools = player.inventory[ninja_tool_name] or player.wardrobe[ninja_tool_name]
+  local available_ninja_tools = player.inventory[ninja_tool_name]
 
   -- If no tools are available, end.
   if not available_ninja_tools then
