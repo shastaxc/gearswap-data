@@ -848,69 +848,100 @@ function init_gear_sets()
   ---------------------------------------- Engaged Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
 
-    -- * NIN Native DW Trait: 35% DW
-
   -- No DW (0 needed from gear)
   sets.engaged = {
-    ammo="Seki Shuriken",
-    head="Ken. Jinpachi +1",
-    body="Ken. Samue +1",
-    hands=gear.Adhemar_B_hands,
-    legs="Ken. Hakama +1",
-    feet="Ken. Sune-Ate +1",
-    neck="Ninja Nodowa +2",
-    ear1="Cessance Earring",
-    ear2="Telos Earring",
-    ring1="Gere Ring",
-    ring2="Epona's Ring",
-    back=gear.NIN_TP_Cape,
-    waist="Windbuffet Belt +1",
+    ammo="Seki Shuriken",             -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
+    head="Malignance Chapeau",        -- __,  8,  50/50 <__, __, __> [ 6/ 6, 123]  91, __
+    body="Tatenashi Haramaki +1",     -- __,  9,  65/__ <__,  5, __> [__/__,  59]  44, __
+    hands=gear.Adhemar_A_hands,       -- __,  7,  52/32 <__,  4, __> [__/__,  43]  36, __
+    legs="Malignance Tights",         -- __, 10,  50/50 <__, __, __> [ 7/ 7, 150]  85, __
+    feet="Malignance Boots",          -- __,  9,  50/50 <__, __, __> [ 4/ 4, 150] 119, __
+    neck="Ninja Nodowa +2",           -- __,  7,  25/25 <__, __, __> [__/__, ___] ___, 25
+    ear1="Telos Earring",             -- __,  5,  10/10 < 1, __, __> [__/__, ___] ___, __
+    ear2="Dedition Earring",          -- __,  8,-10/-10 <__, __, __> [__/__, ___] ___, __
+    ring1="Defending Ring",           -- __, __,  __/__ <__, __, __> [10/10, ___] ___, __
+    ring2="Epona's Ring",             -- __, __,  __/__ < 3,  3, __> [__/__, ___] ___, __
+    back=gear.NIN_STP_Cape,           -- __, 10,  20/__ <__, __, __> [10/__, ___] ___, __
+    waist="Windbuffet Belt +1",       -- __, __,   2/__ <__,  2,  2> [__/__, ___] ___, __
+    -- Traits/gifts/etc                                                                54
+    -- 0 DW, 75 STP, 314 Acc/207 R.Acc <4 DA, 14 TA, 2 QA> [37 PDT/27 MDT, 525 M.Eva] 375 Evasion, 79 Daken
+
+    -- ear1="Dedition Earring",       -- __,  8,-10/-10 <__, __, __> [__/__, ___] ___, __
+    -- ear2="Hattori Earring +2",     -- __,  8,  20/__ <__, __, __> [__/__, ___] ___, __; katana/throwing +12
   }
   sets.engaged.LowAcc = set_combine(sets.engaged, {
-    hands=gear.Adhemar_A_hands,
-    waist="Kentarch Belt +1",
+    ear2="Dignitary's Earring",       -- __,  3,  10/__ <__, __, __> [__/__, ___] ___, __
+    
+    -- ear1="Telos Earring",          -- __,  5,  10/10 < 1, __, __> [__/__, ___] ___, __
+    -- ear2="Hattori Earring +2",     -- __,  8,  20/__ <__, __, __> [__/__, ___] ___, __; katana/throwing +12
   })
   sets.engaged.MidAcc = set_combine(sets.engaged.LowAcc, {
-    ear1="Cessance Earring",
-    ring1={name="Chirich Ring +1", bag="wardrobe3"},
-    ring2="Ilabrat Ring",
+    ammo="Date Shuriken",             -- __, __,   5/ 5 <__, __, __> [__/__, ___]   5, __
+    waist="Kentarch Belt +1",         -- __,  5,  14/__ < 3, __, __> [__/__, ___] ___, __
   })
   sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
-    ring1="Regal Ring",
-    ring2={name="Chirich Ring +1", bag="wardrobe4"},
-    waist="Olseni Belt",
+    ring2="Chirich Ring +1",          -- __,  6,  10/__ <__, __, __> [__/__, ___] ___, __
+    waist="Olseni Belt",              -- __,  3,  20/__ <__, __, __> [__/__, ___] ___, __
   })
 
-  -- Low DW (21 needed from gear)
+  -- Low DW (15 needed from gear)
   sets.engaged.LowDW = {
-    ammo="Seki Shuriken",
-    head="Ken. Jinpachi +1",
-    body="Mochi. Chainmail +3", --9
-    hands=gear.Adhemar_B_hands,
-    legs="Ken. Hakama +1",
-    feet="Ken. Sune-Ate +1",
-    neck="Ninja Nodowa +2",
-    ear1="Cessance Earring",
-    ear2="Suppanomimi", --5
-    ring1="Gere Ring",
-    ring2="Epona's Ring",
-    back=gear.NIN_TP_Cape,
-    waist="Reiki Yotai", --7
-  } -- 21%
+    ammo="Seki Shuriken",             -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
+    head=gear.Ryuo_C_head,            --  9, 12,  35/35 <__, __, __> [__/__,  48]  36, __
+    body="Mpaca's Doublet",           -- __,  8,  55/__ <__,  4, __> [10/__,  86] 102, __
+    hands=gear.Adhemar_A_hands,       -- __,  7,  52/32 <__,  4, __> [__/__,  43]  36, __
+    legs="Malignance Tights",         -- __, 10,  50/50 <__, __, __> [ 7/ 7, 150]  85, __
+    feet="Malignance Boots",          -- __,  9,  50/50 <__, __, __> [ 4/ 4, 150] 119, __
+    neck="Ninja Nodowa +2",           -- __,  7,  25/25 <__, __, __> [__/__, ___] ___, 25
+    ear1="Telos Earring",             -- __,  5,  10/10 < 1, __, __> [__/__, ___] ___, __
+    ear2="Dedition Earring",          -- __,  8,-10/-10 <__, __, __> [__/__, ___] ___, __
+    ring1="Defending Ring",           -- __, __,  __/__ <__, __, __> [10/10, ___] ___, __
+    ring2="Epona's Ring",             -- __, __,  __/__ < 3,  3, __> [__/__, ___] ___, __
+    back=gear.NIN_STP_Cape,           -- __, 10,  20/__ <__, __, __> [10/__, ___] ___, __
+    waist="Reiki Yotai",              --  7,  4,  10/10 <__, __, __> [__/__, ___] ___, __
+    -- Traits/gifts/etc                                                                54
+    -- 16 DW, 82 STP, 297 Acc/202 R.Acc <4 DA, 11 TA, 0 QA> [41 PDT/27 MDT, 525 M.Eva] 375 Evasion, 79 Daken
+    
+    -- feet="Tatenashi Sune-ate +1",  -- __,  8,  60/__ <__,  3, __> [__/__,  80]  76, __
+    -- ear1="Dedition Earring",       -- __,  8,-10/-10 <__, __, __> [__/__, ___] ___, __
+    -- ear2="Hattori Earring +2",     -- __,  8,  20/__ <__, __, __> [__/__, ___] ___, __; katana/throwing +12
+  }
   sets.engaged.LowDW.LowAcc = set_combine(sets.engaged.LowDW, {
-    hands=gear.Adhemar_A_hands,
+    ear2="Dignitary's Earring",       -- __,  3,  10/__ <__, __, __> [__/__, ___] ___, __
+    
+    -- ear1="Telos Earring",          -- __,  5,  10/10 < 1, __, __> [__/__, ___] ___, __
+    -- ear2="Hattori Earring +2",     -- __,  8,  20/__ <__, __, __> [__/__, ___] ___, __; katana/throwing +12
   })
   sets.engaged.LowDW.MidAcc = set_combine(sets.engaged.LowDW.LowAcc, {
-    ring1={name="Chirich Ring +1", bag="wardrobe3"},
-    ring2="Ilabrat Ring",
+    ammo="Date Shuriken",             -- __, __,   5/ 5 <__, __, __> [__/__, ___]   5, __
+    head="Malignance Chapeau",        -- __,  8,  50/50 <__, __, __> [ 6/ 6, 123]  91, __
+    body="Mochi. Chainmail +3",       --  9, __,  51/47 <__, __, __> [__/__,  73]  72, 10
   })
   sets.engaged.LowDW.HighAcc = set_combine(sets.engaged.LowDW.MidAcc, {
-    ring1="Regal Ring",
-    ring2={name="Chirich Ring +1", bag="wardrobe4"},
+    feet="Malignance Boots",          -- __,  9,  50/50 <__, __, __> [ 4/ 4, 150] 119, __
+    waist="Olseni Belt",              -- __,  3,  20/__ <__, __, __> [__/__, ___] ___, __
   })
 
-  -- Mid DW (25 needed from gear)
+  -- Mid DW (21 needed from gear)
   sets.engaged.MidDW = {
+    ammo="Seki Shuriken",             -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
+    head=gear.Ryuo_C_head,            --  9, 12,  35/35 <__, __, __> [__/__,  48]  36, __
+    body=gear.Adhemar_A_body,         --  6, __,  55/35 <__,  4, __> [__/__,  69]  55, __
+    hands="Malignance Gloves",        -- __, 12,  50/50 <__, __, __> [ 5/ 5, 112]  80, __
+    legs="Malignance Tights",         -- __, 10,  50/50 <__, __, __> [ 7/ 7, 150]  85, __
+    feet="Malignance Boots",          -- __,  9,  50/50 <__, __, __> [ 4/ 4, 150] 119, __
+    neck="Ninja Nodowa +2",           -- __,  7,  25/25 <__, __, __> [__/__, ___] ___, 25
+    ear1="Telos Earring",             -- __,  5,  10/10 < 1, __, __> [__/__, ___] ___, __
+    ear2="Dedition Earring",          -- __,  8,-10/-10 <__, __, __> [__/__, ___] ___, __
+    ring1="Defending Ring",           -- __, __,  __/__ <__, __, __> [10/10, ___] ___, __
+    ring2="Epona's Ring",             -- __, __,  __/__ < 3,  3, __> [__/__, ___] ___, __
+    back=gear.NIN_STP_Cape,           -- __, 10,  20/__ <__, __, __> [10/__, ___] ___, __
+    waist="Reiki Yotai",              --  7,  4,  10/10 <__, __, __> [__/__, ___] ___, __
+    -- Traits/gifts/etc                                                                54
+    -- 22 DW, 79 STP, 295 Acc/255 R.Acc <4 DA, 7 TA, 0 QA> [36 PDT/26 MDT, 529 M.Eva] 375 Evasion, 79 Daken
+    
+    -- ear1="Dedition Earring",       -- __,  8,-10/-10 <__, __, __> [__/__, ___] ___, __
+    -- ear2="Hattori Earring +2",     -- __,  8,  20/__ <__, __, __> [__/__, ___] ___, __; katana/throwing +12
   }
   sets.engaged.MidDW.LowAcc = set_combine(sets.engaged.MidDW, {
   })
@@ -919,64 +950,82 @@ function init_gear_sets()
   sets.engaged.MidDW.HighAcc = set_combine(sets.engaged.MidDW.MidAcc, {
   })
 
-  -- High DW (32 needed from gear)
+  -- High DW (25 needed from gear)
   sets.engaged.HighDW = {
-    ammo="Seki Shuriken",
-    head="Ryuo Somen +1", --9
-    body="Mochi. Chainmail +3", --9
-    hands=gear.Adhemar_B_hands,
-    legs="Ken. Hakama +1",
-    feet="Ken. Sune-Ate +1",
-    neck="Ninja Nodowa +2",
-    ear1="Cessance Earring",
-    ear2="Suppanomimi", --5
-    ring1="Gere Ring",
-    ring2="Epona's Ring",
-    back=gear.NIN_TP_Cape,
-    waist="Reiki Yotai", --7
-  } -- 30%
+    ammo="Seki Shuriken",             -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
+    head=gear.Ryuo_C_head,            --  9, 12,  35/35 <__, __, __> [__/__,  48]  36, __
+    body="Mochi. Chainmail +3",       --  9, __,  51/47 <__, __, __> [__/__,  73]  72, 10
+    hands="Malignance Gloves",        -- __, 12,  50/50 <__, __, __> [ 5/ 5, 112]  80, __
+    legs="Malignance Tights",         -- __, 10,  50/50 <__, __, __> [ 7/ 7, 150]  85, __
+    feet="Malignance Boots",          -- __,  9,  50/50 <__, __, __> [ 4/ 4, 150] 119, __
+    neck="Ninja Nodowa +2",           -- __,  7,  25/25 <__, __, __> [__/__, ___] ___, 25
+    ear1="Telos Earring",             -- __,  5,  10/10 < 1, __, __> [__/__, ___] ___, __
+    ear2="Dedition Earring",          -- __,  8,-10/-10 <__, __, __> [__/__, ___] ___, __
+    ring1="Defending Ring",           -- __, __,  __/__ <__, __, __> [10/10, ___] ___, __
+    ring2="Epona's Ring",             -- __, __,  __/__ < 3,  3, __> [__/__, ___] ___, __
+    back=gear.NIN_STP_Cape,           -- __, 10,  20/__ <__, __, __> [10/__, ___] ___, __
+    waist="Reiki Yotai",              --  7,  4,  10/10 <__, __, __> [__/__, ___] ___, __
+    -- Traits/gifts/etc                                                                54
+    -- 25 DW, 79 STP, 291 Acc/267 R.Acc <4 DA, 3 TA, 0 QA> [36 PDT/26 MDT, 533 M.Eva] 392 Evasion, 89 Daken
+    
+    -- feet="Tatenashi Sune-ate +1",  -- __,  8,  60/__ <__,  3, __> [__/__,  80]  76, __
+    -- ear1="Dedition Earring",       -- __,  8,-10/-10 <__, __, __> [__/__, ___] ___, __
+    -- ear2="Hattori Earring +2",     -- __,  8,  20/__ <__, __, __> [__/__, ___] ___, __; katana/throwing +12
+  }
   sets.engaged.HighDW.LowAcc = set_combine(sets.engaged.HighDW, {
-    hands=gear.Adhemar_A_hands,
   })
   sets.engaged.HighDW.MidAcc = set_combine(sets.engaged.HighDW.LowAcc, {
-    ring1={name="Chirich Ring +1", bag="wardrobe3"},
-    ring2="Ilabrat Ring",
   })
   sets.engaged.HighDW.HighAcc = set_combine(sets.engaged.HighDW.MidAcc, {
-    ring1="Regal Ring",
-    ring2={name="Chirich Ring +1", bag="wardrobe4"},
   })
 
-  -- Super DW (39 needed from gear)
+  -- Super DW (32 needed from gear)
   sets.engaged.SuperDW = {
-    ammo="Togakushi Shuriken",
-    head="Malignance Chapeau",
-    body="Malignance Tabard",
-    hands="Malignance Gloves",
-    legs="Malignance Tights",
-    feet="Malignance Boots",
-    neck="Ninja Nodowa +2",
-    waist="Reiki Yotai",
-    left_ear="Telos Earring",
-    right_ear="Cessance Earring",
-    left_ring="Epona's Ring",
-    right_ring="Petrov Ring",
-    back={ name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}},
-  } -- 38%
+    ammo="Seki Shuriken",             -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
+    head=gear.Ryuo_C_head,            --  9, 12,  35/35 <__, __, __> [__/__,  48]  36, __
+    body=gear.Adhemar_A_body,         --  6, __,  55/35 <__,  4, __> [__/__,  69]  55, __
+    hands="Malignance Gloves",        -- __, 12,  50/50 <__, __, __> [ 5/ 5, 112]  80, __
+    legs="Malignance Tights",         -- __, 10,  50/50 <__, __, __> [ 7/ 7, 150]  85, __
+    feet="Malignance Boots",          -- __,  9,  50/50 <__, __, __> [ 4/ 4, 150] 119, __
+    neck="Ninja Nodowa +2",           -- __,  7,  25/25 <__, __, __> [__/__, ___] ___, 25
+    ear1="Telos Earring",             -- __,  5,  10/10 < 1, __, __> [__/__, ___] ___, __
+    ear2="Dedition Earring",          -- __,  8,-10/-10 <__, __, __> [__/__, ___] ___, __
+    ring1="Defending Ring",           -- __, __,  __/__ <__, __, __> [10/10, ___] ___, __
+    ring2="Epona's Ring",             -- __, __,  __/__ < 3,  3, __> [__/__, ___] ___, __
+    back=gear.NIN_DW_Cape,            -- 10, __,  20/__ <__, __, __> [10/__, ___] ___, __
+    waist="Reiki Yotai",              --  7,  4,  10/10 <__, __, __> [__/__, ___] ___, __
+    -- Traits/gifts/etc                                                                54
+    -- 32 DW, 69 STP, 295 Acc/255 R.Acc <4 DA, 7 TA, 0 QA> [36 PDT/26 MDT, 529 M.Eva] 375 Evasion, 79 Daken
+    
+    -- ear1="Dedition Earring",       -- __,  8,-10/-10 <__, __, __> [__/__, ___] ___, __
+    -- ear2="Hattori Earring +2",     -- __,  8,  20/__ <__, __, __> [__/__, ___] ___, __; katana/throwing +12
+  }
   sets.engaged.SuperDW.LowAcc = set_combine(sets.engaged.SuperDW, {
-    hands=gear.Adhemar_A_hands,
   })
   sets.engaged.SuperDW.MidAcc = set_combine(sets.engaged.SuperDW.LowAcc, {
-    ring2="Ilabrat Ring",
-    ring1={name="Chirich Ring +1", bag="wardrobe3"},
   })
   sets.engaged.SuperDW.HighAcc = set_combine(sets.engaged.SuperDW.MidAcc, {
-    ring1="Regal Ring",
-    ring2={name="Chirich Ring +1", bag="wardrobe4"},
   })
 
-  -- Max DW (47 needed from gear)
+  -- Max DW (39 needed from gear)
   sets.engaged.MaxDW = {
+    ammo="Seki Shuriken",             -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
+    head=gear.Ryuo_C_head,            --  9, 12,  35/35 <__, __, __> [__/__,  48]  36, __
+    body="Mochi. Chainmail +3",       --  9, __,  51/47 <__, __, __> [__/__,  73]  72, 10
+    hands="Malignance Gloves",        -- __, 12,  50/50 <__, __, __> [ 5/ 5, 112]  80, __
+    legs="Malignance Tights",         -- __, 10,  50/50 <__, __, __> [ 7/ 7, 150]  85, __
+    feet="Malignance Boots",          -- __,  9,  50/50 <__, __, __> [ 4/ 4, 150] 119, __
+    neck="Ninja Nodowa +2",           -- __,  7,  25/25 <__, __, __> [__/__, ___] ___, 25
+    ear1="Eabani Earring",            --  4, __,  __/__ <__, __, __> [__/__,  15]  15, __
+    ear2="Dedition Earring",          -- __,  8,-10/-10 <__, __, __> [__/__, ___] ___, __
+    ring1="Defending Ring",           -- __, __,  __/__ <__, __, __> [10/10, ___] ___, __
+    ring2="Epona's Ring",             -- __, __,  __/__ < 3,  3, __> [__/__, ___] ___, __
+    back=gear.NIN_DW_Cape,            -- 10, __,  20/__ <__, __, __> [10/__, ___] ___, __
+    waist="Reiki Yotai",              --  7,  4,  10/10 <__, __, __> [__/__, ___] ___, __
+    -- Traits/gifts/etc                                                                54
+    -- 39 DW, 64 STP, 281 Acc/257 R.Acc <3 DA, 3 TA, 0 QA> [36 PDT/26 MDT, 548 M.Eva] 407 Evasion, 89 Daken
+    
+    -- ear2="Hattori Earring +2",     -- __,  8,  20/__ <__, __, __> [__/__, ___] ___, __; katana/throwing +12
   }
   sets.engaged.MaxDW.LowAcc = set_combine(sets.engaged.MaxDW, {
   })
@@ -992,6 +1041,23 @@ function init_gear_sets()
 
   -- No DW (0 needed from gear)
   sets.engaged.HeavyDef = {
+    ammo="Seki Shuriken",             -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
+    head="Malignance Chapeau",        -- __,  8,  50/50 <__, __, __> [ 6/ 6, 123]  91, __
+    body="Mpaca's Doublet",           -- __,  8,  55/__ <__,  4, __> [10/__,  86] 102, __
+    hands=gear.Adhemar_A_hands,       -- __,  7,  52/32 <__,  4, __> [__/__,  43]  36, __
+    legs="Malignance Tights",         -- __, 10,  50/50 <__, __, __> [ 7/ 7, 150]  85, __
+    feet="Malignance Boots",          -- __,  9,  50/50 <__, __, __> [ 4/ 4, 150] 119, __
+    neck="Ninja Nodowa +2",           -- __,  7,  25/25 <__, __, __> [__/__, ___] ___, 25
+    ear1="Odnowa Earring +1",         -- __, __,  10/__ <__, __, __> [ 3/ 5, ___] ___, __
+    ear2="Dedition Earring",          -- __,  8,-10/-10 <__, __, __> [__/__, ___] ___, __
+    ring1="Defending Ring",           -- __, __,  __/__ <__, __, __> [10/10, ___] ___, __
+    ring2="Epona's Ring",             -- __, __,  __/__ < 3,  3, __> [__/__, ___] ___, __
+    back=gear.NIN_STP_Cape,           -- __, 10,  20/__ <__, __, __> [10/__, ___] ___, __
+    waist="Windbuffet Belt +1",       -- __, __,   2/__ <__,  2,  2> [__/__, ___] ___, __
+    -- Traits/gifts/etc                                                                54
+    -- 0 DW, 69 STP, 304 Acc/197 R.Acc <3 DA, 13 TA, 2 QA> [50 PDT/32 MDT, 552 M.Eva] 433 Evasion, 79 Daken
+    
+    -- ear2="Hattori Earring +2",     -- __,  8,  20/__ <__, __, __> [__/__, ___] ___, __; katana/throwing +12
   }
   sets.engaged.HeavyDef.LowAcc = set_combine(sets.engaged.HeavyDef, {
   })
@@ -1000,8 +1066,25 @@ function init_gear_sets()
   sets.engaged.HeavyDef.HighAcc = set_combine(sets.engaged.HeavyDef.MidAcc, {
   })
 
-  -- Low DW (21 needed from gear)
+  -- Low DW (15 needed from gear)
   sets.engaged.LowDW.HeavyDef = {
+    ammo="Seki Shuriken",             -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
+    head="Malignance Chapeau",        -- __,  8,  50/50 <__, __, __> [ 6/ 6, 123]  91, __
+    body="Mpaca's Doublet",           -- __,  8,  55/__ <__,  4, __> [10/__,  86] 102, __
+    hands=gear.Adhemar_A_hands,       -- __,  7,  52/32 <__,  4, __> [__/__,  43]  36, __
+    legs="Malignance Tights",         -- __, 10,  50/50 <__, __, __> [ 7/ 7, 150]  85, __
+    feet="Malignance Boots",          -- __,  9,  50/50 <__, __, __> [ 4/ 4, 150] 119, __
+    neck="Ninja Nodowa +2",           -- __,  7,  25/25 <__, __, __> [__/__, ___] ___, 25
+    ear1="Odnowa Earring +1",         -- __, __,  10/__ <__, __, __> [ 3/ 5, ___] ___, __
+    ear2="Dedition Earring",          -- __,  8,-10/-10 <__, __, __> [__/__, ___] ___, __
+    ring1="Defending Ring",           -- __, __,  __/__ <__, __, __> [10/10, ___] ___, __
+    ring2="Epona's Ring",             -- __, __,  __/__ < 3,  3, __> [__/__, ___] ___, __
+    back=gear.NIN_DW_Cape,            -- 10, __,  20/__ <__, __, __> [10/__, ___] ___, __
+    waist="Reiki Yotai",              --  7,  4,  10/10 <__, __, __> [__/__, ___] ___, __
+    -- Traits/gifts/etc                                                                54
+    -- 17 DW, 63 STP, 312 Acc/207 R.Acc <3 DA, 11 TA, 0 QA> [50 PDT/32 MDT, 552 M.Eva] 433 Evasion, 79 Daken
+    
+    -- ear2="Hattori Earring +2",     -- __,  8,  20/__ <__, __, __> [__/__, ___] ___, __; katana/throwing +12
   }
   sets.engaged.LowDW.HeavyDef.LowAcc = set_combine(sets.engaged.LowDW.HeavyDef, {
   })
@@ -1010,8 +1093,23 @@ function init_gear_sets()
   sets.engaged.LowDW.HeavyDef.HighAcc = set_combine(sets.engaged.LowDW.HeavyDef.MidAcc, {
   })
 
-  -- Mid DW (25 needed from gear)
+  -- Mid DW (21 needed from gear)
   sets.engaged.MidDW.HeavyDef = {
+    ammo="Seki Shuriken",             -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
+    head="Malignance Chapeau",        -- __,  8,  50/50 <__, __, __> [ 6/ 6, 123]  91, __
+    body="Mpaca's Doublet",           -- __,  8,  55/__ <__,  4, __> [10/__,  86] 102, __
+    hands=gear.Adhemar_A_hands,       -- __,  7,  52/32 <__,  4, __> [__/__,  43]  36, __
+    legs="Malignance Tights",         -- __, 10,  50/50 <__, __, __> [ 7/ 7, 150]  85, __
+    feet="Malignance Boots",          -- __,  9,  50/50 <__, __, __> [ 4/ 4, 150] 119, __
+    neck="Ninja Nodowa +2",           -- __,  7,  25/25 <__, __, __> [__/__, ___] ___, 25
+    ear1="Odnowa Earring +1",         -- __, __,  10/__ <__, __, __> [ 3/ 5, ___] ___, __
+    ear2="Eabani Earring",            --  4, __,  __/__ <__, __, __> [__/__,  15]  15, __
+    ring1="Defending Ring",           -- __, __,  __/__ <__, __, __> [10/10, ___] ___, __
+    ring2="Epona's Ring",             -- __, __,  __/__ < 3,  3, __> [__/__, ___] ___, __
+    back=gear.NIN_DW_Cape,            -- 10, __,  20/__ <__, __, __> [10/__, ___] ___, __
+    waist="Reiki Yotai",              --  7,  4,  10/10 <__, __, __> [__/__, ___] ___, __
+    -- Traits/gifts/etc                                                                54
+    -- 21 DW, 55 STP, 322 Acc/217 R.Acc <3 DA, 11 TA, 0 QA> [50 PDT/32 MDT, 567 M.Eva] 448 Evasion, 79 Daken
   }
   sets.engaged.MidDW.HeavyDef.LowAcc = set_combine(sets.engaged.MidDW.HeavyDef, {
   })
@@ -1020,8 +1118,26 @@ function init_gear_sets()
   sets.engaged.MidDW.HeavyDef.HighAcc = set_combine(sets.engaged.MidDW.HeavyDef.MidAcc, {
   })
 
-  -- High DW (32 needed from gear)
+  -- High DW (25 needed from gear)
   sets.engaged.HighDW.HeavyDef = {
+    ammo="Seki Shuriken",             -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
+    head="Hattori Zukin +3",          --  7, __,  61/61 <__, __, __> [10/10, 119]  89, __
+    body="Mpaca's Doublet",           -- __,  8,  55/__ <__,  4, __> [10/__,  86] 102, __
+    hands=gear.Adhemar_A_hands,       -- __,  7,  52/32 <__,  4, __> [__/__,  43]  36, __
+    legs="Malignance Tights",         -- __, 10,  50/50 <__, __, __> [ 7/ 7, 150]  85, __
+    feet="Malignance Boots",          -- __,  9,  50/50 <__, __, __> [ 4/ 4, 150] 119, __
+    neck="Ninja Nodowa +2",           -- __,  7,  25/25 <__, __, __> [__/__, ___] ___, 25
+    ear1="Odnowa Earring +1",         -- __, __,  10/__ <__, __, __> [ 3/ 5, ___] ___, __
+    ear2="Dedition Earring",          -- __,  8,-10/-10 <__, __, __> [__/__, ___] ___, __
+    ring1="Defending Ring",           -- __, __,  __/__ <__, __, __> [10/10, ___] ___, __
+    ring2="Epona's Ring",             -- __, __,  __/__ < 3,  3, __> [__/__, ___] ___, __
+    back=gear.NIN_DW_Cape,            -- 10, __,  20/__ <__, __, __> [10/__, ___] ___, __
+    waist="Reiki Yotai",              --  7,  4,  10/10 <__, __, __> [__/__, ___] ___, __
+    -- Traits/gifts/etc                                                                54
+    -- 24 DW, 52 STP, 343 Acc/238 R.Acc <4 DA, 11 TA, 0 QA> [54 PDT/32 MDT, 548 M.Eva] 431 Evasion, 79 Daken
+    
+    -- feet="Tatenashi Sune-ate +1",  -- __,  8,  60/__ <__,  3, __> [__/__,  80]  76, __
+    -- ear2="Hattori Earring +2",     -- __,  8,  20/__ <__, __, __> [__/__, ___] ___, __; katana/throwing +12
   }
   sets.engaged.HighDW.HeavyDef.LowAcc = set_combine(sets.engaged.HighDW.HeavyDef, {
   })
@@ -1030,8 +1146,25 @@ function init_gear_sets()
   sets.engaged.HighDW.HeavyDef.HighAcc = set_combine(sets.engaged.HighDW.HeavyDef.MidAcc, {
   })
 
-  -- Super DW (39 needed from gear)
+  -- Super DW (32 needed from gear)
   sets.engaged.SuperDW.HeavyDef = {
+    ammo="Seki Shuriken",             -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
+    head="Hattori Zukin +3",          --  7, __,  61/61 <__, __, __> [10/10, 119]  89, __
+    body="Mochi. Chainmail +3",       --  9, __,  51/47 <__, __, __> [__/__,  73]  72, 10
+    hands=gear.Adhemar_A_hands,       -- __,  7,  52/32 <__,  4, __> [__/__,  43]  36, __
+    legs="Malignance Tights",         -- __, 10,  50/50 <__, __, __> [ 7/ 7, 150]  85, __
+    feet="Malignance Boots",          -- __,  9,  50/50 <__, __, __> [ 4/ 4, 150] 119, __
+    neck="Ninja Nodowa +2",           -- __,  7,  25/25 <__, __, __> [__/__, ___] ___, 25
+    ear1="Odnowa Earring +1",         -- __, __,  10/__ <__, __, __> [ 3/ 5, ___] ___, __
+    ear2="Dedition Earring",          -- __,  8,-10/-10 <__, __, __> [__/__, ___] ___, __
+    ring1="Defending Ring",           -- __, __,  __/__ <__, __, __> [10/10, ___] ___, __
+    ring2="Gelatinous Ring +1",       -- __, __,  __/__ <__, __, __> [ 7/-1, ___] ___, __
+    back=gear.NIN_DW_Cape,            -- 10, __,  20/__ <__, __, __> [10/__, ___] ___, __
+    waist="Reiki Yotai",              --  7,  4,  10/10 <__, __, __> [__/__, ___] ___, __
+    -- Traits/gifts/etc                                                                54
+    -- 33 DW, 47 STP, 319 Acc/265 R.Acc <0 DA, 4 TA, 0 QA> [51 PDT/35 MDT, 535 M.Eva] 401 Evasion, 89 Daken
+    
+    -- ear2="Hattori Earring +2",     -- __,  8,  20/__ <__, __, __> [__/__, ___] ___, __; katana/throwing +12
   }
   sets.engaged.SuperDW.HeavyDef.LowAcc = set_combine(sets.engaged.SuperDW.HeavyDef, {
   })
@@ -1040,8 +1173,23 @@ function init_gear_sets()
   sets.engaged.SuperDW.HeavyDef.HighAcc = set_combine(sets.engaged.SuperDW.HeavyDef.MidAcc, {
   })
 
-  -- Max DW (47 needed from gear)
+  -- Max DW (39 needed from gear)
   sets.engaged.MaxDW.HeavyDef = {
+    ammo="Seki Shuriken",             -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
+    head="Hattori Zukin +3",          --  7, __,  61/61 <__, __, __> [10/10, 119]  89, __
+    body="Mochi. Chainmail +3",       --  9, __,  51/47 <__, __, __> [__/__,  73]  72, 10
+    hands=gear.Adhemar_A_hands,       -- __,  7,  52/32 <__,  4, __> [__/__,  43]  36, __
+    legs="Malignance Tights",         -- __, 10,  50/50 <__, __, __> [ 7/ 7, 150]  85, __
+    feet="Malignance Boots",          -- __,  9,  50/50 <__, __, __> [ 4/ 4, 150] 119, __
+    neck="Ninja Nodowa +2",           -- __,  7,  25/25 <__, __, __> [__/__, ___] ___, 25
+    ear1="Odnowa Earring +1",         -- __, __,  10/__ <__, __, __> [ 3/ 5, ___] ___, __
+    ear2="Suppanomimi",               --  5, __,  __/__ <__, __, __> [__/__, ___] ___, __
+    ring1="Defending Ring",           -- __, __,  __/__ <__, __, __> [10/10, ___] ___, __
+    ring2="Gelatinous Ring +1",       -- __, __,  __/__ <__, __, __> [ 7/-1, ___] ___, __
+    back=gear.NIN_DW_Cape,            -- 10, __,  20/__ <__, __, __> [10/__, ___] ___, __
+    waist="Reiki Yotai",              --  7,  4,  10/10 <__, __, __> [__/__, ___] ___, __
+    -- Traits/gifts/etc                                                                54
+    -- 38 DW, 39 STP, 329 Acc/275 R.Acc <0 DA, 4 TA, 0 QA> [51 PDT/35 MDT, 535 M.Eva] 401 Evasion, 89 Daken
   }
   sets.engaged.MaxDW.HeavyDef.LowAcc = set_combine(sets.engaged.MaxDW.HeavyDef, {
   })
@@ -1282,15 +1430,15 @@ function update_combat_form()
   if silibs.get_dual_wield_needed() <= 1 or not silibs.is_dual_wielding() then
     state.CombatForm:reset()
   else
-    if silibs.get_dual_wield_needed() > 1 and silibs.get_dual_wield_needed() <= 21 then
+    if silibs.get_dual_wield_needed() > 1 and silibs.get_dual_wield_needed() <= 15 then
       state.CombatForm:set('LowDW')
-    elseif silibs.get_dual_wield_needed() > 21 and silibs.get_dual_wield_needed() <= 25 then
+    elseif silibs.get_dual_wield_needed() > 15 and silibs.get_dual_wield_needed() <= 21 then
       state.CombatForm:set('MidDW')
-    elseif silibs.get_dual_wield_needed() > 25 and silibs.get_dual_wield_needed() <= 32 then
+    elseif silibs.get_dual_wield_needed() > 21 and silibs.get_dual_wield_needed() <= 25 then
       state.CombatForm:set('HighDW')
-    elseif silibs.get_dual_wield_needed() > 32 and silibs.get_dual_wield_needed() <= 39 then
+    elseif silibs.get_dual_wield_needed() > 25 and silibs.get_dual_wield_needed() <= 32 then
       state.CombatForm:set('SuperDW')
-    elseif silibs.get_dual_wield_needed() > 39 then
+    elseif silibs.get_dual_wield_needed() > 32 then
       state.CombatForm:set('MaxDW')
     end
   end
