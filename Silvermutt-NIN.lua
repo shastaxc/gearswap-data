@@ -778,19 +778,22 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.defense.PDT = {
-    ammo="Staunch Tathlum +1",
-    head="Malignance Chapeau", --6/6
-    body="Malignance Tabard", --9/9
-    hands="Malignance Gloves", --5/5
-    legs="Malignance Tights", --7/7
-    feet="Malignance Boots", --4/4
-    neck="Warder's Charm +1",
-    ear1="Sanare Earring",
-    ear2="Odnowa Earring +1",
-    ring1="Purity Ring", --0/4
-    ring2="Defending Ring", --10/10
-    back="Moonlight Cape", --6/6
-    waist="Engraved Belt",
+    ammo="Staunch Tathlum +1",        -- [ 3/ 3, ___] ___, 11
+    head=gear.Nyame_B_head,           -- [ 7/ 7, 123]  91, __
+    body=gear.Nyame_B_body,           -- [ 9/ 9, 139] 102, __
+    hands=gear.Nyame_B_hands,         -- [ 7/ 7, 112]  80, __
+    legs=gear.Nyame_B_legs,           -- [ 8/ 8, 150]  85, __
+    feet=gear.Nyame_B_feet,           -- [ 7/ 7, 150] 119, __
+    neck="Warder's Charm +1",         -- [__/__, ___] ___, __; Absorb magic dmg
+    ear1="Eabani Earring",            -- [__/__,   8]  15, __
+    ear2="Hearty Earring",            -- [__/__, ___] ___,  5
+    ring1="Shadow Ring",              -- [__/__, ___] ___, __; Annul magic dmg
+    ring2="Defending Ring",           -- [10/10, ___] ___, __
+    back="Shadow Mantle",             -- [__/__, ___] ___, __; Annul physical dmg
+    waist="Engraved Belt",            -- [__/__, ___] ___, __; Element resist
+    -- [51 PDT/51 MDT, 682 M.Eva] 492 Eva, 16 Status Resist
+
+    -- body="Hattori Ningi +3",       -- [13/13, 129]  95, __; Migawari+16
   }
   sets.defense.MDT = set_combine(sets.defense.PDT, {})
 
@@ -1016,14 +1019,14 @@ function init_gear_sets()
     legs="Malignance Tights",         -- __, 10,  50/50 <__, __, __> [ 7/ 7, 150]  85, __
     feet="Malignance Boots",          -- __,  9,  50/50 <__, __, __> [ 4/ 4, 150] 119, __
     neck="Ninja Nodowa +2",           -- __,  7,  25/25 <__, __, __> [__/__, ___] ___, 25
-    ear1="Eabani Earring",            --  4, __,  __/__ <__, __, __> [__/__,  15]  15, __
+    ear1="Eabani Earring",            --  4, __,  __/__ <__, __, __> [__/__,   8]  15, __
     ear2="Dedition Earring",          -- __,  8,-10/-10 <__, __, __> [__/__, ___] ___, __
     ring1="Defending Ring",           -- __, __,  __/__ <__, __, __> [10/10, ___] ___, __
     ring2="Epona's Ring",             -- __, __,  __/__ < 3,  3, __> [__/__, ___] ___, __
     back=gear.NIN_DW_Cape,            -- 10, __,  20/__ <__, __, __> [10/__, ___] ___, __
     waist="Reiki Yotai",              --  7,  4,  10/10 <__, __, __> [__/__, ___] ___, __
     -- Traits/gifts/etc                                                                54
-    -- 39 DW, 64 STP, 281 Acc/257 R.Acc <3 DA, 3 TA, 0 QA> [36 PDT/26 MDT, 548 M.Eva] 407 Evasion, 89 Daken
+    -- 39 DW, 64 STP, 281 Acc/257 R.Acc <3 DA, 3 TA, 0 QA> [36 PDT/26 MDT, 541 M.Eva] 407 Evasion, 89 Daken
     
     -- ear2="Hattori Earring +2",     -- __,  8,  20/__ <__, __, __> [__/__, ___] ___, __; katana/throwing +12
   }
@@ -1103,13 +1106,13 @@ function init_gear_sets()
     feet="Malignance Boots",          -- __,  9,  50/50 <__, __, __> [ 4/ 4, 150] 119, __
     neck="Ninja Nodowa +2",           -- __,  7,  25/25 <__, __, __> [__/__, ___] ___, 25
     ear1="Odnowa Earring +1",         -- __, __,  10/__ <__, __, __> [ 3/ 5, ___] ___, __
-    ear2="Eabani Earring",            --  4, __,  __/__ <__, __, __> [__/__,  15]  15, __
+    ear2="Eabani Earring",            --  4, __,  __/__ <__, __, __> [__/__,   8]  15, __
     ring1="Defending Ring",           -- __, __,  __/__ <__, __, __> [10/10, ___] ___, __
     ring2="Epona's Ring",             -- __, __,  __/__ < 3,  3, __> [__/__, ___] ___, __
     back=gear.NIN_DW_Cape,            -- 10, __,  20/__ <__, __, __> [10/__, ___] ___, __
     waist="Reiki Yotai",              --  7,  4,  10/10 <__, __, __> [__/__, ___] ___, __
     -- Traits/gifts/etc                                                                54
-    -- 21 DW, 55 STP, 322 Acc/217 R.Acc <3 DA, 11 TA, 0 QA> [50 PDT/32 MDT, 567 M.Eva] 448 Evasion, 79 Daken
+    -- 21 DW, 55 STP, 322 Acc/217 R.Acc <3 DA, 11 TA, 0 QA> [50 PDT/32 MDT, 560 M.Eva] 448 Evasion, 79 Daken
   }
   sets.engaged.MidDW.HeavyDef.LowAcc = set_combine(sets.engaged.MidDW.HeavyDef, {
   })
@@ -1205,16 +1208,8 @@ function init_gear_sets()
   sets.Special = {}
   sets.Special.ElementalObi = {waist="Hachirin-no-Obi",}
 
-  sets.buff.Migawari = {}
   sets.buff.Yonin = {}
   sets.buff.Innin = {}
-  sets.buff.Sange = {
-    ammo="Hachiya Shuriken"
-  }
-
-  sets.buff.Migawari = {
-    body="Iga Ningi +2"
-  }
 
   sets.buff.Doom = {
     neck="Nicander's Necklace", --20
@@ -1474,10 +1469,6 @@ end
 
 -- Modify the default idle set after it was constructed.
 function customize_idle_set(idleSet)
-  if state.Buff.Migawari then
-    idleSet = set_combine(idleSet, sets.buff.Migawari)
-  end
-
   -- If not in DT mode put on move speed gear
   if state.IdleMode.current == 'Normal' and state.DefenseMode.value == 'None' then
     if classes.CustomIdleGroups:contains('Adoulin') then
@@ -1511,12 +1502,6 @@ end
 
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
-  if state.Buff.Migawari then
-      meleeSet = set_combine(meleeSet, sets.buff.Migawari)
-  end
-  if state.Buff.Sange then
-    meleeSet = set_combine(meleeSet, sets.buff.Sange)
-  end
   if state.CP.current == 'on' then
     meleeSet = set_combine(meleeSet, sets.CP)
   end
