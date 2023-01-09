@@ -78,13 +78,13 @@ function job_setup()
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.HybridMode:options('HeavyDef', 'Normal')
   state.CastingMode:options('Resistant', 'Normal')
-  state.IdleMode:options('HeavyDef', 'Normal')
+  state.IdleMode:options('Normal', 'HeavyDef')
   
   state.CP = M(false, 'Capacity Points Mode')
   state.AttCapped = M(true, 'Attack Capped')
   state.ToyWeapons = M{['description']='Toy Weapons','None','Katana','GreatKatana','Dagger',
       'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
-  state.WeaponSet = M{['description']='Weapon Set', 'Heishi', 'Aeolian', 'AeolianPlus'}
+  state.WeaponSet = M{['description']='Weapon Set', 'Heishi', 'HeishiHitaki', 'Naegling', 'Aeolian',}
   state.MagicBurst = M(false, 'Magic Burst')
 
   state.Buff.Migawari = buffactive.migawari or false
@@ -382,7 +382,7 @@ function init_gear_sets()
   sets.precast.WS['Blade: Hi'].MaxTP = set_combine(sets.precast.WS['Blade: Hi'], {})
   sets.precast.WS['Blade: Hi'].AttCapped = {
     ammo="Yetshila +1",
-    head="Hachiya Hatsu. +3",
+    head=gear.Nyame_B_head,
     body=gear.Nyame_B_body,
     hands=gear.Nyame_B_hands,
     legs="Mpaca's Hose",
@@ -415,7 +415,7 @@ function init_gear_sets()
   sets.precast.WS['Blade: Kamu'].MaxTP = set_combine(sets.precast.WS['Blade: Kamu'], {})
   sets.precast.WS['Blade: Kamu'].AttCapped = {
     ammo="Crepuscular Pebble",
-    head="Hachiya Hatsu. +3",
+    head=gear.Nyame_B_head,
     body=gear.Nyame_B_body,
     hands=gear.Nyame_B_hands,
     legs="Mpaca's Hose",
@@ -481,7 +481,7 @@ function init_gear_sets()
   sets.precast.WS['Blade: Metsu'].MaxTP = set_combine(sets.precast.WS['Blade: Metsu'], {})
   sets.precast.WS['Blade: Metsu'].AttCapped = {
     ammo="Crepuscular Pebble",
-    head="Hachiya Hatsu. +3",
+    head=gear.Nyame_B_head,
     body=gear.Nyame_B_body,
     hands=gear.Nyame_B_hands,
     legs="Mpaca's Hose",
@@ -628,7 +628,7 @@ function init_gear_sets()
   })
   sets.precast.WS['Savage Blade'].AttCapped = {
     ammo="Crepuscular Pebble",
-    head="Hachiya Hatsu. +3",
+    head=gear.Nyame_B_head,
     body=gear.Nyame_B_body,
     hands=gear.Nyame_B_hands,
     legs=gear.Nyame_B_legs,
@@ -730,11 +730,11 @@ function init_gear_sets()
 
   sets.midcast.EnfeeblingNinjutsu = {
     ammo="Yamarang",
-    head="Hachiya Hatsu. +3",
+    head="Hachiya Hatsuburi +3",
     body="Mummu Jacket +2",
     hands="Mummu Wrists +2",
     legs="Mummu Kecks +2",
-    feet="Hachiya Kyahan +3",
+    feet="Hachiya Kyahan +2",
     neck="Sanctity Necklace",
     ear1="Enchntr. Earring +1",
     ear2="Digni. Earring",
@@ -742,10 +742,12 @@ function init_gear_sets()
     ring2={name="Stikini Ring +1", bag="wardrobe4"},
     back=gear.NIN_MAB_Cape,
     waist="Eschan Stone",
+    
+    -- feet="Hachiya Kyahan +3",
   }
 
   sets.midcast.EnhancingNinjutsu = {
-    head="Hachiya Hatsu. +3",
+    head="Hachiya Hatsuburi +3",
     feet="Mochi. Kyahan +3",
     neck="Incanter's Torque",
     ear1="Stealth Earring",
@@ -833,19 +835,7 @@ function init_gear_sets()
   sets.idle.Regain.Regen.Refresh = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh)
   sets.idle.Regain.Regen.RefreshSub50 = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh_sub50)
 
-  sets.idle.Town = set_combine(sets.idle, {
-    ammo="Aurgelmir Orb +1",
-    head="Ken. Jinpachi +1",
-    body="Ken. Samue +1",
-    hands="Ken. Tekko +1",
-    legs="Mochi. Hakama +3",
-    feet="Ken. Sune-Ate +1",
-    neck="Ninja Nodowa +2",
-    ear1="Cessance Earring",
-    ear2="Telos Earring",
-    back=gear.NIN_TP_Cape,
-    waist="Windbuffet Belt +1",
-  })
+  sets.idle.Town = set_combine(sets.idle, {})
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Engaged Sets ------------------------------------------
@@ -1218,16 +1208,17 @@ function init_gear_sets()
   }
 
   sets.Kiting = {
-    feet="Danzo sune-ate"
+    feet="Danzo sune-ate",
   }
   sets.Kiting.Adoulin = {
     body="Councilor's Garb",
   }
   sets.DayMovement = {
-    feet="Danzo sune-ate"
+    feet="Danzo sune-ate",
   }
   sets.NightMovement = {
-    feet="Hachiya Kyahan +3"
+    feet="Hachiya Kyahan +2",
+    -- feet="Hachiya Kyahan +3",
   }
   
   sets.CP = {
@@ -1238,12 +1229,15 @@ function init_gear_sets()
   }
 
   sets.WeaponSet = {}
-  sets.WeaponSet['Kikoku'] = {main="Kikoku", sub="Ternion Dagger +1"}
-  sets.WeaponSet['Heishi'] = {main="Heishi Shorinken", sub="Ternion Dagger +1"}
-  sets.WeaponSet['Hitaki'] = {main="Heishi Shorinken", sub="Hitaki"}
-  sets.WeaponSet['Tanking'] = {main="Fudo Masamune", sub="Ternion Dagger +1"}
-  sets.WeaponSet['Aeolian'] = {main="Tauret", sub="Kunimitsu"}
-  sets.WeaponSet['AeolianPlus'] = {main="Tauret", sub="Levante Dagger"}
+  sets.WeaponSet['Heishi'] = {main="Heishi Shorinken", sub="Kunimitsu"}
+  sets.WeaponSet['HeishiHitaki'] = {main="Heishi Shorinken", sub="Hitaki"}
+  sets.WeaponSet['Naegling'] = {
+    main="Naegling",
+    sub="Kunimitsu",
+    -- sub="Hitaki",
+  }
+  sets.WeaponSet['Enmity'] = {main=gear.Fudo_Masamune_C, sub="Kunimitsu"}
+  sets.WeaponSet['Aeolian'] = {main="Tauret", sub="Malevolence"}
 end
 
 -------------------------------------------------------------------------------------------------------------------
