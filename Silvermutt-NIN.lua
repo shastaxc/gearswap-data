@@ -473,7 +473,7 @@ function init_gear_sets()
     ammo="Coiste Bodhar",
     head="Mpaca's Cap",
     body=gear.Nyame_B_body,
-    -- hands="Mochizuki Tekko +3",
+    hands=gear.Nyame_B_hands,
     legs=gear.Nyame_B_legs,
     -- feet="Hattori Kyahan +3",
     neck="Fotia Gorget",
