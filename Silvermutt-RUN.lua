@@ -301,7 +301,7 @@ function init_gear_sets()
   -- PDT cap is 50%, Protect V = 0%
   sets.defense.PDT = set_combine(sets.HeavyDef, {
     sub="Refined Grip +1",        --  3/ 3, ___ [ 35] __
-    -- 51 PDT / 41 MDT, 688 MEVA [994 HP] 35 Inquartata
+    -- 52 PDT / 42 MDT, 698 MEVA [1004 HP] 36 Inquartata
   })
 
   -- MDT cap is 50%, Shell V = 29%
