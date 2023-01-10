@@ -285,7 +285,7 @@ function init_gear_sets()
     head=gear.Nyame_B_head,         --  7/ 7, 123 [ 91] __
     body="Erilaz Surcoat +2",       -- __/__, 120 [133] __; Retain enmity; Convert dmg to MP
     hands="Turms Mittens +1",       -- __/__, 101 [ 74] __; HP+100 on parry
-    legs="Erilaz Leg Guards +2",    -- 12/12, 147 [ 90]  3
+    legs="Erilaz Leg Guards +3",    -- 13/13, 157 [100]  4
     feet="Turms Leggings +1",       -- __/__, 147 [ 76]  5
     neck="Futhark Torque +2",       --  7/ 7,  30 [ 60] __
     ear1="Odnowa Earring +1",       --  3/ 5, ___ [110] __
@@ -295,7 +295,7 @@ function init_gear_sets()
     back=gear.RUN_HPP_Cape,         -- __/__,  20 [ 80]  8
     waist="Flume Belt +1",          --  4/__, ___ [___] __; Convert dmg to MP
     -- Merits/Traits/Gifts                              19
-    -- 48 PDT / 38 MDT, 688 MEVA [959 HP] 35 Inquartata
+    -- 49 PDT / 39 MDT, 698 MEVA [969 HP] 36 Inquartata
   }
 
   -- PDT cap is 50%, Protect V = 0%
@@ -311,7 +311,7 @@ function init_gear_sets()
     head=gear.Nyame_B_head,         --  7/ 7, 123 [ 91] (__, __)
     body="Erilaz Surcoat +2",       -- __/__, 120 [133] (__, __); Retain enmity; Convert dmg to MP
     hands="Turms Mittens +1",       -- __/__, 101 [ 74] (__, __)
-    legs="Erilaz Leg Guards +2",    -- 12/12, 147 [ 90] (__, __)
+    legs="Erilaz Leg Guards +3",    -- 13/13, 157 [100] (__, __)
     feet="Erilaz Greaves +2",       -- 10/10, 147 [ 38] (__, 30)
     neck="Unmoving Collar +1",      -- __/__, ___ [200] (__, __)
     ear1="Odnowa Earring +1",       --  3/ 5, ___ [110] (__, __)
@@ -320,12 +320,11 @@ function init_gear_sets()
     ring2="Moonlight Ring",         --  5/ 5, ___ [110] (__, __)
     back=gear.RUN_HPP_Cape,         -- __/__,  20 [ 80] (__, __)
     waist="Engraved Belt",          -- __/__, ___ [___] (__, 20)
-    -- 47 PDT / 41 MDT, 666 MEVA [1176 HP] (11 Status Resist, 50 Element Resist)
+    -- 48 PDT / 42 MDT, 676 MEVA [1186 HP] (11 Status Resist, 50 Element Resist)
 
     -- head="Erilaz Galea +3",      -- __/__, 119 [111] (__, __)
     -- body="Erilaz Surcoat +3",    -- __/__, 130 [143] (__, __); Retain enmity; Convert dmg to MP
     -- hands="Erilaz Gauntlets +3", -- 11/11,  87 [ 59] ( 8, __)
-    -- legs="Erilaz Leg Guards +3", -- 13/13, 157 [ 90] (__, __)
     -- feet="Erilaz Greaves +3",    -- 11/11, 157 [ 48] (__, 35)
     -- ear1="Arete del Luna +1",    -- __/__, ___ [___] (__, __); Resist stun, bind, gravity, sleep, charm, light
     -- ear2="Sanare Earring",       -- __/__,   6 [___] (__, __); M. Def Bonus+4
@@ -335,7 +334,7 @@ function init_gear_sets()
 
   sets.defense.Parry = {
     hands="Turms Mittens +1",       -- Parry: Recover HP+100
-    legs="Erilaz Leg Guards +2",    -- Inquartata+3
+    legs="Erilaz Leg Guards +3",    -- Inquartata+4
     feet="Turms Leggings +1",       -- Inquartata+5
     back=gear.RUN_HPP_Cape,         -- Parry Rate+5
   }
@@ -351,7 +350,7 @@ function init_gear_sets()
     head="Halitus Helm",                                -- __/__,  43 [ 88] < 8>
     body="Emet Harness +1",                             --  6/__,  64 [ 61] <10>
     hands="Kurys Gloves",                               --  2/ 2,  57 [ 25] < 9>
-    legs="Erilaz Leg Guards +2",                        -- 12/12, 147 [ 90] <12>
+    legs="Erilaz Leg Guards +3",                        -- 13/13, 157 [100] <13>
     feet="Erilaz Greaves +2",                           -- 10/10, 147 [ 38] < 7>
     neck={name="Unmoving Collar +1", priority=1},       -- __/__, ___ [200] <10>
     ear1="Odnowa Earring +1",                           --  3/ 5, ___ [110] <__>
@@ -361,7 +360,7 @@ function init_gear_sets()
     back={name=gear.RUN_HPD_Cape,
       augments=gear.RUN_HPD_Cape.augments, priority=1}, -- 10/__,  20 [ 80] <10>
     waist={name="Kasiri Belt", priority=1},             -- __/__, ___ [ 30] < 3>
-    -- 53 PDT / 39 MDT, 478 M.Eva [982 HP] <75 Enmity>
+    -- 54 PDT / 40 MDT, 488 M.Eva [992 HP] <76 Enmity>
   }
 
   -- PDT/MDT, M.Eva [HP] {SIRD}
@@ -413,9 +412,9 @@ function init_gear_sets()
   sets.precast.JA['Vallation'] = {
     ammo="Sapience Orb",                                -- __/__, ___ [___] < 2>
     head="Halitus Helm",                                -- __/__,  43 [ 88] < 8>
-    body={name="Runeist Coat +3", priority=1},        -- __/__,  94 [218] <__>; Augments Valiance/Vallation
+    body={name="Runeist Coat +3", priority=1},          -- __/__,  94 [218] <__>; Augments Valiance/Vallation
     hands="Kurys Gloves",                               --  2/ 2,  57 [ 25] < 9>
-    legs="Erilaz Leg Guards +2",                        -- 12/12, 147 [ 90] <12>
+    legs="Erilaz Leg Guards +3",                        -- 13/13, 157 [100] <13>
     feet="Erilaz Greaves +2",                           -- 10/10, 147 [ 38] < 7>
     neck={name="Unmoving Collar +1", priority=1},       -- __/__, ___ [200] <10>
     ear1="Odnowa Earring +1",                           --  3/ 5, ___ [110] <__>
@@ -425,7 +424,7 @@ function init_gear_sets()
     back={name=gear.RUN_HPD_Cape,
       augments=gear.RUN_HPD_Cape.augments, priority=1}, -- 10/__,  20 [ 80] <10>
     waist={name="Kasiri Belt", priority=1},             -- __/__, ___ [ 30] < 3>
-    -- 52 PDT / 44 MDT, 508 M.Eva [1029 HP] <65 Enmity>
+    -- 53 PDT / 45 MDT, 518 M.Eva [1039 HP] <66 Enmity>
   }
   sets.precast.JA['Valiance'] = set_combine(sets.precast.JA['Vallation'], {})
   sets.precast.JA['Battuta'] = set_combine(sets.Enmity, {
@@ -496,7 +495,7 @@ function init_gear_sets()
     head="Erilaz Galea +2",                   -- __/__, 109 [101] __; Enhance JA
     body=gear.Nyame_B_body,                   --  9/ 9, 139 [136] __
     hands="Turms Mittens +1",                 -- __/__, 101 [ 74] __
-    legs="Erilaz Leg Guards +2",              -- 12/12, 147 [ 90] __
+    legs="Erilaz Leg Guards +3",              -- 13/13, 157 [100] __
     feet="Turms Leggings +1",                 -- __/__, 147 [ 76] __
     neck="Incanter's Torque",                 -- __/__, ___ [___] 10
     ear1="Odnowa Earring +1",                 --  3/ 5, ___ [110] __
@@ -508,7 +507,7 @@ function init_gear_sets()
     -- Merits/Traits/Gifts                                        16
     -- Master Level 50                                            50
     -- Base skill                                                 398
-    -- 50 PDT/44 MDT, 643 M.Eva [997 HP] 474 Divine Skill
+    -- 51 PDT/45 MDT, 653 M.Eva [1007 HP] 474 Divine Skill
   }
 
   -- Fast cast sets for spells
@@ -699,7 +698,7 @@ function init_gear_sets()
     head=gear.Nyame_B_head,                   --  7/ 7, 123 [ 91] __
     body=gear.Nyame_B_body,                   --  9/ 9, 139 [136] __
     hands="Turms Mittens +1",                 -- __/__, 101 [ 74] __
-    legs="Erilaz Leg Guards +2",              -- 12/12, 147 [ 90] __
+    legs="Erilaz Leg Guards +3",              -- 13/13, 157 [100] __
     feet="Turms Leggings +1",                 -- __/__, 147 [ 76] __
     neck="Futhark Torque +2",                 --  7/ 7,  30 [ 60] __
     ear1="Odnowa Earring +1",                 --  3/ 5, ___ [110] __
@@ -708,10 +707,10 @@ function init_gear_sets()
     ring2="Moonlight Ring",                   --  5/ 5, ___ [110] __
     back={name="Moonlight Cape", priority=1}, --  6/ 6, ___ [275] __
     waist="Siegel Sash",                      -- __/__, ___ [___] 20
-    -- 59 PDT/53 MDT, 687 M.Eva [1157 HP] 20 Stoneskin Potency
+    -- 60 PDT/54 MDT, 697 M.Eva [1167 HP] 20 Stoneskin Potency
 
     -- hands="Stone Mufflers",                -- __/__, ___ [ 10] 30
-    -- 59 PDT/53 MDT, 586 M.Eva [1093 HP] 50 Stoneskin Potency
+    -- 60 PDT/54 MDT, 596 M.Eva [1103 HP] 50 Stoneskin Potency
   }
   sets.midcast.Protect = {
     ammo="Staunch Tathlum +1",                      --  3/ 3, ___ [___] (__, __)
@@ -1212,7 +1211,7 @@ function init_gear_sets()
     head="Halitus Helm",            -- __/__,  43 [ 88]  2 (__, ___)  8, __
     body="Erilaz Surcoat +2",       -- __/__, 120 [133]  9 (__, ___) __, 10; Retain enmity; Convert dmg to MP
     hands="Kurys Gloves",           --  2/ 2,  57 [ 25]  2 (__, ___)  9, __
-    legs="Erilaz Leg Guards +2",    -- 12/12, 147 [ 90]  9 (__, ___) 12, __
+    legs="Erilaz Leg Guards +3",    -- 13/13, 157 [100] 10 (__, ___) 13, __
     feet="Erilaz Greaves +2",       -- 10/10, 147 [ 38]  8 (__,  30)  7, __
     neck="Unmoving Collar +1",      -- __/__, ___ [200] __ (__, ___) 10, __
     ear1="Odnowa Earring +1",       --  3/ 5, ___ [110] __ (__, ___) __, __
@@ -1224,7 +1223,7 @@ function init_gear_sets()
     -- Runes                        -- __/__, ___ [___] __ (__, 253) __, __
     -- Bar-spell                    -- __/__, ___ [___] __ (__, 131) __, __
     -- Trait                        -- __/__, ___ [___] 22 (__, ___) __, __
-    -- 50(+25)PDT / 50 MDT, 514 Meva [1109 HP] 52 M.Def.Bns. (0 Status Resist, 434 Ele Resist) 80 Enmity, 12 Fast Cast
+    -- 51(+25)PDT / 51 MDT, 524 Meva [1119 HP] 53 M.Def.Bns. (0 Status Resist, 434 Ele Resist) 81 Enmity, 12 Fast Cast
   }
 
   sets.buff.Doom = {
