@@ -589,7 +589,7 @@ gear.Rawhide_D_feet = {}
 -- Ryuo
 gear.Ryuo_A_head = {}
 gear.Ryuo_B_head = {}
-gear.Ryuo_C_head = {}
+gear.Ryuo_C_head = { name="Ryuo Somen +1", augments={'HP+65','"Store TP"+5','"Subtle Blow"+8',}}
 gear.Ryuo_D_head = {}
 
 gear.Ryuo_A_body = {}
