@@ -118,7 +118,7 @@ function job_setup()
   blue_magic_maps = {}
   blue_magic_maps.Enmity = S{'Blank Gaze', 'Geist Wall', 'Jettatura', 'Soporific',
       'Poison Breath', 'Blitzstrahl', 'Sheep Song', 'Chaotic Eye'}
-  blue_magic_maps.Cure = S{'Wild Carrot'}
+  blue_magic_maps.Cure = S{'Wild Carrot', 'Healing Breeze'}
   blue_magic_maps.Buffs = S{'Cocoon', 'Refueling'}
 
   state.Kiting:set('On')
@@ -663,28 +663,28 @@ function init_gear_sets()
 
   -- Regen 4 base potency 30 hp/tic. Base duration 60s.
   sets.midcast['Regen'] = {
-    head="Runeist Bandeau +3",                    -- __, 27, __, __ [__/__,  83] 109
-    body=gear.Nyame_B_body,                         -- __, __, __, __ [ 9/ 9, 139] 136
-    hands="Regal Gauntlets",                        -- __, __, 20, __ [__/__,  48] 205
-    legs="Futhark Trousers +3",                     -- __, __, 30, __ [__/__,  89] 107
-    feet="Erilaz Greaves +2",                       -- __, __, __, __ [10/10, 147]  38
-    ear1="Odnowa Earring +1",                       -- __, __, __, __ [ 3/ 5, ___] 110
-    ear2="Erilaz Earring",                          -- __, 10, __, __ [__/__,  10] ___
-    ring1="Gelatinous Ring +1",                     -- __, __, __, __ [ 7/-1, ___] 135
-    ring2="Defending Ring",                         -- __, __, __, __ [10/10, ___] ___
-    back=gear.RUN_HPD_Cape,                         -- __, __, __, __ [10/__,  20]  80
-    -- Merits/Traits/Gifts                             __, __, 20, __
-    -- 30% Regen Potency, 64 Regen Potency, 70 Enh Duration %, 0 Regen Duration [56 PDT/40 MDT, 409 M.Eva] 1162 HP
-    -- Regen IV 67 hp/tic @102 sec
+    head="Runeist Bandeau +3",        -- __, 27, __, __ [__/__,  83] 109
+    body=gear.Nyame_B_body,           -- __, __, __, __ [ 9/ 9, 139] 136
+    hands="Regal Gauntlets",          -- __, __, 20, __ [__/__,  48] 205
+    legs="Futhark Trousers +3",       -- __, __, 30, __ [__/__,  89] 107
+    feet="Erilaz Greaves +2",         -- __, __, __, __ [10/10, 147]  38
+    ear1="Odnowa Earring +1",         -- __, __, __, __ [ 3/ 5, ___] 110
+    ear2="Erilaz Earring",            -- __, 10, __, __ [__/__,  10] ___
+    ring1="Gelatinous Ring +1",       -- __, __, __, __ [ 7/-1, ___] 135
+    ring2="Defending Ring",           -- __, __, __, __ [10/10, ___] ___
+    back=gear.RUN_HPD_Cape,           -- __, __, __, __ [10/__,  20]  80
+    waist="Sroda Belt",               -- 20, __, __, 15 [__/__, ___] ___
+    -- Merits/Traits/Gifts               __, __, 20, __
+    -- 20% Regen Potency, 37 Regen Potency, 70 Enh Duration %, 15 Regen Duration [49 PDT/33 MDT, 536 M.Eva] 920 HP
+    -- Regen IV 73 hp/tic @117 sec
 
-    -- main=gear.Morgelai_C,                        -- __, 25, __, __ [__/__, ___] 130
+    -- main=gear.Morgelai_C,          -- __, 25, __, __ [__/__, ___] 130
     -- sub=empty,
-    -- feet="Erilaz Greaves +3",                    -- __, __, __, __ [11/11, 157] 100
-    -- neck="Sacro Gorget",                         -- 10, __, __, __ [__/__, ___]  50
-    -- ear2="Erilaz Earring +2",                    -- __, 12, __, __ [ 6/ 6,  12] ___
-    -- waist="Sroda Belt",                          -- 20, __, __, __ [__/__, ___] ___
-    -- 30% Regen Potency, 64 Regen Potency, 70 Enh Duration %, 0 Regen Duration [56 PDT/40 MDT, 409 M.Eva] 1162 HP
-    -- Regen IV 103 hp/tic @102 sec
+    -- feet="Erilaz Greaves +3",      -- __, __, __, __ [11/11, 157] 100
+    -- neck="Sacro Gorget",           -- 10, __, __, __ [__/__, ___]  50
+    -- ear2="Erilaz Earring +2",      -- __, 12, __, __ [ 6/ 6,  12] ___
+    -- 30% Regen Potency, 64 Regen Potency, 70 Enh Duration %, 15 Regen Duration [56 PDT/40 MDT, 409 M.Eva] 1162 HP
+    -- Regen IV 103 hp/tic @117 sec
   }
 
   sets.midcast.Refresh = set_combine(sets.HeavyDef, sets.midcast.EnhancingDuration, {
@@ -743,19 +743,42 @@ function init_gear_sets()
   sets.midcast['Dia II'] = set_combine(sets.SIRD, {})
   sets.midcast['Diaga'] = set_combine(sets.SIRD, {})
 
+  -- MND, VIT, Heal skill, Cure Pot (self pot) [PDT/MDT, M.Eva] HP
+  cure_opts = {
+    -- body="Vrikodara Jupon",        -- 29, 21, __, 13(__) [ 3/__,  80]  54
+    -- hands="Buremte Gloves",        -- 26, 27, __, __(13) [__/__,  32]  19
+    -- hands="Weatherspoon Cuffs +1", -- 33, 25, __,  9(__) [__/__,  37]  37
+    -- feet="Skaoi Boots",            -- 17, 12, __,  7(__) [__/__, 107]  65
+    -- neck="Phalaina Locket",        --  3, __, __,  4( 4) [__/__, ___] ___
+    -- neck="Sacro Gorget",           -- __, __, __, 10(__) [__/__, ___]  50
+    -- ear1="Roundel Earring",        -- __, __, __,  5(__) [__/__, ___] ___
+    -- ear1="Mendicant's Earring",    -- __, __, __,  5(__) [__/__, ___] ___
+    -- ring1="Lebeche Ring",          -- __, __, __,  3(__) [__/__, ___] ___
+    -- ring1="Menelaus's Ring",       -- __, __, 15,  5(__) [__/__, ___] ___
+    -- waist="Sroda Belt",            -- __, __, __, 35(__) [__/__, ___] ___
+    -- waist="Gishdubar Sash",        -- __, __, __, __(10) [__/__, ___] ___
+  }
+
   sets.midcast['Blue Magic'] = {}
   sets.midcast['Blue Magic'].Enmity = set_combine(sets.Enmity, {})
   sets.midcast['Blue Magic'].Buffs = set_combine(sets.SIRD, {})
   sets.midcast['Blue Magic'].Cure = {
-    ring1="Lebeche Ring", -- 3
-    waist="Gishdubar Sash", --(10)
-    -- body="Vrikodara Jupon", -- 13
-    -- hands="Buremte Gloves", --(13)
-    -- feet="Skaoi Boots", --7
-    -- neck="Phalaina Locket", -- 4(4)
-    -- ear1="Roundel Earring", -- 5
-    -- ear2="Mendi. Earring", -- 5
-    -- back="Solemnity Cape", -- 7
+    ammo="Staunch Tathlum +1",        -- __, __, __, __(__) [ 3/ 3, ___] ___
+    head=gear.Nyame_B_head,           -- 26, 24, __, __(__) [ 7/ 7, 123]  91
+    body=gear.Nyame_B_body,           -- 37, 45, __, __(__) [ 9/ 9, 139] 136
+    hands=gear.Nyame_B_hands,         -- 40, 54, __, __(__) [ 7/ 7, 112]  91
+    legs=gear.Nyame_B_legs,           -- 32, 30, __, __(__) [ 8/ 8, 150] 114
+    feet=gear.Nyame_B_feet,           -- 26, 24, __, __(__) [ 7/ 7, 150]  68
+    ear2="Odnowa Earring +1",         -- __,  3, __, __(__) [ 3/ 5, ___] 110
+    ring1="Gelatinous Ring +1",       -- __, 15, __, __(__) [ 7/-1, ___] 135
+    ring2="Moonlight Ring",           -- __, __, __, __(__) [ 5/ 5, ___] 110
+    back="Moonlight Cape",            -- __, __, __, __(__) [ 6/ 6, ___] 275
+    waist="Sroda Belt",               -- __, __, __, 35(__) [__/__, ___] ___
+    -- 161 MND, 195 VIT, 50 Heal skill, 36 Cure Pot (0 self pot) [62 PDT/56 MDT, 674 M.Eva] 1150 HP
+    
+    -- neck="Sacro Gorget",           -- __, __, __, 10(__) [__/__, ___]  50
+    -- ear1="Mendicant's Earring",    -- __, __, __,  5(__) [__/__, ___] ___
+    -- 161 MND, 195 VIT, 50 Heal skill, 51 Cure Pot (0 self pot) [62 PDT/56 MDT, 674 M.Eva] 1180 HP
   }
   sets.midcast['Blue Magic'].Cure.Safe = set_combine(sets.SIRD, {})
 
