@@ -245,7 +245,7 @@ function init_gear_sets()
     ear2="Odnowa Earring +1",         -- __ [ 3/ 5, ___]
     ring1="Kishar Ring",              --  4 [__/__, ___]
     ring2="Defending Ring",           -- __ [10/10, ___]
-    back=gear.NIN_FC_Cape,            -- 10 [10/__, ___]
+    -- back=gear.NIN_FC_Cape,         -- 10 [10/__, ___]
     waist="Audumbla Belt",            -- __ [ 4/__, ___]
     -- 54 FC [29 PDT/15 MDT, 329 M.Eva]
   }
@@ -764,10 +764,10 @@ function init_gear_sets()
     -- ear2="Odnowa Earring +1",      -- __, __ [ 3/ 5, ___]
     -- ring1="Evanescence Ring",      -- __,  5 [__/__, ___]
     -- ring2="Defending Ring",        -- __, __ [10/10, ___]
-    -- back=gear.NIN_SIRD_Cape,       --  1, 10 [10/__, ___]
+    -- back=gear.NIN_SIRD_Cape,       --  1, 10 [__/__, ___]
     -- waist="Audumbla Sash",         -- __, 10 [ 4/__, ___]
     -- Merits                                 6
-    -- 2 Shadows, 103 SIRD [30 PDT/18 MDT, 432 M.Eva]
+    -- 2 Shadows, 103 SIRD [20 PDT/18 MDT, 432 M.Eva]
     
     -- ammo="Staunch Tathlum +1",     -- __, 11 [ 3/ 3, ___]
     -- head="Hattori Zukin +3",       -- __, __ [10/10, 119]
@@ -780,10 +780,10 @@ function init_gear_sets()
     -- ear2="Magnetic Earring",       -- __,  8 [__/__, ___]
     -- ring1="Evanescence Ring",      -- __,  5 [__/__, ___]
     -- ring2="Defending Ring",        -- __, __ [10/10, ___]
-    -- back=gear.NIN_SIRD_Cape,       --  1, 10 [10/__, ___]
+    -- back=gear.NIN_SIRD_Cape,       --  1, 10 [__/__, ___]
     -- waist="Audumbla Sash",         -- __, 10 [ 4/__, ___]
     -- Merits                                 6
-    -- 2 Shadows, 105 SIRD [37 PDT/23 MDT, 432 M.Eva]
+    -- 2 Shadows, 105 SIRD [27 PDT/23 MDT, 432 M.Eva]
   }
 
   sets.midcast.ElementalNinjutsu = {}
@@ -1099,7 +1099,7 @@ function init_gear_sets()
     ear2="Dedition Earring",          -- __,  8,-10/-10 <__, __, __> [__/__, ___] ___, __
     ring1="Defending Ring",           -- __, __,  __/__ <__, __, __> [10/10, ___] ___, __
     ring2="Epona's Ring",             -- __, __,  __/__ < 3,  3, __> [__/__, ___] ___, __
-    back=gear.NIN_STP_Cape,           -- __, 10,  20/__ <__, __, __> [10/__, ___] ___, __
+    -- back=gear.NIN_STP_Cape,        -- __, 10,  20/__ <__, __, __> [10/__, ___] ___, __
     waist="Reiki Yotai",              --  7,  4,  10/10 <__, __, __> [__/__, ___] ___, __
     -- Traits/gifts/etc                                                                54
     -- 25 DW, 79 STP, 291 Acc/267 R.Acc <4 DA, 3 TA, 0 QA> [36 PDT/26 MDT, 533 M.Eva] 392 Evasion, 89 Daken

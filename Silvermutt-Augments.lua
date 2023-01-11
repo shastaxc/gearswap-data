@@ -123,6 +123,8 @@ gear.Acro_Breath_feet = {} -- Pet: Breath+8, Pet Macc+25
 -- Helios
 
 -- Taeon
+gear.Taeon_SIRD_body = {}
+gear.Taeon_SIRD_legs = {}
 gear.Taeon_SIRD_feet = { name="Taeon Boots", augments={'Mag. Evasion+20','Spell interruption rate down -10%','HP+47',}} -- Max: 20 meva, 10 sird, 50 hp
 
 gear.Taeon_DW_feet = { name="Taeon Boots", augments={'Accuracy+15 Attack+15','"Dual Wield"+5',}}
@@ -240,6 +242,19 @@ gear.MNK_DEX_DA_Cape = { name="Segomo's Mantle", augments={'DEX+20','Accuracy+20
 gear.MNK_STR_DA_Cape = { name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Mag. Evasion+15',}}
 gear.MNK_STR_Crit_Cape = { name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Crit.hit rate+10','Phys. dmg. taken-10%',}}
 -- gear.MNK_MAB_Cape = {} -- 30 INT, 10 MAB, 20 m.acc/m.dmg
+
+-- gear.NIN_Enmity_Cape = {} -- 10 Enmity, 10 PDT
+-- gear.NIN_FC_Cape = {} -- 10 FC, 10 PDT
+-- gear.NIN_SIRD_Cape = {} -- 10 SIRD
+-- gear.NIN_STP_Cape = { name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}}
+-- gear.NIN_DW_Cape = { name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dual Wield"+10','Phys. dmg. taken-10%',}}
+-- gear.NIN_WSD_STR_Cape = { name="Andartia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
+-- gear.NIN_WSD_INT_Cape = { name="Andartia's Mantle", augments={'INT+20','Accuracy+20 Attack+20','INT+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
+-- gear.NIN_WSD_AGI_Cape = { name="Andartia's Mantle", augments={'AGI+20','Accuracy+20 Attack+20','AGI+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
+-- gear.NIN_Crit_AGI_Cape = { name="Andartia's Mantle", augments={'AGI+20','Accuracy+20 Attack+20','AGI+10','Crit.hit rate+10','Phys. dmg. taken-10%',}}
+-- gear.NIN_DA_STR_Cape = { name="Andartia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
+-- gear.NIN_WSD_DEX_Cape = { name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
+-- gear.NIN_DA_DEX_Cape = { name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
 
 gear.RNG_DW_Cape = { name="Belenus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dual Wield"+10','Phys. dmg. taken-10%',}}
 gear.RNG_RA_Cape = { name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','"Store TP"+10','Phys. dmg. taken-10%',}}
