@@ -68,7 +68,7 @@ function job_setup()
   silibs.enable_cancel_outranged_ws()
   silibs.enable_cancel_on_blocking_status()
   silibs.enable_weapon_rearm()
-  silibs.enable_auto_lockstyle(1)
+  silibs.enable_auto_lockstyle(16)
   silibs.enable_premade_commands()
   silibs.enable_th()
   silibs.enable_custom_roll_text()
@@ -130,7 +130,7 @@ function user_setup()
   include('Global-Binds.lua') -- Additional local binds
 
   if player.sub_job == 'WAR' then
-    send_command('bind !numpad/ input /ja "Defender" <me>')
+    -- send_command('bind !numpad/ input /ja "Defender" <me>')
     send_command('bind ^numpad/ input /ja "Berserk" <me>')
     send_command('bind ^numpad* input /ja "Warcry" <me>')
     send_command('bind ^numpad- input /ja "Aggressor" <me>')
@@ -162,7 +162,7 @@ function user_unload()
   send_command('unbind !w')
   send_command('unbind !e')
   
-  send_command('unbind !numpad/')
+  -- send_command('unbind !numpad/')
   send_command('unbind ^numpad/')
   send_command('unbind ^numpad*')
   send_command('unbind ^numpad-')
@@ -940,7 +940,7 @@ function init_gear_sets()
     ear2="Telos Earring",
     ring1="Dingir Ring",
     ring2="Hajduk Ring +1",
-    -- back=gear.NIN_TP_Cape,
+    back=gear.NIN_STP_Cape,
     waist="Yemaya Belt",
   }
 
@@ -956,16 +956,17 @@ function init_gear_sets()
     hands=gear.Nyame_B_hands,         -- [ 7/ 7, 112]  80, __
     legs=gear.Nyame_B_legs,           -- [ 8/ 8, 150]  85, __
     feet=gear.Nyame_B_feet,           -- [ 7/ 7, 150] 119, __
-    -- neck="Warder's Charm +1",      -- [__/__, ___] ___, __; Absorb magic dmg
     ear1="Eabani Earring",            -- [__/__,   8]  15, __
     ear2="Hearty Earring",            -- [__/__, ___] ___,  5
-    -- ring1="Shadow Ring",           -- [__/__, ___] ___, __; Annul magic dmg
     ring2="Defending Ring",           -- [10/10, ___] ___, __
-    -- back="Shadow Mantle",          -- [__/__, ___] ___, __; Annul physical dmg
+    back=gear.NIN_STP_Cape,
     waist="Engraved Belt",            -- [__/__, ___] ___, __; Element resist
-    -- [51 PDT/51 MDT, 682 M.Eva] 492 Eva, 16 Status Resist
 
     -- body="Hattori Ningi +3",       -- [13/13, 129]  95, __; Migawari+16
+    -- neck="Warder's Charm +1",      -- [__/__, ___] ___, __; Absorb magic dmg
+    -- ring1="Shadow Ring",           -- [__/__, ___] ___, __; Annul magic dmg
+    -- back="Shadow Mantle",          -- [__/__, ___] ___, __; Annul physical dmg
+    -- [51 PDT/51 MDT, 682 M.Eva] 492 Eva, 16 Status Resist
   }
   sets.defense.MDT = set_combine(sets.defense.PDT, {})
 
@@ -1013,7 +1014,7 @@ function init_gear_sets()
 
   -- No DW (0 needed from gear)
   sets.engaged = {
-    -- ammo="Seki Shuriken",          -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
+    ammo="Date Shuriken",
     head="Malignance Chapeau",        -- __,  8,  50/50 <__, __, __> [ 6/ 6, 123]  91, __
     body="Tatenashi Haramaki +1",     -- __,  9,  65/__ <__,  5, __> [__/__,  59]  44, __
     hands=gear.Adhemar_A_hands,       -- __,  7,  52/32 <__,  4, __> [__/__,  43]  36, __
@@ -1027,8 +1028,9 @@ function init_gear_sets()
     back=gear.NIN_STP_Cape,           -- __, 10,  20/__ <__, __, __> [10/__, ___] ___, __
     waist="Windbuffet Belt +1",       -- __, __,   2/__ <__,  2,  2> [__/__, ___] ___, __
     -- Traits/gifts/etc                                                                54
-    -- 0 DW, 75 STP, 314 Acc/207 R.Acc <4 DA, 14 TA, 2 QA> [37 PDT/27 MDT, 525 M.Eva] 375 Evasion, 79 Daken
+    -- 0 DW, 73 STP, 314 Acc/207 R.Acc <4 DA, 14 TA, 2 QA> [37 PDT/27 MDT, 525 M.Eva] 375 Evasion, 79 Daken
 
+    -- ammo="Seki Shuriken",          -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
     -- ear1="Dedition Earring",       -- __,  8,-10/-10 <__, __, __> [__/__, ___] ___, __
     -- ear2="Hattori Earring +2",     -- __,  8,  20/__ <__, __, __> [__/__, ___] ___, __; katana/throwing +12
   }
@@ -1049,7 +1051,7 @@ function init_gear_sets()
 
   -- Low DW (15 needed from gear)
   sets.engaged.LowDW = {
-    -- ammo="Seki Shuriken",          -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
+    ammo="Date Shuriken",
     head=gear.Ryuo_C_head,            --  9, 12,  35/35 <__, __, __> [__/__,  48]  36, __
     body="Mpaca's Doublet",           -- __,  8,  55/__ <__,  4, __> [10/__,  86] 102, __
     hands=gear.Adhemar_A_hands,       -- __,  7,  52/32 <__,  4, __> [__/__,  43]  36, __
@@ -1063,8 +1065,9 @@ function init_gear_sets()
     back=gear.NIN_STP_Cape,           -- __, 10,  20/__ <__, __, __> [10/__, ___] ___, __
     waist="Reiki Yotai",              --  7,  4,  10/10 <__, __, __> [__/__, ___] ___, __
     -- Traits/gifts/etc                                                                54
-    -- 16 DW, 82 STP, 297 Acc/202 R.Acc <4 DA, 11 TA, 0 QA> [41 PDT/27 MDT, 525 M.Eva] 375 Evasion, 79 Daken
+    -- 16 DW, 80 STP, 297 Acc/202 R.Acc <4 DA, 11 TA, 0 QA> [41 PDT/27 MDT, 525 M.Eva] 375 Evasion, 79 Daken
     
+    -- ammo="Seki Shuriken",          -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
     -- feet="Tatenashi Sune-ate +1",  -- __,  8,  60/__ <__,  3, __> [__/__,  80]  76, __
     -- ear1="Dedition Earring",       -- __,  8,-10/-10 <__, __, __> [__/__, ___] ___, __
     -- ear2="Hattori Earring +2",     -- __,  8,  20/__ <__, __, __> [__/__, ___] ___, __; katana/throwing +12
@@ -1087,7 +1090,7 @@ function init_gear_sets()
 
   -- Mid DW (21 needed from gear)
   sets.engaged.MidDW = {
-    -- ammo="Seki Shuriken",          -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
+    ammo="Date Shuriken",
     head=gear.Ryuo_C_head,            --  9, 12,  35/35 <__, __, __> [__/__,  48]  36, __
     body=gear.Adhemar_A_body,         --  6, __,  55/35 <__,  4, __> [__/__,  69]  55, __
     hands="Malignance Gloves",        -- __, 12,  50/50 <__, __, __> [ 5/ 5, 112]  80, __
@@ -1101,8 +1104,9 @@ function init_gear_sets()
     back=gear.NIN_STP_Cape,           -- __, 10,  20/__ <__, __, __> [10/__, ___] ___, __
     waist="Reiki Yotai",              --  7,  4,  10/10 <__, __, __> [__/__, ___] ___, __
     -- Traits/gifts/etc                                                                54
-    -- 22 DW, 79 STP, 295 Acc/255 R.Acc <4 DA, 7 TA, 0 QA> [36 PDT/26 MDT, 529 M.Eva] 375 Evasion, 79 Daken
+    -- 22 DW, 77 STP, 295 Acc/255 R.Acc <4 DA, 7 TA, 0 QA> [36 PDT/26 MDT, 529 M.Eva] 375 Evasion, 79 Daken
     
+    -- ammo="Seki Shuriken",          -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
     -- ear1="Dedition Earring",       -- __,  8,-10/-10 <__, __, __> [__/__, ___] ___, __
     -- ear2="Hattori Earring +2",     -- __,  8,  20/__ <__, __, __> [__/__, ___] ___, __; katana/throwing +12
   }
@@ -1115,9 +1119,10 @@ function init_gear_sets()
 
   -- High DW (25 needed from gear)
   sets.engaged.HighDW = {
-    -- ammo="Seki Shuriken",          -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
+    ammo="Date Shuriken",
     head=gear.Ryuo_C_head,            --  9, 12,  35/35 <__, __, __> [__/__,  48]  36, __
     -- body="Mochizuki Chainmail +3", --  9, __,  51/47 <__, __, __> [__/__,  73]  72, 10
+    body=gear.Adhemar_A_body,
     hands="Malignance Gloves",        -- __, 12,  50/50 <__, __, __> [ 5/ 5, 112]  80, __
     legs="Malignance Tights",         -- __, 10,  50/50 <__, __, __> [ 7/ 7, 150]  85, __
     feet="Malignance Boots",          -- __,  9,  50/50 <__, __, __> [ 4/ 4, 150] 119, __
@@ -1129,8 +1134,9 @@ function init_gear_sets()
     back=gear.NIN_STP_Cape,           -- __, 10,  20/__ <__, __, __> [10/__, ___] ___, __
     waist="Reiki Yotai",              --  7,  4,  10/10 <__, __, __> [__/__, ___] ___, __
     -- Traits/gifts/etc                                                                54
-    -- 25 DW, 79 STP, 291 Acc/267 R.Acc <4 DA, 3 TA, 0 QA> [36 PDT/26 MDT, 533 M.Eva] 392 Evasion, 89 Daken
+    -- 25 DW, 77 STP, 291 Acc/267 R.Acc <4 DA, 3 TA, 0 QA> [36 PDT/26 MDT, 533 M.Eva] 392 Evasion, 89 Daken
     
+    -- ammo="Seki Shuriken",          -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
     -- feet="Tatenashi Sune-ate +1",  -- __,  8,  60/__ <__,  3, __> [__/__,  80]  76, __
     -- ear1="Dedition Earring",       -- __,  8,-10/-10 <__, __, __> [__/__, ___] ___, __
     -- ear2="Hattori Earring +2",     -- __,  8,  20/__ <__, __, __> [__/__, ___] ___, __; katana/throwing +12
@@ -1144,7 +1150,7 @@ function init_gear_sets()
 
   -- Super DW (32 needed from gear)
   sets.engaged.SuperDW = {
-    -- ammo="Seki Shuriken",          -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
+    ammo="Date Shuriken",
     head=gear.Ryuo_C_head,            --  9, 12,  35/35 <__, __, __> [__/__,  48]  36, __
     body=gear.Adhemar_A_body,         --  6, __,  55/35 <__,  4, __> [__/__,  69]  55, __
     hands="Malignance Gloves",        -- __, 12,  50/50 <__, __, __> [ 5/ 5, 112]  80, __
@@ -1158,8 +1164,9 @@ function init_gear_sets()
     back=gear.NIN_STP_Cape,           -- __, 10,  20/__ <__, __, __> [10/__, ___] ___, __
     waist="Reiki Yotai",              --  7,  4,  10/10 <__, __, __> [__/__, ___] ___, __
     -- Traits/gifts/etc                                                                54
-    -- 22 DW, 79 STP, 295 Acc/255 R.Acc <4 DA, 7 TA, 0 QA> [36 PDT/26 MDT, 529 M.Eva] 375 Evasion, 79 Daken
+    -- 22 DW, 77 STP, 295 Acc/255 R.Acc <4 DA, 7 TA, 0 QA> [36 PDT/26 MDT, 529 M.Eva] 375 Evasion, 79 Daken
     
+    -- ammo="Seki Shuriken",          -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
     -- ear1="Dedition Earring",       -- __,  8,-10/-10 <__, __, __> [__/__, ___] ___, __
     -- ear2="Hattori Earring +2",     -- __,  8,  20/__ <__, __, __> [__/__, ___] ___, __; katana/throwing +12
     -- back=gear.NIN_DW_Cape,         -- 10, __,  20/__ <__, __, __> [10/__, ___] ___, __
@@ -1173,9 +1180,10 @@ function init_gear_sets()
 
   -- Max DW (39 needed from gear)
   sets.engaged.MaxDW = {
-    -- ammo="Seki Shuriken",          -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
+    ammo="Date Shuriken",
     head=gear.Ryuo_C_head,            --  9, 12,  35/35 <__, __, __> [__/__,  48]  36, __
     -- body="Mochizuki Chainmail +3", --  9, __,  51/47 <__, __, __> [__/__,  73]  72, 10
+    body=gear.Adhemar_A_body,
     hands="Malignance Gloves",        -- __, 12,  50/50 <__, __, __> [ 5/ 5, 112]  80, __
     legs="Malignance Tights",         -- __, 10,  50/50 <__, __, __> [ 7/ 7, 150]  85, __
     feet="Malignance Boots",          -- __,  9,  50/50 <__, __, __> [ 4/ 4, 150] 119, __
@@ -1187,8 +1195,9 @@ function init_gear_sets()
     back=gear.NIN_STP_Cape,           -- __, 10,  20/__ <__, __, __> [10/__, ___] ___, __
     waist="Reiki Yotai",              --  7,  4,  10/10 <__, __, __> [__/__, ___] ___, __
     -- Traits/gifts/etc                                                                54
-    -- 29 DW, 74 STP, 281 Acc/257 R.Acc <3 DA, 3 TA, 0 QA> [36 PDT/26 MDT, 541 M.Eva] 407 Evasion, 89 Daken
+    -- 29 DW, 72 STP, 281 Acc/257 R.Acc <3 DA, 3 TA, 0 QA> [36 PDT/26 MDT, 541 M.Eva] 407 Evasion, 89 Daken
     
+    -- ammo="Seki Shuriken",          -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
     -- ear2="Hattori Earring +2",     -- __,  8,  20/__ <__, __, __> [__/__, ___] ___, __; katana/throwing +12
     -- back=gear.NIN_DW_Cape,         -- 10, __,  20/__ <__, __, __> [10/__, ___] ___, __
   }
@@ -1206,7 +1215,7 @@ function init_gear_sets()
 
   -- No DW (0 needed from gear)
   sets.engaged.HeavyDef = {
-    -- ammo="Seki Shuriken",          -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
+    ammo="Date Shuriken",
     head="Malignance Chapeau",        -- __,  8,  50/50 <__, __, __> [ 6/ 6, 123]  91, __
     body="Mpaca's Doublet",           -- __,  8,  55/__ <__,  4, __> [10/__,  86] 102, __
     hands=gear.Adhemar_A_hands,       -- __,  7,  52/32 <__,  4, __> [__/__,  43]  36, __
@@ -1220,8 +1229,9 @@ function init_gear_sets()
     back=gear.NIN_STP_Cape,           -- __, 10,  20/__ <__, __, __> [10/__, ___] ___, __
     waist="Windbuffet Belt +1",       -- __, __,   2/__ <__,  2,  2> [__/__, ___] ___, __
     -- Traits/gifts/etc                                                                54
-    -- 0 DW, 69 STP, 304 Acc/197 R.Acc <3 DA, 13 TA, 2 QA> [50 PDT/32 MDT, 552 M.Eva] 433 Evasion, 79 Daken
+    -- 0 DW, 67 STP, 304 Acc/197 R.Acc <3 DA, 13 TA, 2 QA> [50 PDT/32 MDT, 552 M.Eva] 433 Evasion, 79 Daken
     
+    -- ammo="Seki Shuriken",          -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
     -- ear2="Hattori Earring +2",     -- __,  8,  20/__ <__, __, __> [__/__, ___] ___, __; katana/throwing +12
   }
   sets.engaged.HeavyDef.LowAcc = set_combine(sets.engaged.HeavyDef, {
@@ -1233,7 +1243,7 @@ function init_gear_sets()
 
   -- Low DW (15 needed from gear)
   sets.engaged.LowDW.HeavyDef = {
-    -- ammo="Seki Shuriken",          -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
+    ammo="Date Shuriken",
     head="Malignance Chapeau",        -- __,  8,  50/50 <__, __, __> [ 6/ 6, 123]  91, __
     body="Mpaca's Doublet",           -- __,  8,  55/__ <__,  4, __> [10/__,  86] 102, __
     hands=gear.Adhemar_A_hands,       -- __,  7,  52/32 <__,  4, __> [__/__,  43]  36, __
@@ -1247,8 +1257,9 @@ function init_gear_sets()
     back=gear.NIN_STP_Cape,           -- __, 10,  20/__ <__, __, __> [10/__, ___] ___, __
     waist="Reiki Yotai",              --  7,  4,  10/10 <__, __, __> [__/__, ___] ___, __
     -- Traits/gifts/etc                                                                54
-    -- 7 DW, 73 STP, 312 Acc/207 R.Acc <3 DA, 11 TA, 0 QA> [50 PDT/32 MDT, 552 M.Eva] 433 Evasion, 79 Daken
+    -- 7 DW, 71 STP, 312 Acc/207 R.Acc <3 DA, 11 TA, 0 QA> [50 PDT/32 MDT, 552 M.Eva] 433 Evasion, 79 Daken
     
+    -- ammo="Seki Shuriken",          -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
     -- ear2="Hattori Earring +2",     -- __,  8,  20/__ <__, __, __> [__/__, ___] ___, __; katana/throwing +12
     -- back=gear.NIN_DW_Cape,         -- 10, __,  20/__ <__, __, __> [10/__, ___] ___, __
   }
@@ -1261,7 +1272,7 @@ function init_gear_sets()
 
   -- Mid DW (21 needed from gear)
   sets.engaged.MidDW.HeavyDef = {
-    -- ammo="Seki Shuriken",          -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
+    ammo="Date Shuriken",
     head="Malignance Chapeau",        -- __,  8,  50/50 <__, __, __> [ 6/ 6, 123]  91, __
     body="Mpaca's Doublet",           -- __,  8,  55/__ <__,  4, __> [10/__,  86] 102, __
     hands=gear.Adhemar_A_hands,       -- __,  7,  52/32 <__,  4, __> [__/__,  43]  36, __
@@ -1275,8 +1286,9 @@ function init_gear_sets()
     back=gear.NIN_STP_Cape,           -- __, 10,  20/__ <__, __, __> [10/__, ___] ___, __
     waist="Reiki Yotai",              --  7,  4,  10/10 <__, __, __> [__/__, ___] ___, __
     -- Traits/gifts/etc                                                                54
-    -- 11 DW, 65 STP, 322 Acc/217 R.Acc <3 DA, 11 TA, 0 QA> [50 PDT/32 MDT, 560 M.Eva] 448 Evasion, 79 Daken
+    -- 11 DW, 63 STP, 322 Acc/217 R.Acc <3 DA, 11 TA, 0 QA> [50 PDT/32 MDT, 560 M.Eva] 448 Evasion, 79 Daken
     
+    -- ammo="Seki Shuriken",          -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
     -- back=gear.NIN_DW_Cape,         -- 10, __,  20/__ <__, __, __> [10/__, ___] ___, __
   }
   sets.engaged.MidDW.HeavyDef.LowAcc = set_combine(sets.engaged.MidDW.HeavyDef, {
@@ -1288,7 +1300,7 @@ function init_gear_sets()
 
   -- High DW (25 needed from gear)
   sets.engaged.HighDW.HeavyDef = {
-    -- ammo="Seki Shuriken",          -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
+    ammo="Date Shuriken",
     head="Hattori Zukin +2",          --  7, __,  51/51 <__, __, __> [ 9/ 9, 109]  79, __
     body="Mpaca's Doublet",           -- __,  8,  55/__ <__,  4, __> [10/__,  86] 102, __
     hands=gear.Adhemar_A_hands,       -- __,  7,  52/32 <__,  4, __> [__/__,  43]  36, __
@@ -1302,8 +1314,9 @@ function init_gear_sets()
     back=gear.NIN_STP_Cape,           -- __, 10,  20/__ <__, __, __> [10/__, ___] ___, __
     waist="Reiki Yotai",              --  7,  4,  10/10 <__, __, __> [__/__, ___] ___, __
     -- Traits/gifts/etc                                                                54
-    -- 14 DW, 65 STP, 313 Acc/208 R.Acc <3 DA, 11 TA, 0 QA> [53 PDT/35 MDT, 538 M.Eva] 421 Evasion, 79 Daken
+    -- 14 DW, 63 STP, 313 Acc/208 R.Acc <3 DA, 11 TA, 0 QA> [53 PDT/35 MDT, 538 M.Eva] 421 Evasion, 79 Daken
     
+    -- ammo="Seki Shuriken",          -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
     -- head="Hattori Zukin +3",       --  7, __,  61/61 <__, __, __> [10/10, 119]  89, __
     -- feet="Tatenashi Sune-ate +1",  -- __,  8,  60/__ <__,  3, __> [__/__,  80]  76, __
     -- ear2="Hattori Earring +2",     -- __,  8,  20/__ <__, __, __> [__/__, ___] ___, __; katana/throwing +12
@@ -1318,9 +1331,10 @@ function init_gear_sets()
 
   -- Super DW (32 needed from gear)
   sets.engaged.SuperDW.HeavyDef = {
-    -- ammo="Seki Shuriken",          -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
+    ammo="Date Shuriken",
     head="Hattori Zukin +2",          --  7, __,  51/51 <__, __, __> [ 9/ 9, 109]  79, __
     -- body="Mochizuki Chainmail +3", --  9, __,  51/47 <__, __, __> [__/__,  73]  72, 10
+    body=gear.Adhemar_A_body,
     hands=gear.Adhemar_A_hands,       -- __,  7,  52/32 <__,  4, __> [__/__,  43]  36, __
     legs="Malignance Tights",         -- __, 10,  50/50 <__, __, __> [ 7/ 7, 150]  85, __
     feet="Malignance Boots",          -- __,  9,  50/50 <__, __, __> [ 4/ 4, 150] 119, __
@@ -1332,8 +1346,9 @@ function init_gear_sets()
     back=gear.NIN_STP_Cape,           -- __, 10,  20/__ <__, __, __> [10/__, ___] ___, __
     waist="Reiki Yotai",              --  7,  4,  10/10 <__, __, __> [__/__, ___] ___, __
     -- Traits/gifts/etc                                                                54
-    -- 23 DW, 57 STP, 309 Acc/255 R.Acc <0 DA, 4 TA, 0 QA> [51 PDT/35 MDT, 525 M.Eva] 391 Evasion, 89 Daken
+    -- 23 DW, 55 STP, 309 Acc/255 R.Acc <0 DA, 4 TA, 0 QA> [51 PDT/35 MDT, 525 M.Eva] 391 Evasion, 89 Daken
     
+    -- ammo="Seki Shuriken",          -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
     -- head="Hattori Zukin +3",       --  7, __,  61/61 <__, __, __> [10/10, 119]  89, __
     -- ear2="Hattori Earring +2",     -- __,  8,  20/__ <__, __, __> [__/__, ___] ___, __; katana/throwing +12
     -- back=gear.NIN_DW_Cape,         -- 10, __,  20/__ <__, __, __> [10/__, ___] ___, __
@@ -1347,9 +1362,10 @@ function init_gear_sets()
 
   -- Max DW (39 needed from gear)
   sets.engaged.MaxDW.HeavyDef = {
-    -- ammo="Seki Shuriken",          -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
+    ammo="Date Shuriken",
     head="Hattori Zukin +2",          --  7, __,  51/51 <__, __, __> [ 9/ 9, 109]  79, __
     -- body="Mochizuki Chainmail +3", --  9, __,  51/47 <__, __, __> [__/__,  73]  72, 10
+    body=gear.Adhemar_A_body,
     hands=gear.Adhemar_A_hands,       -- __,  7,  52/32 <__,  4, __> [__/__,  43]  36, __
     legs="Malignance Tights",         -- __, 10,  50/50 <__, __, __> [ 7/ 7, 150]  85, __
     feet="Malignance Boots",          -- __,  9,  50/50 <__, __, __> [ 4/ 4, 150] 119, __
@@ -1361,8 +1377,9 @@ function init_gear_sets()
     back=gear.NIN_STP_Cape,           -- __, 10,  20/__ <__, __, __> [10/__, ___] ___, __
     waist="Reiki Yotai",              --  7,  4,  10/10 <__, __, __> [__/__, ___] ___, __
     -- Traits/gifts/etc                                                                54
-    -- 28 DW, 49 STP, 319 Acc/265 R.Acc <0 DA, 4 TA, 0 QA> [50 PDT/34 MDT, 525 M.Eva] 391 Evasion, 89 Daken
+    -- 28 DW, 47 STP, 319 Acc/265 R.Acc <0 DA, 4 TA, 0 QA> [50 PDT/34 MDT, 525 M.Eva] 391 Evasion, 89 Daken
     
+    -- ammo="Seki Shuriken",          -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
     -- head="Hattori Zukin +3",       --  7, __,  61/61 <__, __, __> [10/10, 119]  89, __
     -- back=gear.NIN_DW_Cape,         -- 10, __,  20/__ <__, __, __> [10/__, ___] ___, __
   }
@@ -1494,18 +1511,18 @@ end
 function job_post_midcast(spell, action, spellMap, eventArgs)
   if spellMap == 'ElementalNinjutsu' then
     -- Select set based on tier of nuke and whether MB mode is on or off
-    if not state.MagicBurst.value then
-      if spell:endswith('Ichi') then
+    if spell and not state.MagicBurst.value then
+      if spell.en:endswith('Ichi') then
         equip(sets.midcast.ElementalNinjutsu.Ichi)
-      elseif spell:endswith('Ni') then
+      elseif spell.en:endswith('Ni') then
         equip(sets.midcast.ElementalNinjutsu.Ni)
       else
         equip(sets.midcast.ElementalNinjutsu.San)
       end
     else
-      if spell:endswith('Ichi') then
+      if spell.en:endswith('Ichi') then
         equip(sets.midcast.ElementalNinjutsu.Ichi.MB)
-      elseif spell:endswith('Ni') then
+      elseif spell.en:endswith('Ni') then
         equip(sets.midcast.ElementalNinjutsu.Ni.MB)
       else
         equip(sets.midcast.ElementalNinjutsu.San.MB)
@@ -1962,7 +1979,7 @@ end)
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
   -- Default macro set/book
-  set_macro_page(1, 11)
+  set_macro_page(1, 16)
 end
 
 function test()
