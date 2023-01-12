@@ -85,7 +85,7 @@ function job_setup()
   state.ToyWeapons = M{['description']='Toy Weapons','None','Katana','GreatKatana','Dagger',
       'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
   state.WeaponSet = M{['description']='Weapon Set', 'Heishi', 'HeishiHitaki', 'Naegling', 'Aeolian',}
-  state.MagicBurst = M(false, 'Magic Burst')
+  state.MagicBurst = M(true, 'Magic Burst')
 
   state.Buff.Migawari = buffactive.migawari or false
   state.Buff.Doom = buffactive.doom or false
