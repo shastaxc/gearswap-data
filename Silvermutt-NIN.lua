@@ -128,6 +128,7 @@ function job_setup()
   send_command('bind ^numlock input /ja "Innin" <me>')
   send_command('bind !numlock input /ja "Yonin" <me>')
   send_command('bind ^numpad+ gs c ninelemental')
+  send_command('bind !numpad+ input /ja "Futae" <me>')
 
   send_command('bind !q input /ma "Utsusemi: Ichi" <me>')
   send_command('bind !w input /ma "Utsusemi: Ni" <me>')
@@ -170,8 +171,14 @@ function user_unload()
   send_command('unbind @c')
   send_command('unbind !`')
 
+  send_command('unbind ^-')
+  send_command('unbind ^=')
+
   send_command('unbind ^numlock')
   send_command('unbind !numlock')
+  send_command('unbind ^numpad+')
+  send_command('unbind !numpad+')
+
   send_command('unbind !q')
   send_command('unbind !w')
   send_command('unbind !e')
