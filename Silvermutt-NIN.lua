@@ -898,7 +898,7 @@ function init_gear_sets()
 
   sets.midcast.EnfeeblingNinjutsu = {
     ammo="Yamarang",                  -- 15, __ [__/__,  15]
-    head=gear.Nyame_B_head,           -- 40, __ [ 7/ 7, 123]
+    head="Hachiya Hatsuburi +2",      -- 44, 15 [__/__,  53]
     body="Hattori Ningi +2",          -- 54, __ [12/12, 119]
     hands=gear.Nyame_B_hands,         -- 40, __ [ 7/ 7, 112]
     legs=gear.Nyame_B_legs,           -- 40, __ [ 8/ 8, 150]
@@ -910,7 +910,7 @@ function init_gear_sets()
     ring2="Defending Ring",           -- __, __ [10/10, ___]
     back=gear.NIN_MAB_Cape,           -- 20, __ [10/__, ___]
     waist="Eschan Stone",             --  7, __ [__/__, ___]
-    -- 284 M.Acc, 18 Ninjutsu [61 PDT/51 MDT, 669 M.Eva]
+    -- 288 M.Acc, 33 Ninjutsu [54 PDT/44 MDT, 599 M.Eva]
     
     -- head="Hachiya Hatsuburi +3",   -- 54, 17 [__/__,  63]
     -- body="Hattori Ningi +3",       -- 64, __ [13/13, 129]
@@ -926,7 +926,7 @@ function init_gear_sets()
 
   sets.midcast.EnhancingNinjutsu = {
     ammo="Staunch Tathlum +1",        -- __ [ 3/ 3, ___]
-    head=gear.Nyame_B_head,           -- __ [ 7/ 7, 123]
+    head="Hachiya Hatsuburi +2",      -- 15 [__/__,  53]
     body="Hattori Ningi +2",          -- __ [12/12, 119]
     hands=gear.Nyame_B_hands,         -- __ [ 7/ 7, 112]
     legs=gear.Nyame_B_legs,           -- __ [ 8/ 8, 150]
@@ -934,7 +934,7 @@ function init_gear_sets()
     neck="Incanter's Torque",         -- 10 [__/__, ___]
     ring1="Stikini Ring +1",          --  8 [__/__, ___]
     ring2="Defending Ring",           -- __ [10/10, ___]
-    -- 18 Ninjutsu [54 PDT/54 MDT, 654 M.Eva]
+    -- 33 Ninjutsu [47 PDT/47 MDT, 584 M.Eva]
 
     -- head="Hachiya Hatsuburi +3",   -- 17 [__/__,  63]
     -- body="Hattori Ningi +3",       -- __ [13/13, 129]
