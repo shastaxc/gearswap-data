@@ -1021,13 +1021,13 @@ function init_gear_sets()
     hands="Malignance Gloves", --5/5, 112
     legs="Malignance Tights", --7/7, 150
     feet="Malignance Boots", --4/4, 150
+    neck="Warder's Charm +1",
     ear2="Eabani Earring", --0/0, 8
     ring1="Gelatinous Ring +1", --7/-1, 0
     ring2="Defending Ring", --10/10, 0
     waist="Carrier's Sash",      -- __/__, ___; Ele Resist+15
     -- main="Bolelabunga",
     -- sub="Sacro Bulwark", --10/10
-    -- neck="Warder's Charm +1",
     -- ear1="Sanare Earring",
     -- back=gear.RDM_INT_Cape,
   } --51 PDT / 43 MDT, 682 MEVA

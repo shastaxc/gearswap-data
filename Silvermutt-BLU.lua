@@ -933,9 +933,9 @@ function init_gear_sets()
     hands="Malignance Gloves", --5/5
     legs="Malignance Tights", --7/7
     feet="Malignance Boots", --4/4
+    neck="Warder's Charm +1",
     ring2="Defending Ring", --10/10
     back="Moonlight Cape", --6/6
-    -- neck="Warder's Charm +1",
     -- ring1="Purity Ring", --0/4
   })
 
