@@ -86,6 +86,15 @@ function job_setup()
       'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
   state.WeaponSet = M{['description']='Weapon Set', 'Heishi', 'HeishiHitaki', 'Naegling', 'Aeolian',}
   state.MagicBurst = M(true, 'Magic Burst')
+  state.ElementalMode = M{['description']='Elemental Mode', 'Fire', 'Ice', 'Wind', 'Earth', 'Thunder', 'Water'}
+  nin_element_map = {
+    ['Fire'] = 'Katon',
+    ['Ice'] = 'Hyoton',
+    ['Wind'] = 'Huton',
+    ['Earth'] = 'Doton',
+    ['Thunder'] = 'Raiton',
+    ['Water'] = 'Suiton',
+  }
 
   state.Buff.Migawari = buffactive.migawari or false
   state.Buff.Doom = buffactive.doom or false
@@ -113,8 +122,13 @@ function job_setup()
   send_command('bind @c gs c toggle CP')
   send_command('bind !` gs c toggle MagicBurst')
 
+  send_command('bind ^- gs c cycleback ElementalMode')
+  send_command('bind ^= gs c cycle ElementalMode')
+
   send_command('bind ^numlock input /ja "Innin" <me>')
   send_command('bind !numlock input /ja "Yonin" <me>')
+  send_command('bind ^numpad+ gs c ninelemental')
+
   send_command('bind !q input /ma "Utsusemi: Ichi" <me>')
   send_command('bind !w input /ma "Utsusemi: Ni" <me>')
   send_command('bind !e input /ma "Utsusemi: San" <me>')
@@ -282,7 +296,7 @@ function init_gear_sets()
     feet=gear.Nyame_B_feet,
     -- neck="Ninja Nodowa +2",
     ear1="Moonshade Earring",
-    -- ear2="Lugra Earring +1",
+    ear2="Lugra Earring +1",
     ring1="Gere Ring",
     ring2="Regal Ring",
     -- back=gear.NIN_WSD_STR_Cape,
@@ -330,7 +344,7 @@ function init_gear_sets()
     feet=gear.Nyame_B_feet,
     neck="Fotia Gorget",
     ear1="Moonshade Earring",
-    -- ear2="Lugra Earring +1",
+    ear2="Lugra Earring +1",
     ring1="Gere Ring",
     ring2="Epaminondas's Ring",
     -- back=gear.NIN_WSD_STR_Cape,
@@ -463,7 +477,7 @@ function init_gear_sets()
     legs=gear.Nyame_B_legs,
     feet=gear.Nyame_B_feet,
     -- neck="Ninja Nodowa +2",
-    -- ear1="Lugra Earring +1",
+    ear1="Lugra Earring +1",
     ear2="Hattori Earring",
     ring1="Sroda Ring",
     ring2="Gere Ring",
@@ -481,7 +495,7 @@ function init_gear_sets()
     legs="Mpaca's Hose",
     feet=gear.Nyame_B_feet,
     -- neck="Ninja Nodowa +2",
-    -- ear1="Lugra Earring +1",
+    ear1="Lugra Earring +1",
     ear2="Hattori Earring",
     ring1="Sroda Ring",
     ring2="Gere Ring",
@@ -500,7 +514,7 @@ function init_gear_sets()
     legs=gear.Nyame_B_legs,
     feet=gear.Nyame_B_feet,
     neck="Fotia Gorget",
-    -- ear1="Lugra Earring +1",
+    ear1="Lugra Earring +1",
     ear2="Hattori Earring",
     ring1="Gere Ring",
     ring2="Regal Ring",
@@ -519,7 +533,7 @@ function init_gear_sets()
     legs="Mpaca's Hose",
     feet=gear.Nyame_B_feet,
     -- neck="Ninja Nodowa +2",
-    -- ear1="Lugra Earring +1",
+    ear1="Lugra Earring +1",
     ear2="Hattori Earring",
     ring1="Sroda Ring",
     ring2="Gere Ring",
@@ -539,7 +553,7 @@ function init_gear_sets()
     legs=gear.Nyame_B_legs,
     feet=gear.Nyame_B_feet,
     -- neck="Ninja Nodowa +2",
-    -- ear1="Lugra Earring +1",
+    ear1="Lugra Earring +1",
     ear2="Hattori Earring",
     ring1="Gere Ring",
     ring2="Regal Ring",
@@ -558,7 +572,7 @@ function init_gear_sets()
     legs="Mpaca's Hose",
     feet=gear.Nyame_B_feet,
     -- neck="Ninja Nodowa +2",
-    -- ear1="Lugra Earring +1",
+    ear1="Lugra Earring +1",
     ear2="Hattori Earring",
     ring1="Gere Ring",
     ring2="Epaminondas's Ring",
@@ -579,7 +593,7 @@ function init_gear_sets()
     feet=gear.Nyame_B_feet,
     neck="Fotia Gorget",
     ear1="Moonshade Earring",
-    -- ear2="Lugra Earring +1",
+    ear2="Lugra Earring +1",
     ring1="Gere Ring",
     ring2="Regal Ring",
     -- back=gear.NIN_DA_DEX_Cape,
@@ -602,7 +616,7 @@ function init_gear_sets()
     feet=gear.Nyame_B_feet,
     -- neck="Ninja Nodowa +2",
     ear1="Moonshade Earring",
-    -- ear2="Lugra Earring +1",
+    ear2="Lugra Earring +1",
     ring1="Gere Ring",
     ring2="Regal Ring",
     -- back=gear.NIN_DA_DEX_Cape,
@@ -626,7 +640,7 @@ function init_gear_sets()
     feet=gear.Nyame_B_feet,
     -- neck="Ninja Nodowa +2",
     ear1="Moonshade Earring",
-    -- ear2="Lugra Earring +1",
+    ear2="Lugra Earring +1",
     ring1="Gere Ring",
     ring2="Regal Ring",
     -- back=gear.NIN_WSD_STR_Cape,
@@ -649,7 +663,7 @@ function init_gear_sets()
     feet=gear.Nyame_B_feet,
     -- neck="Ninja Nodowa +2",
     ear1="Moonshade Earring",
-    -- ear2="Lugra Earring +1",
+    ear2="Lugra Earring +1",
     ring1="Sroda Ring",
     ring2="Epaminondas's Ring",
     -- back=gear.NIN_WSD_STR_Cape,
@@ -673,7 +687,7 @@ function init_gear_sets()
     feet="Ken. Sune-Ate +1",
     neck="Fotia Gorget",
     ear1="Odr Earring",
-    -- ear2="Lugra Earring +1",
+    ear2="Lugra Earring +1",
     ring1="Gere Ring",
     ring2="Regal Ring",
     -- back=gear.NIN_Crit_DEX_Cape,
@@ -710,7 +724,7 @@ function init_gear_sets()
     feet=gear.Nyame_B_feet,
     -- neck="Ninja Nodowa +2",
     ear1="Moonshade Earring",
-    -- ear2="Lugra Earring +1",
+    ear2="Lugra Earring +1",
     ring1="Gere Ring",
     ring2="Regal Ring",
     -- back=gear.NIN_WSD_STR_Cape,
@@ -1866,8 +1880,14 @@ end
 function job_self_command(cmdParams, eventArgs)
   silibs.self_command(cmdParams, eventArgs)
   ----------- Non-silibs content goes below this line -----------
+  
+  if cmdParams[1] == 'ninelemental' then
+    local ninjutsu = nin_element_map[state.ElementalMode.current]
 
-  if cmdParams[1] == 'toyweapon' then
+    local target = cmdParams[2] or 't'
+
+    send_command('@input /ma "'..ninjutsu..': San" <'..target..'>')
+  elseif cmdParams[1] == 'toyweapon' then
     if cmdParams[2] == 'cycle' then
       cycle_toy_weapons('forward')
     elseif cmdParams[2] == 'cycleback' then
