@@ -125,7 +125,7 @@ function job_setup()
       'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
 
   -- Customizable Weapon Sets. Name must match set name (far below)
-  state.WeaponSet = M{['description']='Weapon Set', 'WhiteGlass', 'Normal', 'Naegling', 'NaeglingAcc', 'H2H', 'Staff', 'Cleaving'}
+  state.WeaponSet = M{['description']='Weapon Set', 'Normal', 'HighAcc', 'Naegling', 'NaeglingAcc', 'H2H', 'Staff', 'SoloCleaving', 'Cleaving'}
   state.RangedWeaponSet = M{['description']='Ranged Weapon Set', 'None', 'Throwing', 'Pulling', 'Archery'}
 
   -- Indicate if a marksmanship weapon is xbow or gun (archery and throwing not needed here)
@@ -1354,11 +1354,11 @@ function init_gear_sets()
   }
 
   sets.WeaponSet = {}
-  sets.WeaponSet['WhiteGlass'] = {
+  sets.WeaponSet['Normal'] = {
     main="Twashtar",
     sub={name="Centovente", priority=1},
   }
-  sets.WeaponSet['Normal'] = {
+  sets.WeaponSet['HighAcc'] = {
     main="Twashtar",
     sub="Gleti's Knife",
   }
@@ -1379,8 +1379,8 @@ function init_gear_sets()
     sub=empty,
   }
   sets.WeaponSet['SoloCleaving'] = {
-  --   main=gear.Gandring_C,
-  --   sub="Tauret",
+    main=gear.Gandring_C,
+    sub="Tauret",
   }
   sets.WeaponSet['Cleaving'] = {
     main="Tauret",
