@@ -786,6 +786,7 @@ function init_gear_sets()
     feet=gear.Nyame_B_feet,
   }
 
+  -- TODO: Redo. Change to DT > FC > SIRD
   sets.midcast.Utsusemi = {
     ammo="Staunch Tathlum +1",        -- __, 11 [ 3/ 3, ___]
     head=gear.Nyame_B_head,           -- __, __ [ 7/ 7, 123]
@@ -872,20 +873,19 @@ function init_gear_sets()
     hands="Hattori Tekko +2",         -- 22, 52, 16, __, __, 10, __ [__/__, 103]
     legs=gear.Nyame_B_legs,           -- 44, 40, 30, __, __,  6, __ [ 8/ 8, 150]
     feet=gear.Nyame_B_feet,           -- 25, 40, 30, __, __,  5, __ [ 7/ 7, 150]
-    neck="Baetyl Pendant",            -- __, __, 13, __, __, __, __ [__/__, ___]
+    neck="Warder's Charm +1",         -- __, __, __, __, __, 10, __ [__/__, ___]
     ear1="Novio Earring",             -- __, __,  7, __, __, __, __ [__/__, ___]
     ear2="Friomisi Earring",          -- __, __, 10, __, __, __, __ [__/__, ___]
     ring1="Dingir Ring",              -- __, __, 10, __, __, __, __ [__/__, ___]
     ring2="Shiva Ring +1",            --  9, __,  3, __, __, __, __ [__/__, ___]
     back=gear.NIN_MAB_Cape,           -- 30, 20, 10, __, 20, __, __ [10/__, ___]
     waist="Eschan Stone",             -- __, 15,  7, __, __, __, __ [__/__, ___]
-    -- 204 INT, 255 MAcc, 200 MAB, 0 MAccSk, 20 MDmg, 33 MB Dmg%, 0 MB2 Dmg% [41 PDT/31 MDT, 665 M.Eva]
+    -- 204 INT, 255 MAcc, 187 MAB, 0 MAccSk, 20 MDmg, 43 MB Dmg%, 0 MB2 Dmg% [41 PDT/31 MDT, 665 M.Eva]
 
     -- ammo="Ghastly Tathlum +1",     -- 11, __, __, __, 11, __, __ [__/__, ___]
     -- head="Mochizuki Hatsuburi +3", -- 32, 37, 82, __, __, __, __ [__/__,  63]
     -- hands="Hattori Tekko +3",      -- 27, 62, 18, __, __, 15, __ [__/__, 103]
     -- feet="Mochizuki Kyahan +3",    -- __, 51, __, __, __, __, __ [__/__,  84]; MAB+25%
-    -- neck="Warder's Charm +1",      -- __, __, __, __, __, 10, __ [__/__, ___]
     -- ring2="Mujin Band",            -- __, __, __, __, __, __,  5 [__/__, ___]
     -- 186 INT, 265 MAcc, 204 MAB, 0 MAccSk, 31 MDmg, 38 MB Dmg%, 5 MB2 Dmg% [27 PDT/17 MDT, 539 M.Eva]
   }
