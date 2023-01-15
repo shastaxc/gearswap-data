@@ -40,7 +40,7 @@ function job_setup()
   state.CP = M(false, "Capacity Points Mode")
   state.RecoverMode = M('Always', '60%', '35%', 'Never')
   state.MagicBurst = M(true, 'Magic Burst')
-  state.ElementalMode = M{['description'] = 'Elemental Mode', 'Light','Dark','Fire','Ice','Wind','Earth','Lightning','Water'}
+  state.ElementalMode = M{['description'] = 'Elemental Mode', 'Fire','Ice','Wind','Earth','Lightning','Water','Light','Dark',}
 
   state.Buff.Entrust = buffactive.Entrust or false
 
@@ -75,8 +75,8 @@ function job_setup()
   send_command('bind !` gs c toggle MagicBurst')
   send_command('bind @q gs c cycle RecoverMode')
 
-  send_command('bind ^pageup gs c cycleback ElementalMode')
-  send_command('bind ^pagedown gs c cycle ElementalMode')
+  send_command('bind ^pageup gs c cycle ElementalMode')
+  send_command('bind ^pagedown gs c cycleback ElementalMode')
   send_command('bind !pagedown gs c reset ElementalMode')
   
   send_command('bind !` input /ja "Full Circle" <me>')
@@ -2075,18 +2075,22 @@ function handle_elemental(cmdParams)
 
     windower.chat.input('/ma "'..elements.nuke_of[state.ElementalMode.value]..tierlist[command]..'" '..target..'')
   elseif command:contains('ara') then
-    local spell_recasts = windower.ffxi.get_spell_recasts()
-    local tierkey = {'ara3','ara2','ara'}
-    local tierlist = {['ara3']='ra III',['ara2']='ra II',['ara']='ra'}
-    if command == 'ara' then
-      for i in ipairs(tierkey) do
-        if actual_cost(get_spell_table_by_name(elements.nukera_of[state.ElementalMode.value]..''..tierlist[tierkey[i]]..'')) < player.mp then
-          windower.chat.input('/ma "'..elements.nukera_of[state.ElementalMode.value]..''..tierlist[tierkey[i]]..'" '..target..'')
-          return
-        end
-      end
+    if state.ElementalMode.value == 'Light' or state.ElementalMode.value == 'Dark' then
+      add_to_chat(123, 'Cannot nuke while set to light or dark Element Mode.')
     else
-      windower.chat.input('/ma "'..elements.nukera_of[state.ElementalMode.value]..tierlist[command]..'" '..target..'')
+      local spell_recasts = windower.ffxi.get_spell_recasts()
+      local tierkey = {'ara3','ara2','ara'}
+      local tierlist = {['ara3']='ra III',['ara2']='ra II',['ara']='ra'}
+      if command == 'ara' then
+        for i in ipairs(tierkey) do
+          if actual_cost(get_spell_table_by_name(elements.nukera_of[state.ElementalMode.value]..''..tierlist[tierkey[i]]..'')) < player.mp then
+            windower.chat.input('/ma "'..elements.nukera_of[state.ElementalMode.value]..''..tierlist[tierkey[i]]..'" '..target..'')
+            return
+          end
+        end
+      else
+        windower.chat.input('/ma "'..elements.nukera_of[state.ElementalMode.value]..tierlist[command]..'" '..target..'')
+      end
     end
   else
     add_to_chat(123,'Unrecognized elemental command.')
