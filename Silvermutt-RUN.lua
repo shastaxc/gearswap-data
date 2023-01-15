@@ -1,4 +1,4 @@
--- File Status: Good. Update engaged sets. Fix HP balance (WS and onward).
+-- File Status: Good. Fix HP balance (WS and onward).
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs
@@ -126,7 +126,7 @@ function job_setup()
   state.DefenseMode:set('Physical') -- Default to PDT mode
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.CastingMode:options('Normal', 'Safe')
-  state.HybridMode:options('Normal', 'LightDef')
+  state.HybridMode:options('LightDef', 'Normal')
   state.IdleMode:options('Normal', 'LightDef')
   state.AttCapped = M(true, "Attack Capped")
   state.Knockback = M(false, 'Knockback')
@@ -137,11 +137,6 @@ function job_setup()
   state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger',
       'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
   state.Runes = M{['description']='Runes', 'Ignis', 'Gelus', 'Flabra', 'Tellus', 'Sulpor', 'Unda', 'Lux', 'Tenebrae'}
-
-  -- DO NOT MODIFY
-  activate_AM_mode = {
-    ["Epeolatry"] = S{"Aftermath: Lv.3"},
-  }
 
   send_command('bind ^f8 gs c toggle AttCapped')
 
@@ -211,8 +206,6 @@ function user_setup()
     send_command('bind ^numpad0 input /ma "Utsusemi: Ichi" <me>')
     send_command('bind ^numpad. input /ma "Utsusemi: Ni" <me>')
   end
-
-  update_melee_groups()
 
   select_default_macro_book()
 end
@@ -295,7 +288,7 @@ function init_gear_sets()
   sets.HeavyDef = {
     ammo="Staunch Tathlum +1",                      --  3/ 3, ___ [___] __
     head=gear.Nyame_B_head,                         --  7/ 7, 123 [ 91] __
-    body="Erilaz Surcoat +2",                       -- __/__, 120 [133] __; Retain enmity; Convert dmg to MP
+    body="Erilaz Surcoat +2",                       -- __/__, 120 [133] __; Retain enmity, Convert dmg to MP
     hands="Turms Mittens +1",                       -- __/__, 101 [ 74] __; HP+100 on parry
     legs="Erilaz Leg Guards +3",                    -- 13/13, 157 [100]  4
     feet="Turms Leggings +1",                       -- __/__, 147 [ 76]  5
@@ -308,6 +301,8 @@ function init_gear_sets()
     waist="Flume Belt +1",                          --  4/__, ___ [___] __; Convert dmg to MP
     -- Merits/Traits/Gifts                                              19
     -- 49 PDT / 39 MDT, 698 MEVA [969 HP] 36 Inquartata
+    
+    -- ear2="Arete del Luna +1",                  -- __/__, ___ [___] (__, __); Resist stun, bind, gravity, sleep, charm, light
   }
 
   -- PDT cap is 50%, Protect V = 0%
@@ -338,8 +333,8 @@ function init_gear_sets()
     -- body={name="Erilaz Surcoat +3",priority=1},-- __/__, 130 [143] (__, __); Retain enmity; Convert dmg to MP
     -- hands="Erilaz Gauntlets +3",               -- 11/11,  87 [ 59] ( 8, __)
     -- feet="Erilaz Greaves +3",                  -- 11/11, 157 [ 48] (__, 35)
-    -- ear1="Arete del Luna +1",                  -- __/__, ___ [___] (__, __); Resist stun, bind, gravity, sleep, charm, light
-    -- ear2="Sanare Earring",                     -- __/__,   6 [___] (__, __); M. Def Bonus+4
+    -- ear1="Sanare Earring",                     -- __/__,   6 [___] (__, __); M. Def Bonus+4
+    -- ear2="Arete del Luna +1",                  -- __/__, ___ [___] (__, __); Resist stun, bind, gravity, sleep, charm, light
     -- back=gear.RUN_HPME_Cape,                   -- __/__,  45 [ 60] (__, __)
     -- 50 PDT / 42 MDT, 701 MEVA [1026 HP] (19 Status Resist, 55 Element Resist)
   }
@@ -517,6 +512,8 @@ function init_gear_sets()
     -- Master Level 50                                                  50
     -- Base skill                                                      398
     -- 51 PDT/45 MDT, 653 M.Eva [1007 HP] 474 Divine Skill
+    
+    -- ear2="Arete del Luna +1",                  -- __/__, ___ [___] (__, __); Resist stun, bind, gravity, sleep, charm, light
   }
 
   -- Fast cast sets for spells
@@ -645,6 +642,7 @@ function init_gear_sets()
     
     -- head="Erilaz Galea +3",                      -- __/__, 119 [111] 25
     -- feet="Erilaz Greaves +3",                    -- 11/11, 157 [ 48] __
+    -- ear2="Arete del Luna +1",                    -- __/__, ___ [___] (__, __); Resist stun, bind, gravity, sleep, charm, light
     -- 47 PDT/45 MDT, 602 M.Eva [1077 HP] 95 Enh Duration
   }
 
@@ -722,6 +720,8 @@ function init_gear_sets()
     back={name="Moonlight Cape", priority=1},       --  6/ 6, ___ [275] (__, __)
     waist="Audumbla Sash",                          --  4/__, ___ [___] (__, __)
     -- 38 PDT/28 MDT, 557 M.Eva [1190 HP] (70 Enh Duration, N/A Enh Skill)
+    
+    -- ear2="Arete del Luna +1",                  -- __/__, ___ [___] (__, __); Resist stun, bind, gravity, sleep, charm, light
   }
   sets.midcast.Shell = set_combine(sets.midcast.Protect, {})
 
@@ -814,7 +814,8 @@ function init_gear_sets()
     waist="Siegel Sash",                        -- __/__, ___ [___] 20
     -- 60 PDT/54 MDT, 697 M.Eva [1167 HP] 20 Stoneskin Potency
 
-    -- hands="Stone Mufflers",                -- __/__, ___ [ 10] 30
+    -- hands="Stone Mufflers",                  -- __/__, ___ [ 10] 30
+    -- ear2="Arete del Luna +1",                -- __/__, ___ [___] (__, __); Resist stun, bind, gravity, sleep, charm, light
     -- 60 PDT/54 MDT, 596 M.Eva [1103 HP] 50 Stoneskin Potency
   }
   sets.midcast.Flash = set_combine(sets.Enmity, {})
@@ -1115,106 +1116,76 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.engaged = {
-    sub="Utu Grip",
-    ammo="Coiste Bodhar",
-    head=gear.Adhemar_B_head,
-    body="Adhemar Jacket +1",
-    hands=gear.Adhemar_A_hands,
-    legs=gear.Samnuha_legs,
-    feet=gear.Herc_TA_feet,
-    neck="Anu Torque",
-    waist="Windbuffet Belt +1",
-    ear1="Telos Earring",
-    ear2="Sherida Earring",
-    ring1="Epona's Ring",
-    ring2="Niqmaddu Ring",
-    back=gear.RUN_TP_Cape,
+    sub="Utu Grip",                   -- __, __, 30, __ <__, __, __> [__/__, ___]  70
+    ammo="Coiste Bodhar",             -- 10,  3, __, __ < 3, __, __> [__/__, ___] ___
+    head=gear.Nyame_B_head,           -- 25, __, 50,  6 < 5, __, __> [ 7/ 7, 123]  91
+    body=gear.Nyame_B_body,           -- 24, __, 40,  3 < 7, __, __> [ 9/ 9, 139] 136
+    hands=gear.Adhemar_A_hands,       -- 56,  7, 52,  5 <__,  4, __> [__/__,  43]  22
+    legs=gear.Samnuha_legs,           -- 16,  7, 15,  6 < 3,  3, __> [__/__,  75]  41
+    feet=gear.Herc_TA_feet,           -- 24, __, 23,  4 <__,  6, __> [ 2/__,  75]   9
+    neck="Anu Torque",                -- __,  7, __, __ <__, __, __> [__/__, ___] ___
+    ear1="Telos Earring",             -- __,  5, 10, __ < 1, __, __> [__/__, ___] ___
+    ear2="Sherida Earring",           --  5,  5, __, __ < 5, __, __> [__/__, ___] ___
+    ring1="Epona's Ring",             -- __, __, __, __ < 3,  3, __> [__/__, ___] ___
+    ring2="Niqmaddu Ring",            -- 10, __, __, __ <__, __,  3> [__/__, ___] ___
+    back=gear.RUN_TP_Cape,            -- 20, 10, 30, __ <__, __, __> [10/__, ___] ___
+    waist="Kentarch Belt +1",         -- 10,  5, 14, __ < 3, __, __> [__/__, ___] ___
+    -- 200 DEX, 49 STP, 264 Acc, 24 Haste <30 DA, 16 TA, 3 QA> [28 PDT/16 MDT, 455 M.Eva] 369 HP
+
+    -- body="Ashera Harness",         -- 40, 10, 45,  4 <__, __, __> [ 7/ 7,  96] 182
   }
   sets.engaged.LowAcc = set_combine(sets.engaged, {
-    head="Dampening Tam",
-    -- neck="Combatant's Torque",
-    waist="Ioskeha Belt +1",
+    ammo="Yamarang",                  -- __,  3, 15, __ <__, __, __> [__/__, ___] ___
+    ear2="Cessance Earring",          -- __,  3,  6, __ < 3, __, __> [__/__, ___] ___
+    ring2="Chirich Ring +1",          -- __,  6, 10, __ <__, __, __> [__/__, ___] ___
+    -- neck="Combatant's Torque",     -- __,  4, __, __ <__, __, __> [__/__, ___] ___; skill+15
+    -- 175 DEX, 50 STP, 295 Acc, 24 Haste <25 DA, 16 TA, 0 QA> [28 PDT/16 MDT, 455 M.Eva] 369 HP
   })
   sets.engaged.MidAcc = set_combine(sets.engaged.LowAcc, {
-    ammo="Yamarang",
-    ear1="Cessance Earring",
-    ear2="Telos Earring",
-    ring1="Chirich Ring +1",
+    feet=gear.Nyame_B_feet,           -- 26, __, 53,  3 < 5, __, __> [ 7/ 7, 150]  68
+    ear2="Dignitary's Earring",       -- __,  3, 10, __ <__, __, __> [__/__, ___] ___
+    -- 177 DEX, 50 STP, 329 Acc, 23 Haste <27 DA, 10 TA, 0 QA> [33 PDT/23 MDT, 455 M.Eva] 428 HP
   })
   sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
-    ammo="Cath Palug Stone",
-    legs=gear.Carmine_D_legs,
-    ear1="Odr Earring",
-    ear2="Dignitary's Earring",
-    -- head="Carmine Mask +1",
-    -- body="Carm. Sc. Mail +1",
-    -- hands="Runeist Mitons +3",
-    -- waist="Olseni Belt",
+    body=gear.Adhemar_A_body,         -- 45, __, 55,  4 <__,  4, __> [__/__,  69]  63; Remove if have ashera
+    legs=gear.Nyame_B_legs,           -- __, __, 40,  5 < 6, __, __> [ 8/ 8, 150] 114
+    ring1="Chirich Ring +1",          -- __,  6, 10, __ <__, __, __> [__/__, ___] ___
+    waist="Olseni Belt",              -- __,  3, 20, __ <__, __, __> [__/__, ___] ___
+    -- 172 DEX, 47 STP, 385 Acc, 23 Haste <17 DA, 8 TA, 0 QA> [32 PDT/22 MDT, 535 M.Eva] 428 HP
   })
   
   sets.engaged.LightDef = {
-    sub="Utu Grip",             -- __/__, ___ [ 70] __, __ <__, __, __> 30
-    ammo="Staunch Tathlum +1",  --  3/ 3, ___ [___] __, __ <__, __, __> __
-    head=gear.Nyame_B_head,     --  7/ 7, 123 [ 91]  6, __ < 5, __, __> 40
-    body=gear.Nyame_B_body,     --  9/ 9, 139 [136]  3, __ < 7, __, __> 40
-    hands=gear.Adhemar_A_hands, -- __/__,  43 [ 22]  5,  7 <__,  4, __> 52
-    legs=gear.Samnuha_legs,     -- __/__,  75 [ 41]  6,  7 < 3,  3, __> 15
-    feet="Erilaz Greaves +2",   -- 10/10, 147 [ 38]  4, __ <__, __, __> 50
-    neck="Anu Torque",          -- __/__, ___ [___] __,  7 <__, __, __> __
-    waist="Ioskeha Belt +1",    -- __/__, ___ [___]  8, __ < 9, __, __> 17
-    ear1="Telos Earring",       -- __/__, ___ [___] __,  5 < 1, __, __> 10
-    ear2="Sherida Earring",     -- __/__, ___ [___] __,  5 < 5, __, __> __
-    ring1="Moonlight Ring",     --  5/ 5, ___ [110] __,  5 <__, __, __>  8
-    ring2="Moonlight Ring",     --  5/ 5, ___ [110] __,  5 <__, __, __>  8
-    back=gear.RUN_TP_Cape,      -- 10/__, ___ [___] __, 10 <__, __, __> 30
-    -- 49 PDT / 39 MDT, 527 MEVA [618 HP] 32 Haste, 51 STP <30 DA, 7 TA, 0 QA> 300 Acc
-  }
-  sets.engaged.LowAcc.LightDef = set_combine(sets.engaged.LightDef, {})
-  sets.engaged.MidAcc.LightDef = set_combine(sets.engaged.LightDef, {})
-  sets.engaged.HighAcc.LightDef = set_combine(sets.engaged.LightDef, {})
+    sub="Utu Grip",                   -- __, __, 30, __ <__, __, __> [__/__, ___]  70
+    ammo="Staunch Tathlum +1",        -- __, __, __, __ <__, __, __> [ 3/ 3, ___] ___
+    head=gear.Nyame_B_head,           -- 25, __, 50,  6 < 5, __, __> [ 7/ 7, 123]  91
+    body=gear.Nyame_B_body,           -- 24, __, 40,  3 < 7, __, __> [ 9/ 9, 139] 136
+    hands=gear.Adhemar_A_hands,       -- 56,  7, 52,  5 <__,  4, __> [__/__,  43]  22
+    legs=gear.Samnuha_legs,           -- 16,  7, 15,  6 < 3,  3, __> [__/__,  75]  41
+    feet="Erilaz Greaves +2",         -- 31, __, 50,  4 <__, __, __> [10/10, 147]  38
+    neck="Anu Torque",                -- __,  7, __, __ <__, __, __> [__/__, ___] ___
+    ear1="Telos Earring",             -- __,  5, 10, __ < 1, __, __> [__/__, ___] ___
+    ear2="Sherida Earring",           --  5,  5, __, __ < 5, __, __> [__/__, ___] ___
+    ring1="Moonlight Ring",           -- __,  5,  8, __ <__, __, __> [ 5/ 5, ___] 110
+    ring2="Moonlight Ring",           -- __,  5,  8, __ <__, __, __> [ 5/ 5, ___] 110
+    back=gear.RUN_TP_Cape,            -- 20, 10, 30, __ <__, __, __> [10/__, ___] ___
+    waist="Kentarch Belt +1",         -- 10,  5, 14, __ < 3, __, __> [__/__, ___] ___
+    -- 187 DEX, 56 STP, 307 Acc, 24 Haste <24 DA, 7 TA, 0 QA> [49 PDT/39 MDT, 527 M.Eva] 618 HP
 
-  -- TODO: Needs updating
-  sets.engaged.EpeolatryAM = {
-    sub="Utu Grip",
-    ammo="Coiste Bodhar",
-    head=gear.Adhemar_B_head,
-    body="Adhemar Jacket +1",
-    hands=gear.Adhemar_A_hands,
-    legs=gear.Samnuha_legs,
-    feet=gear.Herc_TA_feet,
-    neck="Anu Torque",
-    waist="Windbuffet Belt +1",
-    ear1="Sherida Earring",
-    ear2="Dedition Earring",
-    ring1="Chirich Ring +1",
-    ring2="Chirich Ring +1",
-    back=gear.RUN_TP_Cape,
-    -- body="Ashera Harness",
+    -- body="Ashera Harness",         -- 40, 10, 45,  4 <__, __, __> [ 7/ 7,  96] 182
   }
-  sets.engaged.EpeolatryAM.LowAcc = set_combine(sets.engaged.EpeolatryAM, {})
-  sets.engaged.EpeolatryAM.MidAcc = set_combine(sets.engaged.EpeolatryAM.LowAcc, {})
-  sets.engaged.EpeolatryAM.HighAcc = set_combine(sets.engaged.EpeolatryAM.MidAcc, {})
-
-  -- TODO: Needs updating
-  sets.engaged.EpeolatryAM.LightDef = {
-    ammo="Coiste Bodhar",
-    head="Ayanmo Zucchetto +2",
-    body=gear.Nyame_B_body,
-    hands=gear.Adhemar_A_hands,
-    legs="Meghanada Chausses +2",
-    feet=gear.Nyame_B_feet,
-    neck="Futhark Torque +2",
-    ear1="Sherida Earring",
-    ear2="Dedition Earring",
-    ring1="Moonlight Ring",
-    ring2="Defending Ring",
-    back=gear.RUN_TP_Cape,
-    waist="Sailfi Belt +1",
-    -- body="Ashera Harness",
-  }
-  sets.engaged.EpeolatryAM.LowAcc.LightDef = set_combine(sets.engaged.EpeolatryAM.LightDef, {})
-  sets.engaged.EpeolatryAM.MidAcc.LightDef = set_combine(sets.engaged.EpeolatryAM.LowAcc.LightDef, {})
-  sets.engaged.EpeolatryAM.HighAcc.LightDef = set_combine(sets.engaged.EpeolatryAM.MidAcc.LightDef, {})
+  sets.engaged.LightDef.LowAcc = set_combine(sets.engaged.LightDef, {
+    ear2="Cessance Earring",          -- __,  3,  6, __ < 3, __, __> [__/__, ___] ___
+    -- neck="Combatant's Torque",     -- __,  4, __, __ <__, __, __> [__/__, ___] ___; skill+15
+  })
+  sets.engaged.LightDef.MidAcc = set_combine(sets.engaged.LightDef.LowAcc, {
+    ear2="Dignitary's Earring",       -- __,  3, 10, __ <__, __, __> [__/__, ___] ___
+    waist="Olseni Belt",              -- __,  3, 20, __ <__, __, __> [__/__, ___] ___
+  })
+  sets.engaged.LightDef.HighAcc = set_combine(sets.engaged.LightDef.MidAcc, {
+    body=gear.Adhemar_A_body,         -- 45, __, 55,  4 <__,  4, __> [__/__,  69]  63; Remove if have ashera
+    legs=gear.Nyame_B_legs,           -- __, __, 40,  5 < 6, __, __> [ 8/ 8, 150] 114
+    -- ammo="Yamarang",               -- __,  3, 15, __ <__, __, __> [__/__, ___] ___; Only add if have ashera
+  })
 
 
   ------------------------------------------------------------------------------------------------
@@ -1240,7 +1211,7 @@ function init_gear_sets()
     hands="Regal Gauntlets", --1
     legs="Rawhide Trousers", --1
     feet=gear.Herc_Refresh_feet, --2
-    -- ring1="Stikini Ring +1",
+    ring1="Stikini Ring +1", --1
     -- ring2="Stikini Ring +1",
   }
   sets.latent_refresh_sub50 = set_combine(sets.latent_refresh, {
@@ -1609,7 +1580,6 @@ end
 function job_handle_equipping_gear(playerStatus, eventArgs)
   check_gear()
   update_idle_groups()
-  update_melee_groups()
 end
 
 -- Modify the default idle set after it was constructed.
@@ -1985,21 +1955,6 @@ function update_idle_groups()
     end
     if world.zone == 'Eastern Adoulin' or world.zone == 'Western Adoulin' then
       classes.CustomIdleGroups:append('Adoulin')
-    end
-  end
-end
-
-function update_melee_groups()
-  if player then
-    classes.CustomMeleeGroups:clear()
-    for weapon,am_list in pairs(activate_AM_mode) do
-      if player.equipment.main == weapon or player.equipment.ranged == weapon then
-        for am_level,_ in pairs(am_list) do
-          if buffactive[am_level] then
-            classes.CustomMeleeGroups:append(weapon..'AM')
-          end
-        end
-      end
     end
   end
 end
