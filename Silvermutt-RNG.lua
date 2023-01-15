@@ -75,7 +75,7 @@ function job_setup()
   state.RangedMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.IdleMode:options('Normal', 'HeavyDef')
   state.WeaponSet = M{['description']='Weapon Set', 'MagicRA', 'PhysRA', 'PhysRA RangedOnly', 'Melee'}
-  state.RangedWeaponSet = M{['description']='Ranged Weapon Set', 'Gastraphetes', 'Fomalhaut', 'Sparrowhawk +2'}
+  state.RangedWeaponSet = M{['description']='Ranged Weapon Set', 'Gastra', 'Arma', 'Fomalhaut', 'Sparrowhawk +2'}
   state.CP = M(false, "Capacity Points Mode")
   state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger',
       'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
@@ -252,8 +252,10 @@ function init_gear_sets()
   sets.org.job[1] = {ammo="Chrono Bullet"}
   sets.org.job[2] = {ammo="Eminent Arrow"}
   sets.org.job[3] = {ammo="Quelling Bolt"}
-  sets.org.job[4] = {waist="Quelling bolt quiver"}
-  sets.org.job[5] = {waist="Chrono bullet pouch"}
+  sets.org.job[4] = {waist="Quelling Bolt Quiver"}
+  sets.org.job[5] = {waist="Chrono Bullet Pouch"}
+  sets.org.job[6] = {waist="Devastating Bullet Pouch"}
+  sets.org.job[7] = {waist="Devastating Bullet"}
 
 
   ------------------------------------------------------------------------------------------------
@@ -1529,8 +1531,11 @@ function init_gear_sets()
   }
 
   -- Ranged weapon sets
-  sets.WeaponSet['Gastraphetes'] = {
+  sets.WeaponSet['Gastra'] = {
     ranged="Gastraphetes",
+  }
+  sets.WeaponSet['Arma'] = {
+    ranged="Armageddon",
   }
   sets.WeaponSet['Fomalhaut'] = {
     ranged="Fomalhaut",
