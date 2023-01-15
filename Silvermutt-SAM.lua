@@ -627,9 +627,8 @@ function init_gear_sets()
     -- [54 PDT/20 MDT, 414 MEVA] 3 Hasso, 60 STP <19 DA, 18 TA, 0 QA> 15 Crit Rate, 29 Haste
 
     -- legs="Kasuga Haidate +3",      -- [11/11, 130]  3, 11 <__, __, __> __,  5
-    -- feet="Tatenashi Sune-Ate +1",  -- [__/__,  80] __,  8 <__,  3, __> __,  3
     -- ear2="Kasuga Earring +2",      -- [__/__, ___] __,  9 <__, __, __> __, __
-    -- [49 PDT/21 MDT, 408 MEVA] 3 Hasso, 73 STP <18 DA, 18 TA, 0 QA> 12 Crit Rate, 29 Haste
+    -- [55 PDT/21 MDT, 424 MEVA] 3 Hasso, 65 STP <18 DA, 18 TA, 0 QA> 15 Crit Rate, 29 Haste
   }
   sets.engaged.LowAcc = set_combine(sets.engaged, {})
   sets.engaged.MidAcc = set_combine(sets.engaged, {})

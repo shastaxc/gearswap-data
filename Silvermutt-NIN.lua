@@ -1076,7 +1076,7 @@ function init_gear_sets()
     body="Mpaca's Doublet",           -- __,  8,  55/__ <__,  4, __> [10/__,  86] 102, __
     hands=gear.Adhemar_A_hands,       -- __,  7,  52/32 <__,  4, __> [__/__,  43]  36, __
     legs="Malignance Tights",         -- __, 10,  50/50 <__, __, __> [ 7/ 7, 150]  85, __
-    feet="Malignance Boots",          -- __,  9,  50/50 <__, __, __> [ 4/ 4, 150] 119, __
+    feet="Tatenashi Sune-ate +1",     -- __,  8,  60/__ <__,  3, __> [__/__,  80]  76, __
     neck="Ninja Nodowa +2",           -- __,  7,  25/25 <__, __, __> [__/__, ___] ___, 25
     ear1="Telos Earring",             -- __,  5,  10/10 < 1, __, __> [__/__, ___] ___, __
     ear2="Dedition Earring",          -- __,  8,-10/-10 <__, __, __> [__/__, ___] ___, __
@@ -1085,9 +1085,8 @@ function init_gear_sets()
     back=gear.NIN_STP_Cape,           -- __, 10,  20/__ <__, __, __> [10/__, ___] ___, __
     waist="Reiki Yotai",              --  7,  4,  10/10 <__, __, __> [__/__, ___] ___, __
     -- Traits/gifts/etc                                                                54
-    -- 16 DW, 82 STP, 297 Acc/202 R.Acc <4 DA, 11 TA, 0 QA> [41 PDT/27 MDT, 525 M.Eva] 375 Evasion, 79 Daken
+    -- 16 DW, 81 STP, 307 Acc/152 R.Acc <4 DA, 14 TA, 0 QA> [37 PDT/23 MDT, 455 M.Eva] 335 Evasion, 79 Daken
     
-    -- feet="Tatenashi Sune-ate +1",  -- __,  8,  60/__ <__,  3, __> [__/__,  80]  76, __
     -- ear1="Dedition Earring",       -- __,  8,-10/-10 <__, __, __> [__/__, ___] ___, __
     -- ear2="Hattori Earring +2",     -- __,  8,  20/__ <__, __, __> [__/__, ___] ___, __; katana/throwing +12
   }
@@ -1143,7 +1142,7 @@ function init_gear_sets()
     body=gear.Adhemar_A_body,
     hands="Malignance Gloves",        -- __, 12,  50/50 <__, __, __> [ 5/ 5, 112]  80, __
     legs="Malignance Tights",         -- __, 10,  50/50 <__, __, __> [ 7/ 7, 150]  85, __
-    feet="Malignance Boots",          -- __,  9,  50/50 <__, __, __> [ 4/ 4, 150] 119, __
+    feet="Tatenashi Sune-ate +1",     -- __,  8,  60/__ <__,  3, __> [__/__,  80]  76, __
     neck="Ninja Nodowa +2",           -- __,  7,  25/25 <__, __, __> [__/__, ___] ___, 25
     ear1="Telos Earring",             -- __,  5,  10/10 < 1, __, __> [__/__, ___] ___, __
     ear2="Dedition Earring",          -- __,  8,-10/-10 <__, __, __> [__/__, ___] ___, __
@@ -1152,9 +1151,8 @@ function init_gear_sets()
     back=gear.NIN_STP_Cape,           -- __, 10,  20/__ <__, __, __> [10/__, ___] ___, __
     waist="Reiki Yotai",              --  7,  4,  10/10 <__, __, __> [__/__, ___] ___, __
     -- Traits/gifts/etc                                                                54
-    -- 25 DW, 79 STP, 291 Acc/267 R.Acc <4 DA, 3 TA, 0 QA> [36 PDT/26 MDT, 533 M.Eva] 392 Evasion, 89 Daken
+    -- 25 DW, 78 STP, 301 Acc/217 R.Acc <4 DA, 6 TA, 0 QA> [32 PDT/22 MDT, 463 M.Eva] 349 Evasion, 89 Daken
     
-    -- feet="Tatenashi Sune-ate +1",  -- __,  8,  60/__ <__,  3, __> [__/__,  80]  76, __
     -- ear1="Dedition Earring",       -- __,  8,-10/-10 <__, __, __> [__/__, ___] ___, __
     -- ear2="Hattori Earring +2",     -- __,  8,  20/__ <__, __, __> [__/__, ___] ___, __; katana/throwing +12
   }
@@ -1317,7 +1315,7 @@ function init_gear_sets()
     body="Mpaca's Doublet",           -- __,  8,  55/__ <__,  4, __> [10/__,  86] 102, __
     hands=gear.Adhemar_A_hands,       -- __,  7,  52/32 <__,  4, __> [__/__,  43]  36, __
     legs="Malignance Tights",         -- __, 10,  50/50 <__, __, __> [ 7/ 7, 150]  85, __
-    feet="Malignance Boots",          -- __,  9,  50/50 <__, __, __> [ 4/ 4, 150] 119, __
+    feet="Tatenashi Sune-ate +1",     -- __,  8,  60/__ <__,  3, __> [__/__,  80]  76, __
     neck="Ninja Nodowa +2",           -- __,  7,  25/25 <__, __, __> [__/__, ___] ___, 25
     ear1="Odnowa Earring +1",         -- __, __,  10/__ <__, __, __> [ 3/ 5, ___] ___, __
     ear2="Dedition Earring",          -- __,  8,-10/-10 <__, __, __> [__/__, ___] ___, __
@@ -1326,10 +1324,9 @@ function init_gear_sets()
     back=gear.NIN_STP_Cape,           -- __, 10,  20/__ <__, __, __> [10/__, ___] ___, __
     waist="Reiki Yotai",              --  7,  4,  10/10 <__, __, __> [__/__, ___] ___, __
     -- Traits/gifts/etc                                                                54
-    -- 14 DW, 65 STP, 313 Acc/208 R.Acc <3 DA, 11 TA, 0 QA> [53 PDT/35 MDT, 538 M.Eva] 421 Evasion, 79 Daken
+    -- 14 DW, 64 STP, 323 Acc/158 R.Acc <3 DA, 14 TA, 0 QA> [49 PDT/31 MDT, 468 M.Eva] 378 Evasion, 79 Daken
     
     -- head="Hattori Zukin +3",       --  7, __,  61/61 <__, __, __> [10/10, 119]  89, __
-    -- feet="Tatenashi Sune-ate +1",  -- __,  8,  60/__ <__,  3, __> [__/__,  80]  76, __
     -- ear2="Hattori Earring +2",     -- __,  8,  20/__ <__, __, __> [__/__, ___] ___, __; katana/throwing +12
     -- back=gear.NIN_DW_Cape,         -- 10, __,  20/__ <__, __, __> [10/__, ___] ___, __
   }

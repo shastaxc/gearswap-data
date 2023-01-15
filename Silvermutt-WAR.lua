@@ -677,7 +677,7 @@ function init_gear_sets()
     body="Hjarrandi Breastplate",     -- [12/12,  69] 10 <__, __, __> 13, __
     hands="Sakpata's Gauntlets",      -- [ 8/ 8, 112]  8 <__, __,  6> __,  4
     legs="Tatenashi Haidate +1",      -- [__/__,  80]  8 <__,  3, __> __,  5
-    feet="Flamma Gambieras +2",       -- [__/__,  86]  6 <__, __,  6> __,  2
+    feet="Tatenashi Sune-ate +1",     -- [__/__,  80]  8 <__,  3, __> __,  3
     neck="Vim Torque +1",             -- [__/__, ___] 10 <__, __, __> __, __
     ear1="Schere Earring",            -- [__/__, ___]  5 <__, __,  6> __, __
     ear2="Telos Earring",             -- [__/__, ___]  5 <__, __,  1> __, __
@@ -686,9 +686,8 @@ function init_gear_sets()
     back=gear.WAR_STR_DA_Cape,        -- [10/__, ___] __ <__, __, 10> __, __; DA dmg+20%
     waist="Sailfi Belt +1",           -- [__/__, ___] __ <__,  2,  5> __,  9
     -- WAR Traits                        [__/__, ___] __ <__, __, 33> __, __
-    -- [40 PDT/30 MDT, 400 MEVA] 71 STP <0 QA, 10 TA, 70 DA> 13 Crit Rate, 24 Haste; DA dmg+20%
+    -- [40 PDT/30 MDT, 394 MEVA] 73 STP <0 QA, 13 TA, 64 DA> 13 Crit Rate, 25 Haste; DA dmg+20%
 
-    -- feet="Tatenashi Sune-ate +1",  -- [__/__,  80]  8 <__,  3, __> __,  3
     -- back=gear.WAR_STP_Cape,        -- [10/__, ___] 10 <__, __, __> __, __; DA dmg+20%
     -- [40 PDT/30 MDT, 394 MEVA] 83 STP <0 QA, 13 TA, 54 DA> 13 Crit Rate, 25 Haste; DA dmg+20%
   }
