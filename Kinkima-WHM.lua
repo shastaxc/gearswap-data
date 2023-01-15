@@ -78,8 +78,8 @@ function job_setup()
   send_command('bind ^end gs c cycle Barstatus')
   send_command('bind !end gs c reset Barstatus')
 
-  send_command('bind ^pageup gs c cycleback Storm')
-  send_command('bind ^pagedown gs c cycle Storm')
+  send_command('bind ^pageup gs c cycle Storm')
+  send_command('bind ^pagedown gs c cycleback Storm')
   send_command('bind !pagedown gs c reset Storm')
 
   send_command('bind ^. gs c cycleback CuragaTier')
