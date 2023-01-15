@@ -799,8 +799,8 @@ function init_gear_sets()
     ear2="Odnowa Earring +1",         -- __, __ [ 3/ 5, ___]
     ring2="Defending Ring",           -- __, __ [10/10, ___]
     waist="Audumbla Sash",            -- __, 10 [ 4/__, ___]
-    -- Merits                                 6
-    -- 2 Shadows, 97 SIRD [51 PDT/49 MDT, 614 M.Eva]
+    -- Merits                                 8
+    -- 2 Shadows, 99 SIRD [51 PDT/49 MDT, 614 M.Eva]
     
     -- ammo="Staunch Tathlum +1",     -- __, 11 [ 3/ 3, ___]
     -- head="Yasha Jinpachi +1",      -- __,  6 [__/__, 119]
@@ -815,8 +815,8 @@ function init_gear_sets()
     -- ring2="Defending Ring",        -- __, __ [10/10, ___]
     -- back=gear.NIN_SIRD_Cape,       --  1, 10 [__/__, ___]
     -- waist="Audumbla Sash",         -- __, 10 [ 4/__, ___]
-    -- Merits                                 6
-    -- 2 Shadows, 103 SIRD [20 PDT/18 MDT, 432 M.Eva]
+    -- Merits                                 8
+    -- 2 Shadows, 105 SIRD [20 PDT/18 MDT, 432 M.Eva]
     
     -- ammo="Staunch Tathlum +1",     -- __, 11 [ 3/ 3, ___]
     -- head="Hattori Zukin +3",       -- __, __ [10/10, 119]
@@ -831,8 +831,8 @@ function init_gear_sets()
     -- ring2="Defending Ring",        -- __, __ [10/10, ___]
     -- back=gear.NIN_SIRD_Cape,       --  1, 10 [__/__, ___]
     -- waist="Audumbla Sash",         -- __, 10 [ 4/__, ___]
-    -- Merits                                 6
-    -- 2 Shadows, 105 SIRD [27 PDT/23 MDT, 432 M.Eva]
+    -- Merits                                 8
+    -- 2 Shadows, 107 SIRD [27 PDT/23 MDT, 432 M.Eva]
   }
 
   sets.midcast.ElementalNinjutsu = {}

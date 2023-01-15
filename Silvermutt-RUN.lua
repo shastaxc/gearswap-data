@@ -1,4 +1,4 @@
--- File Status: Good. Fix HP balance (WS and onward).
+-- File Status: Good. Fix HP balance (WS and onward). Update SIRD sets with magnetic earring.
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs
@@ -371,9 +371,19 @@ function init_gear_sets()
 
   -- PDT/MDT, M.Eva [HP] {SIRD}
   SIRD_options = {
-    -- head="Erilaz Galea +2",                            -- __/__, 109 [101] {15}
+    -- ammo="Staunch Tathlum +1",                         --  3/ 3, ___ [___] {11}
+    -- head="Agwu's Cap",                                 -- __/__, 107 [ 38] {10}
+    -- head="Erilaz Galea +3",                            -- __/__, 119 [111] {20}
     -- hands="Regal Gauntlets",                           -- __/__,  48 [205] {10}
+    -- hands=gear.Rawhide_B_hands,                        -- __/__,  37 [ 75] {15}
+    -- legs=gear.Carmine_A_legs,                          -- __/__,  80 [130] {20}
     -- feet="Agwu's Pigaches",                            -- __/__, 134 [ 27] {10}
+    -- feet=gear.Taeon_SIRD_feet,                         -- __/__,  89 [ 63] {10}
+    -- neck="Moonlight Necklace",                         -- __/__,  15 [___] {15}
+    -- ear2="Magnetic Earring",                           -- __/__, ___ [___] { 8}
+    -- ear2="Halasz Earring",                             -- __/__, ___ [___] { 5}
+    -- back=gear.RUN_SIRD_Cape,                           -- __/__,  20 [ 80] {10}
+    -- waist="Audumbla Sash",                             --  4/__, ___ [___] {10}
   }
 
   -- 102% SIRD required to cap; can get 10% from merits
@@ -382,34 +392,35 @@ function init_gear_sets()
     head="Erilaz Galea +2",                               -- __/__, 109 [101] {15}
     body=gear.Nyame_B_body,                               --  9/ 9, 139 [136] {__}
     hands={name="Regal Gauntlets",priority=1},            -- __/__,  48 [205] {10}
-    legs=gear.Carmine_A_legs,                             -- __/__,  80 [130] {20}
-    feet=gear.Taeon_SIRD_feet,                            -- __/__,  89 [ 63] {10}
+    legs={name=gear.Carmine_A_legs.name,
+      augments=gear.Carmine_A_legs.augments,priority=1},  -- __/__,  80 [130] {20}
+    feet="Erilaz Greaves +2",                             -- 10/10, 147 [ 38] {__}
     neck="Moonlight Necklace",                            -- __/__,  15 [___] {15}
-    ear1={name="Odnowa Earring +1",priority=1},           --  3/ 5, ___ [110] {__}
+    ear1="Magnetic Earring",                              -- __/__, ___ [___] { 8}
     ear2="Halasz Earring",                                -- __/__, ___ [___] { 5}
-    ring1={name="Gelatinous Ring +1",priority=1},         --  7/-1, ___ [135] {__}
+    ring1="Gelatinous Ring +1",                           --  7/-1, ___ [135] {__}
     ring2="Defending Ring",                               -- 10/10, ___ [___] {__}
-    back=gear.RUN_HPD_Cape,                               -- 10/__,  20 [ 80] {__}
+    back={name="Moonlight Cape",priority=1},              --  6/ 6, ___ [275] {__}
     waist="Audumbla Sash",                                --  4/__, ___ [___] {10}
-    -- SIRD merits                                                            { 6}
-    -- 46 PDT / 26 MDT, 500 M.Eva [960 HP] {102 SIRD}
-
+    -- SIRD merits                                                            { 8}
+    -- 49 PDT / 37 MDT, 538 M.Eva [1020 HP] {102 SIRD}
+    
     -- ammo="Staunch Tathlum +1",                            --  3/ 3, ___ [___] {11}
     -- head="Erilaz Galea +3",                               -- __/__, 119 [111] {20}
     -- body=gear.Nyame_B_body,                               --  9/ 9, 139 [136] {__}
-    -- hands=gear.Rawhide_B_hands,                           -- __/__,  37 [ 75] {15}
+    -- hands={name="Regal Gauntlets",priority=1},            -- __/__,  48 [205] {10}
     -- legs={name=gear.Carmine_A_legs.name,
     --   augments=gear.Carmine_A_legs.augments,priority=1},  -- __/__,  80 [130] {20}
     -- feet="Erilaz Greaves +3",                             -- 11/11, 157 [ 48] {__}
     -- neck="Moonlight Necklace",                            -- __/__,  15 [___] {15}
-    -- ear1={name="Odnowa Earring +1",priority=1},           --  3/ 5, ___ [110] {__}
-    -- ear2="Halasz Earring",                                -- __/__, ___ [___] { 5}
-    -- ring1={name="Gelatinous Ring +1",priority=1},         --  7/-1, ___ [135] {__}
+    -- ear1="Magnetic Earring",                              -- __/__, ___ [___] { 8}
+    -- ear2="Arete del Luna +1",                             -- __/__, ___ [___] {__}; Resists
+    -- ring1="Gelatinous Ring +1",                           --  7/-1, ___ [135] {__}
     -- ring2="Defending Ring",                               -- 10/10, ___ [___] {__}
     -- back={name="Moonlight Cape",priority=1},              --  6/ 6, ___ [275] {__}
     -- waist="Audumbla Sash",                                --  4/__, ___ [___] {10}
-    -- SIRD merits                                                               { 6}
-    -- 53 PDT / 43 MDT, 547 M.Eva [1020 HP] {102 SIRD}
+    -- SIRD merits                                                               { 8}
+    -- 50 PDT / 38 MDT, 558 M.Eva [1040 HP] {102 SIRD}
   }
 
   sets.precast.JA = set_combine(sets.Enmity, {})
@@ -863,11 +874,12 @@ function init_gear_sets()
     ring2="Moonlight Ring",           -- __, __, __, __(__) [ 5/ 5, ___] 110 {__}
     back="Moonlight Cape",            -- __, __, __, __(__) [ 6/ 6, ___] 275 {__}
     waist="Sroda Belt",               -- __, __, __, 35(__) [__/__, ___] ___ {__}
-    -- 161 MND, 195 VIT, 50 Heal skill, 36 Cure Pot (0 self pot) [62 PDT/56 MDT, 674 M.Eva] 1150 HP {??}
+    -- SIRD merits                                                           { 6}
+    -- 161 MND, 195 VIT, 50 Heal skill, 36 Cure Pot (0 self pot) [62 PDT/56 MDT, 674 M.Eva] 1150 HP {17}
     
     -- neck="Sacro Gorget",           -- __, __, __, 10(__) [__/__, ___]  50 {__}
     -- ear2="Mendicant's Earring",    -- __, __, __,  5(__) [__/__, ___] ___ {__}
-    -- 161 MND, 195 VIT, 50 Heal skill, 51 Cure Pot (0 self pot) [62 PDT/56 MDT, 674 M.Eva] 1180 HP
+    -- 161 MND, 195 VIT, 50 Heal skill, 51 Cure Pot (0 self pot) [62 PDT/56 MDT, 674 M.Eva] 1180 HP {17}
   }
   sets.midcast['Blue Magic'].Cure.Safe = set_combine(sets.SIRD, {
     -- ammo="Staunch Tathlum +1",               -- __, __, __, __(__) [ 3/ 3, ___] ___ {11}
@@ -879,14 +891,14 @@ function init_gear_sets()
     --   priority=1},                           -- 16, 17, 18, __(__) [__/__,  80] 130 {20}
     -- feet="Erilaz Greaves +3",                -- 31, 21, __, __(__) [11/11, 157]  48 {__}
     -- neck="Moonlight Necklace",               -- __, __, __, __(__) [__/__,  15] ___ {15}
-    -- ear1="Odnowa Earring +1",                -- __,  3, __, __(__) [ 3/ 5, ___] 110 {__}
+    -- ear1="Magnetic Earring",                 -- __, __, __, __(__) [__/__, ___] ___ { 8}
     -- ear2="Halasz Earring",                   -- __, __, __, __(__) [__/__, ___] ___ { 5}
     -- ring1="Gelatinous Ring +1",              -- __, 15, __, __(__) [ 7/-1, ___] 135 {__}
     -- ring2="Defending Ring",                  -- __, __, __, __(__) [10/10, ___] ___ {__}
-    -- back=gear.RUN_SIRD_Cape,                 -- __, __, __, __(__) [__/__,  20]  80 {10}
+    -- back="Moonlight Cape",                   -- __, __, __, __(__) [ 6/ 6, ___] 275 {__}
     -- waist="Sroda Belt",                      -- __, __, __, 35(__) [__/__, ___] ___ {__}
-    -- SIRD merits                                                                     { 6}
-    -- 147 MND, 159 VIT, 18 Heal Skill, 35 Cure Pot (0 self pot) [43 PDT / 37 MDT, 567 M.Eva] 805 HP {102 SIRD}
+    -- SIRD merits                                                                     { 8}
+    -- 147 MND, 156 VIT, 18 Heal Skill, 35 Cure Pot (0 self pot) [46 PDT / 38 MDT, 547 M.Eva] 910 HP {102 SIRD}
   })
 
 

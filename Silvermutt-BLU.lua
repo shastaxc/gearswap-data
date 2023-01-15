@@ -741,15 +741,15 @@ function init_gear_sets()
     ring1="Defending Ring",           -- __, __, __ [10/10, ___]
     ring2="Stikini Ring +1",          -- __,  5, __ [__/__, ___]
     back=gear.BLU_FC_Cape,            -- __, 30, __ [10/__, ___]
-    -- Merits                            __, __,  6 [__/__, ___]
-    -- 47 Cure Potency, 228 MND, 47 SIRD [62 PDT / 42 MDT, 553 M.Eva]
+    -- Merits                            __, __,  8 [__/__, ___]
+    -- 47 Cure Potency, 228 MND, 49 SIRD [62 PDT / 42 MDT, 553 M.Eva]
 
     -- sub="Sors Shield",             --  3, __, __ [__/__, ___]
     -- body="Shamash Robe",           -- __, 40, __ [10/__, 106]
     -- hands=gear.Telchine_ENH_hands, -- 18, 33, __ [__/__,  62]
     -- ring2="Freke Ring",            -- __, __, 10 [__/__, ___]
     -- waist="Sanctuary Obi +1",      -- __, __, 10 [__/__, ___]
-    -- 51 Cure Potency, 196 MND, 71 SIRD [53 PDT / 33 MDT, 521 M.Eva]
+    -- 51 Cure Potency, 196 MND, 73 SIRD [53 PDT / 33 MDT, 521 M.Eva]
   }
 
   sets.midcast['Blue Magic'].HealingSelf = set_combine(sets.midcast['Blue Magic'].Healing, {
