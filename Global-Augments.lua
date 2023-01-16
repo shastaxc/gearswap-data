@@ -200,7 +200,7 @@ gear.Vijaya_Bow_D = {}
 gear.Adhemar_A_head = {name="Adhemar Bonnet +1", augments={'DEX+12','AGI+12','Accuracy+20',}}
 gear.Adhemar_B_head = {name="Adhemar Bonnet +1", augments={'STR+12','DEX+12','Attack+20',}}
 gear.Adhemar_C_head = {name="Adhemar Bonnet +1", augments={'AGI+12','Rng.Acc.+20','Rng.Atk.+20',}}
-gear.Adhemar_D_head = {name="Adhemar Bonnet +1", augments={'HP+105','Attack+13','Phys. dmg. taken -4%',}}
+gear.Adhemar_D_head = {name="Adhemar Bonnet +1", augments={'HP+105','Attack+13','Phys. dmg. taken -4',}}
 
 gear.Adhemar_A_body = {name="Adhemar Jacket +1", augments={'DEX+12','AGI+12','Accuracy+20',}}
 gear.Adhemar_B_body = {name="Adhemar Jacket +1", augments={'STR+12','DEX+12','Attack+20',}}
@@ -324,7 +324,7 @@ gear.Carmine_D_legs = {name="Carmine Cuisses +1", augments={'Accuracy+20','Attac
 gear.Carmine_A_feet = {name="Carmine Greaves +1", augments={'HP+80','STR+12','INT+12',}}
 gear.Carmine_B_feet = {name="Carmine Greaves +1", augments={'Accuracy+12','DEX+12','MND+20',}}
 gear.Carmine_C_feet = {name="Carmine Greaves +1", augments={'MP+80','INT+12','MND+12',}}
-gear.Carmine_D_feet = {name="Carmine Greaves +1", augments={'HP+80','MP+80','Phys. dmg. taken -4%'}}
+gear.Carmine_D_feet = { name="Carmine Greaves +1", augments={'HP+80','MP+80','Phys. dmg. taken -4',}}
 
 -- Despair
 gear.Despair_A_head = {}
@@ -522,7 +522,7 @@ gear.Pursuer_D_body = {name="Pursuer's Doublet", augments={'HP+50','Crit. hit ra
 gear.Pursuer_A_hands = {name="Pursuer's Cuffs", augments={'AGI+10','"Rapid Shot"+10','"Subtle Blow"+7',}}
 gear.Pursuer_B_hands = {name="Pursuer's Cuffs", augments={'DEX+7','AGI+10','"Recycle"+15',}}
 gear.Pursuer_C_hands = {name="Pursuer's Cuffs", augments={'HP+50','Accuracy+20','Attack+15',}}
-gear.Pursuer_D_hands = {name="Pursuer's Cuffs", augments={'Rng.Atk.+15','STR+7','Phys. dmg. taken -4%',}}
+gear.Pursuer_D_hands = {name="Pursuer's Cuffs", augments={'Rng.Atk.+15','STR+7','Phys. dmg. taken -4',}}
 
 gear.Pursuer_A_legs = {name="Pursuer's Pants", augments={'AGI+10','"Rapid Shot"+10','"Subtle Blow"+7',}}
 gear.Pursuer_B_legs = {name="Pursuer's Pants", augments={'DEX+7','AGI+10','"Recycle"+15',}}
