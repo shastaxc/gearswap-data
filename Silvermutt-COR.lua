@@ -134,7 +134,7 @@ function job_setup()
   state.RangedMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.IdleMode:options('Normal', 'HeavyDef')
 
-  state.WeaponSet = M{['description']='Weapon Set', 'Savage Blade', 'DeathPenalty_M', 'DeathPenalty_R', 'Fomalhaut_M', 'Fomalhaut_R', 'Cleaving', 'QuickDraw'}
+  state.WeaponSet = M{['description']='Weapon Set', 'Savage Blade', 'DeathPenalty_M', 'DeathPenalty_R', 'Armageddon_M', 'Armageddon_R', 'Fomalhaut_M', 'Fomalhaut_R', 'Cleaving', 'QuickDraw'}
 
   state.CP = M(false, "Capacity Points Mode")
 
@@ -1927,24 +1927,25 @@ function init_gear_sets()
     main=gear.Lanun_A,
     sub="Gleti's Knife",
     ranged="Death Penalty",
-    -- main="Rostam",
+    -- main=gear.Rostam_A,
   }
   sets.WeaponSet.DeathPenalty_R = {
     main=gear.Lanun_A,
     sub="Nusku Shield",
     ranged="Death Penalty",
-    -- main="Rostam",
+    -- main=gear.Rostam_A,
   }
   sets.WeaponSet.Armageddon_M = {
     main=gear.Lanun_A,
     sub="Gleti's Knife",
-    -- main="Rostam",
-    -- ranged="Armageddon",
+    ranged="Armageddon",
+    -- main=gear.Rostam_A,
   }
   sets.WeaponSet.Armageddon_R = {
+    main=gear.Lanun_A,
     sub="Nusku Shield",
-    -- main="Fettering Blade",
-    -- ranged="Armageddon",
+    ranged="Armageddon",
+    -- main=gear.Rostam_A,
   }
   sets.WeaponSet.Fomalhaut_M = {
     main="Naegling",
@@ -1955,6 +1956,7 @@ function init_gear_sets()
     main=gear.Lanun_A,
     sub="Nusku Shield",
     ranged="Fomalhaut",
+    -- main=gear.Rostam_A,
   }
   sets.WeaponSet["Savage Blade"] = {
     main="Naegling",
