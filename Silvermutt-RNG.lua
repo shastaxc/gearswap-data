@@ -929,13 +929,13 @@ function init_gear_sets()
     legs="Malignance Tights",   --  7/ 7, 150
     feet="Malignance Boots",    --  4/ 4, 150
     neck="Loricate Torque +1",  --  6/ 6, ___
-    ear1="Eabani Earring",      -- __/__,   8
+    ear1="Arete Del Luna +1",   -- __/__, ___; Resists
     ear2="Odnowa Earring +1",   --  3/ 5, ___
     ring1="Chirich Ring +1",    -- __/__, ___
     ring2="Defending Ring",     -- 10/10, ___
     back=gear.RNG_DW_Cape,      -- __/__,  15
     waist="Carrier's Sash",     -- __/__, ___
-  } -- 50 PDT / 52 MDT, 697 MEVA
+  } -- 50 PDT / 52 MDT, 689 MEVA
 
   sets.defense.PDT = set_combine(sets.HeavyDef, {})
   sets.defense.MDT = set_combine(sets.HeavyDef, {})

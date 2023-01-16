@@ -979,7 +979,7 @@ function init_gear_sets()
     feet=gear.Nyame_B_feet,           -- [ 7/ 7, 150] 119, __
     neck="Warder's Charm +1",         -- [__/__, ___] ___, __; Absorb magic dmg
     ear1="Eabani Earring",            -- [__/__,   8]  15, __
-    ear2="Hearty Earring",            -- [__/__, ___] ___,  5
+    ear2="Arete Del Luna +1",         -- [__/__, ___] ___, __; Resists
     ring2="Defending Ring",           -- [10/10, ___] ___, __
     back=gear.NIN_STP_Cape,
     waist="Engraved Belt",            -- [__/__, ___] ___, __; Element resist
@@ -987,7 +987,7 @@ function init_gear_sets()
     -- body="Hattori Ningi +3",       -- [13/13, 129]  95, __; Migawari+16
     -- ring1="Shadow Ring",           -- [__/__, ___] ___, __; Annul magic dmg
     -- back="Shadow Mantle",          -- [__/__, ___] ___, __; Annul physical dmg
-    -- [51 PDT/51 MDT, 682 M.Eva] 492 Eva, 16 Status Resist
+    -- [51 PDT/51 MDT, 682 M.Eva] 492 Eva, 11 Status Resist
   }
   sets.defense.MDT = set_combine(sets.defense.PDT, {})
 

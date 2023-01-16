@@ -753,7 +753,7 @@ function init_gear_sets()
     legs="Malignance Tights",   --  7/ 7, 150
     feet="Malignance Boots",    --  4/ 4, 150
     neck="Monk's Nodowa +2",    -- __/__, ___
-    ear1="Sherida Earring",     -- __/__, ___
+    ear1="Arete Del Luna +1",   -- __/__, ___; Resists
     ear2="Odnowa Earring +1",   --  3/ 5, ___
     ring1="Defending Ring",     -- 10/10, ___
     ring2="Niqmaddu Ring",      -- __/__, ___

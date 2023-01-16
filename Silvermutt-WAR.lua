@@ -616,7 +616,7 @@ function init_gear_sets()
     feet="Sakpata's Leggings",
     neck="Warrior's Bead Necklace +1",
     ear1="Odnowa Earring +1",
-    ear2="Eabani Earring",
+    ear2="Arete Del Luna +1",
     ring1="Moonlight Ring",
     ring2="Gelatinous Ring +1",
     back="Moonlight Cape",

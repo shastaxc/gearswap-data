@@ -283,15 +283,13 @@ function init_gear_sets()
     feet="Turms Leggings +1",                       -- __/__, 147 [ 76]  5
     neck="Futhark Torque +2",                       --  7/ 7,  30 [ 60] __
     ear1={name="Odnowa Earring +1",priority=1},     --  3/ 5, ___ [110] __
-    ear2="Ethereal Earring",                        -- __/__, ___ [ 15] __; Convert dmg to MP
+    ear2="Arete del Luna +1",                       -- __/__, ___ [___] __; Resists
     ring1={name="Gelatinous Ring +1",priority=1},   --  7/-1, ___ [135] __
     ring2={name="Moonlight Ring",priority=1},       --  5/ 5, ___ [110] __
     back=gear.RUN_HPP_Cape,                         -- __/__,  20 [ 80]  8
     waist="Flume Belt +1",                          --  4/__, ___ [___] __; Convert dmg to MP
     -- Merits/Traits/Gifts                                              19
-    -- 49 PDT / 39 MDT, 698 MEVA [984 HP] 36 Inquartata
-    
-    -- ear2="Arete del Luna +1",                  -- __/__, ___ [___] (__, __); Resist stun, bind, gravity, sleep, charm, light
+    -- 49 PDT / 39 MDT, 698 MEVA [969 HP] 36 Inquartata
   }
 
   -- PDT cap is 50%, Protect V = 0%
@@ -311,21 +309,20 @@ function init_gear_sets()
     feet="Erilaz Greaves +2",                     -- 10/10, 147 [ 38] (__, 30)
     neck={name="Unmoving Collar +1",priority=1},  -- __/__, ___ [200] (__, __)
     ear1={name="Odnowa Earring +1",priority=1},   --  3/ 5, ___ [110] (__, __)
-    ear2="Erilaz Earring",                        -- __/__,  10 [___] (__, __)
+    ear2="Arete del Luna +1",                     -- __/__, ___ [___] (__, __); Resists
     ring1={name="Gelatinous Ring +1",priority=1}, --  7/-1, ___ [135] (__, __)
     ring2={name="Moonlight Ring",priority=1},     --  5/ 5, ___ [110] (__, __)
     back=gear.RUN_HPP_Cape,                       -- __/__,  20 [ 80] (__, __)
     waist="Engraved Belt",                        -- __/__, ___ [___] (__, 20)
-    -- 48 PDT / 42 MDT, 676 MEVA [1186 HP] (11 Status Resist, 50 Element Resist)
+    -- 48 PDT / 42 MDT, 666 MEVA [1186 HP] (11 Status Resist, 50 Element Resist)
 
     -- head="Erilaz Galea +3",                    -- __/__, 119 [111] (__, __)
     -- body={name="Erilaz Surcoat +3",priority=1},-- __/__, 130 [143] (__, __); Retain enmity; Convert dmg to MP
     -- hands="Erilaz Gauntlets +3",               -- 11/11,  87 [ 59] ( 8, __)
     -- feet="Erilaz Greaves +3",                  -- 11/11, 157 [ 48] (__, 35)
     -- ear1="Sanare Earring",                     -- __/__,   6 [___] (__, __); M. Def Bonus+4
-    -- ear2="Arete del Luna +1",                  -- __/__, ___ [___] (__, __); Resist stun, bind, gravity, sleep, charm, light
     -- back=gear.RUN_HPME_Cape,                   -- __/__,  45 [ 60] (__, __)
-    -- 50 PDT / 42 MDT, 701 MEVA [1026 HP] (19 Status Resist, 55 Element Resist)
+    -- 50 PDT / 42 MDT, 701 MEVA [1036 HP] (19 Status Resist, 55 Element Resist)
   }
 
   sets.defense.Parry = {
@@ -503,7 +500,7 @@ function init_gear_sets()
     feet="Turms Leggings +1",                       -- __/__, 147 [ 76] __
     neck="Incanter's Torque",                       -- __/__, ___ [___] 10
     ear1="Odnowa Earring +1",                       --  3/ 5, ___ [110] __
-    ear2="Ethereal Earring",                        -- __/__, ___ [ 15] __
+    ear2="Arete del Luna +1",                       -- __/__, ___ [___] __; Resists
     ring1="Gelatinous Ring +1",                     --  7/-1, ___ [135] __
     ring2="Defending Ring",                         -- 10/10, ___ [___] __
     back={name="Moonlight Cape",priority=1},        --  6/ 6, ___ [275] __
@@ -511,9 +508,7 @@ function init_gear_sets()
     -- Merits/Traits/Gifts                                              16
     -- Master Level 50                                                  50
     -- Base skill                                                      398
-    -- 51 PDT/45 MDT, 653 M.Eva [1022 HP] 474 Divine Skill
-    
-    -- ear2="Arete del Luna +1",                  -- __/__, ___ [___] (__, __); Resist stun, bind, gravity, sleep, charm, light
+    -- 51 PDT/45 MDT, 653 M.Eva [1007 HP] 474 Divine Skill
   }
 
   -- Fast cast sets for spells
@@ -656,17 +651,16 @@ function init_gear_sets()
     feet="Erilaz Greaves +2",                       -- 10/10, 147 [ 38] __
     neck="Futhark Torque +2",                       --  7/ 7,  30 [ 60] __
     ear1="Odnowa Earring +1",                       --  3/ 5, ___ [110] __
-    ear2="Ethereal Earring",                        -- __/__, ___ [ 15] __; Convert dmg to MP
+    ear2="Arete del Luna +1",                       -- __/__, ___ [___] __; Resists
     ring1="Moonlight Ring",                         --  5/ 5, ___ [110] __
     ring2="Moonlight Ring",                         --  5/ 5, ___ [110] __
     back=gear.RUN_HPP_Cape,                         -- __/__,  20 [ 80] __
     waist="Flume Belt +1",                          --  4/__, ___ [___] __; Convert dmg to MP
     -- Merits/Traits/Gifts                                              20
-    -- 46 PDT/44 MDT, 582 M.Eva [1072 HP] 90 Enh Duration
+    -- 46 PDT/44 MDT, 582 M.Eva [1057 HP] 90 Enh Duration
     
     -- head="Erilaz Galea +3",                      -- __/__, 119 [111] 25
     -- feet="Erilaz Greaves +3",                    -- 11/11, 157 [ 48] __
-    -- ear2="Arete del Luna +1",                    -- __/__, ___ [___] (__, __); Resist stun, bind, gravity, sleep, charm, light
     -- 47 PDT/45 MDT, 602 M.Eva [1077 HP] 95 Enh Duration
   }
 
@@ -738,16 +732,15 @@ function init_gear_sets()
     feet="Turms Leggings +1",                       -- __/__, 147 [ 76] (__, __)
     neck="Futhark Torque +2",                       --  7/ 7,  30 [ 60] (__, __)
     ear1="Odnowa Earring +1",                       --  3/ 5, ___ [110] (__, __)
-    ear2="Ethereal Earring",                        -- __/__, ___ [ 15] (__, __)
+    ear2="Arete del Luna +1",                       -- __/__, ___ [___] (__, __); Resists
     ring1="Gelatinous Ring +1",                     --  7/-1, ___ [135] (__, __)
     -- ring2="Sheltered Ring",                      -- __/__, ___ [___] (__, __); Enhances Protect
     back={name="Moonlight Cape", priority=1},       --  6/ 6, ___ [275] (__, __)
     waist="Audumbla Sash",                          --  4/__, ___ [___] (__, __)
     -- Merits/Traits/Gifts                                              (20, 52)
-    -- 38 PDT/28 MDT, 557 M.Eva [1205 HP] (90 Enh Duration, N/A Enh Skill)
+    -- 38 PDT/28 MDT, 557 M.Eva [1190 HP] (90 Enh Duration, N/A Enh Skill)
     
     -- head="Erilaz Galea +3",                      -- __/__, 119 [111] (25, __)
-    -- ear2="Arete del Luna +1",                    -- __/__, ___ [___] (__, __); Resist stun, bind, gravity, sleep, charm, light
   }
   sets.midcast.Shell = set_combine(sets.midcast.Protect, {})
 
@@ -833,15 +826,14 @@ function init_gear_sets()
     feet="Turms Leggings +1",                   -- __/__, 147 [ 76] __
     neck="Futhark Torque +2",                   --  7/ 7,  30 [ 60] __
     ear1="Odnowa Earring +1",                   --  3/ 5, ___ [110] __
-    ear2="Ethereal Earring",                    -- __/__, ___ [ 15] __
+    ear2="Arete del Luna +1",                   -- __/__, ___ [___] __; Resist stun, bind, gravity, sleep, charm, light
     ring1="Gelatinous Ring +1",                 --  7/-1, ___ [135] __
     ring2="Moonlight Ring",                     --  5/ 5, ___ [110] __
     back={name="Moonlight Cape", priority=1},   --  6/ 6, ___ [275] __
     waist="Siegel Sash",                        -- __/__, ___ [___] 20
-    -- 60 PDT/54 MDT, 697 M.Eva [1182 HP] 20 Stoneskin Potency
+    -- 60 PDT/54 MDT, 697 M.Eva [1167 HP] 20 Stoneskin Potency
 
     -- hands="Stone Mufflers",                  -- __/__, ___ [ 10] 30
-    -- ear2="Arete del Luna +1",                -- __/__, ___ [___] (__, __); Resist stun, bind, gravity, sleep, charm, light
     -- 60 PDT/54 MDT, 596 M.Eva [1103 HP] 50 Stoneskin Potency
   }
   sets.midcast.Flash = set_combine(sets.Enmity, {})

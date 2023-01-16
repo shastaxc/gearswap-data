@@ -551,8 +551,8 @@ function init_gear_sets()
     legs=gear.Nyame_B_legs,     --  8/ 8, 150
     feet=gear.Nyame_B_feet,     --  7/ 7, 150
     neck="Samurai's Nodowa +2", -- __/__, ___
-    ear1="Dedition Earring",    -- __/__, ___
-    ear2="Telos Earring",       -- __/__, ___
+    ear1="Arete Del Luna +1",   -- __/__, ___; Resists
+    ear2="Hearty Earring",      -- __/__, ___; Resist all +5
     ring1="Niqmaddu Ring",      -- __/__, ___
     ring2="Defending Ring",     -- 10/10, ___
     back=gear.SAM_TP_Cape,      -- 10/__, ___

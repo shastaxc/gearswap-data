@@ -744,7 +744,7 @@ function init_gear_sets()
     legs=gear.Nyame_B_legs,   --  8,  8, 150
     feet=gear.Nyame_B_feet,   --  7,  7, 150
     neck="Loricate Torque +1",--  6,  6, ___
-    ear1="Hearty Earring",    -- __, __, ___; Status resist
+    ear1="Arete Del Luna +1", -- __, __, ___; Resists
     ear2="Etiolation Earring",-- __,  3, ___; Status resist
     ring1="Defending Ring",   -- 10, 10, ___
     ring2="Moonlight Ring",   --  5,  5, ___; Gel. Ring +1 acceptable alt

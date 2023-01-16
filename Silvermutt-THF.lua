@@ -803,13 +803,13 @@ function init_gear_sets()
     legs="Gleti's Breeches",    --  8/__, 112
     feet="Gleti's Boots",       --  5/__, 112
     neck="Loricate Torque +1",  --  6/ 6, ___
-    ear1="Eabani Earring",      -- __/__,   8
+    ear1="Arete Del Luna +1",   -- __/__, ___; Resists
     ear2="Odnowa Earring +1",   --  3/ 5, ___
     ring1="Moonlight Ring",     --  5/ 5, ___
     ring2="Defending Ring",     -- 10/10, ___
     back=gear.THF_TP_Cape,      -- 10/__, ___
     waist="Engraved Belt",      -- __/__, ___
-    -- 63 PDT/26 MDT, 533 M.Eva
+    -- 63 PDT/26 MDT, 525 M.Eva
   }
 
   sets.idle.Regain = set_combine(sets.idle, {})

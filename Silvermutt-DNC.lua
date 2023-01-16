@@ -734,13 +734,13 @@ function init_gear_sets()
     legs=gear.Nyame_B_legs,     --  8/ 8, 150
     feet=gear.Nyame_B_feet,     --  7/ 7, 150
     neck="Etoile Gorget +2",    -- __/__, ___
-    ear1="Eabani Earring",      -- __/__,   8
+    ear1="Arete Del Luna +1",   -- __/__, ___
     ear2="Odnowa Earring +1",   --  3/ 5, ___
     ring1="Moonlight Ring",     --  5/ 5, ___
     ring2="Defending Ring",     -- 10/10, ___
     back=gear.DNC_TP_DW_Cape,   -- 10/__, ___
     waist="Engraved Belt",      -- __/__, ___
-  } --63 PDT/55 MDT, 697 MEVA
+  } --63 PDT/55 MDT, 689 MEVA
 
   sets.defense.PDT = set_combine(sets.HeavyDef, {})
   sets.defense.MDT = set_combine(sets.HeavyDef, {})

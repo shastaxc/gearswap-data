@@ -1137,22 +1137,22 @@ function init_gear_sets()
 
   -- When luopan is not existing
   sets.idle = {
-    main="Malignance Pole",         -- __ [20/20, ___, __/__, __
-    sub="Khonsu",                   -- __ [ 6/ 6, ___, __/__, __
-    range="Dunna",                  -- __ [__/__, ___, __/__, __
-    ammo=empty,                     -- __ [__/__, ___, __/__, __
-    head=gear.Nyame_B_head,         -- __ [ 7/ 7, 123, __/__, __
-    body=gear.Nyame_B_body,         -- __ [ 9/ 9, 139, __/__, __
-    hands=gear.Nyame_B_hands,       -- __ [ 7/ 7, 112, __/__, __
-    legs=gear.Nyame_B_legs,         -- __ [ 8/ 8, 150, __/__, __
-    feet=gear.Nyame_B_feet,         -- __ [ 7/ 7, 150, __/__, __
-    neck="Loricate Torque +1",      -- __ [ 6/ 6, ___, __/__, __
-    ear1="Hearty Earring",          -- __ [ 2/__, ___, __/__, __; Resist All Status+5
-    ear2="Etiolation Earring",      -- __ [__/ 3, ___, __/__, __; Resist Silence+15
-    ring1="Defending Ring",         -- __ [10/10, ___, __/__, __
-    ring2="Stikini Ring +1",        --  1 [__/__, ___, __/__, __
-    back=gear.GEO_Idle_Cape,        -- __ [__/__,  30, __/__, 15
-    waist="Carrier's Sash",         -- __ [__/__, ___, __/__, __; Ele resist+15
+    main="Malignance Pole",         -- __ [20/20, ___] {__/__, __}
+    sub="Khonsu",                   -- __ [ 6/ 6, ___] {__/__, __}
+    range="Dunna",                  -- __ [__/__, ___] {__/__, __}
+    ammo=empty,                     -- __ [__/__, ___] {__/__, __}
+    head=gear.Nyame_B_head,         -- __ [ 7/ 7, 123] {__/__, __}
+    body=gear.Nyame_B_body,         -- __ [ 9/ 9, 139] {__/__, __}
+    hands=gear.Nyame_B_hands,       -- __ [ 7/ 7, 112] {__/__, __}
+    legs=gear.Nyame_B_legs,         -- __ [ 8/ 8, 150] [__/__, __}
+    feet=gear.Nyame_B_feet,         -- __ [ 7/ 7, 150] {__/__, __]
+    neck="Loricate Torque +1",      -- __ [ 6/ 6, ___] {__/__, __}
+    ear1="Arete Del Luna +1",       -- __ [__/__, ___] {__/__, __}; Resists
+    ear2="Etiolation Earring",      -- __ [__/ 3, ___] [__/__, __}; Resist Silence+15
+    ring1="Defending Ring",         -- __ [10/10, ___] {__/__, __}
+    ring2="Stikini Ring +1",        --  1 [__/__, ___] {__/__, __}
+    back=gear.GEO_Idle_Cape,        -- __ [__/__,  30] {__/__, 15}
+    waist="Carrier's Sash",         -- __ [__/__, ___] {__/__, __}; Ele resist+15
     -- 1 Refresh [82 PDT / 83 MDT, 704 Meva] {Pet: 0 PDT/0 MDT, 15 Regen}
 
     -- main="Daybreak",             --  1 [__/__,  30] {__/__, __}
@@ -1165,7 +1165,7 @@ function init_gear_sets()
     -- legs="Assiduity Pants +1",   --  2 [__/__, 107] {__/__, __}
     -- feet="Volte Gaiters",        --  1 [__/__, 142] {__/__, __}; Refresh Merlinic good alt
     -- neck="Loricate Torque +1",   -- __ [ 6/ 6, ___] {__/__, __}
-    -- ear1="Hearty Earring",       -- __ [__/__, ___] {__/__, __}; Resist All Status+5
+    -- ear1="Arete Del Luna +1",    -- __ [__/__, ___] {__/__, __}; Resists
     -- ear2="Etiolation Earring",   -- __ [__/ 3, ___] {__/__, __}; Resist Silence+15
     -- ring1="Stikini Ring +1",     --  1 [__/__, ___] {__/__, __}
     -- ring2="Stikini Ring +1",     --  1 [__/__, ___] {__/__, __}
@@ -1183,7 +1183,7 @@ function init_gear_sets()
     -- legs="Assiduity Pants +1",   --  2 [__/__, 107] {__/__, __}
     -- feet="Volte Gaiters",        --  1 [__/__, 142] {__/__, __}; Refresh Merlinic good alt
     -- neck="Loricate Torque +1",   -- __ [ 6/ 6, ___] {__/__, __}
-    -- ear1="Hearty Earring",       -- __ [__/__, ___] {__/__, __}; Resist All Status+5
+    -- ear1="Arete Del Luna +1",    -- __ [__/__, ___] {__/__, __}; Resists
     -- ear2="Etiolation Earring",   -- __ [__/ 3, ___] {__/__, __}; Resist Silence+15
     -- ring1="Stikini Ring +1",     --  1 [__/__, ___] {__/__, __}
     -- ring2="Stikini Ring +1",     --  1 [__/__, ___] {__/__, __}
@@ -1207,7 +1207,7 @@ function init_gear_sets()
     legs=gear.Nyame_B_legs,         -- __ [ 8/ 8, 150] {__/__, __}
     feet="Bagua Sandals +1",        -- __ [__/__, 107] {__/__,  3}
     neck="Bagua Charm +1",          -- __ [__/__, ___] {__/__, __}; Absorb Dmg+8
-    ear1="Genmei Earring",          -- __ [ 2/__, ___] {__/__, __}
+    ear1="Arete Del Luna +1",       -- __ [__/__, ___] {__/__, __}; Resists
     ear2="Etiolation Earring",      -- __ [__/ 3, ___] {__/__, __}; Resist Silence+15
     ring1="Gelatinous Ring +1",     -- __ [ 7/-1, ___] {__/__, __}
     ring2="Defending Ring",         -- __ [10/10, ___] {__/__, __}
@@ -1225,8 +1225,8 @@ function init_gear_sets()
     -- legs="Assiduity Pants +1",   --  2 [__/__, 107] {__/__, __}
     -- feet="Bagua Sandals +3",     -- __ [__/__, 127] {__/__,  5}
     -- neck="Bagua Charm +2",       -- __ [__/__, ___] {__/__, __}; Absorb Dmg+10
-    -- ear1="Genmei Earring",       -- __ [ 2/__, ___] {__/__, __}
-    -- ear2="Hearty Earring",       -- __ [__/__, ___] {__/__, __}; Status Resist+5
+    -- ear1="Arete Del Luna +1",    -- __ [__/__, ___] {__/__, __}; Resists
+    -- ear2="Genmei Earring",       -- __ [ 2/__, ___] {__/__, __}
     -- ring1="Stikini Ring +1",     --  1 [__/__, ___] {__/__, __}
     -- ring2="Defending Ring",      -- __ [10/10, ___] {__/__, __}
     -- back=gear.GEO_Idle_Cape,     -- __ [__/__,  30] {__/__, 15}
