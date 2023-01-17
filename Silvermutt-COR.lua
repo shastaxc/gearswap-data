@@ -286,10 +286,10 @@ function init_gear_sets()
   }
   sets.precast.JA['Wild Card'] = {
     feet="Lanun Bottes +3",
-}
+  }
   sets.precast.JA['Random Deal'] = {
     body="Lanun Frac +3",
-}
+  }
 
   -- DT > PR Potency > PR Duration; PR Potency does not stack, uses highest piece
   sets.precast.CorsairRoll = {
