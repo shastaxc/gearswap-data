@@ -838,6 +838,32 @@ function init_gear_sets()
     -- Merits                                         8
     -- 2 Shadows, 0 FC, 15 Enmity, 102 SIRD [34 PDT/22 MDT, 432 M.Eva]
   }
+  
+  -- DT > +Enmity > FC > SIRD
+  sets.midcast.Utsusemi.Yonin = {
+    ammo="Sapience Orb",              -- __,  2,  2, __ [__/__, ___]
+    head="Hattori Zukin +2",          -- __, __, __, __ [ 9/ 9, 109]
+    body="Emet Harness +1",           -- __, __, 10, __ [ 6/__,  64]
+    hands="Kurys Gloves",             -- __, __,  9, __ [ 2/ 2,  57]
+    legs=gear.Nyame_B_legs,           -- __, __, __, __ [ 8/ 8, 150]
+    feet="Hattori Kyahan +2",         --  1, __, __, __ [__/__, 125]
+    neck="Moonlight Necklace",        -- __, __, 15, 15 [__/__,  15]
+    ear1="Odnowa Earring +1",         -- __, __, __, __ [ 3/ 5, ___]
+    ear2="Cryptic Earring",           -- __, __,  4, __ [__/__, ___]
+    ring1="Eihwaz Ring",              -- __, __,  5, __ [__/__, ___]
+    ring2="Defending Ring",           -- __, __, __, __ [10/10, ___]
+    back=gear.NIN_MAB_Cape,           --  1, __, __, __ [10/__, ___]
+    waist="Kasiri Belt",              -- __, __,  3, __ [__/__, ___]
+    -- Merits                                     8
+    -- 2 Shadows, 2 FC, 56 Enmity, 15 SIRD [48 PDT / 34 MDT, 520 M.Eva]
+
+    -- head="Hattori Zukin +3",       -- __, __, __, __ [10/10, 119]
+    -- legs="Hattori Hakama +3",      -- __, __, __, __ [12/12, 135]
+    -- feet="Hattori Kyahan +3",      --  1, __, __, __ [__/__, 135]
+    -- ear1="Pluto's Pearl",          -- __, __,  4, __ [__/__, ___]
+    -- back=gear.NIN_Enmity_Cape,     --  1, __, 10, __ [10/__, ___]
+    -- 2 Shadows, 2 FC, 62 Enmity, 23 SIRD [50 PDT / 34 MDT, 525 M.Eva]
+  }
 
   sets.midcast.ElementalNinjutsu = {}
 
@@ -1557,6 +1583,10 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     elseif has_orpheus and (orpheus_mult > base_day_weather_mult) then
       -- Orpheus is better than obi and better than nothing
       equip({waist='Orpheus\'s Sash'})
+    end
+  elseif spellMap == 'Utsusemi' then
+    if buffactive['Yonin'] then
+      equip(sets.midcast.Utsusemi.Yonin)
     end
   end
 
