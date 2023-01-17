@@ -786,53 +786,57 @@ function init_gear_sets()
     feet=gear.Nyame_B_feet,
   }
 
-  -- TODO: Redo. Change to DT > FC > SIRD
+  -- DT > FC > +Enmity > SIRD
   sets.midcast.Utsusemi = {
-    ammo="Staunch Tathlum +1",        -- __, 11 [ 3/ 3, ___]
-    head=gear.Nyame_B_head,           -- __, __ [ 7/ 7, 123]
-    body=gear.Nyame_B_body,           -- __, __ [ 9/ 9, 139]
-    hands="Rawhide Gloves",           -- __, 15 [__/__,  37]
-    legs=gear.Nyame_B_legs,           -- __, __ [ 8/ 8, 150]
-    feet=gear.Nyame_B_feet,           -- __, __ [ 7/ 7, 150]
-    neck="Moonlight Necklace",        -- __, 15 [__/__,  15]
-    ear1="Halasz Earring",            -- __,  5 [__/__, ___]
-    ear2="Odnowa Earring +1",         -- __, __ [ 3/ 5, ___]
-    ring2="Defending Ring",           -- __, __ [10/10, ___]
-    waist="Audumbla Sash",            -- __, 10 [ 4/__, ___]
-    -- Merits                                 8
-    -- 2 Shadows, 99 SIRD [51 PDT/49 MDT, 614 M.Eva]
-    
-    -- ammo="Staunch Tathlum +1",     -- __, 11 [ 3/ 3, ___]
-    -- head="Yasha Jinpachi +1",      -- __,  6 [__/__, 119]
-    -- body=gear.Taeon_SIRD_body,     -- __, 10 [__/__,  64]
-    -- hands="Rawhide Gloves",        -- __, 15 [__/__,  37]
-    -- legs="Wukong's Hakama +1",     -- __, 10 [__/__,  62]; Taeon good alt
-    -- feet="Hattori Kyahan +3",      --  1, __ [__/__, 135]
-    -- neck="Moonlight Necklace",     -- __, 15 [__/__,  15]
-    -- ear1="Halasz Earring",         -- __,  5 [__/__, ___]
-    -- ear2="Odnowa Earring +1",      -- __, __ [ 3/ 5, ___]
-    -- ring1="Evanescence Ring",      -- __,  5 [__/__, ___]
-    -- ring2="Defending Ring",        -- __, __ [10/10, ___]
-    -- back=gear.NIN_SIRD_Cape,       --  1, 10 [__/__, ___]
-    -- waist="Audumbla Sash",         -- __, 10 [ 4/__, ___]
-    -- Merits                                 8
-    -- 2 Shadows, 105 SIRD [20 PDT/18 MDT, 432 M.Eva]
-    
-    -- ammo="Staunch Tathlum +1",     -- __, 11 [ 3/ 3, ___]
-    -- head="Hattori Zukin +3",       -- __, __ [10/10, 119]
-    -- body=gear.Taeon_SIRD_body,     -- __, 10 [__/__,  64]
-    -- hands="Rawhide Gloves",        -- __, 15 [__/__,  37]
-    -- legs="Wukong's Hakama +1",     -- __, 10 [__/__,  62]; Taeon good alt
-    -- feet="Hattori Kyahan +3",      --  1, __ [__/__, 135]
-    -- neck="Moonlight Necklace",     -- __, 15 [__/__,  15]
-    -- ear1="Halasz Earring",         -- __,  5 [__/__, ___]
-    -- ear2="Magnetic Earring",       -- __,  8 [__/__, ___]
-    -- ring1="Evanescence Ring",      -- __,  5 [__/__, ___]
-    -- ring2="Defending Ring",        -- __, __ [10/10, ___]
-    -- back=gear.NIN_SIRD_Cape,       --  1, 10 [__/__, ___]
-    -- waist="Audumbla Sash",         -- __, 10 [ 4/__, ___]
-    -- Merits                                 8
-    -- 2 Shadows, 107 SIRD [27 PDT/23 MDT, 432 M.Eva]
+    ammo="Staunch Tathlum +1",        -- __, __, __, 11 [ 3/ 3, ___]
+    head=gear.Herc_Refresh_head,      -- __,  7, __, __ [__/__,  59]
+    body=gear.Taeon_FC_body,          -- __,  9, __, __ [__/__,  64]
+    hands="Leyline Gloves",           -- __,  8, __, __ [__/__,  62]
+    legs=gear.Nyame_B_legs,           -- __, __, __, __ [ 8/ 8, 150]
+    feet="Hattori Kyahan +2",         --  1, __, __, __ [__/__, 125]
+    neck="Orunmila's Torque",         -- __,  5, -3, __ [__/__, ___]
+    ear1="Odnowa Earring +1",         -- __, __, __, __ [ 3/ 5, ___]
+    ear2="Loquacious Earring",        -- __,  2, __, __ [__/__, ___]
+    ring1="Gelatinous Ring +1",       -- __, __, __, __ [ 7/-1, ___]
+    ring2="Defending Ring",           -- __, __, __, __ [10/10, ___]
+    back=gear.NIN_MAB_Cape,           --  1, __, __, __ [10/__, ___]
+    waist="Audumbla Sash",            -- __, __, __, 10 [ 4/__, ___]
+    -- Merits                                         8
+    -- 2 Shadows, 31 FC, -3 Enmity, 29 SIRD [45 PDT / 25 MDT, 460 M.Eva]
+
+    -- FC stacked option
+    -- ammo="Staunch Tathlum +1",     -- __, __, __, 11 [ 3/ 3, ___]
+    -- head=gear.Herc_Refresh_head,   -- __,  7, __, __ [__/__,  59]
+    -- body=gear.Taeon_FC_body,       -- __,  9, __, __ [__/__,  64]
+    -- hands="Leyline Gloves",        -- __,  8, __, __ [__/__,  62]
+    -- legs="Hattori Hakama +3",      -- __, __, __, __ [12/12, 135]
+    -- feet="Hattori Kyahan +3",      --  1, __, __, __ [__/__, 135]
+    -- neck="Orunmila's Torque",      -- __,  5, -3, __ [__/__, ___]
+    -- ear1="Odnowa Earring +1",      -- __, __, __, __ [ 3/ 5, ___]
+    -- ear2="Loquacious Earring",     -- __,  2, __, __ [__/__, ___]
+    -- ring1="Gelatinous Ring +1",    -- __, __, __, __ [ 7/-1, ___]
+    -- ring2="Defending Ring",        -- __, __, __, __ [10/10, ___]
+    -- back=gear.NIN_FC_Cape,         --  1, 10, __, __ [10/__, ___]
+    -- waist="Audumbla Sash",         -- __, __, __, 10 [ 4/__, ___]
+    -- Merits                                         8
+    -- 2 Shadows, 41 FC, -3 Enmity, 21 SIRD [49 PDT / 29 MDT, 455 M.Eva]
+
+    -- SIRD capped option
+    -- ammo="Staunch Tathlum +1",     -- __, __, __, 11 [ 3/ 3, ___]
+    -- head="Hattori Zukin +3",       -- __, __, __, __ [10/10, 119]
+    -- body=gear.Taeon_SIRD_body,     -- __, __, __, 10 [__/__,  64]
+    -- hands=gear.Rawhide_B_hands,    -- __, __, __, 15 [__/__,  37]
+    -- legs="Wukong's Hakama +1",     -- __, __,  3, 10 [__/__,  62]; Taeon good alt
+    -- feet="Hattori Kyahan +3",      --  1, __, __, __ [__/__, 135]
+    -- neck="Moonlight Necklace",     -- __, __, 15, 15 [__/__,  15]
+    -- ear1="Halasz Earring",         -- __, __, -3,  5 [__/__, ___]
+    -- ear2="Magnetic Earring",       -- __, __, __,  8 [__/__, ___]
+    -- ring1="Gelatinous Ring +1",    -- __, __, __, __ [ 7/-1, ___]
+    -- ring2="Defending Ring",        -- __, __, __, __ [10/10, ___]
+    -- back=gear.NIN_SIRD_Cape,       --  1, __, __, 10 [__/__, ___]
+    -- waist="Audumbla Sash",         -- __, __, __, 10 [ 4/__, ___]
+    -- Merits                                         8
+    -- 2 Shadows, 0 FC, 15 Enmity, 102 SIRD [34 PDT/22 MDT, 432 M.Eva]
   }
 
   sets.midcast.ElementalNinjutsu = {}
