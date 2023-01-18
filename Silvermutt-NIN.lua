@@ -204,7 +204,7 @@ function init_gear_sets()
     head="Hattori Zukin +2",                            --  9/ 9, 109 [ 61] <__>
     body="Emet Harness +1",                             --  6/__,  64 [ 61] <10>
     hands="Kurys Gloves",                               --  2/ 2,  57 [ 25] < 9>
-    legs=gear.Nyame_B_legs,
+    legs="Hattori Hakama +2",                           -- 11/11, 125 [ 70] <__>
     feet=gear.Nyame_B_feet,
     neck="Moonlight Necklace",                          -- __/__,  15 [___] <15>
     ear1="Odnowa Earring +1",
@@ -277,6 +277,7 @@ function init_gear_sets()
 
   sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {
     body="Mochizuki Chainmail +1",    -- 10 [__/__,  53]
+    legs="Hattori Hakama +2",         -- __ [11/11, 125]
     neck="Magoraga Bead Necklace",    -- 10 [__/__, ___]
     -- JP/Merit/Gifts                    20 [__/__, ___]
     -- 80 FC [29 PDT/15 MDT, 318 M.Eva]
@@ -792,7 +793,7 @@ function init_gear_sets()
     head=gear.Herc_Refresh_head,      -- __,  7, __, __ [__/__,  59]
     body=gear.Taeon_FC_body,          -- __,  9, __, __ [__/__,  64]
     hands="Leyline Gloves",           -- __,  8, __, __ [__/__,  62]
-    legs=gear.Nyame_B_legs,           -- __, __, __, __ [ 8/ 8, 150]
+    legs="Hattori Hakama +2",         -- __, __, __, __ [11/11, 125]
     feet="Hattori Kyahan +2",         --  1, __, __, __ [__/__, 125]
     neck="Orunmila's Torque",         -- __,  5, -3, __ [__/__, ___]
     ear1="Odnowa Earring +1",         -- __, __, __, __ [ 3/ 5, ___]
@@ -802,41 +803,14 @@ function init_gear_sets()
     back=gear.NIN_MAB_Cape,           --  1, __, __, __ [10/__, ___]
     waist="Audumbla Sash",            -- __, __, __, 10 [ 4/__, ___]
     -- Merits                                         8
-    -- 2 Shadows, 31 FC, -3 Enmity, 29 SIRD [45 PDT / 25 MDT, 460 M.Eva]
+    -- 2 Shadows, 31 FC, -3 Enmity, 29 SIRD [48 PDT / 28 MDT, 435 M.Eva]
 
-    -- FC stacked option
-    -- ammo="Staunch Tathlum +1",     -- __, __, __, 11 [ 3/ 3, ___]
-    -- head=gear.Herc_Refresh_head,   -- __,  7, __, __ [__/__,  59]
-    -- body=gear.Taeon_FC_body,       -- __,  9, __, __ [__/__,  64]
     -- hands="Leyline Gloves",        -- __,  8, __, __ [__/__,  62]
     -- legs="Hattori Hakama +3",      -- __, __, __, __ [12/12, 135]
     -- feet="Hattori Kyahan +3",      --  1, __, __, __ [__/__, 135]
-    -- neck="Orunmila's Torque",      -- __,  5, -3, __ [__/__, ___]
-    -- ear1="Odnowa Earring +1",      -- __, __, __, __ [ 3/ 5, ___]
-    -- ear2="Loquacious Earring",     -- __,  2, __, __ [__/__, ___]
-    -- ring1="Gelatinous Ring +1",    -- __, __, __, __ [ 7/-1, ___]
-    -- ring2="Defending Ring",        -- __, __, __, __ [10/10, ___]
     -- back=gear.NIN_FC_Cape,         --  1, 10, __, __ [10/__, ___]
-    -- waist="Audumbla Sash",         -- __, __, __, 10 [ 4/__, ___]
     -- Merits                                         8
     -- 2 Shadows, 41 FC, -3 Enmity, 21 SIRD [49 PDT / 29 MDT, 455 M.Eva]
-
-    -- SIRD capped option
-    -- ammo="Staunch Tathlum +1",     -- __, __, __, 11 [ 3/ 3, ___]
-    -- head="Hattori Zukin +3",       -- __, __, __, __ [10/10, 119]
-    -- body=gear.Taeon_SIRD_body,     -- __, __, __, 10 [__/__,  64]
-    -- hands=gear.Rawhide_B_hands,    -- __, __, __, 15 [__/__,  37]
-    -- legs="Wukong's Hakama +1",     -- __, __,  3, 10 [__/__,  62]; Taeon good alt
-    -- feet="Hattori Kyahan +3",      --  1, __, __, __ [__/__, 135]
-    -- neck="Moonlight Necklace",     -- __, __, 15, 15 [__/__,  15]
-    -- ear1="Halasz Earring",         -- __, __, -3,  5 [__/__, ___]
-    -- ear2="Magnetic Earring",       -- __, __, __,  8 [__/__, ___]
-    -- ring1="Gelatinous Ring +1",    -- __, __, __, __ [ 7/-1, ___]
-    -- ring2="Defending Ring",        -- __, __, __, __ [10/10, ___]
-    -- back=gear.NIN_SIRD_Cape,       --  1, __, __, 10 [__/__, ___]
-    -- waist="Audumbla Sash",         -- __, __, __, 10 [ 4/__, ___]
-    -- Merits                                         8
-    -- 2 Shadows, 0 FC, 15 Enmity, 102 SIRD [34 PDT/22 MDT, 432 M.Eva]
   }
   
   -- DT > +Enmity > FC > SIRD
@@ -845,7 +819,7 @@ function init_gear_sets()
     head="Hattori Zukin +2",          -- __, __, __, __ [ 9/ 9, 109]
     body="Emet Harness +1",           -- __, __, 10, __ [ 6/__,  64]
     hands="Kurys Gloves",             -- __, __,  9, __ [ 2/ 2,  57]
-    legs=gear.Nyame_B_legs,           -- __, __, __, __ [ 8/ 8, 150]
+    legs="Hattori Hakama +2",         -- __, __, __, __ [11/11, 125]
     feet="Hattori Kyahan +2",         --  1, __, __, __ [__/__, 125]
     neck="Moonlight Necklace",        -- __, __, 15, 15 [__/__,  15]
     ear1="Odnowa Earring +1",         -- __, __, __, __ [ 3/ 5, ___]
@@ -855,7 +829,7 @@ function init_gear_sets()
     back=gear.NIN_MAB_Cape,           --  1, __, __, __ [10/__, ___]
     waist="Kasiri Belt",              -- __, __,  3, __ [__/__, ___]
     -- Merits                                     8
-    -- 2 Shadows, 2 FC, 56 Enmity, 15 SIRD [48 PDT / 34 MDT, 520 M.Eva]
+    -- 2 Shadows, 2 FC, 56 Enmity, 15 SIRD [51 PDT / 37 MDT, 495 M.Eva]
 
     -- head="Hattori Zukin +3",       -- __, __, __, __ [10/10, 119]
     -- legs="Hattori Hakama +3",      -- __, __, __, __ [12/12, 135]
@@ -930,8 +904,8 @@ function init_gear_sets()
     ammo="Yamarang",                  -- 15, __ [__/__,  15]
     head="Hachiya Hatsuburi +2",      -- 44, 15 [__/__,  53]
     body="Hattori Ningi +2",          -- 54, __ [12/12, 119]
-    hands=gear.Nyame_B_hands,         -- 40, __ [ 7/ 7, 112]
-    legs=gear.Nyame_B_legs,           -- 40, __ [ 8/ 8, 150]
+    hands="Hattori Tekko +2",         -- 52, __ [__/__,  93]
+    legs="Hattori Hakama +2",         -- 53, __ [11/11, 125]
     feet=gear.Nyame_B_feet,           -- 40, __ [ 7/ 7, 150]
     neck="Incanter's Torque",         -- __, 10 [__/__, ___]
     ear1="Dignitary's Earring",       -- 10, __ [__/__, ___]
@@ -940,7 +914,7 @@ function init_gear_sets()
     ring2="Defending Ring",           -- __, __ [10/10, ___]
     back=gear.NIN_MAB_Cape,           -- 20, __ [10/__, ___]
     waist="Eschan Stone",             --  7, __ [__/__, ___]
-    -- 288 M.Acc, 33 Ninjutsu [54 PDT/44 MDT, 599 M.Eva]
+    -- 313 M.Acc, 33 Ninjutsu [50 PDT/40 MDT, 555 M.Eva]
     
     -- head="Hachiya Hatsuburi +3",   -- 54, 17 [__/__,  63]
     -- body="Hattori Ningi +3",       -- 64, __ [13/13, 129]
@@ -959,12 +933,12 @@ function init_gear_sets()
     head="Hachiya Hatsuburi +2",      -- 15 [__/__,  53]
     body="Hattori Ningi +2",          -- __ [12/12, 119]
     hands=gear.Nyame_B_hands,         -- __ [ 7/ 7, 112]
-    legs=gear.Nyame_B_legs,           -- __ [ 8/ 8, 150]
+    legs="Hattori Hakama +2",         -- __ [11/11, 125]
     feet=gear.Nyame_B_feet,           -- __ [ 7/ 7, 150]
     neck="Incanter's Torque",         -- 10 [__/__, ___]
     ring1="Stikini Ring +1",          --  8 [__/__, ___]
     ring2="Defending Ring",           -- __ [10/10, ___]
-    -- 33 Ninjutsu [47 PDT/47 MDT, 584 M.Eva]
+    -- 33 Ninjutsu [50 PDT/50 MDT, 559 M.Eva]
 
     -- head="Hachiya Hatsuburi +3",   -- 17 [__/__,  63]
     -- body="Hattori Ningi +3",       -- __ [13/13, 129]
