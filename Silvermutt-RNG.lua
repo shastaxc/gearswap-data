@@ -270,8 +270,7 @@ function init_gear_sets()
     hands="Amini Glovelettes +2",
   }
   sets.precast.JA['Camouflage'] = {
-    body="Orion Jerkin +2",
-    -- body="Orion Jerkin +3",
+    body="Orion Jerkin +3",
   }
   sets.precast.JA['Scavenge'] = {
     feet="Orion Socks +1",
@@ -856,7 +855,7 @@ function init_gear_sets()
   }
   sets.midcast.RA.LowAcc = set_combine(sets.midcast.RA, {
     ring2="Regal Ring",             -- 10 [__]  __/ 20 <_> {__} (__) __/__
-    -- body="Orion Jerkin +3",      -- 40 [ 8]  60/ 41 <_> {__} (__) __/__
+    body="Orion Jerkin +3",         -- 40 [ 8]  60/ 41 <_> {__} (__) __/__
     -- AF set bonus                    __ [__]  15/ __ <_> {__} (__) __/__
     -- 265 AGI [74 STP] 354 racc / 275 ratt <5 crit> {18 PDL} (93 Recycle) 35 PDT/25 MDT
   })
@@ -1475,8 +1474,7 @@ function init_gear_sets()
     body="Amini Caban +2",
   })
   sets.buff.Camouflage = {
-    body="Orion Jerkin +2"
-    -- body="Orion Jerkin +3"
+    body="Orion Jerkin +3"
   }
 
   sets.buff.Doom = {
