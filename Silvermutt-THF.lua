@@ -1380,7 +1380,7 @@ function init_gear_sets()
   }
   sets.WeaponSet['SoloCleaving'] = {
     main=gear.Gandring_C,
-    sub="Tauret",
+    sub="Malevolence",
   }
   sets.WeaponSet['Cleaving'] = {
     main="Tauret",
