@@ -541,13 +541,10 @@ function init_gear_sets()
   })
   sets.midcast.RA.HighAcc = set_combine(sets.midcast.RA.MidAcc, {
     body="Chasseur's Frac +2",        -- 44, __, 54/64 <__> {_} (__) [12/12, 109]
-    hands="Ikenga's Gloves",          -- 19,  9, 55/70 <__> {5} (10) [__/__,  86]
-    feet="Ikenga's Clogs",            -- 57,  7, 55/70 <__> {3} (__) [__/__, 123]
-    -- 230 AGI, 65 STP, 439 racc/397 ratt <5 crit> {12 PDL} (68 Recycle) [34 PDT/24 MDT, 539 M.Eva]
+    -- 227 AGI, 70 STP, 429 racc/257 ratt <5 crit> {10 PDL} (68 Recycle) [43 PDT/33 MDT, 592 M.Eva]
     
     -- body="Chasseur's Frac +3",     -- 49, __, 64/74 <__> {_} (__) [13/13, 119]
-    -- 235 AGI, 65 STP, 449 racc/407 ratt <5 crit> {12 PDL} (68 Recycle) [35 PDT/25 MDT, 549 M.Eva]
-    
+    -- 232 AGI, 70 STP, 439 racc/267 ratt <5 crit> {10 PDL} (68 Recycle) [44 PDT/34 MDT, 602 M.Eva]
   })
   
   sets.midcast.RA.Safe = {
