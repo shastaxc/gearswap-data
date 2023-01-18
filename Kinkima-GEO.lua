@@ -1241,7 +1241,7 @@ function init_gear_sets()
     legs="Assiduity Pants +1",      --  2 [__/__, 107] {__/__, __}
     feet="Volte Gaiters",           --  1 [__/__, 142] {__/__, __}; Refresh Merlinic good alt
     neck="Loricate Torque +1",      -- __ [ 6/ 6, ___] {__/__, __}
-    ear1="Hearty Earring",          -- __ [__/__, ___] {__/__, __}; Resist All Status+5
+    ear1="Arete Del Luna +1",       -- __ [__/__, ___] {__/__, __}; Resists
     ear2="Etiolation Earring",      -- __ [__/ 3, ___] {__/__, __}; Resist Silence+15
     ring1="Stikini Ring +1",        --  1 [__/__, ___] {__/__, __}
     ring2="Stikini Ring +1",        --  1 [__/__, ___] {__/__, __}
@@ -1262,7 +1262,7 @@ function init_gear_sets()
     -- legs="Assiduity Pants +1",   --  2 [__/__, 107] {__/__, __}
     -- feet="Volte Gaiters",        --  1 [__/__, 142] {__/__, __}; Refresh Merlinic good alt
     -- neck="Loricate Torque +1",   -- __ [ 6/ 6, ___] {__/__, __}
-    -- ear1="Hearty Earring",       -- __ [__/__, ___] {__/__, __}; Resist All Status+5
+    -- ear1="Arete Del Luna +1",    -- __ [__/__, ___] {__/__, __}; Resists
     -- ear2="Etiolation Earring",   -- __ [__/ 3, ___] {__/__, __}; Resist Silence+15
     -- ring1="Stikini Ring +1",     --  1 [__/__, ___] {__/__, __}
     -- ring2="Stikini Ring +1",     --  1 [__/__, ___] {__/__, __}
@@ -1286,6 +1286,7 @@ function init_gear_sets()
     legs="Assiduity Pants +1",      --  2 [__/__, 107] {__/__, __}
     feet="Bagua Sandals +1",        -- __ [__/__, 107] {__/__,  3}
     neck="Bagua Charm +1",          -- __ [__/__, ___] {__/__, __}; Absorb Dmg+8
+    ear1="Arete Del Luna +1",       -- __ [__/__, ___] {__/__, __}; Resists
     ear2="Hearty Earring",          -- __ [__/__, ___] {__/__, __}; Status Resist+5
     ring1="Stikini Ring +1",        --  1 [__/__, ___] {__/__, __}
     ring2="Defending Ring",         -- __ [10/10, ___] {__/__, __}
@@ -1296,7 +1297,7 @@ function init_gear_sets()
     -- head="Azimuth Hood +3",      -- __ [12/12, 136] {__/__,  5}
     -- feet="Bagua Sandals +3",     -- __ [__/__, 127] {__/__,  5}
     -- neck="Bagua Charm +2",       -- __ [__/__, ___] {__/__, __}; Absorb Dmg+10
-    -- ear1="Genmei Earring",       -- __ [ 2/__, ___] {__/__, __}
+    -- ear2="Genmei Earring",       -- __ [ 2/__, ___] {__/__, __}
     -- 6 Refresh [50 PDT/25 MDT, 563 M.Eva] {Pet: 41 PDT/41 MDT, 26 Regen}
   }
 

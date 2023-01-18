@@ -1171,7 +1171,7 @@ function init_gear_sets()
     legs=gear.Nyame_B_legs,         --  8/ 8, 150
     feet=gear.Nyame_B_feet,         --  7/ 7, 150
     neck="Loricate Torque +1",      --  6/ 6, ___; DEF+60
-    ear1="Hearty Earring",          -- __/__, ___; Resist Status+5
+    ear1="Arete Del Luna +1",       -- __/__, ___; Resists
     ear2="Etiolation Earring",      -- __/ 3, ___; Resist Silence+15
     ring1="Gelatinous Ring +1",     --  7/-1, ___
     ring2="Defending Ring",         -- 10/10, ___

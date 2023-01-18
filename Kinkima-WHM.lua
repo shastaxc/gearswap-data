@@ -981,7 +981,7 @@ function init_gear_sets()
     legs="Assiduity Pants +1",      -- __/__, 107 [ 2]
     feet="Volte Gaiters",           -- __/__, 142 [ 1]
     neck="Loricate Torque +1",      --  6/ 6, ___ [__]; DEF+60
-    ear1="Hearty Earring",          -- __/__, ___ [__]; Resist Status+5
+    ear1="Arete Del Luna +1",       -- __/__, ___ [__]; Resists
     ear2="Etiolation Earring",      -- __/ 3, ___ [__]; Resist Silence+15
     ring1="Stikini Ring +1",        -- __/__, ___ [ 1]
     ring2="Defending Ring",         -- 10/10, ___ [__]

@@ -865,7 +865,7 @@ function init_gear_sets()
     legs=gear.Rawhide_D_legs,       -- __/__,  69 [ 1]
     feet=gear.Nyame_B_feet,         --  7/ 7, 150 [__]
     neck="Loricate Torque +1",      --  6/ 6, ___ [__]; DEF+60
-    ear1="Hearty Earring",          -- __/__, ___ [__]; Resist Status+5
+    ear1="Arete Del Luna +1",       -- __/__, ___ [__]; Resists
     ear2="Etiolation Earring",      -- __/ 3, ___ [__]; Resist Silence+15
     ring1="Stikini Ring +1",        -- __/__, ___ [ 1]
     ring2="Stikini Ring +1",        -- __/__, ___ [ 1]
