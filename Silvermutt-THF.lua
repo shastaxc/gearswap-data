@@ -1384,7 +1384,7 @@ function init_gear_sets()
   }
   sets.WeaponSet['Cleaving'] = {
     main="Tauret",
-    sub="Twashtar",
+    sub="Malevolence",
   }
   sets.WeaponSet['Staff'] = {
     main="Gozuki Mezuki",
