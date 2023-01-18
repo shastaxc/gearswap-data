@@ -271,7 +271,7 @@ function init_gear_sets()
     ring1="Kishar Ring",              --  4 [__/__, ___]
     ring2="Defending Ring",           -- __ [10/10, ___]
     -- back=gear.NIN_FC_Cape,         -- 10 [10/__, ___]
-    waist="Audumbla Belt",            -- __ [ 4/__, ___]
+    waist="Audumbla Sash",            -- __ [ 4/__, ___]
     -- 54 FC [29 PDT/15 MDT, 329 M.Eva]
   }
 

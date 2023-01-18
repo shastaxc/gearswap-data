@@ -742,7 +742,7 @@ function init_gear_sets()
 
   -- Regen 4 base potency 30 hp/tic. Base duration 60s.
   sets.midcast['Regen'] = {
-    ammo="Staunch Tathlum",                     -- __, __, __, __ [ 3/ 3, ___] ___
+    ammo="Staunch Tathlum +1",                  -- __, __, __, __ [ 3/ 3, ___] ___
     head="Runeist Bandeau +3",                  -- __, 27, __, __ [__/__,  83] 109
     body=gear.Nyame_B_body,                     -- __, __, __, __ [ 9/ 9, 139] 136
     hands={name="Regal Gauntlets",priority=1},  -- __, __, 20, __ [__/__,  48] 205
@@ -761,7 +761,7 @@ function init_gear_sets()
 
     -- main=gear.Morgelai_C,                    -- __, 25, __, __ [__/__, ___] 130
     -- sub=empty,
-    -- ammo="Staunch Tathlum",                  -- __, __, __, __ [ 3/ 3, ___] ___
+    -- ammo="Staunch Tathlum +1",               -- __, __, __, __ [ 3/ 3, ___] ___
     -- head="Runeist Bandeau +3",               -- __, 27, __, __ [__/__,  83] 109
     -- body=gear.Taeon_Regen_body,              -- __,  3, __, __ [__/__,  84]  59
     -- hands="Regal Gauntlets",                 -- __, __, 20, __ [__/__,  48] 205
@@ -836,41 +836,43 @@ function init_gear_sets()
   sets.midcast['Blue Magic'] = {}
   sets.midcast['Blue Magic'].Enmity = set_combine(sets.Enmity, {})
   sets.midcast['Blue Magic'].Buffs = set_combine(sets.SIRD, {})
+  -- BLU cures are affected by MND, VIT, and blue skill. The MND has BY FAR the greatest effect.
+  -- Ignore skill entirely. It only seems to give curing at 1/10 the rate, MND is at least 3x better.
   sets.midcast['Blue Magic'].Cure = {
-    ammo="Staunch Tathlum +1",        -- __, __, __, __(__) [ 3/ 3, ___] ___ {11}
-    head=gear.Nyame_B_head,           -- 26, 24, __, __(__) [ 7/ 7, 123]  91 {__}
-    body=gear.Nyame_B_body,           -- 37, 45, __, __(__) [ 9/ 9, 139] 136 {__}
-    hands=gear.Nyame_B_hands,         -- 40, 54, __, __(__) [ 7/ 7, 112]  91 {__}
-    legs=gear.Nyame_B_legs,           -- 32, 30, __, __(__) [ 8/ 8, 150] 114 {__}
-    feet=gear.Nyame_B_feet,           -- 26, 24, __, __(__) [ 7/ 7, 150]  68 {__}
-    ear1="Odnowa Earring +1",         -- __,  3, __, __(__) [ 3/ 5, ___] 110 {__}
-    ring1="Gelatinous Ring +1",       -- __, 15, __, __(__) [ 7/-1, ___] 135 {__}
-    ring2="Moonlight Ring",           -- __, __, __, __(__) [ 5/ 5, ___] 110 {__}
-    back="Moonlight Cape",            -- __, __, __, __(__) [ 6/ 6, ___] 275 {__}
-    waist="Sroda Belt",               -- __, __, __, 35(__) [__/__, ___] ___ {__}
+    ammo="Staunch Tathlum +1",        -- __, __, __(__) [ 3/ 3, ___] ___ {11}
+    head=gear.Nyame_B_head,           -- 26, 24, __(__) [ 7/ 7, 123]  91 {__}
+    body=gear.Nyame_B_body,           -- 37, 45, __(__) [ 9/ 9, 139] 136 {__}
+    hands=gear.Nyame_B_hands,         -- 40, 54, __(__) [ 7/ 7, 112]  91 {__}
+    legs=gear.Nyame_B_legs,           -- 32, 30, __(__) [ 8/ 8, 150] 114 {__}
+    feet=gear.Nyame_B_feet,           -- 26, 24, __(__) [ 7/ 7, 150]  68 {__}
+    ear1="Odnowa Earring +1",         -- __,  3, __(__) [ 3/ 5, ___] 110 {__}
+    ring1="Gelatinous Ring +1",       -- __, 15, __(__) [ 7/-1, ___] 135 {__}
+    ring2="Moonlight Ring",           -- __, __, __(__) [ 5/ 5, ___] 110 {__}
+    back="Moonlight Cape",            -- __, __, __(__) [ 6/ 6, ___] 275 {__}
+    waist="Sroda Belt",               -- __, __, 35(__) [__/__, ___] ___ {__}
     -- SIRD merits                                                           { 6}
-    -- 161 MND, 195 VIT, 50 Heal skill, 36 Cure Pot (0 self pot) [62 PDT/56 MDT, 674 M.Eva] 1150 HP {17}
+    -- 161 MND, 195 VIT, 36 Cure Pot (0 self pot) [62 PDT/56 MDT, 674 M.Eva] 1150 HP {17}
     
-    -- neck="Sacro Gorget",           -- __, __, __, 10(__) [__/__, ___]  50 {__}
-    -- ear2="Mendicant's Earring",    -- __, __, __,  5(__) [__/__, ___] ___ {__}
+    -- neck="Sacro Gorget",           -- __, __, 10(__) [__/__, ___]  50 {__}
+    -- ear2="Mendicant's Earring",    -- __, __,  5(__) [__/__, ___] ___ {__}
     -- 161 MND, 195 VIT, 50 Heal skill, 51 Cure Pot (0 self pot) [62 PDT/56 MDT, 674 M.Eva] 1180 HP {17}
   }
   sets.midcast['Blue Magic'].Cure.Safe = set_combine(sets.SIRD, {
-    ammo="Staunch Tathlum +1",                  -- __, __, __, __(__) [ 3/ 3, ___] ___ {11}
-    head="Erilaz Galea +3",                     -- 31, 24, __, __(__) [__/__, 119] 111 {20}
-    body=gear.Nyame_B_body,                     -- 37, 45, __, __(__) [ 9/ 9, 139] 136 {__}
-    hands=gear.Rawhide_B_hands,                 -- 32, 34, __, __(__) [__/__,  37]  75 {15}
+    ammo="Staunch Tathlum +1",                  -- __, __, __(__) [ 3/ 3, ___] ___ {11}
+    head="Erilaz Galea +3",                     -- 31, 24, __(__) [__/__, 119] 111 {20}
+    body=gear.Nyame_B_body,                     -- 37, 45, __(__) [ 9/ 9, 139] 136 {__}
+    hands=gear.Rawhide_B_hands,                 -- 32, 34, __(__) [__/__,  37]  75 {15}
     legs={name=gear.Carmine_A_legs.name,
       augments=gear.Carmine_A_legs.augments,
-      priority=1},                              -- 16, 17, 18, __(__) [__/__,  80] 130 {20}
-    feet="Erilaz Greaves +2",                   -- 26, 16, __, __(__) [10/10, 147] 147 {__}
-    neck="Moonlight Necklace",                  -- __, __, __, __(__) [__/__,  15] ___ {15}
-    ear1="Magnetic Earring",                    -- __, __, __, __(__) [__/__, ___] ___ { 8}
-    ear2="Halasz Earring",                      -- __, __, __, __(__) [__/__, ___] ___ { 5}
-    ring1="Gelatinous Ring +1",                 -- __, 15, __, __(__) [ 7/-1, ___] 135 {__}
-    ring2="Defending Ring",                     -- __, __, __, __(__) [10/10, ___] ___ {__}
-    back={name="Moonlight Cape",priority=1},    -- __, __, __, __(__) [ 6/ 6, ___] 275 {__}
-    waist="Sroda Belt",                         -- __, __, __, 35(__) [__/__, ___] ___ {__}
+      priority=1},                              -- 16, 17, __(__) [__/__,  80] 130 {20}
+    feet="Erilaz Greaves +2",                   -- 26, 16, __(__) [10/10, 147] 147 {__}
+    neck="Moonlight Necklace",                  -- __, __, __(__) [__/__,  15] ___ {15}
+    ear1="Magnetic Earring",                    -- __, __, __(__) [__/__, ___] ___ { 8}
+    ear2="Halasz Earring",                      -- __, __, __(__) [__/__, ___] ___ { 5}
+    ring1="Gelatinous Ring +1",                 -- __, 15, __(__) [ 7/-1, ___] 135 {__}
+    ring2="Defending Ring",                     -- __, __, __(__) [10/10, ___] ___ {__}
+    back={name="Moonlight Cape",priority=1},    -- __, __, __(__) [ 6/ 6, ___] 275 {__}
+    waist="Sroda Belt",                         -- __, __, 35(__) [__/__, ___] ___ {__}
     -- SIRD merits                                                                     { 8}
     -- 142 MND, 151 VIT, 18 Heal Skill, 35 Cure Pot (0 self pot) [45 PDT / 37 MDT, 547 M.Eva] 1009 HP {102 SIRD}
 
