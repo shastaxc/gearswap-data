@@ -117,6 +117,7 @@ function job_setup()
   pacts.astralflow = {['Ifrit']='Inferno', ['Shiva']='Diamond Dust', ['Garuda']='Aerial Blast', ['Titan']='Earthen Fury',
       ['Ramuh']='Judgment Bolt', ['Leviathan']='Tidal Wave', ['Carbuncle']='Searing Light', ['Fenrir']='Howling Moon',
       ['Diabolos']='Ruinous Omen', ['Cait Sith']="Altana's Favor"}
+  pacts.bpextra = {['Ramuh']='Thunderspark'}
 
   -- Wards table for creating custom timers
   wards = {}
@@ -159,9 +160,10 @@ function job_setup()
 
   send_command('bind !` gs c pact buffSpecial')
   send_command('bind ^numlock gs c pact bp99')
+  send_command('bind !numlock gs c pact astralflow')
   send_command('bind ^numpad/ gs c pact bp75')
   send_command('bind ^numpad* gs c pact bp70')
-  send_command('bind ^numpad- gs c pact astralflow')
+  send_command('bind ^numpad- gs c pact bpextra')
   send_command('bind !z gs c pact debuff1')
   send_command('bind !x gs c pact debuff2')
   
