@@ -1383,7 +1383,7 @@ function init_gear_sets()
     sub="Malevolence",
   }
   sets.WeaponSet['Cleaving'] = {
-    main="Tauret",
+    main="Malevolence",
     sub="Malevolence",
   }
   sets.WeaponSet['Staff'] = {

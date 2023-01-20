@@ -84,7 +84,7 @@ function job_setup()
   state.AttCapped = M(true, 'Attack Capped')
   state.ToyWeapons = M{['description']='Toy Weapons','None','Katana','GreatKatana','Dagger',
       'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
-  state.WeaponSet = M{['description']='Weapon Set', 'Heishi', 'HeishiHitaki', 'Naegling', 'Aeolian',}
+  state.WeaponSet = M{['description']='Weapon Set', 'Heishi', 'Naegling', 'Aeolian',}
   state.MagicBurst = M(true, 'Magic Burst')
   state.ElementalMode = M{['description']='Elemental Mode', 'Fire', 'Ice', 'Wind', 'Earth', 'Thunder', 'Water'}
   nin_element_map = {
@@ -1439,7 +1439,6 @@ function init_gear_sets()
 
   sets.WeaponSet = {}
   sets.WeaponSet['Heishi'] = {main="Heishi Shorinken", sub="Kunimitsu"}
-  sets.WeaponSet['HeishiHitaki'] = {main="Heishi Shorinken", sub="Hitaki"}
   sets.WeaponSet['Naegling'] = {
     main="Naegling",
     sub="Kunimitsu",
@@ -1447,7 +1446,7 @@ function init_gear_sets()
   }
   sets.WeaponSet['Enmity'] = {
     -- main=gear.Fudo_Masamune_C,
-    sub="Kunimitsu",
+    sub="Tsuru",
   }
   sets.WeaponSet['Aeolian'] = {main="Tauret", sub="Malevolence"}
 end
