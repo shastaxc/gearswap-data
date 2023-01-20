@@ -185,7 +185,7 @@ gear.Skullrender_D = {}
 gear.Solstice_A = {}
 gear.Solstice_B = {}
 gear.Solstice_C = {}
-gear.Solstice_D = {}
+gear.Solstice_D = { name="Solstice", augments={'Mag. Acc.+20','Pet: Damage taken -4%','"Fast Cast"+5',}}
 
 gear.Vijaya_Bow_A = {}
 gear.Vijaya_Bow_B = {}
