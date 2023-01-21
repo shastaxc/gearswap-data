@@ -469,7 +469,7 @@ function init_gear_sets()
   -----------------------------------------------------------------------------------------------
 
   sets.precast.JA['Astral Flow'] = {
-    -- head="Glyphic Horn",
+    head="Glyphic Horn",
   }
 
   -- MP Siphoned = (Summoning Skill - 50 + Base Siphon Equipment) * (1.0 + Siphon Equip Multipliers ± Weather/Day bonuses)
@@ -836,7 +836,7 @@ function init_gear_sets()
     sub="Elan Strap +1",                -- ___,  5 {___, __, __, __ / __, __, __, __} [__/__, ___]
     ammo="Epitaph",                     -- 119, 16 {___, 30, 15, __ / __, 30, 15, __} [__/__, ___]; R20+ before using
     head=gear.Nyame_B_head,
-    body=gear.Nyame_B_body,
+    body="Convoker's Doublet +3",       -- ___, 16 {___, 45, __, __ / __, 45, __, __} [__/__, 100]
     hands=gear.Merl_Phys_BP_hands,      -- ___, 15 {___, 20, __, __ / 40, __, __, __} [__/__,  48]
     legs=gear.Apogee_D_legs,            -- ___, 21 {___, __, __, __ / __, __, 20,  4} [__/__, 118]
     feet=gear.Apogee_B_feet,            -- ___, 10 {___, __, __, __ / 35, __, __, __} [__/__, 118]
@@ -848,7 +848,6 @@ function init_gear_sets()
     back=gear.SMN_Phys_BP_Cape,         --   1,  5 {___, __, __, __ / 20, 30, __, __} [10/__, ___]
     waist="Incarnation Sash",           -- ___, __ {___, 15, __, __ / __, 15, __,  4} [__/__, ___]
     -- head=gear.Helios_Phys_BP_head,   -- ___,  7 {___, __, __, __ / 30, __, __,  8} [__/__,  75]
-    -- body="Convoker's Doublet +3",    -- ___, 16 {___, 45, __, __ / __, 45, __, __} [__/__, 100]
     -- 121 Pet Lv, 127 BP Dmg {Pet: 0 MAB, 162 M.Acc, 40 INT, 0 M.Dmg / 195 Att, 287 Acc, 70 STR, 31 DA} [19 PDT/9 MDT, 469 M.Eva]
     
     -- main="Nirvana",                  --   2, 40 {___, 30, __, __ / __, 30, __, __} [__/__, ___]
@@ -947,12 +946,6 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------=
   -------------------------------------- Idle/Defense Sets ----------------------------------------
   ------------------------------------------------------------------------------------------------=
-
-  -- TODO: update set
-  -- sets.resting = {main=gear.Staff.HMP,ammo="Seraphicaller",
-  --     head="Convoker's Horn",neck="Wiglen Gorget",ear1="Gifted Earring",ear2="Loquacious Earring",
-  --     body="Hagondes Coat",hands="Serpentes Cuffs",ring1="Sheltered Ring",ring2="Paguroidea Ring",
-  --     back="Pahtli Cape",waist="Austerity Belt",legs="Nares Trews",feet="Chelona Boots +1"}
 
   -- With no pet out, don't need perp cost. Focus defensive stats and Refresh
   sets.idle = {
@@ -1053,9 +1046,6 @@ function init_gear_sets()
     -- ear2="Beckoner's Earring +2",-- ____ [ 6/ 6, ___] ( 3, __) {  1, __, __/__}
     -- 80 HP [51 PDT/41 MDT, 510 M.Eva] (20 Refresh, 8 Perp Cost) {Pet: 121 Lv, 0 Regain, 7 PDT/7 MDT}
   }
-
-  -- TODO: update set
-  -- sets.idle.Avatar.Melee = {hands="Regimen Mittens",back="Samanisi Cape",waist="Kuku Stone",legs="Convoker's Spats"}
 
 
   ------------------------------------------------------------------------------------------------
