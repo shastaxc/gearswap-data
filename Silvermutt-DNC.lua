@@ -509,13 +509,13 @@ function init_gear_sets()
     feet=gear.Lustratio_D_feet,     -- 47, 48, __, __, __
     neck="Etoile Gorget +2",        -- __, 25, __, __, 10
     ear1="Sherida Earring",         --  5,  5, __, __, __
-    ear2="Maculele Earring",        -- __, __, __, __,  7
+    ear2="Maculele Earring +1",     -- __, __, __, __,  8
     ring1="Gere Ring",              -- 10, __, __, 16, __
     ring2="Regal Ring",             -- 10, 10, __, 20, __
     back=gear.DNC_WS2_Cape,         -- __, 30, __, 20, __
     waist="Fotia Belt",             -- __, __, __, __, __; +0.1 ftp
     -- Lustratio set bonus          -- __, __,  4, __, __
-    -- 230 STR, 244 DEX, 4 WSD, 266 Att, 46 PDL
+    -- 230 STR, 244 DEX, 4 WSD, 266 Att, 47 PDL
 
     -- ear2="Maculele Earring +2",  -- __, __, __, __,  9
     -- 230 STR, 244 DEX, 4 WSD, 266 Att, 48 PDL
@@ -593,13 +593,13 @@ function init_gear_sets()
     feet="Gleti's Boots",           -- 29, __, 70,  5
     neck="Etoile Gorget +2",        -- 25, __, __, 10
     ear1="Moonshade Earring",       -- __, __, __, __; TP Bonus+250
-    ear2="Maculele Earring",        -- __, __, __,  7
+    ear2="Maculele Earring +1",     -- __, __, __,  8
     ring1="Epaminondas's Ring",     -- __,  5, __, __
     ring2="Regal Ring",             -- 10, __, 20, __
     back=gear.DNC_WS1_Cape,         -- 30, 10, 20, __; Crit dmg+5
     waist="Kentarch Belt +1",       -- 10, __, __, __
     -- Lustratio set bonus          -- __,  4, __, __
-    -- 283 DEX, 19 WSD, 288 Att, 38 PDL
+    -- 283 DEX, 19 WSD, 288 Att, 39 PDL
     
     -- ammo="Coiste Bodhar",        -- 10, __, 15, __; R30
     -- ear2="Maculele Earring +2",  -- __, __, __,  9
@@ -613,7 +613,7 @@ function init_gear_sets()
   sets.precast.WS["Rudra's Storm"].Climactic = {
     ammo="Charis Feather",
     head="Maculele Tiara +2",
-    ear2="Maculele Earring",        -- __, __, __,  9
+    ear2="Maculele Earring +1",     -- __, __, __,  8
     ring1="Epaminondas's Ring",
 
     -- ear2="Maculele Earring +2",  -- __, __, __, __,  9
