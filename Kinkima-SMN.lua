@@ -1101,7 +1101,8 @@ function job_pretarget(spell, action, spellMap, eventArgs)
           or (pet and pet.name and pacts.nuke4[pet.name] and pacts.nuke4[pet.name] == spell.english)
           or (pet and pet.name and pacts.astralflow[pet.name] and pacts.astralflow[pet.name] == spell.english)
           or (pet and pet.name and pacts.debuff1[pet.name] and pacts.debuff1[pet.name] == spell.english)
-          or (pet and pet.name and pacts.debuff2[pet.name] and pacts.debuff2[pet.name] == spell.english))
+          or (pet and pet.name and pacts.debuff2[pet.name] and pacts.debuff2[pet.name] == spell.english)
+          or (pet and pet.name and pacts.bpextra[pet.name] and pacts.bpextra[pet.name] == spell.english))
       and (spell.target.type == 'SELF' or spell.target.type == nil) and spell.target.raw ~= '<bt>' then
     eventArgs.cancel = true -- Prevent sending command to game that was targeting self
     send_command('@input /ja "'..spell.english..'" <bt>') -- Re-issue command to target <bt>
