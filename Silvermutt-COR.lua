@@ -1102,12 +1102,12 @@ function init_gear_sets()
   sets.midcast.CorsairShot['Dark Shot'] = set_combine(sets.midcast.CorsairShot['Light Shot'], {})
 
   -- Empy feet for enhancement effect; and more recast reduction
-  sets.midcast.CorsairShot.Enhance = {
+  sets.midcast.CorsairShot.Enhance = set_combine(sets.midcast.CorsairShot.STP, {
     head="Blood Mask", -- Recast -5
     feet="Chasseur's Bottes +1",
     
     -- feet="Chasseur's Bottes +3",
-  }
+  })
 
 
   ------------------------------------------------------------------------------------------------
