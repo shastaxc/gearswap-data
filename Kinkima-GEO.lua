@@ -204,16 +204,29 @@ function init_gear_sets()
     -- 82 FC [53 PDT/22 MDT, 529 Meva] {43 Pet DT, 0 Pet Regen}
   })
 
-  -- TODO: Update
-  sets.precast.FC.Impact = set_combine(sets.precast.FC, {
-    -- head=empty,
-    -- body="Crepuscular Cloak",
-  })
-  -- TODO: Update
-  sets.precast.FC.Impact.RDM = set_combine(sets.precast.FC, {
-    -- head=empty,
-    -- body="Crepuscular Cloak",
-  })
+  sets.precast.FC.Impact = {
+    main="Idris",                   -- __ [__/__, ___] {25, __}
+    sub="Genmei Shield",            -- __ [10/__, ___] {__, __}
+    range="Dunna",                  --  3 [__/__, ___] { 5, __}
+    ammo=empty,
+    head=empty,
+    body="Crepuscular Cloak",       -- __ [__/__, 231] {__, __}
+    hands="Volte Gloves",           --  6 [__/__,  96] {__, __}
+    legs="Geomancy Pants +3",       -- 15 [__/__, 127] {__, __}
+    feet=gear.Merl_FC_feet,         -- 12 [__/__, 118] {__, __}
+    neck="Loricate Torque +1",      -- __ [ 6/ 6, ___] {__, __}
+    ear1="Malignance Earring",      --  4 [__/__, ___] {__, __}
+    ear2="Odnowa Earring +1",       -- __ [ 3/ 5, ___] {__, __}
+    ring1="Defending Ring",         -- __ [10/10, ___] {__, __}
+    ring2="Kishar Ring",            --  4 [__/__, ___] {__, __}
+    back=gear.GEO_FC_Cape,          -- 10 [10/__, ___] {__, __}
+    waist="Embla Sash",             --  5 [__/__, ___] {__, __}
+    -- 59 FC [39 PDT / 21 MDT, 572 M.Eva] {30 Pet DT, 0 Pet Regen}
+
+    -- ear2="Azimuth Earring +2",   -- __ [ 7/ 7, ___] {__, __}
+    -- 59 FC [43 PDT / 23 MDT, 572 M.Eva] {30 Pet DT, 0 Pet Regen}
+  }
+  sets.precast.FC.Impact.RDM = set_combine(sets.precast.FC.Impact, {})
 
   sets.precast.FC.Dispelga = set_combine(sets.precast.FC, {
     main="Daybreak",
@@ -795,6 +808,8 @@ function init_gear_sets()
     sub="Khonsu",                     -- 30, __, __ [ 6/ 6, ___] {__/__, __}
     range="Dunna",                    -- 10, __, __ [__/__, ___] { 5/ 5, __}
     ammo=empty,                       -- __, __, __ [__/__, ___] {__/__, __}
+    head=empty,
+    body="Crepuscular Cloak",         -- 85, __, 80 [__/__, 231] {__/__, __}
     hands="Geomancy Mitaines +3",     -- 48, __, 29 [ 3/__,  57] {13/13, __}; Set bonus
     legs=gear.Nyame_B_legs,           -- 40, __, 44 [ 8/ 8, 150] {__/__, __}
     feet="Azimuth Gaiters +2",        -- 50, __, 29 [10/10, 158] {__/__, __}
@@ -810,8 +825,6 @@ function init_gear_sets()
 
     -- main="Idris",                  -- 70, __, __ [__/__, ___] {25/25, __}; M.Acc skill+255, R15
     -- sub="Ammurapi Shield",         -- 38, __, 13 [__/__, ___] {__/__, __}
-    -- head=empty,
-    -- body="Crepuscular Cloak",      -- 85, __, 80 [__/__, 231] {__/__, __}
     -- legs="Agwu's Slops",           -- 55, __, 54 [10/10, 134] {__/__, __}
     -- feet="Azimuth Gaiters +3",     -- 63, __, 34 [11/11, 168] {__/__, __}
     -- neck="Bagua Charm +2",         -- 30, __, __ [__/__, ___] {__/__, __}

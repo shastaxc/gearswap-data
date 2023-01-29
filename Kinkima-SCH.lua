@@ -367,8 +367,8 @@ function init_gear_sets()
   -- sets.precast.FC.QuickMagic.RDM.Grimoire = {}
 
   sets.precast.FC.Impact = set_combine(sets.precast.FC, {
-    -- head=empty,
-    -- body="Crepuscular Cloak",
+    head=empty,
+    body="Crepuscular Cloak",
   })
   sets.precast.FC.Dispelga = set_combine(sets.precast.FC, {
     main="Daybreak",                  -- __ [__/__, ___]
@@ -943,22 +943,30 @@ function init_gear_sets()
 
   -- Focus INT, Magic Accuracy, magic accuracy skill, elemental magic skill, Conserve MP
   sets.midcast.Impact = {
-    -- main="Bunzi's Rod",            -- 15, 55, 255, ___, __
-    -- sub="Ammurapi Shield",         -- 13, 38, ___, ___, __
-    -- head=empty,
-    -- body="Crepuscular Cloak",      -- 80, 85, ___, ___, __
-    -- hands="Academic's Bracers +3", -- 29, 48, ___, ___,  8
-    -- legs="Academic's Pants +3",    -- 44, 49, ___, ___, __
-    -- feet="Academic's Loafers +3",  -- 32, 46, ___, ___, __
-    -- neck="Argute Stole +2",        -- 15, 30, ___, ___, __
-    -- ear1="Regal Earring",          -- 10, __, ___, ___, __
+    main="Bunzi's Rod",               -- 15, 55, 255, ___, __
+    sub="Ammurapi Shield",            -- 13, 38, ___, ___, __
+    ammo="Pemphredo Tathlum",         --  4,  8, ___, ___, __
+    head=empty,
+    body="Crepuscular Cloak",         -- 80, 85, ___, ___, __
+    hands="Academic's Bracers +3",    -- 29, 48, ___, ___,  8
+    legs=gear.Nyame_B_legs,           -- 44, 40, ___, ___, __
+    feet="Academic's Loafers +3",     -- 32, 46, ___, ___, __
+    neck="Argute Stole +2",           -- 15, 30, ___, ___, __
+    ear1="Regal Earring",             -- 10, __, ___, ___, __
+    ear2="Malignance Earring",        --  8,  8, ___, ___, __
+    ring1="Stikini Ring +1",          -- __, 11, ___,   8, __
+    ring2="Metamorph Ring +1",        -- 16, 15, ___, ___, __
+    back="Aurist's Cape +1",          -- 33, 33, ___, ___,  5
+    waist="Acuity Belt +1",           -- 23, 15, ___, ___, __
+    -- AF set bonus                          30
+    -- 322 INT, 462 M.Acc, 255 M.Acc Skill, 8 Elemental Skill, 13 Conserve MP
+    
+    -- ammo="Ghastly Tathlum +1",     -- 11, __, ___, ___, __
+    -- hands="Arbatel Bracers +3",    -- 36, 62, ___, ___, __
+    -- legs="Arbatel Pants +3",       -- 53, 62, ___, ___, __; Parsimony+6, Grimoire M.Acc+36
+    -- feet="Arbatel Loafers +3",     -- 34, 60, ___,  33, __
     -- ear2="Arbatel Earring +2",     -- 15, 20, ___, ___, __
-    -- ring1="Mephitas's Ring +1",    --  5, __, ___, ___, 15
-    -- ring2="Metamorph Ring +1",     -- 16, 15, ___, ___, __
-    -- back="Aurist's Cape +1",       -- 33, 33, ___, ___,  5
-    -- waist="Acuity Belt +1",        -- 23, 15, ___, ___, __
-    -- AF set bonus                          45
-    -- 330 INT, 479 M.Acc, 255 M.Acc Skill, 0 Elemental Skill, 28 Conserve MP
+    -- 354 INT, 486 M.Acc, 255 M.Acc Skill, 41 Elemental Skill, 5 Conserve MP
   }
 
   -- INT, MAcc, MAB, MAccSk, MDmg, MB Dmg%, MB2 Dmg%
