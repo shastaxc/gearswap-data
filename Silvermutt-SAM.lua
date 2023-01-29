@@ -547,7 +547,7 @@ function init_gear_sets()
     ammo="Coiste Bodhar",       -- __/__, ___
     head=gear.Nyame_B_head,     --  7/ 7, 123
     body=gear.Nyame_B_body,     --  9/ 9, 139
-    hands="Wakido Kote +3",     -- __/__,  46
+    hands=gear.Nyame_B_hands,   --  7/ 7, 112
     legs=gear.Nyame_B_legs,     --  8/ 8, 150
     feet=gear.Nyame_B_feet,     --  7/ 7, 150
     neck="Samurai's Nodowa +2", -- __/__, ___
@@ -557,7 +557,7 @@ function init_gear_sets()
     ring2="Defending Ring",     -- 10/10, ___
     back=gear.SAM_TP_Cape,      -- 10/__, ___
     waist="Ioskeha Belt +1",    -- __/__, ___
-    --51 PDT/41 MDT, 608 MEVA
+    --58 PDT/48 MDT, 674 MEVA
   }
   sets.defense.MDT = set_combine(sets.defense.PDT, {})
 
