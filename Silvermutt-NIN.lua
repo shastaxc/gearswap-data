@@ -839,65 +839,69 @@ function init_gear_sets()
     -- 2 Shadows, 2 FC, 62 Enmity, 23 SIRD [50 PDT / 34 MDT, 525 M.Eva]
   }
 
+  -- Elemental Ninjutsu accuracy not affected by M.Acc stat, cannot miss or be resisted
+  -- Ninjustu skill cap for damage calculations: Ichi=250, Ni=349, San=499
+  -- NIN99 with merits has 469 Ninjusu skill, so naturally capped on Ichi and Ni. San could use more Ninjutsu skill for dmg.
+  -- Ninjutsu skill is capped for San at Master Level 30 so we do not need to use any in gear.
   sets.midcast.ElementalNinjutsu = {}
 
   sets.midcast.ElementalNinjutsu.Ichi = {
-    ammo="Pemphredo Tathlum",         --  4,  8,  4, __, __, __, __ [__/__, ___]
-    head=gear.Nyame_B_head,           -- 28, 40, 30, __, __,  5, __ [ 7/ 7, 123]
-    body=gear.Nyame_B_body,           -- 42, 40, 30, __, __,  7, __ [ 9/ 9, 139]
-    hands=gear.Nyame_B_hands,         -- 28, 40, 30, __, __,  5, __ [ 7/ 7, 112]
-    legs=gear.Nyame_B_legs,           -- 44, 40, 30, __, __,  6, __ [ 8/ 8, 150]
-    feet=gear.Nyame_B_feet,           -- 25, 40, 30, __, __,  5, __ [ 7/ 7, 150]
-    neck="Baetyl Pendant",            -- __, __, 13, __, __, __, __ [__/__, ___]
-    ear1="Novio Earring",             -- __, __,  7, __, __, __, __ [__/__, ___]
-    ear2="Friomisi Earring",          -- __, __, 10, __, __, __, __ [__/__, ___]
-    ring1="Shiva Ring +1",            --  9, __,  3, __, __, __, __ [__/__, ___]
-    ring2="Dingir Ring",              -- __, __, 10, __, __, __, __ [__/__, ___]
-    back=gear.NIN_MAB_Cape,           -- 30, 20, 10, __, 20, __, __ [10/__, ___]
-    waist="Eschan Stone",             -- __, 15,  7, __, __, __, __ [__/__, ___]
-    -- 210 INT, 243 MAcc, 214 MAB, 0 MAccSk, 20 MDmg, 28 MB Dmg%, 0 MB2 Dmg% [48 PDT/38 MDT, 674 M.Eva]
+    ammo="Pemphredo Tathlum",         --  4,  4, __, __, __, __ [__/__, ___]
+    head=gear.Nyame_B_head,           -- 28, 30, __, __,  5, __ [ 7/ 7, 123]
+    body=gear.Nyame_B_body,           -- 42, 30, __, __,  7, __ [ 9/ 9, 139]
+    hands=gear.Nyame_B_hands,         -- 28, 30, __, __,  5, __ [ 7/ 7, 112]
+    legs=gear.Nyame_B_legs,           -- 44, 30, __, __,  6, __ [ 8/ 8, 150]
+    feet=gear.Nyame_B_feet,           -- 25, 30, __, __,  5, __ [ 7/ 7, 150]
+    neck="Baetyl Pendant",            -- __, 13, __, __, __, __ [__/__, ___]
+    ear1="Novio Earring",             -- __,  7, __, __, __, __ [__/__, ___]
+    ear2="Friomisi Earring",          -- __, 10, __, __, __, __ [__/__, ___]
+    ring1="Shiva Ring +1",            --  9,  3, __, __, __, __ [__/__, ___]
+    ring2="Dingir Ring",              -- __, 10, __, __, __, __ [__/__, ___]
+    back=gear.NIN_MAB_Cape,           -- 30, 10, __, 20, __, __ [10/__, ___]
+    waist="Eschan Stone",             -- __,  7, __, __, __, __ [__/__, ___]
+    -- 210 INT, 214 MAB, 0 MAccSk, 20 MDmg, 28 MB Dmg%, 0 MB2 Dmg% [48 PDT/38 MDT, 674 M.Eva]
     
-    -- ammo="Ghastly Tathlum +1",     -- 11, __, __, __, 11, __, __ [__/__, ___]
-    -- head="Mochizuki Hatsuburi +3", -- 32, 37, 82, __, __, __, __ [__/__,  63]
-    -- feet="Mochizuki Kyahan +3",    -- __, 51, __, __, __, __, __ [__/__,  84]; MAB+25%
-    -- neck="Sibyl Scarf",            -- 10, __, 10, __, __, __, __ [__/__, ___]
-    -- 206 INT, 243 MAcc, 229 MAB, 0 MAccSk, 31 MDmg, 18 MB Dmg%, 0 MB2 Dmg% [34 PDT/24 MDT, 548 M.Eva]
+    -- ammo="Ghastly Tathlum +1",     -- 11, __, __, 11, __, __ [__/__, ___]
+    -- head="Mochizuki Hatsuburi +3", -- 32, 82, __, __, __, __ [__/__,  63]
+    -- feet="Mochizuki Kyahan +3",    -- __, __, __, __, __, __ [__/__,  84]; MAB+25%
+    -- neck="Sibyl Scarf",            -- 10, 10, __, __, __, __ [__/__, ___]
+    -- 206 INT, 229 MAB, 0 MAccSk, 31 MDmg, 18 MB Dmg%, 0 MB2 Dmg% [34 PDT/24 MDT, 548 M.Eva]
   }
   sets.midcast.ElementalNinjutsu.Ni = set_combine(sets.midcast.ElementalNinjutsu.Ichi, {
-    ring1="Metamorph Ring +1",        -- 16, 15, __, __, __, __, __ [__/__, ___]
+    ring1="Metamorph Ring +1",        -- 16, __, __, __, __, __ [__/__, ___]
   })
   sets.midcast.ElementalNinjutsu.San = set_combine(sets.midcast.ElementalNinjutsu.Ni, {
-    ring2="Shiva Ring +1",            --  9, __,  3, __, __, __, __ [__/__, ___]
+    ring2="Shiva Ring +1",            --  9,  3, __, __, __, __ [__/__, ___]
   })
 
   sets.midcast.ElementalNinjutsu.Ichi.MB = {
-    ammo="Pemphredo Tathlum",         --  4,  8,  4, __, __, __, __ [__/__, ___]
-    head=gear.Nyame_B_head,           -- 28, 40, 30, __, __,  5, __ [ 7/ 7, 123]
-    body=gear.Nyame_B_body,           -- 42, 40, 30, __, __,  7, __ [ 9/ 9, 139]
-    hands="Hattori Tekko +2",         -- 22, 52, 16, __, __, 10, __ [__/__, 103]
-    legs=gear.Nyame_B_legs,           -- 44, 40, 30, __, __,  6, __ [ 8/ 8, 150]
-    feet=gear.Nyame_B_feet,           -- 25, 40, 30, __, __,  5, __ [ 7/ 7, 150]
-    neck="Warder's Charm +1",         -- __, __, __, __, __, 10, __ [__/__, ___]
-    ear1="Novio Earring",             -- __, __,  7, __, __, __, __ [__/__, ___]
-    ear2="Friomisi Earring",          -- __, __, 10, __, __, __, __ [__/__, ___]
-    ring1="Dingir Ring",              -- __, __, 10, __, __, __, __ [__/__, ___]
-    ring2="Shiva Ring +1",            --  9, __,  3, __, __, __, __ [__/__, ___]
-    back=gear.NIN_MAB_Cape,           -- 30, 20, 10, __, 20, __, __ [10/__, ___]
-    waist="Eschan Stone",             -- __, 15,  7, __, __, __, __ [__/__, ___]
-    -- 204 INT, 255 MAcc, 187 MAB, 0 MAccSk, 20 MDmg, 43 MB Dmg%, 0 MB2 Dmg% [41 PDT/31 MDT, 665 M.Eva]
+    ammo="Pemphredo Tathlum",         --  4,  4, __, __, __, __ [__/__, ___]
+    head=gear.Nyame_B_head,           -- 28, 30, __, __,  5, __ [ 7/ 7, 123]
+    body=gear.Nyame_B_body,           -- 42, 30, __, __,  7, __ [ 9/ 9, 139]
+    hands="Hattori Tekko +2",         -- 22, 16, __, __, 10, __ [__/__, 103]
+    legs=gear.Nyame_B_legs,           -- 44, 30, __, __,  6, __ [ 8/ 8, 150]
+    feet=gear.Nyame_B_feet,           -- 25, 30, __, __,  5, __ [ 7/ 7, 150]
+    neck="Warder's Charm +1",         -- __, __, __, __, 10, __ [__/__, ___]
+    ear1="Novio Earring",             -- __,  7, __, __, __, __ [__/__, ___]
+    ear2="Friomisi Earring",          -- __, 10, __, __, __, __ [__/__, ___]
+    ring1="Dingir Ring",              -- __, 10, __, __, __, __ [__/__, ___]
+    ring2="Shiva Ring +1",            --  9,  3, __, __, __, __ [__/__, ___]
+    back=gear.NIN_MAB_Cape,           -- 30, 10, __, 20, __, __ [10/__, ___]
+    waist="Eschan Stone",             -- __,  7, __, __, __, __ [__/__, ___]
+    -- 204 INT, 187 MAB, 0 MAccSk, 20 MDmg, 43 MB Dmg%, 0 MB2 Dmg% [41 PDT/31 MDT, 665 M.Eva]
 
-    -- ammo="Ghastly Tathlum +1",     -- 11, __, __, __, 11, __, __ [__/__, ___]
-    -- head="Mochizuki Hatsuburi +3", -- 32, 37, 82, __, __, __, __ [__/__,  63]
-    -- hands="Hattori Tekko +3",      -- 27, 62, 18, __, __, 15, __ [__/__, 103]
-    -- feet="Mochizuki Kyahan +3",    -- __, 51, __, __, __, __, __ [__/__,  84]; MAB+25%
-    -- ring2="Mujin Band",            -- __, __, __, __, __, __,  5 [__/__, ___]
-    -- 186 INT, 265 MAcc, 204 MAB, 0 MAccSk, 31 MDmg, 38 MB Dmg%, 5 MB2 Dmg% [27 PDT/17 MDT, 539 M.Eva]
+    -- ammo="Ghastly Tathlum +1",     -- 11, __, __, 11, __, __ [__/__, ___]
+    -- head="Mochizuki Hatsuburi +3", -- 32, 82, __, __, __, __ [__/__,  63]
+    -- hands="Hattori Tekko +3",      -- 27, 18, __, __, 15, __ [__/__, 103]
+    -- feet="Mochizuki Kyahan +3",    -- __, __, __, __, __, __ [__/__,  84]; MAB+25%
+    -- ring2="Mujin Band",            -- __, __, __, __, __,  5 [__/__, ___]
+    -- 186 INT, 204 MAB, 0 MAccSk, 31 MDmg, 38 MB Dmg%, 5 MB2 Dmg% [27 PDT/17 MDT, 539 M.Eva]
   }
   sets.midcast.ElementalNinjutsu.Ni.MB = set_combine(sets.midcast.ElementalNinjutsu.Ichi.MB, {
-    -- neck="Sibyl Scarf",            -- 10, __, 10, __, __, __, __ [__/__, ___]
+    -- neck="Sibyl Scarf",            -- 10, 10, __, __, __, __ [__/__, ___]
   })
   sets.midcast.ElementalNinjutsu.San.MB = set_combine(sets.midcast.ElementalNinjutsu.Ni.MB, {
-    ring1="Metamorph Ring +1",        -- 16, 15, __, __, __, __, __ [__/__, ___]
+    ring1="Metamorph Ring +1",        -- 16, __, __, __, __, __ [__/__, ___]
   })
 
   sets.midcast.EnfeeblingNinjutsu = {
@@ -928,28 +932,35 @@ function init_gear_sets()
     -- 362 M.Acc, 58 Ninjutsu [45 PDT/35 MDT, 529 M.Eva]
   }
 
+  -- The only enhancing ninjutsu that scales with skill is Migawari, but at ML50 the threshold is already down
+  -- to about 50%. Lowering it further will just cause non-threatening attacks to wear off Migawari so I am
+  -- choosing not to stack Ninjutsu skill in this set. Focusing Ninja Tool Expertise and defensive stats.
   sets.midcast.EnhancingNinjutsu = {
     ammo="Staunch Tathlum +1",        -- __ [ 3/ 3, ___]
-    head="Hachiya Hatsuburi +2",      -- 15 [__/__,  53]
+    head="Hattori Zukin +2",          -- __ [ 9/ 9, 109]
     body="Hattori Ningi +2",          -- __ [12/12, 119]
-    hands=gear.Nyame_B_hands,         -- __ [ 7/ 7, 112]
     legs="Hattori Hakama +2",         -- __ [11/11, 125]
-    feet=gear.Nyame_B_feet,           -- __ [ 7/ 7, 150]
-    neck="Incanter's Torque",         -- 10 [__/__, ___]
-    ring1="Stikini Ring +1",          --  8 [__/__, ___]
+    feet="Hattori Kyahan +2",         -- __ [__/__, 135]; Tactical parry+23
+    neck="Moonlight Necklace",        -- __ [__/__,  15]; SIRD+15
+    ear1="Arete Del Luna +1",         -- __ [__/__, ___]; Resists
+    ear2="Odnowa Earring +1",         -- __ [ 3/ 5, ___]
     ring2="Defending Ring",           -- __ [10/10, ___]
-    -- 33 Ninjutsu [50 PDT/50 MDT, 559 M.Eva]
+    -- Merits/Gifts                      25
+    -- 25 Ninja Tool Expertise [48 PDT/50 MDT, 503 M.Eva]
 
-    -- head="Hachiya Hatsuburi +3",   -- 17 [__/__,  63]
+    -- ammo="Staunch Tathlum +1",     -- __ [ 3/ 3, ___]
+    -- head="Hattori Zukin +3",       -- __ [10/10, 119]
     -- body="Hattori Ningi +3",       -- __ [13/13, 129]
+    -- hands="Mochizuki Tekko +3",    -- 38 [__/__,  46]
     -- legs="Hattori Hakama +3",      -- __ [12/12, 135]
-    -- feet="Mochizuki Kyahan +3",    -- 23 [__/__,  84]
-    -- ear1="Stealth Earring",        --  5 [__/__, ___]
-    -- ear2="Hnoss Earring",          -- 10 [__/__, ___]
-    -- ring2="Stikini Ring +1",       --  8 [__/__, ___]
-    -- back="Astute Cape",            --  5 [__/__, ___]
-    -- waist="Cimmerian Sash",        --  5 [__/__, ___]
-    -- 91 Ninjutsu [35 PDT/35 MDT, 523 M.Eva]
+    -- feet="Hattori Kyahan +3",      -- __ [__/__, 125]; Tactical parry+26
+    -- neck="Moonlight Necklace",     -- __ [__/__,  15]; SIRD+15
+    -- ear1="Arete Del Luna +1",      -- __ [__/__, ___]; Resists
+    -- ear2="Odnowa Earring +1",      -- __ [ 3/ 5, ___]
+    -- ring2="Defending Ring",        -- __ [10/10, ___]
+    -- waist="Gosha Sarashi",         --  5 [__/__, ___]
+    -- Merits/Gifts                      25
+    -- 68 Ninja Tool Expertise [51 PDT/53 MDT, 569 M.Eva]
   }
 
   sets.midcast.Stun = set_combine(sets.midcast.EnfeeblingNinjutsu, {})
