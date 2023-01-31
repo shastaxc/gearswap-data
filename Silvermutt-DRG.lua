@@ -214,7 +214,7 @@ function init_gear_sets()
   }
   sets.precast.JA['High Jump'] = set_combine(sets.precast.JA['Jump'], {})
   sets.precast.JA['Spirit Jump'] = set_combine(sets.precast.JA['Jump'], {
-    feet="Peltast's Schynbalds +1",
+    feet="Peltast's Schynbalds +2",
   })
   sets.precast.JA['Soul Jump'] = set_combine(sets.precast.JA['Jump'], {})
   sets.precast.JA['Super Jump'] = {}
