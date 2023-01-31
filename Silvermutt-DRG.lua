@@ -270,7 +270,7 @@ function init_gear_sets()
   sets.precast.WS.AttCapped = {
     ammo="Knobkierrie",                 -- __, __, 23, __,  6, __
     head=gear.Nyame_B_head,             -- 26, 25, 65, 50, 11, __
-    body="Gleti's Cuirass",             -- 39, 34, 70, 55, __,  9
+    body="Peltast's Plackart +3",       -- 43, 34, 74, 64, __, 10
     hands="Gleti's Gauntlets",          -- 20, 30, 70, 55, __,  7
     legs=gear.Nyame_B_legs,             -- 58, __, 65, 40, 12, __
     feet=gear.Nyame_B_feet,             -- 23, 26, 65, 53, 11, __
@@ -281,10 +281,9 @@ function init_gear_sets()
     ring2="Epaminondas's Ring",         -- __, __, __, __,  5, __
     back=gear.DRG_WS2_Cape,             -- 30, __, 20, 20, 10, __
     waist="Sailfi Belt +1",             -- 15, __, 15, __, __, __
-    -- 241 STR, 115 MND, 418 Att, 308 Acc, 55 WSD, 36 PDL
+    -- 245 STR, 115 MND, 422 Att, 317 Acc, 55 WSD, 37 PDL
     
     -- head="Peltast's Mezail +3",      -- 36, 32, 71, 61, 12, __
-    -- body="Peltast's Plackart +3",    -- 43, 34, 74, 64, __, 10
     -- ear2="Peltast's Earring +2",     -- 15, __, __, 20, __,  9
     -- 270 STR, 122 MND, 428 Att, 342 Acc, 56 WSD, 39 PDL
   }
@@ -375,7 +374,7 @@ function init_gear_sets()
   sets.precast.WS["Camlann's Torment"].AttCapped = {
     ammo="Knobkierrie",                 -- __, __, 23, __,  6, __
     head=gear.Nyame_B_head,             -- 26, 24, 65, 50, 11, __
-    body="Gleti's Cuirass",             -- 39, 39, 70, 55, __,  9
+    body="Peltast's Plackart +3",       -- 43, 43, 74, 64, __, 10
     hands="Gleti's Gauntlets",          -- 20, 43, 70, 55, __,  7
     legs=gear.Nyame_B_legs,             -- 58, 30, 65, 40, 12, __
     feet=gear.Nyame_B_feet,             -- 23, 24, 65, 53, 11, __
@@ -386,10 +385,9 @@ function init_gear_sets()
     ring2="Sroda Ring",                 -- 15, __, __, __, __,  3
     back=gear.DRG_WS2_Cape,             -- 30, __, 20, 20, 10, __
     waist="Fotia Belt",                 -- __, __, __, __, __, __; ftp+
-    -- 236 STR, 185 VIT, 403 Att, 304 Acc, 58 WSD, 36 PDL
+    -- 240 STR, 189 VIT, 407 Att, 313 Acc, 58 WSD, 37 PDL
     
     -- head="Peltast's Mezail +3",      -- 36, 35, 71, 61, 12, __
-    -- body="Peltast's Plackart +3",    -- 43, 43, 74, 64, __, 10
     -- ear2="Peltast's Earring +2",     -- 15, 15, __, 20, __,  9
     -- 265 STR, 215 VIT, 413 Att, 338 Acc, 59 WSD, 39 PDL
   }
