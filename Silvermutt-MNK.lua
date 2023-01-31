@@ -880,11 +880,11 @@ function init_gear_sets()
     -- 38 STP, 318 Acc, 20 PDL, 5 Crit Rate, 6 Crit Dmg <15 DA, 13 TA, 3 QA> [43 PDT/33 MDT, 527 M.Eva] (165 Kick Dmg, 89 Kick Rate) 16 Martial Arts, 35 Counter, 60 Subtle Blow
 
     -- body="Bhikku Cyclas +3",     -- __, 64, __, __, __ <__, __, __> [__/__, 109] (___, __)  8, __, __(__)
-    -- legs="Bhikku Hose +3",       --  9, 63, __, __, __ <__, __, __> [14/14, 119] (___, 30) __, __, __(__)
-    -- 38 STP, 338 Acc, 20 PDL, 5 Crit Rate, 6 Crit Dmg <15 DA, 13 TA, 3 QA> [44 PDT/34 MDT, 547 M.Eva] (165 Kick Dmg, 94 Kick Rate) 17 Martial Arts, 35 Counter, 60 Subtle Blow
+    -- legs="Bhikku Hose +3",       -- 10, 63, __, __, __ <__, __, __> [14/14, 119] (___, 30) __, __, __(__)
+    -- 39 STP, 338 Acc, 20 PDL, 5 Crit Rate, 6 Crit Dmg <15 DA, 13 TA, 3 QA> [44 PDT/34 MDT, 547 M.Eva] (165 Kick Dmg, 94 Kick Rate) 17 Martial Arts, 35 Counter, 60 Subtle Blow
 
     -- Ideal:
-    -- 40 STP, 343 Acc, 20 PDL,  5 Crit Rate, 0 Crit Dmg <15 DA, 13 TA, 3 QA> [44 PDT/34 MDT, 547 M.Eva] (165 Kick Dmg, 94 Kick Rate) 17 Martial Arts, 36 Counter, 60 Subtle Blow
+    -- 41 STP, 343 Acc, 20 PDL,  5 Crit Rate, 0 Crit Dmg <15 DA, 13 TA, 3 QA> [44 PDT/34 MDT, 547 M.Eva] (165 Kick Dmg, 94 Kick Rate) 17 Martial Arts, 36 Counter, 60 Subtle Blow
   })
   sets.engaged.LightDef.Footwork = set_combine(sets.engaged.LightDef, {})
   sets.engaged.LightDef.Impetus.Footwork = set_combine(sets.engaged.LightDef.Impetus, {})
@@ -922,9 +922,9 @@ function init_gear_sets()
     -- 49 STP, 313 Acc, 26 PDL,  5 Crit Rate, 0 Crit Dmg <15 DA, 13 TA, 3 QA> [52 PDT/42 MDT, 567 M.Eva] (165 Kick Dmg, 89 Kick Rate) 9 Martial Arts, 35 Counter, 60 Subtle Blow
 
     -- Ideal:
-    -- legs="Bhikku Hose +3",       --  9, 63, __, __, __ <__, __, __> [14/14, 119] (___, 30) __, __, __(__)
+    -- legs="Bhikku Hose +3",       -- 10, 63, __, __, __ <__, __, __> [14/14, 119] (___, 30) __, __, __(__)
     -- ear2="Bhikku Earring +2",    --  6, 20, __, __, __ <__, __, __> [__/__, ___] (___, __) __,  9, __(__)
-    -- 51 STP, 329 Acc, 26 PDL,  5 Crit Rate, 0 Crit Dmg <15 DA, 13 TA, 3 QA> [53 PDT/43 MDT, 577 M.Eva] (165 Kick Dmg, 94 Kick Rate) 9 Martial Arts, 36 Counter, 60 Subtle Blow
+    -- 52 STP, 329 Acc, 26 PDL,  5 Crit Rate, 0 Crit Dmg <15 DA, 13 TA, 3 QA> [53 PDT/43 MDT, 577 M.Eva] (165 Kick Dmg, 94 Kick Rate) 9 Martial Arts, 36 Counter, 60 Subtle Blow
   }
   sets.engaged.HeavyDef.Impetus = set_combine(sets.engaged.HeavyDef, {
     body="Bhikku Cyclas +2",        -- __, 54, __, __, __ <__, __, __> [__/__,  99] (___, __)  7, __, __(__)
@@ -933,11 +933,11 @@ function init_gear_sets()
     -- 38 STP, 318 Acc, 20 PDL,  5 Crit Rate, 0 Crit Dmg <15 DA, 13 TA, 0 QA> [53 PDT/43 MDT, 527 M.Eva] (165 Kick Dmg, 94 Kick Rate) 16 Martial Arts, 35 Counter, 55 Subtle Blow
 
     -- body="Bhikku Cyclas +3",     -- __, 64, __, __, __ <__, __, __> [__/__, 109] (___, __)  8, __, __(__)
-    -- legs="Bhikku Hose +3",       --  9, 63, __, __, __ <__, __, __> [14/14, 119] (___, 30) __, __, __(__)
-    -- 38 STP, 338 Acc, 20 PDL,  5 Crit Rate, 0 Crit Dmg <15 DA, 13 TA, 0 QA> [54 PDT/44 MDT, 547 M.Eva] (165 Kick Dmg, 94 Kick Rate) 17 Martial Arts, 35 Counter, 55 Subtle Blow
+    -- legs="Bhikku Hose +3",       -- 10, 63, __, __, __ <__, __, __> [14/14, 119] (___, 30) __, __, __(__)
+    -- 39 STP, 338 Acc, 20 PDL,  5 Crit Rate, 0 Crit Dmg <15 DA, 13 TA, 0 QA> [54 PDT/44 MDT, 547 M.Eva] (165 Kick Dmg, 94 Kick Rate) 17 Martial Arts, 35 Counter, 55 Subtle Blow
 
     -- Ideal:
-    -- 40 STP, 343 Acc, 20 PDL,  5 Crit Rate, 0 Crit Dmg <15 DA, 13 TA, 0 QA> [54 PDT/44 MDT, 547 M.Eva] (165 Kick Dmg, 94 Kick Rate) 17 Martial Arts, 36 Counter, 55 Subtle Blow
+    -- 41 STP, 343 Acc, 20 PDL,  5 Crit Rate, 0 Crit Dmg <15 DA, 13 TA, 0 QA> [54 PDT/44 MDT, 547 M.Eva] (165 Kick Dmg, 94 Kick Rate) 17 Martial Arts, 36 Counter, 55 Subtle Blow
   })
   sets.engaged.HeavyDef.Footwork = set_combine(sets.engaged.HeavyDef, {})
   sets.engaged.HeavyDef.Impetus.Footwork = set_combine(sets.engaged.HeavyDef.Impetus, {})
