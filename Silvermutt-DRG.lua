@@ -54,7 +54,6 @@ function job_setup()
   silibs.enable_equip_loop()
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
-  state.WeaponskillMode:options('Normal', 'Acc')
   state.HybridMode:options('Normal', 'LightDef')
   state.IdleMode:options('Normal', 'LightDef')
   state.AttCapped = M(true, "Attack Capped")
@@ -94,17 +93,11 @@ function user_setup()
 
   if player.sub_job == 'WAR' then
     send_command('bind !w input /ja "Defender" <me>')
-  elseif player.sub_job == 'SAM' then
-    send_command('bind !w input /ja "Hasso" <me>')
-  end
-
-  if player.sub_job == 'WAR' then
-    send_command('bind !w input /ja "Defender" <me>')
     send_command('bind ^numpad/ input /ja "Berserk" <me>')
     send_command('bind ^numpad* input /ja "Warcry" <me>')
     send_command('bind ^numpad- input /ja "Aggressor" <me>')
   elseif player.sub_job == 'SAM' then
-    send_command('bind !w input /ja "Third Eye" <me>')
+    send_command('bind !w input /ja "Hasso" <me>')
     send_command('bind ^numpad/ input /ja "Meditate" <me>')
     send_command('bind ^numpad* input /ja "Sekkanoki" <me>')
     send_command('bind ^numpad- input /ja "Hasso" <me>')
