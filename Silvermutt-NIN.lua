@@ -906,7 +906,7 @@ function init_gear_sets()
 
   sets.midcast.EnfeeblingNinjutsu = {
     ammo="Yamarang",                  -- 15, __ [__/__,  15]
-    head="Hachiya Hatsuburi +2",      -- 44, 15 [__/__,  53]
+    head="Hachiya Hatsuburi +3",      -- 54, 17 [__/__,  63]
     body="Hattori Ningi +2",          -- 54, __ [12/12, 119]
     hands="Hattori Tekko +2",         -- 52, __ [__/__,  93]
     legs="Hattori Hakama +2",         -- 53, __ [11/11, 125]
@@ -918,9 +918,8 @@ function init_gear_sets()
     ring2="Defending Ring",           -- __, __ [10/10, ___]
     back=gear.NIN_MAB_Cape,           -- 20, __ [10/__, ___]
     waist="Eschan Stone",             --  7, __ [__/__, ___]
-    -- 313 M.Acc, 33 Ninjutsu [50 PDT/40 MDT, 555 M.Eva]
+    -- 323 M.Acc, 35 Ninjutsu [50 PDT/40 MDT, 565 M.Eva]
     
-    -- head="Hachiya Hatsuburi +3",   -- 54, 17 [__/__,  63]
     -- body="Hattori Ningi +3",       -- 64, __ [13/13, 129]
     -- hands="Hattori Tekko +3",      -- 62, __ [__/__, 103]
     -- legs="Hattori Hakama +3",      -- 63, __ [12/12, 135]
@@ -1437,8 +1436,7 @@ function init_gear_sets()
     feet="Danzo sune-ate",
   }
   sets.NightMovement = {
-    feet="Hachiya Kyahan +2",
-    -- feet="Hachiya Kyahan +3",
+    feet="Hachiya Kyahan +3",
   }
   
   sets.CP = {
