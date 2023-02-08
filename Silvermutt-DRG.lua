@@ -239,7 +239,7 @@ function init_gear_sets()
 
   sets.precast.WS = {
     ammo="Knobkierrie",                 -- __, __, 23, __,  6, __
-    head=gear.Nyame_B_head,             -- 26, 26, 65, 50, 11, __
+    head="Peltast's Mezail +3",         -- 36, 26, 71, 61, 12, __
     body=gear.Nyame_B_body,             -- 45, 37, 65, 40, 13, __
     hands=gear.Nyame_B_hands,           -- 17, 40, 65, 40, 11, __
     legs=gear.Nyame_B_legs,             -- 58, 32, 65, 40, 12, __
@@ -251,18 +251,15 @@ function init_gear_sets()
     ring2="Epaminondas's Ring",         -- __, __, __, __,  5, __
     back=gear.DRG_WS2_Cape,             -- 30, __, 20, 20, 10, __
     waist="Sailfi Belt +1",             -- 15, __, 15, __, __, __
-    -- 254 STR, 161 MND, 408 Attack, 272 Accuracy, 82 WSD, 13 PDL
-
-    -- head="Peltast's Mezail +3",      -- 36, 26, 71, 61, 12, __
     -- 264 STR, 161 MND, 414 Attack, 283 Accuracy, 83 WSD, 13 PDL
   }
   sets.precast.WS.MaxTP = set_combine(sets.precast.WS, {
-    ear2="Ishvara Earring",       -- __, __, __, __,  2, __
-    -- 249 STR, 161 MND, 394 Attack, 283 Accuracy, 81 WSD, 13 PDL
+    ear2="Ishvara Earring",             -- __, __, __, __,  2, __
+    -- 264 STR, 161 MND, 414 Attack, 283 Accuracy, 85 WSD, 13 PDL
   })
   sets.precast.WS.AttCapped = {
     ammo="Knobkierrie",                 -- __, __, 23, __,  6, __
-    head=gear.Nyame_B_head,             -- 26, 25, 65, 50, 11, __
+    head="Peltast's Mezail +3",         -- 36, 32, 71, 61, 12, __
     body="Peltast's Plackart +3",       -- 43, 34, 74, 64, __, 10
     hands="Gleti's Gauntlets",          -- 20, 30, 70, 55, __,  7
     legs=gear.Nyame_B_legs,             -- 58, __, 65, 40, 12, __
@@ -274,9 +271,8 @@ function init_gear_sets()
     ring2="Epaminondas's Ring",         -- __, __, __, __,  5, __
     back=gear.DRG_WS2_Cape,             -- 30, __, 20, 20, 10, __
     waist="Sailfi Belt +1",             -- 15, __, 15, __, __, __
-    -- 245 STR, 115 MND, 422 Att, 317 Acc, 55 WSD, 37 PDL
+    -- 255 STR, 122 MND, 428 Att, 328 Acc, 56 WSD, 37 PDL
     
-    -- head="Peltast's Mezail +3",      -- 36, 32, 71, 61, 12, __
     -- ear2="Peltast's Earring +2",     -- 15, __, __, 20, __,  9
     -- 270 STR, 122 MND, 428 Att, 342 Acc, 56 WSD, 39 PDL
   }
@@ -345,7 +341,7 @@ function init_gear_sets()
   -- WSD > STR/VIT
   sets.precast.WS["Camlann's Torment"] = {
     ammo="Knobkierrie",                 -- __, __, 23, __,  6, __
-    head=gear.Nyame_B_head,             -- 26, 24, 65, 50, 11, __
+    head="Peltast's Mezail +3",         -- 36, 35, 71, 61, 12, __
     body=gear.Nyame_B_body,             -- 45, 35, 65, 40, 13, __
     hands=gear.Nyame_B_hands,           -- 17, 54, 65, 40, 11, __
     legs=gear.Nyame_B_legs,             -- 58, 30, 65, 40, 12, __
@@ -357,16 +353,15 @@ function init_gear_sets()
     ring2="Sroda Ring",                 -- 15, __, __, __, __,  3
     back=gear.DRG_WS2_Cape,             -- 30, __, 20, 20, 10, __
     waist="Fotia Belt",                 -- __, __, __, __, __, __; ftp+
-    -- 239 STR, 192 VIT, 393 Att, 268 Acc, 84 WSD, 13 PDL
+    -- 249 STR, 203 VIT, 399 Att, 279 Acc, 85 WSD, 13 PDL
     
-    -- head="Peltast's Mezail +3",      -- 36, 35, 71, 61, 12, __
     -- ear2="Peltast's Earring +2",     -- 15, 15, __, 20, __,  9
     -- 264 STR, 218 VIT, 399 Att, 299 Acc, 83 WSD, 22 PDL
   }
   sets.precast.WS["Camlann's Torment"].MaxTP = set_combine(sets.precast.WS["Camlann's Torment"], {})
   sets.precast.WS["Camlann's Torment"].AttCapped = {
     ammo="Knobkierrie",                 -- __, __, 23, __,  6, __
-    head=gear.Nyame_B_head,             -- 26, 24, 65, 50, 11, __
+    head="Peltast's Mezail +3",         -- 36, 35, 71, 61, 12, __
     body="Peltast's Plackart +3",       -- 43, 43, 74, 64, __, 10
     hands="Gleti's Gauntlets",          -- 20, 43, 70, 55, __,  7
     legs=gear.Nyame_B_legs,             -- 58, 30, 65, 40, 12, __
@@ -378,9 +373,8 @@ function init_gear_sets()
     ring2="Sroda Ring",                 -- 15, __, __, __, __,  3
     back=gear.DRG_WS2_Cape,             -- 30, __, 20, 20, 10, __
     waist="Fotia Belt",                 -- __, __, __, __, __, __; ftp+
-    -- 240 STR, 189 VIT, 407 Att, 313 Acc, 58 WSD, 37 PDL
+    -- 250 STR, 200 VIT, 413 Att, 324 Acc, 59 WSD, 37 PDL
     
-    -- head="Peltast's Mezail +3",      -- 36, 35, 71, 61, 12, __
     -- ear2="Peltast's Earring +2",     -- 15, 15, __, 20, __,  9
     -- 265 STR, 215 VIT, 413 Att, 338 Acc, 59 WSD, 39 PDL
   }
@@ -390,7 +384,7 @@ function init_gear_sets()
   -- WSD > STR <> DEX
   sets.precast.WS["Sonic Thrust"] = {
     ammo="Knobkierrie",                 -- __, __, 23, __,  6, __
-    head=gear.Nyame_B_head,             -- 26, 25, 65, 50, 11, __
+    head="Peltast's Mezail +3",         -- 36, 32, 71, 61, 12, __
     body=gear.Nyame_B_body,             -- 45, 24, 65, 40, 13, __
     hands=gear.Nyame_B_hands,           -- 17, 42, 65, 40, 11, __
     legs=gear.Nyame_B_legs,             -- 58, __, 65, 40, 12, __
@@ -402,15 +396,12 @@ function init_gear_sets()
     ring2="Niqmaddu Ring",              -- 10, 10, __, __, __, __
     back=gear.DRG_WS2_Cape,             -- 30, __, 20, 20, 10, __
     waist="Sailfi Belt +1",             -- 15, __, 15, __, __, __
-    -- 259 STR, 137 DEX, 428 Att, 272 Acc, 77 WSD, 10 PDL
-
-    -- head="Peltast's Mezail +3",      -- 36, 32, 71, 61, 12, __
     -- 269 STR, 144 DEX, 434 Att, 283 Acc, 78 WSD, 10 PDL
   }
   sets.precast.WS["Sonic Thrust"].MaxTP = set_combine(sets.precast.WS["Sonic Thrust"], {
     ear1="Ishvara Earring",             -- __, __, __, __,  2, __
     ear2="Thrud Earring",               -- 10, __, __, __,  3, __
-    -- 276 STR, 154 DEX, 444 Att, 299 Acc, 58 WSD, 26 PDL
+    -- 269 STR, 144 DEX, 434 Att, 279 Acc, 80 WSD, 10 PDL
 
     -- ear1="Thrud Earring",            -- 10, __, __, __,  3, __
     -- ear2="Peltast's Earring +2",     -- 15, __, __, 20, __,  9
@@ -418,7 +409,7 @@ function init_gear_sets()
   })
   sets.precast.WS["Sonic Thrust"].AttCapped = {
     ammo="Knobkierrie",                 -- __, __, 23, __,  6, __
-    head=gear.Nyame_B_head,             -- 26, 25, 65, 50, 11, __
+    head="Peltast's Mezail +3",         -- 36, 32, 71, 61, 12, __
     body="Gleti's Cuirass",             -- 39, 34, 70, 55, __,  9
     hands="Gleti's Gauntlets",          -- 20, 47, 70, 55, __,  7
     legs=gear.Nyame_B_legs,             -- 58, __, 65, 40, 12, __
@@ -430,9 +421,8 @@ function init_gear_sets()
     ring2="Niqmaddu Ring",              -- 10, 10, __, __, __, __
     back=gear.DRG_WS2_Cape,             -- 30, __, 20, 20, 10, __
     waist="Sailfi Belt +1",             -- 15, __, 15, __, __, __
-    -- 256 STR, 152 DEX, 438 Att, 302 Acc, 53 WSD, 26 PDL
+    -- 266 STR, 159 DEX, 444 Att, 313 Acc, 54 WSD, 26 PDL
     
-    -- head="Peltast's Mezail +3",      -- 36, 32, 71, 61, 12, __
     -- ear2="Peltast's Earring +2",     -- 15, __, __, 20, __,  9
     -- 271 STR, 159 DEX, 444 Att, 333 Acc, 51 WSD, 35 PDL
   }
@@ -448,7 +438,7 @@ function init_gear_sets()
   -- WSD <> STR; if used with shining one, crit rate/dmg also good
   sets.precast.WS["Impulse Drive"] = {
     ammo="Knobkierrie",                 -- __, 23, __,  6, __ (__, __)
-    head=gear.Nyame_B_head,             -- 26, 65, 50, 11, __ (__, __)
+    head="Peltast's Mezail +3",         -- 36, 71, 61, 12, __ (__, __)
     body="Gleti's Cuirass",             -- 39, 70, 55, __,  9 ( 8, __)
     hands=gear.Nyame_B_hands,           -- 17, 65, 40, 11, __ (__, __)
     legs="Peltast's Cuissots +2",       -- 48, 63, 53, __, __ (__, 12)
@@ -460,9 +450,8 @@ function init_gear_sets()
     ring2="Sroda Ring",                 -- 15, __, __, __,  3 (__, __)
     back=gear.DRG_WS2_Cape,             -- 30, 20, 20, 10, __ (__, __)
     waist="Sailfi Belt +1",             -- 15, 15, __, __, __ (__, __)
-    -- 248 STR, 431 Att, 300 Acc, 52 WSD, 22 PDL (12 Crit Rate, 12 Crit Dmg)
+    -- 258 STR, 437 Att, 311 Acc, 53 WSD, 22 PDL (12 Crit Rate, 12 Crit Dmg)
 
-    -- head="Peltast's Mezail +3",      -- 36, 71, 61, 12, __ (__, __)
     -- legs="Peltast's Cuissots +3",    -- 53, 73, 63, __, __ (__, 13)
     -- 263 STR, 447 Att, 321 Acc, 52 WSD, 22 PDL (12 Crit Rate, 13 Crit Dmg)
   }
@@ -498,7 +487,7 @@ function init_gear_sets()
   -- 80% DEX
   sets.precast.WS["Geirskogul"] = {
     ammo="Knobkierrie",                 -- __, 23, __,  6, __
-    head=gear.Nyame_B_head,             -- 25, 65, 50, 11, __
+    head="Peltast's Mezail +3",         -- 32, 71, 61, 12, __
     body=gear.Nyame_B_body,             -- 24, 65, 40, 13, __
     hands=gear.Nyame_B_hands,           -- 42, 65, 40, 11, __
     legs=gear.Lustratio_B_legs,         -- 43, 38, 20, __, __
@@ -511,9 +500,8 @@ function init_gear_sets()
     back=gear.DRG_WS2_Cape,             -- __, 20, 20, 10, __
     waist="Kentarch Belt +1",           -- 10, __, 14, __, __
     -- Lustratio set effect                __, __, __,  4, __
-    -- 212 DEX, 276 Attack, 188 Accuracy, 60 WSD, 0 PDL
+    -- 219 DEX, 282 Attack, 199 Accuracy, 61 WSD, 0 PDL
 
-    -- head="Peltast's Mezail +3",      -- 32, 71, 61, 12, __
     -- back=gear.DRG_WS4_Cape,          -- 30, 20, 20, 10, __
     -- 249 DEX, 282 Attack, 199 Accuracy, 61 WSD, 0 PDL
   }
