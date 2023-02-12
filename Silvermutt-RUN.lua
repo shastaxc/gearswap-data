@@ -118,7 +118,7 @@ function job_setup()
   blue_magic_maps = {}
   blue_magic_maps.Enmity = S{'Blank Gaze', 'Geist Wall', 'Jettatura', 'Soporific',
       'Poison Breath', 'Blitzstrahl', 'Sheep Song', 'Chaotic Eye'}
-  blue_magic_maps.Cure = S{'Wild Carrot', 'Healing Breeze'}
+  blue_magic_maps.Cure = S{'Wild Carrot', 'Healing Breeze', 'Magic Fruit'}
   blue_magic_maps.Buffs = S{'Cocoon', 'Refueling'}
 
   state.Kiting:set('On')
@@ -352,6 +352,9 @@ function init_gear_sets()
     back=gear.RUN_HPD_Cape,                       -- 10/__,  20 [ 80] <10>
     waist={name="Kasiri Belt",priority=1},        -- __/__, ___ [ 30] < 3>
     -- 54 PDT / 40 MDT, 488 M.Eva [992 HP] <76 Enmity>
+    
+    -- feet="Erilaz Greaves +2",                  -- 11/11, 157 [ 48] < 8>
+    -- 55 PDT / 41 MDT, 498 M.Eva [1002 HP] <77 Enmity>
   }
 
   -- PDT/MDT, M.Eva [HP] {SIRD}
@@ -425,6 +428,10 @@ function init_gear_sets()
     back=gear.RUN_HPD_Cape,                             -- 10/__,  20 [ 80] <10>
     waist={name="Kasiri Belt",priority=1},              -- __/__, ___ [ 30] < 3>
     -- 53 PDT / 45 MDT, 518 M.Eva [1039 HP] <66 Enmity>
+
+    -- feet="Erilaz Greaves +3",                  -- 11/11, 157 [ 48] < 8>
+    -- ring1="Eihwaz Ring",                       -- __/__, ___ [ 70] < 5>
+    -- 49 PDT / 41 MDT, 528 M.Eva [1009 HP] <72 Enmity>
   }
   sets.precast.JA['Valiance'] = set_combine(sets.precast.JA['Vallation'], {})
   sets.precast.JA['Battuta'] = set_combine(sets.Enmity, {
@@ -689,6 +696,9 @@ function init_gear_sets()
     -- Master Levels                                                    (__, 24)
     -- Base skill                                                       (__, 388)
     -- 41 PDT/38 MDT, 552 M.Eva [695 HP] (45 Enh Duration, 539 Enh Skill)
+    
+    -- feet="Erilaz Greaves +3",                    -- 11/11, 157 [ 48] (__, __)
+    -- 42 PDT/39 MDT, 562 M.Eva [705 HP] (45 Enh Duration, 539 Enh Skill)
   }
   sets.midcast.Temper.Safe = set_combine(sets.midcast.BarElement, {})
   sets.midcast.Protect = {
@@ -707,6 +717,9 @@ function init_gear_sets()
     waist="Audumbla Sash",                          --  4/__, ___ [___] (__, __)
     -- Merits/Traits/Gifts                                              (20, 52)
     -- 38 PDT/28 MDT, 567 M.Eva [1200 HP] (95 Enh Duration, N/A Enh Skill)
+    
+    -- feet="Erilaz Greaves +3",                    -- 11/11, 157 [ 48] (__, __)
+    -- 49 PDT/39 MDT, 577 M.Eva [1172 HP] (95 Enh Duration, N/A Enh Skill)
   }
   sets.midcast.Shell = set_combine(sets.midcast.Protect, {})
 
@@ -730,7 +743,7 @@ function init_gear_sets()
     -- 61 Total Phalanx
     
     -- Master Levels                                   50
-    -- 27 Phalanx, 500 Enh Skill, 27% Interrupt [47 PDT/25 MDT, 874 HP] 874 HP
+    -- 27 Phalanx, 500 Enh Skill, 27% Interrupt [47 PDT/25 MDT, 365 M.Eva] 874 HP
     -- 62 Total Phalanx
   }
   sets.midcast['Phalanx'].Embolden = set_combine(sets.midcast['Phalanx'], {
@@ -954,18 +967,21 @@ function init_gear_sets()
     ammo="Coiste Bodhar",             -- 10, __, 15, __, __ < 3, __, __> [__/__, ___] ___
     head=gear.Nyame_B_head,           -- 26, 50, 65, 11, __ < 5, __, __> [ 7/ 7, 123]  91
     body=gear.Nyame_B_body,           -- 35, 40, 65, 13, __ < 7, __, __> [ 9/ 9, 139] 136
-    hands=gear.Adhemar_B_hands,       -- 27, 32, 20, __, __ <__,  4, __> [__/__,  43]  22
-    legs=gear.Samnuha_legs,           -- 48, 15, __, __, __ < 3,  3, __> [__/__,  75]  41
-    feet=gear.Herc_TA_feet,           -- 16, 23, 14, __, __ <__,  2, __> [ 2/__,  75]   9
+    hands=gear.Nyame_B_hands,         -- 17, 40, 65, 11, __ < 5, __, __> [ 7/ 7, 112]  91
+    legs=gear.Nyame_B_legs,           -- 58, 40, 65, 12, __ < 6, __, __> [ 8/ 8, 150] 114
+    feet=gear.Nyame_B_feet,           -- 23, 53, 65, 11, __ < 5, __, __> [ 7/ 7, 150]  68
     neck="Fotia Gorget",              -- __, 10, __, __, __ <__, __, __> [__/__, ___] ___; ftp+
     ear1="Moonshade Earring",         -- __,  4, __, __, __ <__, __, __> [__/__, ___] ___; tp bonus
     ear2="Sherida Earring",           --  5, __, __, __, __ < 5, __, __> [__/__, ___] ___
-    ring1="Gelatinous Ring +1",       -- __, __, __, __, __ <__, __, __> [ 7/-1, ___] 135
-    ring2="Defending Ring",           -- __, __, __, __, __ <__, __, __> [10/10, ___] ___
-    back=gear.RUN_WS1_Cape,           -- 30, 20, 20, __, __ <10, __, __> [10/__, ___] ___ 
+    ring1="Niqmaddu Ring",            -- 10, __, __, __, __ <__, __,  3> [__/__, ___] ___
+    ring2="Epona's Ring",             -- __, __, __, __, __ < 3,  3, __> [__/__, ___] ___
+    back=gear.RUN_WS1_Cape,           -- 30, 20, 20, __, __ <10, __, __> [10/__, ___] ___
     waist="Fotia Belt",               -- __, 10, __, __, __ <__, __, __> [__/__, ___] ___; ftp+
-    -- 197 STR, 204 Acc, 199 Att, 24 WSD, 0 PDL <33 DA, 9 TA, QA> [45 PDT/25 MDT, 455 M.Eva] 434 HP
+    -- 214 STR, 267 Acc, 360 Att, 58 WSD, 0 PDL <49 DA, 3 TA, 3 QA> [48 PDT/38 MDT, 674 M.Eva] 500 HP
   }
+  sets.precast.WS['Resolution'].AttCappedMaxTP = set_combine(sets.precast.WS['Resolution'].AttCapped, {
+    ear1="Brutal Earring",            -- __, __, __, __, __ < 5, __, __> [__/__, ___] ___
+  })
   sets.precast.WS['Resolution'].Safe = {
     ammo="Coiste Bodhar",                       -- 10, __, 15, __, __ < 3, __, __> [__/__, ___] ___
     head=gear.Nyame_B_head,                     -- 26, 50, 65, 11, __ < 5, __, __> [ 7/ 7, 123]  91
@@ -1049,6 +1065,7 @@ function init_gear_sets()
     -- 195 DEX, 227 Acc, 346 Att, 52 WSD, 0 PDL <30 DA, 0 TA, 3 QA> [50 PDT/42 MDT, 554 M.Eva] 944 HP
   })
 
+  -- 50% STR/50% MND.
   sets.precast.WS['Savage Blade'] = {
     ammo="Knobkierrie",                         -- __, __, __, 23,  6, __ [__/__] ___
     head=gear.Nyame_B_head,                     -- 26, 26, 50, 65, 11, __ [ 7/ 7]  91
@@ -1197,6 +1214,7 @@ function init_gear_sets()
     -- 187 DEX, 56 STP, 307 Acc, 24 Haste <24 DA, 7 TA, 0 QA> [49 PDT/39 MDT, 527 M.Eva] 618 HP
 
     -- body="Ashera Harness",         -- 40, 10, 45,  4 <__, __, __> [ 7/ 7,  96] 182
+    -- 203 DEX, 66 STP, 312 Acc, 25 Haste <17 DA, 7 TA, 0 QA> [47 PDT/37 MDT, 484 M.Eva] 664 HP
   }
   sets.engaged.LightDef.LowAcc = set_combine(sets.engaged.LightDef, {
     ear2="Cessance Earring",          -- __,  3,  6, __ < 3, __, __> [__/__, ___] ___
@@ -1311,6 +1329,9 @@ function init_gear_sets()
     -- Bar-spell                    -- __/__, ___ [___] __ (__, 131) __, __
     -- Trait                        -- __/__, ___ [___] 22 (__, ___) __, __
     -- 51(+25)PDT / 51 MDT, 534 Meva [1129 HP] 54 M.Def.Bns. (0 Status Resist, 434 Ele Resist) 81 Enmity, 15 Fast Cast
+    
+    -- feet="Erilaz Greaves +3",    -- 11/11, 157 [ 48]  9 (__,  35)  8, __
+    -- 52(+25)PDT / 52 MDT, 544 Meva [1139 HP] 55 M.Def.Bns. (0 Status Resist, 439 Ele Resist) 82 Enmity, 15 Fast Cast
   }
 
   sets.buff.Doom = {
