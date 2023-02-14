@@ -1230,6 +1230,29 @@ end
 function update_combat_form()
   if not use_dw_if_available or silibs.get_dual_wield_needed() <= 0 or not silibs.is_dual_wielding() then
     state.CombatForm:reset()
+    
+    if player and player.equipment and player.equipment.main and player.equipment.main ~= 'empty' then
+      local using_aftermath
+      for weapon,am_list in pairs(activate_AM_mode) do
+        if player.equipment.main == weapon or player.equipment.ranged == weapon then
+          for am_level,_ in pairs(am_list) do
+            if buffactive[am_level] then
+              state.CombatForm:set(weapon..'AM')
+              using_aftermath = true
+              break
+            end
+          end
+        end
+      end
+
+      -- If no AM melee group, check for 2 handed weapon
+      if not using_aftermath then
+        local main_weapon_skill = res.items:with('en', player.equipment.main).skill
+        if skill_ids_2h:contains(main_weapon_skill) then
+          state.CombatForm:set('TwoHanded')
+        end
+      end
+    end
   else
     if silibs.get_dual_wield_needed() > 0 and silibs.get_dual_wield_needed() <= 6 then
       state.CombatForm:set('LowDW')
@@ -1511,28 +1534,6 @@ function update_melee_groups()
 
     if state.Buff['Mighty Strikes'] then
       classes.CustomMeleeGroups:append('Mighty')
-    end
-
-    for weapon,am_list in pairs(activate_AM_mode) do
-      if player.equipment.main == weapon or player.equipment.ranged == weapon then
-        for am_level,_ in pairs(am_list) do
-          if buffactive[am_level] then
-            classes.CustomMeleeGroups:append(weapon..'AM')
-          end
-        end
-      end
-    end
-
-    -- If no AM melee group, check for 2 handed weapon
-    if player and player.equipment and player.equipment.main and player.equipment.main ~= 'empty' then
-      if not classes.CustomMeleeGroups:map(function(group)
-            return group:slice(#group-2)
-          end):contains('AM') then
-        local main_weapon_skill = res.items:with('en', player.equipment.main).skill
-        if skill_ids_2h:contains(main_weapon_skill) then
-          classes.CustomMeleeGroups:append('TwoHanded')
-        end
-      end
     end
   end
 end
