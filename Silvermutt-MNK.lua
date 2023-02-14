@@ -70,7 +70,7 @@ function job_setup()
   info.boost_temp_lock = false -- Do not modify
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
-  state.HybridMode:options('LightDef', 'HeavyDef', 'Normal')
+  state.HybridMode:options('Normal', 'HeavyDef')
   state.IdleMode:options('Normal', 'HeavyDef')
   state.PhysicalDefenseMode = M{['description'] = 'Physical Defense Mode', 'PDT', 'Cait Sith'}
 
@@ -80,6 +80,11 @@ function job_setup()
   state.WeaponSet = M{['description']='Weapon Set', 'Verethragna', 'Piercing', 'Slashing', 'Cleaving'}
   state.EnmityMode = M{['description']='Enmity Mode', 'Normal', 'Low', 'Schere'}
   state.Runes = M{['description']='Runes', 'Ignis', 'Gelus', 'Flabra', 'Tellus', 'Sulpor', 'Unda', 'Lux', 'Tenebrae'}
+
+  -- DO NOT MODIFY
+  activate_AM_mode = {
+    ["Verethragna"] = S{"Aftermath: Lv.3"},
+  }
 
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c interact')
@@ -131,6 +136,7 @@ function user_setup()
   end
 
   update_melee_groups()
+  update_combat_form()
 
   select_default_macro_book()
 end
@@ -689,59 +695,6 @@ function init_gear_sets()
 
 
   ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Engaged Sets ------------------------------------------
-  ------------------------------------------------------------------------------------------------
-
-  sets.engaged = {
-    ammo="Crepuscular Pebble",      -- __, __,  3, __, __ <__, __, __> [ 3/ 3, ___] (___, __) __, __, __(__)
-    head=gear.Adhemar_B_head,       -- __, __, __, __,  6 <__,  4, __> [__/__,  59] (___, __) __, __, __(__)
-    body="Kendatsuba Samue +1",     -- __, 52, __,  9, __ <__,  6, __> [__/__, 117] (___, __) __, __, 12(__)
-    hands=gear.Adhemar_A_hands,     --  7, 52, __, __, __ <__,  4, __> [__/__,  43] (___, __) __, __, __(__)
-    legs="Hesychast's Hose +3",     -- __, 39, __,  8, __ <__, __, __> [__/__,  84] (___, 19) __, __, 10(__)
-    feet="Anchorite's Gaiters +3",  -- __, 46, __, __, __ <__, __, __> [__/__,  84] (120, 10) __, __, __(__)
-    neck="Monk's Nodowa +2",        -- __, 30, 10, __, __ <__, __, __> [__/__, ___] ( 20, 25) __, __, __(__)
-    ear1="Sherida Earring",         --  5, __, __, __, __ < 5, __, __> [__/__, ___] (___, __) __, __, __( 5)
-    ear2="Bhikku Earring +1",       --  4, 15, __, __, __ <__, __, __> [__/__, ___] (___, __) __,  8, __(__)
-    ring1="Gere Ring",              -- __, __, __, __, __ <__,  5, __> [__/__, ___] (___, __) __, __, __(__)
-    ring2="Niqmaddu Ring",          -- __, __, __, __, __ <__, __,  3> [__/__, ___] (___, __) __, __, __( 5)
-    back=gear.MNK_DEX_DA_Cape,      -- __, 20, __, __, __ <10, __, __> [10/__, ___] ( 25, 10) __, __, __(__)
-    waist="Moonbow Belt +1",        -- __, __, __, __, __ <__,  8, __> [ 6/ 6, ___] (___, __) __, __, __(15)
-    -- Merits/Traits/Gifts             __, __, __,  5, __ <__, __, __> [__/__, ___] (___, 19)  9, 27, 35(__)
-    -- 16 STP, 254 Acc, 13 PDL, 22 Crit Rate, 6 Crit Dmg <15 DA, 27 TA, 3 QA> [19 PDT/9 MDT, 387 M.Eva] (165 Kick Dmg, 83 Kick Rate) 9 Martial Arts, 35 Counter, 75 Subtle Blow
-    
-    -- Ideal:
-    -- ear2="Bhikku Earring +2",    --  6, 20, __, __, __ <__, __, __> [__/__, ___] (___, __) __,  9, __(__)
-    -- 18 STP, 259 Acc, 13 PDL, 22 Crit Rate, 6 Crit Dmg <15 DA, 27 TA, 3 QA> [21 PDT/11 MDT, 387 M.Eva] (165 Kick Dmg, 83 Kick Rate) 9 Martial Arts, 36 Counter, 75 Subtle Blow
-  }
-  sets.engaged.LowAcc = set_combine(sets.engaged, {
-    ammo="Ginsen",
-  })
-  sets.engaged.MidAcc = set_combine(sets.engaged.LowAcc, {
-    head="Kendatsuba Jinpachi +1",
-  })
-  sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
-    ammo="Falcon Eye",
-    ring1="Chirich Ring +1",
-  })
-
-  sets.engaged.Impetus = set_combine(sets.engaged, sets.Special.Impetus)
-  sets.engaged.Footwork = set_combine(sets.engaged, sets.Special.Footwork)
-  sets.engaged.Impetus.Footwork = set_combine(sets.engaged, sets.Special.ImpetusAndFootwork)
-
-  sets.engaged.LowAcc.Impetus = set_combine(sets.engaged.LowAcc, sets.Special.Impetus)
-  sets.engaged.LowAcc.Footwork = set_combine(sets.engaged.LowAcc, sets.Special.Footwork)
-  sets.engaged.LowAcc.Impetus.Footwork = set_combine(sets.engaged.LowAcc, sets.Special.ImpetusAndFootwork)
-
-  sets.engaged.MidAcc.Impetus = set_combine(sets.engaged.MidAcc, sets.Special.Impetus)
-  sets.engaged.MidAcc.Footwork = set_combine(sets.engaged.MidAcc, sets.Special.Footwork)
-  sets.engaged.MidAcc.Impetus.Footwork = set_combine(sets.engaged.MidAcc, sets.Special.ImpetusAndFootwork)
-
-  sets.engaged.HighAcc.Impetus = set_combine(sets.engaged.HighAcc, sets.Special.Impetus)
-  sets.engaged.HighAcc.Footwork = set_combine(sets.engaged.HighAcc, sets.Special.Footwork)
-  sets.engaged.HighAcc.Impetus.Footwork = set_combine(sets.engaged.HighAcc, sets.Special.ImpetusAndFootwork)
-
-
-  ------------------------------------------------------------------------------------------------
   ---------------------------------------- Defense Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
 
@@ -850,10 +803,49 @@ function init_gear_sets()
 
 
   ------------------------------------------------------------------------------------------------
+  ---------------------------------------- Engaged Sets ------------------------------------------
+  ------------------------------------------------------------------------------------------------
+
+  -- Focus STP, KA, Multihit
+  sets.engaged = {
+    ammo="Coiste Bodhar",           --  3, __, __, __, __ < 3, __, __> [__/__, ___] (___, __) __, __, __(__)
+    head="Malignance Chapeau",      --  8, 50,  3, __, __ <__, __, __> [ 6/ 6, 123] (___, __) __, __, __(__)
+    body="Mpaca's Doublet",         --  8, 55, __,  7, __ <__,  4, __> [10/__,  86] (___, __) __, 10, __(__)
+    hands="Malignance Gloves",      -- 12, 50,  4, __, __ <__, __, __> [ 5/ 5, 112] (___, __) __, __, __(__)
+    legs="Bhikku Hose +2",          --  9, 53, __, __, __ <__, __, __> [13/13, 109] (___, 25) __, __, __(__)
+    feet="Tatenashi Sune-Ate +1",   --  8, 60, __, __, __ <__,  3, __> [__/__,  80] (___, __) __, __, __(__)
+    neck="Monk's Nodowa +2",        -- __, 30, 10, __, __ <__, __, __> [__/__, ___] ( 20, 25) __, __, __(__)
+    ear1="Sherida Earring",         --  5, __, __, __, __ < 5, __, __> [__/__, ___] (___, __) __, __, __( 5)
+    ear2="Bhikku Earring +1",       --  4, 15, __, __, __ <__, __, __> [__/__, ___] (___, __) __,  8, __(__)
+    ring1="Gere Ring",              -- __, __, __, __, __ <__,  5, __> [__/__, ___] (___, __) __, __, __(__)
+    ring2="Chirich Ring +1",        --  6, 10, __, __, __ <__, __, __> [__/__, ___] (___, __) __, __, 10(__)
+    back=gear.MNK_DEX_DA_Cape,      -- __, 20, __, __, __ <10, __, __> [10/__, ___] ( 25, 10) __, __, __(__)
+    waist="Moonbow Belt +1",        -- __, __, __, __, __ <__,  8, __> [ 6/ 6, ___] (___, __) __, __, __(15)
+    -- Merits/Traits/Gifts             __, __, __,  5, __ <__, __, __> [__/__, ___] (___, 19)  9, 27, 35(__)
+    -- 63 STP, 343 Acc, 17 PDL, 12 Crit Rate, 0 Crit Dmg <18 DA, 20 TA, 0 QA> [50 PDT/30 MDT, 510 M.Eva] (45 Kick Dmg, 79 Kick Rate) 9 Martial Arts, 45 Counter, 65 Subtle Blow
+
+    -- Ideal:
+    -- legs="Bhikku Hose +3",       -- 10, 63, __, __, __ <__, __, __> [14/14, 119] (___, 30) __, __, __(__)
+    -- ear2="Bhikku Earring +2",    --  6, 20, __, __, __ <__, __, __> [__/__, ___] (___, __) __,  9, __(__)
+    -- 66 STP, 358 Acc, 17 PDL, 12 Crit Rate, 0 Crit Dmg <18 DA, 20 TA, 0 QA> [51 PDT/31 MDT, 520 M.Eva] (45 Kick Dmg, 84 Kick Rate) 9 Martial Arts, 46 Counter, 65 Subtle Blow
+  }
+  sets.engaged.LowAcc = set_combine(sets.engaged, {
+    ammo="Ginsen",
+    ear1="Telos Earring",
+  })
+  sets.engaged.MidAcc = set_combine(sets.engaged.LowAcc, {
+    ring1="Chirich Ring +1",
+  })
+  sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
+    waist="Olseni Belt",
+  })
+
+
+  ------------------------------------------------------------------------------------------------
   ---------------------------------------- Hybrid Sets -------------------------------------------
   ------------------------------------------------------------------------------------------------
 
-  sets.engaged.LightDef = {
+  sets.engaged.VerethragnaAM = {
     ammo="Crepuscular Pebble",      -- __, __,  3, __, __ <__, __, __> [ 3/ 3, ___] (___, __) __, __, __(__)
     head="Malignance Chapeau",      --  8, 50,  3, __, __ <__, __, __> [ 6/ 6, 123] (___, __) __, __, __(__)
     body="Malignance Tabard",       -- 11, 50,  6, __, __ <__, __, __> [ 9/ 9, 139] (___, __) __, __, __(__)
@@ -874,7 +866,7 @@ function init_gear_sets()
     -- ear2="Bhikku Earring +2",    --  6, 20, __, __, __ <__, __, __> [__/__, ___] (___, __) __,  9, __(__)
     -- 42 STP, 305 Acc, 26 PDL, 13 Crit Rate, 6 Crit Dmg <15 DA, 13 TA, 3 QA> [39 PDT/29 MDT, 542 M.Eva] (165 Kick Dmg, 83 Kick Rate) 9 Martial Arts, 36 Counter, 70 Subtle Blow
   }
-  sets.engaged.LightDef.Impetus = set_combine(sets.engaged.LightDef, {
+  sets.engaged.VerethragnaAM.Impetus = set_combine(sets.engaged.VerethragnaAM, {
     body="Bhikku Cyclas +2",        -- __, 54, __, __, __ <__, __, __> [__/__,  99] (___, __)  7, __, __(__)
     legs="Bhikku Hose +2",          --  9, 53, __, __, __ <__, __, __> [13/13, 109] (___, 25) __, __, __(__)
     -- 38 STP, 318 Acc, 20 PDL, 5 Crit Rate, 6 Crit Dmg <15 DA, 13 TA, 3 QA> [43 PDT/33 MDT, 527 M.Eva] (165 Kick Dmg, 89 Kick Rate) 16 Martial Arts, 35 Counter, 60 Subtle Blow
@@ -886,25 +878,9 @@ function init_gear_sets()
     -- Ideal:
     -- 41 STP, 343 Acc, 20 PDL,  5 Crit Rate, 0 Crit Dmg <15 DA, 13 TA, 3 QA> [44 PDT/34 MDT, 547 M.Eva] (165 Kick Dmg, 94 Kick Rate) 17 Martial Arts, 36 Counter, 60 Subtle Blow
   })
-  sets.engaged.LightDef.Footwork = set_combine(sets.engaged.LightDef, {})
-  sets.engaged.LightDef.Impetus.Footwork = set_combine(sets.engaged.LightDef.Impetus, {})
 
-  sets.engaged.LowAcc.LightDef = set_combine(sets.engaged.LightDef, {})
-  sets.engaged.LowAcc.LightDef.Impetus = set_combine(sets.engaged.LightDef.Impetus, {})
-  sets.engaged.LowAcc.LightDef.Footwork = set_combine(sets.engaged.LightDef.Footwork, {})
-  sets.engaged.LowAcc.LightDef.Impetus.Footwork = set_combine(sets.engaged.LightDef.Impetus.Footwork, {})
-
-  sets.engaged.MidAcc.LightDef = set_combine(sets.engaged.LightDef, {})
-  sets.engaged.MidAcc.LightDef.Impetus = set_combine(sets.engaged.LightDef.Impetus, {})
-  sets.engaged.MidAcc.LightDef.Footwork = set_combine(sets.engaged.LightDef.Footwork, {})
-  sets.engaged.MidAcc.LightDef.Impetus.Footwork = set_combine(sets.engaged.LightDef.Impetus.Footwork, {})
-
-  sets.engaged.HighAcc.LightDef = set_combine(sets.engaged.LightDef, {})
-  sets.engaged.HighAcc.LightDef.Impetus = set_combine(sets.engaged.LightDef.Impetus, {})
-  sets.engaged.HighAcc.LightDef.Footwork = set_combine(sets.engaged.LightDef.Footwork, {})
-  sets.engaged.HighAcc.LightDef.Impetus.Footwork = set_combine(sets.engaged.LightDef.Impetus.Footwork, {})
-
-  sets.engaged.HeavyDef = {
+  -- TODO: NOT equipping
+  sets.engaged.VerethragnaAM.HeavyDef = {
     ammo="Crepuscular Pebble",      -- __, __,  3, __, __ <__, __, __> [ 3/ 3, ___] (___, __) __, __, __(__)
     head="Malignance Chapeau",      --  8, 50,  3, __, __ <__, __, __> [ 6/ 6, 123] (___, __) __, __, __(__)
     body="Malignance Tabard",       -- 11, 50,  6, __, __ <__, __, __> [ 9/ 9, 139] (___, __) __, __, __(__)
@@ -926,7 +902,7 @@ function init_gear_sets()
     -- ear2="Bhikku Earring +2",    --  6, 20, __, __, __ <__, __, __> [__/__, ___] (___, __) __,  9, __(__)
     -- 52 STP, 329 Acc, 26 PDL,  5 Crit Rate, 0 Crit Dmg <15 DA, 13 TA, 3 QA> [53 PDT/43 MDT, 577 M.Eva] (165 Kick Dmg, 94 Kick Rate) 9 Martial Arts, 36 Counter, 60 Subtle Blow
   }
-  sets.engaged.HeavyDef.Impetus = set_combine(sets.engaged.HeavyDef, {
+  sets.engaged.VerethragnaAM.HeavyDef.Impetus = set_combine(sets.engaged.VerethragnaAM.HeavyDef, {
     body="Bhikku Cyclas +2",        -- __, 54, __, __, __ <__, __, __> [__/__,  99] (___, __)  7, __, __(__)
     legs="Bhikku Hose +2",          --  9, 53, __, __, __ <__, __, __> [13/13, 109] (___, 25) __, __, __(__)
     ring2="Defending Ring",         -- __, __, __, __, __ <__, __, __> [10/10, ___] (___, __) __, __, __(__)
@@ -939,23 +915,7 @@ function init_gear_sets()
     -- Ideal:
     -- 41 STP, 343 Acc, 20 PDL,  5 Crit Rate, 0 Crit Dmg <15 DA, 13 TA, 0 QA> [54 PDT/44 MDT, 547 M.Eva] (165 Kick Dmg, 94 Kick Rate) 17 Martial Arts, 36 Counter, 55 Subtle Blow
   })
-  sets.engaged.HeavyDef.Footwork = set_combine(sets.engaged.HeavyDef, {})
-  sets.engaged.HeavyDef.Impetus.Footwork = set_combine(sets.engaged.HeavyDef.Impetus, {})
 
-  sets.engaged.LowAcc.HeavyDef = set_combine(sets.engaged.HeavyDef, {})
-  sets.engaged.LowAcc.HeavyDef.Impetus = set_combine(sets.engaged.HeavyDef.Impetus, {})
-  sets.engaged.LowAcc.HeavyDef.Footwork = set_combine(sets.engaged.HeavyDef.Footwork, {})
-  sets.engaged.LowAcc.HeavyDef.Impetus.Footwork = set_combine(sets.engaged.HeavyDef.Impetus.Footwork, {})
-
-  sets.engaged.MidAcc.HeavyDef = set_combine(sets.engaged.HeavyDef, {})
-  sets.engaged.MidAcc.HeavyDef.Impetus = set_combine(sets.engaged.HeavyDef.Impetus, {})
-  sets.engaged.MidAcc.HeavyDef.Footwork = set_combine(sets.engaged.HeavyDef.Footwork, {})
-  sets.engaged.MidAcc.HeavyDef.Impetus.Footwork = set_combine(sets.engaged.HeavyDef.Impetus.Footwork, {})
-
-  sets.engaged.HighAcc.HeavyDef = set_combine(sets.engaged.HeavyDef, {})
-  sets.engaged.HighAcc.HeavyDef.Impetus = set_combine(sets.engaged.HeavyDef.Impetus, {})
-  sets.engaged.HighAcc.HeavyDef.Footwork = set_combine(sets.engaged.HeavyDef.Footwork, {})
-  sets.engaged.HighAcc.HeavyDef.Impetus.Footwork = set_combine(sets.engaged.HeavyDef.Impetus.Footwork, {})
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -1168,6 +1128,7 @@ function job_handle_equipping_gear(playerStatus, eventArgs)
   check_gear()
   update_idle_groups()
   update_melee_groups()
+  update_combat_form()
 end
 
 -- Function to display the current relevant user state when doing an update.
@@ -1420,6 +1381,21 @@ function update_melee_groups()
   end
   if buffactive.counterstance then
     classes.CustomMeleeGroups:append('Counterstance')
+  end
+end
+
+function update_combat_form()
+  state.CombatForm:reset()
+  
+  -- Add aftermath groups
+  for weapon,am_list in pairs(activate_AM_mode) do
+    if player.equipment.main == weapon or player.equipment.ranged == weapon then
+      for am_level,_ in pairs(am_list) do
+        if buffactive[am_level] then
+          state.CombatForm:set(weapon..'AM')
+        end
+      end
+    end
   end
 end
 
