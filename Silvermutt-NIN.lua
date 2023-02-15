@@ -313,7 +313,7 @@ function init_gear_sets()
     -- feet="Hattori Kyahan +3",
   }
   sets.precast.WS.MaxTP = set_combine(sets.precast.WS, {
-    ear2="Hattori Earring",
+    ear2="Hattori Earring +1",
 
     -- ear1="Lugra Earring +1",
     -- ear2="Hattori Earring +2",
@@ -327,7 +327,7 @@ function init_gear_sets()
     feet=gear.Nyame_B_feet,
     -- neck="Ninja Nodowa +2",
     ear1="Moonshade Earring",
-    ear2="Hattori Earring",
+    ear2="Hattori Earring +1",
     ring1="Sroda Ring",
     ring2="Epaminondas's Ring",
     -- back=gear.NIN_WSD_STR_Cape,
@@ -337,7 +337,7 @@ function init_gear_sets()
     -- ear2="Hattori Earring +2",
   })
   sets.precast.WS.AttCappedMaxTP = set_combine(sets.precast.WS.AttCapped, {
-    ear2="Hattori Earring",
+    ear2="Hattori Earring +1",
 
     -- ear1="Lugra Earring +1",
     -- ear2="Hattori Earring +2",
@@ -445,7 +445,7 @@ function init_gear_sets()
     feet=gear.Nyame_B_feet,
     -- neck="Ninja Nodowa +2",
     ear1="Odr Earring",
-    ear2="Hattori Earring",
+    ear2="Hattori Earring +1",
     ring1="Begrudging Ring",
     ring2="Regal Ring",
     -- back=gear.NIN_Crit_AGI_Cape,
@@ -466,7 +466,7 @@ function init_gear_sets()
     feet=gear.Nyame_B_feet,
     -- neck="Ninja Nodowa +2",
     ear1="Odr Earring",
-    ear2="Hattori Earring",
+    ear2="Hattori Earring +1",
     ring1="Epaminondas's Ring",
     ring2="Sroda Ring",
     -- back=gear.NIN_WSD_AGI_Cape,
@@ -486,7 +486,7 @@ function init_gear_sets()
     feet=gear.Nyame_B_feet,
     -- neck="Ninja Nodowa +2",
     ear1="Lugra Earring +1",
-    ear2="Hattori Earring",
+    ear2="Hattori Earring +1",
     ring1="Sroda Ring",
     ring2="Gere Ring",
     -- back=gear.NIN_WSD_STR_Cape,
@@ -504,7 +504,7 @@ function init_gear_sets()
     feet=gear.Nyame_B_feet,
     -- neck="Ninja Nodowa +2",
     ear1="Lugra Earring +1",
-    ear2="Hattori Earring",
+    ear2="Hattori Earring +1",
     ring1="Sroda Ring",
     ring2="Gere Ring",
     -- back=gear.NIN_WSD_STR_Cape,
@@ -523,7 +523,7 @@ function init_gear_sets()
     feet=gear.Nyame_B_feet,
     neck="Fotia Gorget",
     ear1="Lugra Earring +1",
-    ear2="Hattori Earring",
+    ear2="Hattori Earring +1",
     ring1="Gere Ring",
     ring2="Regal Ring",
     -- back=gear.NIN_DA_STR_Cape,
@@ -542,7 +542,7 @@ function init_gear_sets()
     feet=gear.Nyame_B_feet,
     -- neck="Ninja Nodowa +2",
     ear1="Lugra Earring +1",
-    ear2="Hattori Earring",
+    ear2="Hattori Earring +1",
     ring1="Sroda Ring",
     ring2="Gere Ring",
     -- back=gear.NIN_DA_STR_Cape,
@@ -562,7 +562,7 @@ function init_gear_sets()
     feet=gear.Nyame_B_feet,
     -- neck="Ninja Nodowa +2",
     ear1="Lugra Earring +1",
-    ear2="Hattori Earring",
+    ear2="Hattori Earring +1",
     ring1="Gere Ring",
     ring2="Regal Ring",
     -- back=gear.NIN_WSD_DEX_Cape,
@@ -581,7 +581,7 @@ function init_gear_sets()
     feet=gear.Nyame_B_feet,
     -- neck="Ninja Nodowa +2",
     ear1="Lugra Earring +1",
-    ear2="Hattori Earring",
+    ear2="Hattori Earring +1",
     ring1="Gere Ring",
     ring2="Epaminondas's Ring",
     -- back=gear.NIN_WSD_DEX_Cape,
@@ -610,7 +610,7 @@ function init_gear_sets()
     -- feet="Hattori Kyahan +3",
   }
   sets.precast.WS['Blade: Shun'].MaxTP = set_combine(sets.precast.WS['Blade: Shun'], {
-    ear2="Hattori Earring",
+    ear2="Hattori Earring +1",
 
     -- ear1="Lugra Earring +1",
     -- ear2="Hattori Earring +2",
@@ -633,7 +633,7 @@ function init_gear_sets()
     -- feet="Hattori Kyahan +3",
   }
   sets.precast.WS['Blade: Shun'].AttCappedMaxTP = set_combine(sets.precast.WS['Blade: Shun'].AttCapped, {
-    ear2="Hattori Earring",
+    ear2="Hattori Earring +1",
 
     -- ear1="Lugra Earring +1",
     -- ear2="Hattori Earring +2",
@@ -657,7 +657,7 @@ function init_gear_sets()
     -- feet="Hattori Kyahan +3",
   }
   sets.precast.WS['Blade: Ten'].MaxTP = set_combine(sets.precast.WS['Blade: Ten'], {
-    ear2="Hattori Earring",
+    ear2="Hattori Earring +1",
 
     -- ear1="Lugra Earring +1",
     -- ear2="Hattori Earring +2",
@@ -680,7 +680,7 @@ function init_gear_sets()
     -- feet="Hattori Kyahan +3",
   }
   sets.precast.WS['Blade: Ten'].AttCappedMaxTP = set_combine(sets.precast.WS['Blade: Ten'].AttCapped, {
-    ear2="Hattori Earring",
+    ear2="Hattori Earring +1",
 
     -- ear1="Lugra Earring +1",
     -- ear2="Hattori Earring +2",
@@ -713,7 +713,7 @@ function init_gear_sets()
     feet="Ken. Sune-Ate +1",
     -- neck="Ninja Nodowa +2",
     ear1="Odr Earring",
-    ear2="Hattori Earring",
+    ear2="Hattori Earring +1",
     ring1="Gere Ring",
     ring2="Regal Ring",
     -- back=gear.NIN_Crit_DEX_Cape,
@@ -741,7 +741,7 @@ function init_gear_sets()
     -- feet="Hattori Kyahan +3",
   }
   sets.precast.WS['Savage Blade'].MaxTP = set_combine(sets.precast.WS['Savage Blade'], {
-    ear2="Hattori Earring",
+    ear2="Hattori Earring +1",
 
     -- ear1="Lugra Earring +1",
     -- ear2="Hattori Earring +2",
@@ -755,7 +755,7 @@ function init_gear_sets()
     feet=gear.Nyame_B_feet,
     -- neck="Ninja Nodowa +2",
     ear1="Moonshade Earring",
-    ear2="Hattori Earring",
+    ear2="Hattori Earring +1",
     ring1="Sroda Ring",
     ring2="Epaminondas's Ring",
     -- back=gear.NIN_WSD_STR_Cape,
@@ -765,7 +765,7 @@ function init_gear_sets()
     -- ear2="Hattori Earring +2",
   }
   sets.precast.WS['Savage Blade'].AttCappedMaxTP = set_combine(sets.precast.WS['Savage Blade'].AttCapped, {
-    ear2="Hattori Earring",
+    ear2="Hattori Earring +1",
     
     -- ear1="Lugra Earring +1",
     -- ear2="Hattori Earring +2",
@@ -913,12 +913,12 @@ function init_gear_sets()
     feet=gear.Nyame_B_feet,           -- 40, __ [ 7/ 7, 150]
     neck="Incanter's Torque",         -- __, 10 [__/__, ___]
     ear1="Dignitary's Earring",       -- 10, __ [__/__, ___]
-    ear2="Hattori Earring",           --  7, __ [__/__, ___]
+    ear2="Hattori Earring +1",        -- 11, __ [__/__, ___]
     ring1="Stikini Ring +1",          -- 11,  8 [__/__, ___]
     ring2="Defending Ring",           -- __, __ [10/10, ___]
     back=gear.NIN_MAB_Cape,           -- 20, __ [10/__, ___]
     waist="Eschan Stone",             --  7, __ [__/__, ___]
-    -- 323 M.Acc, 35 Ninjutsu [50 PDT/40 MDT, 565 M.Eva]
+    -- 327 M.Acc, 35 Ninjutsu [50 PDT/40 MDT, 565 M.Eva]
     
     -- body="Hattori Ningi +3",       -- 64, __ [13/13, 129]
     -- hands="Hattori Tekko +3",      -- 62, __ [__/__, 103]
