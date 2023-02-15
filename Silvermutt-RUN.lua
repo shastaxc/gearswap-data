@@ -302,9 +302,9 @@ function init_gear_sets()
   sets.defense.MDT = {
     sub="Utu Grip",                                 -- __/__, ___ [ 70] (__, __)
     ammo="Staunch Tathlum +1",                      --  3/ 3, ___ [___] (11, __)
-    head=gear.Nyame_B_head,                         --  7/ 7, 123 [ 91] (__, __)
-    body="Erilaz Surcoat +3",                       -- __/__, 130 [143] __; Retain enmity, Convert dmg to MP
-    hands="Turms Mittens +1",                       -- __/__, 101 [ 74] (__, __)
+    head="Erilaz Galea +3",                         -- __/__, 119 [111] (__, __)
+    body="Erilaz Surcoat +3",                       -- __/__, 130 [143] (__, __); Retain enmity, Convert dmg to MP
+    hands="Erilaz Gauntlets +2",                    -- 10/10,  77 [ 49] ( 7, __)
     legs="Erilaz Leg Guards +3",                    -- 13/13, 157 [100] (__, __)
     feet="Erilaz Greaves +2",                       -- 10/10, 147 [ 38] (__, 30)
     neck={name="Unmoving Collar +1",priority=1},    -- __/__, ___ [200] (__, __)
@@ -314,9 +314,8 @@ function init_gear_sets()
     ring2={name="Moonlight Ring",priority=1},       --  5/ 5, ___ [110] (__, __)
     back=gear.RUN_HPP_Cape,                         -- __/__,  20 [ 80] (__, __)
     waist="Engraved Belt",                          -- __/__, ___ [___] (__, 20)
-    -- 48 PDT / 42 MDT, 678 MEVA [1186 HP] (11 Status Resist, 50 Element Resist)
+    -- 51 PDT / 45 MDT, 650 MEVA [1146 HP] (18 Status Resist, 50 Element Resist)
 
-    -- head="Erilaz Galea +3",                      -- __/__, 119 [111] (__, __)
     -- hands="Erilaz Gauntlets +3",                 -- 11/11,  87 [ 59] ( 8, __)
     -- feet="Erilaz Greaves +3",                    -- 11/11, 157 [ 48] (__, 35)
     -- ear1="Sanare Earring",                       -- __/__,   6 [___] (__, __); M. Def Bonus+4
@@ -565,7 +564,7 @@ function init_gear_sets()
     ammo="Hydrocera",               -- __,  6 [__/__, ___] ___
     head="Erilaz Galea +3",         -- 61, 61 [__/__, 119] 111
     body=gear.Nyame_B_body,         -- 40, 40 [ 9/ 9, 139] 136
-    hands=gear.Nyame_B_hands,       -- 40, 40 [ 7/ 7, 112]  91
+    hands="Erilaz Gauntlets +2",    -- 52, 52 [10/10,  77]  49
     legs="Erilaz Leg Guards +3",    -- 63, 63 [13/13, 157] 100
     feet="Erilaz Greaves +2",       -- 50, 50 [10/10, 147]  38
     neck="Erra Pendant",            -- __, 17 [__/__, ___] ___
@@ -573,7 +572,7 @@ function init_gear_sets()
     ear2="Erilaz Earring",          --  7,  7 [__/__,  10] ___
     ring2="Metamorph Ring +1",      -- __, 16 [__/__, ___] ___
     back=gear.RUN_WS2_Cape,         -- 20, __ [10/__, ___] ___
-    -- 291 Acc, 310 Magic Acc [49 PDT/39 MDT, 684 M.Eva] 476 HP
+    -- 303 Acc, 322 Magic Acc [52 PDT/42 MDT, 649 M.Eva] 434 HP
     
     -- body="Erilaz Surcoat +3",    -- 64, 64 [__/__, 130] 143
     -- hands="Erilaz Gauntlets +3", -- 62, 62 [11/11,  87]  59
@@ -587,7 +586,7 @@ function init_gear_sets()
     ammo="Hydrocera",                             -- __,  6 [__/__, ___] ___
     head="Erilaz Galea +3",                       -- 61, 61 [__/__, 119] 111
     body=gear.Nyame_B_body,                       -- 40, 40 [ 9/ 9, 139] 136
-    hands=gear.Nyame_B_hands,                     -- 40, 40 [ 7/ 7, 112]  91
+    hands="Erilaz Gauntlets +2",                  -- 52, 52 [10/10,  77]  49
     legs="Erilaz Leg Guards +3",                  -- 63, 63 [13/13, 157] 100
     feet="Erilaz Greaves +2",                     -- 50, 50 [10/10, 147]  38
     neck="Erra Pendant",                          -- __, 17 [__/__, ___] ___
@@ -596,7 +595,7 @@ function init_gear_sets()
     ring1="Moonlight Ring",                       --  8, __ [ 5/ 5, ___] 110
     ring2="Metamorph Ring +1",                    -- __, 16 [__/__, ___] ___
     back={name="Moonlight Cape",priority=1},      -- __, __ [ 6/ 6, ___] 275
-    -- 279 Acc, 300 Magic Acc [55 PDT/55 MDT, 684 M.Eva] 971 HP
+    -- 291 Acc, 312 Magic Acc [56 PDT/58 MDT, 649 M.Eva] 929 HP
     
     -- body="Erilaz Surcoat +3",                  -- 64, 64 [__/__, 130] 143
     -- hands="Erilaz Gauntlets +3",               -- 62, 62 [11/11,  87]  59
