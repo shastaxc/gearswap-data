@@ -427,13 +427,12 @@ function init_gear_sets()
   sets.precast.WS['Myrkr'] = {
     ammo="Strobilus",               --  45
     head="Pixie Hairpin +1",        -- 120
-    body="Academic's Gown +1",      -- 109
+    body="Academic's Gown +3",      -- 173
     legs=gear.Psycloth_D_legs,      -- 109
     ear2="Etiolation Earring",      --  50
     ring1="Mephitas's Ring +1",     -- 110
     back=gear.SCH_MP_Cape,          --  80
     waist="Shinjutsu-no-Obi +1",    --  85
-    -- body="Academic's Gown +3",     -- 173
     -- hands="Thrift Gloves +1 ",     --  99
     -- feet=gear.Psycloth_A_feet,     -- 124
     -- neck="Dualism Collar +1",      --  60
@@ -758,7 +757,7 @@ function init_gear_sets()
     sub="Khonsu",                       -- 30, __, __, __
     ammo="Pemphredo Tathlum",           --  8, __, __, __
     head="Academic's Mortarboard +3",   -- 52, 37, __, __
-    body="Shamash Robe",                -- 45, 40, __, __
+    body="Academic's Gown +3",          -- 50, 39, __, __; +24 enf skill in DA
     hands="Regal Cuffs",                -- 45, 40, 20, __
     legs="Academic's Pants +3",         -- __, 39, __, __; +24 enf skill in LA
     feet="Academic's Loafers +3",       -- 46, 29, __, __; +20 M.Acc in Grimoire
@@ -770,9 +769,8 @@ function init_gear_sets()
     back="Aurist's Cape +1",            -- 33, 33, __, __
     waist="Rumination Sash",            --  3,  4, __,  7
     -- Academic's set bonus             -- 60, __, __, __
-    -- 453 M.Acc, 292 MND, 30% Enfeebling Duration, 27 Enfeebling Skill
+    -- 458 M.Acc, 291 MND, 30% Enfeebling Duration, 27 Enfeebling Skill
 
-    -- body="Academic's Gown +3",       -- 50, 39, __, __; +24 enf skill in DA
     -- legs="Arbatel Pants +2",         -- 53, 33, __, 23; +31 m.acc in Grimoire
     -- ear2="Arbatel Earring +2",       -- 20, 15, __, __
     -- waist="Obstinate Sash",          -- 15,  5,  5, 15
@@ -794,7 +792,7 @@ function init_gear_sets()
     sub="Khonsu",                       -- 30, __, __, __
     ammo="Pemphredo Tathlum",           --  8,  4, __, __
     head="Academic's Mortarboard +3",   -- 52, 37, __, __
-    body="Shamash Robe",                -- 45, 40, __, __
+    body="Academic's Gown +3",          -- 50, 44, __, __; +24 enf skill in DA
     hands="Regal Cuffs",                -- 45, 40, 20, __
     legs="Academic's Pants +3",         -- __, 44, __, __; +24 enf skill in LA
     feet="Academic's Loafers +3",       -- 46, 32, __, __; +20 M.Acc in Grimoire
@@ -806,9 +804,8 @@ function init_gear_sets()
     back="Aurist's Cape +1",            -- 33, 33, __, __
     waist="Acuity Belt +1",             -- 15, 23, __, __
     -- Academic's set bonus             -- 60, __, __, __
-    -- 465 M.Acc, 313 INT, 30% Enfeebling Duration, 20 Enfeebling Skill
+    -- 470 M.Acc, 317 INT, 30% Enfeebling Duration, 20 Enfeebling Skill
 
-    -- body="Academic's Gown +3",       -- 50, 44, __, __; +24 enf skill in DA
     -- legs="Arbatel Pants +2",         -- 53, 33, __, 23; +31 m.acc in Grimoire
     -- ear2="Arbatel Earring +2",       -- 20, 15, __, __
     -- waist="Obstinate Sash",          -- 15,  5,  5, 15
@@ -816,9 +813,8 @@ function init_gear_sets()
     -- 533 M.Acc, 295 INT, 35% Enfeebling Duration, 58 Enfeebling Skill
   }
   sets.midcast.IntEnfeebles.DarkArts = set_combine(sets.midcast.IntEnfeebles, {
-    body="Academic's Gown +1",          -- __, 34, __, __; +20 enf skill in DA
+    body="Academic's Gown +3",          -- 50, 44, __, __; +24 enf skill in DA
     feet="Academic's Loafers +3",       -- 46, 29, __, __; +20 M.Acc in Grimoire
-    -- body="Academic's Gown +3",       -- 50, 44, __, __; +24 enf skill in DA
     -- legs="Arbatel Pants +2",         -- 53, 33, __, 23; +31 m.acc in Grimoire
     -- 533 M.Acc, 295 INT, 35% Enfeebling Duration, 58 Enfeebling Skill
   })
@@ -837,7 +833,7 @@ function init_gear_sets()
     sub="Ammurapi Shield",                -- __, 13, 38
     ammo="Pemphredo Tathlum",             -- __,  4,  8
     head="Academic's Mortarboard +3",     -- __, 37, 52
-    body="Shamash Robe",                  -- __, 40, 45
+    body="Academic's Gown +3",            -- 24, 44, 50
     hands="Academic's Bracers +3",        -- __, 29, 48
     legs="Pedagogy Pants +3",             -- 19, 47, 39
     feet="Academic's Loafers +3",         -- __, 32, 46
@@ -847,7 +843,6 @@ function init_gear_sets()
     back="Bookworm's Cape",               --  8,  4, __
     waist="Acuity Belt +1",               -- __, 23, __
     -- main="Rubicundity",                -- 25, 21, 30; +215 M.Acc skill
-    -- body="Academic's Gown +3",         -- 24, 44, 50
     -- ear1="Mani Earring",               -- 10, __, __
     -- ring1="Evanescence Ring",          -- 10, __, __
     -- back="Bookworm's Cape",            --  8,  5, __
@@ -873,7 +868,7 @@ function init_gear_sets()
   sets.midcast.Stun = set_combine(sets.midcast['Dark Magic'], {
     ammo="Pemphredo Tathlum",             -- __,  8, ___
     head="Academic's Mortarboard +3",     --  8, 52, ___
-    body="Shamash Robe",
+    body="Academic's Gown +3",            -- __, 50, ___
     hands="Academic's Bracers +3",        --  9, 48, ___
     legs="Academic's Pants +3",           -- __, 49, ___
     feet="Academic's Loafers +3",         -- __, 46, ___
@@ -904,7 +899,7 @@ function init_gear_sets()
   sets.midcast.Stun.DarkArts = set_combine(sets.midcast.Stun, {
     ammo="Pemphredo Tathlum",           -- __, __,  8, ___
     head="Pedagogy Mortarboard +3",     -- 13, __, 37, ___; Grimoire recast-
-    body="Academic's Gown +1",
+    body="Academic's Gown +3",          -- __, __, 50, ___; +24 Dark Magic skill in DA
     hands="Academic's Bracers +3",      -- __,  9, 48, ___
     legs="Academic's Pants +3",         -- __, __, 49, ___
     feet="Academic's Loafers +3",       -- 12, __, 46, ___; Grimoire recast-, +20M.Acc in Grimoire
