@@ -236,7 +236,7 @@ function init_gear_sets()
     -- hands="Hattori Tekko +3",
   }
   sets.precast.JA['Sange'] = {
-    body="Mochizuki Chainmail +1"
+    body="Mochizuki Chainmail +2"
     -- body="Mochizuki Chainmail +3"
   }
   sets.precast.JA['Innin'] = {
@@ -244,7 +244,7 @@ function init_gear_sets()
     -- head="Mochizuki Hatsuburi +3"
   }
   sets.precast.JA['Yonin'] = {
-    head="Mochizuki Hatsuburi +1"
+    head="Mochizuki Hatsuburi +2"
     -- head="Mochizuki Hatsuburi +3"
   }
 
