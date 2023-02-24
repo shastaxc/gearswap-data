@@ -194,16 +194,14 @@ function init_gear_sets()
 
   sets.Special = {}
   sets.Special.Impetus = {
-    body="Bhikku Cyclas +2",
-    -- body="Bhikku Cyclas +3",
+    body="Bhikku Cyclas +3",
   }
   sets.Special.Footwork = {
     feet="Anchorite's Gaiters +3",
   }
   sets.Special.ImpetusAndFootwork = {
-    body="Bhikku Cyclas +2",
+    body="Bhikku Cyclas +3",
     feet="Anchorite's Gaiters +3",
-    -- body="Bhikku Cyclas +3",
   }
   sets.Special.Counterstance = {
     feet="Hesychast's Gaiters +3",
@@ -216,7 +214,7 @@ function init_gear_sets()
   sets.Special.CaitSith = {
     ammo="Crepuscular Pebble",      -- __, __,  3, __, __ <__, __, __> [ 3/ 3, ___] (___, __) __, __, __(__)
     head="Malignance Chapeau",      --  8, 50,  3, __, __ <__, __, __> [ 6/ 6, 123] (___, __) __, __, __(__)
-    body="Bhikku Cyclas +2",        -- __, 54, __, __, __ <__, __, __> [__/__,  99] (___, __)  7, __, __(__)
+    body="Bhikku Cyclas +3",
     hands="Malignance Gloves",      -- 12, 50,  4, __, __ <__, __, __> [ 5/ 5, 112] (___, __) __, __, __(__)
     legs="Bhikku Hose +3",          -- 10, 63, __, __, __ <__, __, __> [14/14, 119] (___, 30) __, __, __(__)
     feet="Anchorite's Gaiters +3",  -- __, 46, __, __, __ <__, __, __> [__/__,  84] (120, 10) __, __, __(__)
@@ -467,7 +465,7 @@ function init_gear_sets()
   sets.precast.WS['Asuran Fists'] = set_combine(sets.precast.WS, {
     ammo="Knobkierrie",
     head=gear.Nyame_B_head,
-    body=gear.Nyame_B_body,
+    body="Bhikku Cyclas +3",
     hands=gear.Nyame_B_hands,
     legs=gear.Nyame_B_legs,
     feet=gear.Nyame_B_feet,
@@ -478,7 +476,6 @@ function init_gear_sets()
     ring2="Sroda Ring",
     back=gear.MNK_STR_DA_Cape, -- WSD cape would be better
     waist="Fotia Belt",
-    -- body="Bhikku Cyclas +3",
   })
   sets.precast.WS["Asuran Fists"].MaxTP = set_combine(sets.precast.WS["Asuran Fists"], {
   })
@@ -788,7 +785,7 @@ function init_gear_sets()
   sets.idle.Town = {
     ammo="Coiste Bodhar",
     head="Mpaca's Cap",
-    body="Bhikku Cyclas +2",
+    body="Bhikku Cyclas +3",
     hands=gear.Nyame_B_hands,
     legs="Bhikku Hose +3",
     feet="Mpaca's Boots",
@@ -799,7 +796,6 @@ function init_gear_sets()
     ring2="Epaminondas's Ring",
     back=gear.MNK_STR_DA_Cape,
     waist="Moonbow Belt +1",
-    -- body="Bhikku Cyclas +3",
   }
 
 
@@ -867,11 +863,8 @@ function init_gear_sets()
     -- 42 STP, 305 Acc, 26 PDL, 13 Crit Rate, 6 Crit Dmg <15 DA, 13 TA, 3 QA> [39 PDT/29 MDT, 542 M.Eva] (165 Kick Dmg, 83 Kick Rate) 9 Martial Arts, 36 Counter, 70 Subtle Blow
   }
   sets.engaged.VerethragnaAM.Impetus = set_combine(sets.engaged.VerethragnaAM, {
-    body="Bhikku Cyclas +2",        -- __, 54, __, __, __ <__, __, __> [__/__,  99] (___, __)  7, __, __(__)
+    body="Bhikku Cyclas +3",        -- __, 64, __, __, __ <__, __, __> [__/__, 109] (___, __)  8, __, __(__)
     legs="Bhikku Hose +3",          -- 10, 63, __, __, __ <__, __, __> [14/14, 119] (___, 30) __, __, __(__)
-    -- 39 STP, 328 Acc, 20 PDL, 5 Crit Rate, 6 Crit Dmg <15 DA, 13 TA, 3 QA> [44 PDT/34 MDT, 537 M.Eva] (165 Kick Dmg, 94 Kick Rate) 16 Martial Arts, 35 Counter, 60 Subtle Blow
-
-    -- body="Bhikku Cyclas +3",     -- __, 64, __, __, __ <__, __, __> [__/__, 109] (___, __)  8, __, __(__)
     -- 39 STP, 338 Acc, 20 PDL, 5 Crit Rate, 6 Crit Dmg <15 DA, 13 TA, 3 QA> [44 PDT/34 MDT, 547 M.Eva] (165 Kick Dmg, 94 Kick Rate) 17 Martial Arts, 35 Counter, 60 Subtle Blow
 
     -- Ideal:
@@ -901,12 +894,9 @@ function init_gear_sets()
     -- 52 STP, 329 Acc, 26 PDL,  5 Crit Rate, 0 Crit Dmg <15 DA, 13 TA, 3 QA> [53 PDT/43 MDT, 577 M.Eva] (165 Kick Dmg, 94 Kick Rate) 9 Martial Arts, 36 Counter, 60 Subtle Blow
   }
   sets.engaged.VerethragnaAM.HeavyDef.Impetus = set_combine(sets.engaged.VerethragnaAM.HeavyDef, {
-    body="Bhikku Cyclas +2",        -- __, 54, __, __, __ <__, __, __> [__/__,  99] (___, __)  7, __, __(__)
+    body="Bhikku Cyclas +3",        -- __, 64, __, __, __ <__, __, __> [__/__, 109] (___, __)  8, __, __(__)
     legs="Bhikku Hose +3",          -- 10, 63, __, __, __ <__, __, __> [14/14, 119] (___, 30) __, __, __(__)
     ring2="Defending Ring",         -- __, __, __, __, __ <__, __, __> [10/10, ___] (___, __) __, __, __(__)
-    -- 39 STP, 328 Acc, 20 PDL,  5 Crit Rate, 0 Crit Dmg <15 DA, 13 TA, 0 QA> [54 PDT/44 MDT, 537 M.Eva] (165 Kick Dmg, 94 Kick Rate) 16 Martial Arts, 35 Counter, 55 Subtle Blow
-
-    -- body="Bhikku Cyclas +3",     -- __, 64, __, __, __ <__, __, __> [__/__, 109] (___, __)  8, __, __(__)
     -- 39 STP, 338 Acc, 20 PDL,  5 Crit Rate, 0 Crit Dmg <15 DA, 13 TA, 0 QA> [54 PDT/44 MDT, 547 M.Eva] (165 Kick Dmg, 94 Kick Rate) 17 Martial Arts, 35 Counter, 55 Subtle Blow
 
     -- Ideal:
