@@ -349,7 +349,7 @@ function init_gear_sets()
   } -- 46 PDT /30 MDT, 431 Acc
 
   sets.precast.Step['Feather Step'] = set_combine(sets.precast.Step, {
-    feet="Maculele Toe Shoes +2",
+    feet="Maculele Toe Shoes +3",
   })
   sets.precast.Flourish1 = {}
   sets.precast.Flourish1['Animated Flourish'] = set_combine(sets.Enmity, {})
@@ -810,7 +810,7 @@ function init_gear_sets()
     body="Malignance Tabard",       -- __, 11, 50 <__, __, __> [ 9/ 9, 139] __(__)
     hands=gear.Adhemar_A_hands,     -- __,  7, 52 <__,  4, __> [__/__,  43] __(__)
     legs=gear.Samnuha_legs,         -- __,  7, 15 < 3,  3, __> [__/__,  75] __(__)
-    feet="Maculele Toe Shoes +2",   -- __, 11, 50 <__, __, __> [ 9/ 9, 105] __(__); Remove Close Position merits
+    feet="Maculele Toe Shoes +3",   -- __, 12, 60 <__, __, __> [10/10, 115] __(__); Remove Close Position merits
     neck="Etoile Gorget +2",        -- __,  7, 25 <__, __, __> [__/__, ___] __(__)
     ear1="Telos Earring",           -- __,  5, 10 < 1, __, __> [__/__, ___] __(__)
     ear2="Sherida Earring",         -- __,  5, __ < 5, __, __> [__/__, ___] __( 5)
@@ -819,7 +819,7 @@ function init_gear_sets()
     back=gear.DNC_TP_DA_Cape,       -- __, __, 20 <10, __, __> [10/__, ___] __(__)
     waist="Windbuffet Belt +1",     -- __,  2, __ <__,  2,  2> [__/__, ___] __(__)
     -- Traits/Merits/Gifts             __, __, __ <__, __, __> [__/__, ___] 33(__)
-    -- 0 DW, 66 STP, 272 Acc <25 DA, 17 TA, 2 QA> [34 PDT/24 MDT, 485 M.Eva] 38 Subtle Blow
+    -- 0 DW, 67 STP, 282 Acc <25 DA, 17 TA, 2 QA> [35 PDT/25 MDT, 495 M.Eva] 38 Subtle Blow
   }
   sets.engaged.LowAcc = set_combine(sets.engaged, {
     ammo="Yamarang",                -- __,  3, 15 <__, __, __> [__/__,  15] __(__)
@@ -849,7 +849,7 @@ function init_gear_sets()
     body="Malignance Tabard",       -- __, 11, 50 <__, __, __> [ 9/ 9, 139] __(__)
     hands=gear.Adhemar_A_hands,     -- __,  7, 52 <__,  4, __> [__/__,  43] __(__)
     legs=gear.Samnuha_legs,         -- __,  7, 15 < 3,  3, __> [__/__,  75] __(__)
-    feet="Maculele Toe Shoes +2",   -- __, 11, 50 <__, __, __> [ 9/ 9, 105] __(__); Remove Close Position merits
+    feet="Maculele Toe Shoes +3",   -- __, 12, 60 <__, __, __> [10/10, 115] __(__); Remove Close Position merits
     neck="Etoile Gorget +2",        -- __,  7, 25 <__, __, __> [__/__, ___] __(__)
     ear1="Telos Earring",           -- __,  5, 10 < 1, __, __> [__/__, ___] __(__)
     ear2="Sherida Earring",         -- __,  5, __ < 5, __, __> [__/__, ___] __( 5)
@@ -858,7 +858,7 @@ function init_gear_sets()
     back=gear.DNC_TP_DA_Cape,       -- __, __, 20 <10, __, __> [10/__, ___] __(__)
     waist="Reiki Yotai",            --  7,  4, 10 <__, __, __> [__/__, ___] __(__)
     -- Traits/Merits/Gifts             __, __, __ <__, __, __> [__/__, ___] 33(__)
-    -- 7 DW, 68 STP, 282 Acc <25 DA, 15 TA, 0 QA> [34 PDT/24 MDT, 485 M.Eva] 38 Subtle Blow
+    -- 7 DW, 69 STP, 292 Acc <25 DA, 15 TA, 0 QA> [35 PDT/25 MDT, 495 M.Eva] 38 Subtle Blow
   }
   sets.engaged.LowDW.LowAcc = set_combine(sets.engaged.LowDW, {
     ammo="Yamarang",                -- __,  3, 15 <__, __, __> [__/__,  15] __(__)
@@ -889,7 +889,7 @@ function init_gear_sets()
     body="Malignance Tabard",       -- __, 11, 50 <__, __, __> [ 9/ 9, 139] __(__)
     hands=gear.Adhemar_A_hands,     -- __,  7, 52 <__,  4, __> [__/__,  43] __(__)
     legs=gear.Samnuha_legs,         -- __,  7, 15 < 3,  3, __> [__/__,  75] __(__)
-    feet="Maculele Toe Shoes +2",   -- __, 11, 50 <__, __, __> [ 9/ 9, 105] __(__); Remove Close Position merits
+    feet="Maculele Toe Shoes +3",   -- __, 12, 60 <__, __, __> [10/10, 115] __(__); Remove Close Position merits
     neck="Etoile Gorget +2",        -- __,  7, 25 <__, __, __> [__/__, ___] __(__)
     ear1="Eabani Earring",          --  4, __, __ <__, __, __> [__/__,   8] __(__)
     ear2="Sherida Earring",         -- __,  5, __ < 5, __, __> [__/__, ___] __( 5)
@@ -898,7 +898,7 @@ function init_gear_sets()
     back=gear.DNC_TP_DW_Cape,       -- 10, __, 20 <__, __, __> [10/__, ___] __(__)
     waist="Reiki Yotai",            --  7,  4, 10 <__, __, __> [__/__, ___] __(__)
     -- Traits/Merits/Gifts             __, __, __ <__, __, __> [__/__, ___] 33(__)
-    -- 21 DW, 63 STP, 272 Acc <14 DA, 15 TA, 0 QA> [34 PDT/24 MDT, 493 M.Eva] 38 Subtle Blow
+    -- 21 DW, 64 STP, 282 Acc <14 DA, 15 TA, 0 QA> [35 PDT/25 MDT, 503 M.Eva] 38 Subtle Blow
   }
   sets.engaged.MidDW.LowAcc = set_combine(sets.engaged.MidDW, {
     ammo="Yamarang",                -- __,  3, 15 <__, __, __> [__/__,  15] __(__)
@@ -931,7 +931,7 @@ function init_gear_sets()
     body="Maculele Casaque +2",     -- 11, __, __ <__, __, __> [13/13,  99] 13(__)
     hands=gear.Adhemar_A_hands,     -- __,  7, 52 <__,  4, __> [__/__,  43] __(__)
     legs=gear.Samnuha_legs,         -- __,  7, 15 < 3,  3, __> [__/__,  75] __(__)
-    feet="Maculele Toe Shoes +2",   -- __, 11, 50 <__, __, __> [ 9/ 9, 105] __(__); Remove Close Position merits
+    feet="Maculele Toe Shoes +3",   -- __, 12, 60 <__, __, __> [10/10, 115] __(__); Remove Close Position merits
     neck="Etoile Gorget +2",        -- __,  7, 25 <__, __, __> [__/__, ___] __(__)
     ear1="Telos Earring",           -- __,  5, 10 < 1, __, __> [__/__, ___] __(__)
     ear2="Sherida Earring",         -- __,  5, __ < 5, __, __> [__/__, ___] __( 5)
@@ -940,7 +940,7 @@ function init_gear_sets()
     back=gear.DNC_TP_DW_Cape,       -- 10, __, 20 <__, __, __> [10/__, ___] __(__)
     waist="Reiki Yotai",            --  7,  4, 10 <__, __, __> [__/__, ___] __(__)
     -- Traits/Merits/Gifts             __, __, __ <__, __, __> [__/__, ___] 33(__)
-    -- 28 DW, 57 STP, 232 Acc <15 DA, 15 TA, 0 QA> [38 PDT/28 MDT, 445 M.Eva] 51 Subtle Blow
+    -- 28 DW, 58 STP, 242 Acc <15 DA, 15 TA, 0 QA> [39 PDT/29 MDT, 455 M.Eva] 51 Subtle Blow
   }
   sets.engaged.HighDW.LowAcc = set_combine(sets.engaged.HighDW, {
     ammo="Yamarang",                -- __,  3, 15 <__, __, __> [__/__,  15] __(__)
@@ -972,7 +972,7 @@ function init_gear_sets()
     body="Maculele Casaque +2",     -- 11, __, __ <__, __, __> [13/13,  99] 13(__)
     hands=gear.Adhemar_A_hands,     -- __,  7, 52 <__,  4, __> [__/__,  43] __(__)
     legs=gear.Samnuha_legs,         -- __,  7, 15 < 3,  3, __> [__/__,  75] __(__)
-    feet="Maculele Toe Shoes +2",   -- __, 11, 50 <__, __, __> [ 9/ 9, 105] __(__); Remove Close Position merits
+    feet="Maculele Toe Shoes +3",   -- __, 12, 60 <__, __, __> [10/10, 115] __(__); Remove Close Position merits
     neck="Etoile Gorget +2",        -- __,  7, 25 <__, __, __> [__/__, ___] __(__)
     ear1="Suppanomimi",             --  5, __, __ <__, __, __> [__/__, ___] __(__)
     ear2="Eabani Earring",          --  4, __, __ <__, __, __> [__/__,   8] __(__)
@@ -981,7 +981,7 @@ function init_gear_sets()
     back=gear.DNC_TP_DW_Cape,       -- 10, __, 20 <__, __, __> [10/__, ___] __(__)
     waist="Reiki Yotai",            --  7,  4, 10 <__, __, __> [__/__, ___] __(__)
     -- Traits/Merits/Gifts             __, __, __ <__, __, __> [__/__, ___] 33(__)
-    -- 37 DW, 47 STP, 222 Acc <9 DA, 15 TA, 0 QA> [38 PDT/28 MDT, 453 M.Eva] 46 Subtle Blow
+    -- 37 DW, 48 STP, 232 Acc <9 DA, 15 TA, 0 QA> [39 PDT/29 MDT, 463 M.Eva] 46 Subtle Blow
   }
   sets.engaged.SuperDW.LowAcc = set_combine(sets.engaged.SuperDW, {
     ammo="Yamarang",                -- __,  3, 15 <__, __, __> [__/__,  15] __(__)
@@ -1011,7 +1011,7 @@ function init_gear_sets()
     body="Maculele Casaque +2",     -- 11, __, __ <__, __, __> [13/13,  99] 13(__)
     hands=gear.Adhemar_A_hands,     -- __,  7, 52 <__,  4, __> [__/__,  43] __(__)
     legs=gear.Samnuha_legs,         -- __,  7, 15 < 3,  3, __> [__/__,  75] __(__)
-    feet="Maculele Toe Shoes +2",   -- __, 11, 50 <__, __, __> [ 9/ 9, 105] __(__); Remove Close Position merits
+    feet="Maculele Toe Shoes +3",   -- __, 12, 60 <__, __, __> [10/10, 115] __(__); Remove Close Position merits
     neck="Etoile Gorget +2",        -- __,  7, 25 <__, __, __> [__/__, ___] __(__)
     ear1="Suppanomimi",             --  5, __, __ <__, __, __> [__/__, ___] __(__)
     ear2="Eabani Earring",          --  4, __, __ <__, __, __> [__/__,   8] __(__)
@@ -1020,7 +1020,7 @@ function init_gear_sets()
     back=gear.DNC_TP_DW_Cape,       -- 10, __, 20 <__, __, __> [10/__, ___] __(__)
     waist="Reiki Yotai",            --  7,  4, 10 <__, __, __> [__/__, ___] __(__)
     -- Traits/Merits/Gifts             __, __, __ <__, __, __> [__/__, ___] 33(__)
-    -- 37 DW, 47 STP, 222 Acc <9 DA, 15 TA, 0 QA> [38 PDT/28 MDT, 453 M.Eva] 46 Subtle Blow
+    -- 37 DW, 48 STP, 232 Acc <9 DA, 15 TA, 0 QA> [39 PDT/29 MDT, 463 M.Eva] 46 Subtle Blow
   }
   sets.engaged.MaxDW.LowAcc = set_combine(sets.engaged.MaxDW, {
   })
@@ -1041,7 +1041,7 @@ function init_gear_sets()
     body="Malignance Tabard",       -- __, 11, 50 <__, __, __> [ 9/ 9, 139] __(__)
     hands="Malignance Gloves",      -- __, 12, 50 <__, __, __> [ 5/ 5, 112] __(__)
     legs="Malignance Tights",       -- __, 10, 50 <__, __, __> [ 7/ 7, 150] __(__)
-    feet="Maculele Toe Shoes +2",   -- __, 11, 50 <__, __, __> [ 9/ 9, 105] __(__); Remove Close Position merits
+    feet="Maculele Toe Shoes +3",   -- __, 12, 60 <__, __, __> [10/10, 115] __(__); Remove Close Position merits
     neck="Etoile Gorget +2",        -- __,  7, 25 <__, __, __> [__/__, ___] __(__)
     ear1="Telos Earring",           -- __,  5, 10 < 1, __, __> [__/__, ___] __(__)
     ear2="Sherida Earring",         -- __,  5, __ < 5, __, __> [__/__, ___] __( 5)
@@ -1050,7 +1050,7 @@ function init_gear_sets()
     back=gear.DNC_TP_DA_Cape,       -- __, __, 20 <10, __, __> [10/__, ___] __(__)
     waist="Windbuffet Belt +1",     -- __,  2, __ <__,  2,  2> [__/__, ___] __(__)
     -- Traits/Merits/Gifts             35, __, __ <__, __, __> [__/__, ___] 33(__)
-    -- 35 DW, 79 STP, 305 Acc <19 DA, 7 TA, 2 QA> [51 PDT/41 MDT, 629 M.Eva] 38 Subtle Blow
+    -- 35 DW, 80 STP, 315 Acc <19 DA, 7 TA, 2 QA> [52 PDT/42 MDT, 639 M.Eva] 38 Subtle Blow
   }
   sets.engaged.HeavyDef.LowAcc = set_combine(sets.engaged.HeavyDef, {})
   sets.engaged.HeavyDef.MidAcc = set_combine(sets.engaged.HeavyDef.LowAcc, {})
@@ -1063,7 +1063,7 @@ function init_gear_sets()
     body="Malignance Tabard",       -- __, 11, 50 <__, __, __> [ 9/ 9, 139] __(__)
     hands="Malignance Gloves",      -- __, 12, 50 <__, __, __> [ 5/ 5, 112] __(__)
     legs=gear.Samnuha_legs,         -- __,  7, 15 < 3,  3, __> [__/__,  75] __(__)
-    feet="Maculele Toe Shoes +2",   -- __, 11, 50 <__, __, __> [ 9/ 9, 105] __(__); Remove Close Position merits
+    feet="Maculele Toe Shoes +3",   -- __, 12, 60 <__, __, __> [10/10, 115] __(__); Remove Close Position merits
     neck="Etoile Gorget +2",        -- __,  7, 25 <__, __, __> [__/__, ___] __(__)
     ear1="Telos Earring",           -- __,  5, 10 < 1, __, __> [__/__, ___] __(__)
     ear2="Sherida Earring",         -- __,  5, __ < 5, __, __> [__/__, ___] __( 5)
@@ -1072,7 +1072,7 @@ function init_gear_sets()
     back=gear.DNC_TP_DA_Cape,       -- __, __, 20 <10, __, __> [10/__, ___] __(__)
     waist="Reiki Yotai",            --  7,  4, 10 <__, __, __> [__/__, ___] __(__)
     -- Traits/Merits/Gifts             __, __, __ <__, __, __> [__/__, ___] 33(__)
-    -- 7 DW, 73 STP, 280 Acc <22 DA, 8 TA, 0 QA> [49 PDT/39 MDT, 554 M.Eva] 38 Subtle Blow
+    -- 7 DW, 74 STP, 290 Acc <22 DA, 8 TA, 0 QA> [50 PDT/40 MDT, 564 M.Eva] 38 Subtle Blow
   }
   sets.engaged.LowDW.HeavyDef.LowAcc = set_combine(sets.engaged.LowDW.HeavyDef, {})
   sets.engaged.LowDW.HeavyDef.MidAcc = set_combine(sets.engaged.LowDW.HeavyDef.LowAcc, {})
@@ -1085,7 +1085,7 @@ function init_gear_sets()
     body="Malignance Tabard",       -- __, 11, 50 <__, __, __> [ 9/ 9, 139] __(__)
     hands="Malignance Gloves",      -- __, 12, 50 <__, __, __> [ 5/ 5, 112] __(__)
     legs=gear.Samnuha_legs,         -- __,  7, 15 < 3,  3, __> [__/__,  75] __(__)
-    feet="Maculele Toe Shoes +2",   -- __, 11, 50 <__, __, __> [ 9/ 9, 105] __(__); Remove Close Position merits
+    feet="Maculele Toe Shoes +3",   -- __, 12, 60 <__, __, __> [10/10, 115] __(__); Remove Close Position merits
     neck="Etoile Gorget +2",        -- __,  7, 25 <__, __, __> [__/__, ___] __(__)
     ear1="Eabani Earring",          --  4, __, __ <__, __, __> [__/__,   8] __(__)
     ear2="Sherida Earring",         -- __,  5, __ < 5, __, __> [__/__, ___] __( 5)
@@ -1094,7 +1094,7 @@ function init_gear_sets()
     back=gear.DNC_TP_DW_Cape,       -- 10, __, 20 <__, __, __> [10/__, ___] __(__)
     waist="Reiki Yotai",            --  7,  4, 10 <__, __, __> [__/__, ___] __(__)
     -- Traits/Merits/Gifts          -- __, __, __ <__, __, __> [__/__, ___] 33(__)
-    -- 21 DW, 68 STP, 240 Acc <11 DA, 8 TA, 0 QA> [49 PDT/39 MDT, 562 M.Eva] 38 Subtle Blow
+    -- 21 DW, 69 STP, 250 Acc <11 DA, 8 TA, 0 QA> [50 PDT/40 MDT, 572 M.Eva] 38 Subtle Blow
   }
   sets.engaged.MidDW.HeavyDef.LowAcc = set_combine(sets.engaged.MidDW.HeavyDef, {})
   sets.engaged.MidDW.HeavyDef.MidAcc = set_combine(sets.engaged.MidDW.HeavyDef.LowAcc, {})
@@ -1107,7 +1107,7 @@ function init_gear_sets()
     body="Maculele Casaque +2",     -- 11, __, __ <__, __, __> [13/13,  99] 13(__)
     hands=gear.Adhemar_A_hands,     -- __,  7, 52 <__,  4, __> [__/__,  43] __(__)
     legs=gear.Samnuha_legs,         -- __,  7, 15 < 3,  3, __> [__/__,  75] __(__)
-    feet="Maculele Toe Shoes +2",   -- __, 11, 50 <__, __, __> [ 9/ 9, 105] __(__); Remove Close Position merits
+    feet="Maculele Toe Shoes +3",   -- __, 12, 60 <__, __, __> [10/10, 115] __(__); Remove Close Position merits
     neck="Etoile Gorget +2",        -- __,  7, 25 <__, __, __> [__/__, ___] __(__)
     ear1="Telos Earring",           -- __,  5, 10 < 1, __, __> [__/__, ___] __(__)
     ear2="Sherida Earring",         -- __,  5, __ < 5, __, __> [__/__, ___] __( 5)
@@ -1116,7 +1116,7 @@ function init_gear_sets()
     back=gear.DNC_TP_DW_Cape,       -- 10, __, 20 <__, __, __> [10/__, ___] __(__)
     waist="Reiki Yotai",            --  7,  4, 10 <__, __, __> [__/__, ___] __(__)
     -- Traits/Merits/Gifts             __, __, __ <__, __, __> [__/__, ___] 33(__)
-    -- 28 DW, 54 STP, 232 Acc <9 DA, 12 TA, 0 QA> [51 PDT/41 MDT, 445 M.Eva] 51 Subtle Blow
+    -- 28 DW, 55 STP, 242 Acc <9 DA, 12 TA, 0 QA> [52 PDT/42 MDT, 455 M.Eva] 51 Subtle Blow
   }
   sets.engaged.HighDW.HeavyDef.LowAcc = set_combine(sets.engaged.HighDW.HeavyDef, {})
   sets.engaged.HighDW.HeavyDef.MidAcc = set_combine(sets.engaged.HighDW.HeavyDef.LowAcc, {})
@@ -1129,7 +1129,7 @@ function init_gear_sets()
     body="Maculele Casaque +2",     -- 11, __, __ <__, __, __> [13/13,  99] 13(__)
     hands="Malignance Gloves",      -- __, 12, 50 <__, __, __> [ 5/ 5, 112] __(__)
     legs="Malignance Tights",       -- __, 10, 50 <__, __, __> [ 7/ 7, 150] __(__)
-    feet="Maculele Toe Shoes +2",   -- __, 11, 50 <__, __, __> [ 9/ 9, 105] __(__); Remove Close Position merits
+    feet="Maculele Toe Shoes +3",   -- __, 12, 60 <__, __, __> [10/10, 115] __(__); Remove Close Position merits
     neck="Etoile Gorget +2",        -- __,  7, 25 <__, __, __> [__/__, ___] __(__)
     ear1="Suppanomimi",             --  5, __, __ <__, __, __> [__/__, ___] __(__)
     ear2="Eabani Earring",          --  4, __, __ <__, __, __> [__/__,   8] __(__)
@@ -1138,7 +1138,7 @@ function init_gear_sets()
     back=gear.DNC_TP_DW_Cape,       -- 10, __, 20 <__, __, __> [10/__, ___] __(__)
     waist="Reiki Yotai",            --  7,  4, 10 <__, __, __> [__/__, ___] __(__)
     -- Traits/Merits/Gifts             __, __, __ <__, __, __> [__/__, ___] 33(__)
-    -- 37 DW, 52 STP, 220 Acc <6 DA, 8 TA, 0 QA> [53 PDT/43 MDT, 522 M.Eva] 46 Subtle Blow
+    -- 37 DW, 53 STP, 230 Acc <6 DA, 8 TA, 0 QA> [54 PDT/44 MDT, 532 M.Eva] 46 Subtle Blow
   }
   sets.engaged.SuperDW.HeavyDef.LowAcc = set_combine(sets.engaged.SuperDW.HeavyDef, {})
   sets.engaged.SuperDW.HeavyDef.MidAcc = set_combine(sets.engaged.SuperDW.HeavyDef.LowAcc, {})
@@ -1152,7 +1152,7 @@ function init_gear_sets()
     body="Maculele Casaque +2",     -- 11, __, __ <__, __, __> [13/13,  99] 13(__)
     hands="Malignance Gloves",      -- __, 12, 50 <__, __, __> [ 5/ 5, 112] __(__)
     legs="Malignance Tights",       -- __, 10, 50 <__, __, __> [ 7/ 7, 150] __(__)
-    feet="Maculele Toe Shoes +2",   -- __, 11, 50 <__, __, __> [ 9/ 9, 105] __(__); Remove Close Position merits
+    feet="Maculele Toe Shoes +3",   -- __, 12, 60 <__, __, __> [10/10, 115] __(__); Remove Close Position merits
     neck="Etoile Gorget +2",        -- __,  7, 25 <__, __, __> [__/__, ___] __(__)
     ear1="Suppanomimi",             --  5, __, __ <__, __, __> [__/__, ___] __(__)
     ear2="Eabani Earring",          --  4, __, __ <__, __, __> [__/__,   8] __(__)
@@ -1161,7 +1161,7 @@ function init_gear_sets()
     back=gear.DNC_TP_DW_Cape,       -- 10, __, 20 <__, __, __> [10/__, ___] __(__)
     waist="Reiki Yotai",            --  7,  4, 10 <__, __, __> [__/__, ___] __(__)
     -- Traits/Merits/Gifts             __, __, __ <__, __, __> [__/__, ___] 33(__)
-    -- 37 DW, 52 STP, 220 Acc <6 DA, 8 TA, 0 QA> [53 PDT/43 MDT, 522 M.Eva] 46 Subtle Blow
+    -- 37 DW, 53 STP, 230 Acc <6 DA, 8 TA, 0 QA> [54 PDT/44 MDT, 532 M.Eva] 46 Subtle Blow
   }
   sets.engaged.MaxDW.HeavyDef.LowAcc = set_combine(sets.engaged.MaxDW.HeavyDef, {})
   sets.engaged.MaxDW.HeavyDef.MidAcc = set_combine(sets.engaged.MaxDW.HeavyDef.LowAcc, {})
