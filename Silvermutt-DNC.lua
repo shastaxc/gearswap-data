@@ -384,7 +384,7 @@ function init_gear_sets()
   }
   sets.precast.Flourish3 = {}
   sets.precast.Flourish3['Striking Flourish'] = {
-    body="Maculele Casaque +2"
+    body="Maculele Casaque +3"
   }
   sets.precast.Flourish3['Climactic Flourish'] = {
     head="Maculele Tiara +2",
@@ -928,7 +928,7 @@ function init_gear_sets()
   sets.engaged.HighDW = {
     ammo="Coiste Bodhar",           -- __,  3, __ < 3, __, __> [__/__, ___] __(__)
     head="Malignance Chapeau",      -- __,  8, 50 <__, __, __> [ 6/ 6, 123] __(__)
-    body="Maculele Casaque +2",     -- 11, __, __ <__, __, __> [13/13,  99] 13(__)
+    body="Maculele Casaque +3",     -- 11, __, __ <__, __, __> [14/14, 109] 14(__)
     hands=gear.Adhemar_A_hands,     -- __,  7, 52 <__,  4, __> [__/__,  43] __(__)
     legs=gear.Samnuha_legs,         -- __,  7, 15 < 3,  3, __> [__/__,  75] __(__)
     feet="Maculele Toe Shoes +3",   -- __, 12, 60 <__, __, __> [10/10, 115] __(__); Remove Close Position merits
@@ -940,7 +940,7 @@ function init_gear_sets()
     back=gear.DNC_TP_DW_Cape,       -- 10, __, 20 <__, __, __> [10/__, ___] __(__)
     waist="Reiki Yotai",            --  7,  4, 10 <__, __, __> [__/__, ___] __(__)
     -- Traits/Merits/Gifts             __, __, __ <__, __, __> [__/__, ___] 33(__)
-    -- 28 DW, 58 STP, 242 Acc <15 DA, 15 TA, 0 QA> [39 PDT/29 MDT, 455 M.Eva] 51 Subtle Blow
+    -- 28 DW, 58 STP, 242 Acc <15 DA, 15 TA, 0 QA> [40 PDT/30 MDT, 465 M.Eva] 52 Subtle Blow
   }
   sets.engaged.HighDW.LowAcc = set_combine(sets.engaged.HighDW, {
     ammo="Yamarang",                -- __,  3, 15 <__, __, __> [__/__,  15] __(__)
@@ -969,7 +969,7 @@ function init_gear_sets()
   sets.engaged.SuperDW = {
     ammo="Coiste Bodhar",           -- __,  3, __ < 3, __, __> [__/__, ___] __(__)
     head="Malignance Chapeau",      -- __,  8, 50 <__, __, __> [ 6/ 6, 123] __(__)
-    body="Maculele Casaque +2",     -- 11, __, __ <__, __, __> [13/13,  99] 13(__)
+    body="Maculele Casaque +3",     -- 11, __, __ <__, __, __> [14/14, 109] 14(__)
     hands=gear.Adhemar_A_hands,     -- __,  7, 52 <__,  4, __> [__/__,  43] __(__)
     legs=gear.Samnuha_legs,         -- __,  7, 15 < 3,  3, __> [__/__,  75] __(__)
     feet="Maculele Toe Shoes +3",   -- __, 12, 60 <__, __, __> [10/10, 115] __(__); Remove Close Position merits
@@ -981,7 +981,7 @@ function init_gear_sets()
     back=gear.DNC_TP_DW_Cape,       -- 10, __, 20 <__, __, __> [10/__, ___] __(__)
     waist="Reiki Yotai",            --  7,  4, 10 <__, __, __> [__/__, ___] __(__)
     -- Traits/Merits/Gifts             __, __, __ <__, __, __> [__/__, ___] 33(__)
-    -- 37 DW, 48 STP, 232 Acc <9 DA, 15 TA, 0 QA> [39 PDT/29 MDT, 463 M.Eva] 46 Subtle Blow
+    -- 37 DW, 48 STP, 232 Acc <9 DA, 15 TA, 0 QA> [40 PDT/30 MDT, 473 M.Eva] 47 Subtle Blow
   }
   sets.engaged.SuperDW.LowAcc = set_combine(sets.engaged.SuperDW, {
     ammo="Yamarang",                -- __,  3, 15 <__, __, __> [__/__,  15] __(__)
@@ -1008,7 +1008,7 @@ function init_gear_sets()
   sets.engaged.MaxDW = {
     ammo="Coiste Bodhar",           -- __,  3, __ < 3, __, __> [__/__, ___] __(__)
     head="Malignance Chapeau",      -- __,  8, 50 <__, __, __> [ 6/ 6, 123] __(__)
-    body="Maculele Casaque +2",     -- 11, __, __ <__, __, __> [13/13,  99] 13(__)
+    body="Maculele Casaque +3",     -- 11, __, __ <__, __, __> [14/14, 109] 14(__)
     hands=gear.Adhemar_A_hands,     -- __,  7, 52 <__,  4, __> [__/__,  43] __(__)
     legs=gear.Samnuha_legs,         -- __,  7, 15 < 3,  3, __> [__/__,  75] __(__)
     feet="Maculele Toe Shoes +3",   -- __, 12, 60 <__, __, __> [10/10, 115] __(__); Remove Close Position merits
@@ -1020,7 +1020,7 @@ function init_gear_sets()
     back=gear.DNC_TP_DW_Cape,       -- 10, __, 20 <__, __, __> [10/__, ___] __(__)
     waist="Reiki Yotai",            --  7,  4, 10 <__, __, __> [__/__, ___] __(__)
     -- Traits/Merits/Gifts             __, __, __ <__, __, __> [__/__, ___] 33(__)
-    -- 37 DW, 48 STP, 232 Acc <9 DA, 15 TA, 0 QA> [39 PDT/29 MDT, 463 M.Eva] 46 Subtle Blow
+    -- 37 DW, 48 STP, 232 Acc <9 DA, 15 TA, 0 QA> [40 PDT/30 MDT, 473 M.Eva] 47 Subtle Blow
   }
   sets.engaged.MaxDW.LowAcc = set_combine(sets.engaged.MaxDW, {
   })
@@ -1104,7 +1104,7 @@ function init_gear_sets()
   sets.engaged.HighDW.HeavyDef = {
     ammo="Staunch Tathlum +1",      -- __, __, __ <__, __, __> [ 3/ 3, ___] __(__)
     head="Malignance Chapeau",      -- __,  8, 50 <__, __, __> [ 6/ 6, 123] __(__)
-    body="Maculele Casaque +2",     -- 11, __, __ <__, __, __> [13/13,  99] 13(__)
+    body="Maculele Casaque +3",     -- 11, __, __ <__, __, __> [14/14, 109] 14(__)
     hands=gear.Adhemar_A_hands,     -- __,  7, 52 <__,  4, __> [__/__,  43] __(__)
     legs=gear.Samnuha_legs,         -- __,  7, 15 < 3,  3, __> [__/__,  75] __(__)
     feet="Maculele Toe Shoes +3",   -- __, 12, 60 <__, __, __> [10/10, 115] __(__); Remove Close Position merits
@@ -1116,7 +1116,7 @@ function init_gear_sets()
     back=gear.DNC_TP_DW_Cape,       -- 10, __, 20 <__, __, __> [10/__, ___] __(__)
     waist="Reiki Yotai",            --  7,  4, 10 <__, __, __> [__/__, ___] __(__)
     -- Traits/Merits/Gifts             __, __, __ <__, __, __> [__/__, ___] 33(__)
-    -- 28 DW, 55 STP, 242 Acc <9 DA, 12 TA, 0 QA> [52 PDT/42 MDT, 455 M.Eva] 51 Subtle Blow
+    -- 28 DW, 55 STP, 242 Acc <9 DA, 12 TA, 0 QA> [53 PDT/43 MDT, 465 M.Eva] 52 Subtle Blow
   }
   sets.engaged.HighDW.HeavyDef.LowAcc = set_combine(sets.engaged.HighDW.HeavyDef, {})
   sets.engaged.HighDW.HeavyDef.MidAcc = set_combine(sets.engaged.HighDW.HeavyDef.LowAcc, {})
@@ -1126,7 +1126,7 @@ function init_gear_sets()
   sets.engaged.SuperDW.HeavyDef = {
     ammo="Coiste Bodhar",           -- __,  3, __ < 3, __, __> [__/__, ___] __(__)
     head="Malignance Chapeau",      -- __,  8, 50 <__, __, __> [ 6/ 6, 123] __(__)
-    body="Maculele Casaque +2",     -- 11, __, __ <__, __, __> [13/13,  99] 13(__)
+    body="Maculele Casaque +3",     -- 11, __, __ <__, __, __> [14/14, 109] 14(__)
     hands="Malignance Gloves",      -- __, 12, 50 <__, __, __> [ 5/ 5, 112] __(__)
     legs="Malignance Tights",       -- __, 10, 50 <__, __, __> [ 7/ 7, 150] __(__)
     feet="Maculele Toe Shoes +3",   -- __, 12, 60 <__, __, __> [10/10, 115] __(__); Remove Close Position merits
@@ -1138,7 +1138,7 @@ function init_gear_sets()
     back=gear.DNC_TP_DW_Cape,       -- 10, __, 20 <__, __, __> [10/__, ___] __(__)
     waist="Reiki Yotai",            --  7,  4, 10 <__, __, __> [__/__, ___] __(__)
     -- Traits/Merits/Gifts             __, __, __ <__, __, __> [__/__, ___] 33(__)
-    -- 37 DW, 53 STP, 230 Acc <6 DA, 8 TA, 0 QA> [54 PDT/44 MDT, 532 M.Eva] 46 Subtle Blow
+    -- 37 DW, 53 STP, 230 Acc <6 DA, 8 TA, 0 QA> [55 PDT/45 MDT, 542 M.Eva] 47 Subtle Blow
   }
   sets.engaged.SuperDW.HeavyDef.LowAcc = set_combine(sets.engaged.SuperDW.HeavyDef, {})
   sets.engaged.SuperDW.HeavyDef.MidAcc = set_combine(sets.engaged.SuperDW.HeavyDef.LowAcc, {})
@@ -1149,7 +1149,7 @@ function init_gear_sets()
   sets.engaged.MaxDW.HeavyDef = {
     ammo="Coiste Bodhar",           -- __,  3, __ < 3, __, __> [__/__, ___] __(__)
     head="Malignance Chapeau",      -- __,  8, 50 <__, __, __> [ 6/ 6, 123] __(__)
-    body="Maculele Casaque +2",     -- 11, __, __ <__, __, __> [13/13,  99] 13(__)
+    body="Maculele Casaque +3",     -- 11, __, __ <__, __, __> [14/14, 109] 14(__)
     hands="Malignance Gloves",      -- __, 12, 50 <__, __, __> [ 5/ 5, 112] __(__)
     legs="Malignance Tights",       -- __, 10, 50 <__, __, __> [ 7/ 7, 150] __(__)
     feet="Maculele Toe Shoes +3",   -- __, 12, 60 <__, __, __> [10/10, 115] __(__); Remove Close Position merits
@@ -1161,7 +1161,7 @@ function init_gear_sets()
     back=gear.DNC_TP_DW_Cape,       -- 10, __, 20 <__, __, __> [10/__, ___] __(__)
     waist="Reiki Yotai",            --  7,  4, 10 <__, __, __> [__/__, ___] __(__)
     -- Traits/Merits/Gifts             __, __, __ <__, __, __> [__/__, ___] 33(__)
-    -- 37 DW, 53 STP, 230 Acc <6 DA, 8 TA, 0 QA> [54 PDT/44 MDT, 532 M.Eva] 46 Subtle Blow
+    -- 37 DW, 53 STP, 230 Acc <6 DA, 8 TA, 0 QA> [55 PDT/45 MDT, 542 M.Eva] 47 Subtle Blow
   }
   sets.engaged.MaxDW.HeavyDef.LowAcc = set_combine(sets.engaged.MaxDW.HeavyDef, {})
   sets.engaged.MaxDW.HeavyDef.MidAcc = set_combine(sets.engaged.MaxDW.HeavyDef.LowAcc, {})
