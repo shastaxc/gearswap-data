@@ -644,7 +644,7 @@ function init_gear_sets()
     feet=gear.Nyame_B_feet,
     neck="Scout's Gorget +1",
     ear1="Moonshade Earring",
-    ear2="Amini Earring",
+    ear2="Amini Earring +1",
     ring1="Regal Ring",
     ring2="Epaminondas's Ring",
     back=gear.RNG_WS2_Cape,
@@ -756,12 +756,12 @@ function init_gear_sets()
     feet=gear.Nyame_B_feet,       -- 23, 26, 65, 53, 11, __, ___
     neck="Scout's Gorget +1",     -- __, __, __, __, __,  8, ___
     ear1="Moonshade Earring",     -- __, __, __,  4, __, __, 250
-    ear2="Amini Earring",         -- __, __, __, __, __,  7, ___
+    ear2="Amini Earring +1",      -- __, __, __, __, __,  8, ___
     ring1="Sroda Ring",           -- 15, __, __, __, __,  3, ___
     ring2="Epaminondas's Ring",   -- __, __, __, __,  5, __, ___
     back=gear.RNG_WS3_Cape,       -- 30, __, 20, 20, 10, __, ___
     waist="Sailfi Belt +1",       -- 15, __, 15, __, __, __, ___
-    -- 217 STR, 149 MND, 295 Attack, 207 Accuracy, 62 WSD, 18 PDL, 450 TP Bonus
+    -- 217 STR, 149 MND, 295 Attack, 207 Accuracy, 62 WSD, 19 PDL, 450 TP Bonus
 
     -- neck="Scout's Gorget +2",  -- __, __, __, __, __, 10, ___
     -- ear2="Amini Earring +2",   -- 15, __, __, 20, __,  9, ___
@@ -776,7 +776,7 @@ function init_gear_sets()
   })
   sets.precast.WS['Savage Blade'].HighAccMaxTP = set_combine(sets.precast.WS['Savage Blade'].HighAcc, {
     ear1="Telos Earring",
-    ear2="Amini Earring",
+    ear2="Amini Earring +1",
     
     -- ear2="Amini Earring +2",
   })
