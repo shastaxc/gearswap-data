@@ -1453,16 +1453,18 @@ function init_gear_sets()
   })
 
   sets.LightDef = {
-    sub="Utu Grip",               -- [__/__, ___]  70
-    ammo="Staunch Tathlum +1",    -- [ 3/ 3, ___] ___
-    head=gear.Nyame_B_head,       -- [ 7/ 7, 123]  91
-    body=gear.Nyame_B_body,       -- [ 9/ 9, 139] 136
-    legs=gear.Nyame_B_legs,       -- [ 8/ 8, 150] 114
-    ear1="Odnowa Earring +1",     -- [ 3/ 5, ___] 110
-    ring2="Defending Ring",       -- [10/10, ___] ___
-    back=gear.RUN_TP_Cape,        -- [10/__, ___] ___
-    waist="Platinum Moogle Belt", -- [ 3/ 3,  15] ___; HP+10%
-    -- HP bonus from belt                         301
+    sub="Utu Grip",                 -- [__/__, ___]  70
+    ammo="Staunch Tathlum +1",      -- [ 3/ 3, ___] ___
+    head=gear.Nyame_B_head,         -- [ 7/ 7, 123]  91
+    body=gear.Nyame_B_body,         -- [ 9/ 9, 139] 136
+    legs=gear.Nyame_B_legs,         -- [ 8/ 8, 150] 114
+    ear1="Odnowa Earring +1",       -- [ 3/ 5, ___] 110
+    ring2="Defending Ring",         -- [10/10, ___] ___
+    back=gear.RUN_TP_Cape,          -- [10/__, ___] ___
+    -- 50 PDT / 42 MDT, 412 MEVA [521 HP]
+    
+    -- waist="Platinum Moogle Belt",-- [ 3/ 3,  15] ___; HP+10%
+    -- HP bonus from belt                           301
     -- 53 PDT / 45 MDT, 427 MEVA [521/822 HP]
   }
 
