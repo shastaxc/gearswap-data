@@ -1,4 +1,4 @@
--- File Status: Good. Verify HP balancing.
+-- File Status: Good. Verify HP balancing after adding platinum moogle belt.
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs
