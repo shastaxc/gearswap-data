@@ -290,12 +290,29 @@ function init_gear_sets()
     waist="Flume Belt +1",                          --  4/__, ___ [___] __; Convert dmg to MP
     -- Merits/Traits/Gifts                                              19
     -- 49 PDT / 39 MDT, 708 MEVA [979 HP] 36 Inquartata
+    
+    -- ammo="Staunch Tathlum +1",                   --  3/ 3, ___ [___] __
+    -- head=gear.Nyame_B_head,                      --  7/ 7, 123 [ 91] __
+    -- body="Erilaz Surcoat +3",                    -- __/__, 130 [143] __; Retain enmity, Convert dmg to MP
+    -- hands="Turms Mittens +1",                    -- __/__, 101 [ 74] __; HP+100 on parry
+    -- legs="Erilaz Leg Guards +3",                 -- 13/13, 157 [100]  4
+    -- feet="Turms Leggings +1",                    -- __/__, 147 [ 76]  5
+    -- neck="Futhark Torque +2",                    --  7/ 7,  30 [ 60] __
+    -- ear1={name="Odnowa Earring +1",priority=1},  --  3/ 5, ___ [110] __
+    -- ear2="Arete del Luna +1",                    -- __/__, ___ [___] __; Resists
+    -- ring1={name="Gelatinous Ring +1",priority=1},--  7/-1, ___ [135] __
+    -- ring2={name="Moonlight Ring",priority=1},    --  5/ 5, ___ [110] __
+    -- back=gear.RUN_HPP_Cape,                      -- __/__,  20 [ 80]  8
+    -- waist="Platinum Moogle Belt",                --  3/ 3,  15 [___] __; HP+10%
+    -- Merits/Traits/Gifts                                              19
+    -- HP from belt                                                347
+    -- 48 PDT / 42 MDT, 723 MEVA [979/1326 HP] 36 Inquartata
   }
 
   -- PDT cap is 50%, Protect V = 0%
   sets.defense.PDT = set_combine(sets.HeavyDef, {
-    sub="Refined Grip +1",                            --  3/ 3, ___ [ 35] __
-    -- 52 PDT / 42 MDT, 708 MEVA [1014 HP] 36 Inquartata
+    sub="Refined Grip +1",                          --  3/ 3, ___ [ 35] __
+    -- 51 PDT / 45 MDT, 723 MEVA [1014/1365 HP] 36 Inquartata
   })
 
   -- MDT cap is 50%, Shell V = 29%
@@ -316,11 +333,22 @@ function init_gear_sets()
     waist="Engraved Belt",                          -- __/__, ___ [___] (__, 20)
     -- 51 PDT / 45 MDT, 650 MEVA [1146 HP] (18 Status Resist, 50 Element Resist)
 
+    -- sub="Utu Grip",                              -- __/__, ___ [ 70] (__, __)
+    -- ammo="Staunch Tathlum +1",                   --  3/ 3, ___ [___] (11, __)
+    -- head="Erilaz Galea +3",                      -- __/__, 119 [111] (__, __)
+    -- body="Erilaz Surcoat +3",                    -- __/__, 130 [143] (__, __); Retain enmity, Convert dmg to MP
     -- hands="Erilaz Gauntlets +3",                 -- 11/11,  87 [ 59] ( 8, __)
+    -- legs="Erilaz Leg Guards +3",                 -- 13/13, 157 [100] (__, __)
     -- feet="Erilaz Greaves +3",                    -- 11/11, 157 [ 48] (__, 35)
+    -- neck="Warder's Charm +1",                    -- __/__, ___ [___] (__, 20); Absorb magic dmg
     -- ear1="Sanare Earring",                       -- __/__,   6 [___] (__, __); M. Def Bonus+4
-    -- back=gear.RUN_HPME_Cape,                     -- __/__,  45 [ 60] (__, __)
-    -- 50 PDT / 42 MDT, 701 MEVA [1036 HP] (19 Status Resist, 55 Element Resist)
+    -- ear2="Arete del Luna +1",                    -- __/__, ___ [___] (__, __); Resists
+    -- ring1="Wuji Ring",                           -- __/__, ___ [___] (__, __); Resists
+    -- ring2={name="Moonlight Ring",priority=1},    --  5/ 5, ___ [110] (__, __)
+    -- back="Moonlight Cape",                       --  6/ 6, ___ [275] (__, __)
+    -- waist="Platinum Moogle Belt",                --  3/ 3,  15 [___] (__, __); HP+10%
+    -- HP from belt                                                341
+    -- 52 PDT / 52 MDT, 671 MEVA [916/1257 HP] (19 Status Resist, 55 Element Resist)
   }
 
   sets.defense.Parry = {
@@ -337,23 +365,39 @@ function init_gear_sets()
 
   -- Enmity sets, caps at +200
   sets.Enmity = {
-    ammo="Sapience Orb",                          -- __/__, ___ [___] < 2>
-    head="Halitus Helm",                          -- __/__,  43 [ 88] < 8>
-    body="Emet Harness +1",                       --  6/__,  64 [ 61] <10>
-    hands="Kurys Gloves",                         --  2/ 2,  57 [ 25] < 9>
-    legs="Erilaz Leg Guards +3",                  -- 13/13, 157 [100] <13>
-    feet="Erilaz Greaves +2",                     -- 10/10, 147 [ 38] < 7>
-    neck={name="Unmoving Collar +1",priority=1},  -- __/__, ___ [200] <10>
-    ear1={name="Odnowa Earring +1",priority=1},   --  3/ 5, ___ [110] <__>
-    ear2="Cryptic Earring",                       -- __/__, ___ [ 40] < 4>
-    ring1="Moonlight Ring",                       --  5/ 5, ___ [110] <__>
-    ring2={name="Moonlight Ring",priority=1},     --  5/ 5, ___ [110] <__>
-    back=gear.RUN_HPD_Cape,                       -- 10/__,  20 [ 80] <10>
-    waist={name="Kasiri Belt",priority=1},        -- __/__, ___ [ 30] < 3>
+    ammo="Sapience Orb",                            -- __/__, ___ [___] < 2>
+    head="Halitus Helm",                            -- __/__,  43 [ 88] < 8>
+    body="Emet Harness +1",                         --  6/__,  64 [ 61] <10>
+    hands="Kurys Gloves",                           --  2/ 2,  57 [ 25] < 9>
+    legs="Erilaz Leg Guards +3",                    -- 13/13, 157 [100] <13>
+    feet="Erilaz Greaves +2",                       -- 10/10, 147 [ 38] < 7>
+    neck={name="Unmoving Collar +1",priority=1},    -- __/__, ___ [200] <10>
+    ear1={name="Odnowa Earring +1",priority=1},     --  3/ 5, ___ [110] <__>
+    ear2="Cryptic Earring",                         -- __/__, ___ [ 40] < 4>
+    ring1="Moonlight Ring",                         --  5/ 5, ___ [110] <__>
+    ring2={name="Moonlight Ring",priority=1},       --  5/ 5, ___ [110] <__>
+    back=gear.RUN_HPD_Cape,                         -- 10/__,  20 [ 80] <10>
+    waist={name="Kasiri Belt",priority=1},          -- __/__, ___ [ 30] < 3>
     -- 54 PDT / 40 MDT, 488 M.Eva [992 HP] <76 Enmity>
     
-    -- feet="Erilaz Greaves +2",                  -- 11/11, 157 [ 48] < 8>
+    -- feet="Erilaz Greaves +3",                    -- 11/11, 157 [ 48] < 8>
     -- 55 PDT / 41 MDT, 498 M.Eva [1002 HP] <77 Enmity>
+    
+    -- ammo="Sapience Orb",                         -- __/__, ___ [___] < 2>
+    -- head="Halitus Helm",                         -- __/__,  43 [ 88] < 8>
+    -- body="Emet Harness +1",                      --  6/__,  64 [ 61] <10>
+    -- hands="Kurys Gloves",                        --  2/ 2,  57 [ 25] < 9>
+    -- legs="Erilaz Leg Guards +3",                 -- 13/13, 157 [100] <13>
+    -- feet="Erilaz Greaves +2",                    -- 11/11, 157 [ 48] < 8>
+    -- neck={name="Unmoving Collar +1",priority=1}, -- __/__, ___ [200] <10>
+    -- ear1={name="Odnowa Earring +1",priority=1},  --  3/ 5, ___ [110] <__>
+    -- ear2="Cryptic Earring",                      -- __/__, ___ [ 40] < 4>
+    -- ring1="Moonlight Ring",                      --  5/ 5, ___ [110] <__>
+    -- ring2="Eihwaz Ring",                         -- __/__, ___ [ 70] < 5>
+    -- back=gear.RUN_HPD_Cape,                      -- 10/__,  20 [ 80] <10>
+    -- waist="Platinum Moogle Belt",                --  3/ 3,  15 [___] <__>; HP+10%
+    -- HP from belts                                               342
+    -- 53 PDT / 39 MDT, 513 M.Eva [932/1274 HP] <79 Enmity>
   }
 
   -- PDT/MDT, M.Eva [HP] {SIRD}
@@ -408,6 +452,23 @@ function init_gear_sets()
     -- waist="Audumbla Sash",                                --  4/__, ___ [___] {10}
     -- SIRD merits                                                               { 8}
     -- 50 PDT / 38 MDT, 558 M.Eva [1040 HP] {102 SIRD}
+    
+    -- ammo="Staunch Tathlum +1",                            --  3/ 3, ___ [___] {11}
+    -- head="Erilaz Galea +3",                               -- __/__, 119 [111] {20}
+    -- body=gear.Nyame_B_body,                               --  9/ 9, 139 [136] {__}
+    -- hands=gear.Rawhide_B_hands,                           -- __/__,  37 [ 75] {15}
+    -- legs=gear.Carmine_A_legs,                             -- __/__,  80 [130] {20}
+    -- feet="Erilaz Greaves +3",                             -- 11/11, 157 [ 48] {__}
+    -- neck="Moonlight Necklace",                            -- __/__,  15 [___] {15}
+    -- ear1="Magnetic Earring",                              -- __/__, ___ [___] { 8}
+    -- ear2="Halasz Earring",                                -- __/__, ___ [___] { 5}
+    -- ring1="Gelatinous Ring +1",                           --  7/-1, ___ [135] {__}
+    -- ring2="Defending Ring",                               -- 10/10, ___ [___] {__}
+    -- back={name="Moonlight Cape",priority=1},              --  6/ 6, ___ [275] {__}
+    -- waist="Platinum Moogle Belt",                         --  3/ 3,  15 [___] {__}; HP+10%
+    -- HP from belt                                                         340
+    -- SIRD merits                                                               { 8}
+    -- 49 PDT / 41 MDT, 562 M.Eva [910/1250 HP] {102 SIRD}
   }
 
   sets.precast.JA = set_combine(sets.Enmity, {})
@@ -428,9 +489,11 @@ function init_gear_sets()
     waist={name="Kasiri Belt",priority=1},              -- __/__, ___ [ 30] < 3>
     -- 53 PDT / 45 MDT, 518 M.Eva [1039 HP] <66 Enmity>
 
-    -- feet="Erilaz Greaves +3",                  -- 11/11, 157 [ 48] < 8>
-    -- ring1="Eihwaz Ring",                       -- __/__, ___ [ 70] < 5>
-    -- 49 PDT / 41 MDT, 528 M.Eva [1009 HP] <72 Enmity>
+    -- feet="Erilaz Greaves +3",                        -- 11/11, 157 [ 48] < 8>
+    -- ring1="Eihwaz Ring",                             -- __/__, ___ [ 70] < 5>
+    -- waist="Platinum Moogle Belt",                    --  3/ 3,  15 [___] <__>; HP+10%
+    -- HP from belt                                                    347
+    -- 52 PDT / 44 MDT, 543 M.Eva [979/1326 HP] <69 Enmity>
   }
   sets.precast.JA['Valiance'] = set_combine(sets.precast.JA['Vallation'], {})
   sets.precast.JA['Battuta'] = set_combine(sets.Enmity, {
@@ -441,43 +504,60 @@ function init_gear_sets()
   })
 
   sets.precast.JA['Lunge'] = {
-    ammo="Seething Bomblet +1",   --  7, __/__ [___]
-    head="Agwu's Cap",            -- 35, __/__ [ 38]; R0
-    body=gear.Nyame_B_body,       -- 30,  9/ 9 [136]
-    hands=gear.Carmine_D_hands,   -- 42, __/__ [ 27]
-    legs="Agwu's Slops",          -- 55,  8/ 8 [ 50]
-    feet=gear.Herc_MAB_feet,      -- 57,  2/__ [  9]
-    neck="Baetyl Pendant",        -- 13, __/__ [___]
-    ear1="Friomisi Earring",      -- 10, __/__ [___]
-    ear2="Novio Earring",         --  7, __/__ [___]
-    ring1="Gelatinous Ring +1",   -- __,  7/-1 [135]
-    ring2="Shiva Ring +1",        --  3, __/__ [___]
-    back="Argochampsa Mantle",    -- 12, __/__ [___]
-    waist="Eschan Stone",         --  7, __/__ [ 20]
+    ammo="Seething Bomblet +1",                     --  7, __/__ [___]
+    head="Agwu's Cap",                              -- 35, __/__ [ 38]; R0
+    body=gear.Nyame_B_body,                         -- 30,  9/ 9 [136]
+    hands=gear.Carmine_D_hands,                     -- 42, __/__ [ 27]
+    legs="Agwu's Slops",                            -- 55,  8/ 8 [ 50]
+    feet=gear.Herc_MAB_feet,                        -- 57,  2/__ [  9]
+    neck="Baetyl Pendant",                          -- 13, __/__ [___]
+    ear1="Friomisi Earring",                        -- 10, __/__ [___]
+    ear2="Novio Earring",                           --  7, __/__ [___]
+    ring1="Gelatinous Ring +1",                     -- __,  7/-1 [135]
+    ring2="Shiva Ring +1",                          --  3, __/__ [___]
+    back="Argochampsa Mantle",                      -- 12, __/__ [___]
+    waist="Eschan Stone",                           --  7, __/__ [ 20]
     -- 271 MAB, 26 PDT / 16 MDT [415 HP]
 
-    -- head="Agwu's Cap",         -- 60, __/__ [ 38]; R30
-    -- body="Agwu's Robe",        -- 60, __/__ [ 61]; R30
-    -- hands="Agwu's Gages",      -- 60, __/__ [ 38]; R30
-    -- legs="Agwu's Slops",       -- 60, 10/10 [ 50]; R30
-    -- feet="Agwu's Pigaches",    -- 60, __/__ [ 27]; R30
+    -- head="Agwu's Cap",                           -- 60, __/__ [ 38]; R30
+    -- body="Agwu's Robe",                          -- 60, __/__ [ 61]; R30
+    -- hands="Agwu's Gages",                        -- 60, __/__ [ 38]; R30
+    -- legs="Agwu's Slops",                         -- 60, 10/10 [ 50]; R30
+    -- feet="Agwu's Pigaches",                      -- 60, __/__ [ 27]; R30
     -- 354 MAB, 17 PDT / 9 MDT [369 HP]
   }
   sets.precast.JA['Lunge'].Safe = {
-    ammo="Seething Bomblet +1",                   --  7, __/__ [___]
-    head=gear.Nyame_B_head,                       -- 30,  7/ 7 [ 91]
-    body=gear.Nyame_B_body,                       -- 30,  9/ 9 [136]
-    hands=gear.Carmine_D_hands,                   -- 42, __/__ [ 27]
-    legs={name=gear.Nyame_B_legs,priority=1},     -- 30,  8/ 8 [114]
-    feet=gear.Herc_MAB_feet,                      -- 57,  2/__ [  9]
-    neck="Futhark Torque +2",                     -- __,  7/ 7 [ 60]
-    ear1="Friomisi Earring",                      -- 10, __/__ [___]
-    ear2="Novio Earring",                         --  7, __/__ [___]
-    ring1={name="Gelatinous Ring +1",priority=1}, -- __,  7/-1 [135]
-    ring2="Moonlight Ring",                       -- __,  5/ 5 [110]
-    back={name="Moonlight Cape",priority=1},      -- __,  6/ 6 [275]
-    waist={name="Eschan Stone",priority=1},       --  7, __/__ [ 20]
-  } -- 213 MAB, 51 PDT / 41 MDT [977 HP]
+    ammo="Seething Bomblet +1",                     --  7, __/__ [___]
+    head=gear.Nyame_B_head,                         -- 30,  7/ 7 [ 91]
+    body=gear.Nyame_B_body,                         -- 30,  9/ 9 [136]
+    hands=gear.Carmine_D_hands,                     -- 42, __/__ [ 27]
+    legs={name=gear.Nyame_B_legs,priority=1},       -- 30,  8/ 8 [114]
+    feet=gear.Herc_MAB_feet,                        -- 57,  2/__ [  9]
+    neck="Futhark Torque +2",                       -- __,  7/ 7 [ 60]
+    ear1="Friomisi Earring",                        -- 10, __/__ [___]
+    ear2="Novio Earring",                           --  7, __/__ [___]
+    ring1={name="Gelatinous Ring +1",priority=1},   -- __,  7/-1 [135]
+    ring2="Moonlight Ring",                         -- __,  5/ 5 [110]
+    back={name="Moonlight Cape",priority=1},        -- __,  6/ 6 [275]
+    waist={name="Eschan Stone",priority=1},         --  7, __/__ [ 20]
+    -- 213 MAB, 51 PDT / 41 MDT [977 HP]
+    
+    -- ammo="Seething Bomblet +1",                  --  7, __/__ [___]
+    -- head=gear.Nyame_B_head,                      -- 30,  7/ 7 [ 91]
+    -- body=gear.Nyame_B_body,                      -- 30,  9/ 9 [136]
+    -- hands="Agwu's Gages",                        -- 60, __/__ [ 38]; R30
+    -- legs="Agwu's Slops",                         -- 60, 10/10 [ 50]; R30
+    -- feet="Agwu's Pigaches",                      -- 60, __/__ [ 27]; R30
+    -- neck="Futhark Torque +2",                    -- __,  7/ 7 [ 60]
+    -- ear1="Friomisi Earring",                     -- 10, __/__ [___]
+    -- ear2="Novio Earring",                        --  7, __/__ [___]
+    -- ring1={name="Gelatinous Ring +1",priority=1},-- __,  7/-1 [135]
+    -- ring2="Moonlight Ring",                      -- __,  5/ 5 [110]
+    -- back={name="Moonlight Cape",priority=1},     -- __,  6/ 6 [275]
+    -- waist="Platinum Moogle Belt",                -- __,  3/ 3 [___]; HP+10%
+    -- HP from belt                                               341
+    -- 264 MAB, 54 PDT / 46 MDT [922/1263 HP]
+  }
 
   sets.precast.JA['Swipe'] = set_combine(sets.precast.JA['Lunge'], {})
   sets.precast.JA['Swipe'].Safe = set_combine(sets.precast.JA['Lunge'].Safe, {})
@@ -514,6 +594,10 @@ function init_gear_sets()
     -- Master Level 50                                                  50
     -- Base skill                                                      398
     -- 51 PDT/45 MDT, 653 M.Eva [1017 HP] 484 Divine Skill
+    
+    -- waist="Platinum Moogle Belt",                -- 3/ 3,  15 [___] __; HP+10%
+    -- HP from belt                                               351
+    -- 51 PDT/45 MDT, 668 M.Eva [1017/1368 HP] 484 Divine Skill
   }
 
   -- Fast cast sets for spells
@@ -535,8 +619,10 @@ function init_gear_sets()
     -- 62% Fast Cast, 48 PDT/24 MDT, 547 M.Eva [962 HP]
 
     -- legs="Agwu's Slops",                               -- { 7} 10/10, 134 [ 50]; R30
-    -- waist={name="Kasiri Belt", priority=1},            -- {__} __/__, ___ [ 30]
-    -- 62% Fast Cast, 46 PDT/26 MDT, 547 M.Eva [992 HP]
+    -- ear2="Enchanter's Earring +1",                     -- { 2} __/__, ___ [___]
+    -- waist="Platinum Moogle Belt",                      -- {__}  3/ 3,  15 [___]; HP+10%
+    -- HP from belt                                                           341
+    -- 64% Fast Cast, 49 PDT/29 MDT, 554 M.Eva [917/1258 HP]
   }
 
   sets.precast.FC['Enhancing Magic'] = {
@@ -555,6 +641,12 @@ function init_gear_sets()
     back=gear.RUN_FC_Cape,                                -- {10} 10/__,  20 [ 80]
     waist="Flume Belt +1",                                -- {__}  4/__, ___ [___]
     -- 68% Fast Cast, 45 PDT/19 MDT, 494 M.Eva [974 HP]
+    
+    -- ear2={name="Eabani Earring",priority=1},           -- {__} __/__,   8 [ 45]
+    -- ring2="Defending Ring",                            -- {__} 10/10, ___ [___]
+    -- waist="Platinum Moogle Belt",                      -- {__}  3/ 3,  15 [___]; HP+10%
+    -- HP from belt                                                           340
+    -- 68% Fast Cast, 47 PDT/27 MDT, 517 M.Eva [909/1249 HP]
   }
   
   -- sets.precast.FC['Geist Wall'] = set_combine(sets.SIRD, {})
@@ -604,6 +696,22 @@ function init_gear_sets()
     -- ring1="Etana Ring",                        -- 10, 10 [__/__, ___]  60
     -- waist="Luminary Sash",                     -- __, 10 [__/__, ___] ___
     -- 350 Acc, 389 Magic Acc [52 PDT/54 MDT, 662 M.Eva] 906 HP
+    
+    -- ammo="Hydrocera",                          -- __,  6 [__/__, ___] ___
+    -- head="Erilaz Galea +3",                    -- 61, 61 [__/__, 119] 111
+    -- body="Erilaz Surcoat +3",                  -- 64, 64 [__/__, 130] 143
+    -- hands="Erilaz Gauntlets +3",               -- 62, 62 [11/11,  87]  59
+    -- legs="Erilaz Leg Guards +3",               -- 63, 63 [13/13, 157] 100
+    -- feet="Erilaz Greaves +3",                  -- 60, 60 [11/11, 157]  48
+    -- neck="Erra Pendant",                       -- __, 17 [__/__, ___] ___
+    -- ear1="Odnowa Earring +1",                  -- 10, __ [ 3/ 5, ___] 110
+    -- ear2="Erilaz Earring +2",                  -- 20, 20 [ 8/ 8,  12] ___
+    -- ring1="Etana Ring",                        -- 10, 10 [__/__, ___]  60
+    -- ring2="Metamorph Ring +1",                 -- __, 16 [__/__, ___] ___
+    -- back={name="Moonlight Cape",priority=1},   -- __, __ [ 6/ 6, ___] 275
+    -- waist="Platinum Moogle Belt",              -- __, __ [ 3/ 3,  15] ___; HP+10%
+    -- HP from belt                                                      340
+    -- 350 Acc, 379 Magic Acc [55 PDT/57 MDT, 677 M.Eva] 906/1246 HP
   }
 
 
@@ -648,7 +756,10 @@ function init_gear_sets()
     -- 46 PDT/44 MDT, 592 M.Eva [1067 HP] 95 Enh Duration
     
     -- feet="Erilaz Greaves +3",                    -- 11/11, 157 [ 48] __
-    -- 47 PDT/45 MDT, 602 M.Eva [1077 HP] 95 Enh Duration
+    -- ring2="Defending Ring",                      -- 10/10, ___ [___] __
+    -- waist="Platinum Moogle Belt",                --  3/ 3,  15 [___] __; HP+10%
+    -- HP from belt                                                346
+    -- 51 PDT/53 MDT, 617 M.Eva [967/1313 HP] 95 Enh Duration
   }
 
   -- Cap at 500 skill
@@ -671,10 +782,43 @@ function init_gear_sets()
     -- Base skill                                                       (__, 388)
     -- 46 PDT/34 MDT, 563 M.Eva [1010 HP] (65 Enh Duration, 505 Enh Skill)
 
+    -- ammo="Staunch Tathlum +1",                   --  3/ 3, ___ [___] (__, __)
+    -- head="Erilaz Galea +3",                      -- __/__, 119 [111] (25, __)
+    -- body=gear.Nyame_B_body,                      --  9/ 9, 139 [136] (__, __)
+    -- hands={name="Regal Gauntlets",priority=1},   -- __/__,  48 [205] (20, __)
     -- legs="Futhark Trousers +3",                  -- __/__,  89 [107] (30, __)
     -- feet="Erilaz Greaves +3",                    -- 11/11, 157 [ 48] (__, __)
+    -- neck="Futhark Torque +2",                    --  7/ 7,  30 [ 60] (__, __)
+    -- ear1="Andoaa Earring",                       -- __/__, ___ [___] (__,  5)
+    -- ear2="Mimir Earring",                        -- __/__, ___ [___] (__, 10)
+    -- ring1="Stikini Ring +1",                     -- __/__, ___ [___] (__,  8)
+    -- ring2="Defending Ring",                      -- 10/10, ___ [___] (__, __)
+    -- back={name="Moonlight Cape",priority=1},     --  6/ 6, ___ [275] (__, __)
+    -- waist="Platinum Moogle Belt",                --  3/ 3,  15 [___] (__, __); HP+10%
+    -- HP from belt                                                330
+    -- Merits/Traits/Gifts                                              (20, 52)
     -- Master Levels                                                    (__, 37)
-    -- 47 PDT/35 MDT, 582 M.Eva [1077 HP] (95 Enh Duration, 513 Enh Skill)
+    -- Base skill                                                       (__, 388)
+    -- 49 PDT/49 MDT, 597 M.Eva [942/1272 HP] (95 Enh Duration, 500 Enh Skill)
+
+    -- ammo="Staunch Tathlum +1",                   --  3/ 3, ___ [___] (__, __)
+    -- head="Erilaz Galea +3",                      -- __/__, 119 [111] (25, __)
+    -- body=gear.Nyame_B_body,                      --  9/ 9, 139 [136] (__, __)
+    -- hands={name="Regal Gauntlets",priority=1},   -- __/__,  48 [205] (20, __)
+    -- legs="Futhark Trousers +3",                  -- __/__,  89 [107] (30, __)
+    -- feet="Erilaz Greaves +3",                    -- 11/11, 157 [ 48] (__, __)
+    -- neck="Futhark Torque +2",                    --  7/ 7,  30 [ 60] (__, __)
+    -- ear1="Mimir Earring",                        -- __/__, ___ [___] (__, 10)
+    -- ear2="Arete del Luna +1",                    -- __/__, ___ [___] (__, __); Resists
+    -- ring1="Wuji Ring",                           -- __/__, ___ [___] (__, __); Resists
+    -- ring2="Defending Ring",                      -- 10/10, ___ [___] (__, __)
+    -- back={name="Moonlight Cape",priority=1},     --  6/ 6, ___ [275] (__, __)
+    -- waist="Platinum Moogle Belt",                --  3/ 3,  15 [___] (__, __); HP+10%
+    -- HP from belt                                                343
+    -- Merits/Traits/Gifts                                              (20, 52)
+    -- Master Levels                                                    (__, 50)
+    -- Base skill                                                       (__, 388)
+    -- 49 PDT/49 MDT, 597 M.Eva [942/1285 HP] (95 Enh Duration, 500 Enh Skill)
   }
   sets.midcast.BarStatus = set_combine(sets.midcast.BarElement, {})
   sets.midcast.Temper = { -- No skill cap
@@ -701,24 +845,38 @@ function init_gear_sets()
   }
   sets.midcast.Temper.Safe = set_combine(sets.midcast.BarElement, {})
   sets.midcast.Protect = {
-    ammo="Staunch Tathlum +1",                      --  3/ 3, ___ [___] (__, __)
-    head="Erilaz Galea +3",                         -- __/__, 119 [111] (25, __)
-    body=gear.Nyame_B_body,                         --  9/ 9, 139 [136] (__, __)
-    hands={name="Regal Gauntlets", priority=1},     -- __/__,  48 [205] (20, __)
-    legs={name="Futhark Trousers +3", priority=1},  -- __/__,  89 [107] (30, __)
-    feet="Turms Leggings +1",                       -- __/__, 147 [ 76] (__, __)
-    neck="Futhark Torque +2",                       --  7/ 7,  30 [ 60] (__, __)
-    ear1="Odnowa Earring +1",                       --  3/ 5, ___ [110] (__, __)
-    ear2="Arete del Luna +1",                       -- __/__, ___ [___] (__, __); Resists
-    ring1="Gelatinous Ring +1",                     --  7/-1, ___ [135] (__, __)
-    -- ring2="Sheltered Ring",                      -- __/__, ___ [___] (__, __); Enhances Protect
-    back={name="Moonlight Cape", priority=1},       --  6/ 6, ___ [275] (__, __)
-    waist="Audumbla Sash",                          --  4/__, ___ [___] (__, __)
-    -- Merits/Traits/Gifts                                              (20, 52)
-    -- 38 PDT/28 MDT, 567 M.Eva [1200 HP] (95 Enh Duration, N/A Enh Skill)
+    ammo="Staunch Tathlum +1",                        --  3/ 3, ___ [___] (__, __)
+    head="Erilaz Galea +3",                           -- __/__, 119 [111] (25, __)
+    body=gear.Nyame_B_body,                           --  9/ 9, 139 [136] (__, __)
+    hands={name="Regal Gauntlets", priority=1},       -- __/__,  48 [205] (20, __)
+    legs={name="Futhark Trousers +3", priority=1},    -- __/__,  89 [107] (30, __)
+    feet="Erilaz Greaves +2",                         -- 10/10, 147 [ 38] (__, __)
+    neck="Futhark Torque +2",                         --  7/ 7,  30 [ 60] (__, __)
+    ear1="Odnowa Earring +1",                         --  3/ 5, ___ [110] (__, __)
+    ear2="Arete del Luna +1",                         -- __/__, ___ [___] (__, __); Resists
+    -- ring1="Sheltered Ring",                        -- __/__, ___ [___] (__, __); Enhances Protect
+    ring2="Defending Ring",                           -- 10/10, ___ [___] (__, __)
+    back={name="Moonlight Cape", priority=1},         --  6/ 6, ___ [275] (__, __)
+    waist="Audumbla Sash",                            --  4/__, ___ [___] (__, __)
+    -- Merits/Traits/Gifts                                                (20, 52)
+    -- 52 PDT/50 MDT, 572 M.Eva [1042 HP] (95 Enh Duration, N/A Enh Skill)
     
-    -- feet="Erilaz Greaves +3",                    -- 11/11, 157 [ 48] (__, __)
-    -- 49 PDT/39 MDT, 577 M.Eva [1172 HP] (95 Enh Duration, N/A Enh Skill)
+    -- ammo="Staunch Tathlum +1",                     --  3/ 3, ___ [___] (__, __)
+    -- head="Erilaz Galea +3",                        -- __/__, 119 [111] (25, __)
+    -- body=gear.Nyame_B_body,                        --  9/ 9, 139 [136] (__, __)
+    -- hands={name="Regal Gauntlets", priority=1},    -- __/__,  48 [205] (20, __)
+    -- legs={name="Futhark Trousers +3", priority=1}, -- __/__,  89 [107] (30, __)
+    -- feet="Erilaz Greaves +3",                      -- 11/11, 157 [ 48] (__, __)
+    -- neck="Futhark Torque +2",                      --  7/ 7,  30 [ 60] (__, __)
+    -- ear1="Sanare Earring",                         -- __/__,   6 [___] (__, __); M. Def Bonus+4
+    -- ear2="Arete del Luna +1",                      -- __/__, ___ [___] (__, __); Resists
+    -- ring1="Sheltered Ring",                        -- __/__, ___ [___] (__, __); Enhances Protect
+    -- ring2="Defending Ring",                        -- 10/10, ___ [___] (__, __)
+    -- back={name="Moonlight Cape", priority=1},      --  6/ 6, ___ [275] (__, __)
+    -- waist="Platinum Moogle Belt",                  --  3/ 3,  15 [___] (__, __); HP+10%
+    -- HP from belt                                                  343
+    -- Merits/Traits/Gifts                                                (20, 52)
+    -- 49 PDT/49 MDT, 603 M.Eva [942/1285 HP] (95 Enh Duration, N/A Enh Skill)
   }
   sets.midcast.Shell = set_combine(sets.midcast.Protect, {})
 
@@ -741,8 +899,10 @@ function init_gear_sets()
     -- 27 Phalanx, 474 Enh Skill, 27% Interrupt [47 PDT/25 MDT, 365 M.Eva] 874 HP
     -- 61 Total Phalanx
     
+    -- waist="Platinum Moogle Belt",            -- _, ___, __ [ 3/ 3,  15] ___; HP+10%
+    -- HP from belt                                                        337
     -- Master Levels                                   50
-    -- 27 Phalanx, 500 Enh Skill, 27% Interrupt [47 PDT/25 MDT, 365 M.Eva] 874 HP
+    -- 27 Phalanx, 500 Enh Skill, 17% Interrupt [46 PDT/25 MDT, 380 M.Eva] 874/1211 HP
     -- 62 Total Phalanx
   }
   sets.midcast['Phalanx'].Embolden = set_combine(sets.midcast['Phalanx'], {
@@ -771,7 +931,7 @@ function init_gear_sets()
     -- Regen IV 73 hp/tic @117 sec
 
     -- main=gear.Morgelai_C,                    -- __, 25, __, __ [__/__, ___] 130
-    -- sub=empty,
+    -- sub="Refined Grip +1",                   -- __, __, __, __ [ 3/ 3, ___]  35
     -- ammo="Staunch Tathlum +1",               -- __, __, __, __ [ 3/ 3, ___] ___
     -- head="Runeist Bandeau +3",               -- __, 27, __, __ [__/__,  83] 109
     -- body=gear.Taeon_Regen_body,              -- __,  3, __, __ [__/__,  84]  59
@@ -783,36 +943,38 @@ function init_gear_sets()
     -- ear2="Erilaz Earring +2",                -- __, 12, __, __ [ 6/ 6,  12] ___
     -- ring1="Gelatinous Ring +1",              -- __, __, __, __ [ 7/-1, ___] 135
     -- ring2="Defending Ring",                  -- __, __, __, __ [10/10, ___] ___
-    -- back=gear.RUN_HPD_Cape,                  -- __, __, __, __ [10/__,  20]  80
+    -- back="Moonlight Cape",                   -- __, __, __, __ [ 6/ 6, ___] 275
     -- waist="Sroda Belt",                      -- 20, __, __, 15 [__/__, ___] ___
     -- Merits/Traits/Gifts                         __, __, 20, __
-    -- 30% Regen Potency, 67 Regen Potency, 70 Enh Duration %, 15 Regen Duration [50 PDT/34 MDT, 493 M.Eva] 1033 HP
+    -- 30% Regen Potency, 67 Regen Potency, 70 Enh Duration %, 15 Regen Duration [49 PDT/43 MDT, 473 M.Eva] 1263 HP
     -- Regen IV 106 hp/tic @117 sec
   }
 
   sets.midcast.Refresh = set_combine(sets.HeavyDef, sets.midcast.EnhancingDuration, {
     head="Erilaz Galea +3",
+    back={name="Moonlight Cape", priority=1},
     waist="Gishdubar Sash",
   })
 
   sets.midcast.Stoneskin = {
-    ammo="Staunch Tathlum +1",                  --  3/ 3, ___ [___] __
-    head=gear.Nyame_B_head,                     --  7/ 7, 123 [ 91] __
-    body=gear.Nyame_B_body,                     --  9/ 9, 139 [136] __
-    hands={name="Turms Mittens +1",priority=1}, -- __/__, 101 [ 74] __
-    legs="Erilaz Leg Guards +3",                -- 13/13, 157 [100] __
-    feet="Turms Leggings +1",                   -- __/__, 147 [ 76] __
-    neck="Futhark Torque +2",                   --  7/ 7,  30 [ 60] __
-    ear1="Odnowa Earring +1",                   --  3/ 5, ___ [110] __
-    ear2="Arete del Luna +1",                   -- __/__, ___ [___] __; Resist stun, bind, gravity, sleep, charm, light
-    ring1="Gelatinous Ring +1",                 --  7/-1, ___ [135] __
-    ring2="Moonlight Ring",                     --  5/ 5, ___ [110] __
-    back={name="Moonlight Cape", priority=1},   --  6/ 6, ___ [275] __
-    waist="Siegel Sash",                        -- __/__, ___ [___] 20
+    ammo="Staunch Tathlum +1",                      --  3/ 3, ___ [___] __
+    head=gear.Nyame_B_head,                         --  7/ 7, 123 [ 91] __
+    body=gear.Nyame_B_body,                         --  9/ 9, 139 [136] __
+    hands={name="Turms Mittens +1",priority=1},     -- __/__, 101 [ 74] __
+    legs="Erilaz Leg Guards +3",                    -- 13/13, 157 [100] __
+    feet="Turms Leggings +1",                       -- __/__, 147 [ 76] __
+    neck="Futhark Torque +2",                       --  7/ 7,  30 [ 60] __
+    ear1="Odnowa Earring +1",                       --  3/ 5, ___ [110] __
+    ear2="Arete del Luna +1",                       -- __/__, ___ [___] __; Resist stun, bind, gravity, sleep, charm, light
+    ring1="Gelatinous Ring +1",                     --  7/-1, ___ [135] __
+    ring2="Moonlight Ring",                         --  5/ 5, ___ [110] __
+    back={name="Moonlight Cape", priority=1},       --  6/ 6, ___ [275] __
+    waist="Siegel Sash",                            -- __/__, ___ [___] 20
     -- 60 PDT/54 MDT, 697 M.Eva [1167 HP] 20 Stoneskin Potency
 
-    -- hands="Stone Mufflers",                  -- __/__, ___ [ 10] 30
-    -- 60 PDT/54 MDT, 596 M.Eva [1103 HP] 50 Stoneskin Potency
+    -- neck={name="Unmoving Collar +1",priority=1}, -- __/__, ___ [200] __
+    -- hands="Stone Mufflers",                      -- __/__, ___ [ 10] 30
+    -- 53 PDT/47 MDT, 566 M.Eva [1303 HP] 50 Stoneskin Potency
   }
   sets.midcast.Flash = set_combine(sets.Enmity, {})
   sets.midcast.Foil = set_combine(sets.Enmity, {})
@@ -853,7 +1015,7 @@ function init_gear_sets()
     ammo="Staunch Tathlum +1",        -- __, __, __(__) [ 3/ 3, ___] ___ {11}
     head=gear.Nyame_B_head,           -- 26, 24, __(__) [ 7/ 7, 123]  91 {__}
     body=gear.Nyame_B_body,           -- 37, 45, __(__) [ 9/ 9, 139] 136 {__}
-    hands=gear.Nyame_B_hands,         -- 40, 54, __(__) [ 7/ 7, 112]  91 {__}
+    hands="Regal Gauntlets",          -- 40, 40, __(__) [__/__,  48] 205 {10}
     legs=gear.Nyame_B_legs,           -- 32, 30, __(__) [ 8/ 8, 150] 114 {__}
     feet=gear.Nyame_B_feet,           -- 26, 24, __(__) [ 7/ 7, 150]  68 {__}
     ear1="Odnowa Earring +1",         -- __,  3, __(__) [ 3/ 5, ___] 110 {__}
@@ -861,12 +1023,12 @@ function init_gear_sets()
     ring2="Moonlight Ring",           -- __, __, __(__) [ 5/ 5, ___] 110 {__}
     back="Moonlight Cape",            -- __, __, __(__) [ 6/ 6, ___] 275 {__}
     waist="Sroda Belt",               -- __, __, 35(__) [__/__, ___] ___ {__}
-    -- SIRD merits                                                           { 6}
-    -- 161 MND, 195 VIT, 36 Cure Pot (0 self pot) [62 PDT/56 MDT, 674 M.Eva] 1150 HP {17}
+    -- SIRD merits                                                       { 8}
+    -- 161 MND, 181 VIT, 35 Cure Pot (0 self pot) [55 PDT/49 MDT, 610 M.Eva] 1244 HP {29 SIRD}
     
     -- neck="Sacro Gorget",           -- __, __, 10(__) [__/__, ___]  50 {__}
     -- ear2="Mendicant's Earring",    -- __, __,  5(__) [__/__, ___] ___ {__}
-    -- 161 MND, 195 VIT, 50 Heal skill, 51 Cure Pot (0 self pot) [62 PDT/56 MDT, 674 M.Eva] 1180 HP {17}
+    -- 161 MND, 181 VIT, 50 Cure Pot (0 self pot) [55 PDT/49 MDT, 610 M.Eva] 1294 HP {29 SIRD}
   }
   sets.midcast['Blue Magic'].Cure.Safe = set_combine(sets.SIRD, {
     ammo="Staunch Tathlum +1",                  -- __, __, __(__) [ 3/ 3, ___] ___ {11}
@@ -876,7 +1038,7 @@ function init_gear_sets()
     legs={name=gear.Carmine_A_legs.name,
       augments=gear.Carmine_A_legs.augments,
       priority=1},                              -- 16, 17, __(__) [__/__,  80] 130 {20}
-    feet="Erilaz Greaves +2",                   -- 26, 16, __(__) [10/10, 147] 147 {__}
+    feet="Erilaz Greaves +2",                   -- 26, 16, __(__) [10/10, 147]  38 {__}
     neck="Moonlight Necklace",                  -- __, __, __(__) [__/__,  15] ___ {15}
     ear1="Magnetic Earring",                    -- __, __, __(__) [__/__, ___] ___ { 8}
     ear2="Halasz Earring",                      -- __, __, __(__) [__/__, ___] ___ { 5}
@@ -884,26 +1046,11 @@ function init_gear_sets()
     ring2="Defending Ring",                     -- __, __, __(__) [10/10, ___] ___ {__}
     back={name="Moonlight Cape",priority=1},    -- __, __, __(__) [ 6/ 6, ___] 275 {__}
     waist="Sroda Belt",                         -- __, __, 35(__) [__/__, ___] ___ {__}
-    -- SIRD merits                                                                     { 8}
-    -- 142 MND, 151 VIT, 18 Heal Skill, 35 Cure Pot (0 self pot) [45 PDT / 37 MDT, 547 M.Eva] 1009 HP {102 SIRD}
+    -- SIRD merits                                                                 { 8}
+    -- 142 MND, 151 VIT, 35 Cure Pot (0 self pot) [45 PDT / 37 MDT, 547 M.Eva] 900 HP {102 SIRD}
 
-    -- ammo="Staunch Tathlum +1",               -- __, __, __, __(__) [ 3/ 3, ___] ___ {11}
-    -- head="Erilaz Galea +3",                  -- 31, 24, __, __(__) [__/__, 119] 111 {20}
-    -- body=gear.Nyame_B_body,                  -- 37, 45, __, __(__) [ 9/ 9, 139] 136 {__}
-    -- hands=gear.Rawhide_B_hands,              -- 32, 34, __, __(__) [__/__,  37]  75 {15}
-    -- legs={name=gear.Carmine_A_legs.name,
-    --   augments=gear.Carmine_A_legs.augments,
-    --   priority=1},                           -- 16, 17, 18, __(__) [__/__,  80] 130 {20}
-    -- feet="Erilaz Greaves +3",                -- 31, 21, __, __(__) [11/11, 157]  48 {__}
-    -- neck="Moonlight Necklace",               -- __, __, __, __(__) [__/__,  15] ___ {15}
-    -- ear1="Magnetic Earring",                 -- __, __, __, __(__) [__/__, ___] ___ { 8}
-    -- ear2="Halasz Earring",                   -- __, __, __, __(__) [__/__, ___] ___ { 5}
-    -- ring1="Gelatinous Ring +1",              -- __, 15, __, __(__) [ 7/-1, ___] 135 {__}
-    -- ring2="Defending Ring",                  -- __, __, __, __(__) [10/10, ___] ___ {__}
-    -- back={name="Moonlight Cape",priority=1}, -- __, __, __, __(__) [ 6/ 6, ___] 275 {__}
-    -- waist="Sroda Belt",                      -- __, __, __, 35(__) [__/__, ___] ___ {__}
-    -- SIRD merits                                                                     { 8}
-    -- 147 MND, 156 VIT, 18 Heal Skill, 35 Cure Pot (0 self pot) [46 PDT / 38 MDT, 547 M.Eva] 910 HP {102 SIRD}
+    -- feet="Erilaz Greaves +3",                -- 31, 21, __(__) [11/11, 157]  48 {__}
+    -- 147 MND, 156 VIT, 35 Cure Pot (0 self pot) [46 PDT / 38 MDT, 547 M.Eva] 910 HP {102 SIRD}
   })
 
 
@@ -925,6 +1072,8 @@ function init_gear_sets()
     ring2="Niqmaddu Ring",
     back=gear.RUN_WS1_Cape,
     waist="Sailfi Belt +1",
+    
+    -- back=gear.RUN_WS3_Cape,
   }
   sets.precast.WS.MaxTP = set_combine(sets.precast.WS, {
     ear1="Ishvara Earring",
@@ -939,6 +1088,7 @@ function init_gear_sets()
     legs=gear.Nyame_B_legs,
     feet=gear.Nyame_B_feet,
     neck="Futhark Torque +2",
+    -- waist="Platinum Moogle Belt",
   })
   sets.precast.WS.SafeMaxTP = set_combine(sets.precast.WS.Safe, {})
 
@@ -996,10 +1146,21 @@ function init_gear_sets()
     back={name="Moonlight Cape",priority=1},    -- __, __, __, __, __ <__, __, __> [ 6/ 6, ___] 275
     waist="Fotia Belt",                         -- __, 10, __, __, __ <__, __, __> [__/__, ___] ___; ftp+
     -- 182 STR, 265 Acc, 348 Att, 58 WSD, 0 PDL <31 DA, 0 TA, 3 QA> [52 PDT/54 MDT, 674 M.Eva] 995 HP
+
+    -- ear1="Moonshade Earring",                -- __,  4, __, __, __ <__, __, __> [__/__, ___] ___; tp bonus
+    -- ear2="Sherida Earring",                  --  5, __, __, __, __ < 5, __, __> [__/__, ___] ___
+    -- waist="Platinum Moogle Belt",            -- __, __, __, __, __ <__, __, __> [ 3/ 3,  15] ___; HP+10%
+    -- HP from belt                                                                             349
+    -- 184 STR, 245 Acc, 348 Att, 58 WSD, 0 PDL <36 DA, 0 TA, 3 QA> [52 PDT/52 MDT, 689 M.Eva] 885/1223 HP
   }
   sets.precast.WS['Resolution'].SafeMaxTP = set_combine(sets.precast.WS['Resolution'].Safe, {
     ear2="Sherida Earring",                     --  5, __, __, __, __ < 5, __, __> [__/__, ___] ___
     -- 187 STR, 261 Acc, 348 Att, 58 WSD, 0 PDL <36 DA, 0 TA, 3 QA> [52 PDT/54 MDT, 674 M.Eva] 995 HP
+    
+    -- With moogle belt:
+    -- ear1="Brutal Earring",                   -- __, __, __, __, __ < 5, __, __> [__/__, ___] ___
+    -- ear2="Sherida Earring",                  --  5, __, __, __, __ < 5, __, __> [__/__, ___] ___
+    -- 184 STR, 241 Acc, 348 Att, 58 WSD, 0 PDL <41 DA, 0 TA, 3 QA> [52 PDT/52 MDT, 689 M.Eva] 885/1223 HP
   })
 
   -- 80% DEX mod, 2 hit
@@ -1017,11 +1178,11 @@ function init_gear_sets()
     ring2="Ilabrat Ring",             -- 10, __, 25, __, __ <__, __, __> [__/__, ___]  60
     back=gear.RUN_WS2_Cape,           -- 30, 20, 20, 10, __ <__, __, __> [10/__, ___] ___
     waist="Grunfeld Rope",            --  5, 10, 20, __, __ < 2, __, __> [__/__, ___] ___
-    -- 231 DEX, 247 Acc, 416 Att, 62 WSD, 0 PDL <24 DA, 0 TA, 3 QA> [40 PDT/30 MDT, 524 M.Eva] 524 HP
+    -- 231 DEX, 247 Acc, 416 Att, 62 WSD, 0 PDL <24 DA, 0 TA, 0 QA> [40 PDT/30 MDT, 524 M.Eva] 524 HP
   }
   sets.precast.WS['Dimidiation'].MaxTP = set_combine(sets.precast.WS['Dimidiation'], {
     ear1="Sherida Earring",           --  5, __, __, __, __ < 5, __, __> [__/__, ___] ___
-    -- 236 DEX, 243 Acc, 416 Att, 62 WSD, 0 PDL <29 DA, 0 TA, 3 QA> [40 PDT/30 MDT, 524 M.Eva] 524 HP
+    -- 236 DEX, 243 Acc, 416 Att, 62 WSD, 0 PDL <29 DA, 0 TA, 0 QA> [40 PDT/30 MDT, 524 M.Eva] 524 HP
   })
   sets.precast.WS['Dimidiation'].AttCapped = {
     ammo="Knobkierrie",               -- __, __, 23,  6, __ <__, __, __> [__/__, ___] ___
@@ -1037,11 +1198,11 @@ function init_gear_sets()
     ring2="Ilabrat Ring",             -- 10, __, 25, __, __ <__, __, __> [__/__, ___]  60
     back=gear.RUN_WS2_Cape,           -- 30, 20, 20, 10, __ <__, __, __> [10/__, ___] ___
     waist="Kentarch Belt +1",         -- 10, 14, __, __, __ < 3, __, __> [__/__, ___] ___
-    -- 226 DEX, 251 Acc, 376 Att, 67 WSD, 0 PDL <25 DA, 0 TA, 3 QA> [40 PDT/30 MDT, 524 M.Eva] 474 HP
+    -- 226 DEX, 251 Acc, 376 Att, 67 WSD, 0 PDL <25 DA, 0 TA, 0 QA> [40 PDT/30 MDT, 524 M.Eva] 474 HP
   }
   sets.precast.WS['Dimidiation'].AttCappedMaxTP = set_combine(sets.precast.WS['Dimidiation'].AttCapped, {
     ear1="Sherida Earring",           --  5, __, __, __, __ < 5, __, __> [__/__, ___] ___
-    -- 231 DEX, 247 Acc, 376 Att, 67 WSD, 0 PDL <30 DA, 0 TA, 3 QA> [40 PDT/30 MDT, 524 M.Eva] 474 HP
+    -- 231 DEX, 247 Acc, 376 Att, 67 WSD, 0 PDL <30 DA, 0 TA, 0 QA> [40 PDT/30 MDT, 524 M.Eva] 474 HP
   })
   sets.precast.WS['Dimidiation'].Safe = {
     ammo="Knobkierrie",                         -- __, __, 23,  6, __ <__, __, __> [__/__, ___] ___
@@ -1057,11 +1218,34 @@ function init_gear_sets()
     ring2="Ilabrat Ring",                       -- 10, __, 25, __, __ <__, __, __> [__/__, ___]  60
     back={name="Moonlight Cape",priority=1},    -- __, __, __, __, __ <__, __, __> [ 6/ 6, ___] 275
     waist="Kentarch Belt +1",                   -- 10, 14, __, __, __ < 3, __, __> [__/__, ___] ___
-    -- 190 DEX, 231 Acc, 346 Att, 52 WSD, 0 PDL <25 DA, 0 TA, 3 QA> [50 PDT/42 MDT, 554 M.Eva] 944 HP
+    -- 190 DEX, 231 Acc, 346 Att, 52 WSD, 0 PDL <25 DA, 0 TA, 0 QA> [50 PDT/42 MDT, 554 M.Eva] 944 HP
+    
+    -- waist="Platinum Moogle Belt",            -- __, __, __, __, __ <__, __, __> [ 3/ 3,  15] ___; HP+10%
+    -- HP from belt                                                                             344
+    -- 180 DEX, 217 Acc, 346 Att, 52 WSD, 0 PDL <22 DA, 0 TA, 0 QA> [53 PDT/45 MDT, 569 M.Eva] 944/1288 HP
+
+    -- ammo="Knobkierrie",                      -- __, __, 23,  6, __ <__, __, __> [__/__, ___] ___
+    -- head=gear.Nyame_B_head,                  -- 25, 50, 65, 11, __ < 5, __, __> [ 7/ 7, 123]  91
+    -- body=gear.Nyame_B_body,                  -- 24, 40, 65, 13, __ < 7, __, __> [ 9/ 9, 139] 136
+    -- hands=gear.Nyame_B_hands,                -- 42, 40, 65, 11, __ < 5, __, __> [ 7/ 7, 112]  91
+    -- legs=gear.Lustratio_B_legs,              -- 43, 20, 38, __, __ <__, __, __> [__/__, ___]  28
+    -- feet=gear.Nyame_B_feet,                  -- 26, 53, 65, 11, __ < 5, __, __> [ 7/ 7, 150]  68
+    -- neck="Unmoving Collar +1",               -- __,  5, __, __, __ <__, __, __> [__/__, ___] 200
+    -- ear1="Moonshade Earring",                -- __,  4, __, __, __ <__, __, __> [__/__, ___] ___; tp bonus
+    -- ear2="Odnowa Earring +1",                -- __, 10, __, __, __ <__, __, __> [ 3/ 5, ___] 110
+    -- ring1="Gelatinous Ring +1",              -- __, __, __, __, __ <__, __, __> [ 7/-1, ___] 135
+    -- ring2="Ilabrat Ring",                    -- 10, __, 25, __, __ <__, __, __> [__/__, ___]  60
+    -- back=gear.RUN_WS2_Cape,                  -- 30, 20, 20, 10, __ <__, __, __> [10/__, ___] ___
+    -- waist="Platinum Moogle Belt",            -- __, __, __, __, __ <__, __, __> [ 3/ 3,  15] ___; HP+10%
+    -- HP from belt                                                                             341
+    -- 200 DEX, 242 Acc, 366 Att, 62 WSD, 0 PDL <22 DA, 0 TA, 0 QA> [53 PDT/37 MDT, 539 M.Eva] 919/1260 HP
   }
   sets.precast.WS['Dimidiation'].SafeMaxTP = set_combine(sets.precast.WS['Dimidiation'].Safe, {
     ear1="Sherida Earring",                     --  5, __, __, __, __ < 5, __, __> [__/__, ___] ___
     -- 195 DEX, 227 Acc, 346 Att, 52 WSD, 0 PDL <30 DA, 0 TA, 3 QA> [50 PDT/42 MDT, 554 M.Eva] 944 HP
+    
+    -- With moogle belt:
+    -- 205 DEX, 238 Acc, 366 Att, 62 WSD, 0 PDL <27 DA, 0 TA, 0 QA> [53 PDT/37 MDT, 539 M.Eva] 919/1260 HP
   })
 
   -- 50% STR/50% MND.
@@ -1077,20 +1261,21 @@ function init_gear_sets()
     ear2="Ishvara Earring",                     -- __, __, __, __,  2, __ [__/__] ___
     ring1="Sroda Ring",                         -- 15, __, __, __, __,  3 [__/__] ___
     ring2="Epaminondas's Ring",                 -- __, __, __, __,  5, __ [__/__] ___
-    back=gear.RUN_WS1_Cape,                     -- 30, __, 20, 20, 10, __ [10/__] ___
+    back=gear.RUN_WS1_Cape,                     -- 30, __, 20, 20, __, __ [10/__] ___
     waist="Sailfi Belt +1",                     -- 15, __, __, 15, __, __ [__/__] ___
-    -- 234 STR, 176 MND, 247 Accuracy, 383 Attack, 76 WSD, 0 PDL [55PDT/45MDT] 560HP
+    -- 234 STR, 176 MND, 247 Accuracy, 383 Attack, 66 WSD, 0 PDL [55PDT/45MDT] 560 HP
     
     -- ear2="Erilaz Earring +2",                -- 15, 15, __, 20, __, __ [ 8/ 8] ___
-    -- 249 STR, 191 MND, 247 Accuracy, 403 Attack, 74 WSD, 0 PDL [63PDT/53MDT] 560HP
+    -- back=gear.RUN_WS3_Cape,                  -- 30, __, 20, 20, 10, __ [10/__] ___
+    -- 249 STR, 191 MND, 247 Accuracy, 403 Attack, 74 WSD, 0 PDL [63PDT/53MDT] 560 HP
   }
   sets.precast.WS['Savage Blade'].MaxTP = set_combine(sets.precast.WS['Savage Blade'].MaxTP, {
     ear1="Sherida Earring",                     --  5, __, __, __, __, __ [__/__] ___
-    -- 239 STR, 176 MND, 243 Accuracy, 383 Attack, 76 WSD, 0 PDL [55PDT/45MDT] 560HP
+    -- 239 STR, 176 MND, 243 Accuracy, 383 Attack, 76 WSD, 0 PDL [55PDT/45MDT] 560 HP
     
     -- ear1="Ishvara Earring",                  -- __, __, __, __,  2, __ [__/__] ___
     -- ear2="Erilaz Earring +2",                -- 15, 15, __, 20, __, __ [ 8/ 8] ___
-    -- 249 STR, 191 MND, 247 Accuracy, 403 Attack, 76 WSD, 0 PDL [63PDT/53MDT] 560HP
+    -- 249 STR, 191 MND, 247 Accuracy, 403 Attack, 76 WSD, 0 PDL [63PDT/53MDT] 560 HP
   })
   sets.precast.WS['Savage Blade'].AttCappedMaxTP = set_combine(sets.precast.WS['Savage Blade'].MaxTP, {})
   sets.precast.WS['Savage Blade'].Safe = {
@@ -1105,16 +1290,22 @@ function init_gear_sets()
     ear2="Moonshade Earring",                   -- __, __,  4, __, __, __ [__/__] ___; tp bonus+
     ring1="Gelatinous Ring +1",                 -- __, __, __, __, __, __ [ 7/-1] 135
     ring2="Moonlight Ring",                     -- __, __,  8,  8, __, __ [ 5/ 5] 110
-    back=gear.RUN_WS1_Cape,                     -- 30, __, 20, 20, 10, __ [10/__] ___
+    back=gear.RUN_WS1_Cape,                     -- 30, __, 20, 20, __, __ [10/__] ___
     waist="Sailfi Belt +1",                     -- 15, __, __, 15, __, __ [__/__] ___
-    -- 217 STR, 176 MND, 255 Accuracy, 391 Attack, 74 WSD, 0 PDL [70PDT/54MDT] 915HP
+    -- 217 STR, 176 MND, 255 Accuracy, 391 Attack, 64 WSD, 0 PDL [70PDT/54MDT] 915 HP
+    
+    -- back=gear.RUN_WS3_Cape,                  -- 30, __, 20, 20, 10, __ [10/__] ___
+    -- waist="Platinum Moogle Belt",            -- __, __, __, __, __, __ [ 3/ 3] ___; HP+10%
+    -- HP from belt                                                               341
+    -- 207 STR, 176 MND, 255 Accuracy, 376 Attack, 74 WSD, 0 PDL [73PDT/57MDT] 915/1256 HP
+    
   }
   sets.precast.WS['Savage Blade'].SafeMaxTP = set_combine(sets.precast.WS['Savage Blade'].Safe, {
     ear2="Ishvara Earring",                     -- __, __, __, __,  2, __ [__/__] ___
-    -- 217 STR, 176 MND, 251 Accuracy, 391 Attack, 76 WSD, 0 PDL, [70PDT/54MDT] 915HP
+    -- 217 STR, 176 MND, 251 Accuracy, 391 Attack, 76 WSD, 0 PDL, [70PDT/54MDT] 915 HP
 
     -- ear2="Erilaz Earring +2",                -- 15, 15, 20, __, __, __ [ 8/ 8] ___
-    -- 232 STR, 191 MND, 251 Accuracy, 411 Attack, 74 WSD, 0 PDL, [78PDT/62MDT] 915HP
+    -- 222 STR, 191 MND, 271 Accuracy, 376 Attack, 74 WSD, 0 PDL [81PDT/65MDT] 915/1256 HP
   })
 
   -- Magic accuracy required for sleep effect
@@ -1213,7 +1404,9 @@ function init_gear_sets()
     -- 187 DEX, 56 STP, 307 Acc, 24 Haste <24 DA, 7 TA, 0 QA> [49 PDT/39 MDT, 527 M.Eva] 618 HP
 
     -- body="Ashera Harness",         -- 40, 10, 45,  4 <__, __, __> [ 7/ 7,  96] 182
-    -- 203 DEX, 66 STP, 312 Acc, 25 Haste <17 DA, 7 TA, 0 QA> [47 PDT/37 MDT, 484 M.Eva] 664 HP
+    -- waist="Platinum Moogle Belt",  -- __, __, __, __ <__, __, __> [ 3/ 3,  15] ___; HP+10%
+    -- HP from belt                                                               316
+    -- 193 DEX, 61 STP, 298 Acc, 25 Haste <14 DA, 7 TA, 0 QA> [50 PDT/40 MDT, 499 M.Eva] 664/980 HP
   }
   sets.engaged.LightDef.LowAcc = set_combine(sets.engaged.LightDef, {
     ear2="Cessance Earring",          -- __,  3,  6, __ < 3, __, __> [__/__, ___] ___
@@ -1221,7 +1414,6 @@ function init_gear_sets()
   })
   sets.engaged.LightDef.MidAcc = set_combine(sets.engaged.LightDef.LowAcc, {
     ear2="Dignitary's Earring",       -- __,  3, 10, __ <__, __, __> [__/__, ___] ___
-    waist="Olseni Belt",              -- __,  3, 20, __ <__, __, __> [__/__, ___] ___
   })
   sets.engaged.LightDef.HighAcc = set_combine(sets.engaged.LightDef.MidAcc, {
     body=gear.Adhemar_A_body,         -- 45, __, 55,  4 <__,  4, __> [__/__,  69]  63; Remove if have ashera
@@ -1261,15 +1453,17 @@ function init_gear_sets()
   })
 
   sets.LightDef = {
-    sub="Utu Grip",             -- [__/__, ___]  70
-    ammo="Staunch Tathlum +1",  -- [ 3/ 3, ___] ___
-    head=gear.Nyame_B_head,     -- [ 7/ 7, 123]  91
-    body=gear.Nyame_B_body,     -- [ 9/ 9, 139] 136
-    legs=gear.Nyame_B_legs,     -- [ 8/ 8, 150] 114
-    ear1="Odnowa Earring +1",   -- [ 3/ 5, ___] 110
-    ring2="Defending Ring",     -- [10/10, ___] ___
-    back=gear.RUN_TP_Cape,      -- [10/__, ___] ___
-    -- 50 PDT / 42 MDT, 412 MEVA [521 HP]
+    sub="Utu Grip",               -- [__/__, ___]  70
+    ammo="Staunch Tathlum +1",    -- [ 3/ 3, ___] ___
+    head=gear.Nyame_B_head,       -- [ 7/ 7, 123]  91
+    body=gear.Nyame_B_body,       -- [ 9/ 9, 139] 136
+    legs=gear.Nyame_B_legs,       -- [ 8/ 8, 150] 114
+    ear1="Odnowa Earring +1",     -- [ 3/ 5, ___] 110
+    ring2="Defending Ring",       -- [10/10, ___] ___
+    back=gear.RUN_TP_Cape,        -- [10/__, ___] ___
+    waist="Platinum Moogle Belt", -- [ 3/ 3,  15] ___; HP+10%
+    -- HP bonus from belt                         301
+    -- 53 PDT / 45 MDT, 427 MEVA [521/822 HP]
   }
 
   sets.idle = set_combine(sets.defense.MDT, {})
@@ -1329,8 +1523,26 @@ function init_gear_sets()
     -- Trait                        -- __/__, ___ [___] 22 (__, ___) __, __
     -- 51(+25)PDT / 51 MDT, 534 Meva [1129 HP] 54 M.Def.Bns. (0 Status Resist, 434 Ele Resist) 81 Enmity, 15 Fast Cast
     
+    -- Epeolatry                    --(25)/_, ___ [___] __ (__, ___) 23, __
+    -- sub="Alber Strap",           --  2/__, ___ [___] __ (__, ___)  5, __
+    -- ammo="Sapience Orb",         -- __/__, ___ [___] __ (__, ___)  2,  2
+    -- head="Halitus Helm",         -- __/__,  43 [ 88]  2 (__, ___)  8, __
+    -- body="Erilaz Surcoat +3",    -- __/__, 130 [143] 10 (__, ___) __, 13; Retain enmity; Convert dmg to MP
+    -- hands="Kurys Gloves",        --  2/ 2,  57 [ 25]  2 (__, ___)  9, __
+    -- legs="Erilaz Leg Guards +3", -- 13/13, 157 [100] 10 (__, ___) 13, __
     -- feet="Erilaz Greaves +3",    -- 11/11, 157 [ 48]  9 (__,  35)  8, __
-    -- 52(+25)PDT / 52 MDT, 544 Meva [1139 HP] 55 M.Def.Bns. (0 Status Resist, 439 Ele Resist) 82 Enmity, 15 Fast Cast
+    -- neck="Warder's Charm +1",    -- __/__, ___ [___] __ (__,  20)  8, __; Absorb magic dmg
+    -- ear1="Odnowa Earring +1",    --  3/ 5, ___ [110] __ (__, ___) __, __
+    -- ear2="Cryptic Earring",      -- __/__, ___ [ 40] __ (__, ___)  4, __
+    -- ring1="Moonlight Ring",      --  5/ 5, ___ [110] __ (__, ___) __, __
+    -- ring1="Moonlight Ring",      --  5/ 5, ___ [110] __ (__, ___) __, __
+    -- back="Moonlight Cape",       --  6/ 6, ___ [275] __ (__, ___) __, __
+    -- waist="Platinum Moogle Belt",--  3/ 3,  15 [___] __ (__, ___) __, __; HP+10%
+    -- HP from belt                                354
+    -- Runes                        -- __/__, ___ [___] __ (__, 253) __, __
+    -- Bar-spell                    -- __/__, ___ [___] __ (__, 131) __, __
+    -- Trait                        -- __/__, ___ [___] 22 (__, ___) __, __
+    -- 50(+25)PDT / 50 MDT, 559 Meva [1049/1403 HP] 55 M.Def.Bns. (0 Status Resist, 439 Ele Resist) 80 Enmity, 15 Fast Cast
   }
 
   sets.buff.Doom = {
