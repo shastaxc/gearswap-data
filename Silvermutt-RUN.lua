@@ -1351,7 +1351,7 @@ function init_gear_sets()
     sub="Utu Grip",                   -- __, __, 30, __ <__, __, __> [__/__, ___]  70
     ammo="Coiste Bodhar",             -- 10,  3, __, __ < 3, __, __> [__/__, ___] ___
     head=gear.Nyame_B_head,           -- 25, __, 50,  6 < 5, __, __> [ 7/ 7, 123]  91
-    body=gear.Nyame_B_body,           -- 24, __, 40,  3 < 7, __, __> [ 9/ 9, 139] 136
+    body="Ashera Harness",            -- 40, 10, 45,  4 <__, __, __> [ 7/ 7,  96] 182
     hands=gear.Adhemar_A_hands,       -- 56,  7, 52,  5 <__,  4, __> [__/__,  43]  22
     legs=gear.Samnuha_legs,           -- 16,  7, 15,  6 < 3,  3, __> [__/__,  75]  41
     feet=gear.Herc_TA_feet,           -- 24, __, 23,  4 <__,  6, __> [ 2/__,  75]   9
@@ -1362,35 +1362,32 @@ function init_gear_sets()
     ring2="Niqmaddu Ring",            -- 10, __, __, __ <__, __,  3> [__/__, ___] ___
     back=gear.RUN_TP_Cape,            -- 20, 10, 30, __ <__, __, __> [10/__, ___] ___
     waist="Kentarch Belt +1",         -- 10,  5, 14, __ < 3, __, __> [__/__, ___] ___
-    -- 200 DEX, 49 STP, 264 Acc, 24 Haste <30 DA, 16 TA, 3 QA> [28 PDT/16 MDT, 455 M.Eva] 369 HP
-
-    -- body="Ashera Harness",         -- 40, 10, 45,  4 <__, __, __> [ 7/ 7,  96] 182
+    -- 216 DEX, 59 STP, 269 Acc, 25 Haste <23 DA, 16 TA, 3 QA> [26 PDT/14 MDT, 412 M.Eva] 415 HP
   }
   sets.engaged.LowAcc = set_combine(sets.engaged, {
     ammo="Yamarang",                  -- __,  3, 15, __ <__, __, __> [__/__, ___] ___
     ear2="Cessance Earring",          -- __,  3,  6, __ < 3, __, __> [__/__, ___] ___
     ring2="Chirich Ring +1",          -- __,  6, 10, __ <__, __, __> [__/__, ___] ___
     -- neck="Combatant's Torque",     -- __,  4, __, __ <__, __, __> [__/__, ___] ___; skill+15
-    -- 175 DEX, 50 STP, 295 Acc, 24 Haste <25 DA, 16 TA, 0 QA> [28 PDT/16 MDT, 455 M.Eva] 369 HP
+    -- 191 DEX, 60 STP, 300 Acc, 25 Haste <18 DA, 16 TA, 0 QA> [26 PDT/14 MDT, 412 M.Eva] 415 HP
   })
   sets.engaged.MidAcc = set_combine(sets.engaged.LowAcc, {
     feet=gear.Nyame_B_feet,           -- 26, __, 53,  3 < 5, __, __> [ 7/ 7, 150]  68
     ear2="Dignitary's Earring",       -- __,  3, 10, __ <__, __, __> [__/__, ___] ___
-    -- 177 DEX, 50 STP, 329 Acc, 23 Haste <27 DA, 10 TA, 0 QA> [33 PDT/23 MDT, 455 M.Eva] 428 HP
+    -- 193 DEX, 60 STP, 334 Acc, 24 Haste <20 DA, 10 TA, 0 QA> [31 PDT/21 MDT, 487 M.Eva] 474 HP
   })
   sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
-    body=gear.Adhemar_A_body,         -- 45, __, 55,  4 <__,  4, __> [__/__,  69]  63; Remove if have ashera
     legs=gear.Nyame_B_legs,           -- __, __, 40,  5 < 6, __, __> [ 8/ 8, 150] 114
     ring1="Chirich Ring +1",          -- __,  6, 10, __ <__, __, __> [__/__, ___] ___
     waist="Olseni Belt",              -- __,  3, 20, __ <__, __, __> [__/__, ___] ___
-    -- 172 DEX, 47 STP, 385 Acc, 23 Haste <17 DA, 8 TA, 0 QA> [32 PDT/22 MDT, 535 M.Eva] 428 HP
+    -- 167 DEX, 57 STP, 375 Acc, 23 Haste <17 DA, 4 TA, 0 QA> [39 PDT/29 MDT, 562 M.Eva] 547 HP
   })
   
   sets.engaged.LightDef = {
     sub="Utu Grip",                   -- __, __, 30, __ <__, __, __> [__/__, ___]  70
     ammo="Staunch Tathlum +1",        -- __, __, __, __ <__, __, __> [ 3/ 3, ___] ___
     head=gear.Nyame_B_head,           -- 25, __, 50,  6 < 5, __, __> [ 7/ 7, 123]  91
-    body=gear.Nyame_B_body,           -- 24, __, 40,  3 < 7, __, __> [ 9/ 9, 139] 136
+    body="Ashera Harness",            -- 40, 10, 45,  4 <__, __, __> [ 7/ 7,  96] 182
     hands=gear.Adhemar_A_hands,       -- 56,  7, 52,  5 <__,  4, __> [__/__,  43]  22
     legs=gear.Samnuha_legs,           -- 16,  7, 15,  6 < 3,  3, __> [__/__,  75]  41
     feet="Erilaz Greaves +2",         -- 31, __, 50,  4 <__, __, __> [10/10, 147]  38
@@ -1401,9 +1398,8 @@ function init_gear_sets()
     ring2="Moonlight Ring",           -- __,  5,  8, __ <__, __, __> [ 5/ 5, ___] 110
     back=gear.RUN_TP_Cape,            -- 20, 10, 30, __ <__, __, __> [10/__, ___] ___
     waist="Kentarch Belt +1",         -- 10,  5, 14, __ < 3, __, __> [__/__, ___] ___
-    -- 187 DEX, 56 STP, 307 Acc, 24 Haste <24 DA, 7 TA, 0 QA> [49 PDT/39 MDT, 527 M.Eva] 618 HP
+    -- 203 DEX, 66 STP, 312 Acc, 25 Haste <17 DA, 7 TA, 0 QA> [47 PDT/37 MDT, 484 M.Eva] 664 HP
 
-    -- body="Ashera Harness",         -- 40, 10, 45,  4 <__, __, __> [ 7/ 7,  96] 182
     -- waist="Platinum Moogle Belt",  -- __, __, __, __ <__, __, __> [ 3/ 3,  15] ___; HP+10%
     -- HP from belt                                                               316
     -- 193 DEX, 61 STP, 298 Acc, 25 Haste <14 DA, 7 TA, 0 QA> [50 PDT/40 MDT, 499 M.Eva] 664/980 HP
@@ -1416,9 +1412,8 @@ function init_gear_sets()
     ear2="Dignitary's Earring",       -- __,  3, 10, __ <__, __, __> [__/__, ___] ___
   })
   sets.engaged.LightDef.HighAcc = set_combine(sets.engaged.LightDef.MidAcc, {
-    body=gear.Adhemar_A_body,         -- 45, __, 55,  4 <__,  4, __> [__/__,  69]  63; Remove if have ashera
+    ammo="Yamarang",                  -- __,  3, 15, __ <__, __, __> [__/__, ___] ___
     legs=gear.Nyame_B_legs,           -- __, __, 40,  5 < 6, __, __> [ 8/ 8, 150] 114
-    -- ammo="Yamarang",               -- __,  3, 15, __ <__, __, __> [__/__, ___] ___; Only add if have ashera
   })
 
 
