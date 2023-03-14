@@ -387,7 +387,7 @@ function init_gear_sets()
     body="Maculele Casaque +3"
   }
   sets.precast.Flourish3['Climactic Flourish'] = {
-    head="Maculele Tiara +2",
+    head="Maculele Tiara +3",
   }
 
   sets.precast.FC = {
@@ -456,7 +456,7 @@ function init_gear_sets()
   -- For Crit Dmg, not crit rate; overlaid on any WS set that doesn't have its own Climacic set defined
   sets.precast.WS.Climactic = {
     ammo="Charis Feather",
-    head="Maculele Tiara +2",
+    head="Maculele Tiara +3",
     body="Meghanada Cuirie +2",
   }
 
@@ -612,7 +612,7 @@ function init_gear_sets()
   -- For Crit Dmg, not crit rate; is overlaid, don't set_combine
   sets.precast.WS["Rudra's Storm"].Climactic = {
     ammo="Charis Feather",
-    head="Maculele Tiara +2",
+    head="Maculele Tiara +3",
     ear2="Maculele Earring +1",     -- __, __, __,  8
     ring1="Epaminondas's Ring",
 
@@ -1215,7 +1215,7 @@ function init_gear_sets()
   }
   -- This is overlaid on TP set during Climactic Flourish
   sets.buff['Climactic Flourish'] = {
-    head="Maculele Tiara +2",
+    head="Maculele Tiara +3",
   }
   sets.buff.Doom = {
     neck="Nicander's Necklace", --20
