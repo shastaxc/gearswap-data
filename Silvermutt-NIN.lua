@@ -236,8 +236,7 @@ function init_gear_sets()
     -- hands="Hattori Tekko +3",
   }
   sets.precast.JA['Sange'] = {
-    body="Mochizuki Chainmail +2"
-    -- body="Mochizuki Chainmail +3"
+    body="Mochizuki Chainmail +3"
   }
   sets.precast.JA['Innin'] = {
     head="Mochizuki Hatsuburi +1"
@@ -276,13 +275,12 @@ function init_gear_sets()
   }
 
   sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {
-    body="Mochizuki Chainmail +1",    -- 10 [__/__,  53]
+    body="Mochizuki Chainmail +3",    -- 14 [__/__,  73]
     legs="Hattori Hakama +2",         -- __ [11/11, 125]
     neck="Magoraga Bead Necklace",    -- 10 [__/__, ___]
     -- JP/Merit/Gifts                    20 [__/__, ___]
-    -- 80 FC [29 PDT/15 MDT, 318 M.Eva]
+    -- 84 FC [29 PDT/15 MDT, 338 M.Eva]
 
-    -- body="Mochizuki Chainmail +3", -- 14 [__/__,  73]
     -- legs="Hattori Hakama +3",      -- __ [12/12, 135]
     -- 79 FC [41 PDT/27 MDT, 404 M.Eva]
   })
@@ -1113,7 +1111,7 @@ function init_gear_sets()
   sets.engaged.LowDW.MidAcc = set_combine(sets.engaged.LowDW.LowAcc, {
     ammo="Date Shuriken",             -- __, __,   5/ 5 <__, __, __> [__/__, ___]   5, __
     head="Malignance Chapeau",        -- __,  8,  50/50 <__, __, __> [ 6/ 6, 123]  91, __
-    -- body="Mochizuki Chainmail +3",       --  9, __,  51/47 <__, __, __> [__/__,  73]  72, 10
+    body="Mochizuki Chainmail +3",    --  9, __,  51/47 <__, __, __> [__/__,  73]  72, 10
   })
   sets.engaged.LowDW.HighAcc = set_combine(sets.engaged.LowDW.MidAcc, {
     feet="Malignance Boots",          -- __,  9,  50/50 <__, __, __> [ 4/ 4, 150] 119, __
@@ -1152,8 +1150,7 @@ function init_gear_sets()
   sets.engaged.HighDW = {
     ammo="Seki Shuriken",             -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
     head=gear.Ryuo_C_head,            --  9, 12,  35/35 <__, __, __> [__/__,  48]  36, __
-    -- body="Mochizuki Chainmail +3", --  9, __,  51/47 <__, __, __> [__/__,  73]  72, 10
-    body=gear.Adhemar_A_body,
+    body="Mochizuki Chainmail +3",    --  9, __,  51/47 <__, __, __> [__/__,  73]  72, 10
     hands="Malignance Gloves",        -- __, 12,  50/50 <__, __, __> [ 5/ 5, 112]  80, __
     legs="Malignance Tights",         -- __, 10,  50/50 <__, __, __> [ 7/ 7, 150]  85, __
     feet="Tatenashi Sune-ate +1",     -- __,  8,  60/__ <__,  3, __> [__/__,  80]  76, __
@@ -1210,8 +1207,7 @@ function init_gear_sets()
   sets.engaged.MaxDW = {
     ammo="Seki Shuriken",             -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
     head=gear.Ryuo_C_head,            --  9, 12,  35/35 <__, __, __> [__/__,  48]  36, __
-    -- body="Mochizuki Chainmail +3", --  9, __,  51/47 <__, __, __> [__/__,  73]  72, 10
-    body=gear.Adhemar_A_body,
+    body="Mochizuki Chainmail +3",    --  9, __,  51/47 <__, __, __> [__/__,  73]  72, 10
     hands="Malignance Gloves",        -- __, 12,  50/50 <__, __, __> [ 5/ 5, 112]  80, __
     legs="Malignance Tights",         -- __, 10,  50/50 <__, __, __> [ 7/ 7, 150]  85, __
     feet="Malignance Boots",          -- __,  9,  50/50 <__, __, __> [ 4/ 4, 150] 119, __
@@ -1355,8 +1351,7 @@ function init_gear_sets()
   sets.engaged.SuperDW.HeavyDef = {
     ammo="Seki Shuriken",             -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
     head="Hattori Zukin +2",          --  7, __,  51/51 <__, __, __> [ 9/ 9, 109]  79, __
-    -- body="Mochizuki Chainmail +3", --  9, __,  51/47 <__, __, __> [__/__,  73]  72, 10
-    body=gear.Adhemar_A_body,
+    body="Mochizuki Chainmail +3",    --  9, __,  51/47 <__, __, __> [__/__,  73]  72, 10
     hands=gear.Adhemar_A_hands,       -- __,  7,  52/32 <__,  4, __> [__/__,  43]  36, __
     legs="Malignance Tights",         -- __, 10,  50/50 <__, __, __> [ 7/ 7, 150]  85, __
     feet="Malignance Boots",          -- __,  9,  50/50 <__, __, __> [ 4/ 4, 150] 119, __
@@ -1385,8 +1380,7 @@ function init_gear_sets()
   sets.engaged.MaxDW.HeavyDef = {
     ammo="Seki Shuriken",             -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
     head="Hattori Zukin +2",          --  7, __,  51/51 <__, __, __> [ 9/ 9, 109]  79, __
-    -- body="Mochizuki Chainmail +3", --  9, __,  51/47 <__, __, __> [__/__,  73]  72, 10
-    body=gear.Adhemar_A_body,
+    body="Mochizuki Chainmail +3",    --  9, __,  51/47 <__, __, __> [__/__,  73]  72, 10
     hands=gear.Adhemar_A_hands,       -- __,  7,  52/32 <__,  4, __> [__/__,  43]  36, __
     legs="Malignance Tights",         -- __, 10,  50/50 <__, __, __> [ 7/ 7, 150]  85, __
     feet="Malignance Boots",          -- __,  9,  50/50 <__, __, __> [ 4/ 4, 150] 119, __
