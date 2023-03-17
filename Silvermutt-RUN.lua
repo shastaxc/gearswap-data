@@ -1,4 +1,4 @@
--- File Status: Good. Verify HP balancing after adding platinum moogle belt.
+-- File Status: Good. Verify HP balancing after adding platinum moogle belt. All erilaz greaves +2 actually have +3 stats.
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs
@@ -321,9 +321,9 @@ function init_gear_sets()
     ammo="Staunch Tathlum +1",                      --  3/ 3, ___ [___] (11, __)
     head="Erilaz Galea +3",                         -- __/__, 119 [111] (__, __)
     body="Erilaz Surcoat +3",                       -- __/__, 130 [143] (__, __); Retain enmity, Convert dmg to MP
-    hands="Erilaz Gauntlets +2",                    -- 10/10,  77 [ 49] ( 7, __)
+    hands="Erilaz Gauntlets +3",                    -- 11/11,  87 [ 59] ( 8, __)
     legs="Erilaz Leg Guards +3",                    -- 13/13, 157 [100] (__, __)
-    feet="Erilaz Greaves +3",                       -- 11/11, 157 [ 48] (__, 35)
+    feet="Erilaz Greaves +2",                       -- 11/11, 157 [ 48] (__, 35)
     neck={name="Unmoving Collar +1",priority=1},    -- __/__, ___ [200] (__, __)
     ear1={name="Odnowa Earring +1",priority=1},     --  3/ 5, ___ [110] (__, __)
     ear2="Arete del Luna +1",                       -- __/__, ___ [___] (__, __); Resists
@@ -331,7 +331,7 @@ function init_gear_sets()
     ring2={name="Moonlight Ring",priority=1},       --  5/ 5, ___ [110] (__, __)
     back=gear.RUN_HPP_Cape,                         -- __/__,  20 [ 80] (__, __)
     waist="Engraved Belt",                          -- __/__, ___ [___] (__, 20)
-    -- 52 PDT / 46 MDT, 660 MEVA [1156 HP] (18 Status Resist, 55 Element Resist)
+    -- 53 PDT / 47 MDT, 670 MEVA [1166 HP] (19 Status Resist, 55 Element Resist)
 
     -- sub="Utu Grip",                              -- __/__, ___ [ 70] (__, __)
     -- ammo="Staunch Tathlum +1",                   --  3/ 3, ___ [___] (11, __)
@@ -339,7 +339,7 @@ function init_gear_sets()
     -- body="Erilaz Surcoat +3",                    -- __/__, 130 [143] (__, __); Retain enmity, Convert dmg to MP
     -- hands="Erilaz Gauntlets +3",                 -- 11/11,  87 [ 59] ( 8, __)
     -- legs="Erilaz Leg Guards +3",                 -- 13/13, 157 [100] (__, __)
-    -- feet="Erilaz Greaves +3",                    -- 11/11, 157 [ 48] (__, 35)
+    -- feet="Erilaz Greaves +2",                    -- 11/11, 157 [ 48] (__, 35)
     -- neck="Warder's Charm +1",                    -- __/__, ___ [___] (__, 20); Absorb magic dmg
     -- ear1="Sanare Earring",                       -- __/__,   6 [___] (__, __); M. Def Bonus+4
     -- ear2="Arete del Luna +1",                    -- __/__, ___ [___] (__, __); Resists
@@ -370,7 +370,7 @@ function init_gear_sets()
     body="Emet Harness +1",                         --  6/__,  64 [ 61] <10>
     hands="Kurys Gloves",                           --  2/ 2,  57 [ 25] < 9>
     legs="Erilaz Leg Guards +3",                    -- 13/13, 157 [100] <13>
-    feet="Erilaz Greaves +3",                       -- 11/11, 157 [ 48] < 8>
+    feet="Erilaz Greaves +2",                       -- 11/11, 157 [ 48] < 8>
     neck={name="Unmoving Collar +1",priority=1},    -- __/__, ___ [200] <10>
     ear1={name="Odnowa Earring +1",priority=1},     --  3/ 5, ___ [110] <__>
     ear2="Cryptic Earring",                         -- __/__, ___ [ 40] < 4>
@@ -385,7 +385,7 @@ function init_gear_sets()
     -- body="Emet Harness +1",                      --  6/__,  64 [ 61] <10>
     -- hands="Kurys Gloves",                        --  2/ 2,  57 [ 25] < 9>
     -- legs="Erilaz Leg Guards +3",                 -- 13/13, 157 [100] <13>
-    -- feet="Erilaz Greaves +3",                    -- 11/11, 157 [ 48] < 8>
+    -- feet="Erilaz Greaves +2",                    -- 11/11, 157 [ 48] < 8>
     -- neck={name="Unmoving Collar +1",priority=1}, -- __/__, ___ [200] <10>
     -- ear1={name="Odnowa Earring +1",priority=1},  --  3/ 5, ___ [110] <__>
     -- ear2="Cryptic Earring",                      -- __/__, ___ [ 40] < 4>
@@ -422,7 +422,7 @@ function init_gear_sets()
     hands={name="Regal Gauntlets",priority=1},            -- __/__,  48 [205] {10}
     legs={name=gear.Carmine_A_legs.name,
       augments=gear.Carmine_A_legs.augments,priority=1},  -- __/__,  80 [130] {20}
-    feet="Erilaz Greaves +3",                             -- 11/11, 157 [ 48] {__}
+    feet="Erilaz Greaves +2",                             -- 11/11, 157 [ 48] {__}
     neck="Moonlight Necklace",                            -- __/__,  15 [___] {15}
     ear1="Magnetic Earring",                              -- __/__, ___ [___] { 8}
     ear2="Arete del Luna +1",                             -- __/__, ___ [___] {__}; Resists
@@ -438,7 +438,7 @@ function init_gear_sets()
     -- body=gear.Nyame_B_body,                               --  9/ 9, 139 [136] {__}
     -- hands=gear.Rawhide_B_hands,                           -- __/__,  37 [ 75] {15}
     -- legs=gear.Carmine_A_legs,                             -- __/__,  80 [130] {20}
-    -- feet="Erilaz Greaves +3",                             -- 11/11, 157 [ 48] {__}
+    -- feet="Erilaz Greaves +2",                             -- 11/11, 157 [ 48] {__}
     -- neck="Moonlight Necklace",                            -- __/__,  15 [___] {15}
     -- ear1="Magnetic Earring",                              -- __/__, ___ [___] { 8}
     -- ear2="Halasz Earring",                                -- __/__, ___ [___] { 5}
@@ -459,7 +459,7 @@ function init_gear_sets()
     body={name="Runeist Coat +3",priority=1},           -- __/__,  94 [218] <__>; Augments Valiance/Vallation
     hands="Kurys Gloves",                               --  2/ 2,  57 [ 25] < 9>
     legs="Erilaz Leg Guards +3",                        -- 13/13, 157 [100] <13>
-    feet="Erilaz Greaves +3",                           -- 11/11, 157 [ 48] < 8>
+    feet="Erilaz Greaves +2",                           -- 11/11, 157 [ 48] < 8>
     neck={name="Unmoving Collar +1",priority=1},        -- __/__, ___ [200] <10>
     ear1={name="Odnowa Earring +1",priority=1},         --  3/ 5, ___ [110] <__>
     ear2="Cryptic Earring",                             -- __/__, ___ [ 40] < 4>
@@ -635,18 +635,17 @@ function init_gear_sets()
     ammo="Hydrocera",               -- __,  6 [__/__, ___] ___
     head="Erilaz Galea +3",         -- 61, 61 [__/__, 119] 111
     body=gear.Nyame_B_body,         -- 40, 40 [ 9/ 9, 139] 136
-    hands="Erilaz Gauntlets +2",    -- 52, 52 [10/10,  77]  49
+    hands="Erilaz Gauntlets +3",    -- 62, 62 [11/11,  87]  59
     legs="Erilaz Leg Guards +3",    -- 63, 63 [13/13, 157] 100
-    feet="Erilaz Greaves +3",       -- 60, 60 [11/11, 157]  48
+    feet="Erilaz Greaves +2",       -- 60, 60 [11/11, 157]  48
     neck="Erra Pendant",            -- __, 17 [__/__, ___] ___
     ear1="Dignitary's Earring",     -- 10, 10 [__/__, ___] ___
     ear2="Erilaz Earring",          --  7,  7 [__/__,  10] ___
     ring2="Metamorph Ring +1",      -- __, 16 [__/__, ___] ___
     back=gear.RUN_WS2_Cape,         -- 20, __ [10/__, ___] ___
-    -- 313 Acc, 332 Magic Acc [53 PDT/43 MDT, 659 M.Eva] 444 HP
+    -- 323 Acc, 342 Magic Acc [54 PDT/44 MDT, 669 M.Eva] 454 HP
     
     -- body="Erilaz Surcoat +3",    -- 64, 64 [__/__, 130] 143
-    -- hands="Erilaz Gauntlets +3", -- 62, 62 [11/11,  87]  59
     -- ear2="Erilaz Earring +2",    -- 20, 20 [ 8/ 8,  12] ___
     -- ring1="Etana Ring",          -- 10, 10 [__/__, ___]  60
     -- waist="Luminary Sash",       -- __, 10 [__/__, ___] ___
@@ -656,19 +655,18 @@ function init_gear_sets()
     ammo="Hydrocera",                             -- __,  6 [__/__, ___] ___
     head="Erilaz Galea +3",                       -- 61, 61 [__/__, 119] 111
     body=gear.Nyame_B_body,                       -- 40, 40 [ 9/ 9, 139] 136
-    hands="Erilaz Gauntlets +2",                  -- 52, 52 [10/10,  77]  49
+    hands="Erilaz Gauntlets +3",                  -- 62, 62 [11/11,  87]  59
     legs="Erilaz Leg Guards +3",                  -- 63, 63 [13/13, 157] 100
-    feet="Erilaz Greaves +3",                     -- 60, 60 [11/11, 157]  48
+    feet="Erilaz Greaves +2",                     -- 60, 60 [11/11, 157]  48
     neck="Erra Pendant",                          -- __, 17 [__/__, ___] ___
     ear1="Odnowa Earring +1",                     -- 10, __ [ 3/ 5, ___] 110
     ear2="Erilaz Earring",                        --  7,  7 [__/__,  10] ___
     ring1="Moonlight Ring",                       --  8, __ [ 5/ 5, ___] 110
     ring2="Metamorph Ring +1",                    -- __, 16 [__/__, ___] ___
     back={name="Moonlight Cape",priority=1},      -- __, __ [ 6/ 6, ___] 275
-    -- 301 Acc, 322 Magic Acc [57 PDT/59 MDT, 659 M.Eva] 939 HP
+    -- 311 Acc, 332 Magic Acc [58 PDT/60 MDT, 669 M.Eva] 949 HP
     
     -- body="Erilaz Surcoat +3",                  -- 64, 64 [__/__, 130] 143
-    -- hands="Erilaz Gauntlets +3",               -- 62, 62 [11/11,  87]  59
     -- ear2="Erilaz Earring +2",                  -- 20, 20 [ 8/ 8,  12] ___
     -- ring1="Etana Ring",                        -- 10, 10 [__/__, ___]  60
     -- waist="Luminary Sash",                     -- __, 10 [__/__, ___] ___
@@ -679,7 +677,7 @@ function init_gear_sets()
     -- body="Erilaz Surcoat +3",                  -- 64, 64 [__/__, 130] 143
     -- hands="Erilaz Gauntlets +3",               -- 62, 62 [11/11,  87]  59
     -- legs="Erilaz Leg Guards +3",               -- 63, 63 [13/13, 157] 100
-    -- feet="Erilaz Greaves +3",                  -- 60, 60 [11/11, 157]  48
+    -- feet="Erilaz Greaves +2",                  -- 60, 60 [11/11, 157]  48
     -- neck="Erra Pendant",                       -- __, 17 [__/__, ___] ___
     -- ear1="Odnowa Earring +1",                  -- 10, __ [ 3/ 5, ___] 110
     -- ear2="Erilaz Earring +2",                  -- 20, 20 [ 8/ 8,  12] ___
@@ -721,7 +719,7 @@ function init_gear_sets()
     body=gear.Nyame_B_body,                         --  9/ 9, 139 [136] __
     hands={name="Regal Gauntlets",priority=1},      -- __/__,  48 [205] 20
     legs="Futhark Trousers +3",                     -- __/__,  89 [107] 30
-    feet="Erilaz Greaves +3",                       -- 11/11, 157 [ 48] __
+    feet="Erilaz Greaves +2",                       -- 11/11, 157 [ 48] __
     neck="Futhark Torque +2",                       --  7/ 7,  30 [ 60] __
     ear1="Odnowa Earring +1",                       --  3/ 5, ___ [110] __
     ear2="Arete del Luna +1",                       -- __/__, ___ [___] __; Resists
@@ -745,7 +743,7 @@ function init_gear_sets()
     body=gear.Nyame_B_body,                         --  9/ 9, 139 [136] (__, __)
     hands={name="Regal Gauntlets",priority=1},      -- __/__,  48 [205] (20, __)
     legs=gear.Carmine_D_legs,                       -- __/__,  80 [ 50] (__, 18)
-    feet="Erilaz Greaves +3",                       -- 11/11, 157 [ 48] (__, __)
+    feet="Erilaz Greaves +2",                       -- 11/11, 157 [ 48] (__, __)
     neck="Futhark Torque +2",                       --  7/ 7,  30 [ 60] (__, __)
     ear1="Andoaa Earring",                          -- __/__, ___ [___] (__,  5)
     ear2="Mimir Earring",                           -- __/__, ___ [___] (__, 10)
@@ -763,7 +761,7 @@ function init_gear_sets()
     -- body=gear.Nyame_B_body,                      --  9/ 9, 139 [136] (__, __)
     -- hands={name="Regal Gauntlets",priority=1},   -- __/__,  48 [205] (20, __)
     -- legs="Futhark Trousers +3",                  -- __/__,  89 [107] (30, __)
-    -- feet="Erilaz Greaves +3",                    -- 11/11, 157 [ 48] (__, __)
+    -- feet="Erilaz Greaves +2",                    -- 11/11, 157 [ 48] (__, __)
     -- neck="Futhark Torque +2",                    --  7/ 7,  30 [ 60] (__, __)
     -- ear1="Andoaa Earring",                       -- __/__, ___ [___] (__,  5)
     -- ear2="Mimir Earring",                        -- __/__, ___ [___] (__, 10)
@@ -782,7 +780,7 @@ function init_gear_sets()
     -- body=gear.Nyame_B_body,                      --  9/ 9, 139 [136] (__, __)
     -- hands={name="Regal Gauntlets",priority=1},   -- __/__,  48 [205] (20, __)
     -- legs="Futhark Trousers +3",                  -- __/__,  89 [107] (30, __)
-    -- feet="Erilaz Greaves +3",                    -- 11/11, 157 [ 48] (__, __)
+    -- feet="Erilaz Greaves +2",                    -- 11/11, 157 [ 48] (__, __)
     -- neck="Futhark Torque +2",                    --  7/ 7,  30 [ 60] (__, __)
     -- ear1="Mimir Earring",                        -- __/__, ___ [___] (__, 10)
     -- ear2="Arete del Luna +1",                    -- __/__, ___ [___] (__, __); Resists
@@ -803,7 +801,7 @@ function init_gear_sets()
     body=gear.Nyame_B_body,                         --  9/ 9, 139 [136] (__, __)
     hands={name="Runeist Mitons +3",priority=1},    --  3/__,  67 [ 85] (__, 19)
     legs=gear.Carmine_D_legs,                       -- __/__,  80 [ 50] (__, 18)
-    feet="Erilaz Greaves +3",                       -- 11/11, 157 [ 48] (__, __)
+    feet="Erilaz Greaves +2",                       -- 11/11, 157 [ 48] (__, __)
     neck="Incanter's Torque",                       -- __/__, ___ [___] (__, 10)
     ear1="Andoaa Earring",                          -- __/__, ___ [___] (__,  5)
     ear2="Mimir Earring",                           -- __/__, ___ [___] (__, 10)
@@ -823,7 +821,7 @@ function init_gear_sets()
     body=gear.Nyame_B_body,                           --  9/ 9, 139 [136] (__, __)
     hands={name="Regal Gauntlets", priority=1},       -- __/__,  48 [205] (20, __)
     legs={name="Futhark Trousers +3", priority=1},    -- __/__,  89 [107] (30, __)
-    feet="Erilaz Greaves +3",                         -- 11/11, 157 [ 48] (__, __)
+    feet="Erilaz Greaves +2",                         -- 11/11, 157 [ 48] (__, __)
     neck="Futhark Torque +2",                         --  7/ 7,  30 [ 60] (__, __)
     ear1="Odnowa Earring +1",                         --  3/ 5, ___ [110] (__, __)
     ear2="Arete del Luna +1",                         -- __/__, ___ [___] (__, __); Resists
@@ -839,7 +837,7 @@ function init_gear_sets()
     -- body=gear.Nyame_B_body,                        --  9/ 9, 139 [136] (__, __)
     -- hands={name="Regal Gauntlets", priority=1},    -- __/__,  48 [205] (20, __)
     -- legs={name="Futhark Trousers +3", priority=1}, -- __/__,  89 [107] (30, __)
-    -- feet="Erilaz Greaves +3",                      -- 11/11, 157 [ 48] (__, __)
+    -- feet="Erilaz Greaves +2",                      -- 11/11, 157 [ 48] (__, __)
     -- neck="Futhark Torque +2",                      --  7/ 7,  30 [ 60] (__, __)
     -- ear1="Sanare Earring",                         -- __/__,   6 [___] (__, __); M. Def Bonus+4
     -- ear2="Arete del Luna +1",                      -- __/__, ___ [___] (__, __); Resists
@@ -891,7 +889,7 @@ function init_gear_sets()
     body=gear.Nyame_B_body,                     -- __, __, __, __ [ 9/ 9, 139] 136
     hands={name="Regal Gauntlets",priority=1},  -- __, __, 20, __ [__/__,  48] 205
     legs="Futhark Trousers +3",                 -- __, __, 30, __ [__/__,  89] 107
-    feet="Erilaz Greaves +3",                   -- __, __, __, __ [11/11, 157]  48
+    feet="Erilaz Greaves +2",                   -- __, __, __, __ [11/11, 157]  48
     neck="Futhark Torque +2",                   -- __, __, __, __ [ 7/ 7,  30]  60
     ear1="Odnowa Earring +1",                   -- __, __, __, __ [ 3/ 5, ___] 110
     ear2="Erilaz Earring",                      -- __, 10, __, __ [__/__,  10] ___
@@ -910,7 +908,7 @@ function init_gear_sets()
     -- body=gear.Taeon_Regen_body,              -- __,  3, __, __ [__/__,  84]  59
     -- hands="Regal Gauntlets",                 -- __, __, 20, __ [__/__,  48] 205
     -- legs="Futhark Trousers +3",              -- __, __, 30, __ [__/__,  89] 107
-    -- feet="Erilaz Greaves +3",                -- __, __, __, __ [11/11, 157]  48
+    -- feet="Erilaz Greaves +2",                -- __, __, __, __ [11/11, 157]  48
     -- neck="Sacro Gorget",                     -- 10, __, __, __ [__/__, ___]  50
     -- ear1="Odnowa Earring +1",                -- __, __, __, __ [ 3/ 5, ___] 110
     -- ear2="Erilaz Earring +2",                -- __, 12, __, __ [ 6/ 6,  12] ___
@@ -1011,7 +1009,7 @@ function init_gear_sets()
     legs={name=gear.Carmine_A_legs.name,
       augments=gear.Carmine_A_legs.augments,
       priority=1},                              -- 16, 17, __(__) [__/__,  80] 130 {20}
-      feet="Erilaz Greaves +3",                 -- 31, 21, __(__) [11/11, 157]  48 {__}
+      feet="Erilaz Greaves +2",                 -- 31, 21, __(__) [11/11, 157]  48 {__}
     neck="Moonlight Necklace",                  -- __, __, __(__) [__/__,  15] ___ {15}
     ear1="Magnetic Earring",                    -- __, __, __(__) [__/__, ___] ___ { 8}
     ear2="Halasz Earring",                      -- __, __, __(__) [__/__, ___] ___ { 5}
@@ -1360,7 +1358,7 @@ function init_gear_sets()
     body="Ashera Harness",            -- 40, 10, 45,  4 <__, __, __> [ 7/ 7,  96] 182
     hands=gear.Adhemar_A_hands,       -- 56,  7, 52,  5 <__,  4, __> [__/__,  43]  22
     legs=gear.Samnuha_legs,           -- 16,  7, 15,  6 < 3,  3, __> [__/__,  75]  41
-    feet="Erilaz Greaves +3",         -- 36, __, 60,  4 <__, __, __> [11/11, 157]  48
+    feet="Erilaz Greaves +2",         -- 36, __, 60,  4 <__, __, __> [11/11, 157]  48
     neck="Anu Torque",                -- __,  7, __, __ <__, __, __> [__/__, ___] ___
     ear1="Telos Earring",             -- __,  5, 10, __ < 1, __, __> [__/__, ___] ___
     ear2="Sherida Earring",           --  5,  5, __, __ < 5, __, __> [__/__, ___] ___
@@ -1477,7 +1475,7 @@ function init_gear_sets()
     body="Erilaz Surcoat +3",       -- __/__, 130 [143] 10 (__, ___) __, 13; Retain enmity; Convert dmg to MP
     hands="Kurys Gloves",           --  2/ 2,  57 [ 25]  2 (__, ___)  9, __
     legs="Erilaz Leg Guards +3",    -- 13/13, 157 [100] 10 (__, ___) 13, __
-    feet="Erilaz Greaves +3",       -- 11/11, 157 [ 48]  9 (__,  35)  8, __
+    feet="Erilaz Greaves +2",       -- 11/11, 157 [ 48]  9 (__,  35)  8, __
     neck="Unmoving Collar +1",      -- __/__, ___ [200] __ (__, ___) 10, __
     ear1="Odnowa Earring +1",       --  3/ 5, ___ [110] __ (__, ___) __, __
     ear2="Cryptic Earring",         -- __/__, ___ [ 40] __ (__, ___)  4, __
@@ -1497,7 +1495,7 @@ function init_gear_sets()
     -- body="Erilaz Surcoat +3",    -- __/__, 130 [143] 10 (__, ___) __, 13; Retain enmity; Convert dmg to MP
     -- hands="Kurys Gloves",        --  2/ 2,  57 [ 25]  2 (__, ___)  9, __
     -- legs="Erilaz Leg Guards +3", -- 13/13, 157 [100] 10 (__, ___) 13, __
-    -- feet="Erilaz Greaves +3",    -- 11/11, 157 [ 48]  9 (__,  35)  8, __
+    -- feet="Erilaz Greaves +2",    -- 11/11, 157 [ 48]  9 (__,  35)  8, __
     -- neck="Warder's Charm +1",    -- __/__, ___ [___] __ (__,  20)  8, __; Absorb magic dmg
     -- ear1="Odnowa Earring +1",    --  3/ 5, ___ [110] __ (__, ___) __, __
     -- ear2="Cryptic Earring",      -- __/__, ___ [ 40] __ (__, ___)  4, __
