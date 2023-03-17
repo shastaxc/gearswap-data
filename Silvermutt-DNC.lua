@@ -1,4 +1,4 @@
--- File Status: Good. Need to update with empy+3. Acc modes for engaged sets are outdated. Need to update MaxDW sets.
+-- File Status: Good. Acc modes for engaged sets are outdated.
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs
@@ -1003,13 +1003,12 @@ function init_gear_sets()
     -- waist="Olseni Belt",
   })
 
-  -- TODO
   -- Max DW (46 needed from gear)
   sets.engaged.MaxDW = {
     ammo="Coiste Bodhar",           -- __,  3, __ < 3, __, __> [__/__, ___] __(__)
     head="Malignance Chapeau",      -- __,  8, 50 <__, __, __> [ 6/ 6, 123] __(__)
     body="Maculele Casaque +3",     -- 11, __, __ <__, __, __> [14/14, 109] 14(__)
-    hands=gear.Adhemar_A_hands,     -- __,  7, 52 <__,  4, __> [__/__,  43] __(__)
+    hands="Floral Gauntlets",       --  5, __, 36 <__,  3, __> [__/ 4,  37] __(__)
     legs=gear.Samnuha_legs,         -- __,  7, 15 < 3,  3, __> [__/__,  75] __(__)
     feet="Maculele Toe Shoes +3",   -- __, 12, 60 <__, __, __> [10/10, 115] __(__); Remove Close Position merits
     neck="Etoile Gorget +2",        -- __,  7, 25 <__, __, __> [__/__, ___] __(__)
@@ -1020,7 +1019,7 @@ function init_gear_sets()
     back=gear.DNC_TP_DW_Cape,       -- 10, __, 20 <__, __, __> [10/__, ___] __(__)
     waist="Reiki Yotai",            --  7,  4, 10 <__, __, __> [__/__, ___] __(__)
     -- Traits/Merits/Gifts             __, __, __ <__, __, __> [__/__, ___] 33(__)
-    -- 37 DW, 48 STP, 232 Acc <9 DA, 15 TA, 0 QA> [40 PDT/30 MDT, 473 M.Eva] 47 Subtle Blow
+    -- 42 DW, 41 STP, 216 Acc <9 DA, 14 TA, 0 QA> [40 PDT/34 MDT, 467 M.Eva] 47 Subtle Blow
   }
   sets.engaged.MaxDW.LowAcc = set_combine(sets.engaged.MaxDW, {
   })
@@ -1133,18 +1132,17 @@ function init_gear_sets()
     neck="Etoile Gorget +2",        -- __,  7, 25 <__, __, __> [__/__, ___] __(__)
     ear1="Suppanomimi",             --  5, __, __ <__, __, __> [__/__, ___] __(__)
     ear2="Eabani Earring",          --  4, __, __ <__, __, __> [__/__,   8] __(__)
-    ring1="Defending Ring",         -- __, __, __ <__, __, __> [10/10, ___] __(__)
-    ring2="Moonlight Ring",         -- __,  5, __ <__, __, __> [ 5/ 5, ___] __(__)
+    ring1="Epona's Ring",           -- __, __, __ < 3,  3, __> [__/__, ___] __(__)
+    ring2="Gere Ring",              -- __, __, __ <__,  5, __> [__/__, ___] __(__)
     back=gear.DNC_TP_DW_Cape,       -- 10, __, 20 <__, __, __> [10/__, ___] __(__)
     waist="Reiki Yotai",            --  7,  4, 10 <__, __, __> [__/__, ___] __(__)
     -- Traits/Merits/Gifts             __, __, __ <__, __, __> [__/__, ___] 33(__)
-    -- 37 DW, 53 STP, 230 Acc <6 DA, 8 TA, 0 QA> [55 PDT/45 MDT, 542 M.Eva] 47 Subtle Blow
+    -- 37 DW, 56 STP, 265 Acc <6 DA, 8 TA, 0 QA> [52 PDT/42 MDT, 617 M.Eva] 47 Subtle Blow
   }
   sets.engaged.SuperDW.HeavyDef.LowAcc = set_combine(sets.engaged.SuperDW.HeavyDef, {})
   sets.engaged.SuperDW.HeavyDef.MidAcc = set_combine(sets.engaged.SuperDW.HeavyDef.LowAcc, {})
   sets.engaged.SuperDW.HeavyDef.HighAcc = set_combine(sets.engaged.SuperDW.HeavyDef.MidAcc,{})
 
-  -- TODO
   -- Max DW (46 needed from gear)
   sets.engaged.MaxDW.HeavyDef = {
     ammo="Coiste Bodhar",           -- __,  3, __ < 3, __, __> [__/__, ___] __(__)
@@ -1152,16 +1150,16 @@ function init_gear_sets()
     body="Maculele Casaque +3",     -- 11, __, __ <__, __, __> [14/14, 109] 14(__)
     hands="Malignance Gloves",      -- __, 12, 50 <__, __, __> [ 5/ 5, 112] __(__)
     legs="Malignance Tights",       -- __, 10, 50 <__, __, __> [ 7/ 7, 150] __(__)
-    feet="Maculele Toe Shoes +3",   -- __, 12, 60 <__, __, __> [10/10, 115] __(__); Remove Close Position merits
+    feet=gear.Herc_DW_feet,         --  5, __, 23 <__,  2, __> [ 2/__,  75] __(__)
     neck="Etoile Gorget +2",        -- __,  7, 25 <__, __, __> [__/__, ___] __(__)
     ear1="Suppanomimi",             --  5, __, __ <__, __, __> [__/__, ___] __(__)
     ear2="Eabani Earring",          --  4, __, __ <__, __, __> [__/__,   8] __(__)
-    ring1="Defending Ring",         -- __, __, __ <__, __, __> [10/10, ___] __(__)
-    ring2="Moonlight Ring",         -- __,  5, __ <__, __, __> [ 5/ 5, ___] __(__)
+    ring1="Moonlight Ring",         -- __,  5, __ <__, __, __> [ 5/ 5, ___] __(__)
+    ring2="Gere Ring",              -- __, __, __ <__,  5, __> [__/__, ___] __(__)
     back=gear.DNC_TP_DW_Cape,       -- 10, __, 20 <__, __, __> [10/__, ___] __(__)
     waist="Reiki Yotai",            --  7,  4, 10 <__, __, __> [__/__, ___] __(__)
     -- Traits/Merits/Gifts             __, __, __ <__, __, __> [__/__, ___] 33(__)
-    -- 37 DW, 53 STP, 230 Acc <6 DA, 8 TA, 0 QA> [55 PDT/45 MDT, 542 M.Eva] 47 Subtle Blow
+    -- 42 DW, 49 STP, 228 Acc <3 DA, 7 TA, 0 QA> [49 PDT/37 MDT, 577 M.Eva] 47 Subtle Blow
   }
   sets.engaged.MaxDW.HeavyDef.LowAcc = set_combine(sets.engaged.MaxDW.HeavyDef, {})
   sets.engaged.MaxDW.HeavyDef.MidAcc = set_combine(sets.engaged.MaxDW.HeavyDef.LowAcc, {})
