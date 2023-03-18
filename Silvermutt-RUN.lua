@@ -489,21 +489,21 @@ function init_gear_sets()
     hands=gear.Carmine_D_hands,                     -- 42, __/__ [ 27]
     legs="Agwu's Slops",                            -- 55,  8/ 8 [ 50]
     feet=gear.Herc_MAB_feet,                        -- 57,  2/__ [  9]
-    neck="Baetyl Pendant",                          -- 13, __/__ [___]
+    neck="Sibyl Scarf",                             -- 10, __/__ [___]
     ear1="Friomisi Earring",                        -- 10, __/__ [___]
     ear2="Novio Earring",                           --  7, __/__ [___]
     ring1="Gelatinous Ring +1",                     -- __,  7/-1 [135]
     ring2="Shiva Ring +1",                          --  3, __/__ [___]
     back="Argochampsa Mantle",                      -- 12, __/__ [___]
     waist="Eschan Stone",                           --  7, __/__ [ 20]
-    -- 271 MAB, 26 PDT / 16 MDT [415 HP]
+    -- 268 MAB, 26 PDT / 16 MDT [415 HP]
 
     -- head="Agwu's Cap",                           -- 60, __/__ [ 38]; R30
     -- body="Agwu's Robe",                          -- 60, __/__ [ 61]; R30
     -- hands="Agwu's Gages",                        -- 60, __/__ [ 38]; R30
     -- legs="Agwu's Slops",                         -- 60, 10/10 [ 50]; R30
     -- feet="Agwu's Pigaches",                      -- 60, __/__ [ 27]; R30
-    -- 354 MAB, 17 PDT / 9 MDT [369 HP]
+    -- 351 MAB, 17 PDT / 9 MDT [369 HP]
   }
   sets.precast.JA['Lunge'].Safe = {
     ammo="Seething Bomblet +1",                     --  7, __/__ [___]

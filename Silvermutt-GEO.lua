@@ -664,7 +664,7 @@ function init_gear_sets()
     hands="Azimuth Gloves +2",
     legs="Jhakri Slops +2",
     feet="Azimuth Gaiters +2",
-    neck="Baetyl Pendant", --13
+    neck="Sibyl Scarf",
     ear1="Malignance Earring", --8
     ear2="Regal Earring", --7
     ring1="Metamorph Ring +1",

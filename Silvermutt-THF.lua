@@ -554,18 +554,18 @@ function init_gear_sets()
     hands=gear.Nyame_B_hands,           -- 42, 28, 11, 30 [ 7/ 7, 112]
     legs=gear.Nyame_B_legs,             -- __, 44, 12, 30 [ 8/ 8, 150]
     feet=gear.Herc_MAB_feet,            -- 24, __, __, 57 [ 2/__,  75]
-    neck="Baetyl Pendant",              -- __, __, __, 13 [__/__, ___]
+    neck="Sibyl Scarf",                 -- __, 10, __, 10 [__/__, ___]
     ear1="Friomisi Earring",            -- __, __, __, 10 [__/__, ___]
     ear2="Moonshade Earring",           -- __, __, __, __ [__/__, ___]; tp bonus+250
     ring1="Epaminondas's Ring",         -- __, __,  5, __ [__/__, ___]
     ring2="Dingir Ring",                -- __, __, __, 10 [__/__, ___]
     back=gear.THF_WS1_Cape,             -- 30, __, 10, __ [10/__, ___]
     waist="Skrymir Cord",               -- __, __, __,  5 [__/__, ___]
-    -- 145 DEX, 142 INT, 62 WSD, 222 MAB [43 PDT/31 MDT, 599 M.Eva]
+    -- 145 DEX, 152 INT, 62 WSD, 219 MAB [43 PDT/31 MDT, 599 M.Eva]
 
     -- back=gear.THF_WS5_Cape,          -- __, 30, __, 10 [10/__, ___]
     -- waist="Skrymir Cord +1",         -- __, __, __,  7 [__/__, ___]
-    -- 115 DEX, 172 INT, 52 WSD, 234 MAB [43 PDT/31 MDT, 599 M.Eva]
+    -- 115 DEX, 182 INT, 52 WSD, 231 MAB [43 PDT/31 MDT, 599 M.Eva]
   }
   sets.precast.WS['Aeolian Edge'].MaxTP = set_combine(sets.precast.WS['Aeolian Edge'], {
     ear2="Novio Earring",               -- __, __, __,  7 [__/__, ___]

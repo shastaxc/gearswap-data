@@ -477,7 +477,7 @@ function init_gear_sets()
   sets.precast.WS['Sanguine Blade'] = {
     ammo="Pemphredo Tathlum",
     head="Pixie Hairpin +1",
-    neck="Baetyl Pendant",
+    neck="Sibyl Scarf",
     ear1="Moonshade Earring",
     ear2="Regal Earring",
     ring1="Epaminondas's Ring",

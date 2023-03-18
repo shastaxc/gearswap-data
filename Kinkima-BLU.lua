@@ -481,7 +481,7 @@ function init_gear_sets()
     hands=gear.Nyame_B_hands,
     legs=gear.Nyame_B_legs,
     feet=gear.Nyame_B_feet,
-    neck="Baetyl Pendant",
+    neck="Sibyl Scarf",
     ear1="Moonshade Earring",
     ear2="Regal Earring",
     ring2="Archon Ring",

@@ -383,15 +383,13 @@ function init_gear_sets()
     hands=gear.Nyame_B_hands,
     legs=gear.Nyame_B_legs,
     feet=gear.Nyame_B_feet,
-    neck="Baetyl Pendant",
+    neck="Sibyl Scarf",
     ear1="Moonshade Earring",
     ear2="Friomisi Earring",
     ring1="Archon Ring",
     ring2="Epaminondas's Ring",
     back=gear.NIN_MAB_Cape,
     waist="Eschan Stone",
-    
-    -- neck="Sibyl Scarf",
   }
   sets.precast.WS['Blade: Ei'].MaxTP = set_combine(sets.precast.WS['Blade: Ei'], {
     ear1="Novio Earring",
@@ -408,7 +406,7 @@ function init_gear_sets()
     hands=gear.Nyame_B_hands,
     legs=gear.Nyame_B_legs,
     feet=gear.Nyame_B_feet,
-    neck="Baetyl Pendant",
+    neck="Sibyl Scarf",
     ear1="Moonshade Earring",
     ear2="Friomisi Earring",
     ring1="Dingir Ring",
@@ -846,17 +844,16 @@ function init_gear_sets()
     hands=gear.Nyame_B_hands,         -- 28, 30, __, __,  5, __ [ 7/ 7, 112]
     legs=gear.Nyame_B_legs,           -- 44, 30, __, __,  6, __ [ 8/ 8, 150]
     feet="Mochizuki Kyahan +3",       -- __, __, __, __, __, __ [__/__,  84]; MAB+25%
-    neck="Baetyl Pendant",            -- __, 13, __, __, __, __ [__/__, ___]
+    neck="Sibyl Scarf",               -- 10, 10, __, __, __, __ [__/__, ___]
     ear1="Novio Earring",             -- __,  7, __, __, __, __ [__/__, ___]
     ear2="Friomisi Earring",          -- __, 10, __, __, __, __ [__/__, ___]
     ring1="Shiva Ring +1",            --  9,  3, __, __, __, __ [__/__, ___]
     ring2="Dingir Ring",              -- __, 10, __, __, __, __ [__/__, ___]
     back=gear.NIN_MAB_Cape,           -- 30, 10, __, 20, __, __ [10/__, ___]
     waist="Eschan Stone",             -- __,  7, __, __, __, __ [__/__, ___]
-    -- 190 INT, 236 MAB, 0 MAccSk, 20 MDmg, 18 MB Dmg%, 0 MB2 Dmg% [34 PDT/24 MDT, 548 M.Eva]
+    -- 200 INT, 233 MAB, 0 MAccSk, 20 MDmg, 18 MB Dmg%, 0 MB2 Dmg% [34 PDT/24 MDT, 548 M.Eva]
     
     -- ammo="Ghastly Tathlum +1",     -- 11, __, __, 11, __, __ [__/__, ___]
-    -- neck="Sibyl Scarf",            -- 10, 10, __, __, __, __ [__/__, ___]
     -- 206 INT, 229 MAB, 0 MAccSk, 31 MDmg, 18 MB Dmg%, 0 MB2 Dmg% [34 PDT/24 MDT, 548 M.Eva]
   }
   sets.midcast.ElementalNinjutsu.Ni = set_combine(sets.midcast.ElementalNinjutsu.Ichi, {
@@ -888,7 +885,7 @@ function init_gear_sets()
     -- 186 INT, 204 MAB, 0 MAccSk, 31 MDmg, 38 MB Dmg%, 5 MB2 Dmg% [27 PDT/17 MDT, 539 M.Eva]
   }
   sets.midcast.ElementalNinjutsu.Ni.MB = set_combine(sets.midcast.ElementalNinjutsu.Ichi.MB, {
-    -- neck="Sibyl Scarf",            -- 10, 10, __, __, __, __ [__/__, ___]
+    neck="Sibyl Scarf",               -- 10, 10, __, __, __, __ [__/__, ___]
   })
   sets.midcast.ElementalNinjutsu.San.MB = set_combine(sets.midcast.ElementalNinjutsu.Ni.MB, {
     ring1="Metamorph Ring +1",        -- 16, __, __, __, __, __ [__/__, ___]

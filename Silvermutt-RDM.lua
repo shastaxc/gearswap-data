@@ -490,7 +490,7 @@ function init_gear_sets()
     ammo="Pemphredo Tathlum",
     head="Pixie Hairpin +1",
     hands="Jhakri Cuffs +2",
-    neck="Baetyl Pendant",
+    neck="Sibyl Scarf",
     ear1="Malignance Earring",
     ear2="Regal Earring",
     ring1="Archon Ring",
@@ -519,7 +519,7 @@ function init_gear_sets()
   sets.precast.WS['Seraph Blade'] = set_combine(sets.precast.WS, {
     ammo="Pemphredo Tathlum",
     hands="Jhakri Cuffs +2",
-    neck="Baetyl Pendant",
+    neck="Sibyl Scarf",
     ear1="Malignance Earring",
     ear2="Moonshade Earring",
     ring1="Weatherspoon Ring",
@@ -550,7 +550,7 @@ function init_gear_sets()
   sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
     ammo="Pemphredo Tathlum",
     hands="Jhakri Cuffs +2",
-    neck="Baetyl Pendant",
+    neck="Sibyl Scarf",
     ear1="Malignance Earring",
     ear2="Moonshade Earring",
     ring1="Shiva Ring +1",
@@ -934,7 +934,7 @@ function init_gear_sets()
     body="Cohort Cloak +1", --100
     hands=gear.Carmine_D_hands, --42
     feet="Ayanmo Gambieras +2",
-    neck="Baetyl Pendant", --13
+    neck="Sibyl Scarf", --10
     ear1="Malignance Earring", --8
     ear2="Regal Earring",--7
     ring1="Shiva Ring +1", --3

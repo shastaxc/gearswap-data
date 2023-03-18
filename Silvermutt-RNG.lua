@@ -789,19 +789,19 @@ function init_gear_sets()
   sets.precast.WS['Rampage'].HighAccMaxTP = set_combine(sets.precast.WS['Evisceration'].HighAcc, {})
 
   sets.precast.WS["Aeolian Edge"] = set_combine(sets.precast.WS["Trueflight"], {
-    neck="Baetyl Pendant", --13
+    neck="Sibyl Scarf", --10
     ring1="Shiva Ring +1", --3
   })
   sets.precast.WS["Aeolian Edge"].MaxTP = set_combine(sets.precast.WS["Trueflight"].MaxTP, {
-    neck="Baetyl Pendant", --13
+    neck="Sibyl Scarf", --10
     ring1="Shiva Ring +1",
   })
   sets.precast.WS["Aeolian Edge"].HighAcc = set_combine(sets.precast.WS["Trueflight"].HighAcc, {
-    neck="Baetyl Pendant", --13
+    neck="Sibyl Scarf", --10
     ring1="Shiva Ring +1",
   })
   sets.precast.WS["Aeolian Edge"].HighAccMaxTP = set_combine(sets.precast.WS["Trueflight"].HighAccMaxTP, {
-    neck="Baetyl Pendant", --13
+    neck="Sibyl Scarf", --10
     ring1="Shiva Ring +1",
   })
 

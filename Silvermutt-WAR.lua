@@ -524,21 +524,25 @@ function init_gear_sets()
   -- 30% STR/30% INT; darkness elemental, dmg varies with TP
   sets.precast.WS['Cataclysm'] = set_combine(sets.precast.WS['Cloudsplitter'], {
     head="Pixie Hairpin +1",
+    neck="Sibyl Scarf",
     ring2="Archon Ring",
     -- back=gear.WAR_INT_MAB_Cape,
   })
   sets.precast.WS['Cataclysm'].MaxTP = set_combine(sets.precast.WS['Cloudsplitter'].MaxTP, {
     head="Pixie Hairpin +1",
+    neck="Sibyl Scarf",
     ring2="Archon Ring",
     -- back=gear.WAR_INT_MAB_Cape,
   })
   sets.precast.WS['Cataclysm'].AttCapped = set_combine(sets.precast.WS['Cloudsplitter'].AttCapped, {
     head="Pixie Hairpin +1",
+    neck="Sibyl Scarf",
     ring2="Archon Ring",
     -- back=gear.WAR_INT_MAB_Cape,
   })
   sets.precast.WS['Cataclysm'].AttCappedMaxTP = set_combine(sets.precast.WS['Cloudsplitter'].AttCappedMaxTP, {
     head="Pixie Hairpin +1",
+    neck="Sibyl Scarf",
     ring2="Archon Ring",
     -- back=gear.WAR_INT_MAB_Cape,
   })

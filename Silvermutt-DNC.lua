@@ -639,7 +639,7 @@ function init_gear_sets()
     hands=gear.Nyame_B_hands, --30
     legs=gear.Nyame_B_legs, --30
     feet=gear.Herc_MAB_feet, --57
-    neck="Baetyl Pendant", --13
+    neck="Sibyl Scarf", --10
     ear1="Friomisi Earring", --10
     ear2="Moonshade Earring",
     ring1="Shiva Ring +1", --3

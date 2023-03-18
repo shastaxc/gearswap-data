@@ -389,7 +389,7 @@ function init_gear_sets()
     hands=gear.Nyame_B_hands,     -- 10, 
     legs=gear.Nyame_B_legs,       -- 11, 
     feet=gear.Nyame_B_feet,       -- 10, 
-    neck="Baetyl Pendant",        -- __, __, __, 13
+    neck="Sibyl Scarf",           -- __, __, 10, 10
     ear1="Moonshade Earring",     -- __, __, __, __; 250 TP Bonus
     ear2="Friomisi Earring",      -- __, __, __, 10
     ring1="Shiva Ring +1",        -- __, __,  9,  3
@@ -397,7 +397,7 @@ function init_gear_sets()
     waist="Skrymir Cord",         -- __, __, __,  5; +30 M.Dmg
     -- range=gear.Linos_WS1,      --  3, __,  8, 20
     -- back=gear.BRD_WS2_Cape,    -- 10, 30, __, __
-    -- 58 WSD, 166 DEX, 203 INT, 251 MAB
+    -- 58 WSD, 166 DEX, 213 INT, 248 MAB
   })
   sets.precast.WS['Aeolian Edge'].MaxTP = set_combine(sets.precast.WS['Aeolian Edge'], {
     ear1="Regal Earring",         -- __, __, 10,  7
