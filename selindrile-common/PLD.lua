@@ -60,7 +60,8 @@ function job_setup()
 	state.CurrentStep = M{['description']='Current Step', 'Box Step', 'Quickstep'}
 	
 	state.AutoEmblem = M(true, 'Auto Emblem')
-	state.AutoMajesty = M(true, 'Auto Magesty')
+	state.AutoCover = M(false, 'Auto Cover')
+	state.AutoMajesty = M(true, 'Auto Majesty')
 	
 	autows = 'Savage Blade'
 	autofood = 'Miso Ramen'
@@ -219,10 +220,10 @@ function job_self_command(commandArgs, eventArgs)
 				windower.chat.input('/ma "Soporific" <t>')
 			elseif spell_recasts[605] < spell_latency then
 				windower.chat.input('/ma "Geist Wall" <t>')
-			elseif spell_recasts[575] < spell_latency then
-				windower.chat.input('/ma "Jettatura" <t>')
 			elseif spell_recasts[537] < spell_latency then
 				windower.chat.input('/ma "Stinking Gas" <t>')
+			elseif spell_recasts[575] < spell_latency then
+				windower.chat.input('/ma "Jettatura" <t>')
 			elseif spell_recasts[592] < spell_latency then
 				windower.chat.input('/ma "Blank Gaze" <t>')
 			elseif not check_auto_tank_ws() then
@@ -294,6 +295,8 @@ function job_self_command(commandArgs, eventArgs)
 			elseif not check_auto_tank_ws() then
 				if not state.AutoTankMode.value then add_to_chat(123,'Dancer job abilities not needed.') end
 			end
+		else
+			check_auto_tank_ws()
 		end
 
 	end
@@ -489,8 +492,14 @@ function check_majesty()
 	return false
 end
 
+function check_cover(Protectee)
+    if state.AutoCover.value and not midaction() and Protectee.hpp < 85 and math.sqrt(Protectee.distance) < 10 and windower.ffxi.get_ability_recasts()[76] < latency then
+		windower.chat.input('/ja Cover '..Protectee.name..'')
+    end
+end 
+
 function check_hasso()
-	if not (state.Stance.value == 'None' or state.Buff.Hasso or state.Buff.Seigan) and player.sub_job == 'SAM' and player.in_combat and not silent_check_amnesia() then
+if player.sub_job == 'SAM' and player.status == 'Engaged' and not (state.Stance.value == 'None' or state.Buff.Hasso or state.Buff.Seigan or state.Buff['SJ Restriction'] or main_weapon_is_one_handed() or silent_check_amnesia()) then
 		
 		local abil_recasts = windower.ffxi.get_ability_recasts()
 		

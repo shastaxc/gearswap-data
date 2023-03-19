@@ -56,6 +56,7 @@ function job_setup()
     state.Buff['Aftermath: Lv.3'] = buffactive['Aftermath: Lv.3'] or false
     state.Buff['Hundred Fists'] = buffactive['Hundred Fists'] or false
 	state.Buff['Impetus'] = buffactive['Impetus'] or false
+	state.Buff['Footwork'] = buffactive['Footwork'] or false
 	state.Buff['Boost'] = buffactive['Boost'] or false
 	
 	state.AutoBoost = M(false, 'Auto Boost Mode')
@@ -155,13 +156,19 @@ end
 
 -- Modify the default melee set after it was constructed.
 function job_customize_melee_set(meleeSet)
-    if state.Buff['Impetus'] and state.DefenseMode.value == 'None' and state.OffenseMode.value ~= 'FullAcc' then
-		meleeSet = set_combine(meleeSet, sets.buff.Impetus)
-    end
 	
-    if buffactive.Footwork and state.DefenseMode.value == 'None' and state.OffenseMode.value ~= 'FullAcc' then
-		meleeSet = set_combine(meleeSet, sets.buff.Footwork)
-    end
+	if state.OffenseMode.value ~= 'FullAcc' then
+		if state.Buff['Impetus'] then
+			meleeSet = set_combine(meleeSet, sets.buff.Impetus)
+		end
+		if buffactive.Footwork then
+			meleeSet = set_combine(meleeSet, sets.buff.Footwork)
+		end
+	end
+	
+	if state.Buff['Boost'] then
+		meleeSet = set_combine(meleeSet, sets.buff.Boost)
+	end
 	
     return meleeSet
 end
@@ -283,7 +290,7 @@ function check_buff()
 			windower.chat.input('/ja "Focus" <me>')
 			tickdelay = os.clock() + 1.1
 			return true
-		elseif player.sub_job == 'WAR' then
+		elseif player.sub_job == 'WAR' and not state.Buff['SJ Restriction'] then
 			if not buffactive.Berserk and abil_recasts[1] < latency then
 				windower.chat.input('/ja "Berserk" <me>')
 				tickdelay = os.clock() + 1.1
