@@ -164,144 +164,26 @@ function job_setup()
       'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
   state.WeaponSet = M{['description']='Weapon Set', 'Casting', 'Temp', 'Croc', 'Naegling', 'Cleaving',}
 
-  send_command('bind !s gs c faceaway')
-  send_command('bind !d gs c interact')
-  
-  send_command('bind ^pageup gs c toyweapon cycle')
-  send_command('bind ^pagedown gs c toyweapon cycleback')
-  send_command('bind !pagedown gs c toyweapon reset')
-
-  send_command('bind !` input /ja "Composure" <me>')
-  send_command('bind @` gs c toggle MagicBurst')
-
-  send_command('bind ^` input /ma "Temper II" <me>')
-  send_command('bind !w input /ma "Flurry II" <stpc>')
-  send_command('bind !e input /ma "Haste II" <stpc>')
-
-  send_command('bind !u input /ma "Blink" <me>')
-  send_command('bind !i input /ma "Stoneskin" <me>')
-  send_command('bind !o input /ma "Phalanx II" <stpc>')
-  send_command('bind !p input /ma "Aquaveil" <me>')
-
-  send_command('bind !\' input /ma "Refresh II" <stpc>')
-  send_command('bind !; input /ma "Regen II" <stpc>')
-  send_command('bind !, input /ma "Blaze Spikes" <me>')
-  send_command('bind !. input /ma "Ice Spikes" <me>')
-  send_command('bind !/ input /ma "Shock Spikes" <me>')
-
-  send_command('bind !- gs c cycleback EnSpell')
-  send_command('bind != gs c cycle EnSpell')
-  send_command('bind ![ gs c cycleback GainSpell')
-  send_command('bind !] gs c cycle GainSpell')
-
-  send_command('bind ^insert gs c weaponset cycle')
-  send_command('bind ^delete gs c weaponset cycleback')
-  send_command('bind !delete gs c weaponset reset')
-
-  send_command('bind ^home gs c cycleback BarElement')
-  send_command('bind ^end gs c cycle BarElement')
-  send_command('bind !home gs c cycleback BarStatus')
-  send_command('bind !end gs c cycle BarStatus')
-
-  send_command('bind @s gs c cycle SleepMode')
-  send_command('bind @e gs c cycle EnspellMode')
-  send_command('bind @d gs c toggle NM')
-  send_command('bind @w gs c toggle RearmingLock')
-  send_command('bind @c gs c toggle CP')
+  set_main_keybinds()
 end
 
 -- Executes on first load, main job change, **and sub job change**
 function user_setup()
   silibs.user_setup_hook()
-  include('Global-Binds.lua') -- Additional local binds
+  ----------- Non-silibs content goes below this line -----------
 
-  -- Default Status Cure HotKeys
-  if player.sub_job == 'WHM' or player.sub_job == 'SCH' then
-    send_command('bind ~numpad7 input /ma "Paralyna" <t>') -- WHM, SCH, /WHM, /SCH
-    send_command('bind ~numpad8 input /ma "Silena" <t>') -- WHM, SCH, /WHM, /SCH
-    send_command('bind ~numpad9 input /ma "Blindna" <t>') -- WHM, SCH, /WHM, /SCH
-    send_command('bind ~numpad4 input /ma "Poisona" <t>') -- WHM, SCH, /WHM, /SCH
-    send_command('bind ~numpad6 input /ma "Viruna" <t>') -- WHM, SCH, /WHM, /SCH
-    send_command('bind ~numpad1 input /ma "Cursna" <t>') -- WHM, SCH, /WHM, /SCH
-    send_command('bind ~numpad2 input /ma "Erase" <t>') -- WHM, SCH, /WHM, /SCH
-    if player.sub_job == 'WHM' then
-      send_command('bind ~numpad5 input /ma "Stona" <t>') -- WHM, SCH, /WHM
-    elseif player.sub_job == 'SCH' then
-      send_command('bind ^- gs c scholar light')
-      send_command('bind ^= gs c scholar dark')
-      send_command('bind ^[ gs c scholar aoe')
-      send_command('bind ^] gs c scholar cost')
-      send_command('bind ^\\\\ gs c scholar speed')
-    end
-  elseif player.sub_job == 'NIN' then
-    send_command('bind ^numpad0 input /ma "Utsusemi: Ichi" <me>')
-    send_command('bind ^numpad. input /ma "Utsusemi: Ni" <me>')
-  end
+  include('Global-Binds.lua') -- Additional local binds
 
   update_combat_form()
   determine_haste_group()
 
   select_default_macro_book()
+  set_sub_keybinds()
 end
 
 -- Called when this job file is unloaded (eg: job change)
 function job_file_unload()
-  send_command('unbind !s')
-  send_command('unbind !d')
-
-  send_command('unbind ^pageup')
-  send_command('unbind ^pagedown')
-  send_command('unbind !pagedown')
-
-  send_command('unbind !`')
-  send_command('unbind @`')
-  send_command('unbind ^`')
-  send_command('unbind !w')
-  send_command('unbind !e')
-
-  send_command('unbind !u')
-  send_command('unbind !i')
-  send_command('unbind !o')
-  send_command('unbind !p')
-
-  send_command('unbind !\'')
-  send_command('unbind !;')
-  send_command('unbind !,')
-  send_command('unbind !.')
-  send_command('unbind !/')
-
-  send_command('unbind !-')
-  send_command('unbind !=')
-  send_command('unbind ![')
-  send_command('unbind !]')
-  
-  send_command('unbind ^insert')
-  send_command('unbind ^delete')
-
-  send_command('unbind ^home')
-  send_command('unbind ^end')
-  send_command('unbind !home')
-  send_command('unbind !end')
-  send_command('unbind @s')
-  send_command('unbind @e')
-  send_command('unbind @d')
-  send_command('unbind @w')
-  send_command('unbind @c')
-  send_command('unbind ~numpad9')
-  send_command('unbind ~numpad8')
-  send_command('unbind ~numpad7')
-  send_command('unbind ~numpad6')
-  send_command('unbind ~numpad5')
-  send_command('unbind ~numpad4')
-  send_command('unbind ~numpad2')
-  send_command('unbind ~numpad1')
-  send_command('unbind ^-')
-  send_command('unbind ^=')
-  send_command('unbind ^[')
-  send_command('unbind ^]')
-  send_command('unbind ^\\\\')
-  send_command('unbind ^numpad0')
-  send_command('unbind ^numpad.')
+  unbind_keybinds()
 end
 
 -- Define sets and vars used by this job file.
@@ -1931,6 +1813,12 @@ function job_self_command(cmdParams, eventArgs)
     elseif cmdParams[2] == 'reset' then
       cycle_weapons('reset')
     end
+  elseif cmdParams[1] == 'bind' then
+    set_main_keybinds()
+    set_sub_keybinds()
+    print('Set keybinds!')
+  elseif cmdParams[1] == 'test' then
+    test()
   end
 
   gearinfo(cmdParams, eventArgs)
@@ -2093,4 +1981,120 @@ end
 
 function in_battle_mode()
   return state.WeaponSet.current ~= 'Casting'
+end
+
+function set_main_keybinds()
+  send_command('bind !s gs c faceaway')
+  send_command('bind !d gs c interact')
+  
+  send_command('bind ^pageup gs c toyweapon cycle')
+  send_command('bind ^pagedown gs c toyweapon cycleback')
+  send_command('bind !pagedown gs c toyweapon reset')
+
+  send_command('bind !` input /ja "Composure" <me>')
+  send_command('bind @` gs c toggle MagicBurst')
+
+  send_command('bind ^` input /ma "Temper II" <me>')
+  send_command('bind !w input /ma "Flurry II" <stpc>')
+  send_command('bind !e input /ma "Haste II" <stpc>')
+
+  send_command('bind !u input /ma "Blink" <me>')
+  send_command('bind !i input /ma "Stoneskin" <me>')
+  send_command('bind !o input /ma "Phalanx II" <stpc>')
+  send_command('bind !p input /ma "Aquaveil" <me>')
+
+  send_command('bind !\' input /ma "Refresh II" <stpc>')
+  send_command('bind !; input /ma "Regen II" <stpc>')
+  send_command('bind !, input /ma "Blaze Spikes" <me>')
+  send_command('bind !. input /ma "Ice Spikes" <me>')
+  send_command('bind !/ input /ma "Shock Spikes" <me>')
+
+  send_command('bind !- gs c cycleback EnSpell')
+  send_command('bind != gs c cycle EnSpell')
+  send_command('bind ![ gs c cycleback GainSpell')
+  send_command('bind !] gs c cycle GainSpell')
+
+  send_command('bind ^insert gs c weaponset cycle')
+  send_command('bind ^delete gs c weaponset cycleback')
+  send_command('bind !delete gs c weaponset reset')
+
+  send_command('bind ^home gs c cycleback BarElement')
+  send_command('bind ^end gs c cycle BarElement')
+  send_command('bind !home gs c cycleback BarStatus')
+  send_command('bind !end gs c cycle BarStatus')
+
+  send_command('bind @s gs c cycle SleepMode')
+  send_command('bind @e gs c cycle EnspellMode')
+  send_command('bind @d gs c toggle NM')
+  send_command('bind @w gs c toggle RearmingLock')
+  send_command('bind @c gs c toggle CP')
+end
+
+function set_sub_keybinds()
+  -- Default Status Cure HotKeys
+  if player.sub_job == 'SCH' then
+    send_command('bind ^- gs c scholar light')
+    send_command('bind ^= gs c scholar dark')
+    send_command('bind ^[ gs c scholar aoe')
+    send_command('bind ^] gs c scholar cost')
+    send_command('bind ^\\\\ gs c scholar speed')
+  elseif player.sub_job == 'NIN' then
+    send_command('bind ^numpad0 input /ma "Utsusemi: Ichi" <me>')
+    send_command('bind ^numpad. input /ma "Utsusemi: Ni" <me>')
+  end
+end
+
+function unbind_keybinds()
+  send_command('unbind !s')
+  send_command('unbind !d')
+
+  send_command('unbind ^pageup')
+  send_command('unbind ^pagedown')
+  send_command('unbind !pagedown')
+
+  send_command('unbind !`')
+  send_command('unbind @`')
+  send_command('unbind ^`')
+  send_command('unbind !w')
+  send_command('unbind !e')
+
+  send_command('unbind !u')
+  send_command('unbind !i')
+  send_command('unbind !o')
+  send_command('unbind !p')
+
+  send_command('unbind !\'')
+  send_command('unbind !;')
+  send_command('unbind !,')
+  send_command('unbind !.')
+  send_command('unbind !/')
+
+  send_command('unbind !-')
+  send_command('unbind !=')
+  send_command('unbind ![')
+  send_command('unbind !]')
+  
+  send_command('unbind ^insert')
+  send_command('unbind ^delete')
+
+  send_command('unbind ^home')
+  send_command('unbind ^end')
+  send_command('unbind !home')
+  send_command('unbind !end')
+  send_command('unbind @s')
+  send_command('unbind @e')
+  send_command('unbind @d')
+  send_command('unbind @w')
+  send_command('unbind @c')
+  
+  send_command('unbind ^-')
+  send_command('unbind ^=')
+  send_command('unbind ^[')
+  send_command('unbind ^]')
+  send_command('unbind ^\\\\')
+  send_command('unbind ^numpad0')
+  send_command('unbind ^numpad.')
+end
+
+function test()
 end

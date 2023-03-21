@@ -114,27 +114,7 @@ function job_setup()
   state.BattleMode = M(true, 'Battle Mode')
   state.WeaponLock = M(false, 'Weapon Lock')
 
-  send_command('bind !s gs c faceaway')
-  send_command('bind !d gs c interact')
-  send_command('bind @w gs c toggle WeaponLock')
-  send_command('bind ^b gs c toggle BattleMode')
-
-  send_command('bind ^` gs c cycle SongMode')
-  send_command('bind !` input /ma "Chocobo Mazurka" <me>')
-  send_command('bind !p input /ja "Pianissimo" <me>')
-
-  send_command('bind ^backspace gs c cycle SongTier')
-  send_command('bind ^[ gs c cycleback Etude')
-  send_command('bind ^] gs c cycle Etude')
-  send_command('bind ^; gs c cycleback Carol')
-  send_command('bind ^\' gs c cycle Carol')
-  send_command('bind ^, gs c cycleback Threnody')
-  send_command('bind ^. gs c cycle Threnody')
-
-  send_command('bind @` gs c cycle LullabyMode')
-  send_command('bind @c gs c toggle CP')
-  send_command('bind ^delete gs c cycleback WeaponSet')
-  send_command('bind ^insert gs c cycle WeaponSet')
+  set_main_keybinds()
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -144,37 +124,18 @@ end
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
   silibs.user_setup_hook()
-  -- Additional local binds
-  include('Global-Binds.lua')
+  ----------- Non-silibs content goes below this line -----------
+
+  include('Global-Binds.lua') -- Additional local binds
 
   select_default_macro_book()
-  set_lockstyle()
+  set_sub_keybinds()
 end
 
 
 -- Called when this job file is unloaded (eg: job change)
-function user_unload()
-  send_command('unbind !s')
-  send_command('unbind !d')
-  send_command('unbind @w')
-  send_command('unbind ^b')
-
-  send_command('unbind ^`')
-  send_command('unbind !`')
-  send_command('unbind !p')
-
-  send_command('unbind ^backspace')
-  send_command('unbind ^[')
-  send_command('unbind ^]')
-  send_command('unbind ^;')
-  send_command('unbind ^\'')
-  send_command('unbind ^,')
-  send_command('unbind ^.')
-
-  send_command('unbind @`')
-  send_command('unbind @c')
-  send_command('unbind ^delete')
-  send_command('unbind ^insert')
+function job_file_unload()
+  unbind_keybinds()
 end
 
 
@@ -1307,6 +1268,10 @@ function job_self_command(cmdParams, eventArgs)
     send_command('@input /ma '..state.Carol.value..' <stpc>')
   elseif cmdParams[1] == 'threnody' then
     send_command('@input /ma '..state.Threnody.value..' <stnpc>')
+  elseif cmdParams[1] == 'bind' then
+    set_main_keybinds()
+    set_sub_keybinds()
+    print('Set keybinds!')
   elseif cmdParams[1] == 'test' then
     test()
   end
@@ -1659,6 +1624,57 @@ function set_lockstyle()
       send_command('input /lockstyleset '..lockstyleset)
     end
   end, 10)
+end
+
+function set_main_keybinds()
+  send_command('bind !s gs c faceaway')
+  send_command('bind !d gs c interact')
+  send_command('bind @w gs c toggle WeaponLock')
+  send_command('bind ^b gs c toggle BattleMode')
+
+  send_command('bind ^` gs c cycle SongMode')
+  send_command('bind !` input /ma "Chocobo Mazurka" <me>')
+  send_command('bind !p input /ja "Pianissimo" <me>')
+
+  send_command('bind ^backspace gs c cycle SongTier')
+  send_command('bind ^[ gs c cycleback Etude')
+  send_command('bind ^] gs c cycle Etude')
+  send_command('bind ^; gs c cycleback Carol')
+  send_command('bind ^\' gs c cycle Carol')
+  send_command('bind ^, gs c cycleback Threnody')
+  send_command('bind ^. gs c cycle Threnody')
+
+  send_command('bind @` gs c cycle LullabyMode')
+  send_command('bind @c gs c toggle CP')
+  send_command('bind ^delete gs c cycleback WeaponSet')
+  send_command('bind ^insert gs c cycle WeaponSet')
+end
+
+function set_sub_keybinds()
+end
+
+function unbind_keybinds()
+  send_command('unbind !s')
+  send_command('unbind !d')
+  send_command('unbind @w')
+  send_command('unbind ^b')
+
+  send_command('unbind ^`')
+  send_command('unbind !`')
+  send_command('unbind !p')
+
+  send_command('unbind ^backspace')
+  send_command('unbind ^[')
+  send_command('unbind ^]')
+  send_command('unbind ^;')
+  send_command('unbind ^\'')
+  send_command('unbind ^,')
+  send_command('unbind ^.')
+
+  send_command('unbind @`')
+  send_command('unbind @c')
+  send_command('unbind ^delete')
+  send_command('unbind ^insert')
 end
 
 function test()

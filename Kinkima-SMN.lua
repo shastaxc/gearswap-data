@@ -148,97 +148,23 @@ function job_setup()
 
   latestAvatar = pet.name or nil
 
-  send_command('bind !s gs c faceaway')
-  send_command('bind !d gs c interact')
-  send_command('bind @c gs c toggle CP')
-  send_command('bind @w gs c toggle RearmingLock')
-
-  send_command('bind !q input /ja "Assault" <t>')
-  send_command('bind !w input /ja "Retreat" <me>')
-  send_command('bind !e input /ja "Release" <me>')
-  send_command('bind !r input /ja "Avatar\'s Favor" <me>')
-
-  send_command('bind !` gs c pact buffSpecial')
-  send_command('bind ^numlock gs c pact bp99')
-  send_command('bind !numlock gs c pact astralflow')
-  send_command('bind ^numpad/ gs c pact bp75')
-  send_command('bind ^numpad* gs c pact bp70')
-  send_command('bind ^numpad- gs c pact bpextra')
-  send_command('bind !z gs c pact debuff1')
-  send_command('bind !x gs c pact debuff2')
-  
+  set_main_keybinds()
 end
 
 -- Executes on first load, main job change, **and sub job change**
 function user_setup()
   silibs.user_setup_hook()
+  ----------- Non-silibs content goes below this line -----------
+
   include('Global-Binds.lua') -- Additional local binds
-
-  if player.sub_job == 'SCH' then
-    send_command('bind ^- gs c scholar light')
-    send_command('bind ^= gs c scholar dark')
-    send_command('bind ^\\\\ gs c scholar cost')
-    send_command('bind ![ gs c scholar aoe')
-    send_command('bind !\\\\ gs c scholar speed')
-
-    send_command('bind !c gs c storm')
-    send_command('bind ^pageup gs c cycleback Storm')
-    send_command('bind ^pagedown gs c cycle Storm')
-    send_command('bind !pagedown gs c reset Storm')
-    
-    send_command('bind !u input /ma "Blink" <me>')
-    send_command('bind !i input /ma "Stoneskin" <me>')
-    send_command('bind !p input /ma "Aquaveil" <me>')
-  elseif player.sub_job == 'RDM' then
-    send_command('bind !u input /ma "Blink" <me>')
-    send_command('bind !i input /ma "Stoneskin" <me>')
-    send_command('bind !o input /ma "Phalanx" <me>')
-    send_command('bind !p input /ma "Aquaveil" <me>')
-    send_command('bind !\' input /ma "Refresh" <stpc>')
-  elseif player.sub_job == 'WHM' then
-    send_command('bind !u input /ma "Blink" <me>')
-    send_command('bind !i input /ma "Stoneskin" <me>')
-    send_command('bind !p input /ma "Aquaveil" <me>')
-  end
   
   select_default_macro_book()
+  set_sub_keybinds()
 end
 
 -- Called when this job file is unloaded (eg: job change)
-function user_unload()
-  send_command('unbind !s')
-  send_command('unbind !d')
-  send_command('unbind @c')
-  send_command('unbind @w')
-  
-  send_command('unbind !q')
-  send_command('unbind !w')
-  send_command('unbind !e')
-  send_command('unbind !r')
-
-  send_command('unbind !`')
-  send_command('unbind ^numlock')
-  send_command('unbind ^numpad/')
-  send_command('unbind ^numpad*')
-  send_command('unbind ^numpad-')
-  send_command('unbind !z')
-  send_command('unbind !x')
-  
-  send_command('unbind ^-')
-  send_command('unbind ^=')
-  send_command('unbind ^\\\\')
-  send_command('unbind ![')
-  send_command('unbind !\\\\')
-
-  send_command('unbind !c')
-  send_command('unbind ^pageup')
-  send_command('unbind ^pagedown')
-  send_command('unbind !pagedown')
-
-  send_command('unbind !u')
-  send_command('unbind !i')
-  send_command('unbind !o')
-  send_command('unbind !p')
+function job_file_unload()
+  unbind_keybinds()
 end
 
 -- Define sets and vars used by this job file.
@@ -1466,6 +1392,10 @@ function job_self_command(cmdParams, eventArgs)
     eventArgs.handled = true
   elseif cmdParams[1] == 'storm' then
     send_command('@input /ma "'..state.Storm.current..'" <stpc>')
+  elseif cmdParams[1] == 'bind' then
+    set_main_keybinds()
+    set_sub_keybinds()
+    print('Set keybinds!')
   elseif cmdParams[1] == 'test' then
     test()
   end
@@ -1784,6 +1714,91 @@ function select_default_macro_book(reset)
   set_macro_page(2, 6)
 end
 
+function set_main_keybinds()
+  send_command('bind !s gs c faceaway')
+  send_command('bind !d gs c interact')
+  send_command('bind @c gs c toggle CP')
+  send_command('bind @w gs c toggle RearmingLock')
+
+  send_command('bind !q input /ja "Assault" <t>')
+  send_command('bind !w input /ja "Retreat" <me>')
+  send_command('bind !e input /ja "Release" <me>')
+  send_command('bind !r input /ja "Avatar\'s Favor" <me>')
+
+  send_command('bind !` gs c pact buffSpecial')
+  send_command('bind ^numlock gs c pact bp99')
+  send_command('bind !numlock gs c pact astralflow')
+  send_command('bind ^numpad/ gs c pact bp75')
+  send_command('bind ^numpad* gs c pact bp70')
+  send_command('bind ^numpad- gs c pact bpextra')
+  send_command('bind !z gs c pact debuff1')
+  send_command('bind !x gs c pact debuff2')
+end
+
+function set_sub_keybinds()
+  if player.sub_job == 'SCH' then
+    send_command('bind ^- gs c scholar light')
+    send_command('bind ^= gs c scholar dark')
+    send_command('bind ^\\\\ gs c scholar cost')
+    send_command('bind ![ gs c scholar aoe')
+    send_command('bind !\\\\ gs c scholar speed')
+
+    send_command('bind !c gs c storm')
+    send_command('bind ^pageup gs c cycleback Storm')
+    send_command('bind ^pagedown gs c cycle Storm')
+    send_command('bind !pagedown gs c reset Storm')
+    
+    send_command('bind !u input /ma "Blink" <me>')
+    send_command('bind !i input /ma "Stoneskin" <me>')
+    send_command('bind !p input /ma "Aquaveil" <me>')
+  elseif player.sub_job == 'RDM' then
+    send_command('bind !u input /ma "Blink" <me>')
+    send_command('bind !i input /ma "Stoneskin" <me>')
+    send_command('bind !o input /ma "Phalanx" <me>')
+    send_command('bind !p input /ma "Aquaveil" <me>')
+    send_command('bind !\' input /ma "Refresh" <stpc>')
+  elseif player.sub_job == 'WHM' then
+    send_command('bind !u input /ma "Blink" <me>')
+    send_command('bind !i input /ma "Stoneskin" <me>')
+    send_command('bind !p input /ma "Aquaveil" <me>')
+  end
+end
+
+function unbind_keybinds()
+  send_command('unbind !s')
+  send_command('unbind !d')
+  send_command('unbind @c')
+  send_command('unbind @w')
+  
+  send_command('unbind !q')
+  send_command('unbind !w')
+  send_command('unbind !e')
+  send_command('unbind !r')
+
+  send_command('unbind !`')
+  send_command('unbind ^numlock')
+  send_command('unbind ^numpad/')
+  send_command('unbind ^numpad*')
+  send_command('unbind ^numpad-')
+  send_command('unbind !z')
+  send_command('unbind !x')
+  
+  send_command('unbind ^-')
+  send_command('unbind ^=')
+  send_command('unbind ^\\\\')
+  send_command('unbind ![')
+  send_command('unbind !\\\\')
+
+  send_command('unbind !c')
+  send_command('unbind ^pageup')
+  send_command('unbind ^pagedown')
+  send_command('unbind !pagedown')
+
+  send_command('unbind !u')
+  send_command('unbind !i')
+  send_command('unbind !o')
+  send_command('unbind !p')
+end
+
 function test()
-  print('pet'..inspect(pet,{depth=1}))
 end

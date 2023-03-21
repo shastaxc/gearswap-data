@@ -147,106 +147,23 @@ function job_setup()
     ['Ullr'] = "Eminent Arrow",
   }
 
-  -- Main job keybinds
-  send_command('bind !s gs c faceaway')
-  send_command('bind !d gs c interact')
-  send_command('bind @w gs c toggle RearmingLock')
-  
-  send_command('bind ^insert gs c weaponset cycle')
-  send_command('bind ^delete gs c weaponset cycleback')
-  send_command('bind !delete gs c weaponset reset')
-  send_command('bind ^home gs c rangedweaponset cycle')
-  send_command('bind ^end gs c rangedweaponset cycleback')
-  send_command('bind !end gs c rangedweaponset reset')
-  send_command('bind ^pageup gs c toyweapon cycle')
-  send_command('bind ^pagedown gs c toyweapon cycleback')
-  send_command('bind !pagedown gs c toyweapon reset')
-  
-  send_command('bind ^f8 gs c toggle AttCapped')
-  send_command('bind ^` gs c cycle treasuremode')
-  send_command('bind !` input /ja "Flee" <me>')
-  send_command('bind @c gs c toggle CP')
-
-  send_command('bind ^numpad0 input /ja "Sneak Attack" <me>')
-  send_command('bind ^numpad. input /ja "Trick Attack" <me>')
-  send_command('bind %e input /ra <t>')
+  set_main_keybinds()
 end
 
 -- Executes on first load, main job change, **and sub job change**
 function user_setup()
   silibs.user_setup_hook()
+  ----------- Non-silibs content goes below this line -----------
+
   include('Global-Binds.lua') -- Additional local binds
 
-  -- Subjob keybinds
-  if player.sub_job == 'WAR' then
-    send_command('bind !w input /ja "Defender" <me>')
-    send_command('bind ^numpad/ input /ja "Berserk" <me>')
-    send_command('bind ^numpad* input /ja "Warcry" <me>')
-    send_command('bind ^numpad- input /ja "Aggressor" <me>')
-  elseif player.sub_job == 'SAM' then
-    send_command('bind !w input /ja "Third Eye" <me>')
-    send_command('bind ^numpad/ input /ja "Meditate" <me>')
-    send_command('bind ^numpad* input /ja "Sekkanoki" <me>')
-    send_command('bind ^numpad- input /ja "Hasso" <me>')
-  elseif player.sub_job == 'DNC' then
-    send_command('bind ^- gs c cycleback mainstep')
-    send_command('bind ^= gs c cycle mainstep')
-    send_command('bind %numpad0 gs c step t')
-    send_command('bind ^numlock input /ja "Reverse Flourish" <me>')
-  elseif player.sub_job == 'NIN' then
-    send_command('bind !numpad0 input /ma "Utsusemi: Ichi" <me>')
-    send_command('bind !numpad. input /ma "Utsusemi: Ni" <me>')
-  elseif player.sub_job == 'RUN' then
-    send_command('bind %numpad0 input //gs c rune')
-    send_command('bind ^- gs c cycleback Runes')
-    send_command('bind ^= gs c cycle Runes')
-  elseif player.sub_job == 'DRG' then
-    send_command('bind !w input /ja "Ancient Circle" <me>')
-    send_command('bind ^numpad/ input /ja "Jump" <t>')
-    send_command('bind ^numpad* input /ja "High Jump" <t>')
-    send_command('bind ^numpad- input /ja "Super Jump" <t>')
-  end
-
   select_default_macro_book()
+  set_sub_keybinds()
 end
 
 -- Called when this job file is unloaded (eg: job change)
 function job_file_unload()
-  send_command('unbind !s')
-  send_command('unbind !d')
-  send_command('unbind @w')
-
-  send_command('unbind ^insert')
-  send_command('unbind ^delete')
-  send_command('unbind !delete')
-
-  send_command('unbind ^home')
-  send_command('unbind ^end')
-  send_command('unbind !end')
-
-  send_command('unbind ^pageup')
-  send_command('unbind ^pagedown')
-  send_command('unbind !pagedown')
-
-  send_command('unbind ^f8')
-  send_command('unbind ^`')
-  send_command('unbind !`')
-  send_command('unbind @c')
-
-  send_command('unbind ^numpad0')
-  send_command('unbind ^numpad.')
-  send_command('unbind %e')
-
-  send_command('unbind !w')
-  send_command('unbind ^numpad/')
-  send_command('unbind ^numpad*')
-  send_command('unbind ^numpad-')
-  send_command('unbind ^-')
-  send_command('unbind ^=')
-  send_command('unbind %numpad0')
-  send_command('unbind ^numlock')
-  send_command('unbind !numpad0')
-  send_command('unbind !numpad.')
+  unbind_keybinds()
 end
 
 -- Define sets and vars used by this job file.
@@ -1921,6 +1838,10 @@ function job_self_command(cmdParams, eventArgs)
     end
   elseif cmdParams[1] == 'rune' then
     send_command('@input /ja '..state.Runes.value..' <me>')
+  elseif cmdParams[1] == 'bind' then
+    set_main_keybinds()
+    set_sub_keybinds()
+    print('Set keybinds!')
   elseif cmdParams[1] == 'test' then
     test()
   end
@@ -1978,6 +1899,100 @@ function select_default_macro_book()
   else
     set_macro_page(5, 8)
   end
+end
+
+function set_main_keybinds()
+  send_command('bind !s gs c faceaway')
+  send_command('bind !d gs c interact')
+  send_command('bind @w gs c toggle RearmingLock')
+  
+  send_command('bind ^insert gs c weaponset cycle')
+  send_command('bind ^delete gs c weaponset cycleback')
+  send_command('bind !delete gs c weaponset reset')
+  send_command('bind ^home gs c rangedweaponset cycle')
+  send_command('bind ^end gs c rangedweaponset cycleback')
+  send_command('bind !end gs c rangedweaponset reset')
+  send_command('bind ^pageup gs c toyweapon cycle')
+  send_command('bind ^pagedown gs c toyweapon cycleback')
+  send_command('bind !pagedown gs c toyweapon reset')
+  
+  send_command('bind ^f8 gs c toggle AttCapped')
+  send_command('bind ^` gs c cycle treasuremode')
+  send_command('bind !` input /ja "Flee" <me>')
+  send_command('bind @c gs c toggle CP')
+
+  send_command('bind ^numpad0 input /ja "Sneak Attack" <me>')
+  send_command('bind ^numpad. input /ja "Trick Attack" <me>')
+  send_command('bind %e input /ra <t>')
+end
+
+function set_sub_keybinds()
+  if player.sub_job == 'WAR' then
+    send_command('bind !w input /ja "Defender" <me>')
+    send_command('bind ^numpad/ input /ja "Berserk" <me>')
+    send_command('bind ^numpad* input /ja "Warcry" <me>')
+    send_command('bind ^numpad- input /ja "Aggressor" <me>')
+  elseif player.sub_job == 'SAM' then
+    send_command('bind !w input /ja "Third Eye" <me>')
+    send_command('bind ^numpad/ input /ja "Meditate" <me>')
+    send_command('bind ^numpad* input /ja "Sekkanoki" <me>')
+    send_command('bind ^numpad- input /ja "Hasso" <me>')
+  elseif player.sub_job == 'DNC' then
+    send_command('bind ^- gs c cycleback mainstep')
+    send_command('bind ^= gs c cycle mainstep')
+    send_command('bind %numpad0 gs c step t')
+    send_command('bind ^numlock input /ja "Reverse Flourish" <me>')
+  elseif player.sub_job == 'NIN' then
+    send_command('bind !numpad0 input /ma "Utsusemi: Ichi" <me>')
+    send_command('bind !numpad. input /ma "Utsusemi: Ni" <me>')
+  elseif player.sub_job == 'RUN' then
+    send_command('bind %numpad0 input //gs c rune')
+    send_command('bind ^- gs c cycleback Runes')
+    send_command('bind ^= gs c cycle Runes')
+  elseif player.sub_job == 'DRG' then
+    send_command('bind !w input /ja "Ancient Circle" <me>')
+    send_command('bind ^numpad/ input /ja "Jump" <t>')
+    send_command('bind ^numpad* input /ja "High Jump" <t>')
+    send_command('bind ^numpad- input /ja "Super Jump" <t>')
+  end
+end
+
+function unbind_keybinds()
+  send_command('unbind !s')
+  send_command('unbind !d')
+  send_command('unbind @w')
+
+  send_command('unbind ^insert')
+  send_command('unbind ^delete')
+  send_command('unbind !delete')
+
+  send_command('unbind ^home')
+  send_command('unbind ^end')
+  send_command('unbind !end')
+
+  send_command('unbind ^pageup')
+  send_command('unbind ^pagedown')
+  send_command('unbind !pagedown')
+
+  send_command('unbind ^f8')
+  send_command('unbind ^`')
+  send_command('unbind !`')
+  send_command('unbind @c')
+
+  send_command('unbind ^numpad0')
+  send_command('unbind ^numpad.')
+  send_command('unbind %e')
+
+  send_command('unbind !w')
+  send_command('unbind ^numpad/')
+  send_command('unbind ^numpad*')
+  send_command('unbind ^numpad-')
+  send_command('unbind ^-')
+  send_command('unbind ^=')
+  send_command('unbind %numpad0')
+  send_command('unbind ^numlock')
+  send_command('unbind !numpad0')
+  send_command('unbind !numpad.')
 end
 
 function test()

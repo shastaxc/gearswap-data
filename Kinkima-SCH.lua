@@ -54,105 +54,23 @@ function job_setup()
       'Enblizzard II', 'Enfire', 'Enfire II', 'Enstone', 'Enstone II', 'Enthunder', 'Enthunder II', 'Enwater', 'Enwater II'}
 
   update_active_strategems()
-
-  send_command('bind !s gs c faceaway')
-  send_command('bind !d gs c interact')
-  send_command('bind @w gs c toggle RearmingLock')
-  send_command('bind @c gs c toggle CP')
-
-  send_command('bind ^` input /ja Immanence <me>')
-  send_command('bind !` gs c toggle MagicBurst')
-  send_command('bind ^- gs c scholar light')
-  send_command('bind ^= gs c scholar dark')
-  send_command('bind ^[ gs c scholar power')
-  send_command('bind ^] gs c scholar accuracy')
-  send_command('bind ^\\\\ gs c scholar cost')
-  send_command('bind ![ gs c scholar aoe')
-  send_command('bind !] gs c scholar duration')
-  send_command('bind !\\\\ gs c scholar speed')
-  send_command('bind @h gs c cycle HelixMode')
-  send_command('bind @r gs c cycle RegenMode')
-
-  send_command('bind !r input /ja "Sublimation" <me>')
-  send_command('bind !u input /ma "Blink" <me>')
-  send_command('bind !i input /ma "Stoneskin" <me>')
-  send_command('bind !p input /ma "Aquaveil" <me>')
-  send_command('bind !; input /ma "Regen V" <stpc>')
-  send_command('bind !/ input /ma "Klimaform" <me>')
-  
-  send_command('bind ^pageup gs c cycleback ElementalMode')
-  send_command('bind ^pagedown gs c cycle ElementalMode')
-  send_command('bind !pagedown gs c reset ElementalMode')
-  
-  send_command('bind !q gs c elemental tier4')
-  send_command('bind !w gs c elemental tier5')
-  send_command('bind !z gs c elemental helix')
-  send_command('bind !c gs c elemental storm')
-
+  set_main_keybinds()
 end
 
 -- Executes on first load, main job change, **and sub job change**
 function user_setup()
   silibs.user_setup_hook()
+  ----------- Non-silibs content goes below this line -----------
+
   include('Global-Binds.lua') -- Additional local binds
 
-  if player.sub_job == 'RDM' then
-    send_command('bind !e input /ma "Haste" <stpc>')
-    send_command('bind !u input /ma Blink <me>')
-    send_command('bind !i input /ma Stoneskin <me>')
-    send_command('bind !o input /ma "Phalanx" <me>')
-    send_command('bind !\' input /ma "Refresh" <stpc>')
-  elseif player.sub_job == 'WHM' then
-    send_command('bind !e input /ma "Haste" <stpc>')
-    send_command('bind !u input /ma Blink <me>')
-    send_command('bind !i input /ma Stoneskin <me>')
-  end
-
   select_default_macro_book()
+  set_sub_keybinds()
 end
 
 -- Called when this job file is unloaded (eg: job change)
 function job_file_unload()
-  send_command('unbind !s')
-  send_command('unbind !d')
-  send_command('unbind @w')
-  send_command('unbind @c')
-
-  send_command('unbind ^`')
-  send_command('unbind !`')
-  send_command('unbind ^-')
-  send_command('unbind ^=')
-  send_command('unbind ^[')
-  send_command('unbind ^]')
-  send_command('unbind ^\\\\')
-  send_command('unbind ![')
-  send_command('unbind !]')
-  send_command('unbind !\\\\')
-  send_command('unbind !w')
-  send_command('unbind @h')
-  send_command('unbind @r')
-  send_command('unbind @s')
-
-  send_command('unbind !r')
-  send_command('unbind !u')
-  send_command('unbind !i')
-  send_command('unbind !p')
-  send_command('unbind !;')
-
-  send_command('unbind !e')
-  send_command('unbind !u')
-  send_command('unbind !i')
-  send_command('unbind !o')
-  send_command('unbind !\'')
-  
-  send_command('unbind ^pageup')
-  send_command('unbind ^pagedown')
-  send_command('unbind !pagedown')
-
-  send_command('unbind !q')
-  send_command('unbind !w')
-  send_command('unbind !z')
-  send_command('unbind !c')
+  unbind_keybinds()
 end
 
 -- Define sets and vars used by this job file.
@@ -1749,6 +1667,10 @@ function job_self_command(cmdParams, eventArgs)
   elseif cmdParams[1] == 'elemental' then
     handle_elemental(cmdParams)
     eventArgs.handled = true
+  elseif cmdParams[1] == 'bind' then
+    set_main_keybinds()
+    set_sub_keybinds()
+    print('Set keybinds!')
   elseif cmdParams[1] == 'test' then
     test()
   end
@@ -2032,6 +1954,99 @@ function select_default_macro_book()
   else
     set_macro_page(2, 1)
   end
+end
+
+function set_main_keybinds()
+  send_command('bind !s gs c faceaway')
+  send_command('bind !d gs c interact')
+  send_command('bind @w gs c toggle RearmingLock')
+  send_command('bind @c gs c toggle CP')
+
+  send_command('bind ^` input /ja Immanence <me>')
+  send_command('bind !` gs c toggle MagicBurst')
+  send_command('bind ^- gs c scholar light')
+  send_command('bind ^= gs c scholar dark')
+  send_command('bind ^[ gs c scholar power')
+  send_command('bind ^] gs c scholar accuracy')
+  send_command('bind ^\\\\ gs c scholar cost')
+  send_command('bind ![ gs c scholar aoe')
+  send_command('bind !] gs c scholar duration')
+  send_command('bind !\\\\ gs c scholar speed')
+  send_command('bind @h gs c cycle HelixMode')
+  send_command('bind @r gs c cycle RegenMode')
+
+  send_command('bind !r input /ja "Sublimation" <me>')
+  send_command('bind !u input /ma "Blink" <me>')
+  send_command('bind !i input /ma "Stoneskin" <me>')
+  send_command('bind !p input /ma "Aquaveil" <me>')
+  send_command('bind !; input /ma "Regen V" <stpc>')
+  send_command('bind !/ input /ma "Klimaform" <me>')
+  
+  send_command('bind ^pageup gs c cycleback ElementalMode')
+  send_command('bind ^pagedown gs c cycle ElementalMode')
+  send_command('bind !pagedown gs c reset ElementalMode')
+  
+  send_command('bind !q gs c elemental tier4')
+  send_command('bind !w gs c elemental tier5')
+  send_command('bind !z gs c elemental helix')
+  send_command('bind !c gs c elemental storm')
+end
+
+function set_sub_keybinds()
+  if player.sub_job == 'RDM' then
+    send_command('bind !e input /ma "Haste" <stpc>')
+    send_command('bind !u input /ma Blink <me>')
+    send_command('bind !i input /ma Stoneskin <me>')
+    send_command('bind !o input /ma "Phalanx" <me>')
+    send_command('bind !\' input /ma "Refresh" <stpc>')
+  elseif player.sub_job == 'WHM' then
+    send_command('bind !e input /ma "Haste" <stpc>')
+    send_command('bind !u input /ma Blink <me>')
+    send_command('bind !i input /ma Stoneskin <me>')
+  end
+end
+
+function unbind_keybinds()
+  send_command('unbind !s')
+  send_command('unbind !d')
+  send_command('unbind @w')
+  send_command('unbind @c')
+
+  send_command('unbind ^`')
+  send_command('unbind !`')
+  send_command('unbind ^-')
+  send_command('unbind ^=')
+  send_command('unbind ^[')
+  send_command('unbind ^]')
+  send_command('unbind ^\\\\')
+  send_command('unbind ![')
+  send_command('unbind !]')
+  send_command('unbind !\\\\')
+  send_command('unbind !w')
+  send_command('unbind @h')
+  send_command('unbind @r')
+  send_command('unbind @s')
+
+  send_command('unbind !r')
+  send_command('unbind !u')
+  send_command('unbind !i')
+  send_command('unbind !p')
+  send_command('unbind !;')
+
+  send_command('unbind !e')
+  send_command('unbind !u')
+  send_command('unbind !i')
+  send_command('unbind !o')
+  send_command('unbind !\'')
+  
+  send_command('unbind ^pageup')
+  send_command('unbind ^pagedown')
+  send_command('unbind !pagedown')
+
+  send_command('unbind !q')
+  send_command('unbind !w')
+  send_command('unbind !z')
+  send_command('unbind !c')
 end
 
 function test()

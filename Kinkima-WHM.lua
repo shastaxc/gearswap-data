@@ -58,40 +58,7 @@ function job_setup()
   bar_status_spells = S{'Baramnesra', 'Barvira', 'Barparalyzra', 'Barsilencera', 'Barpetra', 'Barpoisonra', 'Barblindra', 'Barsleepra',
       'Baramnesia', 'Barvirus', 'Barparalyze', 'Barsilence', 'Barpetrify', 'Barpoison', 'Barblind', 'Barsleep'}
 
-  send_command('bind !s gs c faceaway')
-  send_command('bind !d gs c interact')
-  send_command('bind @c gs c toggle CP')
-
-  send_command('bind @w gs c toggle RearmingLock')
-
-  send_command('bind !` input /ja "Afflatus Solace" <me>')
-  send_command('bind !w gs c curaga')
-  send_command('bind !z gs c barelement')
-  send_command('bind !x gs c barstatus')
-  send_command('bind !c gs c storm')
-  
-  send_command('bind ^insert gs c cycleback Barelement')
-  send_command('bind ^delete gs c cycle Barelement')
-  send_command('bind !delete gs c reset Barelement')
-
-  send_command('bind ^home gs c cycleback Barstatus')
-  send_command('bind ^end gs c cycle Barstatus')
-  send_command('bind !end gs c reset Barstatus')
-
-  send_command('bind ^pageup gs c cycle Storm')
-  send_command('bind ^pagedown gs c cycleback Storm')
-  send_command('bind !pagedown gs c reset Storm')
-
-  send_command('bind ^. gs c cycleback CuragaTier')
-  send_command('bind ^/ gs c cycle CuragaTier')
-  send_command('bind !/ gs c reset CuragaTier')
-
-  send_command('bind !r input /ma "Auspice" <me>')
-  send_command('bind !e input /ma "Haste" <stpc>')
-  send_command('bind !u input /ma "Blink" <me>')
-  send_command('bind !i input /ma "Stoneskin" <me>')
-  send_command('bind !p input /ma "Aquaveil" <me>')
-  send_command('bind !; input /ma "Regen IV" <stpc>')
+  set_main_keybinds()
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -100,71 +67,18 @@ end
 
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
+  silibs.user_setup_hook()
+  ----------- Non-silibs content goes below this line -----------
+
   include('Global-Binds.lua') -- Additional local binds
 
-  if player.sub_job == 'SCH' then
-    send_command('bind ^- gs c scholar light')
-    send_command('bind ^= gs c scholar dark')
-    
-    send_command('bind ^\\\\ gs c scholar cost')
-    send_command('bind ![ gs c scholar aoe')
-    send_command('bind !\\\\ gs c scholar speed')
-
-    send_command('bind !q input /ja "Sublimation" <me>')
-  elseif player.sub_job == 'RDM' then
-    send_command('bind !\' input /ma "Refresh" <stpc>')
-  end
-
   select_default_macro_book()
+  set_sub_keybinds()
 end
 
 -- Called when this job file is unloaded (eg: job change)
-function user_unload()
-  send_command('unbind !s')
-  send_command('unbind !d')
-  send_command('unbind @c')
-
-  send_command('unbind @w')
-  
-  send_command('unbind !`')
-  send_command('unbind !w')
-  send_command('unbind !z')
-  send_command('unbind !x')
-  send_command('unbind !c')
-
-  send_command('unbind ^insert')
-  send_command('unbind ^delete')
-  send_command('unbind !delete')
-
-  send_command('unbind ^home')
-  send_command('unbind ^end')
-  send_command('unbind !end')
-
-  send_command('unbind ^pageup')
-  send_command('unbind ^pagedown')
-  send_command('unbind !pagedown')
-
-  send_command('unbind ^.')
-  send_command('unbind ^/')
-  send_command('unbind !/')
-
-  send_command('unbind !r')
-  send_command('unbind !e')
-  send_command('unbind !u')
-  send_command('unbind !i')
-  send_command('unbind !p')
-  send_command('unbind !;')
-
-  send_command('unbind ^-')
-  send_command('unbind ^=')
-  
-  send_command('unbind ^\\\\')
-  send_command('unbind ![')
-  send_command('unbind !\\\\')
-
-  send_command('unbind !q')
-  send_command('unbind !\'')
-
+function job_file_unload()
+  unbind_keybinds()
 end
 
 -- Define sets and vars used by this job file.
@@ -1464,6 +1378,10 @@ function job_self_command(cmdParams, eventArgs)
     send_command('@input /ma "'..state.Barstatus.current..'" <me>')
   elseif cmdParams[1] == 'storm' then
     send_command('@input /ma "'..state.Storm.current..'" <stpc>')
+  elseif cmdParams[1] == 'bind' then
+    set_main_keybinds()
+    set_sub_keybinds()
+    print('Set keybinds!')
   elseif cmdParams[1] == 'test' then
     test()
   end
@@ -1574,6 +1492,105 @@ end
 function select_default_macro_book()
   -- Default macro set/book
   set_macro_page(2, 4)
+end
+
+function set_main_keybinds()
+  send_command('bind !s gs c faceaway')
+  send_command('bind !d gs c interact')
+  send_command('bind @c gs c toggle CP')
+
+  send_command('bind @w gs c toggle RearmingLock')
+
+  send_command('bind !` input /ja "Afflatus Solace" <me>')
+  send_command('bind !w gs c curaga')
+  send_command('bind !z gs c barelement')
+  send_command('bind !x gs c barstatus')
+  send_command('bind !c gs c storm')
+  
+  send_command('bind ^insert gs c cycleback Barelement')
+  send_command('bind ^delete gs c cycle Barelement')
+  send_command('bind !delete gs c reset Barelement')
+
+  send_command('bind ^home gs c cycleback Barstatus')
+  send_command('bind ^end gs c cycle Barstatus')
+  send_command('bind !end gs c reset Barstatus')
+
+  send_command('bind ^pageup gs c cycle Storm')
+  send_command('bind ^pagedown gs c cycleback Storm')
+  send_command('bind !pagedown gs c reset Storm')
+
+  send_command('bind ^. gs c cycleback CuragaTier')
+  send_command('bind ^/ gs c cycle CuragaTier')
+  send_command('bind !/ gs c reset CuragaTier')
+
+  send_command('bind !r input /ma "Auspice" <me>')
+  send_command('bind !e input /ma "Haste" <stpc>')
+  send_command('bind !u input /ma "Blink" <me>')
+  send_command('bind !i input /ma "Stoneskin" <me>')
+  send_command('bind !p input /ma "Aquaveil" <me>')
+  send_command('bind !; input /ma "Regen IV" <stpc>')
+end
+
+function set_sub_keybinds()
+  if player.sub_job == 'SCH' then
+    send_command('bind ^- gs c scholar light')
+    send_command('bind ^= gs c scholar dark')
+    
+    send_command('bind ^\\\\ gs c scholar cost')
+    send_command('bind ![ gs c scholar aoe')
+    send_command('bind !\\\\ gs c scholar speed')
+
+    send_command('bind !q input /ja "Sublimation" <me>')
+  elseif player.sub_job == 'RDM' then
+    send_command('bind !\' input /ma "Refresh" <stpc>')
+  end
+end
+
+function unbind_keybinds()
+  send_command('unbind !s')
+  send_command('unbind !d')
+  send_command('unbind @c')
+
+  send_command('unbind @w')
+  
+  send_command('unbind !`')
+  send_command('unbind !w')
+  send_command('unbind !z')
+  send_command('unbind !x')
+  send_command('unbind !c')
+
+  send_command('unbind ^insert')
+  send_command('unbind ^delete')
+  send_command('unbind !delete')
+
+  send_command('unbind ^home')
+  send_command('unbind ^end')
+  send_command('unbind !end')
+
+  send_command('unbind ^pageup')
+  send_command('unbind ^pagedown')
+  send_command('unbind !pagedown')
+
+  send_command('unbind ^.')
+  send_command('unbind ^/')
+  send_command('unbind !/')
+
+  send_command('unbind !r')
+  send_command('unbind !e')
+  send_command('unbind !u')
+  send_command('unbind !i')
+  send_command('unbind !p')
+  send_command('unbind !;')
+
+  send_command('unbind ^-')
+  send_command('unbind ^=')
+  
+  send_command('unbind ^\\\\')
+  send_command('unbind ![')
+  send_command('unbind !\\\\')
+
+  send_command('unbind !q')
+  send_command('unbind !\'')
 end
 
 function test()

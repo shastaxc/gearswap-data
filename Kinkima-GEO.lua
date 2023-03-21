@@ -57,83 +57,23 @@ function job_setup()
       'Rainstorm', 'Rainstorm II', 'Sandstorm', 'Sandstorm II', 'Thunderstorm', 'Thunderstorm II', 'Voidstorm', 'Voidstorm II',
       'Windstorm', 'Windstorm II'}
 
-  send_command('bind !a gs c test')
-  send_command('bind !s gs c faceaway')
-  send_command('bind !d gs c interact')
-  send_command('bind @w gs c toggle RearmingLock')
-  send_command('bind ^u gs c toggle ShowLuopanUi')
-  
-  send_command('bind !q gs c elemental tier4')
-  send_command('bind !w gs c elemental tier5')
-  send_command('bind !e gs c elemental ara2')
-  send_command('bind !r gs c elemental ara3')
-
-  send_command('bind ^insert gs c weaponset cycle')
-  send_command('bind ^delete gs c weaponset cycleback')
-
-  send_command('bind @c gs c toggle CP')
-  send_command('bind !` gs c toggle MagicBurst')
-  send_command('bind @q gs c cycle RecoverMode')
-
-  send_command('bind ^pageup gs c cycleback ElementalMode')
-  send_command('bind ^pagedown gs c cycle ElementalMode')
-  send_command('bind !pagedown gs c reset ElementalMode')
-  
-  send_command('bind !` input /ja "Full Circle" <me>')
-  send_command('bind ^backspace input /ja "Entrust" <me>')
-  send_command('bind !backspace input /ja "Life Cycle" <me>')
+  set_main_keybinds()
 end
 
 -- Executes on first load, main job change, **and sub job change**
 function user_setup()
   silibs.user_setup_hook()
+  ----------- Non-silibs content goes below this line -----------
+
   include('Global-Binds.lua') -- Additional local binds
 
-  if player.sub_job == 'WHM' or player.sub_job == 'RDM' then
-    -- send_command('bind !e input /ma "Haste" <stpc>')
-  end
-  if player.sub_job == 'RDM' then
-    send_command('bind !\' input /ma "Refresh" <stpc>')
-  end
-  if player.sub_job == 'SCH' then
-    send_command('bind !c gs c elemental storm')
-  end
-
   select_default_macro_book()
+  set_sub_keybinds()
 end
 
 -- Called when this job file is unloaded (eg: job change)
 function job_file_unload()
-  send_command('unbind !a')
-  send_command('unbind !s')
-  send_command('unbind !d')
-  send_command('unbind @w')
-  send_command('unbind ^u')
-
-  send_command('unbind !c')
-  
-  send_command('unbind !q')
-  send_command('unbind !w')
-  send_command('unbind !e')
-  send_command('unbind !r')
-
-  send_command('unbind ^insert')
-  send_command('unbind ^delete')
-
-  send_command('unbind @c')
-  send_command('unbind !`')
-  send_command('unbind @q')
-
-  send_command('unbind !e')
-  send_command('unbind !\'')
-
-  send_command('unbind ^pageup')
-  send_command('unbind ^pagedown')
-  send_command('unbind !pagedown')
-
-  send_command('unbind !`')
-  send_command('unbind ^backspace')
-  send_command('unbind !backspace')
+  unbind_keybinds()
 end
 
 -- Define sets and vars used by this job file.
@@ -2080,6 +2020,10 @@ function job_self_command(cmdParams, eventArgs)
     elseif cmdParams[2] == 'reset' then
       cycle_weapons('reset')
     end
+  elseif cmdParams[1] == 'bind' then
+    set_main_keybinds()
+    set_sub_keybinds()
+    print('Set keybinds!')
   elseif cmdParams[1] == 'test' then
     test()
   end
@@ -2261,6 +2205,79 @@ function select_weapons()
   else
     return {}
   end
+end
+
+function set_main_keybinds()
+  send_command('bind !a gs c test')
+  send_command('bind !s gs c faceaway')
+  send_command('bind !d gs c interact')
+  send_command('bind @w gs c toggle RearmingLock')
+  send_command('bind ^u gs c toggle ShowLuopanUi')
+  
+  send_command('bind !q gs c elemental tier4')
+  send_command('bind !w gs c elemental tier5')
+  send_command('bind !e gs c elemental ara2')
+  send_command('bind !r gs c elemental ara3')
+
+  send_command('bind ^insert gs c weaponset cycle')
+  send_command('bind ^delete gs c weaponset cycleback')
+
+  send_command('bind @c gs c toggle CP')
+  send_command('bind !` gs c toggle MagicBurst')
+  send_command('bind @q gs c cycle RecoverMode')
+
+  send_command('bind ^pageup gs c cycleback ElementalMode')
+  send_command('bind ^pagedown gs c cycle ElementalMode')
+  send_command('bind !pagedown gs c reset ElementalMode')
+  
+  send_command('bind !` input /ja "Full Circle" <me>')
+  send_command('bind ^backspace input /ja "Entrust" <me>')
+  send_command('bind !backspace input /ja "Life Cycle" <me>')
+end
+
+function set_sub_keybinds()
+  if player.sub_job == 'WHM' or player.sub_job == 'RDM' then
+    -- send_command('bind !e input /ma "Haste" <stpc>')
+  end
+  if player.sub_job == 'RDM' then
+    send_command('bind !\' input /ma "Refresh" <stpc>')
+  end
+  if player.sub_job == 'SCH' then
+    send_command('bind !c gs c elemental storm')
+  end
+end
+
+function unbind_keybinds()
+  send_command('unbind !a')
+  send_command('unbind !s')
+  send_command('unbind !d')
+  send_command('unbind @w')
+  send_command('unbind ^u')
+
+  send_command('unbind !c')
+  
+  send_command('unbind !q')
+  send_command('unbind !w')
+  send_command('unbind !e')
+  send_command('unbind !r')
+
+  send_command('unbind ^insert')
+  send_command('unbind ^delete')
+
+  send_command('unbind @c')
+  send_command('unbind !`')
+  send_command('unbind @q')
+
+  send_command('unbind !e')
+  send_command('unbind !\'')
+
+  send_command('unbind ^pageup')
+  send_command('unbind ^pagedown')
+  send_command('unbind !pagedown')
+
+  send_command('unbind !`')
+  send_command('unbind ^backspace')
+  send_command('unbind !backspace')
 end
 
 function test()

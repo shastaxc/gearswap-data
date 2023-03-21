@@ -106,33 +106,7 @@ function job_setup()
   options.ninja_tool_warning_limit = 10
   state.warned = M(false) -- Whether a warning has been given for low ninja tools
 
-  send_command('bind !s gs c faceaway')
-  send_command('bind !d gs c interact')
-  send_command('bind @w gs c toggle RearmingLock')
-
-  send_command('bind ^insert gs c weaponset cycle')
-  send_command('bind ^delete gs c weaponset cycleback')
-
-  send_command('bind ^f8 gs c toggle AttCapped')
-  send_command('bind ^pageup gs c toyweapon cycle')
-  send_command('bind ^pagedown gs c toyweapon cycleback')
-  send_command('bind !pagedown gs c toyweapon reset')
-
-  send_command('bind ^` gs c cycle treasuremode')
-  send_command('bind @c gs c toggle CP')
-  send_command('bind !` gs c toggle MagicBurst')
-
-  send_command('bind ^- gs c cycleback ElementalMode')
-  send_command('bind ^= gs c cycle ElementalMode')
-
-  send_command('bind ^numlock input /ja "Innin" <me>')
-  send_command('bind !numlock input /ja "Yonin" <me>')
-  send_command('bind ^numpad+ gs c ninelemental')
-  send_command('bind !numpad+ input /ja "Futae" <me>')
-
-  send_command('bind !q input /ma "Utsusemi: Ichi" <me>')
-  send_command('bind !w input /ma "Utsusemi: Ni" <me>')
-  send_command('bind !e input /ma "Utsusemi: San" <me>')
+  set_main_keybinds()
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -142,51 +116,16 @@ end
 -- Setup vars that are user-dependent.  Can override this function in a sidecar file.
 function user_setup()
   silibs.user_setup_hook()
+  ----------- Non-silibs content goes below this line -----------
+
   include('Global-Binds.lua') -- Additional local binds
 
-  if player.sub_job == 'WAR' then
-    -- send_command('bind !numpad/ input /ja "Defender" <me>')
-    send_command('bind ^numpad/ input /ja "Berserk" <me>')
-    send_command('bind ^numpad* input /ja "Warcry" <me>')
-    send_command('bind ^numpad- input /ja "Aggressor" <me>')
-  end
-
   select_default_macro_book()
+  set_sub_keybinds()
 end
 
-function user_unload()
-  send_command('unbind !s')
-  send_command('unbind !d')
-  send_command('unbind @w')
-
-  send_command('unbind ^insert')
-  send_command('unbind ^delete')
-
-  send_command('unbind ^f8')
-  send_command('unbind ^pageup')
-  send_command('unbind ^pagedown')
-  send_command('unbind !pagedown')
-
-  send_command('unbind ^`')
-  send_command('unbind @c')
-  send_command('unbind !`')
-
-  send_command('unbind ^-')
-  send_command('unbind ^=')
-
-  send_command('unbind ^numlock')
-  send_command('unbind !numlock')
-  send_command('unbind ^numpad+')
-  send_command('unbind !numpad+')
-
-  send_command('unbind !q')
-  send_command('unbind !w')
-  send_command('unbind !e')
-  
-  -- send_command('unbind !numpad/')
-  send_command('unbind ^numpad/')
-  send_command('unbind ^numpad*')
-  send_command('unbind ^numpad-')
+function job_file_unload()
+  unbind_keybinds()
 end
 
 -- Define sets and vars used by this job file.
@@ -1897,6 +1836,10 @@ function job_self_command(cmdParams, eventArgs)
     elseif cmdParams[2] == 'current' then
       cycle_weapons('current')
     end
+  elseif cmdParams[1] == 'bind' then
+    set_main_keybinds()
+    set_sub_keybinds()
+    print('Set keybinds!')
   elseif cmdParams[1] == 'test' then
     test()
   end
@@ -1990,6 +1933,80 @@ end)
 function select_default_macro_book()
   -- Default macro set/book
   set_macro_page(1, 16)
+end
+
+function set_main_keybinds()
+  send_command('bind !s gs c faceaway')
+  send_command('bind !d gs c interact')
+  send_command('bind @w gs c toggle RearmingLock')
+
+  send_command('bind ^insert gs c weaponset cycle')
+  send_command('bind ^delete gs c weaponset cycleback')
+
+  send_command('bind ^f8 gs c toggle AttCapped')
+  send_command('bind ^pageup gs c toyweapon cycle')
+  send_command('bind ^pagedown gs c toyweapon cycleback')
+  send_command('bind !pagedown gs c toyweapon reset')
+
+  send_command('bind ^` gs c cycle treasuremode')
+  send_command('bind @c gs c toggle CP')
+  send_command('bind !` gs c toggle MagicBurst')
+
+  send_command('bind ^- gs c cycleback ElementalMode')
+  send_command('bind ^= gs c cycle ElementalMode')
+
+  send_command('bind ^numlock input /ja "Innin" <me>')
+  send_command('bind !numlock input /ja "Yonin" <me>')
+  send_command('bind ^numpad+ gs c ninelemental')
+  send_command('bind !numpad+ input /ja "Futae" <me>')
+
+  send_command('bind !q input /ma "Utsusemi: Ichi" <me>')
+  send_command('bind !w input /ma "Utsusemi: Ni" <me>')
+  send_command('bind !e input /ma "Utsusemi: San" <me>')
+end
+
+function set_sub_keybinds()
+  if player.sub_job == 'WAR' then
+    -- send_command('bind !numpad/ input /ja "Defender" <me>')
+    send_command('bind ^numpad/ input /ja "Berserk" <me>')
+    send_command('bind ^numpad* input /ja "Warcry" <me>')
+    send_command('bind ^numpad- input /ja "Aggressor" <me>')
+  end
+end
+
+function unbind_keybinds()
+  send_command('unbind !s')
+  send_command('unbind !d')
+  send_command('unbind @w')
+
+  send_command('unbind ^insert')
+  send_command('unbind ^delete')
+
+  send_command('unbind ^f8')
+  send_command('unbind ^pageup')
+  send_command('unbind ^pagedown')
+  send_command('unbind !pagedown')
+
+  send_command('unbind ^`')
+  send_command('unbind @c')
+  send_command('unbind !`')
+
+  send_command('unbind ^-')
+  send_command('unbind ^=')
+
+  send_command('unbind ^numlock')
+  send_command('unbind !numlock')
+  send_command('unbind ^numpad+')
+  send_command('unbind !numpad+')
+
+  send_command('unbind !q')
+  send_command('unbind !w')
+  send_command('unbind !e')
+  
+  -- send_command('unbind !numpad/')
+  send_command('unbind ^numpad/')
+  send_command('unbind ^numpad*')
+  send_command('unbind ^numpad-')
 end
 
 function test()

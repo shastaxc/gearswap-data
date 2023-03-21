@@ -86,89 +86,25 @@ function job_setup()
     ["Verethragna"] = S{"Aftermath: Lv.3"},
   }
 
-  send_command('bind !s gs c faceaway')
-  send_command('bind !d gs c interact')
-  send_command('bind @w gs c toggle RearmingLock')
-
-  send_command('bind ^insert gs c weaponset cycle')
-  send_command('bind ^delete gs c weaponset cycleback')
-  send_command('bind !delete gs c weaponset reset')
-
-  send_command('bind ^pageup gs c toyweapon cycle')
-  send_command('bind ^pagedown gs c toyweapon cycleback')
-  send_command('bind !pagedown gs c toyweapon reset')
-
-  send_command('bind ^` gs c cycle treasuremode')
-  send_command('bind @c gs c toggle CP')
-  send_command('bind @v gs c cycle EnmityMode')
-
-  send_command('bind !q input /ja "Impetus" <me>')
-  send_command('bind !` input /ja "Chakra" <me>')
-  send_command('bind ^numpad+ input /ja "Boost" <me>')
-  send_command('bind !e input /ja "Footwork" <me>')
+  set_main_keybinds()
 end
 
 -- Executes on first load, main job change, **and sub job change**
 function user_setup()
   silibs.user_setup_hook()
-  include('Global-Binds.lua') -- Additional local binds
+  ----------- Non-silibs content goes below this line -----------
 
-  if player.sub_job == 'WAR' then
-    send_command('bind !w input /ja "Defender" <me>')
-    send_command('bind ^numpad/ input /ja "Berserk" <me>')
-    send_command('bind ^numpad* input /ja "Warcry" <me>')
-    send_command('bind ^numpad- input /ja "Aggressor" <me>')
-  elseif player.sub_job == 'SAM' then
-    send_command('bind !w input /ja "Third Eye" <me>')
-    send_command('bind ^numpad/ input /ja "Meditate" <me>')
-    send_command('bind ^numpad* input /ja "Sekkanoki" <me>')
-    send_command('bind ^numpad- input /ja "Hasso" <me>')
-  elseif player.sub_job == 'THF' then
-    send_command('bind ^numpad0 input /ja "Sneak Attack" <me>')
-    send_command('bind ^numpad. input /ja "Trick Attack" <me>')
-  elseif player.sub_job == 'NIN' then
-    send_command('bind ^numpad0 input /ma "Utsusemi: Ichi" <me>')
-    send_command('bind ^numpad. input /ma "Utsusemi: Ni" <me>')
-  elseif player.sub_job == 'RUN' then
-    send_command('bind %numpad0 input //gs c rune')
-    send_command('bind ^- gs c cycleback Runes')
-    send_command('bind ^= gs c cycle Runes')
-  end
+  include('Global-Binds.lua') -- Additional local binds
 
   update_melee_groups()
   update_combat_form()
 
   select_default_macro_book()
+  set_sub_keybinds()
 end
 
 function job_file_unload()
-  send_command('unbind !s')
-  send_command('unbind !d')
-  send_command('unbind @w')
-
-  send_command('unbind ^insert')
-  send_command('unbind ^delete')
-
-  send_command('unbind ^pageup')
-  send_command('unbind ^pagedown')
-  send_command('unbind !pagedown')
-
-  send_command('unbind ^`')
-  send_command('unbind @c')
-  send_command('unbind !q')
-  send_command('unbind !`')
-  send_command('unbind !e')
-  send_command('unbind !w')
-  send_command('unbind ^numpad/')
-  send_command('unbind ^numpad*')
-  send_command('unbind ^numpad-')
-  send_command('unbind ^numpad+')
-  send_command('unbind ^numpad0')
-  send_command('unbind ^numpad.')
-
-  send_command('unbind %numpad0')
-  send_command('unbind ^-')
-  send_command('unbind ^=')
+  unbind_keybinds()
 end
 
 -- Define sets and vars used by this job file.
@@ -1410,6 +1346,10 @@ function job_self_command(cmdParams, eventArgs)
     end
   elseif cmdParams[1] == 'rune' then
     send_command('@input /ja '..state.Runes.value..' <me>')
+  elseif cmdParams[1] == 'bind' then
+    set_main_keybinds()
+    set_sub_keybinds()
+    print('Set keybinds!')
   elseif cmdParams[1] == 'test' then
     test()
   end
@@ -1532,3 +1472,83 @@ function on_action_for_impetus(action)
 end
 
 windower.raw_register_event('action', on_action_for_impetus)
+
+function set_main_keybinds()
+  send_command('bind !s gs c faceaway')
+  send_command('bind !d gs c interact')
+  send_command('bind @w gs c toggle RearmingLock')
+
+  send_command('bind ^insert gs c weaponset cycle')
+  send_command('bind ^delete gs c weaponset cycleback')
+  send_command('bind !delete gs c weaponset reset')
+
+  send_command('bind ^pageup gs c toyweapon cycle')
+  send_command('bind ^pagedown gs c toyweapon cycleback')
+  send_command('bind !pagedown gs c toyweapon reset')
+
+  send_command('bind ^` gs c cycle treasuremode')
+  send_command('bind @c gs c toggle CP')
+  send_command('bind @v gs c cycle EnmityMode')
+
+  send_command('bind !q input /ja "Impetus" <me>')
+  send_command('bind !` input /ja "Chakra" <me>')
+  send_command('bind ^numpad+ input /ja "Boost" <me>')
+  send_command('bind !e input /ja "Footwork" <me>')
+end
+
+function set_sub_keybinds()
+  if player.sub_job == 'WAR' then
+    send_command('bind !w input /ja "Defender" <me>')
+    send_command('bind ^numpad/ input /ja "Berserk" <me>')
+    send_command('bind ^numpad* input /ja "Warcry" <me>')
+    send_command('bind ^numpad- input /ja "Aggressor" <me>')
+  elseif player.sub_job == 'SAM' then
+    send_command('bind !w input /ja "Third Eye" <me>')
+    send_command('bind ^numpad/ input /ja "Meditate" <me>')
+    send_command('bind ^numpad* input /ja "Sekkanoki" <me>')
+    send_command('bind ^numpad- input /ja "Hasso" <me>')
+  elseif player.sub_job == 'THF' then
+    send_command('bind ^numpad0 input /ja "Sneak Attack" <me>')
+    send_command('bind ^numpad. input /ja "Trick Attack" <me>')
+  elseif player.sub_job == 'NIN' then
+    send_command('bind ^numpad0 input /ma "Utsusemi: Ichi" <me>')
+    send_command('bind ^numpad. input /ma "Utsusemi: Ni" <me>')
+  elseif player.sub_job == 'RUN' then
+    send_command('bind %numpad0 input //gs c rune')
+    send_command('bind ^- gs c cycleback Runes')
+    send_command('bind ^= gs c cycle Runes')
+  end
+end
+
+function unbind_keybinds()
+  send_command('unbind !s')
+  send_command('unbind !d')
+  send_command('unbind @w')
+
+  send_command('unbind ^insert')
+  send_command('unbind ^delete')
+
+  send_command('unbind ^pageup')
+  send_command('unbind ^pagedown')
+  send_command('unbind !pagedown')
+
+  send_command('unbind ^`')
+  send_command('unbind @c')
+  send_command('unbind !q')
+  send_command('unbind !`')
+  send_command('unbind !e')
+  send_command('unbind !w')
+  send_command('unbind ^numpad/')
+  send_command('unbind ^numpad*')
+  send_command('unbind ^numpad-')
+  send_command('unbind ^numpad+')
+  send_command('unbind ^numpad0')
+  send_command('unbind ^numpad.')
+
+  send_command('unbind %numpad0')
+  send_command('unbind ^-')
+  send_command('unbind ^=')
+end
+
+function test()
+end
