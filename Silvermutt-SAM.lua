@@ -619,12 +619,12 @@ function init_gear_sets()
     feet="Mpaca's Boots",             -- [ 6/__,  96] __, __ <__,  3, __>  3,  3
     neck="Samurai's Nodowa +2",       -- [__/__, ___] __, 14 <__, __, __> __, __
     ear1="Dedition Earring",          -- [__/__, ___] __,  8 <__, __, __> __, __
-    ear2="Kasuga Earring",            -- [__/__, ___] __,  7 <__, __, __> __, __
+    ear2="Kasuga Earring +1",         -- [__/__, ___] __,  8 <__, __, __> __, __
     ring1="Chirich Ring +1",          -- [__/__, ___] __,  6 <__, __, __> __, __
     ring2="Defending Ring",           -- [10/10, ___] __, __ <__, __, __> __, __
     back=gear.SAM_TP_Cape,            -- [10/__, ___] __, __ <10, __, __> __, __
     waist="Sailfi Belt +1",           -- [__/__, ___] __, __ < 5,  2, __> __,  9
-    -- [54 PDT/20 MDT, 414 MEVA] 3 Hasso, 62 STP <18 DA, 18 TA, 0 QA> 15 Crit Rate, 29 Haste
+    -- [54 PDT/20 MDT, 414 MEVA] 3 Hasso, 63 STP <18 DA, 18 TA, 0 QA> 15 Crit Rate, 29 Haste
 
     -- legs="Kasuga Haidate +3",      -- [11/11, 130]  3, 11 <__, __, __> __,  5
     -- ear2="Kasuga Earring +2",      -- [__/__, ___] __,  9 <__, __, __> __, __
@@ -649,12 +649,12 @@ function init_gear_sets()
     feet="Mpaca's Boots",             -- [ 6/__,  96] __, __ <__,  3, __>  3,  3
     neck="Samurai's Nodowa +2",       -- [__/__, ___] __, 14 <__, __, __> __, __
     ear1="Dedition Earring",          -- [__/__, ___] __,  8 <__, __, __> __, __
-    ear2="Kasuga Earring",            -- [__/__, ___] __,  7 <__, __, __> __, __
+    ear2="Kasuga Earring +1",         -- [__/__, ___] __,  8 <__, __, __> __, __
     ring1="Niqmaddu Ring",            -- [__/__, ___] __, __ <__, __,  3> __, __
     ring2="Defending Ring",           -- [10/10, ___] __, __ <__, __, __> __, __
     back=gear.SAM_TP_Cape,            -- [10/__, ___] __, __ <10, __, __> __, __
     waist="Sailfi Belt +1",           -- [__/__, ___] __, __ < 5,  2, __> __,  9
-    -- [53 PDT/27 MDT, 467 MEVA] 3 Hasso, 56 STP <23 DA, 14 TA, 3 DA> 10 Crit Rate, 28 Haste
+    -- [53 PDT/27 MDT, 467 MEVA] 3 Hasso, 57 STP <23 DA, 14 TA, 3 DA> 10 Crit Rate, 28 Haste
 
     -- legs="Kasuga Haidate +3",      -- [11/11, 130]  3, 11 <__, __, __> __,  5
     -- ear2="Kasuga Earring +2",      -- [__/__, ___] __,  9 <__, __, __> __, __
