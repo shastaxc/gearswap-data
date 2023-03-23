@@ -448,6 +448,8 @@ function init_gear_sets()
     -- Kaykaus bonus                      8, __, ___, ___, ___, __, __/__, __
     -- Base Stats                     -- __, __, 486, 129, 123, __, __/__, __
     -- Merit points                   -- __, __, ___, ___, ___, 10, __/__,  5
+    -- 12 CPII, 39 CP, 502 Heal Skill, 278 MND, 239 VIT, 108 SIRD, 55PDT/48MDT, 37 -Enmity
+    -- 712 Power
 
     -- back=gear.SCH_CP_Cape,         -- __, 10, ___,  30, ___, __, 10/__, __
     -- Kaykaus bonus                      8, __, ___, ___, ___, __, __/__, __
@@ -455,8 +457,7 @@ function init_gear_sets()
     -- Merit points                   -- __, __, ___, ___, ___, 10, __/__,  5
     -- 12 CPII, 49 CP, 502 Heal Skill, 298 MND, 239 VIT, 108 SIRD, 55PDT/48MDT, 37 -Enmity
     -- 710 Power
-  } -- 12 CPII, 39 CP, 502 Heal Skill, 278 MND, 239 VIT, 108 SIRD, 55PDT/48MDT, 37 -Enmity
-    -- 712 Power
+  }
 
   -- Prioritize: CPII > CP > Heal Skill, MND, VIT (to power cap) > SIRD > -DT > Enmity (to -40)
   -- Cap at 700 power; Power = floor(MND÷2) + floor(VIT÷4) + Healing Magic Skill
@@ -483,6 +484,8 @@ function init_gear_sets()
     -- Kaykaus set bonus              --  6, __, ___, ___, ___, __, __/__, __
     -- Base Stats                     -- __, __, 486, 129, 123, __, __/__, __
     -- Merit points                   -- __, __, ___, ___, ___, 10, __/__,  5
+    -- 6 CPII, 49 CP, 502 Heal Skill, 309 MND, 233 VIT, 106 SIRD, 50PDT/37MDT, 36 -Enmity
+    -- 704 Power
 
     -- back=gear.SCH_CP_Cape,         -- __, 10, ___,  30, ___, __, 10/__, __
     -- Kaykaus set bonus              --  6, __, ___, ___, ___, __, __/__, __
@@ -490,8 +493,7 @@ function init_gear_sets()
     -- Merit points                   -- __, __, ___, ___, ___, 10, __/__,  5
     -- 6 CPII, 59 CP, 502 Heal Skill, 309 MND, 233 VIT, 106 SIRD, 50PDT/37MDT, 36 -Enmity
     -- 714 Power
-  } -- 6 CPII, 49 CP, 502 Heal Skill, 309 MND, 233 VIT, 106 SIRD, 50PDT/37MDT, 36 -Enmity
-    -- 704 Power
+  }
 
   sets.midcast.CureNormal.LightArts = set_combine(sets.midcast.CureNormal, {})
   sets.midcast.CureWeather.LightArts = set_combine(sets.midcast.CureWeather, {})
@@ -576,12 +578,14 @@ function init_gear_sets()
     legs=gear.Telchine_ENH_legs,    -- 10, __
     feet=gear.Telchine_ENH_feet,    --  9, __
     waist="Embla Sash",             -- 10,  5
+     -- 75 Enh Duration, 13 FC
+
     -- main=gear.Musa_C,            -- 20, 10
     -- sub="Clerisy Strap +1",      -- __,  3
     -- head=gear.Telchine_ENH_head, -- 10, __
     -- feet=gear.Telchine_ENH_feet, -- 10, __
     -- 82 Enh Duration, 18 FC
-  } -- 75 Enh Duration, 13 FC
+  }
 
   -- Regen not affected by Enh Magic Skill
   -- Regen % pieces apply to base value, floored, then +1.
@@ -916,8 +920,8 @@ function init_gear_sets()
   -- INT, Magic Acc, MAB
   -- More emphasis on MAB
   sets.midcast['Elemental Magic'] = {
-    main=gear.Akademos_C,             -- 27, 25, 53, 228, 217, 10, __
-    sub="Enki Strap",                 -- 10, 10, __, ___, ___, __, __
+    main="Bunzi's Rod",               -- 15, 50, 60, 255, 248, 10, __
+    sub="Ammurapi Shield",            -- 13, 38, 38, ___, ___, __, __
     ammo="Pemphredo Tathlum",         --  4,  8,  4, ___, ___, __, __
     head="Pedagogy Mortarboard +3",   -- 39, 37, 49, ___, ___, __,  4
     body="Shamash Robe",              -- 40, 45, 45, ___, ___, __, __
@@ -931,10 +935,10 @@ function init_gear_sets()
     ring2="Metamorph Ring +1",        -- 16, 15, __, ___, ___, __, __
     back=gear.SCH_MAB_Cape,           -- 30, 20, 10, ___,  20, __, __
     waist="Refoccilation Stone",      -- __,  4, 10, ___, ___, __, __
-    -- 288 INT, 324 MAcc, 322 MAB, 228 MAccSk, 257 MDmg, 15 MB Dmg%, 8 MB2 Dmg%
+    -- 279 INT, 377 MAcc, 367 MAB, 255 MAccSk, 288 MDmg, 15 MB Dmg%, 8 MB2 Dmg%
     
     -- Ideal:
-    -- main="Bunzi's Rod",            -- 15, 55, 65, 255, 248, 10, __
+    -- main="Bunzi's Rod",            -- 15, 55, 65, 255, 248, 10, __; R30
     -- sub="Ammurapi Shield",         -- 13, 38, 38, ___, ___, __, __
     -- ammo="Pemphredo Tathlum",      --  4,  8,  4, ___, ___, __, __
     -- head="Agwu's Cap",             -- 33, 55, 60, ___,  35,  7, __
@@ -952,7 +956,24 @@ function init_gear_sets()
     -- 308 INT, 455 MAcc, 462 MAB, 255 MAccSk, 402 MDmg, 50 MB Dmg%, 6 MB2 Dmg%
   }
   sets.midcast['Elemental Magic'].MB = set_combine(sets.midcast['Elemental Magic'], {
-    -- main="Bunzi's Rod",            -- 15, 55, 65, 255, 248, 10, __
+    main="Bunzi's Rod",               -- 15, 50, 60, 255, 248, 10, __
+    sub="Ammurapi Shield",            -- 13, 38, 38, ___, ___, __, __
+    ammo="Pemphredo Tathlum",         --  4,  8,  4, ___, ___, __, __
+    head="Pedagogy Mortarboard +3",   -- 39, 37, 49, ___, ___, __,  4
+    body="Shamash Robe",              -- 40, 45, 45, ___, ___, __, __
+    hands=gear.Nyame_B_hands,         -- 28, 40, 30, ___, ___,  5, __
+    legs="Pedagogy Pants +3",         -- 47, 39, 51, ___, ___, __, __; Elemental skill +19
+    feet="Arbatel Loafers +2",        -- 29, 50, 45, ___,  20, __,  4; Elemental skill +28
+    neck="Argute Stole +2",           -- 15, 30, __, ___,  25, 10, __
+    ear1="Malignance Earring",        --  8, 10,  8, ___, ___, __, __
+    ear2="Regal Earring",             -- 10, __,  7, ___, ___, __, __
+    ring1="Metamorph Ring +1",        -- 16, 15, __, ___, ___, __, __
+    ring2="Mujin Band",               -- __, __, __, ___, ___, __,  5
+    back=gear.SCH_MAB_Cape,           -- 30, 20, 10, ___,  20, __, __
+    waist="Refoccilation Stone",      -- __,  4, 10, ___, ___, __, __
+    -- 294 INT, 386 MAcc, 357 MAB, 255 MAccSk, 313 MDmg, 25 MB Dmg%, 13 MB2 Dmg%
+
+    -- main="Bunzi's Rod",            -- 15, 55, 65, 255, 248, 10, __; R30
     -- sub="Ammurapi Shield",         -- 13, 38, 38, ___, ___, __, __
     -- ammo="Pemphredo Tathlum",      --  4,  8,  4, ___, ___, __, __
     -- head="Pedagogy Mortarboard +3",-- 39, 37, 49, ___, ___, __,  4
@@ -977,7 +998,7 @@ function init_gear_sets()
     body="Seidr Cotehardie",          -- __, 13,  7, ___, ___, __, __; Convert 2% dmg to MP
     waist="Acuity Belt +1",           -- 23, 15, __, ___, ___, __, __
     
-    -- main="Bunzi's Rod",            -- 15, 55, 65, 255, 248, 10, __
+    -- main="Bunzi's Rod",            -- 15, 55, 65, 255, 248, 10, __; R30
     -- sub="Ammurapi Shield",         -- 13, 38, 38, ___, ___, __, __
     -- ammo="Pemphredo Tathlum",      --  4,  8,  4, ___, ___, __, __
     -- head="Pedagogy Mortarboard +3",-- 39, 37, 49, ___, ___, __,  4
@@ -1000,7 +1021,7 @@ function init_gear_sets()
     neck="Argute Stole +2",           -- 15, 30, __, ___,  25, 10, __
     waist="Acuity Belt +1",           -- 23, 15, __, ___, ___, __, __
     
-    -- main="Bunzi's Rod",            -- 15, 55, 65, 255, 248, 10, __
+    -- main="Bunzi's Rod",            -- 15, 55, 65, 255, 248, 10, __; R30
     -- sub="Ammurapi Shield",         -- 13, 38, 38, ___, ___, __, __
     -- ammo="Pemphredo Tathlum",      --  4,  8,  4, ___, ___, __, __
     -- head="Agwu's Cap",             -- 33, 55, 60, ___,  35,  7, __
@@ -1023,28 +1044,28 @@ function init_gear_sets()
   sets.midcast.Kaustra.Resistant = set_combine(sets.midcast['Elemental Magic'].Resistant, {})
 
   sets.midcast.Helix = {
-    main="Bunzi's Rod",               -- 15, 55, 65, 255, 248, 10, __
+    main="Bunzi's Rod",               -- 15, 50, 60, 255, 248, 10, __
     sub="Culminus",                   -- __, __, 20, ___,  75, __, __
     ammo="Pemphredo Tathlum",         --  4,  8,  4, ___, ___, __, __
     head="Pedagogy Mortarboard +3",   -- 39, 37, 49, ___, ___, __,  4
     body="Mallquis Saio +2",          -- 54, 46, 15, ___,  58, __, __
     hands=gear.Nyame_B_hands,         -- 28, 40, 30, ___, ___, __, __
     legs="Mallquis Trews +2",         -- 57, 45, 15, ___,  55,  6, __
-    feet="Mallquis Clogs +2",         -- 37, 42, 15, ___,  46, __, __
+    feet="Arbatel Loafers +2",        -- 29, 50, 45, ___,  20, __,  4; Elemental skill +28
     neck="Argute Stole +2",           -- 15, 30, __, ___,  25, 10, __; Helix Dur+10%
     ear1="Malignance Earring",        --  8, 10,  8, ___, ___, __, __
     ear2="Regal Earring",             -- 10, __,  7, ___, ___, __, __
-    ring1="Locus Ring",               -- __, __, __, ___, ___,  5, __
-    ring2="Metamorph Ring +1",        -- 16, 15, __, ___, ___, __, __
+    ring1="Metamorph Ring +1",        -- 16, 15, __, ___, ___, __, __
+    ring2="Mujin Band",               -- __, __, __, ___, ___, __,  5
     back=gear.SCH_MAB_Cape,           -- 30, 20, 10, ___,  20, __, __
     waist="Acuity Belt +1",           -- 23, 15, __, ___, ___, __, __
-    -- 336 INT, 363 MAcc, 238 MAB, 255 MAccSk, 527 MDmg, 31 MB Dmg%, 4 MB2 Dmg%
+    -- 328 INT, 366 MAcc, 263 MAB, 255 MAccSk, 501 MDmg, 26 MB Dmg%, 13 MB2 Dmg%
 
     -- waist="Skrymir Cord",          -- __,  5,  5, ___,  30, __, __
     -- 313 INT, 353 MAcc, 243 MAB, 255 MAccSk, 557 MDmg, 31 MB Dmg%, 4 MB2 Dmg%
 
     -- Ideal:
-    -- main="Bunzi's Rod",            -- 15, 55, 65, 255, 248, 10, __
+    -- main="Bunzi's Rod",            -- 15, 55, 65, 255, 248, 10, __; R30
     -- sub="Culminus",                -- __, __, 20, ___,  75, __, __
     -- ammo="Ghastly Tathlum +1",     -- 11, __, __, ___,  21, __, __
     -- head="Agwu's Cap",             -- 33, 55, 60, ___,  35,  7, __
