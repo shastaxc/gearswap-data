@@ -634,6 +634,7 @@ function init_gear_sets()
     feet="Erilaz Greaves +2",                         -- 11/11, 157 [ 48] (__, __)
     neck="Futhark Torque +2",                         --  7/ 7,  30 [ 60] (__, __)
     ear2="Arete del Luna +1",                         -- __/__, ___ [___] (__, __); Resists
+    ring1="Sheltered Ring",                           -- __/__, ___ [___] (__, __); Enhances Protect/Shell
     ring2="Defending Ring",                           -- 10/10, ___ [___] (__, __)
     back={name="Moonlight Cape", priority=1},         --  6/ 6, ___ [275] (__, __)
     waist="Platinum Moogle Belt",                     --  3/ 3,  15 [___] (__, __); HP+10%
@@ -642,7 +643,6 @@ function init_gear_sets()
     -- 49 PDT/49 MDT, 597 M.Eva [942/1285 HP] (95 Enh Duration, N/A Enh Skill)
 
     -- ear1="Sanare Earring",                         -- __/__,   6 [___] (__, __); M. Def Bonus+4
-    -- ring1="Sheltered Ring",                        -- __/__, ___ [___] (__, __); Enhances Protect/Shell
     -- 49 PDT/49 MDT, 603 M.Eva [942/1285 HP] (95 Enh Duration, N/A Enh Skill)
   }
   sets.midcast.Shell = set_combine(sets.midcast.Protect, {})

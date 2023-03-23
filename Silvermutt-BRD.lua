@@ -627,7 +627,7 @@ function init_gear_sets()
     -- waist="Emphatikos Rope",
   }) -- 4 Interruptions Prevented
   sets.midcast.Protect = set_combine(sets.midcast['Enhancing Magic'], {
-    -- ring2="Sheltered Ring",
+    ring2="Sheltered Ring",
   })
   sets.midcast.Protectra = set_combine(sets.midcast.Protect, {})
   sets.midcast.Shell = set_combine(sets.midcast.Protect, {})
