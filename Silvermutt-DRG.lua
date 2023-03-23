@@ -170,11 +170,11 @@ function init_gear_sets()
     feet=gear.Carmine_D_feet, --8
     neck="Orunmila's Torque", --5
     ear1="Loquacious Earring", --2
+    ear2="Enchanter's Earring +1", --2
     -- ammo="Sapience Orb", --2
     -- head=gear.Carmine_D_head, --14
     -- body="Sacro Breastplate", --10
     -- legs="Ayanmo Cosciales +2", --6
-    -- ear2="Enchanter's Earring +1", --2
   }
 
 

@@ -204,7 +204,7 @@ function init_gear_sets()
     legs=gear.Gende_SongFC_legs,      -- __,  9, __ ( 3, __, 107)
     neck="Loricate Torque +1",        -- __, __, __ ( 6,  6, ___)
     ear1="Loquac. Earring",           --  2, __, __ (__, __, ___)
-    ear2="Etiolation Earring",        --  1, __, __ (__,  3, ___)
+    ear2="Enchanter's Earring +1",    --  2, __, __ (__, __, ___)
     ring1="Defending Ring",           -- __, __, __ (10, 10, ___)
     ring2="Kishar Ring",              --  4, __, __ (__, __, ___)
     back=gear.BRD_Song_Cape,          -- 10, __, __ (10, __, ___)
@@ -214,10 +214,9 @@ function init_gear_sets()
     -- hands=gear.Gende_SongFC_hands, --  7,  5,  3 ( 4, __,  37)
     -- legs=gear.Gende_SongFC_legs,   -- __, 10,  3 ( 4, __, 107)
     -- feet="Volte Gaiters",          --  6, __, __ (__, __, 142); Chironic good alt
-    -- ear2="Enchanter's Earring +1", --  2, __, __ (__, __, ___)
     -- JP Gifts                          __,  5, __ (__, __, ___)
     -- 73 Fast Cast, 20 Song Cast Time-, 6 Song Recast- (51 PDT, 31 MDT, 544 Magic Evasion)
-  } -- 53 Fast Cast, 17 Song Cast Time-, 0 Song Recast- (50 PDT, 36 MDT, 387 Magic Evasion)
+  } -- 55 Fast Cast, 17 Song Cast Time-, 0 Song Recast- (50 PDT, 36 MDT, 387 Magic Evasion)
 
   sets.precast.FC.SongPlaceholder = set_combine(sets.precast.FC.BardSong, {
     range=info.ExtraSongInstrument,

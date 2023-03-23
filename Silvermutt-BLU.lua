@@ -517,7 +517,7 @@ function init_gear_sets()
   -- TODO: Update
   sets.midcast['Blue Magic'].PhysicalChr = set_combine(sets.midcast['Blue Magic'].Physical, {
     ear1="Regal Earring",
-    -- ear2="Enchanter's Earring +1"
+    ear2="Enchanter's Earring +1"
   })
 
   sets.midcast['Blue Magic'].Magical = {
@@ -611,8 +611,8 @@ function init_gear_sets()
 
   sets.midcast['Blue Magic'].MagicalChr = set_combine(sets.midcast['Blue Magic'].Magical, {
     ear1="Regal Earring",
+    ear2="Enchanter's Earring +1"
     -- ammo="Voluspa Tathlum",
-    -- ear2="Enchanter's Earring +1"
   })
   sets.midcast['Blue Magic'].MagicalChr.Resistant = set_combine(sets.midcast['Blue Magic'].Magical.Resistant, {})
 
@@ -712,10 +712,10 @@ function init_gear_sets()
 
   sets.midcast['Blue Magic']['Occultation'] = set_combine(sets.midcast['Blue Magic'], {
     neck="Incanter's torque",
+    ear2="Enchanter's Earring +1",
     ring2="Weatherspoon Ring",
     -- hands="Hashishin Bazu. +1",
     -- ear1="Njordr Earring",
-    -- ear2="Enchanter's Earring +1",
   }) -- 1 shadow per 50 skill
 
   sets.midcast['Blue Magic']['Carcharian Verve'] = set_combine(sets.midcast['Blue Magic'].Buff, {
