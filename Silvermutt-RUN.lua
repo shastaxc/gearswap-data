@@ -251,8 +251,8 @@ function init_gear_sets()
     neck={name="Unmoving Collar +1",priority=1},    -- __/__, ___ [200] <10>
     ear1={name="Odnowa Earring +1",priority=1},     --  3/ 5, ___ [110] <__>
     ear2="Cryptic Earring",                         -- __/__, ___ [ 40] < 4>
-    ring1="Moonlight Ring",                         --  5/ 5, ___ [110] <__>
-    ring2="Eihwaz Ring",                            -- __/__, ___ [ 70] < 5>
+    ring1="Eihwaz Ring",                            -- __/__, ___ [ 70] < 5>
+    ring2="Moonlight Ring",                         --  5/ 5, ___ [110] <__>
     back=gear.RUN_HPD_Cape,                         -- 10/__,  20 [ 80] <10>
     waist="Platinum Moogle Belt",                   --  3/ 3,  15 [___] <__>; HP+10%
     -- HP from belts                                               342
