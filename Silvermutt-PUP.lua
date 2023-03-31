@@ -1,4 +1,4 @@
--- File Status: Good.
+-- File Status: Not even remotely good.
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs
@@ -57,14 +57,15 @@ function job_setup()
   state.WeaponskillMode:options('Normal', 'Acc')
   state.HybridMode:options('Master', 'Pet', '50/50')
   state.IdleMode:options('Normal')
-  state.AttCapped = M(true, "Attack Capped")
-  state.CP = M(false, "Capacity Points Mode")
+  state.AttCapped = M(true, 'Attack Capped')
+  state.CP = M(false, 'Capacity Points Mode')
 
-  state.PetMode = M{['description']='Pet Mode', 'Normal', 'Tank', 'Ranged', 'Heal'}
+  state.PetMode = M{['description']='Pet Mode', 'Tank', 'Ranged', 'Heal', 'Melee'}
 
   -- List of pet weaponskills to check for
-  petWeaponskills = S{"Slapstick", "Knockout", "Magic Mortar", "Chimera Ripper", "String Clipper", "Cannibal Blade",
-      "Bone Crusher", "String Shredder", "Arcuballista", "Daze", "Armor Piercer", "Armor Shatterer"}
+  petWeaponskills = S{'Slapstick', 'Knockout', 'Magic Mortar', 'Chimera Ripper', 'String Clipper', 'Cannibal Blade',
+      'Bone Crusher', 'String Shredder', 'Arcuballista', 'Daze', 'Armor Piercer', 'Armor Shatterer'}
+
   -- Subset of modes that use magic
   magicPetModes = S{'Nuke','Heal','Magic'}
 
@@ -96,7 +97,7 @@ function user_setup()
 
   include('Global-Binds.lua') -- Additional local binds
 
-  state.WeaponSet = M{['description']='Weapon Set', 'Kenkonken'}
+  state.WeaponSet = M{['description']='Weapon Set', 'Verethragna', 'Kenkonken'}
 
   select_default_macro_book()
   set_sub_keybinds()
@@ -119,10 +120,10 @@ function init_gear_sets()
     feet="Heyoka Leggings",
     neck="Shulmanu Collar",
     waist="Incarnation Sash",
-    left_ear="Domes. Earring",
-    right_ear="Rimeice Earring",
-    left_ring="Varar Ring",
-    right_ring="Thurandaut Ring",
+    ear1="Domes. Earring",
+    ear2="Rimeice Earring",
+    ring1="Varar Ring",
+    ring2="Thurandaut Ring",
     back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','System: 1 ID: 1246 Val: 4',}},
   }
 
@@ -137,7 +138,7 @@ function init_gear_sets()
     hands="Foire Dastanas +2",
     neck="Buffoon's Collar",
     feet="Mpaca's Boots",
-    right_ear="Burana Earring",
+    ear2="Burana Earring",
     back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Pet: Haste+10','Pet: Damage taken -5%',}},
   }
 
@@ -145,25 +146,25 @@ function init_gear_sets()
 
   -- Equip Repair + equipment and Pet HP+ to help increase
   sets.precast.JA['Maintenance'] = {
-    legs={ name="Desultor Tassets", augments={'"Repair" potency +10%','"Waltz" TP cost -5',}},
+    -- legs=gear.DesultorTassets,
     feet="Foire Babouches +2",
-    left_ear="Pratik Earring",
-    right_ear="Guignol Earring",
+    ear1="Pratik Earring",
+    ear2="Guignol Earring",
   }
 
 	sets.precast.JA['Repair'] = set_combine(sets.precast.JA['Maintenance'], {})
 
   sets.precast.JA['Overdrive'] = {
-    body={ name="Pitre Tobe +3", augments={'Enhances "Overdrive" effect',}},
+    body="Pitre Tobe +3",
   }
   sets.precast.JA['Role Reversal'] = {
-    feet={ name="Pitre Babouches +3", augments={'Enhances "Role Reversal" effect',}},
+    feet="Pitre Babouches +3",
   }
   sets.precast.JA['Tactical Switch'] = {
     feet="Karagoz Scarpe +1",
   }
   sets.precast.JA['Ventriloquy'] = {
-    legs={ name="Pitre Churidars +3", augments={'Enhances "Ventriloquy" effect',}},
+    legs="Pitre Churidars +3",
   }
 
   -- Put on Overload - Equipment
@@ -171,7 +172,7 @@ function init_gear_sets()
     body="Kara. Farsetto +1",
     hands="Foire Dastanas +2",
     neck="Buffoon's Collar",
-    right_ear="Burana Earring",
+    ear2="Burana Earring",
     back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Damage taken -5%',}},
   }
 
@@ -182,13 +183,13 @@ function init_gear_sets()
   sets.precast.FC = {
     head={ name="Herculean Helm", augments={'"Mag.Atk.Bns."+24','Weapon skill damage +1%','STR+10','Mag. Acc.+11',}},
     body="Zendik Robe",
-    legs={ name="Rawhide Trousers", augments={'MP+50','"Fast Cast"+5','"Refresh"+1',}},
+    legs=gear.Rawhide_D_legs,
     feet="Regal Pumps +1",
     neck="Voltsurge Torque",
-    left_ear="Loquac. Earring",
-    right_ear="Etiolation Earring",
-    left_ring="Prolix Ring",
-    right_ring="Weather. Ring",
+    ear1="Loquac. Earring",
+    ear2="Etiolation Earring",
+    ring1="Prolix Ring",
+    ring2="Weather. Ring",
     back={ name="Visucius's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Fast Cast"+10',}},
   }
   sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {
@@ -444,32 +445,32 @@ function init_gear_sets()
 
   sets.midcast.Pet.Weaponskill = {
     head="Karagoz Capello +1",
-    body={ name="Pitre Tobe +3", augments={'Enhances "Overdrive" effect',}},
+    body="Pitre Tobe +3",
     hands="Mpaca's Gloves",
     legs="Kara. Pantaloni +1",
     feet={ name="Naga Kyahan", augments={'Pet: HP+100','Pet: Accuracy+25','Pet: Attack+25',}},
-    neck={ name="Pup. Collar", augments={'Path: A',}},
+    neck="Pup. Collar",
     waist="Incarnation Sash",
-    left_ear="Enmerkar Earring",
-    right_ear="Burana Earring",
-    left_ring="C. Palug Ring",
-    right_ring="Varar Ring",
+    ear1="Enmerkar Earring",
+    ear2="Burana Earring",
+    ring1="C. Palug Ring",
+    ring2="Varar Ring",
     back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Damage taken -5%',}},
   }
 
   -- 50% VIT - Critical hit rate varies w/ TP
   sets.midcast.Pet.Weaponskill['String Shredder'] = {
-    head={ name="Pitre Taj +3", augments={'Enhances "Optimization" effect',}},
-    body={ name="Pitre Tobe +3", augments={'Enhances "Overdrive" effect',}},
+    head="Pitre Taj +3",
+    body="Pitre Tobe +3",
     hands="Tali'ah Gages +2",
     legs="Tali'ah Sera. +2",
     feet="Tali'ah Crackows +2",
     neck="Shulmanu Collar",
     waist="Incarnation Sash",
-    left_ear="Enmerkar Earring",
-    right_ear="Burana Earring",
-    left_ring="C. Palug Ring",
-    right_ring="Varar Ring",
+    ear1="Enmerkar Earring",
+    ear2="Burana Earring",
+    ring1="C. Palug Ring",
+    ring2="Varar Ring",
     back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Damage taken -5%',}},
   }
 
@@ -482,10 +483,10 @@ function init_gear_sets()
     feet="Tali'ah Crackows +2",
     neck="Adad Amulet",
     waist="Incarnation Sash",
-    left_ear="Enmerkar Earring",
-    right_ear="Burana Earring",
-    left_ring="C. Palug Ring",
-    right_ring="Varar Ring",
+    ear1="Enmerkar Earring",
+    ear2="Burana Earring",
+    ring1="C. Palug Ring",
+    ring2="Varar Ring",
     back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Damage taken -5%',}},
   }
 
@@ -498,26 +499,26 @@ function init_gear_sets()
     feet="Tali'ah Crackows +2",
     neck="Adad Amulet",
     waist="Incarnation Sash",
-    left_ear="Enmerkar Earring",
-    right_ear="Burana Earring",
-    left_ring="C. Palug Ring",
-    right_ring="Varar Ring",
+    ear1="Enmerkar Earring",
+    ear2="Burana Earring",
+    ring1="C. Palug Ring",
+    ring2="Varar Ring",
     back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Damage taken -5%',}},
   }
 
   -- 60% DEX - TP Bonus WS - Damage Varies with TP
   sets.midcast.Pet.Weaponskill['Arcuballista'] = {
     head="Karagoz Capello +1",
-    body={ name="Pitre Tobe +3", augments={'Enhances "Overdrive" effect',}},
+    body="Pitre Tobe +3",
     hands="Tali'ah Gages +2",
     legs="Tali'ah Sera. +2",
     feet="Tali'ah Crackows +2",
-    neck={ name="Pup. Collar", augments={'Path: A',}},
+    neck="Pup. Collar",
     waist="Incarnation Sash",
-    left_ear="Enmerkar Earring",
-    right_ear="Burana Earring",
-    left_ring="C. Palug Ring",
-    right_ring="Varar Ring",
+    ear1="Enmerkar Earring",
+    ear2="Burana Earring",
+    ring1="C. Palug Ring",
+    ring2="Varar Ring",
     back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Damage taken -5%',}},
   }
 
@@ -527,16 +528,16 @@ function init_gear_sets()
   -- 50% STR - TP Bonus
   sets.midcast.Pet.Weaponskill['Chimera Ripper'] = {
     head="Karagoz Capello +1",
-    body={ name="Pitre Tobe +3", augments={'Enhances "Overdrive" effect',}},
+    body="Pitre Tobe +3",
     hands="Karagoz Guanti +1",
     legs="Kara. Pantaloni +1",
     feet={ name="Naga Kyahan", augments={'Pet: HP+100','Pet: Accuracy+25','Pet: Attack+25',}},
-    neck={ name="Pup. Collar", augments={'Path: A',}},
+    neck="Pup. Collar",
     waist="Incarnation Sash",
-    left_ear="Enmerkar Earring",
-    right_ear="Burana Earring",
-    left_ring="C. Palug Ring",
-    right_ring="Varar Ring",
+    ear1="Enmerkar Earring",
+    ear2="Burana Earring",
+    ring1="C. Palug Ring",
+    ring2="Varar Ring",
     back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Damage taken -5%',}},
   }
 
@@ -550,7 +551,7 @@ function init_gear_sets()
     body="Nefer Kalasiris",
     legs="Gyve Trousers",
     waist="Pythia Sash +1",
-    right_ear="Mendicant's Earring",
+    ear2="Mendicant's Earring",
     back="Solemnity Cape",
   }
   sets.midcast['Curaga'] = set_combine(sets.midcast['Cure'], {})
@@ -563,27 +564,29 @@ function init_gear_sets()
   }
 
   sets.midcast.Pet['Elemental Magic'] = {
-    head={ name="Rawhide Mask", augments={'Attack+15','Pet: Mag. Acc.+20','Pet: "Mag.Atk.Bns."+15',}},
+    head=gear.Rawhide_D_head,
     body="Tali'ah Manteel +2",
     hands="Tali'ah Gages +2",
-    legs={ name="Pitre Churidars +3", augments={'Enhances "Ventriloquy" effect',}},
-    feet={ name="Pitre Babouches +3", augments={'Enhances "Role Reversal" effect',}},
-    neck={ name="Pup. Collar", augments={'Path: A',}},
+    legs="Pitre Churidars +3",
+    feet="Pitre Babouches +3",
+    neck="Pup. Collar",
     waist="Ukko Sash",
-    left_ear="Enmerkar Earring",
-    right_ear="Burana Earring",
-    left_ring="C. Palug Ring",
+    ear1="Enmerkar Earring",
+    ear2="Burana Earring",
+    ring1="C. Palug Ring",
   }
 
-  sets.midcast.Pet['Enfeebling Magic'] ={head="Tali'ah Turban +2",
+  sets.midcast.Pet['Enfeebling Magic'] ={
+    head="Tali'ah Turban +2",
     body="Tali'ah Manteel +2",
     hands="Tali'ah Gages +2",
-    legs={ name="Pitre Churidars +3", augments={'Enhances "Ventriloquy" effect',}},
-    feet={ name="Pitre Babouches +3", augments={'Enhances "Role Reversal" effect',}},
+    legs="Pitre Churidars +3",
+    feet="Pitre Babouches +3",
     neck="Adad Amulet",
     waist="Ukko Sash",
-    left_ear="Enmerkar Earring",
-    left_ring="C. Palug Ring",}
+    ear1="Enmerkar Earring",
+    ring1="C. Palug Ring",
+  }
 
   sets.midcast.Pet['Dark Magic'] = set_combine(sets.midcast.Pet['Enfeebling Magic'], {})
   sets.midcast.Pet['Divine Magic'] = set_combine(sets.midcast.Pet['Enfeebling Magic'], {})
@@ -598,17 +601,17 @@ function init_gear_sets()
   sets.HeavyDef = {
     range="Animator P +1",
     ammo="Automat. Oil +3",
-    head={ name="Taeon Chapeau", augments={'Pet: Attack+25 Pet: Rng.Atk.+25','Pet: "Dbl. Atk."+5','Pet: Damage taken -3%',}},
-    body={ name="Taeon Tabard", augments={'Pet: Attack+23 Pet: Rng.Atk.+23','Pet: "Dbl. Atk."+5','Pet: Damage taken -3%',}},
-    hands={ name="Taeon Gloves", augments={'Pet: Attack+24 Pet: Rng.Atk.+24','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
-    legs={ name="Taeon Tights", augments={'Pet: Accuracy+23 Pet: Rng. Acc.+23','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
-    feet={ name="Taeon Boots", augments={'Pet: Attack+23 Pet: Rng.Atk.+23','Pet: "Dbl. Atk."+5','Pet: Damage taken -3%',}},
+    head=gear.Taeon_Pet_DT_head,
+    body=gear.Taeon_Pet_DT_body,
+    hands=gear.Taeon_Pet_DT_hands,
+    legs=gear.Taeon_Pet_DT_legs,
+    feet=gear.Taeon_Pet_DT_feet,
     neck="Shulmanu Collar",
     waist="Incarnation Sash",
-    left_ear="Domes. Earring",
-    right_ear="Enmerkar Earring",
-    left_ring="Varar Ring",
-    right_ring="Thurandaut Ring",
+    ear1="Domes. Earring",
+    ear2="Enmerkar Earring",
+    ring1="Varar Ring",
+    ring2="Thurandaut Ring",
     back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','System: 1 ID: 1246 Val: 4',}},
   }
 
@@ -621,25 +624,15 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.latent_regain = {
-    head="Gleti's Mask",        --  2
-    body="Gleti's Cuirass",     --  3
-    hands="Gleti's Gauntlets",  --  2
-    legs="Gleti's Breeches",    --  3
-    feet="Gleti's Boots"        --  2
-    -- head="Valorous Mask",    --  3
   }
   sets.latent_regen = {
-    head="Gleti's Mask",              --  3
     neck="Bathy Choker +1",           --  3 {__}
     ear1="Infused Earring",           --  1 {__}
     ring1="Chirich Ring +1",          --  2 {__}
     ring2="Chirich Ring +1",          --  2 {__}
-    -- body="Sacro Breastplate",      -- 13 {__}
-    -- feet="Pteroslaver Greaves +3", -- __ {10}
   } -- 24 Regen {10 Pet Regen}
   sets.latent_refresh = {
     ring1="Stikini Ring +1",      --  1
-    -- body="Chozoron Coselete",  --  2
     -- ring2="Stikini Ring +1",   --  1
   }
 
@@ -657,67 +650,67 @@ function init_gear_sets()
 
   sets.idle.Weak = set_combine(sets.HeavyDef, {})
 
-  sets.idle.Pet.Engaged = {
+  sets.idle.PetEngaged = {
     range="Animator P +1",
     ammo="Automat. Oil +3",
-    head={ name="Taeon Chapeau", augments={'Pet: Attack+25 Pet: Rng.Atk.+25','Pet: "Dbl. Atk."+5','Pet: Damage taken -3%',}},
-    body={ name="Taeon Tabard", augments={'Pet: Attack+23 Pet: Rng.Atk.+23','Pet: "Dbl. Atk."+5','Pet: Damage taken -3%',}},
-    hands={ name="Taeon Gloves", augments={'Pet: Attack+24 Pet: Rng.Atk.+24','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
-    legs={ name="Taeon Tights", augments={'Pet: Accuracy+23 Pet: Rng. Acc.+23','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
-    feet={ name="Taeon Boots", augments={'Pet: Attack+23 Pet: Rng.Atk.+23','Pet: "Dbl. Atk."+5','Pet: Damage taken -3%',}},
+    head=gear.Taeon_Pet_DT_head,
+    body=gear.Taeon_Pet_DT_body,
+    hands=gear.Taeon_Pet_DT_hands,
+    legs=gear.Taeon_Pet_DT_legs,
+    feet=gear.Taeon_Pet_DT_feet,
     neck="Shulmanu Collar",
     waist="Incarnation Sash",
-    left_ear="Domes. Earring",
-    right_ear="Enmerkar Earring",
-    left_ring="Varar Ring",
-    right_ring="Thurandaut Ring",
+    ear1="Domes. Earring",
+    ear2="Enmerkar Earring",
+    ring1="Varar Ring",
+    ring2="Thurandaut Ring",
     back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','System: 1 ID: 1246 Val: 4',}},
   }
  
-  sets.idle.Pet.Engaged.Tank = {
+  sets.idle.PetEngaged.Tank = {
     range="Animator P +1",
     ammo="Automat. Oil +3",
-    head={ name="Anwig Salade", augments={'Attack+3','Pet: Damage taken -10%','Accuracy+3','Pet: Haste+5',}},
-    body={ name="Taeon Tabard", augments={'Pet: Attack+18 Pet: Rng.Atk.+18','Pet: "Dbl. Atk."+5','Pet: Damage taken -3%',}},
-    hands={ name="Taeon Gloves", augments={'Pet: Attack+24 Pet: Rng.Atk.+24','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
-    legs={ name="Taeon Tights", augments={'Pet: Accuracy+23 Pet: Rng. Acc.+23','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}},
-    feet={ name="Taeon Boots", augments={'Pet: Accuracy+20 Pet: Rng. Acc.+20','Pet: "Dbl. Atk."+5','Pet: Damage taken -3%',}},
+    head=gear.Anwig_Salade,
+    body=gear.Taeon_Pet_DT_body,
+    hands=gear.Taeon_Pet_DT_hands,
+    legs=gear.Taeon_Pet_DT_legs,
+    feet=gear.Taeon_Pet_DT_feet,
     neck="Empath Necklace",
     waist="Isa Belt",
-    left_ear="Rimeice Earring",
-    right_ear="Handler's Earring +1",
-    left_ring="Varar Ring",
-    right_ring="Thurandaut Ring",
+    ear1="Rimeice Earring",
+    ear2="Handler's Earring +1",
+    ring1="Varar Ring",
+    ring2="Thurandaut Ring",
     back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','System: 1 ID: 1246 Val: 4',}},
   }
          
-  sets.idle.Pet.Engaged.Ranged = {
+  sets.idle.PetEngaged.Ranged = {
     head="Tali'ah Turban +2",
-    body={ name="Pitre Tobe +3", augments={'Enhances "Overdrive" effect',}},
+    body="Pitre Tobe +3",
     hands="Tali'ah Gages +2",
     legs="Tali'ah Sera. +2",
     feet="Tali'ah Crackows +2",
-    neck={ name="Pup. Collar", augments={'Path: A',}},
+    neck="Pup. Collar",
     waist="Incarnation Sash",
-    left_ear="Enmerkar Earring",
-    right_ear="Burana Earring",
-    left_ring="C. Palug Ring",
-    right_ring="Varar Ring",
+    ear1="Enmerkar Earring",
+    ear2="Burana Earring",
+    ring1="C. Palug Ring",
+    ring2="Varar Ring",
     back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Damage taken -5%',}},
   }
 
-  sets.idle.Pet.Engaged.Heal = {
-    head={ name="Pitre Taj +3", augments={'Enhances "Optimization" effect',}},
+  sets.idle.PetEngaged.Heal = {
+    head="Pitre Taj +3",
     body={ name="Herculean Vest", augments={'INT+14','Rng.Atk.+28','"Refresh"+1',}},
     hands={ name="Herculean Gloves", augments={'STR+5','DEX+10','"Refresh"+1','Accuracy+13 Attack+13',}},
-    legs={ name="Rawhide Trousers", augments={'MP+50','"Fast Cast"+5','"Refresh"+1',}},
+    legs=gear.Rawhide_D_legs,
     feet="Tali'ah Crackows +2",
     neck="Empath Necklace",
     waist="Isa Belt",
-    left_ear="Enmerkar Earring",
-    right_ear="Burana Earring",
-    left_ring="C. Palug Ring",
-    right_ring="Varar Ring",
+    ear1="Enmerkar Earring",
+    ear2="Burana Earring",
+    ring1="C. Palug Ring",
+    ring2="Varar Ring",
     back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Damage taken -5%',}},
   }
 
@@ -729,30 +722,30 @@ function init_gear_sets()
   sets.engaged = {
     head="Nyame Helm",
     body="Mpaca's Doublet",
-    hands={ name="Ryuo Tekko", augments={'STR+10','DEX+10','Accuracy+15',}},
+    hands=gear.Ryuo_A_hands,
     legs="Mpaca's Hose",
     feet="Mpaca's Boots",
     neck="Lissome Necklace",
     waist="Moonbow Belt +1",
-    left_ear="Mache Earring +1",
-    right_ear="Dedition Earring",
-    left_ring="Niqmaddu Ring",
-    right_ring="Chirich Ring +1",
+    ear1="Mache Earring +1",
+    ear2="Dedition Earring",
+    ring1="Niqmaddu Ring",
+    ring2="Chirich Ring +1",
     back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','System: 1 ID: 1246 Val: 4',}},
   }
 
   sets.engaged.Acc = {
     head="Nyame Helm",
     body="Mpaca's Doublet",
-    hands={ name="Ryuo Tekko", augments={'STR+10','DEX+10','Accuracy+15',}},
+    hands=gear.Ryuo_A_hands,
     legs="Mpaca's Hose",
     feet="Mpaca's Boots",
     neck="Lissome Necklace",
     waist="Moonbow Belt +1",
-    left_ear="Mache Earring +1",
-    right_ear="Dedition Earring",
-    left_ring="Niqmaddu Ring",
-    right_ring="Chirich Ring +1",
+    ear1="Mache Earring +1",
+    ear2="Dedition Earring",
+    ring1="Niqmaddu Ring",
+    ring2="Chirich Ring +1",
     back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','System: 1 ID: 1246 Val: 4',}},
   }
 
@@ -769,10 +762,10 @@ function init_gear_sets()
     feet="Nyame Sollerets",
     neck="Shulmanu Collar",
     waist="Incarnation Sash",
-    left_ear="Telos Earring",
-    right_ear="Mache Earring +1",
-    left_ring="Varar Ring",
-    right_ring="Thurandaut Ring",
+    ear1="Telos Earring",
+    ear2="Mache Earring +1",
+    ring1="Varar Ring",
+    ring2="Thurandaut Ring",
     back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','System: 1 ID: 1246 Val: 4',}},
   }
 
@@ -808,6 +801,8 @@ function init_gear_sets()
 
   sets.WeaponSet = {}
   sets.WeaponSet['Kenkonken'] = {main="Kenkonken", sub=empty}
+  sets.WeaponSet['Verethragna'] = {main="Verethragna", sub=empty}
+  sets.WeaponSet['Karambit'] = {main="Karambit", sub=empty}
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -1249,6 +1244,10 @@ function set_main_keybinds()
 
   send_command('bind ^` gs c cycle treasuremode')
   send_command('bind @c gs c toggle CP')
+  
+  send_command('bind !q input /ja "Deploy" <t>')
+  send_command('bind !w input /ja "Retrieve" <me>')
+  send_command('bind !e input /ja "Activate" <me>')
 end
 
 function set_sub_keybinds()
@@ -1280,6 +1279,10 @@ function unbind_keybinds()
   send_command('unbind !pagedown')
 
   send_command('unbind ^f8')
+  
+  send_command('unbind !q')
+  send_command('unbind !w')
+  send_command('unbind !e')
 
   send_command('unbind ^`')
   send_command('unbind @c')
@@ -1287,12 +1290,6 @@ function unbind_keybinds()
   send_command('unbind ^numpad/')
   send_command('unbind ^numpad*')
   send_command('unbind ^numpad-')
-  
-  send_command('unbind !`')
-  send_command('unbind !q')
-  send_command('unbind ^q')
-  send_command('unbind !e')
-  send_command('unbind !r')
 end
 
 function test()

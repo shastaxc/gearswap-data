@@ -141,6 +141,12 @@ gear.Taeon_Phalanx_feet = gear.Taeon_FC_feet
 
 gear.Taeon_RA_head = { name="Taeon Chapeau", augments={'"Snapshot"+5','"Snapshot"+5',}}
 
+-- gear.Taeon_Pet_DT_head = { name="Taeon Chapeau", augments={'Pet: Attack+25 Pet: Rng.Atk.+25','Pet: "Dbl. Atk."+5','Pet: Damage taken -3%',}}
+-- gear.Taeon_Pet_DT_body = { name="Taeon Tabard", augments={'Pet: Attack+23 Pet: Rng.Atk.+23','Pet: "Dbl. Atk."+5','Pet: Damage taken -3%',}}
+-- gear.Taeon_Pet_DT_hands = { name="Taeon Gloves", augments={'Pet: Attack+24 Pet: Rng.Atk.+24','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}}
+-- gear.Taeon_Pet_DT_legs = { name="Taeon Tights", augments={'Pet: Accuracy+23 Pet: Rng. Acc.+23','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}}
+-- gear.Taeon_Pet_DT_feet = { name="Taeon Boots", augments={'Pet: Attack+23 Pet: Rng.Atk.+23','Pet: "Dbl. Atk."+5','Pet: Damage taken -3%',}}
+
 -- Telchine
 gear.Telchine_DA_legs = {}
 gear.Telchine_STP_hands = {} -- 20 Acc, 6 STP, 10 DEX
@@ -302,3 +308,4 @@ gear.WAR_STR_WSD_Cape = { name="Cichol's Mantle", augments={'STR+20','Accuracy+2
 
 gear.Anwig_Salade = { name="Anwig Salade", augments={'CHR+4','"Waltz" ability delay -2','Attack+3','Pet: Damage taken -10%',}}
 gear.CP_Cape = { name="Mecisto. Mantle", augments={'Cap. Point+50%','STR+1','"Mag.Atk.Bns."+2','DEF+1',}}
+-- gear.DesultorTassets = { name="Desultor Tassets", augments={'"Repair" potency +10%','"Waltz" TP cost -5',}},

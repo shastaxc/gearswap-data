@@ -564,7 +564,7 @@ gear.Rao_D_feet = {}
 gear.Rawhide_A_head = {}
 gear.Rawhide_B_head = {}
 gear.Rawhide_C_head = {}
-gear.Rawhide_D_head = {}
+gear.Rawhide_D_head = { name="Rawhide Mask", augments={'Attack+15','Pet: Mag. Acc.+20','Pet: "Mag.Atk.Bns."+15',}}
 
 gear.Rawhide_A_body = {}
 gear.Rawhide_B_body = {}
