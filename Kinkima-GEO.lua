@@ -40,7 +40,7 @@ function job_setup()
   state.CP = M(false, "Capacity Points Mode")
   state.RecoverMode = M('Always', '60%', '35%', 'Never')
   state.MagicBurst = M(true, 'Magic Burst')
-  state.ElementalMode = M{['description'] = 'Elemental Mode', 'Light','Dark','Fire','Ice','Wind','Earth','Lightning','Water'}
+  state.ElementalMode = M{['description'] = 'Elemental Mode', 'Fire','Ice','Wind','Earth','Lightning','Water','Light','Dark',}
 
   state.Buff.Entrust = buffactive.Entrust or false
 
@@ -2072,21 +2072,27 @@ function handle_elemental(cmdParams)
   if command:contains('tier') then
     local spell_recasts = windower.ffxi.get_spell_recasts()
     local tierlist = {['tier1']='',['tier2']=' II',['tier3']=' III',['tier4']=' IV',['tier5']=' V',['tier6']=' VI'}
+    local nuke = elements.nuke_of[state.ElementalMode.value]
 
-    windower.chat.input('/ma "'..elements.nuke_of[state.ElementalMode.value]..tierlist[command]..'" '..target..'')
+    if nuke then
+      windower.chat.input('/ma "'..nuke..tierlist[command]'" '..target..'')
+    end
   elseif command:contains('ara') then
     local spell_recasts = windower.ffxi.get_spell_recasts()
     local tierkey = {'ara3','ara2','ara'}
     local tierlist = {['ara3']='ra III',['ara2']='ra II',['ara']='ra'}
-    if command == 'ara' then
-      for i in ipairs(tierkey) do
-        if actual_cost(get_spell_table_by_name(elements.nukera_of[state.ElementalMode.value]..''..tierlist[tierkey[i]]..'')) < player.mp then
-          windower.chat.input('/ma "'..elements.nukera_of[state.ElementalMode.value]..''..tierlist[tierkey[i]]..'" '..target..'')
-          return
+    local nuke = elements.nukera_of[state.ElementalMode.value]
+    if nuke then
+      if command == 'ara' then
+        for i in ipairs(tierkey) do
+          if actual_cost(get_spell_table_by_name(nuke..''..tierlist[tierkey[i]]..'')) < player.mp then
+            windower.chat.input('/ma "'..nuke..''..tierlist[tierkey[i]]..'" '..target..'')
+            return
+          end
         end
+      else
+        windower.chat.input('/ma "'..nuke..tierlist[command]..'" '..target..'')
       end
-    else
-      windower.chat.input('/ma "'..elements.nukera_of[state.ElementalMode.value]..tierlist[command]..'" '..target..'')
     end
   else
     add_to_chat(123,'Unrecognized elemental command.')
