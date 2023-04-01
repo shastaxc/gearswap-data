@@ -2074,24 +2074,24 @@ function handle_elemental(cmdParams)
     local tierlist = {['tier1']='',['tier2']=' II',['tier3']=' III',['tier4']=' IV',['tier5']=' V',['tier6']=' VI'}
     local nuke = elements.nuke_of[state.ElementalMode.value]
 
-    if nuke then
-      windower.chat.input('/ma "'..nuke..tierlist[command]'" '..target..'')
+    if state.ElementalMode.value ~= 'Light' and state.ElementalMode.value ~= 'Dark' then
+      windower.chat.input('/ma "'..nuke..tierlist[command]..'" '..target)
     end
   elseif command:contains('ara') then
     local spell_recasts = windower.ffxi.get_spell_recasts()
     local tierkey = {'ara3','ara2','ara'}
     local tierlist = {['ara3']='ra III',['ara2']='ra II',['ara']='ra'}
     local nuke = elements.nukera_of[state.ElementalMode.value]
-    if nuke then
+    if state.ElementalMode.value ~= 'Light' and state.ElementalMode.value ~= 'Dark' then
       if command == 'ara' then
         for i in ipairs(tierkey) do
-          if actual_cost(get_spell_table_by_name(nuke..''..tierlist[tierkey[i]]..'')) < player.mp then
-            windower.chat.input('/ma "'..nuke..''..tierlist[tierkey[i]]..'" '..target..'')
+          if actual_cost(get_spell_table_by_name(nuke..tierlist[tierkey[i]]..'')) < player.mp then
+            windower.chat.input('/ma "'..nuke..tierlist[tierkey[i]]..'" '..target)
             return
           end
         end
       else
-        windower.chat.input('/ma "'..nuke..tierlist[command]..'" '..target..'')
+        windower.chat.input('/ma "'..nuke..tierlist[command]..'" '..target)
       end
     end
   else
