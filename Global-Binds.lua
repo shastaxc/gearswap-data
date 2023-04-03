@@ -20,6 +20,9 @@
 -------------------------------------------------------------------------------------------------------------------
 
 -- Default Item HotKeys
+send_command('bind @numpad/ input /item "Steadfast Tonic" <me>') -- Negate Terror
+send_command('bind @numpad* input /item "Savior\'s Tonic" <me>') -- Negate Doom
+send_command('bind @numpad- input /item "Charm Buffer" <me>') -- Negate Charm
 send_command('bind @numpad7 input /item "Remedy" <me>')
 send_command('bind @numpad8 input /item "Panacea" <me>')
 send_command('bind @numpad9 input /item "Holy Water" <me>')
