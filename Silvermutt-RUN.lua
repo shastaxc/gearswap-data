@@ -783,15 +783,15 @@ function init_gear_sets()
     legs={name=gear.Nyame_B_legs,priority=1},   -- 32, 30, __(__) [ 8/ 8, 150] 114 {__}
     feet=gear.Nyame_B_feet,                     -- 26, 24, __(__) [ 7/ 7, 150]  68 {__}
     ear1="Odnowa Earring +1",                   -- __,  3, __(__) [ 3/ 5, ___] 110 {__}
+    ear2="Mendicant's Earring",                 -- __, __,  5(__) [__/__, ___] ___ {__}
     ring1="Gelatinous Ring +1",                 -- __, 15, __(__) [ 7/-1, ___] 135 {__}
     ring2={name="Moonlight Ring",priority=1},   -- __, __, __(__) [ 5/ 5, ___] 110 {__}
     back={name="Moonlight Cape",priority=1},    -- __, __, __(__) [ 6/ 6, ___] 275 {__}
     waist="Sroda Belt",                         -- __, __, 35(__) [__/__, ___] ___ {__}
     -- SIRD merits                                                                 { 8}
-    -- 161 MND, 181 VIT, 35 Cure Pot (0 self pot) [55 PDT/49 MDT, 610 M.Eva] 1244 HP {29 SIRD}
+    -- 161 MND, 181 VIT, 40 Cure Pot (0 self pot) [55 PDT/49 MDT, 610 M.Eva] 1244 HP {29 SIRD}
     
     -- neck="Sacro Gorget",                     -- __, __, 10(__) [__/__, ___]  50 {__}
-    -- ear2="Mendicant's Earring",              -- __, __,  5(__) [__/__, ___] ___ {__}
     -- 161 MND, 181 VIT, 50 Cure Pot (0 self pot) [55 PDT/49 MDT, 610 M.Eva] 1294 HP {29 SIRD}
   }
   sets.midcast['Blue Magic'].Cure.Safe = set_combine(sets.SIRD, {

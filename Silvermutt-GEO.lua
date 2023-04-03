@@ -420,14 +420,14 @@ function init_gear_sets()
     legs=gear.Vanya_C_legs,         -- __, __, 12 [__/__, 107]
     feet="Azimuth Gaiters +2",      -- __, __, __ [10/10, 158]; Set bonus
     neck="Bagua Charm +1",          --  6, __, __ [__/__, ___]; Luopan Duration +20%
-    ear1="Eabani Earring",          -- __, __, __ [__/__,   8]
+    ear1="Mendicant's Earring",     -- __, __,  2 [__/__, ___]
     ear2="Halasz Earring",          -- __, __, __ [__/__, ___]
     ring1="Stikini Ring +1",        -- __,  8, __ [__/__, ___]
     ring2="Defending Ring",         -- __, __, __ [10/10, ___]
     back=gear.GEO_Adoulin_Cape,     -- __, 15, __ [__/__, ___]
     waist="Sekhmet Corset",         -- __, __,  3 [__/__, ___]
     -- Base stats                   -- __,850, 43
-    -- 10 Geomancy, 911 geo skill, 58 Conserve MP [61 PDT/51 MDT, 626 M.Eva]
+    -- 10 Geomancy, 911 geo skill, 60 Conserve MP [61 PDT/51 MDT, 618 M.Eva]
 
     -- main="Idris",                -- 10, __, __ [__/__, ___]
     -- sub="Genmei Shield",         -- __, __, __ [10/__, ___]
@@ -462,7 +462,7 @@ function init_gear_sets()
     legs="Bagua Pants +1",          -- __, __, __, 15, __ [__/__, 107] {__, __}
     feet="Azimuth Gaiters +2",      -- __, __, __, 25, __ [10/10, 158] {__, __}
     neck="Incanter's Torque",       -- __, 10, __, __, __ [__/__, ___] {__, __}; Save MP
-    ear1="Eabani Earring",          -- __, __, __, __, __ [__/__,   8] {__, __}
+    ear1="Mendicant's Earring",     -- __, __,  2, __, __ [__/__, ___] {__, __}
     ear2="Halasz Earring",          -- __, __, __, __, __ [__/__, ___] {__, __}
     ring1="Defending Ring",         -- __, __, __, __, __ [10/10, ___] {__, __}
     ring2="Stikini Ring +1",        -- __,  8, __, __, __ [__/__, ___] {__, __}
@@ -470,11 +470,11 @@ function init_gear_sets()
     waist="Gishdubar Sash",         -- __, __, __, __, __ [__/__, ___] {__, __}
     -- Base stats                   -- __,850, 43,220, __ [__/__, ___] {50, __}
     -- Master level 14              -- __, 28
-    -- 10 Geomancy, 949 geo skill, 43 Conserve MP, 260 Indi Duration, 17 Indi Duration % [61 PDT/51 MDT, 626 M.Eva] {Pet: 80 DT, 4 Regen}
+    -- 10 Geomancy, 949 geo skill, 45 Conserve MP, 260 Indi Duration, 17 Indi Duration % [61 PDT/51 MDT, 618 M.Eva] {Pet: 80 DT, 4 Regen}
     
     -- hands="Azimuth Gloves +3",   -- __, __, __, __, __ [12/12,  98] {__, __}; Set bonus: save MP
     -- feet="Azimuth Gaiters +3",   -- __, __, __, 30, __ [11/11, 168] {__, __}; Set bonus: save MP
-    -- 10 Geomancy, 916 geo skill, 43 Conserve MP, 270 Indi Duration, 17 Indi Duration % [64 PDT/ 54 MDT, 656 M.Eva] {Pet: 80 DT, 3 Regen}
+    -- 10 Geomancy, 916 geo skill, 45 Conserve MP, 270 Indi Duration, 17 Indi Duration % [64 PDT/ 54 MDT, 648 M.Eva] {Pet: 80 DT, 3 Regen}
 
     -- main="Idris",                -- 10, __, __, __, __ [__/__, ___] {25, __}
     -- sub="Genmei Shield",         -- __, __, __, __, __ [10/__, ___] {__, __}
@@ -529,7 +529,7 @@ function init_gear_sets()
     legs="Bagua Pants +1",          -- __, __, __, 15, __ [__/__, 107] {__, __}
     feet="Azimuth Gaiters +2",      -- __, __, __, 25, __ [10/10, 158] {__, __}
     neck="Reti Pendant",            -- __, __,  4, __, __ [__/__, ___] {__, __}; Save MP
-    ear1="Eabani Earring",          -- __, __, __, __, __ [__/__,   8] {__, __}
+    ear1="Mendicant's Earring",     -- __, __,  2, __, __ [__/__, ___] {__, __}
     ear2="Halasz Earring",          -- __, __, __, __, __ [__/__, ___] {__, __}
     ring1="Defending Ring",         -- __, __, __, __, __ [10/10, ___] {__, __}
     ring2="Stikini Ring +1",        -- __,  8, __, __, __ [__/__, ___] {__, __}
@@ -537,14 +537,13 @@ function init_gear_sets()
     waist="Gishdubar Sash",         -- __, __, __, __, __ [__/__, ___] {__, __}
     -- Base stats                   -- __,850, 43,220, __ [__/__, ___] {50, __}
     -- Master level 14              -- __, 28
-    -- Ideal: 0 Geomancy, 926 geo skill, 57 Conserve MP, 275 Indi Duration, 17 Indi Duration % [50 PDT/40 MDT, 626 M.Eva] {Pet: 54 DT, 4 Regen}
+    -- Ideal: 0 Geomancy, 926 geo skill, 59 Conserve MP, 275 Indi Duration, 17 Indi Duration % [50 PDT/40 MDT, 618 M.Eva] {Pet: 54 DT, 4 Regen}
 
     -- head="Azimuth Hood +3",      -- __, 25, __, __, __ [12/12, 136] {__,  5}; Set bonus: save MP
     -- body=gear.Merl_ConMP_body,   -- __, __,  6, __, __ [ 2/__,  91] {__, __}
     -- hands="Azimuth Gloves +3",   -- __, __, __, __, __ [12/12,  98] {__, __}; Set bonus: save MP
     -- legs="Bagua Pants +3",       -- __, __, __, 21, __ [__/__, 127] {__, __}
     -- feet="Azimuth Gaiters +3",   -- __, __, __, 30, __ [11/11, 168] {__, __}; Set bonus: save MP
-    -- ear1="Mendicant's Earring",  -- __, __,  2, __, __ [__/__, ___] {__, __}
     -- ear2="Calamitous Earring",   -- __, __,  4, __, __ [__/__, ___] {__, __}
     -- ring2="Mephitas's Ring +1",  -- __, __, 15, __, __ [__/__, ___] {__, __}
     -- back=gear.GEO_Adoulin_Cape,  -- __,  5, __, __, 20 [__/__, ___] { 5, __}
