@@ -39,6 +39,7 @@ function get_sets()
   end, 1)
   coroutine.schedule(function()
     send_command('gs c weaponset current')
+    send_command('gs c petmode current')
   end, 5)
 end
 
@@ -54,13 +55,13 @@ function job_setup()
   silibs.enable_equip_loop()
 
   state.OffenseMode:options('Normal', 'Acc')
-  state.WeaponskillMode:options('Normal', 'Acc')
-  state.HybridMode:options('Master', 'Pet', '50/50')
+  state.HybridMode:options('Master', 'Pet', 'Halfsies')
   state.IdleMode:options('Normal')
   state.AttCapped = M(true, 'Attack Capped')
   state.CP = M(false, 'Capacity Points Mode')
+  state.AutomaticPetTargeting = M(true, 'Automatic Pet Targeting')
 
-  state.PetMode = M{['description']='Pet Mode', 'Tank', 'Ranged', 'Heal', 'Melee'}
+  state.PetMode = M{['description']='Pet Mode', 'Tank', 'Ranged', 'RangedAcc', 'Heal', 'MeleeSpam', 'MeleeSC', 'Overdrive',}
 
   -- List of pet weaponskills to check for
   petWeaponskills = S{'Slapstick', 'Knockout', 'Magic Mortar', 'Chimera Ripper', 'String Clipper', 'Cannibal Blade',
@@ -70,14 +71,51 @@ function job_setup()
   magicPetModes = S{'Nuke','Heal','Magic'}
 
   -- Default maneuvers 1, 2, 3 and 4 for each pet mode.
-  defaultManeuvers = {
-    ['Melee'] = {'Fire Maneuver', 'Thunder Maneuver', 'Wind Maneuver', 'Light Maneuver'},
-    ['Ranged'] = {'Wind Maneuver', 'Fire Maneuver', 'Thunder Maneuver', 'Light Maneuver'},
-    ['Tank'] = {'Earth Maneuver', 'Dark Maneuver', 'Light Maneuver', 'Wind Maneuver'},
-    ['Magic'] = {'Ice Maneuver', 'Light Maneuver', 'Dark Maneuver', 'Earth Maneuver'},
-    ['Heal'] = {'Light Maneuver', 'Dark Maneuver', 'Water Maneuver', 'Earth Maneuver'},
-    ['Nuke'] = {'Ice Maneuver', 'Dark Maneuver', 'Light Maneuver', 'Earth Maneuver'}
-  }
+  -- Default/Automatic maneuvers for each pet mode.  Define at least 3.
+	defaultManeuvers = {
+		Tank = {
+			{name='Fire Maneuver',    amount=2},
+			{name='Light Maneuver',   amount=1},
+			{name='Dark Maneuver',    amount=0},
+			{name='Water Maneuver',   amount=0},
+		},
+		Ranged = {
+			{name='Wind Maneuver',    amount=3},
+			{name='Fire Maneuver',    amount=0},
+			{name='Light Maneuver',   amount=0},
+			{name='Thunder Maneuver', amount=0},
+		},
+		RangedAcc = {
+			{name='Wind Maneuver',    amount=3},
+			{name='Fire Maneuver',    amount=0},
+			{name='Light Maneuver',   amount=0},
+			{name='Thunder Maneuver', amount=0},
+		},
+		Heal = {
+			{name='Light Maneuver',   amount=2},
+			{name='Dark Maneuver',    amount=1},
+			{name='Water Maneuver',   amount=0},
+			{name='Ice Maneuver',   amount=0},
+		},
+		MeleeSpam = {
+			{name='Fire Maneuver',    amount=2},
+			{name='Wind Maneuver',    amount=1},
+			{name='Light Maneuver',   amount=0},
+			{name='Thunder Maneuver', amount=0},
+		},
+		MeleeSC = {
+			{name='Fire Maneuver',    amount=2},
+			{name='Wind Maneuver',    amount=1},
+			{name='Light Maneuver',   amount=0},
+			{name='Thunder Maneuver', amount=0},
+		},
+		Overdrive = {
+			{name='Fire Maneuver',    amount=1},
+			{name='Thunder Maneuver', amount=1},
+			{name='Light Maneuver',   amount=1},
+			{name='Earth Maneuver',   amount=0},
+		},
+	}
 
   ---- DO NOT MODIFY TIMERS ------
   Flashbulb_Timer = 45
@@ -111,7 +149,7 @@ end
 function init_gear_sets()
   -- This set is specifically for Strobe & Flashbulb
   sets.Enmity = {
-    range="Animator P +1",
+    range="Neo Animator",
     ammo="Automat. Oil +3",
     head="Heyoka Cap",
     body="Heyoka Harness",
@@ -266,16 +304,6 @@ function init_gear_sets()
     -- ammo="Aurgelmir Orb +1",
   })
   sets.precast.WS["Shijin Spiral"].MaxTP = set_combine(sets.precast.WS["Shijin Spiral"], {
-  })
-  sets.precast.WS["Shijin Spiral"].Safe = set_combine(sets.precast.WS["Shijin Spiral"], {
-    feet="Mpaca's Boots",
-    ear1="Odnowa Earring +1",
-    ring1="Defending Ring",
-  })
-  sets.precast.WS["Shijin Spiral"].SafeMaxTP = set_combine(sets.precast.WS["Shijin Spiral"], {
-    feet="Mpaca's Boots",
-    ear1="Odnowa Earring +1",
-    ring1="Defending Ring",
   })
   
   -- Asuran Fists: 15% STR / 15% VIT, 1.25 fTP, 8 hit, ftp replicating
@@ -599,7 +627,7 @@ function init_gear_sets()
 
   -- Overcapped DT to account for regain gear swap
   sets.HeavyDef = {
-    range="Animator P +1",
+    range="Neo Animator",
     ammo="Automat. Oil +3",
     head=gear.Taeon_Pet_DT_head,
     body=gear.Taeon_Pet_DT_body,
@@ -650,25 +678,9 @@ function init_gear_sets()
 
   sets.idle.Weak = set_combine(sets.HeavyDef, {})
 
-  sets.idle.PetEngaged = {
-    range="Animator P +1",
-    ammo="Automat. Oil +3",
-    head=gear.Taeon_Pet_DT_head,
-    body=gear.Taeon_Pet_DT_body,
-    hands=gear.Taeon_Pet_DT_hands,
-    legs=gear.Taeon_Pet_DT_legs,
-    feet=gear.Taeon_Pet_DT_feet,
-    neck="Shulmanu Collar",
-    waist="Incarnation Sash",
-    ear1="Domes. Earring",
-    ear2="Enmerkar Earring",
-    ring1="Varar Ring",
-    ring2="Thurandaut Ring",
-    back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','System: 1 ID: 1246 Val: 4',}},
-  }
- 
+  sets.idle.PetEngaged = {}
   sets.idle.PetEngaged.Tank = {
-    range="Animator P +1",
+    range="Neo Animator",
     ammo="Automat. Oil +3",
     head=gear.Anwig_Salade,
     body=gear.Taeon_Pet_DT_body,
@@ -683,7 +695,6 @@ function init_gear_sets()
     ring2="Thurandaut Ring",
     back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','System: 1 ID: 1246 Val: 4',}},
   }
-         
   sets.idle.PetEngaged.Ranged = {
     head="Tali'ah Turban +2",
     body="Pitre Tobe +3",
@@ -698,7 +709,7 @@ function init_gear_sets()
     ring2="Varar Ring",
     back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Damage taken -5%',}},
   }
-
+  sets.idle.PetEngaged.RangedAcc = set_combine(sets.idle.PetEngaged.Ranged, {})
   sets.idle.PetEngaged.Heal = {
     head="Pitre Taj +3",
     body={ name="Herculean Vest", augments={'INT+14','Rng.Atk.+28','"Refresh"+1',}},
@@ -713,6 +724,24 @@ function init_gear_sets()
     ring2="Varar Ring",
     back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Damage taken -5%',}},
   }
+  sets.idle.PetEngaged.MeleeSpam = {
+    range="Neo Animator",
+    ammo="Automat. Oil +3",
+    head=gear.Taeon_Pet_DT_head,
+    body=gear.Taeon_Pet_DT_body,
+    hands=gear.Taeon_Pet_DT_hands,
+    legs=gear.Taeon_Pet_DT_legs,
+    feet=gear.Taeon_Pet_DT_feet,
+    neck="Shulmanu Collar",
+    waist="Incarnation Sash",
+    ear1="Domes. Earring",
+    ear2="Enmerkar Earring",
+    ring1="Varar Ring",
+    ring2="Thurandaut Ring",
+    back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','System: 1 ID: 1246 Val: 4',}},
+  }
+  sets.idle.PetEngaged.MeleeSC = set_combine(sets.idle.PetEngaged.MeleeSpam, {})
+  sets.idle.PetEngaged.Overdrive = set_combine(sets.idle.PetEngaged.MeleeSpam, {})
 
 
   ------------------------------------------------------------------------------------------------
@@ -733,21 +762,56 @@ function init_gear_sets()
     ring2="Chirich Ring +1",
     back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','System: 1 ID: 1246 Val: 4',}},
   }
+  sets.engaged.Acc = set_combine(sets.engaged, {
+  })
 
-  sets.engaged.Acc = {
-    head="Nyame Helm",
-    body="Mpaca's Doublet",
-    hands=gear.Ryuo_A_hands,
-    legs="Mpaca's Hose",
-    feet="Mpaca's Boots",
-    neck="Lissome Necklace",
-    waist="Moonbow Belt +1",
-    ear1="Mache Earring +1",
-    ear2="Dedition Earring",
-    ring1="Niqmaddu Ring",
-    ring2="Chirich Ring +1",
-    back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','System: 1 ID: 1246 Val: 4',}},
+  sets.engaged.PetTank = {
   }
+  sets.engaged.PetTank.Acc = set_combine(sets.engaged.PetTank, {
+  })
+  sets.engaged.PetRanged = {
+  }
+  sets.engaged.PetRanged.Acc = set_combine(sets.engaged.PetRanged, {
+  })
+  sets.engaged.PetRangedAcc = set_combine(sets.engaged.PetRanged, {})
+  sets.engaged.PetRangedAcc.Acc = set_combine(sets.engaged.PetRanged, {})
+  sets.engaged.PetHeal = {
+  }
+  sets.engaged.PetHeal.Acc = set_combine(sets.engaged.PetHeal, {
+  })
+  sets.engaged.PetMeleeSpam = {
+  }
+  sets.engaged.PetMeleeSpam.Acc = set_combine(sets.engaged.PetMeleeSpam, {
+  })
+  sets.engaged.PetMeleeSC = {
+  }
+  sets.engaged.PetMeleeSC.Acc = set_combine(sets.engaged.PetMeleeSC, {
+  })
+  sets.engaged.PetOverdrive = {
+  }
+  sets.engaged.PetOverdrive.Acc = set_combine(sets.engaged.PetOverdrive, {
+  })
+
+  sets.engaged.HalfsiesTank = {}
+  sets.engaged.HalfsiesTank.Acc = set_combine(sets.engaged.HalfsiesTank, {
+  })
+  sets.engaged.HalfsiesRanged = {}
+  sets.engaged.HalfsiesRanged.Acc = set_combine(sets.engaged.HalfsiesRanged, {
+  })
+  sets.engaged.HalfsiesRangedAcc = set_combine(sets.engaged.HalfsiesRanged, {})
+  sets.engaged.HalfsiesRangedAcc.Acc = set_combine(sets.engaged.HalfsiesRanged, {})
+  sets.engaged.HalfsiesHeal = {}
+  sets.engaged.HalfsiesHeal.Acc = set_combine(sets.engaged.HalfsiesHeal, {
+  })
+  sets.engaged.HalfsiesMeleeSpam = {}
+  sets.engaged.HalfsiesMeleeSpam.Acc = set_combine(sets.engaged.HalfsiesMeleeSpam, {
+  })
+  sets.engaged.HalfsiesMeleeSC = {}
+  sets.engaged.HalfsiesMeleeSC.Acc = set_combine(sets.engaged.HalfsiesMeleeSC, {
+  })
+  sets.engaged.HalfsiesOverdrive = {}
+  sets.engaged.HalfsiesOverdrive.Acc = set_combine(sets.engaged.HalfsiesOverdrive, {
+  })
 
 
   ------------------------------------------------------------------------------------------------
@@ -768,7 +832,6 @@ function init_gear_sets()
     ring2="Thurandaut Ring",
     back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','System: 1 ID: 1246 Val: 4',}},
   }
-
   sets.engaged.PDT.Acc = set_combine(sets.engaged.PDT, {})
 
 
@@ -915,7 +978,17 @@ end
 
 function job_handle_equipping_gear(playerStatus, eventArgs)
   check_gear()
+  update_combat_form()
   update_idle_groups()
+  auto_engage_pet()
+end
+
+function update_combat_form()
+  state.CombatForm:reset()
+
+  if state.HybridMode.value ~= 'Master' then
+    state.CombatForm:set(state.HybridMode.value..state.PetMode.value)
+  end
 end
 
 function get_custom_wsmode(spell, action, spellMap)
@@ -958,15 +1031,7 @@ function customize_idle_set(idleSet)
   end
 
   if pet.status == 'Engaged' then
-    if state.PetMode.value == 'Normal' then
-      idleSet = set_combine(idleSet, sets.idle.Pet.Engaged)
-    elseif state.PetMode.value == 'Tank' then
-      idleSet = set_combine(idleSet, sets.idle.Pet.Engaged.Tank)
-    elseif state.PetMode.value == 'Ranged' then
-      idleSet = set_combine(idleSet, sets.idle.Pet.Engaged.Ranged)
-    elseif state.PetMode.value == 'Heal' then
-      idleSet = set_combine(idleSet, sets.idle.Pet.Engaged.Heal)
-    end
+    idleSet = set_combine(idleSet, sets.idle.PetEngaged[state.PetMode.value])
   end
 
   if state.CP.current == 'on' then
@@ -989,9 +1054,6 @@ end
 
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
-  if state.Buff['Boost'] or info.boost_temp_lock then
-    meleeSet = set_combine(meleeSet, sets.BoostRegain)
-  end
   if state.CP.current == 'on' then
     meleeSet = set_combine(meleeSet, sets.CP)
   end
@@ -1067,7 +1129,7 @@ function display_current_job_state(eventArgs)
 
   local i_msg = state.IdleMode.value
 
-  local toy_msg = state.ToyWeapons.current
+  local pet_msg = state.PetMode.current
 
   local msg = ''
   if state.TreasureMode.value ~= 'None' then
@@ -1084,7 +1146,7 @@ function display_current_job_state(eventArgs)
       ..string.char(31,207).. ' WS: ' ..string.char(31,001)..ws_msg.. string.char(31,002)..  ' |'
       ..string.char(31,004).. ' Defense: ' ..string.char(31,001)..d_msg.. string.char(31,002)..  ' |'
       ..string.char(31,207).. ' Idle: ' ..string.char(31,001)..i_msg.. string.char(31,002)..  ' |'
-      ..string.char(31,012).. ' Toy Weapon: ' ..string.char(31,001)..toy_msg.. string.char(31,002)..  ' |'
+      ..string.char(31,012).. ' Pet: ' ..string.char(31,001)..pet_msg.. string.char(31,002)..  ' |'
       ..string.char(31,002)..msg)
 
   eventArgs.handled = true
@@ -1099,31 +1161,60 @@ function cycle_weapons(cycle_dir)
     state.WeaponSet:reset()
   end
 
-  add_to_chat(141, 'Weapon Set to '..string.char(31,1)..state.WeaponSet.current)
+  add_to_chat(141, 'Weapon set to '..string.char(31,1)..state.WeaponSet.current)
   equip(sets.WeaponSet[state.WeaponSet.current])
 end
 
-function cycle_toy_weapons(cycle_dir)
-  --If current state is None, save current weapons to switch back later
-  if state.ToyWeapons.current == 'None' then
-    sets.ToyWeapon.None.main = player.equipment.main
-    sets.ToyWeapon.None.sub = player.equipment.sub
-  end
-
+function cycle_pet_mode(cycle_dir)
   if cycle_dir == 'forward' then
-    state.ToyWeapons:cycle()
+    state.PetMode:cycle()
   elseif cycle_dir == 'back' then
-    state.ToyWeapons:cycleback()
-  else
-    state.ToyWeapons:reset()
+    state.PetMode:cycleback()
+  elseif cycle_dir == 'reset' then
+    state.PetMode:reset()
   end
 
-  local mode_color = 001
-  if state.ToyWeapons.current == 'None' then
-    mode_color = 006
+  add_to_chat(141, 'Pet Mode set to '..string.char(31,1)..state.PetMode.current)
+
+  -- Set automaton attachments
+  if pet.isvalid then
+    add_to_chat(123, 'Cannot update attachments while pet is active.')
+  else
+    local set_name = state.PetMode.current:lower()
+    equip_attachments:schedule(3, set_name)
   end
-  add_to_chat(012, 'Toy Weapon Mode: '..string.char(31,mode_color)..state.ToyWeapons.current)
-  equip(sets.ToyWeapon[state.ToyWeapons.current])
+end
+
+function equip_attachments(set_name)
+  if set_name == state.PetMode.current:lower() then
+    send_command('input //acon equipset '..set_name)
+  end
+end
+
+function auto_engage_pet()
+	if areas.Cities:contains(world.area) then
+    return
+  end
+
+	local abil_recasts = windower.ffxi.get_ability_recasts()
+
+	if state.AutomaticPetTargeting.value == true and pet.isvalid and pet.status == "Idle" and player.status == 'Engaged'
+      and player.target.type == "MONSTER" and abil_recasts[207] == 0 then
+    windower.chat.input('/pet "Deploy" <t>')
+	end
+end
+
+function pet_control(command)
+  if command == 'deploy' then
+    windower.chat.input('/pet "Deploy" <t>')
+  elseif command == 'retrieve' then
+    windower.chat.input('/pet "Retrieve" <me>')
+  end
+  
+  if state.AutomaticPetTargeting.value == true then
+    state.AutomaticPetTargeting:set(false)
+    add_to_chat(141, 'Manual pet control detected. Disabling auto targeting.')
+  end
 end
 
 
@@ -1162,15 +1253,7 @@ function job_self_command(cmdParams, eventArgs)
   silibs.self_command(cmdParams, eventArgs)
   ----------- Non-silibs content goes below this line -----------
 
-  if cmdParams[1] == 'toyweapon' then
-    if cmdParams[2] == 'cycle' then
-      cycle_toy_weapons('forward')
-    elseif cmdParams[2] == 'cycleback' then
-      cycle_toy_weapons('back')
-    elseif cmdParams[2] == 'reset' then
-      cycle_toy_weapons('reset')
-    end
-  elseif cmdParams[1] == 'weaponset' then
+  if cmdParams[1] == 'weaponset' then
     if cmdParams[2] == 'cycle' then
       cycle_weapons('forward')
     elseif cmdParams[2] == 'cycleback' then
@@ -1180,12 +1263,60 @@ function job_self_command(cmdParams, eventArgs)
     elseif cmdParams[2] == 'reset' then
       cycle_weapons('reset')
     end
+  elseif cmdParams[1] == 'petmode' then
+    if cmdParams[2] == 'cycle' then
+      cycle_pet_mode('forward')
+    elseif cmdParams[2] == 'cycleback' then
+      cycle_pet_mode('back')
+    elseif cmdParams[2] == 'current' then
+      cycle_pet_mode('current')
+    elseif cmdParams[2] == 'reset' then
+      cycle_pet_mode('reset')
+    end
+  elseif cmdParams[1] == 'petcontrol' then
+    if cmdParams[2] then
+      pet_control(cmdParams[2])
+    else
+      add_to_chat(123, 'Missing 2nd parameter for this command.')
+    end
+  elseif cmdParams[1] == 'maneuver' then
+    use_maneuver(cmdParams[2])
   elseif cmdParams[1] == 'bind' then
     set_main_keybinds()
     set_sub_keybinds()
     print('Set keybinds!')
   elseif cmdParams[1] == 'test' then
     test()
+  end
+end
+
+function use_maneuver(maneuver_index)
+  if pet.isvalid then
+    if maneuver_index == nil then
+      for i = 1,8 do
+        local maneuver = defaultManeuvers[state.PetMode.value][i]
+        if maneuver then
+          local maneuversActive = buffactive[maneuver.name] or 0
+          if maneuversActive < maneuver.amount then
+            windower.chat.input('/pet "'..maneuver.name..'" <me>')
+            return
+          end
+        else
+          return
+        end
+      end
+      add_to_chat(123,'Current Maneuvers match Default')
+    elseif S{'1','2','3','4','5','6','7','8'}:contains(maneuver_index) then
+      if defaultManeuvers[state.PetMode.value][tonumber(maneuver_index)] then
+        windower.chat.input('/pet "'..defaultManeuvers[state.PetMode.value][tonumber(maneuver_index)].name..'" <me>')
+      else
+        add_to_chat(123,'Error: You don\'t have that many maneuvers listed.')
+      end
+    else
+      add_to_chat(123,'Error: Maneuver command format is wrong.')
+    end
+  else
+      add_to_chat(123,'Error: No valid pet.')
   end
 end
 
@@ -1241,23 +1372,29 @@ function set_main_keybinds()
   send_command('bind !delete gs c weaponset reset')
 
   send_command('bind ^f8 gs c toggle AttCapped')
+  send_command('bind !z gs c toggle AutomaticPetTargeting')
 
   send_command('bind ^` gs c cycle treasuremode')
   send_command('bind @c gs c toggle CP')
+
+  send_command('bind ^pageup gs c petmode cycle')
+  send_command('bind ^pagedown gs c petmode cycleback')
+  send_command('bind !pagedown gs c petmode reset')
   
-  send_command('bind !q input /ja "Deploy" <t>')
-  send_command('bind !w input /ja "Retrieve" <me>')
+  send_command('bind !` gs c maneuver')
+  send_command('bind !q gs c petcontrol deploy')
+  send_command('bind !w gs c petcontrol retrieve')
   send_command('bind !e input /ja "Activate" <me>')
 end
 
 function set_sub_keybinds()
   if player.sub_job == 'WAR' then
-    send_command('bind !w input /ja "Defender" <me>')
+    send_command('bind ^numlock input /ja "Defender" <me>')
     send_command('bind ^numpad/ input /ja "Berserk" <me>')
     send_command('bind ^numpad* input /ja "Warcry" <me>')
     send_command('bind ^numpad- input /ja "Aggressor" <me>')
   elseif player.sub_job == 'SAM' then
-    send_command('bind !w input /ja "Third Eye" <me>')
+    send_command('bind ^numlock input /ja "Third Eye" <me>')
     send_command('bind ^numpad/ input /ja "Meditate" <me>')
     send_command('bind ^numpad* input /ja "Sekkanoki" <me>')
     send_command('bind ^numpad- input /ja "Hasso" <me>')
@@ -1274,19 +1411,22 @@ function unbind_keybinds()
   send_command('unbind ^delete')
   send_command('unbind !delete')
 
-  send_command('unbind ^pageup')
-  send_command('unbind ^pagedown')
-  send_command('unbind !pagedown')
-
   send_command('unbind ^f8')
-  
-  send_command('unbind !q')
-  send_command('unbind !w')
-  send_command('unbind !e')
+  send_command('unbind !z')
 
   send_command('unbind ^`')
   send_command('unbind @c')
+
+  send_command('unbind ^pageup')
+  send_command('unbind ^pagedown')
+  send_command('unbind !pagedown')
+  
+  send_command('unbind !`')
+  send_command('unbind !q')
   send_command('unbind !w')
+  send_command('unbind !e')
+  
+  send_command('unbind ^numlock')
   send_command('unbind ^numpad/')
   send_command('unbind ^numpad*')
   send_command('unbind ^numpad-')
