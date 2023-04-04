@@ -1,4 +1,4 @@
--- File Status: Not even remotely good.
+-- File Status: Not terrible. Gearsets are ALL wrong.
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs
