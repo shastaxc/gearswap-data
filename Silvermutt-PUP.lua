@@ -67,63 +67,29 @@ function job_setup()
   petWeaponskills = S{'Slapstick', 'Knockout', 'Magic Mortar', 'Chimera Ripper', 'String Clipper', 'Cannibal Blade',
       'Bone Crusher', 'String Shredder', 'Arcuballista', 'Daze', 'Armor Piercer', 'Armor Shatterer'}
 
-  -- Subset of modes that use magic
-  magicPetModes = S{'Nuke','Heal','Magic'}
-
-  -- Default maneuvers 1, 2, 3 and 4 for each pet mode.
-  -- Default/Automatic maneuvers for each pet mode.  Define at least 3.
+  -- Default maneuvers for each pet mode. Table keys must match PetMode values. Must have 1 for each mode.
 	defaultManeuvers = {
-		Tank = {
-			{name='Fire Maneuver',    amount=2},
-			{name='Light Maneuver',   amount=1},
-			{name='Dark Maneuver',    amount=0},
-			{name='Water Maneuver',   amount=0},
-		},
-		Ranged = {
-			{name='Wind Maneuver',    amount=3},
-			{name='Fire Maneuver',    amount=0},
-			{name='Light Maneuver',   amount=0},
-			{name='Thunder Maneuver', amount=0},
-		},
-		RangedAcc = {
-			{name='Wind Maneuver',    amount=3},
-			{name='Fire Maneuver',    amount=0},
-			{name='Light Maneuver',   amount=0},
-			{name='Thunder Maneuver', amount=0},
-		},
-		Heal = {
-			{name='Light Maneuver',   amount=2},
-			{name='Dark Maneuver',    amount=1},
-			{name='Water Maneuver',   amount=0},
-			{name='Ice Maneuver',   amount=0},
-		},
-		MeleeSpam = {
-			{name='Fire Maneuver',    amount=2},
-			{name='Wind Maneuver',    amount=1},
-			{name='Light Maneuver',   amount=0},
-			{name='Thunder Maneuver', amount=0},
-		},
-		MeleeSC = {
-			{name='Fire Maneuver',    amount=2},
-			{name='Wind Maneuver',    amount=1},
-			{name='Light Maneuver',   amount=0},
-			{name='Thunder Maneuver', amount=0},
-		},
-		Overdrive = {
-			{name='Fire Maneuver',    amount=1},
-			{name='Thunder Maneuver', amount=1},
-			{name='Light Maneuver',   amount=1},
-			{name='Earth Maneuver',   amount=0},
-		},
+		Tank =      { Fire=2, Ice=0, Wind=0, Earth=0, Lightning=0, Water=0, Light=1, Dark=0 },
+		Ranged =    { Fire=0, Ice=0, Wind=3, Earth=0, Lightning=0, Water=0, Light=0, Dark=0 },
+		RangedAcc = { Fire=0, Ice=0, Wind=3, Earth=0, Lightning=0, Water=0, Light=0, Dark=0 },
+		Heal =      { Fire=0, Ice=0, Wind=0, Earth=0, Lightning=0, Water=0, Light=2, Dark=1 },
+		MeleeSpam = { Fire=2, Ice=0, Wind=1, Earth=0, Lightning=0, Water=0, Light=0, Dark=0 },
+		MeleeSC =   { Fire=2, Ice=0, Wind=1, Earth=0, Lightning=0, Water=0, Light=0, Dark=0 },
+		Overdrive = { Fire=1, Ice=0, Wind=0, Earth=0, Lightning=1, Water=0, Light=1, Dark=0 },
 	}
 
-  ---- DO NOT MODIFY TIMERS ------
+  ---- DO NOT MODIFY BELOW ------
   Flashbulb_Timer = 45
   Strobe_Timer = 30
   Strobe_Recast = 0
   Flashbulb_Recast = 0
   Flashbulb_Time = 0
   Strobe_Time = 0
+  all_maneuvers = S{'Fire Maneuver','Ice Maneuver','Wind Maneuver','Earth Maneuver','Lightning Maneuver','Water Maneuver',
+      'Light Maneuver','Dark Maneuver'}
+  active_maneuvers = L{}
+  ---- DO NOT MODIFY ABOVE ------
+
 
   set_main_keybinds()
 end
@@ -964,10 +930,18 @@ function job_buff_change(buff,gain)
     elseif player.hpp > 0 then
       send_command('@input /p Doom Removed.')
     end
-  end
-
-  if buff == 'Hasso' and not gain then
-    add_to_chat(167, 'Hasso just expired!')
+  elseif all_maneuvers:contains(buff) then
+    -- When maneuver gained, add to queue
+    if gain then
+      active_maneuvers:append(buff)
+    else
+      for k,v in active_maneuvers:it() do
+        if v == buff then
+          active_maneuvers:remove(k)
+          return
+        end
+      end
+    end
   end
 end
 
@@ -981,6 +955,7 @@ function job_handle_equipping_gear(playerStatus, eventArgs)
   update_combat_form()
   update_idle_groups()
   auto_engage_pet()
+  check_maneuvers()
 end
 
 function update_combat_form()
@@ -1122,11 +1097,6 @@ function display_current_job_state(eventArgs)
 
   local ws_msg = (state.AttCapped.value and 'AttCapped') or state.WeaponskillMode.value
 
-  local d_msg = 'None'
-  if state.DefenseMode.value ~= 'None' then
-    d_msg = state.DefenseMode.value .. state[state.DefenseMode.value .. 'DefenseMode'].value
-  end
-
   local i_msg = state.IdleMode.value
 
   local pet_msg = state.PetMode.current
@@ -1144,7 +1114,6 @@ function display_current_job_state(eventArgs)
 
   add_to_chat(002, '| ' ..string.char(31,210).. 'Melee: ' ..string.char(31,001)..m_msg.. string.char(31,002)..  ' |'
       ..string.char(31,207).. ' WS: ' ..string.char(31,001)..ws_msg.. string.char(31,002)..  ' |'
-      ..string.char(31,004).. ' Defense: ' ..string.char(31,001)..d_msg.. string.char(31,002)..  ' |'
       ..string.char(31,207).. ' Idle: ' ..string.char(31,001)..i_msg.. string.char(31,002)..  ' |'
       ..string.char(31,012).. ' Pet: ' ..string.char(31,001)..pet_msg.. string.char(31,002)..  ' |'
       ..string.char(31,002)..msg)
@@ -1166,20 +1135,20 @@ function cycle_weapons(cycle_dir)
 end
 
 function cycle_pet_mode(cycle_dir)
-  if cycle_dir == 'forward' then
-    state.PetMode:cycle()
-  elseif cycle_dir == 'back' then
-    state.PetMode:cycleback()
-  elseif cycle_dir == 'reset' then
-    state.PetMode:reset()
-  end
-
-  add_to_chat(141, 'Pet Mode set to '..string.char(31,1)..state.PetMode.current)
-
-  -- Set automaton attachments
   if pet.isvalid then
     add_to_chat(123, 'Cannot update attachments while pet is active.')
   else
+    if cycle_dir == 'forward' then
+      state.PetMode:cycle()
+    elseif cycle_dir == 'back' then
+      state.PetMode:cycleback()
+    elseif cycle_dir == 'reset' then
+      state.PetMode:reset()
+    end
+  
+    add_to_chat(141, 'Pet Mode set to '..string.char(31,1)..state.PetMode.current)
+  
+    -- Set automaton attachments
     local set_name = state.PetMode.current:lower()
     equip_attachments:schedule(3, set_name)
   end
@@ -1214,6 +1183,12 @@ function pet_control(command)
   if state.AutomaticPetTargeting.value == true then
     state.AutomaticPetTargeting:set(false)
     add_to_chat(141, 'Manual pet control detected. Disabling auto targeting.')
+  end
+end
+
+function check_maneuvers()
+  if not pet.isvalid then
+    active_maneuvers = L{}
   end
 end
 
@@ -1290,30 +1265,46 @@ function job_self_command(cmdParams, eventArgs)
   end
 end
 
-function use_maneuver(maneuver_index)
+function use_maneuver(maneuver_element)
   if pet.isvalid then
-    if maneuver_index == nil then
-      for i = 1,8 do
-        local maneuver = defaultManeuvers[state.PetMode.value][i]
-        if maneuver then
-          local maneuversActive = buffactive[maneuver.name] or 0
-          if maneuversActive < maneuver.amount then
-            windower.chat.input('/pet "'..maneuver.name..'" <me>')
-            return
-          end
-        else
+    -- Block action if unable to use Maneuver
+    if midaction() then
+      return
+    end
+    for _,status in pairs(silibs.action_type_blockers) do
+      if buffactive[status] then
+        return
+      end
+    end
+    local abil_recasts = windower.ffxi.get_ability_recasts()
+    if abil_recasts[210] > 0 then
+      return
+    end
+  
+    -- Maneuver not specified, use defaults based on pet mode
+    if maneuver_element == nil then
+      -- Use next maneuver in the list if not all default maneuvers are active
+      for element,desired_amount in pairs(defaultManeuvers[state.PetMode.value]) do
+        local active = buffactive[element..' Maneuver'] or 0
+        if desired_amount > active then
+          windower.chat.input('/pet "'..element..' Maneuver" <me>')
           return
         end
       end
-      add_to_chat(123,'Current Maneuvers match Default')
-    elseif S{'1','2','3','4','5','6','7','8'}:contains(maneuver_index) then
-      if defaultManeuvers[state.PetMode.value][tonumber(maneuver_index)] then
-        windower.chat.input('/pet "'..defaultManeuvers[state.PetMode.value][tonumber(maneuver_index)].name..'" <me>')
-      else
-        add_to_chat(123,'Error: You don\'t have that many maneuvers listed.')
-      end
+      -- If we got this far, it means all default maneuvers are active, so we need to refresh duration
+      -- To find which maneuver will be updated with the next activation, check the list
+      local next_maneuver = active_maneuvers[1]
+      windower.chat.input('/pet "'..next_maneuver..'" <me>')
+      -- Move to end of list
+      active_maneuvers:remove(1)
+      active_maneuvers:append(next_maneuver)
     else
-      add_to_chat(123,'Error: Maneuver command format is wrong.')
+      maneuver_element = maneuver_element:gsub("^%l", string.upper) -- Capitalize first letter
+      if elements.list:contains(maneuver_element) then
+        windower.chat.input('/pet "'..element..' Maneuver" <me>')
+      else
+        add_to_chat(123,'Error: Maneuver command format is wrong.')
+      end
     end
   else
       add_to_chat(123,'Error: No valid pet.')
@@ -1433,4 +1424,5 @@ function unbind_keybinds()
 end
 
 function test()
+  table.vprint(windower.ffxi.get_abilities())
 end
