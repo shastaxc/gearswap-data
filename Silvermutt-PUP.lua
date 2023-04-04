@@ -69,13 +69,13 @@ function job_setup()
 
   -- Default maneuvers for each pet mode. Table keys must match PetMode values. Must have 1 for each mode.
 	defaultManeuvers = {
-		Tank =      { Fire=2, Ice=0, Wind=0, Earth=0, Lightning=0, Water=0, Light=1, Dark=0 },
-		Ranged =    { Fire=0, Ice=0, Wind=3, Earth=0, Lightning=0, Water=0, Light=0, Dark=0 },
-		RangedAcc = { Fire=0, Ice=0, Wind=3, Earth=0, Lightning=0, Water=0, Light=0, Dark=0 },
-		Heal =      { Fire=0, Ice=0, Wind=0, Earth=0, Lightning=0, Water=0, Light=2, Dark=1 },
-		MeleeSpam = { Fire=2, Ice=0, Wind=1, Earth=0, Lightning=0, Water=0, Light=0, Dark=0 },
-		MeleeSC =   { Fire=2, Ice=0, Wind=1, Earth=0, Lightning=0, Water=0, Light=0, Dark=0 },
-		Overdrive = { Fire=1, Ice=0, Wind=0, Earth=0, Lightning=1, Water=0, Light=1, Dark=0 },
+		Tank =      { Light=1, Dark=0, Fire=2, Ice=0, Wind=0, Earth=0, Lightning=0, Water=0 },
+		Ranged =    { Light=0, Dark=0, Fire=0, Ice=0, Wind=3, Earth=0, Lightning=0, Water=0 },
+		RangedAcc = { Light=0, Dark=0, Fire=0, Ice=0, Wind=3, Earth=0, Lightning=0, Water=0 },
+		Heal =      { Light=2, Dark=1, Fire=0, Ice=0, Wind=0, Earth=0, Lightning=0, Water=0 },
+		MeleeSpam = { Light=0, Dark=0, Fire=2, Ice=0, Wind=1, Earth=0, Lightning=0, Water=0 },
+		MeleeSC =   { Light=0, Dark=0, Fire=2, Ice=0, Wind=1, Earth=0, Lightning=0, Water=0 },
+		Overdrive = { Light=1, Dark=0, Fire=1, Ice=0, Wind=0, Earth=0, Lightning=1, Water=0 },
 	}
 
   ---- DO NOT MODIFY BELOW ------
