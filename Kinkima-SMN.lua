@@ -1037,7 +1037,6 @@ function job_precast(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
 
   -- Warn if trying to do blood pact without enough mp
-
   if pet.name == spell.english and pet.hpp > 50 then
     add_to_chat(122, "You already have that avatar active!")
     eventArgs.cancel = true
