@@ -1,4 +1,4 @@
--- File Status: Not terrible. Gearsets are ALL wrong.
+-- File Status: Not terrible. Gearsets are ALL wrong. Currently, reloading gearswap with pet active will screw up maneuvers.
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs
@@ -90,7 +90,8 @@ function job_setup()
   active_maneuvers = L{}
   ---- DO NOT MODIFY ABOVE ------
 
-
+  -- TODO: Determine pet's initial mode if already summoned
+  check_initial_maneuvers()
   set_main_keybinds()
 end
 
@@ -113,6 +114,12 @@ end
 
 -- Define sets and vars used by this job file.
 function init_gear_sets()
+  sets.TreasureHunter = {
+    body=gear.Herc_TH_body, --2
+    hands=gear.Herc_TH_hands, --2
+  }
+  sets.TreasureHunter.RA = set_combine(sets.TreasureHunter, {})
+
   -- This set is specifically for Strobe & Flashbulb
   sets.Enmity = {
     range="Neo Animator",
@@ -247,7 +254,8 @@ function init_gear_sets()
   })
   
   -- 32% STR / 32% VIT - Chance of Critical varies w/ TP (This is the Mythic Weaponskill)
-  sets.precast.WS['Stringing Pummel'] = set_combine(sets.precast.WS['Victory Smite'], {})
+  sets.precast.WS['Stringing Pummel'] = set_combine(sets.precast.WS['Victory Smite'], {
+  })
   sets.precast.WS['Stringing Pummel'].MaxTP = set_combine(sets.precast.WS['Victory Smite'].MaxTP, {})
  
 
@@ -1168,7 +1176,7 @@ function auto_engage_pet()
 	local abil_recasts = windower.ffxi.get_ability_recasts()
 
 	if state.AutomaticPetTargeting.value == true and pet.isvalid and pet.status == "Idle" and player.status == 'Engaged'
-      and player.target.type == "MONSTER" and abil_recasts[207] == 0 then
+      and player.target.type == "MONSTER" and abil_recasts[207] < 0.1 then
     windower.chat.input('/pet "Deploy" <t>')
 	end
 end
@@ -1254,6 +1262,12 @@ function job_self_command(cmdParams, eventArgs)
     else
       add_to_chat(123, 'Missing 2nd parameter for this command.')
     end
+  elseif cmdParams[1] == 'petactivation' then
+    if pet.isvalid then
+      windower.chat.input('/pet Deactivate <me>')
+    else
+      windower.chat.input('/ja Activate <me>')
+    end
   elseif cmdParams[1] == 'maneuver' then
     use_maneuver(cmdParams[2])
   elseif cmdParams[1] == 'bind' then
@@ -1308,6 +1322,19 @@ function use_maneuver(maneuver_element)
     end
   else
       add_to_chat(123,'Error: No valid pet.')
+  end
+end
+
+-- Upon loading file, checks to see if any maneuvers are already active and attempts to track them
+-- This is partly guesswork without having access to the exact buff durations
+-- TODO: Access buff durations to set up the active_maneuvers list in the correct order
+function check_initial_maneuvers()
+  for _,element in pairs(elements.list) do
+    local maneuver = element..' Maneuver'
+    local active = buffactive[maneuver] or 0
+    for i=0,active,1 do
+      active_maneuvers:append(maneuver)
+    end
   end
 end
 
@@ -1375,7 +1402,7 @@ function set_main_keybinds()
   send_command('bind !` gs c maneuver')
   send_command('bind !q gs c petcontrol deploy')
   send_command('bind !w gs c petcontrol retrieve')
-  send_command('bind !e input /ja "Activate" <me>')
+  send_command('bind !e gs c petactivation')
 end
 
 function set_sub_keybinds()
