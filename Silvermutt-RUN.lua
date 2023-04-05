@@ -561,9 +561,9 @@ function init_gear_sets()
     waist="Platinum Moogle Belt",                   --  3/ 3,  15 [___] (__, __); HP+10%
     -- HP from belt                                                338
     -- Merits/Traits/Gifts                                              (20, 52)
-    -- Master Levels                                                    (__, 26)
+    -- Master Levels                                                    (__, 27)
     -- Base skill                                                       (__, 388)
-    -- 49 PDT/49 MDT, 588 M.Eva [885/1223 HP] (65 Enh Duration, 507 Enh Skill)
+    -- 49 PDT/49 MDT, 588 M.Eva [885/1223 HP] (65 Enh Duration, 508 Enh Skill)
 
     -- ammo="Staunch Tathlum +1",                   --  3/ 3, ___ [___] (__, __)
     -- head="Erilaz Galea +3",                      -- __/__, 119 [111] (25, __)
@@ -620,9 +620,9 @@ function init_gear_sets()
     waist="Platinum Moogle Belt",                   --  3/ 3,  15 [___] (__, __); HP+10%
     -- HP from belt                                                320
     -- Merits/Traits/Gifts                                              (20, 52)
-    -- Master Levels                                                    (__, 24)
+    -- Master Levels                                                    (__, 27)
     -- Base skill                                                       (__, 388)
-    -- 45 PDT/42 MDT, 577 M.Eva [1025 HP] (45 Enh Duration, 534 Enh Skill)
+    -- 45 PDT/42 MDT, 577 M.Eva [1025 HP] (45 Enh Duration, 537 Enh Skill)
   }
   sets.midcast.Temper.Safe = set_combine(sets.midcast.BarElement, {})
   sets.midcast.Protect = {
@@ -663,8 +663,8 @@ function init_gear_sets()
     waist="Platinum Moogle Belt",               -- _, ___, __ [ 3/ 3,  15] ___; HP+10%
     -- HP from belt                                                        337
     -- Base/Traits/Gifts                           _, 440,  6 [__/__, ___] ___
-    -- Master Levels                                   24
-    -- 27 Phalanx, 474 Enh Skill, 17% Interrupt [46 PDT/28 MDT, 380 M.Eva] 874/1211 HP
+    -- Master Levels                                   27
+    -- 27 Phalanx, 477 Enh Skill, 17% Interrupt [46 PDT/28 MDT, 380 M.Eva] 874/1211 HP
     -- 61 Total Phalanx
     
     -- Master Levels                                   50
