@@ -459,6 +459,7 @@ function init_gear_sets()
     ring2="Varar Ring",
     back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Damage taken -5%',}},
   }
+  sets.midcast.Pet.Weaponskill.Halfsies = set_combine(sets.midcast.Pet.Weaponskill, {})
 
   -- 50% VIT - Critical hit rate varies w/ TP
   sets.midcast.Pet.Weaponskill['String Shredder'] = {
@@ -475,6 +476,7 @@ function init_gear_sets()
     ring2="Varar Ring",
     back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Damage taken -5%',}},
   }
+  sets.midcast.Pet.Weaponskill['String Shredder'].Halfsies = set_combine(sets.midcast.Pet.Weaponskill['String Shredder'], {})
 
   -- 60% VIT - This has additional effect stun, may want magic acc to help with the stun effect
   sets.midcast.Pet.Weaponskill['Bone Crusher'] = {
@@ -491,6 +493,7 @@ function init_gear_sets()
     ring2="Varar Ring",
     back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Damage taken -5%',}},
   }
+  sets.midcast.Pet.Weaponskill['Bone Crusher'].Halfsies = set_combine(sets.midcast.Pet.Weaponskill['Bone Crusher'], {})
 
   -- 50% DEX - Provides Defense Down, may want magic acc to help it land. TP Bonus to help with duration.
   sets.midcast.Pet.Weaponskill['Armor Shatterer'] = {
@@ -507,6 +510,7 @@ function init_gear_sets()
     ring2="Varar Ring",
     back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Damage taken -5%',}},
   }
+  sets.midcast.Pet.Weaponskill['Armor Shatterer'].Halfsies = set_combine(sets.midcast.Pet.Weaponskill['Armor Shatterer'], {})
 
   -- 60% DEX - TP Bonus WS - Damage Varies with TP
   sets.midcast.Pet.Weaponskill['Arcuballista'] = {
@@ -523,9 +527,11 @@ function init_gear_sets()
     ring2="Varar Ring",
     back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Damage taken -5%',}},
   }
+  sets.midcast.Pet.Weaponskill['Arcuballista'].Halfsies = set_combine(sets.midcast.Pet.Weaponskill['Arcuballista'], {})
 
   -- 60% DEX - TP Bonus - Magic Accuracy to help with Additional Effect Stun
   sets.midcast.Pet.Weaponskill['Daze'] = set_combine(sets.midcast.Pet.Weaponskill['Arcuballista'], {})
+  sets.midcast.Pet.Weaponskill['Daze'].Halfsies = set_combine(sets.midcast.Pet.Weaponskill['Arcuballista'].Halfsies, {})
 
   -- 50% STR - TP Bonus
   sets.midcast.Pet.Weaponskill['Chimera Ripper'] = {
@@ -542,6 +548,7 @@ function init_gear_sets()
     ring2="Varar Ring",
     back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Damage taken -5%',}},
   }
+  sets.midcast.Pet.Weaponskill['Chimera Ripper'].Halfsies = set_combine(sets.midcast.Pet.Weaponskill['Chimera Ripper'], {})
 
 
   ------------------------------------------------------------------------------------------------
@@ -564,6 +571,7 @@ function init_gear_sets()
     legs="Foire Churidars +2",
     waist="Ukko Sash",
   }
+  sets.midcast.Pet['Cure'].Halfsies = set_combine(sets.midcast.Pet['Cure'], {})
 
   sets.midcast.Pet['Elemental Magic'] = {
     head=gear.Rawhide_D_head,
@@ -577,6 +585,7 @@ function init_gear_sets()
     ear2="Burana Earring",
     ring1="C. Palug Ring",
   }
+  sets.midcast.Pet['Elemental Magic'].Halfsies = set_combine(sets.midcast.Pet['Elemental Magic'], {})
 
   sets.midcast.Pet['Enfeebling Magic'] ={
     head="Tali'ah Turban +2",
@@ -589,10 +598,14 @@ function init_gear_sets()
     ear1="Enmerkar Earring",
     ring1="C. Palug Ring",
   }
+  sets.midcast.Pet['Enfeebling Magic'].Halfsies = set_combine(sets.midcast.Pet['Enfeebling Magic'], {})
 
   sets.midcast.Pet['Dark Magic'] = set_combine(sets.midcast.Pet['Enfeebling Magic'], {})
+  sets.midcast.Pet['Dark Magic'].Halfsies = set_combine(sets.midcast.Pet['Enfeebling Magic'].Halfsies, {})
   sets.midcast.Pet['Divine Magic'] = set_combine(sets.midcast.Pet['Enfeebling Magic'], {})
+  sets.midcast.Pet['Divine Magic'].Halfsies = set_combine(sets.midcast.Pet['Enfeebling Magic'].Halfsies, {})
   sets.midcast.Pet['Enhancing Magic'] = set_combine(sets.midcast.Pet['Enfeebling Magic'], {})
+  sets.midcast.Pet['Enhancing Magic'].Halfsies = set_combine(sets.midcast.Pet['Enfeebling Magic'].Halfsies, {})
 
 
   ------------------------------------------------------------------------------------------------
@@ -851,6 +864,11 @@ end
 function job_precast(spell, action, spellMap, eventArgs)
   silibs.precast_hook(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
+
+  if state.HybridMode.value == 'Pet' and pet_midaction() then
+    eventArgs.cancel = true
+    add_to_chat(122, 'Action canceled because pet was midaction.')
+  end
 end
 
 -- Run after the general precast() is done.
@@ -918,12 +936,43 @@ function job_post_aftercast(spell, action, spellMap, eventArgs)
 end
 
 function job_pet_midcast(spell, action, spellMap, eventArgs)
+  -- Do not change gear for pet abilities in Master mode while engaged
+  if player.status == 'Engaged' and state.HybridMode.current == 'Master' then
+    eventArgs.handled = true
+  else
+    if spell.action_type == 'Magic' then
+      equip(get_pup_midcast_set(spell, spellMap))
+    elseif petWeaponskills:contains(spell.english) then
+        classes.CustomClass = "Weaponskill"
+      if sets.midcast.Pet.WeaponSkill[spell.english] then
+        if state.HybridMode.current == 'Halfsies' and sets.midcast.Pet.WeaponSkill[spell.english]['Halfsies'] then
+          equip(sets.midcast.Pet.WeaponSkill[spell.english]['Halfsies'] )
+        else
+          equip(sets.midcast.Pet.WeaponSkill[spell.english])
+        end
+      else
+        if state.HybridMode.current == 'Halfsies' and sets.midcast.Pet.WeaponSkill['Halfsies'] then
+          equip(sets.midcast.Pet.WeaponSkill['Halfsies'])
+        else
+          equip(sets.midcast.Pet.WeaponSkill)
+        end
+      end
+    end
+  end
+end
+
+-- Called when a player gains or loses a pet.
+-- pet == pet structure
+-- gain == true if the pet was gained, false if it was lost.
+function job_pet_change(petparam, gain)
+  active_maneuvers = L{}
+  handle_equipping_gear(player.status)
 end
 
 -- Called when the pet's status changes.
 function job_pet_status_change(newStatus, oldStatus)
   if pet.isvalid and not midaction() and not pet_midaction() and (newStatus == 'Engaged' or oldStatus == 'Engaged') then
-      handle_equipping_gear(player.status, newStatus)
+    handle_equipping_gear(player.status, newStatus)
   end
 end
 
@@ -1004,21 +1053,25 @@ end
 
 -- Modify the default idle set after it was constructed.
 function customize_idle_set(idleSet)
-  -- If not in defensive mode put on move speed gear
-  if state.IdleMode.current == 'Normal' and state.DefenseMode.value == 'None' then
-    if classes.CustomIdleGroups:contains('Adoulin') then
-      idleSet = set_combine(idleSet, sets.Kiting.Adoulin)
-    else
-      idleSet = set_combine(idleSet, sets.Kiting)
+  if not pet_midaction() then
+    if pet.isvalid then
+      if pet.status == 'Engaged' then
+        idleSet = set_combine(idleSet, sets.idle.PetEngaged[state.PetMode.value])
+      end
     end
-  end
-
-  if pet.status == 'Engaged' then
-    idleSet = set_combine(idleSet, sets.idle.PetEngaged[state.PetMode.value])
-  end
-
-  if state.CP.current == 'on' then
-    idleSet = set_combine(idleSet, sets.CP)
+  
+    -- If not in DT mode put on move speed gear
+    if state.IdleMode.current == 'Normal' and state.DefenseMode.value == 'None' then
+      -- Apply movement speed gear
+      if classes.CustomIdleGroups:contains('Adoulin') then
+        idleSet = set_combine(idleSet, sets.Kiting.Adoulin)
+      else
+        idleSet = set_combine(idleSet, sets.Kiting)
+      end
+      if state.CP.current == 'on' then
+        idleSet = set_combine(idleSet, sets.CP)
+      end
+    end  
   end
 
   -- If slot is locked to use no-swap gear, keep it equipped
@@ -1037,8 +1090,16 @@ end
 
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
-  if state.CP.current == 'on' then
-    meleeSet = set_combine(meleeSet, sets.CP)
+  if not pet_midaction() then
+    if pet.isvalid then
+      if pet.status == 'Engaged' and state.HybridMode.value ~= 'Master' then
+        meleeSet = set_combine(meleeSet, sets.engaged[state.HybridMode.value..state.PetMode.value])
+      end
+    end
+
+    if state.CP.current == 'on' then
+      meleeSet = set_combine(meleeSet, sets.CP)
+    end
   end
 
   -- If slot is locked to use no-swap gear, keep it equipped
@@ -1048,10 +1109,6 @@ function customize_melee_set(meleeSet)
   if locked_ring1 then meleeSet = set_combine(meleeSet, { ring1=player.equipment.ring1 }) end
   if locked_ring2 then meleeSet = set_combine(meleeSet, { ring2=player.equipment.ring2 }) end
 
-  if buffactive['sleep'] and player.vitals.hp > 500 and player.status == 'Engaged' then
-    meleeSet = set_combine(meleeSet, sets.Special.SleepyHead)
-  end
-
   if buffactive.Doom then
     meleeSet = set_combine(meleeSet, sets.buff.Doom)
   end
@@ -1060,8 +1117,10 @@ function customize_melee_set(meleeSet)
 end
 
 function customize_defense_set(defenseSet)
-  if state.CP.current == 'on' then
-    defenseSet = set_combine(defenseSet, sets.CP)
+  if not pet_midaction() then
+    if state.CP.current == 'on' then
+      meleeSet = set_combine(meleeSet, sets.CP)
+    end
   end
 
   -- If slot is locked to use no-swap gear, keep it equipped
@@ -1070,10 +1129,6 @@ function customize_defense_set(defenseSet)
   if locked_ear2 then defenseSet = set_combine(defenseSet, { ear2=player.equipment.ear2 }) end
   if locked_ring1 then defenseSet = set_combine(defenseSet, { ring1=player.equipment.ring1 }) end
   if locked_ring2 then defenseSet = set_combine(defenseSet, { ring2=player.equipment.ring2 }) end
-
-  if buffactive['sleep'] and player.vitals.hp > 500 and player.status == 'Engaged' then
-    defenseSet = set_combine(defenseSet, sets.Special.SleepyHead)
-  end
 
   if buffactive.Doom then
     defenseSet = set_combine(defenseSet, sets.buff.Doom)
@@ -1329,13 +1384,50 @@ end
 -- This is partly guesswork without having access to the exact buff durations
 -- TODO: Access buff durations to set up the active_maneuvers list in the correct order
 function check_initial_maneuvers()
-  for _,element in pairs(elements.list) do
+  for element in pairs(elements.list) do
     local maneuver = element..' Maneuver'
     local active = buffactive[maneuver] or 0
     for i=0,active,1 do
       active_maneuvers:append(maneuver)
     end
   end
+end
+
+-- Get the default pet midcast gear set.
+-- This is built in sets.midcast.Pet.
+function get_pup_midcast_set(spell, spellMap)
+  -- If there are no midcast sets defined, bail out.
+  if not sets.midcast or not sets.midcast.Pet then
+    return {}
+  end
+
+  local equipSet = sets.midcast.Pet
+
+  if sets.midcast and sets.midcast.Pet then
+    classes.SkipSkillCheck = false
+    equipSet = select_specific_set(equipSet, spell, spellMap)
+
+    -- Inject hybrid mode if not Master
+    if state.HybridMode.current == 'Halfsies' and equipSet['Halfsies'] then
+      equipSet = equipSet['Halfsies']
+    end
+
+    -- We can only generally be certain about whether the pet's action is
+    -- Magic (ie: it cast a spell of its own volition) or Ability (it performed
+    -- an action at the request of the player).  Allow CastinMode and
+    -- OffenseMode to refine whatever set was selected above.
+    if spell.action_type == 'Magic' then
+      if equipSet[state.CastingMode.current] then
+        equipSet = equipSet[state.CastingMode.current]
+      end
+    elseif spell.action_type == 'Ability' then
+      if equipSet[state.OffenseMode.current] then
+        equipSet = equipSet[state.OffenseMode.current]
+      end
+    end
+  end
+
+  return equipSet
 end
 
 function check_gear()
