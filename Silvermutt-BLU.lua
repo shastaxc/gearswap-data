@@ -1711,16 +1711,6 @@ function in_battle_mode()
   return state.WeaponSet.current ~= 'Casting' or state.ToyWeapons.current ~= 'None'
 end
 
--- Select default macro book on initial load or subjob change.
-function select_default_macro_book()
-  -- Default macro set/book
-  if player.sub_job == 'RDM' then
-      set_macro_page(2, 3)
-  end
-
-  set_macro_page(3,3)
-end
-
 function check_gear()
   if no_swap_necks:contains(player.equipment.neck) then
     locked_neck = true
@@ -1756,6 +1746,16 @@ windower.register_event('zone change', function()
   if locked_ring1 then equip({ ring1=empty }) end
   if locked_ring2 then equip({ ring2=empty }) end
 end)
+
+-- Select default macro book on initial load or subjob change.
+function select_default_macro_book()
+  -- Default macro set/book
+  if player.sub_job == 'RDM' then
+      set_macro_page(2, 3)
+  end
+
+  set_macro_page(2,3)
+end
 
 function set_main_keybinds()
   send_command('bind !s gs c faceaway')
