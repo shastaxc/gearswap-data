@@ -1237,12 +1237,10 @@ function init_gear_sets()
   -- Cap SIRD and DT
   sets.buff['Immanence'] = set_combine(sets.midcast.CureNormal, {})
   sets.buff['Penury'] = {
-    legs="Arbatel Pants",
-    -- legs="Arbatel Pants +1",
+    legs="Arbatel Pants +1",
   }
   sets.buff['Parsimony'] = {
-    legs="Arbatel Pants",
-    -- legs="Arbatel Pants +1",
+    legs="Arbatel Pants +1",
   }
   sets.buff['Celerity'] = {
     feet="Pedagogy Loafers +3",
