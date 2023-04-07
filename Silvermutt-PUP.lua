@@ -7,6 +7,15 @@
 -- Misc Recommendations: Disable RollTracker
 
 -------------------------------------------------------------------------------------------------------------------
+-- Notes about this specific lua
+-------------------------------------------------------------------------------------------------------------------
+-- With my attachments, I only need 21% Pet DT to cap when using tank mode. I will aim for that in all sets that do
+-- not have a specific set based on pet mode. The minimum attachments/frame for this are:
+-- Valoredge frame (12.5%), Armor Plate II (10%), Armor Plate IV (20%), Optic Fiber, Optic Fiber II
+-- Optic fibers will add -15% DT with these armor plates and 1 light maneuver, and remember you get -9% DT from
+-- Stout Servant III trait.
+
+-------------------------------------------------------------------------------------------------------------------
 --  Keybinds
 -------------------------------------------------------------------------------------------------------------------
 
@@ -114,12 +123,34 @@ end
 
 -- Define sets and vars used by this job file.
 function init_gear_sets()
+  -- Pet DT options [PDT/MDT, M.Eva] {Pet: PDT/MDT, Level}:
+  -- head="Hike Khat +1",             -- [13/__,  75] { 5/ 5, ___}
+  -- head=gear.Anwig_Salade,          -- [__/__, ___] {10/10, ___}
+  -- head=gear.Taeon_Pet_DT_head,     -- [__/__,  73] { 4/ 4, ___}; Augs: +20 M.Eva, +4 Pet DT
+  -- body=gear.Taeon_Pet_DT_body,     -- [__/__,  84] { 4/ 4, ___}; Augs: +20 M.Eva, +4 Pet DT
+  -- hands=gear.Taeon_Pet_DT_hands,   -- [__/__,  57] { 4/ 4, ___}; Augs: +20 M.Eva, +4 Pet DT
+  -- legs="Foire Churidars +3",       -- [__/__, 104] { 6/ 6, ___}
+  -- legs="Tali'ah Seraweels +2",     -- [__/__,  69] { 5/ 5, ___}
+  -- legs=gear.Taeon_Pet_DT_legs,     -- [__/__,  89] { 4/ 4, ___}; Augs: +20 M.Eva, +4 Pet DT
+  -- feet=gear.Taeon_Pet_DT_feet,     -- [__/__,  89] { 4/ 4, ___}; Augs: +20 M.Eva, +4 Pet DT
+  -- feet="Mpaca's Boots",            -- [ 6/__,  96] {__/__,   1}
+  -- neck="Shepherd's Chain",         -- [__/__, ___] { 2/ 2, ___}
+  -- ear1="Handler's Earring +1",     -- [__/__, ___] { 4/__, ___}
+  -- ear1="Enmerkar Earring",         -- [__/__, ___] { 3/ 3, ___}
+  -- ear1="Hypaspist Earring",        -- [-5/__, ___] { 5/__, ___}
+  -- ear1="Rimeice Earring",          -- [__/__, ___] { 1/ 1, ___}
+  -- ear2="Karagoz Earring +2",       -- [__/__, ___] {__/__,   1}
+  -- ring1="Thurandaut Ring +1",      -- [__/__, ___] { 4/ 4, ___}; Adoulin ring
+  -- back=gear.PUP_ambu_cape,         -- [__/__, ___] { 5/ 5,   1}
+  -- waist="Isa Belt",                -- [__/__, ___] { 3/ 3, ___}
+
   sets.TreasureHunter = {
     body=gear.Herc_TH_body, --2
     hands=gear.Herc_TH_hands, --2
   }
   sets.TreasureHunter.RA = set_combine(sets.TreasureHunter, {})
 
+  -- TODO: update
   -- This set is specifically for Strobe & Flashbulb
   sets.Enmity = {
     range="Neo Animator",
@@ -143,19 +174,27 @@ function init_gear_sets()
   ---------------------------------------- Precast Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
 
-  -- Your Auto starts off with Burden, to help reduce the burden equip Overload - gear. Don't forget ambu cape for Lvl+1
+  -- Your Auto starts off with Burden, to help reduce the burden equip Overload- gear.
   sets.precast.JA['Activate'] = {
-    body="Kara. Farsetto +1",
-    hands="Foire Dastanas +2",
-    neck="Buffoon's Collar",
-    feet="Mpaca's Boots",
-    ear2="Burana Earring",
-    back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Pet: Haste+10','Pet: Damage taken -5%',}},
+    range="Neo Animator",             -- __ [__/__, ___] {__/__, 119} __
+    head="Hike Khat +1",              -- __ [13/__,  75] { 5/ 5, ___} __
+    body="Karagoz Farsetto +3",       -- 40 [13/13, 109] {__/__, ___} __
+    hands="Foire Dastanas +3",        --  5 [__/__,  46] {__/__, ___}  5
+    legs="Foire Churidars +3",        -- __ [__/__,  84] { 6/ 6, ___} __
+    feet="Mpaca's Boots",             -- __ [ 6/__,  96] {__/__,   1} __
+    neck="Buffoon's Collar +1",       --  5 [__/__, ___] {__/__, ___} __
+    ear1="Burana Earring",            -- __ [__/__, ___] {__/__, ___}  1
+    ear2="Karagoz Earring +2",        -- __ [__/__, ___] {__/__,   1} __
+    ring1="Defending Ring",           -- __ [10/10, ___] {__/__, ___} __
+    ring2="Gelatinous Ring +1",       -- __ [ 7/-1, ___] {__/__, ___} __
+    back=gear.PUP_Pet_Engaged_Cape,   -- 10 [__/__, ___] { 5/ 5,   1} __
+    waist="Isa Belt",                 -- __ [__/__, ___] { 3/ 3, ___} __
+    -- 60 Overload- [49 PDT/22 MDT, 410 M.Eva] {Pet: 19 PDT/19 MDT, 122 Lv+} 6 Maneuver+
   }
-
   sets.precast.JA['Deus Ex Automata'] = set_combine(sets.precast.JA['Activate'], {})
+  sets.precast.JA['Maneuver'] = set_combine(sets.precast.JA['Activate'], {})
 
-  -- Equip Repair + equipment and Pet HP+ to help increase
+  -- Equip Repair+ equipment and Pet HP+ to help increase
   sets.precast.JA['Maintenance'] = {
     -- legs=gear.DesultorTassets,
     feet="Foire Babouches +2",
@@ -176,15 +215,6 @@ function init_gear_sets()
   }
   sets.precast.JA['Ventriloquy'] = {
     legs="Pitre Churidars +3",
-  }
-
-  -- Put on Overload - Equipment
-  sets.precast.JA.Maneuver = {
-    body="Kara. Farsetto +1",
-    hands="Foire Dastanas +2",
-    neck="Buffoon's Collar",
-    ear2="Burana Earring",
-    back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Damage taken -5%',}},
   }
 
   sets.precast.Waltz = {
@@ -555,7 +585,7 @@ function init_gear_sets()
   ---------------------------------------- Midcast Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
 
-	-- 50% Cure potency
+	--------------------- Master-casted spells ---------------------
   sets.midcast['Cure'] = {
     body="Nefer Kalasiris",
     legs="Gyve Trousers",
@@ -567,6 +597,7 @@ function init_gear_sets()
 
   sets.midcast['Refresh'] = {}
 
+  --------------------- Pet casted spells ---------------------
   sets.midcast.Pet['Cure'] = {
     legs="Foire Churidars +2",
     waist="Ukko Sash",
@@ -669,17 +700,17 @@ function init_gear_sets()
   sets.idle.PetEngaged.Tank = {
     range="Neo Animator",
     ammo="Automat. Oil +3",
-    head=gear.Anwig_Salade,
-    body=gear.Taeon_Pet_DT_body,
-    hands=gear.Taeon_Pet_DT_hands,
-    legs=gear.Taeon_Pet_DT_legs,
-    feet=gear.Taeon_Pet_DT_feet,
-    neck="Empath Necklace",
-    waist="Isa Belt",
-    ear1="Rimeice Earring",
-    ear2="Handler's Earring +1",
-    ring1="Varar Ring",
-    ring2="Thurandaut Ring",
+    head=gear.Anwig_Salade,       -- 10
+    body=gear.Taeon_Pet_DT_body,  --  4
+    hands=gear.Taeon_Pet_DT_hands,--  4
+    legs=gear.Taeon_Pet_DT_legs,  --  4
+    feet=gear.Taeon_Pet_DT_feet,  --  4
+    neck="Empath Necklace",       -- __
+    waist="Isa Belt",             --  3
+    ear1="Rimeice Earring",       --  1
+    ear2="Handler's Earring +1",  --  4
+    ring1="Varar Ring",           -- __
+    ring2="Thurandaut Ring",      --  3
     back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','System: 1 ID: 1246 Val: 4',}},
   }
   sets.idle.PetEngaged.Ranged = {
