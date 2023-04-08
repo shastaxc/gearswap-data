@@ -76,7 +76,7 @@ function user_setup()
 
   include('Global-Binds.lua') -- Additional local binds
 
-  state.WeaponSet = M{['description']='Weapon Set', 'Shining One', 'Naegling', 'Staff'}
+  state.WeaponSet = M{['description']='Weapon Set', 'Naegling', 'Shining One', 'Staff'}
 
   update_melee_groups()
   select_default_macro_book()
