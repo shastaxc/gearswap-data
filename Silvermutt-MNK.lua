@@ -373,10 +373,10 @@ function init_gear_sets()
     body="Malignance Tabard",
     hands="Malignance Gloves",
     legs="Mpaca's Hose",
-    feet=gear.Herc_TA_feet,
+    feet="Kendatsuba Sune-Ate +1",
     neck="Monk's Nodowa +2",
     ear1="Sherida Earring",
-    ear2="Schere Earring",
+    ear2="Odr Earring",
     ring1="Ilabrat Ring",
     ring2="Niqmaddu Ring",
     back=gear.MNK_DEX_DA_Cape,
@@ -409,7 +409,7 @@ function init_gear_sets()
     ear1="Sherida Earring",
     ear2="Ishvara Earring",
     ring1="Epaminondas's Ring",
-    ring2="Sroda Ring",
+    ring2="Niqmaddu Ring",
     back=gear.MNK_STR_DA_Cape, -- WSD cape would be better
     waist="Fotia Belt",
   })
@@ -463,11 +463,10 @@ function init_gear_sets()
     ring1="Gere Ring",
     ring2="Niqmaddu Ring",
     back=gear.MNK_STR_DA_Cape,
-    waist="Fotia Belt",
+    waist="Moonbow Belt +1",
   })
   sets.precast.WS["Raging Fists"].MaxTP = set_combine(sets.precast.WS["Raging Fists"], {
     ear2="Ishvara Earring",
-    waist="Moonbow Belt +1",
     -- head="Hesychast's Crown +3",
   })
   sets.precast.WS["Raging Fists"].Safe = set_combine(sets.precast.WS["Raging Fists"], {
@@ -491,6 +490,8 @@ function init_gear_sets()
     ring2="Niqmaddu Ring",
     back=gear.MNK_STR_DA_Cape,
     waist="Moonbow Belt +1",
+
+    -- back=gear.MNK_VIT_DA_Cape,
   })
   sets.precast.WS["Howling Fist"].MaxTP = set_combine(sets.precast.WS["Howling Fist"], {
     head=gear.Adhemar_B_head,
@@ -566,33 +567,28 @@ function init_gear_sets()
   })
 
   sets.MAB = {
-    ammo="Pemphredo Tathlum",       --  4
-    head=gear.Nyame_B_head,         -- 30
-    body=gear.Nyame_B_body,         -- 30
-    hands=gear.Nyame_B_hands,       -- 30
-    legs=gear.Nyame_B_legs,         -- 30
-    feet=gear.Herc_MAB_feet,        -- 57
-    neck="Sibyl Scarf",             -- 10
-    ear1="Friomisi Earring",        -- 10
-    ear2="Novio Earring",           --  7
-    ring1="Shiva Ring +1",          --  3
-    back="Argochampsa Mantle",      -- 12
-    waist="Skrymir Cord",           --  5
-    -- back=gear.MNK_MAB_Cape,      -- 10
-    -- waist="Skrymir Cord +1",     --  7
   }
 
   -- Cataclysm: 30% STR/30% INT, 2.75-5.0 fTP, 1 hit (aoe-magical)
   -- Stack MAB > WSD
-  sets.precast.WS['Cataclysm'] = set_combine(sets.precast.WS, sets.MAB, {
+  sets.precast.WS['Cataclysm'] = {
     ammo="Knobkierrie",             -- __, __, __,  6
     head="Pixie Hairpin +1",        -- 28, __, __, __
+    body=gear.Nyame_B_body,         -- 30
+    hands=gear.Nyame_B_hands,       -- 30
+    legs=gear.Nyame_B_legs,         -- 30
+    feet=gear.Herc_MAB_feet,        -- 57
     neck="Fotia Gorget",            -- __, __, __, __; FTP bonus
+    ear1="Friomisi Earring",        -- 10
     ear2="Moonshade Earring",       -- __, __, __, __; TP bonus
+    ring1="Shiva Ring +1",          --  3
     ring2="Archon Ring",            --  5, __, __, __
+    back="Argochampsa Mantle",      -- 12
     waist="Skrymir Cord",           -- __,  5, 30, __
     -- ammo="Ghastly Tathlum +1",   -- __, __, 21, __
-  })
+    -- back=gear.MNK_MAB_Cape,      -- 10
+    -- waist="Skrymir Cord +1",     --  7
+  }
   sets.precast.WS['Cataclysm'].MaxTP = set_combine(sets.precast.WS['Cataclysm'], {
     ear2="Novio Earring",           -- __,  7, __, __
   })
