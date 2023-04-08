@@ -645,21 +645,21 @@ function init_gear_sets()
     head=gear.Nyame_B_head,           -- __, 26, __ [ 7/ 7, 123]
     body="Shamash Robe",              -- __, 40, __ [10/__, 106]
     hands=gear.Telchine_ENH_hands,    -- 17, 33, __ [__/__,  61]
-    legs=gear.Nyame_B_legs,           -- __, 32, __ [ 8/ 8, 150]
+    legs="Carmine Cuisses +1",        -- __, 16, 20 [__/__,  80]
     feet=gear.Nyame_B_feet,           -- __, 26, __ [ 7/ 7, 150]
     neck="Loricate Torque +1",        -- __, __,  5 [ 6/ 6, ___]
     ear1="Regal Earring",             -- __, 10, __ [__/__, ___]
     ear2="Halasz Earring",            -- __, __,  5 [__/__, ___]
     ring1="Defending Ring",           -- __, __, __ [10/10, ___]
-    ring2="Stikini Ring +1",          -- __,  5, __ [__/__, ___]
+    ring2="Freke Ring",               -- __, __, 10 [__/__, ___]
     back=gear.BLU_FC_Cape,            -- __, 30, __ [10/__, ___]
     waist="Sanctuary Obi +1",         -- __, __, 10 [__/__, ___]
     -- Merits                            __, __, 10 [__/__, ___]
+    -- 50 Cure Potency, 196 MND, 71 SIRD [53 PDT / 33 MDT, 520 M.Eva]
+
     -- hands=gear.Telchine_ENH_hands, -- 18, 33, __ [__/__,  62]
-    -- legs="Carmine Cuisses +1",     -- __, 16, 20 [__/__,  80]
-    -- ring2="Freke Ring",            -- __, __, 10 [__/__, ___]
     -- 51 Cure Potency, 196 MND, 71 SIRD [53 PDT / 33 MDT, 521 M.Eva]
-  } -- 47 Cure Potency, 217 MND, 41 SIRD [61 PDT / 41 MDT, 590 M.Eva]
+  }
 
   sets.midcast['Blue Magic'].HealingSelf = set_combine(sets.midcast['Blue Magic'].Healing, {
     ear2="Mendicant's Earring", -- (5)

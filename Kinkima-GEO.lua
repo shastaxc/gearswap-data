@@ -649,7 +649,7 @@ function init_gear_sets()
     ear1="Malignance Earring", --8
     ear2="Regal Earring", --7
     ring1="Metamorph Ring +1",
-    ring2="Stikini Ring +1",
+    ring2="Freke Ring",
     back=gear.GEO_Nuke_Cape,
     waist="Refoccilation Stone", --10
     

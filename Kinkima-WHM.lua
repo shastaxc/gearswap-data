@@ -333,31 +333,27 @@ function init_gear_sets()
   -- Cap at 700 power; Power = floor(MND÷2) + floor(VIT÷4) + Healing Magic Skill
   sets.midcast.CureNormal = {
     main="Eremite's Wand +1",         -- __, __, 25 [__/__, ___] __
-    sub="Genbu's Shield",             -- __,  5, __ [10/__, ___] __
+    sub="Genmei Shield",              -- __, __, __ [10/__, ___] __
     ammo="Staunch Tathlum +1",        -- __, __, 11 [ 3/ 3, ___] __
     head=gear.Kaykaus_C_head,         -- __, 11, 12 [__/ 3,  75] __
     body=gear.Kaykaus_C_body,         --  4, __, 12 [__/__,  80] __
-    hands=gear.Chironic_SIRD_hands,   -- __, __, 31 [__/__,  48] __; Can add more DT or Enmity
+    hands=gear.Kaykaus_C_hands,       -- __, 11, 12 [__/__,  37]  6
     legs="Ebers Pantaloons +2",       -- __, __, __ [12/12, 147] __; 7% healing to MP
     feet=gear.Kaykaus_D_feet,         -- __, 17, __ [__/__, 107]  6
     neck="Cleric's Torque +1",        -- __,  7, __ [__/__, ___] 20
-    ear1="Novia Earring",             -- __, __, __ [__/__, ___]  7
+    ear1="Etiolation Earring",        -- __, __, __ [__/ 3, ___] __; Resist Silence +15
     ear2="Ebers Earring",             -- __, __, __ [__/__, ___]  7
-    ring1="Gelatinous Ring +1",       -- __, __, __ [ 7/-1, ___] __
+    ring1="Freke Ring",               -- __, __, 10 [__/__, ___] __
     ring2="Defending Ring",           -- __, __, __ [10/10, ___] __
     back=gear.WHM_CP_Cape,            -- __, 10, __ [10/__, ___] __
     waist="Sanctuary Obi +1",         -- __, __, 10 [__/__, ___]  4
-    -- Kaykaus bonus                      6, __, __ [__/__, ___] __
+    -- Kaykaus bonus                      8, __, __ [__/__, ___] __
     -- Merit points                      __, __, 10 [__/__, ___]  5
-    -- 10 CPII, 50 CP, 111 SIRD [52 PDT/27 MDT, 457 M.Eva] 49 -Enmity
+    -- 12 CPII, 56 CP, 102 SIRD [45 PDT/31 MDT, 446 M.Eva] 48 -Enmity
     
-    -- sub="Genmei Shield",           -- __, __, __ [10/__, ___] __
-    -- hands=gear.Kaykaus_C_hands,    -- __, 11, 12 [__/__,  37]  6
     -- legs="Ebers Pantaloons +3",    -- __, __, __ [13/13, 157] __; 8% healing to MP
     -- neck="Cleric's Torque +2",     -- __, 10, __ [__/__, ___] 25
-    -- ear1="Etiolation Earring",     -- __, __, __ [__/ 3, ___] __; Resist Silence +15
     -- ear2="Ebers Earring +2",       -- __, __, __ [ 8/ 8, ___]  9
-    -- ring1="Freke Ring",            -- __, __, 10 [__/__, ___] __
     -- Kaykaus bonus                      8, __, __ [__/__, ___] __
     -- 12 CPII, 59 CP, 102 SIRD [54 PDT/40 MDT, 456 M.Eva] 55 -Enmity
   }
@@ -553,17 +549,16 @@ function init_gear_sets()
     neck="Cleric's Torque +1",        --  7 [__/__, ___] __, 20; Erase+1
     ear1="Halasz Earring",            -- __ [__/__, ___]  5,  3
     ear2="Nourishing Earring +1",     -- __ [__/__, ___]  5, __; Resist Silence +15
-    ring1="Gelatinous Ring +1",       -- __ [ 7/-1, ___] __, __
+    ring1="Freke Ring",               -- __ [__/__, ___] 10, __
     ring2="Defending Ring",           -- __ [10/10, ___] __, __
     back=gear.WHM_FC_Cape,            -- 10 [10/__,  20] __, __
     waist="Sanctuary Obi +1",         -- __ [__/__, ___] 10,  4
     -- Merits                                            10,  5
-    -- 31 FC [54 PDT/37 MDT, 537 MEVA] 92 SIRD, 48 -Enmity
+    -- 31 FC [47 PDT/38 MDT, 537 MEVA] 102 SIRD, 48 -Enmity
     
     -- hands="Ebers Mitts +3",        -- __ [11/11,  87] __, 12
     -- legs="Ebers Pantaloons +3",    -- __ [13/13, 157] __, __
     -- neck="Cleric's Torque +2",     -- 10 [__/__, ___] __, 25; Erase+1
-    -- ring1="Freke Ring",            -- __ [__/__, ___] 10, __
     -- Merits                                            10,  5
     -- 34 FC [49 PDT/40 MDT, 557 MEVA] 102 SIRD, 54 -Enmity
   }
@@ -580,11 +575,12 @@ function init_gear_sets()
     neck="Loricate Torque +1",        -- [ 6/ 6, ___] __,  5, __; +Defense
     ear1="Halasz Earring",            -- [__/__, ___] __,  5,  3
     ear2="Novia Earring",             -- [__/__, ___] __, __,  7
+    ring1="Freke Ring",               -- [__/__, ___] __, 10, __
     ring2="Defending Ring",           -- [10/10, ___] __, __, __
     back="Mending Cape",              -- [__/__, ___]  1, __,  6
     waist="Sanctuary Obi +1",         -- [__/__, ___] __, 10,  4
     -- Merits                                             10,  5
-    -- [51PDT/44MDT, 532 MEVA] 5 Divine Caress, 92 SIRD, 46 -Enmity
+    -- [51PDT/44MDT, 532 MEVA] 5 Divine Caress, 102 SIRD, 46 -Enmity
     
     -- main="Yagrush",                -- [__/__, ___] __, __, __; AoE status removal
     -- sub="Culminus",                -- [__/__, ___] __, 10, __

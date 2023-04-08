@@ -931,11 +931,11 @@ function init_gear_sets()
     neck="Sanctity Necklace",         -- __, 10, 10, ___, ___, __, __
     ear1="Malignance Earring",        --  8, 10,  8, ___, ___, __, __
     ear2="Regal Earring",             -- 10, __,  7, ___, ___, __, __
-    ring1="Stikini Ring +1",          -- __, 11, __, ___, ___, __, __
+    ring1="Freke Ring",               -- 10, __,  8, ___, ___, __, __
     ring2="Metamorph Ring +1",        -- 16, 15, __, ___, ___, __, __
     back=gear.SCH_MAB_Cape,           -- 30, 20, 10, ___,  20, __, __
     waist="Refoccilation Stone",      -- __,  4, 10, ___, ___, __, __
-    -- 279 INT, 377 MAcc, 367 MAB, 255 MAccSk, 288 MDmg, 15 MB Dmg%, 8 MB2 Dmg%
+    -- 289 INT, 366 MAcc, 375 MAB, 255 MAccSk, 288 MDmg, 15 MB Dmg%, 8 MB2 Dmg%
     
     -- Ideal:
     -- main="Bunzi's Rod",            -- 15, 55, 65, 255, 248, 10, __; R30
@@ -967,11 +967,11 @@ function init_gear_sets()
     neck="Argute Stole +2",           -- 15, 30, __, ___,  25, 10, __
     ear1="Malignance Earring",        --  8, 10,  8, ___, ___, __, __
     ear2="Regal Earring",             -- 10, __,  7, ___, ___, __, __
-    ring1="Metamorph Ring +1",        -- 16, 15, __, ___, ___, __, __
+    ring1="Freke Ring",               -- 10, __,  8, ___, ___, __, __
     ring2="Mujin Band",               -- __, __, __, ___, ___, __,  5
     back=gear.SCH_MAB_Cape,           -- 30, 20, 10, ___,  20, __, __
     waist="Refoccilation Stone",      -- __,  4, 10, ___, ___, __, __
-    -- 294 INT, 386 MAcc, 357 MAB, 255 MAccSk, 313 MDmg, 25 MB Dmg%, 13 MB2 Dmg%
+    -- 288 INT, 371 MAcc, 365 MAB, 255 MAccSk, 313 MDmg, 25 MB Dmg%, 13 MB2 Dmg%
 
     -- main="Bunzi's Rod",            -- 15, 55, 65, 255, 248, 10, __; R30
     -- sub="Ammurapi Shield",         -- 13, 38, 38, ___, ___, __, __
@@ -1019,6 +1019,7 @@ function init_gear_sets()
     legs="Pedagogy Pants +3",         -- 47, 39, 51, ___, ___, __, __; Elemental skill +19
     feet="Arbatel Loafers +2",        -- 29, 50, 45, ___,  20, __,  4; Elemental skill +28
     neck="Argute Stole +2",           -- 15, 30, __, ___,  25, 10, __
+    ring1="Freke Ring",               -- 10, __,  8, ___, ___, __, __
     waist="Acuity Belt +1",           -- 23, 15, __, ___, ___, __, __
     
     -- main="Bunzi's Rod",            -- 15, 55, 65, 255, 248, 10, __; R30
