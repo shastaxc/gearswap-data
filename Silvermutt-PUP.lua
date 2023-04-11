@@ -15,6 +15,18 @@
 -- Optic fibers will add -15% DT with these armor plates and 1 light maneuver, and remember you get -9% DT from
 -- Stout Servant III trait.
 
+-- The intended use for pet is to set your pet mode using the cycle before summoning the pet. You cannot change
+-- mode while pet is active (because the game restricts you from changing attachments when pet is active).
+
+-- You can add or remove pet modes from the cycle but if you add, you should also make sure there is a corresponding
+-- set name in AutoControl addon so it can equip the proper attachments. You should also add a corresponding entry
+-- to the defaultManeuvers table, and sets for sets.idle.PetEngaged.NewNameHere, sets.engaged.Pet.NewNameHere, and
+-- sets.engaged.Halfsies.NewNameHere (the additional .Acc sets are optional).
+
+-- For Overdrive, it is expected that you will manually deactivate your pet, change pet mode to the appropriate
+-- pet mode (I only have one set for it called OverdriveDD), reactivate your pet, then use the Overdrive JA.
+-- It is also expected that you will deactivate the pet, change pet mode, and reactivate again after Overdrive.
+
 -------------------------------------------------------------------------------------------------------------------
 --  Keybinds
 -------------------------------------------------------------------------------------------------------------------
@@ -1508,6 +1520,11 @@ function job_self_command(cmdParams, eventArgs)
     if pet.isvalid then
       windower.chat.input('/pet Deactivate <me>')
     else
+      -- Check if still setting attachments
+      if is_setting_attachments then
+        add_to_chat(123, 'Not activating automaton while setting attachments. Please wait.')
+        return
+      end
       windower.chat.input('/ja Activate <me>')
     end
   elseif cmdParams[1] == 'maneuver' then
