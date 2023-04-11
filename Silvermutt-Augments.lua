@@ -77,6 +77,9 @@ gear.Herc_Phalanx_feet = { name="Herculean Boots", augments={'MND+14','Weapon sk
 
 gear.Herc_Snap_head = { name="Herculean Helm", augments={'Rng.Acc.+1','"Snapshot"+6','Rng.Atk.+8',}}
 
+gear.Herc_Repair_hands = {} -- Repair+8
+gear.Herc_Repair_legs = {} -- Repair+8
+
 -- Merlinic
 
 gear.Merl_FC_head = { name="Merlinic Hood", augments={'Mag. Acc.+4 "Mag.Atk.Bns."+4','"Fast Cast"+5','Mag. Acc.+4',}}
@@ -141,11 +144,11 @@ gear.Taeon_Phalanx_feet = gear.Taeon_FC_feet
 
 gear.Taeon_RA_head = { name="Taeon Chapeau", augments={'"Snapshot"+5','"Snapshot"+5',}}
 
--- gear.Taeon_Pet_DT_head = { name="Taeon Chapeau", augments={'Pet: Attack+25 Pet: Rng.Atk.+25','Pet: "Dbl. Atk."+5','Pet: Damage taken -3%',}}
--- gear.Taeon_Pet_DT_body = { name="Taeon Tabard", augments={'Pet: Attack+23 Pet: Rng.Atk.+23','Pet: "Dbl. Atk."+5','Pet: Damage taken -3%',}}
--- gear.Taeon_Pet_DT_hands = { name="Taeon Gloves", augments={'Pet: Attack+24 Pet: Rng.Atk.+24','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}}
--- gear.Taeon_Pet_DT_legs = { name="Taeon Tights", augments={'Pet: Accuracy+23 Pet: Rng. Acc.+23','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}}
--- gear.Taeon_Pet_DT_feet = { name="Taeon Boots", augments={'Pet: Attack+23 Pet: Rng.Atk.+23','Pet: "Dbl. Atk."+5','Pet: Damage taken -3%',}}
+-- gear.Taeon_Pet_DT_head = { name="Taeon Chapeau", augments={'Mag. Evasion+20','Pet: Damage taken -4%',}}
+-- gear.Taeon_Pet_DT_body = { name="Taeon Tabard", augments={'Mag. Evasion+20','Pet: Damage taken -4%',}} -- add Pet: Enmity+8
+-- gear.Taeon_Pet_DT_hands = { name="Taeon Gloves", augments={'Mag. Evasion+20','Pet: Regen+3','Pet: Damage taken -4%',}}
+-- gear.Taeon_Pet_DT_legs = { name="Taeon Tights", augments={'Mag. Evasion+20','Pet: Damage taken -4%',}}
+-- gear.Taeon_Pet_DT_feet = { name="Taeon Boots", augments={'Mag. Evasion+20','Pet: Damage taken -4%',}}
 
 -- Telchine
 gear.Telchine_DA_legs = {}
@@ -191,6 +194,7 @@ gear.Samnuha_legs = { name="Samnuha Tights", augments={'STR+10','DEX+10','"Dbl.A
 gear.DNC_Adoulin_Cape = { name="Toetapper Mantle", augments={'"Store TP"+1','"Dual Wield"+2','"Rev. Flourish"+28',}}
 -- gear.DRG_Adoulin_Cape = {} -- Pet: Breath+10
 gear.GEO_Adoulin_Cape = { name="Lifestream Cape", augments={'Geomancy Skill +10','Indi. eff. dur. +17','Pet: Damage taken -5%',}}
+gear.PUP_Adoulin_Cape = {} -- Pet TP+500
 gear.RUN_Adoulin_Cape = { name="Evasionist's Cape", augments={'Enmity+4','"Embolden"+15','"Dbl.Atk."+4',}}
 
 
@@ -247,6 +251,7 @@ gear.GEO_FC_Cape = { name="Nantosuelta's Cape", augments={'INT+20','Mag. Acc+20 
 gear.MNK_DEX_DA_Cape = { name="Segomo's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
 gear.MNK_STR_DA_Cape = { name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Mag. Evasion+15',}}
 gear.MNK_STR_Crit_Cape = { name="Segomo's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Crit.hit rate+10','Phys. dmg. taken-10%',}}
+-- gear.MNK_VIT_DA_Cape = { name="Segomo's Mantle", augments={'VIT+20','Accuracy+20 Attack+20','VIT+10','"Dbl.Atk."+10','Mag. Evasion+15',}}
 -- gear.MNK_MAB_Cape = {} -- 30 INT, 10 MAB, 20 m.acc/m.dmg
 
 -- gear.NIN_Enmity_Cape = {} -- 10 Enmity, 10 PDT
@@ -263,7 +268,15 @@ gear.NIN_STP_Cape = { name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 
 -- gear.NIN_WSD_DEX_Cape = { name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
 -- gear.NIN_DA_DEX_Cape = { name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
 
--- gear.PUP_Pet_Engaged_Cape = { name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Pet: Haste+10','Pet: Damage taken -5%',}} -- Maybe change DT
+-- gear.PUP_Pet_Engaged_Cape = { name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Accuracy+20 Attack+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Damage taken -5%',}}
+-- gear.PUP_STR_DA_Cape = { name="Visucius's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Pet: Damage taken -5%',}}
+-- gear.PUP_STR_Crit_Cape = { name="Visucius's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Crit.hit rate+10','Pet: Damage taken -5%',}}
+-- gear.PUP_VIT_DA_Cape = { name="Visucius's Mantle", augments={'VIT+20','Accuracy+20 Attack+20','VIT+10','"Dbl.Atk."+10','Pet: Damage taken -5%',}}
+-- gear.PUP_Cure_Cape = {} -- Cure Potency +10%, MND+30, Pet DT-5%
+-- gear.PUP_Pet_Nuke_Cape = {} -- Pet M.acc/m.dmg, Pet DT, STP, Acc/att
+-- gear.PUP_TP_Cape = {} -- DEX+30, Acc/atk+20, STP+10, Pet DT-5%
+-- gear.PUP_Pet_Tank_Cape = {} -- Pet:acc/racc/att/ratt, Pet:regen, Pet:acc/racc, Eva/M.Eva, Pet:DT
+-- gear.PUP_Pet_TP_Cape = {} -- Pet:acc/racc/att/ratt, Pet:haste, Pet:acc/racc, Eva/M.Eva, Pet:DT
 
 gear.RNG_DW_Cape = { name="Belenus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dual Wield"+10','Phys. dmg. taken-10%',}}
 gear.RNG_RA_Cape = { name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','"Store TP"+10','Phys. dmg. taken-10%',}}
@@ -273,12 +286,12 @@ gear.RNG_WS1_Cape = { name="Belenus's Cape", augments={'AGI+20','Mag. Acc+20 /Ma
 gear.RNG_WS2_Cape = { name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
 gear.RNG_WS3_Cape = { name="Belenus's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Mag. Evasion+15',}}
 
-gear.RUN_FC_Cape = { name="Ogma's cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','HP+20','"Fast Cast"+10','Phys. dmg. taken-10%',}}
-gear.RUN_HPD_Cape = { name="Ogma's cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','HP+20','Enmity+10','Phys. dmg. taken-10%',}}
-gear.RUN_HPP_Cape = {name="Ogma's cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','HP+20','Enmity+10','Parrying rate+5%',}}
--- gear.RUN_HPME_Cape = {name="Ogma's cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Eva.+10','Enmity+10','Mag. Eva.+15',}}
--- gear.RUN_SIRD_Cape = {name="Ogma's cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','HP+20','Enmity+10','Spell interruption rate down +10%',}}
-gear.RUN_TP_Cape = {name="Ogma's cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10','Phys. dmg. taken-10%',}}
+gear.RUN_FC_Cape = { name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','HP+20','"Fast Cast"+10','Phys. dmg. taken-10%',}}
+gear.RUN_HPD_Cape = { name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','HP+20','Enmity+10','Phys. dmg. taken-10%',}}
+gear.RUN_HPP_Cape = {name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','HP+20','Enmity+10','Parrying rate+5%',}}
+-- gear.RUN_HPME_Cape = {name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Eva.+10','Enmity+10','Mag. Eva.+15',}}
+-- gear.RUN_SIRD_Cape = {name="Ogma's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','HP+20','Enmity+10','Spell interruption rate down +10%',}}
+gear.RUN_TP_Cape = {name="Ogma's Cape", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10','Phys. dmg. taken-10%',}}
 gear.RUN_WS1_Cape = { name="Ogma's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
 gear.RUN_WS2_Cape = {name="Ogma's cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
 -- gear.RUN_WS3_Cape = { name="Ogma's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
