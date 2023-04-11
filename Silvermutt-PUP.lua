@@ -1,4 +1,4 @@
--- File Status: Not terrible. Gearsets are ALL wrong. Currently, reloading gearswap with pet active will screw up maneuvers.
+-- File Status: Ok, could use a little work on convenience features.
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs
