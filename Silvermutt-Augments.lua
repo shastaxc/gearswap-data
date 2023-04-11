@@ -80,6 +80,9 @@ gear.Herc_Snap_head = { name="Herculean Helm", augments={'Rng.Acc.+1','"Snapshot
 gear.Herc_Repair_hands = {} -- Repair+8
 gear.Herc_Repair_legs = {} -- Repair+8
 
+gear.Herc_Pet_Nuke_head = {}
+gear.Herc_Pet_Nuke_hands = {}
+
 -- Merlinic
 
 gear.Merl_FC_head = { name="Merlinic Hood", augments={'Mag. Acc.+4 "Mag.Atk.Bns."+4','"Fast Cast"+5','Mag. Acc.+4',}}
@@ -194,7 +197,7 @@ gear.Samnuha_legs = { name="Samnuha Tights", augments={'STR+10','DEX+10','"Dbl.A
 gear.DNC_Adoulin_Cape = { name="Toetapper Mantle", augments={'"Store TP"+1','"Dual Wield"+2','"Rev. Flourish"+28',}}
 -- gear.DRG_Adoulin_Cape = {} -- Pet: Breath+10
 gear.GEO_Adoulin_Cape = { name="Lifestream Cape", augments={'Geomancy Skill +10','Indi. eff. dur. +17','Pet: Damage taken -5%',}}
-gear.PUP_Adoulin_Cape = {} -- Pet TP+500
+gear.PUP_Adoulin_Cape = { name="Dispersal Mantle", augments={'STR+4','DEX+4','Pet: TP Bonus+500','"Martial Arts"+12',}}
 gear.RUN_Adoulin_Cape = { name="Evasionist's Cape", augments={'Enmity+4','"Embolden"+15','"Dbl.Atk."+4',}}
 
 
@@ -268,15 +271,16 @@ gear.NIN_STP_Cape = { name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 
 -- gear.NIN_WSD_DEX_Cape = { name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
 -- gear.NIN_DA_DEX_Cape = { name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
 
--- gear.PUP_Pet_Engaged_Cape = { name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Accuracy+20 Attack+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Damage taken -5%',}}
 -- gear.PUP_STR_DA_Cape = { name="Visucius's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Pet: Damage taken -5%',}}
--- gear.PUP_STR_Crit_Cape = { name="Visucius's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Crit.hit rate+10','Pet: Damage taken -5%',}}
+gear.PUP_STR_Crit_Cape = { name="Visucius's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Crit.hit rate+10','Pet: Damage taken -5%',}}
+-- gear.PUP_STR_WSD_Cape = { name="Visucius's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Pet: Damage taken -5%',}}
 -- gear.PUP_VIT_DA_Cape = { name="Visucius's Mantle", augments={'VIT+20','Accuracy+20 Attack+20','VIT+10','"Dbl.Atk."+10','Pet: Damage taken -5%',}}
+-- gear.PUP_DEX_DA_Cape = { name="Visucius's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Pet: Damage taken -5%',}}
 -- gear.PUP_Cure_Cape = {} -- Cure Potency +10%, MND+30, Pet DT-5%
 -- gear.PUP_Pet_Nuke_Cape = {} -- Pet M.acc/m.dmg, Pet DT, STP, Acc/att
--- gear.PUP_TP_Cape = {} -- DEX+30, Acc/atk+20, STP+10, Pet DT-5%
--- gear.PUP_Pet_Tank_Cape = {} -- Pet:acc/racc/att/ratt, Pet:regen, Pet:acc/racc, Eva/M.Eva, Pet:DT
--- gear.PUP_Pet_TP_Cape = {} -- Pet:acc/racc/att/ratt, Pet:haste, Pet:acc/racc, Eva/M.Eva, Pet:DT
+gear.PUP_TP_Cape = { name="Visucius's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Pet: Damage taken -5%',}}
+gear.PUP_Pet_Tank_Cape = { name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: "Regen"+10','Pet: Damage taken -5%',}}
+gear.PUP_Pet_TP_Cape = { name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Attack+10 Pet: Rng.Atk.+10','Pet: Haste+10','Pet: Damage taken -5%',}}
 
 gear.RNG_DW_Cape = { name="Belenus's Cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dual Wield"+10','Phys. dmg. taken-10%',}}
 gear.RNG_RA_Cape = { name="Belenus's Cape", augments={'AGI+20','Rng.Acc.+20 Rng.Atk.+20','AGI+10','"Store TP"+10','Phys. dmg. taken-10%',}}
