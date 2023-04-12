@@ -442,7 +442,7 @@ function init_gear_sets()
     body=gear.Nyame_B_body,           --  9/ 9, __, __, 24, __
     hands=gear.Nyame_B_hands,         --  7/ 7, __, __, 42, __
     legs=gear.Lustratio_B_legs,       -- __/__, __,  3, 43, __
-    feet=gear.Herc_DEX_CritDmg_feet,  --  2/__,  3, __, 33, __
+    feet=gear.Herc_DEX_CritDmg_feet,  --  2/__,  5, __, 24, __
     neck="Fotia Gorget",              -- fTP Bonus
     ear1="Sherida Earring",           -- __/__, __, __,  5, __
     ear2="Odr Earring",               -- __/__, __,  5, 10, __
@@ -451,7 +451,8 @@ function init_gear_sets()
     back=gear.DNC_TP_DA_Cape,         -- 10/__,  5, __, 30, __
     waist="Fotia Belt",               -- fTP Bonus
     -- back=gear.DNC_WS3_Cape,
-  } -- 28PDT/16MDT, 19 Crit Damage, 8 Crit Rate, 233 DEX, 0 PDL
+    -- 28PDT/16MDT, 21 Crit Damage, 8 Crit Rate, 224 DEX, 0 PDL
+  }
   sets.precast.WS['Evisceration'].MaxTP = set_combine(sets.precast.WS['Evisceration'], {
   })
   sets.precast.WS['Evisceration'].Safe = {
@@ -460,7 +461,7 @@ function init_gear_sets()
     body="Meghanada Cuirie +2",       --  8/__,  6, __, 45, __
     hands="Gleti's Gauntlets",        --  7/__, __,  6, 47,  7
     legs=gear.Lustratio_B_legs,       -- __/__, __,  3, 43, __
-    feet=gear.Herc_DEX_CritDmg_feet,  --  2/__,  3, __, 33, __
+    feet=gear.Herc_DEX_CritDmg_feet,  --  2/__,  5, __, 24, __
     neck="Fotia Gorget",              -- fTP Bonus
     ear1="Odnowa Earring +1",         --  3/ 5, __, __, __, __
     ear2="Odr Earring",               -- __/__, __,  5, 10, __
@@ -469,7 +470,8 @@ function init_gear_sets()
     back=gear.DNC_TP_DA_Cape,         -- 10/__,  5, __, 30, __
     waist="Fotia Belt",               -- fTP Bonus
     -- back=gear.DNC_WS3_Cape,
-  } -- 47PDT/14MDT, 25 Crit Damage, 14 Crit Rate, 234 DEX, 7 PDL
+    -- 47PDT/14MDT, 27 Crit Damage, 14 Crit Rate, 225 DEX, 7 PDL
+  }
 
   -- 80% DEX
   sets.precast.WS["Rudra's Storm"] = set_combine(sets.precast.WS, {

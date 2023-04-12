@@ -62,8 +62,8 @@ gear.Herc_MAB_feet = { name="Herculean Boots", augments={'"Mag.Atk.Bns."+29','Ac
 gear.Herc_TH_body = { name="Herculean Vest", augments={'Pet: INT+1','AGI+6','"Treasure Hunter"+2','Accuracy+17 Attack+17',}}
 gear.Herc_TH_hands = { name="Herculean Gloves", augments={'Attack+25','"Store TP"+2','"Treasure Hunter"+2','Accuracy+2 Attack+2','Mag. Acc.+5 "Mag.Atk.Bns."+5',}}
 
-gear.Herc_DEX_CritDmg_feet = { name="Herculean Boots", augments={'Accuracy+25','Crit. hit damage +3%','DEX+9',}}
--- gear.Herc_STR_CritDmg_feet = {} -- CritDmg > Str > Acc/Att > Multihit
+gear.Herc_DEX_CritDmg_feet = { name="Herculean Boots", augments={'Accuracy+21','Crit. hit damage +5%','Attack+1',}} -- CritDmg > DEX > Acc/Att > Multihit
+gear.Herc_STR_CritDmg_feet = { name="Herculean Boots", augments={'Accuracy+21','Crit. hit damage +5%','Attack+1',}} -- CritDmg > STR > Acc/Att > Multihit
 
 gear.Herc_Refresh_head = { name="Herculean Helm", augments={'Weapon Skill Acc.+13','Accuracy+2','"Refresh"+1','Accuracy+19 Attack+19',}}
 gear.Herc_Refresh_feet = { name="Herculean Boots", augments={'Crit.hit rate+1','STR+14','"Refresh"+2',}}
@@ -147,11 +147,8 @@ gear.Taeon_Phalanx_feet = gear.Taeon_FC_feet
 
 gear.Taeon_RA_head = { name="Taeon Chapeau", augments={'"Snapshot"+5','"Snapshot"+5',}}
 
--- gear.Taeon_Pet_DT_head = { name="Taeon Chapeau", augments={'Mag. Evasion+20','Pet: Damage taken -4%',}}
--- gear.Taeon_Pet_DT_body = { name="Taeon Tabard", augments={'Mag. Evasion+20','Pet: Damage taken -4%',}} -- add Pet: Enmity+8
--- gear.Taeon_Pet_DT_hands = { name="Taeon Gloves", augments={'Mag. Evasion+20','Pet: Regen+3','Pet: Damage taken -4%',}}
--- gear.Taeon_Pet_DT_legs = { name="Taeon Tights", augments={'Mag. Evasion+20','Pet: Damage taken -4%',}}
--- gear.Taeon_Pet_DT_feet = { name="Taeon Boots", augments={'Mag. Evasion+20','Pet: Damage taken -4%',}}
+gear.Taeon_Pet_DT_body = { name="Taeon Tabard", augments={'Mag. Evasion+20','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}}
+gear.Taeon_Pet_DT_hands = { name="Taeon Gloves", augments={'Mag. Evasion+20','Pet: "Regen"+3','Pet: Damage taken -4%',}}
 
 -- Telchine
 gear.Telchine_DA_legs = {}

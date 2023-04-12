@@ -143,7 +143,7 @@ function init_gear_sets()
   -- head="Hike Khat +1",             -- [13/__,  75] { 5/ 5, ___}
   -- head=gear.Anwig_Salade,          -- [__/__, ___] {10/10, ___}
   -- head=gear.Taeon_Pet_DT_head,     -- [__/__,  73] { 4/ 4, ___}; Augs: +20 M.Eva, -4 Pet DT
-  -- body=gear.Taeon_Pet_DT_body,     -- [__/__,  84] { 4/ 4, ___}; Augs: +20 M.Eva, -4 Pet DT
+  -- body=gear.Taeon_Pet_DT_body,     -- [__/__,  84] { 4/ 4, ___}; Augs: +20 M.Eva, -4 Pet DT, Pet DA+5
   -- hands=gear.Taeon_Pet_DT_hands,   -- [__/__,  57] { 4/ 4, ___}; Augs: +20 M.Eva, -4 Pet DT, Pet Regen +3
   -- legs="Foire Churidars +3",       -- [__/__, 104] { 6/ 6, ___}
   -- legs="Tali'ah Seraweels +2",     -- [__/__,  69] { 5/ 5, ___}
@@ -224,6 +224,7 @@ function init_gear_sets()
 	sets.precast.JA['Repair'] = {
     range="Neo Animator",             -- __, __ [__/__, ___] {__/__, 119 |  60}
     ammo="Can of Automaton Oil +3",   -- __, __ [__/__, ___] {__/__, ___ | ___}
+    body=gear.Taeon_Pet_DT_body,      -- __, __ [__/__,  84] { 4/ 4, ___ | ___}; Augs: +20 M.Eva, -4 Pet DT, Pet DA+5
     feet="Foire Babouches +2",        --  2, __ [__/__,  74] {__/__, ___ | ___}
     neck="Loricate Torque +1",        -- __, __ [ 6/ 6, ___] {__/__, ___ | ___}
     ear2="Guignol Earring",           -- __, 20 [__/__, ___] {__/__, ___ | ___}
@@ -231,10 +232,9 @@ function init_gear_sets()
     ring2="Defending Ring",           -- __, __ [10/10, ___] {__/__, ___ | ___}
     back=gear.PUP_Pet_TP_Cape,        -- __, __ [__/__,  20] { 5/ 5,   1 | ___}
     waist="Isa Belt",                 -- __, __ [__/__, ___] { 3/ 3, ___ | ___}
-    -- 2 Repair+, 26 Repair Potency [23 PDT/15 MDT, 94 M.Eva] {Pet: 8 PDT/8 MDT, 120 Lv | 60 HP}
+    -- 2 Repair+, 26 Repair Potency [23 PDT/15 MDT, 178 M.Eva] {Pet: 12 PDT/12 MDT, 120 Lv | 60 HP}
 
     -- head="Hike Khat +1",           -- __, __ [13/__,  75] { 5/ 5, ___ | ___}
-    -- body=gear.Taeon_Pet_DT_body,   -- __, __ [__/__,  84] { 4/ 4, ___ | ___}; Augs: +20 M.Eva, -4 Pet DT
     -- hands=gear.Herc_Repair_hands,  -- __,  8 [ 2/__,  43] {__/__, ___ | ___}
     -- legs=gear.Herc_Repair_legs,    -- __,  8 [ 2/__,  75] {__/__, ___ | ___}
     -- feet="Foire Babouches +3",     --  3, __ [__/__,  87] {__/__, ___ | ___}
@@ -322,7 +322,7 @@ function init_gear_sets()
     body="Kendatsuba Samue +1",       -- 33, __,  9 <__,  6, __> [__/__, 117] {__/__, ___}
     hands=gear.Ryuo_A_hands,          -- 24,  5,  5 <__, __, __> [__/__, ___] {__/__, ___}
     legs="Mpaca's Hose",              -- 49, __,  6 <__,  4, __> [ 9/__,  96] {__/__, ___}
-    feet=gear.Herc_DEX_CritDmg_feet,  -- 16,  3, __ <__,  2, __> [ 2/__,  75] {__/__, ___}
+    feet=gear.Herc_STR_CritDmg_feet,  -- 16,  5, __ <__,  2, __> [ 2/__,  75] {__/__, ___}
     neck="Loricate Torque +1",        -- __, __, __ <__, __, __> [ 6/ 6, ___] {__/__, ___}
     ear1="Odr Earring",               -- __, __,  5 <__, __, __> [__/__, ___] {__/__, ___}
     ear2="Moonshade Earring",         -- __, __, __ <__, __, __> [__/__, ___] {__/__, ___}; TP Bonus+250
@@ -330,9 +330,7 @@ function init_gear_sets()
     ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___] {__/__, ___}
     back=gear.PUP_STR_Crit_Cape,      -- 30, __, 10 <__, __, __> [__/__, ___] { 5/ 5,   1}
     waist="Moonbow Belt +1",          -- 20, __, __ <__,  8, __> [ 6/ 6, ___] {__/__, ___}
-    -- 190 STR, 8 Crit Dmg, 30 Crit Rate <5 DA, 23 TA, 0 QA> [40 PDT/22 MDT, 357 M.Eva] {Pet: 0 PDT/0 MDT, 119 Lv}
-    
-    -- feet=gear.Herc_STR_CritDmg_feet,
+    -- 190 STR, 10 Crit Dmg, 30 Crit Rate <5 DA, 23 TA, 0 QA> [40 PDT/22 MDT, 357 M.Eva] {Pet: 0 PDT/0 MDT, 119 Lv}
   })
   sets.precast.WS["Victory Smite"].MaxTP = set_combine(sets.precast.WS["Victory Smite"], {
     ear2="Schere Earring",            --  5, __, __ < 6, __, __> [__/__, ___] {__/__, ___}
@@ -797,7 +795,7 @@ function init_gear_sets()
     range="Neo Animator",             -- __ [__/__, ___] {__/__, 119 | __, __}
     head="Pitre Taj +1",              --  3 [__/__,  43] {__/__, ___ |  3,  3}
     body="Hizamaru Haramaki +2",      -- 12 [__/__,  69] {__/__, ___ | __, __}
-    hands=gear.Nyame_B_hands,         -- __ [ 7/ 7, 112] {__/__, ___ | __, __}
+    hands=gear.Taeon_Pet_DT_hands,    -- __ [__/__,  57] { 4/ 4, ___ |  3, __}; Augs: +20 M.Eva, -4 Pet DT, Pet Regen +3
     legs="Karagoz Pantaloni +2",      -- __ [11/11, 109] {__/__, ___ | __, __}
     feet=gear.Nyame_B_feet,           -- __ [ 7/ 7, 150] {__/__, ___ | __, __}
     neck="Loricate Torque +1",        -- __ [ 6/ 6, ___] {__/__, ___ | __, __}
@@ -807,10 +805,9 @@ function init_gear_sets()
     ring2="Defending Ring",           -- __ [10/10, ___] {__/__, ___ | __, __}
     back=gear.PUP_TP_Cape,            -- __ [__/__, ___] { 5/ 5,   1 | __, __}
     waist="Moonbow Belt +1",          -- __ [ 6/ 6, ___] {__/__, ___ | __, __}
-    -- 15 Regen [54 PDT/46 MDT, 483 M.Eva] {Pet: 8 PDT/8 MDT, 121 Lv | 3 Regen, 3 Refresh}
+    -- 15 Regen [47 PDT/39 MDT, 428 M.Eva] {Pet: 12 PDT/12 MDT, 121 Lv | 6 Regen, 3 Refresh}
     
     -- head="Pitre Taj +3",              --  5 [__/__,  63] {__/__, ___ |  5,  5}
-    -- hands=gear.Taeon_Pet_DT_hands,    -- __ [__/__,  57] { 4/ 4, ___ |  3, __}; Augs: +20 M.Eva, -4 Pet DT, Pet Regen +3
     -- legs="Karagoz Pantaloni +3",      -- __ [12/12, 119] {__/__, ___ | __, __}
     -- ear2="Burana Earring",            -- __ [__/__, ___] {__/__, ___ |  2, __}
     -- 17 Regen [48 PDT/40 MDT, 458 M.Eva] {Pet: 12 PDT/12 MDT, 120 Lv | 10 Regen, 5 Refresh}
@@ -845,7 +842,7 @@ function init_gear_sets()
     range="Neo Animator",             -- [__/__, ___] {__/__, 119 | __, __, 30/30, __/__, __, __, __}
     head=gear.Anwig_Salade,           -- [__/__, ___] {10/10, ___ | __, __, __/__, __/__, __, __, __}
     body="Heyoka Harness +1",         -- [__/__, 117] {__/__, ___ | __, __, 52/52, __/__,  4, __, 12}
-    -- hands=gear.Taeon_Pet_DT_hands, -- [__/__,  57] { 4/ 4, ___ | __, __, __/__, __/__, __,  3, __}; Augs: +20 M.Eva, -4 Pet DT, Pet Regen +3
+    hands=gear.Taeon_Pet_DT_hands,    -- [__/__,  57] { 4/ 4, ___ | __, __, __/__, __/__, __,  3, __}; Augs: +20 M.Eva, -4 Pet DT, Pet Regen +3
     legs="Heyoka Subligar +1",        -- [__/__, 139] {__/__, ___ | __, __, 51/51, __/__,  9, __, 11}
     feet="Mpaca's Boots",             -- [ 6/__,  96] {__/__,   1 | __, __, 50/50, __/__, __, __, __}
     neck="Shulmanu Collar",           -- [__/__, ___] {__/__, ___ |  5, __, 20/__, 20/__, __, __, __}
@@ -960,19 +957,19 @@ function init_gear_sets()
   -- emphasis on master survivability.
   sets.engaged.PetTank = {
     range="Neo Animator",             -- __, 10 <__, __, __> [__/__, ___] {__/__, 119 | __, __, 30/30, __/__, __, __, __}
-    -- head="Hike Khat +1",              -- __, __ <__, __, __> [13/__,  75] { 5/ 5, ___ | __, __, __/__, __/__, __, __, __}
-    body=gear.Taeon_Pet_DT_body,      -- __, __ <__, __, __> [__/__,  84] { 4/ 4, ___ | __, __, __/__, __/__, __, __,  8}; Augs: +20 M.Eva, -4 Pet DT
+    -- head="Hike Khat +1",           -- __, __ <__, __, __> [13/__,  75] { 5/ 5, ___ | __, __, __/__, __/__, __, __, __}
+    body=gear.Taeon_Pet_DT_body,      -- __, __ <__, __, __> [__/__,  84] { 4/ 4, ___ |  5, __, __/__, __/__, __, __, __}; Augs: +20 M.Eva, -4 Pet DT, Pet DA+5
     hands="Karagoz Guanti +3",        -- 11, 62 <__, __, __> [10/10,  82] {__/__, ___ | __, __, 62/62, __/__, __, __, __}
     legs="Heyoka Subligar +1",        -- __, 51 <__, __, __> [__/__, 139] {__/__, ___ | __, __, 51/51, __/__,  9, __, 11}
     feet="Mpaca's Boots",             -- __, 55 <__,  3, __> [ 6/__,  96] {__/__,   1 | __, __, 50/50, __/__, __, __, __}
     neck="Loricate Torque +1",        -- __, __ <__, __, __> [ 6/ 6, ___] {__/__, ___ | __, __, __/__, __/__, __, __, __}
     ear1="Enmerkar Earring",          -- __, __ <__, __, __> [__/__, ___] { 3/ 3, ___ | __,  8, 15/__, __/__, __, __, __}
-    -- ear2="Karagoz Earring +2",        --  8, 20 <__, __, __> [__/__, ___] {__/__,   1 | __, __, __/__, __/__, __, __, __}
-    -- ring1="Cath Palug Ring",          -- __, __ <__, __, __> [ 5/ 5, ___] {__/__, ___ |  5, __, 12/12, __/__, __, __, __}
+    -- ear2="Karagoz Earring +2",     --  8, 20 <__, __, __> [__/__, ___] {__/__,   1 | __, __, __/__, __/__, __, __, __}
+    -- ring1="Cath Palug Ring",       -- __, __ <__, __, __> [ 5/ 5, ___] {__/__, ___ |  5, __, 12/12, __/__, __, __, __}
     ring2="Defending Ring",           -- __, __ <__, __, __> [10/10, ___] {__/__, ___ | __, __, __/__, __/__, __, __, __}
     back=gear.PUP_Pet_Tank_Cape,      -- __, __ <__, __, __> [__/__,  20] { 5/ 5,   1 | __, __, 30/30, 20/20, __, 10, __}
     waist="Klouskap Sash +1",         -- __, 20 <__, __, __> [__/__, ___] {__/__, ___ | __, __, 20/20, __/__,  9, __, __}
-    -- 19 STP, 218 Acc <0 DA, 3 TA, 0 QA> [50 PDT/31 MDT, 496 M.Eva] {Pet: 17 PDT /17 MDT, 122 Lv | 5 DA, 8 STP, 270 Acc/255 Racc, 20 Att/20 Ratt, 18 Haste, 10 Regen, 19 Enmity}
+    -- 19 STP, 218 Acc <0 DA, 3 TA, 0 QA> [50 PDT/31 MDT, 496 M.Eva] {Pet: 17 PDT /17 MDT, 122 Lv | 10 DA, 8 STP, 270 Acc/255 Racc, 20 Att/20 Ratt, 18 Haste, 10 Regen, 11 Enmity}
   }
   sets.engaged.PetTank.Acc = set_combine(sets.engaged.PetTank, {})
   sets.engaged.PetRanged = {

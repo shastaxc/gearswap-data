@@ -586,11 +586,11 @@ function init_gear_sets()
   sets.midcast.HealingBreath = {
     head="Pteroslaver Armet +3",
     feet="Pteroslaver Greaves +1",
+    neck="Dragoon's Collar +2",
     -- body=gear.Acro_Breath_body,
     -- hands=gear.Acro_Breath_hands,
     -- legs="Vishap Brais +3",
     -- feet="Pteroslaver Greaves +3",
-    -- neck="Dragoon's Collar +2",
     -- ear1="Lancer's Earring",
     -- ear2="Anastasi Earring",
     -- back=gear.DRG_Adoulin_Cape,

@@ -328,7 +328,7 @@ function init_gear_sets()
     body="Plunderer's Vest +3",         -- 46, __, 65, __ <__, __, __> ( 6,  5) [__/__,  84] __
     hands="Gleti's Gauntlets",          -- 47, __, 70, __ <__, __, __> ( 6, __) [ 7/__,  75]  7
     legs=gear.Lustratio_B_legs,         -- 43, __, 38, __ <__, __, __> ( 3, __) [__/__, ___] __
-    feet=gear.Herc_DEX_CritDmg_feet,    -- 33, __, 10, __ <__,  2, __> (__,  3) [ 2/__,  75] __; adhemar good alt
+    feet=gear.Herc_DEX_CritDmg_feet,    -- 24, __, 10, __ <__,  2, __> (__,  5) [ 2/__,  75] __; adhemar good alt
     neck="Fotia Gorget",                -- __, __, __, __ <__, __, __> (__, __) [__/__, ___] __; ftp+
     ear1="Odr Earring",                 -- 10, __, __, __ <__, __, __> ( 5, __) [__/__, ___] __
     ear2="Moonshade Earring",           -- __, __, __, __ <__, __, __> (__, __) [__/__, ___] __; tp bonus+250
@@ -337,11 +337,11 @@ function init_gear_sets()
     back=gear.THF_WS1_Cape,             -- 30, 10, 20, 20 <__, __, __> (__, __) [10/__, ___] __
     waist="Fotia Belt",                 -- __, __, __, __ <__, __, __> (__, __) [__/__, ___] __; ftp+
     -- Traits/Merits/Gifts              -- __, __, __, __ <__, 19, __> (__, 22) [__/__, ___] __
-    -- 237 DEX, 10 WSD, 273 Att, 25 TA Dmg <0 DA, 23 TA, 0 QA> (31 Crit Rate, 36 Crit Dmg) [25 PDT/0 MDT, 320 M.Eva] 13 PDL
+    -- 228 DEX, 10 WSD, 273 Att, 25 TA Dmg <0 DA, 23 TA, 0 QA> (31 Crit Rate, 38 Crit Dmg) [25 PDT/0 MDT, 320 M.Eva] 13 PDL
 
     -- legs="Pillager's Culottes +3",   -- 15, __, 30, __ <__,  5, __> (__,  5) [__/__,  99] __
     -- back=gear.THF_WS4_Cape,          -- 30, __, 20, 20 <__, __, __> (10, __) [10/__, ___] __
-    -- 209 DEX, 6 WSD, 265 Att, 25 TA Dmg <0 DA, 28 TA, 0 QA> (38 Crit Rate, 41 Crit Dmg) [25 PDT/0 MDT, 419 M.Eva] 13 PDL
+    -- 200 DEX, 6 WSD, 265 Att, 25 TA Dmg <0 DA, 28 TA, 0 QA> (38 Crit Rate, 43 Crit Dmg) [25 PDT/0 MDT, 419 M.Eva] 13 PDL
   }
   sets.precast.WS['Evisceration'].MaxTP = set_combine(sets.precast.WS['Evisceration'], {
     ear2="Sherida Earring",             --  5, __, __, __ < 5, __, __> (__, __) [__/__, ___] __
@@ -353,7 +353,7 @@ function init_gear_sets()
     body="Plunderer's Vest +3",         -- 46, __, 65, __ <__, __, __> ( 6,  5) [__/__,  84] __
     hands="Gleti's Gauntlets",          -- 47, __, 70, __ <__, __, __> ( 6, __) [ 7/__,  75]  7
     legs=gear.Lustratio_B_legs,         -- 43, __, 38, __ <__, __, __> ( 3, __) [__/__, ___] __
-    feet=gear.Herc_DEX_CritDmg_feet,    -- 33, __, 10, __ <__,  2, __> (__,  3) [ 2/__,  75] __; adhemar good alt
+    feet=gear.Herc_DEX_CritDmg_feet,    -- 24, __, 10, __ <__,  2, __> (__,  5) [ 2/__,  75] __; adhemar good alt
     neck="Fotia Gorget",                -- __, __, __, __ <__, __, __> (__, __) [__/__, ___] __; ftp+
     ear1="Odr Earring",                 -- 10, __, __, __ <__, __, __> ( 5, __) [__/__, ___] __
     ear2="Moonshade Earring",           -- __, __, __, __ <__, __, __> (__, __) [__/__, ___] __; tp bonus+250
@@ -362,11 +362,11 @@ function init_gear_sets()
     back=gear.THF_WS1_Cape,             -- 30, 10, 20, 20 <__, __, __> (__, __) [10/__, ___] __
     waist="Fotia Belt",                 -- __, __, __, __ <__, __, __> (__, __) [__/__, ___] __; ftp+
     -- Traits/Merits/Gifts              -- __, __, __, __ <__, 19, __> (__, 22) [__/__, ___] __
-    -- 246 DEX, 16 WSD, 203 Att, 25 TA Dmg <0 DA, 23 TA, 0 QA> (26 Crit Rate, 41 Crit Dmg) [19 PDT/0 MDT, 317 M.Eva] 7 PDL
+    -- 237 DEX, 16 WSD, 203 Att, 25 TA Dmg <0 DA, 23 TA, 0 QA> (26 Crit Rate, 43 Crit Dmg) [19 PDT/0 MDT, 317 M.Eva] 7 PDL
     
     -- legs="Pillager's Culottes +3",   -- 15, __, 30, __ <__,  5, __> (__,  5) [__/__,  99] __
     -- back=gear.THF_WS4_Cape,          -- 30, __, 20, 20 <__, __, __> (10, __) [10/__, ___] __
-    -- 218 DEX, 6 WSD, 195 Att, 25 TA Dmg <0 DA, 28 TA, 0 QA> (33 Crit Rate, 46 Crit Dmg) [19 PDT/0 MDT, 416 M.Eva] 7 PDL
+    -- 209 DEX, 6 WSD, 195 Att, 25 TA Dmg <0 DA, 28 TA, 0 QA> (33 Crit Rate, 48 Crit Dmg) [19 PDT/0 MDT, 416 M.Eva] 7 PDL
   }
   sets.precast.WS['Evisceration'].AttCappedMaxTP = set_combine(sets.precast.WS['Evisceration'].AttCapped, {
     ear2="Sherida Earring",             --  5, __, __, __ < 5, __, __> (__, __) [__/__, ___] __
