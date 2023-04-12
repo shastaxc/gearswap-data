@@ -224,15 +224,19 @@ function init_gear_sets()
 	sets.precast.JA['Repair'] = {
     range="Neo Animator",             -- __, __ [__/__, ___] {__/__, 119 |  60}
     ammo="Can of Automaton Oil +3",   -- __, __ [__/__, ___] {__/__, ___ | ___}
+    head=gear.Nyame_B_head,           -- __, __ [ 7/ 7, 123] {__/__, ___ | ___}
     body=gear.Taeon_Pet_DT_body,      -- __, __ [__/__,  84] { 4/ 4, ___ | ___}; Augs: +20 M.Eva, -4 Pet DT, Pet DA+5
+    hands=gear.Nyame_B_hands,         -- __, __ [ 7/ 7, 112] {__/__, ___ | ___}
+    legs=gear.Herc_Repair_legs,       -- __,  6 [ 2/__,  75] {__/__, ___ | ___}
     feet="Foire Babouches +2",        --  2, __ [__/__,  74] {__/__, ___ | ___}
     neck="Loricate Torque +1",        -- __, __ [ 6/ 6, ___] {__/__, ___ | ___}
+    ear1="Enmerkar Earring",          -- __, __ [__/__, ___] { 3/ 3, ___ | ___}
     ear2="Guignol Earring",           -- __, 20 [__/__, ___] {__/__, ___ | ___}
     ring1="Gelatinous Ring +1",       -- __, __ [ 7/-1, ___] {__/__, ___ | ___}
     ring2="Defending Ring",           -- __, __ [10/10, ___] {__/__, ___ | ___}
     back=gear.PUP_Pet_TP_Cape,        -- __, __ [__/__,  20] { 5/ 5,   1 | ___}
     waist="Isa Belt",                 -- __, __ [__/__, ___] { 3/ 3, ___ | ___}
-    -- 2 Repair+, 26 Repair Potency [23 PDT/15 MDT, 178 M.Eva] {Pet: 12 PDT/12 MDT, 120 Lv | 60 HP}
+    -- 2 Repair+, 26 Repair Potency [39 PDT/29 MDT, 488 M.Eva] {Pet: 15 PDT/15 MDT, 120 Lv | 60 HP}
 
     -- head="Hike Khat +1",           -- __, __ [13/__,  75] { 5/ 5, ___ | ___}
     -- hands=gear.Herc_Repair_hands,  -- __,  8 [ 2/__,  43] {__/__, ___ | ___}

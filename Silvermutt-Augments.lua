@@ -78,7 +78,7 @@ gear.Herc_Phalanx_feet = { name="Herculean Boots", augments={'MND+14','Weapon sk
 gear.Herc_Snap_head = { name="Herculean Helm", augments={'Rng.Acc.+1','"Snapshot"+6','Rng.Atk.+8',}}
 
 gear.Herc_Repair_hands = {} -- Repair+8
-gear.Herc_Repair_legs = {} -- Repair+8
+gear.Herc_Repair_legs = { name="Herculean Trousers", augments={'Pet: Mag. Acc.+2','"Repair" potency +6%','Pet: Attack+13 Pet: Rng.Atk.+13',}} -- Repair+8
 
 gear.Herc_Pet_Nuke_head = {}
 gear.Herc_Pet_Nuke_hands = {}
