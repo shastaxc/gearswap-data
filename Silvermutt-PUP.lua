@@ -78,7 +78,7 @@ function job_setup()
 
   state.OffenseMode:options('Normal', 'Acc')
   state.HybridMode:options('Master', 'Pet', 'Halfsies')
-  state.IdleMode:options('Normal')
+  state.IdleMode:options('Normal', 'DT')
   state.CP = M(false, 'Capacity Points Mode')
   state.AutomaticPetTargeting = M(true, 'Automatic Pet Targeting')
 
