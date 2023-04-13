@@ -91,13 +91,13 @@ function job_setup()
 
   -- Default maneuvers for each pet mode. Table keys must match PetMode values. Must have 1 for each mode.
 	defaultManeuvers = {
-		Tank =        { Light=1, Dark=0, Fire=2, Ice=0, Wind=0, Earth=0, Lightning=0, Water=0 },
-		Ranged =      { Light=0, Dark=0, Fire=0, Ice=0, Wind=3, Earth=0, Lightning=0, Water=0 },
-		RangedAcc =   { Light=0, Dark=0, Fire=0, Ice=0, Wind=3, Earth=0, Lightning=0, Water=0 },
-		Heal =        { Light=2, Dark=1, Fire=0, Ice=0, Wind=0, Earth=0, Lightning=0, Water=0 },
-		MeleeSpam =   { Light=0, Dark=0, Fire=2, Ice=0, Wind=1, Earth=0, Lightning=0, Water=0 },
-		MeleeSC =     { Light=0, Dark=0, Fire=2, Ice=0, Wind=1, Earth=0, Lightning=0, Water=0 },
-		OverdriveDD = { Light=1, Dark=0, Fire=1, Ice=0, Wind=0, Earth=0, Lightning=1, Water=0 },
+		Tank =          { Light=1, Dark=0, Fire=2, Ice=0, Wind=0, Earth=0, Lightning=0, Water=0 },
+		Ranged =        { Light=0, Dark=0, Fire=0, Ice=0, Wind=3, Earth=0, Lightning=0, Water=0 },
+		RangedAcc =     { Light=0, Dark=0, Fire=0, Ice=0, Wind=3, Earth=0, Lightning=0, Water=0 },
+		Heal =          { Light=2, Dark=1, Fire=0, Ice=0, Wind=0, Earth=0, Lightning=0, Water=0 },
+		MeleeSpam =     { Light=0, Dark=0, Fire=2, Ice=0, Wind=1, Earth=0, Lightning=0, Water=0 },
+		MeleeSC =       { Light=0, Dark=0, Fire=2, Ice=0, Wind=1, Earth=0, Lightning=0, Water=0 },
+		OverdriveDD =   { Light=1, Dark=0, Fire=1, Ice=0, Wind=0, Earth=0, Lightning=1, Water=0 },
     SkillUpRanged = { Light=1, Dark=0, Fire=0, Ice=0, Wind=1, Earth=0, Lightning=0, Water=1 },
 	}
 
@@ -480,26 +480,30 @@ function init_gear_sets()
   ----------------------------------------- Pet WS Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
 
-  -- Pet WS sets are not really used because we cannot detect when pet is about to use a WS.
-  -- Keeping these sets here just in case this changes some day.
-  -- As a result, these pet WS sets are not up-to-date.
+  sets.midcast.Pet.Weaponskill = {
+    ranged="Neo Animator",
+    head="Karagoz Capello +2",
+    body=gear.Taeon_Pet_DT_body,
+    hands="Mpaca's Gloves",
+    legs="Karagoz Pantaloni +3",
+    feet="Mpaca's Boots",
+    ear1="Enmerkar Earring",
+    ear2="Karagoz Earring +1",
+    ring1="Varar Ring +1",
+    ring2="Defending Ring",
+    back=gear.PUP_Pet_TP_Cape,
+    waist="Klouskap Sash +1",
+    
+    -- head="Karagoz Capello +3",
+    -- body="Pitre Tobe +3",
+    -- neck="Puppetmaster's Collar +2",
+    -- ear2="Burana Earring",
+    -- ring2="Cath Palug Ring",
+    -- waist="Incarnation Sash",
+  }
 
-  -- sets.midcast.Pet.Weaponskill = {
-  --   ranged="Neo Animator",
-  --   head="Karagoz Capello +3",
-  --   body="Pitre Tobe +3",
-  --   hands="Mpaca's Gloves",
-  --   legs="Kara. Pantaloni +1",
-  --   feet={ name="Naga Kyahan", augments={'Pet: HP+100','Pet: Accuracy+25','Pet: Attack+25',}},
-  --   neck="Pup. Collar",
-  --   ear1="Enmerkar Earring",
-  --   ear2="Burana Earring",
-  --   ring1="C. Palug Ring",
-  --   ring2="Varar Ring",
-  --   back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Damage taken -5%',}},
-  --   waist="Incarnation Sash",
-  -- }
-  -- sets.midcast.Pet.Weaponskill.Halfsies = set_combine(sets.midcast.Pet.Weaponskill, {})
+  -- Specific Pet WS sets are not really used because we cannot detect when pet is about to use a WS.
+  -- Keeping these sets here just in case this changes some day. As a result, these pet WS sets are not up-to-date.
 
   -- -- 50% VIT - Critical hit rate varies w/ TP
   -- sets.midcast.Pet.Weaponskill['String Shredder'] = {
@@ -517,7 +521,6 @@ function init_gear_sets()
   --   back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Damage taken -5%',}},
   --   waist="Incarnation Sash",
   -- }
-  -- sets.midcast.Pet.Weaponskill['String Shredder'].Halfsies = set_combine(sets.midcast.Pet.Weaponskill['String Shredder'], {})
 
   -- -- 60% VIT - This has additional effect stun, may want magic acc to help with the stun effect
   -- sets.midcast.Pet.Weaponskill['Bone Crusher'] = {
@@ -535,7 +538,6 @@ function init_gear_sets()
   --   back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Damage taken -5%',}},
   --   waist="Incarnation Sash",
   -- }
-  -- sets.midcast.Pet.Weaponskill['Bone Crusher'].Halfsies = set_combine(sets.midcast.Pet.Weaponskill['Bone Crusher'], {})
 
   -- -- 50% DEX - Provides Defense Down, may want magic acc to help it land. TP Bonus to help with duration.
   -- sets.midcast.Pet.Weaponskill['Armor Shatterer'] = {
@@ -553,7 +555,6 @@ function init_gear_sets()
   --   back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Damage taken -5%',}},
   --   waist="Incarnation Sash",
   -- }
-  -- sets.midcast.Pet.Weaponskill['Armor Shatterer'].Halfsies = set_combine(sets.midcast.Pet.Weaponskill['Armor Shatterer'], {})
 
   -- -- 60% DEX - TP Bonus WS - Damage Varies with TP
   -- sets.midcast.Pet.Weaponskill['Arcuballista'] = {
@@ -571,11 +572,9 @@ function init_gear_sets()
   --   back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Damage taken -5%',}},
   --   waist="Incarnation Sash",
   -- }
-  -- sets.midcast.Pet.Weaponskill['Arcuballista'].Halfsies = set_combine(sets.midcast.Pet.Weaponskill['Arcuballista'], {})
 
   -- -- 60% DEX - TP Bonus - Magic Accuracy to help with Additional Effect Stun
   -- sets.midcast.Pet.Weaponskill['Daze'] = set_combine(sets.midcast.Pet.Weaponskill['Arcuballista'], {})
-  -- sets.midcast.Pet.Weaponskill['Daze'].Halfsies = set_combine(sets.midcast.Pet.Weaponskill['Arcuballista'].Halfsies, {})
 
   -- -- 50% STR - TP Bonus
   -- sets.midcast.Pet.Weaponskill['Chimera Ripper'] = {
@@ -593,7 +592,6 @@ function init_gear_sets()
   --   back={ name="Visucius's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Accuracy+10 Pet: Rng. Acc.+10','Pet: Haste+10','Pet: Damage taken -5%',}},
   --   waist="Incarnation Sash",
   -- }
-  -- sets.midcast.Pet.Weaponskill['Chimera Ripper'].Halfsies = set_combine(sets.midcast.Pet.Weaponskill['Chimera Ripper'], {})
 
 
   ------------------------------------------------------------------------------------------------
@@ -1391,12 +1389,6 @@ end
 -- Modify the default idle set after it was constructed.
 function customize_idle_set(idleSet)
   if not pet_midaction() then
-    if pet.isvalid then
-      if pet.status == 'Engaged' then
-        idleSet = set_combine(idleSet, sets.idle.PetEngaged[state.PetMode.value])
-      end
-    end
-  
     -- If not in DT mode put on move speed gear
     if state.IdleMode.current == 'Normal' and state.DefenseMode.value == 'None' then
       -- Apply movement speed gear
@@ -1405,10 +1397,24 @@ function customize_idle_set(idleSet)
       else
         idleSet = set_combine(idleSet, sets.Kiting)
       end
-      if state.CP.current == 'on' then
-        idleSet = set_combine(idleSet, sets.CP)
+    end
+
+    if pet.isvalid then
+      if pet.status == 'Engaged' then
+        if state.HybridMode.value == 'Pet' and state.PetMode.value ~= 'Tank' then
+          -- If Inhibitor or Speedloader are not equipped and pet is > 900 TP, equip Pet WS set.
+          local att = pet.attachments
+          if att and not att['inhibitor'] and not att['inhibitor ii']
+              and not att['speedloader'] and not att['speedloader ii'] and pet.tp > 900 then
+            idleSet = set_combine(idleSet, sets.midcast.Pet.Weaponskill)
+          else
+            idleSet = set_combine(idleSet, sets.idle.PetEngaged[state.PetMode.value])
+          end
+        else
+          idleSet = set_combine(idleSet, sets.idle.PetEngaged[state.PetMode.value])
+        end
       end
-    end  
+    end
   end
 
   -- If slot is locked to use no-swap gear, keep it equipped
@@ -1417,6 +1423,14 @@ function customize_idle_set(idleSet)
   if locked_ear2 then idleSet = set_combine(idleSet, { ear2=player.equipment.ear2 }) end
   if locked_ring1 then idleSet = set_combine(idleSet, { ring1=player.equipment.ring1 }) end
   if locked_ring2 then idleSet = set_combine(idleSet, { ring2=player.equipment.ring2 }) end
+
+  if state.Kiting.value then
+    idleSet = set_combine(idleSet, sets.Kiting)
+  end
+
+  if state.CP.current == 'on' then
+    idleSet = set_combine(idleSet, sets.CP)
+  end
 
   if buffactive.Doom then
     idleSet = set_combine(idleSet, sets.buff.Doom)
