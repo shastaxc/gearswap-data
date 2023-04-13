@@ -1723,7 +1723,7 @@ function check_initial_maneuvers()
   for element in pairs(elements.list) do
     local maneuver = element..' Maneuver'
     local active = buffactive[maneuver] or 0
-    for i=0,active,1 do
+    for i=1,active,1 do
       active_maneuvers:append(maneuver)
     end
   end
@@ -1877,5 +1877,4 @@ function unbind_keybinds()
 end
 
 function test()
-  table.vprint(windower.ffxi.get_abilities())
 end
