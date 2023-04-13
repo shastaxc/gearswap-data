@@ -1612,7 +1612,8 @@ function check_maneuvers()
     if not abil_recasts[210] then return end
 
     -- Auto-use maneuvers if missing maneuvers
-    if state.AutomaticManeuvers.value and not midaction() and abil_recasts[210] < 0.1 and not delay_maneuver_check_tick then
+    if state.AutomaticManeuvers.value and not midaction() and not pet_midaction()
+        and abil_recasts[210] < 0.1 and not delay_maneuver_check_tick then
       -- Cycle through all maneuvers and check how many of each we possess to see total
       local total_active = 0
       for element in pairs(elements.list) do
