@@ -27,6 +27,20 @@
 -- pet mode (I only have one set for it called OverdriveDD), reactivate your pet, then use the Overdrive JA.
 -- It is also expected that you will deactivate the pet, change pet mode, and reactivate again after Overdrive.
 
+-- Pet WS gear will only equip when in 'Pet' Hybrid Mode, you (master) are idle, pet has over 900 TP, and does not
+-- have equipped Inhibitor, Inhibitor II, Speedloader, or Speedloader II.
+
+-- Automatic Pet Targeting will cause you to use Deploy automatically on your current target if you are engaged
+-- and your pet is idle. There is a keybind to toggle it if you choose.
+
+-- Automatic Maneuvers will cause you to use maneuvers whenever you have fewer than 3 maneuvers active. This
+-- will also happen when you are in combat and regardless of Hybrid Mode. Due to these loose conditions, this
+-- is disabled by default. There is a keybind to toggle it if you choose.
+
+-- If your pet is engaged and you are in Pet mode, you will be in a PetEngaged set typically. If you need movement
+-- speed gear equipped in this situation, you can toggle on Kiting mode (CTRL+F10). Just remember to turn it off
+-- when you're done.
+
 -------------------------------------------------------------------------------------------------------------------
 --  Keybinds
 -------------------------------------------------------------------------------------------------------------------
