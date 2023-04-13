@@ -81,6 +81,7 @@ function job_setup()
   state.IdleMode:options('Normal', 'DT')
   state.CP = M(false, 'Capacity Points Mode')
   state.AutomaticPetTargeting = M(true, 'Automatic Pet Targeting')
+  state.AutomaticManeuvers = M(false,'Automatic Maneuvers')
 
   state.PetMode = M{['description']='Pet Mode', 'Tank', 'Ranged', 'RangedAcc', 'Heal', 'MeleeSpam', 'MeleeSC', 'OverdriveDD','SkillUpRanged'}
 
@@ -1592,6 +1593,21 @@ end
 function check_maneuvers()
   if not pet.isvalid then
     active_maneuvers = L{}
+  else
+    local abil_recasts = windower.ffxi.get_ability_recasts()
+    if not abil_recasts[210] then return end
+
+    -- Auto-use maneuvers if missing maneuvers
+    if state.AutomaticManeuvers.value and not midaction() and abil_recasts[210] < 0.1 and not delay_maneuver_check_tick then
+      -- Cycle through all maneuvers and check how many of each we possess to see total
+      local total_active = 0
+      for element in pairs(elements.list) do
+        total_active = total_active + (buffactive[element..' Maneuver'] or 0)
+      end
+      if total_active < 3 then
+        use_maneuver()
+      end
+    end
   end
 end
 
@@ -1818,6 +1834,7 @@ function set_main_keybinds()
   send_command('bind !delete gs c weaponset reset')
 
   send_command('bind !z gs c toggle AutomaticPetTargeting')
+  send_command('bind !x gs c toggle AutomaticManeuvers')
 
   send_command('bind ^` gs c cycle treasuremode')
   send_command('bind @c gs c toggle CP')
@@ -1857,6 +1874,7 @@ function unbind_keybinds()
   send_command('unbind !delete')
 
   send_command('unbind !z')
+  send_command('unbind !x')
 
   send_command('unbind ^`')
   send_command('unbind @c')
