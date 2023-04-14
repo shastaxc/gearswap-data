@@ -33,9 +33,9 @@
 -- Automatic Pet Targeting will cause you to use Deploy automatically on your current target if you are engaged
 -- and your pet is idle. There is a keybind to toggle it if you choose.
 
--- Automatic Maneuvers will cause you to use maneuvers whenever you have fewer than 3 maneuvers active. This
--- will also happen when you are in combat and regardless of Hybrid Mode. Due to these loose conditions, this
--- is disabled by default. There is a keybind to toggle it if you choose.
+-- Automatic Maneuvers will cause you to use maneuvers whenever you have fewer active maneuvers than listed in the
+-- defaultManeuvers table. This will also happen when you are in combat and regardless of Hybrid Mode. Due to these
+-- loose conditions, this is disabled by default. There is a keybind to toggle it if you choose.
 
 -- If your pet is engaged and you are in Pet mode, you will be in a PetEngaged set typically. If you need movement
 -- speed gear equipped in this situation, you can toggle on Kiting mode (CTRL+F10). Just remember to turn it off
@@ -104,15 +104,17 @@ function job_setup()
       'Bone Crusher', 'String Shredder', 'Arcuballista', 'Daze', 'Armor Piercer', 'Armor Shatterer'}
 
   -- Default maneuvers for each pet mode. Table keys must match PetMode values. Must have 1 for each mode.
+  -- The list of elements must only contain the following values: 'Light', 'Dark', 'Fire', 'Ice', 'Wind', 'Earth', 'Lightning', 'Water'
+  -- Elements should be listed in the order you wish them to be activated.
 	defaultManeuvers = {
-		Tank =          { Light=1, Dark=0, Fire=2, Ice=0, Wind=0, Earth=0, Lightning=0, Water=0 },
-		Ranged =        { Light=0, Dark=0, Fire=0, Ice=0, Wind=3, Earth=0, Lightning=0, Water=0 },
-		RangedAcc =     { Light=0, Dark=0, Fire=0, Ice=0, Wind=3, Earth=0, Lightning=0, Water=0 },
-		Heal =          { Light=2, Dark=1, Fire=0, Ice=0, Wind=0, Earth=0, Lightning=0, Water=0 },
-		MeleeSpam =     { Light=0, Dark=0, Fire=2, Ice=0, Wind=1, Earth=0, Lightning=0, Water=0 },
-		MeleeSC =       { Light=0, Dark=0, Fire=2, Ice=0, Wind=1, Earth=0, Lightning=0, Water=0 },
-		OverdriveDD =   { Light=1, Dark=0, Fire=1, Ice=0, Wind=0, Earth=0, Lightning=1, Water=0 },
-    SkillUpRanged = { Light=1, Dark=0, Fire=0, Ice=0, Wind=1, Earth=0, Lightning=0, Water=1 },
+		Tank =          L{'Light', 'Fire', 'Fire'},
+		Ranged =        L{'Wind', 'Wind', 'Wind'},
+		RangedAcc =     L{'Wind', 'Wind', 'Wind'},
+		Heal =          L{'Light', 'Light', 'Dark'},
+		MeleeSpam =     L{'Fire', 'Fire', 'Wind'},
+		MeleeSC =       L{'Fire', 'Fire', 'Wind'},
+		OverdriveDD =   L{'Light', 'Fire', 'Lightning'},
+    SkillUpRanged = L{'Light', 'Wind', 'Water'},
 	}
 
   ---- DO NOT MODIFY BELOW ------
@@ -1654,13 +1656,14 @@ function check_maneuvers()
 
     -- Auto-use maneuvers if missing maneuvers
     if state.AutomaticManeuvers.value and not midaction() and not pet_midaction()
-        and abil_recasts[210] < 0.1 and not delay_maneuver_check_tick then
+        and abil_recasts[210] < 0.1 and not delay_maneuver_check_tick and defaultManeuvers[state.PetMode.value] then
       -- Cycle through all maneuvers and check how many of each we possess to see total
       local total_active = 0
       for element in pairs(elements.list) do
         total_active = total_active + (buffactive[element..' Maneuver'] or 0)
       end
-      if total_active < 3 then
+      local total_desired = defaultManeuvers[state.PetMode.value].n
+      if total_active < total_desired then
         use_maneuver()
       end
     end
@@ -1760,21 +1763,25 @@ function use_maneuver(maneuver_element)
   
     -- Maneuver not specified, use defaults based on pet mode
     if maneuver_element == nil then
-      -- Use next maneuver in the list if not all default maneuvers are active
-      for element,desired_amount in pairs(defaultManeuvers[state.PetMode.value]) do
-        local active = buffactive[element..' Maneuver'] or 0
-        if desired_amount > active then
-          windower.chat.input('/pet "'..element..' Maneuver" <me>')
-          return
+      if defaultManeuvers[state.PetMode.value] then
+        -- Use next maneuver in the list if not all default maneuvers are active
+        local desired_count = {}
+        for element in defaultManeuvers[state.PetMode.value]:it() do
+          desired_count[element] = desired_count[element] and (desired_count[element] + 1) or 1
+          local active = buffactive[element..' Maneuver'] or 0
+          if active < desired_count[element] then
+            windower.chat.input('/pet "'..element..' Maneuver" <me>')
+            return
+          end
         end
+        -- If we got this far, it means all default maneuvers are active, so we need to refresh duration
+        -- To find which maneuver will be updated with the next activation, check the list
+        local next_maneuver = active_maneuvers[1]
+        windower.chat.input('/pet "'..next_maneuver..'" <me>')
+        -- Move to end of list
+        active_maneuvers:remove(1)
+        active_maneuvers:append(next_maneuver)
       end
-      -- If we got this far, it means all default maneuvers are active, so we need to refresh duration
-      -- To find which maneuver will be updated with the next activation, check the list
-      local next_maneuver = active_maneuvers[1]
-      windower.chat.input('/pet "'..next_maneuver..'" <me>')
-      -- Move to end of list
-      active_maneuvers:remove(1)
-      active_maneuvers:append(next_maneuver)
     else
       maneuver_element = maneuver_element:gsub("^%l", string.upper) -- Capitalize first letter
       if elements.list:contains(maneuver_element) then
