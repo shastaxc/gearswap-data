@@ -27,7 +27,7 @@
 -- pet mode (I only have one set for it called OverdriveDD), reactivate your pet, then use the Overdrive JA.
 -- It is also expected that you will deactivate the pet, change pet mode, and reactivate again after Overdrive.
 
--- Pet WS gear will only equip when in 'Pet' Hybrid Mode, you (master) are idle, pet has over 900 TP, and does not
+-- Pet WS gear will only equip when in 'Pet' Hybrid Mode, you (master) are idle, pet has over 1000 TP, and does not
 -- have equipped Inhibitor, Inhibitor II, Speedloader, or Speedloader II.
 
 -- Automatic Pet Targeting will cause you to use Deploy automatically on your current target if you are engaged
@@ -1443,10 +1443,10 @@ function customize_idle_set(idleSet)
     if pet.isvalid then
       if pet.status == 'Engaged' then
         if state.HybridMode.value == 'Pet' and state.PetMode.value ~= 'Tank' then
-          -- If Inhibitor or Speedloader are not equipped and pet is > 900 TP, equip Pet WS set.
+          -- If Inhibitor or Speedloader are not equipped and pet is > 1000 TP, equip Pet WS set.
           local att = pet.attachments
           if att and not att['inhibitor'] and not att['inhibitor ii']
-              and not att['speedloader'] and not att['speedloader ii'] and pet.tp > 900 then
+              and not att['speedloader'] and not att['speedloader ii'] and pet.tp > 1000 then
             idleSet = set_combine(idleSet, sets.midcast.Pet.Weaponskill)
           else
             idleSet = set_combine(idleSet, sets.idle.PetEngaged[state.PetMode.value])
