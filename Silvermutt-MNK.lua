@@ -367,32 +367,38 @@ function init_gear_sets()
   -- Shijin Spiral: 100% DEX, 1.5 fTP, 5 hit, ftp replicating
   -- DEX > multihit > WSD
   sets.precast.WS['Shijin Spiral'] = set_combine(sets.precast.WS, {
-    ammo="Aurgelmir Orb",
-    head="Kendatsuba Jinpachi +1",
-    body="Malignance Tabard",
-    hands="Malignance Gloves",
-    legs="Mpaca's Hose",
-    feet="Kendatsuba Sune-Ate +1",
-    neck="Monk's Nodowa +2",
-    ear1="Sherida Earring",
-    ear2="Odr Earring",
-    ring1="Ilabrat Ring",
-    ring2="Niqmaddu Ring",
-    back=gear.MNK_DEX_DA_Cape,
-    waist="Moonbow Belt +1",
-    -- ammo="Aurgelmir Orb +1",
+    ammo="Aurgelmir Orb",             --  5, __ <__, __, __> [__/__, ___]
+    head="Kendatsuba Jinpachi +1",    -- 47, __ <__,  4, __> [__/__, 101]
+    body="Malignance Tabard",         -- 49, __ <__, __, __> [ 9/ 9, 139]
+    hands="Malignance Gloves",        -- 56, __ <__, __, __> [ 5/ 5, 112]
+    legs=gear.Samnuha_legs,           -- 16, __ < 3,  3, __> [__/__,  75]
+    feet="Kendatsuba Sune-Ate +1",    -- 44, __ <__,  4, __> [__/__, 139]
+    neck="Monk's Nodowa +2",          -- 15, __ <__, __, __> [__/__, ___]
+    ear1="Schere Earring",            -- __, __ < 6, __, __> [__/__, ___]
+    ear2="Odr Earring",               -- 10, __ <__, __, __> [__/__, ___]
+    ring1="Ilabrat Ring",             -- 10, __ <__, __, __> [__/__, ___]
+    ring2="Niqmaddu Ring",            -- 10, __ <__, __,  3> [__/__, ___]
+    back=gear.MNK_DEX_DA_Cape,        -- 30, __ <10, __, __> [10/__, ___]
+    waist="Moonbow Belt +1",          -- 20, __ <__,  8, __> [ 6/ 6, ___]
+    -- 312 DEX, 0 WSD <19 DA, 19 TA, 3 QA> [30 PDT/20 MDT, 566 M.Eva]
+
+    -- ammo="Aurgelmir Orb +1",       --  7, __ <__, __, __> [__/__, ___]
+    -- ear2="Bhikku Earring +2",      -- 15, __ <__, __, __> [__/__, ___]
+    -- 319 DEX, 0 WSD <19 DA, 19 TA, 3 QA> [30 PDT/20 MDT, 566 M.Eva]
   })
   sets.precast.WS["Shijin Spiral"].MaxTP = set_combine(sets.precast.WS["Shijin Spiral"], {
   })
   sets.precast.WS["Shijin Spiral"].Safe = set_combine(sets.precast.WS["Shijin Spiral"], {
-    feet="Mpaca's Boots",
-    ear1="Odnowa Earring +1",
-    ring1="Defending Ring",
+    feet="Mpaca's Boots",             -- 32, __ <__,  3, __> [ 6/__,  96]
+    ear1="Odnowa Earring +1",         -- __, __ <__, __, __> [ 3/ 5, ___]
+    ring1="Defending Ring",           -- __, __ <__, __, __> [10/10, ___]
+    -- 297 DEX, 0 WSD <13 DA, 18 TA, 3 QA> [49 PDT/35 MDT, 523 M.Eva]
   })
   sets.precast.WS["Shijin Spiral"].SafeMaxTP = set_combine(sets.precast.WS["Shijin Spiral"], {
-    feet="Mpaca's Boots",
-    ear1="Odnowa Earring +1",
-    ring1="Defending Ring",
+    feet="Mpaca's Boots",             -- 32, __ <__,  3, __> [ 6/__,  96]
+    ear1="Odnowa Earring +1",         -- __, __ <__, __, __> [ 3/ 5, ___]
+    ring1="Defending Ring",           -- __, __ <__, __, __> [10/10, ___]
+    -- 297 DEX, 0 WSD <13 DA, 18 TA, 3 QA> [49 PDT/35 MDT, 523 M.Eva]
   })
   
   -- Asuran Fists: 15% STR / 15% VIT, 1.25 fTP, 8 hit, ftp replicating

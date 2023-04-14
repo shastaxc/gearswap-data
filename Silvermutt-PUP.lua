@@ -310,7 +310,7 @@ function init_gear_sets()
   sets.precast.WS = {
     ranged="Neo Animator",            -- __,  5 <__, __, __> [__/__, ___] {__/__, 119}
     head="Mpaca's Cap",               -- 33, __ < 5,  3, __> [ 7/__,  69] {__/__, ___}; TP Bonus+200
-    body="Kendatsuba Samue +1",       -- 33, __ <__,  6, __> [__/__, 117] {__/__, ___}
+    body=gear.Nyame_B_body,           -- 45, 13 < 7, __, __> [ 9/ 9, 139] {__/__, ___} 
     hands=gear.Herc_TA_hands,         -- 16, __ <__,  6, __> [ 2/__,  43] {__/__, ___}
     legs="Mpaca's Hose",              -- 49, __ <__,  4, __> [ 9/__,  96] {__/__, ___}
     feet=gear.Herc_TA_feet,           -- 16, __ <__,  6, __> [ 2/__,  75] {__/__, ___}
@@ -321,10 +321,10 @@ function init_gear_sets()
     ring2="Defending Ring",           -- __, __ <__, __, __> [10/10, ___] {__/__, ___}
     back=gear.PUP_STR_Crit_Cape,      -- 30, __ <__, __, __> [__/__, ___] { 5/ 5,   1}
     waist="Moonbow Belt +1",          -- 20, __ <__,  8, __> [ 6/ 6, ___] {__/__, ___}
-    -- 212 STR, 5 WSD <11 DA, 33 TA, 3 QA> [36 PDT/16 MDT, 400 M.Eva] {Pet: 5 PDT/5 MDT, 120 Lv}
+    -- 224 STR, 18 WSD <18 DA, 27 TA, 3 QA> [45 PDT/25 MDT, 422 M.Eva] {Pet: 5 PDT/5 MDT, 120 Lv}
     
     -- back=gear.PUP_STR_DA_Cape,     -- 30, __ <10, __, __> [__/__, ___] { 5/ 5,   1}
-    -- 212 STR, 5 WSD <21 DA, 33 TA, 3 QA> [36 PDT/16 MDT, 400 M.Eva] {Pet: 5 PDT/5 MDT, 120 Lv}
+    -- 224 STR, 18 WSD <28 DA, 27 TA, 3 QA> [45 PDT/25 MDT, 422 M.Eva] {Pet: 5 PDT/5 MDT, 120 Lv}
   }
   sets.precast.WS.MaxTP = set_combine(sets.precast.WS, {
     ear2="Brutal Earring",            -- __, __ < 5, __, __> [__/__, ___] {__/__, ___}
@@ -335,9 +335,9 @@ function init_gear_sets()
   -- 1000 TP bonus = ~15% crit rate
   sets.precast.WS["Victory Smite"] = set_combine(sets.precast.WS, {
     ranged="Neo Animator",            -- __, __, __ <__, __, __> [__/__, ___] {__/__, 119}
-    head="Mpaca's Cap",               -- 33, __,  5 < 5,  3, __> [ 7/__,  69] {__/__, ___}; TP Bonus+200
-    body="Kendatsuba Samue +1",       -- 33, __,  9 <__,  6, __> [__/__, 117] {__/__, ___}
-    hands=gear.Ryuo_A_hands,          -- 24,  5,  5 <__, __, __> [__/__, ___] {__/__, ___}
+    head="Mpaca's Cap",               -- 33, __,  4 < 5,  3, __> [ 7/__,  69] {__/__, ___}; TP Bonus+200
+    body="Mpaca's Doublet",           -- 39, __,  7 <__,  4, __> [10/__,  86] {__/__, ___}
+    hands=gear.Ryuo_A_hands,          -- 24,  5,  5 <__, __, __> [__/__,  32] {__/__, ___}
     legs="Mpaca's Hose",              -- 49, __,  6 <__,  4, __> [ 9/__,  96] {__/__, ___}
     feet=gear.Herc_STR_CritDmg_feet,  -- 16,  5, __ <__,  2, __> [ 2/__,  75] {__/__, ___}
     neck="Loricate Torque +1",        -- __, __, __ <__, __, __> [ 6/ 6, ___] {__/__, ___}
@@ -347,7 +347,7 @@ function init_gear_sets()
     ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___] {__/__, ___}
     back=gear.PUP_STR_Crit_Cape,      -- 30, __, 10 <__, __, __> [__/__, ___] { 5/ 5,   1}
     waist="Moonbow Belt +1",          -- 20, __, __ <__,  8, __> [ 6/ 6, ___] {__/__, ___}
-    -- 190 STR, 10 Crit Dmg, 30 Crit Rate <5 DA, 23 TA, 0 QA> [40 PDT/22 MDT, 357 M.Eva] {Pet: 0 PDT/0 MDT, 119 Lv}
+    -- 226 STR, 10 Crit Dmg, 37 Crit Rate <5 DA, 21 TA, 0 QA> [50 PDT/22 MDT, 358 M.Eva] {Pet: 5 PDT/5 MDT, 120 Lv}
   })
   sets.precast.WS["Victory Smite"].MaxTP = set_combine(sets.precast.WS["Victory Smite"], {
     ear2="Schere Earring",            --  5, __, __ < 6, __, __> [__/__, ___] {__/__, ___}
@@ -361,11 +361,11 @@ function init_gear_sets()
   -- DEX > multihit > WSD
   sets.precast.WS['Shijin Spiral'] = set_combine(sets.precast.WS, {
     ranged="Neo Animator",            -- __,  5 <__, __, __> [__/__, ___] {__/__, 119}
-    head="Kendatsuba Jinpachi +1",    -- 47, __ <__,  4, __> [__/__, 101] {__/__, ___}
+    head="Mpaca's Cap",               -- 30, __ < 5,  3, __> [ 7/__,  69] {__/__, ___}
     body="Malignance Tabard",         -- 49, __ <__, __, __> [ 9/ 9, 139] {__/__, ___}
     hands="Malignance Gloves",        -- 56, __ <__, __, __> [ 5/ 5, 112] {__/__, ___}
-    legs="Mpaca's Hose",              -- __, __ <__,  4, __> [__/__,  96] {__/__, ___}
-    feet="Kendatsuba Sune-Ate +1",    -- 44, __ <__,  4, __> [__/__, 139] {__/__, ___}
+    legs=gear.Samnuha_legs,           -- 16, __ < 3,  3, __> [__/__,  75] {__/__, ___}
+    feet="Mpaca's Boots",             -- 32, __ <__,  3, __> [ 6/__,  96] {__/__, ___}
     neck="Loricate Torque +1",        -- __, __ <__, __, __> [ 6/ 6, ___] {__/__, ___}
     ear1="Odr Earring",               -- 10, __ <__, __, __> [__/__, ___] {__/__, ___}
     ear2="Schere Earring",            -- __, __ < 6, __, __> [__/__, ___] {__/__, ___}
@@ -373,10 +373,12 @@ function init_gear_sets()
     ring2="Defending Ring",           -- __, __ <__, __, __> [10/10, ___] {__/__, ___}
     back=gear.PUP_STR_Crit_Cape,      -- __, __ <__, __, __> [__/__, ___] { 5/ 5,   1}
     waist="Moonbow Belt +1",          -- 20, __ <__,  8, __> [ 6/ 6, ___] {__/__, ___}
-    -- 236 DEX, 5 WSD <6 DA, 20 TA, 3 QA> [36 PDT/36 MDT, 587 M.Eva] {Pet: 5 PDT/5 MDT, 120 Lv}
+    -- 223 DEX, 5 WSD <14 DA, 17 TA, 3 QA> [49 PDT/36 MDT, 491 M.Eva] {Pet: 5 PDT/5 MDT, 120 Lv}
 
+    -- neck="Puppetmaster's Collar +2"-- 15, __ <__, __, __> [__/__, ___] {__/__, ___}
     -- ear2="Karagoz Earring +2",     -- 15, __ <__, __, __> [__/__, ___] {__/__,   1}
     -- back=gear.PUP_DEX_DA_Cape,     -- 30, __ <10, __, __> [__/__, ___] { 5/ 5,   1}
+    -- 283 DEX, 5 WSD <18 DA, 17 TA, 3 QA> [43 PDT/30 MDT, 491 M.Eva] {Pet: 5 PDT/5 MDT, 121 Lv}
   })
   sets.precast.WS["Shijin Spiral"].MaxTP = set_combine(sets.precast.WS["Shijin Spiral"], {})
   
@@ -489,6 +491,31 @@ function init_gear_sets()
   })
   sets.precast.WS['Aeolian Edge'].MaxTP = set_combine(sets.precast.WS['Aeolian Edge'], {})
 
+  sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
+    ranged="Neo Animator",            -- __, __, __ <__, __, __> [__/__, ___] {__/__, 119}
+    head="Mpaca's Cap",               -- 30, __,  4 < 5,  3, __> [ 7/__,  69] {__/__, ___}; TP Bonus+200
+    body="Mpaca's Doublet",           -- 37, __,  7 <__,  4, __> [10/__,  86] {__/__, ___}
+    hands=gear.Ryuo_A_hands,          -- 50,  5,  5 <__, __, __> [__/__,  32] {__/__, ___}
+    legs="Mpaca's Hose",              -- __, __,  6 <__,  4, __> [ 9/__,  96] {__/__, ___}
+    feet=gear.Herc_DEX_CritDmg_feet,  -- 24,  5, __ <__,  2, __> [ 2/__,  75] {__/__, ___}
+    neck="Loricate Torque +1",        -- __, __, __ <__, __, __> [ 6/ 6, ___] {__/__, ___}
+    ear1="Odr Earring",               -- 10, __,  5 <__, __, __> [__/__, ___] {__/__, ___}
+    ear2="Moonshade Earring",         -- __, __, __ <__, __, __> [__/__, ___] {__/__, ___}; TP Bonus+250
+    ring1="Niqmaddu Ring",            -- 10, __, __ <__, __,  3> [__/__, ___] {__/__, ___}
+    ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___] {__/__, ___}
+    back=gear.PUP_TP_Cape,            -- 30, __, __ <__, __, __> [__/__, ___] { 5/ 5,   1}
+    waist="Moonbow Belt +1",          -- 20, __, __ <__,  8, __> [ 6/ 6, ___] {__/__, ___}
+    -- 211 DEX, 10 Crit Dmg, 27 Crit Rate <5 DA, 21 TA, 3 QA> [50 PDT/22 MDT, 358 M.Eva] {Pet: 5 PDT/5 MDT, 120 Lv}
+    
+    -- neck="Puppetmaster's Collar +2"-- 15, __, __ <__, __, __> [__/__, ___] {__/__, ___}
+    -- back=gear.PUP_DEX_DA_Cape,     -- 30, __, __ <10, __, __> [__/__, ___] { 5/ 5,   1}
+    -- 226 DEX, 10 Crit Dmg, 27 Crit Rate <15 DA, 21 TA, 3 QA> [44 PDT/16 MDT, 358 M.Eva] {Pet: 5 PDT/5 MDT, 120 Lv}
+  })
+  sets.precast.WS['Evisceration'].MaxTP = set_combine(sets.precast.WS['Evisceration'], {
+    ear2="Schere Earring",            -- __, __, __ < 6, __, __> [__/__, ___] {__/__, ___}
+    
+    -- ear2="Karagoz Earring +2",     -- 15, __, __ <__, __, __> [__/__, ___] {__/__,   1}
+  })
 
   ------------------------------------------------------------------------------------------------
   ----------------------------------------- Pet WS Sets ------------------------------------------
