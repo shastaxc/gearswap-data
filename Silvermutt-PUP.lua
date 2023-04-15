@@ -127,6 +127,8 @@ function job_setup()
   all_maneuvers = S{'Fire Maneuver','Ice Maneuver','Wind Maneuver','Earth Maneuver','Thunder Maneuver','Water Maneuver',
       'Light Maneuver','Dark Maneuver'}
   active_maneuvers = L{}
+  
+  status_maneuver_blockers = {'overload', 'terror', 'petrification', 'stun', 'sleep', 'charm', 'amnesia', 'impairment'}
   ---- DO NOT MODIFY ABOVE ------
 
   -- TODO: Determine pet's initial mode if already summoned
@@ -1652,10 +1654,10 @@ function check_maneuvers()
     active_maneuvers = L{}
   else
     local abil_recasts = windower.ffxi.get_ability_recasts()
-    if not abil_recasts[210] and not buffactive['Overload'] then return end
     -- Auto-use maneuvers if missing maneuvers
-    if state.AutomaticManeuvers.value and not midaction() and not pet_midaction()
-        and abil_recasts[210] < 0.1 and not delay_maneuver_check_tick and defaultManeuvers[state.PetMode.value] then
+    if state.AutomaticManeuvers.value and not midaction() and not pet_midaction() and abil_recasts[210]
+        and abil_recasts[210] < 0.1 and not delay_maneuver_check_tick and defaultManeuvers[state.PetMode.value]
+        and not buffactive['Overload'] then
       -- Cycle through all maneuvers and check how many of each we possess to see total
       local total_active = 0
       for element in pairs(elements.list) do
@@ -1750,7 +1752,11 @@ function use_maneuver(maneuver_element)
     if midaction() then
       return
     end
-    for _,status in pairs(silibs.action_type_blockers) do
+    if buffactive['Overload'] then
+      add_to_chat(123, 'Cannot use Maneuver while Overloaded.')
+      return
+    end
+    for _,status in pairs(status_maneuver_blockers) do
       if buffactive[status] then
         return
       end
