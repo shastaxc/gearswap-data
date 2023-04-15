@@ -104,7 +104,7 @@ function job_setup()
       'Bone Crusher', 'String Shredder', 'Arcuballista', 'Daze', 'Armor Piercer', 'Armor Shatterer'}
 
   -- Default maneuvers for each pet mode. Table keys must match PetMode values. Must have 1 for each mode.
-  -- The list of elements must only contain the following values: 'Light', 'Dark', 'Fire', 'Ice', 'Wind', 'Earth', 'Lightning', 'Water'
+  -- The list of elements must only contain the following values: 'Light', 'Dark', 'Fire', 'Ice', 'Wind', 'Earth', 'Thunder', 'Water'
   -- Elements should be listed in the order you wish them to be activated.
 	defaultManeuvers = {
 		Tank =          L{'Light', 'Fire', 'Fire'},
@@ -113,7 +113,7 @@ function job_setup()
 		Heal =          L{'Light', 'Light', 'Dark'},
 		MeleeSpam =     L{'Fire', 'Fire', 'Wind'},
 		MeleeSC =       L{'Fire', 'Fire', 'Wind'},
-		OverdriveDD =   L{'Light', 'Fire', 'Lightning'},
+		OverdriveDD =   L{'Light', 'Fire', 'Thunder'},
     SkillUpRanged = L{'Light', 'Wind', 'Water'},
 	}
 
@@ -124,7 +124,7 @@ function job_setup()
   Flashbulb_Recast = 0
   Flashbulb_Time = 0
   Strobe_Time = 0
-  all_maneuvers = S{'Fire Maneuver','Ice Maneuver','Wind Maneuver','Earth Maneuver','Lightning Maneuver','Water Maneuver',
+  all_maneuvers = S{'Fire Maneuver','Ice Maneuver','Wind Maneuver','Earth Maneuver','Thunder Maneuver','Water Maneuver',
       'Light Maneuver','Dark Maneuver'}
   active_maneuvers = L{}
   ---- DO NOT MODIFY ABOVE ------
@@ -1636,7 +1636,7 @@ end
 
 function pet_control(command)
   if command == 'deploy' then
-    windower.chat.input('/pet "Deploy" <t>')
+    windower.chat.input('/pet "Deploy" <stnpc>')
   elseif command == 'retrieve' then
     windower.chat.input('/pet "Retrieve" <me>')
   end
@@ -1652,8 +1652,7 @@ function check_maneuvers()
     active_maneuvers = L{}
   else
     local abil_recasts = windower.ffxi.get_ability_recasts()
-    if not abil_recasts[210] then return end
-
+    if not abil_recasts[210] and not buffactive['Overload'] then return end
     -- Auto-use maneuvers if missing maneuvers
     if state.AutomaticManeuvers.value and not midaction() and not pet_midaction()
         and abil_recasts[210] < 0.1 and not delay_maneuver_check_tick and defaultManeuvers[state.PetMode.value] then
