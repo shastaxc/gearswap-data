@@ -68,8 +68,8 @@ function job_setup()
 
   state.CP = M(false, "Capacity Points Mode")
   state.ToyWeapons = M{['description']='Toy Weapons','None','Katana','GreatKatana','Dagger','Sword','Club','Staff','Polearm','GreatSword','Scythe'}
-  state.WeaponSet = M{['description']='Weapon Set', 'Chango', 'Naegling', 'Shining One', 'Club', 'Dagger', 'Staff'}
-  -- state.WeaponSet = M{['description']='Weapon Set', 'Ukon', 'Chango', 'Naegling', 'Shining One', 'Club', 'Dagger', 'Magic Axe', 'Phys Axe', 'Great Sword', 'Staff'}
+  state.WeaponSet = M{['description']='Weapon Set', 'Naegling', 'Chango', 'Shining One', 'Club', 'Dagger', 'Staff'}
+  -- state.WeaponSet = M{['description']='Weapon Set', 'Naegling', 'Ukon', 'Chango', 'Shining One', 'Club', 'Dagger', 'Magic Axe', 'Phys Axe', 'Great Sword', 'Staff'}
   state.EnmityMode = M{['description']='Enmity Mode', 'Normal', 'Low', 'Schere'}
 
   -- Set to 'True' if you want to dual wield weapons if you have the trait available
