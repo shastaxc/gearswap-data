@@ -345,7 +345,8 @@ function init_gear_sets()
     -- hands="Agwu's Gages",                        -- 60, __/__ [ 38]; R30
     -- legs="Agwu's Slops",                         -- 60, 10/10 [ 50]; R30
     -- feet="Agwu's Pigaches",                      -- 60, __/__ [ 27]; R30
-    -- 351 MAB, 17 PDT / 9 MDT [369 HP]
+    -- back=gear.RUN_Nuke_Cape,                     -- 10, 10/__ [___]
+    -- 349 MAB, 27 PDT / 9 MDT [369 HP]
   }
   sets.precast.JA['Lunge'].Safe = {
     ammo="Seething Bomblet +1",                     --  7, __/__ [___]
@@ -477,8 +478,9 @@ function init_gear_sets()
     -- body="Erilaz Surcoat +3",    -- 64, 64 [__/__, 130] 143
     -- ear2="Erilaz Earring +2",    -- 20, 20 [ 8/ 8,  12] ___
     -- ring1="Etana Ring",          -- 10, 10 [__/__, ___]  60
+    -- back=gear.RUN_Nuke_Cape,     -- __, 20 [10/__, ___] ___
     -- waist="Luminary Sash",       -- __, 10 [__/__, ___] ___
-    -- 370 Acc, 399 Magic Acc [53 PDT/43 MDT, 662 M.Eva] 521 HP
+    -- 350 Acc, 419 Magic Acc [53 PDT/43 MDT, 662 M.Eva] 521 HP
   }
   sets.HybridAcc.Safe = {
     ammo="Hydrocera",                             -- __,  6 [__/__, ___] ___
@@ -668,7 +670,7 @@ function init_gear_sets()
     -- 61 Total Phalanx
     
     -- Master Levels                                   50
-    -- 27 Phalanx, 500 Enh Skill, 17% Interrupt [46 PDT/25 MDT, 380 M.Eva] 874/1211 HP
+    -- 27 Phalanx, 500 Enh Skill, 17% Interrupt [46 PDT/28 MDT, 380 M.Eva] 874/1211 HP
     -- 62 Total Phalanx
   }
   sets.midcast['Phalanx'].Embolden = set_combine(sets.midcast['Phalanx'], {
@@ -735,10 +737,10 @@ function init_gear_sets()
     ring2={name="Moonlight Ring", priority=1},      --  5/ 5, ___ [110] __
     back={name="Moonlight Cape", priority=1},       --  6/ 6, ___ [275] __
     waist="Siegel Sash",                            -- __/__, ___ [___] 20
-    -- 53 PDT/47 MDT, 667 M.Eva [1037 HP] 20 Stoneskin Potency
+    -- 53 PDT/47 MDT, 667 M.Eva [1307 HP] 20 Stoneskin Potency
 
     -- hands={name="Stone Mufflers", priority=1},   -- __/__, ___ [ 10] 30
-    -- 53 PDT/47 MDT, 566 M.Eva [1303 HP] 50 Stoneskin Potency
+    -- 53 PDT/47 MDT, 566 M.Eva [1243 HP] 50 Stoneskin Potency
   }
   sets.midcast.Flash = set_combine(sets.Enmity, {})
   sets.midcast.Foil = set_combine(sets.Enmity, {})
@@ -1133,13 +1135,16 @@ function init_gear_sets()
   sets.engaged.LightDef.LowAcc = set_combine(sets.engaged.LightDef, {
     ear2="Cessance Earring",          -- __,  3,  6, __ < 3, __, __> [__/__, ___] ___
     -- neck="Combatant's Torque",     -- __,  4, __, __ <__, __, __> [__/__, ___] ___; skill+15
+    -- 193 DEX, 56 STP, 314 Acc, 25 Haste <12 DA, 7 TA, 0 QA> [51 PDT/41 MDT, 509 M.Eva] 674/991 HP
   })
   sets.engaged.LightDef.MidAcc = set_combine(sets.engaged.LightDef.LowAcc, {
     ear2="Dignitary's Earring",       -- __,  3, 10, __ <__, __, __> [__/__, ___] ___
+    -- 193 DEX, 56 STP, 318 Acc, 25 Haste <9 DA, 7 TA, 0 QA> [51 PDT/41 MDT, 509 M.Eva] 674/991 HP
   })
   sets.engaged.LightDef.HighAcc = set_combine(sets.engaged.LightDef.MidAcc, {
     ammo="Yamarang",                  -- __,  3, 15, __ <__, __, __> [__/__, ___] ___
     legs=gear.Nyame_B_legs,           -- __, __, 40,  5 < 6, __, __> [ 8/ 8, 150] 114
+    -- 177 DEX, 52 STP, 358 Acc, 25 Haste <12 DA, 4 TA, 0 QA> [56 PDT/46 MDT, 584 M.Eva] 747/1071 HP
   })
 
 

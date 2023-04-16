@@ -147,6 +147,8 @@ gear.Taeon_Phalanx_feet = gear.Taeon_FC_feet
 
 gear.Taeon_RA_head = { name="Taeon Chapeau", augments={'"Snapshot"+5','"Snapshot"+5',}}
 
+gear.Taeon_Regen_body = {} -- Regen potency +3, M.Eva+20
+
 gear.Taeon_Pet_DT_body = { name="Taeon Tabard", augments={'Mag. Evasion+20','Pet: "Dbl. Atk."+5','Pet: Damage taken -4%',}}
 gear.Taeon_Pet_DT_hands = { name="Taeon Gloves", augments={'Mag. Evasion+20','Pet: "Regen"+3','Pet: Damage taken -4%',}}
 
@@ -296,6 +298,7 @@ gear.RUN_TP_Cape = {name="Ogma's Cape", augments={'DEX+20','Accuracy+20 Attack+2
 gear.RUN_WS1_Cape = { name="Ogma's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
 gear.RUN_WS2_Cape = {name="Ogma's cape", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
 -- gear.RUN_WS3_Cape = { name="Ogma's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
+-- gear.RUN_Nuke_Cape = { name="Ogma's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
 
 gear.SAM_STR_WSD_Cape = { name="Smertrios's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
 gear.SAM_TP_Cape = { name="Smertrios's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
