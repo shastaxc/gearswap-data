@@ -319,6 +319,7 @@ gear.WAR_STR_WSD_Cape = { name="Cichol's Mantle", augments={'STR+20','Accuracy+2
 -- gear.WAR_VIT_WSD_Cape = { name="Cichol's Mantle", augments={'VIT+20','Accuracy+20 Attack+20','VIT+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
 -- gear.WAR_VIT_DA_Cape = { name="Cichol's Mantle", augments={'VIT+20','Accuracy+20 Attack+20','VIT+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
 -- gear.WAR_STR_MAB_Cape = { name="Cichol's Mantle", augments={'STR+20','Mag. Acc+20 /Mag. Dmg.+20','STR+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
+-- gear.WAR_STP_Cape = {name="Cichol's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}}
 
 
 ----------------------------------------------------------------------
