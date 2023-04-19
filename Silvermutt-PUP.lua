@@ -219,17 +219,17 @@ function init_gear_sets()
     hands="Foire Dastanas +2",        --  3,  3 [__/__,  36] {__/__, ___}
     legs=gear.Nyame_B_legs,           -- __, __ [ 8/ 8, 150] {__/__, ___}
     neck="Buffoon's Collar +1",       --  5, __ [__/__, ___] {__/__, ___}
+    ear1="Burana Earring",            -- __,  1 [__/__, ___] {__/__, ___}
     ear2="Karagoz Earring +1",        -- __, __ [__/__, ___] {__/__,   1}
     ring1="Gelatinous Ring +1",       -- __, __ [ 7/-1, ___] {__/__, ___}
     ring2="Defending Ring",           -- __, __ [10/10, ___] {__/__, ___}
     back=gear.PUP_Pet_Tank_Cape,      -- 10, __ [__/__,  20] { 5/ 5,   1}
     waist="Moonbow Belt +1",          -- __, __ [ 6/ 6, ___] {__/__, ___}
-    -- 58 Overload-, 3 Maneuver+ [56 PDT/35 MDT, 380 M.Eva] {Pet: 10 PDT/10 MDT, 121 Lv+}
+    -- 58 Overload-, 4 Maneuver+ [56 PDT/35 MDT, 380 M.Eva] {Pet: 10 PDT/10 MDT, 121 Lv+}
     
     -- body="Karagoz Farsetto +3",    -- 40, __ [13/13, 109] {__/__, ___}
     -- hands="Foire Dastanas +3",     --  5,  5 [__/__,  46] {__/__, ___}
     -- legs="Foire Churidars +3",     -- __, __ [__/__,  84] { 6/ 6, ___}
-    -- ear1="Burana Earring",         -- __,  1 [__/__, ___] {__/__, ___}
     -- ear2="Karagoz Earring +2",     -- __, __ [__/__, ___] {__/__,   1}
     -- 60 Overload-, 6 Maneuver+ [55 PDT/28 MDT, 430 M.Eva] {Pet: 16 PDT/16 MDT, 122 Lv+}
   }
@@ -533,7 +533,7 @@ function init_gear_sets()
     legs="Karagoz Pantaloni +3",
     feet="Mpaca's Boots",
     ear1="Enmerkar Earring",
-    ear2="Karagoz Earring +1",
+    ear2="Burana Earring",
     ring1="Varar Ring +1",
     ring2="Defending Ring",
     back=gear.PUP_Pet_TP_Cape,
@@ -542,7 +542,6 @@ function init_gear_sets()
     -- head="Karagoz Capello +3",
     -- body="Pitre Tobe +3",
     -- neck="Puppetmaster's Collar +2",
-    -- ear2="Burana Earring",
     -- ring2="Cath Palug Ring",
     -- waist="Incarnation Sash",
   }
@@ -726,20 +725,19 @@ function init_gear_sets()
     legs=gear.Nyame_B_legs,             -- __, 40 < 5, __, __> [ 8/ 8, 150] {__/__, ___ | __, __, __, 50}
     feet="Pitre Babouches +1",          -- __, __ <__, __, __> [__/__,  64] {__/__, ___ | 18, __, __, 15}
     neck="Adad Amulet",                 -- __, __ <__, __, __> [ 4/ 4, ___] {__/__, ___ | 10, __, __, 20}
-    ear1="Enmerkar Earring",            -- __, __ <__, __, __> [__/__, ___] { 3/ 3, ___ | __, __, __, 15}
+    ear1="Burana Earring",              -- __, __ <__, __, __> [__/__, ___] {__/__, ___ | 10, __, __, __}
     ear2="Karagoz Earring +1",          --  4, 12 <__, __, __> [__/__, ___] {__/__,   1 | __, __, __, __}
     ring1="Chirich Ring +1",            --  6, 10 <__, __, __> [__/__, ___] {__/__, ___ | __, __, __, __}
     ring2="Defending Ring",             -- __, __ <__, __, __> [10/10, ___] {__/__, ___ | __, __, __, __}
     back=gear.PUP_TP_Cape,              -- 10, 20 <__, __, __> [__/__, ___] { 5/ 5,   1 | __, __, __, __}
     waist="Moonbow Belt +1",            -- __, __ <__,  8, __> [ 6/ 6, ___] {__/__, ___ | __, __, __, __}
-    -- 20 STP, 172 Acc <16 DA, 8 TA, 0 QA> [44 PDT/44 MDT, 518 M.Eva] {Pet: 8 PDT/8 MDT, 121 Lv | 43 MAB, 0 Magic Skill, 0 INT, 250 M.Acc}
+    -- 20 STP, 172 Acc <16 DA, 8 TA, 0 QA> [44 PDT/44 MDT, 518 M.Eva] {Pet: 5 PDT/5 MDT, 121 Lv | 53 MAB, 0 Magic Skill, 0 INT, 235 M.Acc}
     
     -- body="Udug Jacket",              -- __, 45 <__, __, __> [10/10,  86] {__/__, ___ | 45, __, __, 45}
     -- hands=gear.Naga_D_hands,         -- __, __ <__, __, __> [ 2/ 2,  26] {__/__, ___ | 20, __, __, 20}
     -- legs="Pitre Churidars +3",       -- __, 46 <__, __, __> [__/__,  84] {__/__, ___ | 51, __, __, 48}
     -- feet="Pitre Babouches +3",       -- __, 36 <__, __, __> [__/__,  84] {__/__, ___ | 57, __, __, 43}
     -- neck="Puppetmaster's Collar +2", -- __, 30 <__, __, __> [__/__, ___] {__/__, ___ | 25, __, __, 25}
-    -- ear1="Burana Earring",           -- __, __ <__, __, __> [__/__, ___] {__/__, ___ | 10, __, __, __}
     -- ear2="Karagoz Earring +2",       --  8, 20 <__, __, __> [__/__, ___] {__/__,   1 | __, __, __, __}
     -- ring1="Cath Palug Ring",         -- __, __ <__, __, __> [ 5/ 5, ___] {__/__, ___ | __, __, __, 12}
     -- back=gear.PUP_Pet_Nuke_Cape,     -- 10, 20 <__, __, __> [__/__, ___] { 5/ 5,   1 | __, __, __, 30}
@@ -758,17 +756,17 @@ function init_gear_sets()
     feet="Pitre Babouches +1",          -- __, __ <__, __, __> [__/__,  64] {__/__, ___ | 18, __, __, 15}
     neck="Adad Amulet",                 -- __, __ <__, __, __> [ 4/ 4, ___] {__/__, ___ | 10, __, __, 20}
     ear1="Enmerkar Earring",            -- __, __ <__, __, __> [__/__, ___] { 3/ 3, ___ | __, __, __, 15}
+    ear1="Burana Earring",              -- __, __ <__, __, __> [__/__, ___] {__/__, ___ | 10, __, __, __}
     ear2="Karagoz Earring +1",          --  4, 12 <__, __, __> [__/__, ___] {__/__,   1 | __, __, __, __}
     ring1="Chirich Ring +1",            --  6, 10 <__, __, __> [__/__, ___] {__/__, ___ | __, __, __, __}
     ring2="Defending Ring",             -- __, __ <__, __, __> [10/10, ___] {__/__, ___ | __, __, __, __}
     back=gear.PUP_TP_Cape,              -- 10, 20 <__, __, __> [__/__, ___] { 5/ 5,   1 | __, __, __, __}
     waist="Moonbow Belt +1",            -- __, __ <__,  8, __> [ 6/ 6, ___] {__/__, ___ | __, __, __, __}
-    -- 39 STP, 264 Acc <10 DA, 15 TA, 0 QA> [55 PDT/38 MDT, 451 M.Eva] {Pet: 8 PDT/8 MDT, 121 Lv | 28 MAB, 0 Magic Skill, 0 INT, 292 M.Acc}
+    -- 39 STP, 264 Acc <10 DA, 15 TA, 0 QA> [55 PDT/38 MDT, 451 M.Eva] {Pet: 5 PDT/5 MDT, 121 Lv | 38 MAB, 0 Magic Skill, 0 INT, 277 M.Acc}
     
     -- legs="Pitre Churidars +3",       -- __, 46 <__, __, __> [__/__,  84] {__/__, ___ | 51, __, __, 48}
     -- feet="Pitre Babouches +3",       -- __, 36 <__, __, __> [__/__,  84] {__/__, ___ | 57, __, __, 43}
     -- neck="Puppetmaster's Collar +2", -- __, 30 <__, __, __> [__/__, ___] {__/__, ___ | 25, __, __, 25}
-    -- ear1="Burana Earring",           -- __, __ <__, __, __> [__/__, ___] {__/__, ___ | 10, __, __, __}
     -- ear2="Karagoz Earring +2",       --  8, 20 <__, __, __> [__/__, ___] {__/__,   1 | __, __, __, __}
     -- ring1="Cath Palug Ring",         -- __, __ <__, __, __> [ 5/ 5, ___] {__/__, ___ | __, __, __, 12}
     -- back=gear.PUP_Pet_Nuke_Cape,     -- 10, 20 <__, __, __> [__/__, ___] { 5/ 5,   1 | __, __, __, 30}
@@ -845,14 +843,11 @@ function init_gear_sets()
     feet=gear.Nyame_B_feet,           -- __ [ 7/ 7, 150] {__/__, ___ | __, __}
     neck="Loricate Torque +1",        -- __ [ 6/ 6, ___] {__/__, ___ | __, __}
     ear1="Enmerkar Earring",          -- __ [__/__, ___] { 3/ 3, ___ | __, __}
-    ear2="Karagoz Earring +1",        -- __ [__/__, ___] {__/__,   1 | __, __}
+    ear2="Burana Earring",            -- __ [__/__, ___] {__/__, ___ |  2, __}
     ring1="Gelatinous Ring +1",       -- __ [ 7/-1, ___] {__/__, ___ | __, __}
     ring2="Defending Ring",           -- __ [10/10, ___] {__/__, ___ | __, __}
     back=gear.PUP_TP_Cape,            -- __ [__/__, ___] { 5/ 5,   1 | __, __}
     waist="Moonbow Belt +1",          -- __ [ 6/ 6, ___] {__/__, ___ | __, __}
-    -- 17 Regen [48 PDT/40 MDT, 458 M.Eva] {Pet: 12 PDT/12 MDT, 121 Lv | 8 Regen, 5 Refresh}
-    
-    -- ear2="Burana Earring",         -- __ [__/__, ___] {__/__, ___ |  2, __}
     -- 17 Regen [48 PDT/40 MDT, 458 M.Eva] {Pet: 12 PDT/12 MDT, 120 Lv | 10 Regen, 5 Refresh}
   }
 
