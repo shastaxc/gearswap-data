@@ -215,13 +215,13 @@ function init_gear_sets()
   sets.precast.FC = {
     head="Herculean Helm", --7
     hands=gear.Leyline_Gloves, --8
+    neck="Orunmila's Torque", --5
     ear1="Loquac. Earring", --2
     ear2="Etiolation Earring", --1
 
     -- body=gear.Taeon_FC_body, --9
     -- legs=gear.Taeon_FC_legs, --5
     -- feet=gear.Taeon_FC_feet, --5
-    -- neck="Orunmila's Torque", --5
   }
 
   sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {

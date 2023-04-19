@@ -281,7 +281,7 @@ function init_gear_sets()
     hands=gear.Leyline_Gloves, --8
     legs=gear.Taeon_FC_legs, --5
     feet=gear.Carmine_D_feet, --8
-    -- neck="Orunmila's Torque", --5
+    neck="Orunmila's Torque", --5
     ear1="Loquac. Earring", --2
     -- ring1="Prolix Ring", --2
     ring2="Kishar Ring", --4

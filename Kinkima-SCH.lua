@@ -98,7 +98,7 @@ function init_gear_sets()
 
   -- Fast cast sets for spells
   sets.precast.FC = {
-    main=gear.Pedagogy_C,             --  8 [__/__, ___]
+    main="Malignance Pole",           -- __ [20/20, ___]
     sub="Khonsu",                     -- __ [ 6/ 6, ___]
     ammo="Incantor Stone",            --  2 [__/__, ___]
     head=gear.Psycloth_D_head,        -- 10 [__/__,  75]
@@ -106,17 +106,13 @@ function init_gear_sets()
     hands="Academic's Bracers +3",    --  9 [__/__,  57]
     legs="Pinga Pants +1",            -- 13 [__/__, 147]
     feet=gear.Merl_FC_feet,           -- 12 [__/__, 118]
-    neck="Loricate Torque +1",        -- __ [ 6/ 6, ___]; DEF+60
+    neck="Orunmila's Torque",         --  5 [__/__, ___]
     ear1="Malignance Earring",        --  4 [__/__, ___]
     ear2="Etiolation Earring",        --  1 [__/ 3, ___]; Resist Silence+15
     ring1="Gelatinous Ring +1",       -- __ [ 7/-1, ___]
     ring2="Defending Ring",           -- __ [10/10, ___]
     back=gear.SCH_FC_Cape,            -- 10 [10/__,  30]
     waist="Carrier's Sash",           -- __ [__/__, ___]; Ele Resist+15
-    -- 84 Fast Cast [39 PDT/24 MDT, 555 MEVA]
-
-    -- main="Malignance Pole",        -- __ [20/20, ___]
-    -- neck="Orunmila's Torque",      --  5 [__/__, ___]
     -- 81 Fast Cast [53 PDT/38 MDT, 555 MEVA]
 
     -- Ideal:
@@ -141,21 +137,21 @@ function init_gear_sets()
   -- breaking the normal 80% cast time reduction cap.
   -- Cast Time = Base Cast Time x (1 - FC)x(1 - magian staff cast bonus)x(1 - Grimoire reduction)
   sets.precast.FC.Grimoire = set_combine(sets.precast.FC, {
-    -- main="Malignance Pole",        -- __ [20/20, ___]
-    -- sub="Khonsu",                     -- __ [ 6/ 6, ___]
-    -- ammo="Incantor Stone",            --  2 [__/__, ___]
-    -- head="Pedagogy Mortarboard +3",   -- __ [__/__,  95] 13
-    -- body="Pinga Tunic +1",            -- 15 [__/__, 128]
-    -- hands="Academic's Bracers +3",    --  9 [__/__,  57]
-    -- legs="Pinga Pants +1",            -- 13 [__/__, 147]
-    -- feet=gear.Merl_FC_feet,        -- 12 [__/__, 118]
-    -- neck="Orunmila's Torque",      --  5 [__/__, ___]
-    -- ear1="Malignance Earring",        --  4 [__/__, ___]
-    -- ear2="Etiolation Earring",        --  1 [__/ 3, ___]; Resist Silence+15
-    -- ring1="Kishar Ring",              --  4 [__/__, ___]
-    -- ring2="Defending Ring",           -- __ [10/10, ___]
-    -- back=gear.SCH_FC_Cape,            -- 10 [10/__,  30]
-    -- waist="Embla Sash",               --  5 [__/__, ___]
+    main="Malignance Pole",           -- __ [20/20, ___]
+    sub="Khonsu",                     -- __ [ 6/ 6, ___]
+    ammo="Incantor Stone",            --  2 [__/__, ___]
+    head="Pedagogy Mortarboard +3",   -- __ [__/__,  95] 13
+    body="Pinga Tunic +1",            -- 15 [__/__, 128]
+    hands="Academic's Bracers +3",    --  9 [__/__,  57]
+    legs="Pinga Pants +1",            -- 13 [__/__, 147]
+    feet=gear.Merl_FC_feet,           -- 12 [__/__, 118]
+    neck="Orunmila's Torque",         --  5 [__/__, ___]
+    ear1="Malignance Earring",        --  4 [__/__, ___]
+    ear2="Etiolation Earring",        --  1 [__/ 3, ___]; Resist Silence+15
+    ring1="Kishar Ring",              --  4 [__/__, ___]
+    ring2="Defending Ring",           -- __ [10/10, ___]
+    back=gear.SCH_FC_Cape,            -- 10 [10/__,  30]
+    waist="Embla Sash",               --  5 [__/__, ___]
     -- 80 Fast Cast [46 PDT/39 MDT, 575 MEVA] 13 Grimoire Reduction + status resist
     
     -- If using Hvergelmir in precast.FC...
@@ -166,7 +162,7 @@ function init_gear_sets()
   })
   -- 10% cap on Quick Magic
   sets.precast.FC.QuickMagic = {
-    main=gear.Pedagogy_C,             --  8 [__/__, ___]
+    main="Malignance Pole",           -- __ [20/20, ___] __
     sub="Khonsu",                     -- __ [ 6/ 6, ___] __
     ammo="Impatiens",                 -- __ [__/__, ___]  2
     head=gear.Psycloth_D_head,        -- 10 [__/__,  75] __
@@ -174,30 +170,15 @@ function init_gear_sets()
     hands="Academic's Bracers +3",    --  9 [__/__,  57] __
     legs="Pinga Pants +1",            -- 13 [__/__, 147] __
     feet=gear.Merl_FC_feet,           -- 12 [__/__, 118] __
-    neck="Loricate Torque +1",        -- __ [ 6/ 6, ___]; DEF+60
+    neck="Orunmila's Torque",         --  5 [__/__, ___] __
     ear1="Malignance Earring",        --  4 [__/__, ___] __
     ear2="Odnowa Earring +1",         -- __ [ 3/ 5, ___] __
-    ring1="Gelatinous Ring +1",       -- __ [ 7/-1, ___] __
     ring2="Defending Ring",           -- __ [10/10, ___] __
     back=gear.SCH_FC_Cape,            -- 10 [10/__,  30] __
     waist="Witful Belt",              --  3 [__/__, ___]  3
-    -- 84 Fast Cast [42PDT/47MDT, 555 MEVA] 5 Quick Magic
+    -- 81 Fast Cast [49PDT/41MDT, 555 MEVA] 5 Quick Magic
     
-    -- main="Malignance Pole",        -- __ [20/20, ___] __
-    -- sub="Khonsu",                  -- __ [ 6/ 6, ___] __
-    -- ammo="Impatiens",              -- __ [__/__, ___]  2
-    -- head=gear.Psycloth_D_head,     -- 10 [__/__,  75] __
-    -- body="Pinga Tunic +1",         -- 15 [__/__, 128] __
-    -- hands="Academic's Bracers +3", --  9 [__/__,  57] __
-    -- legs="Pinga Pants +1",         -- 13 [__/__, 147] __
-    -- feet=gear.Merl_FC_feet,        -- 12 [__/__, 118] __
-    -- neck="Orunmila's Torque",      --  5 [__/__, ___] __
-    -- ear1="Malignance Earring",     --  4 [__/__, ___] __
-    -- ear2="Odnowa Earring +1",      -- __ [ 3/ 5, ___] __
     -- ring1="Lebeche Ring",          -- __ [__/__, ___]  2
-    -- ring2="Defending Ring",        -- __ [10/10, ___] __
-    -- back=gear.SCH_FC_Cape,         -- 10 [10/__,  30] __
-    -- waist="Witful Belt",           --  3 [__/__, ___]  3
     -- 81 Fast Cast [49PDT/41MDT, 555 MEVA] 7 Quick Magic
   }
   -- No point in this set until normal sets.precast.FC.QuickMagic can cap stats
@@ -223,40 +204,25 @@ function init_gear_sets()
     -- 82 Fast Cast [52 PDT/27 MDT, 533 MEVA]
   }
   sets.precast.FC.QuickMagic.RDM = {
-    main=gear.Pedagogy_C,             --  8 [__/__, ___]
+    main="Malignance Pole",           -- __ [20/20, ___] __
     sub="Khonsu",                     -- __ [ 6/ 6, ___] __
     ammo="Impatiens",                 -- __ [__/__, ___]  2
     head=gear.Psycloth_D_head,        -- 10 [__/__,  75] __
     body="Pinga Tunic +1",            -- 15 [__/__, 128] __
-    hands="Academic's Bracers +3",    --  9 [__/__,  57] __
+    hands=gear.Gende_SongFC_hands,    --  7 [ 3/ 2,  37] __
     legs="Pinga Pants +1",            -- 13 [__/__, 147] __
     feet=gear.Merl_FC_feet,           -- 12 [__/__, 118] __
-    neck="Loricate Torque +1",        -- __ [ 6/ 6, ___]; DEF+60
-    ear1="Malignance Earring",        --  4 [__/__, ___] __
+    neck="Orunmila's Torque",         --  5 [__/__, ___] __
     ear2="Odnowa Earring +1",         -- __ [ 3/ 5, ___] __
-    ring1="Gelatinous Ring +1",       -- __ [ 7/-1, ___] __
     ring2="Defending Ring",           -- __ [10/10, ___] __
     back="Perimede Cape",             -- __ [__/__, ___]  4
     waist="Witful Belt",              --  3 [__/__, ___]  3
     -- Sub RDM trait                  -- 15
-    -- 89 Fast Cast [42PDT/47MDT, 555 MEVA] 9 Quick Magic
+    -- 80 Fast Cast [42PDT/43MDT, 505 MEVA] 9 Quick Magic
     
-    -- main="Malignance Pole",        -- __ [20/20, ___] __
-    -- sub="Khonsu",                  -- __ [ 6/ 6, ___] __
-    -- ammo="Impatiens",              -- __ [__/__, ___]  2
-    -- head=gear.Psycloth_D_head,     -- 10 [__/__,  75] __
-    -- body="Pinga Tunic +1",         -- 15 [__/__, 128] __
     -- hands=gear.Gende_SongFC_hands, --  7 [ 4/__,  37] __
-    -- legs="Pinga Pants +1",         -- 13 [__/__, 147] __
-    -- feet=gear.Merl_FC_feet,        -- 12 [__/__, 118] __
-    -- neck="Orunmila's Torque",      --  5 [__/__, ___] __
     -- ear1="Genmei Earring",         -- __ [ 2/__, ___] __
-    -- ear2="Odnowa Earring +1",      -- __ [ 3/ 5, ___] __
     -- ring1="Lebeche Ring",          -- __ [__/__, ___]  2
-    -- ring2="Defending Ring",        -- __ [10/10, ___] __
-    -- back="Perimede Cape",          -- __ [__/__, ___]  4
-    -- waist="Witful Belt",           --  3 [__/__, ___]  3
-    -- Sub RDM trait                  -- 15
     -- 80 Fast Cast [45PDT/41MDT, 505 MEVA] 11 Quick Magic
   }
   sets.precast.FC.RDM.Grimoire = {
@@ -265,7 +231,7 @@ function init_gear_sets()
     ammo="Incantor Stone",            --  2 [__/__, ___] __
     head="Pedagogy Mortarboard +3",   -- __ [__/__,  95] 13
     body="Pinga Tunic +1",            -- 15 [__/__, 128] __
-    hands="Academic's Bracers +3",    --  9 [__/__,  57] __
+    hands=gear.Gende_SongFC_hands,    --  7 [ 3/ 2,  37] __
     legs="Pinga Pants +1",            -- 13 [__/__, 147] __
     feet="Academic's Loafers +3",     -- __ [__/__, 127] 12
     neck="Loricate Torque +1",        -- __ [ 6/ 6, ___] __; DEF+60
@@ -276,7 +242,7 @@ function init_gear_sets()
     back=gear.SCH_FC_Cape,            -- 10 [10/__,  30] __
     waist="Embla Sash",               --  5 [__/__, ___] __
     -- Sub RDM trait                  -- 15
-    -- 82 Fast Cast [39 PDT/24 MDT, 584 MEVA] 25 Grimoire Speed
+    -- 80 Fast Cast [42 PDT/26 MDT, 564 MEVA] 25 Grimoire Speed
 
     -- hands=gear.Gende_SongFC_hands, --  7 [ 4/__,  37] __
     -- 80 Fast Cast [43 PDT/24 MDT, 564 MEVA] 25 Grimoire Speed
