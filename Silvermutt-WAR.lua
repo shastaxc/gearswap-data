@@ -756,7 +756,7 @@ function init_gear_sets()
     hands="Sakpata's Gauntlets",          -- [ 8/ 8, 112]  8 <__, __,  6> __,  4
     legs="Tatenashi Haidate +1",          -- [__/__,  80]  8 <__,  3, __> __,  5
     feet="Sakpata's Leggings",            -- [ 6/ 6, 150] __ <__, __,  4> __,  2
-    neck="Warrior's Bead Necklace +1",    -- [__/__, ___] __ <__, __,  6> __, __
+    neck="Ainia Collar",                  -- [__/__, ___]  8 <__, __, __> __, __
     ear1="Dedition Earring",              -- [__/__, ___]  8 <__, __, __> __, __
     ear2="Schere Earring",                -- [__/__, ___]  5 <__, __,  6> __, __; R30
     ring1="Epona's Ring",                 -- [__/__, ___] __ <__,  3,  3> __, __
@@ -764,10 +764,9 @@ function init_gear_sets()
     back=gear.WAR_STR_DA_Cape,            -- [10/__, ___] __ <__, __, 10> __, __; DA dmg+20%
     waist="Ioskeha Belt +1",              -- [__/__, ___] __ <__, __,  9> __,  8
     -- WAR Traits                            [__/__, ___] __ <__, __, 33> __, __
-    -- [50 PDT/40 MDT, 574 MEVA] 48 STP <0 QA, 6 TA, 85 DA> 0 Crit Rate, 26 Haste; DA dmg+35%
+    -- [50 PDT/40 MDT, 574 MEVA] 56 STP <0 QA, 6 TA, 79 DA> 0 Crit Rate, 26 Haste; DA dmg+35%
 
     -- legs=gear.Odyssean_STP_legs,       -- [__/__,  86] 13 <__, __,  2> __,  5
-    -- neck="Ainia Collar",               -- [__/__, ___]  8 <__, __, __> __, __
     -- back=gear.WAR_STP_Cape,            -- [10/__, ___] 10 <__, __, __> __, __; DA dmg+20%
     -- [50 PDT/40 MDT, 580 MEVA] 71 STP <0 QA, 3 TA, 71 DA> 0 Crit Rate, 26 Haste; DA dmg+35%
   }
