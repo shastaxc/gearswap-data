@@ -536,13 +536,12 @@ function init_gear_sets()
     ring1="Varar Ring +1",
     ring2="Defending Ring",
     back=gear.PUP_Pet_TP_Cape,
-    waist="Klouskap Sash +1",
+    waist="Incarnation Sash",
     
     -- head="Karagoz Capello +3",
     -- body="Pitre Tobe +3",
     -- neck="Puppetmaster's Collar +2",
     -- ring2="Cath Palug Ring",
-    -- waist="Incarnation Sash",
   }
 
   -- Specific Pet WS sets are not really used because we cannot detect when pet is about to use a WS.
@@ -729,8 +728,8 @@ function init_gear_sets()
     ring1="Chirich Ring +1",            --  6, 10 <__, __, __> [__/__, ___] {__/__, ___ | __, __, __, __}
     ring2="Defending Ring",             -- __, __ <__, __, __> [10/10, ___] {__/__, ___ | __, __, __, __}
     back=gear.PUP_TP_Cape,              -- 10, 20 <__, __, __> [__/__, ___] { 5/ 5,   1 | __, __, __, __}
-    waist="Moonbow Belt +1",            -- __, __ <__,  8, __> [ 6/ 6, ___] {__/__, ___ | __, __, __, __}
-    -- 20 STP, 178 Acc <11 DA, 8 TA, 0 QA> [36 PDT/36 MDT, 452 M.Eva] {Pet: 5 PDT/5 MDT, 121 Lv | 104 MAB, 0 Magic Skill, 0 INT, 233 M.Acc}
+    waist="Incarnation Sash",           -- __, __ <__, __, __> [__/__, ___] {__/__, ___ | __, __, __, 15}
+    -- 20 STP, 178 Acc <11 DA, 0 TA, 0 QA> [30 PDT/30 MDT, 452 M.Eva] {Pet: 5 PDT/5 MDT, 121 Lv | 104 MAB, 0 Magic Skill, 0 INT, 248 M.Acc}
     
     -- body="Udug Jacket",              -- __, 45 <__, __, __> [10/10,  86] {__/__, ___ | 45, __, __, 45}
     -- hands=gear.Naga_D_hands,         -- __, __ <__, __, __> [ 2/ 2,  26] {__/__, ___ | 20, __, __, 20}
@@ -739,7 +738,6 @@ function init_gear_sets()
     -- ear2="Karagoz Earring +2",       --  8, 20 <__, __, __> [__/__, ___] {__/__,   1 | __, __, __, __}
     -- ring1="Cath Palug Ring",         -- __, __ <__, __, __> [ 5/ 5, ___] {__/__, ___ | __, __, __, 12}
     -- back=gear.PUP_Pet_Nuke_Cape,     -- 10, 20 <__, __, __> [__/__, ___] { 5/ 5,   1 | __, __, __, 30}
-    -- waist="Incarnation Sash",        -- __, __ <__, __, __> [__/__, ___] {__/__, ___ | __, __, __, 15}
     -- 18 STP, 177 Acc <0 DA, 0 TA, 0 QA> [31 PDT/31 MDT, 333 M.Eva] {Pet: 5 PDT/5 MDT, 121 Lv | 208 MAB, 0 Magic Skill, 0 INT, 283 M.Acc}
     
     -- head=gear.Herc_Pet_Nuke_head,
@@ -782,8 +780,8 @@ function init_gear_sets()
     ring1="Chirich Ring +1",            --  6, 10 <__, __, __> [__/__, ___] {__/__, ___ | __, __, __, __}
     ring2="Defending Ring",             -- __, __ <__, __, __> [10/10, ___] {__/__, ___ | __, __, __, __}
     back=gear.PUP_TP_Cape,              -- 10, 20 <__, __, __> [__/__, ___] { 5/ 5,   1 | __, __, __, __}
-    waist="Moonbow Belt +1",            -- __, __ <__,  8, __> [ 6/ 6, ___] {__/__, ___ | __, __, __, __}
-    -- 31 STP, 332 Acc <4 DA, 0 TA, 0 QA> [54 PDT/54 MDT, 497 M.Eva] {Pet: 8 PDT/8 MDT, 121 Lv | 33 Magic Skill, 25 MND, 25 INT, 345 M.Acc}
+    waist="Incarnation Sash",           -- __, __ <__, __, __> [__/__, ___] {__/__, ___ | __, __, __, 15}
+    -- 31 STP, 332 Acc <4 DA, 0 TA, 0 QA> [48 PDT/48 MDT, 497 M.Eva] {Pet: 8 PDT/8 MDT, 121 Lv | 33 Magic Skill, 25 MND, 25 INT, 360 M.Acc}
     
     -- head="Karagoz Cappello +3",      -- __, 61 < 5, __, __> [__/__,  98] {__/__, ___ | __, __, __, 61}
     -- body="Karagoz Farsetto +3",      -- __, 64 <__, __, __> [13/13, 109] {__/__, ___ | __, __, __, 64}
@@ -792,7 +790,6 @@ function init_gear_sets()
     -- ear2="Karagoz Earring +2",       --  8, 20 <__, __, __> [__/__, ___] {__/__,   1 | __, __, __, __}
     -- ring1="Cath Palug Ring",         -- __, __ <__, __, __> [ 5/ 5, ___] {__/__, ___ | __, __, __, 12}
     -- back=gear.PUP_Pet_Nuke_Cape,     -- 10, 20 <__, __, __> [__/__, ___] { 5/ 5,   1 | __, __, __, 30}
-    -- waist="Incarnation Sash",        -- __, __ <__, __, __> [__/__, ___] {__/__, ___ | __, __, __, 15}
     -- 29 STP, 390 Acc <5 DA, 0 TA, 0 QA> [50 PDT/50 MDT, 527 M.Eva] {Pet: 8 PDT/8 MDT, 121 Lv | 33 Magic Skill, 30 MND, 30 INT, 437 M.Acc}
 
   }
@@ -970,14 +967,13 @@ function init_gear_sets()
     ring1="Gelatinous Ring +1",       -- [ 7/-1, ___] {__/__, ___ | __, __, __}
     ring2="Defending Ring",           -- [10/10, ___] {__/__, ___ | __, __, __}
     back=gear.PUP_Pet_Tank_Cape,      -- [__/__,  20] { 5/ 5,   1 | __, 10, __}
-    waist="Isa Belt",                 -- [__/__, ___] { 3/ 3, ___ | __,  1, __}
-    -- [46 PDT/38 MDT, 568 M.Eva] {Pet: 11 PDT /11 MDT, 121 Lv | 10 FC, 16 Regen, 5 Refresh}
+    waist="Ukko Sash",                -- [__/__, ___] {__/__, ___ |  5, __, __}
+    -- [46 PDT/38 MDT, 568 M.Eva] {Pet: 8 PDT /8 MDT, 121 Lv | 15 FC, 15 Regen, 5 Refresh}
 
     -- body=gear.Naga_C_body,         -- [__/__,  53] {__/__, ___ |  3, __, __}
     -- hands=gear.Naga_C_hands,       -- [ 2/ 2,  26] {__/__, ___ |  3, __, __}
     -- feet=gear.Naga_C_feet,         -- [__/__,  64] {__/__, ___ |  3, __, __}
     -- ear2="Karagoz Earring +2",     -- [__/__, ___] {__/__,   1 | __, __, __}
-    -- waist="Ukko Sash",             -- [__/__, ___] {__/__, ___ |  5, __, __}
     -- [25 PDT/17 MDT, 310 M.Eva] {Pet: 8 PDT /8 MDT, 121 Lv | 24 FC, 15 Regen, 5 Refresh}
   }
   sets.idle.PetEngaged.SkillUpRanged = set_combine(sets.idle.PetEngaged.Ranged, {})
@@ -1111,11 +1107,11 @@ function init_gear_sets()
   sets.engaged.PetOverdriveDD.Acc = set_combine(sets.engaged.PetOverdriveDD, {})
   sets.engaged.PetHeal = set_combine(sets.engaged, {
     legs="Pitre Churidars +3",        -- __, 46 <__, __, __> [__/__,  84] {__/__, ___ | 10, __, __}
-    -- waist="Ukko Sash",             -- __, __ <__, __, __> [__/__, ___] {__/__, ___ |  5, __, __}
+    waist="Ukko Sash",                -- __, __ <__, __, __> [__/__, ___] {__/__, ___ |  5, __, __}
   })
   sets.engaged.PetHeal.Acc = set_combine(sets.engaged.Acc, {
     legs="Pitre Churidars +3",        -- __, 46 <__, __, __> [__/__,  84] {__/__, ___ | 10, __, __}
-    -- waist="Ukko Sash",             -- __, __ <__, __, __> [__/__, ___] {__/__, ___ |  5, __, __}
+    waist="Ukko Sash",                -- __, __ <__, __, __> [__/__, ___] {__/__, ___ |  5, __, __}
   })
   sets.engaged.SkillUpRanged = set_combine(sets.engaged.PetRanged, {})
 
