@@ -742,7 +742,7 @@ function init_gear_sets()
     main="Gridarvor",                   -- ___, __ {___, __, __, __ / 70, 95, __, 15} [__/__, ___]
     sub="Elan Strap +1",                -- ___,  5 {___, __, __, __ / __, __, __, __} [__/__, ___]
     ammo="Epitaph",                     -- 119, 16 {___, 30, 15, __ / __, 30, 15, __} [__/__, ___]; R20+ before using
-    head=gear.Nyame_B_head,
+    head=gear.Nyame_B_head,             -- ___, __ {___, 50, __, __ / __, 50, __, __} [ 7/ 7, 123]
     body="Convoker's Doublet +3",       -- ___, 16 {___, 45, __, __ / __, 45, __, __} [__/__, 100]
     hands=gear.Merl_Phys_BP_hands,      -- ___, 15 {___, 20, __, __ / 40, __, __, __} [__/__,  48]
     legs=gear.Apogee_D_legs,            -- ___, 21 {___, __, __, __ / __, __, 20,  4} [__/__, 118]
@@ -755,7 +755,7 @@ function init_gear_sets()
     back=gear.SMN_Phys_BP_Cape,         --   1,  5 {___, __, __, __ / 20, 30, __, __} [10/__, ___]
     waist="Incarnation Sash",           -- ___, __ {___, 15, __, __ / __, 15, __,  4} [__/__, ___]
     -- head=gear.Helios_Phys_BP_head,   -- ___,  7 {___, __, __, __ / 30, __, __,  8} [__/__,  75]
-    -- 121 Pet Lv, 127 BP Dmg {Pet: 0 MAB, 162 M.Acc, 40 INT, 0 M.Dmg / 195 Att, 287 Acc, 70 STR, 31 DA} [19 PDT/9 MDT, 469 M.Eva]
+    -- 121 Pet Lv, 127 BP Dmg {Pet: 0 MAB, 212 M.Acc, 40 INT, 0 M.Dmg / 195 Att, 337 Acc, 70 STR, 31 DA} [26 PDT/16 MDT, 592 M.Eva]
     
     -- main="Nirvana",                  --   2, 40 {___, 30, __, __ / __, 30, __, __} [__/__, ___]
     -- sub="Elan Strap +1",             -- ___,  5 {___, __, __, __ / __, __, __, __} [__/__, ___]
