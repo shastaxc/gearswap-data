@@ -91,6 +91,7 @@ gear.Merl_FC_hands = { name="Merlinic Dastanas", augments={'Mag. Acc.+24','"Fast
 -- gear.Merl_FC_feet = {}
 
 -- Odyssean
+gear.Odyssean_STP_legs = { name="Odyssean Cuisses", augments={'Mag. Acc.+24','"Store TP"+8','VIT+8','Attack+13',}}
 
 -- Valorous
 
