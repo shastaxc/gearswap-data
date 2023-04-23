@@ -216,4 +216,4 @@ gear.CP_Cape = { name="Mecisto. Mantle", augments={'Cap. Point+41%','Mag. Acc.+5
 gear.Fanatic_Gloves = { name="Fanatic Gloves", augments={'MP+50','Healing magic skill +8','"Conserve MP"+5','"Fast Cast"+5',}}
 gear.Leyline_Gloves = { name="Leyline Gloves", augments={'Accuracy+7','Mag. Acc.+2',}}
 gear.Samnuha_legs = { name="Samnuha Tights", augments={'STR+8','DEX+9','"Dbl.Atk."+3','"Triple Atk."+2',}}
--- gear.Enticer_legs = {}
+gear.Enticer_legs = { name="Enticer's Pants", augments={'MP+25','Pet: Mag. Acc.+2','Pet: Damage taken -1%',}}
