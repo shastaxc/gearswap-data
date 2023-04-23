@@ -62,8 +62,8 @@ gear.Herc_MAB_feet = { name="Herculean Boots", augments={'"Mag.Atk.Bns."+29','Ac
 gear.Herc_TH_body = { name="Herculean Vest", augments={'Pet: INT+1','AGI+6','"Treasure Hunter"+2','Accuracy+17 Attack+17',}}
 gear.Herc_TH_hands = { name="Herculean Gloves", augments={'Attack+25','"Store TP"+2','"Treasure Hunter"+2','Accuracy+2 Attack+2','Mag. Acc.+5 "Mag.Atk.Bns."+5',}}
 
-gear.Herc_DEX_CritDmg_feet = { name="Herculean Boots", augments={'Accuracy+21','Crit. hit damage +5%','Attack+1',}} -- CritDmg > DEX > Acc/Att > Multihit
-gear.Herc_STR_CritDmg_feet = { name="Herculean Boots", augments={'Accuracy+21','Crit. hit damage +5%','Attack+1',}} -- CritDmg > STR > Acc/Att > Multihit
+gear.Herc_DEX_CritDmg_feet = { name="Herculean Boots", augments={'Accuracy+27','Crit. hit damage +5%','Attack+9',}} -- CritDmg > DEX > Acc/Att > Multihit
+gear.Herc_STR_CritDmg_feet = { name="Herculean Boots", augments={'Accuracy+27','Crit. hit damage +5%','Attack+9',}} -- CritDmg > STR > Acc/Att > Multihit
 
 gear.Herc_Refresh_head = { name="Herculean Helm", augments={'Weapon Skill Acc.+13','Accuracy+2','"Refresh"+1','Accuracy+19 Attack+19',}}
 gear.Herc_Refresh_feet = { name="Herculean Boots", augments={'Crit.hit rate+1','STR+14','"Refresh"+2',}}
