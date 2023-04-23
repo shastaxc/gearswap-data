@@ -207,15 +207,14 @@ function init_gear_sets()
     neck="Orunmila's Torque",         --  5 [__/__, ___]
     ear1="Malignance Earring",        --  4 [__/__, ___]
     ear2="Loquacious Earring",        --  2 [__/__, ___]
-    ring1="Kishar Ring",              --  4 [__/__, ___]
+    ring1="Lebeche Ring",             -- __ [__/__, ___]  2
     ring2="Defending Ring",           -- __ [10/10, ___]
     back=gear.SMN_FC_Cape,            -- 10 [10/__, ___]
     waist="Witful Belt",              --  3 [__/__, ___]  3
-    -- 82 Fast Cast [48 PDT/36 MDT, 509 M.Eva] 5 Quick Magic
+    -- 78 Fast Cast [48 PDT/36 MDT, 509 M.Eva] 7 Quick Magic
     
     -- hands="Volte Gloves",          --  6 [__/__,  96]; merlinic alt
     -- legs="Volte Brais",            --  8 [__/__, 142]; merlinic alt
-    -- ring1="Lebeche Ring",          -- __ [__/__, ___]  2
     -- 79 Fast Cast [48 PDT/36 MDT, 533 M.Eva] 7 Quick Magic
   }
   

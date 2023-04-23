@@ -164,16 +164,16 @@ function init_gear_sets()
     neck="Loricate Torque +1",        -- __ [ 6/ 6, ___] __, __,  5; +Defense
     ear1="Halasz Earring",            -- __ [__/__, ___] __, __,  5
     ear2="Nourishing Earring +1",     -- __ [__/__, ___] __, __,  5; Resist Silence +15
+    ring1="Lebeche Ring",             -- __ [__/__, ___]  2, __, __
     ring2="Defending Ring",           -- __ [10/10, ___] __, __, __
     back="Perimede Cape",             -- __ [__/__, ___]  4, __, __
     waist="Witful Belt",              --  3 [__/__, ___]  3, __, __
     -- Divine Benison Trait              50
     -- Merits                                                    10
-    -- 103 Fast Cast [53 PDT/43 MDT, 431 MEVA] 9 Quick Magic, 4 Divine Caress, 109 SIRD
+    -- 103 Fast Cast [53 PDT/43 MDT, 431 MEVA] 11 Quick Magic, 4 Divine Caress, 109 SIRD
     
     -- hands="Ebers Mitts +3",        -- __ [11/11,  87] __,  5, __
     -- legs="Ebers Pantaloons +3",    -- 30 [13/13, 157] __, __, __; FC from Divine Benison
-    -- ring1="Lebeche Ring",          -- __ [__/__, ___]  2, __, __
     -- 103 Fast Cast [55 PDT/52 MDT, 451 MEVA] 11 Quick Magic, 5 Divine Caress, 109 SIRD
   }
 

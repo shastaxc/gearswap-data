@@ -173,12 +173,10 @@ function init_gear_sets()
     neck="Orunmila's Torque",         --  5 [__/__, ___] __
     ear1="Malignance Earring",        --  4 [__/__, ___] __
     ear2="Odnowa Earring +1",         -- __ [ 3/ 5, ___] __
+    ring1="Lebeche Ring",             -- __ [__/__, ___]  2
     ring2="Defending Ring",           -- __ [10/10, ___] __
     back=gear.SCH_FC_Cape,            -- 10 [10/__,  30] __
     waist="Witful Belt",              --  3 [__/__, ___]  3
-    -- 81 Fast Cast [49PDT/41MDT, 555 MEVA] 5 Quick Magic
-    
-    -- ring1="Lebeche Ring",          -- __ [__/__, ___]  2
     -- 81 Fast Cast [49PDT/41MDT, 555 MEVA] 7 Quick Magic
   }
   -- No point in this set until normal sets.precast.FC.QuickMagic can cap stats
@@ -214,15 +212,15 @@ function init_gear_sets()
     feet=gear.Merl_FC_feet,           -- 12 [__/__, 118] __
     neck="Orunmila's Torque",         --  5 [__/__, ___] __
     ear2="Odnowa Earring +1",         -- __ [ 3/ 5, ___] __
+    ring1="Lebeche Ring",             -- __ [__/__, ___]  2
     ring2="Defending Ring",           -- __ [10/10, ___] __
     back="Perimede Cape",             -- __ [__/__, ___]  4
     waist="Witful Belt",              --  3 [__/__, ___]  3
     -- Sub RDM trait                  -- 15
-    -- 80 Fast Cast [42PDT/43MDT, 505 MEVA] 9 Quick Magic
+    -- 80 Fast Cast [42PDT/43MDT, 505 MEVA] 11 Quick Magic
     
     -- hands=gear.Gende_SongFC_hands, --  7 [ 4/__,  37] __
     -- ear1="Genmei Earring",         -- __ [ 2/__, ___] __
-    -- ring1="Lebeche Ring",          -- __ [__/__, ___]  2
     -- 80 Fast Cast [45PDT/41MDT, 505 MEVA] 11 Quick Magic
   }
   sets.precast.FC.RDM.Grimoire = {
