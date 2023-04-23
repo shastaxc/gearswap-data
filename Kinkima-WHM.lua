@@ -1245,6 +1245,9 @@ end
 
 function auto_solace_and_arts()
   if not areas.Cities:contains(world.area) then
+	  local abil_recasts = windower.ffxi.get_ability_recasts()
+    local solace_recast = abil_recasts[29]
+    local arts_recast = abil_recasts[228]
     local needs_solace = auto_solace
         and not state.Buff['Afflatus Solace']
         and not state.Buff['Afflatus Misery']
@@ -1254,11 +1257,11 @@ function auto_solace_and_arts()
         and not buffactive['Addendum: White']
         and not buffactive['Dark Arts']
         and not buffactive['Addendum: Black']
-    if needs_solace and needs_arts then
+    if needs_solace and needs_arts and solace_recast == 0 and arts_recast == 0 then
       send_command('input /ja "Afflatus Solace" <me>;wait 1.2;input /ja "Light Arts" <me>')
-    elseif needs_solace and not needs_arts then
+    elseif needs_solace and not needs_arts and solace_recast == 0 then
       send_command('input /ja "Afflatus Solace" <me>')
-    elseif not needs_solace and needs_arts then
+    elseif not needs_solace and needs_arts and arts_recast == 0 then
       send_command('input /ja "Light Arts" <me>')
     end
   end
