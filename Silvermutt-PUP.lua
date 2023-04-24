@@ -1364,8 +1364,8 @@ function job_buff_change(buff,gain)
       active_maneuvers:append(buff)
     else
       for k,v in active_maneuvers:it() do
-        if v == buff then
-          active_maneuvers:remove(k)
+        if k == buff then
+          active_maneuvers:remove(v)
           return
         end
       end
