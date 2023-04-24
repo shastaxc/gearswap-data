@@ -213,7 +213,6 @@ function init_gear_sets()
     waist="Witful Belt",              --  3 [__/__, ___]  3
     -- 78 Fast Cast [48 PDT/36 MDT, 509 M.Eva] 7 Quick Magic
     
-    -- hands="Volte Gloves",          --  6 [__/__,  96]; merlinic alt
     -- legs="Volte Brais",            --  8 [__/__, 142]; merlinic alt
     -- 79 Fast Cast [48 PDT/36 MDT, 533 M.Eva] 7 Quick Magic
   }
