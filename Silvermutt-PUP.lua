@@ -526,7 +526,7 @@ function init_gear_sets()
 
   sets.midcast.Pet.Weaponskill = {
     ranged="Neo Animator",
-    head="Karagoz Capello +2",
+    head="Karagoz Cappello +2",
     body=gear.Taeon_Pet_DT_body,
     hands="Mpaca's Gloves",
     legs="Karagoz Pantaloni +3",
@@ -539,7 +539,7 @@ function init_gear_sets()
     back=gear.PUP_Pet_TP_Cape,
     waist="Incarnation Sash",
     
-    -- head="Karagoz Capello +3",
+    -- head="Karagoz Cappello +3",
     -- body="Pitre Tobe +3",
     -- neck="Puppetmaster's Collar +2",
     -- ring2="Cath Palug Ring",
@@ -602,7 +602,7 @@ function init_gear_sets()
   -- -- 60% DEX - TP Bonus WS - Damage Varies with TP
   -- sets.midcast.Pet.Weaponskill['Arcuballista'] = {
   --   ranged="Neo Animator",
-  --   head="Karagoz Capello +1",
+  --   head="Karagoz Cappello +1",
   --   body="Pitre Tobe +3",
   --   hands="Tali'ah Gages +2",
   --   legs="Tali'ah Sera. +2",
@@ -622,7 +622,7 @@ function init_gear_sets()
   -- -- 50% STR - TP Bonus
   -- sets.midcast.Pet.Weaponskill['Chimera Ripper'] = {
   --   ranged="Neo Animator",
-  --   head="Karagoz Capello +1",
+  --   head="Karagoz Cappello +1",
   --   body="Pitre Tobe +3",
   --   hands="Karagoz Guanti +1",
   --   legs="Kara. Pantaloni +1",
