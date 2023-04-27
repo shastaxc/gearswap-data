@@ -1228,22 +1228,21 @@ function init_gear_sets()
     waist="Hachirin-no-Obi",
   }
   sets.Special.CaitSith = {
-    main="Bunzi's Rod",                 -- Cure Potency
-    sub="Khonsu",                       --  6/ 6, ___ [__, __]
+    main="Bunzi's Rod",
+    sub="Genbu's Shield",
     ammo="Incantor Stone",
-    head="Academic's Mortarboard +3",   -- __/__,  95 [ 4, __]
-    body="Pedagogy Gown +3",            -- __/__, 100 [ 5, __]
+    head="Academic's Mortarboard +3",
+    body="Pedagogy Gown +3",
     hands="Academic's Bracers +3",
-    legs="Assiduity Pants +1",          -- __/__, 107 [__,  2]
+    legs="Assiduity Pants +1",
     feet=gear.Kaykaus_D_feet,
-    neck="Loricate Torque +1",          --  6/ 6, ___ [__, __]; DEF+60
-    ear1="Savant's Earring",            -- __/__, ___ [ 1, __]
+    neck="Loricate Torque +1",
+    ear1="Savant's Earring",
     ear2="Enhancing Earring",
-    ring1="Copper Ring",                -- __/__, ___ [__, __]
-    ring2="Defending Ring",             -- 10/10, ___ [__, __]
-    back=gear.SCH_FC_Cape,              -- 10/__,  30 [__, __]
-    waist="Embla Sash",                 -- __/__, ___ [ 5, __]
-    -- 49 PDT / 42 MDT, 594 M.Eva [15 Sublimation, 3 Refresh]
+    ring1="Copper Ring",
+    ring2="Defending Ring",
+    back=gear.SCH_FC_Cape,
+    waist="Embla Sash",
   }
   sets.Bookworm = {
     back="Bookworm's Cape",
