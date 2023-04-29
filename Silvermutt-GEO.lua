@@ -2174,8 +2174,8 @@ function set_main_keybinds()
   send_command('bind !` gs c toggle MagicBurst')
   send_command('bind @q gs c cycle RecoverMode')
 
-  send_command('bind ^pageup gs c cycle ElementalMode')
-  send_command('bind ^pagedown gs c cycleback ElementalMode')
+  send_command('bind ^pageup gs c cycleback ElementalMode')
+  send_command('bind ^pagedown gs c cycle ElementalMode')
   send_command('bind !pagedown gs c reset ElementalMode')
   
   send_command('bind !` input /ja "Full Circle" <me>')
