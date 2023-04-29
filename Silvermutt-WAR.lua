@@ -184,8 +184,7 @@ function init_gear_sets()
     -- feet="Agoge Calligae +3",
   }
   sets.precast.JA['Retaliation'] = {
-    feet="Boii Calligae +2",
-    -- feet="Boii Calligae +3",
+    feet="Boii Calligae +3",
   }
   sets.precast.JA['Restraint'] = {}
   sets.precast.JA['Blood Rage'] = {
@@ -329,7 +328,7 @@ function init_gear_sets()
     body=gear.Nyame_B_body,               -- 45, 65, 40, 13, __ (__, __) < 7, __, __> [ 9/ 9, 139]
     hands=gear.Nyame_B_hands,             -- 17, 65, 40, 11, __ (__, __) < 5, __, __> [ 7/ 7, 112]
     legs=gear.Nyame_B_legs,               -- 58, 65, 40, 12, __ (__, __) < 6, __, __> [ 8/ 8, 150]
-    feet="Boii Calligae +2",              -- 26, 50, 50, __, __ (__, 12) <__, __, __> [ 9/ 9, 120]
+    feet="Boii Calligae +3",              -- 31, 60, 60, __, __ (__, 13) <__, __, __> [10/10, 130]
     neck="Warrior's Bead Necklace +1",    -- 12, 20, 20, __, __ (__, __) < 6, __, __> [__/__, ___]
     ear1="Moonshade Earring",             -- __, __,  4, __, __ (__, __) <__, __, __> [__/__, ___]; TP Bonus+250
     ear2="Thrud Earring",                 -- 10, __, __,  3, __ (__, __) <__, __, __> [__/__, ___]
@@ -338,9 +337,8 @@ function init_gear_sets()
     back=gear.WAR_STR_WSD_Cape,           -- 30, 20, 20, 10, __ (__, __) <__, __, __> [10/__, ___]; DA Dmg+20%
     waist="Sailfi Belt +1",               -- 15, 15, __, __, __ (__, __) < 5,  2, __> [__/__, ___]
     -- WAR Traits                            __, __, __, __, __ (__, __) <33, __, __> [__/__, ___]
-    -- 264 STR, 365 Attack, 264 Accuracy, 60 WSD, 3 PDL (2 Crit Rate, 18 Crit Dmg) <67 DA, 2 TA, 3 QA> [50 PDT/40 MDT, 644 M.Eva]
+    -- 269 STR, 375 Attack, 274 Accuracy, 60 WSD, 3 PDL (2 Crit Rate, 19 Crit Dmg) <67 DA, 2 TA, 3 QA> [51 PDT/41 MDT, 654 M.Eva]
 
-    -- feet="Boii Calligae +3",           -- 31, 60, 60, __, __ (__, 13) <__, __, __> [10/10, 130]
     -- neck="Warrior's Bead Necklace +2", -- 15, 25, 25, __, __ (__, __) < 7, __, __> [__/__, ___]
     -- ear2="Boii Earring +2",            -- 15, __, 20, __, __ ( 8, __) < 9, __, __> [__/__, ___]
     -- 277 STR, 375 Attack, 299 Accuracy, 57 WSD, 3 PDL (10 Crit Rate, 19 Crit Dmg) <77 DA, 2 TA, 3 QA> [51 PDT/41 MDT, 654 M.Eva]
@@ -358,7 +356,7 @@ function init_gear_sets()
     body="Sakpata's Breastplate",         -- 42, 70, 55, __,  8 ( 5, __) < 8, __, __> [10/10, 139]
     hands="Sakpata's Gauntlets",          -- 24, 70, 55, __,  6 (__, __) < 6, __, __> [ 8/ 8, 112]
     legs="Sakpata's Cuisses",             -- 53, 70, 55, __,  7 (__, __) < 7, __, __> [ 9/ 9, 150]
-    feet="Boii Calligae +2",              -- 26, 50, 50, __, __ (__, 12) <__, __, __> [ 9/ 9, 120]
+    feet="Boii Calligae +3",              -- 31, 60, 60, __, __ (__, 13) <__, __, __> [10/10, 130]
     neck="Warrior's Bead Necklace +1",    -- 12, 20, 20, __, __ (__, __) < 6, __, __> [__/__, ___]
     ear1="Moonshade Earring",             -- __, __,  4, __, __ (__, __) <__, __, __> [__/__, ___]; TP Bonus+250
     ear2="Thrud Earring",                 -- 10, __, __,  3, __ (__, __) <__, __, __> [__/__, ___]
@@ -367,10 +365,9 @@ function init_gear_sets()
     back=gear.WAR_STR_WSD_Cape,           -- 30, 20, 20, 10, __ (__, __) <__, __, __> [10/__, ___]
     waist="Sailfi Belt +1",               -- 15, 15, __, __, __ (__, __) < 5,  2, __> [__/__, ___]
     -- WAR Traits                            __, __, __, __, __ (__, __) <33, __, __> [__/__, ___]
-    -- 270 STR, 385 Attack, 314 Accuracy, 13 WSD, 29 PDL (7 Crit Rate, 18 Crit Dmg) <70 DA, 2 TA, 3 QA> [53 PDT/43 MDT, 644 M.Eva]
+    -- 275 STR, 395 Attack, 324 Accuracy, 13 WSD, 29 PDL (7 Crit Rate, 19 Crit Dmg) <70 DA, 2 TA, 3 QA> [54 PDT/44 MDT, 654 M.Eva]
 
     -- legs="Boii Cuisses +3",            -- 53, 73, 63, __, 10 (__, __) < 8, __, __> [__/__, 130]; TP Bonus+100
-    -- feet="Boii Calligae +3",           -- 31, 60, 60, __, __ (__, 13) <__, __, __> [10/10, 130]
     -- neck="Warrior's Bead Necklace +2", -- 15, 25, 25, __, __ (__, __) < 7, __, __> [__/__, ___]
     -- ear2="Boii Earring +2",            -- 15, __, 20, __, __ ( 8, __) < 9, __, __> [__/__, ___]
     -- 283 STR, 403 Attack, 358 Accuracy, 10 WSD, 32 PDL (15 Crit Rate, 19 Crit Dmg) <81 DA, 2 TA, 3 QA> [45 PDT/35 MDT, 634 M.Eva]
