@@ -1490,6 +1490,7 @@ function init_gear_sets()
 
   -- Gear that converts elemental damage done to recover MP.
   sets.RecoverMP = {
+    head=gear.Nyame_B_head,
     body="Seidr Cotehardie",
   }
 
