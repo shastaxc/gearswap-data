@@ -280,13 +280,12 @@ function init_gear_sets()
   -- 73-85% AGI, 1.0 FTP, ftp replicating
   -- Multihit > AGI
   sets.precast.WS['Exenterator'] = {
-    ammo="Seething Bomblet +1",
+    ammo="Cath Palug Stone",            -- 10, __, __, __ <__, __, __> [__/__, ___] __
     feet="Meg. Jam. +2",
     ear1="Sherida Earring",
     ring1="Regal Ring",
     ring2="Ilabrat Ring",
 
-    -- ammo="Cath Palug Stone",         -- 10, __, __, __ <__, __, __> [__/__, ___] __
     -- head="Skulker's Bonnet +3",      -- 39, __, 61, __ <__,  6, __> [__/__, 109] 10
     -- body="Pillager's Vest +3",       -- 38, __, __, __ <__,  7, __> [__/__,  94] __
     -- hands=gear.Adhemar_B_hands,      --  7, __, 20, __ <__,  4, __> [__/__,  43] __
@@ -363,23 +362,22 @@ function init_gear_sets()
   -- 80% DEX
   -- TP Bonus > DEX <> WSD
   sets.precast.WS["Rudra's Storm"] = {
+    ammo="Cath Palug Stone",            -- 10, __, __ [__/__, ___] __
+    head=gear.Nyame_B_head,             -- 25, 11, 65 [ 7/ 7, 123] __
+    hands=gear.Nyame_B_hands,           -- 42, 11, 65 [ 7/ 7, 112] __
     legs=gear.Nyame_B_legs,
     feet=gear.Nyame_B_feet,
     ear2="Moonshade Earring",
-    ring1="Ilabrat Ring",
+    ring1="Ilabrat Ring",               -- 10, __, 25 [__/__, ___] __
     ring2="Regal Ring",
     waist="Grunfeld Rope",
 
-    -- ammo="Cath Palug Stone",         -- 10, __, __ [__/__, ___] __
-    -- head=gear.Nyame_B_head,          -- 25, 11, 65 [ 7/ 7, 123] __
     -- body="Skulker's Vest +3",        -- 51, 12, 64 [__/__, 119] __
-    -- hands=gear.Nyame_B_hands,        -- 42, 11, 65 [ 7/ 7, 112] __
     -- legs="Plunderer's Culottes +3",  -- 21,  6, 64 [__/__,  89] __
     -- feet=gear.Nyame_B_feet,          -- 26, 11, 65 [ 7/ 7, 150] __
     -- neck="Assassin's Gorget +2",     -- 15, __, __ [__/__, ___] __
     -- ear1="Moonshade Earring",        -- __, __, __ [__/__, ___] __; tp bonus+250
     -- ear2="Skulker's Earring +2",     -- 15, __, __ [__/__, ___] __
-    -- ring1="Ilabrat Ring",            -- 10, __, 25 [__/__, ___] __
     -- ring2="Epaminondas's Ring",      -- __,  5, __ [__/__, ___] __
     -- back=gear.THF_WS1_Cape,          -- 30, 10, 20 [10/__, ___] __
     -- waist="Kentarch Belt +1",        -- 10, __, __ [__/__, ___] __
@@ -393,21 +391,19 @@ function init_gear_sets()
     -- ear2="Skulker's Earring +2",     -- 15, __, __ [__/__, ___] __
   })
   sets.precast.WS["Rudra's Storm"].AttCapped = {
-    ear2="Moonshade Earring",
-    ring1="Ilabrat Ring",
+    ammo="Cath Palug Stone",            -- 10, __, __ [__/__, ___] __
+    body=gear.Nyame_B_body,             -- 24, 13, 65 [ 9/ 9, 139] __
+    hands=gear.Nyame_B_hands,           -- 42, 11, 65 [ 7/ 7, 112] __
+    ear1="Moonshade Earring",           -- __, __, __ [__/__, ___] __; tp bonus+250
+    ring1="Ilabrat Ring",               -- 10, __, 25 [__/__, ___] __
     ring2="Regal Ring",
     waist="Grunfeld Rope",
 
-    -- ammo="Cath Palug Stone",         -- 10, __, __ [__/__, ___] __
     -- head="Skulker's Bonnet +3",      -- 43, __, 61 [__/__, 109] 10
-    -- body=gear.Nyame_B_body,          -- 24, 13, 65 [ 9/ 9, 139] __
-    -- hands=gear.Nyame_B_hands,        -- 42, 11, 65 [ 7/ 7, 112] __
     -- legs=gear.Lustratio_B_legs,      -- 43, __, 38 [__/__, ___] __
     -- feet=gear.Lustratio_D_feet,      -- 48, __, __ [__/__, ___] __
     -- neck="Assassin's Gorget +2",     -- 15, __, __ [__/__, ___] __
-    -- ear1="Moonshade Earring",        -- __, __, __ [__/__, ___] __; tp bonus+250
     -- ear2="Skulker's Earring +2",     -- 15, __, __ [__/__, ___] __
-    -- ring1="Ilabrat Ring",            -- 10, __, 25 [__/__, ___] __
     -- ring2="Epaminondas's Ring",      -- __,  5, __ [__/__, ___] __
     -- back=gear.THF_WS1_Cape,          -- 30, 10, 20 [10/__, ___] __
     -- waist="Kentarch Belt +1",        -- 10, __, __ [__/__, ___] __
