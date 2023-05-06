@@ -269,8 +269,7 @@ function init_gear_sets()
   }
 
   sets.precast.JA['Role Reversal'] = {
-    feet="Pitre Babouches +1",
-    -- feet="Pitre Babouches +3",
+    feet="Pitre Babouches +3",
   }
 
   sets.precast.JA['Tactical Switch'] = {
@@ -720,7 +719,7 @@ function init_gear_sets()
     body=gear.Nyame_B_body,             -- __, 40 < 7, __, __> [ 9/ 9, 139] {__/__, ___ | __, __, __, 50}
     hands=gear.Nyame_B_hands,           -- __, 40 < 4, __, __> [ 7/ 7, 112] {__/__, ___ | __, __, __, 50}
     legs="Pitre Churidars +3",          -- __, 46 <__, __, __> [__/__,  84] {__/__, ___ | 51, __, __, 48}
-    feet="Pitre Babouches +1",          -- __, __ <__, __, __> [__/__,  64] {__/__, ___ | 18, __, __, 15}
+    feet="Pitre Babouches +3",          -- __, 36 <__, __, __> [__/__,  84] {__/__, ___ | 57, __, __, 43}
     neck="Puppetmaster's Collar +1",    -- __, 25 <__, __, __> [__/__, ___] {__/__, ___ | 20, __, __, 20}
     ear1="Burana Earring",              -- __, __ <__, __, __> [__/__, ___] {__/__, ___ | 10, __, __, __}
     ear2="Karagoz Earring +1",          --  4, 12 <__, __, __> [__/__, ___] {__/__,   1 | __, __, __, __}
@@ -728,11 +727,10 @@ function init_gear_sets()
     ring2="Defending Ring",             -- __, __ <__, __, __> [10/10, ___] {__/__, ___ | __, __, __, __}
     back=gear.PUP_TP_Cape,              -- 10, 20 <__, __, __> [__/__, ___] { 5/ 5,   1 | __, __, __, __}
     waist="Incarnation Sash",           -- __, __ <__, __, __> [__/__, ___] {__/__, ___ | __, __, __, 15}
-    -- 20 STP, 203 Acc <11 DA, 0 TA, 0 QA> [26 PDT/26 MDT, 452 M.Eva] {Pet: 5 PDT/5 MDT, 121 Lv | 114 MAB, 0 Magic Skill, 0 INT, 248 M.Acc}
+    -- 20 STP, 239 Acc <11 DA, 0 TA, 0 QA> [26 PDT/26 MDT, 472 M.Eva] {Pet: 5 PDT/5 MDT, 121 Lv | 153 MAB, 0 Magic Skill, 0 INT, 276 M.Acc}
     
     -- body="Udug Jacket",              -- __, 45 <__, __, __> [10/10,  86] {__/__, ___ | 45, __, __, 45}
     -- hands=gear.Naga_D_hands,         -- __, __ <__, __, __> [ 2/ 2,  26] {__/__, ___ | 20, __, __, 20}
-    -- feet="Pitre Babouches +3",       -- __, 36 <__, __, __> [__/__,  84] {__/__, ___ | 57, __, __, 43}
     -- neck="Puppetmaster's Collar +2", -- __, 30 <__, __, __> [__/__, ___] {__/__, ___ | 25, __, __, 25}
     -- ear2="Karagoz Earring +2",       --  8, 20 <__, __, __> [__/__, ___] {__/__,   1 | __, __, __, __}
     -- ring1="Cath Palug Ring",         -- __, __ <__, __, __> [ 5/ 5, ___] {__/__, ___ | __, __, __, 12}
@@ -748,7 +746,7 @@ function init_gear_sets()
     body="Mpaca's Doublet",             --  8, 55 <__,  4, __> [10/__,  86] {__/__, ___ | __, __, __, 50}
     hands="Karagoz Guanti +3",          -- 11, 62 <__, __, __> [10/10,  82] {__/__, ___ | __, __, __, 62}
     legs="Pitre Churidars +3",          -- __, 46 <__, __, __> [__/__,  84] {__/__, ___ | 51, __, __, 48}
-    feet="Pitre Babouches +1",          -- __, __ <__, __, __> [__/__,  64] {__/__, ___ | 18, __, __, 15}
+    feet="Pitre Babouches +3",          -- __, 36 <__, __, __> [__/__,  84] {__/__, ___ | 57, __, __, 43}
     neck="Puppetmaster's Collar +1",    -- __, 25 <__, __, __> [__/__, ___] {__/__, ___ | 20, __, __, 20}
     ear1="Burana Earring",              -- __, __ <__, __, __> [__/__, ___] {__/__, ___ | 10, __, __, __}
     ear2="Karagoz Earring +1",          --  4, 12 <__, __, __> [__/__, ___] {__/__,   1 | __, __, __, __}
@@ -756,9 +754,8 @@ function init_gear_sets()
     ring2="Defending Ring",             -- __, __ <__, __, __> [10/10, ___] {__/__, ___ | __, __, __, __}
     back=gear.PUP_TP_Cape,              -- 10, 20 <__, __, __> [__/__, ___] { 5/ 5,   1 | __, __, __, __}
     waist="Moonbow Belt +1",            -- __, __ <__,  8, __> [ 6/ 6, ___] {__/__, ___ | __, __, __, __}
-    -- 39 STP, 295 Acc <5 DA, 15 TA, 0 QA> [43 PDT/26 MDT, 385 M.Eva] {Pet: 5 PDT/5 MDT, 121 Lv | 99 MAB, 0 Magic Skill, 0 INT, 275 M.Acc}
+    -- 39 STP, 331 Acc <5 DA, 15 TA, 0 QA> [43 PDT/26 MDT, 405 M.Eva] {Pet: 5 PDT/5 MDT, 121 Lv | 138 MAB, 0 Magic Skill, 0 INT, 303 M.Acc}
     
-    -- feet="Pitre Babouches +3",       -- __, 36 <__, __, __> [__/__,  84] {__/__, ___ | 57, __, __, 43}
     -- neck="Puppetmaster's Collar +2", -- __, 30 <__, __, __> [__/__, ___] {__/__, ___ | 25, __, __, 25}
     -- ear2="Karagoz Earring +2",       --  8, 20 <__, __, __> [__/__, ___] {__/__,   1 | __, __, __, __}
     -- ring1="Cath Palug Ring",         -- __, __ <__, __, __> [ 5/ 5, ___] {__/__, ___ | __, __, __, 12}
