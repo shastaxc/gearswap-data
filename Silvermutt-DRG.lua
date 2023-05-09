@@ -601,13 +601,13 @@ function init_gear_sets()
     neck="Adad Amulet",
     ear1="Enmerkar Earring",
     ear2="Dragoon's Earring",
+    ring1="Cath Palug Ring",
     waist="Incarnation Sash",
     -- ammo="Voluspa Tathlum",
     -- body=gear.Acro_Breath_body,
     -- hands=gear.Acro_Breath_hands,
     -- legs=gear.Acro_Breath_legs,
     -- feet=gear.Acro_Breath_feet,
-    -- ring1="Cath Palug Ring",
     -- back=gear.DRG_Adoulin_Cape,
   }
 
