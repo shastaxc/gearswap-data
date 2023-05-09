@@ -552,11 +552,12 @@ function init_gear_sets()
   }
 
   -- Regen not affected by Enh Magic Skill
-  -- Regen % pieces apply to base value, floored, then +1.
+  -- Regen % pieces apply to base value (no LA bonus), floored, then +1.
+  -- floor[(Base Regen) + sum(floor(Base Regen x %Regen bonuses)+1) x Embolden)] + LA bonus + Regen Potency from Armor + Morgelai and Musa bonus.
   sets.midcast.Regen = {
-    main=gear.Pedagogy_C,               --  9, 15, __
+    main=gear.Pedagogy_C,               -- 20, 15, __
     sub="Khonsu",                       -- __, __, __
-    head="Arbatel Bonnet +2",           --  9, __, __
+    head="Arbatel Bonnet +3",           -- 11, __, __
     body=gear.Telchine_Regen_body,      --  3, __, 12
     hands=gear.Telchine_Regen_hands,    --  3, __, __
     legs=gear.Telchine_Regen_legs,      --  3, __, __
@@ -564,18 +565,17 @@ function init_gear_sets()
     back=gear.SCH_Adoulin_Regen_Cape,   -- 10, __, __
     waist="Embla Sash",                 -- __, 10,  5
     -- Base Potency (w/ Light Arts)        64, __, __
-    -- 104 Regen Potency, 25 Enh Duration %, 17 Regen Duration
+    -- 117 Regen Potency, 25 Enh Duration %, 17 Regen Duration
 
-    -- main=gear.Musa_C,                -- 11, 20, __
-    -- 106 Regen Potency, 30 Enh Duration %, 17 Regen Duration
+    -- main=gear.Musa_C,                -- 25, 20, __
+    -- 122 Regen Potency, 30 Enh Duration %, 17 Regen Duration
   }
 
-  -- Can get longer duration, but potency takes a significant hit, so
-  -- opted not to do that.
+  -- Can get longer duration, but potency takes a significant hit, so opted not to do that.
   sets.midcast.RegenDuration = {
-    main=gear.Pedagogy_C,               --  9, 15, __
+    main=gear.Pedagogy_C,               -- 20, 15, __
     sub="Khonsu",                       -- __, __, __
-    head="Arbatel Bonnet +2",           --  9, __, __
+    head="Arbatel Bonnet +3",           -- 11, __, __
     body=gear.Telchine_ENH_body,        -- __, 10, 12
     hands=gear.Telchine_ENH_hands,      -- __, 10, __
     legs=gear.Telchine_ENH_legs,        -- __, 10, __
@@ -583,11 +583,11 @@ function init_gear_sets()
     back=gear.SCH_Adoulin_Regen_Cape,   -- 10, __, __
     waist="Embla Sash",                 -- __, 10,  5
     -- Base Potency (w/ Light Arts)        64, __, __
-    -- 92 Regen Potency, 64 Enh Duration %, 17 Regen Duration
+    -- 105 Regen Potency, 64 Enh Duration %, 17 Regen Duration
 
-    -- main=gear.Musa_C,                -- 11, 20, __
+    -- main=gear.Musa_C,                -- 25, 20, __
     -- feet=gear.Telchine_ENH_feet,     -- __, 10, __
-    -- 94 Regen Potency, 70 Enh Duration %, 17 Regen Duration
+    -- 110 Regen Potency, 70 Enh Duration %, 17 Regen Duration
   }
 
   sets.midcast.Haste = set_combine(sets.midcast.EnhancingDuration, {})
@@ -1178,10 +1178,10 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.buff['Ebullience'] = {
-    head="Arbatel Bonnet +2",
+    head="Arbatel Bonnet +3",
   }
   sets.buff['Rapture'] = {
-    head="Arbatel Bonnet +2",
+    head="Arbatel Bonnet +3",
   }
   sets.buff['Perpetuance'] = {
     hands="Arbatel Bracers",
