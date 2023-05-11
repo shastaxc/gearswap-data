@@ -478,9 +478,9 @@ function init_gear_sets()
     ear2="Meili Earring",         -- 10, __, __
     ring1="Haoma's Ring",         --  8, 15, __
     ring2="Menelaus's Ring",      -- 15, 20,-10
+    back="Oretania's Cape +1",    -- __,  5, __
     waist="Embla Sash",           -- __, __,  5
     -- sub="Chanter's Shield",    -- __, __,  3
-    -- back="Oretania's Cape +1", -- __,  5, __
     -- Base stats                   416, __, __
     -- 567 Healing skill, 70 Cursna+, 10 FC; Cursna Rate = 49.13%
 
