@@ -1184,8 +1184,7 @@ function init_gear_sets()
     head="Arbatel Bonnet +3",
   }
   sets.buff['Perpetuance'] = {
-    hands="Arbatel Bracers",
-    -- hands="Arbatel Bracers +1",
+    hands="Arbatel Bracers +2",
   }
   -- Cap SIRD and DT
   sets.buff['Immanence'] = set_combine(sets.midcast.CureNormal, {})
@@ -1206,9 +1205,9 @@ function init_gear_sets()
   }
 
   sets.buff.Doom = {
+    neck="Nicander's Necklace",     --20
     ring1="Eshmun's Ring",          --20
     waist="Gishdubar Sash",         --10
-    -- neck="Nicander's Necklace",  --20
   }
 
   sets.Special = {}

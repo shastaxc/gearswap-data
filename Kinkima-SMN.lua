@@ -980,9 +980,9 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.buff.Doom = {
+    neck="Nicander's Necklace",     --20
     ring1="Eshmun's Ring",          --20
     waist="Gishdubar Sash",         --10
-    -- neck="Nicander's Necklace",  --20
   }
   sets.CP = {
     back=gear.CP_Cape
