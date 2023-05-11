@@ -880,7 +880,7 @@ function init_gear_sets()
     ammo="Pemphredo Tathlum",         --  4,  8,  4, ___, ___, __, __
     head="Pedagogy Mortarboard +3",   -- 39, 37, 49, ___, ___, __,  4
     body="Shamash Robe",              -- 40, 45, 45, ___, ___, __, __
-    hands=gear.Nyame_B_hands,         -- 28, 40, 30, ___, ___,  5, __
+    hands="Arbatel Bracers +2",       -- 31, 52, 47, ___,  22, 10, __
     legs="Pedagogy Pants +3",         -- 47, 39, 51, ___, ___, __, __; Elemental skill +19
     feet="Arbatel Loafers +3",        -- 34, 60, 50, ___,  30, __,  5; Elemental skill +33
     neck="Sanctity Necklace",         -- __, 10, 10, ___, ___, __, __
@@ -890,7 +890,7 @@ function init_gear_sets()
     ring2="Metamorph Ring +1",        -- 16, 15, __, ___, ___, __, __
     back=gear.SCH_MAB_Cape,           -- 30, 20, 10, ___,  20, __, __
     waist="Refoccilation Stone",      -- __,  4, 10, ___, ___, __, __
-    -- 294 INT, 376 MAcc, 380 MAB, 255 MAccSk, 298 MDmg, 15 MB Dmg%, 9 MB2 Dmg%
+    -- 297 INT, 388 MAcc, 397 MAB, 255 MAccSk, 320 MDmg, 20 MB Dmg%, 9 MB2 Dmg%
     
     -- Ideal:
     -- main="Bunzi's Rod",            -- 15, 55, 65, 255, 248, 10, __; R30
@@ -916,7 +916,7 @@ function init_gear_sets()
     ammo="Pemphredo Tathlum",         --  4,  8,  4, ___, ___, __, __
     head="Pedagogy Mortarboard +3",   -- 39, 37, 49, ___, ___, __,  4
     body="Shamash Robe",              -- 40, 45, 45, ___, ___, __, __
-    hands=gear.Nyame_B_hands,         -- 28, 40, 30, ___, ___,  5, __
+    hands="Arbatel Bracers +2",       -- 31, 52, 47, ___,  22, 10, __
     legs="Pedagogy Pants +3",         -- 47, 39, 51, ___, ___, __, __; Elemental skill +19
     feet="Arbatel Loafers +3",        -- 34, 60, 50, ___,  30, __,  5; Elemental skill +33
     neck="Argute Stole +2",           -- 15, 30, __, ___,  25, 10, __
@@ -926,7 +926,7 @@ function init_gear_sets()
     ring2="Mujin Band",               -- __, __, __, ___, ___, __,  5
     back=gear.SCH_MAB_Cape,           -- 30, 20, 10, ___,  20, __, __
     waist="Refoccilation Stone",      -- __,  4, 10, ___, ___, __, __
-    -- 293 INT, 381 MAcc, 370 MAB, 255 MAccSk, 323 MDmg, 25 MB Dmg%, 14 MB2 Dmg%
+    -- 296 INT, 393 MAcc, 387 MAB, 255 MAccSk, 345 MDmg, 30 MB Dmg%, 14 MB2 Dmg%
 
     -- main="Bunzi's Rod",            -- 15, 55, 65, 255, 248, 10, __; R30
     -- sub="Ammurapi Shield",         -- 13, 38, 38, ___, ___, __, __
@@ -1005,7 +1005,7 @@ function init_gear_sets()
     ammo="Pemphredo Tathlum",         --  4,  8,  4, ___, ___, __, __
     head="Pedagogy Mortarboard +3",   -- 39, 37, 49, ___, ___, __,  4
     body="Mallquis Saio +2",          -- 54, 46, 15, ___,  58, __, __
-    hands=gear.Nyame_B_hands,         -- 28, 40, 30, ___, ___, __, __
+    hands="Arbatel Bracers +2",       -- 31, 52, 47, ___,  22, 10, __
     legs="Mallquis Trews +2",         -- 57, 45, 15, ___,  55,  6, __
     feet="Arbatel Loafers +3",        -- 34, 60, 50, ___,  30, __,  5; Elemental skill +33
     neck="Argute Stole +2",           -- 15, 30, __, ___,  25, 10, __; Helix Dur+10%
@@ -1015,7 +1015,7 @@ function init_gear_sets()
     ring2="Mujin Band",               -- __, __, __, ___, ___, __,  5
     back=gear.SCH_MAB_Cape,           -- 30, 20, 10, ___,  20, __, __
     waist="Acuity Belt +1",           -- 23, 15, __, ___, ___, __, __
-    -- 333 INT, 376 MAcc, 268 MAB, 255 MAccSk, 511 MDmg, 26 MB Dmg%, 14 MB2 Dmg%
+    -- 336 INT, 388 MAcc, 285 MAB, 255 MAccSk, 533 MDmg, 36 MB Dmg%, 14 MB2 Dmg%
 
     -- Ideal:
     -- main="Bunzi's Rod",            -- 15, 55, 65, 255, 248, 10, __; R30
