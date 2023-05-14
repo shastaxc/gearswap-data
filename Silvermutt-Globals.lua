@@ -149,6 +149,8 @@ function define_global_sets()
   sets.org.global[4] = {ring1="Warp Ring"}
   sets.org.global[5] = {head="Shobuhouou Kabuto"}
   sets.org.global[6] = {back="Nexus Cape"}
+  sets.org.global[7] = {back="Orpheus's Sash"}
+  sets.org.global[8] = {back="Hachirin-no-Obi"}
   include('Global-Augments.lua')
   include('Silvermutt-Augments.lua')
 end
