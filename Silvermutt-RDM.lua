@@ -128,6 +128,9 @@ function job_setup()
   silibs.enable_auto_lockstyle(4)
   silibs.enable_premade_commands()
 
+  has_obi = true -- Change if you do or don't have Hachirin-no-Obi
+  has_orpheus = true -- Change if you do or don't have Orpheus's Sash
+    
   Haste = 0 -- Do not modify
   DW_needed = 0 -- Do not modify
   DW = false -- Do not modify
@@ -1292,8 +1295,6 @@ function job_post_precast(spell, action, spellMap, eventArgs)
       local base_day_weather_mult = silibs.get_day_weather_multiplier(spell.element, false, false)
       local obi_mult = silibs.get_day_weather_multiplier(spell.element, true, false)
       local orpheus_mult = silibs.get_orpheus_multiplier(spell.element, spell.target.distance)
-      local has_obi = true -- Change if you do or don't have Hachirin-no-Obi
-      local has_orpheus = false -- Change if you do or don't have Orpheus's Sash
   
       -- Determine which combination to use: orpheus, hachirin-no-obi, or neither
       if has_obi and (obi_mult >= orpheus_mult or not has_orpheus) and (obi_mult > base_day_weather_mult) then
@@ -1369,8 +1370,6 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     local base_day_weather_mult = silibs.get_day_weather_multiplier(spell.element, false, false)
     local obi_mult = silibs.get_day_weather_multiplier(spell.element, true, false)
     local orpheus_mult = silibs.get_orpheus_multiplier(spell.element, spell.target.distance)
-    local has_obi = true -- Change if you do or don't have Hachirin-no-Obi
-    local has_orpheus = false -- Change if you do or don't have Orpheus's Sash
 
     -- Determine which combination to use: orpheus, hachirin-no-obi, or neither
     if has_obi and (obi_mult >= orpheus_mult or not has_orpheus) and (obi_mult > base_day_weather_mult) then

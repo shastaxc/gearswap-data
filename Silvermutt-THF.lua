@@ -128,6 +128,9 @@ function job_setup()
   state.WeaponSet = M{['description']='Weapon Set', 'Normal', 'HighAcc', 'Naegling', 'NaeglingAcc', 'H2H', 'Staff', 'SoloCleaving', 'Cleaving'}
   state.RangedWeaponSet = M{['description']='Ranged Weapon Set', 'None', 'Throwing', 'Pulling', 'Archery'}
 
+  has_obi = true -- Change if you do or don't have Hachirin-no-Obi
+  has_orpheus = true -- Change if you do or don't have Orpheus's Sash
+    
   -- Indicate if a marksmanship weapon is xbow or gun (archery and throwing not needed here)
   marksman_weapon_subtypes = {
     -- ['Gastraphetes'] = "xbow",
@@ -1361,8 +1364,6 @@ function job_post_precast(spell, action, spellMap, eventArgs)
       local base_day_weather_mult = silibs.get_day_weather_multiplier(spell.element, false, false)
       local obi_mult = silibs.get_day_weather_multiplier(spell.element, true, false)
       local orpheus_mult = silibs.get_orpheus_multiplier(spell.element, spell.target.distance)
-      local has_obi = true -- Change if you do or don't have Hachirin-no-Obi
-      local has_orpheus = false -- Change if you do or don't have Orpheus's Sash
   
       -- Determine which combination to use: orpheus, hachirin-no-obi, or neither
       if has_obi and (obi_mult >= orpheus_mult or not has_orpheus) and (obi_mult > base_day_weather_mult) then

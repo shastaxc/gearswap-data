@@ -72,6 +72,9 @@ function job_setup()
   -- state.WeaponSet = M{['description']='Weapon Set', 'Naegling', 'Ukon', 'Chango', 'Shining One', 'Club', 'Dagger', 'Magic Axe', 'Phys Axe', 'Great Sword', 'Staff'}
   state.EnmityMode = M{['description']='Enmity Mode', 'Normal', 'Low', 'Schere'}
 
+  has_obi = true -- Change if you do or don't have Hachirin-no-Obi
+  has_orpheus = true -- Change if you do or don't have Orpheus's Sash
+    
   -- Set to 'True' if you want to dual wield weapons if you have the trait available
   -- You may not want to dual wield because it will disable the Fencer trait
   use_dw_if_available = false
@@ -1017,8 +1020,6 @@ function job_post_precast(spell, action, spellMap, eventArgs)
       local base_day_weather_mult = silibs.get_day_weather_multiplier(spell.element, false, false)
       local obi_mult = silibs.get_day_weather_multiplier(spell.element, true, false)
       local orpheus_mult = silibs.get_orpheus_multiplier(spell.element, spell.target.distance)
-      local has_obi = true -- Change if you do or don't have Hachirin-no-Obi
-      local has_orpheus = false -- Change if you do or don't have Orpheus's Sash
   
       -- Determine which combination to use: orpheus, hachirin-no-obi, or neither
       if has_obi and (obi_mult >= orpheus_mult or not has_orpheus) and (obi_mult > base_day_weather_mult) then

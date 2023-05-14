@@ -99,6 +99,9 @@ function job_setup()
 
   state.PetMode = M{['description']='Pet Mode', 'Tank', 'Ranged', 'RangedAcc', 'Heal', 'MeleeSpam', 'MeleeSC', 'OverdriveDD','SkillUpRanged'}
 
+  has_obi = true -- Change if you do or don't have Hachirin-no-Obi
+  has_orpheus = true -- Change if you do or don't have Orpheus's Sash
+    
   -- List of pet weaponskills to check for
   petWeaponskills = S{'Slapstick', 'Knockout', 'Magic Mortar', 'Chimera Ripper', 'String Clipper', 'Cannibal Blade',
       'Bone Crusher', 'String Shredder', 'Arcuballista', 'Daze', 'Armor Piercer', 'Armor Shatterer'}
@@ -1218,8 +1221,6 @@ function job_post_precast(spell, action, spellMap, eventArgs)
       local base_day_weather_mult = silibs.get_day_weather_multiplier(spell.element, false, false)
       local obi_mult = silibs.get_day_weather_multiplier(spell.element, true, false)
       local orpheus_mult = silibs.get_orpheus_multiplier(spell.element, spell.target.distance)
-      local has_obi = true -- Change if you do or don't have Hachirin-no-Obi
-      local has_orpheus = false -- Change if you do or don't have Orpheus's Sash
   
       -- Determine which combination to use: orpheus, hachirin-no-obi, or neither
       if has_obi and (obi_mult >= orpheus_mult or not has_orpheus) and (obi_mult > base_day_weather_mult) then
