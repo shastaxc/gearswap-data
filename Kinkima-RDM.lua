@@ -1,4 +1,4 @@
--- Original: Motenten / Modified: Arislan
+-- File Status: Barely started on this.
 
 -------------------------------------------------------------------------------------------------------------------
 --  Keybinds
