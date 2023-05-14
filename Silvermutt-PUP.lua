@@ -97,7 +97,7 @@ function job_setup()
   state.AutomaticPetTargeting = M(true, 'Automatic Pet Targeting')
   state.AutomaticManeuvers = M(false,'Automatic Maneuvers')
 
-  state.PetMode = M{['description']='Pet Mode', 'Tank', 'Ranged', 'RangedAcc', 'Heal', 'MeleeSpam', 'MeleeSC', 'OverdriveDD','SkillUpRanged'}
+  state.PetMode = M{['description']='Pet Mode', 'Tank', 'Ranged', 'RangedAcc', 'Heal', 'MeleeSpam', 'MeleeSC', 'OverdriveDD', 'Nuke', 'SkillUpRanged', 'SkillUpNuke'}
 
   has_obi = true -- Change if you do or don't have Hachirin-no-Obi
   has_orpheus = true -- Change if you do or don't have Orpheus's Sash
@@ -117,7 +117,9 @@ function job_setup()
 		MeleeSpam =     L{'Fire', 'Fire', 'Wind'},
 		MeleeSC =       L{'Fire', 'Fire', 'Wind'},
 		OverdriveDD =   L{'Light', 'Fire', 'Thunder'},
+		Nuke =          L{'Ice', 'Ice', 'Ice'},
     SkillUpRanged = L{'Light', 'Wind', 'Water'},
+    SkillUpNuke =   L{'Light', 'Water', 'Water'},
 	}
 
   ---- DO NOT MODIFY BELOW ------
@@ -961,6 +963,8 @@ function init_gear_sets()
     -- [25 PDT/17 MDT, 310 M.Eva] {Pet: 8 PDT /8 MDT, 121 Lv | 24 FC, 15 Regen, 5 Refresh}
   }
   sets.idle.PetEngaged.SkillUpRanged = set_combine(sets.idle.PetEngaged.Ranged, {})
+  sets.idle.PetEngaged.Nuke = set_combine(sets.idle.PetEngaged.Heal, {})
+  sets.idle.PetEngaged.SkillUpNuke = set_combine(sets.idle.PetEngaged.Heal, {})
 
 
   ------------------------------------------------------------------------------------------------
@@ -1084,12 +1088,17 @@ function init_gear_sets()
   sets.engaged.PetHeal = set_combine(sets.engaged, {
     legs="Pitre Churidars +3",        -- __, 46 <__, __, __> [__/__,  84] {__/__, ___ | 10, __, __}
     waist="Ukko Sash",                -- __, __ <__, __, __> [__/__, ___] {__/__, ___ |  5, __, __}
+    -- STP, Acc <DA, TA, QA> [PDT/MDT, M.Eva] {Pet: PDT/MDT, Lv | FC, Regen, Refresh}
   })
   sets.engaged.PetHeal.Acc = set_combine(sets.engaged.Acc, {
     legs="Pitre Churidars +3",        -- __, 46 <__, __, __> [__/__,  84] {__/__, ___ | 10, __, __}
     waist="Ukko Sash",                -- __, __ <__, __, __> [__/__, ___] {__/__, ___ |  5, __, __}
+    -- STP, Acc <DA, TA, QA> [PDT/MDT, M.Eva] {Pet: PDT/MDT, Lv | FC, Regen, Refresh}
   })
+  sets.engaged.PetNuke = set_combine(sets.engaged.PetHeal, {})
+  sets.engaged.PetNuke.Acc = set_combine(sets.engaged.PetHeal.Acc, {})
   sets.engaged.SkillUpRanged = set_combine(sets.engaged.PetRanged, {})
+  sets.engaged.SkillUpNuke = set_combine(sets.engaged.PetNuke, {})
 
 	--------------------- When master is engaged in Halfsies hybrid mode ---------------------
   sets.engaged.HalfsiesTank = {
@@ -1163,7 +1172,11 @@ function init_gear_sets()
   sets.engaged.HalfsiesOverdriveDD.Acc = set_combine(sets.engaged.PetOverdriveDD.Acc, {})
   sets.engaged.HalfsiesHeal = set_combine(sets.engaged.PetHeal, {})
   sets.engaged.HalfsiesHeal.Acc = set_combine(sets.engaged.PetHeal.Acc, {})
+  sets.engaged.HalfsiesNuke = set_combine(sets.engaged.PetNuke, {})
+  sets.engaged.HalfsiesNuke.Acc = set_combine(sets.engaged.PetNuke.Acc, {})
   sets.engaged.HalfsiesSkillUpRanged = set_combine(sets.engaged.HalfsiesRanged, {})
+  sets.engaged.HalfsiesSkillUpNuke = set_combine(sets.engaged.PetNuke, {})
+  sets.engaged.HalfsiesSkillUpNuke.Acc = set_combine(sets.engaged.PetNuke.Acc, {})
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Special Sets ------------------------------------------
