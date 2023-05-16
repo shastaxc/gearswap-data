@@ -252,11 +252,8 @@ function init_gear_sets()
     head="Sakpata's Helm",                -- 33, 23, 70, 55, __,  5 [ 7/ 7, 123]
     body="Sakpata's Breastplate",         -- 42, 28, 70, 55, __,  8 [10/10, 139]
     hands="Sakpata's Gauntlets",          -- 24, 33, 70, 55, __,  6 [ 8/ 8, 112]
-    legs="Sakpata's Cuisses",             -- 53, 21, 70, 55, __,  7 [ 9/ 9, 150]
+    legs="Boii Cuisses +3",               -- 53, 27, 73, 63, __, 10 [__/__, 130]; TP Bonus+100
     feet="Sakpata's Leggings",            -- 29, 19, 70, 55, __,  4 [ 6/ 6, 150]
-    -- 269 STR, 124 MND, 410 Attack, 324 Accuracy, 18 WSD, 36 PDL [53 PDT/43 MDT, 674 M.Eva]
-
-    -- legs="Boii Cuisses +3",            -- 53, 27, 73, 63, __, 10 [__/__, 130]; TP Bonus+100
     -- 269 STR, 130 MND, 348 Attack, 332 Accuracy, 18 WSD, 39 PDL [44 PDT/34 MDT, 654 M.Eva]
   })
   sets.precast.WS.AttCappedMaxTP = set_combine(sets.precast.WS.AttCapped, {
@@ -302,7 +299,7 @@ function init_gear_sets()
     head="Sakpata's Helm",                -- 40, 70, 55, __,  5 < 5, __, __> [ 7/ 7, 123]
     body="Sakpata's Breastplate",         -- 42, 70, 55, __,  8 < 8, __, __> [10/10, 139]
     hands="Sakpata's Gauntlets",          -- 51, 70, 55, __,  6 < 6, __, __> [ 8/ 8, 112]
-    legs="Sakpata's Cuisses",             -- 34, 70, 55, __,  7 < 7, __, __> [ 9/ 9, 150]
+    legs="Boii Cuisses +3",               -- 40, 73, 63, __, 10 < 8, __, __> [__/__, 130]; TP Bonus+100
     feet="Sakpata's Leggings",            -- 30, 70, 55, __,  4 < 4, __, __> [ 6/ 6, 150]
     neck="Warrior's Bead Necklace +1",    -- __, 20, 20, __, __ < 6, __, __> [__/__, ___]
     ear1="Moonshade Earring",             -- __, __,  4, __, __ <__, __, __> [__/__, ___]; TP bonus+250
@@ -312,10 +309,9 @@ function init_gear_sets()
     back=gear.WAR_STR_WSD_Cape,           -- __, 20, 20, 10, __ <__, __, __> [10/__, ___]
     waist="Ioskeha Belt +1",              -- __, __, 17, __, __ < 9, __, __> [__/__, ___]
     -- WAR Traits                            __, __, __, __, __ <33, __, __> [__/__, ___]
-    -- 232 VIT, 433 Attack, 336 Accuracy, 19 WSD, 30 PDL <78 DA, 0 TA, 0 QA> [57 PDT/39 MDT, 674 M.Eva]
+    -- 238 VIT, 436 Attack, 344 Accuracy, 19 WSD, 33 PDL <79 DA, 0 TA, 0 QA> [48 PDT/30 MDT, 654 M.Eva]
 
     -- hands="Boii Mufflers +3",          -- 47, 62, 62, 12, __ <__, __, __> [__/__,  82]
-    -- legs="Boii Cuisses +3",            -- 40, 73, 63, __, 10 < 8, __, __> [__/__, 130]; TP Bonus+100
     -- neck="Warrior's Bead Necklace +2", -- __, 25, 25, __, __ < 7, __, __> [__/__, ___]
     -- back=gear.WAR_VIT_WSD_Cape,        -- 30, 20, 20, 10, __ <__, __, __> [10/__, ___]
     -- 264 VIT, 433 Attack, 356 Accuracy, 31 WSD, 27 PDL <74 DA, 0 TA, 0 QA> [40 PDT/22 MDT, 624 M.Eva]
@@ -358,7 +354,7 @@ function init_gear_sets()
     head="Sakpata's Helm",                -- 33, 70, 55, __,  5 (__, __) < 5, __, __> [ 7/ 7, 123]
     body="Sakpata's Breastplate",         -- 42, 70, 55, __,  8 ( 5, __) < 8, __, __> [10/10, 139]
     hands="Sakpata's Gauntlets",          -- 24, 70, 55, __,  6 (__, __) < 6, __, __> [ 8/ 8, 112]
-    legs="Sakpata's Cuisses",             -- 53, 70, 55, __,  7 (__, __) < 7, __, __> [ 9/ 9, 150]
+    legs="Boii Cuisses +3",               -- 53, 73, 63, __, 10 (__, __) < 8, __, __> [__/__, 130]; TP Bonus+100
     feet="Boii Calligae +3",              -- 31, 60, 60, __, __ (__, 13) <__, __, __> [10/10, 130]
     neck="Warrior's Bead Necklace +1",    -- 12, 20, 20, __, __ (__, __) < 6, __, __> [__/__, ___]
     ear1="Moonshade Earring",             -- __, __,  4, __, __ (__, __) <__, __, __> [__/__, ___]; TP Bonus+250
@@ -368,9 +364,8 @@ function init_gear_sets()
     back=gear.WAR_STR_WSD_Cape,           -- 30, 20, 20, 10, __ (__, __) <__, __, __> [10/__, ___]
     waist="Sailfi Belt +1",               -- 15, 15, __, __, __ (__, __) < 5,  2, __> [__/__, ___]
     -- WAR Traits                            __, __, __, __, __ (__, __) <33, __, __> [__/__, ___]
-    -- 275 STR, 395 Attack, 324 Accuracy, 13 WSD, 29 PDL (7 Crit Rate, 19 Crit Dmg) <70 DA, 2 TA, 3 QA> [54 PDT/44 MDT, 654 M.Eva]
+    -- 275 STR, 398 Attack, 332 Accuracy, 13 WSD, 32 PDL (7 Crit Rate, 19 Crit Dmg) <71 DA, 2 TA, 3 QA> [45 PDT/35 MDT, 634 M.Eva]
 
-    -- legs="Boii Cuisses +3",            -- 53, 73, 63, __, 10 (__, __) < 8, __, __> [__/__, 130]; TP Bonus+100
     -- neck="Warrior's Bead Necklace +2", -- 15, 25, 25, __, __ (__, __) < 7, __, __> [__/__, ___]
     -- ear2="Boii Earring +2",            -- 15, __, 20, __, __ ( 8, __) < 9, __, __> [__/__, ___]
     -- 283 STR, 403 Attack, 358 Accuracy, 10 WSD, 32 PDL (15 Crit Rate, 19 Crit Dmg) <81 DA, 2 TA, 3 QA> [45 PDT/35 MDT, 634 M.Eva]
@@ -416,7 +411,7 @@ function init_gear_sets()
     head="Sakpata's Helm",                -- 33, 70, 55, __,  5 < 5, __, __> [ 7/ 7, 123]
     body="Sakpata's Breastplate",         -- 42, 70, 55, __,  8 < 8, __, __> [10/10, 139]
     hands="Sakpata's Gauntlets",          -- 24, 70, 55, __,  6 < 6, __, __> [ 8/ 8, 112]
-    legs="Sakpata's Cuisses",             -- 53, 70, 55, __,  7 < 7, __, __> [ 9/ 9, 150]
+    legs="Boii Cuisses +3",               -- 53, 73, 63, __, 10 < 8, __, __> [__/__, 130]; TP Bonus+100
     feet="Sakpata's Leggings",            -- 30, 70, 55, __,  4 < 4, __, __> [ 6/ 6, 150]
     neck="Fotia Gorget",                  -- __, __, __, __, __ <__, __, __> [__/__, ___]; ftp+
     ear1="Moonshade Earring",             -- __,  4, __, __, __ <__, __, __> [__/__, ___]; TP Bonus+250
@@ -426,9 +421,6 @@ function init_gear_sets()
     back=gear.WAR_STR_WSD_Cape,           -- 30, 20, 20, 10, __ <__, __, __> [10/__, ___]
     waist="Fotia Belt",                   -- __, __, __, __, __ <__, __, __> [__/__, ___]; ftp+
     -- WAR Traits                            __, __, __, __, __ <33, __, __> [__/__, ___]
-    -- 262 STR, 387 Attack, 308 Accuracy, 13 WSD, 33 PDL <63 DA, 0 TA, 3 QA> [50 PDT/40 MDT, 674 M.Eva]
-    
-    -- legs="Boii Cuisses +3",            -- 53, 73, 63, __, 10 < 8, __, __> [__/__, 130]; TP Bonus+100
     -- 262 STR, 390 Attack, 316 Accuracy, 13 WSD, 36 PDL <64 DA, 0 TA, 3 QA> [41 PDT/31 MDT, 654 M.Eva]
   })
   sets.precast.WS['Resolution'].AttCappedMaxTP = set_combine(sets.precast.WS['Resolution'].AttCapped, {
