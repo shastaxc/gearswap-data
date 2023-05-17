@@ -97,7 +97,7 @@ function job_setup()
   state.AutomaticPetTargeting = M(true, 'Automatic Pet Targeting')
   state.AutomaticManeuvers = M(false,'Automatic Maneuvers')
 
-  state.PetMode = M{['description']='Pet Mode', 'Tank', 'Ranged', 'RangedAcc', 'Heal', 'MeleeSpam', 'MeleeSC', 'OverdriveDD', 'Nuke', 'SkillUpRanged', 'SkillUpNuke'}
+  state.PetMode = M{['description']='Pet Mode', 'Tank', 'Ranged', 'RangedAcc', 'Heal', 'MeleeSpam', 'MeleeSC', 'OverdriveDD', 'Nuke', 'SkillUpRanged'}
 
   has_obi = true -- Change if you do or don't have Hachirin-no-Obi
   has_orpheus = true -- Change if you do or don't have Orpheus's Sash
@@ -119,7 +119,6 @@ function job_setup()
 		OverdriveDD =   L{'Light', 'Fire', 'Thunder'},
 		Nuke =          L{'Ice', 'Ice', 'Ice'},
     SkillUpRanged = L{'Light', 'Wind', 'Water'},
-    SkillUpNuke =   L{'Light', 'Water', 'Water'},
 	}
 
   ---- DO NOT MODIFY BELOW ------
@@ -964,7 +963,6 @@ function init_gear_sets()
   }
   sets.idle.PetEngaged.SkillUpRanged = set_combine(sets.idle.PetEngaged.Ranged, {})
   sets.idle.PetEngaged.Nuke = set_combine(sets.idle.PetEngaged.Heal, {})
-  sets.idle.PetEngaged.SkillUpNuke = set_combine(sets.idle.PetEngaged.Heal, {})
 
 
   ------------------------------------------------------------------------------------------------
@@ -1098,7 +1096,6 @@ function init_gear_sets()
   sets.engaged.PetNuke = set_combine(sets.engaged.PetHeal, {})
   sets.engaged.PetNuke.Acc = set_combine(sets.engaged.PetHeal.Acc, {})
   sets.engaged.SkillUpRanged = set_combine(sets.engaged.PetRanged, {})
-  sets.engaged.SkillUpNuke = set_combine(sets.engaged.PetNuke, {})
 
 	--------------------- When master is engaged in Halfsies hybrid mode ---------------------
   sets.engaged.HalfsiesTank = {
@@ -1175,8 +1172,6 @@ function init_gear_sets()
   sets.engaged.HalfsiesNuke = set_combine(sets.engaged.PetNuke, {})
   sets.engaged.HalfsiesNuke.Acc = set_combine(sets.engaged.PetNuke.Acc, {})
   sets.engaged.HalfsiesSkillUpRanged = set_combine(sets.engaged.HalfsiesRanged, {})
-  sets.engaged.HalfsiesSkillUpNuke = set_combine(sets.engaged.PetNuke, {})
-  sets.engaged.HalfsiesSkillUpNuke.Acc = set_combine(sets.engaged.PetNuke.Acc, {})
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Special Sets ------------------------------------------
