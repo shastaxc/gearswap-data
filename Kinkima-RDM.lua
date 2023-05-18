@@ -639,7 +639,7 @@ function init_gear_sets()
     main=gear.Colada_ENH, --4
     sub={name="Ammurapi Shield", priority=1}, --10
     head="Lethargy Chappel +2",
-    -- body="Lethargy Sayon +2",
+    body="Lethargy Sayon +2",
     -- hands="Atrophy Gloves +3", --20
     legs="Lethargy Fuseau +2",
     feet="Lethargy Houseaux +2", --35
@@ -652,6 +652,7 @@ function init_gear_sets()
     waist="Embla Sash", --10
     
     -- head="Lethargy Chappel +3",
+    -- body="Lethargy Sayon +3",
     -- legs="Lethargy Fuseau +3",
     -- feet="Lethargy Houseaux +3", --35
   }
@@ -688,7 +689,7 @@ function init_gear_sets()
     sub={name="Ammurapi Shield", priority=1}, --38
     ammo="Regal Gem", --Pot+10
     -- head="Vitiation Chapeau +3",
-    -- body="Lethargy Sayon +2",
+    body="Lethargy Sayon +2",
     hands="Lethargy Gantherots +2",
     -- hands="Lethargy Gantherots +3", --52macc, 24 skill
     -- legs=gear.Chironic_MACC_legs, --20+36 macc, 13skill
@@ -700,6 +701,8 @@ function init_gear_sets()
     ring2="Metamorph Ring +1", --16 MND vs Stikini 8 MND. 14 Macc vs 11+8skill so about 4 macc less
     back=gear.RDM_MND_Enf_Cape, --20macc, 30 MND
     waist="Obstinate Sash", --5% dur, 5skill, 15 macc
+    
+    -- body="Lethargy Sayon +3",
   } --411 Macc + 561 Enfeebling skill = 951, 411 total MND, max duration and effect
 
   sets.midcast.MndEnfeeblesDW = set_combine(sets.midcast.MndEnfeebles, {
@@ -738,10 +741,12 @@ function init_gear_sets()
 
   sets.midcast.MndEnfeeblesEffect = set_combine(sets.midcast.MndEnfeebles, { --Dia (all tiers) --TODO: Check gear
     ammo="Regal Gem",
-    -- body="Lethargy Sayon +2",
+    body="Lethargy Sayon +2",
     -- feet="Vitiation Boots +3",
     -- neck="Duelist's Torque +2",
     back=gear.RDM_MND_Enf_Cape, --+10 enf pot makes this better than aurist's
+    
+    -- body="Lethargy Sayon +3",
   })
 
   sets.midcast.MndEnfeeblesEffectDW = set_combine(sets.midcast.MndEnfeeblesEffect, {
@@ -776,10 +781,12 @@ function init_gear_sets()
   sets.midcast.IntEnfeeblesEffect = set_combine(sets.midcast.IntEnfeebles, { --Blind potency set. --Good. Verified 9/10/21
     ammo="Regal Gem",
     range=empty,
-    -- body="Lethargy Sayon +2",
+    body="Lethargy Sayon +2",
     -- feet="vitiation boots +3",
     -- neck="Duelist's Torque +2",
     back=gear.RDM_INT_Enf_Cape, --Better and aurists's because includes enfeeb magic effect +10
+    
+    -- body="Lethargy Sayon +3",
   }) --Check macc
 
   sets.midcast.IntEnfeeblesEffectDW = set_combine(sets.midcast.IntEnfeeblesEffect, {
@@ -827,12 +834,13 @@ function init_gear_sets()
 
   sets.midcast.SleepMaxDuration = set_combine(sets.midcast.SleepNormal, {
     head="Lethargy Chappel +2",
-    -- body="Lethargy Sayon +2",
+    body="Lethargy Sayon +2",
     hands="Regal Cuffs",
     legs="Lethargy Fuseau +2",
     feet="Lethargy Houseaux +2",
     
     -- head="Lethargy Chappel +3",
+    -- body="Lethargy Sayon +3",
     -- legs="Lethargy Fuseau +3",
     -- feet="Lethargy Houseaux +3",
   })
@@ -902,8 +910,8 @@ function init_gear_sets()
     sub="Daybreak",
     ammo="Ghastly Tathlum +1",
     head="Lethargy Chappel +2",
-    -- body="Lethargy Sayon +3",
-    -- hands="Agwu's Gages", -- R30
+    body="Lethargy Sayon +2",
+    hands="Lethargy Gantherots +2",
     legs="Lethargy Fuseau +2",
     feet="Lethargy Houseaux +2",
     neck="Sibyl Scarf",
@@ -915,6 +923,8 @@ function init_gear_sets()
     waist="Refoccilation Stone",
     
     -- head="Lethargy Chappel +3",
+    -- body="Lethargy Sayon +3",
+    -- hands="Agwu's Gages", -- R30
     -- legs="Lethargy Fuseau +3",
     -- feet="Lethargy Houseaux +3",
   }
@@ -943,7 +953,7 @@ function init_gear_sets()
     main=gear.Colada_ENH, --4
     sub={name="Ammurapi Shield", priority=1}, --10
     head="Lethargy Chappel +2",
-    -- body="Lethargy Sayon +3",
+    body="Lethargy Sayon +2",
     -- hands="Atrophy Gloves +3", --20
     legs="Lethargy Fuseau +2",
     feet="Lethargy Houseaux +2", --35
@@ -956,6 +966,7 @@ function init_gear_sets()
     waist="Embla Sash", --10
     
     -- head="Lethargy Chappel +3",
+    -- body="Lethargy Sayon +3",
     -- legs="Lethargy Fuseau +3",
     -- feet="Lethargy Houseaux +3", --35
   }
