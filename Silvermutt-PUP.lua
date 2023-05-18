@@ -220,7 +220,7 @@ function init_gear_sets()
     range="Neo Animator",             -- __, __ [__/__, ___] {__/__, 119}
     head="Hike Khat +1",              -- __, __ [13/__,  75] { 5/ 5, ___}
     body="Karagoz Farsetto +2",       -- 40, __ [12/12,  99] {__/__, ___}
-    hands="Foire Dastanas +2",        --  3,  3 [__/__,  36] {__/__, ___}
+    hands="Foire Dastanas +3",        --  5,  5 [__/__,  46] {__/__, ___}
     legs=gear.Nyame_B_legs,           -- __, __ [ 8/ 8, 150] {__/__, ___}
     neck="Buffoon's Collar +1",       --  5, __ [__/__, ___] {__/__, ___}
     ear1="Burana Earring",            -- __,  1 [__/__, ___] {__/__, ___}
@@ -229,10 +229,9 @@ function init_gear_sets()
     ring2="Defending Ring",           -- __, __ [10/10, ___] {__/__, ___}
     back=gear.PUP_Pet_Tank_Cape,      -- 10, __ [__/__,  20] { 5/ 5,   1}
     waist="Moonbow Belt +1",          -- __, __ [ 6/ 6, ___] {__/__, ___}
-    -- 58 Overload-, 4 Maneuver+ [56 PDT/35 MDT, 380 M.Eva] {Pet: 10 PDT/10 MDT, 121 Lv+}
+    -- 60 Overload-, 6 Maneuver+ [56 PDT/35 MDT, 390 M.Eva] {Pet: 10 PDT/10 MDT, 121 Lv+}
     
     -- body="Karagoz Farsetto +3",    -- 40, __ [13/13, 109] {__/__, ___}
-    -- hands="Foire Dastanas +3",     --  5,  5 [__/__,  46] {__/__, ___}
     -- legs="Foire Churidars +3",     -- __, __ [__/__,  84] { 6/ 6, ___}
     -- ear2="Karagoz Earring +2",     -- __, __ [__/__, ___] {__/__,   1}
     -- 60 Overload-, 6 Maneuver+ [55 PDT/28 MDT, 430 M.Eva] {Pet: 16 PDT/16 MDT, 122 Lv+}
