@@ -712,6 +712,12 @@ function init_gear_sets()
     legs="Rawhide Trousers",
     feet=gear.Herc_Refresh_feet,
   }
+  sets.latent_regain = {
+    head="Turms Cap +1",
+    body="Gleti's Cuirass",
+    hands="Gleti's Gauntlets",
+    legs="Gleti's Breeches",
+  }
 
   sets.resting = {}
 
@@ -732,7 +738,7 @@ function init_gear_sets()
     -- 63 PDT/26 MDT, 525 M.Eva
   }
 
-  sets.idle.Regain = set_combine(sets.idle, {})
+  sets.idle.Regain = set_combine(sets.idle, sets.latent_regain)
   sets.idle.Regen = set_combine(sets.idle, sets.latent_regen)
   sets.idle.Refresh = set_combine(sets.idle, sets.latent_refresh)
   sets.idle.Regain.Regen = set_combine(sets.idle, sets.latent_regen)
