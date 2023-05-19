@@ -90,7 +90,7 @@ function job_setup()
   silibs.enable_weapon_rearm()
   silibs.enable_th()
 
-  state.OffenseMode:options('Normal', 'MidAcc','HighAcc','Enspell','NoTPEnspell')
+  state.OffenseMode:options('Normal', 'MidAcc', 'HighAcc', 'Enspell')
   state.HybridMode:options('Normal', 'DT')
   state.WeaponskillMode:options('Normal')
   state.CastingMode:options('Normal', 'Seidr', 'Resistant')
@@ -639,7 +639,7 @@ function init_gear_sets()
     main=gear.Colada_ENH, --4
     sub={name="Ammurapi Shield", priority=1}, --10
     head="Lethargy Chappel +2",
-    body="Lethargy Sayon +2",
+    body="Lethargy Sayon +3",
     -- hands="Atrophy Gloves +3", --20
     legs="Lethargy Fuseau +2",
     feet="Lethargy Houseaux +2", --35
@@ -652,7 +652,6 @@ function init_gear_sets()
     waist="Embla Sash", --10
     
     -- head="Lethargy Chappel +3",
-    -- body="Lethargy Sayon +3",
     -- legs="Lethargy Fuseau +3",
     -- feet="Lethargy Houseaux +3", --35
   }
@@ -689,7 +688,7 @@ function init_gear_sets()
     sub={name="Ammurapi Shield", priority=1}, --38
     ammo="Regal Gem", --Pot+10
     -- head="Vitiation Chapeau +3",
-    body="Lethargy Sayon +2",
+    body="Lethargy Sayon +3",
     hands="Lethargy Gantherots +2",
     -- hands="Lethargy Gantherots +3", --52macc, 24 skill
     -- legs=gear.Chironic_MACC_legs, --20+36 macc, 13skill
@@ -701,8 +700,6 @@ function init_gear_sets()
     ring2="Metamorph Ring +1", --16 MND vs Stikini 8 MND. 14 Macc vs 11+8skill so about 4 macc less
     back=gear.RDM_MND_Enf_Cape, --20macc, 30 MND
     waist="Obstinate Sash", --5% dur, 5skill, 15 macc
-    
-    -- body="Lethargy Sayon +3",
   } --411 Macc + 561 Enfeebling skill = 951, 411 total MND, max duration and effect
 
   sets.midcast.MndEnfeeblesDW = set_combine(sets.midcast.MndEnfeebles, {
@@ -741,12 +738,10 @@ function init_gear_sets()
 
   sets.midcast.MndEnfeeblesEffect = set_combine(sets.midcast.MndEnfeebles, { --Dia (all tiers) --TODO: Check gear
     ammo="Regal Gem",
-    body="Lethargy Sayon +2",
+    body="Lethargy Sayon +3",
     -- feet="Vitiation Boots +3",
     -- neck="Duelist's Torque +2",
     back=gear.RDM_MND_Enf_Cape, --+10 enf pot makes this better than aurist's
-    
-    -- body="Lethargy Sayon +3",
   })
 
   sets.midcast.MndEnfeeblesEffectDW = set_combine(sets.midcast.MndEnfeeblesEffect, {
@@ -781,12 +776,10 @@ function init_gear_sets()
   sets.midcast.IntEnfeeblesEffect = set_combine(sets.midcast.IntEnfeebles, { --Blind potency set. --Good. Verified 9/10/21
     ammo="Regal Gem",
     range=empty,
-    body="Lethargy Sayon +2",
+    body="Lethargy Sayon +3",
     -- feet="vitiation boots +3",
     -- neck="Duelist's Torque +2",
     back=gear.RDM_INT_Enf_Cape, --Better and aurists's because includes enfeeb magic effect +10
-    
-    -- body="Lethargy Sayon +3",
   }) --Check macc
 
   sets.midcast.IntEnfeeblesEffectDW = set_combine(sets.midcast.IntEnfeeblesEffect, {
@@ -834,13 +827,12 @@ function init_gear_sets()
 
   sets.midcast.SleepMaxDuration = set_combine(sets.midcast.SleepNormal, {
     head="Lethargy Chappel +2",
-    body="Lethargy Sayon +2",
+    body="Lethargy Sayon +3",
     hands="Regal Cuffs",
     legs="Lethargy Fuseau +2",
     feet="Lethargy Houseaux +2",
     
     -- head="Lethargy Chappel +3",
-    -- body="Lethargy Sayon +3",
     -- legs="Lethargy Fuseau +3",
     -- feet="Lethargy Houseaux +3",
   })
@@ -910,7 +902,7 @@ function init_gear_sets()
     sub="Daybreak",
     ammo="Ghastly Tathlum +1",
     head="Lethargy Chappel +2",
-    body="Lethargy Sayon +2",
+    body="Lethargy Sayon +3",
     hands="Lethargy Gantherots +2",
     legs="Lethargy Fuseau +2",
     feet="Lethargy Houseaux +2",
@@ -923,7 +915,6 @@ function init_gear_sets()
     waist="Refoccilation Stone",
     
     -- head="Lethargy Chappel +3",
-    -- body="Lethargy Sayon +3",
     -- hands="Agwu's Gages", -- R30
     -- legs="Lethargy Fuseau +3",
     -- feet="Lethargy Houseaux +3",
@@ -953,7 +944,7 @@ function init_gear_sets()
     main=gear.Colada_ENH, --4
     sub={name="Ammurapi Shield", priority=1}, --10
     head="Lethargy Chappel +2",
-    body="Lethargy Sayon +2",
+    body="Lethargy Sayon +3",
     -- hands="Atrophy Gloves +3", --20
     legs="Lethargy Fuseau +2",
     feet="Lethargy Houseaux +2", --35
@@ -966,7 +957,6 @@ function init_gear_sets()
     waist="Embla Sash", --10
     
     -- head="Lethargy Chappel +3",
-    -- body="Lethargy Sayon +3",
     -- legs="Lethargy Fuseau +3",
     -- feet="Lethargy Houseaux +3", --35
   }
@@ -1059,80 +1049,33 @@ function init_gear_sets()
   sets.idle = set_combine(sets.HeavyDef, {})
   sets.idle.Refresh = set_combine(sets.idle, sets.passive_refresh)
   sets.idle.Refresh.MpSub50 = set_combine(sets.idle, sets.passive_refresh, sets.passive_refresh.sub50)
-    
-  sets.idle.Refresh = set_combine(sets.idle, { --Unused currently
-    -- main="Daybreak", --+1 --Too annoying and resets weapons
-    ammo="Homiliary", --+1
-    -- head="Vitiation Chapeau +3", --+3
-    body="Jhakri Robe +2", --+4
-    -- hands=gear.Chironic_RF_hands, --+1
-    -- legs=gear.Chironic_RF_legs, --+1
-    -- feet=gear.Chironic_RF_feet, --+1
-    ring1="Stikini Ring +1", --+1
-    ring2="Stikini Ring +1", --+1
-    waist="Fucho-no-obi",
-  }) --13
-
-  sets.idle.Casting = set_combine(sets.idle, {
-    -- main={name="Crocea Mors", priority=1}, 
-  })
-
-  sets.idle.CastingDW = set_combine(sets.idle, {
-    main={name="Daybreak", priority=1}, 
-    sub="Maxentius",
-  })
 
   sets.idle.Gyve = set_combine(sets.idle,{
     -- body="Gyve Doublet",
   })
 
 
-    ------------------------------------------------------------------------------------------------
-    ---------------------------------------- Engaged Sets ------------------------------------------
-    ------------------------------------------------------------------------------------------------
+  ------------------------------------------------------------------------------------------------
+  ---------------------------------------- Engaged Sets ------------------------------------------
+  ------------------------------------------------------------------------------------------------
 
-    -- Variations for TP weapon and (optional) offense/defense modes.  Code will fall back on previous
-    -- sets if more refined versions aren't defined.
-    -- If you create a set with both offense and defense modes, the offense mode should be first.
-    -- EG: sets.engaged.Dagger.Accuracy.Evasion    
-
-    sets.engaged = { --Aim for 26% gear haste. No DW. Max STP
-    --     ammo="Aurgelmir Orb +1",
-        head="Malignance Chapeau", --6
-        body="Malignance Tabard", --9
-        hands="Malignance Gloves", --5
-        legs="Malignance Tights", --7
-        feet="Malignance Boots", --4
-        neck="Anu Torque",
-        ear1="Dedition Earring", --STP8
-        ear2="Sherida Earring", --DA5, STP5
-        ring1="Hetairoi Ring",
-        -- ring1={name="Chirich Ring +1",bag="wardrobe3"},
-        ring2={name="Chirich Ring +1",bag="wardrobe4"},
-        -- waist="Windbuffet Belt +1",
-        waist="Flume Belt +1", --4
-        back=gear.RDM_STP_Cape, --10PDT
-        ammo="Coiste Bodhar",
-    } --31DT, 14PDT
-
-    sets.engaged.Enspell = set_combine(sets.engaged, {
-        range="Ullr",
-        ammo=empty,
-        head="Malignance Chapeau",
-        body="Malignance Tabard",
-        hands="Ayanmo Manopolas +2",
-        legs="Vitiation Tights",
-        feet="Malignance Boots",
-        ear1="Lyc. Earring",
-        ear2="Suppanomimi", --+5% DW
-        ring1={name="Chirich Ring +1",bag="wardrobe3"},
-        ring2="Hetairoi Ring",
-        -- ring2={name="Chirich Ring +1",bag="wardrobe4"},
-        -- waist="Orpheus's Sash",
-        waist="Hachirin-no-obi",
-        neck="Lissome Necklace",
-        back=gear.RDM_DW_Cape, --10DW, 10PDT
-        })
+  -- Aim for 26% gear haste. No DW. Max STP
+  sets.engaged = {
+    ammo="Coiste Bodhar",             -- __,  3, __ < 3, __, __> [__/__, ___]
+    head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
+    body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
+    hands="Malignance Gloves",        -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
+    legs="Malignance Tights",         -- __, 10, 50 <__, __, __> [ 7/ 7, 150]
+    feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
+    neck="Anu Torque",                -- __,  7, __ <__, __, __> [__/__, ___]
+    ear1="Dedition Earring",          -- __,  8,-10 <__, __, __> [__/__, ___]
+    ear2="Sherida Earring",           -- __,  5, __ < 5, __, __> [__/__, ___]
+    ring1="Ilabrat Ring",             -- __,  5, __ <__, __, __> [__/__, ___]
+    ring2="Epona's Ring",             -- __, __, __ < 3,  3, __> [__/__, ___]
+    waist="Sailfi Belt +1",           -- __, __, __ < 5,  2, __> [__/__, ___]
+    -- back=gear.RDM_STP_Cape,        -- __, 10, 30 <__, __, __> [10/__, ___]
+    -- 0 DW, 88 STP, 270 Acc <16 DA, 5 TA, 0 QA> [41 PDT/31 MDT, 674 M.Eva]
+  }
 
     sets.engaged.MidAcc = set_combine(sets.engaged, {
         neck="Combatant's Torque",
@@ -1150,6 +1093,25 @@ function init_gear_sets()
         ear1="Mache Earring +1",
         waist="Olseni Belt",
     })
+
+    sets.engaged.Enspell = set_combine(sets.engaged, {
+      range="Ullr",
+      ammo=empty,
+      head="Malignance Chapeau",
+      body="Malignance Tabard",
+      hands="Ayanmo Manopolas +2",
+      legs="Vitiation Tights",
+      feet="Malignance Boots",
+      ear1="Lyc. Earring",
+      ear2="Suppanomimi", --+5% DW
+      ring1={name="Chirich Ring +1",bag="wardrobe3"},
+      ring2="Hetairoi Ring",
+      -- ring2={name="Chirich Ring +1",bag="wardrobe4"},
+      -- waist="Orpheus's Sash",
+      waist="Hachirin-no-obi",
+      neck="Lissome Necklace",
+      back=gear.RDM_DW_Cape, --10DW, 10PDT
+      })
 
     -- No Magic Haste (74% DW to cap)
     sets.engaged.DW = { --Goal: 26% gear haste (cap 25) As much DW gear as possible. No haste. Low Acc set
@@ -1170,20 +1132,6 @@ function init_gear_sets()
         feet=gear.Taeon_DW_feet, --+4% DW +5 DW (Aug)
         ammo="Coiste Bodhar", --Sub
     }
-    
-    sets.engaged.DW.NoTPEnspell = set_combine(sets.engaged.Enspell, {
-        range="Ullr", --Equip in macro
-        ammo=empty,
-        main={name="Norgish Dagger", priority=10}, 
-        sub="Qutrub Knife",
-        neck="Duelist's torque +2",
-        body="Ayanmo corazza +2",
-        head="Umuthi Hat",
-        hands="Ayanmo Manopolas +2", 
-        ear1="Telos Earring",
-    })
-
-    sets.engaged.DW.Enspell = set_combine(sets.engaged.Enspell,{})
 
     sets.engaged.DW.MidAcc = set_combine(sets.engaged.DW, {
         neck="Lissome Necklace",
@@ -1198,6 +1146,8 @@ function init_gear_sets()
         ring1={name="Chirich Ring +1",bag="wardrobe3"},
         ring2={name="Chirich Ring +1",bag="wardrobe4"},
         })
+
+        sets.engaged.DW.Enspell = set_combine(sets.engaged.Enspell,{})
 
     ---------------- 30% Magic Haste (31 DW w/ sub nin to cap) -----------------
     sets.engaged.MidHasteDW = {
@@ -1233,15 +1183,12 @@ function init_gear_sets()
         ring2={name="Chirich Ring +1",bag="wardrobe4"},
         }) --42DT
 
-    sets.engaged.MidHasteDW.NoTPEnspell = set_combine(sets.engaged.DW.NoTPEnspell, sets.engaged.MidHasteDW.HighAcc)
-
     sets.engaged.MidHasteDW.Enspell = set_combine(sets.engaged.Enspell,{})
 
     ----- 35% Magic Haste (Unsure why we have these sets. Perhaps sub dnc? Not used)--------
     sets.engaged.HighHasteDW = set_combine(sets.engaged.MidHasteDW, {})
     sets.engaged.HighHasteDW.MidAcc = set_combine(sets.engaged.MidHasteDW.MidAcc, {})
     sets.engaged.HighHasteDW.HighAcc = set_combine(sets.engaged.MidHasteDW.HighAcc, {})
-    sets.engaged.HighHasteDW.NoTPEnspell = set_combine(sets.engaged.MidHasteDW.NoTPEnspell, {})
     sets.engaged.HighHasteDW.Enspell = set_combine(sets.engaged.Enspell, {})
 
     --------- 45% Magic Haste (11% DW to cap)----------------
@@ -1277,7 +1224,6 @@ function init_gear_sets()
         ring2={name="Chirich Ring +1",bag="wardrobe4"},
         })
 
-    sets.engaged.MaxHasteDW.NoTPEnspell = set_combine(sets.engaged.DW.NoTPEnspell, sets.engaged.MaxHasteDW.HighAcc)
     sets.engaged.MaxHasteDW.Enspell = set_combine(sets.engaged.Enspell,{})
 
     ------------------------------------------------------------------------------------------------
@@ -1354,11 +1300,6 @@ function init_gear_sets()
   sets.enspell = {
     -- main="Crocea Mors",
     -- sub="Gleti's Knife",
-  }
-
-  sets.notpenspell = {
-    main="Qutrub Knife",
-    sub="Wind Knife",
   }
 
   sets.culminus = {
