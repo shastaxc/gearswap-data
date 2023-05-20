@@ -505,21 +505,21 @@ function init_gear_sets()
   } --90% Dur, 36DT, 11PDT, 1MDT
 
   sets.midcast.EnhancingDuration = {
-    main=gear.Colada_ENH,             -- __,  4,  4 [??/??, ???]
-    sub="Ammurapi Shield",            -- __, 10, __ [??/??, ???]
-    head=gear.Telchine_ENH_head,      -- __,  9, __ [??/??, ???]
-    body=gear.Telchine_ENH_body,      -- 12, 10, __ [??/??, ???]
-    hands=gear.Telchine_ENH_hands,    -- __, 10, __ [??/??, ???]
-    legs=gear.Telchine_ENH_legs,      -- __, 10, __ [??/??, ???]
-    feet="Lethargy Houseaux +2",      -- __, 30, 35, __ [__/__, 147]
+    main=gear.Colada_ENH,             -- __,  4,  4 [__/__, ___]
+    sub="Ammurapi Shield",            -- __, 10, __ [__/__, ___]
+    head=gear.Telchine_ENH_head,      -- __,  9, __ [__/__,  75]
+    body=gear.Telchine_ENH_body,      -- 12, 10, __ [__/__,  80]
+    hands="Atrophy Gloves +3",        -- __, 20, __ [__/__,  57]
+    legs=gear.Telchine_ENH_legs,      -- __, 10, __ [__/__, 128]
+    feet="Lethargy Houseaux +2",      -- 30, 35, __ [__/__, 147]
     neck="Incanter's Torque",         -- 10, __, __ [__/__, ___]
     ear1="Mimir Earring",             -- 10, __, __ [__/__, ___]
     ear2="Lethargy Earring",          -- __,  7, __ [__/__, ___]
     ring1="Stikini Ring +1",          --  8, __, __ [__/__, ___]
     ring2="Stikini Ring +1",          --  8, __, __ [__/__, ___]
-    back=gear.RDM_ENH_Cape,           -- 10, __, 20, 10 [10/__, ___]
+    back=gear.RDM_ENH_Cape,           -- __, 20, 10 [10/__, ___]
     waist="Embla Sash",               -- __, 10,  5 [__/__, ___]
-    -- ?? Enh Effect, 69 Enh skill, 70 Enh duration, 13 FC [PDT/MDT, M.Eva]
+    -- 78 Enh skill, 135 Enh duration, 19 FC [10 PDT/0 MDT, 487 M.Eva]
     
     -- main=gear.Colada_ENH, --4
     -- sub={name="Ammurapi Shield", priority=1}, --10
@@ -540,22 +540,23 @@ function init_gear_sets()
 
   sets.midcast.EnhancingSkill = set_combine(sets.midcast.EnhancingDuration, {
     -- main="Pukulatmuj +1",                  -- 11, __, __ [__/__, ___]
-    sub={name="Forfend +1", priority=1},    -- 10, __, __ [ 4/__, ___]
+    sub={name="Forfend +1", priority=1},      -- 10, __, __ [ 4/__, ___]
     ammo="Staunch Tathlum +1",                -- __, __, __ [ 3/ 3, ___]
     head="Befouled Crown",                    -- 16, __, __ [__/__,  75]
-    -- body="Vitiation Tabard +3",
-    -- hands="Atrophy Gloves +3",
-    -- legs="Atrophy Tights +3",
-    feet="Lethargy Houseaux +2",
+    -- body="Vitiation Tabard +3",            -- 23, 15, 15 [__/__, 100]
+    hands="Atrophy Gloves +3",                -- __, 20, __ [__/__,  57]
+    -- legs="Atrophy Tights +3",              -- 21, __, __ [__/__, 127]
+    feet="Lethargy Houseaux +2",              -- 30, 35, __ [__/__, 147]
     neck="Incanter's Torque",                 -- 10, __, __ [__/__, ___]
     ear1="Mimir Earring",                     -- 10, __, __ [__/__, ___]
     ear2="Lethargy Earring",                  -- __,  7, __ [__/__, ___]
     ring1="Stikini Ring +1",                  --  8, __, __ [__/__, ___]
     ring2="Stikini Ring +1",                  --  8, __, __ [__/__, ___]
-    back=gear.RDM_ENH_Cape,                   -- 10, __, 20, 10 [10/__, ___]
+    back=gear.RDM_ENH_Cape,                   -- __, 20, 10 [10/__, ___]
     waist="Olympus Sash",                     --  5, __, __ [__/__, ___]
+    -- 152 Enh skill, 97 Enh duration, 25 FC [17 PDT/3 MDT, 506 M.Eva]
     
-    -- feet="Lethargy Houseaux +3",
+    -- feet="Lethargy Houseaux +3",           -- 35, 40, __ [__/__, 157]
     -- ear2="Andoaa Earring",                 --  5, __, __ [__/__, ___]
   })
 
@@ -581,7 +582,7 @@ function init_gear_sets()
     sub={name="Ammurapi Shield", priority=1}, --10
     -- head="Amalric Coif +1", -- +2
     -- body="Atrophy Tabard +3", -- +3pot
-    -- hands="Atrophy Gloves +3", --20
+    hands="Atrophy Gloves +3", --20
     legs="Lethargy Fuseau +2",
     feet="Lethargy Houseaux +2", --35
     -- neck="Duelist's Torque +2", --25
@@ -640,7 +641,7 @@ function init_gear_sets()
     sub={name="Ammurapi Shield", priority=1}, --10
     head="Lethargy Chappel +2",
     body="Lethargy Sayon +3",
-    -- hands="Atrophy Gloves +3", --20
+    hands="Atrophy Gloves +3", --20
     legs="Lethargy Fuseau +2",
     feet="Lethargy Houseaux +2", --35
     -- neck="Duelist's Torque +2", --25
@@ -945,7 +946,7 @@ function init_gear_sets()
     sub={name="Ammurapi Shield", priority=1}, --10
     head="Lethargy Chappel +2",
     body="Lethargy Sayon +3",
-    -- hands="Atrophy Gloves +3", --20
+    hands="Atrophy Gloves +3", --20
     legs="Lethargy Fuseau +2",
     feet="Lethargy Houseaux +2", --35
     -- neck="Duelist's Torque +2", --25
@@ -1062,7 +1063,7 @@ function init_gear_sets()
   -- Aim for 26% gear haste. No DW. Max STP
   sets.engaged = {
     ammo="Coiste Bodhar",             -- __,  3, __ < 3, __, __> [__/__, ___]
-    head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
+    head="Bunzi's Hat",               -- __,  8, 55 <__, __,  3> [ 7/ 7, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
     hands="Malignance Gloves",        -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
     legs="Malignance Tights",         -- __, 10, 50 <__, __, __> [ 7/ 7, 150]
@@ -1072,46 +1073,46 @@ function init_gear_sets()
     ear2="Sherida Earring",           -- __,  5, __ < 5, __, __> [__/__, ___]
     ring1="Ilabrat Ring",             -- __,  5, __ <__, __, __> [__/__, ___]
     ring2="Epona's Ring",             -- __, __, __ < 3,  3, __> [__/__, ___]
-    waist="Sailfi Belt +1",           -- __, __, __ < 5,  2, __> [__/__, ___]
     -- back=gear.RDM_STP_Cape,        -- __, 10, 30 <__, __, __> [10/__, ___]
-    -- 0 DW, 88 STP, 270 Acc <16 DA, 5 TA, 0 QA> [41 PDT/31 MDT, 674 M.Eva]
+    waist="Sailfi Belt +1",           -- __, __, __ < 5,  2, __> [__/__, ___]
+    -- 0 DW, 88 STP, 275 Acc <16 DA, 5 TA, 3 QA> [42 PDT/32 MDT, 674 M.Eva]
   }
+  sets.engaged.MidAcc = set_combine(sets.engaged, {
+    -- neck="Combatant's Torque",     -- __,  4, __ <__, __, __> [__/__, ___]; Combat skills+15
+    -- ear1="Telos Earring",          -- __,  5, 10 < 1, __, __> [__/__, ___]
+    -- waist="Kentarch Belt +1",      -- __,  5, 14 < 3, __, __> [__/__, ___]
+  })
+  sets.engaged.HighAcc = set_combine(sets.engaged, {
+    ammo="Falcon Eye",                -- __, __, 13 <__, __, __> [__/__, ___]
+    ear2="Cessance Earring",          -- __,  3,  6 < 3, __, __> [__/__, ___]
+    ring2="Chirich Ring +1",          -- __,  6, 10 <__, __, __> [__/__, ___]
+    waist="Olseni Belt",              -- __,  3, 20 <__, __, __> [__/__, ___]
+  })
 
-    sets.engaged.MidAcc = set_combine(sets.engaged, {
-        neck="Combatant's Torque",
-        ear1="Telos Earring", --STP5, DA1
-        ring1={name="Chirich Ring +1",bag="wardrobe3"},
-        -- waist="Kentarch Belt +1",
-        })
+  -- Consider Vitiation Tights if you use enspell merits
+  sets.engaged.Enspell = set_combine(sets.engaged, {
+    -- main="Crocea Mors",            -- __, __, 50 <__, __, __> [__/__, ___] (50, x6, __)
+    -- sub="Gleti's Knife",           -- __, __, 55 <__,  6, __> [__/__, ___] (55, __, __); R30
+    -- range="Ullr",                  -- __, __, __ <__, __, __> [__/__, ___] (40, __, __)
+    -- ammo=empty,                    -- __, __, __ <__, __, __> [__/__, ___] (__, __, __)
+    head="Bunzi's Hat",               -- __,  8, 55 <__, __,  3> [ 7/ 7, 123] (55, __, __); R30
+    body="Lethargy Sayon +3",         -- __, __, 64 <__, __, __> [14/14, 136] (64, __, __)
+    hands="Ayanmo Manopolas +2",      -- __, __, 43 <__, __, __> [ 3/ 3,  37] (43, 17, __)
+    legs=gear.Nyame_B_legs,           -- __, __, 40 < 6, __, __> [ 8/ 8, 150] (40, __, __); R30
+    feet=gear.Nyame_B_feet,           -- __, __, 53 < 5, __, __> [ 7/ 7, 150] (40, __, __); R30
+    neck="Duelist's Torque +2",       -- __, __, __ <__, __, __> [__/__, ___] (30, __, __)
+    ear1="Lycopodium Earring",        -- __, __, __ <__, __, __> [__/__, ___] ( 1,  2, __)
+    ear2="Sherida Earring",           -- __,  5, __ < 5, __, __> [__/__, ___] (__, __, __)
+    -- ring1="Hetairoi Ring",         -- __, __, __ <__,  2, __> [__/__, ___] (__, __, __)
+    ring2="Epona's Ring",             -- __, __, __ < 3,  3, __> [__/__, ___] (__, __, __)
+    -- back=gear.RDM_STP_Cape,        -- __, 10, 30 <__, __, __> [10/__, ___] (__, __, __)
+    waist="Sailfi Belt +1",           -- __, __, __ < 5,  2, __> [__/__, ___] (__, __, __)
+    -- Traits/merits/gifts            -- __, __, __ <__, __, __> [__/__, ___] (90,  7, 36)
+    -- 0 DW, 23 STP, 390 Acc <24 DA, 13 TA, 3 QA> [49 PDT/39 MDT, 596 M.Eva] (508 M.Acc, 26 Enspell Dmg, 36 Enh Skill)
 
-    sets.engaged.HighAcc = set_combine(sets.engaged, {
-        ammo="Voluspa Tathlum",
-        head="Carmine Mask +1",
-        -- body="Carm. Sc. Mail +1",
-        legs="Carmine Cuisses +1",
-        -- ear1="Cessance Earring",
-        ear1="Mache Earring +1",
-        waist="Olseni Belt",
-    })
-
-    sets.engaged.Enspell = set_combine(sets.engaged, {
-      range="Ullr",
-      ammo=empty,
-      head="Malignance Chapeau",
-      body="Malignance Tabard",
-      hands="Ayanmo Manopolas +2",
-      legs="Vitiation Tights",
-      feet="Malignance Boots",
-      ear1="Lyc. Earring",
-      ear2="Suppanomimi", --+5% DW
-      ring1={name="Chirich Ring +1",bag="wardrobe3"},
-      ring2="Hetairoi Ring",
-      -- ring2={name="Chirich Ring +1",bag="wardrobe4"},
-      -- waist="Orpheus's Sash",
-      waist="Hachirin-no-obi",
-      neck="Lissome Necklace",
-      back=gear.RDM_DW_Cape, --10DW, 10PDT
-      })
+    -- ear2="Lethargy Earring +2",    -- __, __, 20 < 8, __, __> [__/__, ___] (20, __, __)
+    -- waist="Orpheus's Sash",
+  })
 
     -- No Magic Haste (74% DW to cap)
     sets.engaged.DW = { --Goal: 26% gear haste (cap 25) As much DW gear as possible. No haste. Low Acc set
