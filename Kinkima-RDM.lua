@@ -572,16 +572,18 @@ function init_gear_sets()
 
   sets.midcast.Refresh = set_combine(sets.midcast.EnhancingDuration, {
     -- head="Amalric Coif +1", -- +2
-    -- body="Atrophy Tabard +3", --+3
+    body="Atrophy Tabard +2", --+1
     legs="Lethargy Fuseau +2", --+3
     -- legs="Lethargy Fuseau +3", --+4
+    
+    -- body="Atrophy Tabard +3", --+2
   })
 
   sets.midcast.CompRefreshOther = set_combine(sets.midcast.EnhancingDuration, {     
     main=gear.Colada_ENH, --4
     sub={name="Ammurapi Shield", priority=1}, --10
     -- head="Amalric Coif +1", -- +2
-    -- body="Atrophy Tabard +3", -- +3pot
+    body="Atrophy Tabard +2", -- +1pot
     hands="Atrophy Gloves +3", --20
     legs="Lethargy Fuseau +2",
     feet="Lethargy Houseaux +2", --35
@@ -593,6 +595,7 @@ function init_gear_sets()
     back=gear.RDM_ENH_Cape, --20
     waist="Embla Sash", --10
     
+    -- body="Atrophy Tabard +3", -- +2pot
     -- legs="Lethargy Fuseau +3",
     -- feet="Lethargy Houseaux +3", --35
   })
@@ -701,7 +704,8 @@ function init_gear_sets()
     ring2="Metamorph Ring +1", --16 MND vs Stikini 8 MND. 14 Macc vs 11+8skill so about 4 macc less
     back=gear.RDM_MND_Enf_Cape, --20macc, 30 MND
     waist="Obstinate Sash", --5% dur, 5skill, 15 macc
-  } --411 Macc + 561 Enfeebling skill = 951, 411 total MND, max duration and effect
+    -- Enf. Effect, Enf. Duration, Enf. Skill, M.Acc skill, M.Acc, MND
+  }
 
   sets.midcast.MndEnfeeblesDW = set_combine(sets.midcast.MndEnfeebles, {
     main={name="Daybreak", priority=1},
@@ -718,7 +722,7 @@ function init_gear_sets()
     -- range="Ullr",
     -- ammo=empty,
     -- head="Vitiation Chapeau +3",
-    -- body="Atrophy Tabard +3",
+    body="Atrophy Tabard +2",
     hands="Lethargy Gantherots +2",
     -- hands="Lethargy Gantherots +3", --62 macc, 29skill, 11DT
     -- legs=gear.Chironic_MACC_legs, --20+36 macc, 13skill
@@ -730,7 +734,11 @@ function init_gear_sets()
     ring2="Stikini Ring +1",
     back="Aurist's Cape +1",
     waist="Obstinate Sash", --5% dur, 5skill, 15 macc
-  } --469 Macc (checkparam) + 91 aug/set bonus + 600 Enfeebling skill + 255 macc skill = 1404, 403 MND.
+    -- AF set bonus
+    -- Enf. Effect, Enf. Duration, Enf. Skill, M.Acc skill, M.Acc, MND
+    
+    -- body="Atrophy Tabard +3",
+  } 
 
   sets.midcast.MndEnfeeblesAccDW = set_combine(sets.midcast.MndEnfeeblesAcc, {
     -- main={name="Crocea Mors", priority=1},  --(255)+50
@@ -795,7 +803,7 @@ function init_gear_sets()
     sub="Enki Strap", --10macc
     ammo="Regal Gem", --10% pot
     -- head="Vitiation Chapeau +3", --24
-    -- body="Atrophy Tabard +3", --21
+    body="Atrophy Tabard +2", --19
     hands=gear.Kaykaus_C_hands, --16, 53macc
     -- legs=gear.Chironic_MACC_legs, --20+36 macc, 13skill
     -- feet="Vitiation Boots +3", --16
@@ -806,6 +814,8 @@ function init_gear_sets()
     ring2="Stikini Ring +1", --8
     back=gear.RDM_INT_Enf_Cape, --10% pot
     waist="Obstinate Sash", --5% dur, 5skill, 15 macc
+    
+    -- body="Atrophy Tabard +3", --21
   })--355 Macc + 146 aug macc + 30 M.Acc AF Bonus + 625 Enfeebling Skill + 228 macc skill = 1384 (Enfeeb == Macc according to wikia)
 
   sets.midcast.SkillEnfeeblesDW = set_combine(sets.midcast.SkillEnfeebles, {
@@ -880,7 +890,7 @@ function init_gear_sets()
     -- range="Ullr", --40
     -- ammo=empty,
     -- head="Atrophy Chapeau +3", --54+17
-    -- body="Atrophy Tabard +3", --55
+    body="Atrophy Tabard +2", --45
     hands=gear.Kaykaus_C_hands, --33+20
     -- legs=gear.Chironic_MACC_legs, --20+36 macc
     feet="Malignance Boots", --50
@@ -891,6 +901,8 @@ function init_gear_sets()
     ring2="Stikini Ring +1", --8+11
     back="Aurist's Cape +1", --33
     waist="Obstinate Sash", -- 15 macc
+    
+    -- body="Atrophy Tabard +3", --55
   } --496 Macc + 30 macc set bonus + 352 Drk Magic = 893 effective macc
 
   --sets.midcast['Bio III'] = set_combine(sets.midcast['Dark Magic'], {legs="Vitiation Tights +3"})
