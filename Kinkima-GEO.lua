@@ -1817,7 +1817,7 @@ end
 function job_get_spell_map(spell, default_spell_map)
   if spell.action_type == 'Magic' then
     if default_spell_map == 'Cure' or default_spell_map == 'Curaga' then
-      if (world.weather_element == 'Light' and not (get_weather_intensity() < 2 and world.weather_element == 'Dark'))
+      if (world.weather_element == 'Light' and not (get_weather_intensity() < 2 and world.day_element == 'Dark'))
           or (world.day_element == 'Light' and not world.weather_element == 'Dark') then
         return 'CureWeather'
       else
