@@ -104,7 +104,10 @@ function job_setup()
   state.SleepMode = M{['description']='Sleep Mode', 'Normal', 'MaxDuration'}
   state.EnspellMode = M(false, 'Enspell Mode')
   state.NM = M(false, 'NM?')
-  state.CP = M(false, "Capacity Points Mode")
+  state.CP = M(false, 'Capacity Points Mode')
+  state.WeaponSet = M{['description']='Weapon Set', 'Casting', 'Savage Blade', 'Seraph Blade', 'Black Halo', 'Enspell', 'Cleaving'}
+  state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger',
+      'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
 
   state.Buff.Composure = buffactive.Composure or false
   state.Buff.Saboteur = buffactive.Saboteur or false
@@ -452,58 +455,106 @@ function init_gear_sets()
   sets.midcast.FastRecast = set_combine(sets.precast.FC,{})
   sets.midcast.Trust = set_combine(sets.precast.FC,{})
 
-  sets.midcast.CureNormal = { --Cure Pot cap +50%
-    ammo="Esper Stone +1",    --0/(-5)
-    head="Bunzi's Hat",         --7DT
-    body="Bunzi's Robe",        --+15Pot    , 10DT ,-10Enm
-    hands=gear.Kaykaus_C_hands,
-    -- legs="Atrophy tights +2",   --+11Pot,+15Skill
-    feet=gear.Vanya_B_feet,
-    neck="Loricate Torque +1",  --6DT
-    ear1="Malignance Earring",  --8MND
-    ear2="Odnowa Earring +1",   --3DT
-    ring1="Gelatinous Ring +1", --7PDT, -1MDT
-    ring2="Sirona's Ring",      --+10skill
-    -- back=gear.RDM_Cure_Cape,     --+10Pot, 10DT, 30MND
-    waist="Flume Belt +1",      --4PDT
-    -- CP, Conserve MP [PDT/MDT, M.Eva]
+  -- Prioritize: CPII > CP > Heal Skill, MND, VIT (to power cap) > SIRD > -DT > Enmity (to -40)
+  -- Cap at 700 power; Power = floor(MND÷2) + floor(VIT÷4) + Healing Magic Skill
+  -- Mithra RDM/WHM M30 MND = 134
+  -- Mithra RDM/WHM M30 VIT = 123
+  -- Mithra RDM/WHM M30 Healing Magic Skill = 414
+  sets.midcast.CureNormal = {
+    main="Eremite's Wand +1",         -- __, __, ___,   2, ___, 25, __/__, __
+    sub="Genmei Shield",              -- __, __, ___, ___, ___, __, 10/__, __
+    ammo="Staunch Tathlum +1",        -- __, __, ___, ___, ___, 11,  3/ 3, __
+    head=gear.Kaykaus_C_head,         -- __, 11,  16,  19,  14, 12, __/ 3, __
+    body=gear.Kaykaus_C_body,         --  4, __, ___,  33,  20, 12, __/__, __
+    hands=gear.Chironic_SIRD_hands,   -- __, __, ___,  38,  20, 31, __/__, __; Can add more DT or Enmity
+    legs="Atrophy Tights +2",         -- __, 11,  15,  34,  17, __, __/__, __
+    feet=gear.Kaykaus_D_feet,         -- __, 17, ___,  19,  10, __, __/__,  6
+    neck="Loricate Torque +1",        -- __, __, ___, ___, ___,  5,  6/ 6, __
+    ear1="Meili Earring",             -- __, __,  10, ___, ___, __, __/__, __
+    ear2="Odnowa Earring +1",         -- __, __, ___, ___,   3, __,  3/ 5, __
+    ring1="Menelaus's Ring",          -- __,  5,  15, ___, ___, __, __/__, __
+    ring2="Defending Ring",           -- __, __, ___, ___, ___, __, 10/10, __
+    back=gear.RDM_Cure_Cape,          -- __, 10, ___,  30, ___, __, 10/__, __
+    waist="Sanctuary Obi +1",         -- __, __, ___, ___, ___, 10, __/__,  4
+    -- Kaykaus set bonus              --  6, __, ___, ___, ___, __, __/__, __
+    -- Base Stats                     -- __, __, 414, 129, 123, __, __/__, __
+    -- Merit points                   -- __, __, ___, ___, ___, 10, __/__,  5
+    -- 10 CPII, 54 CP, 470 Heal Skill, 304 MND, 207 VIT, 116 SIRD, 42PDT/27MDT, 15 -Enmity
+    
+    -- legs="Atrophy Tights +3",      -- __, 12,  17,  39,  22, __, __/__, __
+    -- 10 CPII, 55 CP, 472 Heal Skill, 309 MND, 212 VIT, 116 SIRD, 42PDT/27MDT, 15 -Enmity
+    -- 679 Power
   }
-
-  sets.midcast.CureWeather = set_combine(sets.midcast.CureNormal, {
-    main={name="Chatoyant Staff", priority=1},
-    sub="Enki Strap",
-    ring2="Defending Ring",  --10 DT covers PDT loss for hachirin
-    waist="Hachirin-no-Obi", --10 less PDT
-  })
-
-  -- Used for self-target <50% HP
-  sets.midcast.CureSIRD = { --SIRD cure for low hp critical heal situations
-    main="Daybreak",            --30Pot
-    sub="Genmei Shield",        --10PDT
-    ammo="Staunch Tathlum +1",  --3DT, 11SIRD
-    head="Bunzi's Hat",         --7DT
-    body="Rosette Jaseran +1",      --0Pot     , 5DT  ,-12Enm, 20SIRD
-    -- hands=gear.Chironic_SIRD_hands,--+0Pot  , 0DT  ,-4Enm,  30SIRD
-    -- legs="Atrophy tights +2",   --+11Pot,+15Skill
-    feet="Vanya Clogs",         --+5Pot,+40Skill
-    neck="Loricate Torque +1",  --6DT
-    ear1="Halasz Earring",      --+0Pot     , 0DT  ,-3Enm,  5SIRD
-    -- ear2="Magnetic Earring",    --+0Pot     , 0DT  , 0Enm,  8SIRD
-    ring1="Gelatinous Ring +1", --7PDT, -1MDT
-    ring2="Defending Ring",     --10DT
-    -- back=gear.RDM_Cure_Cape,     --+10Pot, 10PDT, 30MND
-    waist="Rumination Sash",    --0Pot      , 0DT  ,-0Enm,  10SIRD
-  }--52%, 26DT, 27PDT, Conserve MP+6, 95SIRD
-
-  -- Used for self-target >50% HP
-  sets.midcast.CureSelf = set_combine(sets.midcast.CureNormal, {
-    -- main="Sanus Ensis", -- +13 pot. +10 pot received
-    -- sub="Genmei Shield"
-    -- neck="Phalaina Locket", -- 4(4)
-    hands="Atrophy Gloves +3",
-    -- ring2="Asklepian Ring", -- (3)
-    waist="Gishdubar Sash", -- (10)
-  })
+  sets.midcast.CureNormalWeaponLock = {
+    ammo="Staunch Tathlum +1",        -- __, __, ___, ___, ___, 11,  3/ 3, __
+    head=gear.Kaykaus_C_head,         -- __, 11,  16,  19,  14, 12, __/ 3, __
+    body="Rosette Jaseran +1",        -- __, __, ___,  39,  31, 25,  5/ 5, 13
+    hands=gear.Chironic_SIRD_hands,   -- __, __, ___,  38,  20, 31, __/__, __; Can add more DT or Enmity
+    legs="Atrophy Tights +2",         -- __, 11,  15,  34,  17, __, __/__, __
+    feet=gear.Kaykaus_D_feet,         -- __, 17, ___,  19,  10, __, __/__,  6
+    neck="Loricate Torque +1",        -- __, __, ___, ___, ___,  5,  6/ 6, __
+    ear1="Meili Earring",             -- __, __,  10, ___, ___, __, __/__, __
+    ear2="Odnowa Earring +1",         -- __, __, ___, ___,   3, __,  3/ 5, __
+    ring1="Menelaus's Ring",          -- __,  5,  15, ___, ___, __, __/__, __
+    ring2="Defending Ring",           -- __, __, ___, ___, ___, __, 10/10, __
+    back=gear.RDM_Cure_Cape,          -- __, 10, ___,  30, ___, __, 10/__, __
+    waist="Sanctuary Obi +1",         -- __, __, ___, ___, ___, 10, __/__,  4
+    -- Kaykaus set bonus              --  4, __, ___, ___, ___, __, __/__, __
+    -- Base Stats                     -- __, __, 414, 129, 123, __, __/__, __
+    -- Merit points                   -- __, __, ___, ___, ___, 10, __/__,  5
+    -- 4 CPII, 54 CP, 470 Heal Skill, 308 MND, 218 VIT, 104 SIRD, 37PDT/32MDT, 28 -Enmity
+    
+    -- legs="Atrophy Tights +3",      -- __, 12,  17,  39,  22, __, __/__, __
+    -- 4 CPII, 55 CP, 472 Heal Skill, 313 MND, 223 VIT, 104 SIRD, 37PDT/32MDT, 28 -Enmity
+    -- 683 Power
+  }
+  
+  sets.midcast.CureWeather = {
+    main="Chatoyant Staff",           -- __, 10, ___,   5,   5, __, __/__, __
+    sub="Mensch Strap +1",            -- __, __, ___, ___, ___, __,  5/__, __
+    ammo="Staunch Tathlum +1",        -- __, __, ___, ___, ___, 11,  3/ 3, __
+    head=gear.Kaykaus_C_head,         -- __, 11,  16,  19,  14, 12, __/ 3, __
+    body="Rosette Jaseran +1",        -- __, __, ___,  39,  31, 25,  5/ 5, 13
+    hands=gear.Chironic_SIRD_hands,   -- __, __, ___,  38,  20, 31, __/__, __; Can add more DT or Enmity
+    legs="Atrophy Tights +2",         -- __, 11,  15,  34,  17, __, __/__, __
+    feet=gear.Kaykaus_D_feet,         -- __, 17, ___,  19,  10, __, __/__,  6
+    neck="Loricate Torque +1",        -- __, __, ___, ___, ___,  5,  6/ 6, __
+    ear1="Magnetic Earring",          -- __, __, ___, ___, ___,  8, __/__, __
+    ear2="Odnowa Earring +1",         -- __, __, ___, ___,   3, __,  3/ 5, __
+    ring1="Menelaus's Ring",          -- __,  5,  15, ___, ___, __, __/__, __
+    ring2="Defending Ring",           -- __, __, ___, ___, ___, __, 10/10, __
+    back=gear.RDM_Cure_Cape,          -- __, 10, ___,  30, ___, __, 10/__, __
+    waist="Hachirin-no-Obi",          -- __, __, ___, ___, ___, __, __/__, __; Weather bonus
+    -- Kaykaus set bonus              --  4, __, ___, ___, ___, __, __/__, __
+    -- Base Stats                     -- __, __, 414, 129, 123, __, __/__, __
+    -- Merit points                   -- __, __, ___, ___, ___, 10, __/__,  5
+    
+    -- legs="Atrophy Tights +3",      -- __, 12,  17,  39,  22, __, __/__, __
+    -- 4 CPII, 65 CP, 462 Heal Skill, 318 MND, 228 VIT, 102 SIRD, 42PDT/32MDT, 24 -Enmity
+    -- 673 Power
+  }
+  sets.midcast.CureWeatherWeaponLock = {
+    ammo="Staunch Tathlum +1",        -- __, __, ___, ___, ___, 11,  3/ 3, __
+    head=gear.Kaykaus_C_head,         -- __, 11,  16,  19,  14, 12, __/ 3, __
+    body="Rosette Jaseran +1",        -- __, __, ___,  39,  31, 25,  5/ 5, 13
+    hands=gear.Chironic_SIRD_hands,   -- __, __, ___,  38,  20, 31, __/__, __; Can add more DT or Enmity
+    legs="Atrophy Tights +2",         -- __, 11,  15,  34,  17, __, __/__, __
+    feet=gear.Kaykaus_D_feet,         -- __, 17, ___,  19,  10, __, __/__,  6
+    neck="Loricate Torque +1",        -- __, __, ___, ___, ___,  5,  6/ 6, __
+    ear1="Magnetic Earring",          -- __, __, ___, ___, ___,  8, __/__, __
+    ear2="Odnowa Earring +1",         -- __, __, ___, ___,   3, __,  3/ 5, __
+    ring1="Menelaus's Ring",          -- __,  5,  15, ___, ___, __, __/__, __
+    ring2="Defending Ring",           -- __, __, ___, ___, ___, __, 10/10, __
+    back=gear.RDM_Cure_Cape,          -- __, 10, ___,  30, ___, __, 10/__, __
+    waist="Hachirin-no-Obi",          -- __, __, ___, ___, ___, __, __/__, __; Weather bonus
+    -- Kaykaus set bonus              --  4, __, ___, ___, ___, __, __/__, __
+    -- Base Stats                     -- __, __, 414, 129, 123, __, __/__, __
+    -- Merit points                   -- __, __, ___, ___, ___, 10, __/__,  5
+    
+    -- legs="Atrophy Tights +3",      -- __, 12,  17,  39,  22, __, __/__, __
+    -- 0 CPII, 55 CP, 462 Heal Skill, 313 MND, 223 VIT, 102 SIRD, 37PDT/32MDT, 24 -Enmity
+    -- 673 Power
+  }
 
   sets.midcast.StatusRemoval = {
     head=gear.Vanya_B_head,
@@ -1033,7 +1084,9 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.HeavyDef = {
-    ammo="Staunch Tathlum +1",          --  3/ 3, ___ [__]; Resist Status+11
+    main="Mpaca's Staff",             -- __/__, ___ [ 2]
+    sub="Enki Strap",                 -- __/__,  10 [__]
+    ammo="Staunch Tathlum +1",        --  3/ 3, ___ [__]; Resist Status+11
     head=gear.Nyame_B_head,
     body=gear.Nyame_B_body,
     hands=gear.Nyame_B_hands,
@@ -1332,38 +1385,57 @@ function init_gear_sets()
     body="Councilor's Garb",
   }
 
-  --Weapon sets. Used for autows and reorg
-  sets["Aeolian Edge"]= {
-    main="Tauret",
-    sub="Bunzi's Rod",
-  }
-
-  sets["Seraph Blade"] = {
-    -- main="Crocea Mors",
-    sub="Daybreak",
-  }
-  
-  sets["Savage Blade"] = {
+  --Weapon sets
+  sets.WeaponSet = {}
+  sets.WeaponSet['Savage Blade'] = {
     main="Naegling",
+    sub="Ammurapi Shield",
+  }
+  sets.WeaponSet['Savage Blade'].DW = {
+    main="Naegling",
+    sub="Tauret",
     -- sub="Thibron",
   }
-
-  sets['Asuran Fists'] = {
+  sets.WeaponSet['Seraph Blade'] = {
+    main="Naegling",
+    sub="Culminus",
+    -- main="Crocea Mors",
+  }
+  sets.WeaponSet['Seraph Blade'].DW = {
+    main="Naegling",
+    sub="Daybreak",
+    -- main="Crocea Mors",
+  }
+  sets.WeaponSet['Black Halo'] = {
+    main="Maxentius",
+    sub="Ammurapi Shield",
+  }
+  sets.WeaponSet['Black Halo'].DW = {
+    main="Maxentius",
+    sub="Naegling",
+    -- sub="Thibron",
+  }
+  sets.WeaponSet['Asuran Fists'] = {
     -- main="Karambit",
   }
-
-  sets['Black Halo'] = {
-    main="Maxentius",
-    -- sub="Thibron",
+  sets.WeaponSet['Enspell'] = {
+    main="Naegling",
+    sub="Ammurapi Shield",
+    -- main="Crocea Mors",
   }
-
-  sets.enspell = {
+  sets.WeaponSet['Enspell'].DW = {
+    main="Naegling",
+    sub="Tauret",
     -- main="Crocea Mors",
     -- sub="Gleti's Knife",
   }
-
-  sets.culminus = {
+  sets.WeaponSet['Cleaving'] = {
+    main="Tauret",
     sub="Culminus",
+  }
+  sets.WeaponSet['Cleaving'].DW = {
+    main="Tauret",
+    sub="Bunzi's Rod",
   }
 
 end
@@ -1396,6 +1468,11 @@ function job_precast(spell, action, spellMap, eventArgs)
 end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
+  -- Always put this last in job_post_precast
+  if in_battle_mode() then
+    equip(select_weapons())
+  end
+
   ----------- Non-silibs content goes above this line -----------
   silibs.post_precast_hook(spell, action, spellMap, eventArgs)
 end
@@ -1424,16 +1501,26 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
         end
     end
 
+  -- Always put this last in job_post_midcast
+  if in_battle_mode() then
+    equip(select_weapons())
+  end
+  
     ----------- Non-silibs content goes above this line -----------
     silibs.post_midcast_hook(spell, action, spellMap, eventArgs)
 end
 
 function job_aftercast(spell, action, spellMap, eventArgs)
-    silibs.aftercast_hook(spell, action, spellMap, eventArgs)
-    ----------- Non-silibs content goes below this line -----------
-    if spell.english:contains('Sleep') and not spell.interrupted then
-        set_sleep_timer(spell)
-    end
+  silibs.aftercast_hook(spell, action, spellMap, eventArgs)
+  ----------- Non-silibs content goes below this line -----------
+  
+  if spell.english:contains('Sleep') and not spell.interrupted then
+    set_sleep_timer(spell)
+  end
+    
+  if in_battle_mode() then
+    equip(sets.WeaponSet[state.WeaponSet.current])
+  end
 end
 
 function job_post_aftercast(spell, action, spellMap, eventArgs)
@@ -1516,58 +1603,48 @@ end
 function job_get_spell_map(spell, default_spell_map)
   if spell.action_type == 'Magic' then
     local custom_spell_map = default_spell_map
-    if default_spell_map == 'Cure' then
-      -- If we are healing ourselves, swap to received healing+ gear
-      if spell.target.type == 'SELF' then
-        if player.hpp < 50 then
-          custom_spell_map = 'CureSIRD'
-        else
-          custom_spell_map = 'CureSelf'
-        end
-      else
-        if (world.weather_element == 'Light' or world.day_element == 'Light') then
-          custom_spell_map = 'CureWeather'
-        else
-          custom_spell_map = 'CureNormal' --Can't call it Cure as gs checks for sets.midcast.Cure before calling job_get_spell_map
-        end
-      end
-    elseif default_spell_map == 'Curaga' then
-      if (world.weather_element == 'Light' or world.day_element == 'Light') then
+    if default_spell_map == 'Cure' or default_spell_map == 'Curaga' then
+      if (world.weather_element == 'Light' and not (get_weather_intensity() < 2 and world.day_element == 'Dark'))
+          or (world.day_element == 'Light' and not world.weather_element == 'Dark') then
         custom_spell_map = 'CureWeather'
       else
         custom_spell_map = 'CureNormal' --Can't call it Cure as gs checks for sets.midcast.Cure before calling job_get_spell_map
+      end
+      
+      if in_battle_mode() then
+        custom_spell_map = custom_spell_map..'WeaponLock'
       end
     elseif spell.skill == 'Enfeebling Magic' then
       if enfeebling_magic_skill:contains(spell.english) then
         custom_spell_map = 'SkillEnfeebles'
       elseif spell.type == 'WhiteMagic' then
         if (enfeebling_magic_acc:contains(spell.english) and not buffactive.Stymie) or state.CastingMode.value == 'Resistant' then
-          custom_spell_map = "MndEnfeeblesAcc"
+          custom_spell_map = 'MndEnfeeblesAcc'
         elseif enfeebling_magic_effect:contains(spell.english) then
-          custom_spell_map = "MndEnfeeblesEffect"
+          custom_spell_map = 'MndEnfeeblesEffect'
         else
-          custom_spell_map = "MndEnfeebles"
+          custom_spell_map = 'MndEnfeebles'
         end
-      elseif spell.type == "BlackMagic" then
+      elseif spell.type == 'BlackMagic' then
         if (enfeebling_magic_acc:contains(spell.english) and not buffactive.Stymie) or state.CastingMode.value == 'Resistant' then
-          custom_spell_map = "IntEnfeeblesAcc"
+          custom_spell_map = 'IntEnfeeblesAcc'
         elseif enfeebling_magic_effect:contains(spell.english) then
-          custom_spell_map = "IntEnfeeblesEffect"
+          custom_spell_map = 'IntEnfeeblesEffect'
         elseif enfeebling_magic_sleep:contains(spell.english) and ((buffactive.Stymie and buffactive.Composure) or state.SleepMode.value == 'MaxDuration') then
-          custom_spell_map = "SleepMaxDuration"
+          custom_spell_map = 'SleepMaxDuration'
         elseif enfeebling_magic_sleep:contains(spell.english) then
-          custom_spell_map = "SleepNormal" --Can't call it sleep as gs checks for sets.midcast.Sleep before calling job_get_spell_map
+          custom_spell_map = 'SleepNormal' --Can't call it sleep as gs checks for sets.midcast.Sleep before calling job_get_spell_map
         else
-          custom_spell_map = "IntEnfeebles"
+          custom_spell_map = 'IntEnfeebles'
         end
       else
-        custom_spell_map = "MndEnfeebles"
+        custom_spell_map = 'MndEnfeebles'
       end
       
       --Handle DW gear sets for enfeebling
       if silibs.is_dual_wielding() then
         if spell.skill == 'Enfeebling Magic' then
-          custom_spell_map = custom_spell_map.."DW"
+          custom_spell_map = custom_spell_map..'DW'
         end
       end
     elseif spell.skill == 'Enhancing Magic' then
@@ -1662,6 +1739,10 @@ function customize_idle_set(idleSet)
     idleSet = set_combine(idleSet, sets.buff.Doom)
   end
 
+  if in_battle_mode() then
+    idleSet = set_combine(idleSet, select_weapons())
+  end
+
   return idleSet
 end
 
@@ -1681,6 +1762,10 @@ function customize_melee_set(meleeSet)
     meleeSet = set_combine(meleeSet, sets.buff.Doom)
   end
 
+  if in_battle_mode() then
+    meleeSet = set_combine(meleeSet, select_weapons())
+  end
+
   return meleeSet
 end
 
@@ -1698,6 +1783,10 @@ function customize_defense_set(defenseSet)
 
   if buffactive.Doom then
     defenseSet = set_combine(defenseSet, sets.buff.Doom)
+  end
+
+  if in_battle_mode() then
+    defenseSet = set_combine(defenseSet, select_weapons())
   end
 
   return defenseSet
@@ -1795,6 +1884,24 @@ function job_self_command(cmdParams, eventArgs)
     send_command('@input /ma '..state.BarStatus.value..' <me>')
   elseif cmdParams[1] == 'gainspell' then
     send_command('@input /ma '..state.GainSpell.value..' <me>')
+  elseif cmdParams[1] == 'weaponset' then
+    if cmdParams[2] == 'cycle' then
+      cycle_weapons('forward')
+    elseif cmdParams[2] == 'cycleback' then
+      cycle_weapons('back')
+    elseif cmdParams[2] == 'current' then
+      cycle_weapons('current')
+    elseif cmdParams[2] == 'reset' then
+      cycle_weapons('reset')
+    end
+  elseif cmdParams[1] == 'toyweapon' then
+    if cmdParams[2] == 'cycle' then
+      cycle_toy_weapons('forward')
+    elseif cmdParams[2] == 'cycleback' then
+      cycle_toy_weapons('back')
+    elseif cmdParams[2] == 'reset' then
+      cycle_toy_weapons('reset')
+    end
   elseif cmdParams[1] == 'bind' then
     set_main_keybinds()
     set_sub_keybinds()
@@ -1879,6 +1986,53 @@ function handle_strategems(cmdParams)
   else
     add_to_chat(123,'No arts has been activated yet.')
   end
+end
+
+function cycle_weapons(cycle_dir)
+  if cycle_dir == 'forward' then
+    state.WeaponSet:cycle()
+  elseif cycle_dir == 'back' then
+    state.WeaponSet:cycleback()
+  elseif cycle_dir == 'reset' then
+    state.WeaponSet:reset()
+  end
+
+  add_to_chat(141, 'Weapon Set to '..string.char(31,1)..state.WeaponSet.current)
+  equip(select_weapons())
+end
+
+function cycle_toy_weapons(cycle_dir)
+  if cycle_dir == 'forward' then
+    state.ToyWeapons:cycle()
+  elseif cycle_dir == 'back' then
+    state.ToyWeapons:cycleback()
+  else
+    state.ToyWeapons:reset()
+  end
+
+  local mode_color = 001
+  if state.ToyWeapons.current == 'None' then
+    mode_color = 006
+  end
+  add_to_chat(012, 'Toy Weapon Mode: '..string.char(31,mode_color)..state.ToyWeapons.current)
+  equip(select_weapons())
+end
+
+function select_weapons()
+  if state.ToyWeapons.current ~= 'None' then
+    return sets.ToyWeapon[state.ToyWeapons.current]
+  else
+    if silibs.can_dual_wield() and sets.WeaponSet[state.WeaponSet.current] and sets.WeaponSet[state.WeaponSet.current].DW then
+      return sets.WeaponSet[state.WeaponSet.current].DW
+    elseif sets.WeaponSet[state.WeaponSet.current] then
+      return sets.WeaponSet[state.WeaponSet.current]
+    end
+  end
+  return {}
+end
+
+function in_battle_mode()
+  return state.WeaponSet.current ~= 'Casting' or state.ToyWeapons.current ~= 'None'
 end
 
 function set_sleep_timer(spell)
@@ -1989,8 +2143,9 @@ function set_main_keybinds()
 
   send_command('bind ^` gs c cycle treasuremode')
   send_command('bind @c gs c toggle CP')
-  send_command('bind ^insert gs c cycle WeaponSet')
-  send_command('bind ^delete gs c cycleback WeaponSet')
+  send_command('bind ^insert gs c weaponset cycle')
+  send_command('bind ^delete gs c weaponset cycleback')
+  send_command('bind !delete gs c weaponset reset')
 
   send_command('bind !e input /ma "Haste II" <stpc>')
   send_command('bind !\' input /ma "Refresh II" <stpc>')
@@ -2027,6 +2182,7 @@ function unbind_keybinds()
   send_command('unbind @c')
   send_command('unbind ^insert')
   send_command('unbind ^delete')
+  send_command('unbind !delete')
   
   send_command('unbind !e')
   send_command('unbind !\'')
