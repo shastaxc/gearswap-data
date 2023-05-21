@@ -467,6 +467,7 @@ function init_gear_sets()
   -- Mithra SCH/RDM M30 Healing Magic Skill = 416
   sets.midcast.Cursna = {
     main="Gada",                  -- 18, __,  6
+    sub="Culminus",
     ammo="Incantor Stone",        -- __, __,  2
     head=gear.Vanya_B_head,       -- 20, __, __
     body=gear.Vanya_B_body,       -- 20, __, __
