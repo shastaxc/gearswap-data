@@ -199,7 +199,7 @@ function init_gear_sets()
   -- RDM has 38% FC at 2000 job points
   sets.precast.FC = {
     ammo="Sapience Orb",              --  2 [__/__, ___]
-    -- head="Atrophy Chapeau +3",     -- 16 [__/__,  95]
+    head="Atrophy Chapeau +2",        -- 14 [__/__,  85]
     body="Shamash Robe",              -- __ [10/__, 106]; Resist Silence+90
     hands=gear.Nyame_B_hands,         -- __ [ 7/ 7, 112]
     legs="Bunzi's Pants",             -- __ [ 9/ 9, 150]
@@ -212,6 +212,9 @@ function init_gear_sets()
     back=gear.RDM_FC_Cape,            -- 10 [10/10, ___]
     waist="Shinjutsu-no-Obi +1",      --  5 [__/__, ___]
     -- Traits/Gifts/Merits            -- 38 [__/__, ___]
+    -- 89 FC [53 PDT/43 MDT, 603 M.Eva]
+    
+    -- head="Atrophy Chapeau +3",     -- 16 [__/__,  95]
     -- 91 FC [53 PDT/43 MDT, 613 M.Eva]
   }
 
@@ -538,7 +541,7 @@ function init_gear_sets()
     --161% Dur
   } 
 
-  sets.midcast.EnhancingSkill = set_combine(sets.midcast.EnhancingDuration, {
+  sets.midcast.SkillEnhancing = set_combine(sets.midcast.EnhancingDuration, {
     -- main="Pukulatmuj +1",                  -- 11, __, __ [__/__, ___]
     sub={name="Forfend +1", priority=1},      -- 10, __, __ [ 4/__, ___]
     ammo="Staunch Tathlum +1",                -- __, __, __ [ 3/ 3, ___]
@@ -570,7 +573,7 @@ function init_gear_sets()
     feet=gear.Telchine_ENH_feet,
   })
 
-  sets.midcast.Refresh = set_combine(sets.midcast.EnhancingDuration, {
+  sets.midcast.RefreshNormal = set_combine(sets.midcast.EnhancingDuration, {
     -- head="Amalric Coif +1", -- +2
     body="Atrophy Tabard +2", --+1
     legs="Lethargy Fuseau +2", --+3
@@ -611,7 +614,7 @@ function init_gear_sets()
   --If (Enhancing Magic Skill ÷ 3) + MND ≥ 130 : Stoneskin Strength = Enhancing Magic Skill + 3×MND - 190
   sets.midcast.Stoneskin = set_combine(sets.midcast.EnhancingDuration, {
     ammo="Staunch Tathlum +1", --3DT
-    -- head="Atrophy Chapeau +3", --16FC
+    head="Atrophy Chapeau +2", --14FC
     body="Bunzi's Robe", --10DT
     -- hands="Stone Mufflers", --30
     -- legs="Shedir Seraweels", --35
@@ -623,6 +626,8 @@ function init_gear_sets()
     ring2="Defending Ring", --10DT
     back=gear.RDM_FC_Cape, --10PDT
     waist="Siegel Sash", --20
+    
+    -- head="Atrophy Chapeau +3", --16FC
   }) --125 Stoneskin, 31 FC (+38 FC traits/gifts), 40DT, 17PDT (-10PDT Nodens), 1MDT
 
   sets.midcast.PhalanxSelf = set_combine(sets.midcast.EnhancingDuration, {
@@ -638,7 +643,7 @@ function init_gear_sets()
   })
 
   --Caps at 500 Skill
-  sets.midcast.Phalanx = set_combine(sets.midcast.EnhancingDuration,{}) --At ML27, enhancing duration set bumps above 500 skill
+  sets.midcast.PhalanxNormal = set_combine(sets.midcast.EnhancingDuration,{}) --At ML27, enhancing duration set bumps above 500 skill
   sets.midcast.CompOtherPhalanx = {
     main=gear.Colada_ENH, --4
     sub={name="Ammurapi Shield", priority=1}, --10
@@ -742,7 +747,7 @@ function init_gear_sets()
 
   sets.midcast.MndEnfeeblesAccDW = set_combine(sets.midcast.MndEnfeeblesAcc, {
     -- main={name="Crocea Mors", priority=1},  --(255)+50
-    sub="Demersal Degen +1", --40 bonus magic acc
+    -- sub="Demersal Degen +1", --40 bonus magic acc
   })
 
   sets.midcast.MndEnfeeblesEffect = set_combine(sets.midcast.MndEnfeebles, { --Dia (all tiers) --TODO: Check gear
@@ -760,7 +765,7 @@ function init_gear_sets()
 
   --Distract III, Frazzle III, Inundation
   sets.midcast.IntEnfeebles = set_combine(sets.midcast.MndEnfeebles, { --Balanced INT and Macc
-    ammo="Ghastly Tathlum +1",
+    -- ammo="Ghastly Tathlum +1",
     waist="Obstinate Sash", --5% dur, 5skill, 15 macc
     legs=gear.Chironic_MACC_legs, --20+36 macc, 13skill
     back=gear.RDM_INT_Enf_Cape,
@@ -857,7 +862,7 @@ function init_gear_sets()
     -- main="Rubicundity",
     sub={name="Ammurapi Shield", priority=1},
     ammo="Pemphredo Tathlum",
-    -- head="Atrophy Chapeau +3",
+    head="Atrophy Chapeau +2",
     -- body="Carm. Sc. Mail +1",
     hands=gear.Kaykaus_C_hands,
     -- legs="Ea Slops +1",
@@ -869,6 +874,8 @@ function init_gear_sets()
     ring2="Evanescence Ring", --2 more skill but less acc than stikini
     back="Aurist's Cape +1",
     waist="Obstinate Sash", --5% dur, 5skill, 15 macc
+
+    -- head="Atrophy Chapeau +3",
   }
 
   sets.midcast.Drain = set_combine(sets.midcast['Dark Magic'], {
@@ -883,16 +890,16 @@ function init_gear_sets()
 
   sets.midcast.Aspir = set_combine(sets.midcast.Drain,{})
 
-  --Magic acc + Dark Elemental
+  --Magic acc + Dark Skill
   sets.midcast.Stun = { --When using chainspell, this has to be in precast.
     -- main={name="Crocea Mors", priority=1},  --122(255)+50
     sub={name="Ammurapi Shield", priority=1}, --38 bonus magic acc
     -- range="Ullr", --40
     -- ammo=empty,
-    -- head="Atrophy Chapeau +3", --54+17
+    head="Atrophy Chapeau +2", --44
     body="Atrophy Tabard +2", --45
     hands=gear.Kaykaus_C_hands, --33+20
-    -- legs=gear.Chironic_MACC_legs, --20+36 macc
+    -- legs=gear.Chironic_MACC_legs, --56 macc
     feet="Malignance Boots", --50
     -- neck="Duelist's Torque +2", --30
     ear1="Malignance Earring", --10
@@ -902,18 +909,14 @@ function init_gear_sets()
     back="Aurist's Cape +1", --33
     waist="Obstinate Sash", -- 15 macc
     
+    -- head="Atrophy Chapeau +3", --54+17
     -- body="Atrophy Tabard +3", --55
   } --496 Macc + 30 macc set bonus + 352 Drk Magic = 893 effective macc
-
-  --sets.midcast['Bio III'] = set_combine(sets.midcast['Dark Magic'], {legs="Vitiation Tights +3"})
-  sets.midcast['Bio III'] = set_combine(sets.midcast['Dark Magic'], {
-    -- legs="Vitiation Tights"
-  })
 
   sets.midcast['Elemental Magic'] = {
     main={name="Bunzi's Rod", priority=1},
     sub="Daybreak",
-    ammo="Ghastly Tathlum +1",
+    -- ammo="Ghastly Tathlum +1",
     head="Lethargy Chappel +2",
     body="Lethargy Sayon +3",
     hands="Lethargy Gantherots +2",
@@ -1028,7 +1031,7 @@ function init_gear_sets()
   sets.passive_refresh = {
     main="Mpaca's Staff",             -- __/__, ___ [ 2]
     sub="Enki Strap",                 -- __/__,  10 [__]
-    ammo="Homiliary",                 -- __/__, ___ [ 1]
+    -- ammo="Homiliary",              -- __/__, ___ [ 1]
     head="Bunzi's Hat",               --  7/ 7, 123 [__]
     body="Shamash Robe",              -- 10/__, 106 [ 3]; Resist Silence+90
     hands="Lethargy Gantherots +2",   -- 10/10,  77 [__]
@@ -1088,9 +1091,9 @@ function init_gear_sets()
     -- waist="Kentarch Belt +1",      -- __,  5, 14 < 3, __, __> [__/__, ___]
   })
   sets.engaged.HighAcc = set_combine(sets.engaged, {
-    ammo="Falcon Eye",                -- __, __, 13 <__, __, __> [__/__, ___]
+    -- ammo="Falcon Eye",             -- __, __, 13 <__, __, __> [__/__, ___]
     ear2="Cessance Earring",          -- __,  3,  6 < 3, __, __> [__/__, ___]
-    ring2="Chirich Ring +1",          -- __,  6, 10 <__, __, __> [__/__, ___]
+    -- ring2="Chirich Ring +1",       -- __,  6, 10 <__, __, __> [__/__, ___]
     waist="Olseni Belt",              -- __,  3, 20 <__, __, __> [__/__, ___]
   })
 
@@ -1107,9 +1110,9 @@ function init_gear_sets()
     ear2="Suppanomimi",               --  5, __, __ <__, __, __> [__/__, ___]
     ring1="Ilabrat Ring",             -- __,  5, __ <__, __, __> [__/__, ___]
     ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
-    -- back=gear.RDM_DW_Cape,         -- 10, __, 20 <__, __, __> [10/__, ___]
+    -- back=gear.RDM_DW_Cape,         -- 10, __, 30 <__, __, __> [10/__, ___]
     waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
-    -- 35 DW, 53 STP, 261 Acc <3 DA, 0 TA, 3 QA> [54 PDT/44 MDT, 601 M.Eva]
+    -- 35 DW, 53 STP, 271 Acc <3 DA, 0 TA, 3 QA> [54 PDT/44 MDT, 601 M.Eva]
   }
   sets.engaged.DW.MidAcc = set_combine(sets.engaged.DW, {
     body="Malignance Tabard",
@@ -1119,8 +1122,8 @@ function init_gear_sets()
   sets.engaged.DW.HighAcc = set_combine(sets.engaged.DW.MidAcc, {
     -- neck="Combatant's Torque",
     -- ear2="Telos Earring",
-    -- ring1={name="Chirich Ring +1",bag="wardrobe3"},
-    -- ring2={name="Chirich Ring +1",bag="wardrobe4"},
+    -- ring1="Chirich Ring +1"
+    -- ring2="Chirich Ring +1"
   })
 
   ---------------- 30% Magic Haste (31 DW w/ sub nin to cap) -----------------
@@ -1139,9 +1142,9 @@ function init_gear_sets()
     ear2="Suppanomimi",               --  5, __, __ <__, __, __> [__/__, ___]
     -- ring1="Chirich Ring +1",       -- __,  6, 10 <__, __, __> [__/__, ___]
     -- ring2="Hetairoi Ring",         -- __, __, __ <__,  2, __> [__/__, ___]
-    -- back=gear.RDM_DW_Cape,         -- 10, __, 20 <__, __, __> [10/__, ___]
+    -- back=gear.RDM_DW_Cape,         -- 10, __, 30 <__, __, __> [10/__, ___]
     waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
-    -- 31 DW, 62 STP, 261 Acc <3 DA, 2 TA, 3 QA> [44 PDT/34 MDT, 593 M.Eva]
+    -- 31 DW, 62 STP, 271 Acc <3 DA, 2 TA, 3 QA> [44 PDT/34 MDT, 593 M.Eva]
   }
   sets.engaged.MidHasteDW.MidAcc = set_combine(sets.engaged.MidHasteDW, {
     -- neck="Lissome Necklace",       -- __,  4,  8 < 1, __, __> [__/__, ___]
@@ -1199,11 +1202,11 @@ function init_gear_sets()
     -- ammo=empty,                    -- __, __, __ <__, __, __> [__/__, ___] (__, __, __)
     head="Bunzi's Hat",               -- __,  8, 55 <__, __,  3> [ 7/ 7, 123] (55, __, __); R30
     body="Lethargy Sayon +3",         -- __, __, 64 <__, __, __> [14/14, 136] (64, __, __)
-    hands="Ayanmo Manopolas +2",      -- __, __, 43 <__, __, __> [ 3/ 3,  37] (43, 17, __)
+    -- hands="Ayanmo Manopolas +2",   -- __, __, 43 <__, __, __> [ 3/ 3,  37] (43, 17, __)
     legs=gear.Nyame_B_legs,           -- __, __, 40 < 6, __, __> [ 8/ 8, 150] (40, __, __); R30
     feet=gear.Nyame_B_feet,           -- __, __, 53 < 5, __, __> [ 7/ 7, 150] (40, __, __); R30
     neck="Duelist's Torque +2",       -- __, __, __ <__, __, __> [__/__, ___] (30, __, __)
-    ear1="Lycopodium Earring",        -- __, __, __ <__, __, __> [__/__, ___] ( 1,  2, __)
+    -- ear1="Lycopodium Earring",     -- __, __, __ <__, __, __> [__/__, ___] ( 1,  2, __)
     ear2="Sherida Earring",           -- __,  5, __ < 5, __, __> [__/__, ___] (__, __, __)
     -- ring1="Hetairoi Ring",         -- __, __, __ <__,  2, __> [__/__, ___] (__, __, __)
     ring2="Epona's Ring",             -- __, __, __ < 3,  3, __> [__/__, ___] (__, __, __)
@@ -1218,12 +1221,12 @@ function init_gear_sets()
   sets.engaged.DW.Enspell = set_combine(sets.engaged.Enspell, {
     ear1="Eabani Earring",            --  4, __, __ <__, __, __> [__/__,   8]
     ear2="Suppanomimi",               --  5, __, __ <__, __, __> [__/__, ___]
-    -- back=gear.RDM_DW_Cape,         -- 10, __, 20 <__, __, __> [10/__, ___]
+    -- back=gear.RDM_DW_Cape,         -- 10, __, 30 <__, __, __> [10/__, ___]
   })
   sets.engaged.MidHasteDW.Enspell = set_combine(sets.engaged.Enspell, {
     ear1="Eabani Earring",            --  4, __, __ <__, __, __> [__/__,   8]
     ear2="Suppanomimi",               --  5, __, __ <__, __, __> [__/__, ___]
-    -- back=gear.RDM_DW_Cape,         -- 10, __, 20 <__, __, __> [10/__, ___]
+    -- back=gear.RDM_DW_Cape,         -- 10, __, 30 <__, __, __> [10/__, ___]
   })
   sets.engaged.HighHasteDW.Enspell = set_combine(sets.engaged.Enspell, {})
   sets.engaged.MaxHasteDW.Enspell = set_combine(sets.engaged.Enspell, {})
@@ -1341,10 +1344,8 @@ function job_precast(spell, action, spellMap, eventArgs)
     elseif buffactive['Copy Image'] or buffactive['Copy Image (2)'] then
       send_command('cancel 66; cancel 444; cancel Copy Image; cancel Copy Image (2)')
     end
-  elseif spell.type == 'WeaponSkill' and player.tp == 3000 and sets.precast.WS[spell.name] and sets.precast.WS[spell.name].MaxTP then
-    equip(sets.precast.WS[spell.name].MaxTP)
   elseif spell.english == 'Stun' and buffactive['Chainspell'] then
-    equip(sets.precast.FC.Stun)
+    equip(sets.midcast.Stun)
     eventArgs.handled = true
   end
 end
@@ -1365,59 +1366,8 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     -- print("Spell: "..spell.english)
     -- print("Target: "..spell.target.type)
     if spell.skill == 'Enfeebling Magic' and buffactive.Saboteur then
-        equip(sets.buff.Saboteur)
-    end
-    if spell.skill == 'Enhancing Magic' then
-        if silibs.default_quick_magic_spells['WhiteMagic']:contains(spell.english) or silibs.default_quick_magic_spells['BlackMagic']:contains(spellMap) then -- Mote libraries does not contain tier ii spells. Check spellMap for base
-            -- print("No skill spell ",spell.english," is being casted. Equipping +duration gear.")
-            if spellMap == 'Refresh' then
-                --print("Refresh target:",spell.target.type)
-                if spell.target.type == 'SELF' then
-                    equip(sets.midcast.RefreshSelf)
-                else
-                    if (spell.target.type == 'PLAYER' or spell.target.type == 'NPC') and buffactive.Composure then
-                        equip(sets.midcast.CompRefreshOther)
-                    else
-                        equip(sets.midcast.Refresh)
-                    end
-                end
-            else
-                if (spell.target.type == 'PLAYER' or spell.target.type == 'NPC') and buffactive.Composure then
-                    -- print('equipping comp other')
-                    equip(sets.buff.ComposureOther)
-                else
-                    -- print('equipping dur')
-                    equip(sets.midcast.EnhancingDuration)
-                end
-            end
-        elseif enhancing_skill_spells:contains(spell.english) then
-            equip(sets.midcast.EnhancingSkill)
-        elseif spell.english:startswith('Gain') then
-            equip(sets.midcast.GainSpell)
-        elseif spell.english:contains('Spikes') then
-            equip(sets.midcast.SpikesSpell)
-        elseif spell.english == 'Phalanx' or spell.english == 'Phalanx II' then
-            if spell.target.type == 'SELF' then
-                equip(sets.midcast.PhalanxSelf)
-            else
-                if (spell.target.type == 'PLAYER' or spell.target.type == 'NPC') and buffactive.Composure then
-                    equip(sets.midcast.CompOtherPhalanx)
-                else
-                    equip(sets.midcast.Phalanx)
-                end
-            end
-        else
-          equip(sets.midcast.EnhancingDuration)
-        end
-    end
-    if spellMap == 'Cure' and spell.target.type == 'SELF' then --Additionally, if we are healing ourselves, swap to received healing+ gear
-        if player.hpp < 50 then
-            custom_spell_map = 'CureSIRD'
-        else
-            custom_spell_map = 'CureSelf'
-        end
-    end
-    if spell.skill == 'Elemental Magic' then
+      equip(sets.buff.Saboteur)
+    elseif spell.skill == 'Elemental Magic' then
         if state.MagicBurst.value and spell.english ~= 'Death' then
             equip(sets.magic_burst)
             if spell.english == "Impact" then
@@ -1428,7 +1378,8 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
             equip(sets.Obi)
         end
     end
-     ----------- Non-silibs content goes above this line -----------
+
+    ----------- Non-silibs content goes above this line -----------
     silibs.post_midcast_hook(spell, action, spellMap, eventArgs)
 end
 
@@ -1453,11 +1404,11 @@ end
 -- buff == buff gained or lost
 -- gain == true if the buff was gained, false if it was lost.
 function job_buff_change(buff, gain)    
-    if buff == "sleep" then
-        -- equip_prime_weapon(gain)
-    elseif buff == "doom" then     
-        -- equip_cursna(gain)
-    end
+  if buff == "sleep" then
+    -- equip_prime_weapon(gain)
+  elseif buff == "doom" and gain then
+    equip(sets.buff.Doom)
+  end
 end
 
 -- Handle notifications of general user state change.
@@ -1473,6 +1424,7 @@ end
 -- Called by the 'update' self-command, for common needs.
 -- Set eventArgs.handled to true if we don't want automatic equipping of gear.
 function job_handle_equipping_gear(playerStatus, eventArgs)
+  check_gear()
   update_combat_form()
   update_idle_groups()
 end
@@ -1517,63 +1469,128 @@ end
 
 -- Custom spell mapping.
 function job_get_spell_map(spell, default_spell_map)
-    if spell.action_type == 'Magic' then
-        local custom_spell_map = default_spell_map
-        if default_spell_map == 'Cure' or default_spell_map == 'Curaga' then
-            if (world.weather_element == 'Light' or world.day_element == 'Light') then
-                custom_spell_map = 'CureWeather'
-            else
-                custom_spell_map = 'CureNormal'
-            end
+  if spell.action_type == 'Magic' then
+    local custom_spell_map = default_spell_map
+    if default_spell_map == 'Cure' then
+      -- If we are healing ourselves, swap to received healing+ gear
+      if spell.target.type == 'SELF' then
+        if player.hpp < 50 then
+          custom_spell_map = 'CureSIRD'
+        else
+          custom_spell_map = 'CureSelf'
         end
+      else
+        if (world.weather_element == 'Light' or world.day_element == 'Light') then
+          custom_spell_map = 'CureWeather'
+        else
+          custom_spell_map = 'CureNormal' --Can't call it Cure as gs checks for sets.midcast.Cure before calling job_get_spell_map
+        end
+      end
+    elseif default_spell_map == 'Curaga' then
+      if (world.weather_element == 'Light' or world.day_element == 'Light') then
+        custom_spell_map = 'CureWeather'
+      else
+        custom_spell_map = 'CureNormal' --Can't call it Cure as gs checks for sets.midcast.Cure before calling job_get_spell_map
+      end
+    elseif spell.skill == 'Enfeebling Magic' then
+      if enfeebling_magic_skill:contains(spell.english) then
+        custom_spell_map = 'SkillEnfeebles'
+      elseif spell.type == 'WhiteMagic' then
+        if (enfeebling_magic_acc:contains(spell.english) and not buffactive.Stymie) or state.CastingMode.value == 'Resistant' then
+          custom_spell_map = "MndEnfeeblesAcc"
+        elseif enfeebling_magic_effect:contains(spell.english) then
+          custom_spell_map = "MndEnfeeblesEffect"
+        else
+          custom_spell_map = "MndEnfeebles"
+        end
+      elseif spell.type == "BlackMagic" then
+        if (enfeebling_magic_acc:contains(spell.english) and not buffactive.Stymie) or state.CastingMode.value == 'Resistant' then
+          custom_spell_map = "IntEnfeeblesAcc"
+        elseif enfeebling_magic_effect:contains(spell.english) then
+          custom_spell_map = "IntEnfeeblesEffect"
+        elseif enfeebling_magic_sleep:contains(spell.english) and ((buffactive.Stymie and buffactive.Composure) or state.SleepMode.value == 'MaxDuration') then
+          custom_spell_map = "SleepMaxDuration"
+        elseif enfeebling_magic_sleep:contains(spell.english) then
+          custom_spell_map = "SleepNormal" --Can't call it sleep as gs checks for sets.midcast.Sleep before calling job_get_spell_map
+        else
+          custom_spell_map = "IntEnfeebles"
+        end
+      else
+        custom_spell_map = "MndEnfeebles"
+      end
+      
+      --Handle DW gear sets for enfeebling
+      if silibs.is_dual_wielding() then
         if spell.skill == 'Enfeebling Magic' then
-            if enfeebling_magic_skill:contains(spell.english) then
-                custom_spell_map = "SkillEnfeebles"
-            elseif spell.type == "WhiteMagic" then
-                if (enfeebling_magic_acc:contains(spell.english) and not buffactive.Stymie) or state.CastingMode.value == 'Resistant' then
-                    custom_spell_map = "MndEnfeeblesAcc"
-                elseif enfeebling_magic_effect:contains(spell.english) then
-                    custom_spell_map = "MndEnfeeblesEffect"
-                else
-                    custom_spell_map = "MndEnfeebles" 
-                    -- custom_spell_map = "MndEnfeeblesAcc"
-              end
-            elseif spell.type == "BlackMagic" then
-                if (enfeebling_magic_acc:contains(spell.english) and not buffactive.Stymie) or state.CastingMode.value == 'Resistant' then
-                    custom_spell_map = "IntEnfeeblesAcc"
-                elseif enfeebling_magic_effect:contains(spell.english) then
-                    custom_spell_map = "IntEnfeeblesEffect"
-                elseif enfeebling_magic_sleep:contains(spell.english) and ((buffactive.Stymie and buffactive.Composure) or state.SleepMode.value == 'MaxDuration') then
-                    custom_spell_map = "SleepMaxDuration"
-                elseif enfeebling_magic_sleep:contains(spell.english) then
-                    custom_spell_map = "SleepNormal" --Can't call it sleep as gs checks for sets.midcast.Sleep before calling job_get_spell_map
-                else
-                    custom_spell_map ="IntEnfeebles"
-                end
+          custom_spell_map = custom_spell_map.."DW"
+        end
+      end
+    elseif spell.skill == 'Enhancing Magic' then
+      if enhancing_skill_spells:contains(spell.english) then
+        custom_spell_map = 'SkillEnhancing'
+      elseif spell.english:startswith('Gain') then
+        custom_spell_map = 'GainSpell'
+      elseif spell.english:contains('Spikes') then
+        custom_spell_map = 'SpikesSpell'
+      elseif spell.english == 'Phalanx' or spell.english == 'Phalanx II' then
+        if spell.target.type == 'SELF' then
+          custom_spell_map = 'PhalanxSelf'
+        else
+          if (spell.target.type == 'PLAYER' or spell.target.type == 'NPC') and buffactive.Composure then
+            custom_spell_map = 'CompOtherPhalanx'
+          else
+            custom_spell_map = 'PhalanxNormal' --Can't call it Phalanx as gs checks for sets.midcast.Phalanx before calling job_get_spell_map
+          end
+        end
+      else
+        if spellMap == 'Refresh' then
+          if spell.target.type == 'SELF' then
+            custom_spell_map = 'RefreshSelf'
+          else
+            if (spell.target.type == 'PLAYER' or spell.target.type == 'NPC') and buffactive.Composure then
+              custom_spell_map = 'CompRefreshOther'
             else
-                custom_spell_map = "MndEnfeebles"
+              custom_spell_map = 'RefreshNormal' --Can't call it Refresh as gs checks for sets.midcast.Refresh before calling job_get_spell_map
             end
+          end
+        else
+          if (spell.target.type == 'PLAYER' or spell.target.type == 'NPC') and buffactive.Composure then
+            custom_spell_map = 'ComposureOther'
+          else
+            custom_spell_map = 'EnhancingDuration'
+          end
         end
-
-        --Handle DW gear sets
-        if silibs.is_dual_wielding() then
-            if spell.skill == 'Enfeebling Magic' then
-                custom_spell_map = custom_spell_map.."DW"
-            end
-        end
-
-        return custom_spell_map
+        custom_spell_map = 'EnhancingDuration'
+      end
     end
+
+    return custom_spell_map
+  end
 end
 
 function get_custom_wsmode(spell, action, spellMap)
-    local wsmode
-    if state.OffenseMode.value == 'MidAcc' or state.OffenseMode.value == 'HighAcc' then
-        wsmode = 'Acc'
-    end
+  local wsmode = ''
 
-    return wsmode
+  -- Calculate if need TP bonus
+  local buffer = 100
+  -- Start TP bonus at 0 and accumulate based on equipped gear
+  local tp_bonus_from_weapons = 0
+  for slot,gear in pairs(tp_bonus_weapons) do
+    local equipped_item = player.equipment[slot]
+    if equipped_item and gear[equipped_item] then
+      tp_bonus_from_weapons = tp_bonus_from_weapons + gear[equipped_item]
+    end
+  end
+  local buff_bonus = T{
+    buffactive['Crystal Blessing'] and 250 or 0,
+  }:sum()
+  if player.tp > 3000-tp_bonus_from_weapons-buff_bonus-buffer then
+    wsmode = wsmode..'MaxTP'
+  end
+
+  return wsmode
 end
+
 
 function customize_idle_set(idleSet)
   -- If not in DT mode put on move speed gear
@@ -1607,7 +1624,18 @@ function customize_melee_set(meleeSet)
   if state.CP.current == 'on' then
     meleeSet = set_combine(meleeSet, sets.CP)
   end
-  
+
+  -- If slot is locked to use no-swap gear, keep it equipped
+  if locked_neck then meleeSet = set_combine(meleeSet, { neck=player.equipment.neck }) end
+  if locked_ear1 then meleeSet = set_combine(meleeSet, { ear1=player.equipment.ear1 }) end
+  if locked_ear2 then meleeSet = set_combine(meleeSet, { ear2=player.equipment.ear2 }) end
+  if locked_ring1 then meleeSet = set_combine(meleeSet, { ring1=player.equipment.ring1 }) end
+  if locked_ring2 then meleeSet = set_combine(meleeSet, { ring2=player.equipment.ring2 }) end
+
+  if buffactive.Doom then
+    meleeSet = set_combine(meleeSet, sets.buff.Doom)
+  end
+
   return meleeSet
 end
 
@@ -1809,64 +1837,99 @@ function handle_strategems(cmdParams)
 end
 
 function set_sleep_timer(spell)
-    local self = windower.ffxi.get_player()
+  local base
 
-    if spell.en == "Sleep II" then
-        base = 90
-    elseif spell.en == "Sleep" or spell.en == "Sleepga" then
-        base = 60
+  if spell.en == "Sleep II" then
+    base = 90
+  elseif spell.en == "Sleep" or spell.en == "Sleepga" then
+    base = 60
+  end
+
+  if state.Buff.Saboteur then
+    if state.NM.value then
+      base = base * 1.25
+    else
+      base = base * 2
     end
+  end
 
-    if state.Buff.Saboteur then
-        if state.NM.value then
-            base = base * 1.25
-        else
-            base = base * 2
-        end
+  -- Merit Points Duration Bonus
+  base = base + player.merits.enfeebling_magic_duration*6
+
+  -- Relic Head Duration Bonus
+  if not ((buffactive.Stymie and buffactive.Composure) or state.SleepMode.value == 'MaxDuration') then
+    base = base + player.merits.enfeebling_magic_duration*3
+  end
+
+  -- Job Points Duration Bonus
+  base = base + player.job_points.rdm.enfeebling_magic_duration
+
+  --Enfeebling duration non-augmented gear total
+  local gear_mult = 1.40
+  --Enfeebling duration augmented gear total
+  local aug_mult = 1.25
+  --Estoquer/Lethargy Composure set bonus
+  --2pc = 1.1 / 3pc = 1.2 / 4pc = 1.35 / 5pc = 1.5
+  local empy_mult = 1 --from sets.midcast.Sleep
+
+  if ((buffactive.Stymie and buffactive.Composure) or state.SleepMode.value == 'MaxDuration') then
+    if buffactive.Stymie then
+      base = base + player.job_points.rdm.stymie_effect
     end
+    empy_mult = 1.5 --from sets.midcast.SleepMaxDuration
+  end
 
-    -- Merit Points Duration Bonus
-    base = base + self.merits.enfeebling_magic_duration*6
+  local totalDuration = math.floor(base * gear_mult * aug_mult * empy_mult)
 
-    -- Relic Head Duration Bonus
-    if not ((buffactive.Stymie and buffactive.Composure) or state.SleepMode.value == 'MaxDuration') then
-        base = base + self.merits.enfeebling_magic_duration*3
-    end
-
-    -- Job Points Duration Bonus
-    base = base + self.job_points.rdm.enfeebling_magic_duration
-
-    --Enfeebling duration non-augmented gear total
-    gear_mult = 1.40
-    --Enfeebling duration augmented gear total
-    aug_mult = 1.25
-    --Estoquer/Lethargy Composure set bonus
-    --2pc = 1.1 / 3pc = 1.2 / 4pc = 1.35 / 5pc = 1.5
-    empy_mult = 1 --from sets.midcast.Sleep
-
-    if ((buffactive.Stymie and buffactive.Composure) or state.SleepMode.value == 'MaxDuration') then
-        if buffactive.Stymie then
-            base = base + self.job_points.rdm.stymie_effect
-        end
-        empy_mult = 1.5 --from sets.midcast.SleepMaxDuration
-    end
-
-    totalDuration = math.floor(base * gear_mult * aug_mult * empy_mult)
-
-    -- Create the custom timer
-    if spell.english == "Sleep II" then
-        send_command('@timers c "Sleep II ['..spell.target.name..']" ' ..totalDuration.. ' down spells/00259.png')
-    elseif spell.english == "Sleep" or spell.english == "Sleepga" then
-        send_command('@timers c "Sleep ['..spell.target.name..']" ' ..totalDuration.. ' down spells/00253.png')
-    end
-    add_to_chat(1, 'Base: ' ..base.. ' Merits: ' ..self.merits.enfeebling_magic_duration.. ' Job Points: ' ..self.job_points.rdm.stymie_effect.. ' Set Bonus: ' ..empy_mult)
-
+  -- Create the custom timer
+  if spell.english == "Sleep II" then
+    send_command('@timers c "Sleep II ['..spell.target.name..']" ' ..totalDuration.. ' down spells/00259.png')
+  elseif spell.english == "Sleep" or spell.english == "Sleepga" then
+    send_command('@timers c "Sleep ['..spell.target.name..']" ' ..totalDuration.. ' down spells/00253.png')
+  end
+  add_to_chat(1, 'Base: ' ..base.. ' Merits: ' ..player.merits.enfeebling_magic_duration.. ' Job Points: ' ..player.job_points.rdm.stymie_effect.. ' Set Bonus: ' ..empy_mult)
 end
+
+function check_gear()
+  if no_swap_necks:contains(player.equipment.neck) then
+    locked_neck = true
+  else
+    locked_neck = false
+  end
+  if no_swap_earrings:contains(player.equipment.ear1) then
+    locked_ear1 = true
+  else
+    locked_ear1 = false
+  end
+  if no_swap_earrings:contains(player.equipment.ear2) then
+    locked_ear2 = true
+  else
+    locked_ear2 = false
+  end
+  if no_swap_rings:contains(player.equipment.ring1) then
+    locked_ring1 = true
+  else
+    locked_ring1 = false
+  end
+  if no_swap_rings:contains(player.equipment.ring2) then
+    locked_ring2 = true
+  else
+    locked_ring2 = false
+  end
+end
+
+windower.register_event('zone change', function()
+  if locked_neck then equip({ neck=empty }) end
+  if locked_ear1 then equip({ ear1=empty }) end
+  if locked_ear2 then equip({ ear2=empty }) end
+  if locked_ring1 then equip({ ring1=empty }) end
+  if locked_ring2 then equip({ ring2=empty }) end
+end)
 
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
-    -- Default macro set/book
-    set_macro_page(1, 1)
+  -- Default macro set/book
+  set_macro_page(1, 7)
 end
 
 
