@@ -162,7 +162,7 @@ function job_setup()
   state.SleepMode = M{['description']='Sleep Mode', 'Normal', 'MaxDuration'}
   state.EnspellMode = M(false, 'Enspell Melee Mode')
   state.NM = M(false, 'NM?')
-  state.CP = M(false, "Capacity Points Mode")
+  state.CP = M(false, 'Capacity Points Mode')
   state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger',
       'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
   state.WeaponSet = M{['description']='Weapon Set', 'Casting', 'Temp', 'Croc', 'Naegling', 'Cleaving',}

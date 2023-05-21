@@ -24,7 +24,7 @@ function job_setup()
   silibs.enable_custom_roll_text()
   silibs.enable_equip_loop()
 
-  state.CP = M(false, "Capacity Points Mode")
+  state.CP = M(false, 'Capacity Points Mode')
 
   state.OffenseMode:options('Normal', 'Acc')
   state.CastingMode:options('Normal', 'Seidr', 'Resistant')

@@ -124,7 +124,7 @@ function job_setup()
 
   state.CurrentStep = M{['description']='Current Step', 'Main', 'Alt'}
 
-  state.CP = M(false, "Capacity Points Mode")
+  state.CP = M(false, 'Capacity Points Mode')
   state.AttCapped = M(true, "Attack Capped")
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')

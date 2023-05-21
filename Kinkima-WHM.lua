@@ -31,7 +31,7 @@ function job_setup()
   auto_solace = true -- Change to false if you don't want Afflatus Solace auto-applied
   auto_arts = true -- Change to false if you don't want Light Arts auto-applied
 
-  state.CP = M(false, "Capacity Points Mode")
+  state.CP = M(false, 'Capacity Points Mode')
 
   state.OffenseMode:options('None', 'Normal')
   state.CastingMode:options('Normal', 'Resistant')

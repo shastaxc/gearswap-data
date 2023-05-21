@@ -96,7 +96,7 @@ function job_setup()
   state.WeaponskillMode:options('Normal', 'Acc')
   state.CastingMode:options('Normal', 'Resistant')
   state.IdleMode:options('Normal', 'DT')
-  state.CP = M(false, "Capacity Points Mode")
+  state.CP = M(false, 'Capacity Points Mode')
   state.LullabyMode = M{['description']='Lullaby Instrument', 'Harp', 'Horn'}
   state.Carol = M{['description']='Carol',
       'Fire Carol', 'Fire Carol II', 'Ice Carol', 'Ice Carol II', 'Wind Carol', 'Wind Carol II',

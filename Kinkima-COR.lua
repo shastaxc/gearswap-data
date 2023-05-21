@@ -133,7 +133,7 @@ function job_setup()
 
   state.WeaponSet = M{['description']='Weapon Set', 'Savage Blade', 'Cleaving', 'Fomalhaut_M', 'Fomalhaut_R', 'QuickDraw'}
 
-  state.CP = M(false, "Capacity Points Mode")
+  state.CP = M(false, 'Capacity Points Mode')
 
   -- QuickDraw Selector
   state.Mainqd = M{['description']='Primary Shot', 'Fire Shot', 'Ice Shot', 'Wind Shot', 'Earth Shot', 'Thunder Shot', 'Water Shot', 'Light Shot', 'Dark Shot',}

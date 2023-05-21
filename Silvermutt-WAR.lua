@@ -66,7 +66,7 @@ function job_setup()
   state.IdleMode:options('Normal', 'HeavyDef')
   state.AttCapped = M(true, "Attack Capped")
 
-  state.CP = M(false, "Capacity Points Mode")
+  state.CP = M(false, 'Capacity Points Mode')
   state.ToyWeapons = M{['description']='Toy Weapons','None','Katana','GreatKatana','Dagger','Sword','Club','Staff','Polearm','GreatSword','Scythe'}
   state.WeaponSet = M{['description']='Weapon Set', 'Naegling', 'Chango', 'Shining One', 'Club', 'Dagger', 'Staff'}
   -- state.WeaponSet = M{['description']='Weapon Set', 'Naegling', 'Ukon', 'Chango', 'Shining One', 'Club', 'Dagger', 'Magic Axe', 'Phys Axe', 'Great Sword', 'Staff'}
