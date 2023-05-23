@@ -843,18 +843,45 @@ function init_gear_sets()
     -- 501 Enh skill, 151 Enh duration, 20 Aug Enh Duration, 54 FC [47 PDT/41 MDT, 637 M.Eva]
   }
 
+  -- Needs 500 enhancing magic skill.
   sets.midcast.Aquaveil = set_combine(sets.midcast.EnhancingDuration, {
-    ammo="Staunch Tathlum +1",
-    -- head="Amalric Coif +1",
-    hands="Regal Cuffs",
-    -- legs="Shedir seraweels",
-    ear1="Halasz Earring",
-    ring2="Freke Ring",
-    ring1="Evanescence Ring",
-    -- waist="Emphatikos Rope",
+    main="Eremite's Wand +1",         -- __, __, __, __, 25 [__/__, ___]
+    sub="Genmei Shield",              -- __, __, __, __, __ [10/__, ___]
+    ammo="Staunch Tathlum +1",        -- __, __, __, __, 11 [ 3/ 3, ___]
+    -- head="Amalric Coif +1",        --  2, __, __, __, __ [__/__,  86]
+    body="Rosette Jaseran +1",        -- __, __, __, __, 25 [ 5/ 5,  80]
+    hands="Regal Cuffs",              --  2, __, __, __, __ [__/__,  53]
+    -- legs="Shedir Seraweels",       --  1, 15, __, __, __ [__/__, ___]
+    feet="Lethargy Houseaux +2",      -- __, 30, 35, __, __ [__/__, 147]
+    neck="Loricate Torque +1",        -- __, __, __, __,  5 [ 6/ 6, ___]
+    ear1="Halasz Earring",            -- __, __, __, __,  5 [__/__, ___]
+    ear2="Odnowa Earring +1",         -- __, __, __, __, __ [ 3/ 5, ___]
+    ring1="Freke Ring",               -- __, __, __, __, 10 [__/__, ___]
+    ring2="Defending Ring",           -- __, __, __, __, __ [10/10, ___]
+    -- back=gear.RDM_Adoulin_Cape,    -- __, 10, __, 20, __ [__/__, ___]
+    -- waist="Emphatikos Rope",       --  1, __, __, __, 12 [__/__, ___]
+    -- Traits/Gifts/Merits            -- __,456, __, __, 10 [__/__, ___]
+    -- 6 Aquaveil+, 511 Enh skill, 35 Enh duration, 20 Aug Enh Duration, 103 SIRD [37 PDT/29 MDT, 366 M.Eva]
+    
+    -- main="Eremite's Wand +1",      -- __, __, __, __, 25 [__/__, ___]
+    -- sub="Genmei Shield",           -- __, __, __, __, __ [10/__, ___]
+    -- ammo="Staunch Tathlum +1",     -- __, __, __, __, 11 [ 3/ 3, ___]
+    -- head="Amalric Coif +1",        --  2, __, __, __, __ [__/__,  86]
+    -- body="Rosette Jaseran +1",     -- __, __, __, __, 25 [ 5/ 5,  80]
+    -- hands="Regal Cuffs",           --  2, __, __, __, __ [__/__,  53]
+    -- legs="Shedir Seraweels",       --  1, 15, __, __, __ [__/__, ___]
+    -- feet="Lethargy Houseaux +3",   -- __, 35, 40, __, __ [__/__, 157]
+    -- neck="Loricate Torque +1",     -- __, __, __, __,  5 [ 6/ 6, ___]
+    -- ear1="Magnetic Earring",       -- __, __, __, __,  8 [__/__, ___]
+    -- ear2="Odnowa Earring +1",      -- __, __, __, __, __ [ 3/ 5, ___]
+    -- ring1="Freke Ring",            -- __, __, __, __, 10 [__/__, ___]
+    -- ring2="Defending Ring",        -- __, __, __, __, __ [10/10, ___]
+    -- back=gear.RDM_Adoulin_Cape,    -- __, 10, __, 20, __ [__/__, ___]
+    -- waist="Emphatikos Rope",       --  1, __, __, __, 12 [__/__, ___]
+    -- Traits/Gifts/Merits            -- __,456, __, __, 10 [__/__, ___]
+    -- 6 Aquaveil+, 516 Enh skill, 40 Enh duration, 20 Aug Enh Duration, 106 SIRD [37 PDT/29 MDT, 376 M.Eva]
   })
 
-  sets.midcast.Storm = set_combine(sets.midcast.EnhancingDuration,{})
   sets.midcast.GainSpell = {
     -- hands="Vitiation Gloves +3"
   }
@@ -863,13 +890,13 @@ function init_gear_sets()
   }
 
   sets.midcast.Protect = set_combine(sets.midcast.EnhancingDuration, {
-    ring2="Sheltered Ring"
+    ring1="Sheltered Ring"
   })
   sets.midcast.Protectra = set_combine(sets.midcast.Protect,{})
   sets.midcast.Shell = set_combine(sets.midcast.Protect,{})
   sets.midcast.Shellra = set_combine(sets.midcast.Shell,{})
 
-  --Slow, Slow II, Paraylze, Addle (all tiers)
+  -- Slow, Slow II, Paraylze, Addle (all tiers)
   sets.midcast.MndEnfeebles = { --Max MND but balance macc for landing
     -- main="Crocea Mors",  --50
     sub={name="Ammurapi Shield", priority=1}, --38
@@ -1746,25 +1773,22 @@ function job_get_spell_map(spell, default_spell_map)
             custom_spell_map = 'PhalanxOthers'
           end
         end
-      else
-        if spellMap == 'Refresh' then
-          if spell.target.type == 'SELF' then
-            custom_spell_map = 'RefreshSelf'
-          else
-            if (spell.target.type == 'PLAYER' or spell.target.type == 'NPC') and buffactive.Composure then
-              custom_spell_map = 'RefreshOthersComp'
-            else
-              custom_spell_map = 'RefreshOthers' --Can't call it Refresh as gs checks for sets.midcast.Refresh before calling job_get_spell_map
-            end
-          end
+      elseif spellMap == 'Refresh' then
+        if spell.target.type == 'SELF' then
+          custom_spell_map = 'RefreshSelf'
         else
           if (spell.target.type == 'PLAYER' or spell.target.type == 'NPC') and buffactive.Composure then
-            custom_spell_map = 'ComposureOther'
+            custom_spell_map = 'RefreshOthersComp'
           else
-            custom_spell_map = 'EnhancingDuration'
+            custom_spell_map = 'RefreshOthers' --Can't call it Refresh as gs checks for sets.midcast.Refresh before calling job_get_spell_map
           end
         end
-        custom_spell_map = 'EnhancingDuration'
+      else
+        if (spell.target.type == 'PLAYER' or spell.target.type == 'NPC') and buffactive.Composure then
+          custom_spell_map = 'ComposureOther'
+        else
+          custom_spell_map = 'EnhancingDuration'
+        end
       end
     end
 
