@@ -2053,7 +2053,7 @@ function set_main_keybinds()
 
   send_command('bind %numpad0 input //gs c rune')
   send_command('bind !` input /ja "Vivacious Pulse" <me>')
-  send_command('bind ^` input /ma "Temper" <me>')
+  send_command('bind !q input /ma "Temper" <me>')
   send_command('bind ^- gs c cycleback Runes')
   send_command('bind ^= gs c cycle Runes')
   send_command('bind @a gs c cycle AttackMode')
@@ -2075,7 +2075,7 @@ end
 
 function set_sub_keybinds()
   if player.sub_job == 'BLU' then
-    send_command('bind !q input /ma "Wild Carrot" <stpc>')
+    send_command('bind !z input /ma "Wild Carrot" <stpc>')
     send_command('bind !w input /ma "Cocoon" <me>')
     send_command('bind !e input /ma "Refueling" <me>')
   elseif player.sub_job == 'WAR' then
@@ -2116,7 +2116,7 @@ function unbind_keybinds()
   send_command('unbind @d')
 
   send_command('unbind !`')
-  send_command('unbind ^`')
+  send_command('unbind !q')
   send_command('unbind ^-')
   send_command('unbind ^=')
   send_command('unbind @a')
@@ -2133,7 +2133,7 @@ function unbind_keybinds()
   send_command('unbind !,')
   send_command('unbind !.')
   send_command('unbind !/')
-  send_command('unbind !q')
+  send_command('unbind !z')
   send_command('unbind !w')
   send_command('unbind !e')
 
