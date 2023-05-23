@@ -579,75 +579,75 @@ function init_gear_sets()
 
   -- Blink used as defensive while in combat. Focus on DT, MEVA, and Duration.
   sets.midcast.Blink = {
-    ammo="Staunch tathlum +1",        -- __, __ [ 3/ 3, ___]
-    head="Bunzi's Hat",               -- __, 10 [ 7/ 7, 123]
-    -- body="Vitiation Tabard +3",    -- 15, 15 [__/__, 100]
-    hands=gear.Nyame_B_hands,         -- __, __ [ 7/ 7, 112]
-    legs=gear.Nyame_B_legs,           -- __, __ [ 8/ 8, 150]
-    feet="Lethargy Houseaux +2",      -- 35, __ [__/__, 147]
-    -- neck="Duelist's Torque +2",    -- 25, __ [__/__, ___]
-    ear1="Malignance Earring",        -- __,  4 [__/__, ___]
-    ear2="Odnowa Earring +1",         -- __, __ [ 3/ 5, ___]
-    ring1="Gelatinous Ring +1",       -- __, __ [ 7/-1, ___]
-    ring2="Defending Ring",           -- __, __ [10/10, ___]
-    back=gear.RDM_ENH_Cape,           -- 20, 10 [10/__, ___]
-    waist="Flume Belt +1",            -- __, __ [ 4/__, ___]
-    -- Traits/Gifts/Merits            -- __, 38 [__/__, ___]
-    -- 95 Enh. Duration, 77 FC [PDT/MDT, 632 M.Eva]
-    
-    -- feet="Lethargy Houseaux +3",   -- 40, __ [__/__, 157]
-    -- 100 Enh. Duration, 77 FC [PDT/MDT, 642 M.Eva]
-  }
-
-  sets.midcast.EnhancingDuration = {
-    main=gear.Colada_ENH,             -- __,  4,  4 [__/__, ___]
-    sub="Ammurapi Shield",            -- __, 10, __ [__/__, ___]
-    ammo="Staunch Tathlum +1",        -- __, __, __ [ 3/ 3, ___]
-    head=gear.Telchine_ENH_head,      -- __, 10, __ [__/__,  75]
-    body=gear.Telchine_ENH_body,      -- 12, 10, __ [__/__,  80]
-    hands="Atrophy Gloves +3",        -- __, 20, __ [__/__,  57]
-    legs=gear.Telchine_ENH_legs,      -- __, 10, __ [__/__, 128]
-    feet="Lethargy Houseaux +2",      -- 30, 35, __ [__/__, 147]
-    neck="Duelist's Torque +2",       -- __, 25, __ [__/__, ___]
-    ear1="Odnowa Earring +1",         -- __, __, __ [ 3/ 5, ___]
-    ear2="Lethargy Earring",          -- __,  7,  7 [__/__, ___]
-    ring1="Gelatinous Ring +1",       -- __, __, __ [ 7/-1, ___]
-    ring2="Defending Ring",           -- __, __, __ [10/10, ___]
-    back=gear.RDM_ENH_Cape,           -- __, 20, 10 [10/__, ___]
-    waist="Embla Sash",               -- __, 10,  5 [__/__, ___]
-    -- Traits/Gifts/Merits            --456, __, 38 [__/__, ___]
-    -- 498 Enh skill, 161 Enh duration, 64 FC [33 PDT/17 MDT, 487 M.Eva]
-    
-    -- body="Vitiation Tabard +3",    -- 23, 15, 15 [__/__, 100]
-    -- feet="Lethargy Houseaux +3",   -- 35, 40, __ [__/__, 157]
-    -- 514 Enh skill, 171 Enh duration, 79 FC [33 PDT/17 MDT, 517 M.Eva]
-  }
-
-  sets.midcast.SkillEnhancing = {
-    main=gear.Colada_ENH,             -- __,  4,  4 [__/__, ___]
-    sub="Forfend +1",                 -- 10, __, __ [ 4/__, ___]
-    ammo="Staunch Tathlum +1",        -- __, __, __ [ 3/ 3, ___]
-    head="Befouled Crown",            -- 16, __, __ [__/__,  75]
-    body=gear.Telchine_ENH_body,      -- 12, 10, __ [__/__,  80]
-    hands="Atrophy Gloves +3",        -- __, 20, __ [__/__,  57]
-    legs=gear.Telchine_ENH_legs,      -- __, 10, __ [__/__, 128]
-    feet="Lethargy Houseaux +2",      -- 30, 35, __ [__/__, 147]
-    neck="Incanter's Torque",         -- 10, __, __ [__/__, ___]
-    ear1="Mimir Earring",             -- 10, __, __ [__/__, ___]
+    ammo="Staunch tathlum +1",        -- __, __, __ [ 3/ 3, ___]
+    head="Bunzi's Hat",               -- __, __, 10 [ 7/ 7, 123]
+    -- body="Vitiation Tabard +3",    -- 15, __, 15 [__/__, 100]
+    hands=gear.Nyame_B_hands,         -- __, __, __ [ 7/ 7, 112]
+    legs="Bunzi's Pants",             -- __, __, __ [ 9/ 9, 150]
+    feet="Lethargy Houseaux +2",      -- 35, __, __ [__/__, 147]
+    -- neck="Duelist's Torque +2",    -- 25, __, __ [__/__, ___]
+    ear1="Malignance Earring",        -- __, __,  4 [__/__, ___]
     ear2="Odnowa Earring +1",         -- __, __, __ [ 3/ 5, ___]
     ring1="Gelatinous Ring +1",       -- __, __, __ [ 7/-1, ___]
     ring2="Defending Ring",           -- __, __, __ [10/10, ___]
-    back=gear.RDM_ENH_Cape,           -- __, 20, 10 [10/__, ___]
-    waist="Olympus Sash",             --  5, __, __ [__/__, ___]
-    -- Traits/Gifts/Merits            --456, __, 38 [__/__, ___]
-    -- 549 Enh skill, 99 Enh duration, 52 FC [37 PDT/17 MDT, 487 M.Eva]
+    -- back=gear.RDM_Adoulin_Cape,    -- __, 20, __ [__/__, ___]
+    waist="Flume Belt +1",            -- __, __, __ [ 4/__, ___]
+    -- Traits/Gifts/Merits            -- __, __, 38 [__/__, ___]
+    -- 75 Enh. Duration, 20 Aug Enh Duration, 67 FC [50 PDT/40 MDT, 632 M.Eva]
     
-    -- main="Pukulatmuj +1",          -- 11, __, __ [__/__, ___]
-    -- body="Vitiation Tabard +3",    -- 23, 15, 15 [__/__, 100]
-    -- hands="Vitiation Gloves +3",   -- 24, __, __ [__/__,  57]
-    -- legs="Atrophy Tights +3",      -- 21, __, __ [__/__, 127]
-    -- feet="Lethargy Houseaux +3",   -- 35, 40, __ [__/__, 157]
-    -- 621 Enh skill, 75 Enh duration, 63 FC [37 PDT/17 MDT, 516 M.Eva]
+    -- feet="Lethargy Houseaux +3",   -- 40, __, __ [__/__, 157]
+    -- 80 Enh. Duration, 20 Aug Enh Duration, 67 FC [50 PDT/40 MDT, 642 M.Eva]
+  }
+
+  sets.midcast.EnhancingDuration = {
+    main=gear.Colada_ENH,             -- __,  4, __,  4 [__/__, ___]
+    sub="Ammurapi Shield",            -- __, 10, __, __ [__/__, ___]
+    ammo="Staunch Tathlum +1",        -- __, __, __, __ [ 3/ 3, ___]
+    head=gear.Telchine_ENH_head,      -- __, 10, __, __ [__/__,  75]
+    body=gear.Telchine_ENH_body,      -- 12, 10, __, __ [__/__,  80]
+    hands="Atrophy Gloves +3",        -- __, 20, __, __ [__/__,  57]
+    legs=gear.Telchine_ENH_legs,      -- __, 10, __, __ [__/__, 128]
+    feet="Lethargy Houseaux +2",      -- 30, 35, __, __ [__/__, 147]
+    neck="Duelist's Torque +2",       -- __, 25, __, __ [__/__, ___]
+    ear1="Odnowa Earring +1",         -- __, __, __, __ [ 3/ 5, ___]
+    ear2="Lethargy Earring",          -- __,  7, __,  7 [__/__, ___]
+    ring1="Gelatinous Ring +1",       -- __, __, __, __ [ 7/-1, ___]
+    ring2="Defending Ring",           -- __, __, __, __ [10/10, ___]
+    -- back=gear.RDM_Adoulin_Cape,    -- 10, __, 20, __ [__/__, ___]
+    waist="Embla Sash",               -- __, 10, __,  5 [__/__, ___]
+    -- Traits/Gifts/Merits            --456, __, __, 38 [__/__, ___]
+    -- 508 Enh skill, 141 Enh duration, 20 Aug Enh Duration, 54 FC [23 PDT/17 MDT, 487 M.Eva]
+    
+    -- body="Vitiation Tabard +3",    -- 23, 15, __, 15 [__/__, 100]
+    -- feet="Lethargy Houseaux +3",   -- 35, 40, __, __ [__/__, 157]
+    -- 524 Enh skill, 151 Enh duration, 20 Aug Enh Duration, 69 FC [23 PDT/17 MDT, 517 M.Eva]
+  }
+
+  sets.midcast.SkillEnhancing = {
+    main=gear.Colada_ENH,             -- __,  4, __,  4 [__/__, ___]
+    sub="Forfend +1",                 -- 10, __, __, __ [ 4/__, ___]
+    ammo="Staunch Tathlum +1",        -- __, __, __, __ [ 3/ 3, ___]
+    head="Befouled Crown",            -- 16, __, __, __ [__/__,  75]
+    body=gear.Telchine_ENH_body,      -- 12, 10, __, __ [__/__,  80]
+    hands="Atrophy Gloves +3",        -- __, 20, __, __ [__/__,  57]
+    legs=gear.Telchine_ENH_legs,      -- __, 10, __, __ [__/__, 128]
+    feet="Lethargy Houseaux +2",      -- 30, 35, __, __ [__/__, 147]
+    neck="Incanter's Torque",         -- 10, __, __, __ [__/__, ___]
+    ear1="Mimir Earring",             -- 10, __, __, __ [__/__, ___]
+    ear2="Odnowa Earring +1",         -- __, __, __, __ [ 3/ 5, ___]
+    ring1="Gelatinous Ring +1",       -- __, __, __, __ [ 7/-1, ___]
+    ring2="Defending Ring",           -- __, __, __, __ [10/10, ___]
+    -- back=gear.RDM_Adoulin_Cape,    -- 10, __, 20, __ [__/__, ___]
+    waist="Olympus Sash",             --  5, __, __, __ [__/__, ___]
+    -- Traits/Gifts/Merits            --456, __, __, 38 [__/__, ___]
+    -- 559 Enh skill, 79 Enh duration, 20 Aug Enh Duration, 42 FC [27 PDT/17 MDT, 487 M.Eva]
+    
+    -- main="Pukulatmuj +1",          -- 11, __, __, __ [__/__, ___]
+    -- body="Vitiation Tabard +3",    -- 23, 15, __, 15 [__/__, 100]
+    -- hands="Vitiation Gloves +3",   -- 24, __, __, __ [__/__,  57]
+    -- legs="Atrophy Tights +3",      -- 21, __, __, __ [__/__, 127]
+    -- feet="Lethargy Houseaux +3",   -- 35, 40, __, __ [__/__, 157]
+    -- 631 Enh skill, 55 Enh duration, 20 Aug Enh Duration, 53 FC [27 PDT/17 MDT, 516 M.Eva]
   }
 
   -- Regen not affected by Enh Magic Skill
@@ -668,45 +668,45 @@ function init_gear_sets()
     ear2="Lethargy Earring",          -- __,  7, __ [__/__, ___]
     ring1="Gelatinous Ring +1",       -- __, __, __ [ 7/-1, ___]
     ring2="Defending Ring",           -- __, __, __ [10/10, ___]
-    back=gear.RDM_ENH_Cape,           -- __, 20, 10 [10/__, ___]
+    back=gear.RDM_ENH_Cape,           -- __, 20, __ [10/__, ___]
     waist="Embla Sash",               -- __, 10,  5 [__/__, ___]
     -- Regen II Base Potency             12, __, __ [__/__, ___]
-    -- 19 Regen Potency, 101 Enh Duration %, 25 Regen Duration [33 PDT/17 MDT, 430 M.Eva]
+    -- 19 Regen Potency, 101 Enh Duration %, 15 Regen Duration [33 PDT/17 MDT, 430 M.Eva]
 
     -- head=gear.Telchine_Regen_head, --  3, __, __ [__/__,  75]
     -- hands=gear.Telchine_Regen_hands,-- 3, __, __ [__/__,  37]
     -- feet="Bunzi's Sabots",         -- 10, __, __ [ 6/ 6, 150]; R28
-    -- 35 Regen Potency, 72 Enh Duration %, 25 Regen Duration [39 PDT/23 MDT, 449 M.Eva]
+    -- 35 Regen Potency, 72 Enh Duration %, 15 Regen Duration [39 PDT/23 MDT, 449 M.Eva]
   }
 
   sets.midcast.RefreshOthers = {
-    main=gear.Colada_ENH,             -- __,  4, __ [__/__, ___]
-    sub="Ammurapi Shield",            -- __, 10, __ [__/__, ___]
-    ammo="Staunch Tathlum +1",        -- __, __, __ [ 3/ 3, ___]
-    head=gear.Telchine_ENH_head,      -- __, 10, __ [__/__,  75]
-    body="Atrophy Tabard +2",         --  1, __, __ [__/__,  90]
-    hands="Atrophy Gloves +3",        -- __, 20, __ [__/__,  57]
-    legs="Lethargy Fuseau +2",        --  4, __, __ [__/__, 162]
-    feet="Lethargy Houseaux +2",      -- __, 35, __ [__/__, 147]
-    neck="Duelist's Torque +2",       -- __, 25, __ [__/__, ___]
-    ear1="Odnowa Earring +1",         -- __, __, __ [ 3/ 5, ___]
-    ear2="Lethargy Earring",          -- __,  7, __ [__/__, ___]
-    ring1="Gelatinous Ring +1",       -- __, __, __ [ 7/-1, ___]
-    ring2="Defending Ring",           -- __, __, __ [10/10, ___]
-    back=gear.RDM_ENH_Cape,           -- __, 20, __ [10/__, ___]
-    waist="Embla Sash",               -- __, 10, __ [__/__, ___]
-    -- Refresh III potency            --  9, __, __ [__/__, ___]
-    -- 14 Ref Potency, 141 Enh Duration%, 0 Ref Duration [33 PDT/17 MDT, 531 M.Eva]
+    main=gear.Colada_ENH,             -- __,  4, __, __ [__/__, ___]
+    sub="Ammurapi Shield",            -- __, 10, __, __ [__/__, ___]
+    ammo="Staunch Tathlum +1",        -- __, __, __, __ [ 3/ 3, ___]
+    head=gear.Telchine_ENH_head,      -- __, 10, __, __ [__/__,  75]
+    body="Atrophy Tabard +2",         --  1, __, __, __ [__/__,  90]
+    hands="Atrophy Gloves +3",        -- __, 20, __, __ [__/__,  57]
+    legs="Lethargy Fuseau +2",        --  4, __, __, __ [__/__, 162]
+    feet="Lethargy Houseaux +2",      -- __, 35, __, __ [__/__, 147]
+    neck="Duelist's Torque +2",       -- __, 25, __, __ [__/__, ___]
+    ear1="Odnowa Earring +1",         -- __, __, __, __ [ 3/ 5, ___]
+    ear2="Lethargy Earring",          -- __,  7, __, __ [__/__, ___]
+    ring1="Gelatinous Ring +1",       -- __, __, __, __ [ 7/-1, ___]
+    ring2="Defending Ring",           -- __, __, __, __ [10/10, ___]
+    -- back=gear.RDM_Adoulin_Cape,    -- __, __, 20, __ [__/__, ___]
+    waist="Embla Sash",               -- __, 10, __, __ [__/__, ___]
+    -- Refresh III potency            --  9, __, __, __ [__/__, ___]
+    -- 14 Ref Potency, 121 Enh Duration%, 20 Aug Enh Duration, 0 Ref Duration [23 PDT/17 MDT, 531 M.Eva]
     
-    -- head="Amalric Coif +1",        --  2, __, __ [__/__,  86]
-    -- body="Atrophy Tabard +3",      --  2, __, __ [__/__, 100]
-    -- legs="Lethargy Fuseau +3",     --  4, __, __ [__/__, 162]
-    -- feet="Lethargy Houseaux +3",   -- __, 40, __ [__/__, 157]
-    -- 17 Ref Potency, 136 Enh Duration%, 0 Ref Duration [33 PDT/17 MDT, 562 M.Eva]
+    -- head="Amalric Coif +1",        --  2, __, __, __ [__/__,  86]
+    -- body="Atrophy Tabard +3",      --  2, __, __, __ [__/__, 100]
+    -- legs="Lethargy Fuseau +3",     --  4, __, __, __ [__/__, 162]
+    -- feet="Lethargy Houseaux +3",   -- __, 40, __, __ [__/__, 157]
+    -- 17 Ref Potency, 116 Enh Duration%, 20 Aug Enh Duration, 0 Ref Duration [23 PDT/17 MDT, 562 M.Eva]
   }
   sets.midcast.RefreshSelf = set_combine(sets.midcast.RefreshOthers, {
-    waist="Gishdubar Sash",           -- __, __, 20 [__/__, ___]
-    -- 17 Ref Potency, 126 Enh Duration%, 20 Ref Duration [33 PDT/17 MDT, 562 M.Eva]
+    waist="Gishdubar Sash",           -- __, __, __, 20 [__/__, ___]
+    -- 17 Ref Potency, 106 Enh Duration%, 20 Aug Enh Duration, 20 Ref Duration [23 PDT/17 MDT, 562 M.Eva]
   })
   -- Empy set effect adds enh duration under Composure only on non-self targets
   sets.midcast.RefreshOthersComp = set_combine(sets.midcast.RefreshOthers, {})
@@ -715,149 +715,132 @@ function init_gear_sets()
   -- Stoneskin caps at 350. +Stoneskin gear has no limit. Current max is 475
   -- Focus on DT, M.Eva, and FC for survivability while in combat
   sets.midcast.Stoneskin = {
-    main=gear.Colada_ENH,             -- __,  4,  4 [__/__, ___]
-    sub="Ammurapi Shield",            -- __, 10, __ [__/__, ___]
-    ammo="Staunch Tathlum +1",        -- __, __, __ [ 3/ 3, ___]
-    head="Bunzi's Hat",               -- __, __, 10 [ 7/ 7, 123]
-    body="Lethargy Sayon +3",         -- __, __, __ [14/14, 136]
-    hands=gear.Nyame_B_hands,         -- __, __, __ [ 7/ 7, 112]
-    legs=gear.Nyame_B_legs,           -- __, __, __ [ 8/ 8, 150]
-    feet="Lethargy Houseaux +2",      -- __, 35, __ [__/__, 147]
-    neck="Nodens Gorget",             -- 30, __, __ [__/__, ___]
-    ear1="Earthcry Earring",          -- 10, __, __ [__/__, ___]
-    ear2="Lethargy Earring",          -- __,  7,  7 [__/__, ___]
-    ring1="Gelatinous Ring +1",       -- __, __, __ [ 7/-1, ___]
-    ring2="Defending Ring",           -- __, __, __ [10/10, ___]
-    back=gear.RDM_ENH_Cape,           -- __, 20, 10 [10/__, ___]
-    waist="Siegel Sash",              -- 20, __, __ [__/__, ___]
-    -- Traits/Gifts/Merits            --350, __, 38 [__/__, ___]
-    -- 410 Stoneskin+, 76 Enh duration, 69 FC [66 PDT/48 MDT, 668 M.Eva]
+    main=gear.Colada_ENH,             -- __,  4, __,  4 [__/__, ___]
+    sub="Ammurapi Shield",            -- __, 10, __, __ [__/__, ___]
+    ammo="Staunch Tathlum +1",        -- __, __, __, __ [ 3/ 3, ___]
+    head="Bunzi's Hat",               -- __, __, __, 10 [ 7/ 7, 123]
+    body="Lethargy Sayon +3",         -- __, __, __, __ [14/14, 136]
+    hands=gear.Nyame_B_hands,         -- __, __, __, __ [ 7/ 7, 112]
+    legs=gear.Nyame_B_legs,           -- __, __, __, __ [ 8/ 8, 150]
+    feet="Lethargy Houseaux +2",      -- __, 35, __, __ [__/__, 147]
+    neck="Nodens Gorget",             -- 30, __, __, __ [__/__, ___]
+    ear1="Earthcry Earring",          -- 10, __, __, __ [__/__, ___]
+    ear2="Lethargy Earring",          -- __,  7, __,  7 [__/__, ___]
+    ring1="Gelatinous Ring +1",       -- __, __, __, __ [ 7/-1, ___]
+    ring2="Defending Ring",           -- __, __, __, __ [10/10, ___]
+    -- back=gear.RDM_Adoulin_Cape,    -- __, __, 20, __ [__/__, ___]
+    waist="Siegel Sash",              -- 20, __, __, __ [__/__, ___]
+    -- Traits/Gifts/Merits            --350, __, __, 38 [__/__, ___]
+    -- 410 Stoneskin+, 56 Enh Duration%, 20 Aug Enh Duration, 59 FC [56 PDT/48 MDT, 668 M.Eva]
     
-    -- hands="Stone Mufflers",        -- 30, __, __ [__/__, ___]
-    -- legs="Shedir Seraweels",       -- 35, __, __ [__/__, ___]
-    -- feet="Lethargy Houseaux +3",   -- __, 40, __ [__/__, 157]
-    -- 475 Stoneskin+, 81 Enh duration, 69 FC [51 PDT/33 MDT, 416 M.Eva]
+    -- hands="Stone Mufflers",        -- 30, __, __, __ [__/__, ___]
+    -- legs="Shedir Seraweels",       -- 35, __, __, __ [__/__, ___]
+    -- feet="Lethargy Houseaux +3",   -- __, 40, __, __ [__/__, 157]
+    -- 475 Stoneskin+, 61 Enh Duration%, 20 Aug Enh Duration, 59 FC [41 PDT/33 MDT, 416 M.Eva]
   }
 
   -- Skill caps at 500 Enhancing Magic skill for a total of Phalanx+35.
   sets.midcast.PhalanxSelf = {
-    -- main="Sakpata's Sword",            --  5, __, __ [10/10, ___]
-    sub="Ammurapi Shield",                -- __, __, 10 [__/__, ___]
-    ammo="Staunch Tathlum +1",            -- __, __, __ [ 3/ 3, ___]
-    head=gear.Merl_Phalanx_head,          --  5, __, __ [__/__,  86]
-    body=gear.Telchine_ENH_body,          -- __, 12, 10 [__/__,  80]
-    hands="Atrophy Gloves +3",            -- __, __, 20 [__/__,  57]
-    legs=gear.Telchine_ENH_legs,          -- __, __, 10 [__/__, 128]
-    feet=gear.Merl_Phalanx_feet,          --  4, __, __ [__/__, 118]
-    neck="Incanter's Torque",             -- __, 10, __ [__/__, ___]
-    ear1="Mimir Earring",                 -- __, 10, __ [__/__, ___]
-    ear2="Odnowa Earring +1",             -- __, __, __ [ 3/ 5, ___]
-    ring1="Gelatinous Ring +1",           -- __, __, __ [ 7/-1, ___]
-    ring2="Defending Ring",               -- __, __, __ [10/10, ___]
-    back=gear.RDM_ENH_Cape,               -- __, __, 20 [10/__, ___]
-    waist="Olympus Sash",                 -- __,  5, __ [__/__, ___]
-    -- Traits/Gifts/Merits                -- __,456, __ [__/__, ___]
-    -- Master Levels                      -- __, __, __ [__/__, ___]
-    -- 48 Phalanx+, 493 Enh Skill, 70 Enh duration [43 PDT/27 MDT, 469 M.Eva]
+    -- main="Sakpata's Sword",            --  5, __, __, __ [10/10, ___]
+    sub="Ammurapi Shield",                -- __, __, __, 10 [__/__, ___]
+    ammo="Staunch Tathlum +1",            -- __, __, __, __ [ 3/ 3, ___]
+    head=gear.Merl_Phalanx_head,          --  5, __, __, __ [__/__,  86]
+    body=gear.Telchine_ENH_body,          -- __, 12, __, 10 [__/__,  80]
+    hands="Atrophy Gloves +3",            -- __, __, __, 20 [__/__,  57]
+    legs=gear.Telchine_ENH_legs,          -- __, __, __, 10 [__/__, 128]
+    feet=gear.Merl_Phalanx_feet,          --  4, __, __, __ [__/__, 118]
+    neck="Incanter's Torque",             -- __, 10, __, __ [__/__, ___]
+    ear1="Mimir Earring",                 -- __, 10, __, __ [__/__, ___]
+    ear2="Odnowa Earring +1",             -- __, __, __, __ [ 3/ 5, ___]
+    ring1="Gelatinous Ring +1",           -- __, __, __, __ [ 7/-1, ___]
+    ring2="Defending Ring",               -- __, __, __, __ [10/10, ___]
+    -- back=gear.RDM_Adoulin_Cape,        -- __, __, 20, __ [__/__, ___]
+    waist="Olympus Sash",                 -- __,  5, __, __ [__/__, ___]
+    -- Traits/Gifts/Merits                -- __,456, __, __ [__/__, ___]
+    -- Master Levels                      -- __, __, __, __ [__/__, ___]
+    -- 14 Phalanx+, 493 Enh Skill, 20 Aug Enh Duration, 50 Enh duration [33 PDT/27 MDT, 469 M.Eva]
+    -- 48 Phalanx total
     
-    -- main="Sakpata's Sword",            --  5, __, __ [10/10, ___]
-    -- sub="Ammurapi Shield",             -- __, __, 10 [__/__, ___]
-    -- ammo="Staunch Tathlum +1",         -- __, __, __ [ 3/ 3, ___]
-    -- head=gear.Merl_Phalanx_head,       --  5, __, __ [__/__,  86]
-    -- body=gear.Merl_Phalanx_body,       --  5, __, __ [ 2/__,  91]
-    -- hands=gear.Chironic_Phalanx_hands, --  5, 15, __ [__/__,  48]
-    -- legs=gear.Merl_Phalanx_legs,       --  5, __, __ [__/__, 118]
-    -- feet=gear.Chironic_Phalanx_feet,   --  5, __, __ [ 2/__, 118]
-    -- neck="Incanter's Torque",          -- __, 10, __ [__/__, ___]
-    -- ear1="Mimir Earring",              -- __, 10, __ [__/__, ___]
-    -- ear2="Odnowa Earring +1",          -- __, __, __ [ 3/ 5, ___]
-    -- ring1="Gelatinous Ring +1",        -- __, __, __ [ 7/-1, ___]
-    -- ring2="Defending Ring",            -- __, __, __ [10/10, ___]
-    -- back=gear.RDM_ENH_Cape,            -- __, __, 20 [10/__, ___]
-    -- waist="Olympus Sash",              -- __,  5, __ [__/__, ___]
-    -- Traits/Gifts/Merits                -- __,456, __ [__/__, ___]
-    -- Master Levels                      -- __,  4, __ [__/__, ___]
-    -- 65 Phalanx+, 500 Enh Skill, 30 Enh duration [47 PDT/27 MDT, 461 M.Eva]
+    -- main="Sakpata's Sword",            --  5, __, __, __ [10/10, ___]
+    -- sub="Ammurapi Shield",             -- __, __, __, 10 [__/__, ___]
+    -- ammo="Staunch Tathlum +1",         -- __, __, __, __ [ 3/ 3, ___]
+    -- head=gear.Merl_Phalanx_head,       --  5, __, __, __ [__/__,  86]
+    -- body=gear.Merl_Phalanx_body,       --  5, __, __, __ [ 2/__,  91]
+    -- hands=gear.Chironic_Phalanx_hands, --  5, 15, __, __ [__/__,  48]
+    -- legs=gear.Merl_Phalanx_legs,       --  5, __, __, __ [__/__, 118]
+    -- feet=gear.Chironic_Phalanx_feet,   --  5, __, __, __ [ 2/__, 118]
+    -- neck="Incanter's Torque",          -- __, 10, __, __ [__/__, ___]
+    -- ear1="Mimir Earring",              -- __, 10, __, __ [__/__, ___]
+    -- ear2="Odnowa Earring +1",          -- __, __, __, __ [ 3/ 5, ___]
+    -- ring1="Gelatinous Ring +1",        -- __, __, __, __ [ 7/-1, ___]
+    -- ring2="Defending Ring",            -- __, __, __, __ [10/10, ___]
+    -- back=gear.RDM_Adoulin_Cape,        -- __, __, 20, __ [__/__, ___]
+    -- waist="Olympus Sash",              -- __,  5, __, __ [__/__, ___]
+    -- Traits/Gifts/Merits                -- __,456, __, __ [__/__, ___]
+    -- Master Levels                      -- __,  4, __, __ [__/__, ___]
+    -- 30 Phalanx+, 500 Enh Skill, 20 Aug Enh Duration, 10 Enh duration [37 PDT/27 MDT, 461 M.Eva]
+    -- 65 Phalanx total
     
-    -- main="Sakpata's Sword",            --  5, __, __ [10/10, ___]
-    -- sub="Ammurapi Shield",             -- __, __, 10 [__/__, ___]
-    -- ammo="Staunch Tathlum +1",         -- __, __, __ [ 3/ 3, ___]
-    -- head=gear.Merl_Phalanx_head,       --  5, __, __ [__/__,  86]
-    -- body=gear.Merl_Phalanx_body,       --  5, __, __ [ 2/__,  91]
-    -- hands=gear.Chironic_Phalanx_hands, --  5, 15, __ [__/__,  48]
-    -- legs=gear.Merl_Phalanx_legs,       --  5, __, __ [__/__, 118]
-    -- feet=gear.Chironic_Phalanx_feet,   --  5, __, __ [ 2/__, 118]
-    -- neck="Duelist's Torque +2",        -- __, __, 25 [__/__, ___]
-    -- ear2="Lethargy Earring +2",        -- __, __,  9 [__/__, ___]
-    -- ear2="Odnowa Earring +1",          -- __, __, __ [ 3/ 5, ___]
-    -- ring1="Gelatinous Ring +1",        -- __, __, __ [ 7/-1, ___]
-    -- ring2="Defending Ring",            -- __, __, __ [10/10, ___]
-    -- back=gear.RDM_ENH_Cape,            -- __, __, 20 [10/__, ___]
-    -- waist="Embla Sash",                -- __, __, 10 [__/__, ___]
-    -- Traits/Gifts/Merits                -- __,456, __ [__/__, ___]
-    -- Master Levels                      -- __, 29, __ [__/__, ___]
-    -- 65 Phalanx+, 500 Enh Skill, 74 Enh duration [47 PDT/27 MDT, 461 M.Eva]
+    -- main="Sakpata's Sword",            --  5, __, __, __ [10/10, ___]
+    -- sub="Ammurapi Shield",             -- __, __, __, 10 [__/__, ___]
+    -- ammo="Staunch Tathlum +1",         -- __, __, __, __ [ 3/ 3, ___]
+    -- head=gear.Merl_Phalanx_head,       --  5, __, __, __ [__/__,  86]
+    -- body=gear.Merl_Phalanx_body,       --  5, __, __, __ [ 2/__,  91]
+    -- hands=gear.Chironic_Phalanx_hands, --  5, 15, __, __ [__/__,  48]
+    -- legs=gear.Merl_Phalanx_legs,       --  5, __, __, __ [__/__, 118]
+    -- feet=gear.Chironic_Phalanx_feet,   --  5, __, __, __ [ 2/__, 118]
+    -- neck="Duelist's Torque +2",        -- __, __, __, 25 [__/__, ___]
+    -- ear2="Lethargy Earring +2",        -- __, __, __,  9 [__/__, ___]
+    -- ear2="Odnowa Earring +1",          -- __, __, __, __ [ 3/ 5, ___]
+    -- ring1="Gelatinous Ring +1",        -- __, __, __, __ [ 7/-1, ___]
+    -- ring2="Defending Ring",            -- __, __, __, __ [10/10, ___]
+    -- back=gear.RDM_Adoulin_Cape,        -- __, __, 20, __ [__/__, ___]
+    -- waist="Embla Sash",                -- __, __, __, 10 [__/__, ___]
+    -- Traits/Gifts/Merits                -- __,456, __, __ [__/__, ___]
+    -- Master Levels                      -- __, 29, __, __ [__/__, ___]
+    -- 30 Phalanx+, 500 Enh Skill, 20 Aug Enh Duration, 54 Enh duration [37 PDT/27 MDT, 461 M.Eva]
+    -- 65 Phalanx total
   }
   -- Skill caps at 500 Enhancing Magic skill for a total of Phalanx+35.
   sets.midcast.PhalanxOthers = set_combine(sets.midcast.EnhancingDuration,{})
   sets.midcast.PhalanxOthersComp = {
-    main=gear.Colada_ENH,             -- __,  4,  4 [__/__, ___]
-    sub="Ammurapi Shield",            -- __, 10, __ [__/__, ___]
-    ammo="Staunch Tathlum +1",        -- __, __, __ [ 3/ 3, ___]
-    head="Lethargy Chappel +2",       -- __, __, __ [ 9/ 9, 115]
-    body="Lethargy Sayon +3",         -- __, __, __ [14/14, 136]
-    hands="Atrophy Gloves +3",        -- __, 20, __ [__/__,  57]
-    legs="Lethargy Fuseau +2",        -- __, __, __ [__/__, 152]
-    feet="Lethargy Houseaux +2",      -- 30, 35, __ [__/__, 147]
-    neck="Duelist's Torque +2",       -- __, 25, __ [__/__, ___]
-    ear1="Odnowa Earring +1",         -- __, __, __ [ 3/ 5, ___]
-    ear2="Lethargy Earring",          -- __,  7,  7 [__/__, ___]
-    ring1="Gelatinous Ring +1",       -- __, __, __ [ 7/-1, ___]
-    ring2="Defending Ring",           -- __, __, __ [10/10, ___]
-    back=gear.RDM_ENH_Cape,           -- __, 20, 10 [10/__, ___]
-    waist="Embla Sash",               -- __, 10,  5 [__/__, ___]
-    -- Traits/Gifts/Merits            --456, __, 38 [__/__, ___]
-    -- Empy set bonuses                  __, 35, __ [__/__, ___]
-    -- 486 Enh skill, 166 Enh duration, 64 FC [56 PDT/40 MDT, 607 M.Eva]
+    main=gear.Colada_ENH,             -- __,  4, __,  4 [__/__, ___]
+    sub="Ammurapi Shield",            -- __, 10, __, __ [__/__, ___]
+    ammo="Staunch Tathlum +1",        -- __, __, __, __ [ 3/ 3, ___]
+    head="Lethargy Chappel +2",       -- __, __, __, __ [ 9/ 9, 115]
+    body="Lethargy Sayon +3",         -- __, __, __, __ [14/14, 136]
+    hands="Atrophy Gloves +3",        -- __, 20, __, __ [__/__,  57]
+    legs="Lethargy Fuseau +2",        -- __, __, __, __ [__/__, 152]
+    feet="Lethargy Houseaux +2",      -- 30, 35, __, __ [__/__, 147]
+    neck="Duelist's Torque +2",       -- __, 25, __, __ [__/__, ___]
+    ear1="Odnowa Earring +1",         -- __, __, __, __ [ 3/ 5, ___]
+    ear2="Lethargy Earring",          -- __,  7, __,  7 [__/__, ___]
+    ring1="Gelatinous Ring +1",       -- __, __, __, __ [ 7/-1, ___]
+    ring2="Defending Ring",           -- __, __, __, __ [10/10, ___]
+    -- back=gear.RDM_Adoulin_Cape,    -- 10, __, 20, __ [__/__, ___]
+    waist="Embla Sash",               -- __, 10, __,  5 [__/__, ___]
+    -- Traits/Gifts/Merits            --456, __, __, 38 [__/__, ___]
+    -- Empy set bonuses                  __, 35, __, __ [__/__, ___]
+    -- 496 Enh skill, 146 Enh duration, 20 Aug Enh Duration, 54 FC [46 PDT/40 MDT, 607 M.Eva]
     
-    -- main=gear.Colada_ENH,          -- __,  4,  4 [__/__, ___]
-    -- sub="Ammurapi Shield",         -- __, 10, __ [__/__, ___]
-    -- ammo="Staunch Tathlum +1",     -- __, __, __ [ 3/ 3, ___]
-    -- head="Lethargy Chappel +3",    -- __, __, __ [10/10, 125]
-    -- body="Vitiation Tabard +3",    -- 23, 15, 15 [__/__, 100]
-    -- hands="Atrophy Gloves +3",     -- __, 20, __ [__/__,  57]
-    -- legs="Lethargy Fuseau +3",     -- __, __, __ [__/__, 162]
-    -- feet="Lethargy Houseaux +3",   -- 35, 40, __ [__/__, 157]
-    -- neck="Duelist's Torque +2",    -- __, 25, __ [__/__, ___]
-    -- ear1="Odnowa Earring +1",      -- __, __, __ [ 3/ 5, ___]
-    -- ear2="Lethargy Earring",       -- __,  7,  7 [__/__, ___]
-    -- ring1="Gelatinous Ring +1",    -- __, __, __ [ 7/-1, ___]
-    -- ring2="Defending Ring",        -- __, __, __ [10/10, ___]
-    -- back=gear.RDM_ENH_Cape,        -- __, 20, 10 [10/__, ___]
-    -- waist="Embla Sash",            -- __, 10,  5 [__/__, ___]
-    -- Traits/Gifts/Merits            --456, __, 38 [__/__, ___]
-    -- Empy set bonuses                  __, 20, __ [__/__, ___]
-    -- 514 Enh skill, 171 Enh duration, 79 FC [43 PDT/27 MDT, 601 M.Eva]
-    
-    -- main=gear.Colada_ENH,          -- __,  4,  4 [__/__, ___]
-    -- sub="Ammurapi Shield",         -- __, 10, __ [__/__, ___]
-    -- ammo="Staunch Tathlum +1",     -- __, __, __ [ 3/ 3, ___]
-    -- head="Lethargy Chappel +3",    -- __, __, __ [10/10, 125]
-    -- body="Lethargy Sayon +3",      -- __, __, __ [14/14, 136]
-    -- hands="Atrophy Gloves +3",     -- __, 20, __ [__/__,  57]
-    -- legs="Lethargy Fuseau +3",     -- __, __, __ [__/__, 162]
-    -- feet="Lethargy Houseaux +3",   -- 35, 40, __ [__/__, 157]
-    -- neck="Duelist's Torque +2",    -- __, 25, __ [__/__, ___]
-    -- ear1="Odnowa Earring +1",      -- __, __, __ [ 3/ 5, ___]
-    -- ear2="Lethargy Earring",       -- __,  7,  7 [__/__, ___]
-    -- ring1="Gelatinous Ring +1",    -- __, __, __ [ 7/-1, ___]
-    -- ring2="Defending Ring",        -- __, __, __ [10/10, ___]
-    -- back=gear.RDM_ENH_Cape,        -- __, 20, 10 [10/__, ___]
-    -- waist="Embla Sash",            -- __, 10,  5 [__/__, ___]
-    -- Traits/Gifts/Merits            --456, __, 38 [__/__, ___]
-    -- Empy set bonuses                  __, 35, __ [__/__, ___]
-    -- Master levels                      9
-    -- 500 Enh skill, 171 Enh duration, 64 FC [57 PDT/41 MDT, 637 M.Eva]
+    -- main=gear.Colada_ENH,          -- __,  4, __,  4 [__/__, ___]
+    -- sub="Ammurapi Shield",         -- __, 10, __, __ [__/__, ___]
+    -- ammo="Staunch Tathlum +1",     -- __, __, __, __ [ 3/ 3, ___]
+    -- head="Lethargy Chappel +3",    -- __, __, __, __ [10/10, 125]
+    -- body="Lethargy Sayon +3",      -- __, __, __, __ [14/14, 136]
+    -- hands="Atrophy Gloves +3",     -- __, 20, __, __ [__/__,  57]
+    -- legs="Lethargy Fuseau +3",     -- __, __, __, __ [__/__, 162]
+    -- feet="Lethargy Houseaux +3",   -- 35, 40, __, __ [__/__, 157]
+    -- neck="Duelist's Torque +2",    -- __, 25, __, __ [__/__, ___]
+    -- ear1="Odnowa Earring +1",      -- __, __, __, __ [ 3/ 5, ___]
+    -- ear2="Lethargy Earring",       -- __,  7, __,  7 [__/__, ___]
+    -- ring1="Gelatinous Ring +1",    -- __, __, __, __ [ 7/-1, ___]
+    -- ring2="Defending Ring",        -- __, __, __, __ [10/10, ___]
+    -- back=gear.RDM_Adoulin_Cape,    -- 10, __, 20, __ [__/__, ___]
+    -- waist="Embla Sash",            -- __, 10, __,  5 [__/__, ___]
+    -- Traits/Gifts/Merits            --456, __, __, 38 [__/__, ___]
+    -- Empy set bonuses                  __, 35, __, __ [__/__, ___]
+    -- 501 Enh skill, 151 Enh duration, 20 Aug Enh Duration, 54 FC [47 PDT/41 MDT, 637 M.Eva]
   }
 
   sets.midcast.Aquaveil = set_combine(sets.midcast.EnhancingDuration, {
@@ -1812,7 +1795,6 @@ function get_custom_wsmode(spell, action, spellMap)
   return wsmode
 end
 
-
 function customize_idle_set(idleSet)
   -- If not in DT mode put on move speed gear
   if state.IdleMode.current == 'Normal' and state.DefenseMode.value == 'None' then
@@ -2246,13 +2228,20 @@ function set_main_keybinds()
   send_command('bind ^delete gs c weaponset cycleback')
   send_command('bind !delete gs c weaponset reset')
 
+  send_command('bind !q input /ma "Temper II" <me>')
   send_command('bind !e input /ma "Haste II" <stpc>')
-  send_command('bind !\' input /ma "Refresh II" <stpc>')
+  send_command('bind !\' input /ma "Refresh III" <stpc>')
   send_command('bind ^` input /ja "Composure" <me>')
   send_command('bind !` gs c toggle MagicBurst')
   send_command('bind @s gs c cycle SleepMode')
   send_command('bind @e gs c toggle EnspellMode')
   send_command('bind @d gs c toggle NM')
+  
+  send_command('bind !u input /ma "Blink" <me>')
+  send_command('bind !i input /ma "Stoneskin" <me>')
+  send_command('bind !p input /ma "Aquaveil" <me>')
+  send_command('bind !; input /ma "Regen V" <stpc>')
+  send_command('bind !/ input /ma "Klimaform" <me>')
 end
 
 function set_sub_keybinds()
@@ -2283,6 +2272,7 @@ function unbind_keybinds()
   send_command('unbind ^delete')
   send_command('unbind !delete')
   
+  send_command('unbind !q')
   send_command('unbind !e')
   send_command('unbind !\'')
   send_command('unbind ^`')
@@ -2291,6 +2281,12 @@ function unbind_keybinds()
   send_command('unbind @e')
   send_command('unbind @d')
   
+  send_command('unbind !u')
+  send_command('unbind !i')
+  send_command('unbind !p')
+  send_command('unbind !;')
+  send_command('unbind !/')
+
   send_command('unbind ^-')
   send_command('unbind ^=')
   send_command('unbind ^[')

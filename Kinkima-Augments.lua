@@ -156,6 +156,8 @@ gear.Telchine_Regen_feet = { name="Telchine Pigaches", augments={'"Regen" potenc
 
 -- gear.BLU_Adoulin_Cape = {} -- Blue magic skill +10
 
+gear.RDM_Adoulin_Cape = {} -- Enh Skill ~10, Enh Duration +20
+
 gear.SCH_Adoulin_Regen_Cape = { name="Bookworm's Cape", augments={'INT+1','MND+1','Helix eff. dur. +17','"Regen" potency+10',}}
 gear.SCH_Adoulin_Helix_Cape = { name="Bookworm's Cape", augments={'INT+1','MND+1','Helix eff. dur. +20',}}
 
