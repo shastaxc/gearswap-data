@@ -58,7 +58,7 @@ gear.Grioavolr_Magic_BP = { name="Grioavolr", augments={'Blood Pact Dmg.+9','Pet
 
 gear.Chironic_SIRD_hands = { name="Chironic Gloves", augments={'Attack+6','Spell interruption rate down -11%','Mag. Acc.+1',}}
 
--- gear.Chironic_MAcc_legs = {} -- 40 M.Acc Aug
+gear.Chironic_MAcc_legs = { name="Chironic Hose", augments={'Mag. Acc.+25 "Mag.Atk.Bns."+25','"Cure" spellcasting time -5%','CHR+7','Mag. Acc.+12','"Mag.Atk.Bns."+10',}} -- 40 M.Acc Aug
 
 -- Herculean
 gear.Herc_TA_feet = { name="Herculean Boots", augments={'Accuracy+30','"Triple Atk."+4','Attack+2',}}
@@ -155,7 +155,7 @@ gear.Telchine_Regen_feet = { name="Telchine Pigaches", augments={'"Regen" potenc
 
 -- gear.BLU_Adoulin_Cape = {} -- Blue magic skill +10
 
-gear.RDM_Adoulin_Cape = {} -- Enh Skill ~10, Enh Duration +20
+gear.RDM_Adoulin_Cape = { name="Ghostfyre Cape", augments={'Enfb.mag. skill +5','Enha.mag. skill +7','Mag. Acc.+4','Enh. Mag. eff. dur. +19',}} -- Enh Skill ~10, Enh Duration +20
 
 gear.SCH_Adoulin_Regen_Cape = { name="Bookworm's Cape", augments={'INT+1','MND+1','Helix eff. dur. +17','"Regen" potency+10',}}
 gear.SCH_Adoulin_Helix_Cape = { name="Bookworm's Cape", augments={'INT+1','MND+1','Helix eff. dur. +20',}}

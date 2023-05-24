@@ -195,6 +195,7 @@ function init_gear_sets()
 
   -- Precast sets to enhance JAs
   sets.precast.JA['Chainspell'] = {
+    body="Vitiation Tabard +1"
     -- body="Vitiation Tabard +3"
   }
 
@@ -467,7 +468,7 @@ function init_gear_sets()
     head=gear.Kaykaus_C_head,         -- __, 11,  16,  19,  14, 12, __/ 3, __
     body=gear.Kaykaus_C_body,         --  4, __, ___,  33,  20, 12, __/__, __
     hands=gear.Chironic_SIRD_hands,   -- __, __, ___,  38,  20, 31, __/__, __; Can add more DT or Enmity
-    legs="Atrophy Tights +2",         -- __, 11,  15,  34,  17, __, __/__, __
+    legs="Atrophy Tights +1",         -- __, 10,  13,  29,  12, __, __/__, __
     feet=gear.Kaykaus_D_feet,         -- __, 17, ___,  19,  10, __, __/__,  6
     neck="Loricate Torque +1",        -- __, __, ___, ___, ___,  5,  6/ 6, __
     ear1="Meili Earring",             -- __, __,  10, ___, ___, __, __/__, __
@@ -479,7 +480,7 @@ function init_gear_sets()
     -- Kaykaus set bonus              --  6, __, ___, ___, ___, __, __/__, __
     -- Base Stats                     -- __, __, 414, 129, 123, __, __/__, __
     -- Merit points                   -- __, __, ___, ___, ___, 10, __/__,  5
-    -- 10 CPII, 54 CP, 470 Heal Skill, 304 MND, 207 VIT, 116 SIRD, 42PDT/27MDT, 15 -Enmity
+    -- 10 CPII, 53 CP, 468 Heal Skill, 299 MND, 202 VIT, 116 SIRD, 42PDT/27MDT, 15 -Enmity
     
     -- legs="Atrophy Tights +3",      -- __, 12,  17,  39,  22, __, __/__, __
     -- 10 CPII, 55 CP, 472 Heal Skill, 309 MND, 212 VIT, 116 SIRD, 42PDT/27MDT, 15 -Enmity
@@ -490,7 +491,7 @@ function init_gear_sets()
     head=gear.Kaykaus_C_head,         -- __, 11,  16,  19,  14, 12, __/ 3, __
     body="Rosette Jaseran +1",        -- __, __, ___,  39,  31, 25,  5/ 5, 13
     hands=gear.Chironic_SIRD_hands,   -- __, __, ___,  38,  20, 31, __/__, __; Can add more DT or Enmity
-    legs="Atrophy Tights +2",         -- __, 11,  15,  34,  17, __, __/__, __
+    legs="Atrophy Tights +1",         -- __, 10,  13,  29,  12, __, __/__, __
     feet=gear.Kaykaus_D_feet,         -- __, 17, ___,  19,  10, __, __/__,  6
     neck="Loricate Torque +1",        -- __, __, ___, ___, ___,  5,  6/ 6, __
     ear1="Meili Earring",             -- __, __,  10, ___, ___, __, __/__, __
@@ -502,7 +503,7 @@ function init_gear_sets()
     -- Kaykaus set bonus              --  4, __, ___, ___, ___, __, __/__, __
     -- Base Stats                     -- __, __, 414, 129, 123, __, __/__, __
     -- Merit points                   -- __, __, ___, ___, ___, 10, __/__,  5
-    -- 4 CPII, 54 CP, 470 Heal Skill, 308 MND, 218 VIT, 104 SIRD, 37PDT/32MDT, 28 -Enmity
+    -- 4 CPII, 53 CP, 468 Heal Skill, 303 MND, 213 VIT, 104 SIRD, 37PDT/32MDT, 28 -Enmity
     
     -- legs="Atrophy Tights +3",      -- __, 12,  17,  39,  22, __, __/__, __
     -- 4 CPII, 55 CP, 472 Heal Skill, 313 MND, 223 VIT, 104 SIRD, 37PDT/32MDT, 28 -Enmity
@@ -516,7 +517,7 @@ function init_gear_sets()
     head=gear.Kaykaus_C_head,         -- __, 11,  16,  19,  14, 12, __/ 3, __
     body="Rosette Jaseran +1",        -- __, __, ___,  39,  31, 25,  5/ 5, 13
     hands=gear.Chironic_SIRD_hands,   -- __, __, ___,  38,  20, 31, __/__, __; Can add more DT or Enmity
-    legs="Atrophy Tights +2",         -- __, 11,  15,  34,  17, __, __/__, __
+    legs="Atrophy Tights +1",         -- __, 10,  13,  29,  12, __, __/__, __
     feet=gear.Kaykaus_D_feet,         -- __, 17, ___,  19,  10, __, __/__,  6
     neck="Loricate Torque +1",        -- __, __, ___, ___, ___,  5,  6/ 6, __
     ear1="Magnetic Earring",          -- __, __, ___, ___, ___,  8, __/__, __
@@ -528,6 +529,7 @@ function init_gear_sets()
     -- Kaykaus set bonus              --  4, __, ___, ___, ___, __, __/__, __
     -- Base Stats                     -- __, __, 414, 129, 123, __, __/__, __
     -- Merit points                   -- __, __, ___, ___, ___, 10, __/__,  5
+    -- 4 CPII, 63 CP, 458 Heal Skill, 308 MND, 218 VIT, 102 SIRD, 42PDT/32MDT, 24 -Enmity
     
     -- legs="Atrophy Tights +3",      -- __, 12,  17,  39,  22, __, __/__, __
     -- 4 CPII, 65 CP, 462 Heal Skill, 318 MND, 228 VIT, 102 SIRD, 42PDT/32MDT, 24 -Enmity
@@ -538,7 +540,7 @@ function init_gear_sets()
     head=gear.Kaykaus_C_head,         -- __, 11,  16,  19,  14, 12, __/ 3, __
     body="Rosette Jaseran +1",        -- __, __, ___,  39,  31, 25,  5/ 5, 13
     hands=gear.Chironic_SIRD_hands,   -- __, __, ___,  38,  20, 31, __/__, __; Can add more DT or Enmity
-    legs="Atrophy Tights +2",         -- __, 11,  15,  34,  17, __, __/__, __
+    legs="Atrophy Tights +1",         -- __, 10,  13,  29,  12, __, __/__, __
     feet=gear.Kaykaus_D_feet,         -- __, 17, ___,  19,  10, __, __/__,  6
     neck="Loricate Torque +1",        -- __, __, ___, ___, ___,  5,  6/ 6, __
     ear1="Magnetic Earring",          -- __, __, ___, ___, ___,  8, __/__, __
@@ -550,9 +552,10 @@ function init_gear_sets()
     -- Kaykaus set bonus              --  4, __, ___, ___, ___, __, __/__, __
     -- Base Stats                     -- __, __, 414, 129, 123, __, __/__, __
     -- Merit points                   -- __, __, ___, ___, ___, 10, __/__,  5
+    -- 4 CPII, 53 CP, 458 Heal Skill, 303 MND, 213 VIT, 102 SIRD, 37PDT/32MDT, 24 -Enmity
     
     -- legs="Atrophy Tights +3",      -- __, 12,  17,  39,  22, __, __/__, __
-    -- 0 CPII, 55 CP, 462 Heal Skill, 313 MND, 223 VIT, 102 SIRD, 37PDT/32MDT, 24 -Enmity
+    -- 4 CPII, 55 CP, 462 Heal Skill, 313 MND, 223 VIT, 102 SIRD, 37PDT/32MDT, 24 -Enmity
     -- 673 Power
   }
 
@@ -585,17 +588,18 @@ function init_gear_sets()
     hands=gear.Nyame_B_hands,         -- __, __, __ [ 7/ 7, 112]
     legs="Bunzi's Pants",             -- __, __, __ [ 9/ 9, 150]
     feet="Lethargy Houseaux +2",      -- 35, __, __ [__/__, 147]
-    -- neck="Duelist's Torque +2",    -- 25, __, __ [__/__, ___]
+    neck="Duelist's Torque +2",       -- 25, __, __ [__/__, ___]
     ear1="Malignance Earring",        -- __, __,  4 [__/__, ___]
     ear2="Odnowa Earring +1",         -- __, __, __ [ 3/ 5, ___]
     ring1="Gelatinous Ring +1",       -- __, __, __ [ 7/-1, ___]
     ring2="Defending Ring",           -- __, __, __ [10/10, ___]
-    -- back=gear.RDM_Adoulin_Cape,    -- __, 20, __ [__/__, ___]
+    back=gear.RDM_Adoulin_Cape,       -- __, 19, __ [__/__, ___]
     waist="Flume Belt +1",            -- __, __, __ [ 4/__, ___]
     -- Traits/Gifts/Merits            -- __, __, 38 [__/__, ___]
-    -- 75 Enh. Duration, 20 Aug Enh Duration, 67 FC [50 PDT/40 MDT, 632 M.Eva]
+    -- 75 Enh. Duration, 19 Aug Enh Duration, 67 FC [50 PDT/40 MDT, 632 M.Eva]
     
     -- feet="Lethargy Houseaux +3",   -- 40, __, __ [__/__, 157]
+    -- back=gear.RDM_Adoulin_Cape,    -- __, 20, __ [__/__, ___]
     -- 80 Enh. Duration, 20 Aug Enh Duration, 67 FC [50 PDT/40 MDT, 642 M.Eva]
   }
 
@@ -613,13 +617,14 @@ function init_gear_sets()
     ear2="Lethargy Earring",          -- __,  7, __,  7 [__/__, ___]
     ring1="Gelatinous Ring +1",       -- __, __, __, __ [ 7/-1, ___]
     ring2="Defending Ring",           -- __, __, __, __ [10/10, ___]
-    -- back=gear.RDM_Adoulin_Cape,    -- 10, __, 20, __ [__/__, ___]
+    back=gear.RDM_Adoulin_Cape,       --  7, __, 19, __ [__/__, ___]
     waist="Embla Sash",               -- __, 10, __,  5 [__/__, ___]
     -- Traits/Gifts/Merits            --456, __, __, 38 [__/__, ___]
-    -- 508 Enh skill, 141 Enh duration, 20 Aug Enh Duration, 54 FC [23 PDT/17 MDT, 487 M.Eva]
+    -- 505 Enh skill, 141 Enh duration, 19 Aug Enh Duration, 54 FC [23 PDT/17 MDT, 487 M.Eva]
     
     -- body="Vitiation Tabard +3",    -- 23, 15, __, 15 [__/__, 100]
     -- feet="Lethargy Houseaux +3",   -- 35, 40, __, __ [__/__, 157]
+    -- back=gear.RDM_Adoulin_Cape,    -- 10, __, 20, __ [__/__, ___]
     -- 524 Enh skill, 151 Enh duration, 20 Aug Enh Duration, 69 FC [23 PDT/17 MDT, 517 M.Eva]
   }
 
@@ -629,24 +634,25 @@ function init_gear_sets()
     ammo="Staunch Tathlum +1",        -- __, __, __, __ [ 3/ 3, ___]
     head="Befouled Crown",            -- 16, __, __, __ [__/__,  75]
     body=gear.Telchine_ENH_body,      -- 12, 10, __, __ [__/__,  80]
-    hands="Atrophy Gloves +3",        -- __, 20, __, __ [__/__,  57]
-    legs=gear.Telchine_ENH_legs,      -- __, 10, __, __ [__/__, 128]
+    hands="Vitiation Gloves +1",      -- 20, __, __, __ [__/__,  37]
+    legs="Atrophy Tights +1",         -- 17, __, __, __ [__/__, 107]
     feet="Lethargy Houseaux +2",      -- 30, 35, __, __ [__/__, 147]
     neck="Incanter's Torque",         -- 10, __, __, __ [__/__, ___]
     ear1="Mimir Earring",             -- 10, __, __, __ [__/__, ___]
     ear2="Odnowa Earring +1",         -- __, __, __, __ [ 3/ 5, ___]
     ring1="Gelatinous Ring +1",       -- __, __, __, __ [ 7/-1, ___]
     ring2="Defending Ring",           -- __, __, __, __ [10/10, ___]
-    -- back=gear.RDM_Adoulin_Cape,    -- 10, __, 20, __ [__/__, ___]
+    back=gear.RDM_Adoulin_Cape,       --  7, __, 19, __ [__/__, ___]
     waist="Olympus Sash",             --  5, __, __, __ [__/__, ___]
     -- Traits/Gifts/Merits            --456, __, __, 38 [__/__, ___]
-    -- 559 Enh skill, 79 Enh duration, 20 Aug Enh Duration, 42 FC [27 PDT/17 MDT, 487 M.Eva]
+    -- 593 Enh skill, 49 Enh duration, 19 Aug Enh Duration, 42 FC [27 PDT/17 MDT, 446 M.Eva]
     
     -- main="Pukulatmuj +1",          -- 11, __, __, __ [__/__, ___]
     -- body="Vitiation Tabard +3",    -- 23, 15, __, 15 [__/__, 100]
     -- hands="Vitiation Gloves +3",   -- 24, __, __, __ [__/__,  57]
     -- legs="Atrophy Tights +3",      -- 21, __, __, __ [__/__, 127]
     -- feet="Lethargy Houseaux +3",   -- 35, 40, __, __ [__/__, 157]
+    -- back=gear.RDM_Adoulin_Cape,    -- 10, __, 20, __ [__/__, ___]
     -- 631 Enh skill, 55 Enh duration, 20 Aug Enh Duration, 53 FC [27 PDT/17 MDT, 516 M.Eva]
   }
 
@@ -693,15 +699,16 @@ function init_gear_sets()
     ear2="Lethargy Earring",          -- __,  7, __, __ [__/__, ___]
     ring1="Gelatinous Ring +1",       -- __, __, __, __ [ 7/-1, ___]
     ring2="Defending Ring",           -- __, __, __, __ [10/10, ___]
-    -- back=gear.RDM_Adoulin_Cape,    -- __, __, 20, __ [__/__, ___]
+    back=gear.RDM_Adoulin_Cape,       -- __, __, 19, __ [__/__, ___]
     waist="Embla Sash",               -- __, 10, __, __ [__/__, ___]
     -- Refresh III potency            --  9, __, __, __ [__/__, ___]
-    -- 14 Ref Potency, 121 Enh Duration%, 20 Aug Enh Duration, 0 Ref Duration [23 PDT/17 MDT, 531 M.Eva]
+    -- 14 Ref Potency, 121 Enh Duration%, 19 Aug Enh Duration, 0 Ref Duration [23 PDT/17 MDT, 531 M.Eva]
     
     -- head="Amalric Coif +1",        --  2, __, __, __ [__/__,  86]
     -- body="Atrophy Tabard +3",      --  2, __, __, __ [__/__, 100]
     -- legs="Lethargy Fuseau +3",     --  4, __, __, __ [__/__, 162]
     -- feet="Lethargy Houseaux +3",   -- __, 40, __, __ [__/__, 157]
+    -- back=gear.RDM_Adoulin_Cape,    -- __, __, 20, __ [__/__, ___]
     -- 17 Ref Potency, 116 Enh Duration%, 20 Aug Enh Duration, 0 Ref Duration [23 PDT/17 MDT, 562 M.Eva]
   }
   sets.midcast.RefreshSelf = set_combine(sets.midcast.RefreshOthers, {
@@ -728,14 +735,15 @@ function init_gear_sets()
     ear2="Lethargy Earring",          -- __,  7, __,  7 [__/__, ___]
     ring1="Gelatinous Ring +1",       -- __, __, __, __ [ 7/-1, ___]
     ring2="Defending Ring",           -- __, __, __, __ [10/10, ___]
-    -- back=gear.RDM_Adoulin_Cape,    -- __, __, 20, __ [__/__, ___]
+    back=gear.RDM_Adoulin_Cape,       -- __, __, 19, __ [__/__, ___]
     waist="Siegel Sash",              -- 20, __, __, __ [__/__, ___]
     -- Traits/Gifts/Merits            --350, __, __, 38 [__/__, ___]
-    -- 410 Stoneskin+, 56 Enh Duration%, 20 Aug Enh Duration, 59 FC [56 PDT/48 MDT, 668 M.Eva]
+    -- 410 Stoneskin+, 56 Enh Duration%, 19 Aug Enh Duration, 59 FC [56 PDT/48 MDT, 668 M.Eva]
     
     -- hands="Stone Mufflers",        -- 30, __, __, __ [__/__, ___]
     -- legs="Shedir Seraweels",       -- 35, __, __, __ [__/__, ___]
     -- feet="Lethargy Houseaux +3",   -- __, 40, __, __ [__/__, 157]
+    -- back=gear.RDM_Adoulin_Cape,    -- __, __, 20, __ [__/__, ___]
     -- 475 Stoneskin+, 61 Enh Duration%, 20 Aug Enh Duration, 59 FC [41 PDT/33 MDT, 416 M.Eva]
   }
 
@@ -754,11 +762,11 @@ function init_gear_sets()
     ear2="Odnowa Earring +1",             -- __, __, __, __ [ 3/ 5, ___]
     ring1="Gelatinous Ring +1",           -- __, __, __, __ [ 7/-1, ___]
     ring2="Defending Ring",               -- __, __, __, __ [10/10, ___]
-    -- back=gear.RDM_Adoulin_Cape,        -- __, __, 20, __ [__/__, ___]
+    back=gear.RDM_Adoulin_Cape,           -- __, __, 19, __ [__/__, ___]
     waist="Olympus Sash",                 -- __,  5, __, __ [__/__, ___]
     -- Traits/Gifts/Merits                -- __,456, __, __ [__/__, ___]
     -- Master Levels                      -- __, __, __, __ [__/__, ___]
-    -- 14 Phalanx+, 493 Enh Skill, 20 Aug Enh Duration, 50 Enh duration [33 PDT/27 MDT, 469 M.Eva]
+    -- 14 Phalanx+, 493 Enh Skill, 19 Aug Enh Duration, 50 Enh duration [33 PDT/27 MDT, 469 M.Eva]
     -- 48 Phalanx total
     
     -- main="Sakpata's Sword",            --  5, __, __, __ [10/10, ___]
@@ -817,11 +825,11 @@ function init_gear_sets()
     ear2="Lethargy Earring",          -- __,  7, __,  7 [__/__, ___]
     ring1="Gelatinous Ring +1",       -- __, __, __, __ [ 7/-1, ___]
     ring2="Defending Ring",           -- __, __, __, __ [10/10, ___]
-    -- back=gear.RDM_Adoulin_Cape,    -- 10, __, 20, __ [__/__, ___]
+    back=gear.RDM_Adoulin_Cape,       --  7, __, 19, __ [__/__, ___]
     waist="Embla Sash",               -- __, 10, __,  5 [__/__, ___]
     -- Traits/Gifts/Merits            --456, __, __, 38 [__/__, ___]
     -- Empy set bonuses                  __, 35, __, __ [__/__, ___]
-    -- 496 Enh skill, 146 Enh duration, 20 Aug Enh Duration, 54 FC [46 PDT/40 MDT, 607 M.Eva]
+    -- 493 Enh skill, 146 Enh duration, 19 Aug Enh Duration, 54 FC [46 PDT/40 MDT, 607 M.Eva]
     
     -- main=gear.Colada_ENH,          -- __,  4, __,  4 [__/__, ___]
     -- sub="Ammurapi Shield",         -- __, 10, __, __ [__/__, ___]
@@ -858,10 +866,10 @@ function init_gear_sets()
     ear2="Odnowa Earring +1",         -- __, __, __, __, __ [ 3/ 5, ___]
     ring1="Freke Ring",               -- __, __, __, __, 10 [__/__, ___]
     ring2="Defending Ring",           -- __, __, __, __, __ [10/10, ___]
-    -- back=gear.RDM_Adoulin_Cape,    -- __, 10, __, 20, __ [__/__, ___]
+    back=gear.RDM_Adoulin_Cape,       -- __,  7, __, 19, __ [__/__, ___]
     -- waist="Emphatikos Rope",       --  1, __, __, __, 12 [__/__, ___]
     -- Traits/Gifts/Merits            -- __,456, __, __, 10 [__/__, ___]
-    -- 6 Aquaveil+, 511 Enh skill, 35 Enh duration, 20 Aug Enh Duration, 103 SIRD [37 PDT/29 MDT, 366 M.Eva]
+    -- 6 Aquaveil+, 508 Enh skill, 35 Enh duration, 19 Aug Enh Duration, 103 SIRD [37 PDT/29 MDT, 366 M.Eva]
     
     -- main="Eremite's Wand +1",      -- __, __, __, __, 25 [__/__, ___]
     -- sub="Genmei Shield",           -- __, __, __, __, __ [10/__, ___]
@@ -883,9 +891,11 @@ function init_gear_sets()
   })
 
   sets.midcast.GainSpell = {
+    hands="Vitiation Gloves +1"
     -- hands="Vitiation Gloves +3"
   }
   sets.midcast.SpikesSpell = {
+    legs="Vitiation Tights +1"
     -- legs="Vitiation Tights +3"
   }
 
@@ -905,9 +915,9 @@ function init_gear_sets()
     -- head="Vitiation Chapeau +3",   -- ___, 37, 42, __ (__, __, __, 26) [__/__,  95]; Enhances enf. duration
     body="Lethargy Sayon +3",         -- ___, 64, 45, __ (__, 18, __, __) [14/14, 136]
     hands="Lethargy Gantherots +2",   -- ___, 52, 45, __ (__, __, __, 24) [10/10,  77]
-    -- legs=gear.Chironic_MACC_legs,  -- ___, 60, 29, __ ( 1, __, __, 13) [__/__, 118]
-    -- feet="Vitiation Boots +3",     -- ___, 43, 32, __ (__, 10, __, 16) [__/__, 127]; Immunobreak+
-    -- neck="Duelist's Torque +2",    -- ___, 30, 15, __ (__, 10, 25, __) [__/__, ___]
+    legs=gear.Chironic_MAcc_legs,     -- ___, 57, 29, __ ( 1, __, __, 13) [__/__, 118]
+    feet="Vitiation Boots +1",        -- ___, 15, 22, __ (__, __, __, 12) [__/__, 107]; Immunobreak+
+    neck="Duelist's Torque +2",       -- ___, 30, 15, __ (__, 10, 25, __) [__/__, ___]
     ear1="Malignance Earring",        -- ___, 10,  8, __ (__, __, 10, __) [__/__, ___]
     ear2="Snotra Earring",            -- ___, 10,  8,  4 (__, __, __, __) [__/__, ___]
     ring1="Stikini Ring +1",          -- ___, 11,  8, __ (__, __, __,  8) [__/__, ___]
@@ -915,9 +925,12 @@ function init_gear_sets()
     back=gear.RDM_MND_Enf_Cape,       -- ___, 20, 30, 10 (__, 10, __, __) [10/__, ___]
     waist="Obstinate Sash",           -- ___, 15,  5, __ (__, __,  5, 15) [__/__, ___]
     -- Traits/Gifts/Merits            --              38
-    -- 255 M.Acc skill, 470 M.Acc, 303 MND, 72 FC (1 Immunobreak, 58 Enf. Effect, 40 Enf. Duration, 102 Enf. Skill) [34 PDT/24 MDT, 553 M.Eva]
+    -- 242 M.Acc skill, 429 M.Acc, 323 MND, 52 FC (1 Immunobreak, 48 Enf. Effect, 40 Enf. Duration, 98 Enf. Skill) [34 PDT/24 MDT, 563 M.Eva]
     
     -- hands="Lethargy Gantherots +3",-- ___, 62, 50, __ (__, __, __, 29) [11/11,  87]
+    -- legs=gear.Chironic_MAcc_legs,  -- ___, 60, 29, __ ( 1, __, __, 13) [__/__, 118]
+    -- feet="Vitiation Boots +3",     -- ___, 43, 32, __ (__, 10, __, 16) [__/__, 127]; Immunobreak+
+    -- 242 M.Acc skill, 470 M.Acc, 338 MND, 52 FC (1 Immunobreak, 58 Enf. Effect, 40 Enf. Duration, 107 Enf. Skill) [34 PDT/24 MDT, 593 M.Eva]
   }
   sets.midcast.MndEnfeeblesDW = set_combine(sets.midcast.MndEnfeebles, {
     main="Daybreak",                  -- 242, 40, 30, __ (__, __, __, __) [__/__,  30]
@@ -933,9 +946,9 @@ function init_gear_sets()
     -- head="Vitiation Chapeau +3",   -- ___, 37, 42, __ (__, __, __, 26) [__/__,  95]; Enhances enf. duration
     body="Atrophy Tabard +2",         -- ___, 45, 38, __ (__, __, __, 19) [__/__,  90]
     hands="Lethargy Gantherots +2",   -- ___, 52, 45, __ (__, __, __, 24) [10/10,  77]
-    -- legs=gear.Chironic_MACC_legs,  -- ___, 60, 29, __ ( 1, __, __, 13) [__/__, 118]
-    -- feet="Vitiation Boots +3",     -- ___, 43, 32, __ (__, 10, __, 16) [__/__, 127]; Immunobreak+
-    -- neck="Duelist's Torque +2",    -- ___, 30, 15, __ (__, 10, 25, __) [__/__, ___]
+    legs=gear.Chironic_MAcc_legs,     -- ___, 57, 29, __ ( 1, __, __, 13) [__/__, 118]
+    feet="Vitiation Boots +1",        -- ___, 15, 22, __ (__, __, __, 12) [__/__, 107]; Immunobreak+
+    neck="Duelist's Torque +2",       -- ___, 30, 15, __ (__, 10, 25, __) [__/__, ___]
     ear1="Regal Earring",             -- ___, __, 10, __ (__, __, __, __) [__/__, ___]
     ear2="Snotra Earring",            -- ___, 10,  8,  4 (__, __, __, __) [__/__, ___]
     ring1="Stikini Ring +1",          -- ___, 11,  8, __ (__, __, __,  8) [__/__, ___]
@@ -944,9 +957,11 @@ function init_gear_sets()
     waist="Obstinate Sash",           -- ___, 15,  5, __ (__, __,  5, 15) [__/__, ___]
     -- AF set bonus                   -- ___, 15
     -- Traits/Gifts/Merits            --              38
-    -- 255 M.Acc skill, 477 M.Acc, 283 MND, 72 FC (1 Immunobreak, 30 Enf. Effect, 30 Enf. Duration, 129 Enf. Skill) [20 PDT/10 MDT, 507 M.Eva]
+    -- 255 M.Acc skill, 446 M.Acc, 273 MND, 72 FC (1 Immunobreak, 20 Enf. Effect, 30 Enf. Duration, 125 Enf. Skill) [20 PDT/10 MDT, 487 M.Eva]
     
     -- body="Atrophy Tabard +3",      -- ___, 55, 43, __ (__, __, __, 21) [__/__, 100]
+    -- legs=gear.Chironic_MAcc_legs,  -- ___, 60, 29, __ ( 1, __, __, 13) [__/__, 118]
+    -- feet="Vitiation Boots +3",     -- ___, 43, 32, __ (__, 10, __, 16) [__/__, 127]; Immunobreak+
   }
   sets.midcast.MndEnfeeblesAccDW = set_combine(sets.midcast.MndEnfeeblesAcc, {
     -- main="Crocea Mors",            -- 255, 50, __, 20 (__, __, __, __) [__/__, ___]
@@ -957,9 +972,11 @@ function init_gear_sets()
   sets.midcast.MndEnfeeblesEffect = set_combine(sets.midcast.MndEnfeebles, {
     ammo="Regal Gem",
     body="Lethargy Sayon +3",
-    -- feet="Vitiation Boots +3",
-    -- neck="Duelist's Torque +2",
+    feet="Vitiation Boots +1",        -- ___, 15, 22, __ (__, __, __, 12) [__/__, 107]; Immunobreak+
+    neck="Duelist's Torque +2",
     back=gear.RDM_MND_Enf_Cape, --+10 enf pot makes this better than aurist's
+
+    -- feet="Vitiation Boots +3",
   })
   sets.midcast.MndEnfeeblesEffectDW = set_combine(sets.midcast.MndEnfeeblesEffect, {
     main={name="Daybreak", priority=1}, 
@@ -970,12 +987,13 @@ function init_gear_sets()
   sets.midcast.IntEnfeebles = set_combine(sets.midcast.MndEnfeebles, {
     -- ammo="Ghastly Tathlum +1",
     waist="Obstinate Sash", --5% dur, 5skill, 15 macc
-    legs=gear.Chironic_MACC_legs, --20+36 macc, 13skill
+    legs=gear.Chironic_MAcc_legs,
     back=gear.RDM_INT_Enf_Cape,
     ear2="Regal Earring",
     --299 Macc + 552 Enfeebling skill = 851, 369 INT
 
     -- ear2="Lethargy Earring +2",
+    -- legs=gear.Chironic_MAcc_legs,
   })
   sets.midcast.IntEnfeeblesDW = set_combine(sets.midcast.IntEnfeebles, {}) 
 
@@ -992,9 +1010,11 @@ function init_gear_sets()
     ammo="Regal Gem",
     range=empty,
     body="Lethargy Sayon +3",
-    -- feet="vitiation boots +3",
-    -- neck="Duelist's Torque +2",
+    feet="Vitiation Boots +1",        -- ___, 15, 22, __ (__, __, __, 12) [__/__, 107]; Immunobreak+
+    neck="Duelist's Torque +2",
     back=gear.RDM_INT_Enf_Cape, --Better and aurists's because includes enfeeb magic effect +10
+    
+    -- feet="vitiation boots +3",
   })
   sets.midcast.IntEnfeeblesEffectDW = set_combine(sets.midcast.IntEnfeeblesEffect, {
     -- main={name="Crocea Mors", priority=1},  --255+50
@@ -1010,9 +1030,9 @@ function init_gear_sets()
     -- head="Vitiation Chapeau +3", --24
     body="Atrophy Tabard +2", --19
     hands=gear.Kaykaus_C_hands, --16, 53macc
-    -- legs=gear.Chironic_MACC_legs, --20+36 macc, 13skill
-    -- feet="Vitiation Boots +3", --16
-    -- neck="Duelist's torque +2", --10% pot
+    legs=gear.Chironic_MAcc_legs,
+    feet="Vitiation Boots +1",        -- ___, 15, 22, __ (__, __, __, 12) [__/__, 107]; Immunobreak+
+    neck="Duelist's torque +2", --10% pot
     ear1="Regal Earring", --15Macc with Atrophy Gear
     ear2="Snotra Earring", --10% Dur
     ring1="Kishar Ring", --10% dur
@@ -1021,6 +1041,8 @@ function init_gear_sets()
     waist="Obstinate Sash", --5% dur, 5skill, 15 macc
     
     -- body="Atrophy Tabard +3", --21
+    -- legs=gear.Chironic_MAcc_legs,
+    -- feet="Vitiation Boots +3", --16
   })--355 Macc + 146 aug macc + 30 M.Acc AF Bonus + 625 Enfeebling Skill + 228 macc skill = 1384 (Enfeeb == Macc according to wikia)
   sets.midcast.SkillEnfeeblesDW = set_combine(sets.midcast.SkillEnfeebles, {
     -- main={name="Crocea Mors", priority=1},  --255+50
@@ -1029,7 +1051,7 @@ function init_gear_sets()
     
   sets.midcast.SleepNormal = set_combine(sets.midcast.IntEnfeeblesAcc, {
     -- head="Vitiation Chapeau +3",
-    -- neck="Duelist's Torque +2",
+    neck="Duelist's Torque +2",
     ear2="Snotra Earring",
     ring1="Kishar Ring",
     back=gear.RDM_INT_Enf_Cape, --Better and aurists's because includes enfeeb magic effect +10
@@ -1096,9 +1118,9 @@ function init_gear_sets()
     head="Atrophy Chapeau +2", --44
     body="Atrophy Tabard +2", --45
     hands=gear.Kaykaus_C_hands, --33+20
-    -- legs=gear.Chironic_MACC_legs, --56 macc
+    legs=gear.Chironic_MAcc_legs,
     feet="Malignance Boots", --50
-    -- neck="Duelist's Torque +2", --30
+    neck="Duelist's Torque +2", --30
     ear1="Malignance Earring", --10
     ear2="Regal Earring",  --15 set bonus
     ring1="Stikini Ring +1", --8+11
@@ -1108,6 +1130,7 @@ function init_gear_sets()
     
     -- head="Atrophy Chapeau +3", --54+17
     -- body="Atrophy Tabard +3", --55
+    -- legs=gear.Chironic_MAcc_legs,
   } --496 Macc + 30 macc set bonus + 352 Drk Magic = 893 effective macc
 
   sets.midcast['Elemental Magic'] = {
@@ -1161,7 +1184,7 @@ function init_gear_sets()
     hands="Atrophy Gloves +3", --20
     legs="Lethargy Fuseau +2",
     feet="Lethargy Houseaux +2", --35
-    -- neck="Duelist's Torque +2", --25
+    neck="Duelist's Torque +2", --25
     ear1="Malignance Earring", --4FC
     ear2="Lethargy Earring", --7
     ring1="Gelatinous Ring +1", --7PDT, -1MDT
@@ -1231,7 +1254,7 @@ function init_gear_sets()
     main="Mpaca's Staff",             -- __/__, ___ [ 2]
     sub="Enki Strap",                 -- __/__,  10 [__]
     -- ammo="Homiliary",              -- __/__, ___ [ 1]
-    head="Bunzi's Hat",               --  7/ 7, 123 [__]
+    head="Vitiation Chapeau +1",      -- __/__,  75 [ 2]
     body="Shamash Robe",              -- 10/__, 106 [ 3]; Resist Silence+90
     hands="Lethargy Gantherots +2",   -- 10/10,  77 [__]
     legs="Assiduity Pants +1",        -- __/__, 107 [ 2]
@@ -1243,7 +1266,7 @@ function init_gear_sets()
     ring2="Defending Ring",           -- 10/10, ___ [__]
     back=gear.RDM_INT_Enf_Cape,       -- 10/__, ___ [__]
     waist="Carrier's Sash",           -- __/__, ___ [__]; Ele Resist+15
-    -- 56 PDT / 41 MDT, 565 M.Eva [10 Refresh]
+    -- 49 PDT / 34 MDT, 517 M.Eva [12 Refresh]
     
     -- head="Vitiation Chapeau +3",   -- __/__,  95 [ 3]
     -- hands="Lethargy Gantherots +3",-- 11/11,  87 [__]
