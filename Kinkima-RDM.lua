@@ -112,11 +112,11 @@ function job_setup()
   state.Buff.Composure = buffactive.Composure or false
   state.Buff.Saboteur = buffactive.Saboteur or false
   state.Buff.Stymie = buffactive.Stymie or false
-
-  enfeebling_magic_acc = S{'Bind', 'Break', 'Dispel', 'Distract', 'Distract II', 'Frazzle',
-      'Frazzle II',  'Gravity', 'Gravity II', 'Silence'}
+  
+  -- Potency is based on enfeebling skill
   enfeebling_magic_skill = S{'Distract III', 'Frazzle III', 'Poison II'}
-  enfeebling_magic_effect = S{'Dia', 'Dia II', 'Dia III', 'Diaga', 'Blind', 'Blind II'}
+  -- 100% land rate, focus on duration gear
+  enfeebling_magic_effect = S{'Dia', 'Dia II', 'Dia III', 'Diaga'}
   enfeebling_magic_sleep = S{'Sleep', 'Sleep II', 'Sleepga'}
 
   enhancing_skill_spells = S{'Temper', 'Temper II', 'Enfire', 'Enfire II', 'Enblizzard', 'Enblizzard II', 'Enaero',
@@ -896,80 +896,78 @@ function init_gear_sets()
   sets.midcast.Shell = set_combine(sets.midcast.Protect,{})
   sets.midcast.Shellra = set_combine(sets.midcast.Shell,{})
 
-  -- Slow, Slow II, Paraylze, Addle (all tiers)
+  -- General enfeebles
   sets.midcast.MndEnfeebles = { --Max MND but balance macc for landing
-    -- main="Crocea Mors",  --50
-    sub={name="Ammurapi Shield", priority=1}, --38
-    ammo="Regal Gem", --Pot+10
-    -- head="Vitiation Chapeau +3",
-    body="Lethargy Sayon +3",
-    hands="Lethargy Gantherots +2",
-    -- hands="Lethargy Gantherots +3", --52macc, 24 skill
-    -- legs=gear.Chironic_MACC_legs, --20+36 macc, 13skill
-    -- feet="Vitiation Boots +3",
-    -- neck="Duelist's Torque +2",
-    ear1="Malignance Earring",
-    ear2="Snotra Earring",
-    ring1="Stikini Ring +1",
-    ring2="Metamorph Ring +1", --16 MND vs Stikini 8 MND. 14 Macc vs 11+8skill so about 4 macc less
-    back=gear.RDM_MND_Enf_Cape, --20macc, 30 MND
-    waist="Obstinate Sash", --5% dur, 5skill, 15 macc
-    -- Enf. Effect, Enf. Duration, Enf. Skill, M.Acc skill, M.Acc, MND
-  }
-
-  sets.midcast.MndEnfeeblesDW = set_combine(sets.midcast.MndEnfeebles, {
-    main={name="Daybreak", priority=1},
-    sub="Maxentius",
-  })
-
-  --Spells that don't vary potency based on skill
-  --'Silence'
-  sets.midcast.MndEnfeeblesAcc = {
-    --Option 1: Best Mythic
-    -- main="Murgleis" --RDM Mythic 255+40+aftermath
-    -- main="Crocea Mors",  --50 + 255
-    sub={name="Ammurapi Shield", priority=1}, --38
-    -- range="Ullr",
-    -- ammo=empty,
-    -- head="Vitiation Chapeau +3",
-    body="Atrophy Tabard +2",
-    hands="Lethargy Gantherots +2",
-    -- hands="Lethargy Gantherots +3", --62 macc, 29skill, 11DT
-    -- legs=gear.Chironic_MACC_legs, --20+36 macc, 13skill
-    -- feet="Vitiation Boots +3",
-    -- neck="Duelist's Torque +2", --25% dur
-    ear1="Snotra Earring",
-    ear2="Regal Earring", --Set bonus with atrophy gear: +15 macc (total +30 macc)
-    ring1="Stikini Ring +1",
-    ring2="Stikini Ring +1",
-    back="Aurist's Cape +1",
-    waist="Obstinate Sash", --5% dur, 5skill, 15 macc
-    -- AF set bonus
-    -- Enf. Effect, Enf. Duration, Enf. Skill, M.Acc skill, M.Acc, MND
+    main="Daybreak",                  -- 242, 40, 30, __ (__, __, __, __) [__/__,  30]
+    sub="Ammurapi Shield",            -- ___, 38, 13, __ (__, __, __, __) [__/__, ___]
+    range=empty,
+    ammo="Regal Gem",                 -- ___, 15,  7, __ (__, 10, __, __) [__/__, ___]
+    -- head="Vitiation Chapeau +3",   -- ___, 37, 42, __ (__, __, __, 26) [__/__,  95]; Enhances enf. duration
+    body="Lethargy Sayon +3",         -- ___, 64, 45, __ (__, 18, __, __) [14/14, 136]
+    hands="Lethargy Gantherots +2",   -- ___, 52, 45, __ (__, __, __, 24) [10/10,  77]
+    -- legs=gear.Chironic_MACC_legs,  -- ___, 60, 29, __ ( 1, __, __, 13) [__/__, 118]
+    -- feet="Vitiation Boots +3",     -- ___, 43, 32, __ (__, 10, __, 16) [__/__, 127]; Immunobreak+
+    -- neck="Duelist's Torque +2",    -- ___, 30, 15, __ (__, 10, 25, __) [__/__, ___]
+    ear1="Malignance Earring",        -- ___, 10,  8, __ (__, __, 10, __) [__/__, ___]
+    ear2="Snotra Earring",            -- ___, 10,  8,  4 (__, __, __, __) [__/__, ___]
+    ring1="Stikini Ring +1",          -- ___, 11,  8, __ (__, __, __,  8) [__/__, ___]
+    ring2="Metamorph Ring +1",        -- ___, 15, 16, __ (__, __, __, __) [__/__, ___]
+    back=gear.RDM_MND_Enf_Cape,       -- ___, 20, 30, 10 (__, 10, __, __) [10/__, ___]
+    waist="Obstinate Sash",           -- ___, 15,  5, __ (__, __,  5, 15) [__/__, ___]
+    -- Traits/Gifts/Merits            --              38
+    -- 255 M.Acc skill, 470 M.Acc, 303 MND, 72 FC (1 Immunobreak, 58 Enf. Effect, 40 Enf. Duration, 102 Enf. Skill) [34 PDT/24 MDT, 553 M.Eva]
     
-    -- body="Atrophy Tabard +3",
-  } 
-
-  sets.midcast.MndEnfeeblesAccDW = set_combine(sets.midcast.MndEnfeeblesAcc, {
-    -- main={name="Crocea Mors", priority=1},  --(255)+50
-    -- sub="Demersal Degen +1", --40 bonus magic acc
+    -- hands="Lethargy Gantherots +3",-- ___, 62, 50, __ (__, __, __, 29) [11/11,  87]
+  }
+  sets.midcast.MndEnfeeblesDW = set_combine(sets.midcast.MndEnfeebles, {
+    main="Daybreak",                  -- 242, 40, 30, __ (__, __, __, __) [__/__,  30]
+    sub="Maxentius",                  -- 232, 40, 15, __ (__, __, __, __) [__/__, ___]
   })
 
-  sets.midcast.MndEnfeeblesEffect = set_combine(sets.midcast.MndEnfeebles, { --Dia (all tiers) --TODO: Check gear
+  -- Used when casting mode is 'Resistant'
+  sets.midcast.MndEnfeeblesAcc = {
+    -- main="Crocea Mors",            -- 255, 50, __, 20 (__, __, __, __) [__/__, ___]
+    sub="Ammurapi Shield",            -- ___, 38, 13, __ (__, __, __, __) [__/__, ___]
+    -- range="Ullr",                  -- ___, 40, __, __ (__, __, __, __) [__/__, ___]
+    -- ammo=empty,
+    -- head="Vitiation Chapeau +3",   -- ___, 37, 42, __ (__, __, __, 26) [__/__,  95]; Enhances enf. duration
+    body="Atrophy Tabard +2",         -- ___, 45, 38, __ (__, __, __, 19) [__/__,  90]
+    hands="Lethargy Gantherots +2",   -- ___, 52, 45, __ (__, __, __, 24) [10/10,  77]
+    -- legs=gear.Chironic_MACC_legs,  -- ___, 60, 29, __ ( 1, __, __, 13) [__/__, 118]
+    -- feet="Vitiation Boots +3",     -- ___, 43, 32, __ (__, 10, __, 16) [__/__, 127]; Immunobreak+
+    -- neck="Duelist's Torque +2",    -- ___, 30, 15, __ (__, 10, 25, __) [__/__, ___]
+    ear1="Regal Earring",             -- ___, __, 10, __ (__, __, __, __) [__/__, ___]
+    ear2="Snotra Earring",            -- ___, 10,  8,  4 (__, __, __, __) [__/__, ___]
+    ring1="Stikini Ring +1",          -- ___, 11,  8, __ (__, __, __,  8) [__/__, ___]
+    ring2="Stikini Ring +1",          -- ___, 11,  8, __ (__, __, __,  8) [__/__, ___]
+    back=gear.RDM_MND_Enf_Cape,       -- ___, 20, 30, 10 (__, 10, __, __) [10/__, ___]
+    waist="Obstinate Sash",           -- ___, 15,  5, __ (__, __,  5, 15) [__/__, ___]
+    -- AF set bonus                   -- ___, 15
+    -- Traits/Gifts/Merits            --              38
+    -- 255 M.Acc skill, 477 M.Acc, 283 MND, 72 FC (1 Immunobreak, 30 Enf. Effect, 30 Enf. Duration, 129 Enf. Skill) [20 PDT/10 MDT, 507 M.Eva]
+    
+    -- body="Atrophy Tabard +3",      -- ___, 55, 43, __ (__, __, __, 21) [__/__, 100]
+  }
+  sets.midcast.MndEnfeeblesAccDW = set_combine(sets.midcast.MndEnfeeblesAcc, {
+    -- main="Crocea Mors",            -- 255, 50, __, 20 (__, __, __, __) [__/__, ___]
+    main="Daybreak",                  -- 242, 40, 30, __ (__, __, __, __) [__/__,  30]
+  })
+
+  -- Spells that have 100% accuracy. Focus on duration.
+  sets.midcast.MndEnfeeblesEffect = set_combine(sets.midcast.MndEnfeebles, {
     ammo="Regal Gem",
     body="Lethargy Sayon +3",
     -- feet="Vitiation Boots +3",
     -- neck="Duelist's Torque +2",
     back=gear.RDM_MND_Enf_Cape, --+10 enf pot makes this better than aurist's
   })
-
   sets.midcast.MndEnfeeblesEffectDW = set_combine(sets.midcast.MndEnfeeblesEffect, {
     main={name="Daybreak", priority=1}, 
     sub="Maxentius",
   })
 
-  --Distract III, Frazzle III, Inundation
-  sets.midcast.IntEnfeebles = set_combine(sets.midcast.MndEnfeebles, { --Balanced INT and Macc
+  -- General enfeebles
+  sets.midcast.IntEnfeebles = set_combine(sets.midcast.MndEnfeebles, {
     -- ammo="Ghastly Tathlum +1",
     waist="Obstinate Sash", --5% dur, 5skill, 15 macc
     legs=gear.Chironic_MACC_legs, --20+36 macc, 13skill
@@ -979,36 +977,33 @@ function init_gear_sets()
 
     -- ear2="Lethargy Earring +2",
   })
-
   sets.midcast.IntEnfeeblesDW = set_combine(sets.midcast.IntEnfeebles, {}) 
 
-  --'Bind', 'Break', 'Dispel', 'Distract', 'Distract II', 'Frazzle',
-  --'Frazzle II',  'Gravity', 'Gravity II', 
-  sets.midcast.IntEnfeeblesAcc = set_combine(sets.midcast.MndEnfeeblesAcc, { --Max Acc with less Int
+  -- Used when casting mode is 'Resistant'
+  sets.midcast.IntEnfeeblesAcc = set_combine(sets.midcast.MndEnfeeblesAcc, {
   }) --483 Macc + 96 augments/set bonus + 574 Enfeebling skill = 1098 + 255 = 1408 , 365 INT
-
   sets.midcast.IntEnfeeblesAccDW = set_combine(sets.midcast.IntEnfeeblesAcc, {
     -- main={name="Crocea Mors", priority=1},  --255+50
     sub="Daybreak", --40 bonus magic acc
   })
 
-  sets.midcast.IntEnfeeblesEffect = set_combine(sets.midcast.IntEnfeebles, { --Blind potency set. --Good. Verified 9/10/21
+  -- Spells that have 100% accuracy. Focus on duration.
+  sets.midcast.IntEnfeeblesEffect = set_combine(sets.midcast.IntEnfeebles, {
     ammo="Regal Gem",
     range=empty,
     body="Lethargy Sayon +3",
     -- feet="vitiation boots +3",
     -- neck="Duelist's Torque +2",
     back=gear.RDM_INT_Enf_Cape, --Better and aurists's because includes enfeeb magic effect +10
-  }) --Check macc
-
+  })
   sets.midcast.IntEnfeeblesEffectDW = set_combine(sets.midcast.IntEnfeeblesEffect, {
     -- main={name="Crocea Mors", priority=1},  --255+50
     sub="Daybreak", --40 bonus magic acc
   })
 
-  --Skill max is 625 is the highest needed.
-  --Distract III (610), Frazzle III (625), Poison II
-  sets.midcast.SkillEnfeebles = set_combine(sets.midcast.MndEnfeebles, { 
+  -- Skill max is 625 is the highest needed.
+  -- Distract III (610), Frazzle III (625), Poison II (no cap)
+  sets.midcast.SkillEnfeebles = set_combine(sets.midcast.MndEnfeebles, {
     main="Contemplator +1", --20skill, 70macc, 228 macc skill
     sub="Enki Strap", --10macc
     ammo="Regal Gem", --10% pot
@@ -1027,7 +1022,6 @@ function init_gear_sets()
     
     -- body="Atrophy Tabard +3", --21
   })--355 Macc + 146 aug macc + 30 M.Acc AF Bonus + 625 Enfeebling Skill + 228 macc skill = 1384 (Enfeeb == Macc according to wikia)
-
   sets.midcast.SkillEnfeeblesDW = set_combine(sets.midcast.SkillEnfeebles, {
     -- main={name="Crocea Mors", priority=1},  --255+50
     sub="Daybreak", --40 bonus magic acc
@@ -1040,7 +1034,6 @@ function init_gear_sets()
     ring1="Kishar Ring",
     back=gear.RDM_INT_Enf_Cape, --Better and aurists's because includes enfeeb magic effect +10
   })
-
   sets.midcast.SleepNormalDW = set_combine(sets.midcast.SleepNormal, {
     -- main={name="Crocea Mors", priority=1},  --255+50
     sub="Daybreak", --40 bonus magic acc
@@ -1057,7 +1050,6 @@ function init_gear_sets()
     -- legs="Lethargy Fuseau +3",
     -- feet="Lethargy Houseaux +3",
   })
-
   sets.midcast.SleepMaxDurationDW = set_combine(sets.midcast.SleepMaxDuration, {
     -- main={name="Crocea Mors", priority=1},  --255+50
     sub="Daybreak", --40 bonus magic acc
@@ -1727,22 +1719,22 @@ function job_get_spell_map(spell, default_spell_map)
       if enfeebling_magic_skill:contains(spell.english) then
         custom_spell_map = 'SkillEnfeebles'
       elseif spell.type == 'WhiteMagic' then
-        if (enfeebling_magic_acc:contains(spell.english) and not buffactive.Stymie) or state.CastingMode.value == 'Resistant' then
-          custom_spell_map = 'MndEnfeeblesAcc'
-        elseif enfeebling_magic_effect:contains(spell.english) then
+        if enfeebling_magic_effect:contains(spell.english) then
           custom_spell_map = 'MndEnfeeblesEffect'
+        elseif not buffactive.Stymie and state.CastingMode.value == 'Resistant' then
+          custom_spell_map = 'MndEnfeeblesAcc'
         else
           custom_spell_map = 'MndEnfeebles'
         end
       elseif spell.type == 'BlackMagic' then
-        if (enfeebling_magic_acc:contains(spell.english) and not buffactive.Stymie) or state.CastingMode.value == 'Resistant' then
-          custom_spell_map = 'IntEnfeeblesAcc'
-        elseif enfeebling_magic_effect:contains(spell.english) then
+        if enfeebling_magic_effect:contains(spell.english) then
           custom_spell_map = 'IntEnfeeblesEffect'
         elseif enfeebling_magic_sleep:contains(spell.english) and ((buffactive.Stymie and buffactive.Composure) or state.SleepMode.value == 'MaxDuration') then
           custom_spell_map = 'SleepMaxDuration'
         elseif enfeebling_magic_sleep:contains(spell.english) then
           custom_spell_map = 'SleepNormal' --Can't call it sleep as gs checks for sets.midcast.Sleep before calling job_get_spell_map
+        elseif not buffactive.Stymie and state.CastingMode.value == 'Resistant' then
+          custom_spell_map = 'IntEnfeeblesAcc'
         else
           custom_spell_map = 'IntEnfeebles'
         end
