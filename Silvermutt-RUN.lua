@@ -108,8 +108,6 @@ function job_setup()
   rayke_duration = 46
   gambit_duration = 92
 
-  runes.element_of = {['Lux']='Light', ['Tenebrae']='Dark', ['Ignis']='Fire', ['Gelus']='Ice', ['Flabra']='Wind',
-      ['Tellus']='Earth', ['Sulpor']='Lightning', ['Unda']='Water'} -- Do not modify
   expended_runes={} -- Do not modify
   rayke_target=nil -- Do not modify
   gambit_target=nil -- Do not modify
@@ -1835,7 +1833,7 @@ function get_element_potencies()
   local element_potencies = {}
   for k,rune in pairs(expended_runes) do
     -- Get rune's corresponding element
-    local el = runes.element_of[rune]
+    local el = silibs.elements.of_rune[rune]
     -- Find element entry if already in the table
     local el_index = nil
     for k,v in pairs(element_potencies) do

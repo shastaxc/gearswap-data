@@ -1623,7 +1623,7 @@ function check_maneuvers()
         and not buffactive['Overload'] then
       -- Cycle through all maneuvers and check how many of each we possess to see total
       local total_active = 0
-      for element in pairs(elements.list) do
+      for element in pairs(silibs.elements.list) do
         total_active = total_active + (buffactive[element..' Maneuver'] or 0)
       end
       local total_desired = defaultManeuvers[state.PetMode.value].n
@@ -1752,7 +1752,7 @@ function use_maneuver(maneuver_element)
       end
     else
       maneuver_element = maneuver_element:gsub("^%l", string.upper) -- Capitalize first letter
-      if elements.list:contains(maneuver_element) then
+      if silibs.elements.list:contains(maneuver_element) then
         windower.chat.input('/pet "'..element..' Maneuver" <me>')
       else
         add_to_chat(123,'Error: Maneuver command format is wrong.')
@@ -1767,7 +1767,7 @@ end
 -- This is partly guesswork without having access to the exact buff durations
 -- TODO: Access buff durations to set up the active_maneuvers list in the correct order
 function check_initial_maneuvers()
-  for element in pairs(elements.list) do
+  for element in pairs(silibs.elements.list) do
     local maneuver = element..' Maneuver'
     local active = buffactive[maneuver] or 0
     for i=1,active,1 do

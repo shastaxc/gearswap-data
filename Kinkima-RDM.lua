@@ -102,12 +102,12 @@ function job_setup()
   state.PhysicalDefenseMode:options('PDT')
   state.MagicBurst = M(false, 'Magic Burst')
   state.SleepMode = M{['description']='Sleep Mode', 'Normal', 'MaxDuration'}
-  state.EnspellMode = M(false, 'Enspell Mode')
   state.NM = M(false, 'NM?')
   state.CP = M(false, 'Capacity Points Mode')
   state.WeaponSet = M{['description']='Weapon Set', 'Casting', 'Savage Blade', 'Seraph Blade', 'Black Halo', 'Enspell', 'Cleaving'}
   state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger',
       'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
+  state.ElementalMode = M{['description'] = 'Elemental Mode', 'Light','Dark','Fire','Ice','Wind','Earth','Lightning','Water'}
 
   state.Buff.Composure = buffactive.Composure or false
   state.Buff.Saboteur = buffactive.Saboteur or false
@@ -176,6 +176,15 @@ end
 function user_setup()
   silibs.user_setup_hook()
   ----------- Non-silibs content goes below this line -----------
+
+  include('Global-Binds.lua') -- Additional local binds
+
+  if player.sub_job == 'SCH' then
+    state.Buff['Light Arts'] = buffactive['Light Arts'] or false
+    state.Buff['Dark Arts'] = buffactive['Dark Arts'] or false
+    state.Buff['Addendum: White'] = buffactive['Addendum: White'] or false
+    state.Buff['Addendum: Black'] = buffactive['Addendum: Black'] or false
+  end
 
   select_default_macro_book()
   update_combat_form()
@@ -1176,7 +1185,7 @@ function init_gear_sets()
   })
 
   -- Job-specific buff sets
-  sets.buff.ComposureOther = {
+  sets.midcast.ComposureOther = {
     main=gear.Colada_ENH, --4
     sub={name="Ammurapi Shield", priority=1}, --10
     head="Lethargy Chappel +2",
@@ -1576,7 +1585,13 @@ function job_precast(spell, action, spellMap, eventArgs)
   silibs.precast_hook(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
 
-  if spellMap == 'Utsusemi' then
+  if spell.english == 'Addendum: White' and not state.Buff['Light Arts'] then
+    send_command('input /ja "Light Arts" <me>')
+    eventArgs.cancel = true
+  elseif spell.english == 'Addendum: Dark' and not state.Buff['Dark Arts'] then
+    send_command('input /ja "Dark Arts" <me>')
+    eventArgs.cancel = true
+  elseif spellMap == 'Utsusemi' then
     if buffactive['Copy Image (3)'] or buffactive['Copy Image (4+)'] then
       cancel_spell()
       add_to_chat(123, '**!! '..spell.english..' Canceled: [3+ IMAGES] !!**')
@@ -1637,9 +1652,33 @@ end
 function job_aftercast(spell, action, spellMap, eventArgs)
   silibs.aftercast_hook(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
-  
-  if spell.english:contains('Sleep') and not spell.interrupted then
-    set_sleep_timer(spell)
+
+  if not spell.interrupted then
+    if spell.english:contains('Sleep') then
+      set_sleep_timer(spell)
+    elseif spell.english == "Break" then
+      send_command('@timers c "Break ['..spell.target.name..']" 30 down spells/00255.png')
+    elseif spell.english == 'Light Arts' then
+      state.Buff['Light Arts'] = true
+      state.Buff['Dark Arts'] = false
+      state.Buff['Addendum: White'] = false
+      state.Buff['Addendum: Black'] = false
+    elseif spell.english == 'Dark Arts' then
+      state.Buff['Light Arts'] = false
+      state.Buff['Dark Arts'] = true
+      state.Buff['Addendum: White'] = false
+      state.Buff['Addendum: Black'] = false
+    elseif spell.english == 'Addendum: White' then
+      state.Buff['Light Arts'] = false
+      state.Buff['Dark Arts'] = false
+      state.Buff['Addendum: White'] = true
+      state.Buff['Addendum: Black'] = false
+    elseif spell.english == 'Addendum: Black' then
+      state.Buff['Light Arts'] = false
+      state.Buff['Dark Arts'] = false
+      state.Buff['Addendum: White'] = false
+      state.Buff['Addendum: Black'] = true
+    end
   end
     
   if in_battle_mode() then
@@ -1993,11 +2032,9 @@ function job_self_command(cmdParams, eventArgs)
   if cmdParams[1] == 'scholar' then
     handle_strategems(cmdParams)
     eventArgs.handled = true
-  elseif cmdParams[1] == 'nuke' then
-    handle_nuking(cmdParams)
+  elseif cmdParams[1] == 'elemental' then
+    silibs.handle_elemental(cmdParams)
     eventArgs.handled = true
-  elseif cmdParams[1] == 'enspell' then
-    send_command('@input /ma '..state.EnSpell.value..' <me>')
   elseif cmdParams[1] == 'barelement' then
     send_command('@input /ma '..state.BarElement.value..' <me>')
   elseif cmdParams[1] == 'barstatus' then
@@ -2248,50 +2285,55 @@ end)
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
   -- Default macro set/book
-  set_macro_page(1, 7)
+  set_macro_page(1, 8)
 end
-
 
 function set_main_keybinds()
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c interact')
   send_command('bind @w gs c toggle RearmingLock')
 
-  send_command('bind ^pageup gs c toyweapon cycle')
-  send_command('bind ^pagedown gs c toyweapon cycleback')
-  send_command('bind !pagedown gs c toyweapon reset')
-
-  send_command('bind ^` gs c cycle treasuremode')
-  send_command('bind @c gs c toggle CP')
   send_command('bind ^insert gs c weaponset cycle')
   send_command('bind ^delete gs c weaponset cycleback')
   send_command('bind !delete gs c weaponset reset')
 
-  send_command('bind !q input /ma "Temper II" <me>')
-  send_command('bind !e input /ma "Haste II" <stpc>')
-  send_command('bind !\' input /ma "Refresh III" <stpc>')
-  send_command('bind ^` input /ja "Composure" <me>')
+  send_command('bind ^home gs c toyweapon cycle')
+  send_command('bind ^end gs c toyweapon cycleback')
+  send_command('bind !end gs c toyweapon reset')
+
+  send_command('bind ^pageup gs c cycleback ElementalMode')
+  send_command('bind ^pagedown gs c cycle ElementalMode')
+  send_command('bind !pagedown gs c reset ElementalMode')
+
+  send_command('bind ^` gs c cycle treasuremode')
+  send_command('bind @c gs c toggle CP')
   send_command('bind !` gs c toggle MagicBurst')
   send_command('bind @s gs c cycle SleepMode')
-  send_command('bind @e gs c toggle EnspellMode')
   send_command('bind @d gs c toggle NM')
-  
-  send_command('bind !u input /ma "Blink" <me>')
-  send_command('bind !i input /ma "Stoneskin" <me>')
+
+  send_command('bind ~` input /ja "Composure" <me>')
+
+  send_command('bind !z input /ma "Temper II" <me>')
+  send_command('bind !x gs c elemental enspell')
+  send_command('bind !q gs c elemental tier4')
+  send_command('bind !w gs c elemental tier5')
+  send_command('bind !e input /ma "Haste II" <stpc>')
+  send_command('bind !u input /ma Blink <me>')
+  send_command('bind !i input /ma Stoneskin <me>')
+  send_command('bind !o input /ma "Phalanx II" <stpc>')
   send_command('bind !p input /ma "Aquaveil" <me>')
-  send_command('bind !; input /ma "Regen V" <stpc>')
-  send_command('bind !/ input /ma "Klimaform" <me>')
+  send_command('bind !; input /ma "Regen II" <stpc>')
+  send_command('bind !\' input /ma "Refresh III" <stpc>')
 end
 
 function set_sub_keybinds()
   if player.sub_job == 'SCH' then
+    send_command('bind !/ input /ma "Klimaform" <me>')
     send_command('bind ^- gs c scholar light')
     send_command('bind ^= gs c scholar dark')
     send_command('bind ^[ gs c scholar power')
-    send_command('bind ^] gs c scholar accuracy')
     send_command('bind ^\\\\ gs c scholar cost')
     send_command('bind ![ gs c scholar aoe')
-    send_command('bind !] gs c scholar duration')
     send_command('bind !\\\\ gs c scholar speed')
   end
 end
@@ -2301,38 +2343,44 @@ function unbind_keybinds()
   send_command('unbind !d')
   send_command('unbind @w')
 
+  send_command('unbind ^insert')
+  send_command('unbind ^delete')
+  send_command('unbind !delete')
+
+  send_command('unbind ^home')
+  send_command('unbind ^end')
+  send_command('unbind !end')
+
   send_command('unbind ^pageup')
   send_command('unbind ^pagedown')
   send_command('unbind !pagedown')
 
   send_command('unbind ^`')
   send_command('unbind @c')
-  send_command('unbind ^insert')
-  send_command('unbind ^delete')
-  send_command('unbind !delete')
-  
-  send_command('unbind !q')
-  send_command('unbind !e')
-  send_command('unbind !\'')
-  send_command('unbind ^`')
   send_command('unbind !`')
   send_command('unbind @s')
-  send_command('unbind @e')
   send_command('unbind @d')
-  
+
+  send_command('unbind ~`')
+
+  send_command('unbind !z')
+  send_command('unbind !x')
+  send_command('unbind !q')
+  send_command('unbind !w')
+  send_command('unbind !e')
   send_command('unbind !u')
   send_command('unbind !i')
+  send_command('unbind !o')
   send_command('unbind !p')
   send_command('unbind !;')
+  send_command('unbind !\'')
+  
   send_command('unbind !/')
-
   send_command('unbind ^-')
   send_command('unbind ^=')
   send_command('unbind ^[')
-  send_command('unbind ^]')
   send_command('unbind ^\\\\')
   send_command('unbind ![')
-  send_command('unbind !]')
   send_command('unbind !\\\\')
 end
 

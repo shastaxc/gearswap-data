@@ -1258,8 +1258,10 @@ function job_precast(spell, action, spellMap, eventArgs)
     add_to_chat(167, 'Cancelling Caper Emissarius due to targeting self.')
     eventArgs.cancel = true
   elseif spell.english == 'Addendum: White' and not state.Buff['Light Arts'] then
+    send_command('input /ja "Light Arts" <me>')
     eventArgs.cancel = true
-  elseif spell.english == 'Addendum: White' and not state.Buff['Light Arts'] then
+  elseif spell.english == 'Addendum: Dark' and not state.Buff['Dark Arts'] then
+    send_command('input /ja "Dark Arts" <me>')
     eventArgs.cancel = true
   elseif spell.english:startswith('Aspir') then
     refine_various_spells(spell, action, spellMap, eventArgs)
@@ -1634,7 +1636,7 @@ function job_self_command(cmdParams, eventArgs)
     handle_strategems(cmdParams)
     eventArgs.handled = true
   elseif cmdParams[1] == 'elemental' then
-    handle_elemental(cmdParams)
+    silibs.handle_elemental(cmdParams)
     eventArgs.handled = true
   elseif cmdParams[1] == 'bind' then
     set_main_keybinds()
@@ -1807,40 +1809,6 @@ function handle_strategems(cmdParams)
     end
   else
     add_to_chat(123,'No arts has been activated yet.')
-  end
-end
-
-function handle_elemental(cmdParams)
-  if not cmdParams[2] then
-    add_to_chat(123,'Error: No elemental command given.')
-    return
-  end
-  local command = cmdParams[2]:lower()
-
-  if command == 'storm' then
-    -- Leave out target. Let shortcuts addon determine target.
-    windower.chat.input('/ma "'..elements.storm_of[state.ElementalMode.value]..' II"')
-    return
-  end
-
-  local target = '<t>'
-  if cmdParams[3] then
-    if tonumber(cmdParams[3]) then
-      target = cmdParams[3]
-    else
-      target = table.concat(cmdParams, ' ', 3)
-      target = get_closest_mob_id_by_name(target) or '<t>'
-    end
-  end
-  if command:contains('tier') then
-    local spell_recasts = windower.ffxi.get_spell_recasts()
-    local tierlist = {['tier1']='',['tier2']=' II',['tier3']=' III',['tier4']=' IV',['tier5']=' V',['tier6']=' VI'}
-
-    windower.chat.input('/ma "'..elements.nuke_of[state.ElementalMode.value]..tierlist[command]..'" '..target..'')
-  elseif command == 'helix' then
-    windower.chat.input('/ma "'..elements.helix_of[state.ElementalMode.value]..'helix II" '..target..'')
-  else
-    add_to_chat(123,'Unrecognized elemental command.')
   end
 end
 

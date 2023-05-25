@@ -157,7 +157,14 @@ function user_setup()
   ----------- Non-silibs content goes below this line -----------
 
   include('Global-Binds.lua') -- Additional local binds
-  
+
+  if player.sub_job == 'SCH' then
+    state.Buff['Light Arts'] = buffactive['Light Arts'] or false
+    state.Buff['Dark Arts'] = buffactive['Dark Arts'] or false
+    state.Buff['Addendum: White'] = buffactive['Addendum: White'] or false
+    state.Buff['Addendum: Black'] = buffactive['Addendum: Black'] or false
+  end
+
   select_default_macro_book()
   set_sub_keybinds()
 end
@@ -1021,6 +1028,14 @@ function job_precast(spell, action, spellMap, eventArgs)
   silibs.precast_hook(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
 
+  if spell.english == 'Addendum: White' and not state.Buff['Light Arts'] then
+    send_command('input /ja "Light Arts" <me>')
+    eventArgs.cancel = true
+  elseif spell.english == 'Addendum: Dark' and not state.Buff['Dark Arts'] then
+    send_command('input /ja "Dark Arts" <me>')
+    eventArgs.cancel = true
+  end
+  
   -- Warn if trying to do blood pact without enough mp
   if pet.name == spell.english and pet.hpp > 50 then
     add_to_chat(122, "You already have that avatar active!")
@@ -1102,6 +1117,30 @@ end
 function job_aftercast(spell, action, spellMap, eventArgs)
   silibs.aftercast_hook(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
+
+  if not spell.interrupted then
+    if spell.english == 'Light Arts' then
+      state.Buff['Light Arts'] = true
+      state.Buff['Dark Arts'] = false
+      state.Buff['Addendum: White'] = false
+      state.Buff['Addendum: Black'] = false
+    elseif spell.english == 'Dark Arts' then
+      state.Buff['Light Arts'] = false
+      state.Buff['Dark Arts'] = true
+      state.Buff['Addendum: White'] = false
+      state.Buff['Addendum: Black'] = false
+    elseif spell.english == 'Addendum: White' then
+      state.Buff['Light Arts'] = false
+      state.Buff['Dark Arts'] = false
+      state.Buff['Addendum: White'] = true
+      state.Buff['Addendum: Black'] = false
+    elseif spell.english == 'Addendum: Black' then
+      state.Buff['Light Arts'] = false
+      state.Buff['Dark Arts'] = false
+      state.Buff['Addendum: White'] = false
+      state.Buff['Addendum: Black'] = true
+    end
+  end
 
   if state.CastingMode.current == 'NirvAM' then
     equip({ main="Nirvana", sub="Elan Strap +1",})
@@ -1438,7 +1477,7 @@ function handle_siphoning()
       -- weather if not.
       -- If the current weather matches the current avatar's element (being used to reduce
       -- perpetuation), don't change it; just accept the penalty on Siphon.
-      if world.weather_element == elements.weak_to[world.day_element] and
+      if world.weather_element == silibs.elements.weak_to[world.day_element] and
           (not pet.isvalid or world.weather_element ~= pet.element) then
         stormElementToUse = world.day_element
       end
@@ -1448,7 +1487,7 @@ function handle_siphoning()
   -- If we decided to use a storm, set that as the spirit element to cast.
   if stormElementToUse then
     siphonElement = stormElementToUse
-  elseif world.weather_element ~= 'None' and (get_weather_intensity() == 2 or world.weather_element ~= elements.weak_to[world.day_element]) then
+  elseif world.weather_element ~= 'None' and (get_weather_intensity() == 2 or world.weather_element ~= silibs.elements.weak_to[world.day_element]) then
     siphonElement = world.weather_element
   else
     siphonElement = world.day_element
@@ -1464,12 +1503,12 @@ function handle_siphoning()
   end
 
   if stormElementToUse then
-    command = command..'input /ma "'..elements.storm_of[stormElementToUse]..'" <me>;wait 4;'
+    command = command..'input /ma "'..silibs.elements.storm_of[stormElementToUse]..'" <me>;wait 4;'
     releaseWait = releaseWait - 4
   end
 
   if not (pet.isvalid and spirits:contains(pet.name)) then
-    command = command..'input /ma "'..elements.spirit_of[siphonElement]..'" <me>;wait 4;'
+    command = command..'input /ma "'..silibs.elements.spirit_of[siphonElement]..'" <me>;wait 4;'
     releaseWait = releaseWait - 4
   end
 
@@ -1580,22 +1619,22 @@ function handle_strategems(cmdParams)
   local strategem = cmdParams[2]
 
   if strategem == 'light' then
-    if buffactive['light arts'] then
+    if state.Buff['Light Arts'] then
       send_command('input /ja "Addendum: White" <me>')
-    elseif buffactive['addendum: white'] then
+    elseif state.Buff['Addendum: White'] then
       add_to_chat(122,'Error: Addendum: White is already active.')
     else
       send_command('input /ja "Light Arts" <me>')
     end
   elseif strategem == 'dark' then
-    if buffactive['dark arts'] then
+    if state.Buff['Dark Arts'] then
       send_command('input /ja "Addendum: Black" <me>')
-    elseif buffactive['addendum: black'] then
+    elseif state.Buff['Addendum: Black'] then
       add_to_chat(122,'Error: Addendum: Black is already active.')
     else
       send_command('input /ja "Dark Arts" <me>')
     end
-  elseif buffactive['light arts'] or buffactive['addendum: white'] then
+  elseif state.Buff['Light Arts'] or state.Buff['Addendum: White'] then
     if strategem == 'cost' then
       send_command('input /ja Penury <me>')
     elseif strategem == 'speed' then
@@ -1617,7 +1656,7 @@ function handle_strategems(cmdParams)
     else
       add_to_chat(123,'Error: Unknown strategem ['..strategem..']')
     end
-  elseif buffactive['dark arts']  or buffactive['addendum: black'] then
+  elseif state.Buff['Dark Arts'] or state.Buff['Addendum: Black'] then
     if strategem == 'cost' then
       send_command('input /ja Parsimony <me>')
     elseif strategem == 'speed' then
@@ -1723,6 +1762,7 @@ function set_sub_keybinds()
   if player.sub_job == 'SCH' then
     send_command('bind ^- gs c scholar light')
     send_command('bind ^= gs c scholar dark')
+    send_command('bind ^[ gs c scholar power')
     send_command('bind ^\\\\ gs c scholar cost')
     send_command('bind ![ gs c scholar aoe')
     send_command('bind !\\\\ gs c scholar speed')
@@ -1767,11 +1807,12 @@ function unbind_keybinds()
   send_command('unbind !z')
   send_command('unbind !x')
   
-  send_command('unbind ^-')
-  send_command('unbind ^=')
-  send_command('unbind ^\\\\')
-  send_command('unbind ![')
-  send_command('unbind !\\\\')
+  send_command('bind ^-')
+  send_command('bind ^=')
+  send_command('bind ^[')
+  send_command('bind ^\\\\')
+  send_command('bind ![')
+  send_command('bind !\\\\')
 
   send_command('unbind !c')
   send_command('unbind ^pageup')

@@ -67,6 +67,13 @@ function user_setup()
 
   include('Global-Binds.lua') -- Additional local binds
 
+  if player.sub_job == 'SCH' then
+    state.Buff['Light Arts'] = buffactive['Light Arts'] or false
+    state.Buff['Dark Arts'] = buffactive['Dark Arts'] or false
+    state.Buff['Addendum: White'] = buffactive['Addendum: White'] or false
+    state.Buff['Addendum: Black'] = buffactive['Addendum: Black'] or false
+  end
+
   select_default_macro_book()
   set_sub_keybinds()
 end
@@ -1658,7 +1665,13 @@ function job_precast(spell, action, spellMap, eventArgs)
   silibs.precast_hook(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
 
-  if spell.english:startswith('Geo-') and pet.isvalid then
+  if spell.english == 'Addendum: White' and not state.Buff['Light Arts'] then
+    send_command('input /ja "Light Arts" <me>')
+    eventArgs.cancel = true
+  elseif spell.english == 'Addendum: Dark' and not state.Buff['Dark Arts'] then
+    send_command('input /ja "Dark Arts" <me>')
+    eventArgs.cancel = true
+  elseif spell.english:startswith('Geo-') and pet.isvalid then
     eventArgs.cancel = true
     windower.chat.input('/ja "Full Circle" <me>')
     windower.chat.input:schedule(1.3,'/ma "'..spell.english..'" '..spell.target.raw..'')
@@ -1771,6 +1784,7 @@ end
 function job_aftercast(spell, action, spellMap, eventArgs)
   silibs.aftercast_hook(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
+
   if not spell.interrupted then
     if spell.english:startswith('Indi-') then
       send_command('@timers d "'..spell.target.name..': '..indi_timer..'"')
@@ -1786,6 +1800,26 @@ function job_aftercast(spell, action, spellMap, eventArgs)
       send_command('@timers c "'..spell.english..' ['..spell.target.name..']" 60 down spells/00220.png')
     elseif spell.english == 'Sleep II' or spell.english == 'Sleepga II' then
       send_command('@timers c "'..spell.english..' ['..spell.target.name..']" 90 down spells/00220.png')
+    elseif spell.english == 'Light Arts' then
+      state.Buff['Light Arts'] = true
+      state.Buff['Dark Arts'] = false
+      state.Buff['Addendum: White'] = false
+      state.Buff['Addendum: Black'] = false
+    elseif spell.english == 'Dark Arts' then
+      state.Buff['Light Arts'] = false
+      state.Buff['Dark Arts'] = true
+      state.Buff['Addendum: White'] = false
+      state.Buff['Addendum: Black'] = false
+    elseif spell.english == 'Addendum: White' then
+      state.Buff['Light Arts'] = false
+      state.Buff['Dark Arts'] = false
+      state.Buff['Addendum: White'] = true
+      state.Buff['Addendum: Black'] = false
+    elseif spell.english == 'Addendum: Black' then
+      state.Buff['Light Arts'] = false
+      state.Buff['Dark Arts'] = false
+      state.Buff['Addendum: White'] = false
+      state.Buff['Addendum: Black'] = true
     end
   end
 
@@ -2007,8 +2041,11 @@ function job_self_command(cmdParams, eventArgs)
   silibs.self_command(cmdParams, eventArgs)
   ----------- Non-silibs content goes below this line -----------
 
-  if cmdParams[1] == 'elemental' then
-    handle_elemental(cmdParams)
+  if cmdParams[1] == 'scholar' then
+    handle_strategems(cmdParams)
+    eventArgs.handled = true
+  elseif cmdParams[1] == 'elemental' then
+    silibs.handle_elemental(cmdParams)
     eventArgs.handled = true
   elseif cmdParams[1] == 'weaponset' then
     if cmdParams[2] == 'cycle' then
@@ -2043,59 +2080,80 @@ function get_custom_wsmode(spell, action, spellMap)
   return wsmode
 end
 
--- Handling Elemental spells within Gearswap.
--- Format: gs c elemental <nuke, helix, skillchain1, skillchain2, weather>
-function handle_elemental(cmdParams)
-  -- cmdParams[1] == 'elemental'
-  -- cmdParams[2] == ability to use
+-- General handling of strategems in an Arts-agnostic way.
+-- Format: gs c scholar <strategem>
+function handle_strategems(cmdParams)
+  -- cmdParams[1] == 'scholar'
+  -- cmdParams[2] == strategem to use
 
   if not cmdParams[2] then
-    add_to_chat(123,'Error: No elemental command given.')
+    add_to_chat(123,'Error: No strategem command given.')
     return
   end
-  local command = cmdParams[2]:lower()
+  local strategem = cmdParams[2]
 
-  if command == 'storm' then
-    windower.chat.input('/ma "'..elements.storm_of[state.ElementalMode.value]..'"')
-    return
-  end
-
-  local target = '<t>'
-  if cmdParams[3] then
-    if tonumber(cmdParams[3]) then
-      target = cmdParams[3]
+  if strategem == 'light' then
+    if state.Buff['Light Arts'] then
+      send_command('input /ja "Addendum: White" <me>')
+    elseif state.Buff['Addendum: White'] then
+      add_to_chat(122,'Error: Addendum: White is already active.')
     else
-      target = table.concat(cmdParams, ' ', 3)
-      target = get_closest_mob_id_by_name(target) or '<t>'
+      send_command('input /ja "Light Arts" <me>')
     end
-  end
-  if command:contains('tier') then
-    local spell_recasts = windower.ffxi.get_spell_recasts()
-    local tierlist = {['tier1']='',['tier2']=' II',['tier3']=' III',['tier4']=' IV',['tier5']=' V',['tier6']=' VI'}
-    local nuke = elements.nuke_of[state.ElementalMode.value]
-
-    if state.ElementalMode.value ~= 'Light' and state.ElementalMode.value ~= 'Dark' then
-      windower.chat.input('/ma "'..nuke..tierlist[command]..'" '..target)
+  elseif strategem == 'dark' then
+    if state.Buff['Dark Arts'] then
+      send_command('input /ja "Addendum: Black" <me>')
+    elseif state.Buff['Addendum: Black'] then
+      add_to_chat(122,'Error: Addendum: Black is already active.')
+    else
+      send_command('input /ja "Dark Arts" <me>')
     end
-  elseif command:contains('ara') then
-    local spell_recasts = windower.ffxi.get_spell_recasts()
-    local tierkey = {'ara3','ara2','ara'}
-    local tierlist = {['ara3']='ra III',['ara2']='ra II',['ara']='ra'}
-    local nuke = elements.nukera_of[state.ElementalMode.value]
-    if state.ElementalMode.value ~= 'Light' and state.ElementalMode.value ~= 'Dark' then
-      if command == 'ara' then
-        for i in ipairs(tierkey) do
-          if actual_cost(get_spell_table_by_name(nuke..tierlist[tierkey[i]]..'')) < player.mp then
-            windower.chat.input('/ma "'..nuke..tierlist[tierkey[i]]..'" '..target)
-            return
-          end
-        end
-      else
-        windower.chat.input('/ma "'..nuke..tierlist[command]..'" '..target)
-      end
+  elseif state.Buff['Light Arts'] or state.Buff['Addendum: White'] then
+    if strategem == 'cost' then
+      send_command('input /ja Penury <me>')
+    elseif strategem == 'speed' then
+      send_command('input /ja Celerity <me>')
+    elseif strategem == 'aoe' then
+      send_command('input /ja Accession <me>')
+    elseif strategem == 'power' then
+      send_command('input /ja Rapture <me>')
+    elseif strategem == 'duration' then
+      send_command('input /ja Perpetuance <me>')
+    elseif strategem == 'accuracy' then
+      send_command('input /ja Altruism <me>')
+    elseif strategem == 'enmity' then
+      send_command('input /ja Tranquility <me>')
+    elseif strategem == 'skillchain' then
+      add_to_chat(122,'Error: Light Arts does not have a skillchain strategem.')
+    elseif strategem == 'addendum' then
+      send_command('input /ja "Addendum: White" <me>')
+    else
+      add_to_chat(123,'Error: Unknown strategem ['..strategem..']')
+    end
+  elseif state.Buff['Dark Arts'] or state.Buff['Addendum: Black'] then
+    if strategem == 'cost' then
+      send_command('input /ja Parsimony <me>')
+    elseif strategem == 'speed' then
+      send_command('input /ja Alacrity <me>')
+    elseif strategem == 'aoe' then
+      send_command('input /ja Manifestation <me>')
+    elseif strategem == 'power' then
+      send_command('input /ja Ebullience <me>')
+    elseif strategem == 'duration' then
+      add_to_chat(122,'Error: Dark Arts does not have a duration strategem.')
+    elseif strategem == 'accuracy' then
+      send_command('input /ja Focalization <me>')
+    elseif strategem == 'enmity' then
+      send_command('input /ja Equanimity <me>')
+    elseif strategem == 'skillchain' then
+      send_command('input /ja Immanence <me>')
+    elseif strategem == 'addendum' then
+      send_command('input /ja "Addendum: Black" <me>')
+    else
+      add_to_chat(123,'Error: Unknown strategem ['..strategem..']')
     end
   else
-    add_to_chat(123,'Unrecognized elemental command.')
+    add_to_chat(123,'No arts has been activated yet.')
   end
 end
 
@@ -2222,8 +2280,8 @@ function set_main_keybinds()
   
   send_command('bind !q gs c elemental tier4')
   send_command('bind !w gs c elemental tier5')
-  send_command('bind !e gs c elemental ara2')
-  send_command('bind !r gs c elemental ara3')
+  send_command('bind !z gs c elemental ara2')
+  send_command('bind !x gs c elemental ara3')
 
   send_command('bind ^insert gs c weaponset cycle')
   send_command('bind ^delete gs c weaponset cycleback')
@@ -2243,13 +2301,19 @@ end
 
 function set_sub_keybinds()
   if player.sub_job == 'WHM' or player.sub_job == 'RDM' then
-    -- send_command('bind !e input /ma "Haste" <stpc>')
+    send_command('bind !e input /ma "Haste" <stpc>')
   end
   if player.sub_job == 'RDM' then
     send_command('bind !\' input /ma "Refresh" <stpc>')
   end
   if player.sub_job == 'SCH' then
     send_command('bind !c gs c elemental storm')
+    send_command('bind ^- gs c scholar light')
+    send_command('bind ^= gs c scholar dark')
+    send_command('bind ^[ gs c scholar power')
+    send_command('bind ^\\\\ gs c scholar cost')
+    send_command('bind ![ gs c scholar aoe')
+    send_command('bind !\\\\ gs c scholar speed')
   end
 end
 
@@ -2259,13 +2323,11 @@ function unbind_keybinds()
   send_command('unbind !d')
   send_command('unbind @w')
   send_command('unbind ^u')
-
-  send_command('unbind !c')
   
   send_command('unbind !q')
   send_command('unbind !w')
-  send_command('unbind !e')
-  send_command('unbind !r')
+  send_command('unbind !z')
+  send_command('unbind !x')
 
   send_command('unbind ^insert')
   send_command('unbind ^delete')
@@ -2274,16 +2336,25 @@ function unbind_keybinds()
   send_command('unbind !`')
   send_command('unbind @q')
 
-  send_command('unbind !e')
-  send_command('unbind !\'')
-
   send_command('unbind ^pageup')
   send_command('unbind ^pagedown')
   send_command('unbind !pagedown')
-
+  
   send_command('unbind !`')
   send_command('unbind ^backspace')
   send_command('unbind !backspace')
+  
+  send_command('unbind !e')
+  
+  send_command('unbind !\'')
+  
+  send_command('unbind !c')
+  send_command('unbind ^-')
+  send_command('unbind ^=')
+  send_command('unbind ^[')
+  send_command('unbind ^\\\\')
+  send_command('unbind ![')
+  send_command('unbind !\\\\')
 end
 
 function test()
