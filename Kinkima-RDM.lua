@@ -568,9 +568,12 @@ function init_gear_sets()
     -- 673 Power
   }
 
+  -- Removal rate = Base Rate * (1+(y/100))
+  -- Base rate = (10+(Healing Skill / 30)); y = Cursna+ stat from gear
+  -- Mithra RDM M30 Healing Magic Skill = 414
   sets.midcast.Cursna = {
-    main="Gada",                  -- 18, __,  6
-    sub="Culminus",
+    -- main="Prelatic Pole",      -- 10, __, __
+    -- sub="Curatio Grip",        --  3, __, __
     ammo="Incantor Stone",        -- __, __,  2
     head=gear.Vanya_B_head,       -- 20, __, __
     body=gear.Vanya_B_body,       -- 20, __, __
@@ -584,9 +587,8 @@ function init_gear_sets()
     ring2="Menelaus's Ring",      -- 15, 20,-10
     back="Oretania's Cape +1",    -- __,  5, __
     waist="Embla Sash",           -- __, __,  5
-    -- sub="Chanter's Shield",    -- __, __,  3
-    -- Base stats                   416, __, __
-    -- 567 Healing skill, 70 Cursna+, 10 FC; Cursna Rate = 49.13%
+    -- Base stats                   414, __, __
+    -- 560 Healing skill, 70 Cursna+, 1 FC; Cursna Rate = 48.73%
   }
 
   -- Blink used as defensive while in combat. Focus on DT, MEVA, and Duration.
