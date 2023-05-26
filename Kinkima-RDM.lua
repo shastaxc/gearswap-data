@@ -927,7 +927,7 @@ function init_gear_sets()
     body="Lethargy Sayon +3",         -- ___, 64, 45, __ (__, 18, __, __) [14/14, 136]
     hands="Lethargy Gantherots +2",   -- ___, 52, 45, __ (__, __, __, 24) [10/10,  77]
     legs=gear.Chironic_MAcc_legs,     -- ___, 57, 29, __ ( 1, __, __, 13) [__/__, 118]
-    feet="Vitiation Boots +1",        -- ___, 15, 22, __ (__, __, __, 12) [__/__, 107]; Immunobreak+
+    feet="Vitiation Boots +3",        -- ___, 43, 32, __ (__, 10, __, 16) [__/__, 127]; Immunobreak+
     neck="Duelist's Torque +2",       -- ___, 30, 15, __ (__, 10, 25, __) [__/__, ___]
     ear1="Snotra Earring",            -- ___, 10,  8, __ (__, __, 10, __) [__/__, ___]
     ear2="Malignance Earring",        -- ___, 10,  8,  4 (__, __, __, __) [__/__, ___]
@@ -937,11 +937,10 @@ function init_gear_sets()
     waist="Obstinate Sash",           -- ___, 15,  5, __ (__, __,  5, 15) [__/__, ___]
     -- Empy set effect                   ___, __, __, __ (__, __, 10, __) [__/__, ___]
     -- Traits/Gifts/Merits            --              38
-    -- 238 M.Acc skill, 429 M.Acc, 315 MND, 52 FC (1 Immunobreak, 48 Enf. Effect, 50 Enf. Duration, 98 Enf. Skill) [34 PDT/24 MDT, 563 M.Eva]
+    -- 238 M.Acc skill, 457 M.Acc, 325 MND, 52 FC (1 Immunobreak, 58 Enf. Effect, 50 Enf. Duration, 102 Enf. Skill) [34 PDT/24 MDT, 583 M.Eva]
     
     -- hands="Lethargy Gantherots +3",-- ___, 62, 50, __ (__, __, __, 29) [11/11,  87]
     -- legs=gear.Chironic_MAcc_legs,  -- ___, 60, 29, __ ( 1, __, __, 13) [__/__, 118]
-    -- feet="Vitiation Boots +3",     -- ___, 43, 32, __ (__, 10, __, 16) [__/__, 127]; Immunobreak+
     -- 238 M.Acc skill, 470 M.Acc, 330 MND, 52 FC (1 Immunobreak, 58 Enf. Effect, 50 Enf. Duration, 115 Enf. Skill) [34 PDT/24 MDT, 593 M.Eva]
   }
   sets.midcast.MndEnfeeblesDW = set_combine(sets.midcast.MndEnfeebles, {
@@ -959,7 +958,7 @@ function init_gear_sets()
     body="Atrophy Tabard +2",         -- ___, 45, 38, __ (__, __, __, 19) [__/__,  90]
     hands="Lethargy Gantherots +2",   -- ___, 52, 45, __ (__, __, __, 24) [10/10,  77]
     legs=gear.Chironic_MAcc_legs,     -- ___, 57, 29, __ ( 1, __, __, 13) [__/__, 118]
-    feet="Vitiation Boots +1",        -- ___, 15, 22, __ (__, __, __, 12) [__/__, 107]; Immunobreak+
+    feet="Vitiation Boots +3",        -- ___, 43, 32, __ (__, 10, __, 16) [__/__, 127]; Immunobreak+
     neck="Duelist's Torque +2",       -- ___, 30, 15, __ (__, 10, 25, __) [__/__, ___]
     ear1="Snotra Earring",            -- ___, 10,  8, __ (__, __, 10, __) [__/__, ___]
     ear2="Malignance Earring",        -- ___, 10,  8,  4 (__, __, __, __) [__/__, ___]
@@ -970,16 +969,16 @@ function init_gear_sets()
     -- Empy set effect                   ___, __, __, __ (__, __, __, __) [__/__, ___]
     -- AF set bonus                      ___, 15
     -- Traits/Gifts/Merits                            38
-    -- 255 M.Acc skill, 456 M.Acc, 272 MND, 72 FC (1 Immunobreak, 20 Enf. Effect, 40 Enf. Duration, 125 Enf. Skill) [20 PDT/10 MDT, 487 M.Eva]
+    -- 255 M.Acc skill, 484 M.Acc, 272 MND, 72 FC (1 Immunobreak, 30 Enf. Effect, 40 Enf. Duration, 129 Enf. Skill) [20 PDT/10 MDT, 507 M.Eva]
     
     -- body="Atrophy Tabard +3",      -- ___, 55, 43, __ (__, __, __, 21) [__/__, 100]
     -- hands="Lethargy Gantherots +3",-- ___, 62, 50, __ (__, __, __, 29) [11/11,  87]
     -- legs=gear.Chironic_MAcc_legs,  -- ___, 60, 29, __ ( 1, __, __, 13) [__/__, 118]
-    -- feet="Vitiation Boots +3",     -- ___, 43, 32, __ (__, 10, __, 16) [__/__, 127]; Immunobreak+
+    -- 255 M.Acc skill, 507 M.Acc, 291 MND, 72 FC (1 Immunobreak, 30 Enf. Effect, 40 Enf. Duration, 136 Enf. Skill) [21 PDT/11 MDT, 527 M.Eva]
   }
   sets.midcast.MndEnfeeblesAccDW = set_combine(sets.midcast.MndEnfeeblesAcc, {
     -- main="Crocea Mors",            -- 255, 50, __, 20 (__, __, __, __) [__/__, ___]
-    main="Daybreak",                  -- 242, 40, 30, __ (__, __, __, __) [__/__,  30]
+    sub="Daybreak",                  -- 242, 40, 30, __ (__, __, __, __) [__/__,  30]
   })
 
   -- Spells that have 100% accuracy. Focus on duration.
@@ -1019,7 +1018,7 @@ function init_gear_sets()
     body="Lethargy Sayon +3",         -- ___, 64, 47, __ (__, 18, __, __) [14/14, 136]
     hands="Lethargy Gantherots +2",   -- ___, 52, 28, __ (__, __, __, 24) [10/10,  77]
     legs=gear.Chironic_MAcc_legs,     -- ___, 57, 42, __ ( 1, __, __, 13) [__/__, 118]
-    feet="Vitiation Boots +1",        -- ___, 15, 20, __ (__, __, __, 12) [__/__, 107]; Immunobreak+
+    feet="Vitiation Boots +3",        -- ___, 43, 32, __ (__, 10, __, 16) [__/__, 127]; Immunobreak+
     neck="Duelist's Torque +2",       -- ___, 30, 15, __ (__, 10, 25, __) [__/__, ___]
     ear1="Snotra Earring",            -- ___, 10, __, __ (__, __, 10, __) [__/__, ___]
     ear2="Malignance Earring",        -- ___, 10,  8,  4 (__, __, __, __) [__/__, ___]
@@ -1029,11 +1028,10 @@ function init_gear_sets()
     waist="Obstinate Sash",           -- ___, 15, __, __ (__, __,  5, 15) [__/__, ___]
     -- Empy set effect                   ___, __, __, __ (__, __, 10, __) [__/__, ___]
     -- Traits/Gifts/Merits            --              38
-    -- 228 M.Acc skill, 416 M.Acc, 268 INT, 42 FC (1 Immunobreak, 38 Enf. Effect, 50 Enf. Duration, 118 Enf. Skill) [34 PDT/24 MDT, 543 M.Eva]
+    -- 228 M.Acc skill, 444 M.Acc, 280 INT, 42 FC (1 Immunobreak, 48 Enf. Effect, 50 Enf. Duration, 122 Enf. Skill) [34 PDT/24 MDT, 563 M.Eva]
 
     -- hands="Lethargy Gantherots +3",-- ___, 62, 50, __ (__, __, __, 29) [11/11,  87]
     -- legs=gear.Chironic_MAcc_legs,  -- ___, 60, 29, __ ( 1, __, __, 13) [__/__, 118]
-    -- feet="Vitiation Boots +3",     -- ___, 43, 32, __ (__, 10, __, 16) [__/__, 127]; Immunobreak+
     -- 228 M.Acc skill, 457 M.Acc, 289 INT, 42 FC (1 Immunobreak, 48 Enf. Effect, 50 Enf. Duration, 127 Enf. Skill) [35 PDT/25 MDT, 573 M.Eva]
   }
   sets.midcast.IntEnfeeblesDW = set_combine(sets.midcast.IntEnfeebles, {})
@@ -1048,7 +1046,7 @@ function init_gear_sets()
     body="Atrophy Tabard +2",         -- ___, 45, 38, __ (__, __, __, 19) [__/__,  90]
     hands="Lethargy Gantherots +2",   -- ___, 52, 28, __ (__, __, __, 24) [10/10,  77]
     legs=gear.Chironic_MAcc_legs,     -- ___, 57, 42, __ ( 1, __, __, 13) [__/__, 118]
-    feet="Vitiation Boots +1",        -- ___, 15, 20, __ (__, __, __, 12) [__/__, 107]; Immunobreak+
+    feet="Vitiation Boots +3",        -- ___, 43, 32, __ (__, 10, __, 16) [__/__, 127]; Immunobreak+
     neck="Duelist's Torque +2",       -- ___, 30, 15, __ (__, 10, 25, __) [__/__, ___]
     ear1="Snotra Earring",            -- ___, 10, __, __ (__, __, 10, __) [__/__, ___]
     ear2="Malignance Earring",        -- ___, 10,  8,  4 (__, __, __, __) [__/__, ___]
@@ -1059,13 +1057,12 @@ function init_gear_sets()
     -- Empy set effect                   ___, __, __, __ (__, __, __, __) [__/__, ___]
     -- AF set bonus                      ___, 15
     -- Traits/Gifts/Merits                            38
-    -- 228 M.Acc skill, 452 M.Acc, 248 INT, 42 FC (1 Immunobreak, 20 Enf. Effect, 40 Enf. Duration, 137 Enf. Skill) [20 PDT/10 MDT, 497 M.Eva]
+    -- 228 M.Acc skill, 480 M.Acc, 260 INT, 42 FC (1 Immunobreak, 30 Enf. Effect, 40 Enf. Duration, 141 Enf. Skill) [20 PDT/10 MDT, 517 M.Eva]
     
     -- body="Atrophy Tabard +3",      -- ___, 55, 43, __ (__, __, __, 21) [__/__, 100]
     -- hands="Lethargy Gantherots +3",-- ___, 62, 33, __ (__, __, __, 29) [11/11,  87]
-    -- legs=gear.Chironic_MAcc_legs,  -- ___, 60, 29, __ ( 1, __, __, 13) [__/__, 118]
-    -- feet="Vitiation Boots +3",     -- ___, 43, 30, __ (__, 10, __, 16) [__/__, 127]; Immunobreak+
-    -- 228 M.Acc skill, 503 M.Acc, 255 INT, 42 FC (1 Immunobreak, 30 Enf. Effect, 40 Enf. Duration, 148 Enf. Skill) [21 PDT/11 MDT, 537 M.Eva]
+    -- legs=gear.Chironic_MAcc_legs,  -- ___, 60, 42, __ ( 1, __, __, 13) [__/__, 118]
+    -- 228 M.Acc skill, 503 M.Acc, 270 INT, 42 FC (1 Immunobreak, 30 Enf. Effect, 40 Enf. Duration, 148 Enf. Skill) [21 PDT/11 MDT, 537 M.Eva]
   })
   sets.midcast.IntEnfeeblesAccDW = set_combine(sets.midcast.IntEnfeeblesAcc, {})
 
@@ -1107,7 +1104,7 @@ function init_gear_sets()
     body="Atrophy Tabard +2", --19
     hands=gear.Kaykaus_C_hands, --16, 53macc
     legs=gear.Chironic_MAcc_legs,
-    feet="Vitiation Boots +1",        -- ___, 15, 22, __ (__, __, __, 12) [__/__, 107]; Immunobreak+
+    feet="Vitiation Boots +3", --16
     neck="Duelist's torque +2", --10% pot
     ear1="Regal Earring", --15Macc with Atrophy Gear
     ear2="Snotra Earring", --10% Dur
@@ -1118,10 +1115,9 @@ function init_gear_sets()
     
     -- body="Atrophy Tabard +3", --21
     -- legs=gear.Chironic_MAcc_legs,
-    -- feet="Vitiation Boots +3", --16
   })--355 Macc + 146 aug macc + 30 M.Acc AF Bonus + 625 Enfeebling Skill + 228 macc skill = 1384 (Enfeeb == Macc according to wikia)
   sets.midcast.SkillEnfeeblesDW = set_combine(sets.midcast.SkillEnfeebles, {
-    -- main={name="Crocea Mors", priority=1},  --255+50
+    -- main="Crocea Mors",  --255+50
     sub="Daybreak", --40 bonus magic acc
   })
     
