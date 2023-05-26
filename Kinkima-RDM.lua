@@ -112,12 +112,28 @@ function job_setup()
   state.Buff.Composure = buffactive.Composure or false
   state.Buff.Saboteur = buffactive.Saboteur or false
   state.Buff.Stymie = buffactive.Stymie or false
+
+  enfeebling_stat_map = {
+    ['Addle'] = 'MND', ['Addle II'] = 'MND',
+    ['Bind'] = 'INT',
+    ['Blind'] = 'INT', ['Blind II'] = 'INT',
+    ['Break'] = 'INT', ['Breakga'] = 'INT',
+    ['Dia'] = 'MND', ['Dia II'] = 'MND', ['Dia III'] = 'MND', ['Diaga'] = 'MND',
+    ['Dispel'] = 'INT',
+    ['Distract'] = 'MND', ['Distract II'] = 'MND', ['Distract III'] = 'MND',
+    ['Frazzle'] = 'MND', ['Frazzle II'] = 'MND', ['Frazzle III'] = 'MND',
+    ['Gravity'] = 'INT', ['Gravity II'] = 'INT',
+    ['Paralyze'] = 'MND', ['Paralyze II'] = 'MND',
+    ['Poison'] = 'INT', ['Poison II'] = 'INT', ['Poisonga'] = 'INT',
+    ['Sleep'] = 'INT', ['Sleep II'] = 'INT', ['Sleepga'] = 'INT', ['Sleepga II'] = 'INT',
+    ['Silence'] = 'MND',
+    ['Slow'] = 'MND', ['Slow II'] = 'MND',
+  }
   
   -- Potency is based on enfeebling skill
   enfeebling_skill_spells = S{'Distract III', 'Frazzle III', 'Poison II'}
   -- 100% land rate, focus on duration gear
-  enfeebling_duration_spells = S{'Dia', 'Dia II', 'Dia III', 'Diaga', 'Bio', 'Bio II', 'Bio III'}
-  enfeebling_sleep_spells = S{'Sleep', 'Sleep II', 'Sleepga'}
+  enfeebling_duration_spells = S{'Dia', 'Dia II', 'Dia III', 'Diaga'}
 
   enhancing_skill_spells = S{'Temper', 'Temper II', 'Enfire', 'Enfire II', 'Enblizzard', 'Enblizzard II', 'Enaero',
       'Enaero II', 'Enstone', 'Enstone II', 'Enthunder', 'Enthunder II', 'Enwater', 'Enwater II'}
@@ -917,13 +933,45 @@ function init_gear_sets()
   sets.midcast.Shell = set_combine(sets.midcast.Protect,{})
   sets.midcast.Shellra = set_combine(sets.midcast.Shell,{})
 
+  -- Skill max is 625 is the highest needed.
+  -- Distract III (610), Frazzle III (625), Poison II (no cap)
+  sets.midcast.SkillEnfeebles = {
+    main="Contemplator +1",           -- 228, 70, 22, __ (__, __, __, 20) [__/__, ___]
+    sub="Enki Strap",                 -- ___, 10, 10, __ (__, __, __, __) [__/__,  10]
+    range=empty,                      -- ___, __, __, __ (__, __, __, __) [__/__, ___]
+    ammo="Regal Gem",                 -- ___, 15,  7, __ (__, 10, __, __) [__/__, ___]
+    head="Vitiation Chapeau +1",      -- ___, __, 32, __ (__, __, __, 22) [__/__,  75]; Enhances enf. duration
+    body="Atrophy Tabard +2",         -- ___, 45, 38, __ (__, __, __, 19) [__/__,  90]
+    hands="Lethargy Gantherots +2",   -- ___, 52, 45, __ (__, __, __, 24) [10/10,  77]
+    legs=gear.Chironic_MAcc_legs,     -- ___, 57, 29, __ ( 1, __, __, 13) [__/__, 118]
+    feet="Vitiation Boots +3",        -- ___, 43, 32, __ (__, 10, __, 16) [__/__, 127]; Immunobreak+
+    neck="Duelist's Torque +2",       -- ___, 30, 15, __ (__, 10, 25, __) [__/__, ___]
+    ear1="Snotra Earring",            -- ___, 10,  8, __ (__, __, 10, __) [__/__, ___]
+    ear2="Regal Earring",             -- ___, __, 10, __ (__, __, __, __) [__/__, ___]
+    ring1="Kishar Ring",              -- ___,  5, __,  4 (__, __, 10, __) [__/__, ___]
+    ring2="Stikini Ring +1",          -- ___, 11,  8, __ (__, __, __,  8) [__/__, ___]
+    back=gear.RDM_MND_Enf_Cape,       -- ___, 20, 30, 10 (__, 10, __, __) [10/__, ___]
+    waist="Obstinate Sash",           -- ___, 15,  5, __ (__, __,  5, 15) [__/__, ___]
+    -- AF set effect                          15
+    -- Traits/Gifts                                   38             476
+    -- 228 M.Acc skill, 398 M.Acc, 291 MND, 52 FC (1 Immunobreak, 40 Enf. Effect, 50 Enf. Duration, 613 Enf. Skill) [20 PDT/10 MDT, 497 M.Eva]
+    
+    -- head="Vitiation Chapeau +3",   -- ___, 37, 42, __ (__, __, __, 26) [__/__,  95]; Enhances enf. duration
+    -- body="Atrophy Tabard +3",      -- ___, 55, 43, __ (__, __, __, 21) [__/__, 100]
+    -- hands="Lethargy Gantherots +3",-- ___, 62, 50, __ (__, __, __, 29) [11/11,  87]
+    -- legs=gear.Chironic_MAcc_legs,  -- ___, 60, 29, __ ( 1, __, __, 13) [__/__, 118]
+    -- 228 M.Acc skill, 458 M.Acc, 311 MND, 52 FC (1 Immunobreak, 40 Enf. Effect, 50 Enf. Duration, 624 Enf. Skill) [20 PDT/10 MDT, 517 M.Eva]
+  }
+  sets.midcast.SkillEnfeeblesDW = set_combine(sets.midcast.SkillEnfeebles, {
+  })
+
   -- General enfeebles
-  sets.midcast.MndEnfeebles = { --Max MND but balance macc for landing
+  sets.midcast.MNDEnfeebles = { --Max MND but balance macc for landing
     main="Daybreak",                  -- 242, 40, 30, __ (__, __, __, __) [__/__,  30]
     sub="Ammurapi Shield",            -- ___, 38, 13, __ (__, __, __, __) [__/__, ___]
-    range=empty,
+    range=empty,                      -- ___, __, __, __ (__, __, __, __) [__/__, ___]
     ammo="Regal Gem",                 -- ___, 15,  7, __ (__, 10, __, __) [__/__, ___]
-    -- head="Vitiation Chapeau +3",   -- ___, 37, 42, __ (__, __, __, 26) [__/__,  95]; Enhances enf. duration
+    head="Vitiation Chapeau +1",      -- ___, __, 32, __ (__, __, __, 22) [__/__,  75]; Enhances enf. duration
     body="Lethargy Sayon +3",         -- ___, 64, 45, __ (__, 18, __, __) [14/14, 136]
     hands="Lethargy Gantherots +2",   -- ___, 52, 45, __ (__, __, __, 24) [10/10,  77]
     legs=gear.Chironic_MAcc_legs,     -- ___, 57, 29, __ ( 1, __, __, 13) [__/__, 118]
@@ -937,24 +985,25 @@ function init_gear_sets()
     waist="Obstinate Sash",           -- ___, 15,  5, __ (__, __,  5, 15) [__/__, ___]
     -- Empy set effect                   ___, __, __, __ (__, __, 10, __) [__/__, ___]
     -- Traits/Gifts/Merits            --              38
-    -- 238 M.Acc skill, 457 M.Acc, 325 MND, 52 FC (1 Immunobreak, 58 Enf. Effect, 50 Enf. Duration, 102 Enf. Skill) [34 PDT/24 MDT, 583 M.Eva]
+    -- 242 M.Acc skill, 416 M.Acc, 315 MND, 52 FC (1 Immunobreak, 58 Enf. Effect, 50 Enf. Duration, 106 Enf. Skill) [34 PDT/24 MDT, 563 M.Eva]
     
+    -- head="Vitiation Chapeau +3",   -- ___, 37, 42, __ (__, __, __, 26) [__/__,  95]; Enhances enf. duration
     -- hands="Lethargy Gantherots +3",-- ___, 62, 50, __ (__, __, __, 29) [11/11,  87]
     -- legs=gear.Chironic_MAcc_legs,  -- ___, 60, 29, __ ( 1, __, __, 13) [__/__, 118]
-    -- 238 M.Acc skill, 470 M.Acc, 330 MND, 52 FC (1 Immunobreak, 58 Enf. Effect, 50 Enf. Duration, 115 Enf. Skill) [34 PDT/24 MDT, 593 M.Eva]
+    -- 242 M.Acc skill, 466 M.Acc, 330 MND, 52 FC (1 Immunobreak, 58 Enf. Effect, 50 Enf. Duration, 115 Enf. Skill) [35 PDT/25 MDT, 593 M.Eva]
   }
-  sets.midcast.MndEnfeeblesDW = set_combine(sets.midcast.MndEnfeebles, {
+  sets.midcast.MNDEnfeeblesDW = set_combine(sets.midcast.MNDEnfeebles, {
     main="Daybreak",                  -- 242, 40, 30, __ (__, __, __, __) [__/__,  30]
     sub="Maxentius",                  -- 232, 40, 15, __ (__, __, __, __) [__/__, ___]
   })
 
   -- Used when casting mode is 'Resistant'
-  sets.midcast.MndEnfeeblesAcc = {
+  sets.midcast.MNDEnfeeblesAcc = {
     -- main="Crocea Mors",            -- 255, 50, __, 20 (__, __, __, __) [__/__, ___]
     sub="Ammurapi Shield",            -- ___, 38, 13, __ (__, __, __, __) [__/__, ___]
     -- range="Ullr",                  -- ___, 40, __, __ (__, __, __, __) [__/__, ___]
-    -- ammo=empty,
-    -- head="Vitiation Chapeau +3",   -- ___, 37, 42, __ (__, __, __, 26) [__/__,  95]; Enhances enf. duration
+    -- ammo=empty,                    -- ___, __, __, __ (__, __, __, __) [__/__, ___]
+    head="Vitiation Chapeau +1",      -- ___, __, 32, __ (__, __, __, 22) [__/__,  75]; Enhances enf. duration
     body="Atrophy Tabard +2",         -- ___, 45, 38, __ (__, __, __, 19) [__/__,  90]
     hands="Lethargy Gantherots +2",   -- ___, 52, 45, __ (__, __, __, 24) [10/10,  77]
     legs=gear.Chironic_MAcc_legs,     -- ___, 57, 29, __ ( 1, __, __, 13) [__/__, 118]
@@ -967,27 +1016,27 @@ function init_gear_sets()
     back=gear.RDM_MND_Enf_Cape,       -- ___, 20, 30, 10 (__, 10, __, __) [10/__, ___]
     waist="Obstinate Sash",           -- ___, 15,  5, __ (__, __,  5, 15) [__/__, ___]
     -- Empy set effect                   ___, __, __, __ (__, __, __, __) [__/__, ___]
-    -- AF set bonus                      ___, 15
     -- Traits/Gifts/Merits                            38
-    -- 255 M.Acc skill, 484 M.Acc, 272 MND, 72 FC (1 Immunobreak, 30 Enf. Effect, 40 Enf. Duration, 129 Enf. Skill) [20 PDT/10 MDT, 507 M.Eva]
+    -- 255 M.Acc skill, 432 M.Acc, 271 MND, 72 FC (1 Immunobreak, 30 Enf. Effect, 40 Enf. Duration, 125 Enf. Skill) [20 PDT/10 MDT, 487 M.Eva]
     
+    -- head="Vitiation Chapeau +3",   -- ___, 37, 42, __ (__, __, __, 26) [__/__,  95]; Enhances enf. duration
     -- body="Atrophy Tabard +3",      -- ___, 55, 43, __ (__, __, __, 21) [__/__, 100]
     -- hands="Lethargy Gantherots +3",-- ___, 62, 50, __ (__, __, __, 29) [11/11,  87]
     -- legs=gear.Chironic_MAcc_legs,  -- ___, 60, 29, __ ( 1, __, __, 13) [__/__, 118]
     -- 255 M.Acc skill, 507 M.Acc, 291 MND, 72 FC (1 Immunobreak, 30 Enf. Effect, 40 Enf. Duration, 136 Enf. Skill) [21 PDT/11 MDT, 527 M.Eva]
   }
-  sets.midcast.MndEnfeeblesAccDW = set_combine(sets.midcast.MndEnfeeblesAcc, {
+  sets.midcast.MNDEnfeeblesAccDW = set_combine(sets.midcast.MNDEnfeeblesAcc, {
     -- main="Crocea Mors",            -- 255, 50, __, 20 (__, __, __, __) [__/__, ___]
     sub="Daybreak",                  -- 242, 40, 30, __ (__, __, __, __) [__/__,  30]
   })
 
   -- Spells that have 100% accuracy. Focus on duration.
-  sets.midcast.MndEnfeeblesDuration = set_combine(sets.midcast.MndEnfeebles, {
+  sets.midcast.MNDEnfeeblesDuration = {
     main="Daybreak",                  -- 242, 40, 30, __ (__, __, __, __) [__/__,  30]
     sub="Genmei Shield",              -- ___, __, __, __ (__, __, __, __) [10/__, ___]
-    range=empty,
+    range=empty,                      -- ___, __, __, __ (__, __, __, __) [__/__, ___]
     ammo="Regal Gem",                 -- ___, 15,  7, __ (__, 10, __, __) [__/__, ___]
-    -- head="Vitiation Chapeau +3",   -- ___, 37, 42, __ (__, __, __, 26) [__/__,  95]; Enhances enf. duration
+    head="Vitiation Chapeau +1",      -- ___, __, 32, __ (__, __, __, 22) [__/__,  75]; Enhances enf. duration
     body="Lethargy Sayon +3",         -- ___, 64, 45, __ (__, 18, __, __) [14/14, 136]
     hands="Regal Cuffs",              -- ___, 45, 40, __ (__, __, 20, __) [__/__,  53]
     legs="Lethargy Fuseau +2",        -- ___, 53, 38, __ (__, __, __, __) [__/__, 152]
@@ -1001,20 +1050,22 @@ function init_gear_sets()
     waist="Obstinate Sash",           -- ___, 15,  5, __ (__, __,  5, 15) [__/__, ___]
     -- Empy set effect                   ___, __, __, __ (__, __, 20, __) [__/__, ___]
     -- Traits/Gifts/Merits                            38
-    -- 242 M.Acc skill, 384 M.Acc, 287 MND, 52 FC (0 Immunobreak, 48 Enf. Effect, 90 Enf. Duration, 41 Enf. Skill) [47 PDT/29 MDT, 613 M.Eva]
+    -- 242 M.Acc skill, 347 M.Acc, 277 MND, 52 FC (0 Immunobreak, 48 Enf. Effect, 90 Enf. Duration, 37 Enf. Skill) [47 PDT/29 MDT, 593 M.Eva]
     
+    -- head="Vitiation Chapeau +3",   -- ___, 37, 42, __ (__, __, __, 26) [__/__,  95]; Enhances enf. duration
     -- legs="Lethargy Fuseau +3",     -- ___, 63, 43, __ (__, __, __, __) [__/__, 162]
     -- feet="Lethargy Houseaux +3",   -- ___, 60, 32, __ (__, __, __, __) [__/__, 157]
     -- 242 M.Acc skill, 404 M.Acc, 297 MND, 52 FC (0 Immunobreak, 48 Enf. Effect, 90 Enf. Duration, 41 Enf. Skill) [47 PDT/29 MDT, 633 M.Eva]
-  })
-  sets.midcast.MndEnfeeblesDurationDW = set_combine(sets.midcast.MndEnfeeblesDuration, {})
+  }
+  sets.midcast.MNDEnfeeblesDurationDW = set_combine(sets.midcast.MNDEnfeeblesDuration, {})
 
   -- General enfeebles
-  sets.midcast.IntEnfeebles = {
+  sets.midcast.INTEnfeebles = {
     main="Contemplator +1",           -- 228, 70, 12, __ (__, __, __, 20) [__/__, ___]
     sub="Enki Strap",                 -- ___, 10, 10, __ (__, __, __, __) [__/__,  10]
+    range=empty,                      -- ___, __, __, __ (__, __, __, __) [__/__, ___]
     -- ammo="Ghastly Tathlum +1",     -- ___, __, 11, __ (__, __, __, __) [__/__, ___]
-    -- head="Vitiation Chapeau +3",   -- ___, 37, 29, __ (__, __, __, 26) [__/__,  95]; Enhances enf. duration
+    head="Vitiation Chapeau +1",      -- ___, __, 19, __ (__, __, __, 22) [__/__,  75]; Enhances enf. duration
     body="Lethargy Sayon +3",         -- ___, 64, 47, __ (__, 18, __, __) [14/14, 136]
     hands="Lethargy Gantherots +2",   -- ___, 52, 28, __ (__, __, __, 24) [10/10,  77]
     legs=gear.Chironic_MAcc_legs,     -- ___, 57, 42, __ ( 1, __, __, 13) [__/__, 118]
@@ -1028,21 +1079,22 @@ function init_gear_sets()
     waist="Obstinate Sash",           -- ___, 15, __, __ (__, __,  5, 15) [__/__, ___]
     -- Empy set effect                   ___, __, __, __ (__, __, 10, __) [__/__, ___]
     -- Traits/Gifts/Merits            --              38
-    -- 228 M.Acc skill, 444 M.Acc, 280 INT, 42 FC (1 Immunobreak, 48 Enf. Effect, 50 Enf. Duration, 122 Enf. Skill) [34 PDT/24 MDT, 563 M.Eva]
+    -- 228 M.Acc skill, 407 M.Acc, 270 INT, 42 FC (1 Immunobreak, 48 Enf. Effect, 50 Enf. Duration, 118 Enf. Skill) [34 PDT/24 MDT, 543 M.Eva]
 
+    -- head="Vitiation Chapeau +3",   -- ___, 37, 29, __ (__, __, __, 26) [__/__,  95]; Enhances enf. duration
     -- hands="Lethargy Gantherots +3",-- ___, 62, 50, __ (__, __, __, 29) [11/11,  87]
     -- legs=gear.Chironic_MAcc_legs,  -- ___, 60, 29, __ ( 1, __, __, 13) [__/__, 118]
     -- 228 M.Acc skill, 457 M.Acc, 289 INT, 42 FC (1 Immunobreak, 48 Enf. Effect, 50 Enf. Duration, 127 Enf. Skill) [35 PDT/25 MDT, 573 M.Eva]
   }
-  sets.midcast.IntEnfeeblesDW = set_combine(sets.midcast.IntEnfeebles, {})
+  sets.midcast.INTEnfeeblesDW = set_combine(sets.midcast.INTEnfeebles, {})
 
   -- Used when casting mode is 'Resistant'
-  sets.midcast.IntEnfeeblesAcc = set_combine(sets.midcast.MndEnfeeblesAcc, {
+  sets.midcast.INTEnfeeblesAcc = {
     main="Contemplator +1",           -- 228, 70, 12, __ (__, __, __, 20) [__/__, ___]
     sub="Enki Strap",                 -- ___, 10, 10, __ (__, __, __, __) [__/__,  10]
     -- range="Ullr",                  -- ___, 40, __, __ (__, __, __, __) [__/__, ___]
-    -- ammo=empty,
-    -- head="Vitiation Chapeau +3",   -- ___, 37, 29, __ (__, __, __, 26) [__/__,  95]; Enhances enf. duration
+    -- ammo=empty,                    -- ___, __, __, __ (__, __, __, __) [__/__, ___]
+    head="Vitiation Chapeau +1",      -- ___, __, 19, __ (__, __, __, 22) [__/__,  75]; Enhances enf. duration
     body="Atrophy Tabard +2",         -- ___, 45, 38, __ (__, __, __, 19) [__/__,  90]
     hands="Lethargy Gantherots +2",   -- ___, 52, 28, __ (__, __, __, 24) [10/10,  77]
     legs=gear.Chironic_MAcc_legs,     -- ___, 57, 42, __ ( 1, __, __, 13) [__/__, 118]
@@ -1055,24 +1107,24 @@ function init_gear_sets()
     back=gear.RDM_INT_Enf_Cape,       -- ___, 20, 30, __ (__, 10, __, __) [10/__, ___]
     waist="Obstinate Sash",           -- ___, 15, __, __ (__, __,  5, 15) [__/__, ___]
     -- Empy set effect                   ___, __, __, __ (__, __, __, __) [__/__, ___]
-    -- AF set bonus                      ___, 15
     -- Traits/Gifts/Merits                            38
-    -- 228 M.Acc skill, 480 M.Acc, 260 INT, 42 FC (1 Immunobreak, 30 Enf. Effect, 40 Enf. Duration, 141 Enf. Skill) [20 PDT/10 MDT, 517 M.Eva]
+    -- 228 M.Acc skill, 428 M.Acc, 250 INT, 42 FC (1 Immunobreak, 30 Enf. Effect, 40 Enf. Duration, 137 Enf. Skill) [20 PDT/10 MDT, 497 M.Eva]
     
+    -- head="Vitiation Chapeau +3",   -- ___, 37, 29, __ (__, __, __, 26) [__/__,  95]; Enhances enf. duration
     -- body="Atrophy Tabard +3",      -- ___, 55, 43, __ (__, __, __, 21) [__/__, 100]
     -- hands="Lethargy Gantherots +3",-- ___, 62, 33, __ (__, __, __, 29) [11/11,  87]
     -- legs=gear.Chironic_MAcc_legs,  -- ___, 60, 42, __ ( 1, __, __, 13) [__/__, 118]
     -- 228 M.Acc skill, 503 M.Acc, 270 INT, 42 FC (1 Immunobreak, 30 Enf. Effect, 40 Enf. Duration, 148 Enf. Skill) [21 PDT/11 MDT, 537 M.Eva]
-  })
-  sets.midcast.IntEnfeeblesAccDW = set_combine(sets.midcast.IntEnfeeblesAcc, {})
+  }
+  sets.midcast.INTEnfeeblesAccDW = set_combine(sets.midcast.INTEnfeeblesAcc, {})
 
   -- Spells that have 100% accuracy. Focus on duration.
-  sets.midcast.IntEnfeeblesDuration = set_combine(sets.midcast.MndEnfeeblesDuration, {
+  sets.midcast.INTEnfeeblesDuration = set_combine(sets.midcast.MNDEnfeeblesDuration, {
     main="Daybreak",                  -- 242, 40, __, __ (__, __, __, __) [__/__,  30]
     sub="Genmei Shield",              -- ___, __, __, __ (__, __, __, __) [10/__, ___]
     -- range="Ullr",                  -- ___, 40, __, __ (__, __, __, __) [__/__, ___]
-    -- ammo=empty,
-    -- head="Vitiation Chapeau +3",   -- ___, 37, 29, __ (__, __, __, 26) [__/__,  95]; Enhances enf. duration
+    -- ammo=empty,                    -- ___, __, __, __ (__, __, __, __) [__/__, ___]
+    head="Vitiation Chapeau +1",      -- ___, __, 19, __ (__, __, __, 22) [__/__,  75]; Enhances enf. duration
     body="Lethargy Sayon +3",         -- ___, 64, 47, __ (__, 18, __, __) [14/14, 136]
     hands="Regal Cuffs",              -- ___, 45, 40, __ (__, __, 20, __) [__/__,  53]
     legs="Lethargy Fuseau +2",        -- ___, 53, 43, __ (__, __, __, __) [__/__, 152]
@@ -1086,68 +1138,14 @@ function init_gear_sets()
     waist="Obstinate Sash",           -- ___, 15, __, __ (__, __,  5, 15) [__/__, ___]
     -- Empy set effect                   ___, __, __, __ (__, __, 20, __) [__/__, ___]
     -- Traits/Gifts/Merits                            38
-    -- 242 M.Acc skill, 409 M.Acc, 229 INT, 42 FC (0 Immunobreak, 38 Enf. Effect, 90 Enf. Duration, 41 Enf. Skill) [47 PDT/29 MDT, 613 M.Eva]
+    -- 242 M.Acc skill, 372 M.Acc, 219 INT, 42 FC (0 Immunobreak, 38 Enf. Effect, 90 Enf. Duration, 37 Enf. Skill) [47 PDT/29 MDT, 593 M.Eva]
     
+    -- head="Vitiation Chapeau +3",   -- ___, 37, 29, __ (__, __, __, 26) [__/__,  95]; Enhances enf. duration
     -- legs="Lethargy Fuseau +3",     -- ___, 63, 48, __ (__, __, __, __) [__/__, 162]
     -- feet="Lethargy Houseaux +3",   -- ___, 60, 30, __ (__, __, __, __) [__/__, 157]
     -- 242 M.Acc skill, 429 M.Acc, 239 INT, 42 FC (0 Immunobreak, 38 Enf. Effect, 90 Enf. Duration, 41 Enf. Skill) [47 PDT/29 MDT, 633 M.Eva]
   })
-  sets.midcast.IntEnfeeblesDurationDW = set_combine(sets.midcast.IntEnfeeblesDuration, {})
-
-  -- Skill max is 625 is the highest needed.
-  -- Distract III (610), Frazzle III (625), Poison II (no cap)
-  sets.midcast.SkillEnfeebles = set_combine(sets.midcast.MndEnfeebles, {
-    main="Contemplator +1", --20skill, 70macc, 228 macc skill
-    sub="Enki Strap", --10macc
-    ammo="Regal Gem", --10% pot
-    -- head="Vitiation Chapeau +3", --24
-    body="Atrophy Tabard +2", --19
-    hands=gear.Kaykaus_C_hands, --16, 53macc
-    legs=gear.Chironic_MAcc_legs,
-    feet="Vitiation Boots +3", --16
-    neck="Duelist's torque +2", --10% pot
-    ear1="Regal Earring", --15Macc with Atrophy Gear
-    ear2="Snotra Earring", --10% Dur
-    ring1="Kishar Ring", --10% dur
-    ring2="Stikini Ring +1", --8
-    back=gear.RDM_INT_Enf_Cape, --10% pot
-    waist="Obstinate Sash", --5% dur, 5skill, 15 macc
-    
-    -- body="Atrophy Tabard +3", --21
-    -- legs=gear.Chironic_MAcc_legs,
-  })--355 Macc + 146 aug macc + 30 M.Acc AF Bonus + 625 Enfeebling Skill + 228 macc skill = 1384 (Enfeeb == Macc according to wikia)
-  sets.midcast.SkillEnfeeblesDW = set_combine(sets.midcast.SkillEnfeebles, {
-    -- main="Crocea Mors",  --255+50
-    sub="Daybreak", --40 bonus magic acc
-  })
-    
-  sets.midcast.SleepNormal = set_combine(sets.midcast.IntEnfeeblesAcc, {
-    -- head="Vitiation Chapeau +3",
-    neck="Duelist's Torque +2",
-    ear2="Snotra Earring",
-    ring1="Kishar Ring",
-    back=gear.RDM_INT_Enf_Cape, --Better and aurists's because includes enfeeb magic effect +10
-  })
-  sets.midcast.SleepNormalDW = set_combine(sets.midcast.SleepNormal, {
-    -- main={name="Crocea Mors", priority=1},  --255+50
-    sub="Daybreak", --40 bonus magic acc
-  })
-
-  sets.midcast.SleepMaxDuration = set_combine(sets.midcast.SleepNormal, {
-    head="Lethargy Chappel +2",
-    body="Lethargy Sayon +3",
-    hands="Regal Cuffs",
-    legs="Lethargy Fuseau +2",
-    feet="Lethargy Houseaux +2",
-    
-    -- head="Lethargy Chappel +3",
-    -- legs="Lethargy Fuseau +3",
-    -- feet="Lethargy Houseaux +3",
-  })
-  sets.midcast.SleepMaxDurationDW = set_combine(sets.midcast.SleepMaxDuration, {
-    -- main={name="Crocea Mors", priority=1},  --255+50
-    sub="Daybreak", --40 bonus magic acc
-  })
+  sets.midcast.INTEnfeeblesDurationDW = set_combine(sets.midcast.INTEnfeeblesDuration, {})
 
   sets.midcast['Dark Magic'] = {
     -- main="Rubicundity",
@@ -1689,7 +1687,7 @@ end
 function job_post_midcast(spell, action, spellMap, eventArgs)
     -- print("Spell: "..spell.english)
     -- print("Target: "..spell.target.type)
-    if spell.skill == 'Enfeebling Magic' and buffactive.Saboteur then
+    if spell.skill == 'Enfeebling Magic' and state.Buff.Saboteur then
       equip(sets.buff.Saboteur)
     elseif spell.skill == 'Elemental Magic' then
         if state.MagicBurst.value and spell.english ~= 'Death' then
@@ -1718,7 +1716,7 @@ function job_aftercast(spell, action, spellMap, eventArgs)
 
   if not spell.interrupted then
     if spell.english:contains('Sleep') then
-      set_sleep_timer(spell)
+      set_sleep_timer(spell, spellMap)
     elseif spell.english == "Break" then
       send_command('@timers c "Break ['..spell.target.name..']" 30 down spells/00255.png')
     elseif spell.english == 'Light Arts' then
@@ -1741,6 +1739,12 @@ function job_aftercast(spell, action, spellMap, eventArgs)
       state.Buff['Dark Arts'] = false
       state.Buff['Addendum: White'] = false
       state.Buff['Addendum: Black'] = true
+    elseif spell.english == 'Composure' then
+      state.Buff.Composure = true
+    elseif spell.english == 'Saboteur' then
+      state.Buff.Saboteur = true
+    elseif spell.english == 'Stymie' then
+      state.Buff.Stymie = true
     end
   end
     
@@ -1761,10 +1765,8 @@ end
 -- Called when a player gains or loses a buff.
 -- buff == buff gained or lost
 -- gain == true if the buff was gained, false if it was lost.
-function job_buff_change(buff, gain)    
-  if buff == "sleep" then
-    -- equip_prime_weapon(gain)
-  elseif buff == "doom" and gain then
+function job_buff_change(buff, gain)
+  if buff == "doom" and gain then
     equip(sets.buff.Doom)
   end
 end
@@ -1843,33 +1845,27 @@ function job_get_spell_map(spell, default_spell_map)
     elseif spell.skill == 'Enfeebling Magic' then
       if enfeebling_skill_spells:contains(spell.english) then
         custom_spell_map = 'SkillEnfeebles'
-      elseif spell.type == 'WhiteMagic' then
-        if enfeebling_duration_spells:contains(spell.english) then
-          custom_spell_map = 'MndEnfeeblesDuration'
-        elseif not buffactive.Stymie and state.CastingMode.value == 'Resistant' then
-          custom_spell_map = 'MndEnfeeblesAcc'
-        else
-          custom_spell_map = 'MndEnfeebles'
-        end
-      elseif spell.type == 'BlackMagic' then
-        if enfeebling_duration_spells:contains(spell.english) then
-          custom_spell_map = 'IntEnfeeblesDuration'
-        elseif enfeebling_sleep_spells:contains(spell.english) and ((buffactive.Stymie and buffactive.Composure) or state.SleepMode.value == 'MaxDuration') then
-          custom_spell_map = 'SleepMaxDuration'
-        elseif enfeebling_sleep_spells:contains(spell.english) then
-          custom_spell_map = 'SleepNormal' --Can't call it sleep as gs checks for sets.midcast.Sleep before calling job_get_spell_map
-        elseif not buffactive.Stymie and state.CastingMode.value == 'Resistant' then
-          custom_spell_map = 'IntEnfeeblesAcc'
-        else
-          custom_spell_map = 'IntEnfeebles'
-        end
       else
-        custom_spell_map = 'MndEnfeebles'
+        -- Get stat mapping
+        local stat = enfeebling_stat_map[spell.english]
+        if stat then
+          if state.Buff.Stymie
+              or enfeebling_duration_spells:contains(spell.english)
+              or (spell.english:startswith('Sleep') and state.SleepMode.value == 'MaxDuration') then
+            custom_spell_map = stat..'EnfeeblesDuration'
+          elseif not state.Buff.Stymie and state.CastingMode.value == 'Resistant' then
+            custom_spell_map = stat..'EnfeeblesAcc'
+          else
+            custom_spell_map = stat..'Enfeebles'
+          end
+        else
+          custom_spell_map = 'MNDEnfeebles'
+        end
       end
       
       --Handle DW gear sets for enfeebling
       if silibs.is_dual_wielding() then
-        if spell.skill == 'Enfeebling Magic' then
+        if spell.skill == 'Enfeebling Magic' and sets.midcast[custom_spell_map..'DW'] then
           custom_spell_map = custom_spell_map..'DW'
         end
       end
@@ -1884,7 +1880,7 @@ function job_get_spell_map(spell, default_spell_map)
         if spell.target.type == 'SELF' then
           custom_spell_map = 'PhalanxSelf'
         else
-          if (spell.target.type == 'PLAYER' or spell.target.type == 'NPC') and buffactive.Composure then
+          if (spell.target.type == 'PLAYER' or spell.target.type == 'NPC') and state.Buff.Composure then
             custom_spell_map = 'PhalanxOthersComp'
           else
             custom_spell_map = 'PhalanxOthers'
@@ -1894,14 +1890,14 @@ function job_get_spell_map(spell, default_spell_map)
         if spell.target.type == 'SELF' then
           custom_spell_map = 'RefreshSelf'
         else
-          if (spell.target.type == 'PLAYER' or spell.target.type == 'NPC') and buffactive.Composure then
+          if (spell.target.type == 'PLAYER' or spell.target.type == 'NPC') and state.Buff.Composure then
             custom_spell_map = 'RefreshOthersComp'
           else
             custom_spell_map = 'RefreshOthers' --Can't call it Refresh as gs checks for sets.midcast.Refresh before calling job_get_spell_map
           end
         end
       else
-        if (spell.target.type == 'PLAYER' or spell.target.type == 'NPC') and buffactive.Composure then
+        if (spell.target.type == 'PLAYER' or spell.target.type == 'NPC') and state.Buff.Composure then
           custom_spell_map = 'ComposureOther'
         else
           custom_spell_map = 'EnhancingDuration'
@@ -2255,12 +2251,12 @@ function in_battle_mode()
   return state.WeaponSet.current ~= 'Casting' or state.ToyWeapons.current ~= 'None'
 end
 
-function set_sleep_timer(spell)
+function set_sleep_timer(spell, spellMap)
   local base
 
-  if spell.en == "Sleep II" then
+  if spell.en == 'Sleep II' or spell.en == 'Sleepga II' then
     base = 90
-  elseif spell.en == "Sleep" or spell.en == "Sleepga" then
+  elseif spell.en == 'Sleep' or spell.en == 'Sleepga' then
     base = 60
   end
 
@@ -2273,40 +2269,71 @@ function set_sleep_timer(spell)
   end
 
   -- Merit Points Duration Bonus
-  base = base + player.merits.enfeebling_magic_duration*6
-
-  -- Relic Head Duration Bonus
-  if not ((buffactive.Stymie and buffactive.Composure) or state.SleepMode.value == 'MaxDuration') then
-    base = base + player.merits.enfeebling_magic_duration*3
-  end
+  base = base + (player.merits.enfeebling_magic_duration * 6)
 
   -- Job Points Duration Bonus
-  base = base + player.job_points.rdm.enfeebling_magic_duration
+  base = base + (player.job_points.rdm.enfeebling_magic_duration)
 
-  --Enfeebling duration non-augmented gear total
-  local gear_mult = 1.40
-  --Enfeebling duration augmented gear total
-  local aug_mult = 1.25
+  if state.Buff.Stymie then
+    base = base + player.job_points.rdm.stymie_effect
+  end
+
+  -- Relic Head Duration Bonus
+  -- Currently, all the INTEnfeeble sets use it
+  if spellMap == 'INTEnfeebles' or spellMap == 'INTEnfeeblesDW' then
+    base = base + (player.merits.enfeebling_magic_duration * 3)
+  elseif spellMap == 'INTEnfeeblesAcc' or spellMap == 'INTEnfeeblesAccDW' then
+    base = base + (player.merits.enfeebling_magic_duration * 3)
+  elseif spellMap == 'INTEnfeeblesDuration' or spellMap == 'INTEnfeeblesDurationDW' then
+    base = base + (player.merits.enfeebling_magic_duration * 3)
+  end
+
+  -- Enfeebling duration non-augmented gear total
+  local gear_mult = 1.00
+  if spellMap == 'INTEnfeebles' or spellMap == 'INTEnfeeblesDW' then
+    gear_mult = 1.25
+  elseif spellMap == 'INTEnfeeblesAcc' or spellMap == 'INTEnfeeblesAccDW' then
+    gear_mult = 1.15
+  elseif spellMap == 'INTEnfeeblesDuration' or spellMap == 'INTEnfeeblesDurationDW' then
+    gear_mult = 1.65
+  end
+
+  --Enfeebling duration augmented gear total (duelist's torque +2)
+  local aug_mult = 1.00
+  if spellMap == 'INTEnfeebles' or spellMap == 'INTEnfeeblesDW' then
+    gear_mult = 1.25
+  elseif spellMap == 'INTEnfeeblesAcc' or spellMap == 'INTEnfeeblesAccDW' then
+    gear_mult = 1.25
+  elseif spellMap == 'INTEnfeeblesDuration' or spellMap == 'INTEnfeeblesDurationDW' then
+    gear_mult = 1.25
+  end
+
   --Estoquer/Lethargy Composure set bonus
   --2pc = 1.1 / 3pc = 1.2 / 4pc = 1.35 / 5pc = 1.5
-  local empy_mult = 1 --from sets.midcast.Sleep
-
-  if ((buffactive.Stymie and buffactive.Composure) or state.SleepMode.value == 'MaxDuration') then
-    if buffactive.Stymie then
-      base = base + player.job_points.rdm.stymie_effect
-    end
-    empy_mult = 1.5 --from sets.midcast.SleepMaxDuration
+  local empy_mult = 1.00
+  if spellMap == 'INTEnfeebles' or spellMap == 'INTEnfeeblesDW' then
+    empy_mult = 1.10
+  elseif spellMap == 'INTEnfeeblesAcc' or spellMap == 'INTEnfeeblesAccDW' then
+    empy_mult = 1.00
+  elseif spellMap == 'INTEnfeeblesDuration' or spellMap == 'INTEnfeeblesDurationDW' then
+    empy_mult = 1.20
   end
 
   local totalDuration = math.floor(base * gear_mult * aug_mult * empy_mult)
 
   -- Create the custom timer
-  if spell.english == "Sleep II" then
+  if spell.english == 'Sleep II' or spell.english == 'Sleepga II' then
     send_command('@timers c "Sleep II ['..spell.target.name..']" ' ..totalDuration.. ' down spells/00259.png')
-  elseif spell.english == "Sleep" or spell.english == "Sleepga" then
+  elseif spell.english == 'Sleep' or spell.english == 'Sleepga' then
     send_command('@timers c "Sleep ['..spell.target.name..']" ' ..totalDuration.. ' down spells/00253.png')
   end
-  add_to_chat(1, 'Base: ' ..base.. ' Merits: ' ..player.merits.enfeebling_magic_duration.. ' Job Points: ' ..player.job_points.rdm.stymie_effect.. ' Set Bonus: ' ..empy_mult)
+
+  -- For debugging:
+  add_to_chat(1, 'Map: '..spellMap
+      ..' Base: ' ..base
+      .. ' Merits: ' ..player.merits.enfeebling_magic_duration
+      .. ' Job Points: ' ..player.job_points.rdm.stymie_effect
+      .. ' Set Bonus: ' ..empy_mult)
 end
 
 function check_gear()
