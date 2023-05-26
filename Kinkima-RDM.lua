@@ -114,10 +114,10 @@ function job_setup()
   state.Buff.Stymie = buffactive.Stymie or false
   
   -- Potency is based on enfeebling skill
-  enfeebling_magic_skill = S{'Distract III', 'Frazzle III', 'Poison II'}
+  enfeebling_skill_spells = S{'Distract III', 'Frazzle III', 'Poison II'}
   -- 100% land rate, focus on duration gear
-  enfeebling_magic_effect = S{'Dia', 'Dia II', 'Dia III', 'Diaga'}
-  enfeebling_magic_sleep = S{'Sleep', 'Sleep II', 'Sleepga'}
+  enfeebling_duration_spells = S{'Dia', 'Dia II', 'Dia III', 'Diaga', 'Bio', 'Bio II', 'Bio III'}
+  enfeebling_sleep_spells = S{'Sleep', 'Sleep II', 'Sleepga'}
 
   enhancing_skill_spells = S{'Temper', 'Temper II', 'Enfire', 'Enfire II', 'Enblizzard', 'Enblizzard II', 'Enaero',
       'Enaero II', 'Enstone', 'Enstone II', 'Enthunder', 'Enthunder II', 'Enwater', 'Enwater II'}
@@ -907,7 +907,7 @@ function init_gear_sets()
   }
   sets.midcast.SpikesSpell = {
     legs="Vitiation Tights +1"
-    -- legs="Vitiation Tights +3"
+    -- legs="Vitiation Tights +3" -- No real need to upgrade past +1
   }
 
   sets.midcast.Protect = set_combine(sets.midcast.EnhancingDuration, {
@@ -929,19 +929,20 @@ function init_gear_sets()
     legs=gear.Chironic_MAcc_legs,     -- ___, 57, 29, __ ( 1, __, __, 13) [__/__, 118]
     feet="Vitiation Boots +1",        -- ___, 15, 22, __ (__, __, __, 12) [__/__, 107]; Immunobreak+
     neck="Duelist's Torque +2",       -- ___, 30, 15, __ (__, 10, 25, __) [__/__, ___]
-    ear1="Malignance Earring",        -- ___, 10,  8, __ (__, __, 10, __) [__/__, ___]
-    ear2="Snotra Earring",            -- ___, 10,  8,  4 (__, __, __, __) [__/__, ___]
+    ear1="Snotra Earring",            -- ___, 10,  8, __ (__, __, 10, __) [__/__, ___]
+    ear2="Malignance Earring",        -- ___, 10,  8,  4 (__, __, __, __) [__/__, ___]
     ring1="Stikini Ring +1",          -- ___, 11,  8, __ (__, __, __,  8) [__/__, ___]
-    ring2="Metamorph Ring +1",        -- ___, 15, 16, __ (__, __, __, __) [__/__, ___]
+    ring2="Stikini Ring +1",          -- ___, 11,  8, __ (__, __, __,  8) [__/__, ___]
     back=gear.RDM_MND_Enf_Cape,       -- ___, 20, 30, 10 (__, 10, __, __) [10/__, ___]
     waist="Obstinate Sash",           -- ___, 15,  5, __ (__, __,  5, 15) [__/__, ___]
+    -- Empy set effect                   ___, __, __, __ (__, __, 10, __) [__/__, ___]
     -- Traits/Gifts/Merits            --              38
-    -- 242 M.Acc skill, 429 M.Acc, 323 MND, 52 FC (1 Immunobreak, 48 Enf. Effect, 40 Enf. Duration, 98 Enf. Skill) [34 PDT/24 MDT, 563 M.Eva]
+    -- 238 M.Acc skill, 429 M.Acc, 315 MND, 52 FC (1 Immunobreak, 48 Enf. Effect, 50 Enf. Duration, 98 Enf. Skill) [34 PDT/24 MDT, 563 M.Eva]
     
     -- hands="Lethargy Gantherots +3",-- ___, 62, 50, __ (__, __, __, 29) [11/11,  87]
     -- legs=gear.Chironic_MAcc_legs,  -- ___, 60, 29, __ ( 1, __, __, 13) [__/__, 118]
     -- feet="Vitiation Boots +3",     -- ___, 43, 32, __ (__, 10, __, 16) [__/__, 127]; Immunobreak+
-    -- 242 M.Acc skill, 470 M.Acc, 338 MND, 52 FC (1 Immunobreak, 58 Enf. Effect, 40 Enf. Duration, 107 Enf. Skill) [34 PDT/24 MDT, 593 M.Eva]
+    -- 238 M.Acc skill, 470 M.Acc, 330 MND, 52 FC (1 Immunobreak, 58 Enf. Effect, 50 Enf. Duration, 115 Enf. Skill) [34 PDT/24 MDT, 593 M.Eva]
   }
   sets.midcast.MndEnfeeblesDW = set_combine(sets.midcast.MndEnfeebles, {
     main="Daybreak",                  -- 242, 40, 30, __ (__, __, __, __) [__/__,  30]
@@ -960,17 +961,19 @@ function init_gear_sets()
     legs=gear.Chironic_MAcc_legs,     -- ___, 57, 29, __ ( 1, __, __, 13) [__/__, 118]
     feet="Vitiation Boots +1",        -- ___, 15, 22, __ (__, __, __, 12) [__/__, 107]; Immunobreak+
     neck="Duelist's Torque +2",       -- ___, 30, 15, __ (__, 10, 25, __) [__/__, ___]
-    ear1="Regal Earring",             -- ___, __, 10, __ (__, __, __, __) [__/__, ___]
-    ear2="Snotra Earring",            -- ___, 10,  8,  4 (__, __, __, __) [__/__, ___]
+    ear1="Snotra Earring",            -- ___, 10,  8, __ (__, __, 10, __) [__/__, ___]
+    ear2="Malignance Earring",        -- ___, 10,  8,  4 (__, __, __, __) [__/__, ___]
     ring1="Stikini Ring +1",          -- ___, 11,  8, __ (__, __, __,  8) [__/__, ___]
     ring2="Stikini Ring +1",          -- ___, 11,  8, __ (__, __, __,  8) [__/__, ___]
     back=gear.RDM_MND_Enf_Cape,       -- ___, 20, 30, 10 (__, 10, __, __) [10/__, ___]
     waist="Obstinate Sash",           -- ___, 15,  5, __ (__, __,  5, 15) [__/__, ___]
-    -- AF set bonus                   -- ___, 15
-    -- Traits/Gifts/Merits            --              38
-    -- 255 M.Acc skill, 446 M.Acc, 273 MND, 72 FC (1 Immunobreak, 20 Enf. Effect, 30 Enf. Duration, 125 Enf. Skill) [20 PDT/10 MDT, 487 M.Eva]
+    -- Empy set effect                   ___, __, __, __ (__, __, __, __) [__/__, ___]
+    -- AF set bonus                      ___, 15
+    -- Traits/Gifts/Merits                            38
+    -- 255 M.Acc skill, 456 M.Acc, 272 MND, 72 FC (1 Immunobreak, 20 Enf. Effect, 40 Enf. Duration, 125 Enf. Skill) [20 PDT/10 MDT, 487 M.Eva]
     
     -- body="Atrophy Tabard +3",      -- ___, 55, 43, __ (__, __, __, 21) [__/__, 100]
+    -- hands="Lethargy Gantherots +3",-- ___, 62, 50, __ (__, __, __, 29) [11/11,  87]
     -- legs=gear.Chironic_MAcc_legs,  -- ___, 60, 29, __ ( 1, __, __, 13) [__/__, 118]
     -- feet="Vitiation Boots +3",     -- ___, 43, 32, __ (__, 10, __, 16) [__/__, 127]; Immunobreak+
   }
@@ -980,57 +983,119 @@ function init_gear_sets()
   })
 
   -- Spells that have 100% accuracy. Focus on duration.
-  sets.midcast.MndEnfeeblesEffect = set_combine(sets.midcast.MndEnfeebles, {
-    ammo="Regal Gem",
-    body="Lethargy Sayon +3",
-    feet="Vitiation Boots +1",        -- ___, 15, 22, __ (__, __, __, 12) [__/__, 107]; Immunobreak+
-    neck="Duelist's Torque +2",
-    back=gear.RDM_MND_Enf_Cape, --+10 enf pot makes this better than aurist's
-
-    -- feet="Vitiation Boots +3",
+  sets.midcast.MndEnfeeblesDuration = set_combine(sets.midcast.MndEnfeebles, {
+    main="Daybreak",                  -- 242, 40, 30, __ (__, __, __, __) [__/__,  30]
+    sub="Genmei Shield",              -- ___, __, __, __ (__, __, __, __) [10/__, ___]
+    range=empty,
+    ammo="Regal Gem",                 -- ___, 15,  7, __ (__, 10, __, __) [__/__, ___]
+    -- head="Vitiation Chapeau +3",   -- ___, 37, 42, __ (__, __, __, 26) [__/__,  95]; Enhances enf. duration
+    body="Lethargy Sayon +3",         -- ___, 64, 45, __ (__, 18, __, __) [14/14, 136]
+    hands="Regal Cuffs",              -- ___, 45, 40, __ (__, __, 20, __) [__/__,  53]
+    legs="Lethargy Fuseau +2",        -- ___, 53, 38, __ (__, __, __, __) [__/__, 152]
+    feet="Lethargy Houseaux +2",      -- ___, 50, 27, __ (__, __, __, __) [__/__, 147]
+    neck="Duelist's Torque +2",       -- ___, 30, 15, __ (__, 10, 25, __) [__/__, ___]
+    ear1="Snotra Earring",            -- ___, 10,  8, __ (__, __, 10, __) [__/__, ___]
+    ear2="Odnowa Earring +1",         -- ___, __, __, __ (__, __, __, __) [ 3/ 5, ___]
+    ring1="Kishar Ring",              -- ___,  5, __,  4 (__, __, 10, __) [__/__, ___]
+    ring2="Defending Ring",           -- ___, __, __, __ (__, __, __, __) [10/10, ___]
+    back=gear.RDM_MND_Enf_Cape,       -- ___, 20, 30, 10 (__, 10, __, __) [10/__, ___]
+    waist="Obstinate Sash",           -- ___, 15,  5, __ (__, __,  5, 15) [__/__, ___]
+    -- Empy set effect                   ___, __, __, __ (__, __, 20, __) [__/__, ___]
+    -- Traits/Gifts/Merits                            38
+    -- 242 M.Acc skill, 384 M.Acc, 287 MND, 52 FC (0 Immunobreak, 48 Enf. Effect, 90 Enf. Duration, 41 Enf. Skill) [47 PDT/29 MDT, 613 M.Eva]
+    
+    -- legs="Lethargy Fuseau +3",     -- ___, 63, 43, __ (__, __, __, __) [__/__, 162]
+    -- feet="Lethargy Houseaux +3",   -- ___, 60, 32, __ (__, __, __, __) [__/__, 157]
+    -- 242 M.Acc skill, 404 M.Acc, 297 MND, 52 FC (0 Immunobreak, 48 Enf. Effect, 90 Enf. Duration, 41 Enf. Skill) [47 PDT/29 MDT, 633 M.Eva]
   })
-  sets.midcast.MndEnfeeblesEffectDW = set_combine(sets.midcast.MndEnfeeblesEffect, {
-    main={name="Daybreak", priority=1}, 
-    sub="Maxentius",
-  })
+  sets.midcast.MndEnfeeblesDurationDW = set_combine(sets.midcast.MndEnfeeblesDuration, {})
 
   -- General enfeebles
-  sets.midcast.IntEnfeebles = set_combine(sets.midcast.MndEnfeebles, {
-    -- ammo="Ghastly Tathlum +1",
-    waist="Obstinate Sash", --5% dur, 5skill, 15 macc
-    legs=gear.Chironic_MAcc_legs,
-    back=gear.RDM_INT_Enf_Cape,
-    ear2="Regal Earring",
-    --299 Macc + 552 Enfeebling skill = 851, 369 INT
+  sets.midcast.IntEnfeebles = {
+    main="Contemplator +1",           -- 228, 70, 12, __ (__, __, __, 20) [__/__, ___]
+    sub="Enki Strap",                 -- ___, 10, 10, __ (__, __, __, __) [__/__,  10]
+    -- ammo="Ghastly Tathlum +1",     -- ___, __, 11, __ (__, __, __, __) [__/__, ___]
+    -- head="Vitiation Chapeau +3",   -- ___, 37, 29, __ (__, __, __, 26) [__/__,  95]; Enhances enf. duration
+    body="Lethargy Sayon +3",         -- ___, 64, 47, __ (__, 18, __, __) [14/14, 136]
+    hands="Lethargy Gantherots +2",   -- ___, 52, 28, __ (__, __, __, 24) [10/10,  77]
+    legs=gear.Chironic_MAcc_legs,     -- ___, 57, 42, __ ( 1, __, __, 13) [__/__, 118]
+    feet="Vitiation Boots +1",        -- ___, 15, 20, __ (__, __, __, 12) [__/__, 107]; Immunobreak+
+    neck="Duelist's Torque +2",       -- ___, 30, 15, __ (__, 10, 25, __) [__/__, ___]
+    ear1="Snotra Earring",            -- ___, 10, __, __ (__, __, 10, __) [__/__, ___]
+    ear2="Malignance Earring",        -- ___, 10,  8,  4 (__, __, __, __) [__/__, ___]
+    ring1="Metamorph Ring +1",        -- ___, 15, 16, __ (__, __, __, __) [__/__, ___]
+    ring2="Stikini Ring +1",          -- ___, 11, __, __ (__, __, __,  8) [__/__, ___]
+    back=gear.RDM_INT_Enf_Cape,       -- ___, 20, 30, __ (__, 10, __, __) [10/__, ___]
+    waist="Obstinate Sash",           -- ___, 15, __, __ (__, __,  5, 15) [__/__, ___]
+    -- Empy set effect                   ___, __, __, __ (__, __, 10, __) [__/__, ___]
+    -- Traits/Gifts/Merits            --              38
+    -- 228 M.Acc skill, 416 M.Acc, 268 INT, 42 FC (1 Immunobreak, 38 Enf. Effect, 50 Enf. Duration, 118 Enf. Skill) [34 PDT/24 MDT, 543 M.Eva]
 
-    -- ear2="Lethargy Earring +2",
-    -- legs=gear.Chironic_MAcc_legs,
-  })
-  sets.midcast.IntEnfeeblesDW = set_combine(sets.midcast.IntEnfeebles, {}) 
+    -- hands="Lethargy Gantherots +3",-- ___, 62, 50, __ (__, __, __, 29) [11/11,  87]
+    -- legs=gear.Chironic_MAcc_legs,  -- ___, 60, 29, __ ( 1, __, __, 13) [__/__, 118]
+    -- feet="Vitiation Boots +3",     -- ___, 43, 32, __ (__, 10, __, 16) [__/__, 127]; Immunobreak+
+    -- 228 M.Acc skill, 457 M.Acc, 289 INT, 42 FC (1 Immunobreak, 48 Enf. Effect, 50 Enf. Duration, 127 Enf. Skill) [35 PDT/25 MDT, 573 M.Eva]
+  }
+  sets.midcast.IntEnfeeblesDW = set_combine(sets.midcast.IntEnfeebles, {})
 
   -- Used when casting mode is 'Resistant'
   sets.midcast.IntEnfeeblesAcc = set_combine(sets.midcast.MndEnfeeblesAcc, {
-  }) --483 Macc + 96 augments/set bonus + 574 Enfeebling skill = 1098 + 255 = 1408 , 365 INT
-  sets.midcast.IntEnfeeblesAccDW = set_combine(sets.midcast.IntEnfeeblesAcc, {
-    -- main={name="Crocea Mors", priority=1},  --255+50
-    sub="Daybreak", --40 bonus magic acc
+    main="Contemplator +1",           -- 228, 70, 12, __ (__, __, __, 20) [__/__, ___]
+    sub="Enki Strap",                 -- ___, 10, 10, __ (__, __, __, __) [__/__,  10]
+    -- range="Ullr",                  -- ___, 40, __, __ (__, __, __, __) [__/__, ___]
+    -- ammo=empty,
+    -- head="Vitiation Chapeau +3",   -- ___, 37, 29, __ (__, __, __, 26) [__/__,  95]; Enhances enf. duration
+    body="Atrophy Tabard +2",         -- ___, 45, 38, __ (__, __, __, 19) [__/__,  90]
+    hands="Lethargy Gantherots +2",   -- ___, 52, 28, __ (__, __, __, 24) [10/10,  77]
+    legs=gear.Chironic_MAcc_legs,     -- ___, 57, 42, __ ( 1, __, __, 13) [__/__, 118]
+    feet="Vitiation Boots +1",        -- ___, 15, 20, __ (__, __, __, 12) [__/__, 107]; Immunobreak+
+    neck="Duelist's Torque +2",       -- ___, 30, 15, __ (__, 10, 25, __) [__/__, ___]
+    ear1="Snotra Earring",            -- ___, 10, __, __ (__, __, 10, __) [__/__, ___]
+    ear2="Malignance Earring",        -- ___, 10,  8,  4 (__, __, __, __) [__/__, ___]
+    ring1="Metamorph Ring +1",        -- ___, 15, 16, __ (__, __, __, __) [__/__, ___]
+    ring2="Stikini Ring +1",          -- ___, 11, __, __ (__, __, __,  8) [__/__, ___]
+    back=gear.RDM_INT_Enf_Cape,       -- ___, 20, 30, __ (__, 10, __, __) [10/__, ___]
+    waist="Obstinate Sash",           -- ___, 15, __, __ (__, __,  5, 15) [__/__, ___]
+    -- Empy set effect                   ___, __, __, __ (__, __, __, __) [__/__, ___]
+    -- AF set bonus                      ___, 15
+    -- Traits/Gifts/Merits                            38
+    -- 228 M.Acc skill, 452 M.Acc, 248 INT, 42 FC (1 Immunobreak, 20 Enf. Effect, 40 Enf. Duration, 137 Enf. Skill) [20 PDT/10 MDT, 497 M.Eva]
+    
+    -- body="Atrophy Tabard +3",      -- ___, 55, 43, __ (__, __, __, 21) [__/__, 100]
+    -- hands="Lethargy Gantherots +3",-- ___, 62, 33, __ (__, __, __, 29) [11/11,  87]
+    -- legs=gear.Chironic_MAcc_legs,  -- ___, 60, 29, __ ( 1, __, __, 13) [__/__, 118]
+    -- feet="Vitiation Boots +3",     -- ___, 43, 30, __ (__, 10, __, 16) [__/__, 127]; Immunobreak+
+    -- 228 M.Acc skill, 503 M.Acc, 255 INT, 42 FC (1 Immunobreak, 30 Enf. Effect, 40 Enf. Duration, 148 Enf. Skill) [21 PDT/11 MDT, 537 M.Eva]
   })
+  sets.midcast.IntEnfeeblesAccDW = set_combine(sets.midcast.IntEnfeeblesAcc, {})
 
   -- Spells that have 100% accuracy. Focus on duration.
-  sets.midcast.IntEnfeeblesEffect = set_combine(sets.midcast.IntEnfeebles, {
-    ammo="Regal Gem",
-    range=empty,
-    body="Lethargy Sayon +3",
-    feet="Vitiation Boots +1",        -- ___, 15, 22, __ (__, __, __, 12) [__/__, 107]; Immunobreak+
-    neck="Duelist's Torque +2",
-    back=gear.RDM_INT_Enf_Cape, --Better and aurists's because includes enfeeb magic effect +10
+  sets.midcast.IntEnfeeblesDuration = set_combine(sets.midcast.MndEnfeeblesDuration, {
+    main="Daybreak",                  -- 242, 40, __, __ (__, __, __, __) [__/__,  30]
+    sub="Genmei Shield",              -- ___, __, __, __ (__, __, __, __) [10/__, ___]
+    -- range="Ullr",                  -- ___, 40, __, __ (__, __, __, __) [__/__, ___]
+    -- ammo=empty,
+    -- head="Vitiation Chapeau +3",   -- ___, 37, 29, __ (__, __, __, 26) [__/__,  95]; Enhances enf. duration
+    body="Lethargy Sayon +3",         -- ___, 64, 47, __ (__, 18, __, __) [14/14, 136]
+    hands="Regal Cuffs",              -- ___, 45, 40, __ (__, __, 20, __) [__/__,  53]
+    legs="Lethargy Fuseau +2",        -- ___, 53, 43, __ (__, __, __, __) [__/__, 152]
+    feet="Lethargy Houseaux +2",      -- ___, 50, 25, __ (__, __, __, __) [__/__, 147]
+    neck="Duelist's Torque +2",       -- ___, 30, 15, __ (__, 10, 25, __) [__/__, ___]
+    ear1="Snotra Earring",            -- ___, 10, __, __ (__, __, 10, __) [__/__, ___]
+    ear2="Odnowa Earring +1",         -- ___, __, __, __ (__, __, __, __) [ 3/ 5, ___]
+    ring1="Kishar Ring",              -- ___,  5, __,  4 (__, __, 10, __) [__/__, ___]
+    ring2="Defending Ring",           -- ___, __, __, __ (__, __, __, __) [10/10, ___]
+    back=gear.RDM_INT_Enf_Cape,       -- ___, 20, 30, __ (__, 10, __, __) [10/__, ___]
+    waist="Obstinate Sash",           -- ___, 15, __, __ (__, __,  5, 15) [__/__, ___]
+    -- Empy set effect                   ___, __, __, __ (__, __, 20, __) [__/__, ___]
+    -- Traits/Gifts/Merits                            38
+    -- 242 M.Acc skill, 409 M.Acc, 229 INT, 42 FC (0 Immunobreak, 38 Enf. Effect, 90 Enf. Duration, 41 Enf. Skill) [47 PDT/29 MDT, 613 M.Eva]
     
-    -- feet="vitiation boots +3",
+    -- legs="Lethargy Fuseau +3",     -- ___, 63, 48, __ (__, __, __, __) [__/__, 162]
+    -- feet="Lethargy Houseaux +3",   -- ___, 60, 30, __ (__, __, __, __) [__/__, 157]
+    -- 242 M.Acc skill, 429 M.Acc, 239 INT, 42 FC (0 Immunobreak, 38 Enf. Effect, 90 Enf. Duration, 41 Enf. Skill) [47 PDT/29 MDT, 633 M.Eva]
   })
-  sets.midcast.IntEnfeeblesEffectDW = set_combine(sets.midcast.IntEnfeeblesEffect, {
-    -- main={name="Crocea Mors", priority=1},  --255+50
-    sub="Daybreak", --40 bonus magic acc
-  })
+  sets.midcast.IntEnfeeblesDurationDW = set_combine(sets.midcast.IntEnfeeblesDuration, {})
 
   -- Skill max is 625 is the highest needed.
   -- Distract III (610), Frazzle III (625), Poison II (no cap)
@@ -1780,22 +1845,22 @@ function job_get_spell_map(spell, default_spell_map)
         custom_spell_map = custom_spell_map..'WeaponLock'
       end
     elseif spell.skill == 'Enfeebling Magic' then
-      if enfeebling_magic_skill:contains(spell.english) then
+      if enfeebling_skill_spells:contains(spell.english) then
         custom_spell_map = 'SkillEnfeebles'
       elseif spell.type == 'WhiteMagic' then
-        if enfeebling_magic_effect:contains(spell.english) then
-          custom_spell_map = 'MndEnfeeblesEffect'
+        if enfeebling_duration_spells:contains(spell.english) then
+          custom_spell_map = 'MndEnfeeblesDuration'
         elseif not buffactive.Stymie and state.CastingMode.value == 'Resistant' then
           custom_spell_map = 'MndEnfeeblesAcc'
         else
           custom_spell_map = 'MndEnfeebles'
         end
       elseif spell.type == 'BlackMagic' then
-        if enfeebling_magic_effect:contains(spell.english) then
-          custom_spell_map = 'IntEnfeeblesEffect'
-        elseif enfeebling_magic_sleep:contains(spell.english) and ((buffactive.Stymie and buffactive.Composure) or state.SleepMode.value == 'MaxDuration') then
+        if enfeebling_duration_spells:contains(spell.english) then
+          custom_spell_map = 'IntEnfeeblesDuration'
+        elseif enfeebling_sleep_spells:contains(spell.english) and ((buffactive.Stymie and buffactive.Composure) or state.SleepMode.value == 'MaxDuration') then
           custom_spell_map = 'SleepMaxDuration'
-        elseif enfeebling_magic_sleep:contains(spell.english) then
+        elseif enfeebling_sleep_spells:contains(spell.english) then
           custom_spell_map = 'SleepNormal' --Can't call it sleep as gs checks for sets.midcast.Sleep before calling job_get_spell_map
         elseif not buffactive.Stymie and state.CastingMode.value == 'Resistant' then
           custom_spell_map = 'IntEnfeeblesAcc'
