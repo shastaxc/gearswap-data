@@ -878,7 +878,7 @@ function init_gear_sets()
     sub="Ammurapi Shield",            -- 13, 38, 38, ___, ___, __, __
     ammo="Pemphredo Tathlum",         --  4,  8,  4, ___, ___, __, __
     head="Pedagogy Mortarboard +3",   -- 39, 37, 49, ___, ___, __,  4
-    body="Shamash Robe",              -- 40, 45, 45, ___, ___, __, __
+    body=gear.Merl_MAB_body,          -- 40, 39, 64, ___, ___, __, __
     hands="Arbatel Bracers +3",       -- 36, 62, 52, ___,  32, 15, __
     legs="Pedagogy Pants +3",         -- 47, 39, 51, ___, ___, __, __; Elemental skill +19
     feet="Arbatel Loafers +3",        -- 34, 60, 50, ___,  30, __,  5; Elemental skill +33
@@ -889,7 +889,7 @@ function init_gear_sets()
     ring2="Metamorph Ring +1",        -- 16, 15, __, ___, ___, __, __
     back=gear.SCH_MAB_Cape,           -- 30, 20, 10, ___,  20, __, __
     waist="Refoccilation Stone",      -- __,  4, 10, ___, ___, __, __
-    -- 302 INT, 398 MAcc, 402 MAB, 255 MAccSk, 330 MDmg, 25 MB Dmg%, 9 MB2 Dmg%
+    -- 302 INT, 392 MAcc, 421 MAB, 255 MAccSk, 330 MDmg, 25 MB Dmg%, 9 MB2 Dmg%
     
     -- Ideal:
     -- main="Bunzi's Rod",            -- 15, 55, 65, 255, 248, 10, __; R30
@@ -914,7 +914,7 @@ function init_gear_sets()
     sub="Ammurapi Shield",            -- 13, 38, 38, ___, ___, __, __
     ammo="Pemphredo Tathlum",         --  4,  8,  4, ___, ___, __, __
     head="Pedagogy Mortarboard +3",   -- 39, 37, 49, ___, ___, __,  4
-    body="Shamash Robe",              -- 40, 45, 45, ___, ___, __, __
+    body=gear.Merl_MAB_body,          -- 40, 39, 64, ___, ___, __, __
     hands="Arbatel Bracers +3",       -- 36, 62, 52, ___,  32, 15, __
     legs="Pedagogy Pants +3",         -- 47, 39, 51, ___, ___, __, __; Elemental skill +19
     feet="Arbatel Loafers +3",        -- 34, 60, 50, ___,  30, __,  5; Elemental skill +33
@@ -925,7 +925,7 @@ function init_gear_sets()
     ring2="Mujin Band",               -- __, __, __, ___, ___, __,  5
     back=gear.SCH_MAB_Cape,           -- 30, 20, 10, ___,  20, __, __
     waist="Refoccilation Stone",      -- __,  4, 10, ___, ___, __, __
-    -- 301 INT, 403 MAcc, 392 MAB, 255 MAccSk, 355 MDmg, 35 MB Dmg%, 14 MB2 Dmg%
+    -- 301 INT, 397 MAcc, 411 MAB, 255 MAccSk, 355 MDmg, 35 MB Dmg%, 14 MB2 Dmg%
 
     -- main="Bunzi's Rod",            -- 15, 55, 65, 255, 248, 10, __; R30
     -- sub="Ammurapi Shield",         -- 13, 38, 38, ___, ___, __, __

@@ -544,7 +544,7 @@ function init_gear_sets()
     sub="Maxentius",                  -- 21, 40, 15 [__/__, ___] __
     ammo="Pemphredo Tathlum",         --  4,  8,  4 [__/__, ___] __
     head="Hashishin Kavuk +2",        -- 46, 51, 29 [__/__, 115] __
-    body="Shamash Robe",              -- 45, 45, 40 [10/__, 106] 10
+    body=gear.Merl_MAB_body,          -- 64, 39, 40 [ 2/__,  91]  5
     hands="Hashishin Bazubands +2",   -- 52, 52, 28 [ 9/ 9,  77]  5; Blue magic recast -15%
     legs="Hashishin Tayt +2",         -- 48, 53, 43 [11/11, 152] __
     feet="Hashishin Basmak +2",       -- 50, 50, 34 [__/__, 147]  9
@@ -555,12 +555,12 @@ function init_gear_sets()
     ring2="Defending Ring",           -- __, __, __ [10/10, ___] __
     back=gear.BLU_MAB_Cape,           -- 10, 20, 30 [10/__, ___] __
     waist="Sanctuary Obi +1",         -- __, __,  6 [__/__, ___]  4
-    -- 348 MAB, 390 M.Acc, 270 INT [50 PDT/30 MDT, 597 M.Eva] 44 Enmity-
+    -- 367 MAB, 384 M.Acc, 270 INT [42 PDT/30 MDT, 582 M.Eva] 39 Enmity-
   }
 
   sets.midcast['Blue Magic'].Magical.Resistant = set_combine(sets.midcast['Blue Magic'].Magical, {
     waist="Acuity Belt +1",           -- __, 15, 23 [__/__, ___] __
-    -- 348 MAB, 405 M.Acc, 287 INT [50 PDT/30 MDT, 597 M.Eva] 40 Enmity-
+    -- 348 MAB, 399 M.Acc, 287 INT [42 PDT/30 MDT, 582 M.Eva] 35 Enmity-
   })
 
   sets.midcast['Blue Magic'].MagicalDark = set_combine(sets.midcast['Blue Magic'].Magical, {
