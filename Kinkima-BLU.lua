@@ -699,7 +699,7 @@ function init_gear_sets()
 
   sets.midcast['Blue Magic']['Carcharian Verve'] = set_combine(sets.midcast['Blue Magic'].Buff, {
     -- head="Amalric Coif +1",
-    -- waist="Emphatikos Rope",
+    waist="Emphatikos Rope",
   })
 
   sets.midcast['Blue Magic']['ConserveMP'] = {}
@@ -763,9 +763,9 @@ function init_gear_sets()
 
   sets.midcast.Aquaveil = set_combine(sets.midcast.EnhancingDuration, {
     hands="Regal Cuffs", --2
+    waist="Emphatikos Rope", --1
     -- head="Amalric Coif +1", --2
     -- legs="Shedir Seraweels", --1
-    -- waist="Emphatikos Rope", --1
   })
 
   sets.midcast.Protect = set_combine(sets.midcast.EnhancingDuration, {

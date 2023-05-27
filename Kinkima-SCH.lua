@@ -618,10 +618,10 @@ function init_gear_sets()
     main="Bolelabunga",
     sub="Ammurapi Shield",          -- __, 10
     hands="Regal Cuffs",            --  2, __
+    waist="Emphatikos Rope",        --  1, __
     -- main="Vadose Rod",           --  1, __
     -- head="Amalric Coif +1",      --  2, __
     -- legs="Shedir seraweels",     --  1, __
-    -- waist="Emphatikos Rope",     --  1, __
     -- +6 Aquaveil, 32% Enh Duration
   })
 

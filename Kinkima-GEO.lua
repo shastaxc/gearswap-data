@@ -1130,9 +1130,9 @@ function init_gear_sets()
     ring1="Gelatinous Ring +1",       -- __, __ [ 7/-1, ___] {__/__, __}
     ring2="Defending Ring",           -- __, __ [10/10, ___] {__/__, __}
     back=gear.GEO_FC_Cape,            -- __, __ [10/__, ___] {__/__, __}
-    waist="Embla Sash",               -- __, 10 [__/__, ___] {__/__, __}
+    waist="Emphatikos Rope",          --  1, __ [__/__, ___] {__/__, __}
     -- Base                               1
-    -- 3 Aquaveil, 30% Enh Duration [62 PDT/44 MDT, 567 M.Eva] {Pet: 30 PDT/30 MDT, 7 Regen}
+    -- 4 Aquaveil, 20% Enh Duration [62 PDT/44 MDT, 567 M.Eva] {Pet: 30 PDT/30 MDT, 7 Regen}
 
     -- main="Vadose Rod",             --  1, __ [__/__, ___] {__/__, __}
     -- head="Amalric Coif +1",        --  2, __ [__/__,  86] {__/__, __}
@@ -1140,7 +1140,6 @@ function init_gear_sets()
     -- feet="Azimuth Gaiters +3",     -- __, __ [11/11, 168] {__/__, __}
     -- ear1="Genmei Earring",         -- __, __ [ 2/__, ___] {__/__, __}
     -- ear2="Azimuth Earring +2",     -- __, __ [ 7/ 7, ___] {__/__, __}
-    -- waist="Emphatikos Rope",       --  1, __ [__/__, ___] {__/__, __}
     -- Base                               1
     -- 8 Aquaveil, 20% Enh Duration [53 PDT/33 MDT, 387 M.Eva] {Pet: 5 PDT/5 MDT, 3 Regen}
   }

@@ -107,7 +107,7 @@ function job_setup()
   state.WeaponSet = M{['description']='Weapon Set', 'Casting', 'Savage Blade', 'Seraph Blade', 'Black Halo', 'Enspell', 'Cleaving'}
   state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger',
       'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
-  state.ElementalMode = M{['description'] = 'Elemental Mode', 'Light','Dark','Fire','Ice','Wind','Earth','Lightning','Water'}
+  state.ElementalMode = M{['description'] = 'Elemental Mode', 'Fire','Ice','Wind','Earth','Lightning','Water','Light','Dark'}
 
   state.Buff.Composure = buffactive.Composure or false
   state.Buff.Saboteur = buffactive.Saboteur or false
@@ -137,6 +137,8 @@ function job_setup()
 
   enhancing_skill_spells = S{'Temper', 'Temper II', 'Enfire', 'Enfire II', 'Enblizzard', 'Enblizzard II', 'Enaero',
       'Enaero II', 'Enstone', 'Enstone II', 'Enthunder', 'Enthunder II', 'Enwater', 'Enwater II'}
+
+  elemental_debuff_spells = S{'Shock', 'Rasp', 'Choke', 'Frost', 'Burn', 'Drown'}
 
   --Used to pick the best enspell for the current day
   enspell_to_day_element = T{
@@ -227,6 +229,7 @@ function init_gear_sets()
   -- Fast cast sets for spells (cap 80% FC).
   -- RDM has 38% FC at 2000 job points
   sets.precast.FC = {
+    range=empty,                      -- __ [__/__, ___]
     ammo="Sapience Orb",              --  2 [__/__, ___]
     head="Atrophy Chapeau +2",        -- 14 [__/__,  85]
     body="Shamash Robe",              -- __ [10/__, 106]; Resist Silence+90
@@ -249,6 +252,7 @@ function init_gear_sets()
 
   -- 10% cap on quick magic
   sets.precast.FC.QuickMagic = {
+    range=empty,                      -- __ [__/__, ___]
     ammo="Impatiens",                 -- __ [__/__, ___]  2
     head="Bunzi's Hat",               -- 10 [ 7/ 7, 123]
     body="Pinga Tunic +1",            -- 15 [__/__, 128]
@@ -270,6 +274,7 @@ function init_gear_sets()
   }
 
   sets.precast.FC.Impact = {
+    range=empty,                      -- __ [__/__, ___]
     ammo="Sapience Orb",              --  2 [__/__, ___]
     head=empty,                       -- __ [__/__, ___]
     body="Crepuscular Cloak",         -- __ [__/__, 231]
@@ -296,6 +301,7 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.precast.WS = {
+    range=empty,                      -- __, __, __, __, __ <__, __, __> (__, __) [__/__, ___]
     ammo="Oshasha's Treatise",        -- __,  5,  5,  3, __ <__, __, __> (__, __) [__/__, ___]
     head=gear.Nyame_B_head,           -- 26, 50, 65, 11, __ < 5, __, __> (__, __) [ 7/ 7, 123]
     body=gear.Nyame_B_body,           -- 45, 40, 65, 13, __ < 7, __, __> (__, __) [ 9/ 9, 139]
@@ -314,6 +320,7 @@ function init_gear_sets()
 
   -- 80% DEX. 3 hit. Can crit. Transfers fTP.
   sets.precast.WS['Chant du Cygne'] = set_combine(sets.precast.WS, {
+    range=empty,                      -- __, __, __, __, __ <__, __, __> (__, __) [___/___, ___]
     -- ammo="Yetshila +1",            -- __, __, __, __, __ <__, __, __> ( 2,  6) [___/___, ___]
     -- head="Blistering Sallet +1",   -- 41, 53, __, __, __ < 3, __, __> (10, __) [  3/___,  53]
     body=gear.Nyame_B_body,           -- 24, 40, 65, 13, __ < 7, __, __> (__, __) [  9/  9, 139]
@@ -335,6 +342,7 @@ function init_gear_sets()
 
   -- 60% STR. 4 hit. Can crit. Transfers fTP.
   sets.precast.WS['Vorpal Blade'] = {
+    range=empty,                      -- __, __, __, __, __ <__, __, __> (__, __) [___/___, ___]
     -- ammo="Yetshila +1",            -- __, __, __, __, __ <__, __, __> ( 2,  6) [___/___, ___]
     -- head="Blistering Sallet +1",   -- 41, 53, __, __, __ < 3, __, __> (10, __) [  3/___,  53]
     body=gear.Nyame_B_body,           -- 45, 40, 65, 13, __ < 7, __, __> (__, __) [  9/  9, 139]
@@ -359,6 +367,7 @@ function init_gear_sets()
 
   -- 50% STR/50% MND. 2 hit. Scales well with WSD, not multihit.
   sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
+    range=empty,                      -- __, __, __, __, __, __ <__, __, __> (__, __) [__/__, ___]
     ammo="Oshasha's Treatise",        -- __, __,  5,  5,  3, __ <__, __, __> (__, __) [__/__, ___]
     head=gear.Nyame_B_head,           -- 26, 26, 50, 65, 11, __ < 5, __, __> (__, __) [ 7/ 7, 123]
     body=gear.Nyame_B_body,           -- 45, 37, 40, 65, 13, __ < 7, __, __> (__, __) [ 9/ 9, 139]
@@ -392,6 +401,7 @@ function init_gear_sets()
 
   -- 50% MND/30% STR. Dark elemental. dStat=INT. Focus on M.Dmg, WSC (stat) where 1M.Dmg==2MND==5STR
   sets.precast.WS['Sanguine Blade'] = {
+    range=empty,                      -- __, __, __, __, __, __, __ [__/__, ___]
     -- ammo="Ghastly Tathlum +1",     -- __, __, 11, __, __, __, 21 [__/__, ___]
     head="Pixie Hairpin +1",          -- __, __, 27, __, __, __, __ [__/__, ___]; Dark MAB+28
     body="Lethargy Sayon +3",         -- 34, 45, 47, 64, __, 54, 34 [14/14, 136]
@@ -420,7 +430,8 @@ function init_gear_sets()
   --Priority: ftp >> MD == 0.4*(STR+MND) > MAB > WSD > Ele Aff.
   -- 40% STR/40% MND. Light elemental. No dSTAT. 
   sets.precast.WS['Seraph Blade'] = {
-  -- ammo="Ghastly Tathlum +1",       -- __, __, __, __, __, 21 [__/__, ___]
+    range=empty,                      -- __, __, __, __, __, __ [__/__, ___]
+    -- ammo="Ghastly Tathlum +1",     -- __, __, __, __, __, 21 [__/__, ___]
     head=gear.Nyame_B_head,           -- 26, 26, 40, 11, 30, __ [ 7/ 7, 123]
     body="Lethargy Sayon +3",         -- 34, 45, 64, __, 54, 34 [14/14, 136]
     hands="Lethargy Gantherots +2",   -- 11, 45, 52, __, 47, 22 [10/10,  77]
@@ -448,6 +459,7 @@ function init_gear_sets()
   --Priority: ftp >> MD == 0.4*(DEX/INT) > MAB > WSD > Ele Aff.
   -- 40% DEX/40% INT. Wind elemental. dStat=INT.
   sets.precast.WS['Aeolian Edge'] = {
+    range=empty,                      -- __, __, __, __, __, __ [__/__, ___]
     -- ammo="Ghastly Tathlum +1",     -- __, 11, __, __, __, 21 [__/__, ___]
     head="Lethargy Chappel +2",       -- 24, 33, 51, __, 51, 21 [ 9/ 9, 115]
     body="Lethargy Sayon +3",         -- 34, 47, 64, __, 54, 34 [14/14, 136]
@@ -489,7 +501,7 @@ function init_gear_sets()
   sets.midcast.CureNormal = {
     main="Eremite's Wand +1",         -- __, __, ___,   2, ___, 25, __/__, __
     sub="Genmei Shield",              -- __, __, ___, ___, ___, __, 10/__, __
-    range=empty,
+    range=empty,                      -- __, __, ___, ___, ___, __, __/__, __
     ammo="Staunch Tathlum +1",        -- __, __, ___, ___, ___, 11,  3/ 3, __
     head=gear.Kaykaus_C_head,         -- __, 11,  16,  19,  14, 12, __/ 3, __
     body=gear.Kaykaus_C_body,         --  4, __, ___,  33,  20, 12, __/__, __
@@ -513,7 +525,7 @@ function init_gear_sets()
     -- 679 Power
   }
   sets.midcast.CureNormalWeaponLock = {
-    range=empty,
+    range=empty,                      -- __, __, ___, ___, ___, __, __/__, __
     ammo="Staunch Tathlum +1",        -- __, __, ___, ___, ___, 11,  3/ 3, __
     head=gear.Kaykaus_C_head,         -- __, 11,  16,  19,  14, 12, __/ 3, __
     body="Rosette Jaseran +1",        -- __, __, ___,  39,  31, 25,  5/ 5, 13
@@ -540,6 +552,7 @@ function init_gear_sets()
   sets.midcast.CureWeather = {
     main="Chatoyant Staff",           -- __, 10, ___,   5,   5, __, __/__, __
     sub="Mensch Strap +1",            -- __, __, ___, ___, ___, __,  5/__, __
+    range=empty,                      -- __, __, ___, ___, ___, __, __/__, __
     ammo="Staunch Tathlum +1",        -- __, __, ___, ___, ___, 11,  3/ 3, __
     head=gear.Kaykaus_C_head,         -- __, 11,  16,  19,  14, 12, __/ 3, __
     body="Rosette Jaseran +1",        -- __, __, ___,  39,  31, 25,  5/ 5, 13
@@ -563,6 +576,7 @@ function init_gear_sets()
     -- 673 Power
   }
   sets.midcast.CureWeatherWeaponLock = {
+    range=empty,                      -- __, __, ___, ___, ___, __, __/__, __
     ammo="Staunch Tathlum +1",        -- __, __, ___, ___, ___, 11,  3/ 3, __
     head=gear.Kaykaus_C_head,         -- __, 11,  16,  19,  14, 12, __/ 3, __
     body="Rosette Jaseran +1",        -- __, __, ___,  39,  31, 25,  5/ 5, 13
@@ -592,6 +606,7 @@ function init_gear_sets()
   sets.midcast.Cursna = {
     -- main="Prelatic Pole",      -- 10, __, __
     -- sub="Curatio Grip",        --  3, __, __
+    range=empty,                  -- __, __, __
     ammo="Incantor Stone",        -- __, __,  2
     head=gear.Vanya_B_head,       -- 20, __, __
     body=gear.Vanya_B_body,       -- 20, __, __
@@ -611,6 +626,7 @@ function init_gear_sets()
 
   -- Blink used as defensive while in combat. Focus on DT, MEVA, and Duration.
   sets.midcast.Blink = {
+    range=empty,                      -- __, __, __ [__/__, ___]
     ammo="Staunch tathlum +1",        -- __, __, __ [ 3/ 3, ___]
     head="Bunzi's Hat",               -- __, __, 10 [ 7/ 7, 123]
     -- body="Vitiation Tabard +3",    -- 15, __, 15 [__/__, 100]
@@ -635,6 +651,7 @@ function init_gear_sets()
   sets.midcast.EnhancingDuration = {
     main=gear.Colada_ENH,             -- __,  4, __,  4 [__/__, ___]
     sub="Ammurapi Shield",            -- __, 10, __, __ [__/__, ___]
+    range=empty,                      -- __, __, __, __ [__/__, ___]
     ammo="Staunch Tathlum +1",        -- __, __, __, __ [ 3/ 3, ___]
     head=gear.Telchine_ENH_head,      -- __, 10, __, __ [__/__,  75]
     body=gear.Telchine_ENH_body,      -- 12, 10, __, __ [__/__,  80]
@@ -660,6 +677,7 @@ function init_gear_sets()
   sets.midcast.SkillEnhancing = {
     main=gear.Colada_ENH,             -- __,  4, __,  4 [__/__, ___]
     sub="Forfend +1",                 -- 10, __, __, __ [ 4/__, ___]
+    range=empty,                      -- __, __, __, __ [__/__, ___]
     ammo="Staunch Tathlum +1",        -- __, __, __, __ [ 3/ 3, ___]
     head="Befouled Crown",            -- 16, __, __, __ [__/__,  75]
     body=gear.Telchine_ENH_body,      -- 12, 10, __, __ [__/__,  80]
@@ -692,6 +710,7 @@ function init_gear_sets()
   sets.midcast.Regen = {
     main="Bolelabunga",               --  1, __, __ [__/__, ___]
     sub="Ammurapi Shield",            -- __, 10, __ [__/__, ___]
+    range=empty,                      -- __, __, __ [__/__, ___]
     ammo="Staunch Tathlum +1",        -- __, __, __ [ 3/ 3, ___]
     head=gear.Telchine_ENH_head,      -- __,  9, __ [__/__,  75]
     body=gear.Telchine_Regen_body,    --  3, __, 10 [__/__,  80]
@@ -717,6 +736,7 @@ function init_gear_sets()
   sets.midcast.RefreshOthers = {
     main=gear.Colada_ENH,             -- __,  4, __, __ [__/__, ___]
     sub="Ammurapi Shield",            -- __, 10, __, __ [__/__, ___]
+    range=empty,                      -- __, __, __, __ [__/__, ___]
     ammo="Staunch Tathlum +1",        -- __, __, __, __ [ 3/ 3, ___]
     head=gear.Telchine_ENH_head,      -- __, 10, __, __ [__/__,  75]
     body="Atrophy Tabard +2",         --  1, __, __, __ [__/__,  90]
@@ -753,6 +773,7 @@ function init_gear_sets()
   sets.midcast.Stoneskin = {
     main=gear.Colada_ENH,             -- __,  4, __,  4 [__/__, ___]
     sub="Ammurapi Shield",            -- __, 10, __, __ [__/__, ___]
+    range=empty,                      -- __, __, __, __ [__/__, ___]
     ammo="Staunch Tathlum +1",        -- __, __, __, __ [ 3/ 3, ___]
     head="Bunzi's Hat",               -- __, __, __, 10 [ 7/ 7, 123]
     body="Lethargy Sayon +3",         -- __, __, __, __ [14/14, 136]
@@ -780,6 +801,7 @@ function init_gear_sets()
   sets.midcast.PhalanxSelf = {
     -- main="Sakpata's Sword",            --  5, __, __, __ [10/10, ___]
     sub="Ammurapi Shield",                -- __, __, __, 10 [__/__, ___]
+    range=empty,                          -- __, __, __, __ [__/__, ___]
     ammo="Staunch Tathlum +1",            -- __, __, __, __ [ 3/ 3, ___]
     head=gear.Merl_Phalanx_head,          --  5, __, __, __ [__/__,  86]
     body=gear.Telchine_ENH_body,          -- __, 12, __, 10 [__/__,  80]
@@ -800,6 +822,7 @@ function init_gear_sets()
     
     -- main="Sakpata's Sword",            --  5, __, __, __ [10/10, ___]
     -- sub="Ammurapi Shield",             -- __, __, __, 10 [__/__, ___]
+    -- range=empty,                       -- __, __, __, __ [__/__, ___]
     -- ammo="Staunch Tathlum +1",         -- __, __, __, __ [ 3/ 3, ___]
     -- head=gear.Merl_Phalanx_head,       --  5, __, __, __ [__/__,  86]
     -- body=gear.Merl_Phalanx_body,       --  5, __, __, __ [ 2/__,  91]
@@ -820,6 +843,7 @@ function init_gear_sets()
     
     -- main="Sakpata's Sword",            --  5, __, __, __ [10/10, ___]
     -- sub="Ammurapi Shield",             -- __, __, __, 10 [__/__, ___]
+    -- range=empty,                       -- __, __, __, __ [__/__, ___]
     -- ammo="Staunch Tathlum +1",         -- __, __, __, __ [ 3/ 3, ___]
     -- head=gear.Merl_Phalanx_head,       --  5, __, __, __ [__/__,  86]
     -- body=gear.Merl_Phalanx_body,       --  5, __, __, __ [ 2/__,  91]
@@ -840,50 +864,12 @@ function init_gear_sets()
   }
   -- Skill caps at 500 Enhancing Magic skill for a total of Phalanx+35.
   sets.midcast.PhalanxOthers = set_combine(sets.midcast.EnhancingDuration,{})
-  sets.midcast.PhalanxOthersComp = {
-    main=gear.Colada_ENH,             -- __,  4, __,  4 [__/__, ___]
-    sub="Ammurapi Shield",            -- __, 10, __, __ [__/__, ___]
-    ammo="Staunch Tathlum +1",        -- __, __, __, __ [ 3/ 3, ___]
-    head="Lethargy Chappel +2",       -- __, __, __, __ [ 9/ 9, 115]
-    body="Lethargy Sayon +3",         -- __, __, __, __ [14/14, 136]
-    hands="Atrophy Gloves +3",        -- __, 20, __, __ [__/__,  57]
-    legs="Lethargy Fuseau +2",        -- __, __, __, __ [__/__, 152]
-    feet="Lethargy Houseaux +2",      -- 30, 35, __, __ [__/__, 147]
-    neck="Duelist's Torque +2",       -- __, 25, __, __ [__/__, ___]
-    ear1="Odnowa Earring +1",         -- __, __, __, __ [ 3/ 5, ___]
-    ear2="Lethargy Earring",          -- __,  7, __,  7 [__/__, ___]
-    ring1="Gelatinous Ring +1",       -- __, __, __, __ [ 7/-1, ___]
-    ring2="Defending Ring",           -- __, __, __, __ [10/10, ___]
-    back=gear.RDM_Adoulin_Cape,       --  7, __, 19, __ [__/__, ___]
-    waist="Embla Sash",               -- __, 10, __,  5 [__/__, ___]
-    -- Traits/Gifts/Merits            --456, __, __, 38 [__/__, ___]
-    -- Empy set bonuses                  __, 35, __, __ [__/__, ___]
-    -- 493 Enh skill, 146 Enh duration, 19 Aug Enh Duration, 54 FC [46 PDT/40 MDT, 607 M.Eva]
-    
-    -- main=gear.Colada_ENH,          -- __,  4, __,  4 [__/__, ___]
-    -- sub="Ammurapi Shield",         -- __, 10, __, __ [__/__, ___]
-    -- ammo="Staunch Tathlum +1",     -- __, __, __, __ [ 3/ 3, ___]
-    -- head="Lethargy Chappel +3",    -- __, __, __, __ [10/10, 125]
-    -- body="Lethargy Sayon +3",      -- __, __, __, __ [14/14, 136]
-    -- hands="Atrophy Gloves +3",     -- __, 20, __, __ [__/__,  57]
-    -- legs="Lethargy Fuseau +3",     -- __, __, __, __ [__/__, 162]
-    -- feet="Lethargy Houseaux +3",   -- 35, 40, __, __ [__/__, 157]
-    -- neck="Duelist's Torque +2",    -- __, 25, __, __ [__/__, ___]
-    -- ear1="Odnowa Earring +1",      -- __, __, __, __ [ 3/ 5, ___]
-    -- ear2="Lethargy Earring",       -- __,  7, __,  7 [__/__, ___]
-    -- ring1="Gelatinous Ring +1",    -- __, __, __, __ [ 7/-1, ___]
-    -- ring2="Defending Ring",        -- __, __, __, __ [10/10, ___]
-    -- back=gear.RDM_Adoulin_Cape,    -- 10, __, 20, __ [__/__, ___]
-    -- waist="Embla Sash",            -- __, 10, __,  5 [__/__, ___]
-    -- Traits/Gifts/Merits            --456, __, __, 38 [__/__, ___]
-    -- Empy set bonuses                  __, 35, __, __ [__/__, ___]
-    -- 501 Enh skill, 151 Enh duration, 20 Aug Enh Duration, 54 FC [47 PDT/41 MDT, 637 M.Eva]
-  }
 
   -- Needs 500 enhancing magic skill.
   sets.midcast.Aquaveil = set_combine(sets.midcast.EnhancingDuration, {
     main="Eremite's Wand +1",         -- __, __, __, __, 25 [__/__, ___]
     sub="Genmei Shield",              -- __, __, __, __, __ [10/__, ___]
+    range=empty,                      -- __, __, __, __, __ [__/__, ___]
     ammo="Staunch Tathlum +1",        -- __, __, __, __, 11 [ 3/ 3, ___]
     -- head="Amalric Coif +1",        --  2, __, __, __, __ [__/__,  86]
     body="Rosette Jaseran +1",        -- __, __, __, __, 25 [ 5/ 5,  80]
@@ -896,12 +882,13 @@ function init_gear_sets()
     ring1="Freke Ring",               -- __, __, __, __, 10 [__/__, ___]
     ring2="Defending Ring",           -- __, __, __, __, __ [10/10, ___]
     back=gear.RDM_Adoulin_Cape,       -- __,  7, __, 19, __ [__/__, ___]
-    -- waist="Emphatikos Rope",       --  1, __, __, __, 12 [__/__, ___]
+    waist="Emphatikos Rope",          --  1, __, __, __, 12 [__/__, ___]
     -- Traits/Gifts/Merits            -- __,456, __, __, 10 [__/__, ___]
     -- 6 Aquaveil+, 508 Enh skill, 35 Enh duration, 19 Aug Enh Duration, 103 SIRD [37 PDT/29 MDT, 366 M.Eva]
     
     -- main="Eremite's Wand +1",      -- __, __, __, __, 25 [__/__, ___]
     -- sub="Genmei Shield",           -- __, __, __, __, __ [10/__, ___]
+    -- range=empty,                   -- __, __, __, __, __ [__/__, ___]
     -- ammo="Staunch Tathlum +1",     -- __, __, __, __, 11 [ 3/ 3, ___]
     -- head="Amalric Coif +1",        --  2, __, __, __, __ [__/__,  86]
     -- body="Rosette Jaseran +1",     -- __, __, __, __, 25 [ 5/ 5,  80]
@@ -935,35 +922,47 @@ function init_gear_sets()
   sets.midcast.Shell = set_combine(sets.midcast.Protect,{})
   sets.midcast.Shellra = set_combine(sets.midcast.Shell,{})
 
-  -- TODO: update
-  sets.midcast.Impact = set_combine(sets.midcast.MndEnfeeblesAcc, {
-    head=empty,
-    body="Crepuscular Cloak",
-    ring1="Archon Ring",
-    waist="Shinjutsu-no-Obi +1",
-  })
-
-  -- TODO: update, including logic that triggers this set
-  -- General enhancing set for buffing others under Composure if no spell-specific set is defined
+  -- General enhancing set for buffing others under Composure if no more specific set is defined
   sets.midcast.ComposureOther = {
-    main=gear.Colada_ENH, --4
-    sub={name="Ammurapi Shield", priority=1}, --10
-    head="Lethargy Chappel +2",
-    body="Lethargy Sayon +3",
-    hands="Atrophy Gloves +3", --20
-    legs="Lethargy Fuseau +2",
-    feet="Lethargy Houseaux +2", --35
-    neck="Duelist's Torque +2", --25
-    ear1="Malignance Earring", --4FC
-    ear2="Lethargy Earring", --7
-    ring1="Gelatinous Ring +1", --7PDT, -1MDT
-    ring2="Defending Ring", --10 DT
-    back=gear.RDM_ENH_Cape, --20
-    waist="Embla Sash", --10
+    main=gear.Colada_ENH,             -- __,  4, __,  4 [__/__, ___]
+    sub="Ammurapi Shield",            -- __, 10, __, __ [__/__, ___]
+    range=empty,                      -- __, __, __, __ [__/__, ___]
+    ammo="Staunch Tathlum +1",        -- __, __, __, __ [ 3/ 3, ___]
+    head="Lethargy Chappel +2",       -- __, __, __, __ [ 9/ 9, 115]
+    body="Lethargy Sayon +3",         -- __, __, __, __ [14/14, 136]
+    hands="Atrophy Gloves +3",        -- __, 20, __, __ [__/__,  57]
+    legs="Lethargy Fuseau +2",        -- __, __, __, __ [__/__, 152]
+    feet="Lethargy Houseaux +2",      -- 30, 35, __, __ [__/__, 147]
+    neck="Duelist's Torque +2",       -- __, 25, __, __ [__/__, ___]
+    ear1="Odnowa Earring +1",         -- __, __, __, __ [ 3/ 5, ___]
+    ear2="Lethargy Earring",          -- __,  7, __,  7 [__/__, ___]
+    ring1="Gelatinous Ring +1",       -- __, __, __, __ [ 7/-1, ___]
+    ring2="Defending Ring",           -- __, __, __, __ [10/10, ___]
+    back=gear.RDM_Adoulin_Cape,       --  7, __, 19, __ [__/__, ___]
+    waist="Embla Sash",               -- __, 10, __,  5 [__/__, ___]
+    -- Traits/Gifts/Merits            --456, __, __, 38 [__/__, ___]
+    -- Empy set bonuses                  __, 35, __, __ [__/__, ___]
+    -- 493 Enh skill, 146 Enh duration, 19 Aug Enh Duration, 54 FC [46 PDT/40 MDT, 607 M.Eva]
     
-    -- head="Lethargy Chappel +3",
-    -- legs="Lethargy Fuseau +3",
-    -- feet="Lethargy Houseaux +3", --35
+    -- main=gear.Colada_ENH,          -- __,  4, __,  4 [__/__, ___]
+    -- sub="Ammurapi Shield",         -- __, 10, __, __ [__/__, ___]
+    -- range=empty,                   -- __, __, __, __ [__/__, ___]
+    -- ammo="Staunch Tathlum +1",     -- __, __, __, __ [ 3/ 3, ___]
+    -- head="Lethargy Chappel +3",    -- __, __, __, __ [10/10, 125]
+    -- body="Lethargy Sayon +3",      -- __, __, __, __ [14/14, 136]
+    -- hands="Atrophy Gloves +3",     -- __, 20, __, __ [__/__,  57]
+    -- legs="Lethargy Fuseau +3",     -- __, __, __, __ [__/__, 162]
+    -- feet="Lethargy Houseaux +3",   -- 35, 40, __, __ [__/__, 157]
+    -- neck="Duelist's Torque +2",    -- __, 25, __, __ [__/__, ___]
+    -- ear1="Odnowa Earring +1",      -- __, __, __, __ [ 3/ 5, ___]
+    -- ear2="Lethargy Earring",       -- __,  7, __,  7 [__/__, ___]
+    -- ring1="Gelatinous Ring +1",    -- __, __, __, __ [ 7/-1, ___]
+    -- ring2="Defending Ring",        -- __, __, __, __ [10/10, ___]
+    -- back=gear.RDM_Adoulin_Cape,    -- 10, __, 20, __ [__/__, ___]
+    -- waist="Embla Sash",            -- __, 10, __,  5 [__/__, ___]
+    -- Traits/Gifts/Merits            --456, __, __, 38 [__/__, ___]
+    -- Empy set bonuses                  __, 35, __, __ [__/__, ___]
+    -- 501 Enh skill, 151 Enh duration, 20 Aug Enh Duration, 54 FC [47 PDT/41 MDT, 637 M.Eva]
   }
 
   -- Skill max is 625 is the highest needed.
@@ -1128,7 +1127,7 @@ function init_gear_sets()
   sets.midcast.INTEnfeeblesAcc = {
     main="Contemplator +1",           -- 228, 70, 12, __ (__, __, __, 20) [__/__, ___]
     sub="Enki Strap",                 -- ___, 10, 10, __ (__, __, __, __) [__/__,  10]
-    -- range=empty,                   -- ___, __, __, __ (__, __, __, __) [__/__, ___]
+    range=empty,                      -- ___, __, __, __ (__, __, __, __) [__/__, ___]
     ammo="Pemphredo Tathlum",         -- ___,  8,  4, __ (__, __, __, __) [__/__, ___]
     head="Vitiation Chapeau +1",      -- ___, __, 19, __ (__, __, __, 22) [__/__,  75]; Enhances enf. duration
     body="Atrophy Tabard +2",         -- ___, 45, 38, __ (__, __, __, 19) [__/__,  90]
@@ -1160,7 +1159,7 @@ function init_gear_sets()
   sets.midcast.INTEnfeeblesDuration = set_combine(sets.midcast.MNDEnfeeblesDuration, {
     main="Daybreak",                  -- 242, 40, __, __ (__, __, __, __) [__/__,  30]
     sub="Genmei Shield",              -- ___, __, __, __ (__, __, __, __) [10/__, ___]
-    -- range=empty,                   -- ___, __, __, __ (__, __, __, __) [__/__, ___]
+    range=empty,                      -- ___, __, __, __ (__, __, __, __) [__/__, ___]
     ammo="Pemphredo Tathlum",         -- ___,  8,  4, __ (__, __, __, __) [__/__, ___]
     head="Vitiation Chapeau +1",      -- ___, __, 19, __ (__, __, __, 22) [__/__,  75]; Enhances enf. duration
     body="Lethargy Sayon +3",         -- ___, 64, 47, __ (__, 18, __, __) [14/14, 136]
@@ -1260,6 +1259,7 @@ function init_gear_sets()
   sets.midcast['Elemental Magic'] = {
     main={name="Bunzi's Rod", priority=1},
     sub="Daybreak",
+    range=empty,
     -- ammo="Ghastly Tathlum +1",
     head="Lethargy Chappel +2",
     body="Lethargy Sayon +3",
@@ -1291,6 +1291,36 @@ function init_gear_sets()
     -- ammo=empty,
     waist="Acuity Belt +1",
   })
+
+  sets.midcast.Impact = {
+    -- main="Crocea Mors",            -- 255, __, 50, __, 20 [__/__, ___]
+    sub="Ammurapi Shield",            -- ___, __, 38, 13, __ [__/__, ___]
+    -- range="Ullr",                  -- ___, __, 40, __, __ [__/__, ___]
+    -- ammo=empty,                    -- ___, __, __, __, __ [__/__, ___]
+    head=empty,                       -- ___, __, __, __, __ [__/__, ___]
+    body="Crepuscular Cloak",         -- ___, __, 85, 80, __ [__/__, 231]
+    hands="Lethargy Gantherots +2",   -- ___, __, 52, 28, __ [10/10,  77]
+    legs="Bunzi Pants",               -- ___, __, 55, 51, __ [ 9/ 9, 150]
+    feet="Bunzi's Sabots",            -- ___, __, 55, 32, __ [ 6/ 6, 150]
+    neck="Duelist's Torque +2",       -- ___, __, 30, 15, __ [__/__, ___]
+    ear1="Malignance Earring",        -- ___, __, 10,  8,  4 [__/__, ___]
+    ear2="Regal Earring",             -- ___, __, __, 10, __ [__/__, ___]
+    ring1="Metamorph Ring +1",        -- ___, __, 15, 16, __ [__/__, ___]
+    ring2="Stikini Ring +1",          -- ___,  8, 11, __, __ [__/__, ___]
+    back="Aurist's Cape +1",          -- ___, __, 33, 33, __ [__/__, ___]
+    waist="Acuity Belt +1",           -- ___, __, 15, 23, __ [__/__, ___]
+    -- Empy set effect                   ___, __, __, __, __ [__/__, ___]
+    -- Traits/Gifts/Merits            --                  38
+    -- 255 M.Acc skill, 8 Elemental Skill, 489 M.Acc, 309 INT, 62 FC [25 PDT/25 MDT, 608 M.Eva]
+
+    -- hands="Lethargy Gantherots +3",-- ___, __, 62, 50, __ [11/11,  87]
+    -- 255 M.Acc skill, 8 Elemental Skill, 499 M.Acc, 314 INT, 62 FC [26 PDT/26 MDT, 618 M.Eva]
+  }
+
+  -- TODO: For spells like Burn, Choke, etc.
+  sets.midcast.ElementalDebuff = {
+
+  }
 
   sets.buff.Saboteur = {
     hands="Lethargy Gantherots +2",
@@ -1349,6 +1379,7 @@ function init_gear_sets()
   sets.passive_refresh = {
     main="Mpaca's Staff",             -- __/__, ___ [ 2]
     sub="Enki Strap",                 -- __/__,  10 [__]
+    range=empty,
     -- ammo="Homiliary",              -- __/__, ___ [ 1]
     head="Vitiation Chapeau +1",      -- __/__,  75 [ 2]
     body="Shamash Robe",              -- 10/__, 106 [ 3]; Resist Silence+90
@@ -1388,6 +1419,7 @@ function init_gear_sets()
 
   -- Aim for 26% gear haste. No DW. Max STP
   sets.engaged = {
+    range=empty,                      -- __, __, __ <__, __, __> [__/__, ___]
     ammo="Coiste Bodhar",             -- __,  3, __ < 3, __, __> [__/__, ___]
     head="Bunzi's Hat",               -- __,  8, 55 <__, __,  3> [ 7/ 7, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
@@ -1417,6 +1449,7 @@ function init_gear_sets()
 
   -- No Magic Haste (74% DW to cap)
   sets.engaged.DW = {
+    range=empty,                      -- __, __, __ <__, __, __> [__/__, ___]
     ammo="Coiste Bodhar",             -- __,  3, __ < 3, __, __> [__/__, ___]
     head="Bunzi's Hat",               -- __,  8, 55 <__, __,  3> [ 7/ 7, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
@@ -1449,6 +1482,7 @@ function init_gear_sets()
     -- main={name="Crocea Mors", priority=10}, 
     -- sub="Demersal Degen +1", --Offhand DA 35% when under temper II
     -- sub="Tauret",
+    range=empty,                      -- __, __, __ <__, __, __> [__/__, ___]
     ammo="Coiste Bodhar",             -- __,  3, __ < 3, __, __> [__/__, ___]
     head="Bunzi's Hat",               -- __,  8, 55 <__, __,  3> [ 7/ 7, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
@@ -1484,6 +1518,7 @@ function init_gear_sets()
 
   --------- 45% Magic Haste (11% DW to cap)----------------
   sets.engaged.MaxHasteDW = set_combine(sets.engaged.DW, {
+    range=empty,                      -- __, __, __ <__, __, __> [__/__, ___]
     ammo="Coiste Bodhar",             -- __,  3, __ < 3, __, __> [__/__, ___]
     head="Bunzi's Hat",               -- __,  8, 55 <__, __,  3> [ 7/ 7, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
@@ -1911,7 +1946,7 @@ function job_get_spell_map(spell, default_spell_map)
           custom_spell_map = 'PhalanxSelf'
         else
           if (spell.target.type == 'PLAYER' or spell.target.type == 'NPC') and state.Buff.Composure then
-            custom_spell_map = 'PhalanxOthersComp'
+            custom_spell_map = 'ComposureOther'
           else
             custom_spell_map = 'PhalanxOthers'
           end
@@ -1932,6 +1967,14 @@ function job_get_spell_map(spell, default_spell_map)
         else
           custom_spell_map = 'EnhancingDuration'
         end
+      end
+    elseif spell.skill == 'Elemental Magic' then
+      if spell.english == 'Impact' then
+        custom_spell_map = 'Impact'
+      elseif elemental_debuff_spells:contains(spell.english) then
+        custom_spell_map = 'ElementalDebuff'
+      else
+        custom_spell_map = default_spell_map
       end
     end
 
