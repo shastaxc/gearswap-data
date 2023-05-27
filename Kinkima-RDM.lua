@@ -1698,7 +1698,6 @@ function job_post_precast(spell, action, spellMap, eventArgs)
   if in_battle_mode() then
     -- Prevent swapping main/sub weapons
     equip({main="", sub=""})
-    print('precast')
     silibs.prevent_ammo_tp_loss()
   end
 
@@ -1734,7 +1733,6 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
   if in_battle_mode() then
     -- Prevent swapping main/sub weapons
     equip({main="", sub=""})
-    print('midcast')
     silibs.prevent_ammo_tp_loss()
   end
   
