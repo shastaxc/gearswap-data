@@ -928,7 +928,7 @@ function init_gear_sets()
     -- ear2="Telos Earring",
   })
   sets.precast.WS['Savage Blade'].MidAcc = set_combine(sets.precast.WS['Savage Blade'].LowAcc, {
-    -- ring1="Chirich Ring +1",
+    ring1="Chirich Ring +1",
   })
   sets.precast.WS['Savage Blade'].MidAccMaxTP = set_combine(sets.precast.WS['Savage Blade'].MidAcc, {
     -- ear2="Telos Earring",
@@ -1059,14 +1059,14 @@ function init_gear_sets()
     feet="Malignance Boots",          -- 49, __, 50,  9,  4/ 4
     ear1="Dedition Earring",          -- __, __, __,  8, __/__
     ear2="Cessance Earring",          -- __, __, __,  3, __/__
+    ring1="Chirich Ring +1",          -- __, __, __,  6, __/__
     waist="Reiki Yotai",              -- __, __, __,  4, __/__
-    -- 155 AGI, 35 MAB, 230 M.Acc, 57 STP, 28PDT/28MDT
+    -- 155 AGI, 35 MAB, 230 M.Acc, 63 STP, 28PDT/28MDT
 
     -- head="Blood Mask",             -- __, __,  3, __, __/__ Recast -5
     -- legs="Chasseur's Culottes +3", -- 43, __, 63, 12, 12/12
     -- neck="Iskur Gorget",           -- __, __, __,  8, __/__
     -- ear2="Telos Earring",          -- __, __, __,  5, __/__
-    -- ring1="Chirich Ring +1",       -- __, __, __,  6, __/__
     -- ring2="Crepuscular Ring",      -- __, __, 10,  6, __/__
     -- back=gear.COR_RA_Cape,         -- 30, __, __, 10, 10/__
     -- ear2="Crepuscular Earring",    -- __, __, 10,  5, __/__
@@ -1137,7 +1137,7 @@ function init_gear_sets()
     neck="Loricate Torque +1",  --  6/ 6, ___
     ear1="Arete Del Luna +1",   -- __/__, ___; Resists
     ear2="Odnowa Earring +1",   --  3/ 5, ___
-    -- ring1="Chirich Ring +1",    -- __/__, ___
+    ring1="Chirich Ring +1",    -- __/__, ___
     ring2="Defending Ring",     -- 10/10, ___
     back=gear.COR_TP_Cape,      -- 10/__, ___
     waist="Carrier's Sash",     -- __/__, ___; Ele Resist+15
@@ -1155,10 +1155,10 @@ function init_gear_sets()
   }
   sets.latent_regen = {
     neck="Bathy Choker +1",
+    ring1="Chirich Ring +1",
     -- ear1="Infused Earring",
-    -- ring1="Chirich Ring +1",
-    -- back=gear.COR_Regen_Cape,
     -- ring2="Chirich Ring +1",
+    -- back=gear.COR_Regen_Cape,
   }
   sets.latent_refresh = {
     legs="Rawhide Trousers",
@@ -1235,16 +1235,16 @@ function init_gear_sets()
     -- 0 DW, 58 STP, 255 Acc <20 DA, 12 TA, 2 QA> [39 PDT/29 MDT, 530 M.Eva]
   })
   sets.engaged.MidAcc = set_combine(sets.engaged.LowAcc, {
-    -- ring1="Chirich Ring +1",       -- __,  6, 10 <__, __, __> [__/__, ___]
+    ring1="Chirich Ring +1",          -- __,  6, 10 <__, __, __> [__/__, ___]
     -- waist="Kentarch Belt +1",      -- __,  5, 14 < 3, __, __> [__/__, ___]
     -- 0 DW, 69 STP, 277 Acc <20 DA, 7 TA, 0 QA> [39 PDT/29 MDT, 530 M.Eva]
   })
   sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
     ear1="Dignitary's Earring",       -- __,  3, 10 <__, __, __> [__/__, ___]
+    ring2="Chirich Ring +1",          -- __,  6, 10 <__, __, __> [__/__, ___]
     waist="Olseni Belt",              -- __,  3, 20 <__, __, __> [__/__, ___]
     
     -- legs="Chasseur's Culottes +3", -- __, 12, 63 <__, __, __> [12/12, 125]
-    -- ring2="Chirich Ring +1",          -- __,  6, 10 <__, __, __> [__/__, ___]
     -- 0 DW, 78 STP, 345 Acc <11 DA, 4 TA, 0 QA> [41 PDT/31 MDT, 580 M.Eva]
   })
 
@@ -1273,8 +1273,8 @@ function init_gear_sets()
     -- 36 DW, 49 STP, 302 Acc <14 DA, 13 TA, 2 QA> [42 PDT/32 MDT, 510 MEVA]
   })
   sets.engaged.LowDW.MidAcc = set_combine(sets.engaged.LowDW.LowAcc, {
+    ring1="Chirich Ring +1",          -- __,  6, 10 <__, __, __> [__/__, ___]
     -- neck="Combatant's Torque",     -- __,  4, __ <__, __, __> [__/__, ___]; Combat skill +15
-    -- ring1="Chirich Ring +1",       -- __,  6, 10 <__, __, __> [__/__, ___]
     -- 36 DW, 51 STP, 312 Acc <11 DA, 10 TA, 2 QA> [42 PDT/32 MDT, 510 MEVA]
   })
   sets.engaged.LowDW.HighAcc = set_combine(sets.engaged.LowDW.MidAcc, {
@@ -1308,8 +1308,8 @@ function init_gear_sets()
     -- 43 DW, 53 STP, 310 Acc <14 DA, 11 TA, 0 QA> [42 PDT/32 MDT, 510 MEVA]
   })
   sets.engaged.MidDW.MidAcc = set_combine(sets.engaged.MidDW.LowAcc, {
+    ring1="Chirich Ring +1",          -- __,  6, 10 <__, __, __> [__/__, ___]
     -- neck="Combatant's Torque",     -- __,  4, __ <__, __, __> [__/__, ___]; Combat skill +15
-    -- ring1="Chirich Ring +1",       -- __,  6, 10 <__, __, __> [__/__, ___]
     -- 43 DW, 55 STP, 320 Acc <11 DA, 8 TA, 0 QA> [42 PDT/32 MDT, 510 MEVA]
   })
   sets.engaged.MidDW.HighAcc = set_combine(sets.engaged.MidDW.MidAcc, {
@@ -1338,7 +1338,7 @@ function init_gear_sets()
     -- 57 DW, 48 STP, 300 Acc <3 DA, 11 TA, 0 QA> [42 PDT/32 MDT, 518 MEVA]
   }
   sets.engaged.HighDW.LowAcc = set_combine(sets.engaged.HighDW, {
-    -- ring1="Chirich Ring +1",       -- __,  6, 10 <__, __, __> [__/__, ___]
+    ring1="Chirich Ring +1",          -- __,  6, 10 <__, __, __> [__/__, ___]
     -- 57 DW, 54 STP, 310 Acc <0 DA, 8 TA, 0 QA> [42 PDT/32 MDT, 518 MEVA]
   })
   sets.engaged.HighDW.MidAcc = set_combine(sets.engaged.HighDW.LowAcc, {
@@ -1375,7 +1375,7 @@ function init_gear_sets()
     -- 67 DW, 36 STP, 253 Acc <4 DA, 6 TA, 0 QA> [35 PDT/29 MDT, 448 MEVA]
   })
   sets.engaged.SuperDW.MidAcc = set_combine(sets.engaged.SuperDW.LowAcc, {
-    -- ring1="Chirich Ring +1",       -- __,  6, 10 <__, __, __> [__/__, ___]
+    ring1="Chirich Ring +1",          -- __,  6, 10 <__, __, __> [__/__, ___]
     -- neck="Combatant's Torque",     -- __,  4, __ <__, __, __> [__/__, ___]; Combat skill +15
     -- 67 DW, 38 STP, 263 Acc <1 DA, 3 TA, 0 QA> [35 PDT/29 MDT, 448 MEVA]
   })
@@ -1491,6 +1491,7 @@ function init_gear_sets()
     legs="Malignance Tights",         -- __, 10, 50 <__, __, __> [ 7/ 7, 150]
     feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
     ear1="Dignitary's Earring",       -- __,  3, 10 <__, __, __> [__/__, ___]
+    ring1="Chirich Ring +1",          -- __,  6, 10 <__, __, __> [__/__, ___]
     ring2="Gelatinous Ring +1",       -- __, __, __ <__, __, __> [ 7/-1, ___]
     back=gear.COR_TP_Cape,            -- __, __, 20 <10, __, __> [10/__, ___]
     waist="Olseni Belt",              -- __,  3, 20 <__, __, __> [__/__, ___]
@@ -1499,7 +1500,6 @@ function init_gear_sets()
     -- legs="Chasseur's Culottes +3", -- __, 12, 63 <__, __, __> [12/12, 125]
     -- neck="Iskur Gorget",           -- __,  8, __ <__, __, __> [__/__, ___]
     -- ear2="Telos Earring",          -- __,  5, 10 < 1, __, __> [__/__, ___]
-    -- ring1="Chirich Ring +1",       -- __,  6, 10 <__, __, __> [__/__, ___]
     -- waist="Kentarch Belt +1",      -- __,  5, 14 < 3, __, __> [__/__, ___]
     -- 25 DW, 79 STP, 327 Acc <14 DA, 0 TA, 0 QA> [53 PDT/35 MDT, 649 M.Eva]
   }
@@ -1948,7 +1948,7 @@ function init_gear_sets()
     neck="Bathy Choker +1",       -- [__/__, ___] __, 11
     ear1="Cessance Earring",      -- [__/__, ___]
     ear2="Dignitary's Earring",   -- [__/__, ___] __,  5
-    -- ring1="Chirich Ring +1",      -- [__/__, ___] __, 10
+    ring1="Chirich Ring +1",      -- [__/__, ___] __, 10
     ring2="Defending Ring",       -- [10/10, ___]
     back=gear.COR_TP_Cape,        -- [10/__, ___]
     -- waist="Windbuffet Belt +1",   -- [__/__, ___]
@@ -1964,7 +1964,7 @@ function init_gear_sets()
     neck="Bathy Choker +1",       -- [__/__, ___] __, 11
     ear1="Dignitary's Earring",   -- [__/__, ___] __,  5
     ear2="Eabani Earring",        -- [__/__, ___]  4, __
-    -- ring1="Chirich Ring +1",      -- [__/__, ___] __, 10
+    ring1="Chirich Ring +1",      -- [__/__, ___] __, 10
     ring2="Defending Ring",       -- [10/10, ___]
     -- back=gear.COR_DW_Cape,        -- [10/__, ___] 10
     waist="Reiki Yotai",          -- [__/__, ___]  7

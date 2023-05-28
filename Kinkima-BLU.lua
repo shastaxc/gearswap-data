@@ -883,9 +883,9 @@ function init_gear_sets()
   } -- 0 DW, 83 STP, 307 Acc <7 DA, 5 TA, 2 QA> [51 PDT/41 MDT, 674 M.Eva]
   sets.engaged.Acc = set_combine(sets.engaged, {
     ear2="Cessance Earring",          -- __,  3,  6 < 3, __, __> [__/__, ___]
-    -- waist="Olseni Belt",           -- __,  3, 20 <__, __, __> [__/__, ___]
+    ring1="Chirich Ring +1",          -- __,  6, 10 <__, __, __> [__/__, ___]
     -- ammo="Voluspa Tathlum",        -- __, __, 10 <__, __, __> [__/__, ___]
-    -- ring1="Chirich Ring +1",       -- __,  6, 10 <__, __, __> [__/__, ___]
+    -- waist="Olseni Belt",           -- __,  3, 20 <__, __, __> [__/__, ___]
   }) -- 0 DW, 84 STP, 361 Acc <4 DA, 0 TA, 0 QA> [51 PDT/41 MDT, 674 M.Eva]
 
   -- Super Magic/Gear/JA Haste (36% DW to cap, 11% from gear)
@@ -906,11 +906,11 @@ function init_gear_sets()
   } -- 11 DW, 82 STP, 305 Acc <6 DA, 3 TA, 0 QA> [51 PDT/41 MDT, 682 M.Eva]
   sets.engaged.LowDW.Acc = set_combine(sets.engaged.LowDW, {
     ear1="Cessance Earring",          -- __,  3,  6 < 3, __, __> [__/__, ___]
-    -- waist="Olseni Belt",           -- __,  3, 20 <__, __, __> [__/__, ___]
+    ring1="Chirich Ring +1",          -- __,  6, 10 <__, __, __> [__/__, ___]
     -- ammo="Voluspa Tathlum",        -- __, __, 10 <__, __, __> [__/__, ___]
     -- ear1="Telos Earring",          -- __,  5, 10 < 1, __, __> [__/__, ___]
-    -- ring1="Chirich Ring +1",       -- __,  6, 10 <__, __, __> [__/__, ___]
     -- back=gear.BLU_DW_Cape,         -- 10, __, 30 <__, __, __> [10/__, ___]
+    -- waist="Olseni Belt",           -- __,  3, 20 <__, __, __> [__/__, ___]
   }) -- 10 DW, 74 STP, 361 Acc <4 DA, 0 TA, 0 QA> [51 PDT/41 MDT, 674 M.Eva]
 
   -- High Magic/Gear/JA Haste (43% DW to cap, 18% from gear)
@@ -933,8 +933,8 @@ function init_gear_sets()
   sets.engaged.MidDW.Acc = set_combine(sets.engaged.MidDW, {
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
     ear2="Cessance Earring",          -- __,  3,  6 < 3, __, __> [__/__, ___]
+    ring1="Chirich Ring +1",          -- __,  6, 10 <__, __, __> [__/__, ___]
     -- ammo="Voluspa Tathlum",        -- __, __, 10 <__, __, __> [__/__, ___]
-    -- ring1="Chirich Ring +1",       -- __,  6, 10 <__, __, __> [__/__, ___]
   }) -- 17 DW, 75 STP, 351 Acc <7 DA, 0 TA, 0 QA> [51 PDT/41 MDT, 674 M.Eva]
 
   -- Mid Magic/Gear/JA Haste (56% DW to cap, 31% from gear)
@@ -955,8 +955,8 @@ function init_gear_sets()
   } -- 32 DW, 46 STP, 295 Acc <6 DA, 7 TA, 0 QA> [48 PDT/38 MDT, 612 M.Eva]
   sets.engaged.HighDW.Acc = set_combine(sets.engaged.HighDW, {
     neck="Mirage Stole +2",           -- __,  7, 25 <__, __, __> [__/__, ___]
+    ring1="Chirich Ring +1",          -- __,  6, 10 <__, __, __> [__/__, ___]
     -- ammo="Voluspa Tathlum",        -- __, __, 10 <__, __, __> [__/__, ___]
-    -- ring1="Chirich Ring +1",       -- __,  6, 10 <__, __, __> [__/__, ___]
   }) -- 32 DW, 56 STP, 340 Acc <0 DA, 4 TA, 0 QA> [42 PDT/32 MDT, 612 M.Eva]
 
   -- Low Magic/Gear/JA Haste (67% DW to cap, 42% from gear)
@@ -979,8 +979,8 @@ function init_gear_sets()
     feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
     neck="Mirage Stole +2",           -- __,  7, 25 <__, __, __> [__/__, ___]
     ear2="Suppanomimi",               --  5, __, __ <__, __, __> [__/__, ___]
+    ring1="Chirich Ring +1",          -- __,  6, 10 <__, __, __> [__/__, ___]
     -- ammo="Voluspa Tathlum",        -- __, __, 10 <__, __, __> [__/__, ___]
-    -- ring1="Chirich Ring +1",       -- __,  6, 10 <__, __, __> [__/__, ___]
   }) -- 38 DW, 46 STP, 345 Acc <0 DA, 4 TA, 0 QA> [35 PDT/25 MDT, 542 M.Eva]
 
   -- No Magic/Gear/JA Haste (74% DW to cap, 49% from gear)
@@ -1004,8 +1004,8 @@ function init_gear_sets()
   sets.engaged.MaxDW.Acc = set_combine(sets.engaged.MaxDW, {
     feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
     neck="Mirage Stole +2",           -- __,  7, 25 <__, __, __> [__/__, ___]
+    ring1="Chirich Ring +1",          -- __,  6, 10 <__, __, __> [__/__, ___]
     -- ammo="Voluspa Tathlum",        -- __, __, 10 <__, __, __> [__/__, ___]
-    -- ring1="Chirich Ring +1",       -- __,  6, 10 <__, __, __> [__/__, ___]
   }) -- 38 DW, 46 STP, 345 Acc <0 DA, 4 TA, 0 QA> [35 PDT/25 MDT, 542 M.Eva]
 
 

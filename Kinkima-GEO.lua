@@ -1307,10 +1307,11 @@ function init_gear_sets()
     feet=gear.Nyame_B_feet,         -- 53, __,  5,  3 [ 7/ 7, 150] {__/__, __}
     neck="Bagua Charm +1",          -- __, __, __, __ [__/__, ___] {__/__, __}; Luopan absorb dmg
     ear2="Cessance Earring",        --  6,  3,  3, __ [__/__, ___] {__/__, __}
+    ring1="Chirich Ring +1",        -- 10,  6, __, __ [__/__, ___] {__/__, __}
     ring2="Defending Ring",         -- __, __, __, __ [10/10, ___] {__/__, __}
     back=gear.GEO_Idle_Cape,        -- __, __, __, __ [__/__,  30] {__/__, 15}
     waist="Olseni Belt",            -- 20,  3, __, __ [__/__, ___] {__/__, __}
-    -- 249 Acc, 8 Store TP, 31 DA, 20 Haste [48 PDT/48 MDT, 704 M.Eva] {Pet: 0 PDT/0 MDT, 15 Regen}
+    -- 259 Acc, 14 Store TP, 31 DA, 20 Haste [48 PDT/48 MDT, 704 M.Eva] {Pet: 0 PDT/0 MDT, 15 Regen}
 
     -- Assume White Tathlum         -- __,  2, __, __ [__/__, ___] {__/__, __}
     -- head="Blistering Sallet +1", -- 53, __,  3,  8 [ 3/__,  53] {__/__, __}
@@ -1336,9 +1337,10 @@ function init_gear_sets()
     feet="Azimuth Gaiters +2",      -- 50, __, __,  3 [10/10, 158] {__/__, __}
     neck="Bagua Charm +1",          -- __, __, __, __ [__/__, ___] {__/__, __}; Luopan absorb dmg
     ear2="Cessance Earring",        --  6,  3,  3, __ [__/__, ___] {__/__, __}
+    ring1="Chirich Ring +1",        -- 10,  6, __, __ [__/__, ___] {__/__, __}
     back=gear.GEO_Idle_Cape,        -- __, __, __, __ [__/__,  30] {__/__, 15}
     waist="Olseni Belt",            -- 20,  3, __, __ [__/__, ___] {__/__, __}
-    -- 251 Acc, 20 Store TP, 16 DA, 20 Haste [50 PDT/47 MDT, 680 M.Eva] {Pet: 18 PDT/18 MDT, 20 Regen}
+    -- 261 Acc, 26 Store TP, 16 DA, 20 Haste [50 PDT/47 MDT, 680 M.Eva] {Pet: 18 PDT/18 MDT, 20 Regen}
     
     -- Assume Dunna                 -- __, __, __, __ [__/__, ___] { 5/ 5, __}
     -- head="Azimuth Hood +3",      -- 61, __, __,  6 [12/12, 136] {__/__,  5}
@@ -1367,10 +1369,11 @@ function init_gear_sets()
     feet=gear.Nyame_B_feet,         -- 53, __,  5,  3 [ 7/ 7, 150] {__/__, __}
     neck="Bagua Charm +1",          -- __, __, __, __ [__/__, ___] {__/__, __}; Luopan absorb dmg
     ear2="Cessance Earring",        --  6,  3,  3, __ [__/__, ___] {__/__, __}
+    ring1="Chirich Ring +1",        -- 10,  6, __, __ [__/__, ___] {__/__, __}
     ring2="Defending Ring",         -- __, __, __, __ [10/10, ___] {__/__, __}
     back=gear.GEO_Idle_Cape,        -- __, __, __, __ [__/__,  30] {__/__, 15}
     waist="Olseni Belt",            -- 20,  3, __, __ [__/__, ___] {__/__, __}
-    -- 329 Acc, 8 Store TP, 31 DA, 24 Haste [54 PDT/54 MDT, 704 M.Eva] {Pet: 0 PDT/0 MDT, 15 Regen}
+    -- 339 Acc, 14 Store TP, 31 DA, 24 Haste [54 PDT/54 MDT, 704 M.Eva] {Pet: 0 PDT/0 MDT, 15 Regen}
 
     -- Assume Mpaca's Staff         -- 50, __, __, __ [__/__, ___] {__/__, __}
     -- Assume Khonsu                -- 30, __, __,  4 [ 6/ 6, ___] {__/__, __}
@@ -1400,10 +1403,11 @@ function init_gear_sets()
     feet=gear.Nyame_B_feet,         -- 53, __,  5,  3 [ 7/ 7, 150] {__/__, __}
     neck="Bagua Charm +1",          -- __, __, __, __ [__/__, ___] {__/__, __}; Luopan absorb dmg
     ear2="Cessance Earring",        --  6,  3,  3, __ [__/__, ___] {__/__, __}
-    ring1="Defending Ring",         -- __, __, __, __ [10/10, ___] {__/__, __}
+    ring1="Chirich Ring +1",        -- 10,  6, __, __ [__/__, ___] {__/__, __}
+    ring2="Defending Ring",         -- __, __, __, __ [10/10, ___] {__/__, __}
     back=gear.GEO_Idle_Cape,        -- __, __, __, __ [__/__,  30] {__/__, 15}
     waist="Olseni Belt",            -- 20,  3, __, __ [__/__, ___] {__/__, __}
-    -- 289 Acc, 6 Store TP, 26 DA, 24 Haste [50 PDT/47 MDT, 649 M.Eva] {Pet: 18 PDT/18 MDT, 15 Regen}
+    -- 299 Acc, 12 Store TP, 26 DA, 24 Haste [50 PDT/47 MDT, 649 M.Eva] {Pet: 18 PDT/18 MDT, 15 Regen}
 
     -- Assume Mpaca's Staff         -- 50, __, __, __ [__/__, ___] {__/__, __}
     -- Assume Khonsu                -- 30, __, __,  4 [ 6/ 6, ___] {__/__, __}
@@ -1434,9 +1438,10 @@ function init_gear_sets()
     feet=gear.Nyame_B_feet,         -- 53, __,  5,  3 [ 7/ 7, 150] {__/__, __}
     neck="Bagua Charm +1",          -- __, __, __, __ [__/__, ___] {__/__, __}; Luopan absorb dmg
     ear2="Cessance Earring",        --  6,  3,  3, __ [__/__, ___] {__/__, __}
+    ring1="Chirich Ring +1",        -- 10,  6, __, __ [__/__, ___] {__/__, __}
     back=gear.GEO_Idle_Cape,        -- __, __, __, __ [__/__,  30] {__/__, 15}
     waist="Olseni Belt",            -- 20,  3, __, __ [__/__, ___] {__/__, __}
-    -- 304 Acc, 8 Store TP, 31 DA, 20 Haste [48 PDT/38 MDT, 704 M.Eva] {Pet: 0 PDT/0 MDT, 15 Regen}
+    -- 314 Acc, 14 Store TP, 31 DA, 20 Haste [48 PDT/38 MDT, 704 M.Eva] {Pet: 0 PDT/0 MDT, 15 Regen}
 
     -- Assume Maxentius             -- 40, __, __, __ [__/__, ___] {__/__, __}
     -- Assume Genmei Shield         -- 15, __, __, __ [10/__, ___] {__/__, __}
@@ -1466,10 +1471,11 @@ function init_gear_sets()
     feet=gear.Nyame_B_feet,         -- 53, __,  5,  3 [ 7/ 7, 150] {__/__, __}
     neck="Bagua Charm +1",          -- __, __, __, __ [__/__, ___] {__/__, __}; Luopan absorb dmg
     ear2="Cessance Earring",        --  6,  3,  3, __ [__/__, ___] {__/__, __}
-    ring1="Defending Ring",         -- __, __, __, __ [10/10, ___] {__/__, __}
+    ring1="Chirich Ring +1",        -- 10,  6, __, __ [__/__, ___] {__/__, __}
+    ring2="Defending Ring",         -- __, __, __, __ [10/10, ___] {__/__, __}
     back=gear.GEO_Idle_Cape,        -- __, __, __, __ [__/__,  30] {__/__, 15}
     waist="Olseni Belt",            -- 20,  3, __, __ [__/__, ___] {__/__, __}
-    -- 264 Acc, 6 Store TP, 26 DA, 20 Haste [54 PDT/41 MDT, 649 M.Eva] {Pet: 18 PDT/18 MDT, 15 Regen}
+    -- 274 Acc, 14 Store TP, 26 DA, 20 Haste [54 PDT/41 MDT, 649 M.Eva] {Pet: 18 PDT/18 MDT, 15 Regen}
 
     -- Assume Maxentius             -- 40, __, __, __ [__/__, ___] {__/__, __}
     -- Assume Genmei Shield         -- 15, __, __, __ [10/__, ___] {__/__, __}
@@ -1500,9 +1506,10 @@ function init_gear_sets()
     feet=gear.Nyame_B_feet,         -- 53, __,  5,  3 [ 7/ 7, 150] {__/__, __}
     neck="Bagua Charm +1",          -- __, __, __, __ [__/__, ___] {__/__, __}; Luopan absorb dmg
     ear2="Cessance Earring",        --  6,  3,  3, __ [__/__, ___] {__/__, __}
+    ring1="Chirich Ring +1",        -- 10,  6, __, __ [__/__, ___] {__/__, __}
     back=gear.GEO_Idle_Cape,        -- __, __, __, __ [__/__,  30] {__/__, 15}
     waist="Olseni Belt",            -- 20,  3, __, __ [__/__, ___] {__/__, __}
-    -- 294 Acc, 8 Store TP, 31 DA, 20 Haste [48 PDT/38 MDT, 704 M.Eva] {Pet: 25 PDT/25 MDT, 15 Regen}
+    -- 304 Acc, 14 Store TP, 31 DA, 20 Haste [48 PDT/38 MDT, 704 M.Eva] {Pet: 25 PDT/25 MDT, 15 Regen}
 
     -- Assume Idris                 -- 30, __, __, __ [__/__, ___] {25/25, __}
     -- Assume Genmei Shield         -- 15, __, __, __ [10/__, ___] {__/__, __}
@@ -1532,9 +1539,10 @@ function init_gear_sets()
     feet=gear.Nyame_B_feet,         -- 53, __,  5,  3 [ 7/ 7, 150] {__/__, __}
     neck="Bagua Charm +1",          -- __, __, __, __ [__/__, ___] {__/__, __}; Luopan absorb dmg
     ear2="Cessance Earring",        --  6,  3,  3, __ [__/__, ___] {__/__, __}
+    ring1="Chirich Ring +1",        -- 10,  6, __, __ [__/__, ___] {__/__, __}
     back=gear.GEO_Idle_Cape,        -- __, __, __, __ [__/__,  30] {__/__, 15}
     waist="Olseni Belt",            -- 20,  3, __, __ [__/__, ___] {__/__, __}
-    -- 254 Acc, 8 Store TP, 26 DA, 20 Haste [44 PDT/31 MDT, 649 M.Eva] {Pet: 38 PDT/38 MDT, 15 Regen}
+    -- 264 Acc, 14 Store TP, 26 DA, 20 Haste [44 PDT/31 MDT, 649 M.Eva] {Pet: 38 PDT/38 MDT, 15 Regen}
 
     -- Assume Idris                 -- 30, __, __, __ [__/__, ___] {25/25, __}
     -- Assume Genmei Shield         -- 15, __, __, __ [10/__, ___] {__/__, __}
