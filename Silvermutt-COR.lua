@@ -129,6 +129,9 @@ function job_setup()
   silibs.enable_equip_loop()
   silibs.enable_custom_roll_text()
 
+  has_obi = true -- Change if you do or don't have Hachirin-no-Obi
+  has_orpheus = false -- Change if you do or don't have Orpheus's Sash
+
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.HybridMode:options('HeavyDef', 'Safe', 'SubtleBlow', 'Normal')
   state.RangedMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
@@ -1959,7 +1962,7 @@ function job_precast(spell, action, spellMap, eventArgs)
 end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
-  if (spell.type == 'CorsairRoll' or spell.english == "Double-Up") then
+  if (spell.type == 'CorsairRoll' or spell.english == 'Double-Up') then
     if player.status ~= 'Engaged' then
       equip(sets.precast.CorsairRoll.Duration)
     end
@@ -1967,26 +1970,13 @@ function job_post_precast(spell, action, spellMap, eventArgs)
       equip(sets.precast.LuzafRing)
     end
   elseif spell.type == 'WeaponSkill' then
-    -- Handle belts for elemental WS
-    if elemental_ws:contains(spell.english) then
-      local base_day_weather_mult = silibs.get_day_weather_multiplier(spell.element, false, false)
-      local obi_mult = silibs.get_day_weather_multiplier(spell.element, true, false)
-      local orpheus_mult = silibs.get_orpheus_multiplier(spell.element, spell.target.distance)
-  
-      -- Determine which combination to use: orpheus, hachirin-no-obi, or neither
-      if has_obi and (obi_mult >= orpheus_mult or not has_orpheus) and (obi_mult > base_day_weather_mult) then
-        -- Obi is better than orpheus and better than nothing
-        equip({waist="Hachirin-no-Obi"})
-      elseif has_orpheus and (orpheus_mult > base_day_weather_mult) then
-        -- Orpheus is better than obi and better than nothing
-        equip({waist="Orpheus's Sash"})
-      end
-    end
-
     if buffactive['Reive Mark'] then
       equip(sets.Reive)
     end
   end
+
+  -- Handle belts for elemental WS and corsair shots
+  silibs.handle_elemental_belts_precast(spell, spellMap, has_obi, has_orpheus)
 
   -- If slot is locked, keep current equipment on
   if locked_neck then equip({ neck=player.equipment.neck }) end
@@ -2007,19 +1997,6 @@ end
 
 function job_post_midcast(spell, action, spellMap, eventArgs)
   if spell.type == 'CorsairShot' and (spell.english ~= 'Light Shot' and spell.english ~= 'Dark Shot') then
-    -- Equip elemental waist
-    local base_day_weather_mult = silibs.get_day_weather_multiplier(spell.element, false, false)
-    local obi_mult = silibs.get_day_weather_multiplier(spell.element, true, false)
-    local orpheus_mult = silibs.get_orpheus_multiplier(spell.element, spell.target.distance)
-
-    -- Determine which combination to use: orpheus, hachirin-no-obi, or neither
-    if has_obi and (obi_mult >= orpheus_mult or not has_orpheus) and (obi_mult > base_day_weather_mult) then
-      -- Obi is better than orpheus and better than nothing
-      equip({waist="Hachirin-no-Obi"})
-    elseif has_orpheus and (orpheus_mult > base_day_weather_mult) then
-      -- Orpheus is better than obi and better than nothing
-      equip({waist="Orpheus's Sash"})
-    end
     -- Equip corsair shot set
     if state.QDMode.value == 'Enhance' then
       equip(sets.midcast.CorsairShot.Enhance)
@@ -2058,6 +2035,9 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
       end
     end
   end
+
+  -- Handle belts for elemental damage
+  silibs.handle_elemental_belts_midcast(spell, spellMap, has_obi, has_orpheus)
 
   -- If slot is locked, keep current equipment on
   if locked_neck then equip({ neck=player.equipment.neck }) end

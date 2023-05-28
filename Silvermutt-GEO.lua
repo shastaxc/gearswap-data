@@ -32,6 +32,9 @@ function job_setup()
   silibs.enable_custom_roll_text()
   silibs.enable_equip_loop()
 
+  has_obi = true -- Change if you do or don't have Hachirin-no-Obi
+  has_orpheus = true -- Change if you do or don't have Orpheus's Sash
+
   state.OffenseMode:options('Safe', 'Normal')
   state.CastingMode:options('Normal', 'Resistant', 'Proc')
   state.IdleMode:options('Normal','HeavyDef')
@@ -42,9 +45,6 @@ function job_setup()
   state.MagicBurst = M(true, 'Magic Burst')
   state.ElementalMode = M{['description'] = 'Elemental Mode', 'Fire','Ice','Wind','Earth','Lightning','Water','Light','Dark',}
 
-  has_obi = true -- Change if you do or don't have Hachirin-no-Obi
-  has_orpheus = true -- Change if you do or don't have Orpheus's Sash
-    
   state.Buff.Entrust = buffactive.Entrust or false
 
   indi_timer = '' -- DO NOT MODIFY
@@ -1636,20 +1636,14 @@ function job_post_precast(spell, action, spellMap, eventArgs)
     if state.OffenseMode.value == 'Safe' and sets.precast.WS[spell.name] and sets.precast.WS[spell.name].Safe then
       equip(sets.precast.WS[spell.name].Safe)
     end
-    if elemental_ws:contains(spell.english) then
-      local base_day_weather_mult = silibs.get_day_weather_multiplier(spell.element, false, false)
-      local obi_mult = silibs.get_day_weather_multiplier(spell.element, true, false)
-      local orpheus_mult = silibs.get_orpheus_multiplier(spell.element, spell.target.distance)
+  end
 
-      -- Determine which combination to use: orpheus, hachirin-no-obi, or neither
-      if has_obi and (obi_mult >= orpheus_mult or not has_orpheus) and (obi_mult > base_day_weather_mult) then
-        -- Obi is better than orpheus and better than nothing
-        equip({waist="Hachirin-no-Obi"})
-      elseif has_orpheus and (orpheus_mult > base_day_weather_mult) then
-        -- Orpheus is better than obi and better than nothing
-        equip({waist="Orpheus's Sash"})
-      end
-    end
+  -- Handle belts for elemental WS and corsair shots
+  silibs.handle_elemental_belts_precast(spell, spellMap, has_obi, has_orpheus)
+
+  -- Always put this last in job_post_precast
+  if in_battle_mode() then
+    equip(select_weapons())
   end
 
   -- If slot is locked, keep current equipment on
@@ -1658,11 +1652,6 @@ function job_post_precast(spell, action, spellMap, eventArgs)
   if locked_ear2 then equip({ ear2=player.equipment.ear2 }) end
   if locked_ring1 then equip({ ring1=player.equipment.ring1 }) end
   if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
-
-  -- Always put this last in job_post_precast
-  if in_battle_mode() then
-    equip(select_weapons())
-  end
 
   ----------- Non-silibs content goes above this line -----------
   silibs.post_precast_hook(spell, action, spellMap, eventArgs)
@@ -1683,21 +1672,6 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
         (state.RecoverMode.value == 'Always' or tonumber(state.RecoverMode.value:sub(1, -2)) > player.mpp) then
       equip(sets.RecoverMP)
     end
-    
-    -- Handle belts for elemental damage
-    local base_day_weather_mult = silibs.get_day_weather_multiplier(spell.element, false, false)
-    local obi_mult = silibs.get_day_weather_multiplier(spell.element, true, false)
-    local orpheus_mult = silibs.get_orpheus_multiplier(spell.element, spell.target.distance)
-
-    -- Determine which combination to use: orpheus, hachirin-no-obi, or neither
-    if has_obi and (obi_mult >= orpheus_mult or not has_orpheus) and (obi_mult > base_day_weather_mult) then
-      -- Obi is better than orpheus and better than nothing
-      equip({waist="Hachirin-no-Obi"})
-    elseif has_orpheus and (orpheus_mult > base_day_weather_mult) then
-      -- Orpheus is better than obi and better than nothing
-      equip({waist="Orpheus's Sash"})
-    end
-
   elseif spell.skill == 'Geomancy' and state.Buff.Entrust and spell.english:startswith('Indi-') and sets.buff.Entrust then
     equip(sets.buff.Entrust)
   elseif spell.skill == 'Enhancing Magic' then
@@ -1707,17 +1681,20 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     end
   end
 
+  -- Handle belts for elemental damage
+  silibs.handle_elemental_belts_midcast(spell, spellMap, has_obi, has_orpheus)
+
+  -- Always put this last in job_post_midcast
+  if in_battle_mode() and not spell.type == 'Geomancy' then
+    equip(select_weapons())
+  end
+
   -- If slot is locked, keep current equipment on
   if locked_neck then equip({ neck=player.equipment.neck }) end
   if locked_ear1 then equip({ ear1=player.equipment.ear1 }) end
   if locked_ear2 then equip({ ear2=player.equipment.ear2 }) end
   if locked_ring1 then equip({ ring1=player.equipment.ring1 }) end
   if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
-
-  -- Always put this last in job_post_midcast
-  if in_battle_mode() and not spell.type == 'Geomancy' then
-    equip(select_weapons())
-  end
 
   ----------- Non-silibs content goes above this line -----------
   silibs.post_midcast_hook(spell, action, spellMap, eventArgs)

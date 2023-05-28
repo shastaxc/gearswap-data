@@ -80,6 +80,9 @@ function job_setup()
   silibs.enable_equip_loop()
   silibs.enable_haste_info()
 
+  has_obi = true -- Change if you do or don't have Hachirin-no-Obi
+  has_orpheus = true -- Change if you do or don't have Orpheus's Sash
+
   state.CP = M(false, 'Capacity Points Mode')
   state.WeaponSet = M{['description']='Weapon Set', 'Casting', 'Naegling', 'Maxentius'}
   state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger',
@@ -99,9 +102,6 @@ function job_setup()
   state.Buff.Diffusion = buffactive.Diffusion or false
   state.Buff.Efflux = buffactive.Efflux or false
   state.Buff['Unbridled Learning'] = buffactive['Unbridled Learning'] or false
-
-  has_obi = true -- Change if you do or don't have Hachirin-no-Obi
-  has_orpheus = true -- Change if you do or don't have Orpheus's Sash
 
   -- Mappings for gear sets to use for various blue magic spells.
   -- While Str isn't listed for each, it's generally assumed as being at least
@@ -1226,29 +1226,17 @@ function job_precast(spell, action, spellMap, eventArgs)
 end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
-  -- Handle belts for elemental WS
-  if spell.type == 'WeaponSkill' and elemental_ws:contains(spell.english) then
-    local base_day_weather_mult = silibs.get_day_weather_multiplier(spell.element, false, false)
-    local obi_mult = silibs.get_day_weather_multiplier(spell.element, true, false)
-    local orpheus_mult = silibs.get_orpheus_multiplier(spell.element, spell.target.distance)
-
-    -- Determine which combination to use: orpheus, hachirin-no-obi, or neither
-    if has_obi and (obi_mult >= orpheus_mult or not has_orpheus) and (obi_mult > base_day_weather_mult) then
-      -- Obi is better than orpheus and better than nothing
-      equip({waist="Hachirin-no-Obi"})
-    elseif has_orpheus and (orpheus_mult > base_day_weather_mult) then
-      -- Orpheus is better than obi and better than nothing
-      equip({waist="Orpheus's Sash"})
-    end
+  if state.Learning.value then
+    equip(sets.Learning)
   end
+
+  -- Handle belts for elemental WS
+  silibs.handle_elemental_belts_precast(spell, spellMap, has_obi, has_orpheus)
 
   -- Always put this last in job_post_precast
   if in_battle_mode() then
-    equip(select_weapons())
-  end
-
-  if state.Learning.value then
-    equip(sets.Learning)
+    -- Prevent swapping main/sub weapons
+    equip({main="", sub=""})
   end
 
   -- If slot is locked, keep current equipment on
@@ -1282,22 +1270,6 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     end
   end
 
-  -- Handle belts for elemental damage
-  if (spell.skill == 'Blue Magic' and spellMap == 'Magical') or spell.skill == 'Elemental Magic' then
-    local base_day_weather_mult = silibs.get_day_weather_multiplier(spell.element, false, false)
-    local obi_mult = silibs.get_day_weather_multiplier(spell.element, true, false)
-    local orpheus_mult = silibs.get_orpheus_multiplier(spell.element, spell.target.distance)
-
-    -- Determine which combination to use: orpheus, hachirin-no-obi, or neither
-    if has_obi and (obi_mult >= orpheus_mult or not has_orpheus) and (obi_mult > base_day_weather_mult) then
-      -- Obi is better than orpheus and better than nothing
-      equip({waist="Hachirin-no-Obi"})
-    elseif has_orpheus and (orpheus_mult > base_day_weather_mult) then
-      -- Orpheus is better than obi and better than nothing
-      equip({waist="Orpheus's Sash"})
-    end
-  end
-
   if spell.skill == 'Enhancing Magic' and classes.NoSkillSpells:contains(spell.english) then
     equip(sets.midcast.EnhancingDuration)
     if spellMap == 'Refresh' then
@@ -1305,15 +1277,19 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     end
   end
 
-  -- Always put this last in job_post_midcast
-  if in_battle_mode() then
-    equip(select_weapons())
-  end
-  
   if state.Learning.value then
     equip(sets.Learning)
   end
 
+  -- Handle belts for elemental damage
+  silibs.handle_elemental_belts_midcast(spell, spellMap, has_obi, has_orpheus)
+
+  -- Always put this last in job_post_midcast
+  if in_battle_mode() then
+    -- Prevent swapping main/sub weapons
+    equip({main="", sub=""})
+  end
+  
   -- If slot is locked, keep current equipment on
   if locked_neck then equip({ neck=player.equipment.neck }) end
   if locked_ear1 then equip({ ear1=player.equipment.ear1 }) end
@@ -1340,10 +1316,6 @@ function job_aftercast(spell, action, spellMap, eventArgs)
     elseif spell.english == "Entomb" then
       send_command('@timers c "Entomb ['..spell.target.name..']" 60 down spells/00547.png')
     end
-  end
-
-  if in_battle_mode() then
-    equip(sets.WeaponSet[state.WeaponSet.current])
   end
 end
 

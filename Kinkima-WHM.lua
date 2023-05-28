@@ -28,6 +28,9 @@ function job_setup()
   silibs.enable_custom_roll_text()
   silibs.enable_equip_loop()
 
+  has_obi = true -- Change if you do or don't have Hachirin-no-Obi
+  has_orpheus = false -- Change if you do or don't have Orpheus's Sash
+
   auto_solace = true -- Change to false if you don't want Afflatus Solace auto-applied
   auto_arts = true -- Change to false if you don't want Light Arts auto-applied
 
@@ -966,22 +969,7 @@ end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
   -- Handle belts for elemental WS
-  if spell.type == 'WeaponSkill' and elemental_ws:contains(spell.english) then
-    local base_day_weather_mult = silibs.get_day_weather_multiplier(spell.element, false, false)
-    local obi_mult = silibs.get_day_weather_multiplier(spell.element, true, false)
-    local orpheus_mult = silibs.get_orpheus_multiplier(spell.element, spell.target.distance)
-    local has_obi = true -- Change if you do or don't have Hachirin-no-Obi
-    local has_orpheus = false -- Change if you do or don't have Orpheus's Sash
-
-    -- Determine which combination to use: orpheus, hachirin-no-obi, or neither
-    if has_obi and (obi_mult >= orpheus_mult or not has_orpheus) and (obi_mult > base_day_weather_mult) then
-      -- Obi is better than orpheus and better than nothing
-      equip({waist="Hachirin-no-Obi"})
-    elseif has_orpheus and (orpheus_mult > base_day_weather_mult) then
-      -- Orpheus is better than obi and better than nothing
-      equip({waist="Orpheus's Sash"})
-    end
-  end
+  silibs.handle_elemental_belts_precast(spell, spellMap, has_obi, has_orpheus)
 
   -- If slot is locked, keep current equipment on
   if locked_neck then equip({ neck=player.equipment.neck }) end
@@ -1018,31 +1006,6 @@ end
 
 -- Run after the general midcast() is done.
 function job_post_midcast(spell, action, spellMap, eventArgs)
-  -- Handle belts for elemental damage
-  if spell.skill == 'Elemental Magic' or spell.english:contains('Holy') or spell.english:contains('Banish') then
-    local base_day_weather_mult = silibs.get_day_weather_multiplier(spell.element, false, false)
-    local obi_mult = silibs.get_day_weather_multiplier(spell.element, true, false)
-    local orpheus_mult = silibs.get_orpheus_multiplier(spell.element, spell.target.distance)
-    local has_obi = true -- Change if you do or don't have Hachirin-no-Obi
-    local has_orpheus = false -- Change if you do or don't have Orpheus's Sash
-
-    -- Determine which combination to use: orpheus, hachirin-no-obi, or neither
-    if has_obi and (obi_mult >= orpheus_mult or not has_orpheus) and (obi_mult > base_day_weather_mult) then
-      -- Obi is better than orpheus and better than nothing
-      equip({waist="Hachirin-no-Obi"})
-    elseif has_orpheus and (orpheus_mult > base_day_weather_mult) then
-      -- Orpheus is better than obi and better than nothing
-      equip({waist="Orpheus's Sash"})
-    end
-  end
-
-  if spell.english == 'Drain' or 'Aspir' then
-    local obi_mult = silibs.get_day_weather_multiplier(spell.element, true, false)
-    if obi_mult > 1.08 then -- Must beat Fucho-no-Obi
-      equip({waist="Hachirin-no-Obi"})
-    end
-  end
-
   -- If no explicit set defined for this spell
   if spell.skill == 'Enhancing Magic' then
     if classes.EnhancingDurSpells:contains(spell.english) and sets.midcast.EnhancingDuration then
@@ -1058,6 +1021,9 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
   if spellMap == 'StatusRemoval' and buffactive['Divine Caress'] and spell.english ~= 'Erase' then
     equip(sets.buff['Divine Caress'])
   end
+
+  -- Handle belts for elemental damage
+  silibs.handle_elemental_belts_midcast(spell, spellMap, has_obi, has_orpheus)
 
   -- If slot is locked, keep current equipment on
   if locked_neck then equip({ neck=player.equipment.neck }) end

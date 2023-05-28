@@ -63,6 +63,9 @@ function job_setup()
   silibs.enable_custom_roll_text()
   silibs.enable_equip_loop()
 
+  has_obi = true -- Change if you do or don't have Hachirin-no-Obi
+  has_orpheus = false -- Change if you do or don't have Orpheus's Sash
+
   state.CP = M(false, 'Capacity Points Mode')
   state.Storm = M{['description']='Storm','Aurorastorm','Sandstorm',
       'Rainstorm','Windstorm','Firestorm','Hailstorm','Thunderstorm','Voidstorm'}
@@ -1072,6 +1075,9 @@ function job_post_precast(spell, action, spellMap, eventArgs)
     eventArgs.handled = true
   end
 
+  -- Handle belts for elemental WS
+  silibs.handle_elemental_belts_precast(spell, spellMap, has_obi, has_orpheus)
+
   -- If slot is locked, keep current equipment on
   if locked_neck then equip({ neck=player.equipment.neck }) end
   if locked_ear1 then equip({ ear1=player.equipment.ear1 }) end
@@ -1102,6 +1108,9 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     equip(sets.midcast.Pet[spellMap])
     eventArgs.handled = true
   end
+
+  -- Handle belts for elemental damage
+  silibs.handle_elemental_belts_midcast(spell, spellMap, has_obi, has_orpheus)
 
   -- If slot is locked, keep current equipment on
   if locked_neck then equip({ neck=player.equipment.neck }) end
