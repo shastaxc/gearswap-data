@@ -981,7 +981,7 @@ function init_gear_sets()
     
     -- main="Bunzi's Rod",            -- 15, 55, 65, 255, 248, 10, __; R30
     -- sub="Ammurapi Shield",         -- 13, 38, 38, ___, ___, __, __
-    -- ammo="Pemphredo Tathlum",      --  4,  8,  4, ___, ___, __, __
+    -- ammo="Ghastly Tathlum +1",     -- 11, __, __, ___,  21, __, __
     -- head="Agwu's Cap",             -- 33, 55, 60, ___,  35,  7, __
     -- body="Agwu's Robe",            -- 47, 55, 60, ___,  30, 10, __
     -- hands="Agwu's Gages",          -- 33, 55, 60, ___,  20,  8,  6
@@ -994,7 +994,7 @@ function init_gear_sets()
     -- ring2="Metamorph Ring +1",     -- 16, 15, __, ___, ___, __, __
     -- back=gear.SCH_MAB_Cape,        -- 30, 20, 10, ___,  20, __, __
     -- waist="Acuity Belt +1",        -- 23, 15, __, ___, ___, __, __
-    -- 343 INT, 475 MAcc, 423 MAB, 255 MAccSk, 417 MDmg, 45 MB Dmg%, 11 MB2 Dmg%
+    -- 350 INT, 467 MAcc, 419 MAB, 255 MAccSk, 438 MDmg, 45 MB Dmg%, 11 MB2 Dmg%
   })
 
   sets.midcast.Kaustra = set_combine(sets.midcast['Elemental Magic'], {})
