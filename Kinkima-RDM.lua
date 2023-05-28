@@ -1679,9 +1679,25 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 function job_pretarget(spell, action, spellMap, eventArgs)
-  -- Allow using <t> macro for storms but if not targeting a valid target, this will change it to <stpc>
-  if spell.english:endswith('storm') and ((spell.target.raw == '<t>' and not spell.target.type) or spell.target.type == 'MONSTER') then
-    send_command('@input /ma "'..spell.english..'" <stpc>')
+  -- If missing a target, or targeting an invalid target, switch target to <me>, <stpc>, or <stnpc> as appropriate
+  if spell.action_type == "Magic" and (
+    (spell.target.raw == '<t>' and not spell.target.type)
+    or (not spell.targets.Enemy and spell.target.type == 'MONSTER')
+    or (not spell.targets.Self and spell.target.type == 'SELF')
+    or (not spell.targets.Player and spell.target.type == 'PLAYER')
+  ) then
+    local new_target
+    if spell.targets.Enemy then
+      new_target = '<stnpc>'
+    end
+    if spell.targets.Self then
+      new_target = '<me>'
+    end
+    if spell.targets.Party then
+      new_target = '<stpc>'
+    end
+    -- Cancel current spell and reissue command with new target
+    send_command('@input /ma "'..spell.english..'" '..new_target)
     eventArgs.cancel = true
   end
 end
