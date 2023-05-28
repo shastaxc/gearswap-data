@@ -1447,17 +1447,18 @@ function init_gear_sets()
     legs="Assiduity Pants +1",        -- __/__, 107 [ 2]
     feet="Volte Gaiters",             -- __/__, 142 [ 1]
     neck="Loricate Torque +1",        --  6/ 6, ___ [__]; DEF+60
-    ear1="Odnowa Earring +1",         --  3/ 5, ___ [__]
+    ear1="Arete Del Luna +1",         -- __/__, ___ [__]; Resists
     ear2="Etiolation Earring",        -- __/ 3, ___ [__]; Resist Silence+15
     ring1="Stikini Ring +1",          -- __/__, ___ [ 1]
     ring2="Defending Ring",           -- 10/10, ___ [__]
     back=gear.RDM_INT_Enf_Cape,       -- 10/__, ___ [__]
-    waist="Carrier's Sash",           -- __/__, ___ [__]; Ele Resist+15
-    -- 49 PDT / 34 MDT, 507 M.Eva [10 Refresh]
+    waist="Flume Belt +1",            --  4/__, ___ [__]
+    -- 50 PDT / 29 MDT, 507 M.Eva [10 Refresh]
     
     -- head="Vitiation Chapeau +3",   -- __/__,  95 [ 3]
     -- hands="Lethargy Gantherots +3",-- 11/11,  87 [__]
-    -- 50 PDT / 35 MDT, 537 M.Eva [11 Refresh]
+    -- 51 PDT / 30 MDT, 537 M.Eva [11 Refresh]
+    
   }
   sets.passive_refresh.Single = {
     main="Mpaca's Staff",             -- __/__, ___ [ 2]
@@ -1470,20 +1471,20 @@ function init_gear_sets()
     legs="Assiduity Pants +1",        -- __/__, 107 [ 2]
     feet="Volte Gaiters",             -- __/__, 142 [ 1]
     neck="Loricate Torque +1",        --  6/ 6, ___ [__]; DEF+60
-    ear1="Odnowa Earring +1",         --  3/ 5, ___ [__]
+    ear1="Arete Del Luna +1",         -- __/__, ___ [__]; Resists
     ear2="Etiolation Earring",        -- __/ 3, ___ [__]; Resist Silence+15
     ring1="Stikini Ring +1",          -- __/__, ___ [ 1]
     ring2="Defending Ring",           -- 10/10, ___ [__]
     back=gear.RDM_INT_Enf_Cape,       -- 10/__, ___ [__]
-    waist="Carrier's Sash",           -- __/__, ___ [__]; Ele Resist+15
-    -- 49 PDT / 34 MDT, 517 M.Eva [12 Refresh]
+    waist="Flume Belt +1",            --  4/__, ___ [__]
+    -- 50 PDT / 29 MDT, 517 M.Eva [12 Refresh]
     
     -- main="Sakpata's Sword",        -- 10/10, ___ [ 3]; R30
     -- sub="Sacro Bulwark",           -- 10/10, ___ [__]
     -- head="Vitiation Chapeau +3",   -- __/__,  95 [ 3]
     -- hands="Volte Gloves",          -- __/__,  96 [ 1]
     -- ring2="Stikini Ring +1",       -- __/__, ___ [ 1]
-    -- 49 PDT / 34 MDT, 546 M.Eva [16 Refresh]
+    -- 50 PDT / 29 MDT, 546 M.Eva [16 Refresh]
   }
   sets.passive_refresh.Dual = {
     main="Bolelabunga",               -- __/__, ___ [ 1]
@@ -1496,21 +1497,22 @@ function init_gear_sets()
     legs="Assiduity Pants +1",        -- __/__, 107 [ 2]
     feet="Volte Gaiters",             -- __/__, 142 [ 1]
     neck="Loricate Torque +1",        --  6/ 6, ___ [__]; DEF+60
-    ear1="Odnowa Earring +1",         --  3/ 5, ___ [__]
+    ear1="Arete Del Luna +1",         -- __/__, ___ [__]; Resists
     ear2="Etiolation Earring",        -- __/ 3, ___ [__]; Resist Silence+15
     ring1="Stikini Ring +1",          -- __/__, ___ [ 1]
     ring2="Defending Ring",           -- 10/10, ___ [__]
     back=gear.RDM_INT_Enf_Cape,       -- 10/__, ___ [__]
-    waist="Carrier's Sash",           -- __/__, ___ [__]; Ele Resist+15
-    -- 49 PDT / 34 MDT, 537 M.Eva [12 Refresh]
+    waist="Flume Belt +1",            --  4/__, ___ [__]
+    -- 50 PDT / 29 MDT, 537 M.Eva [12 Refresh]
     
     -- main="Sakpata's Sword",        -- 10/10, ___ [ 3]; R30
     -- sub="Daybreak",                -- __/__,  30 [ 1]
     -- head="Vitiation Chapeau +3",   -- __/__,  95 [ 3]
     -- hands="Volte Gloves",          -- __/__,  96 [ 1]
-    -- 49 PDT / 34 MDT, 576 M.Eva [16 Refresh]
+    -- 50 PDT / 29 MDT, 576 M.Eva [16 Refresh]
   }
   sets.passive_refresh.sub50 = {
+    -- ear1="Genmei Earring",
     waist="Fucho-no-Obi",             -- __/__, ___ [ 1]
   }
 
