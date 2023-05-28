@@ -1296,9 +1296,33 @@ function init_gear_sets()
     -- 255 M.Acc skill, 8 Elemental Skill, 499 M.Acc, 314 INT, 62 FC [26 PDT/26 MDT, 618 M.Eva]
   }
 
-  -- TODO: For spells like Burn, Choke, etc.
+  -- For spells like Burn, Choke, etc.
   sets.midcast.ElementalEnfeeble = {
+    -- main="Crocea Mors",            -- 255, __, 50, __, 20 [__/__, ___]
+    sub="Ammurapi Shield",            -- ___, __, 38, 13, __ [__/__, ___]
+    range="Ullr",                     -- ___, __, 40, __, __ [__/__, ___]
+    ammo=empty,                       -- ___, __, __, __, __ [__/__, ___]
+    head="Lethargy Chappel +2",       -- ___, __, 51, 33, __ [ 9/ 9, 115]
+    body="Lethargy Sayon +3",         -- ___, __, 64, 47, __ [14/14, 136]
+    hands="Lethargy Gantherots +2",   -- ___, __, 52, 28, __ [10/10,  77]
+    legs="Lethargy Fuseau +2",        -- ___, __, 53, 43, __ [__/__, 152]
+    feet="Lethargy Houseaux +2",      -- ___, __, 50, 25, __ [__/__, 147]
+    neck="Duelist's Torque +2",       -- ___, __, 30, 15, __ [__/__, ___]
+    ear1="Malignance Earring",        -- ___, __, 10,  8,  4 [__/__, ___]
+    ear2="Regal Earring",             -- ___, __, __, 10, __ [__/__, ___]
+    ring1="Metamorph Ring +1",        -- ___, __, 15, 16, __ [__/__, ___]
+    ring2="Stikini Ring +1",          -- ___,  8, 11, __, __ [__/__, ___]
+    back="Aurist's Cape +1",          -- ___, __, 33, 33, __ [__/__, ___]
+    waist="Acuity Belt +1",           -- ___, __, 15, 23, __ [__/__, ___]
+    -- Empy set effect                   ___, __, __, __, __ [__/__, ___]
+    -- Traits/Gifts/Merits            --                  38
+    -- 255 M.Acc skill, 8 Elemental Skill, 512 M.Acc, 294 INT, 62 FC [33 PDT/33 MDT, 627 M.Eva]
 
+    -- head="Lethargy Chappel +3",    -- ___, __, 61, 38, __ [10/10, 125]
+    -- hands="Lethargy Gantherots +3",-- ___, __, 62, 50, __ [11/11,  87]
+    -- legs="Lethargy Fuseau +3",     -- ___, __, 63, 48, __ [__/__, 162]
+    -- feet="Lethargy Houseaux +3",   -- ___, __, 60, 30, __ [__/__, 157]
+    -- 255 M.Acc skill, 8 Elemental Skill, 552 M.Acc, 331 INT, 62 FC [35 PDT/35 MDT, 667 M.Eva]
   }
 
   sets.buff.Saboteur = {
@@ -1680,7 +1704,7 @@ end
 
 function job_pretarget(spell, action, spellMap, eventArgs)
   -- If missing a target, or targeting an invalid target, switch target to <me>, <stpc>, or <stnpc> as appropriate
-  if spell.action_type == "Magic" and (
+  if spell.action_type == 'Magic' and (
     (spell.target.raw == '<t>' and not spell.target.type)
     or (not spell.targets.Enemy and spell.target.type == 'MONSTER')
     or (not spell.targets.Self and spell.target.type == 'SELF')
@@ -2009,12 +2033,6 @@ function job_get_spell_map(spell, default_spell_map)
         else
           custom_spell_map = 'EnhancingDuration'
         end
-      end
-    elseif spell.skill == 'Elemental Magic' then
-      if spell.english == 'Impact' then
-        custom_spell_map = 'Impact'
-      else
-        custom_spell_map = default_spell_map
       end
     end
 
