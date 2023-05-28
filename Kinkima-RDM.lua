@@ -89,12 +89,13 @@ function job_setup()
   silibs.enable_equip_loop()
   silibs.enable_weapon_rearm()
   silibs.enable_th()
+  silibs.enable_haste_info()
 
   has_obi = true -- Change if you do or don't have Hachirin-no-Obi
   has_orpheus = false -- Change if you do or don't have Orpheus's Sash
 
   state.OffenseMode:options('Normal', 'MidAcc', 'HighAcc', 'Enspell')
-  state.HybridMode:options('Normal', 'DT')
+  state.HybridMode:options('Normal')
   state.WeaponskillMode:options('Normal')
   state.CastingMode:options('Normal', 'Seidr', 'Resistant')
   state.IdleMode:options('Normal', 'Gyve')
@@ -206,7 +207,6 @@ function user_setup()
   end
 
   select_default_macro_book()
-  update_combat_form()
   set_sub_keybinds()
 end
 
@@ -810,7 +810,7 @@ function init_gear_sets()
     range=empty,                          -- __, __, __, __ [__/__, ___]
     ammo="Staunch Tathlum +1",            -- __, __, __, __ [ 3/ 3, ___]
     head=gear.Merl_Phalanx_head,          --  5, __, __, __ [__/__,  86]
-    body=gear.Telchine_ENH_body,          -- __, 12, __, 10 [__/__,  80]
+    body=gear.Merl_Phalanx_body,          --  3, __, __, __ [ 2/__,  91]
     hands="Atrophy Gloves +3",            -- __, __, __, 20 [__/__,  57]
     legs=gear.Telchine_ENH_legs,          -- __, __, __, 10 [__/__, 128]
     feet=gear.Merl_Phalanx_feet,          --  4, __, __, __ [__/__, 118]
@@ -823,8 +823,8 @@ function init_gear_sets()
     waist="Olympus Sash",                 -- __,  5, __, __ [__/__, ___]
     -- Traits/Gifts/Merits                -- __,456, __, __ [__/__, ___]
     -- Master Levels                      -- __, __, __, __ [__/__, ___]
-    -- 14 Phalanx+, 493 Enh Skill, 19 Aug Enh Duration, 50 Enh duration [33 PDT/27 MDT, 469 M.Eva]
-    -- 48 Phalanx total
+    -- 17 Phalanx+, 481 Enh Skill, 19 Aug Enh Duration, 40 Enh duration [35 PDT/27 MDT, 480 M.Eva]
+    -- 51 Phalanx total
     
     -- main="Sakpata's Sword",            --  5, __, __, __ [10/10, ___]
     -- sub="Ammurapi Shield",             -- __, __, __, 10 [__/__, ___]
@@ -1555,7 +1555,7 @@ function init_gear_sets()
   ---------------------------------------- Engaged Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
 
-  -- Aim for 26% gear haste. No DW. Max STP
+  -- No DW (0 needed from gear)
   sets.engaged = {
     range=empty,                      -- __, __, __ <__, __, __> [__/__, ___]
     ammo="Coiste Bodhar",             -- __,  3, __ < 3, __, __> [__/__, ___]
@@ -1567,95 +1567,29 @@ function init_gear_sets()
     neck="Anu Torque",                -- __,  7, __ <__, __, __> [__/__, ___]
     ear1="Dedition Earring",          -- __,  8,-10 <__, __, __> [__/__, ___]
     ear2="Sherida Earring",           -- __,  5, __ < 5, __, __> [__/__, ___]
-    ring1="Ilabrat Ring",             -- __,  5, __ <__, __, __> [__/__, ___]
-    ring2="Epona's Ring",             -- __, __, __ < 3,  3, __> [__/__, ___]
+    ring1="Epona's Ring",             -- __, __, __ < 3,  3, __> [__/__, ___]
+    ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
     back=gear.RDM_STP_Cape,           -- __, 10, 30 <__, __, __> [10/__, ___]
     waist="Sailfi Belt +1",           -- __, __, __ < 5,  2, __> [__/__, ___]
-    -- 0 DW, 88 STP, 275 Acc <16 DA, 5 TA, 3 QA> [42 PDT/32 MDT, 674 M.Eva]
+    -- 0 DW, 83 STP, 275 Acc <16 DA, 5 TA, 3 QA> [52 PDT/42 MDT, 674 M.Eva]
   }
   sets.engaged.MidAcc = set_combine(sets.engaged, {
     -- neck="Combatant's Torque",     -- __,  4, __ <__, __, __> [__/__, ___]; Combat skills+15
     -- ear1="Telos Earring",          -- __,  5, 10 < 1, __, __> [__/__, ___]
+    ear2="Cessance Earring",          -- __,  3,  6 < 3, __, __> [__/__, ___]
     -- waist="Kentarch Belt +1",      -- __,  5, 14 < 3, __, __> [__/__, ___]
+    -- 0 DW, 80 STP, 315 Acc <13 DA, 3 TA, 3 QA> [52 PDT/42 MDT, 674 M.Eva]
   })
   sets.engaged.HighAcc = set_combine(sets.engaged, {
-    -- ammo="Falcon Eye",             -- __, __, 13 <__, __, __> [__/__, ___]
-    ear2="Cessance Earring",          -- __,  3,  6 < 3, __, __> [__/__, ___]
-    -- ring2="Chirich Ring +1",       -- __,  6, 10 <__, __, __> [__/__, ___]
+    -- ammo="Voluspa Tathlum",        -- __, __, 10 <__, __, __> [__/__, ___]
+    ear2="Dignitary's Earring",       -- __,  3, 10 <__, __, __> [__/__, ___]
+    ring1="Chirich Ring +1",          -- __,  6, 10 <__, __, __> [__/__, ___]
     waist="Olseni Belt",              -- __,  3, 20 <__, __, __> [__/__, ___]
+    -- 0 DW, 81 STP, 345 Acc <1 DA, 0 TA, 3 QA> [52 PDT/42 MDT, 674 M.Eva]
   })
 
-  -- No Magic Haste (74% DW to cap)
-  sets.engaged.DW = {
-    range=empty,                      -- __, __, __ <__, __, __> [__/__, ___]
-    ammo="Coiste Bodhar",             -- __,  3, __ < 3, __, __> [__/__, ___]
-    head="Bunzi's Hat",               -- __,  8, 55 <__, __,  3> [ 7/ 7, 123]
-    body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
-    hands="Malignance Gloves",        -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
-    legs="Malignance Tights",         -- __, 10, 50 <__, __, __> [ 7/ 7, 150]
-    feet=gear.Taeon_DW_feet,          --  9, __, 26 <__, __, __> [__/__,  69]
-    neck="Loricate Torque +1",        -- __, __, __ <__, __, __> [ 6/ 6, ___]
-    ear1="Eabani Earring",            --  4, __, __ <__, __, __> [__/__,   8]
-    ear2="Suppanomimi",               --  5, __, __ <__, __, __> [__/__, ___]
-    ring1="Ilabrat Ring",             -- __,  5, __ <__, __, __> [__/__, ___]
-    ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
-    back=gear.RDM_DW_Cape,            -- 10, __, 30 <__, __, __> [10/__, ___]
-    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
-    -- 35 DW, 53 STP, 271 Acc <3 DA, 0 TA, 3 QA> [54 PDT/44 MDT, 601 M.Eva]
-  }
-  sets.engaged.DW.MidAcc = set_combine(sets.engaged.DW, {
-    body="Malignance Tabard",
-    -- neck="Lissome Necklace",
-    ear2="Sherida Earring",
-  })
-  sets.engaged.DW.HighAcc = set_combine(sets.engaged.DW.MidAcc, {
-    -- neck="Combatant's Torque",
-    -- ear2="Telos Earring",
-    -- ring1="Chirich Ring +1"
-    -- ring2="Chirich Ring +1"
-  })
-
-  ---------------- 30% Magic Haste (31 DW w/ sub nin to cap) -----------------
-  sets.engaged.MidHasteDW = {
-    -- main={name="Crocea Mors", priority=10}, 
-    -- sub="Demersal Degen +1", --Offhand DA 35% when under temper II
-    -- sub="Tauret",
-    range=empty,                      -- __, __, __ <__, __, __> [__/__, ___]
-    ammo="Coiste Bodhar",             -- __,  3, __ < 3, __, __> [__/__, ___]
-    head="Bunzi's Hat",               -- __,  8, 55 <__, __,  3> [ 7/ 7, 123]
-    body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
-    hands="Malignance Gloves",        -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
-    legs="Malignance Tights",         -- __, 10, 50 <__, __, __> [ 7/ 7, 150]
-    feet=gear.Taeon_DW_feet,          --  9, __, 26 <__, __, __> [__/__,  69]
-    neck="Loricate Torque +1",        -- __, __, __ <__, __, __> [ 6/ 6, ___]
-    ear1="Dedition Earring",          -- __,  8,-10 <__, __, __> [__/__, ___]
-    ear2="Suppanomimi",               --  5, __, __ <__, __, __> [__/__, ___]
-    -- ring1="Chirich Ring +1",       -- __,  6, 10 <__, __, __> [__/__, ___]
-    -- ring2="Hetairoi Ring",         -- __, __, __ <__,  2, __> [__/__, ___]
-    back=gear.RDM_DW_Cape,            -- 10, __, 30 <__, __, __> [10/__, ___]
-    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
-    -- 31 DW, 62 STP, 271 Acc <3 DA, 2 TA, 3 QA> [44 PDT/34 MDT, 593 M.Eva]
-  }
-  sets.engaged.MidHasteDW.MidAcc = set_combine(sets.engaged.MidHasteDW, {
-    -- neck="Lissome Necklace",       -- __,  4,  8 < 1, __, __> [__/__, ___]
-    ear1="Sherida Earring",           -- __,  5, __ < 5, __, __> [__/__, ___]
-    ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
-  })
-  sets.engaged.MidHasteDW.HighAcc = set_combine(sets.engaged.MidHasteDW.MidAcc, {
-    feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
-    -- neck="Combatant's Torque",     -- __,  4, __ <__, __, __> [__/__, ___]; Combat skills+15
-    -- ear2="Telos Earring",          -- __,  5, 10 < 1, __, __> [__/__, ___]
-    -- ring2="Chirich Ring +1",       -- __,  6, 10 <__, __, __> [__/__, ___]
-    -- waist="Olseni belt",
-  })
-
-  ----- 35% Magic Haste (Unsure why we have these sets. Perhaps sub dnc? Not used)--------
-  sets.engaged.HighHasteDW = set_combine(sets.engaged.MidHasteDW, {})
-  sets.engaged.HighHasteDW.MidAcc = set_combine(sets.engaged.MidHasteDW.MidAcc, {})
-  sets.engaged.HighHasteDW.HighAcc = set_combine(sets.engaged.MidHasteDW.HighAcc, {})
-
-  --------- 45% Magic Haste (11% DW to cap)----------------
-  sets.engaged.MaxHasteDW = set_combine(sets.engaged.DW, {
+  -- Low DW (11 needed from gear)
+  sets.engaged.LowDW = {
     range=empty,                      -- __, __, __ <__, __, __> [__/__, ___]
     ammo="Coiste Bodhar",             -- __,  3, __ < 3, __, __> [__/__, ___]
     head="Bunzi's Hat",               -- __,  8, 55 <__, __,  3> [ 7/ 7, 123]
@@ -1667,20 +1601,148 @@ function init_gear_sets()
     ear1="Dedition Earring",          -- __,  8,-10 <__, __, __> [__/__, ___]
     ear2="Eabani Earring",            --  4, __, __ <__, __, __> [__/__,   8]
     ring1="Epona's Ring",             -- __, __, __ < 3,  3, __> [__/__, ___]
-    -- ring2="Hetairoi Ring",         -- __, __, __ <__,  2, __> [__/__, ___]
+    ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
     back=gear.RDM_STP_Cape,           -- __, 10, 30 <__, __, __> [10/__, ___]
     waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
-    -- 11 DW, 82 STP, 285 Acc <6 DA, 5 TA, 3 QA> [42 PDT/32 MDT, 682 M.Eva]
-  })
-  sets.engaged.MaxHasteDW.MidAcc = set_combine(sets.engaged.MaxHasteDW, {
+    -- 11 DW, 82 STP, 285 Acc <6 DA, 3 TA, 3 QA> [52 PDT/42 MDT, 682 M.Eva]
+  }
+  sets.engaged.LowDW.MidAcc = set_combine(sets.engaged.LowDW, {
+    -- ammo="Voluspa Tathlum",        -- __, __, 10 <__, __, __> [__/__, ___]
     -- neck="Lissome Necklace",       -- __,  4,  8 < 1, __, __> [__/__, ___]
-    ear1="Sherida Earring",           -- __,  5, __ < 5, __, __> [__/__, ___]
+    -- ear1="Telos Earring",          -- __,  5, 10 < 1, __, __> [__/__, ___]
+    -- 11 DW, 73 STP, 323 Acc <5 DA, 3 TA, 3 QA> [52 PDT/42 MDT, 682 M.Eva]
   })
-  sets.engaged.MaxHasteDW.HighAcc = set_combine(sets.engaged.MaxHasteDW.MidAcc, {
+  sets.engaged.LowDW.HighAcc = set_combine(sets.engaged.LowDW.MidAcc, {
+    -- neck="Combatant's Torque",     -- __,  4, __ <__, __, __> [__/__, ___]; Combat skills+15
+    ear2="Dignitary's Earring",       -- __,  3, 10 <__, __, __> [__/__, ___]
+    ring1="Chirich Ring +1",          -- __,  6, 10 <__, __, __> [__/__, ___]
+    back=gear.RDM_DW_Cape,            -- 10, __, 30 <__, __, __> [10/__, ___]
+    waist="Olseni Belt",              -- __,  3, 20 <__, __, __> [__/__, ___]
+    -- 10 DW, 71 STP, 345 Acc <1 DA, 0 TA, 3 QA> [52 PDT/42 MDT, 674 M.Eva]
+  })
+
+  -- Mid DW (18 needed from gear)
+  sets.engaged.MidDW = {
+    range=empty,                      -- __, __, __ <__, __, __> [__/__, ___]
+    ammo="Coiste Bodhar",             -- __,  3, __ < 3, __, __> [__/__, ___]
+    head="Bunzi's Hat",               -- __,  8, 55 <__, __,  3> [ 7/ 7, 123]
+    body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
+    hands="Malignance Gloves",        -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
+    legs="Malignance Tights",         -- __, 10, 50 <__, __, __> [ 7/ 7, 150]
+    feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
+    neck="Anu Torque",                -- __,  7, __ <__, __, __> [__/__, ___]
+    ear1="Dedition Earring",          -- __,  8,-10 <__, __, __> [__/__, ___]
+    ear2="Sherida Earring",           -- __,  5, __ < 5, __, __> [__/__, ___]
+    ring1="Epona's Ring",             -- __, __, __ < 3,  3, __> [__/__, ___]
+    ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
+    back=gear.RDM_DW_Cape,            -- 10, __, 30 <__, __, __> [10/__, ___]
+    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
+    -- 17 DW, 77 STP, 285 Acc <11 DA, 3 TA, 3 QA> [52 PDT/42 MDT, 674 M.Eva]
+  }
+  sets.engaged.MidDW.MidAcc = set_combine(sets.engaged.MidDW.MidAcc, {
+    -- ammo="Voluspa Tathlum",        -- __, __, 10 <__, __, __> [__/__, ___]
+    -- neck="Lissome Necklace",       -- __,  4,  8 < 1, __, __> [__/__, ___]
+    -- ear1="Telos Earring",          -- __,  5, 10 < 1, __, __> [__/__, ___]
+    -- 17 DW, 68 STP, 323 Acc <10 DA, 3 TA, 3 QA> [52 PDT/42 MDT, 674 M.Eva]
+  })
+  sets.engaged.MidDW.HighAcc = set_combine(sets.engaged.MidDW.HighAcc, {
+    -- neck="Combatant's Torque",     -- __,  4, __ <__, __, __> [__/__, ___]; Combat skills+15
+    ear2="Dignitary's Earring",       -- __,  3, 10 <__, __, __> [__/__, ___]
+    ring1="Chirich Ring +1",          -- __,  6, 10 <__, __, __> [__/__, ___]
+    -- 17 DW, 72 STP, 335 Acc <1 DA, 0 TA, 3 QA> [52 PDT/42 MDT, 674 M.Eva]
+  })
+
+  -- High DW (31 needed from gear)
+  sets.engaged.HighDW = {
+    range=empty,                      -- __, __, __ <__, __, __> [__/__, ___]
+    ammo="Staunch Tathlum +1",        -- __, __, __ <__, __, __> [ 3/ 3, ___]
+    head="Bunzi's Hat",               -- __,  8, 55 <__, __,  3> [ 7/ 7, 123]
+    body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
+    hands="Malignance Gloves",        -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
+    legs="Malignance Tights",         -- __, 10, 50 <__, __, __> [ 7/ 7, 150]
+    feet=gear.Taeon_DW_feet,          --  9, __, 26 <__, __, __> [__/__,  69]
+    neck="Anu Torque",                -- __,  7, __ <__, __, __> [__/__, ___]
+    ear1="Dedition Earring",          -- __,  8,-10 <__, __, __> [__/__, ___]
+    ear2="Suppanomimi",               --  5, __, __ <__, __, __> [__/__, ___]
+    ring1="Chirich Ring +1",          -- __,  6, 10 <__, __, __> [__/__, ___]
+    ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
+    back=gear.RDM_DW_Cape,            -- 10, __, 30 <__, __, __> [10/__, ___]
+    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
+    -- 31 DW, 66 STP, 271 Acc <0 DA, 0 TA, 3 QA> [51 PDT/41 MDT, 593 M.Eva]
+  }
+  sets.engaged.HighDW.MidAcc = set_combine(sets.engaged.HighDW, {
     -- neck="Combatant's Torque",     -- __,  4, __ <__, __, __> [__/__, ___]; Combat skills+15
     -- ear1="Telos Earring",          -- __,  5, 10 < 1, __, __> [__/__, ___]
-    -- ring1="Chirich Ring +1",       -- __,  6, 10 <__, __, __> [__/__, ___]
-    -- ring2="Chirich Ring +1",       -- __,  6, 10 <__, __, __> [__/__, ___]
+    -- 31 DW, 60 STP, 291 Acc <1 DA, 0 TA, 3 QA> [51 PDT/41 MDT, 593 M.Eva]
+  })
+  sets.engaged.HighDW.HighAcc = set_combine(sets.engaged.HighDW.MidAcc, {
+    -- ammo="Voluspa Tathlum",        -- __, __, 10 <__, __, __> [__/__, ___]
+    feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
+    ear2="Dignitary's Earring",       -- __,  3, 10 <__, __, __> [__/__, ___]
+    waist="Olseni belt",              -- __,  3, 20 <__, __, __> [__/__, ___]
+    -- 10 DW, 71 STP, 345 Acc <1 DA, 0 TA, 3 QA> [52 PDT/42 MDT, 674 M.Eva]
+  })
+
+  -- Super DW (42 needed from gear)
+  sets.engaged.SuperDW = {
+    range=empty,                      -- __, __, __ <__, __, __> [__/__, ___]
+    ammo="Coiste Bodhar",             -- __,  3, __ < 3, __, __> [__/__, ___]
+    head="Bunzi's Hat",               -- __,  8, 55 <__, __,  3> [ 7/ 7, 123]
+    body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
+    hands="Bunzi's Gloves",           -- __, __, 55 < 8, __, __> [ 8/ 8, 112]
+    legs=gear.Carmine_D_legs,         --  6, __, 55 <__, __, __> [__/__,  80]
+    feet=gear.Taeon_DW_feet,          --  9, __, 26 <__, __, __> [__/__,  69]
+    neck="Loricate Torque +1",        -- __, __, __ <__, __, __> [ 6/ 6, ___]
+    ear1="Eabani Earring",            --  4, __, __ <__, __, __> [__/__,   8]
+    ear2="Suppanomimi",               --  5, __, __ <__, __, __> [__/__, ___]
+    ring1="Chirich Ring +1",          -- __,  6, 10 <__, __, __> [__/__, ___]
+    ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
+    back=gear.RDM_DW_Cape,            -- 10, __, 30 <__, __, __> [10/__, ___]
+    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
+    -- 41 DW, 32 STP, 291 Acc <11 DA, 0 TA, 3 QA> [50 PDT/40 MDT, 531 M.Eva]
+  }
+  sets.engaged.SuperDW.MidAcc = set_combine(sets.engaged.SuperDW, {
+    -- ammo="Voluspa Tathlum",        -- __, __, 10 <__, __, __> [__/__, ___]
+    feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
+    -- neck="Combatant's Torque",     -- __,  4, __ <__, __, __> [__/__, ___]; Combat skills+15
+    -- 32 DW, 42 STP, 325 Acc <8 DA, 0 TA, 3 QA> [48 PDT/38 MDT, 612 M.Eva]
+  })
+  sets.engaged.SuperDW.HighAcc = set_combine(sets.engaged.SuperDW.MidAcc, {
+    -- ear1="Telos Earring",          -- __,  5, 10 < 1, __, __> [__/__, ___]
+    ear2="Dignitary's Earring",       -- __,  3, 10 <__, __, __> [__/__, ___]
+    waist="Olseni belt",              -- __,  3, 20 <__, __, __> [__/__, ___]
+    -- 16 DW, 49 STP, 355 Acc <9 DA, 0 TA, 3 QA> [48 PDT/38 MDT, 610 M.Eva]
+  })
+
+  -- Max DW (49 needed from gear)
+  sets.engaged.MaxDW = {
+    range=empty,                      -- __, __, __ <__, __, __> [__/__, ___]
+    ammo="Coiste Bodhar",             -- __,  3, __ < 3, __, __> [__/__, ___]
+    head="Bunzi's Hat",               -- __,  8, 55 <__, __,  3> [ 7/ 7, 123]
+    body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
+    hands="Bunzi's Gloves",           -- __, __, 55 < 8, __, __> [ 8/ 8, 112]
+    legs=gear.Carmine_D_legs,         --  6, __, 55 <__, __, __> [__/__,  80]
+    feet=gear.Taeon_DW_feet,          --  9, __, 26 <__, __, __> [__/__,  69]
+    neck="Loricate Torque +1",        -- __, __, __ <__, __, __> [ 6/ 6, ___]
+    ear1="Eabani Earring",            --  4, __, __ <__, __, __> [__/__,   8]
+    ear2="Suppanomimi",               --  5, __, __ <__, __, __> [__/__, ___]
+    ring1="Chirich Ring +1",          -- __,  6, 10 <__, __, __> [__/__, ___]
+    ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
+    back=gear.RDM_DW_Cape,            -- 10, __, 30 <__, __, __> [10/__, ___]
+    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
+    -- 41 DW, 32 STP, 291 Acc <11 DA, 0 TA, 3 QA> [50 PDT/40 MDT, 531 M.Eva]
+  }
+  sets.engaged.MaxDW.MidAcc = set_combine(sets.engaged.MaxDW, {
+    -- ammo="Voluspa Tathlum",        -- __, __, 10 <__, __, __> [__/__, ___]
+    feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
+    -- neck="Combatant's Torque",     -- __,  4, __ <__, __, __> [__/__, ___]; Combat skills+15
+    -- 32 DW, 42 STP, 325 Acc <8 DA, 0 TA, 3 QA> [48 PDT/38 MDT, 612 M.Eva]
+  })
+  sets.engaged.MaxDW.HighAcc = set_combine(sets.engaged.MaxDW.MidAcc, {
+    -- ear1="Telos Earring",          -- __,  5, 10 < 1, __, __> [__/__, ___]
+    ear2="Dignitary's Earring",       -- __,  3, 10 <__, __, __> [__/__, ___]
+    waist="Olseni belt",              -- __,  3, 20 <__, __, __> [__/__, ___]
+    -- 16 DW, 49 STP, 355 Acc <9 DA, 0 TA, 3 QA> [48 PDT/38 MDT, 610 M.Eva]
   })
 
   --------------- En-Spell ---------------
@@ -1707,50 +1769,36 @@ function init_gear_sets()
     -- 0 DW, 23 STP, 390 Acc <24 DA, 13 TA, 3 QA> [49 PDT/39 MDT, 596 M.Eva] (508 M.Acc, 26 Enspell Dmg, 36 Enh Skill)
 
     -- ear2="Lethargy Earring +2",    -- __, __, 20 < 8, __, __> [__/__, ___] (20, __, __)
-    -- waist="Orpheus's Sash",
+    -- waist="Orpheus's Sash",        -- __, __, __ <__, __, __> [__/__, ___] (__, __, __); Dmg+15%
   })
-  sets.engaged.DW.Enspell = set_combine(sets.engaged.Enspell, {
+  -- Low DW (11 needed from gear)
+  sets.engaged.LowDW.Enspell = set_combine(sets.engaged.Enspell, {
+    back=gear.RDM_DW_Cape,            -- 10, __, 30 <__, __, __> [10/__, ___]
+  })
+  -- Mid DW (18 needed from gear)
+  sets.engaged.MidDW.Enspell = set_combine(sets.engaged.Enspell, {
     ear1="Eabani Earring",            --  4, __, __ <__, __, __> [__/__,   8]
     ear2="Suppanomimi",               --  5, __, __ <__, __, __> [__/__, ___]
     back=gear.RDM_DW_Cape,            -- 10, __, 30 <__, __, __> [10/__, ___]
   })
-  sets.engaged.MidHasteDW.Enspell = set_combine(sets.engaged.Enspell, {
+  -- High DW (31 needed from gear)
+  sets.engaged.HighDW.Enspell = set_combine(sets.engaged.Enspell, {
     ear1="Eabani Earring",            --  4, __, __ <__, __, __> [__/__,   8]
     ear2="Suppanomimi",               --  5, __, __ <__, __, __> [__/__, ___]
     back=gear.RDM_DW_Cape,            -- 10, __, 30 <__, __, __> [10/__, ___]
   })
-  sets.engaged.HighHasteDW.Enspell = set_combine(sets.engaged.Enspell, {})
-  sets.engaged.MaxHasteDW.Enspell = set_combine(sets.engaged.Enspell, {})
-
-
-  ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Hybrid Sets -------------------------------------------
-  ------------------------------------------------------------------------------------------------
-
-    sets.engaged.Hybrid = {
-      neck="Loricate Torque +1", --6/6
-      ring2="Defending Ring", --10/10
-    }
-
-    sets.engaged.DT = set_combine(sets.engaged, sets.engaged.Hybrid)
-    sets.engaged.MidAcc.DT = set_combine(sets.engaged.MidAcc, sets.engaged.Hybrid)
-    sets.engaged.HighAcc.DT = set_combine(sets.engaged.HighAcc, sets.engaged.Hybrid)
-
-    sets.engaged.DW.DT = set_combine(sets.engaged.DW, sets.engaged.Hybrid)
-    sets.engaged.DW.MidAcc.DT = set_combine(sets.engaged.DW.MidAcc, sets.engaged.Hybrid)
-    sets.engaged.DW.HighAcc.DT = set_combine(sets.engaged.DW.HighAcc, sets.engaged.Hybrid)
-
-    sets.engaged.MidHasteDW.DT = set_combine(sets.engaged.MidHasteDW, sets.engaged.Hybrid)
-    sets.engaged.MidHasteDW.MidAcc.DT = set_combine(sets.engaged.MidHasteDW.MidAcc, sets.engaged.Hybrid)
-    sets.engaged.MidHasteDW.HighAcc.DT = set_combine(sets.engaged.MidHasteDW.HighAcc, sets.engaged.Hybrid)
-
-    sets.engaged.HighHasteDW.DT = set_combine(sets.engaged.HighHasteDW, sets.engaged.Hybrid)
-    sets.engaged.HighHasteDW.MidAcc.DT = set_combine(sets.engaged.HighHasteDW.MidAcc, sets.engaged.Hybrid)
-    sets.engaged.HighHasteDW.HighAcc.DT = set_combine(sets.engaged.HighHasteDW.HighAcc, sets.engaged.Hybrid)
-
-    sets.engaged.MaxHasteDW.DT = set_combine(sets.engaged.MaxHasteDW, sets.engaged.Hybrid)
-    sets.engaged.MaxHasteDW.MidAcc.DT = set_combine(sets.engaged.MaxHasteDW.MidAcc, sets.engaged.Hybrid)
-    sets.engaged.MaxHasteDW.HighAcc.DT = set_combine(sets.engaged.MaxHasteDW.HighAcc, sets.engaged.Hybrid)
+  -- Super DW (42 needed from gear)
+  sets.engaged.SuperDW.Enspell = set_combine(sets.engaged.Enspell, {
+    ear1="Eabani Earring",            --  4, __, __ <__, __, __> [__/__,   8]
+    ear2="Suppanomimi",               --  5, __, __ <__, __, __> [__/__, ___]
+    back=gear.RDM_DW_Cape,            -- 10, __, 30 <__, __, __> [10/__, ___]
+  })
+  -- Max DW (49 needed from gear)
+  sets.engaged.MaxDW.Enspell = set_combine(sets.engaged.Enspell, {
+    ear1="Eabani Earring",            --  4, __, __ <__, __, __> [__/__,   8]
+    ear2="Suppanomimi",               --  5, __, __ <__, __, __> [__/__, ___]
+    back=gear.RDM_DW_Cape,            -- 10, __, 30 <__, __, __> [10/__, ___]
+  })
 
 
   ------------------------------------------------------------------------------------------------
@@ -2028,12 +2076,8 @@ end
 -- Set eventArgs.handled to true if we don't want automatic equipping of gear.
 function job_handle_equipping_gear(playerStatus, eventArgs)
   check_gear()
-  update_combat_form()
   update_idle_groups()
-end
-
---Arminhammer: Combat forms should be used to determine DW and Haste Tiering.
-function update_combat_form()
+  silibs.update_combat_form()
 end
 
 function update_idle_groups()
@@ -2326,22 +2370,6 @@ end
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
 
---Arminhammer: Previous implementation by Arislan attempted to clear gearset table when a haste group changed
---This can happen many times in combat plus the table is immutable and will only be destroyed or cleared when disengaging and re-engaging combat
---Instead, keep table as is, use combat state to set haste tiering. This avoids the persistent memory of gear tables that requires
---disengaging and re-engaging combat to update haste tiering.
---This function should return a string based on the haste tiering.
-  --Haste Tier Definitions (assumed 25% Gear Haste (cap))
-  -- MaxHaste - 0-25% DW to cap, 0% from gear. Requires > 48.75% haste (43.75 from Magic, 5 from Samba).
-  -- SuperHaste - 36% DW to cap, 11% from gear. Requires > 43.75 haste (Magic Haste cap)
-  -- HighHaste - 43% DW to cap, 18% from gear. Requires > 42.30 haste (Haste II and Honor March)
-  -- MidHaste - 56% DW to cap, 31% from gear. Requires > 30.00 haste.
-  -- LowHaste - 67% DW to cap, 42% from gear. Requires > 15.00 haste.
-  -- NoHaste - 74% DW to cap, 49% from gear.
-  --
-  -- Note: Subjob NIN gives T3 DW (25 DW) in traits
-
-  
 function job_self_command(cmdParams, eventArgs)
   silibs.self_command(cmdParams, eventArgs)
   ----------- Non-silibs content goes below this line -----------
