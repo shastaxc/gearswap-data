@@ -1402,24 +1402,31 @@ function init_gear_sets()
   ---------------------------------------- Defense Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
 
-  sets.HeavyDef = {
+  sets.HeavyDef = { -- Not counting weapons in totals because will not always be equippable (battle mode)
     main="Mpaca's Staff",             -- __/__, ___ [ 2]
     sub="Enki Strap",                 -- __/__,  10 [__]
     range=empty,                      -- __/__, ___ [__]
     ammo="Staunch Tathlum +1",        --  3/ 3, ___ [__]; Resist Status+11
-    head=gear.Nyame_B_head,
+    head="Bunzi's Hat",               --  7/ 7, 123 [__]
     body="Shamash Robe",              -- 10/__, 106 [ 3]; Resist Silence+90
-    hands=gear.Nyame_B_hands,
-    legs=gear.Nyame_B_legs,
-    feet=gear.Nyame_B_feet,
+    hands=gear.Nyame_B_hands,         --  7/ 7, 112 [__]
+    legs=gear.Nyame_B_legs,           --  8/ 8, 150 [__]
+    feet=gear.Nyame_B_feet,           --  7/ 7, 150 [__]
     neck="Loricate Torque +1",        --  6/ 6, ___ [__]; DEF+60
-    ear1="Odnowa Earring +1",         --  3/ 5, ___ [__]
+    ear1="Arete Del Luna +1",         -- __/__, ___ [__]; Resists
     ear2="Etiolation Earring",        -- __/ 3, ___ [__]; Resist Silence+15
-    ring1="Gelatinous Ring +1",       --  7/-1, ___
-    ring2="Defending Ring",           -- 10/10, ___
+    ring1="Wuji Ring",                -- __/__, ___ [__]; Resists Charm/Sleep
+    ring2="Defending Ring",           -- 10/10, ___ [__]
     back=gear.RDM_INT_Enf_Cape,       -- 10/__, ___ [__]
-    waist="Carrier's Sash",           -- __/__, ___; Ele Resist+15
-    -- PDT/MDT, M.Eva [Refresh]
+    waist="Carrier's Sash",           -- __/__, ___ [__]; Ele Resist+15
+    -- 68 PDT/51 MDT, 641 M.Eva [3 Refresh]
+    
+    -- main="Sakpata's Sword",        -- 10/10, ___ [ 3]; R30
+    -- sub="Sacro Bulwark",           -- 10/10, ___ [__]
+    -- head="Lethargy Chappel +3",    -- 10/10, 125 [__]
+    -- ring2="Shadow Ring",           -- __/__, ___ [__]; Occ. annuls magic dmg
+    -- back="Shadow Mantle",          -- __/__, ___ [__]; Occ. annuls physical dmg
+    -- 51 PDT/44 MDT, 643 M.Eva [3 Refresh]
   }
 
   sets.defense.PDT = set_combine(sets.HeavyDef, {})

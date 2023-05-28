@@ -1053,25 +1053,26 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.HeavyDef = {
-    main="Malignance Pole",         -- 20/20, ___
-    sub="Khonsu",                   --  6/ 6, ___
+    main="Daybreak",                -- __/__,  30
+    sub="Genmei Shield",            -- 10/__, ___
     ammo="Staunch Tathlum +1",      --  3/ 3, ___; Resist Status+11
-    head=gear.Nyame_B_head,         --  7/ 7, 123
+    head="Arbatel Bonnet +3",       -- 10/10, 136
     body="Shamash Robe",            -- 10/__, 106; Resist Silence+90
     hands=gear.Nyame_B_hands,       --  7/ 7, 112
-    legs=gear.Nyame_B_legs,         --  8/ 8, 150
-    feet=gear.Nyame_B_feet,         --  7/ 7, 150
+    legs="Arbatel Pants +3",        -- 12/12, 168
+    feet="Arbatel Loafers +3",      -- __/__, 168
     neck="Loricate Torque +1",      --  6/ 6, ___; DEF+60
     ear1="Arete Del Luna +1",       -- __/__, ___; Resists
     ear2="Etiolation Earring",      -- __/ 3, ___; Resist Silence+15
-    ring1="Gelatinous Ring +1",     --  7/-1, ___
+    ring1="Wuji Ring",              -- __/__, ___; Resists Charm/Sleep
     ring2="Defending Ring",         -- 10/10, ___
-    back="Cheviot Cape",            --  5/__, ___
+    back=gear.SCH_MAB_Cape,         -- __/__,  15
     waist="Carrier's Sash",         -- __/__, ___; Ele Resist+15
-    -- 96 PDT / 76 MDT, 641 M.Eva
+    -- 68 PDT / 51 MDT, 735 M.Eva
     
-    -- back="Archon Cape",          -- __/__, ___
-    -- 91 PDT / 76 MDT, 641 M.Eva
+    -- ring2="Shadow Ring",         -- __/__, ___; Occ. annuls magic dmg
+    -- back="Shadow Mantle",        -- __/__, ___; Occ. annuls physical dmg
+    -- 58 PDT / 41 MDT, 720 M.Eva
   }
 
   sets.defense.PDT = set_combine(sets.HeavyDef, {})
