@@ -134,11 +134,9 @@ function job_setup()
   enfeebling_skill_spells = S{'Distract III', 'Frazzle III', 'Poison II'}
   -- 100% land rate, focus on duration gear
   enfeebling_duration_spells = S{'Dia', 'Dia II', 'Dia III', 'Diaga'}
-
+  -- Spells that require high/uncapped enhancing magic skill
   enhancing_skill_spells = S{'Temper', 'Temper II', 'Enfire', 'Enfire II', 'Enblizzard', 'Enblizzard II', 'Enaero',
       'Enaero II', 'Enstone', 'Enstone II', 'Enthunder', 'Enthunder II', 'Enwater', 'Enwater II'}
-
-  elemental_debuff_spells = S{'Shock', 'Rasp', 'Choke', 'Frost', 'Burn', 'Drown'}
 
   --Used to pick the best enspell for the current day
   enspell_to_day_element = T{
@@ -294,6 +292,11 @@ function init_gear_sets()
     -- hands="Lethargy Gantherots +3",-- __ [11/11,  87]
     -- 79 FC [51 PDT/39 MDT, 548 M.Eva]
   }
+
+  sets.precast.FC.Dispelga = set_combine(sets.precast.FC, {
+    main="Daybreak",
+    sub="Ammurapi Shield",
+  })
 
 
   ------------------------------------------------------------------------------------------------
@@ -1033,8 +1036,8 @@ function init_gear_sets()
   sets.midcast.MNDEnfeeblesAcc = {
     -- main="Crocea Mors",            -- 255, 50, __, 20 (__, __, __, __) [__/__, ___]
     sub="Ammurapi Shield",            -- ___, 38, 13, __ (__, __, __, __) [__/__, ___]
-    range=empty,                      -- ___, __, __, __ (__, __, __, __) [__/__, ___]
-    ammo="Regal Gem",                 -- ___, 15,  7, __ (__, 10, __, __) [__/__, ___]
+    range="Ullr",                     -- ___, 40, __, __ (__, __, __, __) [__/__, ___]
+    ammo=empty,                       -- ___, __, __, __ (__, __, __, __) [__/__, ___]
     head="Vitiation Chapeau +1",      -- ___, __, 32, __ (__, __, __, 22) [__/__,  75]; Enhances enf. duration
     body="Atrophy Tabard +2",         -- ___, 45, 38, __ (__, __, __, 19) [__/__,  90]
     hands="Lethargy Gantherots +2",   -- ___, 52, 45, __ (__, __, __, 24) [10/10,  77]
@@ -1049,10 +1052,8 @@ function init_gear_sets()
     waist="Obstinate Sash",           -- ___, 15,  5, __ (__, __,  5, 15) [__/__, ___]
     -- Empy set effect                   ___, __, __, __ (__, __, __, __) [__/__, ___]
     -- Traits/Gifts/Merits                            38
-    -- 255 M.Acc skill, 407 M.Acc, 278 MND, 72 FC (1 Immunobreak, 30 Enf. Effect, 40 Enf. Duration, 125 Enf. Skill) [20 PDT/10 MDT, 487 M.Eva]
+    -- 255 M.Acc skill, 432 M.Acc, 271 MND, 72 FC (1 Immunobreak, 20 Enf. Effect, 40 Enf. Duration, 125 Enf. Skill) [20 PDT/10 MDT, 487 M.Eva]
     
-    -- range="Ullr",                  -- ___, 40, __, __ (__, __, __, __) [__/__, ___]
-    -- ammo=empty,                    -- ___, __, __, __ (__, __, __, __) [__/__, ___]
     -- head="Vitiation Chapeau +3",   -- ___, 37, 42, __ (__, __, __, 26) [__/__,  95]; Enhances enf. duration
     -- body="Atrophy Tabard +3",      -- ___, 55, 43, __ (__, __, __, 21) [__/__, 100]
     -- hands="Lethargy Gantherots +3",-- ___, 62, 50, __ (__, __, __, 29) [11/11,  87]
@@ -1127,8 +1128,8 @@ function init_gear_sets()
   sets.midcast.INTEnfeeblesAcc = {
     main="Contemplator +1",           -- 228, 70, 12, __ (__, __, __, 20) [__/__, ___]
     sub="Enki Strap",                 -- ___, 10, 10, __ (__, __, __, __) [__/__,  10]
-    range=empty,                      -- ___, __, __, __ (__, __, __, __) [__/__, ___]
-    ammo="Pemphredo Tathlum",         -- ___,  8,  4, __ (__, __, __, __) [__/__, ___]
+    range="Ullr",                     -- ___, 40, __, __ (__, __, __, __) [__/__, ___]
+    ammo=empty,                       -- ___, __, __, __ (__, __, __, __) [__/__, ___]
     head="Vitiation Chapeau +1",      -- ___, __, 19, __ (__, __, __, 22) [__/__,  75]; Enhances enf. duration
     body="Atrophy Tabard +2",         -- ___, 45, 38, __ (__, __, __, 19) [__/__,  90]
     hands="Lethargy Gantherots +2",   -- ___, 52, 28, __ (__, __, __, 24) [10/10,  77]
@@ -1143,10 +1144,8 @@ function init_gear_sets()
     waist="Obstinate Sash",           -- ___, 15, __, __ (__, __,  5, 15) [__/__, ___]
     -- Empy set effect                   ___, __, __, __ (__, __, __, __) [__/__, ___]
     -- Traits/Gifts/Merits                            38
-    -- 228 M.Acc skill, 396 M.Acc, 254 INT, 42 FC (1 Immunobreak, 30 Enf. Effect, 40 Enf. Duration, 137 Enf. Skill) [20 PDT/10 MDT, 497 M.Eva]
+    -- 228 M.Acc skill, 428 M.Acc, 250 INT, 42 FC (1 Immunobreak, 30 Enf. Effect, 40 Enf. Duration, 137 Enf. Skill) [20 PDT/10 MDT, 497 M.Eva]
     
-    -- range="Ullr",                  -- ___, 40, __, __ (__, __, __, __) [__/__, ___]
-    -- ammo=empty,                    -- ___, __, __, __ (__, __, __, __) [__/__, ___]
     -- head="Vitiation Chapeau +3",   -- ___, 37, 29, __ (__, __, __, 26) [__/__,  95]; Enhances enf. duration
     -- body="Atrophy Tabard +3",      -- ___, 55, 43, __ (__, __, __, 21) [__/__, 100]
     -- hands="Lethargy Gantherots +3",-- ___, 62, 33, __ (__, __, __, 29) [11/11,  87]
@@ -1159,8 +1158,8 @@ function init_gear_sets()
   sets.midcast.INTEnfeeblesDuration = set_combine(sets.midcast.MNDEnfeeblesDuration, {
     main="Daybreak",                  -- 242, 40, __, __ (__, __, __, __) [__/__,  30]
     sub="Genmei Shield",              -- ___, __, __, __ (__, __, __, __) [10/__, ___]
-    range=empty,                      -- ___, __, __, __ (__, __, __, __) [__/__, ___]
-    ammo="Pemphredo Tathlum",         -- ___,  8,  4, __ (__, __, __, __) [__/__, ___]
+    range="Ullr",                     -- ___, 40, __, __ (__, __, __, __) [__/__, ___]
+    ammo=empty,                       -- ___, __, __, __ (__, __, __, __) [__/__, ___]
     head="Vitiation Chapeau +1",      -- ___, __, 19, __ (__, __, __, 22) [__/__,  75]; Enhances enf. duration
     body="Lethargy Sayon +3",         -- ___, 64, 47, __ (__, 18, __, __) [14/14, 136]
     hands="Regal Cuffs",              -- ___, 45, 40, __ (__, __, 20, __) [__/__,  53]
@@ -1175,16 +1174,19 @@ function init_gear_sets()
     waist="Obstinate Sash",           -- ___, 15, __, __ (__, __,  5, 15) [__/__, ___]
     -- Empy set effect                   ___, __, __, __ (__, __, 20, __) [__/__, ___]
     -- Traits/Gifts/Merits                            38
-    -- 242 M.Acc skill, 340 M.Acc, 223 INT, 42 FC (0 Immunobreak, 38 Enf. Effect, 90 Enf. Duration, 37 Enf. Skill) [47 PDT/29 MDT, 593 M.Eva]
+    -- 242 M.Acc skill, 372 M.Acc, 219 INT, 42 FC (0 Immunobreak, 38 Enf. Effect, 90 Enf. Duration, 37 Enf. Skill) [47 PDT/29 MDT, 593 M.Eva]
     
-    -- range="Ullr",                  -- ___, 40, __, __ (__, __, __, __) [__/__, ___]
-    -- ammo=empty,                    -- ___, __, __, __ (__, __, __, __) [__/__, ___]
     -- head="Vitiation Chapeau +3",   -- ___, 37, 29, __ (__, __, __, 26) [__/__,  95]; Enhances enf. duration
     -- legs="Lethargy Fuseau +3",     -- ___, 63, 48, __ (__, __, __, __) [__/__, 162]
     -- feet="Lethargy Houseaux +3",   -- ___, 60, 30, __ (__, __, __, __) [__/__, 157]
     -- 242 M.Acc skill, 429 M.Acc, 239 INT, 42 FC (0 Immunobreak, 38 Enf. Effect, 90 Enf. Duration, 41 Enf. Skill) [47 PDT/29 MDT, 633 M.Eva]
   })
   sets.midcast.INTEnfeeblesDurationDW = set_combine(sets.midcast.INTEnfeeblesDuration, {})
+
+  sets.midcast.Dispelga = set_combine(sets.midcast.INTEnfeeblesAcc, {
+    main="Daybreak",
+    sub="Ammurapi Shield",
+  })
 
   -- Dark magic options:
   -- M.Acc Skill, Dark skill, M.Acc, INT [PDT/MDT, M.Eva]
@@ -1221,82 +1223,59 @@ function init_gear_sets()
   }
 
   sets.midcast.Drain = set_combine(sets.midcast['Dark Magic'], {
-    head="Pixie Hairpin +1",
-    -- feet="Merlinic Crackows",
-    -- ear1="Hirudinea Earring",
-    ring1="Archon Ring",
-    ring2="Evanescence Ring",
-    back="Perimede Cape",
-    waist="Fucho-no-obi",
+    feet=gear.Merl_Drain_feet,        --  7 Drain/Aspir potency
+    ring2="Evanescence Ring",         -- 10 Drain/Aspir potency
+    waist="Fucho-no-obi",             --  8 Drain/Aspir potency
+    -- ear2="Hirudinea Earring",      --  3 Drain/Aspir potency
   })
-
   sets.midcast.Aspir = set_combine(sets.midcast.Drain,{})
 
-  --Magic acc + Dark Skill
-  sets.midcast.Stun = { --When using chainspell, this has to be in precast.
-    -- main={name="Crocea Mors", priority=1},  --122(255)+50
-    sub={name="Ammurapi Shield", priority=1}, --38 bonus magic acc
-    -- range="Ullr", --40
-    -- ammo=empty,
-    head="Atrophy Chapeau +2", --44
-    body="Atrophy Tabard +2", --45
-    hands=gear.Kaykaus_C_hands, --33+20
-    legs=gear.Chironic_MAcc_legs,
-    feet="Malignance Boots", --50
-    neck="Duelist's Torque +2", --30
-    ear1="Malignance Earring", --10
-    ear2="Regal Earring",  --15 set bonus
-    ring1="Stikini Ring +1", --8+11
-    ring2="Stikini Ring +1", --8+11
-    back="Aurist's Cape +1", --33
-    waist="Obstinate Sash", -- 15 macc
-    
-    -- head="Atrophy Chapeau +3", --54+17
-    -- body="Atrophy Tabard +3", --55
-    -- legs=gear.Chironic_MAcc_legs,
-  } --496 Macc + 30 macc set bonus + 352 Drk Magic = 893 effective macc
+  sets.midcast.Stun = set_combine(sets.midcast['Dark Magic'], {})
 
   sets.midcast['Elemental Magic'] = {
-    main={name="Bunzi's Rod", priority=1},
-    sub="Daybreak",
-    range=empty,
-    -- ammo="Ghastly Tathlum +1",
-    head="Lethargy Chappel +2",
-    body="Lethargy Sayon +3",
-    hands="Lethargy Gantherots +2",
-    legs="Lethargy Fuseau +2",
-    feet="Lethargy Houseaux +2",
-    neck="Sibyl Scarf",
-    ear1="Malignance Earring",
-    ear2="Regal Earring",
-    ring1="Metamorph Ring +1",
-    ring2="Freke Ring",
-    back=gear.RDM_MAB_Cape, -- MAB is much stronger
-    waist="Refoccilation Stone",
+    main="Bunzi's Rod",               -- 255, __, 55 (15, 65,248, 10, __) [__/__, ___]
+    sub="Ammurapi Shield",            -- ___, __, 38 (13, 38, __, __, __) [__/__, ___]
+    range=empty,                      -- ___, __, __ (__, __, __, __, __) [__/__, ___]
+    ammo="Pemphredo Tathlum",         -- ___, __,  8 ( 4,  4, __, __, __) [__/__, ___]
+    head="Lethargy Chappel +2",       -- ___, __, 51 (33, 51, 21, __, __) [ 9/ 9, 115]
+    body="Lethargy Sayon +3",         -- ___, __, 64 (47, 54, 34, __, __) [14/14, 136]
+    hands="Lethargy Gantherots +2",   -- ___, __, 52 (28, 47, 22, __, __) [10/10,  77]
+    legs="Lethargy Fuseau +2",        -- ___, __, 53 (43, 53, 23, 10, __) [__/__, 152]
+    feet="Lethargy Houseaux +2",      -- ___, __, 50 (25, 45, 20, __, __) [__/__, 147]
+    neck="Sibyl Scarf",               -- ___, __, __ (10, 10, __, __, __) [__/__, ___]
+    ear1="Malignance Earring",        -- ___, __, 10 ( 8,  8, __, __, __) [__/__, ___]
+    ear2="Regal Earring",             -- ___, __, __ (10, __, __, __, __) [__/__, ___]
+    ring1="Metamorph Ring +1",        -- ___, __, 15 (16, __, __, __, __) [__/__, ___]
+    ring2="Freke Ring",               -- ___, __, __ (10,  8, __, __, __) [__/__, ___]
+    back=gear.RDM_MAB_Cape,           -- ___, __, 20 (30, 10, __, __, __) [10/__, ___]
+    waist="Refoccilation Stone",      -- ___, __,  4 (__, 10, __, __, __) [__/__, ___]
+    -- 255 M.Acc Skill, 0 Elemental Skill, 420 M.Acc (292 INT, 403 MAB, 368 M.Dmg, 20 MB, 0 MB2) [43 PDT/33 MDT, 627 M.Eva]
     
-    -- head="Lethargy Chappel +3",
-    -- hands="Agwu's Gages", -- R30
-    -- legs="Lethargy Fuseau +3",
-    -- feet="Lethargy Houseaux +3",
+    -- ammo="Ghastly Tathlum +1",     -- ___, __, __ (11, __, 21, __, __) [__/__, ___]
+    -- head="Lethargy Chappel +3",    -- ___, __, 61 (38, 56, 31, __, __) [10/10, 125]
+    -- hands="Lethargy Gantherots +3",-- ___, __, 62 (33, 52, 32, __, __) [11/11,  87]
+    -- legs="Lethargy Fuseau +3",     -- ___, __, 63 (48, 58, 33, 15, __) [__/__, 162]
+    -- feet="Lethargy Houseaux +3",   -- ___, __, 60 (30, 50, 30, __, __) [__/__, 157]
+    -- 255 M.Acc Skill, 0 Elemental Skill, 452 M.Acc (319 INT, 419 MAB, 429 M.Dmg, 25 MB, 0 MB2) [45 PDT/35 MDT, 667 M.Eva]
   }
-
-  --Not used often
   sets.midcast['Elemental Magic'].Seidr = set_combine(sets.midcast['Elemental Magic'], {
     body="Seidr Cotehardie",
     waist="Acuity Belt +1",
   })
-
   sets.midcast['Elemental Magic'].Resistant = set_combine(sets.midcast['Elemental Magic'], {
-    -- range="Ullr",
-    -- ammo=empty,
     waist="Acuity Belt +1",
   })
+  -- Combined on top of the other sets if dual wield available and in casting weapon mode
+  sets.midcast['Elemental Magic'].DW = {
+    main="Bunzi's Rod",               -- 255, __, 55 (15, 65,248, 10, __) [__/__, ___]
+    sub="Daybreak",                   -- ___, __, 40 (__, 40, __, __, __) [__/__,  30]
+  }
 
   sets.midcast.Impact = {
     -- main="Crocea Mors",            -- 255, __, 50, __, 20 [__/__, ___]
     sub="Ammurapi Shield",            -- ___, __, 38, 13, __ [__/__, ___]
-    -- range="Ullr",                  -- ___, __, 40, __, __ [__/__, ___]
-    -- ammo=empty,                    -- ___, __, __, __, __ [__/__, ___]
+    range="Ullr",                     -- ___, __, 40, __, __ [__/__, ___]
+    ammo=empty,                       -- ___, __, __, __, __ [__/__, ___]
     head=empty,                       -- ___, __, __, __, __ [__/__, ___]
     body="Crepuscular Cloak",         -- ___, __, 85, 80, __ [__/__, 231]
     hands="Lethargy Gantherots +2",   -- ___, __, 52, 28, __ [10/10,  77]
@@ -1318,7 +1297,7 @@ function init_gear_sets()
   }
 
   -- TODO: For spells like Burn, Choke, etc.
-  sets.midcast.ElementalDebuff = {
+  sets.midcast.ElementalEnfeeble = {
 
   }
 
@@ -1551,8 +1530,8 @@ function init_gear_sets()
   sets.engaged.Enspell = set_combine(sets.engaged, {
     -- main="Crocea Mors",            -- __, __, 50 <__, __, __> [__/__, ___] (50, x6, __)
     -- sub="Gleti's Knife",           -- __, __, 55 <__,  6, __> [__/__, ___] (55, __, __); R30
-    -- range="Ullr",                  -- __, __, __ <__, __, __> [__/__, ___] (40, __, __)
-    -- ammo=empty,                    -- __, __, __ <__, __, __> [__/__, ___] (__, __, __)
+    range="Ullr",                     -- __, __, __ <__, __, __> [__/__, ___] (40, __, __)
+    ammo=empty,                       -- __, __, __ <__, __, __> [__/__, ___] (__, __, __)
     head="Bunzi's Hat",               -- __,  8, 55 <__, __,  3> [ 7/ 7, 123] (55, __, __); R30
     body="Lethargy Sayon +3",         -- __, __, 64 <__, __, __> [14/14, 136] (64, __, __)
     -- hands="Ayanmo Manopolas +2",   -- __, __, 43 <__, __, __> [ 3/ 3,  37] (43, 17, __)
@@ -1700,12 +1679,18 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 function job_pretarget(spell, action, spellMap, eventArgs)
-    --print("pretarget triggered")
+  -- Allow using <t> macro for storms but if not targeting a valid target, this will change it to <stpc>
+  if spell.english:endswith('storm') and ((spell.target.raw == '<t>' and not spell.target.type) or spell.target.type == 'MONSTER') then
+    send_command('@input /ma "'..spell.english..'" <stpc>')
+    eventArgs.cancel = true
+  end
 end
 
 function job_precast(spell, action, spellMap, eventArgs)
   silibs.precast_hook(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
+
+  refine_various_spells(spell, action, spellMap, eventArgs)
 
   if spell.english == 'Addendum: White' and not state.Buff['Light Arts'] then
     send_command('input /ja "Light Arts" <me>')
@@ -1729,6 +1714,24 @@ function job_precast(spell, action, spellMap, eventArgs)
 end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
+  -- Handle belts for elemental WS
+  if spell.type == 'WeaponSkill' and elemental_ws:contains(spell.english) then
+    local base_day_weather_mult = silibs.get_day_weather_multiplier(spell.element, false, false)
+    local obi_mult = silibs.get_day_weather_multiplier(spell.element, true, false)
+    local orpheus_mult = silibs.get_orpheus_multiplier(spell.element, spell.target.distance)
+    local has_obi = true -- Change if you do or don't have Hachirin-no-Obi
+    local has_orpheus = false -- Change if you do or don't have Orpheus's Sash
+
+    -- Determine which combination to use: orpheus, hachirin-no-obi, or neither
+    if has_obi and (obi_mult >= orpheus_mult or not has_orpheus) and (obi_mult > base_day_weather_mult) then
+      -- Obi is better than orpheus and better than nothing
+      equip({waist="Hachirin-no-Obi"})
+    elseif has_orpheus and (orpheus_mult > base_day_weather_mult) then
+      -- Orpheus is better than obi and better than nothing
+      equip({waist="Orpheus's Sash"})
+    end
+  end
+
   -- Always put this last in job_post_precast
   if in_battle_mode() then
     -- Prevent swapping main/sub weapons
@@ -1748,21 +1751,35 @@ end
 -- Run after the default midcast() is done.
 -- eventArgs is the same one used in job_midcast, in case information needs to be persisted.
 function job_post_midcast(spell, action, spellMap, eventArgs)
-    -- print("Spell: "..spell.english)
-    -- print("Target: "..spell.target.type)
-    if spell.skill == 'Enfeebling Magic' and state.Buff.Saboteur then
-      equip(sets.buff.Saboteur)
-    elseif spell.skill == 'Elemental Magic' then
-        if state.MagicBurst.value and spell.english ~= 'Death' then
-            equip(sets.magic_burst)
-            if spell.english == "Impact" then
-                equip(sets.midcast.Impact)
-            end
-        end
-        if (spell.element == world.day_element or spell.element == world.weather_element) then
-            equip(sets.Obi)
-        end
+  -- print("Spell: "..spell.english)
+  -- print("Target: "..spell.target.type)
+  if spell.skill == 'Enfeebling Magic' and state.Buff.Saboteur then
+    equip(sets.buff.Saboteur)
+  elseif spell.skill == 'Elemental Magic' then
+    if silibs.can_dual_wield() and not in_battle_mode() then
+      equip(sets.midcast['Elemental Magic'].DW)
     end
+
+    if state.MagicBurst.value and spell.english ~= 'Death' and spellMap ~= 'Impact' and spellMap ~= 'ElementalEnfeeble' then
+      equip(sets.magic_burst)
+    end
+
+    -- Handle belts for elemental damage
+    local base_day_weather_mult = silibs.get_day_weather_multiplier(spell.element, false, false)
+    local obi_mult = silibs.get_day_weather_multiplier(spell.element, true, false)
+    local orpheus_mult = silibs.get_orpheus_multiplier(spell.element, spell.target.distance)
+    local has_obi = true -- Change if you do or don't have Hachirin-no-Obi
+    local has_orpheus = false -- Change if you do or don't have Orpheus's Sash
+
+    -- Determine which combination to use: orpheus, hachirin-no-obi, or neither
+    if has_obi and (obi_mult >= orpheus_mult or not has_orpheus) and (obi_mult > base_day_weather_mult) then
+      -- Obi is better than orpheus and better than nothing
+      equip({waist='Hachirin-no-Obi'})
+    elseif has_orpheus and (orpheus_mult > base_day_weather_mult) then
+      -- Orpheus is better than obi and better than nothing
+      equip({waist='Orpheus\'s Sash'})
+    end
+  end
 
   -- Always put this last in job_post_midcast
   if in_battle_mode() then
@@ -1892,6 +1909,15 @@ function update_idle_groups()
   end
 end
 
+function refine_various_spells(spell, action, spellMap, eventArgs)
+  -- If casting Phalanx II on self, switch it to Phalanx. This will allow Accessions to work and there
+  -- is no functional difference between the spell potencies.
+  if spell.english == 'Phalanx II' and ((spell.target.raw == '<t>' and not spell.target.type) or spell.target.type == 'SELF') then
+    send_command('@input /ma "Phalanx" <me>')
+    eventArgs.cancel = true
+  end
+end
+
 -- Custom spell mapping.
 function job_get_spell_map(spell, default_spell_map)
   if spell.action_type == 'Magic' then
@@ -1929,7 +1955,7 @@ function job_get_spell_map(spell, default_spell_map)
       end
       
       --Handle DW gear sets for enfeebling
-      if silibs.is_dual_wielding() then
+      if silibs.can_dual_wield() and not in_battle_mode() then
         if spell.skill == 'Enfeebling Magic' and sets.midcast[custom_spell_map..'DW'] then
           custom_spell_map = custom_spell_map..'DW'
         end
@@ -1971,8 +1997,6 @@ function job_get_spell_map(spell, default_spell_map)
     elseif spell.skill == 'Elemental Magic' then
       if spell.english == 'Impact' then
         custom_spell_map = 'Impact'
-      elseif elemental_debuff_spells:contains(spell.english) then
-        custom_spell_map = 'ElementalDebuff'
       else
         custom_spell_map = default_spell_map
       end
@@ -2499,6 +2523,7 @@ end
 
 function set_sub_keybinds()
   if player.sub_job == 'SCH' then
+    send_command('bind !c gs c elemental storm')
     send_command('bind !/ input /ma "Klimaform" <me>')
     send_command('bind ^- gs c scholar light')
     send_command('bind ^= gs c scholar dark')
@@ -2546,6 +2571,7 @@ function unbind_keybinds()
   send_command('unbind !;')
   send_command('unbind !\'')
   
+  send_command('unbind !c')
   send_command('unbind !/')
   send_command('unbind ^-')
   send_command('unbind ^=')
