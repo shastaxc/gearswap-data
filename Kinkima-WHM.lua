@@ -28,9 +28,6 @@ function job_setup()
   silibs.enable_custom_roll_text()
   silibs.enable_equip_loop()
 
-  has_obi = true -- Change if you do or don't have Hachirin-no-Obi
-  has_orpheus = false -- Change if you do or don't have Orpheus's Sash
-
   auto_solace = true -- Change to false if you don't want Afflatus Solace auto-applied
   auto_arts = true -- Change to false if you don't want Light Arts auto-applied
 

@@ -105,9 +105,6 @@ function job_setup()
   silibs.enable_equip_loop()
   silibs.enable_haste_info()
   
-  has_obi = true -- Change if you do or don't have Hachirin-no-Obi
-  has_orpheus = false -- Change if you do or don't have Orpheus's Sash
-
   state.Buff['Sneak Attack'] = buffactive['sneak attack'] or false
   state.Buff['Trick Attack'] = buffactive['trick attack'] or false
   state.Buff['Feint'] = buffactive['feint'] or false

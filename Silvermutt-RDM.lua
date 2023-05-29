@@ -128,9 +128,6 @@ function job_setup()
   silibs.enable_auto_lockstyle(4)
   silibs.enable_premade_commands()
 
-  has_obi = true -- Change if you do or don't have Hachirin-no-Obi
-  has_orpheus = true -- Change if you do or don't have Orpheus's Sash
-
   Haste = 0 -- Do not modify
   DW_needed = 0 -- Do not modify
   DW = false -- Do not modify

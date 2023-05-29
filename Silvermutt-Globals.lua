@@ -6,6 +6,9 @@ res = include('resources')
 packets = include('packets')
 silibs = include('SilverLibs')
 
+has_obi = true -- Change if you do or don't have Hachirin-no-Obi
+has_orpheus = true -- Change if you do or don't have Orpheus's Sash
+
 no_swap_necks = S{"Reraise Gorget", "Chocobo Pullus Torque", "Federation Stables Scarf",
     "Kingdom Stables Collar", "Republic Stables Medal", "Chocobo Whistle", "Wing Gorget", "Stoneskin Torque",
     "Airmid's Gorget", "Portafurnace"}

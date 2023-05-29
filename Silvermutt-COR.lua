@@ -129,9 +129,6 @@ function job_setup()
   silibs.enable_equip_loop()
   silibs.enable_custom_roll_text()
 
-  has_obi = true -- Change if you do or don't have Hachirin-no-Obi
-  has_orpheus = false -- Change if you do or don't have Orpheus's Sash
-
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.HybridMode:options('HeavyDef', 'Safe', 'SubtleBlow', 'Normal')
   state.RangedMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
@@ -157,9 +154,6 @@ function job_setup()
   no_swap_waists = S{"Era. Bul. Pouch", "Dev. Bul. Pouch", "Chr. Bul. Pouch", "Quelling B. Quiver",
       "Yoichi's Quiver", "Artemis's Quiver", "Chrono Quiver", "Liv. Bul. Pouch"}
 
-  has_obi = true -- Change if you do or don't have Hachirin-no-Obi
-  has_orpheus = true -- Change if you do or don't have Orpheus's Sash
-    
   gear.RAbullet = "Chrono Bullet"
   gear.RAccbullet = "Devastating Bullet"
   gear.WSbullet = "Chrono Bullet"

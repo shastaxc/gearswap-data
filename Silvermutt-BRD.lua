@@ -83,9 +83,6 @@ function job_setup()
   silibs.enable_equip_loop()
   silibs.enable_haste_info()
 
-  has_obi = true -- Change if you do or don't have Hachirin-no-Obi
-  has_orpheus = true -- Change if you do or don't have Orpheus's Sash
-
   -- Adjust this if using the Terpander (new +song instrument)
   info.ExtraSongInstrument = 'Daurdabla'
   -- How many extra songs we can keep from Daurdabla/Terpander
@@ -116,9 +113,6 @@ function job_setup()
   state.WeaponSet = M{['description']='Weapon Set', 'Naegling', 'Carnwenhan', 'Twashtar', 'Tauret', 'Aeneas', 'Cleaving', 'Free'}
   state.BattleMode = M(true, 'Battle Mode')
   state.WeaponLock = M(false, 'Weapon Lock')
-
-  has_obi = true -- Change if you do or don't have Hachirin-no-Obi
-  has_orpheus = true -- Change if you do or don't have Orpheus's Sash
 
   set_main_keybinds()
 end

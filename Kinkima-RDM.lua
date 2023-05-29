@@ -91,9 +91,6 @@ function job_setup()
   silibs.enable_th()
   silibs.enable_haste_info()
 
-  has_obi = true -- Change if you do or don't have Hachirin-no-Obi
-  has_orpheus = false -- Change if you do or don't have Orpheus's Sash
-
   state.OffenseMode:options('Normal', 'MidAcc', 'HighAcc', 'Enspell')
   state.HybridMode:options('Normal')
   state.WeaponskillMode:options('Normal')

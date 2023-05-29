@@ -63,9 +63,6 @@ function job_setup()
   silibs.enable_custom_roll_text()
   silibs.enable_equip_loop()
 
-  has_obi = true -- Change if you do or don't have Hachirin-no-Obi
-  has_orpheus = false -- Change if you do or don't have Orpheus's Sash
-
   state.CP = M(false, 'Capacity Points Mode')
   state.Storm = M{['description']='Storm','Aurorastorm','Sandstorm',
       'Rainstorm','Windstorm','Firestorm','Hailstorm','Thunderstorm','Voidstorm'}
