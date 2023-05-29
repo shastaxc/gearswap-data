@@ -110,6 +110,7 @@ function job_setup()
   silibs.enable_custom_roll_text()
   silibs.enable_equip_loop()
   silibs.enable_haste_info()
+  silibs.enable_elemental_belt_handling(has_obi, has_orpheus)
 
   state.Buff['Climactic Flourish'] = buffactive['climactic flourish'] or false
   state.Buff['Sneak Attack'] = buffactive['sneak attack'] or false
@@ -1262,9 +1263,6 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     equip({range=player.equipment.range, ammo=player.equipment.ammo})
     silibs.equip_ammo(spell, action, spellMap, eventArgs)
   end
-
-  -- Handle belts for elemental damage
-  silibs.handle_elemental_belts(spell, spellMap, has_obi, has_orpheus)
 
   -- If slot is locked, keep current equipment on
   if locked_neck then equip({ neck=player.equipment.neck }) end

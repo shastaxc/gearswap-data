@@ -82,6 +82,7 @@ function job_setup()
   silibs.enable_custom_roll_text()
   silibs.enable_equip_loop()
   silibs.enable_haste_info()
+  silibs.enable_elemental_belt_handling(has_obi, has_orpheus)
 
   -- Adjust this if using the Terpander (new +song instrument)
   info.ExtraSongInstrument = 'Daurdabla'
@@ -1135,9 +1136,6 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
       equip(sets.SongDWDuration)
     end
   end
-
-  -- Handle belts for elemental damage
-  silibs.handle_elemental_belts(spell, spellMap, has_obi, has_orpheus)
 
   if state.BattleMode.value == true then
     -- Keep weapons the same, to avoid losing TP

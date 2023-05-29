@@ -27,6 +27,7 @@ function job_setup()
   silibs.enable_premade_commands()
   silibs.enable_custom_roll_text()
   silibs.enable_equip_loop()
+  silibs.enable_elemental_belt_handling(has_obi, has_orpheus)
 
   auto_solace = true -- Change to false if you don't want Afflatus Solace auto-applied
   auto_arts = true -- Change to false if you don't want Light Arts auto-applied
@@ -1015,9 +1016,6 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
   if spellMap == 'StatusRemoval' and buffactive['Divine Caress'] and spell.english ~= 'Erase' then
     equip(sets.buff['Divine Caress'])
   end
-
-  -- Handle belts for elemental damage
-  silibs.handle_elemental_belts(spell, spellMap, has_obi, has_orpheus)
 
   -- If slot is locked, keep current equipment on
   if locked_neck then equip({ neck=player.equipment.neck }) end

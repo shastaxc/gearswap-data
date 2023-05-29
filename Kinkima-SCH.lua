@@ -23,6 +23,7 @@ function job_setup()
   silibs.enable_premade_commands()
   silibs.enable_custom_roll_text()
   silibs.enable_equip_loop()
+  silibs.enable_elemental_belt_handling(has_obi, has_orpheus)
 
   state.CP = M(false, 'Capacity Points Mode')
 
@@ -1339,9 +1340,6 @@ end
 
 -- Run after the general midcast() is done.
 function job_post_midcast(spell, action, spellMap, eventArgs)
-  -- Handle belts for elemental damage
-  silibs.handle_elemental_belts(spell, spellMap, has_obi, has_orpheus)
-
   if spell.skill == 'Enhancing Magic' then
     if classes.EnhancingDurSpells:contains(spell.english) and sets.midcast.EnhancingDuration then
       equip(sets.midcast.EnhancingDuration)

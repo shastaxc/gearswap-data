@@ -62,6 +62,7 @@ function job_setup()
   silibs.enable_th()
   silibs.enable_custom_roll_text()
   silibs.enable_equip_loop()
+  silibs.enable_elemental_belt_handling(has_obi, has_orpheus)
 
   state.Buff.Footwork = buffactive.Footwork or false
   state.Buff.Impetus = buffactive.Impetus or false
@@ -926,9 +927,6 @@ function job_midcast(spell, action, spellMap, eventArgs)
 end
 
 function job_post_midcast(spell, action, spellMap, eventArgs)
-  -- Handle belts for elemental damage
-  silibs.handle_elemental_belts(spell, spellMap, has_obi, has_orpheus)
-
   -- If slot is locked, keep current equipment on
   if locked_neck then equip({ neck=player.equipment.neck }) end
   if locked_ear1 then equip({ ear1=player.equipment.ear1 }) end

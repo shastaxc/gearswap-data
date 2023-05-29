@@ -90,6 +90,7 @@ function job_setup()
   silibs.enable_weapon_rearm()
   silibs.enable_th()
   silibs.enable_haste_info()
+  silibs.enable_elemental_belt_handling(has_obi, has_orpheus)
 
   state.OffenseMode:options('Normal', 'MidAcc', 'HighAcc', 'Enspell')
   state.HybridMode:options('Normal')
@@ -1988,9 +1989,6 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     equip(sets.midcast['Elemental Magic'].DW)
   end
   
-  -- Handle belts for elemental damage
-  silibs.handle_elemental_belts(spell, spellMap, has_obi, has_orpheus)
-
   -- Always put this last in job_post_midcast
   if in_battle_mode() then
     -- Prevent swapping main/sub weapons

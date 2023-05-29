@@ -31,6 +31,7 @@ function job_setup()
   silibs.enable_premade_commands()
   silibs.enable_custom_roll_text()
   silibs.enable_equip_loop()
+  silibs.enable_elemental_belt_handling(has_obi, has_orpheus)
 
   state.OffenseMode:options('Safe', 'Normal')
   state.CastingMode:options('Normal', 'Resistant', 'Proc')
@@ -1674,9 +1675,6 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
       equip(sets.midcast.RefreshSelf)
     end
   end
-
-  -- Handle belts for elemental damage
-  silibs.handle_elemental_belts(spell, spellMap, has_obi, has_orpheus)
 
   -- Always put this last in job_post_midcast
   if in_battle_mode() and not spell.type == 'Geomancy' then

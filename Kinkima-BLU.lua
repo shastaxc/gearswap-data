@@ -79,6 +79,7 @@ function job_setup()
   silibs.enable_custom_roll_text()
   silibs.enable_equip_loop()
   silibs.enable_haste_info()
+  silibs.enable_elemental_belt_handling(has_obi, has_orpheus)
 
   state.CP = M(false, 'Capacity Points Mode')
   state.WeaponSet = M{['description']='Weapon Set', 'Casting', 'Naegling', 'Maxentius'}
@@ -1218,9 +1219,6 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
   if state.Learning.value then
     equip(sets.Learning)
   end
-
-  -- Handle belts for elemental damage
-  silibs.handle_elemental_belts(spell, spellMap, has_obi, has_orpheus)
 
   -- Always put this last in job_post_midcast
   if in_battle_mode() then
