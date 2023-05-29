@@ -1,4 +1,4 @@
--- File Status: Barely started on this.
+-- File Status: Acceptable.
 
 -------------------------------------------------------------------------------------------------------------------
 --  Keybinds
@@ -1947,21 +1947,102 @@ function job_midcast(spell, action, spellMap, eventArgs)
   silibs.midcast_hook(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
   
-  -- Add magic burst set if exists
-  if state.MagicBurst.value and (
-    spell.skill == 'Elemental Magic'
-    and spellMap ~= 'ElementalEnfeeble'
-    and spell.english ~= 'Impact'
-    and spell.english ~= 'Meteor'
-  ) then
-    local customEquipSet = select_specific_set(sets.midcast, spell, spellMap)
-    -- Add optional casting mode
-    if customEquipSet[state.CastingMode.current] then
-      customEquipSet = customEquipSet[state.CastingMode.current]
+  if spell.action_type == 'Magic' then
+    local selected_set
+    if default_spell_map == 'Cure' or default_spell_map == 'Curaga' then
+      if (world.weather_element == 'Light' and not (get_weather_intensity() < 2 and world.day_element == 'Dark'))
+          or (world.day_element == 'Light' and not world.weather_element == 'Dark') then
+        selected_set = 'CureWeather'
+      else
+        selected_set = 'CureNormal' --Can't call it Cure as gs checks for sets.midcast.Cure before calling job_get_spell_map
+      end
+      
+      if in_battle_mode() then
+        selected_set = selected_set..'WeaponLock'
+      end
+    elseif spell.skill == 'Enfeebling Magic' then
+      if enfeebling_skill_spells:contains(spell.english) then
+        selected_set = 'SkillEnfeebles'
+      else
+        -- Get stat mapping
+        local stat = enfeebling_stat_map[spell.english]
+        if stat then
+          if state.Buff.Stymie
+              or enfeebling_duration_spells:contains(spell.english)
+              or (spell.english:startswith('Sleep') and state.SleepMode.value == 'MaxDuration') then
+                selected_set = stat..'EnfeeblesDuration'
+          elseif not state.Buff.Stymie and state.CastingMode.value == 'Resistant' then
+            selected_set = stat..'EnfeeblesAcc'
+          else
+            selected_set = stat..'Enfeebles'
+          end
+        else
+          selected_set = 'MNDEnfeebles'
+        end
+      end
+      
+      --Handle DW gear sets for enfeebling
+      if silibs.can_dual_wield() and not in_battle_mode() then
+        if spell.skill == 'Enfeebling Magic' and sets.midcast[selected_set..'DW'] then
+          selected_set = selected_set..'DW'
+        end
+      end
+    elseif spell.skill == 'Enhancing Magic' then
+      if enhancing_skill_spells:contains(spell.english) then
+        selected_set = 'SkillEnhancing'
+      elseif spell.english:startswith('Gain') then
+        selected_set = 'GainSpell'
+      elseif spell.english:contains('Spikes') then
+        selected_set = 'SpikesSpell'
+      elseif spell.english == 'Phalanx' or spell.english == 'Phalanx II' then
+        if spell.target.type == 'SELF' then
+          selected_set = 'PhalanxSelf'
+        else
+          if (spell.target.type == 'PLAYER' or spell.target.type == 'NPC') and state.Buff.Composure then
+            selected_set = 'ComposureOther'
+          else
+            selected_set = 'PhalanxOthers'
+          end
+        end
+      elseif spellMap == 'Refresh' then
+        if spell.target.type == 'SELF' then
+          selected_set = 'RefreshSelf'
+        else
+          if (spell.target.type == 'PLAYER' or spell.target.type == 'NPC') and state.Buff.Composure then
+            selected_set = 'RefreshOthersComp'
+          else
+            selected_set = 'RefreshOthers' --Can't call it Refresh as gs checks for sets.midcast.Refresh before calling job_get_spell_map
+          end
+        end
+      else
+        if (spell.target.type == 'PLAYER' or spell.target.type == 'NPC') and state.Buff.Composure then
+          selected_set = 'ComposureOther'
+        else
+          selected_set = 'EnhancingDuration'
+        end
+      end
+    elseif spell.skill == 'Elemental Magic' then
+      -- Add magic burst set if exists
+      if state.MagicBurst.value and (
+        spellMap ~= 'ElementalEnfeeble'
+        and spell.english ~= 'Impact'
+        and spell.english ~= 'Meteor'
+      ) then
+        local customEquipSet = select_specific_set(sets.midcast, spell, spellMap)
+        -- Add optional casting mode
+        if customEquipSet[state.CastingMode.current] then
+          customEquipSet = customEquipSet[state.CastingMode.current]
+        end
+  
+        if customEquipSet['MB'] then
+          equip(customEquipSet['MB'])
+          eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
+        end
+      end
     end
 
-    if customEquipSet['MB'] then
-      equip(customEquipSet['MB'])
+    if selected_set and sets.midcast[selected_set] then
+      equip(sets.midcast[selected_set])
       eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
     end
   end
@@ -2123,88 +2204,6 @@ function refine_various_spells(spell, action, spellMap, eventArgs)
   if spell.english == 'Phalanx II' and ((spell.target.raw == '<t>' and not spell.target.type) or spell.target.type == 'SELF') then
     send_command('@input /ma "Phalanx" <me>')
     eventArgs.cancel = true
-  end
-end
-
--- Custom spell mapping.
-function job_get_spell_map(spell, default_spell_map)
-  if spell.action_type == 'Magic' then
-    local custom_spell_map = default_spell_map
-    if default_spell_map == 'Cure' or default_spell_map == 'Curaga' then
-      if (world.weather_element == 'Light' and not (get_weather_intensity() < 2 and world.day_element == 'Dark'))
-          or (world.day_element == 'Light' and not world.weather_element == 'Dark') then
-        custom_spell_map = 'CureWeather'
-      else
-        custom_spell_map = 'CureNormal' --Can't call it Cure as gs checks for sets.midcast.Cure before calling job_get_spell_map
-      end
-      
-      if in_battle_mode() then
-        custom_spell_map = custom_spell_map..'WeaponLock'
-      end
-    elseif spell.skill == 'Enfeebling Magic' then
-      if enfeebling_skill_spells:contains(spell.english) then
-        custom_spell_map = 'SkillEnfeebles'
-      else
-        -- Get stat mapping
-        local stat = enfeebling_stat_map[spell.english]
-        if stat then
-          if state.Buff.Stymie
-              or enfeebling_duration_spells:contains(spell.english)
-              or (spell.english:startswith('Sleep') and state.SleepMode.value == 'MaxDuration') then
-            custom_spell_map = stat..'EnfeeblesDuration'
-          elseif not state.Buff.Stymie and state.CastingMode.value == 'Resistant' then
-            custom_spell_map = stat..'EnfeeblesAcc'
-          else
-            custom_spell_map = stat..'Enfeebles'
-          end
-        else
-          custom_spell_map = 'MNDEnfeebles'
-        end
-      end
-      
-      --Handle DW gear sets for enfeebling
-      if silibs.can_dual_wield() and not in_battle_mode() then
-        if spell.skill == 'Enfeebling Magic' and sets.midcast[custom_spell_map..'DW'] then
-          custom_spell_map = custom_spell_map..'DW'
-        end
-      end
-    elseif spell.skill == 'Enhancing Magic' then
-      if enhancing_skill_spells:contains(spell.english) then
-        custom_spell_map = 'SkillEnhancing'
-      elseif spell.english:startswith('Gain') then
-        custom_spell_map = 'GainSpell'
-      elseif spell.english:contains('Spikes') then
-        custom_spell_map = 'SpikesSpell'
-      elseif spell.english == 'Phalanx' or spell.english == 'Phalanx II' then
-        if spell.target.type == 'SELF' then
-          custom_spell_map = 'PhalanxSelf'
-        else
-          if (spell.target.type == 'PLAYER' or spell.target.type == 'NPC') and state.Buff.Composure then
-            custom_spell_map = 'ComposureOther'
-          else
-            custom_spell_map = 'PhalanxOthers'
-          end
-        end
-      elseif spellMap == 'Refresh' then
-        if spell.target.type == 'SELF' then
-          custom_spell_map = 'RefreshSelf'
-        else
-          if (spell.target.type == 'PLAYER' or spell.target.type == 'NPC') and state.Buff.Composure then
-            custom_spell_map = 'RefreshOthersComp'
-          else
-            custom_spell_map = 'RefreshOthers' --Can't call it Refresh as gs checks for sets.midcast.Refresh before calling job_get_spell_map
-          end
-        end
-      else
-        if (spell.target.type == 'PLAYER' or spell.target.type == 'NPC') and state.Buff.Composure then
-          custom_spell_map = 'ComposureOther'
-        else
-          custom_spell_map = 'EnhancingDuration'
-        end
-      end
-    end
-
-    return custom_spell_map
   end
 end
 
