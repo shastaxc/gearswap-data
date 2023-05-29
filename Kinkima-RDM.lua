@@ -131,7 +131,6 @@ function job_setup()
     ['Silence'] = 'MND',
     ['Slow'] = 'MND', ['Slow II'] = 'MND',
   }
-  
   -- Potency is based on enfeebling skill
   enfeebling_skill_spells = S{'Distract III', 'Frazzle III', 'Poison II'}
   -- 100% land rate, focus on duration gear
@@ -139,9 +138,7 @@ function job_setup()
   -- Spells that require high/uncapped enhancing magic skill
   enhancing_skill_spells = S{'Temper', 'Temper II', 'Enfire', 'Enfire II', 'Enblizzard', 'Enblizzard II', 'Enaero',
       'Enaero II', 'Enstone', 'Enstone II', 'Enthunder', 'Enthunder II', 'Enwater', 'Enwater II'}
-
-  last_midcast_set = {}
-
+  last_midcast_set = {} -- DO NOT MODIFY
   enfeebling_dur_gear = {
     -- Base = multiplier form of the base enhancing duration stat
     -- Aug = multiplier form of the enhancing duration stat from augments
@@ -153,7 +150,6 @@ function job_setup()
     ['Kishar Ring'] =           {base=0.10, aug=0.00},
     ['Obstinate Sash'] =        {base=0.05, aug=0.00},
   }
-  
   empy_duration_mult = {
     [0] = 1.00,
     [1] = 1.00,
@@ -162,7 +158,6 @@ function job_setup()
     [4] = 1.35,
     [5] = 1.50,
   }
-
   saboteur_bonus_gear = {
     ['Estoquer\'s Gantherots +1'] = {normal=2.05, nm=1.30},
     ['Estoquer\'s Gantherots +2'] = {normal=2.10, nm=1.35},
@@ -171,6 +166,9 @@ function job_setup()
     ['Lethargy Gantherots +2'] =    {normal=2.13, nm=1.38},
     ['Lethargy Gantherots +3'] =    {normal=2.14, nm=1.39},
   }
+  enf_timer_spells = S{'Sleep', 'Sleep II', 'Sleepga', 'Sleepga II', 'Break', 'Breakga'}
+  -- Spells with variable base duration
+  enf_variable_duration_spells = S{'Gravity', 'Gravity II', 'Bind', 'Addle', 'Addle II'}
 
   set_main_keybinds()
 end
@@ -1432,21 +1430,20 @@ function init_gear_sets()
     head="Vitiation Chapeau +1",      -- __/__,  75 [ 2]
     body="Shamash Robe",              -- 10/__, 106 [ 3]; Resist Silence+90
     hands="Lethargy Gantherots +2",   -- 10/10,  77 [__]
-    legs="Assiduity Pants +1",        -- __/__, 107 [ 2]
+    legs="Bunzi's Pants",             --  9/ 9, 150 [__]
     feet="Volte Gaiters",             -- __/__, 142 [ 1]
-    neck="Loricate Torque +1",        --  6/ 6, ___ [__]; DEF+60
+    neck="Sibyl Scarf",               -- __/__, ___ [ 1]
     ear1="Arete Del Luna +1",         -- __/__, ___ [__]; Resists
     ear2="Etiolation Earring",        -- __/ 3, ___ [__]; Resist Silence+15
     ring1="Stikini Ring +1",          -- __/__, ___ [ 1]
     ring2="Defending Ring",           -- 10/10, ___ [__]
     back=gear.RDM_INT_Enf_Cape,       -- 10/__, ___ [__]
-    waist="Flume Belt +1",            --  4/__, ___ [__]
-    -- 50 PDT / 29 MDT, 507 M.Eva [10 Refresh]
+    waist="Carrier's Sash",           -- __/__, ___ [__]; Ele Resist
+    -- 49 PDT / 32 MDT, 550 M.Eva [9 Refresh]
     
     -- head="Vitiation Chapeau +3",   -- __/__,  95 [ 3]
     -- hands="Lethargy Gantherots +3",-- 11/11,  87 [__]
-    -- 51 PDT / 30 MDT, 537 M.Eva [11 Refresh]
-    
+    -- 50 PDT / 33 MDT, 580 M.Eva [10 Refresh]
   }
   sets.passive_refresh.Single = {
     main="Mpaca's Staff",             -- __/__, ___ [ 2]
@@ -1456,23 +1453,23 @@ function init_gear_sets()
     head="Vitiation Chapeau +1",      -- __/__,  75 [ 2]
     body="Shamash Robe",              -- 10/__, 106 [ 3]; Resist Silence+90
     hands="Lethargy Gantherots +2",   -- 10/10,  77 [__]
-    legs="Assiduity Pants +1",        -- __/__, 107 [ 2]
+    legs="Bunzi's Pants",             --  9/ 9, 150 [__]
     feet="Volte Gaiters",             -- __/__, 142 [ 1]
-    neck="Loricate Torque +1",        --  6/ 6, ___ [__]; DEF+60
+    neck="Sibyl Scarf",               -- __/__, ___ [ 1]
     ear1="Arete Del Luna +1",         -- __/__, ___ [__]; Resists
     ear2="Etiolation Earring",        -- __/ 3, ___ [__]; Resist Silence+15
     ring1="Stikini Ring +1",          -- __/__, ___ [ 1]
     ring2="Defending Ring",           -- 10/10, ___ [__]
     back=gear.RDM_INT_Enf_Cape,       -- 10/__, ___ [__]
-    waist="Flume Belt +1",            --  4/__, ___ [__]
-    -- 50 PDT / 29 MDT, 517 M.Eva [12 Refresh]
+    waist="Carrier's Sash",           -- __/__, ___ [__]; Ele Resist
+    -- 49 PDT / 32 MDT, 560 M.Eva [11 Refresh]
     
     -- main="Sakpata's Sword",        -- 10/10, ___ [ 3]; R30
     -- sub="Sacro Bulwark",           -- 10/10, ___ [__]
     -- head="Vitiation Chapeau +3",   -- __/__,  95 [ 3]
     -- hands="Volte Gloves",          -- __/__,  96 [ 1]
     -- ring2="Stikini Ring +1",       -- __/__, ___ [ 1]
-    -- 50 PDT / 29 MDT, 546 M.Eva [16 Refresh]
+    -- 49 PDT / 32 MDT, 589 M.Eva [15 Refresh]
   }
   sets.passive_refresh.Dual = {
     main="Bolelabunga",               -- __/__, ___ [ 1]
@@ -1482,25 +1479,24 @@ function init_gear_sets()
     head="Vitiation Chapeau +1",      -- __/__,  75 [ 2]
     body="Shamash Robe",              -- 10/__, 106 [ 3]; Resist Silence+90
     hands="Lethargy Gantherots +2",   -- 10/10,  77 [__]
-    legs="Assiduity Pants +1",        -- __/__, 107 [ 2]
+    legs="Bunzi's Pants",             --  9/ 9, 150 [__]
     feet="Volte Gaiters",             -- __/__, 142 [ 1]
-    neck="Loricate Torque +1",        --  6/ 6, ___ [__]; DEF+60
+    neck="Sibyl Scarf",               -- __/__, ___ [ 1]
     ear1="Arete Del Luna +1",         -- __/__, ___ [__]; Resists
     ear2="Etiolation Earring",        -- __/ 3, ___ [__]; Resist Silence+15
     ring1="Stikini Ring +1",          -- __/__, ___ [ 1]
     ring2="Defending Ring",           -- 10/10, ___ [__]
     back=gear.RDM_INT_Enf_Cape,       -- 10/__, ___ [__]
-    waist="Flume Belt +1",            --  4/__, ___ [__]
-    -- 50 PDT / 29 MDT, 537 M.Eva [12 Refresh]
+    waist="Carrier's Sash",           -- __/__, ___ [__]; Ele Resist
+    -- 49 PDT / 32 MDT, 580 M.Eva [11 Refresh]
     
     -- main="Sakpata's Sword",        -- 10/10, ___ [ 3]; R30
     -- sub="Daybreak",                -- __/__,  30 [ 1]
     -- head="Vitiation Chapeau +3",   -- __/__,  95 [ 3]
     -- hands="Volte Gloves",          -- __/__,  96 [ 1]
-    -- 50 PDT / 29 MDT, 576 M.Eva [16 Refresh]
+    -- 49 PDT / 32 MDT, 619 M.Eva [15 Refresh]
   }
   sets.passive_refresh.sub50 = {
-    -- ear1="Genmei Earring",
     waist="Fucho-no-Obi",             -- __/__, ___ [ 1]
   }
 
@@ -2084,10 +2080,8 @@ function job_aftercast(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
 
   if not spell.interrupted then
-    if spell.english:contains('Sleep') then
-      set_sleep_timer(spell, spellMap)
-    elseif spell.english == "Break" then
-      send_command('@timers c "Break ['..spell.target.name..']" 30 down spells/00255.png')
+    if spell.skill == 'Enfeebling Magic' then
+      set_enfeeble_timer(spell)
     elseif spell.english == 'Light Arts' then
       state.Buff['Light Arts'] = true
       state.Buff['Dark Arts'] = false
@@ -2592,8 +2586,8 @@ function get_enfeebling_duration(spell, set)
   end
 
   -- For debugging:
-  -- add_to_chat(1, 'set: '..inspect(set, {depth=2}))
-  -- add_to_chat(1, ''
+  -- add_to_chat(1, spell.english..' Set: '..inspect(set, {depth=2}))
+  -- add_to_chat(1, spell.english
   --     ..' Base: ' ..base
   --     ..' Gear: '..gear_mult
   --     ..' Aug: '..aug_mult
@@ -2603,14 +2597,12 @@ function get_enfeebling_duration(spell, set)
   return totalDuration
 end
 
-function set_sleep_timer(spell)
-  local totalDuration = get_enfeebling_duration(spell, last_midcast_set)
-
+function set_enfeeble_timer(spell)
   -- Create the custom timer
-  if spell.english == 'Sleep II' or spell.english == 'Sleepga II' then
-    send_command('@timers c "Sleep II ['..spell.target.name..']" ' ..totalDuration.. ' down spells/00259.png')
-  elseif spell.english == 'Sleep' or spell.english == 'Sleepga' then
-    send_command('@timers c "Sleep ['..spell.target.name..']" ' ..totalDuration.. ' down spells/00253.png')
+  if enf_timer_spells:contains(spell.english) then
+    local totalDuration = get_enfeebling_duration(spell, last_midcast_set)
+    -- add_to_chat(1, spell.english..' duration: '..totalDuration)
+    send_command('@timers c "'..spell.english..' ['..spell.target.name..']" ' ..totalDuration.. ' down spells/00'..spell.id..'.png')
   end
 end
 
