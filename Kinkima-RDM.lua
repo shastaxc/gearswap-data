@@ -1937,15 +1937,19 @@ function job_precast(spell, action, spellMap, eventArgs)
 end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
-  -- Handle belts for elemental WS
-  silibs.handle_elemental_belts_precast(spell, spellMap, has_obi, has_orpheus)
-
   -- Always put this last in job_post_precast
   if in_battle_mode() then
     -- Prevent swapping main/sub weapons
     equip({main="", sub=""})
     silibs.prevent_ammo_tp_loss()
   end
+
+  -- If slot is locked, keep current equipment on
+  if locked_neck then equip({ neck=player.equipment.neck }) end
+  if locked_ear1 then equip({ ear1=player.equipment.ear1 }) end
+  if locked_ear2 then equip({ ear2=player.equipment.ear2 }) end
+  if locked_ring1 then equip({ ring1=player.equipment.ring1 }) end
+  if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
 
   ----------- Non-silibs content goes above this line -----------
   silibs.post_precast_hook(spell, action, spellMap, eventArgs)
@@ -1988,7 +1992,7 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
   end
   
   -- Handle belts for elemental damage
-  silibs.handle_elemental_belts_midcast(spell, spellMap, has_obi, has_orpheus)
+  silibs.handle_elemental_belts(spell, spellMap, has_obi, has_orpheus)
 
   -- Always put this last in job_post_midcast
   if in_battle_mode() then
@@ -1997,6 +2001,13 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     silibs.prevent_ammo_tp_loss()
   end
   
+  -- If slot is locked, keep current equipment on
+  if locked_neck then equip({ neck=player.equipment.neck }) end
+  if locked_ear1 then equip({ ear1=player.equipment.ear1 }) end
+  if locked_ear2 then equip({ ear2=player.equipment.ear2 }) end
+  if locked_ring1 then equip({ ring1=player.equipment.ring1 }) end
+  if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
+
   ----------- Non-silibs content goes above this line -----------
   silibs.post_midcast_hook(spell, action, spellMap, eventArgs)
 end

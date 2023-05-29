@@ -1075,9 +1075,6 @@ function job_post_precast(spell, action, spellMap, eventArgs)
     eventArgs.handled = true
   end
 
-  -- Handle belts for elemental WS
-  silibs.handle_elemental_belts_precast(spell, spellMap, has_obi, has_orpheus)
-
   -- If slot is locked, keep current equipment on
   if locked_neck then equip({ neck=player.equipment.neck }) end
   if locked_ear1 then equip({ ear1=player.equipment.ear1 }) end
@@ -1110,7 +1107,7 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
   end
 
   -- Handle belts for elemental damage
-  silibs.handle_elemental_belts_midcast(spell, spellMap, has_obi, has_orpheus)
+  silibs.handle_elemental_belts(spell, spellMap, has_obi, has_orpheus)
 
   -- If slot is locked, keep current equipment on
   if locked_neck then equip({ neck=player.equipment.neck }) end

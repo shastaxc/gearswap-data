@@ -1174,9 +1174,6 @@ function job_post_precast(spell, action, spellMap, eventArgs)
     equip(sets.Learning)
   end
 
-  -- Handle belts for elemental WS
-  silibs.handle_elemental_belts_precast(spell, spellMap, has_obi, has_orpheus)
-
   -- Always put this last in job_post_precast
   if in_battle_mode() then
     -- Prevent swapping main/sub weapons
@@ -1226,7 +1223,7 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
   end
 
   -- Handle belts for elemental damage
-  silibs.handle_elemental_belts_midcast(spell, spellMap, has_obi, has_orpheus)
+  silibs.handle_elemental_belts(spell, spellMap, has_obi, has_orpheus)
 
   -- Always put this last in job_post_midcast
   if in_battle_mode() then

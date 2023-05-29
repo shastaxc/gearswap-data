@@ -1273,9 +1273,6 @@ function job_precast(spell, action, spellMap, eventArgs)
 end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
-  -- Handle belts for elemental WS
-  silibs.handle_elemental_belts_precast(spell, spellMap, has_obi, has_orpheus)
-
   -- If slot is locked, keep current equipment on
   if locked_neck then equip({ neck=player.equipment.neck }) end
   if locked_ear1 then equip({ ear1=player.equipment.ear1 }) end
@@ -1346,7 +1343,7 @@ end
 -- Run after the general midcast() is done.
 function job_post_midcast(spell, action, spellMap, eventArgs)
   -- Handle belts for elemental damage
-  silibs.handle_elemental_belts_midcast(spell, spellMap, has_obi, has_orpheus)
+  silibs.handle_elemental_belts(spell, spellMap, has_obi, has_orpheus)
 
   if spell.skill == 'Enhancing Magic' then
     if classes.EnhancingDurSpells:contains(spell.english) and sets.midcast.EnhancingDuration then
