@@ -140,47 +140,37 @@ function job_setup()
   enhancing_skill_spells = S{'Temper', 'Temper II', 'Enfire', 'Enfire II', 'Enblizzard', 'Enblizzard II', 'Enaero',
       'Enaero II', 'Enstone', 'Enstone II', 'Enthunder', 'Enthunder II', 'Enwater', 'Enwater II'}
 
-  --Used to pick the best enspell for the current day
-  enspell_to_day_element = T{
-    ['Firesday']     = {type="ma", buff_id=94, buff_name="Enfire"},
-    ['Lightsday']    = {type="ma", buff_id=94, buff_name="Enfire"},
-    ['Darksday']     = {type="ma", buff_id=94, buff_name="Enfire"},
-    ['Windsday']     = {type="ma", buff_id=96, buff_name="Enaero"},
-    ['Earthsday']    = {type="ma", buff_id=97, buff_name="Enstone"},
-    ['Watersday']    = {type="ma", buff_id=99, buff_name="Enwater"},
-    ['Lightningday'] = {type="ma", buff_id=98, buff_name="Enthunder"},
-    ['Iceday']       = {type="ma", buff_id=95, buff_name="Enblizzard"},
+  last_midcast_set = {}
+
+  enfeebling_dur_gear = {
+    -- Base = multiplier form of the base enhancing duration stat
+    -- Aug = multiplier form of the enhancing duration stat from augments
+    ['Regal Cuffs'] =           {base=0.20, aug=0.00},
+    ['Duelist\'s Torque'] =     {base=0.00, aug=0.15},
+    ['Duelist\'s Torque +1'] =  {base=0.00, aug=0.20},
+    ['Duelist\'s Torque +2'] =  {base=0.00, aug=0.25},
+    ['Snotra Earring'] =        {base=0.10, aug=0.00},
+    ['Kishar Ring'] =           {base=0.10, aug=0.00},
+    ['Obstinate Sash'] =        {base=0.05, aug=0.00},
   }
   
-  --Passed to cast_buffs() to automatically buff when desired
-  --Format: [i] = {type="ma or ja", buff_id=123, buff_name="haste"}
-  min_buff_set = {
-    [1] = {type="ma", buff_id=94,  buff_name="Enfire"}, --An enspell must be first entry
-    [2] = {type="ja", buff_id=419, buff_name="Composure"},
-    [3] = {type="ma", buff_id=33,  buff_name="Haste II"},
-    [4] = {type="ma", buff_id=432, buff_name="Temper II"},
-    [5] = {type="ma", buff_id=43,  buff_name="Refresh III"},
-    -- [6] = {type="ma", buff_id=119 , buff_name="Gain-STR"},
+  empy_duration_mult = {
+    [0] = 1.00,
+    [1] = 1.00,
+    [2] = 1.10,
+    [3] = 1.20,
+    [4] = 1.35,
+    [5] = 1.50,
   }
 
-  --Format: [i] = {type="ma or ja", buff_id=123, buff_name="haste"}
-  max_buff_set = {
-    [1]  = {type="ma", buff_id=94,  buff_name="Enfire"}, --An enspell must be first entry
-    [2]  = {type="ja", buff_id=419, buff_name="Composure"},
-    [3]  = {type="ma", buff_id=33,  buff_name="Haste II"},
-    [4]  = {type="ma", buff_id=432, buff_name="Temper II"},
-    [5]  = {type="ma", buff_id=43,  buff_name="Refresh III"},
-    [6]  = {type="ma", buff_id=119, buff_name="Gain-STR"},
-    [7]  = {type="ma", buff_id=104, buff_name="Barthunder"},
-    [8]  = {type="ma", buff_id=108, buff_name="Barparalyze"},
-    [9]  = {type="ma", buff_id=42,  buff_name="Regen II"},
-    [10] = {type="ma", buff_id=34,  buff_name="Blaze Spikes"},
-    [11] = {type="ma", buff_id=37,  buff_name="Stoneskin"},
-    [12] = {type="ma", buff_id=39,  buff_name="Aquaveil"},
-    [13] = {type="ma", buff_id=116, buff_name="Phalanx II"},
+  saboteur_bonus_gear = {
+    ['Estoquer\'s Gantherots +1'] = {normal=2.05, nm=1.30},
+    ['Estoquer\'s Gantherots +2'] = {normal=2.10, nm=1.35},
+    ['Lethargy Gantherots'] =       {normal=2.11, nm=1.36},
+    ['Lethargy Gantherots +1'] =    {normal=2.12, nm=1.37},
+    ['Lethargy Gantherots +2'] =    {normal=2.13, nm=1.38},
+    ['Lethargy Gantherots +3'] =    {normal=2.14, nm=1.39},
   }
-
-  equipRefresh = false
 
   set_main_keybinds()
 end
@@ -1063,7 +1053,7 @@ function init_gear_sets()
   }
   sets.midcast.MNDEnfeeblesAccDW = set_combine(sets.midcast.MNDEnfeeblesAcc, {
     -- main="Crocea Mors",            -- 255, 50, __, 20 (__, __, __, __) [__/__, ___]
-    sub="Daybreak",                  -- 242, 40, 30, __ (__, __, __, __) [__/__,  30]
+    sub="Daybreak",                   -- 242, 40, 30, __ (__, __, __, __) [__/__,  30]
   })
 
   -- Spells that have 100% accuracy. Focus on duration.
@@ -2005,6 +1995,7 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
 
   ----------- Non-silibs content goes above this line -----------
   silibs.post_midcast_hook(spell, action, spellMap, eventArgs)
+  last_midcast_set = set_combine(gearswap.equip_list, {})
 end
 
 function job_aftercast(spell, action, spellMap, eventArgs)
@@ -2543,20 +2534,25 @@ function in_battle_mode()
   return state.WeaponSet.current ~= 'Casting' or state.ToyWeapons.current ~= 'None'
 end
 
-function set_sleep_timer(spell, spellMap)
-  local base
+function get_enfeebling_duration(spell, set)
+  local base, gear_mult, aug_mult, empy_mult, empy_count = spell.duration, 1, 1, 1, 0
 
-  if spell.en == 'Sleep II' or spell.en == 'Sleepga II' then
-    base = 90
-  elseif spell.en == 'Sleep' or spell.en == 'Sleepga' then
-    base = 60
+  -- Reduce set to names only
+  for k,v in pairs(set) do
+    set[k] = (type(v)=='table' and v.name) or (type(v)=='string' and v) or nil
+    if set[k] == 'empty' then set[k] = nil end
   end
 
+  -- Saboteur bonus
   if state.Buff.Saboteur then
-    if state.NM.value then
-      base = base * 1.25
+    if set.hands and saboteur_bonus_gear[set.hands] then
+      base = base * saboteur_bonus_gear[set.hands][state.NM.value and 'nm' or 'normal']
     else
-      base = base * 2
+      if state.NM.value then
+        base = base * 1.25
+      else
+        base = base * 2.00
+      end
     end
   end
 
@@ -2566,60 +2562,50 @@ function set_sleep_timer(spell, spellMap)
   -- Job Points Duration Bonus
   base = base + (player.job_points.rdm.enfeebling_magic_duration)
 
+  -- Stymie bonus
   if state.Buff.Stymie then
     base = base + player.job_points.rdm.stymie_effect
   end
 
-  -- Relic Head Duration Bonus
-  -- Currently, all the INTEnfeeble sets use it
-  if spellMap == 'INTEnfeebles' or spellMap == 'INTEnfeeblesDW' then
-    base = base + (player.merits.enfeebling_magic_duration * 3)
-  elseif spellMap == 'INTEnfeeblesAcc' or spellMap == 'INTEnfeeblesAccDW' then
-    base = base + (player.merits.enfeebling_magic_duration * 3)
-  elseif spellMap == 'INTEnfeeblesDuration' or spellMap == 'INTEnfeeblesDurationDW' then
+  -- Relic head bonus
+  if set.head and set.head:startswith('Vitiation') then
     base = base + (player.merits.enfeebling_magic_duration * 3)
   end
 
-  -- Enfeebling duration non-augmented gear total
-  local gear_mult = 1.00
-  if spellMap == 'INTEnfeebles' or spellMap == 'INTEnfeeblesDW' then
-    gear_mult = 1.25
-  elseif spellMap == 'INTEnfeeblesAcc' or spellMap == 'INTEnfeeblesAccDW' then
-    gear_mult = 1.15
-  elseif spellMap == 'INTEnfeeblesDuration' or spellMap == 'INTEnfeeblesDurationDW' then
-    if state.Buff.Saboteur then
-      empy_mult = 1.45
-    else
-      gear_mult = 1.65
+  -- Calculate gear multipliers
+  for k,v in pairs(set) do
+    local stats = enfeebling_dur_gear[v]
+    if stats then
+      gear_mult = gear_mult + stats.base
+      aug_mult = aug_mult + stats.aug
+    end
+
+    -- Check if empy gear
+    if (k == 'head' or k == 'body' or k == 'hands' or k == 'legs' or k == 'feet')
+      and (v:startswith('Lethargy') or v:startswith('Estoquer'))
+    then
+      empy_count = empy_count + 1
     end
   end
 
-  --Enfeebling duration augmented gear total (duelist's torque +2)
-  local aug_mult = 1.00
-  if spellMap == 'INTEnfeebles' or spellMap == 'INTEnfeeblesDW' then
-    aug_mult = 1.25
-  elseif spellMap == 'INTEnfeeblesAcc' or spellMap == 'INTEnfeeblesAccDW' then
-    aug_mult = 1.25
-  elseif spellMap == 'INTEnfeeblesDuration' or spellMap == 'INTEnfeeblesDurationDW' then
-    aug_mult = 1.25
+  if state.Buff.Composure then
+    empy_mult = empy_duration_mult[empy_count]
   end
 
-  --Estoquer/Lethargy Composure set bonus
-  --2pc = 1.1 / 3pc = 1.2 / 4pc = 1.35 / 5pc = 1.5
-  local empy_mult = 1.00
-  if spellMap == 'INTEnfeebles' or spellMap == 'INTEnfeeblesDW' then
-    empy_mult = 1.10
-  elseif spellMap == 'INTEnfeeblesAcc' or spellMap == 'INTEnfeeblesAccDW' then
-    empy_mult = 1.00
-  elseif spellMap == 'INTEnfeeblesDuration' or spellMap == 'INTEnfeeblesDurationDW' then
-    if state.Buff.Saboteur then
-      empy_mult = 1.35
-    else
-      empy_mult = 1.20
-    end
-  end
+  -- For debugging:
+  -- add_to_chat(1, 'set: '..inspect(set, {depth=2}))
+  -- add_to_chat(1, ''
+  --     ..' Base: ' ..base
+  --     ..' Gear: '..gear_mult
+  --     ..' Aug: '..aug_mult
+  --     ..' Empy: '..empy_mult)
 
   local totalDuration = math.floor(base * gear_mult * aug_mult * empy_mult)
+  return totalDuration
+end
+
+function set_sleep_timer(spell)
+  local totalDuration = get_enfeebling_duration(spell, last_midcast_set)
 
   -- Create the custom timer
   if spell.english == 'Sleep II' or spell.english == 'Sleepga II' then
@@ -2627,13 +2613,6 @@ function set_sleep_timer(spell, spellMap)
   elseif spell.english == 'Sleep' or spell.english == 'Sleepga' then
     send_command('@timers c "Sleep ['..spell.target.name..']" ' ..totalDuration.. ' down spells/00253.png')
   end
-
-  -- For debugging:
-  add_to_chat(1, 'Map: '..spellMap
-      ..' Base: ' ..base
-      .. ' Merits: ' ..player.merits.enfeebling_magic_duration
-      .. ' Job Points: ' ..player.job_points.rdm.stymie_effect
-      .. ' Set Bonus: ' ..empy_mult)
 end
 
 function check_gear()
@@ -2699,7 +2678,7 @@ function set_main_keybinds()
   send_command('bind @c gs c toggle CP')
   send_command('bind !` gs c toggle MagicBurst')
   send_command('bind @s gs c cycle SleepMode')
-  send_command('bind @d gs c toggle NM')
+  send_command('bind @n gs c toggle NM')
 
   send_command('bind ~` input /ja "Composure" <me>')
 
@@ -2750,7 +2729,7 @@ function unbind_keybinds()
   send_command('unbind @c')
   send_command('unbind !`')
   send_command('unbind @s')
-  send_command('unbind @d')
+  send_command('unbind @n')
 
   send_command('unbind ~`')
 
