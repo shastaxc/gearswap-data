@@ -815,7 +815,7 @@ function init_gear_sets()
   sets.midcast.Impact = {
     main="Bunzi's Rod",               -- 15, 55, 255, ___, __
     sub="Ammurapi Shield",            -- 13, 38, ___, ___, __
-    ammo="Pemphredo Tathlum",         --  4,  8, ___, ___, __
+    ammo="Ghastly Tathlum +1",        -- 11, __, ___, ___, __
     head=empty,
     body="Crepuscular Cloak",         -- 80, 85, ___, ___, __
     hands="Arbatel Bracers +3",       -- 36, 62, ___, ___, __
@@ -828,9 +828,8 @@ function init_gear_sets()
     ring2="Metamorph Ring +1",        -- 16, 15, ___, ___, __
     back="Aurist's Cape +1",          -- 33, 33, ___, ___,  5
     waist="Acuity Belt +1",           -- 23, 15, ___, ___, __
-    -- 340 INT, 470 M.Acc, 255 M.Acc Skill, 41 Elemental Skill, 5 Conserve MP
+    -- 347 INT, 462 M.Acc, 255 M.Acc Skill, 41 Elemental Skill, 5 Conserve MP
     
-    -- ammo="Ghastly Tathlum +1",     -- 11, __, ___, ___, __
     -- ear2="Arbatel Earring +2",     -- 15, 20, ___, ___, __
     -- 354 INT, 502 M.Acc, 255 M.Acc Skill, 41 Elemental Skill, 5 Conserve MP
   }
@@ -971,6 +970,7 @@ function init_gear_sets()
     -- 283 INT, 416 MAcc, 360 MAB, 255 MAccSk, 372 MDmg, 42 MB Dmg%, 20 MB2 Dmg%
   })
   sets.midcast['Elemental Magic'].Resistant = set_combine(sets.midcast['Elemental Magic'], {
+    ammo="Ghastly Tathlum +1",        -- 11, __, __, ___,  21, __, __
     legs="Pedagogy Pants +3",         -- 47, 39, 51, ___, ___, __, __; Elemental skill +19
     feet="Arbatel Loafers +3",        -- 34, 60, 50, ___,  30, __,  5; Elemental skill +33
     neck="Argute Stole +2",           -- 15, 30, __, ___,  25, 10, __
@@ -1002,7 +1002,7 @@ function init_gear_sets()
   sets.midcast.Helix = {
     main="Bunzi's Rod",               -- 15, 50, 60, 255, 248, 10, __
     sub="Culminus",                   -- __, __, 20, ___,  75, __, __
-    ammo="Pemphredo Tathlum",         --  4,  8,  4, ___, ___, __, __
+    ammo="Ghastly Tathlum +1",        -- 11, __, __, ___,  21, __, __
     head="Pedagogy Mortarboard +3",   -- 39, 37, 49, ___, ___, __,  4
     body="Mallquis Saio +2",          -- 54, 46, 15, ___,  58, __, __
     hands="Arbatel Bracers +3",       -- 36, 62, 52, ___,  32, 15, __
@@ -1015,7 +1015,7 @@ function init_gear_sets()
     ring2="Mujin Band",               -- __, __, __, ___, ___, __,  5
     back=gear.SCH_MAB_Cape,           -- 30, 20, 10, ___,  20, __, __
     waist="Acuity Belt +1",           -- 23, 15, __, ___, ___, __, __
-    -- 341 INT, 398 MAcc, 290 MAB, 255 MAccSk, 543 MDmg, 41 MB Dmg%, 14 MB2 Dmg%
+    -- 348 INT, 390 MAcc, 286 MAB, 255 MAccSk, 564 MDmg, 41 MB Dmg%, 14 MB2 Dmg%
 
     -- Ideal:
     -- main="Bunzi's Rod",            -- 15, 55, 65, 255, 248, 10, __; R30

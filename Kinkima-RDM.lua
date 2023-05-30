@@ -332,7 +332,7 @@ function init_gear_sets()
   -- 50% MND/30% STR. Dark elemental. dStat=INT. Focus on M.Dmg, WSC (stat) where 1M.Dmg==2MND==5STR
   sets.precast.WS['Sanguine Blade'] = {
     range=empty,                      -- __, __, __, __, __, __, __ [__/__, ___]
-    -- ammo="Ghastly Tathlum +1",     -- __, __, 11, __, __, __, 21 [__/__, ___]
+    ammo="Ghastly Tathlum +1",        -- __, __, 11, __, __, __, 21 [__/__, ___]
     head="Pixie Hairpin +1",          -- __, __, 27, __, __, __, __ [__/__, ___]; Dark MAB+28
     body="Lethargy Sayon +3",         -- 34, 45, 47, 64, __, 54, 34 [14/14, 136]
     hands="Lethargy Gantherots +2",   -- 11, 45, 28, 52, __, 47, 22 [10/10,  77]
@@ -361,7 +361,7 @@ function init_gear_sets()
   -- 40% STR/40% MND. Light elemental. No dSTAT. 
   sets.precast.WS['Seraph Blade'] = {
     range=empty,                      -- __, __, __, __, __, __ [__/__, ___]
-    -- ammo="Ghastly Tathlum +1",     -- __, __, __, __, __, 21 [__/__, ___]
+    ammo="Ghastly Tathlum +1",        -- __, __, __, __, __, 21 [__/__, ___]
     head=gear.Nyame_B_head,           -- 26, 26, 40, 11, 30, __ [ 7/ 7, 123]
     body="Lethargy Sayon +3",         -- 34, 45, 64, __, 54, 34 [14/14, 136]
     hands="Lethargy Gantherots +2",   -- 11, 45, 52, __, 47, 22 [10/10,  77]
@@ -390,7 +390,7 @@ function init_gear_sets()
   -- 40% DEX/40% INT. Wind elemental. dStat=INT.
   sets.precast.WS['Aeolian Edge'] = {
     range=empty,                      -- __, __, __, __, __, __ [__/__, ___]
-    -- ammo="Ghastly Tathlum +1",     -- __, 11, __, __, __, 21 [__/__, ___]
+    ammo="Ghastly Tathlum +1",        -- __, 11, __, __, __, 21 [__/__, ___]
     head="Lethargy Chappel +2",       -- 24, 33, 51, __, 51, 21 [ 9/ 9, 115]
     body="Lethargy Sayon +3",         -- 34, 47, 64, __, 54, 34 [14/14, 136]
     hands="Lethargy Gantherots +2",   -- 38, 28, 52, __, 47, 22 [10/10,  77]
@@ -608,7 +608,7 @@ function init_gear_sets()
   }
 
   sets.midcast.SkillEnhancing = {
-    main=gear.Colada_ENH,             -- __,  4, __,  4 [__/__, ___]
+    main="Pukulatmuj +1",             -- 11, __, __, __ [__/__, ___]
     sub="Forfend +1",                 -- 10, __, __, __ [ 4/__, ___]
     range=empty,                      -- __, __, __, __ [__/__, ___]
     ammo="Staunch Tathlum +1",        -- __, __, __, __ [ 3/ 3, ___]
@@ -625,9 +625,8 @@ function init_gear_sets()
     back=gear.RDM_Adoulin_Cape,       --  7, __, 19, __ [__/__, ___]
     waist="Olympus Sash",             --  5, __, __, __ [__/__, ___]
     -- Traits/Gifts/Merits            --456, __, __, 38 [__/__, ___]
-    -- 593 Enh skill, 49 Enh duration, 19 Aug Enh Duration, 42 FC [27 PDT/17 MDT, 446 M.Eva]
+    -- 604 Enh skill, 45 Enh duration, 19 Aug Enh Duration, 38 FC [27 PDT/17 MDT, 446 M.Eva]
     
-    -- main="Pukulatmuj +1",          -- 11, __, __, __ [__/__, ___]
     -- body="Vitiation Tabard +3",    -- 23, 15, __, 15 [__/__, 100]
     -- hands="Vitiation Gloves +3",   -- 24, __, __, __ [__/__,  57]
     -- legs="Atrophy Tights +3",      -- 21, __, __, __ [__/__, 127]
@@ -1029,7 +1028,7 @@ function init_gear_sets()
     main="Contemplator +1",           -- 228, 70, 12, __ (__, __, __, 20) [__/__, ___]
     sub="Enki Strap",                 -- ___, 10, 10, __ (__, __, __, __) [__/__,  10]
     range=empty,                      -- ___, __, __, __ (__, __, __, __) [__/__, ___]
-    ammo="Pemphredo Tathlum",         -- ___,  8,  4, __ (__, __, __, __) [__/__, ___]
+    ammo="Ghastly Tathlum +1",        -- ___, __, 11, __ (__, __, __, __) [__/__, ___]
     head="Vitiation Chapeau +1",      -- ___, __, 19, __ (__, __, __, 22) [__/__,  75]; Enhances enf. duration
     body="Lethargy Sayon +3",         -- ___, 64, 47, __ (__, 18, __, __) [14/14, 136]
     hands="Lethargy Gantherots +2",   -- ___, 52, 28, __ (__, __, __, 24) [10/10,  77]
@@ -1044,9 +1043,8 @@ function init_gear_sets()
     waist="Obstinate Sash",           -- ___, 15, __, __ (__, __,  5, 15) [__/__, ___]
     -- Empy set effect                   ___, __, __, __ (__, __, 10, __) [__/__, ___]
     -- Traits/Gifts/Merits            --              38
-    -- 228 M.Acc skill, 415 M.Acc, 263 INT, 42 FC (1 Immunobreak, 48 Enf. Effect, 50 Enf. Duration, 118 Enf. Skill) [34 PDT/24 MDT, 543 M.Eva]
+    -- 228 M.Acc skill, 407 M.Acc, 270 INT, 42 FC (1 Immunobreak, 48 Enf. Effect, 50 Enf. Duration, 118 Enf. Skill) [34 PDT/24 MDT, 543 M.Eva]
 
-    -- ammo="Ghastly Tathlum +1",     -- ___, __, 11, __ (__, __, __, __) [__/__, ___]
     -- head="Vitiation Chapeau +3",   -- ___, 37, 29, __ (__, __, __, 26) [__/__,  95]; Enhances enf. duration
     -- hands="Lethargy Gantherots +3",-- ___, 62, 50, __ (__, __, __, 29) [11/11,  87]
     -- legs=gear.Chironic_MAcc_legs,  -- ___, 60, 29, __ ( 1, __, __, 13) [__/__, 118]
@@ -1221,7 +1219,7 @@ function init_gear_sets()
     waist="Acuity Belt +1",           -- ___, __, 15 (23, __, __, __, __) [__/__, ___]
   })
   sets.midcast['Elemental Magic'].Resistant = set_combine(sets.midcast['Elemental Magic'], {
-    -- ammo="Ghastly Tathlum +1",     -- ___, __, __ (11, __, 21, __, __) [__/__, ___]
+    ammo="Ghastly Tathlum +1",        -- ___, __, __ (11, __, 21, __, __) [__/__, ___]
     waist="Acuity Belt +1",           -- ___, __, 15 (23, __, __, __, __) [__/__, ___]
   })
 
@@ -1251,13 +1249,13 @@ function init_gear_sets()
     -- 255 M.Acc Skill, 0 Elemental Skill, 403 M.Acc (303 INT, 403 MAB, 338 M.Dmg, 42 MB, 35 MB2) [18 PDT/8 MDT, 653 M.Eva]
   }
   sets.midcast['Elemental Magic'].Seidr.MB = set_combine(sets.midcast['Elemental Magic'], {
-    -- ammo="Ghastly Tathlum +1",     -- ___, __, __ (11, __, 21, __, __) [__/__, ___]
+    ammo="Ghastly Tathlum +1",        -- ___, __, __ (11, __, 21, __, __) [__/__, ___]
     body="Seidr Cotehardie",          -- ___, __, 13 (__,  7, __, __, __) [__/__, ___]
     ring2="Metamorph Ring +1",        -- ___, __, 15 (16, __, __, __, __) [__/__, ___]
     waist="Acuity Belt +1",           -- ___, __, 15 (23, __, __, __, __) [__/__, ___]
   })
   sets.midcast['Elemental Magic'].Resistant.MB = set_combine(sets.midcast['Elemental Magic'], {
-    -- ammo="Ghastly Tathlum +1",     -- ___, __, __ (11, __, 21, __, __) [__/__, ___]
+    ammo="Ghastly Tathlum +1",        -- ___, __, __ (11, __, 21, __, __) [__/__, ___]
     ring2="Metamorph Ring +1",        -- ___, __, 15 (16, __, __, __, __) [__/__, ___]
     waist="Acuity Belt +1",           -- ___, __, 15 (23, __, __, __, __) [__/__, ___]
   })
@@ -2627,6 +2625,7 @@ function set_main_keybinds()
   send_command('bind !q gs c elemental tier3')
   send_command('bind !w gs c elemental tier')
   send_command('bind !e input /ma "Haste II" <stpc>')
+  send_command('bind !r input /ma "Dispel" <t>')
   send_command('bind !u input /ma Blink <me>')
   send_command('bind !i input /ma Stoneskin <me>')
   send_command('bind !o input /ma "Phalanx II" <stpc>')
@@ -2678,6 +2677,7 @@ function unbind_keybinds()
   send_command('unbind !q')
   send_command('unbind !w')
   send_command('unbind !e')
+  send_command('unbind !r')
   send_command('unbind !u')
   send_command('unbind !i')
   send_command('unbind !o')

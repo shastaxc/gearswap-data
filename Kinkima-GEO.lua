@@ -647,7 +647,7 @@ function init_gear_sets()
     main="Bunzi's Rod",
     sub="Ammurapi Shield",
     range=empty,
-    ammo="Pemphredo Tathlum", --4
+    ammo="Ghastly Tathlum +1",
     head="Azimuth Hood +2",
     body="Azimuth Coat +2",
     hands="Azimuth Gloves +2",
