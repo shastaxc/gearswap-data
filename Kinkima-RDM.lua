@@ -614,6 +614,9 @@ function init_gear_sets()
     waist="Embla Sash",           -- __, __,  5
     -- Base stats                   414, __, __
     -- 560 Healing skill, 70 Cursna+, 1 FC; Cursna Rate = 48.73%
+
+    -- body="Vitiation Tabard +3",-- 23, __, 15
+    -- 563 Healing skill, 70 Cursna+, 16 FC; Cursna Rate = 48.90%
   }
 
   -- Blink used as defensive while in combat. Focus on DT, MEVA, and Duration.
@@ -1047,7 +1050,7 @@ function init_gear_sets()
     -- body="Atrophy Tabard +3",      -- ___, 55, 43, __ (__, __, __, 21) [__/__, 100]
     -- hands="Lethargy Gantherots +3",-- ___, 62, 50, __ (__, __, __, 29) [11/11,  87]
     -- legs=gear.Chironic_MAcc_legs,  -- ___, 60, 29, __ ( 1, __, __, 13) [__/__, 118]
-    -- 255 M.Acc skill, 507 M.Acc, 291 MND, 72 FC (1 Immunobreak, 30 Enf. Effect, 40 Enf. Duration, 136 Enf. Skill) [21 PDT/11 MDT, 527 M.Eva]
+    -- 255 M.Acc skill, 492 M.Acc, 291 MND, 72 FC (1 Immunobreak, 30 Enf. Effect, 40 Enf. Duration, 136 Enf. Skill) [21 PDT/11 MDT, 527 M.Eva]
   }
   sets.midcast.MNDEnfeeblesAccDW = set_combine(sets.midcast.MNDEnfeeblesAcc, {
     -- main="Crocea Mors",            -- 255, 50, __, 20 (__, __, __, __) [__/__, ___]
@@ -1144,7 +1147,8 @@ function init_gear_sets()
   sets.midcast.INTEnfeeblesAccDW = set_combine(sets.midcast.INTEnfeeblesAcc, {})
 
   -- Spells that have 100% accuracy. Focus on duration.
-  sets.midcast.INTEnfeeblesDuration = set_combine(sets.midcast.MNDEnfeeblesDuration, {
+  -- There currently are no spells that fall into this category, but this set exists anyway!
+  sets.midcast.INTEnfeeblesDuration = {
     main="Daybreak",                  -- 242, 40, __, __ (__, __, __, __) [__/__,  30]
     sub="Genmei Shield",              -- ___, __, __, __ (__, __, __, __) [10/__, ___]
     range="Ullr",                     -- ___, 40, __, __ (__, __, __, __) [__/__, ___]
@@ -1169,7 +1173,7 @@ function init_gear_sets()
     -- legs="Lethargy Fuseau +3",     -- ___, 63, 48, __ (__, __, __, __) [__/__, 162]
     -- feet="Lethargy Houseaux +3",   -- ___, 60, 30, __ (__, __, __, __) [__/__, 157]
     -- 242 M.Acc skill, 429 M.Acc, 239 INT, 42 FC (0 Immunobreak, 38 Enf. Effect, 90 Enf. Duration, 41 Enf. Skill) [47 PDT/29 MDT, 633 M.Eva]
-  })
+  }
   sets.midcast.INTEnfeeblesDurationDW = set_combine(sets.midcast.INTEnfeeblesDuration, {})
 
   sets.midcast.Dispelga = set_combine(sets.midcast.INTEnfeeblesAcc, {
@@ -1273,7 +1277,8 @@ function init_gear_sets()
     -- 255 M.Acc Skill, 0 Elemental Skill, 460 M.Acc (312 INT, 419 MAB, 408 M.Dmg, 25 MB, 0 MB2) [45 PDT/35 MDT, 667 M.Eva]
   }
   sets.midcast['Elemental Magic'].Seidr = set_combine(sets.midcast['Elemental Magic'], {
-    -- ammo="Ghastly Tathlum +1",     -- ___, __, __ (11, __, 21, __, __) [__/__, ___]
+    range="Ullr",                     -- ___, __, 40 (__, __, __, __, __) [__/__, ___]
+    ammo=empty,                       -- ___, __, __ (__, __, __, __, __) [__/__, ___]
     body="Seidr Cotehardie",          -- ___, __, 13 (__,  7, __, __, __) [__/__, ___]
     waist="Acuity Belt +1",           -- ___, __, 15 (23, __, __, __, __) [__/__, ___]
   })
@@ -1424,6 +1429,8 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   -- Technically, Prime sword Caliburnus has highest refresh
+  
+  -- Used when your weapons are locked "battle mode"
   sets.passive_refresh = {
     range=empty,                      -- __/__, ___ [__]
     -- ammo="Homiliary",              -- __/__, ___ [ 1]
@@ -1445,6 +1452,7 @@ function init_gear_sets()
     -- hands="Lethargy Gantherots +3",-- 11/11,  87 [__]
     -- 50 PDT / 33 MDT, 580 M.Eva [10 Refresh]
   }
+  -- Used when your weapons are unlocked but cannot dual wield (sub SCH)
   sets.passive_refresh.Single = {
     main="Mpaca's Staff",             -- __/__, ___ [ 2]
     sub="Enki Strap",                 -- __/__,  10 [__]
@@ -1471,6 +1479,7 @@ function init_gear_sets()
     -- ring2="Stikini Ring +1",       -- __/__, ___ [ 1]
     -- 49 PDT / 32 MDT, 589 M.Eva [15 Refresh]
   }
+  -- Used when weapons are unlocked and you can dual wield
   sets.passive_refresh.Dual = {
     main="Bolelabunga",               -- __/__, ___ [ 1]
     sub="Daybreak",                   -- __/__,  30 [ 1]
