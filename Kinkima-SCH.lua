@@ -1886,8 +1886,8 @@ function set_main_keybinds()
   send_command('bind ^pagedown gs c cycle ElementalMode')
   send_command('bind !pagedown gs c reset ElementalMode')
   
-  send_command('bind !q gs c elemental tier4')
-  send_command('bind !w gs c elemental tier5')
+  send_command('bind !q gs c elemental tier3')
+  send_command('bind !w gs c elemental tier')
   send_command('bind !z gs c elemental helix')
   send_command('bind !c gs c elemental storm')
 end

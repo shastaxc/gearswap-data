@@ -2245,8 +2245,8 @@ function set_main_keybinds()
   send_command('bind @w gs c toggle RearmingLock')
   send_command('bind ^u gs c toggle ShowLuopanUi')
   
-  send_command('bind !q gs c elemental tier4')
-  send_command('bind !w gs c elemental tier5')
+  send_command('bind !q gs c elemental tier3')
+  send_command('bind !w gs c elemental tier')
   send_command('bind !z gs c elemental ara2')
   send_command('bind !x gs c elemental ara3')
 

@@ -1,71 +1,9 @@
 -- File Status: Acceptable.
 
--------------------------------------------------------------------------------------------------------------------
---  Keybinds
--------------------------------------------------------------------------------------------------------------------
-
---  Modes:      [ F9 ]              Cycle Offense Mode
---              [ CTRL+F9 ]         Cycle Hybrid Modes
---              [ WIN+F9 ]          Cycle Weapon Skill Modes
---              [ F10 ]             Emergency -PDT Mode
---              [ ALT+F10 ]         Toggle Kiting Mode
---              [ F11 ]             Emergency -MDT Mode
---              [ CTRL+F11 ]        Cycle Casting Modes
---              [ F12 ]             Update Current Gear / Report Current Status
---              [ CTRL+F12 ]        Cycle Idle Modes
---              [ ALT+F12 ]         Cancel Emergency -PDT/-MDT Mode
---              [ ALT+` ]           Toggle Magic Burst Mode
---              [ WIN+C ]           Toggle Capacity Points Mode
---
---  Abilities:  [ CTRL+` ]          Composure
---              [ CTRL+- ]          Light Arts/Addendum: White
---              [ CTRL+= ]          Dark Arts/Addendum: Black
---              [ CTRL+; ]          Celerity/Alacrity
---              [ ALT+[ ]           Accession/Manifestation
---              [ ALT+; ]           Penury/Parsimony
---
---  Spells:     [ CTRL+` ]          Stun
---              [ ALT+Q ]           Temper
---              [ ALT+W ]           Flurry II
---              [ ALT+E ]           Equip Engaged Gear
---              [ ALT+R ]           Equip Idle Gear
---              [ ALT+Y ]           Phalanx
---              [ ALT+O ]           Regen II
---              [ ALT+P ]           Shock Spikes
---              [ WIN+, ]           Utsusemi: Ichi
---              [ WIN+. ]           Utsusemi: Ni
---
---  Weapons:    [ CTRL+W ]          Toggles Weapon Lock
---
---  WS:         [ CTRL+Numpad7 ]    Savage Blade
---              [ CTRL+Numpad9 ]    Chant Du Cygne
---              [ CTRL+Numpad4 ]    Requiescat
---              [ CTRL+Numpad1 ]    Sanguine Blade
---
---
---              (Global-Binds.lua contains additional non-job-related keybinds)
-
-
--------------------------------------------------------------------------------------------------------------------
--- Setup functions for this job.  Generally should not be modified.
--------------------------------------------------------------------------------------------------------------------
-
---              Addendum Commands:
---              Shorthand versions for each strategem type that uses the version appropriate for
---              the current Arts.
---                                          Light Arts                  Dark Arts
---                                          ----------                  ---------
---              gs c scholar light          Light Arts/Addendum
---              gs c scholar dark                                       Dark Arts/Addendum
---              gs c scholar cost           Penury                      Parsimony
---              gs c scholar speed          Celerity                    Alacrity
---              gs c scholar aoe            Accession                   Manifestation
---              gs c scholar addendum       Addendum: White             Addendum: Black
-
-
--------------------------------------------------------------------------------------------------------------------
--- Setup functions for this job.  Generally should not be modified.
--------------------------------------------------------------------------------------------------------------------
+-- Author: Silvermutt
+-- Required external libraries: SilverLibs
+-- Recommended addons: WSBinder, Reorganizer, PartyBuffs
+-- Misc Recommendations: Disable RollTracker
 
 -- Initialization function for this job file.
 function get_sets()
@@ -2684,8 +2622,8 @@ function set_main_keybinds()
 
   send_command('bind !z input /ma "Temper II" <me>')
   send_command('bind !x gs c elemental enspell')
-  send_command('bind !q gs c elemental tier4')
-  send_command('bind !w gs c elemental tier5')
+  send_command('bind !q gs c elemental tier3')
+  send_command('bind !w gs c elemental tier')
   send_command('bind !e input /ma "Haste II" <stpc>')
   send_command('bind !u input /ma Blink <me>')
   send_command('bind !i input /ma Stoneskin <me>')
