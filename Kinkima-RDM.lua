@@ -1365,7 +1365,7 @@ function init_gear_sets()
   -- Used when your weapons are locked "battle mode"
   sets.passive_refresh = {
     range=empty,                      -- __/__, ___ [__]
-    -- ammo="Homiliary",              -- __/__, ___ [ 1]
+    ammo="Homiliary",                 -- __/__, ___ [ 1]
     head="Vitiation Chapeau +1",      -- __/__,  75 [ 2]
     body="Shamash Robe",              -- 10/__, 106 [ 3]; Resist Silence+90
     hands="Lethargy Gantherots +2",   -- 10/10,  77 [__]
@@ -1389,7 +1389,7 @@ function init_gear_sets()
     main="Mpaca's Staff",             -- __/__, ___ [ 2]
     sub="Enki Strap",                 -- __/__,  10 [__]
     range=empty,                      -- __/__, ___ [__]
-    -- ammo="Homiliary",              -- __/__, ___ [ 1]
+    ammo="Homiliary",                 -- __/__, ___ [ 1]
     head="Vitiation Chapeau +1",      -- __/__,  75 [ 2]
     body="Shamash Robe",              -- 10/__, 106 [ 3]; Resist Silence+90
     hands="Lethargy Gantherots +2",   -- 10/10,  77 [__]
@@ -1416,7 +1416,7 @@ function init_gear_sets()
     main="Bolelabunga",               -- __/__, ___ [ 1]
     sub="Daybreak",                   -- __/__,  30 [ 1]
     range=empty,                      -- __/__, ___ [__]
-    -- ammo="Homiliary",              -- __/__, ___ [ 1]
+    ammo="Homiliary",                 -- __/__, ___ [ 1]
     head="Vitiation Chapeau +1",      -- __/__,  75 [ 2]
     body="Shamash Robe",              -- 10/__, 106 [ 3]; Resist Silence+90
     hands="Lethargy Gantherots +2",   -- 10/10,  77 [__]
