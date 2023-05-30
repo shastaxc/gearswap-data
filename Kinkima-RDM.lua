@@ -1747,7 +1747,9 @@ function init_gear_sets()
   }
 
   sets.TreasureHunter = {
+    ammo="Perfect Lucky Egg",
     body=gear.Merl_TH_body,   -- 2
+    waist="Chaac Belt",
   }
 
   sets.Kiting = {
