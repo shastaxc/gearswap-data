@@ -2317,7 +2317,7 @@ function job_self_command(cmdParams, eventArgs)
     handle_strategems(cmdParams)
     eventArgs.handled = true
   elseif cmdParams[1] == 'elemental' then
-    silibs.handle_elemental(cmdParams)
+    silibs.handle_elemental(cmdParams, state.ElementalMode.value)
     eventArgs.handled = true
   elseif cmdParams[1] == 'barelement' then
     send_command('@input /ma '..state.BarElement.value..' <me>')

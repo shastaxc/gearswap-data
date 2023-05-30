@@ -1595,7 +1595,7 @@ function job_self_command(cmdParams, eventArgs)
     handle_strategems(cmdParams)
     eventArgs.handled = true
   elseif cmdParams[1] == 'elemental' then
-    silibs.handle_elemental(cmdParams)
+    silibs.handle_elemental(cmdParams, state.ElementalMode.value)
     eventArgs.handled = true
   elseif cmdParams[1] == 'bind' then
     set_main_keybinds()
