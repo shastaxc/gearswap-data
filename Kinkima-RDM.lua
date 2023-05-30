@@ -1747,7 +1747,7 @@ function init_gear_sets()
   }
 
   sets.TreasureHunter = {
-    -- legs=gear.Chironic_TH_legs, --Th+1
+    body=gear.Merl_TH_body,   -- 2
   }
 
   sets.Kiting = {
