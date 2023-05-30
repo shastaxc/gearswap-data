@@ -1076,7 +1076,7 @@ function init_gear_sets()
 
   -- Ref Potency > Enh Duration %, Ref Duration
   sets.midcast.Refresh = set_combine(sets.midcast.EnhancingDuration, {
-    -- head="Amalric Coif +1",  --  2, __, __
+    head="Amalric Coif +1",  --  2, __, __
     -- 2 Ref Potency, 72 Enh Duration%, 0 Ref Duration
   })
 
@@ -1085,7 +1085,7 @@ function init_gear_sets()
     sub="Ammurapi Shield",            -- __, __, 10 [__/__, ___] {__/__, __}
     range=empty,
     ammo="Staunch Tathlum +1",        -- __, __, __ [ 3/ 3, ___] {__/__, __}
-    head="Azimuth Hood +2",           -- __, __, __ [11/11, 126] {__/__,  4}
+    head="Amalric Coif +1",           --  2, __, __ [__/__,  86] {__/__, __}
     body=gear.Telchine_ENH_body,      -- __, __, 10 [__/__,  80] {__/__, __}
     hands="Azimuth Gloves +2",        -- __, __, __ [11/11,  88] {__/__, __}
     legs=gear.Telchine_ENH_legs,      -- __, __, 10 [__/__, 107] {__/__, __}
@@ -1097,9 +1097,8 @@ function init_gear_sets()
     ring2="Defending Ring",           -- __, __, __ [10/10, ___] {__/__, __}
     back=gear.GEO_Idle_Cape,          -- __, __, __ [__/__,  30] {__/__, 15}
     waist="Embla Sash",               -- __, __, 10 [__/__, ___] {__/__, __}
-    -- 0 Refresh Potency, 0 Refresh Duration, 46% Enh Duration [58 PDT/50 MDT, 589 M.Eva] {Pet: 0 PDT/0 MDT, 19 Regen}
+    -- 2 Refresh Potency, 0 Refresh Duration, 46% Enh Duration [47 PDT/39 MDT, 549 M.Eva] {Pet: 0 PDT/0 MDT, 15 Regen}
     
-    -- head="Amalric Coif +1",        --  2, __, __ [__/__,  86] {__/__, __}
     -- body=gear.Telchine_ENH_body,   -- __, __, 10 [__/__,  80] {__/__,  3}
     -- hands="Azimuth Gloves +3",     -- __, __, __ [12/12,  98] {__/__, __}
     -- legs=gear.Telchine_ENH_legs,   -- __, __, 10 [__/__, 107] {__/__,  3}
@@ -1121,7 +1120,7 @@ function init_gear_sets()
     sub="Ammurapi Shield",            -- __, 10 [__/__, ___] {__/__, __}
     range="Dunna",                    -- __, __ [__/__, ___] { 5/ 5, __}
     ammo=empty,
-    head="Azimuth Hood +2",           -- __, __ [11/11, 126] {__/__,  4}
+    head="Amalric Coif +1",           --  2, __ [__/__,  86] {__/__, __}
     body=gear.Telchine_ENH_body,      -- __, 10 [__/__,  80] {__/__,  3}
     hands="Regal Cuffs",              --  2, __ [__/__,  53] {__/__, __}
     legs=gear.Nyame_B_legs,           -- __, __ [ 8/ 8, 150] {__/__, __}
@@ -1133,10 +1132,9 @@ function init_gear_sets()
     back=gear.GEO_FC_Cape,            -- __, __ [10/__, ___] {__/__, __}
     waist="Emphatikos Rope",          --  1, __ [__/__, ___] {__/__, __}
     -- Base                               1
-    -- 4 Aquaveil, 20% Enh Duration [62 PDT/44 MDT, 567 M.Eva] {Pet: 30 PDT/30 MDT, 7 Regen}
+    -- 6 Aquaveil, 20% Enh Duration [51 PDT/33 MDT, 527 M.Eva] {Pet: 30 PDT/30 MDT, 3 Regen}
 
     -- main="Vadose Rod",             --  1, __ [__/__, ___] {__/__, __}
-    -- head="Amalric Coif +1",        --  2, __ [__/__,  86] {__/__, __}
     -- legs="Shedir Seraweels",       --  1, __ [__/__, ___] {__/__, __}
     -- feet="Azimuth Gaiters +3",     -- __, __ [11/11, 168] {__/__, __}
     -- ear1="Genmei Earring",         -- __, __ [ 2/__, ___] {__/__, __}

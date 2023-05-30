@@ -575,20 +575,20 @@ function init_gear_sets()
 
   -- Can get longer duration, but potency takes a significant hit, so opted not to do that.
   sets.midcast.RegenDuration = {
-    main=gear.Pedagogy_C,               -- 20, 15, __
-    sub="Khonsu",                       -- __, __, __
-    head="Arbatel Bonnet +3",           -- 11, __, __
-    body=gear.Telchine_ENH_body,        -- __, 10, 12
-    hands=gear.Telchine_ENH_hands,      -- __, 10, __
-    legs=gear.Telchine_ENH_legs,        -- __, 10, __
-    feet=gear.Telchine_ENH_feet,        -- __,  9, __
-    back=gear.SCH_Adoulin_Regen_Cape,   -- 10, __, __
-    waist="Embla Sash",                 -- __, 10,  5
-    -- Base Potency (w/ Light Arts)        64, __, __
+    main=gear.Pedagogy_C,             -- 20, 15, __
+    sub="Khonsu",                     -- __, __, __
+    head="Arbatel Bonnet +3",         -- 11, __, __
+    body=gear.Telchine_ENH_body,      -- __, 10, 12
+    hands=gear.Telchine_ENH_hands,    -- __, 10, __
+    legs=gear.Telchine_ENH_legs,      -- __, 10, __
+    feet=gear.Telchine_ENH_feet,      -- __,  9, __
+    back=gear.SCH_Adoulin_Regen_Cape, -- 10, __, __
+    waist="Embla Sash",               -- __, 10,  5
+    -- Base Potency (w/ Light Arts)      64, __, __
     -- 105 Regen Potency, 64 Enh Duration %, 17 Regen Duration
 
-    -- main=gear.Musa_C,                -- 25, 20, __
-    -- feet=gear.Telchine_ENH_feet,     -- __, 10, __
+    -- main=gear.Musa_C,              -- 25, 20, __
+    -- feet=gear.Telchine_ENH_feet,   -- __, 10, __
     -- 110 Regen Potency, 70 Enh Duration %, 17 Regen Duration
   }
 
@@ -596,7 +596,7 @@ function init_gear_sets()
 
   -- Ref Potency > Enh Duration %, Ref Duration
   sets.midcast.Refresh = set_combine(sets.midcast.EnhancingDuration, {
-    -- head="Amalric Coif +1",  --  2, __, __
+    head="Amalric Coif +1",           --  2, __, __
     -- 2 Ref Potency, 72 Enh Duration%, 0 Ref Duration
   })
 
@@ -618,10 +618,10 @@ function init_gear_sets()
   sets.midcast.Aquaveil = set_combine(sets.midcast.EnhancingDuration, {
     main="Bolelabunga",
     sub="Ammurapi Shield",          -- __, 10
+    head="Amalric Coif +1",         --  2, __
     hands="Regal Cuffs",            --  2, __
     waist="Emphatikos Rope",        --  1, __
     -- main="Vadose Rod",           --  1, __
-    -- head="Amalric Coif +1",      --  2, __
     -- legs="Shedir seraweels",     --  1, __
     -- +6 Aquaveil, 32% Enh Duration
   })

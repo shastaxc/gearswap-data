@@ -685,9 +685,9 @@ function init_gear_sets()
 
   sets.midcast['Blue Magic'].Buff = set_combine(sets.midcast['Blue Magic'], {})
   sets.midcast['Blue Magic'].Refresh = set_combine(sets.midcast['Blue Magic'], {
+    head="Amalric Coif +1",
     back="Grapevine Cape",
     waist="Gishdubar Sash",
-    -- head="Amalric Coif +1",
   })
   sets.midcast['Blue Magic'].SkillBasedBuff = set_combine(sets.midcast['Blue Magic'], {})
 
@@ -699,7 +699,7 @@ function init_gear_sets()
   }) -- 1 shadow per 50 skill
 
   sets.midcast['Blue Magic']['Carcharian Verve'] = set_combine(sets.midcast['Blue Magic'].Buff, {
-    -- head="Amalric Coif +1",
+    head="Amalric Coif +1",
     waist="Emphatikos Rope",
   })
 
@@ -741,9 +741,9 @@ function init_gear_sets()
   } --36DT, 14PDT
 
   sets.midcast.Refresh = set_combine(sets.midcast.EnhancingDuration, {
+    head="Amalric Coif +1",
     back="Grapevine Cape",
     waist="Gishdubar Sash",
-    -- head="Amalric Coif +1",
   })
 
   sets.midcast.Stoneskin = set_combine(sets.midcast.EnhancingDuration, {
@@ -763,9 +763,9 @@ function init_gear_sets()
   })
 
   sets.midcast.Aquaveil = set_combine(sets.midcast.EnhancingDuration, {
+    head="Amalric Coif +1", --2
     hands="Regal Cuffs", --2
     waist="Emphatikos Rope", --1
-    -- head="Amalric Coif +1", --2
     -- legs="Shedir Seraweels", --1
   })
 

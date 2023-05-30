@@ -534,8 +534,8 @@ function init_gear_sets()
   -- Base rate = (10+(Healing Skill / 30)); y = Cursna+ stat from gear
   -- Mithra RDM M30 Healing Magic Skill = 414
   sets.midcast.Cursna = {
-    -- main="Prelatic Pole",      -- 10, __, __
-    -- sub="Curatio Grip",        --  3, __, __
+    main="Prelatic Pole",         -- 10, __, __
+    sub="Curatio Grip",           --  3, __, __
     range=empty,                  -- __, __, __
     ammo="Incantor Stone",        -- __, __,  2
     head=gear.Vanya_B_head,       -- 20, __, __
@@ -670,7 +670,7 @@ function init_gear_sets()
     sub="Ammurapi Shield",            -- __, 10, __, __ [__/__, ___]
     range=empty,                      -- __, __, __, __ [__/__, ___]
     ammo="Staunch Tathlum +1",        -- __, __, __, __ [ 3/ 3, ___]
-    head=gear.Telchine_ENH_head,      -- __, 10, __, __ [__/__,  75]
+    head="Amalric Coif +1",           --  2, __, __, __ [__/__,  86]
     body="Atrophy Tabard +2",         --  1, __, __, __ [__/__,  90]
     hands="Atrophy Gloves +3",        -- __, 20, __, __ [__/__,  57]
     legs="Lethargy Fuseau +2",        --  4, __, __, __ [__/__, 162]
@@ -683,9 +683,8 @@ function init_gear_sets()
     back=gear.RDM_Adoulin_Cape,       -- __, __, 19, __ [__/__, ___]
     waist="Embla Sash",               -- __, 10, __, __ [__/__, ___]
     -- Refresh III potency            --  9, __, __, __ [__/__, ___]
-    -- 14 Ref Potency, 121 Enh Duration%, 19 Aug Enh Duration, 0 Ref Duration [23 PDT/17 MDT, 531 M.Eva]
+    -- 16 Ref Potency, 111 Enh Duration%, 19 Aug Enh Duration, 0 Ref Duration [23 PDT/17 MDT, 542 M.Eva]
     
-    -- head="Amalric Coif +1",        --  2, __, __, __ [__/__,  86]
     -- body="Atrophy Tabard +3",      --  2, __, __, __ [__/__, 100]
     -- legs="Lethargy Fuseau +3",     --  4, __, __, __ [__/__, 162]
     -- feet="Lethargy Houseaux +3",   -- __, 40, __, __ [__/__, 157]
@@ -803,7 +802,7 @@ function init_gear_sets()
     sub="Genmei Shield",              -- __, __, __, __, __ [10/__, ___]
     range=empty,                      -- __, __, __, __, __ [__/__, ___]
     ammo="Staunch Tathlum +1",        -- __, __, __, __, 11 [ 3/ 3, ___]
-    -- head="Amalric Coif +1",        --  2, __, __, __, __ [__/__,  86]
+    head="Amalric Coif +1",           --  2, __, __, __, __ [__/__,  86]
     body="Rosette Jaseran +1",        -- __, __, __, __, 25 [ 5/ 5,  80]
     hands="Regal Cuffs",              --  2, __, __, __, __ [__/__,  53]
     -- legs="Shedir Seraweels",       --  1, 15, __, __, __ [__/__, ___]
@@ -1132,7 +1131,7 @@ function init_gear_sets()
     sub="Ammurapi Shield",            -- ___, __, 38, 13 [__/__, ___]
     range=empty,                      -- ___, __, __, __ [__/__, ___]
     ammo="Pemphredo Tathlum",         -- ___, __,  8,  4 [__/__, ___]
-    -- head=gear.Amalric_C_head       -- ___, 20, 36, 36 [__/__,  86]
+    head=gear.Amalric_C_head,         -- ___, 20, 36, 36 [__/__,  86]
     -- body=gear.Carmine_C_body,      -- ___, 16, 38, 38 [__/ 4,  64]
     hands="Lethargy Gantherots +2",   -- ___, __, 52, 28 [10/10,  77]
     legs="Bunzi's Pants",             -- ___, __, 55, 51 [ 9/ 9, 150]
