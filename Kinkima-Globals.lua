@@ -1,6 +1,4 @@
 send_command('ev pos 1260 700')
-send_command('gi brd 8')
-send_command('gi geo 10')
 
 include('reorganizer-lib')
 res = include('resources')

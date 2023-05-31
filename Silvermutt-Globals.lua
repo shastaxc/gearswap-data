@@ -1,6 +1,3 @@
-send_command('gi brd 8')
-send_command('gi geo 10')
-
 include('reorganizer-lib')
 res = include('resources')
 packets = include('packets')
