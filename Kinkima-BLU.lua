@@ -330,10 +330,10 @@ function init_gear_sets()
     feet=gear.Nyame_B_feet,
     ear1="Moonshade Earring",
     ear2="Ishvara Earring",
+    ring1="Epaminondas's Ring",
     back=gear.BLU_WSD_Cape,
     -- ammo="Aurgelmir Orb +1",
     -- neck="Fotia Gorget",
-    -- ring1="Epaminondas's Ring",
     -- ring2="Beithir Ring",
     -- waist="Fotia Belt",
   }
@@ -368,14 +368,13 @@ function init_gear_sets()
     neck="Mirage Stole +2",
     ear1="Ishvara Earring",
     ear2="Moonshade Earring",     -- __, __, __,  4, __, __, 250
-    ring1="Regal Ring",           -- 10, __, 20, __, __, __, ___
+    ring1="Ephramad's Ring",      -- 10, __, 20, 20, __, 10, ___
     ring2="Rufescent Ring",       --  6,  6, __,  7, __, __, ___
     back=gear.BLU_WSD_Cape,
     waist="Sailfi Belt +1",       -- Needs further augmenting
     -- STR, MND, Attack, Accuracy, WSD, PDL [PDT/MDT, M.Eva]
 
     -- ammo="Coiste Bodhar", --Sub for Aurgelmir Orb +1
-    -- ring1="Epaminondas's Ring",
     -- ring2="Sroda Ring",
     -- STR, MND, Attack, Accuracy, WSD, PDL [PDT/MDT, M.Eva]
   }
@@ -388,7 +387,7 @@ function init_gear_sets()
     neck="Mirage Stole +2",
     ear1="Ishvara Earring",
     ear2="Moonshade Earring",     -- __, __, __,  4, __, __, 250
-    ring1="Regal Ring",           -- 10, __, 20, __, __, __, ___
+    ring1="Ephramad's Ring",      -- 10, __, 20, 20, __, 10, ___
     ring2="Rufescent Ring",       --  6,  6, __,  7, __, __, ___
     back=gear.BLU_WSD_Cape,
     waist="Sailfi Belt +1",       -- Needs further augmenting
@@ -397,7 +396,6 @@ function init_gear_sets()
     -- ammo="Crepuscular Pebble",
     -- body="Gleti's Cuirass",
     -- legs="Gleti's Breeches",
-    -- ring1="Epaminondas's Ring",
     -- ring2="Sroda Ring",
     -- STR, MND, Attack, Accuracy, WSD, PDL [PDT/MDT, M.Eva]
   }
@@ -414,14 +412,13 @@ function init_gear_sets()
     feet=gear.Nyame_B_feet,
     neck="Sibyl Scarf",
     ear1="Moonshade Earring",
-    ear2="Regal Earring",
+    ring1="Ephramad's Ring",
     ring2="Archon Ring",
     back=gear.BLU_FC_Cape,
     -- body="Amalric Doublet +1",
     -- hands="Amalric Gages +1",
     -- legs="Luhlaza Shalwar +3",
     -- feet="Amalric Nails +1",
-    -- ring1="Epaminondas's Ring",
     -- waist="Sacro Cord",
   }
 

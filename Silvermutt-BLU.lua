@@ -387,7 +387,7 @@ function init_gear_sets()
     ear1="Ishvara Earring",
     ear2="Moonshade Earring",
     ring1="Epaminondas's Ring",
-    ring2="Sroda Ring",
+    ring2="Ephramad's Ring",
     waist="Sailfi Belt +1",
     -- back=gear.BLU_WSD_Cape,
   }

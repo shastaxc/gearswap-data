@@ -276,12 +276,12 @@ function init_gear_sets()
     neck="Fotia Gorget",                -- __, __, __, __ <__, __, __> (__, __) [__/__, ___] __; ftp+
     ear1="Ishvara Earring",             -- __,  2, __, __ <__, __, __> (__, __) [__/__, ___] __
     ear2="Moonshade Earring",           -- __, __, __, __ <__, __, __> (__, __) [__/__, ___] __; tp bonus+250
-    ring1="Regal Ring",                 -- 10, __, 20, __ <__, __, __> (__, __) [__/__, ___] __
+    ring1="Ephramad's Ring",            -- 10, __, 20, __ <__, __, __> (__, __) [__/__, ___] 10
     ring2="Epaminondas's Ring",         -- __,  5, __, __ <__, __, __> (__, __) [__/__, ___] __
     back=gear.THF_WS1_Cape,             -- 30, 10, 20, 20 <__, __, __> (__, __) [10/__, ___] __
     waist="Fotia Belt",                 -- __, __, __, __ <__, __, __> (__, __) [__/__, ___] __; ftp+
     -- Traits/Merits/Gifts              -- __, __, __, __ <__, 19, __> (__, 22) [__/__, ___] __
-    -- 167 DEX, 75 WSD, 365 Att, 20 TA Dmg <31 DA, 19 TA, 0 QA> (0 Crit Rate, 22 Crit Dmg) [48 PDT/38 MDT, 674 M.Eva] 0 PDL
+    -- 167 DEX, 75 WSD, 365 Att, 20 TA Dmg <31 DA, 19 TA, 0 QA> (0 Crit Rate, 22 Crit Dmg) [48 PDT/38 MDT, 674 M.Eva] 10 PDL
   }
   -- When Sneak Attack active, overlaid on top of normal set
   sets.precast.WS.SA = {
@@ -319,7 +319,9 @@ function init_gear_sets()
     -- 250 AGI, 0 WSD, 248 Att, 31 TA Dmg <15 DA, 56 TA, 0 QA> [10 PDT/0 MDT, 404 M.Eva] 10 PDL
   }
   sets.precast.WS['Exenterator'].MaxTP = set_combine(sets.precast.WS['Exenterator'], {})
-  sets.precast.WS['Exenterator'].AttCapped = set_combine(sets.precast.WS['Exenterator'], {})
+  sets.precast.WS['Exenterator'].AttCapped = set_combine(sets.precast.WS['Exenterator'], {
+    ring2="Ephramad's Ring",
+  })
   sets.precast.WS['Exenterator'].AttCappedMaxTP = set_combine(sets.precast.WS['Exenterator'].AttCapped, {})
   
   -- 50% DEX, 1.25 FTP, can crit, ftp replicating
@@ -358,16 +360,16 @@ function init_gear_sets()
     neck="Fotia Gorget",                -- __, __, __, __ <__, __, __> (__, __) [__/__, ___] __; ftp+
     ear1="Odr Earring",                 -- 10, __, __, __ <__, __, __> ( 5, __) [__/__, ___] __
     ear2="Moonshade Earring",           -- __, __, __, __ <__, __, __> (__, __) [__/__, ___] __; tp bonus+250
-    ring1="Mummu Ring",                 -- __, __, __, __ <__, __, __> ( 3, __) [__/__, ___] __
+    ring1="Ephramad's Ring",            -- 10, __, 20, __ <__, __, __> (__, __) [__/__, ___] 10
     ring2="Hetairoi Ring",              -- __, __, __,  5 <__,  2, __> ( 1, __) [__/__, ___] __
     back=gear.THF_WS1_Cape,             -- 30, 10, 20, 20 <__, __, __> (__, __) [10/__, ___] __
     waist="Fotia Belt",                 -- __, __, __, __ <__, __, __> (__, __) [__/__, ___] __; ftp+
     -- Traits/Merits/Gifts              -- __, __, __, __ <__, 19, __> (__, 22) [__/__, ___] __
-    -- 237 DEX, 16 WSD, 202 Att, 25 TA Dmg <0 DA, 23 TA, 0 QA> (26 Crit Rate, 43 Crit Dmg) [19 PDT/0 MDT, 317 M.Eva] 7 PDL
+    -- 247 DEX, 16 WSD, 222 Att, 25 TA Dmg <0 DA, 23 TA, 0 QA> (23 Crit Rate, 43 Crit Dmg) [19 PDT/0 MDT, 317 M.Eva] 17 PDL
     
     -- legs="Pillager's Culottes +3",   -- 15, __, 30, __ <__,  5, __> (__,  5) [__/__,  99] __
     -- back=gear.THF_WS4_Cape,          -- 30, __, 20, 20 <__, __, __> (10, __) [10/__, ___] __
-    -- 209 DEX, 6 WSD, 194 Att, 25 TA Dmg <0 DA, 28 TA, 0 QA> (33 Crit Rate, 48 Crit Dmg) [19 PDT/0 MDT, 416 M.Eva] 7 PDL
+    -- 219 DEX, 6 WSD, 214 Att, 25 TA Dmg <0 DA, 28 TA, 0 QA> (30 Crit Rate, 48 Crit Dmg) [19 PDT/0 MDT, 416 M.Eva] 17 PDL
   }
   sets.precast.WS['Evisceration'].AttCappedMaxTP = set_combine(sets.precast.WS['Evisceration'].AttCapped, {
     ear2="Sherida Earring",             --  5, __, __, __ < 5, __, __> (__, __) [__/__, ___] __
@@ -413,18 +415,18 @@ function init_gear_sets()
     neck="Assassin's Gorget +2",        -- 15, __, __ [__/__, ___] __
     ear1="Moonshade Earring",           -- __, __, __ [__/__, ___] __; tp bonus+250
     ear2="Odr Earring",                 -- 10, __, __ [__/__, ___] __
-    ring1="Ilabrat Ring",               -- 10, __, 25 [__/__, ___] __
+    ring1="Ephramad's Ring",            -- 10, __, 20 [__/__, ___] 10
     ring2="Epaminondas's Ring",         -- __,  5, __ [__/__, ___] __
     back=gear.THF_WS1_Cape,             -- 30, 10, 20 [10/__, ___] __
     waist="Kentarch Belt +1",           -- 10, __, __ [__/__, ___] __
     -- Lustratio set bonus              -- __,  4, __ [__/__, ___] __
     -- Traits/Merits/Gifts              -- __, __, __ [__/__, ___] __
-    -- 267 DEX, 54 WSD, 278 Att [33 PDT/23 MDT, 374 M.Eva] 0 PDL
+    -- 267 DEX, 54 WSD, 273 Att [33 PDT/23 MDT, 374 M.Eva] 10 PDL
     
     -- ammo="Coiste Bodhar",            -- 10, __, 15 [__/__, ___] __; R30
     -- head="Skulker's Bonnet +3",      -- 43, __, 61 [__/__, 109] 10
     -- ear2="Skulker's Earring +2",     -- 15, __, __ [__/__, ___] __
-    -- 290 DEX, 43 WSD, 274 Att [26 PDT/16 MDT, 360 M.Eva] 10 PDL
+    -- 290 DEX, 43 WSD, 269 Att [26 PDT/16 MDT, 360 M.Eva] 20 PDL
   }
   sets.precast.WS["Rudra's Storm"].AttCappedMaxTP = set_combine(sets.precast.WS["Rudra's Storm"].AttCapped, {
   })
@@ -525,13 +527,13 @@ function init_gear_sets()
     ear1="Ishvara Earring",             -- __, __, __, __,  2, __ [__/__, ___]
     ear2="Moonshade Earring",           -- __, __, __,  4, __, __ [__/__, ___]; tp bonus +250
     ring1="Sroda Ring",                 -- 15, __, __, __, __,  3 [__/__, ___]
-    ring2="Epaminondas's Ring",         -- __, __, __, __,  5, __ [__/__, ___]
+    ring2="Ephramad's Ring",            -- 10, __, 20, 20, __, 10 [__/__, ___]
     back=gear.THF_WS2_Cape,             -- 30, __, 20, 20, 10, __ [10/__, ___]
     waist="Sailfi Belt +1",             -- 15, __, 15, __, __, __ [__/__, ___]
-    -- 242 STR, 142 MND, 383 Attack, 280 Accuracy, 52 WSD, 17 PDL [47 PDT/23 MDT, 599 M.Eva]
+    -- 252 STR, 142 MND, 403 Attack, 300 Accuracy, 47 WSD, 27 PDL [47 PDT/23 MDT, 599 M.Eva]
 
     -- head="Skulker's Bonnet +3",      -- 31, 23, 61, 61, __, 10 [__/__, 109]
-    -- 240 STR, 146 MND, 374 Attack, 286 Accuracy, 52 WSD, 21 PDL [41 PDT/23 MDT, 622 M.Eva]
+    -- 250 STR, 146 MND, 394 Attack, 306 Accuracy, 47 WSD, 31 PDL [41 PDT/23 MDT, 622 M.Eva]
   }
   sets.precast.WS['Savage Blade'].AttCappedMaxTP = set_combine(sets.precast.WS['Savage Blade'].AttCapped, {
     ear2="Sherida Earring",             --  5, __, __, __, __, __ [__/__, ___]
@@ -557,10 +559,12 @@ function init_gear_sets()
   }
   sets.precast.WS['Asuran Fists'].MaxTP = set_combine(sets.precast.WS['Asuran Fists'], {})
   sets.precast.WS['Asuran Fists'].AttCapped = set_combine(sets.precast.WS['Asuran Fists'], {
-    ring1="Sroda Ring",                 -- 15, __, __, __, __,  3 [__/__, ___]
+    ring1="Ephramad's Ring",            -- 10, __, 20, 20, __, 10 [__/__, ___]
+    ring2="Sroda Ring",                 -- 15, __, __, __, __,  3 [__/__, ___]
   })
   sets.precast.WS['Asuran Fists'].AttCappedMaxTP = set_combine(sets.precast.WS['Asuran Fists'], {
-    ring1="Sroda Ring",                 -- 15, __, __, __, __,  3 [__/__, ___]
+    ring1="Ephramad's Ring",            -- 10, __, 20, 20, __, 10 [__/__, ___]
+    ring2="Sroda Ring",                 -- 15, __, __, __, __,  3 [__/__, ___]
   })
 
   sets.precast.RA = {
@@ -588,14 +592,14 @@ function init_gear_sets()
     neck="Iskur Gorget",                -- __, __, __ (30, 30) [__/__, ___]
     ear1="Telos Earring",               -- __, __, __ (10, 10) [__/__, ___]
     ring1="Regal Ring",                 -- 10, 10, __ (10, __) [__/__, ___]
-    ring2="Dingir Ring",                -- 10, __, __ (25, __) [__/__, ___]
+    ring2="Ephramad's Ring",            -- 10, 10, __ (20, 20) [__/__, ___]
     back=gear.THF_WS2_Cape,             -- __, 30, 10 (__, __) [10/__, ___]
     waist="Yemaya Belt",                --  7, __, __ (10, 10) [__/__, ___]
-    -- 175 AGI, 209 STR, 68 WSD (385 R.Att, 263 R.Acc) [48 PDT/38 MDT, 674 M.Eva]
+    -- 175 AGI, 219 STR, 68 WSD (380 R.Att, 283 R.Acc) [48 PDT/38 MDT, 674 M.Eva]
 
     -- ear2="Crepuscular Earring",      -- __, __, __ (__, 10) [__/__, ___]
     -- back=gear.THF_WS6_Cape,          -- 30, __, 10 (20, 20) [10/__, ___]
-    -- 205 AGI, 179 STR, 68 WSD (405 R.Att, 293 R.Acc) [48 PDT/38 MDT, 674 M.Eva]
+    -- 205 AGI, 189 STR, 68 WSD (400 R.Att, 313 R.Acc) [48 PDT/38 MDT, 674 M.Eva]
   }
 
 

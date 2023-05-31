@@ -278,17 +278,17 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.precast.WS = {
-    body="Jhakri Robe +2",
-    legs=gear.Telchine_ENH_legs,
+    head=gear.Nyame_B_head,
+    body=gear.Nyame_B_body,
+    hands=gear.Nyame_B_hands,
+    legs=gear.Nyame_B_legs,
+    feet=gear.Nyame_B_feet,
     ear1="Moonshade Earring",
+    ring1="Epaminondas's Ring",
     ring2="Rufescent Ring",
     -- ammo="Floestone",
-    -- head="Jhakri Coronal +2",
-    -- hands="Jhakri Cuffs +2",
-    -- feet="Jhakri Pigaches +2",
     -- neck="Fotia Gorget",
     -- ear2="Telos Earring",
-    -- ring1="Epaminondas's Ring",
     -- back="Relucent Cape",
     -- waist="Fotia Belt",
   }

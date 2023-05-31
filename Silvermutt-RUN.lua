@@ -851,6 +851,7 @@ function init_gear_sets()
     legs=gear.Nyame_B_legs,
     feet=gear.Nyame_B_feet,
     neck="Futhark Torque +2",
+    ring1="Ephramad's Ring",
     waist="Platinum Moogle Belt",
   })
   sets.precast.WS.SafeMaxTP = set_combine(sets.precast.WS.Safe, {})
@@ -928,15 +929,15 @@ function init_gear_sets()
     neck="Caro Necklace",             --  6, __, 10, __, __ <__, __, __> [__/__, ___] ___
     ear1="Moonshade Earring",         -- __,  4, __, __, __ <__, __, __> [__/__, ___] ___; tp bonus
     ear2="Odr Earring",               -- 10, 10, __, __, __ <__, __, __> [__/__, ___] ___
-    ring1="Regal Ring",               -- 10, __, 20, __, __ <__, __, __> [__/__, ___]  50
+    ring1="Ephramad's Ring",          -- 10, 20, 20, __, 10 <__, __, __> [__/__, ___] ___
     ring2="Ilabrat Ring",             -- 10, __, 25, __, __ <__, __, __> [__/__, ___]  60
     back=gear.RUN_WS2_Cape,           -- 30, 20, 20, 10, __ <__, __, __> [10/__, ___] ___
     waist="Grunfeld Rope",            --  5, 10, 20, __, __ < 2, __, __> [__/__, ___] ___
-    -- 231 DEX, 247 Acc, 416 Att, 62 WSD, 0 PDL <24 DA, 0 TA, 0 QA> [40 PDT/30 MDT, 524 M.Eva] 524 HP
+    -- 231 DEX, 267 Acc, 416 Att, 62 WSD, 10 PDL <24 DA, 0 TA, 0 QA> [40 PDT/30 MDT, 524 M.Eva] 474 HP
   }
   sets.precast.WS['Dimidiation'].MaxTP = set_combine(sets.precast.WS['Dimidiation'], {
     ear1="Sherida Earring",           --  5, __, __, __, __ < 5, __, __> [__/__, ___] ___
-    -- 236 DEX, 243 Acc, 416 Att, 62 WSD, 0 PDL <29 DA, 0 TA, 0 QA> [40 PDT/30 MDT, 524 M.Eva] 524 HP
+    -- 236 DEX, 263 Acc, 416 Att, 62 WSD, 10 PDL <29 DA, 0 TA, 0 QA> [40 PDT/30 MDT, 524 M.Eva] 474 HP
   })
   sets.precast.WS['Dimidiation'].AttCapped = {
     ammo="Knobkierrie",               -- __, __, 23,  6, __ <__, __, __> [__/__, ___] ___
@@ -949,14 +950,14 @@ function init_gear_sets()
     ear1="Moonshade Earring",         -- __,  4, __, __, __ <__, __, __> [__/__, ___] ___; tp bonus
     ear2="Odr Earring",               -- 10, 10, __, __, __ <__, __, __> [__/__, ___] ___
     ring1="Epaminondas's Ring",       -- __, __, __,  5, __ <__, __, __> [__/__, ___] ___
-    ring2="Ilabrat Ring",             -- 10, __, 25, __, __ <__, __, __> [__/__, ___]  60
+    ring2="Ephramad's Ring",          -- 10, 20, 20, __, 10 <__, __, __> [__/__, ___] ___
     back=gear.RUN_WS2_Cape,           -- 30, 20, 20, 10, __ <__, __, __> [10/__, ___] ___
     waist="Kentarch Belt +1",         -- 10, 14, __, __, __ < 3, __, __> [__/__, ___] ___
-    -- 226 DEX, 251 Acc, 376 Att, 67 WSD, 0 PDL <25 DA, 0 TA, 0 QA> [40 PDT/30 MDT, 524 M.Eva] 474 HP
+    -- 226 DEX, 271 Acc, 371 Att, 67 WSD, 10 PDL <25 DA, 0 TA, 0 QA> [40 PDT/30 MDT, 524 M.Eva] 414 HP
   }
   sets.precast.WS['Dimidiation'].AttCappedMaxTP = set_combine(sets.precast.WS['Dimidiation'].AttCapped, {
     ear1="Sherida Earring",           --  5, __, __, __, __ < 5, __, __> [__/__, ___] ___
-    -- 231 DEX, 247 Acc, 376 Att, 67 WSD, 0 PDL <30 DA, 0 TA, 0 QA> [40 PDT/30 MDT, 524 M.Eva] 474 HP
+    -- 231 DEX, 267 Acc, 371 Att, 67 WSD, 10 PDL <30 DA, 0 TA, 0 QA> [40 PDT/30 MDT, 524 M.Eva] 414 HP
   })
   sets.precast.WS['Dimidiation'].Safe = {
     ammo="Knobkierrie",                         -- __, __, 23,  6, __ <__, __, __> [__/__, ___] ___

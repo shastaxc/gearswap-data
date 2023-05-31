@@ -346,7 +346,7 @@ function init_gear_sets()
     neck="Monk's Nodowa +2", -- PDL
     ear1="Sherida Earring",
     ear2="Odr Earring",
-    ring1="Sroda Ring",
+    ring1="Ephramad's Ring",
     ring2="Niqmaddu Ring",
     back=gear.MNK_STR_Crit_Cape,
     waist="Moonbow Belt +1",
@@ -376,7 +376,7 @@ function init_gear_sets()
     neck="Monk's Nodowa +2",          -- 15, __ <__, __, __> [__/__, ___]
     ear1="Schere Earring",            -- __, __ < 6, __, __> [__/__, ___]
     ear2="Odr Earring",               -- 10, __ <__, __, __> [__/__, ___]
-    ring1="Ilabrat Ring",             -- 10, __ <__, __, __> [__/__, ___]
+    ring1="Ephramad's Ring",          -- 10, __ <__, __, __> [__/__, ___]
     ring2="Niqmaddu Ring",            -- 10, __ <__, __,  3> [__/__, ___]
     back=gear.MNK_DEX_DA_Cape,        -- 30, __ <10, __, __> [10/__, ___]
     waist="Moonbow Belt +1",          -- 20, __ <__,  8, __> [ 6/ 6, ___]
@@ -414,7 +414,7 @@ function init_gear_sets()
     ear1="Sherida Earring",
     ear2="Ishvara Earring",
     ring1="Epaminondas's Ring",
-    ring2="Niqmaddu Ring",
+    ring2="Ephramad's Ring",
     back=gear.MNK_STR_DA_Cape, -- WSD cape would be better
     waist="Fotia Belt",
   })
@@ -439,7 +439,7 @@ function init_gear_sets()
     ear1="Sherida Earring",
     ear2="Moonshade Earring",
     ring1="Sroda Ring",
-    ring2="Niqmaddu Ring",
+    ring2="Ephramad's Ring",
     back=gear.MNK_STR_Crit_Cape,
     waist="Moonbow Belt +1",
   })
@@ -465,7 +465,7 @@ function init_gear_sets()
     ear1="Sherida Earring",
     ear2="Moonshade Earring",
     ring1="Gere Ring",
-    ring2="Niqmaddu Ring",
+    ring2="Ephramad's Ring",
     back=gear.MNK_STR_DA_Cape,
     waist="Moonbow Belt +1",
   })
@@ -490,7 +490,7 @@ function init_gear_sets()
     neck="Monk's Nodowa +2",
     ear1="Sherida Earring",
     ear2="Moonshade Earring",
-    ring1="Sroda Ring",
+    ring1="Ephramad's Ring",
     ring2="Niqmaddu Ring",
     back=gear.MNK_STR_DA_Cape,
     waist="Moonbow Belt +1",

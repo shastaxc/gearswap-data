@@ -516,7 +516,7 @@ function init_gear_sets()
     neck="Fotia Gorget",
     ear1="Ishvara Earring",
     ear2="Moonshade Earring",
-    ring1="Regal Ring",
+    ring1="Ephramad's Ring",
     ring2="Epaminondas's Ring",
     back=gear.RNG_WS2_Cape,
     waist="Fotia Belt",
@@ -584,7 +584,7 @@ function init_gear_sets()
     neck="Scout's Gorget +1",
     ear1="Moonshade Earring",
     ear2="Amini Earring +1",
-    ring1="Regal Ring",
+    ring1="Ephramad's Ring",
     ring2="Epaminondas's Ring",
     back=gear.RNG_WS2_Cape,
     waist="Fotia Belt",
@@ -666,7 +666,7 @@ function init_gear_sets()
     ear1="Odr Earring",
     ear2="Moonshade Earring",
     ring1="Ilabrat Ring",
-    ring2="Regal Ring",
+    ring2="Ephramad's Ring",
     back=gear.RNG_WS2_Cape,
     waist="Fotia Belt",
 
@@ -680,7 +680,7 @@ function init_gear_sets()
   })
   sets.precast.WS['Evisceration'].HighAcc = set_combine(sets.precast.WS['Evisceration'], {
     head="Dampening Tam",
-    ring2="Chirich Ring +1",
+    ring1="Chirich Ring +1",
     ear2="Dignitary's Earring",
     body=gear.Adhemar_A_body,
   })
@@ -696,22 +696,22 @@ function init_gear_sets()
     neck="Scout's Gorget +1",     -- __, __, __, __, __,  8, ___
     ear1="Moonshade Earring",     -- __, __, __,  4, __, __, 250
     ear2="Amini Earring +1",      -- __, __, __, __, __,  8, ___
-    ring1="Sroda Ring",           -- 15, __, __, __, __,  3, ___
+    ring1="Ephramad's Ring",      -- 10, __, 20, 20, __, 10, ___
     ring2="Epaminondas's Ring",   -- __, __, __, __,  5, __, ___
     back=gear.RNG_WS3_Cape,       -- 30, __, 20, 20, 10, __, ___
     waist="Sailfi Belt +1",       -- 15, __, 15, __, __, __, ___
-    -- 217 STR, 149 MND, 295 Attack, 207 Accuracy, 62 WSD, 19 PDL, 450 TP Bonus
+    -- 212 STR, 149 MND, 315 Attack, 227 Accuracy, 60 WSD, 33 PDL, 450 TP Bonus
 
     -- neck="Scout's Gorget +2",  -- __, __, __, __, __, 10, ___
     -- ear2="Amini Earring +2",   -- 15, __, __, 20, __,  9, ___
-    -- 232 STR, 149 MND, 295 Attack, 217 Accuracy, 62 WSD, 20 PDL, 450 TP Bonus
+    -- 227 STR, 149 MND, 315 Attack, 247 Accuracy, 60 WSD, 36 PDL, 450 TP Bonus
   }
   sets.precast.WS['Savage Blade'].MaxTP = set_combine(sets.precast.WS['Savage Blade'], {
     ear2="Telos Earring",
   })
   sets.precast.WS['Savage Blade'].HighAcc = set_combine(sets.precast.WS['Savage Blade'].MidAcc, {
-    ring1="Rufescent Ring",       --  6,  6, __,  7, __, __, ___
     ear1="Telos Earring",         -- __, __, 10, 10, __, __, ___
+    ring2="Rufescent Ring",       --  6,  6, __,  7, __, __, ___
   })
   sets.precast.WS['Savage Blade'].HighAccMaxTP = set_combine(sets.precast.WS['Savage Blade'].HighAcc, {
     ear1="Telos Earring",

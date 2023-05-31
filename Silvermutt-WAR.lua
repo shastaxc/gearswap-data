@@ -252,11 +252,12 @@ function init_gear_sets()
     hands="Sakpata's Gauntlets",          -- 24, 33, 70, 55, __,  6 [ 8/ 8, 112]
     legs="Boii Cuisses +3",               -- 53, 27, 73, 63, __, 10 [__/__, 130]; TP Bonus+100
     feet="Sakpata's Leggings",            -- 29, 19, 70, 55, __,  4 [ 6/ 6, 150]
-    -- 269 STR, 130 MND, 348 Attack, 332 Accuracy, 18 WSD, 39 PDL [44 PDT/34 MDT, 654 M.Eva]
+    ring2="Ephramad's Ring",              -- 10, __, 20, 20, __, 10 [__/__, ___]
+    -- 279 STR, 130 MND, 368 Attack, 352 Accuracy, 13 WSD, 49 PDL [44 PDT/34 MDT, 654 M.Eva]
   })
   sets.precast.WS.AttCappedMaxTP = set_combine(sets.precast.WS.AttCapped, {
     ear2="Ishvara Earring",               -- __, __, __, __,  2, __ [__/__, ___]
-    -- 269 STR, 130 MND, 348 Attack, 328 Accuracy, 20 WSD, 39 PDL [44 PDT/34 MDT, 654 M.Eva]
+    -- 279 STR, 130 MND, 368 Attack, 348 Accuracy, 15 WSD, 49 PDL [44 PDT/34 MDT, 654 M.Eva]
   })
 
   -- 50% STR/50% MND
@@ -357,16 +358,16 @@ function init_gear_sets()
     neck="Warrior's Bead Necklace +1",    -- 12, 20, 20, __, __ (__, __) < 6, __, __> [__/__, ___]
     ear1="Moonshade Earring",             -- __, __,  4, __, __ (__, __) <__, __, __> [__/__, ___]; TP Bonus+250
     ear2="Thrud Earring",                 -- 10, __, __,  3, __ (__, __) <__, __, __> [__/__, ___]
-    ring1="Sroda Ring",                   -- 15, __, __, __,  3 (__, __) <__, __, __> [__/__, ___]
+    ring1="Ephramad's Ring",              -- 10, 20, 20, __, 10 (__, __) <__, __, __> [__/__, ___]
     ring2="Niqmaddu Ring",                -- 10, __, __, __, __ (__, __) <__, __,  3> [__/__, ___]
     back=gear.WAR_STR_WSD_Cape,           -- 30, 20, 20, 10, __ (__, __) <__, __, __> [10/__, ___]
     waist="Sailfi Belt +1",               -- 15, 15, __, __, __ (__, __) < 5,  2, __> [__/__, ___]
     -- WAR Traits                            __, __, __, __, __ (__, __) <33, __, __> [__/__, ___]
-    -- 275 STR, 398 Attack, 332 Accuracy, 13 WSD, 32 PDL (7 Crit Rate, 19 Crit Dmg) <71 DA, 2 TA, 3 QA> [45 PDT/35 MDT, 634 M.Eva]
+    -- 270 STR, 418 Attack, 352 Accuracy, 13 WSD, 42 PDL (7 Crit Rate, 19 Crit Dmg) <71 DA, 2 TA, 3 QA> [45 PDT/35 MDT, 634 M.Eva]
 
     -- neck="Warrior's Bead Necklace +2", -- 15, 25, 25, __, __ (__, __) < 7, __, __> [__/__, ___]
     -- ear2="Boii Earring +2",            -- 15, __, 20, __, __ ( 8, __) < 9, __, __> [__/__, ___]
-    -- 283 STR, 403 Attack, 358 Accuracy, 10 WSD, 32 PDL (15 Crit Rate, 19 Crit Dmg) <81 DA, 2 TA, 3 QA> [45 PDT/35 MDT, 634 M.Eva]
+    -- 278 STR, 423 Attack, 378 Accuracy, 10 WSD, 42 PDL (15 Crit Rate, 19 Crit Dmg) <81 DA, 2 TA, 3 QA> [45 PDT/35 MDT, 634 M.Eva]
   }
   sets.precast.WS["Ukko's Fury"].AttCappedMaxTP = set_combine(sets.precast.WS["Ukko's Fury"].AttCapped, {
     ear1="Schere Earring",                --  5, 15, 15, __, __ (__, __) < 6, __, __> [__/__, ___]
@@ -388,14 +389,14 @@ function init_gear_sets()
     ear1="Moonshade Earring",             -- __,  4, __, __, __ <__, __, __> [__/__, ___]; TP Bonus+250
     ear2="Thrud Earring",                 -- 10, __, __,  3, __ <__, __, __> [__/__, ___]
     ring1="Niqmaddu Ring",                -- 10, __, __, __, __ <__, __,  3> [__/__, ___]
-    ring2="Regal Ring",                   -- 10, 20, __, __, __ <__, __, __> [__/__, ___]
+    ring2="Ephramad's Ring",              -- 10, 20, __, __, 10 <__, __, __> [__/__, ___]
     back=gear.WAR_STR_WSD_Cape,           -- 30, 20, 20, 10, __ <__, __, __> [10/__, ___]; DA Dmg+20%
     waist="Fotia Belt",                   -- __, __, __, __, __ <__, __, __> [__/__, ___]; ftp+
     -- WAR Traits                            __, __, __, __, __ <33, __, __> [__/__, ___]
-    -- 244 STR, 382 Attack, 256 Accuracy, 71 WSD, 0 PDL <61 DA, 0 TA, 3 QA> [48 PDT/38 MDT, 674 M.Eva]
+    -- 244 STR, 382 Attack, 256 Accuracy, 71 WSD, 10 PDL <61 DA, 0 TA, 3 QA> [48 PDT/38 MDT, 674 M.Eva]
 
     -- ear2="Boii Earring +2",            -- 15, __, 20, __, __ < 9, __, __> [__/__, ___]
-    -- 249 STR, 382 Attack, 276 Accuracy, 68 WSD, 0 PDL <70 DA, 0 TA, 3 QA> [48 PDT/38 MDT, 674 M.Eva]
+    -- 249 STR, 382 Attack, 276 Accuracy, 68 WSD, 10 PDL <70 DA, 0 TA, 3 QA> [48 PDT/38 MDT, 674 M.Eva]
   }
   sets.precast.WS['Resolution'].MaxTP = set_combine(sets.precast.WS['Resolution'], {
     ear1="Ishvara Earring",               -- __, __, __,  2, __ <__, __, __> [__/__, ___]
@@ -415,11 +416,11 @@ function init_gear_sets()
     ear1="Moonshade Earring",             -- __,  4, __, __, __ <__, __, __> [__/__, ___]; TP Bonus+250
     ear2="Thrud Earring",                 -- 10, __, __,  3, __ <__, __, __> [__/__, ___]
     ring1="Niqmaddu Ring",                -- 10, __, __, __, __ <__, __,  3> [__/__, ___]
-    ring2="Sroda Ring",                   -- 15, __, __, __,  3 <__, __, __> [__/__, ___]
+    ring2="Ephramad's Ring",              -- 10, 20, 20, __, 10 <__, __, __> [__/__, ___]
     back=gear.WAR_STR_WSD_Cape,           -- 30, 20, 20, 10, __ <__, __, __> [10/__, ___]
     waist="Fotia Belt",                   -- __, __, __, __, __ <__, __, __> [__/__, ___]; ftp+
     -- WAR Traits                            __, __, __, __, __ <33, __, __> [__/__, ___]
-    -- 262 STR, 390 Attack, 316 Accuracy, 13 WSD, 36 PDL <64 DA, 0 TA, 3 QA> [41 PDT/31 MDT, 654 M.Eva]
+    -- 257 STR, 410 Attack, 336 Accuracy, 13 WSD, 46 PDL <64 DA, 0 TA, 3 QA> [41 PDT/31 MDT, 654 M.Eva]
   })
   sets.precast.WS['Resolution'].AttCappedMaxTP = set_combine(sets.precast.WS['Resolution'].AttCapped, {
     ear1="Ishvara Earring",               -- __, __, __,  2, __ <__, __, __> [__/__, ___]
@@ -447,7 +448,7 @@ function init_gear_sets()
     ear1="Friomisi Earring",              -- 10, __, __, __ [__/__, ___]
     ear2="Moonshade Earring",             -- __, __, __, __ [__/__, ___]; TP Bonus+250
     ring1="Shiva Ring +1",                --  3, __, __, __ [__/__, ___]
-    ring2="Regal Ring",                   -- __, __, __, __ [__/__, ___]
+    ring2="Ephramad's Ring",              -- __, __, __, __ [__/__, ___]
     back=gear.WAR_STR_WSD_Cape,           -- __, __, __, __ [10/__, ___]
     waist="Eschan Stone",                 --  7, __,  7, __ [__/__, ___]
     -- 190 MAB, 0 M.Dmg, 207 M.Acc, 58 WSD [48 PDT/38 MDT, 674 M.Eva]
@@ -511,16 +512,16 @@ function init_gear_sets()
 
   -- 40% STR / 40% DEX; aoe, dmg varies with TP
   sets.precast.WS['Sonic Thrust'] = set_combine(sets.precast.WS["Ukko's Fury"], {
-    ring1="Regal Ring",
+    ring1="Ephramad's Ring",
   })
   sets.precast.WS['Sonic Thrust'].MaxTP = set_combine(sets.precast.WS["Ukko's Fury"].MaxTP, {
-    ring1="Regal Ring",
+    ring1="Ephramad's Ring",
   })
   sets.precast.WS['Sonic Thrust'].AttCapped = set_combine(sets.precast.WS["Ukko's Fury"].AttCapped, {
-    ring1="Regal Ring",
+    ring1="Ephramad's Ring",
   })
   sets.precast.WS['Sonic Thrust'].AttCappedMaxTP = set_combine(sets.precast.WS["Ukko's Fury"].AttCappedMaxTP, {
-    ring1="Regal Ring",
+    ring1="Ephramad's Ring",
   })
 
 

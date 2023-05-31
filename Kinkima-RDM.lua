@@ -241,11 +241,11 @@ function init_gear_sets()
     -- neck="Fotia Gorget",           -- __, 10, __, __, __ <__, __, __> (__, __) [__/__, ___]; ftp+0.1
     ear1="Ishvara Earring",           -- __, __, __,  2, __ <__, __, __> (__, __) [__/__, ___]
     ear2="Moonshade Earring",         -- __,  4, __, __, __ <__, __, __> (__, __) [__/__, ___]; TP Bonus+250
-    ring1="Rufescent Ring",           --  6,  7, __, __, __ <__, __, __> (__, __) [__/__, ___]
+    ring1="Ephramad's Ring",          -- 10, 20, 20, __, 10 <__, __, __> (__, __) [__/__, ___]
     ring2="Epaminondas's Ring",       -- __, __, __,  5, __ <__, __, __> (__, __) [__/__, ___]
     back=gear.RDM_WSD_Cape,           -- __, 20, __, 10, __ <__, __, __> (__, __) [10/__, ___]
     -- waist="Fotia Belt",            -- __, 10, __, __, __ <__, __, __> (__, __) [__/__, ___]; ftp+0.1
-    -- 175 STR, 279 Acc, 330 Att, 78 WSD, 0 PDL <28 DA, 0 TA, 0 QA> (0 Crit Rate, 0 Crit Dmg) [48 PDT/38 MDT, 674 M.Eva]
+    -- 179 STR, 292 Acc, 350 Att, 78 WSD, 0 PDL <28 DA, 0 TA, 0 QA> (0 Crit Rate, 0 Crit Dmg) [48 PDT/38 MDT, 674 M.Eva]
   }
 
   -- 80% DEX. 3 hit. Can crit. Transfers fTP.
@@ -261,10 +261,10 @@ function init_gear_sets()
     -- ear1="Mache Earring +1",       --  8, 10, __, __, __ < 2, __, __> (__, __) [___/___, ___]
     ear2="Moonshade Earring",         -- __,  4, __, __, __ <__, __, __> (__, __) [___/___, ___]; TP Bonus+250
     -- ring1="Begrudging Ring",       -- __,  7,  7, __, __ <__, __, __> ( 5, __) [-10/-10, ___]
-    ring2="Ilabrat Ring",             -- 10, __, 25, __, __ <__, __, __> (__, __) [___/___, ___]
+    ring2="Ephramad's Ring",          -- 10, 20, 20, __, 10 <__, __, __> (__, __) [___/___, ___]
     -- back=gear.RDM_Crit_Cape,       -- 30, 20, __, __, __ <__, __, __> (10, __) [ 10/___, ___]
     -- waist="Fotia Belt",            -- __, 10, __, __, __ <__, __, __> (__, __) [___/___, ___]; ftp+0.1
-    -- 163 DEX, 230 Acc, 252 Att, 36 WSD, 0 PDL <28 DA, 0 TA, 0 QA> (31 Crit Rate, 11 Crit Dmg) [27 PDT/14 MDT, 523 M.Eva]
+    -- 158 DEX, 254 Acc, 247 Att, 36 WSD, 10 PDL <23 DA, 0 TA, 0 QA> (31 Crit Rate, 11 Crit Dmg) [27 PDT/14 MDT, 523 M.Eva]
   })
   sets.precast.WS['Chant du Cygne'].MaxTP = set_combine(sets.precast.WS['Chant du Cygne'], {
     ear2="Sherida Earring",           --  5, __, __, __, __ < 5, __, __> (__, __) [___/___, ___]
@@ -307,11 +307,11 @@ function init_gear_sets()
     -- neck="Duelist's Torque +2",    -- __, 15, __, __, __, __ <__, __, __> (__, __) [__/__, ___]
     ear1="Ishvara Earring",           -- __, __, __, __,  2, __ <__, __, __> (__, __) [__/__, ___]
     ear2="Moonshade Earring",         -- __, __,  4, __, __, __ <__, __, __> (__, __) [__/__, ___]; TP Bonus+250
-    ring1="Rufescent Ring",           --  6,  6,  7, __, __, __ <__, __, __> (__, __) [__/__, ___]
+    ring1="Ephramad's Ring",          -- 10, __, 20, 20, __, 10 <__, __, __> (__, __) [__/__, ___]
     ring2="Epaminondas's Ring",       -- __, __, __, __,  5, __ <__, __, __> (__, __) [__/__, ___]
     back=gear.RDM_WSD_Cape,           -- __, 30, 20, __, 10, __ <__, __, __> (__, __) [10/__, ___]
     waist="Sailfi Belt +1",           -- 15, __, __, 15, __, __ < 5,  2, __> (__, __) [__/__, ___]
-    -- 190 STR, 212 MND, 259 Acc, 345 Att, 78 WSD, 0 PDL <33 DA, 2 TA, 0 QA> [48 PDT/38 MDT, 674 M.Eva]
+    -- 194 STR, 206 MND, 272 Acc, 365 Att, 78 WSD, 10 PDL <33 DA, 2 TA, 0 QA> [48 PDT/38 MDT, 674 M.Eva]
   })
   sets.precast.WS['Savage Blade'].MaxTP = set_combine(sets.precast.WS['Savage Blade'], {
     ear2="Sherida Earring",           --  5, __, __, __, __, __ < 5, __, __> (__, __) [___/___, ___]
@@ -1814,26 +1814,26 @@ end
 
 function job_pretarget(spell, action, spellMap, eventArgs)
   -- If missing a target, or targeting an invalid target, switch target to <me>, <stpc>, or <stnpc> as appropriate
-  if spell.action_type == 'Magic' and (
-    (spell.target.raw == '<t>' and not spell.target.type)
-    or (not spell.targets.Enemy and spell.target.type == 'MONSTER')
-    or (not spell.targets.Self and spell.target.type == 'SELF')
-    or (not spell.targets.Player and spell.target.type == 'PLAYER')
-  ) then
-    local new_target
-    if spell.targets.Enemy then
-      new_target = '<stnpc>'
-    end
-    if spell.targets.Self then
-      new_target = '<me>'
-    end
-    if spell.targets.Party then
-      new_target = '<stpc>'
-    end
-    -- Cancel current spell and reissue command with new target
-    send_command('@input /ma "'..spell.english..'" '..new_target)
-    eventArgs.cancel = true
-  end
+  -- if spell.action_type == 'Magic' and (
+  --   (spell.target.raw == '<t>' and not spell.target.type)
+  --   or (not spell.targets.Enemy and spell.target.type == 'MONSTER')
+  --   or (not spell.targets.Self and spell.target.type == 'SELF')
+  --   or (not spell.targets.Player and spell.target.type == 'PLAYER')
+  -- ) then
+  --   local new_target
+  --   if spell.targets.Enemy then
+  --     new_target = '<stnpc>'
+  --   end
+  --   if spell.targets.Self then
+  --     new_target = '<me>'
+  --   end
+  --   if spell.targets.Party then
+  --     new_target = '<stpc>'
+  --   end
+  --   -- Cancel current spell and reissue command with new target
+  --   send_command('@input /ma "'..spell.english..'" '..new_target)
+  --   eventArgs.cancel = true
+  -- end
 end
 
 function job_precast(spell, action, spellMap, eventArgs)

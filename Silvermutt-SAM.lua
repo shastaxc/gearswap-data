@@ -200,7 +200,7 @@ function init_gear_sets()
     neck="Samurai's Nodowa +2",
     ear1="Dignitary's Earring",
     ear2="Telos Earring",
-    ring1="Regal Ring",
+    ring1="Ephramad's Ring",
     ring2="Chirich Ring +1",
     back=gear.stp_jse_back,
     waist="Olseni Belt",
@@ -244,6 +244,7 @@ function init_gear_sets()
   sets.precast.WS.AttCapped = set_combine(sets.precast.WS, {
     ammo="Crepuscular Pebble",
     legs="Mpaca's Hose",
+    ring2="Ephramad's Ring",
 
     -- feet="Kasuga Sune-Ate +3",
   })
@@ -315,6 +316,7 @@ function init_gear_sets()
     ammo="Crepuscular Pebble",
     legs="Mpaca's Hose",
     ring1="Sroda Ring",
+    ring2="Ephramad's Ring",
 
     -- feet="Kasuga Sune-Ate +3",
   })
@@ -353,7 +355,9 @@ function init_gear_sets()
   sets.precast.WS['Tachi: Jinpu'].MaxTP = set_combine(sets.precast.WS['Tachi: Jinpu'], {
     ear1="Novio Earring",
   })
-  sets.precast.WS['Tachi: Jinpu'].AttCapped = set_combine(sets.precast.WS['Tachi: Jinpu'], {})
+  sets.precast.WS['Tachi: Jinpu'].AttCapped = set_combine(sets.precast.WS['Tachi: Jinpu'], {
+    ring2="Ephramad's Ring",
+  })
   sets.precast.WS['Tachi: Jinpu'].AttCappedMaxTP = set_combine(sets.precast.WS['Tachi: Jinpu'].MaxTP, {})
 
   -- 60% CHR / 40% STR; More important to stack magic acc to ensure the defense down effect lands
@@ -442,7 +446,7 @@ function init_gear_sets()
     ear1="Schere Earring",
     ear2="Moonshade Earring",
     ring1="Niqmaddu Ring",
-    ring2="Regal Ring",
+    ring2="Ephramad's Ring",
     back=gear.SAM_STR_WSD_Cape,
     waist="Fotia Belt",
 

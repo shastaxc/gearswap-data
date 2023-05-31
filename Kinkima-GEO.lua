@@ -241,7 +241,7 @@ function init_gear_sets()
     ear1="Regal Earring",           -- ___, 10, __, __, __/__ [__]
     ear2="Moonshade Earring",       -- 250, __, __, __, __/__ [__]
     ring1="Metamorph Ring +1",      -- ___, 16, __, __, __/__ [__]
-    -- ring2="Epaminondas's Ring",  -- ___, __, __,  5, __/__ [__]
+    ring2="Epaminondas's Ring",     -- ___, __, __,  5, __/__ [__]
     back=gear.GEO_Idle_Cape,        -- ___, __, __, __, __/__ [__]
     -- waist="Fotia Belt",          -- fTP Bonus
     -- 250 TP Bonus, 187 MND, 169 STR, 63 WSD, 48PDT/38MDT [30PetDT]
@@ -289,7 +289,7 @@ function init_gear_sets()
     ear1="Regal Earring",           -- ___, __, __, 10, __, __, __/__ [__]
     ear2="Moonshade Earring",       -- 250, __, __, __, __, __, __/__ [__]
     ring1="Metamorph Ring +1",      -- ___, __, __, 16, __, __, __/__ [__]
-    -- ring2="Epaminondas's Ring",  -- ___, __, __, __, __,  5, __/__ [__]
+    ring2="Epaminondas's Ring",     -- ___, __, __, __, __,  5, __/__ [__]
     back=gear.GEO_Idle_Cape,        -- ___, __, __, __, __, __, __/__ [__]
     -- waist="Fotia Belt",          -- fTP Bonus
     -- 250 TP Bonus, 0 Crit Dmg,  0 Crit Rate, 187 MND, 169 STR, 63 WSD, 48PDT/38MDT [30PetDT]
@@ -386,7 +386,7 @@ function init_gear_sets()
     ear1="Regal Earring",           -- __,  7, __, __
     ear2="Moonshade Earring",       -- __, __, __, __; TP bonus
     ring1="Archon Ring",            --  5, __, __, __
-    -- ring2="Epaminondas's Ring",  -- __, __, __,  5
+    ring2="Epaminondas's Ring",     -- __, __, __,  5
     back=gear.GEO_Nuke_Cape,        -- __, 10, 20, __
     -- waist="Skrymir Cord",        -- __,  5, 30, __
     -- 33 Dark MAB, 155 MAB, 50 M.Dmg, 48 WSD

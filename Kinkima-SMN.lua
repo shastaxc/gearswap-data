@@ -589,8 +589,8 @@ function init_gear_sets()
     -- neck="Fotia Gorget",
     -- ear1="Telos Earring",
     ear2="Moonshade Earring",
-    ring1="Rufescent Ring",
-    -- ring2="Karieyh Ring +1",
+    ring1="Ephramad's Ring",
+    ring2="Epaminondas's Ring",
     back="Aurist's Cape +1",
     -- waist="Fotia Belt",
   }

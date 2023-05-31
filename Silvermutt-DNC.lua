@@ -404,11 +404,11 @@ function init_gear_sets()
     ear1="Sherida Earring",         --  5,  5, __, __, __
     ear2="Odr Earring",             -- __, 10, __, __, __
     ring1="Epaminondas's Ring",     -- __, __,  5, __, __
-    ring2="Regal Ring",             -- 10, 10, __, 20, __
+    ring2="Ephramad's Ring",        -- 10, 10, __, 20, 10
     back=gear.DNC_WS2_Cape,         -- __, 30, __, 20, __
     waist="Fotia Belt",             -- __, __, __, __, __; +0.1 ftp
     -- Lustratio set bonus          -- __, __,  4, __, __
-    -- 240 STR, 281 DEX, 4 WSD, 243 Att, 18 PDL
+    -- 239 STR, 249 DEX, 45 WSD, 250 Att, 20 PDL
   })
   sets.precast.WS['Pyrrhic Kleos'].MaxTP = set_combine(sets.precast.WS['Pyrrhic Kleos'], {})
   sets.precast.WS['Pyrrhic Kleos'].AttCapped = set_combine(sets.precast.WS, {
@@ -421,15 +421,15 @@ function init_gear_sets()
     neck="Etoile Gorget +2",        -- __, 25, __, __, 10
     ear1="Sherida Earring",         --  5,  5, __, __, __
     ear2="Maculele Earring +1",     -- __, __, __, __,  8
-    ring1="Gere Ring",              -- 10, __, __, 16, __
-    ring2="Regal Ring",             -- 10, 10, __, 20, __
+    ring1="Ephramad's Ring",        -- 10, 10, __, 20, 10
+    ring2="Gere Ring",              -- 10, __, __, 16, __
     back=gear.DNC_WS2_Cape,         -- __, 30, __, 20, __
     waist="Fotia Belt",             -- __, __, __, __, __; +0.1 ftp
     -- Lustratio set bonus          -- __, __,  4, __, __
-    -- 230 STR, 244 DEX, 4 WSD, 266 Att, 47 PDL
+    -- 230 STR, 244 DEX, 4 WSD, 266 Att, 57 PDL
 
     -- ear2="Maculele Earring +2",  -- __, __, __, __,  9
-    -- 230 STR, 244 DEX, 4 WSD, 266 Att, 48 PDL
+    -- 230 STR, 244 DEX, 4 WSD, 266 Att, 58 PDL
   })
   sets.precast.WS['Pyrrhic Kleos'].AttCappedMaxTP = set_combine(sets.precast.WS['Pyrrhic Kleos'].AttCapped, {})
   -- Required to prevent extra gear from equipping during Climactic
@@ -448,7 +448,7 @@ function init_gear_sets()
     ear1="Sherida Earring",           -- __/__, __, __,  5, __
     ear2="Odr Earring",               -- __/__, __,  5, 10, __
     ring1="Ilabrat Ring",             -- __/__, __, __, 10, __
-    ring2="Regal Ring",               -- __/__, __, __, 10, __
+    ring2="Ephramad's Ring",          -- __/__, __, __, 10, __
     back=gear.DNC_TP_DA_Cape,         -- 10/__,  5, __, 30, __
     waist="Fotia Belt",               -- fTP Bonus
     -- back=gear.DNC_WS3_Cape,
@@ -508,15 +508,15 @@ function init_gear_sets()
     ear1="Moonshade Earring",       -- __, __, __, __; TP Bonus+250
     ear2="Maculele Earring +1",     -- __, __, __,  8
     ring1="Epaminondas's Ring",     -- __,  5, __, __
-    ring2="Regal Ring",             -- 10, __, 20, __
+    ring2="Ephramad's Ring",        -- 10, __, 20, 10
     back=gear.DNC_WS1_Cape,         -- 30, 10, 20, __; Crit dmg+5
     waist="Kentarch Belt +1",       -- 10, __, __, __
     -- Lustratio set bonus          -- __,  4, __, __
-    -- 283 DEX, 19 WSD, 288 Att, 39 PDL
+    -- 283 DEX, 19 WSD, 288 Att, 49 PDL
     
     -- ammo="Coiste Bodhar",        -- 10, __, 15, __; R30
     -- ear2="Maculele Earring +2",  -- __, __, __,  9
-    -- 283 DEX, 19 WSD, 303 Att, 40 PDL
+    -- 283 DEX, 19 WSD, 303 Att, 50 PDL
   })
   sets.precast.WS["Rudra's Storm"].AttCappedMaxTP = set_combine(sets.precast.WS["Rudra's Storm"].AttCapped, {
     ear1="Ishvara Earring",         -- __,  2, __, __
@@ -751,7 +751,7 @@ function init_gear_sets()
     ear1="Telos Earring",           -- __,  5, 10 < 1, __, __> [__/__, ___] __(__)
     ear2="Dignitary's Earring",
     ring1="Chirich Ring +1",
-    ring2="Regal Ring",
+    ring2="Ephramad's Ring",
     waist="Olseni Belt",
   })
 
@@ -791,7 +791,7 @@ function init_gear_sets()
     body="Maxixi Casaque +3",
     legs="Malignance Tights",       -- __, 10, 50 <__, __, __> [ 7/ 7, 150] __(__)
     ear2="Dignitary's Earring",
-    ring2="Regal Ring",
+    ring2="Ephramad's Ring",
     -- waist="Olseni Belt",
   })
 
@@ -833,7 +833,7 @@ function init_gear_sets()
     legs="Malignance Tights",       -- __, 10, 50 <__, __, __> [ 7/ 7, 150] __(__)
     ear2="Dignitary's Earring",
     ring1="Chirich Ring +1",
-    ring2="Regal Ring",
+    ring2="Ephramad's Ring",
     -- waist="Olseni Belt",
   })
 
@@ -874,7 +874,7 @@ function init_gear_sets()
     hands="Mummu Wrists +2",
     legs="Malignance Tights",       -- __, 10, 50 <__, __, __> [ 7/ 7, 150] __(__)
     ear1="Dignitary's Earring",
-    ring2="Regal Ring",
+    ring2="Ephramad's Ring",
     -- waist="Olseni Belt",
   })
 

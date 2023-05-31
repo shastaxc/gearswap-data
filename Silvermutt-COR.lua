@@ -642,7 +642,7 @@ function init_gear_sets()
     neck="Fotia Gorget",
     ear1="Ishvara Earring",
     ear2="Moonshade Earring",
-    ring1="Regal Ring",
+    ring1="Ephramad's Ring",
     ring2="Epaminondas's Ring",
     back=gear.COR_WS2_Cape,
     waist="Fotia Belt",
@@ -677,7 +677,7 @@ function init_gear_sets()
     neck="Fotia Gorget",
     ear1="Ishvara Earring",
     ear2="Moonshade Earring",
-    ring1="Regal Ring",
+    ring1="Ephramad's Ring",
     ring2="Epaminondas's Ring",
     back=gear.COR_WS1_Cape,
     waist="Fotia Belt",
@@ -804,7 +804,7 @@ function init_gear_sets()
     neck="Fotia Gorget",
     ear1="Odr Earring",
     ear2="Moonshade Earring",
-    ring1="Regal Ring",
+    ring1="Ephramad's Ring",
     ring2="Mummu Ring",
     back=gear.COR_TP_Cape,
     waist="Fotia Belt",
@@ -843,14 +843,14 @@ function init_gear_sets()
     neck="Commodore Charm +1",    -- 12, __, __, __, __, __, ___
     ear1="Ishvara Earring",       -- __, __, __, __,  2, __, ___
     ear2="Moonshade Earring",     -- __, __, __,  4, __, __, 250
-    ring1="Sroda Ring",           -- 15, __, __, __, __,  3, ___
+    ring1="Ephramad's Ring",      -- 10, __, 20, 20, __, 10, ___
     ring2="Epaminondas's Ring",   -- __, __, __, __,  5, __, ___
     back=gear.COR_WS2_Cape,       -- 30, __, 20, 20, 10, __, ___
     waist="Sailfi Belt +1",       -- 15, __, 15, __, __, __, ___
-    -- 229 STR, 149 MND, 295 Attack, 207 Accuracy, 62 WSD, 10 PDL, 450 TP Bonus
+    -- 224 STR, 149 MND, 315 Attack, 227 Accuracy, 62 WSD, 17 PDL, 450 TP Bonus
 
     -- neck="Commodore Charm +2", -- 15, __, __, __, __, __, ___
-    -- 232 STR, 149 MND, 295 Attack, 207 Accuracy, 62 WSD, 10 PDL, 450 TP Bonus
+    -- 227 STR, 149 MND, 315 Attack, 227 Accuracy, 62 WSD, 17 PDL, 450 TP Bonus
   }
   sets.precast.WS['Savage Blade'].MaxTP = set_combine(sets.precast.WS['Savage Blade'], {
     ear2="Telos Earring",
@@ -882,7 +882,7 @@ function init_gear_sets()
     neck="Fotia Gorget",
     ear1="Cessance Earring",
     ear2="Brutal Earring",
-    ring1="Regal Ring",
+    ring1="Ephramad's Ring",
     ring2="Epona's Ring",
     back=gear.COR_WS2_Cape,
     waist="Fotia Belt",

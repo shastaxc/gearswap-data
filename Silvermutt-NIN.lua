@@ -241,7 +241,7 @@ function init_gear_sets()
     ear1="Moonshade Earring",
     ear2="Lugra Earring +1",
     ring1="Gere Ring",
-    ring2="Regal Ring",
+    ring2="Ephramad's Ring",
     -- back=gear.NIN_WSD_STR_Cape,
     waist="Sailfi Belt +1",
     
@@ -264,7 +264,7 @@ function init_gear_sets()
     ear1="Moonshade Earring",
     ear2="Hattori Earring +1",
     ring1="Sroda Ring",
-    ring2="Epaminondas's Ring",
+    ring2="Ephramad's Ring",
     -- back=gear.NIN_WSD_STR_Cape,
     waist="Sailfi Belt +1",
 
@@ -289,7 +289,7 @@ function init_gear_sets()
     ear1="Moonshade Earring",
     ear2="Lugra Earring +1",
     ring1="Gere Ring",
-    ring2="Epaminondas's Ring",
+    ring2="Ephramad's Ring",
     -- back=gear.NIN_WSD_STR_Cape,
     waist="Eschan Stone",
   }
@@ -379,7 +379,7 @@ function init_gear_sets()
     ear1="Odr Earring",
     ear2="Hattori Earring +1",
     ring1="Begrudging Ring",
-    ring2="Regal Ring",
+    ring2="Ephramad's Ring",
     -- back=gear.NIN_Crit_AGI_Cape,
     waist="Sailfi Belt +1",
 
@@ -400,7 +400,7 @@ function init_gear_sets()
     ear1="Odr Earring",
     ear2="Hattori Earring +1",
     ring1="Epaminondas's Ring",
-    ring2="Sroda Ring",
+    ring2="Ephramad's Ring",
     -- back=gear.NIN_WSD_AGI_Cape,
     waist="Sailfi Belt +1",
 
@@ -438,7 +438,7 @@ function init_gear_sets()
     ear1="Lugra Earring +1",
     ear2="Hattori Earring +1",
     ring1="Sroda Ring",
-    ring2="Gere Ring",
+    ring2="Ephramad's Ring",
     -- back=gear.NIN_WSD_STR_Cape,
     waist="Sailfi Belt +1",
     
@@ -457,7 +457,7 @@ function init_gear_sets()
     ear1="Lugra Earring +1",
     ear2="Hattori Earring +1",
     ring1="Gere Ring",
-    ring2="Regal Ring",
+    ring2="Ephramad's Ring",
     -- back=gear.NIN_DA_STR_Cape,
     waist="Fotia Belt",
     
@@ -476,7 +476,7 @@ function init_gear_sets()
     ear1="Lugra Earring +1",
     ear2="Hattori Earring +1",
     ring1="Sroda Ring",
-    ring2="Gere Ring",
+    ring2="Ephramad's Ring",
     -- back=gear.NIN_DA_STR_Cape,
     waist="Fotia Belt",
     
@@ -496,7 +496,7 @@ function init_gear_sets()
     ear1="Lugra Earring +1",
     ear2="Hattori Earring +1",
     ring1="Gere Ring",
-    ring2="Regal Ring",
+    ring2="Ephramad's Ring",
     -- back=gear.NIN_WSD_DEX_Cape,
     waist="Sailfi Belt +1",
     
@@ -515,7 +515,7 @@ function init_gear_sets()
     ear1="Lugra Earring +1",
     ear2="Hattori Earring +1",
     ring1="Gere Ring",
-    ring2="Epaminondas's Ring",
+    ring2="Ephramad's Ring",
     -- back=gear.NIN_WSD_DEX_Cape,
     waist="Kentarch Belt +1",
     
@@ -535,7 +535,7 @@ function init_gear_sets()
     ear1="Moonshade Earring",
     ear2="Lugra Earring +1",
     ring1="Gere Ring",
-    ring2="Regal Ring",
+    ring2="Ephramad's Ring",
     -- back=gear.NIN_DA_DEX_Cape,
     waist="Fotia Belt",
     
@@ -558,7 +558,7 @@ function init_gear_sets()
     ear1="Moonshade Earring",
     ear2="Lugra Earring +1",
     ring1="Gere Ring",
-    ring2="Regal Ring",
+    ring2="Ephramad's Ring",
     -- back=gear.NIN_DA_DEX_Cape,
     waist="Fotia Belt",
     
@@ -582,7 +582,7 @@ function init_gear_sets()
     ear1="Moonshade Earring",
     ear2="Lugra Earring +1",
     ring1="Gere Ring",
-    ring2="Regal Ring",
+    ring2="Ephramad's Ring",
     -- back=gear.NIN_WSD_STR_Cape,
     waist="Sailfi Belt +1",
     
@@ -605,7 +605,7 @@ function init_gear_sets()
     ear1="Moonshade Earring",
     ear2="Lugra Earring +1",
     ring1="Sroda Ring",
-    ring2="Epaminondas's Ring",
+    ring2="Ephramad's Ring",
     -- back=gear.NIN_WSD_STR_Cape,
     waist="Sailfi Belt +1",
     
@@ -629,7 +629,7 @@ function init_gear_sets()
     ear1="Odr Earring",
     ear2="Lugra Earring +1",
     ring1="Gere Ring",
-    ring2="Regal Ring",
+    ring2="Ephramad's Ring",
     -- back=gear.NIN_Crit_DEX_Cape,
     waist="Fotia Belt",
     
@@ -647,7 +647,7 @@ function init_gear_sets()
     ear1="Odr Earring",
     ear2="Hattori Earring +1",
     ring1="Gere Ring",
-    ring2="Regal Ring",
+    ring2="Ephramad's Ring",
     -- back=gear.NIN_Crit_DEX_Cape,
     waist="Fotia Belt",
     
@@ -666,7 +666,7 @@ function init_gear_sets()
     ear1="Moonshade Earring",
     ear2="Lugra Earring +1",
     ring1="Gere Ring",
-    ring2="Regal Ring",
+    ring2="Ephramad's Ring",
     -- back=gear.NIN_WSD_STR_Cape,
     waist="Sailfi Belt +1",
     
@@ -689,7 +689,7 @@ function init_gear_sets()
     ear1="Moonshade Earring",
     ear2="Hattori Earring +1",
     ring1="Sroda Ring",
-    ring2="Epaminondas's Ring",
+    ring2="Ephramad's Ring",
     -- back=gear.NIN_WSD_STR_Cape,
     waist="Sailfi Belt +1",
     
