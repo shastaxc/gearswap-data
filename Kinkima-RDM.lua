@@ -73,6 +73,9 @@ function job_setup()
   enfeebling_skill_spells = S{'Distract III', 'Frazzle III', 'Poison II'}
   -- 100% land rate, focus on duration gear
   enfeebling_duration_spells = S{'Dia', 'Dia II', 'Dia III', 'Diaga'}
+  -- Spells that you want to always use high m.acc set
+  enfeebling_default_acc_spells = S{'Bind', 'Break', 'Dispel', 'Dispelga', 'Distract', 'Distract II', 'Frazzle',
+      'Frazzle II', 'Gravity', 'Gravity II', 'Silence', 'Impact'}
   -- Spells that require high/uncapped enhancing magic skill
   enhancing_skill_spells = S{'Temper', 'Temper II', 'Enfire', 'Enfire II', 'Enblizzard', 'Enblizzard II', 'Enaero',
       'Enaero II', 'Enstone', 'Enstone II', 'Enthunder', 'Enthunder II', 'Enwater', 'Enwater II'}
@@ -222,7 +225,7 @@ function init_gear_sets()
 
   sets.precast.FC.Dispelga = set_combine(sets.precast.FC, {
     main="Daybreak",
-    sub="Ammurapi Shield",
+    sub={name="Ammurapi Shield", priority=1},
   })
 
 
@@ -1110,7 +1113,7 @@ function init_gear_sets()
 
   sets.midcast.Dispelga = set_combine(sets.midcast.INTEnfeeblesAcc, {
     main="Daybreak",
-    sub="Ammurapi Shield",
+    sub={name="Ammurapi Shield", priority=1},
   })
 
   -- Dark magic options:
@@ -1819,6 +1822,8 @@ function job_pretarget(spell, action, spellMap, eventArgs)
     or (spell.target.type == 'MONSTER' and not spell.targets.Enemy)
     or (spell.target.type == 'SELF' and not spell.targets.Self)
     or (spell.target.type == 'PLAYER' and not (spell.targets.Player or spell.targets.Ally or spell.targets.Party))
+    or (spell.target.hpp and spell.target.hpp > 0 and spell.targets.Corpse)
+    or (spell.target.hpp and spell.target.hpp == 0 and not spell.targets.Corpse)
   ) then
     local new_target
     if spell.targets.Enemy then
@@ -1827,7 +1832,7 @@ function job_pretarget(spell, action, spellMap, eventArgs)
     if spell.targets.Self then
       new_target = '<me>'
     end
-    if spell.targets.Party then
+    if spell.targets.Party or spell.targets.Corpse then
       new_target = '<stpc>'
     end
     -- Cancel current spell and reissue command with new target
@@ -1865,7 +1870,7 @@ end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
   -- Always put this last in job_post_precast
-  if in_battle_mode() then
+  if in_battle_mode() and spell.english ~= 'Dispelga' then
     -- Prevent swapping main/sub weapons
     equip({main="", sub=""})
     silibs.prevent_ammo_tp_loss()
@@ -1910,7 +1915,7 @@ function job_midcast(spell, action, spellMap, eventArgs)
               or enfeebling_duration_spells:contains(spell.english)
               or (spell.english:startswith('Sleep') and state.SleepMode.value == 'MaxDuration') then
                 selected_set = stat..'EnfeeblesDuration'
-          elseif not state.Buff.Stymie and state.CastingMode.value == 'Resistant' then
+          elseif not state.Buff.Stymie and (state.CastingMode.value == 'Resistant' or enfeebling_default_acc_spells:contains(spell.english)) then
             selected_set = stat..'EnfeeblesAcc'
           else
             selected_set = stat..'Enfeebles'
@@ -2000,7 +2005,7 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
   end
   
   -- Always put this last in job_post_midcast
-  if in_battle_mode() then
+  if in_battle_mode() and spell.english ~= 'Dispelga' then
     -- Prevent swapping main/sub weapons
     equip({main="", sub=""})
     silibs.prevent_ammo_tp_loss()
@@ -2023,7 +2028,9 @@ function job_aftercast(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
 
   if not spell.interrupted then
-    if spell.skill == 'Enfeebling Magic' then
+    if in_battle_mode() and spell.english == 'Dispelga' then
+      equip(select_weapons())
+    elseif spell.skill == 'Enfeebling Magic' then
       set_enfeeble_timer(spell)
     elseif spell.english == 'Light Arts' then
       state.Buff['Light Arts'] = true
