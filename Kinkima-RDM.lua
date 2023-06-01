@@ -1814,26 +1814,26 @@ end
 
 function job_pretarget(spell, action, spellMap, eventArgs)
   -- If missing a target, or targeting an invalid target, switch target to <me>, <stpc>, or <stnpc> as appropriate
-  -- if spell.action_type == 'Magic' and (
-  --   (spell.target.raw == '<t>' and not spell.target.type)
-  --   or (not spell.targets.Enemy and spell.target.type == 'MONSTER')
-  --   or (not spell.targets.Self and spell.target.type == 'SELF')
-  --   or (not spell.targets.Player and spell.target.type == 'PLAYER')
-  -- ) then
-  --   local new_target
-  --   if spell.targets.Enemy then
-  --     new_target = '<stnpc>'
-  --   end
-  --   if spell.targets.Self then
-  --     new_target = '<me>'
-  --   end
-  --   if spell.targets.Party then
-  --     new_target = '<stpc>'
-  --   end
-  --   -- Cancel current spell and reissue command with new target
-  --   send_command('@input /ma "'..spell.english..'" '..new_target)
-  --   eventArgs.cancel = true
-  -- end
+  if spell.action_type == 'Magic' and (
+    (spell.target.raw == '<t>' and not spell.target.type)
+    or (spell.target.type == 'MONSTER' and not spell.targets.Enemy)
+    or (spell.target.type == 'SELF' and not spell.targets.Self)
+    or (spell.target.type == 'PLAYER' and not (spell.targets.Player or spell.targets.Ally or spell.targets.Party))
+  ) then
+    local new_target
+    if spell.targets.Enemy then
+      new_target = '<stnpc>'
+    end
+    if spell.targets.Self then
+      new_target = '<me>'
+    end
+    if spell.targets.Party then
+      new_target = '<stpc>'
+    end
+    -- Cancel current spell and reissue command with new target
+    send_command('@input /ma "'..spell.english..'" '..new_target)
+    eventArgs.cancel = true
+  end
 end
 
 function job_precast(spell, action, spellMap, eventArgs)
