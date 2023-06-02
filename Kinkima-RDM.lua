@@ -2356,6 +2356,8 @@ function job_self_command(cmdParams, eventArgs)
       cycle_weapons('back')
     elseif cmdParams[2] == 'current' then
       cycle_weapons('current')
+    elseif cmdParams[2] == 'set' and cmdParams[3] then
+      cycle_weapons('set', cmdParams[3])
     elseif cmdParams[2] == 'reset' then
       cycle_weapons('reset')
     end
@@ -2364,6 +2366,8 @@ function job_self_command(cmdParams, eventArgs)
       cycle_toy_weapons('forward')
     elseif cmdParams[2] == 'cycleback' then
       cycle_toy_weapons('back')
+    elseif cmdParams[2] == 'set' and cmdParams[3] then
+      cycle_toy_weapons('set', cmdParams[3])
     elseif cmdParams[2] == 'reset' then
       cycle_toy_weapons('reset')
     end
@@ -2453,12 +2457,14 @@ function handle_strategems(cmdParams)
   end
 end
 
-function cycle_weapons(cycle_dir)
+function cycle_weapons(cycle_dir, set_name)
   if cycle_dir == 'forward' then
     state.WeaponSet:cycle()
   elseif cycle_dir == 'back' then
     state.WeaponSet:cycleback()
-  elseif cycle_dir == 'reset' then
+  elseif cycle_dir == 'set' then
+    state.WeaponSet:set(set_name)
+  else
     state.WeaponSet:reset()
   end
 
@@ -2466,11 +2472,13 @@ function cycle_weapons(cycle_dir)
   equip(select_weapons())
 end
 
-function cycle_toy_weapons(cycle_dir)
+function cycle_toy_weapons(cycle_dir, set_name)
   if cycle_dir == 'forward' then
     state.ToyWeapons:cycle()
   elseif cycle_dir == 'back' then
     state.ToyWeapons:cycleback()
+  elseif cycle_dir == 'set' then
+    state.ToyWeapons:set(set_name)
   else
     state.ToyWeapons:reset()
   end
