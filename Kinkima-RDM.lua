@@ -44,7 +44,7 @@ function job_setup()
   state.SleepMode = M{['description']='Sleep Mode', 'Normal', 'MaxDuration'}
   state.NM = M(false, 'NM?')
   state.CP = M(false, 'Capacity Points Mode')
-  state.WeaponSet = M{['description']='Weapon Set', 'Casting', 'Savage Blade', 'Seraph Blade', 'Black Halo', 'Enspell', 'Cleaving'}
+  state.WeaponSet = M{['description']='Weapon Set', 'Casting', 'Savage', 'SavageAcc', 'Enspell', 'BlackHalo', 'BlackHaloAcc', 'Seraph', 'Cleaving', 'CleavingAcc'}
   state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger',
       'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
   state.ElementalMode = M{['description'] = 'Elemental Mode', 'Fire','Ice','Wind','Earth','Lightning','Water','Light','Dark'}
@@ -1758,36 +1758,22 @@ function init_gear_sets()
 
   --Weapon sets
   sets.WeaponSet = {}
-  sets.WeaponSet['Savage Blade'] = {
+  sets.WeaponSet['Savage'] = {
     main="Naegling",
     sub="Ammurapi Shield",
   }
-  sets.WeaponSet['Savage Blade'].DW = {
+  sets.WeaponSet['Savage'].DW = {
     main="Naegling",
     sub="Tauret",
     -- sub="Thibron",
   }
-  sets.WeaponSet['Seraph Blade'] = {
+  sets.WeaponSet['SavageAcc'] = {
     main="Naegling",
-    sub="Culminus",
-    -- main="Crocea Mors",
-  }
-  sets.WeaponSet['Seraph Blade'].DW = {
-    main="Naegling",
-    sub="Daybreak",
-    -- main="Crocea Mors",
-  }
-  sets.WeaponSet['Black Halo'] = {
-    main="Maxentius",
     sub="Ammurapi Shield",
   }
-  sets.WeaponSet['Black Halo'].DW = {
-    main="Maxentius",
-    sub="Naegling",
-    -- sub="Thibron",
-  }
-  sets.WeaponSet['Asuran Fists'] = {
-    -- main="Karambit",
+  sets.WeaponSet['SavageAcc'].DW = {
+    main="Naegling",
+    sub="Tauret",
   }
   sets.WeaponSet['Enspell'] = {
     main="Naegling",
@@ -1800,6 +1786,32 @@ function init_gear_sets()
     -- main="Crocea Mors",
     -- sub="Gleti's Knife",
   }
+  sets.WeaponSet['BlackHalo'] = {
+    main="Maxentius",
+    sub="Ammurapi Shield",
+  }
+  sets.WeaponSet['BlackHalo'].DW = {
+    main="Maxentius",
+    sub="Tauret",
+  }
+  sets.WeaponSet['BlackHaloAcc'] = {
+    main="Maxentius",
+    sub="Ammurapi Shield",
+  }
+  sets.WeaponSet['BlackHaloAcc'].DW = {
+    main="Maxentius",
+    sub="Tauret",
+  }
+  sets.WeaponSet['Seraph'] = {
+    main="Naegling",
+    sub="Culminus",
+    -- main="Crocea Mors",
+  }
+  sets.WeaponSet['Seraph'].DW = {
+    main="Naegling",
+    sub="Daybreak",
+    -- main="Crocea Mors",
+  }
   sets.WeaponSet['Cleaving'] = {
     main="Tauret",
     sub="Culminus",
@@ -1807,6 +1819,17 @@ function init_gear_sets()
   sets.WeaponSet['Cleaving'].DW = {
     main="Tauret",
     sub="Bunzi's Rod",
+  }
+  sets.WeaponSet['CleavingAcc'] = {
+    main="Tauret",
+    sub="Culminus",
+  }
+  sets.WeaponSet['CleavingAcc'].DW = {
+    main="Tauret",
+    sub="Malevolence",
+  }
+  sets.WeaponSet['Asuran Fists'] = {
+    -- main="Karambit",
   }
 
 end
