@@ -1243,7 +1243,7 @@ function job_get_spell_map(spell)
 
   if spell.action_type == 'Magic' then
     if default_spell_map == 'Cure' then
-      if (world.weather_element == 'Light' and not (get_weather_intensity() < 2 and world.day_element == 'Dark'))
+      if (world.weather_element == 'Light' and not (silibs.get_weather_intensity() < 2 and world.day_element == 'Dark'))
           or (world.day_element == 'Light' and not world.weather_element == 'Dark') then
         return 'CureWeather'
       else
@@ -1472,7 +1472,7 @@ function handle_siphoning()
   elseif player.sub_job == 'SCH' and world.weather_element ~= 'None' then
     -- We can override single-intensity weather; leave double weather alone, since even if
     -- it's partially countered by the day, it's not worth changing.
-    if get_weather_intensity() == 1 then
+    if silibs.get_weather_intensity() == 1 then
       -- If current weather is weak to the current day, it cancels the benefits for
       -- siphon.  Change it to the day's weather if possible (+0 to +20%), or any non-weak
       -- weather if not.
@@ -1488,7 +1488,7 @@ function handle_siphoning()
   -- If we decided to use a storm, set that as the spirit element to cast.
   if stormElementToUse then
     siphonElement = stormElementToUse
-  elseif world.weather_element ~= 'None' and (get_weather_intensity() == 2 or world.weather_element ~= silibs.elements.weak_to[world.day_element]) then
+  elseif world.weather_element ~= 'None' and (silibs.get_weather_intensity() == 2 or world.weather_element ~= silibs.elements.weak_to[world.day_element]) then
     siphonElement = world.weather_element
   else
     siphonElement = world.day_element

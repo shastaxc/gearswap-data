@@ -1917,7 +1917,7 @@ function job_midcast(spell, action, spellMap, eventArgs)
   if spell.action_type == 'Magic' then
     local selected_set
     if spellMap == 'Cure' or spellMap == 'Curaga' then
-      if (world.weather_element == 'Light' and not (get_weather_intensity() < 2 and world.day_element == 'Dark'))
+      if (world.weather_element == 'Light' and not (silibs.get_weather_intensity() < 2 and world.day_element == 'Dark'))
           or (world.day_element == 'Light' and not world.weather_element == 'Dark') then
         selected_set = 'CureWeather'
       else
