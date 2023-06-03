@@ -157,6 +157,7 @@ function job_setup()
 
   gear.RAbullet = "Chrono Bullet"
   gear.RAccbullet = "Devastating Bullet"
+  gear.MAccbullet = "Devastating Bullet"
   gear.WSbullet = "Chrono Bullet"
   gear.MAbullet = "Living Bullet"
   gear.QDbullet = "Hauksbok Bullet"
@@ -1005,7 +1006,7 @@ function init_gear_sets()
 
   -- Full MAcc (to land debuff effects)
   sets.midcast.CorsairShot['Light Shot'] = {
-    ammo=gear.MAbullet,               -- __, 25, __/__
+    ammo=gear.MAccbullet,             -- __, 35, __/__
     head="Chasseur's Tricorne +2",    -- 35, 51,  9/ 9
     body="Chasseur's Frac +2",        -- 44, 54, 12/12
     hands="Chasseur's Gants +2",      -- 21, 52, __/__
@@ -1015,7 +1016,7 @@ function init_gear_sets()
     ear1="Hermetic Earring",          -- __,  7, __/__
     ear2="Dignitary's Earring",       -- __, 10, __/__
     ring1="Regal Ring",               -- 10, __, __/__
-    ring2="Stikini Ring +1",          -- __, 11, __/__
+    ring2="Metamorph Ring +1",        -- __, 15, __/__
     back=gear.COR_WS1_Cape,           -- 30, 20, 10/__
     waist="K. Kachina Belt +1",       --  8, 20, __/__
     -- AF Set Effect                  -- __, __, __/__
@@ -1023,13 +1024,12 @@ function init_gear_sets()
     -- 252 AGI, 383 M.Acc, 47PDT/37MDT
 
     -- head="Laksamana's Tricorne +3",-- 39, 56, __/__; Quick Draw+20
-    -- hands="Laksamana's Gants +3",  -- 17, 57, __/__
+    -- body="Chasseur's Frac +3",     -- 49, 64, 13/13
+    -- hands="Chasseur's Gants +3",   -- 26, 62, __/__
     -- feet="Laksamana's Bottes +3",  -- 49, 52, __/__; Quick Draw+20
     -- neck="Commodore Charm +2",     -- 15, 25, __/__
     -- ear1="Crepuscular Earring",    -- __, 10, __/__
-    -- AF Set Effect                  -- __, 45, __/__
-    -- M.Acc from Quick Draw+ stat    -- __, 40, __/__
-    -- 255 AGI, 488 M.Acc, 34PDT/24MDT
+    -- 269 AGI, 502 M.Acc, 35 PDT/25 MDT
   }
   sets.midcast.CorsairShot['Dark Shot'] = set_combine(sets.midcast.CorsairShot['Light Shot'], {})
 
