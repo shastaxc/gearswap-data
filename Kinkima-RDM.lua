@@ -1495,23 +1495,22 @@ function init_gear_sets()
     neck="Anu Torque",                -- __,  7, __ <__, __, __> [__/__, ___]
     ear1="Dedition Earring",          -- __,  8,-10 <__, __, __> [__/__, ___]
     ear2="Sherida Earring",           -- __,  5, __ < 5, __, __> [__/__, ___]
-    ring1="Epona's Ring",             -- __, __, __ < 3,  3, __> [__/__, ___]
+    ring1="Chirich Ring +1",          -- __,  6, 10 <__, __, __> [__/__, ___]
     ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
     back=gear.RDM_STP_Cape,           -- __, 10, 30 <__, __, __> [10/__, ___]
     waist="Sailfi Belt +1",           -- __, __, __ < 5,  2, __> [__/__, ___]
-    -- 0 DW, 83 STP, 275 Acc <16 DA, 5 TA, 3 QA> [52 PDT/42 MDT, 674 M.Eva]
+    -- 0 DW, 89 STP, 285 Acc <13 DA, 2 TA, 3 QA> [52 PDT/42 MDT, 674 M.Eva]
   }
   sets.engaged.MidAcc = set_combine(sets.engaged, {
     -- neck="Combatant's Torque",     -- __,  4, __ <__, __, __> [__/__, ___]; Combat skills+15
     -- ear1="Telos Earring",          -- __,  5, 10 < 1, __, __> [__/__, ___]
     ear2="Cessance Earring",          -- __,  3,  6 < 3, __, __> [__/__, ___]
     -- waist="Kentarch Belt +1",      -- __,  5, 14 < 3, __, __> [__/__, ___]
-    -- 0 DW, 80 STP, 315 Acc <13 DA, 3 TA, 3 QA> [52 PDT/42 MDT, 674 M.Eva]
+    -- 0 DW, 86 STP, 325 Acc <10 DA, 0 TA, 3 QA> [52 PDT/42 MDT, 674 M.Eva]
   })
   sets.engaged.HighAcc = set_combine(sets.engaged, {
     -- ammo="Voluspa Tathlum",        -- __, __, 10 <__, __, __> [__/__, ___]
     ear2="Dignitary's Earring",       -- __,  3, 10 <__, __, __> [__/__, ___]
-    ring1="Chirich Ring +1",          -- __,  6, 10 <__, __, __> [__/__, ___]
     waist="Olseni Belt",              -- __,  3, 20 <__, __, __> [__/__, ___]
     -- 0 DW, 81 STP, 345 Acc <1 DA, 0 TA, 3 QA> [52 PDT/42 MDT, 674 M.Eva]
   })
@@ -1528,22 +1527,21 @@ function init_gear_sets()
     neck="Anu Torque",                -- __,  7, __ <__, __, __> [__/__, ___]
     ear1="Dedition Earring",          -- __,  8,-10 <__, __, __> [__/__, ___]
     ear2="Eabani Earring",            --  4, __, __ <__, __, __> [__/__,   8]
-    ring1="Epona's Ring",             -- __, __, __ < 3,  3, __> [__/__, ___]
+    ring1="Chirich Ring +1",          -- __,  6, 10 <__, __, __> [__/__, ___]
     ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
     back=gear.RDM_STP_Cape,           -- __, 10, 30 <__, __, __> [10/__, ___]
     waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
-    -- 11 DW, 82 STP, 285 Acc <6 DA, 3 TA, 3 QA> [52 PDT/42 MDT, 682 M.Eva]
+    -- 11 DW, 88 STP, 295 Acc <3 DA, 0 TA, 3 QA> [52 PDT/42 MDT, 682 M.Eva]
   }
   sets.engaged.LowDW.MidAcc = set_combine(sets.engaged.LowDW, {
     -- ammo="Voluspa Tathlum",        -- __, __, 10 <__, __, __> [__/__, ___]
     -- neck="Lissome Necklace",       -- __,  4,  8 < 1, __, __> [__/__, ___]
     -- ear1="Telos Earring",          -- __,  5, 10 < 1, __, __> [__/__, ___]
-    -- 11 DW, 73 STP, 323 Acc <5 DA, 3 TA, 3 QA> [52 PDT/42 MDT, 682 M.Eva]
+    -- 11 DW, 79 STP, 333 Acc <2 DA, 0 TA, 3 QA> [52 PDT/42 MDT, 682 M.Eva]
   })
   sets.engaged.LowDW.HighAcc = set_combine(sets.engaged.LowDW.MidAcc, {
     -- neck="Combatant's Torque",     -- __,  4, __ <__, __, __> [__/__, ___]; Combat skills+15
     ear2="Dignitary's Earring",       -- __,  3, 10 <__, __, __> [__/__, ___]
-    ring1="Chirich Ring +1",          -- __,  6, 10 <__, __, __> [__/__, ___]
     back=gear.RDM_DW_Cape,            -- 10, __, 30 <__, __, __> [10/__, ___]
     waist="Olseni Belt",              -- __,  3, 20 <__, __, __> [__/__, ___]
     -- 10 DW, 71 STP, 345 Acc <1 DA, 0 TA, 3 QA> [52 PDT/42 MDT, 674 M.Eva]
@@ -1561,22 +1559,21 @@ function init_gear_sets()
     neck="Anu Torque",                -- __,  7, __ <__, __, __> [__/__, ___]
     ear1="Dedition Earring",          -- __,  8,-10 <__, __, __> [__/__, ___]
     ear2="Sherida Earring",           -- __,  5, __ < 5, __, __> [__/__, ___]
-    ring1="Epona's Ring",             -- __, __, __ < 3,  3, __> [__/__, ___]
+    ring1="Chirich Ring +1",          -- __,  6, 10 <__, __, __> [__/__, ___]
     ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
     back=gear.RDM_DW_Cape,            -- 10, __, 30 <__, __, __> [10/__, ___]
     waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
-    -- 17 DW, 77 STP, 285 Acc <11 DA, 3 TA, 3 QA> [52 PDT/42 MDT, 674 M.Eva]
+    -- 17 DW, 83 STP, 295 Acc <8 DA, 0 TA, 3 QA> [52 PDT/42 MDT, 674 M.Eva]
   }
   sets.engaged.MidDW.MidAcc = set_combine(sets.engaged.MidDW.MidAcc, {
     -- ammo="Voluspa Tathlum",        -- __, __, 10 <__, __, __> [__/__, ___]
     -- neck="Lissome Necklace",       -- __,  4,  8 < 1, __, __> [__/__, ___]
     -- ear1="Telos Earring",          -- __,  5, 10 < 1, __, __> [__/__, ___]
-    -- 17 DW, 68 STP, 323 Acc <10 DA, 3 TA, 3 QA> [52 PDT/42 MDT, 674 M.Eva]
+    -- 17 DW, 74 STP, 333 Acc <7 DA, 0 TA, 3 QA> [52 PDT/42 MDT, 674 M.Eva]
   })
   sets.engaged.MidDW.HighAcc = set_combine(sets.engaged.MidDW.HighAcc, {
     -- neck="Combatant's Torque",     -- __,  4, __ <__, __, __> [__/__, ___]; Combat skills+15
     ear2="Dignitary's Earring",       -- __,  3, 10 <__, __, __> [__/__, ___]
-    ring1="Chirich Ring +1",          -- __,  6, 10 <__, __, __> [__/__, ___]
     -- 17 DW, 72 STP, 335 Acc <1 DA, 0 TA, 3 QA> [52 PDT/42 MDT, 674 M.Eva]
   })
 
@@ -1690,11 +1687,11 @@ function init_gear_sets()
     -- ear1="Lycopodium Earring",     -- __, __, __ <__, __, __> [__/__, ___] ( 1,  2, __)
     ear2="Sherida Earring",           -- __,  5, __ < 5, __, __> [__/__, ___] (__, __, __)
     -- ring1="Hetairoi Ring",         -- __, __, __ <__,  2, __> [__/__, ___] (__, __, __)
-    ring2="Epona's Ring",             -- __, __, __ < 3,  3, __> [__/__, ___] (__, __, __)
+    ring2="Chirich Ring +1",          -- __,  6, 10 <__, __, __> [__/__, ___] (__, __, __)
     back=gear.RDM_STP_Cape,           -- __, 10, 30 <__, __, __> [10/__, ___] (__, __, __)
     waist="Sailfi Belt +1",           -- __, __, __ < 5,  2, __> [__/__, ___] (__, __, __)
     -- Traits/merits/gifts            -- __, __, __ <__, __, __> [__/__, ___] (90,  7, 36)
-    -- 0 DW, 23 STP, 390 Acc <24 DA, 13 TA, 3 QA> [49 PDT/39 MDT, 596 M.Eva] (508 M.Acc, 26 Enspell Dmg, 36 Enh Skill)
+    -- 0 DW, 29 STP, 400 Acc <21 DA, 10 TA, 3 QA> [49 PDT/39 MDT, 596 M.Eva] (508 M.Acc, 26 Enspell Dmg, 36 Enh Skill)
 
     -- ear2="Lethargy Earring +2",    -- __, __, 20 < 8, __, __> [__/__, ___] (20, __, __)
     -- waist="Orpheus's Sash",        -- __, __, __ <__, __, __> [__/__, ___] (__, __, __); Dmg+15%
