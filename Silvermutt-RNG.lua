@@ -70,6 +70,7 @@ function job_setup()
   silibs.enable_equip_loop()
   silibs.enable_haste_info()
   silibs.enable_elemental_belt_handling(has_obi, has_orpheus)
+  silibs.enable_snapshot_auto_equip()
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.HybridMode:options('Normal', 'HeavyDef')
@@ -169,7 +170,6 @@ function user_setup()
   silibs.user_setup_hook()
   ----------- Non-silibs content goes below this line -----------
 
-  flurry = nil -- Do not modify
   current_dp_type = nil -- Do not modify
   locked_waist = false -- Do not modify
 
@@ -250,9 +250,11 @@ function init_gear_sets()
     ring1="Weatherspoon Ring", --5
   })
   
-  -- Possible flurry tiers: 0, 10, 15, 25, 30, 40, 50, 55, 65
+  -- Snapshot set names should only include the amount of Snapshot from gear (excluding weapons)
   -- Snapshot (70% cap) > Rapid Shot (99% cap)
-  sets.precast.RA = {
+  
+  -- Account for having no flurry buffs
+  sets.Snapshot61 = {
     head="Orion Beret +3",          -- __/18 [__/__,  73] {__}
     body="Oshosi Vest +1",          -- 14/__ [__/__, 106] {__}
     hands=gear.Carmine_D_hands,     --  8/11 [__/__,  43] {__}
@@ -268,7 +270,8 @@ function init_gear_sets()
     -- Merits/Traits/Gifts             10/35 [__/__, ___] {10}
     -- 71 Snapshot / 77 Rapid Shot [28 PDT/15 MDT, 386 M.Eva] {12% Velocity Shot}
   }
-  sets.precast.RA.Flurry10 = {
+  -- Account for having Gastra on
+  sets.Snapshot51 = {
     head="Orion Beret +3",          -- __/18 [__/__,  73] {__}
     body="Oshosi Vest +1",          -- 14/__ [__/__, 106] {__}
     hands=gear.Carmine_D_hands,     --  8/11 [__/__,  43] {__}
@@ -285,7 +288,8 @@ function init_gear_sets()
     -- Flurry (weapons/magic)          10/__
     -- 71 Snapshot / 87 Rapid Shot [28 PDT/15 MDT, 386 M.Eva] {12% Velocity Shot}
   }
-  sets.precast.RA.Flurry15 = {
+  -- Account for having Flurry 1 buff
+  sets.Snapshot47 = {
     head="Orion Beret +3",          -- __/18 [__/__,  73] {__}
     body="Arcadian Jerkin +3",      -- __/16 [__/__, 106] {__}
     hands=gear.Carmine_D_hands,     --  8/11 [__/__,  43] {__}
@@ -306,7 +310,8 @@ function init_gear_sets()
     -- waist="Yemaya Belt",         -- __/ 5 [__/__, ___] {__}
     -- 70 Snapshot / 98 Rapid Shot [28 PDT/15 MDT, 386 M.Eva] {12% Velocity Shot}
   }
-  sets.precast.RA.Flurry25 = {
+  -- Account for having Embrava buff
+  sets.Snapshot37 = {
     head="Orion Beret +3",          -- __/18 [__/__,  73] {__}
     body="Arcadian Jerkin +3",      -- __/16 [__/__, 106] {__}
     hands=gear.Carmine_D_hands,     --  8/11 [__/__,  43] {__}
@@ -323,7 +328,8 @@ function init_gear_sets()
     -- Flurry (weapons/magic)          25/__
     -- 72 Snapshot / 103 Rapid Shot [25 PDT/15 MDT, 406 M.Eva] {12% Velocity Shot}
   }
-  sets.precast.RA.Flurry30 = {
+  -- Account for having Flurry 2 buff
+  sets.Snapshot31 = {
     head="Orion Beret +3",          -- __/18 [__/__,  73] {__}
     body="Arcadian Jerkin +3",      -- __/16 [__/__, 106] {__}
     hands=gear.Carmine_D_hands,     --  8/11 [__/__,  43] {__}
@@ -340,7 +346,8 @@ function init_gear_sets()
     -- Flurry (weapons/magic)          30/__
     -- 71 Snapshot / 103 Rapid Shot [38 PDT/20 MDT, 406 M.Eva] {12% Velocity Shot}
   }
-  sets.precast.RA.Flurry40 = {
+  -- Account for having Flurry 1 + Embrava buff
+  sets.Snapshot27 = {
     head="Orion Beret +3",          -- __/18 [__/__,  73] {__}
     body="Arcadian Jerkin +3",      -- __/16 [__/__, 106] {__}
     hands=gear.Carmine_D_hands,     --  8/11 [__/__,  43] {__}
@@ -357,12 +364,15 @@ function init_gear_sets()
     -- Flurry (weapons/magic)          40/__
     -- 77 Snapshot / 99 Rapid Shot [25 PDT/15 MDT, 406 M.Eva] {12% Velocity Shot}
   }
-  sets.precast.RA.Flurry50 = set_combine(sets.precast.RA.Flurry40, {})
-  sets.precast.RA.Flurry55 = set_combine(sets.precast.RA.Flurry40, {})
-  sets.precast.RA.Flurry65 = set_combine(sets.precast.RA.Flurry40, {})
+  -- Higher combos of buffs don't matter because we already have a bis set
 
+  
+  -- Snapshot set names should only include the amount of Snapshot from gear (excluding weapons)
   -- Snapshot (70% cap) > Velocity Shot (no cap) > Rapid Shot (99% cap)
-  sets.precast.RA.Velocity = {
+
+  sets.Velocity = {}
+  -- Account for having no buffs
+  sets.Velocity.Snapshot62 = {
     head=gear.Taeon_RA_head,        -- 10/__ [__/__,  53] {__}
     body="Amini Caban +2",          -- __/__ [__/__, 109] { 9}
     hands=gear.Carmine_D_hands,     --  8/11 [__/__,  43] {__}
@@ -384,7 +394,8 @@ function init_gear_sets()
     -- waist="Yemaya Belt",         -- __/ 5 [__/__, ___] {__}
     -- 70 Snapshot / 51 Rapid Shot [28 PDT/15 MDT, 393 M.Eva] {38% Velocity Shot}
   }
-  sets.precast.RA.Flurry10.Velocity = {
+  -- Account for having Gastra on
+  sets.Velocity.Snapshot52 = {
     head="Orion Beret +3",          -- __/18 [__/__,  73] {__}
     body="Amini Caban +2",          -- __/__ [__/__, 109] { 9}
     hands=gear.Carmine_D_hands,     --  8/11 [__/__,  43] {__}
@@ -407,7 +418,8 @@ function init_gear_sets()
     -- waist="Yemaya Belt",         -- __/ 5 [__/__, ___] {__}
     -- 70 Snapshot / 69 Rapid Shot [28 PDT/15 MDT, 413 M.Eva] {38% Velocity Shot}
   }
-  sets.precast.RA.Flurry15.Velocity = {
+  -- Account for having Flurry 1 buff
+  sets.Velocity.Snapshot47 = {
     head="Orion Beret +3",          -- __/18 [__/__,  73] {__}
     body="Amini Caban +2",          -- __/__ [__/__, 109] { 9}
     hands=gear.Carmine_D_hands,     --  8/11 [__/__,  43] {__}
@@ -430,7 +442,8 @@ function init_gear_sets()
     -- waist="Yemaya Belt",         -- __/ 5 [__/__, ___] {__}
     -- 70 Snapshot / 82 Rapid Shot [28 PDT/15 MDT, 399 M.Eva] {38% Velocity Shot}
   }
-  sets.precast.RA.Flurry25.Velocity = {
+  -- Account for having Embrava buff
+  sets.Velocity.Snapshot37 = {
     head="Orion Beret +3",          -- __/18 [__/__,  73] {__}
     body="Amini Caban +2",          -- __/__ [__/__, 109] { 9}
     hands=gear.Carmine_D_hands,     --  8/11 [__/__,  43] {__}
@@ -453,7 +466,8 @@ function init_gear_sets()
     -- waist="Yemaya Belt",         -- __/ 5 [__/__, ___] {__}
     -- 70 Snapshot / 92 Rapid Shot [25 PDT/15 MDT, 419 M.Eva] {38% Velocity Shot}
   }
-  sets.precast.RA.Flurry30.Velocity = {
+  -- Account for having Flurry 2 buff
+  sets.Velocity.Snapshot34 = {
     head="Orion Beret +3",          -- __/18 [__/__,  73] {__}
     body="Amini Caban +2",          -- __/__ [__/__, 109] { 9}
     hands=gear.Carmine_D_hands,     --  8/11 [__/__,  43] {__}
@@ -475,7 +489,8 @@ function init_gear_sets()
     -- neck="Scout's Gorget +2",    --  4/__ [__/__, ___] {__}
     -- 75 Snapshot / 92 Rapid Shot [25 PDT/15 MDT, 419 M.Eva] {38% Velocity Shot}
   }
-  sets.precast.RA.Flurry40.Velocity = {
+  -- Account for having Flurry 1 + Embrava buff
+  sets.Velocity.Snapshot24 = {
     head="Orion Beret +3",          -- __/18 [__/__,  73] {__}
     body="Amini Caban +2",          -- __/__ [__/__, 109] { 9}
     hands=gear.Carmine_D_hands,     --  8/11 [__/__,  43] {__}
@@ -497,9 +512,7 @@ function init_gear_sets()
     -- neck="Scout's Gorget +2",    --  4/__ [__/__, ___] {__}
     -- 75 Snapshot / 98 Rapid Shot [25 PDT/15 MDT, 413 M.Eva] {38% Velocity Shot}
   }
-  sets.precast.RA.Flurry50.Velocity = set_combine(sets.precast.RA.Flurry40.Velocity, {})
-  sets.precast.RA.Flurry55.Velocity = set_combine(sets.precast.RA.Flurry40.Velocity, {})
-  sets.precast.RA.Flurry65.Velocity = set_combine(sets.precast.RA.Flurry40.Velocity, {})
+  -- Higher combos of buffs don't matter because we already have a bis set
 
 
 
@@ -1493,44 +1506,6 @@ function job_precast(spell, action, spellMap, eventArgs)
   silibs.precast_hook(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
 
-  if spell.action_type == 'Ranged Attack' then
-    -- Determine weapon flurry
-    local totalFlurry = 0
-    if player.equipment.range == 'Gastraphetes' then
-      totalFlurry = totalFlurry + 10
-    end
-
-    -- Determine magic flurry
-    if flurry == 1 then
-      totalFlurry = totalFlurry + 15
-    elseif flurry == 2 then
-      totalFlurry = totalFlurry + 30
-    end
-
-    if buffactive['Embrava'] then
-      totalFlurry = totalFlurry + 25
-    end
-
-    -- Possible results of total flurry: 0, 10, 15, 25, 30, 40, 50, 55, 65
-    if not buffactive['Velocity Shot'] then
-      if totalFlurry == 0 then
-        equip(sets.precast.RA)
-        eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
-      else
-        equip(sets.precast.RA['Flurry'..tostring(totalFlurry)])
-        eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
-      end
-    else
-      if totalFlurry == 0 then
-        equip(sets.precast.RA.Velocity)
-        eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
-      else
-        equip(sets.precast.RA['Flurry'..tostring(totalFlurry)]['Velocity'])
-        eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
-      end
-    end
-  end
-
   -- Check that proper ammo is available and equip it.
   silibs.equip_ammo(spell, action, spellMap, eventArgs)
 end
@@ -1614,16 +1589,6 @@ end
 -- buff == buff gained or lost
 -- gain == true if the buff was gained, false if it was lost.
 function job_buff_change(buff,gain)
--- If we gain or lose any flurry buffs, adjust gear.
-  if S{'flurry'}:contains(buff:lower()) then
-    if not gain then
-      flurry = nil
-    end
-    if not midaction() then
-      handle_equipping_gear(player.status)
-    end
-  end
-
   if buff == "doom" then
     if gain then
       send_command('@input /p Doomed.')
@@ -1881,29 +1846,6 @@ function update_idle_groups()
     end
   end
 end
-
---Read incoming packet to differentiate between Haste/Flurry I and II
-windower.raw_register_event('action', function(act)
-  --check if you are a target of spell
-  local actionTargets = act.targets
-  playerId = windower.ffxi.get_player().id
-  isTarget = false
-  for _, target in ipairs(actionTargets) do
-    if playerId == target.id then
-      isTarget = true
-    end
-  end
-  if isTarget == true then
-    if act.category == 4 then
-      local param = act.param
-      if param == 845 and flurry ~= 2 then
-        flurry = 1
-      elseif param == 846 then
-        flurry = 2
-      end
-    end
-  end
-end)
 
 function determine_haste_group()
   classes.CustomMeleeGroups:clear()

@@ -4,7 +4,6 @@ include('reorganizer-lib')
 res = include('resources')
 packets = include('packets')
 silibs = include('SilverLibs')
-inspect = include('inspect')
 
 has_obi = true -- Change if you do or don't have Hachirin-no-Obi
 has_orpheus = false -- Change if you do or don't have Orpheus's Sash

@@ -129,6 +129,7 @@ function job_setup()
   silibs.enable_equip_loop()
   silibs.enable_custom_roll_text()
   silibs.enable_elemental_belt_handling(has_obi, has_orpheus)
+  silibs.enable_snapshot_auto_equip()
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.HybridMode:options('HeavyDef', 'Safe', 'SubtleBlow', 'Normal')
@@ -308,8 +309,11 @@ function init_gear_sets()
   ---------------------------------------- Ranged Sets -------------------------------------------
   ------------------------------------------------------------------------------------------------
 
+  -- Snapshot set names should only include the amount of Snapshot from gear (excluding weapons)
   -- Snapshot (70% cap) > Rapid Shot (99% cap)
-  sets.precast.RA = {
+
+  -- Account for having no flurry buffs
+  sets.Snapshot58 = {
     ammo=gear.RAbullet,
     head="Chasseur's Tricorne +2",    -- __/16 [ 9/ 9,  99]
     body="Oshosi Vest +1",            -- 14/__ [__/__, 106]
@@ -330,8 +334,8 @@ function init_gear_sets()
     -- neck="Commodore Charm +2",     --  4/__ [__/__, ___]
     -- 69 Snapshot / 77 Rapid Shot [38 PDT/25 MDT, 402 M.Eva]
   }
-  -- Snapshot (70% cap) > Rapid Shot (99% cap)
-  sets.precast.RA.Flurry1 = set_combine(sets.precast.RA, {
+  -- Account for having flurry 1 buff
+  sets.Snapshot46 = {
     ammo=gear.RAbullet,
     head="Chasseur's Tricorne +2",    -- __/16 [ 9/ 9,  99]
     body="Laksamana's Frac +3",       -- __/20 [__/__,  84]
@@ -351,9 +355,32 @@ function init_gear_sets()
     
     -- head="Chasseur's Tricorne +3", -- __/18 [10/10, 109]
     -- 71 Snapshot / 86 Rapid Shot [44 PDT/31 MDT, 394 M.Eva]
-  })
-  -- Snapshot (70% cap) > Rapid Shot (99% cap)
-  sets.precast.RA.Flurry2 = set_combine(sets.precast.RA.Flurry1, {
+  }
+  -- Account for having embrava buff
+  sets.Snapshot34 = {
+    ammo=gear.RAbullet,
+    head="Chasseur's Tricorne +2",    -- __/16 [ 9/ 9,  99]
+    body="Laksamana's Frac +3",       -- __/20 [__/__,  84]
+    hands=gear.Carmine_D_hands,       --  8/11 [__/__,  43]
+    legs=gear.Adhemar_D_legs,         -- 10/13 [__/__,  75]
+    feet=gear.Pursuer_A_feet,         -- __/10 [__/__,  69]
+    neck="Commodore Charm +1",        --  3/__ [__/__, ___]
+    ear1="Genmei Earring",            -- __/__ [ 2/__, ___]
+    ear2="Odnowa Earring +1",         -- __/__ [ 3/ 5, ___]
+    ring1="Crepuscular Ring",         --  3/__ [__/__, ___]
+    ring2="Defending Ring",           -- __/__ [10/10, ___]
+    back=gear.COR_SNP_Cape,           -- 10/__ [10/__, ___]
+    waist="Flume Belt +1",            -- __/__ [ 4/__, ___]
+    -- Merits/Traits/Gifts               10/30
+    -- Embrava                           25/__
+    -- 69 Snapshot / 100 Rapid Shot [38 PDT/24 MDT, 370 M.Eva]
+  
+    -- head="Chasseur's Tricorne +3", -- __/18 [10/10, 109]
+    -- neck="Commodore Charm +2",     --  4/__ [__/__, ___]; +1 also fine
+    -- 70 Snapshot / 102 Rapid Shot [39 PDT/25 MDT, 380 M.Eva]
+  }
+  -- Account for having flurry 2 buff
+  sets.Snapshot31 = {
     ammo=gear.RAbullet,
     head="Chasseur's Tricorne +2",    -- __/16 [ 9/ 9,  99]
     body="Laksamana's Frac +3",       -- __/20 [__/__,  84]
@@ -373,63 +400,17 @@ function init_gear_sets()
     
     -- head="Chasseur's Tricorne +3", -- __/18 [10/10, 109]
     -- neck="Commodore Charm +2",     --  4/__ [__/__, ___]; +1 also fine
-    -- Merits/Traits/Gifts               10/30
-    -- Flurry 2                          30/__
     -- 72 Snapshot / 102 Rapid Shot [46 PDT/24 MDT, 380 M.Eva]
-  })
-  
-  -- Snapshot (70% cap) > Rapid Shot (99% cap)
-  sets.precast.RA.Safe = {
-    ammo=gear.RAbullet,
-    head="Chasseur's Tricorne +2",    -- __/16 [ 9/ 9,  99]
-    body="Oshosi Vest +1",            -- 14/__ [__/__, 106]
-    hands="Lanun Gants +3",           -- 13/__ [__/__,  57]
-    legs=gear.Adhemar_D_legs,         -- 10/13 [__/__,  75]
-    feet="Meg. Jam. +2",              -- 10/__ [ 3/__,  69]
-    neck="Loricate Torque +1",        -- __/__ [ 6/ 6, ___]
-    ear1="Genmei Earring",            -- __/__ [ 2/__, ___]
-    ear2="Odnowa Earring +1",         -- __/__ [ 3/ 5, ___]
-    ring1="Gelatinous Ring +1",       -- __/__ [ 7/-1, ___]
-    ring2="Defending Ring",           -- __/__ [10/10, ___]
-    back=gear.COR_SNP_Cape,           -- 10/__ [10/__, ___]
-    waist="Yemaya Belt",              -- __/ 5 [__/__, ___]
-    -- Merits/Traits/Gifts               10/30
-    -- 67 Snapshot / 64 Rapid Shot [50 PDT/29 MDT, 406 M.Eva]
-
-    -- head="Chasseur's Tricorne +3", -- __/18 [10/10, 109]
-    -- 67 Snapshot / 66 Rapid Shot [51 PDT/30 MDT, 416 M.Eva]
   }
-  -- Snapshot (70% cap) > Rapid Shot (99% cap)
-  sets.precast.RA.Flurry1.Safe = {
-    ammo=gear.RAbullet,
-    head="Chasseur's Tricorne +2",    -- __/16 [ 9/ 9,  99]
-    body="Laksamana's Frac +3",       -- __/20 [__/__,  84]
-    hands="Lanun Gants +3",           -- 13/__ [__/__,  57]
-    legs=gear.Adhemar_D_legs,         -- 10/13 [__/__,  75]
-    feet="Meg. Jam. +2",              -- 10/__ [ 3/__,  69]
-    neck="Loricate Torque +1",        -- __/__ [ 6/ 6, ___]
-    ear1="Genmei Earring",            -- __/__ [ 2/__, ___]
-    ear2="Odnowa Earring +1",         -- __/__ [ 3/ 5, ___]
-    ring1="Gelatinous Ring +1",       -- __/__ [ 7/-1, ___]
-    ring2="Defending Ring",           -- __/__ [10/10, ___]
-    back=gear.COR_SNP_Cape,           -- 10/__ [10/__, ___]
-    waist="Yemaya Belt",              -- __/ 5 [__/__, ___]
-    -- Merits/Traits/Gifts               10/30
-    -- Flurry 1                          15/__
-    -- 68 Snapshot / 84 Rapid Shot [50 PDT/29 MDT, 384 M.Eva]
-    
-    -- head="Chasseur's Tricorne +3", -- __/18 [10/10, 109]
-    -- 68 Snapshot / 86 Rapid Shot [51 PDT/30 MDT, 394 M.Eva]
-  }
-  -- Snapshot (70% cap) > Rapid Shot (99% cap)
-  sets.precast.RA.Flurry2.Safe = {
+  -- Account for having flurry 1 buff + embrava
+  sets.Snapshot28 = {
     ammo=gear.RAbullet,
     head="Chasseur's Tricorne +2",    -- __/16 [ 9/ 9,  99]
     body="Laksamana's Frac +3",       -- __/20 [__/__,  84]
     hands=gear.Carmine_D_hands,       --  8/11 [__/__,  43]
     legs=gear.Adhemar_D_legs,         -- 10/13 [__/__,  75]
     feet=gear.Pursuer_A_feet,         -- __/10 [__/__,  69]
-    neck="Commodore Charm +1",        --  3/__ [__/__, ___]
+    neck="Loricate Torque +1",        -- __/__ [ 6/ 6, ___]
     ear1="Genmei Earring",            -- __/__ [ 2/__, ___]
     ear2="Odnowa Earring +1",         -- __/__ [ 3/ 5, ___]
     ring1="Gelatinous Ring +1",       -- __/__ [ 7/-1, ___]
@@ -437,12 +418,15 @@ function init_gear_sets()
     back=gear.COR_SNP_Cape,           -- 10/__ [10/__, ___]
     waist="Flume Belt +1",            -- __/__ [ 4/__, ___]
     -- Merits/Traits/Gifts               10/30
-    -- Flurry 2                          30/__
-    -- 71 Snapshot / 100 Rapid Shot [45 PDT/23 MDT, 370 M.Eva]
+    -- Flurry 1 + Embrava                40/__
+    -- 78 Snapshot / 100 Rapid Shot [51 PDT/29 MDT, 370 M.Eva]
     
     -- head="Chasseur's Tricorne +3", -- __/18 [10/10, 109]
-    -- 71 Snapshot / 102 Rapid Shot [46 PDT/24 MDT, 380 M.Eva]
+    -- 78 Snapshot / 102 Rapid Shot [52 PDT/30 MDT, 380 M.Eva]
   }
+  -- Account for having flurry 2 buff + embrava
+  -- Use same as previous set because they don't get any better
+  -- (this is done if you simply exclude any more snapshot sets)
 
   sets.midcast.RA = {
     ammo=gear.RAbullet,               -- __, __, 20/__ <__> {_} (__) [__/__, ___]
@@ -1929,30 +1913,6 @@ function job_precast(spell, action, spellMap, eventArgs)
   elseif spellMap == 'Utsusemi' and spell.english == 'Utsusemi: Ichi' and
       (buffactive['Copy Image'] or buffactive['Copy Image (2)']) then
     send_command('cancel 66; cancel 444; cancel Copy Image; cancel Copy Image (2)')
-  elseif spell.action_type == 'Ranged Attack' then
-    if state.DefenseMode.value ~= 'None' or state.HybridMode.value == 'Safe' then
-      if flurry == 0 then
-        equip(sets.precast.RA.Safe)
-        eventArgs.handled = true
-      elseif flurry == 1 then
-        equip(sets.precast.RA.Flurry1.Safe)
-        eventArgs.handled = true
-      elseif flurry == 2 then
-        equip(sets.precast.RA.Flurry2.Safe)
-        eventArgs.handled = true
-      end
-    else
-      if flurry == 0 then
-        equip(sets.precast.RA)
-        eventArgs.handled = true
-      elseif flurry == 1 then
-        equip(sets.precast.RA.Flurry1)
-        eventArgs.handled = true
-      elseif flurry == 2 then
-        equip(sets.precast.RA.Flurry2)
-        eventArgs.handled = true
-      end
-    end
   end
 end
 
@@ -2058,16 +2018,6 @@ function job_post_aftercast(spell, action, spellMap, eventArgs)
 end
 
 function job_buff_change(buff,gain)
--- If we gain or lose any flurry buffs, adjust gear.
-  if S{'flurry'}:contains(buff:lower()) then
-    if not gain then
-      flurry = nil
-    end
-    if not midaction() then
-      handle_equipping_gear(player.status)
-    end
-  end
-
   if buff == "doom" then
     if gain then
       send_command('@input /p Doomed.')
@@ -2336,31 +2286,6 @@ function update_idle_groups()
     end
   end
 end
-
---Read incoming packet to differentiate between Haste/Flurry I and II
-windower.raw_register_event('action',
-  function(act)
-    --check if you are a target of spell
-    local actionTargets = act.targets
-    playerId = windower.ffxi.get_player().id
-    isTarget = false
-    for _, target in ipairs(actionTargets) do
-      if playerId == target.id then
-        isTarget = true
-      end
-    end
-    if isTarget == true then
-      if act.category == 4 then
-        local param = act.param
-        if param == 845 and flurry ~= 2 then
-          flurry = 1
-        elseif param == 846 then
-          flurry = 2
-        end
-      end
-    end
-  end
-)
 
 function job_self_command(cmdParams, eventArgs)
   silibs.self_command(cmdParams, eventArgs)
