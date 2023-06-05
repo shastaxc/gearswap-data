@@ -59,7 +59,7 @@ function job_setup()
     ['Blind'] = 'INT', ['Blind II'] = 'INT',
     ['Break'] = 'INT', ['Breakga'] = 'INT',
     ['Dia'] = 'MND', ['Dia II'] = 'MND', ['Dia III'] = 'MND', ['Diaga'] = 'MND',
-    ['Dispel'] = 'INT',
+    ['Dispel'] = 'INT', ['Dispelga'] = 'INT',
     ['Distract'] = 'MND', ['Distract II'] = 'MND', ['Distract III'] = 'MND',
     ['Frazzle'] = 'MND', ['Frazzle II'] = 'MND', ['Frazzle III'] = 'MND',
     ['Gravity'] = 'INT', ['Gravity II'] = 'INT',
@@ -2005,7 +2005,7 @@ function job_midcast(spell, action, spellMap, eventArgs)
       end
     end
 
-    if selected_set and sets.midcast[selected_set] then
+    if not sets.midcast[spell.english] and selected_set and sets.midcast[selected_set] then
       equip(sets.midcast[selected_set])
       eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
     end
