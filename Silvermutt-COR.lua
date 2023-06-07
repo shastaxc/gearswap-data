@@ -314,7 +314,6 @@ function init_gear_sets()
 
   -- Account for having no flurry buffs
   sets.Snapshot58 = {
-    ammo=gear.RAbullet,
     head="Chasseur's Tricorne +2",    -- __/16 [ 9/ 9,  99]
     body="Oshosi Vest +1",            -- 14/__ [__/__, 106]
     hands=gear.Carmine_D_hands,       --  8/11 [__/__,  43]
@@ -336,7 +335,6 @@ function init_gear_sets()
   }
   -- Account for having flurry 1 buff
   sets.Snapshot46 = {
-    ammo=gear.RAbullet,
     head="Chasseur's Tricorne +2",    -- __/16 [ 9/ 9,  99]
     body="Laksamana's Frac +3",       -- __/20 [__/__,  84]
     hands="Lanun Gants +3",           -- 13/__ [__/__,  57]
@@ -358,7 +356,6 @@ function init_gear_sets()
   }
   -- Account for having embrava buff
   sets.Snapshot34 = {
-    ammo=gear.RAbullet,
     head="Chasseur's Tricorne +2",    -- __/16 [ 9/ 9,  99]
     body="Laksamana's Frac +3",       -- __/20 [__/__,  84]
     hands=gear.Carmine_D_hands,       --  8/11 [__/__,  43]
@@ -381,7 +378,6 @@ function init_gear_sets()
   }
   -- Account for having flurry 2 buff
   sets.Snapshot31 = {
-    ammo=gear.RAbullet,
     head="Chasseur's Tricorne +2",    -- __/16 [ 9/ 9,  99]
     body="Laksamana's Frac +3",       -- __/20 [__/__,  84]
     hands=gear.Carmine_D_hands,       --  8/11 [__/__,  43]
@@ -404,7 +400,6 @@ function init_gear_sets()
   }
   -- Account for having flurry 1 buff + embrava
   sets.Snapshot28 = {
-    ammo=gear.RAbullet,
     head="Chasseur's Tricorne +2",    -- __/16 [ 9/ 9,  99]
     body="Laksamana's Frac +3",       -- __/20 [__/__,  84]
     hands=gear.Carmine_D_hands,       --  8/11 [__/__,  43]
@@ -446,9 +441,9 @@ function init_gear_sets()
     -- 241 AGI, 88 STP, 370 racc/305 ratt <5 crit> {17 PDL} (68 Recycle) [31 PDT/21 MDT, 595 M.Eva]
   }
   sets.midcast.RA.LowAcc = set_combine(sets.midcast.RA, {
+    ammo=gear.RAccbullet,             -- __, __, 35/__ <__> {_} (__) [__/__, ___]
     ear1="Beyla Earring",             -- __, __, 15/__ <__> {_} (__) [__/__, ___]
     ring2="Crepuscular Ring",         -- __,  6, 10/__ <__> {_} (__) [__/__, ___]
-    -- ammo=gear.RAccbullet,          -- __, __, 35/__ <__> {_} (__) [__/__, ___]
     -- 231 AGI, 85 STP, 403 racc/298 ratt <5 crit> {17 PDL} (68 Recycle) [31 PDT/21 MDT, 595 M.Eva]
   })
   sets.midcast.RA.MidAcc = set_combine(sets.midcast.RA.LowAcc, {
@@ -611,6 +606,86 @@ function init_gear_sets()
     -- hands="Chasseur's Gants +3",   -- 26, __, 62/62 < 8> {_} (__) [__/__,  93] (__, __) (__, __)
     -- 258 AGI, 23 STP, 359 racc/196 ratt <35 crit> {0 PDL} (58 Recycle) [45 PDT/27 MDT, 540 M.Eva] (10 DS Rate, 25 DS Dmg) (87 TS Rate, 13 TS Dmg)
   }
+
+  -- Dmg is based on Gun DMG, bullet DMG, Quick Draw+ stat, elemental bonuses, MAB.
+  -- Acc is based on AGI & M.Acc only.
+  -- Dmg is NOT affected by M.Dmg.
+  -- TP returned is affected by Store TP.
+  sets.precast.CorsairShot = {
+    ammo=gear.QDbullet,           -- 10, 40, __, __, __/__
+    head="Ikenga's Hat",          -- 29, 45, 55,  8, __/__
+    body="Lanun Frac +3",         -- 43, 61, 40, __,  6/__
+    hands="Carmine Fin. Ga. +1",  -- 12, 42, __,  6, __/__
+    legs=gear.Nyame_B_legs,       -- 34, 30, 40, __,  8/ 8
+    feet="Lanun Bottes +3",       -- 49, 61, 36, __,  6/__
+    neck="Commodore Charm +1",    -- 12,  6, 20, __, __/__
+    ear1="Friomisi Earring",      -- __, 10, __, __, __/__
+    ear2="Novio Earring",         -- __,  7, __, __, __/__
+    ring1="Dingir Ring",          -- 10, 10, __, __, __/__
+    ring2="Shiva Ring +1",        -- __,  3, __, __, __/__
+    back=gear.COR_RA_Cape,        -- 30, __, __, 10, 10/__
+    waist="Eschan Stone",         -- __,  7,  7, __, __/__
+    -- neck="Commodore Charm +2", -- 15,  7, 25, __, __/__
+    -- back=gear.COR_QD_Cape,     -- 30, 10, 20, __, 10/__
+  } -- 229 AGI, 322 MAB, 198 M.Acc, 24 STP, 30PDT/8MDT
+
+  -- Full STP; and more recast reduction
+  sets.precast.CorsairShot.STP = {
+    ammo=gear.MAbullet,           -- __, 35, 25, __, __/__
+    head="Blood Mask",            -- __, __,  3, __, __/__ Recast -5
+    body="Malignance Tabard",     -- 42, __, 50, 11,  9/ 9
+    hands="Malignance Gloves",    -- 24, __, 50, 12,  5/ 5
+    legs="Chasseur's Culottes +3",-- 43, __, 63, 12, 12/12
+    feet="Malignance Boots",      -- 49, __, 50,  9,  4/ 4
+    neck="Iskur Gorget",          -- __, __, __,  8, __/__
+    ear1="Dedition Earring",      -- __, __, __,  8, __/__
+    ear2="Telos Earring",         -- __, __, __,  5, __/__
+    ring1="Chirich Ring +1",      -- __, __, __,  6, __/__
+    ring2="Crepuscular Ring",     -- __, __, 10,  6, __/__
+    back=gear.COR_RA_Cape,        -- 30, __, __, 10, 10/__
+    waist="Reiki Yotai",          -- __, __, __,  4, __/__
+    -- 188 AGI, 35 MAB, 251 M.Acc, 91 STP, 40PDT/30MDT
+
+    -- ear2="Crepuscular Earring",-- __, __, 10,  5, __/__
+    -- 188 AGI, 35 MAB, 261 M.Acc, 91 STP, 40PDT/30MDT
+  }
+
+  -- Full MAcc (to land debuff effects)
+  sets.precast.CorsairShot['Light Shot'] = {
+    ammo=gear.MAccbullet,             -- __, 35, __/__
+    head="Chasseur's Tricorne +2",    -- 35, 51,  9/ 9
+    body="Chasseur's Frac +2",        -- 44, 54, 12/12
+    hands="Chasseur's Gants +2",      -- 21, 52, __/__
+    legs="Chasseur's Culottes +3",    -- 43, 63, 12/12
+    feet="Malignance Boots",          -- 49, 50,  4/ 4
+    neck="Commodore Charm +1",        -- 12, 20, __/__
+    ear1="Hermetic Earring",          -- __,  7, __/__
+    ear2="Dignitary's Earring",       -- __, 10, __/__
+    ring1="Regal Ring",               -- 10, __, __/__
+    ring2="Metamorph Ring +1",        -- __, 15, __/__
+    back=gear.COR_WS1_Cape,           -- 30, 20, 10/__
+    waist="K. Kachina Belt +1",       --  8, 20, __/__
+    -- AF Set Effect                  -- __, __, __/__
+    -- M.Acc from Quick Draw+ stat    -- __, __, __/__
+    -- 252 AGI, 383 M.Acc, 47PDT/37MDT
+
+    -- head="Laksamana's Tricorne +3",-- 39, 56, __/__; Quick Draw+20
+    -- body="Chasseur's Frac +3",     -- 49, 64, 13/13
+    -- hands="Chasseur's Gants +3",   -- 26, 62, __/__
+    -- feet="Laksamana's Bottes +3",  -- 49, 52, __/__; Quick Draw+20
+    -- neck="Commodore Charm +2",     -- 15, 25, __/__
+    -- ear1="Crepuscular Earring",    -- __, 10, __/__
+    -- 269 AGI, 502 M.Acc, 35 PDT/25 MDT
+  }
+  sets.precast.CorsairShot['Dark Shot'] = set_combine(sets.precast.CorsairShot['Light Shot'], {})
+
+  -- Empy feet for enhancement effect; and more recast reduction
+  sets.precast.CorsairShot.Enhance = set_combine(sets.precast.CorsairShot.STP, {
+    head="Blood Mask", -- Recast -5
+    feet="Chasseur's Bottes +1",
+    
+    -- feet="Chasseur's Bottes +3",
+  })
 
 
   ------------------------------------------------------------------------------------------------
@@ -944,86 +1019,6 @@ function init_gear_sets()
     ear2="Odnowa Earring +1", -- DT
     ring1="Defending Ring", -- DT
   }
-
-  -- Dmg is based on Gun DMG, bullet DMG, Quick Draw+ stat, elemental bonuses, MAB.
-  -- Acc is based on AGI & M.Acc only.
-  -- Dmg is NOT affected by M.Dmg.
-  -- TP returned is affected by Store TP.
-  sets.midcast.CorsairShot = {
-    ammo=gear.QDbullet,           -- 10, 40, __, __, __/__
-    head="Ikenga's Hat",          -- 29, 45, 55,  8, __/__
-    body="Lanun Frac +3",         -- 43, 61, 40, __,  6/__
-    hands="Carmine Fin. Ga. +1",  -- 12, 42, __,  6, __/__
-    legs=gear.Nyame_B_legs,       -- 34, 30, 40, __,  8/ 8
-    feet="Lanun Bottes +3",       -- 49, 61, 36, __,  6/__
-    neck="Commodore Charm +1",    -- 12,  6, 20, __, __/__
-    ear1="Friomisi Earring",      -- __, 10, __, __, __/__
-    ear2="Novio Earring",         -- __,  7, __, __, __/__
-    ring1="Dingir Ring",          -- 10, 10, __, __, __/__
-    ring2="Shiva Ring +1",        -- __,  3, __, __, __/__
-    back=gear.COR_RA_Cape,        -- 30, __, __, 10, 10/__
-    waist="Eschan Stone",         -- __,  7,  7, __, __/__
-    -- neck="Commodore Charm +2", -- 15,  7, 25, __, __/__
-    -- back=gear.COR_QD_Cape,     -- 30, 10, 20, __, 10/__
-  } -- 229 AGI, 322 MAB, 198 M.Acc, 24 STP, 30PDT/8MDT
-
-  -- Full STP; and more recast reduction
-  sets.midcast.CorsairShot.STP = {
-    ammo=gear.MAbullet,           -- __, 35, 25, __, __/__
-    head="Blood Mask",            -- __, __,  3, __, __/__ Recast -5
-    body="Malignance Tabard",     -- 42, __, 50, 11,  9/ 9
-    hands="Malignance Gloves",    -- 24, __, 50, 12,  5/ 5
-    legs="Chasseur's Culottes +3",-- 43, __, 63, 12, 12/12
-    feet="Malignance Boots",      -- 49, __, 50,  9,  4/ 4
-    neck="Iskur Gorget",          -- __, __, __,  8, __/__
-    ear1="Dedition Earring",      -- __, __, __,  8, __/__
-    ear2="Telos Earring",         -- __, __, __,  5, __/__
-    ring1="Chirich Ring +1",      -- __, __, __,  6, __/__
-    ring2="Crepuscular Ring",     -- __, __, 10,  6, __/__
-    back=gear.COR_RA_Cape,        -- 30, __, __, 10, 10/__
-    waist="Reiki Yotai",          -- __, __, __,  4, __/__
-    -- 188 AGI, 35 MAB, 251 M.Acc, 91 STP, 40PDT/30MDT
-
-    -- ear2="Crepuscular Earring",-- __, __, 10,  5, __/__
-    -- 188 AGI, 35 MAB, 261 M.Acc, 91 STP, 40PDT/30MDT
-  }
-
-  -- Full MAcc (to land debuff effects)
-  sets.midcast.CorsairShot['Light Shot'] = {
-    ammo=gear.MAccbullet,             -- __, 35, __/__
-    head="Chasseur's Tricorne +2",    -- 35, 51,  9/ 9
-    body="Chasseur's Frac +2",        -- 44, 54, 12/12
-    hands="Chasseur's Gants +2",      -- 21, 52, __/__
-    legs="Chasseur's Culottes +3",    -- 43, 63, 12/12
-    feet="Malignance Boots",          -- 49, 50,  4/ 4
-    neck="Commodore Charm +1",        -- 12, 20, __/__
-    ear1="Hermetic Earring",          -- __,  7, __/__
-    ear2="Dignitary's Earring",       -- __, 10, __/__
-    ring1="Regal Ring",               -- 10, __, __/__
-    ring2="Metamorph Ring +1",        -- __, 15, __/__
-    back=gear.COR_WS1_Cape,           -- 30, 20, 10/__
-    waist="K. Kachina Belt +1",       --  8, 20, __/__
-    -- AF Set Effect                  -- __, __, __/__
-    -- M.Acc from Quick Draw+ stat    -- __, __, __/__
-    -- 252 AGI, 383 M.Acc, 47PDT/37MDT
-
-    -- head="Laksamana's Tricorne +3",-- 39, 56, __/__; Quick Draw+20
-    -- body="Chasseur's Frac +3",     -- 49, 64, 13/13
-    -- hands="Chasseur's Gants +3",   -- 26, 62, __/__
-    -- feet="Laksamana's Bottes +3",  -- 49, 52, __/__; Quick Draw+20
-    -- neck="Commodore Charm +2",     -- 15, 25, __/__
-    -- ear1="Crepuscular Earring",    -- __, 10, __/__
-    -- 269 AGI, 502 M.Acc, 35 PDT/25 MDT
-  }
-  sets.midcast.CorsairShot['Dark Shot'] = set_combine(sets.midcast.CorsairShot['Light Shot'], {})
-
-  -- Empy feet for enhancement effect; and more recast reduction
-  sets.midcast.CorsairShot.Enhance = set_combine(sets.midcast.CorsairShot.STP, {
-    head="Blood Mask", -- Recast -5
-    feet="Chasseur's Bottes +1",
-    
-    -- feet="Chasseur's Bottes +3",
-  })
 
 
   ------------------------------------------------------------------------------------------------
@@ -1900,9 +1895,7 @@ function job_precast(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
 
   -- Check that proper ammo is available if we're using ranged attacks or similar.
-  if spell.action_type == 'Ranged Attack' or spell.type == 'WeaponSkill' or spell.type == 'CorsairShot' then
-    silibs.equip_ammo(spell, action, spellMap, eventArgs)
-  end
+  silibs.equip_ammo(spell, action, spellMap, eventArgs)
 
   -- Gear
   if spell.english == 'Fold' and buffactive['Bust'] == 2 then
