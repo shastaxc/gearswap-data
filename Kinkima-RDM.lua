@@ -962,7 +962,7 @@ function init_gear_sets()
 
   -- Used when casting mode is 'Resistant'
   sets.midcast.MNDEnfeeblesAcc = {
-    -- main="Crocea Mors",            -- 255, 50, __, 20 (__, __, __, __) [__/__, ___]
+    main="Crocea Mors",               -- 255, 50, __, 20 (__, __, __, __) [__/__, ___]
     sub="Ammurapi Shield",            -- ___, 38, 13, __ (__, __, __, __) [__/__, ___]
     range="Ullr",                     -- ___, 40, __, __ (__, __, __, __) [__/__, ___]
     ammo=empty,                       -- ___, __, __, __ (__, __, __, __) [__/__, ___]
@@ -989,7 +989,7 @@ function init_gear_sets()
     -- 255 M.Acc skill, 492 M.Acc, 291 MND, 72 FC (1 Immunobreak, 30 Enf. Effect, 40 Enf. Duration, 136 Enf. Skill) [21 PDT/11 MDT, 527 M.Eva]
   }
   sets.midcast.MNDEnfeeblesAccDW = set_combine(sets.midcast.MNDEnfeeblesAcc, {
-    -- main="Crocea Mors",            -- 255, 50, __, 20 (__, __, __, __) [__/__, ___]
+    main="Crocea Mors",               -- 255, 50, __, 20 (__, __, __, __) [__/__, ___]
     sub="Daybreak",                   -- 242, 40, 30, __ (__, __, __, __) [__/__,  30]
   })
 
@@ -1265,7 +1265,7 @@ function init_gear_sets()
   }
 
   sets.midcast.Impact = {
-    -- main="Crocea Mors",            -- 255, __, 50, __, 20 [__/__, ___]
+    main="Crocea Mors",               -- 255, __, 50, __, 20 [__/__, ___]
     sub="Ammurapi Shield",            -- ___, __, 38, 13, __ [__/__, ___]
     range="Ullr",                     -- ___, __, 40, __, __ [__/__, ___]
     ammo=empty,                       -- ___, __, __, __, __ [__/__, ___]
@@ -1291,7 +1291,7 @@ function init_gear_sets()
 
   -- For spells like Burn, Choke, etc.
   sets.midcast.ElementalEnfeeble = {
-    -- main="Crocea Mors",            -- 255, __, 50, __, 20 [__/__, ___]
+    main="Crocea Mors",               -- 255, __, 50, __, 20 [__/__, ___]
     sub="Ammurapi Shield",            -- ___, __, 38, 13, __ [__/__, ___]
     range="Ullr",                     -- ___, __, 40, __, __ [__/__, ___]
     ammo=empty,                       -- ___, __, __, __, __ [__/__, ___]
