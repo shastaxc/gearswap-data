@@ -904,7 +904,7 @@ function init_gear_sets()
     sub="Enki Strap",                 -- ___, 10, 10, __ (__, __, __, __) [__/__,  10]
     range=empty,                      -- ___, __, __, __ (__, __, __, __) [__/__, ___]
     ammo="Regal Gem",                 -- ___, 15,  7, __ (__, 10, __, __) [__/__, ___]
-    head="Vitiation Chapeau +1",      -- ___, __, 32, __ (__, __, __, 22) [__/__,  75]; Enhances enf. duration
+    head="Vitiation Chapeau +3",      -- ___, 37, 42, __ (__, __, __, 26) [__/__,  95]; Enhances enf. duration
     body="Atrophy Tabard +3",         -- ___, 55, 43, __ (__, __, __, 21) [__/__, 100]
     hands="Lethargy Gantherots +2",   -- ___, 52, 45, __ (__, __, __, 24) [10/10,  77]
     legs=gear.Chironic_MAcc_legs,     -- ___, 57, 29, __ ( 1, __, __, 13) [__/__, 118]
@@ -917,12 +917,11 @@ function init_gear_sets()
     back=gear.RDM_MND_Enf_Cape,       -- ___, 20, 30, 10 (__, 10, __, __) [10/__, ___]
     waist="Obstinate Sash",           -- ___, 15,  5, __ (__, __,  5, 15) [__/__, ___]
     -- Traits/Gifts                                   38             476
-    -- 228 M.Acc skill, 393 M.Acc, 286 MND, 52 FC (1 Immunobreak, 40 Enf. Effect, 50 Enf. Duration, 615 Enf. Skill) [23 PDT/15 MDT, 507 M.Eva]
+    -- 228 M.Acc skill, 430 M.Acc, 296 MND, 52 FC (1 Immunobreak, 40 Enf. Effect, 50 Enf. Duration, 619 Enf. Skill) [23 PDT/15 MDT, 527 M.Eva]
     
-    -- head="Vitiation Chapeau +3",   -- ___, 37, 42, __ (__, __, __, 26) [__/__,  95]; Enhances enf. duration
     -- hands="Lethargy Gantherots +3",-- ___, 62, 50, __ (__, __, __, 29) [11/11,  87]
     -- legs=gear.Chironic_MAcc_legs,  -- ___, 60, 29, __ ( 1, __, __, 13) [__/__, 118]
-    -- 228 M.Acc skill, 443 M.Acc, 301 MND, 52 FC (1 Immunobreak, 40 Enf. Effect, 50 Enf. Duration, 624 Enf. Skill) [23 PDT/15 MDT, 517 M.Eva]
+    -- 228 M.Acc skill, 443 M.Acc, 301 MND, 52 FC (1 Immunobreak, 40 Enf. Effect, 50 Enf. Duration, 624 Enf. Skill) [24 PDT/16 MDT, 537 M.Eva]
   }
   sets.midcast.SkillEnfeeblesDW = set_combine(sets.midcast.SkillEnfeebles, {
   })
@@ -933,7 +932,7 @@ function init_gear_sets()
     sub="Ammurapi Shield",            -- ___, 38, 13, __ (__, __, __, __) [__/__, ___]
     range=empty,                      -- ___, __, __, __ (__, __, __, __) [__/__, ___]
     ammo="Regal Gem",                 -- ___, 15,  7, __ (__, 10, __, __) [__/__, ___]
-    head="Vitiation Chapeau +1",      -- ___, __, 32, __ (__, __, __, 22) [__/__,  75]; Enhances enf. duration
+    head="Vitiation Chapeau +3",      -- ___, 37, 42, __ (__, __, __, 26) [__/__,  95]; Enhances enf. duration
     body="Lethargy Sayon +3",         -- ___, 64, 45, __ (__, 18, __, __) [14/14, 136]
     hands="Lethargy Gantherots +2",   -- ___, 52, 45, __ (__, __, __, 24) [10/10,  77]
     legs=gear.Chironic_MAcc_legs,     -- ___, 57, 29, __ ( 1, __, __, 13) [__/__, 118]
@@ -947,9 +946,8 @@ function init_gear_sets()
     waist="Obstinate Sash",           -- ___, 15,  5, __ (__, __,  5, 15) [__/__, ___]
     -- Empy set effect                   ___, __, __, __ (__, __, 10, __) [__/__, ___]
     -- Traits/Gifts/Merits            --              38
-    -- 242 M.Acc skill, 416 M.Acc, 315 MND, 52 FC (1 Immunobreak, 58 Enf. Effect, 50 Enf. Duration, 106 Enf. Skill) [34 PDT/24 MDT, 563 M.Eva]
+    -- 242 M.Acc skill, 453 M.Acc, 325 MND, 52 FC (1 Immunobreak, 58 Enf. Effect, 50 Enf. Duration, 110 Enf. Skill) [34 PDT/24 MDT, 583 M.Eva]
     
-    -- head="Vitiation Chapeau +3",   -- ___, 37, 42, __ (__, __, __, 26) [__/__,  95]; Enhances enf. duration
     -- hands="Lethargy Gantherots +3",-- ___, 62, 50, __ (__, __, __, 29) [11/11,  87]
     -- legs=gear.Chironic_MAcc_legs,  -- ___, 60, 29, __ ( 1, __, __, 13) [__/__, 118]
     -- 242 M.Acc skill, 466 M.Acc, 330 MND, 52 FC (1 Immunobreak, 58 Enf. Effect, 50 Enf. Duration, 115 Enf. Skill) [35 PDT/25 MDT, 593 M.Eva]
@@ -965,7 +963,7 @@ function init_gear_sets()
     sub="Ammurapi Shield",            -- ___, 38, 13, __ (__, __, __, __) [__/__, ___]
     range="Ullr",                     -- ___, 40, __, __ (__, __, __, __) [__/__, ___]
     ammo=empty,                       -- ___, __, __, __ (__, __, __, __) [__/__, ___]
-    head="Vitiation Chapeau +1",      -- ___, __, 32, __ (__, __, __, 22) [__/__,  75]; Enhances enf. duration
+    head="Vitiation Chapeau +3",      -- ___, 37, 42, __ (__, __, __, 26) [__/__,  95]; Enhances enf. duration
     body="Atrophy Tabard +3",         -- ___, 55, 43, __ (__, __, __, 21) [__/__, 100]
     hands="Lethargy Gantherots +2",   -- ___, 52, 45, __ (__, __, __, 24) [10/10,  77]
     legs=gear.Chironic_MAcc_legs,     -- ___, 57, 29, __ ( 1, __, __, 13) [__/__, 118]
@@ -979,9 +977,8 @@ function init_gear_sets()
     waist="Obstinate Sash",           -- ___, 15,  5, __ (__, __,  5, 15) [__/__, ___]
     -- Empy set effect                   ___, __, __, __ (__, __, __, __) [__/__, ___]
     -- Traits/Gifts/Merits                            38
-    -- 255 M.Acc skill, 442 M.Acc, 276 MND, 72 FC (1 Immunobreak, 20 Enf. Effect, 40 Enf. Duration, 127 Enf. Skill) [20 PDT/10 MDT, 497 M.Eva]
+    -- 255 M.Acc skill, 479 M.Acc, 276 MND, 72 FC (1 Immunobreak, 20 Enf. Effect, 40 Enf. Duration, 131 Enf. Skill) [20 PDT/10 MDT, 517 M.Eva]
     
-    -- head="Vitiation Chapeau +3",   -- ___, 37, 42, __ (__, __, __, 26) [__/__,  95]; Enhances enf. duration
     -- hands="Lethargy Gantherots +3",-- ___, 62, 50, __ (__, __, __, 29) [11/11,  87]
     -- legs=gear.Chironic_MAcc_legs,  -- ___, 60, 29, __ ( 1, __, __, 13) [__/__, 118]
     -- 255 M.Acc skill, 492 M.Acc, 291 MND, 72 FC (1 Immunobreak, 30 Enf. Effect, 40 Enf. Duration, 136 Enf. Skill) [21 PDT/11 MDT, 527 M.Eva]
@@ -997,7 +994,7 @@ function init_gear_sets()
     sub="Genmei Shield",              -- ___, __, __, __ (__, __, __, __) [10/__, ___]
     range=empty,                      -- ___, __, __, __ (__, __, __, __) [__/__, ___]
     ammo="Regal Gem",                 -- ___, 15,  7, __ (__, 10, __, __) [__/__, ___]
-    head="Vitiation Chapeau +1",      -- ___, __, 32, __ (__, __, __, 22) [__/__,  75]; Enhances enf. duration
+    head="Vitiation Chapeau +3",      -- ___, 37, 42, __ (__, __, __, 26) [__/__,  95]; Enhances enf. duration
     body="Lethargy Sayon +3",         -- ___, 64, 45, __ (__, 18, __, __) [14/14, 136]
     hands="Regal Cuffs",              -- ___, 45, 40, __ (__, __, 20, __) [__/__,  53]
     legs="Lethargy Fuseau +2",        -- ___, 53, 38, __ (__, __, __, __) [__/__, 152]
@@ -1011,9 +1008,8 @@ function init_gear_sets()
     waist="Obstinate Sash",           -- ___, 15,  5, __ (__, __,  5, 15) [__/__, ___]
     -- Empy set effect                   ___, __, __, __ (__, __, 20, __) [__/__, ___]
     -- Traits/Gifts/Merits                            38
-    -- 242 M.Acc skill, 347 M.Acc, 277 MND, 52 FC (0 Immunobreak, 48 Enf. Effect, 90 Enf. Duration, 37 Enf. Skill) [47 PDT/29 MDT, 593 M.Eva]
+    -- 242 M.Acc skill, 384 M.Acc, 287 MND, 52 FC (0 Immunobreak, 48 Enf. Effect, 90 Enf. Duration, 41 Enf. Skill) [47 PDT/29 MDT, 613 M.Eva]
     
-    -- head="Vitiation Chapeau +3",   -- ___, 37, 42, __ (__, __, __, 26) [__/__,  95]; Enhances enf. duration
     -- legs="Lethargy Fuseau +3",     -- ___, 63, 43, __ (__, __, __, __) [__/__, 162]
     -- feet="Lethargy Houseaux +3",   -- ___, 60, 32, __ (__, __, __, __) [__/__, 157]
     -- 242 M.Acc skill, 404 M.Acc, 297 MND, 52 FC (0 Immunobreak, 48 Enf. Effect, 90 Enf. Duration, 41 Enf. Skill) [47 PDT/29 MDT, 633 M.Eva]
@@ -1026,7 +1022,7 @@ function init_gear_sets()
     sub="Enki Strap",                 -- ___, 10, 10, __ (__, __, __, __) [__/__,  10]
     range=empty,                      -- ___, __, __, __ (__, __, __, __) [__/__, ___]
     ammo="Ghastly Tathlum +1",        -- ___, __, 11, __ (__, __, __, __) [__/__, ___]
-    head="Vitiation Chapeau +1",      -- ___, __, 19, __ (__, __, __, 22) [__/__,  75]; Enhances enf. duration
+    head="Vitiation Chapeau +3",      -- ___, 37, 29, __ (__, __, __, 26) [__/__,  95]; Enhances enf. duration
     body="Lethargy Sayon +3",         -- ___, 64, 47, __ (__, 18, __, __) [14/14, 136]
     hands="Lethargy Gantherots +2",   -- ___, 52, 28, __ (__, __, __, 24) [10/10,  77]
     legs=gear.Chironic_MAcc_legs,     -- ___, 57, 42, __ ( 1, __, __, 13) [__/__, 118]
@@ -1040,9 +1036,8 @@ function init_gear_sets()
     waist="Obstinate Sash",           -- ___, 15, __, __ (__, __,  5, 15) [__/__, ___]
     -- Empy set effect                   ___, __, __, __ (__, __, 10, __) [__/__, ___]
     -- Traits/Gifts/Merits            --              38
-    -- 228 M.Acc skill, 407 M.Acc, 270 INT, 42 FC (1 Immunobreak, 48 Enf. Effect, 50 Enf. Duration, 118 Enf. Skill) [34 PDT/24 MDT, 543 M.Eva]
+    -- 228 M.Acc skill, 444 M.Acc, 280 INT, 42 FC (1 Immunobreak, 48 Enf. Effect, 50 Enf. Duration, 122 Enf. Skill) [34 PDT/24 MDT, 563 M.Eva]
 
-    -- head="Vitiation Chapeau +3",   -- ___, 37, 29, __ (__, __, __, 26) [__/__,  95]; Enhances enf. duration
     -- hands="Lethargy Gantherots +3",-- ___, 62, 50, __ (__, __, __, 29) [11/11,  87]
     -- legs=gear.Chironic_MAcc_legs,  -- ___, 60, 29, __ ( 1, __, __, 13) [__/__, 118]
     -- 228 M.Acc skill, 457 M.Acc, 289 INT, 42 FC (1 Immunobreak, 48 Enf. Effect, 50 Enf. Duration, 127 Enf. Skill) [35 PDT/25 MDT, 573 M.Eva]
@@ -1055,7 +1050,7 @@ function init_gear_sets()
     sub="Enki Strap",                 -- ___, 10, 10, __ (__, __, __, __) [__/__,  10]
     range="Ullr",                     -- ___, 40, __, __ (__, __, __, __) [__/__, ___]
     ammo=empty,                       -- ___, __, __, __ (__, __, __, __) [__/__, ___]
-    head="Vitiation Chapeau +1",      -- ___, __, 19, __ (__, __, __, 22) [__/__,  75]; Enhances enf. duration
+    head="Vitiation Chapeau +3",      -- ___, 37, 29, __ (__, __, __, 26) [__/__,  95]; Enhances enf. duration
     body="Atrophy Tabard +3",         -- ___, 55, 43, __ (__, __, __, 21) [__/__, 100]
     hands="Lethargy Gantherots +2",   -- ___, 52, 28, __ (__, __, __, 24) [10/10,  77]
     legs=gear.Chironic_MAcc_legs,     -- ___, 57, 42, __ ( 1, __, __, 13) [__/__, 118]
@@ -1069,9 +1064,8 @@ function init_gear_sets()
     waist="Obstinate Sash",           -- ___, 15, __, __ (__, __,  5, 15) [__/__, ___]
     -- Empy set effect                   ___, __, __, __ (__, __, __, __) [__/__, ___]
     -- Traits/Gifts/Merits                            38
-    -- 228 M.Acc skill, 438 M.Acc, 255 INT, 42 FC (1 Immunobreak, 30 Enf. Effect, 40 Enf. Duration, 139 Enf. Skill) [20 PDT/10 MDT, 507 M.Eva]
+    -- 228 M.Acc skill, 475 M.Acc, 265 INT, 42 FC (1 Immunobreak, 30 Enf. Effect, 40 Enf. Duration, 143 Enf. Skill) [20 PDT/10 MDT, 527 M.Eva]
     
-    -- head="Vitiation Chapeau +3",   -- ___, 37, 29, __ (__, __, __, 26) [__/__,  95]; Enhances enf. duration
     -- hands="Lethargy Gantherots +3",-- ___, 62, 33, __ (__, __, __, 29) [11/11,  87]
     -- legs=gear.Chironic_MAcc_legs,  -- ___, 60, 42, __ ( 1, __, __, 13) [__/__, 118]
     -- 228 M.Acc skill, 503 M.Acc, 270 INT, 42 FC (1 Immunobreak, 30 Enf. Effect, 40 Enf. Duration, 148 Enf. Skill) [21 PDT/11 MDT, 537 M.Eva]
@@ -1085,7 +1079,7 @@ function init_gear_sets()
     sub="Genmei Shield",              -- ___, __, __, __ (__, __, __, __) [10/__, ___]
     range="Ullr",                     -- ___, 40, __, __ (__, __, __, __) [__/__, ___]
     ammo=empty,                       -- ___, __, __, __ (__, __, __, __) [__/__, ___]
-    head="Vitiation Chapeau +1",      -- ___, __, 19, __ (__, __, __, 22) [__/__,  75]; Enhances enf. duration
+    head="Vitiation Chapeau +3",      -- ___, 37, 29, __ (__, __, __, 26) [__/__,  95]; Enhances enf. duration
     body="Lethargy Sayon +3",         -- ___, 64, 47, __ (__, 18, __, __) [14/14, 136]
     hands="Regal Cuffs",              -- ___, 45, 40, __ (__, __, 20, __) [__/__,  53]
     legs="Lethargy Fuseau +2",        -- ___, 53, 43, __ (__, __, __, __) [__/__, 152]
@@ -1099,9 +1093,8 @@ function init_gear_sets()
     waist="Obstinate Sash",           -- ___, 15, __, __ (__, __,  5, 15) [__/__, ___]
     -- Empy set effect                   ___, __, __, __ (__, __, 20, __) [__/__, ___]
     -- Traits/Gifts/Merits                            38
-    -- 242 M.Acc skill, 372 M.Acc, 219 INT, 42 FC (0 Immunobreak, 38 Enf. Effect, 90 Enf. Duration, 37 Enf. Skill) [47 PDT/29 MDT, 593 M.Eva]
+    -- 242 M.Acc skill, 409 M.Acc, 229 INT, 42 FC (0 Immunobreak, 38 Enf. Effect, 90 Enf. Duration, 41 Enf. Skill) [47 PDT/29 MDT, 613 M.Eva]
     
-    -- head="Vitiation Chapeau +3",   -- ___, 37, 29, __ (__, __, __, 26) [__/__,  95]; Enhances enf. duration
     -- legs="Lethargy Fuseau +3",     -- ___, 63, 48, __ (__, __, __, __) [__/__, 162]
     -- feet="Lethargy Houseaux +3",   -- ___, 60, 30, __ (__, __, __, __) [__/__, 157]
     -- 242 M.Acc skill, 429 M.Acc, 239 INT, 42 FC (0 Immunobreak, 38 Enf. Effect, 90 Enf. Duration, 41 Enf. Skill) [47 PDT/29 MDT, 633 M.Eva]
@@ -1366,7 +1359,7 @@ function init_gear_sets()
   sets.passive_refresh = {
     range=empty,                      -- __/__, ___ [__]
     ammo="Homiliary",                 -- __/__, ___ [ 1]
-    head="Vitiation Chapeau +1",      -- __/__,  75 [ 2]
+    head="Vitiation Chapeau +3",      -- __/__,  95 [ 3]
     body="Shamash Robe",              -- 10/__, 106 [ 3]; Resist Silence+90
     hands="Lethargy Gantherots +2",   -- 10/10,  77 [__]
     legs="Bunzi's Pants",             --  9/ 9, 150 [__]
@@ -1378,9 +1371,8 @@ function init_gear_sets()
     ring2="Defending Ring",           -- 10/10, ___ [__]
     back=gear.RDM_INT_Enf_Cape,       -- 10/__, ___ [__]
     waist="Carrier's Sash",           -- __/__, ___ [__]; Ele Resist
-    -- 49 PDT / 32 MDT, 550 M.Eva [9 Refresh]
+    -- 49 PDT / 32 MDT, 570 M.Eva [10 Refresh]
     
-    -- head="Vitiation Chapeau +3",   -- __/__,  95 [ 3]
     -- hands="Lethargy Gantherots +3",-- 11/11,  87 [__]
     -- 50 PDT / 33 MDT, 580 M.Eva [10 Refresh]
   }
@@ -1390,7 +1382,7 @@ function init_gear_sets()
     sub="Enki Strap",                 -- __/__,  10 [__]
     range=empty,                      -- __/__, ___ [__]
     ammo="Homiliary",                 -- __/__, ___ [ 1]
-    head="Vitiation Chapeau +1",      -- __/__,  75 [ 2]
+    head="Vitiation Chapeau +3",      -- __/__,  95 [ 3]
     body="Shamash Robe",              -- 10/__, 106 [ 3]; Resist Silence+90
     hands="Lethargy Gantherots +2",   -- 10/10,  77 [__]
     legs="Bunzi's Pants",             --  9/ 9, 150 [__]
@@ -1402,11 +1394,10 @@ function init_gear_sets()
     ring2="Defending Ring",           -- 10/10, ___ [__]
     back=gear.RDM_INT_Enf_Cape,       -- 10/__, ___ [__]
     waist="Carrier's Sash",           -- __/__, ___ [__]; Ele Resist
-    -- 49 PDT / 32 MDT, 560 M.Eva [11 Refresh]
+    -- 49 PDT / 32 MDT, 580 M.Eva [12 Refresh]
     
     -- main="Sakpata's Sword",        -- 10/10, ___ [ 3]; R30
     -- sub="Sacro Bulwark",           -- 10/10, ___ [__]
-    -- head="Vitiation Chapeau +3",   -- __/__,  95 [ 3]
     -- hands="Volte Gloves",          -- __/__,  96 [ 1]
     -- ring2="Stikini Ring +1",       -- __/__, ___ [ 1]
     -- 49 PDT / 32 MDT, 589 M.Eva [15 Refresh]
@@ -1417,7 +1408,7 @@ function init_gear_sets()
     sub="Daybreak",                   -- __/__,  30 [ 1]
     range=empty,                      -- __/__, ___ [__]
     ammo="Homiliary",                 -- __/__, ___ [ 1]
-    head="Vitiation Chapeau +1",      -- __/__,  75 [ 2]
+    head="Vitiation Chapeau +3",      -- __/__,  95 [ 3]
     body="Shamash Robe",              -- 10/__, 106 [ 3]; Resist Silence+90
     hands="Lethargy Gantherots +2",   -- 10/10,  77 [__]
     legs="Bunzi's Pants",             --  9/ 9, 150 [__]
@@ -1429,11 +1420,10 @@ function init_gear_sets()
     ring2="Defending Ring",           -- 10/10, ___ [__]
     back=gear.RDM_INT_Enf_Cape,       -- 10/__, ___ [__]
     waist="Carrier's Sash",           -- __/__, ___ [__]; Ele Resist
-    -- 49 PDT / 32 MDT, 580 M.Eva [11 Refresh]
+    -- 49 PDT / 32 MDT, 600 M.Eva [12 Refresh]
     
     -- main="Sakpata's Sword",        -- 10/10, ___ [ 3]; R30
     -- sub="Daybreak",                -- __/__,  30 [ 1]
-    -- head="Vitiation Chapeau +3",   -- __/__,  95 [ 3]
     -- hands="Volte Gloves",          -- __/__,  96 [ 1]
     -- 49 PDT / 32 MDT, 619 M.Eva [15 Refresh]
   }
