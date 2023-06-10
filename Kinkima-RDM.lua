@@ -619,7 +619,7 @@ function init_gear_sets()
     hands="Vitiation Gloves +1",      -- 20, __, __, __ [__/__,  37]
     legs="Atrophy Tights +1",         -- 17, __, __, __ [__/__, 107]
     feet="Lethargy Houseaux +2",      -- 30, 35, __, __ [__/__, 147]
-    neck="Incanter's Torque",         -- 10, __, __, __ [__/__, ___]
+    neck="Loricate Torque +1",        -- __, __, __, __ [ 6/ 6, ___]
     ear1="Mimir Earring",             -- 10, __, __, __ [__/__, ___]
     ear2="Odnowa Earring +1",         -- __, __, __, __ [ 3/ 5, ___]
     ring1="Gelatinous Ring +1",       -- __, __, __, __ [ 7/-1, ___]
@@ -627,14 +627,14 @@ function init_gear_sets()
     back=gear.RDM_Adoulin_Cape,       --  9, __, 20, __ [__/__, ___]
     waist="Olympus Sash",             --  5, __, __, __ [__/__, ___]
     -- Traits/Gifts/Merits            --456, __, __, 38 [__/__, ___]
-    -- 606 Enh skill, 45 Enh duration, 20 Aug Enh Duration, 38 FC [27 PDT/17 MDT, 446 M.Eva]
+    -- 596 Enh skill, 45 Enh duration, 20 Aug Enh Duration, 38 FC [33 PDT/23 MDT, 446 M.Eva]
     
     -- body="Vitiation Tabard +3",    -- 23, 15, __, 15 [__/__, 100]
     -- hands="Vitiation Gloves +3",   -- 24, __, __, __ [__/__,  57]
     -- legs="Atrophy Tights +3",      -- 21, __, __, __ [__/__, 127]
     -- feet="Lethargy Houseaux +3",   -- 35, 40, __, __ [__/__, 157]
     -- back=gear.RDM_Adoulin_Cape,    -- 10, __, 20, __ [__/__, ___]
-    -- 631 Enh skill, 55 Enh duration, 20 Aug Enh Duration, 53 FC [27 PDT/17 MDT, 516 M.Eva]
+    -- 621 Enh skill, 55 Enh duration, 20 Aug Enh Duration, 53 FC [33 PDT/23 MDT, 516 M.Eva]
   }
 
   -- Regen not affected by Enh Magic Skill
@@ -673,8 +673,8 @@ function init_gear_sets()
     range=empty,                      -- __, __, __, __ [__/__, ___]
     ammo="Staunch Tathlum +1",        -- __, __, __, __ [ 3/ 3, ___]
     head="Amalric Coif +1",           --  2, __, __, __ [__/__,  86]
-    body="Atrophy Tabard +2",         --  1, __, __, __ [__/__,  90]
-    hands="Atrophy Gloves +3",        -- __, 20, __, __ [__/__,  57]
+    body="Atrophy Tabard +3",         --  2, __, __, __ [__/__, 100]
+    hands="Lethargy Gantherots +2",   -- __, __, __, __ [10/10,  77]
     legs="Lethargy Fuseau +2",        --  4, __, __, __ [__/__, 162]
     feet="Lethargy Houseaux +2",      -- __, 35, __, __ [__/__, 147]
     neck="Duelist's Torque +2",       -- __, 25, __, __ [__/__, ___]
@@ -685,16 +685,17 @@ function init_gear_sets()
     back=gear.RDM_Adoulin_Cape,       -- __, __, 20, __ [__/__, ___]
     waist="Embla Sash",               -- __, 10, __, __ [__/__, ___]
     -- Refresh III potency            --  9, __, __, __ [__/__, ___]
-    -- 16 Ref Potency, 111 Enh Duration%, 20 Aug Enh Duration, 0 Ref Duration [23 PDT/17 MDT, 542 M.Eva]
+    -- Empty set bonus                       20
+    -- 17 Ref Potency, 111 Enh Duration%, 20 Aug Enh Duration, 0 Ref Duration [33 PDT/27 MDT, 572 M.Eva]
     
-    -- body="Atrophy Tabard +3",      --  2, __, __, __ [__/__, 100]
+    -- hands="Lethargy Gantherots +3",-- __, __, __, __ [11/11,  87]
     -- legs="Lethargy Fuseau +3",     --  4, __, __, __ [__/__, 162]
     -- feet="Lethargy Houseaux +3",   -- __, 40, __, __ [__/__, 157]
-    -- 17 Ref Potency, 116 Enh Duration%, 20 Aug Enh Duration, 0 Ref Duration [23 PDT/17 MDT, 562 M.Eva]
+    -- 17 Ref Potency, 116 Enh Duration%, 20 Aug Enh Duration, 0 Ref Duration [33 PDT/27 MDT, 592 M.Eva]
   }
   sets.midcast.RefreshSelf = set_combine(sets.midcast.RefreshOthers, {
     waist="Gishdubar Sash",           -- __, __, __, 20 [__/__, ___]
-    -- 17 Ref Potency, 106 Enh Duration%, 20 Aug Enh Duration, 20 Ref Duration [23 PDT/17 MDT, 562 M.Eva]
+    -- 17 Ref Potency, 96 Enh Duration%, 20 Aug Enh Duration, 0 Ref Duration [33 PDT/27 MDT, 592 M.Eva]
   })
   -- Empy set effect adds enh duration under Composure only on non-self targets
   sets.midcast.RefreshOthersComp = set_combine(sets.midcast.RefreshOthers, {})
@@ -904,26 +905,24 @@ function init_gear_sets()
     range=empty,                      -- ___, __, __, __ (__, __, __, __) [__/__, ___]
     ammo="Regal Gem",                 -- ___, 15,  7, __ (__, 10, __, __) [__/__, ___]
     head="Vitiation Chapeau +1",      -- ___, __, 32, __ (__, __, __, 22) [__/__,  75]; Enhances enf. duration
-    body="Atrophy Tabard +2",         -- ___, 45, 38, __ (__, __, __, 19) [__/__,  90]
+    body="Atrophy Tabard +3",         -- ___, 55, 43, __ (__, __, __, 21) [__/__, 100]
     hands="Lethargy Gantherots +2",   -- ___, 52, 45, __ (__, __, __, 24) [10/10,  77]
     legs=gear.Chironic_MAcc_legs,     -- ___, 57, 29, __ ( 1, __, __, 13) [__/__, 118]
     feet="Vitiation Boots +3",        -- ___, 43, 32, __ (__, 10, __, 16) [__/__, 127]; Immunobreak+
     neck="Duelist's Torque +2",       -- ___, 30, 15, __ (__, 10, 25, __) [__/__, ___]
     ear1="Snotra Earring",            -- ___, 10,  8, __ (__, __, 10, __) [__/__, ___]
-    ear2="Regal Earring",             -- ___, __, 10, __ (__, __, __, __) [__/__, ___]
+    ear2="Odnowa Earring +1",         -- ___, __, __, __ (__, __, __, __) [ 3/ 5, ___]
     ring1="Kishar Ring",              -- ___,  5, __,  4 (__, __, 10, __) [__/__, ___]
     ring2="Stikini Ring +1",          -- ___, 11,  8, __ (__, __, __,  8) [__/__, ___]
     back=gear.RDM_MND_Enf_Cape,       -- ___, 20, 30, 10 (__, 10, __, __) [10/__, ___]
     waist="Obstinate Sash",           -- ___, 15,  5, __ (__, __,  5, 15) [__/__, ___]
-    -- AF set effect                          15
     -- Traits/Gifts                                   38             476
-    -- 228 M.Acc skill, 398 M.Acc, 291 MND, 52 FC (1 Immunobreak, 40 Enf. Effect, 50 Enf. Duration, 613 Enf. Skill) [20 PDT/10 MDT, 497 M.Eva]
+    -- 228 M.Acc skill, 393 M.Acc, 286 MND, 52 FC (1 Immunobreak, 40 Enf. Effect, 50 Enf. Duration, 615 Enf. Skill) [23 PDT/15 MDT, 507 M.Eva]
     
     -- head="Vitiation Chapeau +3",   -- ___, 37, 42, __ (__, __, __, 26) [__/__,  95]; Enhances enf. duration
-    -- body="Atrophy Tabard +3",      -- ___, 55, 43, __ (__, __, __, 21) [__/__, 100]
     -- hands="Lethargy Gantherots +3",-- ___, 62, 50, __ (__, __, __, 29) [11/11,  87]
     -- legs=gear.Chironic_MAcc_legs,  -- ___, 60, 29, __ ( 1, __, __, 13) [__/__, 118]
-    -- 228 M.Acc skill, 458 M.Acc, 311 MND, 52 FC (1 Immunobreak, 40 Enf. Effect, 50 Enf. Duration, 624 Enf. Skill) [20 PDT/10 MDT, 517 M.Eva]
+    -- 228 M.Acc skill, 443 M.Acc, 301 MND, 52 FC (1 Immunobreak, 40 Enf. Effect, 50 Enf. Duration, 624 Enf. Skill) [23 PDT/15 MDT, 517 M.Eva]
   }
   sets.midcast.SkillEnfeeblesDW = set_combine(sets.midcast.SkillEnfeebles, {
   })
@@ -967,7 +966,7 @@ function init_gear_sets()
     range="Ullr",                     -- ___, 40, __, __ (__, __, __, __) [__/__, ___]
     ammo=empty,                       -- ___, __, __, __ (__, __, __, __) [__/__, ___]
     head="Vitiation Chapeau +1",      -- ___, __, 32, __ (__, __, __, 22) [__/__,  75]; Enhances enf. duration
-    body="Atrophy Tabard +2",         -- ___, 45, 38, __ (__, __, __, 19) [__/__,  90]
+    body="Atrophy Tabard +3",         -- ___, 55, 43, __ (__, __, __, 21) [__/__, 100]
     hands="Lethargy Gantherots +2",   -- ___, 52, 45, __ (__, __, __, 24) [10/10,  77]
     legs=gear.Chironic_MAcc_legs,     -- ___, 57, 29, __ ( 1, __, __, 13) [__/__, 118]
     feet="Vitiation Boots +3",        -- ___, 43, 32, __ (__, 10, __, 16) [__/__, 127]; Immunobreak+
@@ -980,10 +979,9 @@ function init_gear_sets()
     waist="Obstinate Sash",           -- ___, 15,  5, __ (__, __,  5, 15) [__/__, ___]
     -- Empy set effect                   ___, __, __, __ (__, __, __, __) [__/__, ___]
     -- Traits/Gifts/Merits                            38
-    -- 255 M.Acc skill, 432 M.Acc, 271 MND, 72 FC (1 Immunobreak, 20 Enf. Effect, 40 Enf. Duration, 125 Enf. Skill) [20 PDT/10 MDT, 487 M.Eva]
+    -- 255 M.Acc skill, 442 M.Acc, 276 MND, 72 FC (1 Immunobreak, 20 Enf. Effect, 40 Enf. Duration, 127 Enf. Skill) [20 PDT/10 MDT, 497 M.Eva]
     
     -- head="Vitiation Chapeau +3",   -- ___, 37, 42, __ (__, __, __, 26) [__/__,  95]; Enhances enf. duration
-    -- body="Atrophy Tabard +3",      -- ___, 55, 43, __ (__, __, __, 21) [__/__, 100]
     -- hands="Lethargy Gantherots +3",-- ___, 62, 50, __ (__, __, __, 29) [11/11,  87]
     -- legs=gear.Chironic_MAcc_legs,  -- ___, 60, 29, __ ( 1, __, __, 13) [__/__, 118]
     -- 255 M.Acc skill, 492 M.Acc, 291 MND, 72 FC (1 Immunobreak, 30 Enf. Effect, 40 Enf. Duration, 136 Enf. Skill) [21 PDT/11 MDT, 527 M.Eva]
@@ -1058,7 +1056,7 @@ function init_gear_sets()
     range="Ullr",                     -- ___, 40, __, __ (__, __, __, __) [__/__, ___]
     ammo=empty,                       -- ___, __, __, __ (__, __, __, __) [__/__, ___]
     head="Vitiation Chapeau +1",      -- ___, __, 19, __ (__, __, __, 22) [__/__,  75]; Enhances enf. duration
-    body="Atrophy Tabard +2",         -- ___, 45, 38, __ (__, __, __, 19) [__/__,  90]
+    body="Atrophy Tabard +3",         -- ___, 55, 43, __ (__, __, __, 21) [__/__, 100]
     hands="Lethargy Gantherots +2",   -- ___, 52, 28, __ (__, __, __, 24) [10/10,  77]
     legs=gear.Chironic_MAcc_legs,     -- ___, 57, 42, __ ( 1, __, __, 13) [__/__, 118]
     feet="Vitiation Boots +3",        -- ___, 43, 32, __ (__, 10, __, 16) [__/__, 127]; Immunobreak+
@@ -1071,10 +1069,9 @@ function init_gear_sets()
     waist="Obstinate Sash",           -- ___, 15, __, __ (__, __,  5, 15) [__/__, ___]
     -- Empy set effect                   ___, __, __, __ (__, __, __, __) [__/__, ___]
     -- Traits/Gifts/Merits                            38
-    -- 228 M.Acc skill, 428 M.Acc, 250 INT, 42 FC (1 Immunobreak, 30 Enf. Effect, 40 Enf. Duration, 137 Enf. Skill) [20 PDT/10 MDT, 497 M.Eva]
+    -- 228 M.Acc skill, 438 M.Acc, 255 INT, 42 FC (1 Immunobreak, 30 Enf. Effect, 40 Enf. Duration, 139 Enf. Skill) [20 PDT/10 MDT, 507 M.Eva]
     
     -- head="Vitiation Chapeau +3",   -- ___, 37, 29, __ (__, __, __, 26) [__/__,  95]; Enhances enf. duration
-    -- body="Atrophy Tabard +3",      -- ___, 55, 43, __ (__, __, __, 21) [__/__, 100]
     -- hands="Lethargy Gantherots +3",-- ___, 62, 33, __ (__, __, __, 29) [11/11,  87]
     -- legs=gear.Chironic_MAcc_legs,  -- ___, 60, 42, __ ( 1, __, __, 13) [__/__, 118]
     -- 228 M.Acc skill, 503 M.Acc, 270 INT, 42 FC (1 Immunobreak, 30 Enf. Effect, 40 Enf. Duration, 148 Enf. Skill) [21 PDT/11 MDT, 537 M.Eva]
