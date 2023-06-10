@@ -1917,6 +1917,13 @@ function job_post_precast(spell, action, spellMap, eventArgs)
     if state.LuzafRing.value then
       equip(sets.precast.LuzafRing)
     end
+  elseif spell.type == 'CorsairShot' and (spell.english ~= 'Light Shot' and spell.english ~= 'Dark Shot') then
+    -- Equip corsair shot set
+    if state.QDMode.value == 'Enhance' then
+      equip(sets.precast.CorsairShot.Enhance)
+    elseif state.QDMode.value == 'STP' then
+      equip(sets.precast.CorsairShot.STP)
+    end
   elseif spell.type == 'WeaponSkill' then
     if buffactive['Reive Mark'] then
       equip(sets.Reive)
@@ -1941,14 +1948,7 @@ function job_midcast(spell, action, spellMap, eventArgs)
 end
 
 function job_post_midcast(spell, action, spellMap, eventArgs)
-  if spell.type == 'CorsairShot' and (spell.english ~= 'Light Shot' and spell.english ~= 'Dark Shot') then
-    -- Equip corsair shot set
-    if state.QDMode.value == 'Enhance' then
-      equip(sets.midcast.CorsairShot.Enhance)
-    elseif state.QDMode.value == 'STP' then
-      equip(sets.midcast.CorsairShot.STP)
-    end
-  elseif spell.action_type == 'Ranged Attack' then
+  if spell.action_type == 'Ranged Attack' then
     -- Equip safe sets if available
     if buffactive['Triple Shot'] and ((player.equipment.ranged == 'Armageddon' and buffactive['Aftermath: Lv.3']) or state.CritMode.current == 'on') then
       if (state.DefenseMode.value ~= 'None' or state.HybridMode.value == 'Safe') and sets.TripleShot.Critical.Safe then
