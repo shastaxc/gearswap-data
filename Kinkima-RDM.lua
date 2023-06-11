@@ -616,7 +616,7 @@ function init_gear_sets()
     ammo="Staunch Tathlum +1",        -- __, __, __, __ [ 3/ 3, ___]
     head="Befouled Crown",            -- 16, __, __, __ [__/__,  75]
     body=gear.Telchine_ENH_body,      -- 12, 10, __, __ [__/__,  80]
-    hands="Vitiation Gloves +1",      -- 20, __, __, __ [__/__,  37]
+    hands="Vitiation Gloves +2",      -- 22, __, __, __ [__/__,  47]
     legs="Atrophy Tights +1",         -- 17, __, __, __ [__/__, 107]
     feet="Lethargy Houseaux +2",      -- 30, 35, __, __ [__/__, 147]
     neck="Loricate Torque +1",        -- __, __, __, __ [ 6/ 6, ___]
@@ -627,7 +627,7 @@ function init_gear_sets()
     back=gear.RDM_Adoulin_Cape,       --  9, __, 20, __ [__/__, ___]
     waist="Olympus Sash",             --  5, __, __, __ [__/__, ___]
     -- Traits/Gifts/Merits            --456, __, __, 38 [__/__, ___]
-    -- 596 Enh skill, 45 Enh duration, 20 Aug Enh Duration, 38 FC [33 PDT/23 MDT, 446 M.Eva]
+    -- 598 Enh skill, 45 Enh duration, 20 Aug Enh Duration, 38 FC [33 PDT/23 MDT, 456 M.Eva]
     
     -- body="Vitiation Tabard +3",    -- 23, 15, __, 15 [__/__, 100]
     -- hands="Vitiation Gloves +3",   -- 24, __, __, __ [__/__,  57]
@@ -838,14 +838,18 @@ function init_gear_sets()
     -- 6 Aquaveil+, 516 Enh skill, 40 Enh duration, 20 Aug Enh Duration, 106 SIRD [37 PDT/29 MDT, 376 M.Eva]
   })
 
-  sets.midcast.GainSpell = {
-    hands="Vitiation Gloves +1"
-    -- hands="Vitiation Gloves +3"
-  }
-  sets.midcast.SpikesSpell = {
+  -- Cap at 500 enhancing skill
+  sets.midcast.GainSpell = set_combine(sets.midcast.EnhancingDuration, {
+    head="Lethargy Chappel +2",       -- __, __, __, __ [ 9/ 9, 115]; Using for DT
+    hands="Vitiation Gloves +2",      -- 22, __, __, __ [__/__,  47]; Gain +20
+    -- hands="Vitiation Gloves +3",   -- 24, __, __, __ [__/__,  57]; Gain +30
+  })
+  -- Cap at 250 INT at time of casting
+  sets.midcast.SpikesSpell = set_combine(sets.midcast.EnhancingDuration, {
+    head="Lethargy Chappel +2",       -- __, __, __, __ [ 9/ 9, 115]; Using for DT
     legs="Vitiation Tights +1"
     -- legs="Vitiation Tights +3" -- No real need to upgrade past +1
-  }
+  })
 
   sets.midcast.Protect = set_combine(sets.midcast.EnhancingDuration, {
     ring1="Sheltered Ring"
