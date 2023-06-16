@@ -2,7 +2,7 @@
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs
--- Recommended addons: WSBinder, Reorganizer, PartyBuffs
+-- Recommended addons: WSBinder, Reorganizer, PartyBuffs, Debuffed
 -- Misc Recommendations: Disable RollTracker
 
 -- Initialization function for this job file.
@@ -112,6 +112,8 @@ function job_setup()
   enf_variable_duration_spells = S{'Gravity', 'Gravity II', 'Bind', 'Addle', 'Addle II'}
 
   set_main_keybinds()
+
+  send_command('lua l debuffed')
 end
 
 
@@ -140,6 +142,7 @@ end
 -- Called when this job file is unloaded (eg: job change)
 function user_unload()
   unbind_keybinds()
+  send_command('lua u debuffed')
 end
 
 -- Define sets and vars used by this job file.
@@ -806,7 +809,7 @@ function init_gear_sets()
     head="Amalric Coif +1",           --  2, __, __, __, __ [__/__,  86]
     body="Rosette Jaseran +1",        -- __, __, __, __, 25 [ 5/ 5,  80]
     hands="Regal Cuffs",              --  2, __, __, __, __ [__/__,  53]
-    -- legs="Shedir Seraweels",       --  1, 15, __, __, __ [__/__, ___]
+    legs=gear.Nyame_B_legs,
     feet="Lethargy Houseaux +2",      -- __, 30, 35, __, __ [__/__, 147]
     neck="Loricate Torque +1",        -- __, __, __, __,  5 [ 6/ 6, ___]
     ear1="Halasz Earring",            -- __, __, __, __,  5 [__/__, ___]
@@ -818,23 +821,9 @@ function init_gear_sets()
     -- Traits/Gifts/Merits            -- __,456, __, __, 10 [__/__, ___]
     -- 6 Aquaveil+, 510 Enh skill, 35 Enh duration, 20 Aug Enh Duration, 103 SIRD [37 PDT/29 MDT, 366 M.Eva]
     
-    -- main="Eremite's Wand +1",      -- __, __, __, __, 25 [__/__, ___]
-    -- sub="Genmei Shield",           -- __, __, __, __, __ [10/__, ___]
-    -- range=empty,                   -- __, __, __, __, __ [__/__, ___]
-    -- ammo="Staunch Tathlum +1",     -- __, __, __, __, 11 [ 3/ 3, ___]
-    -- head="Amalric Coif +1",        --  2, __, __, __, __ [__/__,  86]
-    -- body="Rosette Jaseran +1",     -- __, __, __, __, 25 [ 5/ 5,  80]
-    -- hands="Regal Cuffs",           --  2, __, __, __, __ [__/__,  53]
     -- legs="Shedir Seraweels",       --  1, 15, __, __, __ [__/__, ___]
     -- feet="Lethargy Houseaux +3",   -- __, 35, 40, __, __ [__/__, 157]
-    -- neck="Loricate Torque +1",     -- __, __, __, __,  5 [ 6/ 6, ___]
     -- ear1="Magnetic Earring",       -- __, __, __, __,  8 [__/__, ___]
-    -- ear2="Odnowa Earring +1",      -- __, __, __, __, __ [ 3/ 5, ___]
-    -- ring1="Freke Ring",            -- __, __, __, __, 10 [__/__, ___]
-    -- ring2="Defending Ring",        -- __, __, __, __, __ [10/10, ___]
-    -- back=gear.RDM_Adoulin_Cape,    -- __, 10, __, 20, __ [__/__, ___]
-    -- waist="Emphatikos Rope",       --  1, __, __, __, 12 [__/__, ___]
-    -- Traits/Gifts/Merits            -- __,456, __, __, 10 [__/__, ___]
     -- 6 Aquaveil+, 516 Enh skill, 40 Enh duration, 20 Aug Enh Duration, 106 SIRD [37 PDT/29 MDT, 376 M.Eva]
   })
 
