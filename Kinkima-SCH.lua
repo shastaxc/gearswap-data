@@ -1623,7 +1623,7 @@ function update_idle_groups()
       classes.CustomIdleGroups:append('Regen')
     end
     if mp_jobs:contains(player.main_job) or mp_jobs:contains(player.sub_job) then
-      if (isRefreshing==true and player.mpp < 100) or (isRefreshing==false and player.mpp < 85) then
+      if (isRefreshing==true and player.mpp < 100) or (isRefreshing==false and player.mpp < 80) then
         classes.CustomIdleGroups:append('Refresh')
       end
       if player.mpp < 50 then
