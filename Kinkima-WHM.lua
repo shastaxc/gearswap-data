@@ -379,10 +379,24 @@ function init_gear_sets()
     -- Merit points                   -- __, __, 10 [__/__, ___]  5
     -- 4 CPII, 56 CP, 104 SIRD [52 PDT/32 MDT, 466 M.Eva] 51 -Enmity
 
+    -- main="Chatoyant Staff",        -- __, 10, __ [__/__, ___] __; Weather bonus
+    -- sub="Mensch Strap +1",         -- __, __, __ [ 5/__, ___] __
+    -- ammo="Staunch Tathlum +1",     -- __, __, 11 [ 3/ 3, ___] __
+    -- head=gear.Kaykaus_C_head,      -- __, 11, 12 [__/ 3,  75] __
+    -- body=gear.Kaykaus_C_body,      --  4, __, 12 [__/__,  80] __
+    -- hands=gear.Kaykaus_C_hands,    -- __, 11, 12 [__/__,  37]  6
     -- legs="Ebers Pantaloons +3",    -- __, __, __ [13/13, 157] __; 8% healing to MP
+    -- feet="Theophany Duckbills +3", -- __, __, 29 [__/__, 127] __
     -- neck="Cleric's Torque +2",     -- __, 10, __ [__/__, ___] 25
+    -- ear1="Magnetic Earring",       -- __, __,  8 [__/__, ___] __
     -- ear2="Ebers Earring +2",       -- __, __, __ [ 8/ 8, ___]  9
-    -- 4 CPII, 56 CP, 104 SIRD [61 PDT/41 MDT, 476 M.Eva] 53 -Enmity
+    -- ring1="Freke Ring",            -- __, __, 10 [__/__, ___] __
+    -- ring2="Defending Ring",        -- __, __, __ [10/10, ___] __
+    -- back=gear.WHM_CP_Cape,         -- __, 10, __ [10/__, ___] __
+    -- waist="Hachirin-no-Obi",       -- __, __, __ [__/__, ___] __; Weather bonus
+    -- Kaykaus bonus                      6, __, __ [__/__, ___] __
+    -- Merit points                      __, __, 10 [__/__, ___]  5
+    -- 10 CPII, 52 CP, 104 SIRD [49 PDT/37 MDT, 476 M.Eva] 45 -Enmity
   })
 
   sets.midcast.CureSolace = set_combine(sets.midcast.CureNormal, {

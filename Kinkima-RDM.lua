@@ -812,18 +812,17 @@ function init_gear_sets()
     legs=gear.Nyame_B_legs,
     feet="Lethargy Houseaux +2",      -- __, 30, 35, __, __ [__/__, 147]
     neck="Loricate Torque +1",        -- __, __, __, __,  5 [ 6/ 6, ___]
-    ear1="Halasz Earring",            -- __, __, __, __,  5 [__/__, ___]
+    ear1="Magnetic Earring",          -- __, __, __, __,  8 [__/__, ___]
     ear2="Odnowa Earring +1",         -- __, __, __, __, __ [ 3/ 5, ___]
     ring1="Freke Ring",               -- __, __, __, __, 10 [__/__, ___]
     ring2="Defending Ring",           -- __, __, __, __, __ [10/10, ___]
     back=gear.RDM_Adoulin_Cape,       -- __,  9, __, 20, __ [__/__, ___]
     waist="Emphatikos Rope",          --  1, __, __, __, 12 [__/__, ___]
     -- Traits/Gifts/Merits            -- __,456, __, __, 10 [__/__, ___]
-    -- 6 Aquaveil+, 510 Enh skill, 35 Enh duration, 20 Aug Enh Duration, 103 SIRD [37 PDT/29 MDT, 366 M.Eva]
+    -- 6 Aquaveil+, 510 Enh skill, 35 Enh duration, 20 Aug Enh Duration, 106 SIRD [37 PDT/29 MDT, 366 M.Eva]
     
     -- legs="Shedir Seraweels",       --  1, 15, __, __, __ [__/__, ___]
     -- feet="Lethargy Houseaux +3",   -- __, 35, 40, __, __ [__/__, 157]
-    -- ear1="Magnetic Earring",       -- __, __, __, __,  8 [__/__, ___]
     -- 6 Aquaveil+, 516 Enh skill, 40 Enh duration, 20 Aug Enh Duration, 106 SIRD [37 PDT/29 MDT, 376 M.Eva]
   })
 
