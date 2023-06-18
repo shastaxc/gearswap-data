@@ -1462,7 +1462,6 @@ function set_main_keybinds()
   send_command('bind !w gs c curaga')
   send_command('bind !z gs c barelement')
   send_command('bind !x gs c barstatus')
-  send_command('bind !c gs c storm')
   
   send_command('bind ^insert gs c cycleback Barelement')
   send_command('bind ^delete gs c cycle Barelement')
@@ -1478,7 +1477,6 @@ function set_main_keybinds()
 
   send_command('bind ^. gs c cycleback CuragaTier')
   send_command('bind ^/ gs c cycle CuragaTier')
-  send_command('bind !/ gs c reset CuragaTier')
 
   send_command('bind !r input /ma "Auspice" <me>')
   send_command('bind !e input /ma "Haste" <stpc>')
@@ -1486,17 +1484,22 @@ function set_main_keybinds()
   send_command('bind !i input /ma "Stoneskin" <me>')
   send_command('bind !p input /ma "Aquaveil" <me>')
   send_command('bind !; input /ma "Regen IV" <stpc>')
+  send_command('bind ^z input /ma "Boost-INT" <me>')
+  send_command('bind ^x input /ma "Boost-MND" <me>')
+  send_command('bind ^c input /ma "Boost-STR" <me>')
+  send_command('bind ^v input /ma "Boost-AGI" <me>')
 end
 
 function set_sub_keybinds()
   if player.sub_job == 'SCH' then
+    send_command('bind !c gs c elemental storm')
+    send_command('bind !/ input /ma "Klimaform" <me>')
     send_command('bind ^- gs c scholar light')
     send_command('bind ^= gs c scholar dark')
-    
+    send_command('bind ^[ gs c scholar power')
     send_command('bind ^\\\\ gs c scholar cost')
     send_command('bind ![ gs c scholar aoe')
     send_command('bind !\\\\ gs c scholar speed')
-
     send_command('bind !q input /ja "Sublimation" <me>')
   elseif player.sub_job == 'RDM' then
     send_command('bind !\' input /ma "Refresh" <stpc>')
@@ -1514,7 +1517,6 @@ function unbind_keybinds()
   send_command('unbind !w')
   send_command('unbind !z')
   send_command('unbind !x')
-  send_command('unbind !c')
 
   send_command('unbind ^insert')
   send_command('unbind ^delete')
@@ -1538,15 +1540,19 @@ function unbind_keybinds()
   send_command('unbind !i')
   send_command('unbind !p')
   send_command('unbind !;')
+  send_command('unbind ^z')
+  send_command('unbind ^x')
+  send_command('unbind ^c')
+  send_command('unbind ^v')
 
   send_command('unbind ^-')
   send_command('unbind ^=')
-  
+  send_command('unbind ^[')
   send_command('unbind ^\\\\')
   send_command('unbind ![')
   send_command('unbind !\\\\')
-
   send_command('unbind !q')
+
   send_command('unbind !\'')
 end
 
