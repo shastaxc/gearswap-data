@@ -122,10 +122,11 @@ gear.Gende_SongFC_hands = { name="Gende. Gages +1", augments={'Phys. dmg. taken 
 -- gear.Helios_Phys_BP_head = {} -- 7 BP Dmg, 30 Pet Acc, 8 Pet DA
 
 -- Taeon
--- gear.Taeon_FC_body = {} -- 5 FC, 3 Phalanx
--- gear.Taeon_FC_hands = {} -- 5 FC, 3 Phalanx
--- gear.Taeon_FC_legs = {} -- 5 FC, 3 Phalanx
--- gear.Taeon_FC_feet = {} -- 5 FC, 3 Phalanx
+-- gear.Taeon_FC_body = {} -- 5 FC, 3 Phalanx, 20 M.Eva
+-- gear.Taeon_FC_body = {} -- 5 FC, 3 Phalanx, 20 M.Eva
+-- gear.Taeon_FC_hands = {} -- 5 FC, 3 Phalanx, 20 M.Eva
+-- gear.Taeon_FC_legs = {} -- 5 FC, 3 Phalanx, 20 M.Eva
+-- gear.Taeon_FC_feet = {} -- 5 FC, 3 Phalanx, 20 M.Eva
 
 -- gear.Taeon_Phalanx_body = gear.Taeon_FC_body
 -- gear.Taeon_Phalanx_hands = gear.Taeon_FC_hands
@@ -135,14 +136,16 @@ gear.Gende_SongFC_hands = { name="Gende. Gages +1", augments={'Phys. dmg. taken 
 gear.Taeon_DW_feet = { name="Taeon Boots", augments={'Accuracy+19','"Dual Wield"+5',}}
 
 -- Telchine
--- TODO: Add fast cast and meva to all enh telchine except hands
-gear.Telchine_ENH_head = { name="Telchine Cap", augments={'"Regen"+2','Enh. Mag. eff. dur. +9',}} -- Max 25 meva, 10 enh duration
-gear.Telchine_ENH_body = { name="Telchine Chas.", augments={'Enh. Mag. eff. dur. +10',}} -- Max 25 meva, 10 enh duration, 3 pet regen
-gear.Telchine_ENH_hands = { name="Telchine Gloves", augments={'Mag. Evasion+24','"Cure" potency +7%','Enh. Mag. eff. dur. +10',}} -- Max 25 meva, 8 CP, 10 enh duration
-gear.Telchine_ENH_legs = { name="Telchine Braconi", augments={'Mag. Evasion+21','"Regen"+2','Enh. Mag. eff. dur. +10',}} -- Max 25 meva, 10 enh duration, 3 pet regen
-gear.Telchine_ENH_feet = { name="Telchine Pigaches", augments={'Enh. Mag. eff. dur. +9',}} -- Max 25 meva, 10 enh duration
+gear.Telchine_ENH_head = { name="Telchine Cap", augments={'Mag. Evasion+25','"Fast Cast"+5','Enh. Mag. eff. dur. +10',}}
+gear.Telchine_ENH_body = { name="Telchine Chas.", augments={'Mag. Evasion+24','"Fast Cast"+5','Enh. Mag. eff. dur. +10',}} -- Max 25 M.Eva
+gear.Telchine_ENH_hands = { name="Telchine Gloves", augments={'Mag. Evasion+24','"Cure" potency +7%','Enh. Mag. eff. dur. +10',}} -- Max 25 M.Eva, 8 CP
+gear.Telchine_ENH_legs = { name="Telchine Braconi", augments={'Mag. Evasion+25','"Fast Cast"+5','Enh. Mag. eff. dur. +10',}}
+gear.Telchine_ENH_feet = { name="Telchine Pigaches", augments={'Mag. Evasion+24','"Fast Cast"+5','Enh. Mag. eff. dur. +10',}} -- Max 25 M.Eva
 
-gear.Telchine_Regen_body = { name="Telchine Chas.", augments={'"Regen" potency+3',}}
+gear.Telchine_CP_hands = gear.Telchine_ENH_hands
+
+-- head=gear.Telchine_Regen_head, -- Only used for RDM weak regen II. Probably not worth making.
+gear.Telchine_Regen_body = { name="Telchine Chasuble", augments={'"Regen" potency+3',}}
 gear.Telchine_Regen_hands = { name="Telchine Gloves", augments={'"Regen" potency+3',}}
 gear.Telchine_Regen_legs = { name="Telchine Braconi", augments={'"Regen" potency+3',}}
 gear.Telchine_Regen_feet = { name="Telchine Pigaches", augments={'"Regen" potency+3',}}
@@ -164,7 +167,6 @@ gear.Telchine_Regen_feet = { name="Telchine Pigaches", augments={'"Regen" potenc
 gear.RDM_Adoulin_Cape = { name="Ghostfyre Cape", augments={'Enfb.mag. skill +3','Enha.mag. skill +9','Mag. Acc.+5','Enh. Mag. eff. dur. +20',}} -- Enh Skill ~10, Enh Duration +20
 
 gear.SCH_Adoulin_Regen_Cape = { name="Bookworm's Cape", augments={'INT+1','MND+1','Helix eff. dur. +17','"Regen" potency+10',}}
-gear.SCH_Adoulin_Helix_Cape = { name="Bookworm's Cape", augments={'INT+1','MND+1','Helix eff. dur. +20',}}
 
 gear.GEO_Adoulin_Cape = { name="Lifestream Cape", augments={'Geomancy Skill +9','Indi. eff. dur. +20','Pet: Damage taken -4%',}}
 

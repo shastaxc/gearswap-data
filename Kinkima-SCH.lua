@@ -516,10 +516,10 @@ function init_gear_sets()
   sets.midcast['Enhancing Magic'] = {
     main=gear.Gada_ENH,               -- 18,  6, __
     sub="Ammurapi Shield",            -- __, 10, __
-    head=gear.Telchine_ENH_head,      -- __,  9, __
+    head=gear.Telchine_ENH_head,      -- __, 10,  5
     body="Pedagogy Gown +3",          -- 19, 12, __
     hands=gear.Telchine_ENH_hands,    -- __, 10, __
-    legs=gear.Telchine_ENH_legs,      -- __, 10, __
+    legs=gear.Telchine_ENH_legs,      -- __, 10,  5
     feet=gear.Kaykaus_D_feet,         -- 21, __,  4
     neck="Incanter's Torque",         -- 10, __, __
     ear1="Mimir Earring",             -- 10, __, __
@@ -529,28 +529,25 @@ function init_gear_sets()
 
     -- main=gear.Gada_ENH,            -- 18,  6,  6
     -- ammo="Savant's Treatise",      --  4, __, __
-    -- head=gear.Telchine_ENH_head,   -- __, 10, __
     -- ear2="Andoaa Earring",         --  5, __, __
     -- back="Fi Follet Cape +1",      --  9, __, 10
-    -- 112 Enh Skill, 68 Enh Duration, 25 FC
+    -- 108 Enh Skill, 68 Enh Duration, 35 FC
   }
 
   sets.midcast.EnhancingDuration = {
     main=gear.Pedagogy_C,           -- 15,  8
     sub="Enki Strap",
-    head=gear.Telchine_ENH_head,    --  9, __
+    head=gear.Telchine_ENH_head,    -- 10,  5
     body="Pedagogy Gown +3",        -- 12, __
     hands=gear.Telchine_ENH_hands,  -- 10, __
-    legs=gear.Telchine_ENH_legs,    -- 10, __
-    feet=gear.Telchine_ENH_feet,    --  9, __
+    legs=gear.Telchine_ENH_legs,    -- 10,  5
+    feet=gear.Telchine_ENH_feet,    -- 10,  5
     waist="Embla Sash",             -- 10,  5
-     -- 75 Enh Duration, 13 FC
+    -- 77 Enh Duration, 28 FC
 
     -- main=gear.Musa_C,            -- 20, 10
     -- sub="Clerisy Strap +1",      -- __,  3
-    -- head=gear.Telchine_ENH_head, -- 10, __
-    -- feet=gear.Telchine_ENH_feet, -- 10, __
-    -- 82 Enh Duration, 18 FC
+    -- 82 Enh Duration, 33 FC
   }
 
   -- Regen not affected by Enh Magic Skill
@@ -581,14 +578,13 @@ function init_gear_sets()
     body=gear.Telchine_ENH_body,      -- __, 10, 12
     hands=gear.Telchine_ENH_hands,    -- __, 10, __
     legs=gear.Telchine_ENH_legs,      -- __, 10, __
-    feet=gear.Telchine_ENH_feet,      -- __,  9, __
+    feet=gear.Telchine_ENH_feet,      -- __, 10, __
     back=gear.SCH_Adoulin_Regen_Cape, -- 10, __, __
     waist="Embla Sash",               -- __, 10,  5
     -- Base Potency (w/ Light Arts)      64, __, __
-    -- 105 Regen Potency, 64 Enh Duration %, 17 Regen Duration
+    -- 105 Regen Potency, 65 Enh Duration %, 17 Regen Duration
 
     -- main=gear.Musa_C,              -- 25, 20, __
-    -- feet=gear.Telchine_ENH_feet,   -- __, 10, __
     -- 110 Regen Potency, 70 Enh Duration %, 17 Regen Duration
   }
 

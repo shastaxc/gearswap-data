@@ -935,9 +935,9 @@ function init_gear_sets()
     -- range="Dunna",                 -- __, __,  3 [__/__, ___] { 5/ 5, __}
     -- ammo=empty,
     -- head="Azimuth Hood +3",        -- __, __, __ [12/12, 136] {__/__,  5}
-    -- body=gear.Telchine_ENH_body,   -- 12, 10, __ [__/__,  80] {__/__,  3}
+    -- body=gear.Telchine_ENH_body,   -- 12, 10,  5 [__/__, 105] {__/__, __}
     -- hands=gear.Telchine_ENH_hands, -- __, 10, __ [__/__,  37] {__/__, __}
-    -- legs=gear.Telchine_ENH_legs,   -- __, 10, __ [__/__, 107] {__/__,  3}
+    -- legs=gear.Telchine_ENH_legs,   -- __, 10,  5 [__/__, 132] {__/__, __}
     -- feet="Azimuth Gaiters +3",     -- __, __, __ [11/11, 168] {__/__, __}
     -- neck="Incanter's Torque",      -- 10, __, __ [__/__, ___] {__/__, __}
     -- ear1="Mimir Earring",          -- 10, __, __ [__/__, ___] {__/__, __}
@@ -947,7 +947,7 @@ function init_gear_sets()
     -- back=gear.GEO_FC_Cape,         -- __, __, 10 [10/__, ___] {__/__, __}
     -- waist="Embla Sash",            -- __, 10,  5 [__/__, ___] {__/__, __}
     -- Subjob                           144
-    -- 202 Enh Skill, 56 Enh Duration, 24 FC [50 PDT/40 MDT, 528 M.Eva] {Pet: 5 PDT/5 MDT, 11 Regen}
+    -- 202 Enh Skill, 56 Enh Duration, 34 FC [50 PDT/40 MDT, 578 M.Eva] {Pet: 5 PDT/5 MDT, 5 Regen}
   }
 
   sets.midcast.Stoneskin = {
@@ -1001,9 +1001,9 @@ function init_gear_sets()
     -- range=empty,
     -- ammo="Staunch Tathlum +1",     -- __, __, __ [ 3/ 3, ___] {__/__, __}
     -- head="Amalric Coif +1",        --  2, __, __ [__/__,  86] {__/__, __}
-    -- body=gear.Telchine_ENH_body,   -- __, __, 10 [__/__,  80] {__/__,  3}
+    -- body=gear.Telchine_ENH_body,   -- __, __, 10 [__/__, 105] {__/__, __}
     -- hands="Azimuth Gloves +3",     -- __, __, __ [12/12,  98] {__/__, __}
-    -- legs=gear.Telchine_ENH_legs,   -- __, __, 10 [__/__, 107] {__/__,  3}
+    -- legs=gear.Telchine_ENH_legs,   -- __, __, 10 [__/__, 132] {__/__, __}
     -- feet="Inspirited Boots",       -- __, 15, __ [__/__, 118] {__/__, __}
     -- neck="Loricate Torque +1",     -- __, __, __ [ 6/ 6, ___] {__/__, __}
     -- ear1="Genmei Earring",         -- __, __, __ [ 2/__, ___] {__/__, __}
@@ -1012,7 +1012,7 @@ function init_gear_sets()
     -- ring2="Defending Ring",        -- __, __, __ [10/10, ___] {__/__, __}
     -- back=gear.GEO_Idle_Cape,       -- __, __, __ [__/__,  30] {__/__, 15}
     -- waist="Embla Sash",            -- __, __, 10 [__/__, ___] {__/__, __}
-    -- 2 Refresh Potency, 15 Refresh Duration, 46% Enh Duration [47 PDT/37 MDT, 489 M.Eva] {Pet: 0 PDT/0 MDT, 21 Regen}
+    -- 2 Refresh Potency, 15 Refresh Duration, 46% Enh Duration [47 PDT/37 MDT, 539 M.Eva] {Pet: 0 PDT/0 MDT, 15 Regen}
   }
   sets.midcast.RefreshSelf = set_combine(sets.midcast.Refresh, {
     -- back="Grapevine Cape",         -- __, 30, __ [__/__, ___] {__/__, __}
@@ -1028,19 +1028,19 @@ function init_gear_sets()
     range="Dunna",                    -- __, __ [__/__, ___] { 5/ 5, __}
     ammo=empty,
     -- head="Amalric Coif +1",        --  2, __ [__/__,  86] {__/__, __}
-    -- body=gear.Telchine_ENH_body,   -- __, 10 [__/__,  80] {__/__,  3}
-    -- hands="Regal Cuffs",              --  2, __ [__/__,  53] {__/__, __}
+    -- body=gear.Telchine_ENH_body,   -- __, 10 [__/__, 105] {__/__, __}
+    -- hands="Regal Cuffs",           --  2, __ [__/__,  53] {__/__, __}
     -- legs="Shedir Seraweels",       --  1, __ [__/__, ___] {__/__, __}
-    -- feet="Azimuth Gaiters +3",        -- __, __ [11/11, 168] {__/__, __}
+    -- feet="Azimuth Gaiters +3",     -- __, __ [11/11, 168] {__/__, __}
     neck="Loricate Torque +1",        -- __, __ [ 6/ 6, ___] {__/__, __}
     ear1="Genmei Earring",            -- __, __ [ 2/__, ___] {__/__, __}
-    -- ear2="Azimuth Earring +2",        -- __, __ [ 7/ 7, ___] {__/__, __}
+    -- ear2="Azimuth Earring +2",     -- __, __ [ 7/ 7, ___] {__/__, __}
     ring1="Gelatinous Ring +1",       -- __, __ [ 7/-1, ___] {__/__, __}
     ring2="Defending Ring",           -- __, __ [10/10, ___] {__/__, __}
     back=gear.GEO_FC_Cape,            -- __, __ [10/__, ___] {__/__, __}
     -- waist="Emphatikos Rope",       --  1, __ [__/__, ___] {__/__, __}
     -- Base                               1
-    -- 8 Aquaveil, 20% Enh Duration [53 PDT/33 MDT, 387 M.Eva] {Pet: 5 PDT/5 MDT, 3 Regen}
+    -- 8 Aquaveil, 20% Enh Duration [53 PDT/33 MDT, 412 M.Eva] {Pet: 5 PDT/5 MDT, 0 Regen}
   }
 
   -- Protect+ gear, enh duration, conserve mp
@@ -1050,9 +1050,9 @@ function init_gear_sets()
     -- range=empty,
     -- ammo="Pemphredo Tathlum",      -- __,  4 [__/__, ___] {__/__, __}
     -- head="Azimuth Hood +3",        -- __, __ [12/12, 136] {__/__,  5}
-    -- body=gear.Telchine_ENH_body,   -- 10, __ [__/__,  80] {__/__,  3}
-    -- hands=gear.Telchine_ENH_hands, -- 10, __ [__/__,  37] {__/__, __}
-    -- legs=gear.Telchine_ENH_legs,   -- 10, __ [__/__, 107] {__/__,  3}
+    -- body=gear.Telchine_ENH_body,   -- 10, __ [__/__, 105] {__/__, __}
+    -- hands=gear.Telchine_ENH_hands, -- 10, __ [__/__,  62] {__/__, __}
+    -- legs=gear.Telchine_ENH_legs,   -- 10, __ [__/__, 132] {__/__, __}
     -- feet="Azimuth Gaiters +3",     -- __, __ [11/11, 168] {__/__, __}
     -- neck="Bagua Charm +2",         -- __, __ [__/__, ___] {__/__, __}; Luopan Duration +25%
     -- ear1="Brachyura Earring",      -- __, __ [__/__, ___] {__/__, __}; Enhance Protect/Shell
@@ -1062,7 +1062,7 @@ function init_gear_sets()
     -- back=gear.GEO_FC_Cape,         -- __, __ [10/__, ___] {__/__, __}
     -- waist="Embla Sash",            -- 10, __ [__/__, ___] {__/__, __}
     -- Base                              __, 43
-    -- 56 Enh Duration, 62 Conserve MP [50 PDT/40 MDT, 528 M.Eva] {Pet: 5 PDT/5 MDT, 11 Regen}
+    -- 56 Enh Duration, 62 Conserve MP [50 PDT/40 MDT, 603 M.Eva] {Pet: 5 PDT/5 MDT, 5 Regen}
   }
   sets.midcast.Protectra = set_combine(sets.midcast.Protect, {})
   -- Shell+ gear, enh duration, conserve mp

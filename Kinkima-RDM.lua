@@ -591,10 +591,10 @@ function init_gear_sets()
     sub="Ammurapi Shield",            -- __, 10, __, __ [__/__, ___]
     range=empty,                      -- __, __, __, __ [__/__, ___]
     ammo="Staunch Tathlum +1",        -- __, __, __, __ [ 3/ 3, ___]
-    head=gear.Telchine_ENH_head,      -- __, 10, __, __ [__/__,  75]
-    body=gear.Telchine_ENH_body,      -- 12, 10, __, __ [__/__,  80]
+    head=gear.Telchine_ENH_head,      -- __, 10, __,  5 [__/__, 100]
+    body=gear.Telchine_ENH_body,      -- 12, 10, __,  5 [__/__, 104]
     hands="Atrophy Gloves +3",        -- __, 20, __, __ [__/__,  57]
-    legs=gear.Telchine_ENH_legs,      -- __, 10, __, __ [__/__, 128]
+    legs=gear.Telchine_ENH_legs,      -- __, 10, __,  5 [__/__, 132]
     feet="Lethargy Houseaux +2",      -- 30, 35, __, __ [__/__, 147]
     neck="Duelist's Torque +2",       -- __, 25, __, __ [__/__, ___]
     ear1="Odnowa Earring +1",         -- __, __, __, __ [ 3/ 5, ___]
@@ -604,12 +604,13 @@ function init_gear_sets()
     back=gear.RDM_Adoulin_Cape,       --  9, __, 20, __ [__/__, ___]
     waist="Embla Sash",               -- __, 10, __,  5 [__/__, ___]
     -- Traits/Gifts/Merits            --456, __, __, 38 [__/__, ___]
-    -- 507 Enh skill, 141 Enh duration, 20 Aug Enh Duration, 54 FC [23 PDT/17 MDT, 487 M.Eva]
+    -- 507 Enh skill, 141 Enh duration, 20 Aug Enh Duration, 69 FC [23 PDT/17 MDT, 540 M.Eva]
     
     -- body="Vitiation Tabard +3",    -- 23, 15, __, 15 [__/__, 100]
     -- feet="Lethargy Houseaux +3",   -- 35, 40, __, __ [__/__, 157]
     -- back=gear.RDM_Adoulin_Cape,    -- 10, __, 20, __ [__/__, ___]
-    -- 524 Enh skill, 151 Enh duration, 20 Aug Enh Duration, 69 FC [23 PDT/17 MDT, 517 M.Eva]
+    -- 524 Enh skill, 151 Enh duration, 20 Aug Enh Duration, 79 FC [23 PDT/17 MDT, 546 M.Eva]
+    
   }
 
   sets.midcast.SkillEnhancing = {
@@ -618,7 +619,7 @@ function init_gear_sets()
     range=empty,                      -- __, __, __, __ [__/__, ___]
     ammo="Staunch Tathlum +1",        -- __, __, __, __ [ 3/ 3, ___]
     head="Befouled Crown",            -- 16, __, __, __ [__/__,  75]
-    body=gear.Telchine_ENH_body,      -- 12, 10, __, __ [__/__,  80]
+    body=gear.Telchine_ENH_body,      -- 12, 10, __,  5 [__/__, 104]
     hands="Vitiation Gloves +2",      -- 22, __, __, __ [__/__,  47]
     legs="Atrophy Tights +1",         -- 17, __, __, __ [__/__, 107]
     feet="Lethargy Houseaux +2",      -- 30, 35, __, __ [__/__, 147]
@@ -630,7 +631,7 @@ function init_gear_sets()
     back=gear.RDM_Adoulin_Cape,       --  9, __, 20, __ [__/__, ___]
     waist="Olympus Sash",             --  5, __, __, __ [__/__, ___]
     -- Traits/Gifts/Merits            --456, __, __, 38 [__/__, ___]
-    -- 598 Enh skill, 45 Enh duration, 20 Aug Enh Duration, 38 FC [33 PDT/23 MDT, 456 M.Eva]
+    -- 598 Enh skill, 45 Enh duration, 20 Aug Enh Duration, 43 FC [33 PDT/23 MDT, 480 M.Eva]
     
     -- body="Vitiation Tabard +3",    -- 23, 15, __, 15 [__/__, 100]
     -- hands="Vitiation Gloves +3",   -- 24, __, __, __ [__/__,  57]
@@ -649,11 +650,11 @@ function init_gear_sets()
     sub="Ammurapi Shield",            -- __, 10, __ [__/__, ___]
     range=empty,                      -- __, __, __ [__/__, ___]
     ammo="Staunch Tathlum +1",        -- __, __, __ [ 3/ 3, ___]
-    head=gear.Telchine_ENH_head,      -- __,  9, __ [__/__,  75]
+    head=gear.Telchine_ENH_head,      -- __, 10, __ [__/__, 100]
     body=gear.Telchine_Regen_body,    --  3, __, 10 [__/__,  80]
     hands=gear.Telchine_ENH_hands,    -- __, 10, __ [__/__,  61]
     legs=gear.Telchine_Regen_legs,    --  3, __, __ [__/__, 107]
-    feet=gear.Telchine_ENH_feet,      -- __, 10, __ [__/__, 107]
+    feet=gear.Telchine_ENH_feet,      -- __, 10, __ [__/__, 131]
     neck="Duelist's Torque +2",       -- __, 25, __ [__/__, ___]
     ear1="Odnowa Earring +1",         -- __, __, __ [ 3/ 5, ___]
     ear2="Lethargy Earring",          -- __,  7, __ [__/__, ___]
@@ -662,7 +663,7 @@ function init_gear_sets()
     back=gear.RDM_ENH_Cape,           -- __, 20, __ [10/__, ___]
     waist="Embla Sash",               -- __, 10,  5 [__/__, ___]
     -- Regen II Base Potency             12, __, __ [__/__, ___]
-    -- 19 Regen Potency, 101 Enh Duration %, 15 Regen Duration [33 PDT/17 MDT, 430 M.Eva]
+    -- 19 Regen Potency, 102 Enh Duration %, 15 Regen Duration [33 PDT/17 MDT, 479 M.Eva]
 
     -- head=gear.Telchine_Regen_head, --  3, __, __ [__/__,  75]
     -- hands=gear.Telchine_Regen_hands,-- 3, __, __ [__/__,  37]
@@ -741,7 +742,7 @@ function init_gear_sets()
     head=gear.Merl_Phalanx_head,          --  5, __, __, __ [__/__,  86]
     body=gear.Merl_Phalanx_body,          --  3, __, __, __ [ 2/__,  91]
     hands="Atrophy Gloves +3",            -- __, __, __, 20 [__/__,  57]
-    legs=gear.Telchine_ENH_legs,          -- __, __, __, 10 [__/__, 128]
+    legs=gear.Telchine_ENH_legs,          -- __, __, __, 10 [__/__, 132]
     feet=gear.Merl_Phalanx_feet,          --  4, __, __, __ [__/__, 118]
     neck="Incanter's Torque",             -- __, 10, __, __ [__/__, ___]
     ear1="Mimir Earring",                 -- __, 10, __, __ [__/__, ___]
@@ -752,7 +753,7 @@ function init_gear_sets()
     waist="Olympus Sash",                 -- __,  5, __, __ [__/__, ___]
     -- Traits/Gifts/Merits                -- __,456, __, __ [__/__, ___]
     -- Master Levels                      -- __, __, __, __ [__/__, ___]
-    -- 17 Phalanx+, 481 Enh Skill, 19 Aug Enh Duration, 40 Enh duration [35 PDT/27 MDT, 480 M.Eva]
+    -- 17 Phalanx+, 481 Enh Skill, 19 Aug Enh Duration, 40 Enh duration [35 PDT/27 MDT, 484 M.Eva]
     -- 51 Phalanx total
     
     -- main="Sakpata's Sword",            --  5, __, __, __ [10/10, ___]

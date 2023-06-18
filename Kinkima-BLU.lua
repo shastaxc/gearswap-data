@@ -642,7 +642,7 @@ function init_gear_sets()
     ammo="Staunch Tathlum +1",        -- __, __, 11 [ 3/ 3, ___]
     head=gear.Nyame_B_head,           -- __, 26, __ [ 7/ 7, 123]
     body="Shamash Robe",              -- __, 40, __ [10/__, 106]
-    hands=gear.Telchine_ENH_hands,    -- 17, 33, __ [__/__,  61]
+    hands=gear.Telchine_CP_hands,     -- 17, 33, __ [__/__,  61]
     legs="Carmine Cuisses +1",        -- __, 16, 20 [__/__,  80]
     feet=gear.Nyame_B_feet,           -- __, 26, __ [ 7/ 7, 150]
     neck="Loricate Torque +1",        -- __, __,  5 [ 6/ 6, ___]
@@ -655,7 +655,7 @@ function init_gear_sets()
     -- Merits                            __, __, 10 [__/__, ___]
     -- 50 Cure Potency, 196 MND, 71 SIRD [53 PDT / 33 MDT, 520 M.Eva]
 
-    -- hands=gear.Telchine_ENH_hands, -- 18, 33, __ [__/__,  62]
+    -- hands=gear.Telchine_CP_hands,  -- 18, 33, __ [__/__,  62]
     -- 51 Cure Potency, 196 MND, 71 SIRD [53 PDT / 33 MDT, 521 M.Eva]
   }
 

@@ -620,10 +620,10 @@ function init_gear_sets()
     main="Gada",                      -- 18, __, __ [__/__, ___]
     sub="Ammurapi Shield",            -- __, 10, __ [__/__, ___]
     ammo="Staunch Tathlum +1",        -- __, __, __ [ 3/ 3, ___]
-    head=gear.Telchine_ENH_head,      -- __,  9, __ [__/__,  75]
-    body=gear.Telchine_ENH_body,      -- 12, 10, __ [__/__,  80]
+    head=gear.Telchine_ENH_head,      -- __, 10,  5 [__/__, 100]
+    body=gear.Telchine_ENH_body,      -- 12, 10,  5 [__/__, 104]
     hands=gear.Telchine_ENH_hands,    -- __, 10, __ [__/__,  61]
-    legs=gear.Telchine_ENH_legs,      -- __, 10, __ [__/__, 128]
+    legs=gear.Telchine_ENH_legs,      -- __, 10,  5 [__/__, 132]
     feet="Theophany Duckbills +3",    -- 21, 10, __ [__/__, 127]
     neck="Incanter's Torque",         -- 10, __, __ [__/__, ___]
     ear1="Mimir Earring",             -- 10, __, __ [__/__, ___]
@@ -634,7 +634,7 @@ function init_gear_sets()
     waist="Embla Sash",               -- __, 10,  5 [__/__, ___]
     -- Base                             394; Includes merits
     -- Master Levels                     15
-    -- 488 Enh Skill, 69% Enh Duration, 15 FC [26 PDT/18 MDT, 491 MEVA]
+    -- 488 Enh Skill, 70% Enh Duration, 30 FC [26 PDT/18 MDT, 544 MEVA]
 
     -- Ideal:
     -- main="Malignance Pole",        -- __, __, __ [20/20, ___]
@@ -661,10 +661,10 @@ function init_gear_sets()
     main=gear.Gada_ENH,               -- 18,  6, __ [__/__, ___]
     sub="Ammurapi Shield",            -- __, 10, __ [__/__, ___]
     ammo="Staunch Tathlum +1",        -- __, __, __ [ 3/ 3, ___]
-    head=gear.Telchine_ENH_head,      -- __,  9, __ [__/__,  75]
-    body=gear.Telchine_ENH_body,      -- 12, 10, __ [__/__,  80]
+    head=gear.Telchine_ENH_head,      -- __, 10,  5 [__/__, 100]
+    body=gear.Telchine_ENH_body,      -- 12, 10,  5 [__/__, 104]
     hands=gear.Telchine_ENH_hands,    -- __, 10, __ [__/__,  61]
-    legs=gear.Telchine_ENH_legs,      -- __, 10, __ [__/__, 128]
+    legs=gear.Telchine_ENH_legs,      -- __, 10,  5 [__/__, 132]
     feet="Theophany Duckbills +3",    -- 21, 10, __ [__/__, 127]
     neck="Loricate Torque +1",        -- __, __, __ [ 6/ 6, ___]
     ear1="Odnowa Earring +1",         -- __, __, __ [ 3/ 5, ___]
@@ -676,7 +676,7 @@ function init_gear_sets()
     -- Traits/Merits/Gifts              394
     -- Master Levels                     15
     -- Light Arts                        26
-    -- 496 Enh Skill, 75% Enh Duration, 15 FC [39 PDT/23 MDT, 491 MEVA]
+    -- 496 Enh Skill, 76% Enh Duration, 30 FC [39 PDT/23 MDT, 544 MEVA]
 
     -- Ideal:
     -- main=gear.Gada_ENH,            -- 18,  6,  6 [__/__, ___]

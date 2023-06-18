@@ -130,21 +130,12 @@ gear.Acro_Breath_feet = {} -- Pet: Breath+8, Pet Macc+25
 -- Helios
 
 -- Taeon
-gear.Taeon_SIRD_body = {}
-gear.Taeon_SIRD_legs = {}
-gear.Taeon_SIRD_feet = { name="Taeon Boots", augments={'Mag. Evasion+20','Spell interruption rate down -10%','HP+47',}} -- Max: 20 meva, 10 sird, 50 hp
-
 gear.Taeon_DW_feet = { name="Taeon Boots", augments={'Accuracy+15 Attack+15','"Dual Wield"+5',}}
 
 gear.Taeon_FC_body = { name="Taeon Tabard", augments={'DEF+17','"Fast Cast"+5','Phalanx +3',}}
 gear.Taeon_FC_hands = { name="Taeon Gloves", augments={'Mag. Evasion+11','"Fast Cast"+5','Phalanx +3',}}
 gear.Taeon_FC_legs = { name="Taeon Tights", augments={'Evasion+18','"Fast Cast"+5','Phalanx +3',}}
 gear.Taeon_FC_feet = { name="Taeon Boots", augments={'DEF+17','"Fast Cast"+5','Phalanx +3',}}
-
-gear.Taeon_Phalanx_body = gear.Taeon_FC_body
-gear.Taeon_Phalanx_hands = gear.Taeon_FC_hands
-gear.Taeon_Phalanx_legs = gear.Taeon_FC_legs
-gear.Taeon_Phalanx_feet = gear.Taeon_FC_feet
 
 gear.Taeon_RA_head = { name="Taeon Chapeau", augments={'"Snapshot"+5','"Snapshot"+5',}}
 
@@ -158,8 +149,11 @@ gear.Telchine_DA_legs = {}
 gear.Telchine_STP_hands = {} -- 20 Acc, 6 STP, 10 DEX
 gear.Telchine_STP_feet = {} -- 20 Acc, 6 STP, 10 DEX
 
-gear.Telchine_ENH_body = {} -- Max 25 meva, 10 enh duration, 3 pet regen
-gear.Telchine_ENH_hands = {} -- Max 25 meva, 8 CP, 10 enh duration
+-- gear.Telchine_ENH_body = { name="Telchine Chas.", augments={'Mag. Evasion+25','"Fast Cast"+5','Enh. Mag. eff. dur. +10',}}
+-- gear.Telchine_ENH_hands = { name="Telchine Gloves", augments={'Mag. Evasion+25','"Cure" potency +8%','Enh. Mag. eff. dur. +10',}}
+-- gear.Telchine_ENH_legs = { name="Telchine Braconi", augments={'Mag. Evasion+25','"Fast Cast"+5','Enh. Mag. eff. dur. +10',}}
+
+-- gear.Telchine_CP_hands = gear.Telchine_ENH_hands -- Max 25 meva, 8 CP, 10 enh duration
 
 -- Yorium
 
