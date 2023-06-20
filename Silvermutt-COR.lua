@@ -261,7 +261,7 @@ function init_gear_sets()
     head="Chasseur's Tricorne +2",
   })
   sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {
-    body="Chasseur's Frac +2",
+    body="Chasseur's Frac +3",
   })
   sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {
     hands="Chasseur's Gants +2",
@@ -452,10 +452,7 @@ function init_gear_sets()
     -- 222 AGI, 81 STP, 430 racc/263 ratt <10 crit> {17 PDL} (58 Recycle) [31 PDT/21 MDT, 595 M.Eva]
   })
   sets.midcast.RA.HighAcc = set_combine(sets.midcast.RA.MidAcc, {
-    body="Chasseur's Frac +2",        -- 44, __, 54/64 <__> {_} (__) [12/12, 109]
-    -- 227 AGI, 70 STP, 429 racc/257 ratt <5 crit> {10 PDL} (68 Recycle) [43 PDT/33 MDT, 592 M.Eva]
-    
-    -- body="Chasseur's Frac +3",     -- 49, __, 64/74 <__> {_} (__) [13/13, 119]
+    body="Chasseur's Frac +3",        -- 49, __, 64/74 <__> {_} (__) [13/13, 119]
     -- 232 AGI, 70 STP, 439 racc/267 ratt <5 crit> {10 PDL} (68 Recycle) [44 PDT/34 MDT, 602 M.Eva]
   })
   
@@ -522,7 +519,7 @@ function init_gear_sets()
   sets.TripleShot = {
     ammo=gear.RAbullet,               -- __, __, 20/__ <__> {_} (__) [__/__, ___] (__, __) (__, __)
     head="Oshosi Mask +1",            -- 44, __, 45/__ <__> {_} (__) [__/__,  90] ( 6, 25) ( 5, 13)
-    body="Chasseur's Frac +2",        -- 44, __, 54/64 <__> {_} (__) [12/12, 109] (__, __) (13, __)
+    body="Chasseur's Frac +3",        -- 49, __, 64/74 <__> {_} (__) [13/13, 119] (__, __) (14, __)
     hands="Lanun Gants +3",           -- 22, __, 44/76 <__> {_} (__) [__/__,  84] (__, __) (__, __); Occ. Quad Shot
     legs="Oshosi Trousers +1",        -- 43, __, 46/__ <__> {_} (__) [__/__, 131] ( 7, __) ( 6, __)
     feet="Oshosi Leggings +1",        -- 56, __, 43/__ <10> {_} (__) [__/__, 131] ( 4, __) ( 3, __)
@@ -535,15 +532,12 @@ function init_gear_sets()
     waist="Yemaya Belt",              --  7,  4, 10/10 <__> {_} (__) [__/__, ___] (__, __) (__, __)
     -- JA                                                                                  (40, __)
     -- Merits/Traits/Gifts                                      (58)                       (20, __)
-    -- 266 AGI, 36 STP, 329 racc/242 ratt <10 crit> {0 PDL} (68 Recycle) [22 PDT/12 MDT, 545 M.Eva] (17 DS Rate, 25 DS Dmg) (92 TS Rate, 13 TS Dmg)
-
-    -- body="Chasseur's Frac +3",     -- 49, __, 64/74 <__> {_} (__) [13/13, 119] (__, __) (14, __)
     -- 271 AGI, 36 STP, 339 racc/252 ratt <10 crit> {0 PDL} (68 Recycle) [23 PDT/13 MDT, 555 M.Eva] (17 DS Rate, 25 DS Dmg) (93 TS Rate, 13 TS Dmg)
   }
   sets.TripleShot.Safe = {
     ammo=gear.RAbullet,               -- __, __, 20/__ <__> {_} (__) [__/__, ___] (__, __) (__, __)
     head="Oshosi Mask +1",            -- 44, __, 45/__ <__> {_} (__) [__/__,  90] ( 6, 25) ( 5, 13)
-    body="Chasseur's Frac +2",        -- 44, __, 54/64 <__> {_} (__) [12/12, 109] (__, __) (13, __)
+    body="Chasseur's Frac +3",        -- 49, __, 64/74 <__> {_} (__) [13/13, 119] (__, __) (14, __)
     hands="Lanun Gants +3",           -- 22, __, 44/76 <__> {_} (__) [__/__,  84] (__, __) (__, __); Occ. Quad Shot
     legs="Oshosi Trousers +1",        -- 43, __, 46/__ <__> {_} (__) [__/__, 131] ( 7, __) ( 6, __)
     feet="Oshosi Leggings +1",        -- 56, __, 43/__ <10> {_} (__) [__/__, 131] ( 4, __) ( 3, __)
@@ -556,16 +550,13 @@ function init_gear_sets()
     waist="Yemaya Belt",              --  7,  4, 10/10 <__> {_} (__) [__/__, ___] (__, __) (__, __)
     -- JA                                                                                  (40, __)
     -- Merits/Traits/Gifts                                      (58)                       (20, __)
-    -- 246 AGI, 31 STP, 329 racc/217 ratt <10 crit> {0 PDL} (58 Recycle) [39 PDT/21 MDT, 545 M.Eva] (17 DS Rate, 25 DS Dmg) (92 TS Rate, 13 TS Dmg)
-    
-    -- body="Chasseur's Frac +3",     -- 49, __, 64/74 <__> {_} (__) [13/13, 119] (__, __) (14, __)
     -- 251 AGI, 31 STP, 339 racc/227 ratt <10 crit> {0 PDL} (58 Recycle) [40 PDT/22 MDT, 555 M.Eva] (17 DS Rate, 25 DS Dmg) (93 TS Rate, 13 TS Dmg)
   }
 
   sets.TripleShot.Critical = {
     ammo=gear.RAbullet,               -- __, __, 20/__ <__> {_} (__) [__/__, ___] (__, __) (__, __)
     head="Oshosi Mask +1",            -- 44, __, 45/__ <__> {_} (__) [__/__,  90] ( 6, 25) ( 5, 13)
-    body="Chasseur's Frac +2",        -- 44, __, 54/64 <__> {_} (__) [12/12, 109] (__, __) (13, __)
+    body="Chasseur's Frac +3",        -- 49, __, 64/74 <__> {_} (__) [13/13, 119] (__, __) (14, __)
     hands="Chasseur's Gants +2",      -- 21, __, 52/52 < 7> {_} (__) [__/__,  83] (__, __) (__, __)
     legs="Mummu Kecks +2",            -- 45, __, 45/__ < 7> {_} (__) [ 5/ 5, 107] (__, __) (__, __)
     feet="Oshosi Leggings +1",        -- 56, __, 43/__ <10> {_} (__) [__/__, 131] ( 4, __) ( 3, __)
@@ -578,16 +569,15 @@ function init_gear_sets()
     waist="K. Kachina Belt +1",       --  8, __, 20/__ < 5> {_} (__) [__/__, ___] (__, __) (__, __)
     -- JA                                                                                  (40, __)
     -- Merits/Traits/Gifts                                      (58)                       (20, __)
-    -- 248 AGI, 23 STP, 345 racc/176 ratt <42 crit> {0 PDL} (58 Recycle) [17 PDT/17 MDT, 520 M.Eva] (10 DS Rate, 25 DS Dmg) (86 TS Rate, 13 TS Dmg)
+    -- 253 AGI, 23 STP, 355 racc/186 ratt <42 crit> {0 PDL} (58 Recycle) [18 PDT/18 MDT, 530 M.Eva] (10 DS Rate, 25 DS Dmg) (87 TS Rate, 13 TS Dmg)
     
-    -- body="Chasseur's Frac +3",     -- 49, __, 64/74 <__> {_} (__) [13/13, 119] (__, __) (14, __)
     -- hands="Chasseur's Gants +3",   -- 26, __, 62/62 < 8> {_} (__) [__/__,  93] (__, __) (__, __)
     -- 258 AGI, 23 STP, 365 racc/196 ratt <43 crit> {0 PDL} (58 Recycle) [18 PDT/18 MDT, 540 M.Eva] (10 DS Rate, 25 DS Dmg) (87 TS Rate, 13 TS Dmg)
   }
   sets.TripleShot.Critical.Safe = {
     ammo=gear.RAbullet,               -- __, __, 20/__ <__> {_} (__) [__/__, ___] (__, __) (__, __)
     head="Oshosi Mask +1",            -- 44, __, 45/__ <__> {_} (__) [__/__,  90] ( 6, 25) ( 5, 13)
-    body="Chasseur's Frac +2",        -- 44, __, 54/64 <__> {_} (__) [12/12, 109] (__, __) (13, __)
+    body="Chasseur's Frac +3",        -- 49, __, 64/74 <__> {_} (__) [13/13, 119] (__, __) (14, __)
     hands="Chasseur's Gants +2",      -- 21, __, 52/52 < 7> {_} (__) [__/__,  83] (__, __) (__, __)
     legs="Mummu Kecks +2",            -- 45, __, 45/__ < 7> {_} (__) [ 5/ 5, 107] (__, __) (__, __)
     feet="Oshosi Leggings +1",        -- 56, __, 43/__ <10> {_} (__) [__/__, 131] ( 4, __) ( 3, __)
@@ -600,9 +590,8 @@ function init_gear_sets()
     waist="K. Kachina Belt +1",       --  8, __, 20/__ < 5> {_} (__) [__/__, ___] (__, __) (__, __)
     -- JA                                                                                  (40, __)
     -- Merits/Traits/Gifts                                      (58)                       (20, __)
-    -- 248 AGI, 23 STP, 339 racc/176 ratt <34 crit> {0 PDL} (58 Recycle) [44 PDT/26 MDT, 520 M.Eva] (10 DS Rate, 25 DS Dmg) (86 TS Rate, 13 TS Dmg)
+    -- 253 AGI, 23 STP, 349 racc/186 ratt <34 crit> {0 PDL} (58 Recycle) [45 PDT/27 MDT, 530 M.Eva] (10 DS Rate, 25 DS Dmg) (87 TS Rate, 13 TS Dmg)
     
-    -- body="Chasseur's Frac +3",     -- 49, __, 64/74 <__> {_} (__) [13/13, 119] (__, __) (14, __)
     -- hands="Chasseur's Gants +3",   -- 26, __, 62/62 < 8> {_} (__) [__/__,  93] (__, __) (__, __)
     -- 258 AGI, 23 STP, 359 racc/196 ratt <35 crit> {0 PDL} (58 Recycle) [45 PDT/27 MDT, 540 M.Eva] (10 DS Rate, 25 DS Dmg) (87 TS Rate, 13 TS Dmg)
   }
@@ -654,7 +643,7 @@ function init_gear_sets()
   sets.precast.CorsairShot['Light Shot'] = {
     ammo=gear.MAccbullet,             -- __, 35, __/__
     head="Chasseur's Tricorne +2",    -- 35, 51,  9/ 9
-    body="Chasseur's Frac +2",        -- 44, 54, 12/12
+    body="Chasseur's Frac +3",        -- 49, 64, 13/13
     hands="Chasseur's Gants +2",      -- 21, 52, __/__
     legs="Chasseur's Culottes +3",    -- 43, 63, 12/12
     feet="Malignance Boots",          -- 49, 50,  4/ 4
@@ -667,10 +656,9 @@ function init_gear_sets()
     waist="K. Kachina Belt +1",       --  8, 20, __/__
     -- AF Set Effect                  -- __, __, __/__
     -- M.Acc from Quick Draw+ stat    -- __, __, __/__
-    -- 252 AGI, 383 M.Acc, 47PDT/37MDT
+    -- 257 AGI, 393 M.Acc, 48PDT/38MDT
 
     -- head="Laksamana's Tricorne +3",-- 39, 56, __/__; Quick Draw+20
-    -- body="Chasseur's Frac +3",     -- 49, 64, 13/13
     -- hands="Chasseur's Gants +3",   -- 26, 62, __/__
     -- feet="Laksamana's Bottes +3",  -- 49, 52, __/__; Quick Draw+20
     -- neck="Commodore Charm +2",     -- 15, 25, __/__
