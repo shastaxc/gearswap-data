@@ -225,7 +225,7 @@ function init_gear_sets()
     ammo="Knobkierrie",                   -- __, __, 23, __,  6, __ [__/__, ___]
     head=gear.Nyame_B_head,               -- 26, 26, 65, 50, 11, __ [ 7/ 7, 123]
     body=gear.Nyame_B_body,               -- 45, 37, 65, 40, 13, __ [ 9/ 9, 139]
-    hands=gear.Nyame_B_hands,             -- 17, 40, 65, 40, 11, __ [ 7/ 7, 112]
+    hands="Boii Mufflers +3",             -- 24, 38, 62, 62, 12, __ [__/__,  82]
     legs=gear.Nyame_B_legs,               -- 58, 32, 65, 40, 12, __ [ 8/ 8, 150]
     feet=gear.Nyame_B_feet,               -- 23, 26, 65, 53, 11, __ [ 7/ 7, 150]
     neck="Warrior's Bead Necklace +1",    -- 12, __, 20, 20, __, __ [__/__, ___]
@@ -235,9 +235,8 @@ function init_gear_sets()
     ring2="Epaminondas's Ring",           -- __, __, __, __,  5, __ [__/__, ___]
     back=gear.WAR_STR_WSD_Cape,           -- 30, __, 20, 20, 10, __ [10/__, ___]
     waist="Sailfi Belt +1",               -- 15, __, 15, __, __, __ [__/__, ___]
-    -- 251 STR, 161 MND, 403 Attack, 267 Accuracy, 82 WSD, 3 PDL [48 PDT/38 MDT, 674 M.Eva]
+    -- 258 STR, 159 MND, 400 Attack, 289 Accuracy, 83 WSD, 3 PDL [41 PDT/31 MDT, 644 M.Eva]
 
-    -- hands="Boii Mufflers +3",          -- 24, 38, 62, 62, 12, __ [__/__,  82]
     -- neck="Warrior's Bead Necklace +2", -- 15, __, 25, 25, __, __ [__/__, ___]
     -- 261 STR, 159 MND, 405 Attack, 294 Accuracy, 83 WSD, 3 PDL [41 PDT/31 MDT, 644 M.Eva]
   }
@@ -272,7 +271,7 @@ function init_gear_sets()
     ammo="Knobkierrie",                   -- __, 23, __,  6, __ <__, __, __> [__/__, ___]
     head=gear.Nyame_B_head,               -- 24, 65, 50, 11, __ < 5, __, __> [ 7/ 7, 123]
     body=gear.Nyame_B_body,               -- 45, 65, 40, 13, __ < 7, __, __> [ 9/ 9, 139]
-    hands=gear.Nyame_B_hands,             -- 54, 65, 40, 11, __ < 5, __, __> [ 7/ 7, 112]
+    hands="Boii Mufflers +3",             -- 47, 62, 62, 12, __ <__, __, __> [__/__,  82]
     legs=gear.Nyame_B_legs,               -- 30, 65, 40, 12, __ < 6, __, __> [ 8/ 8, 150]
     feet=gear.Nyame_B_feet,               -- 24, 65, 53, 11, __ < 5, __, __> [ 7/ 7, 150]
     neck="Warrior's Bead Necklace +1",    -- __, 20, 20, __, __ < 6, __, __> [__/__, ___]
@@ -283,12 +282,11 @@ function init_gear_sets()
     back=gear.WAR_STR_WSD_Cape,           -- __, 20, 20, 10, __ <__, __, __> [10/__, ___]; DA Dmg +20%
     waist="Ioskeha Belt +1",              -- __, __, 17, __, __ < 9, __, __> [__/__, ___]
     -- WAR Traits                            __, __, __, __, __ <33, __, __> [__/__, ___]
-    -- 212 VIT, 423 Attack, 267 Accuracy, 77 WSD, 0 PDL <67 DA, 2 TA, QA> [55 PDT/37 MDT, 674 M.Eva]
+    -- 205 VIT, 405 Attack, 306 Accuracy, 78 WSD, 0 PDL <71 DA, 0 TA, 0 QA> [48 PDT/30 MDT, 644 M.Eva]
 
-    -- hands="Boii Mufflers +3",          -- 47, 62, 62, 12, __ <__, __, __> [__/__,  82]
     -- neck="Warrior's Bead Necklace +2", -- __, 25, 25, __, __ < 7, __, __> [__/__, ___]
     -- back=gear.WAR_VIT_WSD_Cape,        -- 30, 20, 20, 10, __ <__, __, __> [10/__, ___]; DA Dmg +20%
-    -- 235 VIT, 410 Attack, 311 Accuracy, 78 WSD, 0 PDL <72 DA, 0 TA, QA> [48 PDT/30 MDT, 644 M.Eva]
+    -- 235 VIT, 410 Attack, 311 Accuracy, 78 WSD, 0 PDL <72 DA, 0 TA, 0 QA> [48 PDT/30 MDT, 644 M.Eva]
   }
   sets.precast.WS['Upheaval'].MaxTP = set_combine(sets.precast.WS['Upheaval'], {
     ear1="Schere Earring",                -- __, 15, 15, __, __ < 6, __, __> [__/__, ___]
@@ -297,7 +295,7 @@ function init_gear_sets()
     ammo="Knobkierrie",                   -- __, 23, __,  6, __ <__, __, __> [__/__, ___]
     head="Sakpata's Helm",                -- 40, 70, 55, __,  5 < 5, __, __> [ 7/ 7, 123]
     body="Sakpata's Breastplate",         -- 42, 70, 55, __,  8 < 8, __, __> [10/10, 139]
-    hands="Sakpata's Gauntlets",          -- 51, 70, 55, __,  6 < 6, __, __> [ 8/ 8, 112]
+    hands="Boii Mufflers +3",             -- 47, 62, 62, 12, __ <__, __, __> [__/__,  82]
     legs="Boii Cuisses +3",               -- 40, 73, 63, __, 10 < 8, __, __> [__/__, 130]; TP Bonus+100
     feet="Sakpata's Leggings",            -- 30, 70, 55, __,  4 < 4, __, __> [ 6/ 6, 150]
     neck="Warrior's Bead Necklace +1",    -- __, 20, 20, __, __ < 6, __, __> [__/__, ___]
@@ -308,9 +306,8 @@ function init_gear_sets()
     back=gear.WAR_STR_WSD_Cape,           -- __, 20, 20, 10, __ <__, __, __> [10/__, ___]
     waist="Ioskeha Belt +1",              -- __, __, 17, __, __ < 9, __, __> [__/__, ___]
     -- WAR Traits                            __, __, __, __, __ <33, __, __> [__/__, ___]
-    -- 238 VIT, 436 Attack, 344 Accuracy, 19 WSD, 33 PDL <79 DA, 0 TA, 0 QA> [48 PDT/30 MDT, 654 M.Eva]
+    -- 234 VIT, 428 Attack, 351 Accuracy, 31 WSD, 27 PDL <73 DA, 0 TA, 0 QA> [40 PDT/22 MDT, 624 M.Eva]
 
-    -- hands="Boii Mufflers +3",          -- 47, 62, 62, 12, __ <__, __, __> [__/__,  82]
     -- neck="Warrior's Bead Necklace +2", -- __, 25, 25, __, __ < 7, __, __> [__/__, ___]
     -- back=gear.WAR_VIT_WSD_Cape,        -- 30, 20, 20, 10, __ <__, __, __> [10/__, ___]
     -- 264 VIT, 433 Attack, 356 Accuracy, 31 WSD, 27 PDL <74 DA, 0 TA, 0 QA> [40 PDT/22 MDT, 624 M.Eva]
