@@ -105,11 +105,12 @@ function init_gear_sets()
     -- body="Pteroslaver Mail +3",
   }
   sets.precast.JA['Ancient Circle'] = {
+    legs="Vishap Brais +2",
     -- legs="Vishap Brais +3",
   }
 
   sets.precast.JA['Spirit Link'] = {
-    hands="Peltast's Vambraces +1",   -- Augments pet debuff erasure, maybe TP trasnfer/HP restoration
+    hands="Peltast's Vambraces +1",   -- Augments pet debuff erasure, maybe TP transfer/HP restoration
     feet="Pteroslaver Greaves +1",    -- Augments pet buff duration
     -- hands="Pteroslaver Vambraces +3",
   }
@@ -131,7 +132,9 @@ function init_gear_sets()
     waist="Ioskeha Belt +1",              -- __, 17 < 9, __, __> [__/__, ___]
     -- 73 STP, 289 Acc <44 DA, 5 TA, 3 QA> [39 PDT/22 MDT, 378 M.Eva]
   }
-  sets.precast.JA['High Jump'] = set_combine(sets.precast.JA['Jump'], {})
+  sets.precast.JA['High Jump'] = set_combine(sets.precast.JA['Jump'], {
+    legs="Vishap Brais +2",
+  })
   sets.precast.JA['Spirit Jump'] = set_combine(sets.precast.JA['Jump'], {
     feet="Peltast's Schynbalds +2",       -- __, 50 <__, __, __> [10/10, 120]; Spirit Jump TP+80
     ring2="Chirich Ring +1",              --  6, 10 <__, __, __> [__/__, ___]
@@ -217,7 +220,7 @@ function init_gear_sets()
   sets.precast.WS["Savage Blade"].AttCapped = set_combine(sets.precast.WS.AttCapped, {})
   sets.precast.WS["Savage Blade"].AttCappedMaxTP = set_combine(sets.precast.WS.AttCappedMaxTP, {})
 
-  -- 85% STR; 0.75-1.75 fTP; 4 hit physical
+  -- 85% STR; 0.75-1.75 fTP; 4 hit physical; fTP replicating
   -- Multihit > WSD > STR
   sets.precast.WS["Stardiver"] = {
     ammo="Coiste Bodhar",               -- 10, 15, __, __, __ < 3, __, __>
@@ -571,7 +574,7 @@ function init_gear_sets()
     ear2="Odnowa Earring +1",     -- [ 3/ 5, ___] {__/__}
     ring1="Moonlight Ring",       -- [ 5/ 5, ___] {__/__}
     ring2="Defending Ring",       -- [10/10, ___] {__/__}
-    back=gear.DRG_TP_Cape,        -- [10/__, ___] {__/__}
+    back=gear.DRG_STP_Cape,       -- [10/__, ___] {__/__}
     waist="Isa Belt",             -- [__/__, ___] { 3/ 3}
     -- 62 PDT/54 MDT, 649 MEVA {31 PetPDT/31 PetMDT}
 
@@ -657,9 +660,9 @@ function init_gear_sets()
     ear2="Sherida Earring",         -- __,  5, __, __, __ < 5, __, __> [__/__, ___] {__/__}
     ring1="Moonlight Ring",         -- __,  5,  8,  8, __ <__, __, __> [ 5/ 5, ___] {__/__}
     ring2="Niqmaddu Ring",          -- __, __, __, __, __ <__, __,  3> [__/__, ___] {__/__}
-    back=gear.DRG_TP_Cape,          -- __, __, 20, 30, __ <10, __, __> [10/__, ___] {__/__}
+    back=gear.DRG_STP_Cape,         -- __, 10, 20, 30, __ <__, __, __> [10/__, ___] {__/__}
     waist="Tempus Fugit +1",        -- 15, __, __, __, __ <__, __, __> [__/__, ___] {__/__}
-    -- 25 Haste, 69 STP, 285 Att, 287 Acc, 19 Crit Rate <31 DA, 0 TA, 3 QA> [44 PDT/27 MDT, 378 Meva] {19 PetPDT/8 PetMDT}
+    -- 25 Haste, 79 STP, 285 Att, 287 Acc, 19 Crit Rate <21 DA, 0 TA, 3 QA> [44 PDT/27 MDT, 378 Meva] {19 PetPDT/8 PetMDT}
   }
   sets.engaged.LowAcc = set_combine(sets.engaged, {
     ring1="Chirich Ring +1",
@@ -686,9 +689,9 @@ function init_gear_sets()
     ear2="Sherida Earring",         -- __,  5, __, __, __ < 5, __, __> [__/__, ___] {__/__}
     ring1="Moonlight Ring",         -- __,  5,  8,  8, __ <__, __, __> [ 5/ 5, ___] {__/__}
     ring2="Moonlight Ring",         -- __,  5,  8,  8, __ <__, __, __> [ 5/ 5, ___] {__/__}
-    back=gear.DRG_TP_Cape,          -- __, __, 20, 30, __ <10, __, __> [10/__, ___] {__/__}
+    back=gear.DRG_STP_Cape,         -- __, 10, 20, 30, __ <__, __, __> [10/__, ___] {__/__}
     waist="Ioskeha Belt +1",        --  8, __, __, 17, __ < 9, __, __> [__/__, ___] {__/__}
-    -- 25 Haste, 58 STP, 255 Att, 313 Acc, 14 Crit Rate <43 DA, 5 TA, 0 QA> [39 PDT/15 MDT, 411 Meva] {19 PetPDT/8 PetMDT}
+    -- 25 Haste, 68 STP, 255 Att, 313 Acc, 14 Crit Rate <33 DA, 5 TA, 0 QA> [39 PDT/15 MDT, 411 Meva] {19 PetPDT/8 PetMDT}
   }
   sets.engaged.LowAcc.SamRoll = set_combine(sets.engaged.SamRoll, {
     ring1="Chirich Ring +1",
