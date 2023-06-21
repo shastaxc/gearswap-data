@@ -446,11 +446,10 @@ function init_gear_sets()
     ear2="Moonshade Earring",             -- __, __, __, __ [__/__, ___]; TP Bonus+250
     ring1="Shiva Ring +1",                --  3, __, __, __ [__/__, ___]
     ring2="Ephramad's Ring",              -- __, __, __, __ [__/__, ___]
-    back=gear.WAR_STR_WSD_Cape,           -- __, __, __, __ [10/__, ___]
+    back=gear.WAR_STR_MAB_Cape,           -- 10, 20, 20, __ [10/__, ___]
     waist="Eschan Stone",                 --  7, __,  7, __ [__/__, ___]
-    -- 190 MAB, 0 M.Dmg, 207 M.Acc, 58 WSD [48 PDT/38 MDT, 674 M.Eva]
+    -- 200 MAB, 20 M.Dmg, 227 M.Acc, 58 WSD [58 PDT/38 MDT, 674 M.Eva]
 
-    -- back=gear.WAR_STR_MAB_Cape,        -- 10, 20, 20, __ [10/__, ___]
     -- waist="Skrymir Cord +1",           --  7, 35,  7, __ [__/__, ___]
     -- 200 MAB, 55 M.Dmg, 227 M.Acc, 58 WSD [48 PDT/38 MDT, 674 M.Eva]
   }
@@ -628,12 +627,9 @@ function init_gear_sets()
     ear2="Telos Earring",             -- [__/__, ___]  5 <__, __,  1> __, __
     ring1="Moonlight Ring",           -- [ 5/ 5, ___]  5 <__, __, __> __, __
     ring2="Moonlight Ring",           -- [ 5/ 5, ___]  5 <__, __, __> __, __
-    back=gear.WAR_STR_DA_Cape,        -- [10/__, ___] __ <__, __, 10> __, __; DA dmg+20%
+    back=gear.WAR_STP_Cape,           -- [10/__, ___] 10 <__, __, __> __, __; DA dmg+20%
     waist="Sailfi Belt +1",           -- [__/__, ___] __ <__,  2,  5> __,  9
     -- WAR Traits                        [__/__, ___] __ <__, __, 33> __, __
-    -- [40 PDT/30 MDT, 394 MEVA] 73 STP <0 QA, 13 TA, 64 DA> 13 Crit Rate, 25 Haste; DA dmg+20%
-
-    -- back=gear.WAR_STP_Cape,        -- [10/__, ___] 10 <__, __, __> __, __; DA dmg+20%
     -- [40 PDT/30 MDT, 394 MEVA] 83 STP <0 QA, 13 TA, 54 DA> 13 Crit Rate, 25 Haste; DA dmg+20%
   }
   sets.engaged.LowAcc = set_combine(sets.engaged, {
@@ -749,12 +745,9 @@ function init_gear_sets()
     ear2="Schere Earring",                -- [__/__, ___]  5 <__, __,  6> __, __; R30
     ring1="Epona's Ring",                 -- [__/__, ___] __ <__,  3,  3> __, __
     ring2="Moonlight Ring",               -- [ 5/ 5, ___]  5 <__, __, __> __, __
-    back=gear.WAR_STR_DA_Cape,            -- [10/__, ___] __ <__, __, 10> __, __; DA dmg+20%
+    back=gear.WAR_STP_Cape,               -- [10/__, ___] 10 <__, __, __> __, __; DA dmg+20%
     waist="Ioskeha Belt +1",              -- [__/__, ___] __ <__, __,  9> __,  8
     -- WAR Traits                            [__/__, ___] __ <__, __, 33> __, __
-    -- [50 PDT/40 MDT, 580 MEVA] 61 STP <0 QA, 3 TA, 81 DA> 0 Crit Rate, 26 Haste; DA dmg+35%
-
-    -- back=gear.WAR_STP_Cape,            -- [10/__, ___] 10 <__, __, __> __, __; DA dmg+20%
     -- [50 PDT/40 MDT, 580 MEVA] 71 STP <0 QA, 3 TA, 71 DA> 0 Crit Rate, 26 Haste; DA dmg+35%
   }
   sets.engaged.LowAcc.LightDef = set_combine(sets.engaged.LightDef, {})
@@ -847,24 +840,14 @@ function init_gear_sets()
     ear2="Boii Earring",                  -- [__/__, ___] __ <__, __,  7> __, __,  5(__)
     ring1="Chirich Ring +1",              -- [__/__, ___]  6 <__, __, __> __, __, 10(__)
     ring2="Niqmaddu Ring",                -- [__/__, ___] __ < 3, __, __> __, __, __( 5)
-    back=gear.WAR_STR_DA_Cape,            -- [10/__, ___] __ <__, __, 10> __, __, __(__); DA dmg+20%
-    waist="Ioskeha Belt +1",              -- [__/__, ___] __ <__, __,  9> __,  8, __(__)
+    back=gear.WAR_STP_Cape,               -- [10/__, ___] 10 <__, __, __> __, __, __(__); DA dmg+20%
+    waist="Peiste Belt +1",               -- [__/__, ___] __ <__, __, __> __, __, 10(__)
     -- WAR Traits                            [__/__, ___] __ <__, __, 33> __, __, __(__)
-    -- [46 PDT/36 MDT, 621 MEVA] 19 STP <3 QA, 5 TA, 87 DA> 4 Crit Rate, 28 Haste, 39(15) Subtle Blow; DA dmg+35%
+    -- [46 PDT/36 MDT, 621 MEVA] 29 STP <3 QA, 5 TA, 68 DA> 4 Crit Rate, 20 Haste, 49(15) Subtle Blow; DA dmg+35%
 
-    -- ammo="Seething Bomblet +1",        -- [__/__, ___] __ <__, __, __> __,  5, __(__)
-    -- head="Sakpata's Helm",             -- [ 7/ 7, 123] __ <__, __,  5> __,  4, __(__); DA dmg +15%
-    -- body="Dagon Breastplate",          -- [__/__,  86] __ <__,  5, __>  4,  1, __(10)
-    -- hands="Sakpata's Gauntlets",       -- [ 8/ 8, 112]  8 <__, __,  6> __,  4,  8(__)
     -- legs="Volte Tights",               -- [__/__, 107]  8 <__, __, __> __,  9,  8(__)
-    -- feet="Sakpata's Leggings",         -- [ 6/ 6, 150] __ <__, __,  4> __,  2, 13(__)
-    -- neck="Loricate Torque +1",         -- [ 6/ 6, ___] __ <__, __, __> __, __, __(__)
-    -- ear1="Schere Earring",             -- [__/__, ___]  5 <__, __,  6> __, __,  3(__)
     -- ear2="Boii Earring +2",            -- [__/__, ___] __ <__, __,  9>  8, __,  7(__)
     -- ring1="Defending Ring",            -- [10/10, ___] __ <__, __, __> __, __, __(__)
-    -- ring2="Niqmaddu Ring",             -- [__/__, ___] __ < 3, __, __> __, __, __( 5)
-    -- back=gear.WAR_STP_Cape,            -- [10/__, ___] 10 <__, __, __> __, __, __(__); DA dmg+20%
-    -- waist="Peiste Belt +1",            -- [__/__, ___] __ <__, __, __> __, __, 10(__)
     -- WAR Traits                            [__/__, ___] __ <__, __, 33> __, __, __(__)
     -- [47 PDT/37 MDT, 578 MEVA] 31 STP <3 QA, 5 TA, 63 DA> 12 Crit Rate, 25 Haste, 49(15) Subtle Blow; DA dmg+35%
   }

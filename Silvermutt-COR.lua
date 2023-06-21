@@ -727,7 +727,7 @@ function init_gear_sets()
     ear2="Moonshade Earring",
     ring1="Ephramad's Ring",
     ring2="Epaminondas's Ring",
-    back=gear.COR_WS1_Cape,
+    back=gear.COR_RA_Cape,
     waist="Fotia Belt",
     -- back=gear.COR_WS3_Cape,
   }
@@ -790,8 +790,7 @@ function init_gear_sets()
 
   sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS['Wildfire'], {
     ear2="Moonshade Earring",
-    back=gear.COR_TP_Cape,
-    -- back=gear.COR_WS4_Cape,
+    back=gear.COR_WS4_Cape,
   })
   sets.precast.WS['Aeolian Edge'].MaxTP = set_combine(sets.precast.WS['Aeolian Edge'], {
     ear2="Novio Earring",
