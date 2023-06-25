@@ -1223,7 +1223,7 @@ function init_gear_sets()
     neck="Loricate Torque +1",
     ear1="Savant's Earring",
     ear2="Enhancing Earring",
-    ring1="Copper Ring",
+    ring1="Metamorph Ring +1",
     ring2="Defending Ring",
     back=gear.SCH_FC_Cape,
     waist="Embla Sash",
