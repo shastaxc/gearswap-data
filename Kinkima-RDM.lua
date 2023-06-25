@@ -1753,14 +1753,12 @@ function init_gear_sets()
     sub="Tauret",
   }
   sets.WeaponSet['Enspell'] = {
-    main="Naegling",
+    main="Crocea Mors",
     sub="Ammurapi Shield",
-    -- main="Crocea Mors",
   }
   sets.WeaponSet['Enspell'].DW = {
-    main="Naegling",
+    main="Crocea Mors",
     sub="Tauret",
-    -- main="Crocea Mors",
     -- sub="Gleti's Knife",
   }
   sets.WeaponSet['BlackHalo'] = {
@@ -1780,14 +1778,12 @@ function init_gear_sets()
     sub="Tauret",
   }
   sets.WeaponSet['Seraph'] = {
-    main="Naegling",
+    main="Crocea Mors",
     sub="Culminus",
-    -- main="Crocea Mors",
   }
   sets.WeaponSet['Seraph'].DW = {
-    main="Naegling",
+    main="Crocea Mors",
     sub="Daybreak",
-    -- main="Crocea Mors",
   }
   sets.WeaponSet['Cleaving'] = {
     main="Tauret",
