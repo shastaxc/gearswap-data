@@ -850,9 +850,6 @@ function init_gear_sets()
     -- body="Hattori Ningi +3",       -- 64, __ [13/13, 129]
     -- hands="Hattori Tekko +3",      -- 62, __ [__/__, 103]
     -- legs="Hattori Hakama +3",      -- 63, __ [12/12, 135]
-    -- ear2="Crepuscular Earring",    -- 10, __ [__/__, ___]
-    -- 352 M.Acc, 58 Ninjutsu [45 PDT/35 MDT, 529 M.Eva]
-    
     -- ear2="Hattori Earring +2",     -- 20, __ [__/__, ___]
     -- 362 M.Acc, 58 Ninjutsu [45 PDT/35 MDT, 529 M.Eva]
   }

@@ -235,10 +235,9 @@ function init_gear_sets()
   }
   sets.precast.WS.MaxTP = set_combine(sets.precast.WS, {
     head=gear.Nyame_B_head,
-    ear1="Ishvara Earring",
-    ear2="Thrud Earring",
+    ear1="Thrud Earring",
+    ear2="Kasuga Earring +1",
 
-    -- ear1="Thrud Earring",
     -- ear2="Kasuga Earring +2",
   })
   sets.precast.WS.AttCapped = set_combine(sets.precast.WS, {
@@ -250,10 +249,9 @@ function init_gear_sets()
   })
   sets.precast.WS.AttCappedMaxTP = set_combine(sets.precast.WS.AttCapped, {
     head=gear.Nyame_B_head,
-    ear1="Ishvara Earring",
-    ear2="Thrud Earring",
+    ear1="Thrud Earring",
+    ear2="Kasuga Earring +1",
 
-    -- ear1="Thrud Earring",
     -- ear2="Kasuga Earring +2",
   })
 
@@ -370,7 +368,7 @@ function init_gear_sets()
     feet="Mpaca's Boots",
     neck="Samurai's Nodowa +2",
     ear1="Dignitary's Earring",
-    ear2="Moonshade Earring",
+    ear2="Kasuga Earring +1",
     ring1="Metamorph Ring +1",
     ring2="Stikini Ring +1",
     back=gear.SAM_TP_Cape,
@@ -381,7 +379,6 @@ function init_gear_sets()
     -- legs="Kasuga Haidate +3",
     -- feet="Kasuga Sune-Ate +3",
     -- neck="Sanctity Necklace",
-    -- ear2="Crepuscular Earring",
   }
 
   -- Polearm sets use a crit build since you should be using Shining One
