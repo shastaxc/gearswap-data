@@ -405,17 +405,17 @@ function init_gear_sets()
     neck="Sibyl Scarf",               -- __, 10, __, __, 10, __ [__/__, ___]
     ear1="Malignance Earring",        -- __,  8, 10, __,  8, __ [__/__, ___]
     ear2="Moonshade earring",         -- __, __, __, __, __, __ [__/__, ___]; TP Bonus +250
-    ring1="Epaminondas's Ring",       -- __, __, __,  5, __, __ [__/__, ___]
+    ring1="Metamorph Ring +1",        -- __, 16, 15, __, __, __ [__/__, ___]
     ring2="Freke Ring",               -- __, 10, __, __,  8, __ [__/__, ___]
     back=gear.RDM_MAB_Cape,           -- __, 30, 20, __, 10, 20 [10/__, ___]
     waist="Skrymir Cord",             -- __, __,  5, __,  5, 30 [__/__, ___]
-    -- 121 DEX, 253 INT, 307 M.Acc, 13 WSD, 268 MAB, 228 M.Dmg [52 PDT/42 MDT, 625 M.Eva]
+    -- 121 DEX, 269 INT, 322 M.Acc, 8 WSD, 268 MAB, 228 M.Dmg [52 PDT/42 MDT, 625 M.Eva]
 
     -- head="Lethargy Chappel +3",    -- 29, 38, 61, __, 56, 31 [10/10, 125]
     -- hands="Lethargy Gantherots +3",-- 43, 33, 62, __, 52, 32 [11/11,  87]
     -- feet="Lethargy Houseaux +3",   -- 30, 30, 60, 12, 50, 30 [__/__, 157]
     -- waist="Skrymir Cord +1",       -- __, __,  7, __,  7, 35 [__/__, ___]
-    -- 136 DEX, 268 INT, 339 M.Acc, 17 WSD, 285 MAB, 263 M.Dmg [54 PDT/44 MDT, 655 M.Eva]
+    -- 136 DEX, 284 INT, 354 M.Acc, 12 WSD, 285 MAB, 263 M.Dmg [54 PDT/44 MDT, 655 M.Eva]
   }
   sets.precast.WS['Aeolian Edge'].MaxTP = set_combine(sets.precast.WS['Aeolian Edge'], {
     ear2="Regal Earring",             -- __, 10, __, __,  7, __ [__/__, ___]
