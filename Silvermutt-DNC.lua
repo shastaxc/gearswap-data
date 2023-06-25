@@ -518,7 +518,7 @@ function init_gear_sets()
     ear2="Odr Earring",               -- 10, __, __, __ ( 5, __) <__, __, __> [__/__, ___]
     ring1="Mummu Ring",               -- __, __, __, __ ( 3, __) <__, __, __> [__/__, ___]
     ring2="Ephramad's Ring",          -- 10, __, __, 10 (__, __) <__, __, __> [__/__, ___]
-    -- back=gear.DNC_WS3_Cape,        -- 30, __, 20, __ (10,  5) <__, __, __> [__/__, ___]
+    back=gear.DNC_WS3_Cape,           -- 30, __, 20, __ (10,  5) <__, __, __> [__/__, ___]
     waist="Fotia Belt",               -- __, __, __, __ (__, __) <__, __, __> [__/__, ___]; fTP+
     -- Mummu set bonuses                  8
     -- 261 DEX, 0 WSD, 179 Att, 10 PDL (27 Crit Rate, 27 Crit Dmg) <6 DA, 6 TA, 0 QA> [10 PDT/0 MDT, 241 M.Eva]
@@ -538,7 +538,7 @@ function init_gear_sets()
     ear2="Odr Earring",               -- 10, __, __, __ ( 5, __) <__, __, __> [__/__, ___]
     ring1="Ilabrat Ring",             -- 10, __, 25, __ (__, __) <__, __, __> [__/__, ___]
     ring2="Ephramad's Ring",          -- 10, __, __, 10 (__, __) <__, __, __> [__/__, ___]
-    -- back=gear.DNC_WS3_Cape,        -- 30, __, 20, __ (10,  5) <__, __, __> [__/__, ___]
+    back=gear.DNC_WS3_Cape,           -- 30, __, 20, __ (10,  5) <__, __, __> [__/__, ___]
     waist="Fotia Belt",               -- __, __, __, __ (__, __) <__, __, __> [__/__, ___]; fTP+
     -- 277 DEX, 0 WSD, 249 Att, 30 PDL (24 Crit Rate, 22 Crit Dmg) <0 DA, 6 TA, 0 QA> [20 PDT/3 MDT, 273 M.Eva]
   }
@@ -557,7 +557,7 @@ function init_gear_sets()
     ear2="Odr Earring",               -- 10, __, __, __ ( 5, __) <__, __, __> [__/__, ___]
     ring1="Moonlight Ring",           -- __, __,  8, __ (__, __) <__, __, __> [ 5/ 5, ___]
     ring2="Defending Ring",           -- __, __, __, __ (__, __) <__, __, __> [10/10, ___]
-    -- back=gear.DNC_WS3_Cape,        -- 30, __, 20, __ (10,  5) <__, __, __> [__/__, ___]
+    back=gear.DNC_WS3_Cape,           -- 30, __, 20, __ (10,  5) <__, __, __> [__/__, ___]
     waist="Fotia Belt",               -- __, __, __, __ (__, __) <__, __, __> [__/__, ___]; fTP+
     -- 195 DEX, 0 WSD, 295 Att, 14 PDL (27 Crit Rate, 21 Crit Dmg) <0 DA, 7 TA, 0 QA> [50 PDT/26 MDT, 420 M.Eva]
   }
@@ -576,7 +576,7 @@ function init_gear_sets()
     ear2="Odr Earring",               -- 10, __, __, __ ( 5, __) <__, __, __> [__/__, ___]
     ring1="Defending Ring",           -- __, __, __, __ (__, __) <__, __, __> [10/10, ___]
     ring2="Ephramad's Ring",          -- 10, __, __, 10 (__, __) <__, __, __> [__/__, ___]
-    -- back=gear.DNC_WS3_Cape,        -- 30, __, 20, __ (10,  5) <__, __, __> [__/__, ___]
+    back=gear.DNC_WS3_Cape,           -- 30, __, 20, __ (10,  5) <__, __, __> [__/__, ___]
     waist="Fotia Belt",               -- __, __, __, __ (__, __) <__, __, __> [__/__, ___]; fTP+
     -- 235 DEX, 0 WSD, 338 Att, 39 PDL (31 Crit Rate, 16 Crit Dmg) <0 DA, 5 TA, 0 QA> [48 PDT/21 MDT, 457 M.Eva]
   }
