@@ -99,20 +99,21 @@ function init_gear_sets()
     body="Pinga Tunic +1",            -- 15 [__/__, 128]
     hands=gear.Gende_SongFC_hands,    --  7 [ 3/ 2,  37]
     legs="Pinga Pants +1",            -- 13 [__/__, 147]
-    feet=gear.Merl_FC_feet,           -- 12 [__/__, 118]
+    feet="Volte Gaiters",             --  6 [__/__, 142]
     neck="Cleric's Torque +1",        --  8 [__/__, ___]
     ear1="Malignance Earring",        --  4 [__/__, ___]
     ear2="Etiolation Earring",        --  1 [__/ 3, ___]; Resist Silence +15
     ring1="Gelatinous Ring +1",       -- __ [ 7/-1, ___]
     ring2="Defending Ring",           -- __ [10/10, ___]
     back=gear.WHM_FC_Cape,            -- 10 [10/__,  20]
-    waist="Carrier's Sash",           -- __ [__/__, ___]; Ele Resist +15
-    -- 83 Fast Cast [60 PDT/44 MDT, 573 MEVA]
+    waist="Shinjutsu-no-obi +1",      --  5 [__/__, ___]
+    -- 82 Fast Cast [60 PDT/44 MDT, 597 MEVA]
 
+    -- hands=gear.Gende_SongFC_hands, --  7 [ 4/__,  37]
     -- neck="Cleric's Torque +2",     -- 10 [__/__, ___]
     -- ear1="Hearty Earring",         -- __ [__/__, ___]; Resist Status +5
     -- ring1="Shadow Ring",           -- __ [__/__, ___]; Annuls magic dmg
-    -- 81 Fast Cast [54 PDT/43 MDT, 573 MEVA]
+    -- 80 Fast Cast [54 PDT/43 MDT, 597 MEVA]
   }
 
   -- 10% cap on Quick Magic
@@ -124,15 +125,15 @@ function init_gear_sets()
     body="Pinga Tunic +1",            -- 15 [__/__, 128] __
     hands=gear.Gende_SongFC_hands,    --  7 [ 3/ 2,  37] __
     legs="Pinga Pants +1",            -- 13 [__/__, 147] __
-    feet=gear.Merl_FC_feet,           -- 12 [__/__, 118] __
+    feet="Volte Gaiters",             --  6 [__/__, 142] __
     neck="Cleric's Torque +1",        --  8 [__/__, ___] __
     ear1="Malignance Earring",        --  4 [__/__, ___] __
     ear2="Odnowa Earring +1",         -- __ [ 3/ 5, ___] __
-    ring1="Veneficium Ring",          -- __ [__/__, ___]  1
+    ring1="Kishar Ring",              --  4 [__/__, ___] __
     ring2="Defending Ring",           -- __ [10/10, ___] __
     back=gear.WHM_FC_Cape,            -- 10 [10/__,  20] __
     waist="Witful Belt",              --  3 [__/__, ___]  3
-    -- 82 Fast Cast [58 PDT/44 MDT, 573 MEVA] 6 Quick Magic
+    -- 80 Fast Cast [58 PDT/44 MDT, 577 MEVA] 5 Quick Magic
 
     -- main="Malignance Pole",        -- __ [20/20, ___] __
     -- sub="Clerisy Strap +1",        --  3 [__/__, ___] __
@@ -141,7 +142,7 @@ function init_gear_sets()
     -- body="Pinga Tunic +1",         -- 15 [__/__, 128] __
     -- hands=gear.Gende_SongFC_hands, --  7 [ 4/__,  37] __
     -- legs="Pinga Pants +1",         -- 13 [__/__, 147] __
-    -- feet=gear.Merl_FC_feet,        -- 12 [__/__, 118] __
+    -- feet="Volte Gaiters",          --  6 [__/__, 142] __
     -- neck="Cleric's Torque +2",     -- 10 [__/__, ___] __
     -- ear1="Malignance Earring",     --  4 [__/__, ___] __
     -- ear2="Ebers Earring +2",       -- __ [ 8/ 8, ___] __
@@ -149,7 +150,7 @@ function init_gear_sets()
     -- ring2="Defending Ring",        -- __ [10/10, ___] __
     -- back="Perimede Cape",          -- __ [__/__, ___]  4
     -- waist="Witful Belt",           --  3 [__/__, ___]  3
-    -- 81 Fast Cast [49 PDT/45 MDT, 553 MEVA] 9 Quick Magic
+    -- 75 Fast Cast [49 PDT/45 MDT, 577 MEVA] 9 Quick Magic
   }
 
   -- Include divine caress gear in case of quick magic proc
@@ -186,21 +187,21 @@ function init_gear_sets()
     body="Pinga Tunic +1",            -- 15 [__/__, 128]
     hands=gear.Gende_SongFC_hands,    --  7 [ 3/ 2,  37]
     legs="Pinga Pants +1",            -- 13 [__/__, 147]
-    feet=gear.Merl_FC_feet,           -- 12 [__/__, 118]
+    feet="Volte Gaiters",             --  6 [__/__, 142]
     neck="Cleric's Torque +1",        --  8 [__/__, ___]
     ear1="Etiolation Earring",        --  1 [__/ 3, ___]; Resist Silence +15
     ear2="Malignance Earring",        --  4 [__/__, ___]
     ring1="Gelatinous Ring +1",       -- __ [ 7/-1, ___]
     ring2="Defending Ring",           -- __ [10/10, ___]
     back=gear.WHM_FC_Cape,            -- 10 [10/__,  20]
-    waist="Carrier's Sash",           -- __ [__/__, ___]; Ele Resist +15
-    -- 80 Fast Cast [50 PDT/24 MDT, 603 MEVA]
+    waist="Shinjutsu-no-obi +1",      --  5 [__/__, ___]
+    -- 79 Fast Cast [50 PDT/24 MDT, 627 MEVA]
 
     -- hands=gear.Gende_SongFC_hands, --  7 [ 4/__,  37]
     -- neck="Cleric's Torque +2",     -- 10 [__/__, ___]
     -- ear2="Ebers Earring +2",       -- __ [ 8/ 8, ___]
     -- ring1="Kishar Ring",           --  4 [__/__, ___]
-    -- 82 Fast Cast [52 PDT/31 MDT, 603 MEVA]
+    -- 81 Fast Cast [52 PDT/31 MDT, 627 MEVA]
   }
 
   sets.precast.JA.Benediction = {
@@ -556,26 +557,24 @@ function init_gear_sets()
     main="Yagrush",                   -- __ [__/__, ___] __, __; AoE status removal
     sub="Culminus",                   -- __ [__/__, ___] 10, __
     ammo="Staunch Tathlum +1",        -- __ [ 3/ 3, ___] 11, __; Resist status +11
-    head=gear.Kaykaus_C_head,         -- __ [__/ 3,  75] 12, __
-    body=gear.Merl_FC_body,           -- 14 [ 2/__,  91] __,  5
+    head="Bunzi's Hat",               -- 10 [ 7/ 7, 123] __,  7
+    body="Rosette Jaseran +1",        --  6 [ 5/ 5,  80] 25, 13
     hands="Ebers Mitts +2",           -- __ [10/10,  77] __, 11
-    legs="Ebers Pantaloons +2",       -- __ [12/12, 147] __, __
+    legs="Pinga Pants +1",            -- 13 [__/__, 147] __,  8
     feet="Theophany Duckbills +3",    -- __ [__/__, 127] 29, __
     neck="Cleric's Torque +1",        --  7 [__/__, ___] __, 20; Erase+1
-    ear1="Halasz Earring",            -- __ [__/__, ___]  5,  3
-    ear2="Nourishing Earring +1",     -- __ [__/__, ___]  5, __; Resist Silence +15
+    ear1="Malignance Earring",        --  4 [__/__, ___] __, __
+    ear2="Odnowa Earring +1",         -- __ [ 3/ 5, ___] __, __
     ring1="Freke Ring",               -- __ [__/__, ___] 10, __
     ring2="Defending Ring",           -- __ [10/10, ___] __, __
     back=gear.WHM_FC_Cape,            -- 10 [10/__,  20] __, __
     waist="Sanctuary Obi +1",         -- __ [__/__, ___] 10,  4
     -- Merits                                            10,  5
-    -- 31 FC [47 PDT/38 MDT, 537 MEVA] 102 SIRD, 48 -Enmity
-    
+    -- 50 FC [48 PDT/40 MDT, 574 MEVA] 105 SIRD, 68 -Enmity
+
     -- hands="Ebers Mitts +3",        -- __ [11/11,  87] __, 12
-    -- legs="Ebers Pantaloons +3",    -- __ [13/13, 157] __, __
     -- neck="Cleric's Torque +2",     -- 10 [__/__, ___] __, 25; Erase+1
-    -- Merits                                            10,  5
-    -- 34 FC [49 PDT/40 MDT, 557 MEVA] 102 SIRD, 54 -Enmity
+    -- 53 FC [49 PDT/41 MDT, 584 MEVA] 105 SIRD, 74 -Enmity
   }
 
   sets.midcast.StatusRemoval = {
@@ -707,7 +706,7 @@ function init_gear_sets()
     ammo="Incantor Stone",      -- [__/__, ___] __,  2
     head="Bunzi's Hat",         -- [ 7/ 7, 123] __, 10
     body="Inyanga Jubbah +2",   -- [__/ 8, 120] __, 14
-    feet=gear.Merl_FC_feet,     -- [__/__, 118] __, 12
+    feet="Volte Gaiters",       -- [__/__, 142] __,  6
     neck="Nodens Gorget",       -- [__/__, ___] 30, __
     ear1="Earthcry Earring",    -- [__/__, ___] 10, __
     ear2="Malignance Earring",  -- [__/__, ___] __,  4
@@ -717,7 +716,7 @@ function init_gear_sets()
     waist="Siegel Sash",        -- [__/__, ___] 20, __
     -- hands="Stone Mufflers",  -- [__/__, ___] 30, __
     -- legs="Shedir Seraweels", -- [__/__, ___] 35, __
-    -- [52 PDT/45 MDT, 381 MEVA] +125 Stoneskin Potency, 56 Fast Cast
+    -- [52 PDT/45 MDT, 405 MEVA] +125 Stoneskin Potency, 50 Fast Cast
   }
 
   sets.midcast.Auspice = set_combine(sets.midcast.EnhancingDuration, {
