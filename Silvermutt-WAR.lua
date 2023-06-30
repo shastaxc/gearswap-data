@@ -203,14 +203,13 @@ function init_gear_sets()
     hands="Flamma Manopolas +2",
     legs=gear.Nyame_B_legs,
     feet=gear.Nyame_B_feet,
-    neck="Warrior's Bead Necklace +1",
+    neck="Warrior's Bead Necklace +2",
     ear1="Schere Earring", -- R20+
     ear2="Telos Earring",
     ring1="Regal Ring",
     ring2="Chirich Ring +1",
     back=gear.WAR_STR_DA_Cape,
     waist="Olseni Belt",
-    -- neck="Warrior's Bead Necklace +2",
   }
   sets.precast.Flourish1 = {
   }
@@ -228,16 +227,13 @@ function init_gear_sets()
     hands="Boii Mufflers +3",             -- 24, 38, 62, 62, 12, __ [__/__,  82]
     legs=gear.Nyame_B_legs,               -- 58, 32, 65, 40, 12, __ [ 8/ 8, 150]
     feet=gear.Nyame_B_feet,               -- 23, 26, 65, 53, 11, __ [ 7/ 7, 150]
-    neck="Warrior's Bead Necklace +1",    -- 12, __, 20, 20, __, __ [__/__, ___]
+    neck="Warrior's Bead Necklace +2",    -- 15, __, 25, 25, __, __ [__/__, ___]
     ear1="Thrud Earring",                 -- 10, __, __, __,  3, __ [__/__, ___]
     ear2="Moonshade Earring",             -- __, __, __,  4, __, __ [__/__, ___]; TP bonus+250
     ring1="Sroda Ring",                   -- 15, __, __, __, __,  3 [__/__, ___]
     ring2="Epaminondas's Ring",           -- __, __, __, __,  5, __ [__/__, ___]
     back=gear.WAR_STR_WSD_Cape,           -- 30, __, 20, 20, 10, __ [10/__, ___]
     waist="Sailfi Belt +1",               -- 15, __, 15, __, __, __ [__/__, ___]
-    -- 258 STR, 159 MND, 400 Attack, 289 Accuracy, 83 WSD, 3 PDL [41 PDT/31 MDT, 644 M.Eva]
-
-    -- neck="Warrior's Bead Necklace +2", -- 15, __, 25, 25, __, __ [__/__, ___]
     -- 261 STR, 159 MND, 405 Attack, 294 Accuracy, 83 WSD, 3 PDL [41 PDT/31 MDT, 644 M.Eva]
   }
   sets.precast.WS.MaxTP = set_combine(sets.precast.WS, {
@@ -274,7 +270,7 @@ function init_gear_sets()
     hands="Boii Mufflers +3",             -- 47, 62, 62, 12, __ <__, __, __> [__/__,  82]
     legs=gear.Nyame_B_legs,               -- 30, 65, 40, 12, __ < 6, __, __> [ 8/ 8, 150]
     feet=gear.Nyame_B_feet,               -- 24, 65, 53, 11, __ < 5, __, __> [ 7/ 7, 150]
-    neck="Warrior's Bead Necklace +1",    -- __, 20, 20, __, __ < 6, __, __> [__/__, ___]
+    neck="Warrior's Bead Necklace +2",    -- __, 25, 25, __, __ < 7, __, __> [__/__, ___]
     ear1="Moonshade Earring",             -- __, __,  4, __, __ <__, __, __> [__/__, ___]; TP bonus+250
     ear2="Thrud Earring",                 -- 10, __, __,  3, __ <__, __, __> [__/__, ___]
     ring1="Regal Ring",                   -- 10, 20, __, __, __ <__, __, __> [__/__, ___]
@@ -282,9 +278,8 @@ function init_gear_sets()
     back=gear.WAR_STR_WSD_Cape,           -- __, 20, 20, 10, __ <__, __, __> [10/__, ___]; DA Dmg +20%
     waist="Ioskeha Belt +1",              -- __, __, 17, __, __ < 9, __, __> [__/__, ___]
     -- WAR Traits                            __, __, __, __, __ <33, __, __> [__/__, ___]
-    -- 205 VIT, 405 Attack, 306 Accuracy, 78 WSD, 0 PDL <71 DA, 0 TA, 0 QA> [48 PDT/30 MDT, 644 M.Eva]
+    -- 205 VIT, 410 Attack, 311 Accuracy, 78 WSD, 0 PDL <72 DA, 0 TA, 0 QA> [48 PDT/30 MDT, 644 M.Eva]
 
-    -- neck="Warrior's Bead Necklace +2", -- __, 25, 25, __, __ < 7, __, __> [__/__, ___]
     -- back=gear.WAR_VIT_WSD_Cape,        -- 30, 20, 20, 10, __ <__, __, __> [10/__, ___]; DA Dmg +20%
     -- 235 VIT, 410 Attack, 311 Accuracy, 78 WSD, 0 PDL <72 DA, 0 TA, 0 QA> [48 PDT/30 MDT, 644 M.Eva]
   }
@@ -298,7 +293,7 @@ function init_gear_sets()
     hands="Boii Mufflers +3",             -- 47, 62, 62, 12, __ <__, __, __> [__/__,  82]
     legs="Boii Cuisses +3",               -- 40, 73, 63, __, 10 < 8, __, __> [__/__, 130]; TP Bonus+100
     feet="Sakpata's Leggings",            -- 30, 70, 55, __,  4 < 4, __, __> [ 6/ 6, 150]
-    neck="Warrior's Bead Necklace +1",    -- __, 20, 20, __, __ < 6, __, __> [__/__, ___]
+    neck="Warrior's Bead Necklace +2",    -- __, 25, 25, __, __ < 7, __, __> [__/__, ___]
     ear1="Moonshade Earring",             -- __, __,  4, __, __ <__, __, __> [__/__, ___]; TP bonus+250
     ear2="Thrud Earring",                 -- 10, __, __,  3, __ <__, __, __> [__/__, ___]
     ring1="Regal Ring",                   -- 10, 20, __, __, __ <__, __, __> [__/__, ___]
@@ -306,9 +301,8 @@ function init_gear_sets()
     back=gear.WAR_STR_WSD_Cape,           -- __, 20, 20, 10, __ <__, __, __> [10/__, ___]
     waist="Ioskeha Belt +1",              -- __, __, 17, __, __ < 9, __, __> [__/__, ___]
     -- WAR Traits                            __, __, __, __, __ <33, __, __> [__/__, ___]
-    -- 234 VIT, 428 Attack, 351 Accuracy, 31 WSD, 27 PDL <73 DA, 0 TA, 0 QA> [40 PDT/22 MDT, 624 M.Eva]
+    -- 234 VIT, 433 Attack, 356 Accuracy, 31 WSD, 27 PDL <74 DA, 0 TA, 0 QA> [40 PDT/22 MDT, 624 M.Eva]
 
-    -- neck="Warrior's Bead Necklace +2", -- __, 25, 25, __, __ < 7, __, __> [__/__, ___]
     -- back=gear.WAR_VIT_WSD_Cape,        -- 30, 20, 20, 10, __ <__, __, __> [10/__, ___]
     -- 264 VIT, 433 Attack, 356 Accuracy, 31 WSD, 27 PDL <74 DA, 0 TA, 0 QA> [40 PDT/22 MDT, 624 M.Eva]
   })
@@ -324,7 +318,7 @@ function init_gear_sets()
     hands=gear.Nyame_B_hands,             -- 17, 65, 40, 11, __ (__, __) < 5, __, __> [ 7/ 7, 112]
     legs=gear.Nyame_B_legs,               -- 58, 65, 40, 12, __ (__, __) < 6, __, __> [ 8/ 8, 150]
     feet="Boii Calligae +3",              -- 31, 60, 60, __, __ (__, 13) <__, __, __> [10/10, 130]
-    neck="Warrior's Bead Necklace +1",    -- 12, 20, 20, __, __ (__, __) < 6, __, __> [__/__, ___]
+    neck="Warrior's Bead Necklace +2",    -- 15, 25, 25, __, __ (__, __) < 7, __, __> [__/__, ___]
     ear1="Moonshade Earring",             -- __, __,  4, __, __ (__, __) <__, __, __> [__/__, ___]; TP Bonus+250
     ear2="Thrud Earring",                 -- 10, __, __,  3, __ (__, __) <__, __, __> [__/__, ___]
     ring1="Sroda Ring",                   -- 15, __, __, __,  3 (__, __) <__, __, __> [__/__, ___]
@@ -332,9 +326,8 @@ function init_gear_sets()
     back=gear.WAR_STR_WSD_Cape,           -- 30, 20, 20, 10, __ (__, __) <__, __, __> [10/__, ___]; DA Dmg+20%
     waist="Sailfi Belt +1",               -- 15, 15, __, __, __ (__, __) < 5,  2, __> [__/__, ___]
     -- WAR Traits                            __, __, __, __, __ (__, __) <33, __, __> [__/__, ___]
-    -- 269 STR, 375 Attack, 274 Accuracy, 60 WSD, 3 PDL (2 Crit Rate, 19 Crit Dmg) <67 DA, 2 TA, 3 QA> [51 PDT/41 MDT, 654 M.Eva]
+    -- 272 STR, 380 Attack, 279 Accuracy, 60 WSD, 3 PDL (2 Crit Rate, 19 Crit Dmg) <68 DA, 2 TA, 3 QA> [51 PDT/41 MDT, 654 M.Eva]
 
-    -- neck="Warrior's Bead Necklace +2", -- 15, 25, 25, __, __ (__, __) < 7, __, __> [__/__, ___]
     -- ear2="Boii Earring +2",            -- 15, __, 20, __, __ ( 8, __) < 9, __, __> [__/__, ___]
     -- 277 STR, 375 Attack, 299 Accuracy, 57 WSD, 3 PDL (10 Crit Rate, 19 Crit Dmg) <77 DA, 2 TA, 3 QA> [51 PDT/41 MDT, 654 M.Eva]
   }
@@ -352,7 +345,7 @@ function init_gear_sets()
     hands="Sakpata's Gauntlets",          -- 24, 70, 55, __,  6 (__, __) < 6, __, __> [ 8/ 8, 112]
     legs="Boii Cuisses +3",               -- 53, 73, 63, __, 10 (__, __) < 8, __, __> [__/__, 130]; TP Bonus+100
     feet="Boii Calligae +3",              -- 31, 60, 60, __, __ (__, 13) <__, __, __> [10/10, 130]
-    neck="Warrior's Bead Necklace +1",    -- 12, 20, 20, __, __ (__, __) < 6, __, __> [__/__, ___]
+    neck="Warrior's Bead Necklace +2",    -- 15, 25, 25, __, __ (__, __) < 7, __, __> [__/__, ___]
     ear1="Moonshade Earring",             -- __, __,  4, __, __ (__, __) <__, __, __> [__/__, ___]; TP Bonus+250
     ear2="Thrud Earring",                 -- 10, __, __,  3, __ (__, __) <__, __, __> [__/__, ___]
     ring1="Ephramad's Ring",              -- 10, 20, 20, __, 10 (__, __) <__, __, __> [__/__, ___]
@@ -360,9 +353,8 @@ function init_gear_sets()
     back=gear.WAR_STR_WSD_Cape,           -- 30, 20, 20, 10, __ (__, __) <__, __, __> [10/__, ___]
     waist="Sailfi Belt +1",               -- 15, 15, __, __, __ (__, __) < 5,  2, __> [__/__, ___]
     -- WAR Traits                            __, __, __, __, __ (__, __) <33, __, __> [__/__, ___]
-    -- 270 STR, 418 Attack, 352 Accuracy, 13 WSD, 42 PDL (7 Crit Rate, 19 Crit Dmg) <71 DA, 2 TA, 3 QA> [45 PDT/35 MDT, 634 M.Eva]
+    -- 273 STR, 423 Attack, 357 Accuracy, 13 WSD, 42 PDL (7 Crit Rate, 19 Crit Dmg) <72 DA, 2 TA, 3 QA> [45 PDT/35 MDT, 634 M.Eva]
 
-    -- neck="Warrior's Bead Necklace +2", -- 15, 25, 25, __, __ (__, __) < 7, __, __> [__/__, ___]
     -- ear2="Boii Earring +2",            -- 15, __, 20, __, __ ( 8, __) < 9, __, __> [__/__, ___]
     -- 278 STR, 423 Attack, 378 Accuracy, 10 WSD, 42 PDL (15 Crit Rate, 19 Crit Dmg) <81 DA, 2 TA, 3 QA> [45 PDT/35 MDT, 634 M.Eva]
   }
@@ -558,14 +550,13 @@ function init_gear_sets()
     hands="Sakpata's Gauntlets",
     legs="Sakpata's Cuisses",
     feet="Sakpata's Leggings",
-    neck="Warrior's Bead Necklace +1",
+    neck="Warrior's Bead Necklace +2",
     ear1="Odnowa Earring +1",
     ear2="Arete Del Luna +1",
     ring1="Moonlight Ring",
     ring2="Gelatinous Ring +1",
     back="Moonlight Cape",
     waist="Carrier's Sash",
-    -- neck="Warrior's Bead Necklace +2",
   }
   sets.defense.MDT = set_combine(sets.defense.PDT, {})
 
@@ -656,7 +647,7 @@ function init_gear_sets()
     hands="Sakpata's Gauntlets",          -- [ 8/ 8, 112]  8 <__, __,  6> __,  4
     legs="Agoge Cuisses +3",              -- [__/__, 100] __ <__, __,  6> __,  6; DA dmg+11%
     feet="Pummeler's Calligae +3",        -- [__/__, 100]  4 <__, __,  9> __,  4
-    neck="Warrior's Bead Necklace +1",    -- [__/__, ___] __ <__, __,  6> __, __
+    neck="Warrior's Bead Necklace +2",    -- [__/__, ___] __ <__, __,  7> __, __
     ear1="Schere Earring",                -- [__/__, ___]  5 <__, __,  6> __, __
     ear2="Boii Earring",                  -- [__/__, ___] __ <__, __,  7> __, __
     ring1="Moonlight Ring",               -- [ 5/ 5, ___]  5 <__, __, __> __, __
@@ -664,7 +655,7 @@ function init_gear_sets()
     back=gear.WAR_STR_DA_Cape,            -- [10/__, ___] __ <__, __, 10> __, __; DA dmg+20%
     waist="Ioskeha Belt +1",              -- [__/__, ___] __ <__, __,  9> __,  8
     -- WAR Traits                            [__/__, ___] __ <__, __, 33> __, __
-    -- [52 PDT/42 MDT, 474 MEVA] 48 STP <0 QA, 0 TA, 101 DA> 0 Crit Rate, 25 Haste; DA dmg+31%
+    -- [52 PDT/42 MDT, 474 MEVA] 48 STP <0 QA, 0 TA, 102 DA> 0 Crit Rate, 25 Haste; DA dmg+31%
 
     -- ammo="Coiste Bodhar",              -- [__/__, ___]  3 <__, __,  3> __, __
     -- head="Hjarrandi Helm",             -- [10/10,  53]  7 <__, __,  6> __, __
@@ -694,7 +685,7 @@ function init_gear_sets()
     hands="Sakpata's Gauntlets",          -- [ 8/ 8, 112]  8 <__, __,  6> __,  4
     legs="Agoge Cuisses +3",              -- [__/__, 100] __ <__, __,  6> __,  6; DA dmg+11%
     feet="Pummeler's Calligae +3",        -- [__/__, 100]  4 <__, __,  9> __,  4
-    neck="Warrior's Bead Necklace +1",    -- [__/__, ___] __ <__, __,  6> __, __
+    neck="Warrior's Bead Necklace +2",    -- [__/__, ___] __ <__, __,  7> __, __
     ear1="Schere Earring",                -- [__/__, ___]  5 <__, __,  6> __, __
     ear2="Boii Earring",                  -- [__/__, ___] __ <__, __,  7> __, __
     ring1="Moonlight Ring",               -- [ 5/ 5, ___]  5 <__, __, __> __, __
@@ -702,9 +693,8 @@ function init_gear_sets()
     back=gear.WAR_STR_DA_Cape,            -- [10/__, ___] __ <__, __, 10> __, __; DA dmg+20%
     waist="Ioskeha Belt +1",              -- [__/__, ___] __ <__, __,  9> __,  8
     -- WAR Traits                            [__/__, ___] __ <__, __, 33> __, __
-    -- [49 PDT/39 MDT, 544 MEVA] 41 STP <0 QA, 0 TA, 100 DA> 0 Crit Rate, 29 Haste; DA dmg+46%
+    -- [49 PDT/39 MDT, 544 MEVA] 41 STP <0 QA, 0 TA, 101 DA> 0 Crit Rate, 29 Haste; DA dmg+46%
 
-    -- neck="Warrior's Bead Necklace +2", -- [__/__, ___] __ <__, __,  7> __, __
     -- ear2="Boii Earring +2",            -- [__/__, ___] __ <__, __,  9> __, __
     -- [49 PDT/39 MDT, 544 MEVA] 41 STP <0 QA, 0 TA, 103 DA> 0 Crit Rate, 29 Haste; DA dmg+46%
     
@@ -762,7 +752,7 @@ function init_gear_sets()
     hands="Sakpata's Gauntlets",          -- [ 8/ 8, 112]  8 <__, __,  6> __,  4
     legs="Agoge Cuisses +3",              -- [__/__, 100] __ <__, __,  6> __,  6; DA dmg+11%
     feet="Pummeler's Calligae +3",        -- [__/__, 100]  4 <__, __,  9> __,  4
-    neck="Warrior's Bead Necklace +1",    -- [__/__, ___] __ <__, __,  6> __, __
+    neck="Warrior's Bead Necklace +2",    -- [__/__, ___] __ <__, __,  7> __, __
     ear1="Schere Earring",                -- [__/__, ___]  5 <__, __,  6> __, __
     ear2="Boii Earring",                  -- [__/__, ___] __ <__, __,  7> __, __
     ring1="Moonlight Ring",               -- [ 5/ 5, ___]  5 <__, __, __> __, __
@@ -770,10 +760,9 @@ function init_gear_sets()
     back=gear.WAR_STR_DA_Cape,            -- [10/__, ___] __ <__, __, 10> __, __; DA dmg+20%
     waist="Ioskeha Belt +1",              -- [__/__, ___] __ <__, __,  9> __,  8
     -- WAR Traits                            [__/__, ___] __ <__, __, 33> __, __
-    -- [52 PDT/42 MDT, 474 MEVA] 48 STP <0 QA, 0 TA, 101 DA> 0 Crit Rate, 25 Haste; DA dmg+31%
+    -- [52 PDT/42 MDT, 474 MEVA] 48 STP <0 QA, 0 TA, 102 DA> 0 Crit Rate, 25 Haste; DA dmg+31%
 
     -- legs=gear.Odyssean_STP_legs,       -- [__/__,  86] 13 <__, __,  2> __,  5
-    -- neck="Warrior's Bead Necklace +2", -- [__/__, ___] __ <__, __,  7> __, __
     -- ear2="Boii Earring +2",            -- [__/__, ___] __ <__, __,  9> __, __
     -- [52 PDT/42 MDT, 460 MEVA] 61 STP <0 QA, 0 TA, 100 DA> 0 Crit Rate, 24 Haste; DA dmg+20%
   }
@@ -791,7 +780,7 @@ function init_gear_sets()
     hands="Sakpata's Gauntlets",          -- [ 8/ 8, 112]  8 <__, __,  6> __,  4
     legs="Agoge Cuisses +3",              -- [__/__, 100] __ <__, __,  6> __,  6; DA dmg+11%
     feet="Sakpata's Leggings",            -- [ 6/ 6, 150] __ <__, __,  4> __,  2
-    neck="Warrior's Bead Necklace +1",    -- [__/__, ___] __ <__, __,  6> __, __
+    neck="Warrior's Bead Necklace +2",    -- [__/__, ___] __ <__, __,  7> __, __
     ear1="Schere Earring",                -- [__/__, ___]  5 <__, __,  6> __, __
     ear2="Boii Earring",                  -- [__/__, ___] __ <__, __,  7> __, __
     ring1="Moonlight Ring",               -- [ 5/ 5, ___]  5 <__, __, __> __, __
@@ -799,9 +788,8 @@ function init_gear_sets()
     back=gear.WAR_STR_DA_Cape,            -- [10/__, ___] __ <__, __, 10> __, __; DA dmg+20%
     waist="Ioskeha Belt +1",              -- [__/__, ___] __ <__, __,  9> __,  8
     -- WAR Traits                            [__/__, ___] __ <__, __, 33> __, __
-    -- [51 PDT/41 MDT, 624 MEVA] 23 STP <0 QA, 0 TA, 100 DA> 2 Crit Rate, 26 Haste; DA dmg+46%
+    -- [51 PDT/41 MDT, 624 MEVA] 23 STP <0 QA, 0 TA, 101 DA> 2 Crit Rate, 26 Haste; DA dmg+46%
 
-    -- neck="Warrior's Bead Necklace +2", -- [__/__, ___] __ <__, __,  7> __, __
     -- ear2="Boii Earring +2",            -- [__/__, ___] __ <__, __,  9>  8, __
     -- [51 PDT/41 MDT, 624 MEVA] 23 STP <0 QA, 0 TA, 103 DA> 10 Crit Rate, 26 Haste; DA dmg+44%
     
