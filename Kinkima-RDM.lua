@@ -153,8 +153,7 @@ function init_gear_sets()
 
   -- Precast sets to enhance JAs
   sets.precast.JA['Chainspell'] = {
-    body="Vitiation Tabard +1"
-    -- body="Vitiation Tabard +3"
+    body="Vitiation Tabard +3"
   }
 
   -- Fast cast sets for spells (cap 80% FC).
@@ -545,7 +544,7 @@ function init_gear_sets()
     range=empty,                  -- __, __, __
     ammo="Incantor Stone",        -- __, __,  2
     head=gear.Vanya_B_head,       -- 20, __, __
-    body=gear.Vanya_B_body,       -- 20, __, __
+    body="Vitiation Tabard +3",   -- 23, __, 15
     hands="Hieros Mittens",       -- __, 10, __
     legs=gear.Vanya_B_legs,       -- 20, __, __
     feet=gear.Vanya_B_feet,       -- 40,  5, __
@@ -557,9 +556,6 @@ function init_gear_sets()
     back="Oretania's Cape +1",    -- __,  5, __
     waist="Embla Sash",           -- __, __,  5
     -- Base stats                   414, __, __
-    -- 560 Healing skill, 70 Cursna+, 1 FC; Cursna Rate = 48.73%
-
-    -- body="Vitiation Tabard +3",-- 23, __, 15
     -- 563 Healing skill, 70 Cursna+, 16 FC; Cursna Rate = 48.90%
   }
 
@@ -568,7 +564,7 @@ function init_gear_sets()
     range=empty,                      -- __, __, __ [__/__, ___]
     ammo="Staunch tathlum +1",        -- __, __, __ [ 3/ 3, ___]
     head="Bunzi's Hat",               -- __, __, 10 [ 7/ 7, 123]
-    -- body="Vitiation Tabard +3",    -- 15, __, 15 [__/__, 100]
+    body="Vitiation Tabard +3",       -- 15, __, 15 [__/__, 100]
     hands=gear.Nyame_B_hands,         -- __, __, __ [ 7/ 7, 112]
     legs="Bunzi's Pants",             -- __, __, __ [ 9/ 9, 150]
     feet="Lethargy Houseaux +2",      -- 35, __, __ [__/__, 147]
@@ -592,7 +588,7 @@ function init_gear_sets()
     range=empty,                      -- __, __, __, __ [__/__, ___]
     ammo="Staunch Tathlum +1",        -- __, __, __, __ [ 3/ 3, ___]
     head=gear.Telchine_ENH_head,      -- __, 10, __,  5 [__/__, 100]
-    body=gear.Telchine_ENH_body,      -- 12, 10, __,  5 [__/__, 104]
+    body="Vitiation Tabard +3",       -- 23, 15, __, 15 [__/__, 100]
     hands="Atrophy Gloves +3",        -- __, 20, __, __ [__/__,  57]
     legs=gear.Telchine_ENH_legs,      -- __, 10, __,  5 [__/__, 132]
     feet="Lethargy Houseaux +2",      -- 30, 35, __, __ [__/__, 147]
@@ -604,9 +600,8 @@ function init_gear_sets()
     back=gear.RDM_Adoulin_Cape,       --  9, __, 20, __ [__/__, ___]
     waist="Embla Sash",               -- __, 10, __,  5 [__/__, ___]
     -- Traits/Gifts/Merits            --456, __, __, 38 [__/__, ___]
-    -- 507 Enh skill, 141 Enh duration, 20 Aug Enh Duration, 69 FC [23 PDT/17 MDT, 540 M.Eva]
+    -- 518 Enh skill, 146 Enh duration, 20 Aug Enh Duration, 79 FC [23 PDT/17 MDT, 536 M.Eva]
     
-    -- body="Vitiation Tabard +3",    -- 23, 15, __, 15 [__/__, 100]
     -- feet="Lethargy Houseaux +3",   -- 35, 40, __, __ [__/__, 157]
     -- back=gear.RDM_Adoulin_Cape,    -- 10, __, 20, __ [__/__, ___]
     -- 524 Enh skill, 151 Enh duration, 20 Aug Enh Duration, 79 FC [23 PDT/17 MDT, 546 M.Eva]
@@ -619,7 +614,7 @@ function init_gear_sets()
     range=empty,                      -- __, __, __, __ [__/__, ___]
     ammo="Staunch Tathlum +1",        -- __, __, __, __ [ 3/ 3, ___]
     head="Befouled Crown",            -- 16, __, __, __ [__/__,  75]
-    body=gear.Telchine_ENH_body,      -- 12, 10, __,  5 [__/__, 104]
+    body="Vitiation Tabard +3",       -- 23, 15, __, 15 [__/__, 100]
     hands="Vitiation Gloves +2",      -- 22, __, __, __ [__/__,  47]
     legs="Atrophy Tights +1",         -- 17, __, __, __ [__/__, 107]
     feet="Lethargy Houseaux +2",      -- 30, 35, __, __ [__/__, 147]
@@ -631,9 +626,8 @@ function init_gear_sets()
     back=gear.RDM_Adoulin_Cape,       --  9, __, 20, __ [__/__, ___]
     waist="Olympus Sash",             --  5, __, __, __ [__/__, ___]
     -- Traits/Gifts/Merits            --456, __, __, 38 [__/__, ___]
-    -- 598 Enh skill, 45 Enh duration, 20 Aug Enh Duration, 43 FC [33 PDT/23 MDT, 480 M.Eva]
+    -- 609 Enh skill, 50 Enh duration, 20 Aug Enh Duration, 53 FC [33 PDT/23 MDT, 476 M.Eva]
     
-    -- body="Vitiation Tabard +3",    -- 23, 15, __, 15 [__/__, 100]
     -- hands="Vitiation Gloves +3",   -- 24, __, __, __ [__/__,  57]
     -- legs="Atrophy Tights +3",      -- 21, __, __, __ [__/__, 127]
     -- feet="Lethargy Houseaux +3",   -- 35, 40, __, __ [__/__, 157]
