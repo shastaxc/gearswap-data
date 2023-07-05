@@ -615,7 +615,7 @@ function init_gear_sets()
     ammo="Staunch Tathlum +1",        -- __, __, __, __ [ 3/ 3, ___]
     head="Befouled Crown",            -- 16, __, __, __ [__/__,  75]
     body="Vitiation Tabard +3",       -- 23, 15, __, 15 [__/__, 100]
-    hands="Vitiation Gloves +2",      -- 22, __, __, __ [__/__,  47]
+    hands="Vitiation Gloves +3",      -- 24, __, __, __ [__/__,  57]
     legs="Atrophy Tights +1",         -- 17, __, __, __ [__/__, 107]
     feet="Lethargy Houseaux +2",      -- 30, 35, __, __ [__/__, 147]
     neck="Loricate Torque +1",        -- __, __, __, __ [ 6/ 6, ___]
@@ -626,9 +626,8 @@ function init_gear_sets()
     back=gear.RDM_Adoulin_Cape,       --  9, __, 20, __ [__/__, ___]
     waist="Olympus Sash",             --  5, __, __, __ [__/__, ___]
     -- Traits/Gifts/Merits            --456, __, __, 38 [__/__, ___]
-    -- 609 Enh skill, 50 Enh duration, 20 Aug Enh Duration, 53 FC [33 PDT/23 MDT, 476 M.Eva]
+    -- 611 Enh skill, 50 Enh duration, 20 Aug Enh Duration, 53 FC [33 PDT/23 MDT, 486 M.Eva]
     
-    -- hands="Vitiation Gloves +3",   -- 24, __, __, __ [__/__,  57]
     -- legs="Atrophy Tights +3",      -- 21, __, __, __ [__/__, 127]
     -- feet="Lethargy Houseaux +3",   -- 35, 40, __, __ [__/__, 157]
     -- back=gear.RDM_Adoulin_Cape,    -- 10, __, 20, __ [__/__, ___]
@@ -824,8 +823,7 @@ function init_gear_sets()
   -- Cap at 500 enhancing skill
   sets.midcast.GainSpell = set_combine(sets.midcast.EnhancingDuration, {
     head="Lethargy Chappel +2",       -- __, __, __, __ [ 9/ 9, 115]; Using for DT
-    hands="Vitiation Gloves +2",      -- 22, __, __, __ [__/__,  47]; Gain +20
-    -- hands="Vitiation Gloves +3",   -- 24, __, __, __ [__/__,  57]; Gain +30
+    hands="Vitiation Gloves +3",      -- 24, __, __, __ [__/__,  57]; Gain +30
   })
   -- Cap at 250 INT at time of casting
   sets.midcast.SpikesSpell = set_combine(sets.midcast.EnhancingDuration, {
