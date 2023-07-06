@@ -203,7 +203,7 @@ function init_gear_sets()
   }
   sets.precast.JA['Full Circle'] = {
     head="Azimuth Hood +2",
-    hands="Bagua Mitaines +1",
+    hands="Bagua Mitaines +3",
     -- head="Azimuth Hood +3",
   }
   sets.precast.JA['Concentric Pulse'] = {
@@ -1193,7 +1193,7 @@ function init_gear_sets()
     ammo="Staunch Tathlum +1",      -- __ [ 3/ 3, ___] {__/__, __}; Status Resist+11
     head="Azimuth Hood +2",         -- __ [11/11, 126] {__/__,  4}
     body="Shamash Robe",            --  3 [10/__, 106] {__/__, __}; Resist Silence+90
-    hands="Bagua Mitaines +1",      --  1 [__/__,  37] {__/__, __}
+    hands="Bagua Mitaines +3",      --  2 [__/__,  57] {__/__, __}
     legs="Assiduity Pants +1",      --  2 [__/__, 107] {__/__, __}
     feet="Volte Gaiters",           --  1 [__/__, 142] {__/__, __}; Refresh Merlinic good alt
     neck="Loricate Torque +1",      -- __ [ 6/ 6, ___] {__/__, __}
@@ -1203,7 +1203,7 @@ function init_gear_sets()
     ring2="Stikini Ring +1",        --  1 [__/__, ___] {__/__, __}
     back=gear.GEO_Nuke_Cape,        -- __ [10/__, ___] {__/__, __}
     waist="Carrier's Sash",         -- __ [__/__, ___] {__/__, __}; Ele resist+15
-    -- 10 Refresh [50 PDT/23 MDT, 548 M.Eva] {Pet: 0 PDT/0 MDT, 4 Regen}
+    -- 11 Refresh [50 PDT/23 MDT, 568 M.Eva] {Pet: 0 PDT/0 MDT, 4 Regen}
 
     -- head="Azimuth Hood +3",      -- __ [12/12, 136] {__/__,  5}
     -- 11 Refresh [51 PDT/24 MDT, 578 M.Eva] {Pet: 0 PDT/0 MDT, 5 Regen}
