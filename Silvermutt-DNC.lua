@@ -1505,7 +1505,7 @@ function get_custom_wsmode(spell, action, spellMap)
 
   -- Determine if attack capped
   if state.AttCapped.value then
-    wsmode = 'AttCapped'
+    wsmode = wsmode..'AttCapped'
   end
 
   -- Calculate if need TP bonus
