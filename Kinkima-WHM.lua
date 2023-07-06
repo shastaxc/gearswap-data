@@ -845,7 +845,26 @@ function init_gear_sets()
     waist="Acuity Belt +1",           -- __, __, 15, __, 23 [__/__, ___]
   })
 
-  sets.midcast.Dia = set_combine(sets.midcast.MndEnfeebles, {})
+  sets.midcast['Dia'] = {
+    main="Eremite's Wand +1",       -- __ [__/__, ___]
+    sub="Genmei Shield",            -- __ [10/__, ___]
+    ammo="Staunch Tathlum +1",      -- __ [ 3/ 3, ___]; Resist Status+11
+    head="Bunzi's Hat",             -- __ [ 7/ 7, 123]
+    body="Shamash Robe",            -- __ [10/__, 106]; Resist Silence+90
+    hands="Regal Cuffs",            -- 20 [__/__,  53]
+    legs=gear.Nyame_B_legs,         -- __ [ 8/ 8, 150]
+    feet=gear.Nyame_B_feet,         -- __ [ 7/ 7, 150]
+    neck="Loricate Torque +1",      -- __ [ 6/ 6, ___]; DEF+60
+    ear1="Arete Del Luna +1",       -- __ [__/__, ___]; Resists
+    ear2="Etiolation Earring",      -- __ [__/ 3, ___]; Resist Silence+15
+    ring1="Kishar Ring",            -- 10 [__/__, ___]
+    ring2="Defending Ring",         -- __ [10/10, ___]
+    back=gear.WHM_FC_Cape,          -- __ [10/__,  20]
+    waist="Obstinate Sash",         --  5 [__/__, ___]
+    -- 35 Enf Duration [71 PDT/44 MDT, 602 MEVA]
+  }
+  sets.midcast['Dia II'] = set_combine(sets.midcast['Dia'], {})
+  sets.midcast['Diaga'] = set_combine(sets.midcast['Dia'], {})
 
   sets.midcast.Dispelga = set_combine(sets.midcast.IntEnfeebles, {
     main="Daybreak",
