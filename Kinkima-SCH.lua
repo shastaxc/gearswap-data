@@ -54,6 +54,11 @@ function job_setup()
       'Shellra V', 'Embrava', 'Blaze Spikes', 'Ice Spikes', 'Shock Spikes', 'Enaero', 'Enaero II', 'Enblizzard',
       'Enblizzard II', 'Enfire', 'Enfire II', 'Enstone', 'Enstone II', 'Enthunder', 'Enthunder II', 'Enwater', 'Enwater II'}
 
+  addendum_white_spells = S{'Poisona', 'Paralyna', 'Blindna', 'Cursna', 'Silena', 'Viruna', 'Stona', 'Erase',
+      'Raise II', 'Raise III', 'Reraise II', 'Reraise III'}
+  addendum_black_spells = S{'Stone IV', 'Stone V', 'Water IV', 'Water V', 'Aero IV', 'Aero V', 'Fire IV', 'Fire V',
+      'Blizzard IV', 'Blizzard V', 'Thunder IV', 'Thunder V', 'Sleep', 'Sleep II', 'Break', 'Dispel'}
+
   update_active_strategems()
   set_main_keybinds()
 end
@@ -1247,10 +1252,30 @@ end
 -- Job-specific hooks for standard casting events.
 -------------------------------------------------------------------------------------------------------------------
 
+-- Automatically use Enlightenment for spells when it's available
+function filtered_action(spell, action, spellMap, eventArgs)
+  if ((addendum_white_spells:contains(spell.english) and not buffactive['White Addendum'])
+      or (addendum_black_spells:contains(spell.english) and not buffactive['Black Addendum']))
+    and player.merits.enlightenment > 0
+    and not buffactive['Enlightenment']
+  then
+    local allRecasts = windower.ffxi.get_ability_recasts()
+    local enlightenmentCooldown = allRecasts[235]
+
+    if enlightenmentCooldown < 1 then
+      cancel_spell()
+      send_command('input /ja "Enlightenment" <me>')
+      send_command:schedule(1.1, 'input /ma "'..spell.english..'"'..spell.target.raw)
+    else
+      add_to_chat(123, 'Wrong addendum. Enlightenment is on cooldown.')
+    end
+  end
+end
+
 function job_precast(spell, action, spellMap, eventArgs)
   silibs.precast_hook(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
-
+  
   -- If targeting self with Caper, cancel spell
   if spell.english == 'Caper Emissarius' and spell.target.type == 'SELF' then
     add_to_chat(167, 'Cancelling Caper Emissarius due to targeting self.')
