@@ -206,7 +206,7 @@ function init_gear_sets()
     neck="Warrior's Bead Necklace +2",
     ear1="Schere Earring", -- R20+
     ear2="Telos Earring",
-    ring1="Regal Ring",
+    ring1="Ephramad's Ring",
     ring2="Chirich Ring +1",
     back=gear.WAR_STR_DA_Cape,
     waist="Olseni Belt",

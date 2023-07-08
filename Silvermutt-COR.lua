@@ -650,7 +650,7 @@ function init_gear_sets()
     neck="Commodore Charm +1",        -- 12, 20, __/__
     ear1="Hermetic Earring",          -- __,  7, __/__
     ear2="Dignitary's Earring",       -- __, 10, __/__
-    ring1="Regal Ring",               -- 10, __, __/__
+    ring1="Ephramad's Ring",          -- 10, __, __/__
     ring2="Metamorph Ring +1",        -- __, 15, __/__
     back=gear.COR_WS1_Cape,           -- 30, 20, 10/__
     waist="K. Kachina Belt +1",       --  8, 20, __/__

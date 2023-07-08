@@ -581,7 +581,7 @@ function init_gear_sets()
     neck="Iskur Gorget",
     ear1="Beyla Earring",
     ear2="Telos Earring",
-    ring1="Regal Ring",
+    ring1="Ephramad's Ring",
     ring2="Hajduk Ring +1",
     waist="Kwahu Kachina Belt +1",
   })
@@ -806,24 +806,24 @@ function init_gear_sets()
     -- 254 AGI [83 STP] 334 racc / 284 ratt <10 crit> {25 PDL} (93 Recycle) 35 PDT/25 MDT
   }
   sets.midcast.RA.LowAcc = set_combine(sets.midcast.RA, {
-    ring2="Regal Ring",             -- 10 [__]  __/ 20 <_> {__} (__) __/__
+    ring2="Ephramad's Ring",        -- 10 [__]  20/ 20 <_> {__} (__) __/__
     body="Orion Jerkin +3",         -- 40 [ 8]  60/ 41 <_> {__} (__) __/__
-    -- AF set bonus                    __ [__]  15/ __ <_> {__} (__) __/__
-    -- 265 AGI [74 STP] 354 racc / 275 ratt <5 crit> {18 PDL} (93 Recycle) 35 PDT/25 MDT
+    -- AF set bonus                    __ [__]  __/ __ <_> {__} (__) __/__
+    -- 265 AGI [74 STP] 359 racc / 275 ratt <5 crit> {18 PDL} (93 Recycle) 35 PDT/25 MDT
   })
   sets.midcast.RA.MidAcc = set_combine(sets.midcast.RA.LowAcc, {
     ear1="Beyla Earring",           -- __ [__]  15/ __ <_> {__} (__) __/__
     -- feet="Amini Bottillons +3",  -- 56 [__]  60/ 60 <_> {__} (__) __/__; Marksmanship+38
-    -- AF set bonus                    __ [__]  15/ __ <_> {__} (__) __/__
-    -- 272 AGI [57 STP] 389 racc / 345 ratt <5 crit> {16 PDL} (93 Recycle) 31 PDT/21 MDT
+    -- AF set bonus                    __ [__]  __/ __ <_> {__} (__) __/__
+    -- 272 AGI [57 STP] 394 racc / 345 ratt <5 crit> {16 PDL} (93 Recycle) 31 PDT/21 MDT
   })
   sets.midcast.RA.HighAcc = set_combine(sets.midcast.RA.MidAcc, {
     head="Orion Beret +3",          -- 39 [__]  47/ 34 <_> {__} (__) __/__
     ring1="Hajduk Ring +1",         -- __ [__]  17/ __ <_> {__} (__) __/__
-    ring2="Regal Ring",             -- 10 [__]  __/ 20 <_> {__} (__) __/__
+    ring2="Ephramad's Ring",        -- 10 [__]  20/ 20 <_> {__} (__) __/__
     -- feet="Amini Bottillons +3",  -- 56 [__]  60/ 60 <_> {__} (__) __/__; Marksmanship+38
-    -- AF set bonus                    __ [__]  30/ __ <_> {__} (__) __/__
-    -- 274 AGI [51 STP] 421 racc / 317 ratt <5 crit> {16 PDL} (55 Recycle) 31 PDT/21 MDT
+    -- AF set bonus                    __ [__]  15/ __ <_> {__} (__) __/__
+    -- 274 AGI [51 STP] 426 racc / 317 ratt <5 crit> {16 PDL} (55 Recycle) 31 PDT/21 MDT
   })
 
   sets.midcast.RA.Critical = set_combine(sets.midcast.RA, {
