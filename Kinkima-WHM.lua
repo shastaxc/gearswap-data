@@ -205,7 +205,30 @@ function init_gear_sets()
   }
 
   sets.precast.JA.Benediction = {
-    -- body="Piety Briault"
+    main="Bunzi's Rod",             -- __/__, ___ [__]
+    sub="Genmei Shield",            -- 10/__, ___ [__]
+    ammo="Staunch Tathlum +1",      --  3/ 3, ___ [__]; Resist Status+11
+    head="Bunzi's Hat",             --  7/ 7, 123 [ 7]
+    body="Shamash Robe",            -- 10/__, 106 [10]; Resist Silence+90
+    hands=gear.Nyame_B_hands,       --  7/ 7, 112 [__]
+    legs=gear.Nyame_B_legs,         --  8/ 8, 150 [__]
+    feet=gear.Nyame_B_feet,         --  7/ 7, 150 [__]
+    neck="Cleric's Torque +1",      -- __/__, ___ [20]
+    ear1="Arete Del Luna +1",       -- __/__, ___ [__]; Resists
+    ear2="Ebers Earring",           -- __/__, ___ [ 7]
+    ring1="Kuchekula Ring",         -- __/__, ___ [ 7]
+    ring2="Defending Ring",         -- 10/10, ___ [__]
+    back=gear.WHM_FC_Cape,          -- 10/__,  20 [__]
+    waist="Carrier's Sash",         -- __/__, ___ [__]; Ele Resist+15
+    -- 72 PDT / 42 MDT, 661 M.Eva [51 -Enmity]
+    
+    -- main="Bunzi's Rod",          -- __/__, ___ [ 5]; R30
+    -- head="Ebers Cap +3",         -- __/__, 125 [__]
+    -- legs="Ebers Pantaloons +3",  -- 13/13, 157 [__]
+    -- feet="Ebers Duckbills +3",   -- 11/11, 157 [__]
+    -- neck="Cleric's Torque +2",   -- __/__, ___ [25]
+    -- ear2="Ebers Earring +2",     --  8/ 8, ___ [ 9]
+    -- 82 PDT / 52 MDT, 677 M.Eva [56 -Enmity]
   }
 
 
