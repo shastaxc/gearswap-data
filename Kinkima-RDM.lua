@@ -1732,7 +1732,7 @@ function init_gear_sets()
   }
   sets.WeaponSet['CleavingAcc'].DW = {
     main="Tauret",
-    sub="Malevolence",
+    sub=gear.Malevolence_1,
   }
   sets.WeaponSet['Asuran Fists'] = {
     -- main="Karambit",

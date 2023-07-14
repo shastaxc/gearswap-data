@@ -1308,11 +1308,11 @@ function init_gear_sets()
   }
   sets.WeaponSet['SoloCleaving'] = {
     main=gear.Gandring_C,
-    sub="Malevolence",
+    sub=gear.Malevolence_1,
   }
   sets.WeaponSet['Cleaving'] = {
-    main="Malevolence",
-    sub="Malevolence",
+    main=gear.Malevolence_2,
+    sub=gear.Malevolence_1,
   }
   sets.WeaponSet['Staff'] = {
     main="Gozuki Mezuki",

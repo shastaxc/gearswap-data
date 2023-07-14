@@ -1376,7 +1376,7 @@ function init_gear_sets()
     -- main=gear.Fudo_Masamune_C,
     sub="Tsuru",
   }
-  sets.WeaponSet['Aeolian'] = {main="Tauret", sub="Malevolence"}
+  sets.WeaponSet['Aeolian'] = {main="Tauret", sub=gear.Malevolence_1}
 end
 
 -------------------------------------------------------------------------------------------------------------------

@@ -159,6 +159,13 @@ gear.Telchine_Regen_feet = { name="Telchine Pigaches", augments={'"Regen" potenc
 -----------------------     Sinister Reign     -----------------------
 ----------------------------------------------------------------------
 
+gear.Malevolence_1 = { name="Malevolence", augments={'INT+10','Mag. Acc.+10','"Mag.Atk.Bns."+8','"Fast Cast"+5',}}
+gear.Malevolence_2 = {}
+gear.Fanatic_Gloves = { name="Fanatic Gloves", augments={'MP+50','Healing magic skill +8','"Conserve MP"+5','"Fast Cast"+5',}}
+gear.Leyline_Gloves = { name="Leyline Gloves", augments={'Accuracy+7','Mag. Acc.+2',}}
+gear.Samnuha_legs = { name="Samnuha Tights", augments={'STR+8','DEX+9','"Dbl.Atk."+3','"Triple Atk."+2',}}
+gear.Enticer_legs = { name="Enticer's Pants", augments={'MP+25','Pet: Mag. Acc.+2','Pet: Damage taken -1%',}}
+
 
 ----------------------------------------------------------------------
 -----------------------      Adoulin Capes     -----------------------
@@ -237,7 +244,3 @@ gear.WHM_CP_Cape = { name="Alaunus's Cape", augments={'MND+20','Mag. Acc+20 /Mag
 ----------------------------------------------------------------------
 
 gear.CP_Cape = { name="Mecisto. Mantle", augments={'Cap. Point+41%','Mag. Acc.+5','DEF+4',}}
-gear.Fanatic_Gloves = { name="Fanatic Gloves", augments={'MP+50','Healing magic skill +8','"Conserve MP"+5','"Fast Cast"+5',}}
-gear.Leyline_Gloves = { name="Leyline Gloves", augments={'Accuracy+7','Mag. Acc.+2',}}
-gear.Samnuha_legs = { name="Samnuha Tights", augments={'STR+8','DEX+9','"Dbl.Atk."+3','"Triple Atk."+2',}}
-gear.Enticer_legs = { name="Enticer's Pants", augments={'MP+25','Pet: Mag. Acc.+2','Pet: Damage taken -1%',}}

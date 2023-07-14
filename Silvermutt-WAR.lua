@@ -982,12 +982,12 @@ function init_gear_sets()
     -- sub="Sangarius +1",
   }
   sets.WeaponSet['Dagger'] = {
-    main="Malevolence",
+    main=gear.Malevolence_1,
     sub="Blurred Shield +1",
   }
   sets.WeaponSet['Dagger'].DW = {
-    main="Malevolence",
-    sub="Malevolence",
+    main=gear.Malevolence_1,
+    sub=gear.Malevolence_2,
   }
   sets.WeaponSet['Magic Axe'] = {
     -- main="Farsha",
@@ -995,7 +995,7 @@ function init_gear_sets()
   }
   sets.WeaponSet['Magic Axe'].DW = {
     -- main="Farsha",
-    sub="Malevolence",
+    sub=gear.Malevolence_2,
   }
   sets.WeaponSet['Phys Axe'] = {
     -- main="Dolichenus",
