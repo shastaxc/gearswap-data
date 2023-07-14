@@ -790,7 +790,7 @@ function init_gear_sets()
     head=gear.Nyame_B_head,             -- ___, __ {___, 50, __, __ / __, 50, __, __} [ 7/ 7, 123]
     body="Beckoner's Doublet +2",       -- ___, 12 {___, 54, __, __ / __, 54, __, __} [12/12, 120]
     hands=gear.Merl_Mag_BP_hands,       -- ___, 15 { 39, 15,  9, __ / 20, __, __, __} [__/__,  48]
-    legs=gear.Enticer_legs,             -- ___, 12 {___,  2, __, __ / __, __, __, __} [__/__, 107]; Pet TP Bonus
+    legs=gear.Enticer_legs,             -- ___, 12 {___, 12, __, __ / __, __, __, __} [__/__, 107]; Pet TP Bonus
     feet=gear.Apogee_A_feet,            -- ___, 10 { 35, __, __, __ / __, __, __, __} [__/__, 118]
     neck="Summoner's Collar +2",        -- ___, 10 {___, 25, 25, __ / __, 25, 25, __} [ 5/ 5, ___]
     ear1="Lugalbanda Earring",          -- ___, 10 {___, 15, __, __ / __, 15, __, __} [__/__,  10]
@@ -799,7 +799,7 @@ function init_gear_sets()
     ring2="Varar Ring +1",              -- ___,  4 {___, __, __, __ / __, 10, __, __} [__/__, ___]
     back=gear.SMN_Magic_BP_Cape,        --   1,  5 {___, 20, __, 25 / __, __, __, __} [10/__, ___]
     waist="Regal Belt",                 -- ___, __ { 10, __, __, __ / 20, __, __, __} [ 3/ 3, ___]
-    -- 121 Pet Lv, 116 BP Dmg {Pet: 224 MAB, 277 M.Acc, 49 INT, 25 M.Dmg / 40 Att, 206 Acc, 40 STR, 0 DA} [41 PDT/31 MDT, 526 M.Eva]
+    -- 121 Pet Lv, 116 BP Dmg {Pet: 224 MAB, 287 M.Acc, 49 INT, 25 M.Dmg / 40 Att, 206 Acc, 40 STR, 0 DA} [41 PDT/31 MDT, 526 M.Eva]
 
     -- head="Cath Palug Crown",         -- ___, 10 { 38, 38, __, __ / __, 38, __, __} [__/__,  86]
     -- body="Beckoner's Doublet +3",    -- ___, 13 {___, 64, __, __ / __, 64, __, __} [13/13, 130]
@@ -831,7 +831,7 @@ function init_gear_sets()
     head=gear.Nyame_B_body,             -- ___, __ {___, 50, __, __ / __, 50, __, __} [ 7/ 7, 123]
     body="Beckoner's Doublet +2",       -- ___, 12 {___, 54, __, __ / __, 54, __, __} [12/12, 120]
     hands=gear.Merl_Mag_BP_hands,       -- ___, 15 { 39, 15,  9, __ / 20, __, __, __} [__/__,  48]
-    legs=gear.Enticer_legs,             -- ___, 12 {___,  2, __, __ / __, __, __, __} [__/__, 107]; Pet TP Bonus
+    legs=gear.Enticer_legs,             -- ___, 12 {___, 12, __, __ / __, __, __, __} [__/__, 107]; Pet TP Bonus
     feet=gear.Apogee_A_feet,            -- ___, 10 { 35, __, __, __ / __, __, __, __} [__/__, 118]
     neck="Summoner's Collar +2",        -- ___, 10 {___, 25, 25, __ / __, 25, 25, __} [ 5/ 5, ___]
     ear1="Lugalbanda Earring",          -- ___, 10 {___, 15, __, __ / __, 15, __, __} [__/__,  10]
@@ -840,7 +840,7 @@ function init_gear_sets()
     ring2="Varar Ring +1",              -- ___,  4 {___, __, __, __ / __, 10, __, __} [__/__, ___]
     back=gear.SMN_Magic_BP_Cape,        --   1,  5 {___, 20, __, 25 / __, __, __, __} [10/__, ___]
     waist="Regal Belt",                 -- ___, __ { 10, __, __, __ / 20, __, __, __} [ 3/ 3, ___]
-    -- 121 Pet Lv, 116 BP Dmg {Pet: 224 MAB, 277 M.Acc, 49 INT, 25 M.Dmg / 40 Att, 206 Acc, 40 STR, 0 DA} [41 PDT/31 MDT, 526 M.Eva]
+    -- 121 Pet Lv, 116 BP Dmg {Pet: 224 MAB, 287 M.Acc, 49 INT, 25 M.Dmg / 40 Att, 206 Acc, 40 STR, 0 DA} [41 PDT/31 MDT, 526 M.Eva]
     
     -- main="Nirvana",                  --   2, 40 {___, 30, __, __ / __, 30, __, __} [__/__, ___]
     -- head="Cath Palug Crown",         -- ___, 10 { 38, 38, __, __ / __, 38, __, __} [__/__,  86]
