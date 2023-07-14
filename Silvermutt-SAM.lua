@@ -400,6 +400,7 @@ function init_gear_sets()
 
     -- hands="Kasuga Kote +3",
     -- ear2="Kasuga Earring +2",
+    -- back=gear.SAM_Crit_Cape,
   })
   sets.precast.WS['Impulse Drive'].MaxTP = set_combine(sets.precast.WS['Impulse Drive'], {
     head=gear.Nyame_B_head,

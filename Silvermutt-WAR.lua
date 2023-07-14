@@ -323,13 +323,13 @@ function init_gear_sets()
     ear2="Thrud Earring",                 -- 10, __, __,  3, __ (__, __) <__, __, __> [__/__, ___]
     ring1="Sroda Ring",                   -- 15, __, __, __,  3 (__, __) <__, __, __> [__/__, ___]
     ring2="Niqmaddu Ring",                -- 10, __, __, __, __ (__, __) <__, __,  3> [__/__, ___]
-    back=gear.WAR_STR_WSD_Cape,           -- 30, 20, 20, 10, __ (__, __) <__, __, __> [10/__, ___]; DA Dmg+20%
+    back=gear.WAR_STR_Crit_Cape,          -- 30, 20, 20, __, __ (10, __) <__, __, __> [10/__, ___]; DA Dmg+20%
     waist="Sailfi Belt +1",               -- 15, 15, __, __, __ (__, __) < 5,  2, __> [__/__, ___]
     -- WAR Traits                            __, __, __, __, __ (__, __) <33, __, __> [__/__, ___]
-    -- 272 STR, 380 Attack, 279 Accuracy, 60 WSD, 3 PDL (2 Crit Rate, 19 Crit Dmg) <68 DA, 2 TA, 3 QA> [51 PDT/41 MDT, 654 M.Eva]
+    -- 272 STR, 380 Attack, 279 Accuracy, 50 WSD, 3 PDL (12 Crit Rate, 19 Crit Dmg) <68 DA, 2 TA, 3 QA> [51 PDT/41 MDT, 654 M.Eva]
 
     -- ear2="Boii Earring +2",            -- 15, __, 20, __, __ ( 8, __) < 9, __, __> [__/__, ___]
-    -- 277 STR, 375 Attack, 299 Accuracy, 57 WSD, 3 PDL (10 Crit Rate, 19 Crit Dmg) <77 DA, 2 TA, 3 QA> [51 PDT/41 MDT, 654 M.Eva]
+    -- 277 STR, 375 Attack, 299 Accuracy, 47 WSD, 3 PDL (20 Crit Rate, 19 Crit Dmg) <77 DA, 2 TA, 3 QA> [51 PDT/41 MDT, 654 M.Eva]
   }
   sets.precast.WS["Ukko's Fury"].MaxTP = set_combine(sets.precast.WS["Ukko's Fury"], {
     ear1="Schere Earring",                --  5, 15, 15, __, __ (__, __) < 6, __, __> [__/__, ___]
@@ -350,13 +350,13 @@ function init_gear_sets()
     ear2="Thrud Earring",                 -- 10, __, __,  3, __ (__, __) <__, __, __> [__/__, ___]
     ring1="Ephramad's Ring",              -- 10, 20, 20, __, 10 (__, __) <__, __, __> [__/__, ___]
     ring2="Niqmaddu Ring",                -- 10, __, __, __, __ (__, __) <__, __,  3> [__/__, ___]
-    back=gear.WAR_STR_WSD_Cape,           -- 30, 20, 20, 10, __ (__, __) <__, __, __> [10/__, ___]
+    back=gear.WAR_STR_Crit_Cape,          -- 30, 20, 20, __, __ (10, __) <__, __, __> [10/__, ___]; DA Dmg+20%
     waist="Sailfi Belt +1",               -- 15, 15, __, __, __ (__, __) < 5,  2, __> [__/__, ___]
     -- WAR Traits                            __, __, __, __, __ (__, __) <33, __, __> [__/__, ___]
-    -- 273 STR, 423 Attack, 357 Accuracy, 13 WSD, 42 PDL (7 Crit Rate, 19 Crit Dmg) <72 DA, 2 TA, 3 QA> [45 PDT/35 MDT, 634 M.Eva]
+    -- 273 STR, 423 Attack, 357 Accuracy, 3 WSD, 42 PDL (17 Crit Rate, 19 Crit Dmg) <72 DA, 2 TA, 3 QA> [45 PDT/35 MDT, 634 M.Eva]
 
     -- ear2="Boii Earring +2",            -- 15, __, 20, __, __ ( 8, __) < 9, __, __> [__/__, ___]
-    -- 278 STR, 423 Attack, 378 Accuracy, 10 WSD, 42 PDL (15 Crit Rate, 19 Crit Dmg) <81 DA, 2 TA, 3 QA> [45 PDT/35 MDT, 634 M.Eva]
+    -- 278 STR, 423 Attack, 378 Accuracy, 0 WSD, 42 PDL (25 Crit Rate, 19 Crit Dmg) <81 DA, 2 TA, 3 QA> [45 PDT/35 MDT, 634 M.Eva]
   }
   sets.precast.WS["Ukko's Fury"].AttCappedMaxTP = set_combine(sets.precast.WS["Ukko's Fury"].AttCapped, {
     ear1="Schere Earring",                --  5, 15, 15, __, __ (__, __) < 6, __, __> [__/__, ___]
@@ -493,25 +493,94 @@ function init_gear_sets()
   sets.precast.WS['Impulse Drive'].AttCappedMaxTP = set_combine(sets.precast.WS["Ukko's Fury"].AttCappedMaxTP, {})
 
   -- 85% STR; 4 hit, dmg varies with TP
-  sets.precast.WS['Stardiver'] = set_combine(sets.precast.WS["Ukko's Fury"], {})
-  sets.precast.WS['Stardiver'].MaxTP = set_combine(sets.precast.WS["Ukko's Fury"].MaxTP, {})
-  sets.precast.WS['Stardiver'].AttCapped = set_combine(sets.precast.WS["Ukko's Fury"].AttCapped, {})
-  sets.precast.WS['Stardiver'].AttCappedMaxTP = set_combine(sets.precast.WS["Ukko's Fury"].AttCappedMaxTP, {})
+  sets.precast.WS['Stardiver'] = set_combine(sets.precast.WS["Ukko's Fury"], {
+    back=gear.WAR_STR_WSD_Cape,
+  })
+  sets.precast.WS['Stardiver'].MaxTP = set_combine(sets.precast.WS["Ukko's Fury"].MaxTP, {
+    back=gear.WAR_STR_WSD_Cape,
+  })
+  sets.precast.WS['Stardiver'].AttCapped = set_combine(sets.precast.WS["Ukko's Fury"].AttCapped, {
+    back=gear.WAR_STR_WSD_Cape,
+  })
+  sets.precast.WS['Stardiver'].AttCappedMaxTP = set_combine(sets.precast.WS["Ukko's Fury"].AttCappedMaxTP, {
+    back=gear.WAR_STR_WSD_Cape,
+  })
 
   -- 40% STR / 40% DEX; aoe, dmg varies with TP
   sets.precast.WS['Sonic Thrust'] = set_combine(sets.precast.WS["Ukko's Fury"], {
     ring1="Ephramad's Ring",
+    back=gear.WAR_STR_WSD_Cape,
   })
   sets.precast.WS['Sonic Thrust'].MaxTP = set_combine(sets.precast.WS["Ukko's Fury"].MaxTP, {
     ring1="Ephramad's Ring",
+    back=gear.WAR_STR_WSD_Cape,
   })
   sets.precast.WS['Sonic Thrust'].AttCapped = set_combine(sets.precast.WS["Ukko's Fury"].AttCapped, {
     ring1="Ephramad's Ring",
+    back=gear.WAR_STR_WSD_Cape,
   })
   sets.precast.WS['Sonic Thrust'].AttCappedMaxTP = set_combine(sets.precast.WS["Ukko's Fury"].AttCappedMaxTP, {
     ring1="Ephramad's Ring",
+    back=gear.WAR_STR_WSD_Cape,
   })
 
+  -- 50% DEX; 5 hit, crit varies with TP
+  sets.precast.WS["Evisceration"] = {
+    ammo="Yetshila +1",                   -- __, __, __, __, __ ( 2,  6) <__, __, __> [__/__, ___]
+    head=gear.Nyame_B_head,               -- 25, 65, 50, 11, __ (__, __) < 5, __, __> [ 7/ 7, 123]
+    body=gear.Nyame_B_body,               -- 24, 65, 40, 13, __ (__, __) < 7, __, __> [ 9/ 9, 139]
+    hands=gear.Nyame_B_hands,             -- 42, 65, 40, 11, __ (__, __) < 5, __, __> [ 7/ 7, 112]
+    legs=gear.Lustratio_B_legs,           -- 43, 38, 20, __, __ ( 3, __) <__, __, __> [__/__, ___]
+    feet="Boii Calligae +3",              -- 34, 60, 60, __, __ (__, 13) <__, __, __> [10/10, 130]
+    neck="Warrior's Bead Necklace +2",    -- 15, 25, 25, __, __ (__, __) < 7, __, __> [__/__, ___]
+    ear1="Moonshade Earring",             -- __, __,  4, __, __ (__, __) <__, __, __> [__/__, ___]; TP Bonus+250
+    ear2="Lugra Earring +1",              -- 16, __, __, __, __ (__, __) < 3, __, __> [__/__, ___]
+    ring1="Ephramad's Ring",              -- 10, 20, 20, __, 10 (__, __) <__, __, __> [__/__, ___]
+    ring2="Niqmaddu Ring",                -- 10, __, __, __, __ (__, __) <__, __,  3> [__/__, ___]
+    back=gear.WAR_STP_Cape,               -- 30, 20, 20, __, __ (__, __) <__, __, __> [10/__, ___]; DA Dmg+20%
+    waist="Fotia Belt",                   -- __, __, 10, __, __ (__, __) <__, __, __> [__/__, ___]; ftp+0.1
+    -- WAR Traits                            __, __, __, __, __ (__, __) <33, __, __> [__/__, ___]
+    -- 249 DEX, 358 Attack, 289 Accuracy, 35 WSD, 10 PDL (5 Crit Rate, 19 Crit Dmg) <60 DA, 0 TA, 3 QA> [43 PDT/33 MDT, 504 M.Eva]
+
+    -- ear2="Boii Earring +2",            -- __, __, 20, __, __ ( 8, __) < 9, __, __> [__/__, ___]
+    -- back=gear.WAR_DEX_Crit_Cape,       -- 30, 20, 20, __, __ (10, __) <__, __, __> [10/__, ___]; DA Dmg+20%
+    -- 233 DEX, 358 Attack, 309 Accuracy, 35 WSD, 10 PDL (23 Crit Rate, 19 Crit Dmg) <66 DA, 0 TA, 3 QA> [43 PDT/33 MDT, 504 M.Eva]
+  }
+  sets.precast.WS["Evisceration"].MaxTP = set_combine(sets.precast.WS["Evisceration"], {
+    ear1="Thrud Earring",                 -- __, __, __,  3, __ (__, __) <__, __, __> [__/__, ___]
+    ear2="Lugra Earring +1",              -- 16, __, __, __, __ (__, __) < 3, __, __> [__/__, ___]
+    
+    -- ear1="Lugra Earring +1",           -- 16, __, __, __, __ (__, __) < 3, __, __> [__/__, ___]
+    -- ear2="Boii Earring +2",            -- 15, __, 20, __, __ ( 8, __) < 9, __, __> [__/__, ___]
+  })
+  sets.precast.WS["Evisceration"].AttCapped = {
+    ammo="Yetshila +1",                   -- __, __, __, __, __ ( 2,  6) <__, __, __> [__/__, ___]
+    head="Sakpata's Helm",                -- 20, 70, 55, __,  5 (__, __) < 5, __, __> [ 7/ 7, 123]
+    body="Sakpata's Breastplate",         -- 25, 70, 55, __,  8 ( 5, __) < 8, __, __> [10/10, 139]
+    hands="Sakpata's Gauntlets",          -- 35, 70, 55, __,  6 (__, __) < 6, __, __> [ 8/ 8, 112]
+    legs="Boii Cuisses +3",               -- __, 73, 63, __, 10 (__, __) < 8, __, __> [__/__, 130]; TP Bonus+100
+    feet="Boii Calligae +3",              -- 34, 60, 60, __, __ (__, 13) <__, __, __> [10/10, 130]
+    neck="Warrior's Bead Necklace +2",    -- 15, 25, 25, __, __ (__, __) < 7, __, __> [__/__, ___]
+    ear1="Moonshade Earring",             -- __, __,  4, __, __ (__, __) <__, __, __> [__/__, ___]; TP Bonus+250
+    ear2="Lugra Earring +1",              -- 16, __, __, __, __ (__, __) < 3, __, __> [__/__, ___]
+    ring1="Ephramad's Ring",              -- 10, 20, 20, __, 10 (__, __) <__, __, __> [__/__, ___]
+    ring2="Niqmaddu Ring",                -- 10, __, __, __, __ (__, __) <__, __,  3> [__/__, ___]
+    back=gear.WAR_STP_Cape,               -- 30, 20, 20, __, __ (__, __) <__, __, __> [10/__, ___]; DA Dmg+20%
+    waist="Fotia Belt",                   -- __, __, 10, __, __ (__, __) <__, __, __> [__/__, ___]; ftp+0.1
+    -- WAR Traits                            __, __, __, __, __ (__, __) <33, __, __> [__/__, ___]
+    -- 195 DEX, 408 Attack, 367 Accuracy, 0 WSD, 39 PDL (7 Crit Rate, 19 Crit Dmg) <70 DA, 0 TA, 3 QA> [45 PDT/35 MDT, 634 M.Eva]
+
+    -- ear2="Boii Earring +2",            -- __, __, 20, __, __ ( 8, __) < 9, __, __> [__/__, ___]
+    -- back=gear.WAR_DEX_Crit_Cape,       -- 30, 20, 20, __, __ (10, __) <__, __, __> [10/__, ___]; DA Dmg+20%
+    -- 179 DEX, 408 Attack, 387 Accuracy, 0 WSD, 39 PDL (25 Crit Rate, 19 Crit Dmg) <76 DA, 0 TA, 3 QA> [45 PDT/35 MDT, 634 M.Eva]
+  }
+  sets.precast.WS["Evisceration"].AttCappedMaxTP = set_combine(sets.precast.WS["Evisceration"].AttCapped, {
+    ear1="Thrud Earring",                 -- __, __, __,  3, __ (__, __) <__, __, __> [__/__, ___]
+    ear2="Lugra Earring +1",              -- 16, __, __, __, __ (__, __) < 3, __, __> [__/__, ___]
+    
+    -- ear1="Lugra Earring +1",           -- 16, __, __, __, __ (__, __) < 3, __, __> [__/__, ___]
+    -- ear2="Boii Earring +2",            -- 15, __, 20, __, __ ( 8, __) < 9, __, __> [__/__, ___]
+  })
 
 
   ------------------------------------------------------------------------------------------------
