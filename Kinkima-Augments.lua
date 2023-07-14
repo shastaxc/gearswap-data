@@ -163,7 +163,7 @@ gear.Malevolence_1 = { name="Malevolence", augments={'INT+10','Mag. Acc.+10','"M
 gear.Malevolence_2 = {}
 gear.Rubicundity = { name="Rubicundity", augments={'Mag. Acc.+6','"Mag.Atk.Bns."+7','Dark magic skill +7',}}
 gear.Fanatic_Gloves = { name="Fanatic Gloves", augments={'MP+50','Healing magic skill +8','"Conserve MP"+5','"Fast Cast"+5',}}
-gear.Leyline_Gloves = { name="Leyline Gloves", augments={'Accuracy+7','Mag. Acc.+2',}}
+gear.Leyline_Gloves = { name="Leyline Gloves", augments={'Accuracy+12','Mag. Acc.+10','"Mag.Atk.Bns."+1',}}
 gear.Samnuha_legs = { name="Samnuha Tights", augments={'STR+8','DEX+9','"Dbl.Atk."+3','"Triple Atk."+2',}}
 gear.Enticer_legs = { name="Enticer's Pants", augments={'MP+30','Pet: Mag. Acc.+12','Pet: Damage taken -1%',}}
 
