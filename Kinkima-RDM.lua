@@ -1049,7 +1049,7 @@ function init_gear_sets()
 
   -- Dark magic options:
   -- M.Acc Skill, Dark skill, M.Acc, INT [PDT/MDT, M.Eva]
-    -- main="Rubicundity",            -- 215, 25, 30, 21 [__/__, ___]
+    -- main=gear.Rubicundity,         -- 215, 25, 30, 21 [__/__, ___]
     -- head=gear.Amalric_C_head       -- ___, 20, 36, 36 [__/__,  86]
     -- body=gear.Carmine_C_body,      -- ___, 16, 38, 38 [__/ 4,  64]
     -- neck="Erra Pendant",           -- ___, 10, 17, __ [__/__, ___]
@@ -1058,7 +1058,7 @@ function init_gear_sets()
     -- ring1="Evanescence Ring",      -- ___, 10, __, __ [__/__, ___]
 
   sets.midcast['Dark Magic'] = {
-    -- main="Rubicundity",            -- 215, 25, 30, 21 [__/__, ___]
+    main=gear.Rubicundity,            -- 215, 22, 26, 21 [__/__, ___]
     sub="Ammurapi Shield",            -- ___, __, 38, 13 [__/__, ___]
     range=empty,                      -- ___, __, __, __ [__/__, ___]
     ammo="Pemphredo Tathlum",         -- ___, __,  8,  4 [__/__, ___]
@@ -1075,6 +1075,9 @@ function init_gear_sets()
     back="Aurist's Cape +1",          -- ___, __, 33, 33 [__/__, ___]
     waist="Acuity Belt +1",           -- ___, __, 15, 23 [__/__, ___]
     -- Traits/Merits/Gifts                   316
+    -- 215 M.Acc Skill, 412 Dark skill, 404 M.Acc, 292 INT [26 PDT/30 MDT, 537 M.Eva]
+    
+    -- main=gear.Rubicundity,         -- 215, 25, 30, 21 [__/__, ___]
     -- 215 M.Acc Skill, 415 Dark skill, 408 M.Acc, 292 INT [26 PDT/30 MDT, 537 M.Eva]
   }
 

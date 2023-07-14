@@ -703,7 +703,7 @@ function init_gear_sets()
     back=gear.GEO_Nuke_Cape,
     waist="Fucho-no-Obi",
 
-    -- main="Rubicundity",
+    -- main=gear.Rubicundity,
     -- sub="Ammurapi Shield",
     -- range=empty,
     -- ammo="Pemphredo Tathlum",

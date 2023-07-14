@@ -712,6 +712,7 @@ function init_gear_sets()
   -- SCH Dark Magic = 386, with Dark Arts = 456
   -- Dark Magic Skill, INT, M.Acc
   sets.midcast['Dark Magic'] = {
+    main="Rubicundity",                   -- 22, 21, 26; +215 M.Acc skill
     sub="Ammurapi Shield",                -- __, 13, 38
     ammo="Pemphredo Tathlum",             -- __,  4,  8
     head="Academic's Mortarboard +3",     -- __, 37, 52
@@ -724,21 +725,22 @@ function init_gear_sets()
     ring2="Stikini Ring +1",              --  8, __, 11
     back="Bookworm's Cape",               --  8,  4, __
     waist="Acuity Belt +1",               -- __, 23, __
-    -- main="Rubicundity",                -- 25, 21, 30; +215 M.Acc skill
     -- ear1="Mani Earring",               -- 10, __, __
     -- ring1="Evanescence Ring",          -- 10, __, __
     -- back="Bookworm's Cape",            --  8,  5, __
     -- Academic's set bonus               -- __, __, 60
     -- Base stats                           440,127,___
+    -- 551 Dark magic skill, 392 INT, 395 M.Acc
+    
+    -- main="Rubicundity",                -- 25, 21, 30; +215 M.Acc skill
     -- 554 Dark magic skill, 392 INT, 399 M.Acc
   }
 
   -- Add Drain potency
   sets.midcast.Drain = set_combine(sets.midcast['Dark Magic'], {
-    sub="Ammurapi Shield",          -- __, 13, 38, __
     legs="Pedagogy Pants +3",       -- 19, 47, 39, 15
     waist="Fucho-no-obi",           -- __, __, __,  8
-    -- main="Rubicundity",          -- 25, 21, 30, 20; +215 M.Acc skill
+    
     -- ear2="Hirudinea Earring",    -- __, __, __,  3
     -- ring1="Evanescence Ring",    -- 10, __, __, 10
     -- 554 Dark magic skill, 359 INT, 384 M.Acc, 56 Drain/Aspir potency
