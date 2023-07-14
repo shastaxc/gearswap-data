@@ -86,6 +86,8 @@ gear.Merl_Phalanx_feet = { name="Merlinic Crackows", augments={'Pet: DEX+10','Pe
 
 gear.Merl_TH_body = { name="Merlinic Jubbah", augments={'CHR+7','"Drain" and "Aspir" potency +6','"Treasure Hunter"+2','Mag. Acc.+8 "Mag.Atk.Bns."+8',}}
 
+gear.Merl_ConMP_body = {} -- ConserveMP +7
+
 -- Odyssean
 
 -- Valorous

@@ -444,7 +444,7 @@ function init_gear_sets()
     -- range="Dunna",               -- __, 18, __ [__/__, ___]
     -- ammo=empty,
     -- head="Azimuth Hood +3",      -- __, 25, __ [12/12, 136]; Set bonus
-    -- body=gear.Merl_ConMP_body,   -- __, __,  6 [ 2/__,  91]
+    -- body=gear.Merl_ConMP_body,   -- __, __,  7 [ 2/__,  91]
     -- hands="Azimuth Gloves +3",   -- __, __, __ [12/12,  98]; Set bonus
     -- legs=gear.Vanya_C_legs,      -- __, __, 12 [__/__, 107]
     -- feet="Azimuth Gaiters +3",   -- __, __, __ [11/11, 168]; Set bonus
@@ -456,7 +456,7 @@ function init_gear_sets()
     -- back="Solemnity Cape",       -- __, __,  5 [ 4/ 4, ___]
     -- waist="Shinjutsu-no-Obi +1", -- __, __, 15 [__/__, ___]
     -- Base stats                   -- __,850, 43
-    -- 10 Geomancy, 901 geo skill, 102 Conserve MP [51 PDT/39 MDT, 600 M.Eva]
+    -- 10 Geomancy, 901 geo skill, 103 Conserve MP [51 PDT/39 MDT, 600 M.Eva]
     
     -- main="Idris",                -- 10, __, __ [__/__, ___]
     -- sub="Genmei Shield",         -- __, __, __ [10/__, ___]
@@ -598,13 +598,13 @@ function init_gear_sets()
     -- Ideal: 0 Geomancy, 889 geo skill, 89 Conserve MP, 281 Indi Duration, 20 Indi Duration % [52 PDT/ 42 MDT, 499 M.Eva] {Pet: 58 DT, 4 Regen}
     
     -- head="Azimuth Hood +3",      -- __, 25, __, __, __ [12/12, 136] {__,  5}; Set bonus: save MP
-    -- body=gear.Merl_ConMP_body,   -- __, __,  6, __, __ [ 2/__,  91] {__, __}
+    -- body=gear.Merl_ConMP_body,   -- __, __,  7, __, __ [ 2/__,  91] {__, __}
     -- hands="Azimuth Gloves +3",   -- __, __, __, __, __ [12/12,  98] {__, __}; Set bonus: save MP
     -- feet="Azimuth Gaiters +3",   -- __, __, __, 30, __ [11/11, 168] {__, __}; Set bonus: save MP
     -- ear2="Calamitous Earring",   -- __, __,  4, __, __ [__/__, ___] {__, __}
     -- Base stats                   -- __,850, 43,220, __ [__/__, ___] {50, __}
     -- Master level 3               -- __,  6
-    -- Ideal: 0 Geomancy, 900 geo skill, 99 Conserve MP, 286 Indi Duration, 20 Indi Duration % [57 PDT/ 45 MDT, 620 M.Eva] {Pet: 59 DT, 5 Regen}
+    -- Ideal: 0 Geomancy, 900 geo skill, 100 Conserve MP, 286 Indi Duration, 20 Indi Duration % [57 PDT/ 45 MDT, 620 M.Eva] {Pet: 59 DT, 5 Regen}
   })
 
   -- Cap at 700 power; Power = floor(MND÷2) + floor(VIT÷4) + Healing Magic Skill
