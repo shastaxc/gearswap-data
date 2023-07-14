@@ -1674,7 +1674,7 @@ function init_gear_sets()
   }
   sets.WeaponSet['Savage'].DW = {
     main="Naegling",
-    sub="Tauret",
+    sub="Machaera +2",
     -- sub="Thibron",
   }
   sets.WeaponSet['SavageAcc'] = {
