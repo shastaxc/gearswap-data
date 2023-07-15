@@ -30,7 +30,7 @@ function job_setup()
   state.OffenseMode:options('Normal', 'Acc')
   state.CastingMode:options('Normal', 'Seidr', 'Resistant')
   state.IdleMode:options('Normal', 'HeavyDef')
-  state.PhysicalDefenseMode = M{['description'] = 'Physical Defense Mode', 'PDT', 'Cait Sith'}
+  state.PhysicalDefenseMode = M{['description'] = 'Physical Defense Mode', 'PDT', 'CaitSith'}
   state.MagicBurst = M(true, 'Magic Burst')
 
   state.Buff['Sublimation: Activated'] = buffactive['Sublimation: Activated'] or false
@@ -1301,7 +1301,7 @@ function job_post_precast(spell, action, spellMap, eventArgs)
   if locked_ring1 then equip({ ring1=player.equipment.ring1 }) end
   if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
 
-  if state.PhysicalDefenseMode.current == 'Cait Sith' and state.DefenseMode.current ~= 'None' then
+  if state.PhysicalDefenseMode.current == 'CaitSith' and state.DefenseMode.current ~= 'None' then
     equip(sets.Special.CaitSith)
   end
 
@@ -1390,7 +1390,7 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
   if locked_ring1 then equip({ ring1=player.equipment.ring1 }) end
   if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
 
-  if state.PhysicalDefenseMode.current == 'Cait Sith' and state.DefenseMode.current ~= 'None' then
+  if state.PhysicalDefenseMode.current == 'CaitSith' and state.DefenseMode.current ~= 'None' then
     equip(sets.Special.CaitSith)
   end
 
@@ -1548,7 +1548,7 @@ function customize_defense_set(defenseSet)
     defenseSet = set_combine(defenseSet, sets.buff.Doom)
   end
 
-  if state.PhysicalDefenseMode.current == 'Cait Sith' then
+  if state.PhysicalDefenseMode.current == 'CaitSith' then
     defenseSet = set_combine(defenseSet, sets.Special.CaitSith)
   end
 

@@ -39,7 +39,7 @@ function job_setup()
   state.BarElement = M{['description']='BarElement', 'Barfire', 'Barblizzard', 'Baraero', 'Barstone', 'Barthunder', 'Barwater'}
   state.BarStatus = M{['description']='BarStatus', 'Baramnesia', 'Barvirus', 'Barparalyze', 'Barsilence', 'Barpetrify', 'Barpoison', 'Barblind', 'Barsleep'}
   state.GainSpell = M{['description']='GainSpell', 'Gain-STR', 'Gain-INT', 'Gain-AGI', 'Gain-VIT', 'Gain-DEX', 'Gain-MND', 'Gain-CHR'}
-  state.PhysicalDefenseMode:options('PDT')
+  state.PhysicalDefenseMode = M{['description'] = 'Physical Defense Mode', 'PDT', 'CaitSith'}
   state.MagicBurst = M(false, 'Magic Burst')
   state.SleepMode = M{['description']='Sleep Mode', 'Normal', 'MaxDuration'}
   state.NM = M(false, 'NM?')
@@ -1669,6 +1669,26 @@ function init_gear_sets()
     body="Councilor's Garb",
   }
 
+  sets.Special = {}
+  sets.Special.CaitSith = {
+    main="Contemplator +1",
+    sub="Enki Strap",
+    range="Ullr",
+    ammo=empty,
+    head="Lethargy Chappel +2",
+    body="Lethargy Sayon +3",
+    hands="Lethargy Gantherots +3",
+    legs=gear.Chironic_MAcc_legs,
+    feet=gear.Kaykaus_D_feet,
+    neck="Duelist's Torque +2",
+    ear1="Snotra Earring",
+    ear2="Malignance Earring",
+    ring1="Metamorph Ring +1",
+    ring2="Stikini Ring +1",
+    back=gear.RDM_INT_Enf_Cape,
+    waist="Obstinate Sash",
+  }
+
   --Weapon sets
   sets.WeaponSet = {}
   sets.WeaponSet['Savage'] = {
@@ -1815,6 +1835,10 @@ function job_post_precast(spell, action, spellMap, eventArgs)
   if locked_ring1 then equip({ ring1=player.equipment.ring1 }) end
   if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
 
+  if state.PhysicalDefenseMode.current == 'CaitSith' and state.DefenseMode.current ~= 'None' then
+    equip(sets.Special.CaitSith)
+  end
+
   ----------- Non-silibs content goes above this line -----------
   silibs.post_precast_hook(spell, action, spellMap, eventArgs)
 end
@@ -1949,6 +1973,10 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
   if locked_ear2 then equip({ ear2=player.equipment.ear2 }) end
   if locked_ring1 then equip({ ring1=player.equipment.ring1 }) end
   if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
+
+  if state.PhysicalDefenseMode.current == 'CaitSith' and state.DefenseMode.current ~= 'None' then
+    equip(sets.Special.CaitSith)
+  end
 
   ----------- Non-silibs content goes above this line -----------
   silibs.post_midcast_hook(spell, action, spellMap, eventArgs)
@@ -2179,6 +2207,10 @@ function customize_defense_set(defenseSet)
 
   if in_battle_mode() then
     defenseSet = set_combine(defenseSet, select_weapons())
+  end
+
+  if state.PhysicalDefenseMode.current == 'CaitSith' then
+    defenseSet = set_combine(defenseSet, sets.Special.CaitSith)
   end
 
   return defenseSet
