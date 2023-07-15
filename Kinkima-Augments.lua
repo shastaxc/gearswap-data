@@ -121,7 +121,7 @@ gear.Gende_SongFC_hands = { name="Gende. Gages +1", augments={'Phys. dmg. taken 
 -- Acro
 
 -- Helios
--- gear.Helios_Phys_BP_head = {} -- 7 BP Dmg, 30 Pet Acc, 8 Pet DA
+gear.Helios_Phys_BP_head = { name="Helios Band", augments={'Pet: Accuracy+30 Pet: Rng. Acc.+30','Pet: "Dbl. Atk."+8','Blood Pact Dmg.+7',}} -- 7 BP Dmg, 30 Pet Acc, 8 Pet DA
 
 -- Taeon
 -- gear.Taeon_FC_body = {} -- 5 FC, 3 Phalanx, 20 M.Eva
