@@ -427,7 +427,7 @@ function init_gear_sets()
     head=gear.Kaykaus_C_head,         -- __, 11,  16,  19,  14, 12, __/ 3, __
     body=gear.Kaykaus_C_body,         --  4, __, ___,  33,  20, 12, __/__, __
     hands=gear.Chironic_SIRD_hands,   -- __, __, ___,  38,  20, 31, __/__, __; Can add more DT or Enmity
-    legs="Atrophy Tights +1",         -- __, 10,  13,  29,  12, __, __/__, __
+    legs="Atrophy Tights +2",         -- __, 11,  15,  34,  17, __, __/__, __
     feet=gear.Kaykaus_D_feet,         -- __, 17, ___,  19,  10, __, __/__,  6
     neck="Loricate Torque +1",        -- __, __, ___, ___, ___,  5,  6/ 6, __
     ear1="Meili Earring",             -- __, __,  10, ___, ___, __, __/__, __
@@ -439,7 +439,7 @@ function init_gear_sets()
     -- Kaykaus set bonus              --  6, __, ___, ___, ___, __, __/__, __
     -- Base Stats                     -- __, __, 414, 129, 123, __, __/__, __
     -- Merit points                   -- __, __, ___, ___, ___, 10, __/__,  5
-    -- 10 CPII, 53 CP, 468 Heal Skill, 299 MND, 202 VIT, 116 SIRD, 42PDT/27MDT, 15 -Enmity
+    -- 10 CPII, 54 CP, 470 Heal Skill, 304 MND, 207 VIT, 116 SIRD, 42PDT/27MDT, 15 -Enmity
     
     -- legs="Atrophy Tights +3",      -- __, 12,  17,  39,  22, __, __/__, __
     -- 10 CPII, 55 CP, 472 Heal Skill, 309 MND, 212 VIT, 116 SIRD, 42PDT/27MDT, 15 -Enmity
@@ -451,7 +451,7 @@ function init_gear_sets()
     head=gear.Kaykaus_C_head,         -- __, 11,  16,  19,  14, 12, __/ 3, __
     body="Rosette Jaseran +1",        -- __, __, ___,  39,  31, 25,  5/ 5, 13
     hands=gear.Chironic_SIRD_hands,   -- __, __, ___,  38,  20, 31, __/__, __; Can add more DT or Enmity
-    legs="Atrophy Tights +1",         -- __, 10,  13,  29,  12, __, __/__, __
+    legs="Atrophy Tights +2",         -- __, 11,  15,  34,  17, __, __/__, __
     feet=gear.Kaykaus_D_feet,         -- __, 17, ___,  19,  10, __, __/__,  6
     neck="Loricate Torque +1",        -- __, __, ___, ___, ___,  5,  6/ 6, __
     ear1="Meili Earring",             -- __, __,  10, ___, ___, __, __/__, __
@@ -463,7 +463,7 @@ function init_gear_sets()
     -- Kaykaus set bonus              --  4, __, ___, ___, ___, __, __/__, __
     -- Base Stats                     -- __, __, 414, 129, 123, __, __/__, __
     -- Merit points                   -- __, __, ___, ___, ___, 10, __/__,  5
-    -- 4 CPII, 53 CP, 468 Heal Skill, 303 MND, 213 VIT, 104 SIRD, 37PDT/32MDT, 28 -Enmity
+    -- 4 CPII, 54 CP, 470 Heal Skill, 308 MND, 218 VIT, 104 SIRD, 37PDT/32MDT, 28 -Enmity
     
     -- legs="Atrophy Tights +3",      -- __, 12,  17,  39,  22, __, __/__, __
     -- 4 CPII, 55 CP, 472 Heal Skill, 313 MND, 223 VIT, 104 SIRD, 37PDT/32MDT, 28 -Enmity
@@ -478,7 +478,7 @@ function init_gear_sets()
     head=gear.Kaykaus_C_head,         -- __, 11,  16,  19,  14, 12, __/ 3, __
     body="Rosette Jaseran +1",        -- __, __, ___,  39,  31, 25,  5/ 5, 13
     hands=gear.Chironic_SIRD_hands,   -- __, __, ___,  38,  20, 31, __/__, __; Can add more DT or Enmity
-    legs="Atrophy Tights +1",         -- __, 10,  13,  29,  12, __, __/__, __
+    legs="Atrophy Tights +2",         -- __, 11,  15,  34,  17, __, __/__, __
     feet=gear.Kaykaus_D_feet,         -- __, 17, ___,  19,  10, __, __/__,  6
     neck="Loricate Torque +1",        -- __, __, ___, ___, ___,  5,  6/ 6, __
     ear1="Magnetic Earring",          -- __, __, ___, ___, ___,  8, __/__, __
@@ -490,7 +490,7 @@ function init_gear_sets()
     -- Kaykaus set bonus              --  4, __, ___, ___, ___, __, __/__, __
     -- Base Stats                     -- __, __, 414, 129, 123, __, __/__, __
     -- Merit points                   -- __, __, ___, ___, ___, 10, __/__,  5
-    -- 4 CPII, 63 CP, 458 Heal Skill, 308 MND, 218 VIT, 102 SIRD, 42PDT/32MDT, 24 -Enmity
+    -- 4 CPII, 64 CP, 460 Heal Skill, 313 MND, 223 VIT, 102 SIRD, 42PDT/32MDT, 24 -Enmity
     
     -- legs="Atrophy Tights +3",      -- __, 12,  17,  39,  22, __, __/__, __
     -- 4 CPII, 65 CP, 462 Heal Skill, 318 MND, 228 VIT, 102 SIRD, 42PDT/32MDT, 24 -Enmity
@@ -502,7 +502,7 @@ function init_gear_sets()
     head=gear.Kaykaus_C_head,         -- __, 11,  16,  19,  14, 12, __/ 3, __
     body="Rosette Jaseran +1",        -- __, __, ___,  39,  31, 25,  5/ 5, 13
     hands=gear.Chironic_SIRD_hands,   -- __, __, ___,  38,  20, 31, __/__, __; Can add more DT or Enmity
-    legs="Atrophy Tights +1",         -- __, 10,  13,  29,  12, __, __/__, __
+    legs="Atrophy Tights +2",         -- __, 11,  15,  34,  17, __, __/__, __
     feet=gear.Kaykaus_D_feet,         -- __, 17, ___,  19,  10, __, __/__,  6
     neck="Loricate Torque +1",        -- __, __, ___, ___, ___,  5,  6/ 6, __
     ear1="Magnetic Earring",          -- __, __, ___, ___, ___,  8, __/__, __
@@ -514,7 +514,7 @@ function init_gear_sets()
     -- Kaykaus set bonus              --  4, __, ___, ___, ___, __, __/__, __
     -- Base Stats                     -- __, __, 414, 129, 123, __, __/__, __
     -- Merit points                   -- __, __, ___, ___, ___, 10, __/__,  5
-    -- 4 CPII, 53 CP, 458 Heal Skill, 303 MND, 213 VIT, 102 SIRD, 37PDT/32MDT, 24 -Enmity
+    -- 4 CPII, 54 CP, 460 Heal Skill, 308 MND, 218 VIT, 102 SIRD, 37PDT/32MDT, 24 -Enmity
     
     -- legs="Atrophy Tights +3",      -- __, 12,  17,  39,  22, __, __/__, __
     -- 4 CPII, 55 CP, 462 Heal Skill, 313 MND, 223 VIT, 102 SIRD, 37PDT/32MDT, 24 -Enmity
@@ -598,7 +598,7 @@ function init_gear_sets()
     head="Befouled Crown",            -- 16, __, __, __ [__/__,  75]
     body="Vitiation Tabard +3",       -- 23, 15, __, 15 [__/__, 100]
     hands="Vitiation Gloves +3",      -- 24, __, __, __ [__/__,  57]
-    legs="Atrophy Tights +1",         -- 17, __, __, __ [__/__, 107]
+    legs="Atrophy Tights +2",         -- 19, __, __, __ [__/__, 117]
     feet="Lethargy Houseaux +3",      -- 35, 40, __, __ [__/__, 157]
     neck="Loricate Torque +1",        -- __, __, __, __ [ 6/ 6, ___]
     ear1="Mimir Earring",             -- 10, __, __, __ [__/__, ___]
@@ -608,7 +608,7 @@ function init_gear_sets()
     back=gear.RDM_Adoulin_Cape,       --  9, __, 20, __ [__/__, ___]
     waist="Olympus Sash",             --  5, __, __, __ [__/__, ___]
     -- Traits/Gifts/Merits            --456, __, __, 38 [__/__, ___]
-    -- 616 Enh skill, 55 Enh duration, 20 Aug Enh Duration, 53 FC [33 PDT/23 MDT, 496 M.Eva]
+    -- 618 Enh skill, 55 Enh duration, 20 Aug Enh Duration, 53 FC [33 PDT/23 MDT, 506 M.Eva]
     
     -- legs="Atrophy Tights +3",      -- 21, __, __, __ [__/__, 127]
     -- back=gear.RDM_Adoulin_Cape,    -- 10, __, 20, __ [__/__, ___]
