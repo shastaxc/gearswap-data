@@ -56,6 +56,9 @@ gear.Grioavolr_Magic_BP = { name="Grioavolr", augments={'Blood Pact Dmg.+9','Pet
 -- gear.Chironic_AE_hands = { }-- 10 WSD > 40 MAB > 15 INT > 15 DEX
 -- gear.Chironic_AE_feet = {} -- 10 WSD > 40 MAB > 15 INT > 15 DEX
 
+-- gear.Chironic_Phalanx_hands = {}
+-- gear.Chironic_Phalanx_feet = {}
+
 gear.Chironic_SIRD_hands = { name="Chironic Gloves", augments={'Attack+6','Spell interruption rate down -11%','Mag. Acc.+1',}}
 
 gear.Chironic_MAcc_legs = { name="Chironic Hose", augments={'Mag. Acc.+25 "Mag.Atk.Bns."+25','"Cure" spellcasting time -5%','CHR+7','Mag. Acc.+12','"Mag.Atk.Bns."+10',}} -- 40 M.Acc Aug
@@ -82,6 +85,7 @@ gear.Merl_Phys_BP_hands = { name="Merlinic Dastanas", augments={'Pet: Attack+17 
 
 gear.Merl_Phalanx_head = { name="Merlinic Hood", augments={'Spell interruption rate down -1%','INT+2','Phalanx +5','Accuracy+9 Attack+9',}}
 gear.Merl_Phalanx_body = { name="Merlinic Jubbah", augments={'"Resist Silence"+8','Accuracy+8','Phalanx +3','Accuracy+1 Attack+1',}}
+-- gear.Merl_Phalanx_legs = {}
 gear.Merl_Phalanx_feet = { name="Merlinic Crackows", augments={'Pet: DEX+10','Pet: Attack+28 Pet: Rng.Atk.+28','Phalanx +4','Mag. Acc.+18 "Mag.Atk.Bns."+18',}}
 
 gear.Merl_TH_body = { name="Merlinic Jubbah", augments={'CHR+7','"Drain" and "Aspir" potency +6','"Treasure Hunter"+2','Mag. Acc.+8 "Mag.Atk.Bns."+8',}}
