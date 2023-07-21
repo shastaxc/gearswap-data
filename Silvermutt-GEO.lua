@@ -1,4 +1,4 @@
--- File Status: Good. Kinkima's GEO is better.
+-- File Status: Ok. Kinkima's GEO is better.
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs

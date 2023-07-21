@@ -1,4 +1,4 @@
--- File Status: Good.
+-- File Status: Good. Maybe an issue with high ranged acc modes.
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs

@@ -1,4 +1,4 @@
--- File Status: Ok, could use a little work on convenience features.
+-- File Status: Good.
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs

@@ -1,4 +1,4 @@
--- File Status: Acceptable.
+-- File Status: Good.
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs
