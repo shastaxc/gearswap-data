@@ -3,7 +3,7 @@
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs
 -- Required addons: HasteInfo, DistancePlus
--- Recommended addons: WSBinder, Reorganizer
+-- Recommended addons: Metronome, WSBinder, Reorganizer
 -- Misc Recommendations: Disable GearInfo, disable RollTracker
 
 -------------------------------------------------------------------------------------------------------------------
