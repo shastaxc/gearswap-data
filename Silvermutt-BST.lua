@@ -79,7 +79,7 @@ function job_setup()
 
   state.PetMode = M{['description']='Pet Mode', 'Tank', 'DD'}
 
-  state.JugMode = M{['description']='Jug Mode', 'Generous Arthur', 'Vivacious Vickie', 'Rhyming Shizuna', 'Swooping Zhivago'}
+  state.JugMode = M{['description']='Jug Mode', 'Generous Arthur', 'Vivacious Vickie', 'Rhyming Shizuna', 'Swooping Zhivago', 'Fatso Fargann'}
 
   -- Jug pets info
   jugs = {
