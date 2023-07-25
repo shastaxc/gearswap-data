@@ -1162,11 +1162,25 @@ function job_precast(spell, action, spellMap, eventArgs)
   end
 
   -- Handle equipping jugs
-  if spell.english == 'Bestial Loyalty' or spell.english == 'Call Beast' then
+  if spell.english == 'Bestial Loyalty' then
     local jug_info = jugs[state.JugMode.value]
     if jug_info and silibs.has_item(jug_info.item, silibs.equippable_bags) then
       equip({ammo=jug_info.item})
       eventArgs.handled = true
+    end
+  elseif spell.english == 'Call Beast' then
+    local jug_info = jugs[state.JugMode.value]
+    -- Don't allow Call Beast to consume HQ jugs
+    if jug_info then
+      if jug_info.nq_item and jug_info.nq_item ~= '' then
+        if silibs.has_item(jug_info.item, silibs.equippable_bags) then
+          equip({ammo=jug_info.nq_item})
+          eventArgs.handled = true
+        end
+      elseif silibs.has_item(jug_info.item, silibs.equippable_bags) then
+        equip({ammo=jug_info.item})
+        eventArgs.handled = true
+      end
     end
   end
 end
