@@ -679,7 +679,7 @@ function init_gear_sets()
     -- waist="Refoccilation Stone",
   }
   sets.midcast['Elemental Magic'].MB = set_combine(sets.midcast['Elemental Magic'], {
-    -- head="Ea Hat +1",
+    head="Ea Hat +1",
     -- hands="Agwu's Gages",
   }) -- Not set up to be used
   sets.midcast['Elemental Magic'].Resistant = set_combine(sets.midcast['Elemental Magic'], {})
