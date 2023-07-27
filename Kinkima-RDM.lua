@@ -161,7 +161,7 @@ function init_gear_sets()
   sets.precast.FC = {
     range=empty,                      -- __ [__/__, ___]
     ammo="Sapience Orb",              --  2 [__/__, ___]
-    head="Atrophy Chapeau +2",        -- 14 [__/__,  85]
+    head="Atrophy Chapeau +3",        -- 16 [__/__,  95]
     body="Shamash Robe",              -- __ [10/__, 106]; Resist Silence+90
     hands=gear.Nyame_B_hands,         -- __ [ 7/ 7, 112]
     legs="Bunzi's Pants",             -- __ [ 9/ 9, 150]
@@ -174,9 +174,6 @@ function init_gear_sets()
     back=gear.RDM_FC_Cape,            -- 10 [10/10, ___]
     waist="Shinjutsu-no-Obi +1",      --  5 [__/__, ___]
     -- Traits/Gifts/Merits            -- 38 [__/__, ___]
-    -- 79 FC [53 PDT/46 MDT, 603 M.Eva]
-    
-    -- head="Atrophy Chapeau +3",     -- 16 [__/__,  95]
     -- 81 FC [53 PDT/46 MDT, 613 M.Eva]
   }
 
@@ -384,7 +381,7 @@ function init_gear_sets()
   sets.precast.WS['Aeolian Edge'] = {
     range=empty,                      -- __, __, __, __, __, __ [__/__, ___]
     ammo="Ghastly Tathlum +1",        -- __, 11, __, __, __, 21 [__/__, ___]
-    head="Lethargy Chappel +2",       -- 24, 33, 51, __, 51, 21 [ 9/ 9, 115]
+    head="Lethargy Chappel +3",       -- 29, 38, 61, __, 56, 31 [10/10, 125]
     body="Lethargy Sayon +3",         -- 34, 47, 64, __, 54, 34 [14/14, 136]
     hands="Lethargy Gantherots +3",   -- 43, 33, 62, __, 52, 32 [11/11,  87]
     legs="Bunzi's Pants",             -- __, 51, 55, __, 30, 60 [ 9/ 9, 150]
@@ -396,9 +393,8 @@ function init_gear_sets()
     ring2="Freke Ring",               -- __, 10, __, __,  8, __ [__/__, ___]
     back=gear.RDM_MAB_Cape,           -- __, 30, 20, __, 10, 20 [10/__, ___]
     waist="Skrymir Cord",             -- __, __,  5, __,  5, 30 [__/__, ___]
-    -- 131 DEX, 279 INT, 342 M.Acc, 12 WSD, 278 MAB, 248 M.Dmg [53 PDT/43 MDT, 645 M.Eva]
+    -- 136 DEX, 284 INT, 352 M.Acc, 12 WSD, 283 MAB, 258 M.Dmg [54 PDT/44 MDT, 655 M.Eva]
 
-    -- head="Lethargy Chappel +3",    -- 29, 38, 61, __, 56, 31 [10/10, 125]
     -- waist="Skrymir Cord +1",       -- __, __,  7, __,  7, 35 [__/__, ___]
     -- 136 DEX, 284 INT, 354 M.Acc, 12 WSD, 285 MAB, 263 M.Dmg [54 PDT/44 MDT, 655 M.Eva]
   }
@@ -640,7 +636,7 @@ function init_gear_sets()
     head="Amalric Coif +1",           --  2, __, __, __ [__/__,  86]
     body="Atrophy Tabard +3",         --  2, __, __, __ [__/__, 100]
     hands="Lethargy Gantherots +3",   -- __, __, __, __ [11/11,  87]
-    legs="Lethargy Fuseau +2",        --  4, __, __, __ [__/__, 152]
+    legs="Lethargy Fuseau +3",        --  4, __, __, __ [__/__, 162]
     feet="Lethargy Houseaux +3",      -- __, 40, __, __ [__/__, 157]
     neck="Duelist's Torque +2",       -- __, 25, __, __ [__/__, ___]
     ear1="Odnowa Earring +1",         -- __, __, __, __ [ 3/ 5, ___]
@@ -651,9 +647,6 @@ function init_gear_sets()
     waist="Embla Sash",               -- __, 10, __, __ [__/__, ___]
     -- Refresh III potency            --  9, __, __, __ [__/__, ___]
     -- Empty set bonus                       20
-    -- 17 Ref Potency, 116 Enh Duration%, 20 Aug Enh Duration, 0 Ref Duration [34 PDT/28 MDT, 582 M.Eva]
-    
-    -- legs="Lethargy Fuseau +3",     --  4, __, __, __ [__/__, 162]
     -- 17 Ref Potency, 116 Enh Duration%, 20 Aug Enh Duration, 0 Ref Duration [34 PDT/28 MDT, 592 M.Eva]
   }
   sets.midcast.RefreshSelf = set_combine(sets.midcast.RefreshOthers, {
@@ -786,12 +779,12 @@ function init_gear_sets()
 
   -- Cap at 500 enhancing skill
   sets.midcast.GainSpell = set_combine(sets.midcast.EnhancingDuration, {
-    head="Lethargy Chappel +2",       -- __, __, __, __ [ 9/ 9, 115]; Using for DT
+    head="Lethargy Chappel +3",       -- __, __, __, __ [10/10, 125]; Using for DT
     hands="Vitiation Gloves +3",      -- 24, __, __, __ [__/__,  57]; Gain +30
   })
   -- Cap at 250 INT at time of casting
   sets.midcast.SpikesSpell = set_combine(sets.midcast.EnhancingDuration, {
-    head="Lethargy Chappel +2",       -- __, __, __, __ [ 9/ 9, 115]; Using for DT
+    head="Lethargy Chappel +3",       -- __, __, __, __ [10/10, 125]; Using for DT
     legs="Vitiation Tights +1"
     -- legs="Vitiation Tights +3" -- No real need to upgrade past +1
   })
@@ -809,10 +802,10 @@ function init_gear_sets()
     sub="Ammurapi Shield",            -- __, 10, __, __ [__/__, ___]
     range=empty,                      -- __, __, __, __ [__/__, ___]
     ammo="Staunch Tathlum +1",        -- __, __, __, __ [ 3/ 3, ___]
-    head="Lethargy Chappel +2",       -- __, __, __, __ [ 9/ 9, 115]
+    head="Lethargy Chappel +3",       -- __, __, __, __ [10/10, 125]
     body="Lethargy Sayon +3",         -- __, __, __, __ [14/14, 136]
     hands="Atrophy Gloves +3",        -- __, 20, __, __ [__/__,  57]
-    legs="Lethargy Fuseau +2",        -- __, __, __, __ [__/__, 152]
+    legs="Lethargy Fuseau +3",        -- __, __, __, __ [__/__, 162]
     feet="Lethargy Houseaux +3",      -- 35, 40, __, __ [__/__, 157]
     neck="Duelist's Torque +2",       -- __, 25, __, __ [__/__, ___]
     ear1="Odnowa Earring +1",         -- __, __, __, __ [ 3/ 5, ___]
@@ -823,10 +816,8 @@ function init_gear_sets()
     waist="Embla Sash",               -- __, 10, __,  5 [__/__, ___]
     -- Traits/Gifts/Merits            --456, __, __, 38 [__/__, ___]
     -- Empy set bonuses                  __, 35, __, __ [__/__, ___]
-    -- 500 Enh skill, 151 Enh duration, 20 Aug Enh Duration, 54 FC [46 PDT/40 MDT, 617 M.Eva]
+    -- 500 Enh skill, 151 Enh duration, 20 Aug Enh Duration, 54 FC [47 PDT/41 MDT, 637 M.Eva]
     
-    -- head="Lethargy Chappel +3",    -- __, __, __, __ [10/10, 125]
-    -- legs="Lethargy Fuseau +3",     -- __, __, __, __ [__/__, 162]
     -- ear2="Lethargy Earring +2",    -- __,  9, __,  9 [__/__, ___]
     -- back=gear.RDM_Adoulin_Cape,    -- 10, __, 20, __ [__/__, ___]
     -- 501 Enh skill, 153 Enh duration, 20 Aug Enh Duration, 56 FC [47 PDT/41 MDT, 637 M.Eva]
@@ -929,7 +920,7 @@ function init_gear_sets()
     head="Vitiation Chapeau +3",      -- ___, 37, 42, __ (__, __, __, 26) [__/__,  95]; Enhances enf. duration
     body="Lethargy Sayon +3",         -- ___, 64, 45, __ (__, 18, __, __) [14/14, 136]
     hands="Regal Cuffs",              -- ___, 45, 40, __ (__, __, 20, __) [__/__,  53]
-    legs="Lethargy Fuseau +2",        -- ___, 53, 38, __ (__, __, __, __) [__/__, 152]
+    legs="Lethargy Fuseau +3",        -- ___, 63, 43, __ (__, __, __, __) [__/__, 162]
     feet="Lethargy Houseaux +3",      -- ___, 60, 32, __ (__, __, __, __) [__/__, 157]
     neck="Duelist's Torque +2",       -- ___, 30, 15, __ (__, 10, 25, __) [__/__, ___]
     ear1="Snotra Earring",            -- ___, 10,  8, __ (__, __, 10, __) [__/__, ___]
@@ -940,9 +931,6 @@ function init_gear_sets()
     waist="Obstinate Sash",           -- ___, 15,  5, __ (__, __,  5, 15) [__/__, ___]
     -- Empy set effect                   ___, __, __, __ (__, __, 20, __) [__/__, ___]
     -- Traits/Gifts/Merits                            38
-    -- 242 M.Acc skill, 394 M.Acc, 292 MND, 52 FC (0 Immunobreak, 48 Enf. Effect, 90 Enf. Duration, 41 Enf. Skill) [47 PDT/29 MDT, 623 M.Eva]
-    
-    -- legs="Lethargy Fuseau +3",     -- ___, 63, 43, __ (__, __, __, __) [__/__, 162]
     -- 242 M.Acc skill, 404 M.Acc, 297 MND, 52 FC (0 Immunobreak, 48 Enf. Effect, 90 Enf. Duration, 41 Enf. Skill) [47 PDT/29 MDT, 633 M.Eva]
   }
   sets.midcast.MNDEnfeeblesDurationDW = set_combine(sets.midcast.MNDEnfeeblesDuration, {})
@@ -1011,7 +999,7 @@ function init_gear_sets()
     head="Vitiation Chapeau +3",      -- ___, 37, 29, __ (__, __, __, 26) [__/__,  95]; Enhances enf. duration
     body="Lethargy Sayon +3",         -- ___, 64, 47, __ (__, 18, __, __) [14/14, 136]
     hands="Regal Cuffs",              -- ___, 45, 40, __ (__, __, 20, __) [__/__,  53]
-    legs="Lethargy Fuseau +2",        -- ___, 53, 43, __ (__, __, __, __) [__/__, 152]
+    legs="Lethargy Fuseau +3",        -- ___, 63, 48, __ (__, __, __, __) [__/__, 162]
     feet="Lethargy Houseaux +3",      -- ___, 60, 30, __ (__, __, __, __) [__/__, 157]
     neck="Duelist's Torque +2",       -- ___, 30, 15, __ (__, 10, 25, __) [__/__, ___]
     ear1="Snotra Earring",            -- ___, 10, __, __ (__, __, 10, __) [__/__, ___]
@@ -1022,9 +1010,6 @@ function init_gear_sets()
     waist="Obstinate Sash",           -- ___, 15, __, __ (__, __,  5, 15) [__/__, ___]
     -- Empy set effect                   ___, __, __, __ (__, __, 20, __) [__/__, ___]
     -- Traits/Gifts/Merits                            38
-    -- 242 M.Acc skill, 419 M.Acc, 234 INT, 42 FC (0 Immunobreak, 38 Enf. Effect, 90 Enf. Duration, 41 Enf. Skill) [47 PDT/29 MDT, 623 M.Eva]
-    
-    -- legs="Lethargy Fuseau +3",     -- ___, 63, 48, __ (__, __, __, __) [__/__, 162]
     -- 242 M.Acc skill, 429 M.Acc, 239 INT, 42 FC (0 Immunobreak, 38 Enf. Effect, 90 Enf. Duration, 41 Enf. Skill) [47 PDT/29 MDT, 633 M.Eva]
   }
   sets.midcast.INTEnfeeblesDurationDW = set_combine(sets.midcast.INTEnfeeblesDuration, {})
@@ -1109,10 +1094,10 @@ function init_gear_sets()
     sub="Ammurapi Shield",            -- ___, __, 38 (13, 38, __, __, __) [__/__, ___]
     range=empty,                      -- ___, __, __ (__, __, __, __, __) [__/__, ___]
     ammo="Pemphredo Tathlum",         -- ___, __,  8 ( 4,  4, __, __, __) [__/__, ___]
-    head="Lethargy Chappel +2",       -- ___, __, 51 (33, 51, 21, __, __) [ 9/ 9, 115]
+    head="Lethargy Chappel +3",       -- ___, __, 61 (38, 56, 31, __, __) [10/10, 125]
     body="Lethargy Sayon +3",         -- ___, __, 64 (47, 54, 34, __, __) [14/14, 136]
     hands="Lethargy Gantherots +3",   -- ___, __, 62 (33, 52, 32, __, __) [11/11,  87]
-    legs="Lethargy Fuseau +2",        -- ___, __, 53 (43, 53, 23, 10, __) [__/__, 152]
+    legs="Lethargy Fuseau +3",        -- ___, __, 63 (48, 58, 33, 15, __) [__/__, 162]
     feet="Lethargy Houseaux +3",      -- ___, __, 60 (30, 50, 30, __, __) [__/__, 157]
     neck="Sibyl Scarf",               -- ___, __, __ (10, 10, __, __, __) [__/__, ___]
     ear1="Malignance Earring",        -- ___, __, 10 ( 8,  8, __, __, __) [__/__, ___]
@@ -1121,10 +1106,6 @@ function init_gear_sets()
     ring2="Metamorph Ring +1",        -- ___, __, 15 (16, __, __, __, __) [__/__, ___]
     back=gear.RDM_MAB_Cape,           -- ___, __, 20 (30, 10, __, __, __) [10/__, ___]
     waist="Refoccilation Stone",      -- ___, __,  4 (__, 10, __, __, __) [__/__, ___]
-    -- 255 M.Acc Skill, 0 Elemental Skill, 440 M.Acc (302 INT, 413 MAB, 388 M.Dmg, 20 MB, 0 MB2) [44 PDT/34 MDT, 647 M.Eva]
-    
-    -- head="Lethargy Chappel +3",    -- ___, __, 61 (38, 56, 31, __, __) [10/10, 125]
-    -- legs="Lethargy Fuseau +3",     -- ___, __, 63 (48, 58, 33, 15, __) [__/__, 162]
     -- 255 M.Acc Skill, 0 Elemental Skill, 460 M.Acc (312 INT, 419 MAB, 408 M.Dmg, 25 MB, 0 MB2) [45 PDT/35 MDT, 667 M.Eva]
   }
   sets.midcast['Elemental Magic'].Seidr = set_combine(sets.midcast['Elemental Magic'], {
@@ -1202,10 +1183,10 @@ function init_gear_sets()
     sub="Ammurapi Shield",            -- ___, __, 38, 13, __ [__/__, ___]
     range="Ullr",                     -- ___, __, 40, __, __ [__/__, ___]
     ammo=empty,                       -- ___, __, __, __, __ [__/__, ___]
-    head="Lethargy Chappel +2",       -- ___, __, 51, 33, __ [ 9/ 9, 115]
+    head="Lethargy Chappel +3",       -- ___, __, 61, 38, __ [10/10, 125]
     body="Lethargy Sayon +3",         -- ___, __, 64, 47, __ [14/14, 136]
     hands="Lethargy Gantherots +3",   -- ___, __, 62, 33, __ [11/11,  87]
-    legs="Lethargy Fuseau +2",        -- ___, __, 53, 43, __ [__/__, 152]
+    legs="Lethargy Fuseau +3",        -- ___, __, 63, 48, __ [__/__, 162]
     feet="Lethargy Houseaux +3",      -- ___, __, 60, 30, __ [__/__, 157]
     neck="Duelist's Torque +2",       -- ___, __, 30, 15, __ [__/__, ___]
     ear1="Malignance Earring",        -- ___, __, 10,  8,  4 [__/__, ___]
@@ -1216,10 +1197,6 @@ function init_gear_sets()
     waist="Acuity Belt +1",           -- ___, __, 15, 23, __ [__/__, ___]
     -- Empy set effect                   ___, __, __, __, __ [__/__, ___]
     -- Traits/Gifts/Merits            --                  38
-    -- 255 M.Acc skill, 8 Elemental Skill, 532 M.Acc, 304 INT, 62 FC [34 PDT/34 MDT, 647 M.Eva]
-
-    -- head="Lethargy Chappel +3",    -- ___, __, 61, 38, __ [10/10, 125]
-    -- legs="Lethargy Fuseau +3",     -- ___, __, 63, 48, __ [__/__, 162]
     -- 255 M.Acc skill, 8 Elemental Skill, 552 M.Acc, 314 INT, 62 FC [34 PDT/34 MDT, 667 M.Eva]
   }
 
@@ -1657,7 +1634,7 @@ function init_gear_sets()
     sub="Enki Strap",
     range="Ullr",
     ammo=empty,
-    head="Lethargy Chappel +2",
+    head="Lethargy Chappel +3",
     body="Lethargy Sayon +3",
     hands="Lethargy Gantherots +3",
     legs=gear.Chironic_MAcc_legs,
