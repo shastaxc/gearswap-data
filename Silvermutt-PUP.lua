@@ -468,7 +468,7 @@ function init_gear_sets()
   sets.MAB = {
   }
 
-  -- Cataclysm: 40% DEX/40% INT, 2.0-4.5 fTP, 1 hit (aoe-magical)
+  -- Aeolian Edge: 40% DEX/40% INT, 2.0-4.5 fTP, 1 hit (aoe-magical)
   -- Stack MAB > INT > DEX > WSD
   sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, sets.MAB, {
     ranged="Neo Animator",            -- __, __, __,  5 [__/__, ___] {__/__, 119}
