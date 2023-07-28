@@ -76,6 +76,7 @@ function job_setup()
   state.CP = M(false, 'Capacity Points Mode')
   state.AutomaticPetTargeting = M(true, 'Automatic Pet Targeting')
   state.CorrelationMode = M{['description']='Correlation Mode', 'Neutral', 'Favorable'}
+  state.AttCapped = M(true, 'Attack Capped')
 
   state.PetMode = M{['description']='Pet Mode', 'Tank', 'DD'}
 
@@ -314,6 +315,9 @@ function job_setup()
     end
   end
 
+  skill_ids_2h = S{4, 6, 7, 8, 10, 12} -- DO NOT MODIFY
+  fencer_tp_bonus = {200, 300, 400, 450, 500, 550, 600, 630} -- DO NOT MODIFY
+
   set_main_keybinds()
 end
 
@@ -325,9 +329,9 @@ function user_setup()
   include('Global-Binds.lua') -- Additional local binds
 
   if S{'THF','DNC','RDM','BRD','RNG','NIN'}:contains(player.sub_job) then
-    state.WeaponSet = M{['description']='Weapon Set', 'Normal', 'Cleaving'}
+    state.WeaponSet = M{['description']='Weapon Set', 'Naegling', 'Farsha', 'Cleaving'}
   else
-    state.WeaponSet = M{['description']='Weapon Set', 'Normal'}
+    state.WeaponSet = M{['description']='Weapon Set', 'Naegling', 'Farsha'}
   end
 
   select_default_macro_book()
@@ -341,24 +345,28 @@ end
 -- Define sets and vars used by this job file.
 function init_gear_sets()
   -- Pet DT options [PDT/MDT, M.Eva] {Pet: PDT/MDT, Level}:
-  -- head="Hike Khat +1",             -- [13/__,  75] { 5/ 5, ___}
   -- head=gear.Anwig_Salade,          -- [__/__, ___] {10/10, ___}
   -- head=gear.Taeon_Pet_DT_head,     -- [__/__,  73] { 4/ 4, ___}; Augs: +20 M.Eva, -4 Pet DT
   -- body=gear.Taeon_Pet_DT_body,     -- [__/__,  84] { 4/ 4, ___}; Augs: +20 M.Eva, -4 Pet DT, Pet DA+5
+  -- body="Totemic Jackcoat +3",      -- [__/__,  84] {10/10, ___}
+  -- body=gear.Emicho_D_body,         -- [__/__,  53] { 4/ 4, ___}
   -- hands=gear.Taeon_Pet_DT_hands,   -- [__/__,  57] { 4/ 4, ___}; Augs: +20 M.Eva, -4 Pet DT, Pet Regen +3
-  -- legs="Foire Churidars +3",       -- [__/__, 104] { 6/ 6, ___}
+  -- hands="Gleti's Gauntlets",       -- [ 7/__,  75] { 8/ 8, ___}
+  -- hands="Ankusa Gloves +3",        -- [__/__,  57] { 6/__,  17}; Pet Level snapshots on summoning
   -- legs="Tali'ah Seraweels +2",     -- [__/__,  69] { 5/ 5, ___}
   -- legs=gear.Taeon_Pet_DT_legs,     -- [__/__,  89] { 4/ 4, ___}; Augs: +20 M.Eva, -4 Pet DT
+  -- legs="Nukumi Quijotes +3",       -- [13/13, 130] { 8/ 8, ___}
   -- feet=gear.Taeon_Pet_DT_feet,     -- [__/__,  89] { 4/ 4, ___}; Augs: +20 M.Eva, -4 Pet DT
-  -- feet="Mpaca's Boots",            -- [ 6/__,  96] {__/__,   1}
+  -- feet="Gleti's Boots",            -- [ 5/__, 112] {__/__,   1}
+  -- feet="Ankusa Gaiters +3",        -- [__/__,  89] { 5/__, ___}
   -- neck="Shepherd's Chain",         -- [__/__, ___] { 2/ 2, ___}
   -- ear1="Handler's Earring +1",     -- [__/__, ___] { 4/__, ___}
   -- ear1="Enmerkar Earring",         -- [__/__, ___] { 3/ 3, ___}
   -- ear1="Hypaspist Earring",        -- [-5/__, ___] { 5/__, ___}
   -- ear1="Rimeice Earring",          -- [__/__, ___] { 1/ 1, ___}
-  -- ear2="Karagoz Earring +2",       -- [__/__, ___] {__/__,   1}
+  -- ear2="Nukumi Earring +2",        -- [__/__, ___] {__/__,   1}
   -- ring1="Thurandaut Ring +1",      -- [__/__, ___] { 4/ 4, ___}; Adoulin ring
-  -- back=gear.PUP_ambu_cape,         -- [__/__, ___] { 5/ 5,   1}
+  -- back=gear.BST_ambu_cape,         -- [__/__, ___] { 5/ 5, ___}
   -- waist="Isa Belt",                -- [__/__, ___] { 3/ 3, ___}
 
   sets.TreasureHunter = {
@@ -372,89 +380,88 @@ function init_gear_sets()
   ---------------------------------------- Precast Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
 
-  -- Your Auto starts off with Burden, to help reduce the burden equip Overload- gear.
-  sets.precast.JA['Activate'] = {
-    range="Neo Animator",             -- __, __ [__/__, ___] {__/__, 119}
-    head="Hike Khat +1",              -- __, __ [13/__,  75] { 5/ 5, ___}
-    body="Karagoz Farsetto +2",       -- 40, __ [12/12,  99] {__/__, ___}
-    hands="Foire Dastanas +3",        --  5,  5 [__/__,  46] {__/__, ___}
-    legs=gear.Nyame_B_legs,           -- __, __ [ 8/ 8, 150] {__/__, ___}
-    neck="Buffoon's Collar +1",       --  5, __ [__/__, ___] {__/__, ___}
-    ear1="Burana Earring",            -- __,  1 [__/__, ___] {__/__, ___}
-    ear2="Karagoz Earring +1",        -- __, __ [__/__, ___] {__/__,   1}
-    ring1="Gelatinous Ring +1",       -- __, __ [ 7/-1, ___] {__/__, ___}
-    ring2="Defending Ring",           -- __, __ [10/10, ___] {__/__, ___}
-    back=gear.PUP_Pet_Tank_Cape,      -- 10, __ [__/__,  20] { 5/ 5,   1}
-    waist="Moonbow Belt +1",          -- __, __ [ 6/ 6, ___] {__/__, ___}
-    -- 60 Overload-, 6 Maneuver+ [56 PDT/35 MDT, 390 M.Eva] {Pet: 10 PDT/10 MDT, 121 Lv+}
-    
-    -- body="Karagoz Farsetto +3",    -- 40, __ [13/13, 109] {__/__, ___}
-    -- legs="Foire Churidars +3",     -- __, __ [__/__,  84] { 6/ 6, ___}
-    -- ear2="Karagoz Earring +2",     -- __, __ [__/__, ___] {__/__,   1}
-    -- 60 Overload-, 6 Maneuver+ [55 PDT/28 MDT, 430 M.Eva] {Pet: 16 PDT/16 MDT, 122 Lv+}
+	sets.precast.JA['Bestial Loyalty'] = {
+    hands="Ankusa Gloves +3", -- Adds 17 pet levels, snapshots
+  }
+	sets.precast.JA['Call Beast'] = sets.precast.JA['Bestial Loyalty']
+
+  -- Potency caps at +50%
+  -- Aim for 120+ MND from gear
+  sets.precast.JA.Reward = {
+    ammo="Pet Food Theta",            -- __, 20, __, __ [__/__, ___] {__/__, __}
+    head="Stout Bonnet",              -- __, __, __, 16 [__/__, ___] {__/__, __}
+    body="Totemic Jackcoat +3",       -- 33, __, 26, __ [__/__,  84] {10/10, __}; Removes status effects
+    hands="Gleti's Gauntlets",        -- 30, __, __, __ [ 7/__,  75] { 8/ 8, __}
+    legs="Ankusa Trousers +3",        -- 27, __, __, 21 [__/__,  89] {__/__, __}
+    feet="Ankusa Gaiters +3",         -- 22,  4, 41, __ [__/__,  89] { 5/__, __}; Enhances Beast Healer
+    neck="Loricate Torque +1",        -- __, __, __, __ [ 6/ 6, ___] {__/__, __}
+    ear1="Odnowa Earring +1",         -- __, __, __, __ [ 3/ 5, ___] {__/__, __}
+    ear2="Genmei Earring",            -- __, __, __, __ [ 2/__, ___] {__/__, __}
+    ring1="Metamorph Ring +1",        -- 16, __, __, __ [__/__, ___] {__/__, __}
+    ring2="Defending Ring",           -- __, __, __, __ [10/10, ___] {__/__, __}
+    back=gear.BST_TP_Cape,            -- __, __, 30, __ [10/__, ___] {__/__, __}
+    waist="Engraved Belt",            --  7, __, __, __ [__/__, ___] {__/__, __}
+    -- 132 MND, 24 Reward Regen, 97 Reward Potency, 37 Reward Recast- [38 PDT/21 MDT, 337 M.Eva] {Pet: 23 PDT/18 MDT, 0 Lv}
+  }
+	sets.precast.JA['Killer Instinct'] = {
+    head="Ankusa Helm +3",
+  }
+	sets.precast.JA.Familiar = {
+    legs="Ankusa Trousers +3",
+  }
+	sets.precast.JA.Tame = {
+    head="Totemic Helm +3",
   }
 
-  -- Pet HP+ can help increase healing, but you will only get 40% of that restored as
-  -- HP, which is insignificant. It is not worth shoehorning in pet HP pieces just for
-  -- that purpose, if you have to sacrifice other important stats.
-	sets.precast.JA['Repair'] = {
-    range="Neo Animator",             -- __, __ [__/__, ___] {__/__, 119 |  60}
-    ammo="Can of Automaton Oil +3",   -- __, __ [__/__, ___] {__/__, ___ | ___}
-    head="Hike Khat +1",              -- __, __ [13/__,  75] { 5/ 5, ___ | ___}
-    body=gear.Taeon_Pet_DT_body,      -- __, __ [__/__,  84] { 4/ 4, ___ | ___}; Augs: +20 M.Eva, -4 Pet DT, Pet DA+5
-    hands=gear.Herc_Repair_hands,     -- __,  7 [ 2/__,  43] {__/__, ___ | ___}
-    legs=gear.Herc_Repair_legs,       -- __,  6 [ 2/__,  75] {__/__, ___ | ___}
-    feet="Foire Babouches +3",        --  3, __ [__/__,  87] {__/__, ___ | ___}
-    neck="Loricate Torque +1",        -- __, __ [ 6/ 6, ___] {__/__, ___ | ___}
-    ear1="Enmerkar Earring",          -- __, __ [__/__, ___] { 3/ 3, ___ | ___}
-    ear2="Guignol Earring",           -- __, 20 [__/__, ___] {__/__, ___ | ___}
-    ring1="Cath Palug Ring",          -- __, __ [ 5/ 5, ___] {__/__, ___ | ___}
-    ring2="Defending Ring",           -- __, __ [10/10, ___] {__/__, ___ | ___}
-    back=gear.PUP_Pet_TP_Cape,        -- __, __ [__/__,  20] { 5/ 5,   1 | ___}
-    waist="Isa Belt",                 -- __, __ [__/__, ___] { 3/ 3, ___ | ___}
-    -- 3 Repair+, 33 Repair Potency [38 PDT/21 MDT, 384 M.Eva] {Pet: 20 PDT/20 MDT, 120 Lv | 60 HP}
-
-    -- hands=gear.Herc_Repair_hands,  -- __,  8 [ 2/__,  43] {__/__, ___ | ___}
-    -- legs=gear.Herc_Repair_legs,    -- __,  8 [ 2/__,  75] {__/__, ___ | ___}
-    -- ear1="Pratik Earring",         -- __, 10 [__/__, ___] {__/__, ___ | ___}
-    -- 3 Repair+, 46 Repair Potency [38 PDT/21 MDT, 384 M.Eva] {Pet: 17 PDT/17 MDT, 120 Lv | 60 HP}
+  -- Cap 99%?
+	sets.precast.JA.Charm = {
+    ammo="Staunch Tathlum +1",        -- __, __ [ 3/ 3, ___]
+    head="Totemic Helm +3",           -- 34, 35 [__/__,  73]
+    body="Ankusa Jackcoat +3",        -- 33, 16 [__/__,  84]
+    hands="Ankusa Gloves +3",         -- 27, 13 [__/__,  57]
+    legs="Ankusa Trousers +3",        -- 21, 11 [__/__,  89]
+    feet="Ankusa Gaiters +3",         -- 40, 12 [__/__,  89]
+    neck="Unmoving Collar +1",        --  9, __ [__/__, ___]
+    ear1="Odnowa Earring +1",         -- __, __ [ 3/ 5, ___]
+    ear2="Enchanter's Earring +1",    --  5, __ [__/__, ___]
+    ring1="Metamorph Ring +1",        -- 16, __ [__/__, ___]
+    ring2="Defending Ring",           -- __, __ [10/10, ___]
+    back=gear.BST_TP_Cape,            -- __, __ [10/__, ___]
+    waist="Aristo Belt",              --  8, __ [__/__, ___]
+    -- Traits/merits/gifts                   20
+    -- 193 CHR, 107 Charm [26 PDT/18 MDT, 392 M.Eva]
+  }
+	sets.precast.JA.Spur = {
+    feet="Nukumi Ocreae +3",
+    back="Artio's Mantle",
+  }
+  sets.SpurWeapon = {
+    main=gear.Skullrender_C,
+  }
+  sets.SpurWeaponDW = {
+    main=gear.Skullrender_C,
+    sub=gear.Skullrender_C,
+  }
+	sets.precast.JA['Feral Howl'] = {
+    body="Ankusa Jackcoat +3",
   }
 
-  sets.precast.JA['Overdrive'] = {
-    body="Pitre Tobe +3",
-  }
-
-  sets.precast.JA['Role Reversal'] = {
-    feet="Pitre Babouches +3",
-  }
-
-  sets.precast.JA['Tactical Switch'] = {
-    feet="Karagoz Scarpe +2",
-  }
-
-  sets.precast.JA['Ventriloquy'] = {
-    legs="Pitre Churidars +3",
-  }
-
-  sets.precast.ReadyRecast = {legs="Gleti's Breeches"}
-
-  -- TODO: update
-  sets.precast.Waltz = {
-    body="Passion Jacket",
+  sets.precast.ReadyRecast = {
+    main="Charmer's Merlin",
+    legs="Gleti's Breeches",
   }
 
   sets.precast.FC = {
-    head="Herculean Helm", --7
-    body=gear.Taeon_FC_body, --9
-    hands=gear.Leyline_Gloves, --8
-    legs=gear.Taeon_FC_legs, --5
-    feet=gear.Taeon_FC_feet, --5
-    neck="Orunmila's Torque", --5
-    ear1="Loquac. Earring", --2
-    ring2="Prolix Ring", --2
+    body=gear.Taeon_FC_body,          --  9
+    hands=gear.Leyline_Gloves,        --  8
+    legs=gear.Taeon_FC_legs,          --  5
+    feet=gear.Taeon_FC_feet,          --  5
+    neck="Orunmila's Torque",         --  5
+    ear1="Loquac. Earring",           --  2
+    ear2="Enchanter's Earring +1",    --  2
+    ring2="Prolix Ring",              --  2
   }
   sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {
-    body="Passion Jacket",
     neck="Magoraga Beads",
     ear2="Odnowa Earring +1",
     ring1="Defending Ring",
@@ -467,32 +474,62 @@ function init_gear_sets()
 
   -- Default set for any weaponskill that isn't any more specifically defined
   sets.precast.WS = {
-    ranged="Neo Animator",            -- __,  5 <__, __, __> [__/__, ___] {__/__, 119}
-    head="Mpaca's Cap",               -- 33, __ < 5,  3, __> [ 7/__,  69] {__/__, ___}; TP Bonus+200
-    body=gear.Nyame_B_body,           -- 45, 13 < 7, __, __> [ 9/ 9, 139] {__/__, ___} 
-    hands=gear.Herc_TA_hands,         -- 16, __ <__,  6, __> [ 2/__,  43] {__/__, ___}
-    legs="Mpaca's Hose",              -- 49, __ <__,  4, __> [ 9/__,  96] {__/__, ___}
-    feet=gear.Herc_TA_feet,           -- 16, __ <__,  6, __> [ 2/__,  75] {__/__, ___}
-    neck="Fotia Gorget",              -- __, __ <__, __, __> [__/__, ___] {__/__, ___}; ftp+
-    ear1="Schere Earring",            --  5, __ < 6, __, __> [__/__, ___] {__/__, ___}
-    ear2="Moonshade Earring",         -- __, __ <__, __, __> [__/__, ___] {__/__, ___}; TP Bonus+250
-    ring1="Niqmaddu Ring",            -- 10, __ <__, __,  3> [__/__, ___] {__/__, ___}
-    ring2="Defending Ring",           -- __, __ <__, __, __> [10/10, ___] {__/__, ___}
-    back=gear.PUP_STR_Crit_Cape,      -- 30, __ <__, __, __> [__/__, ___] { 5/ 5,   1}
-    waist="Moonbow Belt +1",          -- 20, __ <__,  8, __> [ 6/ 6, ___] {__/__, ___}
-    -- 224 STR, 18 WSD <18 DA, 27 TA, 3 QA> [45 PDT/25 MDT, 422 M.Eva] {Pet: 5 PDT/5 MDT, 120 Lv}
-    
-    -- back=gear.PUP_STR_DA_Cape,     -- 30, __ <10, __, __> [__/__, ___] { 5/ 5,   1}
-    -- 224 STR, 18 WSD <28 DA, 27 TA, 3 QA> [45 PDT/25 MDT, 422 M.Eva] {Pet: 5 PDT/5 MDT, 120 Lv}
+    ammo="Coiste Bodhar",             -- 10, __, __, __ < 3, __, __> [__/__, ___] {__/__, ___}
+    head=gear.Nyame_B_head,           -- 26, 26, 11, __ < 5, __, __> [ 7/ 7, 123] {__/__, ___}
+    body=gear.Nyame_B_body,           -- 45, 37, 13, __ < 7, __, __> [ 9/ 9, 139] {__/__, ___} 
+    hands=gear.Nyame_B_hands,         -- 17, 40, 11, __ < 5, __, __> [ 7/ 7, 112] {__/__, ___}
+    legs=gear.Nyame_B_legs,           -- 58, 32, 12, __ < 6, __, __> [ 8/ 8, 150] {__/__, ___}
+    feet=gear.Nyame_B_feet,           -- 23, 26, 11, __ < 5, __, __> [ 7/ 7, 150] {__/__, ___}
+    neck="Beastmaster Collar +2",     -- 15, __, __, 10 <__, __, __> [__/__, ___] {__/__, ___}
+    ear1="Lugra Earring +1",          -- 16, __, __, __ < 3, __, __> [__/__, ___] {__/__, ___}
+    ear2="Moonshade Earring",         -- __, __, __, __ <__, __, __> [__/__, ___] {__/__, ___}; TP Bonus+250
+    ring1="Sroda Ring",               -- 15, __, __,  3 <__, __, __> [__/__, ___] {__/__, ___}
+    ring2="Defending Ring",           -- __, __, __, __ <__, __, __> [10/10, ___] {__/__, ___}
+    back=gear.BST_STR_WSD_Cape,       -- 30, __, 10, __ <__, __, __> [__/__, ___] { 5/ 5,   1}
+    waist="Sailfi Belt +1",           -- 15, __, __, __ < 5,  2, __> [__/__, ___] {__/__, ___}
+    -- 270 STR, 161 MND, 68 WSD, 13 PDL <39 DA, 2 TA, 0 QA> [48 PDT/48 MDT, 674 M.Eva] {Pet: 5 PDT/5 MDT, 1 Lv}
+
+    -- body="Nukumi Gausape +3",      -- 43, 34, 12, __ <__, __, __> [__/__, 109] {__/__, ___}
+    -- ear1="Moonshade Earring",      -- __, __, __, __ <__, __, __> [__/__, ___] {__/__, ___}; TP Bonus+250
+    -- ear2="Nukumi Earring +2",      -- 15, __, __,  9 <__, __, __> [__/__, ___] {__/__,   1}
   }
   sets.precast.WS.MaxTP = set_combine(sets.precast.WS, {
-    ear2="Brutal Earring",            -- __, __ < 5, __, __> [__/__, ___] {__/__, ___}
+    ear1="Lugra Earring +1",          -- 16, __, __, __ < 3, __, __> [__/__, ___] {__/__, ___}
+  })
+  sets.precast.WS.AttCapped = {
+    ammo="Coiste Bodhar",             -- 10, __, __, __ < 3, __, __> [__/__, ___] {__/__, ___}
+    head="Gleti's Mask",              -- 33, 19, __,  6 <__, __, __> [ 6/__,  86] {__/__, ___}
+    body="Gleti's Cuirass",           -- 39, 26, __,  9 <10, __, __> [ 9/__, 102] {__/__, ___}
+    hands="Gleti's Gauntlets",        -- 20, 30, __,  7 <__, __, __> [ 7/__,  75] { 8/ 8, ___}
+    legs="Gleti's Breeches",          -- 49, 20, __,  8 <__,  5, __> [ 8/__, 112] {__/__, ___}
+    feet="Gleti's Boots",             -- 33, 12, __,  5 <__, __, __> [ 5/__, 112] {__/__,   1}
+    neck="Beastmaster Collar +2",     -- 15, __, __, 10 <__, __, __> [__/__, ___] {__/__, ___}
+    ear1="Moonshade Earring",         -- __, __, __, __ <__, __, __> [__/__, ___] {__/__, ___}; TP Bonus+250
+    ear2="Nukumi Earring +1",         -- __, __, __,  8 <__, __, __> [__/__, ___] {__/__,   1}
+    ring1="Ephramad's Ring",          -- 10, __, __, 10 <__, __, __> [__/__, ___] {__/__, ___}
+    ring2="Defending Ring",           -- __, __, __, __ <__, __, __> [10/10, ___] {__/__, ___}
+    back=gear.BST_STR_WSD_Cape,       -- 30, __, 10, __ <__, __, __> [__/__, ___] { 5/ 5,   1}
+    waist="Sailfi Belt +1",           -- 15, __, __, __ < 5,  2, __> [__/__, ___] {__/__, ___}
+    -- 224 STR, MND, 18 WSD, PDL <18 DA, 27 TA, 3 QA> [45 PDT/25 MDT, 422 M.Eva] {Pet: 5 PDT/5 MDT, 120 Lv}
+
+    -- feet="Nukumi Ocreae +3",       -- 31, 20, __, 10 < 6, __, __> [__/__, 130] {__/__, ___}
+    -- ear1="Moonshade Earring",      -- __, __, __, __ <__, __, __> [__/__, ___] {__/__, ___}; TP Bonus+250
+    -- ear2="Nukumi Earring +2",      -- 15, __, __,  9 <__, __, __> [__/__, ___] {__/__,   1}
+  }
+  sets.precast.WS.AttCappedMaxTP = set_combine(sets.precast.WS.AttCapped, {
+    ear1="Lugra Earring +1",          -- 16, __, __, __ < 3, __, __> [__/__, ___] {__/__, ___}
   })
 
-  -- Victory Smite: 80% STR, 1.5 fTP, 4 hit, can crit, ftp replicating
-  -- crit dmg > TP Bonus = crit rate > multihit
-  -- 1000 TP bonus = ~15% crit rate
-  sets.precast.WS["Victory Smite"] = set_combine(sets.precast.WS, {
+  -- 50% STR / 50% MND
+  -- TP Bonus > WSD > STR > MND
+  sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {})
+  sets.precast.WS['Savage Blade'].MaxTP = set_combine(sets.precast.WS.MaxTP, {})
+  sets.precast.WS['Savage Blade'].AttCapped = set_combine(sets.precast.WS.AttCapped, {})
+  sets.precast.WS['Savage Blade'].AttCappedMaxTP = set_combine(sets.precast.WS.AttCappedMaxTP, {})
+
+  -- TODO: Update
+  -- 73-85% STR. 4 hit physical. Acc varies with TP. fTP transfers.
+  sets.precast.WS['Ruinator'] = set_combine(sets.precast.WS, {
     ranged="Neo Animator",            -- __, __, __ <__, __, __> [__/__, ___] {__/__, 119}
     head="Mpaca's Cap",               -- 33, __,  4 < 5,  3, __> [ 7/__,  69] {__/__, ___}; TP Bonus+200
     body="Mpaca's Doublet",           -- 39, __,  7 <__,  4, __> [10/__,  86] {__/__, ___}
@@ -508,148 +545,9 @@ function init_gear_sets()
     waist="Moonbow Belt +1",          -- 20, __, __ <__,  8, __> [ 6/ 6, ___] {__/__, ___}
     -- 226 STR, 10 Crit Dmg, 37 Crit Rate <5 DA, 21 TA, 0 QA> [50 PDT/22 MDT, 358 M.Eva] {Pet: 5 PDT/5 MDT, 120 Lv}
   })
-  sets.precast.WS["Victory Smite"].MaxTP = set_combine(sets.precast.WS["Victory Smite"], {
-    ear2="Schere Earring",            --  5, __, __ < 6, __, __> [__/__, ___] {__/__, ___}
-  })
 
-  -- 32% STR / 32% VIT - Chance of Critical varies w/ TP (Mythic WS)
-  sets.precast.WS['Stringing Pummel'] = set_combine(sets.precast.WS['Victory Smite'], {})
-  sets.precast.WS['Stringing Pummel'].MaxTP = set_combine(sets.precast.WS['Victory Smite'].MaxTP, {})
-
-  -- Shijin Spiral: 100% DEX, 1.5 fTP, 5 hit, ftp replicating
-  -- DEX > multihit > WSD
-  sets.precast.WS['Shijin Spiral'] = set_combine(sets.precast.WS, {
-    ranged="Neo Animator",            -- __,  5 <__, __, __> [__/__, ___] {__/__, 119}
-    head="Mpaca's Cap",               -- 30, __ < 5,  3, __> [ 7/__,  69] {__/__, ___}
-    body="Malignance Tabard",         -- 49, __ <__, __, __> [ 9/ 9, 139] {__/__, ___}
-    hands="Malignance Gloves",        -- 56, __ <__, __, __> [ 5/ 5, 112] {__/__, ___}
-    legs=gear.Samnuha_legs,           -- 16, __ < 3,  3, __> [__/__,  75] {__/__, ___}
-    feet="Mpaca's Boots",             -- 32, __ <__,  3, __> [ 6/__,  96] {__/__, ___}
-    neck="Puppetmaster's Collar +1",  -- 12, __ <__, __, __> [__/__, ___] {__/__, ___}
-    ear1="Odr Earring",               -- 10, __ <__, __, __> [__/__, ___] {__/__, ___}
-    ear2="Schere Earring",            -- __, __ < 6, __, __> [__/__, ___] {__/__, ___}
-    ring1="Niqmaddu Ring",            -- 10, __ <__, __,  3> [__/__, ___] {__/__, ___}
-    ring2="Defending Ring",           -- __, __ <__, __, __> [10/10, ___] {__/__, ___}
-    back=gear.PUP_STR_Crit_Cape,      -- __, __ <__, __, __> [__/__, ___] { 5/ 5,   1}
-    waist="Moonbow Belt +1",          -- 20, __ <__,  8, __> [ 6/ 6, ___] {__/__, ___}
-    -- 235 DEX, 5 WSD <14 DA, 17 TA, 3 QA> [43 PDT/30 MDT, 491 M.Eva] {Pet: 5 PDT/5 MDT, 120 Lv}
-
-    -- neck="Puppetmaster's Collar +2"-- 15, __ <__, __, __> [__/__, ___] {__/__, ___}
-    -- ear2="Karagoz Earring +2",     -- 15, __ <__, __, __> [__/__, ___] {__/__,   1}
-    -- back=gear.PUP_DEX_DA_Cape,     -- 30, __ <10, __, __> [__/__, ___] { 5/ 5,   1}
-    -- 283 DEX, 5 WSD <18 DA, 17 TA, 3 QA> [43 PDT/30 MDT, 491 M.Eva] {Pet: 5 PDT/5 MDT, 121 Lv}
-  })
-  sets.precast.WS["Shijin Spiral"].MaxTP = set_combine(sets.precast.WS["Shijin Spiral"], {})
-  
-  -- Asuran Fists: 15% STR / 15% VIT, 1.25 fTP, 8 hit, ftp replicating
-  -- WSD > STR/VIT
-  sets.precast.WS['Asuran Fists'] = set_combine(sets.precast.WS, {
-    ranged="Neo Animator",            -- __, __,  5 [__/__, ___] {__/__, 119}
-    head=gear.Nyame_B_head,           -- 26, 24, 11 [ 7/ 7, 123] {__/__, ___}
-    body=gear.Nyame_B_body,           -- 45, 45, 13 [ 9/ 9, 139] {__/__, ___}
-    hands=gear.Nyame_B_hands,         -- 17, 54, 11 [ 7/ 7, 112] {__/__, ___}
-    legs=gear.Nyame_B_legs,           -- 58, 30, 12 [ 8/ 8, 150] {__/__, ___}
-    feet=gear.Nyame_B_feet,           -- 23, 24, 11 [ 7/ 7, 150] {__/__, ___}
-    neck="Fotia Gorget",              -- __, __, __ [__/__, ___] {__/__, ___}; ftp+
-    ear1="Enmerkar Earring",          -- __, __, __ [__/__, ___] { 3/ 3, ___}
-    ear2="Ishvara Earring",           -- __, __,  2 [__/__, ___] {__/__, ___}
-    ring1="Epaminondas's Ring",       -- __, __,  5 [__/__, ___] {__/__, ___}
-    ring2="Niqmaddu Ring",            -- 10, 10, __ [__/__, ___] {__/__, ___}
-    back=gear.PUP_STR_Crit_Cape,      -- 30, __, __ [__/__, ___] { 5/ 5,   1}
-    waist="Moonbow Belt +1",          -- 20, __, __ [ 6/ 6, ___] {__/__, ___}
-    -- 229 STR, 187 VIT, 70 WSD [44 PDT/44 MDT, 674 M.Eva] {Pet: 13 PDT/13 MDT, 120 Lv}
-    
-    -- back=gear.PUP_STR_WSD_Cape,    -- 30, __, 10 [__/__, ___] { 5/ 5,   1}; WSD cape would be better
-    -- 229 STR, 187 VIT, 80 WSD [44 PDT/44 MDT, 674 M.Eva] {Pet: 3 PDT/3 MDT, 120 Lv}
-  })
-  sets.precast.WS["Asuran Fists"].MaxTP = set_combine(sets.precast.WS["Asuran Fists"], {})
-
-  -- Raging Fists: 30% STR / 30% DEX, 1.0-3.75 fTP, 5 hit, ftp replicating
-  -- TP Bonus > WSD > Multihit (assuming always used with high TP)
-  sets.precast.WS['Raging Fists'] = set_combine(sets.precast.WS, {
-    ranged="Neo Animator",            -- __, __,  5 <__, __, __> [__/__, ___] {__/__, 119}
-    head="Mpaca's Cap",               -- 33, 30, __ < 5,  3, __> [ 7/__,  69] {__/__, ___}; TP Bonus+200
-    body=gear.Nyame_B_body,           -- 45, 24, 13 < 7, __, __> [ 9/ 9, 139] {__/__, ___}
-    hands=gear.Nyame_B_hands,         -- 17, 42, 11 < 5, __, __> [ 7/ 7, 112] {__/__, ___}
-    legs=gear.Nyame_B_legs,           -- 58, __, 12 < 6, __, __> [ 8/ 8, 150] {__/__, ___}
-    feet=gear.Nyame_B_feet,           -- 23, 26, 11 < 5, __, __> [ 7/ 7, 150] {__/__, ___}
-    neck="Fotia Gorget",              -- __, __, __ <__, __, __> [__/__, ___] {__/__, ___}; ftp+
-    ear1="Brutal Earring",            -- __, __, __ < 5, __, __> [__/__, ___] {__/__, ___}
-    ear2="Moonshade Earring",         -- __, __, __ <__, __, __> [__/__, ___] {__/__, ___}; TP Bonus+250
-    ring1="Gere Ring",                -- 10, __, __ <__,  5, __> [__/__, ___] {__/__, ___}
-    ring2="Niqmaddu Ring",            -- 10, 10, __ <__, __,  3> [__/__, ___] {__/__, ___}
-    back=gear.PUP_STR_Crit_Cape,      -- 30, __, __ <__, __, __> [__/__, ___] { 5/ 5,   1}
-    waist="Moonbow Belt +1",          -- 20, 20, __ <__,  8, __> [ 6/ 6, ___] {__/__, ___}
-    -- 246 STR, 152 DEX, 52 WSD <33 DA, 16 TA, 3 QA> [44 PDT/37 MDT, 620 M.Eva] {Pet: 5 PDT/5 MDT, 120 Lv}
-
-    -- ear1="Moonshade Earring",      -- __, __, __ <__, __, __> [__/__, ___] {__/__, ___}; TP Bonus+250
-    -- ear2="Karagoz Earring +2",     -- 15, 15, __ <__, __, __> [__/__, ___] {__/__,   1}
-    -- back=gear.PUP_STR_DA_Cape,     -- 30, __, __ <10, __, __> [__/__, ___] { 5/ 5,   1}
-  })
-  sets.precast.WS["Raging Fists"].MaxTP = set_combine(sets.precast.WS["Raging Fists"], {
-    ear2="Ishvara Earring",           -- __, __,  2 <__, __, __> [__/__, ___] {__/__, ___}
-
-    -- Once karagoz earring +2 acquired:
-    -- ear1="Brutal Earring",         -- __, __, __ < 5, __, __> [__/__, ___] {__/__, ___}
-    -- ear2="Karagoz Earring +2",     -- 15, 15, __ <__, __, __> [__/__, ___] {__/__,   1}
-  })
-
-  -- Spinning Attack: 100% STR, 1.0 fTP, 1 hit (aoe-physical), ftp replicating
-  -- Multihit > WSD
-  sets.precast.WS["Spinning Attack"] = set_combine(sets.precast.WS["Raging Fists"], {})
-  sets.precast.WS["Spinning Attack"].MaxTP = set_combine(sets.precast.WS["Raging Fists"].MaxTP, {})
-
-  -- Howling Fist: 50% VIT / 20% STR, 2.05-5.8 fTP, 2 hit, ftp replicating
-  -- TP Bonus > Multihit > WSD
-  sets.precast.WS['Howling Fist'] = set_combine(sets.precast.WS, {
-    ranged="Neo Animator",            -- __, __,  5 <__, __, __> [__/__, ___] {__/__, 119}
-    head="Mpaca's Cap",               -- 33, 26, __ < 5,  3, __> [ 7/__,  69] {__/__, ___}; TP Bonus+200
-    body=gear.Nyame_B_body,           -- 45, 45, 13 < 7, __, __> [ 9/ 9, 139] {__/__, ___}
-    hands=gear.Nyame_B_hands,         -- 17, 54, 11 < 5, __, __> [ 7/ 7, 112] {__/__, ___}
-    legs=gear.Nyame_B_legs,           -- 58, 30, 12 < 6, __, __> [ 8/ 8, 150] {__/__, ___}
-    feet=gear.Nyame_B_feet,           -- 23, 24, 11 < 5, __, __> [ 7/ 7, 150] {__/__, ___}
-    neck="Fotia Gorget",              -- __, __, __ <__, __, __> [__/__, ___] {__/__, ___}; ftp+
-    ear1="Brutal Earring",            -- __, __, __ < 5, __, __> [__/__, ___] {__/__, ___}
-    ear2="Moonshade Earring",         -- __, __, __ <__, __, __> [__/__, ___] {__/__, ___}; TP Bonus+250
-    ring1="Gere Ring",                -- 10, __, __ <__,  5, __> [__/__, ___] {__/__, ___}
-    ring2="Niqmaddu Ring",            -- 10, 10, __ <__, __,  3> [__/__, ___] {__/__, ___}
-    back=gear.PUP_STR_Crit_Cape,      -- 30, __, __ <__, __, __> [__/__, ___] { 5/ 5,   1}
-    waist="Moonbow Belt +1",          -- 20, __, __ <__,  8, __> [ 6/ 6, ___] {__/__, ___}
-    -- 246 STR, 189 VIT, 52 WSD <33 DA, 16 TA, 3 QA> [44 PDT/37 MDT, 620 M.Eva] {Pet: 5 PDT/5 MDT, 120 Lv}
-    
-    -- back=gear.PUP_VIT_DA_Cape,     -- __, 30, __ <10, __, __> [__/__, ___] { 5/ 5,   1}
-  })
-  sets.precast.WS["Howling Fist"].MaxTP = set_combine(sets.precast.WS["Howling Fist"], {
-    head=gear.Nyame_B_head,           -- 26, 24, 11 < 5, __, __> [ 7/ 7, 123] {__/__, ___}
-    ear2="Schere Earring",            --  5, __, __ < 6, __, __> [__/__, ___] {__/__, ___}
-  })
-
-  sets.MAB = {
-  }
-
-  -- Cataclysm: 40% DEX/40% INT, 2.0-4.5 fTP, 1 hit (aoe-magical)
-  -- Stack MAB > INT > DEX > WSD
-  sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, sets.MAB, {
-    ranged="Neo Animator",            -- __, __, __,  5 [__/__, ___] {__/__, 119}
-    head=gear.Nyame_B_head,           -- 25, 28, 30, 11 [ 7/ 7, 123] {__/__, ___}
-    body=gear.Nyame_B_body,           -- 24, 42, 30, 13 [ 9/ 9, 139] {__/__, ___}
-    hands=gear.Nyame_B_hands,         -- 42, 28, 30, 11 [ 7/ 7, 112] {__/__, ___}
-    legs=gear.Nyame_B_legs,           -- __, 44, 30, 12 [ 8/ 8, 150] {__/__, ___}
-    feet=gear.Herc_MAB_feet,          -- 24, __, 57, __ [ 2/__,  75] {__/__, ___}
-    neck="Sibyl Scarf",               -- __, 10, 10, __ [__/__, ___] {__/__, ___}
-    ear1="Friomisi Earring",          -- __, __, 10, __ [__/__, ___] {__/__, ___}
-    ear2="Novio Earring",             -- __, __,  7, __ [__/__, ___] {__/__, ___}
-    ring1="Shiva Ring +1",            -- __,  9,  3, __ [__/__, ___] {__/__, ___}
-    ring2="Defending Ring",           -- __, __, __, __ [10/10, ___] {__/__, ___}
-    back="Argochampsa Mantle",        -- __, __, 12, __ [__/__, ___] {__/__, ___}
-    waist="Skrymir Cord",             -- __, __,  5, __ [__/__, ___] {__/__, ___}
-    -- 115 DEX, 161 INT, 224 MAB, 52 WSD [43 PDT/41 MDT, 599 M.Eva] {Pet: 0 PDT/0 MDT, 119 Lv}
-
-    -- back=gear.PUP_MAB_Cape,        -- __, 30, 10, __ [__/__, ___] { 5/ 5,   1}
-    -- waist="Skrymir Cord +1",       -- __, __,  7, __ [__/__, ___] {__/__, ___}
-  })
-  sets.precast.WS['Aeolian Edge'].MaxTP = set_combine(sets.precast.WS['Aeolian Edge'], {})
-
+  -- TODO: Update
+  -- 50% DEX. 5 hit ws. Can crit. fTP transfers.
   sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
     ranged="Neo Animator",            -- __, __, __ <__, __, __> [__/__, ___] {__/__, 119}
     head="Mpaca's Cap",               -- 30, __,  4 < 5,  3, __> [ 7/__,  69] {__/__, ___}; TP Bonus+200
@@ -675,6 +573,62 @@ function init_gear_sets()
     
     -- ear2="Karagoz Earring +2",     -- 15, __, __ <__, __, __> [__/__, ___] {__/__,   1}
   })
+
+  -- Aeolian Edge: 40% DEX/40% INT, 2.0-4.5 fTP, 1 hit (aoe-magical)
+  -- Stack MAB > INT > DEX > WSD
+  sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
+    ammo="Pemphredo Tathlum",         -- __,  4,  8, __ [__/__, ___] {__/__, ___}
+    head=gear.Nyame_B_head,           -- 25, 28, 30, 11 [ 7/ 7, 123] {__/__, ___}
+    body=gear.Nyame_B_body,           -- 24, 42, 30, 13 [ 9/ 9, 139] {__/__, ___}
+    hands=gear.Nyame_B_hands,         -- 42, 28, 30, 11 [ 7/ 7, 112] {__/__, ___}
+    legs=gear.Nyame_B_legs,           -- __, 44, 30, 12 [ 8/ 8, 150] {__/__, ___}
+    feet=gear.Nyame_B_feet,           -- 26, 25, 30, 11 [ 7/ 7, 150] {__/__, ___}
+    neck="Sibyl Scarf",               -- __, 10, 10, __ [__/__, ___] {__/__, ___}
+    ear1="Friomisi Earring",          -- __, __, 10, __ [__/__, ___] {__/__, ___}
+    ear2="Novio Earring",             -- __, __,  7, __ [__/__, ___] {__/__, ___}
+    ring1="Shiva Ring +1",            -- __,  9,  3, __ [__/__, ___] {__/__, ___}
+    ring2="Defending Ring",           -- __, __, __, __ [10/10, ___] {__/__, ___}
+    back="Argochampsa Mantle",        -- __, __, 12, __ [__/__, ___] {__/__, ___}
+    waist="Skrymir Cord",             -- __, __,  5, __ [__/__, ___] {__/__, ___}
+    -- 115 DEX, 165 INT, 224 MAB, 52 WSD [43 PDT/41 MDT, 599 M.Eva] {Pet: 0 PDT/0 MDT, 119 Lv}
+
+    -- back=gear.BST_MAB_Cape,        -- __, 30, 10, __ [__/__, ___] { 5/ 5,   1}
+    -- waist="Skrymir Cord +1",       -- __, __,  7, __ [__/__, ___] {__/__, ___}
+  })
+  sets.precast.WS['Aeolian Edge'].MaxTP = set_combine(sets.precast.WS['Aeolian Edge'], {})
+
+  -- 60% CHR/30% DEX. dStat CHR. Dmg varies with TP. Light elemental.
+  sets.precast.WS['Primal Rend'] = set_combine(sets.precast.WS, {
+    ammo="Pemphredo Tathlum",         -- __, __,  4,  8, __ [__/__, ___] {__/__, ___}
+    head=gear.Nyame_B_head,           -- 24, 25, 30, 40, 11 [ 7/ 7, 123] {__/__, ___}
+    body=gear.Nyame_B_body,           -- 35, 24, 30, 40, 13 [ 9/ 9, 139] {__/__, ___}
+    hands=gear.Nyame_B_hands,         -- 24, 42, 30, 40, 11 [ 7/ 7, 112] {__/__, ___}
+    legs=gear.Nyame_B_legs,           -- 24, __, 30, 40, 12 [ 8/ 8, 150] {__/__, ___}
+    feet=gear.Nyame_B_feet,           -- 38, 26, 30, 40, 11 [ 7/ 7, 150] {__/__, ___}
+    neck="Sibyl Scarf",               -- __, __, 10, __, __ [__/__, ___] {__/__, ___}
+    ear1="Friomisi Earring",          -- __, __, 10, __, __ [__/__, ___] {__/__, ___}
+    ear2="Moonshade Earring",         -- __, __, __, __, __ [__/__, ___] {__/__, ___}; TP Bonus+250
+    ring1="Weatherspoon Ring",        -- __, __, 10, __, __ [__/__, ___] {__/__, ___}; Light MAB+10
+    ring2="Defending Ring",           -- __, __, __, __, __ [10/10, ___] {__/__, ___}
+    back="Argochampsa Mantle",        -- __, __, 12, __, __ [__/__, ___] {__/__, ___}
+    waist="Skrymir Cord",             -- __, __,  5,  5, __ [__/__, ___] {__/__, ___}
+    -- 145 CHR, 117 DEX, 208 MAB, 213 M.Acc, 58 WSD [48 PDT/48 MDT, 674 M.Eva] {Pet: 0 PDT/0 MDT, 119 Lv}
+
+    -- back=gear.BST_MAB_Cape,        -- __, 30, 10, 20, __ [__/__, ___] { 5/ 5,   1}
+    -- waist="Skrymir Cord +1",       -- __, __,  7,  7, __ [__/__, ___] {__/__, ___}
+  })
+  sets.precast.WS['Primal Rend'].MaxTP = set_combine(sets.precast.WS['Primal Rend'], {
+    ear2="Novio Earring",             -- __, __,  7, __, __ [__/__, ___] {__/__, ___}
+  })
+
+  -- 40% STR/40% MND. Dmg varies with TP. Thunder elemental.
+  sets.precast.WS['Cloudsplitter'] = set_combine(sets.precast.WS['Primal Rend'], {
+    ring1="Sroda Ring",
+  })
+  sets.precast.WS['Cloudsplitter'].MaxTP = set_combine(sets.precast.WS['Primal Rend'].MaxTP, {
+    ring1="Sroda Ring",
+  })
+
 
   ------------------------------------------------------------------------------------------------
   ----------------------------------------- Pet Ready Sets ------------------------------------------
@@ -884,6 +838,7 @@ function init_gear_sets()
     ring2="Defending Ring",           -- __ [10/10, ___] {__/__, ___ | __, __}
     back=gear.PUP_TP_Cape,            -- __ [__/__, ___] { 5/ 5,   1 | __, __}
     waist="Moonbow Belt +1",          -- __ [ 6/ 6, ___] {__/__, ___ | __, __}
+    -- Traits/Gifts/Merits                                 9/ 9
     -- 17 Regen [48 PDT/40 MDT, 458 M.Eva] {Pet: 12 PDT/12 MDT, 120 Lv | 10 Regen, 5 Refresh}
   }
 
@@ -959,23 +914,20 @@ function init_gear_sets()
 	--------------------- When master is engaged in Master hybrid mode ---------------------
   -- Almost entirely master-focused stats
   sets.engaged = {
-    range="Neo Animator",             -- __, 10 <__, __, __> [__/__, ___] {__/__, 119 | __, __, 30/30, __/__, __, __, __}
-    head="Mpaca's Cap",               -- __, 55 < 5,  3, __> [ 7/__,  69] {__/__, ___ | __, __, 50/50, __/__, __, __, __}
-    body="Mpaca's Doublet",           --  8, 55 <__,  4, __> [10/__,  86] {__/__, ___ | __, __, 50/50, __/__, __, __, __}
-    hands="Karagoz Guanti +3",        -- 11, 62 <__, __, __> [10/10,  82] {__/__, ___ | __, __, 62/62, __/__, __, __, __}
+    range="Coiste Bodhar",            --  3, __ < 3, __, __> [__/__, ___] {__/__, ___ | __, __, __/__, __/__, __, __, __}
+    head="Malignance Chapeau",
+    body="Malignance Tabard",
+    hands="Gleti's Gauntlets",
     legs="Malignance Tights",         -- 10, 50 <__, __, __> [ 7/ 7, 150] {__/__, ___ | __, __, __/__, __/__, __, __, __}
-    feet="Mpaca's Boots",             -- __, 55 <__,  3, __> [ 6/__,  96] {__/__,   1 | __, __, 50/50, __/__, __, __, __}
-    neck="Shulmanu Collar",           -- __, 20 < 3, __, __> [__/__, ___] {__/__, ___ |  5, __, 20/__, 20/__, __, __, __}
-    ear1="Schere Earring",            --  5, 15 < 6, __, __> [__/__, ___] {__/__, ___ | __, __, __/__, __/__, __, __, __}
-    ear2="Karagoz Earring +1",        --  4, 12 <__, __, __> [__/__, ___] {__/__,   1 | __, __, __/__, __/__, __, __, __}
-    ring1="Cath Palug Ring",          -- __, __ <__, __, __> [ 5/ 5, ___] {__/__, ___ |  5, __, 12/12, __/__, __, __, __}
-    ring2="Niqmaddu Ring",            -- __, __ <__, __,  3> [__/__, ___] {__/__, ___ | __, __, __/__, __/__, __, __, __}
-    back=gear.PUP_TP_Cape,            -- 10, 20 <__, __, __> [__/__, ___] { 5/ 5,   1 | __, __, __/__, __/__, __, __, __}
-    waist="Moonbow Belt +1",          -- __, __ <__,  8, __> [ 6/ 6, ___] {__/__, ___ | __, __, __/__, __/__, __, __, __}
+    feet="Malignance Boots",
+    neck="Anu Torque",
+    ear1="Dedition Earring",
+    ear2="Sherida Earring",
+    ring1="Gere Ring",
+    ring2="Moonlight Ring",
+    back=gear.BST_TP_Cape,            -- 10, 20 <__, __, __> [__/__, ___] { 5/ 5,   1 | __, __, __/__, __/__, __, __, __}
+    waist="Reiki Yotai",
     -- 48 STP, 354 Acc <14 DA, 18 TA, 3 QA> [51 PDT/28 MDT, 483 M.Eva] {Pet: 5 PDT /5 MDT, 122 Lv | 10 DA, 0 STP, 274 Acc/254 Racc, 20 Att/0 Ratt, 0 Haste, 0 Regen, 0 Enmity}
-
-    -- ear2="Karagoz Earring +2",     --  8, 20 <__, __, __> [__/__, ___] {__/__,   1 | __, __, __/__, __/__, __, __, __}
-    -- 52 STP, 362 Acc <14 DA, 18 TA, 3 QA> [51 PDT/28 MDT, 483 M.Eva] {Pet: 5 PDT /5 MDT, 122 Lv | 10 DA, 0 STP, 274 Acc/254 Racc, 20 Att/0 Ratt, 0 Haste, 0 Regen, 0 Enmity}
   }
   sets.engaged.Acc = set_combine(sets.engaged, {
     neck="Puppetmaster's Collar +1",  -- __, 25 <__, __, __> [__/__, ___] {__/__, ___}
@@ -1103,10 +1055,10 @@ function init_gear_sets()
   }
 
   sets.WeaponSet = {}
-  sets.WeaponSet['Normal'] = {main="Pangu", sub="Izizoeksi"}
-  sets.WeaponSet['Normal'].DW = {main="Pangu", sub="Izizoeksi"}
-  sets.WeaponSet['Cleaving'] = {main="Tauret", sub="Malevolence"}
-  sets.WeaponSet['Cleaving'].DW = {main="Tauret", sub="Malevolence"}
+  sets.WeaponSet['Naegling'] = {main="Naegling", sub="Sacro Bulwark"}
+  sets.WeaponSet['Farsha'] = {main="Farsha", sub="Sacro Bulwark"}
+  sets.WeaponSet['Cleaving'] = {main="Tauret", sub="Sacro Bulwark"}
+  sets.WeaponSet['Cleaving'].DW = {main="Tauret", sub=gear.Malevolence_1}
   -- Pet_Idle_AxeMain = "Pangu"
   -- Pet_Idle_AxeSub = "Izizoeksi"
   -- Pet_PDT_AxeMain = "Pangu"
@@ -1160,13 +1112,15 @@ function job_precast(spell, action, spellMap, eventArgs)
     equip(sets.precast.ReadyRecast)
     eventArgs.handled = true
   end
+end
 
+-- Run after the general precast() is done.
+function job_post_precast(spell, action, spellMap, eventArgs)
   -- Handle equipping jugs
   if spell.english == 'Bestial Loyalty' then
     local jug_info = jugs[state.JugMode.value]
     if jug_info and silibs.has_item(jug_info.item, silibs.equippable_bags) then
       equip({ammo=jug_info.item})
-      eventArgs.handled = true
     end
   elseif spell.english == 'Call Beast' then
     local jug_info = jugs[state.JugMode.value]
@@ -1175,18 +1129,19 @@ function job_precast(spell, action, spellMap, eventArgs)
       if jug_info.nq_item and jug_info.nq_item ~= '' then
         if silibs.has_item(jug_info.item, silibs.equippable_bags) then
           equip({ammo=jug_info.nq_item})
-          eventArgs.handled = true
         end
       elseif silibs.has_item(jug_info.item, silibs.equippable_bags) then
         equip({ammo=jug_info.item})
-        eventArgs.handled = true
       end
     end
+  elseif spell.english == 'Spur' then
+    if silibs.is_dual_wielding() and state.HybridMode.current == 'Pet' or player.status ~= 'Engaged' then
+      equip(sets.SpurWeaponDW)
+    else
+      equip(sets.SpurWeaponDW)
+    end
   end
-end
 
--- Run after the general precast() is done.
-function job_post_precast(spell, action, spellMap, eventArgs)
   if spell.type == 'WeaponSkill' then
     if buffactive['Reive Mark'] then
       equip(sets.Reive)
@@ -1194,8 +1149,8 @@ function job_post_precast(spell, action, spellMap, eventArgs)
   end
 
   -- Always put this last in job_post_precast
-  -- Prevent swapping weapons if not in Pet mode
-  if state.HybridMode.current ~= 'Pet' then
+  -- Prevent swapping weapons if not in Pet mode and engaged
+  if state.HybridMode.current ~= 'Pet' and player.status == 'Engaged' then
     equip({main="", sub=""})
   end
 
@@ -1222,8 +1177,8 @@ end
 
 function job_post_midcast(spell, action, spellMap, eventArgs)
   -- Always put this last in job_post_midcast
-  -- Prevent swapping weapons if not in Pet mode
-  if state.HybridMode.current ~= 'Pet' then
+  -- Prevent swapping weapons if not in Pet mode and engaged
+  if state.HybridMode.current ~= 'Pet' and player.status == 'Engaged' then
     equip({main="", sub=""})
   end
 
@@ -1251,6 +1206,9 @@ function job_aftercast(spell, action, spellMap, eventArgs)
 end
 
 function job_post_aftercast(spell, action, spellMap, eventArgs)
+  -- If weapons are not what's set in the WeaponSet cycle, equip them
+  equip(select_weapons())
+
   ----------- Non-silibs content goes above this line -----------
   silibs.post_aftercast_hook(spell, action, spellMap, eventArgs)
 end
@@ -1314,8 +1272,14 @@ function update_combat_form()
   end
 end
 
+
 function get_custom_wsmode(spell, action, spellMap)
   local wsmode = ''
+
+  -- Determine if attack capped
+  if state.AttCapped.value then
+    wsmode = 'AttCapped'
+  end
 
   -- Calculate if need TP bonus
   local buffer = 100
@@ -1330,11 +1294,55 @@ function get_custom_wsmode(spell, action, spellMap)
   local buff_bonus = T{
     buffactive['Crystal Blessing'] and 250 or 0,
   }:sum()
-  if player.tp > 3000-tp_bonus_from_weapons-buff_bonus-buffer then
+  local trait_bonus = T{
+    calc_fencer_tp_bonus()
+  }:sum()
+  if player.tp > 3000-tp_bonus_from_weapons-buff_bonus-trait_bonus-buffer then
     wsmode = wsmode..'MaxTP'
   end
 
   return wsmode
+end
+
+function calc_fencer_tp_bonus()
+  local total_fencer_tp_bonus = 0
+  local fencer_tier = calc_fencer_tier()
+  if fencer_tier > 0 then
+    -- Add Fencer TP bonus based on base trait
+    total_fencer_tp_bonus = fencer_tp_bonus[fencer_tier]
+    -- Add TP Bonus based on JP gifts
+    local jp_spent = player.job_points.bst.jp_spent
+    if jp_spent >= 2000 then
+      total_fencer_tp_bonus = total_fencer_tp_bonus + 230
+    elseif jp_spent >= 1125 then
+      total_fencer_tp_bonus = total_fencer_tp_bonus + 160
+    elseif jp_spent >= 500 then
+      total_fencer_tp_bonus = total_fencer_tp_bonus + 100
+    elseif jp_spent >= 150 then
+      total_fencer_tp_bonus = total_fencer_tp_bonus + 50
+    end
+  end
+  return total_fencer_tp_bonus
+end
+
+-- Calculate Fencer tier. Fencer active if not two-handed weapon, and offhand is empty or shield.
+function calc_fencer_tier()
+  local fencer = 0
+  local main_weapon_skill = res.items:with('en', player.equipment.main).skill
+  local is_using_2h = skill_ids_2h:contains(main_weapon_skill)
+
+  if not is_using_2h then
+    if player.equipment.sub == 'empty' then
+      fencer = 3
+    else
+      local is_using_shield = res.items:with('en', player.equipment.sub).category == 'Armor'
+      if is_using_shield then
+        fencer = 3
+      end
+    end
+  end
+  -- Fencer caps at level 8
+  return math.min(fencer, 8)
 end
 
 -- Modify the default idle set after it was constructed.
@@ -1731,6 +1739,7 @@ function set_main_keybinds()
 
   send_command('bind ^` gs c cycle treasuremode')
   send_command('bind @c gs c toggle CP')
+  send_command('bind ^f8 gs c toggle AttCapped')
 
   send_command('bind ^pageup gs c petmode cycleback')
   send_command('bind ^pagedown gs c petmode cycle')
@@ -1768,6 +1777,7 @@ function unbind_keybinds()
 
   send_command('unbind ^`')
   send_command('unbind @c')
+  send_command('unbind ^f8')
 
   send_command('unbind ^pageup')
   send_command('unbind ^pagedown')
