@@ -489,7 +489,6 @@ function init_gear_sets()
     waist="Sailfi Belt +1",           -- 15, __, __, __ < 5,  2, __> [__/__, ___] {__/__, ___}
     -- 270 STR, 161 MND, 68 WSD, 13 PDL <39 DA, 2 TA, 0 QA> [48 PDT/48 MDT, 674 M.Eva] {Pet: 5 PDT/5 MDT, 1 Lv}
 
-    -- body="Nukumi Gausape +3",      -- 43, 34, 12, __ <__, __, __> [__/__, 109] {__/__, ___}
     -- ear1="Moonshade Earring",      -- __, __, __, __ <__, __, __> [__/__, ___] {__/__, ___}; TP Bonus+250
     -- ear2="Nukumi Earring +2",      -- 15, __, __,  9 <__, __, __> [__/__, ___] {__/__,   1}
   }
@@ -513,7 +512,6 @@ function init_gear_sets()
     -- 224 STR, MND, 18 WSD, PDL <18 DA, 27 TA, 3 QA> [45 PDT/25 MDT, 422 M.Eva] {Pet: 5 PDT/5 MDT, 120 Lv}
 
     -- feet="Nukumi Ocreae +3",       -- 31, 20, __, 10 < 6, __, __> [__/__, 130] {__/__, ___}
-    -- ear1="Moonshade Earring",      -- __, __, __, __ <__, __, __> [__/__, ___] {__/__, ___}; TP Bonus+250
     -- ear2="Nukumi Earring +2",      -- 15, __, __,  9 <__, __, __> [__/__, ___] {__/__,   1}
   }
   sets.precast.WS.AttCappedMaxTP = set_combine(sets.precast.WS.AttCapped, {
@@ -527,51 +525,199 @@ function init_gear_sets()
   sets.precast.WS['Savage Blade'].AttCapped = set_combine(sets.precast.WS.AttCapped, {})
   sets.precast.WS['Savage Blade'].AttCappedMaxTP = set_combine(sets.precast.WS.AttCappedMaxTP, {})
 
-  -- TODO: Update
+  -- 50% STR. 1 hit ws. Dmg varies with TP. 15' range.
+  sets.precast.WS['Mistral Axe'] = set_combine(sets.precast.WS, {})
+  sets.precast.WS['Mistral Axe'].MaxTP = set_combine(sets.precast.WS.MaxTP, {})
+  sets.precast.WS['Mistral Axe'].AttCapped = set_combine(sets.precast.WS.AttCapped, {})
+  sets.precast.WS['Mistral Axe'].AttCappedMaxTP = set_combine(sets.precast.WS.AttCappedMaxTP, {})
+
   -- 73-85% STR. 4 hit physical. Acc varies with TP. fTP transfers.
   sets.precast.WS['Ruinator'] = set_combine(sets.precast.WS, {
-    ranged="Neo Animator",            -- __, __, __ <__, __, __> [__/__, ___] {__/__, 119}
-    head="Mpaca's Cap",               -- 33, __,  4 < 5,  3, __> [ 7/__,  69] {__/__, ___}; TP Bonus+200
-    body="Mpaca's Doublet",           -- 39, __,  7 <__,  4, __> [10/__,  86] {__/__, ___}
-    hands=gear.Ryuo_A_hands,          -- 24,  5,  5 <__, __, __> [__/__,  32] {__/__, ___}
-    legs="Mpaca's Hose",              -- 49, __,  6 <__,  4, __> [ 9/__,  96] {__/__, ___}
-    feet=gear.Herc_STR_CritDmg_feet,  -- 16,  5, __ <__,  2, __> [ 2/__,  75] {__/__, ___}
-    neck="Loricate Torque +1",        -- __, __, __ <__, __, __> [ 6/ 6, ___] {__/__, ___}
-    ear1="Odr Earring",               -- __, __,  5 <__, __, __> [__/__, ___] {__/__, ___}
-    ear2="Moonshade Earring",         -- __, __, __ <__, __, __> [__/__, ___] {__/__, ___}; TP Bonus+250
-    ring1="Sroda Ring",               -- 15, __, __ <__, __, __> [__/__, ___] {__/__, ___}
+    ammo="Coiste Bodhar",             -- 10, __, __ < 3, __, __> [__/__, ___] {__/__, ___}
+    head=gear.Nyame_B_head,           -- 26, 11, __ < 5, __, __> [ 7/ 7, 123] {__/__, ___}
+    body=gear.Nyame_B_body,           -- 45, 13, __ < 7, __, __> [ 9/ 9, 139] {__/__, ___} 
+    hands=gear.Nyame_B_hands,         -- 17, 11, __ < 5, __, __> [ 7/ 7, 112] {__/__, ___}
+    legs=gear.Nyame_B_legs,           -- 58, 12, __ < 6, __, __> [ 8/ 8, 150] {__/__, ___}
+    feet=gear.Nyame_B_feet,           -- 23, 11, __ < 5, __, __> [ 7/ 7, 150] {__/__, ___}
+    neck="Beastmaster Collar +2",     -- 15, __, 10 <__, __, __> [__/__, ___] {__/__, ___}
+    ear1="Brutal Earring",            -- __, __, __ < 5, __, __> [__/__, ___] {__/__, ___}
+    ear2="Lugra Earring +1",          -- 16, __, __ < 3, __, __> [__/__, ___] {__/__, ___}
+    ring1="Sroda Ring",               -- 15, __,  3 <__, __, __> [__/__, ___] {__/__, ___}
+    ring2="Gere Ring",                -- 10, __, __ <__,  5, __> [__/__, ___] {__/__, ___}
+    back=gear.BST_STR_WSD_Cape,       -- 30, 10, __ <__, __, __> [__/__, ___] { 5/ 5,   1}
+    waist="Fotia Belt",               -- __, __, __ <__, __, __> [__/__, ___] {__/__, ___}; fTP+
+    -- 265 STR, 68 WSD, 13 PDL <39 DA, 5 TA, 0 QA> [38 PDT/38 MDT, 674 M.Eva] {Pet: 5 PDT/5 MDT, 1 Lv}
+
+    -- ear2="Nukumi Earring +2",      -- 15, __,  9 <__, __, __> [__/__, ___] {__/__,   1}
+  })
+  sets.precast.WS['Ruinator'].MaxTP = set_combine(sets.precast.WS['Ruinator'], {})
+  sets.precast.WS['Ruinator'].AttCapped = {
+    ammo="Crepuscular Pebble",        --  3, __,  3 <__, __, __> [ 3/ 3, ___] {__/__, ___}
+    head=gear.Nyame_B_head,           -- 26, 11, __ < 5, __, __> [ 7/ 7, 123] {__/__, ___}
+    body="Gleti's Cuirass",           -- 39, __,  9 <10, __, __> [ 9/__, 102] {__/__, ___}
+    hands="Gleti's Gauntlets",        -- 20, __,  7 <__, __, __> [ 7/__,  75] { 8/ 8, ___}
+    legs="Gleti's Breeches",          -- 49, __,  8 <__,  5, __> [ 8/__, 112] {__/__, ___}
+    feet="Gleti's Boots",             -- 33, __,  5 <__, __, __> [ 5/__, 112] {__/__,   1}
+    neck="Beastmaster Collar +2",     -- 15, __, 10 <__, __, __> [__/__, ___] {__/__, ___}
+    ear1="Lugra Earring +1",          -- 16, __, __ < 3, __, __> [__/__, ___] {__/__, ___}
+    ear2="Nukumi Earring +1",         -- __, __,  8 <__, __, __> [__/__, ___] {__/__,   1}
+    ring1="Ephramad's Ring",          -- 10, __, 10 <__, __, __> [__/__, ___] {__/__, ___}
     ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___] {__/__, ___}
-    back=gear.PUP_STR_Crit_Cape,      -- 30, __, 10 <__, __, __> [__/__, ___] { 5/ 5,   1}
-    waist="Moonbow Belt +1",          -- 20, __, __ <__,  8, __> [ 6/ 6, ___] {__/__, ___}
-    -- 226 STR, 10 Crit Dmg, 37 Crit Rate <5 DA, 21 TA, 0 QA> [50 PDT/22 MDT, 358 M.Eva] {Pet: 5 PDT/5 MDT, 120 Lv}
+    back=gear.BST_STR_WSD_Cape,       -- 30, 10, __ <__, __, __> [__/__, ___] { 5/ 5,   1}
+    waist="Fotia Belt",               -- __, __, __ <__, __, __> [__/__, ___] {__/__, ___}; fTP+
+    -- 241 STR, 21 WSD, 60 PDL <18 DA, 5 TA, 0 QA> [49 PDT/20 MDT, 524 M.Eva] {Pet: 13 PDT/13 MDT, 3 Lv}
+
+    -- feet="Nukumi Ocreae +3",       -- 31, __, 10 < 6, __, __> [__/__, 130] {__/__, ___}
+    -- ear2="Nukumi Earring +2",      -- 15, __,  9 <__, __, __> [__/__, ___] {__/__,   1}
+  }
+  sets.precast.WS['Ruinator'].AttCappedMaxTP = set_combine(sets.precast.WS['Ruinator'].AttCapped, {})
+
+  -- 50% STR. 3 hit physical. Acc varies with TP. fTP transfers.
+  sets.precast.WS['Decimation'] = set_combine(sets.precast.WS['Ruinator'], {})
+  sets.precast.WS['Decimation'].MaxTP = set_combine(sets.precast.WS['Ruinator'].MaxTP, {})
+  sets.precast.WS['Decimation'].AttCapped = set_combine(sets.precast.WS['Ruinator'].AttCapped, {})
+  sets.precast.WS['Decimation'].AttCappedMaxTP = set_combine(sets.precast.WS['Ruinator'].AttCappedMaxTP, {})
+
+  -- 50% STR. 5 hit ws. Can crit. fTP transfers.
+  sets.precast.WS['Rampage'] = set_combine(sets.precast.WS, {
+    ammo="Crepuscular Pebble",        --  3, __,  3 <__, __, __> (__, __) [ 3/ 3, ___] {__/__, ___}
+    head="Blistering Sallet +1",      -- 41, __, __ < 3, __, __> (10, __) [ 3/__,  53] {__/__, ___}
+    body="Meghanada Cuirie +2",       -- 34, __, __ <__, __, __> (__,  6) [ 8/__,  64] {__/__, ___}
+    hands="Gleti's Gauntlets",        -- 20, __,  7 <__, __, __> ( 6, __) [ 7/__,  75] { 8/ 8, ___}
+    legs="Gleti's Breeches",          -- 49, __,  8 <__,  5, __> ( 7, __) [ 8/__, 112] {__/__, ___}
+    feet=gear.Nyame_B_feet,           -- 23, 11, __ < 5, __, __> (__, __) [ 7/ 7, 150] {__/__, ___}
+    neck="Fotia Gorget",              -- __, __, __ <__, __, __> (__, __) [__/__, ___] {__/__, ___}; fTP+
+    ear1="Moonshade Earring",         -- __, __, __ <__, __, __> (__, __) [__/__, ___] {__/__, ___}; TP Bonus+250
+    ear2="Lugra Earring +1",          -- 16, __, __ < 3, __, __> (__, __) [__/__, ___] {__/__, ___}
+    ring1="Gere Ring",                -- 10, __, __ <__,  5, __> (__, __) [__/__, ___] {__/__, ___}
+    ring2="Sroda Ring",               -- 15, __, __ <__, __, __> (__, __) [__/__, ___] {__/__, ___}
+    back=gear.BST_STR_Crit_Cape,      -- 30, __, __ <__, __, __> (10, __) [10/__, ___] {__/__, ___}
+    waist="Fotia Belt",               -- __, __, __ <__, __, __> (__, __) [__/__, ___] {__/__, ___}; fTP+
+    -- 241 STR, 11 WSD, 18 PDL <11 DA, 10 TA, 0 QA> (33 Crit Rate, 6 Crit Dmg) [46 PDT/10 MDT, 454 M.Eva] {Pet: 8 PDT/8 MDT, 0 Lv}
+
+    -- hands="Nukumi Manoplas +3",    -- 25, __, __ <__, __, __> ( 6, __) [11/11,  82] {__/__, ___}
+    -- ear2="Nukumi Earring +2",      -- 15, __,  9 <__, __, __> (__, __) [__/__, ___] {__/__,   1}
+    -- 245 STR, 11 WSD, 20 PDL <8 DA, 10 TA, 0 QA> (33 Crit Rate, 6 Crit Dmg) [50 PDT/21 MDT, 461 M.Eva] {Pet: 0 PDT/0 MDT, 1 Lv}
+  })
+  sets.precast.WS['Rampage'].MaxTP = set_combine(sets.precast.WS['Rampage'], {
+    ear1="Thrud Earring",             -- 10,  3, __ <__, __, __> (__, __) [__/__, ___] {__/__, ___}
+  })
+  sets.precast.WS['Rampage'].AttCapped = {
+    ammo="Crepuscular Pebble",        --  3, __,  3 <__, __, __> (__, __) [ 3/ 3, ___] {__/__, ___}
+    head="Blistering Sallet +1",      -- 41, __, __ < 3, __, __> (10, __) [ 3/__,  53] {__/__, ___}
+    body="Gleti's Cuirass",           -- 39, __,  9 <10, __, __> ( 8, __) [ 9/__, 102] {__/__, ___}
+    hands="Gleti's Gauntlets",        -- 20, __,  7 <__, __, __> ( 6, __) [ 7/__,  75] { 8/ 8, ___}
+    legs="Gleti's Breeches",          -- 49, __,  8 <__,  5, __> ( 7, __) [ 8/__, 112] {__/__, ___}
+    feet="Gleti's Boots",             -- 33, __,  5 <__, __, __> ( 4, __) [ 5/__, 112] {__/__,   1}
+    neck="Fotia Gorget",              -- __, __, __ <__, __, __> (__, __) [__/__, ___] {__/__, ___}; fTP+
+    ear1="Moonshade Earring",         -- __, __, __ <__, __, __> (__, __) [__/__, ___] {__/__, ___}; TP Bonus+250
+    ear2="Nukumi Earring +1",         -- __, __,  8 <__, __, __> (__, __) [__/__, ___] {__/__,   1}
+    ring1="Ephramad's Ring",          -- 10, __, 10 <__, __, __> (__, __) [__/__, ___] {__/__, ___}
+    ring2="Defending Ring",           -- __, __, __ <__, __, __> (__, __) [10/10, ___] {__/__, ___}
+    back=gear.BST_STR_Crit_Cape,      -- 30, __, __ <__, __, __> (10, __) [10/__, ___] {__/__, ___}
+    waist="Fotia Belt",               -- __, __, __ <__, __, __> (__, __) [__/__, ___] {__/__, ___}; fTP+
+    -- 225 STR, 0 WSD, 50 PDL <13 DA, 5 TA, 0 QA> (45 Crit Rate, 0 Crit Dmg) [55 PDT/13 MDT, 454 M.Eva] {Pet: 8 PDT/8 MDT, 2 Lv}
+
+    -- hands="Nukumi Manoplas +3",    -- 25, __, __ <__, __, __> ( 6, __) [11/11,  82] {__/__, ___}
+    -- feet="Nukumi Ocreae +3",       -- 31, __, 10 < 6, __, __> (__, __) [__/__, 130] {__/__, ___}
+    -- ear2="Nukumi Earring +2",      -- 15, __,  9 <__, __, __> (__, __) [__/__, ___] {__/__,   1}
+    -- 243 STR, 0 WSD, 49 PDL <19 DA, 5 TA, 0 QA> (41 Crit Rate, 0 Crit Dmg) [54 PDT/24 MDT, 479 M.Eva] {Pet: 0 PDT/0 MDT, 1 Lv}
+  }
+  sets.precast.WS['Rampage'].AttCappedMaxTP = set_combine(sets.precast.WS['Rampage'].AttCapped, {
+    ear1="Thrud Earring",             -- 10,  3, __ <__, __, __> (__, __) [__/__, ___] {__/__, ___}
+
+    -- ear1="Lugra Earring +1",       -- 16, __, __ < 3, __, __> (__, __) [__/__, ___] {__/__, ___}
+    -- ear2="Thrud Earring",          -- 10,  3, __ <__, __, __> (__, __) [__/__, ___] {__/__, ___}
   })
 
-  -- TODO: Update
   -- 50% DEX. 5 hit ws. Can crit. fTP transfers.
   sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
-    ranged="Neo Animator",            -- __, __, __ <__, __, __> [__/__, ___] {__/__, 119}
-    head="Mpaca's Cap",               -- 30, __,  4 < 5,  3, __> [ 7/__,  69] {__/__, ___}; TP Bonus+200
-    body="Mpaca's Doublet",           -- 37, __,  7 <__,  4, __> [10/__,  86] {__/__, ___}
-    hands=gear.Ryuo_A_hands,          -- 50,  5,  5 <__, __, __> [__/__,  32] {__/__, ___}
-    legs="Mpaca's Hose",              -- __, __,  6 <__,  4, __> [ 9/__,  96] {__/__, ___}
-    feet=gear.Herc_DEX_CritDmg_feet,  -- 24,  5, __ <__,  2, __> [ 2/__,  75] {__/__, ___}
-    neck="Puppetmaster's Collar +1",  -- 12, __, __ <__, __, __> [__/__, ___] {__/__, ___}
-    ear1="Odr Earring",               -- 10, __,  5 <__, __, __> [__/__, ___] {__/__, ___}
-    ear2="Moonshade Earring",         -- __, __, __ <__, __, __> [__/__, ___] {__/__, ___}; TP Bonus+250
-    ring1="Niqmaddu Ring",            -- 10, __, __ <__, __,  3> [__/__, ___] {__/__, ___}
-    ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___] {__/__, ___}
-    back=gear.PUP_TP_Cape,            -- 30, __, __ <__, __, __> [__/__, ___] { 5/ 5,   1}
-    waist="Moonbow Belt +1",          -- 20, __, __ <__,  8, __> [ 6/ 6, ___] {__/__, ___}
-    -- 223 DEX, 10 Crit Dmg, 27 Crit Rate <5 DA, 21 TA, 3 QA> [44 PDT/16 MDT, 358 M.Eva] {Pet: 5 PDT/5 MDT, 120 Lv}
-    
-    -- neck="Puppetmaster's Collar +2"-- 15, __, __ <__, __, __> [__/__, ___] {__/__, ___}
-    -- back=gear.PUP_DEX_DA_Cape,     -- 30, __, __ <10, __, __> [__/__, ___] { 5/ 5,   1}
-    -- 226 DEX, 10 Crit Dmg, 27 Crit Rate <15 DA, 21 TA, 3 QA> [44 PDT/16 MDT, 358 M.Eva] {Pet: 5 PDT/5 MDT, 120 Lv}
+    ammo="Coiste Bodhar",             -- 10, __, __ < 3, __, __> (__, __) [__/__, ___] {__/__, ___}
+    head="Blistering Sallet +1",      -- 41, __, __ < 3, __, __> (10, __) [ 3/__,  53] {__/__, ___}
+    body="Meghanada Cuirie +2",       -- 45, __, __ <__, __, __> (__,  6) [ 8/__,  64] {__/__, ___}
+    hands="Gleti's Gauntlets",        -- 47, __,  7 <__, __, __> ( 6, __) [ 7/__,  75] { 8/ 8, ___}
+    legs=gear.Lustratio_B_legs,       -- 43, __, __ <__, __, __> ( 3, __) [__/__, ___] {__/__, ___}
+    feet="Gleti's Boots",             -- 29, __,  5 <__, __, __> ( 4, __) [ 5/__, 112] {__/__,   1}
+    neck="Fotia Gorget",              -- __, __, __ <__, __, __> (__, __) [__/__, ___] {__/__, ___}; fTP+
+    ear1="Moonshade Earring",         -- __, __, __ <__, __, __> (__, __) [__/__, ___] {__/__, ___}; TP Bonus+250
+    ear2="Lugra Earring +1",          -- 16, __, __ < 3, __, __> (__, __) [__/__, ___] {__/__, ___}
+    ring1="Ephramad's Ring",          -- 10, __, 10 <__, __, __> (__, __) [__/__, ___] {__/__, ___}
+    ring2="Defending Ring",           -- __, __, __ <__, __, __> (__, __) [10/10, ___] {__/__, ___}
+    back=gear.BST_DEX_Crit_Cape,      -- 30, __, __ <__, __, __> (10, __) [10/__, ___] {__/__, ___}
+    waist="Fotia Belt",               -- __, __, __ <__, __, __> (__, __) [__/__, ___] {__/__, ___}; fTP+
+    -- 271 DEX, 0 WSD, 22 PDL <9 DA, 0 TA, 0 QA> (33 Crit Rate, 6 Crit Dmg) [43 PDT/10 MDT, 304 M.Eva] {Pet: 8 PDT/8 MDT, 1 Lv}
+
+    -- hands="Nukumi Manoplas +3",    -- 48, __, __ <__, __, __> ( 6, __) [11/11,  82] {__/__, ___}
+    -- 272 DEX, 0 WSD, 15 PDL <9 DA, 0 TA, 0 QA> (33 Crit Rate, 6 Crit Dmg) [47 PDT/21 MDT, 311 M.Eva] {Pet: 0 PDT/0 MDT, 1 Lv}
   })
   sets.precast.WS['Evisceration'].MaxTP = set_combine(sets.precast.WS['Evisceration'], {
-    ear2="Schere Earring",            -- __, __, __ < 6, __, __> [__/__, ___] {__/__, ___}
+    ear1="Brutal Earring",            -- __, __, __ < 5, __, __> (__, __) [__/__, ___] {__/__, ___}
+  })
+  sets.precast.WS['Evisceration'].AttCapped = {
+    ammo="Crepuscular Pebble",        -- __, __,  3 <__, __, __> (__, __) [ 3/ 3, ___] {__/__, ___}
+    head="Blistering Sallet +1",      -- 41, __, __ < 3, __, __> (10, __) [ 3/__,  53] {__/__, ___}
+    body="Gleti's Cuirass",           -- 34, __,  9 <10, __, __> ( 8, __) [ 9/__, 102] {__/__, ___}
+    hands="Gleti's Gauntlets",        -- 47, __,  7 <__, __, __> ( 6, __) [ 7/__,  75] { 8/ 8, ___}
+    legs="Gleti's Breeches",          -- __, __,  8 <__,  5, __> ( 7, __) [ 8/__, 112] {__/__, ___}
+    feet="Gleti's Boots",             -- 29, __,  5 <__, __, __> ( 4, __) [ 5/__, 112] {__/__,   1}
+    neck="Fotia Gorget",              -- __, __, __ <__, __, __> (__, __) [__/__, ___] {__/__, ___}; fTP+
+    ear1="Moonshade Earring",         -- __, __, __ <__, __, __> (__, __) [__/__, ___] {__/__, ___}; TP Bonus+250
+    ear2="Nukumi Earring +1",         -- __, __,  8 <__, __, __> (__, __) [__/__, ___] {__/__,   1}
+    ring1="Ephramad's Ring",          -- 10, __, 10 <__, __, __> (__, __) [__/__, ___] {__/__, ___}
+    ring2="Defending Ring",           -- __, __, __ <__, __, __> (__, __) [10/10, ___] {__/__, ___}
+    back=gear.BST_DEX_Crit_Cape,      -- 30, __, __ <__, __, __> (10, __) [10/__, ___] {__/__, ___}
+    waist="Fotia Belt",               -- __, __, __ <__, __, __> (__, __) [__/__, ___] {__/__, ___}; fTP+
+    -- 191 DEX, 0 WSD, 50 PDL <13 DA, 0 TA, 0 QA> (45 Crit Rate, 0 Crit Dmg) [55 PDT/13 MDT, 454 M.Eva] {Pet: 8 PDT/8 MDT, 2 Lv}
+
+    -- hands="Nukumi Manoplas +3",    -- 48, __, __ <__, __, __> ( 6, __) [11/11,  82] {__/__, ___}
+    -- feet="Nukumi Ocreae +3",       -- 35, __, 10 < 6, __, __> (__, __) [__/__, 130] {__/__, ___}
+    -- ear2="Nukumi Earring +2",      -- __, __,  9 <__, __, __> (__, __) [__/__, ___] {__/__,   1}
+    -- 198 DEX, 0 WSD, 49 PDL <19 DA, 5 TA, 0 QA> (41 Crit Rate, 0 Crit Dmg) [54 PDT/24 MDT, 479 M.Eva] {Pet: 0 PDT/0 MDT, 1 Lv}
+  }
+  sets.precast.WS['Evisceration'].AttCappedMaxTP = set_combine(sets.precast.WS['Evisceration'].AttCapped, {
+    ear1="Lugra Earring +1",          -- 16, __, __ < 3, __, __> (__, __) [__/__, ___] {__/__, ___}
+  })
+
+  -- 80% DEX. 1 hit ws.
+  sets.precast.WS['Onslaught'] = set_combine(sets.precast.WS, {
+    ammo="Coiste Bodhar",             -- 10, __, __ [__/__, ___] {__/__, ___}
+    head=gear.Nyame_B_head,           -- 25, 11, __ [ 7/ 7, 123] {__/__, ___}
+    body=gear.Nyame_B_body,           -- 24, 13, __ [ 9/ 9, 139] {__/__, ___}
+    hands=gear.Nyame_B_hands,         -- 42, 11, __ [ 7/ 7, 112] {__/__, ___}
+    legs=gear.Lustratio_B_legs,       -- 43, __, __ [__/__, ___] {__/__, ___}
+    feet=gear.Nyame_B_feet,           -- 26, 11, __ [ 7/ 7, 150] {__/__, ___}
+    neck="Beastmaster Collar +2",     -- 15, __, 10 [__/__, ___] {__/__, ___}
+    ear1="Lugra Earring +1",          -- 16, __, __ [__/__, ___] {__/__, ___}
+    ear2="Thrud Earring",             -- __,  3, __ [__/__, ___] {__/__, ___}
+    ring1="Ephramad's Ring",          -- 10, __, 10 [__/__, ___] {__/__, ___}
+    ring2="Ilabrat Ring",             -- 10, __, __ [__/__, ___] {__/__, ___}
+    back=gear.BST_DEX_WSD_Cape,       -- 30, 10, __ [10/__, ___] {__/__, ___}
+    waist="Kentarch Belt +1",         -- 10, __, __ [__/__, ___] {__/__, ___}
+    -- 261 DEX, 59 WSD, 20 PDL [40 PDT/30 MDT, 524 M.Eva] {Pet: 0 PDT/0 MDT, 0 Lv}
+  })
+  sets.precast.WS['Onslaught'].MaxTP = set_combine(sets.precast.WS['Onslaught'], {
+  })
+  sets.precast.WS['Onslaught'].AttCapped = {
+    ammo="Crepuscular Pebble",        -- __, __,  3 [ 3/ 3, ___] {__/__, ___}
+    head=gear.Nyame_B_head,           -- 25, 11, __ [ 7/ 7, 123] {__/__, ___}
+    body="Gleti's Cuirass",           -- 34, __,  9 [ 9/__, 102] {__/__, ___}
+    hands="Gleti's Gauntlets",        -- 47, __,  7 [ 7/__,  75] { 8/ 8, ___}
+    legs=gear.Lustratio_B_legs,       -- 43, __, __ [__/__, ___] {__/__, ___}
+    feet="Gleti's Boots",             -- 29, __,  5 [ 5/__, 112] {__/__,   1}
+    neck="Beastmaster Collar +2",     -- 15, __, 10 [__/__, ___] {__/__, ___}
+    ear1="Lugra Earring +1",          -- 16, __, __ [__/__, ___] {__/__, ___}
+    ear2="Nukumi Earring +1",         -- __, __,  8 [__/__, ___] {__/__,   1}
+    ring1="Ephramad's Ring",          -- 10, __, 10 [__/__, ___] {__/__, ___}
+    ring2="Defending Ring",           -- __, __, __ [10/10, ___] {__/__, ___}
+    back=gear.BST_DEX_WSD_Cape,       -- 30, 10, __ [10/__, ___] {__/__, ___}
+    waist="Kentarch Belt +1",         -- 10, __, __ [__/__, ___] {__/__, ___}
+    -- 259 DEX, 21 WSD, 52 PDL [52 PDT/20 MDT, 412 M.Eva] {Pet: 8 PDT/8 MDT, 1 Lv}
     
-    -- ear2="Karagoz Earring +2",     -- 15, __, __ <__, __, __> [__/__, ___] {__/__,   1}
+    -- feet="Nukumi Ocreae +3",       -- 35, __, 10 [__/__, 130] {__/__, ___}
+    -- ear2="Nukumi Earring +2",      -- __, __,  9 [__/__, ___] {__/__,   1}
+    -- 265 DEX, 21 WSD, 58 PDL [46 PDT/20 MDT, 430 M.Eva] {Pet: 8 PDT/8 MDT, 1 Lv}
+  }
+  sets.precast.WS['Onslaught'].AttCappedMaxTP = set_combine(sets.precast.WS['Onslaught'].AttCapped, {
   })
 
   -- Aeolian Edge: 40% DEX/40% INT, 2.0-4.5 fTP, 1 hit (aoe-magical)
@@ -592,10 +738,11 @@ function init_gear_sets()
     waist="Skrymir Cord",             -- __, __,  5, __ [__/__, ___] {__/__, ___}
     -- 115 DEX, 165 INT, 224 MAB, 52 WSD [43 PDT/41 MDT, 599 M.Eva] {Pet: 0 PDT/0 MDT, 119 Lv}
 
-    -- back=gear.BST_MAB_Cape,        -- __, 30, 10, __ [__/__, ___] { 5/ 5,   1}
+    -- back=gear.BST_INT_MAB_Cape,    -- __, 30, 10, __ [__/__, ___] { 5/ 5,   1}
     -- waist="Skrymir Cord +1",       -- __, __,  7, __ [__/__, ___] {__/__, ___}
   })
   sets.precast.WS['Aeolian Edge'].MaxTP = set_combine(sets.precast.WS['Aeolian Edge'], {})
+  sets.precast.WS['Aeolian Edge'].AttCappedMaxTP = set_combine(sets.precast.WS['Aeolian Edge'].MaxTP, {})
 
   -- 60% CHR/30% DEX. dStat CHR. Dmg varies with TP. Light elemental.
   sets.precast.WS['Primal Rend'] = set_combine(sets.precast.WS, {
@@ -605,29 +752,33 @@ function init_gear_sets()
     hands=gear.Nyame_B_hands,         -- 24, 42, 30, 40, 11 [ 7/ 7, 112] {__/__, ___}
     legs=gear.Nyame_B_legs,           -- 24, __, 30, 40, 12 [ 8/ 8, 150] {__/__, ___}
     feet=gear.Nyame_B_feet,           -- 38, 26, 30, 40, 11 [ 7/ 7, 150] {__/__, ___}
-    neck="Sibyl Scarf",               -- __, __, 10, __, __ [__/__, ___] {__/__, ___}
+    neck="Baetyl Pendant",            -- __, __, 13, __, __ [__/__, ___] {__/__, ___}
     ear1="Friomisi Earring",          -- __, __, 10, __, __ [__/__, ___] {__/__, ___}
     ear2="Moonshade Earring",         -- __, __, __, __, __ [__/__, ___] {__/__, ___}; TP Bonus+250
     ring1="Weatherspoon Ring",        -- __, __, 10, __, __ [__/__, ___] {__/__, ___}; Light MAB+10
     ring2="Defending Ring",           -- __, __, __, __, __ [10/10, ___] {__/__, ___}
     back="Argochampsa Mantle",        -- __, __, 12, __, __ [__/__, ___] {__/__, ___}
     waist="Skrymir Cord",             -- __, __,  5,  5, __ [__/__, ___] {__/__, ___}
-    -- 145 CHR, 117 DEX, 208 MAB, 213 M.Acc, 58 WSD [48 PDT/48 MDT, 674 M.Eva] {Pet: 0 PDT/0 MDT, 119 Lv}
+    -- 145 CHR, 117 DEX, 211 MAB, 213 M.Acc, 58 WSD [48 PDT/48 MDT, 674 M.Eva] {Pet: 0 PDT/0 MDT, 119 Lv}
 
-    -- back=gear.BST_MAB_Cape,        -- __, 30, 10, 20, __ [__/__, ___] { 5/ 5,   1}
+    -- back=gear.BST_CHR_WSD_Cape,    -- 30, __, __, 20, 10 [__/__, ___] { 5/ 5,   1}
     -- waist="Skrymir Cord +1",       -- __, __,  7,  7, __ [__/__, ___] {__/__, ___}
   })
   sets.precast.WS['Primal Rend'].MaxTP = set_combine(sets.precast.WS['Primal Rend'], {
     ear2="Novio Earring",             -- __, __,  7, __, __ [__/__, ___] {__/__, ___}
   })
+  sets.precast.WS['Primal Rend'].AttCappedMaxTP = set_combine(sets.precast.WS['Primal Rend'].MaxTP, {})
 
   -- 40% STR/40% MND. Dmg varies with TP. Thunder elemental.
   sets.precast.WS['Cloudsplitter'] = set_combine(sets.precast.WS['Primal Rend'], {
     ring1="Sroda Ring",
+    -- back=gear.BST_MND_WSD_Cape,    -- __, 30, 10, 20, __ [__/__, ___] { 5/ 5,   1}
   })
   sets.precast.WS['Cloudsplitter'].MaxTP = set_combine(sets.precast.WS['Primal Rend'].MaxTP, {
     ring1="Sroda Ring",
+    -- back=gear.BST_MND_WSD_Cape,
   })
+  sets.precast.WS['Cloudsplitter'].AttCappedMaxTP = set_combine(sets.precast.WS['Cloudsplitter'].MaxTP, {})
 
 
   ------------------------------------------------------------------------------------------------
