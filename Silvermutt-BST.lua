@@ -72,7 +72,7 @@ function job_setup()
 
   state.OffenseMode:options('Normal', 'Acc')
   state.HybridMode:options('Master', 'Pet', 'Halfsies')
-  state.IdleMode:options('Normal', 'DT')
+  state.IdleMode:options('Normal', 'DT', 'RegainOnly')
   state.CP = M(false, 'Capacity Points Mode')
   state.AutomaticPetTargeting = M(true, 'Automatic Pet Targeting')
   state.CorrelationMode = M{['description']='Correlation Mode', 'Neutral', 'Favorable'}
@@ -276,6 +276,7 @@ function job_setup()
     ['Molting Plumage'] = {id=0, name='', set='Macc', charges=0, tp_affected=false, multihit=false},
     ['Swooping Frenzy'] = {id=0, name='', set='Macc', charges=0, tp_affected=false, multihit=false},
     ['Spider Web'] = {id=0, name='', set='Macc', charges=0, tp_affected=true, multihit=false},
+    ['TP Drainkiss'] = {id=0, name='', set='Macc', charges=0, tp_affected=true, multihit=false},
 
     ['Wild Carrot'] = {id=0, name='', set='Buff', charges=0, tp_affected=false, multihit=false},
     ['Bubble Curtain'] = {id=0, name='', set='Buff', charges=0, tp_affected=false, multihit=false},
@@ -283,7 +284,6 @@ function job_setup()
     ['Secretion'] = {id=0, name='', set='Buff', charges=0, tp_affected=false, multihit=false},
     ['Rage'] = {id=0, name='', set='Buff', charges=0, tp_affected=false, multihit=false},
     ['Harden Shell'] = {id=0, name='', set='Buff', charges=0, tp_affected=false, multihit=false},
-    ['TP Drainkiss'] = {id=0, name='', set='Buff', charges=0, tp_affected=true, multihit=false},
     ['Rhino Guard'] = {id=0, name='', set='Buff', charges=0, tp_affected=false, multihit=false},
     ['Zealous Snort'] = {id=0, name='', set='Buff', charges=0, tp_affected=false, multihit=false},
     ['Frenzied Rage'] = {id=0, name='', set='Buff', charges=0, tp_affected=false, multihit=false},
@@ -376,6 +376,14 @@ function init_gear_sets()
   sets.TreasureHunter.RA = set_combine(sets.TreasureHunter, {})
 
 
+  sets.SpurWeapon = {
+    main=gear.Skullrender_C,
+  }
+  sets.SpurWeaponDW = {
+    main=gear.Skullrender_C,
+    sub=gear.Skullrender_C,
+  }
+
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Precast Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
@@ -435,15 +443,22 @@ function init_gear_sets()
     feet="Nukumi Ocreae +3",
     back="Artio's Mantle",
   }
-  sets.SpurWeapon = {
-    main=gear.Skullrender_C,
-  }
-  sets.SpurWeaponDW = {
-    main=gear.Skullrender_C,
-    sub=gear.Skullrender_C,
-  }
 	sets.precast.JA['Feral Howl'] = {
+    ammo="Pemphredo Tathlum",
+    head="Nukumi Cabasset +3",
     body="Ankusa Jackcoat +3",
+    hands="Nukumi Manoplas +3",
+    legs="Nukumi Quijotes +3",
+    feet="Nukumi Ocreae +3",
+    neck="Beastmaster Collar +2",
+    ear1="Dignitary's Earring",
+    ear2="Nukumi Earring +1",
+    ring1="Metamorph Ring +1",
+    ring2="Stikini Ring +1",
+    back="Aurist's Cape +1",
+    waist="Eschan Stone",
+    
+    -- ear2="Nukumi Earring +2",
   }
 
   sets.precast.ReadyRecast = {
@@ -787,145 +802,95 @@ function init_gear_sets()
 
   -- Default/fallback set
   sets.midcast.Pet = {
-    --main="Agwu's Axe",
-    --sub="Adapa Shield",
-    ammo="Voluspa Tathlum",
-    head={ name="Nyame Helm", augments={'Path: B',}},
-    body={ name="Nyame Mail", augments={'Path: B',}},
-    hands="Gleti's Gauntlets",
-    legs="Gleti's Breeches",
-    feet="Gleti's Boots",
-    neck="Bst. Collar +2",
-    ear1={ name="Handler's Earring +1", augments={'Path: A',}},
-    ear2="Enmerkar Earring",
-    ring1="Tali'ah Ring",
-    ring2="C. Palug Ring",
-    back={ name="Artio's Mantle", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Eva.+20 /Mag. Eva.+20','Pet: Mag. Acc.+10','Pet: "Regen"+10',}},
-    waist="Incarnation Sash",
+    ammo="Hesperiidae",               -- [__/__, ___] {__/__, ___ | __, 10/10, 10/__}; Pet attr+10
+    head="Nukumi Cabasset +3",        -- [11/11,  98] {__/__, ___ | __, 61/61, __/__}
+    body="Gleti's Cuirass",           -- [ 9/__, 102] {__/__, ___ | __, 50/50, __/__}
+    hands="Nukumi Manoplas +3",       -- [11/11,  82] {__/__, ___ | __, 62/62, __/__}; Pet TP Bonus+700
+    legs="Nukumi Quijotes +3",        -- [13/13, 130] { 8/ 8, ___ | __, 63/63, __/__}
+    feet="Gleti's Boots",             -- [ 5/__, 112] {__/__,   1 | __, 50/50, __/__}
+    neck="Shulmanu Collar",           -- [__/__, ___] {__/__, ___ |  3, 20/__, 20/__}
+    ear1="Sroda Earring",             -- [__/__, -10] {__/__, ___ | __, __/__, __/__}; Pet dmg+
+    ear2="Nukumi Earring +1",         -- [__/__, ___] {__/__,   1 |  7, __/__, __/__}
+    ring1="Varar Ring +1",            -- [__/__, ___] {__/__, ___ | __, 10/__, __/__}
+    ring2="Cath Palug Ring",          -- [ 5/ 5, ___] {__/__, ___ |  5, 12/12, __/__}
+    back=gear.BST_Pet_Atk_Cape,       -- [10/__,  20] {__/__, ___ | __, 20/20, 30/30}
+    waist="Klouskap Sash +1",         -- [__/__, ___] {__/__, ___ | __, 20/20, __/__}
+    -- [64 PDT/40 MDT, 534 M.Eva] {Pet: 8 PDT /8 MDT, 2 Lv | 15 DA, 378 Acc/348 Racc, 60 Att/30 Ratt}
   }
-  sets.midcast.Pet.Halfsies = {
-    --main="Agwu's Axe",
-    --sub="Adapa Shield",
-    ammo="Voluspa Tathlum",
-    head={ name="Nyame Helm", augments={'Path: B',}},
-    body={ name="Nyame Mail", augments={'Path: B',}},
-    hands="Gleti's Gauntlets",
-    legs="Gleti's Breeches",
-    feet="Gleti's Boots",
-    neck="Bst. Collar +2",
-    ear1={ name="Handler's Earring +1", augments={'Path: A',}},
-    ear2="Enmerkar Earring",
-    ring1="Tali'ah Ring",
-    ring2="C. Palug Ring",
-    back={ name="Artio's Mantle", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Eva.+20 /Mag. Eva.+20','Pet: Mag. Acc.+10','Pet: "Regen"+10',}},
-    waist="Incarnation Sash",
-  }
+  sets.midcast.Pet.Halfsies = set_combine(sets.midcast.Pet, {})
 
   sets.midcast.Pet.Physical = {
-    ammo="Hesperiidae",
-    head=empty,
-    body=Ready_Atk_body,
-    hands=Ready_Atk_hands,
-    legs=Ready_Atk_legs,
-    feet=Ready_Atk_feet,
-    neck="Shulmanu Collar",
-    ear1="Ruby Earring",
-    ear2="Hija Earring",
-    ring1="Thurandaut Ring +1",
-    ring2="Cath Palug Ring",
-    back=Ready_Atk_back,
-    waist="Incarnation Sash",
+    ammo="Hesperiidae",               -- [__/__, ___] {__/__, ___ | __, 10/10, 10/__}; Pet attr+10
+    head="Nukumi Cabasset +3",        -- [11/11,  98] {__/__, ___ | __, 61/61, __/__}
+    body="Gleti's Cuirass",           -- [ 9/__, 102] {__/__, ___ | __, 50/50, __/__}
+    hands="Nukumi Manoplas +3",       -- [11/11,  82] {__/__, ___ | __, 62/62, __/__}; Pet TP Bonus+700
+    legs="Nukumi Quijotes +3",        -- [13/13, 130] { 8/ 8, ___ | __, 63/63, __/__}
+    feet="Gleti's Boots",             -- [ 5/__, 112] {__/__,   1 | __, 50/50, __/__}
+    neck="Shulmanu Collar",           -- [__/__, ___] {__/__, ___ |  3, 20/__, 20/__}
+    ear1="Sroda Earring",             -- [__/__, -10] {__/__, ___ | __, __/__, __/__}; Pet dmg+
+    ear2="Nukumi Earring +1",         -- [__/__, ___] {__/__,   1 |  7, __/__, __/__}
+    ring1="Varar Ring +1",            -- [__/__, ___] {__/__, ___ | __, 10/__, __/__}
+    ring2="Cath Palug Ring",          -- [ 5/ 5, ___] {__/__, ___ |  5, 12/12, __/__}
+    back=gear.BST_Pet_Atk_Cape,       -- [10/__,  20] {__/__, ___ | __, 20/20, 30/30}
+    waist="Klouskap Sash +1",         -- [__/__, ___] {__/__, ___ | __, 20/20, __/__}
+    -- [64 PDT/40 MDT, 534 M.Eva] {Pet: 8 PDT /8 MDT, 2 Lv | 15 DA, 378 Acc/348 Racc, 60 Att/30 Ratt}
   }
-  sets.midcast.Pet.Physical.Halfsies = {
-    ammo="Hesperiidae",
-    head=empty,
-    body=Ready_Atk_body,
-    hands=Ready_Atk_hands,
-    legs=Ready_Atk_legs,
-    feet=Ready_Atk_feet,
-    neck="Shulmanu Collar",
-    ear1="Ruby Earring",
-    ear2="Hija Earring",
-    ring1="Thurandaut Ring +1",
-    ring2="Cath Palug Ring",
-    back=Ready_Atk_back,
-    waist="Incarnation Sash",
-  }
+  sets.midcast.Pet.Physical.Halfsies = set_combine(sets.midcast.Pet.Physical, {})
 
   sets.midcast.Pet.Matk = {
-    ammo={ name="Hesperiidae", augments={'Path: A',}},
-    head={ name="Nyame Helm", augments={'Path: B',}},
-    body="Udug Jacket",
-    hands="Gleti's Gauntlets",
-    legs="Gleti's Breeches",
-    feet="Gleti's Boots",
-    neck="Bst. Collar +2",
-    ear1="Enmerkar Earring",
-    ear2={ name="Nukumi Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+11','Mag. Acc.+11','Pet: "Dbl. Atk."+5',}},
-    ring1="Tali'ah Ring",
-    ring2="C. Palug Ring",
-    back={ name="Artio's Mantle", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Eva.+20 /Mag. Eva.+20','Pet: Mag. Acc.+10','Pet: "Regen"+10',}},
-    waist="Incarnation Sash",
+    ammo="Hesperiidae",               -- [__/__, ___] {__/__, ___ | __, 10, __, 10}; Pet attr+10
+    head=gear.Valorous_Pet_Matk_head, -- [__/__,  48] {__/__, ___ | __, __, 30, 15}
+    body=gear.Emicho_D_body,          -- [__/__,  53] { 4/ 4, ___ | __, __, 35, 20}
+    hands="Nukumi Manoplas +3",       -- [11/11,  82] {__/__, ___ | __, 62, __, __}; Pet TP Bonus+700
+    legs=gear.Valorous_Pet_Matk_legs, -- [ 2/__,  80] {__/__, ___ | __, __, 30, 15}
+    feet=gear.Valorous_Pet_Matk_feet, -- [__/ 2,  80] {__/__, ___ | __, __, 30, 15}
+    neck="Adad Amulet",               -- [ 4/ 4, ___] {__/__, ___ | __, 20, 10, __}
+    ear1="Hija Earring",              -- [__/__, ___] {__/__, ___ |  2, __,  5, __}
+    ear2="Nukumi Earring +1",         -- [__/__, ___] {__/__,   1 |  7, 15, __, __}
+    ring1="Tali'ah Ring",             -- [__/__, ___] {__/__, ___ | __,  6, __, __}
+    ring2="Cath Palug Ring",          -- [ 5/ 5, ___] {__/__, ___ |  5, 12, __, __}
+    back="Argochampsa Mantle",        -- [__/__, ___] {__/__, ___ | __, __, 12, __}
+    waist="Incarnation Sash",         -- [__/__, ___] {__/__, ___ |  4, 15, __, __}
+    -- [22 PDT/22 MDT, 343 M.Eva] {Pet: 4 PDT /4 MDT, 1 Lv | 18 DA, 140 Macc, 152 MAB, 75 INT}
+    
+    -- body="Udug Jacket",            -- [10/10,  86] {__/__, ___ | __, 45, 45, __}
+    -- [32 PDT/32 MDT, 376 M.Eva] {Pet: 0 PDT /0 MDT, 1 Lv | 18 DA, 185 Macc, 162 MAB, 55 INT}
   }
   sets.midcast.Pet.Matk.Halfsies = {
-    ammo={ name="Hesperiidae", augments={'Path: A',}},
-    head={ name="Nyame Helm", augments={'Path: B',}},
-    body="Udug Jacket",
-    hands="Gleti's Gauntlets",
-    legs="Gleti's Breeches",
-    feet="Gleti's Boots",
-    neck="Bst. Collar +2",
-    ear1="Enmerkar Earring",
-    ear2={ name="Nukumi Earring +1", augments={'System: 1 ID: 1676 Val: 0','Accuracy+11','Mag. Acc.+11','Pet: "Dbl. Atk."+5',}},
-    ring1="Tali'ah Ring",
-    ring2="C. Palug Ring",
-    back={ name="Artio's Mantle", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Eva.+20 /Mag. Eva.+20','Pet: Mag. Acc.+10','Pet: "Regen"+10',}},
-    waist="Incarnation Sash",
+    feet="Gleti's Boots",             -- [ 5/__, 112] {__/__,   1 | __, 50, __, __}
+    ring1="Defending Ring",           -- [10/10, ___] {__/__, ___ | __, __, __, __}
   }
 
   sets.midcast.Pet.Macc = {
-    ammo="Voluspa Tathlum",
-    head=Ready_MAcc_head,
-    body=Ready_MAcc_body,
-    hands=Ready_MAcc_hands,
-    legs=Ready_MAcc_legs,
-    feet=Ready_MAcc_feet,
-    neck="Beastmaster Collar +2",
-    ear1="Kyrene's Earring",
-    ear2="Enmerkar Earring",
-    ring1="Tali'ah Ring",
-    ring2="Cath Palug Ring",
-    back=Ready_MAcc_back,
-    waist="Incarnation Sash",
+    ammo="Hesperiidae",               -- [__/__, ___] {__/__, ___ | 10, 10}; Pet attr+10
+    head="Nukumi Cabasset +3",        -- [11/11,  98] {__/__, ___ | 61, __}
+    body="Gleti's Cuirass",           -- [ 9/__, 102] {__/__, ___ | 50, __}
+    hands="Nukumi Manoplas +3",       -- [11/11,  82] {__/__, ___ | 62, __}; Pet TP Bonus+700
+    legs="Nukumi Quijotes +3",        -- [13/13, 130] { 8/ 8, ___ | 63, __}
+    feet="Gleti's Boots",             -- [ 5/__, 112] {__/__,   1 | 50, __}
+    neck="Beastmaster Collar +2",     -- [__/__, ___] {__/__, ___ | 25, __}
+    ear1="Enmerkar Earring",          -- [__/__, ___] { 3/ 3, ___ | 15, __}
+    ear2="Nukumi Earring +1",         -- [__/__, ___] {__/__,   1 | 15, __}
+    ring1="Tali'ah Ring",             -- [__/__, ___] {__/__, ___ |  6, __}
+    ring2="Cath Palug Ring",          -- [ 5/ 5, ___] {__/__, ___ | 12, __}
+    back=gear.BST_Pet_Macc_Cape,      -- [__/__,  20] { 5/ 5, ___ | 30, __}
+    waist="Incarnation Sash",         -- [__/__, ___] {__/__, ___ | 15, __}
+    -- [64 PDT/40 MDT, 544 M.Eva] {Pet: 11 PDT /11 MDT, 2 Lv | 414 Macc, 10 INT}
   }
-  sets.midcast.Pet.Macc.Halfsies = {
-    ammo="Voluspa Tathlum",
-    head=Ready_MAcc_head,
-    body=Ready_MAcc_body,
-    hands=Ready_MAcc_hands,
-    legs=Ready_MAcc_legs,
-    feet=Ready_MAcc_feet,
-    neck="Beastmaster Collar +2",
-    ear1="Kyrene's Earring",
-    ear2="Enmerkar Earring",
-    ring1="Tali'ah Ring",
-    ring2="Cath Palug Ring",
-    back=Ready_MAcc_back,
-    waist="Incarnation Sash",
-  }
+  sets.midcast.Pet.Macc.Halfsies = set_combine(sets.midcast.Pet.Macc, {})
 
   sets.midcast.Pet.Buff = {}
   sets.midcast.Pet.Buff.Halfsies = {}
 
   -- This set is overlaid on top of the other pet midcast sets as appropriate
   sets.midcast.Pet.MultiStrike = {
-    body=Ready_DA_body,
-    hands=Ready_DA_hands,
-    legs=Ready_DA_legs,
-    feet=Ready_DA_feet,
+    legs=gear.Emicho_C_legs,
     neck="Beastmaster Collar +2",
-    ear1="Domesticator's Earring",
-    ear2="Kyrene's Earring",
+    ear2="Nukumi Earring +1",
+    ring2="Cath Palug Ring",
+    waist="Incarnation Sash"
+    
+    -- ear2="Nukumi Earring +2",
   }
 
   -- This set is overlaid on top of the other pet midcast sets as appropriate
@@ -935,6 +900,8 @@ function init_gear_sets()
 
   -- This set is overlaid on top of the other pet midcast sets as appropriate
   sets.midcast.Pet.TPBonus = {
+    main=Ready_Atk_TPBonus_Axe_1,
+    sub=Ready_Atk_TPBonus_Axe_2,
     hands="Nukumi Manoplas +3",
   }
 
@@ -943,31 +910,7 @@ function init_gear_sets()
   ---------------------------------------- Midcast Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
 
-  sets.midcast['Cure'] = {
-    ranged="Neo Animator",            -- __, __, __ [__/__, ___] {__/__, 119}
-    head="Hike Khat +1",              -- __, __, 29 [13/__,  75] { 5/ 5, ___}
-    neck="Incanter's Torque",         -- __, 10, __ [__/__, ___] {__/__, ___}
-    ear1="Enmerkar Earring",          -- __, __, __ [__/__, ___] { 3/ 3, ___}
-    ear2="Mendicant's Earring",       --  5, __, __ [__/__, ___] {__/__, ___}
-    ring1="Gelatinous Ring +1",       -- __, __, __ [ 7/-1, ___] {__/__, ___}
-    ring2="Defending Ring",           -- __, __, __ [10/10, ___] {__/__, ___}
-    waist="Isa Belt",                 -- __, __, __ [__/__, ___] { 3/ 3, ___}
-    -- 5 Cure Potency, 10 Healing Skill, 29 MND [30 PDT/9 MDT, 75 M.Eva] {Pet: 11 PDT/11 MDT, 119 Lv}
-
-    -- body="Vrikodara Jupon",        -- 13, __, 29 [ 3/__,  80] {__/__, ___}
-    -- hands="Weatherspoon Cuffs +1", --  9, __, 33 [__/__,  37] {__/__, ___}
-    -- legs="Gyve Trousers",          -- 10, __, 25 [__/ 2, 107] {__/__, ___}
-    -- feet="Regal Pumps +1",         -- __, 21, 29 [__/__, 107] {__/__, ___}
-    -- back=gear.PUP_Cure_Cape,       -- 10, __, 30 [__/__, ___] { 5/ 5,   1}
-    -- 47 Cure Potency, 31 Healing Skill, 175 MND [33 PDT/11 MDT, 406 M.Eva] {Pet: 16 PDT/16 MDT, 120 Lv}
-  }
-  sets.midcast['Curaga'] = set_combine(sets.midcast['Cure'], {})
-
-  sets.midcast['Refresh'] = {
-    waist="Gishdubar Sash",
-
-    -- back="Grapevine Cape",
-  }
+  sets.midcast.FastRecast = sets.precast.FC
 
 
   ------------------------------------------------------------------------------------------------
@@ -976,85 +919,143 @@ function init_gear_sets()
 
   -- This set is used when both master and pet are idle
   sets.HeavyDef = {
-    ammo="Staunch Tathlum +1",        -- __ [ 3/ 3, ___] {__/__, ___ | __, __}
-    head="Pitre Taj +3",              --  5 [__/__,  63] {__/__, ___ |  5,  5}
-    body="Hizamaru Haramaki +2",      -- 12 [__/__,  69] {__/__, ___ | __, __}
-    hands=gear.Taeon_Pet_DT_hands,    -- __ [__/__,  57] { 4/ 4, ___ |  3, __}; Augs: +20 M.Eva, -4 Pet DT, Pet Regen +3
-    legs="Karagoz Pantaloni +3",      -- __ [12/12, 119] {__/__, ___ | __, __}
-    feet=gear.Nyame_B_feet,           -- __ [ 7/ 7, 150] {__/__, ___ | __, __}
-    neck="Loricate Torque +1",        -- __ [ 6/ 6, ___] {__/__, ___ | __, __}
-    ear1="Enmerkar Earring",          -- __ [__/__, ___] { 3/ 3, ___ | __, __}
-    ear2="Burana Earring",            -- __ [__/__, ___] {__/__, ___ |  2, __}
-    ring1="Gelatinous Ring +1",       -- __ [ 7/-1, ___] {__/__, ___ | __, __}
-    ring2="Defending Ring",           -- __ [10/10, ___] {__/__, ___ | __, __}
-    back=gear.PUP_TP_Cape,            -- __ [__/__, ___] { 5/ 5,   1 | __, __}
-    waist="Moonbow Belt +1",          -- __ [ 6/ 6, ___] {__/__, ___ | __, __}
+    ammo="Staunch Tathlum +1",        -- __ [ 3/ 3, ___] {__/__, ___ | __}
+    head=gear.Nyame_B_head,           -- __ [ 7/ 7, 123] {__/__, ___ | __}
+    body="Gleti's Cuirass",           -- __ [ 9/__, 102] {__/__, ___ | __}
+    hands="Gleti's Gauntlets",        -- __ [ 7/__,  75] { 8/ 8, ___ | __}
+    legs=gear.Nyame_B_legs,           -- __ [ 8/ 8, 150] {__/__, ___ | __}
+    feet="Gleti's Boots",             -- __ [ 5/__, 112] {__/__,   1 | __}
+    neck="Loricate Torque +1",        -- __ [ 6/ 6, ___] {__/__, ___ | __}
+    ear1="Enmerkar Earring",          -- __ [__/__, ___] { 3/ 3, ___ | __}
+    ear2="Nukumi Earring +1",         -- __ [__/__, ___] {__/__,   1 | __}
+    ring1="Gelatinous Ring +1",       -- __ [ 7/-1, ___] {__/__, ___ | __}
+    ring2="Defending Ring",           -- __ [10/10, ___] {__/__, ___ | __}
+    back=gear.BST_Pet_Macc_Cape,      -- __ [__/__,  20] { 5/ 5, ___ | 10}
+    waist="Isa Belt",                 -- __ [__/__, ___] { 3/ 3, ___ |  1}
     -- Traits/Gifts/Merits                                 9/ 9
-    -- 17 Regen [48 PDT/40 MDT, 458 M.Eva] {Pet: 12 PDT/12 MDT, 120 Lv | 10 Regen, 5 Refresh}
+    -- 0 Regen [62 PDT/33 MDT, 582 M.Eva] {Pet: 28 PDT/28 MDT, 2 Lv | 11 Regen}
+
+    -- legs="Nukumi Quijotes +3",     -- __ [13/13, 130] { 8/ 8, ___ | __}
+    -- 0 Regen [67 PDT/38 MDT, 562 M.Eva] {Pet: 36 PDT/36 MDT, 2 Lv | 11 Regen}
   }
 
   sets.defense.PDT = set_combine(sets.HeavyDef, {})
   sets.defense.MDT = set_combine(sets.HeavyDef, {})
 
+  -- Reach 50 PDT/21 MDT in as few pieces as possible
+  sets.EfficientDT = {
+    -- head="Nukumi Cabasset +3",     -- __ [11/11,  98] {__/__, ___ | __}
+    -- hands="Nukumi Manoplas +3",    -- __ [11/11, 109] {__/__, ___ | __}
+    -- legs="Nukumi Quijotes +3",     -- __ [13/13, 130] { 8/ 8, ___ | __}
+    ring1="Gelatinous Ring +1",       -- __ [ 7/-1, ___] {__/__, ___ | __}
+    ring2="Defending Ring",           -- __ [10/10, ___] {__/__, ___ | __}
+    -- 0 Regen [52 PDT/44 MDT, 337 M.Eva] {Pet: 8 PDT/8 MDT, 0 Lv | 0 Regen}
+  }
 
   ------------------------------------------------------------------------------------------------
   ----------------------------------------- Idle Sets --------------------------------------------
   ------------------------------------------------------------------------------------------------
 
+  sets.latent_regain = {
+    head="Valorous Mask",
+    body="Gleti's Cuirass",
+    hands="Gleti's Gauntlets",
+    legs="Gleti's Breeches",
+    feet="Gleti's Boots",
+  }
+  sets.latent_regen = {
+    head="Gleti's Mask",
+    neck="Bathy Choker +1",
+    ear1="Infused Earring",
+    ring1="Chirich Ring +1",
+    ring2="Chirich Ring +1",
+  }
   sets.latent_refresh = {
-    head=gear.Herc_Refresh_head,
-    feet=gear.Herc_Refresh_feet,
+    ring1="Stikini Ring +1",
+    -- ring2="Stikini Ring +1",
   }
 
   sets.resting = {}
 
   sets.idle = set_combine(sets.HeavyDef, {})
-
+  sets.idle.Regain = set_combine(sets.idle, sets.latent_regain)
+  sets.idle.Regen = set_combine(sets.idle, sets.latent_regen)
   sets.idle.Refresh = set_combine(sets.idle, sets.latent_refresh)
+  sets.idle.Regain.Regen = set_combine(sets.idle, sets.latent_regain, sets.latent_regen)
+  sets.idle.Regain.Refresh = set_combine(sets.idle, sets.latent_regain, sets.latent_refresh)
+  sets.idle.Regen.Refresh = set_combine(sets.idle, sets.latent_regen, sets.latent_refresh)
+  sets.idle.Regain.Regen.Refresh = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh)
+
+  sets.idle.DT = set_combine(sets.HeavyDef, {})
+  sets.idle.DT.Regain = set_combine(sets.HeavyDef, sets.idle.Regain, sets.EfficientDT)
+  sets.idle.DT.Regen = set_combine(sets.HeavyDef, sets.idle.Regen, sets.EfficientDT)
+  sets.idle.DT.Refresh = set_combine(sets.HeavyDef, sets.idle.Refresh, sets.EfficientDT)
+  sets.idle.DT.Regain.Regen = set_combine(sets.HeavyDef, sets.idle.Regain.Regen, sets.EfficientDT)
+  sets.idle.DT.Regain.Refresh = set_combine(sets.HeavyDef, sets.idle.Regain.Refresh, sets.EfficientDT)
+  sets.idle.DT.Regen.Refresh = set_combine(sets.HeavyDef, sets.idle.Regen.Refresh, sets.EfficientDT)
+  sets.idle.DT.Regain.Regen.Refresh = set_combine(sets.HeavyDef, sets.idle.Regain.Regen.Refresh, sets.EfficientDT)
+
+  sets.idle.RegainOnly = {
+    ammo="Staunch Tathlum +1",        --  3, __ [ 3/ 3, ___] {__/__, ___ | __}
+    head=gear.Valorous_DT_head,       --  3, __ [ 4/ 4,  48] {__/__, ___ | __}
+    body="Gleti's Cuirass",           --  3, __ [ 9/__, 102] {__/__, ___ | __}
+    hands="Gleti's Gauntlets",        --  2, __ [ 7/__,  75] { 8/ 8, ___ | __}
+    legs="Gleti's Breeches",          --  3, __ [ 8/__, 112] {__/__, ___ | __}
+    feet="Gleti's Boots",             --  2, __ [ 5/__, 112] {__/__,   1 | __}
+    neck="Loricate Torque +1",        -- __, __ [ 6/ 6, ___] {__/__, ___ | __}
+    ear1="Enmerkar Earring",          -- __, __ [__/__, ___] { 3/ 3, ___ | __}
+    ear2="Nukumi Earring +1",         -- __, __ [__/__, ___] {__/__,   1 | __}
+    ring1="Chirich Ring +1",          -- __,  2 [__/__, ___] {__/__, ___ | __}
+    ring2="Defending Ring",           -- __, __ [10/10, ___] {__/__, ___ | __}
+    back=gear.BST_Pet_Macc_Cape,      -- __, __ [__/__,  20] { 5/ 5, ___ | 10}
+    waist="Isa Belt",                 -- __, __ [__/__, ___] { 3/ 3, ___ |  1}
+    -- Traits/Gifts/Merits                                     9/ 9
+    -- 16 Regain, 2 Regen [48 PDT/19 MDT, 469 M.Eva] {Pet: 28 PDT/28 MDT, 2 Lv | 11 Regen}
+  }
 
   sets.idle.Weak = set_combine(sets.HeavyDef, {})
 
   -- idle.PetEngaged sets is when master is idle but pet is engaged
   -- It is assumed that in this situation, master is standing out of range
   -- so no emphasis is placed on master survivability stats.
-  sets.idle.PetEngaged = {}
+  sets.idle.PetEngaged = {} -- DO NOT MODIFY
   sets.idle.PetEngaged.Tank = {
-    range="Neo Animator",             -- [__/__, ___] {__/__, 119 | __, __, 30/30, __/__, __, __, __}
-    head=gear.Anwig_Salade,           -- [__/__, ___] {10/10, ___ | __, __, __/__, __/__, __, __, __}
-    body="Heyoka Harness +1",         -- [__/__, 117] {__/__, ___ | __, __, 52/52, __/__,  4, __, 12}
-    hands=gear.Taeon_Pet_DT_hands,    -- [__/__,  57] { 4/ 4, ___ | __, __, __/__, __/__, __,  3, __}; Augs: +20 M.Eva, -4 Pet DT, Pet Regen +3
-    legs="Heyoka Subligar +1",        -- [__/__, 139] {__/__, ___ | __, __, 51/51, __/__,  9, __, 11}
-    feet="Mpaca's Boots",             -- [ 6/__,  96] {__/__,   1 | __, __, 50/50, __/__, __, __, __}
-    neck="Shulmanu Collar",           -- [__/__, ___] {__/__, ___ |  5, __, 20/__, 20/__, __, __, __}
-    ear1="Enmerkar Earring",          -- [__/__, ___] { 3/ 3, ___ | __,  8, 15/__, __/__, __, __, __}
-    ear2="Karagoz Earring +1",        -- [__/__, ___] {__/__,   1 | __, __, __/__, __/__, __, __, __}
-    ring1="Cath Palug Ring",          -- [ 5/ 5, ___] {__/__, ___ |  5, __, 12/12, __/__, __, __, __}
-    ring2="Varar Ring +1",            -- [__/__, ___] {__/__, ___ | __,  6, 10/10, __/__, __, __, __}
-    back=gear.PUP_Pet_Tank_Cape,      -- [__/__,  20] { 5/ 5,   1 | __, __, 30/30, 20/20, __, 10, __}
-    waist="Klouskap Sash +1",         -- [__/__, ___] {__/__, ___ | __, __, 20/20, __/__,  9, __, __}
-    -- [11 PDT/5 MDT, 429 M.Eva] {Pet: 22 PDT /22 MDT, 122 Lv | 10 DA, 14 STP, 290 Acc/255 Racc, 40 Att/20 Ratt, 22 Haste, 13 Regen, 23 Enmity}
-    
-    -- ear2="Karagoz Earring +2",     -- [__/__, ___] {__/__,   1 | __, __, __/__, __/__, __, __, __}
-    -- [11 PDT/5 MDT, 429 M.Eva] {Pet: 22 PDT /22 MDT, 122 Lv | 10 DA, 14 STP, 290 Acc/255 Racc, 40 Att/20 Ratt, 22 Haste, 13 Regen, 23 Enmity}
+    ammo="Hesperiidae",               -- [__/__, ___] {__/__, ___ | __, __, 10/10, 15/__, __, __}
+    head="Tali'ah Turban +2",         -- [__/__,  53] {__/__, ___ | __,  7, 42/42, __/__, __, __}
+    body="Ankusa Jackcoat +3",        -- [__/__,  84] {__/__, ___ |  5, __, __/__, __/__,  7, __}
+    hands="Gleti's Gauntlets",        -- [ 7/__,  75] { 8/ 8, ___ | __, __, 50/50, __/__, __, __}
+    legs="Nukumi Quijotes +3",        -- [13/13, 130] { 8/ 8, ___ | __, __, 63/63, __/__, __, __}
+    feet="Gleti's Boots",             -- [ 5/__, 112] {__/__,   1 | __, __, 50/50, __/__, __, __}
+    neck="Beastmaster Collar +2",     -- [__/__, ___] {__/__, ___ | 25, __, 25/25, __/__, __, __}
+    ear1="Enmerkar Earring",          -- [__/__, ___] { 3/ 3, ___ | __,  8, 15/__, __/__, __, __}
+    ear2="Nukumi Earring +1",         -- [__/__, ___] {__/__,   1 |  7, __, __/__, __/__, __, __}
+    ring1="Cath Palug Ring",          -- [ 5/ 5, ___] {__/__, ___ |  5, __, 12/12, __/__, __, __}
+    ring2="Varar Ring +1",            -- [__/__, ___] {__/__, ___ | __,  6, 10/10, __/__, __, __}
+    back=gear.BST_Pet_TP_Cape,        -- [__/__, ___] { 5/ 5, ___ | __, __, 30/30, 20/20, 10, __}
+    waist="Klouskap Sash +1",         -- [__/__, ___] {__/__, ___ | __, __, 20/20, __/__,  9, __}
+    -- [30 PDT/18 MDT, 454 M.Eva] {Pet: 24 PDT/24 MDT, 2 Lv | 42 DA, 21 STP, 327 Acc/312 Racc, 35 Att/20 Ratt, 26 Haste, 0 Regen}
+
+    -- ear2="Nukumi Earring +2",      -- [__/__, ___] {__/__,   1 | 10, __, __/__, __/__, __, __}
+    -- [30 PDT/18 MDT, 454 M.Eva] {Pet: 24 PDT/24 MDT, 2 Lv | 45 DA, 21 STP, 327 Acc/312 Racc, 35 Att/20 Ratt, 26 Haste, 0 Regen}
   }
   sets.idle.PetEngaged.DD = {
-    range="Neo Animator",             -- [__/__, ___] {__/__, 119 | __, __, 30/30, __/__, __, __, __}
-    head="Pitre Taj +3",              -- [__/__,  63] {__/__, ___ | __, __, 37/37, 57/57, __,  5, __}
-    body="Pitre Tobe +3",             -- [__/__,  73] {__/__, ___ | __, 15, 50/50, 60/60, __, __, __}
-    hands="Karagoz Guanti +3",        -- [10/10,  82] {__/__, ___ | __, __, 62/62, __/__, __, __, __}; AGI+26
-    legs="Karagoz Pantaloni +3",      -- [12/12, 119] {__/__, ___ | __, __, 63/63, __/__, __, __, __}; Skills+33
-    feet="Mpaca's Boots",             -- [ 6/__,  96] {__/__,   1 | __, __, 50/50, __/__, __, __, __}
-    neck="Empath Necklace",           -- [__/__, ___] {__/__, ___ | __, __, 10/10,  5/10, __,  1, __}
-    ear1="Enmerkar Earring",          -- [__/__, ___] { 3/ 3, ___ | __,  8, 15/__, __/__, __, __, __}
-    ear2="Karagoz Earring +1",        -- [__/__, ___] {__/__,   1 | __, __, __/__, __/__, __, __, __}
-    ring1="Cath Palug Ring",          -- [ 5/ 5, ___] {__/__, ___ |  5, __, 12/12, __/__, __, __, __}
-    ring2="Varar Ring +1",            -- [__/__, ___] {__/__, ___ | __,  6, 10/10, __/__, __, __, __}
-    back=gear.PUP_Pet_Tank_Cape,      -- [__/__,  20] { 5/ 5,   1 | __, __, 30/30, 20/20, __, 10, __}
-    waist="Klouskap Sash +1",         -- [__/__, ___] {__/__, ___ | __, __, 20/20, __/__,  9, __, __}
-    -- [33 PDT/27 MDT, 453 M.Eva] {Pet: 8 PDT /8 MDT, 122 Lv | 5 DA, 29 STP, 389 Acc/374 Racc, 142 Att/147 Ratt, 9 Haste, 16 Regen, 0 Enmity}
-    
-    -- ear2="Karagoz Earring +2",     -- [__/__, ___] {__/__,   1 | __, __, __/__, __/__, __, __, __}
-    -- [33 PDT/27 MDT, 453 M.Eva] {Pet: 8 PDT /8 MDT, 122 Lv | 5 DA, 29 STP, 389 Acc/374 Racc, 142 Att/147 Ratt, 9 Haste, 16 Regen, 0 Enmity}
+    ammo="Hesperiidae",               -- [__/__, ___] {__/__, ___ | __, __, 10/10, 15/__, __, __}
+    head="Tali'ah Turban +2",         -- [__/__,  53] {__/__, ___ | __,  7, 42/42, __/__, __, __}
+    body="Ankusa Jackcoat +3",        -- [__/__,  84] {__/__, ___ |  5, __, __/__, __/__,  7, __}
+    hands=gear.Emicho_C_hands,        -- [__/__,  32] {__/__, ___ |  4,  7, 20/__, 55/__, __, __}
+    legs="Ankusa Trousers +3",        -- [__/__,  89] {__/__, ___ | __,  7, __/__, __/__,  6, __}
+    feet="Gleti's Boots",             -- [ 5/__, 112] {__/__,   1 | __, __, 50/50, __/__, __, __}
+    neck="Beastmaster Collar +2",     -- [__/__, ___] {__/__, ___ | 25, __, 25/25, __/__, __, __}
+    ear1="Enmerkar Earring",          -- [__/__, ___] { 3/ 3, ___ | __,  8, 15/__, __/__, __, __}
+    ear2="Nukumi Earring +1",         -- [__/__, ___] {__/__,   1 |  7, __, __/__, __/__, __, __}
+    ring1="Cath Palug Ring",          -- [ 5/ 5, ___] {__/__, ___ |  5, __, 12/12, __/__, __, __}
+    ring2="Varar Ring +1",            -- [__/__, ___] {__/__, ___ | __,  6, 10/10, __/__, __, __}
+    back=gear.BST_Pet_TP_Cape,        -- [__/__, ___] { 5/ 5, ___ | __, __, 30/30, 20/20, 10, __}
+    waist="Incarnation Sash",         -- [__/__, ___] {__/__, ___ |  4, __, 15/15, __/__, __, __}
+    -- [10 PDT/5 MDT, 370 M.Eva] {Pet: 8 PDT/8 MDT, 1 Lv | 50 DA, 35 STP, 229 Acc/194 Racc, 90 Att/20 Ratt, 23 Haste, 0 Regen}
+
+    -- ear2="Nukumi Earring +2",      -- [__/__, ___] {__/__,   1 | 10, __, __/__, __/__, __, __}
+    -- [10 PDT/5 MDT, 370 M.Eva] {Pet: 8 PDT/8 MDT, 1 Lv | 53 DA, 35 STP, 229 Acc/194 Racc, 90 Att/20 Ratt, 23 Haste, 0 Regen}
   }
 
 
@@ -1065,28 +1066,25 @@ function init_gear_sets()
 	--------------------- When master is engaged in Master hybrid mode ---------------------
   -- Almost entirely master-focused stats
   sets.engaged = {
-    range="Coiste Bodhar",            --  3, __ < 3, __, __> [__/__, ___] {__/__, ___ | __, __, __/__, __/__, __, __, __}
-    head="Malignance Chapeau",
-    body="Malignance Tabard",
-    hands="Gleti's Gauntlets",
-    legs="Malignance Tights",         -- 10, 50 <__, __, __> [ 7/ 7, 150] {__/__, ___ | __, __, __/__, __/__, __, __, __}
-    feet="Malignance Boots",
-    neck="Anu Torque",
-    ear1="Dedition Earring",
-    ear2="Sherida Earring",
-    ring1="Gere Ring",
-    ring2="Moonlight Ring",
-    back=gear.BST_TP_Cape,            -- 10, 20 <__, __, __> [__/__, ___] { 5/ 5,   1 | __, __, __/__, __/__, __, __, __}
-    waist="Reiki Yotai",
-    -- 48 STP, 354 Acc <14 DA, 18 TA, 3 QA> [51 PDT/28 MDT, 483 M.Eva] {Pet: 5 PDT /5 MDT, 122 Lv | 10 DA, 0 STP, 274 Acc/254 Racc, 20 Att/0 Ratt, 0 Haste, 0 Regen, 0 Enmity}
+    ammo="Coiste Bodhar",             -- __,  3, __ < 3, __, __> [__/__, ___] {__/__, ___ | __, __, __/__, __/__, __, __}
+    head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123] {__/__, ___ | __, __, __/__, __/__, __, __}
+    body="Gleti's Cuirass",           -- __, __, 55 <10, __, __> [ 9/__, 102] {__/__, ___ | __, __, 50/50, __/__, __, __}
+    hands="Gleti's Gauntlets",        -- __,  8, 55 <__, __, __> [ 7/__,  75] { 8/ 8, ___ | __, __, 50/50, __/__, __, __}
+    legs="Malignance Tights",         -- __, 10, 50 <__, __, __> [ 7/ 7, 150] {__/__, ___ | __, __, __/__, __/__, __, __}
+    feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150] {__/__, ___ | __, __, __/__, __/__, __, __}
+    neck="Ainia Collar",              -- __,  8,-10 <__, __, __> [__/__, ___] {__/__, ___ | __, __, __/__, __/__, __, __}
+    ear1="Dedition Earring",          -- __,  8,-10 <__, __, __> [__/__, ___] {__/__, ___ | __, __, __/__, __/__, __, __}
+    ear2="Sherida Earring",           -- __,  5, __ < 5, __, __> [__/__, ___] {__/__, ___ | __, __, __/__, __/__, __, __}
+    ring1="Gere Ring",                -- __, __, __ <__,  5, __> [__/__, ___] {__/__, ___ | __, __, __/__, __/__, __, __}
+    ring2="Moonlight Ring",           -- __,  5,  8 <__, __, __> [ 5/ 5, ___] {__/__, ___ | __, __, __/__, __/__, __, __}
+    back=gear.BST_TP_Cape,            -- __, 10, 20 <__, __, __> [10/__, ___] {__/__,   1 | __, __, __/__, __/__, __, __}
+    waist="Sailfi Belt +1",           -- __, __, __ < 5,  2, __> [__/__, ___] {__/__, ___ | __, __, __/__, __/__, __, __}
+    -- 0 DW, 74 STP, 268 Acc <23 DA, 7 TA, 0 QA> [48 PDT/22 MDT, 600 M.Eva] {Pet: 8 PDT/8 MDT, 1 Lv | 0 DA, 0 STP, 100 Acc/100 Racc, 0 Att/0 Ratt, 0 Haste, 0 Regen}
   }
   sets.engaged.Acc = set_combine(sets.engaged, {
-    neck="Puppetmaster's Collar +1",  -- __, 25 <__, __, __> [__/__, ___] {__/__, ___}
-    ring1="Chirich Ring +1",          --  6, 10 <__, __, __> [__/__, ___] {__/__, ___}
-    ring2="Chirich Ring +1",          --  6, 10 <__, __, __> [__/__, ___] {__/__, ___}
-    
-    -- head="Karagoz Cappello +3",       -- __, 61 < 5, __, __> [__/__,  98] {__/__, ___}; h2h skill+19
-    -- neck="Puppetmaster's Collar +2",  -- __, 30 <__, __, __> [__/__, ___] {__/__, ___}
+    neck="Beastmaster Collar +2",     -- __, __, 25 <__, __, __> [__/__, ___] {__/__, ___ | __, __, __/__, __/__, __, __}
+    ear1="Telos Earring",             -- __,  5, 10 < 1, __, __> [__/__, ___] {__/__, ___ | __, __, __/__, __/__, __, __}
+    ring1="Moonlight Ring",           -- __,  5,  8 <__, __, __> [ 5/ 5, ___] {__/__, ___ | __, __, __/__, __/__, __, __}
   })
 
 
@@ -1094,87 +1092,84 @@ function init_gear_sets()
   -- These will be similar to the idle.PetEngaged modes, but put a little more
   -- emphasis on master survivability.
   sets.engaged.PetTank = {
-    range="Neo Animator",             -- __, 10 <__, __, __> [__/__, ___] {__/__, 119 | __, __, 30/30, __/__, __, __, __}
-    head="Hike Khat +1",              -- __, __ <__, __, __> [13/__,  75] { 5/ 5, ___ | __, __, __/__, __/__, __, __, __}
-    body=gear.Taeon_Pet_DT_body,      -- __, __ <__, __, __> [__/__,  84] { 4/ 4, ___ |  5, __, __/__, __/__, __, __, __}; Augs: +20 M.Eva, -4 Pet DT, Pet DA+5
-    hands="Karagoz Guanti +3",        -- 11, 62 <__, __, __> [10/10,  82] {__/__, ___ | __, __, 62/62, __/__, __, __, __}
-    legs="Heyoka Subligar +1",        -- __, 51 <__, __, __> [__/__, 139] {__/__, ___ | __, __, 51/51, __/__,  9, __, 11}
-    feet="Mpaca's Boots",             -- __, 55 <__,  3, __> [ 6/__,  96] {__/__,   1 | __, __, 50/50, __/__, __, __, __}
-    neck="Loricate Torque +1",        -- __, __ <__, __, __> [ 6/ 6, ___] {__/__, ___ | __, __, __/__, __/__, __, __, __}
-    ear1="Enmerkar Earring",          -- __, __ <__, __, __> [__/__, ___] { 3/ 3, ___ | __,  8, 15/__, __/__, __, __, __}
-    ear2="Karagoz Earring +1",        --  4, 12 <__, __, __> [__/__, ___] {__/__,   1 | __, __, __/__, __/__, __, __, __}
-    ring1="Cath Palug Ring",          -- __, __ <__, __, __> [ 5/ 5, ___] {__/__, ___ |  5, __, 12/12, __/__, __, __, __}
-    ring2="Defending Ring",           -- __, __ <__, __, __> [10/10, ___] {__/__, ___ | __, __, __/__, __/__, __, __, __}
-    back=gear.PUP_Pet_Tank_Cape,      -- __, __ <__, __, __> [__/__,  20] { 5/ 5,   1 | __, __, 30/30, 20/20, __, 10, __}
-    waist="Klouskap Sash +1",         -- __, 20 <__, __, __> [__/__, ___] {__/__, ___ | __, __, 20/20, __/__,  9, __, __}
-    -- 15 STP, 210 Acc <0 DA, 3 TA, 0 QA> [50 PDT/31 MDT, 490 M.Eva] {Pet: 17 PDT /17 MDT, 122 Lv | 10 DA, 8 STP, 270 Acc/255 Racc, 20 Att/20 Ratt, 18 Haste, 10 Regen, 11 Enmity}
-    
-    -- ear2="Karagoz Earring +2",     --  8, 20 <__, __, __> [__/__, ___] {__/__,   1 | __, __, __/__, __/__, __, __, __}
-    -- 19 STP, 218 Acc <0 DA, 3 TA, 0 QA> [50 PDT/31 MDT, 496 M.Eva] {Pet: 17 PDT /17 MDT, 122 Lv | 10 DA, 8 STP, 270 Acc/255 Racc, 20 Att/20 Ratt, 18 Haste, 10 Regen, 11 Enmity}
+    ammo="Hesperiidae",               -- __, __, 10 <__, __, __> [__/__, ___] {__/__, ___ | __, __, 10/10, 15/__, __, __}
+    head="Nukumi Cabasset +3",        -- __, __, 61 <__, __, __> [11/11,  98] {__/__, ___ | __, __, 61/61, __/__, __, __}
+    body="Totemic Jackcoat +3",       -- __, __, 50 <__, __, __> [__/__,  84] {10/10, ___ | __, __, __/__, __/__, __, __}
+    hands="Gleti's Gauntlets",        -- __,  8, 55 <__, __, __> [ 7/__,  75] { 8/ 8, ___ | __, __, 50/50, __/__, __, __}
+    legs="Nukumi Quijotes +3",        -- __, __, 63 <__, __, __> [13/13, 130] { 8/ 8, ___ | __, __, 63/63, __/__, __, __}
+    feet="Gleti's Boots",             -- __, __, 50 <__, __, __> [ 5/__, 112] {__/__,   1 | __, __, 50/50, __/__, __, __}
+    neck="Beastmaster Collar +2",     -- __, __, 25 <__, __, __> [__/__, ___] {__/__, ___ | 25, __, 25/25, __/__, __, __}
+    ear1="Enmerkar Earring",          -- __, __, __ <__, __, __> [__/__, ___] { 3/ 3, ___ | __,  8, 15/__, __/__, __, __}
+    ear2="Nukumi Earring +1",         -- __, __, 15 <__, __, __> [__/__, ___] {__/__,   1 |  7, __, __/__, __/__, __, __}
+    ring1="Cath Palug Ring",          -- __, __, __ <__, __, __> [ 5/ 5, ___] {__/__, ___ |  5, __, 12/12, __/__, __, __}
+    ring2="Varar Ring +1",            -- __, __, 10 <__, __, __> [__/__, ___] {__/__, ___ | __,  6, 10/10, __/__, __, __}
+    back=gear.BST_Pet_TP_Cape,        -- __, __, __ <__, __, __> [__/__, ___] { 5/ 5, ___ | __, __, 30/30, 20/20, 10, __}
+    waist="Isa Belt",                 -- __, __, __ <__, __, __> [__/__, ___] { 3/ 3, ___ | __, __, __/__, __/__, __,  1}
+    -- 0 DW, 8 STP, 339 Acc <0 DA, 0 TA, 0 QA> [41 PDT/29 MDT, 499 M.Eva] {Pet: 37 PDT/37 MDT, 2 Lv | 37 DA, 14 STP, 326 Acc/311 Racc, 35 Att/20 Ratt, 10 Haste, 1 Regen}
+
+    -- ear2="Nukumi Earring +2",      -- __, __, 20 <__, __, __> [__/__, ___] {__/__,   1 | 10, __, __/__, __/__, __, __}
+    -- 0 DW, 8 STP, 344 Acc <0 DA, 0 TA, 0 QA> [41 PDT/29 MDT, 499 M.Eva] {Pet: 37 PDT/37 MDT, 2 Lv | 40 DA, 14 STP, 326 Acc/311 Racc, 35 Att/20 Ratt, 10 Haste, 1 Regen}
   }
   sets.engaged.PetTank.Acc = set_combine(sets.engaged.PetTank, {})
+
   sets.engaged.PetDD = {
-    range="Neo Animator",             -- __, 10 <__, __, __> [__/__, ___] {__/__, 119 | __, __, 30/30, __/__, __, __, __}
-    head="Pitre Taj +3",              -- __, 37 <__, __, __> [__/__,  63] {__/__, ___ | __, __, 37/37, 57/57, __,  5, __}
-    body="Pitre Tobe +3",             -- __, 50 <__, __, __> [__/__,  73] {__/__, ___ | __, 15, 50/50, 60/60, __, __, __}
-    hands="Karagoz Guanti +3",        -- 11, 62 <__, __, __> [10/10,  82] {__/__, ___ | __, __, 62/62, __/__, __, __, __}
-    legs="Karagoz Pantaloni +3",      -- __, 63 <__, __, __> [12/12, 119] {__/__, ___ | __, __, 63/63, __/__, __, __, __}; Skills+33
-    feet="Mpaca's Boots",             -- __, 55 <__,  3, __> [ 6/__,  96] {__/__,   1 | __, __, 50/50, __/__, __, __, __}
-    neck="Empath Necklace",           -- __, 10 <__, __, __> [__/__, ___] {__/__, ___ | __, __, 10/10,  5/10, __,  1, __}
-    ear1="Enmerkar Earring",          -- __, __ <__, __, __> [__/__, ___] { 3/ 3, ___ | __,  8, 15/__, __/__, __, __, __}
-    ear2="Karagoz Earring +1",        --  4, 12 <__, __, __> [__/__, ___] {__/__,   1 | __, __, __/__, __/__, __, __, __}
-    ring1="Cath Palug Ring",          -- __, __ <__, __, __> [ 5/ 5, ___] {__/__, ___ |  5, __, 12/12, __/__, __, __, __}
-    ring2="Defending Ring",           -- __, __ <__, __, __> [10/10, ___] {__/__, ___ | __, __, __/__, __/__, __, __, __}
-    back=gear.PUP_Pet_Tank_Cape,      -- __, __ <__, __, __> [__/__,  20] { 5/ 5,   1 | __, __, 30/30, 20/20, __, 10, __}
-    waist="Moonbow Belt +1",          -- __, __ <__,  8, __> [ 6/ 6, ___] {__/__, ___ | __, __, __/__, __/__, __, __, __}
-    -- 15 STP, 299 Acc <0 DA, 11 TA, 0 QA> [49 PDT/43 MDT, 453 M.Eva] {Pet: 8 PDT /8 MDT, 122 Lv | 5 DA, 23 STP, 359 Acc/344 Racc, 142 Att/147 Ratt, 0 Haste, 16 Regen, 0 Enmity}
-    
-    -- ear2="Karagoz Earring +2",     --  8, 20 <__, __, __> [__/__, ___] {__/__,   1 | __, __, __/__, __/__, __, __, __}
-    -- 19 STP, 307 Acc <0 DA, 11 TA, 0 QA> [49 PDT/43 MDT, 453 M.Eva] {Pet: 8 PDT /8 MDT, 122 Lv | 5 DA, 23 STP, 359 Acc/344 Racc, 142 Att/147 Ratt, 0 Haste, 16 Regen, 0 Enmity}
+    ammo="Hesperiidae",               -- __, __, 10 <__, __, __> [__/__, ___] {__/__, ___ | __, __, 10/10, 15/__, __, __}
+    head="Nukumi Cabasset +3",        -- __, __, 61 <__, __, __> [11/11,  98] {__/__, ___ | __, __, 61/61, __/__, __, __}
+    body="Ankusa Jackcoat +3",        -- __, __, 40 <__, __, __> [__/__,  84] {__/__, ___ |  5, __, __/__, __/__,  7, __}
+    hands=gear.Emicho_C_hands,        -- __,  7, 37 <__, __, __> [__/__,  32] {__/__, ___ |  4,  7, 20/__, 55/__, __, __}
+    legs="Nukumi Quijotes +3",        -- __, __, 63 <__, __, __> [13/13, 130] { 8/ 8, ___ | __, __, 63/63, __/__, __, __}
+    feet="Gleti's Boots",             -- __, __, 50 <__, __, __> [ 5/__, 112] {__/__,   1 | __, __, 50/50, __/__, __, __}
+    neck="Beastmaster Collar +2",     -- __, __, 25 <__, __, __> [__/__, ___] {__/__, ___ | 25, __, 25/25, __/__, __, __}
+    ear1="Enmerkar Earring",          -- __, __, __ <__, __, __> [__/__, ___] { 3/ 3, ___ | __,  8, 15/__, __/__, __, __}
+    ear2="Nukumi Earring +1",         -- __, __, 15 <__, __, __> [__/__, ___] {__/__,   1 |  7, __, __/__, __/__, __, __}
+    ring1="Cath Palug Ring",          -- __, __, __ <__, __, __> [ 5/ 5, ___] {__/__, ___ |  5, __, 12/12, __/__, __, __}
+    ring2="Varar Ring +1",            -- __, __, 10 <__, __, __> [__/__, ___] {__/__, ___ | __,  6, 10/10, __/__, __, __}
+    back=gear.BST_Pet_TP_Cape,        -- __, __, __ <__, __, __> [__/__, ___] { 5/ 5, ___ | __, __, 30/30, 20/20, 10, __}
+    waist="Klouskap Sash +1",         -- __, __, 20 <__, __, __> [__/__, ___] {__/__, ___ | __, __, 20/20, __/__,  9, __}
+    -- 0 DW, 7 STP, 331 Acc <0 DA, 0 TA, 0 QA> [34 PDT/29 MDT, 456 M.Eva] {Pet: 16 PDT /16 MDT, 2 Lv | 46 DA, 21 STP, 316 Acc/281 Racc, 90 Att/20 Ratt, 26 Haste, 0 Regen}
+
+    -- ear2="Nukumi Earring +2",      -- __, __, 20 <__, __, __> [__/__, ___] {__/__,   1 | 10, __, __/__, __/__, __, __}
+    -- 0 DW, 7 STP, 336 Acc <0 DA, 0 TA, 0 QA> [34 PDT/29 MDT, 456 M.Eva] {Pet: 16 PDT /16 MDT, 2 Lv | 49 DA, 21 STP, 316 Acc/281 Racc, 90 Att/20 Ratt, 26 Haste, 0 Regen}
   }
   sets.engaged.PetDD.Acc = set_combine(sets.engaged.PetDD, {})
 
 
+  -- TODO
 	--------------------- When master is engaged in Halfsies hybrid mode ---------------------
   -- About equal focus on stats for master and pet
   sets.engaged.HalfsiesTank = {
-    range="Neo Animator",             -- __, 10 <__, __, __> [__/__, ___] {__/__, 119 | __, __, 30/30, __/__, __, __, __}
-    head="Mpaca's Cap",               -- __, 55 < 5,  3, __> [ 7/__,  69] {__/__, ___ | __, __, 50/50, __/__, __, __, __}
-    body="Mpaca's Doublet",           --  8, 55 <__,  4, __> [10/__,  86] {__/__, ___ | __, __, 50/50, __/__, __, __, __}
-    hands="Karagoz Guanti +3",        -- 11, 62 <__, __, __> [10/10,  82] {__/__, ___ | __, __, 62/62, __/__, __, __, __}
-    legs="Malignance Tights",         -- 10, 50 <__, __, __> [ 7/ 7, 150] {__/__, ___ | __, __, __/__, __/__, __, __, __}
-    feet="Mpaca's Boots",             -- __, 55 <__,  3, __> [ 6/__,  96] {__/__,   1 | __, __, 50/50, __/__, __, __, __}
-    neck="Shulmanu Collar",           -- __, 20 < 3, __, __> [__/__, ___] {__/__, ___ |  5, __, 20/__, 20/__, __, __, __}
-    ear1="Sroda Earring",             -- __, __ < 7, __, __> [__/__, -10] {__/__, ___ | __, __, __/__, __/__, __, __, __}; Melee DMG+10
-    ear2="Karagoz Earring +1",        --  4, 12 <__, __, __> [__/__, ___] {__/__,   1 | __, __, __/__, __/__, __, __, __}
-    ring1="Cath Palug Ring",          -- __, __ <__, __, __> [ 5/ 5, ___] {__/__, ___ |  5, __, 12/12, __/__, __, __, __}
-    ring2="Niqmaddu Ring",            -- __, __ <__, __,  3> [__/__, ___] {__/__, ___ | __, __, __/__, __/__, __, __, __}
-    back=gear.PUP_Pet_Tank_Cape,      -- __, __ <__, __, __> [__/__,  20] { 5/ 5,   1 | __, __, 30/30, 20/20, __, 10, __}
-    waist="Moonbow Belt +1",          -- __, __ <__,  8, __> [ 6/ 6, ___] {__/__, ___ | __, __, __/__, __/__, __, __, __}
-    -- 33 STP, 319 Acc <15 DA, 18 TA, 3 QA> [51 PDT/28 MDT, 493 M.Eva] {Pet: 5 PDT /5 MDT, 122 Lv | 10 DA, 0 STP, 304 Acc/284 Racc, 40 Att/20 Ratt, 0 Haste, 10 Regen, 0 Enmity}
-    
-    -- ear2="Karagoz Earring +2",     --  8, 20 <__, __, __> [__/__, ___] {__/__,   1 | __, __, __/__, __/__, __, __, __}
-    -- 37 STP, 327 Acc <15 DA, 18 TA, 3 QA> [51 PDT/28 MDT, 493 M.Eva] {Pet: 5 PDT /5 MDT, 122 Lv | 10 DA, 0 STP, 304 Acc/284 Racc, 40 Att/20 Ratt, 0 Haste, 10 Regen, 0 Enmity}
+    ammo="Coiste Bodhar",             -- __,  3, __ < 3, __, __> [__/__, ___] {__/__, ___ | __, __, __/__, __/__, __, __}
+    head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123] {__/__, ___ | __, __, __/__, __/__, __, __}
+    body="Gleti's Cuirass",           -- __, __, 55 <10, __, __> [ 9/__, 102] {__/__, ___ | __, __, 50/50, __/__, __, __}
+    hands="Gleti's Gauntlets",        -- __,  8, 55 <__, __, __> [ 7/__,  75] { 8/ 8, ___ | __, __, 50/50, __/__, __, __}
+    legs="Nukumi Quijotes +3",        -- __, __, 63 <__, __, __> [13/13, 130] { 8/ 8, ___ | __, __, 63/63, __/__, __, __}
+    feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150] {__/__, ___ | __, __, __/__, __/__, __, __}
+    neck="Beastmaster Collar +2",     -- __, __, 25 <__, __, __> [__/__, ___] {__/__, ___ | 25, __, 25/25, __/__, __, __}
+    ear1="Enmerkar Earring",          -- __, __, __ <__, __, __> [__/__, ___] { 3/ 3, ___ | __,  8, 15/__, __/__, __, __}
+    ear2="Sherida Earring",           -- __,  5, __ < 5, __, __> [__/__, ___] {__/__, ___ | __, __, __/__, __/__, __, __}
+    ring1="Gere Ring",                -- __, __, __ <__,  5, __> [__/__, ___] {__/__, ___ | __, __, __/__, __/__, __, __}
+    ring2="Epona's Ring",             -- __, __, __ < 3,  3, __> [__/__, ___] {__/__, ___ | __, __, __/__, __/__, __, __}
+    back=gear.BST_TP_Cape,            -- __, 10, 20 <__, __, __> [10/__, ___] {__/__,   1 | __, __, __/__, __/__, __, __}
+    waist="Klouskap Sash +1",         -- __, __, 20 <__, __, __> [__/__, ___] {__/__, ___ | __, __, 20/20, __/__,  9, __}
+    -- 0 DW, 43 STP, 338 Acc <21 DA, 8 TA, 0 QA> [49 PDT/23 MDT, 580 M.Eva] {Pet: 19 PDT/19 MDT, 1 Lv | 25 DA, 8 STP, 223 Acc/208 Racc, 0 Att/0 Ratt, 9 Haste, 0 Regen}
   }
   sets.engaged.HalfsiesTank.Acc = set_combine(sets.engaged.HalfsiesTank, {})
-  sets.engaged.HalfsiesDD = {
-    range="Neo Animator",             -- __, 10 <__, __, __> [__/__, ___] {__/__, 119 | __, __, 30/30, __/__, __, __, __}
-    head="Mpaca's Cap",               -- __, 55 < 5,  3, __> [ 7/__,  69] {__/__, ___ | __, __, 50/50, __/__, __, __, __}
-    body="Pitre Tobe +3",             -- __, 50 <__, __, __> [__/__,  73] {__/__, ___ | __, 15, 50/50, 60/60, __, __, __}
-    hands="Karagoz Guanti +3",        -- 11, 62 <__, __, __> [10/10,  82] {__/__, ___ | __, __, 62/62, __/__, __, __, __}
-    legs="Karagoz Pantaloni +3",      -- __, 63 <__, __, __> [12/12, 119] {__/__, ___ | __, __, 63/63, __/__, __, __, __}; Skills+33
-    feet="Mpaca's Boots",             -- __, 55 <__,  3, __> [ 6/__,  96] {__/__,   1 | __, __, 50/50, __/__, __, __, __}
-    neck="Empath Necklace",           -- __, 10 <__, __, __> [__/__, ___] {__/__, ___ | __, __, 10/10,  5/10, __,  1, __}
-    ear1="Enmerkar Earring",          -- __, __ <__, __, __> [__/__, ___] { 3/ 3, ___ | __,  8, 15/__, __/__, __, __, __}
-    ear2="Karagoz Earring +1",        --  4, 12 <__, __, __> [__/__, ___] {__/__,   1 | __, __, __/__, __/__, __, __, __}
-    ring1="Chirich Ring +1",          --  6, 10 <__, __, __> [__/__, ___] {__/__, ___ | __, __, __/__, __/__, __, __, __}
-    ring2="Defending Ring",           -- __, __ <__, __, __> [10/10, ___] {__/__, ___ | __, __, __/__, __/__, __, __, __}
-    back=gear.PUP_TP_Cape,            -- 10, 20 <__, __, __> [__/__, ___] { 5/ 5,   1 | __, __, __/__, __/__, __, __, __}
-    waist="Moonbow Belt +1",          -- __, __ <__,  8, __> [ 6/ 6, ___] {__/__, ___ | __, __, __/__, __/__, __, __, __}
-    -- 31 STP, 347 Acc <5 DA, 14 TA, 0 QA> [51 PDT/38 MDT, 439 M.Eva] {Pet: 8 PDT /8 MDT, 122 Lv | 0 DA, 23 STP, 330 Acc/315 Racc, 65 Att/70 Ratt, 0 Haste, 1 Regen, 0 Enmity}
 
-    -- ear2="Karagoz Earring +2",     --  8, 20 <__, __, __> [__/__, ___] {__/__,   1 | __, __, __/__, __/__, __, __, __}
-    -- 35 STP, 355 Acc <5 DA, 14 TA, 0 QA> [51 PDT/38 MDT, 439 M.Eva] {Pet: 8 PDT /8 MDT, 122 Lv | 0 DA, 23 STP, 330 Acc/315 Racc, 65 Att/70 Ratt, 0 Haste, 1 Regen, 0 Enmity}
+  sets.engaged.HalfsiesDD = {
+    ammo="Coiste Bodhar",             -- __,  3, __ < 3, __, __> [__/__, ___] {__/__, ___ | __, __, __/__, __/__, __, __}
+    head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123] {__/__, ___ | __, __, __/__, __/__, __, __}
+    body="Gleti's Cuirass",           -- __, __, 55 <10, __, __> [ 9/__, 102] {__/__, ___ | __, __, 50/50, __/__, __, __}
+    hands=gear.Emicho_C_hands,        -- __,  7, 37 <__, __, __> [__/__,  32] {__/__, ___ |  4,  7, 20/__, 55/__, __, __}
+    legs="Nukumi Quijotes +3",        -- __, __, 63 <__, __, __> [13/13, 130] { 8/ 8, ___ | __, __, 63/63, __/__, __, __}
+    feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150] {__/__, ___ | __, __, __/__, __/__, __, __}
+    neck="Beastmaster Collar +2",     -- __, __, 25 <__, __, __> [__/__, ___] {__/__, ___ | 25, __, 25/25, __/__, __, __}
+    ear1="Enmerkar Earring",          -- __, __, __ <__, __, __> [__/__, ___] { 3/ 3, ___ | __,  8, 15/__, __/__, __, __}
+    ear2="Sherida Earring",           -- __,  5, __ < 5, __, __> [__/__, ___] {__/__, ___ | __, __, __/__, __/__, __, __}
+    ring1="Cath Palug Ring",          -- __, __, __ <__, __, __> [ 5/ 5, ___] {__/__, ___ |  5, __, 12/12, __/__, __, __}
+    ring2="Varar Ring +1",            -- __, __, 10 <__, __, __> [__/__, ___] {__/__, ___ | __,  6, 10/10, __/__, __, __}
+    back=gear.BST_TP_Cape,            -- __, 10, 20 <__, __, __> [10/__, ___] {__/__,   1 | __, __, __/__, __/__, __, __}
+    waist="Klouskap Sash +1",         -- __, __, 20 <__, __, __> [__/__, ___] {__/__, ___ | __, __, 20/20, __/__,  9, __}
+    -- 0 DW, 42 STP, 330 Acc <18 DA, 0 TA, 0 QA> [47 PDT/28 MDT, 537 M.Eva] {Pet: 11 PDT/11 MDT, 1 Lv | 34 DA, 21 STP, 215 Acc/200 Racc, 55 Att/0 Ratt, 9 Haste, 0 Regen}
   }
   sets.engaged.HalfsiesDD.Acc = set_combine(sets.engaged.HalfsiesDD, {})
 
@@ -1711,10 +1706,19 @@ end
 -------------------------------------------------------------------------------------------------------------------
 
 function update_idle_groups()
+  local isRegening = classes.CustomIdleGroups:contains('Regen')
   local isRefreshing = classes.CustomIdleGroups:contains('Refresh')
 
   classes.CustomIdleGroups:clear()
   if player.status == 'Idle' then
+    if player.tp < 3000 then
+      classes.CustomIdleGroups:append('Regain')
+    end
+    if isRegening==true and player.hpp < 100 then
+      classes.CustomIdleGroups:append('Regen')
+    elseif isRegening==false and player.hpp < 85 then
+      classes.CustomIdleGroups:append('Regen')
+    end
     if mp_jobs:contains(player.main_job) or mp_jobs:contains(player.sub_job) then
       if isRefreshing==true and player.mpp < 100 then
         classes.CustomIdleGroups:append('Refresh')
@@ -1819,8 +1823,8 @@ function get_bst_pet_midcast_set(spell, spellMap)
     end
 
     -- Equip TP Bonus set if ability benefits from TP
-    if ready_move.tp_affected and pet.tp < 1900 and sets.midcast.Pet.TPBonus then
-    -- if ready_move.tp_affected and (pet.tp < 1900 or (PetJob ~= 'Warrior' and pet.tp < 2400)) then
+    -- Don't use with Unleash, which makes all Ready TP Bonus+3000
+    if ready_move.tp_affected and pet.tp < 1900 and sets.midcast.Pet.TPBonus and not buffactive['Unleash'] then
       equipSet = set_combine(equipSet, sets.midcast.Pet.TPBonus)
     end
     
