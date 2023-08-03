@@ -1180,6 +1180,7 @@ function init_gear_sets()
 
   sets.Special = {}
   sets.Special.ElementalObi = {waist="Hachirin-no-Obi",}
+  sets.Special.SleepyHead = { head="Frenzy Sallet", }
 
   sets.buff.Doom = {
     neck="Nicander's Necklace", --20
@@ -1391,6 +1392,8 @@ function job_buff_change(buff,gain)
     elseif player.hpp > 0 then
       send_command('@input /p Doom Removed.')
     end
+  elseif buff == 'sleep' and gain and player.vitals.hp > 500 and player.status == 'Engaged' then
+    equip(sets.Special.SleepyHead)
   end
 end
 
@@ -1563,6 +1566,10 @@ function customize_melee_set(meleeSet)
   if locked_ring1 then meleeSet = set_combine(meleeSet, { ring1=player.equipment.ring1 }) end
   if locked_ring2 then meleeSet = set_combine(meleeSet, { ring2=player.equipment.ring2 }) end
 
+  if buffactive['sleep'] and player.vitals.hp > 500 and player.status == 'Engaged' then
+    meleeSet = set_combine(meleeSet, sets.Special.SleepyHead)
+  end
+
   if buffactive.Doom then
     meleeSet = set_combine(meleeSet, sets.buff.Doom)
   end
@@ -1585,6 +1592,10 @@ function customize_defense_set(defenseSet)
   if locked_ear2 then defenseSet = set_combine(defenseSet, { ear2=player.equipment.ear2 }) end
   if locked_ring1 then defenseSet = set_combine(defenseSet, { ring1=player.equipment.ring1 }) end
   if locked_ring2 then defenseSet = set_combine(defenseSet, { ring2=player.equipment.ring2 }) end
+
+  if buffactive['sleep'] and player.vitals.hp > 500 and player.status == 'Engaged' then
+    defenseSet = set_combine(defenseSet, sets.Special.SleepyHead)
+  end
 
   if buffactive.Doom then
     defenseSet = set_combine(defenseSet, sets.buff.Doom)
