@@ -1034,10 +1034,10 @@ function init_gear_sets()
     -- ear2="Arbatel Earring +2",     -- 15, 20,  9, ___,   9, __, __
     -- ring1="Metamorph Ring +1",     -- 16, 15, __, ___, ___, __, __
     -- ring2="Mujin Band",            -- __, __, __, ___, ___, __,  5
-    -- back=gear.SCH_Helix_Cape,      -- 20, 20, 10, ___,  30, __, __
+    -- back=gear.SCH_MAB_Cape,        -- 30, 20, 10, ___,  20, __, __
     -- waist="Acuity Belt +1",        -- 23, 15, __, ___, ___, __, __
     -- Mallquis set bonus             --  8, __, __, ___, ___, __, __
-    -- 342 INT, 426 MAcc, 312 MAB, 255 MAccSk, 606 MDmg, 41 MB Dmg%, 16 MB2 Dmg%
+    -- 352 INT, 426 MAcc, 312 MAB, 255 MAccSk, 596 MDmg, 41 MB Dmg%, 16 MB2 Dmg%
   }
   sets.midcast.DarkHelix = set_combine(sets.midcast.Helix, {
     ring1="Archon Ring",
