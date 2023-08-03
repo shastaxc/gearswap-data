@@ -224,6 +224,7 @@ gear.BST_DEX_WSD_Cape = gear.BST_TP_Cape
 gear.BST_DEX_Crit_Cape = gear.BST_TP_Cape
 gear.BST_Pet_Atk_Cape = gear.BST_TP_Cape
 gear.BST_Pet_TP_Cape = gear.BST_TP_Cape
+gear.BST_Pet_Macc_Cape = gear.BST_TP_Cape
 
 gear.COR_TP_Cape = { name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
 gear.COR_WS1_Cape = { name="Camulus's Mantle", augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','AGI+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
