@@ -500,9 +500,9 @@ function init_gear_sets()
     ear2="Moonshade Earring",         -- __, __, __, __ <__, __, __> [__/__, ___] {__/__, ___}; TP Bonus+250
     ring1="Sroda Ring",               -- 15, __, __,  3 <__, __, __> [__/__, ___] {__/__, ___}
     ring2="Defending Ring",           -- __, __, __, __ <__, __, __> [10/10, ___] {__/__, ___}
-    back=gear.BST_STR_WSD_Cape,       -- 30, __, 10, __ <__, __, __> [__/__, ___] { 5/ 5,   1}
+    back=gear.BST_STR_WSD_Cape,       -- 30, __, 10, __ <__, __, __> [10/__, ___] {__/__, ___}
     waist="Sailfi Belt +1",           -- 15, __, __, __ < 5,  2, __> [__/__, ___] {__/__, ___}
-    -- 270 STR, 161 MND, 68 WSD, 13 PDL <39 DA, 2 TA, 0 QA> [48 PDT/48 MDT, 674 M.Eva] {Pet: 5 PDT/5 MDT, 1 Lv}
+    -- 270 STR, 161 MND, 68 WSD, 13 PDL <39 DA, 2 TA, 0 QA> [58 PDT/48 MDT, 674 M.Eva] {Pet: 0 PDT/0 MDT, 0 Lv}
 
     -- ear1="Moonshade Earring",      -- __, __, __, __ <__, __, __> [__/__, ___] {__/__, ___}; TP Bonus+250
     -- ear2="Nukumi Earring +2",      -- 15, __, __,  9 <__, __, __> [__/__, ___] {__/__,   1}
@@ -522,9 +522,9 @@ function init_gear_sets()
     ear2="Nukumi Earring +1",         -- __, __, __,  8 <__, __, __> [__/__, ___] {__/__,   1}
     ring1="Ephramad's Ring",          -- 10, __, __, 10 <__, __, __> [__/__, ___] {__/__, ___}
     ring2="Defending Ring",           -- __, __, __, __ <__, __, __> [10/10, ___] {__/__, ___}
-    back=gear.BST_STR_WSD_Cape,       -- 30, __, 10, __ <__, __, __> [__/__, ___] { 5/ 5,   1}
+    back=gear.BST_STR_WSD_Cape,       -- 30, __, 10, __ <__, __, __> [10/__, ___] {__/__, ___}
     waist="Sailfi Belt +1",           -- 15, __, __, __ < 5,  2, __> [__/__, ___] {__/__, ___}
-    -- 224 STR, MND, 18 WSD, PDL <18 DA, 27 TA, 3 QA> [45 PDT/25 MDT, 422 M.Eva] {Pet: 5 PDT/5 MDT, 120 Lv}
+    -- 224 STR, MND, 18 WSD, PDL <18 DA, 27 TA, 3 QA> [55 PDT/25 MDT, 422 M.Eva] {Pet: 0 PDT/0 MDT, 2 Lv}
 
     -- feet="Nukumi Ocreae +3",       -- 31, 20, __, 10 < 6, __, __> [__/__, 130] {__/__, ___}
     -- ear2="Nukumi Earring +2",      -- 15, __, __,  9 <__, __, __> [__/__, ___] {__/__,   1}
@@ -559,9 +559,9 @@ function init_gear_sets()
     ear2="Lugra Earring +1",          -- 16, __, __ < 3, __, __> [__/__, ___] {__/__, ___}
     ring1="Sroda Ring",               -- 15, __,  3 <__, __, __> [__/__, ___] {__/__, ___}
     ring2="Gere Ring",                -- 10, __, __ <__,  5, __> [__/__, ___] {__/__, ___}
-    back=gear.BST_STR_WSD_Cape,       -- 30, 10, __ <__, __, __> [__/__, ___] { 5/ 5,   1}
+    back=gear.BST_STR_WSD_Cape,       -- 30, 10, __ <__, __, __> [10/__, ___] {__/__, ___}
     waist="Fotia Belt",               -- __, __, __ <__, __, __> [__/__, ___] {__/__, ___}; fTP+
-    -- 265 STR, 68 WSD, 13 PDL <39 DA, 5 TA, 0 QA> [38 PDT/38 MDT, 674 M.Eva] {Pet: 5 PDT/5 MDT, 1 Lv}
+    -- 265 STR, 68 WSD, 13 PDL <39 DA, 5 TA, 0 QA> [48 PDT/38 MDT, 674 M.Eva] {Pet: 0 PDT/0 MDT, 0 Lv}
 
     -- ear2="Nukumi Earring +2",      -- 15, __,  9 <__, __, __> [__/__, ___] {__/__,   1}
   })
@@ -578,9 +578,9 @@ function init_gear_sets()
     ear2="Nukumi Earring +1",         -- __, __,  8 <__, __, __> [__/__, ___] {__/__,   1}
     ring1="Ephramad's Ring",          -- 10, __, 10 <__, __, __> [__/__, ___] {__/__, ___}
     ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___] {__/__, ___}
-    back=gear.BST_STR_WSD_Cape,       -- 30, 10, __ <__, __, __> [__/__, ___] { 5/ 5,   1}
+    back=gear.BST_STR_WSD_Cape,       -- 30, 10, __ <__, __, __> [10/__, ___] {__/__, ___}
     waist="Fotia Belt",               -- __, __, __ <__, __, __> [__/__, ___] {__/__, ___}; fTP+
-    -- 241 STR, 21 WSD, 60 PDL <18 DA, 5 TA, 0 QA> [49 PDT/20 MDT, 524 M.Eva] {Pet: 13 PDT/13 MDT, 3 Lv}
+    -- 241 STR, 21 WSD, 60 PDL <18 DA, 5 TA, 0 QA> [59 PDT/20 MDT, 524 M.Eva] {Pet: 8 PDT/8 MDT, 2 Lv}
 
     -- feet="Nukumi Ocreae +3",       -- 31, __, 10 < 6, __, __> [__/__, 130] {__/__, ___}
     -- ear2="Nukumi Earring +2",      -- 15, __,  9 <__, __, __> [__/__, ___] {__/__,   1}
@@ -753,7 +753,7 @@ function init_gear_sets()
     waist="Skrymir Cord",             -- __, __,  5, __ [__/__, ___] {__/__, ___}
     -- 115 DEX, 165 INT, 224 MAB, 52 WSD [43 PDT/41 MDT, 599 M.Eva] {Pet: 0 PDT/0 MDT, 119 Lv}
 
-    -- back=gear.BST_INT_MAB_Cape,    -- __, 30, 10, __ [__/__, ___] { 5/ 5,   1}
+    -- back=gear.BST_INT_MAB_Cape,    -- __, 30, 10, __ [10/__, ___] {__/__, ___}
     -- waist="Skrymir Cord +1",       -- __, __,  7, __ [__/__, ___] {__/__, ___}
   })
   sets.precast.WS['Aeolian Edge'].MaxTP = set_combine(sets.precast.WS['Aeolian Edge'], {})
@@ -776,7 +776,7 @@ function init_gear_sets()
     waist="Skrymir Cord",             -- __, __,  5,  5, __ [__/__, ___] {__/__, ___}
     -- 145 CHR, 117 DEX, 211 MAB, 213 M.Acc, 58 WSD [48 PDT/48 MDT, 674 M.Eva] {Pet: 0 PDT/0 MDT, 119 Lv}
 
-    -- back=gear.BST_CHR_WSD_Cape,    -- 30, __, __, 20, 10 [__/__, ___] { 5/ 5,   1}
+    -- back=gear.BST_CHR_WSD_Cape,    -- 30, __, __, 20, 10 [__/__, ___] { 5/ 5, ___}
     -- waist="Skrymir Cord +1",       -- __, __,  7,  7, __ [__/__, ___] {__/__, ___}
   })
   sets.precast.WS['Primal Rend'].MaxTP = set_combine(sets.precast.WS['Primal Rend'], {
@@ -787,7 +787,7 @@ function init_gear_sets()
   -- 40% STR/40% MND. Dmg varies with TP. Thunder elemental.
   sets.precast.WS['Cloudsplitter'] = set_combine(sets.precast.WS['Primal Rend'], {
     ring1="Sroda Ring",
-    -- back=gear.BST_MND_WSD_Cape,    -- __, 30, 10, 20, __ [__/__, ___] { 5/ 5,   1}
+    -- back=gear.BST_MND_WSD_Cape,    -- __, 30, 10, 20, __ [__/__, ___] { 5/ 5, ___}
   })
   sets.precast.WS['Cloudsplitter'].MaxTP = set_combine(sets.precast.WS['Primal Rend'].MaxTP, {
     ring1="Sroda Ring",
@@ -813,9 +813,9 @@ function init_gear_sets()
     ear2="Nukumi Earring +1",         -- [__/__, ___] {__/__,   1 |  7, __/__, __/__}
     ring1="Varar Ring +1",            -- [__/__, ___] {__/__, ___ | __, 10/__, __/__}
     ring2="Cath Palug Ring",          -- [ 5/ 5, ___] {__/__, ___ |  5, 12/12, __/__}
-    back=gear.BST_Pet_Atk_Cape,       -- [10/__,  20] {__/__, ___ | __, 20/20, 30/30}
+    back=gear.BST_Pet_TP_Cape,        -- [__/__,  20] { 5/ 5, ___ | __, 20/20, 30/30}
     waist="Klouskap Sash +1",         -- [__/__, ___] {__/__, ___ | __, 20/20, __/__}
-    -- [64 PDT/40 MDT, 534 M.Eva] {Pet: 8 PDT /8 MDT, 2 Lv | 15 DA, 378 Acc/348 Racc, 60 Att/30 Ratt}
+    -- [54 PDT/40 MDT, 534 M.Eva] {Pet: 13 PDT /13 MDT, 2 Lv | 15 DA, 378 Acc/348 Racc, 60 Att/30 Ratt}
   }
   sets.midcast.Pet.Halfsies = set_combine(sets.midcast.Pet, {})
 
@@ -831,9 +831,9 @@ function init_gear_sets()
     ear2="Nukumi Earring +1",         -- [__/__, ___] {__/__,   1 |  7, __/__, __/__}
     ring1="Varar Ring +1",            -- [__/__, ___] {__/__, ___ | __, 10/__, __/__}
     ring2="Cath Palug Ring",          -- [ 5/ 5, ___] {__/__, ___ |  5, 12/12, __/__}
-    back=gear.BST_Pet_Atk_Cape,       -- [10/__,  20] {__/__, ___ | __, 20/20, 30/30}
+    back=gear.BST_Pet_TP_Cape,        -- [__/__,  20] { 5/ 5, ___ | __, 20/20, 30/30}
     waist="Klouskap Sash +1",         -- [__/__, ___] {__/__, ___ | __, 20/20, __/__}
-    -- [64 PDT/40 MDT, 534 M.Eva] {Pet: 8 PDT /8 MDT, 2 Lv | 15 DA, 378 Acc/348 Racc, 60 Att/30 Ratt}
+    -- [54 PDT/40 MDT, 534 M.Eva] {Pet: 13 PDT /13 MDT, 2 Lv | 15 DA, 378 Acc/348 Racc, 60 Att/30 Ratt}
   }
   sets.midcast.Pet.Physical.Halfsies = set_combine(sets.midcast.Pet.Physical, {})
 
@@ -1031,12 +1031,12 @@ function init_gear_sets()
     ear2="Nukumi Earring +1",         -- [__/__, ___] {__/__,   1 |  7, __, __/__, __/__, __, __}
     ring1="Cath Palug Ring",          -- [ 5/ 5, ___] {__/__, ___ |  5, __, 12/12, __/__, __, __}
     ring2="Varar Ring +1",            -- [__/__, ___] {__/__, ___ | __,  6, 10/10, __/__, __, __}
-    back=gear.BST_Pet_TP_Cape,        -- [__/__, ___] { 5/ 5, ___ | __, __, 30/30, 20/20, 10, __}
+    back=gear.BST_Pet_TP_Cape,        -- [__/__,  20] { 5/ 5, ___ | __, __, 20/20, 30/30, 10, __}
     waist="Klouskap Sash +1",         -- [__/__, ___] {__/__, ___ | __, __, 20/20, __/__,  9, __}
-    -- [30 PDT/18 MDT, 454 M.Eva] {Pet: 24 PDT/24 MDT, 2 Lv | 42 DA, 21 STP, 327 Acc/312 Racc, 35 Att/20 Ratt, 26 Haste, 0 Regen}
+    -- [30 PDT/18 MDT, 474 M.Eva] {Pet: 24 PDT/24 MDT, 2 Lv | 42 DA, 21 STP, 317 Acc/302 Racc, 45 Att/30 Ratt, 26 Haste, 0 Regen}
 
     -- ear2="Nukumi Earring +2",      -- [__/__, ___] {__/__,   1 | 10, __, __/__, __/__, __, __}
-    -- [30 PDT/18 MDT, 454 M.Eva] {Pet: 24 PDT/24 MDT, 2 Lv | 45 DA, 21 STP, 327 Acc/312 Racc, 35 Att/20 Ratt, 26 Haste, 0 Regen}
+    -- [30 PDT/18 MDT, 474 M.Eva] {Pet: 24 PDT/24 MDT, 2 Lv | 45 DA, 21 STP, 317 Acc/302 Racc, 45 Att/30 Ratt, 26 Haste, 0 Regen}
   }
   sets.idle.PetEngaged.DD = {
     ammo="Hesperiidae",               -- [__/__, ___] {__/__, ___ | __, __, 10/10, 15/__, __, __}
@@ -1050,12 +1050,12 @@ function init_gear_sets()
     ear2="Nukumi Earring +1",         -- [__/__, ___] {__/__,   1 |  7, __, __/__, __/__, __, __}
     ring1="Cath Palug Ring",          -- [ 5/ 5, ___] {__/__, ___ |  5, __, 12/12, __/__, __, __}
     ring2="Varar Ring +1",            -- [__/__, ___] {__/__, ___ | __,  6, 10/10, __/__, __, __}
-    back=gear.BST_Pet_TP_Cape,        -- [__/__, ___] { 5/ 5, ___ | __, __, 30/30, 20/20, 10, __}
+    back=gear.BST_Pet_TP_Cape,        -- [__/__,  20] { 5/ 5, ___ | __, __, 20/20, 30/30, 10, __}
     waist="Incarnation Sash",         -- [__/__, ___] {__/__, ___ |  4, __, 15/15, __/__, __, __}
-    -- [10 PDT/5 MDT, 370 M.Eva] {Pet: 8 PDT/8 MDT, 1 Lv | 50 DA, 35 STP, 229 Acc/194 Racc, 90 Att/20 Ratt, 23 Haste, 0 Regen}
+    -- [10 PDT/5 MDT, 390 M.Eva] {Pet: 8 PDT/8 MDT, 1 Lv | 50 DA, 35 STP, 219 Acc/184 Racc, 100 Att/30 Ratt, 23 Haste, 0 Regen}
 
     -- ear2="Nukumi Earring +2",      -- [__/__, ___] {__/__,   1 | 10, __, __/__, __/__, __, __}
-    -- [10 PDT/5 MDT, 370 M.Eva] {Pet: 8 PDT/8 MDT, 1 Lv | 53 DA, 35 STP, 229 Acc/194 Racc, 90 Att/20 Ratt, 23 Haste, 0 Regen}
+    -- [10 PDT/5 MDT, 390 M.Eva] {Pet: 8 PDT/8 MDT, 1 Lv | 53 DA, 35 STP, 219 Acc/204 Racc, 100 Att/30 Ratt, 23 Haste, 0 Regen}
   }
 
 
@@ -1077,9 +1077,9 @@ function init_gear_sets()
     ear2="Sherida Earring",           -- __,  5, __ < 5, __, __> [__/__, ___] {__/__, ___ | __, __, __/__, __/__, __, __}
     ring1="Gere Ring",                -- __, __, __ <__,  5, __> [__/__, ___] {__/__, ___ | __, __, __/__, __/__, __, __}
     ring2="Moonlight Ring",           -- __,  5,  8 <__, __, __> [ 5/ 5, ___] {__/__, ___ | __, __, __/__, __/__, __, __}
-    back=gear.BST_TP_Cape,            -- __, 10, 20 <__, __, __> [10/__, ___] {__/__,   1 | __, __, __/__, __/__, __, __}
+    back=gear.BST_TP_Cape,            -- __, 10, 20 <__, __, __> [10/__, ___] {__/__, ___ | __, __, __/__, __/__, __, __}
     waist="Sailfi Belt +1",           -- __, __, __ < 5,  2, __> [__/__, ___] {__/__, ___ | __, __, __/__, __/__, __, __}
-    -- 0 DW, 74 STP, 268 Acc <23 DA, 7 TA, 0 QA> [48 PDT/22 MDT, 600 M.Eva] {Pet: 8 PDT/8 MDT, 1 Lv | 0 DA, 0 STP, 100 Acc/100 Racc, 0 Att/0 Ratt, 0 Haste, 0 Regen}
+    -- 0 DW, 74 STP, 268 Acc <23 DA, 7 TA, 0 QA> [48 PDT/22 MDT, 600 M.Eva] {Pet: 8 PDT/8 MDT, 0 Lv | 0 DA, 0 STP, 100 Acc/100 Racc, 0 Att/0 Ratt, 0 Haste, 0 Regen}
   }
   sets.engaged.Acc = set_combine(sets.engaged, {
     neck="Beastmaster Collar +2",     -- __, __, 25 <__, __, __> [__/__, ___] {__/__, ___ | __, __, __/__, __/__, __, __}
@@ -1103,12 +1103,12 @@ function init_gear_sets()
     ear2="Nukumi Earring +1",         -- __, __, 15 <__, __, __> [__/__, ___] {__/__,   1 |  7, __, __/__, __/__, __, __}
     ring1="Cath Palug Ring",          -- __, __, __ <__, __, __> [ 5/ 5, ___] {__/__, ___ |  5, __, 12/12, __/__, __, __}
     ring2="Varar Ring +1",            -- __, __, 10 <__, __, __> [__/__, ___] {__/__, ___ | __,  6, 10/10, __/__, __, __}
-    back=gear.BST_Pet_TP_Cape,        -- __, __, __ <__, __, __> [__/__, ___] { 5/ 5, ___ | __, __, 30/30, 20/20, 10, __}
+    back=gear.BST_Pet_TP_Cape,        -- __, __, __ <__, __, __> [__/__,  20] { 5/ 5, ___ | __, __, 20/20, 30/30, 10, __}
     waist="Isa Belt",                 -- __, __, __ <__, __, __> [__/__, ___] { 3/ 3, ___ | __, __, __/__, __/__, __,  1}
-    -- 0 DW, 8 STP, 339 Acc <0 DA, 0 TA, 0 QA> [41 PDT/29 MDT, 499 M.Eva] {Pet: 37 PDT/37 MDT, 2 Lv | 37 DA, 14 STP, 326 Acc/311 Racc, 35 Att/20 Ratt, 10 Haste, 1 Regen}
+    -- 0 DW, 8 STP, 339 Acc <0 DA, 0 TA, 0 QA> [41 PDT/29 MDT, 519 M.Eva] {Pet: 37 PDT/37 MDT, 2 Lv | 37 DA, 14 STP, 316 Acc/301 Racc, 45 Att/30 Ratt, 10 Haste, 1 Regen}
 
     -- ear2="Nukumi Earring +2",      -- __, __, 20 <__, __, __> [__/__, ___] {__/__,   1 | 10, __, __/__, __/__, __, __}
-    -- 0 DW, 8 STP, 344 Acc <0 DA, 0 TA, 0 QA> [41 PDT/29 MDT, 499 M.Eva] {Pet: 37 PDT/37 MDT, 2 Lv | 40 DA, 14 STP, 326 Acc/311 Racc, 35 Att/20 Ratt, 10 Haste, 1 Regen}
+    -- 0 DW, 8 STP, 344 Acc <0 DA, 0 TA, 0 QA> [41 PDT/29 MDT, 519 M.Eva] {Pet: 37 PDT/37 MDT, 2 Lv | 40 DA, 14 STP, 316 Acc/301 Racc, 45 Att/30 Ratt, 10 Haste, 1 Regen}
   }
   sets.engaged.PetTank.Acc = set_combine(sets.engaged.PetTank, {})
 
@@ -1124,12 +1124,12 @@ function init_gear_sets()
     ear2="Nukumi Earring +1",         -- __, __, 15 <__, __, __> [__/__, ___] {__/__,   1 |  7, __, __/__, __/__, __, __}
     ring1="Cath Palug Ring",          -- __, __, __ <__, __, __> [ 5/ 5, ___] {__/__, ___ |  5, __, 12/12, __/__, __, __}
     ring2="Varar Ring +1",            -- __, __, 10 <__, __, __> [__/__, ___] {__/__, ___ | __,  6, 10/10, __/__, __, __}
-    back=gear.BST_Pet_TP_Cape,        -- __, __, __ <__, __, __> [__/__, ___] { 5/ 5, ___ | __, __, 30/30, 20/20, 10, __}
+    back=gear.BST_Pet_TP_Cape,        -- __, __, __ <__, __, __> [__/__,  20] { 5/ 5, ___ | __, __, 20/20, 30/30, 10, __}
     waist="Klouskap Sash +1",         -- __, __, 20 <__, __, __> [__/__, ___] {__/__, ___ | __, __, 20/20, __/__,  9, __}
-    -- 0 DW, 7 STP, 331 Acc <0 DA, 0 TA, 0 QA> [34 PDT/29 MDT, 456 M.Eva] {Pet: 16 PDT /16 MDT, 2 Lv | 46 DA, 21 STP, 316 Acc/281 Racc, 90 Att/20 Ratt, 26 Haste, 0 Regen}
+    -- 0 DW, 7 STP, 331 Acc <0 DA, 0 TA, 0 QA> [34 PDT/29 MDT, 476 M.Eva] {Pet: 16 PDT /16 MDT, 2 Lv | 46 DA, 21 STP, 306 Acc/271 Racc, 100 Att/30 Ratt, 26 Haste, 0 Regen}
 
     -- ear2="Nukumi Earring +2",      -- __, __, 20 <__, __, __> [__/__, ___] {__/__,   1 | 10, __, __/__, __/__, __, __}
-    -- 0 DW, 7 STP, 336 Acc <0 DA, 0 TA, 0 QA> [34 PDT/29 MDT, 456 M.Eva] {Pet: 16 PDT /16 MDT, 2 Lv | 49 DA, 21 STP, 316 Acc/281 Racc, 90 Att/20 Ratt, 26 Haste, 0 Regen}
+    -- 0 DW, 7 STP, 336 Acc <0 DA, 0 TA, 0 QA> [34 PDT/29 MDT, 476 M.Eva] {Pet: 16 PDT /16 MDT, 2 Lv | 49 DA, 21 STP, 306 Acc/271 Racc, 100 Att/30 Ratt, 26 Haste, 0 Regen}
   }
   sets.engaged.PetDD.Acc = set_combine(sets.engaged.PetDD, {})
 
@@ -1149,9 +1149,9 @@ function init_gear_sets()
     ear2="Sherida Earring",           -- __,  5, __ < 5, __, __> [__/__, ___] {__/__, ___ | __, __, __/__, __/__, __, __}
     ring1="Gere Ring",                -- __, __, __ <__,  5, __> [__/__, ___] {__/__, ___ | __, __, __/__, __/__, __, __}
     ring2="Epona's Ring",             -- __, __, __ < 3,  3, __> [__/__, ___] {__/__, ___ | __, __, __/__, __/__, __, __}
-    back=gear.BST_TP_Cape,            -- __, 10, 20 <__, __, __> [10/__, ___] {__/__,   1 | __, __, __/__, __/__, __, __}
+    back=gear.BST_TP_Cape,            -- __, 10, 20 <__, __, __> [10/__, ___] {__/__, ___ | __, __, __/__, __/__, __, __}
     waist="Klouskap Sash +1",         -- __, __, 20 <__, __, __> [__/__, ___] {__/__, ___ | __, __, 20/20, __/__,  9, __}
-    -- 0 DW, 43 STP, 338 Acc <21 DA, 8 TA, 0 QA> [49 PDT/23 MDT, 580 M.Eva] {Pet: 19 PDT/19 MDT, 1 Lv | 25 DA, 8 STP, 223 Acc/208 Racc, 0 Att/0 Ratt, 9 Haste, 0 Regen}
+    -- 0 DW, 43 STP, 338 Acc <21 DA, 8 TA, 0 QA> [49 PDT/23 MDT, 580 M.Eva] {Pet: 19 PDT/19 MDT, 0 Lv | 25 DA, 8 STP, 223 Acc/208 Racc, 0 Att/0 Ratt, 9 Haste, 0 Regen}
   }
   sets.engaged.HalfsiesTank.Acc = set_combine(sets.engaged.HalfsiesTank, {})
 
@@ -1167,9 +1167,9 @@ function init_gear_sets()
     ear2="Sherida Earring",           -- __,  5, __ < 5, __, __> [__/__, ___] {__/__, ___ | __, __, __/__, __/__, __, __}
     ring1="Cath Palug Ring",          -- __, __, __ <__, __, __> [ 5/ 5, ___] {__/__, ___ |  5, __, 12/12, __/__, __, __}
     ring2="Varar Ring +1",            -- __, __, 10 <__, __, __> [__/__, ___] {__/__, ___ | __,  6, 10/10, __/__, __, __}
-    back=gear.BST_TP_Cape,            -- __, 10, 20 <__, __, __> [10/__, ___] {__/__,   1 | __, __, __/__, __/__, __, __}
+    back=gear.BST_TP_Cape,            -- __, 10, 20 <__, __, __> [10/__, ___] {__/__, ___ | __, __, __/__, __/__, __, __}
     waist="Klouskap Sash +1",         -- __, __, 20 <__, __, __> [__/__, ___] {__/__, ___ | __, __, 20/20, __/__,  9, __}
-    -- 0 DW, 42 STP, 330 Acc <18 DA, 0 TA, 0 QA> [47 PDT/28 MDT, 537 M.Eva] {Pet: 11 PDT/11 MDT, 1 Lv | 34 DA, 21 STP, 215 Acc/200 Racc, 55 Att/0 Ratt, 9 Haste, 0 Regen}
+    -- 0 DW, 42 STP, 330 Acc <18 DA, 0 TA, 0 QA> [47 PDT/28 MDT, 537 M.Eva] {Pet: 11 PDT/11 MDT, 0 Lv | 34 DA, 21 STP, 215 Acc/200 Racc, 55 Att/0 Ratt, 9 Haste, 0 Regen}
   }
   sets.engaged.HalfsiesDD.Acc = set_combine(sets.engaged.HalfsiesDD, {})
 
