@@ -996,7 +996,7 @@ function init_gear_sets()
   sets.idle.DT.Regain.Regen.Refresh = set_combine(sets.HeavyDef, sets.idle.Regain.Regen.Refresh, sets.EfficientDT)
 
   sets.idle.RegainOnly = {
-    ammo="Staunch Tathlum +1",        --  3, __ [ 3/ 3, ___] {__/__, ___ | __}
+    ammo="Staunch Tathlum +1",        -- __, __ [ 3/ 3, ___] {__/__, ___ | __}
     head=gear.Valorous_DT_head,       --  3, __ [ 4/ 4,  48] {__/__, ___ | __}
     body="Gleti's Cuirass",           --  3, __ [ 9/__, 102] {__/__, ___ | __}
     hands="Gleti's Gauntlets",        --  2, __ [ 7/__,  75] { 8/ 8, ___ | __}
@@ -1010,7 +1010,7 @@ function init_gear_sets()
     back=gear.BST_Pet_Macc_Cape,      -- __, __ [__/__,  20] { 5/ 5, ___ | 10}
     waist="Isa Belt",                 -- __, __ [__/__, ___] { 3/ 3, ___ |  1}
     -- Traits/Gifts/Merits                                     9/ 9
-    -- 16 Regain, 2 Regen [48 PDT/19 MDT, 469 M.Eva] {Pet: 28 PDT/28 MDT, 2 Lv | 11 Regen}
+    -- 13 Regain, 2 Regen [48 PDT/19 MDT, 469 M.Eva] {Pet: 28 PDT/28 MDT, 2 Lv | 11 Regen}
   }
 
   sets.idle.Weak = set_combine(sets.HeavyDef, {})
