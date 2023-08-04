@@ -428,34 +428,35 @@ function init_gear_sets()
     legs=gear.Vanya_C_legs,         -- __, __, 12 [__/__, 107]
     feet="Azimuth Gaiters +2",      -- __, __, __ [10/10, 158]; Set bonus
     neck="Bagua Charm +1",          --  6, __, __ [__/__, ___]; Luopan Duration +20%
-    ear1="Mendicant's Earring",     -- __, __,  2 [__/__, ___]
-    ear2="Halasz Earring",          -- __, __, __ [__/__, ___]
+    ear1="Magnetic Earring",        -- __, __,  5 [__/__, ___]
+    ear2="Mendicant's Earring",     -- __, __,  2 [__/__, ___]
     ring1="Stikini Ring +1",        -- __,  8, __ [__/__, ___]
     ring2="Defending Ring",         -- __, __, __ [10/10, ___]
     back=gear.GEO_Adoulin_Cape,     -- __, 15, __ [__/__, ___]
     waist="Sekhmet Corset",         -- __, __,  3 [__/__, ___]
     -- Base stats                   -- __,850, 43
-    -- 10 Geomancy, 911 geo skill, 60 Conserve MP [61 PDT/51 MDT, 618 M.Eva]
+    -- Master level 14              -- __, 28, __
+    -- 10 Geomancy, 939 geo skill, 65 Conserve MP [61 PDT/51 MDT, 618 M.Eva]
 
     -- main="Idris",                -- 10, __, __ [__/__, ___]
     -- sub="Genmei Shield",         -- __, __, __ [10/__, ___]
-    -- range=empty,
-    -- ammo="Pemphredo Tathlum",    -- __, __,  4 [__/__, ___]
+    -- range="Dunna",               -- __, 18, __ [__/__, ___]
+    -- ammo=empty,
     -- head="Azimuth Hood +3",      -- __, 25, __ [12/12, 136]; Set bonus
     -- body="Azimuth Coat +3",      -- __, __, __ [__/__, 141]; Set bonus
     -- hands="Azimuth Gloves +3",   -- __, __, __ [12/12,  98]; Set bonus
     -- legs=gear.Vanya_C_legs,      -- __, __, 12 [__/__, 107]
     -- feet="Azimuth Gaiters +3",   -- __, __, __ [11/11, 168]; Set bonus
     -- neck="Bagua Charm +2",       -- __, __, __ [__/__, ___]; Luopan Duration +25%
-    -- ear1="Mendicant's Earring",  -- __, __,  2 [__/__, ___]
+    -- ear1="Magnetic Earring",     -- __, __,  5 [__/__, ___]
     -- ear2="Calamitous Earring",   -- __, __,  4 [__/__, ___]
     -- ring1="Defending Ring",      -- __, __, __ [10/10, ___]
     -- ring2="Mephitas's Ring +1",  -- __, __, 15 [__/__, ___]
     -- back="Solemnity Cape",       -- __, __,  5 [ 4/ 4, ___]
     -- waist="Shinjutsu-no-Obi +1", -- __, __, 15 [__/__, ___]
     -- Base stats                   -- __,850, 43
-    -- Master level 13              -- __, 26, __
-    -- 10 Geomancy, 901 geo skill, 100 Conserve MP [59 PDT/49 MDT, 650 M.Eva]
+    -- Master level 14              -- __, 28, __
+    -- 10 Geomancy, 921 geo skill, 99 Conserve MP [59 PDT/49 MDT, 650 M.Eva]
   }
 
   --Extra Indi duration as long as you can keep your 900 skill cap.
@@ -480,10 +481,6 @@ function init_gear_sets()
     -- Master level 14              -- __, 28
     -- 10 Geomancy, 949 geo skill, 45 Conserve MP, 260 Indi Duration, 17 Indi Duration % [61 PDT/51 MDT, 618 M.Eva] {Pet: 80 DT, 4 Regen}
     
-    -- hands="Azimuth Gloves +3",   -- __, __, __, __, __ [12/12,  98] {__, __}; Set bonus: save MP
-    -- feet="Azimuth Gaiters +3",   -- __, __, __, 30, __ [11/11, 168] {__, __}; Set bonus: save MP
-    -- 10 Geomancy, 916 geo skill, 45 Conserve MP, 270 Indi Duration, 17 Indi Duration % [64 PDT/ 54 MDT, 648 M.Eva] {Pet: 80 DT, 3 Regen}
-
     -- main="Idris",                -- 10, __, __, __, __ [__/__, ___] {25, __}
     -- sub="Genmei Shield",         -- __, __, __, __, __ [10/__, ___] {__, __}
     -- range="Dunna",               -- __, 18, __, __, __ [__/__, ___] { 5, __}
@@ -493,36 +490,16 @@ function init_gear_sets()
     -- hands="Azimuth Gloves +3",   -- __, __, __, __, __ [12/12,  98] {__, __}; Set bonus: save MP
     -- legs="Bagua Pants +3",       -- __, __, __, 21, __ [__/__, 127] {__, __}
     -- feet="Azimuth Gaiters +3",   -- __, __, __, 30, __ [11/11, 168] {__, __}; Set bonus: save MP
-    -- neck="Incanter's Torque",    -- __, 10, __, __, __ [__/__, ___] {__, __}; Save MP
-    -- ear1="Mendicant's Earring",  -- __, __,  2, __, __ [__/__, ___] {__, __}
-    -- ear2="Calamitous Earring",   -- __, __,  4, __, __ [__/__, ___] {__, __}
-    -- ring1="Defending Ring",      -- __, __, __, __, __ [10/10, ___] {__, __}
-    -- ring2="Mephitas's Ring +1",  -- __, __, 15, __, __ [__/__, ___] {__, __}
-    -- back=gear.GEO_Adoulin_Cape,  -- __, 15, __, __, 20 [__/__, ___] {__, __}
-    -- waist="Shinjutsu-no-Obi +1", -- __, __, 15, __, __ [__/__, ___] {__, __}
-    -- Base stats                   -- __,850, 43,220, __ [__/__, ___] {50, __}
-    -- Master level 4               -- __,  8
-    -- 10 Geomancy, 901 geo skill, 91 Conserve MP, 271 Indi Duration, 20 Indi Duration % [52 PDT/ 44 MDT, 607 M.Eva] {Pet: 80 DT, 0 Regen}
-    
-    -- main="Idris",                -- 10, __, __, __, __ [__/__, ___] {25, __}
-    -- sub="Genmei Shield",         -- __, __, __, __, __ [10/__, ___] {__, __}
-    -- range=empty
-    -- ammo="Pemphredo Tathlum",    -- __, __,  4, __, __ [__/__, ___] {__, __}
-    -- head=gear.Vanya_C_head,      -- __, __, 12, __, __ [__/ 2,  75] {__, __}
-    -- body=gear.Nyame_B_body,      -- __, __, __, __, __ [ 9/ 9, 139] {__, __}
-    -- hands="Azimuth Gloves +3",   -- __, __, __, __, __ [12/12,  98] {__, __}; Set bonus: save MP
-    -- legs="Bagua Pants +3",       -- __, __, __, 21, __ [__/__, 127] {__, __}
-    -- feet="Azimuth Gaiters +3",   -- __, __, __, 30, __ [11/11, 168] {__, __}; Set bonus: save MP
     -- neck="Reti Pendant",         -- __, __,  4, __, __ [__/__, ___] {__, __}; Save MP
-    -- ear1="Mendicant's Earring",  -- __, __,  2, __, __ [__/__, ___] {__, __}
+    -- ear1="Magnetic Earring",     -- __, __,  5, __, __ [__/__, ___] {__, __}
     -- ear2="Calamitous Earring",   -- __, __,  4, __, __ [__/__, ___] {__, __}
     -- ring1="Defending Ring",      -- __, __, __, __, __ [10/10, ___] {__, __}
     -- ring2="Mephitas's Ring +1",  -- __, __, 15, __, __ [__/__, ___] {__, __}
-    -- back=gear.GEO_Adoulin_Cape,  -- __,  5, __, __, 20 [__/__, ___] { 5, __}
+    -- back=gear.GEO_Adoulin_Cape,  -- __, 14, __, __, 20 [__/__, ___] { 4, __}
     -- waist="Shinjutsu-no-Obi +1", -- __, __, 15, __, __ [__/__, ___] {__, __}
     -- Base stats                   -- __,850, 43,220, __ [__/__, ___] {50, __}
-    -- Master level 23              -- __, 46
-    -- 10 Geomancy, 901 geo skill, 99 Conserve MP, 271 Indi Duration, 20 Indi Duration % [52 PDT/ 44 MDT, 607 M.Eva] {Pet: 80 DT, 0 Regen}
+    -- Master level 14              -- __, 28
+    -- 10 Geomancy, 910 geo skill, 98 Conserve MP, 271 Indi Duration, 20 Indi Duration % [52 PDT/ 44 MDT, 607 M.Eva] {Pet: 84 DT, 0 Regen}
   }
 
   -- Geomancy has no effect on Entrust, skill and duration do.
@@ -545,20 +522,27 @@ function init_gear_sets()
     waist="Gishdubar Sash",         -- __, __, __, __, __ [__/__, ___] {__, __}
     -- Base stats                   -- __,850, 43,220, __ [__/__, ___] {50, __}
     -- Master level 14              -- __, 28
-    -- Ideal: 0 Geomancy, 926 geo skill, 59 Conserve MP, 275 Indi Duration, 17 Indi Duration % [50 PDT/40 MDT, 618 M.Eva] {Pet: 54 DT, 4 Regen}
+    -- 0 Geomancy, 926 geo skill, 59 Conserve MP, 275 Indi Duration, 17 Indi Duration % [50 PDT/40 MDT, 618 M.Eva] {Pet: 54 DT, 4 Regen}
 
+    -- main=gear.Solstice_D,        -- __,  5,  6, 15, __ [__/__, ___] { 4, __} -- Need to add augs
+    -- sub="Genmei Shield",         -- __, __, __, __, __ [10/__, ___] {__, __}
+    -- range="Dunna",               -- __, 18, __, __, __ [__/__, ___] { 5, __}
+    -- ammo=empty,
     -- head="Azimuth Hood +3",      -- __, 25, __, __, __ [12/12, 136] {__,  5}; Set bonus: save MP
-    -- body=gear.Merl_ConMP_body,   -- __, __,  6, __, __ [ 2/__,  91] {__, __}
+    -- body=gear.Merl_ConMP_body,   -- __, __,  7, __, __ [ 2/__,  91] {__, __}
     -- hands="Azimuth Gloves +3",   -- __, __, __, __, __ [12/12,  98] {__, __}; Set bonus: save MP
     -- legs="Bagua Pants +3",       -- __, __, __, 21, __ [__/__, 127] {__, __}
     -- feet="Azimuth Gaiters +3",   -- __, __, __, 30, __ [11/11, 168] {__, __}; Set bonus: save MP
+    -- neck="Reti Pendant",         -- __, __,  4, __, __ [__/__, ___] {__, __}; Save MP
+    -- ear1="Magnetic Earring",     -- __, __,  5, __, __ [__/__, ___] {__, __}
     -- ear2="Calamitous Earring",   -- __, __,  4, __, __ [__/__, ___] {__, __}
+    -- ring1="Defending Ring",      -- __, __, __, __, __ [10/10, ___] {__, __}
     -- ring2="Mephitas's Ring +1",  -- __, __, 15, __, __ [__/__, ___] {__, __}
-    -- back=gear.GEO_Adoulin_Cape,  -- __,  5, __, __, 20 [__/__, ___] { 5, __}
+    -- back=gear.GEO_Adoulin_Cape,  -- __, 14, __, __, 20 [__/__, ___] { 4, __}
     -- waist="Shinjutsu-no-Obi +1", -- __, __, 15, __, __ [__/__, ___] {__, __}
     -- Base stats                   -- __,850, 43,220, __ [__/__, ___] {50, __}
-    -- Master level 8               -- __, 16
-    -- Ideal: 0 Geomancy, 901 geo skill, 99 Conserve MP, 286 Indi Duration, 20 Indi Duration % [57 PDT/ 45 MDT, 620 M.Eva] {Pet: 59 DT, 5 Regen}
+    -- Master level 14              -- __, 28
+    -- 0 Geomancy, 940 geo skill, 99 Conserve MP, 286 Indi Duration, 20 Indi Duration % [57 PDT/ 45 MDT, 620 M.Eva] {Pet: 63 DT, 5 Regen}
   }
 
   -- Cap at 700 power; Power = floor(MND÷2) + floor(VIT÷4) + Healing Magic Skill
