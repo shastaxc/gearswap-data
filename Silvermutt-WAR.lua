@@ -1556,7 +1556,7 @@ end
 -- Calculate Fencer tier. Fencer active if not two-handed weapon, and offhand is empty or shield.
 function calc_fencer_tier()
   local fencer = 0
-  if not state.CombatForm:contains('TwoHanded') then
+  if state.CombatForm.value ~= 'TwoHanded' then
     if player.equipment.sub == 'empty' then
       fencer = 5
     else
