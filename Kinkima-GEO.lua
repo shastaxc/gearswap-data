@@ -2031,19 +2031,6 @@ function select_default_macro_book()
   end
 end
 
-function seconds_to_clock(seconds)
-  local seconds = tonumber(seconds)
-
-  if seconds <= 0 then
-    return "00:00:00";
-  else
-    hours = string.format("%01.f", math.floor(seconds/3600));
-    mins = string.format("%02.f", math.floor(seconds/60 - (hours*60)));
-    secs = string.format("%02.f", math.floor(seconds - hours*3600 - mins *60));
-    return hours..":"..mins..":"..secs
-  end
-end
-
 function cycle_weapons(cycle_dir)
   if cycle_dir == 'forward' then
     state.WeaponSet:cycle()
