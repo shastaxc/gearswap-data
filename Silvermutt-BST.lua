@@ -322,7 +322,7 @@ function job_setup()
     ['Infrasonics'] = {id=0, name='', set='Macc', charges=0, tp_affected=true, multihit=false, range_type='Conal', effect='-Eva',},
     ['Chaotic Eye'] = {id=0, name='', set='Macc', charges=0, tp_affected=true, multihit=false, range_type='Single', effect='Silence',},
     ['Blaster'] = {id=0, name='', set='Macc', charges=0, tp_affected=true, multihit=false, range_type='Single', effect='Paralyze',},
-    ['Purulent Ooze'] = {id=0, name='', set='Macc', charges=0, tp_affected=true, multihit=false, range_type='Conal', effect='Bio',},
+    ['Purulent Ooze'] = {id=0, name='', set='Macc', charges=0, tp_affected=true, multihit=false, range_type='Conal', effect='-Max HP & Bio',},
     ['Intimidate'] = {id=0, name='', set='Macc', charges=0, tp_affected=true, multihit=false, range_type='Single', effect='Slow',},
     ['Noisome Powder'] = {id=0, name='', set='Macc', charges=0, tp_affected=true, multihit=false, range_type='AoE', effect='-Atk',},
     ['Acid Mist'] = {id=0, name='', set='Macc', charges=0, tp_affected=true, multihit=false, range_type='AoE', effect='-Atk',},
@@ -1056,26 +1056,30 @@ function init_gear_sets()
 
   -- This set is overlaid on top of the other pet midcast sets as appropriate
   sets.midcast.Pet.TPBonus = {
-    hands="Nukumi Manoplas +3",
+    -- hands="Nukumi Manoplas +3",
   }
   sets.midcast.Pet.TPBonus.Physical = set_combine(sets.midcast.Pet.TPBonus, {
-    main=gear.Ready_MAB_TPBonus_Axe,
-    sub=gear.Ready_Phys_TPBonus_Axe,
+    -- main=gear.Ready_MAB_TPBonus_Axe,
+    -- sub=gear.Ready_Phys_TPBonus_Axe,
+
     -- main="Aymur",
   })
   sets.midcast.Pet.TPBonus.Matk = set_combine(sets.midcast.Pet.TPBonus, {
-    main=gear.Ready_Macc_TPBonus_Axe,
-    sub=gear.Ready_MAB_TPBonus_Axe,
+    -- main=gear.Ready_Macc_TPBonus_Axe,
+    -- sub=gear.Ready_MAB_TPBonus_Axe,
+
     -- main="Aymur",
   })
   sets.midcast.Pet.TPBonus.Macc = set_combine(sets.midcast.Pet.TPBonus, {
-    main=gear.Ready_MAB_TPBonus_Axe,
-    sub=gear.Ready_Macc_TPBonus_Axe,
+    -- main=gear.Ready_MAB_TPBonus_Axe,
+    -- sub=gear.Ready_Macc_TPBonus_Axe,
+
     -- main="Aymur",
   })
   sets.midcast.Pet.TPBonus.Buff = set_combine(sets.midcast.Pet.TPBonus, {
-    main=gear.Ready_Macc_TPBonus_Axe,
-    sub=gear.Pet_DT_TPBonus_Axe,
+    -- main=gear.Ready_Macc_TPBonus_Axe,
+    -- sub=gear.Pet_DT_TPBonus_Axe,
+
     -- main="Aymur",
   })
 
@@ -1471,11 +1475,6 @@ end
 function job_midcast(spell, action, spellMap, eventArgs)
   silibs.midcast_hook(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
-
-	if spell.type == 'Monster' then
-    equip(get_bst_pet_midcast_set(spell, spellMap))
-    eventArgs.handled = true
-  end
 end
 
 function job_post_midcast(spell, action, spellMap, eventArgs)
@@ -1502,27 +1501,32 @@ function job_aftercast(spell, action, spellMap, eventArgs)
   silibs.aftercast_hook(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
 
-	if spell.type == 'Monster' then
-		if not spell.interrupted then
-		  equip(get_bst_pet_midcast_set(spell, spellMap))
-      eventArgs.handled = true
-	  end
+	if spell.type == 'Monster' and not spell.interrupted then
+    equip(get_bst_pet_midcast_set(spell, spellMap))
+    pending_pet_ability = true
+    eventArgs.handled = true
   end
 end
 
 function job_post_aftercast(spell, action, spellMap, eventArgs)
   -- If weapons are not what's set in the WeaponSet cycle, equip them
-  equip(select_weapons())
+	if spell.type ~= 'Monster' or spell.interrupted then
+    equip(select_weapons())
+  end
 
   ----------- Non-silibs content goes above this line -----------
   silibs.post_aftercast_hook(spell, action, spellMap, eventArgs)
 end
 
+-- Note: the "spell" object is different in the pet action hooks
 function job_pet_midcast(spell, action, spellMap, eventArgs)
-	if spell.type == 'Monster' then
-    equip(get_bst_pet_midcast_set(spell, spellMap))
-    eventArgs.handled = true
-  end
+  equip(get_bst_pet_midcast_set(spell, spellMap))
+  eventArgs.handled = true
+end
+
+-- Note: the "spell" object is different in the pet action hooks
+function job_pet_aftercast(spell, action, spellMap, eventArgs)
+  pending_pet_ability = false
 end
 
 -- Called when a player gains or loses a pet.
@@ -1654,7 +1658,7 @@ end
 
 -- Modify the default idle set after it was constructed.
 function customize_idle_set(idleSet)
-  if not pet_midaction() then
+  if not pending_pet_ability then
     -- If not in DT mode put on move speed gear
     if state.IdleMode.current == 'Normal' and state.DefenseMode.value == 'None' then
       -- Apply movement speed gear
@@ -1701,7 +1705,7 @@ end
 
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
-  if not pet_midaction() then
+  if not (state.HybridMode.value == 'Pet' and pending_pet_ability) then
     -- Apply pet engaged set
     if pet.isvalid and pet.status == 'Engaged' and state.HybridMode.value ~= 'Master' then
       local mode = state.HybridMode.value
@@ -1736,10 +1740,8 @@ function customize_melee_set(meleeSet)
 end
 
 function customize_defense_set(defenseSet)
-  if not pet_midaction() then
-    if state.CP.current == 'on' then
-      meleeSet = set_combine(meleeSet, sets.CP)
-    end
+  if state.CP.current == 'on' then
+    meleeSet = set_combine(meleeSet, sets.CP)
   end
 
   defenseSet = set_combine(defenseSet, select_weapons())
@@ -1978,7 +1980,7 @@ function get_bst_pet_midcast_set(spell, spellMap)
   local equipSet = {}
   local ready_move = ready_moves[spell.english]
 
-  if spell.type == 'Monster' and ready_move and pet.isvalid and sets.midcast and sets.midcast.Pet then
+  if spell.action_type == 'Monster Move' and ready_move and pet.isvalid and sets.midcast and sets.midcast.Pet then
     equipSet = sets.midcast.Pet
     
     -- Determine type of set to use
@@ -1990,8 +1992,12 @@ function get_bst_pet_midcast_set(spell, spellMap)
     -- If in Master mode...
     if state.HybridMode.current == 'Master' then
       -- Swap into Halfsies set if idle, do not swap if engaged
-      if player.status ~= 'Engaged' and equipSet['Halfsies'] then
-        equipSet = equipSet['Halfsies']
+      if player.status ~= 'Engaged' then
+        if equipSet['Halfsies'] then
+          equipSet = equipSet['Halfsies']
+        end
+      else
+        return {} -- Do not swap if Master mode and engaged
       end
     -- If in Halfsies mode, swap into Halfsies set always
     elseif state.HybridMode.current == 'Halfsies' and equipSet['Halfsies'] then
@@ -2070,6 +2076,7 @@ end
 function on_pet_change(petname)
   if current_pet ~= petname then
     current_pet = petname
+    pending_pet_ability = false -- Reset gearswap lockout if pet died or new pet summoned
     update_ui_text()
     update_ui_visibility()
   end
