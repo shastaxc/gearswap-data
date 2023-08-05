@@ -1,4 +1,5 @@
 -- File Status: Good. Just missing some gear.
+-- TODO: Handle midcast swaps for master_swap_moves
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs
@@ -10,17 +11,31 @@
 -- Notes about this specific lua
 -------------------------------------------------------------------------------------------------------------------
 -- Automatic Pet Targeting will cause you to use Fight automatically on your current target if you are engaged
--- and your pet is idle. There is a keybind to toggle it if you choose.
+-- and your pet is idle. There is a keybind to toggle that behavior if you choose.
 
 -- If your pet is engaged and you are in Pet mode, you will be in a PetEngaged set typically. If you need movement
 -- speed gear equipped in this situation, you can toggle on Kiting mode (CTRL+F10). Just remember to turn it off
 -- when you're done.
 
--- Feel free to put weapons into various sets. They will only swap if in Pet hybrid mode. Otherwise, it will always
--- lock you into the set you currently have set according to the WeaponSet cycle.
+-- Feel free to put weapons into various sets. They will only swap if in Pet hybrid mode and master is not engaged.
 
 -- Most pet Ready moves will not swap gear for the midcast if you are in Master hybrid mode unless they are
 -- included in the list called master_swap_moves. Feel free to modify that list as you see fit.
+
+-- Recommend setting up macros for ready moves in game like this:
+-- /console gs c ready 1
+-- /console gs c ready 7
+
+-- A UI displaying current pet's Ready moves is enabled by default. It displays the following info:
+-- [Index]    Ability Type    Range Type    Name    (Description)
+-- Example: Dust Cloud, a magical conal attack
+-- [1] M ▼ Dust Cloud (Blind)
+-- Magical attacks are also color coded by element so "Dust Cloud (Blind)" would be a yellow/brown color.
+-- There are some configuration options available for the UI in the job_setup() function. Please adjust as you see fit.
+
+-- Feel free to adjust the JugMode cycle with any pets you wish to summon. This only affects the Bestial Loyalty keybind.
+-- This will automate swapping into the correct Jug in your ammo slot. The ready moves are tied to the pet that is detected
+-- as alive, not what your JugMode is set to.
 
 -------------------------------------------------------------------------------------------------------------------
 --  Keybinds
