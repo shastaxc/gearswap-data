@@ -1945,6 +1945,8 @@ function job_self_command(cmdParams, eventArgs)
   elseif cmdParams[1] == 'ready' then
     if cmdParams[2] then
       use_ready_move(tonumber(cmdParams[2]))
+    else
+      add_to_chat(123, 'Missing 2nd parameter for this command.')
     end
   elseif cmdParams[1] == 'bind' then
     set_main_keybinds()
