@@ -88,9 +88,7 @@ function job_setup()
   state.AutomaticPetTargeting = M(true, 'Automatic Pet Targeting')
   state.CorrelationMode = M{['description']='Correlation Mode', 'Neutral', 'Favorable'}
   state.AttCapped = M(true, 'Attack Capped')
-
   state.PetMode = M{['description']='Pet Mode', 'Tank', 'DD'}
-
   state.JugMode = M{['description']='Jug Mode', 'GenerousArthur', 'VivaciousVickie', 'RhymingShizuna', 'SwoopingZhivago', 'FatsoFargann'}
 
   -- Jug pets info
@@ -1766,6 +1764,14 @@ function user_customize_defense_set(defenseSet)
   return silibs.customize_defense_set(defenseSet)
 end
 
+-- Handle notifications of general user state change.
+-- Called by mote-selfcommands
+function job_state_change(stateField, newValue, oldValue)
+  if stateField == 'Show UI' then
+    update_ui_visibility()
+  end
+end
+
 -- Function to display the current relevant user state when doing an update.
 -- Set eventArgs.handled to true if display was handled, and you don't want the default info shown.
 function display_current_job_state(eventArgs)
@@ -2213,6 +2219,8 @@ function set_main_keybinds()
   send_command('bind !end gs c reset JugMode')
 
   send_command('bind !z gs c toggle AutomaticPetTargeting')
+  send_command('bind !x gs c cycle CorrelationMode')
+  send_command('bind ^u gs c toggle ShowUI')
   send_command('bind !` input /ja "Reward" <me>')
 
   send_command('bind ^` gs c cycle treasuremode')
@@ -2254,6 +2262,8 @@ function unbind_keybinds()
   send_command('unbind !end')
 
   send_command('unbind !z')
+  send_command('unbind !x')
+  send_command('unbind ^u')
   send_command('unbind !`')
 
   send_command('unbind ^`')
