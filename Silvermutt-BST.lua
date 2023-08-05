@@ -1,6 +1,5 @@
 -- File Status: WIP. Still pretty meh.
 -- TODO: Substitute all missing gear with obtained gear.
--- Map all pet abilities to standard 4 buttons (create job_self_command for them)
 -- Change "Buff" ready moves to other sets, possibly "None" and "HP".
 
 -- Author: Silvermutt
@@ -398,6 +397,9 @@ function job_setup()
     ['Macc'] = ' ',
     ['Buff'] = ' ',
   }
+
+  -- Does not include Ready moves
+  abilities_require_pet = S{'Familiar', 'Reward', 'Fight', 'Heel', 'Leave', 'Stay', 'Snarl', 'Spur', 'Run Wild'}
 
   create_ui()
   on_pet_change(pet and pet.name)
@@ -1401,6 +1403,11 @@ function job_precast(spell, action, spellMap, eventArgs)
     equip(sets.precast.ReadyRecast)
     eventArgs.handled = true
   end
+
+  if not pet.isvalid and (spell.type == 'Monster' or abilities_require_pet:contains(spell.english)) then
+    add_to_chat(123, 'No valid pet detected!')
+    eventArgs.cancel = true
+  end
 end
 
 -- Run after the general precast() is done.
@@ -1825,6 +1832,18 @@ function select_weapons()
   return {}
 end
 
+function use_ready_move(index)
+  if current_pet and index then
+    local pet_info = jugs[current_pet]
+    if pet_info then
+      local move_list = family_ready_move_lists[pet_info.family]
+      if move_list and move_list[index] then
+        send_command('input /ja "'..move_list[index]..'" <me>')
+      end
+    end
+  end
+end
+
 function auto_engage_pet()
 	if areas.Cities:contains(world.area) then
     return
@@ -1918,6 +1937,10 @@ function job_self_command(cmdParams, eventArgs)
       windower.chat.input('/pet "Leave" <me>')
     else
       windower.chat.input('/ja "Bestial Loyalty" <me>')
+    end
+  elseif cmdParams[1] == 'ready' then
+    if cmdParams[2] then
+      use_ready_move(tonumber(cmdParams[2]))
     end
   elseif cmdParams[1] == 'bind' then
     set_main_keybinds()
@@ -2185,7 +2208,12 @@ function set_main_keybinds()
   send_command('bind ^delete gs c weaponset cycleback')
   send_command('bind !delete gs c weaponset reset')
 
+  send_command('bind ^home gs c cycle JugMode')
+  send_command('bind ^end gs c cycleback JugMode')
+  send_command('bind !end gs c reset JugMode')
+
   send_command('bind !z gs c toggle AutomaticPetTargeting')
+  send_command('bind !` input /ja "Reward" <me>')
 
   send_command('bind ^` gs c cycle treasuremode')
   send_command('bind @c gs c toggle CP')
@@ -2210,7 +2238,6 @@ function set_sub_keybinds()
     send_command('bind ^numpad0 input /ma "Utsusemi: Ichi" <me>')
     send_command('bind ^numpad. input /ma "Utsusemi: Ni" <me>')
   end
-
 end
 
 function unbind_keybinds()
@@ -2222,8 +2249,12 @@ function unbind_keybinds()
   send_command('unbind ^delete')
   send_command('unbind !delete')
 
+  send_command('unbind ^home')
+  send_command('unbind ^end')
+  send_command('unbind !end')
+
   send_command('unbind !z')
-  send_command('unbind !x')
+  send_command('unbind !`')
 
   send_command('unbind ^`')
   send_command('unbind @c')
@@ -2233,7 +2264,6 @@ function unbind_keybinds()
   send_command('unbind ^pagedown')
   send_command('unbind !pagedown')
   
-  send_command('unbind !`')
   send_command('unbind !q')
   send_command('unbind !w')
   send_command('unbind !e')
