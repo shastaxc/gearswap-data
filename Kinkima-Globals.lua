@@ -117,7 +117,7 @@ function define_global_sets()
   include('Kinkima-Augments.lua')
 end
 
-windower.register_event('zone change', function()
+windower.raw_register_event('zone change', function()
   -- Auto load Omen add-on
   if world.zone == 'Reisenjima Henge' then
     send_command('lua l omen')
