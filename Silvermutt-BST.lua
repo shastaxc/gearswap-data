@@ -1,5 +1,4 @@
--- File Status: WIP. Still pretty meh.
--- TODO: Substitute all missing gear with obtained gear.
+-- File Status: Good. Just missing some gear.
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs
