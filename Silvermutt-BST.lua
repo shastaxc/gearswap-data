@@ -1,5 +1,4 @@
 -- File Status: Good. Just missing some gear.
--- TODO: Handle midcast swaps for master_swap_moves
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs
@@ -20,7 +19,7 @@
 -- Feel free to put weapons into various sets. They will only swap if in Pet hybrid mode and master is not engaged.
 
 -- Most pet Ready moves will not swap gear for the midcast if you are in Master hybrid mode unless they are
--- included in the list called master_swap_moves. Feel free to modify that list as you see fit.
+-- included in the list called always_swap_moves. Feel free to modify that list as you see fit.
 
 -- Recommend setting up macros for ready moves in game like this:
 -- /console gs c ready 1
@@ -366,8 +365,9 @@ function job_setup()
   end
 
   -- List of Ready moves to allow gear swapping even when hybrid mode is set to 'Master'
-  master_swap_moves = S{
+  always_swap_moves = S{
     'Purulent Ooze',
+    'TP Drainkiss',
   }
 
   sets.org.job = {}
@@ -1408,7 +1408,7 @@ function job_precast(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
 
   -- If in Pet hybrid mode, cancel abilities if pet is using Ready move.
-  if state.HybridMode.value == 'Pet' and pet_midaction() then
+  if state.HybridMode.value == 'Pet' and pending_pet_ability then
     eventArgs.cancel = true
     add_to_chat(122, 'Action canceled because pet was midaction.')
   end
@@ -1504,7 +1504,9 @@ function job_aftercast(spell, action, spellMap, eventArgs)
 	if spell.type == 'Monster' and not spell.interrupted then
     equip(get_bst_pet_midcast_set(spell, spellMap))
     pending_pet_ability = true
-    eventArgs.handled = true
+    if state.HybridMode.value ~= 'Master' and not always_swap_moves:contains(spell.english) then
+      eventArgs.handled = true
+    end
   end
 end
 
@@ -1538,7 +1540,7 @@ end
 
 -- Called when the pet's status changes.
 function job_pet_status_change(newStatus, oldStatus)
-  if pet.isvalid and not midaction() and not pet_midaction() and (newStatus == 'Engaged' or oldStatus == 'Engaged') then
+  if pet.isvalid and not midaction() and not pending_pet_ability and (newStatus == 'Engaged' or oldStatus == 'Engaged') then
     handle_equipping_gear(player.status, newStatus)
   end
 end
@@ -1996,8 +1998,8 @@ function get_bst_pet_midcast_set(spell, spellMap)
         if equipSet['Halfsies'] then
           equipSet = equipSet['Halfsies']
         end
-      else
-        return {} -- Do not swap if Master mode and engaged
+      elseif not always_swap_moves:contains(spell.english) then
+        return {} -- Do not swap if Master mode, engaged, and spell is not on always_swap_moves list
       end
     -- If in Halfsies mode, swap into Halfsies set always
     elseif state.HybridMode.current == 'Halfsies' and equipSet['Halfsies'] then
