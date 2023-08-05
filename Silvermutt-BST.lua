@@ -1,7 +1,6 @@
 -- File Status: WIP. Still pretty meh.
 -- TODO: Substitute all missing gear with obtained gear.
 -- Map all pet abilities to standard 4 buttons (create job_self_command for them)
--- Add UI to display pet abilities, color coded to type of set, show charge cost, element, and range type
 -- Change "Buff" ready moves to other sets, possibly "None" and "HP".
 
 -- Author: Silvermutt
@@ -60,10 +59,19 @@ function get_sets()
   coroutine.schedule(function()
     send_command('gs c weaponset current')
   end, 5)
+  
+  texts = require('texts') -- Used for pet UI
 end
 
 -- Executes on first load and main job change
 function job_setup()
+  -- UPDATE THESE SETTINGS FOR UI
+  state.ShowUI = M(true, 'Show UI')
+  ui_x_position = 145
+  ui_y_position = 625
+  ui_font = 'Cascadia Mono' -- Can use any font on your OS
+  ui_show_ability_description = true
+
   silibs.enable_cancel_outranged_ws()
   silibs.enable_cancel_on_blocking_status()
   silibs.enable_weapon_rearm()
@@ -84,88 +92,88 @@ function job_setup()
 
   state.PetMode = M{['description']='Pet Mode', 'Tank', 'DD'}
 
-  state.JugMode = M{['description']='Jug Mode', 'Generous Arthur', 'Vivacious Vickie', 'Rhyming Shizuna', 'Swooping Zhivago', 'Fatso Fargann'}
+  state.JugMode = M{['description']='Jug Mode', 'GenerousArthur', 'VivaciousVickie', 'RhymingShizuna', 'SwoopingZhivago', 'FatsoFargann'}
 
   -- Jug pets info
   jugs = {
     -- Complete Lvl 76-99 Jug Pet Precast List +Funguar +Courier +Amigo
-    ['Funguar Familiar']        = {item='Seedbed Soil', nq_pet='', type='Plantoid', family='Funguar',},
-    ['Courier Carrie']          = {item='Fish Oil Broth', nq_pet='', type='Aquan', family='Crab',},
-    ['Amigo Sabotender']        = {item='Sun Water', nq_pet='', type='Plantoid', family='Sabotender',},
-    ['Nursery Nazuna']          = {item='D. Herbal Broth', nq_pet='', type='Beast', family='Sheep',},
-    ['Crafty Clyvonne']         = {item='Cng. Brain Broth', nq_pet='', type='Beast', family='Coeurl',},
-    ['Presto Julio']            = {item='C. Grass. Broth', nq_pet='', type='Plantoid', family='Flytrap',},
-    ['Swift Sieghard']          = {item='Mlw. Bird Broth', nq_pet='', type='Lizard', family='Raptor',},
-    ['Mailbuster Cetas']        = {item='Gob. Bug Broth', nq_pet='', type='Vermin', family='Fly',},
-    ['Audacious Anna']          = {item='B. Carrion Broth', nq_pet='', type='Lizard', family='Hill Lizard',},
-    ['Turbid Toloi']            = {item='Auroral Broth', nq_pet='', type='Aquan', family='Pugil',},
-    ['Lucky Lulush']            = {item='L. Carrot Broth', nq_pet='', type='Beast', family='Rabbit',},
-    ['Dipper Yuly']             = {item='Wool Grease', nq_pet='', type='Vermin', family='Ladybug',},
-    ['Flowerpot Merle']         = {item='Vermihumus', nq_pet='', type='Plantoid', family='Mandragora',},
-    ['Dapper Mac']              = {item='Briny Broth', nq_pet='', type='Bird', family='Apkallu',},
-    ['Discreet Louise']         = {item='Deepbed Soil', nq_pet='', type='Plantoid', family='Funguar',},
-    ['Fatso Fargann']           = {item='C. Plasma Broth', nq_pet='', type='Amorph', family='Leech',},
-    ['Faithful Falcorr']        = {item='Lucky Broth', nq_pet='', type='Bird', family='Hippogryph',},
-    ['Bugeyed Broncha']         = {item='Svg. Mole Broth', nq_pet='', type='Lizard', family='Eft',},
-    ['Bloodclaw Shasra']        = {item='Rzr. Brain Broth', nq_pet='', type='Beast', family='Coeurl',},
-    ['Gorefang Hobs']           = {item='B. Carrion Broth', nq_pet='', type='Beast', family='Tiger',},
-    ['Gooey Gerard']            = {item='Cl. Wheat Broth', nq_pet='', type='Amorph', family='Slug',},
-    ['Crude Raphie']            = {item='Shadowy Broth', nq_pet='', type='Lizard', family='Adamantoise',},
+    ['FunguarFamiliar']   = {item='Seedbed Soil', nq_pet='', type='Plantoid', family='Funguar',},
+    ['CourierCarrie']     = {item='Fish Oil Broth', nq_pet='', type='Aquan', family='Crab',},
+    ['AmigoSabotender']   = {item='Sun Water', nq_pet='', type='Plantoid', family='Sabotender',},
+    ['NurseryNazuna']     = {item='D. Herbal Broth', nq_pet='', type='Beast', family='Sheep',},
+    ['CraftyClyvonne']    = {item='Cng. Brain Broth', nq_pet='', type='Beast', family='Coeurl',},
+    ['PrestoJulio']       = {item='C. Grass. Broth', nq_pet='', type='Plantoid', family='Flytrap',},
+    ['SwiftSieghard']     = {item='Mlw. Bird Broth', nq_pet='', type='Lizard', family='Raptor',},
+    ['MailbusterCetas']   = {item='Gob. Bug Broth', nq_pet='', type='Vermin', family='Fly',},
+    ['AudaciousAnna']     = {item='B. Carrion Broth', nq_pet='', type='Lizard', family='Hill Lizard',},
+    ['TurbidToloi']       = {item='Auroral Broth', nq_pet='', type='Aquan', family='Pugil',},
+    ['LuckyLulush']       = {item='L. Carrot Broth', nq_pet='', type='Beast', family='Rabbit',},
+    ['DipperYuly']        = {item='Wool Grease', nq_pet='', type='Vermin', family='Ladybug',},
+    ['FlowerpotMerle']    = {item='Vermihumus', nq_pet='', type='Plantoid', family='Mandragora',},
+    ['DapperMac']         = {item='Briny Broth', nq_pet='', type='Bird', family='Apkallu',},
+    ['DiscreetLouise']    = {item='Deepbed Soil', nq_pet='', type='Plantoid', family='Funguar',},
+    ['FatsoFargann']      = {item='C. Plasma Broth', nq_pet='', type='Amorph', family='Leech',},
+    ['FaithfulFalcorr']   = {item='Lucky Broth', nq_pet='', type='Bird', family='Hippogryph',},
+    ['BugeyedBroncha']    = {item='Svg. Mole Broth', nq_pet='', type='Lizard', family='Eft',},
+    ['BloodclawShasra']   = {item='Rzr. Brain Broth', nq_pet='', type='Beast', family='Coeurl',},
+    ['GorefangHobs']      = {item='B. Carrion Broth', nq_pet='', type='Beast', family='Tiger',},
+    ['GooeyGerard']       = {item='Cl. Wheat Broth', nq_pet='', type='Amorph', family='Slug',},
+    ['CrudeRaphie']       = {item='Shadowy Broth', nq_pet='', type='Lizard', family='Adamantoise',},
 
     -- Complete iLvl Jug Pet Precast List
-    ['Droopy Dortwin']          = {item='Swirling Broth', nq_pet='', type='Beast', family='Rabbit',},
-    ['Sunburst Malfik']         = {item='Shimmering Broth', nq_pet='', type='Aquan', family='Crab',},
-    ['Warlike Patrick']         = {item='Livid Broth', nq_pet='', type='Lizard', family='Hill Lizard',},
-    ['Scissorleg Xerin']        = {item='Spicy Broth', nq_pet='', type='Vermin', family='Chapuli',},
-    ['Rhyming Shizuna']         = {item='Lyrical Broth', nq_pet='', type='Beast', family='Sheep',},
-    ['Attentive Ibuki']         = {item='Salubrious Broth', nq_pet='', type='Bird', family='Tulfaire',},
-    ['Amiable Roche']           = {item='Airy Broth', nq_pet='', type='Aquan', family='Pugil',},
-    ['Herald Henry']            = {item='Trans. Broth', nq_pet='', type='Aquan', family='Crab',},
-    ['Brainy Waluis']           = {item='Crumbly Soil', nq_pet='', type='Plantoid', family='Funguar',},
-    ['Headbreaker Ken']         = {item='Blackwater Broth', nq_pet='', type='Vermin', family='Fly',},
-    ['Suspicious Alice']        = {item='Furious Broth', nq_pet='', type='Lizard', family='Eft',},
-    ['Anklebiter Jedd']         = {item='Crackling Broth', nq_pet='', type='Vermin', family='Diremite',},
-    ['Fleet Reinhard']          = {item='Rapid Broth', nq_pet='', type='Lizard', family='Raptor',},
-    ['Cursed Annabelle']        = {item='Creepy Broth', nq_pet='', type='Vermin', family='Antlion',},
-    ['Surging Storm']           = {item='Insipid Broth', nq_pet='', type='Bird', family='Apkallu',},
-    ['Redolent Candi']          = {item='Electrified Broth', nq_pet='', type='Plantoid', family='Snapweed',},
-    ['Caring Kiyomaro']         = {item='Fizzy Broth', nq_pet='', type='Beast', family='Raaz',},
-    ['Hurler Percival']         = {item='Pale Sap', nq_pet='', type='Vermin', family='Beetle',},
-    ['Blackbeard Randy']        = {item='Meaty Broth', nq_pet='', type='Beast', family='Tiger',},
-    ['Generous Arthur']         = {item='Dire Broth', nq_pet='', type='Amorph', family='Slug',},
-    ['Threestar Lynn']          = {item='Muddy Broth', nq_pet='', type='Vermin', family='Ladybug',},
-    ['Mosquito Familiar']       = {item='Wetlands Broth', nq_pet='', type='Vermin', family='Mosquito',},
-    ['Brave Hero Glenn']         = {item='Wispy Broth', nq_pet='', type='Aquan', family='Frog',},
-    ['Sharpwit Hermes']         = {item='Saline Broth', nq_pet='', type='Plantoid', family='Mandragora',},
-    ['Colibri Familiar']        = {item='Sugary Broth', nq_pet='', type='Bird', family='Colibri',},
-    ['Spider Familiar']         = {item='Sticky Webbing', nq_pet='', type='Vermin', family='Spider',},
-    ['Acuex Familiar']          = {item='Poisonous Broth', nq_pet='', type='Amorph', family='Acuex',},
-    ['Weevil Familiar']         = {item='Pristine Sap', nq_pet='', type='Vermin', family='Lucani',},
-    ['Sweet Caroline']          = {item='Aged Humus', nq_pet='', type='Plantoid', family='Mandragora',},
-    ['Porter Crab Familiar']    = {item='Rancid Broth', nq_pet='', type='Aquan', family='Crab',},
-    ['Yellow Beetle Familiar']  = {item='Zestful Sap', nq_pet='', type='Vermin', family='Yellow Beetle',},
-    ['Lynx Familiar']           = {item='Frizzante Broth', nq_pet='', type='Beast', family='Coeurl',},
-    ['Hippogryph Familiar']     = {item='Turpid Broth', nq_pet='', type='Bird', family='Hippogryph',},
-    ['Slime Familiar']          = {item='Decaying Broth', nq_pet='', type='Amorph', family='Slime',},
+    ['DroopyDortwin']     = {item='Swirling Broth', nq_pet='', type='Beast', family='Rabbit',},
+    ['SunburstMalfik']    = {item='Shimmering Broth', nq_pet='', type='Aquan', family='Crab',},
+    ['WarlikePatrick']    = {item='Livid Broth', nq_pet='', type='Lizard', family='Hill Lizard',},
+    ['ScissorlegXerin']   = {item='Spicy Broth', nq_pet='', type='Vermin', family='Chapuli',},
+    ['RhymingShizuna']    = {item='Lyrical Broth', nq_pet='', type='Beast', family='Sheep',},
+    ['AttentiveIbuki']    = {item='Salubrious Broth', nq_pet='', type='Bird', family='Tulfaire',},
+    ['AmiableRoche']      = {item='Airy Broth', nq_pet='', type='Aquan', family='Pugil',},
+    ['HeraldHenry']       = {item='Trans. Broth', nq_pet='', type='Aquan', family='Crab',},
+    ['BrainyWaluis']      = {item='Crumbly Soil', nq_pet='', type='Plantoid', family='Funguar',},
+    ['HeadbreakerKen']    = {item='Blackwater Broth', nq_pet='', type='Vermin', family='Fly',},
+    ['SuspiciousAlice']   = {item='Furious Broth', nq_pet='', type='Lizard', family='Eft',},
+    ['AnklebiterJedd']    = {item='Crackling Broth', nq_pet='', type='Vermin', family='Diremite',},
+    ['FleetReinhard']     = {item='Rapid Broth', nq_pet='', type='Lizard', family='Raptor',},
+    ['CursedAnnabelle']   = {item='Creepy Broth', nq_pet='', type='Vermin', family='Antlion',},
+    ['SurgingStorm']      = {item='Insipid Broth', nq_pet='', type='Bird', family='Apkallu',},
+    ['RedolentCandi']     = {item='Electrified Broth', nq_pet='', type='Plantoid', family='Snapweed',},
+    ['CaringKiyomaro']    = {item='Fizzy Broth', nq_pet='', type='Beast', family='Raaz',},
+    ['HurlerPercival']    = {item='Pale Sap', nq_pet='', type='Vermin', family='Beetle',},
+    ['BlackbeardRandy']   = {item='Meaty Broth', nq_pet='', type='Beast', family='Tiger',},
+    ['GenerousArthur']    = {item='Dire Broth', nq_pet='', type='Amorph', family='Slug',},
+    ['ThreestarLynn']     = {item='Muddy Broth', nq_pet='', type='Vermin', family='Ladybug',},
+    ['MosquitoFamiliar']  = {item='Wetlands Broth', nq_pet='', type='Vermin', family='Mosquito',},
+    ['BraveHeroGlenn']    = {item='Wispy Broth', nq_pet='', type='Aquan', family='Frog',},
+    ['SharpwitHermes']    = {item='Saline Broth', nq_pet='', type='Plantoid', family='Mandragora',},
+    ['ColibriFamiliar']   = {item='Sugary Broth', nq_pet='', type='Bird', family='Colibri',},
+    ['SpiderFamiliar']    = {item='Sticky Webbing', nq_pet='', type='Vermin', family='Spider',},
+    ['AcuexFamiliar']     = {item='Poisonous Broth', nq_pet='', type='Amorph', family='Acuex',},
+    ['WeevilFamiliar']    = {item='Pristine Sap', nq_pet='', type='Vermin', family='Lucani',},
+    ['SweetCaroline']     = {item='Aged Humus', nq_pet='', type='Plantoid', family='Mandragora',},
+    ['P.CrabFamiliar']    = {item='Rancid Broth', nq_pet='', type='Aquan', family='Crab',},
+    ['Y.BeetleFamiliar']  = {item='Zestful Sap', nq_pet='', type='Vermin', family='Yellow Beetle',},
+    ['LynxFamiliar']      = {item='Frizzante Broth', nq_pet='', type='Beast', family='Coeurl',},
+    ['Hip.Familiar']      = {item='Turpid Broth', nq_pet='', type='Bird', family='Hippogryph',},
+    ['SlimeFamiliar']     = {item='Decaying Broth', nq_pet='', type='Amorph', family='Slime',},
 
     -- HQ pets
-    ['Pondering Peter']         = {item='Vis. Broth', nq_pet='Droopy Dortwin', type='Beast', family='Rabbit',},
-    ['Aged Angus']              = {item='Ferm. Broth', nq_pet='Sunburst Malfik', type='Aquan', family='Crab',},
-    ['Bouncing Bertha']         = {item='Bubbly Broth', nq_pet='Scissorleg Xerin', type='Vermin', family='Chapuli',},
-    ['Swooping Zhivago']        = {item='Windy Greens', nq_pet='Attentive Ibuki', type='Bird', family='Tulfaire',},
-    ['Alluring Honey']          = {item='Bug-Ridden Broth', nq_pet='Redolent Candi', type='Plantoid', family='Snapweed',},
-    ['Vivacious Vickie']        = {item='Tant. Broth', nq_pet='Caring Kiyomaro', type='Beast', family='Raaz',},
-    ['Choral Leera']            = {item='Glazed Broth', nq_pet='Colibri Familiar', type='Bird', family='Colibri',},
-    ['Gussy Hachirobe']         = {item='Slimy Webbing', nq_pet='Spider Familiar', type='Vermin', family='Spider',},
-    ['Submerged Iyo']           = {item='Deepwater Broth', nq_pet='Surging Storm', type='Bird', family='Apkallu',},
-    ['Fluffy Bredo']            = {item='Venomous Broth', nq_pet='Acuex Familiar', type='Amorph', family='Acuex',},
-    ['Left-Handed Yoko']        = {item='Heavenly Broth', nq_pet='Mosquito Familiar', type='Vermin', family='Mosquito',},
-    ['Stalwart Angelina']       = {item='T. Pristine Sap', nq_pet='Weevil Familiar', type='Vermin', family='Lucani',},
-    ['Jovial Edwin']            = {item='Pungent Broth', nq_pet='Porter Crab Familiar', type='Aquan', family='Crab',},
-    ['Energized Sefina']        = {item='Gassy Sap', nq_pet='Yellow Beetle Familiar', type='Vermin', family='Yellow Beetle',},
-    ['Vivacious Gaston']        = {item='Spumante Broth', nq_pet='Lynx Familiar', type='Beast', family='Coeurl',},
-    ['Daring Roland']           = {item='Feculent Broth', nq_pet='Hippogryph Familiar', type='Bird', family='Hippogryph',},
-    ['Sultry Patrice']          = {item='Putrescent Broth', nq_pet='Slime Familiar', type='Amorph', family='Slime',},
+    ['PonderingPeter']    = {item='Vis. Broth', nq_pet='Droopy Dortwin', type='Beast', family='Rabbit',},
+    ['AgedAngus']         = {item='Ferm. Broth', nq_pet='Sunburst Malfik', type='Aquan', family='Crab',},
+    ['BouncingBertha']    = {item='Bubbly Broth', nq_pet='Scissorleg Xerin', type='Vermin', family='Chapuli',},
+    ['SwoopingZhivago']   = {item='Windy Greens', nq_pet='Attentive Ibuki', type='Bird', family='Tulfaire',},
+    ['AlluringHoney']     = {item='Bug-Ridden Broth', nq_pet='Redolent Candi', type='Plantoid', family='Snapweed',},
+    ['VivaciousVickie']   = {item='Tant. Broth', nq_pet='Caring Kiyomaro', type='Beast', family='Raaz',},
+    ['ChoralLeera']       = {item='Glazed Broth', nq_pet='Colibri Familiar', type='Bird', family='Colibri',},
+    ['GussyHachirobe']    = {item='Slimy Webbing', nq_pet='Spider Familiar', type='Vermin', family='Spider',},
+    ['SubmergedIyo']      = {item='Deepwater Broth', nq_pet='Surging Storm', type='Bird', family='Apkallu',},
+    ['FluffyBredo']       = {item='Venomous Broth', nq_pet='Acuex Familiar', type='Amorph', family='Acuex',},
+    ['Left-HandedYoko']   = {item='Heavenly Broth', nq_pet='Mosquito Familiar', type='Vermin', family='Mosquito',},
+    ['StalwartAngelina']  = {item='T. Pristine Sap', nq_pet='Weevil Familiar', type='Vermin', family='Lucani',},
+    ['JovialEdwin']       = {item='Pungent Broth', nq_pet='Porter Crab Familiar', type='Aquan', family='Crab',},
+    ['EnergizedSefina']   = {item='Gassy Sap', nq_pet='Yellow Beetle Familiar', type='Vermin', family='Yellow Beetle',},
+    ['VivaciousGaston']   = {item='Spumante Broth', nq_pet='Lynx Familiar', type='Beast', family='Coeurl',},
+    ['DaringRoland']      = {item='Feculent Broth', nq_pet='Hippogryph Familiar', type='Bird', family='Hippogryph',},
+    ['SultryPatrice']     = {item='Putrescent Broth', nq_pet='Slime Familiar', type='Amorph', family='Slime',},
   }
 
   family_ready_move_lists = {
@@ -185,7 +193,7 @@ function job_setup()
     ['Apkallu'] = {[1]='Wing Slap',[2]='Beak Lunge'},
     ['Leech'] = {[1]='TP Drainkiss',[2]='Acid Mist',[3]='Drainkiss',[4]='Suction'},
     ['Hippogryph'] = {[1]='Nihility Song',[2]='Jettatura',[3]='Choke Breath',[4]='Back Heel',[5]='Hoof Volley',[6]='Fantod'},
-    ['Eft'] = {[1]='Geist Wall',[2]='Numbing Noise',[3]='Cyclotail',[4]='Nimple Snap',[5]='Toxic Spit'},
+    ['Eft'] = {[1]='Geist Wall',[2]='Numbing Noise',[3]='Cyclotail',[4]='Nimble Snap',[5]='Toxic Spit'},
     ['Tiger'] = {[1]='Claw Cyclone',[2]='Crossthrash',[3]='Predatory Glare',[4]='Roar',[5]='Razor Fang'},
     ['Slug'] = {[1]='Purulent Ooze',[2]='Corrosive Ooze'},
     ['Adamantoise'] = {[1]='Harden Shell',[2]='Tortoise Stomp',[3]='Aqua Breath'},
@@ -202,7 +210,7 @@ function job_setup()
     ['Spider'] = {[1]='Sickle Slash',[2]='Acid Spray',[3]='Spider Web'},
     ['Acuex'] = {[1]='Pestilent Plume',[2]='Foul Waters'},
     ['Lucani'] = {[1]='Extirpating Salvo',[2]='Disembowel'},
-    ['Yellow Beetle'] = {[1]='Rhinowrecker',[2]='Power Attack',[3]='Rhino Attack',[4]='High-Frequency Field',[5]='Rhino Guard',[6]='Spoil'},
+    ['Yellow Beetle'] = {[1]='Rhinowrecker',[2]='Power Attack',[3]='Rhino Attack',[4]='Hi-Freq Field',[5]='Rhino Guard',[6]='Spoil'},
     ['Slime'] = {[1]='Fluid Spread',[2]='Fluid Toss',[3]='Digest'},
   }
 
@@ -259,6 +267,7 @@ function job_setup()
     ['Fluid Toss'] = {id=0, name='', set='Physical', charges=0, tp_affected=true, multihit=false, range_type='Single', effect='',},
     ['Fluid Spread'] = {id=0, name='', set='Physical', charges=0, tp_affected=true, multihit=false, range_type='AoE', effect='',},
     ['Queasyshroom'] = {id=0, name='', set='Physical', charges=0, tp_affected=false, multihit=false, range_type='Single', effect='Poison',},
+    ['??? Needles'] = {id=0, name='', set='Physical', charges=0, tp_affected=true, multihit=false, range_type='AoE', effect='',},
 
     ['Dust Cloud'] = {id=0, name='', set='Matk', charges=0, tp_affected=true, multihit=false, range_type='Conal', effect='Blind', element='Earth',},
     ['Cursed Sphere'] = {id=0, name='', set='Matk', charges=0, tp_affected=true, multihit=false, range_type='AoE', effect='', element='Darkness',},
@@ -337,6 +346,15 @@ function job_setup()
     v.name = k
   end
 
+  -- Validate that all pet ready moves have info defined
+  for family,move_list in pairs(family_ready_move_lists) do
+    for index,ready_move_name in ipairs(move_list) do
+      if not ready_moves[ready_move_name] then
+        print('Error: Missing "'..ready_move_name..'" from "ready_moves" list.')
+      end
+    end
+  end
+
   -- List of Ready moves to allow gear swapping even when hybrid mode is set to 'Master'
   master_swap_moves = S{
     'Purulent Ooze',
@@ -355,7 +373,34 @@ function job_setup()
 
   skill_ids_2h = S{4, 6, 7, 8, 10, 12} -- DO NOT MODIFY
   fencer_tp_bonus = {200, 300, 400, 450, 500, 550, 600, 630} -- DO NOT MODIFY
+  current_pet = nil -- DO NOT MODIFY
+  
+  element_colors = {
+    ['Fire']      = '\\cs(244,  58,  18)',
+    ['Ice']       = '\\cs(136, 238, 244)',
+    ['Wind']      = '\\cs( 41, 224,   8)',
+    ['Earth']     = '\\cs(246, 205,  51)',
+    ['Thunder']   = '\\cs(199,  81, 254)',
+    ['Water']     = '\\cs( 94, 149, 235)',
+    ['Light']     = '\\cs(238, 238, 191)',
+    ['Darkness']  = '\\cs(151, 139, 184)',
+  }
+  default_txt_color = '\\cs(255, 255, 255)'
+  range_symbol = {
+    ['Self'] = '↑',
+    ['Single'] = '•',
+    ['Conal'] = '▼',
+    ['AoE'] = '◯',
+  }
+  ready_move_set_symbol = {
+    ['Physical'] = 'P',
+    ['Matk'] = 'M',
+    ['Macc'] = ' ',
+    ['Buff'] = ' ',
+  }
 
+  create_ui()
+  on_pet_change(pet and pet.name)
   set_main_keybinds()
 end
 
@@ -1950,6 +1995,102 @@ function get_bst_pet_midcast_set(spell, spellMap)
   return equipSet
 end
 
+function create_ui()
+  local ui_settings = {
+    text={
+      size=10,
+      font=ui_font,
+      alpha=255,
+      red=255,
+      green=255,
+      blue=255,
+    },
+    pos={
+      x=ui_x_position,
+      y=ui_y_position,
+    },
+    bg={
+      visible=true,
+      alpha=200,
+      red=0,
+      green=0,
+      blue=0,
+    },
+    padding=2,
+  }
+  
+  ui = texts.new('${value}', ui_settings)
+  ui:hide()
+end
+
+function on_pet_change(petname)
+  if current_pet ~= petname then
+    current_pet = petname
+    update_ui_text()
+    update_ui_visibility()
+  end
+end
+
+function update_ui_text()
+  if ui then
+    -- Update UI text
+    local lines = T{}
+    if current_pet then
+      -- Display ready move info
+      local pet_info = jugs[current_pet]
+      if pet_info then
+        local ready_move_list = family_ready_move_lists[pet_info.family]
+        if ready_move_list then
+          for index,ready_move_name in ipairs(ready_move_list) do
+            -- Index    color code by element    set type    range type symbol    name    description
+            local str = ''
+            if index > 1 then
+              str = default_txt_color
+            end
+            str = str..'['..index..']'
+            local ready_move_info = ready_moves[ready_move_name]
+
+            -- Display ability type
+            str = str..' '..ready_move_set_symbol[ready_move_info.set]
+
+            -- Range type symbol
+            str = str..' '..range_symbol[ready_move_info.range_type]
+
+            -- Element color
+            if ready_move_info.element then
+              str = str..element_colors[ready_move_info.element]
+            else
+              str = str..default_txt_color
+            end
+            
+            -- Name of ability
+            str = str..' '..ready_move_name
+
+            -- Description of ability
+            if ui_show_ability_description and ready_move_info.effect and ready_move_info.effect ~= '' then
+              str = str..' ('..ready_move_info.effect..')'
+            end
+            lines:append(str)
+          end
+        end
+      end
+    end
+    local str = lines:concat('\n')
+    ui:text(str)
+  end
+end
+
+function update_ui_visibility()
+  if ui then
+    -- Update UI visibility
+    if not ui:visible() and (state.ShowUI.value and current_pet and not hide_ui_due_to_status and not is_zoning) then
+      ui:show()
+    elseif ui:visible() and (not state.ShowUI.value or not current_pet or hide_ui_due_to_status or is_zoning) then
+      ui:hide()
+    end
+  end
+end
+
 function check_gear()
   if no_swap_necks:contains(player.equipment.neck) then
     locked_neck = true
@@ -1978,12 +2119,55 @@ function check_gear()
   end
 end
 
-windower.register_event('zone change', function()
+-- Triggers after zoning
+windower.raw_register_event('zone change', function()
   if locked_neck then equip({ neck=empty }) end
   if locked_ear1 then equip({ ear1=empty }) end
   if locked_ear2 then equip({ ear2=empty }) end
   if locked_ring1 then equip({ ring1=empty }) end
   if locked_ring2 then equip({ ring2=empty }) end
+  
+  is_zoning = false
+  update_ui_visibility()
+end)
+
+-- Triggers on player status change. This only triggers for the following statuses:
+-- 0: idle
+-- 1: engaged
+-- 2: dead
+-- 3: engaged while dead
+-- 4: in menu, cutscene, some forms of zoning
+windower.raw_register_event('status change', function(new_status_id, old_status_id)
+  -- Hide UI under certain conditions
+  if new_status_id == 2 or new_status_id == 3 or new_status_id == 4 then
+    hide_ui_due_to_status = true
+    update_ui_visibility()
+  elseif old_status_id == 2 or old_status_id == 3 or old_status_id == 4 then
+    hide_ui_due_to_status = false
+    update_ui_visibility()
+  end
+end)
+
+windower.raw_register_event('outgoing chunk', function(id, data, modified, injected, blocked)
+  if id == 0x00D then -- Last packet sent when leaving zone
+    is_zoning = true
+    on_pet_change(nil) -- Reset pet being tracked. It'll correct itself after zoning.
+  end
+end)
+
+windower.raw_register_event('incoming chunk', function(id, data, modified, injected, blocked)
+  if id == 0x067 or id == 0x068 then -- Pet Info & Pet Status
+    local packet = packets.parse('incoming', data)
+    local type = packet['Message Type']
+    local pethpp = packet['Current HP%']
+    if type == 4 then
+      if pethpp == 0 then -- Pet died
+        on_pet_change(nil)
+      else
+        on_pet_change(packet['Pet Name'])
+      end
+    end
+  end
 end)
 
 -- Select default macro book on initial load or subjob change.
