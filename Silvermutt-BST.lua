@@ -1024,12 +1024,12 @@ function init_gear_sets()
     waist="Incarnation Sash",         -- [__/__, ___] {__/__, ___ | 15, __}
     -- [64 PDT/40 MDT, 544 M.Eva] {Pet: 11 PDT/11 MDT, 2 Lv | 414 Macc, 10 INT}
     
-    -- main=gear.Ready_MAcc_Axe,      -- [__/__, ___] {__/__, ___ | 25, __}; Pet TP Bonus+200
+    -- main=gear.Ready_MAcc_Axe,      -- [__/__, ___] { 4/ 4, ___ | 25, __}; Pet TP Bonus+200
     -- sub="Agwu's Axe",              -- [__/__, ___] {__/__, ___ | 50, 20}
     -- head="Nukumi Cabasset +3",     -- [11/11,  98] {__/__, ___ | 61, __}
     -- hands="Nukumi Manoplas +3",    -- [11/11,  82] {__/__, ___ | 62, __}; Pet TP Bonus+700
     -- legs="Nukumi Quijotes +3",     -- [13/13, 130] { 8/ 8, ___ | 63, __}
-    -- [64 PDT/40 MDT, 544 M.Eva] {Pet: 11 PDT/11 MDT, 2 Lv | 489 Macc, 30 INT}
+    -- [64 PDT/40 MDT, 544 M.Eva] {Pet: 15 PDT/15 MDT, 2 Lv | 489 Macc, 30 INT}
   }
   sets.midcast.Pet.Macc.Halfsies = set_combine(sets.midcast.Pet.Macc, {})
 
@@ -1114,7 +1114,7 @@ function init_gear_sets()
     -- 0 Regen [62 PDT/33 MDT, 582 M.Eva] {Pet: 28 PDT/28 MDT, 2 Lv | 11 Regen}
 
     -- main=gear.Pet_DT_Axe,          -- __ [__/__, ___] { 4/ 4, ___ | __}
-    -- sub=gear.gear.Regen_Axe1,      -- __ [__/__, ___] {__/__, ___ |  3}
+    -- sub=gear.Regen_Axe1,      -- __ [__/__, ___] {__/__, ___ |  3}
     -- legs="Nukumi Quijotes +3",     -- __ [13/13, 130] { 8/ 8, ___ | __}
     -- 0 Regen [67 PDT/38 MDT, 562 M.Eva] {Pet: 40 PDT/40 MDT, 2 Lv | 14 Regen}
   }

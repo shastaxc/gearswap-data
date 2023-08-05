@@ -178,11 +178,11 @@ gear.Linos_WS5 = {} -- 15 Acc/Atk, 8 STR, 3 WS Damage
 -- gear.Ready_MAB_TPBonus_Axe = gear.Ready_MAB_Axe
 -- gear.Pet_DT_TPBonus_Axe = gear.Ready_MAB_Axe
 -- gear.Pet_DT_Axe = gear.Ready_MAB_Axe
--- gear.Ready_MAcc_Axe = {name="Kumbhakarna", augments={'Pet: Mag. Acc.+25','Pet: "Regen"+3','Pet: TP Bonus+200',}}
+-- gear.Ready_MAcc_Axe = {name="Kumbhakarna", augments={'Pet: Mag. Acc.+25','Pet: Damage taken -4%','Pet: TP Bonus+200',}}
 -- gear.Ready_MAcc_TPBonus_Axe = gear.Ready_MAcc_Axe
 -- gear.Regen_Axe1 = gear.Reward_Axe
--- gear.Regen_Axe2 = gear.Ready_MAcc_Axe
 -- gear.Ready_Phys_TPBonus_Axe = {name="Kumbhakarna", augments={'Pet: Attack+25 Pet: Rng.Atk.+25','Pet: "Dbl.Atk."+4 Pet: Crit.hit rate +4','Pet: TP Bonus+200',}}
+-- gear.Digirbalag_CHR = {} -- 
 
 
 ----------------------------------------------------------------------
