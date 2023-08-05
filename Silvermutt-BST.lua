@@ -1,6 +1,5 @@
 -- File Status: WIP. Still pretty meh.
 -- TODO: Substitute all missing gear with obtained gear.
--- Change "Buff" ready moves to other sets, possibly "None" and "HP".
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs
@@ -37,7 +36,7 @@
 --              [ F12 ]             Update Current Gear / Report Current Status
 --              [ CTRL+F12 ]        Cycle Idle Modes
 --              [ ALT+F12 ]         Cancel Emergency -PDT/-MDT Mode
---              [ WIN+A ]           AttackMode: Capped/Uncapped WS Modifier
+--              [ CTRL+F8 ]         AttackMode: Capped/Uncapped WS Modifier
 --              [ WIN+C ]           Toggle Capacity Points Mode
 --
 --
