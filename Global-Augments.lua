@@ -361,16 +361,16 @@ gear.Emicho_D_head = {}
 gear.Emicho_A_body = {}
 gear.Emicho_B_body = {}
 gear.Emicho_C_body = {}
-gear.Emicho_D_body = { name="Emicho Haubert", augments={'Pet: HP+100','Pet: INT+15','Pet: "Regen"+2',}}
+gear.Emicho_D_body = { name="Emicho Haubert +1", augments={'Pet: HP+125','Pet: INT+20','Pet: "Regen"+3',}}
 
 gear.Emicho_A_hands = {}
 gear.Emicho_B_hands = {}
-gear.Emicho_C_hands = {}
-gear.Emicho_D_hands = { name="Emicho Gauntlets", augments={'Accuracy+20','"Dual Wield"+5','Pet: Accuracy+20',}}
+gear.Emicho_C_hands = { name="Emi. Gauntlets +1", augments={'Pet: Accuracy+20','Pet: Attack+20','Pet: "Dbl. Atk."+4',}}
+gear.Emicho_D_hands = { name="Emi. Gauntlets +1", augments={'Accuracy+25','"Dual Wield"+6','Pet: Accuracy+25',}}
 
 gear.Emicho_A_legs = {}
 gear.Emicho_B_legs = {}
-gear.Emicho_C_legs = {}
+gear.Emicho_C_legs = { name="Emicho Hose +1", augments={'Pet: Accuracy+20','Pet: Attack+20','Pet: "Dbl. Atk."+4',}}
 gear.Emicho_D_legs = {}
 
 gear.Emicho_A_feet = {}

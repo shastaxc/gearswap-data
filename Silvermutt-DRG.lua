@@ -669,7 +669,7 @@ function init_gear_sets()
     ring2="Chirich Ring +1",
   })
   sets.engaged.MidAcc = set_combine(sets.engaged.LowAcc, {
-    hands=gear.Emicho_D_hands,
+    hands="Emicho Gauntlets",
     -- ammo="Voluspa Tathlum",
   })
   sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
@@ -698,7 +698,7 @@ function init_gear_sets()
     ring2="Chirich Ring +1",
   })
   sets.engaged.MidAcc.SamRoll = set_combine(sets.engaged.LowAcc.SamRoll, {
-    hands=gear.Emicho_D_hands,
+    hands="Emicho Gauntlets",
     -- ammo="Voluspa Tathlum",
   })
   sets.engaged.HighAcc.SamRoll = set_combine(sets.engaged.MidAcc.SamRoll, {
