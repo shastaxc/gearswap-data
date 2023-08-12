@@ -517,7 +517,7 @@ function init_gear_sets()
     -- legs="Ankusa Trousers +3",
   }
 	sets.precast.JA.Tame = {
-    head="Totemic Helm +1",
+    head="Totemic Helm +2",
     -- head="Totemic Helm +3",
   }
 
@@ -525,7 +525,7 @@ function init_gear_sets()
   -- Charm+ gear might increase Charm duration with no cap.
 	sets.precast.JA.Charm = {
     ammo="Staunch Tathlum +1",        -- __, __ [ 3/ 3, ___]
-    head=gear.Nyame_B_head,
+    head="Totemic Helm +3",           -- 29, 30 [__/__,  63]
     body=gear.Nyame_B_body,
     hands=gear.Nyame_B_hands,
     legs=gear.Nyame_B_legs,
