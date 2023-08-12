@@ -1,4 +1,5 @@
 -- File Status: Good. Just missing some gear.
+-- TODO: Add a new mode PetDT which functions same as Pet mode but focuses capping master DT in all sets.
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs
@@ -488,7 +489,7 @@ function init_gear_sets()
   sets.precast.JA.Reward = {
     ammo="Pet Food Theta",            -- __, 20, __, __ [__/__, ___] {__/__, __}
     head=gear.Nyame_B_head,
-    body=gear.Nyame_B_body,
+    body="Totemic Jackcoat +3",       -- 33, __, 26, __ [__/__,  84] {10/10, __}; Removes status effects
     hands="Gleti's Gauntlets",        -- 30, __, __, __ [ 7/__,  75] { 8/ 8, __}
     legs=gear.Nyame_B_legs,
     feet=gear.Nyame_B_feet,
@@ -504,7 +505,6 @@ function init_gear_sets()
     -- main="Farsha",                 -- 50, __, __, __ [__/__, ___] {__/__, __}
     -- sub=gear.Reward_Axe,           -- 17, __, __, __ [__/__, ___] {__/__, __}
     -- head="Stout Bonnet",           -- __, __, __, 16 [__/__, ___] {__/__, __}
-    -- body="Totemic Jackcoat +3",    -- 33, __, 26, __ [__/__,  84] {10/10, __}; Removes status effects
     -- legs="Ankusa Trousers +3",     -- 27, __, __, 21 [__/__,  89] {__/__, __}
     -- feet="Ankusa Gaiters +3",      -- 22,  4, 41, __ [__/__,  89] { 5/__, __}; Enhances Beast Healer
     -- back=gear.BST_MND_WSD_Cape,    -- 30, __, 30, __ [10/__, ___] {__/__, __}
@@ -517,6 +517,7 @@ function init_gear_sets()
     -- legs="Ankusa Trousers +3",
   }
 	sets.precast.JA.Tame = {
+    head="Totemic Helm +1",
     -- head="Totemic Helm +3",
   }
 
@@ -1213,7 +1214,7 @@ function init_gear_sets()
   sets.idle.PetEngaged.Tank = {
     ammo="Hesperiidae",               -- [__/__, ___] {__/__, ___ | __, __, 10/10, 15/__, __, __}
     head="Tali'ah Turban +2",         -- [__/__,  53] {__/__, ___ | __,  7, 42/42, __/__, __, __}
-    body="Gleti's Cuirass",           -- [ 9/__, 102] {__/__, ___ | __, __, 50/50, __/__, __, __}
+    body="Totemic Jackcoat +3",       -- [__/__,  84] {10/10, ___ | __, __, __/__, __/__, __, __}
     hands="Gleti's Gauntlets",        -- [ 7/__,  75] { 8/ 8, ___ | __, __, 50/50, __/__, __, __}
     legs="Gleti's Breeches",          -- [ 8/__, 112] {__/__, ___ | __, __, 50/50, __/__, __, __}
     feet="Gleti's Boots",             -- [ 5/__, 112] {__/__,   1 | __, __, 50/50, __/__, __, __}
@@ -1224,11 +1225,10 @@ function init_gear_sets()
     ring2="Cath Palug Ring",          -- [ 5/ 5, ___] {__/__, ___ |  5, __, 12/12, __/__, __, __}
     back=gear.BST_Pet_TP_Cape,        -- [__/__,  20] { 5/ 5, ___ | __, __, 20/20, 30/30, 10, __}
     waist="Klouskap Sash +1",         -- [__/__, ___] {__/__, ___ | __, __, 20/20, __/__,  9, __}
-    -- [34 PDT/5 MDT, 474 M.Eva] {Pet: 16 PDT/16 MDT, 2 Lv | 37 DA, 21 STP, 354 Acc/339 Racc, 45 Att/30 Ratt, 19 Haste, 0 Regen}
+    -- [25 PDT/5 MDT, 456 M.Eva] {Pet: 26 PDT/26 MDT, 2 Lv | 37 DA, 21 STP, 304 Acc/289 Racc, 45 Att/30 Ratt, 19 Haste, 0 Regen}
 
     -- main=gear.Skullrender_C,       -- [__/__, ___] {__/__, ___ |  5, __, 20/__, 20/__,  8, __}
     -- sub=gear.Pet_DT_Axe,           -- [__/__, ___] { 4/ 4, ___ | __, __, __/__, __/__, __, __}
-    -- body="Totemic Jackcoat +3",    -- [__/__,  84] {10/10, ___ | __, __, __/__, __/__, __, __}
     -- legs="Nukumi Quijotes +3",     -- [13/13, 130] { 8/ 8, ___ | __, __, 63/63, __/__, __, __}
     -- ear2="Nukumi Earring +2",      -- [__/__, ___] {__/__,   1 | 10, __, __/__, __/__, __, __}
     -- [30 PDT/18 MDT, 474 M.Eva] {Pet: 38 PDT/38 MDT, 2 Lv | 45 DA, 21 STP, 337 Acc/302 Racc, 65 Att/30 Ratt, 27 Haste, 0 Regen}
@@ -1294,7 +1294,7 @@ function init_gear_sets()
   sets.engaged.PetTank = {
     ammo="Hesperiidae",               -- __, __, 10 <__, __, __> [__/__, ___] {__/__, ___ | __, __, 10/10, 15/__, __, __}
     head="Nukumi Cabasset +2",        -- __, __, 51 <__, __, __> [10/10,  88] {__/__, ___ | __, __, 51/51, __/__, __, __}
-    body="Gleti's Cuirass",           -- __, __, 55 <10, __, __> [ 9/__, 102] {__/__, ___ | __, __, 50/50, __/__, __, __}
+    body="Totemic Jackcoat +3",       -- __, __, 50 <__, __, __> [__/__,  84] {10/10, ___ | __, __, __/__, __/__, __, __}
     hands="Gleti's Gauntlets",        -- __,  8, 55 <__, __, __> [ 7/__,  75] { 8/ 8, ___ | __, __, 50/50, __/__, __, __}
     legs="Malignance Tights",         -- __, 10, 50 <__, __, __> [ 7/ 7, 150] {__/__, ___ | __, __, __/__, __/__, __, __}
     feet="Gleti's Boots",             -- __, __, 50 <__, __, __> [ 5/__, 112] {__/__,   1 | __, __, 50/50, __/__, __, __}
@@ -1305,10 +1305,9 @@ function init_gear_sets()
     ring2="Cath Palug Ring",          -- __, __, __ <__, __, __> [ 5/ 5, ___] {__/__, ___ |  5, __, 12/12, __/__, __, __}
     back=gear.BST_Pet_TP_Cape,        -- __, __, __ <__, __, __> [__/__,  20] { 5/ 5, ___ | __, __, 20/20, 30/30, 10, __}
     waist="Isa Belt",                 -- __, __, __ <__, __, __> [__/__, ___] { 3/ 3, ___ | __, __, __/__, __/__, __,  1}
-    -- 0 DW, 18 STP, 321 Acc <10 DA, 0 TA, 0 QA> [43 PDT/22 MDT, 547 M.Eva] {Pet: 19 PDT/19 MDT, 2 Lv | 37 DA, 14 STP, 293 Acc/278 Racc, 45 Att/30 Ratt, 10 Haste, 1 Regen}
+    -- 0 DW, 18 STP, 316 Acc <0 DA, 0 TA, 0 QA> [34 PDT/22 MDT, 529 M.Eva] {Pet: 29 PDT/29 MDT, 2 Lv | 37 DA, 14 STP, 243 Acc/228 Racc, 45 Att/30 Ratt, 10 Haste, 1 Regen}
 
     -- head="Nukumi Cabasset +3",     -- __, __, 61 <__, __, __> [11/11,  98] {__/__, ___ | __, __, 61/61, __/__, __, __}
-    -- body="Totemic Jackcoat +3",    -- __, __, 50 <__, __, __> [__/__,  84] {10/10, ___ | __, __, __/__, __/__, __, __}
     -- legs="Nukumi Quijotes +3",     -- __, __, 63 <__, __, __> [13/13, 130] { 8/ 8, ___ | __, __, 63/63, __/__, __, __}
     -- ear2="Nukumi Earring +2",      -- __, __, 20 <__, __, __> [__/__, ___] {__/__,   1 | 10, __, __/__, __/__, __, __}
     -- 0 DW, 8 STP, 344 Acc <0 DA, 0 TA, 0 QA> [41 PDT/29 MDT, 519 M.Eva] {Pet: 37 PDT/37 MDT, 2 Lv | 40 DA, 14 STP, 316 Acc/301 Racc, 45 Att/30 Ratt, 10 Haste, 1 Regen}
