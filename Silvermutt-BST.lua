@@ -488,11 +488,11 @@ function init_gear_sets()
   -- Aim for 120+ MND from gear
   sets.precast.JA.Reward = {
     ammo="Pet Food Theta",            -- __, 20, __, __ [__/__, ___] {__/__, __}
-    head=gear.Nyame_B_head,
+    head=gear.Nyame_B_head,           -- 26, __, __, __ [ 7/ 7, 123] {__/__, __}
     body="Totemic Jackcoat +3",       -- 33, __, 26, __ [__/__,  84] {10/10, __}; Removes status effects
     hands="Gleti's Gauntlets",        -- 30, __, __, __ [ 7/__,  75] { 8/ 8, __}
-    legs=gear.Nyame_B_legs,
-    feet=gear.Nyame_B_feet,
+    legs="Ankusa Trousers +3",        -- 27, __, __, 21 [__/__,  89] {__/__, __}
+    feet=gear.Nyame_B_feet,           -- 26, __, __, __ [ 7/ 7, 150] {__/__, __}
     neck="Loricate Torque +1",        -- __, __, __, __ [ 6/ 6, ___] {__/__, __}
     ear1="Odnowa Earring +1",         -- __, __, __, __ [ 3/ 5, ___] {__/__, __}
     ear2="Genmei Earring",            -- __, __, __, __ [ 2/__, ___] {__/__, __}
@@ -500,12 +500,11 @@ function init_gear_sets()
     ring2="Defending Ring",           -- __, __, __, __ [10/10, ___] {__/__, __}
     back=gear.BST_TP_Cape,            -- __, __, 30, __ [10/__, ___] {__/__, __}
     waist="Engraved Belt",            --  7, __, __, __ [__/__, ___] {__/__, __}
-    -- 132 MND, 24 Reward Regen, 97 Reward Potency, 37 Reward Recast- [38 PDT/21 MDT, 337 M.Eva] {Pet: 23 PDT/18 MDT, 0 Lv}
+    -- 165 MND, 20 Reward Regen, 56 Reward Potency, 21 Reward Recast- [52 PDT/35 MDT, 521 M.Eva] {Pet: 18 PDT/18 MDT, 0 Lv}
 
     -- main="Farsha",                 -- 50, __, __, __ [__/__, ___] {__/__, __}
     -- sub=gear.Reward_Axe,           -- 17, __, __, __ [__/__, ___] {__/__, __}
     -- head="Stout Bonnet",           -- __, __, __, 16 [__/__, ___] {__/__, __}
-    -- legs="Ankusa Trousers +3",     -- 27, __, __, 21 [__/__,  89] {__/__, __}
     -- feet="Ankusa Gaiters +3",      -- 22,  4, 41, __ [__/__,  89] { 5/__, __}; Enhances Beast Healer
     -- back=gear.BST_MND_WSD_Cape,    -- 30, __, 30, __ [10/__, ___] {__/__, __}
     -- 229 MND, 24 Reward Regen, 97 Reward Potency, 37 Reward Recast- [38 PDT/21 MDT, 337 M.Eva] {Pet: 23 PDT/18 MDT, 0 Lv}
@@ -514,7 +513,7 @@ function init_gear_sets()
     -- head="Ankusa Helm +3",
   }
 	sets.precast.JA.Familiar = {
-    -- legs="Ankusa Trousers +3",
+    legs="Ankusa Trousers +3",
   }
 	sets.precast.JA.Tame = {
     head="Totemic Helm +2",
@@ -526,10 +525,10 @@ function init_gear_sets()
 	sets.precast.JA.Charm = {
     ammo="Staunch Tathlum +1",        -- __, __ [ 3/ 3, ___]
     head="Totemic Helm +3",           -- 29, 30 [__/__,  63]
-    body=gear.Nyame_B_body,
-    hands=gear.Nyame_B_hands,
-    legs=gear.Nyame_B_legs,
-    feet=gear.Nyame_B_feet,
+    body=gear.Nyame_B_body,           -- 35, __ [ 9/ 9, 139]
+    hands=gear.Nyame_B_hands,         -- 24, __ [ 7/ 7, 112]
+    legs="Ankusa Trousers +3",        -- 21, 11 [__/__,  89]
+    feet=gear.Nyame_B_feet,           -- 38, __ [ 7/ 7, 150]
     neck="Unmoving Collar +1",        --  9, __ [__/__, ___]
     ear1="Odnowa Earring +1",         -- __, __ [ 3/ 5, ___]
     ear2="Enchanter's Earring +1",    --  5, __ [__/__, ___]
@@ -538,14 +537,13 @@ function init_gear_sets()
     back=gear.BST_TP_Cape,            -- __, __ [10/__, ___]
     waist="Aristo Belt",              --  8, __ [__/__, ___]
     -- Traits/merits/gifts                   20
-    -- 276 CHR, 107 Charm [29 PDT/18 MDT, 392 M.Eva]
+    -- 185 CHR, 61 Charm [49 PDT/39 MDT, 553 M.Eva]
     
     -- main="Habilitator +1",         -- 28, __ [ 3/__, ___]
     -- sub=gear.Digirbalag_CHR,       -- 25, __ [__/__, ___]
     -- head="Totemic Helm +3",        -- 34, 35 [__/__,  73]
     -- body="Ankusa Jackcoat +3",     -- 33, 16 [__/__,  84]
     -- hands="Ankusa Gloves +3",      -- 27, 13 [__/__,  57]
-    -- legs="Ankusa Trousers +3",     -- 21, 11 [__/__,  89]
     -- feet="Ankusa Gaiters +3",      -- 40, 12 [__/__,  89]
     -- back=gear.BST_CHR_WSD_Cape,    -- 30, __ [10/__, ___]
     -- 276 CHR, 107 Charm [29 PDT/18 MDT, 392 M.Eva]
@@ -1119,7 +1117,7 @@ function init_gear_sets()
     -- 0 Regen [66 PDT/37 MDT, 532 M.Eva] {Pet: 34 PDT/34 MDT, 2 Lv | 11 Regen}
 
     -- main=gear.Pet_DT_Axe,          -- __ [__/__, ___] { 4/ 4, ___ | __}
-    -- sub=gear.Regen_Axe1,           -- __ [__/__, ___] {__/__, ___ |  3}
+    -- sub=gear.Regen_Axe,            -- __ [__/__, ___] {__/__, ___ |  3}
     -- legs="Nukumi Quijotes +3",     -- __ [13/13, 130] { 8/ 8, ___ | __}
     -- 0 Regen [67 PDT/38 MDT, 562 M.Eva] {Pet: 40 PDT/40 MDT, 2 Lv | 14 Regen}
   }
@@ -1241,7 +1239,7 @@ function init_gear_sets()
     head="Tali'ah Turban +2",         -- [__/__,  53] {__/__, ___ | __,  7, 42/42, __/__, __, __}
     body="Gleti's Cuirass",           -- [ 9/__, 102] {__/__, ___ | __, __, 50/50, __/__, __, __}
     hands=gear.Emicho_C_hands,        -- [__/__,  32] {__/__, ___ |  4,  7, 20/__, 55/__, __, __}
-    legs="Gleti's Breeches",          -- [ 8/__, 112] {__/__, ___ | __, __, 50/50, __/__, __, __}
+    legs="Ankusa Trousers +3",        -- [__/__,  89] {__/__, ___ | __,  7, __/__, __/__,  6, __}
     feet="Gleti's Boots",             -- [ 5/__, 112] {__/__,   1 | __, __, 50/50, __/__, __, __}
     neck="Beastmaster Collar +2",     -- [__/__, ___] {__/__, ___ | 25, __, 25/25, __/__, __, __}
     ear1="Enmerkar Earring",          -- [__/__, ___] { 3/ 3, ___ | __,  8, 15/__, __/__, __, __}
@@ -1250,12 +1248,11 @@ function init_gear_sets()
     ring2="Cath Palug Ring",          -- [ 5/ 5, ___] {__/__, ___ |  5, __, 12/12, __/__, __, __}
     back=gear.BST_Pet_TP_Cape,        -- [__/__,  20] { 5/ 5, ___ | __, __, 20/20, 30/30, 10, __}
     waist="Incarnation Sash",         -- [__/__, ___] {__/__, ___ |  4, __, 15/15, __/__, __, __}
-    -- [27 PDT/5 MDT, 431 M.Eva] {Pet: 8 PDT/8 MDT, 2 Lv | 45 DA, 28 STP, 319 Acc/284 Racc, 100 Att/30 Ratt, 10 Haste, 0 Regen}
+    -- [19 PDT/5 MDT, 408 M.Eva] {Pet: 8 PDT/8 MDT, 2 Lv | 45 DA, 35 STP, 269 Acc/234 Racc, 100 Att/30 Ratt, 16 Haste, 0 Regen}
 
     -- main=gear.Skullrender_C,       -- [__/__, ___] {__/__, ___ |  5, __, 20/__, 20/__,  8, __}
     -- sub="Agwu's Axe",              -- [__/__, ___] {__/__, ___ | __, __, 50/__, __/__, __, __}; Pet dmg+
     -- body="Ankusa Jackcoat +3",     -- [__/__,  84] {__/__, ___ |  5, __, __/__, __/__,  7, __}
-    -- legs="Ankusa Trousers +3",     -- [__/__,  89] {__/__, ___ | __,  7, __/__, __/__,  6, __}
     -- ear2="Nukumi Earring +2",      -- [__/__, ___] {__/__,   1 | 10, __, __/__, __/__, __, __}
     -- [10 PDT/5 MDT, 390 M.Eva] {Pet: 8 PDT/8 MDT, 2 Lv | 58 DA, 35 STP, 289 Acc/184 Racc, 120 Att/30 Ratt, 31 Haste, 0 Regen}
   }
