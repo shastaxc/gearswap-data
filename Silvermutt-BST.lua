@@ -551,18 +551,20 @@ function init_gear_sets()
     -- 276 CHR, 107 Charm [29 PDT/18 MDT, 392 M.Eva]
   }
 	sets.precast.JA.Spur = {
+    feet="Nukumi Ocreae +2",
+    back="Artio's Mantle",
+
     -- main=gear.Skullrender_C,
     -- sub=gear.Skullrender_C,
     -- feet="Nukumi Ocreae +3",
-    back="Artio's Mantle",
   }
 	sets.precast.JA['Feral Howl'] = {
     ammo="Pemphredo Tathlum",         --  8 [__/__, ___]
     head="Nukumi Cabasset +2",        -- 51 [10/10,  88]
     body=gear.Nyame_B_body,           -- 40 [ 9/ 9, 139]
     hands="Nukumi Manoplas +2",       -- 52 [10/10,  72]
-    legs=gear.Nyame_B_legs,           -- 40 [ 8/ 8, 150]
-    feet=gear.Nyame_B_feet,           -- 40 [ 7/ 7, 150]
+    legs="Nukumi Quijotes +2",        -- 53 [12/12, 120]
+    feet="Nukumi Ocreae +2",          -- 50 [__/__, 120]
     neck="Beastmaster Collar +2",     -- 25 [__/__, ___]
     ear1="Dignitary's Earring",       -- 10 [__/__, ___]
     ear2="Nukumi Earring +1",         -- 15 [__/__, ___]
@@ -570,7 +572,7 @@ function init_gear_sets()
     ring2="Stikini Ring +1",          -- 11 [__/__, ___]
     back="Moonlight Cape",            -- __ [ 6/ 6, ___]
     waist="Eschan Stone",             --  7 [__/__, ___]
-    -- 314 M.Acc [50 PDT/50 MDT, 599 M.Eva]
+    -- 337 M.Acc [47 PDT/47 MDT, 539 M.Eva]
     
     -- main="Agwu's Axe",             -- 55 [__/__, ___]
     -- main="Ikenga's Axe",           -- 55 [__/__, ___]
@@ -639,7 +641,7 @@ function init_gear_sets()
     body="Gleti's Cuirass",           -- 39, 26, __,  9 <10, __, __> [ 9/__, 102] {__/__, ___}
     hands="Gleti's Gauntlets",        -- 20, 30, __,  7 <__, __, __> [ 7/__,  75] { 8/ 8, ___}
     legs="Gleti's Breeches",          -- 49, 20, __,  8 <__,  5, __> [ 8/__, 112] {__/__, ___}
-    feet="Gleti's Boots",             -- 33, 12, __,  5 <__, __, __> [ 5/__, 112] {__/__,   1}
+    feet="Nukumi Ocreae +2",          -- 26, 15, __,  7 < 5, __, __> [__/__, 120] {__/__, ___}
     neck="Beastmaster Collar +2",     -- 15, __, __, 10 <__, __, __> [__/__, ___] {__/__, ___}
     ear1="Moonshade Earring",         -- __, __, __, __ <__, __, __> [__/__, ___] {__/__, ___}; TP Bonus+250
     ear2="Nukumi Earring +1",         -- __, __, __,  8 <__, __, __> [__/__, ___] {__/__,   1}
@@ -647,7 +649,7 @@ function init_gear_sets()
     ring2="Defending Ring",           -- __, __, __, __ <__, __, __> [10/10, ___] {__/__, ___}
     back=gear.BST_STR_WSD_Cape,       -- 30, __, 10, __ <__, __, __> [10/__, ___] {__/__, ___}
     waist="Sailfi Belt +1",           -- 15, __, __, __ < 5,  2, __> [__/__, ___] {__/__, ___}
-    -- 224 STR, MND, 18 WSD, PDL <18 DA, 27 TA, 3 QA> [55 PDT/25 MDT, 422 M.Eva] {Pet: 0 PDT/0 MDT, 2 Lv}
+    -- 247 STR, 110 MND, 10 WSD, 65 PDL <23 DA, 7 TA, 0 QA> [50 PDT/10 MDT, 495 M.Eva] {Pet: 8 PDT/8 MDT, 1 Lv}
 
     -- feet="Nukumi Ocreae +3",       -- 31, 20, __, 10 < 6, __, __> [__/__, 130] {__/__, ___}
     -- ear2="Nukumi Earring +2",      -- 15, __, __,  9 <__, __, __> [__/__, ___] {__/__,   1}
@@ -695,7 +697,7 @@ function init_gear_sets()
     body="Gleti's Cuirass",           -- 39, __,  9 <10, __, __> [ 9/__, 102] {__/__, ___}
     hands="Gleti's Gauntlets",        -- 20, __,  7 <__, __, __> [ 7/__,  75] { 8/ 8, ___}
     legs="Gleti's Breeches",          -- 49, __,  8 <__,  5, __> [ 8/__, 112] {__/__, ___}
-    feet="Gleti's Boots",             -- 33, __,  5 <__, __, __> [ 5/__, 112] {__/__,   1}
+    feet="Nukumi Ocreae +2",          -- 26, __,  7 < 5, __, __> [__/__, 120] {__/__, ___}
     neck="Beastmaster Collar +2",     -- 15, __, 10 <__, __, __> [__/__, ___] {__/__, ___}
     ear1="Lugra Earring +1",          -- 16, __, __ < 3, __, __> [__/__, ___] {__/__, ___}
     ear2="Nukumi Earring +1",         -- __, __,  8 <__, __, __> [__/__, ___] {__/__,   1}
@@ -703,7 +705,7 @@ function init_gear_sets()
     ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___] {__/__, ___}
     back=gear.BST_STR_WSD_Cape,       -- 30, 10, __ <__, __, __> [10/__, ___] {__/__, ___}
     waist="Fotia Belt",               -- __, __, __ <__, __, __> [__/__, ___] {__/__, ___}; fTP+
-    -- 241 STR, 21 WSD, 60 PDL <18 DA, 5 TA, 0 QA> [59 PDT/20 MDT, 524 M.Eva] {Pet: 8 PDT/8 MDT, 2 Lv}
+    -- 234 STR, 21 WSD, 62 PDL <23 DA, 5 TA, 0 QA> [54 PDT/20 MDT, 532 M.Eva] {Pet: 8 PDT/8 MDT, 1 Lv}
 
     -- feet="Nukumi Ocreae +3",       -- 31, __, 10 < 6, __, __> [__/__, 130] {__/__, ___}
     -- ear2="Nukumi Earring +2",      -- 15, __,  9 <__, __, __> [__/__, ___] {__/__,   1}
@@ -747,7 +749,7 @@ function init_gear_sets()
     body="Gleti's Cuirass",           -- 39, __,  9 <10, __, __> ( 8, __) [ 9/__, 102] {__/__, ___}
     hands="Nukumi Manoplas +2",       -- 20, __, __ <__, __, __> ( 5, __) [10/10,  72] {__/__, ___}
     legs="Gleti's Breeches",          -- 49, __,  8 <__,  5, __> ( 7, __) [ 8/__, 112] {__/__, ___}
-    feet="Gleti's Boots",             -- 33, __,  5 <__, __, __> ( 4, __) [ 5/__, 112] {__/__,   1}
+    feet="Gleti's Boots",             -- 29, __,  5 <__, __, __> ( 4, __) [ 5/__, 112] {__/__,   1}
     neck="Fotia Gorget",              -- __, __, __ <__, __, __> (__, __) [__/__, ___] {__/__, ___}; fTP+
     ear1="Moonshade Earring",         -- __, __, __ <__, __, __> (__, __) [__/__, ___] {__/__, ___}; TP Bonus+250
     ear2="Nukumi Earring +1",         -- __, __,  8 <__, __, __> (__, __) [__/__, ___] {__/__,   1}
@@ -755,7 +757,7 @@ function init_gear_sets()
     ring2="Defending Ring",           -- __, __, __ <__, __, __> (__, __) [10/10, ___] {__/__, ___}
     back=gear.BST_STR_Crit_Cape,      -- 30, __, __ <__, __, __> (10, __) [10/__, ___] {__/__, ___}
     waist="Fotia Belt",               -- __, __, __ <__, __, __> (__, __) [__/__, ___] {__/__, ___}; fTP+
-    -- 210 STR, 11 WSD, 43 PDL <15 DA, 5 TA, 0 QA> (34 Crit Rate, 0 Crit Dmg) [62 PDT/30 MDT, 524 M.Eva] {Pet: 0 PDT/0 MDT, 2 Lv}
+    -- 206 STR, 11 WSD, 43 PDL <15 DA, 5 TA, 0 QA> (34 Crit Rate, 0 Crit Dmg) [62 PDT/30 MDT, 521 M.Eva] {Pet: 0 PDT/0 MDT, 2 Lv}
 
     -- head="Blistering Sallet +1",   -- 41, __, __ < 3, __, __> (10, __) [ 3/__,  53] {__/__, ___}
     -- hands="Nukumi Manoplas +3",    -- 25, __, __ <__, __, __> ( 6, __) [11/11,  82] {__/__, ___}
@@ -845,7 +847,7 @@ function init_gear_sets()
     body="Gleti's Cuirass",           -- 34, __,  9 [ 9/__, 102] {__/__, ___}
     hands="Gleti's Gauntlets",        -- 47, __,  7 [ 7/__,  75] { 8/ 8, ___}
     legs=gear.Lustratio_B_legs,       -- 43, __, __ [__/__, ___] {__/__, ___}
-    feet="Gleti's Boots",             -- 29, __,  5 [ 5/__, 112] {__/__,   1}
+    feet="Nukumi Ocreae +2",          -- 30, __,  7 [__/__, 120] {__/__, ___}
     neck="Beastmaster Collar +2",     -- 15, __, 10 [__/__, ___] {__/__, ___}
     ear1="Lugra Earring +1",          -- 16, __, __ [__/__, ___] {__/__, ___}
     ear2="Nukumi Earring +1",         -- __, __,  8 [__/__, ___] {__/__,   1}
@@ -853,7 +855,7 @@ function init_gear_sets()
     ring2="Defending Ring",           -- __, __, __ [10/10, ___] {__/__, ___}
     back=gear.BST_DEX_WSD_Cape,       -- 30, 10, __ [10/__, ___] {__/__, ___}
     waist="Kentarch Belt +1",         -- 10, __, __ [__/__, ___] {__/__, ___}
-    -- 259 DEX, 21 WSD, 52 PDL [52 PDT/20 MDT, 412 M.Eva] {Pet: 8 PDT/8 MDT, 1 Lv}
+    -- 260 DEX, 21 WSD, 54 PDL [46 PDT/20 MDT, 420 M.Eva] {Pet: 8 PDT/8 MDT, 1 Lv}
     
     -- feet="Nukumi Ocreae +3",       -- 35, __, 10 [__/__, 130] {__/__, ___}
     -- ear2="Nukumi Earring +2",      -- __, __,  9 [__/__, ___] {__/__,   1}
@@ -933,7 +935,7 @@ function init_gear_sets()
     head="Nukumi Cabasset +2",        -- [10/10,  88] {__/__, ___ | __, 51/51, __/__}
     body="Gleti's Cuirass",           -- [ 9/__, 102] {__/__, ___ | __, 50/50, __/__}
     hands="Nukumi Manoplas +2",       -- [10/10,  72] {__/__, ___ | __, 52/52, __/__}; Pet TP Bonus
-    legs="Gleti's Breeches",          -- [ 8/__, 112] {__/__, ___ | __, 50/50, __/__}
+    legs="Nukumi Quijotes +2",        -- [12/12, 120] { 6/ 6, ___ | __, 53/53, __/__}
     feet="Gleti's Boots",             -- [ 5/__, 112] {__/__,   1 | __, 50/50, __/__}
     neck="Shulmanu Collar",           -- [__/__, ___] {__/__, ___ |  3, 20/__, 20/__}
     ear1="Sroda Earring",             -- [__/__, -10] {__/__, ___ | __, __/__, __/__}; Pet dmg+
@@ -942,7 +944,7 @@ function init_gear_sets()
     ring2="Cath Palug Ring",          -- [ 5/ 5, ___] {__/__, ___ |  5, 12/12, __/__}
     back=gear.BST_Pet_TP_Cape,        -- [__/__,  20] { 5/ 5, ___ | __, 20/20, 30/30}
     waist="Klouskap Sash +1",         -- [__/__, ___] {__/__, ___ | __, 20/20, __/__}
-    -- [47 PDT/25 MDT, 496 M.Eva] {Pet: 5 PDT/5 MDT, 2 Lv | 15 DA, 345 Acc/315 Racc, 60 Att/30 Ratt}
+    -- [51 PDT/37 MDT, 504 M.Eva] {Pet: 11 PDT/11 MDT, 2 Lv | 15 DA, 348 Acc/318 Racc, 60 Att/30 Ratt}
     
     -- main="Aymur",                  -- [__/__, ___] {__/__, ___ | __, __/__, 80/__}; Pet TP Bonus+1000
     -- sub="Agwu's Axe",              -- [__/__, ___] {__/__, ___ | __, 50/50, __/__}; Pet dmg+
@@ -958,7 +960,7 @@ function init_gear_sets()
     head="Nukumi Cabasset +2",        -- [10/10,  88] {__/__, ___ | __, 51/51, __/__}
     body="Gleti's Cuirass",           -- [ 9/__, 102] {__/__, ___ | __, 50/50, __/__}
     hands="Nukumi Manoplas +2",       -- [10/10,  72] {__/__, ___ | __, 52/52, __/__}; Pet TP Bonus
-    legs="Gleti's Breeches",          -- [ 8/__, 112] {__/__, ___ | __, 50/50, __/__}
+    legs="Nukumi Quijotes +2",        -- [12/12, 120] { 6/ 6, ___ | __, 53/53, __/__}
     feet="Gleti's Boots",             -- [ 5/__, 112] {__/__,   1 | __, 50/50, __/__}
     neck="Shulmanu Collar",           -- [__/__, ___] {__/__, ___ |  3, 20/__, 20/__}
     ear1="Sroda Earring",             -- [__/__, -10] {__/__, ___ | __, __/__, __/__}; Pet dmg+
@@ -967,7 +969,7 @@ function init_gear_sets()
     ring2="Cath Palug Ring",          -- [ 5/ 5, ___] {__/__, ___ |  5, 12/12, __/__}
     back=gear.BST_Pet_TP_Cape,        -- [__/__,  20] { 5/ 5, ___ | __, 20/20, 30/30}
     waist="Klouskap Sash +1",         -- [__/__, ___] {__/__, ___ | __, 20/20, __/__}
-    -- [47 PDT/25 MDT, 496 M.Eva] {Pet: 5 PDT/5 MDT, 2 Lv | 15 DA, 345 Acc/315 Racc, 60 Att/30 Ratt}
+    -- [51 PDT/37 MDT, 504 M.Eva] {Pet: 11 PDT/11 MDT, 2 Lv | 15 DA, 348 Acc/318 Racc, 60 Att/30 Ratt}
     
     -- main="Aymur",                  -- [__/__, ___] {__/__, ___ | __, __/__, 80/__}; Pet TP Bonus+1000
     -- sub="Agwu's Axe",              -- [__/__, ___] {__/__, ___ | __, 50/50, __/__}; Pet dmg+
@@ -1014,7 +1016,7 @@ function init_gear_sets()
     head="Nukumi Cabasset +2",        -- [10/10,  88] {__/__, ___ | 51, __}
     body="Gleti's Cuirass",           -- [ 9/__, 102] {__/__, ___ | 50, __}
     hands="Nukumi Manoplas +2",       -- [10/10,  72] {__/__, ___ | 52, __}; Pet TP Bonus
-    legs="Gleti's Breeches",          -- [ 8/__, 112] {__/__, ___ | 50, __}
+    legs="Nukumi Quijotes +2",        -- [12/12, 120] { 6/ 6, ___ | 53, __}
     feet="Gleti's Boots",             -- [ 5/__, 112] {__/__,   1 | 50, __}
     neck="Beastmaster Collar +2",     -- [__/__, ___] {__/__, ___ | 25, __}
     ear1="Enmerkar Earring",          -- [__/__, ___] { 3/ 3, ___ | 15, __}
@@ -1023,7 +1025,7 @@ function init_gear_sets()
     ring2="Cath Palug Ring",          -- [ 5/ 5, ___] {__/__, ___ | 12, __}
     back=gear.BST_Pet_Macc_Cape,      -- [__/__,  20] { 5/ 5, ___ | 30, __}
     waist="Incarnation Sash",         -- [__/__, ___] {__/__, ___ | 15, __}
-    -- [47 PDT/25 MDT, 506 M.Eva] {Pet: 8 PDT/8 MDT, 2 Lv | 381 Macc, 10 INT}
+    -- [51 PDT/37 MDT, 514 M.Eva] {Pet: 14 PDT/14 MDT, 2 Lv | 384 Macc, 10 INT}
     
     -- main=gear.Ready_MAcc_Axe,      -- [__/__, ___] { 4/ 4, ___ | 25, __}; Pet TP Bonus+200
     -- sub="Agwu's Axe",              -- [__/__, ___] {__/__, ___ | 50, 20}
@@ -1104,7 +1106,7 @@ function init_gear_sets()
     head=gear.Nyame_B_head,           -- __ [ 7/ 7, 123] {__/__, ___ | __}
     body="Gleti's Cuirass",           -- __ [ 9/__, 102] {__/__, ___ | __}
     hands="Gleti's Gauntlets",        -- __ [ 7/__,  75] { 8/ 8, ___ | __}
-    legs=gear.Nyame_B_legs,           -- __ [ 8/ 8, 150] {__/__, ___ | __}
+    legs="Nukumi Quijotes +2",        -- __ [12/12, 120] { 6/ 6, ___ | __}
     feet="Gleti's Boots",             -- __ [ 5/__, 112] {__/__,   1 | __}
     neck="Loricate Torque +1",        -- __ [ 6/ 6, ___] {__/__, ___ | __}
     ear1="Enmerkar Earring",          -- __ [__/__, ___] { 3/ 3, ___ | __}
@@ -1114,10 +1116,10 @@ function init_gear_sets()
     back=gear.BST_Pet_Macc_Cape,      -- __ [__/__,  20] { 5/ 5, ___ | 10}
     waist="Isa Belt",                 -- __ [__/__, ___] { 3/ 3, ___ |  1}
     -- Traits/Gifts/Merits                                 9/ 9
-    -- 0 Regen [62 PDT/33 MDT, 582 M.Eva] {Pet: 28 PDT/28 MDT, 2 Lv | 11 Regen}
+    -- 0 Regen [66 PDT/37 MDT, 532 M.Eva] {Pet: 34 PDT/34 MDT, 2 Lv | 11 Regen}
 
     -- main=gear.Pet_DT_Axe,          -- __ [__/__, ___] { 4/ 4, ___ | __}
-    -- sub=gear.Regen_Axe1,      -- __ [__/__, ___] {__/__, ___ |  3}
+    -- sub=gear.Regen_Axe1,           -- __ [__/__, ___] {__/__, ___ |  3}
     -- legs="Nukumi Quijotes +3",     -- __ [13/13, 130] { 8/ 8, ___ | __}
     -- 0 Regen [67 PDT/38 MDT, 562 M.Eva] {Pet: 40 PDT/40 MDT, 2 Lv | 14 Regen}
   }
@@ -1129,10 +1131,10 @@ function init_gear_sets()
   sets.EfficientDT = {
     head="Nukumi Cabasset +2",        -- __ [10/10,  88] {__/__, ___ | __}
     hands="Nukumi Manoplas +2",       -- __ [10/10,  72] {__/__, ___ | __}
-    legs=gear.Nyame_B_legs,           -- __ [ 8/ 8, 150] {__/__, ___ | __}
+    legs="Nukumi Quijotes +2",        -- __ [12/12, 120] { 6/ 6, ___ | __}
     neck="Loricate Torque +1",        -- __ [ 6/ 6, ___] {__/__, ___ | __}
     ring2="Defending Ring",           -- __ [10/10, ___] {__/__, ___ | __}
-    -- 0 Regen [44 PDT/44 MDT, 310 M.Eva] {Pet: 0 PDT/0 MDT, 0 Lv | 0 Regen}
+    -- 0 Regen [48 PDT/48 MDT, 280 M.Eva] {Pet: 6 PDT/6 MDT, 0 Lv | 0 Regen}
 
     -- head="Nukumi Cabasset +3",     -- __ [11/11,  98] {__/__, ___ | __}
     -- hands="Nukumi Manoplas +3",    -- __ [11/11,  82] {__/__, ___ | __}
@@ -1217,7 +1219,7 @@ function init_gear_sets()
     head="Tali'ah Turban +2",         -- [__/__,  53] {__/__, ___ | __,  7, 42/42, __/__, __, __}
     body="Totemic Jackcoat +3",       -- [__/__,  84] {10/10, ___ | __, __, __/__, __/__, __, __}
     hands="Gleti's Gauntlets",        -- [ 7/__,  75] { 8/ 8, ___ | __, __, 50/50, __/__, __, __}
-    legs="Gleti's Breeches",          -- [ 8/__, 112] {__/__, ___ | __, __, 50/50, __/__, __, __}
+    legs="Nukumi Quijotes +2",        -- [12/12, 120] { 6/ 6, ___ | __, __, 53/53, __/__, __, __}
     feet="Gleti's Boots",             -- [ 5/__, 112] {__/__,   1 | __, __, 50/50, __/__, __, __}
     neck="Beastmaster Collar +2",     -- [__/__, ___] {__/__, ___ | 25, __, 25/25, __/__, __, __}
     ear1="Enmerkar Earring",          -- [__/__, ___] { 3/ 3, ___ | __,  8, 15/__, __/__, __, __}
@@ -1226,7 +1228,7 @@ function init_gear_sets()
     ring2="Cath Palug Ring",          -- [ 5/ 5, ___] {__/__, ___ |  5, __, 12/12, __/__, __, __}
     back=gear.BST_Pet_TP_Cape,        -- [__/__,  20] { 5/ 5, ___ | __, __, 20/20, 30/30, 10, __}
     waist="Klouskap Sash +1",         -- [__/__, ___] {__/__, ___ | __, __, 20/20, __/__,  9, __}
-    -- [25 PDT/5 MDT, 456 M.Eva] {Pet: 26 PDT/26 MDT, 2 Lv | 37 DA, 21 STP, 304 Acc/289 Racc, 45 Att/30 Ratt, 19 Haste, 0 Regen}
+    -- [29 PDT/17 MDT, 464 M.Eva] {Pet: 32 PDT/32 MDT, 2 Lv | 37 DA, 21 STP, 307 Acc/292 Racc, 45 Att/30 Ratt, 19 Haste, 0 Regen}
 
     -- main=gear.Skullrender_C,       -- [__/__, ___] {__/__, ___ |  5, __, 20/__, 20/__,  8, __}
     -- sub=gear.Pet_DT_Axe,           -- [__/__, ___] { 4/ 4, ___ | __, __, __/__, __/__, __, __}
@@ -1296,7 +1298,7 @@ function init_gear_sets()
     head="Nukumi Cabasset +2",        -- __, __, 51 <__, __, __> [10/10,  88] {__/__, ___ | __, __, 51/51, __/__, __, __}
     body="Totemic Jackcoat +3",       -- __, __, 50 <__, __, __> [__/__,  84] {10/10, ___ | __, __, __/__, __/__, __, __}
     hands="Gleti's Gauntlets",        -- __,  8, 55 <__, __, __> [ 7/__,  75] { 8/ 8, ___ | __, __, 50/50, __/__, __, __}
-    legs="Malignance Tights",         -- __, 10, 50 <__, __, __> [ 7/ 7, 150] {__/__, ___ | __, __, __/__, __/__, __, __}
+    legs="Nukumi Quijotes +2",        -- __, __, 53 <__, __, __> [12/12, 120] { 6/ 6, ___ | __, __, 53/53, __/__, __, __}
     feet="Gleti's Boots",             -- __, __, 50 <__, __, __> [ 5/__, 112] {__/__,   1 | __, __, 50/50, __/__, __, __}
     neck="Beastmaster Collar +2",     -- __, __, 25 <__, __, __> [__/__, ___] {__/__, ___ | 25, __, 25/25, __/__, __, __}
     ear1="Enmerkar Earring",          -- __, __, __ <__, __, __> [__/__, ___] { 3/ 3, ___ | __,  8, 15/__, __/__, __, __}
@@ -1305,7 +1307,7 @@ function init_gear_sets()
     ring2="Cath Palug Ring",          -- __, __, __ <__, __, __> [ 5/ 5, ___] {__/__, ___ |  5, __, 12/12, __/__, __, __}
     back=gear.BST_Pet_TP_Cape,        -- __, __, __ <__, __, __> [__/__,  20] { 5/ 5, ___ | __, __, 20/20, 30/30, 10, __}
     waist="Isa Belt",                 -- __, __, __ <__, __, __> [__/__, ___] { 3/ 3, ___ | __, __, __/__, __/__, __,  1}
-    -- 0 DW, 18 STP, 316 Acc <0 DA, 0 TA, 0 QA> [34 PDT/22 MDT, 529 M.Eva] {Pet: 29 PDT/29 MDT, 2 Lv | 37 DA, 14 STP, 243 Acc/228 Racc, 45 Att/30 Ratt, 10 Haste, 1 Regen}
+    -- 0 DW, 8 STP, 319 Acc <0 DA, 0 TA, 0 QA> [39 PDT/27 MDT, 499 M.Eva] {Pet: 35 PDT/35 MDT, 2 Lv | 37 DA, 14 STP, 296 Acc/281 Racc, 45 Att/30 Ratt, 10 Haste, 1 Regen}
 
     -- head="Nukumi Cabasset +3",     -- __, __, 61 <__, __, __> [11/11,  98] {__/__, ___ | __, __, 61/61, __/__, __, __}
     -- legs="Nukumi Quijotes +3",     -- __, __, 63 <__, __, __> [13/13, 130] { 8/ 8, ___ | __, __, 63/63, __/__, __, __}
@@ -1319,7 +1321,7 @@ function init_gear_sets()
     head="Nukumi Cabasset +2",        -- __, __, 51 <__, __, __> [10/10,  88] {__/__, ___ | __, __, 51/51, __/__, __, __}
     body="Gleti's Cuirass",           -- __, __, 55 <10, __, __> [ 9/__, 102] {__/__, ___ | __, __, 50/50, __/__, __, __}
     hands=gear.Emicho_C_hands,        -- __,  7, 37 <__, __, __> [__/__,  32] {__/__, ___ |  4,  7, 20/__, 55/__, __, __}
-    legs="Malignance Tights",         -- __, 10, 50 <__, __, __> [ 7/ 7, 150] {__/__, ___ | __, __, __/__, __/__, __, __}
+    legs="Nukumi Quijotes +2",        -- __, __, 53 <__, __, __> [12/12, 120] { 6/ 6, ___ | __, __, 53/53, __/__, __, __}
     feet="Gleti's Boots",             -- __, __, 50 <__, __, __> [ 5/__, 112] {__/__,   1 | __, __, 50/50, __/__, __, __}
     neck="Beastmaster Collar +2",     -- __, __, 25 <__, __, __> [__/__, ___] {__/__, ___ | 25, __, 25/25, __/__, __, __}
     ear1="Enmerkar Earring",          -- __, __, __ <__, __, __> [__/__, ___] { 3/ 3, ___ | __,  8, 15/__, __/__, __, __}
@@ -1328,7 +1330,7 @@ function init_gear_sets()
     ring2="Cath Palug Ring",          -- __, __, __ <__, __, __> [ 5/ 5, ___] {__/__, ___ |  5, __, 12/12, __/__, __, __}
     back=gear.BST_Pet_TP_Cape,        -- __, __, __ <__, __, __> [__/__,  20] { 5/ 5, ___ | __, __, 20/20, 30/30, 10, __}
     waist="Klouskap Sash +1",         -- __, __, 20 <__, __, __> [__/__, ___] {__/__, ___ | __, __, 20/20, __/__,  9, __}
-    -- 0 DW, 17 STP, 323 Acc <10 DA, 0 TA, 0 QA> [36 PDT/22 MDT, 504 M.Eva] {Pet: 8 PDT/8 MDT, 2 Lv | 41 DA, 21 STP, 283 Acc/248 Racc, 100 Att/30 Ratt, 19 Haste, 0 Regen}
+    -- 0 DW, 7 STP, 326 Acc <10 DA, 0 TA, 0 QA> [41 PDT/27 MDT, 474 M.Eva] {Pet: 14 PDT/14 MDT, 2 Lv | 41 DA, 21 STP, 336 Acc/301 Racc, 100 Att/30 Ratt, 19 Haste, 0 Regen}
 
     -- head="Nukumi Cabasset +3",     -- __, __, 61 <__, __, __> [11/11,  98] {__/__, ___ | __, __, 61/61, __/__, __, __}
     -- body="Ankusa Jackcoat +3",     -- __, __, 40 <__, __, __> [__/__,  84] {__/__, ___ |  5, __, __/__, __/__,  7, __}
@@ -1346,7 +1348,7 @@ function init_gear_sets()
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123] {__/__, ___ | __, __, __/__, __/__, __, __}
     body="Gleti's Cuirass",           -- __, __, 55 <10, __, __> [ 9/__, 102] {__/__, ___ | __, __, 50/50, __/__, __, __}
     hands="Gleti's Gauntlets",        -- __,  8, 55 <__, __, __> [ 7/__,  75] { 8/ 8, ___ | __, __, 50/50, __/__, __, __}
-    legs="Malignance Tights",         -- __, 10, 50 <__, __, __> [ 7/ 7, 150] {__/__, ___ | __, __, __/__, __/__, __, __}
+    legs="Nukumi Quijotes +2",        -- __, __, 53 <__, __, __> [12/12, 120] { 6/ 6, ___ | __, __, 53/53, __/__, __, __}
     feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150] {__/__, ___ | __, __, __/__, __/__, __, __}
     neck="Beastmaster Collar +2",     -- __, __, 25 <__, __, __> [__/__, ___] {__/__, ___ | 25, __, 25/25, __/__, __, __}
     ear1="Enmerkar Earring",          -- __, __, __ <__, __, __> [__/__, ___] { 3/ 3, ___ | __,  8, 15/__, __/__, __, __}
@@ -1355,7 +1357,7 @@ function init_gear_sets()
     ring2="Epona's Ring",             -- __, __, __ < 3,  3, __> [__/__, ___] {__/__, ___ | __, __, __/__, __/__, __, __}
     back=gear.BST_TP_Cape,            -- __, 10, 20 <__, __, __> [10/__, ___] {__/__, ___ | __, __, __/__, __/__, __, __}
     waist="Klouskap Sash +1",         -- __, __, 20 <__, __, __> [__/__, ___] {__/__, ___ | __, __, 20/20, __/__,  9, __}
-    -- 0 DW, 53 STP, 325 Acc <21 DA, 8 TA, 0 QA> [43 PDT/17 MDT, 600 M.Eva] {Pet: 11 PDT/11 MDT, 0 Lv | 25 DA, 8 STP, 160 Acc/145 Racc, 0 Att/0 Ratt, 9 Haste, 0 Regen}
+    -- 0 DW, 43 STP, 328 Acc <21 DA, 8 TA, 0 QA> [48 PDT/22 MDT, 570 M.Eva] {Pet: 17 PDT/17 MDT, 0 Lv | 25 DA, 8 STP, 213 Acc/198 Racc, 0 Att/0 Ratt, 9 Haste, 0 Regen}
     
     -- legs="Nukumi Quijotes +3",     -- __, __, 63 <__, __, __> [13/13, 130] { 8/ 8, ___ | __, __, 63/63, __/__, __, __}
     -- 0 DW, 43 STP, 338 Acc <21 DA, 8 TA, 0 QA> [49 PDT/23 MDT, 580 M.Eva] {Pet: 19 PDT/19 MDT, 0 Lv | 25 DA, 8 STP, 223 Acc/208 Racc, 0 Att/0 Ratt, 9 Haste, 0 Regen}
@@ -1367,7 +1369,7 @@ function init_gear_sets()
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123] {__/__, ___ | __, __, __/__, __/__, __, __}
     body="Gleti's Cuirass",           -- __, __, 55 <10, __, __> [ 9/__, 102] {__/__, ___ | __, __, 50/50, __/__, __, __}
     hands=gear.Emicho_C_hands,        -- __,  7, 37 <__, __, __> [__/__,  32] {__/__, ___ |  4,  7, 20/__, 55/__, __, __}
-    legs="Malignance Tights",         -- __, 10, 50 <__, __, __> [ 7/ 7, 150] {__/__, ___ | __, __, __/__, __/__, __, __}
+    legs="Nukumi Quijotes +2",        -- __, __, 53 <__, __, __> [12/12, 120] { 6/ 6, ___ | __, __, 53/53, __/__, __, __}
     feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150] {__/__, ___ | __, __, __/__, __/__, __, __}
     neck="Beastmaster Collar +2",     -- __, __, 25 <__, __, __> [__/__, ___] {__/__, ___ | 25, __, 25/25, __/__, __, __}
     ear1="Enmerkar Earring",          -- __, __, __ <__, __, __> [__/__, ___] { 3/ 3, ___ | __,  8, 15/__, __/__, __, __}
@@ -1376,7 +1378,7 @@ function init_gear_sets()
     ring2="Cath Palug Ring",          -- __, __, __ <__, __, __> [ 5/ 5, ___] {__/__, ___ |  5, __, 12/12, __/__, __, __}
     back=gear.BST_TP_Cape,            -- __, 10, 20 <__, __, __> [10/__, ___] {__/__, ___ | __, __, __/__, __/__, __, __}
     waist="Klouskap Sash +1",         -- __, __, 20 <__, __, __> [__/__, ___] {__/__, ___ | __, __, 20/20, __/__,  9, __}
-    -- 0 DW, 52 STP, 317 Acc <18 DA, 0 TA, 0 QA> [41 PDT/22 MDT, 557 M.Eva] {Pet: 3 PDT/3 MDT, 0 Lv | 34 DA, 21 STP, 152 Acc/117 Racc, 55 Att/0 Ratt, 9 Haste, 0 Regen}
+    -- 0 DW, 42 STP, 320 Acc <18 DA, 0 TA, 0 QA> [46 PDT/27 MDT, 527 M.Eva] {Pet: 9 PDT/9 MDT, 0 Lv | 34 DA, 21 STP, 205 Acc/170 Racc, 55 Att/0 Ratt, 9 Haste, 0 Regen}
     
     -- legs="Nukumi Quijotes +3",     -- __, __, 63 <__, __, __> [13/13, 130] { 8/ 8, ___ | __, __, 63/63, __/__, __, __}
     -- 0 DW, 42 STP, 330 Acc <18 DA, 0 TA, 0 QA> [47 PDT/28 MDT, 537 M.Eva] {Pet: 11 PDT/11 MDT, 0 Lv | 34 DA, 21 STP, 215 Acc/200 Racc, 55 Att/0 Ratt, 9 Haste, 0 Regen}
