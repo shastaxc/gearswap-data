@@ -9,6 +9,7 @@
 -- Condemners
 
 -- Digirbalag
+-- gear.Digirbalag_CHR = {} -- CHR+15
 
 -- Gada
 gear.Gada_ENH = {} -- 6 Enh Duration, 6 FC
@@ -182,7 +183,6 @@ gear.Linos_WS5 = {} -- 15 Acc/Atk, 8 STR, 3 WS Damage
 -- gear.Ready_MAcc_TPBonus_Axe = gear.Ready_MAcc_Axe
 -- gear.Regen_Axe1 = gear.Reward_Axe
 -- gear.Ready_Phys_TPBonus_Axe = {name="Kumbhakarna", augments={'Pet: Attack+25 Pet: Rng.Atk.+25','Pet: "Dbl.Atk."+4 Pet: Crit.hit rate +4','Pet: TP Bonus+200',}}
--- gear.Digirbalag_CHR = {} -- 
 
 
 ----------------------------------------------------------------------
@@ -228,9 +228,9 @@ gear.BRD_Song_Cape = { name="Intarabus's Cape", augments={'CHR+20','Mag. Acc+20 
 -- gear.BRD_WS4_Cape = {} -- 30AGI, 20Acc/Atk, 10 Double Attack, -10 PDT
 -- gear.BRD_WS5_Cape = {name="Intarabus's Cape", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
 
-gear.BST_TP_Cape = { name="Artio's Mantle", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10','Phys. dmg. taken-10%',}} -- TODO: respec 'Pet: M.Acc.+20 Pet: M.Dmg.+20' to DEX+20
+gear.BST_TP_Cape = { name="Artio's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10','Phys. dmg. taken-10%',}}
 gear.BST_Pet_Macc_Cape = { name="Artio's Mantle", augments={'Pet: M.Acc.+20 Pet: M.Dmg.+20','Eva.+20 /Mag. Eva.+20','Pet: Mag. Acc.+10','Pet: "Regen"+10','Pet: Damage taken -5%',}}
-gear.BST_Pet_TP_Cape = gear.BST_Pet_Macc_Cape -- 5 Pet DT, 20 Pet Acc/R.Acc/Atk/R.Atk, 10 Pet Atk/R.Atk, 10 Pet Haste, 20 Eva/M.Eva
+gear.BST_Pet_TP_Cape = { name="Artio's Mantle", augments={'Pet: Acc.+20 Pet: R.Acc.+20 Pet: Atk.+20 Pet: R.Atk.+20','Eva.+20 /Mag. Eva.+20','Pet: Attack+10 Pet: Rng.Atk.+10','Pet: Haste+10','Pet: Damage taken -5%',}}
 gear.BST_STR_WSD_Cape = { name="Artio's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
 gear.BST_STR_Crit_Cape = gear.BST_STR_WSD_Cape -- 'STR+20','Accuracy+20 Attack+20','STR+10','Crit.hit rate+10','Phys. dmg. taken-10%',
 gear.BST_DEX_WSD_Cape = gear.BST_STR_WSD_Cape -- 'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%','Phys. dmg. taken-10%',
@@ -259,7 +259,7 @@ gear.DNC_WS3_Cape = {name="Senuna's Mantle", augments={'DEX+20','Accuracy+20 Att
 -- gear.DNC_MAB_Cape = { name="Camulus's Mantle", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
 
 gear.DRG_STP_Cape = { name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}}
-gear.DRG_WS1_Cape = { name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','Accuracy+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}} -- TODO: change acc for STR
+gear.DRG_WS1_Cape = { name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
 gear.DRG_WS2_Cape = { name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
 -- gear.DRG_WS3_Cape = {name="Brigantia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Crit.hit rate+10','Phys. dmg. taken-10%',}}
 -- gear.DRG_WS4_Cape = { name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}

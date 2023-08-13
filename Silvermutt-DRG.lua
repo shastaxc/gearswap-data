@@ -234,11 +234,8 @@ function init_gear_sets()
     ear2="Sherida Earring",             --  5, __, __, __, __ < 5, __, __>
     ring1="Sroda Ring",                 -- 15, __, __, __,  3 <__, __, __>
     ring2="Niqmaddu Ring",              -- 10, __, __, __, __ <__, __,  3>
-    back=gear.DRG_WS2_Cape,             -- 30, 20, 20, 10, __ <__, __, __>
+    back=gear.DRG_WS1_Cape,             -- 30, 20, 20, __, __ <10, __, __>
     waist="Fotia Belt",                 -- __, __, __, __, __ <__, __, __>; ftp+
-    -- 244 STR, 377 Att, 256 Acc, 43 WSD, 12 PDL <34 DA, 4 TA, 3 QA>
-
-    -- back=gear.DRG_WS1_Cape,          -- 30, 20, 20, __, __ <10, __, __>
     -- 244 STR, 377 Att, 256 Acc, 34 WSD, 12 PDL <44 DA, 4 TA, 3 QA>
   }
   sets.precast.WS["Stardiver"].MaxTP = set_combine(sets.precast.WS["Stardiver"], {
@@ -257,12 +254,11 @@ function init_gear_sets()
     ear2="Peltast's Earring +1",        -- __, __, 12, __,  8 <__, __, __>
     ring1="Ephramad's Ring",            -- 10, 20, 20, __, 10 <__, __, __>
     ring2="Niqmaddu Ring",              -- 10, __, __, __, __ <__, __,  3>
-    back=gear.DRG_WS2_Cape,             -- 30, 20, 20, 10, __ <__, __, __>
+    back=gear.DRG_WS1_Cape,             -- 30, 20, 20, __, __ <10, __, __>
     waist="Fotia Belt",                 -- __, __, __, __, __ <__, __, __>; ftp+
-    -- 243 STR, 275 Att, 332 Acc, 10 WSD, 55 PDL <16 DA, 10 TA, 3 QA>
+    -- 243 STR, 275 Att, 332 Acc, 0 WSD, 55 PDL <26 DA, 10 TA, 3 QA>
 
     -- ear2="Peltast's Earring +2",     -- 15, __, 20, __,  9 <__, __, __>
-    -- back=gear.DRG_WS1_Cape,          -- 30, 20, 20, __, __ <10, __, __>
     -- 258 STR, 275 Att, 340 Acc, 0 WSD, 56 PDL <26 DA, 10 TA, 3 QA>
   }
   sets.precast.WS["Stardiver"].AttCappedMaxTP = set_combine(sets.precast.WS["Stardiver"].AttCapped, {
