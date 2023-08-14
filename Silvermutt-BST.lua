@@ -480,6 +480,7 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
 	sets.precast.JA['Bestial Loyalty'] = {
+    hands="Ankusa Gloves +1", -- Adds 17 pet levels, snapshots
     -- hands="Ankusa Gloves +3", -- Adds 17 pet levels, snapshots
   }
 	sets.precast.JA['Call Beast'] = sets.precast.JA['Bestial Loyalty']
@@ -492,7 +493,7 @@ function init_gear_sets()
     body="Totemic Jackcoat +3",       -- 33, __, 26, __ [__/__,  84] {10/10, __}; Removes status effects
     hands="Gleti's Gauntlets",        -- 30, __, __, __ [ 7/__,  75] { 8/ 8, __}
     legs="Ankusa Trousers +3",        -- 27, __, __, 21 [__/__,  89] {__/__, __}
-    feet=gear.Nyame_B_feet,           -- 26, __, __, __ [ 7/ 7, 150] {__/__, __}
+    feet="Ankusa Gaiters +1",         -- 12,  4, 35, __ [__/__,  69] { 3/__, __}; Enhances Beast Healer
     neck="Loricate Torque +1",        -- __, __, __, __ [ 6/ 6, ___] {__/__, __}
     ear1="Odnowa Earring +1",         -- __, __, __, __ [ 3/ 5, ___] {__/__, __}
     ear2="Genmei Earring",            -- __, __, __, __ [ 2/__, ___] {__/__, __}
@@ -500,7 +501,7 @@ function init_gear_sets()
     ring2="Defending Ring",           -- __, __, __, __ [10/10, ___] {__/__, __}
     back=gear.BST_TP_Cape,            -- __, __, 30, __ [10/__, ___] {__/__, __}
     waist="Engraved Belt",            --  7, __, __, __ [__/__, ___] {__/__, __}
-    -- 165 MND, 20 Reward Regen, 56 Reward Potency, 21 Reward Recast- [52 PDT/35 MDT, 521 M.Eva] {Pet: 18 PDT/18 MDT, 0 Lv}
+    -- 151 MND, 24 Reward Regen, 91 Reward Potency, 21 Reward Recast- [45 PDT/28 MDT, 440 M.Eva] {Pet: 21 PDT/18 MDT, 0 Lv}
 
     -- main="Farsha",                 -- 50, __, __, __ [__/__, ___] {__/__, __}
     -- sub=gear.Reward_Axe,           -- 17, __, __, __ [__/__, ___] {__/__, __}
@@ -510,6 +511,7 @@ function init_gear_sets()
     -- 229 MND, 24 Reward Regen, 97 Reward Potency, 37 Reward Recast- [38 PDT/21 MDT, 337 M.Eva] {Pet: 23 PDT/18 MDT, 0 Lv}
   }
 	sets.precast.JA['Killer Instinct'] = {
+    head="Ankusa Helm +1",
     -- head="Ankusa Helm +3",
   }
 	sets.precast.JA.Familiar = {
@@ -526,7 +528,7 @@ function init_gear_sets()
     ammo="Staunch Tathlum +1",        -- __, __ [ 3/ 3, ___]
     head="Totemic Helm +3",           -- 29, 30 [__/__,  63]
     body=gear.Nyame_B_body,           -- 35, __ [ 9/ 9, 139]
-    hands=gear.Nyame_B_hands,         -- 24, __ [ 7/ 7, 112]
+    hands="Ankusa Gloves +1",         -- 17,  9 [__/__,  37]
     legs="Ankusa Trousers +3",        -- 21, 11 [__/__,  89]
     feet=gear.Nyame_B_feet,           -- 38, __ [ 7/ 7, 150]
     neck="Unmoving Collar +1",        --  9, __ [__/__, ___]
@@ -537,7 +539,7 @@ function init_gear_sets()
     back=gear.BST_TP_Cape,            -- __, __ [10/__, ___]
     waist="Aristo Belt",              --  8, __ [__/__, ___]
     -- Traits/merits/gifts                   20
-    -- 185 CHR, 61 Charm [49 PDT/39 MDT, 553 M.Eva]
+    -- 178 CHR, 70 Charm [42 PDT/34 MDT, 478 M.Eva]
     
     -- main="Habilitator +1",         -- 28, __ [ 3/__, ___]
     -- sub=gear.Digirbalag_CHR,       -- 25, __ [__/__, ___]
