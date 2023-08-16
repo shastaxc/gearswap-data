@@ -179,7 +179,7 @@ gear.Shijo_D = {name="Shijo", augments={'"Triple Atk."+2','"Dual Wield"+5','DEX+
 
 gear.Skullrender_A = {}
 gear.Skullrender_B = {}
-gear.Skullrender_C = {}
+gear.Skullrender_C = { name="Skullrender", augments={'DMG:+15','Pet: Accuracy+20','Pet: Attack+20',}}
 gear.Skullrender_D = {}
 
 gear.Solstice_A = {}

@@ -551,11 +551,11 @@ function init_gear_sets()
     -- 276 CHR, 107 Charm [29 PDT/18 MDT, 392 M.Eva]
   }
 	sets.precast.JA.Spur = {
+    main=gear.Skullrender_C,
+    sub=gear.Skullrender_C,
     feet="Nukumi Ocreae +2",
     back="Artio's Mantle",
 
-    -- main=gear.Skullrender_C,
-    -- sub=gear.Skullrender_C,
     -- feet="Nukumi Ocreae +3",
   }
 	sets.precast.JA['Feral Howl'] = {
@@ -931,6 +931,8 @@ function init_gear_sets()
 
   -- Default/fallback set
   sets.midcast.Pet = {
+    main=gear.Ready_Phys_TPBonus_Axe, -- [__/__, ___] {__/__, ___ |  4, __/__, 20/__}; Pet TP Bonus
+    sub="Agwu's Axe",                 -- [__/__, ___] {__/__, ___ | __, 50/50, __/__}; Pet dmg+
     ammo="Hesperiidae",               -- [__/__, ___] {__/__, ___ | __, 10/10, 10/__}; Pet attr+10
     head="Nukumi Cabasset +2",        -- [10/10,  88] {__/__, ___ | __, 51/51, __/__}
     body="Gleti's Cuirass",           -- [ 9/__, 102] {__/__, ___ | __, 50/50, __/__}
@@ -944,10 +946,9 @@ function init_gear_sets()
     ring2="Cath Palug Ring",          -- [ 5/ 5, ___] {__/__, ___ |  5, 12/12, __/__}
     back=gear.BST_Pet_TP_Cape,        -- [__/__,  20] { 5/ 5, ___ | __, 20/20, 30/30}
     waist="Klouskap Sash +1",         -- [__/__, ___] {__/__, ___ | __, 20/20, __/__}
-    -- [51 PDT/37 MDT, 504 M.Eva] {Pet: 11 PDT/11 MDT, 2 Lv | 15 DA, 348 Acc/318 Racc, 60 Att/30 Ratt}
+    -- [51 PDT/37 MDT, 504 M.Eva] {Pet: 11 PDT/11 MDT, 2 Lv | 15 DA, 398 Acc/368 Racc, 80 Att/30 Ratt}
     
     -- main="Aymur",                  -- [__/__, ___] {__/__, ___ | __, __/__, 80/__}; Pet TP Bonus+1000
-    -- sub="Agwu's Axe",              -- [__/__, ___] {__/__, ___ | __, 50/50, __/__}; Pet dmg+
     -- head="Nukumi Cabasset +3",     -- [11/11,  98] {__/__, ___ | __, 61/61, __/__}
     -- hands="Nukumi Manoplas +3",    -- [11/11,  82] {__/__, ___ | __, 62/62, __/__}; Pet TP Bonus+700
     -- legs="Nukumi Quijotes +3",     -- [13/13, 130] { 8/ 8, ___ | __, 63/63, __/__}
@@ -956,6 +957,8 @@ function init_gear_sets()
   sets.midcast.Pet.Halfsies = set_combine(sets.midcast.Pet, {})
 
   sets.midcast.Pet.Physical = {
+    main=gear.Ready_Phys_TPBonus_Axe, -- [__/__, ___] {__/__, ___ |  4, __/__, 20/__}; Pet TP Bonus
+    sub="Agwu's Axe",                 -- [__/__, ___] {__/__, ___ | __, 50/50, __/__}; Pet dmg+
     ammo="Hesperiidae",               -- [__/__, ___] {__/__, ___ | __, 10/10, 10/__}; Pet attr+10
     head="Nukumi Cabasset +2",        -- [10/10,  88] {__/__, ___ | __, 51/51, __/__}
     body="Gleti's Cuirass",           -- [ 9/__, 102] {__/__, ___ | __, 50/50, __/__}
@@ -969,10 +972,9 @@ function init_gear_sets()
     ring2="Cath Palug Ring",          -- [ 5/ 5, ___] {__/__, ___ |  5, 12/12, __/__}
     back=gear.BST_Pet_TP_Cape,        -- [__/__,  20] { 5/ 5, ___ | __, 20/20, 30/30}
     waist="Klouskap Sash +1",         -- [__/__, ___] {__/__, ___ | __, 20/20, __/__}
-    -- [51 PDT/37 MDT, 504 M.Eva] {Pet: 11 PDT/11 MDT, 2 Lv | 15 DA, 348 Acc/318 Racc, 60 Att/30 Ratt}
+    -- [51 PDT/37 MDT, 504 M.Eva] {Pet: 11 PDT/11 MDT, 2 Lv | 19 DA, 398 Acc/368 Racc, 80 Att/30 Ratt}
     
     -- main="Aymur",                  -- [__/__, ___] {__/__, ___ | __, __/__, 80/__}; Pet TP Bonus+1000
-    -- sub="Agwu's Axe",              -- [__/__, ___] {__/__, ___ | __, 50/50, __/__}; Pet dmg+
     -- head="Nukumi Cabasset +3",     -- [11/11,  98] {__/__, ___ | __, 61/61, __/__}
     -- hands="Nukumi Manoplas +3",    -- [11/11,  82] {__/__, ___ | __, 62/62, __/__}; Pet TP Bonus+700
     -- legs="Nukumi Quijotes +3",     -- [13/13, 130] { 8/ 8, ___ | __, 63/63, __/__}
@@ -981,6 +983,8 @@ function init_gear_sets()
   sets.midcast.Pet.Physical.Halfsies = set_combine(sets.midcast.Pet.Physical, {})
 
   sets.midcast.Pet.Matk = {
+    main=gear.Ready_MAB_Axe,            -- [__/__, ___] { 4/ 4, ___ | __, __, 25, __}; Pet TP Bonus+200
+    sub="Agwu's Axe",                   -- [__/__, ___] {__/__, ___ | __, 50, __, 20}
     ammo="Hesperiidae",                 -- [__/__, ___] {__/__, ___ | __, 10, __, 10}; Pet attr+10
     head=gear.Nyame_B_head,             -- [ 7/ 7, 123] {__/__, ___ | __, 50, __, __}
     body=gear.Emicho_D_body,            -- [__/__,  53] { 4/ 4, ___ | __, __, 35, 20}
@@ -994,10 +998,8 @@ function init_gear_sets()
     ring2="Cath Palug Ring",            -- [ 5/ 5, ___] {__/__, ___ |  5, 12, __, __}
     back="Argochampsa Mantle",          -- [__/__, ___] {__/__, ___ | __, __, 12, __}
     waist="Incarnation Sash",           -- [__/__, ___] {__/__, ___ |  4, 15, __, __}
-    -- [41 PDT/41 MDT, 548 M.Eva] {Pet: 7 PDT/7 MDT, 1 Lv | 16 DA, 295 Macc, 57 MAB, 30 INT}
+    -- [41 PDT/41 MDT, 548 M.Eva] {Pet: 11 PDT/11 MDT, 1 Lv | 16 DA, 345 Macc, 82 MAB, 50 INT}
     
-    -- main=gear.Ready_MAB_Axe,         -- [__/__, ___] { 4/ 4, ___ | __, __, 25, __}; Pet TP Bonus+200
-    -- sub="Agwu's Axe",                -- [__/__, ___] {__/__, ___ | __, 50, __, 20}
     -- head=gear.Valorous_Pet_Matk_head,-- [__/__,  48] {__/__, ___ | __, __, 30, 15}
     -- body="Udug Jacket",              -- [10/10,  86] {__/__, ___ | __, 45, 45, __}
     -- hands="Nukumi Manoplas +3",      -- [11/11,  82] {__/__, ___ | __, 62, __, __}; Pet TP Bonus+700
@@ -1012,6 +1014,8 @@ function init_gear_sets()
   }
 
   sets.midcast.Pet.Macc = {
+    main=gear.Ready_MAcc_Axe,         -- [__/__, ___] { 4/ 4, ___ | 25, __}; Pet TP Bonus+200
+    sub="Agwu's Axe",                 -- [__/__, ___] {__/__, ___ | 50, 20}
     ammo="Hesperiidae",               -- [__/__, ___] {__/__, ___ | 10, 10}
     head="Nukumi Cabasset +2",        -- [10/10,  88] {__/__, ___ | 51, __}
     body="Gleti's Cuirass",           -- [ 9/__, 102] {__/__, ___ | 50, __}
@@ -1025,10 +1029,8 @@ function init_gear_sets()
     ring2="Cath Palug Ring",          -- [ 5/ 5, ___] {__/__, ___ | 12, __}
     back=gear.BST_Pet_Macc_Cape,      -- [__/__,  20] { 5/ 5, ___ | 30, __}
     waist="Incarnation Sash",         -- [__/__, ___] {__/__, ___ | 15, __}
-    -- [51 PDT/37 MDT, 514 M.Eva] {Pet: 14 PDT/14 MDT, 2 Lv | 384 Macc, 10 INT}
+    -- [51 PDT/37 MDT, 514 M.Eva] {Pet: 18 PDT/18 MDT, 2 Lv | 459 Macc, 30 INT}
     
-    -- main=gear.Ready_MAcc_Axe,      -- [__/__, ___] { 4/ 4, ___ | 25, __}; Pet TP Bonus+200
-    -- sub="Agwu's Axe",              -- [__/__, ___] {__/__, ___ | 50, 20}
     -- head="Nukumi Cabasset +3",     -- [11/11,  98] {__/__, ___ | 61, __}
     -- hands="Nukumi Manoplas +3",    -- [11/11,  82] {__/__, ___ | 62, __}; Pet TP Bonus+700
     -- legs="Nukumi Quijotes +3",     -- [13/13, 130] { 8/ 8, ___ | 63, __}
@@ -1041,14 +1043,14 @@ function init_gear_sets()
 
   -- This set is overlaid on top of the other pet midcast sets as appropriate
   sets.midcast.Pet.MultiStrike = {
+    main=gear.Skullrender_C,
+    sub=gear.Skullrender_C,
     legs=gear.Emicho_C_legs,
     neck="Beastmaster Collar +2",
     ear2="Nukumi Earring +1",
     ring2="Cath Palug Ring",
-    waist="Incarnation Sash"
+    waist="Incarnation Sash",
     
-    -- main=gear.Skullrender_C,
-    -- sub=gear.Skullrender_C,
     -- ear2="Nukumi Earring +2",
   }
 
@@ -1064,26 +1066,26 @@ function init_gear_sets()
     -- hands="Nukumi Manoplas +3",
   }
   sets.midcast.Pet.TPBonus.Physical = set_combine(sets.midcast.Pet.TPBonus, {
-    -- main=gear.Ready_MAB_TPBonus_Axe,
-    -- sub=gear.Ready_Phys_TPBonus_Axe,
+    main=gear.Ready_MAB_TPBonus_Axe,
+    sub=gear.Ready_Phys_TPBonus_Axe,
 
     -- main="Aymur",
   })
   sets.midcast.Pet.TPBonus.Matk = set_combine(sets.midcast.Pet.TPBonus, {
-    -- main=gear.Ready_Macc_TPBonus_Axe,
-    -- sub=gear.Ready_MAB_TPBonus_Axe,
+    main=gear.Ready_Macc_TPBonus_Axe,
+    sub=gear.Ready_MAB_TPBonus_Axe,
 
     -- main="Aymur",
   })
   sets.midcast.Pet.TPBonus.Macc = set_combine(sets.midcast.Pet.TPBonus, {
-    -- main=gear.Ready_MAB_TPBonus_Axe,
-    -- sub=gear.Ready_Macc_TPBonus_Axe,
+    main=gear.Ready_MAB_TPBonus_Axe,
+    sub=gear.Ready_Macc_TPBonus_Axe,
 
     -- main="Aymur",
   })
   sets.midcast.Pet.TPBonus.Buff = set_combine(sets.midcast.Pet.TPBonus, {
-    -- main=gear.Ready_Macc_TPBonus_Axe,
-    -- sub=gear.Pet_DT_TPBonus_Axe,
+    main=gear.Ready_Macc_TPBonus_Axe,
+    sub=gear.Pet_DT_TPBonus_Axe,
 
     -- main="Aymur",
   })
@@ -1102,6 +1104,8 @@ function init_gear_sets()
 
   -- This set is used when both master and pet are idle
   sets.HeavyDef = {
+    main=gear.Pet_DT_Axe,             -- __ [__/__, ___] { 4/ 4, ___ | __}
+    sub=gear.Regen_Axe,               -- __ [__/__, ___] {__/__, ___ |  3}
     ammo="Staunch Tathlum +1",        -- __ [ 3/ 3, ___] {__/__, ___ | __}
     head=gear.Nyame_B_head,           -- __ [ 7/ 7, 123] {__/__, ___ | __}
     body="Gleti's Cuirass",           -- __ [ 9/__, 102] {__/__, ___ | __}
@@ -1116,10 +1120,8 @@ function init_gear_sets()
     back=gear.BST_Pet_Macc_Cape,      -- __ [__/__,  20] { 5/ 5, ___ | 10}
     waist="Isa Belt",                 -- __ [__/__, ___] { 3/ 3, ___ |  1}
     -- Traits/Gifts/Merits                                 9/ 9
-    -- 0 Regen [66 PDT/37 MDT, 532 M.Eva] {Pet: 34 PDT/34 MDT, 2 Lv | 11 Regen}
+    -- 0 Regen [66 PDT/37 MDT, 532 M.Eva] {Pet: 38 PDT/38 MDT, 2 Lv | 14 Regen}
 
-    -- main=gear.Pet_DT_Axe,          -- __ [__/__, ___] { 4/ 4, ___ | __}
-    -- sub=gear.Regen_Axe,            -- __ [__/__, ___] {__/__, ___ |  3}
     -- legs="Nukumi Quijotes +3",     -- __ [13/13, 130] { 8/ 8, ___ | __}
     -- 0 Regen [67 PDT/38 MDT, 562 M.Eva] {Pet: 40 PDT/40 MDT, 2 Lv | 14 Regen}
   }
@@ -1215,6 +1217,8 @@ function init_gear_sets()
   -- so no emphasis is placed on master survivability stats.
   sets.idle.PetEngaged = {} -- DO NOT MODIFY
   sets.idle.PetEngaged.Tank = {
+    main=gear.Skullrender_C,          -- [__/__, ___] {__/__, ___ |  5, __, 20/__, 20/__,  8, __}
+    sub=gear.Pet_DT_Axe,              -- [__/__, ___] { 4/ 4, ___ | __, __, __/__, __/__, __, __}
     ammo="Hesperiidae",               -- [__/__, ___] {__/__, ___ | __, __, 10/10, 15/__, __, __}
     head="Tali'ah Turban +2",         -- [__/__,  53] {__/__, ___ | __,  7, 42/42, __/__, __, __}
     body="Totemic Jackcoat +3",       -- [__/__,  84] {10/10, ___ | __, __, __/__, __/__, __, __}
@@ -1228,15 +1232,15 @@ function init_gear_sets()
     ring2="Cath Palug Ring",          -- [ 5/ 5, ___] {__/__, ___ |  5, __, 12/12, __/__, __, __}
     back=gear.BST_Pet_TP_Cape,        -- [__/__,  20] { 5/ 5, ___ | __, __, 20/20, 30/30, 10, __}
     waist="Klouskap Sash +1",         -- [__/__, ___] {__/__, ___ | __, __, 20/20, __/__,  9, __}
-    -- [29 PDT/17 MDT, 464 M.Eva] {Pet: 32 PDT/32 MDT, 2 Lv | 37 DA, 21 STP, 307 Acc/292 Racc, 45 Att/30 Ratt, 19 Haste, 0 Regen}
+    -- [29 PDT/17 MDT, 464 M.Eva] {Pet: 36 PDT/36 MDT, 2 Lv | 42 DA, 21 STP, 327 Acc/292 Racc, 65 Att/30 Ratt, 27 Haste, 0 Regen}
 
-    -- main=gear.Skullrender_C,       -- [__/__, ___] {__/__, ___ |  5, __, 20/__, 20/__,  8, __}
-    -- sub=gear.Pet_DT_Axe,           -- [__/__, ___] { 4/ 4, ___ | __, __, __/__, __/__, __, __}
     -- legs="Nukumi Quijotes +3",     -- [13/13, 130] { 8/ 8, ___ | __, __, 63/63, __/__, __, __}
     -- ear2="Nukumi Earring +2",      -- [__/__, ___] {__/__,   1 | 10, __, __/__, __/__, __, __}
     -- [30 PDT/18 MDT, 474 M.Eva] {Pet: 38 PDT/38 MDT, 2 Lv | 45 DA, 21 STP, 337 Acc/302 Racc, 65 Att/30 Ratt, 27 Haste, 0 Regen}
   }
   sets.idle.PetEngaged.DD = {
+    main=gear.Skullrender_C,          -- [__/__, ___] {__/__, ___ |  5, __, 20/__, 20/__,  8, __}
+    sub="Agwu's Axe",                 -- [__/__, ___] {__/__, ___ | __, __, 50/__, __/__, __, __}; Pet dmg+
     ammo="Hesperiidae",               -- [__/__, ___] {__/__, ___ | __, __, 10/10, 15/__, __, __}
     head="Tali'ah Turban +2",         -- [__/__,  53] {__/__, ___ | __,  7, 42/42, __/__, __, __}
     body="Gleti's Cuirass",           -- [ 9/__, 102] {__/__, ___ | __, __, 50/50, __/__, __, __}
@@ -1250,10 +1254,8 @@ function init_gear_sets()
     ring2="Cath Palug Ring",          -- [ 5/ 5, ___] {__/__, ___ |  5, __, 12/12, __/__, __, __}
     back=gear.BST_Pet_TP_Cape,        -- [__/__,  20] { 5/ 5, ___ | __, __, 20/20, 30/30, 10, __}
     waist="Incarnation Sash",         -- [__/__, ___] {__/__, ___ |  4, __, 15/15, __/__, __, __}
-    -- [19 PDT/5 MDT, 408 M.Eva] {Pet: 8 PDT/8 MDT, 2 Lv | 45 DA, 35 STP, 269 Acc/234 Racc, 100 Att/30 Ratt, 16 Haste, 0 Regen}
+    -- [19 PDT/5 MDT, 408 M.Eva] {Pet: 8 PDT/8 MDT, 2 Lv | 50 DA, 35 STP, 339 Acc/234 Racc, 120 Att/30 Ratt, 24 Haste, 0 Regen}
 
-    -- main=gear.Skullrender_C,       -- [__/__, ___] {__/__, ___ |  5, __, 20/__, 20/__,  8, __}
-    -- sub="Agwu's Axe",              -- [__/__, ___] {__/__, ___ | __, __, 50/__, __/__, __, __}; Pet dmg+
     -- body="Ankusa Jackcoat +3",     -- [__/__,  84] {__/__, ___ |  5, __, __/__, __/__,  7, __}
     -- ear2="Nukumi Earring +2",      -- [__/__, ___] {__/__,   1 | 10, __, __/__, __/__, __, __}
     -- [10 PDT/5 MDT, 390 M.Eva] {Pet: 8 PDT/8 MDT, 2 Lv | 58 DA, 35 STP, 289 Acc/184 Racc, 120 Att/30 Ratt, 31 Haste, 0 Regen}
