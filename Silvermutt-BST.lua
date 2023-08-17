@@ -1603,16 +1603,7 @@ end
 
 function update_combat_form()
   state.CombatForm:reset()
-
-  if state.HybridMode.value ~= 'Master' and state.PetMode.value ~= 'Normal' then
-    local mode = state.HybridMode.value
-    if state.PetMode.value ~= 'Normal' then
-      mode = mode..state.PetMode.value
-    end
-    state.CombatForm:set(mode)
-  end
 end
-
 
 function get_custom_wsmode(spell, action, spellMap)
   local wsmode = ''
