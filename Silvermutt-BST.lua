@@ -95,7 +95,7 @@ function job_setup()
   silibs.enable_elemental_belt_handling(has_obi, has_orpheus)
 
   state.OffenseMode:options('Normal', 'Acc')
-  state.HybridMode:options('Master', 'Pet', 'Halfsies')
+  state.HybridMode:options('Master', 'Halfsies', 'PetDT', 'Pet')
   state.IdleMode:options('Normal', 'DT', 'RegainOnly')
   state.CP = M(false, 'Capacity Points Mode')
   state.AutomaticPetTargeting = M(true, 'Automatic Pet Targeting')
@@ -1213,10 +1213,10 @@ function init_gear_sets()
   sets.idle.Weak = set_combine(sets.HeavyDef, {})
 
   -- idle.PetEngaged sets is when master is idle but pet is engaged
-  -- It is assumed that in this situation, master is standing out of range
-  -- so no emphasis is placed on master survivability stats.
   sets.idle.PetEngaged = {} -- DO NOT MODIFY
-  sets.idle.PetEngaged.Tank = {
+
+  -- More squishy for master
+  sets.idle.PetEngaged.PetTank = {
     main=gear.Skullrender_C,          -- [__/__, ___] {__/__, ___ |  5, __, 20/__, 20/__,  8, __}
     sub=gear.Pet_DT_Axe,              -- [__/__, ___] { 4/ 4, ___ | __, __, __/__, __/__, __, __}
     ammo="Hesperiidae",               -- [__/__, ___] {__/__, ___ | __, __, 10/10, 15/__, __, __}
@@ -1238,7 +1238,8 @@ function init_gear_sets()
     -- ear2="Nukumi Earring +2",      -- [__/__, ___] {__/__,   1 | 10, __, __/__, __/__, __, __}
     -- [30 PDT/18 MDT, 474 M.Eva] {Pet: 38 PDT/38 MDT, 2 Lv | 45 DA, 21 STP, 337 Acc/302 Racc, 65 Att/30 Ratt, 27 Haste, 0 Regen}
   }
-  sets.idle.PetEngaged.DD = {
+  -- More squishy for master
+  sets.idle.PetEngaged.PetDD = {
     main=gear.Skullrender_C,          -- [__/__, ___] {__/__, ___ |  5, __, 20/__, 20/__,  8, __}
     sub="Agwu's Axe",                 -- [__/__, ___] {__/__, ___ | __, __, 50/__, __/__, __, __}; Pet dmg+
     ammo="Hesperiidae",               -- [__/__, ___] {__/__, ___ | __, __, 10/10, 15/__, __, __}
@@ -1260,6 +1261,60 @@ function init_gear_sets()
     -- ear2="Nukumi Earring +2",      -- [__/__, ___] {__/__,   1 | 10, __, __/__, __/__, __, __}
     -- [10 PDT/5 MDT, 390 M.Eva] {Pet: 8 PDT/8 MDT, 2 Lv | 58 DA, 35 STP, 289 Acc/184 Racc, 120 Att/30 Ratt, 31 Haste, 0 Regen}
   }
+
+  -- Cap master DT
+  sets.idle.PetEngaged.PetDTTank = {
+    main=gear.Skullrender_C,          -- [__/__, ___] {__/__, ___ |  5, __, 20/__, 20/__,  8, __}
+    sub=gear.Pet_DT_Axe,              -- [__/__, ___] { 4/ 4, ___ | __, __, __/__, __/__, __, __}
+    ammo="Staunch Tathlum +1",        -- [ 3/ 3, ___] {__/__, ___ | __, __, __/__, __/__, __, __}
+    head="Nukumi Cabasset +2",        -- [10/10,  88] {__/__, ___ | __, __, 51/51, __/__, __, __}
+    body="Totemic Jackcoat +3",       -- [__/__,  84] {10/10, ___ | __, __, __/__, __/__, __, __}
+    hands="Gleti's Gauntlets",        -- [ 7/__,  75] { 8/ 8, ___ | __, __, 50/50, __/__, __, __}
+    legs="Nukumi Quijotes +2",        -- [12/12, 120] { 6/ 6, ___ | __, __, 53/53, __/__, __, __}
+    feet="Gleti's Boots",             -- [ 5/__, 112] {__/__,   1 | __, __, 50/50, __/__, __, __}
+    neck="Beastmaster Collar +2",     -- [__/__, ___] {__/__, ___ | 25, __, 25/25, __/__, __, __}
+    ear1="Enmerkar Earring",          -- [__/__, ___] { 3/ 3, ___ | __,  8, 15/__, __/__, __, __}
+    ear2="Nukumi Earring +1",         -- [__/__, ___] {__/__,   1 |  7, __, __/__, __/__, __, __}
+    ring1="Varar Ring +1",            -- [__/__, ___] {__/__, ___ | __,  6, 10/10, __/__, __, __}
+    ring2="Defending Ring",           -- [10/10, ___] {__/__, ___ | __, __, __/__, __/__, __, __}
+    back=gear.BST_Pet_TP_Cape,        -- [__/__,  20] { 5/ 5, ___ | __, __, 20/20, 30/30, 10, __}
+    waist="Klouskap Sash +1",         -- [__/__, ___] {__/__, ___ | __, __, 20/20, __/__,  9, __}
+    -- [47 PDT/35 MDT, 464 M.Eva] {Pet: 36 PDT/36 MDT, 2 Lv | 37 DA, 14 STP, 314 Acc/279 Racc, 50 Att/30 Ratt, 27 Haste, 0 Regen}
+
+    -- head="Nukumi Cabasset +3",     -- [11/11,  98] {__/__, ___ | __, __, 61/61, __/__, __, __}
+    -- legs="Nukumi Quijotes +3",     -- [13/13, 130] { 8/ 8, ___ | __, __, 63/63, __/__, __, __}
+    -- ear2="Nukumi Earring +2",      -- [__/__, ___] {__/__,   1 | 10, __, __/__, __/__, __, __}
+    -- [49 PDT/37 MDT, 519 M.Eva] {Pet: 38 PDT/38 MDT, 2 Lv | 40 DA, 14 STP, 334 Acc/299 Racc, 50 Att/30 Ratt, 27 Haste, 0 Regen}
+  }
+  -- Cap master DT
+  sets.idle.PetEngaged.PetDTDD = {
+    main=gear.Skullrender_C,          -- [__/__, ___] {__/__, ___ |  5, __, 20/__, 20/__,  8, __}
+    sub="Agwu's Axe",                 -- [__/__, ___] {__/__, ___ | __, __, 50/__, __/__, __, __}; Pet dmg+
+    ammo="Staunch Tathlum +1",        -- [ 3/ 3, ___] {__/__, ___ | __, __, __/__, __/__, __, __}
+    head="Nukumi Cabasset +2",        -- [10/10,  88] {__/__, ___ | __, __, 51/51, __/__, __, __}
+    body=gear.Nyame_B_body,           -- [ 9/ 9, 139] {__/__, ___ | __, __, 50/50, __/__, __, __}
+    hands=gear.Emicho_C_hands,        -- [__/__,  32] {__/__, ___ |  4,  7, 20/__, 55/__, __, __}
+    legs="Ankusa Trousers +3",        -- [__/__,  89] {__/__, ___ | __,  7, __/__, __/__,  6, __}
+    feet=gear.Nyame_B_feet,           -- [ 7/ 7, 150] {__/__, ___ | __, __, 50/50, __/__, __, __}
+    neck="Beastmaster Collar +2",     -- [__/__, ___] {__/__, ___ | 25, __, 25/25, __/__, __, __}
+    ear1="Enmerkar Earring",          -- [__/__, ___] { 3/ 3, ___ | __,  8, 15/__, __/__, __, __}
+    ear2="Nukumi Earring +1",         -- [__/__, ___] {__/__,   1 |  7, __, __/__, __/__, __, __}
+    ring1="Defending Ring",           -- [10/10, ___] {__/__, ___ | __, __, __/__, __/__, __, __}
+    ring2="Cath Palug Ring",          -- [ 5/ 5, ___] {__/__, ___ |  5, __, 12/12, __/__, __, __}
+    back=gear.BST_Pet_TP_Cape,        -- [__/__,  20] { 5/ 5, ___ | __, __, 20/20, 30/30, 10, __}
+    waist="Flume Belt +1",            -- [ 4/__, ___] {__/__, ___ | __, __, __/__, __/__, __, __}
+    -- [48 PDT/44 MDT, 518 M.Eva] {Pet: 8 PDT/8 MDT, 1 Lv | 46 DA, 22 STP, 313 Acc/208 Racc, 105 Att/30 Ratt, 24 Haste, 0 Regen}
+
+    -- head="Nukumi Cabasset +3",     -- [11/11,  98] {__/__, ___ | __, __, 61/61, __/__, __, __}
+    -- ear2="Nukumi Earring +2",      -- [__/__, ___] {__/__,   1 | 10, __, __/__, __/__, __, __}
+    -- [49 PDT/45 MDT, 528 M.Eva] {Pet: 8 PDT/8 MDT, 1 Lv | 46 DA, 22 STP, 323 Acc/218 Racc, 105 Att/30 Ratt, 24 Haste, 0 Regen}
+  }
+
+  sets.idle.PetEngaged.MasterTank = set_combine(sets.idle.PetEngaged.PetDTTank, {})
+  sets.idle.PetEngaged.MasterDD = set_combine(sets.idle.PetEngaged.PetDTDD, {})
+
+  sets.idle.PetEngaged.HalfsiesTank = set_combine(sets.idle.PetEngaged.PetDTTank, {})
+  sets.idle.PetEngaged.HalfsiesDD = set_combine(sets.idle.PetEngaged.PetDTDD, {})
 
 
   ------------------------------------------------------------------------------------------------
@@ -1292,8 +1347,6 @@ function init_gear_sets()
 
 
 	--------------------- When master is engaged in Pet hybrid mode ---------------------
-  -- These will be similar to the idle.PetEngaged modes, but put a little more
-  -- emphasis on master survivability.
   sets.engaged.PetTank = {
     ammo="Hesperiidae",               -- __, __, 10 <__, __, __> [__/__, ___] {__/__, ___ | __, __, 10/10, 15/__, __, __}
     head="Nukumi Cabasset +2",        -- __, __, 51 <__, __, __> [10/10,  88] {__/__, ___ | __, __, 51/51, __/__, __, __}
@@ -1340,6 +1393,54 @@ function init_gear_sets()
     -- 0 DW, 7 STP, 336 Acc <0 DA, 0 TA, 0 QA> [34 PDT/29 MDT, 476 M.Eva] {Pet: 16 PDT/16 MDT, 2 Lv | 49 DA, 21 STP, 306 Acc/271 Racc, 100 Att/30 Ratt, 26 Haste, 0 Regen}
   }
   sets.engaged.PetDD.Acc = set_combine(sets.engaged.PetDD, {})
+
+  
+	--------------------- When master is engaged in Pet hybrid mode ---------------------
+  sets.engaged.PetDTTank = {
+    ammo="Hesperiidae",               -- __, __, 10 <__, __, __> [__/__, ___] {__/__, ___ | __, __, 10/10, 15/__, __, __}
+    head="Nukumi Cabasset +2",        -- __, __, 51 <__, __, __> [10/10,  88] {__/__, ___ | __, __, 51/51, __/__, __, __}
+    body="Totemic Jackcoat +3",       -- __, __, 50 <__, __, __> [__/__,  84] {10/10, ___ | __, __, __/__, __/__, __, __}
+    hands="Gleti's Gauntlets",        -- __,  8, 55 <__, __, __> [ 7/__,  75] { 8/ 8, ___ | __, __, 50/50, __/__, __, __}
+    legs="Nukumi Quijotes +2",        -- __, __, 53 <__, __, __> [12/12, 120] { 6/ 6, ___ | __, __, 53/53, __/__, __, __}
+    feet="Gleti's Boots",             -- __, __, 50 <__, __, __> [ 5/__, 112] {__/__,   1 | __, __, 50/50, __/__, __, __}
+    neck="Beastmaster Collar +2",     -- __, __, 25 <__, __, __> [__/__, ___] {__/__, ___ | 25, __, 25/25, __/__, __, __}
+    ear1="Enmerkar Earring",          -- __, __, __ <__, __, __> [__/__, ___] { 3/ 3, ___ | __,  8, 15/__, __/__, __, __}
+    ear2="Nukumi Earring +1",         -- __, __, 15 <__, __, __> [__/__, ___] {__/__,   1 |  7, __, __/__, __/__, __, __}
+    ring1="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___] {__/__, ___ | __, __, __/__, __/__, __, __}
+    ring2="Cath Palug Ring",          -- __, __, __ <__, __, __> [ 5/ 5, ___] {__/__, ___ |  5, __, 12/12, __/__, __, __}
+    back=gear.BST_Pet_TP_Cape,        -- __, __, __ <__, __, __> [__/__,  20] { 5/ 5, ___ | __, __, 20/20, 30/30, 10, __}
+    waist="Isa Belt",                 -- __, __, __ <__, __, __> [__/__, ___] { 3/ 3, ___ | __, __, __/__, __/__, __,  1}
+    -- 0 DW, 8 STP, 309 Acc <0 DA, 0 TA, 0 QA> [49 PDT/37 MDT, 499 M.Eva] {Pet: 35 PDT/35 MDT, 2 Lv | 37 DA, 8 STP, 289 Acc/271 Racc, 45 Att/30 Ratt, 10 Haste, 1 Regen}
+
+    -- head="Nukumi Cabasset +3",     -- __, __, 61 <__, __, __> [11/11,  98] {__/__, ___ | __, __, 61/61, __/__, __, __}
+    -- legs="Nukumi Quijotes +3",     -- __, __, 63 <__, __, __> [13/13, 130] { 8/ 8, ___ | __, __, 63/63, __/__, __, __}
+    -- ear2="Nukumi Earring +2",      -- __, __, 20 <__, __, __> [__/__, ___] {__/__,   1 | 10, __, __/__, __/__, __, __}
+    -- 0 DW, 8 STP, 334 Acc <0 DA, 0 TA, 0 QA> [51 PDT/39 MDT, 519 M.Eva] {Pet: 37 PDT/37 MDT, 2 Lv | 40 DA, 8 STP, 306 Acc/291 Racc, 45 Att/30 Ratt, 10 Haste, 1 Regen}
+  }
+  sets.engaged.PetDTTank.Acc = set_combine(sets.engaged.PetDTTank, {})
+
+  sets.engaged.PetDTDD = {
+    ammo="Hesperiidae",               -- __, __, 10 <__, __, __> [__/__, ___] {__/__, ___ | __, __, 10/10, 15/__, __, __}
+    head=gear.Nyame_B_head,           -- __, __, 50 < 5, __, __> [ 7/ 7, 123] {__/__, ___ | __, __, 50/50, __/__, __, __}
+    body="Gleti's Cuirass",           -- __, __, 55 <10, __, __> [ 9/__, 102] {__/__, ___ | __, __, 50/50, __/__, __, __}
+    hands=gear.Emicho_C_hands,        -- __,  7, 37 <__, __, __> [__/__,  32] {__/__, ___ |  4,  7, 20/__, 55/__, __, __}
+    legs="Nukumi Quijotes +2",        -- __, __, 53 <__, __, __> [12/12, 120] { 6/ 6, ___ | __, __, 53/53, __/__, __, __}
+    feet="Gleti's Boots",             -- __, __, 50 <__, __, __> [ 5/__, 112] {__/__,   1 | __, __, 50/50, __/__, __, __}
+    neck="Beastmaster Collar +2",     -- __, __, 25 <__, __, __> [__/__, ___] {__/__, ___ | 25, __, 25/25, __/__, __, __}
+    ear1="Enmerkar Earring",          -- __, __, __ <__, __, __> [__/__, ___] { 3/ 3, ___ | __,  8, 15/__, __/__, __, __}
+    ear2="Nukumi Earring +1",         -- __, __, 15 <__, __, __> [__/__, ___] {__/__,   1 |  7, __, __/__, __/__, __, __}
+    ring1="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___] {__/__, ___ | __, __, __/__, __/__, __, __}
+    ring2="Cath Palug Ring",          -- __, __, __ <__, __, __> [ 5/ 5, ___] {__/__, ___ |  5, __, 12/12, __/__, __, __}
+    back=gear.BST_Pet_TP_Cape,        -- __, __, __ <__, __, __> [__/__,  20] { 5/ 5, ___ | __, __, 20/20, 30/30, 10, __}
+    waist="Klouskap Sash +1",         -- __, __, 20 <__, __, __> [__/__, ___] {__/__, ___ | __, __, 20/20, __/__,  9, __}
+    -- 0 DW, 7 STP, 315 Acc <15 DA, 0 TA, 0 QA> [48 PDT/34 MDT, 509 M.Eva] {Pet: 14 PDT/14 MDT, 2 Lv | 41 DA, 15 STP, 325 Acc/290 Racc, 100 Att/30 Ratt, 19 Haste, 0 Regen}
+
+    -- legs="Nukumi Quijotes +3",     -- __, __, 63 <__, __, __> [13/13, 130] { 8/ 8, ___ | __, __, 63/63, __/__, __, __}
+    -- ear2="Nukumi Earring +2",      -- __, __, 20 <__, __, __> [__/__, ___] {__/__,   1 | 10, __, __/__, __/__, __, __}
+    -- 0 DW, 7 STP, 330 Acc <15 DA, 0 TA, 0 QA> [49 PDT/35 MDT, 519 M.Eva] {Pet: 16 PDT/16 MDT, 2 Lv | 44 DA, 15 STP, 335 Acc/300 Racc, 100 Att/30 Ratt, 19 Haste, 0 Regen}
+
+  }
+  sets.engaged.PetDTDD.Acc = set_combine(sets.engaged.PetDTDD, {})
 
 
 	--------------------- When master is engaged in Halfsies hybrid mode ---------------------
@@ -1436,7 +1537,7 @@ function job_precast(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
 
   -- If in Pet hybrid mode, cancel abilities if pet is using Ready move.
-  if state.HybridMode.value == 'Pet' and pending_pet_ability then
+  if (state.HybridMode.value == 'Pet' or state.HybridMode.value == 'PetDT') and pending_pet_ability then
     eventArgs.cancel = true
     add_to_chat(122, 'Action canceled because pet was midaction.')
   end
@@ -1483,7 +1584,7 @@ function job_post_precast(spell, action, spellMap, eventArgs)
 
   -- Always put this last in job_post_precast
   -- Prevent swapping weapons if not in Pet mode or engaged
-  if state.HybridMode.current ~= 'Pet' or player.status == 'Engaged' then
+  if (state.HybridMode.current ~= 'Pet' and state.HybridMode.current ~= 'PetDT') or player.status == 'Engaged' then
     equip({main="", sub=""})
   elseif not silibs.can_dual_wield() then
     equip(sets.FallbackShield)
@@ -1508,7 +1609,7 @@ end
 function job_post_midcast(spell, action, spellMap, eventArgs)
   -- Always put this last in job_post_midcast
   -- Prevent swapping weapons if not in Pet mode and engaged
-  if state.HybridMode.current ~= 'Pet' or player.status == 'Engaged' then
+  if (state.HybridMode.current ~= 'Pet' and state.HybridMode.current ~= 'PetDT') or player.status == 'Engaged' then
     equip({main="", sub=""})
   elseif not silibs.can_dual_wield() then
     equip(sets.FallbackShield)
@@ -1692,10 +1793,14 @@ function customize_idle_set(idleSet)
 
     -- Apply pet engaged set
     if pet.isvalid and pet.status == 'Engaged' then
-      if state.PetMode.value == 'Normal' then
-        idleSet = set_combine(idleSet, sets.idle.PetEngaged)
+      local mode = state.HybridMode.value
+      if state.PetMode.value ~= 'Normal' then
+        mode = mode..state.PetMode.value
+      end
+      if sets.idle.PetEngaged[mode] then
+        idleSet = set_combine(idleSet, sets.idle.PetEngaged[mode])
       else
-        idleSet = set_combine(idleSet, sets.idle.PetEngaged[state.PetMode.value])
+        idleSet = set_combine(idleSet, sets.idle.PetEngaged)
       end
     end
   end
@@ -1726,7 +1831,7 @@ end
 
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
-  if not (state.HybridMode.value == 'Pet' and pending_pet_ability) then
+  if not ((state.HybridMode.value == 'Pet' or state.HybridMode.value == 'PetDT') and pending_pet_ability) then
     -- Apply pet engaged set
     if pet.isvalid and pet.status == 'Engaged' and state.HybridMode.value ~= 'Master' then
       local mode = state.HybridMode.value
@@ -1863,7 +1968,7 @@ function cycle_pet_mode(cycle_dir)
 end
 
 function select_weapons()
-  if state.HybridMode.current ~= 'Pet' then
+  if (state.HybridMode.current ~= 'Pet' and state.HybridMode.current ~= 'PetDT') then
     if silibs.can_dual_wield() and sets.WeaponSet[state.WeaponSet.current] and sets.WeaponSet[state.WeaponSet.current].DW then
       return sets.WeaponSet[state.WeaponSet.current].DW
     elseif sets.WeaponSet[state.WeaponSet.current] then
@@ -2026,6 +2131,8 @@ function get_bst_pet_midcast_set(spell, spellMap)
     -- If in Pet mode, swap into Pet set always
     elseif state.HybridMode.current == 'Pet' and equipSet['Pet'] then
       equipSet = equipSet['Pet']
+    elseif state.HybridMode.current == 'PetDT' and equipSet['PetDT'] then
+      equipSet = equipSet['PetDT']
     end
 
     -- Allow OffenseMode to refine whatever set was selected above.
@@ -2056,7 +2163,7 @@ function get_bst_pet_midcast_set(spell, spellMap)
     
     -- Always ensure this check is last
     -- Prevent swapping weapons if not in Pet mode
-    if state.HybridMode.current ~= 'Pet' or player.status == 'Engaged' then
+    if (state.HybridMode.current ~= 'Pet' and state.HybridMode.current ~= 'PetDT') or player.status == 'Engaged' then
       equipSet = set_combine(equipSet, {main="", sub=""})
     elseif not silibs.can_dual_wield() then
       equipSet = set_combine(equipSet, sets.FallbackShield)
