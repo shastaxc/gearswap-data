@@ -1,5 +1,4 @@
--- File Status: Good. Just missing some gear.
--- TODO: Add a new mode PetDT which functions same as Pet mode but focuses capping master DT in all sets.
+-- File Status: Good.
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs
@@ -1394,7 +1393,7 @@ function init_gear_sets()
   }
   sets.engaged.PetDD.Acc = set_combine(sets.engaged.PetDD, {})
 
-  
+
 	--------------------- When master is engaged in Pet hybrid mode ---------------------
   sets.engaged.PetDTTank = {
     ammo="Hesperiidae",               -- __, __, 10 <__, __, __> [__/__, ___] {__/__, ___ | __, __, 10/10, 15/__, __, __}
