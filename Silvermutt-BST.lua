@@ -16,9 +16,9 @@
 -- speed gear equipped in this situation, you can toggle on Kiting mode (CTRL+F10). Just remember to turn it off
 -- when you're done.
 
--- Feel free to put weapons into various sets. They will only swap if in Pet hybrid mode and master is not engaged.
+-- Feel free to put weapons into various sets. They will only swap if in Pet or PetDT hybrid mode and master is not engaged.
 
--- Most pet Ready moves will not swap gear for the midcast if you are in Master hybrid mode unless they are
+-- Ready moves will not swap gear for the midcast if you are in Master hybrid mode unless they are
 -- included in the list called always_swap_moves. Feel free to modify that list as you see fit.
 
 -- Recommend setting up macros for ready moves in game like this:
@@ -26,9 +26,9 @@
 -- /console gs c ready 7
 
 -- A UI displaying current pet's Ready moves is enabled by default. It displays the following info:
--- [Index]    Ability Type    Range Type    Name    (Description)
+-- Index|    Ability Type    Range Type    [Charges]    Name    (Description)
 -- Example: Dust Cloud, a magical conal attack
--- [1] M ▼ Dust Cloud (Blind)
+-- 1| M ▼ [1] Dust Cloud (Blind)
 -- Magical attacks are also color coded by element so "Dust Cloud (Blind)" would be a yellow/brown color.
 -- There are some configuration options available for the UI in the job_setup() function. Please adjust as you see fit.
 
@@ -408,9 +408,22 @@ function job_setup()
     ['Macc'] = ' ',
     ['Buff'] = ' ',
   }
+  ready_charge_cost_symbol = {
+    [1] = '1',
+    [2] = '2',
+    [3] = '3',
+  }
 
   -- Does not include Ready moves
   abilities_require_pet = S{'Familiar', 'Reward', 'Fight', 'Heel', 'Leave', 'Stay', 'Snarl', 'Spur', 'Run Wild'}
+
+  -- All jugs IDs
+  jug_full_list = {}
+  for k,item in pairs(res.items) do
+    if item.id > 17860 and item.type == 4 and item.stack == 12 and item.flags.Equippable and item.flags.Flag02 and item.jobs[9] then
+      jug_full_list[item.en]=true
+    end
+  end
 
   create_ui()
   on_pet_change(pet and pet.name)
@@ -1556,20 +1569,11 @@ end
 -- Run after the general precast() is done.
 function job_post_precast(spell, action, spellMap, eventArgs)
   -- Handle equipping jugs
-  if spell.english == 'Bestial Loyalty' then
-    local jug_info = jugs[state.JugMode.value]
-    if jug_info and silibs.has_item(jug_info.item, silibs.equippable_bags) then
-      equip({ammo=jug_info.item})
-    end
-  elseif spell.english == 'Call Beast' then
-    local jug_info = jugs[state.JugMode.value]
-    -- Don't allow Call Beast to consume HQ jugs
-    if jug_info then
-      if jug_info.nq_item and jug_info.nq_item ~= '' then
-        if silibs.has_item(jug_info.item, silibs.equippable_bags) then
-          equip({ammo=jug_info.nq_item})
-        end
-      elseif silibs.has_item(jug_info.item, silibs.equippable_bags) then
+  if spell.english == 'Bestial Loyalty' or spell.english == 'Call Beast' then
+    -- Only change ammo if another jug not already equipped
+    if not jug_full_list[player.equipment.ammo] then
+      local jug_info = jugs[state.JugMode.value]
+      if jug_info and silibs.has_item(jug_info.item, silibs.equippable_bags) then
         equip({ammo=jug_info.item})
       end
     end
@@ -2225,7 +2229,7 @@ function update_ui_text()
             if index > 1 then
               str = default_txt_color
             end
-            str = str..'['..index..']'
+            str = str..index..'|'
             local ready_move_info = ready_moves[ready_move_name]
 
             -- Display ability type
@@ -2233,6 +2237,9 @@ function update_ui_text()
 
             -- Range type symbol
             str = str..' '..range_symbol[ready_move_info.range_type]
+
+            -- Charge count
+            str = str..' ['..ready_charge_cost_symbol[ready_moves[ready_move_name].charges]..']'
 
             -- Element color
             if ready_move_info.element then
