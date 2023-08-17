@@ -1788,18 +1788,18 @@ function customize_idle_set(idleSet)
       else
         idleSet = set_combine(idleSet, sets.Kiting)
       end
-    end
 
-    -- Apply pet engaged set
-    if pet.isvalid and pet.status == 'Engaged' then
-      local mode = state.HybridMode.value
-      if state.PetMode.value ~= 'Normal' then
-        mode = mode..state.PetMode.value
-      end
-      if sets.idle.PetEngaged[mode] then
-        idleSet = set_combine(idleSet, sets.idle.PetEngaged[mode])
-      else
-        idleSet = set_combine(idleSet, sets.idle.PetEngaged)
+      -- Apply pet engaged set
+      if pet.isvalid and pet.status == 'Engaged' then
+        local mode = state.HybridMode.value
+        if state.PetMode.value ~= 'Normal' then
+          mode = mode..state.PetMode.value
+        end
+        if sets.idle.PetEngaged[mode] then
+          idleSet = set_combine(idleSet, sets.idle.PetEngaged[mode])
+        else
+          idleSet = set_combine(idleSet, sets.idle.PetEngaged)
+        end
       end
     end
   end
