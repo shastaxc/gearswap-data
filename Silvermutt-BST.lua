@@ -484,8 +484,6 @@ function init_gear_sets()
   }
   sets.TreasureHunter.RA = set_combine(sets.TreasureHunter, {})
 
-  -- Shield to use as a fallback option swap sets when not dual wielding
-  sets.FallbackShield = {sub="Sacro Bulwark"}
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Precast Sets ------------------------------------------
@@ -582,9 +580,9 @@ function init_gear_sets()
     ear2="Nukumi Earring +1",         -- 15 [__/__, ___]
     ring1="Metamorph Ring +1",        -- 15 [__/__, ___]
     ring2="Stikini Ring +1",          -- 11 [__/__, ___]
-    back="Moonlight Cape",            -- __ [ 6/ 6, ___]
+    back="Sacro Mantle",              -- 20 [__/__, ___]
     waist="Eschan Stone",             --  7 [__/__, ___]
-    -- 337 M.Acc [47 PDT/47 MDT, 539 M.Eva]
+    -- 357 M.Acc [41 PDT/41 MDT, 539 M.Eva]
     
     -- main="Agwu's Axe",             -- 55 [__/__, ___]
     -- main="Ikenga's Axe",           -- 55 [__/__, ___]
@@ -594,7 +592,6 @@ function init_gear_sets()
     -- legs="Nukumi Quijotes +3",     -- 63 [13/13, 130]
     -- feet="Nukumi Ocreae +3",       -- 60 [__/__, 130]
     -- ear2="Nukumi Earring +2",      -- 20 [__/__, ___]
-    -- back="Sacro Mantle",           -- 20 [__/__, ___]
     -- 512 M.Acc [35 PDT/35 MDT, 524 M.Eva]
   }
 
@@ -1526,6 +1523,9 @@ function init_gear_sets()
   sets.Kiting.Adoulin = {
     body="Councilor's Garb",
   }
+
+  -- Shield to use as a fallback option swap sets when not dual wielding
+  sets.FallbackShield = {sub="Sacro Bulwark"}
 
   sets.WeaponSet = {}
   sets.WeaponSet['Naegling'] = {main="Naegling", sub="Sacro Bulwark"}
