@@ -174,19 +174,15 @@ gear.Linos_WS3 = {} -- 15 Acc/Atk, 8 DEX, 3 WS Damage
 gear.Linos_WS4 = {} -- 15 Acc/Atk, 3 QA, 3 DA
 gear.Linos_WS5 = {} -- 15 Acc/Atk, 8 STR, 3 WS Damage
 
--- gear.Reward_Axe = {name="Kumbhakarna", augments={'Pet: Mag. Evasion+25','Pet: "Regen"+3','MND+17',}}
-gear.Reward_Axe = { name="Kumbhakarna", augments={'Pet: Mag. Evasion+20','Pet: "Regen"+3','Pet: TP Bonus+200',}}
--- gear.Ready_MAB_Axe = {name="Kumbhakarna", augments={'Pet: "Mag.Atk.Bns."+25','Pet: Damage taken -4%','Pet: TP Bonus+200',}}
-gear.Ready_MAB_Axe = { name="Kumbhakarna", augments={'Pet: "Mag.Atk.Bns."+20','Pet: Damage taken -4%','Pet: TP Bonus+200',}}
+gear.Reward_Axe = { name="Kumbhakarna", augments={'Pet: Mag. Evasion+20','Pet: "Regen"+3','MND+17',}} -- M.Eva+25
+gear.Ready_MAB_Axe = { name="Kumbhakarna", augments={'Pet: "Mag.Atk.Bns."+20','Pet: Damage taken -4%','Pet: TP Bonus+200',}} -- MAB+25
 gear.Ready_MAB_TPBonus_Axe = gear.Ready_MAB_Axe
 gear.Pet_DT_TPBonus_Axe = gear.Ready_MAB_Axe
 gear.Pet_DT_Axe = gear.Ready_MAB_Axe
--- gear.Ready_MAcc_Axe = {name="Kumbhakarna", augments={'Pet: Mag. Acc.+25','Pet: Damage taken -4%','Pet: TP Bonus+200',}}
-gear.Ready_MAcc_Axe = { name="Kumbhakarna", augments={'Pet: Mag. Acc.+20','Pet: Damage taken -3%','Pet: TP Bonus+200',}}
+gear.Ready_MAcc_Axe = { name="Kumbhakarna", augments={'Pet: Mag. Acc.+20','Pet: Damage taken -4%','Pet: TP Bonus+200',}} -- M.Acc+25
 gear.Ready_MAcc_TPBonus_Axe = gear.Ready_MAcc_Axe
 gear.Regen_Axe = gear.Reward_Axe
--- gear.Ready_Phys_TPBonus_Axe = {name="Kumbhakarna", augments={'Pet: Attack+25 Pet: Rng.Atk.+25','Pet: "Dbl.Atk."+4 Pet: Crit.hit rate +4','Pet: TP Bonus+200',}}
-gear.Ready_Phys_TPBonus_Axe = { name="Kumbhakarna", augments={'Pet: Attack+20 Pet: Rng.Atk.+20','Pet: "Dbl.Atk."+4 Pet: Crit.hit rate +4','Pet: TP Bonus+200',}}
+gear.Ready_Phys_TPBonus_Axe = { name="Kumbhakarna", augments={'Pet: Attack+20 Pet: Rng.Atk.+20','Pet: "Dbl.Atk."+4 Pet: Crit.hit rate +4','Pet: TP Bonus+200',}} -- Pet Atk+25
 
 
 ----------------------------------------------------------------------
