@@ -129,6 +129,7 @@ function job_setup()
   all_maneuvers = S{'Fire Maneuver','Ice Maneuver','Wind Maneuver','Earth Maneuver','Thunder Maneuver','Water Maneuver',
       'Light Maneuver','Dark Maneuver'}
   active_maneuvers = L{}
+  delay_maneuver_check_tick = os.clock()
   
   status_maneuver_blockers = {'overload', 'terror', 'petrification', 'stun', 'sleep', 'charm', 'amnesia', 'impairment'}
   ---- DO NOT MODIFY ABOVE ------
@@ -1581,7 +1582,7 @@ function check_maneuvers()
     local abil_recasts = windower.ffxi.get_ability_recasts()
     -- Auto-use maneuvers if missing maneuvers
     if state.AutomaticManeuvers.value and not midaction() and not pending_pet_ability and abil_recasts[210]
-        and abil_recasts[210] < 0.1 and not delay_maneuver_check_tick and defaultManeuvers[state.PetMode.value]
+        and abil_recasts[210] < 0.1 and delay_maneuver_check_tick < os.clock() and defaultManeuvers[state.PetMode.value]
         and not buffactive['Overload'] then
       -- Cycle through all maneuvers and check how many of each we possess to see total
       local total_active = 0
@@ -1590,6 +1591,7 @@ function check_maneuvers()
       end
       local total_desired = defaultManeuvers[state.PetMode.value].n
       if total_active < total_desired then
+        delay_maneuver_check_tick = os.clock() + 1 -- Delay next check_maneuvers call for 1 second
         use_maneuver()
       end
     end
