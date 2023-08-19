@@ -503,7 +503,7 @@ function init_gear_sets()
     body="Totemic Jackcoat +3",       -- 33, __, 26, __ [__/__,  84] {10/10, __}; Removes status effects
     hands="Gleti's Gauntlets",        -- 30, __, __, __ [ 7/__,  75] { 8/ 8, __}
     legs="Ankusa Trousers +3",        -- 27, __, __, 21 [__/__,  89] {__/__, __}
-    feet="Ankusa Gaiters +1",         -- 12,  4, 35, __ [__/__,  69] { 3/__, __}; Enhances Beast Healer
+    feet="Ankusa Gaiters +3",         -- 22,  4, 41, __ [__/__,  89] { 5/__, __}; Enhances Beast Healer
     neck="Loricate Torque +1",        -- __, __, __, __ [ 6/ 6, ___] {__/__, __}
     ear1="Odnowa Earring +1",         -- __, __, __, __ [ 3/ 5, ___] {__/__, __}
     ear2="Genmei Earring",            -- __, __, __, __ [ 2/__, ___] {__/__, __}
@@ -511,12 +511,11 @@ function init_gear_sets()
     ring2="Defending Ring",           -- __, __, __, __ [10/10, ___] {__/__, __}
     back=gear.BST_TP_Cape,            -- __, __, 30, __ [10/__, ___] {__/__, __}
     waist="Engraved Belt",            --  7, __, __, __ [__/__, ___] {__/__, __}
-    -- 151 MND, 24 Reward Regen, 91 Reward Potency, 21 Reward Recast- [45 PDT/28 MDT, 440 M.Eva] {Pet: 21 PDT/18 MDT, 0 Lv}
+    -- 161 MND, 24 Reward Regen, 97 Reward Potency, 21 Reward Recast- [45 PDT/28 MDT, 460 M.Eva] {Pet: 23 PDT/18 MDT, 0 Lv}
 
     -- main="Farsha",                 -- 50, __, __, __ [__/__, ___] {__/__, __}
     -- sub=gear.Reward_Axe,           -- 17, __, __, __ [__/__, ___] {__/__, __}
     -- head="Stout Bonnet",           -- __, __, __, 16 [__/__, ___] {__/__, __}
-    -- feet="Ankusa Gaiters +3",      -- 22,  4, 41, __ [__/__,  89] { 5/__, __}; Enhances Beast Healer
     -- back=gear.BST_MND_WSD_Cape,    -- 30, __, 30, __ [10/__, ___] {__/__, __}
     -- 229 MND, 24 Reward Regen, 97 Reward Potency, 37 Reward Recast- [38 PDT/21 MDT, 337 M.Eva] {Pet: 23 PDT/18 MDT, 0 Lv}
   }
@@ -540,7 +539,7 @@ function init_gear_sets()
     body=gear.Nyame_B_body,           -- 35, __ [ 9/ 9, 139]
     hands="Ankusa Gloves +1",         -- 17,  9 [__/__,  37]
     legs="Ankusa Trousers +3",        -- 21, 11 [__/__,  89]
-    feet=gear.Nyame_B_feet,           -- 38, __ [ 7/ 7, 150]
+    feet="Ankusa Gaiters +3",         -- 40, 12 [__/__,  89]
     neck="Unmoving Collar +1",        --  9, __ [__/__, ___]
     ear1="Odnowa Earring +1",         -- __, __ [ 3/ 5, ___]
     ear2="Enchanter's Earring +1",    --  5, __ [__/__, ___]
@@ -549,14 +548,13 @@ function init_gear_sets()
     back=gear.BST_TP_Cape,            -- __, __ [10/__, ___]
     waist="Aristo Belt",              --  8, __ [__/__, ___]
     -- Traits/merits/gifts                   20
-    -- 178 CHR, 70 Charm [42 PDT/34 MDT, 478 M.Eva]
+    -- 180 CHR, 82 Charm [35 PDT/27 MDT, 417 M.Eva]
     
     -- main="Habilitator +1",         -- 28, __ [ 3/__, ___]
     -- sub=gear.Digirbalag_CHR,       -- 25, __ [__/__, ___]
     -- head="Totemic Helm +3",        -- 34, 35 [__/__,  73]
     -- body="Ankusa Jackcoat +3",     -- 33, 16 [__/__,  84]
     -- hands="Ankusa Gloves +3",      -- 27, 13 [__/__,  57]
-    -- feet="Ankusa Gaiters +3",      -- 40, 12 [__/__,  89]
     -- back=gear.BST_CHR_WSD_Cape,    -- 30, __ [10/__, ___]
     -- 276 CHR, 107 Charm [29 PDT/18 MDT, 392 M.Eva]
   }
@@ -569,6 +567,8 @@ function init_gear_sets()
     -- feet="Nukumi Ocreae +3",
   }
 	sets.precast.JA['Feral Howl'] = {
+    main="Agwu's Axe",                -- 55 [__/__, ___]
+    sub="Ikenga's Axe",               -- 55 [__/__, ___]
     ammo="Pemphredo Tathlum",         --  8 [__/__, ___]
     head="Nukumi Cabasset +2",        -- 51 [10/10,  88]
     body=gear.Nyame_B_body,           -- 40 [ 9/ 9, 139]
@@ -582,10 +582,8 @@ function init_gear_sets()
     ring2="Stikini Ring +1",          -- 11 [__/__, ___]
     back="Sacro Mantle",              -- 20 [__/__, ___]
     waist="Eschan Stone",             --  7 [__/__, ___]
-    -- 357 M.Acc [41 PDT/41 MDT, 539 M.Eva]
+    -- 467 M.Acc [41 PDT/41 MDT, 539 M.Eva]
     
-    -- main="Agwu's Axe",             -- 55 [__/__, ___]
-    -- main="Ikenga's Axe",           -- 55 [__/__, ___]
     -- head="Nukumi Cabasset +3",     -- 61 [11/11,  98]
     -- body="Ankusa Jackcoat +3",     -- 40 [__/__,  84]; Feral Howl Duration+
     -- hands="Nukumi Manoplas +3",    -- 62 [11/11,  82]
