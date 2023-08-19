@@ -1212,7 +1212,7 @@ function job_precast(spell, action, spellMap, eventArgs)
   silibs.precast_hook(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
 
-  if state.HybridMode.value == 'Pet' and pet_midaction() then
+  if state.HybridMode.value == 'Pet' and pending_pet_ability then
     eventArgs.cancel = true
     add_to_chat(122, 'Action canceled because pet was midaction.')
   end
@@ -1264,31 +1264,18 @@ function job_post_aftercast(spell, action, spellMap, eventArgs)
   silibs.post_aftercast_hook(spell, action, spellMap, eventArgs)
 end
 
+-- Note: the "spell" object is different in the pet action hooks
 function job_pet_midcast(spell, action, spellMap, eventArgs)
-  -- Do not change gear for pet abilities in Master mode while engaged
-  if player.status == 'Engaged' and state.HybridMode.current == 'Master' then
-    eventArgs.handled = true
-  else
-    if spell.action_type == 'Magic' then
-      equip(get_pup_midcast_set(spell, spellMap))
-    -- There is not really a reliable way of detecting when pet is about to use a WS, but leaving this here just in case
-    -- elseif petWeaponskills:contains(spell.english) then
-    --     classes.CustomClass = "Weaponskill"
-    --   if sets.midcast.Pet.WeaponSkill[spell.english] then
-    --     if state.HybridMode.current == 'Halfsies' and sets.midcast.Pet.WeaponSkill[spell.english]['Halfsies'] then
-    --       equip(sets.midcast.Pet.WeaponSkill[spell.english]['Halfsies'] )
-    --     else
-    --       equip(sets.midcast.Pet.WeaponSkill[spell.english])
-    --     end
-    --   else
-    --     if state.HybridMode.current == 'Halfsies' and sets.midcast.Pet.WeaponSkill['Halfsies'] then
-    --       equip(sets.midcast.Pet.WeaponSkill['Halfsies'])
-    --     else
-    --       equip(sets.midcast.Pet.WeaponSkill)
-    --     end
-    --   end
-    end
-  end
+  pending_pet_ability = true
+
+  -- THIS SHIT DOESN'T WORK. Needs a pet_precast function that doesn't exist
+  -- equip(get_pup_midcast_set(spell, spellMap))
+  -- eventArgs.handled = true
+end
+
+-- Note: the "spell" object is different in the pet action hooks
+function job_pet_aftercast(spell, action, spellMap, eventArgs)
+  pending_pet_ability = false
 end
 
 -- Called when a player gains or loses a pet.
@@ -1301,7 +1288,7 @@ end
 
 -- Called when the pet's status changes.
 function job_pet_status_change(newStatus, oldStatus)
-  if pet.isvalid and not midaction() and not pet_midaction() and (newStatus == 'Engaged' or oldStatus == 'Engaged') then
+  if pet.isvalid and not midaction() and (newStatus == 'Engaged' or oldStatus == 'Engaged') then
     handle_equipping_gear(player.status, newStatus)
   end
 end
@@ -1347,10 +1334,6 @@ end
 
 function update_combat_form()
   state.CombatForm:reset()
-
-  if state.HybridMode.value ~= 'Master' then
-    state.CombatForm:set(state.HybridMode.value..state.PetMode.value)
-  end
 end
 
 function get_custom_wsmode(spell, action, spellMap)
@@ -1378,32 +1361,28 @@ end
 
 -- Modify the default idle set after it was constructed.
 function customize_idle_set(idleSet)
-  if not pet_midaction() then
-    -- If not in DT mode put on move speed gear
-    if state.IdleMode.current == 'Normal' and state.DefenseMode.value == 'None' then
-      -- Apply movement speed gear
-      if classes.CustomIdleGroups:contains('Adoulin') then
-        idleSet = set_combine(idleSet, sets.Kiting.Adoulin)
-      else
-        idleSet = set_combine(idleSet, sets.Kiting)
-      end
+  -- If not in DT mode put on move speed gear
+  if state.IdleMode.current == 'Normal' and state.DefenseMode.value == 'None' then
+    -- Apply movement speed gear
+    if classes.CustomIdleGroups:contains('Adoulin') then
+      idleSet = set_combine(idleSet, sets.Kiting.Adoulin)
+    else
+      idleSet = set_combine(idleSet, sets.Kiting)
     end
+  end
 
-    if pet.isvalid then
-      if pet.status == 'Engaged' then
-        if state.HybridMode.value == 'Pet' and state.PetMode.value ~= 'Tank' then
-          -- If Inhibitor or Speedloader are not equipped and pet is > 1000 TP, equip Pet WS set.
-          local att = pet.attachments
-          if att and not att['inhibitor'] and not att['inhibitor ii']
-              and not att['speedloader'] and not att['speedloader ii'] and pet.tp > 1000 then
-            idleSet = set_combine(idleSet, sets.midcast.Pet.Weaponskill)
-          else
-            idleSet = set_combine(idleSet, sets.idle.PetEngaged[state.PetMode.value])
-          end
-        else
-          idleSet = set_combine(idleSet, sets.idle.PetEngaged[state.PetMode.value])
-        end
+  if pet.isvalid and pet.status == 'Engaged' then
+    if state.HybridMode.value == 'Pet' and state.PetMode.value ~= 'Tank' then
+      -- If Inhibitor or Speedloader are not equipped and pet is > 1000 TP, equip Pet WS set.
+      local att = pet.attachments
+      if att and not att['inhibitor'] and not att['inhibitor ii']
+          and not att['speedloader'] and not att['speedloader ii'] and pet.tp > 1000 then
+        idleSet = set_combine(idleSet, sets.midcast.Pet.Weaponskill)
+      else
+        idleSet = set_combine(idleSet, sets.idle.PetEngaged[state.PetMode.value])
       end
+    else
+      idleSet = set_combine(idleSet, sets.idle.PetEngaged[state.PetMode.value])
     end
   end
 
@@ -1431,11 +1410,14 @@ end
 
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
-  if not pet_midaction() then
-    if pet.isvalid then
-      if pet.status == 'Engaged' and state.HybridMode.value ~= 'Master' then
-        meleeSet = set_combine(meleeSet, sets.engaged[state.HybridMode.value..state.PetMode.value])
+  if not (state.HybridMode.value == 'Pet') then
+    -- Apply pet engaged set
+    if pet.isvalid and pet.status == 'Engaged' and state.HybridMode.value ~= 'Master' then
+      local mode = state.HybridMode.value
+      if state.PetMode.value ~= 'Normal' then
+        mode = mode..state.PetMode.value
       end
+      meleeSet = set_combine(meleeSet, sets.engaged[mode])
     end
 
     if state.CP.current == 'on' then
@@ -1458,10 +1440,8 @@ function customize_melee_set(meleeSet)
 end
 
 function customize_defense_set(defenseSet)
-  if not pet_midaction() then
-    if state.CP.current == 'on' then
-      meleeSet = set_combine(meleeSet, sets.CP)
-    end
+  if state.CP.current == 'on' then
+    defenseSet = set_combine(defenseSet, sets.CP)
   end
 
   -- If slot is locked to use no-swap gear, keep it equipped
@@ -1600,7 +1580,7 @@ function check_maneuvers()
   else
     local abil_recasts = windower.ffxi.get_ability_recasts()
     -- Auto-use maneuvers if missing maneuvers
-    if state.AutomaticManeuvers.value and not midaction() and not pet_midaction() and abil_recasts[210]
+    if state.AutomaticManeuvers.value and not midaction() and not pending_pet_ability and abil_recasts[210]
         and abil_recasts[210] < 0.1 and not delay_maneuver_check_tick and defaultManeuvers[state.PetMode.value]
         and not buffactive['Overload'] then
       -- Cycle through all maneuvers and check how many of each we possess to see total
@@ -1761,31 +1741,50 @@ end
 -- Get the default pet midcast gear set.
 -- This is built in sets.midcast.Pet.
 function get_pup_midcast_set(spell, spellMap)
-  -- If there are no midcast sets defined, bail out.
-  if not sets.midcast or not sets.midcast.Pet then
-    return {}
-  end
+  local equipSet = {}
 
-  local equipSet = sets.midcast.Pet
-
-  if sets.midcast and sets.midcast.Pet then
+  if pet.isvalid and sets.midcast and sets.midcast.Pet then
+    equipSet = sets.midcast.Pet
     classes.SkipSkillCheck = false
-    equipSet = select_specific_set(equipSet, spell, spellMap)
 
-    -- Use hybrid set under certain conditions
-    if equipSet['Halfsies'] and (player.status == 'Engaged' or state.HybridMode.current == 'Halfsies') then
-      equipSet = equipSet['Halfsies']
+    if spell.action_type == 'Monster Move' then
+      equipSet = equipSet['Weaponskill']
+      if equipSet[spell.english] then
+        equipSet = equipSet[spell.english]
+      end
+    else
+      -- Determine type of set to use
+      equipSet = select_specific_set(equipSet, spell, spellMap)
     end
-
+    
+    -- Equip offensive/defensive variants as appropriate
+    -- If in Master mode...
+    if state.HybridMode.current == 'Master' then
+      -- Swap into Halfsies set if idle, do not swap if engaged
+      if player.status ~= 'Engaged' then
+        if equipSet['Halfsies'] then
+          equipSet = equipSet['Halfsies']
+        end
+      else
+        return {} -- Do not swap if Master mode and engaged
+      end
+    -- If in Halfsies mode, swap into Halfsies set always
+    elseif state.HybridMode.current == 'Halfsies' and equipSet['Halfsies'] then
+      equipSet = equipSet['Halfsies']
+    -- If in Pet mode, swap into Pet set always
+    elseif state.HybridMode.current == 'Pet' and equipSet['Pet'] then
+      equipSet = equipSet['Pet']
+    end
+    
     -- We can only generally be certain about whether the pet's action is
     -- Magic (ie: it cast a spell of its own volition) or Ability (it performed
-    -- an action at the request of the player).  Allow CastinMode and
+    -- an action at the request of the player).  Allow CastingMode and
     -- OffenseMode to refine whatever set was selected above.
     if spell.action_type == 'Magic' then
       if equipSet[state.CastingMode.current] then
         equipSet = equipSet[state.CastingMode.current]
       end
-    elseif spell.action_type == 'Ability' then
+    elseif spell.action_type == 'Ability' or spell.action_type == 'Monster Move' then
       if equipSet[state.OffenseMode.current] then
         equipSet = equipSet[state.OffenseMode.current]
       end
