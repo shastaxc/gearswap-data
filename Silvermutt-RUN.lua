@@ -685,7 +685,7 @@ function init_gear_sets()
     hands="Regal Gauntlets",                    -- __, __, 20, __ [__/__,  48] 205
     legs="Futhark Trousers +3",                 -- __, __, 30, __ [__/__,  89] 107
     feet="Erilaz Greaves +3",                   -- __, __, __, __ [11/11, 157]  48
-    neck="Futhark Torque +2",                   -- __, __, __, __ [ 7/ 7,  30]  60
+    neck="Sacro Gorget",                        -- 10, __, __, __ [__/__, ___]  50
     ear1="Odnowa Earring +1",                   -- __, __, __, __ [ 3/ 5, ___] 110
     ear2="Erilaz Earring",                      -- __, 10, __, __ [__/__,  10] ___
     ring1="Gelatinous Ring +1",                 -- __, __, __, __ [ 7/-1, ___] 135
@@ -693,8 +693,8 @@ function init_gear_sets()
     back="Moonlight Cape",                      -- __, __, __, __ [ 6/ 6, ___] 275
     waist="Sroda Belt",                         -- 20, __, __, 15 [__/__, ___] ___
     -- Merits/Traits/Gifts                         __, __, 20, __
-    -- 20% Regen Potency, 37 Regen Potency, 70 Enh Duration %, 15 Regen Duration [56 PDT/50 MDT, 556 M.Eva] 1185 HP
-    -- Regen IV 73 hp/tic @117 sec
+    -- 30% Regen Potency, 37 Regen Potency, 70 Enh Duration %, 15 Regen Duration [49 PDT/43 MDT, 526 M.Eva] 1175 HP
+    -- Regen IV 76 hp/tic @117 sec
 
     -- main=gear.Morgelai_C,                    -- __, 25, __, __ [__/__, ___] 130
     -- ammo="Staunch Tathlum +1",               -- __, __, __, __ [ 3/ 3, ___] ___
@@ -782,6 +782,7 @@ function init_gear_sets()
     hands={name="Regal Gauntlets",priority=1},  -- 40, 40, __(__) [__/__,  48] 205 {10}
     legs={name=gear.Nyame_B_legs,priority=1},   -- 32, 30, __(__) [ 8/ 8, 150] 114 {__}
     feet=gear.Nyame_B_feet,                     -- 26, 24, __(__) [ 7/ 7, 150]  68 {__}
+    neck="Sacro Gorget",                        -- __, __, 10(__) [__/__, ___]  50 {__}
     ear1="Odnowa Earring +1",                   -- __,  3, __(__) [ 3/ 5, ___] 110 {__}
     ear2="Mendicant's Earring",                 -- __, __,  5(__) [__/__, ___] ___ {__}
     ring1="Gelatinous Ring +1",                 -- __, 15, __(__) [ 7/-1, ___] 135 {__}
@@ -789,9 +790,6 @@ function init_gear_sets()
     back={name="Moonlight Cape",priority=1},    -- __, __, __(__) [ 6/ 6, ___] 275 {__}
     waist="Sroda Belt",                         -- __, __, 35(__) [__/__, ___] ___ {__}
     -- SIRD merits                                                                 { 8}
-    -- 161 MND, 181 VIT, 40 Cure Pot (0 self pot) [55 PDT/49 MDT, 610 M.Eva] 1244 HP {29 SIRD}
-    
-    -- neck="Sacro Gorget",                     -- __, __, 10(__) [__/__, ___]  50 {__}
     -- 161 MND, 181 VIT, 50 Cure Pot (0 self pot) [55 PDT/49 MDT, 610 M.Eva] 1294 HP {29 SIRD}
   }
   sets.midcast['Blue Magic'].Cure.Safe = set_combine(sets.SIRD, {
