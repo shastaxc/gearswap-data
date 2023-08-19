@@ -478,6 +478,9 @@ function init_gear_sets()
   -- back=gear.BST_ambu_cape,         -- [__/__, ___] { 5/ 5, ___}
   -- waist="Isa Belt",                -- [__/__, ___] { 3/ 3, ___}
 
+  -- Shield to use as a fallback option swap sets when not dual wielding
+  sets.FallbackShield = {sub="Sacro Bulwark"}
+
   sets.TreasureHunter = {
     body=gear.Herc_TH_body, --2
     hands=gear.Herc_TH_hands, --2
@@ -594,7 +597,8 @@ function init_gear_sets()
   }
 
   sets.precast.ReadyRecast = {
-    -- main="Charmer's Merlin",
+    main="Charmer's Merlin",
+    sub=sets.FallbackShield,
     legs="Gleti's Breeches",
   }
 
@@ -1521,9 +1525,6 @@ function init_gear_sets()
   sets.Kiting.Adoulin = {
     body="Councilor's Garb",
   }
-
-  -- Shield to use as a fallback option swap sets when not dual wielding
-  sets.FallbackShield = {sub="Sacro Bulwark"}
 
   sets.WeaponSet = {}
   sets.WeaponSet['Naegling'] = {main="Naegling", sub="Sacro Bulwark"}
