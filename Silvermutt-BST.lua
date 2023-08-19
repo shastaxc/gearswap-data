@@ -1869,7 +1869,7 @@ end
 
 function customize_defense_set(defenseSet)
   if state.CP.current == 'on' then
-    meleeSet = set_combine(meleeSet, sets.CP)
+    defenseSet = set_combine(defenseSet, sets.CP)
   end
 
   defenseSet = set_combine(defenseSet, select_weapons())
