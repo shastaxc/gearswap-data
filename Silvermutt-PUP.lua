@@ -41,6 +41,12 @@
 -- speed gear equipped in this situation, you can toggle on Kiting mode (CTRL+F10). Just remember to turn it off
 -- when you're done.
 
+-- Since pet WS are instant and not initiated by user action, there is no way to switch into a pet WS set fast enough
+-- to have any affect on the WS. Also, due to a quirk in gearswap, there is no lifecycle hook for pet_precast so 
+-- even pet magic like for BLM pet cannot equip proper gear to boost magic damage/curing reactively. The workaround
+-- I have implemented is to put some of those midcast stats in the engaged sets instead so they basically are
+-- equipped before the pet uses its action.
+
 -------------------------------------------------------------------------------------------------------------------
 --  Keybinds
 -------------------------------------------------------------------------------------------------------------------
