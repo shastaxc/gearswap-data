@@ -501,8 +501,10 @@ function init_gear_sets()
   -- Potency caps at +50% from gear
   -- Aim for 120+ MND from gear
   sets.precast.JA.Reward = {
+    main=gear.Reward_Axe,             -- 17, __, __, __ [__/__, ___] {__/__, __}
+    sub="Naegling",                   -- 15, __, __, __ [__/__, ___] {__/__, __}
     ammo="Pet Food Theta",            -- __, 20, __, __ [__/__, ___] {__/__, __}
-    head=gear.Nyame_B_head,           -- 26, __, __, __ [ 7/ 7, 123] {__/__, __}
+    head="Stout Bonnet",              -- __, __, __, 16 [__/__, ___] {__/__, __}
     body="Totemic Jackcoat +3",       -- 33, __, 26, __ [__/__,  84] {10/10, __}; Removes status effects
     hands="Gleti's Gauntlets",        -- 30, __, __, __ [ 7/__,  75] { 8/ 8, __}
     legs="Ankusa Trousers +3",        -- 27, __, __, 21 [__/__,  89] {__/__, __}
@@ -514,11 +516,10 @@ function init_gear_sets()
     ring2="Defending Ring",           -- __, __, __, __ [10/10, ___] {__/__, __}
     back=gear.BST_TP_Cape,            -- __, __, 30, __ [10/__, ___] {__/__, __}
     waist="Engraved Belt",            --  7, __, __, __ [__/__, ___] {__/__, __}
-    -- 161 MND, 24 Reward Regen, 97 Reward Potency, 21 Reward Recast- [45 PDT/28 MDT, 460 M.Eva] {Pet: 23 PDT/18 MDT, 0 Lv}
+    -- 167 MND, 24 Reward Regen, 97 Reward Potency, 37 Reward Recast- [38 PDT/21 MDT, 337 M.Eva] {Pet: 23 PDT/18 MDT, 0 Lv}
 
     -- main="Farsha",                 -- 50, __, __, __ [__/__, ___] {__/__, __}
     -- sub=gear.Reward_Axe,           -- 17, __, __, __ [__/__, ___] {__/__, __}
-    -- head="Stout Bonnet",           -- __, __, __, 16 [__/__, ___] {__/__, __}
     -- back=gear.BST_MND_WSD_Cape,    -- 30, __, 30, __ [10/__, ___] {__/__, __}
     -- 229 MND, 24 Reward Regen, 97 Reward Potency, 37 Reward Recast- [38 PDT/21 MDT, 337 M.Eva] {Pet: 23 PDT/18 MDT, 0 Lv}
   }
