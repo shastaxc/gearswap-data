@@ -596,9 +596,8 @@ function init_gear_sets()
     -- 512 M.Acc [35 PDT/35 MDT, 524 M.Eva]
   }
 
+  -- With merits and JP gifts, this caps out ready recast reduction at -20s
   sets.precast.ReadyRecast = {
-    main="Charmer's Merlin",
-    sub=sets.FallbackShield,
     legs="Gleti's Breeches",
   }
 
