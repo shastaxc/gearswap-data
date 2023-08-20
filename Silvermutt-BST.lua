@@ -1671,7 +1671,7 @@ end
 
 -- Called when the pet's status changes.
 function job_pet_status_change(newStatus, oldStatus)
-  if pet.isvalid and not midaction() and not pending_pet_ability and (newStatus == 'Engaged' or oldStatus == 'Engaged') then
+  if pet.isvalid and not midaction() and (newStatus == 'Engaged' or oldStatus == 'Engaged') then
     handle_equipping_gear(player.status, newStatus)
   end
 end
