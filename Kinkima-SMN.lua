@@ -147,7 +147,8 @@ function job_setup()
   wards.flag = false
   wards.spell = ''
 
-  latestAvatar = pet.name or nil
+  latestAvatar = pet.name or nil -- DO NOT MODIFY
+  last_pet_midcast_set = {} -- DO NOT MODIFY
 
   set_main_keybinds()
 end
@@ -888,6 +889,10 @@ function init_gear_sets()
     -- ear2="Beckoner's Earring +2",-- ____ [ 6/ 6, ___] ( 3, __) {  1, __, __/__}
     -- 236 HP [55 PDT/45 MDT, 549 M.Eva] (15 Refresh, 16 Perp Cost) {Pet: 121 Lv, 25 Regain, 13 PDT/13 MDT}
   }
+  -- Used when avatar is engaged with an enemy
+  sets.idle.Avatar.Melee = set_combine(sets.idle.Avatar, {
+    waist="Klouskap Sash +1", -- Pet Haste+9
+  })
 
   -- Need -6 perp cost
   sets.idle.Spirit = {
@@ -990,7 +995,7 @@ function job_precast(spell, action, spellMap, eventArgs)
     eventArgs.cancel = true
   end
   
-  -- Warn if trying to do blood pact without enough mp
+  -- Handle summoning avatar that is already active
   if pet.name == spell.english and pet.hpp > 50 then
     add_to_chat(122, "You already have that avatar active!")
     eventArgs.cancel = true
@@ -1000,17 +1005,18 @@ function job_precast(spell, action, spellMap, eventArgs)
     windower.chat.input:schedule(2,'/ma "'..spell.english..'" <me>')
   end
 
-  if state.Buff['Astral Conduit'] and spell.type == 'BloodPactRage' then
-    equip(sets.midcast.Pet[spellMap])
+  -- Skip precast set if astral conduit is active
+  if state.Buff['Astral Conduit'] and (spell.type == 'BloodPactRage' or spell.type == 'BloodPactWard') then
+    equip(get_smn_pet_midcast_set(spell, spellMap))
     eventArgs.handled = true
   else
-    if pet_midaction() then
+    if pending_pet_ability then
       eventArgs.cancel = true
       add_to_chat(122, 'Action canceled because pet was midaction.')
     end
-    if state.CastingMode.current == 'NirvAM' then
+    if state.CastingMode.current == 'NirvAM' then -- Normal casting mode is handled automatically
       if spell.type == 'BloodPactWard' or spell.type == 'BloodPactRage' then
-        equip(sets.precast.BloodPactWard.NirvAM)
+        equip(sets.precast[spell.type].NirvAM)
         eventArgs.handled = true
       elseif spell.english == 'Elemental Siphon' then
         equip(sets.precast.JA['Elemental Siphon'].NirvAM)
@@ -1021,9 +1027,8 @@ function job_precast(spell, action, spellMap, eventArgs)
 end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
-  if state.Buff['Astral Conduit'] and spell.type == 'BloodPactRage' then
-    equip(sets.midcast.Pet[spellMap])
-    eventArgs.handled = true
+  if state.CastingMode.current == 'NirvAM' then
+    equip({ main="Nirvana", sub="Elan Strap +1",})
   end
 
   -- If slot is locked, keep current equipment on
@@ -1041,8 +1046,7 @@ function job_midcast(spell, action, spellMap, eventArgs)
   silibs.midcast_hook(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
 
-  if state.Buff['Astral Conduit'] and spell.type == 'BloodPactRage' then
-    equip(sets.midcast.Pet[spellMap])
+  if state.Buff['Astral Conduit'] and (spell.type == 'BloodPactRage' or spell.type == 'BloodPactWard') then
     eventArgs.handled = true
   end
 end
@@ -1050,11 +1054,6 @@ end
 function job_post_midcast(spell, action, spellMap, eventArgs)
   if state.CastingMode.current == 'NirvAM' then
     equip({ main="Nirvana", sub="Elan Strap +1",})
-  end
-
-  if state.Buff['Astral Conduit'] and spell.type == 'BloodPactRage' then
-    equip(sets.midcast.Pet[spellMap])
-    eventArgs.handled = true
   end
 
   -- If slot is locked, keep current equipment on
@@ -1093,18 +1092,17 @@ function job_aftercast(spell, action, spellMap, eventArgs)
       state.Buff['Dark Arts'] = false
       state.Buff['Addendum: White'] = false
       state.Buff['Addendum: Black'] = true
+    elseif spell.type == 'BloodPactRage' or spell.type == 'BloodPactWard' then
+      equip(get_smn_pet_midcast_set(spell, spellMap))
+      last_pet_midcast_set = set_combine(gearswap.equip_list, {})
+      pending_pet_ability = true
+      eventArgs.handled = true
     end
   end
 
   if state.CastingMode.current == 'NirvAM' then
     equip({ main="Nirvana", sub="Elan Strap +1",})
   end
-
-  if state.Buff['Astral Conduit'] and spell.type == 'BloodPactRage' then
-    equip(sets.midcast.Pet[spellMap])
-    eventArgs.handled = true
-  end
-  
 end
 
 function job_post_aftercast(spell, action, spellMap, eventArgs)
@@ -1112,12 +1110,23 @@ function job_post_aftercast(spell, action, spellMap, eventArgs)
   silibs.post_aftercast_hook(spell, action, spellMap, eventArgs)
 end
 
+-- Note: the "spell" object is different in the pet action hooks
+function job_pet_midcast(spell, action, spellMap, eventArgs)
+  equip(get_smn_pet_midcast_set(spell, spellMap))
+  eventArgs.handled = true
+end
+
 -- Runs when pet completes an action.
+-- Note: the "spell" object is different in the pet action hooks
 function job_pet_aftercast(spell, action, spellMap, eventArgs)
-  if not spell.interrupted and spell.type == 'BloodPactWard' and spellMap ~= 'DebuffBloodPactWard' then
-    wards.flag = true
-    wards.spell = spell.english
-    send_command('wait 4; gs c reset_ward_flag')
+  pending_pet_ability = false
+
+	if not spell.interrupted then
+    if spell.type == 'BloodPactWard' and spellMap ~= 'DebuffBloodPactWard' then
+      wards.flag = true
+      wards.spell = spell.english
+      send_command('wait 4; gs c reset_ward_flag')
+    end
   end
 end
 
@@ -1143,10 +1152,35 @@ function job_buff_change(buff, gain)
   end
 end
 
+-- Get the default pet midcast gear set.
+-- This is built in sets.midcast.Pet.
+function get_smn_pet_midcast_set(spell, spellMap)
+  local equipSet = {}
+  if (spell.type == 'BloodPactRage' or spell.type == 'BloodPactWard')
+      and pet.isvalid and sets.midcast and sets.midcast.Pet then
+    equipSet = sets.midcast.Pet
+
+    if equipSet[spell.english] then
+      equipSet = equipSet[spell.english]
+    else
+      -- Determine type of set to use
+      equipSet = select_specific_set(equipSet, spell, spellMap)
+    end
+
+    -- Allow CastingMode to refine whatever set was selected above.
+    -- Generally this modifies accuracy of the set.
+    if equipSet[state.CastingMode.current] then
+      equipSet = equipSet[state.CastingMode.current]
+    end
+  end
+
+  return equipSet
+end
+
 -- Called when the player's pet's status changes.
 -- This is also called after pet_change after a pet is released.  Check for pet validity.
 function job_pet_status_change(newStatus, oldStatus, eventArgs)
-  if pet.isvalid and not midaction() and not pet_midaction() and (newStatus == 'Engaged' or oldStatus == 'Engaged') then
+  if pet.isvalid and not midaction() and (newStatus == 'Engaged' or oldStatus == 'Engaged') then
     handle_equipping_gear(player.status, newStatus)
   end
 end
@@ -1208,33 +1242,29 @@ end
 
 -- Modify the default idle set after it was constructed.
 function customize_idle_set(idleSet)
-  if state.Buff['Astral Conduit'] then
-    if pet and pet.name == 'Ifrit' then
-      idleSet = set_combine(idleSet, sets.midcast.Pet.HybridBloodPactRage)
+  if not pending_pet_ability then
+    if state.Buff['Astral Conduit'] then
+      if pet.isvalid then
+        idleSet = set_combine(idleSet, last_pet_midcast_set)
+      end
     else
-      idleSet = set_combine(idleSet, sets.midcast.Pet.PhysicalBloodPactRage)
-    end
-    return idleSet
-  end
-  if not pet_midaction() then
-    if pet.isvalid then
-      if pet.status == 'Engaged' then
+      if pet.isvalid and pet.status == 'Engaged' then
         idleSet = set_combine(idleSet, sets.idle.Avatar.Melee)
+      else
+        -- If not in DT mode put on move speed gear
+        if state.IdleMode.current == 'Normal' and state.DefenseMode.value == 'None' then
+          -- Apply movement speed gear
+          if classes.CustomIdleGroups:contains('Adoulin') then
+            idleSet = set_combine(idleSet, sets.Kiting.Adoulin)
+          else
+            idleSet = set_combine(idleSet, sets.Kiting)
+          end
+          if state.CP.current == 'on' then
+            idleSet = set_combine(idleSet, sets.CP)
+          end
+        end
       end
     end
-  
-    -- If not in DT mode put on move speed gear
-    if state.IdleMode.current == 'Normal' and state.DefenseMode.value == 'None' then
-      -- Apply movement speed gear
-      if classes.CustomIdleGroups:contains('Adoulin') then
-        idleSet = set_combine(idleSet, sets.Kiting.Adoulin)
-      else
-        idleSet = set_combine(idleSet, sets.Kiting)
-      end
-      if state.CP.current == 'on' then
-        idleSet = set_combine(idleSet, sets.CP)
-      end
-    end  
   end
 
   -- If slot is locked to use no-swap gear, keep it equipped
@@ -1252,17 +1282,22 @@ function customize_idle_set(idleSet)
 end
 
 function customize_melee_set(meleeSet)
-  if state.Buff['Astral Conduit'] then
-    if pet and pet.name == 'Ifrit' then
-      meleeSet = set_combine(meleeSet, sets.midcast.Pet.HybridBloodPactRage)
+  if not pending_pet_ability then
+    if state.Buff['Astral Conduit'] then
+      if pet.isvalid then
+        meleeSet = set_combine(meleeSet, last_pet_midcast_set)
+      end
     else
-      meleeSet = set_combine(meleeSet, sets.midcast.Pet.PhysicalBloodPactRage)
-    end
-    return meleeSet
-  end
-  if not pet_midaction() then
-    if state.CP.current == 'on' then
-      meleeSet = set_combine(meleeSet, sets.CP)
+      if pet.isvalid and pet.status == 'Engaged' then
+        meleeSet = set_combine(meleeSet, sets.idle.Avatar.Melee)
+      else
+        -- If not in DT mode
+        if state.IdleMode.current == 'Normal' and state.DefenseMode.value == 'None' then
+          if state.CP.current == 'on' then
+            meleeSet = set_combine(meleeSet, sets.CP)
+          end
+        end
+      end
     end
   end
 
@@ -1281,17 +1316,16 @@ function customize_melee_set(meleeSet)
 end
 
 function customize_defense_set(defenseSet)
-  if state.Buff['Astral Conduit'] then
-    if pet and pet.name == 'Ifrit' then
-      defenseSet = set_combine(defenseSet, sets.midcast.Pet.HybridBloodPactRage)
+  if not pending_pet_ability then
+    if pet.isvalid and pet.status == 'Engaged' then
+      defenseSet = set_combine(defenseSet, sets.idle.Avatar.Melee)
     else
-      defenseSet = set_combine(defenseSet, sets.midcast.Pet.PhysicalBloodPactRage)
-    end
-    return defenseSet
-  end
-  if not pet_midaction() then
-    if state.CP.current == 'on' then
-      defenseSet = set_combine(defenseSet, sets.CP)
+      -- If not in DT mode
+      if state.IdleMode.current == 'Normal' and state.DefenseMode.value == 'None' then
+        if state.CP.current == 'on' then
+          defenseSet = set_combine(defenseSet, sets.CP)
+        end
+      end
     end
   end
 
