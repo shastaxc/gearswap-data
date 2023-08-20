@@ -384,6 +384,7 @@ function job_setup()
   skill_ids_2h = S{4, 6, 7, 8, 10, 12} -- DO NOT MODIFY
   fencer_tp_bonus = {200, 300, 400, 450, 500, 550, 600, 630} -- DO NOT MODIFY
   current_pet = nil -- DO NOT MODIFY
+  delay_auto_engage_check = os.clock() -- DO NOT MODIFY
   
   element_colors = {
     ['Fire']      = '\\cs(244,  58,  18)',
@@ -2001,7 +2002,8 @@ function auto_engage_pet()
 	local abil_recasts = windower.ffxi.get_ability_recasts()
 
 	if state.AutomaticPetTargeting.value == true and pet.isvalid and pet.status == 'Idle' and player.status == 'Engaged'
-      and player.target.type == 'MONSTER' and abil_recasts[100] < 0.1 then
+      and player.target.type == 'MONSTER' and abil_recasts[100] < 0.1 and delay_auto_engage_check < os.clock() then
+    delay_auto_engage_check = os.clock() + 1
     windower.chat.input('/pet "Fight" <t>')
 	end
 end
