@@ -340,7 +340,7 @@ function job_setup()
     ['Rage'] = {id=0, name='', set='Buff', charges=0, tp_affected=false, multihit=false, range_type='Self', effect='+Atk & -Def',},
     ['Harden Shell'] = {id=0, name='', set='Buff', charges=0, tp_affected=false, multihit=false, range_type='Self', effect='+Def',},
     ['Rhino Guard'] = {id=0, name='', set='Buff', charges=0, tp_affected=false, multihit=false, range_type='Self', effect='+Eva',},
-    ['Zealous Snort'] = {id=0, name='', set='Buff', charges=0, tp_affected=false, multihit=false, range_type='Self', effect='Haste, MDB, Counter, Guard',},
+    ['Zealous Snort'] = {id=0, name='', set='Buff', charges=0, tp_affected=true, multihit=false, range_type='Self', effect='Haste, MDB, Counter, Guard',},
     ['Frenzied Rage'] = {id=0, name='', set='Buff', charges=0, tp_affected=false, multihit=false, range_type='AoE', effect='+Atk',},
     ['Digest'] = {id=0, name='', set='Buff', charges=0, tp_affected=true, multihit=false, range_type='Single', effect='Absorb HP',},
     ['Metallic Body'] = {id=0, name='', set='Buff', charges=0, tp_affected=true, multihit=false, range_type='Self', effect='Stoneskin',},
@@ -385,6 +385,7 @@ function job_setup()
   fencer_tp_bonus = {200, 300, 400, 450, 500, 550, 600, 630} -- DO NOT MODIFY
   current_pet = nil -- DO NOT MODIFY
   delay_auto_engage_check = os.clock() -- DO NOT MODIFY
+  last_pet_midcast_set = {} -- DO NOT MODIFY
   
   element_colors = {
     ['Fire']      = '\\cs(244,  58,  18)',
@@ -1554,10 +1555,15 @@ function job_precast(spell, action, spellMap, eventArgs)
     add_to_chat(122, 'Action canceled because pet was midaction.')
   end
 
-  -- If using a Ready move, equip recast reduction gear in the precast
-  if spell.type == 'Monster' and sets.precast.ReadyRecast then
-    equip(sets.precast.ReadyRecast)
-    eventArgs.handled = true
+  -- If using a Ready move, 
+  if spell.type == 'Monster' then
+    if buffactive['Unleash'] then -- If Unleash is active don't swap gear
+      equip(get_bst_pet_midcast_set(spell, spellMap))
+      eventArgs.handled = true
+    elseif sets.precast.ReadyRecast then -- Equip recast reduction gear in the precast
+      equip(sets.precast.ReadyRecast)
+      eventArgs.handled = true
+    end
   end
 
   if not pet.isvalid and (spell.type == 'Monster' or abilities_require_pet:contains(spell.english)) then
@@ -1607,6 +1613,10 @@ end
 function job_midcast(spell, action, spellMap, eventArgs)
   silibs.midcast_hook(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
+  
+  if spell.type == 'Monster' and buffactive['Unleash'] then
+    eventArgs.handled = true
+  end
 end
 
 function job_post_midcast(spell, action, spellMap, eventArgs)
@@ -1635,8 +1645,10 @@ function job_aftercast(spell, action, spellMap, eventArgs)
 
 	if spell.type == 'Monster' and not spell.interrupted then
     equip(get_bst_pet_midcast_set(spell, spellMap))
+    last_pet_midcast_set = set_combine(gearswap.equip_list, {})
     pending_pet_ability = true
-    if state.HybridMode.value ~= 'Master' and not always_swap_moves:contains(spell.english) then
+    if (state.HybridMode.value ~= 'Master' and not always_swap_moves:contains(spell.english))
+        or buffactive['Unleash'] then
       eventArgs.handled = true
     end
   end
@@ -1784,25 +1796,31 @@ end
 -- Modify the default idle set after it was constructed.
 function customize_idle_set(idleSet)
   if not pending_pet_ability then
-    -- If not in DT mode put on move speed gear
-    if state.IdleMode.current == 'Normal' and state.DefenseMode.value == 'None' then
-      -- Apply movement speed gear
-      if classes.CustomIdleGroups:contains('Adoulin') then
-        idleSet = set_combine(idleSet, sets.Kiting.Adoulin)
-      else
-        idleSet = set_combine(idleSet, sets.Kiting)
+    if buffactive['Unleash'] then
+      if pet.isvalid then
+        idleSet = set_combine(idleSet, last_pet_midcast_set)
       end
-
-      -- Apply pet engaged set
-      if pet.isvalid and pet.status == 'Engaged' then
-        local mode = state.HybridMode.value
-        if state.PetMode.value ~= 'Normal' then
-          mode = mode..state.PetMode.value
-        end
-        if sets.idle.PetEngaged[mode] then
-          idleSet = set_combine(idleSet, sets.idle.PetEngaged[mode])
+    else
+      -- If not in DT mode put on move speed gear
+      if state.IdleMode.current == 'Normal' and state.DefenseMode.value == 'None' then
+        -- Apply movement speed gear
+        if classes.CustomIdleGroups:contains('Adoulin') then
+          idleSet = set_combine(idleSet, sets.Kiting.Adoulin)
         else
-          idleSet = set_combine(idleSet, sets.idle.PetEngaged)
+          idleSet = set_combine(idleSet, sets.Kiting)
+        end
+
+        -- Apply pet engaged set
+        if pet.isvalid and pet.status == 'Engaged' then
+          local mode = state.HybridMode.value
+          if state.PetMode.value ~= 'Normal' then
+            mode = mode..state.PetMode.value
+          end
+          if sets.idle.PetEngaged[mode] then
+            idleSet = set_combine(idleSet, sets.idle.PetEngaged[mode])
+          else
+            idleSet = set_combine(idleSet, sets.idle.PetEngaged)
+          end
         end
       end
     end
@@ -1835,17 +1853,23 @@ end
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
   if not ((state.HybridMode.value == 'Pet' or state.HybridMode.value == 'PetDT') and pending_pet_ability) then
-    -- Apply pet engaged set
-    if pet.isvalid and pet.status == 'Engaged' and state.HybridMode.value ~= 'Master' then
-      local mode = state.HybridMode.value
-      if state.PetMode.value ~= 'Normal' then
-        mode = mode..state.PetMode.value
+    if buffactive['Unleash'] then
+      if pet.isvalid then
+        meleeSet = set_combine(meleeSet, last_pet_midcast_set)
       end
-      meleeSet = set_combine(meleeSet, sets.engaged[mode])
-    end
+    else
+      -- Apply pet engaged set
+      if pet.isvalid and pet.status == 'Engaged' and state.HybridMode.value ~= 'Master' then
+        local mode = state.HybridMode.value
+        if state.PetMode.value ~= 'Normal' then
+          mode = mode..state.PetMode.value
+        end
+        meleeSet = set_combine(meleeSet, sets.engaged[mode])
+      end
 
-    if state.CP.current == 'on' then
-      meleeSet = set_combine(meleeSet, sets.CP)
+      if state.CP.current == 'on' then
+        meleeSet = set_combine(meleeSet, sets.CP)
+      end
     end
   end
 
@@ -2110,7 +2134,7 @@ function get_bst_pet_midcast_set(spell, spellMap)
   local equipSet = {}
   local ready_move = ready_moves[spell.english]
 
-  if spell.action_type == 'Monster Move' and ready_move and pet.isvalid and sets.midcast and sets.midcast.Pet then
+  if ready_move and pet.isvalid and sets.midcast and sets.midcast.Pet then
     equipSet = sets.midcast.Pet
     
     -- Determine type of set to use
@@ -2122,7 +2146,8 @@ function get_bst_pet_midcast_set(spell, spellMap)
     -- If in Master mode...
     if state.HybridMode.current == 'Master' then
       -- Swap into Halfsies set if idle, do not swap if engaged
-      if player.status ~= 'Engaged' then
+      -- Override if Unleash is active
+      if player.status ~= 'Engaged' or buffactive['Unleash'] then
         if equipSet['Halfsies'] then
           equipSet = equipSet['Halfsies']
         end
