@@ -2609,7 +2609,6 @@ function check_gear()
 end
 
 windower.register_event('zone change', function()
-  print('zoning')
   if locked_neck then equip({ neck=empty }) end
   if locked_ear1 then equip({ ear1=empty }) end
   if locked_ear2 then equip({ ear2=empty }) end
