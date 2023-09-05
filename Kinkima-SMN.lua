@@ -274,6 +274,8 @@ function init_gear_sets()
   
   -- Fast cast sets for spells
   sets.precast.FC.NirvAM = {
+    main="Nirvana",                   -- __ [__/__, ___]
+    sub="Elan Strap +1",              -- __ [__/__, ___]
     ammo="Staunch Tathlum +1",        -- __ [ 3/ 3, ___]
     head="Bunzi's Hat",               -- 10 [ 7/ 7, 123]
     body=gear.Merl_FC_body,           -- 14 [ 2/__,  91]
@@ -289,12 +291,12 @@ function init_gear_sets()
     waist="Shinjutsu-no-obi +1",      --  5 [__/__, ___]
     -- 79 Fast Cast [32 PDT/20 MDT, 546 M.Eva]
     
-    -- main="Nirvana",                -- __ [__/__, ___]
-    -- sub="Elan Strap +1",           -- __ [__/__, ___]
     -- legs="Volte Brais",            --  8 [__/__, 142]; merlinic alt
     -- 80 Fast Cast [32 PDT/20 MDT, 570 M.Eva]
   }
   sets.precast.FC.NirvAM.QuickMagic = {
+    main="Nirvana",                   -- __ [__/__, ___]
+    sub="Elan Strap +1",              -- __ [__/__, ___]
     ammo="Staunch Tathlum +1",        -- __ [ 3/ 3, ___]
     head="Bunzi's Hat",               -- 10 [ 7/ 7, 123]
     body=gear.Merl_FC_body,           -- 14 [ 2/__,  91]
@@ -310,13 +312,13 @@ function init_gear_sets()
     waist="Witful Belt",              --  3 [__/__, ___] 3
     -- 77 Fast Cast [32 PDT/20 MDT, 546 M.Eva] 3 Quick Magic
 
-    -- main="Nirvana",                -- __ [__/__, ___]
-    -- sub="Elan Strap +1",           -- __ [__/__, ___]
     -- legs="Volte Brais",            --  8 [__/__, 142]; merlinic alt
     -- 78 Fast Cast [32 PDT/20 MDT, 570 M.Eva] 3 Quick Magic
   }
 
   sets.precast.FC.NirvAM.RDM = {
+    main="Nirvana",                   -- __ [__/__, ___]
+    sub="Elan Strap +1",              -- __ [__/__, ___]
     ammo="Sapience Orb",              --  2 [__/__, ___]
     head="Bunzi's Hat",               -- 10 [ 7/ 7, 123]
     body=gear.Merl_FC_body,           -- 14 [ 2/__,  91]
@@ -333,12 +335,12 @@ function init_gear_sets()
     -- RDM Trait                         15
     -- 80 Fast Cast [50 PDT/30 MDT, 575 M.Eva]
     
-    -- main="Nirvana",                -- __ [__/__, ___]
-    -- sub="Elan Strap +1",           -- __ [__/__, ___]
     -- legs="Beckoner's Spats +3",    -- __ [12/12, 157]
     -- 80 Fast Cast [51 PDT/31 MDT, 585 M.Eva]
   }
   sets.precast.FC.NirvAM.QuickMagic.RDM = {
+    main="Nirvana",                   -- __ [__/__, ___]
+    sub="Elan Strap +1",              -- __ [__/__, ___]
     ammo="Impatiens",                 -- __ [__/__, ___]  2
     head="Bunzi's Hat",               -- 10 [ 7/ 7, 123]
     body=gear.Merl_FC_body,           -- 14 [ 2/__,  91]
@@ -355,8 +357,6 @@ function init_gear_sets()
     -- RDM Trait                         15
     -- 81 Fast Cast [47 PDT/27 MDT, 575 M.Eva] 5 Quick Magic
 
-    -- main="Nirvana",                -- __ [__/__, ___]
-    -- sub="Elan Strap +1",           -- __ [__/__, ___]
     -- legs="Beckoner's Spats +3",    -- __ [12/12, 157]
     -- 81 Fast Cast [48 PDT/28 MDT, 585 M.Eva] 5 Quick Magic
   }
@@ -423,8 +423,8 @@ function init_gear_sets()
     -- MP Siphoned = 915 to 1024 (depending on day/weather)
   }
   sets.precast.JA['Elemental Siphon'].NirvAM = {
-    -- main="Nirvana",                  -- __, __, __ [__/__, ___]
-    -- sub="Elan Strap +1",             -- __, __, __ [__/__, ___]
+    main="Nirvana",                     -- __, __, __ [__/__, ___]
+    sub="Elan Strap +1",                -- __, __, __ [__/__, ___]
     ammo="Esper Stone +1",              -- 20, __, __ [__/__, ___]
     head="Beckoner's Horn +2",          -- __, 18, __ [ 9/ 9, 120]
     body="Beckoner's Doublet +2",       -- __, 19, __ [12/12, 120]
@@ -502,8 +502,8 @@ function init_gear_sets()
   sets.precast.BloodPactRage = set_combine(sets.precast.BloodPactWard, {})
 
   sets.precast.BloodPactWard.NirvAM = {
-    -- main="Nirvana",              -- __, __, __, __ [__/__, ___]
-    -- sub="Elan Strap +1",         -- __, __, __, __ [__/__, ___]
+    main="Nirvana",                 -- __, __, __, __ [__/__, ___]
+    sub="Elan Strap +1",            -- __, __, __, __ [__/__, ___]
     ammo="Epitaph",                 -- __, __,  5, __ [__/__, ___]
     head="Beckoner's Horn +2",      -- 18, __, __, __ [ 9/ 9, 120]; Keep on for Favor bonus
     body="Beckoner's Doublet +2",   -- 19, __, __, __ [12/12, 120]
@@ -520,8 +520,6 @@ function init_gear_sets()
     -- Traits/Merits/Gifts            469, __, __, 10
     -- 654 Summon Skill, 15 -BP Delay, 7 -BP Delay II, 10 -BP Delay III [24 PDT/24 MDT, 611 M.Eva]
     
-    -- main="Nirvana",              -- __, __, __, __ [__/__, ___]
-    -- sub="Elan Strap +1",         -- __, __, __, __ [__/__, ___]
     -- ammo="Epitaph",              -- __, __,  5, __ [__/__, ___]
     -- head="Beckoner's Horn +3",   -- 23, __, __, __ [10/10, 130]; Keep on for Favor bonus
     -- body="Baayami Robe",         -- 32, __, __, __ [__/__, 112]
@@ -602,6 +600,24 @@ function init_gear_sets()
   sets.precast.WS['Myrkr'] = set_combine(sets.precast.WS, {
     ring1="Gelatinous Ring +1",
     ring2="Defending Ring",
+  })
+
+  sets.precast.WS['Garland of Bliss'] = set_combine(sets.precast.WS, {
+    head=gear.Nyame_B_head,
+    body=gear.Nyame_B_body,
+    hands=gear.Nyame_B_hands,
+    legs=gear.Nyame_B_legs,
+    feet=gear.Nyame_B_feet,
+    neck="Baetyl Pendant",
+    ear1="Malignance Earring",
+    ear2="Novio Earring",
+    ring1="Epaminondas's Ring",
+    ring2="Metamorph Ring +1",
+    back="Aurist's Cape +1",
+    waist="Refoccilation Stone",
+
+    -- neck="Fotia Gorget",
+    -- waist="Fotia Belt",
   })
 
   ------------------------------------------------------------------------------------------------
@@ -712,7 +728,7 @@ function init_gear_sets()
 
   -- Need Pet M.Acc, Summoning Skill to land debuffs
   sets.midcast.Pet.DebuffBloodPactWard = {
-    main=gear.Espiritus_B,            -- ___, 45, 15 [__/__, ___]
+    main="Nirvana",                   --   2, 30, __ [__/__, ___]
     sub="Vox Grip",                   -- ___, __,  3 [__/__, ___]
     ammo="Epitaph",                   -- 119, 25, __ [__/__, ___]
     head="Beckoner's Horn +2",        -- ___, 51, 18 [ 9/ 9, 120]
@@ -727,10 +743,8 @@ function init_gear_sets()
     ring2="Cath Palug Ring",          -- ___, 12, __ [ 5/ 5, ___]
     back=gear.SMN_Magic_BP_Cape,      --   1, 20, __ [10/__,  20]
     waist="Incarnation Sash",         -- ___, 15, __ [__/__, ___]
-    -- 122 Pet Lv, 429 Pet M.Acc, 90 Summon Skill [62 PDT/52 MDT, 640 M.Eva]
+    -- 124 Pet Lv, 414 Pet M.Acc, 75 Summon Skill [62 PDT/52 MDT, 640 M.Eva]
     
-    -- main="Nirvana",                --   2, 30, __ [__/__, ___]
-    -- sub="Vox Grip",                -- ___, __,  3 [__/__, ___]
     -- head="Beckoner's Horn +3",     -- ___, 61, 23 [10/10, 130]
     -- body="Beckoner's Doublet +3",  -- ___, 64, 24 [13/13, 130]
     -- hands="Beckoner's Bracers +3", -- ___, 62, __ [__/__,  93]
@@ -741,7 +755,7 @@ function init_gear_sets()
 
   -- TODO: Maybe add more HP
   sets.midcast.Pet.PhysicalBloodPactRage = {
-    main="Gridarvor",                   -- ___, __ {___, __, __, __ / 70, 95, __, 15} [__/__, ___]
+    main="Nirvana",                     --   2, 40 {___, 30, __, __ / __, 30, __, __} [__/__, ___]
     sub="Elan Strap +1",                -- ___,  5 {___, __, __, __ / __, __, __, __} [__/__, ___]
     ammo="Epitaph",                     -- 119, 16 {___, 30, 15, __ / __, 30, 15, __} [__/__, ___]; R20+ before using
     head=gear.Helios_Phys_BP_head,      -- ___,  7 {___, __, __, __ / __, 30, __,  8} [__/__,  75]
@@ -756,10 +770,8 @@ function init_gear_sets()
     ring2="Varar Ring +1",              -- ___,  4 {___, __, __, __ / __, 10, __, __} [__/__, ___]
     back=gear.SMN_Phys_BP_Cape,         --   1,  5 {___, __, __, __ / 20, 30, __, __} [10/__, ___]
     waist="Incarnation Sash",           -- ___, __ {___, 15, __, __ / __, 15, __,  4} [__/__, ___]
-    -- 121 Pet Lv, 123 BP Dmg {Pet: 0 MAB, 171 M.Acc, 40 INT, 0 M.Dmg / 165 Att, 326 Acc, 60 STR, 31 DA} [31 PDT/21 MDT, 489 M.Eva]
+    -- 123 Pet Lv, 163 BP Dmg {Pet: 0 MAB, 201 M.Acc, 40 INT, 0 M.Dmg / 95 Att, 261 Acc, 60 STR, 16 DA} [31 PDT/21 MDT, 489 M.Eva]
     
-    -- main="Nirvana",                  --   2, 40 {___, 30, __, __ / __, 30, __, __} [__/__, ___]
-    -- sub="Elan Strap +1",             -- ___,  5 {___, __, __, __ / __, __, __, __} [__/__, ___]
     -- body="Beckoner's Doublet +3",    -- ___, 13 {___, 64, __, __ / __, 64, __, __} [13/13, 130]
     -- ear2="Beckoner's Earring +2",    --   1,  5 {___, 20, __, __ / __, 20, __, __} [ 6/ 6, ___]
     -- 123 Pet Lv, 165 BP Dmg {Pet: 0 MAB, 219 M.Acc, 40 INT, 0 M.Dmg / 95 Att, 279 Acc, 60 STR, 16 DA} [34 PDT/24 MDT, 499 M.Eva]
@@ -790,7 +802,7 @@ function init_gear_sets()
   }
 
   sets.midcast.Pet.HybridBloodPactRage = set_combine(sets.midcast.Pet.MagicalBloodPactRage, {
-    main=gear.Grioavolr_Magic_BP,       -- ___,  9 {140, 54, __, __ / __, __, __, __} [__/__, ___]
+    main="Nirvana",                     --   2, 40 {___, 30, __, __ / __, 30, __, __} [__/__, ___]
     sub="Elan Strap +1",                -- ___,  5 {___, __, __, __ / __, __, __, __} [__/__, ___]
     ammo="Epitaph",                     -- 119, 16 {___, 30, 15, __ / __, 30, 15, __} [__/__, ___]; R20+ before using
     head="Cath Palug Crown",            -- ___, 10 { 38, 38, __, __ / __, 38, __, __} [__/__,  86]
@@ -805,9 +817,8 @@ function init_gear_sets()
     ring2="Varar Ring +1",              -- ___,  4 {___, __, __, __ / __, 10, __, __} [__/__, ___]
     back=gear.SMN_Magic_BP_Cape,        --   1,  5 {___, 20, __, 25 / __, __, __, __} [10/__, ___]
     waist="Regal Belt",                 -- ___, __ { 10, __, __, __ / 20, __, __, __} [ 3/ 3, ___]
-    -- 121 Pet Lv, 126 BP Dmg {Pet: 262 MAB, 275 M.Acc, 49 INT, 25 M.Dmg / 40 Att, 194 Acc, 40 STR, 0 DA} [34 PDT/24 MDT, 489 M.Eva]
+    -- 123 Pet Lv, 157 BP Dmg {Pet: 122 MAB, 251 M.Acc, 49 INT, 25 M.Dmg / 40 Att, 224 Acc, 40 STR, 0 DA} [34 PDT/24 MDT, 489 M.Eva]
     
-    -- main="Nirvana",                  --   2, 40 {___, 30, __, __ / __, 30, __, __} [__/__, ___]
     -- body="Beckoner's Doublet +3",    -- ___, 13 {___, 64, __, __ / __, 64, __, __} [13/13, 130]
     -- legs=gear.Enticer_legs,          -- ___, 12 {___, 15, __, __ / __, 15, __, __} [__/__, 107]; Pet TP Bonus
     -- ear2="Beckoner's Earring +2",    --   1,  5 {___, 20, __, __ / __, 20, __, __} [ 6/ 6, ___]
@@ -927,17 +938,22 @@ function init_gear_sets()
   -- TODO: update set
   sets.engaged = {
     head="Beckoner's Horn +2",
-    -- body="Tali'ah Manteel +1",
-    -- hands="Gazu Bracelets",
-    legs="Assid. Pants +1",
-    -- feet="Battlecast Gaiters",
-    -- neck="Lissome Necklace",
-    -- ear1="Telos Earring",
+    body="Beckoner's Doublet +2",
+    hands="Bunzi's Gloves",
+    legs="Beckoner's Spats +2",
+    feet="Beckoner's Pigaches +2",
+    neck="Loricate Torque +1",
+    ear1="Dignitary's Earring",
     ear2="Cessance Earring",
+    ring1="Varar Ring +1",
+    ring2="Varar Ring +1",
+    back="Aurist's Cape +1",
+    waist="Klouskap Sash +1",
+    
+    -- hands="Gazu Bracelets",
+    -- ear1="Telos Earring",
     -- ring1="Petrov Ring",
     -- ring2="Apate Ring",
-    back=gear.SMN_Phys_BP_Cape,
-    waist="Grunfeld Rope",
   }
   
 
@@ -1267,6 +1283,10 @@ function customize_idle_set(idleSet)
     end
   end
 
+  if state.CastingMode.value == 'NirvAM' then
+    idleSet = set_combine(idleSet, { main="Nirvana", sub="Elan Strap +1",})
+  end
+
   -- If slot is locked to use no-swap gear, keep it equipped
   if locked_neck then idleSet = set_combine(idleSet, { neck=player.equipment.neck }) end
   if locked_ear1 then idleSet = set_combine(idleSet, { ear1=player.equipment.ear1 }) end
@@ -1301,6 +1321,10 @@ function customize_melee_set(meleeSet)
     end
   end
 
+  if state.CastingMode.value == 'NirvAM' then
+    meleeSet = set_combine(meleeSet, { main="Nirvana", sub="Elan Strap +1",})
+  end
+
   -- If slot is locked to use no-swap gear, keep it equipped
   if locked_neck then meleeSet = set_combine(meleeSet, { neck=player.equipment.neck }) end
   if locked_ear1 then meleeSet = set_combine(meleeSet, { ear1=player.equipment.ear1 }) end
@@ -1327,6 +1351,10 @@ function customize_defense_set(defenseSet)
         end
       end
     end
+  end
+
+  if state.CastingMode.value == 'NirvAM' then
+    defenseSet = set_combine(defenseSet, { main="Nirvana", sub="Elan Strap +1",})
   end
 
   -- If slot is locked to use no-swap gear, keep it equipped
