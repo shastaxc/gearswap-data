@@ -238,7 +238,6 @@ function init_gear_sets()
     legs="Hesychast's Hose +3",
   }
   sets.precast.JA['Boost'] = {
-    hands="Anchorite's Gloves +1",
     waist="Ask Sash",
   }
   sets.precast.JA['Boost'].Risky = {
