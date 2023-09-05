@@ -215,12 +215,12 @@ function init_gear_sets()
     feet=gear.Nyame_B_feet,         --  7/ 7, 150 [__]
     neck="Cleric's Torque +1",      -- __/__, ___ [20]
     ear1="Arete Del Luna +1",       -- __/__, ___ [__]; Resists
-    ear2="Ebers Earring",           -- __/__, ___ [ 7]
+    ear2="Ebers Earring +1",        --  4/ 4, ___ [ 8]
     ring1="Kuchekula Ring",         -- __/__, ___ [ 7]
     ring2="Defending Ring",         -- 10/10, ___ [__]
     back=gear.WHM_FC_Cape,          -- 10/__,  20 [__]
     waist="Carrier's Sash",         -- __/__, ___ [__]; Ele Resist+15
-    -- 72 PDT / 42 MDT, 661 M.Eva [51 -Enmity]
+    -- 76 PDT / 46 MDT, 661 M.Eva [52 -Enmity]
     
     -- main="Bunzi's Rod",          -- __/__, ___ [ 5]; R30
     -- head="Ebers Cap +3",         -- __/__, 125 [__]
@@ -367,14 +367,14 @@ function init_gear_sets()
     feet=gear.Kaykaus_D_feet,         -- __, 17, __ [__/__, 107]  6
     neck="Cleric's Torque +1",        -- __,  7, __ [__/__, ___] 20
     ear1="Etiolation Earring",        -- __, __, __ [__/ 3, ___] __; Resist Silence +15
-    ear2="Ebers Earring",             -- __, __, __ [__/__, ___]  7
+    ear2="Ebers Earring +1",          -- __, __, __ [ 4/ 4, ___]  8
     ring1="Freke Ring",               -- __, __, 10 [__/__, ___] __
     ring2="Defending Ring",           -- __, __, __ [10/10, ___] __
     back=gear.WHM_CP_Cape,            -- __, 10, __ [10/__, ___] __
     waist="Sanctuary Obi +1",         -- __, __, 10 [__/__, ___]  4
     -- Kaykaus bonus                      8, __, __ [__/__, ___] __
     -- Merit points                      __, __, 10 [__/__, ___]  5
-    -- 12 CPII, 56 CP, 102 SIRD [45 PDT/31 MDT, 446 M.Eva] 48 -Enmity
+    -- 12 CPII, 56 CP, 102 SIRD [49 PDT/35 MDT, 446 M.Eva] 49 -Enmity
     
     -- legs="Ebers Pantaloons +3",    -- __, __, __ [13/13, 157] __; 8% healing to MP
     -- neck="Cleric's Torque +2",     -- __, 10, __ [__/__, ___] 25
@@ -394,14 +394,14 @@ function init_gear_sets()
     feet="Theophany Duckbills +3",    -- __, __, 29 [__/__, 127] __
     neck="Cleric's Torque +1",        -- __,  7, __ [__/__, ___] 20
     ear1="Nourishing Earring +1",     -- __,  7,  5 [__/__, ___] __; Resist Silence +15
-    ear2="Ebers Earring",             -- __, __, __ [__/__, ___]  7
+    ear2="Ebers Earring +1",          -- __, __, __ [ 4/ 4, ___]  8
     ring1="Gelatinous Ring +1",       -- __, __, __ [ 7/-1, ___] __
     ring2="Defending Ring",           -- __, __, __ [10/10, ___] __
     back=gear.WHM_CP_Cape,            -- __, 10, __ [10/__, ___] __
     waist="Hachirin-no-Obi",          -- __, __, __ [__/__, ___] __; Weather bonus
     -- Kaykaus set bonus              --  4, __, __ [__/__, ___] __
     -- Merit points                   -- __, __, 10 [__/__, ___]  5
-    -- 4 CPII, 56 CP, 104 SIRD [52 PDT/32 MDT, 466 M.Eva] 51 -Enmity
+    -- 4 CPII, 56 CP, 104 SIRD [56 PDT/36 MDT, 466 M.Eva] 52 -Enmity
 
     -- main="Chatoyant Staff",        -- __, 10, __ [__/__, ___] __; Weather bonus
     -- sub="Mensch Strap +1",         -- __, __, __ [ 5/__, ___] __
@@ -434,14 +434,14 @@ function init_gear_sets()
     feet=gear.Kaykaus_D_feet,         -- __, 17, __ [__/__, 107]  6
     neck="Cleric's Torque +1",        -- __,  7, __ [__/__, ___] 20
     ear1="Halasz Earring",            -- __, __,  5 [__/__, ___]  3
-    ear2="Ebers Earring",             -- __, __, __ [__/__, ___]  7
+    ear2="Ebers Earring +1",          -- __, __, __ [ 4/ 4, ___]  8
     ring1="Gelatinous Ring +1",       -- __, __, __ [ 7/-1, ___] __
     ring2="Defending Ring",           -- __, __, __ [10/10, ___] __
     back=gear.WHM_CP_Cape,            -- __, 10, __ [10/__, ___] __
     waist="Sanctuary Obi +1",         -- __, __, 10 [__/__, ___]  4
     -- Kaykaus bonus                      4, __, __ [__/__, ___] __
     -- Merit points                      __, __, 10 [__/__, ___]  5
-    -- 4 CPII, 50 CP, 104 SIRD [52PDT/27MDT, 497 M.Eva] 45 -Enmity
+    -- 4 CPII, 50 CP, 104 SIRD [56PDT/31MDT, 497 M.Eva] 46 -Enmity
     
     -- main="Eremite's Wand +1",      -- __, __, 25 [__/__, ___] __
     -- sub="Culminus",                -- __, __, 10 [__/__, ___] __
@@ -812,12 +812,13 @@ function init_gear_sets()
     feet="Theophany Duckbills +3",      -- __, __, __, 10 [__/__, 127]
     neck="Loricate Torque +1",          -- __, __, __, __ [ 6/ 6, ___]
     ear1="Odnowa Earring +1",           -- __, __, __, __ [ 3/ 5, ___]
+    ear2="Ebers Earring +1",            -- __, __, __, __ [ 4/ 4, ___]
     ring1="Gelatinous Ring +1",         -- __, __, __, __ [ 7/-1, ___]
     ring2="Defending Ring",             -- __, __, __, __ [10/10, ___]
     back=gear.WHM_FC_Cape,              -- __, __, __, __ [10/__,  20]
     waist="Embla Sash",                 -- __, __, __, 10 [__/__, ___]
     -- Merits/JP/Gifts                     __, 10, 60, __ [__/__, ___]
-    -- 14% Regen Potency, 44 Regen Potency, 84 Regen Duration, 30% Enh Duration [49 PDT/38 MDT, 465 M.Eva]
+    -- 14% Regen Potency, 44 Regen Potency, 84 Regen Duration, 30% Enh Duration [53 PDT/42 MDT, 465 M.Eva]
     -- Regen IV 78 hp/tic @187 sec
     
     -- body="Piety Bliaut +3",          -- 52, __, __, __ [__/__, 100]
@@ -839,13 +840,13 @@ function init_gear_sets()
     feet="Theophany Duckbills +3",    -- __, 21, 46, 34, 32 [__/__, 127]
     neck="Incanter's Torque",         -- __, 10, __, __, __ [__/__, ___]
     ear1="Malignance Earring",        -- __, __, 10,  8,  8 [__/__, ___]
-    ear2="Dignitary's Earring",       -- __, __, 10, __, __ [__/__, ___]
+    ear2="Ebers Earring +1",          -- __, __, 12, __, __ [ 4/ 4, ___]
     ring1="Stikini Ring +1",          -- __,  8, 11,  8, __ [__/__, ___]
     ring2="Stikini Ring +1",          -- __,  8, 11,  8, __ [__/__, ___]
     back="Aurist's Cape +1",          -- __, __, 33, 33, 33 [__/__, ___]
     waist="Obstinate Sash",           --  5, 15, 15,  5, __ [__/__, ___]
     -- AF set bonus                      __, __, 15, __, __
-    -- 5 Enf Duration, 82 Enfeebling skill, 439 M.Acc, 275 MND, 229 INT [27 PDT/22 MDT, 586 MEVA]
+    -- 5 Enf Duration, 82 Enfeebling skill, 441 M.Acc, 275 MND, 229 INT [31 PDT/26 MDT, 586 MEVA]
     
     -- main="Contemplator +1",        -- __, 20, 70, 22, 12 [__/__, ___]
     -- sub="Mensch Strap +1",         -- __, __, __, __, __ [ 5/__, ___]
@@ -907,12 +908,12 @@ function init_gear_sets()
     feet="Ebers Duckbills +2",        -- __, 50, 29, 27 [10/10, 147]
     neck="Incanter's Torque",         -- 10, __, __, __ [__/__, ___]
     ear1="Malignance Earring",        -- __, 10,  8,  8 [__/__, ___]
-    ear2="Dignitary's Earring",       -- __, 10, __, __ [__/__, ___]
+    ear2="Ebers Earring +1",          -- __, 12, __, __ [ 4/ 4, ___]
     ring1="Stikini Ring +1",          --  8, 11,  8, __ [__/__, ___]
     ring2="Stikini Ring +1",          --  8, 11,  8, __ [__/__, ___]
     back="Aurist's Cape +1",          -- __, 33, 33, 33 [__/__, ___]
     waist="Obstinate Sash",           -- __, 15,  5, __ [__/__, ___]
-    -- 26 Divine skill, 451 M.Acc, 276 MND, 240 INT [32 PDT/32 MDT, 606 MEVA]
+    -- 26 Divine skill, 453 M.Acc, 276 MND, 240 INT [36 PDT/36 MDT, 606 MEVA]
 
     -- main="Bunzi's Rod",            -- __, 55, 15, 15 [__/__, ___]
     -- sub="Ammurapi Shield",         -- __, 38, 13, 13 [__/__, ___]
