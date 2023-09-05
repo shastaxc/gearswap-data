@@ -1465,19 +1465,21 @@ function init_gear_sets()
   }
   sets.WeaponSet['PhysRA'] = {
     main="Ternion Dagger +1",
-    sub="Odium",
+    sub="Gleti's Knife",
   }
   sets.WeaponSet['PhysRA RangedOnly'] = {
-    main="Ternion Dagger +1",
+    main="Gleti's Knife",
     sub={name="Nusku Shield", priority=1},
   }
   sets.WeaponSet['Melee'] = {
     main="Naegling",
-    sub="Ternion Dagger +1",
+    sub="Gleti's Knife",
   }
   sets.WeaponSet['CritRA'] = {
-    -- main="Oneiros Knife",
+    main="Gleti's Knife",
     sub="Nusku Shield",
+    
+    -- main="Oneiros Knife",
   }
 
   -- Ranged weapon sets
