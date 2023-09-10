@@ -1168,11 +1168,11 @@ function init_gear_sets()
     legs="Pedagogy Pants +3",
     feet="Pedagogy Loafers +3",
     ear1="Cessance Earring",
+    ring1="Hetairoi Ring",
     ring2="Chirich Ring +1",
     -- hands="Raetic Bangles +1",
     -- neck="Combatant's Torque",
     -- ear2="Telos Earring",
-    -- ring1="Hetairoi Ring",
     -- back="Relucent Cape",
     -- waist="Windbuffet Belt +1",
   }
