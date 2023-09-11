@@ -634,8 +634,7 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.latent_regain = {
-    -- head="Valorous Mask",
-    -- head="Wakido Kabuto +3",
+    head="Valorous Mask",       -- 3
   }
   sets.latent_regen = {
     neck="Bathy Choker +1",

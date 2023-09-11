@@ -1162,13 +1162,11 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.latent_regain = {
-    head="Gleti's Mask",        -- 2
+    head="Valorous Mask",       -- 3
     body="Gleti's Cuirass",     -- 3
     hands="Gleti's Gauntlets",  -- 2
     legs="Gleti's Breeches",    -- 3
     feet="Gleti's Boots",       -- 2
-    
-    -- head="Valorous Mask",    -- 3
   }
   sets.latent_regen = {
     head="Gleti's Mask",        -- 3
