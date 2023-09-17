@@ -242,7 +242,7 @@ function init_gear_sets()
     ear2="Lugra Earring +1",
     ring1="Gere Ring",
     ring2="Ephramad's Ring",
-    -- back=gear.NIN_WSD_STR_Cape,
+    back=gear.NIN_WSD_STR_Cape,
     waist="Sailfi Belt +1",
     
     -- feet="Hattori Kyahan +3",
@@ -265,7 +265,7 @@ function init_gear_sets()
     ear2="Hattori Earring +1",
     ring1="Sroda Ring",
     ring2="Ephramad's Ring",
-    -- back=gear.NIN_WSD_STR_Cape,
+    back=gear.NIN_WSD_STR_Cape,
     waist="Sailfi Belt +1",
 
     -- feet="Hattori Kyahan +3",
@@ -290,7 +290,7 @@ function init_gear_sets()
     ear2="Lugra Earring +1",
     ring1="Gere Ring",
     ring2="Ephramad's Ring",
-    -- back=gear.NIN_WSD_STR_Cape,
+    back=gear.NIN_WSD_STR_Cape,
     waist="Eschan Stone",
   }
   sets.HybridWS.MaxTP = set_combine(sets.HybridWS, {
@@ -381,6 +381,7 @@ function init_gear_sets()
     ring1="Begrudging Ring",
     ring2="Ephramad's Ring",
     -- back=gear.NIN_Crit_AGI_Cape,
+    back=gear.NIN_WSD_STR_Cape,
     waist="Sailfi Belt +1",
 
     -- head="Blistering Sallet +1",
@@ -402,6 +403,7 @@ function init_gear_sets()
     ring1="Epaminondas's Ring",
     ring2="Ephramad's Ring",
     -- back=gear.NIN_WSD_AGI_Cape,
+    back=gear.NIN_WSD_STR_Cape,
     waist="Sailfi Belt +1",
 
     -- feet="Hattori Kyahan +3",
@@ -422,6 +424,7 @@ function init_gear_sets()
     ring1="Sroda Ring",
     ring2="Gere Ring",
     -- back=gear.NIN_WSD_STR_Cape,
+    back=gear.NIN_WSD_STR_Cape,
     waist="Sailfi Belt +1",
     
     -- ear2="Hattori Earring +2",
@@ -440,6 +443,7 @@ function init_gear_sets()
     ring1="Sroda Ring",
     ring2="Ephramad's Ring",
     -- back=gear.NIN_WSD_STR_Cape,
+    back=gear.NIN_WSD_STR_Cape,
     waist="Sailfi Belt +1",
     
     -- ear2="Hattori Earring +2",
@@ -459,6 +463,7 @@ function init_gear_sets()
     ring1="Gere Ring",
     ring2="Ephramad's Ring",
     -- back=gear.NIN_DA_STR_Cape,
+    back=gear.NIN_WSD_STR_Cape,
     waist="Fotia Belt",
     
     -- feet="Hattori Kyahan +3",
@@ -478,6 +483,7 @@ function init_gear_sets()
     ring1="Sroda Ring",
     ring2="Ephramad's Ring",
     -- back=gear.NIN_DA_STR_Cape,
+    back=gear.NIN_WSD_STR_Cape,
     waist="Fotia Belt",
     
     -- feet="Hattori Kyahan +3",
@@ -498,6 +504,7 @@ function init_gear_sets()
     ring1="Gere Ring",
     ring2="Ephramad's Ring",
     -- back=gear.NIN_WSD_DEX_Cape,
+    back=gear.NIN_WSD_STR_Cape,
     waist="Sailfi Belt +1",
     
     -- feet="Hattori Kyahan +3",
@@ -517,6 +524,7 @@ function init_gear_sets()
     ring1="Gere Ring",
     ring2="Ephramad's Ring",
     -- back=gear.NIN_WSD_DEX_Cape,
+    back=gear.NIN_WSD_STR_Cape,
     waist="Kentarch Belt +1",
     
     -- feet="Hattori Kyahan +3",
@@ -537,6 +545,7 @@ function init_gear_sets()
     ring1="Gere Ring",
     ring2="Ephramad's Ring",
     -- back=gear.NIN_DA_DEX_Cape,
+    back=gear.NIN_WSD_STR_Cape,
     waist="Fotia Belt",
     
     -- feet="Hattori Kyahan +3",
@@ -560,6 +569,7 @@ function init_gear_sets()
     ring1="Gere Ring",
     ring2="Ephramad's Ring",
     -- back=gear.NIN_DA_DEX_Cape,
+    back=gear.NIN_WSD_STR_Cape,
     waist="Fotia Belt",
     
     -- feet="Hattori Kyahan +3",
@@ -584,6 +594,7 @@ function init_gear_sets()
     ring1="Gere Ring",
     ring2="Ephramad's Ring",
     -- back=gear.NIN_WSD_STR_Cape,
+    back=gear.NIN_WSD_STR_Cape,
     waist="Sailfi Belt +1",
     
     -- feet="Hattori Kyahan +3",
@@ -607,6 +618,7 @@ function init_gear_sets()
     ring1="Sroda Ring",
     ring2="Ephramad's Ring",
     -- back=gear.NIN_WSD_STR_Cape,
+    back=gear.NIN_WSD_STR_Cape,
     waist="Sailfi Belt +1",
     
     -- feet="Hattori Kyahan +3",
@@ -631,6 +643,7 @@ function init_gear_sets()
     ring1="Gere Ring",
     ring2="Ephramad's Ring",
     -- back=gear.NIN_Crit_DEX_Cape,
+    back=gear.NIN_WSD_STR_Cape,
     waist="Fotia Belt",
     
     -- body="Hattori Ningi +3",
@@ -649,6 +662,7 @@ function init_gear_sets()
     ring1="Gere Ring",
     ring2="Ephramad's Ring",
     -- back=gear.NIN_Crit_DEX_Cape,
+    back=gear.NIN_WSD_STR_Cape,
     waist="Fotia Belt",
     
     -- ear2="Hattori Earring +2",
@@ -668,6 +682,7 @@ function init_gear_sets()
     ring1="Gere Ring",
     ring2="Ephramad's Ring",
     -- back=gear.NIN_WSD_STR_Cape,
+    back=gear.NIN_WSD_STR_Cape,
     waist="Sailfi Belt +1",
     
     -- feet="Hattori Kyahan +3",
@@ -691,6 +706,7 @@ function init_gear_sets()
     ring1="Sroda Ring",
     ring2="Ephramad's Ring",
     -- back=gear.NIN_WSD_STR_Cape,
+    back=gear.NIN_WSD_STR_Cape,
     waist="Sailfi Belt +1",
     
     -- feet="Hattori Kyahan +3",
@@ -917,6 +933,7 @@ function init_gear_sets()
     neck="Warder's Charm +1",         -- [__/__, ___] ___, __; Absorb magic dmg
     ear1="Eabani Earring",            -- [__/__,   8]  15, __
     ear2="Arete Del Luna +1",         -- [__/__, ___] ___, __; Resists
+    ring1="Archon Ring",              -- [__/__, ___] ___, __; Annul magic dmg
     ring2="Defending Ring",           -- [10/10, ___] ___, __
     back=gear.NIN_STP_Cape,
     waist="Engraved Belt",            -- [__/__, ___] ___, __; Element resist
