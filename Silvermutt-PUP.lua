@@ -1682,7 +1682,7 @@ end
 function use_maneuver(maneuver_element)
   if pet.isvalid then
     -- Block action if unable to use Maneuver
-    if midaction() then
+    if silibs.midaction() then
       return
     end
     if buffactive['Overload'] then

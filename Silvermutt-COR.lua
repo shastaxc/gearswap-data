@@ -2308,7 +2308,7 @@ end
 function process_hasteinfo(cmdParams, eventArgs)
   if cmdParams[1] == 'hasteinfo' then
     dw_needed = tonumber(cmdParams[2])
-    if not midaction() then
+    if not silibs.midaction() then
       handle_equipping_gear(player.status)
     end
   end

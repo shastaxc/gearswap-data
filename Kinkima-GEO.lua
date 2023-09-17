@@ -1,4 +1,5 @@
 -- File Status: Good.
+-- TODO: Equip Bagua Galero in midcast for luopan if Blaze of Glory is on.
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs
@@ -1930,7 +1931,7 @@ function job_self_command(cmdParams, eventArgs)
     test()
   end
 
-  if not midaction() then
+  if not silibs.midaction() then
     handle_equipping_gear(player.status)
   end
 end

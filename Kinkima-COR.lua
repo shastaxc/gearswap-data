@@ -2220,7 +2220,7 @@ function job_buff_change(buff,gain)
     if not gain then
       flurry = nil
     end
-    if not midaction() then
+    if not silibs.midaction() then
       handle_equipping_gear(player.status)
     end
   end

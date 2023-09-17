@@ -944,17 +944,22 @@ function init_gear_sets()
     legs="Beckoner's Spats +2",
     feet="Beckoner's Pigaches +2",
     neck="Loricate Torque +1",
-    ear1="Dignitary's Earring",
+    ear1="Dedition Earring",
     ear2="Cessance Earring",
-    ring1="Varar Ring +1",
-    ring2="Varar Ring +1",
+    ring1="Chirich Ring +1",
+    ring2="Chirich Ring +1",
     back="Aurist's Cape +1",
     waist="Klouskap Sash +1",
     
     -- hands="Gazu Bracelets",
-    -- ear1="Telos Earring",
-    -- ring1="Petrov Ring",
-    -- ring2="Apate Ring",
+    -- ear2="Telos Earring",
+  }
+  sets.engaged.Acc = {
+    ear1="Dignitary's Earring",
+    ear2="Cessance Earring",
+
+    -- ear1="Cessance Earring",
+    -- ear2="Telos Earring",
   }
   
 

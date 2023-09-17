@@ -1418,7 +1418,7 @@ function gearinfo(cmdParams, eventArgs)
         Haste = tonumber(cmdParams[3])
       end
     end
-    if not midaction() then
+    if not silibs.midaction() then
       job_update()
     end
   end
