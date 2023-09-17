@@ -1564,12 +1564,11 @@ function init_gear_sets()
     ring1="Hetairoi Ring",            -- __, __, __ <__,  2, __> [__/__, ___] (__, __, __)
     ring2="Chirich Ring +1",          -- __,  6, 10 <__, __, __> [__/__, ___] (__, __, __)
     back=gear.RDM_STP_Cape,           -- __, 10, 30 <__, __, __> [10/__, ___] (__, __, __)
-    waist="Sailfi Belt +1",           -- __, __, __ < 5,  2, __> [__/__, ___] (__, __, __)
+    waist="Orpheus's Sash",           -- __, __, __ <__, __, __> [__/__, ___] (__, __, __); Dmg+15%
     -- Traits/merits/gifts            -- __, __, __ <__, __, __> [__/__, ___] (90,  7, 36)
-    -- 0 DW, 29 STP, 400 Acc <21 DA, 10 TA, 3 QA> [49 PDT/39 MDT, 596 M.Eva] (508 M.Acc, 26 Enspell Dmg, 36 Enh Skill)
+    -- 0 DW, 29 STP, 400 Acc <16 DA, 8 TA, 3 QA> [49 PDT/39 MDT, 596 M.Eva] (508 M.Acc, 26 Enspell Dmg, 36 Enh Skill)
 
     -- ear2="Lethargy Earring +2",    -- __, __, 20 < 8, __, __> [__/__, ___] (20, __, __)
-    -- waist="Orpheus's Sash",        -- __, __, __ <__, __, __> [__/__, ___] (__, __, __); Dmg+15%
   })
   -- Low DW (11 needed from gear)
   sets.engaged.LowDW.Enspell = set_combine(sets.engaged.Enspell, {

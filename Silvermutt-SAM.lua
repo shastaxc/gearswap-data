@@ -347,8 +347,7 @@ function init_gear_sets()
     ring1="Sroda Ring",
     ring2="Epaminondas's Ring",
     back=gear.SAM_STR_WSD_Cape,
-    waist="Fotia Belt",
-    -- waist="Orpheus's Sash",
+    waist="Orpheus's Sash",
   })
   sets.precast.WS['Tachi: Jinpu'].MaxTP = set_combine(sets.precast.WS['Tachi: Jinpu'], {
     ear1="Novio Earring",
