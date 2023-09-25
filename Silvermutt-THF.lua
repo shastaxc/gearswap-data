@@ -1940,7 +1940,7 @@ function set_sub_keybinds()
     send_command('bind !numpad0 input /ma "Utsusemi: Ichi" <me>')
     send_command('bind !numpad. input /ma "Utsusemi: Ni" <me>')
   elseif player.sub_job == 'RUN' then
-    send_command('bind %numpad0 input //gs c rune')
+    send_command('bind %numpad0 gs c rune')
     send_command('bind ^- gs c cycleback Runes')
     send_command('bind ^= gs c cycle Runes')
   elseif player.sub_job == 'DRG' then

@@ -1548,7 +1548,7 @@ function equip_attachments(set_name)
   -- messages in the console.
   if set_name == state.PetMode.current:lower() and not is_setting_attachments then
     is_setting_attachments = true
-    send_command('input //acon equipset '..set_name)
+    send_command('acon equipset '..set_name)
     coroutine.schedule(function()
       is_setting_attachments = false
     end, 3)
