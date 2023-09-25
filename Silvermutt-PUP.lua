@@ -1278,6 +1278,9 @@ function job_pet_midcast(spell, action, spellMap, eventArgs)
   -- THIS SHIT DOESN'T WORK. Needs a pet_precast function that doesn't exist
   -- equip(get_pup_midcast_set(spell, spellMap))
   -- eventArgs.handled = true
+	if spell.interrupted then
+    pending_pet_ability = false
+  end
 end
 
 -- Note: the "spell" object is different in the pet action hooks

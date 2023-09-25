@@ -1666,6 +1666,9 @@ end
 function job_pet_midcast(spell, action, spellMap, eventArgs)
   equip(get_bst_pet_midcast_set(spell, spellMap))
   eventArgs.handled = true
+	if spell.interrupted then
+    pending_pet_ability = false
+  end
 end
 
 -- Note: the "spell" object is different in the pet action hooks

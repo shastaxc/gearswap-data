@@ -1136,6 +1136,10 @@ end
 function job_pet_midcast(spell, action, spellMap, eventArgs)
   equip(get_smn_pet_midcast_set(spell, spellMap))
   eventArgs.handled = true
+  
+	if spell.interrupted then
+    pending_pet_ability = false
+  end
 end
 
 -- Runs when pet completes an action.
