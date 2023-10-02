@@ -149,6 +149,7 @@ function job_setup()
 
   latestAvatar = pet.name or nil -- DO NOT MODIFY
   last_pet_midcast_set = {} -- DO NOT MODIFY
+  last_pet_midaction_time = 0 -- DO NOT MODIFY
 
   set_main_keybinds()
 end
@@ -1032,7 +1033,7 @@ function job_precast(spell, action, spellMap, eventArgs)
     equip(get_smn_pet_midcast_set(spell, spellMap))
     eventArgs.handled = true
   else
-    if pending_pet_ability then
+    if pending_pet_ability() then
       eventArgs.cancel = true
       add_to_chat(122, 'Action canceled because pet was midaction.')
     end
@@ -1117,7 +1118,7 @@ function job_aftercast(spell, action, spellMap, eventArgs)
     elseif spell.type == 'BloodPactRage' or spell.type == 'BloodPactWard' then
       equip(get_smn_pet_midcast_set(spell, spellMap))
       last_pet_midcast_set = set_combine(gearswap.equip_list, {})
-      pending_pet_ability = true
+      last_pet_midaction_time = os.clock()
       eventArgs.handled = true
     end
   end
@@ -1138,14 +1139,14 @@ function job_pet_midcast(spell, action, spellMap, eventArgs)
   eventArgs.handled = true
   
 	if spell.interrupted then
-    pending_pet_ability = false
+    last_pet_midaction_time = 0
   end
 end
 
 -- Runs when pet completes an action.
 -- Note: the "spell" object is different in the pet action hooks
 function job_pet_aftercast(spell, action, spellMap, eventArgs)
-  pending_pet_ability = false
+  last_pet_midaction_time = 0
 
 	if not spell.interrupted then
     if spell.type == 'BloodPactWard' and spellMap ~= 'DebuffBloodPactWard' then
@@ -1268,7 +1269,7 @@ end
 
 -- Modify the default idle set after it was constructed.
 function customize_idle_set(idleSet)
-  if not pending_pet_ability then
+  if not pending_pet_ability() then
     if state.Buff['Astral Conduit'] then
       if pet.isvalid then
         idleSet = set_combine(idleSet, last_pet_midcast_set)
@@ -1312,7 +1313,7 @@ function customize_idle_set(idleSet)
 end
 
 function customize_melee_set(meleeSet)
-  if not pending_pet_ability then
+  if not pending_pet_ability() then
     if state.Buff['Astral Conduit'] then
       if pet.isvalid then
         meleeSet = set_combine(meleeSet, last_pet_midcast_set)
@@ -1350,7 +1351,7 @@ function customize_melee_set(meleeSet)
 end
 
 function customize_defense_set(defenseSet)
-  if not pending_pet_ability then
+  if not pending_pet_ability() then
     if pet.isvalid and pet.status == 'Engaged' then
       defenseSet = set_combine(defenseSet, sets.idle.Avatar.Melee)
     else
@@ -1414,6 +1415,10 @@ function display_current_job_state(eventArgs)
     )
 
   eventArgs.handled = true
+end
+
+function pending_pet_ability()
+  return (os.clock() - last_pet_midaction_time) < 3
 end
 
 
