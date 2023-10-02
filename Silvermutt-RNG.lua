@@ -2065,7 +2065,7 @@ function unbind_keybinds()
   send_command('unbind !d')
   send_command('unbind @w')
 
-  send_command('bind ^`')
+  send_command('unbind ^`')
   send_command('unbind @c')
   send_command('unbind ^insert')
   send_command('unbind ^delete')
