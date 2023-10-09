@@ -151,11 +151,15 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.TreasureHunter = {
-    ammo="Perfect Lucky Egg", --1; Remove ammo when other items obtained
+    ammo="Perfect Lucky Egg", --1
+    waist="Chaac Belt", --1
+    
     -- hands="Plunderer's Armlets +3", --4
     -- feet="Skulker's Poulaines +2", --4
   }
   sets.TreasureHunter.RA = {
+    waist="Chaac Belt", --1
+
     -- hands="Plunderer's Armlets +3", --4
     -- feet="Skulker's Poulaines +2", --4
   }
@@ -630,27 +634,42 @@ function init_gear_sets()
     -- head=gear.Herc_Refresh_head,
     -- feet=gear.Herc_Refresh_feet,
   }
+  sets.latent_regain = {
+    -- head="Turms Cap +1",
+    -- body="Gleti's Cuirass",
+    -- hands="Gleti's Gauntlets",
+    -- legs="Gleti's Breeches",
+  }
 
   sets.resting = {}
 
   sets.idle = {
-    -- ammo="Yamarang",           -- __/__,  15
-    -- head="Turms Cap +1",       -- __/__, 109
-    -- body="Gleti's Cuirass",    --  9/__, 102
-    -- hands="Gleti's Gauntlets", --  7/__,  75
-    -- legs="Gleti's Breeches",   --  8/__, 112
-    -- feet="Gleti's Boots",      --  5/__, 112
-    neck="Loricate Torque +1",    --  6/ 6, ___
-    ear1="Arete Del Luna +1",     -- __/__, ___; Resists
-    ear2="Odnowa Earring +1",     --  3/ 5, ___
-    -- ring1="Moonlight Ring",    --  5/ 5, ___
-    ring2="Defending Ring",       -- 10/10, ___
-    -- back=gear.THF_TP_Cape,     -- 10/__, ___
-    -- waist="Engraved Belt",     -- __/__, ___
-    -- 63 PDT/26 MDT, 533 M.Eva
+    ammo="Yamarang",            -- __/__,  15
+    head="Malignance Chapeau",
+    body="Malignance Tabard",
+    hands="Malignance Gloves",
+    legs="Malignance Tights",
+    feet="Malignance Boots",
+    neck="Loricate Torque +1",  --  6/ 6, ___
+    ear1="Arete Del Luna +1",   -- __/__, ___; Resists
+    ear2="Odnowa Earring +1",   --  3/ 5, ___
+    ring1="Shneddick Ring",
+    ring2="Defending Ring",     -- 10/10, ___
+    back="Mecistopins Mantle",
+    waist="Flume Belt +1",
+
+    -- head="Turms Cap +1",        -- __/__, 109
+    -- body="Gleti's Cuirass",     --  9/__, 102
+    -- hands="Gleti's Gauntlets",  --  7/__,  75
+    -- legs="Gleti's Breeches",    --  8/__, 112
+    -- feet="Gleti's Boots",       --  5/__, 112
+    -- ring1="Moonlight Ring",     --  5/ 5, ___
+    -- back=gear.THF_TP_Cape,      -- 10/__, ___
+    -- waist="Engraved Belt",      -- __/__, ___
+    -- 63 PDT/26 MDT, 525 M.Eva
   }
 
-  sets.idle.Regain = set_combine(sets.idle, {})
+  sets.idle.Regain = set_combine(sets.idle, sets.latent_regain)
   sets.idle.Regen = set_combine(sets.idle, sets.latent_regen)
   sets.idle.Refresh = set_combine(sets.idle, sets.latent_refresh)
   sets.idle.Regain.Regen = set_combine(sets.idle, sets.latent_regen)
@@ -1187,13 +1206,16 @@ function init_gear_sets()
   }
 
   sets.WeaponSet = {}
-  sets.WeaponSet['WhiteGlass'] = {
-    main="Twashtar",
-    sub={name="Centovente", priority=1},
-  }
   sets.WeaponSet['Normal'] = {
-    main="Aeneas",
-    sub="Twashtar",
+    main="Tauret",
+    sub={name="Centovente", priority=1},
+    
+    -- main="Twashtar",
+  }
+  sets.WeaponSet['HighAcc'] = {
+    main="Tauret",
+    sub=gear.Malevolence_1,
+
     -- main="Twashtar",
     -- sub="Gleti's Knife",
   }
@@ -1207,6 +1229,8 @@ function init_gear_sets()
   }
   sets.WeaponSet['NaeglingAcc'] = {
     main="Naegling",
+    sub="Tauret",
+
     -- sub="Ternion Dagger +1",
   }
   sets.WeaponSet['H2H'] = {
@@ -1214,16 +1238,20 @@ function init_gear_sets()
     -- sub=empty,
   }
   sets.WeaponSet['SoloCleaving'] = {
+    main="Tauret",
+    sub=gear.Malevolence_1,
+    
     -- main=gear.Gandring_C,
-    sub="Tauret",
   }
   sets.WeaponSet['Cleaving'] = {
     main="Tauret",
-    sub="Twashtar",
+    sub=gear.Malevolence_1,
+
+    -- main=gear.Malevolence_2,
   }
   sets.WeaponSet['Staff'] = {
     main="Gozuki Mezuki",
-    sub="empty",
+    sub=empty,
   }
 end
 
