@@ -80,6 +80,7 @@ function job_setup()
   state.HybridMode:options('HeavyDef', 'Normal')
   state.CastingMode:options('Resistant', 'Normal')
   state.IdleMode:options('Normal', 'HeavyDef')
+  state.WeaponskillMode:options('Normal', 'Proc')
   
   state.CP = M(false, 'Capacity Points Mode')
   state.AttCapped = M(true, 'Attack Capped')
@@ -718,6 +719,22 @@ function init_gear_sets()
     -- ear1="Lugra Earring +1",
     -- ear2="Hattori Earring +2",
   })
+
+  sets.precast.WS['Proc'] = {
+    ammo="Yamarang",
+    head="Malignance Chapeau",
+    body="Malignance Tabard",
+    hands="Malignance Gloves",
+    legs="Malignance Tights",
+    feet="Malignance Boots",
+    neck=empty,
+    ear1=empty,
+    ear2=empty,
+    ring1=empty,
+    ring2=empty,
+    back=empty,
+    waist=empty,
+  }
 
 
   ------------------------------------------------------------------------------------------------
@@ -1404,7 +1421,7 @@ function job_precast(spell, action, spellMap, eventArgs)
   silibs.precast_hook(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
 
-  if spell.skill == "Ninjutsu" then
+  if spell.skill == 'Ninjutsu' then
     do_ninja_tool_checks(spell, spellMap, eventArgs)
   end
   if spellMap == 'Utsusemi' then
@@ -1423,6 +1440,9 @@ function job_post_precast(spell, action, spellMap, eventArgs)
   if spell.type == 'WeaponSkill' then
     if buffactive['Reive Mark'] then
       equip(sets.Reive)
+    end
+    if state.WeaponskillMode.value == 'Proc' and silibs.proc_ws_abyssea_red:contains(spell.english) then
+      equip(sets.precast.WS['Proc'])
     end
   end
 
