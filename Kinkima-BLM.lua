@@ -33,25 +33,17 @@ function job_setup()
   state.OffenseMode:options('Normal', 'MidAcc', 'HighAcc', 'Enspell')
   state.HybridMode:options('Normal')
   state.WeaponskillMode:options('Normal')
-  state.CastingMode:options('Normal', 'Seidr', 'Resistant')
-  state.IdleMode:options('Normal', 'Gyve')
-  state.EnSpell = M{['description']='EnSpell', 'Enfire', 'Enblizzard', 'Enaero', 'Enstone', 'Enthunder', 'Enwater'}
+  state.CastingMode:options('Normal', 'Spaekona')
+  state.IdleMode:options('Normal')
   state.BarElement = M{['description']='BarElement', 'Barfire', 'Barblizzard', 'Baraero', 'Barstone', 'Barthunder', 'Barwater'}
   state.BarStatus = M{['description']='BarStatus', 'Baramnesia', 'Barvirus', 'Barparalyze', 'Barsilence', 'Barpetrify', 'Barpoison', 'Barblind', 'Barsleep'}
-  state.GainSpell = M{['description']='GainSpell', 'Gain-STR', 'Gain-INT', 'Gain-AGI', 'Gain-VIT', 'Gain-DEX', 'Gain-MND', 'Gain-CHR'}
-  state.PhysicalDefenseMode = M{['description'] = 'Physical Defense Mode', 'PDT', 'CaitSith'}
   state.MagicBurst = M(false, 'Magic Burst')
   state.SleepMode = M{['description']='Sleep Mode', 'Normal', 'MaxDuration'}
   state.NM = M(false, 'NM?')
   state.CP = M(false, 'Capacity Points Mode')
-  state.WeaponSet = M{['description']='Weapon Set', 'Casting', 'Savage', 'SavageAcc', 'Enspell', 'BlackHalo', 'BlackHaloAcc', 'Seraph', 'Cleaving', 'CleavingAcc'}
-  state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger',
-      'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
+  state.WeaponSet = M{['description']='Weapon Set', 'Casting', 'Cleaving', 'Myrkr'}
+  state.ToyWeapons = M{['description']='Toy Weapons','None'}
   state.ElementalMode = M{['description'] = 'Elemental Mode', 'Fire','Ice','Wind','Earth','Lightning','Water','Light','Dark'}
-
-  state.Buff.Composure = buffactive.Composure or false
-  state.Buff.Saboteur = buffactive.Saboteur or false
-  state.Buff.Stymie = buffactive.Stymie or false
 
   enfeebling_stat_map = {
     ['Addle'] = 'MND', ['Addle II'] = 'MND',
@@ -99,14 +91,6 @@ function job_setup()
     [4] = 1.35,
     [5] = 1.50,
   }
-  saboteur_bonus_gear = {
-    ['Estoquer\'s Gantherots +1'] = {normal=2.05, nm=1.30},
-    ['Estoquer\'s Gantherots +2'] = {normal=2.10, nm=1.35},
-    ['Lethargy Gantherots'] =       {normal=2.11, nm=1.36},
-    ['Lethargy Gantherots +1'] =    {normal=2.12, nm=1.37},
-    ['Lethargy Gantherots +2'] =    {normal=2.13, nm=1.38},
-    ['Lethargy Gantherots +3'] =    {normal=2.14, nm=1.39},
-  }
   enf_timer_spells = S{'Sleep', 'Sleep II', 'Sleepga', 'Sleepga II', 'Break', 'Breakga'}
   -- Spells with variable base duration
   enf_variable_duration_spells = S{'Gravity', 'Gravity II', 'Bind', 'Addle', 'Addle II'}
@@ -152,74 +136,74 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   -- Precast sets to enhance JAs
-  sets.precast.JA['Chainspell'] = {
-    body="Vitiation Tabard +3"
+  sets.precast.JA['Manafont'] = {
+    body="Archmage's Coat +3",
   }
 
   -- Fast cast sets for spells (cap 80% FC).
-  -- RDM has 38% FC at 2000 job points
   sets.precast.FC = {
     range=empty,                      -- __ [__/__, ___]
     ammo="Sapience Orb",              --  2 [__/__, ___]
-    head="Atrophy Chapeau +3",        -- 16 [__/__,  95]
-    body="Shamash Robe",              -- __ [10/__, 106]; Resist Silence+90
-    hands=gear.Nyame_B_hands,         -- __ [ 7/ 7, 112]
-    legs="Bunzi's Pants",             -- __ [ 9/ 9, 150]
-    feet=gear.Nyame_B_feet,           -- __ [ 7/ 7, 150]
+    head=gear.Merl_FC_head,           -- 15 [__/__,  86]
+    body=gear.Merl_FC_body,           -- 14 [ 2/__,  91]
+    hands="Wicce Gloves +3",          -- __ [13/13,  98]
+    legs="Agwu's Slops",              --  7 [10/10, 134]
+    feet=gear.Merl_FC_feet,           -- 12 [__/__, 118]
     neck="Orunmila's Torque",         --  5 [__/__, ___]
-    ear1="Arete Del Luna +1",         -- __ [__/__, ___]; Resist Statuses
+    ear1="Malignance Earring",        --  4 [__/__, ___]
     ear2="Etiolation Earring",        --  1 [__/ 3, ___]; Resist Silence+15
     ring1="Kishar Ring",              --  4 [__/__, ___]
     ring2="Defending Ring",           -- __ [10/10, ___]
-    back=gear.RDM_FC_Cape,            -- 10 [10/10, ___]
+    back=gear.BLM_FC_Cape,            -- 10 [10/10, ___]
     waist="Shinjutsu-no-Obi +1",      --  5 [__/__, ___]
-    -- Traits/Gifts/Merits            -- 38 [__/__, ___]
-    -- 81 FC [53 PDT/46 MDT, 613 M.Eva]
+    -- 79 FC [45 PDT/46 MDT, 527 M.Eva]
   }
 
-  -- 10% cap on quick magic
-  sets.precast.FC.QuickMagic = {
-    range=empty,                      -- __ [__/__, ___]
-    ammo="Impatiens",                 -- __ [__/__, ___]  2
-    head="Bunzi's Hat",               -- 10 [ 7/ 7, 123]
-    body="Pinga Tunic +1",            -- 15 [__/__, 128]
-    hands="Lethargy Gantherots +3",   -- __ [11/11,  87]
-    legs="Bunzi's Pants",             -- __ [ 9/ 9, 150]
-    feet=gear.Carmine_D_feet,         --  8 [ 4/__,  80]
-    neck="Loricate Torque +1",        -- __ [ 6/ 6, ___]
-    ear1="Odnowa Earring +1",         -- __ [ 3/ 5, ___]
-    ear2="Lethargy Earring",          --  7 [__/__, ___]
-    ring1="Lebeche Ring",             -- __ [__/__, ___]  2
-    ring2="Defending Ring",           -- __ [10/10, ___]
-    back="Perimede Cape",             -- __ [__/__, ___]  4
-    waist="Witful Belt",              --  3 [__/__, ___]  3
-    -- Traits/Gifts/Merits            -- 38 [__/__, ___]
-    -- 81 FC [50 PDT/48 MDT, 568 M.Eva] 11 QM
-  }
-
-  sets.precast.FC.Impact = {
-    range=empty,                      -- __ [__/__, ___]
-    ammo="Sapience Orb",              --  2 [__/__, ___]
+  sets.precast.FC.Impact = set_combine(sets.precast.FC, {
     head=empty,                       -- __ [__/__, ___]
     body="Crepuscular Cloak",         -- __ [__/__, 231]
-    hands="Lethargy Gantherots +3",   -- __ [11/11,  87]
-    legs="Bunzi's Pants",             -- __ [ 9/ 9, 150]
-    feet=gear.Carmine_D_feet,         --  8 [ 4/__,  80]
-    neck="Orunmila's Torque",         --  5 [__/__, ___]
-    ear1="Malignance Earring",        --  4 [__/__, ___]
-    ear2="Lethargy Earring",          --  7 [__/__, ___]
-    ring1="Gelatinous Ring +1",       -- __ [ 7/-1, ___]
-    ring2="Defending Ring",           -- __ [10/10, ___]
-    back=gear.RDM_FC_Cape,            -- 10 [10/10, ___]
-    waist="Shinjutsu-no-Obi +1",      --  5 [__/__, ___]
-    -- Traits/Gifts/Merits            -- 38 [__/__, ___]
-    -- 79 FC [51 PDT/39 MDT, 548 M.Eva]
-  }
-
+  })
   sets.precast.FC.Dispelga = set_combine(sets.precast.FC, {
     main="Daybreak",
     sub={name="Ammurapi Shield", priority=1},
   })
+  
+  sets.precast.FC.RDM = {
+    range=empty,                      -- __ [__/__, ___]
+    ammo="Sapience Orb",              --  2 [__/__, ___]
+    head=gear.Merl_FC_head,           -- 15 [__/__,  86]
+    body="Shamash Robe",              -- __ [10/__, 106]; Resist Silence+90
+    hands="Wicce Gloves +3",          -- __ [13/13,  98]
+    legs="Agwu's Slops",              --  7 [10/10, 134]
+    feet=gear.Merl_FC_feet,           -- 12 [__/__, 118]
+    neck="Orunmila's Torque",         --  5 [__/__, ___]
+    ear1="Malignance Earring",        --  4 [__/__, ___]
+    ear2="Etiolation Earring",        --  1 [__/ 3, ___]; Resist Silence+15
+    ring1="Kishar Ring",              --  4 [__/__, ___]
+    ring2="Defending Ring",           -- __ [10/10, ___]
+    back=gear.BLM_FC_Cape,            -- 10 [10/10, ___]
+    waist="Shinjutsu-no-Obi +1",      --  5 [__/__, ___]
+    -- Sub RDM trait                  -- 15
+    -- 80 FC [53 PDT/46 MDT, 542 MEVA]
+  }
+  sets.precast.FC.QuickMagic.RDM = {
+    range=empty,                      -- __ [__/__, ___]
+    ammo="Impatiens",                 -- __ [__/__, ___]  2
+    head=gear.Merl_FC_head,           -- 15 [__/__,  86]
+    body=gear.Merl_FC_body,           -- 14 [ 2/__,  91]
+    hands="Wicce Gloves +3",          -- __ [13/13,  98]
+    legs="Agwu's Slops",              --  7 [10/10, 134]
+    feet=gear.Merl_FC_feet,           -- 12 [__/__, 118]
+    neck="Loricate Torque +1",        -- __ [ 6/ 6, ___] __; DEF+60
+    ear1="Malignance Earring",        --  4 [__/__, ___]
+    ear2="Etiolation Earring",        --  1 [__/ 3, ___]; Resist Silence+15
+    ring1="Lebeche Ring",             -- __ [__/__, ___]  2
+    ring2="Defending Ring",           -- __ [10/10, ___]
+    back=gear.BLM_FC_Cape,            -- 10 [10/10, ___]
+    waist="Witful Belt",              --  3 [__/__, ___]  3
+    -- Sub RDM trait                  -- 15
+    -- 81 FC [51 PDT/52 MDT, 527 MEVA] 7 QM
+  }
 
 
   ------------------------------------------------------------------------------------------------
@@ -239,167 +223,63 @@ function init_gear_sets()
     ear2="Moonshade Earring",         -- __,  4, __, __, __ <__, __, __> (__, __) [__/__, ___]; TP Bonus+250
     ring1="Ephramad's Ring",          -- 10, 20, 20, __, 10 <__, __, __> (__, __) [__/__, ___]
     ring2="Epaminondas's Ring",       -- __, __, __,  5, __ <__, __, __> (__, __) [__/__, ___]
-    back=gear.RDM_WSD_Cape,           -- __, 20, __, 10, __ <__, __, __> (__, __) [10/__, ___]
+    back=gear.BLM_WSD_Cape,           -- __, 20, __, 10, __ <__, __, __> (__, __) [10/__, ___]
     -- waist="Fotia Belt",            -- __, 10, __, __, __ <__, __, __> (__, __) [__/__, ___]; ftp+0.1
     -- 179 STR, 292 Acc, 350 Att, 78 WSD, 0 PDL <28 DA, 0 TA, 0 QA> (0 Crit Rate, 0 Crit Dmg) [48 PDT/38 MDT, 674 M.Eva]
   }
 
-  -- 80% DEX. 3 hit. Can crit. Transfers fTP.
-  sets.precast.WS['Chant du Cygne'] = set_combine(sets.precast.WS, {
-    range=empty,                      -- __, __, __, __, __ <__, __, __> (__, __) [___/___, ___]
-    -- ammo="Yetshila +1",            -- __, __, __, __, __ <__, __, __> ( 2,  6) [___/___, ___]
-    -- head="Blistering Sallet +1",   -- 41, 53, __, __, __ < 3, __, __> (10, __) [  3/___,  53]
-    body=gear.Nyame_B_body,           -- 24, 40, 65, 13, __ < 7, __, __> (__, __) [  9/  9, 139]
-    hands=gear.Nyame_B_hands,         -- 17, 40, 65, 11, __ < 5, __, __> (__, __) [  7/  7, 112]
-    legs=gear.Nyame_B_legs,           -- __, 40, 65, 12, __ < 6, __, __> (__, __) [  8/  8, 150]
-    -- feet="Thereoid Greaves",       -- 28, __, 25, __, __ <__, __, __> ( 4,  5) [___/___,  69]
-    -- neck="Fotia Gorget",           -- __, 10, __, __, __ <__, __, __> (__, __) [___/___, ___]; ftp+0.1
-    -- ear1="Mache Earring +1",       --  8, 10, __, __, __ < 2, __, __> (__, __) [___/___, ___]
-    ear2="Moonshade Earring",         -- __,  4, __, __, __ <__, __, __> (__, __) [___/___, ___]; TP Bonus+250
-    -- ring1="Begrudging Ring",       -- __,  7,  7, __, __ <__, __, __> ( 5, __) [-10/-10, ___]
-    ring2="Ephramad's Ring",          -- 10, 20, 20, __, 10 <__, __, __> (__, __) [___/___, ___]
-    -- back=gear.RDM_Crit_Cape,       -- 30, 20, __, __, __ <__, __, __> (10, __) [ 10/___, ___]
-    -- waist="Fotia Belt",            -- __, 10, __, __, __ <__, __, __> (__, __) [___/___, ___]; ftp+0.1
-    -- 158 DEX, 254 Acc, 247 Att, 36 WSD, 10 PDL <23 DA, 0 TA, 0 QA> (31 Crit Rate, 11 Crit Dmg) [27 PDT/14 MDT, 523 M.Eva]
+  -- Dark elemental WS. Lower target M.Def. Duration varies with TP. dStat = INT.
+  sets.precast.WS['Vidohunir'] = set_combine(sets.precast.WS, {
+    range=empty,                      -- __, __, __, __, __ [__/__, ___]
+    ammo="Ghastly Tathlum +1",        -- 11, __, __, __, 21 [__/__, ___]
+    -- head="Wicce Petasos +3",       -- 39, 61, __, 51, 31 [11/11, 136]
+    -- body="Wicce Coat +3",          -- 50, 64, __, 59, 34 [__/__, 141]
+    hands="Wicce Gloves +3",          -- 38, 62, __, 57, 32 [13/13,  98]
+    legs="Agwu's Slops",              -- 49, 55, __, 60, 20 [10/10, 134]
+    -- feet="Wicce Sabots +3",        -- 36, 60, __, 50, 30 [11/11, 168]
+    neck="Sibyl Scarf",               -- 10, __, __, 10, __ [__/__, ___]
+    ear1="Malignance Earring",        --  8, 10, __,  8, __ [__/__, ___]
+    ear2="Moonshade Earring",         -- __, __, __, __, __ [__/__, ___]; TP Bonus+250
+    ring1="Metamorph Ring +1",        -- 16, 15, __, __, __ [__/__, ___]
+    ring2="Freke Ring",               -- 10, __, __,  8, __ [__/__, ___]
+    back="Aurist's Cape +1",          -- 33, 33, __, __, __ [__/__, ___]
+    waist="Acuity Belt +1",           -- 23, 15, __, __, __ [__/__, ___]
+    -- 333 INT, 375 M.Acc, 0 WSD, 310 MAB, 168 M.Dmg [45 PDT/45 MDT, 677 M.Eva]
   })
-  sets.precast.WS['Chant du Cygne'].MaxTP = set_combine(sets.precast.WS['Chant du Cygne'], {
-    ear2="Sherida Earring",           --  5, __, __, __, __ < 5, __, __> (__, __) [___/___, ___]
-  })
-
-  -- 60% STR. 4 hit. Can crit. Transfers fTP.
-  sets.precast.WS['Vorpal Blade'] = {
-    range=empty,                      -- __, __, __, __, __ <__, __, __> (__, __) [___/___, ___]
-    -- ammo="Yetshila +1",            -- __, __, __, __, __ <__, __, __> ( 2,  6) [___/___, ___]
-    -- head="Blistering Sallet +1",   -- 41, 53, __, __, __ < 3, __, __> (10, __) [  3/___,  53]
-    body=gear.Nyame_B_body,           -- 45, 40, 65, 13, __ < 7, __, __> (__, __) [  9/  9, 139]
-    hands=gear.Nyame_B_hands,         -- 17, 40, 65, 11, __ < 5, __, __> (__, __) [  7/  7, 112]
-    legs=gear.Nyame_B_legs,           -- 58, 40, 65, 12, __ < 6, __, __> (__, __) [  8/  8, 150]
-    -- feet="Thereoid Greaves",       -- 13, __, 25, __, __ <__, __, __> ( 4,  5) [___/___,  69]
-    -- neck="Fotia Gorget",           -- __, 10, __, __, __ <__, __, __> (__, __) [___/___, ___]; ftp+0.1
-    ear1="Sherida Earring",           --  5, __, __, __, __ < 5, __, __> (__, __) [___/___, ___]
-    ear2="Moonshade Earring",         -- __,  4, __, __, __ <__, __, __> (__, __) [___/___, ___]; TP Bonus+250
-    -- ring1="Begrudging Ring",       -- __,  7,  7, __, __ <__, __, __> ( 5, __) [-10/-10, ___]
-    ring2="Sroda Ring",               -- 15, __, __, __, __ <__, __, __> (__, __) [___/___, ___]
-    -- back=gear.RDM_Crit_Cape,       -- __, 20, __, __, __ <__, __, __> (10, __) [ 10/___, ___]
-    -- waist="Fotia Belt",            -- __, 10, __, __, __ <__, __, __> (__, __) [___/___, ___]; ftp+0.1
-    -- 194 STR, 224 Acc, 227 Att, 36 WSD, 0 PDL <26 DA, 0 TA, 0 QA> (31 Crit Rate, 11 Crit Dmg) [27 PDT/14 MDT, 523 M.Eva]
-
-    -- ear2="Lethargy Earring +2",    -- 15, __, __, __, __ < 8, __, __> (__, __) [___/___, ___]
-    -- back=gear.RDM_STR_Crit_Cape,   -- 30, 20, __, __, __ <__, __, __> (10, __) [ 10/___, ___]
-  }
-  sets.precast.WS['Vorpal Blade'].MaxTP = set_combine(sets.precast.WS['Vorpal Blade'], {
-    ear2="Odnowa Earring +1",         --  3, 10, __, __, __ <__, __, __> (__, __) [  3/  5, ___]
+  sets.precast.WS['Vidohunir'].MaxTP = set_combine(sets.precast.WS['Vidohunir'], {
+    ear2="Regal Earring",             -- 10, __, __,  7, __ [__/__, ___]
   })
 
-  -- 50% STR/50% MND. 2 hit. Scales well with WSD, not multihit.
-  sets.precast.WS['Savage Blade'] = set_combine(sets.precast.WS, {
-    range=empty,                      -- __, __, __, __, __, __ <__, __, __> (__, __) [__/__, ___]
-    ammo="Oshasha's Treatise",        -- __, __,  5,  5,  3, __ <__, __, __> (__, __) [__/__, ___]
-    head=gear.Nyame_B_head,           -- 26, 26, 50, 65, 11, __ < 5, __, __> (__, __) [ 7/ 7, 123]
-    body=gear.Nyame_B_body,           -- 45, 37, 40, 65, 13, __ < 7, __, __> (__, __) [ 9/ 9, 139]
-    hands=gear.Nyame_B_hands,         -- 17, 40, 40, 65, 11, __ < 5, __, __> (__, __) [ 7/ 7, 112]
-    legs=gear.Nyame_B_legs,           -- 58, 32, 40, 65, 12, __ < 6, __, __> (__, __) [ 8/ 8, 150]
-    feet=gear.Nyame_B_feet,           -- 23, 26, 53, 65, 11, __ < 5, __, __> (__, __) [ 7/ 7, 150]
-    neck="Duelist's Torque +2",       -- __, 15, __, __, __, __ <__, __, __> (__, __) [__/__, ___]
-    ear1="Ishvara Earring",           -- __, __, __, __,  2, __ <__, __, __> (__, __) [__/__, ___]
-    ear2="Moonshade Earring",         -- __, __,  4, __, __, __ <__, __, __> (__, __) [__/__, ___]; TP Bonus+250
-    ring1="Ephramad's Ring",          -- 10, __, 20, 20, __, 10 <__, __, __> (__, __) [__/__, ___]
-    ring2="Epaminondas's Ring",       -- __, __, __, __,  5, __ <__, __, __> (__, __) [__/__, ___]
-    back=gear.RDM_WSD_Cape,           -- __, 30, 20, __, 10, __ <__, __, __> (__, __) [10/__, ___]
-    waist="Sailfi Belt +1",           -- 15, __, __, 15, __, __ < 5,  2, __> (__, __) [__/__, ___]
-    -- 194 STR, 206 MND, 272 Acc, 365 Att, 78 WSD, 10 PDL <33 DA, 2 TA, 0 QA> [48 PDT/38 MDT, 674 M.Eva]
+  sets.precast.WS['Cataclysm'] = set_combine(sets.precast.WS['Vidohunir'], {
+    head="Pixie Hairpin +1",
+    ring2="Archon Ring",
   })
-  sets.precast.WS['Savage Blade'].MaxTP = set_combine(sets.precast.WS['Savage Blade'], {
-    ear2="Sherida Earring",           --  5, __, __, __, __, __ < 5, __, __> (__, __) [___/___, ___]
+  sets.precast.WS['Cataclysm'].MaxTP = set_combine(sets.precast.WS['Cataclysm'], {
+    ear2="Regal Earring",             -- 10, __, __,  7, __ [__/__, ___]
   })
   
-  -- 70% MND/ 30% STR. 2 hit.
-  sets.precast.WS['Black Halo'] = set_combine(sets.precast.WS['Savage Blade'], {})
-  sets.precast.WS['Black Halo'].MaxTP = set_combine(sets.precast.WS['Savage Blade'].MaxTP,{})
-
-  -- 50% MND / 30% STR. 3 hit.
-  sets.precast.WS['Death Blossom'] = set_combine(sets.precast.WS['Savage Blade'],{})
-  sets.precast.WS['Death Blossom'].MaxTP = set_combine(sets.precast.WS['Savage Blade'].MaxTP,{})
-
-  -- 85% MND. 5 hit.
-  sets.precast.WS['Requiescat'] = set_combine(sets.precast.WS['Savage Blade'],{})
-  sets.precast.WS['Requiescat'].MaxTP = set_combine(sets.precast.WS['Savage Blade'].MaxTP,{})
-
-  -- 50% MND/30% STR. Dark elemental. dStat=INT. Focus on M.Dmg, WSC (stat) where 1M.Dmg==2MND==5STR
-  sets.precast.WS['Sanguine Blade'] = {
-    range=empty,                      -- __, __, __, __, __, __, __ [__/__, ___]
-    ammo="Ghastly Tathlum +1",        -- __, __, 11, __, __, __, 21 [__/__, ___]
-    head="Pixie Hairpin +1",          -- __, __, 27, __, __, __, __ [__/__, ___]; Dark MAB+28
-    body="Lethargy Sayon +3",         -- 34, 45, 47, 64, __, 54, 34 [14/14, 136]
-    hands="Lethargy Gantherots +3",   -- 16, 50, 33, 62, __, 52, 32 [11/11,  87]
-    legs="Bunzi's Pants",             -- 25, 38, 51, 55, __, 30, 60 [ 9/ 9, 150]
-    feet="Lethargy Houseaux +3",      -- 22, 32, 30, 60, 12, 50, 30 [__/__, 157]
-    neck="Sibyl Scarf",               -- __, __, 10, __, __, 10, __ [__/__, ___]
-    ear1="Malignance Earring",        -- __,  8,  8, 10, __,  8, __ [__/__, ___]
-    ear2="Regal Earring",             -- __, 10, 10, __, __,  7, __ [__/__, ___]
-    ring1="Archon Ring",              -- __, __, __,  5, __, __, __ [__/__, ___]; Dark MAB+5
-    ring2="Freke Ring",               -- __, __, 10, __, __,  8, __ [__/__, ___]
-    back=gear.RDM_MAB_Cape,           -- __, __, 30, 20, __, 10, 20 [10/__, ___]
-    waist="Refoccilation Stone",      -- __, __, __,  4, __, 10, __ [__/__, ___]
-    -- 97 STR, 183 MND, 267 INT, 280 M.Acc, 12 WSD, 239 MAB, 197 M.Dmg [44 PDT/34 MDT, 530 M.Eva]
+  sets.precast.WS['Earth Crusher'] = set_combine(sets.precast.WS['Vidohunir'], {})
+  sets.precast.WS['Earth Crusher'].MaxTP = set_combine(sets.precast.WS['Vidohunir'], {})
+  
+  -- Boost max MP and TP Bonus
+  sets.precast.WS['Myrkr'] = {
+    ammo="Ghastly Tathlum +1",        --  35, ___ [__/__, ___]
+    head="Pixie Hairpin +1",          -- 120, ___ [__/__, ___]
+    -- body="Wicce Coat +3",          -- 132, ___ [__/__, 141]
+    hands="Wicce Gloves +3",          --  50, ___ [13/13,  98]
+    -- legs="Wicce Chausses +3",      -- 119, ___ [__/__, 168]
+    -- feet="Wicce Sabots +3",        --  50, ___ [11/11, 168]
+    neck="Orunmila's Torque",         --  30, ___ [__/__, ___]
+    ear1="Etiolation Earring",        --  50, ___ [__/ 3, ___]
+    ear2="Moonshade Earring",         -- ___, 250 [__/__, ___]
+    ring1="Persis Ring",              --  80, ___ [__/ 1, ___]
+    ring2="Mephitas's Ring +1",       -- 110, ___ [__/__, ___]
+    back="Aurist's Cape +1",          --  45, ___ [__/__, ___]
+    waist="Acuity Belt +1",           --  35, ___ [__/__, ___]
+    -- 856 Max MP, 250 TP Bonus [24 PDT/28 MDT, 575 M.Eva]
   }
-
-  --Seraph blade is commonly used on single targets with Frazzle III landed.
-  --Because this WS is a low base dmg, it's dmg profile is closer to low tier magic dmg spells
-  -- Base Magical WS Damage = floor(((152 + floor((WeaponLevel - 99) × 2.45) + WSC) × fTP) + dSTAT + MDMG Stat)
-  -- Total Dmg = Base Magical WS Damage × (MAB / MDB) × WSD × WSD Boost JT × Weather+Day Bonus × Affinity × Weapon Skill Potency Bonus
-  --      × Augmented Weapon Skill Potency Bonus × Staff × Potency Multipliers × Resist × Resistance Rank Reduction × TMDA
-  --Priority: ftp >> MD == 0.4*(STR+MND) > MAB > WSD > Ele Aff.
-  -- 40% STR/40% MND. Light elemental. No dSTAT. 
-  sets.precast.WS['Seraph Blade'] = {
-    range=empty,                      -- __, __, __, __, __, __ [__/__, ___]
-    ammo="Ghastly Tathlum +1",        -- __, __, __, __, __, 21 [__/__, ___]
-    head=gear.Nyame_B_head,           -- 26, 26, 40, 11, 30, __ [ 7/ 7, 123]
-    body="Lethargy Sayon +3",         -- 34, 45, 64, __, 54, 34 [14/14, 136]
-    hands="Lethargy Gantherots +3",   -- 16, 50, 62, __, 52, 32 [11/11,  87]
-    legs="Bunzi's Pants",             -- 25, 38, 55, __, 30, 60 [ 9/ 9, 150]
-    feet="Lethargy Houseaux +3",      -- 22, 32, 60, 12, 50, 30 [__/__, 157]
-    neck="Baetyl Pendant",            -- __, __, __, __, 13, __ [__/__, ___]
-    ear1="Regal Earring",             -- __, 10, __, __,  7, __ [__/__, ___]
-    ear2="Moonshade earring",         -- __, __, __, __, __, __ [__/__, ___]; TP Bonus +250
-    ring1="Epaminondas's Ring",       -- __, __, __,  5, __, __ [__/__, ___]
-    ring2="Freke Ring",               -- __, __, __, __,  8, __ [__/__, ___]
-    back=gear.RDM_WSD_Cape,           -- __, 30, __, 10, __, __ [10/__, ___]
-    waist="Skrymir Cord",             -- __, __,  5, __,  5, 30 [__/__, ___]
-    -- 123 STR, 231 MND, 286 M.Acc, 38 WSD, 249 MAB, 207 M.Dmg [51 PDT/41 MDT, 653 M.Eva]
-    
-    -- waist="Skrymir Cord +1",       -- __, __,  7, __,  7, 35 [__/__, ___]
-    -- 123 STR, 231 MND, 288 M.Acc, 38 WSD, 251 MAB, 212 M.Dmg [51 PDT/41 MDT, 653 M.Eva]
-  }
-  sets.precast.WS['Seraph Blade'].MaxTP = set_combine(sets.precast.WS['Seraph Blade'], {
-    ear2="Malignance Earring",        -- __,  8, 10, __,  8, __ [__/__, ___]
-  })
-
-  --Because this WS is a low base dmg, it's dmg profile is closer to low tier magic dmg spells
-  --Priority: ftp >> MD == 0.4*(DEX/INT) > MAB > WSD > Ele Aff.
-  -- 40% DEX/40% INT. Wind elemental. dStat=INT.
-  sets.precast.WS['Aeolian Edge'] = {
-    range=empty,                      -- __, __, __, __, __, __ [__/__, ___]
-    ammo="Ghastly Tathlum +1",        -- __, 11, __, __, __, 21 [__/__, ___]
-    head="Lethargy Chappel +3",       -- 29, 38, 61, __, 56, 31 [10/10, 125]
-    body="Lethargy Sayon +3",         -- 34, 47, 64, __, 54, 34 [14/14, 136]
-    hands="Lethargy Gantherots +3",   -- 43, 33, 62, __, 52, 32 [11/11,  87]
-    legs="Bunzi's Pants",             -- __, 51, 55, __, 30, 60 [ 9/ 9, 150]
-    feet="Lethargy Houseaux +3",      -- 30, 30, 60, 12, 50, 30 [__/__, 157]
-    neck="Sibyl Scarf",               -- __, 10, __, __, 10, __ [__/__, ___]
-    ear1="Malignance Earring",        -- __,  8, 10, __,  8, __ [__/__, ___]
-    ear2="Moonshade earring",         -- __, __, __, __, __, __ [__/__, ___]; TP Bonus +250
-    ring1="Metamorph Ring +1",        -- __, 16, 15, __, __, __ [__/__, ___]
-    ring2="Freke Ring",               -- __, 10, __, __,  8, __ [__/__, ___]
-    back=gear.RDM_MAB_Cape,           -- __, 30, 20, __, 10, 20 [10/__, ___]
-    waist="Skrymir Cord",             -- __, __,  5, __,  5, 30 [__/__, ___]
-    -- 136 DEX, 284 INT, 352 M.Acc, 12 WSD, 283 MAB, 258 M.Dmg [54 PDT/44 MDT, 655 M.Eva]
-
-    -- waist="Skrymir Cord +1",       -- __, __,  7, __,  7, 35 [__/__, ___]
-    -- 136 DEX, 284 INT, 354 M.Acc, 12 WSD, 285 MAB, 263 M.Dmg [54 PDT/44 MDT, 655 M.Eva]
-  }
-  sets.precast.WS['Aeolian Edge'].MaxTP = set_combine(sets.precast.WS['Aeolian Edge'], {
-    ear2="Regal Earring",             -- __, 10, __, __,  7, __ [__/__, ___]
+  sets.precast.WS['Myrkr'].MaxTP = set_combine(sets.precast.WS['Myrkr'], {
+    ear2="Evans Earring",             --  50, ___ [__/__, ___]
   })
 
 
