@@ -32,6 +32,7 @@ function job_setup()
   state.IdleMode:options('Normal', 'HeavyDef')
   state.PhysicalDefenseMode = M{['description'] = 'Physical Defense Mode', 'PDT', 'CaitSith'}
   state.MagicBurst = M(true, 'Magic Burst')
+  state.WeaponSet = M{['description']='Weapon Set', 'Casting', 'Khatvanga'}
 
   state.Buff['Sublimation: Activated'] = buffactive['Sublimation: Activated'] or false
   state.HelixMode = M{['description']='Helix Mode', 'Potency', 'Duration'}
@@ -107,7 +108,7 @@ function init_gear_sets()
     main="Malignance Pole",           -- __ [20/20, ___]
     sub="Khonsu",                     -- __ [ 6/ 6, ___]
     ammo="Incantor Stone",            --  2 [__/__, ___]
-    head=gear.Psycloth_D_head,        -- 10 [__/__,  75]
+    head=gear.Merl_FC_head,           -- 15 [__/__,  86]
     body="Pinga Tunic +1",            -- 15 [__/__, 128]
     hands="Academic's Bracers +3",    --  9 [__/__,  57]
     legs="Pinga Pants +1",            -- 13 [__/__, 147]
@@ -119,12 +120,12 @@ function init_gear_sets()
     ring2="Defending Ring",           -- __ [10/10, ___]
     back=gear.SCH_FC_Cape,            -- 10 [10/__,  30]
     waist="Carrier's Sash",           -- __ [__/__, ___]; Ele Resist+15
-    -- 81 Fast Cast [53 PDT/38 MDT, 555 MEVA]
+    -- 86 Fast Cast [53 PDT/38 MDT, 566 MEVA]
 
     -- Ideal:
     -- main="Hvergelmir",             -- 50 [__/__, ___]
     -- sub="Khonsu",                  -- __ [ 6/ 6, ___]
-    -- head=gear.Psycloth_D_head,     -- 10 [__/__,  75]
+    -- head=gear.Merl_FC_head,        -- 15 [__/__,  86]
     -- ammo="Staunch Tathlum +1",     -- __ [ 3/ 3, ___]; Resist Status+11
     -- body="Shamash Robe",           -- __ [10/__, 106]; Resist Silence+90
     -- hands=gear.Nyame_B_hands,      -- __ [ 7/ 7, 112]
@@ -137,7 +138,7 @@ function init_gear_sets()
     -- ring2="Defending Ring",        -- __ [10/10, ___]
     -- back=gear.SCH_FC_Cape,         -- 10 [10/__,  30]
     -- waist="Carrier's Sash",        -- __ [__/__, ___]; Ele Resist+15
-    -- 84 Fast Cast [66 PDT/41 MDT, 620 MEVA]
+    -- 89 Fast Cast [66 PDT/41 MDT, 631 MEVA]
   }
   -- Grimoire casting bonuses multiply separately from FC, allowing
   -- breaking the normal 80% cast time reduction cap.
@@ -171,7 +172,7 @@ function init_gear_sets()
     main="Malignance Pole",           -- __ [20/20, ___] __
     sub="Khonsu",                     -- __ [ 6/ 6, ___] __
     ammo="Impatiens",                 -- __ [__/__, ___]  2
-    head=gear.Psycloth_D_head,        -- 10 [__/__,  75] __
+    head=gear.Merl_FC_head,           -- 15 [__/__,  86] __
     body="Pinga Tunic +1",            -- 15 [__/__, 128] __
     hands="Academic's Bracers +3",    --  9 [__/__,  57] __
     legs="Pinga Pants +1",            -- 13 [__/__, 147] __
@@ -183,7 +184,7 @@ function init_gear_sets()
     ring2="Defending Ring",           -- __ [10/10, ___] __
     back=gear.SCH_FC_Cape,            -- 10 [10/__,  30] __
     waist="Witful Belt",              --  3 [__/__, ___]  3
-    -- 81 Fast Cast [49PDT/41MDT, 555 MEVA] 7 Quick Magic
+    -- 86 Fast Cast [49PDT/41MDT, 566 MEVA] 7 Quick Magic
   }
   -- No point in this set until normal sets.precast.FC.QuickMagic can cap stats
   -- sets.precast.FC.QuickMagic.Grimoire = {}
@@ -192,7 +193,7 @@ function init_gear_sets()
     main=gear.Pedagogy_C,             --  8 [__/__, ___]
     sub="Khonsu",                     -- __ [ 6/ 6, ___]
     ammo="Staunch Tathlum +1",        -- __ [ 3/ 3, ___]; Resist status+11
-    head=gear.Psycloth_D_head,        -- 10 [__/__,  75]
+    head=gear.Merl_FC_head,           -- 15 [__/__,  86]
     body="Shamash Robe",              -- __ [10/__, 106]; Resist Silence+90
     hands="Academic's Bracers +3",    --  9 [__/__,  57]
     legs="Pinga Pants +1",            -- 13 [__/__, 147]
@@ -205,29 +206,29 @@ function init_gear_sets()
     back=gear.SCH_FC_Cape,            -- 10 [10/__,  30]
     waist="Carrier's Sash",           -- __ [__/__, ___]; Ele Resist+15
     -- Sub RDM trait                  -- 15
-    -- 82 Fast Cast [52 PDT/27 MDT, 533 MEVA]
+    -- 87 Fast Cast [52 PDT/27 MDT, 544 MEVA]
   }
   sets.precast.FC.QuickMagic.RDM = {
     main="Malignance Pole",           -- __ [20/20, ___] __
     sub="Khonsu",                     -- __ [ 6/ 6, ___] __
     ammo="Impatiens",                 -- __ [__/__, ___]  2
-    head=gear.Psycloth_D_head,        -- 10 [__/__,  75] __
+    head=gear.Merl_FC_head,           -- 15 [__/__,  86] __
     body="Pinga Tunic +1",            -- 15 [__/__, 128] __
     hands=gear.Gende_SongFC_hands,    --  7 [ 3/ 2,  37] __
     legs="Pinga Pants +1",            -- 13 [__/__, 147] __
     feet=gear.Merl_FC_feet,           -- 12 [__/__, 118] __
-    neck="Orunmila's Torque",         --  5 [__/__, ___] __
+    neck="Loricate Torque +1",        -- __ [ 6/ 6, ___] __; DEF+60
     ear2="Odnowa Earring +1",         -- __ [ 3/ 5, ___] __
     ring1="Lebeche Ring",             -- __ [__/__, ___]  2
     ring2="Defending Ring",           -- __ [10/10, ___] __
     back="Perimede Cape",             -- __ [__/__, ___]  4
     waist="Witful Belt",              --  3 [__/__, ___]  3
     -- Sub RDM trait                  -- 15
-    -- 80 Fast Cast [42PDT/43MDT, 505 MEVA] 11 Quick Magic
-    
+    -- 80 Fast Cast [48PDT/49MDT, 516 MEVA] 11 Quick Magic
+
     -- hands=gear.Gende_SongFC_hands, --  7 [ 4/__,  37] __
     -- ear1="Genmei Earring",         -- __ [ 2/__, ___] __
-    -- 80 Fast Cast [45PDT/41MDT, 505 MEVA] 11 Quick Magic
+    -- 80 Fast Cast [51PDT/47MDT, 516 MEVA] 11 Quick Magic
   }
   sets.precast.FC.RDM.Grimoire = {
     main=gear.Pedagogy_C,             --  8 [__/__, ___] __
@@ -262,19 +263,19 @@ function init_gear_sets()
     main="Daybreak",                  -- __ [__/__, ___]
     sub="Genmei Shield",              -- __ [10/__, ___]
     ammo="Staunch Tathlum +1",        -- __ [ 3/ 3, ___]
-    head=gear.Psycloth_D_head,        -- 10 [__/__,  75]
+    head=gear.Merl_FC_head,           -- 15 [__/__,  86]
     body="Pinga Tunic +1",            -- 15 [__/__, 128]
     hands="Academic's Bracers +3",    --  9 [__/__,  57]
     legs="Pinga Pants +1",            -- 13 [__/__, 147]
     feet=gear.Merl_FC_feet,           -- 12 [__/__, 118]
     neck="Loricate Torque +1",        -- __ [ 6/ 6, ___]
-    ear1="Malignance Earring",        --  4 [__/__, ___]
-    ear2="Loquacious Earring",        --  2 [__/__, ___]
+    ear1="Arete Del Luna +1",         -- __ [__/__, ___]; Resists
+    ear2="Etiolation Earring",        --  1 [__/ 3, ___]; Resist Silence+15
     ring1="Gelatinous Ring +1",       -- __ [ 7/-1, ___]
     ring2="Defending Ring",           -- __ [10/10, ___]
     back=gear.SCH_FC_Cape,            -- 10 [10/__,  30]
     waist="Embla Sash",               --  5 [__/__, ___]
-    -- 80 Fast Cast [46 PDT/18 MDT, 606 MEVA]
+    -- 80 Fast Cast [46 PDT/21 MDT, 566 MEVA]
   })
 
 
@@ -1163,18 +1164,27 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.engaged = {
-    head="Pedagogy Mortarboard +3",
-    body="Jhakri Robe +2",
-    legs="Pedagogy Pants +3",
-    feet="Pedagogy Loafers +3",
-    ear1="Cessance Earring",
-    ring1="Hetairoi Ring",
-    ring2="Chirich Ring +1",
-    -- hands="Raetic Bangles +1",
-    -- neck="Combatant's Torque",
-    -- ear2="Telos Earring",
-    -- back="Relucent Cape",
-    -- waist="Windbuffet Belt +1",
+    -- Assume Khonsu                  --  4, __, 30 <__, __, __> [ 6/ 6, ___]
+    ammo="White Tathlum",             -- __,  2, __ <__, __, __> [__/__, ___]
+    head=gear.Nyame_B_head,           --  6, __, 50 < 5, __, __> [ 7/ 7, 123]
+    body=gear.Nyame_B_body,           --  3, __, 40 < 7, __, __> [ 9/ 9, 139]
+    hands=gear.Nyame_B_hands,         --  3, __, 40 < 5, __, __> [ 7/ 7, 112]
+    legs="Jhakri Slops +2",           --  2,  9, 45 <__, __, __> [__/__,  69]
+    feet=gear.Nyame_B_feet,           --  3, __, 53 < 5, __, __> [ 7/ 7, 150]
+    neck="Subtlety Spectacles",       -- __, __, 15 <__, __, __> [__/__, ___]
+    ear1="Cessance Earring",          -- __,  3,  6 < 3, __, __> [__/__, ___]
+    ear2="Dignitary's Earring",       -- __,  3, 10 <__, __, __> [__/__, ___]
+    ring1="Chirich Ring +1",          -- __,  6, 10 <__, __, __> [__/__, ___]
+    ring2="Hetairoi Ring",            -- __, __, __ <__,  2, __> [__/__, ___]
+    back=gear.SCH_TP_Cape,            -- __, 10, 30 <__, __, __> [10/__, ___]
+    waist="Olseni Belt",              -- __,  3, 20 <__, __, __> [__/__, ___]
+    -- 21 Haste, 36 STP, 349 Acc <25 DA, 2 TA, 0 QA> [46 PDT/36 MDT, 593 MEVA]
+
+    -- hands="Gazu Bracelets +1",     -- 15, __, 96 <__, __, __> [__/__,  43]
+    -- neck="Combatant's Torque",     -- __,  4, __ <__, __, __> [__/__, ___]; Combat skill+15
+    -- ear2="Telos Earring",          -- __,  5, 10 < 1, __, __> [__/__, ___]
+    -- ring2="Defending Ring",        -- __, __, __ <__, __, __> [10/10, ___]
+    -- 33 Haste, 42 STP, 390 Acc <21 DA, 0 TA, 0 QA> [49 PDT/39 MDT, 524 MEVA]
   }
 
   ------------------------------------------------------------------------------------------------
@@ -1248,6 +1258,13 @@ function init_gear_sets()
   sets.Kiting.Adoulin = {
     body="Councilor's Garb",
   }
+
+  --Weapon sets
+  sets.WeaponSet = {}
+  sets.WeaponSet['Khatvanga'] = {
+    main="Khatvanga",
+    sub="Khonsu",
+  }
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -1294,6 +1311,10 @@ function job_precast(spell, action, spellMap, eventArgs)
 end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
+  if in_battle_mode() and spell.english ~= 'Dispelga' then
+    equip({main="", sub=""})
+  end
+
   -- If slot is locked, keep current equipment on
   if locked_neck then equip({ neck=player.equipment.neck }) end
   if locked_ear1 then equip({ ear1=player.equipment.ear1 }) end
@@ -1383,6 +1404,12 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     apply_grimoire_bonuses(spell, action, spellMap, eventArgs)
   end
 
+  -- Always put this last in job_post_midcast
+  if in_battle_mode() and spell.english ~= 'Dispelga' then
+    -- Prevent swapping main/sub weapons
+    equip({main="", sub=""})
+  end
+  
   -- If slot is locked, keep current equipment on
   if locked_neck then equip({ neck=player.equipment.neck }) end
   if locked_ear1 then equip({ ear1=player.equipment.ear1 }) end
@@ -1403,6 +1430,10 @@ function job_aftercast(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
   
   if not spell.interrupted then
+    if in_battle_mode() and spell.english == 'Dispelga' then
+      equip(select_weapons())
+    end
+    
     if spell.english == "Sleep II" then
       send_command('@timers c "Sleep II ['..spell.target.name..']" 90 down spells/00259.png')
     elseif spell.english == "Sleep" or spell.english == "Sleepga" then -- Sleep & Sleepga Countdown --
@@ -1430,6 +1461,10 @@ function job_aftercast(spell, action, spellMap, eventArgs)
       state.Buff['Addendum: White'] = false
       state.Buff['Addendum: Black'] = true
     end
+  end
+
+  if in_battle_mode() then
+    equip(sets.WeaponSet[state.WeaponSet.current])
   end
 end
 
@@ -1510,6 +1545,10 @@ function customize_idle_set(idleSet)
     idleSet = set_combine(idleSet, sets.buff.Doom)
   end
 
+  if in_battle_mode() then
+    idleSet = set_combine(idleSet, select_weapons())
+  end
+
   return idleSet
 end
 
@@ -1529,6 +1568,10 @@ function customize_melee_set(meleeSet)
     meleeSet = set_combine(meleeSet, sets.buff.Doom)
   end
 
+  if in_battle_mode() then
+    meleeSet = set_combine(meleeSet, select_weapons())
+  end
+
   return meleeSet
 end
 
@@ -1546,6 +1589,10 @@ function customize_defense_set(defenseSet)
 
   if buffactive.Doom then
     defenseSet = set_combine(defenseSet, sets.buff.Doom)
+  end
+
+  if in_battle_mode() then
+    defenseSet = set_combine(defenseSet, select_weapons())
   end
 
   if state.PhysicalDefenseMode.current == 'CaitSith' then
@@ -1620,6 +1667,18 @@ function job_self_command(cmdParams, eventArgs)
   elseif cmdParams[1] == 'elemental' then
     silibs.handle_elemental(cmdParams, state.ElementalMode.value)
     eventArgs.handled = true
+  elseif cmdParams[1] == 'weaponset' then
+    if cmdParams[2] == 'cycle' then
+      cycle_weapons('forward')
+    elseif cmdParams[2] == 'cycleback' then
+      cycle_weapons('back')
+    elseif cmdParams[2] == 'current' then
+      cycle_weapons('current')
+    elseif cmdParams[2] == 'set' and cmdParams[3] then
+      cycle_weapons('set', cmdParams[3])
+    elseif cmdParams[2] == 'reset' then
+      cycle_weapons('reset')
+    end
   elseif cmdParams[1] == 'bind' then
     set_main_keybinds()
     set_sub_keybinds()
@@ -1794,6 +1853,32 @@ function handle_strategems(cmdParams)
   end
 end
 
+function cycle_weapons(cycle_dir, set_name)
+  if cycle_dir == 'forward' then
+    state.WeaponSet:cycle()
+  elseif cycle_dir == 'back' then
+    state.WeaponSet:cycleback()
+  elseif cycle_dir == 'set' then
+    state.WeaponSet:set(set_name)
+  else
+    state.WeaponSet:reset()
+  end
+
+  add_to_chat(141, 'Weapon Set to '..string.char(31,1)..state.WeaponSet.current)
+  equip(select_weapons())
+end
+
+function select_weapons()
+  if sets.WeaponSet[state.WeaponSet.current] then
+    return sets.WeaponSet[state.WeaponSet.current]
+  end
+  return {}
+end
+
+function in_battle_mode()
+  return state.WeaponSet.current ~= 'Casting'
+end
+
 -- Gets the current number of available strategems based on the recast remaining
 -- and the level of the sch.
 function get_current_strategem_count()
@@ -1885,6 +1970,10 @@ function set_main_keybinds()
   send_command('bind @w gs c toggle RearmingLock')
   send_command('bind @c gs c toggle CP')
 
+  send_command('bind ^insert gs c weaponset cycle')
+  send_command('bind ^delete gs c weaponset cycleback')
+  send_command('bind !delete gs c weaponset reset')
+
   send_command('bind ^` input /ja Immanence <me>')
   send_command('bind !` gs c toggle MagicBurst')
   send_command('bind ^- gs c scholar light')
@@ -1934,6 +2023,10 @@ function unbind_keybinds()
   send_command('unbind !d')
   send_command('unbind @w')
   send_command('unbind @c')
+
+  send_command('unbind ^insert')
+  send_command('unbind ^delete')
+  send_command('unbind !delete')
 
   send_command('unbind ^`')
   send_command('unbind !`')
