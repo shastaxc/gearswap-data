@@ -42,3 +42,4 @@ send_command('bind !k gs c sneak')
 send_command('bind %numpad/ console c') -- Dummy bind to disable in-game functionality
 send_command('bind %numpad5 console c') -- Dummy bind to disable in-game functionality
 send_command('bind %v console c') -- Dummy bind to disable in-game functionality
+send_command('bind %z console c') -- Dummy bind to disable in-game functionality
