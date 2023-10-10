@@ -158,6 +158,7 @@ function init_gear_sets()
     waist="Shinjutsu-no-Obi +1",      --  5 [__/__, ___]
     -- 79 FC [45 PDT/46 MDT, 527 M.Eva]
   }
+  sets.precast.FC.QuickMagic = set_combine(sets.precast.FC, {})
 
   sets.precast.FC.Impact = set_combine(sets.precast.FC, {
     head=empty,                       -- __ [__/__, ___]
