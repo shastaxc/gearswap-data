@@ -735,10 +735,11 @@ function init_gear_sets()
     ear1="Regal Earring",             -- __, __, 10, 10, __ [__/__, ___] {__/__, __}; Set bonus
     ear2="Malignance Earring",        -- 10, __,  8,  8, __ [__/__, ___] {__/__, __}
     ring1="Metamorph Ring +1",        -- 15, __, 16, 16, __ [__/__, ___] {__/__, __}
+    ring2="Kishar Ring",              --  5, __, __, __, 10 [__/__, ___] {__/__, __}
     back="Aurist's Cape +1",          -- 33, __, 33, 33, __ [__/__, ___] {__/__, __}
     waist="Obstinate Sash",           -- 15, 15, __,  5,  5 [__/__, ___] {__/__, __}
     -- AF set bonuses                 -- 15
-    -- 472 M.Acc, 35 Enfeebling Skill, 271 INT, 260 MND, 25% Enf Duration [27 PDT/27 MDT, 595 M.Eva] {Pet: 5 PDT/5 MDT, 4 Regen}
+    -- 477 M.Acc, 35 Enfeebling Skill, 271 INT, 260 MND, 35% Enf Duration [27 PDT/27 MDT, 595 M.Eva] {Pet: 5 PDT/5 MDT, 4 Regen}
 
     -- main="Idris",                  -- 70, __, __, __, __ [__/__, ___] {25/25, __}; M.Acc skill+255, R15
     -- sub="Ammurapi Shield",         -- 38, __, 13, 13, 10 [__/__, ___] {__/__, __}
