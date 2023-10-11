@@ -2406,7 +2406,7 @@ end)
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
   -- Default macro set/book
-  set_macro_page(1, 8)
+  set_macro_page(1, 9)
 end
 
 function set_main_keybinds()
@@ -2418,10 +2418,6 @@ function set_main_keybinds()
   send_command('bind ^delete gs c weaponset cycleback')
   send_command('bind !delete gs c weaponset reset')
 
-  send_command('bind ^home gs c toyweapon cycle')
-  send_command('bind ^end gs c toyweapon cycleback')
-  send_command('bind !end gs c toyweapon reset')
-
   send_command('bind ^pageup gs c cycleback ElementalMode')
   send_command('bind ^pagedown gs c cycle ElementalMode')
   send_command('bind !pagedown gs c reset ElementalMode')
@@ -2431,24 +2427,6 @@ function set_main_keybinds()
   send_command('bind !` gs c toggle MagicBurst')
   send_command('bind @s gs c cycle SleepMode')
   send_command('bind @n gs c toggle NM')
-
-  send_command('bind ~` input /ja "Composure" <me>')
-
-  send_command('bind !z input /ma "Temper II" <me>')
-  send_command('bind !x gs c elemental enspell')
-  send_command('bind !q gs c elemental tier3')
-  send_command('bind !w gs c elemental tier')
-  send_command('bind !e input /ma "Haste II" <stpc>')
-  send_command('bind !r input /ma "Dispel" <t>')
-  send_command('bind !u input /ma Blink <me>')
-  send_command('bind !i input /ma Stoneskin <me>')
-  send_command('bind !o input /ma "Phalanx II" <stpc>')
-  send_command('bind !p input /ma "Aquaveil" <me>')
-  send_command('bind !; input /ma "Regen II" <stpc>')
-  send_command('bind !\' input /ma "Refresh III" <stpc>')
-  send_command('bind ^z input /ma "Gain-INT" <me>')
-  send_command('bind ^x input /ma "Gain-MND" <me>')
-  send_command('bind ^c input /ja "Saboteur" <me>')
 end
 
 function set_sub_keybinds()
@@ -2461,58 +2439,19 @@ function set_sub_keybinds()
     send_command('bind ^\\\\ gs c scholar cost')
     send_command('bind ![ gs c scholar aoe')
     send_command('bind !\\\\ gs c scholar speed')
+  elseif player.sub_job == 'RDM' then
+    send_command('bind !e input /ma "Haste" <stpc>')
+    send_command('bind !u input /ma Blink <me>')
+    send_command('bind !i input /ma Stoneskin <me>')
+    send_command('bind !o input /ma "Phalanx" <me>')
+    send_command('bind !p input /ma "Aquaveil" <me>')
+    send_command('bind !\' input /ma "Refresh" <stpc>')
+  elseif player.sub_job == 'WHM' then
+    send_command('bind !e input /ma "Haste" <stpc>')
   end
 end
 
 function unbind_keybinds()
-  send_command('unbind !s')
-  send_command('unbind !d')
-  send_command('unbind @w')
-
-  send_command('unbind ^insert')
-  send_command('unbind ^delete')
-  send_command('unbind !delete')
-
-  send_command('unbind ^home')
-  send_command('unbind ^end')
-  send_command('unbind !end')
-
-  send_command('unbind ^pageup')
-  send_command('unbind ^pagedown')
-  send_command('unbind !pagedown')
-
-  send_command('unbind ^`')
-  send_command('unbind @c')
-  send_command('unbind !`')
-  send_command('unbind @s')
-  send_command('unbind @n')
-
-  send_command('unbind ~`')
-
-  send_command('unbind !z')
-  send_command('unbind !x')
-  send_command('unbind !q')
-  send_command('unbind !w')
-  send_command('unbind !e')
-  send_command('unbind !r')
-  send_command('unbind !u')
-  send_command('unbind !i')
-  send_command('unbind !o')
-  send_command('unbind !p')
-  send_command('unbind !;')
-  send_command('unbind !\'')
-  send_command('unbind ^z')
-  send_command('unbind ^x')
-  send_command('unbind ^c')
-  
-  send_command('unbind !c')
-  send_command('unbind !/')
-  send_command('unbind ^-')
-  send_command('unbind ^=')
-  send_command('unbind ^[')
-  send_command('unbind ^\\\\')
-  send_command('unbind ![')
-  send_command('unbind !\\\\')
 end
 
 function test()
