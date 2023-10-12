@@ -640,7 +640,7 @@ function init_gear_sets()
 
   -- Cap at 700 power; Power = floor(MND÷2) + floor(VIT÷4) + Healing Magic Skill
   sets.midcast.CureNormal = {
-    main="Bunzi's Rod",         -- 30, 15, __, ___ [__/__, ___]  5
+    main="Daybreak",            -- 30, 30, __, ___ [__/__, ___] __
     sub="Genbu's Shield",       --  5, __, __, ___ [10/__, ___] __
     ammo="Esper Stone +1",      -- __, __, __, ___ [__/__, ___]  5
     head=gear.Vanya_B_head,     -- 10, 27, 18,  20 [__/ 5,  75] __
@@ -657,16 +657,16 @@ function init_gear_sets()
     waist="Luminary Sash",      -- __, 10, __, ___ [__/__, ___] __
     -- Traits/Merits/Gifts         __,101, 89,  16
     -- Subjob                      __, __, __, 139
-    -- 55 CP, 330 MND, 181 VIT, 285 Healing Skill [29 PDT/27 MDT, 481 M.Eva] 18 -Enmity
+    -- 55 CP, 345 MND, 181 VIT, 285 Healing Skill [29 PDT/27 MDT, 481 M.Eva] 13 -Enmity
     
     -- main=gear.Gada_MND,      -- 18, 21, __,  18 [__/__, ___] __
     -- back=gear.SMN_Cure_Cape, -- 10, 30, __, ___ [10/__, ___] __
-    -- 53 CP, 333 MND, 181 VIT, 303 Healing Skill [39 PDT/27 MDT, 481 M.Eva] 13 -Enmity
-    -- 847 HP Cure IV
+    -- 53 CP, 348 MND, 181 VIT, 303 Healing Skill [39 PDT/27 MDT, 481 M.Eva] 5 -Enmity
+    -- 853 HP Cure IV
   }
   sets.midcast.CureWeather = set_combine(sets.midcast.CureNormal, {
     waist="Hachirin-no-obi",
-    -- 904 HP to 1045 Cure IV depending on weather/day
+    -- 938 HP to 1151 Cure IV depending on weather/day
   })
 
   sets.midcast.Stoneskin = {
