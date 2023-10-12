@@ -26,8 +26,6 @@ function job_setup()
   silibs.enable_custom_roll_text()
   silibs.enable_equip_loop()
   silibs.enable_weapon_rearm()
-  silibs.enable_th()
-  silibs.enable_haste_info()
   silibs.enable_elemental_belt_handling(has_obi, has_orpheus)
 
   state.OffenseMode:options('Normal', 'MidAcc', 'HighAcc', 'Enspell')
@@ -61,16 +59,6 @@ function job_setup()
     ['Silence'] = 'MND',
     ['Slow'] = 'MND', ['Slow II'] = 'MND',
   }
-  -- Potency is based on enfeebling skill
-  enfeebling_skill_spells = S{'Distract III', 'Frazzle III', 'Poison II'}
-  -- 100% land rate, focus on duration gear
-  enfeebling_duration_spells = S{'Dia', 'Dia II', 'Dia III', 'Diaga'}
-  -- Spells that you want to always use high m.acc set
-  enfeebling_default_acc_spells = S{'Bind', 'Break', 'Dispel', 'Dispelga', 'Distract', 'Distract II', 'Frazzle',
-      'Frazzle II', 'Gravity', 'Gravity II', 'Silence', 'Impact'}
-  -- Spells that require high/uncapped enhancing magic skill
-  enhancing_skill_spells = S{'Temper', 'Temper II', 'Enfire', 'Enfire II', 'Enblizzard', 'Enblizzard II', 'Enaero',
-      'Enaero II', 'Enstone', 'Enstone II', 'Enthunder', 'Enthunder II', 'Enwater', 'Enwater II'}
   last_midcast_set = {} -- DO NOT MODIFY
   enfeebling_dur_gear = {
     -- Base = multiplier form of the base enhancing duration stat
@@ -233,11 +221,11 @@ function init_gear_sets()
   sets.precast.WS['Vidohunir'] = set_combine(sets.precast.WS, {
     range=empty,                      -- __, __, __, __, __ [__/__, ___]
     ammo="Ghastly Tathlum +1",        -- 11, __, __, __, 21 [__/__, ___]
-    -- head="Wicce Petasos +3",       -- 39, 61, __, 51, 31 [11/11, 136]
-    -- body="Wicce Coat +3",          -- 50, 64, __, 59, 34 [__/__, 141]
+    head="Wicce Petasos +2",          -- 34, 51, __, 46, 21 [10/10, 126]
+    body="Wicce Coat +3",             -- 50, 64, __, 59, 34 [__/__, 141]
     hands="Wicce Gloves +3",          -- 38, 62, __, 57, 32 [13/13,  98]
     legs="Agwu's Slops",              -- 49, 55, __, 60, 20 [10/10, 134]
-    -- feet="Wicce Sabots +3",        -- 36, 60, __, 50, 30 [11/11, 168]
+    feet="Wicce Sabots +2",           -- 31, 50, __, 45, 20 [10/10, 158]
     neck="Sibyl Scarf",               -- 10, __, __, 10, __ [__/__, ___]
     ear1="Malignance Earring",        --  8, 10, __,  8, __ [__/__, ___]
     ear2="Moonshade Earring",         -- __, __, __, __, __ [__/__, ___]; TP Bonus+250
@@ -245,6 +233,10 @@ function init_gear_sets()
     ring2="Freke Ring",               -- 10, __, __,  8, __ [__/__, ___]
     back="Aurist's Cape +1",          -- 33, 33, __, __, __ [__/__, ___]
     waist="Acuity Belt +1",           -- 23, 15, __, __, __ [__/__, ___]
+    -- 313 INT, 355 M.Acc, 0 WSD, 293 MAB, 148 M.Dmg [44 PDT/44 MDT, 657 M.Eva]
+    
+    -- head="Wicce Petasos +3",       -- 39, 61, __, 51, 31 [11/11, 136]
+    -- feet="Wicce Sabots +3",        -- 36, 60, __, 50, 30 [11/11, 168]
     -- 333 INT, 375 M.Acc, 0 WSD, 310 MAB, 168 M.Dmg [45 PDT/45 MDT, 677 M.Eva]
   })
   sets.precast.WS['Vidohunir'].MaxTP = set_combine(sets.precast.WS['Vidohunir'], {
@@ -266,10 +258,10 @@ function init_gear_sets()
   sets.precast.WS['Myrkr'] = {
     ammo="Ghastly Tathlum +1",        --  35, ___ [__/__, ___]
     head="Pixie Hairpin +1",          -- 120, ___ [__/__, ___]
-    -- body="Wicce Coat +3",          -- 132, ___ [__/__, 141]
+    body="Wicce Coat +3",             -- 132, ___ [__/__, 141]
     hands="Wicce Gloves +3",          --  50, ___ [13/13,  98]
-    -- legs="Wicce Chausses +3",      -- 119, ___ [__/__, 168]
-    -- feet="Wicce Sabots +3",        --  50, ___ [11/11, 168]
+    legs="Wicce Chausses +2",         -- 109, ___ [__/__, 158]
+    feet="Wicce Sabots +2",           --  40, ___ [10/10, 158]
     neck="Orunmila's Torque",         --  30, ___ [__/__, ___]
     ear1="Etiolation Earring",        --  50, ___ [__/ 3, ___]
     ear2="Moonshade Earring",         -- ___, 250 [__/__, ___]
@@ -277,10 +269,50 @@ function init_gear_sets()
     ring2="Mephitas's Ring +1",       -- 110, ___ [__/__, ___]
     back="Aurist's Cape +1",          --  45, ___ [__/__, ___]
     waist="Acuity Belt +1",           --  35, ___ [__/__, ___]
+    -- 836 Max MP, 250 TP Bonus [23 PDT/27 MDT, 555 M.Eva]
+    
+    -- legs="Wicce Chausses +3",      -- 119, ___ [__/__, 168]
+    -- feet="Wicce Sabots +3",        --  50, ___ [11/11, 168]
     -- 856 Max MP, 250 TP Bonus [24 PDT/28 MDT, 575 M.Eva]
   }
   sets.precast.WS['Myrkr'].MaxTP = set_combine(sets.precast.WS['Myrkr'], {
     ear2="Evans Earring",             --  50, ___ [__/__, ___]
+  })
+  
+  -- Earth elemental. 40% STR/40% INT. dStat = INT. Damage varies with TP.
+  sets.precast.WS['Earth Crusher'] = {
+    range=empty,                      -- __, __, __, __, __, __ [__/__, ___]
+    ammo="Ghastly Tathlum +1",        -- __, 11, __, __, __, 21 [__/__, ___]
+    head="Wicce Petasos +2",          -- 17, 34, 51, __, 46, 21 [10/10, 126]
+    body=gear.Nyame_B_body,           -- 45, 42, 40, 13, 30, __ [ 9/ 9, 139]
+    hands="Wicce Gloves +3",          -- 16, 38, 62, __, 57, 32 [13/13,  98]
+    legs=gear.Nyame_B_legs,           -- 58, 44, 40, 12, 30, __ [ 8/ 8, 150]
+    feet="Wicce Sabots +2",           -- 13, 31, 50, __, 45, 20 [10/10, 158]
+    neck="Sibyl Scarf",               -- __, 10, __, __, 10, __ [__/__, ___]
+    ear1="Malignance Earring",        -- __,  8, 10, __,  8, __ [__/__, ___]
+    ear2="Moonshade Earring",         -- __, __, __, __, __, __ [__/__, ___]; TP Bonus
+    ring1="Metamorph Ring +1",        -- __, 16, 15, __, __, __ [__/__, ___]
+    ring2="Freke Ring",               -- __, 10, __, __,  8, __ [__/__, ___]
+    -- back=gear.BLM_MAB_Cape,        -- __, 30, 20, __, 10, 20 [10/__, ___]
+    waist="Refoccilation Stone",      -- __, __,  4, __, 10, __ [__/__, ___]
+    -- 149 STR, 274 INT, 292 M.Acc, 25 WSD, 254 MAB, 114 M.Dmg [60 PDT/50 MDT, 671 M.Eva]
+    
+    -- head="Wicce Petasos +3",       -- 22, 39, 61, __, 51, 31 [11/11, 136]
+    -- feet="Wicce Sabots +3",        -- 18, 36, 60, __, 50, 30 [11/11, 168]
+    -- 159 STR, 284 INT, 312 M.Acc, 25 WSD, 264 MAB, 134 M.Dmg [62 PDT/52 MDT, 691 M.Eva]
+  }
+  sets.precast.WS['Earth Crusher'].MaxTP = set_combine(sets.precast.WS['Earth Crusher'], {
+    ear2="Regal Earring",             -- __, 10, __, __,  7, __ [__/__, ___]
+  })
+
+  -- Darkness elemental. 30% STR/30% INT. dStat = INT. Damage varies with TP.
+  sets.precast.WS['Cataclysm'] = set_combine(sets.precast.WS['Earth Crusher'], {
+    head="Pixie Hairpin +1",          -- __, __, 27, __, __, __, __ [__/__, ___]; Dark MAB+28
+    ring1="Archon Ring",              -- __, __, __,  5, __, __, __ [__/__, ___]; Dark MAB+5
+  })
+  sets.precast.WS['Cataclysm'].MaxTP = set_combine(sets.precast.WS['Earth Crusher'].MaxTP, {
+    head="Pixie Hairpin +1",          -- __, __, 27, __, __, __, __ [__/__, ___]; Dark MAB+28
+    ring1="Archon Ring",              -- __, __, __,  5, __, __, __ [__/__, ___]; Dark MAB+5
   })
 
 
@@ -293,249 +325,69 @@ function init_gear_sets()
 
   -- Prioritize: CPII > CP > Heal Skill, MND, VIT (to power cap) > SIRD > -DT > Enmity (to -40)
   -- Cap at 700 power; Power = floor(MND÷2) + floor(VIT÷4) + Healing Magic Skill
-  -- Mithra RDM/WHM M30 MND = 134
-  -- Mithra RDM/WHM M30 VIT = 123
-  -- Mithra RDM/WHM M30 Healing Magic Skill = 414
+  -- Mithra BLM/RDM M30 MND = 128
+  -- Mithra BLM/RDM M30 VIT = 119
+  -- Mithra BLM/RDM M30 Healing Magic Skill = 166
   sets.midcast.CureNormal = {
-    main="Eremite's Wand +1",         -- __, __, ___,   2, ___, 25, __/__, __
-    sub="Genmei Shield",              -- __, __, ___, ___, ___, __, 10/__, __
-    range=empty,                      -- __, __, ___, ___, ___, __, __/__, __
-    ammo="Staunch Tathlum +1",        -- __, __, ___, ___, ___, 11,  3/ 3, __
-    head=gear.Kaykaus_C_head,         -- __, 11,  16,  19,  14, 12, __/ 3, __
-    body=gear.Kaykaus_C_body,         --  4, __, ___,  33,  20, 12, __/__, __
-    hands=gear.Chironic_SIRD_hands,   -- __, __, ___,  38,  20, 31, __/__, __; Can add more DT or Enmity
-    legs="Atrophy Tights +3",         -- __, 12,  17,  39,  22, __, __/__, __
-    feet=gear.Kaykaus_D_feet,         -- __, 17, ___,  19,  10, __, __/__,  6
-    neck="Loricate Torque +1",        -- __, __, ___, ___, ___,  5,  6/ 6, __
-    ear1="Meili Earring",             -- __, __,  10, ___, ___, __, __/__, __
-    ear2="Odnowa Earring +1",         -- __, __, ___, ___,   3, __,  3/ 5, __
-    ring1="Menelaus's Ring",          -- __,  5,  15, ___, ___, __, __/__, __
-    ring2="Defending Ring",           -- __, __, ___, ___, ___, __, 10/10, __
-    back=gear.RDM_Cure_Cape,          -- __, 10, ___,  30, ___, __, 10/__, __
-    waist="Sanctuary Obi +1",         -- __, __, ___, ___, ___, 10, __/__,  4
-    -- Kaykaus set bonus              --  6, __, ___, ___, ___, __, __/__, __
-    -- Base Stats                     -- __, __, 414, 129, 123, __, __/__, __
-    -- Merit points                   -- __, __, ___, ___, ___, 10, __/__,  5
-    -- 10 CPII, 55 CP, 472 Heal Skill, 309 MND, 212 VIT, 116 SIRD, 42PDT/27MDT, 15 -Enmity
-    -- 679 Power
-  }
-  sets.midcast.CureNormalWeaponLock = {
-    range=empty,                      -- __, __, ___, ___, ___, __, __/__, __
-    ammo="Staunch Tathlum +1",        -- __, __, ___, ___, ___, 11,  3/ 3, __
-    head=gear.Kaykaus_C_head,         -- __, 11,  16,  19,  14, 12, __/ 3, __
-    body="Rosette Jaseran +1",        -- __, __, ___,  39,  31, 25,  5/ 5, 13
-    hands=gear.Chironic_SIRD_hands,   -- __, __, ___,  38,  20, 31, __/__, __; Can add more DT or Enmity
-    legs="Atrophy Tights +3",         -- __, 12,  17,  39,  22, __, __/__, __
-    feet=gear.Kaykaus_D_feet,         -- __, 17, ___,  19,  10, __, __/__,  6
-    neck="Loricate Torque +1",        -- __, __, ___, ___, ___,  5,  6/ 6, __
-    ear1="Meili Earring",             -- __, __,  10, ___, ___, __, __/__, __
-    ear2="Odnowa Earring +1",         -- __, __, ___, ___,   3, __,  3/ 5, __
-    ring1="Menelaus's Ring",          -- __,  5,  15, ___, ___, __, __/__, __
-    ring2="Defending Ring",           -- __, __, ___, ___, ___, __, 10/10, __
-    back=gear.RDM_Cure_Cape,          -- __, 10, ___,  30, ___, __, 10/__, __
-    waist="Sanctuary Obi +1",         -- __, __, ___, ___, ___, 10, __/__,  4
-    -- Kaykaus set bonus              --  4, __, ___, ___, ___, __, __/__, __
-    -- Base Stats                     -- __, __, 414, 129, 123, __, __/__, __
-    -- Merit points                   -- __, __, ___, ___, ___, 10, __/__,  5
-    -- 4 CPII, 55 CP, 472 Heal Skill, 313 MND, 223 VIT, 104 SIRD, 37PDT/32MDT, 28 -Enmity
-    -- 683 Power
-  }
-  
-  sets.midcast.CureWeather = {
-    main="Chatoyant Staff",           -- __, 10, ___,   5,   5, __, __/__, __
-    sub="Mensch Strap +1",            -- __, __, ___, ___, ___, __,  5/__, __
-    range=empty,                      -- __, __, ___, ___, ___, __, __/__, __
-    ammo="Staunch Tathlum +1",        -- __, __, ___, ___, ___, 11,  3/ 3, __
-    head=gear.Kaykaus_C_head,         -- __, 11,  16,  19,  14, 12, __/ 3, __
-    body="Rosette Jaseran +1",        -- __, __, ___,  39,  31, 25,  5/ 5, 13
-    hands=gear.Chironic_SIRD_hands,   -- __, __, ___,  38,  20, 31, __/__, __; Can add more DT or Enmity
-    legs="Atrophy Tights +3",         -- __, 12,  17,  39,  22, __, __/__, __
-    feet=gear.Kaykaus_D_feet,         -- __, 17, ___,  19,  10, __, __/__,  6
-    neck="Loricate Torque +1",        -- __, __, ___, ___, ___,  5,  6/ 6, __
-    ear1="Magnetic Earring",          -- __, __, ___, ___, ___,  8, __/__, __
-    ear2="Odnowa Earring +1",         -- __, __, ___, ___,   3, __,  3/ 5, __
-    ring1="Menelaus's Ring",          -- __,  5,  15, ___, ___, __, __/__, __
-    ring2="Defending Ring",           -- __, __, ___, ___, ___, __, 10/10, __
-    back=gear.RDM_Cure_Cape,          -- __, 10, ___,  30, ___, __, 10/__, __
-    waist="Hachirin-no-Obi",          -- __, __, ___, ___, ___, __, __/__, __; Weather bonus
-    -- Kaykaus set bonus              --  4, __, ___, ___, ___, __, __/__, __
-    -- Base Stats                     -- __, __, 414, 129, 123, __, __/__, __
-    -- Merit points                   -- __, __, ___, ___, ___, 10, __/__,  5
-    -- 4 CPII, 65 CP, 462 Heal Skill, 318 MND, 228 VIT, 102 SIRD, 42PDT/32MDT, 24 -Enmity
-    -- 673 Power
-  }
-  sets.midcast.CureWeatherWeaponLock = {
-    range=empty,                      -- __, __, ___, ___, ___, __, __/__, __
-    ammo="Staunch Tathlum +1",        -- __, __, ___, ___, ___, 11,  3/ 3, __
-    head=gear.Kaykaus_C_head,         -- __, 11,  16,  19,  14, 12, __/ 3, __
-    body="Rosette Jaseran +1",        -- __, __, ___,  39,  31, 25,  5/ 5, 13
-    hands=gear.Chironic_SIRD_hands,   -- __, __, ___,  38,  20, 31, __/__, __; Can add more DT or Enmity
-    legs="Atrophy Tights +3",         -- __, 12,  17,  39,  22, __, __/__, __
-    feet=gear.Kaykaus_D_feet,         -- __, 17, ___,  19,  10, __, __/__,  6
-    neck="Loricate Torque +1",        -- __, __, ___, ___, ___,  5,  6/ 6, __
-    ear1="Magnetic Earring",          -- __, __, ___, ___, ___,  8, __/__, __
-    ear2="Odnowa Earring +1",         -- __, __, ___, ___,   3, __,  3/ 5, __
-    ring1="Menelaus's Ring",          -- __,  5,  15, ___, ___, __, __/__, __
-    ring2="Defending Ring",           -- __, __, ___, ___, ___, __, 10/10, __
-    back=gear.RDM_Cure_Cape,          -- __, 10, ___,  30, ___, __, 10/__, __
-    waist="Hachirin-no-Obi",          -- __, __, ___, ___, ___, __, __/__, __; Weather bonus
-    -- Kaykaus set bonus              --  4, __, ___, ___, ___, __, __/__, __
-    -- Base Stats                     -- __, __, 414, 129, 123, __, __/__, __
-    -- Merit points                   -- __, __, ___, ___, ___, 10, __/__,  5
-    -- 4 CPII, 55 CP, 462 Heal Skill, 313 MND, 223 VIT, 102 SIRD, 37PDT/32MDT, 24 -Enmity
-    -- 673 Power
-  }
-
-  -- Removal rate = Base Rate * (1+(y/100))
-  -- Base rate = (10+(Healing Skill / 30)); y = Cursna+ stat from gear
-  -- Mithra RDM M30 Healing Magic Skill = 414
-  sets.midcast.Cursna = {
-    main="Prelatic Pole",         -- 10, __, __
-    sub="Curatio Grip",           --  3, __, __
-    range=empty,                  -- __, __, __
-    ammo="Incantor Stone",        -- __, __,  2
-    head=gear.Vanya_B_head,       -- 20, __, __
-    body="Vitiation Tabard +3",   -- 23, __, 15
-    hands="Hieros Mittens",       -- __, 10, __
-    legs=gear.Vanya_B_legs,       -- 20, __, __
-    feet=gear.Vanya_B_feet,       -- 40,  5, __
-    neck="Debilis Medallion",     -- __, 15, __
-    ear1="Malignance Earring",    -- __, __,  4
-    ear2="Meili Earring",         -- 10, __, __
-    ring1="Haoma's Ring",         --  8, 15, __
-    ring2="Menelaus's Ring",      -- 15, 20,-10
-    back="Oretania's Cape +1",    -- __,  5, __
-    waist="Embla Sash",           -- __, __,  5
-    -- Base stats                   414, __, __
-    -- 563 Healing skill, 70 Cursna+, 16 FC; Cursna Rate = 48.90%
-  }
-
-  -- Blink used as defensive while in combat. Focus on DT, MEVA, and Duration.
-  sets.midcast.Blink = {
-    range=empty,                      -- __, __, __ [__/__, ___]
-    ammo="Staunch tathlum +1",        -- __, __, __ [ 3/ 3, ___]
-    head="Bunzi's Hat",               -- __, __, 10 [ 7/ 7, 123]
-    body="Vitiation Tabard +3",       -- 15, __, 15 [__/__, 100]
-    hands=gear.Nyame_B_hands,         -- __, __, __ [ 7/ 7, 112]
-    legs="Bunzi's Pants",             -- __, __, __ [ 9/ 9, 150]
-    feet="Lethargy Houseaux +3",      -- 40, __, __ [__/__, 157]
-    neck="Duelist's Torque +2",       -- 25, __, __ [__/__, ___]
-    ear1="Malignance Earring",        -- __, __,  4 [__/__, ___]
-    ear2="Odnowa Earring +1",         -- __, __, __ [ 3/ 5, ___]
-    ring1="Gelatinous Ring +1",       -- __, __, __ [ 7/-1, ___]
-    ring2="Defending Ring",           -- __, __, __ [10/10, ___]
-    back=gear.RDM_Adoulin_Cape,       -- __, 20, __ [__/__, ___]
-    waist="Flume Belt +1",            -- __, __, __ [ 4/__, ___]
-    -- Traits/Gifts/Merits            -- __, __, 38 [__/__, ___]
-    -- 80 Enh. Duration, 20 Aug Enh Duration, 67 FC [50 PDT/40 MDT, 642 M.Eva]
-  }
-
-  sets.midcast.EnhancingDuration = {
-    main=gear.Colada_ENH,             -- __,  4, __,  4 [__/__, ___]
-    sub="Ammurapi Shield",            -- __, 10, __, __ [__/__, ___]
-    range=empty,                      -- __, __, __, __ [__/__, ___]
-    ammo="Staunch Tathlum +1",        -- __, __, __, __ [ 3/ 3, ___]
-    head=gear.Telchine_ENH_head,      -- __, 10, __,  5 [__/__, 100]
-    body="Vitiation Tabard +3",       -- 23, 15, __, 15 [__/__, 100]
-    hands="Atrophy Gloves +3",        -- __, 20, __, __ [__/__,  57]
-    legs=gear.Telchine_ENH_legs,      -- __, 10, __,  5 [__/__, 132]
-    feet="Lethargy Houseaux +3",      -- 35, 40, __, __ [__/__, 157]
-    neck="Duelist's Torque +2",       -- __, 25, __, __ [__/__, ___]
-    ear1="Odnowa Earring +1",         -- __, __, __, __ [ 3/ 5, ___]
-    ear2="Lethargy Earring",          -- __,  7, __,  7 [__/__, ___]
-    ring1="Gelatinous Ring +1",       -- __, __, __, __ [ 7/-1, ___]
-    ring2="Defending Ring",           -- __, __, __, __ [10/10, ___]
-    back=gear.RDM_Adoulin_Cape,       --  9, __, 20, __ [__/__, ___]
-    waist="Embla Sash",               -- __, 10, __,  5 [__/__, ___]
-    -- Traits/Gifts/Merits            --456, __, __, 38 [__/__, ___]
-    -- 523 Enh skill, 151 Enh duration, 20 Aug Enh Duration, 79 FC [23 PDT/17 MDT, 546 M.Eva]
+    main="Daybreak",            -- 30, 30, __, ___ [__/__, ___] __
+    sub="Genbu's Shield",       --  5, __, __, ___ [10/__, ___] __
+    ammo="Esper Stone +1",      -- __, __, __, ___ [__/__, ___]  5
+    head=gear.Vanya_B_head,     -- 10, 27, 18,  20 [__/ 5,  75] __
+    body=gear.Vanya_B_body,     -- __, 36, 23,  20 [ 1/ 4,  80] __
+    hands=gear.Vanya_B_hands,   -- __, 33, 25,  20 [__/ 3,  37] __
+    legs=gear.Vanya_B_legs,     -- __, 34, 12,  20 [__/__, 107] __
+    feet=gear.Vayna_B_feet,     --  5, 19, 10,  40 [__/__, 107] __
+    neck="Incanter's Torque",   -- __, __, __,  10 [__/__, ___] __
+    ear1="Meili Earring",       -- __, __, __,  10 [__/__, ___] __
+    ear2="Mendicant's Earring", --  5, __, __, ___ [__/__, ___] __
+    ring1="Sirona's Ring",      -- __,  3,  3,  10 [__/__, ___] __
+    ring2="Defending Ring",     -- __, __, __, ___ [10/10, ___] __
+    back="Aurist's Cape +1",    -- __, 33, __, ___ [__/__, ___] __
+    waist="Luminary Sash",      -- __, 10, __, ___ [__/__, ___] __
+    -- Base Stats                  __,128,119, 155 [__/__, ___] __
+    -- Traits/Merits/Gifts         __, __, __,  16
+    -- 55 CP, 353 MND, 210 VIT, 321 Healing Skill [21 PDT/22 MDT, 406 M.Eva] 5 -Enmity
+    -- 869 HP Cure IV
     
-    -- back=gear.RDM_Adoulin_Cape,    -- 10, __, 20, __ [__/__, ___]
-    -- 524 Enh skill, 151 Enh duration, 20 Aug Enh Duration, 79 FC [23 PDT/17 MDT, 546 M.Eva]
-    
+    -- main=gear.Gada_MND,      -- 18, 21, __,  18 [__/__, ___] __
+    -- back=gear.BLM_Cure_Cape, -- 10, 30, __, ___ [10/__, ___] __
+    -- 53 CP, 341 MND, 210 VIT, 339 Healing Skill [31 PDT/22 MDT, 406 M.Eva] 5 -Enmity
+    -- 876 HP Cure IV
   }
-
-  sets.midcast.SkillEnhancing = {
-    main="Pukulatmuj +1",             -- 11, __, __, __ [__/__, ___]
-    sub="Forfend +1",                 -- 10, __, __, __ [ 4/__, ___]
-    range=empty,                      -- __, __, __, __ [__/__, ___]
-    ammo="Staunch Tathlum +1",        -- __, __, __, __ [ 3/ 3, ___]
-    head="Befouled Crown",            -- 16, __, __, __ [__/__,  75]
-    body="Vitiation Tabard +3",       -- 23, 15, __, 15 [__/__, 100]
-    hands="Vitiation Gloves +3",      -- 24, __, __, __ [__/__,  57]
-    legs="Atrophy Tights +3",         -- 21, __, __, __ [__/__, 127]
-    feet="Lethargy Houseaux +3",      -- 35, 40, __, __ [__/__, 157]
-    neck="Loricate Torque +1",        -- __, __, __, __ [ 6/ 6, ___]
-    ear1="Mimir Earring",             -- 10, __, __, __ [__/__, ___]
-    ear2="Odnowa Earring +1",         -- __, __, __, __ [ 3/ 5, ___]
-    ring1="Gelatinous Ring +1",       -- __, __, __, __ [ 7/-1, ___]
-    ring2="Defending Ring",           -- __, __, __, __ [10/10, ___]
-    back=gear.RDM_Adoulin_Cape,       --  9, __, 20, __ [__/__, ___]
-    waist="Olympus Sash",             --  5, __, __, __ [__/__, ___]
-    -- Traits/Gifts/Merits            --456, __, __, 38 [__/__, ___]
-    -- 620 Enh skill, 55 Enh duration, 20 Aug Enh Duration, 53 FC [33 PDT/23 MDT, 516 M.Eva]
-    
-    -- back=gear.RDM_Adoulin_Cape,    -- 10, __, 20, __ [__/__, ___]
-    -- 621 Enh skill, 55 Enh duration, 20 Aug Enh Duration, 53 FC [33 PDT/23 MDT, 516 M.Eva]
-  }
-
-  -- Regen not affected by Enh Magic Skill
-  -- Regen % pieces apply to base value (no LA bonus), floored, then +1.
-  -- floor[(Base Regen) + sum(floor(Base Regen x %Regen bonuses)+1) x Embolden)] + LA bonus + Regen Potency from Armor + Morgelai and Musa bonus.
-  -- Regen II base potency = 12 hp/tick
-  sets.midcast.Regen = {
-    main="Bolelabunga",               --  1, __, __ [__/__, ___]
-    sub="Ammurapi Shield",            -- __, 10, __ [__/__, ___]
-    range=empty,                      -- __, __, __ [__/__, ___]
-    ammo="Staunch Tathlum +1",        -- __, __, __ [ 3/ 3, ___]
-    head=gear.Telchine_ENH_head,      -- __, 10, __ [__/__, 100]
-    body=gear.Telchine_Regen_body,    --  3, __, 10 [__/__,  80]
-    hands=gear.Telchine_ENH_hands,    -- __, 10, __ [__/__,  61]
-    legs=gear.Telchine_Regen_legs,    --  3, __, __ [__/__, 107]
-    feet=gear.Telchine_ENH_feet,      -- __, 10, __ [__/__, 131]
-    neck="Duelist's Torque +2",       -- __, 25, __ [__/__, ___]
-    ear1="Odnowa Earring +1",         -- __, __, __ [ 3/ 5, ___]
-    ear2="Lethargy Earring",          -- __,  7, __ [__/__, ___]
-    ring1="Gelatinous Ring +1",       -- __, __, __ [ 7/-1, ___]
-    ring2="Defending Ring",           -- __, __, __ [10/10, ___]
-    back=gear.RDM_ENH_Cape,           -- __, 20, __ [10/__, ___]
-    waist="Embla Sash",               -- __, 10,  5 [__/__, ___]
-    -- Regen II Base Potency             12, __, __ [__/__, ___]
-    -- 19 Regen Potency, 102 Enh Duration %, 15 Regen Duration [33 PDT/17 MDT, 479 M.Eva]
-
-    -- head=gear.Telchine_Regen_head, --  3, __, __ [__/__,  75]
-    -- hands=gear.Telchine_Regen_hands,-- 3, __, __ [__/__,  37]
-    -- feet="Bunzi's Sabots",         -- 10, __, __ [ 6/ 6, 150]; R28
-    -- 35 Regen Potency, 72 Enh Duration %, 15 Regen Duration [39 PDT/23 MDT, 449 M.Eva]
-  }
-
-  sets.midcast.RefreshOthers = {
-    main=gear.Colada_ENH,             -- __,  4, __, __ [__/__, ___]
-    sub="Ammurapi Shield",            -- __, 10, __, __ [__/__, ___]
-    range=empty,                      -- __, __, __, __ [__/__, ___]
-    ammo="Staunch Tathlum +1",        -- __, __, __, __ [ 3/ 3, ___]
-    head="Amalric Coif +1",           --  2, __, __, __ [__/__,  86]
-    body="Atrophy Tabard +3",         --  2, __, __, __ [__/__, 100]
-    hands="Lethargy Gantherots +3",   -- __, __, __, __ [11/11,  87]
-    legs="Lethargy Fuseau +3",        --  4, __, __, __ [__/__, 162]
-    feet="Lethargy Houseaux +3",      -- __, 40, __, __ [__/__, 157]
-    neck="Duelist's Torque +2",       -- __, 25, __, __ [__/__, ___]
-    ear1="Odnowa Earring +1",         -- __, __, __, __ [ 3/ 5, ___]
-    ear2="Lethargy Earring",          -- __,  7, __, __ [__/__, ___]
-    ring1="Gelatinous Ring +1",       -- __, __, __, __ [ 7/-1, ___]
-    ring2="Defending Ring",           -- __, __, __, __ [10/10, ___]
-    back=gear.RDM_Adoulin_Cape,       -- __, __, 20, __ [__/__, ___]
-    waist="Embla Sash",               -- __, 10, __, __ [__/__, ___]
-    -- Refresh III potency            --  9, __, __, __ [__/__, ___]
-    -- Empty set bonus                       20
-    -- 17 Ref Potency, 116 Enh Duration%, 20 Aug Enh Duration, 0 Ref Duration [34 PDT/28 MDT, 592 M.Eva]
-  }
-  sets.midcast.RefreshSelf = set_combine(sets.midcast.RefreshOthers, {
-    waist="Gishdubar Sash",           -- __, __, __, 20 [__/__, ___]
-    -- 17 Ref Potency, 106 Enh Duration%, 20 Aug Enh Duration, 20 Ref Duration [34 PDT/28 MDT, 592 M.Eva]
+  sets.midcast.CureWeather = set_combine(sets.midcast.CureNormal, {
+    waist="Hachirin-no-obi",
+    -- 963 HP to 1182 Cure IV depending on weather/day
   })
-  -- Empy set effect adds enh duration under Composure only on non-self targets
-  sets.midcast.RefreshOthersComp = set_combine(sets.midcast.RefreshOthers, {})
+
+  sets.midcast['Enhancing Magic'] = {
+    main=gear.Gada_ENH,               -- 18,  6, __ [__/__, ___]
+    sub="Ammurapi Shield",            -- __, 10, __ [__/__, ___]
+    ammo="Staunch Tathlum +1",        -- __, __, __ [ 3/ 3, ___]
+    head=gear.Telchine_ENH_head,      -- __, 10,  5 [__/__, 100]
+    body=gear.Telchine_ENH_body,      -- 12, 10,  5 [__/__, 104]
+    hands=gear.Telchine_ENH_hands,    -- __, 10, __ [__/__,  61]
+    legs=gear.Telchine_ENH_legs,      -- __, 10,  5 [__/__, 132]
+    feet=gear.Telchine_ENH_feet,      -- __, 10,  5 [__/__, 131]
+    neck="Incanter's Torque",         -- 10, __, __ [__/__, ___]
+    ear1="Mimir Earring",             -- 10, __, __ [__/__, ___]
+    ear2="Andoaa Earring",            --  5, __, __ [__/__, ___]
+    ring1="Stikini Ring +1",          --  8, __, __ [__/__, ___]
+    ring2="Defending Ring",           -- __, __, __ [10/10, ___]
+    back=gear.BLM_FC_Cape,            -- __, __, 10 [10/__, ___]
+    waist="Embla Sash",               -- __, 10,  5 [__/__, ___]
+    -- 73 Enh Skill, 76 Enh Duration, 35 FC [23 PDT/13 MDT, 528 M.Eva]
+
+    -- main=gear.Gada_ENH,            -- 18,  6,  6 [__/__, ___]
+    -- 73 Enh Skill, 76 Enh Duration, 41 FC [23 PDT/13 MDT, 528 M.Eva]
+  }
+
+  sets.midcast.Refresh = set_combine(sets.midcast['Enhancing Magic'], {
+    head="Amalric Coif +1",
+  })
+  sets.midcast.RefreshSelf = set_combine(sets.midcast.Refresh, {
+    back="Grapevine Cape",
+    waist="Gishdubar Sash",
+  })
 
   -- Stoneskin caps at a really low skill cap. At 99, you're capped with zero skill gear.
   -- Stoneskin caps at 350. +Stoneskin gear has no limit. Current max is 475
@@ -566,7 +418,7 @@ function init_gear_sets()
   }
 
   -- Skill caps at 500 Enhancing Magic skill for a total of Phalanx+35.
-  sets.midcast.PhalanxSelf = {
+  sets.midcast.Phalanx = {
     -- main="Sakpata's Sword",            --  5, __, __, __ [10/10, ___]
     sub="Ammurapi Shield",                -- __, __, __, 10 [__/__, ___]
     range=empty,                          -- __, __, __, __ [__/__, ___]
@@ -630,11 +482,9 @@ function init_gear_sets()
     -- 30 Phalanx+, 500 Enh Skill, 20 Aug Enh Duration, 54 Enh duration [37 PDT/27 MDT, 461 M.Eva]
     -- 65 Phalanx total
   }
-  -- Skill caps at 500 Enhancing Magic skill for a total of Phalanx+35.
-  sets.midcast.PhalanxOthers = set_combine(sets.midcast.EnhancingDuration,{})
 
   -- Needs 500 enhancing magic skill.
-  sets.midcast.Aquaveil = set_combine(sets.midcast.EnhancingDuration, {
+  sets.midcast.Aquaveil = set_combine(sets.midcast['Enhancing Magic'], {
     main="Eremite's Wand +1",         -- __, __, __, __, 25 [__/__, ___]
     sub="Genmei Shield",              -- __, __, __, __, __ [10/__, ___]
     range=empty,                      -- __, __, __, __, __ [__/__, ___]
@@ -658,79 +508,12 @@ function init_gear_sets()
     -- 6 Aquaveil+, 516 Enh skill, 40 Enh duration, 20 Aug Enh Duration, 106 SIRD [37 PDT/29 MDT, 376 M.Eva]
   })
 
-  -- Cap at 500 enhancing skill
-  sets.midcast.GainSpell = set_combine(sets.midcast.EnhancingDuration, {
-    head="Lethargy Chappel +3",       -- __, __, __, __ [10/10, 125]; Using for DT
-    hands="Vitiation Gloves +3",      -- 24, __, __, __ [__/__,  57]; Gain +30
-  })
-  -- Cap at 250 INT at time of casting
-  sets.midcast.SpikesSpell = set_combine(sets.midcast.EnhancingDuration, {
-    head="Lethargy Chappel +3",       -- __, __, __, __ [10/10, 125]; Using for DT
-    legs="Vitiation Tights +1"
-    -- legs="Vitiation Tights +3" -- No real need to upgrade past +1
-  })
-
-  sets.midcast.Protect = set_combine(sets.midcast.EnhancingDuration, {
+  sets.midcast.Protect = set_combine(sets.midcast['Enhancing Magic'], {
     ring1="Sheltered Ring"
   })
   sets.midcast.Protectra = set_combine(sets.midcast.Protect,{})
   sets.midcast.Shell = set_combine(sets.midcast.Protect,{})
   sets.midcast.Shellra = set_combine(sets.midcast.Shell,{})
-
-  -- General enhancing set for buffing others under Composure if no more specific set is defined
-  sets.midcast.ComposureOther = {
-    main=gear.Colada_ENH,             -- __,  4, __,  4 [__/__, ___]
-    sub="Ammurapi Shield",            -- __, 10, __, __ [__/__, ___]
-    range=empty,                      -- __, __, __, __ [__/__, ___]
-    ammo="Staunch Tathlum +1",        -- __, __, __, __ [ 3/ 3, ___]
-    head="Lethargy Chappel +3",       -- __, __, __, __ [10/10, 125]
-    body="Lethargy Sayon +3",         -- __, __, __, __ [14/14, 136]
-    hands="Atrophy Gloves +3",        -- __, 20, __, __ [__/__,  57]
-    legs="Lethargy Fuseau +3",        -- __, __, __, __ [__/__, 162]
-    feet="Lethargy Houseaux +3",      -- 35, 40, __, __ [__/__, 157]
-    neck="Duelist's Torque +2",       -- __, 25, __, __ [__/__, ___]
-    ear1="Odnowa Earring +1",         -- __, __, __, __ [ 3/ 5, ___]
-    ear2="Lethargy Earring",          -- __,  7, __,  7 [__/__, ___]
-    ring1="Gelatinous Ring +1",       -- __, __, __, __ [ 7/-1, ___]
-    ring2="Defending Ring",           -- __, __, __, __ [10/10, ___]
-    back=gear.RDM_Adoulin_Cape,       --  9, __, 20, __ [__/__, ___]
-    waist="Embla Sash",               -- __, 10, __,  5 [__/__, ___]
-    -- Traits/Gifts/Merits            --456, __, __, 38 [__/__, ___]
-    -- Empy set bonuses                  __, 35, __, __ [__/__, ___]
-    -- 500 Enh skill, 151 Enh duration, 20 Aug Enh Duration, 54 FC [47 PDT/41 MDT, 637 M.Eva]
-    
-    -- ear2="Lethargy Earring +2",    -- __,  9, __,  9 [__/__, ___]
-    -- back=gear.RDM_Adoulin_Cape,    -- 10, __, 20, __ [__/__, ___]
-    -- 501 Enh skill, 153 Enh duration, 20 Aug Enh Duration, 56 FC [47 PDT/41 MDT, 637 M.Eva]
-  }
-
-  -- Skill max is 625 is the highest needed.
-  -- Distract III (610), Frazzle III (625), Poison II (no cap)
-  sets.midcast.SkillEnfeebles = {
-    main="Contemplator +1",           -- 228, 70, 22, __ (__, __, __, 20) [__/__, ___]
-    sub="Enki Strap",                 -- ___, 10, 10, __ (__, __, __, __) [__/__,  10]
-    range=empty,                      -- ___, __, __, __ (__, __, __, __) [__/__, ___]
-    ammo="Regal Gem",                 -- ___, 15,  7, __ (__, 10, __, __) [__/__, ___]
-    head="Vitiation Chapeau +3",      -- ___, 37, 42, __ (__, __, __, 26) [__/__,  95]; Enhances enf. duration
-    body="Atrophy Tabard +3",         -- ___, 55, 43, __ (__, __, __, 21) [__/__, 100]
-    hands="Lethargy Gantherots +3",   -- ___, 62, 50, __ (__, __, __, 29) [11/11,  87]
-    legs=gear.Chironic_MAcc_legs,     -- ___, 57, 29, __ ( 1, __, __, 13) [__/__, 118]
-    feet="Vitiation Boots +3",        -- ___, 43, 32, __ (__, 10, __, 16) [__/__, 127]; Immunobreak+
-    neck="Duelist's Torque +2",       -- ___, 30, 15, __ (__, 10, 25, __) [__/__, ___]
-    ear1="Snotra Earring",            -- ___, 10,  8, __ (__, __, 10, __) [__/__, ___]
-    ear2="Odnowa Earring +1",         -- ___, __, __, __ (__, __, __, __) [ 3/ 5, ___]
-    ring1="Kishar Ring",              -- ___,  5, __,  4 (__, __, 10, __) [__/__, ___]
-    ring2="Stikini Ring +1",          -- ___, 11,  8, __ (__, __, __,  8) [__/__, ___]
-    back=gear.RDM_MND_Enf_Cape,       -- ___, 20, 30, 10 (__, 10, __, __) [10/__, ___]
-    waist="Obstinate Sash",           -- ___, 15,  5, __ (__, __,  5, 15) [__/__, ___]
-    -- Traits/Gifts                                   38             476
-    -- 228 M.Acc skill, 440 M.Acc, 301 MND, 52 FC (1 Immunobreak, 40 Enf. Effect, 50 Enf. Duration, 624 Enf. Skill) [24 PDT/16 MDT, 537 M.Eva]
-    
-    -- legs=gear.Chironic_MAcc_legs,  -- ___, 60, 29, __ ( 1, __, __, 13) [__/__, 118]
-    -- 228 M.Acc skill, 443 M.Acc, 301 MND, 52 FC (1 Immunobreak, 40 Enf. Effect, 50 Enf. Duration, 624 Enf. Skill) [24 PDT/16 MDT, 537 M.Eva]
-  }
-  sets.midcast.SkillEnfeeblesDW = set_combine(sets.midcast.SkillEnfeebles, {
-  })
 
   -- General enfeebles
   sets.midcast.MNDEnfeebles = { --Max MND but balance macc for landing
@@ -748,7 +531,7 @@ function init_gear_sets()
     ear2="Malignance Earring",        -- ___, 10,  8,  4 (__, __, __, __) [__/__, ___]
     ring1="Stikini Ring +1",          -- ___, 11,  8, __ (__, __, __,  8) [__/__, ___]
     ring2="Stikini Ring +1",          -- ___, 11,  8, __ (__, __, __,  8) [__/__, ___]
-    back=gear.RDM_MND_Enf_Cape,       -- ___, 20, 30, 10 (__, 10, __, __) [10/__, ___]
+    back=gear.BLM_MND_Enf_Cape,       -- ___, 20, 30, 10 (__, 10, __, __) [10/__, ___]
     waist="Obstinate Sash",           -- ___, 15,  5, __ (__, __,  5, 15) [__/__, ___]
     -- Empy set effect                   ___, __, __, __ (__, __, 10, __) [__/__, ___]
     -- Traits/Gifts/Merits            --              38
@@ -757,64 +540,6 @@ function init_gear_sets()
     -- legs=gear.Chironic_MAcc_legs,  -- ___, 60, 29, __ ( 1, __, __, 13) [__/__, 118]
     -- 242 M.Acc skill, 466 M.Acc, 330 MND, 52 FC (1 Immunobreak, 58 Enf. Effect, 50 Enf. Duration, 115 Enf. Skill) [35 PDT/25 MDT, 593 M.Eva]
   }
-  sets.midcast.MNDEnfeeblesDW = set_combine(sets.midcast.MNDEnfeebles, {
-    main="Daybreak",                  -- 242, 40, 30, __ (__, __, __, __) [__/__,  30]
-    sub="Maxentius",                  -- 232, 40, 15, __ (__, __, __, __) [__/__, ___]
-  })
-
-  -- Used when casting mode is 'Resistant'
-  sets.midcast.MNDEnfeeblesAcc = {
-    main="Crocea Mors",               -- 255, 50, __, 20 (__, __, __, __) [__/__, ___]
-    sub="Ammurapi Shield",            -- ___, 38, 13, __ (__, __, __, __) [__/__, ___]
-    range="Ullr",                     -- ___, 40, __, __ (__, __, __, __) [__/__, ___]
-    ammo=empty,                       -- ___, __, __, __ (__, __, __, __) [__/__, ___]
-    head="Vitiation Chapeau +3",      -- ___, 37, 42, __ (__, __, __, 26) [__/__,  95]; Enhances enf. duration
-    body="Atrophy Tabard +3",         -- ___, 55, 43, __ (__, __, __, 21) [__/__, 100]
-    hands="Lethargy Gantherots +3",   -- ___, 62, 50, __ (__, __, __, 29) [11/11,  87]
-    legs=gear.Chironic_MAcc_legs,     -- ___, 57, 29, __ ( 1, __, __, 13) [__/__, 118]
-    feet="Vitiation Boots +3",        -- ___, 43, 32, __ (__, 10, __, 16) [__/__, 127]; Immunobreak+
-    neck="Duelist's Torque +2",       -- ___, 30, 15, __ (__, 10, 25, __) [__/__, ___]
-    ear1="Snotra Earring",            -- ___, 10,  8, __ (__, __, 10, __) [__/__, ___]
-    ear2="Malignance Earring",        -- ___, 10,  8,  4 (__, __, __, __) [__/__, ___]
-    ring1="Stikini Ring +1",          -- ___, 11,  8, __ (__, __, __,  8) [__/__, ___]
-    ring2="Stikini Ring +1",          -- ___, 11,  8, __ (__, __, __,  8) [__/__, ___]
-    back=gear.RDM_MND_Enf_Cape,       -- ___, 20, 30, 10 (__, 10, __, __) [10/__, ___]
-    waist="Obstinate Sash",           -- ___, 15,  5, __ (__, __,  5, 15) [__/__, ___]
-    -- Empy set effect                   ___, __, __, __ (__, __, __, __) [__/__, ___]
-    -- Traits/Gifts/Merits                            38
-    -- 255 M.Acc skill, 489 M.Acc, 291 MND, 72 FC (1 Immunobreak, 30 Enf. Effect, 40 Enf. Duration, 136 Enf. Skill) [21 PDT/11 MDT, 527 M.Eva]
-    
-    -- legs=gear.Chironic_MAcc_legs,  -- ___, 60, 29, __ ( 1, __, __, 13) [__/__, 118]
-    -- 255 M.Acc skill, 492 M.Acc, 291 MND, 72 FC (1 Immunobreak, 30 Enf. Effect, 40 Enf. Duration, 136 Enf. Skill) [21 PDT/11 MDT, 527 M.Eva]
-  }
-  sets.midcast.MNDEnfeeblesAccDW = set_combine(sets.midcast.MNDEnfeeblesAcc, {
-    main="Crocea Mors",               -- 255, 50, __, 20 (__, __, __, __) [__/__, ___]
-    sub="Daybreak",                   -- 242, 40, 30, __ (__, __, __, __) [__/__,  30]
-  })
-
-  -- Spells that have 100% accuracy. Focus on duration.
-  sets.midcast.MNDEnfeeblesDuration = {
-    main="Daybreak",                  -- 242, 40, 30, __ (__, __, __, __) [__/__,  30]
-    sub="Genmei Shield",              -- ___, __, __, __ (__, __, __, __) [10/__, ___]
-    range=empty,                      -- ___, __, __, __ (__, __, __, __) [__/__, ___]
-    ammo="Regal Gem",                 -- ___, 15,  7, __ (__, 10, __, __) [__/__, ___]
-    head="Vitiation Chapeau +3",      -- ___, 37, 42, __ (__, __, __, 26) [__/__,  95]; Enhances enf. duration
-    body="Lethargy Sayon +3",         -- ___, 64, 45, __ (__, 18, __, __) [14/14, 136]
-    hands="Regal Cuffs",              -- ___, 45, 40, __ (__, __, 20, __) [__/__,  53]
-    legs="Lethargy Fuseau +3",        -- ___, 63, 43, __ (__, __, __, __) [__/__, 162]
-    feet="Lethargy Houseaux +3",      -- ___, 60, 32, __ (__, __, __, __) [__/__, 157]
-    neck="Duelist's Torque +2",       -- ___, 30, 15, __ (__, 10, 25, __) [__/__, ___]
-    ear1="Snotra Earring",            -- ___, 10,  8, __ (__, __, 10, __) [__/__, ___]
-    ear2="Odnowa Earring +1",         -- ___, __, __, __ (__, __, __, __) [ 3/ 5, ___]
-    ring1="Kishar Ring",              -- ___,  5, __,  4 (__, __, 10, __) [__/__, ___]
-    ring2="Defending Ring",           -- ___, __, __, __ (__, __, __, __) [10/10, ___]
-    back=gear.RDM_MND_Enf_Cape,       -- ___, 20, 30, 10 (__, 10, __, __) [10/__, ___]
-    waist="Obstinate Sash",           -- ___, 15,  5, __ (__, __,  5, 15) [__/__, ___]
-    -- Empy set effect                   ___, __, __, __ (__, __, 20, __) [__/__, ___]
-    -- Traits/Gifts/Merits                            38
-    -- 242 M.Acc skill, 404 M.Acc, 297 MND, 52 FC (0 Immunobreak, 48 Enf. Effect, 90 Enf. Duration, 41 Enf. Skill) [47 PDT/29 MDT, 633 M.Eva]
-  }
-  sets.midcast.MNDEnfeeblesDurationDW = set_combine(sets.midcast.MNDEnfeeblesDuration, {})
 
   -- General enfeebles
   sets.midcast.INTEnfeebles = {
@@ -832,7 +557,7 @@ function init_gear_sets()
     ear2="Malignance Earring",        -- ___, 10,  8,  4 (__, __, __, __) [__/__, ___]
     ring1="Metamorph Ring +1",        -- ___, 15, 16, __ (__, __, __, __) [__/__, ___]
     ring2="Stikini Ring +1",          -- ___, 11, __, __ (__, __, __,  8) [__/__, ___]
-    back=gear.RDM_INT_Enf_Cape,       -- ___, 20, 30, __ (__, 10, __, __) [10/__, ___]
+    back=gear.BLM_INT_Enf_Cape,       -- ___, 20, 30, __ (__, 10, __, __) [10/__, ___]
     waist="Obstinate Sash",           -- ___, 15, __, __ (__, __,  5, 15) [__/__, ___]
     -- Empy set effect                   ___, __, __, __ (__, __, 10, __) [__/__, ___]
     -- Traits/Gifts/Merits            --              38
@@ -841,59 +566,29 @@ function init_gear_sets()
     -- legs=gear.Chironic_MAcc_legs,  -- ___, 60, 29, __ ( 1, __, __, 13) [__/__, 118]
     -- 228 M.Acc skill, 457 M.Acc, 285 INT, 42 FC (1 Immunobreak, 48 Enf. Effect, 50 Enf. Duration, 127 Enf. Skill) [35 PDT/25 MDT, 573 M.Eva]
   }
-  sets.midcast.INTEnfeeblesDW = set_combine(sets.midcast.INTEnfeebles, {})
 
-  -- Used when casting mode is 'Resistant'
-  sets.midcast.INTEnfeeblesAcc = {
-    main="Contemplator +1",           -- 228, 70, 12, __ (__, __, __, 20) [__/__, ___]
-    sub="Enki Strap",                 -- ___, 10, 10, __ (__, __, __, __) [__/__,  10]
-    range="Ullr",                     -- ___, 40, __, __ (__, __, __, __) [__/__, ___]
-    ammo=empty,                       -- ___, __, __, __ (__, __, __, __) [__/__, ___]
-    head="Vitiation Chapeau +3",      -- ___, 37, 29, __ (__, __, __, 26) [__/__,  95]; Enhances enf. duration
-    body="Atrophy Tabard +3",         -- ___, 55, 43, __ (__, __, __, 21) [__/__, 100]
-    hands="Lethargy Gantherots +3",   -- ___, 62, 33, __ (__, __, __, 29) [11/11,  87]
-    legs=gear.Chironic_MAcc_legs,     -- ___, 57, 42, __ ( 1, __, __, 13) [__/__, 118]
-    feet="Vitiation Boots +3",        -- ___, 43, 32, __ (__, 10, __, 16) [__/__, 127]; Immunobreak+
-    neck="Duelist's Torque +2",       -- ___, 30, 15, __ (__, 10, 25, __) [__/__, ___]
-    ear1="Snotra Earring",            -- ___, 10, __, __ (__, __, 10, __) [__/__, ___]
-    ear2="Malignance Earring",        -- ___, 10,  8,  4 (__, __, __, __) [__/__, ___]
-    ring1="Metamorph Ring +1",        -- ___, 15, 16, __ (__, __, __, __) [__/__, ___]
-    ring2="Stikini Ring +1",          -- ___, 11, __, __ (__, __, __,  8) [__/__, ___]
-    back=gear.RDM_INT_Enf_Cape,       -- ___, 20, 30, __ (__, 10, __, __) [10/__, ___]
-    waist="Obstinate Sash",           -- ___, 15, __, __ (__, __,  5, 15) [__/__, ___]
-    -- Empy set effect                   ___, __, __, __ (__, __, __, __) [__/__, ___]
-    -- Traits/Gifts/Merits                            38
-    -- 228 M.Acc skill, 485 M.Acc, 270 INT, 42 FC (1 Immunobreak, 30 Enf. Effect, 40 Enf. Duration, 148 Enf. Skill) [21 PDT/11 MDT, 537 M.Eva]
-    
-    -- legs=gear.Chironic_MAcc_legs,  -- ___, 60, 42, __ ( 1, __, __, 13) [__/__, 118]
-    -- 228 M.Acc skill, 503 M.Acc, 270 INT, 42 FC (1 Immunobreak, 30 Enf. Effect, 40 Enf. Duration, 148 Enf. Skill) [21 PDT/11 MDT, 537 M.Eva]
+  -- For spells like Burn, Choke, etc.
+  sets.midcast.ElementalEnfeeble = {
+    main="Crocea Mors",               -- 255, __, 50, __, 20 [__/__, ___]
+    sub="Ammurapi Shield",            -- ___, __, 38, 13, __ [__/__, ___]
+    range="Ullr",                     -- ___, __, 40, __, __ [__/__, ___]
+    ammo=empty,                       -- ___, __, __, __, __ [__/__, ___]
+    head="Lethargy Chappel +3",       -- ___, __, 61, 38, __ [10/10, 125]
+    body="Lethargy Sayon +3",         -- ___, __, 64, 47, __ [14/14, 136]
+    hands="Lethargy Gantherots +3",   -- ___, __, 62, 33, __ [11/11,  87]
+    legs="Lethargy Fuseau +3",        -- ___, __, 63, 48, __ [__/__, 162]
+    feet="Lethargy Houseaux +3",      -- ___, __, 60, 30, __ [__/__, 157]
+    neck="Duelist's Torque +2",       -- ___, __, 30, 15, __ [__/__, ___]
+    ear1="Malignance Earring",        -- ___, __, 10,  8,  4 [__/__, ___]
+    ear2="Regal Earring",             -- ___, __, __, 10, __ [__/__, ___]
+    ring1="Metamorph Ring +1",        -- ___, __, 15, 16, __ [__/__, ___]
+    ring2="Stikini Ring +1",          -- ___,  8, 11, __, __ [__/__, ___]
+    back="Aurist's Cape +1",          -- ___, __, 33, 33, __ [__/__, ___]
+    waist="Acuity Belt +1",           -- ___, __, 15, 23, __ [__/__, ___]
+    -- Empy set effect                   ___, __, __, __, __ [__/__, ___]
+    -- Traits/Gifts/Merits            --                  38
+    -- 255 M.Acc skill, 8 Elemental Skill, 552 M.Acc, 314 INT, 62 FC [34 PDT/34 MDT, 667 M.Eva]
   }
-  sets.midcast.INTEnfeeblesAccDW = set_combine(sets.midcast.INTEnfeeblesAcc, {})
-
-  -- Spells that have 100% accuracy. Focus on duration.
-  -- There currently are no spells that fall into this category, but this set exists anyway!
-  sets.midcast.INTEnfeeblesDuration = {
-    main="Daybreak",                  -- 242, 40, __, __ (__, __, __, __) [__/__,  30]
-    sub="Genmei Shield",              -- ___, __, __, __ (__, __, __, __) [10/__, ___]
-    range="Ullr",                     -- ___, 40, __, __ (__, __, __, __) [__/__, ___]
-    ammo=empty,                       -- ___, __, __, __ (__, __, __, __) [__/__, ___]
-    head="Vitiation Chapeau +3",      -- ___, 37, 29, __ (__, __, __, 26) [__/__,  95]; Enhances enf. duration
-    body="Lethargy Sayon +3",         -- ___, 64, 47, __ (__, 18, __, __) [14/14, 136]
-    hands="Regal Cuffs",              -- ___, 45, 40, __ (__, __, 20, __) [__/__,  53]
-    legs="Lethargy Fuseau +3",        -- ___, 63, 48, __ (__, __, __, __) [__/__, 162]
-    feet="Lethargy Houseaux +3",      -- ___, 60, 30, __ (__, __, __, __) [__/__, 157]
-    neck="Duelist's Torque +2",       -- ___, 30, 15, __ (__, 10, 25, __) [__/__, ___]
-    ear1="Snotra Earring",            -- ___, 10, __, __ (__, __, 10, __) [__/__, ___]
-    ear2="Odnowa Earring +1",         -- ___, __, __, __ (__, __, __, __) [ 3/ 5, ___]
-    ring1="Kishar Ring",              -- ___,  5, __,  4 (__, __, 10, __) [__/__, ___]
-    ring2="Defending Ring",           -- ___, __, __, __ (__, __, __, __) [10/10, ___]
-    back=gear.RDM_INT_Enf_Cape,       -- ___, 20, 30, __ (__, 10, __, __) [10/__, ___]
-    waist="Obstinate Sash",           -- ___, 15, __, __ (__, __,  5, 15) [__/__, ___]
-    -- Empy set effect                   ___, __, __, __ (__, __, 20, __) [__/__, ___]
-    -- Traits/Gifts/Merits                            38
-    -- 242 M.Acc skill, 429 M.Acc, 239 INT, 42 FC (0 Immunobreak, 38 Enf. Effect, 90 Enf. Duration, 41 Enf. Skill) [47 PDT/29 MDT, 633 M.Eva]
-  }
-  sets.midcast.INTEnfeeblesDurationDW = set_combine(sets.midcast.INTEnfeeblesDuration, {})
 
   sets.midcast.Dispelga = set_combine(sets.midcast.INTEnfeeblesAcc, {
     main="Daybreak",
@@ -940,31 +635,31 @@ function init_gear_sets()
     waist="Fucho-no-obi",             --  8 Drain/Aspir potency
     -- ear2="Hirudinea Earring",      --  3 Drain/Aspir potency
   })
-  sets.midcast.Aspir = set_combine(sets.midcast.Drain,{})
+  sets.midcast.Aspir = set_combine(sets.midcast.Drain, {})
+  sets.midcast['Aspir III'] = set_combine(sets.midcast.Drain, {})
 
   sets.midcast.Stun = set_combine(sets.midcast['Dark Magic'], {})
 
   -- MB options:
   -- M.Acc Skill, Elemental Skill, M.Acc (INT, MAB, M.Dmg, MB, MB2) [PDT/MDT, M.Eva]
     -- main="Bunzi's Rod",            -- 255, __, 55 (15, 65,248, 10, __) [__/__, ___]
-    -- head="Bunzi's Hat",            -- ___, __, 55 (34, 30, 60,  7, __) [ 7/ 7, 123]
+    -- head="Agwu's Cap",             -- ___, __, 55 (33, 60, 35,  7, __) [__/__, 107]
     -- head=gear.Nyame_B_head,        -- ___, __, 40 (28, 30, __,  5, __) [ 7/ 7, 123]
     -- head="Ea Hat +1",              -- ___, __, 50 (43, 38, __,  7,  7) [__/__, 109]
-    -- head="Atrophy Chapeau +3",     -- ___, 17, 54 (37, __, __, 10, __) [__/__,  95]
-    -- body="Bunzi's Robe",           -- ___, __, 55 (48, 30, 60, 10, __) [10/10, 139]
+    -- body="Agwu's Robe",            -- ___, __, 55 (47, 60, 30, 10, __) [__/__, 123]
     -- body=gear.Nyame_B_body,        -- ___, __, 40 (42, 30, __,  7, __) [ 9/ 9, 139]
     -- body="Ea Houppelande +1",      -- ___, __, 52 (48, 44, __,  9,  9) [__/__, 128]
-    -- hands="Bunzi's Gloves",        -- ___, __, 55 (34, 30, 60,  8,  6) [ 8/ 8, 112]
+    -- hands="Agwu's Gages",          -- ___, __, 55 (33, 60, 20,  8,  6) [__/__,  96]
     -- hands=gear.Nyame_B_hands,      -- ___, __, 40 (28, 30, __,  5, __) [ 7/ 7, 112]
     -- hands="Ea Cuffs +1",           -- ___, __, 49 (40, 35, __,  6,  6) [__/__, 101]
     -- hands=gear.Amalric_D_hands,    -- ___, 14, 20 (36, 53, __, __,  6) [__/__,  48]
-    -- legs="Bunzi's Pants",          -- ___, __, 55 (51, 30, 60,  9, __) [ 9/ 9, 150]
+    -- legs="Agwu's Slops",           -- ___, __, 55 (54, 60, 20,  9, __) [10/10, 134]
     -- legs=gear.Nyame_B_legs,        -- ___, __, 40 (44, 30, __,  6, __) [ 8/ 8, 150]
     -- legs="Ea Slops +1",            -- ___, __, 51 (48, 41, __,  8,  8) [__/__, 147]
-    -- legs="Lethargy Fuseau +3",     -- ___, __, 63 (48, 58, 33, 15, __) [__/__, 162]
-    -- feet="Bunzi's Sabots",         -- ___, __, 55 (32, 30, 60,  6, __) [ 6/ 6, 150]
+    -- feet="Agwu's Pigaches",        -- ___, __, 55 (30, 60, 20,  6, __) [__/__, 134]
     -- feet=gear.Nyame_B_feet,        -- ___, __, 40 (25, 30, __,  5, __) [ 7/ 7, 150]
     -- feet="Ea Pigaches +1",         -- ___, __, 48 ( 5, 32, __,  5,  5) [__/__, 147]
+    -- neck="Sorcerer's Stole +2",    -- ___, __, 55 (15,  7, __, 10, __) [__/__, ___]
     -- neck="Warder's Charm +1",      -- ___, __, __ (__, __, __, 10, __) [__/__, ___]
     -- neck="Mizu. Kubikazari",       -- ___, __, __ ( 4,  8, __, 10, __) [__/__, ___]
     -- ring1="Locus Ring",            -- ___, __, __ (__, __, __,  5, __) [__/__, ___]
@@ -975,25 +670,36 @@ function init_gear_sets()
     sub="Ammurapi Shield",            -- ___, __, 38 (13, 38, __, __, __) [__/__, ___]
     range=empty,                      -- ___, __, __ (__, __, __, __, __) [__/__, ___]
     ammo="Pemphredo Tathlum",         -- ___, __,  8 ( 4,  4, __, __, __) [__/__, ___]
-    head="Lethargy Chappel +3",       -- ___, __, 61 (38, 56, 31, __, __) [10/10, 125]
-    body="Lethargy Sayon +3",         -- ___, __, 64 (47, 54, 34, __, __) [14/14, 136]
-    hands="Lethargy Gantherots +3",   -- ___, __, 62 (33, 52, 32, __, __) [11/11,  87]
-    legs="Lethargy Fuseau +3",        -- ___, __, 63 (48, 58, 33, 15, __) [__/__, 162]
-    feet="Lethargy Houseaux +3",      -- ___, __, 60 (30, 50, 30, __, __) [__/__, 157]
+		head="Ea Hat +1",
+		body="Wicce Coat +3",
+		hands="Agwu's Gages",
+    legs="Wicce Chausses +2",
+    feet="Agwu's Pigaches",
     neck="Sibyl Scarf",               -- ___, __, __ (10, 10, __, __, __) [__/__, ___]
+		-- neck="Sorcerer's Stole +2",    -- ___, __, 30 (15,  7, __, 10, __) [__/__, ___]
     ear1="Malignance Earring",        -- ___, __, 10 ( 8,  8, __, __, __) [__/__, ___]
     ear2="Regal Earring",             -- ___, __, __ (10, __, __, __, __) [__/__, ___]
     ring1="Freke Ring",               -- ___, __, __ (10,  8, __, __, __) [__/__, ___]
     ring2="Metamorph Ring +1",        -- ___, __, 15 (16, __, __, __, __) [__/__, ___]
-    back=gear.RDM_MAB_Cape,           -- ___, __, 20 (30, 10, __, __, __) [10/__, ___]
+		back=gear.BLM_MAB_Cape,           -- ___, __, 20 (30, 10, 20,  5, __) [10/__, ___]
     waist="Refoccilation Stone",      -- ___, __,  4 (__, 10, __, __, __) [__/__, ___]
     -- 255 M.Acc Skill, 0 Elemental Skill, 460 M.Acc (312 INT, 419 MAB, 408 M.Dmg, 25 MB, 0 MB2) [45 PDT/35 MDT, 667 M.Eva]
   }
-  sets.midcast['Elemental Magic'].Seidr = set_combine(sets.midcast['Elemental Magic'], {
-    range="Ullr",                     -- ___, __, 40 (__, __, __, __, __) [__/__, ___]
-    ammo=empty,                       -- ___, __, __ (__, __, __, __, __) [__/__, ___]
-    body="Seidr Cotehardie",          -- ___, __, 13 (__,  7, __, __, __) [__/__, ___]
-    waist="Acuity Belt +1",           -- ___, __, 15 (23, __, __, __, __) [__/__, ___]
+  sets.midcast['Elemental Magic'].Spaekona = set_combine(sets.midcast['Elemental Magic'], {
+		ammo="Ghastly Tathlum +1",
+		head="Ea Hat +1",
+    body="Spaekona's Coat +3",
+		hands="Agwu's Gages",
+    legs="Wicce Chausses +3",
+    feet="Agwu's Pigaches",
+    neck="Sibyl Scarf",               -- ___, __, __ (10, 10, __, __, __) [__/__, ___]
+		-- neck="Sorcerer's Stole +2",    -- ___, __, 30 (15,  7, __, 10, __) [__/__, ___]
+    ear1="Malignance Earring",        -- ___, __, 10 ( 8,  8, __, __, __) [__/__, ___]
+    ear2="Regal Earring",             -- ___, __, __ (10, __, __, __, __) [__/__, ___]
+    ring1="Freke Ring",               -- ___, __, __ (10,  8, __, __, __) [__/__, ___]
+    ring2="Metamorph Ring +1",        -- ___, __, 15 (16, __, __, __, __) [__/__, ___]
+		back=gear.BLM_MAB_Cape,           -- ___, __, 20 (30, 10, 20,  5, __) [10/__, ___]
+    waist="Refoccilation Stone",      -- ___, __,  4 (__, 10, __, __, __) [__/__, ___]
   })
   sets.midcast['Elemental Magic'].Resistant = set_combine(sets.midcast['Elemental Magic'], {
     ammo="Ghastly Tathlum +1",        -- ___, __, __ (11, __, 21, __, __) [__/__, ___]
@@ -1005,36 +711,41 @@ function init_gear_sets()
     sub="Ammurapi Shield",            -- ___, __, 38 (13, 38, __, __, __) [__/__, ___]
     range=empty,                      -- ___, __, __ (__, __, __, __, __) [__/__, ___]
     ammo="Pemphredo Tathlum",         -- ___, __,  8 ( 4,  4, __, __, __) [__/__, ___]
-    head="Ea Hat +1",                 -- ___, __, 50 (43, 38, __,  7,  7) [__/__, 109]
-    body="Ea Houppelande +1",         -- ___, __, 52 (48, 44, __,  9,  9) [__/__, 128]
-    hands="Bunzi's Gloves",           -- ___, __, 55 (34, 30, 60,  8,  6) [ 8/ 8, 112]
-    legs="Ea Slops +1",               -- ___, __, 51 (48, 41, __,  8,  8) [__/__, 147]
-    feet="Lethargy Houseaux +3",      -- ___, __, 60 (30, 50, 30, __, __) [__/__, 157]
+		head="Ea Hat +1",
+		body="Wicce Coat +3",
+		hands="Agwu's Gages",
+    legs="Wicce Chausses +2",
+    feet="Agwu's Pigaches",
     neck="Sibyl Scarf",               -- ___, __, __ (10, 10, __, __, __) [__/__, ___]
+		-- neck="Sorcerer's Stole +2",    -- ___, __, 55 (15,  7, __, 10, __) [__/__, ___]
     ear1="Malignance Earring",        -- ___, __, 10 ( 8,  8, __, __, __) [__/__, ___]
     ear2="Regal Earring",             -- ___, __, __ (10, __, __, __, __) [__/__, ___]
     ring1="Freke Ring",               -- ___, __, __ (10,  8, __, __, __) [__/__, ___]
-    ring2="Defending Ring",           -- ___, __, __ (__, __, __, __, __) [10/10, ___]
-    back=gear.RDM_MAB_Cape,           -- ___, __, 20 (30, 10, __, __, __) [10/__, ___]
+    ring2="Metamorph Ring +1",        -- ___, __, 15 (16, __, __, __, __) [__/__, ___]
+		back=gear.BLM_MAB_Cape,           -- ___, __, 20 (30, 10, 20,  5, __) [10/__, ___]
     waist="Refoccilation Stone",      -- ___, __,  4 (__, 10, __, __, __) [__/__, ___]
-    -- 255 M.Acc Skill, 0 Elemental Skill, 403 M.Acc (303 INT, 356 MAB, 338 M.Dmg, 42 MB, 30 MB2) [28 PDT/18 MDT, 653 M.Eva]
+    -- 255 M.Acc Skill, 0 Elemental Skill, 460 M.Acc (312 INT, 419 MAB, 408 M.Dmg, 25 MB, 0 MB2) [45 PDT/35 MDT, 667 M.Eva]
   }
-  sets.midcast['Elemental Magic'].Seidr.MB = set_combine(sets.midcast['Elemental Magic'], {
-    ammo="Ghastly Tathlum +1",        -- ___, __, __ (11, __, 21, __, __) [__/__, ___]
-    body="Seidr Cotehardie",          -- ___, __, 13 (__,  7, __, __, __) [__/__, ___]
-    ring1="Metamorph Ring +1",        -- ___, __, 15 (16, __, __, __, __) [__/__, ___]
-    waist="Acuity Belt +1",           -- ___, __, 15 (23, __, __, __, __) [__/__, ___]
+  sets.midcast['Elemental Magic'].Spaekona.MB = set_combine(sets.midcast['Elemental Magic'], {
+		ammo="Ghastly Tathlum +1",
+		head="Ea Hat +1",
+    body="Spaekona's Coat +3",
+		hands="Agwu's Gages",
+    legs="Wicce Chausses +3",
+    feet="Agwu's Pigaches",
+    neck="Sibyl Scarf",               -- ___, __, __ (10, 10, __, __, __) [__/__, ___]
+		-- neck="Sorcerer's Stole +2",    -- ___, __, 55 (15,  7, __, 10, __) [__/__, ___]
+    ear1="Malignance Earring",        -- ___, __, 10 ( 8,  8, __, __, __) [__/__, ___]
+    ear2="Regal Earring",             -- ___, __, __ (10, __, __, __, __) [__/__, ___]
+    ring1="Freke Ring",               -- ___, __, __ (10,  8, __, __, __) [__/__, ___]
+    ring2="Metamorph Ring +1",        -- ___, __, 15 (16, __, __, __, __) [__/__, ___]
+		back=gear.BLM_MAB_Cape,           -- ___, __, 20 (30, 10, 20,  5, __) [10/__, ___]
+    waist="Refoccilation Stone",      -- ___, __,  4 (__, 10, __, __, __) [__/__, ___]
   })
   sets.midcast['Elemental Magic'].Resistant.MB = set_combine(sets.midcast['Elemental Magic'], {
     ammo="Ghastly Tathlum +1",        -- ___, __, __ (11, __, 21, __, __) [__/__, ___]
-    ring1="Metamorph Ring +1",        -- ___, __, 15 (16, __, __, __, __) [__/__, ___]
     waist="Acuity Belt +1",           -- ___, __, 15 (23, __, __, __, __) [__/__, ___]
   })
-  -- Combined on top of the other sets if dual wield available and in casting weapon mode
-  sets.midcast['Elemental Magic'].DW = {
-    main="Bunzi's Rod",               -- 255, __, 55 (15, 65,248, 10, __) [__/__, ___]
-    sub="Daybreak",                   -- ___, __, 40 (__, 40, __, __, __) [__/__,  30]
-  }
 
   sets.midcast.Impact = {
     main="Crocea Mors",               -- 255, __, 50, __, 20 [__/__, ___]
@@ -1058,63 +769,35 @@ function init_gear_sets()
     -- 255 M.Acc skill, 8 Elemental Skill, 499 M.Acc, 314 INT, 62 FC [26 PDT/26 MDT, 618 M.Eva]
   }
 
-  -- For spells like Burn, Choke, etc.
-  sets.midcast.ElementalEnfeeble = {
-    main="Crocea Mors",               -- 255, __, 50, __, 20 [__/__, ___]
-    sub="Ammurapi Shield",            -- ___, __, 38, 13, __ [__/__, ___]
-    range="Ullr",                     -- ___, __, 40, __, __ [__/__, ___]
-    ammo=empty,                       -- ___, __, __, __, __ [__/__, ___]
-    head="Lethargy Chappel +3",       -- ___, __, 61, 38, __ [10/10, 125]
-    body="Lethargy Sayon +3",         -- ___, __, 64, 47, __ [14/14, 136]
-    hands="Lethargy Gantherots +3",   -- ___, __, 62, 33, __ [11/11,  87]
-    legs="Lethargy Fuseau +3",        -- ___, __, 63, 48, __ [__/__, 162]
-    feet="Lethargy Houseaux +3",      -- ___, __, 60, 30, __ [__/__, 157]
-    neck="Duelist's Torque +2",       -- ___, __, 30, 15, __ [__/__, ___]
-    ear1="Malignance Earring",        -- ___, __, 10,  8,  4 [__/__, ___]
-    ear2="Regal Earring",             -- ___, __, __, 10, __ [__/__, ___]
-    ring1="Metamorph Ring +1",        -- ___, __, 15, 16, __ [__/__, ___]
-    ring2="Stikini Ring +1",          -- ___,  8, 11, __, __ [__/__, ___]
-    back="Aurist's Cape +1",          -- ___, __, 33, 33, __ [__/__, ___]
-    waist="Acuity Belt +1",           -- ___, __, 15, 23, __ [__/__, ___]
-    -- Empy set effect                   ___, __, __, __, __ [__/__, ___]
-    -- Traits/Gifts/Merits            --                  38
-    -- 255 M.Acc skill, 8 Elemental Skill, 552 M.Acc, 314 INT, 62 FC [34 PDT/34 MDT, 667 M.Eva]
-  }
-
-  sets.buff.Saboteur = {
-    hands="Lethargy Gantherots +3",
-  }
-
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Defense Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
 
-  sets.HeavyDef = { -- Not counting weapons in totals because will not always be equippable (battle mode)
+  sets.HeavyDef = {
     main="Mpaca's Staff",             -- __/__, ___ [ 2]
     sub="Enki Strap",                 -- __/__,  10 [__]
     range=empty,                      -- __/__, ___ [__]
     ammo="Staunch Tathlum +1",        --  3/ 3, ___ [__]; Resist Status+11
-    head="Bunzi's Hat",               --  7/ 7, 123 [__]
+    head="Wicce Petasos +2",          -- 10/10, 126 [__]
     body="Shamash Robe",              -- 10/__, 106 [ 3]; Resist Silence+90
     hands=gear.Nyame_B_hands,         --  7/ 7, 112 [__]
     legs=gear.Nyame_B_legs,           --  8/ 8, 150 [__]
-    feet=gear.Nyame_B_feet,           --  7/ 7, 150 [__]
+    feet="Wicce Sabots +2",           -- 10/10, 158 [__]
     neck="Loricate Torque +1",        --  6/ 6, ___ [__]; DEF+60
     ear1="Arete Del Luna +1",         -- __/__, ___ [__]; Resists
     ear2="Etiolation Earring",        -- __/ 3, ___ [__]; Resist Silence+15
     ring1="Wuji Ring",                -- __/__, ___ [__]; Resists Charm/Sleep
-    ring2="Defending Ring",           -- 10/10, ___ [__]
-    back=gear.RDM_INT_Enf_Cape,       -- 10/__, ___ [__]
+    ring2="Archon Ring",              -- __/__, ___ [__]; Annul severe magic dmg
+    back=gear.BLM_INT_Enf_Cape,       -- 10/__, ___ [__]
     waist="Carrier's Sash",           -- __/__, ___ [__]; Ele Resist+15
-    -- 68 PDT/51 MDT, 641 M.Eva [3 Refresh]
+    -- 64 PDT/47 MDT, 662 M.Eva [5 Refresh]
     
-    -- main="Sakpata's Sword",        -- 10/10, ___ [ 3]; R30
-    -- sub="Sacro Bulwark",           -- 10/10, ___ [__]
-    -- head="Lethargy Chappel +3",    -- 10/10, 125 [__]
+    -- head="Wicce Petasos +3",       -- 11/11, 136 [__]
+    -- feet="Wicce Sabots +3",        -- 11/11, 168 [__]
     -- ring2="Shadow Ring",           -- __/__, ___ [__]; Occ. annuls magic dmg
     -- back="Shadow Mantle",          -- __/__, ___ [__]; Occ. annuls physical dmg
-    -- 51 PDT/44 MDT, 643 M.Eva [3 Refresh]
+    -- 56 PDT/49 MDT, 682 M.Eva [5 Refresh]
   }
 
   sets.defense.PDT = set_combine(sets.HeavyDef, {})
@@ -1131,70 +814,19 @@ function init_gear_sets()
   sets.passive_refresh = {
     range=empty,                      -- __/__, ___ [__]
     ammo="Homiliary",                 -- __/__, ___ [ 1]
-    head="Vitiation Chapeau +3",      -- __/__,  95 [ 3]
+    head="Volte Beret",               -- __/__, 104 [ 1]
     body="Shamash Robe",              -- 10/__, 106 [ 3]; Resist Silence+90
-    hands="Lethargy Gantherots +3",   -- 11/11,  87 [__]
-    legs="Bunzi's Pants",             --  9/ 9, 150 [__]
+    hands="Wicce Gloves +3",          -- 13/13,  98 [__]
+    legs="Assiduity Pants +1",        -- __/__, 107 [ 2]
     feet="Volte Gaiters",             -- __/__, 142 [ 1]
     neck="Sibyl Scarf",               -- __/__, ___ [ 1]
     ear1="Arete Del Luna +1",         -- __/__, ___ [__]; Resists
     ear2="Etiolation Earring",        -- __/ 3, ___ [__]; Resist Silence+15
     ring1="Stikini Ring +1",          -- __/__, ___ [ 1]
     ring2="Defending Ring",           -- 10/10, ___ [__]
-    back=gear.RDM_INT_Enf_Cape,       -- 10/__, ___ [__]
+    back=gear.BLM_FC_Cape,            -- 10/__, ___ [__]
     waist="Carrier's Sash",           -- __/__, ___ [__]; Ele Resist
-    -- 50 PDT / 33 MDT, 580 M.Eva [10 Refresh]
-  }
-  -- Used when your weapons are unlocked but cannot dual wield (sub SCH)
-  sets.passive_refresh.Single = {
-    main="Mpaca's Staff",             -- __/__, ___ [ 2]
-    sub="Enki Strap",                 -- __/__,  10 [__]
-    range=empty,                      -- __/__, ___ [__]
-    ammo="Homiliary",                 -- __/__, ___ [ 1]
-    head="Vitiation Chapeau +3",      -- __/__,  95 [ 3]
-    body="Shamash Robe",              -- 10/__, 106 [ 3]; Resist Silence+90
-    hands="Lethargy Gantherots +3",   -- 11/11,  87 [__]
-    legs="Bunzi's Pants",             --  9/ 9, 150 [__]
-    feet="Volte Gaiters",             -- __/__, 142 [ 1]
-    neck="Sibyl Scarf",               -- __/__, ___ [ 1]
-    ear1="Arete Del Luna +1",         -- __/__, ___ [__]; Resists
-    ear2="Etiolation Earring",        -- __/ 3, ___ [__]; Resist Silence+15
-    ring1="Stikini Ring +1",          -- __/__, ___ [ 1]
-    ring2="Defending Ring",           -- 10/10, ___ [__]
-    back=gear.RDM_INT_Enf_Cape,       -- 10/__, ___ [__]
-    waist="Carrier's Sash",           -- __/__, ___ [__]; Ele Resist
-    -- 50 PDT / 33 MDT, 590 M.Eva [12 Refresh]
-    
-    -- main="Sakpata's Sword",        -- 10/10, ___ [ 3]; R30
-    -- sub="Sacro Bulwark",           -- 10/10, ___ [__]
-    -- hands="Volte Gloves",          -- __/__,  96 [ 1]
-    -- ring2="Stikini Ring +1",       -- __/__, ___ [ 1]
-    -- 49 PDT / 32 MDT, 589 M.Eva [15 Refresh]
-  }
-  -- Used when weapons are unlocked and you can dual wield
-  sets.passive_refresh.Dual = {
-    main="Bolelabunga",               -- __/__, ___ [ 1]
-    sub="Daybreak",                   -- __/__,  30 [ 1]
-    range=empty,                      -- __/__, ___ [__]
-    ammo="Homiliary",                 -- __/__, ___ [ 1]
-    head="Vitiation Chapeau +3",      -- __/__,  95 [ 3]
-    body="Shamash Robe",              -- 10/__, 106 [ 3]; Resist Silence+90
-    hands="Lethargy Gantherots +3",   -- 11/11,  87 [__]
-    legs="Bunzi's Pants",             --  9/ 9, 150 [__]
-    feet="Volte Gaiters",             -- __/__, 142 [ 1]
-    neck="Sibyl Scarf",               -- __/__, ___ [ 1]
-    ear1="Arete Del Luna +1",         -- __/__, ___ [__]; Resists
-    ear2="Etiolation Earring",        -- __/ 3, ___ [__]; Resist Silence+15
-    ring1="Stikini Ring +1",          -- __/__, ___ [ 1]
-    ring2="Defending Ring",           -- 10/10, ___ [__]
-    back=gear.RDM_INT_Enf_Cape,       -- 10/__, ___ [__]
-    waist="Carrier's Sash",           -- __/__, ___ [__]; Ele Resist
-    -- 50 PDT / 33 MDT, 610 M.Eva [12 Refresh]
-    
-    -- main="Sakpata's Sword",        -- 10/10, ___ [ 3]; R30
-    -- sub="Daybreak",                -- __/__,  30 [ 1]
-    -- hands="Volte Gloves",          -- __/__,  96 [ 1]
-    -- 49 PDT / 32 MDT, 619 M.Eva [15 Refresh]
+    -- 43 PDT / 26 MDT, 557 M.Eva [10 Refresh]
   }
   sets.passive_refresh.sub50 = {
     waist="Fucho-no-Obi",             -- __/__, ___ [ 1]
@@ -1204,42 +836,11 @@ function init_gear_sets()
   sets.idle.Refresh = set_combine(sets.idle, sets.passive_refresh)
   sets.idle.Refresh.MpSub50 = set_combine(sets.idle, sets.passive_refresh, sets.passive_refresh.sub50)
 
-  sets.idle.Gyve = set_combine(sets.idle, {
-    -- body="Gyve Doublet",
-  })
-  sets.idle.Gyve.Refresh = set_combine(sets.idle, sets.passive_refresh, {
-    -- body="Gyve Doublet",
-  })
-  sets.idle.Gyve.Refresh.MpSub50 = set_combine(sets.idle, sets.passive_refresh, sets.passive_refresh.sub50, {
-    -- body="Gyve Doublet",
-  })
-
-  sets.idle.RefreshSingle = set_combine(sets.idle, sets.passive_refresh.Single)
-  sets.idle.RefreshSingle.MpSub50 = set_combine(sets.idle, sets.passive_refresh.Single, sets.passive_refresh.sub50)
-
-  sets.idle.Gyve.RefreshSingle = set_combine(sets.idle, sets.passive_refresh.Single, {
-    -- body="Gyve Doublet",
-  })
-  sets.idle.Gyve.RefreshSingle.MpSub50 = set_combine(sets.idle, sets.passive_refresh.Single, sets.passive_refresh.sub50, {
-    -- body="Gyve Doublet",
-  })
-
-  sets.idle.RefreshDual = set_combine(sets.idle, sets.passive_refresh.Dual)
-  sets.idle.RefreshDual.MpSub50 = set_combine(sets.idle, sets.passive_refresh.Dual, sets.passive_refresh.sub50)
-
-  sets.idle.Gyve.RefreshDual = set_combine(sets.idle, sets.passive_refresh.Dual, {
-    -- body="Gyve Doublet",
-  })
-  sets.idle.Gyve.RefreshDual.MpSub50 = set_combine(sets.idle, sets.passive_refresh.Dual, sets.passive_refresh.sub50, {
-    -- body="Gyve Doublet",
-  })
-
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Engaged Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
 
-  -- No DW (0 needed from gear)
   sets.engaged = {
     range=empty,                      -- __, __, __ <__, __, __> [__/__, ___]
     ammo="Coiste Bodhar",             -- __,  3, __ < 3, __, __> [__/__, ___]
@@ -1253,7 +854,7 @@ function init_gear_sets()
     ear2="Sherida Earring",           -- __,  5, __ < 5, __, __> [__/__, ___]
     ring1="Chirich Ring +1",          -- __,  6, 10 <__, __, __> [__/__, ___]
     ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
-    back=gear.RDM_STP_Cape,           -- __, 10, 30 <__, __, __> [10/__, ___]
+    back=gear.BLM_STP_Cape,           -- __, 10, 30 <__, __, __> [10/__, ___]
     waist="Sailfi Belt +1",           -- __, __, __ < 5,  2, __> [__/__, ___]
     -- 0 DW, 89 STP, 285 Acc <13 DA, 2 TA, 3 QA> [52 PDT/42 MDT, 674 M.Eva]
   }
@@ -1271,215 +872,6 @@ function init_gear_sets()
     -- 0 DW, 81 STP, 345 Acc <1 DA, 0 TA, 3 QA> [52 PDT/42 MDT, 674 M.Eva]
   })
 
-  -- Low DW (11 needed from gear)
-  sets.engaged.LowDW = {
-    range=empty,                      -- __, __, __ <__, __, __> [__/__, ___]
-    ammo="Coiste Bodhar",             -- __,  3, __ < 3, __, __> [__/__, ___]
-    head="Bunzi's Hat",               -- __,  8, 55 <__, __,  3> [ 7/ 7, 123]
-    body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
-    hands="Malignance Gloves",        -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
-    legs="Malignance Tights",         -- __, 10, 50 <__, __, __> [ 7/ 7, 150]
-    feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
-    neck="Anu Torque",                -- __,  7, __ <__, __, __> [__/__, ___]
-    ear1="Dedition Earring",          -- __,  8,-10 <__, __, __> [__/__, ___]
-    ear2="Eabani Earring",            --  4, __, __ <__, __, __> [__/__,   8]
-    ring1="Chirich Ring +1",          -- __,  6, 10 <__, __, __> [__/__, ___]
-    ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
-    back=gear.RDM_STP_Cape,           -- __, 10, 30 <__, __, __> [10/__, ___]
-    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
-    -- 11 DW, 88 STP, 295 Acc <3 DA, 0 TA, 3 QA> [52 PDT/42 MDT, 682 M.Eva]
-  }
-  sets.engaged.LowDW.MidAcc = set_combine(sets.engaged.LowDW, {
-    -- ammo="Voluspa Tathlum",        -- __, __, 10 <__, __, __> [__/__, ___]
-    -- neck="Lissome Necklace",       -- __,  4,  8 < 1, __, __> [__/__, ___]
-    -- ear1="Telos Earring",          -- __,  5, 10 < 1, __, __> [__/__, ___]
-    -- 11 DW, 79 STP, 333 Acc <2 DA, 0 TA, 3 QA> [52 PDT/42 MDT, 682 M.Eva]
-  })
-  sets.engaged.LowDW.HighAcc = set_combine(sets.engaged.LowDW.MidAcc, {
-    -- neck="Combatant's Torque",     -- __,  4, __ <__, __, __> [__/__, ___]; Combat skills+15
-    ear2="Dignitary's Earring",       -- __,  3, 10 <__, __, __> [__/__, ___]
-    back=gear.RDM_DW_Cape,            -- 10, __, 30 <__, __, __> [10/__, ___]
-    waist="Olseni Belt",              -- __,  3, 20 <__, __, __> [__/__, ___]
-    -- 10 DW, 71 STP, 345 Acc <1 DA, 0 TA, 3 QA> [52 PDT/42 MDT, 674 M.Eva]
-  })
-
-  -- Mid DW (18 needed from gear)
-  sets.engaged.MidDW = {
-    range=empty,                      -- __, __, __ <__, __, __> [__/__, ___]
-    ammo="Coiste Bodhar",             -- __,  3, __ < 3, __, __> [__/__, ___]
-    head="Bunzi's Hat",               -- __,  8, 55 <__, __,  3> [ 7/ 7, 123]
-    body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
-    hands="Malignance Gloves",        -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
-    legs="Malignance Tights",         -- __, 10, 50 <__, __, __> [ 7/ 7, 150]
-    feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
-    neck="Anu Torque",                -- __,  7, __ <__, __, __> [__/__, ___]
-    ear1="Dedition Earring",          -- __,  8,-10 <__, __, __> [__/__, ___]
-    ear2="Sherida Earring",           -- __,  5, __ < 5, __, __> [__/__, ___]
-    ring1="Chirich Ring +1",          -- __,  6, 10 <__, __, __> [__/__, ___]
-    ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
-    back=gear.RDM_DW_Cape,            -- 10, __, 30 <__, __, __> [10/__, ___]
-    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
-    -- 17 DW, 83 STP, 295 Acc <8 DA, 0 TA, 3 QA> [52 PDT/42 MDT, 674 M.Eva]
-  }
-  sets.engaged.MidDW.MidAcc = set_combine(sets.engaged.MidDW.MidAcc, {
-    -- ammo="Voluspa Tathlum",        -- __, __, 10 <__, __, __> [__/__, ___]
-    -- neck="Lissome Necklace",       -- __,  4,  8 < 1, __, __> [__/__, ___]
-    -- ear1="Telos Earring",          -- __,  5, 10 < 1, __, __> [__/__, ___]
-    -- 17 DW, 74 STP, 333 Acc <7 DA, 0 TA, 3 QA> [52 PDT/42 MDT, 674 M.Eva]
-  })
-  sets.engaged.MidDW.HighAcc = set_combine(sets.engaged.MidDW.HighAcc, {
-    -- neck="Combatant's Torque",     -- __,  4, __ <__, __, __> [__/__, ___]; Combat skills+15
-    ear2="Dignitary's Earring",       -- __,  3, 10 <__, __, __> [__/__, ___]
-    -- 17 DW, 72 STP, 335 Acc <1 DA, 0 TA, 3 QA> [52 PDT/42 MDT, 674 M.Eva]
-  })
-
-  -- High DW (31 needed from gear)
-  sets.engaged.HighDW = {
-    range=empty,                      -- __, __, __ <__, __, __> [__/__, ___]
-    ammo="Staunch Tathlum +1",        -- __, __, __ <__, __, __> [ 3/ 3, ___]
-    head="Bunzi's Hat",               -- __,  8, 55 <__, __,  3> [ 7/ 7, 123]
-    body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
-    hands="Malignance Gloves",        -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
-    legs="Malignance Tights",         -- __, 10, 50 <__, __, __> [ 7/ 7, 150]
-    feet=gear.Taeon_DW_feet,          --  9, __, 26 <__, __, __> [__/__,  69]
-    neck="Anu Torque",                -- __,  7, __ <__, __, __> [__/__, ___]
-    ear1="Dedition Earring",          -- __,  8,-10 <__, __, __> [__/__, ___]
-    ear2="Suppanomimi",               --  5, __, __ <__, __, __> [__/__, ___]
-    ring1="Chirich Ring +1",          -- __,  6, 10 <__, __, __> [__/__, ___]
-    ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
-    back=gear.RDM_DW_Cape,            -- 10, __, 30 <__, __, __> [10/__, ___]
-    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
-    -- 31 DW, 66 STP, 271 Acc <0 DA, 0 TA, 3 QA> [51 PDT/41 MDT, 593 M.Eva]
-  }
-  sets.engaged.HighDW.MidAcc = set_combine(sets.engaged.HighDW, {
-    -- neck="Combatant's Torque",     -- __,  4, __ <__, __, __> [__/__, ___]; Combat skills+15
-    -- ear1="Telos Earring",          -- __,  5, 10 < 1, __, __> [__/__, ___]
-    -- 31 DW, 60 STP, 291 Acc <1 DA, 0 TA, 3 QA> [51 PDT/41 MDT, 593 M.Eva]
-  })
-  sets.engaged.HighDW.HighAcc = set_combine(sets.engaged.HighDW.MidAcc, {
-    -- ammo="Voluspa Tathlum",        -- __, __, 10 <__, __, __> [__/__, ___]
-    feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
-    ear2="Dignitary's Earring",       -- __,  3, 10 <__, __, __> [__/__, ___]
-    waist="Olseni belt",              -- __,  3, 20 <__, __, __> [__/__, ___]
-    -- 10 DW, 71 STP, 345 Acc <1 DA, 0 TA, 3 QA> [52 PDT/42 MDT, 674 M.Eva]
-  })
-
-  -- Super DW (42 needed from gear)
-  sets.engaged.SuperDW = {
-    range=empty,                      -- __, __, __ <__, __, __> [__/__, ___]
-    ammo="Coiste Bodhar",             -- __,  3, __ < 3, __, __> [__/__, ___]
-    head="Bunzi's Hat",               -- __,  8, 55 <__, __,  3> [ 7/ 7, 123]
-    body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
-    hands="Bunzi's Gloves",           -- __, __, 55 < 8, __, __> [ 8/ 8, 112]
-    legs=gear.Carmine_D_legs,         --  6, __, 55 <__, __, __> [__/__,  80]
-    feet=gear.Taeon_DW_feet,          --  9, __, 26 <__, __, __> [__/__,  69]
-    neck="Loricate Torque +1",        -- __, __, __ <__, __, __> [ 6/ 6, ___]
-    ear1="Eabani Earring",            --  4, __, __ <__, __, __> [__/__,   8]
-    ear2="Suppanomimi",               --  5, __, __ <__, __, __> [__/__, ___]
-    ring1="Chirich Ring +1",          -- __,  6, 10 <__, __, __> [__/__, ___]
-    ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
-    back=gear.RDM_DW_Cape,            -- 10, __, 30 <__, __, __> [10/__, ___]
-    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
-    -- 41 DW, 32 STP, 291 Acc <11 DA, 0 TA, 3 QA> [50 PDT/40 MDT, 531 M.Eva]
-  }
-  sets.engaged.SuperDW.MidAcc = set_combine(sets.engaged.SuperDW, {
-    -- ammo="Voluspa Tathlum",        -- __, __, 10 <__, __, __> [__/__, ___]
-    feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
-    -- neck="Combatant's Torque",     -- __,  4, __ <__, __, __> [__/__, ___]; Combat skills+15
-    -- 32 DW, 42 STP, 325 Acc <8 DA, 0 TA, 3 QA> [48 PDT/38 MDT, 612 M.Eva]
-  })
-  sets.engaged.SuperDW.HighAcc = set_combine(sets.engaged.SuperDW.MidAcc, {
-    -- ear1="Telos Earring",          -- __,  5, 10 < 1, __, __> [__/__, ___]
-    ear2="Dignitary's Earring",       -- __,  3, 10 <__, __, __> [__/__, ___]
-    waist="Olseni belt",              -- __,  3, 20 <__, __, __> [__/__, ___]
-    -- 16 DW, 49 STP, 355 Acc <9 DA, 0 TA, 3 QA> [48 PDT/38 MDT, 610 M.Eva]
-  })
-
-  -- Max DW (49 needed from gear)
-  sets.engaged.MaxDW = {
-    range=empty,                      -- __, __, __ <__, __, __> [__/__, ___]
-    ammo="Coiste Bodhar",             -- __,  3, __ < 3, __, __> [__/__, ___]
-    head="Bunzi's Hat",               -- __,  8, 55 <__, __,  3> [ 7/ 7, 123]
-    body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
-    hands="Bunzi's Gloves",           -- __, __, 55 < 8, __, __> [ 8/ 8, 112]
-    legs=gear.Carmine_D_legs,         --  6, __, 55 <__, __, __> [__/__,  80]
-    feet=gear.Taeon_DW_feet,          --  9, __, 26 <__, __, __> [__/__,  69]
-    neck="Loricate Torque +1",        -- __, __, __ <__, __, __> [ 6/ 6, ___]
-    ear1="Eabani Earring",            --  4, __, __ <__, __, __> [__/__,   8]
-    ear2="Suppanomimi",               --  5, __, __ <__, __, __> [__/__, ___]
-    ring1="Chirich Ring +1",          -- __,  6, 10 <__, __, __> [__/__, ___]
-    ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
-    back=gear.RDM_DW_Cape,            -- 10, __, 30 <__, __, __> [10/__, ___]
-    waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
-    -- 41 DW, 32 STP, 291 Acc <11 DA, 0 TA, 3 QA> [50 PDT/40 MDT, 531 M.Eva]
-  }
-  sets.engaged.MaxDW.MidAcc = set_combine(sets.engaged.MaxDW, {
-    -- ammo="Voluspa Tathlum",        -- __, __, 10 <__, __, __> [__/__, ___]
-    feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
-    -- neck="Combatant's Torque",     -- __,  4, __ <__, __, __> [__/__, ___]; Combat skills+15
-    -- 32 DW, 42 STP, 325 Acc <8 DA, 0 TA, 3 QA> [48 PDT/38 MDT, 612 M.Eva]
-  })
-  sets.engaged.MaxDW.HighAcc = set_combine(sets.engaged.MaxDW.MidAcc, {
-    -- ear1="Telos Earring",          -- __,  5, 10 < 1, __, __> [__/__, ___]
-    ear2="Dignitary's Earring",       -- __,  3, 10 <__, __, __> [__/__, ___]
-    waist="Olseni belt",              -- __,  3, 20 <__, __, __> [__/__, ___]
-    -- 16 DW, 49 STP, 355 Acc <9 DA, 0 TA, 3 QA> [48 PDT/38 MDT, 610 M.Eva]
-  })
-
-  --------------- En-Spell ---------------
-
-  -- Consider Vitiation Tights if you use enspell merits
-  sets.engaged.Enspell = set_combine(sets.engaged, {
-    -- main="Crocea Mors",            -- __, __, 50 <__, __, __> [__/__, ___] (50, x6, __)
-    -- sub="Gleti's Knife",           -- __, __, 55 <__,  6, __> [__/__, ___] (55, __, __); R30
-    range="Ullr",                     -- __, __, __ <__, __, __> [__/__, ___] (40, __, __)
-    ammo=empty,                       -- __, __, __ <__, __, __> [__/__, ___] (__, __, __)
-    head="Bunzi's Hat",               -- __,  8, 55 <__, __,  3> [ 7/ 7, 123] (55, __, __); R30
-    body="Lethargy Sayon +3",         -- __, __, 64 <__, __, __> [14/14, 136] (64, __, __)
-    -- hands="Ayanmo Manopolas +2",   -- __, __, 43 <__, __, __> [ 3/ 3,  37] (43, 17, __)
-    legs=gear.Nyame_B_legs,           -- __, __, 40 < 6, __, __> [ 8/ 8, 150] (40, __, __); R30
-    feet=gear.Nyame_B_feet,           -- __, __, 53 < 5, __, __> [ 7/ 7, 150] (40, __, __); R30
-    neck="Duelist's Torque +2",       -- __, __, __ <__, __, __> [__/__, ___] (30, __, __)
-    -- ear1="Lycopodium Earring",     -- __, __, __ <__, __, __> [__/__, ___] ( 1,  2, __)
-    ear2="Sherida Earring",           -- __,  5, __ < 5, __, __> [__/__, ___] (__, __, __)
-    ring1="Hetairoi Ring",            -- __, __, __ <__,  2, __> [__/__, ___] (__, __, __)
-    ring2="Chirich Ring +1",          -- __,  6, 10 <__, __, __> [__/__, ___] (__, __, __)
-    back=gear.RDM_STP_Cape,           -- __, 10, 30 <__, __, __> [10/__, ___] (__, __, __)
-    waist="Orpheus's Sash",           -- __, __, __ <__, __, __> [__/__, ___] (__, __, __); Dmg+15%
-    -- Traits/merits/gifts            -- __, __, __ <__, __, __> [__/__, ___] (90,  7, 36)
-    -- 0 DW, 29 STP, 400 Acc <16 DA, 8 TA, 3 QA> [49 PDT/39 MDT, 596 M.Eva] (508 M.Acc, 26 Enspell Dmg, 36 Enh Skill)
-
-    -- ear2="Lethargy Earring +2",    -- __, __, 20 < 8, __, __> [__/__, ___] (20, __, __)
-  })
-  -- Low DW (11 needed from gear)
-  sets.engaged.LowDW.Enspell = set_combine(sets.engaged.Enspell, {
-    back=gear.RDM_DW_Cape,            -- 10, __, 30 <__, __, __> [10/__, ___]
-  })
-  -- Mid DW (18 needed from gear)
-  sets.engaged.MidDW.Enspell = set_combine(sets.engaged.Enspell, {
-    ear1="Eabani Earring",            --  4, __, __ <__, __, __> [__/__,   8]
-    ear2="Suppanomimi",               --  5, __, __ <__, __, __> [__/__, ___]
-    back=gear.RDM_DW_Cape,            -- 10, __, 30 <__, __, __> [10/__, ___]
-  })
-  -- High DW (31 needed from gear)
-  sets.engaged.HighDW.Enspell = set_combine(sets.engaged.Enspell, {
-    ear1="Eabani Earring",            --  4, __, __ <__, __, __> [__/__,   8]
-    ear2="Suppanomimi",               --  5, __, __ <__, __, __> [__/__, ___]
-    back=gear.RDM_DW_Cape,            -- 10, __, 30 <__, __, __> [10/__, ___]
-  })
-  -- Super DW (42 needed from gear)
-  sets.engaged.SuperDW.Enspell = set_combine(sets.engaged.Enspell, {
-    ear1="Eabani Earring",            --  4, __, __ <__, __, __> [__/__,   8]
-    ear2="Suppanomimi",               --  5, __, __ <__, __, __> [__/__, ___]
-    back=gear.RDM_DW_Cape,            -- 10, __, 30 <__, __, __> [10/__, ___]
-  })
-  -- Max DW (49 needed from gear)
-  sets.engaged.MaxDW.Enspell = set_combine(sets.engaged.Enspell, {
-    ear1="Eabani Earring",            --  4, __, __ <__, __, __> [__/__,   8]
-    ear2="Suppanomimi",               --  5, __, __ <__, __, __> [__/__, ___]
-    back=gear.RDM_DW_Cape,            -- 10, __, 30 <__, __, __> [10/__, ___]
-  })
-
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Special Sets ------------------------------------------
@@ -1495,12 +887,6 @@ function init_gear_sets()
     waist="Hachirin-no-Obi"
   }
 
-  sets.TreasureHunter = {
-    ammo="Perfect Lucky Egg",
-    body=gear.Merl_TH_body,   -- 2
-    waist="Chaac Belt",
-  }
-
   sets.Kiting = {
     ring1="Shneddick Ring",
   }
@@ -1509,95 +895,16 @@ function init_gear_sets()
   }
 
   sets.Special = {}
-  sets.Special.CaitSith = {
-    main="Contemplator +1",
-    sub="Enki Strap",
-    range="Ullr",
-    ammo=empty,
-    head="Lethargy Chappel +3",
-    body="Lethargy Sayon +3",
-    hands="Lethargy Gantherots +3",
-    legs=gear.Chironic_MAcc_legs,
-    feet=gear.Kaykaus_D_feet,
-    neck="Duelist's Torque +2",
-    ear1="Snotra Earring",
-    ear2="Malignance Earring",
-    ring1="Metamorph Ring +1",
-    ring2="Stikini Ring +1",
-    back=gear.RDM_INT_Enf_Cape,
-    waist="Obstinate Sash",
-  }
 
   --Weapon sets
   sets.WeaponSet = {}
-  sets.WeaponSet['Savage'] = {
-    main="Naegling",
-    sub="Ammurapi Shield",
-  }
-  sets.WeaponSet['Savage'].DW = {
-    main="Naegling",
-    sub="Machaera +2",
-    -- sub="Thibron",
-  }
-  sets.WeaponSet['SavageAcc'] = {
-    main="Naegling",
-    sub="Ammurapi Shield",
-  }
-  sets.WeaponSet['SavageAcc'].DW = {
-    main="Naegling",
-    sub="Tauret",
-  }
-  sets.WeaponSet['Enspell'] = {
-    main="Crocea Mors",
-    sub="Ammurapi Shield",
-  }
-  sets.WeaponSet['Enspell'].DW = {
-    main="Crocea Mors",
-    sub="Tauret",
-    -- sub="Gleti's Knife",
-  }
-  sets.WeaponSet['BlackHalo'] = {
-    main="Maxentius",
-    sub="Ammurapi Shield",
-  }
-  sets.WeaponSet['BlackHalo'].DW = {
-    main="Maxentius",
-    sub="Tauret",
-  }
-  sets.WeaponSet['BlackHaloAcc'] = {
-    main="Maxentius",
-    sub="Ammurapi Shield",
-  }
-  sets.WeaponSet['BlackHaloAcc'].DW = {
-    main="Maxentius",
-    sub="Tauret",
-  }
-  sets.WeaponSet['Seraph'] = {
-    main="Crocea Mors",
-    sub="Culminus",
-  }
-  sets.WeaponSet['Seraph'].DW = {
-    main="Crocea Mors",
-    sub="Daybreak",
-  }
   sets.WeaponSet['Cleaving'] = {
-    main="Tauret",
-    sub="Culminus",
+    main="Mpaca's Staff",
+    sub="Khonsu",
   }
-  sets.WeaponSet['Cleaving'].DW = {
-    main="Tauret",
-    sub="Bunzi's Rod",
-  }
-  sets.WeaponSet['CleavingAcc'] = {
-    main="Tauret",
-    sub="Culminus",
-  }
-  sets.WeaponSet['CleavingAcc'].DW = {
-    main="Tauret",
-    sub=gear.Malevolence_1,
-  }
-  sets.WeaponSet['Asuran Fists'] = {
-    -- main="Karambit",
+  sets.WeaponSet['Myrkr'] = {
+    main="Khatvanga",
+    sub="Khonsu",
   }
 
 end
@@ -1636,26 +943,12 @@ function job_precast(spell, action, spellMap, eventArgs)
   silibs.precast_hook(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
 
-  refine_various_spells(spell, action, spellMap, eventArgs)
-
   if spell.english == 'Addendum: White' and not state.Buff['Light Arts'] then
     send_command('input /ja "Light Arts" <me>')
     eventArgs.cancel = true
   elseif spell.english == 'Addendum: Dark' and not state.Buff['Dark Arts'] then
     send_command('input /ja "Dark Arts" <me>')
     eventArgs.cancel = true
-  elseif spellMap == 'Utsusemi' then
-    if buffactive['Copy Image (3)'] or buffactive['Copy Image (4+)'] then
-      cancel_spell()
-      add_to_chat(123, '**!! '..spell.english..' Canceled: [3+ IMAGES] !!**')
-      eventArgs.handled = true
-      return
-    elseif buffactive['Copy Image'] or buffactive['Copy Image (2)'] then
-      send_command('cancel 66; cancel 444; cancel Copy Image; cancel Copy Image (2)')
-    end
-  elseif spell.english == 'Stun' and buffactive['Chainspell'] then
-    equip(sets.midcast.Stun)
-    eventArgs.handled = true
   end
 end
 
@@ -1664,7 +957,6 @@ function job_post_precast(spell, action, spellMap, eventArgs)
   if in_battle_mode() and spell.english ~= 'Dispelga' then
     -- Prevent swapping main/sub weapons
     equip({main="", sub=""})
-    silibs.prevent_ammo_tp_loss()
   end
 
   -- If slot is locked, keep current equipment on
@@ -1673,10 +965,6 @@ function job_post_precast(spell, action, spellMap, eventArgs)
   if locked_ear2 then equip({ ear2=player.equipment.ear2 }) end
   if locked_ring1 then equip({ ring1=player.equipment.ring1 }) end
   if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
-
-  if state.PhysicalDefenseMode.current == 'CaitSith' and state.DefenseMode.current ~= 'None' then
-    equip(sets.Special.CaitSith)
-  end
 
   ----------- Non-silibs content goes above this line -----------
   silibs.post_precast_hook(spell, action, spellMap, eventArgs)
@@ -1687,101 +975,15 @@ function job_midcast(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
   
   if spell.action_type == 'Magic' then
-    local selected_set
-    if spellMap == 'Cure' or spellMap == 'Curaga' then
-      if (world.weather_element == 'Light' and not (silibs.get_weather_intensity() < 2 and world.day_element == 'Dark'))
-          or (world.day_element == 'Light' and not world.weather_element == 'Dark') then
-        selected_set = 'CureWeather'
-      else
-        selected_set = 'CureNormal' --Can't call it Cure as gs checks for sets.midcast.Cure before calling job_get_spell_map
-      end
-      
-      if in_battle_mode() then
-        selected_set = selected_set..'WeaponLock'
-      end
-    elseif spell.skill == 'Enfeebling Magic' then
-      if enfeebling_skill_spells:contains(spell.english) then
-        selected_set = 'SkillEnfeebles'
-      else
-        -- Get stat mapping
-        local stat = enfeebling_stat_map[spell.english]
-        if stat then
-          if state.Buff.Stymie
-              or enfeebling_duration_spells:contains(spell.english)
-              or (spell.english:startswith('Sleep') and state.SleepMode.value == 'MaxDuration') then
-                selected_set = stat..'EnfeeblesDuration'
-          elseif not state.Buff.Stymie and (state.CastingMode.value == 'Resistant' or enfeebling_default_acc_spells:contains(spell.english)) then
-            selected_set = stat..'EnfeeblesAcc'
-          else
-            selected_set = stat..'Enfeebles'
-          end
-        else
-          selected_set = 'MNDEnfeebles'
-        end
-      end
-      
-      --Handle DW gear sets for enfeebling
-      if silibs.can_dual_wield() and not in_battle_mode() then
-        if spell.skill == 'Enfeebling Magic' and sets.midcast[selected_set..'DW'] then
-          selected_set = selected_set..'DW'
-        end
-      end
-    elseif spell.skill == 'Enhancing Magic' then
-      if enhancing_skill_spells:contains(spell.english) then
-        selected_set = 'SkillEnhancing'
-      elseif spell.english:startswith('Gain') then
-        selected_set = 'GainSpell'
-      elseif spell.english:contains('Spikes') then
-        selected_set = 'SpikesSpell'
-      elseif spell.english == 'Phalanx' or spell.english == 'Phalanx II' then
-        if spell.target.type == 'SELF' then
-          selected_set = 'PhalanxSelf'
-        else
-          if (spell.target.type == 'PLAYER' or spell.target.type == 'NPC') and state.Buff.Composure then
-            selected_set = 'ComposureOther'
-          else
-            selected_set = 'PhalanxOthers'
-          end
-        end
-      elseif spellMap == 'Refresh' then
-        if spell.target.type == 'SELF' then
-          selected_set = 'RefreshSelf'
-        else
-          if (spell.target.type == 'PLAYER' or spell.target.type == 'NPC') and state.Buff.Composure then
-            selected_set = 'RefreshOthersComp'
-          else
-            selected_set = 'RefreshOthers' --Can't call it Refresh as gs checks for sets.midcast.Refresh before calling job_get_spell_map
-          end
-        end
-      else
-        if (spell.target.type == 'PLAYER' or spell.target.type == 'NPC') and state.Buff.Composure then
-          selected_set = 'ComposureOther'
-        else
-          selected_set = 'EnhancingDuration'
-        end
-      end
-    elseif spell.skill == 'Elemental Magic' then
-      -- Add magic burst set if exists
-      if state.MagicBurst.value and (
-        spellMap ~= 'ElementalEnfeeble'
-        and spell.english ~= 'Impact'
-        and spell.english ~= 'Meteor'
-      ) then
-        local customEquipSet = select_specific_set(sets.midcast, spell, spellMap)
-        -- Add optional casting mode
-        if customEquipSet[state.CastingMode.current] then
-          customEquipSet = customEquipSet[state.CastingMode.current]
-        end
-  
-        if customEquipSet['MB'] then
-          equip(customEquipSet['MB'])
-          eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
-        end
-      end
+    local customEquipSet = select_specific_set(sets.midcast, spell, spellMap)
+    -- Add optional casting mode
+    if customEquipSet[state.CastingMode.current] then
+      customEquipSet = customEquipSet[state.CastingMode.current]
     end
 
-    if not sets.midcast[spell.english] and selected_set and sets.midcast[selected_set] then
-      equip(sets.midcast[selected_set])
+    -- Add magic burst set if exists
+    if state.MagicBurst.value and spell.skill == 'Elemental Magic' and customEquipSet['MB'] then
+      equip(customEquipSet['MB'])
       eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
     end
   end
@@ -1790,20 +992,17 @@ end
 -- Run after the default midcast() is done.
 -- eventArgs is the same one used in job_midcast, in case information needs to be persisted.
 function job_post_midcast(spell, action, spellMap, eventArgs)
-  -- print("Spell: "..spell.english)
-  -- print("Target: "..spell.target.type)
-  if spell.skill == 'Enfeebling Magic' and state.Buff.Saboteur then
-    equip(sets.buff.Saboteur)
-  elseif spell.skill == 'Elemental Magic' and spellMap ~= 'ElementalEnfeeble' and spell.english ~= 'Impact'
-      and silibs.can_dual_wield() and not in_battle_mode() then
-    equip(sets.midcast['Elemental Magic'].DW)
+  if spell.skill == 'Enhancing Magic' then
+    -- If self targeted refresh
+    if spellMap == 'Refresh' and spell.targets.Self and sets.midcast.RefreshSelf then
+      equip(sets.midcast.RefreshSelf)
+    end
   end
-  
+
   -- Always put this last in job_post_midcast
   if in_battle_mode() and spell.english ~= 'Dispelga' then
     -- Prevent swapping main/sub weapons
     equip({main="", sub=""})
-    silibs.prevent_ammo_tp_loss()
   end
   
   -- If slot is locked, keep current equipment on
@@ -1812,10 +1011,6 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
   if locked_ear2 then equip({ ear2=player.equipment.ear2 }) end
   if locked_ring1 then equip({ ring1=player.equipment.ring1 }) end
   if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
-
-  if state.PhysicalDefenseMode.current == 'CaitSith' and state.DefenseMode.current ~= 'None' then
-    equip(sets.Special.CaitSith)
-  end
 
   ----------- Non-silibs content goes above this line -----------
   silibs.post_midcast_hook(spell, action, spellMap, eventArgs)
@@ -1851,15 +1046,9 @@ function job_aftercast(spell, action, spellMap, eventArgs)
       state.Buff['Dark Arts'] = false
       state.Buff['Addendum: White'] = false
       state.Buff['Addendum: Black'] = true
-    elseif spell.english == 'Composure' then
-      state.Buff.Composure = true
-    elseif spell.english == 'Saboteur' then
-      state.Buff.Saboteur = true
-    elseif spell.english == 'Stymie' then
-      state.Buff.Stymie = true
     end
   end
-    
+
   if in_battle_mode() then
     equip(sets.WeaponSet[state.WeaponSet.current])
   end
@@ -1898,27 +1087,40 @@ end
 function job_handle_equipping_gear(playerStatus, eventArgs)
   check_gear()
   update_idle_groups()
-  silibs.update_combat_form()
+end
+
+-- Custom spell mapping.
+function job_get_spell_map(spell, default_spell_map)
+  if spell.action_type == 'Magic' then
+    if default_spell_map == 'Cure' or default_spell_map == 'Curaga' then
+      if (world.weather_element == 'Light' and not (silibs.get_weather_intensity() < 2 and world.day_element == 'Dark'))
+          or (world.day_element == 'Light' and not world.weather_element == 'Dark') then
+        return 'CureWeather'
+      else
+        return 'CureNormal'
+      end
+    elseif spell.skill == 'Enfeebling Magic' then
+      local stat = enfeebling_stat_map[spell.english]
+      return stat..'Enfeebles'
+    end
+  end
 end
 
 function update_idle_groups()
   local isRegening = classes.CustomIdleGroups:contains('Regen')
   local isRefreshing = classes.CustomIdleGroups:contains('Refresh')
-                        or classes.CustomIdleGroups:contains('RefreshSingle')
-                        or classes.CustomIdleGroups:contains('RefreshDual')
 
   classes.CustomIdleGroups:clear()
   if player.status == 'Idle' then
+    if buffactive['Sublimation: Activated'] then
+      classes.CustomIdleGroups:append('Sublimation')
+    end
     if (isRegening==true and player.hpp < 100) or (isRegening==false and player.hpp < 85) then
       classes.CustomIdleGroups:append('Regen')
     end
     if mp_jobs:contains(player.main_job) or mp_jobs:contains(player.sub_job) then
-      if (isRefreshing==true and player.mpp < 100) or (isRefreshing==false and player.mpp < 85) then
-        local weapon_mode = ''
-        if not in_battle_mode() then
-          weapon_mode = (silibs.can_dual_wield() and 'Dual') or 'Single'
-        end
-        classes.CustomIdleGroups:append('Refresh'..weapon_mode)
+      if (isRefreshing==true and player.mpp < 100) or (isRefreshing==false and player.mpp < 80) then
+        classes.CustomIdleGroups:append('Refresh')
       end
       if player.mpp < 50 then
         classes.CustomIdleGroups:append('MpSub50')
@@ -1938,15 +1140,6 @@ function update_idle_groups()
     elseif (world.time >= (18*60) or world.time < (6*60)) then
       classes.CustomIdleGroups:append('Nighttime')
     end
-  end
-end
-
-function refine_various_spells(spell, action, spellMap, eventArgs)
-  -- If casting Phalanx II on self, switch it to Phalanx. This will allow Accessions to work and there
-  -- is no functional difference between the spell potencies.
-  if spell.english == 'Phalanx II' and ((spell.target.raw == '<t>' and not spell.target.type) or spell.target.type == 'SELF') then
-    send_command('@input /ma "Phalanx" <me>')
-    eventArgs.cancel = true
   end
 end
 
@@ -2048,10 +1241,6 @@ function customize_defense_set(defenseSet)
     defenseSet = set_combine(defenseSet, select_weapons())
   end
 
-  if state.PhysicalDefenseMode.current == 'CaitSith' then
-    defenseSet = set_combine(defenseSet, sets.Special.CaitSith)
-  end
-
   return defenseSet
 end
 
@@ -2073,11 +1262,6 @@ end
 -- Function to display the current relevant user state when doing an update.
 -- Return true if display was handled, and you don't want the default info shown.
 function display_current_job_state(eventArgs)
-    local cf_msg = ''
-    if state.CombatForm.has_value then
-        cf_msg = ' (' ..state.CombatForm.value.. ')'
-    end
-
     local m_msg = state.OffenseMode.value
     if state.HybridMode.value ~= 'Normal' then
         m_msg = m_msg .. '/' ..state.HybridMode.value
@@ -2100,7 +1284,7 @@ function display_current_job_state(eventArgs)
         msg = msg .. ' Kiting: On |'
     end
 
-    add_to_chat(002, '| ' ..string.char(31,210).. 'Melee' ..cf_msg.. ': ' ..string.char(31,001)..m_msg.. string.char(31,002)..  ' |'
+    add_to_chat(002, '| ' ..string.char(31,210).. 'Melee: '..string.char(31,001)..m_msg.. string.char(31,002)..  ' |'
         ..string.char(31,060).. ' Magic: ' ..string.char(31,001)..c_msg.. string.char(31,002)..  ' |'
         ..string.char(31,004).. ' Defense: ' ..string.char(31,001)..d_msg.. string.char(31,002)..  ' |'
         ..string.char(31,008).. ' Idle: ' ..string.char(31,001)..i_msg.. string.char(31,002)..  ' |'
@@ -2123,12 +1307,6 @@ function job_self_command(cmdParams, eventArgs)
   elseif cmdParams[1] == 'elemental' then
     silibs.handle_elemental(cmdParams, state.ElementalMode.value)
     eventArgs.handled = true
-  elseif cmdParams[1] == 'barelement' then
-    send_command('@input /ma '..state.BarElement.value..' <me>')
-  elseif cmdParams[1] == 'barstatus' then
-    send_command('@input /ma '..state.BarStatus.value..' <me>')
-  elseif cmdParams[1] == 'gainspell' then
-    send_command('@input /ma '..state.GainSpell.value..' <me>')
   elseif cmdParams[1] == 'weaponset' then
     if cmdParams[2] == 'cycle' then
       cycle_weapons('forward')
@@ -2274,12 +1452,8 @@ end
 function select_weapons()
   if state.ToyWeapons.current ~= 'None' then
     return sets.ToyWeapon[state.ToyWeapons.current]
-  else
-    if silibs.can_dual_wield() and sets.WeaponSet[state.WeaponSet.current] and sets.WeaponSet[state.WeaponSet.current].DW then
-      return sets.WeaponSet[state.WeaponSet.current].DW
-    elseif sets.WeaponSet[state.WeaponSet.current] then
-      return sets.WeaponSet[state.WeaponSet.current]
-    end
+  elseif sets.WeaponSet[state.WeaponSet.current] then
+    return sets.WeaponSet[state.WeaponSet.current]
   end
   return {}
 end
@@ -2289,41 +1463,12 @@ function in_battle_mode()
 end
 
 function get_enfeebling_duration(spell, set)
-  local base, gear_mult, aug_mult, empy_mult, empy_count = spell.duration, 1, 1, 1, 0
+  local base, gear_mult, aug_mult, empy_mult = spell.duration, 1, 1, 1
 
   -- Reduce set to names only
   for k,v in pairs(set) do
     set[k] = (type(v)=='table' and v.name) or (type(v)=='string' and v) or nil
     if set[k] == 'empty' then set[k] = nil end
-  end
-
-  -- Saboteur bonus
-  if state.Buff.Saboteur then
-    if set.hands and saboteur_bonus_gear[set.hands] then
-      base = base * saboteur_bonus_gear[set.hands][state.NM.value and 'nm' or 'normal']
-    else
-      if state.NM.value then
-        base = base * 1.25
-      else
-        base = base * 2.00
-      end
-    end
-  end
-
-  -- Merit Points Duration Bonus
-  base = base + (player.merits.enfeebling_magic_duration * 6)
-
-  -- Job Points Duration Bonus
-  base = base + (player.job_points.rdm.enfeebling_magic_duration)
-
-  -- Stymie bonus
-  if state.Buff.Stymie then
-    base = base + player.job_points.rdm.stymie_effect
-  end
-
-  -- Relic head bonus
-  if set.head and set.head:startswith('Vitiation') then
-    base = base + (player.merits.enfeebling_magic_duration * 3)
   end
 
   -- Calculate gear multipliers
@@ -2333,17 +1478,6 @@ function get_enfeebling_duration(spell, set)
       gear_mult = gear_mult + stats.base
       aug_mult = aug_mult + stats.aug
     end
-
-    -- Check if empy gear
-    if (k == 'head' or k == 'body' or k == 'hands' or k == 'legs' or k == 'feet')
-      and (v:startswith('Lethargy') or v:startswith('Estoquer'))
-    then
-      empy_count = empy_count + 1
-    end
-  end
-
-  if state.Buff.Composure then
-    empy_mult = empy_duration_mult[empy_count]
   end
 
   -- For debugging:
