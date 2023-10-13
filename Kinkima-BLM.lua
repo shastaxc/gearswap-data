@@ -28,10 +28,10 @@ function job_setup()
   silibs.enable_weapon_rearm()
   silibs.enable_elemental_belt_handling(has_obi, has_orpheus)
 
-  state.OffenseMode:options('Normal', 'MidAcc', 'HighAcc', 'Enspell')
+  state.OffenseMode:options('Normal')
   state.HybridMode:options('Normal')
   state.WeaponskillMode:options('Normal')
-  state.CastingMode:options('Normal', 'Spaekona')
+  state.CastingMode:options('Normal', 'Spaekona', 'Occult')
   state.IdleMode:options('Normal')
   state.BarElement = M{['description']='BarElement', 'Barfire', 'Barblizzard', 'Baraero', 'Barstone', 'Barthunder', 'Barwater'}
   state.BarStatus = M{['description']='BarStatus', 'Baramnesia', 'Barvirus', 'Barparalyze', 'Barsilence', 'Barpetrify', 'Barpoison', 'Barblind', 'Barsleep'}
@@ -365,7 +365,7 @@ function init_gear_sets()
     ammo="Staunch Tathlum +1",        -- __, __, __ [ 3/ 3, ___]
     head=gear.Telchine_ENH_head,      -- __, 10,  5 [__/__, 100]
     body=gear.Telchine_ENH_body,      -- 12, 10,  5 [__/__, 104]
-    hands=gear.Telchine_ENH_hands,    -- __, 10, __ [__/__,  61]
+    hands="Wicce Gloves +3",          -- __, __, __ [13/13,  98]
     legs=gear.Telchine_ENH_legs,      -- __, 10,  5 [__/__, 132]
     feet=gear.Telchine_ENH_feet,      -- __, 10,  5 [__/__, 131]
     neck="Incanter's Torque",         -- 10, __, __ [__/__, ___]
@@ -375,137 +375,105 @@ function init_gear_sets()
     ring2="Defending Ring",           -- __, __, __ [10/10, ___]
     back=gear.BLM_FC_Cape,            -- __, __, 10 [10/__, ___]
     waist="Embla Sash",               -- __, 10,  5 [__/__, ___]
-    -- 73 Enh Skill, 76 Enh Duration, 35 FC [23 PDT/13 MDT, 528 M.Eva]
+    -- 63 Enh Skill, 66 Enh Duration, 35 FC [23 PDT/13 MDT, 565 M.Eva]
 
     -- main=gear.Gada_ENH,            -- 18,  6,  6 [__/__, ___]
-    -- 73 Enh Skill, 76 Enh Duration, 41 FC [23 PDT/13 MDT, 528 M.Eva]
+    -- 63 Enh Skill, 66 Enh Duration, 41 FC [23 PDT/13 MDT, 565 M.Eva]
   }
 
   sets.midcast.Refresh = set_combine(sets.midcast['Enhancing Magic'], {
-    head="Amalric Coif +1",
+    head="Amalric Coif +1",           -- __, __, 11 [__/__,  86]  2
+    -- 63 Enh Skill, 56 Enh Duration, 47 FC [23 PDT/13 MDT, 551 M.Eva] 2 Refresh potency
   })
   sets.midcast.RefreshSelf = set_combine(sets.midcast.Refresh, {
-    back="Grapevine Cape",
-    waist="Gishdubar Sash",
+    back="Grapevine Cape",            -- __, __, __ [__/__, ___] __; Duration +30s
+    waist="Gishdubar Sash",           -- __, __, __ [__/__, ___] __; Duration +20s
+    -- 63 Enh Skill, 46 Enh Duration, 32 FC [13 PDT/13 MDT, 551 M.Eva] 2 Refresh potency
   })
 
-  -- Stoneskin caps at a really low skill cap. At 99, you're capped with zero skill gear.
-  -- Stoneskin caps at 350. +Stoneskin gear has no limit. Current max is 475
+  -- Stoneskin caps at 350 enhancing magic. At ML0 BLM is 316 so need some skill gear.
+  -- +Stoneskin gear has no limit. Current max is +95 for BLM.
   -- Focus on DT, M.Eva, and FC for survivability while in combat
   sets.midcast.Stoneskin = {
-    main=gear.Colada_ENH,             -- __,  4, __,  4 [__/__, ___]
-    sub="Ammurapi Shield",            -- __, 10, __, __ [__/__, ___]
+    main=gear.Gada_ENH,               -- __, 18,  6, __ [__/__, ___]
+    sub="Ammurapi Shield",            -- __, __, 10, __ [__/__, ___]
     range=empty,                      -- __, __, __, __ [__/__, ___]
     ammo="Staunch Tathlum +1",        -- __, __, __, __ [ 3/ 3, ___]
-    head="Bunzi's Hat",               -- __, __, __, 10 [ 7/ 7, 123]
-    body="Lethargy Sayon +3",         -- __, __, __, __ [14/14, 136]
-    hands=gear.Nyame_B_hands,         -- __, __, __, __ [ 7/ 7, 112]
+    head="Wicce Petasos +3",          -- __, __, __, __ [11/11, 136]
+    body=gear.Telchine_ENH_body,      -- __, 12, 10,  5 [__/__, 104]
+    hands="Wicce Gloves +3",          -- __, __, __, __ [13/13,  98]
     legs=gear.Nyame_B_legs,           -- __, __, __, __ [ 8/ 8, 150]
-    feet="Lethargy Houseaux +3",      -- __, 40, __, __ [__/__, 157]
+    feet="Wicce Sabots +3",           -- __, __, __, __ [11/11, 168]
     neck="Nodens Gorget",             -- 30, __, __, __ [__/__, ___]
     ear1="Earthcry Earring",          -- 10, __, __, __ [__/__, ___]
-    ear2="Lethargy Earring",          -- __,  7, __,  7 [__/__, ___]
-    ring1="Gelatinous Ring +1",       -- __, __, __, __ [ 7/-1, ___]
+    ear2="Andoaa Earring",            -- __,  5, __, __ [__/__, ___]
+    ring1="Archon Ring",              -- __, __, __, __ [__/__, ___]
     ring2="Defending Ring",           -- __, __, __, __ [10/10, ___]
-    back=gear.RDM_Adoulin_Cape,       -- __, __, 20, __ [__/__, ___]
+    back=gear.BLM_FC_Cape,            -- __, __, __, __ [10/__, ___]
     waist="Siegel Sash",              -- 20, __, __, __ [__/__, ___]
     -- Traits/Gifts/Merits            --350, __, __, 38 [__/__, ___]
-    -- 410 Stoneskin+, 61 Enh Duration%, 20 Aug Enh Duration, 59 FC [56 PDT/48 MDT, 678 M.Eva]
+    -- 410 Stoneskin+, 35 Enh Skill, 26 Enh Duration%, 43 FC [66 PDT/56 MDT, 656 M.Eva]
     
-    -- hands="Stone Mufflers",        -- 30, __, __, __ [__/__, ___]
+    -- main=gear.Gada_ENH,            -- __, 18,  6,  6 [__/__, ___]
     -- legs="Shedir Seraweels",       -- 35, __, __, __ [__/__, ___]
-    -- 475 Stoneskin+, 61 Enh Duration%, 20 Aug Enh Duration, 59 FC [41 PDT/33 MDT, 416 M.Eva]
+    -- 445 Stoneskin+, 35 Enh Skill, 26 Enh Duration%, 49 FC [58 PDT/48 MDT, 506 M.Eva]
   }
 
   -- Skill caps at 500 Enhancing Magic skill for a total of Phalanx+35.
   sets.midcast.Phalanx = {
-    -- main="Sakpata's Sword",            --  5, __, __, __ [10/10, ___]
-    sub="Ammurapi Shield",                -- __, __, __, 10 [__/__, ___]
-    range=empty,                          -- __, __, __, __ [__/__, ___]
-    ammo="Staunch Tathlum +1",            -- __, __, __, __ [ 3/ 3, ___]
-    head=gear.Merl_Phalanx_head,          --  5, __, __, __ [__/__,  86]
-    body=gear.Merl_Phalanx_body,          --  3, __, __, __ [ 2/__,  91]
-    hands="Atrophy Gloves +3",            -- __, __, __, 20 [__/__,  57]
-    legs=gear.Telchine_ENH_legs,          -- __, __, __, 10 [__/__, 132]
-    feet=gear.Merl_Phalanx_feet,          --  4, __, __, __ [__/__, 118]
-    neck="Incanter's Torque",             -- __, 10, __, __ [__/__, ___]
-    ear1="Mimir Earring",                 -- __, 10, __, __ [__/__, ___]
-    ear2="Odnowa Earring +1",             -- __, __, __, __ [ 3/ 5, ___]
-    ring1="Gelatinous Ring +1",           -- __, __, __, __ [ 7/-1, ___]
-    ring2="Defending Ring",               -- __, __, __, __ [10/10, ___]
-    back=gear.RDM_Adoulin_Cape,           -- __, __, 19, __ [__/__, ___]
-    waist="Olympus Sash",                 -- __,  5, __, __ [__/__, ___]
-    -- Traits/Gifts/Merits                -- __,456, __, __ [__/__, ___]
-    -- Master Levels                      -- __, __, __, __ [__/__, ___]
-    -- 17 Phalanx+, 481 Enh Skill, 19 Aug Enh Duration, 40 Enh duration [35 PDT/27 MDT, 484 M.Eva]
-    -- 51 Phalanx total
-    
-    -- main="Sakpata's Sword",            --  5, __, __, __ [10/10, ___]
-    -- sub="Ammurapi Shield",             -- __, __, __, 10 [__/__, ___]
-    -- range=empty,                       -- __, __, __, __ [__/__, ___]
-    -- ammo="Staunch Tathlum +1",         -- __, __, __, __ [ 3/ 3, ___]
-    -- head=gear.Merl_Phalanx_head,       --  5, __, __, __ [__/__,  86]
-    -- body=gear.Merl_Phalanx_body,       --  5, __, __, __ [ 2/__,  91]
-    -- hands=gear.Chironic_Phalanx_hands, --  5, 15, __, __ [__/__,  48]
-    -- legs=gear.Merl_Phalanx_legs,       --  5, __, __, __ [__/__, 118]
-    -- feet=gear.Chironic_Phalanx_feet,   --  5, __, __, __ [ 2/__, 118]
-    -- neck="Incanter's Torque",          -- __, 10, __, __ [__/__, ___]
-    -- ear1="Mimir Earring",              -- __, 10, __, __ [__/__, ___]
-    -- ear2="Odnowa Earring +1",          -- __, __, __, __ [ 3/ 5, ___]
-    -- ring1="Gelatinous Ring +1",        -- __, __, __, __ [ 7/-1, ___]
-    -- ring2="Defending Ring",            -- __, __, __, __ [10/10, ___]
-    -- back=gear.RDM_Adoulin_Cape,        -- __, __, 20, __ [__/__, ___]
-    -- waist="Olympus Sash",              -- __,  5, __, __ [__/__, ___]
-    -- Traits/Gifts/Merits                -- __,456, __, __ [__/__, ___]
-    -- Master Levels                      -- __,  4, __, __ [__/__, ___]
-    -- 30 Phalanx+, 500 Enh Skill, 20 Aug Enh Duration, 10 Enh duration [37 PDT/27 MDT, 461 M.Eva]
-    -- 65 Phalanx total
-    
-    -- main="Sakpata's Sword",            --  5, __, __, __ [10/10, ___]
-    -- sub="Ammurapi Shield",             -- __, __, __, 10 [__/__, ___]
-    -- range=empty,                       -- __, __, __, __ [__/__, ___]
-    -- ammo="Staunch Tathlum +1",         -- __, __, __, __ [ 3/ 3, ___]
-    -- head=gear.Merl_Phalanx_head,       --  5, __, __, __ [__/__,  86]
-    -- body=gear.Merl_Phalanx_body,       --  5, __, __, __ [ 2/__,  91]
-    -- hands=gear.Chironic_Phalanx_hands, --  5, 15, __, __ [__/__,  48]
-    -- legs=gear.Merl_Phalanx_legs,       --  5, __, __, __ [__/__, 118]
-    -- feet=gear.Chironic_Phalanx_feet,   --  5, __, __, __ [ 2/__, 118]
-    -- neck="Duelist's Torque +2",        -- __, __, __, 25 [__/__, ___]
-    -- ear2="Lethargy Earring +2",        -- __, __, __,  9 [__/__, ___]
-    -- ear2="Odnowa Earring +1",          -- __, __, __, __ [ 3/ 5, ___]
-    -- ring1="Gelatinous Ring +1",        -- __, __, __, __ [ 7/-1, ___]
-    -- ring2="Defending Ring",            -- __, __, __, __ [10/10, ___]
-    -- back=gear.RDM_Adoulin_Cape,        -- __, __, 20, __ [__/__, ___]
-    -- waist="Embla Sash",                -- __, __, __, 10 [__/__, ___]
-    -- Traits/Gifts/Merits                -- __,456, __, __ [__/__, ___]
-    -- Master Levels                      -- __, 29, __, __ [__/__, ___]
-    -- 30 Phalanx+, 500 Enh Skill, 20 Aug Enh Duration, 54 Enh duration [37 PDT/27 MDT, 461 M.Eva]
-    -- 65 Phalanx total
+    main=gear.Gada_ENH,                   -- __, 18,  6 [__/__, ___]
+    sub="Ammurapi Shield",                -- __, __, 10 [__/__, ___]
+    range=empty,                          -- __, __, __ [__/__, ___]
+    ammo="Staunch Tathlum +1",            -- __, __, __ [ 3/ 3, ___]
+    head=gear.Merl_Phalanx_head,          --  5, __, __ [__/__,  86]
+    body=gear.Merl_Phalanx_body,          --  3, __, __ [ 2/__,  91]
+    hands="Wicce Gloves +3",              -- __, __, __ [13/13,  98]
+    legs=gear.Telchine_ENH_legs,          -- __, __, 10 [__/__, 132]
+    feet=gear.Merl_Phalanx_feet,          --  4, __, __ [__/__, 118]
+    neck="Incanter's Torque",             -- __, 10, __ [__/__, ___]
+    ear1="Mimir Earring",                 -- __, 10, __ [__/__, ___]
+    ear2="Andoaa Earring",                -- __,  5, __ [__/__, ___]
+    ring1="Stikini Ring +1",              -- __,  8, __ [__/__, ___]
+    ring2="Defending Ring",               -- __, __, __ [10/10, ___]
+    back=gear.BLM_FC_Cape,                -- __, __, __ [10/__, ___]
+    waist="Olympus Sash",                 -- __,  5, __ [__/__, ___]
+    -- Traits/Gifts/Merits                -- __,316, __ [__/__, ___]
+    -- Master Levels                      -- __, __, __ [__/__, ___]
+    -- 12 Phalanx+, 372 Enh Skill, 26 Enh duration [38 PDT/26 MDT, 525 M.Eva]
+    -- 42 Phalanx total
+
+    -- body=gear.Merl_Phalanx_body,       --  5, __, __ [ 2/__,  91]
+    -- legs=gear.Merl_Phalanx_legs,       --  5, __, __ [__/__, 118]
+    -- feet=gear.Merl_Phalanx_feet,       --  5, __, __ [__/__, 118]
+    -- waist="Embla Sash",                -- __, __, 10 [__/__, ___]
+    -- Master Levels                      -- __, 50, __ [__/__, ___]
+    -- 20 Phalanx+, 417 Enh Skill, 26 Enh duration [38 PDT/26 MDT, 511 M.Eva]
+    -- 52 Phalanx total
   }
 
-  -- Needs 500 enhancing magic skill.
+  -- Caps at 500 enhancing magic skill. BLM should aim for the 355 breakpoint.
   sets.midcast.Aquaveil = set_combine(sets.midcast['Enhancing Magic'], {
-    main="Eremite's Wand +1",         -- __, __, __, __, 25 [__/__, ___]
-    sub="Genmei Shield",              -- __, __, __, __, __ [10/__, ___]
-    range=empty,                      -- __, __, __, __, __ [__/__, ___]
-    ammo="Staunch Tathlum +1",        -- __, __, __, __, 11 [ 3/ 3, ___]
-    head="Amalric Coif +1",           --  2, __, __, __, __ [__/__,  86]
-    body="Rosette Jaseran +1",        -- __, __, __, __, 25 [ 5/ 5,  80]
-    hands="Regal Cuffs",              --  2, __, __, __, __ [__/__,  53]
-    legs=gear.Nyame_B_legs,
-    feet="Lethargy Houseaux +3",      -- __, 35, 40, __, __ [__/__, 157]
-    neck="Loricate Torque +1",        -- __, __, __, __,  5 [ 6/ 6, ___]
-    ear1="Magnetic Earring",          -- __, __, __, __,  8 [__/__, ___]
-    ear2="Odnowa Earring +1",         -- __, __, __, __, __ [ 3/ 5, ___]
-    ring1="Freke Ring",               -- __, __, __, __, 10 [__/__, ___]
-    ring2="Defending Ring",           -- __, __, __, __, __ [10/10, ___]
-    back=gear.RDM_Adoulin_Cape,       -- __,  9, __, 20, __ [__/__, ___]
-    waist="Emphatikos Rope",          --  1, __, __, __, 12 [__/__, ___]
-    -- Traits/Gifts/Merits            -- __,456, __, __, 10 [__/__, ___]
-    -- 6 Aquaveil+, 515 Enh skill, 40 Enh duration, 20 Aug Enh Duration, 106 SIRD [37 PDT/29 MDT, 376 M.Eva]
+    main="Eremite's Wand +1",         -- __, __, __, 25 [__/__, ___]
+    sub="Genmei Shield",              -- __, __, __, __ [10/__, ___]
+    range=empty,                      -- __, __, __, __ [__/__, ___]
+    ammo="Staunch Tathlum +1",        -- __, __, __, 11 [ 3/ 3, ___]
+    head="Amalric Coif +1",           --  2, __, __, __ [__/__,  86]
+    body="Rosette Jaseran +1",        -- __, __, __, 25 [ 5/ 5,  80]
+    hands="Regal Cuffs",              --  2, __, __, __ [__/__,  53]
+    legs=gear.Nyame_B_legs,           -- __, __, __, __ [ 8/ 8, 150]
+    feet="Wicce Sabots +3",           -- __, __, __, __ [11/11, 168]
+    neck="Loricate Torque +1",        -- __, __, __,  5 [ 6/ 6, ___]
+    ear1="Magnetic Earring",          -- __, __, __,  8 [__/__, ___]
+    ear2="Mimir Earring",             -- __, 10, __, __ [__/__, ___]
+    ring1="Freke Ring",               -- __, __, __, 10 [__/__, ___]
+    ring2="Defending Ring",           -- __, __, __, __ [10/10, ___]
+    back=gear.BLM_FC_Cape,            -- __, __, __, __ [10/__, ___]
+    waist="Emphatikos Rope",          --  1, __, __, 12 [__/__, ___]
+    -- Traits/Gifts/Merits            -- __,316, __, 10 [__/__, ___]
+    -- 5 Aquaveil+, 326 Enh skill, 0 Enh duration, 106 SIRD [63 PDT/43 MDT, 537 M.Eva]
     
-    -- legs="Shedir Seraweels",       --  1, 15, __, __, __ [__/__, ___]
-    -- 6 Aquaveil+, 516 Enh skill, 40 Enh duration, 20 Aug Enh Duration, 106 SIRD [37 PDT/29 MDT, 376 M.Eva]
+    -- legs="Shedir Seraweels",       --  1, 15, __, __ [__/__, ___]
+    -- 6 Aquaveil+, 341 Enh skill, 0 Enh duration, 106 SIRD [55 PDT/35 MDT, 537 M.Eva]
   })
 
   sets.midcast.Protect = set_combine(sets.midcast['Enhancing Magic'], {
@@ -515,79 +483,57 @@ function init_gear_sets()
   sets.midcast.Shell = set_combine(sets.midcast.Protect,{})
   sets.midcast.Shellra = set_combine(sets.midcast.Shell,{})
 
-  -- General enfeebles
-  sets.midcast.MNDEnfeebles = { --Max MND but balance macc for landing
-    main="Daybreak",                  -- 242, 40, 30, __ (__, __, __, __) [__/__,  30]
-    sub="Ammurapi Shield",            -- ___, 38, 13, __ (__, __, __, __) [__/__, ___]
-    range=empty,                      -- ___, __, __, __ (__, __, __, __) [__/__, ___]
-    ammo="Regal Gem",                 -- ___, 15,  7, __ (__, 10, __, __) [__/__, ___]
-    head="Vitiation Chapeau +3",      -- ___, 37, 42, __ (__, __, __, 26) [__/__,  95]; Enhances enf. duration
-    body="Lethargy Sayon +3",         -- ___, 64, 45, __ (__, 18, __, __) [14/14, 136]
-    hands="Lethargy Gantherots +3",   -- ___, 62, 50, __ (__, __, __, 29) [11/11,  87]
-    legs=gear.Chironic_MAcc_legs,     -- ___, 57, 29, __ ( 1, __, __, 13) [__/__, 118]
-    feet="Vitiation Boots +3",        -- ___, 43, 32, __ (__, 10, __, 16) [__/__, 127]; Immunobreak+
-    neck="Duelist's Torque +2",       -- ___, 30, 15, __ (__, 10, 25, __) [__/__, ___]
-    ear1="Snotra Earring",            -- ___, 10,  8, __ (__, __, 10, __) [__/__, ___]
-    ear2="Malignance Earring",        -- ___, 10,  8,  4 (__, __, __, __) [__/__, ___]
-    ring1="Stikini Ring +1",          -- ___, 11,  8, __ (__, __, __,  8) [__/__, ___]
-    ring2="Stikini Ring +1",          -- ___, 11,  8, __ (__, __, __,  8) [__/__, ___]
-    back=gear.BLM_MND_Enf_Cape,       -- ___, 20, 30, 10 (__, 10, __, __) [10/__, ___]
-    waist="Obstinate Sash",           -- ___, 15,  5, __ (__, __,  5, 15) [__/__, ___]
-    -- Empy set effect                   ___, __, __, __ (__, __, 10, __) [__/__, ___]
-    -- Traits/Gifts/Merits            --              38
-    -- 242 M.Acc skill, 463 M.Acc, 330 MND, 52 FC (1 Immunobreak, 58 Enf. Effect, 50 Enf. Duration, 115 Enf. Skill) [35 PDT/25 MDT, 593 M.Eva]
+  sets.midcast.MNDEnfeebles = {
+    main="Contemplator +1",           -- 228, 70, 12, __ (__, __, 20) [__/__, ___]
+		sub="Khonsu",                     -- ___, 30, __, __ (__, __, __) [ 6/ 6, ___]
+		ammo="Pemphredo Tathlum",         -- ___,  8, __, __ (__, __, __) [__/__, ___]
+    head="Wicce Petasos +2",          -- ___, 51, 32, __ (__, __, __) [10/10, 126]
+    body="Spaekona's Coat +3",        -- ___, 55, 39, __ (__, __, 21) [__/__, 100]
+		hands="Wicce Gloves +3",          -- ___, 62, 47, __ (__, __, __) [13/13,  98]
+		legs="Wicce Chausses +3",         -- ___, 63, 38, __ (__, __, __) [__/__, 168]
+    feet="Wicce Sabots +3",           -- ___, 60, 32, __ (__, __, __) [11/11, 168]
+    ear1="Malignance Earring",        -- ___, 10,  8,  4 (__, __, __) [__/__, ___]
+		ear2="Crepuscular Earring",       -- ___, 10, __, __ (__, __, __) [__/__, ___]
+		ring1="Stikini Ring +1",          -- ___, 11,  8, __ (__, __,  8) [__/__, ___]
+    ring2="Stikini Ring +1",          -- ___, 11,  8, __ (__, __,  8) [__/__, ___]
+    back="Aurist's Cape +1",          -- ___, 33, 33, __ (__, __, __) [__/__, ___]
+    waist="Obstinate Sash",           -- ___, 15,  5, __ (__,  5, 15) [__/__, ___]
+    -- 228 M.Acc skill, 519 M.Acc, 277 MND, 4 FC (0 Enf. Effect, 5 Enf. Duration, 72 Enf. Skill) [40 PDT/40 MDT, 660 M.Eva]
     
-    -- legs=gear.Chironic_MAcc_legs,  -- ___, 60, 29, __ ( 1, __, __, 13) [__/__, 118]
-    -- 242 M.Acc skill, 466 M.Acc, 330 MND, 52 FC (1 Immunobreak, 58 Enf. Effect, 50 Enf. Duration, 115 Enf. Skill) [35 PDT/25 MDT, 593 M.Eva]
+    -- head="Wicce Petasos +3",       -- ___, 61, 39, __ (__, __, __) [11/11, 136]
+    -- neck="Sorcerer's Stole +2",    -- ___, 30, 15, __ (__, __, __) [__/__, ___]
+    -- 228 M.Acc skill, 529 M.Acc, 282 MND, 4 FC (0 Enf. Effect, 5 Enf. Duration, 72 Enf. Skill) [41 PDT/41 MDT, 670 M.Eva]
+    
+		-- head=empty,                    -- ___, __, __, __ (__, __, __) [__/__, ___]
+		-- body="Cohort Cloak +1",        -- ___,120, 76, __ (__, __, 34) [__/__, 156]
+    -- 228 M.Acc skill, 533 M.Acc, 282 MND, 4 FC (0 Enf. Effect, 5 Enf. Duration, 85 Enf. Skill) [30 PDT/30 MDT, 590 M.Eva]
   }
 
-  -- General enfeebles
   sets.midcast.INTEnfeebles = {
-    main="Contemplator +1",           -- 228, 70, 12, __ (__, __, __, 20) [__/__, ___]
-    sub="Enki Strap",                 -- ___, 10, 10, __ (__, __, __, __) [__/__,  10]
-    range=empty,                      -- ___, __, __, __ (__, __, __, __) [__/__, ___]
-    ammo="Ghastly Tathlum +1",        -- ___, __, 11, __ (__, __, __, __) [__/__, ___]
-    head="Vitiation Chapeau +3",      -- ___, 37, 29, __ (__, __, __, 26) [__/__,  95]; Enhances enf. duration
-    body="Lethargy Sayon +3",         -- ___, 64, 47, __ (__, 18, __, __) [14/14, 136]
-    hands="Lethargy Gantherots +3",   -- ___, 62, 33, __ (__, __, __, 29) [11/11,  87]
-    legs=gear.Chironic_MAcc_legs,     -- ___, 57, 42, __ ( 1, __, __, 13) [__/__, 118]
-    feet="Vitiation Boots +3",        -- ___, 43, 32, __ (__, 10, __, 16) [__/__, 127]; Immunobreak+
-    neck="Duelist's Torque +2",       -- ___, 30, 15, __ (__, 10, 25, __) [__/__, ___]
-    ear1="Snotra Earring",            -- ___, 10, __, __ (__, __, 10, __) [__/__, ___]
-    ear2="Malignance Earring",        -- ___, 10,  8,  4 (__, __, __, __) [__/__, ___]
-    ring1="Metamorph Ring +1",        -- ___, 15, 16, __ (__, __, __, __) [__/__, ___]
-    ring2="Stikini Ring +1",          -- ___, 11, __, __ (__, __, __,  8) [__/__, ___]
-    back=gear.BLM_INT_Enf_Cape,       -- ___, 20, 30, __ (__, 10, __, __) [10/__, ___]
-    waist="Obstinate Sash",           -- ___, 15, __, __ (__, __,  5, 15) [__/__, ___]
-    -- Empy set effect                   ___, __, __, __ (__, __, 10, __) [__/__, ___]
-    -- Traits/Gifts/Merits            --              38
-    -- 228 M.Acc skill, 454 M.Acc, 285 INT, 42 FC (1 Immunobreak, 48 Enf. Effect, 50 Enf. Duration, 127 Enf. Skill) [35 PDT/25 MDT, 573 M.Eva]
+    main="Contemplator +1",           -- 228, 70, 12, __ (__, __, 20) [__/__, ___]
+    sub="Enki Strap",                 -- ___, 10, 10, __ (__, __, __) [__/__,  10]
+    ammo="Ghastly Tathlum +1",        -- ___, __, 11, __ (__, __, __) [__/__, ___]
+    head="Wicce Petasos +2",          -- ___, 51, 34, __ (__, __, __) [10/10, 126]
+    body="Spaekona's Coat +3",        -- ___, 55, 39, __ (__, __, 21) [__/__, 100]
+    hands="Wicce Gloves +3",          -- ___, 62, 38, __ (__, __, __) [13/13,  98]
+    legs="Agwu's Slops",              -- ___, 55, 54,  7 (__, __, __) [10/10, 134]
+    feet="Wicce Sabots +3",           -- ___, 60, 36, __ (__, __, __) [11/11, 168]
+    neck="Incanter's Torque",         -- ___, __, __, __ (__, __, 10) [__/__, ___]
+    ear1="Malignance Earring",        -- ___, 10,  8,  4 (__, __, __) [__/__, ___]
+    ear2="Regal Earring",             -- ___, __, 10, __ (__, __, __) [__/__, ___]
+    ring1="Metamorph Ring +1",        -- ___, 15, 16, __ (__, __, __) [__/__, ___]
+    ring2="Stikini Ring +1",          -- ___, 11, __, __ (__, __,  8) [__/__, ___]
+    back="Aurist's Cape +1",          -- ___, 33, 33, __ (__, __, __) [__/__, ___]
+    waist="Obstinate Sash",           -- ___, 15, __, __ (__,  5, 15) [__/__, ___]
+    -- 228 M.Acc skill, 447 M.Acc, 301 INT, 11 FC (0 Enf. Effect, 5 Enf. Duration, 74 Enf. Skill) [44 PDT/44 MDT, 636 M.Eva]
 
-    -- legs=gear.Chironic_MAcc_legs,  -- ___, 60, 29, __ ( 1, __, __, 13) [__/__, 118]
-    -- 228 M.Acc skill, 457 M.Acc, 285 INT, 42 FC (1 Immunobreak, 48 Enf. Effect, 50 Enf. Duration, 127 Enf. Skill) [35 PDT/25 MDT, 573 M.Eva]
-  }
-
-  -- For spells like Burn, Choke, etc.
-  sets.midcast.ElementalEnfeeble = {
-    main="Crocea Mors",               -- 255, __, 50, __, 20 [__/__, ___]
-    sub="Ammurapi Shield",            -- ___, __, 38, 13, __ [__/__, ___]
-    range="Ullr",                     -- ___, __, 40, __, __ [__/__, ___]
-    ammo=empty,                       -- ___, __, __, __, __ [__/__, ___]
-    head="Lethargy Chappel +3",       -- ___, __, 61, 38, __ [10/10, 125]
-    body="Lethargy Sayon +3",         -- ___, __, 64, 47, __ [14/14, 136]
-    hands="Lethargy Gantherots +3",   -- ___, __, 62, 33, __ [11/11,  87]
-    legs="Lethargy Fuseau +3",        -- ___, __, 63, 48, __ [__/__, 162]
-    feet="Lethargy Houseaux +3",      -- ___, __, 60, 30, __ [__/__, 157]
-    neck="Duelist's Torque +2",       -- ___, __, 30, 15, __ [__/__, ___]
-    ear1="Malignance Earring",        -- ___, __, 10,  8,  4 [__/__, ___]
-    ear2="Regal Earring",             -- ___, __, __, 10, __ [__/__, ___]
-    ring1="Metamorph Ring +1",        -- ___, __, 15, 16, __ [__/__, ___]
-    ring2="Stikini Ring +1",          -- ___,  8, 11, __, __ [__/__, ___]
-    back="Aurist's Cape +1",          -- ___, __, 33, 33, __ [__/__, ___]
-    waist="Acuity Belt +1",           -- ___, __, 15, 23, __ [__/__, ___]
-    -- Empy set effect                   ___, __, __, __, __ [__/__, ___]
-    -- Traits/Gifts/Merits            --                  38
-    -- 255 M.Acc skill, 8 Elemental Skill, 552 M.Acc, 314 INT, 62 FC [34 PDT/34 MDT, 667 M.Eva]
+    -- head="Wicce Petasos +3",       -- ___, 61, 39, __ (__, __, __) [11/11, 136]
+    -- neck="Sorcerer's Stole +2",    -- ___, 30, 15, __ (__, __, __) [__/__, ___]
+    -- 228 M.Acc skill, 487 M.Acc, 321 INT, 11 FC (0 Enf. Effect, 5 Enf. Duration, 64 Enf. Skill) [45 PDT/45 MDT, 646 M.Eva]
+    
+		-- head=empty,                    -- ___, __, __, __ (__, __, __) [__/__, ___]
+		-- body="Cohort Cloak +1",        -- ___,120, 76, __ (__, __, 34) [__/__, 156]
+    -- 228 M.Acc skill, 491 M.Acc, 319 INT, 11 FC (0 Enf. Effect, 5 Enf. Duration, 77 Enf. Skill) [34 PDT/34 MDT, 566 M.Eva]
   }
 
   sets.midcast.Dispelga = set_combine(sets.midcast.INTEnfeeblesAcc, {
@@ -595,11 +541,28 @@ function init_gear_sets()
     sub={name="Ammurapi Shield", priority=1},
   })
 
+  -- For spells like Burn, Choke, etc.
+  sets.midcast.ElementalEnfeeble = set_combine(sets.midcast.INTEnfeebles, {
+    body="Wicce Coat +3",           -- More m.acc, dropping enfeeblign skill piece
+    waist="Acuity Belt +1",         -- More m.acc, dropping enfeeblign skill piece
+
+    -- legs="Archmage's Tonban +3", -- Enhance elemental debuffs
+    -- feet="Archmage's Sabots +3", -- Enhance elemental debuffs
+  })
+
+  sets.midcast.Impact = set_combine(sets.midcast.INTEnfeebles, {
+    head=empty,
+    body="Twilight Cloak",
+    ring2="Archon Ring",
+    waist="Acuity Belt +1",         -- More m.acc, dropping enfeeblign skill piece
+  })
+
   -- Dark magic options:
   -- M.Acc Skill, Dark skill, M.Acc, INT [PDT/MDT, M.Eva]
     -- main=gear.Rubicundity,         -- 215, 25, 30, 21 [__/__, ___]
     -- head=gear.Amalric_C_head       -- ___, 20, 36, 36 [__/__,  86]
-    -- body=gear.Carmine_C_body,      -- ___, 16, 38, 38 [__/ 4,  64]
+    -- legs="Spaekona's Tonban +3",   -- ___, 21, 49, 44 [__/__, 127]
+    -- feet="Wicce Sabots +3",        -- ___, 35, 60, 36 [11/11, 168]
     -- neck="Erra Pendant",           -- ___, 10, 17, __ [__/__, ___]
     -- ear2="Mani Earring",           -- ___, 10, __, __ [__/__, ___]
     -- ring1="Stikini Ring +1",       -- ___,  8, 11, __ [__/__, ___]
@@ -611,10 +574,10 @@ function init_gear_sets()
     range=empty,                      -- ___, __, __, __ [__/__, ___]
     ammo="Pemphredo Tathlum",         -- ___, __,  8,  4 [__/__, ___]
     head=gear.Amalric_C_head,         -- ___, 20, 36, 36 [__/__,  86]
-    -- body=gear.Carmine_C_body,      -- ___, 16, 38, 38 [__/ 4,  64]
-    hands="Lethargy Gantherots +3",   -- ___, __, 62, 33 [11/11,  87]
-    legs="Bunzi's Pants",             -- ___, __, 55, 51 [ 9/ 9, 150]
-    feet="Bunzi's Sabots",            -- ___, __, 55, 32 [ 6/ 6, 150]
+    body="Wicce Coat +3",             -- ___, __, 64, 50 [__/__, 141]
+    hands="Wicce Gloves +3",          -- ___, __, 62, 38 [13/13,  98]
+    -- legs="Spaekona's Tonban +3",   -- ___, 21, 49, 44 [__/__, 127]
+    feet="Wicce Sabots +3",           -- ___, 35, 60, 36 [11/11, 168]
     neck="Erra Pendant",              -- ___, 10, 17, __ [__/__, ___]
     ear1="Malignance Earring",        -- ___, __, 10,  8 [__/__, ___]
     -- ear2="Mani Earring",           -- ___, 10, __, __ [__/__, ___]
@@ -622,21 +585,41 @@ function init_gear_sets()
     ring2="Evanescence Ring",         -- ___, 10, __, __ [__/__, ___]
     back="Aurist's Cape +1",          -- ___, __, 33, 33 [__/__, ___]
     waist="Acuity Belt +1",           -- ___, __, 15, 23 [__/__, ___]
-    -- Traits/Merits/Gifts                   316
-    -- 215 M.Acc Skill, 412 Dark skill, 404 M.Acc, 292 INT [26 PDT/30 MDT, 537 M.Eva]
+    -- Traits/Merits/Gifts                   469
+    -- 215 M.Acc Skill, 605 Dark skill, 429 M.Acc, 306 INT [24 PDT/24 MDT, 620 M.Eva]
     
     -- main=gear.Rubicundity,         -- 215, 25, 30, 21 [__/__, ___]
-    -- 215 M.Acc Skill, 415 Dark skill, 408 M.Acc, 292 INT [26 PDT/30 MDT, 537 M.Eva]
+    -- 215 M.Acc Skill, 608 Dark skill, 433 M.Acc, 306 INT [24 PDT/24 MDT, 620 M.Eva]
   }
 
   sets.midcast.Drain = set_combine(sets.midcast['Dark Magic'], {
-    feet=gear.Merl_Drain_feet,        --  7 Drain/Aspir potency
-    ring2="Evanescence Ring",         -- 10 Drain/Aspir potency
-    waist="Fucho-no-obi",             --  8 Drain/Aspir potency
-    -- ear2="Hirudinea Earring",      --  3 Drain/Aspir potency
+    main=gear.Rubicundity,            -- 215, 22, 26, 21 [__/__, ___] 20
+    sub="Ammurapi Shield",            -- ___, __, 38, 13 [__/__, ___] __
+    range=empty,                      -- ___, __, __, __ [__/__, ___] __
+    ammo="Pemphredo Tathlum",         -- ___, __,  8,  4 [__/__, ___] __
+    head="Pixie Hairpin +1",          -- ___, __, __, __ [__/__, ___] __; Extra 1.28 multiplier
+    body="Wicce Coat +3",             -- ___, __, 64, 50 [__/__, 141] __
+    hands="Wicce Gloves +3",          -- ___, __, 62, 38 [13/13,  98] __
+    -- legs="Spaekona's Tonban +3",   -- ___, 21, 49, 44 [__/__, 127] 20
+    feet="Wicce Sabots +3",           -- ___, 35, 60, 36 [11/11, 168] __
+    neck="Erra Pendant",              -- ___, 10, 17, __ [__/__, ___]  5
+    ear1="Malignance Earring",        -- ___, __, 10,  8 [__/__, ___] __
+    -- ear2="Mani Earring",           -- ___, 10, __, __ [__/__, ___] __
+    ring1="Stikini Ring +1",          -- ___,  8, 11, __ [__/__, ___] __
+    ring2="Evanescence Ring",         -- ___, 10, __, __ [__/__, ___] 10
+    back="Aurist's Cape +1",          -- ___, __, 33, 33 [__/__, ___] __
+    waist="Fucho-no-obi",             -- ___, __, __, __ [__/__, ___]  8
+    -- Traits/Merits/Gifts                   469
+    -- 215 M.Acc Skill, 605 Dark skill, 429 M.Acc, 306 INT [24 PDT/24 MDT, 620 M.Eva] 63 Drain/Aspir potency
+    
+    -- main=gear.Rubicundity,         -- 215, 25, 30, 21 [__/__, ___] 20
+    -- ear2="Hirudinea Earring",      -- ___, __, __, __ [__/__, ___]  3
+    -- 215 M.Acc Skill, 598 Dark skill, 433 M.Acc, 306 INT [24 PDT/24 MDT, 620 M.Eva] 66 Drain/Aspir potency
   })
   sets.midcast.Aspir = set_combine(sets.midcast.Drain, {})
-  sets.midcast['Aspir III'] = set_combine(sets.midcast.Drain, {})
+  sets.midcast['Aspir III'] = set_combine(sets.midcast.Drain, {
+    -- ~1016MP
+  })
 
   sets.midcast.Stun = set_combine(sets.midcast['Dark Magic'], {})
 
@@ -669,105 +652,99 @@ function init_gear_sets()
     main="Bunzi's Rod",               -- 255, __, 55 (15, 65,248, 10, __) [__/__, ___]
     sub="Ammurapi Shield",            -- ___, __, 38 (13, 38, __, __, __) [__/__, ___]
     range=empty,                      -- ___, __, __ (__, __, __, __, __) [__/__, ___]
-    ammo="Pemphredo Tathlum",         -- ___, __,  8 ( 4,  4, __, __, __) [__/__, ___]
-		head="Ea Hat +1",
-		body="Wicce Coat +3",
-		hands="Agwu's Gages",
-    legs="Wicce Chausses +2",
-    feet="Agwu's Pigaches",
-    neck="Sibyl Scarf",               -- ___, __, __ (10, 10, __, __, __) [__/__, ___]
-		-- neck="Sorcerer's Stole +2",    -- ___, __, 30 (15,  7, __, 10, __) [__/__, ___]
+    ammo="Ghastly Tathlum +1",        -- ___, __, __ (11, __, 21, __, __) [__/__, ___]
+    head="Ea Hat +1",                 -- ___, __, 50 (43, 38, __,  7,  7) [__/__, 109]
+		body="Wicce Coat +3",             -- ___, __, 64 (50, 59, 34, __,  5) [__/__, 141]
+    hands="Wicce Gloves +3",          -- ___, __, 62 (38, 57, 32, __, __) [13/13,  98]
+    legs="Wicce Chausses +3",         -- ___, __, 63 (53, 58, 33, 15, __) [__/__, 168]
+    feet="Wicce Sabots +3",           -- ___, __, 60 (36, 58, 33, __, __) [11/11, 168]
+    neck="Sibyl Scarf",               -- ___, __, 10 (10, __, __, __, __) [__/__, ___]
     ear1="Malignance Earring",        -- ___, __, 10 ( 8,  8, __, __, __) [__/__, ___]
     ear2="Regal Earring",             -- ___, __, __ (10, __, __, __, __) [__/__, ___]
     ring1="Freke Ring",               -- ___, __, __ (10,  8, __, __, __) [__/__, ___]
     ring2="Metamorph Ring +1",        -- ___, __, 15 (16, __, __, __, __) [__/__, ___]
 		back=gear.BLM_MAB_Cape,           -- ___, __, 20 (30, 10, 20,  5, __) [10/__, ___]
-    waist="Refoccilation Stone",      -- ___, __,  4 (__, 10, __, __, __) [__/__, ___]
-    -- 255 M.Acc Skill, 0 Elemental Skill, 460 M.Acc (312 INT, 419 MAB, 408 M.Dmg, 25 MB, 0 MB2) [45 PDT/35 MDT, 667 M.Eva]
+    waist="Acuity Belt +1",           -- ___, __, 15 (23, __, __, __, __) [__/__, ___]
+    -- 255 M.Acc Skill, 0 Elemental Skill, 462 M.Acc (366 INT, 399 MAB, 421 M.Dmg, 37 MB, 12 MB2) [34 PDT/24 MDT, 684 M.Eva]
+
+		-- hands="Agwu's Gages",          -- ___, __, 55 (33, 60, 20,  8,  6) [__/__,  96]; R30
+    -- feet="Agwu's Pigaches",        -- ___, __, 55 (30, 60, 20,  6, __) [__/__, 134]; R30
+		-- neck="Sorcerer's Stole +2",    -- ___, __, 30 (15,  7, __, 10, __) [__/__, ___]
+    -- 255 M.Acc Skill, 0 Elemental Skill, 470 M.Acc (360 INT, 411 MAB, 396 M.Dmg, 61 MB, 18 MB2) [10 PDT/0 MDT, 648 M.Eva]
   }
   sets.midcast['Elemental Magic'].Spaekona = set_combine(sets.midcast['Elemental Magic'], {
-		ammo="Ghastly Tathlum +1",
-		head="Ea Hat +1",
     body="Spaekona's Coat +3",
-		hands="Agwu's Gages",
-    legs="Wicce Chausses +3",
-    feet="Agwu's Pigaches",
-    neck="Sibyl Scarf",               -- ___, __, __ (10, 10, __, __, __) [__/__, ___]
-		-- neck="Sorcerer's Stole +2",    -- ___, __, 30 (15,  7, __, 10, __) [__/__, ___]
-    ear1="Malignance Earring",        -- ___, __, 10 ( 8,  8, __, __, __) [__/__, ___]
-    ear2="Regal Earring",             -- ___, __, __ (10, __, __, __, __) [__/__, ___]
-    ring1="Freke Ring",               -- ___, __, __ (10,  8, __, __, __) [__/__, ___]
-    ring2="Metamorph Ring +1",        -- ___, __, 15 (16, __, __, __, __) [__/__, ___]
-		back=gear.BLM_MAB_Cape,           -- ___, __, 20 (30, 10, 20,  5, __) [10/__, ___]
-    waist="Refoccilation Stone",      -- ___, __,  4 (__, 10, __, __, __) [__/__, ___]
   })
-  sets.midcast['Elemental Magic'].Resistant = set_combine(sets.midcast['Elemental Magic'], {
-    ammo="Ghastly Tathlum +1",        -- ___, __, __ (11, __, 21, __, __) [__/__, ___]
-    waist="Acuity Belt +1",           -- ___, __, 15 (23, __, __, __, __) [__/__, ___]
+  sets.midcast['Elemental Magic'].Occult = set_combine(sets.midcast['Elemental Magic'], {
+    ammo="White Tathlum",             --  2, __, __ (__, __, __, __, __) [__/__, ___]
+    body="Spaekona's Coat +3",        -- __, __, 55 (39, __, 48, __, __) [__/__, 100]
+    legs="Jhakri Slops +2",           --  9, __, 45 (52, 42, __, __, __) [__/__,  69]
+    ear1="Dedition Earring",          --  8, __, __ (__, __, __, __, __) [__/__, ___]
+    ear2="Dignitary's Earring",       --  3, __, 10 (__, __, __, __, __) [__/__, ___]
+    ring1="Chirich Ring +1",          --  6, __, __ (__, __, __, __, __) [__/__, ___]
+    waist="Olseni Belt",              --  3, __, __ (__, __, __, __, __) [__/__, ___]
+
+    -- ammo="Seraphic Ampulla",       -- __,  7, __ ( 3, __, __, __, __) [__/__, ___]
+    -- head=gear.Merl_Occult_head,    -- __, 11, 15 (29, 10, __, __, __) [__/__,  86]
+    -- hands=gear.Merl_Occult_hands,  -- __, 11, __ (26, 20, __, __, __) [__/__,  48]
+    -- legs="Perdition Slops",        -- __, 30, 13 (39, 13, __, __, __) [__/__, 107]
+    -- feet=gear.Merl_Occult_feet,    -- __, 11, __ (43, 15, __, __, __) [__/__, 118]
+    -- neck="Combatant's Torque",     --  4, __, __ (__, __, __, __, __) [__/__, ___]
+    -- ear2="Crepuscular Earring",    --  5, __, 10 (__, __, __, __, __) [__/__, ___]
+    -- ring2="Crepuscular Ring",      --  6, __, 10 (__, __, __, __, __) [__/__, ___]
+    -- back=gear.BLM_STP_Cape,        -- 10, __, __ (30, __, __,  5, __) [10/__, ___]
+    -- waist="Oneiros Rope",          --  2, 20, __ (__, __, __, __, __) [__/__, ___]
+    -- 41 STP, 90 Occult, 103 M.Acc (209 INT, 58 MAB, 48 M.Dmg, 5 MB, __ MB2) [10 PDT/0 MDT, 459 M.Eva]
   })
 
   sets.midcast['Elemental Magic'].MB = {
     main="Bunzi's Rod",               -- 255, __, 55 (15, 65,248, 10, __) [__/__, ___]
     sub="Ammurapi Shield",            -- ___, __, 38 (13, 38, __, __, __) [__/__, ___]
     range=empty,                      -- ___, __, __ (__, __, __, __, __) [__/__, ___]
-    ammo="Pemphredo Tathlum",         -- ___, __,  8 ( 4,  4, __, __, __) [__/__, ___]
-		head="Ea Hat +1",
-		body="Wicce Coat +3",
-		hands="Agwu's Gages",
-    legs="Wicce Chausses +2",
-    feet="Agwu's Pigaches",
-    neck="Sibyl Scarf",               -- ___, __, __ (10, 10, __, __, __) [__/__, ___]
-		-- neck="Sorcerer's Stole +2",    -- ___, __, 55 (15,  7, __, 10, __) [__/__, ___]
-    ear1="Malignance Earring",        -- ___, __, 10 ( 8,  8, __, __, __) [__/__, ___]
-    ear2="Regal Earring",             -- ___, __, __ (10, __, __, __, __) [__/__, ___]
-    ring1="Freke Ring",               -- ___, __, __ (10,  8, __, __, __) [__/__, ___]
-    ring2="Metamorph Ring +1",        -- ___, __, 15 (16, __, __, __, __) [__/__, ___]
-		back=gear.BLM_MAB_Cape,           -- ___, __, 20 (30, 10, 20,  5, __) [10/__, ___]
-    waist="Refoccilation Stone",      -- ___, __,  4 (__, 10, __, __, __) [__/__, ___]
-    -- 255 M.Acc Skill, 0 Elemental Skill, 460 M.Acc (312 INT, 419 MAB, 408 M.Dmg, 25 MB, 0 MB2) [45 PDT/35 MDT, 667 M.Eva]
-  }
-  sets.midcast['Elemental Magic'].Spaekona.MB = set_combine(sets.midcast['Elemental Magic'], {
-		ammo="Ghastly Tathlum +1",
-		head="Ea Hat +1",
-    body="Spaekona's Coat +3",
-		hands="Agwu's Gages",
-    legs="Wicce Chausses +3",
-    feet="Agwu's Pigaches",
-    neck="Sibyl Scarf",               -- ___, __, __ (10, 10, __, __, __) [__/__, ___]
-		-- neck="Sorcerer's Stole +2",    -- ___, __, 55 (15,  7, __, 10, __) [__/__, ___]
-    ear1="Malignance Earring",        -- ___, __, 10 ( 8,  8, __, __, __) [__/__, ___]
-    ear2="Regal Earring",             -- ___, __, __ (10, __, __, __, __) [__/__, ___]
-    ring1="Freke Ring",               -- ___, __, __ (10,  8, __, __, __) [__/__, ___]
-    ring2="Metamorph Ring +1",        -- ___, __, 15 (16, __, __, __, __) [__/__, ___]
-		back=gear.BLM_MAB_Cape,           -- ___, __, 20 (30, 10, 20,  5, __) [10/__, ___]
-    waist="Refoccilation Stone",      -- ___, __,  4 (__, 10, __, __, __) [__/__, ___]
-  })
-  sets.midcast['Elemental Magic'].Resistant.MB = set_combine(sets.midcast['Elemental Magic'], {
     ammo="Ghastly Tathlum +1",        -- ___, __, __ (11, __, 21, __, __) [__/__, ___]
+    head="Ea Hat +1",                 -- ___, __, 50 (43, 38, __,  7,  7) [__/__, 109]
+		body="Wicce Coat +3",             -- ___, __, 64 (50, 59, 34, __,  5) [__/__, 141]
+    hands="Wicce Gloves +3",          -- ___, __, 62 (38, 57, 32, __, __) [13/13,  98]
+    legs="Wicce Chausses +3",         -- ___, __, 63 (53, 58, 33, 15, __) [__/__, 168]
+    feet="Wicce Sabots +3",           -- ___, __, 60 (36, 58, 33, __, __) [11/11, 168]
+    neck="Sibyl Scarf",               -- ___, __, 10 (10, __, __, __, __) [__/__, ___]
+    ear1="Malignance Earring",        -- ___, __, 10 ( 8,  8, __, __, __) [__/__, ___]
+    ear2="Regal Earring",             -- ___, __, __ (10, __, __, __, __) [__/__, ___]
+    ring1="Freke Ring",               -- ___, __, __ (10,  8, __, __, __) [__/__, ___]
+    ring2="Metamorph Ring +1",        -- ___, __, 15 (16, __, __, __, __) [__/__, ___]
+		back=gear.BLM_MAB_Cape,           -- ___, __, 20 (30, 10, 20,  5, __) [10/__, ___]
     waist="Acuity Belt +1",           -- ___, __, 15 (23, __, __, __, __) [__/__, ___]
-  })
+    -- 255 M.Acc Skill, 0 Elemental Skill, 462 M.Acc (366 INT, 399 MAB, 421 M.Dmg, 37 MB, 12 MB2) [34 PDT/24 MDT, 684 M.Eva]
 
-  sets.midcast.Impact = {
-    main="Crocea Mors",               -- 255, __, 50, __, 20 [__/__, ___]
-    sub="Ammurapi Shield",            -- ___, __, 38, 13, __ [__/__, ___]
-    range="Ullr",                     -- ___, __, 40, __, __ [__/__, ___]
-    ammo=empty,                       -- ___, __, __, __, __ [__/__, ___]
-    head=empty,                       -- ___, __, __, __, __ [__/__, ___]
-    body="Crepuscular Cloak",         -- ___, __, 85, 80, __ [__/__, 231]
-    hands="Lethargy Gantherots +3",   -- ___, __, 62, 50, __ [11/11,  87]
-    legs="Bunzi Pants",               -- ___, __, 55, 51, __ [ 9/ 9, 150]
-    feet="Bunzi's Sabots",            -- ___, __, 55, 32, __ [ 6/ 6, 150]
-    neck="Duelist's Torque +2",       -- ___, __, 30, 15, __ [__/__, ___]
-    ear1="Malignance Earring",        -- ___, __, 10,  8,  4 [__/__, ___]
-    ear2="Regal Earring",             -- ___, __, __, 10, __ [__/__, ___]
-    ring1="Metamorph Ring +1",        -- ___, __, 15, 16, __ [__/__, ___]
-    ring2="Stikini Ring +1",          -- ___,  8, 11, __, __ [__/__, ___]
-    back="Aurist's Cape +1",          -- ___, __, 33, 33, __ [__/__, ___]
-    waist="Acuity Belt +1",           -- ___, __, 15, 23, __ [__/__, ___]
-    -- Empy set effect                   ___, __, __, __, __ [__/__, ___]
-    -- Traits/Gifts/Merits            --                  38
-    -- 255 M.Acc skill, 8 Elemental Skill, 499 M.Acc, 314 INT, 62 FC [26 PDT/26 MDT, 618 M.Eva]
+		-- hands="Agwu's Gages",          -- ___, __, 55 (33, 60, 20,  8,  6) [__/__,  96]; R30
+    -- feet="Agwu's Pigaches",        -- ___, __, 55 (30, 60, 20,  6, __) [__/__, 134]; R30
+		-- neck="Sorcerer's Stole +2",    -- ___, __, 30 (15,  7, __, 10, __) [__/__, ___]
+    -- 255 M.Acc Skill, 0 Elemental Skill, 470 M.Acc (360 INT, 411 MAB, 396 M.Dmg, 61 MB, 18 MB2) [10 PDT/0 MDT, 648 M.Eva]
   }
+  sets.midcast['Elemental Magic'].Spaekona.MB = set_combine(sets.midcast['Elemental Magic'].MB, {
+    body="Spaekona's Coat +3",
+  })
+  sets.midcast['Elemental Magic'].Occult.MB = set_combine(sets.midcast['Elemental Magic'].MB, {
+    ammo="White Tathlum",             --  2, __, __ (__, __, __, __, __) [__/__, ___]
+    body="Spaekona's Coat +3",        -- __, __, 55 (39, __, 48, __, __) [__/__, 100]
+    legs="Jhakri Slops +2",           --  9, __, 45 (52, 42, __, __, __) [__/__,  69]
+    ear1="Dedition Earring",          --  8, __, __ (__, __, __, __, __) [__/__, ___]
+    ear2="Dignitary's Earring",       --  3, __, 10 (__, __, __, __, __) [__/__, ___]
+    ring1="Chirich Ring +1",          --  6, __, __ (__, __, __, __, __) [__/__, ___]
+    waist="Olseni Belt",              --  3, __, __ (__, __, __, __, __) [__/__, ___]
+
+    -- ammo="Seraphic Ampulla",       -- __,  7, __ ( 3, __, __, __, __) [__/__, ___]
+    -- head=gear.Merl_Occult_head,    -- __, 11, 15 (29, 10, __, __, __) [__/__,  86]
+    -- hands=gear.Merl_Occult_hands,  -- __, 11, __ (26, 20, __, __, __) [__/__,  48]
+    -- legs="Perdition Slops",        -- __, 30, 13 (39, 13, __, __, __) [__/__, 107]
+    -- feet=gear.Merl_Occult_feet,    -- __, 11, __ (43, 15, __, __, __) [__/__, 118]
+    -- neck="Combatant's Torque",     --  4, __, __ (__, __, __, __, __) [__/__, ___]
+    -- ear2="Crepuscular Earring",    --  5, __, 10 (__, __, __, __, __) [__/__, ___]
+    -- ring2="Crepuscular Ring",      --  6, __, 10 (__, __, __, __, __) [__/__, ___]
+    -- back=gear.BLM_STP_Cape,        -- 10, __, __ (30, __, __,  5, __) [10/__, ___]
+    -- waist="Oneiros Rope",          --  2, 20, __ (__, __, __, __, __) [__/__, ___]
+    -- 41 STP, 90 Occult, 103 M.Acc (209 INT, 58 MAB, 48 M.Dmg, 5 MB, __ MB2) [10 PDT/0 MDT, 459 M.Eva]
+  })
 
 
   ------------------------------------------------------------------------------------------------
@@ -779,11 +756,11 @@ function init_gear_sets()
     sub="Enki Strap",                 -- __/__,  10 [__]
     range=empty,                      -- __/__, ___ [__]
     ammo="Staunch Tathlum +1",        --  3/ 3, ___ [__]; Resist Status+11
-    head="Wicce Petasos +2",          -- 10/10, 126 [__]
+    head="Wicce Petasos +3",          -- 11/11, 136 [__]
     body="Shamash Robe",              -- 10/__, 106 [ 3]; Resist Silence+90
     hands=gear.Nyame_B_hands,         --  7/ 7, 112 [__]
     legs=gear.Nyame_B_legs,           --  8/ 8, 150 [__]
-    feet="Wicce Sabots +2",           -- 10/10, 158 [__]
+    feet="Wicce Sabots +3",           -- 11/11, 168 [__]
     neck="Loricate Torque +1",        --  6/ 6, ___ [__]; DEF+60
     ear1="Arete Del Luna +1",         -- __/__, ___ [__]; Resists
     ear2="Etiolation Earring",        -- __/ 3, ___ [__]; Resist Silence+15
@@ -791,10 +768,8 @@ function init_gear_sets()
     ring2="Archon Ring",              -- __/__, ___ [__]; Annul severe magic dmg
     back=gear.BLM_INT_Enf_Cape,       -- 10/__, ___ [__]
     waist="Carrier's Sash",           -- __/__, ___ [__]; Ele Resist+15
-    -- 64 PDT/47 MDT, 662 M.Eva [5 Refresh]
+    -- 66 PDT/49 MDT, 682 M.Eva [5 Refresh]
     
-    -- head="Wicce Petasos +3",       -- 11/11, 136 [__]
-    -- feet="Wicce Sabots +3",        -- 11/11, 168 [__]
     -- ring2="Shadow Ring",           -- __/__, ___ [__]; Occ. annuls magic dmg
     -- back="Shadow Mantle",          -- __/__, ___ [__]; Occ. annuls physical dmg
     -- 56 PDT/49 MDT, 682 M.Eva [5 Refresh]
@@ -842,35 +817,28 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.engaged = {
-    range=empty,                      -- __, __, __ <__, __, __> [__/__, ___]
-    ammo="Coiste Bodhar",             -- __,  3, __ < 3, __, __> [__/__, ___]
-    head="Bunzi's Hat",               -- __,  8, 55 <__, __,  3> [ 7/ 7, 123]
-    body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
-    hands="Malignance Gloves",        -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
-    legs="Malignance Tights",         -- __, 10, 50 <__, __, __> [ 7/ 7, 150]
-    feet="Malignance Boots",          -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
-    neck="Anu Torque",                -- __,  7, __ <__, __, __> [__/__, ___]
-    ear1="Dedition Earring",          -- __,  8,-10 <__, __, __> [__/__, ___]
-    ear2="Sherida Earring",           -- __,  5, __ < 5, __, __> [__/__, ___]
-    ring1="Chirich Ring +1",          -- __,  6, 10 <__, __, __> [__/__, ___]
-    ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
-    back=gear.BLM_STP_Cape,           -- __, 10, 30 <__, __, __> [10/__, ___]
-    waist="Sailfi Belt +1",           -- __, __, __ < 5,  2, __> [__/__, ___]
-    -- 0 DW, 89 STP, 285 Acc <13 DA, 2 TA, 3 QA> [52 PDT/42 MDT, 674 M.Eva]
-  }
-  sets.engaged.MidAcc = set_combine(sets.engaged, {
-    -- neck="Combatant's Torque",     -- __,  4, __ <__, __, __> [__/__, ___]; Combat skills+15
-    -- ear1="Telos Earring",          -- __,  5, 10 < 1, __, __> [__/__, ___]
-    ear2="Cessance Earring",          -- __,  3,  6 < 3, __, __> [__/__, ___]
-    -- waist="Kentarch Belt +1",      -- __,  5, 14 < 3, __, __> [__/__, ___]
-    -- 0 DW, 86 STP, 325 Acc <10 DA, 0 TA, 3 QA> [52 PDT/42 MDT, 674 M.Eva]
-  })
-  sets.engaged.HighAcc = set_combine(sets.engaged, {
-    -- ammo="Voluspa Tathlum",        -- __, __, 10 <__, __, __> [__/__, ___]
+    -- Assume Khonsu                  --  4, __, 30 <__, __, __> [ 6/ 6, ___]
+    ammo="White Tathlum",             -- __,  2, __ <__, __, __> [__/__, ___]
+    head=gear.Nyame_B_head,           --  6, __, 50 < 5, __, __> [ 7/ 7, 123]
+    body=gear.Nyame_B_body,           --  3, __, 40 < 7, __, __> [ 9/ 9, 139]
+    hands=gear.Nyame_B_hands,         --  3, __, 40 < 5, __, __> [ 7/ 7, 112]
+    legs="Jhakri Slops +2",           --  2,  9, 45 <__, __, __> [__/__,  69]
+    feet=gear.Nyame_B_feet,           --  3, __, 53 < 5, __, __> [ 7/ 7, 150]
+    neck="Subtlety Spectacles",       -- __, __, 15 <__, __, __> [__/__, ___]
+    ear1="Cessance Earring",          -- __,  3,  6 < 3, __, __> [__/__, ___]
     ear2="Dignitary's Earring",       -- __,  3, 10 <__, __, __> [__/__, ___]
+    ring1="Chirich Ring +1",          -- __,  6, 10 <__, __, __> [__/__, ___]
+    ring2="Hetairoi Ring",            -- __, __, __ <__,  2, __> [__/__, ___]
+    -- back=gear.BLM_STP_Cape,        -- __, 10, 30 <__, __, __> [10/__, ___]
     waist="Olseni Belt",              -- __,  3, 20 <__, __, __> [__/__, ___]
-    -- 0 DW, 81 STP, 345 Acc <1 DA, 0 TA, 3 QA> [52 PDT/42 MDT, 674 M.Eva]
-  })
+    -- 21 Haste, 36 STP, 349 Acc <25 DA, 2 TA, 0 QA> [46 PDT/36 MDT, 593 MEVA]
+
+    -- hands="Gazu Bracelets +1",     -- 15, __, 96 <__, __, __> [__/__,  43]
+    -- neck="Combatant's Torque",     -- __,  4, __ <__, __, __> [__/__, ___]; Combat skill+15
+    -- ear2="Telos Earring",          -- __,  5, 10 < 1, __, __> [__/__, ___]
+    -- ring2="Defending Ring",        -- __, __, __ <__, __, __> [10/10, ___]
+    -- 33 Haste, 42 STP, 390 Acc <21 DA, 0 TA, 0 QA> [49 PDT/39 MDT, 524 MEVA]
+  }
 
 
   ------------------------------------------------------------------------------------------------
@@ -981,9 +949,18 @@ function job_midcast(spell, action, spellMap, eventArgs)
       customEquipSet = customEquipSet[state.CastingMode.current]
     end
 
+    if customEquipSet then
+      equip(customEquipSet)
+      eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
+    end
+
     -- Add magic burst set if exists
     if state.MagicBurst.value and spell.skill == 'Elemental Magic' and customEquipSet['MB'] then
-      equip(customEquipSet['MB'])
+      customEquipSet = customEquipSet['MB']
+    end
+
+    if customEquipSet then
+      equip(customEquipSet)
       eventArgs.handled=true -- Prevents Mote lib from overwriting the equipSet
     end
   end
