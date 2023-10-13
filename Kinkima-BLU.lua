@@ -711,12 +711,12 @@ function init_gear_sets()
     feet=gear.Telchine_ENH_feet,
     neck="Incanter's Torque",
     ear1="Mimir Earring",
+    ear2="Andoaa Earring",
     ring1="Defending Ring", --10DT
     ring2="Stikini Ring +1",
     back=gear.BLU_FC_Cape, --10PDT
     waist="Olympus Sash",
     -- main="Sakpata's Sword", --10DT
-    -- ear2="Andoaa Earring",
   }
 
   sets.midcast.EnhancingDuration = {
@@ -729,12 +729,12 @@ function init_gear_sets()
     feet=gear.Telchine_ENH_feet,
     neck="Loricate Torque +1", --6DT
     ear1="Odnowa Earring +1", --3DT
+    ear2="Andoaa Earring",
     ring1="Defending Ring", --10DT
     ring2="Stikini Ring +1",
     back=gear.BLU_FC_Cape, --10PDT
     waist="Flume Belt +1", --4PDT
     -- main="Sakpata's Sword", --10DT
-    -- ear2="Andoaa Earring",
   } --36DT, 14PDT
 
   sets.midcast.Refresh = set_combine(sets.midcast.EnhancingDuration, {
@@ -745,9 +745,9 @@ function init_gear_sets()
 
   sets.midcast.Stoneskin = set_combine(sets.midcast.EnhancingDuration, {
     ear1="Earthcry Earring", --10
+    ear2="Andoaa Earring",
     waist="Siegel Sash", --20
     -- hands="Stone Mufflers", --30
-    -- ear2="Andoaa Earring",
     -- legs="Shedir Seraweels", --35
   })
 

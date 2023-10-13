@@ -529,13 +529,13 @@ function init_gear_sets()
     feet=gear.Kaykaus_D_feet,         -- 21, __,  4
     neck="Incanter's Torque",         -- 10, __, __
     ear1="Mimir Earring",             -- 10, __, __
+    ear2="Andoaa Earring",            --  5, __, __
     ring1="Stikini Ring +1",          --  8, __, __
     ring2="Stikini Ring +1",          --  8, __, __
     waist="Embla Sash",               -- __, 10,  5
 
     -- main=gear.Gada_ENH,            -- 18,  6,  6
     -- ammo="Savant's Treatise",      --  4, __, __
-    -- ear2="Andoaa Earring",         --  5, __, __
     -- back="Fi Follet Cape +1",      --  9, __, 10
     -- 108 Enh Skill, 68 Enh Duration, 35 FC
   }
