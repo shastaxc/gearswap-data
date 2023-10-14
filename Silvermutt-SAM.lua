@@ -143,7 +143,7 @@ function init_gear_sets()
   }
 
   sets.precast.JA['Warding Circle'] = {
-    head="Wakido Kabuto +1",
+    head="Wakido Kabuto +2",
     -- head="Wakido Kabuto +3",
   }
 
@@ -157,7 +157,7 @@ function init_gear_sets()
   }
 
   sets.precast.JA['Meditate'] = {
-    head="Wakido Kabuto +1",
+    head="Wakido Kabuto +2",
     hands="Sakonji Kote +1",
     back="Smertrios's Mantle",
     -- head="Wakido Kabuto +3",
