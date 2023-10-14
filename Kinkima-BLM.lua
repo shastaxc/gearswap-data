@@ -33,11 +33,7 @@ function job_setup()
   state.WeaponskillMode:options('Normal')
   state.CastingMode:options('Normal', 'Spaekona', 'Occult')
   state.IdleMode:options('Normal')
-  state.BarElement = M{['description']='BarElement', 'Barfire', 'Barblizzard', 'Baraero', 'Barstone', 'Barthunder', 'Barwater'}
-  state.BarStatus = M{['description']='BarStatus', 'Baramnesia', 'Barvirus', 'Barparalyze', 'Barsilence', 'Barpetrify', 'Barpoison', 'Barblind', 'Barsleep'}
   state.MagicBurst = M(false, 'Magic Burst')
-  state.SleepMode = M{['description']='Sleep Mode', 'Normal', 'MaxDuration'}
-  state.NM = M(false, 'NM?')
   state.CP = M(false, 'Capacity Points Mode')
   state.WeaponSet = M{['description']='Weapon Set', 'Casting', 'Cleaving', 'Myrkr'}
   state.ToyWeapons = M{['description']='Toy Weapons','None'}
@@ -71,17 +67,7 @@ function job_setup()
     ['Kishar Ring'] =           {base=0.10, aug=0.00},
     ['Obstinate Sash'] =        {base=0.05, aug=0.00},
   }
-  empy_duration_mult = {
-    [0] = 1.00,
-    [1] = 1.00,
-    [2] = 1.10,
-    [3] = 1.20,
-    [4] = 1.35,
-    [5] = 1.50,
-  }
   enf_timer_spells = S{'Sleep', 'Sleep II', 'Sleepga', 'Sleepga II', 'Break', 'Breakga'}
-  -- Spells with variable base duration
-  enf_variable_duration_spells = S{'Gravity', 'Gravity II', 'Bind', 'Addle', 'Addle II'}
 
   set_main_keybinds()
 
@@ -125,7 +111,7 @@ function init_gear_sets()
 
   -- Precast sets to enhance JAs
   sets.precast.JA['Manafont'] = {
-    body="Archmage's Coat +3",
+    body="Archmage's Coat +1",
   }
 
   -- Fast cast sets for spells (cap 80% FC).
@@ -1541,11 +1527,15 @@ function set_main_keybinds()
   send_command('bind ^pagedown gs c cycle ElementalMode')
   send_command('bind !pagedown gs c reset ElementalMode')
 
-  send_command('bind ^` gs c cycle treasuremode')
+  send_command('bind ^q gs c elemental ga fire')
+  send_command('bind ^w gs c elemental ga ice')
+  send_command('bind ^e gs c elemental ga wind')
+  send_command('bind !q gs c elemental ga earth')
+  send_command('bind !w gs c elemental ga lightning')
+  send_command('bind !e gs c elemental ga water')
+
   send_command('bind @c gs c toggle CP')
   send_command('bind !` gs c toggle MagicBurst')
-  send_command('bind @s gs c cycle SleepMode')
-  send_command('bind @n gs c toggle NM')
 end
 
 function set_sub_keybinds()
@@ -1559,7 +1549,7 @@ function set_sub_keybinds()
     send_command('bind ![ gs c scholar aoe')
     send_command('bind !\\\\ gs c scholar speed')
   elseif player.sub_job == 'RDM' then
-    send_command('bind !e input /ma "Haste" <stpc>')
+    send_command('bind !r input /ma "Haste" <stpc>')
     send_command('bind !u input /ma Blink <me>')
     send_command('bind !i input /ma Stoneskin <me>')
     send_command('bind !o input /ma "Phalanx" <me>')
