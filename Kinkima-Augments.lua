@@ -77,8 +77,9 @@ gear.Merl_Aspir_feet = gear.Merl_FC_feet
 
 gear.Merl_MAB_body = { name="Merlinic Jubbah", augments={'"Mag.Atk.Bns."+25','Accuracy+3 Attack+3','Mag. Acc.+19 "Mag.Atk.Bns."+19',}}
 
-gear.Merl_MB_hands = { name="Merlinic Dastanas", augments={'Accuracy+10 Attack+10','DEX+8','Magic burst dmg.+9%','Mag. Acc.+9 "Mag.Atk.Bns."+9',}}
-gear.Merl_MB_feet = { name="Merlinic Crackows", augments={'Magic burst dmg.+8%','Phys. dmg. taken -2%','INT+3 MND+3 CHR+3','Accuracy+7 Attack+7','Mag. Acc.+1 "Mag.Atk.Bns."+1',}}--Max: 10 MB Dmg, 40 MAB, 40 M.Acc, 10 INT
+gear.Merl_Occult_head = { name="Merlinic Hood", augments={'"Mag.Atk.Bns."+2','"Occult Acumen"+11','STR+9','Mag. Acc.+15',}}
+gear.Merl_Occult_hands = { name="Merlinic Dastanas", augments={'Accuracy+12','"Occult Acumen"+11','CHR+10','Mag. Acc.+4',}}
+gear.Merl_Occult_feet = { name="Merlinic Crackows", augments={'"Occult Acumen"+11','Mag. Acc.+13',}}
 
 gear.Merl_Mag_BP_hands = { name="Merlinic Dastanas", augments={'Pet: "Mag.Atk.Bns."+19','Blood Pact Dmg.+10','Pet: INT+9','Pet: Mag. Acc.+15',}}
 gear.Merl_Phys_BP_hands = { name="Merlinic Dastanas", augments={'Pet: Attack+17 Pet: Rng.Atk.+17','Blood Pact Dmg.+10','Pet: DEX+10','Pet: Mag. Acc.+10',}}
@@ -193,6 +194,7 @@ gear.SMN_Skill_Cape = { name="Conveyance Cape", augments={'Summoning magic skill
 
 gear.BLM_FC_Cape = { name="Taranus's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','"Fast Cast"+10','Phys. dmg. taken-10%',}}
 gear.BLM_MAB_Cape = { name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
+gear.BLM_STP_Cape = { name="Taranus's Cape", augments={'INT+20','Accuracy+20 Attack+20','INT+10','"Store TP"+10','Phys. dmg. taken-10%',}}
 
 gear.COR_TP_Cape = { name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}}
 gear.COR_WS1_Cape = { name="Camulus's Mantle", augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','AGI+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}

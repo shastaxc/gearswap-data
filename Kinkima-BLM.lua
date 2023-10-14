@@ -212,9 +212,9 @@ function init_gear_sets()
     ear2="Moonshade Earring",         -- __,  4, __, __, __ <__, __, __> (__, __) [__/__, ___]; TP Bonus+250
     ring1="Ephramad's Ring",          -- 10, 20, 20, __, 10 <__, __, __> (__, __) [__/__, ___]
     ring2="Epaminondas's Ring",       -- __, __, __,  5, __ <__, __, __> (__, __) [__/__, ___]
-    back=gear.BLM_WSD_Cape,           -- __, 20, __, 10, __ <__, __, __> (__, __) [10/__, ___]
+    back=gear.BLM_MAB_Cape,           -- __, __, __, __, __ <__, __, __> (__, __) [10/__, ___]
     -- waist="Fotia Belt",            -- __, 10, __, __, __ <__, __, __> (__, __) [__/__, ___]; ftp+0.1
-    -- 179 STR, 292 Acc, 350 Att, 78 WSD, 0 PDL <28 DA, 0 TA, 0 QA> (0 Crit Rate, 0 Crit Dmg) [48 PDT/38 MDT, 674 M.Eva]
+    -- 179 STR, 292 Acc, 350 Att, 68 WSD, 0 PDL <28 DA, 0 TA, 0 QA> (0 Crit Rate, 0 Crit Dmg) [48 PDT/38 MDT, 674 M.Eva]
   }
 
   -- Dark elemental WS. Lower target M.Def. Duration varies with TP. dStat = INT.
@@ -293,7 +293,7 @@ function init_gear_sets()
     ear2="Moonshade Earring",         -- __, __, __, __, __, __ [__/__, ___]; TP Bonus
     ring1="Metamorph Ring +1",        -- __, 16, 15, __, __, __ [__/__, ___]
     ring2="Freke Ring",               -- __, 10, __, __,  8, __ [__/__, ___]
-    -- back=gear.BLM_MAB_Cape,        -- __, 30, 20, __, 10, 20 [10/__, ___]
+    back=gear.BLM_MAB_Cape,           -- __, 30, 20, __, 10, 20 [10/__, ___]
     waist="Refoccilation Stone",      -- __, __,  4, __, 10, __ [__/__, ___]
     -- 149 STR, 274 INT, 292 M.Acc, 25 WSD, 254 MAB, 114 M.Dmg [60 PDT/50 MDT, 671 M.Eva]
     
@@ -673,28 +673,28 @@ function init_gear_sets()
     -- 255 M.Acc Skill, 0 Elemental Skill, 470 M.Acc (360 INT, 411 MAB, 396 M.Dmg, 61 MB, 18 MB2) [10 PDT/0 MDT, 648 M.Eva]
   }
   sets.midcast['Elemental Magic'].Spaekona = set_combine(sets.midcast['Elemental Magic'], {
-    body="Spaekona's Coat +3",
+    body="Spaekona's Coat +3", -- MP return
   })
   sets.midcast['Elemental Magic'].Occult = set_combine(sets.midcast['Elemental Magic'], {
-    ammo="White Tathlum",             --  2, __, __ (__, __, __, __, __) [__/__, ___]
+    ammo="White Tathlum",             -- __,  2, __ (__, __, __, __, __) [__/__, ___]
+    head=gear.Merl_Occult_head,       -- 11, __, 15 (29, 10, __, __, __) [__/__,  86]
+    hands=gear.Merl_Occult_hands,     -- 11, __, __ (26, 20, __, __, __) [__/__,  48]
     body="Spaekona's Coat +3",        -- __, __, 55 (39, __, 48, __, __) [__/__, 100]
-    legs="Jhakri Slops +2",           --  9, __, 45 (52, 42, __, __, __) [__/__,  69]
-    ear1="Dedition Earring",          --  8, __, __ (__, __, __, __, __) [__/__, ___]
-    ear2="Dignitary's Earring",       --  3, __, 10 (__, __, __, __, __) [__/__, ___]
-    ring1="Chirich Ring +1",          --  6, __, __ (__, __, __, __, __) [__/__, ___]
-    waist="Olseni Belt",              --  3, __, __ (__, __, __, __, __) [__/__, ___]
+    legs="Jhakri Slops +2",           -- __,  9, 45 (52, 42, __, __, __) [__/__,  69]
+    feet=gear.Merl_Occult_feet,       -- 11, __, __ (43, 15, __, __, __) [__/__, 118]
+    ear1="Dedition Earring",          -- __,  8, __ (__, __, __, __, __) [__/__, ___]
+    ear2="Dignitary's Earring",       -- __,  3, 10 (__, __, __, __, __) [__/__, ___]
+    ring1="Chirich Ring +1",          -- __,  6, __ (__, __, __, __, __) [__/__, ___]
+    back=gear.BLM_STP_Cape,           -- __, 10, __ (30, __, __,  5, __) [10/__, ___]
+    waist="Olseni Belt",              -- __,  3, __ (__, __, __, __, __) [__/__, ___]
 
-    -- ammo="Seraphic Ampulla",       -- __,  7, __ ( 3, __, __, __, __) [__/__, ___]
-    -- head=gear.Merl_Occult_head,    -- __, 11, 15 (29, 10, __, __, __) [__/__,  86]
-    -- hands=gear.Merl_Occult_hands,  -- __, 11, __ (26, 20, __, __, __) [__/__,  48]
-    -- legs="Perdition Slops",        -- __, 30, 13 (39, 13, __, __, __) [__/__, 107]
-    -- feet=gear.Merl_Occult_feet,    -- __, 11, __ (43, 15, __, __, __) [__/__, 118]
-    -- neck="Combatant's Torque",     --  4, __, __ (__, __, __, __, __) [__/__, ___]
-    -- ear2="Crepuscular Earring",    --  5, __, 10 (__, __, __, __, __) [__/__, ___]
-    -- ring2="Crepuscular Ring",      --  6, __, 10 (__, __, __, __, __) [__/__, ___]
-    -- back=gear.BLM_STP_Cape,        -- 10, __, __ (30, __, __,  5, __) [10/__, ___]
-    -- waist="Oneiros Rope",          --  2, 20, __ (__, __, __, __, __) [__/__, ___]
-    -- 41 STP, 90 Occult, 103 M.Acc (209 INT, 58 MAB, 48 M.Dmg, 5 MB, __ MB2) [10 PDT/0 MDT, 459 M.Eva]
+    -- ammo="Seraphic Ampulla",       --  7, __, __ ( 3, __, __, __, __) [__/__, ___]
+    -- legs="Perdition Slops",        -- 30, __, 13 (39, 13, __, __, __) [__/__, 107]
+    -- neck="Combatant's Torque",     --  __, 4, __ (__, __, __, __, __) [__/__, ___]
+    -- ear2="Crepuscular Earring",    -- __,  5, 10 (__, __, __, __, __) [__/__, ___]
+    -- ring2="Crepuscular Ring",      -- __,  6, 10 (__, __, __, __, __) [__/__, ___]
+    -- waist="Oneiros Rope",          -- 20,  2, __ (__, __, __, __, __) [__/__, ___]
+    -- 90 Occult, 41 STP, 103 M.Acc (209 INT, 58 MAB, 48 M.Dmg, 5 MB, 0 MB2) [10 PDT/0 MDT, 459 M.Eva]
   })
 
   sets.midcast['Elemental Magic'].MB = {
@@ -722,28 +722,7 @@ function init_gear_sets()
     -- 255 M.Acc Skill, 0 Elemental Skill, 470 M.Acc (360 INT, 411 MAB, 396 M.Dmg, 61 MB, 18 MB2) [10 PDT/0 MDT, 648 M.Eva]
   }
   sets.midcast['Elemental Magic'].Spaekona.MB = set_combine(sets.midcast['Elemental Magic'].MB, {
-    body="Spaekona's Coat +3",
-  })
-  sets.midcast['Elemental Magic'].Occult.MB = set_combine(sets.midcast['Elemental Magic'].MB, {
-    ammo="White Tathlum",             --  2, __, __ (__, __, __, __, __) [__/__, ___]
-    body="Spaekona's Coat +3",        -- __, __, 55 (39, __, 48, __, __) [__/__, 100]
-    legs="Jhakri Slops +2",           --  9, __, 45 (52, 42, __, __, __) [__/__,  69]
-    ear1="Dedition Earring",          --  8, __, __ (__, __, __, __, __) [__/__, ___]
-    ear2="Dignitary's Earring",       --  3, __, 10 (__, __, __, __, __) [__/__, ___]
-    ring1="Chirich Ring +1",          --  6, __, __ (__, __, __, __, __) [__/__, ___]
-    waist="Olseni Belt",              --  3, __, __ (__, __, __, __, __) [__/__, ___]
-
-    -- ammo="Seraphic Ampulla",       -- __,  7, __ ( 3, __, __, __, __) [__/__, ___]
-    -- head=gear.Merl_Occult_head,    -- __, 11, 15 (29, 10, __, __, __) [__/__,  86]
-    -- hands=gear.Merl_Occult_hands,  -- __, 11, __ (26, 20, __, __, __) [__/__,  48]
-    -- legs="Perdition Slops",        -- __, 30, 13 (39, 13, __, __, __) [__/__, 107]
-    -- feet=gear.Merl_Occult_feet,    -- __, 11, __ (43, 15, __, __, __) [__/__, 118]
-    -- neck="Combatant's Torque",     --  4, __, __ (__, __, __, __, __) [__/__, ___]
-    -- ear2="Crepuscular Earring",    --  5, __, 10 (__, __, __, __, __) [__/__, ___]
-    -- ring2="Crepuscular Ring",      --  6, __, 10 (__, __, __, __, __) [__/__, ___]
-    -- back=gear.BLM_STP_Cape,        -- 10, __, __ (30, __, __,  5, __) [10/__, ___]
-    -- waist="Oneiros Rope",          --  2, 20, __ (__, __, __, __, __) [__/__, ___]
-    -- 41 STP, 90 Occult, 103 M.Acc (209 INT, 58 MAB, 48 M.Dmg, 5 MB, __ MB2) [10 PDT/0 MDT, 459 M.Eva]
+    body="Spaekona's Coat +3", -- MP return
   })
 
 
@@ -766,7 +745,7 @@ function init_gear_sets()
     ear2="Etiolation Earring",        -- __/ 3, ___ [__]; Resist Silence+15
     ring1="Wuji Ring",                -- __/__, ___ [__]; Resists Charm/Sleep
     ring2="Archon Ring",              -- __/__, ___ [__]; Annul severe magic dmg
-    back=gear.BLM_INT_Enf_Cape,       -- 10/__, ___ [__]
+    back=gear.BLM_FC_Cape,            -- 10/__, ___ [__]
     waist="Carrier's Sash",           -- __/__, ___ [__]; Ele Resist+15
     -- 66 PDT/49 MDT, 682 M.Eva [5 Refresh]
     
@@ -829,15 +808,15 @@ function init_gear_sets()
     ear2="Dignitary's Earring",       -- __,  3, 10 <__, __, __> [__/__, ___]
     ring1="Chirich Ring +1",          -- __,  6, 10 <__, __, __> [__/__, ___]
     ring2="Hetairoi Ring",            -- __, __, __ <__,  2, __> [__/__, ___]
-    -- back=gear.BLM_STP_Cape,        -- __, 10, 30 <__, __, __> [10/__, ___]
+    back=gear.BLM_STP_Cape,           -- __, 10, 20 <__, __, __> [10/__, ___]
     waist="Olseni Belt",              -- __,  3, 20 <__, __, __> [__/__, ___]
-    -- 21 Haste, 36 STP, 349 Acc <25 DA, 2 TA, 0 QA> [46 PDT/36 MDT, 593 MEVA]
+    -- 21 Haste, 36 STP, 339 Acc <25 DA, 2 TA, 0 QA> [46 PDT/36 MDT, 593 MEVA]
 
     -- hands="Gazu Bracelets +1",     -- 15, __, 96 <__, __, __> [__/__,  43]
     -- neck="Combatant's Torque",     -- __,  4, __ <__, __, __> [__/__, ___]; Combat skill+15
     -- ear2="Telos Earring",          -- __,  5, 10 < 1, __, __> [__/__, ___]
     -- ring2="Defending Ring",        -- __, __, __ <__, __, __> [10/10, ___]
-    -- 33 Haste, 42 STP, 390 Acc <21 DA, 0 TA, 0 QA> [49 PDT/39 MDT, 524 MEVA]
+    -- 33 Haste, 42 STP, 380 Acc <21 DA, 0 TA, 0 QA> [49 PDT/39 MDT, 524 MEVA]
   }
 
 
