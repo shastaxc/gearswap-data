@@ -221,11 +221,11 @@ function init_gear_sets()
   sets.precast.WS['Vidohunir'] = set_combine(sets.precast.WS, {
     range=empty,                      -- __, __, __, __, __ [__/__, ___]
     ammo="Ghastly Tathlum +1",        -- 11, __, __, __, 21 [__/__, ___]
-    head="Wicce Petasos +2",          -- 34, 51, __, 46, 21 [10/10, 126]
+    head="Wicce Petasos +3",          -- 39, 61, __, 51, 31 [11/11, 136]
     body="Wicce Coat +3",             -- 50, 64, __, 59, 34 [__/__, 141]
     hands="Wicce Gloves +3",          -- 38, 62, __, 57, 32 [13/13,  98]
     legs="Agwu's Slops",              -- 49, 55, __, 60, 20 [10/10, 134]
-    feet="Wicce Sabots +2",           -- 31, 50, __, 45, 20 [10/10, 158]
+    feet="Wicce Sabots +3",           -- 36, 60, __, 50, 30 [11/11, 168]
     neck="Sibyl Scarf",               -- 10, __, __, 10, __ [__/__, ___]
     ear1="Malignance Earring",        --  8, 10, __,  8, __ [__/__, ___]
     ear2="Moonshade Earring",         -- __, __, __, __, __ [__/__, ___]; TP Bonus+250
@@ -233,10 +233,6 @@ function init_gear_sets()
     ring2="Freke Ring",               -- 10, __, __,  8, __ [__/__, ___]
     back="Aurist's Cape +1",          -- 33, 33, __, __, __ [__/__, ___]
     waist="Acuity Belt +1",           -- 23, 15, __, __, __ [__/__, ___]
-    -- 313 INT, 355 M.Acc, 0 WSD, 293 MAB, 148 M.Dmg [44 PDT/44 MDT, 657 M.Eva]
-    
-    -- head="Wicce Petasos +3",       -- 39, 61, __, 51, 31 [11/11, 136]
-    -- feet="Wicce Sabots +3",        -- 36, 60, __, 50, 30 [11/11, 168]
     -- 333 INT, 375 M.Acc, 0 WSD, 310 MAB, 168 M.Dmg [45 PDT/45 MDT, 677 M.Eva]
   })
   sets.precast.WS['Vidohunir'].MaxTP = set_combine(sets.precast.WS['Vidohunir'], {
@@ -260,8 +256,8 @@ function init_gear_sets()
     head="Pixie Hairpin +1",          -- 120, ___ [__/__, ___]
     body="Wicce Coat +3",             -- 132, ___ [__/__, 141]
     hands="Wicce Gloves +3",          --  50, ___ [13/13,  98]
-    legs="Wicce Chausses +2",         -- 109, ___ [__/__, 158]
-    feet="Wicce Sabots +2",           --  40, ___ [10/10, 158]
+    legs="Wicce Chausses +3",         -- 119, ___ [__/__, 168]
+    feet="Wicce Sabots +3",           --  50, ___ [11/11, 168]
     neck="Orunmila's Torque",         --  30, ___ [__/__, ___]
     ear1="Etiolation Earring",        --  50, ___ [__/ 3, ___]
     ear2="Moonshade Earring",         -- ___, 250 [__/__, ___]
@@ -269,10 +265,6 @@ function init_gear_sets()
     ring2="Mephitas's Ring +1",       -- 110, ___ [__/__, ___]
     back="Aurist's Cape +1",          --  45, ___ [__/__, ___]
     waist="Acuity Belt +1",           --  35, ___ [__/__, ___]
-    -- 836 Max MP, 250 TP Bonus [23 PDT/27 MDT, 555 M.Eva]
-    
-    -- legs="Wicce Chausses +3",      -- 119, ___ [__/__, 168]
-    -- feet="Wicce Sabots +3",        --  50, ___ [11/11, 168]
     -- 856 Max MP, 250 TP Bonus [24 PDT/28 MDT, 575 M.Eva]
   }
   sets.precast.WS['Myrkr'].MaxTP = set_combine(sets.precast.WS['Myrkr'], {
@@ -283,11 +275,11 @@ function init_gear_sets()
   sets.precast.WS['Earth Crusher'] = {
     range=empty,                      -- __, __, __, __, __, __ [__/__, ___]
     ammo="Ghastly Tathlum +1",        -- __, 11, __, __, __, 21 [__/__, ___]
-    head="Wicce Petasos +2",          -- 17, 34, 51, __, 46, 21 [10/10, 126]
+    head="Wicce Petasos +3",          -- 22, 39, 61, __, 51, 31 [11/11, 136]
     body=gear.Nyame_B_body,           -- 45, 42, 40, 13, 30, __ [ 9/ 9, 139]
     hands="Wicce Gloves +3",          -- 16, 38, 62, __, 57, 32 [13/13,  98]
     legs=gear.Nyame_B_legs,           -- 58, 44, 40, 12, 30, __ [ 8/ 8, 150]
-    feet="Wicce Sabots +2",           -- 13, 31, 50, __, 45, 20 [10/10, 158]
+    feet="Wicce Sabots +3",           -- 18, 36, 60, __, 50, 30 [11/11, 168]
     neck="Sibyl Scarf",               -- __, 10, __, __, 10, __ [__/__, ___]
     ear1="Malignance Earring",        -- __,  8, 10, __,  8, __ [__/__, ___]
     ear2="Moonshade Earring",         -- __, __, __, __, __, __ [__/__, ___]; TP Bonus
@@ -295,10 +287,6 @@ function init_gear_sets()
     ring2="Freke Ring",               -- __, 10, __, __,  8, __ [__/__, ___]
     back=gear.BLM_MAB_Cape,           -- __, 30, 20, __, 10, 20 [10/__, ___]
     waist="Refoccilation Stone",      -- __, __,  4, __, 10, __ [__/__, ___]
-    -- 149 STR, 274 INT, 292 M.Acc, 25 WSD, 254 MAB, 114 M.Dmg [60 PDT/50 MDT, 671 M.Eva]
-    
-    -- head="Wicce Petasos +3",       -- 22, 39, 61, __, 51, 31 [11/11, 136]
-    -- feet="Wicce Sabots +3",        -- 18, 36, 60, __, 50, 30 [11/11, 168]
     -- 159 STR, 284 INT, 312 M.Acc, 25 WSD, 264 MAB, 134 M.Dmg [62 PDT/52 MDT, 691 M.Eva]
   }
   sets.precast.WS['Earth Crusher'].MaxTP = set_combine(sets.precast.WS['Earth Crusher'], {
@@ -487,7 +475,7 @@ function init_gear_sets()
     main="Contemplator +1",           -- 228, 70, 12, __ (__, __, 20) [__/__, ___]
 		sub="Khonsu",                     -- ___, 30, __, __ (__, __, __) [ 6/ 6, ___]
 		ammo="Pemphredo Tathlum",         -- ___,  8, __, __ (__, __, __) [__/__, ___]
-    head="Wicce Petasos +2",          -- ___, 51, 32, __ (__, __, __) [10/10, 126]
+    head="Wicce Petasos +3",          -- ___, 61, 39, __ (__, __, __) [11/11, 136]
     body="Spaekona's Coat +3",        -- ___, 55, 39, __ (__, __, 21) [__/__, 100]
 		hands="Wicce Gloves +3",          -- ___, 62, 47, __ (__, __, __) [13/13,  98]
 		legs="Wicce Chausses +3",         -- ___, 63, 38, __ (__, __, __) [__/__, 168]
@@ -498,9 +486,8 @@ function init_gear_sets()
     ring2="Stikini Ring +1",          -- ___, 11,  8, __ (__, __,  8) [__/__, ___]
     back="Aurist's Cape +1",          -- ___, 33, 33, __ (__, __, __) [__/__, ___]
     waist="Obstinate Sash",           -- ___, 15,  5, __ (__,  5, 15) [__/__, ___]
-    -- 228 M.Acc skill, 519 M.Acc, 277 MND, 4 FC (0 Enf. Effect, 5 Enf. Duration, 72 Enf. Skill) [40 PDT/40 MDT, 660 M.Eva]
+    -- 228 M.Acc skill, 499 M.Acc, 269 MND, 4 FC (0 Enf. Effect, 5 Enf. Duration, 72 Enf. Skill) [41 PDT/41 MDT, 670 M.Eva]
     
-    -- head="Wicce Petasos +3",       -- ___, 61, 39, __ (__, __, __) [11/11, 136]
     -- neck="Sorcerer's Stole +2",    -- ___, 30, 15, __ (__, __, __) [__/__, ___]
     -- 228 M.Acc skill, 529 M.Acc, 282 MND, 4 FC (0 Enf. Effect, 5 Enf. Duration, 72 Enf. Skill) [41 PDT/41 MDT, 670 M.Eva]
     
@@ -513,7 +500,7 @@ function init_gear_sets()
     main="Contemplator +1",           -- 228, 70, 12, __ (__, __, 20) [__/__, ___]
     sub="Enki Strap",                 -- ___, 10, 10, __ (__, __, __) [__/__,  10]
     ammo="Ghastly Tathlum +1",        -- ___, __, 11, __ (__, __, __) [__/__, ___]
-    head="Wicce Petasos +2",          -- ___, 51, 34, __ (__, __, __) [10/10, 126]
+    head="Wicce Petasos +3",          -- ___, 61, 39, __ (__, __, __) [11/11, 136]
     body="Spaekona's Coat +3",        -- ___, 55, 39, __ (__, __, 21) [__/__, 100]
     hands="Wicce Gloves +3",          -- ___, 62, 38, __ (__, __, __) [13/13,  98]
     legs="Agwu's Slops",              -- ___, 55, 54,  7 (__, __, __) [10/10, 134]
@@ -525,9 +512,8 @@ function init_gear_sets()
     ring2="Stikini Ring +1",          -- ___, 11, __, __ (__, __,  8) [__/__, ___]
     back="Aurist's Cape +1",          -- ___, 33, 33, __ (__, __, __) [__/__, ___]
     waist="Obstinate Sash",           -- ___, 15, __, __ (__,  5, 15) [__/__, ___]
-    -- 228 M.Acc skill, 447 M.Acc, 301 INT, 11 FC (0 Enf. Effect, 5 Enf. Duration, 74 Enf. Skill) [44 PDT/44 MDT, 636 M.Eva]
+    -- 228 M.Acc skill, 457 M.Acc, 306 INT, 11 FC (0 Enf. Effect, 5 Enf. Duration, 74 Enf. Skill) [45 PDT/45 MDT, 646 M.Eva]
 
-    -- head="Wicce Petasos +3",       -- ___, 61, 39, __ (__, __, __) [11/11, 136]
     -- neck="Sorcerer's Stole +2",    -- ___, 30, 15, __ (__, __, __) [__/__, ___]
     -- 228 M.Acc skill, 487 M.Acc, 321 INT, 11 FC (0 Enf. Effect, 5 Enf. Duration, 64 Enf. Skill) [45 PDT/45 MDT, 646 M.Eva]
     
@@ -676,6 +662,8 @@ function init_gear_sets()
     body="Spaekona's Coat +3", -- MP return
   })
   sets.midcast['Elemental Magic'].Occult = set_combine(sets.midcast['Elemental Magic'], {
+    -- main="Khatvanga",              -- 30, __, 30 (__, __,279, __, __) [__/__, ___]; TP Bonus+500
+    -- sub="Khonsu",                  -- __, __, 30 (__, __, __, __, __) [ 6/ 6, ___]
     ammo="White Tathlum",             -- __,  2, __ (__, __, __, __, __) [__/__, ___]
     head=gear.Merl_Occult_head,       -- 11, __, 15 (29, 10, __, __, __) [__/__,  86]
     hands=gear.Merl_Occult_hands,     -- 11, __, __ (26, 20, __, __, __) [__/__,  48]
@@ -694,7 +682,7 @@ function init_gear_sets()
     -- ear2="Crepuscular Earring",    -- __,  5, 10 (__, __, __, __, __) [__/__, ___]
     -- ring2="Crepuscular Ring",      -- __,  6, 10 (__, __, __, __, __) [__/__, ___]
     -- waist="Oneiros Rope",          -- 20,  2, __ (__, __, __, __, __) [__/__, ___]
-    -- 90 Occult, 41 STP, 103 M.Acc (209 INT, 58 MAB, 48 M.Dmg, 5 MB, 0 MB2) [10 PDT/0 MDT, 459 M.Eva]
+    -- 120 Occult, 41 STP, 163 M.Acc (209 INT, 58 MAB, 327 M.Dmg, 5 MB, 0 MB2) [16 PDT/6 MDT, 459 M.Eva]
   })
 
   sets.midcast['Elemental Magic'].MB = {
@@ -842,6 +830,12 @@ function init_gear_sets()
   }
 
   sets.Special = {}
+  -- This set will be overlaid on all idle, melee, and midcast sets while Mana Wall is active
+  sets.Special.ManaWall = {
+    feet="Wicce Sabots +3",   -- 25 [11/11, 168]
+    back=gear.BLM_FC_Cape,    -- 10 [10/__, ___]
+    -- 35 Mana Wall [21 PDT/11 MDT, 168 M.Eva]
+  }
 
   --Weapon sets
   sets.WeaponSet = {}
@@ -900,10 +894,13 @@ function job_precast(spell, action, spellMap, eventArgs)
 end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
-  -- Always put this last in job_post_precast
   if in_battle_mode() and spell.english ~= 'Dispelga' then
     -- Prevent swapping main/sub weapons
     equip({main="", sub=""})
+  end
+
+  if state.CastingMode.value == 'Occult' then
+    equip(sets.WeaponSet['Myrkr'])
   end
 
   -- If slot is locked, keep current equipment on
@@ -955,12 +952,20 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     end
   end
 
+  if buffactive['Mana Wall'] then
+    equip(sets.Special.ManaWall)
+  end
+
   -- Always put this last in job_post_midcast
   if in_battle_mode() and spell.english ~= 'Dispelga' then
     -- Prevent swapping main/sub weapons
     equip({main="", sub=""})
   end
   
+  if state.CastingMode.value == 'Occult' then
+    equip(sets.WeaponSet['Myrkr'])
+  end
+
   -- If slot is locked, keep current equipment on
   if locked_neck then equip({ neck=player.equipment.neck }) end
   if locked_ear1 then equip({ ear1=player.equipment.ear1 }) end
@@ -1136,6 +1141,10 @@ function customize_idle_set(idleSet)
     end
   end
 
+  if buffactive['Mana Wall'] then
+    idleSet = set_combine(idleSet, sets.Special.ManaWall)
+  end
+
   -- If slot is locked to use no-swap gear, keep it equipped
   if locked_neck then idleSet = set_combine(idleSet, { neck=player.equipment.neck }) end
   if locked_ear1 then idleSet = set_combine(idleSet, { ear1=player.equipment.ear1 }) end
@@ -1151,12 +1160,20 @@ function customize_idle_set(idleSet)
     idleSet = set_combine(idleSet, select_weapons())
   end
 
+  if state.CastingMode.value == 'Occult' then
+    idleSet = set_combine(idleSet, sets.WeaponSet['Myrkr'])
+  end
+
   return idleSet
 end
 
 function customize_melee_set(meleeSet)
   if state.CP.current == 'on' then
     meleeSet = set_combine(meleeSet, sets.CP)
+  end
+
+  if buffactive['Mana Wall'] then
+    meleeSet = set_combine(meleeSet, sets.Special.ManaWall)
   end
 
   -- If slot is locked to use no-swap gear, keep it equipped
@@ -1174,12 +1191,20 @@ function customize_melee_set(meleeSet)
     meleeSet = set_combine(meleeSet, select_weapons())
   end
 
+  if state.CastingMode.value == 'Occult' then
+    meleeSet = set_combine(meleeSet, sets.WeaponSet['Myrkr'])
+  end
+
   return meleeSet
 end
 
 function customize_defense_set(defenseSet)
   if state.CP.current == 'on' then
     defenseSet = set_combine(defenseSet, sets.CP)
+  end
+
+  if buffactive['Mana Wall'] then
+    defenseSet = set_combine(defenseSet, sets.Special.ManaWall)
   end
 
   -- If slot is locked to use no-swap gear, keep it equipped
@@ -1195,6 +1220,10 @@ function customize_defense_set(defenseSet)
 
   if in_battle_mode() then
     defenseSet = set_combine(defenseSet, select_weapons())
+  end
+
+  if state.CastingMode.value == 'Occult' then
+    defenseSet = set_combine(defenseSet, sets.WeaponSet['Myrkr'])
   end
 
   return defenseSet

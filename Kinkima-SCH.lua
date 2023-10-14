@@ -414,15 +414,8 @@ function init_gear_sets()
     ear2="Halasz Earring",            -- __, __, ___, ___, ___,  5, __/__,  3
     ring1="Kuchekula Ring",           -- __, __, ___, ___, ___, __, __/__,  7; Use Janniston if you have it
     ring2="Defending Ring",           -- __, __, ___, ___, ___, __, 10/10, __
-    back=gear.SCH_FC_Cape,            -- __, __, ___,  10, ___, __, 10/__, __
+    back=gear.SCH_CP_Cape,            -- __, 10, ___,  30, ___, __, 10/__, __
     waist="Sanctuary Obi +1",         -- __, __, ___, ___, ___, 10, __/__,  4
-    -- Kaykaus bonus                      8, __, ___, ___, ___, __, __/__, __
-    -- Base Stats                     -- __, __, 486, 129, 123, __, __/__, __
-    -- Merit points                   -- __, __, ___, ___, ___, 10, __/__,  5
-    -- 12 CPII, 39 CP, 502 Heal Skill, 278 MND, 239 VIT, 108 SIRD, 55PDT/48MDT, 37 -Enmity
-    -- 712 Power
-
-    -- back=gear.SCH_CP_Cape,         -- __, 10, ___,  30, ___, __, 10/__, __
     -- Kaykaus bonus                      8, __, ___, ___, ___, __, __/__, __
     -- Base Stats                     -- __, __, 486, 129, 123, __, __/__, __
     -- Merit points                   -- __, __, ___, ___, ___, 10, __/__,  5
@@ -450,15 +443,8 @@ function init_gear_sets()
     ear2="Odnowa Earring +1",         -- __, __, ___, ___,   3, __,  3/ 5, __
     ring1="Gelatinous Ring +1",       -- __, __, ___, ___,  15, __,  7/-1, __
     ring2="Defending Ring",           -- __, __, ___, ___, ___, __, 10/10, __
-    back=gear.SCH_FC_Cape,            -- __, __, ___,  10, ___, __, 10/__, __
+    back=gear.SCH_CP_Cape,            -- __, 10, ___,  30, ___, __, 10/__, __
     waist="Hachirin-no-Obi",          -- __, __, ___, ___, ___, __, __/__, __
-    -- Kaykaus set bonus              --  6, __, ___, ___, ___, __, __/__, __
-    -- Base Stats                     -- __, __, 486, 129, 123, __, __/__, __
-    -- Merit points                   -- __, __, ___, ___, ___, 10, __/__,  5
-    -- 6 CPII, 49 CP, 502 Heal Skill, 309 MND, 233 VIT, 106 SIRD, 50PDT/37MDT, 36 -Enmity
-    -- 704 Power
-
-    -- back=gear.SCH_CP_Cape,         -- __, 10, ___,  30, ___, __, 10/__, __
     -- Kaykaus set bonus              --  6, __, ___, ___, ___, __, __/__, __
     -- Base Stats                     -- __, __, 486, 129, 123, __, __/__, __
     -- Merit points                   -- __, __, ___, ___, ___, 10, __/__,  5

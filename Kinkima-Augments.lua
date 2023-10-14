@@ -233,7 +233,7 @@ gear.RDM_Crit_Cape = {} -- DEX+30, Acc+20, Crit+10, PDT-10
 gear.SCH_FC_Cape = { name="Lugh's Cape", augments={'MND+20','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','"Fast Cast"+10','Phys. dmg. taken-10%',}}
 gear.SCH_MAB_Cape = { name="Lugh's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Mag. Evasion+15',}}
 gear.SCH_INT_MAcc_Cape = gear.SCH_MAB_Cape
-gear.SCH_CP_Cape = { name="Lugh's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Cure" potency +10%','Mag. Evasion+15',}} -- Change M.Eva for PDT
+gear.SCH_CP_Cape = { name="Lugh's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+10','"Cure" potency +10%','Phys. dmg. taken-10%',}}
 gear.SCH_MP_Cape = { name="Lugh's Cape", augments={'MP+60','Eva.+20 /Mag. Eva.+20','MP+20','"Regen"+5',}}
 gear.SCH_Regen_Cape = gear.SCH_MP_Cape
 gear.SCH_MND_MAcc_Cape = gear.SCH_CP_Cape
