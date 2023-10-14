@@ -671,34 +671,6 @@ function init_gear_sets()
     -- 120 Occult, 41 STP, 163 M.Acc (209 INT, 58 MAB, 327 M.Dmg, 5 MB, 0 MB2) [16 PDT/6 MDT, 459 M.Eva]
   })
 
-  sets.midcast['Elemental Magic'].MB = {
-    main="Bunzi's Rod",               -- 255, __, 55 (15, 65,248, 10, __) [__/__, ___]
-    sub="Ammurapi Shield",            -- ___, __, 38 (13, 38, __, __, __) [__/__, ___]
-    range=empty,                      -- ___, __, __ (__, __, __, __, __) [__/__, ___]
-    ammo="Ghastly Tathlum +1",        -- ___, __, __ (11, __, 21, __, __) [__/__, ___]
-    head="Ea Hat +1",                 -- ___, __, 50 (43, 38, __,  7,  7) [__/__, 109]
-		body="Wicce Coat +3",             -- ___, __, 64 (50, 59, 34, __,  5) [__/__, 141]
-    hands="Wicce Gloves +3",          -- ___, __, 62 (38, 57, 32, __, __) [13/13,  98]
-    legs="Wicce Chausses +3",         -- ___, __, 63 (53, 58, 33, 15, __) [__/__, 168]
-    feet="Wicce Sabots +3",           -- ___, __, 60 (36, 58, 33, __, __) [11/11, 168]
-    neck="Sibyl Scarf",               -- ___, __, 10 (10, __, __, __, __) [__/__, ___]
-    ear1="Malignance Earring",        -- ___, __, 10 ( 8,  8, __, __, __) [__/__, ___]
-    ear2="Regal Earring",             -- ___, __, __ (10, __, __, __, __) [__/__, ___]
-    ring1="Freke Ring",               -- ___, __, __ (10,  8, __, __, __) [__/__, ___]
-    ring2="Metamorph Ring +1",        -- ___, __, 15 (16, __, __, __, __) [__/__, ___]
-		back=gear.BLM_MAB_Cape,           -- ___, __, 20 (30, 10, 20,  5, __) [10/__, ___]
-    waist="Acuity Belt +1",           -- ___, __, 15 (23, __, __, __, __) [__/__, ___]
-    -- 255 M.Acc Skill, 0 Elemental Skill, 462 M.Acc (366 INT, 399 MAB, 421 M.Dmg, 37 MB, 12 MB2) [34 PDT/24 MDT, 684 M.Eva]
-
-		-- hands="Agwu's Gages",          -- ___, __, 55 (33, 60, 20,  8,  6) [__/__,  96]; R30
-    -- feet="Agwu's Pigaches",        -- ___, __, 55 (30, 60, 20,  6, __) [__/__, 134]; R30
-		-- neck="Sorcerer's Stole +2",    -- ___, __, 30 (15,  7, __, 10, __) [__/__, ___]
-    -- 255 M.Acc Skill, 0 Elemental Skill, 470 M.Acc (360 INT, 411 MAB, 396 M.Dmg, 61 MB, 18 MB2) [10 PDT/0 MDT, 648 M.Eva]
-  }
-  sets.midcast['Elemental Magic'].Spaekona.MB = set_combine(sets.midcast['Elemental Magic'].MB, {
-    body="Spaekona's Coat +3", -- MP return
-  })
-
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Defense Sets ------------------------------------------
@@ -842,28 +814,28 @@ end
 
 function job_pretarget(spell, action, spellMap, eventArgs)
   -- If missing a target, or targeting an invalid target, switch target to <me>, <stpc>, or <stnpc> as appropriate
-  if spell.action_type == 'Magic' and (
-    (spell.target.raw == '<t>' and not spell.target.type)
-    or (spell.target.type == 'MONSTER' and not spell.targets.Enemy)
-    or (spell.target.type == 'SELF' and not spell.targets.Self)
-    or (spell.target.type == 'PLAYER' and not (spell.targets.Player or spell.targets.Ally or spell.targets.Party))
-    or (spell.target.hpp and spell.target.hpp > 0 and spell.targets.Corpse)
-    or (spell.target.hpp and spell.target.hpp == 0 and not spell.targets.Corpse)
-  ) then
-    local new_target
-    if spell.targets.Enemy then
-      new_target = '<stnpc>'
-    end
-    if spell.targets.Self then
-      new_target = '<me>'
-    end
-    if spell.targets.Party or spell.targets.Corpse then
-      new_target = '<stpc>'
-    end
-    -- Cancel current spell and reissue command with new target
-    send_command('@input /ma "'..spell.english..'" '..new_target)
-    eventArgs.cancel = true
-  end
+  -- if spell.action_type == 'Magic' and (
+  --   (spell.target.raw == '<t>' and not spell.target.type)
+  --   or (spell.target.type == 'MONSTER' and not spell.targets.Enemy)
+  --   or (spell.target.type == 'SELF' and not spell.targets.Self)
+  --   or (spell.target.type == 'PLAYER' and not (spell.targets.Player or spell.targets.Ally or spell.targets.Party))
+  --   or (spell.target.hpp and spell.target.hpp > 0 and spell.targets.Corpse)
+  --   or (spell.target.hpp and spell.target.hpp == 0 and not spell.targets.Corpse)
+  -- ) then
+  --   local new_target
+  --   if spell.targets.Enemy then
+  --     new_target = '<stnpc>'
+  --   end
+  --   if spell.targets.Self then
+  --     new_target = '<me>'
+  --   end
+  --   if spell.targets.Party or spell.targets.Corpse then
+  --     new_target = '<stpc>'
+  --   end
+  --   -- Cancel current spell and reissue command with new target
+  --   send_command('@input /ma "'..spell.english..'" '..new_target)
+  --   eventArgs.cancel = true
+  -- end
 end
 
 function job_precast(spell, action, spellMap, eventArgs)
@@ -1511,7 +1483,11 @@ end)
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
   -- Default macro set/book
-  set_macro_page(1, 9)
+  if player.sub_job == 'SCH' then
+    set_macro_page(2, 9)
+  else
+    set_macro_page(1, 9)
+  end
 end
 
 function set_main_keybinds()
@@ -1534,12 +1510,24 @@ function set_main_keybinds()
   send_command('bind !w gs c elemental ga lightning')
   send_command('bind !e gs c elemental ga water')
 
+  send_command('bind ^z gs c elemental ja fire')
+  send_command('bind ^x gs c elemental ja ice')
+  send_command('bind ^c gs c elemental ja wind')
+  send_command('bind !z gs c elemental ja earth')
+  send_command('bind !x gs c elemental ja lightning')
+  send_command('bind !c gs c elemental ja water')
+  
+  send_command('bind !a input /ma "Break" <t>')
+  send_command('bind !d input /ma "Breakga" <t>')
+
+  send_command('bind ^` gs input /ja "Mana Wall" <me>')
+
   send_command('bind @c gs c toggle CP')
-  send_command('bind !` gs c toggle MagicBurst')
 end
 
 function set_sub_keybinds()
   if player.sub_job == 'SCH' then
+    send_command('bind !` input /ja Sublimation <me>')
     send_command('bind !c gs c elemental storm')
     send_command('bind !/ input /ma "Klimaform" <me>')
     send_command('bind ^- gs c scholar light')
@@ -1549,6 +1537,7 @@ function set_sub_keybinds()
     send_command('bind ![ gs c scholar aoe')
     send_command('bind !\\\\ gs c scholar speed')
   elseif player.sub_job == 'RDM' then
+    send_command('bind !` input /ja Convert <me>')
     send_command('bind !r input /ma "Haste" <stpc>')
     send_command('bind !u input /ma Blink <me>')
     send_command('bind !i input /ma Stoneskin <me>')
@@ -1556,7 +1545,7 @@ function set_sub_keybinds()
     send_command('bind !p input /ma "Aquaveil" <me>')
     send_command('bind !\' input /ma "Refresh" <stpc>')
   elseif player.sub_job == 'WHM' then
-    send_command('bind !e input /ma "Haste" <stpc>')
+    send_command('bind !r input /ma "Haste" <stpc>')
   end
 end
 
