@@ -1278,6 +1278,7 @@ function init_gear_sets()
   sets.WeaponSet = {}
   sets.WeaponSet["Naegling"] = {
     main="Naegling",
+    -- sub="Chanter's Shield",
   }
   sets.WeaponSet["Epeolatry"] = {
     main="Epeolatry",
