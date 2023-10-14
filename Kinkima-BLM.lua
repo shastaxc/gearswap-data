@@ -37,7 +37,7 @@ function job_setup()
   state.CP = M(false, 'Capacity Points Mode')
   state.WeaponSet = M{['description']='Weapon Set', 'Casting', 'Cleaving', 'Myrkr'}
   state.ToyWeapons = M{['description']='Toy Weapons','None'}
-  state.ElementalMode = M{['description'] = 'Elemental Mode', 'Fire','Ice','Wind','Earth','Lightning','Water','Light','Dark'}
+  state.ElementalMode = M{['description'] = 'Elemental Mode', 'Fire','Ice','Wind','Earth','Lightning','Water',}
 
   enfeebling_stat_map = {
     ['Addle'] = 'MND', ['Addle II'] = 'MND',
@@ -1503,24 +1503,13 @@ function set_main_keybinds()
   send_command('bind ^pagedown gs c cycle ElementalMode')
   send_command('bind !pagedown gs c reset ElementalMode')
 
-  send_command('bind ^q gs c elemental ga fire')
-  send_command('bind ^w gs c elemental ga ice')
-  send_command('bind ^e gs c elemental ga wind')
-  send_command('bind !q gs c elemental ga earth')
-  send_command('bind !w gs c elemental ga lightning')
-  send_command('bind !e gs c elemental ga water')
-
-  send_command('bind ^z gs c elemental ja fire')
-  send_command('bind ^x gs c elemental ja ice')
-  send_command('bind ^c gs c elemental ja wind')
-  send_command('bind !z gs c elemental ja earth')
-  send_command('bind !x gs c elemental ja lightning')
-  send_command('bind !c gs c elemental ja water')
+  send_command('bind !q gs c elemental tier3')
+  send_command('bind !w gs c elemental tier')
   
-  send_command('bind !a input /ma "Break" <t>')
-  send_command('bind !d input /ma "Breakga" <t>')
+  send_command('bind !z gs c elemental ga')
+  send_command('bind !x gs c elemental ja')
 
-  send_command('bind ^` gs input /ja "Mana Wall" <me>')
+  send_command('bind ^` input /ja "Mana Wall" <me>')
 
   send_command('bind @c gs c toggle CP')
 end
@@ -1538,18 +1527,59 @@ function set_sub_keybinds()
     send_command('bind !\\\\ gs c scholar speed')
   elseif player.sub_job == 'RDM' then
     send_command('bind !` input /ja Convert <me>')
-    send_command('bind !r input /ma "Haste" <stpc>')
+    send_command('bind !e input /ma "Haste" <stpc>')
     send_command('bind !u input /ma Blink <me>')
     send_command('bind !i input /ma Stoneskin <me>')
     send_command('bind !o input /ma "Phalanx" <me>')
     send_command('bind !p input /ma "Aquaveil" <me>')
     send_command('bind !\' input /ma "Refresh" <stpc>')
   elseif player.sub_job == 'WHM' then
-    send_command('bind !r input /ma "Haste" <stpc>')
+    send_command('bind !e input /ma "Haste" <stpc>')
+    send_command('bind !u input /ma Blink <me>')
+    send_command('bind !i input /ma Stoneskin <me>')
+    send_command('bind !p input /ma "Aquaveil" <me>')
   end
 end
 
 function unbind_keybinds()
+  send_command('unbind !s')
+  send_command('unbind !d')
+  send_command('unbind @w')
+
+  send_command('unbind ^insert')
+  send_command('unbind ^delete')
+  send_command('unbind !delete')
+
+  send_command('unbind ^pageup')
+  send_command('unbind ^pagedown')
+  send_command('unbind !pagedown')
+
+  send_command('bind !q gs c elemental tier3')
+  send_command('bind !w gs c elemental tier')
+  
+  send_command('bind !z gs c elemental ga')
+  send_command('bind !x gs c elemental ja')
+
+  send_command('unbind ^`')
+
+  send_command('unbind @c')
+  
+  send_command('unbind !`')
+  send_command('unbind !c')
+  send_command('unbind !/')
+  send_command('unbind ^-')
+  send_command('unbind ^=')
+  send_command('unbind ^[')
+  send_command('unbind ^\\\\')
+  send_command('unbind ![')
+  send_command('unbind !\\\\')
+  
+  send_command('unbind !e')
+  send_command('unbind !u')
+  send_command('unbind !i')
+  send_command('unbind !o')
+  send_command('unbind !p')
+  send_command('unbind !\'')
 end
 
 function test()
