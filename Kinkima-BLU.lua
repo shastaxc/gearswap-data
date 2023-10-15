@@ -338,7 +338,7 @@ function init_gear_sets()
     -- waist="Fotia Belt",
   }
   sets.precast.WS.AttCapped = set_combine(sets.precast.WS, {
-    -- ammo="Crepuscular Pebble",
+    ammo="Crepuscular Pebble",
   })
 
   sets.precast.WS['Chant du Cygne'] = {
@@ -379,6 +379,7 @@ function init_gear_sets()
     -- STR, MND, Attack, Accuracy, WSD, PDL [PDT/MDT, M.Eva]
   }
   sets.precast.WS['Savage Blade'].AttCapped = {
+    ammo="Crepuscular Pebble",
     head=gear.Nyame_B_head,       -- 26, 26, 65, 50, 11, __, ___
     body=gear.Nyame_B_body,       -- 45, 37, 65, 40, 13, __, ___
     hands=gear.Nyame_B_hands,     -- 17, 40, 65, 40, 11, __, ___
@@ -393,7 +394,6 @@ function init_gear_sets()
     waist="Sailfi Belt +1",       -- Needs further augmenting
     -- STR, MND, Attack, Accuracy, WSD, PDL [PDT/MDT, M.Eva]
 
-    -- ammo="Crepuscular Pebble",
     -- body="Gleti's Cuirass",
     -- legs="Gleti's Breeches",
     -- ring2="Sroda Ring",
