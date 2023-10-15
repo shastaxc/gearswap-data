@@ -533,15 +533,14 @@ function init_gear_sets()
     legs="Ankusa Trousers +3",
   }
 	sets.precast.JA.Tame = {
-    head="Totemic Helm +2",
-    -- head="Totemic Helm +3",
+    head="Totemic Helm +3",
   }
 
   -- Charm+ gear cap for accuracy at 99%?
   -- Charm+ gear might increase Charm duration with no cap.
 	sets.precast.JA.Charm = {
     ammo="Staunch Tathlum +1",        -- __, __ [ 3/ 3, ___]
-    head="Totemic Helm +3",           -- 29, 30 [__/__,  63]
+    head="Totemic Helm +3",           -- 34, 35 [__/__,  73]
     body=gear.Nyame_B_body,           -- 35, __ [ 9/ 9, 139]
     hands="Ankusa Gloves +1",         -- 17,  9 [__/__,  37]
     legs="Ankusa Trousers +3",        -- 21, 11 [__/__,  89]
@@ -554,11 +553,10 @@ function init_gear_sets()
     back=gear.BST_TP_Cape,            -- __, __ [10/__, ___]
     waist="Aristo Belt",              --  8, __ [__/__, ___]
     -- Traits/merits/gifts                   20
-    -- 180 CHR, 82 Charm [35 PDT/27 MDT, 417 M.Eva]
+    -- 185 CHR, 87 Charm [35 PDT/27 MDT, 427 M.Eva]
     
     -- main="Habilitator +1",         -- 28, __ [ 3/__, ___]
     -- sub=gear.Digirbalag_CHR,       -- 25, __ [__/__, ___]
-    -- head="Totemic Helm +3",        -- 34, 35 [__/__,  73]
     -- body="Ankusa Jackcoat +3",     -- 33, 16 [__/__,  84]
     -- hands="Ankusa Gloves +3",      -- 27, 13 [__/__,  57]
     -- back=gear.BST_CHR_WSD_Cape,    -- 30, __ [10/__, ___]
