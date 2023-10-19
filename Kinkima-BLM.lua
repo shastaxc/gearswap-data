@@ -543,7 +543,7 @@ function init_gear_sets()
     head=gear.Amalric_C_head,         -- ___, 20, 36, 36 [__/__,  86]
     body="Wicce Coat +3",             -- ___, __, 64, 50 [__/__, 141]
     hands="Wicce Gloves +3",          -- ___, __, 62, 38 [13/13,  98]
-    -- legs="Spaekona's Tonban +3",   -- ___, 21, 49, 44 [__/__, 127]
+    legs="Spaekona's Tonban +3",      -- ___, 21, 49, 44 [__/__, 127]
     feet="Wicce Sabots +3",           -- ___, 35, 60, 36 [11/11, 168]
     neck="Erra Pendant",              -- ___, 10, 17, __ [__/__, ___]
     ear1="Malignance Earring",        -- ___, __, 10,  8 [__/__, ___]
@@ -567,7 +567,7 @@ function init_gear_sets()
     head="Pixie Hairpin +1",          -- ___, __, __, __ [__/__, ___] __; Extra 1.28 multiplier
     body="Wicce Coat +3",             -- ___, __, 64, 50 [__/__, 141] __
     hands="Wicce Gloves +3",          -- ___, __, 62, 38 [13/13,  98] __
-    -- legs="Spaekona's Tonban +3",   -- ___, 21, 49, 44 [__/__, 127] 20
+    legs="Spaekona's Tonban +3",      -- ___, 21, 49, 44 [__/__, 127] 20
     feet="Wicce Sabots +3",           -- ___, 35, 60, 36 [11/11, 168] __
     neck="Erra Pendant",              -- ___, 10, 17, __ [__/__, ___]  5
     ear1="Malignance Earring",        -- ___, __, 10,  8 [__/__, ___] __
