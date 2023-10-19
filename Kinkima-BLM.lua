@@ -466,15 +466,13 @@ function init_gear_sets()
 		hands="Wicce Gloves +3",          -- ___, 62, 47, __ (__, __, __) [13/13,  98]
 		legs="Wicce Chausses +3",         -- ___, 63, 38, __ (__, __, __) [__/__, 168]
     feet="Wicce Sabots +3",           -- ___, 60, 32, __ (__, __, __) [11/11, 168]
+    neck="Sorcerer's Stole +2",       -- ___, 30, 15, __ (__, __, __) [__/__, ___]
     ear1="Malignance Earring",        -- ___, 10,  8,  4 (__, __, __) [__/__, ___]
 		ear2="Crepuscular Earring",       -- ___, 10, __, __ (__, __, __) [__/__, ___]
 		ring1="Stikini Ring +1",          -- ___, 11,  8, __ (__, __,  8) [__/__, ___]
     ring2="Stikini Ring +1",          -- ___, 11,  8, __ (__, __,  8) [__/__, ___]
     back="Aurist's Cape +1",          -- ___, 33, 33, __ (__, __, __) [__/__, ___]
     waist="Obstinate Sash",           -- ___, 15,  5, __ (__,  5, 15) [__/__, ___]
-    -- 228 M.Acc skill, 499 M.Acc, 269 MND, 4 FC (0 Enf. Effect, 5 Enf. Duration, 72 Enf. Skill) [41 PDT/41 MDT, 670 M.Eva]
-    
-    -- neck="Sorcerer's Stole +2",    -- ___, 30, 15, __ (__, __, __) [__/__, ___]
     -- 228 M.Acc skill, 529 M.Acc, 282 MND, 4 FC (0 Enf. Effect, 5 Enf. Duration, 72 Enf. Skill) [41 PDT/41 MDT, 670 M.Eva]
     
 		-- head=empty,                    -- ___, __, __, __ (__, __, __) [__/__, ___]
@@ -491,16 +489,13 @@ function init_gear_sets()
     hands="Wicce Gloves +3",          -- ___, 62, 38, __ (__, __, __) [13/13,  98]
     legs="Agwu's Slops",              -- ___, 55, 54,  7 (__, __, __) [10/10, 134]
     feet="Wicce Sabots +3",           -- ___, 60, 36, __ (__, __, __) [11/11, 168]
-    neck="Incanter's Torque",         -- ___, __, __, __ (__, __, 10) [__/__, ___]
+    neck="Sorcerer's Stole +2",       -- ___, 30, 15, __ (__, __, __) [__/__, ___]
     ear1="Malignance Earring",        -- ___, 10,  8,  4 (__, __, __) [__/__, ___]
     ear2="Regal Earring",             -- ___, __, 10, __ (__, __, __) [__/__, ___]
     ring1="Metamorph Ring +1",        -- ___, 15, 16, __ (__, __, __) [__/__, ___]
     ring2="Stikini Ring +1",          -- ___, 11, __, __ (__, __,  8) [__/__, ___]
     back="Aurist's Cape +1",          -- ___, 33, 33, __ (__, __, __) [__/__, ___]
     waist="Obstinate Sash",           -- ___, 15, __, __ (__,  5, 15) [__/__, ___]
-    -- 228 M.Acc skill, 457 M.Acc, 306 INT, 11 FC (0 Enf. Effect, 5 Enf. Duration, 74 Enf. Skill) [45 PDT/45 MDT, 646 M.Eva]
-
-    -- neck="Sorcerer's Stole +2",    -- ___, 30, 15, __ (__, __, __) [__/__, ___]
     -- 228 M.Acc skill, 487 M.Acc, 321 INT, 11 FC (0 Enf. Effect, 5 Enf. Duration, 64 Enf. Skill) [45 PDT/45 MDT, 646 M.Eva]
     
 		-- head=empty,                    -- ___, __, __, __ (__, __, __) [__/__, ___]
@@ -630,18 +625,17 @@ function init_gear_sets()
     hands="Wicce Gloves +3",          -- ___, __, 62 (38, 57, 32, __, __) [13/13,  98]
     legs="Wicce Chausses +3",         -- ___, __, 63 (53, 58, 33, 15, __) [__/__, 168]
     feet="Wicce Sabots +3",           -- ___, __, 60 (36, 58, 33, __, __) [11/11, 168]
-    neck="Sibyl Scarf",               -- ___, __, 10 (10, __, __, __, __) [__/__, ___]
+		neck="Sorcerer's Stole +2",       -- ___, __, 30 (15,  7, __, 10, __) [__/__, ___]
     ear1="Malignance Earring",        -- ___, __, 10 ( 8,  8, __, __, __) [__/__, ___]
     ear2="Regal Earring",             -- ___, __, __ (10, __, __, __, __) [__/__, ___]
     ring1="Freke Ring",               -- ___, __, __ (10,  8, __, __, __) [__/__, ___]
     ring2="Metamorph Ring +1",        -- ___, __, 15 (16, __, __, __, __) [__/__, ___]
 		back=gear.BLM_MAB_Cape,           -- ___, __, 20 (30, 10, 20,  5, __) [10/__, ___]
     waist="Acuity Belt +1",           -- ___, __, 15 (23, __, __, __, __) [__/__, ___]
-    -- 255 M.Acc Skill, 0 Elemental Skill, 462 M.Acc (366 INT, 399 MAB, 421 M.Dmg, 37 MB, 12 MB2) [34 PDT/24 MDT, 684 M.Eva]
+    -- 255 M.Acc Skill, 0 Elemental Skill, 482 M.Acc (371 INT, 406 MAB, 421 M.Dmg, 47 MB, 12 MB2) [34 PDT/24 MDT, 684 M.Eva]
 
 		-- hands="Agwu's Gages",          -- ___, __, 55 (33, 60, 20,  8,  6) [__/__,  96]; R30
     -- feet="Agwu's Pigaches",        -- ___, __, 55 (30, 60, 20,  6, __) [__/__, 134]; R30
-		-- neck="Sorcerer's Stole +2",    -- ___, __, 30 (15,  7, __, 10, __) [__/__, ___]
     -- 255 M.Acc Skill, 0 Elemental Skill, 470 M.Acc (360 INT, 411 MAB, 396 M.Dmg, 61 MB, 18 MB2) [10 PDT/0 MDT, 648 M.Eva]
   }
   sets.midcast['Elemental Magic'].Spaekona = set_combine(sets.midcast['Elemental Magic'], {
