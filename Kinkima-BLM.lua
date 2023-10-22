@@ -644,11 +644,11 @@ function init_gear_sets()
   sets.midcast['Elemental Magic'].Occult = set_combine(sets.midcast['Elemental Magic'], {
     -- main="Khatvanga",              -- 30, __, 30 (__, __,279, __, __) [__/__, ___]; TP Bonus+500
     -- sub="Khonsu",                  -- __, __, 30 (__, __, __, __, __) [ 6/ 6, ___]
-    ammo="White Tathlum",             -- __,  2, __ (__, __, __, __, __) [__/__, ___]
+    ammo="Seraphic Ampulla",          --  7, __, __ ( 3, __, __, __, __) [__/__, ___]
     head=gear.Merl_Occult_head,       -- 11, __, 15 (29, 10, __, __, __) [__/__,  86]
     hands=gear.Merl_Occult_hands,     -- 11, __, __ (26, 20, __, __, __) [__/__,  48]
     body="Spaekona's Coat +3",        -- __, __, 55 (39, __, 48, __, __) [__/__, 100]
-    legs="Jhakri Slops +2",           -- __,  9, 45 (52, 42, __, __, __) [__/__,  69]
+    legs="Perdition Slops",           -- 30, __, 13 (39, 13, __, __, __) [__/__, 107]
     feet=gear.Merl_Occult_feet,       -- 11, __, __ (43, 15, __, __, __) [__/__, 118]
     ear1="Dedition Earring",          -- __,  8, __ (__, __, __, __, __) [__/__, ___]
     ear2="Dignitary's Earring",       -- __,  3, 10 (__, __, __, __, __) [__/__, ___]
@@ -656,8 +656,6 @@ function init_gear_sets()
     back=gear.BLM_STP_Cape,           -- __, 10, __ (30, __, __,  5, __) [10/__, ___]
     waist="Olseni Belt",              -- __,  3, __ (__, __, __, __, __) [__/__, ___]
 
-    -- ammo="Seraphic Ampulla",       --  7, __, __ ( 3, __, __, __, __) [__/__, ___]
-    -- legs="Perdition Slops",        -- 30, __, 13 (39, 13, __, __, __) [__/__, 107]
     -- neck="Combatant's Torque",     --  __, 4, __ (__, __, __, __, __) [__/__, ___]
     -- ear2="Crepuscular Earring",    -- __,  5, 10 (__, __, __, __, __) [__/__, ___]
     -- ring2="Crepuscular Ring",      -- __,  6, 10 (__, __, __, __, __) [__/__, ___]
