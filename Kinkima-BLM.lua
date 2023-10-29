@@ -650,16 +650,18 @@ function init_gear_sets()
     body="Spaekona's Coat +3",        -- __, __, 55 (39, __, 48, __, __) [__/__, 100]
     legs="Perdition Slops",           -- 30, __, 13 (39, 13, __, __, __) [__/__, 107]
     feet=gear.Merl_Occult_feet,       -- 11, __, __ (43, 15, __, __, __) [__/__, 118]
+    neck="Loricate Torque +1",        -- __, __, __ (__, __, __, __, __) [ 6/ 6, ___]
     ear1="Dedition Earring",          -- __,  8, __ (__, __, __, __, __) [__/__, ___]
     ear2="Dignitary's Earring",       -- __,  3, 10 (__, __, __, __, __) [__/__, ___]
     ring1="Chirich Ring +1",          -- __,  6, __ (__, __, __, __, __) [__/__, ___]
+    ring2="Chirich Ring +1",          -- __,  6, __ (__, __, __, __, __) [__/__, ___]
     back=gear.BLM_STP_Cape,           -- __, 10, __ (30, __, __,  5, __) [10/__, ___]
-    waist="Olseni Belt",              -- __,  3, __ (__, __, __, __, __) [__/__, ___]
+    waist="Oneiros Rope",             -- 20,  2, __ (__, __, __, __, __) [__/__, ___]
+    -- 120 Occult, 35 STP, 153 M.Acc (209 INT, 58 MAB, 327 M.Dmg, 5 MB, 0 MB2) [22 PDT/12 MDT, 459 M.Eva]
 
     -- neck="Combatant's Torque",     --  __, 4, __ (__, __, __, __, __) [__/__, ___]
     -- ear2="Crepuscular Earring",    -- __,  5, 10 (__, __, __, __, __) [__/__, ___]
     -- ring2="Crepuscular Ring",      -- __,  6, 10 (__, __, __, __, __) [__/__, ___]
-    -- waist="Oneiros Rope",          -- 20,  2, __ (__, __, __, __, __) [__/__, ___]
     -- 120 Occult, 41 STP, 163 M.Acc (209 INT, 58 MAB, 327 M.Dmg, 5 MB, 0 MB2) [16 PDT/6 MDT, 459 M.Eva]
   })
 
