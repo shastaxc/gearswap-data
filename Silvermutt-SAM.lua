@@ -152,10 +152,6 @@ function init_gear_sets()
     -- legs="Sakonji Haidate +3",
   }
 
-  sets.precast.JA['Hasso'] = {
-    hands="Wakido Kote +3",
-  }
-
   sets.precast.JA['Meditate'] = {
     head="Wakido Kabuto +2",
     hands="Sakonji Kote +1",
