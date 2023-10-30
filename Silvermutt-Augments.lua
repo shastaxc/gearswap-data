@@ -195,6 +195,7 @@ gear.Leyline_Gloves = { name="Leyline Gloves", augments={'Accuracy+15','Mag. Acc
 gear.Samnuha_legs = { name="Samnuha Tights", augments={'STR+10','DEX+10','"Dbl.Atk."+3','"Triple Atk."+3',}}
 gear.Malevolence_1 = { name="Malevolence", augments={'INT+10','Mag. Acc.+10','"Mag.Atk.Bns."+10','"Fast Cast"+5',}}
 gear.Malevolence_2 = { name="Malevolence", augments={'INT+10','Mag. Acc.+10','"Mag.Atk.Bns."+8','"Fast Cast"+5',}}
+gear.Founders_Hose = { name="Founder's Hose", augments={'MND+7','Mag. Acc.+10','Attack+10',}}
 gear.Rubicundity = {}
 
 
@@ -288,6 +289,9 @@ gear.NIN_WSD_STR_Cape = { name="Andartia's Mantle", augments={'STR+20','Accuracy
 -- gear.NIN_DA_STR_Cape = { name="Andartia's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
 -- gear.NIN_WSD_DEX_Cape = { name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
 -- gear.NIN_DA_DEX_Cape = { name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
+
+gear.PLD_Block_Cape = { name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','HP+20','Enmity+10','Chance of successful block +5',}}
+gear.PLD_Enmity_Cape = gear.PLD_Block_Cape
 
 -- gear.PUP_STR_DA_Cape = { name="Visucius's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Pet: Damage taken -5%',}}
 gear.PUP_STR_Crit_Cape = { name="Visucius's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Crit.hit rate+10','Pet: Damage taken -5%',}}

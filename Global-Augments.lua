@@ -625,7 +625,7 @@ gear.Souveran_D_body = {}
 
 gear.Souveran_A_hands = {}
 gear.Souveran_B_hands = {}
-gear.Souveran_C_hands = {}
+gear.Souveran_C_hands = { name="Souv. Handsch. +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}}
 gear.Souveran_D_hands = {}
 
 gear.Souveran_A_legs = {}
