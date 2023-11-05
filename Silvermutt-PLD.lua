@@ -304,6 +304,7 @@ function init_gear_sets()
   })
 
   sets.precast.JA['Holy Circle'] = set_combine(sets.Enmity, {
+    feet="Reverence Leggings +2",
     -- feet="Reverence Leggings +3",
   })
 
@@ -317,7 +318,7 @@ function init_gear_sets()
     sub="Sacro Bulwark",                                  -- {__}
     ammo="Sapience Orb",                                  -- { 2} __/__, ___ [___]
     head="Sakpata's Helm",                                -- { 8}  7/ 7, 123 [ 91]
-    body=gear.Nyame_B_body,                               -- {__}  9/ 9, 139 [136]
+    body={name="Reverence Surcoat +3", priority=1},       -- {10} 11/11,  68 [254]
     hands=gear.Leyline_Gloves,                            -- { 8} __/__,  62 [ 25]
     legs="Sakpata's Cuisses",                             -- {__}  9/ 9, 150 [114]
     feet={name=gear.Carmine_D_feet.name,
@@ -330,10 +331,9 @@ function init_gear_sets()
     back="Moonlight Cape",                                -- {__}  6/ 6, ___ [275]
     waist="Platinum Moogle Belt",                         -- {__}  3/ 3,  15 [___]; HP+10%
     -- HP from belt                                                           ???
-    -- 44% Fast Cast, 45 PDT/33 MDT, 569 M.Eva [1071/???? HP]
+    -- 54% Fast Cast, 47 PDT/35 MDT, 498 M.Eva [1189/???? HP]
     
     -- head="Chevalier's Armet +3",                       -- { 9} 11/11, 103 [145]
-    -- body={name="Reverence Surcoat +3", priority=1},    -- {10} 11/11,  68 [254]
     -- feet="Chevalier's Sabatons +3",                    -- {13} __/__, 136 [ 52]
     -- back=gear.PLD_FC_Cape,                             -- {10} 10/__,  20 [ 80]
     -- 70% Fast Cast, 51 PDT/33 MDT, 554 M.Eva [1005/???? HP]
