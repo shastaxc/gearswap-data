@@ -148,7 +148,7 @@ function user_setup()
 
   if player.sub_job == 'BLU' then
     coroutine.schedule(function()
-      send_command('aset set sub')
+      send_command('aset set runsub')
     end, 2)
   end
 
