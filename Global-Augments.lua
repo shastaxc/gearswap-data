@@ -615,7 +615,7 @@ gear.Ryuo_D_feet = {}
 -- Souveran
 gear.Souveran_A_head = {}
 gear.Souveran_B_head = {}
-gear.Souveran_C_head = {}
+gear.Souveran_C_head = { name="Souv. Schaller +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}}
 gear.Souveran_D_head = {}
 
 gear.Souveran_A_body = {}

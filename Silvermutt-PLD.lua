@@ -263,7 +263,7 @@ function init_gear_sets()
   -- 102% SIRD required to cap; can get 10% from merits
   sets.SIRD = {
     ammo="Staunch Tathlum +1",                            --  3/ 3, ___ [___] {11}
-    -- head=gear.Souveran_C_head,                         -- __/__,  53 [280] {20}
+    head=gear.Souveran_C_head,                            -- __/__,  53 [280] {20}
     body="Sakpata's Breastplate",                         -- 10/10, 139 [136] {__}
     hands="Regal Gauntlets",                              -- __/__,  48 [205] {10}
     legs=gear.Founders_Hose,                              -- __/__,  80 [ 54] {30}
