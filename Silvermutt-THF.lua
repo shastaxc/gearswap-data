@@ -202,7 +202,7 @@ function init_gear_sets()
     -- head="Skulker's Bonnet +1",
   }
   sets.precast.JA['Flee'] = {
-    -- feet="Pillager's Poulaines +3",
+    feet="Pillager's Poulaines +3",
   }
   sets.precast.JA['Hide'] = {
     -- body="Pillager's Vest +3",
@@ -218,7 +218,7 @@ function init_gear_sets()
     body="Malignance Tabard",         -- __, 50 [ 9/ 9, 139]
     hands="Gazu Bracelets +1",        -- __, 96 [__/__,  43]
     legs="Skulker's Culottes +2",     -- __, 53 [12/12, 115]
-    feet="Malignance Boots",          -- __, 50 [ 4/ 4, 150]
+    feet="Pillager's Poulaines +3",   -- 15, 52 [__/__,  99]
     neck="Pentalagus Charm",          --  2, __ [__/__, ___]
     ear1="Odr Earring",               -- __, 10 [__/__, ___]
     ear2="Telos Earring",             -- __, 10 [__/__, ___]
@@ -227,11 +227,10 @@ function init_gear_sets()
     back=gear.THF_DW_Cape,            -- __, 20 [10/__, ___]
     waist="Olseni Belt",              -- __, 20 [__/__, ___]
     -- AF set effect                  -- __, 15
-    -- 5 Steal, 394 Acc [30 PDT/20 MDT, 565 M.Eva]
+    -- 20 Steal, 399 Acc [31 PDT/21 MDT, 479 M.Eva]
 
     -- body="Skulker's Vest +3",      -- __, 64 [__/__, 119]
     -- legs="Skulker's Culottes +3",  -- __, 63 [13/13, 125]
-    -- feet="Pillager's Poulaines +3",-- 15, 52 [__/__,  99]
     -- ear2="Skulker's Earring +2",   -- __, 20 [__/__, ___]
     -- AF set effect                  -- __, 30
     -- 20 Steal, 448 Acc [23 PDT/13 MDT, 469 M.Eva]
@@ -1285,8 +1284,7 @@ function init_gear_sets()
   }
 
   sets.Kiting = {
-    feet="Skadi's Jambeaux +1",
-    -- feet="Pillager's Poulaines +3",
+    feet="Pillager's Poulaines +3",
   }
   sets.Kiting.Adoulin = {
     body="Councilor's Garb",
