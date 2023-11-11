@@ -629,6 +629,7 @@ function init_gear_sets()
   sets.midcast['Sheep Song'] = set_combine(sets.SIRD, {})
   sets.midcast['Bomb Toss'] = set_combine(sets.SIRD, {})
   sets.midcast['Poisonga'] = set_combine(sets.SIRD, {})
+  sets.midcast['Banish'] = set_combine(sets.SIRD, {})
 
   sets.midcast['Dia'] = set_combine(sets.SIRD, {})
   sets.midcast['Dia II'] = set_combine(sets.SIRD, {})
