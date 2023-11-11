@@ -212,15 +212,17 @@ function init_gear_sets()
   ---------------------------------------- Precast Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
   sets.precast.JA['Snake Eye'] = {
-    -- legs="Lanun Trews +1",
+    legs="Lanun Trews",
     -- legs="Lanun Trews +3",
   }
   sets.precast.JA['Wild Card'] = {
+    feet="Lanun Bottes",
     -- feet="Lanun Bottes +3",
-}
+  }
   sets.precast.JA['Random Deal'] = {
+    body="Lanun Frac",
     -- body="Lanun Frac +3",
-}
+  }
 
   sets.precast.CorsairRoll = {
     head="Lanun Tricorne +1",       -- __/__,  36 (__, __, __); 50% chance of job align bonus
