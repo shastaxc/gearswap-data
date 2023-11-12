@@ -717,13 +717,13 @@ function init_gear_sets()
     feet="Pummeler's Calligae +3",        -- [__/__, 100]  4 <__, __,  9> __,  4
     neck="Warrior's Bead Necklace +2",    -- [__/__, ___] __ <__, __,  7> __, __
     ear1="Schere Earring",                -- [__/__, ___]  5 <__, __,  6> __, __
-    ear2="Boii Earring",                  -- [__/__, ___] __ <__, __,  7> __, __
+    ear2="Boii Earring +1",               -- [__/__, ___] __ <__, __,  8>  4, __
     ring1="Moonlight Ring",               -- [ 5/ 5, ___]  5 <__, __, __> __, __
     ring2="Moonlight Ring",               -- [ 5/ 5, ___]  5 <__, __, __> __, __
     back=gear.WAR_STR_DA_Cape,            -- [10/__, ___] __ <__, __, 10> __, __; DA dmg+20%
     waist="Ioskeha Belt +1",              -- [__/__, ___] __ <__, __,  9> __,  8
     -- WAR Traits                            [__/__, ___] __ <__, __, 33> __, __
-    -- [52 PDT/42 MDT, 474 MEVA] 48 STP <0 QA, 0 TA, 102 DA> 0 Crit Rate, 25 Haste; DA dmg+31%
+    -- [52 PDT/42 MDT, 474 MEVA] 48 STP <0 QA, 0 TA, 103 DA> 4 Crit Rate, 25 Haste; DA dmg+31%
 
     -- ammo="Coiste Bodhar",              -- [__/__, ___]  3 <__, __,  3> __, __
     -- head="Hjarrandi Helm",             -- [10/10,  53]  7 <__, __,  6> __, __
@@ -755,13 +755,13 @@ function init_gear_sets()
     feet="Pummeler's Calligae +3",        -- [__/__, 100]  4 <__, __,  9> __,  4
     neck="Warrior's Bead Necklace +2",    -- [__/__, ___] __ <__, __,  7> __, __
     ear1="Schere Earring",                -- [__/__, ___]  5 <__, __,  6> __, __
-    ear2="Boii Earring",                  -- [__/__, ___] __ <__, __,  7> __, __
+    ear2="Boii Earring +1",               -- [__/__, ___] __ <__, __,  8>  4, __
     ring1="Moonlight Ring",               -- [ 5/ 5, ___]  5 <__, __, __> __, __
     ring2="Moonlight Ring",               -- [ 5/ 5, ___]  5 <__, __, __> __, __
     back=gear.WAR_STR_DA_Cape,            -- [10/__, ___] __ <__, __, 10> __, __; DA dmg+20%
     waist="Ioskeha Belt +1",              -- [__/__, ___] __ <__, __,  9> __,  8
     -- WAR Traits                            [__/__, ___] __ <__, __, 33> __, __
-    -- [49 PDT/39 MDT, 544 MEVA] 41 STP <0 QA, 0 TA, 101 DA> 0 Crit Rate, 29 Haste; DA dmg+46%
+    -- [49 PDT/39 MDT, 544 MEVA] 41 STP <0 QA, 0 TA, 102 DA> 4 Crit Rate, 29 Haste; DA dmg+46%
 
     -- ear2="Boii Earring +2",            -- [__/__, ___] __ <__, __,  9> __, __
     -- [49 PDT/39 MDT, 544 MEVA] 41 STP <0 QA, 0 TA, 103 DA> 0 Crit Rate, 29 Haste; DA dmg+46%
@@ -822,13 +822,13 @@ function init_gear_sets()
     feet="Pummeler's Calligae +3",        -- [__/__, 100]  4 <__, __,  9> __,  4
     neck="Warrior's Bead Necklace +2",    -- [__/__, ___] __ <__, __,  7> __, __
     ear1="Schere Earring",                -- [__/__, ___]  5 <__, __,  6> __, __
-    ear2="Boii Earring",                  -- [__/__, ___] __ <__, __,  7> __, __
+    ear2="Boii Earring +1",               -- [__/__, ___] __ <__, __,  8>  4, __
     ring1="Moonlight Ring",               -- [ 5/ 5, ___]  5 <__, __, __> __, __
     ring2="Moonlight Ring",               -- [ 5/ 5, ___]  5 <__, __, __> __, __
     back=gear.WAR_STR_DA_Cape,            -- [10/__, ___] __ <__, __, 10> __, __; DA dmg+20%
     waist="Ioskeha Belt +1",              -- [__/__, ___] __ <__, __,  9> __,  8
     -- WAR Traits                            [__/__, ___] __ <__, __, 33> __, __
-    -- [52 PDT/42 MDT, 474 MEVA] 48 STP <0 QA, 0 TA, 102 DA> 0 Crit Rate, 25 Haste; DA dmg+31%
+    -- [52 PDT/42 MDT, 474 MEVA] 48 STP <0 QA, 0 TA, 103 DA> 4 Crit Rate, 25 Haste; DA dmg+31%
 
     -- legs=gear.Odyssean_STP_legs,       -- [__/__,  86] 13 <__, __,  2> __,  5
     -- ear2="Boii Earring +2",            -- [__/__, ___] __ <__, __,  9> __, __
@@ -850,13 +850,13 @@ function init_gear_sets()
     feet="Sakpata's Leggings",            -- [ 6/ 6, 150] __ <__, __,  4> (__, __)  2
     neck="Warrior's Bead Necklace +2",    -- [__/__, ___] __ <__, __,  7> (__, __) __
     ear1="Schere Earring",                -- [__/__, ___]  5 <__, __,  6> (__, __) __
-    ear2="Boii Earring",                  -- [__/__, ___] __ <__, __,  7> (__, __) __
+    ear2="Boii Earring +1",               -- [__/__, ___] __ <__, __,  8> ( 4, __) __
     ring1="Moonlight Ring",               -- [ 5/ 5, ___]  5 <__, __, __> (__, __) __
     ring2="Moonlight Ring",               -- [ 5/ 5, ___]  5 <__, __, __> (__, __) __
     back=gear.WAR_STR_DA_Cape,            -- [10/__, ___] __ <__, __, 10> (__, __) __; DA dmg+20%
     waist="Ioskeha Belt +1",              -- [__/__, ___] __ <__, __,  9> (__, __)  8
     -- WAR Traits                            [__/__, ___] __ <__, __, 33> (10, 18) __
-    -- [51 PDT/41 MDT, 624 MEVA] 23 STP <0 QA, 0 TA, 101 DA> (17 Crit Rate, 24 Crit Dmg) 26 Haste; DA dmg+46%
+    -- [51 PDT/41 MDT, 624 MEVA] 23 STP <0 QA, 0 TA, 102 DA> (21 Crit Rate, 24 Crit Dmg) 26 Haste; DA dmg+46%
 
     -- ear2="Boii Earring +2",            -- [__/__, ___] __ <__, __,  9> ( 8, __) __
     -- [51 PDT/41 MDT, 624 MEVA] 23 STP <0 QA, 0 TA, 103 DA> (30 Crit Rate, 24 Crit Dmg) 26 Haste; DA dmg+44%
@@ -893,13 +893,13 @@ function init_gear_sets()
     feet="Sakpata's Leggings",            -- [ 6/ 6, 150] __ <__, __,  4> __,  2, 13(__)
     neck="Loricate Torque +1",            -- [ 6/ 6, ___] __ <__, __, __> __, __, __(__)
     ear1="Schere Earring",                -- [__/__, ___]  5 <__, __,  6> __, __,  3(__)
-    ear2="Boii Earring",                  -- [__/__, ___] __ <__, __,  7> __, __,  5(__)
+    ear2="Boii Earring +1",               -- [__/__, ___] __ <__, __,  8>  4, __,  6(__)
     ring1="Chirich Ring +1",              -- [__/__, ___]  6 <__, __, __> __, __, 10(__)
     ring2="Niqmaddu Ring",                -- [__/__, ___] __ < 3, __, __> __, __, __( 5)
     back=gear.WAR_STP_Cape,               -- [10/__, ___] 10 <__, __, __> __, __, __(__); DA dmg+20%
     waist="Peiste Belt +1",               -- [__/__, ___] __ <__, __, __> __, __, 10(__)
     -- WAR Traits                            [__/__, ___] __ <__, __, 33> __, __, __(__)
-    -- [46 PDT/36 MDT, 621 MEVA] 29 STP <3 QA, 5 TA, 68 DA> 4 Crit Rate, 20 Haste, 49(15) Subtle Blow; DA dmg+35%
+    -- [46 PDT/36 MDT, 621 MEVA] 29 STP <3 QA, 5 TA, 69 DA> 8 Crit Rate, 20 Haste, 50(15) Subtle Blow; DA dmg+35%
 
     -- legs="Volte Tights",               -- [__/__, 107]  8 <__, __, __> __,  9,  8(__)
     -- ear2="Boii Earring +2",            -- [__/__, ___] __ <__, __,  9>  8, __,  7(__)
