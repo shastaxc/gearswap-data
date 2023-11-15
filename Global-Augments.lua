@@ -620,7 +620,7 @@ gear.Souveran_D_head = {}
 
 gear.Souveran_A_body = {}
 gear.Souveran_B_body = {}
-gear.Souveran_C_body = {}
+gear.Souveran_C_body = { name="Souv. Cuirass +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}}
 gear.Souveran_D_body = {}
 
 gear.Souveran_A_hands = {}
@@ -635,7 +635,7 @@ gear.Souveran_D_legs = {}
 
 gear.Souveran_A_feet = {}
 gear.Souveran_B_feet = {}
-gear.Souveran_C_feet = {}
+gear.Souveran_C_feet = { name="Souveran Schuhs +1", augments={'HP+105','Enmity+9','Potency of "Cure" effect received +15%',}}
 gear.Souveran_D_feet = {}
 
 -- Vanya
