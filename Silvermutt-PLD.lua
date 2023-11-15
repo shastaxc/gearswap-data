@@ -164,7 +164,7 @@ function init_gear_sets()
 
   sets.HeavyDef = {
     ammo="Staunch Tathlum +1",                      --  3/ 3, ___ (___) [___] __, __; Resist Status+11
-    head=gear.Nyame_B_head,                         --  7/ 7, 123 (156) [ 91] __, __
+    head="Chevalier's Armet +2",                    -- 10/10,  93 (138) [135] __, __; 7% Dmg to MP
     body="Sakpata's Breastplate",                   -- 10/10, 139 (194) [136] __, __; Resist Status+15
     hands=gear.Nyame_B_hands,                       --  7/ 7, 112 (142) [ 91] __, __
     legs=gear.Nyame_B_legs,                         --  8/ 8, 150 (169) [114] __, __
@@ -177,7 +177,7 @@ function init_gear_sets()
     back=gear.PLD_Block_Cape,                       -- __/__,  20 ( 20) [ 80]  8, __; 5% Dmg to MP
     waist={name="Platinum Moogle Belt",priority=1}, --  3/ 3,  15 (___) [___] __, __; HP+10%
     -- HP from belt                                                ???
-    -- 56 PDT / 51 MDT, 709 MEVA (847 Defense) [1075/???? HP] 13 Block, 5 Counter
+    -- 59 PDT / 54 MDT, 679 MEVA (829 Defense) [1119/???? HP] 13 Block, 5 Counter
     
     -- head="Chevalier's Armet +3",                 -- 11/11, 103 (148) [145] __, __; 8% Dmg to MP
     -- hands="Chevalier's Gauntlets +3",            -- 11/11,  98 (136) [ 64] __, __; Shield Def. Bonus+5
@@ -187,7 +187,7 @@ function init_gear_sets()
 
   sets.HeavyDef.Engaged = {
     ammo="Staunch Tathlum +1",                      --  3/ 3, ___ (___) [___] __, __; Resist Status+11
-    head=gear.Nyame_B_head,                         --  7/ 7, 123 (156) [ 91] __, __
+    head="Chevalier's Armet +2",                    -- 10/10,  93 (138) [135] __, __; 7% Dmg to MP
     body="Sakpata's Breastplate",                   -- 10/10, 139 (194) [136] __, __; Resist Status+15
     hands=gear.Souveran_C_hands,                    -- __/ 5,  48 (112) [239] __, __; Cure received+15%
     legs=gear.Nyame_B_legs,                         --  8/ 8, 150 (169) [114] __, __
@@ -200,7 +200,7 @@ function init_gear_sets()
     back=gear.PLD_Block_Cape,                       -- __/__,  20 ( 20) [ 80]  8, __; 5% Dmg to MP
     waist={name="Platinum Moogle Belt",priority=1}, --  3/ 3,  15 (___) [___] __, __; HP+10%
     -- HP from belt                                                ???
-    -- 49 PDT / 46 MDT, 645 MEVA (786 Defense) [1048/???? HP] 13 Block, 18 Counter
+    -- 52 PDT / 49 MDT, 615 MEVA (768 Defense) [1092/???? HP] 13 Block, 18 Counter
     
     -- head="Chevalier's Armet +3",                 -- 11/11, 103 (148) [145] __, __; 8% Dmg to MP
     -- legs="Chevalier's Cuisses +3",               -- 13/13, 136 (160) [127] __, __; Retain enmity
@@ -274,7 +274,7 @@ function init_gear_sets()
     main="Sakpata's Sword",                               -- {10}
     sub="Sacro Bulwark",                                  -- {__}
     ammo="Sapience Orb",                                  -- { 2} __/__, ___ [___]
-    head="Sakpata's Helm",                                -- { 8}  7/ 7, 123 [ 91]
+    head="Chevalier's Armet +2",                          -- { 8} 10/10,  93 [135]
     body={name="Reverence Surcoat +3", priority=1},       -- {10} 11/11,  68 [254]
     hands=gear.Leyline_Gloves,                            -- { 8} __/__,  62 [ 25]
     legs="Sakpata's Cuisses",                             -- {__}  9/ 9, 150 [114]
@@ -288,7 +288,7 @@ function init_gear_sets()
     back=gear.PLD_FC_Cape,                                -- {10} 10/__,  20 [ 80]
     waist="Platinum Moogle Belt",                         -- {__}  3/ 3,  15 [___]; HP+10%
     -- HP from belt                                                           ???
-    -- 64% Fast Cast, 51 PDT/29 MDT, 518 M.Eva [994/???? HP]
+    -- 64% Fast Cast, 54 PDT/32 MDT, 488 M.Eva [1038/???? HP]
     
     -- head="Chevalier's Armet +3",                       -- { 9} 11/11, 103 [145]
     -- feet="Chevalier's Sabatons +3",                    -- {13} __/__, 136 [ 52]
