@@ -22,7 +22,6 @@
 --              [ WIN+H ]           Toggle Charm Defense Mods
 --              [ WIN+D ]           Toggle Death Defense Mods
 --              [ WIN+K ]           Toggle Knockback Defense Mods
---              [ WIN+A ]           AttackMode: Capped/Uncapped WS Modifier
 --              [ WIN+C ]           Toggle Capacity Points Mode
 --              [ CTRL+PageUp ]     Cycle Toy Weapon Mode
 --              [ CTRL+PageDown ]   Cycleback Toy Weapon Mode
@@ -126,7 +125,7 @@ function job_setup()
   state.CastingMode:options('Normal', 'Safe')
   state.HybridMode:options('LightDef', 'Normal')
   state.IdleMode:options('Normal', 'LightDef')
-  state.AttCapped = M(true, "Attack Capped")
+  state.AttCapped = M(false, "Attack Capped")
   state.Knockback = M(false, 'Knockback')
   state.DeathResist = M(false, 'Death Resist Mode')
   state.WeaponSet = M{['description']='Weapon Set', 'Epeolatry', 'Lionheart', 'Lycurgos', 'Naegling'}
@@ -662,13 +661,13 @@ function init_gear_sets()
     back={name="Moonlight Cape",priority=1},    -- _, ___, __ [ 6/ 6, ___] 275
     waist="Platinum Moogle Belt",               -- _, ___, __ [ 3/ 3,  15] ___; HP+10%
     -- HP from belt                                                        337
-    -- Base/Traits/Gifts                           _, 440,  6 [__/__, ___] ___
+    -- Base/Traits/Gifts                           _, 440,  8 [__/__, ___] ___
     -- Master Levels                                   27
-    -- 27 Phalanx, 477 Enh Skill, 17% Interrupt [46 PDT/28 MDT, 380 M.Eva] 874/1211 HP
+    -- 27 Phalanx, 477 Enh Skill, 19% SIRD [46 PDT/28 MDT, 380 M.Eva] 874/1211 HP
     -- 61 Total Phalanx
     
     -- Master Levels                                   50
-    -- 27 Phalanx, 500 Enh Skill, 17% Interrupt [46 PDT/28 MDT, 380 M.Eva] 874/1211 HP
+    -- 27 Phalanx, 500 Enh Skill, 19% SIRD [46 PDT/28 MDT, 380 M.Eva] 874/1211 HP
     -- 62 Total Phalanx
   }
   sets.midcast['Phalanx'].Embolden = set_combine(sets.midcast['Phalanx'], {
@@ -1699,8 +1698,6 @@ function display_current_job_state(eventArgs)
     m_msg = m_msg .. '/' ..state.HybridMode.value
   end
 
-  local am_msg = '(' ..string.sub(state.AttackMode.value,1,1).. ')'
-
   local d_msg = 'None'
   if state.DefenseMode.value ~= 'None' then
     d_msg = state.DefenseMode.value .. state[state.DefenseMode.value .. 'DefenseMode'].value
@@ -2054,7 +2051,6 @@ function set_main_keybinds()
   send_command('bind !z input /ma "Temper" <me>')
   send_command('bind ^- gs c cycleback Runes')
   send_command('bind ^= gs c cycle Runes')
-  send_command('bind @a gs c cycle AttackMode')
   send_command('bind @c gs c toggle CP')
   send_command('bind @k gs c toggle Knockback')
 
@@ -2118,7 +2114,6 @@ function unbind_keybinds()
   send_command('unbind !z')
   send_command('unbind ^-')
   send_command('unbind ^=')
-  send_command('unbind @a')
   send_command('unbind @c')
   send_command('unbind @k')
 
