@@ -92,10 +92,14 @@ gear.Merl_FC_hands = { name="Merlinic Dastanas", augments={'Mag. Acc.+24','"Fast
 -- gear.Merl_FC_feet = {}
 
 -- Odyssean
+gear.Odyssean_Phalanx_head = { name="Odyssean Helm", augments={'Mag. Acc.+20','CHR+15','Phalanx +3',}}
+
 gear.Odyssean_STP_legs = { name="Odyssean Cuisses", augments={'Mag. Acc.+24','"Store TP"+8','VIT+8','Attack+13',}}
 
 -- Valorous
 gear.Valorous_DT_head = {} -- DT-4
+
+gear.Valorous_Phalanx_body = { name="Valorous Mail", augments={'STR+5','Magic Damage +13','Phalanx +4','Accuracy+13 Attack+13','Mag. Acc.+20 "Mag.Atk.Bns."+20',}}
 
 
 ----------------------------------------------------------------------
@@ -291,7 +295,9 @@ gear.NIN_WSD_STR_Cape = { name="Andartia's Mantle", augments={'STR+20','Accuracy
 -- gear.NIN_DA_DEX_Cape = { name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
 
 gear.PLD_Block_Cape = { name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','HP+20','Enmity+10','Chance of successful block +5',}}
-gear.PLD_Enmity_Cape = gear.PLD_Block_Cape
+-- gear.PLD_Counter_Cape = {} -- HP+60, Eva+20/Meva+20, HP+20, Enmity+10, Counter+10
+gear.PLD_Enmity_Cape = { name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','HP+20','Enmity+10','Phys. dmg. taken-10%',}}
+gear.PLD_FC_Cape = { name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','HP+20','"Fast Cast"+10','Phys. dmg. taken-10%',}}
 
 -- gear.PUP_STR_DA_Cape = { name="Visucius's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Pet: Damage taken -5%',}}
 gear.PUP_STR_Crit_Cape = { name="Visucius's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Crit.hit rate+10','Pet: Damage taken -5%',}}
