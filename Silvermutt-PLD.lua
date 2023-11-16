@@ -166,7 +166,7 @@ function init_gear_sets()
     ammo="Staunch Tathlum +1",                      --  3/ 3, ___ (___) [___] __, __; Resist Status+11
     head="Chevalier's Armet +2",                    -- 10/10,  93 (138) [135] __, __; 7% Dmg to MP
     body="Sakpata's Breastplate",                   -- 10/10, 139 (194) [136] __, __; Resist Status+15
-    hands=gear.Nyame_B_hands,                       --  7/ 7, 112 (142) [ 91] __, __
+    hands="Chevalier's Gauntlets +2",               -- 10/10,  88 (126) [ 54] __, __; Shield Def. Bonus+4
     legs=gear.Nyame_B_legs,                         --  8/ 8, 150 (169) [114] __, __
     feet="Sakpata's Leggings",                      --  6/ 6, 150 (125) [ 68]  5,  5
     neck="Unmoving Collar +1",                      -- __/__, ___ ( 41) [200] __, __
@@ -177,7 +177,7 @@ function init_gear_sets()
     back=gear.PLD_Block_Cape,                       -- __/__,  20 ( 20) [ 80]  8, __; 5% Dmg to MP
     waist={name="Platinum Moogle Belt",priority=1}, --  3/ 3,  15 (___) [___] __, __; HP+10%
     -- HP from belt                                                ???
-    -- 59 PDT / 54 MDT, 679 MEVA (829 Defense) [1119/???? HP] 13 Block, 5 Counter
+    -- 62 PDT / 57 MDT, 655 MEVA (813 Defense) [1082/???? HP] 13 Block, 5 Counter
     
     -- head="Chevalier's Armet +3",                 -- 11/11, 103 (148) [145] __, __; 8% Dmg to MP
     -- hands="Chevalier's Gauntlets +3",            -- 11/11,  98 (136) [ 64] __, __; Shield Def. Bonus+5
