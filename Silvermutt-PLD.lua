@@ -167,7 +167,7 @@ function init_gear_sets()
     head="Chevalier's Armet +2",                    -- 10/10,  93 (138) [135] __, __; 7% Dmg to MP
     body="Sakpata's Breastplate",                   -- 10/10, 139 (194) [136] __, __; Resist Status+15
     hands="Chevalier's Gauntlets +2",               -- 10/10,  88 (126) [ 54] __, __; Shield Def. Bonus+4
-    legs=gear.Nyame_B_legs,                         --  8/ 8, 150 (169) [114] __, __
+    legs="Chevalier's Cuisses +2",                  -- 12/12, 126 (150) [117] __, __; Retain enmity
     feet="Sakpata's Leggings",                      --  6/ 6, 150 (125) [ 68]  5,  5
     neck="Unmoving Collar +1",                      -- __/__, ___ ( 41) [200] __, __
     ear1="Arete del Luna +1",                       -- __/__, ___ (___) [___] __, __; Resists
@@ -177,7 +177,7 @@ function init_gear_sets()
     back=gear.PLD_Block_Cape,                       -- __/__,  20 ( 20) [ 80]  8, __; 5% Dmg to MP
     waist={name="Platinum Moogle Belt",priority=1}, --  3/ 3,  15 (___) [___] __, __; HP+10%
     -- HP from belt                                                ???
-    -- 62 PDT / 57 MDT, 655 MEVA (813 Defense) [1082/???? HP] 13 Block, 5 Counter
+    -- 66 PDT / 61 MDT, 631 MEVA (794 Defense) [1085/???? HP] 13 Block, 5 Counter
     
     -- head="Chevalier's Armet +3",                 -- 11/11, 103 (148) [145] __, __; 8% Dmg to MP
     -- hands="Chevalier's Gauntlets +3",            -- 11/11,  98 (136) [ 64] __, __; Shield Def. Bonus+5
@@ -190,7 +190,7 @@ function init_gear_sets()
     head="Chevalier's Armet +2",                    -- 10/10,  93 (138) [135] __, __; 7% Dmg to MP
     body="Sakpata's Breastplate",                   -- 10/10, 139 (194) [136] __, __; Resist Status+15
     hands=gear.Souveran_C_hands,                    -- __/ 5,  48 (112) [239] __, __; Cure received+15%
-    legs=gear.Nyame_B_legs,                         --  8/ 8, 150 (169) [114] __, __
+    legs="Chevalier's Cuisses +2",                  -- 12/12, 126 (150) [117] __, __; Retain enmity
     feet="Sakpata's Leggings",                      --  6/ 6, 150 (125) [ 68]  5,  5
     neck="Bathy Choker +1",                         -- __/__, ___ ( 10) [ 35] __, 10; Regen+3
     ear1="Arete del Luna +1",                       -- __/__, ___ (___) [___] __, __; Resists
@@ -200,7 +200,7 @@ function init_gear_sets()
     back=gear.PLD_Block_Cape,                       -- __/__,  20 ( 20) [ 80]  8, __; 5% Dmg to MP
     waist={name="Platinum Moogle Belt",priority=1}, --  3/ 3,  15 (___) [___] __, __; HP+10%
     -- HP from belt                                                ???
-    -- 52 PDT / 49 MDT, 615 MEVA (768 Defense) [1092/???? HP] 13 Block, 18 Counter
+    -- 56 PDT / 53 MDT, 591 MEVA (749 Defense) [1095/???? HP] 13 Block, 18 Counter
     
     -- head="Chevalier's Armet +3",                 -- 11/11, 103 (148) [145] __, __; 8% Dmg to MP
     -- legs="Chevalier's Cuisses +3",               -- 13/13, 136 (160) [127] __, __; Retain enmity
@@ -221,19 +221,22 @@ function init_gear_sets()
     -- main="Burtgang",                             -- 18 Enmity
     -- sub="Srivatsa",                              -- 15 Enmity
     ammo="Sapience Orb",                            -- __/__, ___ [___] < 2>
-    -- head="Loess Barbuta +1",                     -- 20/20, ___ [105] <24>
     body=gear.Souveran_C_body,                      -- 10/10,  69 [171] <20>
     hands=gear.Souveran_C_hands,                    -- __/ 5,  48 [239] < 9>
-    -- legs="Caballarius Breeches +3",              --  7/__,  84 [ 72] < 9>
-    -- feet="Chevalier's Sabatons +3",              -- __/__, 136 [ 52] <15>
+    feet="Chevalier's Sabatons +2",                 -- __/__, 126 [ 42] <13>
     neck={name="Unmoving Collar +1",priority=1},    -- __/__, ___ [200] <10>
-    -- ear1="Trux Earring",                         -- __/__, ___ [___] < 5>
     ear2="Cryptic Earring",                         -- __/__, ___ [ 40] < 4>
     ring1={name="Gelatinous Ring +1",priority=1},   --  7/-1, ___ [135] <__>
-    -- ring2="Apeile Ring +1",                      -- __/__, ___ [___] < 9>
     back=gear.PLD_Enmity_Cape,                      -- 10/__,  20 [ 80] <10>
     waist="Platinum Moogle Belt",                   --  3/ 3,  15 [___] <__>; HP+10%
     -- HP from belts                                               ???
+    -- 30 PDT / 17 MDT, 278 M.Eva [907/??? HP] <101 Enmity>
+    
+    -- head="Loess Barbuta +1",                     -- 20/20, ___ [105] <24>
+    -- legs="Caballarius Breeches +3",              --  7/__,  84 [ 72] < 9>
+    -- feet="Chevalier's Sabatons +3",              -- __/__, 136 [ 52] <15>
+    -- ear1="Trux Earring",                         -- __/__, ___ [___] < 5>
+    -- ring2="Apeile Ring +1",                      -- __/__, ___ [___] < 9>
     -- 57 PDT / 37 MDT, 372 M.Eva [1094/??? HP] <150 Enmity>
   }
 
@@ -266,6 +269,7 @@ function init_gear_sets()
   })
 
   sets.precast.JA['Divine Emblem'] = set_combine(sets.Enmity, {
+    feet="Chevalier's Sabatons +2",
     -- feet="Chevalier's Sabatons +3",
   })
 
@@ -278,8 +282,7 @@ function init_gear_sets()
     body={name="Reverence Surcoat +3", priority=1},       -- {10} 11/11,  68 [254]
     hands=gear.Leyline_Gloves,                            -- { 8} __/__,  62 [ 25]
     legs="Sakpata's Cuisses",                             -- {__}  9/ 9, 150 [114]
-    feet={name=gear.Carmine_D_feet.name,
-      augments=gear.Carmine_D_feet.augments,priority=1},  -- { 8}  4/__,  80 [ 95]
+    feet="Chevalier's Sabatons +2",                       -- {10} __/__, 126 [ 42]
     neck={name="Unmoving Collar +1", priority=1},         -- {__} __/__, ___ [200]
     ear1="Loquacious Earring",                            -- { 2} __/__, ___ [___]
     ear2="Enchanter's Earring +1",                        -- { 2} __/__, ___ [___]
@@ -288,7 +291,7 @@ function init_gear_sets()
     back=gear.PLD_FC_Cape,                                -- {10} 10/__,  20 [ 80]
     waist="Platinum Moogle Belt",                         -- {__}  3/ 3,  15 [___]; HP+10%
     -- HP from belt                                                           ???
-    -- 64% Fast Cast, 54 PDT/32 MDT, 488 M.Eva [1038/???? HP]
+    -- 66% Fast Cast, 50 PDT/32 MDT, 534 M.Eva [985/???? HP]
     
     -- head="Chevalier's Armet +3",                       -- { 9} 11/11, 103 [145]
     -- feet="Chevalier's Sabatons +3",                    -- {13} __/__, 136 [ 52]
