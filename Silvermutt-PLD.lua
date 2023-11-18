@@ -627,9 +627,12 @@ function init_gear_sets()
     ear2="Novio Earring",               -- __, __, __,  7, __ [__/__, ___] ___
     ring1="Metamorph Ring +1",          -- __, 16, __, __, 16 [__/__, ___] -60
     ring2="Shiva Ring +1",              -- __,  9, __,  3, __ [__/__, ___] ___
-    -- back=gear.PLD_WS2_Cape,          -- 30, __, 10, __, 20 [10/__, ___] ___
+    back="Moonlight Cape",              -- __, __, __, __, __ [ 6/ 6, ___] 275
     waist="Skrymir Cord",               -- __, __, __,  5,  5 [__/__, ___] ___
-    -- 147 DEX, 206 INT, 68 WSD, 189 MAB, 249 M.Acc [48 PDT/38 MDT, 674 M.Eva] HP
+    -- 117 DEX, 206 INT, 58 WSD, 189 MAB, 229 M.Acc [44 PDT/44 MDT, 674 M.Eva] 715 HP
+    
+    -- back=gear.PLD_WS2_Cape,          -- __, 30, __, 10, 20 [10/__, ___] ___
+    -- 117 DEX, 236 INT, 58 WSD, 199 MAB, 249 M.Acc [48 PDT/38 MDT, 674 M.Eva] 440 HP
   })
   sets.precast.WS['Aeolian Edge'].Safe = set_combine(sets.precast.WS['Aeolian Edge'], {
     ammo="Pemphredo Tathlum",           -- __,  4, __,  4,  8 [__/__, ___] ___
