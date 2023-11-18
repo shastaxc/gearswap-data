@@ -621,73 +621,43 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.engaged = {
-    sub="Utu Grip",                   -- __, __, 30, __ <__, __, __> [__/__, ___]  70
     ammo="Coiste Bodhar",             -- 10,  3, __, __ < 3, __, __> [__/__, ___] ___
     head=gear.Nyame_B_head,           -- 25, __, 50,  6 < 5, __, __> [ 7/ 7, 123]  91
-    body="Ashera Harness",            -- 40, 10, 45,  4 <__, __, __> [ 7/ 7,  96] 182
-    hands=gear.Adhemar_A_hands,       -- 56,  7, 52,  5 <__,  4, __> [__/__,  43]  22
-    legs=gear.Samnuha_legs,           -- 16,  7, 15,  6 < 3,  3, __> [__/__,  75]  41
-    feet=gear.Herc_TA_feet,           -- 24, __, 23,  4 <__,  6, __> [ 2/__,  75]   9
-    neck="Anu Torque",                -- __,  7, __, __ <__, __, __> [__/__, ___] ___
+    body=gear.Nyame_B_body,           -- 24, __, 50,  3 < 7, __, __> [ 9/ 9, 139] 136
+    hands="Sakpata's Gauntlets",      -- 35,  8, 55,  4 < 6, __, __> [ 8/ 8, 112]  91
+    legs=gear.Odyssean_STP_legs,      -- __, 13, 15,  5 < 2, __, __> [__/__,  86]  54
+    feet=gear.Carmine_D_feet,         -- 16,  8, __,  4 < 4, __, __> [ 4/__,  80]  95
+    neck="Ainia Collar",              -- __,  8,-10, __ <__, __, __> [__/__, ___] ___
     ear1="Telos Earring",             -- __,  5, 10, __ < 1, __, __> [__/__, ___] ___
-    ear2="Sherida Earring",           --  5,  5, __, __ < 5, __, __> [__/__, ___] ___
-    ring1="Epona's Ring",             -- __, __, __, __ < 3,  3, __> [__/__, ___] ___
-    ring2="Niqmaddu Ring",            -- 10, __, __, __ <__, __,  3> [__/__, ___] ___
-    back=gear.RUN_TP_Cape,            -- 20, 10, 30, __ <__, __, __> [10/__, ___] ___
+    ear2="Dedition Earring",          -- __,  8,-10, __ <__, __, __> [__/__, ___] ___
+    ring1="Chirich Ring +1",          -- __,  6, 10, __ <__, __, __> [__/__, ___] ___
+    ring2="Chirich Ring +1",          -- __,  6, 10, __ <__, __, __> [__/__, ___] ___
+    -- back=gear.PLD_TP_Cape,         -- 20, 10, 30, __ <__, __, __> [10/__, ___] ___
     waist="Kentarch Belt +1",         -- 10,  5, 14, __ < 3, __, __> [__/__, ___] ___
-    -- 216 DEX, 59 STP, 269 Acc, 25 Haste <23 DA, 16 TA, 3 QA> [26 PDT/14 MDT, 412 M.Eva] 415 HP
+    -- 140 DEX, 80 STP, 224 Acc, 22 Haste <31 DA, 0 TA, 0 QA> [38 PDT/24 MDT, 540 M.Eva] 467 HP
   }
   sets.engaged.LowAcc = set_combine(sets.engaged, {
-    ammo="Yamarang",                  -- __,  3, 15, __ <__, __, __> [__/__, ___] ___
+    neck="Subtlety Spectacles",       -- __, __, 15, __ <__, __, __> [__/__, ___] ___
     ear2="Cessance Earring",          -- __,  3,  6, __ < 3, __, __> [__/__, ___] ___
-    ring2="Chirich Ring +1",          -- __,  6, 10, __ <__, __, __> [__/__, ___] ___
+
     -- neck="Combatant's Torque",     -- __,  4, __, __ <__, __, __> [__/__, ___] ___; skill+15
-    -- 191 DEX, 60 STP, 300 Acc, 25 Haste <18 DA, 16 TA, 0 QA> [26 PDT/14 MDT, 412 M.Eva] 415 HP
+    -- 140 DEX, 71 STP, 250 Acc, 22 Haste <34 DA, 0 TA, 0 QA> [38 PDT/24 MDT, 540 M.Eva] 467 HP
   })
   sets.engaged.MidAcc = set_combine(sets.engaged.LowAcc, {
     feet=gear.Nyame_B_feet,           -- 26, __, 53,  3 < 5, __, __> [ 7/ 7, 150]  68
     ear2="Dignitary's Earring",       -- __,  3, 10, __ <__, __, __> [__/__, ___] ___
-    -- 193 DEX, 60 STP, 334 Acc, 24 Haste <20 DA, 10 TA, 0 QA> [31 PDT/21 MDT, 487 M.Eva] 474 HP
+    -- 150 DEX, 63 STP, 307 Acc, 21 Haste <32 DA, 0 TA, 0 QA> [41 PDT/31 MDT, 610 M.Eva] 440 HP
   })
   sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
     legs=gear.Nyame_B_legs,           -- __, __, 40,  5 < 6, __, __> [ 8/ 8, 150] 114
-    ring1="Chirich Ring +1",          -- __,  6, 10, __ <__, __, __> [__/__, ___] ___
     waist="Olseni Belt",              -- __,  3, 20, __ <__, __, __> [__/__, ___] ___
-    -- 167 DEX, 57 STP, 375 Acc, 23 Haste <17 DA, 4 TA, 0 QA> [39 PDT/29 MDT, 562 M.Eva] 547 HP
+    -- 140 DEX, 48 STP, 338 Acc, 21 Haste <33 DA, 0 TA, 0 QA> [49 PDT/39 MDT, 674 M.Eva] 500 HP
   })
   
-  sets.engaged.LightDef = {
-    sub="Utu Grip",                   -- __, __, 30, __ <__, __, __> [__/__, ___]  70
-    ammo="Staunch Tathlum +1",        -- __, __, __, __ <__, __, __> [ 3/ 3, ___] ___
-    head=gear.Nyame_B_head,           -- 25, __, 50,  6 < 5, __, __> [ 7/ 7, 123]  91
-    body="Ashera Harness",            -- 40, 10, 45,  4 <__, __, __> [ 7/ 7,  96] 182
-    hands=gear.Adhemar_A_hands,       -- 56,  7, 52,  5 <__,  4, __> [__/__,  43]  22
-    legs=gear.Samnuha_legs,           -- 16,  7, 15,  6 < 3,  3, __> [__/__,  75]  41
-    feet="Erilaz Greaves +3",         -- 36, __, 60,  4 <__, __, __> [11/11, 157]  48
-    neck="Anu Torque",                -- __,  7, __, __ <__, __, __> [__/__, ___] ___
-    ear1="Telos Earring",             -- __,  5, 10, __ < 1, __, __> [__/__, ___] ___
-    ear2="Sherida Earring",           --  5,  5, __, __ < 5, __, __> [__/__, ___] ___
-    ring1="Moonlight Ring",           -- __,  5,  8, __ <__, __, __> [ 5/ 5, ___] 110
-    ring2="Moonlight Ring",           -- __,  5,  8, __ <__, __, __> [ 5/ 5, ___] 110
-    back=gear.RUN_TP_Cape,            -- 20, 10, 30, __ <__, __, __> [10/__, ___] ___
-    waist="Platinum Moogle Belt",     -- __, __, __, __ <__, __, __> [ 3/ 3,  15] ___; HP+10%
-    -- HP from belt                                                               317
-    -- 198 DEX, 61 STP, 308 Acc, 25 Haste <14 DA, 7 TA, 0 QA> [51 PDT/41 MDT, 509 M.Eva] 674/991 HP
-  }
-  sets.engaged.LightDef.LowAcc = set_combine(sets.engaged.LightDef, {
-    ear2="Cessance Earring",          -- __,  3,  6, __ < 3, __, __> [__/__, ___] ___
-    -- neck="Combatant's Torque",     -- __,  4, __, __ <__, __, __> [__/__, ___] ___; skill+15
-    -- 193 DEX, 56 STP, 314 Acc, 25 Haste <12 DA, 7 TA, 0 QA> [51 PDT/41 MDT, 509 M.Eva] 674/991 HP
-  })
-  sets.engaged.LightDef.MidAcc = set_combine(sets.engaged.LightDef.LowAcc, {
-    ear2="Dignitary's Earring",       -- __,  3, 10, __ <__, __, __> [__/__, ___] ___
-    -- 193 DEX, 56 STP, 318 Acc, 25 Haste <9 DA, 7 TA, 0 QA> [51 PDT/41 MDT, 509 M.Eva] 674/991 HP
-  })
-  sets.engaged.LightDef.HighAcc = set_combine(sets.engaged.LightDef.MidAcc, {
-    ammo="Yamarang",                  -- __,  3, 15, __ <__, __, __> [__/__, ___] ___
-    legs=gear.Nyame_B_legs,           -- __, __, 40,  5 < 6, __, __> [ 8/ 8, 150] 114
-    -- 177 DEX, 52 STP, 358 Acc, 25 Haste <12 DA, 4 TA, 0 QA> [56 PDT/46 MDT, 584 M.Eva] 747/1071 HP
-  })
+  sets.engaged.LightDef = set_combine(sets.engaged, {})
+  sets.engaged.LightDef.LowAcc = set_combine(sets.engaged.LowAcc, {})
+  sets.engaged.LightDef.MidAcc = set_combine(sets.engaged.MidAcc, {})
+  sets.engaged.LightDef.HighAcc = set_combine(sets.engaged.HighAcc, {})
 
 
   ------------------------------------------------------------------------------------------------
@@ -695,24 +665,16 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.latent_regain = {
-    head="Turms Cap +1",
   }
   sets.latent_regen = {
-    head="Turms Cap +1", --7
-    body="Futhark Coat +3", --5
     hands="Regal Gauntlets", --10
-    feet="Turms Leggings +1", --5
     neck="Bathy Choker +1", --3
     ear1="Infused Earring", --1
     ring1="Chirich Ring +1", --2
   }
   sets.latent_refresh = {
     ammo="Homiliary", --1
-    head=gear.Herc_Refresh_head, --1
-    body="Runeist Coat +3", --3
     hands="Regal Gauntlets", --1
-    legs="Rawhide Trousers", --1
-    feet=gear.Herc_Refresh_feet, --2
     ring1="Stikini Ring +1", --1
     -- ring2="Stikini Ring +1",
   }
@@ -721,17 +683,16 @@ function init_gear_sets()
   })
 
   sets.LightDef = {
-    sub="Utu Grip",                 -- [__/__, ___]  70
-    ammo="Staunch Tathlum +1",      -- [ 3/ 3, ___] ___
-    head=gear.Nyame_B_head,         -- [ 7/ 7, 123]  91
-    body=gear.Nyame_B_body,         -- [ 9/ 9, 139] 136
-    legs=gear.Nyame_B_legs,         -- [ 8/ 8, 150] 114
-    ear1="Odnowa Earring +1",       -- [ 3/ 5, ___] 110
-    ring2="Defending Ring",         -- [10/10, ___] ___
-    back=gear.RUN_TP_Cape,          -- [10/__, ___] ___
-    waist="Platinum Moogle Belt",   -- [ 3/ 3,  15] ___; HP+10%
-    -- HP bonus from belt                           301
-    -- 53 PDT / 45 MDT, 427 MEVA [521/822 HP]
+    head="Chevalier's Armet +2",          -- 10/10,  93
+    hands="Chevalier's Gauntlets +2",     -- 10/10,  88
+    legs="Chevalier's Cuisses +2",        -- 12/12, 126
+    ring2="Defending Ring",               -- 10/10, ___
+    -- 42 PDT / 42 MDT, 307 MEVA
+
+    -- head="Chevalier's Armet +3",       -- 11/11, 103
+    -- hands="Chevalier's Gauntlets +3",  -- 11/11,  98
+    -- legs="Chevalier's Cuisses +3",     -- 13/13, 136
+    -- 45 PDT / 45 MDT, 337 MEVA
   }
 
   sets.idle = set_combine(sets.defense.MDT, {})
@@ -761,15 +722,13 @@ function init_gear_sets()
   sets.idle.LightDef.Regain.Regen.Refresh = set_combine(sets.idle.Regain.Regen.Refresh, sets.LightDef)
   sets.idle.LightDef.Regain.Regen.RefreshSub50 = set_combine(sets.idle.Regain.Regen.RefreshSub50, sets.LightDef)
 
-  sets.idle.Weak = set_combine(sets.defense.MDT, {})
-
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Special Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
 
   sets.Special = {}
-  sets.Special.SleepyHead = { head="Frenzy Sallet", }
+  sets.Special.SleepyHead = { sub="Duban", }
 
   sets.buff.Doom = {
     neck="Nicander's Necklace", --20
@@ -782,9 +741,6 @@ function init_gear_sets()
   }
   sets.Kiting.Adoulin = {
     body="Councilor's Garb",
-  }
-  sets.Embolden = {
-    back=gear.RUN_Adoulin_Cape
   }
   sets.CP = {
     back=gear.CP_Cape,
@@ -952,10 +908,6 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     if (spell.element == world.day_element or spell.element == world.weather_element) then
       equip(sets.Obi)
     end
-  end
-
-  if spell.english == 'Phalanx' and buffactive['Embolden'] then
-    equip(sets.midcast['Phalanx'].Embolden)
   end
 
   if state.DefenseMode.value == 'None' then
