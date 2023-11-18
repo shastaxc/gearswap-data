@@ -22,9 +22,6 @@
 --              [ WIN+H ]           Toggle Charm Defense Mods
 --              [ WIN+D ]           Toggle Death Defense Mods
 --              [ WIN+C ]           Toggle Capacity Points Mode
---              [ CTRL+PageUp ]     Cycle Toy Weapon Mode
---              [ CTRL+PageDown ]   Cycleback Toy Weapon Mode
---              [ ALT+PageDown ]    Reset Toy Weapon Mode
 --              [ WIN+W ]           Toggle Rearming Lock
 --                                  (off = re-equip previous weapons if you go barehanded)
 --                                  (on = prevent weapon auto-equipping)
@@ -91,6 +88,9 @@ function get_sets()
   coroutine.schedule(function()
     send_command('gs c weaponset current')
   end, 5)
+  coroutine.schedule(function()
+    send_command('gs c subweaponset current')
+  end, 6)
 end
 
 -- Executes on first load and main job change
@@ -111,17 +111,18 @@ function job_setup()
   blue_magic_maps.Buffs = S{'Cocoon', 'Refueling'}
 
   state.Kiting:set('On')
-  state.PhysicalDefenseMode = M{['description'] = 'Physical Defense Mode', 'PDT'}
+  state.PhysicalDefenseMode = M{['description'] = 'Physical Defense Mode', 'PDT', 'Phalanx'}
   state.DefenseMode:set('Physical') -- Default to PDT mode
   state.CastingMode:options('Normal', 'Safe')
   state.HybridMode:options('LightDef', 'Normal')
   state.IdleMode:options('Normal', 'Refresh')
   state.AttCapped = M(false, 'Attack Capped')
-  state.WeaponSet = M{['description']='Weapon Set', 'None', 'Burtgang', 'Naegling', 'Aeolian'}
-  state.SubWeaponSet = M{['description']='Sub Weapon Set', 'None', 'Duban', 'Aegis', 'Aeolian'}
+  state.WeaponSet = M{['description']='Weapon Set', 'Any', 'Burtgang', 'Naegling', 'Aeolian'}
+  state.SubWeaponSet = M{['description']='Sub Weapon Set', 'Any', 'Duban', 'Aegis', 'Aeolian'}
   state.CP = M(false, 'Capacity Points Mode')
-  state.ToyWeapons = M{['description']='Toy Weapons','None'}
   state.Runes = M{['description']='Runes', 'Ignis', 'Gelus', 'Flabra', 'Tellus', 'Sulpor', 'Unda', 'Lux', 'Tenebrae'}
+
+  enable_phalanx_sird = false
   
   set_main_keybinds()
 end
@@ -179,6 +180,8 @@ function init_gear_sets()
     -- HP from belt                                                ???
     -- 66 PDT / 61 MDT, 631 MEVA (794 Defense) [1085/???? HP] 13 Block, 5 Counter
     
+    -- main="Burtgang",
+    -- sub="Duban",
     -- head="Chevalier's Armet +3",                 -- 11/11, 103 (148) [145] __, __; 8% Dmg to MP
     -- hands="Chevalier's Gauntlets +3",            -- 11/11,  98 (136) [ 64] __, __; Shield Def. Bonus+5
     -- legs="Chevalier's Cuisses +3",               -- 13/13, 136 (160) [127] __, __; Retain enmity
@@ -202,14 +205,13 @@ function init_gear_sets()
     -- HP from belt                                                ???
     -- 56 PDT / 53 MDT, 591 MEVA (749 Defense) [1095/???? HP] 13 Block, 18 Counter
     
+    -- main="Burtgang",
+    -- sub="Duban",
     -- head="Chevalier's Armet +3",                 -- 11/11, 103 (148) [145] __, __; 8% Dmg to MP
     -- legs="Chevalier's Cuisses +3",               -- 13/13, 136 (160) [127] __, __; Retain enmity
     -- back=gear.PLD_Counter_Cape,                  -- __/__,  20 ( 20) [ 80]  3, 10; 5% Dmg to MP
     -- 58 PDT / 55 MDT, 611 MEVA (769 Defense) [1115/???? HP] 8 Block, 28 Counter
   }
-
-  sets.defense.PDT = set_combine(sets.HeavyDef, {})
-  sets.defense.MDT = set_combine(sets.HeavyDef, {})
 
 
   ------------------------------------------------------------------------------------------------
@@ -218,8 +220,6 @@ function init_gear_sets()
 
   -- Enmity sets, caps at +200
   sets.Enmity = {
-    -- main="Burtgang",                             -- 18 Enmity
-    -- sub="Srivatsa",                              -- 15 Enmity
     ammo="Sapience Orb",                            -- __/__, ___ [___] < 2>
     body=gear.Souveran_C_body,                      -- 10/10,  69 [171] <20>
     hands=gear.Souveran_C_hands,                    -- __/ 5,  48 [239] < 9>
@@ -230,8 +230,10 @@ function init_gear_sets()
     back=gear.PLD_Enmity_Cape,                      -- 10/__,  20 [ 80] <10>
     waist="Platinum Moogle Belt",                   --  3/ 3,  15 [___] <__>; HP+10%
     -- HP from belts                                               ???
-    -- 30 PDT / 17 MDT, 278 M.Eva [907/??? HP] <101 Enmity>
+    -- 30 PDT / 17 MDT, 278 M.Eva [907/??? HP] <68 Enmity>
     
+    -- main="Burtgang",                             -- 18 Enmity
+    -- sub="Srivatsa",                              -- 15 Enmity
     -- head="Loess Barbuta +1",                     -- 20/20, ___ [105] <24>
     -- legs="Caballarius Breeches +3",              --  7/__,  84 [ 72] < 9>
     -- feet="Chevalier's Sabatons +3",              -- __/__, 136 [ 52] <15>
@@ -276,7 +278,7 @@ function init_gear_sets()
   -- Fast cast sets for spells
   sets.precast.FC = {
     main="Sakpata's Sword",                               -- {10}
-    sub="Sacro Bulwark",                                  -- {__}
+    sub="Priwen",                                         -- {__}
     ammo="Sapience Orb",                                  -- { 2} __/__, ___ [___]
     head="Chevalier's Armet +2",                          -- { 8} 10/10,  93 [135]
     body={name="Reverence Surcoat +3", priority=1},       -- {10} 11/11,  68 [254]
@@ -293,9 +295,10 @@ function init_gear_sets()
     -- HP from belt                                                           ???
     -- 66% Fast Cast, 50 PDT/32 MDT, 534 M.Eva [985/???? HP]
     
+    -- sub=gear.Nibiru_Shield_B,                          -- { 7}  6/ 6, ___ [ 80]
     -- head="Chevalier's Armet +3",                       -- { 9} 11/11, 103 [145]
     -- feet="Chevalier's Sabatons +3",                    -- {13} __/__, 136 [ 52]
-    -- 70% Fast Cast, 51 PDT/33 MDT, 554 M.Eva [1005/???? HP]
+    -- 77% Fast Cast, 57 PDT/39 MDT, 554 M.Eva [1085/???? HP]
   }
 
 
@@ -347,10 +350,12 @@ function init_gear_sets()
     ring2="Defending Ring",                         -- 10/10, ___ [___] {__} __
     back={name="Moonlight Cape",priority=1},        --  6/ 6, ___ [275] {__} __
     waist="Platinum Moogle Belt",                   --  3/ 3,  15 [___] {__}; HP+10%
-    -- HP from belt                                                      ???
     -- SIRD merits                                                      { 8}
+    -- HP from belt                                                ???
     -- 49 PDT / 41 MDT, 500 M.Eva [1153/??? HP] {102 SIRD} 24 Enmity
     
+    -- main="Burtgang",
+    -- sub="Srivatsa",
     -- ear2="Chevalier's Earring +2",               --  8/ 8, ___ [___] {__} __
     -- 53 PDT / 45 MDT, 500 M.Eva [1153/??? HP] {102 SIRD} 24 Enmity
   }
@@ -373,6 +378,8 @@ function init_gear_sets()
     -- HP from belt                                                ???
     -- 49 PDT/24 MDT, 390 M.Eva [1073 HP] {102 SIRD} 71 Enmity
 
+    -- main="Burtgang",
+    -- sub="Srivatsa",
     -- ear2="Chevalier's Earring +2",               --  8/ 8, ___ [___] {__} __
     -- 53 PDT/28 MDT, 390 M.Eva [1073 HP] {102 SIRD} 71 Enmity
   }
@@ -398,12 +405,12 @@ function init_gear_sets()
     ring2="Defending Ring",                         -- 10/10, ___ [___] {__} __
     back=gear.PLD_Enmity_Cape,                      -- 10/__,  20 [ 80] {__} __
     waist="Platinum Moogle Belt",                   --  3/ 3,  15 [___] {__} __; HP+10%
-    -- HP from belt                                                ???
     -- SIRD merits                                                      { 8}
+    -- HP from belt                                                ???
     -- 42 PDT / 19 MDT, 359 M.Eva [1096/??? HP] {102 SIRD} 30 Enh Duration
     
     -- main="Burtgang",
-    -- sub="Duban",                                 -- Shield def is added to Protect potency
+    -- sub="Srivatsa",                              -- Shield def is added to Protect potency
     -- ammo="Staunch Tathlum +1",                   --  3/ 3, ___ [___] {11} __
     -- head=gear.Souveran_C_head,                   -- __/__,  53 [280] {20} __
     -- body="Shabti Cuirass +1",                    -- __/__,  42 [115] {__} 10
@@ -417,8 +424,8 @@ function init_gear_sets()
     -- ring2="Defending Ring",                      -- 10/10, ___ [___] {__} __
     -- back=gear.PLD_Enmity_Cape,                   -- 10/__,  20 [ 80] {__} __
     -- waist="Platinum Moogle Belt",                --  3/ 3,  15 [___] {__} __; HP+10%
-    -- HP from belt                                                ???
     -- SIRD merits                                                      { 8}
+    -- HP from belt                                                ???
     -- 46 PDT / 23 MDT, 359 M.Eva [1096/??? HP] {102 SIRD} 30 Enh Duration
   }
   sets.midcast.Shell = set_combine(sets.midcast.Protect, {})
@@ -441,9 +448,9 @@ function init_gear_sets()
     ring2="Stikini Ring +1",                    -- _,   8, __ [__/__, ___] ___
     back={name="Moonlight Cape",priority=1},    -- _, ___, __ [ 6/ 6, ___] 275
     waist="Platinum Moogle Belt",               -- _, ___, __ [ 3/ 3,  15] ___; HP+10%
-    -- HP from belt                                                        ???
     -- Base/Traits/Gifts                           _, 350,  8 [__/__, ___] ___
     -- Master Levels                                    0
+    -- HP from belt                                                        ???
     -- 28 Phalanx, 386 Enh Skill, 19% SIRD [50 PDT/46 MDT, 411 M.Eva] 1158/???? HP
     -- 59 Total Phalanx
 
@@ -462,11 +469,32 @@ function init_gear_sets()
     -- ring2="Stikini Ring +1",                 -- _,   8, __ [__/__, ___] ___
     -- back={name="Moonlight Cape",priority=1}, -- _, ___, __ [ 6/ 6, ___] 275
     -- waist="Platinum Moogle Belt",            -- _, ___, __ [ 3/ 3,  15] ___; HP+10%
-    -- HP from belt                                                        ???
     -- Base/Traits/Gifts                           _, 350,  8 [__/__, ___] ___
     -- Master Levels                                   50
+    -- HP from belt                                                        ???
     -- 31 Phalanx, 416 Enh Skill, 42% SIRD [50 PDT/50 MDT, 426 M.Eva] 1158/???? HP
     -- 63 Total Phalanx
+  }
+
+  sets.midcast['Phalanx'].SIRD = {
+    -- main="Sakpata's Sword",                  -- 4, ___, __ [10/10, ___] 100
+    -- sub="Priwen",                            -- 2, ___, __ [ 6/ 6, ___]  30
+    ammo="Staunch Tathlum +1",                  -- _, ___, 11 [ 3/ 3, ___] ___
+    head=gear.Souveran_C_head,                  -- _, ___, 20 [__/__,  53] 280
+    -- body=gear.Valorous_Phalanx_body,         -- 5, ___, __ [ 2/__,  59]  61
+    hands="Regal Gauntlets",                    -- _, ___, 10 [__/__,  48] 205
+    legs=gear.Founders_Hose,                    -- _, ___, 30 [__/__,  80]  54
+    feet=gear.Souveran_C_feet,                  -- 5, ___, __ [ 5/__,  86] 227
+    neck="Moonlight Necklace",                  -- _, ___, 15 [__/__,  15] ___
+    ear1="Magnetic Earring",                    -- _, ___,  8 [__/__, ___] ___
+    ear2="Chevalier's Earring +1",              -- _, ___, __ [ 4/ 4, ___] ___
+    ring1="Gelatinous Ring +1",                 -- _, ___, __ [ 7/-1, ___] 135
+    ring2="Defending Ring",                     -- _, ___, __ [10/10, ___] ___
+    back=gear.PLD_Enmity_Cape,                  -- _, ___, __ [10/__, ___]  80
+    waist="Platinum Moogle Belt",               -- _, ___, __ [ 3/ 3,  15] ___; HP+10%
+    -- SIRD merits                                          8
+    -- HP from belt                                                        ???
+    -- 16 Phalanx, 416 Enh Skill, 102% SIRD [44 PDT/19 MDT, 356 M.Eva] 1172/???? HP
   }
 
   sets.midcast['Aquaveil'] = set_combine(sets.SIRD, {})
@@ -509,7 +537,6 @@ function init_gear_sets()
   }
 
   sets.midcast.Cure = {
-    -- main="Burtgang",
     sub="Sacro Bulwark",                            -- __, __, __,  5(__) [10/10, ___] ___ {__} __
     ammo="Staunch tathlum +1",                      -- __, __, __, __(__) [ 3/ 3, ___] ___ {11} __
     head=gear.Souveran_C_head,                      --  8, 38, __, __(15) [__/__,  53] 280 {20}  9
@@ -528,6 +555,7 @@ function init_gear_sets()
     -- SIRD merits                                                                         { 8}
     -- 133 MND, 181 VIT, 0 Heal skill, 46 Cure Pot (30 self pot) [57 PDT/39 MDT, 371 M.Eva] 1145 HP {104 SIRD} 49 Enmity
     
+    -- main="Burtgang",
     -- ear2="Chevalier's Earring +2",               -- __, 15, __, 12(__) [ 8/ 8, ___] ___ {__} __
     -- 133 MND, 196 VIT, 0 Heal skill, 47 Cure Pot (30 self pot) [61 PDT/43 MDT, 371 M.Eva] 1145 HP {104 SIRD} 49 Enmity
   }
@@ -734,6 +762,10 @@ function init_gear_sets()
     -- 45 PDT / 45 MDT, 337 MEVA
   }
 
+  sets.defense.PDT = set_combine(sets.HeavyDef, {})
+  sets.defense.Phalanx = set_combine(sets.HeavyDef, sets.midcast.Phalanx)
+  sets.defense.MDT = set_combine(sets.HeavyDef, {})
+
   sets.idle = set_combine(sets.defense.MDT, {})
 
   sets.idle.Regain = set_combine(sets.idle, sets.latent_regain)
@@ -761,6 +793,10 @@ function init_gear_sets()
   sets.idle.LightDef.Regain.Regen.Refresh = set_combine(sets.idle.Regain.Regen.Refresh, sets.LightDef)
   sets.idle.LightDef.Regain.Regen.RefreshSub50 = set_combine(sets.idle.Regain.Regen.RefreshSub50, sets.LightDef)
 
+  sets.idle.Town = set_combine(sets.idle.Regain.Regen.Refresh, {
+    sub="Priwen",
+  })
+
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Special Sets ------------------------------------------
@@ -768,6 +804,9 @@ function init_gear_sets()
 
   sets.Special = {}
   sets.Special.SleepyHead = { sub="Duban", }
+
+  -- Used to swap out Duban if low HP in certain conditions so the "soul drain" doesn't kill you
+  sets.SafeShield = { sub="Priwen" }
 
   sets.buff.Doom = {
     neck="Nicander's Necklace", --20
@@ -880,6 +919,8 @@ function job_post_precast(spell, action, spellMap, eventArgs)
     end
   end
 
+  equip(select_weapons())
+
   -- If slot is locked, keep current equipment on
   if locked_neck then equip({ neck=player.equipment.neck }) end
   if locked_ear1 then equip({ ear1=player.equipment.ear1 }) end
@@ -898,7 +939,12 @@ end
 
 -- Run after the default midcast() is done.
 -- eventArgs is the same one used in job_midcast, in case information needs to be persisted.
-function job_post_midcast(spell, action, spellMap, eventArgs)  
+function job_post_midcast(spell, action, spellMap, eventArgs)
+  -- Allow weapon swaps for Phalanx
+  if spell.english ~= 'Phalanx' then
+    equip(select_weapons())
+  end
+
   -- If slot is locked, keep current equipment on
   if locked_neck then equip({ neck=player.equipment.neck }) end
   if locked_ear1 then equip({ ear1=player.equipment.ear1 }) end
@@ -916,9 +962,17 @@ function job_aftercast(spell, action, spellMap, eventArgs)
 
   classes.JAMode = nil
   state.CastingMode:reset()
+
+  if not spell.interrupted then
+    if spell.english == 'Phalanx' then
+      enable_phalanx_sird = false
+    end
+  end
 end
 
 function job_post_aftercast(spell, action, spellMap, eventArgs)
+  equip(select_weapons())
+
   ----------- Non-silibs content goes above this line -----------
   silibs.post_aftercast_hook(spell, action, spellMap, eventArgs)
 end
@@ -998,6 +1052,12 @@ function customize_idle_set(idleSet)
     idleSet = set_combine(idleSet, sets.buff.Doom)
   end
   
+  idleSet = set_combine(idleSet, select_weapons())
+  
+  if player.hp < 100 then
+    idleSet =  set_combine(idleSet, sets.SafeShield)
+  end
+  
   return idleSet
 end
 
@@ -1025,6 +1085,12 @@ function customize_melee_set(meleeSet)
     meleeSet = set_combine(meleeSet, sets.buff.Doom)
   end
 
+  meleeSet = set_combine(meleeSet, select_weapons())
+  
+  if player.hp < 100 then
+    meleeSet =  set_combine(meleeSet, sets.SafeShield)
+  end
+  
   return meleeSet
 end
 
@@ -1046,6 +1112,15 @@ function customize_defense_set(defenseSet)
 
   if buffactive.Doom then
     defenseSet = set_combine(defenseSet, sets.buff.Doom)
+  end
+  
+  -- Allow weapon swaps for Phalanx
+  if state[state.DefenseMode.value .. 'DefenseMode'].value ~= 'Phalanx' then
+    defenseSet = set_combine(defenseSet, select_weapons())
+  end
+  
+  if player.hp < 100 then
+    defenseSet =  set_combine(defenseSet, sets.SafeShield)
   end
   
   return defenseSet
@@ -1081,7 +1156,6 @@ function display_current_job_state(eventArgs)
 
   local i_msg = state.IdleMode.value
 
-  local toy_msg = state.ToyWeapons.current
 
   local msg = ''
   if state.Kiting.value then
@@ -1093,7 +1167,6 @@ function display_current_job_state(eventArgs)
 
   add_to_chat(1, string.char(31,004).. ' Defense: ' ..string.char(31,001)..d_msg.. string.char(31,002).. ' |'
       ..string.char(31,207).. ' Idle: ' ..string.char(31,001)..i_msg.. string.char(31,002).. ' |'
-      ..string.char(31,012).. ' Toy Weapon: ' ..string.char(31,001)..toy_msg.. string.char(31,002)..  ' |'
       ..string.char(31,002)..msg)
 
   eventArgs.handled = true
@@ -1161,38 +1234,45 @@ function get_custom_wsmode(spell, action, spellMap)
   return wsmode
 end
 
-function cycle_weapons(cycle_dir)
+function cycle_weapons(cycle_dir, set_name)
   if cycle_dir == 'forward' then
     state.WeaponSet:cycle()
   elseif cycle_dir == 'back' then
     state.WeaponSet:cycleback()
+  elseif cycle_dir == 'set' then
+    state.WeaponSet:set(set_name)
+  else
+    state.WeaponSet:reset()
   end
 
   add_to_chat(141, 'Weapon Set to '..string.char(31,1)..state.WeaponSet.current)
-  equip(sets.WeaponSet[state.WeaponSet.current])
+  equip(select_weapons())
 end
 
-function cycle_toy_weapons(cycle_dir)
-  --If current state is None, save current weapons to switch back later
-  if state.ToyWeapons.current == 'None' then
-    sets.ToyWeapon.None.main = player.equipment.main
-    sets.ToyWeapon.None.sub = player.equipment.sub
-  end
-
+function cycle_sub_weapons(cycle_dir, set_name)
   if cycle_dir == 'forward' then
-    state.ToyWeapons:cycle()
+    state.SubWeaponSet:cycle()
   elseif cycle_dir == 'back' then
-    state.ToyWeapons:cycleback()
+    state.SubWeaponSet:cycleback()
+  elseif cycle_dir == 'set' then
+    state.SubWeaponSet:set(set_name)
   else
-    state.ToyWeapons:reset()
+    state.SubWeaponSet:reset()
   end
 
-  local mode_color = 001
-  if state.ToyWeapons.current == 'None' then
-    mode_color = 006
+  add_to_chat(141, 'Weapon Set to '..string.char(31,1)..state.SubWeaponSet.current)
+  equip(select_weapons())
+end
+
+function select_weapons()
+  local set = {}
+  if sets.WeaponSet[state.WeaponSet.current] then
+    set = set_combine(set, sets.WeaponSet[state.WeaponSet.current])
   end
-  add_to_chat(012, 'Toy Weapon Mode: '..string.char(31,mode_color)..state.ToyWeapons.current)
-  equip(sets.ToyWeapon[state.ToyWeapons.current])
+  if sets.SubWeaponSet[state.SubWeaponSet.current] then
+    set = set_combine(set, sets.SubWeaponSet[state.SubWeaponSet.current])
+  end
+  return set
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -1232,23 +1312,30 @@ function job_self_command(cmdParams, eventArgs)
   silibs.self_command(cmdParams, eventArgs)
   ----------- Non-silibs content goes below this line -----------
 
-  if cmdParams[1] == 'rune' then
+  if cmdParams[1] == 'phalanxsird' then
+    enable_phalanx_sird = true
+    send_command('@input /ma "Phalanx <me>')
+  elseif cmdParams[1] == 'rune' then
     send_command('@input /ja '..state.Runes.value..' <me>')
-  elseif cmdParams[1] == 'toyweapon' then
-    if cmdParams[2] == 'cycle' then
-      cycle_toy_weapons('forward')
-    elseif cmdParams[2] == 'cycleback' then
-      cycle_toy_weapons('back')
-    elseif cmdParams[2] == 'reset' then
-      cycle_toy_weapons('reset')
-    end
   elseif cmdParams[1] == 'weaponset' then
     if cmdParams[2] == 'cycle' then
       cycle_weapons('forward')
     elseif cmdParams[2] == 'cycleback' then
       cycle_weapons('back')
-    elseif cmdParams[2] == 'current' then
-      cycle_weapons('current')
+    elseif cmdParams[2] == 'set' and cmdParams[3] then
+      cycle_weapons('set', cmdParams[3])
+    else
+      cycle_weapons(cmdParams[2])
+    end
+  elseif cmdParams[1] == 'subweaponset' then
+    if cmdParams[2] == 'cycle' then
+      cycle_sub_weapons('forward')
+    elseif cmdParams[2] == 'cycleback' then
+      cycle_sub_weapons('back')
+    elseif cmdParams[2] == 'set' and cmdParams[3] then
+      cycle_sub_weapons('set', cmdParams[3])
+    else
+      cycle_sub_weapons(cmdParams[2])
     end
   elseif cmdParams[1] == 'bind' then
     set_main_keybinds()
@@ -1318,15 +1405,15 @@ function set_main_keybinds()
   send_command('bind @w gs c toggle RearmingLock')
   send_command('bind ^insert gs c weaponset cycle')
   send_command('bind ^delete gs c weaponset cycleback')
-
-  send_command('bind ^pageup gs c toyweapon cycle')
-  send_command('bind ^pagedown gs c toyweapon cycleback')
-  send_command('bind !pagedown gs c toyweapon reset')
+  
+  send_command('bind ^home gs c subweaponset cycle')
+  send_command('bind ^end gs c subweaponset cycleback')
 
   send_command('bind !` input /ja "Chivalry" <me>')
   send_command('bind @c gs c toggle CP')
 
   send_command('bind !o input /ma "Phalanx" <me>')
+  send_command('bind !l gs c phalanxsird')
 end
 
 function set_sub_keybinds()
@@ -1367,14 +1454,14 @@ function unbind_keybinds()
   send_command('unbind ^insert')
   send_command('unbind ^delete')
 
-  send_command('unbind ^pageup')
-  send_command('unbind ^pagedown')
-  send_command('unbind !pagedown')
+  send_command('unbind ^home')
+  send_command('unbind ^end')
 
   send_command('unbind !`')
   send_command('unbind @c')
 
   send_command('unbind !o')
+  send_command('unbind !l')
   
   send_command('unbind !w')
 
