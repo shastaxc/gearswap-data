@@ -859,30 +859,6 @@ function job_precast(spell, action, spellMap, eventArgs)
     end
   end
 
-  -- Use Swipe if Lunge is on cooldown
-  if spell.english == 'Lunge' then
-    local abil_recasts = windower.ffxi.get_ability_recasts()
-    if abil_recasts[spell.recast_id] > 0 then
-      send_command('input /jobability "Swipe" <t>')
-      eventArgs.cancel = true
-      return
-    end
-  end
-
-  -- Use Vallation if Valiance is on cooldown
-  if spell.english == 'Valiance' then
-    local abil_recasts = windower.ffxi.get_ability_recasts()
-    if abil_recasts[spell.recast_id] > 0 then
-      send_command('input /jobability "Vallation" <me>')
-      eventArgs.cancel = true
-      return
-    -- Cancel Vallation if using Valiance
-    elseif spell.english == 'Valiance' and buffactive['vallation'] then
-      cast_delay(0.2)
-      send_command('cancel Vallation') -- command requires 'cancel' add-on to work
-    end
-  end
-
   -- Cancel shadows if casting more shadows
   if spellMap == 'Utsusemi' then
     if buffactive['Copy Image (3)'] or buffactive['Copy Image (4+)'] then
@@ -894,33 +870,13 @@ function job_precast(spell, action, spellMap, eventArgs)
       send_command('cancel 66; cancel 444; cancel Copy Image; cancel Copy Image (2)')
     end
   end
-
-  -- Record which rune elements are active when Rayke or Gambit is used.
-  if spell.english == 'Rayke' or spell.english == 'Gambit' then
-    -- Examine all active buffs
-    for k,buff_id in pairs(player.buffs) do
-      -- Translate buff ID into English
-      local buff_name = res.buffs:get(buff_id).en;
-      -- If buff is a Rune, snapshot it as it was expended
-      if runes:contains(buff_name) then
-        table.insert(expended_runes, buff_name)
-      end
-    end
-  end
 end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
   -- Equip Reive set for ws if in a Reive
-  if spell.type == "WeaponSkill" then
+  if spell.type == 'WeaponSkill' then
     if buffactive['Reive Mark'] then
       equip(sets.Reive)
-    end
-  end
-
-  if state.DefenseMode.value ~= 'None' and state[state.DefenseMode.value .. 'DefenseMode'].value == 'Encumbrance' then
-    equip(sets.Special.Encumbrance)
-    if spell.english == 'Elemental Sforzo' then
-      equip(sets.precast.JA['Elemental Sforzo'])
     end
   end
 
@@ -942,26 +898,7 @@ end
 
 -- Run after the default midcast() is done.
 -- eventArgs is the same one used in job_midcast, in case information needs to be persisted.
-function job_post_midcast(spell, action, spellMap, eventArgs)
-  if spell.english == 'Lunge' or spell.english == 'Swipe' then
-    if (spell.element == world.day_element or spell.element == world.weather_element) then
-      equip(sets.Obi)
-    end
-  end
-
-  if state.DefenseMode.value == 'None' then
-    if spell.skill == 'Enhancing Magic' and classes.NoSkillSpells:contains(spell.english) then
-      equip(sets.midcast.EnhancingDuration)
-      if spellMap == 'Refresh' then
-        equip(sets.midcast.Refresh)
-      end
-    end
-  end
-  
-  if state.DefenseMode.value ~= 'None' and state[state.DefenseMode.value .. 'DefenseMode'].value == 'Encumbrance' then
-    equip(sets.Special.Encumbrance)
-  end
-  
+function job_post_midcast(spell, action, spellMap, eventArgs)  
   -- If slot is locked, keep current equipment on
   if locked_neck then equip({ neck=player.equipment.neck }) end
   if locked_ear1 then equip({ ear1=player.equipment.ear1 }) end
@@ -977,68 +914,8 @@ function job_aftercast(spell, action, spellMap, eventArgs)
   silibs.aftercast_hook(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
 
+  classes.JAMode = nil
   state.CastingMode:reset()
-
-  local chat_mode = '/p'
-  if windower.ffxi.get_party().party1_count == 1 then
-    chat_mode = '/echo'
-  end
-
-  if spell.name == 'Rayke' then
-    if spell.interrupted then
-      expended_runes = {}
-    else
-      -- Record Rayke target
-      rayke_target = spell.target
-
-      -- Print chat message
-      local element_potencies = get_element_potencies()
-      local el_msg = ''
-      for k,v in pairs(element_potencies) do
-        el_msg = el_msg..'('..v.element
-        if v.count == 1 then
-          el_msg = el_msg..string.char(129,171)
-        elseif v.count == 2 then
-          el_msg = el_msg..string.char(129,171)..string.char(129,171)
-        elseif v.count == 3 then
-          el_msg = el_msg..string.char(129,171)..string.char(129,171)..string.char(129,171)
-        end
-        el_msg = el_msg..')'
-      end
-
-      send_command('@timers c "Rayke ['..spell.target.name..']" '..rayke_duration..' down spells/00136.png') -- Requires Timers plugin
-      send_command('@input '..chat_mode..' [Rayke] Resist Down '..el_msg..' '..string.char(129, 168)..' <t>;')
-      coroutine.schedule(display_rayke_worn, rayke_duration)
-      expended_runes = {} -- Reset tracking of expended runes
-    end
-  elseif spell.name == 'Gambit' then
-    if spell.interrupted then
-      expended_runes = {}
-    else
-      -- Record Rayke target
-      gambit_target = spell.target
-
-      -- Print chat message
-      local element_potencies = get_element_potencies()
-      local el_msg = ''
-      for k,v in pairs(element_potencies) do
-        el_msg = el_msg..'('..v.element
-        if v.count == 1 then
-          el_msg = el_msg..string.char(129,171)
-        elseif v.count == 2 then
-          el_msg = el_msg..string.char(129,171)..string.char(129,171)
-        elseif v.count == 3 then
-          el_msg = el_msg..string.char(129,171)..string.char(129,171)..string.char(129,171)
-        end
-        el_msg = el_msg..')'
-      end
-
-      send_command('@timers c "Gambit ['..spell.target.name..']" '..gambit_duration..' down spells/00136.png') -- Requires Timers plugin
-      send_command('@input '..chat_mode..' [Gambit] M.Def Down '..el_msg..' '..string.char(129,168)..' <t>;')
-      coroutine.schedule(display_gambit_worn, gambit_duration)
-      expended_runes = {} -- Reset tracking of expended runes
-    end
-  end
 end
 
 function job_post_aftercast(spell, action, spellMap, eventArgs)
@@ -1056,14 +933,13 @@ end
 -- gain == true if the buff was gained, false if it was lost.
 -- Theory: debuffs must be lowercase and buffs must begin with uppercase
 function job_buff_change(buff,gain)
-
   if buff == "terror" then
     if gain then
       equip(sets.defense.PDT)
     end
   end
 
-  if buff == 'sleep' and gain and player.vitals.hp > 500 and player.status == 'Engaged' then
+  if buff == 'sleep' and gain and player.vitals.hp > 1000 then
     equip(sets.Special.SleepyHead)
   end
 
@@ -1076,10 +952,9 @@ function job_buff_change(buff,gain)
   end
 
   -- Update gear for these specific buffs
-  if buff == "terror" or buff == "doom" or buff == "Battuta" then
+  if buff == "terror" or buff == "doom" then
     status_change(player.status)
   end
-
 end
 
 -- Handle notifications of general user state change.
@@ -1097,10 +972,6 @@ end
 
 -- Modify the default idle set after it was constructed.
 function customize_idle_set(idleSet)
-  if state.DefenseMode.value ~= 'None' and state[state.DefenseMode.value .. 'DefenseMode'].value == 'Encumbrance' then
-    return set_combine(idleSet, sets.Special.Encumbrance)
-  end
-
   -- If not in DT mode put on move speed gear
   if state.IdleMode.current == 'Normal' and state.DefenseMode.value == 'None' then
     if classes.CustomIdleGroups:contains('Adoulin') then
@@ -1146,7 +1017,7 @@ function customize_melee_set(meleeSet)
   if locked_ring1 then meleeSet = set_combine(meleeSet, { ring1=player.equipment.ring1 }) end
   if locked_ring2 then meleeSet = set_combine(meleeSet, { ring2=player.equipment.ring2 }) end
 
-  if buffactive['sleep'] and player.vitals.hp > 500 and player.status == 'Engaged' then
+  if buffactive['sleep'] and player.vitals.hp > 1000 then
     meleeSet = set_combine(meleeSet, sets.Special.SleepyHead)
   end
 
@@ -1158,10 +1029,6 @@ function customize_melee_set(meleeSet)
 end
 
 function customize_defense_set(defenseSet)
-  if state.DefenseMode.value ~= 'None' and state[state.DefenseMode.value .. 'DefenseMode'].value == 'Encumbrance' then
-    return set_combine(defenseSet, sets.Special.Encumbrance)
-  end
-
   if state.CP.current == 'on' then
     defenseSet = set_combine(defenseSet, sets.CP)
   end
@@ -1173,7 +1040,7 @@ function customize_defense_set(defenseSet)
   if locked_ring1 then defenseSet = set_combine(defenseSet, { ring1=player.equipment.ring1 }) end
   if locked_ring2 then defenseSet = set_combine(defenseSet, { ring2=player.equipment.ring2 }) end
 
-  if buffactive['sleep'] and player.vitals.hp > 500 and player.status == 'Engaged' then
+  if buffactive['sleep'] and player.vitals.hp > 1000 then
     defenseSet = set_combine(defenseSet, sets.Special.SleepyHead)
   end
 
@@ -1202,17 +1069,6 @@ end
 -- Function to display the current relevant user state when doing an update.
 -- Set eventArgs.handled to true if display was handled, and you don't want the default info shown.
 function display_current_job_state(eventArgs)
-  local r_msg = state.Runes.current
-  local r_color = 1
-  if state.Runes.current == 'Ignis' then r_color = 167
-  elseif state.Runes.current == 'Gelus' then r_color = 210
-  elseif state.Runes.current == 'Flabra' then r_color = 204
-  elseif state.Runes.current == 'Tellus' then r_color = 050
-  elseif state.Runes.current == 'Sulpor' then r_color = 215
-  elseif state.Runes.current == 'Unda' then r_color = 207
-  elseif state.Runes.current == 'Lux' then r_color = 001
-  elseif state.Runes.current == 'Tenebrae' then r_color = 160 end
-
   local m_msg = state.OffenseMode.value
   if state.HybridMode.value ~= 'Normal' then
     m_msg = m_msg .. '/' ..state.HybridMode.value
@@ -1235,8 +1091,7 @@ function display_current_job_state(eventArgs)
     msg = msg .. ' CP Mode: On |'
   end
 
-  add_to_chat(r_color, string.char(129,121).. '  ' ..string.upper(r_msg).. '  ' ..string.char(129,122)
-      ..string.char(31,004).. ' Defense: ' ..string.char(31,001)..d_msg.. string.char(31,002).. ' |'
+  add_to_chat(1, string.char(31,004).. ' Defense: ' ..string.char(31,001)..d_msg.. string.char(31,002).. ' |'
       ..string.char(31,207).. ' Idle: ' ..string.char(31,001)..i_msg.. string.char(31,002).. ' |'
       ..string.char(31,012).. ' Toy Weapon: ' ..string.char(31,001)..toy_msg.. string.char(31,002)..  ' |'
       ..string.char(31,002)..msg)
@@ -1340,76 +1195,6 @@ function cycle_toy_weapons(cycle_dir)
   equip(sets.ToyWeapon[state.ToyWeapons.current])
 end
 
-function get_element_potencies()
-  local element_potencies = {}
-  for k,rune in pairs(expended_runes) do
-    -- Get rune's corresponding element
-    local el = silibs.elements.of_rune[rune]
-    -- Find element entry if already in the table
-    local el_index = nil
-    for k,v in pairs(element_potencies) do
-      if v.element == el then
-        el_index = k
-      end
-    end
-    -- If element was not found, add new entry
-    if el_index == nil then
-      table.insert(element_potencies, { element=el, count=1 })
-    else -- Otherwise, increase its count
-      element_potencies[el_index].count = element_potencies[el_index].count + 1
-    end
-  end
-  return element_potencies;
-end
-
-function display_rayke_worn()
-  local chat_mode = '/p'
-  if windower.ffxi.get_party().party1_count == 1 then
-    chat_mode = '/echo'
-  end
-
-  -- Ensure execution only once by checking for saved target data
-  if rayke_target ~= nil then
-    send_command('@input '..chat_mode..' [Rayke] Just wore off!;')
-    -- If timer still exists, clear it
-    send_command('@timers d "Rayke ['..rayke_target.name..']"') -- Requires Timers plugin
-
-    rayke_target = nil -- Reset target
-  end
-end
-
-function display_gambit_worn()
-  local chat_mode = '/p'
-  if windower.ffxi.get_party().party1_count == 1 then
-    chat_mode = '/echo'
-  end
-
-  -- Ensure execution only once by checking for saved target data
-  if gambit_target ~= nil then
-    send_command('@input '..chat_mode..' [Gambit] Just wore off!;')
-    -- If timer still exists, clear it
-    send_command('@timers d "Gambit ['..gambit_target.name..']"') -- Requires Timers plugin
-
-    gambit_target = nil -- Reset target
-  end
-end
-
-function display_rayke_gambit_worn()
-  local chat_mode = '/p'
-  if windower.ffxi.get_party().party1_count == 1 then
-    chat_mode = '/echo'
-  end
-
-  send_command('@input '..chat_mode..' [Rayke & Gambit] Just wore off!;')
-  -- If timer still exists, clear it
-  send_command('@timers d "Rayke ['..rayke_target.name..']"') -- Requires Timers plugin
-  -- If timer still exists, clear it
-  send_command('@timers d "Gambit ['..gambit_target.name..']"') -- Requires Timers plugin
-
-  rayke_target = nil -- Reset target
-  gambit_target = nil -- Reset target
-end
-
 -------------------------------------------------------------------------------------------------------------------
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
@@ -1510,26 +1295,6 @@ windower.register_event('zone change', function()
   if locked_ring2 then equip({ ring2=empty }) end
 end)
 
-windower.raw_register_event('incoming chunk', function(id, data, modified, injected, blocked)
-  -- Listen for kill message (when an enemy is defeated)
-  if id == 0x029 then -- Combat messages
-    local message_id = data:unpack("H",0x19)%2^15 -- Cut off the most significant bit
-    if message_id == 6 then
-      local defeated_mob_id = data:unpack("I",0x09)
-      if (rayke_target ~= nil and defeated_mob_id == rayke_target.id) and (gambit_target ~= nil and defeated_mob_id == gambit_target.id) then
-        -- Display message that Rayke and Gambit have worn off due to mob death (if applicable)
-        display_rayke_gambit_worn()
-      elseif rayke_target ~= nil and defeated_mob_id == rayke_target.id then
-        -- Display message that Rayke has worn off (because Rayked mob was killed)
-        display_rayke_worn()
-      elseif gambit_target ~= nil and defeated_mob_id == gambit_target.id then
-        -- Display message that Gambit has worn off (because Gambited mob was killed)
-        display_gambit_worn()
-      end
-    end
-  end
-end)
-
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
   -- Default macro set/book: (set, book)
@@ -1559,9 +1324,6 @@ function set_main_keybinds()
   send_command('bind !pagedown gs c toyweapon reset')
 
   send_command('bind !` input /ja "Chivalry" <me>')
-  send_command('bind !z input /ma "Temper" <me>')
-  send_command('bind ^- gs c cycleback Runes')
-  send_command('bind ^= gs c cycle Runes')
   send_command('bind @c gs c toggle CP')
 
   send_command('bind !o input /ma "Phalanx" <me>')
@@ -1569,9 +1331,7 @@ end
 
 function set_sub_keybinds()
   if player.sub_job == 'BLU' then
-    send_command('bind !q input /ma "Wild Carrot" <stpc>')
     send_command('bind !w input /ma "Cocoon" <me>')
-    send_command('bind !e input /ma "Refueling" <me>')
   elseif player.sub_job == 'WAR' then
     send_command('bind !w input /ja "Defender" <me>')
     send_command('bind ^numpad/ input /ja "Berserk" <me>')
@@ -1590,6 +1350,10 @@ function set_sub_keybinds()
   elseif player.sub_job == 'NIN' then
     send_command('bind ^numpad0 input /ma "Utsusemi: Ichi" <me>')
     send_command('bind ^numpad. input /ma "Utsusemi: Ni" <me>')
+  elseif player.sub_job == 'RUN' then
+    send_command('bind %numpad0 gs c rune')
+    send_command('bind ^- gs c cycleback Runes')
+    send_command('bind ^= gs c cycle Runes')
   end
 end
 
@@ -1607,26 +1371,24 @@ function unbind_keybinds()
   send_command('unbind ^pagedown')
   send_command('unbind !pagedown')
 
-  send_command('unbind %numpad')
   send_command('unbind !`')
-  send_command('unbind !z')
-  send_command('unbind ^-')
-  send_command('unbind ^=')
   send_command('unbind @c')
-  send_command('unbind @k')
 
   send_command('unbind !o')
-
-  send_command('unbind !q')
-  send_command('unbind !w')
-  send_command('unbind !e')
   
+  send_command('unbind !w')
+
+  send_command('unbind !w')
   send_command('unbind ^numpad/')
   send_command('unbind ^numpad*')
   send_command('unbind ^numpad-')
   
   send_command('unbind ^numpad0')
   send_command('unbind ^numpad.')
+  
+  send_command('unbind %numpad0')
+  send_command('unbind ^-')
+  send_command('unbind ^=')
 end
 
 function test()
