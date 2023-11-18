@@ -122,8 +122,10 @@ function job_setup()
   state.CP = M(false, 'Capacity Points Mode')
   state.Runes = M{['description']='Runes', 'Ignis', 'Gelus', 'Flabra', 'Tellus', 'Sulpor', 'Unda', 'Lux', 'Tenebrae'}
 
-  enable_phalanx_sird = false
-  
+  enable_phalanx_sird = false -- Do not modify
+  has_soul_drain_shield = false -- Do not modify
+
+  check_for_prime_shield()
   set_main_keybinds()
 end
 
@@ -164,6 +166,8 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.HeavyDef = {
+    main="Naegling",
+    sub="Duban",
     ammo="Staunch Tathlum +1",                      --  3/ 3, ___ (___) [___] __, __; Resist Status+11
     head="Chevalier's Armet +2",                    -- 10/10,  93 (138) [135] __, __; 7% Dmg to MP
     body="Sakpata's Breastplate",                   -- 10/10, 139 (194) [136] __, __; Resist Status+15
@@ -189,6 +193,8 @@ function init_gear_sets()
   }
 
   sets.HeavyDef.Engaged = {
+    main="Naegling",
+    sub="Duban",
     ammo="Staunch Tathlum +1",                      --  3/ 3, ___ (___) [___] __, __; Resist Status+11
     head="Chevalier's Armet +2",                    -- 10/10,  93 (138) [135] __, __; 7% Dmg to MP
     body="Sakpata's Breastplate",                   -- 10/10, 139 (194) [136] __, __; Resist Status+15
@@ -220,6 +226,8 @@ function init_gear_sets()
 
   -- Enmity sets, caps at +200
   sets.Enmity = {
+    main="Naegling",
+    sub="Duban",
     ammo="Sapience Orb",                            -- __/__, ___ [___] < 2>
     body=gear.Souveran_C_body,                      -- 10/10,  69 [171] <20>
     hands=gear.Souveran_C_hands,                    -- __/ 5,  48 [239] < 9>
@@ -278,7 +286,7 @@ function init_gear_sets()
   -- Fast cast sets for spells
   sets.precast.FC = {
     main="Sakpata's Sword",                               -- {10}
-    sub="Priwen",                                         -- {__}
+    sub="Duban",                                         -- {__}
     ammo="Sapience Orb",                                  -- { 2} __/__, ___ [___]
     head="Chevalier's Armet +2",                          -- { 8} 10/10,  93 [135]
     body={name="Reverence Surcoat +3", priority=1},       -- {10} 11/11,  68 [254]
@@ -337,6 +345,8 @@ function init_gear_sets()
 
   -- 102% SIRD required to cap; can get 10% from merits
   sets.SIRD = {
+    main="Naegling",
+    sub="Duban",
     ammo="Staunch Tathlum +1",                      --  3/ 3, ___ [___] {11} __
     head=gear.Souveran_C_head,                      -- __/__,  53 [280] {20}  9
     body="Sakpata's Breastplate",                   -- 10/10, 139 [136] {__} __
@@ -361,6 +371,8 @@ function init_gear_sets()
   }
 
   sets.SIRDEnmity = {
+    main="Naegling",
+    sub="Duban",
     ammo="Staunch Tathlum +1",                      --  3/ 3, ___ [___] {11} __
     head=gear.Souveran_C_head,                      -- __/__,  53 [280] {20}  9
     body=gear.Souveran_C_body,                      -- 10/10,  69 [171] {__} 20
@@ -390,7 +402,7 @@ function init_gear_sets()
   sets.midcast.Reprisal = set_combine(sets.SIRD, {})
 
   sets.midcast.Protect = {
-    -- main="Burtgang",
+    main="Naegling",
     sub="Duban",                                    -- Shield def is added to Protect potency
     ammo="Staunch Tathlum +1",                      --  3/ 3, ___ [___] {11} __
     head=gear.Souveran_C_head,                      -- __/__,  53 [280] {20} __
@@ -477,11 +489,11 @@ function init_gear_sets()
   }
 
   sets.midcast['Phalanx'].SIRD = {
-    -- main="Sakpata's Sword",                  -- 4, ___, __ [10/10, ___] 100
-    -- sub="Priwen",                            -- 2, ___, __ [ 6/ 6, ___]  30
+    main="Sakpata's Sword",                     -- 4, ___, __ [10/10, ___] 100
+    sub="Priwen",                               -- 2, ___, __ [ 6/ 6, ___]  30
     ammo="Staunch Tathlum +1",                  -- _, ___, 11 [ 3/ 3, ___] ___
     head=gear.Souveran_C_head,                  -- _, ___, 20 [__/__,  53] 280
-    -- body=gear.Valorous_Phalanx_body,         -- 5, ___, __ [ 2/__,  59]  61
+    body=gear.Valorous_Phalanx_body,            -- 4, ___, __ [ 2/__,  59]  61
     hands="Regal Gauntlets",                    -- _, ___, 10 [__/__,  48] 205
     legs=gear.Founders_Hose,                    -- _, ___, 30 [__/__,  80]  54
     feet=gear.Souveran_C_feet,                  -- 5, ___, __ [ 5/__,  86] 227
@@ -494,6 +506,9 @@ function init_gear_sets()
     waist="Platinum Moogle Belt",               -- _, ___, __ [ 3/ 3,  15] ___; HP+10%
     -- SIRD merits                                          8
     -- HP from belt                                                        ???
+    -- 15 Phalanx, 416 Enh Skill, 102% SIRD [44 PDT/19 MDT, 356 M.Eva] 1172/???? HP
+
+    -- body=gear.Valorous_Phalanx_body,         -- 5, ___, __ [ 2/__,  59]  61
     -- 16 Phalanx, 416 Enh Skill, 102% SIRD [44 PDT/19 MDT, 356 M.Eva] 1172/???? HP
   }
 
@@ -537,6 +552,7 @@ function init_gear_sets()
   }
 
   sets.midcast.Cure = {
+    main="Naegling",
     sub="Sacro Bulwark",                            -- __, __, __,  5(__) [10/10, ___] ___ {__} __
     ammo="Staunch tathlum +1",                      -- __, __, __, __(__) [ 3/ 3, ___] ___ {11} __
     head=gear.Souveran_C_head,                      --  8, 38, __, __(15) [__/__,  53] 280 {20}  9
@@ -1054,7 +1070,7 @@ function customize_idle_set(idleSet)
   
   idleSet = set_combine(idleSet, select_weapons())
   
-  if player.hp < 100 then
+  if has_soul_drain_shield and player.hp < 10 then
     idleSet =  set_combine(idleSet, sets.SafeShield)
   end
   
@@ -1087,7 +1103,7 @@ function customize_melee_set(meleeSet)
 
   meleeSet = set_combine(meleeSet, select_weapons())
   
-  if player.hp < 100 then
+  if has_soul_drain_shield and player.hp < 10 then
     meleeSet =  set_combine(meleeSet, sets.SafeShield)
   end
   
@@ -1095,6 +1111,11 @@ function customize_melee_set(meleeSet)
 end
 
 function customize_defense_set(defenseSet)
+  -- Swap to "engaged" tank set if defense mode is engaged and weapon is drawn
+  if player.status == 'Engaged' then
+    defenseSet = set_combine(defenseSet, sets.HeavyDef.Engaged)
+  end
+
   if state.CP.current == 'on' then
     defenseSet = set_combine(defenseSet, sets.CP)
   end
@@ -1118,8 +1139,13 @@ function customize_defense_set(defenseSet)
   if state[state.DefenseMode.value .. 'DefenseMode'].value ~= 'Phalanx' then
     defenseSet = set_combine(defenseSet, select_weapons())
   end
+
+  -- Use town idle set even if in defense mode
+  if areas.Cities:contains(world.area) then
+    defenseSet =  set_combine(defenseSet, sets.idle.Town)
+  end
   
-  if player.hp < 100 then
+  if has_soul_drain_shield and player.hp < 10 then
     defenseSet =  set_combine(defenseSet, sets.SafeShield)
   end
   
@@ -1260,7 +1286,7 @@ function cycle_sub_weapons(cycle_dir, set_name)
     state.SubWeaponSet:reset()
   end
 
-  add_to_chat(141, 'Weapon Set to '..string.char(31,1)..state.SubWeaponSet.current)
+  add_to_chat(141, 'Sub Weapon Set to '..string.char(31,1)..state.SubWeaponSet.current)
   equip(select_weapons())
 end
 
@@ -1272,7 +1298,24 @@ function select_weapons()
   if sets.SubWeaponSet[state.SubWeaponSet.current] then
     set = set_combine(set, sets.SubWeaponSet[state.SubWeaponSet.current])
   end
+
   return set
+end
+
+function check_for_prime_shield()
+  local my_items = windower.ffxi.get_items()
+  for bag_name, contents in pairs(my_items) do
+    if contents and type(contents) == 'table' then
+      for _, item in pairs(contents) do
+        if item and type(item) == 'table' and (item.id == 26491 or item.id == 26492) then
+          -- Is a soul draining shield
+          has_soul_drain_shield = true
+          break
+        end
+      end
+      if has_soul_drain_shield then break end
+    end
+  end
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -1405,9 +1448,11 @@ function set_main_keybinds()
   send_command('bind @w gs c toggle RearmingLock')
   send_command('bind ^insert gs c weaponset cycle')
   send_command('bind ^delete gs c weaponset cycleback')
+  send_command('bind !delete gs c weaponset reset')
   
   send_command('bind ^home gs c subweaponset cycle')
   send_command('bind ^end gs c subweaponset cycleback')
+  send_command('bind !end gs c subweaponset reset')
 
   send_command('bind !` input /ja "Chivalry" <me>')
   send_command('bind @c gs c toggle CP')
