@@ -1,4 +1,4 @@
--- File Status: WIP. Needs HP prioritization. Clean up functions. Refine weapon/shield handling.
+-- File Status: WIP. Needs HP prioritization.
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs
