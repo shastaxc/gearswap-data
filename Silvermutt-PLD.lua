@@ -615,6 +615,41 @@ function init_gear_sets()
 
   sets.precast.WS['Atonement'] = set_combine(sets.Enmity, {})
 
+  sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
+    ammo="Pemphredo Tathlum",           -- __,  4, __,  4,  8 [__/__, ___] ___
+    head=gear.Nyame_B_head,             -- 25, 28, 11, 30, 40 [ 7/ 7, 123]  91
+    body=gear.Nyame_B_body,             -- 24, 42, 13, 30, 40 [ 9/ 9, 139] 136
+    hands=gear.Nyame_B_hands,           -- 42, 28, 11, 30, 40 [ 7/ 7, 112]  91
+    legs=gear.Nyame_B_legs,             -- __, 44, 12, 30, 40 [ 8/ 8, 150] 114
+    feet=gear.Nyame_B_feet,             -- 26, 25, 11, 30, 40 [ 7/ 7, 150]  68
+    neck="Sibyl Scarf",                 -- __, 10, __, 10, __ [__/__, ___] ___
+    ear1="Friomisi Earring",            -- __, __, __, 10, __ [__/__, ___] ___
+    ear2="Novio Earring",               -- __, __, __,  7, __ [__/__, ___] ___
+    ring1="Metamorph Ring +1",          -- __, 16, __, __, 16 [__/__, ___] -60
+    ring2="Shiva Ring +1",              -- __,  9, __,  3, __ [__/__, ___] ___
+    -- back=gear.PLD_WS2_Cape,          -- 30, __, 10, __, 20 [10/__, ___] ___
+    waist="Skrymir Cord",               -- __, __, __,  5,  5 [__/__, ___] ___
+    -- 147 DEX, 206 INT, 68 WSD, 189 MAB, 249 M.Acc [48 PDT/38 MDT, 674 M.Eva] HP
+  })
+  sets.precast.WS['Aeolian Edge'].Safe = set_combine(sets.precast.WS['Aeolian Edge'], {
+    ammo="Pemphredo Tathlum",           -- __,  4, __,  4,  8 [__/__, ___] ___
+    head=gear.Nyame_B_head,             -- 25, 28, 11, 30, 40 [ 7/ 7, 123]  91
+    body=gear.Nyame_B_body,             -- 24, 42, 13, 30, 40 [ 9/ 9, 139] 136
+    hands=gear.Nyame_B_hands,           -- 42, 28, 11, 30, 40 [ 7/ 7, 112]  91
+    legs=gear.Nyame_B_legs,             -- __, 44, 12, 30, 40 [ 8/ 8, 150] 114
+    feet=gear.Nyame_B_feet,             -- 26, 25, 11, 30, 40 [ 7/ 7, 150]  68
+    neck="Unmoving Collar +1",          -- __, __, __, __, __ [__/__, ___] 200
+    ear1="Friomisi Earring",            -- __, __, __, 10, __ [__/__, ___] ___
+    ear2="Novio Earring",               -- __, __, __,  7, __ [__/__, ___] ___
+    ring1="Gelatinous Ring +1",         -- __, __, __, __, __ [ 7/-1, ___] 135
+    ring2="Shiva Ring +1",              -- __,  9, __,  3, __ [__/__, ___] ___
+    back="Moonlight Cape",              -- __, __, __, __, __ [ 6/ 6, ___] 275
+    waist="Platinum Moogle Belt",       -- __, __, __, __, __ [ 3/ 3,  15] ___
+    -- HP from belt                                                        ???
+    -- 117 DEX, 180 INT, 58 WSD, 174 MAB, 208 M.Acc [54 PDT/46 MDT, 1110 M.Eva] HP
+  })
+  sets.precast.WS['Aeolian Edge'].SafeMaxTP = set_combine(sets.precast.WS['Aeolian Edge'].Safe, {})
+
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Engaged Sets ------------------------------------------
@@ -675,6 +710,7 @@ function init_gear_sets()
   sets.latent_refresh = {
     ammo="Homiliary", --1
     hands="Regal Gauntlets", --1
+    neck="Sibyl Scarf", --1
     ring1="Stikini Ring +1", --1
     -- ring2="Stikini Ring +1",
   }
