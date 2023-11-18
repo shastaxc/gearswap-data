@@ -96,6 +96,10 @@ gear.Odyssean_Phalanx_head = { name="Odyssean Helm", augments={'Mag. Acc.+20','C
 
 gear.Odyssean_STP_legs = { name="Odyssean Cuisses", augments={'Mag. Acc.+24','"Store TP"+8','VIT+8','Attack+13',}}
 
+-- feet=gear.Odyssean_Enmity_feet, Enmity+8
+
+-- feet=gear.Odyssean_Cure_feet, Cure potency+6
+
 -- Valorous
 gear.Valorous_DT_head = {} -- DT-4
 
@@ -298,6 +302,7 @@ gear.PLD_Block_Cape = { name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Ma
 -- gear.PLD_Counter_Cape = {} -- HP+60, Eva+20/Meva+20, HP+20, Enmity+10, Counter+10
 gear.PLD_Enmity_Cape = { name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','HP+20','Enmity+10','Phys. dmg. taken-10%',}}
 gear.PLD_FC_Cape = { name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','HP+20','"Fast Cast"+10','Phys. dmg. taken-10%',}}
+-- back=gear.PLD_WS1_Cape = {} -- STR+30, Att/Acc+20, WSD+10, PDT-10
 
 -- gear.PUP_STR_DA_Cape = { name="Visucius's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Pet: Damage taken -5%',}}
 gear.PUP_STR_Crit_Cape = { name="Visucius's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Crit.hit rate+10','Pet: Damage taken -5%',}}

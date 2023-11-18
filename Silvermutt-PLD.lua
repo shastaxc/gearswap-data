@@ -116,7 +116,7 @@ function job_setup()
   state.CastingMode:options('Normal', 'Safe')
   state.HybridMode:options('LightDef', 'Normal')
   state.IdleMode:options('Normal', 'Refresh')
-  state.AttCapped = M(true, 'Attack Capped')
+  state.AttCapped = M(false, 'Attack Capped')
   state.WeaponSet = M{['description']='Weapon Set', 'None', 'Burtgang', 'Naegling', 'Aeolian'}
   state.SubWeaponSet = M{['description']='Sub Weapon Set', 'None', 'Duban', 'Aegis', 'Aeolian'}
   state.CP = M(false, 'Capacity Points Mode')
@@ -545,223 +545,75 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.precast.WS = {
-    ammo="Knobkierrie",
-    head=gear.Nyame_B_head,
-    body=gear.Nyame_B_body,
-    hands=gear.Nyame_B_hands,
-    legs=gear.Nyame_B_legs,
-    feet=gear.Nyame_B_feet,
-    neck="Futhark Torque +2",
-    ear1="Moonshade Earring",
-    ear2="Sherida Earring",
-    ring1="Ilabrat Ring",
-    ring2="Niqmaddu Ring",
-    back=gear.RUN_WS1_Cape,
-    waist="Sailfi Belt +1",
-    
-    -- back=gear.RUN_WS3_Cape,
+    ammo="Oshasha's Treatise",                    -- __,  5,  5,  3, __ [__/__, ___] ___
+    head=gear.Nyame_B_head,                       -- 26, 65, 50, 11, __ [ 7/ 7, 123]  91
+    body=gear.Nyame_B_body,                       -- 45, 65, 40, 13, __ [ 9/ 9, 139] 136
+    hands=gear.Nyame_B_hands,                     -- 17, 65, 40, 11, __ [ 7/ 7, 112]  91
+    legs=gear.Nyame_B_legs,                       -- 58, 65, 40, 12, __ [ 8/ 8, 150] 114
+    feet=gear.Nyame_B_feet,                       -- 23, 65, 53, 11, __ [ 7/ 7, 150]  68
+    neck="Fotia Gorget",                          -- __, __, 10, __, __ [__/__, ___] ___; FTP+0.1
+    ear1="Moonshade Earring",                     -- __, __,  4, __, __ [__/__, ___] ___; TP Bonus+250
+    ear2="Lugra Earring +1",                      -- 16, __, __, __, __ [__/__, ___] ___
+    ring1="Ephramad's Ring",                      -- 10, 20, 20, __, 10 [__/__, ___] ___
+    ring2="Epaminondas's Ring",                   -- __, __, __,  5, __ [__/__, ___] ___
+    back=gear.PLD_Enmity_Cape,                    -- __, __, __, __, __ [10/__, ___]  80
+    waist="Sailfi Belt +1",                       -- 15, 15, __, __, __ [__/__, ___] ___
+    -- 210 STR, 365 Attack, 262 Accuracy, 66 WSD, 10 PDL [48 PDT/38 MDT, 674 M.Eva] 580 HP
+
+    -- back=gear.PLD_WS1_Cape,                    -- 30, 20, 20, 10, __ [10/__, ___] ___
+    -- 240 STR, 385 Attack, 282 Accuracy, 76 WSD, 10 PDL [48 PDT/38 MDT, 674 M.Eva] 500 HP
   }
   sets.precast.WS.MaxTP = set_combine(sets.precast.WS, {
-    ear1="Ishvara Earring",
+    ear1="Thrud Earring",                         -- 10, __, __,  3, __ [__/__, ___] ___
   })
-  sets.precast.WS.AttCapped = set_combine(sets.precast.WS, {})
-  sets.precast.WS.AttCappedMaxTP = set_combine(sets.precast.WS.MaxTP, {})
+  sets.precast.WS.AttCapped = set_combine(sets.precast.WS, {
+    ammo="Oshasha's Treatise",                    -- __,  5,  5,  3, __ [__/__, ___] ___
+    head="Sakpata's Helm",                        -- 33, 70, 55, __,  5 [ 7/ 7, 123]  91
+    body="Sakpata's Breastplate",                 -- 42, 70, 55, __,  8 [10/10, 139] 136
+    hands="Sakpata's Gauntlets",                  -- 24, 70, 55, __,  6 [ 8/ 8, 112]  91
+    legs="Sakpata's Cuisses",                     -- 53, 70, 55, __,  7 [ 9/ 9, 150] 114
+    feet="Sakpata's Leggings",                    -- 29, 70, 55, __,  4 [ 6/ 6, 150]  68
+    neck="Fotia Gorget",                          -- __, __, 10, __, __ [__/__, ___] ___; FTP+0.1
+    ear1="Moonshade Earring",                     -- __, __,  4, __, __ [__/__, ___] ___; TP Bonus+250
+    ear2="Lugra Earring +1",                      -- 16, __, __, __, __ [__/__, ___] ___
+    ring1="Ephramad's Ring",                      -- 10, 20, 20, __, 10 [__/__, ___] ___
+    ring2="Epaminondas's Ring",                   -- __, __, __,  5, __ [__/__, ___] ___
+    back=gear.PLD_Enmity_Cape,                    -- __, __, __, __, __ [10/__, ___]  80
+    waist="Sailfi Belt +1",                       -- 15, 15, __, __, __ [__/__, ___] ___
+    -- 222 STR, 390 Attack, 314 Accuracy, 8 WSD, 40 PDL [50 PDT/40 MDT, 674 M.Eva] 580 HP
+
+    -- back=gear.PLD_WS1_Cape,                    -- 30, 20, 20, 10, __ [10/__, ___] ___
+    -- 252 STR, 410 Attack, 334 Accuracy, 18 WSD, 40 PDL [50 PDT/40 MDT, 674 M.Eva] 500 HP
+  })
+  sets.precast.WS.AttCappedMaxTP = set_combine(sets.precast.WS.AttCapped, {
+    ear1="Thrud Earring",                         -- 10, __, __,  3, __ [__/__, ___] ___
+  })
   sets.precast.WS.Safe = set_combine(sets.Enmity, {
-    ammo="Knobkierrie",
-    head=gear.Nyame_B_head,
-    body=gear.Nyame_B_body,
-    hands=gear.Nyame_B_hands,
-    legs=gear.Nyame_B_legs,
-    feet=gear.Nyame_B_feet,
-    neck="Futhark Torque +2",
-    ring1="Ephramad's Ring",
-    waist="Platinum Moogle Belt",
-  })
-  sets.precast.WS.SafeMaxTP = set_combine(sets.precast.WS.Safe, {})
+    ammo="Oshasha's Treatise",                    -- __,  5,  5,  3, __ [__/__, ___] ___
+    head=gear.Nyame_B_head,                       -- 26, 65, 50, 11, __ [ 7/ 7, 123]  91
+    body=gear.Nyame_B_body,                       -- 45, 65, 40, 13, __ [ 9/ 9, 139] 136
+    hands=gear.Nyame_B_hands,                     -- 17, 65, 40, 11, __ [ 7/ 7, 112]  91
+    legs=gear.Nyame_B_legs,                       -- 58, 65, 40, 12, __ [ 8/ 8, 150] 114
+    feet=gear.Nyame_B_feet,                       -- 23, 65, 53, 11, __ [ 7/ 7, 150]  68
+    neck={name="Unmoving Collar +1", priority=1}, -- __, __,  5, __, __ [__/__, ___] 200
+    ear1="Moonshade Earring",                     -- __, __,  4, __, __ [__/__, ___] ___; TP Bonus+250
+    ear2="Chevalier's Earring +1",                -- __, __, 12, __, __ [ 4/ 4, ___] ___
+    ring1="Gelatinous Ring +1",                   -- __, __, __, __, __ [ 7/-1, ___] 135
+    ring2="Epaminondas's Ring",                   -- __, __, __,  5, __ [__/__, ___] ___
+    back={name="Moonlight Cape", priority=1},     -- __, __, __, __, __ [ 6/ 6, ___] 275
+    waist="Platinum Moogle Belt",                 -- __, __, __, __, __ [ 3/ 3,  15] ___
+    -- HP from belt                                                                  ???
+    -- 169 STR, 330 Attack, 249 Accuracy, 66 WSD, 0 PDL [58 PDT/50 MDT, 689 M.Eva] 1110 HP
 
-  -- 85% STR mod, 5 hit, 0.718-2.25 FTP, ftp replicating
-  sets.precast.WS['Resolution'] = {
-    ammo="Coiste Bodhar",             -- 10, __, 15, __, __ < 3, __, __> [__/__, ___] ___
-    head=gear.Nyame_B_head,           -- 26, 50, 65, 11, __ < 5, __, __> [ 7/ 7, 123]  91
-    body=gear.Nyame_B_body,           -- 35, 40, 65, 13, __ < 7, __, __> [ 9/ 9, 139] 136
-    hands=gear.Nyame_B_hands,         -- 17, 40, 65, 11, __ < 5, __, __> [ 7/ 7, 112]  91
-    legs=gear.Nyame_B_legs,           -- 58, 40, 65, 12, __ < 6, __, __> [ 8/ 8, 150] 114
-    feet=gear.Nyame_B_feet,           -- 23, 53, 65, 11, __ < 5, __, __> [ 7/ 7, 150]  68
-    neck="Fotia Gorget",              -- __, 10, __, __, __ <__, __, __> [__/__, ___] ___; ftp+
-    ear1="Moonshade Earring",         -- __,  4, __, __, __ <__, __, __> [__/__, ___] ___; tp bonus
-    ear2="Sherida Earring",           --  5, __, __, __, __ < 5, __, __> [__/__, ___] ___
-    ring1="Niqmaddu Ring",            -- 10, __, __, __, __ <__, __,  3> [__/__, ___] ___
-    ring2="Epona's Ring",             -- __, __, __, __, __ < 3,  3, __> [__/__, ___] ___
-    back=gear.RUN_WS1_Cape,           -- 30, 20, 20, __, __ <10, __, __> [10/__, ___] ___
-    waist="Fotia Belt",               -- __, 10, __, __, __ <__, __, __> [__/__, ___] ___; ftp+
-    -- 214 STR, 267 Acc, 360 Att, 58 WSD, 0 PDL <49 DA, 3 TA, 3 QA> [48 PDT/38 MDT, 674 M.Eva] 500 HP
-  }
-  sets.precast.WS['Resolution'].MaxTP = set_combine(sets.precast.WS['Resolution'], {
-    ear1="Brutal Earring",            -- __, __, __, __, __ < 5, __, __> [__/__, ___] ___
+    -- ear2="Chevalier's Earring +2",             -- 15, __, 20, __, __ [ 8/ 8, ___] ___
+    -- HP from belt                                                                  ???
+    -- 184 STR, 330 Attack, 257 Accuracy, 66 WSD, 0 PDL [62 PDT/54 MDT, 689 M.Eva] 1110 HP
   })
-  sets.precast.WS['Resolution'].AttCapped = {
-    ammo="Coiste Bodhar",             -- 10, __, 15, __, __ < 3, __, __> [__/__, ___] ___
-    head=gear.Nyame_B_head,           -- 26, 50, 65, 11, __ < 5, __, __> [ 7/ 7, 123]  91
-    body=gear.Nyame_B_body,           -- 35, 40, 65, 13, __ < 7, __, __> [ 9/ 9, 139] 136
-    hands=gear.Nyame_B_hands,         -- 17, 40, 65, 11, __ < 5, __, __> [ 7/ 7, 112]  91
-    legs=gear.Nyame_B_legs,           -- 58, 40, 65, 12, __ < 6, __, __> [ 8/ 8, 150] 114
-    feet=gear.Nyame_B_feet,           -- 23, 53, 65, 11, __ < 5, __, __> [ 7/ 7, 150]  68
-    neck="Fotia Gorget",              -- __, 10, __, __, __ <__, __, __> [__/__, ___] ___; ftp+
-    ear1="Moonshade Earring",         -- __,  4, __, __, __ <__, __, __> [__/__, ___] ___; tp bonus
-    ear2="Sherida Earring",           --  5, __, __, __, __ < 5, __, __> [__/__, ___] ___
-    ring1="Niqmaddu Ring",            -- 10, __, __, __, __ <__, __,  3> [__/__, ___] ___
-    ring2="Epona's Ring",             -- __, __, __, __, __ < 3,  3, __> [__/__, ___] ___
-    back=gear.RUN_WS1_Cape,           -- 30, 20, 20, __, __ <10, __, __> [10/__, ___] ___
-    waist="Fotia Belt",               -- __, 10, __, __, __ <__, __, __> [__/__, ___] ___; ftp+
-    -- 214 STR, 267 Acc, 360 Att, 58 WSD, 0 PDL <49 DA, 3 TA, 3 QA> [48 PDT/38 MDT, 674 M.Eva] 500 HP
-  }
-  sets.precast.WS['Resolution'].AttCappedMaxTP = set_combine(sets.precast.WS['Resolution'].AttCapped, {
-    ear1="Brutal Earring",            -- __, __, __, __, __ < 5, __, __> [__/__, ___] ___
-  })
-  sets.precast.WS['Resolution'].Safe = {
-    ammo="Coiste Bodhar",                       -- 10, __, 15, __, __ < 3, __, __> [__/__, ___] ___
-    head=gear.Nyame_B_head,                     -- 26, 50, 65, 11, __ < 5, __, __> [ 7/ 7, 123]  91
-    body=gear.Nyame_B_body,                     -- 35, 40, 65, 13, __ < 7, __, __> [ 9/ 9, 139] 136
-    hands={name=gear.Nyame_B_hands,priority=1}, -- 17, 40, 65, 11, __ < 5, __, __> [ 7/ 7, 112]  91
-    legs={name=gear.Nyame_B_legs,priority=1},   -- 58, 40, 65, 12, __ < 6, __, __> [ 8/ 8, 150] 114
-    feet=gear.Nyame_B_feet,                     -- 23, 53, 65, 11, __ < 5, __, __> [ 7/ 7, 150]  68
-    neck="Fotia Gorget",                        -- __, 10, __, __, __ <__, __, __> [__/__, ___] ___; ftp+
-    ear1="Moonshade Earring",                   -- __,  4, __, __, __ <__, __, __> [__/__, ___] ___; tp bonus
-    ear2="Sherida Earring",                     --  5, __, __, __, __ < 5, __, __> [__/__, ___] ___
-    ring1="Niqmaddu Ring",                      -- 10, __, __, __, __ <__, __,  3> [__/__, ___] ___
-    ring2="Moonlight Ring",                     -- __,  8,  8, __, __ <__, __, __> [ 5/ 5, ___] 110
-    back={name="Moonlight Cape",priority=1},    -- __, __, __, __, __ <__, __, __> [ 6/ 6, ___] 275
-    waist="Platinum Moogle Belt",               -- __, __, __, __, __ <__, __, __> [ 3/ 3,  15] ___; HP+10%
-    -- HP from belt                                                                             338
-    -- 184 STR, 245 Acc, 348 Att, 58 WSD, 0 PDL <36 DA, 0 TA, 3 QA> [52 PDT/52 MDT, 689 M.Eva] 885/1223 HP
-  }
-  sets.precast.WS['Resolution'].SafeMaxTP = set_combine(sets.precast.WS['Resolution'].Safe, {
-    ear1="Brutal Earring",                      -- __, __, __, __, __ < 5, __, __> [__/__, ___] ___
-    ear2="Sherida Earring",                     --  5, __, __, __, __ < 5, __, __> [__/__, ___] ___
-    -- 184 STR, 241 Acc, 348 Att, 58 WSD, 0 PDL <41 DA, 0 TA, 3 QA> [52 PDT/52 MDT, 689 M.Eva] 885/1223 HP
+  sets.precast.WS.SafeMaxTP = set_combine(sets.precast.WS.Safe, {
+    ear1="Lugra Earring +1",                      -- 16, __, __, __, __ [__/__, ___] ___
   })
 
-  -- 80% DEX mod, 2 hit
-  sets.precast.WS['Dimidiation'] = {
-    ammo="Knobkierrie",               -- __, __, 23,  6, __ <__, __, __> [__/__, ___] ___
-    head=gear.Nyame_B_head,           -- 25, 50, 65, 11, __ < 5, __, __> [ 7/ 7, 123]  91
-    body=gear.Nyame_B_body,           -- 24, 40, 65, 13, __ < 7, __, __> [ 9/ 9, 139] 136
-    hands=gear.Nyame_B_hands,         -- 42, 40, 65, 11, __ < 5, __, __> [ 7/ 7, 112]  91
-    legs=gear.Lustratio_B_legs,       -- 43, 20, 38, __, __ <__, __, __> [__/__, ___]  28
-    feet=gear.Nyame_B_feet,           -- 26, 53, 65, 11, __ < 5, __, __> [ 7/ 7, 150]  68
-    neck="Caro Necklace",             --  6, __, 10, __, __ <__, __, __> [__/__, ___] ___
-    ear1="Moonshade Earring",         -- __,  4, __, __, __ <__, __, __> [__/__, ___] ___; tp bonus
-    ear2="Odr Earring",               -- 10, 10, __, __, __ <__, __, __> [__/__, ___] ___
-    ring1="Ephramad's Ring",          -- 10, 20, 20, __, 10 <__, __, __> [__/__, ___] ___
-    ring2="Ilabrat Ring",             -- 10, __, 25, __, __ <__, __, __> [__/__, ___]  60
-    back=gear.RUN_WS2_Cape,           -- 30, 20, 20, 10, __ <__, __, __> [10/__, ___] ___
-    waist="Grunfeld Rope",            --  5, 10, 20, __, __ < 2, __, __> [__/__, ___] ___
-    -- 231 DEX, 267 Acc, 416 Att, 62 WSD, 10 PDL <24 DA, 0 TA, 0 QA> [40 PDT/30 MDT, 524 M.Eva] 474 HP
-  }
-  sets.precast.WS['Dimidiation'].MaxTP = set_combine(sets.precast.WS['Dimidiation'], {
-    ear1="Sherida Earring",           --  5, __, __, __, __ < 5, __, __> [__/__, ___] ___
-    -- 236 DEX, 263 Acc, 416 Att, 62 WSD, 10 PDL <29 DA, 0 TA, 0 QA> [40 PDT/30 MDT, 524 M.Eva] 474 HP
-  })
-  sets.precast.WS['Dimidiation'].AttCapped = {
-    ammo="Knobkierrie",               -- __, __, 23,  6, __ <__, __, __> [__/__, ___] ___
-    head=gear.Nyame_B_head,           -- 25, 50, 65, 11, __ < 5, __, __> [ 7/ 7, 123]  91
-    body=gear.Nyame_B_body,           -- 24, 40, 65, 13, __ < 7, __, __> [ 9/ 9, 139] 136
-    hands=gear.Nyame_B_hands,         -- 42, 40, 65, 11, __ < 5, __, __> [ 7/ 7, 112]  91
-    legs=gear.Lustratio_B_legs,       -- 43, 20, 38, __, __ <__, __, __> [__/__, ___]  28
-    feet=gear.Nyame_B_feet,           -- 26, 53, 65, 11, __ < 5, __, __> [ 7/ 7, 150]  68
-    neck="Caro Necklace",             --  6, __, 10, __, __ <__, __, __> [__/__, ___] ___
-    ear1="Moonshade Earring",         -- __,  4, __, __, __ <__, __, __> [__/__, ___] ___; tp bonus
-    ear2="Odr Earring",               -- 10, 10, __, __, __ <__, __, __> [__/__, ___] ___
-    ring1="Epaminondas's Ring",       -- __, __, __,  5, __ <__, __, __> [__/__, ___] ___
-    ring2="Ephramad's Ring",          -- 10, 20, 20, __, 10 <__, __, __> [__/__, ___] ___
-    back=gear.RUN_WS2_Cape,           -- 30, 20, 20, 10, __ <__, __, __> [10/__, ___] ___
-    waist="Kentarch Belt +1",         -- 10, 14, __, __, __ < 3, __, __> [__/__, ___] ___
-    -- 226 DEX, 271 Acc, 371 Att, 67 WSD, 10 PDL <25 DA, 0 TA, 0 QA> [40 PDT/30 MDT, 524 M.Eva] 414 HP
-  }
-  sets.precast.WS['Dimidiation'].AttCappedMaxTP = set_combine(sets.precast.WS['Dimidiation'].AttCapped, {
-    ear1="Sherida Earring",           --  5, __, __, __, __ < 5, __, __> [__/__, ___] ___
-    -- 231 DEX, 267 Acc, 371 Att, 67 WSD, 10 PDL <30 DA, 0 TA, 0 QA> [40 PDT/30 MDT, 524 M.Eva] 414 HP
-  })
-  sets.precast.WS['Dimidiation'].Safe = {
-    ammo="Knobkierrie",                         -- __, __, 23,  6, __ <__, __, __> [__/__, ___] ___
-    head=gear.Nyame_B_head,                     -- 25, 50, 65, 11, __ < 5, __, __> [ 7/ 7, 123]  91
-    body=gear.Nyame_B_body,                     -- 24, 40, 65, 13, __ < 7, __, __> [ 9/ 9, 139] 136
-    hands={name=gear.Nyame_B_hands,priority=1}, -- 42, 40, 65, 11, __ < 5, __, __> [ 7/ 7, 112]  91
-    legs=gear.Lustratio_B_legs,                 -- 43, 20, 38, __, __ <__, __, __> [__/__, ___]  28
-    feet=gear.Nyame_B_feet,                     -- 26, 53, 65, 11, __ < 5, __, __> [ 7/ 7, 150]  68
-    neck={name="Unmoving Collar +1",priority=1},-- __,  5, __, __, __ <__, __, __> [__/__, ___] 200
-    ear1="Odnowa Earring +1",                   -- __, 10, __, __, __ <__, __, __> [ 3/ 5, ___] 110
-    ear2="Moonshade Earring",                   -- __,  4, __, __, __ <__, __, __> [__/__, ___] ___; tp bonus
-    ring1="Gelatinous Ring +1",                 -- __, __, __, __, __ <__, __, __> [ 7/-1, ___] 135
-    ring2="Ilabrat Ring",                       -- 10, __, 25, __, __ <__, __, __> [__/__, ___]  60
-    back=gear.RUN_WS2_Cape,                     -- 30, 20, 20, 10, __ <__, __, __> [10/__, ___] ___
-    waist="Platinum Moogle Belt",               -- __, __, __, __, __ <__, __, __> [ 3/ 3,  15] ___; HP+10%
-    -- HP from belt                                                                             341
-    -- 200 DEX, 242 Acc, 366 Att, 62 WSD, 0 PDL <22 DA, 0 TA, 0 QA> [53 PDT/37 MDT, 539 M.Eva] 919/1260 HP
-  }
-  sets.precast.WS['Dimidiation'].SafeMaxTP = set_combine(sets.precast.WS['Dimidiation'].Safe, {
-    ear2="Sherida Earring",                     --  5, __, __, __, __ < 5, __, __> [__/__, ___] ___
-    -- 205 DEX, 238 Acc, 366 Att, 62 WSD, 0 PDL <27 DA, 0 TA, 0 QA> [53 PDT/37 MDT, 539 M.Eva] 919/1260 HP
-  })
-
-  -- 50% STR/50% MND.
-  sets.precast.WS['Savage Blade'] = {
-    ammo="Knobkierrie",                         -- __, __, __, 23,  6, __ [__/__] ___
-    head=gear.Nyame_B_head,                     -- 26, 26, 50, 65, 11, __ [ 7/ 7]  91
-    body=gear.Nyame_B_body,                     -- 35, 37, 40, 65, 13, __ [ 9/ 9] 136
-    hands=gear.Nyame_B_hands,                   -- 17, 40, 40, 65, 11, __ [ 7/ 7]  91
-    legs=gear.Nyame_B_legs,                     -- 58, 32, 40, 65, 12, __ [ 8/ 8] 114
-    feet=gear.Nyame_B_feet,                     -- 23, 26, 53, 65, 11, __ [ 7/ 7]  68
-    neck="Futhark Torque +2",                   -- 15, 15, __, __, __, __ [ 7/ 7]  60
-    ear1="Moonshade Earring",                   -- __, __,  4, __, __, __ [__/__] ___; tp bonus+
-    ear2="Ishvara Earring",                     -- __, __, __, __,  2, __ [__/__] ___
-    ring1="Sroda Ring",                         -- 15, __, __, __, __,  3 [__/__] ___
-    ring2="Epaminondas's Ring",                 -- __, __, __, __,  5, __ [__/__] ___
-    back=gear.RUN_WS1_Cape,                     -- 30, __, 20, 20, __, __ [10/__] ___
-    waist="Sailfi Belt +1",                     -- 15, __, __, 15, __, __ [__/__] ___
-    -- 234 STR, 176 MND, 247 Accuracy, 383 Attack, 66 WSD, 0 PDL [55PDT/45MDT] 560 HP
-    
-    -- ear2="Erilaz Earring +2",                -- 15, 15, __, 20, __, __ [ 8/ 8] ___
-    -- back=gear.RUN_WS3_Cape,                  -- 30, __, 20, 20, 10, __ [10/__] ___
-    -- 249 STR, 191 MND, 247 Accuracy, 403 Attack, 74 WSD, 0 PDL [63PDT/53MDT] 560 HP
-  }
-  sets.precast.WS['Savage Blade'].MaxTP = set_combine(sets.precast.WS['Savage Blade'].MaxTP, {
-    ear1="Sherida Earring",                     --  5, __, __, __, __, __ [__/__] ___
-    -- 239 STR, 176 MND, 243 Accuracy, 383 Attack, 76 WSD, 0 PDL [55PDT/45MDT] 560 HP
-    
-    -- ear1="Ishvara Earring",                  -- __, __, __, __,  2, __ [__/__] ___
-    -- ear2="Erilaz Earring +2",                -- 15, 15, __, 20, __, __ [ 8/ 8] ___
-    -- 249 STR, 191 MND, 247 Accuracy, 403 Attack, 76 WSD, 0 PDL [63PDT/53MDT] 560 HP
-  })
-  sets.precast.WS['Savage Blade'].AttCappedMaxTP = set_combine(sets.precast.WS['Savage Blade'].MaxTP, {})
-  sets.precast.WS['Savage Blade'].Safe = {
-    ammo="Knobkierrie",                         -- __, __, __, 23,  6, __ [__/__] ___
-    head=gear.Nyame_B_head,                     -- 26, 26, 50, 65, 11, __ [ 7/ 7]  91
-    body=gear.Nyame_B_body,                     -- 35, 37, 40, 65, 13, __ [ 9/ 9] 136
-    hands=gear.Nyame_B_hands,                   -- 17, 40, 40, 65, 11, __ [ 7/ 7]  91
-    legs=gear.Nyame_B_legs,                     -- 58, 32, 40, 65, 12, __ [ 8/ 8] 114
-    feet=gear.Nyame_B_feet,                     -- 23, 26, 53, 65, 11, __ [ 7/ 7]  68
-    neck="Futhark Torque +2",                   -- 15, 15, __, __, __, __ [ 7/ 7]  60
-    ear1="Odnowa Earring +1",                   --  3, __, __, __, __, __ [ 3/ 5] 110
-    ear2="Moonshade Earring",                   -- __, __,  4, __, __, __ [__/__] ___; tp bonus+
-    ring1="Gelatinous Ring +1",                 -- __, __, __, __, __, __ [ 7/-1] 135
-    ring2="Moonlight Ring",                     -- __, __,  8,  8, __, __ [ 5/ 5] 110
-    back=gear.RUN_WS1_Cape,                     -- 30, __, 20, 20, __, __ [10/__] ___
-    waist="Platinum Moogle Belt",               -- __, __, __, __, __, __ [ 3/ 3] ___; HP+10%
-    -- HP from belt                                                               341
-    -- 202 STR, 176 MND, 255 Accuracy, 376 Attack, 64 WSD, 0 PDL [73PDT/57MDT] 915/1256 HP
-    
-    -- back=gear.RUN_WS3_Cape,                  -- 30, __, 20, 20, 10, __ [10/__] ___
-    -- 207 STR, 176 MND, 255 Accuracy, 376 Attack, 74 WSD, 0 PDL [73PDT/57MDT] 915/1256 HP
-    
-  }
-  sets.precast.WS['Savage Blade'].SafeMaxTP = set_combine(sets.precast.WS['Savage Blade'].Safe, {
-    ear2="Ishvara Earring",                     -- __, __, __, __,  2, __ [__/__] ___
-
-    -- ear2="Erilaz Earring +2",                -- 15, 15, 20, __, __, __ [ 8/ 8] ___
-  })
-
-  sets.precast.WS['Freezebite'] = set_combine(sets.HeavyDef, sets.TreasureHunter)
+  sets.precast.WS['Atonement'] = set_combine(sets.Enmity, {})
 
 
   ------------------------------------------------------------------------------------------------
