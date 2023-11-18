@@ -2,7 +2,7 @@
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs
--- Required addons: N/A
+-- Required addons: Cancel
 -- Recommended addons: WSBinder, Reorganizer
 -- Misc Recommendations: Disable RollTracker
 
@@ -1436,6 +1436,7 @@ function job_aftercast(spell, action, spellMap, eventArgs)
   silibs.aftercast_hook(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
 
+  classes.JAMode = nil
   state.CastingMode:reset()
 
   local chat_mode = '/p'
