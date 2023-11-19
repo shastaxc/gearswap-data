@@ -143,7 +143,7 @@ gear.Nibiru_Scythe_C = {}
 gear.Nibiru_Scythe_D = {}
 
 gear.Nibiru_Shield_A = {}
-gear.Nibiru_Shield_B = {}
+gear.Nibiru_Shield_B = { name="Nibiru Shield", augments={'HP+80','MP+80','"Fast Cast"+7',}}
 gear.Nibiru_Shield_C = {}
 gear.Nibiru_Shield_D = {}
 

@@ -287,7 +287,7 @@ function init_gear_sets()
   -- Fast cast sets for spells
   sets.precast.FC = {
     main="Sakpata's Sword",                               -- {10}
-    sub="Duban",                                         -- {__}
+    sub=gear.Nibiru_Shield_B,                             -- { 7}
     ammo="Sapience Orb",                                  -- { 2} __/__, ___ [___]
     head="Chevalier's Armet +2",                          -- { 8} 10/10,  93 [135]
     body={name="Reverence Surcoat +3", priority=1},       -- {10} 11/11,  68 [254]
@@ -302,12 +302,11 @@ function init_gear_sets()
     back=gear.PLD_FC_Cape,                                -- {10} 10/__,  20 [ 80]
     waist="Platinum Moogle Belt",                         -- {__}  3/ 3,  15 [___]; HP+10%
     -- HP from belt                                                           ???
-    -- 66% Fast Cast, 50 PDT/32 MDT, 534 M.Eva [985/???? HP]
+    -- 73% Fast Cast, 50 PDT/32 MDT, 534 M.Eva [985/???? HP]
     
-    -- sub=gear.Nibiru_Shield_B,                          -- { 7}  6/ 6, ___ [ 80]
     -- head="Chevalier's Armet +3",                       -- { 9} 11/11, 103 [145]
     -- feet="Chevalier's Sabatons +3",                    -- {13} __/__, 136 [ 52]
-    -- 77% Fast Cast, 57 PDT/39 MDT, 554 M.Eva [1085/???? HP]
+    -- 77% Fast Cast, 51 PDT/33 MDT, 554 M.Eva [1005/???? HP]
   }
 
 
