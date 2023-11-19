@@ -232,6 +232,7 @@ function init_gear_sets()
     head="Loess Barbuta +1",                        -- 20/20, ___ [105] <24>
     body=gear.Souveran_C_body,                      -- 10/10,  69 [171] <20>
     hands=gear.Souveran_C_hands,                    -- __/ 5,  48 [239] < 9>
+    legs="Caballarius Breeches +1",                 --  5/__,  64 [ 52] < 7>
     feet="Chevalier's Sabatons +2",                 -- __/__, 126 [ 42] <13>
     neck={name="Unmoving Collar +1",priority=1},    -- __/__, ___ [200] <10>
     ear2="Cryptic Earring",                         -- __/__, ___ [ 40] < 4>
@@ -240,7 +241,7 @@ function init_gear_sets()
     back=gear.PLD_Enmity_Cape,                      -- 10/__,  20 [ 80] <10>
     waist="Platinum Moogle Belt",                   --  3/ 3,  15 [___] <__>; HP+10%
     -- HP from belts                                               ???
-    -- 50 PDT / 37 MDT, 278 M.Eva [1082/??? HP] <97 Enmity>
+    -- 55 PDT / 37 MDT, 342 M.Eva [1134/??? HP] <104 Enmity>
     
     -- main="Burtgang",                             -- 18 Enmity
     -- sub="Srivatsa",                              -- 15 Enmity
@@ -259,18 +260,22 @@ function init_gear_sets()
 
   -- Scales off MND
   sets.precast.JA['Chivalry'] = set_combine(sets.Enmity, {
+    hands="Caballarius Gauntlets +1",
     -- hands="Caballarius Gauntlets +3",
   })
 
   sets.precast.JA['Fealty'] = set_combine(sets.Enmity, {
+    body="Caballarius Surcoat +1",
     -- body="Caballarius Surcoat +3",
   })
 
   sets.precast.JA['Rampart'] = set_combine(sets.Enmity, {
+    head="Caballarius Coronet +1",
     -- head="Caballarius Coronet +3",
   })
 
   sets.precast.JA['Shield Bash'] = set_combine(sets.Enmity, {
+    hands="Caballarius Gauntlets +1",
     -- hands="Caballarius Gauntlets +3",
   })
 
@@ -377,8 +382,8 @@ function init_gear_sets()
     head=gear.Souveran_C_head,                      -- __/__,  53 [280] {20}  9
     body=gear.Souveran_C_body,                      -- 10/10,  69 [171] {__} 20
     hands={name="Regal Gauntlets",priority=1},      -- __/__,  48 [205] {10} __
-    -- legs="Caballarius Breeches +3",              --  7/__,  84 [ 72] {10}  9
-    -- feet=gear.Odyssean_Enmity_feet,              -- __/__,  86 [ 20] {20}  8
+    legs=gear.Carmine_A_legs,                       -- __/__,  80 [130] {20} __
+    feet=gear.Odyssean_Enmity_feet,                 -- __/__,  86 [ 20] {20}  8
     neck="Moonlight Necklace",                      -- __/__,  15 [___] {15} 15
     ear1="Magnetic Earring",                        -- __/__, ___ [___] { 8} __
     ear2="Chevalier's Earring +1",                  --  4/ 4, ___ [___] {__} __
@@ -388,10 +393,11 @@ function init_gear_sets()
     waist="Platinum Moogle Belt",                   --  3/ 3,  15 [___] {__} __; HP+10%
     -- SIRD merits                                                      { 8}
     -- HP from belt                                                ???
-    -- 49 PDT/24 MDT, 390 M.Eva [1073 HP] {102 SIRD} 71 Enmity
+    -- 42 PDT/24 MDT, 386 M.Eva [1131 HP] {112 SIRD} 62 Enmity
 
     -- main="Burtgang",
     -- sub="Srivatsa",
+    -- legs="Caballarius Breeches +3",              --  7/__,  84 [ 72] {10}  9
     -- ear2="Chevalier's Earring +2",               --  8/ 8, ___ [___] {__} __
     -- 53 PDT/28 MDT, 390 M.Eva [1073 HP] {102 SIRD} 71 Enmity
   }
@@ -423,21 +429,7 @@ function init_gear_sets()
     
     -- main="Burtgang",
     -- sub="Srivatsa",                              -- Shield def is added to Protect potency
-    -- ammo="Staunch Tathlum +1",                   --  3/ 3, ___ [___] {11} __
-    -- head=gear.Souveran_C_head,                   -- __/__,  53 [280] {20} __
-    -- body="Shabti Cuirass +1",                    -- __/__,  42 [115] {__} 10
-    -- hands="Regal Gauntlets",                     -- __/__,  48 [205] {10} 20
-    -- legs=gear.Founders_Hose,                     -- __/__,  80 [ 54] {30} __
-    -- feet=gear.Souveran_C_feet,                   --  5/__,  86 [227] {__} __
-    -- neck="Moonlight Necklace",                   -- __/__,  15 [___] {15} __
-    -- ear1="Magnetic Earring",                     -- __/__, ___ [___] { 8} __
     -- ear2="Chevalier's Earring +2",               --  8/ 8, ___ [___] {__} __
-    -- ring1="Gelatinous Ring +1",                  --  7/-1, ___ [135] {__} __; Enhances Protect/Shell
-    -- ring2="Defending Ring",                      -- 10/10, ___ [___] {__} __
-    -- back=gear.PLD_Enmity_Cape,                   -- 10/__,  20 [ 80] {__} __
-    -- waist="Platinum Moogle Belt",                --  3/ 3,  15 [___] {__} __; HP+10%
-    -- SIRD merits                                                      { 8}
-    -- HP from belt                                                ???
     -- 46 PDT / 23 MDT, 359 M.Eva [1096/??? HP] {102 SIRD} 30 Enh Duration
   }
   sets.midcast.Shell = set_combine(sets.midcast.Protect, {})
@@ -559,9 +551,9 @@ function init_gear_sets()
     body=gear.Souveran_C_body,                      -- 16, 32, __, 10(15) [10/10,  69] 171 {__} 20
     hands="Regal Gauntlets",                        -- 40, 40, __, __(__) [__/__,  48] 205 {10} __
     legs="Founder's Hose",                          -- 25, 28, __, __(__) [__/__,  80]  54 {30} __
-    -- feet=gear.Odyssean_Cure_feet,                -- 10, 19, __, 13(__) [__/__,  86]  20 {20} __
+    feet=gear.Odyssean_Cure_feet,                   -- 10, 19, __, 13(__) [__/__,  86]  20 {20} __
     neck={name="Unmoving Collar +1", priority=1},   -- __,  9, __, __(__) [__/__, ___] 200 {__} 10
-    -- ear1="Nourishing Earring +1",                --  4, __, __,  7(__) [__/__, ___] ___ { 5} __
+    ear1="Nourishing Earring +1",                   --  4, __, __,  7(__) [__/__, ___] ___ { 5} __
     ear2="Chevalier's Earring +1",                  -- __, __, __, 11(__) [ 4/ 4, ___] ___ {__} __
     ring1={name="Gelatinous Ring +1", priority=1},  -- __, 15, __, __(__) [ 7/-1, ___] 135 {__} __
     ring2="Defending Ring",                         -- __, __, __, __(__) [10/10, ___] ___ {__} __
@@ -714,8 +706,11 @@ function init_gear_sets()
     ear2="Dedition Earring",          -- __,  8,-10, __ <__, __, __> [__/__, ___] ___
     ring1="Chirich Ring +1",          -- __,  6, 10, __ <__, __, __> [__/__, ___] ___
     ring2="Chirich Ring +1",          -- __,  6, 10, __ <__, __, __> [__/__, ___] ___
-    -- back=gear.PLD_TP_Cape,         -- 20, 10, 30, __ <__, __, __> [10/__, ___] ___
+    back=gear.PLD_Enmity_Cape,        -- __, __, __, __ <__, __, __> [10/__, ___]  80
     waist="Kentarch Belt +1",         -- 10,  5, 14, __ < 3, __, __> [__/__, ___] ___
+    -- 120 DEX, 70 STP, 194 Acc, 22 Haste <31 DA, 0 TA, 0 QA> [38 PDT/24 MDT, 540 M.Eva] 547 HP
+
+    -- back=gear.PLD_TP_Cape,         -- 20, 10, 30, __ <__, __, __> [10/__, ___] ___
     -- 140 DEX, 80 STP, 224 Acc, 22 Haste <31 DA, 0 TA, 0 QA> [38 PDT/24 MDT, 540 M.Eva] 467 HP
   }
   sets.engaged.LowAcc = set_combine(sets.engaged, {
