@@ -229,20 +229,21 @@ function init_gear_sets()
     main="Naegling",
     sub="Duban",
     ammo="Sapience Orb",                            -- __/__, ___ [___] < 2>
+    head="Loess Barbuta +1",                        -- 20/20, ___ [105] <24>
     body=gear.Souveran_C_body,                      -- 10/10,  69 [171] <20>
     hands=gear.Souveran_C_hands,                    -- __/ 5,  48 [239] < 9>
     feet="Chevalier's Sabatons +2",                 -- __/__, 126 [ 42] <13>
     neck={name="Unmoving Collar +1",priority=1},    -- __/__, ___ [200] <10>
     ear2="Cryptic Earring",                         -- __/__, ___ [ 40] < 4>
     ring1={name="Gelatinous Ring +1",priority=1},   --  7/-1, ___ [135] <__>
+    ring2="Eihwaz Ring",                            -- __/__, ___ [ 70] < 5>
     back=gear.PLD_Enmity_Cape,                      -- 10/__,  20 [ 80] <10>
     waist="Platinum Moogle Belt",                   --  3/ 3,  15 [___] <__>; HP+10%
     -- HP from belts                                               ???
-    -- 30 PDT / 17 MDT, 278 M.Eva [907/??? HP] <68 Enmity>
+    -- 50 PDT / 37 MDT, 278 M.Eva [1082/??? HP] <97 Enmity>
     
     -- main="Burtgang",                             -- 18 Enmity
     -- sub="Srivatsa",                              -- 15 Enmity
-    -- head="Loess Barbuta +1",                     -- 20/20, ___ [105] <24>
     -- legs="Caballarius Breeches +3",              --  7/__,  84 [ 72] < 9>
     -- feet="Chevalier's Sabatons +3",              -- __/__, 136 [ 52] <15>
     -- ear1="Trux Earring",                         -- __/__, ___ [___] < 5>
