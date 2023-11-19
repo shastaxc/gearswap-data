@@ -875,7 +875,7 @@ function init_gear_sets()
 
   sets.SubWeaponSet = {}
   sets.SubWeaponSet['Duban'] = {
-    -- sub="Duban",
+    sub="Duban",
   }
   sets.SubWeaponSet['Aegis'] = {
     -- sub="Aegis",
