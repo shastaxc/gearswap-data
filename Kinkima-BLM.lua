@@ -247,14 +247,14 @@ function init_gear_sets()
     neck="Orunmila's Torque",         --  30, ___ [__/__, ___]
     ear1="Etiolation Earring",        --  50, ___ [__/ 3, ___]
     ear2="Moonshade Earring",         -- ___, 250 [__/__, ___]
-    ring1="Persis Ring",              --  80, ___ [__/ 1, ___]
+    -- ring1="Persis Ring",           --  80, ___ [__/ 1, ___]
     ring2="Mephitas's Ring +1",       -- 110, ___ [__/__, ___]
     back="Aurist's Cape +1",          --  45, ___ [__/__, ___]
     waist="Acuity Belt +1",           --  35, ___ [__/__, ___]
     -- 856 Max MP, 250 TP Bonus [24 PDT/28 MDT, 575 M.Eva]
   }
   sets.precast.WS['Myrkr'].MaxTP = set_combine(sets.precast.WS['Myrkr'], {
-    ear2="Evans Earring",             --  50, ___ [__/__, ___]
+    -- ear2="Evans Earring",          --  50, ___ [__/__, ___]
   })
   
   -- Earth elemental. 40% STR/40% INT. dStat = INT. Damage varies with TP.
