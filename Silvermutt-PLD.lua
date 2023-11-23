@@ -166,12 +166,12 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.HeavyDef = {
-    main="Naegling",
+    main="Burtgang",
     sub="Duban",
     ammo="Staunch Tathlum +1",                      --  3/ 3, ___ (___) [___] __, __; Resist Status+11
     head="Chevalier's Armet +2",                    -- 10/10,  93 (138) [135] __, __; 7% Dmg to MP
     body="Sakpata's Breastplate",                   -- 10/10, 139 (194) [136] __, __; Resist Status+15
-    hands="Chevalier's Gauntlets +2",               -- 10/10,  88 (126) [ 54] __, __; Shield Def. Bonus+4
+    hands="Chevalier's Gauntlets +3",               -- 11/11,  98 (136) [ 64] __, __; Shield Def. Bonus+5
     legs="Chevalier's Cuisses +2",                  -- 12/12, 126 (150) [117] __, __; Retain enmity
     feet="Sakpata's Leggings",                      --  6/ 6, 150 (125) [ 68]  5,  5
     neck="Unmoving Collar +1",                      -- __/__, ___ ( 41) [200] __, __
@@ -182,18 +182,15 @@ function init_gear_sets()
     back=gear.PLD_Block_Cape,                       -- __/__,  20 ( 20) [ 80]  8, __; 5% Dmg to MP
     waist={name="Platinum Moogle Belt",priority=1}, --  3/ 3,  15 (___) [___] __, __; HP+10%
     -- HP from belt                                                ???
-    -- 66 PDT / 61 MDT, 631 MEVA (794 Defense) [1085/???? HP] 13 Block, 5 Counter
+    -- 67 PDT / 62 MDT, 641 MEVA (804 Defense) [1095/???? HP] 13 Block, 5 Counter
     
-    -- main="Burtgang",
-    -- sub="Duban",
     -- head="Chevalier's Armet +3",                 -- 11/11, 103 (148) [145] __, __; 8% Dmg to MP
-    -- hands="Chevalier's Gauntlets +3",            -- 11/11,  98 (136) [ 64] __, __; Shield Def. Bonus+5
     -- legs="Chevalier's Cuisses +3",               -- 13/13, 136 (160) [127] __, __; Retain enmity
     -- 69 PDT / 64 MDT, 661 MEVA (824 Defense) [1115/???? HP] 13 Block, 5 Counter
   }
 
   sets.HeavyDef.Engaged = {
-    main="Naegling",
+    main="Burtgang",
     sub="Duban",
     ammo="Staunch Tathlum +1",                      --  3/ 3, ___ (___) [___] __, __; Resist Status+11
     head="Chevalier's Armet +2",                    -- 10/10,  93 (138) [135] __, __; 7% Dmg to MP
@@ -211,8 +208,6 @@ function init_gear_sets()
     -- HP from belt                                                ???
     -- 56 PDT / 53 MDT, 591 MEVA (749 Defense) [1095/???? HP] 13 Block, 18 Counter
     
-    -- main="Burtgang",
-    -- sub="Duban",
     -- head="Chevalier's Armet +3",                 -- 11/11, 103 (148) [145] __, __; 8% Dmg to MP
     -- legs="Chevalier's Cuisses +3",               -- 13/13, 136 (160) [127] __, __; Retain enmity
     -- back=gear.PLD_Counter_Cape,                  -- __/__,  20 ( 20) [ 80]  3, 10; 5% Dmg to MP
@@ -226,7 +221,7 @@ function init_gear_sets()
 
   -- Enmity sets, caps at +200
   sets.Enmity = {
-    main="Naegling",
+    main="Burtgang",                                -- 18 Enmity
     sub="Duban",
     ammo="Sapience Orb",                            -- __/__, ___ [___] < 2>
     head="Loess Barbuta +1",                        -- 20/20, ___ [105] <24>
@@ -243,7 +238,6 @@ function init_gear_sets()
     -- HP from belts                                               ???
     -- 55 PDT / 37 MDT, 342 M.Eva [1134/??? HP] <104 Enmity>
     
-    -- main="Burtgang",                             -- 18 Enmity
     -- sub="Srivatsa",                              -- 15 Enmity
     -- legs="Caballarius Breeches +3",              --  7/__,  84 [ 72] < 9>
     -- feet="Chevalier's Sabatons +3",              -- __/__, 136 [ 52] <15>
@@ -350,7 +344,7 @@ function init_gear_sets()
 
   -- 102% SIRD required to cap; can get 10% from merits
   sets.SIRD = {
-    main="Naegling",
+    main="Burtgang",
     sub="Duban",
     ammo="Staunch Tathlum +1",                      --  3/ 3, ___ [___] {11} __
     head=gear.Souveran_C_head,                      -- __/__,  53 [280] {20}  9
@@ -369,14 +363,13 @@ function init_gear_sets()
     -- HP from belt                                                ???
     -- 49 PDT / 41 MDT, 500 M.Eva [1153/??? HP] {102 SIRD} 24 Enmity
     
-    -- main="Burtgang",
     -- sub="Srivatsa",
     -- ear2="Chevalier's Earring +2",               --  8/ 8, ___ [___] {__} __
     -- 53 PDT / 45 MDT, 500 M.Eva [1153/??? HP] {102 SIRD} 24 Enmity
   }
 
   sets.SIRDEnmity = {
-    main="Naegling",
+    main="Burtgang",                                --                       18
     sub="Duban",
     ammo="Staunch Tathlum +1",                      --  3/ 3, ___ [___] {11} __
     head=gear.Souveran_C_head,                      -- __/__,  53 [280] {20}  9
@@ -393,13 +386,12 @@ function init_gear_sets()
     waist="Platinum Moogle Belt",                   --  3/ 3,  15 [___] {__} __; HP+10%
     -- SIRD merits                                                      { 8}
     -- HP from belt                                                ???
-    -- 42 PDT/24 MDT, 386 M.Eva [1131 HP] {112 SIRD} 62 Enmity
+    -- 42 PDT/24 MDT, 386 M.Eva [1131 HP] {112 SIRD} 80 Enmity
 
-    -- main="Burtgang",
-    -- sub="Srivatsa",
+    -- sub="Srivatsa",                              --                       15
     -- legs="Caballarius Breeches +3",              --  7/__,  84 [ 72] {10}  9
     -- ear2="Chevalier's Earring +2",               --  8/ 8, ___ [___] {__} __
-    -- 53 PDT/28 MDT, 390 M.Eva [1073 HP] {102 SIRD} 71 Enmity
+    -- 53 PDT/28 MDT, 390 M.Eva [1073 HP] {102 SIRD} 104 Enmity
   }
 
   sets.midcast['Enhancing Magic'] = set_combine(sets.SIRD, {})
@@ -408,7 +400,7 @@ function init_gear_sets()
   sets.midcast.Reprisal = set_combine(sets.SIRD, {})
 
   sets.midcast.Protect = {
-    main="Naegling",
+    main="Burtgang",
     sub="Duban",                                    -- Shield def is added to Protect potency
     ammo="Staunch Tathlum +1",                      --  3/ 3, ___ [___] {11} __
     head=gear.Souveran_C_head,                      -- __/__,  53 [280] {20} __
@@ -427,7 +419,6 @@ function init_gear_sets()
     -- HP from belt                                                ???
     -- 42 PDT / 19 MDT, 359 M.Eva [1096/??? HP] {102 SIRD} 30 Enh Duration
     
-    -- main="Burtgang",
     -- sub="Srivatsa",                              -- Shield def is added to Protect potency
     -- ear2="Chevalier's Earring +2",               --  8/ 8, ___ [___] {__} __
     -- 46 PDT / 23 MDT, 359 M.Eva [1096/??? HP] {102 SIRD} 30 Enh Duration
@@ -544,7 +535,7 @@ function init_gear_sets()
   }
 
   sets.midcast.Cure = {
-    main="Naegling",
+    main="Burtgang",
     sub="Sacro Bulwark",                            -- __, __, __,  5(__) [10/10, ___] ___ {__} __
     ammo="Staunch tathlum +1",                      -- __, __, __, __(__) [ 3/ 3, ___] ___ {11} __
     head=gear.Souveran_C_head,                      --  8, 38, __, __(15) [__/__,  53] 280 {20}  9
@@ -563,7 +554,6 @@ function init_gear_sets()
     -- SIRD merits                                                                         { 8}
     -- 133 MND, 181 VIT, 0 Heal skill, 46 Cure Pot (30 self pot) [57 PDT/39 MDT, 371 M.Eva] 1145 HP {104 SIRD} 49 Enmity
     
-    -- main="Burtgang",
     -- ear2="Chevalier's Earring +2",               -- __, 15, __, 12(__) [ 8/ 8, ___] ___ {__} __
     -- 133 MND, 196 VIT, 0 Heal skill, 47 Cure Pot (30 self pot) [61 PDT/43 MDT, 371 M.Eva] 1145 HP {104 SIRD} 49 Enmity
   }
@@ -762,13 +752,12 @@ function init_gear_sets()
 
   sets.LightDef = {
     head="Chevalier's Armet +2",          -- 10/10,  93
-    hands="Chevalier's Gauntlets +2",     -- 10/10,  88
+    hands="Chevalier's Gauntlets +3",     -- 11/11,  98
     legs="Chevalier's Cuisses +2",        -- 12/12, 126
     ring2="Defending Ring",               -- 10/10, ___
-    -- 42 PDT / 42 MDT, 307 MEVA
+    -- 43 PDT / 43 MDT, 317 MEVA
 
     -- head="Chevalier's Armet +3",       -- 11/11, 103
-    -- hands="Chevalier's Gauntlets +3",  -- 11/11,  98
     -- legs="Chevalier's Cuisses +3",     -- 13/13, 136
     -- 45 PDT / 45 MDT, 337 MEVA
   }
@@ -954,6 +943,10 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
   -- Allow weapon swaps for Phalanx
   if spell.english ~= 'Phalanx' then
     equip(select_weapons())
+  else
+    if enable_phalanx_sird then
+      equip(sets.midcast['Phalanx'].SIRD)
+    end
   end
 
   -- If slot is locked, keep current equipment on
@@ -1454,6 +1447,9 @@ function set_main_keybinds()
 
   send_command('bind !o input /ma "Phalanx" <me>')
   send_command('bind !l gs c phalanxsird')
+  
+  send_command('bind !q input /ja "Shield Bash" <stnpc>')
+  send_command('bind !e input /ja "Holy Circle" <me>')
 end
 
 function set_sub_keybinds()
@@ -1502,10 +1498,12 @@ function unbind_keybinds()
 
   send_command('unbind !o')
   send_command('unbind !l')
+
+  send_command('unbind !q')
+  send_command('unbind !e')
   
   send_command('unbind !w')
 
-  send_command('unbind !w')
   send_command('unbind ^numpad/')
   send_command('unbind ^numpad*')
   send_command('unbind ^numpad-')
