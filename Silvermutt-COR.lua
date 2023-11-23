@@ -835,14 +835,24 @@ function init_gear_sets()
     ear2="Novio Earring",
   })
 
-  sets.precast.WS['Hot Shot'] = set_combine(sets.precast.WS['Wildfire'], {})
-  sets.precast.WS['Hot Shot'].MaxTP = set_combine(sets.precast.WS['Wildfire'].MaxTP, {})
-  sets.precast.WS['Hot Shot'].LowAcc = set_combine(sets.precast.WS['Wildfire'].LowAcc, {})
-  sets.precast.WS['Hot Shot'].LowAccMaxTP = set_combine(sets.precast.WS['Wildfire'].LowAccMaxTP, {})
-  sets.precast.WS['Hot Shot'].MidAcc = set_combine(sets.precast.WS['Wildfire'].MidAcc, {})
-  sets.precast.WS['Hot Shot'].MidAccMaxTP = set_combine(sets.precast.WS['Wildfire'].MidAccMaxTP, {})
-  sets.precast.WS['Hot Shot'].HighAcc = set_combine(sets.precast.WS['Wildfire'].HighAcc, {})
-  sets.precast.WS['Hot Shot'].HighAccMaxTP = set_combine(sets.precast.WS['Wildfire'].HighAccMaxTP, {})
+  sets.precast.WS['Hot Shot'] = set_combine(sets.precast.WS['Wildfire'], {
+    ear2="Moonshade Earring",
+  })
+  sets.precast.WS['Hot Shot'].MaxTP = set_combine(sets.precast.WS['Hot Shot'].MaxTP, {
+    ear2="Novio Earring",
+  })
+  sets.precast.WS['Hot Shot'].LowAcc = set_combine(sets.precast.WS['Hot Shot'], {})
+  sets.precast.WS['Hot Shot'].LowAccMaxTP = set_combine(sets.precast.WS['Hot Shot'].LowAcc, {
+    ear2="Novio Earring",
+  })
+  sets.precast.WS['Hot Shot'].MidAcc = set_combine(sets.precast.WS['Hot Shot'].LowAcc, {})
+  sets.precast.WS['Hot Shot'].MidAccMaxTP = set_combine(sets.precast.WS['Hot Shot'].MidAcc, {
+    ear2="Novio Earring",
+  })
+  sets.precast.WS['Hot Shot'].HighAcc = set_combine(sets.precast.WS['Hot Shot'].MidAcc, {})
+  sets.precast.WS['Hot Shot'].HighAccMaxTP = set_combine(sets.precast.WS['Hot Shot'].HighAcc, {
+    ear2="Novio Earring",
+  })
 
   sets.precast.WS['Evisceration'] = {
     head=gear.Adhemar_B_head,
