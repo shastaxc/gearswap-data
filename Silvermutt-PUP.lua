@@ -721,7 +721,7 @@ function init_gear_sets()
   sets.midcast.Pet['Elemental Magic'] = {
     ranged="Neo Animator",              -- __, 10 <__, __, __> [__/__, ___] {__/__, 119 | __, __, __, 30}
     head=gear.Rawhide_D_head,           -- __, __ <__, __, __> [__/__,  53] {__/__, ___ | 15, __, __, 20}
-    body=gear.Nyame_B_body,             -- __, 40 < 7, __, __> [ 9/ 9, 139] {__/__, ___ | __, __, __, 50}
+    body="Udug Jacket",                 -- __, 45 <__, __, __> [10/10,  86] {__/__, ___ | 45, __, __, 45}
     hands=gear.Nyame_B_hands,           -- __, 40 < 4, __, __> [ 7/ 7, 112] {__/__, ___ | __, __, __, 50}
     legs="Pitre Churidars +3",          -- __, 46 <__, __, __> [__/__,  84] {__/__, ___ | 51, __, __, 48}
     feet="Pitre Babouches +3",          -- __, 36 <__, __, __> [__/__,  84] {__/__, ___ | 57, __, __, 43}
@@ -732,9 +732,8 @@ function init_gear_sets()
     ring2="Defending Ring",             -- __, __ <__, __, __> [10/10, ___] {__/__, ___ | __, __, __, __}
     back=gear.PUP_TP_Cape,              -- 10, 20 <__, __, __> [__/__, ___] { 5/ 5,   1 | __, __, __, __}
     waist="Incarnation Sash",           -- __, __ <__, __, __> [__/__, ___] {__/__, ___ | __, __, __, 15}
-    -- 14 STP, 229 Acc <11 DA, 0 TA, 0 QA> [31 PDT/31 MDT, 472 M.Eva] {Pet: 5 PDT/5 MDT, 121 Lv | 153 MAB, 0 Magic Skill, 0 INT, 288 M.Acc}
+    -- 14 STP, 234 Acc <4 DA, 0 TA, 0 QA> [32 PDT/32 MDT, 419 M.Eva] {Pet: 5 PDT/5 MDT, 121 Lv | 198 MAB, 0 Magic Skill, 0 INT, 283 M.Acc}
     
-    -- body="Udug Jacket",              -- __, 45 <__, __, __> [10/10,  86] {__/__, ___ | 45, __, __, 45}
     -- hands=gear.Naga_D_hands,         -- __, __ <__, __, __> [ 2/ 2,  26] {__/__, ___ | 20, __, __, 20}
     -- neck="Puppetmaster's Collar +2", -- __, 30 <__, __, __> [__/__, ___] {__/__, ___ | 25, __, __, 25}
     -- ear2="Karagoz Earring +2",       --  8, 20 <__, __, __> [__/__, ___] {__/__,   1 | __, __, __, __}

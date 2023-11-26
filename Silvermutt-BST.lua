@@ -998,7 +998,7 @@ function init_gear_sets()
     sub="Agwu's Axe",                   -- [__/__, ___] {__/__, ___ | __, 50, __, 20}
     ammo="Hesperiidae",                 -- [__/__, ___] {__/__, ___ | __, 10, __, 10}; Pet attr+10
     head=gear.Nyame_B_head,             -- [ 7/ 7, 123] {__/__, ___ | __, 50, __, __}
-    body=gear.Emicho_D_body,            -- [__/__,  53] { 4/ 4, ___ | __, __, 35, 20}
+    body="Udug Jacket",                 -- [10/10,  86] {__/__, ___ | __, 45, 45, __}
     hands="Nukumi Manoplas +2",         -- [10/10,  72] {__/__, ___ | __, 52, __, __}; Pet TP Bonus+
     legs=gear.Nyame_B_legs,             -- [ 8/ 8, 150] {__/__, ___ | __, 50, __, __}
     feet=gear.Nyame_B_feet,             -- [ 7/ 7, 150] {__/__, ___ | __, 50, __, __}
@@ -1009,10 +1009,9 @@ function init_gear_sets()
     ring2="Cath Palug Ring",            -- [ 5/ 5, ___] {__/__, ___ |  5, 12, __, __}
     back="Argochampsa Mantle",          -- [__/__, ___] {__/__, ___ | __, __, 12, __}
     waist="Incarnation Sash",           -- [__/__, ___] {__/__, ___ |  4, 15, __, __}
-    -- [41 PDT/41 MDT, 548 M.Eva] {Pet: 11 PDT/11 MDT, 1 Lv | 16 DA, 345 Macc, 82 MAB, 50 INT}
+    -- [51 PDT/51 MDT, 581 M.Eva] {Pet: 7 PDT/7 MDT, 1 Lv | 16 DA, 390 Macc, 92 MAB, 30 INT}
     
     -- head=gear.Valorous_Pet_Matk_head,-- [__/__,  48] {__/__, ___ | __, __, 30, 15}
-    -- body="Udug Jacket",              -- [10/10,  86] {__/__, ___ | __, 45, 45, __}
     -- hands="Nukumi Manoplas +3",      -- [11/11,  82] {__/__, ___ | __, 62, __, __}; Pet TP Bonus+700
     -- legs=gear.Valorous_Pet_Matk_legs,-- [ 2/__,  80] {__/__, ___ | __, __, 30, 15}
     -- feet=gear.Valorous_Pet_Matk_feet,-- [__/ 2,  80] {__/__, ___ | __, __, 30, 15}
