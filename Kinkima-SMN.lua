@@ -725,7 +725,8 @@ function init_gear_sets()
     
     -- head="Beckoner's Horn +3",     -- 23 [10/10, 130]
     -- body="Beckoner's Doublet +3",  -- 24 [13/13, 130]
-    -- 674 Summon Skill [50 PDT/50 MDT, 639 M.Eva]
+    -- legs="Beckoner's Spats +3",    -- 30 [12/12, 157]
+    -- 679 Summon Skill [51 PDT/51 MDT, 649 M.Eva]
   }
 
   -- Need Pet M.Acc, Summoning Skill to land debuffs
