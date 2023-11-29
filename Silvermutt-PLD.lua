@@ -232,17 +232,16 @@ function init_gear_sets()
     neck={name="Unmoving Collar +1",priority=1},    -- __/__, ___ [200] <10>
     ear2="Cryptic Earring",                         -- __/__, ___ [ 40] < 4>
     ring1={name="Gelatinous Ring +1",priority=1},   --  7/-1, ___ [135] <__>
-    ring2="Eihwaz Ring",                            -- __/__, ___ [ 70] < 5>
+    ring2="Apeile Ring +1",                         -- __/__, ___ [___] < 9>
     back=gear.PLD_Enmity_Cape,                      -- 10/__,  20 [ 80] <10>
     waist="Platinum Moogle Belt",                   --  3/ 3,  15 [___] <__>; HP+10%
     -- HP from belts                                               ???
-    -- 55 PDT / 37 MDT, 342 M.Eva [1134/??? HP] <104 Enmity>
+    -- 55 PDT / 37 MDT, 342 M.Eva [1064/??? HP] <108 Enmity>
     
     -- sub="Srivatsa",                              -- 15 Enmity
     -- legs="Caballarius Breeches +3",              --  7/__,  84 [ 72] < 9>
     -- feet="Chevalier's Sabatons +3",              -- __/__, 136 [ 52] <15>
     -- ear1="Trux Earring",                         -- __/__, ___ [___] < 5>
-    -- ring2="Apeile Ring +1",                      -- __/__, ___ [___] < 9>
     -- 57 PDT / 37 MDT, 372 M.Eva [1094/??? HP] <150 Enmity>
   }
 
