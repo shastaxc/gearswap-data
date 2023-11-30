@@ -165,6 +165,10 @@ function init_gear_sets()
   ---------------------------------------- Defense Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
 
+  -- Base HP (Elvaan + ML0 + Sub BLU + Full merits) = 1829 HP
+  -- Base HP at ML30 = 2039 HP
+  -- Platinum Moogle Belt HP bonuses will be calculated based on ML30 average
+
   sets.HeavyDef = {
     main="Burtgang",
     sub="Duban",
@@ -181,12 +185,13 @@ function init_gear_sets()
     ring2={name="Moonlight Ring",priority=1},       --  5/ 5, ___ (___) [110] __, __
     back=gear.PLD_Block_Cape,                       -- __/__,  20 ( 20) [ 80]  8, __; 5% Dmg to MP
     waist={name="Platinum Moogle Belt",priority=1}, --  3/ 3,  15 (___) [___] __, __; HP+10%
-    -- HP from belt                                                ???
-    -- 67 PDT / 62 MDT, 641 MEVA (804 Defense) [1095/???? HP] 13 Block, 5 Counter
+    -- HP from belt                                                313
+    -- 67 PDT / 62 MDT, 641 MEVA (804 Defense) [1095/1408 HP] 13 Block, 5 Counter
     
     -- head="Chevalier's Armet +3",                 -- 11/11, 103 (148) [145] __, __; 8% Dmg to MP
     -- legs="Chevalier's Cuisses +3",               -- 13/13, 136 (160) [127] __, __; Retain enmity
-    -- 69 PDT / 64 MDT, 661 MEVA (824 Defense) [1115/???? HP] 13 Block, 5 Counter
+    -- HP from belt                                                315
+    -- 69 PDT / 64 MDT, 661 MEVA (824 Defense) [1115/1430 HP] 13 Block, 5 Counter
   }
 
   sets.HeavyDef.Engaged = {
@@ -205,13 +210,14 @@ function init_gear_sets()
     ring2={name="Moonlight Ring",priority=1},       --  5/ 5, ___ (___) [110] __, __
     back=gear.PLD_Block_Cape,                       -- __/__,  20 ( 20) [ 80]  8, __; 5% Dmg to MP
     waist={name="Platinum Moogle Belt",priority=1}, --  3/ 3,  15 (___) [___] __, __; HP+10%
-    -- HP from belt                                                ???
-    -- 56 PDT / 53 MDT, 591 MEVA (749 Defense) [1095/???? HP] 13 Block, 18 Counter
+    -- HP from belt                                                313
+    -- 56 PDT / 53 MDT, 591 MEVA (749 Defense) [1095/1408 HP] 13 Block, 18 Counter
     
     -- head="Chevalier's Armet +3",                 -- 11/11, 103 (148) [145] __, __; 8% Dmg to MP
     -- legs="Chevalier's Cuisses +3",               -- 13/13, 136 (160) [127] __, __; Retain enmity
     -- back=gear.PLD_Counter_Cape,                  -- __/__,  20 ( 20) [ 80]  3, 10; 5% Dmg to MP
-    -- 58 PDT / 55 MDT, 611 MEVA (769 Defense) [1115/???? HP] 8 Block, 28 Counter
+    -- HP from belt                                                315
+    -- 58 PDT / 55 MDT, 611 MEVA (769 Defense) [1115/1430 HP] 8 Block, 28 Counter
   }
 
 
@@ -235,13 +241,14 @@ function init_gear_sets()
     ring2="Apeile Ring +1",                         -- __/__, ___ [___] < 9>
     back=gear.PLD_Enmity_Cape,                      -- 10/__,  20 [ 80] <10>
     waist="Platinum Moogle Belt",                   --  3/ 3,  15 [___] <__>; HP+10%
-    -- HP from belts                                               ???
-    -- 57 PDT / 37 MDT, 362 M.Eva [1084/??? HP] <110 Enmity>
+    -- HP from belt                                                312
+    -- 57 PDT / 37 MDT, 362 M.Eva [1084/1396 HP] <110 Enmity>
     
     -- sub="Srivatsa",                              -- 15 Enmity
     -- feet="Chevalier's Sabatons +3",              -- __/__, 136 [ 52] <15>
     -- ear1="Trux Earring",                         -- __/__, ___ [___] < 5>
-    -- 57 PDT / 37 MDT, 372 M.Eva [1094/??? HP] <150 Enmity>
+    -- HP from belt                                                313
+    -- 57 PDT / 37 MDT, 372 M.Eva [1094/1407 HP] <150 Enmity>
   }
 
   sets.precast.JA = set_combine(sets.Enmity, {})
@@ -298,12 +305,13 @@ function init_gear_sets()
     ring2="Kishar Ring",                                  -- { 4} __/__, ___ [___]
     back=gear.PLD_FC_Cape,                                -- {10} 10/__,  20 [ 80]
     waist="Platinum Moogle Belt",                         -- {__}  3/ 3,  15 [___]; HP+10%
-    -- HP from belt                                                           ???
-    -- 73% Fast Cast, 50 PDT/32 MDT, 534 M.Eva [985/???? HP]
+    -- HP from belt                                                           302
+    -- 73% Fast Cast, 50 PDT/32 MDT, 534 M.Eva [985/1287 HP]
     
     -- head="Chevalier's Armet +3",                       -- { 9} 11/11, 103 [145]
     -- feet="Chevalier's Sabatons +3",                    -- {13} __/__, 136 [ 52]
-    -- 77% Fast Cast, 51 PDT/33 MDT, 554 M.Eva [1005/???? HP]
+    -- HP from belt                                                           304
+    -- 77% Fast Cast, 51 PDT/33 MDT, 554 M.Eva [1005/1309 HP]
   }
 
 
@@ -358,12 +366,12 @@ function init_gear_sets()
     back={name="Moonlight Cape",priority=1},        --  6/ 6, ___ [275] {__} __
     waist="Platinum Moogle Belt",                   --  3/ 3,  15 [___] {__}; HP+10%
     -- SIRD merits                                                      { 8}
-    -- HP from belt                                                ???
-    -- 49 PDT / 41 MDT, 500 M.Eva [1153/??? HP] {102 SIRD} 24 Enmity
+    -- HP from belt                                                319
+    -- 49 PDT / 41 MDT, 500 M.Eva [1153/1472 HP] {102 SIRD} 24 Enmity
     
     -- sub="Srivatsa",
     -- ear2="Chevalier's Earring +2",               --  8/ 8, ___ [___] {__} __
-    -- 53 PDT / 45 MDT, 500 M.Eva [1153/??? HP] {102 SIRD} 24 Enmity
+    -- 53 PDT / 45 MDT, 500 M.Eva [1153/1472 HP] {102 SIRD} 24 Enmity
   }
 
   sets.SIRDEnmity = {
@@ -383,12 +391,12 @@ function init_gear_sets()
     back=gear.PLD_Enmity_Cape,                      -- 10/__,  20 [ 80] {__} 10
     waist="Platinum Moogle Belt",                   --  3/ 3,  15 [___] {__} __; HP+10%
     -- SIRD merits                                                      { 8}
-    -- HP from belt                                                ???
-    -- 49 PDT/24 MDT, 390 M.Eva [1073 HP] {102 SIRD} 81 Enmity
+    -- HP from belt                                                311
+    -- 49 PDT/24 MDT, 390 M.Eva [1073/1384 HP] {102 SIRD} 81 Enmity
 
     -- sub="Srivatsa",                              --                       15
     -- ear2="Chevalier's Earring +2",               --  8/ 8, ___ [___] {__} __
-    -- 53 PDT/28 MDT, 390 M.Eva [1073 HP] {102 SIRD} 104 Enmity
+    -- 53 PDT/28 MDT, 390 M.Eva [1073/1384 HP] {102 SIRD} 104 Enmity
   }
 
   sets.midcast['Enhancing Magic'] = set_combine(sets.SIRD, {})
@@ -413,12 +421,12 @@ function init_gear_sets()
     back=gear.PLD_Enmity_Cape,                      -- 10/__,  20 [ 80] {__} __
     waist="Platinum Moogle Belt",                   --  3/ 3,  15 [___] {__} __; HP+10%
     -- SIRD merits                                                      { 8}
-    -- HP from belt                                                ???
-    -- 42 PDT / 19 MDT, 359 M.Eva [1096/??? HP] {102 SIRD} 30 Enh Duration
+    -- HP from belt                                                313
+    -- 42 PDT / 19 MDT, 359 M.Eva [1096/1409 HP] {102 SIRD} 30 Enh Duration
     
     -- sub="Srivatsa",                              -- Shield def is added to Protect potency
     -- ear2="Chevalier's Earring +2",               --  8/ 8, ___ [___] {__} __
-    -- 46 PDT / 23 MDT, 359 M.Eva [1096/??? HP] {102 SIRD} 30 Enh Duration
+    -- 46 PDT / 23 MDT, 359 M.Eva [1096/1409 HP] {102 SIRD} 30 Enh Duration
   }
   sets.midcast.Shell = set_combine(sets.midcast.Protect, {})
 
@@ -442,8 +450,8 @@ function init_gear_sets()
     waist="Platinum Moogle Belt",               -- _, ___, __ [ 3/ 3,  15] ___; HP+10%
     -- Base/Traits/Gifts                           _, 350,  8 [__/__, ___] ___
     -- Master Levels                                    0
-    -- HP from belt                                                        ???
-    -- 28 Phalanx, 386 Enh Skill, 19% SIRD [50 PDT/46 MDT, 411 M.Eva] 1158/???? HP
+    -- HP from belt                                                        319
+    -- 28 Phalanx, 386 Enh Skill, 19% SIRD [50 PDT/46 MDT, 411 M.Eva] 1158/1477 HP
     -- 59 Total Phalanx
 
     -- main="Sakpata's Sword",                  -- 4, ___, __ [10/10, ___] 100
@@ -463,8 +471,8 @@ function init_gear_sets()
     -- waist="Platinum Moogle Belt",            -- _, ___, __ [ 3/ 3,  15] ___; HP+10%
     -- Base/Traits/Gifts                           _, 350,  8 [__/__, ___] ___
     -- Master Levels                                   50
-    -- HP from belt                                                        ???
-    -- 31 Phalanx, 416 Enh Skill, 42% SIRD [50 PDT/50 MDT, 426 M.Eva] 1158/???? HP
+    -- HP from belt                                                        319
+    -- 31 Phalanx, 416 Enh Skill, 42% SIRD [50 PDT/50 MDT, 426 M.Eva] 1158/1477 HP
     -- 63 Total Phalanx
   }
 
@@ -485,11 +493,11 @@ function init_gear_sets()
     back=gear.PLD_Enmity_Cape,                  -- _, ___, __ [10/__, ___]  80
     waist="Platinum Moogle Belt",               -- _, ___, __ [ 3/ 3,  15] ___; HP+10%
     -- SIRD merits                                          8
-    -- HP from belt                                                        ???
-    -- 15 Phalanx, 416 Enh Skill, 102% SIRD [44 PDT/19 MDT, 356 M.Eva] 1172/???? HP
+    -- HP from belt                                                        321
+    -- 15 Phalanx, 416 Enh Skill, 102% SIRD [44 PDT/19 MDT, 356 M.Eva] 1172/1493 HP
 
     -- body=gear.Valorous_Phalanx_body,         -- 5, ___, __ [ 2/__,  59]  61
-    -- 16 Phalanx, 416 Enh Skill, 102% SIRD [44 PDT/19 MDT, 356 M.Eva] 1172/???? HP
+    -- 16 Phalanx, 416 Enh Skill, 102% SIRD [44 PDT/19 MDT, 356 M.Eva] 1172/1493 HP
   }
 
   sets.midcast['Aquaveil'] = set_combine(sets.SIRD, {})
@@ -547,12 +555,12 @@ function init_gear_sets()
     ring2="Defending Ring",                         -- __, __, __, __(__) [10/10, ___] ___ {__} __
     back=gear.PLD_Enmity_Cape,                      -- 30, __, __, __(__) [10/__,  20]  80 {__} 10
     waist={name="Platinum Moogle Belt",priority=1}, -- __, __, __, __(__) [ 3/ 3,  15] ___ {__} __; HP+10%
-    -- HP from belt                                                                    ???
+    -- HP from belt                                                                    318
     -- SIRD merits                                                                         { 8}
-    -- 133 MND, 181 VIT, 0 Heal skill, 46 Cure Pot (30 self pot) [57 PDT/39 MDT, 371 M.Eva] 1145 HP {104 SIRD} 49 Enmity
+    -- 133 MND, 181 VIT, 0 Heal skill, 46 Cure Pot (30 self pot) [57 PDT/39 MDT, 371 M.Eva] 1145/1463 HP {104 SIRD} 49 Enmity
     
     -- ear2="Chevalier's Earring +2",               -- __, 15, __, 12(__) [ 8/ 8, ___] ___ {__} __
-    -- 133 MND, 196 VIT, 0 Heal skill, 47 Cure Pot (30 self pot) [61 PDT/43 MDT, 371 M.Eva] 1145 HP {104 SIRD} 49 Enmity
+    -- 133 MND, 196 VIT, 0 Heal skill, 47 Cure Pot (30 self pot) [61 PDT/43 MDT, 371 M.Eva] 1145/1463 HP {104 SIRD} 49 Enmity
   }
 
   sets.midcast['Blue Magic'] = {}
@@ -625,12 +633,11 @@ function init_gear_sets()
     ring2="Epaminondas's Ring",                   -- __, __, __,  5, __ [__/__, ___] ___
     back={name="Moonlight Cape", priority=1},     -- __, __, __, __, __ [ 6/ 6, ___] 275
     waist="Platinum Moogle Belt",                 -- __, __, __, __, __ [ 3/ 3,  15] ___
-    -- HP from belt                                                                  ???
-    -- 169 STR, 330 Attack, 249 Accuracy, 66 WSD, 0 PDL [58 PDT/50 MDT, 689 M.Eva] 1110 HP
+    -- HP from belt                                                                  314
+    -- 169 STR, 330 Attack, 249 Accuracy, 66 WSD, 0 PDL [58 PDT/50 MDT, 689 M.Eva] 1110/1424 HP
 
     -- ear2="Chevalier's Earring +2",             -- 15, __, 20, __, __ [ 8/ 8, ___] ___
-    -- HP from belt                                                                  ???
-    -- 184 STR, 330 Attack, 257 Accuracy, 66 WSD, 0 PDL [62 PDT/54 MDT, 689 M.Eva] 1110 HP
+    -- 184 STR, 330 Attack, 257 Accuracy, 66 WSD, 0 PDL [62 PDT/54 MDT, 689 M.Eva] 1110/1424 HP
   })
   sets.precast.WS.SafeMaxTP = set_combine(sets.precast.WS.Safe, {
     ear1="Lugra Earring +1",                      -- 16, __, __, __, __ [__/__, ___] ___
@@ -671,8 +678,8 @@ function init_gear_sets()
     ring2="Shiva Ring +1",              -- __,  9, __,  3, __ [__/__, ___] ___
     back="Moonlight Cape",              -- __, __, __, __, __ [ 6/ 6, ___] 275
     waist="Platinum Moogle Belt",       -- __, __, __, __, __ [ 3/ 3,  15] ___
-    -- HP from belt                                                        ???
-    -- 117 DEX, 180 INT, 58 WSD, 174 MAB, 208 M.Acc [54 PDT/46 MDT, 1110 M.Eva] HP
+    -- HP from belt                                                        314
+    -- 117 DEX, 180 INT, 58 WSD, 174 MAB, 208 M.Acc [54 PDT/46 MDT, 1110 M.Eva] 1110/1424 HP
   })
   sets.precast.WS['Aeolian Edge'].SafeMaxTP = set_combine(sets.precast.WS['Aeolian Edge'].Safe, {})
 
