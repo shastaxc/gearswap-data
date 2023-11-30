@@ -1,4 +1,4 @@
--- File Status: WIP. Needs HP prioritization.
+-- File Status: Good. Verify HP prioritization.
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs
@@ -178,7 +178,7 @@ function init_gear_sets()
     hands="Chevalier's Gauntlets +3",               -- 11/11,  98 (136) [ 64] __, __; Shield Def. Bonus+5
     legs="Chevalier's Cuisses +2",                  -- 12/12, 126 (150) [117] __, __; Retain enmity
     feet="Sakpata's Leggings",                      --  6/ 6, 150 (125) [ 68]  5,  5
-    neck="Unmoving Collar +1",                      -- __/__, ___ ( 41) [200] __, __
+    neck={name="Unmoving Collar +1",priority=1},    -- __/__, ___ ( 41) [200] __, __
     ear1="Arete del Luna +1",                       -- __/__, ___ (___) [___] __, __; Resists
     ear2="Etiolation Earring",                      -- __/ 3, ___ (___) [ 50] __, __; Resist Silence+15
     ring1={name="Gelatinous Ring +1",priority=1},   --  7/-1, ___ (___) [135] __, __
@@ -200,7 +200,9 @@ function init_gear_sets()
     ammo="Staunch Tathlum +1",                      --  3/ 3, ___ (___) [___] __, __; Resist Status+11
     head="Chevalier's Armet +2",                    -- 10/10,  93 (138) [135] __, __; 7% Dmg to MP
     body="Sakpata's Breastplate",                   -- 10/10, 139 (194) [136] __, __; Resist Status+15
-    hands=gear.Souveran_C_hands,                    -- __/ 5,  48 (112) [239] __, __; Cure received+15%
+    hands={name=gear.Souveran_C_hands.name,
+      augments=gear.Souveran_C_hands.augments,
+      priority=1},                                  -- __/ 5,  48 (112) [239] __, __; Cure received+15%
     legs="Chevalier's Cuisses +2",                  -- 12/12, 126 (150) [117] __, __; Retain enmity
     feet="Sakpata's Leggings",                      --  6/ 6, 150 (125) [ 68]  5,  5
     neck="Bathy Choker +1",                         -- __/__, ___ ( 10) [ 35] __, 10; Regen+3
@@ -231,8 +233,12 @@ function init_gear_sets()
     sub="Duban",
     ammo="Sapience Orb",                            -- __/__, ___ [___] < 2>
     head="Loess Barbuta +1",                        -- 20/20, ___ [105] <24>
-    body=gear.Souveran_C_body,                      -- 10/10,  69 [171] <20>
-    hands=gear.Souveran_C_hands,                    -- __/ 5,  48 [239] < 9>
+    body={name=gear.Souveran_C_body.name,
+      augments=gear.Souveran_C_body.augments,
+      priority=1},                                  -- 10/10,  69 [171] <20>
+    hands={name=gear.Souveran_C_hands.name,
+      augments=gear.Souveran_C_hands.augments,
+      priority=1},                                  -- __/ 5,  48 [239] < 9>
     legs="Caballarius Breeches +3",                 --  7/__,  84 [ 72] < 9>
     feet="Chevalier's Sabatons +2",                 -- __/__, 126 [ 42] <13>
     neck={name="Unmoving Collar +1",priority=1},    -- __/__, ___ [200] <10>
@@ -240,7 +246,7 @@ function init_gear_sets()
     ring1={name="Gelatinous Ring +1",priority=1},   --  7/-1, ___ [135] <__>
     ring2="Apeile Ring +1",                         -- __/__, ___ [___] < 9>
     back=gear.PLD_Enmity_Cape,                      -- 10/__,  20 [ 80] <10>
-    waist="Platinum Moogle Belt",                   --  3/ 3,  15 [___] <__>; HP+10%
+    waist={name="Platinum Moogle Belt",priority=1}, --  3/ 3,  15 [___] <__>; HP+10%
     -- HP from belt                                                312
     -- 57 PDT / 37 MDT, 362 M.Eva [1084/1396 HP] <110 Enmity>
     
@@ -304,7 +310,7 @@ function init_gear_sets()
     ring1="Gelatinous Ring +1",                           -- {__}  7/-1, ___ [135]
     ring2="Kishar Ring",                                  -- { 4} __/__, ___ [___]
     back=gear.PLD_FC_Cape,                                -- {10} 10/__,  20 [ 80]
-    waist="Platinum Moogle Belt",                         -- {__}  3/ 3,  15 [___]; HP+10%
+    waist={name="Platinum Moogle Belt",priority=1},       -- {__}  3/ 3,  15 [___]; HP+10%
     -- HP from belt                                                           302
     -- 73% Fast Cast, 50 PDT/32 MDT, 534 M.Eva [985/1287 HP]
     
@@ -353,18 +359,20 @@ function init_gear_sets()
     main="Burtgang",
     sub="Duban",
     ammo="Staunch Tathlum +1",                      --  3/ 3, ___ [___] {11} __
-    head=gear.Souveran_C_head,                      -- __/__,  53 [280] {20}  9
+    head={name=gear.Souveran_C_head.name,
+      augments=gear.Souveran_C_head.augments,
+      priority=1},                                  -- __/__,  53 [280] {20}  9
     body="Sakpata's Breastplate",                   -- 10/10, 139 [136] {__} __
-    hands="Regal Gauntlets",                        -- __/__,  48 [205] {10} __
+    hands={name="Regal Gauntlets",priority=1},      -- __/__,  48 [205] {10} __
     legs=gear.Founders_Hose,                        -- __/__,  80 [ 54] {30} __
     feet="Sakpata's Leggings",                      --  6/ 6, 150 [ 68] {__} __
     neck="Moonlight Necklace",                      -- __/__,  15 [___] {15} 15
     ear1="Magnetic Earring",                        -- __/__, ___ [___] { 8} __
     ear2="Chevalier's Earring +1",                  --  4/ 4, ___ [___] {__} __
-    ring1="Gelatinous Ring +1",                     --  7/-1, ___ [135] {__} __
+    ring1={name="Gelatinous Ring +1",priority=1},   --  7/-1, ___ [135] {__} __
     ring2="Defending Ring",                         -- 10/10, ___ [___] {__} __
     back={name="Moonlight Cape",priority=1},        --  6/ 6, ___ [275] {__} __
-    waist="Platinum Moogle Belt",                   --  3/ 3,  15 [___] {__}; HP+10%
+    waist={name="Platinum Moogle Belt",priority=1}, --  3/ 3,  15 [___] {__}; HP+10%
     -- SIRD merits                                                      { 8}
     -- HP from belt                                                319
     -- 49 PDT / 41 MDT, 500 M.Eva [1153/1472 HP] {102 SIRD} 24 Enmity
@@ -378,7 +386,9 @@ function init_gear_sets()
     main="Burtgang",                                --                       18
     sub="Duban",
     ammo="Staunch Tathlum +1",                      --  3/ 3, ___ [___] {11} __
-    head=gear.Souveran_C_head,                      -- __/__,  53 [280] {20}  9
+    head={name=gear.Souveran_C_head.name,
+      augments=gear.Souveran_C_head.augments,
+      priority=1},                                  -- __/__,  53 [280] {20}  9
     body=gear.Souveran_C_body,                      -- 10/10,  69 [171] {__} 20
     hands={name="Regal Gauntlets",priority=1},      -- __/__,  48 [205] {10} __
     legs="Caballarius Breeches +3",                 --  7/__,  84 [ 72] {10}  9
@@ -387,9 +397,9 @@ function init_gear_sets()
     ear1="Magnetic Earring",                        -- __/__, ___ [___] { 8} __
     ear2="Chevalier's Earring +1",                  --  4/ 4, ___ [___] {__} __
     ring1={name="Gelatinous Ring +1", priority=1},  --  7/-1, ___ [135] {__} __
-    ring2="Moonlight Ring",                         --  5/ 5, ___ [110] {__} __
+    ring2={name="Moonlight Ring", priority=1},      --  5/ 5, ___ [110] {__} __
     back=gear.PLD_Enmity_Cape,                      -- 10/__,  20 [ 80] {__} 10
-    waist="Platinum Moogle Belt",                   --  3/ 3,  15 [___] {__} __; HP+10%
+    waist={name="Platinum Moogle Belt", priority=1},--  3/ 3,  15 [___] {__} __; HP+10%
     -- SIRD merits                                                      { 8}
     -- HP from belt                                                311
     -- 49 PDT/24 MDT, 390 M.Eva [1073/1384 HP] {102 SIRD} 81 Enmity
@@ -408,18 +418,22 @@ function init_gear_sets()
     main="Burtgang",
     sub="Duban",                                    -- Shield def is added to Protect potency
     ammo="Staunch Tathlum +1",                      --  3/ 3, ___ [___] {11} __
-    head=gear.Souveran_C_head,                      -- __/__,  53 [280] {20} __
+    head={name=gear.Souveran_C_head.name,
+    augments=gear.Souveran_C_head.augments,
+    priority=1},                                    -- __/__,  53 [280] {20} __
     body="Shabti Cuirass +1",                       -- __/__,  42 [115] {__} 10
-    hands="Regal Gauntlets",                        -- __/__,  48 [205] {10} 20
+    hands={name="Regal Gauntlets", priority=1},     -- __/__,  48 [205] {10} 20
     legs=gear.Founders_Hose,                        -- __/__,  80 [ 54] {30} __
-    feet=gear.Souveran_C_feet,                      --  5/__,  86 [227] {__} __
+    feet={name=gear.Souveran_C_feet.name,
+      augments=gear.Souveran_C_feet.augments,
+      priority=1},                                  --  5/__,  86 [227] {__} __
     neck="Moonlight Necklace",                      -- __/__,  15 [___] {15} __
     ear1="Magnetic Earring",                        -- __/__, ___ [___] { 8} __
     ear2="Chevalier's Earring +1",                  --  4/ 4, ___ [___] {__} __
-    ring1="Gelatinous Ring +1",                     --  7/-1, ___ [135] {__} __; Enhances Protect/Shell
+    ring1={name="Gelatinous Ring +1", priority=1},  --  7/-1, ___ [135] {__} __; Enhances Protect/Shell
     ring2="Defending Ring",                         -- 10/10, ___ [___] {__} __
     back=gear.PLD_Enmity_Cape,                      -- 10/__,  20 [ 80] {__} __
-    waist="Platinum Moogle Belt",                   --  3/ 3,  15 [___] {__} __; HP+10%
+    waist={name="Platinum Moogle Belt", priority=1},--  3/ 3,  15 [___] {__} __; HP+10%
     -- SIRD merits                                                      { 8}
     -- HP from belt                                                313
     -- 42 PDT / 19 MDT, 359 M.Eva [1096/1409 HP] {102 SIRD} 30 Enh Duration
@@ -433,70 +447,82 @@ function init_gear_sets()
   -- Phalanx Tiers: 300, 329, 358, 386, 415, 443, 472, 500
   --                +28  +29  +30  +31  +32  +33  +34  +35
   sets.midcast['Phalanx'] = {
-    main="Sakpata's Sword",                     -- 4, ___, __ [10/10, ___] 100
-    sub="Priwen",                               -- 2, ___, __ [ 6/ 6, ___]  30
-    ammo="Staunch Tathlum +1",                  -- _, ___, 11 [ 3/ 3, ___] ___
-    head=gear.Odyssean_Phalanx_head,            -- 3, ___, __ [ 2/__,  53] 112
-    body=gear.Valorous_Phalanx_body,            -- 4, ___, __ [ 2/__,  59]  61
-    hands=gear.Souveran_C_hands,                -- 5, ___, __ [__/ 5,  48] 239
-    legs="Sakpata's Cuisses",                   -- 5, ___, __ [ 9/ 9, 150] 114
-    feet=gear.Souveran_C_feet,                  -- 5, ___, __ [ 5/__,  86] 227
-    neck="Incantor's Torque",                   -- _,  10, __ [__/__, ___] ___
-    ear1="Mimir Earring",                       -- _,  10, __ [__/__, ___] ___
-    ear2="Chevalier's Earring +1",              -- _, ___, __ [ 4/ 4, ___] ___
-    ring1="Stikini Ring +1",                    -- _,   8, __ [__/__, ___] ___
-    ring2="Stikini Ring +1",                    -- _,   8, __ [__/__, ___] ___
-    back={name="Moonlight Cape",priority=1},    -- _, ___, __ [ 6/ 6, ___] 275
-    waist="Platinum Moogle Belt",               -- _, ___, __ [ 3/ 3,  15] ___; HP+10%
-    -- Base/Traits/Gifts                           _, 350,  8 [__/__, ___] ___
-    -- Master Levels                                    0
-    -- HP from belt                                                        319
+    main="Sakpata's Sword",                         -- 4, ___, __ [10/10, ___] 100
+    sub="Priwen",                                   -- 2, ___, __ [ 6/ 6, ___]  30
+    ammo="Staunch Tathlum +1",                      -- _, ___, 11 [ 3/ 3, ___] ___
+    head=gear.Odyssean_Phalanx_head,                -- 3, ___, __ [ 2/__,  53] 112
+    body=gear.Valorous_Phalanx_body,                -- 4, ___, __ [ 2/__,  59]  61
+    hands={name=gear.Souveran_C_hands.name,
+      augments=gear.Souveran_C_hands.augments,
+      priority=1},                                  -- 5, ___, __ [__/ 5,  48] 239
+    legs="Sakpata's Cuisses",                       -- 5, ___, __ [ 9/ 9, 150] 114
+    feet={name=gear.Souveran_C_feet.name,
+      augments=gear.Souveran_C_feet.augments,
+      priority=1},                                  -- 5, ___, __ [ 5/__,  86] 227
+    neck="Incantor's Torque",                       -- _,  10, __ [__/__, ___] ___
+    ear1="Mimir Earring",                           -- _,  10, __ [__/__, ___] ___
+    ear2="Chevalier's Earring +1",                  -- _, ___, __ [ 4/ 4, ___] ___
+    ring1="Stikini Ring +1",                        -- _,   8, __ [__/__, ___] ___
+    ring2="Stikini Ring +1",                        -- _,   8, __ [__/__, ___] ___
+    back={name="Moonlight Cape",priority=1},        -- _, ___, __ [ 6/ 6, ___] 275
+    waist={name="Platinum Moogle Belt",priority=1}, -- _, ___, __ [ 3/ 3,  15] ___; HP+10%
+    -- Base/Traits/Gifts                               _, 350,  8 [__/__, ___] ___
+    -- Master Levels                                        0
+    -- HP from belt                                                            319
     -- 28 Phalanx, 386 Enh Skill, 19% SIRD [50 PDT/46 MDT, 411 M.Eva] 1158/1477 HP
     -- 59 Total Phalanx
 
-    -- main="Sakpata's Sword",                  -- 4, ___, __ [10/10, ___] 100
-    -- sub="Priwen",                            -- 2, ___, __ [ 6/ 6, ___]  30
-    -- ammo="Staunch Tathlum +1",               -- _, ___, 11 [ 3/ 3, ___] ___
-    -- head=gear.Odyssean_Phalanx_head,         -- 5, ___, __ [ 2/__,  53] 112
-    -- body=gear.Valorous_Phalanx_body,         -- 5, ___, __ [ 2/__,  59]  61
-    -- hands=gear.Souveran_C_hands,             -- 5, ___, __ [__/ 5,  48] 239
-    -- legs="Sakpata's Cuisses",                -- 5, ___, __ [ 9/ 9, 150] 114
-    -- feet=gear.Souveran_C_feet,               -- 5, ___, __ [ 5/__,  86] 227
-    -- neck="Moonlight Necklace",               -- _, ___, 15 [__/__,  15] ___
-    -- ear1="Magnetic Earring",                 -- _, ___,  8 [__/__, ___] ___
-    -- ear2="Chevalier's Earring +2",           -- _, ___, __ [ 8/ 8, ___] ___
-    -- ring1="Stikini Ring +1",                 -- _,   8, __ [__/__, ___] ___
-    -- ring2="Stikini Ring +1",                 -- _,   8, __ [__/__, ___] ___
-    -- back={name="Moonlight Cape",priority=1}, -- _, ___, __ [ 6/ 6, ___] 275
-    -- waist="Platinum Moogle Belt",            -- _, ___, __ [ 3/ 3,  15] ___; HP+10%
-    -- Base/Traits/Gifts                           _, 350,  8 [__/__, ___] ___
-    -- Master Levels                                   50
-    -- HP from belt                                                        319
+    -- main="Sakpata's Sword",                         -- 4, ___, __ [10/10, ___] 100
+    -- sub="Priwen",                                   -- 2, ___, __ [ 6/ 6, ___]  30
+    -- ammo="Staunch Tathlum +1",                      -- _, ___, 11 [ 3/ 3, ___] ___
+    -- head=gear.Odyssean_Phalanx_head,                -- 5, ___, __ [ 2/__,  53] 112
+    -- body=gear.Valorous_Phalanx_body,                -- 5, ___, __ [ 2/__,  59]  61
+    -- hands={name=gear.Souveran_C_hands.name,
+    --   augments=gear.Souveran_C_hands.augments,
+    --   priority=1},                                  -- 5, ___, __ [__/ 5,  48] 239
+    -- legs="Sakpata's Cuisses",                       -- 5, ___, __ [ 9/ 9, 150] 114
+    -- feet={name=gear.Souveran_C_feet.name,
+    --   augments=gear.Souveran_C_feet.augments,
+    --   priority=1},                                  -- 5, ___, __ [ 5/__,  86] 227
+    -- neck="Moonlight Necklace",                      -- _, ___, 15 [__/__,  15] ___
+    -- ear1="Magnetic Earring",                        -- _, ___,  8 [__/__, ___] ___
+    -- ear2="Chevalier's Earring +2",                  -- _, ___, __ [ 8/ 8, ___] ___
+    -- ring1="Stikini Ring +1",                        -- _,   8, __ [__/__, ___] ___
+    -- ring2="Stikini Ring +1",                        -- _,   8, __ [__/__, ___] ___
+    -- back={name="Moonlight Cape",priority=1},        -- _, ___, __ [ 6/ 6, ___] 275
+    -- waist={name="Platinum Moogle Belt",priority=1}, -- _, ___, __ [ 3/ 3,  15] ___; HP+10%
+    -- Base/Traits/Gifts                                  _, 350,  8 [__/__, ___] ___
+    -- Master Levels                                          50
+    -- HP from belt                                                               319
     -- 31 Phalanx, 416 Enh Skill, 42% SIRD [50 PDT/50 MDT, 426 M.Eva] 1158/1477 HP
     -- 63 Total Phalanx
   }
 
   sets.midcast['Phalanx'].SIRD = {
-    main="Sakpata's Sword",                     -- 4, ___, __ [10/10, ___] 100
-    sub="Priwen",                               -- 2, ___, __ [ 6/ 6, ___]  30
-    ammo="Staunch Tathlum +1",                  -- _, ___, 11 [ 3/ 3, ___] ___
-    head=gear.Souveran_C_head,                  -- _, ___, 20 [__/__,  53] 280
-    body=gear.Valorous_Phalanx_body,            -- 4, ___, __ [ 2/__,  59]  61
-    hands="Regal Gauntlets",                    -- _, ___, 10 [__/__,  48] 205
-    legs=gear.Founders_Hose,                    -- _, ___, 30 [__/__,  80]  54
-    feet=gear.Souveran_C_feet,                  -- 5, ___, __ [ 5/__,  86] 227
-    neck="Moonlight Necklace",                  -- _, ___, 15 [__/__,  15] ___
-    ear1="Magnetic Earring",                    -- _, ___,  8 [__/__, ___] ___
-    ear2="Chevalier's Earring +1",              -- _, ___, __ [ 4/ 4, ___] ___
-    ring1="Gelatinous Ring +1",                 -- _, ___, __ [ 7/-1, ___] 135
-    ring2="Defending Ring",                     -- _, ___, __ [10/10, ___] ___
-    back=gear.PLD_Enmity_Cape,                  -- _, ___, __ [10/__, ___]  80
-    waist="Platinum Moogle Belt",               -- _, ___, __ [ 3/ 3,  15] ___; HP+10%
-    -- SIRD merits                                          8
-    -- HP from belt                                                        321
+    main="Sakpata's Sword",                         -- 4, ___, __ [10/10, ___] 100
+    sub="Priwen",                                   -- 2, ___, __ [ 6/ 6, ___]  30
+    ammo="Staunch Tathlum +1",                      -- _, ___, 11 [ 3/ 3, ___] ___
+    head={name=gear.Souveran_C_head.name,
+      augments=gear.Souveran_C_head.augments,
+      priority=1},                                  -- _, ___, 20 [__/__,  53] 280
+    body=gear.Valorous_Phalanx_body,                -- 4, ___, __ [ 2/__,  59]  61
+    hands={name="Regal Gauntlets",priority=1},      -- _, ___, 10 [__/__,  48] 205
+    legs=gear.Founders_Hose,                        -- _, ___, 30 [__/__,  80]  54
+    feet={name=gear.Souveran_C_feet.name,
+      augments=gear.Souveran_C_feet.augments,
+      priority=1},                                  -- 5, ___, __ [ 5/__,  86] 227
+    neck="Moonlight Necklace",                      -- _, ___, 15 [__/__,  15] ___
+    ear1="Magnetic Earring",                        -- _, ___,  8 [__/__, ___] ___
+    ear2="Chevalier's Earring +1",                  -- _, ___, __ [ 4/ 4, ___] ___
+    ring1={name="Gelatinous Ring +1",priority=1},   -- _, ___, __ [ 7/-1, ___] 135
+    ring2="Defending Ring",                         -- _, ___, __ [10/10, ___] ___
+    back=gear.PLD_Enmity_Cape,                      -- _, ___, __ [10/__, ___]  80
+    waist={name="Platinum Moogle Belt",priority=1}, -- _, ___, __ [ 3/ 3,  15] ___; HP+10%
+    -- SIRD merits                                              8
+    -- HP from belt                                                            321
     -- 15 Phalanx, 416 Enh Skill, 102% SIRD [44 PDT/19 MDT, 356 M.Eva] 1172/1493 HP
 
-    -- body=gear.Valorous_Phalanx_body,         -- 5, ___, __ [ 2/__,  59]  61
+    -- body=gear.Valorous_Phalanx_body,             -- 5, ___, __ [ 2/__,  59]  61
     -- 16 Phalanx, 416 Enh Skill, 102% SIRD [44 PDT/19 MDT, 356 M.Eva] 1172/1493 HP
   }
 
@@ -543,9 +569,11 @@ function init_gear_sets()
     main="Burtgang",
     sub="Sacro Bulwark",                            -- __, __, __,  5(__) [10/10, ___] ___ {__} __
     ammo="Staunch tathlum +1",                      -- __, __, __, __(__) [ 3/ 3, ___] ___ {11} __
-    head=gear.Souveran_C_head,                      --  8, 38, __, __(15) [__/__,  53] 280 {20}  9
+    head={name=gear.Souveran_C_head.name,
+      augments=gear.Souveran_C_head.augments,
+      priority=1},                                  --  8, 38, __, __(15) [__/__,  53] 280 {20}  9
     body=gear.Souveran_C_body,                      -- 16, 32, __, 10(15) [10/10,  69] 171 {__} 20
-    hands="Regal Gauntlets",                        -- 40, 40, __, __(__) [__/__,  48] 205 {10} __
+    hands={name="Regal Gauntlets",priority=1},      -- 40, 40, __, __(__) [__/__,  48] 205 {10} __
     legs="Founder's Hose",                          -- 25, 28, __, __(__) [__/__,  80]  54 {30} __
     feet=gear.Odyssean_Cure_feet,                   -- 10, 19, __, 13(__) [__/__,  86]  20 {20} __
     neck={name="Unmoving Collar +1", priority=1},   -- __,  9, __, __(__) [__/__, ___] 200 {__} 10
@@ -576,71 +604,71 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.precast.WS = {
-    ammo="Oshasha's Treatise",                    -- __,  5,  5,  3, __ [__/__, ___] ___
-    head=gear.Nyame_B_head,                       -- 26, 65, 50, 11, __ [ 7/ 7, 123]  91
-    body=gear.Nyame_B_body,                       -- 45, 65, 40, 13, __ [ 9/ 9, 139] 136
-    hands=gear.Nyame_B_hands,                     -- 17, 65, 40, 11, __ [ 7/ 7, 112]  91
-    legs=gear.Nyame_B_legs,                       -- 58, 65, 40, 12, __ [ 8/ 8, 150] 114
-    feet=gear.Nyame_B_feet,                       -- 23, 65, 53, 11, __ [ 7/ 7, 150]  68
-    neck="Fotia Gorget",                          -- __, __, 10, __, __ [__/__, ___] ___; FTP+0.1
-    ear1="Moonshade Earring",                     -- __, __,  4, __, __ [__/__, ___] ___; TP Bonus+250
-    ear2="Lugra Earring +1",                      -- 16, __, __, __, __ [__/__, ___] ___
-    ring1="Ephramad's Ring",                      -- 10, 20, 20, __, 10 [__/__, ___] ___
-    ring2="Epaminondas's Ring",                   -- __, __, __,  5, __ [__/__, ___] ___
-    back=gear.PLD_Enmity_Cape,                    -- __, __, __, __, __ [10/__, ___]  80
-    waist="Sailfi Belt +1",                       -- 15, 15, __, __, __ [__/__, ___] ___
+    ammo="Oshasha's Treatise",                      -- __,  5,  5,  3, __ [__/__, ___] ___
+    head=gear.Nyame_B_head,                         -- 26, 65, 50, 11, __ [ 7/ 7, 123]  91
+    body=gear.Nyame_B_body,                         -- 45, 65, 40, 13, __ [ 9/ 9, 139] 136
+    hands=gear.Nyame_B_hands,                       -- 17, 65, 40, 11, __ [ 7/ 7, 112]  91
+    legs=gear.Nyame_B_legs,                         -- 58, 65, 40, 12, __ [ 8/ 8, 150] 114
+    feet=gear.Nyame_B_feet,                         -- 23, 65, 53, 11, __ [ 7/ 7, 150]  68
+    neck="Fotia Gorget",                            -- __, __, 10, __, __ [__/__, ___] ___; FTP+0.1
+    ear1="Moonshade Earring",                       -- __, __,  4, __, __ [__/__, ___] ___; TP Bonus+250
+    ear2="Lugra Earring +1",                        -- 16, __, __, __, __ [__/__, ___] ___
+    ring1="Ephramad's Ring",                        -- 10, 20, 20, __, 10 [__/__, ___] ___
+    ring2="Epaminondas's Ring",                     -- __, __, __,  5, __ [__/__, ___] ___
+    back=gear.PLD_Enmity_Cape,                      -- __, __, __, __, __ [10/__, ___]  80
+    waist="Sailfi Belt +1",                         -- 15, 15, __, __, __ [__/__, ___] ___
     -- 210 STR, 365 Attack, 262 Accuracy, 66 WSD, 10 PDL [48 PDT/38 MDT, 674 M.Eva] 580 HP
 
-    -- back=gear.PLD_WS1_Cape,                    -- 30, 20, 20, 10, __ [10/__, ___] ___
+    -- back=gear.PLD_WS1_Cape,                      -- 30, 20, 20, 10, __ [10/__, ___] ___
     -- 240 STR, 385 Attack, 282 Accuracy, 76 WSD, 10 PDL [48 PDT/38 MDT, 674 M.Eva] 500 HP
   }
   sets.precast.WS.MaxTP = set_combine(sets.precast.WS, {
-    ear1="Thrud Earring",                         -- 10, __, __,  3, __ [__/__, ___] ___
+    ear1="Thrud Earring",                           -- 10, __, __,  3, __ [__/__, ___] ___
   })
   sets.precast.WS.AttCapped = set_combine(sets.precast.WS, {
-    ammo="Oshasha's Treatise",                    -- __,  5,  5,  3, __ [__/__, ___] ___
-    head="Sakpata's Helm",                        -- 33, 70, 55, __,  5 [ 7/ 7, 123]  91
-    body="Sakpata's Breastplate",                 -- 42, 70, 55, __,  8 [10/10, 139] 136
-    hands="Sakpata's Gauntlets",                  -- 24, 70, 55, __,  6 [ 8/ 8, 112]  91
-    legs="Sakpata's Cuisses",                     -- 53, 70, 55, __,  7 [ 9/ 9, 150] 114
-    feet="Sakpata's Leggings",                    -- 29, 70, 55, __,  4 [ 6/ 6, 150]  68
-    neck="Fotia Gorget",                          -- __, __, 10, __, __ [__/__, ___] ___; FTP+0.1
-    ear1="Moonshade Earring",                     -- __, __,  4, __, __ [__/__, ___] ___; TP Bonus+250
-    ear2="Lugra Earring +1",                      -- 16, __, __, __, __ [__/__, ___] ___
-    ring1="Ephramad's Ring",                      -- 10, 20, 20, __, 10 [__/__, ___] ___
-    ring2="Epaminondas's Ring",                   -- __, __, __,  5, __ [__/__, ___] ___
-    back=gear.PLD_Enmity_Cape,                    -- __, __, __, __, __ [10/__, ___]  80
-    waist="Sailfi Belt +1",                       -- 15, 15, __, __, __ [__/__, ___] ___
+    ammo="Oshasha's Treatise",                      -- __,  5,  5,  3, __ [__/__, ___] ___
+    head="Sakpata's Helm",                          -- 33, 70, 55, __,  5 [ 7/ 7, 123]  91
+    body="Sakpata's Breastplate",                   -- 42, 70, 55, __,  8 [10/10, 139] 136
+    hands="Sakpata's Gauntlets",                    -- 24, 70, 55, __,  6 [ 8/ 8, 112]  91
+    legs="Sakpata's Cuisses",                       -- 53, 70, 55, __,  7 [ 9/ 9, 150] 114
+    feet="Sakpata's Leggings",                      -- 29, 70, 55, __,  4 [ 6/ 6, 150]  68
+    neck="Fotia Gorget",                            -- __, __, 10, __, __ [__/__, ___] ___; FTP+0.1
+    ear1="Moonshade Earring",                       -- __, __,  4, __, __ [__/__, ___] ___; TP Bonus+250
+    ear2="Lugra Earring +1",                        -- 16, __, __, __, __ [__/__, ___] ___
+    ring1="Ephramad's Ring",                        -- 10, 20, 20, __, 10 [__/__, ___] ___
+    ring2="Epaminondas's Ring",                     -- __, __, __,  5, __ [__/__, ___] ___
+    back=gear.PLD_Enmity_Cape,                      -- __, __, __, __, __ [10/__, ___]  80
+    waist="Sailfi Belt +1",                         -- 15, 15, __, __, __ [__/__, ___] ___
     -- 222 STR, 390 Attack, 314 Accuracy, 8 WSD, 40 PDL [50 PDT/40 MDT, 674 M.Eva] 580 HP
 
-    -- back=gear.PLD_WS1_Cape,                    -- 30, 20, 20, 10, __ [10/__, ___] ___
+    -- back=gear.PLD_WS1_Cape,                      -- 30, 20, 20, 10, __ [10/__, ___] ___
     -- 252 STR, 410 Attack, 334 Accuracy, 18 WSD, 40 PDL [50 PDT/40 MDT, 674 M.Eva] 500 HP
   })
   sets.precast.WS.AttCappedMaxTP = set_combine(sets.precast.WS.AttCapped, {
-    ear1="Thrud Earring",                         -- 10, __, __,  3, __ [__/__, ___] ___
+    ear1="Thrud Earring",                           -- 10, __, __,  3, __ [__/__, ___] ___
   })
   sets.precast.WS.Safe = set_combine(sets.Enmity, {
-    ammo="Oshasha's Treatise",                    -- __,  5,  5,  3, __ [__/__, ___] ___
-    head=gear.Nyame_B_head,                       -- 26, 65, 50, 11, __ [ 7/ 7, 123]  91
-    body=gear.Nyame_B_body,                       -- 45, 65, 40, 13, __ [ 9/ 9, 139] 136
-    hands=gear.Nyame_B_hands,                     -- 17, 65, 40, 11, __ [ 7/ 7, 112]  91
-    legs=gear.Nyame_B_legs,                       -- 58, 65, 40, 12, __ [ 8/ 8, 150] 114
-    feet=gear.Nyame_B_feet,                       -- 23, 65, 53, 11, __ [ 7/ 7, 150]  68
-    neck={name="Unmoving Collar +1", priority=1}, -- __, __,  5, __, __ [__/__, ___] 200
-    ear1="Moonshade Earring",                     -- __, __,  4, __, __ [__/__, ___] ___; TP Bonus+250
-    ear2="Chevalier's Earring +1",                -- __, __, 12, __, __ [ 4/ 4, ___] ___
-    ring1="Gelatinous Ring +1",                   -- __, __, __, __, __ [ 7/-1, ___] 135
-    ring2="Epaminondas's Ring",                   -- __, __, __,  5, __ [__/__, ___] ___
-    back={name="Moonlight Cape", priority=1},     -- __, __, __, __, __ [ 6/ 6, ___] 275
-    waist="Platinum Moogle Belt",                 -- __, __, __, __, __ [ 3/ 3,  15] ___
-    -- HP from belt                                                                  314
+    ammo="Oshasha's Treatise",                      -- __,  5,  5,  3, __ [__/__, ___] ___
+    head=gear.Nyame_B_head,                         -- 26, 65, 50, 11, __ [ 7/ 7, 123]  91
+    body=gear.Nyame_B_body,                         -- 45, 65, 40, 13, __ [ 9/ 9, 139] 136
+    hands=gear.Nyame_B_hands,                       -- 17, 65, 40, 11, __ [ 7/ 7, 112]  91
+    legs=gear.Nyame_B_legs,                         -- 58, 65, 40, 12, __ [ 8/ 8, 150] 114
+    feet=gear.Nyame_B_feet,                         -- 23, 65, 53, 11, __ [ 7/ 7, 150]  68
+    neck={name="Unmoving Collar +1", priority=1},   -- __, __,  5, __, __ [__/__, ___] 200
+    ear1="Moonshade Earring",                       -- __, __,  4, __, __ [__/__, ___] ___; TP Bonus+250
+    ear2="Chevalier's Earring +1",                  -- __, __, 12, __, __ [ 4/ 4, ___] ___
+    ring1={name="Gelatinous Ring +1", priority=1},  -- __, __, __, __, __ [ 7/-1, ___] 135
+    ring2="Epaminondas's Ring",                     -- __, __, __,  5, __ [__/__, ___] ___
+    back={name="Moonlight Cape", priority=1},       -- __, __, __, __, __ [ 6/ 6, ___] 275
+    waist={name="Platinum Moogle Belt", priority=1},-- __, __, __, __, __ [ 3/ 3,  15] ___
+    -- HP from belt                                                                    314
     -- 169 STR, 330 Attack, 249 Accuracy, 66 WSD, 0 PDL [58 PDT/50 MDT, 689 M.Eva] 1110/1424 HP
 
-    -- ear2="Chevalier's Earring +2",             -- 15, __, 20, __, __ [ 8/ 8, ___] ___
+    -- ear2="Chevalier's Earring +2",               -- 15, __, 20, __, __ [ 8/ 8, ___] ___
     -- 184 STR, 330 Attack, 257 Accuracy, 66 WSD, 0 PDL [62 PDT/54 MDT, 689 M.Eva] 1110/1424 HP
   })
   sets.precast.WS.SafeMaxTP = set_combine(sets.precast.WS.Safe, {
-    ear1="Lugra Earring +1",                      -- 16, __, __, __, __ [__/__, ___] ___
+    ear1="Lugra Earring +1",                        -- 16, __, __, __, __ [__/__, ___] ___
   })
 
   sets.precast.WS['Atonement'] = set_combine(sets.Enmity, {})
@@ -665,20 +693,20 @@ function init_gear_sets()
     -- 117 DEX, 236 INT, 58 WSD, 199 MAB, 249 M.Acc [48 PDT/38 MDT, 674 M.Eva] 440 HP
   })
   sets.precast.WS['Aeolian Edge'].Safe = set_combine(sets.precast.WS['Aeolian Edge'], {
-    ammo="Pemphredo Tathlum",           -- __,  4, __,  4,  8 [__/__, ___] ___
-    head=gear.Nyame_B_head,             -- 25, 28, 11, 30, 40 [ 7/ 7, 123]  91
-    body=gear.Nyame_B_body,             -- 24, 42, 13, 30, 40 [ 9/ 9, 139] 136
-    hands=gear.Nyame_B_hands,           -- 42, 28, 11, 30, 40 [ 7/ 7, 112]  91
-    legs=gear.Nyame_B_legs,             -- __, 44, 12, 30, 40 [ 8/ 8, 150] 114
-    feet=gear.Nyame_B_feet,             -- 26, 25, 11, 30, 40 [ 7/ 7, 150]  68
-    neck="Unmoving Collar +1",          -- __, __, __, __, __ [__/__, ___] 200
-    ear1="Friomisi Earring",            -- __, __, __, 10, __ [__/__, ___] ___
-    ear2="Novio Earring",               -- __, __, __,  7, __ [__/__, ___] ___
-    ring1="Gelatinous Ring +1",         -- __, __, __, __, __ [ 7/-1, ___] 135
-    ring2="Shiva Ring +1",              -- __,  9, __,  3, __ [__/__, ___] ___
-    back="Moonlight Cape",              -- __, __, __, __, __ [ 6/ 6, ___] 275
-    waist="Platinum Moogle Belt",       -- __, __, __, __, __ [ 3/ 3,  15] ___
-    -- HP from belt                                                        314
+    ammo="Pemphredo Tathlum",                       -- __,  4, __,  4,  8 [__/__, ___] ___
+    head=gear.Nyame_B_head,                         -- 25, 28, 11, 30, 40 [ 7/ 7, 123]  91
+    body=gear.Nyame_B_body,                         -- 24, 42, 13, 30, 40 [ 9/ 9, 139] 136
+    hands=gear.Nyame_B_hands,                       -- 42, 28, 11, 30, 40 [ 7/ 7, 112]  91
+    legs=gear.Nyame_B_legs,                         -- __, 44, 12, 30, 40 [ 8/ 8, 150] 114
+    feet=gear.Nyame_B_feet,                         -- 26, 25, 11, 30, 40 [ 7/ 7, 150]  68
+    neck={name="Unmoving Collar +1",priority=1},    -- __, __, __, __, __ [__/__, ___] 200
+    ear1="Friomisi Earring",                        -- __, __, __, 10, __ [__/__, ___] ___
+    ear2="Novio Earring",                           -- __, __, __,  7, __ [__/__, ___] ___
+    ring1={name="Gelatinous Ring +1",priority=1},   -- __, __, __, __, __ [ 7/-1, ___] 135
+    ring2="Shiva Ring +1",                          -- __,  9, __,  3, __ [__/__, ___] ___
+    back={name="Moonlight Cape",priority=1},        -- __, __, __, __, __ [ 6/ 6, ___] 275
+    waist={name="Platinum Moogle Belt",priority=1}, -- __, __, __, __, __ [ 3/ 3,  15] ___
+    -- HP from belt                                                                    314
     -- 117 DEX, 180 INT, 58 WSD, 174 MAB, 208 M.Acc [54 PDT/46 MDT, 1110 M.Eva] 1110/1424 HP
   })
   sets.precast.WS['Aeolian Edge'].SafeMaxTP = set_combine(sets.precast.WS['Aeolian Edge'].Safe, {})
