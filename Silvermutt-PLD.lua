@@ -227,7 +227,7 @@ function init_gear_sets()
     head="Loess Barbuta +1",                        -- 20/20, ___ [105] <24>
     body=gear.Souveran_C_body,                      -- 10/10,  69 [171] <20>
     hands=gear.Souveran_C_hands,                    -- __/ 5,  48 [239] < 9>
-    legs="Caballarius Breeches +1",                 --  5/__,  64 [ 52] < 7>
+    legs="Caballarius Breeches +3",                 --  7/__,  84 [ 72] < 9>
     feet="Chevalier's Sabatons +2",                 -- __/__, 126 [ 42] <13>
     neck={name="Unmoving Collar +1",priority=1},    -- __/__, ___ [200] <10>
     ear2="Cryptic Earring",                         -- __/__, ___ [ 40] < 4>
@@ -236,10 +236,9 @@ function init_gear_sets()
     back=gear.PLD_Enmity_Cape,                      -- 10/__,  20 [ 80] <10>
     waist="Platinum Moogle Belt",                   --  3/ 3,  15 [___] <__>; HP+10%
     -- HP from belts                                               ???
-    -- 55 PDT / 37 MDT, 342 M.Eva [1064/??? HP] <108 Enmity>
+    -- 57 PDT / 37 MDT, 362 M.Eva [1084/??? HP] <110 Enmity>
     
     -- sub="Srivatsa",                              -- 15 Enmity
-    -- legs="Caballarius Breeches +3",              --  7/__,  84 [ 72] < 9>
     -- feet="Chevalier's Sabatons +3",              -- __/__, 136 [ 52] <15>
     -- ear1="Trux Earring",                         -- __/__, ___ [___] < 5>
     -- 57 PDT / 37 MDT, 372 M.Eva [1094/??? HP] <150 Enmity>
@@ -248,7 +247,7 @@ function init_gear_sets()
   sets.precast.JA = set_combine(sets.Enmity, {})
 
   sets.precast.JA['Invincible'] = set_combine(sets.Enmity, {
-    -- legs="Caballarius Breeches +3",
+    legs="Caballarius Breeches +3",
   })
 
   -- Scales off MND
@@ -374,7 +373,7 @@ function init_gear_sets()
     head=gear.Souveran_C_head,                      -- __/__,  53 [280] {20}  9
     body=gear.Souveran_C_body,                      -- 10/10,  69 [171] {__} 20
     hands={name="Regal Gauntlets",priority=1},      -- __/__,  48 [205] {10} __
-    legs=gear.Carmine_A_legs,                       -- __/__,  80 [130] {20} __
+    legs="Caballarius Breeches +3",                 --  7/__,  84 [ 72] {10}  9
     feet=gear.Odyssean_Enmity_feet,                 -- __/__,  86 [ 20] {20}  8
     neck="Moonlight Necklace",                      -- __/__,  15 [___] {15} 15
     ear1="Magnetic Earring",                        -- __/__, ___ [___] { 8} __
@@ -385,10 +384,9 @@ function init_gear_sets()
     waist="Platinum Moogle Belt",                   --  3/ 3,  15 [___] {__} __; HP+10%
     -- SIRD merits                                                      { 8}
     -- HP from belt                                                ???
-    -- 42 PDT/24 MDT, 386 M.Eva [1131 HP] {112 SIRD} 80 Enmity
+    -- 49 PDT/24 MDT, 390 M.Eva [1073 HP] {102 SIRD} 81 Enmity
 
     -- sub="Srivatsa",                              --                       15
-    -- legs="Caballarius Breeches +3",              --  7/__,  84 [ 72] {10}  9
     -- ear2="Chevalier's Earring +2",               --  8/ 8, ___ [___] {__} __
     -- 53 PDT/28 MDT, 390 M.Eva [1073 HP] {102 SIRD} 104 Enmity
   }
