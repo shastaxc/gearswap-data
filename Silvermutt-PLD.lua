@@ -1,4 +1,4 @@
--- File Status: Good. Verify HP prioritization.
+-- File Status: Good.
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs
@@ -176,21 +176,21 @@ function init_gear_sets()
     head="Chevalier's Armet +2",                    -- 10/10,  93 (138) [135] __, __; 7% Dmg to MP
     body="Sakpata's Breastplate",                   -- 10/10, 139 (194) [136] __, __; Resist Status+15
     hands="Chevalier's Gauntlets +3",               -- 11/11,  98 (136) [ 64] __, __; Shield Def. Bonus+5
-    legs="Chevalier's Cuisses +2",                  -- 12/12, 126 (150) [117] __, __; Retain enmity
+    legs={name="Chevalier's Cuisses +2",priority=1},-- 12/12, 126 (150) [117] __, __; Retain enmity
     feet="Sakpata's Leggings",                      --  6/ 6, 150 (125) [ 68]  5,  5
     neck={name="Unmoving Collar +1",priority=1},    -- __/__, ___ ( 41) [200] __, __
     ear1="Arete del Luna +1",                       -- __/__, ___ (___) [___] __, __; Resists
-    ear2="Etiolation Earring",                      -- __/ 3, ___ (___) [ 50] __, __; Resist Silence+15
+    ear2={name="Etiolation Earring",priority=1},    -- __/ 3, ___ (___) [ 50] __, __; Resist Silence+15
     ring1={name="Gelatinous Ring +1",priority=1},   --  7/-1, ___ (___) [135] __, __
     ring2={name="Moonlight Ring",priority=1},       --  5/ 5, ___ (___) [110] __, __
     back=gear.PLD_Block_Cape,                       -- __/__,  20 ( 20) [ 80]  8, __; 5% Dmg to MP
     waist={name="Platinum Moogle Belt",priority=1}, --  3/ 3,  15 (___) [___] __, __; HP+10%
-    -- HP from belt                                                313
+    -- HP from belt                                                      313
     -- 67 PDT / 62 MDT, 641 MEVA (804 Defense) [1095/1408 HP] 13 Block, 5 Counter
     
-    -- head="Chevalier's Armet +3",                 -- 11/11, 103 (148) [145] __, __; 8% Dmg to MP
-    -- legs="Chevalier's Cuisses +3",               -- 13/13, 136 (160) [127] __, __; Retain enmity
-    -- HP from belt                                                315
+    -- head="Chevalier's Armet +3",                    -- 11/11, 103 (148) [145] __, __; 8% Dmg to MP
+    -- legs={name="Chevalier's Cuisses +3",priority=1},-- 13/13, 136 (160) [127] __, __; Retain enmity
+    -- HP from belt                                                         315
     -- 69 PDT / 64 MDT, 661 MEVA (824 Defense) [1115/1430 HP] 13 Block, 5 Counter
   }
 
@@ -207,18 +207,18 @@ function init_gear_sets()
     feet="Sakpata's Leggings",                      --  6/ 6, 150 (125) [ 68]  5,  5
     neck="Bathy Choker +1",                         -- __/__, ___ ( 10) [ 35] __, 10; Regen+3
     ear1="Arete del Luna +1",                       -- __/__, ___ (___) [___] __, __; Resists
-    ear2="Cryptic Earring",                         -- __/__, ___ (___) [ 40] __,  3
+    ear2={name="Cryptic Earring",priority=1},       -- __/__, ___ (___) [ 40] __,  3
     ring1={name="Gelatinous Ring +1",priority=1},   --  7/-1, ___ (___) [135] __, __
     ring2={name="Moonlight Ring",priority=1},       --  5/ 5, ___ (___) [110] __, __
     back=gear.PLD_Block_Cape,                       -- __/__,  20 ( 20) [ 80]  8, __; 5% Dmg to MP
     waist={name="Platinum Moogle Belt",priority=1}, --  3/ 3,  15 (___) [___] __, __; HP+10%
-    -- HP from belt                                                313
+    -- HP from belt                                                      313
     -- 56 PDT / 53 MDT, 591 MEVA (749 Defense) [1095/1408 HP] 13 Block, 18 Counter
     
-    -- head="Chevalier's Armet +3",                 -- 11/11, 103 (148) [145] __, __; 8% Dmg to MP
-    -- legs="Chevalier's Cuisses +3",               -- 13/13, 136 (160) [127] __, __; Retain enmity
-    -- back=gear.PLD_Counter_Cape,                  -- __/__,  20 ( 20) [ 80]  3, 10; 5% Dmg to MP
-    -- HP from belt                                                315
+    -- head="Chevalier's Armet +3",                    -- 11/11, 103 (148) [145] __, __; 8% Dmg to MP
+    -- legs={name="Chevalier's Cuisses +3",priority=1},-- 13/13, 136 (160) [127] __, __; Retain enmity
+    -- back=gear.PLD_Counter_Cape,                     -- __/__,  20 ( 20) [ 80]  3, 10; 5% Dmg to MP
+    -- HP from belt                                                         315
     -- 58 PDT / 55 MDT, 611 MEVA (769 Defense) [1115/1430 HP] 8 Block, 28 Counter
   }
 
