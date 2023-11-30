@@ -511,10 +511,9 @@ function init_gear_sets()
   -- For spells like Burn, Choke, etc.
   sets.midcast.ElementalEnfeeble = set_combine(sets.midcast.INTEnfeebles, {
     body="Wicce Coat +3",           -- More m.acc, dropping enfeebling skill piece
+    legs="Archmage's Tonban +3",    -- Enhance elemental debuffs
     feet="Archmage's Sabots +3",    -- Enhance elemental debuffs
     waist="Acuity Belt +1",         -- More m.acc, dropping enfeebling skill piece
-
-    -- legs="Archmage's Tonban +3", -- Enhance elemental debuffs
   })
 
   sets.midcast.Impact = set_combine(sets.midcast.INTEnfeebles, {
