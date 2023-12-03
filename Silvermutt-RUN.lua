@@ -212,15 +212,12 @@ function init_gear_sets()
     legs="Erilaz Leg Guards +3",                    -- 13/13, 157 [100] (__, __)
     feet="Erilaz Greaves +3",                       -- 11/11, 157 [ 48] (__, 35)
     neck="Warder's Charm +1",                       -- __/__, ___ [___] (__, 20); Absorb magic dmg
+    ear1="Sanare Earring",                          -- __/__,   6 [___] (__, __); M. Def Bonus+4
     ear2="Arete del Luna +1",                       -- __/__, ___ [___] (__, __); Resists
+    ring1="Wuji Ring",                              -- __/__, ___ [___] (__, __); Resists
     ring2={name="Moonlight Ring",priority=1},       --  5/ 5, ___ [110] (__, __)
     back="Moonlight Cape",                          --  6/ 6, ___ [275] (__, __)
     waist={name="Platinum Moogle Belt",priority=1}, --  3/ 3,  15 [___] __; HP+10%
-    -- HP from belt                                                341
-    -- 52 PDT / 52 MDT, 665 MEVA [916/1257 HP] (19 Status Resist, 55 Element Resist)
-    
-    -- ear1="Sanare Earring",                       -- __/__,   6 [___] (__, __); M. Def Bonus+4
-    -- ring1="Wuji Ring",                           -- __/__, ___ [___] (__, __); Resists
     -- HP from belt                                                341
     -- 52 PDT / 52 MDT, 671 MEVA [916/1257 HP] (19 Status Resist, 55 Element Resist)
   }
@@ -560,9 +557,9 @@ function init_gear_sets()
     waist="Platinum Moogle Belt",                   --  3/ 3,  15 [___] (__, __); HP+10%
     -- HP from belt                                                338
     -- Merits/Traits/Gifts                                              (20, 52)
-    -- Master Levels                                                    (__, 27)
+    -- Master Levels                                                    (__, 28)
     -- Base skill                                                       (__, 388)
-    -- 49 PDT/49 MDT, 588 M.Eva [885/1223 HP] (65 Enh Duration, 508 Enh Skill)
+    -- 49 PDT/49 MDT, 588 M.Eva [885/1223 HP] (65 Enh Duration, 509 Enh Skill)
 
     -- ammo="Staunch Tathlum +1",                   --  3/ 3, ___ [___] (__, __)
     -- head="Erilaz Galea +3",                      -- __/__, 119 [111] (25, __)
@@ -619,9 +616,9 @@ function init_gear_sets()
     waist="Platinum Moogle Belt",                   --  3/ 3,  15 [___] (__, __); HP+10%
     -- HP from belt                                                320
     -- Merits/Traits/Gifts                                              (20, 52)
-    -- Master Levels                                                    (__, 27)
+    -- Master Levels                                                    (__, 28)
     -- Base skill                                                       (__, 388)
-    -- 45 PDT/42 MDT, 577 M.Eva [1025 HP] (45 Enh Duration, 537 Enh Skill)
+    -- 45 PDT/42 MDT, 577 M.Eva [1025 HP] (45 Enh Duration, 538 Enh Skill)
   }
   sets.midcast.Temper.Safe = set_combine(sets.midcast.BarElement, {})
   sets.midcast.Protect = {
@@ -632,6 +629,7 @@ function init_gear_sets()
     legs={name="Futhark Trousers +3", priority=1},    -- __/__,  89 [107] (30, __)
     feet="Erilaz Greaves +3",                         -- 11/11, 157 [ 48] (__, __)
     neck="Futhark Torque +2",                         --  7/ 7,  30 [ 60] (__, __)
+    ear1="Sanare Earring",                            -- __/__,   6 [___] (__, __); M. Def Bonus+4
     ear2="Arete del Luna +1",                         -- __/__, ___ [___] (__, __); Resists
     ring1="Sheltered Ring",                           -- __/__, ___ [___] (__, __); Enhances Protect/Shell
     ring2="Defending Ring",                           -- 10/10, ___ [___] (__, __)
@@ -639,9 +637,6 @@ function init_gear_sets()
     waist="Platinum Moogle Belt",                     --  3/ 3,  15 [___] (__, __); HP+10%
     -- HP from belt                                                  343
     -- Merits/Traits/Gifts                                                (20, 52)
-    -- 49 PDT/49 MDT, 597 M.Eva [942/1285 HP] (95 Enh Duration, N/A Enh Skill)
-
-    -- ear1="Sanare Earring",                         -- __/__,   6 [___] (__, __); M. Def Bonus+4
     -- 49 PDT/49 MDT, 603 M.Eva [942/1285 HP] (95 Enh Duration, N/A Enh Skill)
   }
   sets.midcast.Shell = set_combine(sets.midcast.Protect, {})
@@ -662,8 +657,8 @@ function init_gear_sets()
     waist="Platinum Moogle Belt",               -- _, ___, __ [ 3/ 3,  15] ___; HP+10%
     -- HP from belt                                                        337
     -- Base/Traits/Gifts                           _, 440,  8 [__/__, ___] ___
-    -- Master Levels                                   27
-    -- 27 Phalanx, 477 Enh Skill, 19% SIRD [46 PDT/28 MDT, 380 M.Eva] 874/1211 HP
+    -- Master Levels                                   28
+    -- 27 Phalanx, 478 Enh Skill, 19% SIRD [46 PDT/28 MDT, 380 M.Eva] 874/1211 HP
     -- 61 Total Phalanx
     
     -- Master Levels                                   50
