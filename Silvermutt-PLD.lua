@@ -210,14 +210,13 @@ function init_gear_sets()
     ear2={name="Cryptic Earring",priority=1},       -- __/__, ___ (___) [ 40] __,  3
     ring1={name="Gelatinous Ring +1",priority=1},   --  7/-1, ___ (___) [135] __, __
     ring2={name="Moonlight Ring",priority=1},       --  5/ 5, ___ (___) [110] __, __
-    back=gear.PLD_Block_Cape,                       -- __/__,  20 ( 20) [ 80]  8, __; 5% Dmg to MP
+    back=gear.PLD_Counter_Cape,                     -- __/__,  20 ( 20) [ 80]  3, 10; 5% Dmg to MP
     waist={name="Platinum Moogle Belt",priority=1}, --  3/ 3,  15 (___) [___] __, __; HP+10%
     -- HP from belt                                                      313
-    -- 56 PDT / 53 MDT, 591 MEVA (749 Defense) [1095/1408 HP] 13 Block, 18 Counter
+    -- 56 PDT / 53 MDT, 591 MEVA (749 Defense) [1095/1408 HP] 8 Block, 28 Counter
     
     -- head="Chevalier's Armet +3",                    -- 11/11, 103 (148) [145] __, __; 8% Dmg to MP
     -- legs={name="Chevalier's Cuisses +3",priority=1},-- 13/13, 136 (160) [127] __, __; Retain enmity
-    -- back=gear.PLD_Counter_Cape,                     -- __/__,  20 ( 20) [ 80]  3, 10; 5% Dmg to MP
     -- HP from belt                                                         315
     -- 58 PDT / 55 MDT, 611 MEVA (769 Defense) [1115/1430 HP] 8 Block, 28 Counter
   }
@@ -728,11 +727,8 @@ function init_gear_sets()
     ear2="Dedition Earring",          -- __,  8,-10, __ <__, __, __> [__/__, ___] ___
     ring1="Chirich Ring +1",          -- __,  6, 10, __ <__, __, __> [__/__, ___] ___
     ring2="Chirich Ring +1",          -- __,  6, 10, __ <__, __, __> [__/__, ___] ___
-    back=gear.PLD_Enmity_Cape,        -- __, __, __, __ <__, __, __> [10/__, ___]  80
+    back=gear.PLD_TP_Cape,            -- 20, 10, 30, __ <__, __, __> [10/__, ___] ___
     waist="Kentarch Belt +1",         -- 10,  5, 14, __ < 3, __, __> [__/__, ___] ___
-    -- 120 DEX, 70 STP, 194 Acc, 22 Haste <31 DA, 0 TA, 0 QA> [38 PDT/24 MDT, 540 M.Eva] 547 HP
-
-    -- back=gear.PLD_TP_Cape,         -- 20, 10, 30, __ <__, __, __> [10/__, ___] ___
     -- 140 DEX, 80 STP, 224 Acc, 22 Haste <31 DA, 0 TA, 0 QA> [38 PDT/24 MDT, 540 M.Eva] 467 HP
   }
   sets.engaged.LowAcc = set_combine(sets.engaged, {

@@ -299,12 +299,12 @@ gear.NIN_WSD_STR_Cape = { name="Andartia's Mantle", augments={'STR+20','Accuracy
 -- gear.NIN_DA_DEX_Cape = { name="Andartia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Phys. dmg. taken-10%',}}
 
 gear.PLD_Block_Cape = { name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','HP+20','Enmity+10','Chance of successful block +5',}}
--- gear.PLD_Counter_Cape = {} -- HP+60, Eva+20/Meva+20, HP+20, Enmity+10, Counter+10
+gear.PLD_Counter_Cape = { name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','HP+20','Enmity+10','System: 1 ID: 640 Val: 4',}}
 gear.PLD_Enmity_Cape = { name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','HP+20','Enmity+10','Phys. dmg. taken-10%',}}
 gear.PLD_FC_Cape = { name="Rudianos's Mantle", augments={'HP+60','Eva.+20 /Mag. Eva.+20','HP+20','"Fast Cast"+10','Phys. dmg. taken-10%',}}
--- back=gear.PLD_TP_Cape = {}  -- DEX+20, Att/Acc+30, STP+10, PDT-10
--- back=gear.PLD_WS1_Cape = {} -- STR+30, Att/Acc+20, WSD+10, PDT-10
--- back=gear.PLD_WS2_Cape = {} -- INT+30, M.Dmg/M.Acc+20, MAB+10, PDT-10
+gear.PLD_TP_Cape = { name="Rudianos's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','Accuracy+10','"Store TP"+10','Phys. dmg. taken-10%',}}
+-- gear.PLD_WS1_Cape = {} -- STR+30, Att/Acc+20, WSD+10, PDT-10
+-- gear.PLD_WS2_Cape = {} -- INT+30, M.Dmg/M.Acc+20, MAB+10, PDT-10
 
 -- gear.PUP_STR_DA_Cape = { name="Visucius's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Pet: Damage taken -5%',}}
 gear.PUP_STR_Crit_Cape = { name="Visucius's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Crit.hit rate+10','Pet: Damage taken -5%',}}
