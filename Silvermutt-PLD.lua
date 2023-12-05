@@ -1,4 +1,4 @@
--- File Status: Good. TODO: Detect if someone overwrites Rampart and cancel self_rampart flag.
+-- File Status: Good. Add a Cure set that is not SIRD capped for use when Rampart is up with Iron Will.
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs
