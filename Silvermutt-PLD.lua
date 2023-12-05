@@ -1,4 +1,4 @@
--- File Status: Good.
+-- File Status: Good. TODO: Detect if someone overwrites Rampart and cancel self_rampart flag.
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs
@@ -105,10 +105,10 @@ function job_setup()
 
   -- /BLU Spell Maps
   blue_magic_maps = {}
-  blue_magic_maps.Enmity = S{'Blank Gaze', 'Geist Wall', 'Jettatura', 'Soporific',
+  blue_magic_maps.BLUEnmity = S{'Blank Gaze', 'Geist Wall', 'Jettatura', 'Soporific',
       'Poison Breath', 'Blitzstrahl', 'Sheep Song', 'Chaotic Eye'}
-  blue_magic_maps.Cure = S{'Wild Carrot', 'Healing Breeze', 'Magic Fruit'}
-  blue_magic_maps.Buffs = S{'Cocoon', 'Refueling'}
+  blue_magic_maps.BLUCure = S{'Wild Carrot', 'Healing Breeze', 'Magic Fruit'}
+  blue_magic_maps.BLUBuffs = S{'Cocoon', 'Refueling'}
 
   state.Kiting:set('On')
   state.PhysicalDefenseMode = M{['description'] = 'Physical Defense Mode', 'PDT', 'Phalanx'}
@@ -124,9 +124,33 @@ function job_setup()
 
   enable_phalanx_sird = false -- Do not modify
   has_soul_drain_shield = false -- Do not modify
+  self_rampart = false -- Do not modify
 
   check_for_prime_shield()
   set_main_keybinds()
+
+  -- These spells' normal sets will use the specified set based on Iron Will and SIRD merits.
+  -- Both spell names and spellmaps can be used as indices. Spell names take precedence if both are included.
+  midcast_SIRD_sets = {
+    ['Enhancing Magic'] = 'SIRD',
+    ['Crusade'] = 'SIRD',
+    ['Reprisal'] = 'SIRD',
+    ['Aquaveil'] = 'SIRD',
+    ['Utsusemi'] = 'SIRD',
+    ['BLUBuffs'] = 'SIRD',
+
+    ['Foil'] = 'SIRDEnmity',
+    ['Geist Wall'] = 'SIRDEnmity',
+    ['Sheep Song'] = 'SIRDEnmity',
+    ['Bomb Toss'] = 'SIRDEnmity',
+    ['Poison'] = 'SIRDEnmity',
+    ['Poisonga'] = 'SIRDEnmity',
+    ['Banish'] = 'SIRDEnmity',
+    ['Dia'] = 'SIRDEnmity',
+
+    ['Cure'] = 'SIRDCure',
+    ['BLUCure'] = 'SIRDCure',
+  }
 end
 
 -- Executes on first load, main job change, **and sub job change**
@@ -353,6 +377,8 @@ function init_gear_sets()
     -- waist="Audumbla Sash",                       --  4/__, ___ [___] {10} __
   }
 
+  -- SIRD sets will automatically be swapped in according to functional logic
+
   -- 102% SIRD required to cap; can get 10% from merits
   sets.SIRD = {
     main="Burtgang",
@@ -408,10 +434,33 @@ function init_gear_sets()
     -- 53 PDT/28 MDT, 390 M.Eva [1073/1384 HP] {102 SIRD} 104 Enmity
   }
 
-  sets.midcast['Enhancing Magic'] = set_combine(sets.SIRD, {})
+  sets.SIRDPhalanx = {
+    main="Sakpata's Sword",                         -- 4, ___, __ [10/10, ___] 100
+    sub="Priwen",                                   -- 2, ___, __ [ 6/ 6, ___]  30
+    ammo="Staunch Tathlum +1",                      -- _, ___, 11 [ 3/ 3, ___] ___
+    head={name=gear.Souveran_C_head.name,
+      augments=gear.Souveran_C_head.augments,
+      priority=1},                                  -- _, ___, 20 [__/__,  53] 280
+    body=gear.Valorous_Phalanx_body,                -- 4, ___, __ [ 2/__,  59]  61
+    hands={name="Regal Gauntlets",priority=1},      -- _, ___, 10 [__/__,  48] 205
+    legs=gear.Founders_Hose,                        -- _, ___, 30 [__/__,  80]  54
+    feet={name=gear.Souveran_C_feet.name,
+      augments=gear.Souveran_C_feet.augments,
+      priority=1},                                  -- 5, ___, __ [ 5/__,  86] 227
+    neck="Moonlight Necklace",                      -- _, ___, 15 [__/__,  15] ___
+    ear1="Magnetic Earring",                        -- _, ___,  8 [__/__, ___] ___
+    ear2="Chevalier's Earring +1",                  -- _, ___, __ [ 4/ 4, ___] ___
+    ring1={name="Gelatinous Ring +1",priority=1},   -- _, ___, __ [ 7/-1, ___] 135
+    ring2="Defending Ring",                         -- _, ___, __ [10/10, ___] ___
+    back=gear.PLD_Enmity_Cape,                      -- _, ___, __ [10/__, ___]  80
+    waist={name="Platinum Moogle Belt",priority=1}, -- _, ___, __ [ 3/ 3,  15] ___; HP+10%
+    -- SIRD merits                                              8
+    -- HP from belt                                                            321
+    -- 15 Phalanx, 416 Enh Skill, 102% SIRD [44 PDT/19 MDT, 356 M.Eva] 1172/1493 HP
 
-  sets.midcast.Crusade = set_combine(sets.SIRD, {})
-  sets.midcast.Reprisal = set_combine(sets.SIRD, {})
+    -- body=gear.Valorous_Phalanx_body,             -- 5, ___, __ [ 2/__,  59]  61
+    -- 16 Phalanx, 416 Enh Skill, 102% SIRD [44 PDT/19 MDT, 356 M.Eva] 1172/1493 HP
+  }
 
   sets.midcast.Protect = {
     main="Burtgang",
@@ -497,49 +546,22 @@ function init_gear_sets()
     -- 63 Total Phalanx
   }
 
-  sets.midcast['Phalanx'].SIRD = {
-    main="Sakpata's Sword",                         -- 4, ___, __ [10/10, ___] 100
-    sub="Priwen",                                   -- 2, ___, __ [ 6/ 6, ___]  30
-    ammo="Staunch Tathlum +1",                      -- _, ___, 11 [ 3/ 3, ___] ___
-    head={name=gear.Souveran_C_head.name,
-      augments=gear.Souveran_C_head.augments,
-      priority=1},                                  -- _, ___, 20 [__/__,  53] 280
-    body=gear.Valorous_Phalanx_body,                -- 4, ___, __ [ 2/__,  59]  61
-    hands={name="Regal Gauntlets",priority=1},      -- _, ___, 10 [__/__,  48] 205
-    legs=gear.Founders_Hose,                        -- _, ___, 30 [__/__,  80]  54
-    feet={name=gear.Souveran_C_feet.name,
-      augments=gear.Souveran_C_feet.augments,
-      priority=1},                                  -- 5, ___, __ [ 5/__,  86] 227
-    neck="Moonlight Necklace",                      -- _, ___, 15 [__/__,  15] ___
-    ear1="Magnetic Earring",                        -- _, ___,  8 [__/__, ___] ___
-    ear2="Chevalier's Earring +1",                  -- _, ___, __ [ 4/ 4, ___] ___
-    ring1={name="Gelatinous Ring +1",priority=1},   -- _, ___, __ [ 7/-1, ___] 135
-    ring2="Defending Ring",                         -- _, ___, __ [10/10, ___] ___
-    back=gear.PLD_Enmity_Cape,                      -- _, ___, __ [10/__, ___]  80
-    waist={name="Platinum Moogle Belt",priority=1}, -- _, ___, __ [ 3/ 3,  15] ___; HP+10%
-    -- SIRD merits                                              8
-    -- HP from belt                                                            321
-    -- 15 Phalanx, 416 Enh Skill, 102% SIRD [44 PDT/19 MDT, 356 M.Eva] 1172/1493 HP
+  sets.midcast['Enhancing Magic'] = set_combine(sets.Enmity, {})
+  sets.midcast['Crusade'] = set_combine(sets.Enmity, {})
+  sets.midcast['Reprisal'] = set_combine(sets.Enmity, {})
+  sets.midcast['Aquaveil'] = set_combine(sets.Enmity, {})
+  sets.midcast['Utsusemi'] = set_combine(sets.Enmity, {})
 
-    -- body=gear.Valorous_Phalanx_body,             -- 5, ___, __ [ 2/__,  59]  61
-    -- 16 Phalanx, 416 Enh Skill, 102% SIRD [44 PDT/19 MDT, 356 M.Eva] 1172/1493 HP
-  }
-
-  sets.midcast['Aquaveil'] = set_combine(sets.SIRD, {})
+  sets.midcast['Foil'] = set_combine(sets.Enmity, {})
+  sets.midcast['Geist Wall'] = set_combine(sets.Enmity, {})
+  sets.midcast['Sheep Song'] = set_combine(sets.Enmity, {})
+  sets.midcast['Bomb Toss'] = set_combine(sets.Enmity, {})
+  sets.midcast['Poison'] = set_combine(sets.Enmity, {})
+  sets.midcast['Poisonga'] = set_combine(sets.Enmity, {})
+  sets.midcast['Banish'] = set_combine(sets.Enmity, {})
+  sets.midcast['Dia'] = set_combine(sets.Enmity, {})
 
   sets.midcast.Flash = set_combine(sets.Enmity, {})
-  sets.midcast.Foil = set_combine(sets.SIRDEnmity, {})
-
-  sets.midcast.Utsusemi = set_combine(sets.SIRD, {})
-  sets.midcast['Geist Wall'] = set_combine(sets.SIRDEnmity, {})
-  sets.midcast['Sheep Song'] = set_combine(sets.SIRDEnmity, {})
-  sets.midcast['Bomb Toss'] = set_combine(sets.SIRDEnmity, {})
-  sets.midcast['Poisonga'] = set_combine(sets.SIRDEnmity, {})
-  sets.midcast['Banish'] = set_combine(sets.SIRDEnmity, {})
-
-  sets.midcast['Dia'] = set_combine(sets.SIRDEnmity, {})
-  sets.midcast['Dia II'] = set_combine(sets.SIRDEnmity, {})
-  sets.midcast['Diaga'] = set_combine(sets.SIRDEnmity, {})
 
   -- MND, VIT, Heal skill, Cure Pot (self pot) [PDT/MDT, M.Eva] HP {SIRD} Enmity
   cure_opts = {
@@ -590,12 +612,14 @@ function init_gear_sets()
     -- 133 MND, 196 VIT, 0 Heal skill, 47 Cure Pot (30 self pot) [61 PDT/43 MDT, 371 M.Eva] 1145/1463 HP {104 SIRD} 49 Enmity
   }
 
+  sets.SIRDCure = set_combine(sets.midcast.Cure, {})
+
   sets.midcast['Blue Magic'] = {}
-  sets.midcast['Blue Magic'].Enmity = set_combine(sets.Enmity, {})
-  sets.midcast['Blue Magic'].Buffs = set_combine(sets.SIRD, {})
+  sets.midcast.BLUEnmity = set_combine(sets.Enmity, {})
   -- BLU cures are affected by MND, VIT, and blue skill. The MND has BY FAR the greatest effect.
   -- Ignore skill entirely. It only seems to give curing at 1/10 the rate, MND is at least 3x better.
-  sets.midcast['Blue Magic'].Cure = set_combine(sets.midcast.Cure, {})
+  sets.midcast.BLUCure = set_combine(sets.midcast.Cure, {})
+  sets.midcast.BLUBuffs = set_combine(sets.Enmity, {})
 
 
   ------------------------------------------------------------------------------------------------
@@ -911,6 +935,10 @@ function job_precast(spell, action, spellMap, eventArgs)
   silibs.precast_hook(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
 
+  if spell.english == 'Rampart' then
+    self_rampart = true
+  end
+
   if runes:contains(spell.english) then
     eventArgs.handled = true
   end
@@ -968,13 +996,23 @@ end
 -- Run after the default midcast() is done.
 -- eventArgs is the same one used in job_midcast, in case information needs to be persisted.
 function job_post_midcast(spell, action, spellMap, eventArgs)
-  -- Allow weapon swaps for Phalanx
-  if spell.english ~= 'Phalanx' then
-    equip(select_weapons())
+  -- Use Phalanx SIRD set if flag is set
+  if spell.english == 'Phalanx' and enable_phalanx_sird then
+    equip(sets.SIRDPhalanx)
   else
-    if enable_phalanx_sird then
-      equip(sets.midcast['Phalanx'].SIRD)
+    -- Use SIRD set if you're not capped from merits + Rampart
+    if not is_naturally_sird_capped() then
+      -- Select proper midcast set for SIRD-defined spells and spell maps
+      local setname = midcast_SIRD_sets[spell.english] or midcast_SIRD_sets[spellMap] or nil
+      add_to_chat(1, 'setname = '..setname)
+
+      if setname then
+        equip(sets.setname)
+      end
     end
+
+    -- Override with weapons to be equipped
+    equip(select_weapons())
   end
 
   -- If slot is locked, keep current equipment on
@@ -995,9 +1033,11 @@ function job_aftercast(spell, action, spellMap, eventArgs)
   classes.JAMode = nil
   state.CastingMode:reset()
 
-  if not spell.interrupted then
-    if spell.english == 'Phalanx' then
-      enable_phalanx_sird = false
+  enable_phalanx_sird = false
+
+  if spell.interrupted then
+    if spell.english == 'Rampart' then
+      self_rampart = false
     end
   end
 end
@@ -1035,6 +1075,10 @@ function job_buff_change(buff,gain)
     elseif player.hpp > 0 then
       send_command('@input /p Doom Removed.')
     end
+  end
+
+  if buff == 'rampart' and self_rampart and not gain then
+    self_rampart = false
   end
 
   -- Update gear for these specific buffs
@@ -1334,6 +1378,10 @@ function check_for_prime_shield()
   end
 end
 
+function is_naturally_sird_capped()
+  return self_rampart and player.merits.iron_will == 5 and player.merits.spell_interruption_rate >= 4
+end
+
 -------------------------------------------------------------------------------------------------------------------
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
@@ -1372,7 +1420,9 @@ function job_self_command(cmdParams, eventArgs)
   ----------- Non-silibs content goes below this line -----------
 
   if cmdParams[1] == 'phalanxsird' then
-    enable_phalanx_sird = true
+    if not is_naturally_sird_capped() then
+      enable_phalanx_sird = true
+    end
     send_command('@input /ma "Phalanx <me>')
   elseif cmdParams[1] == 'rune' then
     send_command('@input /ja '..state.Runes.value..' <me>')
