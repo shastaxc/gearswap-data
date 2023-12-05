@@ -1004,10 +1004,9 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     if not is_naturally_sird_capped() then
       -- Select proper midcast set for SIRD-defined spells and spell maps
       local setname = midcast_SIRD_sets[spell.english] or midcast_SIRD_sets[spellMap] or nil
-      add_to_chat(1, 'setname = '..setname)
 
-      if setname then
-        equip(sets.setname)
+      if setname and sets[setname] then
+        equip(sets[setname])
       end
     end
 
@@ -1489,6 +1488,17 @@ windower.register_event('zone change', function()
   if locked_ear2 then equip({ ear2=empty }) end
   if locked_ring1 then equip({ ring1=empty }) end
   if locked_ring2 then equip({ ring2=empty }) end
+end)
+
+windower.register_event('action', function(act)
+  if act.param == 92 and act.actor_id ~= player.id then -- Someone besides self is using Rampart
+    for k,v in pairs(act.targets) do
+      if v and v.id and v.id == player.id and param ~= 0 then -- If you are hit with it, set self_rampart flag
+        self_rampart = false
+        break
+      end
+    end
+  end
 end)
 
 -- Select default macro book on initial load or subjob change.
