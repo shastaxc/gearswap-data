@@ -1076,7 +1076,7 @@ function job_buff_change(buff,gain)
     end
   end
 
-  if buff == 'rampart' and self_rampart and not gain then
+  if buff == 'Rampart' and not gain then
     self_rampart = false
   end
 
