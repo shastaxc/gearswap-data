@@ -1490,13 +1490,25 @@ windower.register_event('zone change', function()
   if locked_ring2 then equip({ ring2=empty }) end
 end)
 
-windower.register_event('action', function(act)
+windower.raw_register_event('action', function(act)
   if act.param == 92 and act.actor_id ~= player.id then -- Someone besides self is using Rampart
     for k,v in pairs(act.targets) do
       if v and v.id and v.id == player.id and param ~= 0 then -- If you are hit with it, set self_rampart flag
         self_rampart = false
         break
       end
+    end
+  end
+end)
+
+timer = os.clock()
+windower.raw_register_event('prerender',function()
+  now = os.clock()
+  -- Every 3 seconds, check if Rampart is off and reset flag if it's still on
+  if now - timer > 3 then
+    timer = now
+    if self_rampart and not buffactive['Rampart'] then
+      self_rampart = false
     end
   end
 end)
