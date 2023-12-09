@@ -259,7 +259,7 @@ function init_gear_sets()
   -- Enmity sets, caps at +200
   sets.Enmity = {
     main="Burtgang",                                -- 18 Enmity
-    sub="Duban",
+    sub="Srivatsa",                                 -- 15 Enmity
     ammo="Sapience Orb",                            -- __/__, ___ [___] < 2>
     head="Loess Barbuta +1",                        -- 20/20, ___ [105] <24>
     body={name=gear.Souveran_C_body.name,
@@ -279,7 +279,6 @@ function init_gear_sets()
     -- HP from belt                                                312
     -- 57 PDT / 37 MDT, 362 M.Eva [1084/1396 HP] <110 Enmity>
     
-    -- sub="Srivatsa",                              -- 15 Enmity
     -- feet="Chevalier's Sabatons +3",              -- __/__, 136 [ 52] <15>
     -- ear1="Trux Earring",                         -- __/__, ___ [___] < 5>
     -- HP from belt                                                313
@@ -388,7 +387,7 @@ function init_gear_sets()
   -- 102% SIRD required to cap; can get 10% from merits
   sets.SIRD = {
     main="Burtgang",
-    sub="Duban",
+    sub="Srivatsa",
     ammo="Staunch Tathlum +1",                      --  3/ 3, ___ [___] {11} __
     head={name=gear.Souveran_C_head.name,
       augments=gear.Souveran_C_head.augments,
@@ -408,14 +407,13 @@ function init_gear_sets()
     -- HP from belt                                                319
     -- 49 PDT / 41 MDT, 500 M.Eva [1153/1472 HP] {102 SIRD} 24 Enmity
     
-    -- sub="Srivatsa",
     -- ear2="Chevalier's Earring +2",               --  8/ 8, ___ [___] {__} __
     -- 53 PDT / 45 MDT, 500 M.Eva [1153/1472 HP] {102 SIRD} 24 Enmity
   }
 
   sets.SIRDEnmity = {
     main="Burtgang",                                --                       18
-    sub="Duban",
+    sub="Srivatsa",                                 --                       15
     ammo="Staunch Tathlum +1",                      --  3/ 3, ___ [___] {11} __
     head={name=gear.Souveran_C_head.name,
       augments=gear.Souveran_C_head.augments,
@@ -435,14 +433,13 @@ function init_gear_sets()
     -- HP from belt                                                311
     -- 49 PDT/24 MDT, 390 M.Eva [1073/1384 HP] {102 SIRD} 81 Enmity
 
-    -- sub="Srivatsa",                              --                       15
     -- ear2="Chevalier's Earring +2",               --  8/ 8, ___ [___] {__} __
     -- 53 PDT/28 MDT, 390 M.Eva [1073/1384 HP] {102 SIRD} 104 Enmity
   }
 
   sets.midcast.Protect = {
     main="Burtgang",
-    sub="Duban",                                    -- Shield def is added to Protect potency
+    sub="Srivatsa",                                 -- Shield def is added to Protect potency
     ammo="Staunch Tathlum +1",                      --  3/ 3, ___ [___] {11} __
     head={name=gear.Souveran_C_head.name,
     augments=gear.Souveran_C_head.augments,
@@ -464,7 +461,6 @@ function init_gear_sets()
     -- HP from belt                                                313
     -- 42 PDT / 19 MDT, 359 M.Eva [1096/1409 HP] {102 SIRD} 30 Enh Duration
     
-    -- sub="Srivatsa",                              -- Shield def is added to Protect potency
     -- ear2="Chevalier's Earring +2",               --  8/ 8, ___ [___] {__} __
     -- 46 PDT / 23 MDT, 359 M.Eva [1096/1409 HP] {102 SIRD} 30 Enh Duration
   }
@@ -594,7 +590,7 @@ function init_gear_sets()
 
   sets.midcast.Cure = {
     main="Burtgang",
-    sub="Sacro Bulwark",
+    sub="Srivatsa",
     ammo="Sapience Orb",                            -- __, __, __, __(__) [__/__, ___] ___ {__}  2
     head="Sakpata's Helm",                          -- 23, 40, __,  5(__) [ 7/ 7, 123]  91 {__} __
     body=gear.Souveran_C_body,                      -- 16, 32, __, 10(15) [10/10,  69] 171 {__} 20
@@ -619,7 +615,6 @@ function init_gear_sets()
     -- 238 MND, 287 VIT, 431 Heal skill, 48 Cure Pot (45 self pot) [53 PDT/28 MDT, 445 M.Eva] 1065/1354 HP {23 SIRD} 64 Enmity
     -- Power = 621, 608 cure 4 base
     
-    -- sub="Srivatsa",                              -- 15 Enmity
     -- ear2="Chevalier's Earring +2",               -- __, 15, __, 12(__) [ 8/ 8, ___] ___ {__} __
     -- HP from belt                                                                    310
     -- ML30                                            30, 30, 30
