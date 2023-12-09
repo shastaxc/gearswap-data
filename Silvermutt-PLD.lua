@@ -102,6 +102,9 @@ function job_setup()
   silibs.enable_premade_commands()
   silibs.enable_custom_roll_text()
   silibs.enable_equip_loop()
+  silibs.enable_elemental_belt_handling(has_obi, has_orpheus, function()
+    return state.DefenseMode.value == 'None'
+  end)
 
   -- /BLU Spell Maps
   blue_magic_maps = {}
