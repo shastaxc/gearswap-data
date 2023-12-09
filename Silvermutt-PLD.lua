@@ -118,7 +118,6 @@ function job_setup()
   state.IdleMode:options('Normal', 'Refresh')
   state.AttCapped = M(false, 'Attack Capped')
   state.WeaponSet = M{['description']='Weapon Set', 'Any', 'Burtgang', 'Naegling', 'Aeolian'}
-  state.SubWeaponSet = M{['description']='Sub Weapon Set', 'Any', 'Duban', 'Aegis', 'Aeolian'}
   state.CP = M(false, 'Capacity Points Mode')
   state.Runes = M{['description']='Runes', 'Ignis', 'Gelus', 'Flabra', 'Tellus', 'Sulpor', 'Unda', 'Lux', 'Tenebrae'}
 
@@ -164,6 +163,10 @@ function user_setup()
     coroutine.schedule(function()
       send_command('aset set pldsub')
     end, 2)
+  elseif player.sub_job == 'NIN' then
+    state.SubWeaponSet = M{['description']='Sub Weapon Set', 'Any', 'Duban', 'Aegis', 'Aeolian'}
+  else
+    state.SubWeaponSet = M{['description']='Sub Weapon Set', 'Any', 'Duban', 'Aegis'}
   end
 
   select_default_macro_book()
@@ -434,34 +437,6 @@ function init_gear_sets()
     -- 53 PDT/28 MDT, 390 M.Eva [1073/1384 HP] {102 SIRD} 104 Enmity
   }
 
-  sets.SIRDPhalanx = {
-    main="Sakpata's Sword",                         -- 4, ___, __ [10/10, ___] 100
-    sub="Priwen",                                   -- 2, ___, __ [ 6/ 6, ___]  30
-    ammo="Staunch Tathlum +1",                      -- _, ___, 11 [ 3/ 3, ___] ___
-    head={name=gear.Souveran_C_head.name,
-      augments=gear.Souveran_C_head.augments,
-      priority=1},                                  -- _, ___, 20 [__/__,  53] 280
-    body=gear.Valorous_Phalanx_body,                -- 4, ___, __ [ 2/__,  59]  61
-    hands={name="Regal Gauntlets",priority=1},      -- _, ___, 10 [__/__,  48] 205
-    legs=gear.Founders_Hose,                        -- _, ___, 30 [__/__,  80]  54
-    feet={name=gear.Souveran_C_feet.name,
-      augments=gear.Souveran_C_feet.augments,
-      priority=1},                                  -- 5, ___, __ [ 5/__,  86] 227
-    neck="Moonlight Necklace",                      -- _, ___, 15 [__/__,  15] ___
-    ear1="Magnetic Earring",                        -- _, ___,  8 [__/__, ___] ___
-    ear2="Chevalier's Earring +1",                  -- _, ___, __ [ 4/ 4, ___] ___
-    ring1={name="Gelatinous Ring +1",priority=1},   -- _, ___, __ [ 7/-1, ___] 135
-    ring2="Defending Ring",                         -- _, ___, __ [10/10, ___] ___
-    back=gear.PLD_Enmity_Cape,                      -- _, ___, __ [10/__, ___]  80
-    waist={name="Platinum Moogle Belt",priority=1}, -- _, ___, __ [ 3/ 3,  15] ___; HP+10%
-    -- SIRD merits                                              8
-    -- HP from belt                                                            321
-    -- 15 Phalanx, 416 Enh Skill, 102% SIRD [44 PDT/19 MDT, 356 M.Eva] 1172/1493 HP
-
-    -- body=gear.Valorous_Phalanx_body,             -- 5, ___, __ [ 2/__,  59]  61
-    -- 16 Phalanx, 416 Enh Skill, 102% SIRD [44 PDT/19 MDT, 356 M.Eva] 1172/1493 HP
-  }
-
   sets.midcast.Protect = {
     main="Burtgang",
     sub="Duban",                                    -- Shield def is added to Protect potency
@@ -546,6 +521,34 @@ function init_gear_sets()
     -- 63 Total Phalanx
   }
 
+  sets.SIRDPhalanx = {
+    main="Sakpata's Sword",                         -- 4, ___, __ [10/10, ___] 100
+    sub="Priwen",                                   -- 2, ___, __ [ 6/ 6, ___]  30
+    ammo="Staunch Tathlum +1",                      -- _, ___, 11 [ 3/ 3, ___] ___
+    head={name=gear.Souveran_C_head.name,
+      augments=gear.Souveran_C_head.augments,
+      priority=1},                                  -- _, ___, 20 [__/__,  53] 280
+    body=gear.Valorous_Phalanx_body,                -- 4, ___, __ [ 2/__,  59]  61
+    hands={name="Regal Gauntlets",priority=1},      -- _, ___, 10 [__/__,  48] 205
+    legs=gear.Founders_Hose,                        -- _, ___, 30 [__/__,  80]  54
+    feet={name=gear.Souveran_C_feet.name,
+      augments=gear.Souveran_C_feet.augments,
+      priority=1},                                  -- 5, ___, __ [ 5/__,  86] 227
+    neck="Moonlight Necklace",                      -- _, ___, 15 [__/__,  15] ___
+    ear1="Magnetic Earring",                        -- _, ___,  8 [__/__, ___] ___
+    ear2="Chevalier's Earring +1",                  -- _, ___, __ [ 4/ 4, ___] ___
+    ring1={name="Gelatinous Ring +1",priority=1},   -- _, ___, __ [ 7/-1, ___] 135
+    ring2="Defending Ring",                         -- _, ___, __ [10/10, ___] ___
+    back=gear.PLD_Enmity_Cape,                      -- _, ___, __ [10/__, ___]  80
+    waist={name="Platinum Moogle Belt",priority=1}, -- _, ___, __ [ 3/ 3,  15] ___; HP+10%
+    -- SIRD merits                                              8
+    -- HP from belt                                                            321
+    -- 15 Phalanx, 416 Enh Skill, 102% SIRD [44 PDT/19 MDT, 356 M.Eva] 1172/1493 HP
+
+    -- body=gear.Valorous_Phalanx_body,             -- 5, ___, __ [ 2/__,  59]  61
+    -- 16 Phalanx, 416 Enh Skill, 102% SIRD [44 PDT/19 MDT, 356 M.Eva] 1172/1493 HP
+  }
+
   sets.midcast['Enhancing Magic'] = set_combine(sets.Enmity, {})
   sets.midcast['Crusade'] = set_combine(sets.Enmity, {})
   sets.midcast['Reprisal'] = set_combine(sets.Enmity, {})
@@ -588,12 +591,47 @@ function init_gear_sets()
 
   sets.midcast.Cure = {
     main="Burtgang",
-    sub="Sacro Bulwark",                            -- __, __, __,  5(__) [10/10, ___] ___ {__} __
+    sub="Sacro Bulwark",
+    ammo="Sapience Orb",                            -- __, __, __, __(__) [__/__, ___] ___ {__}  2
+    head="Sakpata's Helm",                          -- 23, 40, __,  5(__) [ 7/ 7, 123]  91 {__} __
+    body=gear.Souveran_C_body,                      -- 16, 32, __, 10(15) [10/10,  69] 171 {__} 20
+    hands={name=gear.Souveran_C_hands.name,
+      augments=gear.Souveran_C_hands.augments,
+      priority=1},                                  -- 21, 34, __, __(15) [__/ 5,  48] 239 {__}  9
+    legs="Caballarius Breeches +3",                 -- 27, 36, __, __(__) [ 7/__,  84]  72 {10}  9
+    feet={name=gear.Souveran_C_feet.name,
+      augments=gear.Souveran_C_feet.augments,
+      priority=1},                                  --  7, 20, __, __(15) [ 5/__,  86] 227 {__}  9
+    neck="Sacro Gorget",                            -- __, __, __, 10(__) [__/__, ___]  50 {__}  5
+    ear1="Nourishing Earring +1",                   --  4, __, __,  7(__) [__/__, ___] ___ { 5} __
+    ear2="Chevalier's Earring +1",                  -- __, __, __, 11(__) [ 4/ 4, ___] ___ {__} __
+    ring1={name="Gelatinous Ring +1", priority=1},  -- __, 15, __, __(__) [ 7/-1, ___] 135 {__} __
+    ring2="Menelaus's Ring",                        -- __, __, 15,  5(__) [__/__, ___] ___ {__} __
+    back=gear.PLD_Enmity_Cape,                      -- 30, __, __, __(__) [10/__,  20]  80 {__} 10
+    waist={name="Platinum Moogle Belt",priority=1}, -- __, __, __, __(__) [ 3/ 3,  15] ___ {__} __; HP+10%
+    -- HP from belt                                                                    289
+    -- SIRD merits                                                                         { 8}
+    -- Base stats                                     109,109,415
+    -- ML1                                              1,  1,  1
+    -- 238 MND, 287 VIT, 431 Heal skill, 48 Cure Pot (45 self pot) [53 PDT/28 MDT, 445 M.Eva] 1065/1354 HP {23 SIRD} 64 Enmity
+    -- Power = 621, 608 cure 4 base
+    
+    -- sub="Srivatsa",                              -- 15 Enmity
+    -- ear2="Chevalier's Earring +2",               -- __, 15, __, 12(__) [ 8/ 8, ___] ___ {__} __
+    -- HP from belt                                                                    310
+    -- ML30                                            30, 30, 30
+    -- 267 MND, 331 VIT, 460 Heal skill, 49 Cure Pot (45 self pot) [57 PDT/32 MDT, 445 M.Eva] 1065/1375 HP {23 SIRD} 64 Enmity
+    -- Power = 675, 630 cure 4 base
+  }
+
+  sets.SIRDCure = set_combine(sets.midcast.Cure, {
+    main="Burtgang",
+    sub="Sacro Bulwark",
     ammo="Staunch tathlum +1",                      -- __, __, __, __(__) [ 3/ 3, ___] ___ {11} __
     head={name=gear.Souveran_C_head.name,
       augments=gear.Souveran_C_head.augments,
       priority=1},                                  --  8, 38, __, __(15) [__/__,  53] 280 {20}  9
-    body=gear.Souveran_C_body,                      -- 16, 32, __, 10(15) [10/10,  69] 171 {__} 20
+    body=gear.Souveran_C_body,                      -- 16, 32, __, 11(15) [10/10,  69] 171 {__} 20
     hands={name="Regal Gauntlets",priority=1},      -- 40, 40, __, __(__) [__/__,  48] 205 {10} __
     legs="Founder's Hose",                          -- 25, 28, __, __(__) [__/__,  80]  54 {30} __
     feet=gear.Odyssean_Cure_feet,                   -- 10, 19, __, 13(__) [__/__,  86]  20 {20} __
@@ -604,15 +642,19 @@ function init_gear_sets()
     ring2="Defending Ring",                         -- __, __, __, __(__) [10/10, ___] ___ {__} __
     back=gear.PLD_Enmity_Cape,                      -- 30, __, __, __(__) [10/__,  20]  80 {__} 10
     waist={name="Platinum Moogle Belt",priority=1}, -- __, __, __, __(__) [ 3/ 3,  15] ___ {__} __; HP+10%
-    -- HP from belt                                                                    318
+    -- HP from belt                                                                    297
     -- SIRD merits                                                                         { 8}
-    -- 133 MND, 181 VIT, 0 Heal skill, 46 Cure Pot (30 self pot) [57 PDT/39 MDT, 371 M.Eva] 1145/1463 HP {104 SIRD} 49 Enmity
-    
-    -- ear2="Chevalier's Earring +2",               -- __, 15, __, 12(__) [ 8/ 8, ___] ___ {__} __
-    -- 133 MND, 196 VIT, 0 Heal skill, 47 Cure Pot (30 self pot) [61 PDT/43 MDT, 371 M.Eva] 1145/1463 HP {104 SIRD} 49 Enmity
-  }
+    -- Base stats                                     109,109,415
+    -- ML1                                              1,  1,  1
+    -- 243 MND, 291 VIT, 416 Heal skill, 42 Cure Pot (30 self pot) [47 PDT/29 MDT, 371 M.Eva] 1145/1442 HP {104 SIRD} 49 Enmity
+    -- Power = 609, 603 cure 4 base
 
-  sets.SIRDCure = set_combine(sets.midcast.Cure, {})
+    -- ear2="Chevalier's Earring +2",               -- __, 15, __, 12(__) [ 8/ 8, ___] ___ {__} __
+    -- HP from belt                                                                    318
+    -- ML30                                            30, 30, 30
+    -- 272 MND, 335 VIT, 445 Heal skill, 43 Cure Pot (30 self pot) [51 PDT/33 MDT, 371 M.Eva] 1145/1463 HP {104 SIRD} 49 Enmity
+    -- Power = 664, 625 cure 4 base
+  })
 
   sets.midcast['Blue Magic'] = {}
   sets.midcast.BLUEnmity = set_combine(sets.Enmity, {})
@@ -919,7 +961,7 @@ function init_gear_sets()
     sub="Duban",
   }
   sets.SubWeaponSet['Aegis'] = {
-    -- sub="Aegis",
+    sub="Aegis",
   }
   sets.SubWeaponSet['Aeolian'] = {
     sub=gear.Malevolence_2,
@@ -1548,7 +1590,7 @@ function set_main_keybinds()
   send_command('bind !o input /ma "Phalanx" <me>')
   send_command('bind !l gs c phalanxsird')
   
-  send_command('bind !q input /ja "Shield Bash" <stnpc>')
+  send_command('bind !q input /ja "Shield Bash" <t>')
   send_command('bind !e input /ja "Holy Circle" <me>')
 end
 
