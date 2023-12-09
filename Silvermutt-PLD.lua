@@ -1,4 +1,4 @@
--- File Status: Good. Add a Cure set that is not SIRD capped for use when Rampart is up with Iron Will.
+-- File Status: Good.
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs
