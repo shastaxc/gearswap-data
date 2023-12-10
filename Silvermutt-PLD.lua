@@ -121,6 +121,7 @@ function job_setup()
   state.IdleMode:options('Normal', 'Refresh')
   state.AttCapped = M(false, 'Attack Capped')
   state.WeaponSet = M{['description']='Weapon Set', 'Any', 'Burtgang', 'Naegling', 'Aeolian'}
+  state.SubWeaponSet = M{['description']='Sub Weapon Set', 'Any', 'Duban', 'Aegis'}
   state.CP = M(false, 'Capacity Points Mode')
   state.Runes = M{['description']='Runes', 'Ignis', 'Gelus', 'Flabra', 'Tellus', 'Sulpor', 'Unda', 'Lux', 'Tenebrae'}
 
