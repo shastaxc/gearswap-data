@@ -152,10 +152,9 @@ function init_gear_sets()
 
   sets.TreasureHunter = {
     ammo="Perfect Lucky Egg", --1
-    waist="Chaac Belt", --1
+    feet="Skulker's Poulaines +2", --4
     
     -- hands="Plunderer's Armlets +3", --4
-    -- feet="Skulker's Poulaines +2", --4
   }
   sets.TreasureHunter.RA = {
     waist="Chaac Belt", --1
@@ -199,7 +198,7 @@ function init_gear_sets()
   sets.precast.JA['Despoil'] = {
     -- ammo="Barathrum",
     -- legs="Skulker's Culottes +1",
-    -- feet="Skulker's Poulaines +2",
+    feet="Skulker's Poulaines +2",
   }
   sets.precast.JA['Perfect Dodge'] = {
     -- hands="Plunderer's Armlets +3",
