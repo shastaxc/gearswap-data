@@ -247,12 +247,17 @@ function init_gear_sets()
     hands="Sakpata's Gauntlets",          -- 24, 33, 70, 55, __,  6 [ 8/ 8, 112]
     legs="Boii Cuisses +3",               -- 53, 27, 73, 63, __, 10 [__/__, 130]; TP Bonus+100
     feet="Sakpata's Leggings",            -- 29, 19, 70, 55, __,  4 [ 6/ 6, 150]
+    neck="Warrior's Bead Necklace +2",    -- 15, __, 25, 25, __, __ [__/__, ___]
+    ear1="Lugra Earring +1",              -- 16, __, __, __, __, __ [__/__, ___]
+    ear2="Moonshade Earring",             -- __, __, __,  4, __, __ [__/__, ___]; TP bonus+250
+    ring1="Sroda Ring",                   -- 15, __, __, __, __,  3 [__/__, ___]
     ring2="Ephramad's Ring",              -- 10, __, 20, 20, __, 10 [__/__, ___]
-    -- 279 STR, 130 MND, 368 Attack, 352 Accuracy, 13 WSD, 49 PDL [44 PDT/34 MDT, 654 M.Eva]
+    back=gear.WAR_STR_WSD_Cape,           -- 30, __, 20, 20, 10, __ [10/__, ___]
+    waist="Sailfi Belt +1",               -- 15, __, 15, __, __, __ [__/__, ___]
+    -- 285 STR, 130 MND, 433 Attack, 352 Accuracy, 10 WSD, 49 PDL [44 PDT/34 MDT, 654 M.Eva]
   })
   sets.precast.WS.AttCappedMaxTP = set_combine(sets.precast.WS.AttCapped, {
-    ear2="Ishvara Earring",               -- __, __, __, __,  2, __ [__/__, ___]
-    -- 279 STR, 130 MND, 368 Attack, 348 Accuracy, 15 WSD, 49 PDL [44 PDT/34 MDT, 654 M.Eva]
+    ear2="Thrud Earring",                 -- 10, __, __, __,  3, __ [__/__, ___]
   })
 
   -- 50% STR/50% MND
@@ -290,24 +295,24 @@ function init_gear_sets()
     ammo="Knobkierrie",                   -- __, 23, __,  6, __ <__, __, __> [__/__, ___]
     head="Sakpata's Helm",                -- 40, 70, 55, __,  5 < 5, __, __> [ 7/ 7, 123]
     body="Sakpata's Breastplate",         -- 42, 70, 55, __,  8 < 8, __, __> [10/10, 139]
-    hands="Boii Mufflers +3",             -- 47, 62, 62, 12, __ <__, __, __> [__/__,  82]
+    hands="Sakpata's Gauntlets",          -- 51, 70, 55, __,  6 < 6, __, __> [ 8/ 8, 112]
     legs="Boii Cuisses +3",               -- 40, 73, 63, __, 10 < 8, __, __> [__/__, 130]; TP Bonus+100
     feet="Sakpata's Leggings",            -- 30, 70, 55, __,  4 < 4, __, __> [ 6/ 6, 150]
     neck="Warrior's Bead Necklace +2",    -- __, 25, 25, __, __ < 7, __, __> [__/__, ___]
     ear1="Moonshade Earring",             -- __, __,  4, __, __ <__, __, __> [__/__, ___]; TP bonus+250
-    ear2="Thrud Earring",                 -- 10, __, __,  3, __ <__, __, __> [__/__, ___]
-    ring1="Regal Ring",                   -- 10, 20, __, __, __ <__, __, __> [__/__, ___]
+    ear2="Lugra Earring +1",              -- 16, __, __, __, __ < 3, __, __> [__/__, ___]
+    ring1="Ephramad's Ring",              -- __, 20, 20, __, 10 <__, __, __> [__/__, ___]
     ring2="Gelatinous Ring +1",           -- 15, __, __, __, __ <__, __, __> [ 7/-1, ___]
     back=gear.WAR_STR_WSD_Cape,           -- __, 20, 20, 10, __ <__, __, __> [10/__, ___]
     waist="Ioskeha Belt +1",              -- __, __, 17, __, __ < 9, __, __> [__/__, ___]
     -- WAR Traits                            __, __, __, __, __ <33, __, __> [__/__, ___]
-    -- 234 VIT, 433 Attack, 356 Accuracy, 31 WSD, 27 PDL <74 DA, 0 TA, 0 QA> [40 PDT/22 MDT, 624 M.Eva]
+    -- 234 VIT, 441 Attack, 369 Accuracy, 16 WSD, 43 PDL <83 DA, 0 TA, 0 QA> [48 PDT/30 MDT, 654 M.Eva]
 
     -- back=gear.WAR_VIT_WSD_Cape,        -- 30, 20, 20, 10, __ <__, __, __> [10/__, ___]
-    -- 264 VIT, 433 Attack, 356 Accuracy, 31 WSD, 27 PDL <74 DA, 0 TA, 0 QA> [40 PDT/22 MDT, 624 M.Eva]
+    -- 262 VIT, 441 Attack, 369 Accuracy, 16 WSD, 43 PDL <83 DA, 0 TA, 0 QA> [48 PDT/30 MDT, 654 M.Eva]
   })
   sets.precast.WS['Upheaval'].AttCappedMaxTP = set_combine(sets.precast.WS['Upheaval'].AttCapped, {
-    ear1="Schere Earring",                -- __, 15, 15, __, __ < 6, __, __> [__/__, ___]
+    ear1="Thrud Earring",                 -- 10, __, __,  3, __ <__, __, __> [__/__, ___]
   })
 
   -- 80% STR; 2 hit, crit varies with TP
