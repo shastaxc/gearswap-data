@@ -706,7 +706,7 @@ function init_gear_sets()
   -- Used when your weapons are locked "battle mode"
   sets.passive_refresh = {
     range=empty,                      -- __/__, ___ [__]
-    ammo="Homiliary",                 -- __/__, ___ [ 1]
+    ammo="Staunch Tathlum +1",        --  3/ 3, ___ [__]
     head="Volte Beret",               -- __/__, 104 [ 1]
     body="Shamash Robe",              -- 10/__, 106 [ 3]; Resist Silence+90
     hands="Wicce Gloves +3",          -- 13/13,  98 [__]
@@ -719,7 +719,7 @@ function init_gear_sets()
     ring2="Defending Ring",           -- 10/10, ___ [__]
     back=gear.BLM_FC_Cape,            -- 10/__, ___ [__]
     waist="Carrier's Sash",           -- __/__, ___ [__]; Ele Resist
-    -- 43 PDT / 26 MDT, 557 M.Eva [10 Refresh]
+    -- 46 PDT / 29 MDT, 557 M.Eva [10 Refresh]
   }
   sets.passive_refresh.sub50 = {
     waist="Fucho-no-Obi",             -- __/__, ___ [ 1]
