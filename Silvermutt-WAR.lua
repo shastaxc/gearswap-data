@@ -148,7 +148,7 @@ function init_gear_sets()
     ear1="Etiolation Earring",
     ear2="Loquacious Earring", --2
     ring1="Defending Ring",
-    ring2="Weatherspoon Ring",
+    ring2="Gelatinous Ring +1",
     back=gear.WAR_STR_DA_Cape,
     waist="Flume Belt +1",
   }
@@ -160,7 +160,6 @@ function init_gear_sets()
   })
 
   sets.precast.FC.Trust = set_combine(sets.precast.FC, {
-    ammo="Impatiens",
     ring1="Weatherspoon Ring", --5
   })
 
