@@ -211,8 +211,6 @@ function init_gear_sets()
   }
   sets.precast.WS.AttCappedMaxTP = set_combine(sets.precast.WS.AttCapped, {
     ear1="Thrud Earring",               -- 10, __, __, __,  3, __
-    ear2="Peltast's Earring +1",        -- __, __, __, 12, __,  8
-    -- 265 STR, 122 MND, 428 Att, 330 Acc, 59 WSD, 38 PDL
   })
   
   sets.precast.WS["Savage Blade"] = set_combine(sets.precast.WS, {})
