@@ -218,7 +218,7 @@ function init_gear_sets()
   })
   sets.precast.WS.AttCapped = set_combine(sets.precast.WS, {
     ammo="Crepuscular Pebble",            --  3, __, __, __, __,  3 [ 3/ 3, ___]
-    -- head="Heathen's Burgeonet +3",     -- 42, 27, 61, 61, __, 10 [__/__,  87]
+    head="Heathen's Burgeonet +3",        -- 42, 27, 61, 61, __, 10 [__/__,  87]
     body=gear.Nyame_B_body,               -- 45, 37, 65, 40, 13, __ [ 9/ 9, 139]
     hands=gear.Nyame_B_hands,             -- 17, 40, 65, 40, 11, __ [ 7/ 7, 112]
     legs="Sakpata's Cuisses",             -- 53, 21, 70, 55, __,  7 [ 9/ 9, 150]
@@ -302,7 +302,7 @@ function init_gear_sets()
   })
   sets.precast.WS['Torcleaver'].AttCapped = {
     ammo="Crepuscular Pebble",            --  3, __, __, __,  3 <__, __, __> [ 3/ 3, ___]
-    -- head="Heathen's Burgeonet +3",     -- 33, 61, 61, __, 10 < 6, __, __> [__/__,  87]
+    head="Heathen's Burgeonet +3",        -- 33, 61, 61, __, 10 < 6, __, __> [__/__,  87]
     body=gear.Nyame_B_body,               -- 45, 65, 40, 13, __ < 7, __, __> [ 9/ 9, 139]
     hands=gear.Nyame_B_hands,             -- 54, 65, 40, 11, __ < 5, __, __> [ 7/ 7, 112]
     legs="Sakpata's Cuisses",             -- 34, 70, 55, __,  7 < 7, __, __> [ 9/ 9, 150]
@@ -353,7 +353,7 @@ function init_gear_sets()
   -- 85% STR; 5 hit, transfers ftp
   sets.precast.WS['Resolution'] = {
     ammo="Coiste Bodhar",                 -- 10, 15, __, __, __ < 3, __, __> [__/__, ___]
-    -- head="Heathen's Burgeonet +3",     -- 47, 61, 61, __, 10 < 6, __, __> [__/__,  87]
+    head="Heathen's Burgeonet +3",        -- 47, 61, 61, __, 10 < 6, __, __> [__/__,  87]
     body="Sakpata's Breastplate",         -- 42, 70, 55, __,  8 < 8, __, __> [10/10, 139]
     hands="Sakpata's Gauntlets",          -- 24, 70, 55, __,  6 < 6, __, __> [ 8/ 8, 112]
     -- legs="Ignominy Flanchard +3",      -- 50, 45, 49, __, __ <10, __, __> [__/__,  84]
@@ -373,7 +373,7 @@ function init_gear_sets()
   })
   sets.precast.WS['Resolution'].AttCapped = set_combine(sets.precast.WS['Resolution'], {
     ammo="Crepuscular Pebble",            --  3, __, __, __,  3 <__, __, __> [ 3/ 3, ___]
-    -- head="Heathen's Burgeonet +3",     -- 42, 61, 61, __, 10 < 6, __, __> [__/__,  87]
+    head="Heathen's Burgeonet +3",        -- 42, 61, 61, __, 10 < 6, __, __> [__/__,  87]
     body="Sakpata's Breastplate",         -- 42, 70, 55, __,  8 < 8, __, __> [10/10, 139]
     hands="Sakpata's Gauntlets",          -- 24, 70, 55, __,  6 < 6, __, __> [ 8/ 8, 112]
     -- legs="Ignominy Flanchard +3",      -- 50, 45, 49, __, __ <10, __, __> [__/__,  84]
@@ -558,7 +558,7 @@ function init_gear_sets()
   sets.precast.WS['Guillotine'].MaxTP = set_combine(sets.precast.WS['Guillotine'], {})
   sets.precast.WS['Guillotine'].AttCapped = {
     ammo="Coiste Bodhar",                 -- 10, __, 15, __, __, __ < 3, __, __> [__/__, ___]
-    -- head="Heathen's Burgeonet +3",     -- 42, 27, 61, 61, __, 10 < 6, __, __> [__/__,  87]
+    head="Heathen's Burgeonet +3",        -- 42, 27, 61, 61, __, 10 < 6, __, __> [__/__,  87]
     body=gear.Nyame_B_body,               -- 45, 37, 65, 40, 13, __ < 7, __, __> [ 9/ 9, 139]
     hands=gear.Nyame_B_hands,             -- 17, 40, 65, 40, 11, __ < 5, __, __> [ 7/ 7, 112]
     legs="Sakpata's Cuisses",             -- 53, 21, 70, 55, __,  7 < 7, __, __> [ 9/ 9, 150]
@@ -621,7 +621,7 @@ function init_gear_sets()
   })
   sets.precast.WS['Insurgency'].AttCapped = {
     ammo="Coiste Bodhar",                 -- 10, __, 15, __, __, __ < 3, __, __> [__/__, ___]
-    -- head="Heathen's Burgeonet +3",     -- 42, 31, 61, 61, __, 10 < 6, __, __> [__/__,  87]
+    head="Heathen's Burgeonet +3",        -- 42, 31, 61, 61, __, 10 < 6, __, __> [__/__,  87]
     body=gear.Nyame_B_body,               -- 45, 42, 65, 40, 13, __ < 7, __, __> [ 9/ 9, 139]
     hands=gear.Nyame_B_hands,             -- 17, 28, 65, 40, 11, __ < 5, __, __> [ 7/ 7, 112]
     legs="Sakpata's Cuisses",             -- 53, 32, 70, 55, __,  7 < 7, __, __> [ 9/ 9, 150]
@@ -698,7 +698,7 @@ function init_gear_sets()
   -- 50% DEX; 5 hit, crit varies with TP
   sets.precast.WS['Judgment'] = {
     ammo="Knobkierrie",
-    -- head="Heathen's Burgeonet +3",
+    head="Heathen's Burgeonet +3",
     body="Nyame Mail",
     hands="Nyame Gauntlets",
     legs="Nyame Flanchard",
