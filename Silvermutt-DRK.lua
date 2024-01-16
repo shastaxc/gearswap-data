@@ -71,6 +71,7 @@ function job_setup()
   state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger','Sword','Club','GreatSword','Scythe'}
   state.WeaponSet = M{['description']='Weapon Set', 'Naegling', 'Anguta', 'Club', 'Dagger'}
   -- state.WeaponSet = M{['description']='Weapon Set', 'Naegling', 'Anguta', 'Apocalypse', 'Caladbolg', 'Club', 'Dagger'}
+  state.EnmityMode = M{['description']='Enmity Mode', 'Normal', 'Low', 'Schere'}
   
   skill_ids_2h = S{4, 6, 7, 8, 10, 12} -- DO NOT MODIFY
   fencer_tp_bonus = {200, 300, 400, 450, 500, 550, 600, 630} -- DO NOT MODIFY
@@ -200,7 +201,7 @@ function init_gear_sets()
     body=gear.Nyame_B_body,               -- 45, 37, 65, 40, 13, __ [ 9/ 9, 139]
     hands=gear.Nyame_B_hands,             -- 17, 40, 65, 40, 11, __ [ 7/ 7, 112]
     legs=gear.Nyame_B_legs,               -- 58, 32, 65, 40, 12, __ [ 8/ 8, 150]
-    -- feet="Heathen's Sollerets +3",     -- 33, 26, 60, 60, 12, __ [__/__, 119]
+    feet="Heathen's Sollerets +3",        -- 33, 26, 60, 60, 12, __ [__/__, 119]
     -- neck="Abyssal Beads +2",           -- 25, __, 40, 15, __, 10 [__/__, ___]
     ear1="Moonshade Earring",             -- __, __, __,  4, __, __ [__/__, ___]; TP bonus+250
     ear2="Heathen's Earring +1",          -- __, __, 17, 11,  2,  8 [__/__, ___]
@@ -221,7 +222,7 @@ function init_gear_sets()
     body=gear.Nyame_B_body,               -- 45, 37, 65, 40, 13, __ [ 9/ 9, 139]
     hands=gear.Nyame_B_hands,             -- 17, 40, 65, 40, 11, __ [ 7/ 7, 112]
     legs="Sakpata's Cuisses",             -- 53, 21, 70, 55, __,  7 [ 9/ 9, 150]
-    -- feet="Heathen's Sollerets +3",     -- 33, 26, 60, 60, 12, __ [__/__, 119]
+    feet="Heathen's Sollerets +3",        -- 33, 26, 60, 60, 12, __ [__/__, 119]
     -- neck="Abyssal Beads +2",           -- 25, __, 40, 15, __, 10 [__/__, ___]
     ear1="Moonshade Earring",             -- __, __, __,  4, __, __ [__/__, ___]; TP bonus+250
     ear2="Heathen's Earring +1",          -- __, __, 17, 11,  2,  8 [__/__, ___]
@@ -267,7 +268,7 @@ function init_gear_sets()
     body=gear.Nyame_B_body,           -- 37, 45, 42, 30, 13 [ 9/ 9, 139]
     hands=gear.Nyame_B_hands,         -- 40, 17, 28, 30, 11 [ 7/ 7, 112]
     legs=gear.Nyame_B_legs,           -- 32, 58, 44, 30, 12 [ 8/ 8, 150]
-    -- feet="Heathen's Sollerets +3", -- 26, 33, 22, 50, 12 [__/__, 119]
+    feet="Heathen's Sollerets +3",    -- 26, 33, 22, 50, 12 [__/__, 119]
     neck="Baetyl Pendant",            -- __, __, __, 13, __ [__/__, ___]
     ear1="Malignance Earring",        --  8, __,  8,  8, __ [__/__, ___]
     ear2="Friomisi Earring",          -- __, __, __, 10, __ [__/__, ___]
@@ -285,7 +286,7 @@ function init_gear_sets()
     body=gear.Nyame_B_body,               -- 45, 65, 40, 13, __ < 7, __, __> [ 9/ 9, 139]
     hands=gear.Nyame_B_hands,             -- 54, 65, 40, 11, __ < 5, __, __> [ 7/ 7, 112]
     legs=gear.Nyame_B_legs,               -- 30, 65, 40, 12, __ < 6, __, __> [ 8/ 8, 150]
-    -- feet="Heathen's Sollerets +3",     -- 30, 60, 60, 12, __ < 5, __, __> [__/__, 119]
+    feet="Heathen's Sollerets +3",        -- 30, 60, 60, 12, __ < 5, __, __> [__/__, 119]
     -- neck="Abyssal Beads +2",           -- __, 40, 15, __, 10 <__, __, __> [__/__, ___]
     ear1="Moonshade Earring",             -- __, __,  4, __, __ <__, __, __> [__/__, ___]; TP bonus+250
     ear2="Heathen's Earring +1",          -- __, 17, 11,  2,  8 <__, __, __> [__/__, ___]
@@ -305,7 +306,7 @@ function init_gear_sets()
     body=gear.Nyame_B_body,               -- 45, 65, 40, 13, __ < 7, __, __> [ 9/ 9, 139]
     hands=gear.Nyame_B_hands,             -- 54, 65, 40, 11, __ < 5, __, __> [ 7/ 7, 112]
     legs="Sakpata's Cuisses",             -- 34, 70, 55, __,  7 < 7, __, __> [ 9/ 9, 150]
-    -- feet="Heathen's Sollerets +3",     -- 30, 60, 60, 12, __ < 5, __, __> [__/__, 119]
+    feet="Heathen's Sollerets +3",        -- 30, 60, 60, 12, __ < 5, __, __> [__/__, 119]
     -- neck="Abyssal Beads +2",           -- __, 40, 15, __, 10 <__, __, __> [__/__, ___]
     ear1="Moonshade Earring",             -- __, __,  4, __, __ <__, __, __> [__/__, ___]; TP bonus+250
     ear2="Heathen's Earring +1",          -- __, 17, 11,  2,  8 <__, __, __> [__/__, ___]
@@ -434,7 +435,7 @@ function init_gear_sets()
     body=gear.Nyame_B_body,           -- 45, 42, 30, 13 [ 9/ 9, 139]
     hands=gear.Nyame_B_hands,         -- 17, 28, 30, 11 [ 7/ 7, 112]
     legs=gear.Nyame_B_legs,           -- 58, 44, 30, 12 [ 8/ 8, 150]
-    -- feet="Heathen's Sollerets +3", -- 33, 22, 50, 12 [__/__, 119]
+    feet="Heathen's Sollerets +3",    -- 33, 22, 50, 12 [__/__, 119]
     neck="Sibyl Scarf",               -- __, 10, 10, __ [__/__, ___]
     ear1="Malignance Earring",        -- __,  8,  8, __ [__/__, ___]
     ear2="Moonshade Earring",         -- __, __, __, __ [__/__, ___]; TP bonus
@@ -475,7 +476,7 @@ function init_gear_sets()
     body=gear.Nyame_B_body,               -- 45, 65, 40, 13, __ (__, __) < 7, __, __> [ 9/ 9, 139]
     hands=gear.Nyame_B_hands,             -- 17, 65, 40, 11, __ (__, __) < 5, __, __> [ 7/ 7, 112]
     legs=gear.Nyame_B_legs,               -- 58, 65, 40, 12, __ (__, __) < 6, __, __> [ 8/ 8, 150]
-    -- feet="Heathen's Sollerets +3",     -- 33, 60, 60, 12, __ (__, __) <__, __, __> [__/__, 119]
+    feet="Heathen's Sollerets +3",        -- 33, 60, 60, 12, __ (__, __) <__, __, __> [__/__, 119]
     -- neck="Abyssal Beads +2",           -- 25, 40, 15, __, 10 ( 4, __) <__, __, __> [__/__, ___]
     ear1="Moonshade Earring",             -- __, __,  4, __, __ (__, __) <__, __, __> [__/__, ___]; TP bonus+250
     ear2="Heathen's Earring +1",          -- __, 17, 11,  2,  8 (__, __) <__, __, __> [__/__, ___]
@@ -495,7 +496,7 @@ function init_gear_sets()
     body="Sakpata's Cuisses",             -- 42, 70, 55, __,  8 ( 5, __) < 8, __, __> [10/10, 139]
     hands=gear.Nyame_B_hands,             -- 17, 65, 40, 11, __ (__, __) < 5, __, __> [ 7/ 7, 112]
     legs="Sakpata's Cuisses",             -- 53, 70, 55, __,  7 (__, __) < 7, __, __> [ 9/ 9, 150]
-    -- feet="Heathen's Sollerets +3",     -- 33, 60, 60, 12, __ (__, __) <__, __, __> [__/__, 119]
+    feet="Heathen's Sollerets +3",        -- 33, 60, 60, 12, __ (__, __) <__, __, __> [__/__, 119]
     -- neck="Abyssal Beads +2",           -- 25, 40, 15, __, 10 ( 4, __) <__, __, __> [__/__, ___]
     ear1="Moonshade Earring",             -- __, __,  4, __, __ (__, __) <__, __, __> [__/__, ___]; TP bonus+250
     ear2="Heathen's Earring +1",          -- __, 17, 11,  2,  8 (__, __) <__, __, __> [__/__, ___]
@@ -543,7 +544,7 @@ function init_gear_sets()
     body=gear.Nyame_B_body,               -- 45, 37, 65, 40, 13, __ < 7, __, __> [ 9/ 9, 139]
     hands=gear.Nyame_B_hands,             -- 17, 40, 65, 40, 11, __ < 5, __, __> [ 7/ 7, 112]
     legs=gear.Nyame_B_legs,               -- 58, 32, 65, 40, 12, __ < 6, __, __> [ 8/ 8, 150]
-    -- feet="Heathen's Sollerets +3",     -- 33, 26, 60, 60, 12, __ <__, __, __> [__/__, 119]
+    feet="Heathen's Sollerets +3",        -- 33, 26, 60, 60, 12, __ <__, __, __> [__/__, 119]
     -- neck="Abyssal Beads +2",           -- 25, __, 40, 15, __, 10 <__, __, __> [__/__, ___]
     ear1="Schere Earring",                --  5, __, 15, 15, __, __ < 6, __, __> [__/__, ___]
     ear2="Heathen's Earring +1",          -- __, __, 17, 11,  2,  8 <__, __, __> [__/__, ___]
@@ -561,7 +562,7 @@ function init_gear_sets()
     body=gear.Nyame_B_body,               -- 45, 37, 65, 40, 13, __ < 7, __, __> [ 9/ 9, 139]
     hands=gear.Nyame_B_hands,             -- 17, 40, 65, 40, 11, __ < 5, __, __> [ 7/ 7, 112]
     legs="Sakpata's Cuisses",             -- 53, 21, 70, 55, __,  7 < 7, __, __> [ 9/ 9, 150]
-    -- feet="Heathen's Sollerets +3",     -- 33, 26, 60, 60, 12, __ <__, __, __> [__/__, 119]
+    feet="Heathen's Sollerets +3",        -- 33, 26, 60, 60, 12, __ <__, __, __> [__/__, 119]
     -- neck="Abyssal Beads +2",           -- 25, __, 40, 15, __, 10 <__, __, __> [__/__, ___]
     ear1="Schere Earring",                --  5, __, 15, 15, __, __ < 6, __, __> [__/__, ___]
     ear2="Heathen's Earring +1",          -- __, __, 17, 11,  2,  8 <__, __, __> [__/__, ___]
@@ -604,7 +605,7 @@ function init_gear_sets()
     body=gear.Nyame_B_body,               -- 45, 42, 65, 40, 13, __ < 7, __, __> [ 9/ 9, 139]
     hands=gear.Nyame_B_hands,             -- 17, 28, 65, 40, 11, __ < 5, __, __> [ 7/ 7, 112]
     legs=gear.Nyame_B_legs,               -- 58, 44, 65, 40, 12, __ < 6, __, __> [ 8/ 8, 150]
-    -- feet="Heathen's Sollerets +3",     -- 33, 22, 60, 60, 12, __ <__, __, __> [__/__, 119]
+    feet="Heathen's Sollerets +3",        -- 33, 22, 60, 60, 12, __ <__, __, __> [__/__, 119]
     -- neck="Abyssal Beads +2",           -- 25, __, 40, 15, __, 10 <__, __, __> [__/__, ___]
     ear1="Moonshade Earring",             -- __, __, __,  4, __, __ <__, __, __> [__/__, ___]; TP bonus
     ear2="Schere Earring",                --  5, __, 15, 15, __, __ < 6, __, __> [__/__, ___]
@@ -624,7 +625,7 @@ function init_gear_sets()
     body=gear.Nyame_B_body,               -- 45, 42, 65, 40, 13, __ < 7, __, __> [ 9/ 9, 139]
     hands=gear.Nyame_B_hands,             -- 17, 28, 65, 40, 11, __ < 5, __, __> [ 7/ 7, 112]
     legs="Sakpata's Cuisses",             -- 53, 32, 70, 55, __,  7 < 7, __, __> [ 9/ 9, 150]
-    -- feet="Heathen's Sollerets +3",     -- 33, 22, 60, 60, 12, __ <__, __, __> [__/__, 119]
+    feet="Heathen's Sollerets +3",        -- 33, 22, 60, 60, 12, __ <__, __, __> [__/__, 119]
     -- neck="Abyssal Beads +2",           -- 25, __, 40, 15, __, 10 <__, __, __> [__/__, ___]
     ear1="Moonshade Earring",             -- __, __, __,  4, __, __ <__, __, __> [__/__, ___]; TP bonus
     ear2="Heathen's Earring +1",          -- __, __, 17, 11,  2,  8 <__, __, __> [__/__, ___]
@@ -701,7 +702,7 @@ function init_gear_sets()
     body="Nyame Mail",
     hands="Nyame Gauntlets",
     legs="Nyame Flanchard",
-    -- feet="Heathen's Sollerets +3",
+    feet="Heathen's Sollerets +3",
     -- neck="Abyssal Beads +2",
     ear1="Moonshade Earring",
     ear2=gear.jse_ear,
@@ -750,7 +751,7 @@ function init_gear_sets()
     -- body="Fallen's Cuirass +3",            -- 32, 32, 60, __ [__/__,  68]
     -- hands="Fallen's Finger Gauntlets +3",  -- 39, 24, 62, __ [__/__,  46]
     legs=gear.Nyame_B_legs,                   -- __, 44, 30, 12 [ 8/ 8, 150]
-    -- feet="Heathen's Sollerets +3",         -- 25, 22, 50, 12 [__/__, 119]
+    feet="Heathen's Sollerets +3",            -- 25, 22, 50, 12 [__/__, 119]
     neck="Sibyl Scarf",                       -- __, 10, 10, __ [__/__, ___]
     ear1="Malignance Earring",                -- __,  8,  8, __ [__/__, ___]
     ear2="Friomisi Earring",                  -- __, __, 10, __ [__/__, ___]
