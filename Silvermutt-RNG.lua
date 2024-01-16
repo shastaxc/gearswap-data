@@ -230,7 +230,7 @@ function init_gear_sets()
   sets.precast.Waltz['Healing Waltz'] = {}
 
   sets.precast.FC = {
-    head="Herculean Helm", --7
+    head=gear.Carmine_D_head, -- 14
     body=gear.Taeon_FC_body, --9
     hands=gear.Leyline_Gloves, --8
     legs=gear.Taeon_FC_legs, --5

@@ -255,7 +255,8 @@ function init_gear_sets()
   -- Used when casting non-blu spells and not sub RDM (rarely used)
   sets.precast.FC = {
     ammo="Sapience Orb",          --  2 [__/__, ___]
-    hands=gear.Leyline_Gloves,    --  7 [__/__,  62]
+    head=gear.Carmine_D_head,     -- 14 [__/__,  53]
+    hands=gear.Leyline_Gloves,    --  8 [__/__,  62]
     feet=gear.Carmine_D_feet,     --  8 [ 4/__,  80]
     neck="Loricate Torque +1",    -- __ [ 6/ 6, ___]
     ear1="Loquacious Earring",    --  2 [__/__, ___]
@@ -265,18 +266,18 @@ function init_gear_sets()
     back=gear.BLU_FC_Cape,        -- 10 [10/__, ___]
     waist="Flume Belt +1",        -- __ [ 4/__, ___]
     -- Blue Magic FC trait            5 [__/__, ___]
-    -- 38 FC [37 PDT / 21 MDT, 142 M.Eva]
+    -- 53 FC [37 PDT / 21 MDT, 195 M.Eva]
 
-    -- head=gear.Carmine_D_head,  -- 14 [__/__,  53]
-    -- legs="Pinga Pants +1",     -- 13 [__/__, 147]
     -- body="Pinga Tunic +1",     -- 15 [__/__, 128]
-    -- 80 FC [37 PDT / 21 MDT, 470 M.Eva]
+    -- legs="Pinga Pants +1",     -- 13 [__/__, 147]
+    -- 81 FC [37 PDT / 21 MDT, 470 M.Eva]
   }
 
   -- Used when casting blue magic spells, and not sub RDM.
   sets.precast.FC['Blue Magic'] = {
     ammo="Sapience Orb",          --  2 [__/__, ___]
-    hands=gear.Leyline_Gloves,    --  5 [__/__,  62]
+    head=gear.Carmine_D_head,     -- 14 [__/__,  53]
+    hands=gear.Leyline_Gloves,    --  8 [__/__,  62]
     feet=gear.Carmine_D_feet,     --  8 [ 4/__,  80]
     neck="Loricate Torque +1",    -- __ [ 6/ 6, ___]
     ear1="Loquacious Earring",    --  2 [__/__, ___]
@@ -286,18 +287,17 @@ function init_gear_sets()
     back=gear.BLU_FC_Cape,        -- 10 [10/__, ___]
     waist="Flume Belt +1",        -- __ [ 4/__, ___]
     -- Blue Magic FC trait            5 [__/__, ___]
-    -- 36 FC [37 PDT / 21 MDT, 142 M.Eva]
+    -- 53 FC [37 PDT / 21 MDT, 195 M.Eva]
 
-    -- head=gear.Carmine_D_head,  -- 14 [__/__,  53]
     -- body="Hashishin Mintan +2",-- 15 [12/12, 126]
-    -- hands=gear.Leyline_Gloves, --  7 [__/__,  62]
     -- legs="Pinga Pants +1",     -- 13 [__/__, 147]
-    -- 80 FC [49 PDT / 33 MDT, 468 M.Eva]
+    -- 53 FC [49 PDT / 33 MDT, 468 M.Eva]
   }
 
   -- Always used when sub RDM
   sets.precast.FC.RDM = {
     ammo="Sapience Orb",          --  2 [__/__, ___]
+    head=gear.Carmine_D_head,     -- 14 [__/__,  53]
     hands=gear.Nyame_B_hands,     -- __ [ 7/ 7, 112]
     feet=gear.Carmine_D_feet,     --  8 [ 4/__,  80]
     neck="Loricate Torque +1",    -- __ [ 6/ 6, ___]
@@ -311,7 +311,6 @@ function init_gear_sets()
     -- RDM FC traits                 15
     -- 42 FC [51 PDT / 27 MDT, 192 M.Eva]
 
-    -- head=gear.Carmine_D_head,  -- 14 [__/__,  53]
     -- legs="Pinga Pants +1",     -- 13 [__/__, 147]
     -- body="Pinga Tunic +1",     -- 15 [__/__, 128]
     -- 84 FC [51 PDT / 27 MDT, 520 M.Eva]
