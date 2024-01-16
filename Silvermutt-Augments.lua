@@ -100,6 +100,9 @@ gear.Odyssean_Enmity_feet = { name="Odyssean Greaves", augments={'Attack+21','En
 
 gear.Odyssean_Cure_feet = { name="Odyssean Greaves", augments={'Accuracy+25','"Cure" potency +6%','DEX+6','Attack+8',}}
 
+gear.Odyssean_FC_legs = { name="Odyssean Cuisses", augments={'"Fast Cast"+6','Mag. Acc.+14','"Mag.Atk.Bns."+13',}}
+gear.Odyssean_FC_feet = { name="Odyssean Greaves", augments={'Accuracy+7','"Fast Cast"+6',}}
+
 -- Valorous
 gear.Valorous_DT_head = {} -- DT-4
 
