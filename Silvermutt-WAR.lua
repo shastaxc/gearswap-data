@@ -484,10 +484,22 @@ function init_gear_sets()
   })
 
   -- 40% DEX/40% INT; wind elemental, dmg varies with TP
-  sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS['Cataclysm'], {})
-  sets.precast.WS['Aeolian Edge'].MaxTP = set_combine(sets.precast.WS['Cataclysm'].MaxTP, {})
-  sets.precast.WS['Aeolian Edge'].AttCapped = set_combine(sets.precast.WS['Cataclysm'].AttCapped, {})
-  sets.precast.WS['Aeolian Edge'].AttCappedMaxTP = set_combine(sets.precast.WS['Cataclysm'].AttCappedMaxTP, {})
+  sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS['Cloudsplitter'], {
+    neck="Sibyl Scarf",
+    -- back=gear.WAR_INT_MAB_Cape,
+  })
+  sets.precast.WS['Aeolian Edge'].MaxTP = set_combine(sets.precast.WS['Cloudsplitter'].MaxTP, {
+    neck="Sibyl Scarf",
+    -- back=gear.WAR_INT_MAB_Cape,
+  })
+  sets.precast.WS['Aeolian Edge'].AttCapped = set_combine(sets.precast.WS['Cloudsplitter'].AttCapped, {
+    neck="Sibyl Scarf",
+    -- back=gear.WAR_INT_MAB_Cape,
+  })
+  sets.precast.WS['Aeolian Edge'].AttCappedMaxTP = set_combine(sets.precast.WS['Cloudsplitter'].AttCappedMaxTP, {
+    neck="Sibyl Scarf",
+    -- back=gear.WAR_INT_MAB_Cape,
+  })
 
   -- Polearm sets use a crit build since you should be using Shining One
   -- 100% STR; 2 hit, dmg varies with TP
