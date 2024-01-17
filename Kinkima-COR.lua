@@ -1977,9 +1977,6 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.Special = {}
-  sets.Special.ElementalObi = {
-    waist="Hachirin-no-Obi",
-  }
   sets.Special.SubtleBlow = {
     -- head="Adhemar Bonnet +1", --8
     -- ring1="Chirich Ring +1", --10

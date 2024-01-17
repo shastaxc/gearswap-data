@@ -1477,7 +1477,6 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.Special = {}
-  sets.Special.ElementalObi = {waist="Hachirin-no-Obi",}
 
   sets.buff.Doom = {
     neck="Nicander's Necklace", --20

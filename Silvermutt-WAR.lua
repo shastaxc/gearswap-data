@@ -932,7 +932,6 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.Special = {}
-  sets.Special.ElementalObi = {waist="Hachirin-no-Obi",}
   sets.Special.Sleepyhead = { head="Frenzy Sallet", }
   sets.Special.LowEnmity = { ear2="Novia Earring", } -- Assumes -Enmity merits and Dirge
   sets.Special.Schere = { ear2="Schere Earring", }

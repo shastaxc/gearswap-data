@@ -1791,9 +1791,6 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.Special = {}
-  sets.Special.ElementalObi = {
-    waist="Hachirin-no-Obi",
-  }
   sets.Special.SubtleBlow = {
     head="Adhemar Bonnet +1", --8
     ring1="Chirich Ring +1", --10
@@ -1980,7 +1977,7 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
 
   -- Check that proper ammo is available if we're using ranged attacks or similar.
   silibs.equip_ammo(spell, action, spellMap, eventArgs)
-  
+
   -- If slot is locked, keep current equipment on
   if locked_neck then equip({ neck=player.equipment.neck }) end
   if locked_ear1 then equip({ ear1=player.equipment.ear1 }) end

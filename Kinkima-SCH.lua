@@ -1211,9 +1211,6 @@ function init_gear_sets()
   }
 
   sets.Special = {}
-  sets.Special.ElementalObi = {
-    waist="Hachirin-no-Obi",
-  }
   sets.Special.CaitSith = {
     main="Bunzi's Rod",
     sub="Genbu's Shield",

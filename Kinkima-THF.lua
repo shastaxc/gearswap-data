@@ -1179,7 +1179,6 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.Special = {}
-  sets.Special.ElementalObi = {waist="Hachirin-no-Obi",}
   sets.Special.SleepyHead = {
     -- head="Frenzy Sallet",
   }

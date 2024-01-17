@@ -1453,10 +1453,6 @@ function init_gear_sets()
   }
   sets.TreasureHunter.RA = set_combine(sets.TreasureHunter, {})
 
-  sets.Special.ElementalObi = {
-    waist="Hachirin-no-Obi"
-  }
-
   sets.WeaponSet = {}
   -- Melee weapon sets
   sets.WeaponSet['MagicRA'] = {
