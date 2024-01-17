@@ -182,6 +182,7 @@ function init_gear_sets()
     -- hands="Fallen's Finger Gauntlets +3",
   }
   sets.precast.JA['Nether Void'] = {
+    legs="Heathen's Flanchard +2",
     -- legs="Heathen's Flanchard +3",
   }
   sets.precast.JA['Provoke'] = set_combine(sets.Enmity, {})
@@ -864,8 +865,8 @@ function init_gear_sets()
     ammo="Pemphredo Tathlum",
     head="Carmine Mask +1",
     body="Heathen's Cuirass +3",
-    hands="Heathen's Gauntlets +3",
-    legs="Heathen's Flanchard +3",
+    hands="Heathen's Gauntlets +2",
+    legs="Heathen's Flanchard +2",
     feet="Heathen's Sollerets +3",
     neck="Erra Pendant",
     waist="Eschan Stone",
@@ -874,6 +875,9 @@ function init_gear_sets()
     ring1="Stikini Ring +1",
     ring2="Metamorph Ring +1",
     back=gear.jse_back_nuke,
+    
+    -- hands="Heathen's Gauntlets +3",
+    -- legs="Heathen's Flanchard +3",
   }
   
   sets.midcast.Poison = set_combine(sets.midcast['Enfeebling Magic'],{})
@@ -908,7 +912,7 @@ function init_gear_sets()
     head="Ignominy Burgeonet +3", 
     body="Carmine Scale Mail +1",
     hands="Fallen's Finger Gauntlets +3",
-    legs="Heathen's Flanchard +3",
+    legs="Heathen's Flanchard +2",
     feet="Ratri Sollerets +1", 
     neck="Incanter's Torque", 
     waist="Eschan Stone",
@@ -917,6 +921,8 @@ function init_gear_sets()
     ring1="Stikini Ring +1",
     ring2="Evanescence Ring",
     back=gear.jse_back_nuke,
+
+    -- legs="Heathen's Flanchard +3",
   }
   sets.midcast.Bio = set_combine(sets.midcast['Dark Magic'],{})
 
@@ -950,7 +956,7 @@ function init_gear_sets()
     head="Ignominy Burgonet +3", 
     body="Carmine Scale Mail +1",
     hands="Fallen's Finger Gauntlets +3",
-    legs="Heathen's Flanchard +3",
+    legs="Heathen's Flanchard +2",
     feet="Ratri Sollerets +1",
     neck="Erra Pendant",
     waist="Casso Sash",
@@ -958,7 +964,9 @@ function init_gear_sets()
     ear2="Dark Earring",
     ring1="Stikini Ring +1",
     ring2="Evanescence Ring",
-    back=gear.jse_reive
+    back=gear.jse_reive,
+    
+    -- legs="Heathen's Flanchard +3",
   }
   sets.midcast['Endark II'] = set_combine(sets.midcast.Endark,{})
 
@@ -987,10 +995,12 @@ function init_gear_sets()
   
   -- TODO
   sets.midcast['Absorb-TP'] = set_combine(sets.midcast.Absorb,{
-    hands="Heathen's Gauntlets +3",
+    hands="Heathen's Gauntlets +2",
     feet="Ignominy Sollerets +3",
     ring1="Stikini Ring +1",
     back=gear.jse_back_fc,
+    
+    -- hands="Heathen's Gauntlets +3",
   })
   sets.midcast['Absorb-Attri'] = set_combine(sets.midcast.Absorb,{})
   
@@ -1026,8 +1036,8 @@ function init_gear_sets()
   sets.midcast.Impact = {
     range="Ullr",
     body="Crepuscular Cloak",
-    hands="Heathen's Gauntlets +3",
-    legs="Heathen's Flanchard +3",
+    hands="Heathen's Gauntlets +2",
+    legs="Heathen's Flanchard +2",
     feet="Heathen's Sollerets +3",
     neck="Erra Pendant",
     waist="Eschan Stone",
@@ -1036,6 +1046,9 @@ function init_gear_sets()
     ring1="Stikini Ring +1",
     ring2="Metamorph Ring +1",
     back=gear.jse_reive,
+    
+    -- hands="Heathen's Gauntlets +3",
+    -- legs="Heathen's Flanchard +3",
   }
   
   -- TODO
@@ -1065,8 +1078,8 @@ function init_gear_sets()
     ammo="Staunch Tathlum +1",
     head="Sakpata's Helm",
     body="Sakpata's Breastplate",
-    hands="Sakpata's Gauntlets",
-    legs="Sakpata's Cuisses",
+    hands="Heathen's Gauntlets +2",
+    legs="Heathen's Flanchards +2",
     feet="Sakpata's Leggings",
     neck="Abyssal Beads +2",
     ear1="Odnowa Earring +1",
