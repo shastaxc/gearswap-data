@@ -357,7 +357,7 @@ function init_gear_sets()
     head="Heathen's Burgeonet +3",        -- 47, 61, 61, __, 10 < 6, __, __> [__/__,  87]
     body="Sakpata's Breastplate",         -- 42, 70, 55, __,  8 < 8, __, __> [10/10, 139]
     hands="Sakpata's Gauntlets",          -- 24, 70, 55, __,  6 < 6, __, __> [ 8/ 8, 112]
-    -- legs="Ignominy Flanchard +3",      -- 50, 45, 49, __, __ <10, __, __> [__/__,  84]
+    legs=gear.Nyame_B_legs,
     feet="Sakpata's Leggings",            -- 29, 70, 55, __,  4 < 4, __, __> [ 6/ 6, 150]
     neck="Fotia Gorget",                  -- __, __, __, __, __ <__, __, __> [__/__, ___]; ftp+
     ear1="Moonshade Earring",             -- __,  4, __, __, __ <__, __, __> [__/__, ___]; TP Bonus+250
@@ -367,6 +367,8 @@ function init_gear_sets()
     -- back=gear.DRK_STR_DA_Cape,         -- 30, 20, 20, __, __ <10, __, __> [10/__, ___]
     waist="Fotia Belt",                   -- __, __, __, __, __ <__, __, __> [__/__, ___]; ftp+
     -- DRK traits/gifts/etc                                  50
+    
+    -- legs="Ignominy Flanchard +3",      -- 50, 45, 49, __, __ <10, __, __> [__/__,  84]
     -- 257 STR, 390 Attack, 310 Accuracy, 10 WSD, 88 PDL <53 DA, 0 TA, 3 QA> [34 PDT/24 MDT, 572 M.Eva]
   }
   sets.precast.WS['Resolution'].MaxTP = set_combine(sets.precast.WS['Resolution'], {
@@ -377,7 +379,7 @@ function init_gear_sets()
     head="Heathen's Burgeonet +3",        -- 42, 61, 61, __, 10 < 6, __, __> [__/__,  87]
     body="Sakpata's Breastplate",         -- 42, 70, 55, __,  8 < 8, __, __> [10/10, 139]
     hands="Sakpata's Gauntlets",          -- 24, 70, 55, __,  6 < 6, __, __> [ 8/ 8, 112]
-    -- legs="Ignominy Flanchard +3",      -- 50, 45, 49, __, __ <10, __, __> [__/__,  84]
+    legs=gear.Nyame_B_legs,
     feet="Sakpata's Leggings",            -- 29, 70, 55, __,  4 < 4, __, __> [ 6/ 6, 150]
     neck="Fotia Gorget",                  -- __, __, __, __, __ <__, __, __> [__/__, ___]; ftp+
     ear1="Moonshade Earring",             -- __,  4, __, __, __ <__, __, __> [__/__, ___]; TP Bonus+250
@@ -387,6 +389,8 @@ function init_gear_sets()
     -- back=gear.DRK_STR_DA_Cape,         -- 30, 20, 20, __, __ <10, __, __> [10/__, ___]
     waist="Fotia Belt",                   -- __, __, __, __, __ <__, __, __> [__/__, ___]; ftp+
     -- DRK traits/gifts/etc                                  50
+    
+    -- legs="Ignominy Flanchard +3",      -- 50, 45, 49, __, __ <10, __, __> [__/__,  84]
     -- 240 STR, 377 Attack, 326 Accuracy, 2 WSD, 99 PDL <44 DA, 0 TA, 3 QA> [37 PDT/27 MDT, 572 M.Eva]
   })
   sets.precast.WS['Resolution'].AttCappedMaxTP = set_combine(sets.precast.WS['Resolution'].AttCapped, {
@@ -1139,7 +1143,7 @@ function init_gear_sets()
     head="Flamma Zucchetto +2",       -- [__/__,  53]  6 <__,  5, __> __,  4
     body="Hjarrandi Breastplate",     -- [12/12,  69] 10 <__, __, __> 13, __
     hands="Sakpata's Gauntlets",      -- [ 8/ 8, 112]  8 < 6, __, __> __,  4
-    -- legs="Ignominy Flanchard +3",  -- [__/__,  84] __ <10, __, __> __,  5
+    legs=gear.Nyame_B_legs,
     feet="Flamma Gambieras +2",       -- [__/__,  86]  6 < 6, __, __> __,  2
     -- neck="Abyssal Beads +2",       -- [__/__, ___]  7 <__, __, __>  4, __
     ear1="Schere Earring",            -- [__/__, ___]  5 < 6, __, __> __, __
@@ -1148,6 +1152,8 @@ function init_gear_sets()
     ring2="Moonlight Ring",           -- [ 5/ 5, ___]  5 <__, __, __> __, __
     -- back=gear.DRK_STP_Cape,        -- [10/__, ___] 10 <__, __, __> __, __
     waist="Sailfi Belt +1",           -- [__/__, ___] __ < 5,  2, __> __,  9
+    
+    -- legs="Ignominy Flanchard +3",  -- [__/__,  84] __ <10, __, __> __,  5
     -- [40 PDT/30 MDT, 404 MEVA] 73 STP <37 DA, 7 TA, 0 QA> 17 Crit Rate, 24 Haste
   }
   -- TODO
@@ -1243,7 +1249,7 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.Special = {}
-  sets.Special.ElementalObi = {waist="Hachirin-no-Obi",}
+  sets.Special.ElementalObi = { waist="Hachirin-no-Obi", }
   sets.Special.Sleepyhead = { neck="Vim Torque +1", }
   sets.Special.LowEnmity = { ear2="Novia Earring", } -- Assumes -Enmity merits and Dirge
   sets.Special.Schere = { ear2="Schere Earring", }
