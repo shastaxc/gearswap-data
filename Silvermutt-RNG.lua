@@ -1556,6 +1556,9 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     end
   end
 
+  -- Check that proper ammo is available and equip it.
+  silibs.equip_ammo(spell, action, spellMap, eventArgs)
+
   -- If slot is locked, keep current equipment on
   if locked_neck then equip({ neck=player.equipment.neck }) end
   if locked_ear1 then equip({ ear1=player.equipment.ear1 }) end
