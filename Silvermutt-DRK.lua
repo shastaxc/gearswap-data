@@ -724,11 +724,12 @@ function init_gear_sets()
     ear2="Friomisi Earring",                  -- __, __, 10, __ [__/__, ___]
     ring1="Metamorph Ring +1",                -- __, 16, __, __ [__/__, ___]
     ring2="Defending Ring",                   -- __, __, __, __ [10/10, ___]
-    -- back=gear.DRK_MAB_Cape,                -- __, 30, 10, __ [10/__, ___]
+    back=gear.DRK_STP_Cape,
     waist="Eschan Stone",                     -- __, __,  7, __ [__/__, ___]
     
     -- body="Fallen's Cuirass +3",            -- 32, 32, 60, __ [__/__,  68]
     -- hands="Fallen's Finger Gauntlets +3",  -- 39, 24, 62, __ [__/__,  46]
+    -- back=gear.DRK_MAB_Cape,                -- __, 30, 10, __ [10/__, ___]
     -- 121 DEX, 214 INT, 284 MAB, 35 WSD [35 PDT/25 MDT, 506 M.Eva]
   }
 
@@ -853,23 +854,6 @@ function init_gear_sets()
   sets.midcast.Bind = set_combine(sets.midcast['Enfeebling Magic'],{})
   sets.midcast.Break = set_combine(sets.midcast['Enfeebling Magic'],{})
 
-  sets.midcast['Elemental Magic'] = {
-    ammo="Pemphredo Tathlum",               --  4,  8,  4, __ [__/__, ___]
-    head=gear.Nyame_B_head,                 -- 28, 40, 30, __ [ 7/ 7, 123]
-    -- body="Fallen's Cuirass +3",          -- 32, 40, 60, __ [__/__,  68]
-    -- hands="Fallen's Finger Gauntlets +3",-- 24, 38, 62, __ [__/__,  46]
-    legs=gear.Nyame_B_legs,                 -- 44, 40, 30, __ [ 8/ 8, 150]
-    feet="Heathen's Sollerets +3",          -- 22, 60, 50, __ [__/__, 119]
-    neck="Sibyl Scarf",                     -- 10, __, 10, __ [__/__, ___]
-    ear1="Malignance Earring",              --  8, 10,  8, __ [__/__, ___]
-    ear2="Friomisi Earring",                -- __, __, 10, __ [__/__, ___]
-    ring1="Metamorph Ring +1",              -- 16, 15, __, __ [__/__, ___]
-    ring2="Defending Ring",                 -- __, __, __, __ [10/10, ___]
-    back=gear.DRK_MAB_Cape,                 -- 30, 20, 10, 20 [10/__, ___]
-    waist="Skrymir Cord",                   -- __,  5,  5, 30 [__/__, ___]
-    -- 218 INT, 276 M.Acc, 279 MAB, 50 M.Dmg [35 PDT/25 MDT, 506 M.Eva]
-  }
-
   ------- Dark magic: Absorb-spells, Aspir, Bio, Drain, Dread Spikes, Endark, Stun -------
   -- Bio II dark skill cap at 291. DRK hits this without gear.
   sets.midcast.Bio = {
@@ -893,7 +877,7 @@ function init_gear_sets()
   -- Potency affected by max HP at cast time.
   sets.midcast['Dread Spikes'] = {
     -- ammo="Egoist's Tathlum",       --  45 [___/___, ___]
-    -- head="Ratri Sallet +1",        -- 510 [ -8/ -8, 101]
+    head="Ratri Sallet +1",           -- 510 [ -8/ -8, 101]
     body="Heathen's Cuirass +3",      --  98 [ 13/ 13, 103]; Potency+55%
     -- hands="Ratri Gadlings +1",     -- 499 [-10/-10,  90]
     -- legs="Ratri Cuisses +1",       -- 521 [-12/-12, 139]
@@ -1028,8 +1012,25 @@ function init_gear_sets()
     -- 214 INT, 342 M.Acc, 82 Dark skill [22 PDT/16 MDT, 418 M.Eva]
   }
 
+  sets.midcast['Elemental Magic'] = {
+    ammo="Pemphredo Tathlum",               --  4,  8,  4, __ [__/__, ___]
+    head=gear.Nyame_B_head,                 -- 28, 40, 30, __ [ 7/ 7, 123]
+    -- body="Fallen's Cuirass +3",          -- 32, 40, 60, __ [__/__,  68]
+    -- hands="Fallen's Finger Gauntlets +3",-- 24, 38, 62, __ [__/__,  46]
+    legs=gear.Nyame_B_legs,                 -- 44, 40, 30, __ [ 8/ 8, 150]
+    feet="Heathen's Sollerets +3",          -- 22, 60, 50, __ [__/__, 119]
+    neck="Sibyl Scarf",                     -- 10, __, 10, __ [__/__, ___]
+    ear1="Malignance Earring",              --  8, 10,  8, __ [__/__, ___]
+    ear2="Friomisi Earring",                -- __, __, 10, __ [__/__, ___]
+    ring1="Metamorph Ring +1",              -- 16, 15, __, __ [__/__, ___]
+    ring2="Defending Ring",                 -- __, __, __, __ [10/10, ___]
+    back=gear.DRK_MAB_Cape,                 -- 30, 20, 10, 20 [10/__, ___]
+    waist="Skrymir Cord",                   -- __,  5,  5, 30 [__/__, ___]
+    -- 218 INT, 276 M.Acc, 279 MAB, 50 M.Dmg [35 PDT/25 MDT, 506 M.Eva]
+  }
+
   -- Elemental magic
-  sets.midcast.Impact = {
+  sets.midcast.Impact = set_combine(sets.midcast['Elemental Magic'], {
     ammo="Pemphredo Tathlum",
     -- head=empty,
     -- body="Crepuscular Cloak",
@@ -1046,7 +1047,7 @@ function init_gear_sets()
     
     -- hands="Heathen's Gauntlets +3",
     -- legs="Heathen's Flanchard +3",
-  }
+  })
   
 
   ------------------------------------------------------------------------------------------------
@@ -1083,8 +1084,7 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.latent_regain = {
-    head="Valorous Mask",       -- 3
-    -- head="Ratri Sallet +1",  -- 5
+    head="Ratri Sallet +1",  -- 5
   }
   sets.latent_regen = {
     neck="Bathy Choker +1", -- Remove if using sacro breastplate
