@@ -161,6 +161,7 @@ function init_gear_sets()
   })
 
   sets.precast.JA['Blood Weapon'] = {
+    body="Fallen's Cuirass +1",
     -- body="Fallen's Cuirass +3",
   }
   sets.precast.JA['Arcane Circle'] = {
@@ -1067,7 +1068,7 @@ function init_gear_sets()
     ear2="Arete Del Luna +1",             -- __ [__/__, ___]; Resists
     ring1="Moonlight Ring",               -- __ [ 5/ 5, ___]
     ring2="Defending Ring",               -- __ [10/10, ___]
-    back="Moonlight Cape",                -- __ [ 6/ 6, ___]
+    back=gear.DRK_STP_Cape,               -- __ [10/__, ___]
     waist="Carrier's Sash",               -- __ [__/__, ___]; Resists
     -- 35 M.Def [73 PDT/73 MDT, 593 M.Eva]
 
@@ -1124,7 +1125,7 @@ function init_gear_sets()
     legs=gear.Nyame_B_legs,
     feet="Flamma Gambieras +2",       -- [__/__,  86]  6 < 6, __, __> __,  2
     -- neck="Abyssal Beads +2",       -- [__/__, ___]  7 <__, __, __>  4, __
-    ear1="Schere Earring",            -- [__/__, ___]  5 < 6, __, __> __, __
+    ear1="Telos Earring",             -- [__/__, ___]  5 < 1, __, __> __, __
     ear2="Dedition Earring",          -- [__/__, ___]  8 < 1, __, __> __, __
     ring1="Moonlight Ring",           -- [ 5/ 5, ___]  5 <__, __, __> __, __
     ring2="Moonlight Ring",           -- [ 5/ 5, ___]  5 <__, __, __> __, __
@@ -1132,11 +1133,11 @@ function init_gear_sets()
     waist="Sailfi Belt +1",           -- [__/__, ___] __ < 5,  2, __> __,  9
     
     -- legs="Ignominy Flanchard +3",  -- [__/__,  84] __ <10, __, __> __,  5
-    -- [40 PDT/30 MDT, 404 MEVA] 73 STP <37 DA, 7 TA, 0 QA> 17 Crit Rate, 24 Haste
+    -- [40 PDT/30 MDT, 404 MEVA] 73 STP <32 DA, 7 TA, 0 QA> 17 Crit Rate, 24 Haste
   }
   -- TODO
   sets.engaged.LowAcc = set_combine(sets.engaged, {
-    ear2="Telos Earring",             -- [__/__, ___]  5 < 1, __, __> __, __
+    ear2="Cessance Earring",          -- [__/__, ___]  3 < 3, __, __> __, __
   })
   -- TODO
   sets.engaged.MidAcc = set_combine(sets.engaged.LowAcc, {
@@ -1147,10 +1148,12 @@ function init_gear_sets()
 
   -- TODO
   sets.engaged.LowDW = set_combine(sets.engaged,{
+    waist="Reiki Yotai",
+  })
+  sets.engaged.MidDW = set_combine(sets.engaged.LowDW, {
     ear2="Eabani Earring",
     -- back=gear.DRK_DW_Cape,
   })
-  sets.engaged.MidDW = set_combine(sets.engaged.LowDW, {})
   -- TODO
   sets.engaged.HighDW = set_combine(sets.engaged.LowDW, {})
   -- TODO
@@ -1171,16 +1174,18 @@ function init_gear_sets()
     legs="Sakpata's Cuisses",         -- [ 9/ 9, 150] __ < 7, __, __> __,  4
     feet="Flamma Gambieras +2",       -- [__/__,  86]  6 < 6, __, __> __,  2
     -- neck="Abyssal Beads +2",       -- [__/__, ___]  7 <__, __, __>  4, __
-    ear1="Schere Earring",            -- [__/__, ___]  5 < 6, __, __> __, __
+    ear1="Telos Earring",             -- [__/__, ___]  5 < 1, __, __> __, __
     ear2="Dedition Earring",          -- [__/__, ___]  8 < 1, __, __> __, __
     ring1="Moonlight Ring",           -- [ 5/ 5, ___]  5 <__, __, __> __, __
     ring2="Moonlight Ring",           -- [ 5/ 5, ___]  5 <__, __, __> __, __
     back=gear.DRK_STP_Cape,           -- [10/__, ___] 10 <__, __, __> __, __
     waist="Sailfi Belt +1",           -- [__/__, ___] __ < 5,  2, __> __,  9
-    -- [49 PDT/39 MDT, 470 MEVA] 73 STP <34 DA, 7 TA, 0 QA> 17 Crit Rate, 23 Haste
+    -- [49 PDT/39 MDT, 470 MEVA] 73 STP <29 DA, 7 TA, 0 QA> 17 Crit Rate, 23 Haste
   }
   -- TODO
-  sets.engaged.LowAcc.LightDef = set_combine(sets.engaged.LightDef, {})
+  sets.engaged.LowAcc.LightDef = set_combine(sets.engaged.LightDef, {
+    ear2="Cessance Earring",          -- [__/__, ___]  3 < 3, __, __> __, __
+  })
   -- TODO
   sets.engaged.MidAcc.LightDef = set_combine(sets.engaged.LightDef, {})
   -- TODO
@@ -1188,10 +1193,12 @@ function init_gear_sets()
   
   -- TODO
   sets.engaged.LowDW.LightDef = set_combine(sets.engaged.LightDef,{
+    waist="Reiki Yotai",
+  })
+  sets.engaged.MidDW.LightDef = set_combine(sets.engaged.LowDW.LightDef, {
     ear2="Eabani Earring",
     -- back=gear.DRK_DW_Cape,
   })
-  sets.engaged.MidDW.LightDef = set_combine(sets.engaged.LowDW.LightDef, {})
   -- TODO
   sets.engaged.HighDW.LightDef = set_combine(sets.engaged.LowDW.LightDef, {})
   -- TODO
@@ -1207,16 +1214,19 @@ function init_gear_sets()
     legs="Sakpata's Cuisses",             -- [ 9/ 9, 150] __ < 7, __, __> __,  4, __(__)
     feet="Sakpata's Leggings",            -- [ 6/ 6, 150] __ < 4, __, __> __,  2, 13(__)
     neck="Loricate Torque +1",            -- [ 6/ 6, ___] __ <__, __, __> __, __, __(__)
-    ear1="Schere Earring",                -- [__/__, ___]  5 < 6, __, __> __, __,  3(__)
-    ear2="Telos Earring",                 -- [__/__, ___]  5 < 1, __, __> __, __, __(__)
+    ear1="Telos Earring",            
+    ear2="Dedition Earring",         
     ring1="Chirich Ring +1",              -- [__/__, ___]  6 <__, __, __> __, __, 10(__)
     ring2="Niqmaddu Ring",                -- [__/__, ___] __ <__, __,  3> __, __, __( 5)
     back=gear.DRK_STP_Cape,               -- [10/__, ___] 10 <__, __, __> __, __, __(__)
     waist="Peiste Belt +1",               -- [__/__, ___] __ <__, __, __> __, __, 10(__)
+    -- TODO: Recalculate
     -- [46 PDT/36 MDT, 621 MEVA] 34 STP <29 DA, 5 TA, 3 QA> 4 Crit Rate, 20 Haste, 44(15) Subtle Blow
   }
   -- TODO
-  sets.engaged.LowAcc.SubtleBlow = set_combine(sets.engaged.SubtleBlow, {})
+  sets.engaged.LowAcc.SubtleBlow = set_combine(sets.engaged.SubtleBlow, {
+    ear2="Cessance Earring",          -- [__/__, ___]  3 < 3, __, __> __, __
+  })
   -- TODO
   sets.engaged.MidAcc.SubtleBlow = set_combine(sets.engaged.SubtleBlow, {})
   -- TODO
@@ -1551,6 +1561,8 @@ function cycle_weapons(cycle_dir)
     state.WeaponSet:cycle()
   elseif cycle_dir == 'back' then
     state.WeaponSet:cycleback()
+  elseif cycle_dir == 'reset' then
+    state.WeaponSet:reset()
   end
 
   add_to_chat(141, 'Weapon Set to '..string.char(31,1)..state.WeaponSet.current)
@@ -1780,6 +1792,8 @@ function job_self_command(cmdParams, eventArgs)
       cycle_weapons('forward')
     elseif cmdParams[2] == 'cycleback' then
       cycle_weapons('back')
+    elseif cmdParams[2] == 'reset' then
+      cycle_weapons('reset')
     elseif cmdParams[2] == 'current' then
       cycle_weapons('current')
     end
@@ -1831,7 +1845,7 @@ end)
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
   -- Default macro set/book: (set, book)
-  set_macro_page(2, 14)
+  set_macro_page(2, 18)
 end
 
 -- Calculate Fencer tier. Fencer active if not two-handed weapon, and offhand is empty or shield.
@@ -1887,6 +1901,7 @@ function set_main_keybinds()
 
   send_command('bind ^insert gs c weaponset cycle')
   send_command('bind ^delete gs c weaponset cycleback')
+  send_command('bind !delete gs c weaponset reset')
 
   send_command('bind ^f8 gs c toggle AttCapped')
   send_command('bind ^pageup gs c toyweapon cycle')
@@ -1895,14 +1910,22 @@ function set_main_keybinds()
 
   send_command('bind ^` gs c cycle treasuremode')
   send_command('bind @c gs c toggle CP')
+  
+  send_command('bind !` clear_risky_buffs')
 
-  send_command('bind !e input /ja "Hasso" <me>')
-  send_command('bind !q input /ja "Meditate" <me>')
+  send_command('bind !q input /ja "Nether Void" <me>')
+  send_command('bind !w input /ja "Dark Seal" <me>')
+  send_command('bind !e input /ja "Drain III" <t>')
+  send_command('bind !r input /ja "Aspir II" <t>')
+  send_command('bind !z input /ja "Arcane Circle" <me>')
+  send_command('bind !x input /ja "Arcane Crest" <t>')
+  
+  send_command('bind ^w input /ja "Weapon Bash" <t>')
 end
 
 function set_sub_keybinds()
   if player.sub_job == 'SAM' then
-    send_command('bind !w input /ja "Third Eye" <me>')
+    send_command('bind ^numlock input /ja "Third Eye" <me>')
     send_command('bind ^numpad/ input /ja "Meditate" <me>')
     send_command('bind ^numpad* input /ja "Sekkanoki" <me>')
     send_command('bind ^numpad- input /ja "Hasso" <me>')
@@ -1910,7 +1933,7 @@ function set_sub_keybinds()
     send_command('bind ^numpad0 input /ma "Utsusemi: Ichi" <me>')
     send_command('bind ^numpad. input /ma "Utsusemi: Ni" <me>')
   elseif player.sub_job == 'DRG' then
-    send_command('bind !w input /ja "Ancient Circle" <me>')
+    send_command('bind ^numlock input /ja "Ancient Circle" <me>')
     send_command('bind ^numpad/ input /ja "Jump" <t>')
     send_command('bind ^numpad* input /ja "High Jump" <t>')
     send_command('bind ^numpad- input /ja "Super Jump" <t>')
@@ -1924,6 +1947,7 @@ function unbind_keybinds()
 
   send_command('unbind ^insert')
   send_command('unbind ^delete')
+  send_command('unbind !delete')
 
   send_command('unbind ^pageup')
   send_command('unbind ^pagedown')
@@ -1931,6 +1955,17 @@ function unbind_keybinds()
 
   send_command('unbind @c')
   send_command('unbind !w')
+  
+  send_command('unbind !q')
+  send_command('unbind !w')
+  send_command('unbind !e')
+  send_command('unbind !r')
+  send_command('unbind !z')
+  send_command('unbind !x')
+  
+  send_command('unbind ^w')
+  
+  send_command('unbind ^numlock')
   send_command('unbind ^numpad/')
   send_command('unbind ^numpad*')
   send_command('unbind ^numpad-')

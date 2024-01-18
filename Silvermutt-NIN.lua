@@ -1748,7 +1748,7 @@ function cycle_weapons(cycle_dir)
     state.WeaponSet:cycle()
   elseif cycle_dir == 'back' then
     state.WeaponSet:cycleback()
-  else
+  elseif cycle_dir == 'reset' then
     state.WeaponSet:reset()
   end
 
@@ -1942,6 +1942,7 @@ function set_main_keybinds()
 
   send_command('bind ^insert gs c weaponset cycle')
   send_command('bind ^delete gs c weaponset cycleback')
+  send_command('bind !delete gs c weaponset reset')
 
   send_command('bind ^f8 gs c toggle AttCapped')
   send_command('bind ^pageup gs c toyweapon cycle')
