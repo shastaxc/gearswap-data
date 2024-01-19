@@ -129,24 +129,26 @@ function init_gear_sets()
 
   -- Fast cast sets for spells
   sets.precast.FC = {
-    ammo="Sapience Orb",             --  2 [__/__, ___]
-    head=gear.Carmine_D_head,        -- 14 [__/__,  53]
-    -- body="Fallen's Cuirass +3",   -- 10 [__/__,  68]
-    hands=gear.Leyline_Gloves,       --  8 [__/__,  62]
-    legs=gear.Odyssean_FC_legs,      --  6 [__/__,  86]
-    feet=gear.Odyssean_FC_feet,      -- 11 [__/__,  86]
-    neck="Orunmila's Torque",        --  5 [__/__, ___]
-    ear1="Malignance Earring",       --  4 [__/__, ___]
-    ear2="Loquacious Earring",       --  2 [__/__, ___]
-    ring1="Kishar Ring",             --  4 [__/__, ___]
-    ring2="Prolix Ring",             --  2 [__/__, ___]
-    -- back=gear.DRK_FC_Cape,        -- 10 [10/__, ___]
-    waist="Flume Belt +1",           -- __ [ 4/__, ___]
-    -- 78 FC [14 PDT/0 MDT, 355 M.Eva]
+    ammo="Sapience Orb",                            --  2 [__/__, ___]
+    head=gear.Carmine_D_head,                       -- 14 [__/__,  53]
+    -- body="Fallen's Cuirass +3",                  -- 10 [__/__,  68]
+    hands=gear.Leyline_Gloves,                      --  8 [__/__,  62]
+    legs=gear.Odyssean_FC_legs,                     --  6 [__/__,  86]
+    feet=gear.Odyssean_FC_feet,                     -- 11 [__/__,  86]
+    neck="Orunmila's Torque",                       --  5 [__/__, ___]
+    ear1="Malignance Earring",                      --  4 [__/__, ___]
+    ear2="Loquacious Earring",                      --  2 [__/__, ___]
+    ring1="Kishar Ring",                            --  4 [__/__, ___]
+    ring2={name="Moonlight Ring",priority=1},       -- __ [ 5/ 5, ___]; Helps HP balance for Drain
+    -- back={name=gear.DRK_FC_Cape.name,
+    --          augments=gear.DRK_FC_Cape.augments,
+    --          priority=1},                        -- 10 [10/__, ___]
+    waist={name="Platinum Moogle Belt",priority=1}, -- __ [ 3/ 3,  15]; Helps HP balance for Drain
+    -- 78 FC [13 PDT/3 MDT, 370 M.Eva]
 
-    -- body="Sacro Breastplate",     -- 10 [__/__, 129]
-    -- legs="Enif Cosciales",        --  8 [__/__, ___]
-    -- 80 FC [14 PDT/0 MDT, 330 M.Eva]
+    -- body={name="Sacro Breastplate",priority=1},  -- 10 [__/__, 129]
+    -- legs="Enif Cosciales",                       --  8 [__/__, ___]
+    -- 80 FC [13 PDT/3 MDT, 345 M.Eva]
   }
   sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {
     ammo="Staunch Tathlum +1",
@@ -856,21 +858,21 @@ function init_gear_sets()
   ------- Dark magic: Absorb-spells, Aspir, Bio, Drain, Dread Spikes, Endark, Stun -------
   -- Bio II dark skill cap at 291. DRK hits this without gear.
   sets.midcast.Bio = {
-    ammo="Staunch Tathlum +1",              -- [ 3/ 3, ___]
-    head="Fallen's Burgeonet +1",           -- [__/__,  32]
-    body=gear.Nyame_B_body,                 -- [ 9/ 9, 139]
-    hands=gear.Nyame_B_hands,               -- [ 7/ 7, 112]
-    legs=gear.Nyame_B_legs,                 -- [ 8/ 8, 150]
-    feet="Ratri Sollerets +1",              -- [-6/-6, 139]; Duration+25%
-    neck="Incanter's Torque",               -- [__/__, ___]; MP cost 0 sometimes
-    ear1="Eabani Earring",                  -- [__/__,   8]
-    ear2="Arete Del Luna +1",               -- [__/__, ___]; Resists
-    ring1="Moonlight Ring",                 -- [ 5/ 5, ___]
-    ring2="Defending Ring",                 -- [10/10, ___]
-    -- back=gear.DRK_FC_Cape,               -- [10/__, ___]
-    waist="Platinum Moogle Belt",           -- [ 3/ 3,  15]
+    ammo="Staunch Tathlum +1",                  -- [ 3/ 3, ___]
+    head="Fallen's Burgeonet +1",               -- [__/__,  32]
+    body=gear.Nyame_B_body,                     -- [ 9/ 9, 139]
+    hands=gear.Nyame_B_hands,                   -- [ 7/ 7, 112]
+    legs=gear.Nyame_B_legs,                     -- [ 8/ 8, 150]
+    feet={name="Ratri Sollerets +1",priority=1},-- [-6/-6, 139]; Duration+25%
+    neck="Incanter's Torque",                   -- [__/__, ___]; MP cost 0 sometimes
+    ear1="Eabani Earring",                      -- [__/__,   8]
+    ear2="Arete Del Luna +1",                   -- [__/__, ___]; Resists
+    ring1="Moonlight Ring",                     -- [ 5/ 5, ___]
+    ring2="Defending Ring",                     -- [10/10, ___]
+    -- back=gear.DRK_FC_Cape,                   -- [10/__, ___]
+    waist="Platinum Moogle Belt",               -- [ 3/ 3,  15]
     
-    -- head="Fallen's Burgeonet +3",        -- [__/__,  52]; Duration+50%
+    -- head="Fallen's Burgeonet +3",            -- [__/__,  52]; Duration+50%
     -- [49 PDT/39 MDT, 615 M.Eva]
   }
 
@@ -984,31 +986,32 @@ function init_gear_sets()
   -- Amount Drained = (Base Potency) × (Drain/Aspir Gear Potency) × (Dark Elemental Magic Affinity)
   --                  × (Weather/Day Bonuses) × (Nether Void Bonus) × (Orpheus Sash Bonus)
   sets.midcast.Drain = {
-    ammo="Pemphredo Tathlum",               --  4,  8, __, __, __ [__/__, ___]
-    head="Fallen's Burgeonet +3",           -- 12, __, __, __, __ [__/__,  32]; Duration+50%
-    body=gear.Carmine_C_body,               -- 38, 38, 16, __, __ [__/ 4,  64]
-    hands="Fallen's Finger Gauntlets +2",   -- 19, 28, 16, 14, __ [__/__,  36]
-    legs="Heathen's Flanchard +2",          -- 36, 53, 25, __, __ [11/11, 109]
-    feet="Ratri Sollerets +1",              -- __, 43, __, __, __ [-6/-6, 139]; Duration+25%
-    neck="Erra Pendant",                    -- __, 17, 10,  5, __ [__/__, ___]
-    ear1="Odnowa Earring +1",               -- __, __, __, __, __ [ 3/ 5, ___]
-    ear2="Malignance Earring",              --  8, 10, __, __, __ [__/__, ___]
-    ring1="Archon Ring",                    -- __, __, __, __,  5 [__/__, ___]
-    ring2="Moonlight Ring",                 -- __, __, __, __, __ [ 5/ 5, ___]
-    back="Moonlight Cape",                  -- __, __, __, __, __ [ 6/ 6, ___]
-    waist="Orpheus's Sash",                 -- __, __, __, __, __ [__/__, ___]; +1-15% damage
+    ammo="Pemphredo Tathlum",                   --  4,  8, __, __, __ [__/__, ___]
+    head="Fallen's Burgeonet +1",               -- 12, __, __, __, __ [__/__,  32]  76; Duration+50%
+    body=gear.Carmine_C_body,                   -- 38, 38, 16, __, __ [__/ 4,  64]  96
+    hands="Fallen's Finger Gauntlets +2",       -- 19, 28, 16, 14, __ [__/__,  36]  39
+    legs="Heathen's Flanchard +2",              -- 36, 53, 25, __, __ [11/11, 109]  72
+    feet={name="Ratri Sollerets +1",priority=1},-- __, 43, __, __, __ [-6/-6, 139] 487; Duration+25%
+    neck="Erra Pendant",                        -- __, 17, 10,  5, __ [__/__, ___] ___
+    ear1="Genmei Earring",                      -- __, __, __, __, __ [ 2/__, ___] ___
+    ear2="Malignance Earring",                  --  8, 10, __, __, __ [__/__, ___] ___
+    ring1="Archon Ring",                        -- __, __, __, __,  5 [__/__, ___] ___
+    ring2="Defending Ring",                     -- __, __, __, __, __ [10/10, ___] ___
+    back=gear.DRK_STP_Cape,                     -- __, __, __, __, __ [10/__, ___] ___
+    waist="Orpheus's Sash",                     -- __, __, __, __, __ [__/__, ___] ___; +1-15% damage
     -- ML30 traits                                    483
-    -- 117 INT, 197 M.Acc, 550 Dark skill, 19 Drain/Aspir Potency, 5 Dark Affinity [19 PDT/25 MDT, 380 M.Eva]
-    
-    -- head="Fallen's Burgeonet +3",        -- 22, 37, __, __, __ [__/__,  52]; Duration+50%
-    -- hands="Fallen's Finger Gauntlets +3",-- 24, 38, 18, 16, __ [__/__,  46]
-    -- legs="Heathen's Flanchard +3",       -- 41, 63, 30, __, __ [12/12, 119]
-    -- ear1="Hirudinea Earring",            -- __, __, __,  3, __ [__/__, ___]
-    -- ear2="Mani Earring",                 -- __, __, 10, __, __ [__/__, ___]
-    -- ring2="Evanescence Ring",            -- __, __, 10, 10, __ [__/__, ___]
-    -- back=gear.DRK_Adoulin_Cape,          -- __, __, 10, 25, __ [__/__, ___]
-    -- 129 INT, 244 M.Acc, 587 Dark skill, 59 Drain/Aspir Potency, 5 Dark Affinity [6 PDT/10 MDT, 420 M.Eva]
-    -- D3 Potency = 985, Drained = 3503 w/ nether void
+    -- 117 INT, 197 M.Acc, 550 Dark skill, 19 Drain/Aspir Potency, 5 Dark Affinity [27 PDT/19 MDT, 380 M.Eva] 770 HP
+
+    -- head="Fallen's Burgeonet +3",            -- 22, 37, __, __, __ [__/__,  52]  96; Duration+50%
+    -- hands="Fallen's Finger Gauntlets +3",    -- 24, 38, 18, 16, __ [__/__,  46]  49
+    -- legs="Heathen's Flanchard +3",           -- 41, 63, 30, __, __ [12/12, 119]  82
+    -- ear1="Hirudinea Earring",                -- __, __, __,  3, __ [__/__, ___]  -5
+    -- ear2="Nehalennia Earring",               -- __, __, __, __, __ [__/__, ___] -60
+    -- ring2="Evanescence Ring",                -- __, __, 10, 10, __ [__/__, ___] ___
+    -- back=gear.DRK_Adoulin_Cape,              -- __, __, 10, 25, __ [__/__, ___] ___
+    -- 129 INT, 244 M.Acc, 577 Dark skill, 59 Drain/Aspir Potency, 5 Dark Affinity [6 PDT/10 MDT, 380 M.Eva] 745 HP
+    -- D2 Potency = 742, Drained = 2777 w/ nether void
+    -- D3 Potency = 970.5, Drained = 3633 w/ nether void
   }
   sets.DrainWeapon = {
     -- main="Father Time",
@@ -1084,27 +1087,26 @@ function init_gear_sets()
   ---------------------------------------- Defense Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
 
-  -- TODO
   sets.defense.PDT = {
-    ammo="Staunch Tathlum +1",            -- __ [ 3/ 3, ___]
-    head="Sakpata's Helm",                --  7 [ 7/ 7, 123]
-    body="Sakpata's Breastplate",         -- 10 [10/10, 139]; Resist status+15
-    hands="Heathen's Gauntlets +2",       --  4 [ 9/ 9,  72]
-    legs="Heathen's Flanchards +2",       --  7 [11/11, 109]; Realistically this will be move speed
-    feet="Sakpata's Leggings",            --  7 [ 6/ 6, 150]
-    neck="Loricate Torque +1",            -- __ [ 6/ 6, ___]
-    ear1="Hearty Earring",                -- __ [__/__, ___]; Resists
-    ear2="Arete Del Luna +1",             -- __ [__/__, ___]; Resists
-    ring1="Moonlight Ring",               -- __ [ 5/ 5, ___]
-    ring2="Defending Ring",               -- __ [10/10, ___]
-    back=gear.DRK_STP_Cape,               -- __ [10/__, ___]
-    waist="Carrier's Sash",               -- __ [__/__, ___]; Resists
-    -- 35 M.Def [73 PDT/73 MDT, 593 M.Eva]
+    ammo="Staunch Tathlum +1",                -- __ [ 3/ 3, ___]
+    head={name="Ratri Sallet +1",priority=1}, -- __ [-8/-8, 101]; Used for HP balance
+    body="Sakpata's Breastplate",             -- 10 [10/10, 139]; Resist status+15
+    hands="Heathen's Gauntlets +2",           --  4 [ 9/ 9,  72]
+    legs="Heathen's Flanchards +2",           --  7 [11/11, 109]; Realistically this will be move speed
+    feet="Sakpata's Leggings",                --  7 [ 6/ 6, 150]
+    neck="Loricate Torque +1",                -- __ [ 6/ 6, ___]
+    ear1="Hearty Earring",                    -- __ [__/__, ___]; Resists
+    ear2="Arete Del Luna +1",                 -- __ [__/__, ___]; Resists
+    ring1="Moonlight Ring",                   -- __ [ 5/ 5, ___]
+    ring2="Defending Ring",                   -- __ [10/10, ___]
+    back=gear.DRK_STP_Cape,                   -- __ [10/__, ___]
+    waist="Carrier's Sash",                   -- __ [__/__, ___]; Resists
+    -- 28 M.Def [62 PDT/52 MDT, 571 M.Eva]
 
-    -- hands="Heathen's Gauntlets +3",    --  5 [10/10,  82]
-    -- legs="Heathen's Flanchards +3",    --  8 [12/12, 119]; Realistically this will be move speed
-    -- back=gear.DRK_FC_Cape,             -- __ [10/__, ___]
-    -- 37 M.Def [79 PDT/69 MDT, 613 M.Eva]
+    -- hands="Heathen's Gauntlets +3",        --  5 [10/10,  82]
+    -- legs="Heathen's Flanchards +3",        --  8 [12/12, 119]; Realistically this will be move speed
+    -- back=gear.DRK_FC_Cape,                 -- __ [10/__, ___]
+    -- 30 M.Def [64 PDT/54 MDT, 591 M.Eva]
   }
   sets.defense.MDT = set_combine(sets.defense.PDT, {})
 
@@ -1114,7 +1116,7 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.latent_regain = {
-    head="Ratri Sallet +1",  -- 5
+    head={name="Ratri Sallet +1", priority=1}, -- 5
   }
   sets.latent_regen = {
     neck="Bathy Choker +1", -- Remove if using sacro breastplate
@@ -1826,6 +1828,9 @@ function job_self_command(cmdParams, eventArgs)
     elseif cmdParams[2] == 'current' then
       cycle_weapons('current')
     end
+  elseif cmdParams[1] == 'clear_risky_buffs' then
+    send_command('cancel Souleater')
+    send_command('cancel Last Resort')
   elseif cmdParams[1] == 'bind' then
     set_main_keybinds()
     set_sub_keybinds()
@@ -1874,7 +1879,7 @@ end)
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
   -- Default macro set/book: (set, book)
-  set_macro_page(2, 18)
+  set_macro_page(1, 18)
 end
 
 -- Calculate Fencer tier. Fencer active if not two-handed weapon, and offhand is empty or shield.
@@ -1940,8 +1945,7 @@ function set_main_keybinds()
   send_command('bind ^` gs c cycle treasuremode')
   send_command('bind @c gs c toggle CP')
   
-  send_command('bind !` clear_risky_buffs')
-
+  send_command('bind !` Endark II')
   send_command('bind !q input /ja "Nether Void" <me>')
   send_command('bind !w input /ja "Dark Seal" <me>')
   send_command('bind !e input /ja "Drain III" <t>')
@@ -1985,6 +1989,7 @@ function unbind_keybinds()
   send_command('unbind @c')
   send_command('unbind !w')
   
+  send_command('unbind !`')
   send_command('unbind !q')
   send_command('unbind !w')
   send_command('unbind !e')
