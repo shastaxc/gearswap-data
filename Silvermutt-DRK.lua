@@ -1163,26 +1163,26 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.engaged = {
-    ammo="Coiste Bodhar",             -- [__/__, ___]  3 < 3, __, __> __, __
-    head="Flamma Zucchetto +2",       -- [__/__,  53]  6 <__,  5, __> __,  4
-    body="Hjarrandi Breastplate",     -- [12/12,  69] 10 <__, __, __> 13, __
-    hands="Sakpata's Gauntlets",      -- [ 8/ 8, 112]  8 < 6, __, __> __,  4
+    ammo="Coiste Bodhar",                           -- [__/__, ___]  3 < 3, __, __> __, __
+    head="Flamma Zucchetto +2",                     -- [__/__,  53]  6 <__,  5, __> __,  4
+    body={name="Hjarrandi Breastplate",priority=1}, -- [12/12,  69] 10 <__, __, __> 13, __
+    hands="Sakpata's Gauntlets",                    -- [ 8/ 8, 112]  8 < 6, __, __> __,  4
     legs=gear.Nyame_B_legs,
-    feet="Flamma Gambieras +2",       -- [__/__,  86]  6 < 6, __, __> __,  2
-    -- neck="Abyssal Beads +2",       -- [__/__, ___]  7 <__, __, __>  4, __
-    ear1="Telos Earring",             -- [__/__, ___]  5 < 1, __, __> __, __
-    ear2="Dedition Earring",          -- [__/__, ___]  8 < 1, __, __> __, __
-    ring1="Moonlight Ring",           -- [ 5/ 5, ___]  5 <__, __, __> __, __
-    ring2="Moonlight Ring",           -- [ 5/ 5, ___]  5 <__, __, __> __, __
-    back=gear.DRK_STP_Cape,           -- [10/__, ___] 10 <__, __, __> __, __
-    waist="Sailfi Belt +1",           -- [__/__, ___] __ < 5,  2, __> __,  9
+    feet="Flamma Gambieras +2",                     -- [__/__,  86]  6 < 6, __, __> __,  2
+    -- neck="Abyssal Beads +2",                     -- [__/__, ___]  7 <__, __, __>  4, __
+    ear1="Telos Earring",                           -- [__/__, ___]  5 < 1, __, __> __, __
+    ear2="Dedition Earring",                        -- [__/__, ___]  8 < 1, __, __> __, __
+    ring1={name="Moonlight Ring",priority=1},       -- [ 5/ 5, ___]  5 <__, __, __> __, __
+    ring2={name="Moonlight Ring",priority=1},       -- [ 5/ 5, ___]  5 <__, __, __> __, __
+    back=gear.DRK_STP_Cape,                         -- [10/__, ___] 10 <__, __, __> __, __
+    waist="Sailfi Belt +1",                         -- [__/__, ___] __ < 5,  2, __> __,  9
     
-    -- legs="Ignominy Flanchard +3",  -- [__/__,  84] __ <10, __, __> __,  5
+    -- legs="Ignominy Flanchard +3",                -- [__/__,  84] __ <10, __, __> __,  5
     -- [40 PDT/30 MDT, 404 MEVA] 73 STP <32 DA, 7 TA, 0 QA> 17 Crit Rate, 24 Haste
   }
   -- TODO
   sets.engaged.LowAcc = set_combine(sets.engaged, {
-    ear2="Cessance Earring",          -- [__/__, ___]  3 < 3, __, __> __, __
+    ear2="Cessance Earring",                        -- [__/__, ___]  3 < 3, __, __> __, __
   })
   -- TODO
   sets.engaged.MidAcc = set_combine(sets.engaged.LowAcc, {
@@ -1212,24 +1212,24 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.engaged.LightDef = {
-    ammo="Coiste Bodhar",             -- [__/__, ___]  3 < 3, __, __> __, __
-    head="Flamma Zucchetto +2",       -- [__/__,  53]  6 <__,  5, __> __,  4
-    body="Hjarrandi Breastplate",     -- [12/12,  69] 10 <__, __, __> 13, __
-    hands="Sakpata's Gauntlets",      -- [ 8/ 8, 112]  8 < 6, __, __> __,  4
-    legs="Sakpata's Cuisses",         -- [ 9/ 9, 150] __ < 7, __, __> __,  4
-    feet="Flamma Gambieras +2",       -- [__/__,  86]  6 < 6, __, __> __,  2
-    -- neck="Abyssal Beads +2",       -- [__/__, ___]  7 <__, __, __>  4, __
-    ear1="Telos Earring",             -- [__/__, ___]  5 < 1, __, __> __, __
-    ear2="Dedition Earring",          -- [__/__, ___]  8 < 1, __, __> __, __
-    ring1="Moonlight Ring",           -- [ 5/ 5, ___]  5 <__, __, __> __, __
-    ring2="Moonlight Ring",           -- [ 5/ 5, ___]  5 <__, __, __> __, __
-    back=gear.DRK_STP_Cape,           -- [10/__, ___] 10 <__, __, __> __, __
-    waist="Sailfi Belt +1",           -- [__/__, ___] __ < 5,  2, __> __,  9
+    ammo="Coiste Bodhar",                           -- [__/__, ___]  3 < 3, __, __> __, __
+    head="Flamma Zucchetto +2",                     -- [__/__,  53]  6 <__,  5, __> __,  4
+    body={name="Hjarrandi Breastplate",priority=1}, -- [12/12,  69] 10 <__, __, __> 13, __
+    hands="Sakpata's Gauntlets",                    -- [ 8/ 8, 112]  8 < 6, __, __> __,  4
+    legs="Sakpata's Cuisses",                       -- [ 9/ 9, 150] __ < 7, __, __> __,  4
+    feet="Flamma Gambieras +2",                     -- [__/__,  86]  6 < 6, __, __> __,  2
+    -- neck="Abyssal Beads +2",                     -- [__/__, ___]  7 <__, __, __>  4, __
+    ear1="Telos Earring",                           -- [__/__, ___]  5 < 1, __, __> __, __
+    ear2="Dedition Earring",                        -- [__/__, ___]  8 < 1, __, __> __, __
+    ring1={name="Moonlight Ring",priority=1},       -- [ 5/ 5, ___]  5 <__, __, __> __, __
+    ring2={name="Moonlight Ring",priority=1},       -- [ 5/ 5, ___]  5 <__, __, __> __, __
+    back=gear.DRK_STP_Cape,                         -- [10/__, ___] 10 <__, __, __> __, __
+    waist="Sailfi Belt +1",                         -- [__/__, ___] __ < 5,  2, __> __,  9
     -- [49 PDT/39 MDT, 470 MEVA] 73 STP <29 DA, 7 TA, 0 QA> 17 Crit Rate, 23 Haste
   }
   -- TODO
   sets.engaged.LowAcc.LightDef = set_combine(sets.engaged.LightDef, {
-    ear2="Cessance Earring",          -- [__/__, ___]  3 < 3, __, __> __, __
+    ear2="Cessance Earring",                        -- [__/__, ___]  3 < 3, __, __> __, __
   })
   -- TODO
   sets.engaged.MidAcc.LightDef = set_combine(sets.engaged.LightDef, {})
