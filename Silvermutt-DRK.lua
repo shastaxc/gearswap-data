@@ -72,7 +72,7 @@ function job_setup()
   state.WeaponSet = M{['description']='Weapon Set', 'Naegling', 'Anguta', 'Club', 'Dagger'}
   -- state.WeaponSet = M{['description']='Weapon Set', 'Naegling', 'Anguta', 'Apocalypse', 'Caladbolg', 'Club', 'Dagger'}
   state.EnmityMode = M{['description']='Enmity Mode', 'Normal', 'Low', 'Schere'}
-  
+
   skill_ids_2h = S{4, 6, 7, 8, 10, 12} -- DO NOT MODIFY
   fencer_tp_bonus = {200, 300, 400, 450, 500, 550, 600, 630} -- DO NOT MODIFY
   activate_AM_mode = {
@@ -80,6 +80,15 @@ function job_setup()
     ["Apocalypse"] = S{"Aftermath: Lv.1", "Aftermath: Lv.2", "Aftermath: Lv.3"},
     ["Foenaria"] = S{"Aftermath: Lv.1", "Aftermath: Lv.2", "Aftermath: Lv.3"},
   }
+
+  spell_maps['Absorb-STR'] = 'Absorb' -- DO NOT MODIFY
+  spell_maps['Absorb-DEX'] = 'Absorb' -- DO NOT MODIFY
+  spell_maps['Absorb-VIT'] = 'Absorb' -- DO NOT MODIFY
+  spell_maps['Absorb-AGI'] = 'Absorb' -- DO NOT MODIFY
+  spell_maps['Absorb-INT'] = 'Absorb' -- DO NOT MODIFY
+  spell_maps['Absorb-MND'] = 'Absorb' -- DO NOT MODIFY
+  spell_maps['Absorb-CHR'] = 'Absorb' -- DO NOT MODIFY
+  spell_maps['Absorb-ACC'] = 'Absorb' -- DO NOT MODIFY
 
   set_main_keybinds()
 end
@@ -937,8 +946,8 @@ function init_gear_sets()
     legs="Heathen's Flanchard +2",          -- 36, 53, 25, __ [11/11, 109]
     feet="Ratri Sollerets +1",              -- __, 43, __, __ [-6/-6, 139]; Duration+25%
     neck="Erra Pendant",                    -- __, 17, 10,  5 [__/__, ___]
-    ear1="Odnowa Earring +1",               -- __, __, __, __ [ 3/ 5, ___]
-    ear2="Malignance Earring",              --  8, 10, __, __ [__/__, ___]
+    ear1="Malignance Earring",              --  8, 10, __, __ [__/__, ___]
+    ear2="Odnowa Earring +1",               -- __, __, __, __ [ 3/ 5, ___]
     ring1="Kishar Ring",                    -- __,  5, __, __ [__/__, ___]; Duration+10%
     ring2="Stikini Ring +1",                -- __, 11,  8, __ [__/__, ___]
     -- back="Chuparrosa Mantle",            -- __, __, __, 10 [__/__, ___]; Duration+20s
@@ -966,8 +975,8 @@ function init_gear_sets()
     legs="Heathen's Flanchard +2",          -- 36, 53, 25, __ [11/11, 109]
     feet="Heathen's Solleretes +3",         -- 22, 60, __, __ [__/__, 119]
     neck="Erra Pendant",                    -- __, 17, 10,  5 [__/__, ___]
-    ear1="Odnowa Earring +1",               -- __, __, __, __ [ 3/ 5, ___]
-    ear2="Malignance Earring",              --  8, 10, __, __ [__/__, ___]
+    ear1="Malignance Earring",              --  8, 10, __, __ [__/__, ___]
+    ear2="Odnowa Earring +1",               -- __, __, __, __ [ 3/ 5, ___]
     ring1="Metamorph Ring +1",              -- 16, 15, __, __ [__/__, ___]
     ring2="Stikini Ring +1",                -- __, 11,  8, __ [__/__, ___]
     -- back=gear.DRK_MAB_Cape,              -- 30, 20, __, __ [10/__, ___]; Duration +10s
@@ -993,8 +1002,8 @@ function init_gear_sets()
     legs="Heathen's Flanchard +2",              -- 36, 53, 25, __, __ [11/11, 109]  72
     feet={name="Ratri Sollerets +1",priority=1},-- __, 43, __, __, __ [-6/-6, 139] 487; Duration+25%
     neck="Erra Pendant",                        -- __, 17, 10,  5, __ [__/__, ___] ___
-    ear1="Genmei Earring",                      -- __, __, __, __, __ [ 2/__, ___] ___
-    ear2="Malignance Earring",                  --  8, 10, __, __, __ [__/__, ___] ___
+    ear1="Malignance Earring",                  --  8, 10, __, __, __ [__/__, ___] ___
+    ear2="Genmei Earring",                      -- __, __, __, __, __ [ 2/__, ___] ___
     ring1="Archon Ring",                        -- __, __, __, __,  5 [__/__, ___] ___
     ring2="Defending Ring",                     -- __, __, __, __, __ [10/10, ___] ___
     back=gear.DRK_STP_Cape,                     -- __, __, __, __, __ [10/__, ___] ___
