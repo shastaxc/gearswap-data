@@ -81,6 +81,11 @@ function job_setup()
     ["Foenaria"] = S{"Aftermath: Lv.1", "Aftermath: Lv.2", "Aftermath: Lv.3"},
   }
 
+  degrade_array = {
+    ['Aspir'] = {'Aspir','Aspir II'},
+    ['Drain'] = {'Drain', 'Drain II', 'Drain III'}
+  }
+
   spell_maps['Absorb-STR'] = 'Absorb' -- DO NOT MODIFY
   spell_maps['Absorb-DEX'] = 'Absorb' -- DO NOT MODIFY
   spell_maps['Absorb-VIT'] = 'Absorb' -- DO NOT MODIFY
@@ -1360,6 +1365,10 @@ function job_precast(spell, action, spellMap, eventArgs)
   silibs.precast_hook(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
 
+  if spell.type == 'BlackMagic' then
+    refine_various_spells(spell, action, spellMap, eventArgs)
+  end
+
   if spell.type == 'WeaponSkill' and state.DefenseMode.current ~= 'None' then
     -- Don't gearswap for weaponskills when Defense is on.
     if state.DefenseMode.current ~= 'None' then
@@ -1418,10 +1427,6 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
 end
 
 function job_aftercast(spell, action, spellMap, eventArgs)
-  if spell.english == 'Warcry' and not spell.interrupted then
-    warcry_self = true
-  end
-
   silibs.aftercast_hook(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
 end
@@ -1487,10 +1492,6 @@ function job_buff_change(buff,gain)
       else
           send_command('timers delete "Aftermath Tier I";gs c -cd AM3 Lost!!!')
       end
-  end
-
-  if buff == 'Warcry' and not gain and warcry_self then
-    warcry_self = false
   end
 end
 
@@ -1659,7 +1660,6 @@ function get_custom_wsmode(spell, action, spellMap)
     end
   end
   local buff_bonus = T{
-    warcry_self and 700 or 0,
     buffactive['Crystal Blessing'] and 250 or 0,
   }:sum()
   local trait_bonus = T{
@@ -1935,6 +1935,47 @@ function calc_fencer_tp_bonus()
     end
   end
   return total_fencer_tp_bonus
+end
+
+function refine_various_spells(spell, action, spellMap, eventArgs)
+  local selected_spell
+  local arr
+
+  if spell.name:startswith('Aspir') then
+    arr = degrade_array['Aspir']
+  elseif spell.name:startswith('Drain') then
+    arr = degrade_array['Drain']
+  end
+
+  -- Select spell
+  if arr then
+    -- Find start index. Start with specified spell (e.g. if using Drain II, don't try Drain III)
+    local start_yet = false
+    for i=#arr,1,-1 do
+      if not start_yet then
+        if arr[i] == spell.english then
+          start_yet = true
+        end
+      end
+
+      if start_yet then
+        local spell_detail = silibs.spells_by_name[arr[i]]
+        local is_spell_available = silibs.can_access_spell(nil, spell_detail) and silibs.actual_cost(spell_detail) <= player.mp
+        local timer = windower.ffxi.get_spell_recasts()[spell_detail.recast_id] -- Divide by 60 to get time in seconds
+        if is_spell_available and timer < 6 then
+          selected_spell = spell_detail
+          break
+        end
+      end
+    end
+  end
+  
+  -- If selected spell is the original that was input, cast it and proceed as normal
+  -- Otherwise, cast the new selected spell and cancel the original
+  if selected_spell and selected_spell.english ~= spell.english then
+    send_command('@input /ma '..selected_spell.english..' '..tostring(spell.target.raw))
+    eventArgs.cancel = true
+  end
 end
 
 function set_main_keybinds()
