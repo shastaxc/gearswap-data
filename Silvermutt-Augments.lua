@@ -215,6 +215,7 @@ gear.Rubicundity = {}
 ----------------------------------------------------------------------
 
 gear.DNC_Adoulin_Cape = { name="Toetapper Mantle", augments={'"Store TP"+1','"Dual Wield"+2','"Rev. Flourish"+28',}}
+gear.DRK_Adoulin_Cape = { name="Niht Mantle", augments={'Attack+8','Dark magic skill +10','"Drain" and "Aspir" potency +25',}}
 gear.GEO_Adoulin_Cape = { name="Lifestream Cape", augments={'Geomancy Skill +10','Indi. eff. dur. +17','Pet: Damage taken -5%',}}
 gear.PUP_Adoulin_Cape = { name="Dispersal Mantle", augments={'STR+4','DEX+4','Pet: TP Bonus+500','"Martial Arts"+12',}}
 gear.RUN_Adoulin_Cape = { name="Evasionist's Cape", augments={'Enmity+4','"Embolden"+15','"Dbl.Atk."+4',}}
