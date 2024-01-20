@@ -180,16 +180,16 @@ function init_gear_sets()
     legs=gear.Nyame_B_legs,           -- __ [ 8/ 8, 150]
     feet="Maculele Toe Shoes +3",     -- __ [10/10, 115]
     ear1="Cryptic Earring",           --  4 [__/__, ___]
+    ear2="Trux Earring",              --  5 [__/__, ___]
     ring1="Eihwaz Ring",              --  5 [__/__, ___]
     ring2="Supershear Ring",          --  5 [__/__, ___]
     neck="Unmoving Collar +1",        -- 10 [__/__, ___]
     back=gear.DNC_TP_DA_Cape,         -- __ [10/__, ___]
     waist="Kasiri Belt",              --  3 [__/__, ___]
-    -- 53 Enmity [34 PDT/18 MDT, 397 M.Eva]
+    -- 58 Enmity [34 PDT/18 MDT, 397 M.Eva]
 
     -- hands="Horos Bangles +3",      --  9 [__/__,  57]
     -- feet="Ahosi Leggings",         --  7 [ 4/__, 107]
-    -- ear2="Trux Earring",           --  5 [__/__, ___]
     -- back=gear.DNC_Enmity_Cape,     -- 10 [10/__, ___]
     -- 78 Enmity [28 PDT/8 MDT, 421 M.Eva]
   }
