@@ -872,7 +872,7 @@ function init_gear_sets()
   -- Bio II dark skill cap at 291. DRK hits this without gear.
   sets.midcast.Bio = {
     ammo="Staunch Tathlum +1",                  -- [ 3/ 3, ___]
-    head="Fallen's Burgeonet +1",               -- [__/__,  32]
+    head="Fallen's Burgeonet +3",               -- [__/__,  52]; Duration+50%
     body=gear.Nyame_B_body,                     -- [ 9/ 9, 139]
     hands=gear.Nyame_B_hands,                   -- [ 7/ 7, 112]
     legs=gear.Nyame_B_legs,                     -- [ 8/ 8, 150]
@@ -884,8 +884,6 @@ function init_gear_sets()
     ring2="Defending Ring",                     -- [10/10, ___]
     -- back=gear.DRK_FC_Cape,                   -- [10/__, ___]
     waist="Platinum Moogle Belt",               -- [ 3/ 3,  15]
-    
-    -- head="Fallen's Burgeonet +3",            -- [__/__,  52]; Duration+50%
     -- [49 PDT/39 MDT, 615 M.Eva]
   }
 
@@ -920,7 +918,7 @@ function init_gear_sets()
   -- Grants attack bonus based on potency also.
   sets.midcast.Endark ={
     ammo="Staunch Tathlum +1",              -- __ [ 3/ 3, ___]
-    head="Fallen's Burgeonet +1",           -- __ [__/__,  32]; Duration+50%
+    head="Fallen's Burgeonet +3",           -- __ [__/__,  52]; Duration+50%
     body=gear.Carmine_C_body,               -- 16 [__/ 4,  64]
     hands="Fallen's Finger Gauntlets +2",   -- 16 [__/__,  36]
     legs="Heathen's Flanchard +2",          -- 25 [11/11, 109]
@@ -933,9 +931,8 @@ function init_gear_sets()
     back=gear.DRK_Adoulin_Cape,             -- 10 [__/__, ___]
     waist="Platinum Moogle Belt",           -- __ [ 3/ 3,  15]
     -- ML30 traits                            483
-    -- 588 Dark skill [14 PDT/20 MDT, 395 M.Eva]
+    -- 588 Dark skill [14 PDT/20 MDT, 415 M.Eva]
     
-    -- head="Fallen's Burgeonet +3",        -- __ [__/__,  52]; Duration+50%
     -- hands="Fallen's Finger Gauntlets +3",-- 18 [__/__,  46]
     -- legs="Heathen's Flanchard +3",       -- 30 [12/12, 119]
     -- 595 Dark skill [15 PDT/21 MDT, 435 M.Eva]
@@ -944,7 +941,7 @@ function init_gear_sets()
   -- Dark skill only affects acc, not potency.
   sets.midcast.Absorb = {
     ammo="Pemphredo Tathlum",               --  4,  8, __, __ [__/__, ___]
-    head="Fallen's Burgeonet +1",           -- 12, __, __, __ [__/__,  32]; Duration+50%
+    head="Fallen's Burgeonet +3",           -- 22, 37, __, __ [__/__,  52]; Duration+50%
     body=gear.Carmine_C_body,               -- 38, 38, 16, __ [__/ 4,  64]
     hands="Heathen's Gauntlets +2",         -- 20, 52, __, __ [ 9/ 9,  72]
     legs="Heathen's Flanchard +2",          -- 36, 53, 25, __ [11/11, 109]
@@ -956,9 +953,8 @@ function init_gear_sets()
     ring2="Stikini Ring +1",                -- __, 11,  8, __ [__/__, ___]
     -- back="Chuparrosa Mantle",            -- __, __, __, 10 [__/__, ___]; Duration+20s
     waist="Eschan Stone",                   -- __,  7, __, __ [__/__, ___]
-    -- 118 INT, 244 M.Acc, 59 Dark skill, 15 Absorb Potency% [17 PDT/23 MDT, 416 M.Eva]
+    -- 128 INT, 281 M.Acc, 59 Dark skill, 15 Absorb Potency% [17 PDT/23 MDT, 436 M.Eva]
     
-    -- head="Fallen's Burgeonet +3",        -- 22, 37, __, __ [__/__,  52]; Duration+50%
     -- hands="Heathen's Gauntlets +3",      -- 25, 62, __, __ [10/10,  82]
     -- legs="Heathen's Flanchard +3",       -- 41, 63, 30, __ [12/12, 119]
     -- 138 INT, 301 M.Acc, 64 Dark skill, 15 Absorb Potency% [19 PDT/25 MDT, 456 M.Eva]
@@ -1000,7 +996,7 @@ function init_gear_sets()
   --                  × (Weather/Day Bonuses) × (Nether Void Bonus) × (Orpheus Sash Bonus)
   sets.midcast.Drain = {
     ammo="Pemphredo Tathlum",                   --  4,  8, __, __, __ [__/__, ___]
-    head="Fallen's Burgeonet +1",               -- 12, __, __, __, __ [__/__,  32]  76; Duration+50%
+    head="Fallen's Burgeonet +3",               -- 22, 37, __, __, __ [__/__,  52]  96; Duration+50%
     body=gear.Carmine_C_body,                   -- 38, 38, 16, __, __ [__/ 4,  64]  96
     hands="Fallen's Finger Gauntlets +2",       -- 19, 28, 16, 14, __ [__/__,  36]  39
     legs="Heathen's Flanchard +2",              -- 36, 53, 25, __, __ [11/11, 109]  72
@@ -1012,10 +1008,9 @@ function init_gear_sets()
     ring2="Defending Ring",                     -- __, __, __, __, __ [10/10, ___] ___
     back=gear.DRK_Adoulin_Cape,                 -- __, __, 10, 25, __ [__/__, ___] ___
     waist="Orpheus's Sash",                     -- __, __, __, __, __ [__/__, ___] ___; +1-15% damage
-    -- ML30 traits                                    483
-    -- 117 INT, 197 M.Acc, 560 Dark skill, 44 Drain/Aspir Potency, 5 Dark Affinity [17 PDT/19 MDT, 380 M.Eva] 770 HP
+    -- ML30 traits                                        483
+    -- 127 INT, 234 M.Acc, 560 Dark skill, 44 Drain/Aspir Potency, 5 Dark Affinity [17 PDT/19 MDT, 400 M.Eva] 790 HP
 
-    -- head="Fallen's Burgeonet +3",            -- 22, 37, __, __, __ [__/__,  52]  96; Duration+50%
     -- hands="Fallen's Finger Gauntlets +3",    -- 24, 38, 18, 16, __ [__/__,  46]  49
     -- legs="Heathen's Flanchard +3",           -- 41, 63, 30, __, __ [12/12, 119]  82
     -- ear1="Hirudinea Earring",                -- __, __, __,  3, __ [__/__, ___]  -5
