@@ -278,7 +278,7 @@ gear.DRG_WS2_Cape = { name="Brigantia's Mantle", augments={'STR+20','Accuracy+20
 -- gear.DRG_WS4_Cape = { name="Brigantia's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}
 
 -- gear.DRK_FC_Cape = {} -- HP+60, FC+10, HP+20, Eva/M.Eva+20, PDT-10
-gear.DRK_STP_Cape = { name="Ankou's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+6','"Store TP"+10','Phys. dmg. taken-10%',}}
+gear.DRK_STP_Cape = { name="Ankou's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}}
 
 gear.GEO_Idle_Cape = { name="Nantosuelta's Cape", augments={'HP+60','Eva.+20 /Mag. Eva.+20','Mag. Evasion+10','Pet: "Regen"+10','Pet: "Regen"+5',}}
 gear.GEO_FC_Cape = { name="Nantosuelta's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Fast Cast"+10','Phys. dmg. taken-10%',}}
