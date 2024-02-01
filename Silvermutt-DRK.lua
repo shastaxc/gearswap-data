@@ -1,4 +1,4 @@
--- File Status: Good. Needs some clean up.
+-- File Status: Good.
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs
@@ -69,8 +69,8 @@ function job_setup()
 
   state.CP = M(false, 'Capacity Points Mode')
   state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger','Sword','Club','GreatSword','Scythe'}
-  state.WeaponSet = M{['description']='Weapon Set', 'Naegling', 'Anguta', 'Club', 'Dagger'}
-  -- state.WeaponSet = M{['description']='Weapon Set', 'Naegling', 'Anguta', 'Apocalypse', 'Caladbolg', 'Club', 'Dagger'}
+  state.WeaponSet = M{['description']='Weapon Set', 'Naegling', 'Anguta', 'Club', 'DaggerAcc', 'Dagger'}
+  -- state.WeaponSet = M{['description']='Weapon Set', 'Naegling', 'Foenaria', 'Anguta', 'Apocalypse', 'Caladbolg', 'Club', 'Dagger'}
 
   skill_ids_2h = S{4, 6, 7, 8, 10, 12} -- DO NOT MODIFY
   fencer_tp_bonus = {200, 300, 400, 450, 500, 550, 600, 630} -- DO NOT MODIFY
@@ -79,7 +79,6 @@ function job_setup()
     ["Apocalypse"] = S{"Aftermath: Lv.1", "Aftermath: Lv.2", "Aftermath: Lv.3"},
     ["Foenaria"] = S{"Aftermath: Lv.1", "Aftermath: Lv.2", "Aftermath: Lv.3"},
   }
-
   degrade_array = {
     ['Aspir'] = {'Aspir','Aspir II'},
     ['Drain'] = {'Drain', 'Drain II', 'Drain III'}
@@ -117,6 +116,7 @@ end
 -- Define sets and vars used by this job file.
 function init_gear_sets()
   sets.org.job = {}
+  sets.org.job[1] = {neck="Abyssal Beads +2"}
 
   -- Enmity sets
   sets.Enmity = {
@@ -1345,6 +1345,14 @@ function init_gear_sets()
     main=gear.Malevolence_1,
     sub=gear.Malevolence_2,
   }
+  sets.WeaponSet['DaggerAcc'] = {
+    main=gear.Malevolence_1,
+    sub="Blurred Shield +1",
+  }
+  sets.WeaponSet['DaggerAcc'].DW = {
+    main=gear.Malevolence_1,
+    sub="Naegling",
+  }
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -1986,7 +1994,7 @@ function set_main_keybinds()
   send_command('bind !z input /ja "Arcane Circle" <me>')
   send_command('bind !x input /ja "Arcane Crest" <t>')
   
-  send_command('bind ^w input /ja "Weapon Bash" <t>')
+  send_command('bind ^q input /ja "Weapon Bash" <t>')
 end
 
 function set_sub_keybinds()
@@ -2015,12 +2023,13 @@ function unbind_keybinds()
   send_command('unbind ^delete')
   send_command('unbind !delete')
 
+  send_command('unbind ^f8')
   send_command('unbind ^pageup')
   send_command('unbind ^pagedown')
   send_command('unbind !pagedown')
 
+  send_command('unbind ^`')
   send_command('unbind @c')
-  send_command('unbind !w')
   
   send_command('unbind !`')
   send_command('unbind !q')
@@ -2030,7 +2039,7 @@ function unbind_keybinds()
   send_command('unbind !z')
   send_command('unbind !x')
   
-  send_command('unbind ^w')
+  send_command('unbind ^q')
   
   send_command('unbind ^numlock')
   send_command('unbind ^numpad/')
@@ -2038,7 +2047,6 @@ function unbind_keybinds()
   send_command('unbind ^numpad-')
   send_command('unbind ^numpad0')
   send_command('unbind ^numpad.')
-  send_command('unbind ^f8')
 end
 
 function test()
