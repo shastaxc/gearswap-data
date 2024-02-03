@@ -925,7 +925,7 @@ function init_gear_sets()
     feet="Ratri Sollerets +1",              -- __ [-6/-6, 139]; Duration+25%
     neck="Incanter's Torque",               -- 10 [__/__, ___]
     ear1="Odnowa Earring +1",               -- __ [ 3/ 5, ___]
-    -- ear2="Mani Earring",                 -- 10 [__/__, ___]
+    ear2="Mani Earring",                    -- 10 [__/__, ___]
     ring1="Stikini Ring +1",                --  8 [__/__, ___]
     ring2="Evanescence Ring",               -- 10 [__/__, ___]
     back=gear.DRK_Adoulin_Cape,             -- 10 [__/__, ___]
