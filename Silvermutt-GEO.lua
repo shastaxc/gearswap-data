@@ -638,7 +638,7 @@ function init_gear_sets()
     ear1="Dignitary's Earring",
     ear2="Malignance Earring",
     ring1="Archon Ring",
-    ring2="Stikini Ring +1",
+    ring2="Evanescence Ring",
     waist="Fucho-no-Obi",
 
     -- main=gear.Rubicundity,
