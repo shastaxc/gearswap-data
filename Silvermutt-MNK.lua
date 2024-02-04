@@ -44,6 +44,8 @@ function get_sets()
   -- Load and initialize Mote library
   mote_include_version = 2
   include('Mote-Include.lua') -- Executes job_setup, user_setup, init_gear_sets
+  equip({main=empty,sub=empty})
+  
   coroutine.schedule(function()
     send_command('gs reorg')
   end, 1)

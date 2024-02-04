@@ -11,7 +11,8 @@ function get_sets()
 
   -- Load and initialize the include file.
   include('Mote-Include.lua') --DO NOT MOVE TO GLOBALS. MUST BE HERE.
-  include('reorganizer-lib.lua')
+  equip({main=empty,sub=empty})
+  
   coroutine.schedule(function()
     send_command('gs reorg')
   end, 1)
