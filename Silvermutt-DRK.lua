@@ -291,7 +291,7 @@ function init_gear_sets()
     ear2="Friomisi Earring",          -- __, __, __, 10, __ [__/__, ___]
     ring1="Epaminondas's Ring",       -- __, __, __, __,  5 [__/__, ___]
     ring2="Archon Ring",              -- __, __, __, __, __ [__/__, ___]; Dark MAB+5
-    -- back=gear.DRK_MAB_Cape,        -- __, __, 30, 10, __ [10/__, ___]
+    back=gear.DRK_MAB_Cape,           -- __, __, 30, 10, __ [10/__, ___]
     waist="Eschan Stone",             -- __, __, __,  7, __ [__/__, ___]
     -- 143 MND, 168 STR, 201 INT, 195 MAB, 53 WSD [34 PDT/24 MDT, 520 M.Eva]
   }
@@ -462,7 +462,7 @@ function init_gear_sets()
     ear2="Moonshade Earring",         -- __, __, __, __ [__/__, ___]; TP bonus
     ring1="Metamorph Ring +1",        -- __, 16, __, __ [__/__, ___]
     ring2="Archon Ring",              -- __, __, __, __ [__/__, ___]; Dark MAB+5
-    -- back=gear.DRK_MAB_Cape,        -- __, 30, 10, __ [10/__, ___]
+    back=gear.DRK_MAB_Cape,           -- __, 30, 10, __ [10/__, ___]
     waist="Eschan Stone",             -- __, __,  7, __ [__/__, ___]
     -- 168 STR, 227 INT, 182 MAB, 48 WSD [34 PDT/24 MDT, 520 M.Eva]
   }
@@ -737,12 +737,11 @@ function init_gear_sets()
     ear2="Friomisi Earring",                  -- __, __, 10, __ [__/__, ___]
     ring1="Metamorph Ring +1",                -- __, 16, __, __ [__/__, ___]
     ring2="Defending Ring",                   -- __, __, __, __ [10/10, ___]
-    back=gear.DRK_STP_Cape,
+    back=gear.DRK_MAB_Cape,                   -- __, 30, 10, __ [10/__, ___]
     waist="Eschan Stone",                     -- __, __,  7, __ [__/__, ___]
     
     -- body="Fallen's Cuirass +3",            -- 32, 32, 60, __ [__/__,  68]
     -- hands="Fallen's Finger Gauntlets +3",  -- 39, 24, 62, __ [__/__,  46]
-    -- back=gear.DRK_MAB_Cape,                -- __, 30, 10, __ [10/__, ___]
     -- 121 DEX, 214 INT, 284 MAB, 35 WSD [35 PDT/25 MDT, 506 M.Eva]
   }
 
@@ -978,7 +977,7 @@ function init_gear_sets()
     ear2="Odnowa Earring +1",               -- __, __, __, __ [ 3/ 5, ___]
     ring1="Metamorph Ring +1",              -- 16, 15, __, __ [__/__, ___]
     ring2="Stikini Ring +1",                -- __, 11,  8, __ [__/__, ___]
-    -- back=gear.DRK_MAB_Cape,              -- 30, 20, __, __ [10/__, ___]; Duration +10s
+    back=gear.DRK_MAB_Cape,                 -- 30, 20, __, __ [10/__, ___]; Duration +10s
     waist="Eschan Stone",                   -- __,  7, __, __ [__/__, ___]
     -- 205 INT, 352 M.Acc, 59 Dark skill, 5 Absorb Potency% [33 PDT/29 MDT, 451 M.Eva]
     
@@ -1039,12 +1038,11 @@ function init_gear_sets()
     ear2="Heathen's Earring +1",            -- __, 11, __ [__/__, ___]
     ring1="Stikini Ring +1",                -- __, 11,  8 [__/__, ___]
     ring2="Metamorph Ring +1",              -- 16, 15, __ [__/__, ___]
-    -- back=gear.DRK_MAB_Cape,              -- 30, 20, __ [10/__, ___]
+    back=gear.DRK_MAB_Cape,                 -- 30, 20, __ [10/__, ___]
     waist="Eschan Stone",                   -- __,  7, __ [__/__, ___]
     
     -- hands="Fallen's Finger Gauntlets +3",-- 24, 38, 18 [__/__,  46]
     -- legs="Heathen's Flanchard +3",       -- 41, 63, 30 [12/12, 119]
-    -- back=gear.DRK_MAB_Cape,              -- 30, 20, __ [10/__, ___]
     -- 214 INT, 342 M.Acc, 82 Dark skill [22 PDT/16 MDT, 418 M.Eva]
   }
 
@@ -1080,7 +1078,7 @@ function init_gear_sets()
     ear2="Heathen's Earring +1",
     ring1="Stikini Ring +1",
     ring2="Metamorph Ring +1",
-    -- back=gear.DRK_MAB_Cape,
+    back=gear.DRK_MAB_Cape,
     waist="Eschan Stone",
     
     -- hands="Heathen's Gauntlets +3",
