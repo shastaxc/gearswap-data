@@ -524,15 +524,14 @@ function init_gear_sets()
     ear2="Mendicant's Earring",     --  5, __, __, ___ [__/__, ___] __
     ring1="Sirona's Ring",          -- __,  3,  3,  10 [__/__, ___] __
     ring2="Defending Ring",         -- __, __, __, ___ [10/10, ___] __
-    back="Aurist's Cape +1",        -- __, 33, __, ___ [__/__, ___] __
+    back=gear.GEO_Cure_Cape,        -- 10, 30, __, ___ [10/__, ___] __
     waist="Luminary Sash",          -- __, 10, __, ___ [__/__, ___] __
     -- Traits/Merits/Gifts             __,103, 95,  16
     -- RDM Subjob                      __, __, __, 139
-    -- 55 CP, 322 MND, 194 VIT, 285 Healing Skill [32 PDT/30 MDT, 457 M.Eva] 17 -Enmity
+    -- 65 CP, 319 MND, 194 VIT, 285 Healing Skill [42 PDT/30 MDT, 457 M.Eva] 17 -Enmity
     
     -- main=gear.Gada_MND,          -- 18, 21, __,  18 [__/__, ___] __
     -- hands="Azimuth Gloves +3",   -- __, 47, 38, ___ [12/12,  98] 13
-    -- back=gear.GEO_Cure_Cape,     -- 10, 30, __, ___ [10/__, ___] __
     -- 53 CP, 330 MND, 199 VIT, 303 Healing Skill [43 PDT/31 MDT, 467 M.Eva] 18 -Enmity
     -- 849 HP Cure IV
   }
