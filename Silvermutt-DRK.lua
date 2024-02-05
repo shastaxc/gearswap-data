@@ -145,7 +145,7 @@ function init_gear_sets()
   sets.precast.FC = {
     ammo="Sapience Orb",                            --  2 [__/__, ___]
     head=gear.Carmine_D_head,                       -- 14 [__/__,  53]
-    -- body="Fallen's Cuirass +3",                  -- 10 [__/__,  68]
+    body="Fallen's Cuirass +2",                     --  7 [__/__,  58]
     hands=gear.Leyline_Gloves,                      --  8 [__/__,  62]
     legs=gear.Odyssean_FC_legs,                     --  6 [__/__,  86]
     feet=gear.Odyssean_FC_feet,                     -- 11 [__/__,  86]
@@ -158,7 +158,7 @@ function init_gear_sets()
     --          augments=gear.DRK_FC_Cape.augments,
     --          priority=1},                        -- 10 [10/__, ___]
     waist={name="Platinum Moogle Belt",priority=1}, -- __ [ 3/ 3,  15]; Helps HP balance for Drain
-    -- 78 FC [13 PDT/3 MDT, 370 M.Eva]
+    -- 75 FC [13 PDT/3 MDT, 360 M.Eva]
 
     -- body={name="Sacro Breastplate",priority=1},  -- 10 [__/__, 129]
     -- legs="Enif Cosciales",                       --  8 [__/__, ___]
@@ -177,7 +177,7 @@ function init_gear_sets()
   })
 
   sets.precast.JA['Blood Weapon'] = {
-    body="Fallen's Cuirass +1",
+    body="Fallen's Cuirass +2",
     -- body="Fallen's Cuirass +3",
   }
   sets.precast.JA['Arcane Circle'] = {
@@ -730,7 +730,7 @@ function init_gear_sets()
   sets.precast.WS['Aeolian Edge'] = {
     ammo="Seething Bomblet +1",               -- __, __,  7, __ [__/__, ___]
     head=gear.Nyame_B_head,                   -- 25, 28, 30, 11 [ 7/ 7, 123]
-    body=gear.Nyame_B_body,
+    body="Fallen's Cuirass +2",               -- 27, 27, 53, __ [__/__,  58]
     hands="Fallen's Finger Gauntlets +2",     -- 34, 19, 55, __ [__/__,  36]
     legs=gear.Nyame_B_legs,                   -- __, 44, 30, 12 [ 8/ 8, 150]
     feet="Heathen's Sollerets +3",            -- 25, 22, 50, 12 [__/__, 119]
@@ -1051,7 +1051,7 @@ function init_gear_sets()
   sets.midcast['Elemental Magic'] = {
     ammo="Pemphredo Tathlum",               --  4,  8,  4, __ [__/__, ___]
     head=gear.Nyame_B_head,                 -- 28, 40, 30, __ [ 7/ 7, 123]
-    -- body="Fallen's Cuirass +3",          -- 32, 40, 60, __ [__/__,  68]
+    body="Fallen's Cuirass +2",             -- 27, 30, 53, __ [__/__,  58]
     hands="Fallen's Finger Gauntlets +2",   -- 19, 28, 55, __ [__/__,  36]
     legs=gear.Nyame_B_legs,                 -- 44, 40, 30, __ [ 8/ 8, 150]
     feet="Heathen's Sollerets +3",          -- 22, 60, 50, __ [__/__, 119]
@@ -1063,6 +1063,7 @@ function init_gear_sets()
     back=gear.DRK_MAB_Cape,                 -- 30, 20, 10, 20 [10/__, ___]
     waist="Skrymir Cord",                   -- __,  5,  5, 30 [__/__, ___]
     
+    -- body="Fallen's Cuirass +3",          -- 32, 40, 60, __ [__/__,  68]
     -- hands="Fallen's Finger Gauntlets +3",-- 24, 38, 62, __ [__/__,  46]
     -- 218 INT, 276 M.Acc, 279 MAB, 50 M.Dmg [35 PDT/25 MDT, 506 M.Eva]
   }
