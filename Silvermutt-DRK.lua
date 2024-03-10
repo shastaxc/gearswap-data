@@ -195,8 +195,7 @@ function init_gear_sets()
     -- head="Ignominy Burgeonet +3",
   }
   sets.precast.JA['Diabolic Eye'] = {
-    hands="Fallen's Finger Gauntlets +2",
-    -- hands="Fallen's Finger Gauntlets +3",
+    hands="Fallen's Finger Gauntlets +3",
   }
   sets.precast.JA['Nether Void'] = {
     legs="Heathen's Flanchard +2",
@@ -730,7 +729,7 @@ function init_gear_sets()
     ammo="Seething Bomblet +1",               -- __, __,  7, __ [__/__, ___]
     head=gear.Nyame_B_head,                   -- 25, 28, 30, 11 [ 7/ 7, 123]
     body="Fallen's Cuirass +3",               -- 32, 32, 60, __ [__/__,  68]
-    hands="Fallen's Finger Gauntlets +2",     -- 34, 19, 55, __ [__/__,  36]
+    hands="Fallen's Finger Gauntlets +3",     -- 39, 24, 62, __ [__/__,  46]
     legs=gear.Nyame_B_legs,                   -- __, 44, 30, 12 [ 8/ 8, 150]
     feet="Heathen's Sollerets +3",            -- 25, 22, 50, 12 [__/__, 119]
     neck="Sibyl Scarf",                       -- __, 10, 10, __ [__/__, ___]
@@ -740,8 +739,6 @@ function init_gear_sets()
     ring2="Defending Ring",                   -- __, __, __, __ [10/10, ___]
     back=gear.DRK_MAB_Cape,                   -- __, 30, 10, __ [10/__, ___]
     waist="Eschan Stone",                     -- __, __,  7, __ [__/__, ___]
-    
-    -- hands="Fallen's Finger Gauntlets +3",  -- 39, 24, 62, __ [__/__,  46]
     -- 121 DEX, 214 INT, 284 MAB, 35 WSD [35 PDT/25 MDT, 506 M.Eva]
   }
 
@@ -918,7 +915,7 @@ function init_gear_sets()
     ammo="Staunch Tathlum +1",              -- __ [ 3/ 3, ___]
     head="Fallen's Burgeonet +3",           -- __ [__/__,  52]; Duration+50%
     body=gear.Carmine_C_body,               -- 16 [__/ 4,  64]
-    hands="Fallen's Finger Gauntlets +2",   -- 16 [__/__,  36]
+    hands="Fallen's Finger Gauntlets +3",   -- 18 [__/__,  46]
     legs="Heathen's Flanchard +2",          -- 25 [11/11, 109]
     feet="Ratri Sollerets +1",              -- __ [-6/-6, 139]; Duration+25%
     neck="Incanter's Torque",               -- 10 [__/__, ___]
@@ -931,7 +928,6 @@ function init_gear_sets()
     -- ML30 traits                            483
     -- 588 Dark skill [14 PDT/20 MDT, 415 M.Eva]
     
-    -- hands="Fallen's Finger Gauntlets +3",-- 18 [__/__,  46]
     -- legs="Heathen's Flanchard +3",       -- 30 [12/12, 119]
     -- 595 Dark skill [15 PDT/21 MDT, 435 M.Eva]
   }
@@ -996,7 +992,7 @@ function init_gear_sets()
     ammo="Pemphredo Tathlum",                   --  4,  8, __, __, __ [__/__, ___]
     head="Fallen's Burgeonet +3",               -- 22, 37, __, __, __ [__/__,  52]  96; Duration+50%
     body=gear.Carmine_C_body,                   -- 38, 38, 16, __, __ [__/ 4,  64]  96
-    hands="Fallen's Finger Gauntlets +2",       -- 19, 28, 16, 14, __ [__/__,  36]  39
+    hands="Fallen's Finger Gauntlets +3",       -- 24, 38, 18, 16, __ [__/__,  46]  49
     legs="Heathen's Flanchard +2",              -- 36, 53, 25, __, __ [11/11, 109]  72
     feet={name="Ratri Sollerets +1",priority=1},-- __, 43, __, __, __ [-6/-6, 139] 487; Duration+25%
     neck="Erra Pendant",                        -- __, 17, 10,  5, __ [__/__, ___] ___
@@ -1009,7 +1005,6 @@ function init_gear_sets()
     -- ML30 traits                                        483
     -- 127 INT, 234 M.Acc, 570 Dark skill, 54 Drain/Aspir Potency, 5 Dark Affinity [7 PDT/9 MDT, 400 M.Eva] 790 HP
 
-    -- hands="Fallen's Finger Gauntlets +3",    -- 24, 38, 18, 16, __ [__/__,  46]  49
     -- legs="Heathen's Flanchard +3",           -- 41, 63, 30, __, __ [12/12, 119]  82
     -- ear1="Hirudinea Earring",                -- __, __, __,  3, __ [__/__, ___]  -5
     -- ear2="Nehalennia Earring",               -- __, __, __, __, __ [__/__, ___] -60
@@ -1030,7 +1025,7 @@ function init_gear_sets()
     ammo="Pemphredo Tathlum",               --  4,  8, __ [__/__, ___]
     head="Heathen's Burgeonet +3",          -- 31, 61, __ [__/__,  87]
     body=gear.Carmine_C_body,               -- 38, 38, 16 [__/ 4,  64]
-    hands="Fallen's Finger Gauntlets +2",   -- 19, 28, 16 [__/__,  36]
+    hands="Fallen's Finger Gauntlets +3",   -- 24, 38, 18 [__/__,  46]
     legs="Heathen's Flanchard +2",
     feet="Heathen's Sollerets +3",          -- 22, 60, __ [__/__, 102]
     neck="Incanter's Torque",               -- __, __, 10 [__/__, ___]
@@ -1041,7 +1036,6 @@ function init_gear_sets()
     back=gear.DRK_MAB_Cape,                 -- 30, 20, __ [10/__, ___]
     waist="Eschan Stone",                   -- __,  7, __ [__/__, ___]
     
-    -- hands="Fallen's Finger Gauntlets +3",-- 24, 38, 18 [__/__,  46]
     -- legs="Heathen's Flanchard +3",       -- 41, 63, 30 [12/12, 119]
     -- 214 INT, 342 M.Acc, 82 Dark skill [22 PDT/16 MDT, 418 M.Eva]
   }
@@ -1050,7 +1044,7 @@ function init_gear_sets()
     ammo="Pemphredo Tathlum",               --  4,  8,  4, __ [__/__, ___]
     head=gear.Nyame_B_head,                 -- 28, 40, 30, __ [ 7/ 7, 123]
     body="Fallen's Cuirass +3",             -- 32, 40, 60, __ [__/__,  68]
-    hands="Fallen's Finger Gauntlets +2",   -- 19, 28, 55, __ [__/__,  36]
+    hands="Fallen's Finger Gauntlets +3",   -- 24, 38, 62, __ [__/__,  46]
     legs=gear.Nyame_B_legs,                 -- 44, 40, 30, __ [ 8/ 8, 150]
     feet="Heathen's Sollerets +3",          -- 22, 60, 50, __ [__/__, 119]
     neck="Sibyl Scarf",                     -- 10, __, 10, __ [__/__, ___]
@@ -1060,8 +1054,6 @@ function init_gear_sets()
     ring2="Defending Ring",                 -- __, __, __, __ [10/10, ___]
     back=gear.DRK_MAB_Cape,                 -- 30, 20, 10, 20 [10/__, ___]
     waist="Skrymir Cord",                   -- __,  5,  5, 30 [__/__, ___]
-    
-    -- hands="Fallen's Finger Gauntlets +3",-- 24, 38, 62, __ [__/__,  46]
     -- 218 INT, 276 M.Acc, 279 MAB, 50 M.Dmg [35 PDT/25 MDT, 506 M.Eva]
   }
 
