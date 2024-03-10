@@ -154,9 +154,9 @@ function init_gear_sets()
     ear2="Loquacious Earring",                      --  2 [__/__, ___]
     ring1="Kishar Ring",                            --  4 [__/__, ___]
     ring2={name="Moonlight Ring",priority=1},       -- __ [ 5/ 5, ___]; Helps HP balance for Drain
-    -- back={name=gear.DRK_FC_Cape.name,
-    --          augments=gear.DRK_FC_Cape.augments,
-    --          priority=1},                        -- 10 [10/__, ___]
+    back={name=gear.DRK_FC_Cape.name,
+             augments=gear.DRK_FC_Cape.augments,
+             priority=1},                           -- 10 [10/__, ___]
     waist={name="Platinum Moogle Belt",priority=1}, -- __ [ 3/ 3,  15]; Helps HP balance for Drain
     -- 75 FC [13 PDT/3 MDT, 360 M.Eva]
 
@@ -185,7 +185,7 @@ function init_gear_sets()
     -- feet="Ignominy Sollerets +3",
   }
   sets.precast.JA['Last Resort'] = {
-    -- back=gear.DRK_FC_Cape,
+    back=gear.DRK_FC_Cape,
   }
   sets.precast.JA['Weapon Bash'] = {
     hands="Ignominy Gauntlets +1",
@@ -882,7 +882,7 @@ function init_gear_sets()
     ear2="Arete Del Luna +1",                   -- [__/__, ___]; Resists
     ring1="Moonlight Ring",                     -- [ 5/ 5, ___]
     ring2="Defending Ring",                     -- [10/10, ___]
-    -- back=gear.DRK_FC_Cape,                   -- [10/__, ___]
+    back=gear.DRK_FC_Cape,                      -- [10/__, ___]
     waist="Platinum Moogle Belt",               -- [ 3/ 3,  15]
     -- [49 PDT/39 MDT, 615 M.Eva]
   }
@@ -890,11 +890,11 @@ function init_gear_sets()
   -- Not affected by skill.
   -- Potency affected by max HP at cast time.
   sets.midcast['Dread Spikes'] = {
-    -- ammo="Egoist's Tathlum",       --  45 [___/___, ___]
+    ammo="Egoist's Tathlum",          --  45 [___/___, ___]
     head="Ratri Sallet +1",           -- 510 [ -8/ -8, 101]
     body="Heathen's Cuirass +3",      --  98 [ 13/ 13, 103]; Potency+55%
-    -- hands="Ratri Gadlings +1",     -- 499 [-10/-10,  90]
-    -- legs="Ratri Cuisses +1",       -- 521 [-12/-12, 139]
+    hands="Ratri Gadlings +1",        -- 499 [-10/-10,  90]
+    legs="Ratri Cuisses +1",          -- 521 [-12/-12, 139]
     feet="Ratri Sollerets +1",        -- 487 [ -6/ -6, 139]; Duration+25%
     neck="Unmoving Collar +1",        -- 200 [___/___, ___]
     ear1="Odnowa Earring +1",         -- 110 [  3/  5, ___]
@@ -1105,13 +1105,12 @@ function init_gear_sets()
     ear2="Arete Del Luna +1",                 -- __ [__/__, ___]; Resists
     ring1="Moonlight Ring",                   -- __ [ 5/ 5, ___]
     ring2="Defending Ring",                   -- __ [10/10, ___]
-    back=gear.DRK_STP_Cape,                   -- __ [10/__, ___]
+    back=gear.DRK_FC_Cape,                    -- __ [10/__, ___]
     waist="Carrier's Sash",                   -- __ [__/__, ___]; Resists
     -- 28 M.Def [62 PDT/52 MDT, 571 M.Eva]
 
     -- hands="Heathen's Gauntlets +3",        --  5 [10/10,  82]
     -- legs="Heathen's Flanchards +3",        --  8 [12/12, 119]; Realistically this will be move speed
-    -- back=gear.DRK_FC_Cape,                 -- __ [10/__, ___]
     -- 30 M.Def [64 PDT/54 MDT, 591 M.Eva]
   }
   sets.defense.MDT = set_combine(sets.defense.PDT, {})
