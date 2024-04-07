@@ -250,17 +250,16 @@ function init_gear_sets()
   }
   sets.precast.CorsairRoll.Duration = {
     -- main=gear.Rostam_C,          -- __/__, ___ ( 8, 60, __)
-    -- range="Compensator",         -- __/__, ___ (__, 20, __)
+    range="Compensator",            -- __/__, ___ (__, 20, __)
     -- 52 PDT / 30 MDT, 445 M.Eva (7 PR Potency, 190 PR Duration, 5 PR Delay)
   }
+  -- Intentionally excluding Blitzer's Roll bonus from Chasseur's Tricorne because
+  -- the chance at proc from relic head bonus is much more significant.
   sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {
     legs="Chasseur's Culottes +3",
   })
   sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {
     feet="Chasseur's Bottes +1",
-  })
-  sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {
-    head="Chasseur's Tricorne +2",
   })
   sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {
     body="Chasseur's Frac +3",
@@ -1906,10 +1905,20 @@ function job_precast(spell, action, spellMap, eventArgs)
 end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
-  if (spell.type == 'CorsairRoll' or spell.english == 'Double-Up') then
+  if spell.type == 'CorsairRoll' then
+    preroll_weapons = {
+      main = player.equipment.main,
+      sub = player.equipment.sub,
+      range = player.equipment.range,
+      ammo = empty,
+    }
     if player.status ~= 'Engaged' then
       equip(sets.precast.CorsairRoll.Duration)
     end
+    if state.LuzafRing.value then
+      equip(sets.precast.LuzafRing)
+    end
+  elseif spell.english == 'Double-Up' then
     if state.LuzafRing.value then
       equip(sets.precast.LuzafRing)
     end
@@ -1999,7 +2008,10 @@ function job_aftercast(spell, action, spellMap, eventArgs)
 
   state.CastingMode:reset()
 
-  if spell.english == "Light Shot" then
+  if spell.type == 'CorsairRoll' then
+    equip(preroll_weapons)
+    preroll_weapons = nil
+  elseif spell.english == 'Light Shot' then
     send_command('@timers c "Light Shot ['..spell.target.name..']" 60 down abilities/00195.png')
   end
 end
