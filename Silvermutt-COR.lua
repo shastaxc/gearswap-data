@@ -251,7 +251,7 @@ function init_gear_sets()
     -- 52 PDT / 30 MDT, 445 M.Eva (7 PR Potency, 110 PR Duration, 5 PR Delay)
   }
   sets.precast.CorsairRoll.Duration = {
-    -- main=gear.Rostam_C,          -- __/__, ___ ( 8, 60, __)
+    main=gear.Rostam_C,             -- __/__, ___ ( 8, 60, __)
     range="Compensator",            -- __/__, ___ (__, 20, __)
     -- 52 PDT / 30 MDT, 445 M.Eva (7 PR Potency, 190 PR Duration, 5 PR Delay)
   }
