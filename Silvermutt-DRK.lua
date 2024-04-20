@@ -493,7 +493,7 @@ function init_gear_sets()
   -- 100% STR; 1 hit, crit varies with TP
   sets.precast.WS['Vorpal Scythe'] = set_combine(sets.precast.WS, {
     ammo="Yetshila +1",                   -- __, __, __, __, __ ( 2,  6) <__, __, __> [__/__, ___]
-    head="Blistering Sallet +1",          -- 41, __, 53, __, __ (10, __) < 3, __, __> [ 3/__,  53]
+    -- head="Blistering Sallet +1",       -- 41, __, 53, __, __ (10, __) < 3, __, __> [ 3/__,  53]
     body=gear.Nyame_B_body,               -- 45, 65, 40, 13, __ (__, __) < 7, __, __> [ 9/ 9, 139]
     hands=gear.Nyame_B_hands,             -- 17, 65, 40, 11, __ (__, __) < 5, __, __> [ 7/ 7, 112]
     legs=gear.Nyame_B_legs,               -- 58, 65, 40, 12, __ (__, __) < 6, __, __> [ 8/ 8, 150]
@@ -513,7 +513,7 @@ function init_gear_sets()
   })
   sets.precast.WS['Vorpal Scythe'].AttCapped = set_combine(sets.precast.WS.AttCapped, {
     ammo="Yetshila +1",                   -- __, __, __, __, __ ( 2,  6) <__, __, __> [__/__, ___]
-    head="Blistering Sallet +1",          -- 41, __, 53, __, __ (10, __) < 3, __, __> [ 3/__,  53]
+    -- head="Blistering Sallet +1",       -- 41, __, 53, __, __ (10, __) < 3, __, __> [ 3/__,  53]
     body="Sakpata's Breastplate",         -- 42, 70, 55, __,  8 ( 5, __) < 8, __, __> [10/10, 139]
     hands=gear.Nyame_B_hands,             -- 17, 65, 40, 11, __ (__, __) < 5, __, __> [ 7/ 7, 112]
     legs="Sakpata's Cuisses",             -- 53, 70, 55, __,  7 (__, __) < 7, __, __> [ 9/ 9, 150]
@@ -746,7 +746,7 @@ function init_gear_sets()
   -- 50% DEX; 5 hit, crit varies with TP. FTP Replicating
   sets.precast.WS['Evisceration'] = {
     ammo="Yetshila +1",                   -- __, __, __, __, __ ( 2,  6) <__, __, __> [__/__, ___]
-    head="Blistering Sallet +1",          -- 41, __, 53, __, __ (10, __) < 3, __, __> [ 3/__,  53]
+    -- head="Blistering Sallet +1",       -- 41, __, 53, __, __ (10, __) < 3, __, __> [ 3/__,  53]
     body=gear.Nyame_B_body,               -- 24, 65, 40, 13, __ (__, __) < 7, __, __> [ 9/ 9, 139]
     hands=gear.Nyame_B_hands,             -- 42, 65, 40, 11, __ (__, __) < 5, __, __> [ 7/ 7, 112]
     legs=gear.Lustratio_B_legs,           -- 43, 38, 20, __, __ ( 3, __) <__, __, __> [__/__, ___]
@@ -766,7 +766,7 @@ function init_gear_sets()
   })
   sets.precast.WS['Evisceration'].AttCapped = {
     ammo="Yetshila +1",                   -- __, __, __, __, __ ( 2,  6) <__, __, __> [__/__, ___]
-    head="Blistering Sallet +1",          -- 41, __, 53, __, __ (10, __) < 3, __, __> [ 3/__,  53]
+    -- head="Blistering Sallet +1",       -- 41, __, 53, __, __ (10, __) < 3, __, __> [ 3/__,  53]
     body="Sakpata's Breastplate",         -- 25, 70, 55, __,  8 ( 5, __) < 8, __, __> [10/10, 139]
     hands="Sakpata's Gauntlets",          -- 35, 70, 55, __,  6 (__, __) < 6, __, __> [ 8/ 8, 112]
     legs=gear.Lustratio_B_legs,           -- 43, 38, 20, __, __ ( 3, __) <__, __, __> [__/__, ___]
