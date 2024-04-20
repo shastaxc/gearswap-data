@@ -170,6 +170,8 @@ function job_setup()
   -- Corsair only uses guns for ranged weapons
   send_command('dp gun')
 
+  roll_timer = nil -- DO NOT MODIFY
+
   set_main_keybinds()
 end
 
@@ -1910,8 +1912,8 @@ function job_post_precast(spell, action, spellMap, eventArgs)
       main = player.equipment.main,
       sub = player.equipment.sub,
       range = player.equipment.range,
-      ammo = empty,
     }
+    roll_timer = os.clock()
     if player.status ~= 'Engaged' then
       equip(sets.precast.CorsairRoll.Duration)
     end
@@ -2011,6 +2013,7 @@ function job_aftercast(spell, action, spellMap, eventArgs)
   if spell.type == 'CorsairRoll' then
     equip(preroll_weapons)
     preroll_weapons = nil
+    roll_timer = nil
   elseif spell.english == 'Light Shot' then
     send_command('@timers c "Light Shot ['..spell.target.name..']" 60 down abilities/00195.png')
   end
@@ -2423,6 +2426,17 @@ function equip_weapons()
     end
   end
 end
+
+-- Perpetual loop
+windower.raw_register_event('prerender',function()
+  now = os.clock()
+  -- If roll timer has not been reset for 3 seconds (dropped packets causing aftercast
+  -- to fail to trigger), then reset gear manually
+  if roll_timer and preroll_weapons and now - roll_timer > 3 then
+    equip(preroll_weapons)
+    send_command('gs c update')
+  end
+end)
 
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
