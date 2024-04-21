@@ -1,9 +1,168 @@
--- File Status: Good.
+--[[
+File Status: Good.
 
--- Author: Silvermutt
--- Required external libraries: SilverLibs
--- Recommended addons: WSBinder, Reorganizer, PartyBuffs, Debuffed
--- Misc Recommendations: Disable RollTracker
+Author: Silvermutt
+Required external libraries: SilverLibs
+Recommended addons: WSBinder, Reorganizer, PartyBuffs, Debuffed
+Misc Recommendations: Disable RollTracker
+
+-------------------------------------------------------------------------------------------------------------------
+General Use Tips
+-------------------------------------------------------------------------------------------------------------------
+Modes
+* Casting Mode: Changes casting type
+  * Spaekona: Reduces MP use for elemental magic, reduces DPS slightly
+  * Occult: Focuses on building TP when casting elemental magic, reduces DPS greatly. Mainly for building TP for
+      WS spam. Doing this with a good Cataclysm set is generally best for sustained AoE damage.
+* Magic Burst Mode: Toggle Magic Burst mode on or off. If on, when casting elemental magic, will
+    use special MB set to deal more damage. You are expected to know when your spell is going to MB or not, and
+    toggle this mode manually as needed. Good rule of thumb is to leave it on when in a party doing planned skillchains
+    and off otherwise.
+* Elemental Mode: Changes the focused element. The selected element is used for elemental magic keybinds, and
+    storms (if subbing SCH).
+* Defense Mode: Equips super high emergency damage reduction set, greatly reduces your DPS output
+
+Weapons
+* Use keybinds to cycle weapons if you need to lock into a specific weapon set to conserve TP.
+  * If Casting Mode is set to Occult this will also lock you into the Myrkr weapon set.
+  * For the most part, you'll usually want to be in the Casting weapon set which will allow weapon
+    to swap according to what's in each set.
+* If you want different weapon sets, edit the sets.WeaponSet sets.
+  * Additional weapon sets can be created but you need to also add them to the state.WeaponSet cycle.
+
+Abilities
+* Mana Wall will lock certain pieces of gear to help with damage reduction. This causes a slight DPS reduction too.
+
+Other
+* If you are not using my reorganizer addon, remove all the sets.org sets (including in character global file).
+
+
+-------------------------------------------------------------------------------------------------------------------
+Keybinds
+-------------------------------------------------------------------------------------------------------------------
+
+  send_command('bind ^insert gs c weaponset cycle')
+  send_command('bind ^delete gs c weaponset cycleback')
+  send_command('bind !delete gs c weaponset reset')
+
+  send_command('bind !q gs c elemental tier3')
+  send_command('bind !w gs c elemental tier')
+  
+  send_command('bind !z gs c elemental ga')
+  send_command('bind !x gs c elemental ja')
+
+  send_command('bind ^` input /ja "Mana Wall" <me>')
+
+Modes:
+  [ F9 ]              Cycle Melee Accuracy Modes
+  [ CTRL+F9 ]         Cycle Melee Defense Modes
+  [ F10 ]             Emergency -PDT Mode
+  [ ALT+F10 ]         Toggle Kiting Mode (on = move speed gear always equipped)
+  [ F11 ]             Emergency -MDT Mode
+  [ F12 ]             Update Current Gear / Report Current Status
+  [ CTRL+F12 ]        Cycle Idle Modes
+  [ ALT+F12 ]         Cancel Emergency -PDT/-MDT Mode
+  [ WIN+C ]           Toggle Capacity Points Mode
+  [ CTRL+PageUp ]     Cycle ElementalMode
+  [ CTRL+PageDown ]   Cycleback ElementalMode
+  [ ALT+PageDown ]    Reset ElementalMode
+
+Weapons:
+  [ CTRL+Insert ]     Cycle Weapon Sets
+  [ CTRL+Delete ]     Cycleback Weapon Sets
+  [ ALT+Delete ]      Reset to default Weapon Set
+
+Spells:
+  [ ALT+Q ]           Tier 3 nuke
+  [ ALT+W ]           Highest available tier nuke
+  [ ALT+Z ]           Highest available -ga nuke
+  [ ALT+X ]           -ja nuke
+
+Abilities:
+  [ CTRL+` ]          Mana Wall
+
+Subjob:
+== SCH ==
+  [ ALT+` ]           Sublimation
+  [ ALT+C ]           Storm
+  [ ALT+/ ]           Klimaform
+  [ CTRL+- ]          Light Arts/Addendum: White
+  [ CTRL+= ]          Dark Arts/Addendum: Black
+  [ CTRL+[ ]          Rapture/Ebullience
+  [ CTRL+\ ]          Penury/Parsimony
+  [ ALT+[ ]           Accession/Manifestation
+  [ ALT+\ ]           Celerity/Alacrity
+== RDM ==
+  [ ALT+` ]           Convert
+  [ ALT+E ]           Haste
+  [ ALT+U ]           Blink
+  [ ALT+I ]           Stoneskin
+  [ ALT+O ]           Phalanx
+  [ ALT+P ]           Aquaveil
+  [ ALT+' ]           Refresh
+== WHM ==
+  [ ALT+E ]           Haste
+  [ ALT+U ]           Blink
+  [ ALT+I ]           Stoneskin
+  [ ALT+P ]           Aquaveil
+
+SilverLibs keybinds:
+  [ ALT+D ]           Interact
+  [ ALT+S ]           Turn 180 degrees in place
+  [ WIN+W ]           Toggle Rearming Lock
+                      (off = re-equip previous weapons if you go barehanded)
+                      (on = prevent weapon auto-equipping)
+
+For more info and available functions, see SilverLibs documentation at:
+https://github.com/shastaxc/silver-libs
+
+Global-Binds.lua contains additional non-job-related keybinds
+
+
+-------------------------------------------------------------------------------------------------------------------
+Custom Commands (preface with /console to use these in macros)
+-------------------------------------------------------------------------------------------------------------------
+
+gs c elemental tier     Uses highest available tier single target elemental nuke corresponding to the selected element in the ElementMode.
+gs c elemental tier1    Uses tier 1 single target elemental nuke corresponding to the selected element in the ElementMode.
+gs c elemental tier2    Uses tier 2 single target elemental nuke corresponding to the selected element in the ElementMode.
+gs c elemental tier3    Uses tier 3 single target elemental nuke corresponding to the selected element in the ElementMode.
+gs c elemental tier4    Uses tier 4 single target elemental nuke corresponding to the selected element in the ElementMode.
+gs c elemental tier5    Uses tier 5 single target elemental nuke corresponding to the selected element in the ElementMode.
+gs c elemental tier6    Uses tier 6 single target elemental nuke corresponding to the selected element in the ElementMode.
+
+gs c elemental ga       Uses highest available -ga elemental nuke corresponding to the selected element in the ElementMode.
+gs c elemental ga1      Uses tier 1 -ga elemental nuke corresponding to the selected element in the ElementMode.
+gs c elemental ga2      Uses tier 2 -ga elemental nuke corresponding to the selected element in the ElementMode.
+gs c elemental ga3      Uses tier 3 -ga elemental nuke corresponding to the selected element in the ElementMode.
+
+gs c elemental ja       Uses -ja elemental nuke corresponding to the selected element in the ElementMode.
+gs c elemental storm    Uses SCH storm corresponding to the selected element in the ElementMode.
+
+gs c bind               Sets keybinds again. Sometimes they don't all get set when swapping jobs. Calling this manually fixes it.
+
+(More commands available through SilverLibs)
+
+
+-------------------------------------------------------------------------------------------------------------------
+Recommended In-game Macros
+-------------------------------------------------------------------------------------------------------------------
+__Keybind___Name____________________Command_____________
+[ CTRL+1 ] Sleep                /ma "Sleep II" <t>
+[ CTRL+2 ] Break                /ma "Break" <t>
+[ CTRL+3 ] Burn                 /ma "Burn" <t>
+[ CTRL+4 ] Cure4                /ma "Cure IV" <stpc>
+[ CTRL+9 ] Manafont             /ja "Manafont" <me>
+[ CTRL+0 ] Manawell             /ja "Manawell" <stpc>
+[ ALT+1 ]  Sleepga              /ma "Sleepga II" <t>
+[ ALT+2 ]  Breakga              /ma "Breakga" <t>
+[ ALT+3 ]  Stun                 /ma "Stun" <t>
+[ ALT+4 ]  BreakSp              /ma "Break" personname
+[ ALT+8 ]  EnmityDo             /ja "Enmity Douse" <me>
+[ ALT+9 ]  SubtleSo             /ja "Subtle Sorcery" <me>
+[ ALT+0 ]  EleSeal              /ja "Elemental Seal" <me>
+
+]]--
 
 -- Initialization function for this job file.
 function get_sets()
@@ -1548,11 +1707,11 @@ function unbind_keybinds()
   send_command('unbind ^pagedown')
   send_command('unbind !pagedown')
 
-  send_command('bind !q gs c elemental tier3')
-  send_command('bind !w gs c elemental tier')
+  send_command('unbind !q')
+  send_command('unbind !w')
   
-  send_command('bind !z gs c elemental ga')
-  send_command('bind !x gs c elemental ja')
+  send_command('unbind !z')
+  send_command('unbind !x')
 
   send_command('unbind ^`')
 

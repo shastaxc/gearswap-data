@@ -2,19 +2,31 @@
 --  Global Keybinds
 -------------------------------------------------------------------------------------------------------------------
 
---  Spells:
---              [ ALT+J ]           Invisible/Prism Powder
---              [ ALT+K ]           Sneak/Spectral Jig/Silent Oil
---
---  Items:
---              [ WIN+Numpad9 ]     Holy Water
+--              [ WIN+Numpad/ ]     Steadfast Tonic (Negate Terror in Escha)
+--              [ WIN+Numpad* ]     Savior's Tonic (Negate Doom in Escha)
+--              [ WIN+Numpad- ]     Charm Buffer (Negate Charm in Escha)
 --              [ WIN+Numpad7 ]     Remedy
+--              [ WIN+Numpad8 ]     Panacea
+--              [ WIN+Numpad9 ]     Holy Water
+--              [ WIN+Numpad4 ]     Sacrifice (spell)
+--              [ WIN+Numpad5 ]     Elshima Pachira Fruit
+--              [ WIN+Numpad6 ]
 --              [ WIN+Numpad1 ]     Echo Drops
 --              [ WIN+Numpad2 ]     Eye Drops
 --              [ WIN+Numpad3 ]     Antidote
 --
---
---              (Global-Binds.lua contains additional non-job-related keybinds)
+--              [ ALT+Numpad/ ]     Fast Follow - Follow
+--              [ ALT+Numpad* ]     Fast Follow - Stop Following
+--              [ ALT+Numpad- ]     Fast Follow - Stop Following
+--              [ ALT+J ]           Invisible/Prism Powder
+--              [ ALT+K ]           Sneak/Spectral Jig/Silent Oil
+
+-- Additionally, loading this file will disable the in-game functionality of
+-- the following keys when chat input is not open:
+--              Numpad/             Toggle walk/run
+--              z                   Toggle walk/run
+--              Numpad5             Toggle camera mode (first-person vs third-person)
+--              v                   Toggle camera mode (first-person vs third-person)
 
 
 -------------------------------------------------------------------------------------------------------------------

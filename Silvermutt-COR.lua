@@ -1,101 +1,147 @@
--- File Status: Good. Maybe an issue with high ranged acc modes.
+--[[
+File Status: Good.
 
--- Author: Silvermutt
--- Required external libraries: SilverLibs
--- Required addons: HasteInfo, DistancePlus
--- Recommended addons: WSBinder, Reorganizer
--- Misc Recommendations: Disable GearInfo, disable RollTracker
+Author: Silvermutt
+Required external libraries: SilverLibs
+Required addons: HasteInfo, DistancePlus
+Recommended addons: WSBinder, Reorganizer
+Misc Recommendations: Disable GearInfo, disable RollTracker
 
 -------------------------------------------------------------------------------------------------------------------
---  Keybinds
+General Use Tips
 -------------------------------------------------------------------------------------------------------------------
+Modes
+* Offense Mode: Changes melee accuracy level
+* Ranged Mode: Changes ranged accuracy level
+* Hybrid Mode: Changes damage taken level while engaged
+* Defense Mode: Equips super high emergency damage reduction set, greatly reduces your DPS output
 
---  Modes:      [ F9 ]              Cycle Melee Accuracy Modes
---              [ CTRL+F9 ]         Cycle Melee Defense Modes
---              [ ALT+F9 ]          Cycle Ranged Accuracy Modes
---              [ F10 ]             Emergency -PDT Mode
---              [ ALT+F10 ]         Toggle Kiting Mode (on = move speed gear always equipped)
---              [ F11 ]             Emergency -MDT Mode
---              [ F12 ]             Update Current Gear / Report Current Status
---              [ CTRL+F12 ]        Cycle Idle Modes
---              [ ALT+F12 ]         Cancel Emergency -PDT/-MDT Mode
---              [ WIN+C ]           Toggle Capacity Points Mode
---
---  Weapons:    [ CTRL+Insert ]     Cycle Weapon Sets
---              [ CTRL+Delete ]     Cycleback Weapon Sets
---              [ ALT+Delete ]      Reset to default Weapon Set
---              [ CTRL+PageUp ]     Cycle Toy Weapon Sets
---              [ CTRL+PageDown ]   Cycleback Toy Weapon Sets
---              [ ALT+PageDown ]    Reset to default Toy Weapon Set
---
---  Abilities:  [ CTRL+- ]          Quick Draw primary shot element cycle forward.
---              [ CTRL+= ]          Quick Draw primary shot element cycle backward.
---              [ ALT+- ]           Quick Draw secondary shot element cycle forward.
---              [ ALT+= ]           Quick Draw secondary shot element cycle backward.
---              [ CTRL+\ ]          Quick Draw mode cycle (affects gear equipped for QD)
---              [ WIN+` ]           Toggle use of Luzaf Ring for Phantom Roll.
---              [ ALT+` ]           Bolter's Roll
---              [ ALT+Q ]           Double-Up
---              [ ALT+E ]           Random Deal
---              [ CTRL+NumLock ]    Triple Shot
---
---  RA:         [ Numpad0 ]         Ranged Attack
---              [ CTRL+/ ]          Toggle RA Crit mode
+Weapons
+* Use keybinds to cycle weapons.
+* If you want different weapon sets, edit the sets.WeaponSet sets.
+  * Additional weapon sets can be created but you need to also add them to the state.WeaponSet cycle.
+* All other sets (like precast, midcast, idle, etc.) should exclude weapons (main, sub, range).
+  * Ammo will be ignored and handled through a library function based on the configs you set in the setup.
+* Update the "Bullet" configs in the "job_setup" function to match bullets you intend to use for these purposes.
+  * You must have RAbullet at the very least. The default is Chrono Bullet. If you don't have access to that type
+    of bullet, change it to something you do have.
 
---  Subjob:     == WAR ==
---              [ ALT+W ]           Defender
---              [ CTRL+Numpad/ ]    Berserk
---              [ CTRL+Numpad* ]    Warcry
---              [ CTRL+Numpad- ]    Aggressor
---              == NIN ==
---              [ Numpad0 ]         Utsusemi: Ichi
---              [ Numpad. ]         Utsusemi: Ni
---              == DRG ==
---              [ ALT+W ]           Ancient Circle
---              [ CTRL+Numpad/ ]    Jump
---              [ CTRL+Numpad* ]    High Jump
---              [ CTRL+Numpad- ]    Super Jump
--- 
---  SilverLibs keybinds:
---              [ ALT+D ]           Interact
---              [ ALT+S ]           Turn 180 degrees in place
---              [ WIN+W ]           Toggle Rearming Lock
---                                  (off = re-equip previous weapons if you go barehanded)
---                                  (on = prevent weapon auto-equipping)
---              [ CTRL+` ]          Cycle Treasure Hunter Mode
---  For more info and available functions, see SilverLibs documentation at:
---  https://github.com/shastaxc/silver-libs
---
---  Global-Binds.lua contains additional non-job-related keybinds
+Abilities
+* Phantom Roll: Gear will automatically swap when you roll, and will use what's in sets.precast.CorsairRoll.
+  * sets.precast.CorsairRoll.Duration will additionally be equipped if you roll while not engaged in combat.
+    You can add weapons to this set. This is the only exception to the rule of not putting weapons into your
+    sets because it handles weapons with special rules just for Phanton Roll.
+  * You are expected to create your own macros for rolling. I personally use the Roller addon but not for its
+    automated rolling, which kinda sucks and Busts a lot. I use text commands to set Roll1 and Roll2 and then
+    have macros to actually roll what's set for Roll1 and another macro to roll what's set in Roll2.
+    * For example, the command to set a Samurai's Roll in roll1 slot is: /roller roll1 sam
+      Then use the Roll1 macro to roll Samurai's Roll. You'll need a separate keybind to Double-Up.
+
+Other
+* Equipping an ammo belt will automatically lock that slot until you manually unequip it or change zones.
+* If you are not using my reorganizer addon, remove all the sets.org sets (including in character global file).
 
 
 -------------------------------------------------------------------------------------------------------------------
---  Custom Commands (preface with /console to use these in macros)
+Keybinds
 -------------------------------------------------------------------------------------------------------------------
 
---  gs c qd                         Uses the currently-selected primary Quick Draw shot on current target <t>.
---  gs c qd main                    Same as above
---  gs c qd main t                  Same as above
---  gs c qd main stnpc              Uses the currently-selected primary Quick Draw shot on select target <stnpc>.
---  gs c qd alt                     Uses the currently-selected alternate Quick Draw shot on current target <t>.
---  gs c qd alt t                   Same as above
---  gs c qd alt stnpc               Uses the currently-selected alternate Quick Draw shot on select target <stnpc>.
---  (More commands available through SilverLibs)
+Modes:
+  [ F9 ]              Cycle Melee Accuracy Modes
+  [ CTRL+F9 ]         Cycle Melee Defense Modes
+  [ ALT+F9 ]          Cycle Ranged Accuracy Modes
+  [ F10 ]             Emergency -PDT Mode
+  [ ALT+F10 ]         Toggle Kiting Mode (on = move speed gear always equipped)
+  [ F11 ]             Emergency -MDT Mode
+  [ F12 ]             Update Current Gear / Report Current Status
+  [ CTRL+F12 ]        Cycle Idle Modes
+  [ ALT+F12 ]         Cancel Emergency -PDT/-MDT Mode
+  [ WIN+C ]           Toggle Capacity Points Mode
+  [ CTRL+- ]          Quick Draw primary shot element cycle forward.
+  [ CTRL+= ]          Quick Draw primary shot element cycle backward.
+  [ ALT+- ]           Quick Draw secondary shot element cycle forward.
+  [ ALT+= ]           Quick Draw secondary shot element cycle backward.
+  [ CTRL+\ ]          Quick Draw mode cycle (affects gear equipped for QD)
+  [ WIN+` ]           Toggle use of Luzaf Ring for Phantom Roll.
+
+Weapons:
+  [ CTRL+Insert ]     Cycle Weapon Sets
+  [ CTRL+Delete ]     Cycleback Weapon Sets
+  [ ALT+Delete ]      Reset to default Weapon Set
+  [ CTRL+PageUp ]     Cycle Toy Weapon Sets
+  [ CTRL+PageDown ]   Cycleback Toy Weapon Sets
+  [ ALT+PageDown ]    Reset to default Toy Weapon Set
+
+Abilities:
+  [ ALT+` ]           Bolter's Roll
+  [ ALT+Q ]           Double-Up
+  [ ALT+E ]           Random Deal
+  [ CTRL+NumLock ]    Triple Shot
+
+RA:
+  [ Numpad0 ]         Ranged Attack
+  [ CTRL+/ ]          Toggle RA Crit mode
+
+Subjob:
+== WAR ==
+  [ ALT+W ]           Defender
+  [ CTRL+Numpad/ ]    Berserk
+  [ CTRL+Numpad* ]    Warcry
+  [ CTRL+Numpad- ]    Aggressor
+== NIN ==
+  [ Numpad0 ]         Utsusemi: Ichi
+  [ Numpad. ]         Utsusemi: Ni
+== DRG ==
+  [ ALT+W ]           Ancient Circle
+  [ CTRL+Numpad/ ]    Jump
+  [ CTRL+Numpad* ]    High Jump
+  [ CTRL+Numpad- ]    Super Jump
+
+SilverLibs keybinds:
+  [ ALT+D ]           Interact
+  [ ALT+S ]           Turn 180 degrees in place
+  [ WIN+W ]           Toggle Rearming Lock
+                      (off = re-equip previous weapons if you go barehanded)
+                      (on = prevent weapon auto-equipping)
+  [ CTRL+` ]          Cycle Treasure Hunter Mode
+
+For more info and available functions, see SilverLibs documentation at:
+https://github.com/shastaxc/silver-libs
+
+Global-Binds.lua contains additional non-job-related keybinds
 
 
 -------------------------------------------------------------------------------------------------------------------
---  Recommended In-game Macros
+Custom Commands (preface with /console to use these in macros)
 -------------------------------------------------------------------------------------------------------------------
---  Snake Eye                       /ja "Snake Eye" <me>
---  Fold                            /ja "Fold" <me>
---  Crooked Cards                   /ja "Crooked Cards" <me>
---  Roll1                           TODO
---  Roll2                           TODO
---  QD                              /console gs c qd main t
---  QD2                             /console gs c qd alt t
---  Wild Cards                      /ja "Wild Card" <me>
---  Cutting Cards                   /ja "Cutting Cards" <stpc>
+gs c qd                 Uses the currently-selected primary Quick Draw shot on current target <t>.
+gs c qd main            Same as above
+gs c qd main t          Same as above
+gs c qd main stnpc      Uses the currently-selected primary Quick Draw shot on select target <stnpc>.
+gs c qd alt             Uses the currently-selected alternate Quick Draw shot on current target <t>.
+gs c qd alt t           Same as above
+gs c qd alt stnpc       Uses the currently-selected alternate Quick Draw shot on select target <stnpc>.
 
+gs c bind               Sets keybinds again. Sometimes they don't all get set when swapping jobs. Calling this manually fixes it.
+
+(More commands available through SilverLibs)
+
+
+-------------------------------------------------------------------------------------------------------------------
+Recommended In-game Macros
+-------------------------------------------------------------------------------------------------------------------
+__Keybind___Name____________________Command_____________
+[ CTRL+1 ] Snake Eye                       /ja "Snake Eye" <me>
+[ CTRL+2 ] Fold                            /ja "Fold" <me>
+[ CTRL+3 ] Crooked Cards                   /ja "Crooked Cards" <me>
+[ CTRL+9 ] Wild Cards                      /ja "Wild Card" <me>
+[ ALT+1 ]  Roll1                           /console roller roll roll1
+[ ALT+2 ]  Roll2                           /console roller roll roll2
+[ ALT+3 ]  QD                              /console gs c qd main t
+[ ALT+4 ]  QD2                             /console gs c qd alt t
+[ ALT+9 ]  Cutting Cards                   /ja "Cutting Cards" <stpc>
+
+]]--
 
 -------------------------------------------------------------------------------------------------------------------
 -- Setup functions for this job.  Generally should not be modified.
