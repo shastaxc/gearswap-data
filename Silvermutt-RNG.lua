@@ -584,7 +584,7 @@ function init_gear_sets()
     ear1="Beyla Earring",
     ear2="Telos Earring",
     ring1="Ephramad's Ring",
-    ring2="Hajduk Ring +1",
+    ring2="Cacoethic Ring +1",
     waist="Kwahu Kachina Belt +1",
   })
   sets.precast.WS['Jishnu\'s Radiance'].HighAccMaxTP = set_combine(sets.precast.WS['Jishnu\'s Radiance'].HighAcc, {
@@ -613,7 +613,7 @@ function init_gear_sets()
     feet="Orion Socks +1",
     ear1="Beyla Earring",
     ear2="Telos Earring",
-    ring2="Hajduk Ring +1",
+    ring2="Cacoethic Ring +1",
     waist="Kwahu Kachina Belt +1",
     -- feet="Orion Socks +3",
   })
@@ -821,11 +821,11 @@ function init_gear_sets()
   })
   sets.midcast.RA.HighAcc = set_combine(sets.midcast.RA.MidAcc, {
     head="Orion Beret +3",          -- 39 [__]  47/ 34 <_> {__} (__) __/__
-    ring1="Hajduk Ring +1",         -- __ [__]  17/ __ <_> {__} (__) __/__
+    ring1="Cacoethic Ring +1",      -- 10 [__]  16/ __ <_> {__} (__) __/__
     ring2="Ephramad's Ring",        -- 10 [__]  20/ 20 <_> {__} (__) __/__
     -- feet="Amini Bottillons +3",  -- 56 [__]  60/ 60 <_> {__} (__) __/__; Marksmanship+38
     -- AF set bonus                    __ [__]  15/ __ <_> {__} (__) __/__
-    -- 274 AGI [51 STP] 426 racc / 317 ratt <5 crit> {16 PDL} (55 Recycle) 31 PDT/21 MDT
+    -- 284 AGI [51 STP] 425 racc / 317 ratt <5 crit> {16 PDL} (55 Recycle) 31 PDT/21 MDT
   })
 
   sets.midcast.RA.Critical = set_combine(sets.midcast.RA, {

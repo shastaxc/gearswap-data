@@ -931,7 +931,7 @@ function init_gear_sets()
     neck="Iskur Gorget",
     ear1="Enervating Earring",
     ear2="Telos Earring",
-    ring1="Dingir Ring",
+    ring1="Cacoethic Ring +1",
     ring2="Hajduk Ring +1",
     back=gear.NIN_STP_Cape,
     waist="Yemaya Belt",

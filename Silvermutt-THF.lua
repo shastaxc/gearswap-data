@@ -662,7 +662,7 @@ function init_gear_sets()
     ear1="Telos Earring",
     ear2="Enervating Earring",
     ring1="Crepuscular Ring",
-    ring2="Dingir Ring",
+    ring2="Cacoethic Ring +1",
     back=gear.THF_TP_Cape,
     waist="Yemaya Belt",
   }

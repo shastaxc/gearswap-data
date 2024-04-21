@@ -450,13 +450,13 @@ function init_gear_sets()
     -- 231 AGI, 85 STP, 403 racc/298 ratt <5 crit> {17 PDL} (68 Recycle) [31 PDT/21 MDT, 595 M.Eva]
   })
   sets.midcast.RA.MidAcc = set_combine(sets.midcast.RA.LowAcc, {
-    ring1="Hajduk Ring +1",           -- __, __, 17/__ <__> {_} (__) [__/__, ___]
+    ring1="Cacoethic Ring +1",        -- 10, __, 16/__ <__> {_} (__) [__/__, ___]
     waist="Kwahu Kachina Belt +1",    --  8, __, 20/__ < 5> {_} (__) [__/__, ___]
-    -- 222 AGI, 81 STP, 430 racc/263 ratt <10 crit> {17 PDL} (58 Recycle) [31 PDT/21 MDT, 595 M.Eva]
+    -- 232 AGI, 81 STP, 429 racc/263 ratt <10 crit> {17 PDL} (58 Recycle) [31 PDT/21 MDT, 595 M.Eva]
   })
   sets.midcast.RA.HighAcc = set_combine(sets.midcast.RA.MidAcc, {
     body="Chasseur's Frac +3",        -- 49, __, 64/74 <__> {_} (__) [13/13, 119]
-    -- 232 AGI, 70 STP, 439 racc/267 ratt <5 crit> {10 PDL} (68 Recycle) [44 PDT/34 MDT, 602 M.Eva]
+    -- 242 AGI, 70 STP, 438 racc/267 ratt <5 crit> {10 PDL} (68 Recycle) [44 PDT/34 MDT, 602 M.Eva]
   })
   
   sets.midcast.RA.Safe = {
@@ -752,7 +752,7 @@ function init_gear_sets()
     neck="Iskur Gorget",
     ear1="Beyla Earring",
     ear2="Telos Earring",
-    ring2="Hajduk Ring +1",
+    ring1="Cacoethic Ring +1",
     waist="K. Kachina Belt +1",
   })
   sets.precast.WS['Last Stand'].HighAccMaxTP = set_combine(sets.precast.WS['Last Stand'].HighAcc, {
