@@ -131,15 +131,15 @@ gs c bind               Sets keybinds again. Sometimes they don't all get set wh
 Recommended In-game Macros
 -------------------------------------------------------------------------------------------------------------------
 __Keybind___Name____________________Command_____________
-[ CTRL+1 ] Snake Eye                       /ja "Snake Eye" <me>
-[ CTRL+2 ] Fold                            /ja "Fold" <me>
-[ CTRL+3 ] Crooked Cards                   /ja "Crooked Cards" <me>
-[ CTRL+9 ] Wild Cards                      /ja "Wild Card" <me>
-[ ALT+1 ]  Roll1                           /console roller roll roll1
-[ ALT+2 ]  Roll2                           /console roller roll roll2
-[ ALT+3 ]  QD                              /console gs c qd main t
-[ ALT+4 ]  QD2                             /console gs c qd alt t
-[ ALT+9 ]  Cutting Cards                   /ja "Cutting Cards" <stpc>
+[ CTRL+1 ] Snake Eye            /ja "Snake Eye" <me>
+[ CTRL+2 ] Fold                 /ja "Fold" <me>
+[ CTRL+3 ] Crooked Cards        /ja "Crooked Cards" <me>
+[ CTRL+9 ] Wild Cards           /ja "Wild Card" <me>
+[ ALT+1 ]  Roll1                /console roller roll roll1
+[ ALT+2 ]  Roll2                /console roller roll roll2
+[ ALT+3 ]  QD                   /console gs c qd main t
+[ ALT+4 ]  QD2                  /console gs c qd alt t
+[ ALT+9 ]  Cutting Cards        /ja "Cutting Cards" <stpc>
 
 ]]--
 
