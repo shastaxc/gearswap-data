@@ -48,6 +48,13 @@ Abilities
 * While you have a luopan summoned, you will be forced into variant "Pet" sets when idle. This means generally no
   movement speed gear. Remember to dismiss your luopan when you're not using it.
 
+Spells
+* It is expected that you will update your macros as needed based on the players in your party and buffs required.
+  There are two "Geo" macros and two "Indi" macros available for this purpose so you always have a main and backup
+  option for each one, and you can set them before a fight if you know the game plan.
+* The TagCure and Entrust macros have player names hardcoded in them. Make sure you update those whenever players
+  in your party change.
+
 Other
 * If you are not using my reorganizer addon, remove all the sets.org sets (including in character global file).
 * I generally plan out best-in-slot (BiS) pieces for each set even before I acquire the pieces. These BiS pieces are
