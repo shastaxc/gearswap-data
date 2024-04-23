@@ -54,18 +54,18 @@ Keybinds
   send_command('bind ^` input /ja "Mana Wall" <me>')
 
 Modes:
-  [ F9 ]              Cycle Melee Accuracy Modes
-  [ CTRL+F9 ]         Cycle Melee Defense Modes
-  [ F10 ]             Emergency -PDT Mode
-  [ ALT+F10 ]         Toggle Kiting Mode (on = move speed gear always equipped)
-  [ F11 ]             Emergency -MDT Mode
-  [ F12 ]             Update Current Gear / Report Current Status
-  [ CTRL+F12 ]        Cycle Idle Modes
+  [ F9 ]              Cycle Melee Accuracy
+  [ CTRL+F9 ]         Cycle Melee Defense
+  [ F10 ]             Toggle Emergency -PDT
+  [ ALT+F10 ]         Toggle Kiting (on = move speed gear always equipped)
+  [ F11 ]             Toggle Emergency -MDT
+  [ F12 ]             Report current status
+  [ CTRL+F12 ]        Cycle Idle modes
   [ ALT+F12 ]         Cancel Emergency -PDT/-MDT Mode
   [ WIN+C ]           Toggle Capacity Points Mode
-  [ CTRL+PageUp ]     Cycle ElementalMode
-  [ CTRL+PageDown ]   Cycleback ElementalMode
-  [ ALT+PageDown ]    Reset ElementalMode
+  [ CTRL+PageUp ]     Cycle Elemental Mode
+  [ CTRL+PageDown ]   Cycleback Elemental Mode
+  [ ALT+PageDown ]    Reset to default Elemental Mode
 
 Weapons:
   [ CTRL+Insert ]     Cycle Weapon Sets
@@ -77,34 +77,34 @@ Spells:
   [ ALT+W ]           Highest available tier nuke
   [ ALT+Z ]           Highest available -ga nuke
   [ ALT+X ]           -ja nuke
-
-Abilities:
-  [ CTRL+` ]          Mana Wall
-
-Subjob:
-== SCH ==
-  [ ALT+` ]           Sublimation
+  ============ /SCH ============
   [ ALT+C ]           Storm
   [ ALT+/ ]           Klimaform
-  [ CTRL+- ]          Light Arts/Addendum: White
-  [ CTRL+= ]          Dark Arts/Addendum: Black
-  [ CTRL+[ ]          Rapture/Ebullience
-  [ CTRL+\ ]          Penury/Parsimony
-  [ ALT+[ ]           Accession/Manifestation
-  [ ALT+\ ]           Celerity/Alacrity
-== RDM ==
-  [ ALT+` ]           Convert
+  ============ /RDM ============
   [ ALT+E ]           Haste
   [ ALT+U ]           Blink
   [ ALT+I ]           Stoneskin
   [ ALT+O ]           Phalanx
   [ ALT+P ]           Aquaveil
   [ ALT+' ]           Refresh
-== WHM ==
+  ============ /WHM ============
   [ ALT+E ]           Haste
   [ ALT+U ]           Blink
   [ ALT+I ]           Stoneskin
   [ ALT+P ]           Aquaveil
+
+Abilities:
+  [ CTRL+` ]          Mana Wall
+  ============ /SCH ============
+  [ ALT+` ]           Sublimation
+  [ CTRL+- ]          Light Arts/Addendum: White
+  [ CTRL+= ]          Dark Arts/Addendum: Black
+  [ CTRL+[ ]          Rapture/Ebullience
+  [ CTRL+\ ]          Penury/Parsimony
+  [ ALT+[ ]           Accession/Manifestation
+  [ ALT+\ ]           Celerity/Alacrity
+  ============ /RDM ============
+  [ ALT+` ]           Convert
 
 SilverLibs keybinds:
   [ ALT+D ]           Interact

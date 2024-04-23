@@ -47,22 +47,23 @@ Keybinds
 -------------------------------------------------------------------------------------------------------------------
 
 Modes:
-  [ F9 ]              Cycle Melee Accuracy Modes
-  [ CTRL+F9 ]         Cycle Melee Defense Modes
-  [ ALT+F9 ]          Cycle Ranged Accuracy Modes
-  [ F10 ]             Emergency -PDT Mode
-  [ ALT+F10 ]         Toggle Kiting Mode (on = move speed gear always equipped)
-  [ F11 ]             Emergency -MDT Mode
-  [ F12 ]             Update Current Gear / Report Current Status
-  [ CTRL+F12 ]        Cycle Idle Modes
+  [ F9 ]              Cycle Melee Accuracy
+  [ CTRL+F9 ]         Cycle Melee Defense
+  [ ALT+F9 ]          Cycle Ranged Accuracy
+  [ F10 ]             Toggle Emergency -PDT
+  [ ALT+F10 ]         Toggle Kiting (on = move speed gear always equipped)
+  [ F11 ]             Toggle Emergency -MDT
+  [ F12 ]             Report current status
+  [ CTRL+F12 ]        Cycle Idle modes
   [ ALT+F12 ]         Cancel Emergency -PDT/-MDT Mode
   [ WIN+C ]           Toggle Capacity Points Mode
-  [ CTRL+- ]          Quick Draw primary shot element cycle forward.
-  [ CTRL+= ]          Quick Draw primary shot element cycle backward.
-  [ ALT+- ]           Quick Draw secondary shot element cycle forward.
-  [ ALT+= ]           Quick Draw secondary shot element cycle backward.
-  [ CTRL+\ ]          Quick Draw mode cycle (affects gear equipped for QD)
-  [ WIN+` ]           Toggle use of Luzaf Ring for Phantom Roll.
+  [ CTRL+- ]          Cycle Quick Draw primary shot element
+  [ CTRL+= ]          Cycleback Quick Draw primary shot element
+  [ ALT+- ]           Cycle Quick Draw secondary shot element
+  [ ALT+= ]           Cycleback Quick Draw secondary shot element
+  [ CTRL+\ ]          Cycle Quick Draw mode cycle (affects gear equipped for QD)
+  [ WIN+` ]           Toggle Luzaf Ring for Phantom Roll
+  [ CTRL+/ ]          Toggle RA Crit mode
 
 Weapons:
   [ CTRL+Insert ]     Cycle Weapon Sets
@@ -72,30 +73,29 @@ Weapons:
   [ CTRL+PageDown ]   Cycleback Toy Weapon Sets
   [ ALT+PageDown ]    Reset to default Toy Weapon Set
 
+Spells:
+  ============ /NIN ============
+  [ Numpad0 ]         Utsusemi: Ichi
+  [ Numpad. ]         Utsusemi: Ni
+
 Abilities:
   [ ALT+` ]           Bolter's Roll
   [ ALT+Q ]           Double-Up
   [ ALT+E ]           Random Deal
   [ CTRL+NumLock ]    Triple Shot
-
-RA:
-  [ Numpad0 ]         Ranged Attack
-  [ CTRL+/ ]          Toggle RA Crit mode
-
-Subjob:
-== WAR ==
+  ============ /WAR ============
   [ ALT+W ]           Defender
   [ CTRL+Numpad/ ]    Berserk
   [ CTRL+Numpad* ]    Warcry
   [ CTRL+Numpad- ]    Aggressor
-== NIN ==
-  [ Numpad0 ]         Utsusemi: Ichi
-  [ Numpad. ]         Utsusemi: Ni
-== DRG ==
+  ============ /DRG ============
   [ ALT+W ]           Ancient Circle
   [ CTRL+Numpad/ ]    Jump
   [ CTRL+Numpad* ]    High Jump
   [ CTRL+Numpad- ]    Super Jump
+
+Other:
+  [ Numpad0 ]         Ranged Attack
 
 SilverLibs keybinds:
   [ ALT+D ]           Interact
