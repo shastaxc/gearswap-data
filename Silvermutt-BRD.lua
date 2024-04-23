@@ -1,62 +1,67 @@
--- File Status: Ok. Sets are outdated since Sortie release. Never actually used this lua, more hypothetical than practical.
+--[[
+File Status: Ok. Sets are outdated since Sortie release. Never actually used this lua, more hypothetical than practical.
 
--- Author: Silvermutt
--- Required external libraries: SilverLibs
--- Required addons: HasteInfo
--- Recommended addons: WSBinder, Reorganizer
--- Misc Recommendations: Disable GearInfo, disable RollTracker
+Author: Silvermutt
+Required external libraries: SilverLibs
+Required addons: HasteInfo
+Recommended addons: WSBinder, Reorganizer
+Misc Recommendations: Disable GearInfo, disable RollTracker
+
 
 -------------------------------------------------------------------------------------------------------------------
---  Keybinds
+Keybinds
 -------------------------------------------------------------------------------------------------------------------
 
---  Modes:      [ F9 ]              Cycle Offense Mode
---              [ CTRL+F9 ]         Cycle Hybrid Modes
---              [ WIN+F9 ]          Cycle Weapon Skill Modes
---              [ F10 ]             Emergency -PDT Mode
---              [ ALT+F10 ]         Toggle Kiting Mode
---              [ F11 ]             Emergency -MDT Mode
---              [ CTRL+F11 ]        Cycle Casting Modes
---              [ F12 ]             Update Current Gear / Report Current Status
---              [ CTRL+F12 ]        Cycle Idle Modes
---              [ ALT+F12 ]         Cancel Emergency -PDT/-MDT Mode
---              [ WIN+C ]           Toggle Capacity Points Mode
---              [ CTRL+B ]          Toggle Battle Mode
---              [ CTRL+Delete ]     Weapon Weapons
---              [ CTRL+Insert ]     Cycleback Weapons
---
---  Abilities:  [ CTRL+` ]          Cycle SongMode
---
---  Songs:      [ ALT+` ]           Chocobo Mazurka
---              [ WIN+, ]           Utsusemi: Ichi
---              [ WIN+. ]           Utsusemi: Ni
---
---  Weapons:    [ CTRL+W ]          Toggles Weapon Lock
---
---
---              (Global-Binds.lua contains additional non-job-related keybinds)
+Modes:      [ F9 ]              Cycle Offense Mode
+            [ CTRL+F9 ]         Cycle Hybrid Modes
+            [ WIN+F9 ]          Cycle Weapon Skill Modes
+            [ F10 ]             Emergency -PDT Mode
+            [ ALT+F10 ]         Toggle Kiting Mode
+            [ F11 ]             Emergency -MDT Mode
+            [ CTRL+F11 ]        Cycle Casting Modes
+            [ F12 ]             Update Current Gear / Report Current Status
+            [ CTRL+F12 ]        Cycle Idle Modes
+            [ ALT+F12 ]         Cancel Emergency -PDT/-MDT Mode
+            [ WIN+C ]           Toggle Capacity Points Mode
+            [ CTRL+B ]          Toggle Battle Mode
+            [ CTRL+Delete ]     Weapon Weapons
+            [ CTRL+Insert ]     Cycleback Weapons
 
+Abilities:  [ CTRL+` ]          Cycle SongMode
+
+Songs:      [ ALT+` ]           Chocobo Mazurka
+            [ WIN+, ]           Utsusemi: Ichi
+            [ WIN+. ]           Utsusemi: Ni
+
+Weapons:    [ CTRL+W ]          Toggles Weapon Lock
+
+
+(Global-Binds.lua contains additional non-job-related keybinds)
+
+
+-------------------------------------------------------------------------------------------------------------------
+Custom Commands (preface with /console to use these in macros)
+-------------------------------------------------------------------------------------------------------------------
+Custom commands:
+
+You can set these via the standard 'set' and 'cycle' self-commands.  EG:
+gs c cycle SongMode
+gs c set SongMode Placeholder
+
+The Placeholder state will equip the bonus song instrument and ensure non-duration gear is equipped.
+
+Simple macro to cast a placeholder Daurdabla song:
+/console gs c set SongMode Placeholder
+/ma "Shining Fantasia" <me>
+
+To use a Terpander rather than Daurdabla, set the info.ExtraSongInstrument variable to
+'Terpander', and info.ExtraSongs to 1.
+
+]]--
 
 -------------------------------------------------------------------------------------------------------------------
 -- Setup functions for this job.  Generally should not be modified.
 -------------------------------------------------------------------------------------------------------------------
-
---[[
-  Custom commands:
-
-  You can set these via the standard 'set' and 'cycle' self-commands.  EG:
-  gs c cycle SongMode
-  gs c set SongMode Placeholder
-
-  The Placeholder state will equip the bonus song instrument and ensure non-duration gear is equipped.
-
-  Simple macro to cast a placeholder Daurdabla song:
-  /console gs c set SongMode Placeholder
-  /ma "Shining Fantasia" <me>
-
-  To use a Terpander rather than Daurdabla, set the info.ExtraSongInstrument variable to
-  'Terpander', and info.ExtraSongs to 1.
---]]
 
 -- Initialization function for this job file.
 function get_sets()

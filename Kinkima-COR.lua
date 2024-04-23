@@ -1,100 +1,13 @@
--- File Status: Good. Silvermutt's COR is better. Need to update sets with empy+3.
+--[[
+File Status: Ok. Silvermutt's COR is better.
 
--- Author: Silvermutt
--- Required external libraries: SilverLibs
--- Required addons: HasteInfo, DistancePlus
--- Recommended addons: WSBinder, Reorganizer
--- Misc Recommendations: Disable GearInfo, disable RollTracker
+Author: Silvermutt
+Required external libraries: SilverLibs
+Required addons: HasteInfo, DistancePlus
+Recommended addons: WSBinder, Reorganizer
+Misc Recommendations: Disable GearInfo, disable RollTracker
 
--------------------------------------------------------------------------------------------------------------------
---  Keybinds
--------------------------------------------------------------------------------------------------------------------
-
---  Modes:      [ F9 ]              Cycle Melee Accuracy Modes
---              [ CTRL+F9 ]         Cycle Melee Defense Modes
---              [ ALT+F9 ]          Cycle Ranged Accuracy Modes
---              [ F10 ]             Emergency -PDT Mode
---              [ ALT+F10 ]         Toggle Kiting Mode (on = move speed gear always equipped)
---              [ F11 ]             Emergency -MDT Mode
---              [ F12 ]             Update Current Gear / Report Current Status
---              [ CTRL+F12 ]        Cycle Idle Modes
---              [ ALT+F12 ]         Cancel Emergency -PDT/-MDT Mode
---              [ WIN+C ]           Toggle Capacity Points Mode
---
---  Weapons:    [ CTRL+Insert ]     Cycle Weapon Sets
---              [ CTRL+Delete ]     Cycleback Weapon Sets
---              [ ALT+Delete ]      Reset to default Weapon Set
---              [ CTRL+PageUp ]     Cycle Toy Weapon Sets
---              [ CTRL+PageDown ]   Cycleback Toy Weapon Sets
---              [ ALT+PageDown ]    Reset to default Toy Weapon Set
---
---  Abilities:  [ CTRL+- ]          Quick Draw primary shot element cycle forward.
---              [ CTRL+= ]          Quick Draw primary shot element cycle backward.
---              [ ALT+- ]           Quick Draw secondary shot element cycle forward.
---              [ ALT+= ]           Quick Draw secondary shot element cycle backward.
---              [ CTRL+\ ]          Quick Draw mode cycle (affects gear equipped for QD)
---              [ WIN+` ]           Toggle use of Luzaf Ring for Phantom Roll.
---              [ ALT+` ]           Bolter's Roll
---              [ ALT+Q ]           Double-Up
---              [ ALT+E ]           Random Deal
---              [ CTRL+NumLock ]    Triple Shot
---
---  RA:         [ Numpad0 ]         Ranged Attack
---              [ CTRL+/ ]          Toggle RA Crit mode
-
---  Subjob:     == WAR ==
---              [ ALT+W ]           Defender
---              [ CTRL+Numpad/ ]    Berserk
---              [ CTRL+Numpad* ]    Warcry
---              [ CTRL+Numpad- ]    Aggressor
---              == NIN ==
---              [ Numpad0 ]         Utsusemi: Ichi
---              [ Numpad. ]         Utsusemi: Ni
---              == DRG ==
---              [ ALT+W ]           Ancient Circle
---              [ CTRL+Numpad/ ]    Jump
---              [ CTRL+Numpad* ]    High Jump
---              [ CTRL+Numpad- ]    Super Jump
--- 
---  SilverLibs keybinds:
---              [ ALT+D ]           Interact
---              [ ALT+S ]           Turn 180 degrees in place
---              [ WIN+W ]           Toggle Rearming Lock
---                                  (off = re-equip previous weapons if you go barehanded)
---                                  (on = prevent weapon auto-equipping)
---              [ CTRL+` ]          Cycle Treasure Hunter Mode
---  For more info and available functions, see SilverLibs documentation at:
---  https://github.com/shastaxc/silver-libs
---
---  Global-Binds.lua contains additional non-job-related keybinds
-
-
--------------------------------------------------------------------------------------------------------------------
---  Custom Commands (preface with /console to use these in macros)
--------------------------------------------------------------------------------------------------------------------
-
---  gs c qd                         Uses the currently-selected primary Quick Draw shot on current target <t>.
---  gs c qd main                    Same as above
---  gs c qd main t                  Same as above
---  gs c qd main stnpc              Uses the currently-selected primary Quick Draw shot on select target <stnpc>.
---  gs c qd alt                     Uses the currently-selected alternate Quick Draw shot on current target <t>.
---  gs c qd alt t                   Same as above
---  gs c qd alt stnpc               Uses the currently-selected alternate Quick Draw shot on select target <stnpc>.
---  (More commands available through SilverLibs)
-
-
--------------------------------------------------------------------------------------------------------------------
---  Recommended In-game Macros
--------------------------------------------------------------------------------------------------------------------
---  Snake Eye                       /ja "Snake Eye" <me>
---  Fold                            /ja "Fold" <me>
---  Crooked Cards                   /ja "Crooked Cards" <me>
---  Roll1                           TODO
---  Roll2                           TODO
---  QD                              /console gs c qd main t
---  QD2                             /console gs c qd alt t
---  Wild Cards                      /ja "Wild Card" <me>
---  Cutting Cards                   /ja "Cutting Cards" <stpc>
+]]--
 
 -------------------------------------------------------------------------------------------------------------------
 -- Setup functions for this job.  Generally should not be modified.

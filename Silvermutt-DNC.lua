@@ -1,9 +1,10 @@
--- File Status: Good. Acc modes for engaged sets are outdated.
+-- File Status: Good.
+-- TODO: Acc modes for engaged sets are outdated.
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs
 -- Required addons: HasteInfo, DistancePlus
--- Recommended addons: Metronome, WSBinder, Reorganizer
+-- Recommended addons: WSBinder, Reorganizer, Metronome
 -- Misc Recommendations: Disable GearInfo, disable RollTracker
 
 -------------------------------------------------------------------------------------------------------------------

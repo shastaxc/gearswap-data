@@ -1,10 +1,13 @@
--- File Status: Ok. Silvermutt's THF is better.
+--[[
+File Status: Ok. Silvermutt's THF is better.
 
--- Author: Silvermutt
--- Required external libraries: SilverLibs
--- Required addons: HasteInfo
--- Recommended addons: WSBinder, Reorganizer
--- Misc Recommendations: Disable GearInfo, disable RollTracker
+Author: Silvermutt
+Required external libraries: SilverLibs
+Required addons: HasteInfo
+Recommended addons: WSBinder, Reorganizer
+Misc Recommendations: Disable GearInfo, disable RollTracker
+
+]]--
 
 -------------------------------------------------------------------------------------------------------------------
 --  Keybinds

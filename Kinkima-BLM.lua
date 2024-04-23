@@ -3,7 +3,8 @@ File Status: Good.
 
 Author: Silvermutt
 Required external libraries: SilverLibs
-Recommended addons: WSBinder, Reorganizer, PartyBuffs, Debuffed
+Required addons: N/A
+Recommended addons: WSBinder, Reorganizer, PartyBuffs, Debuffed, Shortcuts
 Misc Recommendations: Disable RollTracker
 
 -------------------------------------------------------------------------------------------------------------------
@@ -35,6 +36,14 @@ Abilities
 
 Other
 * If you are not using my reorganizer addon, remove all the sets.org sets (including in character global file).
+* I generally plan out best-in-slot (BiS) pieces for each set even before I acquire the pieces. These BiS pieces are
+  left commented out in the set, while placeholders that I do have in the meantime are uncommented for that slot.
+* I like to list out the important stats for each piece of item in most of my sets, and then have a total at
+  the bottom of the set. If you ever change any pieces of gear, you should recalculate the stats for the new piece
+  and then recalculate for the set total, or just remove those stat comments entirely to avoid confusion. However,
+  if you choose to ignore them, it doesn't not actually affect anything.
+* Equipping certain gear such as warp rings or ammo belts will automatically lock that slot until you manually
+  unequip it or change zones.
 
 
 -------------------------------------------------------------------------------------------------------------------

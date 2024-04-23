@@ -3,9 +3,9 @@
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs
--- Required addons: Shortcuts
--- Recommended addons: WSBinder, Reorganizer
--- Misc Recommendations: Disable RollTracker
+-- Required addons: N/A
+-- Recommended addons: WSBinder, Reorganizer, Shortcuts
+-- Misc Recommendations: Disable GearInfo, disable RollTracker
 
 -------------------------------------------------------------------------------------------------------------------
 -- Setup functions for this job.  Generally should not be modified.

@@ -1,9 +1,10 @@
--- File Status: Good. Need to update sets with empy+3.
+-- File Status: Good.
+-- TODO: Need to update sets with empy+3.
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs
--- Required addons: Shortcuts
--- Recommended addons: WSBinder, Reorganizer, PartyBuffs
+-- Required addons: N/A
+-- Recommended addons: WSBinder, Reorganizer, PartyBuffs, Shortcuts
 -- Misc Recommendations: Disable RollTracker
 
 -- Initialization function for this job file.

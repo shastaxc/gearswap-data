@@ -1,10 +1,11 @@
 --[[
-File Status: Good. Need to update sets with empy+3. Engaged DT sets need updating.
+File Status: Good.
+TODO: Need to update sets with empy+3. Engaged DT sets need updating.
 
 Author: Silvermutt
 Required external libraries: SilverLibs
 Required addons: HasteInfo
-Recommended addons: WSBinder, Reorganizer
+Recommended addons: WSBinder, Reorganizer, AzureSets
 Misc Recommendations: Disable GearInfo, disable RollTracker
 
 -------------------------------------------------------------------------------------------------------------------
@@ -44,11 +45,20 @@ Weapons
   * Memorize the keybind to turn it off in case you toggle it by accident.
 
 Spells
+* Spell sets are managed in the AzureSets addon.
 * Your BLU spells have been categorized by function (for example: Physical STR-based, Magical DEX-based, Refresh, etc)
   so that you can create sets by category instead of having to specify a set for every individual spell.
 
 Other
 * If you are not using my reorganizer addon, remove all the sets.org sets (including in character global file).
+* I generally plan out best-in-slot (BiS) pieces for each set even before I acquire the pieces. These BiS pieces are
+  left commented out in the set, while placeholders that I do have in the meantime are uncommented for that slot.
+* I like to list out the important stats for each piece of item in most of my sets, and then have a total at
+  the bottom of the set. If you ever change any pieces of gear, you should recalculate the stats for the new piece
+  and then recalculate for the set total, or just remove those stat comments entirely to avoid confusion. However,
+  if you choose to ignore them, it doesn't not actually affect anything.
+* Equipping certain gear such as warp rings or ammo belts will automatically lock that slot until you manually
+  unequip it or change zones.
 
 
 -------------------------------------------------------------------------------------------------------------------
@@ -151,7 +161,7 @@ __Keybind___Name____________________Command_____________
 ]]--
 
 
---------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------
 -- Setup functions for this job.  Generally should not be modified.
 -------------------------------------------------------------------------------------------------------------------
 

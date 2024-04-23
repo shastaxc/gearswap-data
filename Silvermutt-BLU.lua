@@ -1,54 +1,13 @@
--- File Status: Good. Kinkima's BLU is better. Need to update sets with empy+3.
+--[[
+File Status: Ok. Kinkima's BLU is better.
 
--- Author: Silvermutt
--- Required external libraries: SilverLibs
--- Required addons: HasteInfo
--- Recommended addons: WSBinder, Reorganizer
--- Misc Recommendations: Disable GearInfo, disable RollTracker
+Author: Silvermutt
+Required external libraries: SilverLibs
+Required addons: HasteInfo
+Recommended addons: WSBinder, Reorganizer, AzureSets
+Misc Recommendations: Disable GearInfo, disable RollTracker
 
--------------------------------------------------------------------------------------------------------------------
---  Keybinds
--------------------------------------------------------------------------------------------------------------------
-
---  Modes:      [ F9 ]              Cycle Offense Modes
---              [ CTRL+F9 ]         Cycle Hybrid Modes
---              [ WIN+F9 ]          Cycle Weapon Skill Modes
---              [ F10 ]             Emergency -PDT Mode
---              [ ALT+F10 ]         Toggle Kiting Mode
---              [ F11 ]             Emergency -MDT Mode
---              [ F12 ]             Update Current Gear / Report Current Status
---              [ CTRL+F12 ]        Cycle Idle Modes
---              [ ALT+F12 ]         Cancel Emergency -PDT/-MDT Mode
---              [ WIN+C ]           Toggle Capacity Points Mode
---
---  Abilities:  [ CTRL+- ]          Chain Affinity
---              [ CTRL+= ]          Burst Affinity
---              [ CTRL+[ ]          Efflux
---              [ ALT+[ ]           Diffusion
---              [ ALT+] ]           Unbridled Learning
---              [ CTRL+Numpad/ ]    Berserk
---              [ CTRL+Numpad* ]    Warcry
---              [ CTRL+Numpad- ]    Aggressor
---
---  Spells:     [ CTRL+` ]          Blank Gaze
---              [ ALT+Q ]            Nature's Meditation/Fantod
---              [ ALT+W ]           Cocoon/Reactor Cool
---              [ ALT+E ]           Erratic Flutter
---              [ ALT+R ]           Battery Charge/Refresh
---              [ ALT+T ]           Occultation
---              [ ALT+Y ]           Barrier Tusk/Phalanx
---              [ ALT+U ]           Diamondhide/Stoneskin
---              [ ALT+P ]           Mighty Guard/Carcharian Verve
---              [ WIN+, ]           Utsusemi: Ichi
---              [ WIN+. ]           Utsusemi: Ni
---
---  WS:         [ CTRL+Numpad7 ]    Savage Blade
---              [ CTRL+Numpad9 ]    Chant Du Cygne
---              [ CTRL+Numpad4 ]    Requiescat
---              [ CTRL+Numpad5 ]    Expiacion
---
---
---              (Global-Binds.lua contains additional non-job-related keybinds)
+]]--
 
 
 --------------------------------------------------------------------------------------------------------------------

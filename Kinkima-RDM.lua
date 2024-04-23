@@ -2,7 +2,8 @@
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs
--- Recommended addons: WSBinder, Reorganizer, PartyBuffs, Debuffed
+-- Required addons: N/A
+-- Recommended addons: WSBinder, Reorganizer, PartyBuffs, Debuffed, Shortcuts
 -- Misc Recommendations: Disable RollTracker
 
 -- Initialization function for this job file.
