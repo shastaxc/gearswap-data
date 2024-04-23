@@ -25,6 +25,10 @@ Weapons
 * Update the "Bullet" configs in the "job_setup" function to match bullets you intend to use for these purposes.
   * You must have RAbullet at the very least. The default is Chrono Bullet. If you don't have access to that type
     of bullet, change it to something you do have.
+* If you enable one of the ToyWeapons modes, it will lock your weapons into low level weapons. This can be
+  useful if you are intentionally trying not to kill something, like low level enemies where you may need
+  to proc them with a WS without killing them. This overrides all other weapon modes and weapon equip logic.
+  * Memorize the keybind to turn it off in case you toggle it by accident.
 
 Abilities
 * Phantom Roll: Gear will automatically swap when you roll, and will use what's in sets.precast.CorsairRoll.

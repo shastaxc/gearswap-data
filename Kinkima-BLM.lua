@@ -41,18 +41,6 @@ Other
 Keybinds
 -------------------------------------------------------------------------------------------------------------------
 
-  send_command('bind ^insert gs c weaponset cycle')
-  send_command('bind ^delete gs c weaponset cycleback')
-  send_command('bind !delete gs c weaponset reset')
-
-  send_command('bind !q gs c elemental tier3')
-  send_command('bind !w gs c elemental tier')
-  
-  send_command('bind !z gs c elemental ga')
-  send_command('bind !x gs c elemental ja')
-
-  send_command('bind ^` input /ja "Mana Wall" <me>')
-
 Modes:
   [ F9 ]              Cycle Melee Accuracy
   [ CTRL+F9 ]         Cycle Melee Defense
@@ -66,6 +54,7 @@ Modes:
   [ CTRL+PageUp ]     Cycle Elemental Mode
   [ CTRL+PageDown ]   Cycleback Elemental Mode
   [ ALT+PageDown ]    Reset to default Elemental Mode
+  [ ALT+` ]           Toggle Magic Burst mode
 
 Weapons:
   [ CTRL+Insert ]     Cycle Weapon Sets

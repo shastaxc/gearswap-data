@@ -1,54 +1,154 @@
--- File Status: Good. Need to update sets with empy+3. Engaged DT sets need updating.
+--[[
+File Status: Good. Need to update sets with empy+3. Engaged DT sets need updating.
 
--- Author: Silvermutt
--- Required external libraries: SilverLibs
--- Required addons: HasteInfo
--- Recommended addons: WSBinder, Reorganizer
--- Misc Recommendations: Disable GearInfo, disable RollTracker
+Author: Silvermutt
+Required external libraries: SilverLibs
+Required addons: HasteInfo
+Recommended addons: WSBinder, Reorganizer
+Misc Recommendations: Disable GearInfo, disable RollTracker
 
 -------------------------------------------------------------------------------------------------------------------
---  Keybinds
+General Use Tips
+-------------------------------------------------------------------------------------------------------------------
+Modes
+* Offense Mode: Changes melee accuracy level
+* Casting Mode: Changes casting type
+  * Resistant: Allows you to make high magic accuracy set variants for higher level mobs who may resist more frequently
+* Hybrid Mode: Changes damage taken level while engaged
+* Idle Mode
+  * Normal: Puts you into Refresh and Regen gear when low on MP or HP
+  * Evasion: Puts on high evasion idle set (good for large AoE pulls while trying to blink tank)
+  * DT: Damage reduction set, also reduces your own damage output
+* Defense Mode: Equips super high emergency damage reduction set, greatly reduces your DPS output
+* Magic Burst Mode: Toggle Magic Burst mode on or off. If on, when casting magic-aligned BLU spells, will
+    use special MB set to deal more damage. You are expected to know when your spell is going to MB or not, and
+    toggle this mode manually as needed. Good rule of thumb is to leave it on when in a party doing planned skillchains
+    and off otherwise.
+* Learning: This forces your JSE Artifact hands to remain equipped through all actions and never swaps off of it. This
+  is useful when trying to learn BLU spells from enemies because it greatly increases the learning chance.
+* AttCapped: When on, if you have AttCapped set variants for your weaponskills, it will use that. This mode is
+  intended to be used when you think you are attack capped vs your enemy such as when you have a lot of Attack buffs
+  from BRD, COR, GEO, etc.
+
+Weapons
+* Use keybinds to cycle weapons if you need to lock into a specific weapon set to conserve TP.
+  * The default "Casting" weapon set will switch weapons for precast and midcast when casting spells
+    in order to cast spells faster and for more damage. Changing to a different weapon set will
+    reduce your magic damage output but allow you to do weaponskills without casting spells dropping
+    your TP.
+* If you want different weapon sets, edit the sets.WeaponSet sets.
+  * Additional weapon sets can be created but you need to also add them to the state.WeaponSet cycle.
+* If you enable one of the ToyWeapons modes, it will lock your weapons into low level weapons. This can be
+  useful if you are intentionally trying not to kill something, like low level enemies where you may need
+  to proc them with a WS without killing them. This overrides all other weapon modes and weapon equip logic.
+  * Memorize the keybind to turn it off in case you toggle it by accident.
+
+Spells
+* Your BLU spells have been categorized by function (for example: Physical STR-based, Magical DEX-based, Refresh, etc)
+  so that you can create sets by category instead of having to specify a set for every individual spell.
+
+Other
+* If you are not using my reorganizer addon, remove all the sets.org sets (including in character global file).
+
+
+-------------------------------------------------------------------------------------------------------------------
+Keybinds
 -------------------------------------------------------------------------------------------------------------------
 
---  Modes:      [ F9 ]              Cycle Offense Modes
---              [ CTRL+F9 ]         Cycle Hybrid Modes
---              [ WIN+F9 ]          Cycle Weapon Skill Modes
---              [ F10 ]             Emergency -PDT Mode
---              [ ALT+F10 ]         Toggle Kiting Mode
---              [ F11 ]             Emergency -MDT Mode
---              [ F12 ]             Update Current Gear / Report Current Status
---              [ CTRL+F12 ]        Cycle Idle Modes
---              [ ALT+F12 ]         Cancel Emergency -PDT/-MDT Mode
---              [ WIN+C ]           Toggle Capacity Points Mode
---
---  Abilities:  [ CTRL+- ]          Chain Affinity
---              [ CTRL+= ]          Burst Affinity
---              [ CTRL+[ ]          Efflux
---              [ ALT+[ ]           Diffusion
---              [ ALT+] ]           Unbridled Learning
---              [ CTRL+Numpad/ ]    Berserk
---              [ CTRL+Numpad* ]    Warcry
---              [ CTRL+Numpad- ]    Aggressor
---
---  Spells:     [ CTRL+` ]          Blank Gaze
---              [ ALT+Q ]            Nature's Meditation/Fantod
---              [ ALT+W ]           Cocoon/Reactor Cool
---              [ ALT+E ]           Erratic Flutter
---              [ ALT+R ]           Battery Charge/Refresh
---              [ ALT+T ]           Occultation
---              [ ALT+Y ]           Barrier Tusk/Phalanx
---              [ ALT+U ]           Diamondhide/Stoneskin
---              [ ALT+P ]           Mighty Guard/Carcharian Verve
---              [ WIN+, ]           Utsusemi: Ichi
---              [ WIN+. ]           Utsusemi: Ni
---
---  WS:         [ CTRL+Numpad7 ]    Savage Blade
---              [ CTRL+Numpad9 ]    Chant Du Cygne
---              [ CTRL+Numpad4 ]    Requiescat
---              [ CTRL+Numpad5 ]    Expiacion
---
---
---              (Global-Binds.lua contains additional non-job-related keybinds)
+Modes:
+  [ F9 ]              Cycle Melee Accuracy
+  [ CTRL+F9 ]         Cycle Melee Defense
+  [ ALT+F9 ]          Cycle Ranged Accuracy
+  [ F10 ]             Toggle Emergency -PDT
+  [ ALT+F10 ]         Toggle Kiting (on = move speed gear always equipped)
+  [ F11 ]             Toggle Emergency -MDT
+  [ F12 ]             Report current status
+  [ CTRL+F12 ]        Cycle Idle modes
+  [ ALT+F12 ]         Cancel Emergency -PDT/-MDT Mode
+  [ WIN+C ]           Toggle Capacity Points Mode
+  [ ALT+` ]           Toggle Magic Burst mode
+  [ CTRL+l ]          Toggle Learning mode
+
+Weapons:
+  [ CTRL+Insert ]     Cycle Weapon Sets
+  [ CTRL+Delete ]     Cycleback Weapon Sets
+  [ ALT+Delete ]      Reset to default Weapon Set
+  [ CTRL+PageUp ]     Cycle Toy Weapon Sets
+  [ CTRL+PageDown ]   Cycleback Toy Weapon Sets
+  [ ALT+PageDown ]    Reset to default Toy Weapon Set
+
+Spells:
+  [ ALT+W ]           Cocoon
+  [ ALT+Q ]           Occultation
+  [ ALT+E ]           Erratic Flutter
+  [ ALT+' ]           Battery Charge
+  ============ /RDM ============
+  [ ALT+I ]           Stoneskin
+  [ ALT+O ]           Phalanx
+  [ ALT+P ]           Aquaveil
+
+Abilities:
+  [ CTRL+- ]          Chain Affinity
+  [ CTRL+= ]          Burst Affinity
+  [ CTRL+[ ]          Efflux
+  [ ALT+[ ]           Diffusion
+  [ ALT+] ]           Unbridled Learning
+  ============ /WAR ============
+  [ CTRL+Numlock ]    Defender
+  [ CTRL+Numpad/ ]    Berserk
+  [ CTRL+Numpad* ]    Warcry
+  [ CTRL+Numpad- ]    Aggressor
+
+SilverLibs keybinds:
+  [ ALT+D ]           Interact
+  [ ALT+S ]           Turn 180 degrees in place
+  [ CTRL+` ]          Cycle Treasure Hunter mode
+
+For more info and available functions, see SilverLibs documentation at:
+https://github.com/shastaxc/silver-libs
+
+Global-Binds.lua contains additional non-job-related keybinds
+
+
+-------------------------------------------------------------------------------------------------------------------
+Custom Commands (preface with /console to use these in macros)
+-------------------------------------------------------------------------------------------------------------------
+gs c bind               Sets keybinds again. Sometimes they don't all get set when swapping jobs. Calling this manually fixes it.
+
+(More commands available through SilverLibs)
+
+
+-------------------------------------------------------------------------------------------------------------------
+Recommended In-game Macros
+-------------------------------------------------------------------------------------------------------------------
+Swap macro books swap based on equipped spell set.
+
+Physical DD set:
+__Keybind___Name____________________Command_____________
+[ CTRL+1 ] Nat.Med              /ma "Nat. Meditation" <me>
+[ CTRL+3 ] Saline Coat          /ma "Saline Coat" <me>
+[ CTRL+4 ] Cure4                /ma "Cure IV" <stpc>
+[ CTRL+0 ] Sleep                /ma "Dream Flower" <stnpc>
+[ ALT+2 ]  Tenebral             /ma "Tenebral Crush" <stnpc>
+[ ALT+4 ]  Dia2                 /ma "Dia II" <stnpc>
+[ ALT+8 ]  Anvil Li             /ma "Anvil Lightning" <stnpc>
+
+Mage set:
+__Keybind___Name____________________Command_____________
+[ CTRL+2 ] Magic Ha             /ma "Magic Hammer" <stnpc>
+[ CTRL+3 ] Saline Coat          /ma "Saline Coat" <me>
+[ CTRL+4 ] Cure4                /ma "Cure IV" <stpc>
+[ CTRL+7 ] Silent               /ma "Silent Storm" <stnpc>
+[ CTRL+0 ] Sleep                /ma "Dream Flower" <stnpc>
+[ ALT+1 ]  Subducti             /ma "Subduction" <stnpc>
+[ ALT+2 ]  Tenebral             /ma "Tenebral Crush" <stnpc>
+[ ALT+3 ]  Spectral             /ma "Spectral Floe" <stnpc>
+[ ALT+4 ]  Dia2                 /ma "Diaga" <stnpc>
+[ ALT+7 ]  Blinding             /ma "Blinding Fulgor" <stnpc>
+[ ALT+8 ]  Anvil Li             /ma "Anvil Lightning" <stnpc>
+[ ALT+0 ]  Erase                /ma "Erase" <me>
+
+]]--
 
 
 --------------------------------------------------------------------------------------------------------------------
@@ -95,6 +195,7 @@ function job_setup()
   state.MagicBurst = M(false, 'Magic Burst')
   state.Learning = M(false, 'Learning')
 
+  -- DO NOT MODIFY this Buff section
   state.Buff['Burst Affinity'] = buffactive['Burst Affinity'] or false
   state.Buff['Chain Affinity'] = buffactive['Chain Affinity'] or false
   state.Buff.Convergence = buffactive.Convergence or false
@@ -1684,7 +1785,6 @@ function set_main_keybinds()
   send_command('bind !q input /ma "Occultation" <me>')
   send_command('bind !e input /ma "Erratic Flutter" <me>')
   send_command('bind !\' input /ma "Battery Charge" <me>')
-  send_command('bind @w gs c toggle RearmingLock')
 
   send_command('bind ^insert gs c weaponset cycle')
   send_command('bind ^delete gs c weaponset cycleback')
@@ -1697,6 +1797,7 @@ function set_sub_keybinds()
     send_command('bind !o input /ma Phalanx <me>')
     send_command('bind !p input /ma Aquaveil <me>')
   elseif player.sub_job == 'WAR' then
+    send_command('bind ^numlock input /ja "Defender" <me>')
     send_command('bind ^numpad/ input /ja "Berserk" <me>')
     send_command('bind ^numpad* input /ja "Warcry" <me>')
     send_command('bind ^numpad- input /ja "Aggressor" <me>')
@@ -1725,8 +1826,6 @@ function unbind_keybinds()
   send_command('unbind !q')
   send_command('unbind !e')
 
-  send_command('unbind @w')
-
   send_command('unbind ^insert')
   send_command('unbind ^delete')
   send_command('unbind !delete')
@@ -1737,6 +1836,7 @@ function unbind_keybinds()
   send_command('unbind !p')
   send_command('unbind !\'')
 
+  send_command('unbind ^numlock')
   send_command('unbind ^numpad/')
   send_command('unbind ^numpad*')
   send_command('unbind ^numpad-')
