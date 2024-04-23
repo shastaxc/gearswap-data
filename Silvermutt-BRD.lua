@@ -8,10 +8,9 @@ Recommended addons: WSBinder, Reorganizer
 Misc Recommendations: Disable GearInfo, disable RollTracker
 
 
--------------------------------------------------------------------------------------------------------------------
-Keybinds
--------------------------------------------------------------------------------------------------------------------
-
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                                      Keybinds
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
 Modes:      [ F9 ]              Cycle Offense Mode
             [ CTRL+F9 ]         Cycle Hybrid Modes
             [ WIN+F9 ]          Cycle Weapon Skill Modes
@@ -35,14 +34,16 @@ Songs:      [ ALT+` ]           Chocobo Mazurka
 
 Weapons:    [ CTRL+W ]          Toggles Weapon Lock
 
+For more info and available functions, see SilverLibs documentation at:
+https://github.com/shastaxc/silver-libs
 
-(Global-Binds.lua contains additional non-job-related keybinds)
+Global-Binds.lua contains additional non-job-related keybinds.
 
 
--------------------------------------------------------------------------------------------------------------------
-Custom Commands (preface with /console to use these in macros)
--------------------------------------------------------------------------------------------------------------------
-Custom commands:
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                                  Custom Commands
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+Prepend with /console to use these in in-game macros.
 
 You can set these via the standard 'set' and 'cycle' self-commands.  EG:
 gs c cycle SongMode

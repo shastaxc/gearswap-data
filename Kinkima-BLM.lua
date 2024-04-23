@@ -7,9 +7,9 @@ Required addons: N/A
 Recommended addons: WSBinder, Reorganizer, PartyBuffs, Debuffed, Shortcuts
 Misc Recommendations: Disable RollTracker
 
--------------------------------------------------------------------------------------------------------------------
-General Use Tips
--------------------------------------------------------------------------------------------------------------------
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                                  General Use Tips
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
 Modes
 * Casting Mode: Changes casting type
   * Spaekona: Reduces MP use for elemental magic, reduces DPS slightly
@@ -46,10 +46,9 @@ Other
   unequip it or change zones.
 
 
--------------------------------------------------------------------------------------------------------------------
-Keybinds
--------------------------------------------------------------------------------------------------------------------
-
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                                      Keybinds
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
 Modes:
   [ F9 ]              Cycle Melee Accuracy
   [ CTRL+F9 ]         Cycle Melee Defense
@@ -114,12 +113,13 @@ SilverLibs keybinds:
 For more info and available functions, see SilverLibs documentation at:
 https://github.com/shastaxc/silver-libs
 
-Global-Binds.lua contains additional non-job-related keybinds
+Global-Binds.lua contains additional non-job-related keybinds.
 
 
--------------------------------------------------------------------------------------------------------------------
-Custom Commands (preface with /console to use these in macros)
--------------------------------------------------------------------------------------------------------------------
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                                  Custom Commands
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+Prepend with /console to use these in in-game macros.
 
 gs c elemental tier     Uses highest available tier single target elemental nuke corresponding to the selected element in the ElementMode.
 gs c elemental tier1    Uses tier 1 single target elemental nuke corresponding to the selected element in the ElementMode.
@@ -142,9 +142,9 @@ gs c bind               Sets keybinds again. Sometimes they don't all get set wh
 (More commands available through SilverLibs)
 
 
--------------------------------------------------------------------------------------------------------------------
-Recommended In-game Macros
--------------------------------------------------------------------------------------------------------------------
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                            Recommended In-game Macros
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
 __Keybind___Name____________________Command_____________
 [ CTRL+1 ] Sleep                /ma "Sleep II" <t>
 [ CTRL+2 ] Break                /ma "Break" <t>
