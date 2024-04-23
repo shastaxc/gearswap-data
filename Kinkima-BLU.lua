@@ -22,9 +22,9 @@ Modes
   * DT: Damage reduction set, also reduces your own damage output
 * Defense Mode: Equips super high emergency damage reduction set, greatly reduces your DPS output
 * Magic Burst Mode: Toggle Magic Burst mode on or off. If on, when casting magic-aligned BLU spells, will
-    use special MB set to deal more damage. You are expected to know when your spell is going to MB or not, and
-    toggle this mode manually as needed. Good rule of thumb is to leave it on when in a party doing planned skillchains
-    and off otherwise.
+  use special MB set to deal more damage. You are expected to know when your spell is going to MB or not, and
+  toggle this mode manually as needed. Good rule of thumb is to leave it on when in a party doing planned skillchains
+  and off otherwise.
 * Learning: This forces your JSE Artifact hands to remain equipped through all actions and never swaps off of it. This
   is useful when trying to learn BLU spells from enemies because it greatly increases the learning chance.
 * AttCapped: When on, if you have AttCapped set variants for your weaponskills, it will use that. This mode is

@@ -14,13 +14,13 @@ Modes
 * Casting Mode: Changes casting type
   * Spaekona: Reduces MP use for elemental magic, reduces DPS slightly
   * Occult: Focuses on building TP when casting elemental magic, reduces DPS greatly. Mainly for building TP for
-      WS spam. Doing this with a good Cataclysm set is generally best for sustained AoE damage.
+    WS spam. Doing this with a good Cataclysm set is generally best for sustained AoE damage.
 * Magic Burst Mode: Toggle Magic Burst mode on or off. If on, when casting elemental magic, will
-    use special MB set to deal more damage. You are expected to know when your spell is going to MB or not, and
-    toggle this mode manually as needed. Good rule of thumb is to leave it on when in a party doing planned skillchains
-    and off otherwise.
+  use special MB set to deal more damage. You are expected to know when your spell is going to MB or not, and
+  toggle this mode manually as needed. Good rule of thumb is to leave it on when in a party doing planned skillchains
+  and off otherwise.
 * Elemental Mode: Changes the focused element. The selected element is used for elemental magic keybinds, and
-    storms (if subbing SCH).
+  storms (if subbing SCH).
 * Defense Mode: Equips super high emergency damage reduction set, greatly reduces your DPS output
 
 Weapons
