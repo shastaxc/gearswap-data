@@ -1701,7 +1701,6 @@ function set_main_keybinds()
   send_command('bind !q input /ma "Occultation" <me>')
   send_command('bind !e input /ma "Erratic Flutter" <me>')
   send_command('bind !\' input /ma "Battery Charge" <me>')
-  send_command('bind @w gs c toggle RearmingLock')
 
   send_command('bind ^insert gs c weaponset cycle')
   send_command('bind ^delete gs c weaponset cycleback')
@@ -1709,11 +1708,13 @@ function set_main_keybinds()
 end
 
 function set_sub_keybinds()
-  if player.sub_job == "RDM" then
+  if player.sub_job == 'RDM' then
+    send_command('bind @` input /ja "Convert" <me>')
     send_command('bind !i input /ma Stoneskin <me>')
     send_command('bind !o input /ma Phalanx <me>')
     send_command('bind !p input /ma Aquaveil <me>')
   elseif player.sub_job == 'WAR' then
+    send_command('bind ^numlock input /ja "Defender" <me>')
     send_command('bind ^numpad/ input /ja "Berserk" <me>')
     send_command('bind ^numpad* input /ja "Warcry" <me>')
     send_command('bind ^numpad- input /ja "Aggressor" <me>')
@@ -1741,19 +1742,18 @@ function unbind_keybinds()
   send_command('unbind !]')
   send_command('unbind !q')
   send_command('unbind !e')
-
-  send_command('unbind @w')
+  send_command('unbind !\'')
 
   send_command('unbind ^insert')
   send_command('unbind ^delete')
   send_command('unbind !delete')
 
-  send_command('unbind !e')
+  send_command('unbind @`')
   send_command('unbind !i')
   send_command('unbind !o')
   send_command('unbind !p')
-  send_command('unbind !\'')
 
+  send_command('unbind ^numlock')
   send_command('unbind ^numpad/')
   send_command('unbind ^numpad*')
   send_command('unbind ^numpad-')

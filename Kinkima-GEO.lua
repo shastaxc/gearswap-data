@@ -1,11 +1,190 @@
--- File Status: Good.
--- TODO: Equip Bagua Galero in midcast for luopan if Blaze of Glory is on.
+--[[
+File Status: Good.
+TODO: Equip Bagua Galero in midcast for luopan if Blaze of Glory is on.
 
--- Author: Silvermutt
--- Required external libraries: SilverLibs
--- Required addons: N/A
--- Recommended addons: WSBinder, Reorganizer, Shortcuts
--- Misc Recommendations: Disable GearInfo, disable RollTracker
+Author: Silvermutt
+Required external libraries: SilverLibs
+Required addons: N/A
+Recommended addons: WSBinder, Reorganizer, Shortcuts
+Misc Recommendations: Disable GearInfo, disable RollTracker
+
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                                  General Use Tips
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+Modes
+* Casting Mode: Changes casting type
+  * Resistant: Allows you to make high magic accuracy set variants for higher level mobs who may resist more frequently.
+  * Proc: Allows you to have a different midcast set for spells. This is usually only used for Vagary.
+* Offense Mode: Equips "Safe" variants of sets if defined (idle, engaged, weapon sets).
+* Idle Mode
+  * Normal: Puts you into Refresh and Regen gear when low on MP or HP
+  * HeavyDef: Damage reduction set, also reduces your own damage output
+* Defense Mode: Equips super high emergency damage reduction set, greatly reduces your DPS output
+* CP Mode: Equips Capacity Points bonus cape
+* Magic Burst Mode: Toggle Magic Burst mode on or off. If on, when casting elemental magic, will
+  use special MB set to deal more damage. You are expected to know when your spell is going to MB or not, and
+  toggle this mode manually as needed. Good rule of thumb is to leave it on when in a party doing planned skillchains
+  and off otherwise.
+* Elemental Mode: Changes the focused element. The selected element is used for elemental magic keybinds, and
+  storms (if subbing SCH).
+* Recover Mode: Determines when to equip Seidr Cotehardie for elemental spells.
+  * Always: Always use.
+  * 60%: Use when MP is less than 60% of max.
+  * 35%: Use when MP is less than 35% of max.
+  * Never: Never use.
+
+Weapons
+* Use keybinds to cycle weapons if you need to lock into a specific weapon set to conserve TP.
+  * The default "Casting" weapon set will switch weapons for precast and midcast when casting spells
+    in order to cast spells faster and for more damage/healing. Changing to a different weapon set will
+    reduce your magic damage output but allow you to do weaponskills without casting spells dropping
+    your TP.
+* If you want different weapon sets, edit the sets.WeaponSet sets.
+  * Additional weapon sets can be created but you need to also add them to the state.WeaponSet cycle.
+* Casting Dispelga disregards all other weapon equip rules because Daybreak must be equipped to cast it. You
+  will lose all your TP when casting Dispelga. You should have your previous weapons re-equipped afterward.
+
+Abilities
+* While you have a luopan summoned, you will be forced into variant "Pet" sets when idle. This means generally no
+  movement speed gear. Remember to dismiss your luopan when you're not using it.
+
+Other
+* If you are not using my reorganizer addon, remove all the sets.org sets (including in character global file).
+* I generally plan out best-in-slot (BiS) pieces for each set even before I acquire the pieces. These BiS pieces are
+  left commented out in the set, while placeholders that I do have in the meantime are uncommented for that slot.
+* I like to list out the important stats for each piece of item in most of my sets, and then have a total at
+  the bottom of the set. If you ever change any pieces of gear, you should recalculate the stats for the new piece
+  and then recalculate for the set total, or just remove those stat comments entirely to avoid confusion. However,
+  if you choose to ignore them, it doesn't not actually affect anything.
+* Equipping certain gear such as warp rings or ammo belts will automatically lock that slot until you manually
+  unequip it or change zones.
+
+
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                                      Keybinds
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+Modes:
+  [ F9 ]              Cycle Melee Accuracy
+  [ CTRL+F9 ]         Cycle Melee Defense
+  [ F10 ]             Toggle Emergency -PDT
+  [ ALT+F10 ]         Toggle Kiting (on = move speed gear always equipped)
+  [ F11 ]             Toggle Emergency -MDT
+  [ F12 ]             Report current status
+  [ CTRL+F12 ]        Cycle Idle modes
+  [ ALT+F12 ]         Cancel Emergency -PDT/-MDT Mode
+  [ WIN+C ]           Toggle Capacity Points Mode
+  [ CTRL+PageUp ]     Cycle Elemental Mode
+  [ CTRL+PageDown ]   Cycleback Elemental Mode
+  [ ALT+PageDown ]    Reset to default Elemental Mode
+  [ ALT+` ]           Toggle Magic Burst mode
+  [ WIN+M ]           Toggle Recover MP mode
+
+Weapons:
+  [ CTRL+Insert ]     Cycle Weapon Sets
+  [ CTRL+Delete ]     Cycleback Weapon Sets
+  [ ALT+Delete ]      Reset to default Weapon Set
+
+Spells:
+  [ ALT+Q ]           Tier 3 single target nuke
+  [ ALT+W ]           Highest available single target nuke
+  [ ALT+Z ]           Tier 2 -ara nuke
+  [ ALT+X ]           Tier 3 -ara nuke
+  ============ /SCH ============
+  [ ALT+C ]           Storm
+  [ ALT+/ ]           Klimaform
+  [ ALT+U ]           Blink
+  [ ALT+I ]           Stoneskin
+  [ ALT+P ]           Aquaveil
+  ============ /RDM ============
+  [ ALT+E ]           Haste
+  [ ALT+U ]           Blink
+  [ ALT+I ]           Stoneskin
+  [ ALT+O ]           Phalanx
+  [ ALT+P ]           Aquaveil
+  [ ALT+' ]           Refresh
+  ============ /WHM ============
+  [ ALT+E ]           Haste
+  [ ALT+U ]           Blink
+  [ ALT+I ]           Stoneskin
+  [ ALT+P ]           Aquaveil
+
+Abilities:
+  [ CTRL+F ]          Entrust
+  [ CTRL+backspace ]  Full Circle
+  [ ALT+backspace ]   Life Cycle
+  ============ /SCH ============
+  [ ALT+R ]           Sublimation
+  [ CTRL+- ]          Light Arts/Addendum: White
+  [ CTRL+= ]          Dark Arts/Addendum: Black
+  [ CTRL+[ ]          Rapture/Ebullience
+  [ CTRL+\ ]          Penury/Parsimony
+  [ ALT+[ ]           Accession/Manifestation
+  [ ALT+\ ]           Celerity/Alacrity
+  ============ /RDM ============
+  [ WIN+` ]           Convert
+
+SilverLibs keybinds:
+  [ ALT+D ]           Interact
+  [ ALT+S ]           Turn 180 degrees in place
+  [ WIN+W ]           Toggle Rearming Lock
+                      (off = re-equip previous weapons if you go barehanded)
+                      (on = prevent weapon auto-equipping)
+  [ CTRL+` ]          Cycle Treasure Hunter Mode
+  [ CTRL+U]           Toggle Luopan UI
+
+For more info and available functions, see SilverLibs documentation at:
+https://github.com/shastaxc/silver-libs
+
+Global-Binds.lua contains additional non-job-related keybinds.
+
+
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                                  Custom Commands
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+Prepend with /console to use these in in-game macros.
+
+gs c elemental tier     Uses highest available tier single target elemental nuke corresponding to the selected element in the ElementMode.
+gs c elemental tier1    Uses tier 1 single target elemental nuke corresponding to the selected element in the ElementMode.
+gs c elemental tier2    Uses tier 2 single target elemental nuke corresponding to the selected element in the ElementMode.
+gs c elemental tier3    Uses tier 3 single target elemental nuke corresponding to the selected element in the ElementMode.
+gs c elemental tier4    Uses tier 4 single target elemental nuke corresponding to the selected element in the ElementMode.
+
+gs c elemental ara       Uses highest available -ara elemental nuke corresponding to the selected element in the ElementMode.
+gs c elemental ara1      Uses tier 1 -ara elemental nuke corresponding to the selected element in the ElementMode.
+gs c elemental ara2      Uses tier 2 -ara elemental nuke corresponding to the selected element in the ElementMode.
+gs c elemental ara3      Uses tier 3 -ara elemental nuke corresponding to the selected element in the ElementMode.
+
+gs c elemental storm    Uses SCH storm corresponding to the selected element in the ElementMode.
+
+gs c bind               Sets keybinds again. Sometimes they don't all get set when swapping jobs. Calling this manually fixes it.
+
+(More commands available through SilverLibs)
+
+
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                            Recommended In-game Macros
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+__Keybind___Name______________Command_____________
+[ CTRL+1 ] Geo            /ma "Geo-Frailty" <stnpc>
+[ CTRL+2 ] Indi           /ma "Indi-Fury" <me>
+[ CTRL+3 ] TagCure        /ma "Cure" playername
+[ CTRL+4 ] Cure4          /ma "Cure IV" <stpc>
+[ CTRL+7 ] Lasting        /ja "Lasting Emanation" <me>
+[ CTRL+8 ] EA             /ja "Ecliptic Attrition" <me>
+[ CTRL+9 ] Bolster        /ja "Bolster" <me>
+[ CTRL+0 ] LifeCycl       /ja "Life Cycle" <me>
+[ ALT+1 ]  Geo            /ma "Geo-Malaise" <stnpc>
+[ ALT+2 ]  Indi           /ma "Indi-Acumen" <me>
+[ ALT+3 ]  Entrust        /ma "Entrust" <me> <wait3>
+                          /ma "Indi-Fend" playername
+[ ALT+4 ]  Dia            /ma "Dia II" <t>
+[ ALT+5 ]  Diaga          /ma "Diaga" <stnpc>
+[ ALT+7 ]  FullCirc       /ja "Full Circle" <me>
+[ ALT+8 ]  BoG            /ja "Blaze of Glory" <me>
+[ ALT+9 ]  Widened        /ja "Widened Compass" <me>
+[ ALT+0 ]  Demateri       /ja "Dematerialize" <me>
+
+]]--
 
 -------------------------------------------------------------------------------------------------------------------
 -- Setup functions for this job.  Generally should not be modified.
@@ -2123,12 +2302,12 @@ function select_weapons()
 end
 
 function set_main_keybinds()
-  send_command('bind !a gs c test')
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c interact')
   send_command('bind @w gs c toggle RearmingLock')
   send_command('bind ^u gs c toggle ShowLuopanUi')
-  
+  send_command('bind ^` gs c cycle treasuremode')
+
   send_command('bind !q gs c elemental tier3')
   send_command('bind !w gs c elemental tier')
   send_command('bind !z gs c elemental ara2')
@@ -2136,45 +2315,60 @@ function set_main_keybinds()
 
   send_command('bind ^insert gs c weaponset cycle')
   send_command('bind ^delete gs c weaponset cycleback')
+  send_command('bind !delete gs c weaponset reset')
 
   send_command('bind @c gs c toggle CP')
   send_command('bind !` gs c toggle MagicBurst')
-  send_command('bind @q gs c cycle RecoverMode')
+  send_command('bind @m gs c cycle RecoverMode')
 
   send_command('bind ^pageup gs c cycleback ElementalMode')
   send_command('bind ^pagedown gs c cycle ElementalMode')
   send_command('bind !pagedown gs c reset ElementalMode')
-  
-  send_command('bind !` input /ja "Full Circle" <me>')
-  send_command('bind ^backspace input /ja "Entrust" <me>')
+
+  send_command('bind ^f input /ja "Entrust" <me>')
+  send_command('bind ^backspace input /ja "Full Circle" <me>')
   send_command('bind !backspace input /ja "Life Cycle" <me>')
 end
 
 function set_sub_keybinds()
-  if player.sub_job == 'WHM' or player.sub_job == 'RDM' then
-    send_command('bind !e input /ma "Haste" <stpc>')
-  end
-  if player.sub_job == 'RDM' then
-    send_command('bind !\' input /ma "Refresh" <stpc>')
-  end
   if player.sub_job == 'SCH' then
-    send_command('bind !c gs c elemental storm')
+    send_command('bind !r input /ja "Sublimation" <me>')
+    send_command('bind !/ input /ma "Klimaform" <me>')
+    send_command('bind !u input /ma "Blink" <me>')
+    send_command('bind !i input /ma "Stoneskin" <me>')
+    send_command('bind !p input /ma "Aquaveil" <me>')
+
     send_command('bind ^- gs c scholar light')
     send_command('bind ^= gs c scholar dark')
     send_command('bind ^[ gs c scholar power')
     send_command('bind ^\\\\ gs c scholar cost')
     send_command('bind ![ gs c scholar aoe')
     send_command('bind !\\\\ gs c scholar speed')
+
+    send_command('bind !c gs c storm')
+  elseif player.sub_job == 'RDM' then
+    send_command('bind @` input /ja "Convert" <me>')
+    send_command('bind !e input /ma "Haste" <stpc>')
+    send_command('bind !u input /ma "Blink" <me>')
+    send_command('bind !i input /ma "Stoneskin" <me>')
+    send_command('bind !o input /ma "Phalanx" <me>')
+    send_command('bind !p input /ma "Aquaveil" <me>')
+    send_command('bind !\' input /ma "Refresh" <stpc>')
+  elseif player.sub_job == 'WHM' then
+    send_command('bind !e input /ma "Haste" <stpc>')
+    send_command('bind !u input /ma "Blink" <me>')
+    send_command('bind !i input /ma "Stoneskin" <me>')
+    send_command('bind !p input /ma "Aquaveil" <me>')
   end
 end
 
 function unbind_keybinds()
-  send_command('unbind !a')
   send_command('unbind !s')
   send_command('unbind !d')
   send_command('unbind @w')
   send_command('unbind ^u')
-  
+  send_command('unbind ^`')
+
   send_command('unbind !q')
   send_command('unbind !w')
   send_command('unbind !z')
@@ -2182,30 +2376,47 @@ function unbind_keybinds()
 
   send_command('unbind ^insert')
   send_command('unbind ^delete')
+  send_command('unbind !delete')
 
   send_command('unbind @c')
   send_command('unbind !`')
-  send_command('unbind @q')
+  send_command('unbind @m')
 
   send_command('unbind ^pageup')
   send_command('unbind ^pagedown')
   send_command('unbind !pagedown')
-  
-  send_command('unbind !`')
+
+  send_command('unbind ^f')
   send_command('unbind ^backspace')
   send_command('unbind !backspace')
-  
-  send_command('unbind !e')
-  
-  send_command('unbind !\'')
-  
-  send_command('unbind !c')
+
+  send_command('unbind !r')
+  send_command('unbind !/')
+  send_command('unbind !u')
+  send_command('unbind !i')
+  send_command('unbind !p')
+
   send_command('unbind ^-')
   send_command('unbind ^=')
   send_command('unbind ^[')
   send_command('unbind ^\\\\')
   send_command('unbind ![')
   send_command('unbind !\\\\')
+
+  send_command('unbind !c')
+
+  send_command('unbind @`')
+  send_command('unbind !e')
+  send_command('unbind !u')
+  send_command('unbind !i')
+  send_command('unbind !o')
+  send_command('unbind !p')
+  send_command('unbind !\'')
+
+  send_command('unbind !e')
+  send_command('unbind !u')
+  send_command('unbind !i')
+  send_command('unbind !p')
 end
 
 function test()

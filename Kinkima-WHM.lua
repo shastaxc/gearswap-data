@@ -1536,7 +1536,7 @@ function set_main_keybinds()
   send_command('bind ^. gs c cycleback CuragaTier')
   send_command('bind ^/ gs c cycle CuragaTier')
 
-  send_command('bind !r input /ma "Auspice" <me>')
+  send_command('bind !a input /ma "Auspice" <me>')
   send_command('bind !e input /ma "Haste" <stpc>')
   send_command('bind !u input /ma "Blink" <me>')
   send_command('bind !i input /ma "Stoneskin" <me>')
@@ -1550,6 +1550,7 @@ end
 
 function set_sub_keybinds()
   if player.sub_job == 'SCH' then
+    send_command('bind !r input /ja "Sublimation" <me>')
     send_command('bind !c gs c elemental storm')
     send_command('bind !/ input /ma "Klimaform" <me>')
     send_command('bind ^- gs c scholar light')
@@ -1558,8 +1559,8 @@ function set_sub_keybinds()
     send_command('bind ^\\\\ gs c scholar cost')
     send_command('bind ![ gs c scholar aoe')
     send_command('bind !\\\\ gs c scholar speed')
-    send_command('bind !q input /ja "Sublimation" <me>')
   elseif player.sub_job == 'RDM' then
+    send_command('bind @` input /ja "Convert" <me>')
     send_command('bind !\' input /ma "Refresh" <stpc>')
   end
 end
@@ -1592,7 +1593,7 @@ function unbind_keybinds()
   send_command('unbind ^/')
   send_command('unbind !/')
 
-  send_command('unbind !r')
+  send_command('unbind !a')
   send_command('unbind !e')
   send_command('unbind !u')
   send_command('unbind !i')
@@ -1603,14 +1604,17 @@ function unbind_keybinds()
   send_command('unbind ^c')
   send_command('unbind ^v')
 
+  send_command('unbind !r')
+  send_command('unbind !c')
+  send_command('unbind !/')
   send_command('unbind ^-')
   send_command('unbind ^=')
   send_command('unbind ^[')
   send_command('unbind ^\\\\')
   send_command('unbind ![')
   send_command('unbind !\\\\')
-  send_command('unbind !q')
 
+  send_command('unbind @`')
   send_command('unbind !\'')
 end
 

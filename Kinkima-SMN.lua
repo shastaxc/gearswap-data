@@ -1780,7 +1780,7 @@ function set_main_keybinds()
   send_command('bind !q input /ja "Assault" <t>')
   send_command('bind !w input /ja "Retreat" <me>')
   send_command('bind !e input /ja "Release" <me>')
-  send_command('bind !r input /ja "Avatar\'s Favor" <me>')
+  send_command('bind !a input /ja "Avatar\'s Favor" <me>')
 
   send_command('bind !` gs c pact buffSpecial')
   send_command('bind ^numlock gs c pact bp99')
@@ -1794,6 +1794,12 @@ end
 
 function set_sub_keybinds()
   if player.sub_job == 'SCH' then
+    send_command('bind !r input /ja "Sublimation" <me>')
+    send_command('bind !/ input /ma "Klimaform" <me>')
+    send_command('bind !u input /ma "Blink" <me>')
+    send_command('bind !i input /ma "Stoneskin" <me>')
+    send_command('bind !p input /ma "Aquaveil" <me>')
+
     send_command('bind ^- gs c scholar light')
     send_command('bind ^= gs c scholar dark')
     send_command('bind ^[ gs c scholar power')
@@ -1805,17 +1811,16 @@ function set_sub_keybinds()
     send_command('bind ^pageup gs c cycleback Storm')
     send_command('bind ^pagedown gs c cycle Storm')
     send_command('bind !pagedown gs c reset Storm')
-    
-    send_command('bind !u input /ma "Blink" <me>')
-    send_command('bind !i input /ma "Stoneskin" <me>')
-    send_command('bind !p input /ma "Aquaveil" <me>')
   elseif player.sub_job == 'RDM' then
+    send_command('bind @` input /ja "Convert" <me>')
+    send_command('bind !e input /ma "Haste" <stpc>')
     send_command('bind !u input /ma "Blink" <me>')
     send_command('bind !i input /ma "Stoneskin" <me>')
     send_command('bind !o input /ma "Phalanx" <me>')
     send_command('bind !p input /ma "Aquaveil" <me>')
     send_command('bind !\' input /ma "Refresh" <stpc>')
   elseif player.sub_job == 'WHM' then
+    send_command('bind !e input /ma "Haste" <stpc>')
     send_command('bind !u input /ma "Blink" <me>')
     send_command('bind !i input /ma "Stoneskin" <me>')
     send_command('bind !p input /ma "Aquaveil" <me>')
@@ -1827,20 +1832,27 @@ function unbind_keybinds()
   send_command('unbind !d')
   send_command('unbind @c')
   send_command('unbind @w')
-  
+
   send_command('unbind !q')
   send_command('unbind !w')
   send_command('unbind !e')
-  send_command('unbind !r')
+  send_command('unbind !a')
 
   send_command('unbind !`')
   send_command('unbind ^numlock')
+  send_command('unbind !numlock')
   send_command('unbind ^numpad/')
   send_command('unbind ^numpad*')
   send_command('unbind ^numpad-')
   send_command('unbind !z')
   send_command('unbind !x')
   
+  send_command('unbind !r')
+  send_command('unbind !/')
+  send_command('unbind !u')
+  send_command('unbind !i')
+  send_command('unbind !p')
+
   send_command('unbind ^-')
   send_command('unbind ^=')
   send_command('unbind ^[')
@@ -1852,10 +1864,18 @@ function unbind_keybinds()
   send_command('unbind ^pageup')
   send_command('unbind ^pagedown')
   send_command('unbind !pagedown')
-
+  
+  send_command('unbind @`')
+  send_command('unbind !e')
   send_command('unbind !u')
   send_command('unbind !i')
   send_command('unbind !o')
+  send_command('unbind !p')
+  send_command('unbind !\'')
+  
+  send_command('unbind !e')
+  send_command('unbind !u')
+  send_command('unbind !i')
   send_command('unbind !p')
 end
 

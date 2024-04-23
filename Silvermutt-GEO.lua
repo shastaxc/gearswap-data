@@ -2157,12 +2157,12 @@ function select_weapons()
 end
 
 function set_main_keybinds()
-  send_command('bind !a gs c test')
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c interact')
   send_command('bind @w gs c toggle RearmingLock')
   send_command('bind ^u gs c toggle ShowLuopanUi')
-  
+  send_command('bind ^` gs c cycle treasuremode')
+
   send_command('bind !q gs c elemental tier3')
   send_command('bind !w gs c elemental tier')
   send_command('bind !z gs c elemental ara2')
@@ -2170,45 +2170,60 @@ function set_main_keybinds()
 
   send_command('bind ^insert gs c weaponset cycle')
   send_command('bind ^delete gs c weaponset cycleback')
+  send_command('bind !delete gs c weaponset reset')
 
   send_command('bind @c gs c toggle CP')
   send_command('bind !` gs c toggle MagicBurst')
-  send_command('bind @q gs c cycle RecoverMode')
+  send_command('bind @m gs c cycle RecoverMode')
 
   send_command('bind ^pageup gs c cycleback ElementalMode')
   send_command('bind ^pagedown gs c cycle ElementalMode')
   send_command('bind !pagedown gs c reset ElementalMode')
-  
-  send_command('bind !` input /ja "Full Circle" <me>')
-  send_command('bind ^backspace input /ja "Entrust" <me>')
+
+  send_command('bind ^f input /ja "Entrust" <me>')
+  send_command('bind ^backspace input /ja "Full Circle" <me>')
   send_command('bind !backspace input /ja "Life Cycle" <me>')
 end
 
 function set_sub_keybinds()
-  if player.sub_job == 'WHM' or player.sub_job == 'RDM' then
-    send_command('bind !e input /ma "Haste" <stpc>')
-  end
-  if player.sub_job == 'RDM' then
-    send_command('bind !\' input /ma "Refresh" <stpc>')
-  end
   if player.sub_job == 'SCH' then
-    send_command('bind !c gs c elemental storm')
+    send_command('bind !r input /ja "Sublimation" <me>')
+    send_command('bind !/ input /ma "Klimaform" <me>')
+    send_command('bind !u input /ma "Blink" <me>')
+    send_command('bind !i input /ma "Stoneskin" <me>')
+    send_command('bind !p input /ma "Aquaveil" <me>')
+
     send_command('bind ^- gs c scholar light')
     send_command('bind ^= gs c scholar dark')
     send_command('bind ^[ gs c scholar power')
     send_command('bind ^\\\\ gs c scholar cost')
     send_command('bind ![ gs c scholar aoe')
     send_command('bind !\\\\ gs c scholar speed')
+
+    send_command('bind !c gs c storm')
+  elseif player.sub_job == 'RDM' then
+    send_command('bind @` input /ja "Convert" <me>')
+    send_command('bind !e input /ma "Haste" <stpc>')
+    send_command('bind !u input /ma "Blink" <me>')
+    send_command('bind !i input /ma "Stoneskin" <me>')
+    send_command('bind !o input /ma "Phalanx" <me>')
+    send_command('bind !p input /ma "Aquaveil" <me>')
+    send_command('bind !\' input /ma "Refresh" <stpc>')
+  elseif player.sub_job == 'WHM' then
+    send_command('bind !e input /ma "Haste" <stpc>')
+    send_command('bind !u input /ma "Blink" <me>')
+    send_command('bind !i input /ma "Stoneskin" <me>')
+    send_command('bind !p input /ma "Aquaveil" <me>')
   end
 end
 
 function unbind_keybinds()
-  send_command('unbind !a')
   send_command('unbind !s')
   send_command('unbind !d')
   send_command('unbind @w')
   send_command('unbind ^u')
-  
+  send_command('unbind ^`')
+
   send_command('unbind !q')
   send_command('unbind !w')
   send_command('unbind !z')
@@ -2216,30 +2231,47 @@ function unbind_keybinds()
 
   send_command('unbind ^insert')
   send_command('unbind ^delete')
+  send_command('unbind !delete')
 
   send_command('unbind @c')
   send_command('unbind !`')
-  send_command('unbind @q')
+  send_command('unbind @m')
 
   send_command('unbind ^pageup')
   send_command('unbind ^pagedown')
   send_command('unbind !pagedown')
-  
-  send_command('unbind !`')
+
+  send_command('unbind ^f')
   send_command('unbind ^backspace')
   send_command('unbind !backspace')
-  
-  send_command('unbind !e')
-  
-  send_command('unbind !\'')
-  
-  send_command('unbind !c')
+
+  send_command('unbind !r')
+  send_command('unbind !/')
+  send_command('unbind !u')
+  send_command('unbind !i')
+  send_command('unbind !p')
+
   send_command('unbind ^-')
   send_command('unbind ^=')
   send_command('unbind ^[')
   send_command('unbind ^\\\\')
   send_command('unbind ![')
   send_command('unbind !\\\\')
+
+  send_command('unbind !c')
+
+  send_command('unbind @`')
+  send_command('unbind !e')
+  send_command('unbind !u')
+  send_command('unbind !i')
+  send_command('unbind !o')
+  send_command('unbind !p')
+  send_command('unbind !\'')
+
+  send_command('unbind !e')
+  send_command('unbind !u')
+  send_command('unbind !i')
+  send_command('unbind !p')
 end
 
 function test()

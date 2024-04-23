@@ -4,7 +4,7 @@ File Status: Ok. Silvermutt's COR is better.
 Author: Silvermutt
 Required external libraries: SilverLibs
 Required addons: HasteInfo, DistancePlus
-Recommended addons: WSBinder, Reorganizer
+Recommended addons: WSBinder, Reorganizer, Roller
 Misc Recommendations: Disable GearInfo, disable RollTracker
 
 ]]--

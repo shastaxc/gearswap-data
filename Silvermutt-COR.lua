@@ -4,7 +4,7 @@ File Status: Good.
 Author: Silvermutt
 Required external libraries: SilverLibs
 Required addons: HasteInfo, DistancePlus
-Recommended addons: WSBinder, Reorganizer
+Recommended addons: WSBinder, Reorganizer, Roller
 Misc Recommendations: Disable GearInfo, disable RollTracker
 
 ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
@@ -12,9 +12,10 @@ Misc Recommendations: Disable GearInfo, disable RollTracker
 ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
 Modes
 * Offense Mode: Changes melee accuracy level
-* Ranged Mode: Changes ranged accuracy level
 * Hybrid Mode: Changes damage taken level while engaged
 * Defense Mode: Equips super high emergency damage reduction set, greatly reduces your DPS output
+* CP Mode: Equips Capacity Points bonus cape
+* Ranged Mode: Changes ranged accuracy level
 
 Weapons
 * Use keybinds to cycle weapons.
@@ -142,16 +143,16 @@ gs c bind               Sets keybinds again. Sometimes they don't all get set wh
 ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
                                             Recommended In-game Macros
 ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
-__Keybind___Name____________________Command_____________
-[ CTRL+1 ] Snake Eye            /ja "Snake Eye" <me>
-[ CTRL+2 ] Fold                 /ja "Fold" <me>
-[ CTRL+3 ] Crooked Cards        /ja "Crooked Cards" <me>
-[ CTRL+9 ] Wild Cards           /ja "Wild Card" <me>
-[ ALT+1 ]  Roll1                /console roller roll roll1
-[ ALT+2 ]  Roll2                /console roller roll roll2
-[ ALT+3 ]  QD                   /console gs c qd main t
-[ ALT+4 ]  QD2                  /console gs c qd alt t
-[ ALT+9 ]  Cutting Cards        /ja "Cutting Cards" <stpc>
+__Keybind___Name______________Command_____________
+[ CTRL+1 ] SnakeEye       /ja "Snake Eye" <me>
+[ CTRL+2 ] Fold           /ja "Fold" <me>
+[ CTRL+3 ] CrookedC       /ja "Crooked Cards" <me>
+[ CTRL+9 ] WildCard       /ja "Wild Card" <me>
+[ ALT+1 ]  Roll1          /console roller roll roll1
+[ ALT+2 ]  Roll2          /console roller roll roll2
+[ ALT+3 ]  QD             /console gs c qd main t
+[ ALT+4 ]  QD2            /console gs c qd alt t
+[ ALT+9 ]  Cutting        /ja "Cutting Cards" <stpc>
 
 ]]--
 

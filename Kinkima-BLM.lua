@@ -15,13 +15,14 @@ Modes
   * Spaekona: Reduces MP use for elemental magic, reduces DPS slightly
   * Occult: Focuses on building TP when casting elemental magic, reduces DPS greatly. Mainly for building TP for
     WS spam. Doing this with a good Cataclysm set is generally best for sustained AoE damage.
+* Defense Mode: Equips super high emergency damage reduction set, greatly reduces your DPS output
+* CP Mode: Equips Capacity Points bonus cape
 * Magic Burst Mode: Toggle Magic Burst mode on or off. If on, when casting elemental magic, will
   use special MB set to deal more damage. You are expected to know when your spell is going to MB or not, and
   toggle this mode manually as needed. Good rule of thumb is to leave it on when in a party doing planned skillchains
   and off otherwise.
 * Elemental Mode: Changes the focused element. The selected element is used for elemental magic keybinds, and
   storms (if subbing SCH).
-* Defense Mode: Equips super high emergency damage reduction set, greatly reduces your DPS output
 
 Weapons
 * Use keybinds to cycle weapons if you need to lock into a specific weapon set to conserve TP.
@@ -30,6 +31,8 @@ Weapons
     to swap according to what's in each set.
 * If you want different weapon sets, edit the sets.WeaponSet sets.
   * Additional weapon sets can be created but you need to also add them to the state.WeaponSet cycle.
+* Casting Dispelga disregards all other weapon equip rules because Daybreak must be equipped to cast it. You
+  will lose all your TP when casting Dispelga. You should have your previous weapons re-equipped afterward.
 
 Abilities
 * Mana Wall will lock certain pieces of gear to help with damage reduction. This causes a slight DPS reduction too.
@@ -70,8 +73,8 @@ Weapons:
   [ ALT+Delete ]      Reset to default Weapon Set
 
 Spells:
-  [ ALT+Q ]           Tier 3 nuke
-  [ ALT+W ]           Highest available tier nuke
+  [ ALT+Q ]           Tier 3 single target nuke
+  [ ALT+W ]           Highest available single target nuke
   [ ALT+Z ]           Highest available -ga nuke
   [ ALT+X ]           -ja nuke
   ============ /SCH ============
@@ -93,7 +96,7 @@ Spells:
 Abilities:
   [ CTRL+` ]          Mana Wall
   ============ /SCH ============
-  [ ALT+` ]           Sublimation
+  [ ALT+R ]           Sublimation
   [ CTRL+- ]          Light Arts/Addendum: White
   [ CTRL+= ]          Dark Arts/Addendum: Black
   [ CTRL+[ ]          Rapture/Ebullience
@@ -101,7 +104,7 @@ Abilities:
   [ ALT+[ ]           Accession/Manifestation
   [ ALT+\ ]           Celerity/Alacrity
   ============ /RDM ============
-  [ ALT+` ]           Convert
+  [ WIN+` ]           Convert
 
 SilverLibs keybinds:
   [ ALT+D ]           Interact
@@ -145,20 +148,20 @@ gs c bind               Sets keybinds again. Sometimes they don't all get set wh
 ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
                                             Recommended In-game Macros
 ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
-__Keybind___Name____________________Command_____________
-[ CTRL+1 ] Sleep                /ma "Sleep II" <t>
-[ CTRL+2 ] Break                /ma "Break" <t>
-[ CTRL+3 ] Burn                 /ma "Burn" <t>
-[ CTRL+4 ] Cure4                /ma "Cure IV" <stpc>
-[ CTRL+9 ] Manafont             /ja "Manafont" <me>
-[ CTRL+0 ] Manawell             /ja "Manawell" <stpc>
-[ ALT+1 ]  Sleepga              /ma "Sleepga II" <t>
-[ ALT+2 ]  Breakga              /ma "Breakga" <t>
-[ ALT+3 ]  Stun                 /ma "Stun" <t>
-[ ALT+4 ]  BreakSp              /ma "Break" personname
-[ ALT+8 ]  EnmityDo             /ja "Enmity Douse" <me>
-[ ALT+9 ]  SubtleSo             /ja "Subtle Sorcery" <me>
-[ ALT+0 ]  EleSeal              /ja "Elemental Seal" <me>
+__Keybind___Name______________Command_____________
+[ CTRL+1 ] Sleep          /ma "Sleep II" <t>
+[ CTRL+2 ] Break          /ma "Break" <t>
+[ CTRL+3 ] Burn           /ma "Burn" <t>
+[ CTRL+4 ] Cure4          /ma "Cure IV" <stpc>
+[ CTRL+9 ] Manafont       /ja "Manafont" <me>
+[ CTRL+0 ] Manawell       /ja "Manawell" <stpc>
+[ ALT+1 ]  Sleepga        /ma "Sleepga II" <t>
+[ ALT+2 ]  Breakga        /ma "Breakga" <t>
+[ ALT+3 ]  Stun           /ma "Stun" <t>
+[ ALT+4 ]  BreakSp        /ma "Break" personname
+[ ALT+8 ]  EnmityDo       /ja "Enmity Douse" <me>
+[ ALT+9 ]  SubtleSo       /ja "Subtle Sorcery" <me>
+[ ALT+0 ]  EleSeal        /ja "Elemental Seal" <me>
 
 ]]--
 
@@ -1667,7 +1670,7 @@ end
 
 function set_sub_keybinds()
   if player.sub_job == 'SCH' then
-    send_command('bind !` input /ja Sublimation <me>')
+    send_command('bind !r input /ja "Sublimation" <me>')
     send_command('bind !c gs c elemental storm')
     send_command('bind !/ input /ma "Klimaform" <me>')
     send_command('bind ^- gs c scholar light')
@@ -1677,17 +1680,17 @@ function set_sub_keybinds()
     send_command('bind ![ gs c scholar aoe')
     send_command('bind !\\\\ gs c scholar speed')
   elseif player.sub_job == 'RDM' then
-    send_command('bind !` input /ja Convert <me>')
+    send_command('bind @` input /ja "Convert" <me>')
     send_command('bind !e input /ma "Haste" <stpc>')
-    send_command('bind !u input /ma Blink <me>')
-    send_command('bind !i input /ma Stoneskin <me>')
+    send_command('bind !u input /ma "Blink" <me>')
+    send_command('bind !i input /ma "Stoneskin" <me>')
     send_command('bind !o input /ma "Phalanx" <me>')
     send_command('bind !p input /ma "Aquaveil" <me>')
     send_command('bind !\' input /ma "Refresh" <stpc>')
   elseif player.sub_job == 'WHM' then
     send_command('bind !e input /ma "Haste" <stpc>')
-    send_command('bind !u input /ma Blink <me>')
-    send_command('bind !i input /ma Stoneskin <me>')
+    send_command('bind !u input /ma "Blink" <me>')
+    send_command('bind !i input /ma "Stoneskin" <me>')
     send_command('bind !p input /ma "Aquaveil" <me>')
   end
 end
@@ -1715,7 +1718,7 @@ function unbind_keybinds()
 
   send_command('unbind @c')
   
-  send_command('unbind !`')
+  send_command('unbind @`')
   send_command('unbind !c')
   send_command('unbind !/')
   send_command('unbind ^-')

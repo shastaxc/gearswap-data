@@ -12,15 +12,16 @@ Misc Recommendations: Disable GearInfo, disable RollTracker
                                                   General Use Tips
 ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
 Modes
-* Offense Mode: Changes melee accuracy level
 * Casting Mode: Changes casting type
   * Resistant: Allows you to make high magic accuracy set variants for higher level mobs who may resist more frequently
+* Offense Mode: Changes melee accuracy level
 * Hybrid Mode: Changes damage taken level while engaged
 * Idle Mode
   * Normal: Puts you into Refresh and Regen gear when low on MP or HP
   * Evasion: Puts on high evasion idle set (good for large AoE pulls while trying to blink tank)
   * DT: Damage reduction set, also reduces your own damage output
 * Defense Mode: Equips super high emergency damage reduction set, greatly reduces your DPS output
+* CP Mode: Equips Capacity Points bonus cape
 * Magic Burst Mode: Toggle Magic Burst mode on or off. If on, when casting magic-aligned BLU spells, will
   use special MB set to deal more damage. You are expected to know when your spell is going to MB or not, and
   toggle this mode manually as needed. Good rule of thumb is to leave it on when in a party doing planned skillchains
@@ -34,7 +35,7 @@ Modes
 Weapons
 * Use keybinds to cycle weapons if you need to lock into a specific weapon set to conserve TP.
   * The default "Casting" weapon set will switch weapons for precast and midcast when casting spells
-    in order to cast spells faster and for more damage. Changing to a different weapon set will
+    in order to cast spells faster and for more damage/healing. Changing to a different weapon set will
     reduce your magic damage output but allow you to do weaponskills without casting spells dropping
     your TP.
 * If you want different weapon sets, edit the sets.WeaponSet sets.
@@ -77,6 +78,7 @@ Modes:
   [ WIN+C ]           Toggle Capacity Points Mode
   [ ALT+` ]           Toggle Magic Burst mode
   [ CTRL+l ]          Toggle Learning mode
+  [ CTRL+F8 ]         Toggle AttCapped mode
 
 Weapons:
   [ CTRL+Insert ]     Cycle Weapon Sets
@@ -102,6 +104,8 @@ Abilities:
   [ CTRL+[ ]          Efflux
   [ ALT+[ ]           Diffusion
   [ ALT+] ]           Unbridled Learning
+  ============ /RDM ============
+  [ WIN+` ]           Convert
   ============ /WAR ============
   [ CTRL+Numlock ]    Defender
   [ CTRL+Numpad/ ]    Berserk
@@ -135,29 +139,29 @@ gs c bind               Sets keybinds again. Sometimes they don't all get set wh
 Swap macro books swap based on equipped spell set.
 
 Physical DD set:
-__Keybind___Name____________________Command_____________
-[ CTRL+1 ] Nat.Med              /ma "Nat. Meditation" <me>
-[ CTRL+3 ] Saline Coat          /ma "Saline Coat" <me>
-[ CTRL+4 ] Cure4                /ma "Cure IV" <stpc>
-[ CTRL+0 ] Sleep                /ma "Dream Flower" <stnpc>
-[ ALT+2 ]  Tenebral             /ma "Tenebral Crush" <stnpc>
-[ ALT+4 ]  Dia2                 /ma "Dia II" <stnpc>
-[ ALT+8 ]  Anvil Li             /ma "Anvil Lightning" <stnpc>
+__Keybind___Name______________Command_____________
+[ CTRL+1 ] Nat.Med        /ma "Nat. Meditation" <me>
+[ CTRL+3 ] Saline         /ma "Saline Coat" <me>
+[ CTRL+4 ] Cure4          /ma "Cure IV" <stpc>
+[ CTRL+0 ] Sleep          /ma "Dream Flower" <stnpc>
+[ ALT+2 ]  Tenebral       /ma "Tenebral Crush" <stnpc>
+[ ALT+4 ]  Dia2           /ma "Dia II" <stnpc>
+[ ALT+8 ]  AnvilLit       /ma "Anvil Lightning" <stnpc>
 
 Mage set:
-__Keybind___Name____________________Command_____________
-[ CTRL+2 ] Magic Ha             /ma "Magic Hammer" <stnpc>
-[ CTRL+3 ] Saline Coat          /ma "Saline Coat" <me>
-[ CTRL+4 ] Cure4                /ma "Cure IV" <stpc>
-[ CTRL+7 ] Silent               /ma "Silent Storm" <stnpc>
-[ CTRL+0 ] Sleep                /ma "Dream Flower" <stnpc>
-[ ALT+1 ]  Subducti             /ma "Subduction" <stnpc>
-[ ALT+2 ]  Tenebral             /ma "Tenebral Crush" <stnpc>
-[ ALT+3 ]  Spectral             /ma "Spectral Floe" <stnpc>
-[ ALT+4 ]  Dia2                 /ma "Diaga" <stnpc>
-[ ALT+7 ]  Blinding             /ma "Blinding Fulgor" <stnpc>
-[ ALT+8 ]  Anvil Li             /ma "Anvil Lightning" <stnpc>
-[ ALT+0 ]  Erase                /ma "Erase" <me>
+__Keybind___Name______________Command_____________
+[ CTRL+2 ] MagicHa        /ma "Magic Hammer" <stnpc>
+[ CTRL+3 ] Saline         /ma "Saline Coat" <me>
+[ CTRL+4 ] Cure4          /ma "Cure IV" <stpc>
+[ CTRL+7 ] Silent         /ma "Silent Storm" <stnpc>
+[ CTRL+0 ] Sleep          /ma "Dream Flower" <stnpc>
+[ ALT+1 ]  Subducti       /ma "Subduction" <stnpc>
+[ ALT+2 ]  Tenebral       /ma "Tenebral Crush" <stnpc>
+[ ALT+3 ]  Spectral       /ma "Spectral Floe" <stnpc>
+[ ALT+4 ]  Dia2           /ma "Diaga" <stnpc>
+[ ALT+7 ]  Blinding       /ma "Blinding Fulgor" <stnpc>
+[ ALT+8 ]  AnvilLit       /ma "Anvil Lightning" <stnpc>
+[ ALT+0 ]  Erase          /ma "Erase" <me>
 
 ]]--
 
@@ -1803,7 +1807,8 @@ function set_main_keybinds()
 end
 
 function set_sub_keybinds()
-  if player.sub_job == "RDM" then
+  if player.sub_job == 'RDM' then
+    send_command('bind @` input /ja "Convert" <me>')
     send_command('bind !i input /ma Stoneskin <me>')
     send_command('bind !o input /ma Phalanx <me>')
     send_command('bind !p input /ma Aquaveil <me>')
@@ -1836,16 +1841,16 @@ function unbind_keybinds()
   send_command('unbind !]')
   send_command('unbind !q')
   send_command('unbind !e')
+  send_command('unbind !\'')
 
   send_command('unbind ^insert')
   send_command('unbind ^delete')
   send_command('unbind !delete')
 
-  send_command('unbind !e')
+  send_command('unbind @`')
   send_command('unbind !i')
   send_command('unbind !o')
   send_command('unbind !p')
-  send_command('unbind !\'')
 
   send_command('unbind ^numlock')
   send_command('unbind ^numpad/')
