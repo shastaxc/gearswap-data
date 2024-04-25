@@ -137,7 +137,7 @@ SilverLibs keybinds:
                       (off = re-equip previous weapons if you go barehanded)
                       (on = prevent weapon auto-equipping)
   [ CTRL+` ]          Cycle Treasure Hunter Mode
-  [ CTRL+U]           Toggle Luopan UI
+  [ CTRL+U ]          Toggle Luopan UI
 
 For more info and available functions, see SilverLibs documentation at:
 https://github.com/shastaxc/silver-libs
