@@ -187,7 +187,7 @@ function job_setup()
   silibs.enable_auto_lockstyle(8)
   silibs.enable_premade_commands()
   silibs.enable_th()
-  silibs.enable_equip_loop()
+  -- silibs.enable_equip_loop()
   silibs.enable_custom_roll_text()
   silibs.enable_elemental_belt_handling(has_obi, has_orpheus)
   silibs.enable_snapshot_auto_equip()
@@ -1954,7 +1954,14 @@ function job_precast(spell, action, spellMap, eventArgs)
   silibs.equip_ammo(spell, action, spellMap, eventArgs)
 
   -- Gear
-  if spell.english == 'Fold' and buffactive['Bust'] == 2 then
+  if spell.type == 'CorsairRoll' and not midaction() then
+    preroll_weapons = {
+      main = player.equipment.main,
+      sub = player.equipment.sub,
+      range = player.equipment.range,
+    }
+    roll_timer = os.clock()
+  elseif spell.english == 'Fold' and buffactive['Bust'] == 2 then
     if sets.precast.FoldDoubleBust then
       equip(sets.precast.FoldDoubleBust)
       eventArgs.handled = true
@@ -1967,12 +1974,6 @@ end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
   if spell.type == 'CorsairRoll' then
-    preroll_weapons = {
-      main = player.equipment.main,
-      sub = player.equipment.sub,
-      range = player.equipment.range,
-    }
-    roll_timer = os.clock()
     if player.status ~= 'Engaged' then
       equip(sets.precast.CorsairRoll.Duration)
     end
@@ -2488,11 +2489,13 @@ end
 
 -- Perpetual loop
 windower.raw_register_event('prerender',function()
-  now = os.clock()
+  local now = os.clock()
   -- If roll timer has not been reset for 3 seconds (dropped packets causing aftercast
   -- to fail to trigger), then reset gear manually
   if roll_timer and preroll_weapons and now - roll_timer > 3 then
     equip(preroll_weapons)
+    preroll_weapons = nil
+    roll_timer = nil
     send_command('gs c update')
   end
 end)
