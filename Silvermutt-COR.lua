@@ -160,6 +160,7 @@ __Keybind___Name______________Command_____________
 -- Setup functions for this job.  Generally should not be modified.
 -------------------------------------------------------------------------------------------------------------------
 
+packets = include('packets')
 -- Initialization function for this job file.
 function get_sets()
   -- Load and initialize Mote library
@@ -2464,6 +2465,18 @@ windower.register_event('zone change', function()
   if locked_ring1 then equip({ ring1=empty }) end
   if locked_ring2 then equip({ ring2=empty }) end
   if locked_waist then equip({ waist=empty }) end
+end)
+
+-- Set lockstyle again when encumbrance value changes (which disables lockstyle as a side effect)
+windower.raw_register_event('incoming chunk', function(id, data, modified, injected, blocked)
+  if id == 0x029 then
+    -- Message IDs can be found here https://github.com/Windower/Lua/wiki/Message-IDs
+    local p = packets.parse('incoming', data)
+    if p.Message == 429 then -- roll already up
+      roll_timer = nil
+      send_command('gs c equipweapons')
+    end
+  end
 end)
 
 function equip_weapons()
