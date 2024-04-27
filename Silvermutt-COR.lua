@@ -137,6 +137,8 @@ gs c qd alt stnpc       Uses the currently-selected alternate Quick Draw shot on
 
 gs c bind               Sets keybinds again. Sometimes they don't all get set when swapping jobs. Calling this manually fixes it.
 
+gs c equipweapons       Equips weapons based on your current states that you've set.
+
 (More commands available through SilverLibs)
 
 
@@ -2480,7 +2482,11 @@ windower.raw_register_event('incoming chunk', function(id, data, modified, injec
 end)
 
 function equip_weapons()
-  equip(sets.WeaponSet[state.WeaponSet.current])
+  if state.ToyWeapons.current ~= 'None' then
+    return equip(sets.ToyWeapon[state.ToyWeapons.current])
+  else
+    equip(sets.WeaponSet[state.WeaponSet.current])
+  end
 
   -- Equip appropriate ammo
   local ranged = sets.WeaponSet[state.WeaponSet.current].ranged
