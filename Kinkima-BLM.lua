@@ -104,7 +104,7 @@ Abilities:
   [ ALT+[ ]           Accession/Manifestation
   [ ALT+\ ]           Celerity/Alacrity
   ============ /RDM ============
-  [ WIN+` ]           Convert
+  [ Shift+` ]         Convert
 
 SilverLibs keybinds:
   [ ALT+D ]           Interact
@@ -1680,7 +1680,7 @@ function set_sub_keybinds()
     send_command('bind ![ gs c scholar aoe')
     send_command('bind !\\\\ gs c scholar speed')
   elseif player.sub_job == 'RDM' then
-    send_command('bind @` input /ja "Convert" <me>')
+    send_command('bind ~` input /ja "Convert" <me>')
     send_command('bind !e input /ma "Haste" <stpc>')
     send_command('bind !u input /ma "Blink" <me>')
     send_command('bind !i input /ma "Stoneskin" <me>')
@@ -1718,7 +1718,7 @@ function unbind_keybinds()
 
   send_command('unbind @c')
   
-  send_command('unbind @`')
+  send_command('unbind ~`')
   send_command('unbind !c')
   send_command('unbind !/')
   send_command('unbind ^-')

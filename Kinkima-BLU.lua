@@ -105,7 +105,7 @@ Abilities:
   [ ALT+[ ]           Diffusion
   [ ALT+] ]           Unbridled Learning
   ============ /RDM ============
-  [ WIN+` ]           Convert
+  [ Shift+` ]         Convert
   ============ /WAR ============
   [ CTRL+Numlock ]    Defender
   [ CTRL+Numpad/ ]    Berserk
@@ -1808,7 +1808,7 @@ end
 
 function set_sub_keybinds()
   if player.sub_job == 'RDM' then
-    send_command('bind @` input /ja "Convert" <me>')
+    send_command('bind ~` input /ja "Convert" <me>')
     send_command('bind !i input /ma Stoneskin <me>')
     send_command('bind !o input /ma Phalanx <me>')
     send_command('bind !p input /ma Aquaveil <me>')
@@ -1847,7 +1847,7 @@ function unbind_keybinds()
   send_command('unbind ^delete')
   send_command('unbind !delete')
 
-  send_command('unbind @`')
+  send_command('unbind ~`')
   send_command('unbind !i')
   send_command('unbind !o')
   send_command('unbind !p')

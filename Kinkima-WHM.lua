@@ -1560,7 +1560,7 @@ function set_sub_keybinds()
     send_command('bind ![ gs c scholar aoe')
     send_command('bind !\\\\ gs c scholar speed')
   elseif player.sub_job == 'RDM' then
-    send_command('bind @` input /ja "Convert" <me>')
+    send_command('bind ~` input /ja "Convert" <me>')
     send_command('bind !\' input /ma "Refresh" <stpc>')
   end
 end
@@ -1614,7 +1614,7 @@ function unbind_keybinds()
   send_command('unbind ![')
   send_command('unbind !\\\\')
 
-  send_command('unbind @`')
+  send_command('unbind ~`')
   send_command('unbind !\'')
 end
 
