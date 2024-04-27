@@ -1,10 +1,190 @@
--- File Status: Good.
+--[[
+File Status: Good.
 
--- Author: Silvermutt
--- Required external libraries: SilverLibs
--- Required addons: N/A
--- Recommended addons: WSBinder, Reorganizer, PartyBuffs, Debuffed, Shortcuts
--- Misc Recommendations: Disable RollTracker
+Author: Silvermutt
+Required external libraries: SilverLibs
+Required addons: N/A
+Recommended addons: WSBinder, Reorganizer, PartyBuffs, Debuffed, Shortcuts
+Misc Recommendations: Disable GearInfo, Disable RollTracker
+
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                                  General Use Tips
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+Modes
+* Casting Mode: Changes casting type
+  * Seidr: Uses set variants containing Seidr Cotehardie to help save MP while nuking.
+  * Resistant: Allows you to make high magic accuracy set variants for higher level mobs who may resist more frequently.
+* Offense Mode: Changes to different sets while engaged for melee sets
+  * MidAcc: Higher accuracy variant
+  * HighAcc: Even higher accuracy variant
+  * Enspell: Uses gear specifically to increase damage by En-spells. Foregoes other stats such as Store TP.
+* Idle Mode
+  * Normal: Puts you into Refresh and Regen gear when low on MP or HP
+  * Gyve: Equips Gyve Doublet when idle to provide aura bonuses to nearby allies
+* Defense Mode: Equips super high emergency damage reduction set, greatly reduces your DPS output
+* CP Mode: Equips Capacity Points bonus cape
+* Magic Burst Mode: Toggle Magic Burst mode on or off. If on, when casting elemental magic, will
+  use special MB set to deal more damage. You are expected to know when your spell is going to MB or not, and
+  toggle this mode manually as needed. Good rule of thumb is to leave it on when in a party doing planned skillchains
+  and off otherwise.
+* Elemental Mode: Changes the focused element. The selected element is used for elemental magic keybinds, and
+  storms (if subbing SCH).
+* EnSpell Mode: Cycle that changes the specific En-spell to use when you press the associated keybind
+* BarElement: Cycle that changes the specific Bar-element spell to use when you press the associated keybind
+* BarStatus: Cycle that changes the specific Bar-status spell to use when you press the associated keybind
+* GainSpell: Cycle that changes the specific Gain- spell to use when you press the associated keybind
+  * Personally, I have separate keybinds for my most-used Gain- spells to avoid going through this cycle
+* SleepMode: Determines whether to use potency or duration gear for Sleep spells.
+* NM: If fighting an NM, you should toggle this on so it will use correct calculations for debuff durations
+
+Weapons
+* Use keybinds to cycle weapons if you need to lock into a specific weapon set to conserve TP.
+  * The default "Casting" weapon set will switch weapons for precast and midcast when casting spells
+    in order to cast spells faster and for more damage/healing. Changing to a different weapon set will
+    reduce your magic damage output but allow you to do weaponskills without casting spells dropping
+    your TP.
+* If you want different weapon sets, edit the sets.WeaponSet sets.
+  * Additional weapon sets can be created but you need to also add them to the state.WeaponSet cycle.
+* Casting Dispelga disregards all other weapon equip rules because Daybreak must be equipped to cast it. You
+  will lose all your TP when casting Dispelga. You should have your previous weapons re-equipped afterward.
+* The "DW" variants of sets will be used automatically if the Dual Wield trait is available.
+
+Other
+* If you are not using my reorganizer addon, remove all the sets.org sets (including in character global file).
+* I generally plan out best-in-slot (BiS) pieces for each set even before I acquire the pieces. These BiS pieces are
+  left commented out in the set, while placeholders that I do have in the meantime are uncommented for that slot.
+* I like to list out the important stats for each piece of item in most of my sets, and then have a total at
+  the bottom of the set. If you ever change any pieces of gear, you should recalculate the stats for the new piece
+  and then recalculate for the set total, or just remove those stat comments entirely to avoid confusion. However,
+  if you choose to ignore them, it doesn't not actually affect anything.
+* Equipping certain gear such as warp rings or ammo belts will automatically lock that slot until you manually
+  unequip it or change zones.
+
+
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                                      Keybinds
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+Modes:
+  [ F9 ]              Cycle Melee Accuracy
+  [ CTRL+F9 ]         Cycle Melee Defense
+  [ F10 ]             Toggle Emergency -PDT
+  [ ALT+F10 ]         Toggle Kiting (on = move speed gear always equipped)
+  [ F11 ]             Toggle Emergency -MDT
+  [ F12 ]             Report current status
+  [ CTRL+F12 ]        Cycle Idle modes
+  [ ALT+F12 ]         Cancel Emergency -PDT/-MDT Mode
+  [ WIN+C ]           Toggle Capacity Points Mode
+  [ CTRL+PageUp ]     Cycle Elemental Mode
+  [ CTRL+PageDown ]   Cycleback Elemental Mode
+  [ ALT+PageDown ]    Reset to default Elemental Mode
+  [ ALT+` ]           Toggle Magic Burst mode
+  [ WIN+S ]           Toggle Sleep mode
+  [ WIN+N ]           Toggle NM mode
+
+Weapons:
+  [ CTRL+Insert ]     Cycle Weapon Sets
+  [ CTRL+Delete ]     Cycleback Weapon Sets
+  [ ALT+Delete ]      Reset to default Weapon Set
+  [ CTRL+Home ]       Cycle Toy Weapon Sets
+  [ CTRL+End ]        Cycleback Toy Weapon Sets
+  [ ALT+End ]         Reset to default Toy Weapon Set
+
+Spells:
+  [ ALT+Q ]           Tier 3 single target nuke
+  [ ALT+W ]           Highest available single target nuke
+  [ ALT+Z ]           Temper II
+  [ ALT+X ]           Enspell
+  [ ALT+E ]           Haste II
+  [ ALT+R ]           Dispel
+  [ ALT+U ]           Blink
+  [ ALT+I ]           Stoneskin
+  [ ALT+O ]           Phalanx
+  [ ALT+P ]           Aquaveil
+  [ ALT+; ]           Regen II
+  [ ALT+' ]           Refresh III
+  [ CTRL+Z ]          Gain-INT
+  [ CTRL+X ]          Gain-MND
+  [ CTRL+C ]          Gain-STR
+  [ CTRL+V ]          Gain-DEX
+  ============ /SCH ============
+  [ ALT+C ]           Storm
+  [ ALT+/ ]           Klimaform
+
+Abilities:
+  [ Shift+` ]         Convert
+  [ Shift+Z ]         Composure
+  [ Shift+X ]         Saboteur
+  ============ /SCH ============
+  [ CTRL+- ]          Light Arts/Addendum: White
+  [ CTRL+= ]          Dark Arts/Addendum: Black
+  [ CTRL+[ ]          Rapture/Ebullience
+  [ CTRL+\ ]          Penury/Parsimony
+  [ ALT+[ ]           Accession/Manifestation
+  [ ALT+\ ]           Celerity/Alacrity
+
+SilverLibs keybinds:
+  [ ALT+D ]           Interact
+  [ ALT+S ]           Turn 180 degrees in place
+  [ WIN+W ]           Toggle Rearming Lock
+                      (off = re-equip previous weapons if you go barehanded)
+                      (on = prevent weapon auto-equipping)
+  [ CTRL+` ]          Cycle Treasure Hunter Mode
+
+For more info and available functions, see SilverLibs documentation at:
+https://github.com/shastaxc/silver-libs
+
+Global-Binds.lua contains additional non-job-related keybinds.
+
+
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                                  Custom Commands
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+Prepend with /console to use these in in-game macros.
+
+gs c elemental tier     Uses highest available tier single target elemental nuke corresponding to the selected element in the ElementMode.
+gs c elemental tier1    Uses tier 1 single target elemental nuke corresponding to the selected element in the ElementMode.
+gs c elemental tier2    Uses tier 2 single target elemental nuke corresponding to the selected element in the ElementMode.
+gs c elemental tier3    Uses tier 3 single target elemental nuke corresponding to the selected element in the ElementMode.
+gs c elemental tier4    Uses tier 4 single target elemental nuke corresponding to the selected element in the ElementMode.
+
+gs c elemental storm    Uses SCH storm corresponding to the selected element in the ElementMode.
+
+gs c barelement         Use Bar-element spell currently selected from the BarElement cycle.
+gs c barstatus          Use Bar-status spell currently selected from the BarStatus cycle.
+gs c gainspell          Use Gain- spell currently selected from the GainSpell cycle.
+
+gs c bind               Sets keybinds again. Sometimes they don't all get set when swapping jobs. Calling this manually fixes it.
+
+(More commands available through SilverLibs)
+
+
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                            Recommended In-game Macros
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+__Keybind___Name______________Command_____________
+[ CTRL+1 ] Para           /ma "Paralyze II" <stnpc>
+[ CTRL+2 ] Blind          /ma "Blind II" <stnpc>
+[ CTRL+3 ] Cure           /ma "Cure" <stpc>
+[ CTRL+4 ] Cure4          /ma "Cure IV" <stpc>
+[ CTRL+5 ] Bio            /ma "Bio III" <stnpc>
+[ CTRL+6 ] Stun           /ma "Stun" <stnpc>
+[ CTRL+7 ] Sleep          /ma "Sleep" <stnpc>
+[ CTRL+8 ] Sleep2         /ma "Sleep II" <stnpc>
+[ CTRL+9 ] Chainspe       /ja "Chainspell" <me>
+[ CTRL+0 ] Addle          /ma "Addle II" <stnpc>
+[ ALT+1 ]  Frazzle2       /ma "Frazzle II" <stnpc>
+[ ALT+2 ]  Frazzle3       /ma "Frazzle III" <stnpc>
+[ ALT+3 ]  Distract       /ma "Distract III" <stnpc>
+[ ALT+4 ]  Slow II        /ma "Slow II" <stnpc>
+[ ALT+5 ]  Dia            /ma "Dia III" <stnpc>
+[ ALT+6 ]  Break          /ma "Break" <stnpc>
+[ ALT+7 ]  Gravity        /ma "Gravity II" <stnpc>
+[ ALT+8 ]  Bind           /ma "Bind" <stnpc>
+[ ALT+9 ]  Stymie         /ja "Stymie" <me>
+[ ALT+0 ]  Silence        /ma "Silence" <stnpc>
+
+]]--
+
 
 -- Initialization function for this job file.
 function get_sets()
