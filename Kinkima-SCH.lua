@@ -1,6 +1,5 @@
 --[[
 File Status: Good.
-TODO: Need to update sets with empy+3.
 
 Author: Silvermutt
 Required external libraries: SilverLibs
@@ -44,6 +43,10 @@ Weapons
   * Additional weapon sets can be created but you need to also add them to the state.WeaponSet cycle.
 * Casting Dispelga disregards all other weapon equip rules because Daybreak must be equipped to cast it. You
   will lose all your TP when casting Dispelga. You should have your previous weapons re-equipped afterward.
+
+Spells:
+* Certain sets have a "LightArts" or "DarkArts" variant which will be used if casting a spell aligned with that
+  mode while you have that mode active.
 
 Abilities
 * Sublimation will use a variant idle set automatically to charge up Sublimation to stronger effect. This causes
