@@ -49,6 +49,9 @@ Weapons
   will lose all your TP when casting Dispelga. You should have your previous weapons re-equipped afterward.
 * The "DW" variants of sets will be used automatically if the Dual Wield trait is available.
 
+Spells
+* Casting Phalanx II on self will automatically change the spell to Phalanx.
+
 Other
 * If you are not using my reorganizer addon, remove all the sets.org sets (including in character global file).
 * I generally plan out best-in-slot (BiS) pieces for each set even before I acquire the pieces. These BiS pieces are
@@ -117,10 +120,10 @@ Abilities:
   ============ /SCH ============
   [ CTRL+- ]          Light Arts/Addendum: White
   [ CTRL+= ]          Dark Arts/Addendum: Black
-  [ CTRL+[ ]          Rapture/Ebullience
-  [ CTRL+\ ]          Penury/Parsimony
-  [ ALT+[ ]           Accession/Manifestation
-  [ ALT+\ ]           Celerity/Alacrity
+  [ CTRL+[ ]          Rapture (LA) / Ebullience (DA)
+  [ CTRL+\ ]          Penury (LA) / Parsimony (DA)
+  [ ALT+[ ]           Accession (LA) / Manifestation (DA)
+  [ ALT+\ ]           Celerity (LA) / Alacrity (DA)
 
 SilverLibs keybinds:
   [ ALT+D ]           Interact

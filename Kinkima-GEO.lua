@@ -123,10 +123,10 @@ Abilities:
   [ ALT+R ]           Sublimation
   [ CTRL+- ]          Light Arts/Addendum: White
   [ CTRL+= ]          Dark Arts/Addendum: Black
-  [ CTRL+[ ]          Rapture/Ebullience
-  [ CTRL+\ ]          Penury/Parsimony
-  [ ALT+[ ]           Accession/Manifestation
-  [ ALT+\ ]           Celerity/Alacrity
+  [ CTRL+[ ]          Rapture (LA) / Ebullience (DA)
+  [ CTRL+\ ]          Penury (LA) / Parsimony (DA)
+  [ ALT+[ ]           Accession (LA) / Manifestation (DA)
+  [ ALT+\ ]           Celerity (LA) / Alacrity (DA)
   ============ /RDM ============
   [ Shift+` ]         Convert
 
