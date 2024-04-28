@@ -52,6 +52,13 @@ Other
   if you choose to ignore them, it doesn't not actually affect anything.
 * Equipping certain gear such as warp rings or ammo belts will automatically lock that slot until you manually
   unequip it or change zones.
+* I recommend filtering the default timers for rolls because this lua creates custom ones and you don't need to
+  see the same info twice. The custom timers are created because the duration is more accurate. The default timers
+  do not account for duration extension from Rostam Path C, but the custom timers do.
+  * You can filter the default timers by editing the file in plugins/settings/timers.xml and replace the line that says
+  <AbilityBuffFilter />
+  with this one:
+  <AbilityBuffFilter>*Roll</AbilityBuffFilter>
 
 
 ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
@@ -231,22 +238,6 @@ function job_setup()
   -- Corsair only uses guns for ranged weapons
   send_command('dp gun')
 
-  roll_timer = nil -- DO NOT MODIFY
-  -- DO NOT MODIFY
-  -- Rolls will be tracked here indexed by name. A packet listener will remove rolls from this list
-  -- when they fall off, and update timers based on data coming from the game.
-  my_active_rolls = {
-    -- Example: [321] = silibs.roll_info + {value=3, expiration=12345, is_timer_set=false},
-  }
-  -- Check if any rolls are currently active and begin tracking them. Just have to assume they were
-  -- rolled by self.
-  for id,ja in pairs(silibs.roll_info) do
-    if buffactive[ja.name] then
-      my_active_rolls[ja.status] = ja
-      my_active_rolls[ja.status].value = "?"
-    end
-  end
-
   set_main_keybinds()
 end
 
@@ -272,6 +263,22 @@ function user_setup()
   set_sub_keybinds()
   
   send_command('reload timers')
+
+  roll_timer = nil -- DO NOT MODIFY
+  -- DO NOT MODIFY
+  -- Rolls will be tracked here indexed by name. A packet listener will remove rolls from this list
+  -- when they fall off, and update timers based on data coming from the game.
+  my_active_rolls = {
+    -- Example: [321] = silibs.roll_info + {value=3, expiration=12345, is_timer_set=false},
+  }
+  -- Check if any rolls are currently active and begin tracking them. Just have to assume they were
+  -- rolled by self.
+  for id,ja in pairs(silibs.roll_info) do
+    if buffactive[ja.name] then
+      my_active_rolls[ja.status] = ja
+      my_active_rolls[ja.status].value = 0
+    end
+  end
 end
 
 
@@ -2098,14 +2105,18 @@ function job_aftercast(spell, action, spellMap, eventArgs)
         my_active_rolls[spell.status].value = spell.value
       else -- Double-up
         if spell.value > 11 then -- Busted
+          clear_timer(my_active_rolls[spell.status])
           my_active_rolls[spell.status] = nil
         else -- Not busted double-up
+          -- Clear current timer, allows new one to be created with the buff update packet
+          clear_timer(my_active_rolls[spell.status])
+
           local old_exp = my_active_rolls[spell.status] and my_active_rolls[spell.status].expiration or nil
           my_active_rolls[spell.status] = silibs.roll_info[spell.id]
           my_active_rolls[spell.status].value = spell.value
-          if old_exp then
-            my_active_rolls[spell.status].expiration = old_exp
-          end
+          my_active_rolls[spell.status].expiration = old_exp
+
+          set_timer(my_active_rolls[spell.status])
         end
       end
     else
@@ -2540,6 +2551,7 @@ function parse_buffs(data)
     if not is_dud then
       -- read times
       for i = 1, 32 do
+        
         local buff = buffs[i]
         local roll = buff and my_active_rolls[buff.id]
         -- Only care about expirations for my active rolls
@@ -2550,7 +2562,11 @@ function parse_buffs(data)
             local expiration = data:unpack('I', index)
 
             roll.expiration = from_server_time(expiration)
-            set_timer(roll)
+            if roll.expiration then
+              set_timer(roll)
+            else
+              print('This is a self-correcting error.')
+            end
           end
         end
       end
@@ -2571,6 +2587,7 @@ end
 
 function clear_timer(roll)
   send_command('@timers d "'..roll_timer_name(roll)..'"')
+  roll.is_timer_set = false
 end
 
 function set_timer(roll)
@@ -2579,7 +2596,22 @@ function set_timer(roll)
 end
 
 function roll_timer_name(roll)
-  return roll.name..' '..roll.value
+  -- Remove the " Roll" part of the name for display in timer
+  local name_str = roll.name:sub(0, #roll.name-5)
+
+  local value_str = ''
+  if roll.value > 0 then
+    value_str = ' '..roll.value
+    if roll.value == roll.lucky then
+      value_str = value_str..' Lucky'
+    elseif roll.value == roll.unlucky then
+      value_str = value_str..' Unlucky'
+    elseif roll.value == 11 then
+      value_str = value_str..' MAX'
+    end
+  end
+
+  return name_str..value_str
 end
 
 function from_server_time(t)
@@ -2702,6 +2734,6 @@ function unbind_keybinds()
   send_command('unbind ^numpad0')
   send_command('unbind ^numpad.')
 end
-inspect=require('inspect')
+
 function test()
 end
