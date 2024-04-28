@@ -1,11 +1,277 @@
--- File Status: Good.
--- TODO: Need to update sets with empy+3.
+--[[
+File Status: Good.
+TODO: Need to update sets with empy+3.
 
--- Author: Silvermutt
--- Required external libraries: SilverLibs
--- Required addons: N/A
--- Recommended addons: WSBinder, Reorganizer, PartyBuffs, Shortcuts
--- Misc Recommendations: Disable RollTracker
+Author: Silvermutt
+Required external libraries: SilverLibs
+Required addons: N/A
+Recommended addons: WSBinder, Reorganizer, PartyBuffs, Shortcuts
+Misc Recommendations: Disable RollTracker
+
+
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                                  General Use Tips
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+Modes
+* Casting Mode: Changes casting type
+  * Seidr: Uses set variants containing Seidr Cotehardie to help save MP while nuking.
+  * Resistant: Allows you to make high magic accuracy set variants for higher level mobs who may resist more frequently.
+* Idle Mode
+  * Normal: Puts you into Refresh and Regen gear when low on MP or HP
+  * HeavyDef: Uses high defense gear instead of Refresh gear, also nerfs Sublimation potency
+* Defense Mode: Equips super high emergency damage reduction set, greatly reduces your cure potency and damage output
+* CP Mode: Equips Capacity Points bonus cape
+* Magic Burst Mode: Toggle Magic Burst mode on or off. If on, when casting elemental magic, will
+  use special MB set to deal more damage. You are expected to know when your spell is going to MB or not, and
+  toggle this mode manually as needed. Good rule of thumb is to leave it on when in a party doing planned skillchains
+  and off otherwise.
+* Elemental Mode: Changes the focused element. The selected element is used for elemental magic keybinds, and
+  storms (if subbing SCH).
+* Helix Mode: Determines which set variant to use for casting Helix
+  * Potency: Maximizes damage dealt
+  * Duration: Maximizes duration of the Helix debuff
+* Regen Mode: Determines which set variant to use for Regen spells
+  * Potency: Maximizes Regen potency
+  * Duration: Maximizes duration of the Regen buff
+
+Weapons
+* Use keybinds to cycle weapons if you need to lock into a specific weapon set to conserve TP.
+  * For the most part, you'll usually want to be in the Casting weapon set which will allow weapon
+    to swap according to what's in each set.
+  * Khatvanga set can be used to lock the Aeonic weapon in so you don't lose TP when casting spells
+    and you can use weaponskills such as Cataclysm, Myrkr, or Shattersoul.
+* If you want different weapon sets, edit the sets.WeaponSet sets.
+  * Additional weapon sets can be created but you need to also add them to the state.WeaponSet cycle.
+* Casting Dispelga disregards all other weapon equip rules because Daybreak must be equipped to cast it. You
+  will lose all your TP when casting Dispelga. You should have your previous weapons re-equipped afterward.
+
+Abilities
+* Sublimation will use a variant idle set automatically to charge up Sublimation to stronger effect. This causes
+  a slight reduction in Refresh in the idle set. However, if you use Sublimation as soon as it completes, the
+  combination of Sublimation + Refresh gear can exceed the overall MP generation of Refresh III. Since Sublimation
+  and Refresh buffs cannot both be active on a player at the same time (they cancel each other), it's best to
+  only use Sublimation and ask others not to Refresh you as long as your idle sets are well-geared.
+
+Other
+* If you are not using my reorganizer addon, remove all the sets.org sets (including in character global file).
+* I generally plan out best-in-slot (BiS) pieces for each set even before I acquire the pieces. These BiS pieces are
+  left commented out in the set, while placeholders that I do have in the meantime are uncommented for that slot.
+* I like to list out the important stats for each piece of item in most of my sets, and then have a total at
+  the bottom of the set. If you ever change any pieces of gear, you should recalculate the stats for the new piece
+  and then recalculate for the set total, or just remove those stat comments entirely to avoid confusion. However,
+  if you choose to ignore them, it doesn't not actually affect anything.
+* Equipping certain gear such as warp rings or ammo belts will automatically lock that slot until you manually
+  unequip it or change zones.
+
+
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                                      Keybinds
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+Modes:
+  [ F9 ]              Cycle Melee Accuracy
+  [ CTRL+F9 ]         Cycle Melee Defense
+  [ F10 ]             Toggle Emergency -PDT
+  [ ALT+F10 ]         Toggle Kiting (on = move speed gear always equipped)
+  [ F11 ]             Toggle Emergency -MDT
+  [ F12 ]             Report current status
+  [ CTRL+F12 ]        Cycle Idle modes
+  [ ALT+F12 ]         Cancel Emergency -PDT/-MDT Mode
+  [ WIN+C ]           Toggle Capacity Points Mode
+  [ CTRL+PageUp ]     Cycle Elemental Mode
+  [ CTRL+PageDown ]   Cycleback Elemental Mode
+  [ ALT+PageDown ]    Reset to default Elemental Mode
+  [ ALT+` ]           Toggle Magic Burst mode
+  [ WIN+H ]           Cycle Helix mode
+  [ WIN+R ]           Cycle Regen mode
+
+Weapons:
+  [ CTRL+Insert ]     Cycle Weapon Sets
+  [ CTRL+Delete ]     Cycleback Weapon Sets
+  [ ALT+Delete ]      Reset to default Weapon Set
+
+Spells:
+  [ ALT+Q ]           Tier 3 single target nuke
+  [ ALT+W ]           Highest available single target nuke
+  [ ALT+Z ]           Helix
+  [ ALT+C ]           Storm
+  [ ALT+/ ]           Klimaform
+  [ ALT+U ]           Blink
+  [ ALT+I ]           Stoneskin
+  [ ALT+P ]           Aquaveil
+  [ ALT+; ]           Regen
+  ============ /RDM ============
+  [ ALT+E ]           Haste
+  [ ALT+O ]           Phalanx
+  [ ALT+' ]           Refresh
+  ============ /WHM ============
+  [ ALT+E ]           Haste
+
+Abilities:
+  [ CTRL+` ]          Immanence
+  [ ALT+R ]           Sublimation
+  [ CTRL+- ]          Light Arts/Addendum: White
+  [ CTRL+= ]          Dark Arts/Addendum: Black
+  [ CTRL+[ ]          Rapture (LA) / Ebullience (DA)
+  [ CTRL+\ ]          Penury (LA) / Parsimony (DA)
+  [ CTRL+] ]          Perpetuance (LA)
+  [ ALT+[ ]           Accession (LA) / Manifestation (DA)
+  [ ALT+\ ]           Celerity (LA) / Alacrity (DA)
+  [ ALT+] ]           Altruism (DA) / Focalization (DA)
+  ============ /RDM ============
+  [ Shift+` ]         Convert
+
+SilverLibs keybinds:
+  [ ALT+D ]           Interact
+  [ ALT+S ]           Turn 180 degrees in place
+  [ WIN+W ]           Toggle Rearming Lock
+                      (off = re-equip previous weapons if you go barehanded)
+                      (on = prevent weapon auto-equipping)
+
+For more info and available functions, see SilverLibs documentation at:
+https://github.com/shastaxc/silver-libs
+
+Global-Binds.lua contains additional non-job-related keybinds.
+
+
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                                  Custom Commands
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+Prepend with /console to use these in in-game macros.
+
+gs c elemental tier     Uses highest available tier single target elemental nuke corresponding to the selected element in the ElementMode.
+gs c elemental tier1    Uses tier 1 single target elemental nuke corresponding to the selected element in the ElementMode.
+gs c elemental tier2    Uses tier 2 single target elemental nuke corresponding to the selected element in the ElementMode.
+gs c elemental tier3    Uses tier 3 single target elemental nuke corresponding to the selected element in the ElementMode.
+gs c elemental tier4    Uses tier 4 single target elemental nuke corresponding to the selected element in the ElementMode.
+gs c elemental tier5    Uses tier 5 single target elemental nuke corresponding to the selected element in the ElementMode.
+
+gs c elemental ga       Uses highest available -ga elemental nuke corresponding to the selected element in the ElementMode.
+gs c elemental ga1      Uses tier 1 -ga elemental nuke corresponding to the selected element in the ElementMode.
+gs c elemental ga2      Uses tier 2 -ga elemental nuke corresponding to the selected element in the ElementMode.
+
+gs c elemental storm    Uses SCH storm corresponding to the selected element in the ElementMode.
+
+gs c scholar light      Activates Light Arts if not in Light Arts or Addendum: White. Activates Addendum: White if in Light Arts.
+gs c scholar dark       Activates Dark Arts if not in Dark Arts or Addendum: Black. Activates Addendum: Black if in Dark Arts.
+gs c scholar cost       Uses Penury if in light mode. Uses Parsimony if in dark mode.
+gs c scholar speed      Uses Celerity if in light mode. Uses Alacrity if in dark mode.
+gs c scholar aoe        Uses Accession if in light mode. Uses Manifestation if in dark mode.
+gs c scholar power      Uses Rapture if in light mode. Uses Ebullience if in dark mode.
+gs c scholar duration   Uses Perpetuance if in light mode.
+gs c scholar accuracy   Uses Altruism if in light mode. Uses Focalization if in dark mode.
+gs c scholar enmity     Uses Tranquility if in light mode. Uses Equanimity if in dark mode.
+gs c scholar skillchain Uses Immanence if in dark mode.
+gs c scholar addendum   Uses Addendum: White if in Light Arts. Uses Addendum: Black if in Dark Arts.
+
+gs c bind               Sets keybinds again. Sometimes they don't all get set when swapping jobs. Calling this manually fixes it.
+
+(More commands available through SilverLibs)
+
+
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                            Recommended In-game Macros
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+Swap macro books swap based on whether you're self-skillchaining or not.
+
+Normal macros:
+__Keybind___Name______________Command_____________
+[ CTRL+1 ] Cure           /ma "Cure" <stpc>
+[ CTRL+2 ] Cure2          /ma "Cure II" <stpc>
+[ CTRL+3 ] Cure3          /ma "Cure III" <stpc>
+[ CTRL+4 ] Cure4          /ma "Cure IV" <stpc>
+[ CTRL+0 ] Pro5           /ma "Protect V" <stpc>
+[ ALT+1 ]  Stona          /ma "Stona" <t>
+[ ALT+2 ]  Erase          /ma "Erase" <t>
+[ ALT+3 ]  Cursna         /ma "Cursna" <t>
+[ ALT+4 ]  Viruna         /ma "Viruna" <t>
+[ ALT+5 ]  Dia            /ma "Dia II" <t>
+[ ALT+6 ]  Raise          /ma "Raise III" <stpc>
+[ ALT+7 ]  Reraise        /ma "Reraise" <me>
+[ ALT+0 ]  Shell5         /ma "Shell V" <stpc>
+
+Self-skillchain macros:
+__Keybind___Name______________Command_____________
+[ CTRL+1 ] Fusion         /p Starting {Fusion} MB: {Fire}/{Light}
+                          /ja "Immanence" <me> <wait1>
+                          /ma "Fire" <t> <wait5>
+                          /ja "Immanence" <me> <wait1>
+                          /ma "Thunder" <t>
+                          /p Closing {Fusion} MB: {Fire}/{Light}
+[ CTRL+2 ] Distorti       /p Starting {Distortion} MB: {Water}/{Ice}
+                          /ja "Immanence" <me> <wait1>
+                          /ma "Luminohelix" <t> <wait5>
+                          /ja "Immanence" <me> <wait1>
+                          /ma "Stone" <t>
+                          /p Closing {Distortion} MB: {Water}/{Ice}
+[ CTRL+3 ] Fragment       /p Starting {Fragmentation} MB: {Aero}/{Thunder}
+                          /ja "Immanence" <me> <wait1>
+                          /ma "Blizzard" <t> <wait5>
+                          /ja "Immanence" <me> <wait1>
+                          /ma "Water" <t>
+                          /p Closing {Fragmentation} MB: {Aero}/{Thunder}
+[ CTRL+4 ] Gravitat       /p Starting {Gravitation} MB: {Stone}/{Darkness}
+                          /ja "Immanence" <me> <wait1>
+                          /ma "Aero" <t> <wait5>
+                          /ja "Immanence" <me> <wait1>
+                          /ma "Noctohelix" <t>
+                          /p Closing {Gravitation} MB: {Stone}/{Darkness}
+[ CTRL+0 ] 3-s Fire       /ja "Immanence" <me> <wait1>
+                          /ma "Stone" <t> <wait5>
+                          /ja "Immanence" <me> <wait1>
+                          /ma "Fire III" <t> <wait6>
+                          /ja "Immanence" <me> <wait1>
+                          /ma "Thunder" <t>
+[ ALT+1 ]  Scission       /p Starting {Scission} MB: {Stone}
+                          /ja "Immanence" <me> <wait1>
+                          /ma "Fire" <t> <wait5>
+                          /ja "Immanence" <me> <wait1>
+                          /ma "Stone II" <t>
+                          /p Closing {Scission} MB: {Stone}
+[ ALT+2 ]  Indurati       /p Starting {Induration} MB: {Ice}
+                          /ja "Immanence" <me> <wait1>
+                          /ma "Water" <t> <wait5>
+                          /ja "Immanence" <me> <wait1>
+                          /ma "Blizzard II" <t>
+                          /p Closing {Induration} MB: {Ice}
+[ ALT+3 ]  Detonati       /p Starting {Detonation} MB: {Wind}
+                          /ja "Immanence" <me> <wait1>
+                          /ma "Thunder" <t> <wait5>
+                          /ja "Immanence" <me> <wait1>
+                          /ma "Aero II" <t>
+                          /p Closing {Induration} MB: {Ice}
+[ ALT+4 ]  Liquefac       /p Starting {Liquefaction} MB: {Fire}
+                          /ja "Immanence" <me> <wait1>
+                          /ma "Stone" <t> <wait5>
+                          /ja "Immanence" <me> <wait1>
+                          /ma "Fire II" <t>
+                          /p Closing {Liquefaction} MB: {Fire}
+[ ALT+5 ]  Reverber       /p Starting {Reverberation} MB: {Water}
+                          /ja "Immanence" <me> <wait1>
+                          /ma "Stone" <t> <wait5>
+                          /ja "Immanence" <me> <wait1>
+                          /ma "Water II" <t>
+                          /p Closing {Reverberation} MB: {Water}
+[ ALT+6 ]  Impactio       /p Starting {Impaction} MB: {Thunder}
+                          /ja "Immanence" <me> <wait1>
+                          /ma "Blizzard" <t> <wait5>
+                          /ja "Immanence" <me> <wait1>
+                          /ma "Thunder II" <t>
+                          /p Closing {Impaction} MB: {Thunder}
+[ ALT+7 ]  Compress       /p Starting {Compression} MB: {Darkness}
+                          /ja "Immanence" <me> <wait1>
+                          /ma "Blizzard" <t> <wait5>
+                          /ja "Immanence" <me> <wait1>
+                          /ma "Noctohelix" <t>
+                          /p Closing {Compression} MB: {Darkness}
+[ ALT+0 ]  Compres2       /p Starting {Compression} MB: {Darkness}
+                          /ja "Immanence" <me> <wait1>
+                          /ma "Stone" <t> <wait5>
+                          /ja "Immanence" <me> <wait1>
+                          /ma "Anemohelix" <t>
+                          /p Closing {Compression} MB: {Darkness}
+
+]]--
+
 
 -- Initialization function for this job file.
 function get_sets()
@@ -1141,6 +1407,9 @@ function init_gear_sets()
   sets.idle.Refresh.MpSub50 = set_combine(sets.idle, sets.passive_refresh, sets.passive_refresh.sub50)
   sets.idle.Sublimation.Refresh = set_combine(sets.idle, sets.Sublimation.Refresh)
 
+  -- When you need to be safe (disables move speed gear)
+  sets.idle.HeavyDef = set_combine(sets.idle, {})
+
   sets.resting = set_combine(sets.idle, {
     main="Chatoyant Staff",
     sub="Khonsu",
@@ -1992,15 +2261,13 @@ end
 
 function set_sub_keybinds()
   if player.sub_job == 'RDM' then
+    send_command('bind ~` input /ja "Convert" <me>')
+
     send_command('bind !e input /ma "Haste" <stpc>')
-    send_command('bind !u input /ma Blink <me>')
-    send_command('bind !i input /ma Stoneskin <me>')
     send_command('bind !o input /ma "Phalanx" <me>')
     send_command('bind !\' input /ma "Refresh" <stpc>')
   elseif player.sub_job == 'WHM' then
     send_command('bind !e input /ma "Haste" <stpc>')
-    send_command('bind !u input /ma Blink <me>')
-    send_command('bind !i input /ma Stoneskin <me>')
   end
 end
 
@@ -2024,23 +2291,16 @@ function unbind_keybinds()
   send_command('unbind ![')
   send_command('unbind !]')
   send_command('unbind !\\\\')
-  send_command('unbind !w')
   send_command('unbind @h')
   send_command('unbind @r')
-  send_command('unbind @s')
 
   send_command('unbind !r')
   send_command('unbind !u')
   send_command('unbind !i')
   send_command('unbind !p')
   send_command('unbind !;')
+  send_command('unbind !/')
 
-  send_command('unbind !e')
-  send_command('unbind !u')
-  send_command('unbind !i')
-  send_command('unbind !o')
-  send_command('unbind !\'')
-  
   send_command('unbind ^pageup')
   send_command('unbind ^pagedown')
   send_command('unbind !pagedown')
@@ -2049,6 +2309,12 @@ function unbind_keybinds()
   send_command('unbind !w')
   send_command('unbind !z')
   send_command('unbind !c')
+  
+  send_command('unbind ~`')
+  send_command('unbind !e')
+  send_command('unbind !o')
+  send_command('unbind !\'')
+  
 end
 
 function test()
