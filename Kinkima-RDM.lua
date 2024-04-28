@@ -3,7 +3,7 @@ File Status: Good.
 
 Author: Silvermutt
 Required external libraries: SilverLibs
-Required addons: N/A
+Required addons: Timers
 Recommended addons: WSBinder, Reorganizer, PartyBuffs, Debuffed, Shortcuts
 Misc Recommendations: Disable GearInfo, Disable RollTracker
 
