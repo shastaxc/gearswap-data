@@ -734,7 +734,7 @@ function init_gear_sets()
   -- 50% STR. 5 hit ws. Can crit. fTP transfers.
   sets.precast.WS['Rampage'] = set_combine(sets.precast.WS, {
     ammo="Crepuscular Pebble",        --  3, __,  3 <__, __, __> (__, __) [ 3/ 3, ___] {__/__, ___}
-    head=gear.Nyame_B_head,           -- 26, 11, __ < 5, __, __> (__, __) [ 7/ 7, 123] {__/__, ___}
+    head="Blistering Sallet +1",      -- 41, __, __ < 3, __, __> (10, __) [ 3/__,  53] {__/__, ___}
     body="Meghanada Cuirie +2",       -- 34, __, __ <__, __, __> (__,  6) [ 8/__,  64] {__/__, ___}
     hands="Nukumi Manoplas +2",       -- 20, __, __ <__, __, __> ( 5, __) [10/10,  72] {__/__, ___}
     legs="Gleti's Breeches",          -- 49, __,  8 <__,  5, __> ( 7, __) [ 8/__, 112] {__/__, ___}
@@ -746,9 +746,8 @@ function init_gear_sets()
     ring2="Sroda Ring",               -- 15, __, __ <__, __, __> (__, __) [__/__, ___] {__/__, ___}
     back=gear.BST_STR_Crit_Cape,      -- 30, __, __ <__, __, __> (10, __) [10/__, ___] {__/__, ___}
     waist="Fotia Belt",               -- __, __, __ <__, __, __> (__, __) [__/__, ___] {__/__, ___}; fTP+
-    -- 226 STR, 22 WSD, 11 PDL <13 DA, 10 TA, 0 QA> (22 Crit Rate, 6 Crit Dmg) [53 PDT/27 MDT, 521 M.Eva] {Pet: 0 PDT/0 MDT, 0 Lv}
+    -- 241 STR, 11 WSD, 11 PDL <11 DA, 10 TA, 0 QA> (32 Crit Rate, 6 Crit Dmg) [49 PDT/20 MDT, 451 M.Eva] {Pet: 0 PDT/0 MDT, 0 Lv}
 
-    -- head="Blistering Sallet +1",   -- 41, __, __ < 3, __, __> (10, __) [ 3/__,  53] {__/__, ___}
     -- hands="Nukumi Manoplas +3",    -- 25, __, __ <__, __, __> ( 6, __) [11/11,  82] {__/__, ___}
     -- ear2="Nukumi Earring +2",      -- 15, __,  9 <__, __, __> (__, __) [__/__, ___] {__/__,   1}
     -- 245 STR, 11 WSD, 20 PDL <8 DA, 10 TA, 0 QA> (33 Crit Rate, 6 Crit Dmg) [50 PDT/21 MDT, 461 M.Eva] {Pet: 0 PDT/0 MDT, 1 Lv}
@@ -758,7 +757,7 @@ function init_gear_sets()
   })
   sets.precast.WS['Rampage'].AttCapped = {
     ammo="Crepuscular Pebble",        --  3, __,  3 <__, __, __> (__, __) [ 3/ 3, ___] {__/__, ___}
-    head=gear.Nyame_B_head,           -- 26, 11, __ < 5, __, __> (__, __) [ 7/ 7, 123] {__/__, ___}
+    head="Blistering Sallet +1",      -- 41, __, __ < 3, __, __> (10, __) [ 3/__,  53] {__/__, ___}
     body="Gleti's Cuirass",           -- 39, __,  9 <10, __, __> ( 8, __) [ 9/__, 102] {__/__, ___}
     hands="Nukumi Manoplas +2",       -- 20, __, __ <__, __, __> ( 5, __) [10/10,  72] {__/__, ___}
     legs="Gleti's Breeches",          -- 49, __,  8 <__,  5, __> ( 7, __) [ 8/__, 112] {__/__, ___}
@@ -770,9 +769,8 @@ function init_gear_sets()
     ring2="Defending Ring",           -- __, __, __ <__, __, __> (__, __) [10/10, ___] {__/__, ___}
     back=gear.BST_STR_Crit_Cape,      -- 30, __, __ <__, __, __> (10, __) [10/__, ___] {__/__, ___}
     waist="Fotia Belt",               -- __, __, __ <__, __, __> (__, __) [__/__, ___] {__/__, ___}; fTP+
-    -- 206 STR, 11 WSD, 43 PDL <15 DA, 5 TA, 0 QA> (34 Crit Rate, 0 Crit Dmg) [62 PDT/30 MDT, 521 M.Eva] {Pet: 0 PDT/0 MDT, 2 Lv}
+    -- 221 STR, 0 WSD, 43 PDL <13 DA, 5 TA, 0 QA> (44 Crit Rate, 0 Crit Dmg) [58 PDT/23 MDT, 451 M.Eva] {Pet: 0 PDT/0 MDT, 2 Lv}
 
-    -- head="Blistering Sallet +1",   -- 41, __, __ < 3, __, __> (10, __) [ 3/__,  53] {__/__, ___}
     -- hands="Nukumi Manoplas +3",    -- 25, __, __ <__, __, __> ( 6, __) [11/11,  82] {__/__, ___}
     -- feet="Nukumi Ocreae +3",       -- 31, __, 10 < 6, __, __> (__, __) [__/__, 130] {__/__, ___}
     -- ear2="Nukumi Earring +2",      -- 15, __,  9 <__, __, __> (__, __) [__/__, ___] {__/__,   1}
@@ -788,7 +786,7 @@ function init_gear_sets()
   -- 50% DEX. 5 hit ws. Can crit. fTP transfers.
   sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
     ammo="Coiste Bodhar",             -- 10, __, __ < 3, __, __> (__, __) [__/__, ___] {__/__, ___}
-    head=gear.Nyame_B_head,           -- 25, 11, __ < 5, __, __> (__, __) [ 7/ 7, 123] {__/__, ___}
+    head="Blistering Sallet +1",      -- 41, __, __ < 3, __, __> (10, __) [ 3/__,  53] {__/__, ___}
     body="Meghanada Cuirie +2",       -- 45, __, __ <__, __, __> (__,  6) [ 8/__,  64] {__/__, ___}
     hands="Nukumi Manoplas +2",       -- 43, __, __ <__, __, __> ( 5, __) [10/10,  72] {__/__, ___}
     legs=gear.Lustratio_B_legs,       -- 43, __, __ <__, __, __> ( 3, __) [__/__, ___] {__/__, ___}
@@ -800,9 +798,8 @@ function init_gear_sets()
     ring2="Defending Ring",           -- __, __, __ <__, __, __> (__, __) [10/10, ___] {__/__, ___}
     back=gear.BST_DEX_Crit_Cape,      -- 30, __, __ <__, __, __> (10, __) [10/__, ___] {__/__, ___}
     waist="Fotia Belt",               -- __, __, __ <__, __, __> (__, __) [__/__, ___] {__/__, ___}; fTP+
-    -- 251 DEX, 11 WSD, 15 PDL <11 DA, 0 TA, 0 QA> (22 Crit Rate, 6 Crit Dmg) [50 PDT/27 MDT, 371 M.Eva] {Pet: 0 PDT/0 MDT, 1 Lv}
+    -- 267 DEX, 0 WSD, 15 PDL <9 DA, 0 TA, 0 QA> (32 Crit Rate, 6 Crit Dmg) [46 PDT/20 MDT, 301 M.Eva] {Pet: 0 PDT/0 MDT, 1 Lv}
 
-    -- head="Blistering Sallet +1",   -- 41, __, __ < 3, __, __> (10, __) [ 3/__,  53] {__/__, ___}
     -- hands="Nukumi Manoplas +3",    -- 48, __, __ <__, __, __> ( 6, __) [11/11,  82] {__/__, ___}
     -- 272 DEX, 0 WSD, 15 PDL <9 DA, 0 TA, 0 QA> (33 Crit Rate, 6 Crit Dmg) [47 PDT/21 MDT, 311 M.Eva] {Pet: 0 PDT/0 MDT, 1 Lv}
   })
@@ -811,7 +808,7 @@ function init_gear_sets()
   })
   sets.precast.WS['Evisceration'].AttCapped = {
     ammo="Crepuscular Pebble",        -- __, __,  3 <__, __, __> (__, __) [ 3/ 3, ___] {__/__, ___}
-    head=gear.Nyame_B_head,           -- 25, 11, __ < 5, __, __> (__, __) [ 7/ 7, 123] {__/__, ___}
+    head="Blistering Sallet +1",      -- 41, __, __ < 3, __, __> (10, __) [ 3/__,  53] {__/__, ___}
     body="Gleti's Cuirass",           -- 34, __,  9 <10, __, __> ( 8, __) [ 9/__, 102] {__/__, ___}
     hands="Nukumi Manoplas +2",       -- 43, __, __ <__, __, __> ( 5, __) [10/10,  72] {__/__, ___}
     legs="Gleti's Breeches",          -- __, __,  8 <__,  5, __> ( 7, __) [ 8/__, 112] {__/__, ___}
@@ -823,9 +820,8 @@ function init_gear_sets()
     ring2="Defending Ring",           -- __, __, __ <__, __, __> (__, __) [10/10, ___] {__/__, ___}
     back=gear.BST_DEX_Crit_Cape,      -- 30, __, __ <__, __, __> (10, __) [10/__, ___] {__/__, ___}
     waist="Fotia Belt",               -- __, __, __ <__, __, __> (__, __) [__/__, ___] {__/__, ___}; fTP+
-    -- 171 DEX, 11 WSD, 43 PDL <15 DA, 5 TA, 0 QA> (34 Crit Rate, 0 Crit Dmg) [62 PDT/30 MDT, 521 M.Eva] {Pet: 0 PDT/0 MDT, 2 Lv}
+    -- 187 DEX, 0 WSD, 43 PDL <13 DA, 5 TA, 0 QA> (44 Crit Rate, 0 Crit Dmg) [58 PDT/23 MDT, 451 M.Eva] {Pet: 0 PDT/0 MDT, 2 Lv}
 
-    -- head="Blistering Sallet +1",   -- 41, __, __ < 3, __, __> (10, __) [ 3/__,  53] {__/__, ___}
     -- hands="Nukumi Manoplas +3",    -- 48, __, __ <__, __, __> ( 6, __) [11/11,  82] {__/__, ___}
     -- feet="Nukumi Ocreae +3",       -- 35, __, 10 < 6, __, __> (__, __) [__/__, 130] {__/__, ___}
     -- ear2="Nukumi Earring +2",      -- __, __,  9 <__, __, __> (__, __) [__/__, ___] {__/__,   1}

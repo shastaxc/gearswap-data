@@ -373,7 +373,7 @@ function init_gear_sets()
 
   sets.precast.WS['Blade: Hi'] = {
     ammo="Yetshila +1",
-    head="Mpaca's Cap",
+    head="Blistering Sallet +1",
     body="Hattori Ningi +2",
     hands=gear.Nyame_B_hands,
     legs=gear.Nyame_B_legs,
@@ -387,7 +387,6 @@ function init_gear_sets()
     back=gear.NIN_WSD_STR_Cape,
     waist="Sailfi Belt +1",
 
-    -- head="Blistering Sallet +1",
     -- body="Hattori Ningi +3",
     -- feet="Hattori Kyahan +3",
     -- ear2="Hattori Earring +2",
@@ -475,7 +474,7 @@ function init_gear_sets()
   sets.precast.WS['Blade: Ku'].MaxTP = set_combine(sets.precast.WS['Blade: Ku'], {})
   sets.precast.WS['Blade: Ku'].AttCapped = {
     ammo="Crepuscular Pebble",
-    -- head="Blistering Sallet +1",
+    head="Blistering Sallet +1",
     body=gear.Nyame_B_body,
     hands="Malignance Gloves",
     legs="Mpaca's Hose",
@@ -635,7 +634,7 @@ function init_gear_sets()
 
   sets.precast.WS['Evisceration'] = {
     ammo="Yetshila +1",
-    -- head="Blistering Sallet +1",
+    head="Blistering Sallet +1",
     body="Hattori Ningi +2",
     hands=gear.Ryuo_A_hands,
     legs="Mpaca's Hose",
@@ -654,7 +653,7 @@ function init_gear_sets()
   sets.precast.WS['Evisceration'].MaxTP = set_combine(sets.precast.WS['Evisceration'], {})
   sets.precast.WS['Evisceration'].AttCapped = {
     ammo="Yetshila +1",
-    -- head="Blistering Sallet +1",
+    head="Blistering Sallet +1",
     body="Ken. Samue +1",
     hands=gear.Ryuo_A_hands,
     legs="Mpaca's Hose",

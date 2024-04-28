@@ -315,6 +315,7 @@ function init_gear_sets()
 
   -- Modifiers: 50% DEX, Focus: crit rate
   sets.precast.WS['Evisceration'] = set_combine(sets.precast.WS, {
+    head="Blistering Sallet +1",    -- __, __, __,  3, __, 53, 41, 10
     body="Ayanmo Corazza +2",       -- __, __, __,  7, __, 46, 48, __
     legs=gear.Lustratio_B_legs,     -- __, __, __, __, 38, 20, 43,  3
     neck="Fotia Gorget",            -- 10, __, __, __, __, __, __, __
@@ -324,7 +325,6 @@ function init_gear_sets()
     ring2="Begrudging Ring",        -- __, __, __, __,  7,  7, __,  5
     waist="Fotia Belt",             -- 10, __, __, __, __, __, __, __
     -- range=gear.Linos_WS3,        --  3, __, __, __, 15, 15,  8, __
-    -- head="Blistering Sallet +1", -- __, __, __,  3, __, 53, 41, 10
     -- hands=gear.Lustratio_B_hands,-- __, __, __, __, __, 20, 52,  3
     -- feet=gear.Lustratio_B_feet,  -- __, __, __, __, __, 20, 41,  3
     -- back=gear.BRD_WS3_Cape,      -- __, __, __, __, 20, 20, 30, 10
