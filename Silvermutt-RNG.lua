@@ -1894,31 +1894,6 @@ function job_self_command(cmdParams, eventArgs)
   end
 end
 
--- Returns details of item if you have it. Optional get_count boolean will
--- also return count of all instances of the item with that name that you
--- have in all wardrobes and inventory. get_count defaults to true
-function get_item(item_name, --[[optional]]get_count)
-  if get_count == nil then
-    get_count = true
-  end
-  local item = nil
-  local count = 0
-  if item_name and item_name ~= '' then
-    local bags = L{'inventory','wardrobe','wardrobe2','wardrobe3','wardrobe4','wardrobe5','wardrobe6','wardrobe7','wardrobe8'}
-    for bag,_ in bags:it() do
-      if player[bag] and player[bag][item_name] then
-        item = player[bag][item_name]
-        if not get_count then return end
-        count = count + (item.count or 1)
-      end
-    end
-  end
-  if item then
-    item.count = count
-  end
-  return item
-end
-
 function check_gear()
   if no_swap_necks:contains(player.equipment.neck) then
     locked_neck = true
