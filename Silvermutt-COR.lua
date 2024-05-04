@@ -52,13 +52,6 @@ Other
   if you choose to ignore them, it doesn't not actually affect anything.
 * Equipping certain gear such as warp rings or ammo belts will automatically lock that slot until you manually
   unequip it or change zones.
-* I recommend filtering the default timers for rolls because this lua creates custom ones and you don't need to
-  see the same info twice. The custom timers are created because the duration is more accurate. The default timers
-  do not account for duration extension from Rostam Path C, but the custom timers do.
-  * You can filter the default timers by editing the file in plugins/settings/timers.xml and replace the line that says
-  <AbilityBuffFilter />
-  with this one:
-  <AbilityBuffFilter>*Roll</AbilityBuffFilter>
 
 
 ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
