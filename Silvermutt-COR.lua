@@ -3,9 +3,9 @@ File Status: Good.
 
 Author: Silvermutt
 Required external libraries: SilverLibs
-Required addons: HasteInfo, DistancePlus, Timers
+Required addons: HasteInfo, DistancePlus
 Recommended addons: WSBinder, Reorganizer, Roller
-Misc Recommendations: Disable GearInfo, disable RollTracker
+Misc Recommendations: Disable GearInfo, disable RollTracker, Timers (if custom roll timers enabled)
 
 ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
                                                   General Use Tips
@@ -198,6 +198,7 @@ function job_setup()
   silibs.enable_th()
   silibs.enable_equip_loop()
   silibs.enable_custom_roll_text()
+  silibs.enable_custom_roll_timers() -- Requires Timers plugin
   silibs.enable_elemental_belt_handling(has_obi, has_orpheus)
   silibs.enable_snapshot_auto_equip()
 
@@ -265,24 +266,6 @@ function user_setup()
   send_command('reload timers')
 
   roll_timer = nil -- DO NOT MODIFY
-  -- DO NOT MODIFY
-  -- Rolls will be tracked here indexed by name. A packet listener will remove rolls from this list
-  -- when they fall off, and update timers based on data coming from the game.
-  my_active_rolls = {
-    -- Example: [321] = silibs.roll_info + {value=3, expiration=12345, is_timer_set=false},
-  }
-  roll_info_by_status = {}
-  -- Check if any rolls are currently active and begin tracking them. Just have to assume they were
-  -- rolled by self.
-  -- Also compose a list of all the status IDs
-  for id,ja in pairs(silibs.roll_info) do
-    roll_info_by_status[ja.status] = ja
-
-    if buffactive[ja.name] then
-      my_active_rolls[ja.status] = ja
-      my_active_rolls[ja.status].value = 0
-    end
-  end
 end
 
 
@@ -1998,7 +1981,6 @@ end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
   if spell.type == 'CorsairRoll' then
-    is_doubling_up = false
     if player.status ~= 'Engaged' then
       equip(sets.precast.CorsairRoll.Duration)
     end
@@ -2006,7 +1988,6 @@ function job_post_precast(spell, action, spellMap, eventArgs)
       equip(sets.precast.LuzafRing)
     end
   elseif spell.english == 'Double-Up' then
-    is_doubling_up = true
     if state.LuzafRing.value then
       equip(sets.precast.LuzafRing)
     end
@@ -2099,33 +2080,6 @@ function job_aftercast(spell, action, spellMap, eventArgs)
   if spell.type == 'CorsairRoll' then
     roll_timer = nil
     equip_weapons()
-
-    -- Update timers
-    if not spell.interrupted then
-      if not is_doubling_up then -- First of a new roll
-        -- Fix roll duration timer
-        is_doubling_up = nil
-        my_active_rolls[spell.status] = silibs.roll_info[spell.id]
-        my_active_rolls[spell.status].value = spell.value
-      else -- Double-up
-        if spell.value > 11 then -- Busted
-          clear_timer(my_active_rolls[spell.status])
-          my_active_rolls[spell.status] = nil
-        else -- Not busted double-up
-          -- Clear current timer, allows new one to be created with the buff update packet
-          clear_timer(my_active_rolls[spell.status])
-
-          local old_exp = my_active_rolls[spell.status] and my_active_rolls[spell.status].expiration or nil
-          my_active_rolls[spell.status] = silibs.roll_info[spell.id]
-          my_active_rolls[spell.status].value = spell.value
-          my_active_rolls[spell.status].expiration = old_exp
-
-          set_timer(my_active_rolls[spell.status])
-        end
-      end
-    else
-      is_doubling_up = nil
-    end
   elseif spell.english == 'Light Shot' then
     send_command('@timers c "Light Shot ['..spell.target.name..']" 60 down abilities/00195.png')
   end
@@ -2508,141 +2462,9 @@ windower.raw_register_event('incoming chunk', function(id, data, modified, injec
     if p.Message == 429 then -- roll already up
       roll_timer = nil
       send_command('gs c equipweapons')
-    elseif p.Message == 424 then -- Double up
-      local roll_name = p['Param 1']
-      local roll_value = p['Param 2']
-      add_to_chat(1, 'Debug: double up on '..roll_name..' for a total of '..roll_value)
-    elseif p.Message == 425 then -- Double up
-      local roll_name = p['Param 1']
-      local roll_value = p['Param 2']
-      add_to_chat(1, 'Debug: double up on '..roll_name..' for a total of '..roll_value)
-    elseif p.Message == 426 then -- Double up busted
-      local roll_name = p['Param 1']
-      add_to_chat(1, 'Debug: Double up busted for '..roll_name)
     end
-  elseif id == 0x037 then
-    -- Update clock offset; required for packet 0x063 to work properly
-    -- credit: Akaden, Buffed addon
-    local p = packets.parse('incoming', data)
-    if p['Timestamp'] and p['Time offset?'] then
-      local vana_time = p['Timestamp'] * 60 - math.floor(p['Time offset?'])
-      clock_offset = math.floor(os.time() - vana_time % 0x100000000 / 60)
-    end
-  elseif id == 0x063 then -- Set Update packet
-    parse_buffs(data)
   end
 end)
-
-function parse_buffs(data)
-  -- Sends buff ID and expiration for all of main player's current buffs
-  -- Update buff durations. credit: Akaden, Buffed addon
-  -- This packet is triggered when any buff is gained or dropped
-  -- With this packet we can track our roll buffs and update timers properly
-  local order = data:unpack('H',0x05)
-  if order == 9 then
-    local buffs = T{}
-
-    -- If you have no buffs, the buffs table will be empty (printed like {})
-    -- Sometimes, such as when zoning, it will give you a full 32 buff list
-    -- where every id == 0. That packet can be ignored, to avoid dumping buffs when
-    -- you really shouldn't. Mark it as a dud and don't process.
-    local is_dud
-
-    -- read ids
-    for i = 1, 32 do
-      local index = 0x09 + ((i-1) * 0x02)
-      local status_i = data:unpack('H', index)
-
-      if i == 1 and status_i == 0 then
-        is_dud = true
-        break
-      end
-
-      if status_i ~= 255 then
-        buffs[i] = { id = status_i }
-      end
-    end
-
-    if not is_dud then
-      -- read times
-      for i = 1, 32 do
-        
-        local buff = buffs[i]
-        local roll = buff and roll_info_by_status[buff.id]
-        if roll then
-          local active_roll = my_active_rolls[buff.id]
-          if not active_roll then
-            -- Start tracking this new roll if not already tracking
-            my_active_rolls[roll.status] = roll
-            active_roll = my_active_rolls[roll.status]
-            active_roll.value = 0
-          end
-
-          -- Update expirations for my active rolls
-          roll.is_still_active = true
-          if not roll.is_timer_set then
-            local index = 0x49 + ((i-1) * 0x04)
-            local expiration = data:unpack('I', index)
-
-            roll.expiration = from_server_time(expiration)
-            if roll.expiration then
-              set_timer(roll)
-            else
-              print('This is a self-correcting error.')
-            end
-          end
-        end
-      end
-
-      -- Remove any rolls marked as active that were not in this update packet, because it
-      -- means they are no longer active
-      for k,v in pairs(my_active_rolls) do
-        if not v.is_still_active then
-          clear_timer(v)
-          my_active_rolls[k] = nil
-        else
-          v.is_still_active = nil
-        end
-      end
-    end
-  end
-end
-
-function clear_timer(roll)
-  send_command('@timers d "'..roll_timer_name(roll)..'"')
-  roll.is_timer_set = false
-end
-
-function set_timer(roll)
-  if roll and roll.expiration then
-    send_command('@timers c "'..roll_timer_name(roll)..'" ' ..roll.expiration-os.time().. ' down abilities/00193.png')
-    roll.is_timer_set = true
-  end
-end
-
-function roll_timer_name(roll)
-  local value_str = ''
-  if roll.value > 0 then
-    value_str = ' '..roll.value
-    if roll.value == roll.lucky then
-      value_str = value_str..' Lucky'
-    elseif roll.value == roll.unlucky then
-      value_str = value_str..' Unlucky'
-    elseif roll.value == 11 then
-      value_str = value_str..' MAX'
-    end
-  end
-
-  return roll.short_name..value_str
-end
-
-function from_server_time(t)
-  if not clock_offset then
-    print('clock_offset will self-correct.')
-  end
-  local result = t / 60 + clock_offset
-  return result
-end
 
 function equip_weapons()
   if state.ToyWeapons.current ~= 'None' then
