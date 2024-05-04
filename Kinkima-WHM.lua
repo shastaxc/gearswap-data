@@ -38,7 +38,7 @@ function job_setup()
 
   state.OffenseMode:options('None', 'Normal')
   state.CastingMode:options('Normal', 'Resistant')
-  state.IdleMode:options('Normal', 'PDT', 'CP')
+  state.IdleMode:options('Normal', 'PDT')
 
   state.Buff['Afflatus Solace'] = buffactive['Afflatus Solace'] or false
   state.Buff['Afflatus Misery'] = buffactive['Afflatus Misery'] or false
@@ -962,6 +962,10 @@ function init_gear_sets()
     -- ear2="Ebers Earring +2",     --  8/ 8, ___ [__]
     -- 52 PDT / 27 MDT, 575 M.Eva [11 Refresh]
   }
+  sets.idle.PDT = set_combine(sets.idle, {
+    hands="Nyame Gauntlets",
+    feet="Nyame Sollerets",
+  })
   sets.idle.Refresh = set_combine(sets.idle, {})
   sets.idle.Refresh.MpSub50 = set_combine(sets.idle.Refresh, {
     waist="Fucho-no-Obi",
