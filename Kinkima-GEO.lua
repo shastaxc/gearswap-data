@@ -221,6 +221,12 @@ function job_setup()
   silibs.enable_custom_roll_text()
   silibs.enable_equip_loop()
   silibs.enable_elemental_belt_handling(has_obi, has_orpheus)
+  silibs.enable_luopan_ui({
+    is_visible_by_default = false,
+    align_right = true,
+    x = -130,
+    y = 80,
+  })
 
   state.OffenseMode:options('Safe', 'Normal')
   state.CastingMode:options('Normal', 'Resistant', 'Proc')
