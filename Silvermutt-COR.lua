@@ -271,9 +271,13 @@ function user_setup()
   my_active_rolls = {
     -- Example: [321] = silibs.roll_info + {value=3, expiration=12345, is_timer_set=false},
   }
+  roll_info_by_status = {}
   -- Check if any rolls are currently active and begin tracking them. Just have to assume they were
   -- rolled by self.
+  -- Also compose a list of all the status IDs
   for id,ja in pairs(silibs.roll_info) do
+    roll_info_by_status[ja.status] = ja
+
     if buffactive[ja.name] then
       my_active_rolls[ja.status] = ja
       my_active_rolls[ja.status].value = 0
@@ -2504,6 +2508,17 @@ windower.raw_register_event('incoming chunk', function(id, data, modified, injec
     if p.Message == 429 then -- roll already up
       roll_timer = nil
       send_command('gs c equipweapons')
+    elseif p.Message == 424 then -- Double up
+      local roll_name = p['Param 1']
+      local roll_value = p['Param 2']
+      add_to_chat(1, 'Debug: double up on '..roll_name..' for a total of '..roll_value)
+    elseif p.Message == 425 then -- Double up
+      local roll_name = p['Param 1']
+      local roll_value = p['Param 2']
+      add_to_chat(1, 'Debug: double up on '..roll_name..' for a total of '..roll_value)
+    elseif p.Message == 426 then -- Double up busted
+      local roll_name = p['Param 1']
+      add_to_chat(1, 'Debug: Double up busted for '..roll_name)
     end
   elseif id == 0x037 then
     -- Update clock offset; required for packet 0x063 to work properly
@@ -2553,9 +2568,17 @@ function parse_buffs(data)
       for i = 1, 32 do
         
         local buff = buffs[i]
-        local roll = buff and my_active_rolls[buff.id]
-        -- Only care about expirations for my active rolls
+        local roll = buff and roll_info_by_status[buff.id]
         if roll then
+          local active_roll = my_active_rolls[buff.id]
+          if not active_roll then
+            -- Start tracking this new roll if not already tracking
+            my_active_rolls[roll.status] = roll
+            active_roll = my_active_rolls[roll.status]
+            active_roll.value = 0
+          end
+
+          -- Update expirations for my active rolls
           roll.is_still_active = true
           if not roll.is_timer_set then
             local index = 0x49 + ((i-1) * 0x04)
@@ -2591,14 +2614,13 @@ function clear_timer(roll)
 end
 
 function set_timer(roll)
-  send_command('@timers c "'..roll_timer_name(roll)..'" ' ..roll.expiration-os.time().. ' down abilities/00193.png')
-  roll.is_timer_set = true
+  if roll and roll.expiration then
+    send_command('@timers c "'..roll_timer_name(roll)..'" ' ..roll.expiration-os.time().. ' down abilities/00193.png')
+    roll.is_timer_set = true
+  end
 end
 
 function roll_timer_name(roll)
-  -- Remove the " Roll" part of the name for display in timer
-  local name_str = roll.name:sub(0, #roll.name-5)
-
   local value_str = ''
   if roll.value > 0 then
     value_str = ' '..roll.value
@@ -2611,11 +2633,15 @@ function roll_timer_name(roll)
     end
   end
 
-  return name_str..value_str
+  return roll.short_name..value_str
 end
 
 function from_server_time(t)
-  return t / 60 + clock_offset
+  if not clock_offset then
+    print('clock_offset will self-correct.')
+  end
+  local result = t / 60 + clock_offset
+  return result
 end
 
 function equip_weapons()
