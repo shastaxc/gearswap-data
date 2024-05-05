@@ -41,6 +41,7 @@ function job_setup()
   silibs.enable_equip_loop()
   silibs.enable_haste_info()
   silibs.enable_elemental_belt_handling(has_obi, has_orpheus)
+  silibs.enable_custom_roll_timers() -- Requires Timers plugin
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.HybridMode:options('HeavyDef', 'Safe', 'SubtleBlow', 'Normal')
