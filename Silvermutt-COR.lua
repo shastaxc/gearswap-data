@@ -256,8 +256,6 @@ function user_setup()
   select_default_macro_book()
   set_sub_keybinds()
   
-  send_command('reload timers')
-
   roll_timer = nil -- DO NOT MODIFY
 end
 
