@@ -1,48 +1,206 @@
--- File Status: Good.
-
--- Author: Silvermutt
--- Required external libraries: SilverLibs
--- Required addons: N/A
--- Recommended addons: WSBinder, Reorganizer, Shortcuts
--- Misc Recommendations: Disable RollTracker
-
--------------------------------------------------------------------------------------------------------------------
--- Setup functions for this job.  Generally should not be modified.
--------------------------------------------------------------------------------------------------------------------
-
--- Also, you'll need the Shortcuts addon to handle the auto-targetting of the custom pact commands.
-
 --[[
-  Custom commands:
+File Status: Good.
 
-  gs c siphon
-    Automatically run the process to: dismiss the current avatar; cast appropriate
-    weather; summon the appropriate spirit; Elemental Siphon; release the spirit;
-    and re-summon the avatar.
+Author: Silvermutt
+Required external libraries: SilverLibs
+Required addons: Shortcuts
+Recommended addons: WSBinder, Reorganizer
+Misc Recommendations: Disable RollTracker
 
-    Will not cast weather you do not have access to.
-    Will not re-summon the avatar if one was not out in the first place.
-    Will not release the spirit if it was out before the command was issued.
 
-  gs c pact [PactType]
-    Attempts to use the indicated pact type for the current avatar.
-    PactType can be one of:
-      cure
-      curaga
-      buffOffense
-      buffDefense
-      buffSpecial
-      buffSpecial2
-      debuff1
-      debuff2
-      sleep
-      nuke2
-      nuke4
-      bp70
-      bp75 (merits and lvl 75-80 pacts)
-      bp99
-      astralflow
---]]
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                                  General Use Tips
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+Modes
+* Casting Mode: Changes casting type
+  * NirvAM: Turn this mode on to lock your weapon to Nirvana and maintain your Aftermath buff.
+* Offense Mode: Changes melee accuracy level
+  * Acc: Uses set variants with higher accuracy for engaged sets.
+* Defense Mode: Equips super high emergency damage reduction set, greatly reduces your cure potency and damage output
+* CP Mode: Equips Capacity Points bonus cape
+* Storm: Cycle that sets the storm to use with your custom command `//gs c storm`
+
+Weapons
+* No logic is included for SMN to use melee sets.
+
+Abilities
+* Blood Pact keybinds are set up by category and the exact ability used will depend on which avatar you have summoned.
+* Attempting to use a Blood Pact when you have no pet summoned will automatically summon your previous pet and then
+  execute the desired Blood Pact.
+* Sets for Blood Pacts are divided by type: physical rage, magical rage, hybrid rage, buff, debuff.
+* After issuing a Blood Pact command, your gear will remain locked until the ability finishes. This is because there
+  is sometimes a delay between issuing the command and the command going off, maybe pet has to move into range or
+  some other reason. In this interim you need to be wearing the Blood Pact midcast set.
+  * Any spells you cast during this time will be canceled because otherwise they would be casted in this Blood Pact
+    set that you're locked into so the potency of your spell would be terrible. To avoid wasting your time and resources
+    you will simply not be allowed to cast spells until the pet is finished with its action.
+  * To avoid issues such as dropped packets or your pet getting interrupted (slept, stunned, killed, etc) there is a
+    3 second timeout. After 3 seconds, you will no longer be locked into the pet midcast set. This lock releases sooner
+    in the normal case where the pet finished the ability and you didn't lose packets.
+
+Other
+* If you are not using my reorganizer addon, remove all the sets.org sets (including in character global file).
+* I generally plan out best-in-slot (BiS) pieces for each set even before I acquire the pieces. These BiS pieces are
+  left commented out in the set, while placeholders that I do have in the meantime are uncommented for that slot.
+* I like to list out the important stats for each piece of item in most of my sets, and then have a total at
+  the bottom of the set. If you ever change any pieces of gear, you should recalculate the stats for the new piece
+  and then recalculate for the set total, or just remove those stat comments entirely to avoid confusion. However,
+  if you choose to ignore them, it doesn't not actually affect anything.
+* Equipping certain gear such as warp rings or ammo belts will automatically lock that slot until you manually
+  unequip it or change zones.
+* I have made a conscious choice to prioritize a little more defensive stats for survivability in some sets instead
+  of solely highest potency.
+
+
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                                      Keybinds
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+
+Modes:
+  [ F9 ]              Cycle Melee Accuracy
+  [ CTRL+F9 ]         Cycle Melee Defense
+  [ F10 ]             Toggle Emergency -PDT
+  [ ALT+F10 ]         Toggle Kiting (on = move speed gear always equipped)
+  [ F11 ]             Toggle Emergency -MDT
+  [ F12 ]             Report current status
+  [ CTRL+F12 ]        Cycle Idle modes
+  [ ALT+F12 ]         Cancel Emergency -PDT/-MDT Mode
+  [ WIN+C ]           Toggle Capacity Points Mode
+  ============ /SCH ============
+  [ CTRL+PageUp ]     Cycle Storm
+  [ CTRL+PageDown]    Cycleback Storm
+  [ ALT+PageDown ]    Reset Storm cycle
+
+Spells:
+  ============ /SCH ============
+  [ ALT+C ]           Storm
+  [ ALT+/ ]           Klimaform
+  [ ALT+U ]           Blink
+  [ ALT+I ]           Stoneskin
+  [ ALT+P ]           Aquaveil
+  ============ /RDM ============
+  [ ALT+E ]           Haste
+  [ ALT+U ]           Blink
+  [ ALT+I ]           Stoneskin
+  [ ALT+O ]           Phalanx
+  [ ALT+P ]           Aquaveil
+  [ ALT+' ]           Refresh
+  ============ /WHM ============
+  [ ALT+E ]           Haste
+  [ ALT+U ]           Blink
+  [ ALT+I ]           Stoneskin
+  [ ALT+P ]           Aquaveil
+
+Abilities:
+  [ ALT+Q ]           Assault
+  [ ALT+w ]           Retreat
+  [ ALT+E ]           Release
+  [ ALT+R ]           Avatar's Favor
+  [ CTRL+Numlock ]    Blood Pact: Lv 99
+  [ ALT+Numlock ]     Blood Pact: Astral Flow
+  [ CTRL+Numpad/ ]    Blood Pact: Lv 75-80 Merit
+  [ CTRL+Numpad* ]    Blood Pact: Lv 70
+  [ CTRL+Numpad- ]    Blood Pact: Extra
+  [ ALT+Z ]           Blood Pact: Debuff 1
+  [ ALT+X ]           Blood Pact: Debuff 2
+  ============ /SCH ============
+  [ ALT+R ]           Sublimation
+  [ CTRL+- ]          Light Arts/Addendum: White
+  [ CTRL+= ]          Dark Arts/Addendum: Black
+  [ CTRL+[ ]          Rapture (LA) / Ebullience (DA)
+  [ CTRL+\ ]          Penury (LA) / Parsimony (DA)
+  [ ALT+[ ]           Accession (LA) / Manifestation (DA)
+  [ ALT+\ ]           Celerity (LA) / Alacrity (DA)
+  ============ /RDM ============
+  [ Shift+` ]         Convert
+
+SilverLibs keybinds:
+  [ ALT+D ]           Interact
+  [ ALT+S ]           Turn 180 degrees in place
+  [ WIN+W ]           Toggle Rearming Lock
+                      (off = re-equip previous weapons if you go barehanded)
+                      (on = prevent weapon auto-equipping)
+
+For more info and available functions, see SilverLibs documentation at:
+https://github.com/shastaxc/silver-libs
+
+Global-Binds.lua contains additional non-job-related keybinds.
+
+
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                                  Custom Commands
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+Prepend with /console to use these in in-game macros.
+
+gs c scholar light      Activates Light Arts if not in Light Arts or Addendum: White. Activates Addendum: White if in Light Arts.
+gs c scholar dark       Activates Dark Arts if not in Dark Arts or Addendum: Black. Activates Addendum: Black if in Dark Arts.
+gs c scholar cost       Uses Penury if in light mode. Uses Parsimony if in dark mode.
+gs c scholar speed      Uses Celerity if in light mode. Uses Alacrity if in dark mode.
+gs c scholar aoe        Uses Accession if in light mode. Uses Manifestation if in dark mode.
+gs c scholar power      Uses Rapture if in light mode. Uses Ebullience if in dark mode.
+gs c scholar duration   Uses Perpetuance if in light mode.
+gs c scholar accuracy   Uses Altruism if in light mode. Uses Focalization if in dark mode.
+gs c scholar enmity     Uses Tranquility if in light mode. Uses Equanimity if in dark mode.
+gs c scholar skillchain Uses Immanence if in dark mode.
+gs c scholar addendum   Uses Addendum: White if in Light Arts. Uses Addendum: Black if in Dark Arts.
+
+gs c storm              Uses storm that is selected in the Storm state cycle.
+
+gs c siphon             Automatically run the process to: dismiss the current avatar; cast appropriate
+                        weather; summon the appropriate spirit; Elemental Siphon; release the spirit;
+                        and re-summon the avatar.
+                        Will not cast weather you do not have access to.
+                        Will not re-summon the avatar if one was not out in the first place.
+                        Will not release the spirit if it was out before the command was issued.
+
+gs c pact [PactType]    Attempts to use the indicated pact type for the current avatar.
+                        PactType can be one of:
+                          cure
+                          curaga
+                          bpExtra
+                          buffOffense
+                          buffDefense
+                          buffSpecial
+                          buffSpecial2
+                          debuff1
+                          debuff2
+                          sleep
+                          nuke2
+                          nuke4
+                          bp70
+                          bp75 (merits and lvl 75-80 pacts)
+                          bp99
+                          astralflow
+
+gs c bind               Sets keybinds again. Sometimes they don't all get set when swapping jobs. Calling this manually fixes it.
+
+(More commands available through SilverLibs)
+
+
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                            Recommended In-game Macros
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+__Keybind___Name______________Command_____________
+[ CTRL+1 ] BuffSP1        /console gs c pact buffSpecial
+[ CTRL+2 ] BuffSP2        /console gs c pact buffSpecial2
+[ CTRL+3 ] ManaCede       /ja "Mana Cede" <me>
+[ CTRL+4 ] Cure4          /ma "Cure IV" <stpc>
+[ CTRL+7 ] nuke2          /console gs c pact nuke2
+[ CTRL+8 ] nuke4          /console gs c pact nuke4
+[ CTRL+9 ] AstFlow        /ja "Astral Flow" <me>
+[ CTRL+0 ] Sleep          /console gs c pact sleep
+[ ALT+1 ]  BuffDef        /console gs c pact buffDefense
+[ ALT+2 ]  BuffOff        /console gs c pact buffOffense
+[ ALT+3 ]  CurePact       /console gs c pact cure
+[ ALT+4 ]  CuragaPa       /console gs c pact curaga
+[ ALT+5 ]  Dia2           /ma "Dia II" <t>
+[ ALT+6 ]  Raise          /ma "Raise" <stpc>
+[ ALT+7 ]  Reraise        /ma "Reraise" <me>
+[ ALT+8 ]  Apogee         /ja "Apogee" <me>
+[ ALT+9 ]  AstCondu       /ja "Astral Conduit" <me>
+[ ALT+0 ]  Siphon         /console gs c siphon
+
+]]--
 
 
 -- Initialization function for this job file.
@@ -69,12 +227,9 @@ function job_setup()
   state.CP = M(false, 'Capacity Points Mode')
   state.Storm = M{['description']='Storm','Aurorastorm','Sandstorm',
       'Rainstorm','Windstorm','Firestorm','Hailstorm','Thunderstorm','Voidstorm'}
-  state.OffenseMode:options('None', 'Normal', 'Acc')
+  state.OffenseMode:options('Normal', 'Acc')
   state.CastingMode:options('Normal', 'NirvAM')
   state.IdleMode:options('Normal')
-  
-  state.Storm = M{['description']='Storm','Aurorastorm','Sandstorm',
-  'Rainstorm','Windstorm','Firestorm','Hailstorm','Thunderstorm','Voidstorm'}
 
   state.Buff["Avatar's Favor"] = buffactive["Avatar's Favor"] or false
   state.Buff["Astral Conduit"] = buffactive["Astral Conduit"] or false
@@ -120,7 +275,7 @@ function job_setup()
   pacts.astralflow = {['Ifrit']='Inferno', ['Shiva']='Diamond Dust', ['Garuda']='Aerial Blast', ['Titan']='Earthen Fury',
       ['Ramuh']='Judgment Bolt', ['Leviathan']='Tidal Wave', ['Carbuncle']='Searing Light', ['Fenrir']='Howling Moon',
       ['Diabolos']='Ruinous Omen', ['Cait Sith']="Altana's Favor"}
-  pacts.bpextra = {['Ramuh']='Thunderspark'}
+  pacts.bpExtra = {['Ramuh']='Thunderspark'}
 
   -- Wards table for creating custom timers
   wards = {}
@@ -1000,7 +1155,7 @@ function job_pretarget(spell, action, spellMap, eventArgs)
           or (pet and pet.name and pacts.astralflow[pet.name] and pacts.astralflow[pet.name] == spell.english)
           or (pet and pet.name and pacts.debuff1[pet.name] and pacts.debuff1[pet.name] == spell.english)
           or (pet and pet.name and pacts.debuff2[pet.name] and pacts.debuff2[pet.name] == spell.english)
-          or (pet and pet.name and pacts.bpextra[pet.name] and pacts.bpextra[pet.name] == spell.english))
+          or (pet and pet.name and pacts.bpExtra[pet.name] and pacts.bpExtra[pet.name] == spell.english))
       and (spell.target.type == 'SELF' or spell.target.type == nil) and spell.target.raw ~= '<bt>' then
     eventArgs.cancel = true -- Prevent sending command to game that was targeting self
     send_command('@input /ja "'..spell.english..'" <bt>') -- Re-issue command to target <bt>
@@ -1782,12 +1937,11 @@ function set_main_keybinds()
   send_command('bind !e input /ja "Release" <me>')
   send_command('bind !a input /ja "Avatar\'s Favor" <me>')
 
-  send_command('bind !` gs c pact buffSpecial')
   send_command('bind ^numlock gs c pact bp99')
   send_command('bind !numlock gs c pact astralflow')
   send_command('bind ^numpad/ gs c pact bp75')
   send_command('bind ^numpad* gs c pact bp70')
-  send_command('bind ^numpad- gs c pact bpextra')
+  send_command('bind ^numpad- gs c pact bpExtra')
   send_command('bind !z gs c pact debuff1')
   send_command('bind !x gs c pact debuff2')
 end
@@ -1838,7 +1992,6 @@ function unbind_keybinds()
   send_command('unbind !e')
   send_command('unbind !a')
 
-  send_command('unbind !`')
   send_command('unbind ^numlock')
   send_command('unbind !numlock')
   send_command('unbind ^numpad/')

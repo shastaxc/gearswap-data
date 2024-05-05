@@ -1,10 +1,173 @@
--- File Status: Good.
+--[[
+File Status: Good.
 
--- Author: Silvermutt
--- Required external libraries: SilverLibs
--- Required addons: N/A
--- Recommended addons: WSBinder, Reorganizer, PartyBuffs, Shortcuts
--- Misc Recommendations: Disable RollTracker
+Author: Silvermutt
+Required external libraries: SilverLibs
+Required addons: N/A
+Recommended addons: WSBinder, Reorganizer, PartyBuffs, Shortcuts
+Misc Recommendations: Disable RollTracker
+
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                                  General Use Tips
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+Modes
+* Casting Mode: Changes casting type
+  * Resistant: Allows you to make high magic accuracy set variants for higher level mobs who may resist more frequently.
+* Idle Mode
+  * Normal: Puts you into Refresh and Regen gear when low on MP or HP
+  * PDT: Not as much Refresh or Regen gear in idle set, focusing more on defensive stats
+* Defense Mode: Equips super high emergency damage reduction set, greatly reduces your DPS output
+* CP Mode: Equips Capacity Points bonus cape
+* BarElement: Cycle that changes the specific Bar-element spell to use when you press the associated keybind
+* BarStatus: Cycle that changes the specific Bar-status spell to use when you press the associated keybind
+* Storm: Cycle that sets the storm to use with your custom command `//gs c storm`
+* CuragaTier: Sets tier to use for the Curaga custom keybind. Can by cycled to different tiers.
+* AutoSolace: Automatically turn on Afflatus Solace
+* AutoLightArts: Automatically Turn on Light Arts
+
+Spells
+* Casting Shell or Protect on someone within 10 yalms (including self) will instead use the AoE version (Shellra or
+  Protectra) of the same tier.
+
+Other
+* If you are not using my reorganizer addon, remove all the sets.org sets (including in character global file).
+* I generally plan out best-in-slot (BiS) pieces for each set even before I acquire the pieces. These BiS pieces are
+  left commented out in the set, while placeholders that I do have in the meantime are uncommented for that slot.
+* I like to list out the important stats for each piece of item in most of my sets, and then have a total at
+  the bottom of the set. If you ever change any pieces of gear, you should recalculate the stats for the new piece
+  and then recalculate for the set total, or just remove those stat comments entirely to avoid confusion. However,
+  if you choose to ignore them, it doesn't not actually affect anything.
+* Equipping certain gear such as warp rings or ammo belts will automatically lock that slot until you manually
+  unequip it or change zones.
+
+
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                                      Keybinds
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+Modes:
+  [ F9 ]              Cycle Melee Accuracy
+  [ CTRL+F9 ]         Cycle Melee Defense
+  [ F10 ]             Toggle Emergency -PDT
+  [ ALT+F10 ]         Toggle Kiting (on = move speed gear always equipped)
+  [ F11 ]             Toggle Emergency -MDT
+  [ F12 ]             Report current status
+  [ CTRL+F12 ]        Cycle Idle modes
+  [ ALT+F12 ]         Cancel Emergency -PDT/-MDT Mode
+  [ WIN+C ]           Toggle Capacity Points Mode
+  [ CTRL+Insert ]     Cycleback BarElement
+  [ CTRL+Delete ]     Cycle BarElement
+  [ ALT+Delete ]      Reset BarElement cycle
+  [ CTRL+Home ]       Cycleback BarStatus
+  [ CTRL+End ]        Cycle BarStatus
+  [ ALT+End ]         Reset BarStatus
+  [ CTRL+. ]          Cycleback Curaga Tier
+  [ CTRL+/ ]          Cycle Curaga Tier
+  ============ /SCH ============
+  [ CTRL+PageUp ]     Cycle Storm
+  [ CTRL+PageDown]    Cycleback Storm
+  [ ALT+PageDown ]    Reset Storm cycle
+
+Spells:
+  [ ALT+W ]           Curaga (with tier set from cycle)
+  [ ALT+Z ]           BarElement (set from cycle)
+  [ ALT+X ]           BarStatus (set from cycle)
+  [ ALT+A ]           Auspice
+  [ ALT+E ]           Haste
+  [ ALT+U ]           Blink
+  [ ALT+I ]           Stoneskin
+  [ ALT+P ]           Aquaveil
+  [ ALT+; ]           Regen IV
+  [ CTRL+Z ]          Boost-INT
+  [ CTRL+X ]          Boost-MND
+  [ CTRL+C ]          Boost-STR
+  [ CTRL+V ]          Boost-AGI
+  ============ /SCH ============
+  [ ALT+C ]           Storm
+  [ ALT+/ ]           Klimaform
+  ============ /RDM ============
+  [ ALT+' ]           Refresh
+
+Abilities:
+  [ ALT+` ]           Afflatus Solace
+  ============ /SCH ============
+  [ ALT+R ]           Sublimation
+  [ CTRL+- ]          Light Arts/Addendum: White
+  [ CTRL+= ]          Dark Arts/Addendum: Black
+  [ CTRL+[ ]          Rapture (LA) / Ebullience (DA)
+  [ CTRL+\ ]          Penury (LA) / Parsimony (DA)
+  [ ALT+[ ]           Accession (LA) / Manifestation (DA)
+  [ ALT+\ ]           Celerity (LA) / Alacrity (DA)
+  ============ /SCH ============
+  [ Shift+` ]         Convert
+
+SilverLibs keybinds:
+  [ ALT+D ]           Interact
+  [ ALT+S ]           Turn 180 degrees in place
+  [ WIN+W ]           Toggle Rearming Lock
+                      (off = re-equip previous weapons if you go barehanded)
+                      (on = prevent weapon auto-equipping)
+
+For more info and available functions, see SilverLibs documentation at:
+https://github.com/shastaxc/silver-libs
+
+Global-Binds.lua contains additional non-job-related keybinds.
+
+
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                                  Custom Commands
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+Prepend with /console to use these in in-game macros.
+
+gs c scholar light      Activates Light Arts if not in Light Arts or Addendum: White. Activates Addendum: White if in Light Arts.
+gs c scholar dark       Activates Dark Arts if not in Dark Arts or Addendum: Black. Activates Addendum: Black if in Dark Arts.
+gs c scholar cost       Uses Penury if in light mode. Uses Parsimony if in dark mode.
+gs c scholar speed      Uses Celerity if in light mode. Uses Alacrity if in dark mode.
+gs c scholar aoe        Uses Accession if in light mode. Uses Manifestation if in dark mode.
+gs c scholar power      Uses Rapture if in light mode. Uses Ebullience if in dark mode.
+gs c scholar duration   Uses Perpetuance if in light mode.
+gs c scholar accuracy   Uses Altruism if in light mode. Uses Focalization if in dark mode.
+gs c scholar enmity     Uses Tranquility if in light mode. Uses Equanimity if in dark mode.
+gs c scholar skillchain Uses Immanence if in dark mode.
+gs c scholar addendum   Uses Addendum: White if in Light Arts. Uses Addendum: Black if in Dark Arts.
+
+gs c storm              Uses storm that is selected in the Storm state cycle.
+
+gs c barelement         Use Bar-element spell currently selected from the BarElement cycle.
+gs c barstatus          Use Bar-status spell currently selected from the BarStatus cycle.
+gs c curaga             Use Curaga of the tier currently selected from the CuragaTier cycle.
+
+gs c bind               Sets keybinds again. Sometimes they don't all get set when swapping jobs. Calling this manually fixes it.
+
+(More commands available through SilverLibs)
+
+
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                            Recommended In-game Macros
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+__Keybind___Name______________Command_____________
+[ CTRL+1 ] Cure           /ma "Cure" <stpc>
+[ CTRL+2 ] C3             /ma "Cure III" <stpc>
+[ CTRL+3 ] C4             /ma "Cure IV" <stpc>
+[ CTRL+4 ] C5             /ma "Cure V" <stpc>
+[ CTRL+5 ] C6             /ma "Cure VI" <stpc>
+[ CTRL+6 ] Raise3         /ma "Raise III" <stpc>
+[ CTRL+7 ] ES             /ja "Elemental Seal" <me>
+[ CTRL+8 ] Sacrosan       /ja "Sacrosanctity" <me>
+[ CTRL+9 ] Benedict       /ja "Benediction" <me>
+[ CTRL+0 ] Protect        /ma "Protect V" <stpc>
+[ ALT+1 ]  Stona          /ma "Stona" <stpc>
+[ ALT+2 ]  Erase          /ma "Erase" <stpc>
+[ ALT+3 ]  Cursna         /ma "Cursna" <stpc>
+[ ALT+4 ]  Viruna         /ma "Viruna" <stpc>
+[ ALT+5 ]  Dia            /ma "Dia II" <stnpc>
+[ ALT+6 ]  Arise          /ma "Arise" <stpc>
+[ ALT+7 ]  Reraise        /ma "Reraise IV" <me>
+[ ALT+8 ]  Silence        /ma "Silence" <stnpc>
+[ ALT+9 ]  Asylum         /ja "Asylum" <me>
+[ ALT+0 ]  Shell          /ma "Shell V" <stpc>
+
+]]--
+
 
 -------------------------------------------------------------------------------------------------------------------
 -- Setup functions for this job.  Generally should not be modified.
@@ -31,23 +194,19 @@ function job_setup()
   silibs.enable_equip_loop()
   silibs.enable_elemental_belt_handling(has_obi, has_orpheus)
 
-  auto_solace = true -- Change to false if you don't want Afflatus Solace auto-applied
-  auto_arts = true -- Change to false if you don't want Light Arts auto-applied
-
-  state.CP = M(false, 'Capacity Points Mode')
-
-  state.OffenseMode:options('None', 'Normal')
+  
+  state.OffenseMode:options('Normal')
   state.CastingMode:options('Normal', 'Resistant')
   state.IdleMode:options('Normal', 'PDT')
-
-  state.Buff['Afflatus Solace'] = buffactive['Afflatus Solace'] or false
-  state.Buff['Afflatus Misery'] = buffactive['Afflatus Misery'] or false
+  state.CP = M(false, 'Capacity Points Mode')
 
   state.Barelement = M{['description']='Barspell','Barfira','Barblizzara','Baraera','Barstonra','Barthundra','Barwatera'}
   state.Barstatus = M{['description']='Barstatus','Barsleepra','Barpoisonra','Barparalyzra','Barblindra','Barsilencera','Barpetra','Barvira','Baramnesra'}
   state.Storm = M{['description']='Storm','Aurorastorm','Sandstorm',
       'Rainstorm','Windstorm','Firestorm','Hailstorm','Thunderstorm','Voidstorm'}
   state.CuragaTier = M{['description']='Curaga Tier','IV','V','I'}
+  state.AutoSolace = M(true, 'AutoSolace') -- Change to false if you don't want Afflatus Solace auto-applied
+  state.AutoLightArts = M(true, 'AutoLightArts') -- Change to false if you don't want Light Arts auto-applied
 
   -- Spells that don't scale with skill. Overrides Mote lib.
   classes.EnhancingDurSpells = S{'Adloquium', 'Haste', 'Haste II', 'Flurry', 'Flurry II', 'Protect', 'Protect II', 'Protect III',
@@ -61,6 +220,9 @@ function job_setup()
   bar_status_spells = S{'Baramnesra', 'Barvira', 'Barparalyzra', 'Barsilencera', 'Barpetra', 'Barpoisonra', 'Barblindra', 'Barsleepra',
       'Baramnesia', 'Barvirus', 'Barparalyze', 'Barsilence', 'Barpetrify', 'Barpoison', 'Barblind', 'Barsleep'}
 
+  state.Buff['Afflatus Solace'] = buffactive['Afflatus Solace'] or false
+  state.Buff['Afflatus Misery'] = buffactive['Afflatus Misery'] or false
+    
   set_main_keybinds()
 end
 
@@ -1182,15 +1344,23 @@ function refine_various_spells(spell, action, spellMap, eventArgs)
 
   -- If target is in party and close enough then aoe, otherwise single target
   if spell.english:startswith('Protect') and not spell.english:startswith('Protectra') then
+    local tier = ''
+    if spell.english ~= 'Protect' then
+      tier = spell.english:split(' ')[2]
+    end
     if spell.target.ispartymember and spell.target.distance < 10 then
-      newSpell = 'Protectra V'
+      newSpell = 'Protectra '..tier
       send_command('@input /ma "'..newSpell..'" <me>')
       eventArgs.cancel = true
     end
   -- If target is in party and close enough then aoe, otherwise single target
   elseif spell.english:startswith('Shell') and not spell.english:startswith('Shellra') then
+    local tier = ''
+    if spell.english ~= 'Shell' then
+      tier = ' '..spell.english:split(' ')[2]
+    end
     if spell.target.ispartymember and spell.target.distance < 10 then
-      newSpell = 'Shellra V'
+      newSpell = 'Shellra '..tier
       send_command('@input /ma "'..newSpell..'" <me>')
       eventArgs.cancel = true
     end
@@ -1268,10 +1438,10 @@ function auto_solace_and_arts()
 	  local abil_recasts = windower.ffxi.get_ability_recasts()
     local solace_recast = abil_recasts[29]
     local arts_recast = abil_recasts[228]
-    local needs_solace = auto_solace
+    local needs_solace = state.AutoSolace.current
         and not state.Buff['Afflatus Solace']
         and not state.Buff['Afflatus Misery']
-    local needs_arts = auto_arts
+    local needs_arts = state.AutoLightArts
         and player.sub_job:lower() == 'sch'
         and not buffactive['Light Arts']
         and not buffactive['Addendum: White']
@@ -1381,7 +1551,6 @@ function job_self_command(cmdParams, eventArgs)
   silibs.self_command(cmdParams, eventArgs)
   ----------- Non-silibs content goes below this line -----------
   
-  gearinfo(cmdParams, eventArgs)
   if cmdParams[1] == 'scholar' then
     handle_strategems(cmdParams)
     eventArgs.handled = true
@@ -1403,30 +1572,6 @@ function job_self_command(cmdParams, eventArgs)
     print('Set keybinds!')
   elseif cmdParams[1] == 'test' then
     test()
-  end
-end
-
-function gearinfo(cmdParams, eventArgs)
-  if cmdParams[1] == 'gearinfo' then
-    if type(tonumber(cmdParams[2])) == 'number' then
-      if tonumber(cmdParams[2]) ~= DW_needed then
-        DW_needed = tonumber(cmdParams[2])
-        DW = true
-      end
-    elseif type(cmdParams[2]) == 'string' then
-      if cmdParams[2] == 'false' then
-        DW_needed = 0
-        DW = false
-      end
-    end
-    if type(tonumber(cmdParams[3])) == 'number' then
-      if tonumber(cmdParams[3]) ~= Haste then
-        Haste = tonumber(cmdParams[3])
-      end
-    end
-    if not silibs.midaction() then
-      job_update()
-    end
   end
 end
 
@@ -1533,10 +1678,6 @@ function set_main_keybinds()
   send_command('bind ^end gs c cycle Barstatus')
   send_command('bind !end gs c reset Barstatus')
 
-  send_command('bind ^pageup gs c cycle Storm')
-  send_command('bind ^pagedown gs c cycleback Storm')
-  send_command('bind !pagedown gs c reset Storm')
-
   send_command('bind ^. gs c cycleback CuragaTier')
   send_command('bind ^/ gs c cycle CuragaTier')
 
@@ -1563,6 +1704,11 @@ function set_sub_keybinds()
     send_command('bind ^\\\\ gs c scholar cost')
     send_command('bind ![ gs c scholar aoe')
     send_command('bind !\\\\ gs c scholar speed')
+
+    send_command('bind ^pageup gs c cycle Storm')
+    send_command('bind ^pagedown gs c cycleback Storm')
+    send_command('bind !pagedown gs c reset Storm')
+  
   elseif player.sub_job == 'RDM' then
     send_command('bind ~` input /ja "Convert" <me>')
     send_command('bind !\' input /ma "Refresh" <stpc>')
@@ -1589,10 +1735,6 @@ function unbind_keybinds()
   send_command('unbind ^end')
   send_command('unbind !end')
 
-  send_command('unbind ^pageup')
-  send_command('unbind ^pagedown')
-  send_command('unbind !pagedown')
-
   send_command('unbind ^.')
   send_command('unbind ^/')
   send_command('unbind !/')
@@ -1617,6 +1759,10 @@ function unbind_keybinds()
   send_command('unbind ^\\\\')
   send_command('unbind ![')
   send_command('unbind !\\\\')
+
+  send_command('unbind ^pageup')
+  send_command('unbind ^pagedown')
+  send_command('unbind !pagedown')
 
   send_command('unbind ~`')
   send_command('unbind !\'')
