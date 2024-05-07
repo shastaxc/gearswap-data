@@ -157,7 +157,7 @@ gs c pact [PactType]    Attempts to use the indicated pact type for the current 
                         PactType can be one of:
                           cure
                           curaga
-                          bpExtra
+                          bpextra
                           buffOffense
                           buffDefense
                           buffSpecial
@@ -275,7 +275,7 @@ function job_setup()
   pacts.astralflow = {['Ifrit']='Inferno', ['Shiva']='Diamond Dust', ['Garuda']='Aerial Blast', ['Titan']='Earthen Fury',
       ['Ramuh']='Judgment Bolt', ['Leviathan']='Tidal Wave', ['Carbuncle']='Searing Light', ['Fenrir']='Howling Moon',
       ['Diabolos']='Ruinous Omen', ['Cait Sith']="Altana's Favor"}
-  pacts.bpExtra = {['Ramuh']='Thunderspark'}
+  pacts.bpextra = {['Ramuh']='Thunderspark'}
 
   -- Wards table for creating custom timers
   wards = {}
@@ -1155,7 +1155,7 @@ function job_pretarget(spell, action, spellMap, eventArgs)
           or (pet and pet.name and pacts.astralflow[pet.name] and pacts.astralflow[pet.name] == spell.english)
           or (pet and pet.name and pacts.debuff1[pet.name] and pacts.debuff1[pet.name] == spell.english)
           or (pet and pet.name and pacts.debuff2[pet.name] and pacts.debuff2[pet.name] == spell.english)
-          or (pet and pet.name and pacts.bpExtra[pet.name] and pacts.bpExtra[pet.name] == spell.english))
+          or (pet and pet.name and pacts.bpextra[pet.name] and pacts.bpextra[pet.name] == spell.english))
       and (spell.target.type == 'SELF' or spell.target.type == nil) and spell.target.raw ~= '<bt>' then
     eventArgs.cancel = true -- Prevent sending command to game that was targeting self
     send_command('@input /ja "'..spell.english..'" <bt>') -- Re-issue command to target <bt>
@@ -1941,7 +1941,7 @@ function set_main_keybinds()
   send_command('bind !numlock gs c pact astralflow')
   send_command('bind ^numpad/ gs c pact bp75')
   send_command('bind ^numpad* gs c pact bp70')
-  send_command('bind ^numpad- gs c pact bpExtra')
+  send_command('bind ^numpad- gs c pact bpextra')
   send_command('bind !z gs c pact debuff1')
   send_command('bind !x gs c pact debuff2')
 end
