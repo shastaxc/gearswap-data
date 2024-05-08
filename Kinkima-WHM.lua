@@ -1434,7 +1434,7 @@ function customize_defense_set(defenseSet)
 end
 
 function auto_solace_and_arts()
-  if not areas.Cities:contains(world.area) then
+  if not areas.Cities:contains(world.area) and not silibs.midaction() then
 	  local abil_recasts = windower.ffxi.get_ability_recasts()
     local solace_recast = abil_recasts[29]
     local arts_recast = abil_recasts[228]

@@ -25,8 +25,8 @@ Weapons
 
 Abilities
 * Blood Pact keybinds are set up by category and the exact ability used will depend on which avatar you have summoned.
-* Attempting to use a Blood Pact when you have no pet summoned will automatically summon your previous pet and then
-  execute the desired Blood Pact.
+* Attempting to use a Blood Pact when you have no pet summoned will automatically summon your previous pet instead.
+  You'll have to re-issue the Blood Pact command after it is alive again to have it perform the ability.
 * Sets for Blood Pacts are divided by type: physical rage, magical rage, hybrid rage, buff, debuff.
 * After issuing a Blood Pact command, your gear will remain locked until the ability finishes. This is because there
   is sometimes a delay between issuing the command and the command going off, maybe pet has to move into range or
@@ -37,6 +37,8 @@ Abilities
   * To avoid issues such as dropped packets or your pet getting interrupted (slept, stunned, killed, etc) there is a
     3 second timeout. After 3 seconds, you will no longer be locked into the pet midcast set. This lock releases sooner
     in the normal case where the pet finished the ability and you didn't lose packets.
+* While Astral Conduit is active, you will be locked into pet midcast sets, with the assumption that you're going to
+  be spamming it. Also skips the precast set since there is no Blood Pact cooldown under Astral Conduit.
 
 Other
 * If you are not using my reorganizer addon, remove all the sets.org sets (including in character global file).

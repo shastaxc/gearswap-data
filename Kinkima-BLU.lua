@@ -77,8 +77,8 @@ Modes:
   [ ALT+F12 ]         Cancel Emergency -PDT/-MDT Mode
   [ WIN+C ]           Toggle Capacity Points Mode
   [ ALT+` ]           Toggle Magic Burst mode
+  [ CTRL+F8 ]         Toggle Attack Capped mode
   [ CTRL+l ]          Toggle Learning mode
-  [ CTRL+F8 ]         Toggle AttCapped mode
 
 Weapons:
   [ CTRL+Insert ]     Cycle Weapon Sets

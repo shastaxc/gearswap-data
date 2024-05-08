@@ -1,40 +1,6 @@
--- File Status: Good.
-
--- Author: Silvermutt
--- Required external libraries: SilverLibs
--- Required addons: N/A
--- Recommended addons: WSBinder, Reorganizer
--- Misc Recommendations: Disable RollTracker
-
 -------------------------------------------------------------------------------------------------------------------
 -- Notes about this specific lua
 -------------------------------------------------------------------------------------------------------------------
--- Automatic Pet Targeting will cause you to use Fight automatically on your current target if you are engaged
--- and your pet is idle. There is a keybind to toggle that behavior if you choose.
-
--- If your pet is engaged and you are in Pet mode, you will be in a PetEngaged set typically. If you need movement
--- speed gear equipped in this situation, you can toggle on Kiting mode (CTRL+F10). Just remember to turn it off
--- when you're done.
-
--- Feel free to put weapons into various sets. They will only swap if in Pet or PetDT hybrid mode and master is not engaged.
-
--- Ready moves will not swap gear for the midcast if you are in Master hybrid mode unless they are
--- included in the list called always_swap_moves. Feel free to modify that list as you see fit.
-
--- Recommend setting up macros for ready moves in game like this:
--- /console gs c ready 1
--- /console gs c ready 7
-
--- A UI displaying current pet's Ready moves is enabled by default. It displays the following info:
--- Index|    Ability Type    Range Type    [Charges]    Name    (Description)
--- Example: Dust Cloud, a magical conal attack
--- 1| M ▼ [1] Dust Cloud (Blind)
--- Magical attacks are also color coded by element so "Dust Cloud (Blind)" would be a yellow/brown color.
--- There are some configuration options available for the UI in the job_setup() function. Please adjust as you see fit.
-
--- Feel free to adjust the JugMode cycle with any pets you wish to summon. This only affects the Bestial Loyalty keybind.
--- This will automate swapping into the correct Jug in your ammo slot. The ready moves are tied to the pet that is detected
--- as alive, not what your JugMode is set to.
 
 -------------------------------------------------------------------------------------------------------------------
 --  Keybinds
@@ -49,11 +15,184 @@
 --              [ F12 ]             Update Current Gear / Report Current Status
 --              [ CTRL+F12 ]        Cycle Idle Modes
 --              [ ALT+F12 ]         Cancel Emergency -PDT/-MDT Mode
---              [ CTRL+F8 ]         AttackMode: Capped/Uncapped WS Modifier
 --              [ WIN+C ]           Toggle Capacity Points Mode
 --
 --
 --              (Global-Binds.lua contains additional non-job-related keybinds)
+--[[
+File Status: Good.
+
+Author: Silvermutt
+Required external libraries: SilverLibs
+Required addons: N/A
+Recommended addons: WSBinder, Reorganizer
+Misc Recommendations: Disable RollTracker
+
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                                  General Use Tips
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+Modes
+* Offense Mode: Changes melee accuracy level
+* Hybrid Mode: Changes gear sets based on whether you want pet or master focused stats
+  * Master: Uses "Halfsies" set variants if idle on pet ready moves; does not swap to pet stats when engaged. Mostly focused
+    on boosting master's stats.
+  * Halfsies: A relatively even split between master and pet stats.
+  * PetDT: Focused on pet stats + master defense (in case you need to be in close range).
+  * Pet: Focused solely on pet stats.
+* Defense Mode: Equips super high emergency damage reduction set, greatly reduces your DPS output
+* CP Mode: Equips Capacity Points bonus cape
+* AttCapped: When on, if you have AttCapped set variants for your weaponskills, it will use that. This mode is
+  intended to be used when you think you are attack capped vs your enemy such as when you have a lot of Attack buffs
+  from BRD, COR, GEO, etc.
+* Jug Mode: Feel free to adjust cycle with any pets you wish to summon. This only affects the Bestial Loyalty keybind.
+  This will automate swapping into the correct Jug in your ammo slot. The ready moves are tied to the pet that is detected
+  as alive, not what your JugMode is set to.
+* PetMode: Determines if pet gear should be focused on offensive or defensive stats for "idle" and "engaged" sets.
+* CorrelationMode: If set to "Favorable" and ready move is physical, Empyrean helm will be used for the Ready set.
+* AutomaticPetTargeting: If turned on, when master is engaged on an enemy and pet is idle, it will issue the "Fight"
+  command to your pet automatically. There is a keybind to toggle that behavior if you choose.
+
+Weapons
+* Use keybinds to cycle weapons.
+* If you want different weapon sets, edit the sets.WeaponSet sets.
+  * Additional weapon sets can be created but you need to also add them to the state.WeaponSet cycle.
+* Feel free to put weapons into sets, but they will only swap if in Pet or PetDT hybrid mode and master is not
+  engaged. Otherwise, you will be locked into whatever weapons are set in your state.WeaponSet cycle.
+
+Abilities
+* Ready moves will not swap gear for the midcast if you are in Master hybrid mode unless they are included in the
+  list called always_swap_moves. Feel free to modify that list as you see fit.
+* A UI displaying current pet's Ready moves is enabled by default. It displays the following info:
+    Index|    Ability Type    Range Type    [Charges]    Name    (Description)
+    Example: Dust Cloud, a magical conal attack
+    1| M ▼ [1] Dust Cloud (Blind)
+  * Magical attacks are also color coded by element so "Dust Cloud (Blind)" would be a yellow/brown color.
+  * There are some configuration options available for the UI in the job_setup() function. Please adjust as you
+    see fit.
+  * The "Index" number correlates to the custom commands available in this lua for issuing Ready commands to your
+    pet. See "Custom Commands" below for more details.
+* While Unleash is active, you will be locked into pet midcast sets, with the assumption that you're going to
+  be spamming it.
+
+Other
+* If you are not using my reorganizer addon, remove all the sets.org sets (including in character global file).
+* I generally plan out best-in-slot (BiS) pieces for each set even before I acquire the pieces. These BiS pieces are
+  left commented out in the set, while placeholders that I do have in the meantime are uncommented for that slot.
+* I like to list out the important stats for each piece of item in most of my sets, and then have a total at
+  the bottom of the set. If you ever change any pieces of gear, you should recalculate the stats for the new piece
+  and then recalculate for the set total, or just remove those stat comments entirely to avoid confusion. However,
+  if you choose to ignore them, it doesn't not actually affect anything.
+* Equipping certain gear such as warp rings or ammo belts will automatically lock that slot until you manually
+  unequip it or change zones.
+* If your pet is engaged and you are in Pet mode, you will be in a PetEngaged set typically. If you need movement
+  speed gear equipped in this situation, you can toggle on Kiting mode (CTRL+F10). Just remember to turn it off
+  when you're done.
+
+
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                                      Keybinds
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+Modes:
+  [ F9 ]              Cycle Melee Accuracy
+  [ CTRL+F9 ]         Cycle Melee Defense
+  [ ALT+F9 ]          Cycle Ranged Accuracy
+  [ F10 ]             Toggle Emergency -PDT
+  [ ALT+F10 ]         Toggle Kiting (on = move speed gear always equipped)
+  [ F11 ]             Toggle Emergency -MDT
+  [ F12 ]             Report current status
+  [ CTRL+F12 ]        Cycle Idle modes
+  [ ALT+F12 ]         Cancel Emergency -PDT/-MDT Mode
+  [ WIN+C ]           Toggle Capacity Points Mode
+  [ CTRL+F8 ]         Toggle Attack Capped mode
+  [ CTRL+Home ]       Cycle Jug mode
+  [ CTRL+End ]        Cycleback Jug mode
+  [ ALT+End ]         Reset Jug mode
+  [ CTRL+PageUp ]     Cycleback Pet mode
+  [ CTRL+PageDown ]   Cycle Pet mode
+  [ ALT+PageDown ]    Reset Pet mode
+  [ ALT+Z ]           Toggle Automatic Pet Targeting mode
+  [ ALT+X ]           Toggle Correlation mode
+  [ CTRL+U ]          Toggle UI
+
+Weapons:
+  [ CTRL+Insert ]     Cycle Weapon Sets
+  [ CTRL+Delete ]     Cycleback Weapon Sets
+  [ ALT+Delete ]      Reset to default Weapon Set
+
+Spells:
+  ============ /NIN ============
+  [ Numpad0 ]         Utsusemi: Ichi
+  [ Numpad. ]         Utsusemi: Ni
+
+Abilities:
+  [ ALT+` ]           Reward
+  [ ALT+Q ]           Fight
+  [ ALT+W ]           Heel
+  [ ALT+E ]           Bestial Loyalty (if no pet) / Leave (if pet)
+  ============ /WAR ============
+  [ CTRL+Numlock ]    Defender
+  [ CTRL+Numpad/ ]    Berserk
+  [ CTRL+Numpad* ]    Warcry
+  [ CTRL+Numpad- ]    Aggressor
+
+SilverLibs keybinds:
+  [ ALT+D ]           Interact
+  [ ALT+S ]           Turn 180 degrees in place
+  [ WIN+W ]           Toggle Rearming Lock
+                      (off = re-equip previous weapons if you go barehanded)
+                      (on = prevent weapon auto-equipping)
+  [ CTRL+` ]          Cycle Treasure Hunter Mode
+
+For more info and available functions, see SilverLibs documentation at:
+https://github.com/shastaxc/silver-libs
+
+Global-Binds.lua contains additional non-job-related keybinds.
+
+
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                                  Custom Commands
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+Prepend with /console to use these in in-game macros.
+
+Note: Not all pets have 7 ready moves, but for those that do, there is a command for it
+gs c ready 1            Uses Ready move index 1
+gs c ready 2            Uses Ready move index 2
+gs c ready 3            Uses Ready move index 3
+gs c ready 4            Uses Ready move index 4
+gs c ready 5            Uses Ready move index 5
+gs c ready 6            Uses Ready move index 6
+gs c ready 7            Uses Ready move index 7
+
+gs c bind               Sets keybinds again. Sometimes they don't all get set when swapping jobs. Calling this manually fixes it.
+
+(More commands available through SilverLibs)
+
+
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                            Recommended In-game Macros
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+__Keybind___Name______________Command_____________
+[ CTRL+1 ] Ready1         /console gs c ready 1
+[ CTRL+2 ] Ready2         /console gs c ready 2
+[ CTRL+3 ] Ready3         /console gs c ready 3
+[ CTRL+4 ] Ready4         /console gs c ready 4
+[ CTRL+5 ] Tame           /ja "Tame" <t>
+[ CTRL+6 ] Charm          /ja "Charm" <t>
+[ CTRL+7 ] FeralHow       /ja "Feral Howl" <t>
+[ CTRL+9 ] Familiar       /ja "Familiar" <me>
+[ CTRL+0 ] Provoke        /ja "Provoke" <stnpc>
+[ ALT+1 ]  Ready5         /console gs c ready 5
+[ ALT+2 ]  Ready6         /console gs c ready 6
+[ ALT+3 ]  Ready7         /console gs c ready 7
+[ ALT+4 ]  Spur           /ja "Spur" <me>
+[ ALT+5 ]  CallBeas       /ja "Call Beast" <me>
+[ ALT+7 ]  Snarl          /ja "Snarl" <me>
+[ ALT+8 ]  KillerIn       /ja "Killer Instinct" <me>
+[ ALT+9 ]  Unleash        /ja "Unleash" <me>
+[ ALT+0 ]  RunWild        /ja "Run Wild" <me>
+
+]]--
+
 
 -------------------------------------------------------------------------------------------------------------------
 -- Setup functions for this job.  Generally should not be modified.
