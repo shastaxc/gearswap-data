@@ -27,6 +27,8 @@ Abilities
 * Blood Pact keybinds are set up by category and the exact ability used will depend on which avatar you have summoned.
 * Attempting to use a Blood Pact when you have no pet summoned will automatically summon your previous pet instead.
   You'll have to re-issue the Blood Pact command after it is alive again to have it perform the ability.
+* If you attempt to use a Blood Pact that requires an enemy for a target but you are targeting no one or a friendly,
+  then it will automatically cast the ability on your last Blood Pact target instead.
 * Sets for Blood Pacts are divided by type: physical rage, magical rage, hybrid rage, buff, debuff.
 * After issuing a Blood Pact command, your gear will remain locked until the ability finishes. This is because there
   is sometimes a delay between issuing the command and the command going off, maybe pet has to move into range or
@@ -96,7 +98,7 @@ Spells:
 Abilities:
   [ ALT+Q ]           Assault
   [ ALT+w ]           Retreat
-  [ ALT+E ]           Release
+  [ ALT+` ]           Release
   [ ALT+R ]           Avatar's Favor
   [ CTRL+Numlock ]    Blood Pact: Lv 99
   [ ALT+Numlock ]     Blood Pact: Astral Flow
@@ -1936,7 +1938,7 @@ function set_main_keybinds()
 
   send_command('bind !q input /ja "Assault" <t>')
   send_command('bind !w input /ja "Retreat" <me>')
-  send_command('bind !e input /ja "Release" <me>')
+  send_command('bind !` input /ja "Release" <me>')
   send_command('bind !a input /ja "Avatar\'s Favor" <me>')
 
   send_command('bind ^numlock gs c pact bp99')
@@ -1991,7 +1993,7 @@ function unbind_keybinds()
 
   send_command('unbind !q')
   send_command('unbind !w')
-  send_command('unbind !e')
+  send_command('unbind !`')
   send_command('unbind !a')
 
   send_command('unbind ^numlock')
