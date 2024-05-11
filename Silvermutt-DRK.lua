@@ -145,7 +145,7 @@ function init_gear_sets()
   sets.precast.FC = {
     ammo="Sapience Orb",                            --  2 [__/__, ___]
     head=gear.Carmine_D_head,                       -- 14 [__/__,  53]
-    body="Fallen's Cuirass +3",                     -- 10 [__/__,  68]
+    body={name="Sacro Breastplate",priority=1},     -- 10 [__/__, 129]
     hands=gear.Leyline_Gloves,                      --  8 [__/__,  62]
     legs=gear.Odyssean_FC_legs,                     --  6 [__/__,  86]
     feet=gear.Odyssean_FC_feet,                     -- 11 [__/__,  86]
@@ -158,9 +158,8 @@ function init_gear_sets()
              augments=gear.DRK_FC_Cape.augments,
              priority=1},                           -- 10 [10/__, ___]
     waist={name="Platinum Moogle Belt",priority=1}, -- __ [ 3/ 3,  15]; Helps HP balance for Drain
-    -- 78 FC [13 PDT/3 MDT, 370 M.Eva]
+    -- 78 FC [13 PDT/3 MDT, 431 M.Eva]
 
-    -- body={name="Sacro Breastplate",priority=1},  -- 10 [__/__, 129]
     -- legs="Enif Cosciales",                       --  8 [__/__, ___]
     -- 80 FC [13 PDT/3 MDT, 345 M.Eva]
   }
@@ -1113,10 +1112,8 @@ function init_gear_sets()
     head={name="Ratri Sallet +1", priority=1}, -- 5
   }
   sets.latent_regen = {
-    neck="Bathy Choker +1", -- Remove if using sacro breastplate
+    body="Sacro Breastplate", --13
     ear1="Infused Earring",
-    ring1="Chirich Ring +1", -- Remove if using sacro breastplate
-    -- body="Sacro Breastplate", --13
   }
   sets.latent_refresh = {
     neck="Sibyl Scarf", -- Must be Windurstian

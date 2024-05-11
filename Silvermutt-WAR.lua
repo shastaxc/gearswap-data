@@ -656,11 +656,11 @@ function init_gear_sets()
     head="Valorous Mask",       -- 3
   }
   sets.latent_regen = {
+    body="Sacro Breastplate", --10
     neck="Bathy Choker +1",
     ear1="Infused Earring",
     ring1="Chirich Ring +1",
     -- ring2="Chirich Ring +1",
-    -- body="Sacro Breastplate", --10
   }
   sets.latent_refresh = {
     ring1="Stikini Ring +1", -- 1

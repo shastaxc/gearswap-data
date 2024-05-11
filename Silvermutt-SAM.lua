@@ -121,11 +121,11 @@ function init_gear_sets()
 
   -- Fast cast sets for spells
   sets.precast.FC = {
+    body="Sacro Breastplate", --10
     hands=gear.Leyline_Gloves, --8
     neck="Orunmila's Torque", --5
     ear1="Loquac. Earring", --2
     ring2="Prolix Ring", --2
-    -- body="Sacro Breastplate", --10
   }
 
   sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {
@@ -525,7 +525,7 @@ function init_gear_sets()
     -- head="Wakido Kabuto +3", -- 4
   }
   sets.latent_regen = {
-    body="Hizamaru Haramaki +2",
+    body="Sacro Breastplate", --10
     neck="Bathy Choker +1",
     ear1="Infused Earring",
     ring1="Chirich Ring +1",
@@ -533,7 +533,6 @@ function init_gear_sets()
     -- legs="Rao Haidate +1",
     -- feet="Rao Sune-Ate +1",
     -- ring2="Chirich Ring +1",
-    -- body="Sacro Breastplate", --10
   }
   sets.latent_refresh = {
     -- ring1="Stikini Ring +1", -- 1

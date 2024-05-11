@@ -157,13 +157,13 @@ function init_gear_sets()
   -- Fast cast sets for spells
   sets.precast.FC = {
     head=gear.Carmine_D_head, -- 14
+    body="Sacro Breastplate", --10
     hands=gear.Leyline_Gloves, --8
     feet=gear.Carmine_D_feet, --8
     neck="Orunmila's Torque", --5
     ear1="Loquacious Earring", --2
     ear2="Enchanter's Earring +1", --2
     -- ammo="Sapience Orb", --2
-    -- body="Sacro Breastplate", --10
     -- legs="Ayanmo Cosciales +2", --6
   }
 
@@ -594,11 +594,11 @@ function init_gear_sets()
   }
   sets.latent_regen = {
     head="Gleti's Mask",              --  3
+    body="Sacro Breastplate",         -- 13 {__}
     neck="Bathy Choker +1",           --  3 {__}
     ear1="Infused Earring",           --  1 {__}
     ring1="Chirich Ring +1",          --  2 {__}
     ring2="Chirich Ring +1",          --  2 {__}
-    -- body="Sacro Breastplate",      -- 13 {__}
     -- feet="Pteroslaver Greaves +3", -- __ {10}
   } -- 24 Regen {10 Pet Regen}
   sets.latent_refresh = {
