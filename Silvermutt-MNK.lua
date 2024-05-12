@@ -576,7 +576,7 @@ function init_gear_sets()
   -- Cataclysm: 30% STR/30% INT, 2.75-5.0 fTP, 1 hit (aoe-magical)
   -- Stack MAB > WSD
   sets.precast.WS['Cataclysm'] = {
-    ammo="Knobkierrie",             -- __, __, __,  6
+    ammo="Ghastly Tathlum +1",      -- __, __, 21, __
     head="Pixie Hairpin +1",        -- 28, __, __, __
     body=gear.Nyame_B_body,         -- 30
     hands=gear.Nyame_B_hands,       -- 30
@@ -587,10 +587,8 @@ function init_gear_sets()
     ear2="Moonshade Earring",       -- __, __, __, __; TP bonus
     ring1="Shiva Ring +1",          --  3
     ring2="Archon Ring",            --  5, __, __, __
-    back="Argochampsa Mantle",      -- 12
+    back=gear.MNK_MAB_Cape,         -- 10
     waist="Skrymir Cord",           -- __,  5, 30, __
-    -- ammo="Ghastly Tathlum +1",   -- __, __, 21, __
-    -- back=gear.MNK_MAB_Cape,      -- 10
     -- waist="Skrymir Cord +1",     --  7
   }
   sets.precast.WS['Cataclysm'].MaxTP = set_combine(sets.precast.WS['Cataclysm'], {
