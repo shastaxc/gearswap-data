@@ -819,7 +819,7 @@ function init_gear_sets()
     waist="Oneiros Rope",             -- 20,  2, __ (__, __, __, __, __) [__/__, ___]
     -- 120 Occult, 35 STP, 153 M.Acc (209 INT, 58 MAB, 327 M.Dmg, 5 MB, 0 MB2) [22 PDT/12 MDT, 459 M.Eva]
 
-    -- neck="Combatant's Torque",     --  __, 4, __ (__, __, __, __, __) [__/__, ___]
+    -- neck="Combatant's Torque",     -- __,  4, __ (__, __, __, __, __) [__/__, ___]
     -- ear2="Crepuscular Earring",    -- __,  5, 10 (__, __, __, __, __) [__/__, ___]
     -- ring2="Crepuscular Ring",      -- __,  6, 10 (__, __, __, __, __) [__/__, ___]
     -- 120 Occult, 41 STP, 163 M.Acc (209 INT, 58 MAB, 327 M.Dmg, 5 MB, 0 MB2) [16 PDT/6 MDT, 459 M.Eva]
