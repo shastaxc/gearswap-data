@@ -636,7 +636,7 @@ function init_gear_sets()
 
   -- No DW (0 needed from gear)
   sets.engaged = {
-    -- ammo="Coiste Bodhar",            -- __,  3, __, __ < 3, __, __> (__, __) [__/__, ___] __
+    ammo="Coiste Bodhar",               -- __,  3, __, __ < 3, __, __> (__, __) [__/__, ___] __
     head="Malignance Chapeau",          -- __,  8, 50, __ <__, __, __> (__, __) [ 6/ 6, 123]  3
     body="Malignance Tabard",           -- __, 11, 50, __ <__, __, __> (__, __) [ 9/ 9, 139]  6
     -- hands=gear.Adhemar_B_hands,      -- __,  7, 32, __ <__,  4, __> (__, __) [__/__,  43] __
@@ -671,7 +671,7 @@ function init_gear_sets()
 
   -- Low DW (6 needed from gear)
   sets.engaged.LowDW = {
-    -- ammo="Coiste Bodhar",            -- __,  3, __, __ < 3, __, __> (__, __) [__/__, ___] __
+    ammo="Coiste Bodhar",               -- __,  3, __, __ < 3, __, __> (__, __) [__/__, ___] __
     head="Malignance Chapeau",          -- __,  8, 50, __ <__, __, __> (__, __) [ 6/ 6, 123]  3
     -- body="Plunderer's Vest +3",      -- __, __, 40, 10 <__, __, __> ( 6,  5) [__/__,  84] __; 5% TA from behind target
     -- hands=gear.Adhemar_B_hands,      -- __,  7, 32, __ <__,  4, __> (__, __) [__/__,  43] __
@@ -707,7 +707,7 @@ function init_gear_sets()
 
   -- Mid DW (13 needed from gear)
   sets.engaged.MidDW = {
-    -- ammo="Coiste Bodhar",            -- __,  3, __, __ < 3, __, __> (__, __) [__/__, ___] __
+    ammo="Coiste Bodhar",               -- __,  3, __, __ < 3, __, __> (__, __) [__/__, ___] __
     head="Malignance Chapeau",          -- __,  8, 50, __ <__, __, __> (__, __) [ 6/ 6, 123]  3
     -- body="Plunderer's Vest +3",      -- __, __, 40, 10 <__, __, __> ( 6,  5) [__/__,  84] __; 5% TA from behind target
     -- hands=gear.Adhemar_B_hands,      -- __,  7, 32, __ <__,  4, __> (__, __) [__/__,  43] __
@@ -744,7 +744,7 @@ function init_gear_sets()
 
   -- High DW (26 needed from gear)
   sets.engaged.HighDW = {
-    -- ammo="Coiste Bodhar",            -- __,  3, __, __ < 3, __, __> (__, __) [__/__, ___] __
+    ammo="Coiste Bodhar",               -- __,  3, __, __ < 3, __, __> (__, __) [__/__, ___] __
     head="Malignance Chapeau",          -- __,  8, 50, __ <__, __, __> (__, __) [ 6/ 6, 123]  3
     -- body="Plunderer's Vest +3",      -- __, __, 40, 10 <__, __, __> ( 6,  5) [__/__,  84] __; 5% TA from behind target
     -- hands=gear.Adhemar_B_hands,      -- __,  7, 32, __ <__,  4, __> (__, __) [__/__,  43] __
@@ -778,7 +778,7 @@ function init_gear_sets()
 
   -- Super DW (37 needed from gear)
   sets.engaged.SuperDW = {
-    -- ammo="Coiste Bodhar",            -- __,  3, __, __ < 3, __, __> (__, __) [__/__, ___] __
+    ammo="Coiste Bodhar",               -- __,  3, __, __ < 3, __, __> (__, __) [__/__, ___] __
     head="Malignance Chapeau",          -- __,  8, 50, __ <__, __, __> (__, __) [ 6/ 6, 123]  3
     body=gear.Adhemar_A_body,           --  6, __, 55, __ <__,  4, __> (__, __) [__/__,  69] __
     -- hands="Pillager's Armlets +3",   --  5, __, 48, __ <__, __, __> (__,  4) [__/__,  67] __; AF set
@@ -810,7 +810,7 @@ function init_gear_sets()
 
   -- Max DW (44 needed from gear)
   sets.engaged.MaxDW = {
-    -- ammo="Coiste Bodhar",            -- __,  3, __, __ < 3, __, __> (__, __) [__/__, ___] __
+    ammo="Coiste Bodhar",               -- __,  3, __, __ < 3, __, __> (__, __) [__/__, ___] __
     head="Malignance Chapeau",          -- __,  8, 50, __ <__, __, __> (__, __) [ 6/ 6, 123]  3
     body=gear.Adhemar_A_body,           --  6, __, 55, __ <__,  4, __> (__, __) [__/__,  69] __
     -- hands="Pillager's Armlets +3",   --  5, __, 48, __ <__, __, __> (__,  4) [__/__,  67] __; AF set

@@ -477,6 +477,7 @@ function init_gear_sets()
   sets.precast.WS['Vorpal Blade'] = set_combine(sets.precast.WS['Chant du Cygne'], {})
 
   sets.precast.WS['Savage Blade'] = {
+    ammo="Coiste Bodhar",         --Sub for Aurgelmir Orb +1
     head=gear.Nyame_B_head,       -- 26, 26, 65, 50, 11, __, ___
     body=gear.Nyame_B_body,       -- 45, 37, 65, 40, 13, __, ___
     hands=gear.Nyame_B_hands,     -- 17, 40, 65, 40, 11, __, ___
@@ -491,7 +492,6 @@ function init_gear_sets()
     waist="Sailfi Belt +1",       -- Needs further augmenting
     -- STR, MND, Attack, Accuracy, WSD, PDL [PDT/MDT, M.Eva]
 
-    -- ammo="Coiste Bodhar", --Sub for Aurgelmir Orb +1
     -- ring2="Sroda Ring",
     -- STR, MND, Attack, Accuracy, WSD, PDL [PDT/MDT, M.Eva]
   }
@@ -978,6 +978,7 @@ function init_gear_sets()
     main="Naegling",
     sub="Maxentius",
     -- sub="Thibron",
+    ammo="Coiste Bodhar",             -- __,  3, __ < 3, __, __> [__/__, ___]
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
     hands="Malignance Gloves",        -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
@@ -988,7 +989,6 @@ function init_gear_sets()
     ear2="Dedition Earring",          -- __,  8,-10 <__, __, __> [__/__, ___]
     ring1="Epona's Ring",             -- __, __, __ < 3,  3, __> [__/__, ___]
     ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
-    -- ammo="Coiste Bodhar",          -- __,  3, __ < 3, __, __> [__/__, ___]
     -- ear1="Telos Earring",          -- __,  5, 10 < 1, __, __> [__/__, ___]
     -- back=gear.BLU_STP_Cape,        -- __, 10, 30 <__, __, __> [10/__, ___]
     -- waist="Windbuffet Belt +1",    -- __, __,  2 <__,  2,  2> [__/__, ___]
@@ -1002,6 +1002,7 @@ function init_gear_sets()
 
   -- Super Magic/Gear/JA Haste (36% DW to cap, 11% from gear)
   sets.engaged.LowDW = {
+    ammo="Coiste Bodhar",             -- __,  3, __ < 3, __, __> [__/__, ___]
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
     hands="Malignance Gloves",        -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
@@ -1013,7 +1014,6 @@ function init_gear_sets()
     ring1="Epona's Ring",             -- __, __, __ < 3,  3, __> [__/__, ___]
     ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
     waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
-    -- ammo="Coiste Bodhar",          -- __,  3, __ < 3, __, __> [__/__, ___]
     -- back=gear.BLU_STP_Cape,        -- __, 10, 30 <__, __, __> [10/__, ___]
   } -- 11 DW, 82 STP, 305 Acc <6 DA, 3 TA, 0 QA> [51 PDT/41 MDT, 682 M.Eva]
   sets.engaged.LowDW.Acc = set_combine(sets.engaged.LowDW, {
@@ -1027,6 +1027,7 @@ function init_gear_sets()
 
   -- High Magic/Gear/JA Haste (43% DW to cap, 18% from gear)
   sets.engaged.MidDW = {
+    ammo="Coiste Bodhar",             -- __,  3, __ < 3, __, __> [__/__, ___]
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body=gear.Adhemar_A_body,         --  6, __, 55 <__,  4, __> [__/__,  69]
     hands="Malignance Gloves",        -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
@@ -1038,7 +1039,6 @@ function init_gear_sets()
     ring1="Epona's Ring",             -- __, __, __ < 3,  3, __> [__/__, ___]
     ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
     waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
-    -- ammo="Coiste Bodhar",          -- __,  3, __ < 3, __, __> [__/__, ___]
     -- ear1="Telos Earring",          -- __,  5, 10 < 1, __, __> [__/__, ___]
     -- back=gear.BLU_STP_Cape,        -- __, 10, 30 <__, __, __> [10/__, ___]
   } -- 18 DW, 68 STP, 330 Acc <7 DA, 7 TA, 0 QA> [42 PDT/32 MDT, 604 M.Eva]
@@ -1051,6 +1051,7 @@ function init_gear_sets()
 
   -- Mid Magic/Gear/JA Haste (56% DW to cap, 31% from gear)
   sets.engaged.HighDW = {
+    ammo="Coiste Bodhar",             -- __,  3, __ < 3, __, __> [__/__, ___]
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body=gear.Adhemar_A_body,         --  6, __, 55 <__,  4, __> [__/__,  69]
     hands="Malignance Gloves",        -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
@@ -1062,7 +1063,6 @@ function init_gear_sets()
     ring1="Epona's Ring",             -- __, __, __ < 3,  3, __> [__/__, ___]
     ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
     waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
-    -- ammo="Coiste Bodhar",          -- __,  3, __ < 3, __, __> [__/__, ___]
     -- back=gear.BLU_DW_Cape,         -- 10, __, 30 <__, __, __> [10/__, ___]
   } -- 32 DW, 46 STP, 295 Acc <6 DA, 7 TA, 0 QA> [48 PDT/38 MDT, 612 M.Eva]
   sets.engaged.HighDW.Acc = set_combine(sets.engaged.HighDW, {
@@ -1073,6 +1073,7 @@ function init_gear_sets()
 
   -- Low Magic/Gear/JA Haste (67% DW to cap, 42% from gear)
   sets.engaged.SuperDW = {
+    ammo="Coiste Bodhar",             -- __,  3, __ < 3, __, __> [__/__, ___]
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body=gear.Adhemar_A_body,         --  6, __, 55 <__,  4, __> [__/__,  69]
     hands="Malignance Gloves",        -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
@@ -1084,7 +1085,6 @@ function init_gear_sets()
     ring1="Epona's Ring",             -- __, __, __ < 3,  3, __> [__/__, ___]
     ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
     waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
-    -- ammo="Coiste Bodhar",          -- __,  3, __ < 3, __, __> [__/__, ___]
     -- back=gear.BLU_DW_Cape,         -- 10, __, 30 <__, __, __> [10/__, ___]
   } -- 42 DW, 35 STP, 266 Acc <6 DA, 7 TA, 0 QA> [37 PDT/27 MDT, 461 M.Eva]
   sets.engaged.SuperDW.Acc = set_combine(sets.engaged.SuperDW, {
@@ -1099,6 +1099,7 @@ function init_gear_sets()
   sets.engaged.MaxDW = {
     main="Naegling",
     sub="Maxentius",
+    ammo="Coiste Bodhar",             -- __,  3, __ < 3, __, __> [__/__, ___]
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body=gear.Adhemar_A_body,         --  6, __, 55 <__,  4, __> [__/__,  69]
     hands="Malignance Gloves",        -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
@@ -1110,7 +1111,6 @@ function init_gear_sets()
     ring1="Epona's Ring",             -- __, __, __ < 3,  3, __> [__/__, ___]
     ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
     waist="Reiki Yotai",              --  7,  4, 10 <__, __, __> [__/__, ___]
-    -- ammo="Coiste Bodhar",          -- __,  3, __ < 3, __, __> [__/__, ___]
     -- back=gear.BLU_DW_Cape,         -- 10, __, 30 <__, __, __> [10/__, ___]
   } -- 47 DW, 27 STP, 276 Acc <6 DA, 7 TA, 0 QA> [37 PDT/27 MDT, 461 M.Eva]
   sets.engaged.MaxDW.Acc = set_combine(sets.engaged.MaxDW, {
