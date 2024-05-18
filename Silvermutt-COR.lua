@@ -1891,28 +1891,24 @@ function init_gear_sets()
 
   sets.WeaponSet = {}
   sets.WeaponSet.DeathPenalty_M = {
-    main=gear.Lanun_A,
+    main=gear.Rostam_A,
     sub="Gleti's Knife",
     ranged="Death Penalty",
-    -- main=gear.Rostam_A,
   }
   sets.WeaponSet.DeathPenalty_R = {
-    main=gear.Lanun_A,
+    main=gear.Rostam_A,
     sub="Nusku Shield",
     ranged="Death Penalty",
-    -- main=gear.Rostam_A,
   }
   sets.WeaponSet.Armageddon_M = {
-    main=gear.Lanun_A,
+    main=gear.Rostam_A,
     sub="Gleti's Knife",
     ranged="Armageddon",
-    -- main=gear.Rostam_A,
   }
   sets.WeaponSet.Armageddon_R = {
-    main=gear.Lanun_A,
+    main=gear.Rostam_A,
     sub="Nusku Shield",
     ranged="Armageddon",
-    -- main=gear.Rostam_A,
   }
   sets.WeaponSet.Fomalhaut_M = {
     main="Naegling",
@@ -1920,10 +1916,9 @@ function init_gear_sets()
     ranged="Fomalhaut",
   }
   sets.WeaponSet.Fomalhaut_R = {
-    main=gear.Lanun_A,
+    main=gear.Rostam_A,
     sub="Nusku Shield",
     ranged="Fomalhaut",
-    -- main=gear.Rostam_A,
   }
   sets.WeaponSet["Savage Blade"] = {
     main="Naegling",
@@ -1931,7 +1926,7 @@ function init_gear_sets()
     ranged="Anarchy +2",
   }
   sets.WeaponSet.Cleaving = {
-    main=gear.Lanun_A,
+    main=gear.Rostam_A,
     sub="Gleti's Knife",
     ranged="Anarchy +2",
   }
