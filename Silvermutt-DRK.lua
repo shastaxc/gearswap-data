@@ -133,7 +133,7 @@ function init_gear_sets()
     ring1="Moonlight Ring",
     ring2="Defending Ring",
     -- back=???
-    -- waist=???  
+    -- waist=???
   }
 
 
@@ -1159,14 +1159,13 @@ function init_gear_sets()
     legs="Sakpata's Cuisses",             -- [ 9/ 9, 150] __ < 7, __, __> __,  4, __(__)
     feet="Sakpata's Leggings",            -- [ 6/ 6, 150] __ < 4, __, __> __,  2, 13(__)
     neck="Loricate Torque +1",            -- [ 6/ 6, ___] __ <__, __, __> __, __, __(__)
-    ear1="Telos Earring",            
-    ear2="Dedition Earring",         
+    ear1="Telos Earring",                 -- [__/__, ___]  5 < 1, __, __> __, __, __(__)
+    ear2="Dedition Earring",              -- [__/__, ___]  8 <__, __, __> __, __, __(__)
     ring1="Chirich Ring +1",              -- [__/__, ___]  6 <__, __, __> __, __, 10(__)
     ring2="Niqmaddu Ring",                -- [__/__, ___] __ <__, __,  3> __, __, __( 5)
     back=gear.DRK_STP_Cape,               -- [10/__, ___] 10 <__, __, __> __, __, __(__)
     waist="Peiste Belt +1",               -- [__/__, ___] __ <__, __, __> __, __, 10(__)
-    -- TODO: Recalculate
-    -- [46 PDT/36 MDT, 621 MEVA] 34 STP <29 DA, 5 TA, 3 QA> 4 Crit Rate, 20 Haste, 44(15) Subtle Blow
+    -- [46 PDT/36 MDT, 621 MEVA] 37 STP <23 DA, 5 TA, 3 QA> 4 Crit Rate, 20 Haste, 41(15) Subtle Blow
   }
   -- TODO
   sets.engaged.LowAcc.SubtleBlow = set_combine(sets.engaged.SubtleBlow, {
