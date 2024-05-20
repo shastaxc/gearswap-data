@@ -97,7 +97,7 @@ Abilities:
   [ CTRL+\ ]          Penury (LA) / Parsimony (DA)
   [ ALT+[ ]           Accession (LA) / Manifestation (DA)
   [ ALT+\ ]           Celerity (LA) / Alacrity (DA)
-  ============ /SCH ============
+  ============ /RDM ============
   [ Shift+` ]         Convert
 
 SilverLibs keybinds:
