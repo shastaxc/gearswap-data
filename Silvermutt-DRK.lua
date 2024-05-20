@@ -1,4 +1,5 @@
 -- File Status: Good.
+-- TODO: Fill in dual wield sets.
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs
