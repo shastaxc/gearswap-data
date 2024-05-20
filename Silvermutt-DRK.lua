@@ -383,9 +383,6 @@ function init_gear_sets()
     waist="Fotia Belt",                   -- __, __, __, __, __ <__, __, __> [__/__, ___]; ftp+
     -- DRK traits/gifts/etc                                  50
     -- 260 STR, 395 Attack, 286 Accuracy, 12 WSD, 88 PDL <48 DA, 0 TA, 3 QA> [42 PDT/32 MDT, 638 M.Eva]
-    
-    -- legs="Ignominy Flanchard +3",      -- 50, 45, 49, __, __ <10, __, __> [__/__,  84]
-    -- 252 STR, 375 Attack, 295 Accuracy, 0 WSD, 88 PDL <52 DA, 0 TA, 3 QA> [34 PDT/24 MDT, 572 M.Eva]
   }
   sets.precast.WS['Resolution'].MaxTP = set_combine(sets.precast.WS['Resolution'], {
     ear1="Thrud Earring",                 -- 10, __, __,  3, __ <__, __, __> [__/__, ___]
@@ -406,9 +403,6 @@ function init_gear_sets()
     waist="Fotia Belt",                   -- __, __, __, __, __ <__, __, __> [__/__, ___]; ftp+
     -- DRK traits/gifts/etc                                  50
     -- 248 STR, 397 Attack, 317 Accuracy, 14 WSD, 99 PDL <40 DA, 0 TA, 3 QA> [45 PDT/35 MDT, 638 M.Eva]
-    
-    -- legs="Ignominy Flanchard +3",      -- 50, 45, 49, __, __ <10, __, __> [__/__,  84]
-    -- 240 STR, 377 Attack, 326 Accuracy, 2 WSD, 99 PDL <44 DA, 0 TA, 3 QA> [37 PDT/27 MDT, 572 M.Eva]
   })
   sets.precast.WS['Resolution'].AttCappedMaxTP = set_combine(sets.precast.WS['Resolution'].AttCapped, {
     ear1="Brutal Earring",                -- __, __, __, __, __ < 5, __, __> [__/__, ___]
@@ -1075,7 +1069,7 @@ function init_gear_sets()
     head="Flamma Zucchetto +2",                     -- [__/__,  53]  6 <__,  5, __> __,  4
     body={name="Hjarrandi Breastplate",priority=1}, -- [12/12,  69] 10 <__, __, __> 13, __
     hands="Sakpata's Gauntlets",                    -- [ 8/ 8, 112]  8 < 6, __, __> __,  4
-    legs=gear.Nyame_B_legs,
+    legs="Ignominy Flanchard +3",                   -- [__/__,  84] __ <10, __, __> __,  5
     feet="Flamma Gambieras +2",                     -- [__/__,  86]  6 < 6, __, __> __,  2
     neck="Abyssal Beads +2",                        -- [__/__, ___]  7 <__, __, __>  4, __
     ear1="Telos Earring",                           -- [__/__, ___]  5 < 1, __, __> __, __
@@ -1084,8 +1078,6 @@ function init_gear_sets()
     ring2={name="Moonlight Ring",priority=1},       -- [ 5/ 5, ___]  5 <__, __, __> __, __
     back=gear.DRK_STP_Cape,                         -- [10/__, ___] 10 <__, __, __> __, __
     waist="Sailfi Belt +1",                         -- [__/__, ___] __ < 5,  2, __> __,  9
-    
-    -- legs="Ignominy Flanchard +3",                -- [__/__,  84] __ <10, __, __> __,  5
     -- [40 PDT/30 MDT, 404 MEVA] 73 STP <32 DA, 7 TA, 0 QA> 17 Crit Rate, 24 Haste
   }
   -- TODO
