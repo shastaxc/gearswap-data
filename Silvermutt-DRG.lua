@@ -57,7 +57,7 @@ function job_setup()
   silibs.enable_elemental_belt_handling(has_obi, has_orpheus)
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
-  state.HybridMode:options('Normal', 'HeavyDef')
+  state.HybridMode:options('HeavyDef', 'Normal')
   state.IdleMode:options('Normal', 'LightDef')
   state.AttCapped = M(true, 'Attack Capped')
   state.CP = M(false, 'Capacity Points Mode')
@@ -156,15 +156,23 @@ function init_gear_sets()
 
   -- Fast cast sets for spells
   sets.precast.FC = {
-    head=gear.Carmine_D_head, -- 14
-    body="Sacro Breastplate", --10
-    hands=gear.Leyline_Gloves, --8
-    feet=gear.Carmine_D_feet, --8
-    neck="Orunmila's Torque", --5
-    ear1="Loquacious Earring", --2
-    ear2="Enchanter's Earring +1", --2
-    -- ammo="Sapience Orb", --2
-    -- legs="Ayanmo Cosciales +2", --6
+    ammo="Sapience Orb",              --  2 [__/__, ___] {__/__}
+    head=gear.Carmine_D_head,         -- 14 [__/__,  53] {__/__}
+    body="Sacro Breastplate",         -- 10 [__/__, 129] {__/__}
+    hands=gear.Leyline_Gloves,        --  8 [__/__,  62] {__/__}
+    legs=gear.Nyame_B_legs,           -- __ [ 8/ 8, 150] {__/__}
+    feet=gear.Carmine_D_feet,         --  8 [ 4/__,  80] {__/__}
+    neck="Orunmila's Torque",         --  5 [__/__, ___] {__/__}
+    ear1="Loquacious Earring",        --  2 [__/__, ___] {__/__}
+    ear2="Enchanter's Earring +1",    --  2 [__/__, ___] {__/__}
+    ring1="Moonlight Ring",           -- __ [ 5/ 5, ___] {__/__}
+    ring2="Defending Ring",           -- __ [10/10, ___] {__/__}
+    back=gear.DRG_STP_Cape,           -- __ [10/__, ___] {__/__}
+    waist="Isa Belt",                 -- __ [__/__, ___] { 3/ 3}
+    -- 51 FC [37 PDT/23 MDT, 474 M.Eva] {Pet: 3 PDT/3 MDT}
+
+    -- legs="Ayanmo Cosciales +2",    --  6 [ 5/ 5,  69] {__/__}
+    -- 57 FC [34 PDT/20 MDT, 393 M.Eva] {Pet: 3 PDT/3 MDT}
   }
 
 
