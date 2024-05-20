@@ -100,17 +100,17 @@ function init_gear_sets()
 
   -- Enmity sets
   sets.Enmity = {
+    ammo="Sapience Orb",
     head="Loess Barbuta +1",
     body="Emet Harness +1",
     hands="Kurys Gloves",
+    neck="Unmoving Collar +1",
     ear1="Cryptic Earring",
     ear2="Trux Earring",
     ring1="Supershear Ring",
     ring2="Eihwaz Ring",
-    -- ammo="Sapience Orb",
     -- legs=gear.Valorous_Enmity_legs,
     -- feet=gear.Valorous_Enmity_feet,
-    -- neck="Unmoving Collar +1",
     -- back=gear.SAM_Enmity_Cape,
     -- waist="Trance Belt",
   }
