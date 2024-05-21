@@ -682,7 +682,7 @@ function init_gear_sets()
 	sets.precast.JA.Charm = {
     ammo="Staunch Tathlum +1",        -- __, __ [ 3/ 3, ___]
     head="Totemic Helm +3",           -- 34, 35 [__/__,  73]
-    body=gear.Nyame_B_body,           -- 35, __ [ 9/ 9, 139]
+    body="Ankusa Jackcoat +3",        -- 33, 16 [__/__,  84]
     hands="Ankusa Gloves +1",         -- 17,  9 [__/__,  37]
     legs="Ankusa Trousers +3",        -- 21, 11 [__/__,  89]
     feet="Ankusa Gaiters +3",         -- 40, 12 [__/__,  89]
@@ -694,11 +694,10 @@ function init_gear_sets()
     back=gear.BST_TP_Cape,            -- __, __ [10/__, ___]
     waist="Aristo Belt",              --  8, __ [__/__, ___]
     -- Traits/merits/gifts                   20
-    -- 185 CHR, 87 Charm [35 PDT/27 MDT, 427 M.Eva]
+    -- 185 CHR, 87 Charm [26 PDT/18 MDT, 372 M.Eva]
     
     -- main="Habilitator +1",         -- 28, __ [ 3/__, ___]
     -- sub=gear.Digirbalag_CHR,       -- 25, __ [__/__, ___]
-    -- body="Ankusa Jackcoat +3",     -- 33, 16 [__/__,  84]
     -- hands="Ankusa Gloves +3",      -- 27, 13 [__/__,  57]
     -- back=gear.BST_CHR_WSD_Cape,    -- 30, __ [10/__, ___]
     -- 276 CHR, 107 Charm [29 PDT/18 MDT, 392 M.Eva]
@@ -716,7 +715,7 @@ function init_gear_sets()
     sub="Ikenga's Axe",               -- 55 [__/__, ___]
     ammo="Pemphredo Tathlum",         --  8 [__/__, ___]
     head="Nukumi Cabasset +2",        -- 51 [10/10,  88]
-    body=gear.Nyame_B_body,           -- 40 [ 9/ 9, 139]
+    body="Ankusa Jackcoat +3",        -- 40 [__/__,  84]; Feral Howl Duration+
     hands="Nukumi Manoplas +2",       -- 52 [10/10,  72]
     legs="Nukumi Quijotes +2",        -- 53 [12/12, 120]
     feet="Nukumi Ocreae +2",          -- 50 [__/__, 120]
@@ -727,10 +726,9 @@ function init_gear_sets()
     ring2="Stikini Ring +1",          -- 11 [__/__, ___]
     back="Sacro Mantle",              -- 20 [__/__, ___]
     waist="Eschan Stone",             --  7 [__/__, ___]
-    -- 467 M.Acc [41 PDT/41 MDT, 539 M.Eva]
+    -- 467 M.Acc [32 PDT/32 MDT, 484 M.Eva]
     
     -- head="Nukumi Cabasset +3",     -- 61 [11/11,  98]
-    -- body="Ankusa Jackcoat +3",     -- 40 [__/__,  84]; Feral Howl Duration+
     -- hands="Nukumi Manoplas +3",    -- 62 [11/11,  82]
     -- legs="Nukumi Quijotes +3",     -- 63 [13/13, 130]
     -- feet="Nukumi Ocreae +3",       -- 60 [__/__, 130]
@@ -1389,7 +1387,7 @@ function init_gear_sets()
     sub="Agwu's Axe",                 -- [__/__, ___] {__/__, ___ | __, __, 50/__, __/__, __, __}; Pet dmg+
     ammo="Hesperiidae",               -- [__/__, ___] {__/__, ___ | __, __, 10/10, 15/__, __, __}
     head="Tali'ah Turban +2",         -- [__/__,  53] {__/__, ___ | __,  7, 42/42, __/__, __, __}
-    body="Gleti's Cuirass",           -- [ 9/__, 102] {__/__, ___ | __, __, 50/50, __/__, __, __}
+    body="Ankusa Jackcoat +3",        -- [__/__,  84] {__/__, ___ |  5, __, __/__, __/__,  7, __}
     hands=gear.Emicho_C_hands,        -- [__/__,  32] {__/__, ___ |  4,  7, 20/__, 55/__, __, __}
     legs="Ankusa Trousers +3",        -- [__/__,  89] {__/__, ___ | __,  7, __/__, __/__,  6, __}
     feet="Gleti's Boots",             -- [ 5/__, 112] {__/__,   1 | __, __, 50/50, __/__, __, __}
@@ -1400,9 +1398,8 @@ function init_gear_sets()
     ring2="Cath Palug Ring",          -- [ 5/ 5, ___] {__/__, ___ |  5, __, 12/12, __/__, __, __}
     back=gear.BST_Pet_TP_Cape,        -- [__/__,  20] { 5/ 5, ___ | __, __, 20/20, 30/30, 10, __}
     waist="Incarnation Sash",         -- [__/__, ___] {__/__, ___ |  4, __, 15/15, __/__, __, __}
-    -- [19 PDT/5 MDT, 408 M.Eva] {Pet: 8 PDT/8 MDT, 2 Lv | 50 DA, 35 STP, 339 Acc/234 Racc, 120 Att/30 Ratt, 24 Haste, 0 Regen}
+    -- [10 PDT/5 MDT, 390 M.Eva] {Pet: 8 PDT/8 MDT, 2 Lv | 55 DA, 35 STP, 289 Acc/184 Racc, 120 Att/30 Ratt, 31 Haste, 0 Regen}
 
-    -- body="Ankusa Jackcoat +3",     -- [__/__,  84] {__/__, ___ |  5, __, __/__, __/__,  7, __}
     -- ear2="Nukumi Earring +2",      -- [__/__, ___] {__/__,   1 | 10, __, __/__, __/__, __, __}
     -- [10 PDT/5 MDT, 390 M.Eva] {Pet: 8 PDT/8 MDT, 2 Lv | 58 DA, 35 STP, 289 Acc/184 Racc, 120 Att/30 Ratt, 31 Haste, 0 Regen}
   }
@@ -1518,7 +1515,7 @@ function init_gear_sets()
   sets.engaged.PetDD = {
     ammo="Hesperiidae",               -- __, __, 10 <__, __, __> [__/__, ___] {__/__, ___ | __, __, 10/10, 15/__, __, __}
     head="Nukumi Cabasset +2",        -- __, __, 51 <__, __, __> [10/10,  88] {__/__, ___ | __, __, 51/51, __/__, __, __}
-    body="Gleti's Cuirass",           -- __, __, 55 <10, __, __> [ 9/__, 102] {__/__, ___ | __, __, 50/50, __/__, __, __}
+    body="Ankusa Jackcoat +3",        -- __, __, 40 <__, __, __> [__/__,  84] {__/__, ___ |  5, __, __/__, __/__,  7, __}
     hands=gear.Emicho_C_hands,        -- __,  7, 37 <__, __, __> [__/__,  32] {__/__, ___ |  4,  7, 20/__, 55/__, __, __}
     legs="Nukumi Quijotes +2",        -- __, __, 53 <__, __, __> [12/12, 120] { 6/ 6, ___ | __, __, 53/53, __/__, __, __}
     feet="Gleti's Boots",             -- __, __, 50 <__, __, __> [ 5/__, 112] {__/__,   1 | __, __, 50/50, __/__, __, __}
@@ -1529,10 +1526,9 @@ function init_gear_sets()
     ring2="Cath Palug Ring",          -- __, __, __ <__, __, __> [ 5/ 5, ___] {__/__, ___ |  5, __, 12/12, __/__, __, __}
     back=gear.BST_Pet_TP_Cape,        -- __, __, __ <__, __, __> [__/__,  20] { 5/ 5, ___ | __, __, 20/20, 30/30, 10, __}
     waist="Klouskap Sash +1",         -- __, __, 20 <__, __, __> [__/__, ___] {__/__, ___ | __, __, 20/20, __/__,  9, __}
-    -- 0 DW, 7 STP, 326 Acc <10 DA, 0 TA, 0 QA> [41 PDT/27 MDT, 474 M.Eva] {Pet: 14 PDT/14 MDT, 2 Lv | 41 DA, 21 STP, 336 Acc/301 Racc, 100 Att/30 Ratt, 19 Haste, 0 Regen}
+    -- 0 DW, 7 STP, 311 Acc <0 DA, 0 TA, 0 QA> [32 PDT/27 MDT, 456 M.Eva] {Pet: 14 PDT/14 MDT, 2 Lv | 46 DA, 21 STP, 286 Acc/251 Racc, 100 Att/30 Ratt, 26 Haste, 0 Regen}
 
     -- head="Nukumi Cabasset +3",     -- __, __, 61 <__, __, __> [11/11,  98] {__/__, ___ | __, __, 61/61, __/__, __, __}
-    -- body="Ankusa Jackcoat +3",     -- __, __, 40 <__, __, __> [__/__,  84] {__/__, ___ |  5, __, __/__, __/__,  7, __}
     -- legs="Nukumi Quijotes +3",     -- __, __, 63 <__, __, __> [13/13, 130] { 8/ 8, ___ | __, __, 63/63, __/__, __, __}
     -- ear2="Nukumi Earring +2",      -- __, __, 20 <__, __, __> [__/__, ___] {__/__,   1 | 10, __, __/__, __/__, __, __}
     -- 0 DW, 7 STP, 336 Acc <0 DA, 0 TA, 0 QA> [34 PDT/29 MDT, 476 M.Eva] {Pet: 16 PDT/16 MDT, 2 Lv | 49 DA, 21 STP, 306 Acc/271 Racc, 100 Att/30 Ratt, 26 Haste, 0 Regen}
