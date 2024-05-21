@@ -356,7 +356,6 @@ function init_gear_sets()
     ring2="Epaminondas's Ring",
     back=gear.NIN_MAB_Cape,
     waist="Eschan Stone",
-
   })
   sets.precast.WS['Aeolian Edge'].MaxTP = set_combine(sets.precast.WS['Aeolian Edge'], {
     ear1="Novio Earring",
@@ -365,7 +364,7 @@ function init_gear_sets()
   sets.precast.WS['Aeolian Edge'].AttCappedMaxTP = set_combine(sets.precast.WS['Aeolian Edge'].AttCapped, {
     ear1="Novio Earring",
   })
-  
+
   sets.precast.WS['Blade: Yu'] = set_combine(sets.precast.WS['Aeolian Edge'], {})
   sets.precast.WS['Blade: Yu'].MaxTP = set_combine(sets.precast.WS['Aeolian Edge'].MaxTP, {})
   sets.precast.WS['Blade: Yu'].AttCapped = set_combine(sets.precast.WS['Aeolian Edge'].AttCapped, {})
@@ -771,14 +770,13 @@ function init_gear_sets()
     -- Merits                                         8
     -- 2 Shadows, 31 FC, -3 Enmity, 29 SIRD [48 PDT / 28 MDT, 435 M.Eva]
 
-    -- hands="Leyline Gloves",        -- __,  8, __, __ [__/__,  62]
     -- legs="Hattori Hakama +3",      -- __, __, __, __ [12/12, 135]
     -- feet="Hattori Kyahan +3",      --  1, __, __, __ [__/__, 135]
     -- back=gear.NIN_FC_Cape,         --  1, 10, __, __ [10/__, ___]
     -- Merits                                         8
     -- 2 Shadows, 41 FC, -3 Enmity, 21 SIRD [49 PDT / 29 MDT, 455 M.Eva]
   }
-  
+
   -- DT > +Enmity > FC > SIRD
   sets.midcast.Utsusemi.Yonin = {
     ammo="Sapience Orb",              -- __,  2,  2, __ [__/__, ___]
@@ -904,16 +902,13 @@ function init_gear_sets()
     -- Merits/Gifts                      25
     -- 25 Ninja Tool Expertise [48 PDT/50 MDT, 503 M.Eva]
 
-    -- ammo="Staunch Tathlum +1",     -- __ [ 3/ 3, ___]
     -- head="Hattori Zukin +3",       -- __ [10/10, 119]
     -- body="Hattori Ningi +3",       -- __ [13/13, 129]
     -- hands="Mochizuki Tekko +3",    -- 38 [__/__,  46]
     -- legs="Hattori Hakama +3",      -- __ [12/12, 135]
     -- feet="Hattori Kyahan +3",      -- __ [__/__, 125]; Tactical parry+26
-    -- neck="Moonlight Necklace",     -- __ [__/__,  15]; SIRD+15
-    -- ear1="Arete Del Luna +1",      -- __ [__/__, ___]; Resists
-    -- ear2="Odnowa Earring +1",      -- __ [ 3/ 5, ___]
-    -- ring2="Defending Ring",        -- __ [10/10, ___]
+    -- ring1="Shadow Ring",           -- __ [__/__, ___]; Annul magic dmg
+    -- back="Shadow Mantle",          -- __ [__/__, ___]; Annul physical dmg
     -- waist="Gosha Sarashi",         --  5 [__/__, ___]
     -- Merits/Gifts                      25
     -- 68 Ninja Tool Expertise [51 PDT/53 MDT, 569 M.Eva]
@@ -1025,6 +1020,8 @@ function init_gear_sets()
 
     -- ear1="Dedition Earring",       -- __,  8,-10/-10 <__, __, __> [__/__, ___] ___, __
     -- ear2="Hattori Earring +2",     -- __,  8,  20/__ <__, __, __> [__/__, ___] ___, __; katana/throwing +12
+    -- 0 DW, 78 STP, 324 Acc/197 R.Acc <3 DA, 14 TA, 2 QA> [37 PDT/27 MDT, 525 M.Eva] 375 Evasion, 79 Daken
+
   }
   sets.engaged.LowAcc = set_combine(sets.engaged, {
     ear2="Dignitary's Earring",       -- __,  3,  10/__ <__, __, __> [__/__, ___] ___, __
@@ -1061,6 +1058,7 @@ function init_gear_sets()
     
     -- ear1="Dedition Earring",       -- __,  8,-10/-10 <__, __, __> [__/__, ___] ___, __
     -- ear2="Hattori Earring +2",     -- __,  8,  20/__ <__, __, __> [__/__, ___] ___, __; katana/throwing +12
+    -- 16 DW, 84 STP, 317 Acc/142 R.Acc <3 DA, 14 TA, 0 QA> [37 PDT/17 MDT, 407 M.Eva] 335 Evasion, 79 Daken
   }
   sets.engaged.LowDW.LowAcc = set_combine(sets.engaged.LowDW, {
     ear2="Dignitary's Earring",       -- __,  3,  10/__ <__, __, __> [__/__, ___] ___, __
@@ -1098,6 +1096,7 @@ function init_gear_sets()
     
     -- ear1="Dedition Earring",       -- __,  8,-10/-10 <__, __, __> [__/__, ___] ___, __
     -- ear2="Hattori Earring +2",     -- __,  8,  20/__ <__, __, __> [__/__, ___] ___, __; katana/throwing +12
+    -- 22 DW, 82 STP, 305 Acc/245 R.Acc <3 DA, 7 TA, 0 QA> [36 PDT/26 MDT, 529 M.Eva] 375 Evasion, 79 Daken
   }
   sets.engaged.MidDW.LowAcc = set_combine(sets.engaged.MidDW, {
   })
@@ -1126,6 +1125,7 @@ function init_gear_sets()
     
     -- ear1="Dedition Earring",       -- __,  8,-10/-10 <__, __, __> [__/__, ___] ___, __
     -- ear2="Hattori Earring +2",     -- __,  8,  20/__ <__, __, __> [__/__, ___] ___, __; katana/throwing +12
+    -- 25 DW, 81 STP, 311 Acc/207 R.Acc <3 DA, 6 TA, 0 QA> [32 PDT/22 MDT, 463 M.Eva] 349 Evasion, 89 Daken
   }
   sets.engaged.HighDW.LowAcc = set_combine(sets.engaged.HighDW, {
   })
@@ -1155,6 +1155,7 @@ function init_gear_sets()
     -- ear1="Dedition Earring",       -- __,  8,-10/-10 <__, __, __> [__/__, ___] ___, __
     -- ear2="Hattori Earring +2",     -- __,  8,  20/__ <__, __, __> [__/__, ___] ___, __; katana/throwing +12
     -- back=gear.NIN_DW_Cape,         -- 10, __,  20/__ <__, __, __> [10/__, ___] ___, __
+    -- 32 DW, 72 STP, 305 Acc/245 R.Acc <3 DA, 7 TA, 0 QA> [36 PDT/26 MDT, 529 M.Eva] 375 Evasion, 79 Daken
   }
   sets.engaged.SuperDW.LowAcc = set_combine(sets.engaged.SuperDW, {
   })
@@ -1183,6 +1184,7 @@ function init_gear_sets()
     
     -- ear2="Hattori Earring +2",     -- __,  8,  20/__ <__, __, __> [__/__, ___] ___, __; katana/throwing +12
     -- back=gear.NIN_DW_Cape,         -- 10, __,  20/__ <__, __, __> [10/__, ___] ___, __
+    -- 39 DW, 64 STP, 311 Acc/267 R.Acc <3 DA, 3 TA, 0 QA> [36 PDT/26 MDT, 541 M.Eva] 407 Evasion, 89 Daken
   }
   sets.engaged.MaxDW.LowAcc = set_combine(sets.engaged.MaxDW, {
   })
@@ -1215,6 +1217,7 @@ function init_gear_sets()
     -- 0 DW, 69 STP, 304 Acc/197 R.Acc <3 DA, 13 TA, 2 QA> [50 PDT/32 MDT, 552 M.Eva] 433 Evasion, 79 Daken
     
     -- ear2="Hattori Earring +2",     -- __,  8,  20/__ <__, __, __> [__/__, ___] ___, __; katana/throwing +12
+    -- 0 DW, 69 STP, 334 Acc/207 R.Acc <3 DA, 13 TA, 2 QA> [50 PDT/32 MDT, 552 M.Eva] 433 Evasion, 79 Daken
   }
   sets.engaged.HeavyDef.LowAcc = set_combine(sets.engaged.HeavyDef, {
   })
@@ -1243,6 +1246,7 @@ function init_gear_sets()
     
     -- ear2="Hattori Earring +2",     -- __,  8,  20/__ <__, __, __> [__/__, ___] ___, __; katana/throwing +12
     -- back=gear.NIN_DW_Cape,         -- 10, __,  20/__ <__, __, __> [10/__, ___] ___, __
+    -- 17 DW, 63 STP, 342 Acc/217 R.Acc <3 DA, 11 TA, 0 QA> [50 PDT/32 MDT, 552 M.Eva] 433 Evasion, 79 Daken
   }
   sets.engaged.LowDW.HeavyDef.LowAcc = set_combine(sets.engaged.LowDW.HeavyDef, {
   })
@@ -1270,6 +1274,7 @@ function init_gear_sets()
     -- 11 DW, 65 STP, 322 Acc/217 R.Acc <3 DA, 11 TA, 0 QA> [50 PDT/32 MDT, 560 M.Eva] 448 Evasion, 79 Daken
     
     -- back=gear.NIN_DW_Cape,         -- 10, __,  20/__ <__, __, __> [10/__, ___] ___, __
+    -- 21 DW, 55 STP, 322 Acc/217 R.Acc <3 DA, 11 TA, 0 QA> [50 PDT/32 MDT, 560 M.Eva] 448 Evasion, 79 Daken
   }
   sets.engaged.MidDW.HeavyDef.LowAcc = set_combine(sets.engaged.MidDW.HeavyDef, {
   })
@@ -1299,6 +1304,7 @@ function init_gear_sets()
     -- head="Hattori Zukin +3",       --  7, __,  61/61 <__, __, __> [10/10, 119]  89, __
     -- ear2="Hattori Earring +2",     -- __,  8,  20/__ <__, __, __> [__/__, ___] ___, __; katana/throwing +12
     -- back=gear.NIN_DW_Cape,         -- 10, __,  20/__ <__, __, __> [10/__, ___] ___, __
+    -- 24 DW, 54 STP, 363 Acc/178 R.Acc <3 DA, 14 TA, 0 QA> [50 PDT/32 MDT, 478 M.Eva] 388 Evasion, 79 Daken
   }
   sets.engaged.HighDW.HeavyDef.LowAcc = set_combine(sets.engaged.HighDW.HeavyDef, {
   })
@@ -1328,6 +1334,7 @@ function init_gear_sets()
     -- head="Hattori Zukin +3",       --  7, __,  61/61 <__, __, __> [10/10, 119]  89, __
     -- ear2="Hattori Earring +2",     -- __,  8,  20/__ <__, __, __> [__/__, ___] ___, __; katana/throwing +12
     -- back=gear.NIN_DW_Cape,         -- 10, __,  20/__ <__, __, __> [10/__, ___] ___, __
+    -- 33 DW, 47 STP, 349 Acc/275 R.Acc <0 DA, 4 TA, 0 QA> [51 PDT/35 MDT, 535 M.Eva] 401 Evasion, 89 Daken
   }
   sets.engaged.SuperDW.HeavyDef.LowAcc = set_combine(sets.engaged.SuperDW.HeavyDef, {
   })
@@ -1356,6 +1363,7 @@ function init_gear_sets()
     
     -- head="Hattori Zukin +3",       --  7, __,  61/61 <__, __, __> [10/10, 119]  89, __
     -- back=gear.NIN_DW_Cape,         -- 10, __,  20/__ <__, __, __> [10/__, ___] ___, __
+    -- 38 DW, 39 STP, 329 Acc/275 R.Acc <0 DA, 4 TA, 0 QA> [51 PDT/35 MDT, 535 M.Eva] 401 Evasion, 89 Daken
   }
   sets.engaged.MaxDW.HeavyDef.LowAcc = set_combine(sets.engaged.MaxDW.HeavyDef, {
   })
