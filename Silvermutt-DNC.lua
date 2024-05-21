@@ -179,7 +179,7 @@ function init_gear_sets()
     ammo="Sapience Orb",              --  2 [__/__, ___]
     head="Halitus Helm",              --  8 [__/__,  43]
     body="Emet Harness +1",           -- 10 [ 6/__,  64]
-    hands="Horos Bangles",            --  6 [__/__,  25]
+    hands="Horos Bangles +3",         --  9 [__/__,  57]
     legs=gear.Nyame_B_legs,           -- __ [ 8/ 8, 150]
     feet="Maculele Toe Shoes +3",     -- __ [10/10, 115]
     ear1="Cryptic Earring",           --  4 [__/__, ___]
@@ -189,9 +189,8 @@ function init_gear_sets()
     neck="Unmoving Collar +1",        -- 10 [__/__, ___]
     back=gear.DNC_TP_DA_Cape,         -- __ [10/__, ___]
     waist="Kasiri Belt",              --  3 [__/__, ___]
-    -- 58 Enmity [34 PDT/18 MDT, 397 M.Eva]
+    -- 61 Enmity [34 PDT/18 MDT, 429 M.Eva]
 
-    -- hands="Horos Bangles +3",      --  9 [__/__,  57]
     -- feet="Ahosi Leggings",         --  7 [ 4/__, 107]
     -- back=gear.DNC_Enmity_Cape,     -- 10 [10/__, ___]
     -- 78 Enmity [28 PDT/8 MDT, 421 M.Eva]
@@ -1268,7 +1267,7 @@ function init_gear_sets()
     legs="Horos Tights +3",
   }
   sets.buff['Fan Dance'] = {
-    body="Horos Bangles",
+    hands="Horos Bangles +3",
   }
   -- This is overlaid on TP set during Climactic Flourish
   sets.buff['Climactic Flourish'] = {
