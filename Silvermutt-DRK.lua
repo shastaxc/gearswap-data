@@ -870,7 +870,7 @@ function init_gear_sets()
     ear2="Odnowa Earring +1",               -- __, __, __, __ [ 3/ 5, ___]
     ring1="Kishar Ring",                    -- __,  5, __, __ [__/__, ___]; Duration+10%
     ring2="Stikini Ring +1",                -- __, 11,  8, __ [__/__, ___]
-    -- back="Chuparrosa Mantle",            -- __, __, __, 10 [__/__, ___]; Duration+20s
+    back="Chuparrosa Mantle",               -- __, __, __, 10 [__/__, ___]; Duration+20s
     waist="Eschan Stone",                   -- __,  7, __, __ [__/__, ___]
     -- 128 INT, 281 M.Acc, 59 Dark skill, 15 Absorb Potency% [17 PDT/23 MDT, 436 M.Eva]
     
