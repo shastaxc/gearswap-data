@@ -919,6 +919,7 @@ function init_gear_sets()
     ear2="Novio Earring",
   })
 
+  -- TODO: Update
   sets.precast.WS['Evisceration'] = {
     head=gear.Adhemar_B_head,
     hands="Mummu Wrists +2",
@@ -993,37 +994,6 @@ function init_gear_sets()
   })
   sets.precast.WS['Savage Blade'].HighAccMaxTP = set_combine(sets.precast.WS['Savage Blade'].HighAcc, {
     ear2="Telos Earring",
-  })
-
-  sets.precast.WS['Swift Blade'] = set_combine(sets.precast.WS, {
-    head=gear.Adhemar_B_head,
-    body=gear.Adhemar_A_body,
-    hands=gear.Adhemar_B_hands,
-    legs="Meg. Chausses +2",
-    feet=gear.Herc_TA_feet,
-    neck="Fotia Gorget",
-    ear1="Cessance Earring",
-    ear2="Brutal Earring",
-    ring1="Ephramad's Ring",
-    ring2="Epona's Ring",
-    back=gear.COR_WS2_Cape,
-    waist="Fotia Belt",
-  })
-  sets.precast.WS['Swift Blade'].MaxTP = set_combine(sets.precast.WS['Swift Blade'], {
-  })
-  sets.precast.WS['Swift Blade'].LowAcc = set_combine(sets.precast.WS['Swift Blade'], {
-  })
-  sets.precast.WS['Swift Blade'].LowAccMaxTP = set_combine(sets.precast.WS['Swift Blade'].LowAcc, {
-  })
-  sets.precast.WS['Swift Blade'].MidAcc = set_combine(sets.precast.WS['Swift Blade'].LowAcc, {
-  })
-  sets.precast.WS['Swift Blade'].MidAccMaxTP = set_combine(sets.precast.WS['Swift Blade'].MidAcc, {
-  })
-  sets.precast.WS['Swift Blade'].HighAcc = set_combine(sets.precast.WS['Swift Blade'].MidAcc, {
-    head="Meghanada Visor +2",
-    ear2="Telos Earring",
-  })
-  sets.precast.WS['Swift Blade'].HighAccMaxTP = set_combine(sets.precast.WS['Swift Blade'].HighAcc, {
   })
 
   sets.precast.WS['Requiescat'] = set_combine(sets.precast.WS['Swift Blade'], {
