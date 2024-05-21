@@ -192,9 +192,12 @@ function init_gear_sets()
   }
   -- Enmity sets
   sets.Enmity = {
+    ammo="Sapience Orb",  -- 0/0, 0 [0] <2>
     head="Halitus Helm", --0/0, 43 [88] <8>
     body="Emet Harness +1", --6/0, 64 [61] <10>
     hands="Kurys Gloves", --2/2, 57 [25] <9>
+    legs=gear.Nyame_B_legs,
+    feet=gear.Nyame_B_feet,
     neck="Unmoving Collar +1", --_/_, __ [200] <10>
     ear1="Friomisi Earring", --0/0, 0 [0] <2>
     ear2="Cryptic Earring", --0/0, 0 [40] <4>
@@ -265,7 +268,7 @@ function init_gear_sets()
     feet="Hesychast's Gaiters +3",
   }
   sets.precast.JA['Footwork'] = {
-    feet="Bhikku Gaiters +1",
+    feet="Bhikku Gaiters +2",
     -- feet="Bhikku Gaiters +3",
   }
   sets.precast.JA['Formless Strikes'] = {
