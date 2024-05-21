@@ -134,11 +134,6 @@ gear.Gende_CureFC_hands = {}  --  5 Cure Cast Time-, 4 PDT
 ----------------------------------------------------------------------
 
 -- Acro
-gear.Acro_STP_hands = {} -- STR/DEX+7, Att/Acc+20, STP+6
-gear.Acro_Breath_body = {} -- Pet: Breath+8, Pet Macc+25
-gear.Acro_Breath_hands = {} -- Pet: Breath+8, Pet Macc+25
-gear.Acro_Breath_legs = {} -- Pet: Breath+8, Pet Macc+25
-gear.Acro_Breath_feet = {} -- Pet: Breath+8, Pet Macc+25
 
 -- Helios
 
