@@ -72,7 +72,7 @@ function job_setup()
 
   state.CP = M(false, 'Capacity Points Mode')
   state.ToyWeapons = M{['description']='Toy Weapons','None','Katana','GreatKatana','Dagger','Sword','Club','Staff','Polearm','GreatSword','Scythe'}
-  state.WeaponSet = M{['description']='Weapon Set', 'Naegling', 'Chango', 'Shining One', 'Club', 'Dagger', 'Staff'}
+  state.WeaponSet = M{['description']='Weapon Set', 'Naegling', 'Chango', 'Shining One', 'Club', 'Dagger', 'Phys Axe', 'Staff'}
   -- state.WeaponSet = M{['description']='Weapon Set', 'Naegling', 'Ukon', 'Chango', 'Shining One', 'Club', 'Dagger', 'Magic Axe', 'Phys Axe', 'Great Sword', 'Staff'}
   state.EnmityMode = M{['description']='Enmity Mode', 'Normal', 'Low', 'Schere'}
 
@@ -174,13 +174,9 @@ function init_gear_sets()
     -- feet="Agoge Calligae +3",
   }
   sets.precast.JA['Warcry'] = {
-    head="Agoge Mask +1",
+    head="Agoge Mask +1", -- Upgrades past +1 do not enhance ability
     -- head="Agoge Mask +3",
   }
-  sets.precast.JA['Defender'] = {}
-  sets.precast.JA['Aggressor'] = {}
-  sets.precast.JA['Mighty Strikes'] = {}
-  sets.precast.JA["Warrior's Charge"] = {}
   sets.precast.JA['Tomahawk'] = {
     feet="Agoge Calligae +1",
     -- ammo="Throwing Tomahawk",
@@ -189,11 +185,9 @@ function init_gear_sets()
   sets.precast.JA['Retaliation'] = {
     feet="Boii Calligae +3",
   }
-  sets.precast.JA['Restraint'] = {}
   sets.precast.JA['Blood Rage'] = {
     body="Boii Lorica +3",
   }
-  sets.precast.JA['Brazen Rush'] = {}
   sets.precast.JA['Provoke'] = set_combine(sets.Enmity, {})
 
   -- Waltz set (chr and vit)
@@ -1015,11 +1009,11 @@ function init_gear_sets()
     sub=gear.Malevolence_2,
   }
   sets.WeaponSet['Phys Axe'] = {
-    -- main="Dolichenus",
+    main="Dolichenus",
     sub="Blurred Shield +1",
   }
   sets.WeaponSet['Phys Axe'].DW = {
-    -- main="Dolichenus",
+    main="Dolichenus",
     -- sub="Sangarius +1",
   }
   sets.WeaponSet['Great Sword'] = {
