@@ -360,19 +360,9 @@ function init_gear_sets()
     waist="Platinum Moogle Belt",                   -- __,  3/ 3 [___]; HP+10%
     -- 206 MAB, 54 PDT / 44 MDT [957 HP]
     
-    -- ammo="Seething Bomblet +1",                  --  7, __/__ [___]
-    -- head=gear.Nyame_B_head,                      -- 30,  7/ 7 [ 91]
-    -- body=gear.Nyame_B_body,                      -- 30,  9/ 9 [136]
     -- hands="Agwu's Gages",                        -- 60, __/__ [ 38]; R30
     -- legs="Agwu's Slops",                         -- 60, 10/10 [ 50]; R30
     -- feet="Agwu's Pigaches",                      -- 60, __/__ [ 27]; R30
-    -- neck="Futhark Torque +2",                    -- __,  7/ 7 [ 60]
-    -- ear1="Friomisi Earring",                     -- 10, __/__ [___]
-    -- ear2="Novio Earring",                        --  7, __/__ [___]
-    -- ring1={name="Gelatinous Ring +1",priority=1},-- __,  7/-1 [135]
-    -- ring2="Moonlight Ring",                      -- __,  5/ 5 [110]
-    -- back={name="Moonlight Cape",priority=1},     -- __,  6/ 6 [275]
-    -- waist="Platinum Moogle Belt",                -- __,  3/ 3 [___]; HP+10%
     -- HP from belt                                               341
     -- 264 MAB, 54 PDT / 46 MDT [922/1263 HP]
   }
@@ -471,7 +461,7 @@ function init_gear_sets()
     back=gear.RUN_WS2_Cape,         -- 20, __ [10/__, ___] ___
     -- 323 Acc, 342 Magic Acc [54 PDT/44 MDT, 669 M.Eva] 454 HP
     
-    -- body="Erilaz Surcoat +3",    -- 64, 64 [__/__, 130] 143
+    -- body="Erilaz Surcoat +3",    -- 64, 64 [__/__, 130] 143; If you have jse ear +2
     -- ear2="Erilaz Earring +2",    -- 20, 20 [ 8/ 8,  12] ___
     -- ring1="Etana Ring",          -- 10, 10 [__/__, ___]  60
     -- back=gear.RUN_Nuke_Cape,     -- __, 20 [10/__, ___] ___
