@@ -197,13 +197,12 @@ function init_gear_sets()
     legs=gear.Nyame_B_legs,
     feet=gear.Nyame_B_feet,
     neck="Samurai's Nodowa +2",
-    ear1="Dignitary's Earring",
+    ear1="Schere Earring", -- R20+
     ear2="Telos Earring",
     ring1="Ephramad's Ring",
     ring2="Chirich Ring +1",
     back=gear.stp_jse_back,
     waist="Olseni Belt",
-    -- ear1="Schere Earring", -- R20+
   }
   sets.precast.Flourish1 = {
   }
@@ -682,7 +681,6 @@ function init_gear_sets()
   sets.WeaponSet['Doji'] = {main="Dojikiri Yasutsuna", sub="Utu Grip"}
   sets.WeaponSet['Masa'] = {main="Masamune", sub="Utu Grip"}
   sets.WeaponSet['Shining One'] = {main="Shining One", sub="Utu Grip"}
-  -- sets.WeaponSet['Shining One'] = {main="Shining One", sub="Utu Grip"}
 end
 
 -------------------------------------------------------------------------------------------------------------------
