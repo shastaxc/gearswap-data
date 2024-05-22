@@ -560,7 +560,7 @@ function init_gear_sets()
     main="Chatoyant Staff",             -- __, __, 10 [__/__, ___]
     sub="Khonsu",                       -- __, __, __ [ 6/ 6, ___]
     ammo="Esper Stone +1",              -- 20, __, __ [__/__, ___]
-    head="Beckoner's Horn +2",          -- __, 18, __ [ 9/ 9, 120]
+    head="Beckoner's Horn +3",          -- __, 23, __ [10/10, 130]
     body="Beckoner's Doublet +2",       -- __, 19, __ [12/12, 120]
     hands="Baayami Cuffs +1",           -- __, 33, __ [__/__,  93]
     legs="Beckoner's Spats +2",         -- __, 25, __ [11/11, 147]
@@ -574,10 +574,9 @@ function init_gear_sets()
     waist="Ligeia Sash",                -- 10, __, __ [__/__, ___]
     -- Traits/Merits/Gifts                 60,469, __ [__/__, ___]
     -- Assume minimum day/weather          __, __, 10
-    -- 160 Base Siphon, 597 Summoning Skill, 25 Siphon Multiplier [48 PDT/48 MDT, 638 M.Eva]
+    -- 160 Base Siphon, 602 Summoning Skill, 25 Siphon Multiplier [49 PDT/49 MDT, 648 M.Eva]
     -- MP Siphoned = 883 to 989 (depending on day/weather)
     
-    -- head="Beckoner's Horn +3",       -- __, 23, __ [10/10, 130]
     -- body="Beckoner's Doublet +3",    -- __, 24, __ [13/13, 130]
     -- legs="Beckoner's Spats +3",      -- __, 30, __ [12/12, 157]
     -- feet="Beckoner's Pigaches +3",   -- 80, __, __ [__/__, 168]
@@ -588,7 +587,7 @@ function init_gear_sets()
     main="Nirvana",                     -- __, __, __ [__/__, ___]
     sub="Elan Strap +1",                -- __, __, __ [__/__, ___]
     ammo="Esper Stone +1",              -- 20, __, __ [__/__, ___]
-    head="Beckoner's Horn +2",          -- __, 18, __ [ 9/ 9, 120]
+    head="Beckoner's Horn +3",          -- __, 23, __ [10/10, 130]
     body="Beckoner's Doublet +2",       -- __, 19, __ [12/12, 120]
     hands="Baayami Cuffs +1",           -- __, 33, __ [__/__,  93]
     legs="Beckoner's Spats +2",         -- __, 25, __ [11/11, 147]
@@ -602,10 +601,9 @@ function init_gear_sets()
     waist="Ligeia Sash",                -- 10, __, __ [__/__, ___]
     -- Traits/Merits/Gifts                 60,469, __ [__/__, ___]
     -- Assume minimum day/weather          __, __, 10
-    -- 160 Base Siphon, 592 Summoning Skill, 15 Weather Multiplier [46 PDT/46 MDT, 638 M.Eva]
+    -- 160 Base Siphon, 597 Summoning Skill, 15 Weather Multiplier [47 PDT/47 MDT, 648 M.Eva]
     -- MP Siphoned = 807 to 982 (depending on day/weather)
     
-    -- head="Beckoner's Horn +3",       -- __, 23, __ [10/10, 130]
     -- body="Beckoner's Doublet +3",    -- __, 24, __ [13/13, 130]
     -- legs="Beckoner's Spats +3",      -- __, 30, __ [12/12, 157]
     -- feet="Beckoner's Pigaches +3",   -- 80, __, __ [__/__, 168]
@@ -623,7 +621,7 @@ function init_gear_sets()
     main="Malignance Pole",         -- __, __, __, __ [20/20, ___]
     sub="Vox Grip",                 --  3, __, __, __ [__/__, ___]
     ammo="Epitaph",                 -- __, __,  5, __ [__/__, ___]
-    head="Beckoner's Horn +2",      -- 18, __, __, __ [ 9/ 9, 120]; Keep on for Favor bonus
+    head="Beckoner's Horn +3",      -- 23, __, __, __ [10/10, 130]; Keep on for Favor bonus
     body="Beckoner's Doublet +2",   -- 19, __, __, __ [12/12, 120]
     hands="Baayami Cuffs +1",       -- 33,  7, __, __ [__/__,  93]
     legs="Baayami Slops +1",        -- 35,  8, __, __ [__/__, 139]
@@ -637,9 +635,8 @@ function init_gear_sets()
     waist="Kobo Obi",               --  8, __, __, __ [__/__, ___]
     -- Traits/Merits/Gifts            469, __, __, 10
     -- Master Levels                    2
-    -- 667 Summon Skill, 15 -BP Delay, 7 -BP Delay II, 10 -BP Delay III [41 PDT/41 MDT, 611 M.Eva]
+    -- 672 Summon Skill, 15 -BP Delay, 7 -BP Delay II, 10 -BP Delay III [42 PDT/42 MDT, 621 M.Eva]
     
-    -- head="Beckoner's Horn +3",   -- 23, __, __, __ [10/10, 130]; Keep on for Favor bonus
     -- body="Beckoner's Doublet +3",-- 24, __, __, __ [13/13, 130]
     -- back=gear.SMN_FC_Cape,       -- __, __, __, __ [10/__, ___]
     -- Traits/Merits/Gifts            469, __, __, 10
@@ -652,7 +649,7 @@ function init_gear_sets()
     main="Nirvana",                 -- __, __, __, __ [__/__, ___]
     sub="Elan Strap +1",            -- __, __, __, __ [__/__, ___]
     ammo="Epitaph",                 -- __, __,  5, __ [__/__, ___]
-    head="Beckoner's Horn +2",      -- 18, __, __, __ [ 9/ 9, 120]; Keep on for Favor bonus
+    head="Beckoner's Horn +3",      -- 23, __, __, __ [10/10, 130]; Keep on for Favor bonus
     body="Beckoner's Doublet +2",   -- 19, __, __, __ [12/12, 120]
     hands="Baayami Cuffs +1",       -- 33,  7, __, __ [__/__,  93]
     legs="Baayami Slops +1",        -- 35,  8, __, __ [__/__, 139]
@@ -665,16 +662,13 @@ function init_gear_sets()
     back=gear.SMN_Skill_Cape,       --  8, __,  2, __ [__/__, ___]
     waist="Kobo Obi",               --  8, __, __, __ [__/__, ___]
     -- Traits/Merits/Gifts            469, __, __, 10
-    -- 662 Summon Skill, 15 -BP Delay, 7 -BP Delay II, 10 -BP Delay III [21 PDT/21 MDT, 611 M.Eva]
+    -- 667 Summon Skill, 15 -BP Delay, 7 -BP Delay II, 10 -BP Delay III [22 PDT/22 MDT, 621 M.Eva]
 
-    -- head="Beckoner's Horn +3",   -- 23, __, __, __ [10/10, 130]; Keep on for Favor bonus
     -- body="Beckoner's Doublet +3",-- 24, __, __, __ [13/13, 130]
-    -- Traits/Merits/Gifts            469, __, __, 10
     -- 672 Summon Skill, 15 -BP Delay, 7 -BP Delay II, 10 -BP Delay III [23 PDT/23 MDT, 631 M.Eva]
 
     -- ring2="Defending Ring",      -- __, __, __, __ [10/10, ___]
     -- back=gear.SMN_FC_Cape,       -- __, __, __, __ [10/__, ___]
-    -- Traits/Merits/Gifts            469, __, __, 10
     -- Master Levels                   14
     -- 670 Summon Skill, 15 -BP Delay, 5 -BP Delay II, 10 -BP Delay III [43 PDT/33 MDT, 631 M.Eva]
   }
@@ -812,7 +806,7 @@ function init_gear_sets()
     main=gear.Espiritus_B,            -- 15 [__/__, ___]
     sub="Khonsu",                     -- __ [ 6/ 6, ___]
     ammo="Epitaph",                   -- __ [__/__, ___]
-    head="Beckoner's Horn +2",        -- 18 [ 9/ 9, 120]
+    head="Beckoner's Horn +3",        -- 23 [10/10, 130]
     body="Beckoner's Doublet +2",     -- 19 [12/12, 120]
     hands="Baayami Cuffs +1",         -- 33 [__/__,  93]
     legs="Beckoner's Spats +2",       -- 25 [11/11, 147]
@@ -825,9 +819,8 @@ function init_gear_sets()
     back=gear.SMN_Skill_Cape,         -- 13 [__/__, ___]
     waist="Kobo Obi",                 --  8 [__/__, ___]
     -- Traits/Merits/Gifts              469
-    -- 664 Summon Skill [48 PDT/48 MDT, 619 M.Eva]
+    -- 669 Summon Skill [49 PDT/49 MDT, 629 M.Eva]
     
-    -- head="Beckoner's Horn +3",     -- 23 [10/10, 130]
     -- body="Beckoner's Doublet +3",  -- 24 [13/13, 130]
     -- legs="Beckoner's Spats +3",    -- 30 [12/12, 157]
     -- 679 Summon Skill [51 PDT/51 MDT, 649 M.Eva]
@@ -838,7 +831,7 @@ function init_gear_sets()
     main="Nirvana",                   --   2, 30, __ [__/__, ___]
     sub="Vox Grip",                   -- ___, __,  3 [__/__, ___]
     ammo="Epitaph",                   -- 119, 25, __ [__/__, ___]
-    head="Beckoner's Horn +2",        -- ___, 51, 18 [ 9/ 9, 120]
+    head="Beckoner's Horn +3",        -- ___, 61, 23 [10/10, 130]
     body="Beckoner's Doublet +2",     -- ___, 54, 19 [12/12, 120]
     hands="Beckoner's Bracers +2",    -- ___, 52, __ [__/__,  83]
     legs="Beckoner's Spats +2",       -- ___, 53, 25 [11/11, 147]
@@ -850,9 +843,8 @@ function init_gear_sets()
     ring2="Cath Palug Ring",          -- ___, 12, __ [ 5/ 5, ___]
     back=gear.SMN_Magic_BP_Cape,      --   1, 20, __ [10/__,  20]
     waist="Incarnation Sash",         -- ___, 15, __ [__/__, ___]
-    -- 124 Pet Lv, 414 Pet M.Acc, 75 Summon Skill [62 PDT/52 MDT, 640 M.Eva]
+    -- 124 Pet Lv, 424 Pet M.Acc, 80 Summon Skill [63 PDT/53 MDT, 650 M.Eva]
     
-    -- head="Beckoner's Horn +3",     -- ___, 61, 23 [10/10, 130]
     -- body="Beckoner's Doublet +3",  -- ___, 64, 24 [13/13, 130]
     -- hands="Beckoner's Bracers +3", -- ___, 62, __ [__/__,  93]
     -- legs="Beckoner's Spats +3",    -- ___, 63, 30 [12/12, 157]
@@ -952,7 +944,7 @@ function init_gear_sets()
     main="Mpaca's Staff",           -- ____ [__/__, ___] ( 2, __) {___, __, __/__}
     sub="Khonsu",                   -- ____ [ 6/ 6, ___] (__, __) {___, __, __/__}
     ammo="Staunch Tathlum +1",      -- ____ [ 3/ 3, ___] (__, __) {___, __, __/__}; Resist Status+11
-    head="Beckoner's Horn +2",      --   51 [ 9/ 9, 120] ( 3, __) {___, __, __/__}
+    head="Beckoner's Horn +3",      --   61 [10/10, 130] ( 4, __) {___, __, __/__}
     body=gear.Apogee_A_body,        -- -160 [__/__,  91] ( 4, __) {___, __, __/__}
     hands="Asteria Mitts +1",       --   18 [__/__,  43] ( 2, __) {___, __, __/__}
     legs="Assiduity Pants +1",      --   43 [__/__, 107] ( 2,  3) {___, __, __/__}
@@ -965,9 +957,8 @@ function init_gear_sets()
     back=gear.SMN_Phys_BP_Cape,     -- ____ [10/__, ___] (__, __) {  1, __, __/__}; Pet Haste+10
     waist="Regal Belt",             --   88 [ 3/ 3, ___] (__, __) {___, __, __/__}
     -- Traits/Merits/JP Gifts                                       99, __,  7/ 7
-    -- 70 HP [51 PDT/41 MDT, 500 M.Eva] (20 Refresh, 3 Perp Cost) {Pet: 101 Lv, 0 Regain, 7 PDT/7 MDT}
+    -- 80 HP [52 PDT/42 MDT, 510 M.Eva] (21 Refresh, 3 Perp Cost) {Pet: 101 Lv, 0 Regain, 7 PDT/7 MDT}
 
-    -- head="Beckoner's Horn +3",   --   61 [10/10, 130] ( 4, __) {___, __, __/__}
     -- ear2="Beckoner's Earring +2",-- ____ [ 6/ 6, ___] ( 3, __) {  1, __, __/__}
     -- 80 HP [54 PDT/44 MDT, 510 M.Eva] (22 Refresh, 3 Perp Cost) {Pet: 101 Lv, Regain, 7 PDT/7 MDT}
   }
@@ -987,7 +978,7 @@ function init_gear_sets()
     main="Gridarvor",               -- ____ [__/__, ___] (__,  5) {___, __, __/__}
     sub="Khonsu",                   -- ____ [ 6/ 6, ___] (__, __) {___, __, __/__}
     ammo="Epitaph",                 -- ____ [__/__, ___] (__, __) {119, __, __/__}
-    head="Beckoner's Horn +2",      --   51 [ 9/ 9, 120] ( 3, __) {___, __, __/__}
+    head="Beckoner's Horn +3",      --   61 [10/10, 130] ( 4, __) {___, __, __/__}
     body="Beckoner's Doublet +2",   --   74 [12/12, 120] (__,  7) {___, __, __/__}
     hands="Asteria Mitts +1",       --   18 [__/__,  43] ( 2, __) {___, __, __/__}
     legs="Assiduity Pants +1",      --   43 [__/__, 107] ( 2,  3) {___, __, __/__}
@@ -1000,9 +991,8 @@ function init_gear_sets()
     back=gear.SMN_Phys_BP_Cape,     -- ____ [10/__, ___] (__, __) {  1, __, __/__}; Pet Haste+10
     waist="Isa Belt",               -- ____ [__/__, ___] (__, __) {___, __,  3/ 3}
     -- Traits/Merits/JP Gifts                                      ___, __,  7/ 7
-    -- 216 HP [51 PDT/41 MDT, 529 M.Eva] (13 Refresh, 15 Perp Cost) {Pet: 121 Lv, 25 Regain, 13 PDT/13 MDT}
+    -- 226 HP [52 PDT/42 MDT, 539 M.Eva] (14 Refresh, 15 Perp Cost) {Pet: 121 Lv, 25 Regain, 13 PDT/13 MDT}
 
-    -- head="Beckoner's Horn +3",   --   61 [10/10, 130] ( 4, __) {___, __, __/__}
     -- body="Beckoner's Doublet +3",--   84 [13/13, 130] (__,  8) {___, __, __/__}
     -- ear2="Beckoner's Earring +2",-- ____ [ 6/ 6, ___] ( 3, __) {  1, __, __/__}
     -- 236 HP [55 PDT/45 MDT, 549 M.Eva] (15 Refresh, 16 Perp Cost) {Pet: 121 Lv, 25 Regain, 13 PDT/13 MDT}
@@ -1017,7 +1007,7 @@ function init_gear_sets()
     main="Gridarvor",               -- ____ [__/__, ___] (__,  5) {___, __, __/__}
     sub="Khonsu",                   -- ____ [ 6/ 6, ___] (__, __) {___, __, __/__}
     ammo="Epitaph",                 -- ____ [__/__, ___] (__, __) {119, __, __/__}
-    head="Beckoner's Horn +2",      --   51 [ 9/ 9, 120] ( 3, __) {___, __, __/__}
+    head="Beckoner's Horn +3",      --   61 [10/10, 130] ( 4, __) {___, __, __/__}
     body=gear.Apogee_A_body,        -- -160 [__/__,  91] ( 4, __) {___, __, __/__}
     hands="Asteria Mitts +1",       --   18 [__/__,  43] ( 2, __) {___, __, __/__}
     legs="Assiduity Pants +1",      --   43 [__/__, 107] ( 2,  3) {___, __, __/__}
@@ -1030,9 +1020,8 @@ function init_gear_sets()
     back=gear.SMN_Phys_BP_Cape,     -- ____ [10/__, ___] (__, __) {  1, __, __/__}; Pet Haste+10
     waist="Regal Belt",             --   88 [ 3/ 3, ___] (__, __) {___, __, __/__}
     -- Traits/Merits/JP Gifts                                      ___, __,  7/ 7
-    -- 70 HP [48 PDT/38 MDT, 500 M.Eva] (18 Refresh, 8 Perp Cost) {Pet: 121 Lv, 0 Regain, 7 PDT/7 MDT}
+    -- 80 HP [49 PDT/39 MDT, 510 M.Eva] (19 Refresh, 8 Perp Cost) {Pet: 121 Lv, 0 Regain, 7 PDT/7 MDT}
 
-    -- head="Beckoner's Horn +3",   --   61 [10/10, 130] ( 4, __) {___, __, __/__}
     -- ear2="Beckoner's Earring +2",-- ____ [ 6/ 6, ___] ( 3, __) {  1, __, __/__}
     -- 80 HP [51 PDT/41 MDT, 510 M.Eva] (20 Refresh, 8 Perp Cost) {Pet: 121 Lv, 0 Regain, 7 PDT/7 MDT}
   }
@@ -1044,7 +1033,7 @@ function init_gear_sets()
 
   -- TODO: update set
   sets.engaged = {
-    head="Beckoner's Horn +2",
+    head="Beckoner's Horn +3",
     body="Beckoner's Doublet +2",
     hands="Bunzi's Gloves",
     legs="Beckoner's Spats +2",
