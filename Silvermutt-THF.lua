@@ -1,4 +1,5 @@
 -- File Status: Good.
+-- TODO: Add logic to keep feint set equipped until hit applies.
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs
@@ -210,7 +211,7 @@ function init_gear_sets()
     -- body="Pillager's Vest +3",
   }
   sets.precast.JA['Conspirator'] = {
-    -- body="Skulker's Vest +1",
+    -- body="Skulker's Vest +1", -- Must remain equipped to gain the benefit
   }
 
   -- Theory is level and acc play a part, so prioritize: ilvl > Steal+ > Acc
