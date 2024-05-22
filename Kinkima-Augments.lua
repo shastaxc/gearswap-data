@@ -14,8 +14,6 @@ gear.Colada_ENH = { name="Colada", augments={'Enh. Mag. eff. dur. +4','STR+9','"
 -- Gada
 -- gear.Gada_MND = {} -- 15 MND (2 CP would also be great)
 gear.Gada_ENH = { name="Gada", augments={'Enh. Mag. eff. dur. +6','MND+1','Mag. Acc.+14','"Mag.Atk.Bns."+11',}} -- 6 Enh Duration, 6 FC
--- gear.Gada_MND_MAcc = {} -- 10 MND, 25 MAcc
--- gear.Gada_INT_MAcc = {} -- 10 INT, 25 MAcc
 
 -- Grioavolr
 -- gear.Grioavolr_MND = {} -- MND, Enfeeb skill, M.Acc
