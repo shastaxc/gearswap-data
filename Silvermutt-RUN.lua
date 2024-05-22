@@ -130,7 +130,7 @@ function job_setup()
   state.AttCapped = M(false, "Attack Capped")
   state.Knockback = M(false, 'Knockback')
   state.DeathResist = M(false, 'Death Resist Mode')
-  state.WeaponSet = M{['description']='Weapon Set', 'Epeolatry', 'Lionheart', 'Lycurgos', 'Naegling'}
+  state.WeaponSet = M{['description']='Weapon Set', 'Epeolatry', 'Lionheart', 'Lycurgos', 'Naegling', 'Axe'}
   state.AttackMode = M{['description']='Attack', 'Uncapped', 'Capped'}
   state.CP = M(false, 'Capacity Points Mode')
   state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger',
@@ -1274,6 +1274,10 @@ function init_gear_sets()
   }
   sets.WeaponSet["Lycurgos"] = {
     main="Lycurgos",
+  }
+  sets.WeaponSet['Axe'] = {
+    main="Dolichenus",
+    -- sub="Chanter's Shield",
   }
 
 end
