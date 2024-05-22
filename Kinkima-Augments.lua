@@ -12,7 +12,7 @@ gear.Colada_ENH = { name="Colada", augments={'Enh. Mag. eff. dur. +4','STR+9','"
 -- Digirbalag
 
 -- Gada
--- gear.Gada_MND = {} -- 15 MND (2 CP would also be great)
+gear.Gada_MND = { name="Gada", augments={'"Cure" spellcasting time -3%','MND+15','Mag. Acc.+15','"Mag.Atk.Bns."+7',}} -- 15 MND (2 CP would also be great)
 gear.Gada_ENH = { name="Gada", augments={'Enh. Mag. eff. dur. +6','MND+1','Mag. Acc.+14','"Mag.Atk.Bns."+11',}} -- 6 Enh Duration, 6 FC
 
 -- Grioavolr
@@ -193,6 +193,7 @@ gear.SMN_Skill_Cape = { name="Conveyance Cape", augments={'Summoning magic skill
 gear.BLM_FC_Cape = { name="Taranus's Cape", augments={'MND+20','Mag. Acc+20 /Mag. Dmg.+20','MND+10','"Fast Cast"+10','Phys. dmg. taken-10%',}}
 gear.BLM_MAB_Cape = { name="Taranus's Cape", augments={'INT+20','Mag. Acc+20 /Mag. Dmg.+20','INT+10','"Mag.Atk.Bns."+10','Phys. dmg. taken-10%',}}
 gear.BLM_STP_Cape = { name="Taranus's Cape", augments={'INT+20','Accuracy+20 Attack+20','INT+10','"Store TP"+10','Phys. dmg. taken-10%',}}
+-- gear.BLM_Cure_Cape = {} -- 30 MND, 10 CP, 10 PDT
 
 gear.COR_TP_Cape = { name="Camulus's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Store TP"+10','Phys. dmg. taken-10%',}}
 gear.COR_WS1_Cape = { name="Camulus's Mantle", augments={'AGI+20','Mag. Acc+20 /Mag. Dmg.+20','AGI+10','Weapon skill damage +10%','Phys. dmg. taken-10%',}}

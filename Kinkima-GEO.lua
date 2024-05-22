@@ -702,7 +702,7 @@ function init_gear_sets()
 
   -- Cap at 700 power; Power = floor(MND÷2) + floor(VIT÷4) + Healing Magic Skill
   sets.midcast.CureNormal = {
-    main="Bunzi's Rod",             -- 30, 15, __, ___ [__/__, ___] __
+    main=gear.Gada_MND,             -- 18, 21, __,  18 [__/__, ___] __
     sub="Genbu's Shield",           --  5, __, __, ___ [10/__, ___] __
     range=empty,
     ammo="Esper Stone +1",          -- __, __, __, ___ [__/__, ___]  5
@@ -720,9 +720,8 @@ function init_gear_sets()
     waist="Luminary Sash",          -- __, 10, __, ___ [__/__, ___] __
     -- Traits/Merits/Gifts             __,103, 95,  16
     -- RDM Subjob                      __, __, __, 139
-    -- 65 CP, 319 MND, 194 VIT, 285 Healing Skill [42 PDT/30 MDT, 457 M.Eva] 17 -Enmity
+    -- 53 CP, 322 MND, 194 VIT, 303 Healing Skill [42 PDT/30 MDT, 457 M.Eva] 17 -Enmity
     
-    -- main=gear.Gada_MND,          -- 18, 21, __,  18 [__/__, ___] __
     -- hands="Azimuth Gloves +3",   -- __, 47, 38, ___ [12/12,  98] 13
     -- 53 CP, 330 MND, 199 VIT, 303 Healing Skill [43 PDT/31 MDT, 467 M.Eva] 18 -Enmity
     -- 849 HP Cure IV
