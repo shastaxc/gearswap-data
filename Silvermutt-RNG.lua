@@ -560,6 +560,7 @@ function init_gear_sets()
   sets.precast.WS['Apex Arrow'].HighAccMaxTP = set_combine(sets.precast.WS['Apex Arrow'].HighAcc, {
   })
 
+  -- TODO: Re-evaluate this set
   -- 80% DEX, 1.75 FTP, ftp replicating
   sets.precast.WS['Jishnu\'s Radiance'] = set_combine(sets.precast.WS, {
     head="Mummu Bonnet +2",
@@ -843,10 +844,9 @@ function init_gear_sets()
   sets.DoubleShot = {
     head="Arcadian Beret +3",
     body="Arcadian Jerkin +3",
-    hands="Oshosi Gloves", -- 4
+    hands="Oshosi Gloves +1", -- 5
     legs="Oshosi Trousers +1", --7
     feet="Oshosi Leggings +1", --4
-    -- hands="Oshosi Gloves +1", -- 5
   }
   sets.DoubleShot.Acc = {
     head="Arcadian Beret +3",
