@@ -1508,6 +1508,7 @@ function init_gear_sets()
   sets.idle.Refresh = set_combine(sets.idle, sets.passive_refresh)
   sets.idle.Refresh.MpSub50 = set_combine(sets.idle, sets.passive_refresh, sets.passive_refresh.sub50)
 
+  -- Zendick robe also works
   sets.idle.Gyve = set_combine(sets.idle, {
     -- body="Gyve Doublet",
   })

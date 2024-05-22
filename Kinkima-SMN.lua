@@ -625,7 +625,7 @@ function init_gear_sets()
     ammo="Epitaph",                 -- __, __,  5, __ [__/__, ___]
     head="Beckoner's Horn +2",      -- 18, __, __, __ [ 9/ 9, 120]; Keep on for Favor bonus
     body="Beckoner's Doublet +2",   -- 19, __, __, __ [12/12, 120]
-    hands="Baayami Cuffs +1",       -- 33,  7, __, __ [__/__,  93]; maybe swap for Glyphic Bracers +3
+    hands="Baayami Cuffs +1",       -- 33,  7, __, __ [__/__,  93]
     legs="Baayami Slops +1",        -- 35,  8, __, __ [__/__, 139]
     feet="Baayami Sabots +1",       -- 29, __, __, __ [__/__, 139]
     neck="Incanter's Torque",       -- 10, __, __, __ [__/__, ___]
@@ -634,29 +634,14 @@ function init_gear_sets()
     ring1="Evoker's Ring",          -- 10, __, __, __ [__/__, ___]
     ring2="Stikini Ring +1",        --  8, __, __, __ [__/__, ___]
     back=gear.SMN_Skill_Cape,       --  8, __,  2, __ [__/__, ___]
-    waist="Regal Belt",             -- __, __, __, __ [ 3/ 3, ___]
+    waist="Kobo Obi",               --  8, __, __, __ [__/__, ___]
     -- Traits/Merits/Gifts            469, __, __, 10
-    -- 657 Summon Skill, 15 -BP Delay, 7 -BP Delay II, 10 -BP Delay III [44 PDT/44 MDT, 611 M.Eva]
+    -- Master Levels                    2
+    -- 667 Summon Skill, 15 -BP Delay, 7 -BP Delay II, 10 -BP Delay III [41 PDT/41 MDT, 611 M.Eva]
     
-    -- head="Beckoner's Horn +3",   -- 23, __, __, __ [10/10, 130]; Keep on for Favor bonus
-    -- body="Baayami Robe",         -- 32, __, __, __ [__/__, 112]
-    -- 675 Summon Skill, 15 -BP Delay, 7 -BP Delay II, 10 -BP Delay III [33 PDT/33 MDT, 613 M.Eva]
-    
-    -- main="Malignance Pole",      -- __, __, __, __ [20/20, ___]
-    -- sub="Vox Grip",              --  3, __, __, __ [__/__, ___]
-    -- ammo="Epitaph",              -- __, __,  5, __ [__/__, ___]
     -- head="Beckoner's Horn +3",   -- 23, __, __, __ [10/10, 130]; Keep on for Favor bonus
     -- body="Beckoner's Doublet +3",-- 24, __, __, __ [13/13, 130]
-    -- hands="Baayami Cuffs +1",    -- 33,  7, __, __ [__/__,  93]; maybe swap for Glyphic Bracers +3
-    -- legs="Baayami Slops +1",     -- 35,  8, __, __ [__/__, 139]
-    -- feet="Baayami Sabots +1",    -- 29, __, __, __ [__/__, 139]
-    -- neck="Incanter's Torque",    -- 10, __, __, __ [__/__, ___]
-    -- ear1="Lodurr Earring",       -- 10, __, __, __ [__/__, ___]
-    -- ear2="Cath Palug Earring",   --  5, __, __, __ [__/__, ___]
-    -- ring1="Evoker's Ring",       -- 10, __, __, __ [__/__, ___]
-    -- ring2="Stikini Ring +1",     --  8, __, __, __ [__/__, ___]
     -- back=gear.SMN_FC_Cape,       -- __, __, __, __ [10/__, ___]
-    -- waist="Kobo Obi",            --  8, __, __, __ [__/__, ___]
     -- Traits/Merits/Gifts            469, __, __, 10
     -- Master Levels                    3
     -- 670 Summon Skill, 15 -BP Delay, 5 -BP Delay II, 10 -BP Delay III [53 PDT/43 MDT, 631 M.Eva]
@@ -669,7 +654,7 @@ function init_gear_sets()
     ammo="Epitaph",                 -- __, __,  5, __ [__/__, ___]
     head="Beckoner's Horn +2",      -- 18, __, __, __ [ 9/ 9, 120]; Keep on for Favor bonus
     body="Beckoner's Doublet +2",   -- 19, __, __, __ [12/12, 120]
-    hands="Baayami Cuffs +1",       -- 33,  7, __, __ [__/__,  93]; maybe swap for Glyphic Bracers +3
+    hands="Baayami Cuffs +1",       -- 33,  7, __, __ [__/__,  93]
     legs="Baayami Slops +1",        -- 35,  8, __, __ [__/__, 139]
     feet="Baayami Sabots +1",       -- 29, __, __, __ [__/__, 139]
     neck="Incanter's Torque",       -- 10, __, __, __ [__/__, ___]
@@ -678,59 +663,17 @@ function init_gear_sets()
     ring1="Evoker's Ring",          -- 10, __, __, __ [__/__, ___]
     ring2="Stikini Ring +1",        --  8, __, __, __ [__/__, ___]
     back=gear.SMN_Skill_Cape,       --  8, __,  2, __ [__/__, ___]
-    waist="Regal Belt",             -- __, __, __, __ [ 3/ 3, ___]
+    waist="Kobo Obi",               --  8, __, __, __ [__/__, ___]
     -- Traits/Merits/Gifts            469, __, __, 10
-    -- 654 Summon Skill, 15 -BP Delay, 7 -BP Delay II, 10 -BP Delay III [24 PDT/24 MDT, 611 M.Eva]
-    
-    -- ammo="Epitaph",              -- __, __,  5, __ [__/__, ___]
-    -- head="Beckoner's Horn +3",   -- 23, __, __, __ [10/10, 130]; Keep on for Favor bonus
-    -- body="Baayami Robe",         -- 32, __, __, __ [__/__, 112]
-    -- hands="Baayami Cuffs +1",    -- 33,  7, __, __ [__/__,  93]; maybe swap for Glyphic Bracers +3
-    -- legs="Baayami Slops +1",     -- 35,  8, __, __ [__/__, 139]
-    -- feet="Baayami Sabots +1",    -- 29, __, __, __ [__/__, 139]
-    -- neck="Incanter's Torque",    -- 10, __, __, __ [__/__, ___]
-    -- ear1="Lodurr Earring",       -- 10, __, __, __ [__/__, ___]
-    -- ear2="Cath Palug Earring",   --  5, __, __, __ [__/__, ___]
-    -- ring1="Evoker's Ring",       -- 10, __, __, __ [__/__, ___]
-    -- ring2="Defending Ring",      -- __, __, __, __ [10/10, ___]
-    -- back=gear.SMN_Skill_Cape,    --  8, __,  2, __ [__/__, ___]
-    -- waist="Kobo Obi",            --  8, __, __, __ [__/__, ___]
-    -- Traits/Merits/Gifts            469, __, __, 10
-    -- 672 Summon Skill, 15 -BP Delay, 7 -BP Delay II, 10 -BP Delay III [20 PDT/20 MDT, 613 M.Eva]
+    -- 662 Summon Skill, 15 -BP Delay, 7 -BP Delay II, 10 -BP Delay III [21 PDT/21 MDT, 611 M.Eva]
 
-    -- main="Nirvana",              -- __, __, __, __ [__/__, ___]
-    -- sub="Elan Strap +1",         -- __, __, __, __ [__/__, ___]
-    -- ammo="Epitaph",              -- __, __,  5, __ [__/__, ___]
     -- head="Beckoner's Horn +3",   -- 23, __, __, __ [10/10, 130]; Keep on for Favor bonus
     -- body="Beckoner's Doublet +3",-- 24, __, __, __ [13/13, 130]
-    -- hands="Baayami Cuffs +1",    -- 33,  7, __, __ [__/__,  93]; maybe swap for Glyphic Bracers +3
-    -- legs="Baayami Slops +1",     -- 35,  8, __, __ [__/__, 139]
-    -- feet="Baayami Sabots +1",    -- 29, __, __, __ [__/__, 139]
-    -- neck="Incanter's Torque",    -- 10, __, __, __ [__/__, ___]
-    -- ear1="Lodurr Earring",       -- 10, __, __, __ [__/__, ___]
-    -- ear2="Cath Palug Earring",   --  5, __, __, __ [__/__, ___]
-    -- ring1="Evoker's Ring",       -- 10, __, __, __ [__/__, ___]
-    -- ring2="Stikini Ring +1",     --  8, __, __, __ [__/__, ___]
-    -- back=gear.SMN_Skill_Cape,    --  8, __,  2, __ [__/__, ___]
-    -- waist="Kobo Obi",            --  8, __, __, __ [__/__, ___]
     -- Traits/Merits/Gifts            469, __, __, 10
     -- 672 Summon Skill, 15 -BP Delay, 7 -BP Delay II, 10 -BP Delay III [23 PDT/23 MDT, 631 M.Eva]
 
-    -- main="Nirvana",              -- __, __, __, __ [__/__, ___]
-    -- sub="Elan Strap +1",         -- __, __, __, __ [__/__, ___]
-    -- ammo="Epitaph",              -- __, __,  5, __ [__/__, ___]
-    -- head="Beckoner's Horn +3",   -- 23, __, __, __ [10/10, 130]; Keep on for Favor bonus
-    -- body="Beckoner's Doublet +3",-- 24, __, __, __ [13/13, 130]
-    -- hands="Baayami Cuffs +1",    -- 33,  7, __, __ [__/__,  93]; maybe swap for Glyphic Bracers +3
-    -- legs="Baayami Slops +1",     -- 35,  8, __, __ [__/__, 139]
-    -- feet="Baayami Sabots +1",    -- 29, __, __, __ [__/__, 139]
-    -- neck="Incanter's Torque",    -- 10, __, __, __ [__/__, ___]
-    -- ear1="Lodurr Earring",       -- 10, __, __, __ [__/__, ___]
-    -- ear2="Cath Palug Earring",   --  5, __, __, __ [__/__, ___]
-    -- ring1="Evoker's Ring",       -- 10, __, __, __ [__/__, ___]
     -- ring2="Defending Ring",      -- __, __, __, __ [10/10, ___]
     -- back=gear.SMN_FC_Cape,       -- __, __, __, __ [10/__, ___]
-    -- waist="Kobo Obi",            --  8, __, __, __ [__/__, ___]
     -- Traits/Merits/Gifts            469, __, __, 10
     -- Master Levels                   14
     -- 670 Summon Skill, 15 -BP Delay, 5 -BP Delay II, 10 -BP Delay III [43 PDT/33 MDT, 631 M.Eva]
@@ -1114,7 +1057,7 @@ function init_gear_sets()
     back="Aurist's Cape +1",
     waist="Klouskap Sash +1",
     
-    -- hands="Gazu Bracelets",
+    -- hands="Gazu Bracelets +1",
     -- ear2="Telos Earring",
   }
   sets.engaged.Acc = {

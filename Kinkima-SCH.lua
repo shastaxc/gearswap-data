@@ -556,6 +556,7 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.precast.WS = {
+    ammo="Oshasha's Treatise",
     head=gear.Nyame_B_head,
     body=gear.Nyame_B_body,
     hands=gear.Nyame_B_hands,
@@ -564,10 +565,9 @@ function init_gear_sets()
     ear1="Moonshade Earring",
     ring1="Epaminondas's Ring",
     ring2="Rufescent Ring",
-    -- ammo="Floestone",
+    back=gear.SCH_TP_Cape,
     -- neck="Fotia Gorget",
     -- ear2="Telos Earring",
-    -- back="Relucent Cape",
     -- waist="Fotia Belt",
   }
 
@@ -753,19 +753,6 @@ function init_gear_sets()
     -- Ideal:
     -- main="Hvergelmir",         -- __, __, 50
     -- sub="Clerisy Strap +1",    -- __, __,  3
-    -- ammo="Incantor Stone",     -- __, __,  2
-    -- head=gear.Vanya_B_head,    -- 20, __, __
-    -- body=gear.Vanya_B_body,    -- 20, __, __
-    -- hands="Hieros Mittens",    -- __, 10, __
-    -- legs=gear.Vanya_B_legs,    -- 20, __, __
-    -- feet=gear.Vanya_B_feet,    -- 40,  5, __
-    -- neck="Debilis Medallion",  -- __, 15, __
-    -- ear1="Malignance Earring", -- __, __,  4
-    -- ear2="Meili Earring",      -- 10, __, __
-    -- ring1="Haoma's Ring",      --  8, 15, __
-    -- ring2="Menelaus's Ring",   -- 15, 20,-10
-    -- back="Oretania's Cape +1", -- __,  5, __
-    -- waist="Embla Sash",        -- __, __,  5
     -- Base stats                   416, __, __
     -- 549 Healing skill, 70 Cursna+, 54 FC; Cursna Rate = 48.11%
   }
@@ -778,6 +765,7 @@ function init_gear_sets()
 
   -- Enh Magic Skill + Enh Magic Duration > Fast Cast
   sets.midcast['Enhancing Magic'] = {
+    ammo="Sapience Orb",              -- __, __,  2
     main=gear.Gada_ENH,               -- 18,  6, __
     sub="Ammurapi Shield",            -- __, 10, __
     head=gear.Telchine_ENH_head,      -- __, 10,  5
@@ -790,6 +778,7 @@ function init_gear_sets()
     ear2="Andoaa Earring",            --  5, __, __
     ring1="Stikini Ring +1",          --  8, __, __
     ring2="Stikini Ring +1",          --  8, __, __
+    back=gear.SCH_FC_Cape,            -- __, __, 10
     waist="Embla Sash",               -- __, 10,  5
 
     -- main=gear.Gada_ENH,            -- 18,  6,  6
@@ -915,12 +904,11 @@ function init_gear_sets()
     ring1="Kishar Ring",                --  5, __, 10, __
     ring2="Metamorph Ring +1",          -- 16, 15, __, __
     back="Aurist's Cape +1",            -- 33, 33, __, __
-    waist="Rumination Sash",            --  3,  4, __,  7
+    waist="Obstinate Sash",             -- 15,  5,  5, 15
     -- Academic's set bonus             -- 45, __, __, __
-    -- 506 M.Acc, 290 MND, 30% Enfeebling Duration, 55 Enfeebling Skill
+    -- 518 M.Acc, 291 MND, 35% Enfeebling Duration, 63 Enfeebling Skill
 
     -- ear2="Arbatel Earring +2",       -- 20, 15, __, __
-    -- waist="Obstinate Sash",          -- 15,  5,  5, 15
     -- 543 M.Acc, 298 MND, 35% Enfeebling Duration, 63 Enfeebling Skill
   }
   sets.midcast.MndEnfeebles.LightArts = set_combine(sets.midcast.MndEnfeebles, {
@@ -946,12 +934,11 @@ function init_gear_sets()
     ring1="Kishar Ring",                --  5, __, 10, __
     ring2="Metamorph Ring +1",          -- 16, 15, __, __
     back="Aurist's Cape +1",            -- 33, 33, __, __
-    waist="Acuity Belt +1",             -- 15, 23, __, __
+    waist="Obstinate Sash",             -- 15,  5,  5, 15
     -- Academic's set bonus             -- 45, __, __, __
-    -- 518 M.Acc, 311 INT, 30% Enfeebling Duration, 48 Enfeebling Skill
+    -- 518 M.Acc, 293 INT, 35% Enfeebling Duration, 63 Enfeebling Skill
 
     -- ear2="Arbatel Earring +2",       -- 20, 15, __, __
-    -- waist="Obstinate Sash",          -- 15,  5,  5, 15
     -- 528 M.Acc, 300 INT, 35% Enfeebling Duration, 63 Enfeebling Skill
   }
   sets.midcast.IntEnfeebles.DarkArts = set_combine(sets.midcast.IntEnfeebles, {
@@ -986,12 +973,12 @@ function init_gear_sets()
     ring2="Stikini Ring +1",              --  8, __, 11
     back="Bookworm's Cape",               --  8,  4, __
     waist="Acuity Belt +1",               -- __, 23, __
-    -- back="Bookworm's Cape",            --  8,  5, __
     -- Academic's set bonus               -- __, __, 60
     -- Base stats                           440,127,___
-    -- 551 Dark magic skill, 392 INT, 395 M.Acc
+    -- 551 Dark magic skill, 391 INT, 395 M.Acc
     
     -- main="Rubicundity",                -- 25, 21, 30; +215 M.Acc skill
+    -- back="Bookworm's Cape",            --  8,  5, __
     -- 554 Dark magic skill, 392 INT, 399 M.Acc
   }
 
