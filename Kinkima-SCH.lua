@@ -980,12 +980,12 @@ function init_gear_sets()
     legs="Pedagogy Pants +3",             -- 19, 47, 39
     feet="Academic's Loafers +3",         -- __, 32, 46
     neck="Erra Pendant",                  -- 10, __, 17
+    ear1="Mani Earring",                  -- 10, __, __
     ear2="Regal Earring",                 -- __, 10, __; Adds set effect
+    ring1="Evanescence Ring",             -- 10, __, __
     ring2="Stikini Ring +1",              --  8, __, 11
     back="Bookworm's Cape",               --  8,  4, __
     waist="Acuity Belt +1",               -- __, 23, __
-    -- ear1="Mani Earring",               -- 10, __, __
-    -- ring1="Evanescence Ring",          -- 10, __, __
     -- back="Bookworm's Cape",            --  8,  5, __
     -- Academic's set bonus               -- __, __, 60
     -- Base stats                           440,127,___
@@ -998,10 +998,10 @@ function init_gear_sets()
   -- Add Drain potency
   sets.midcast.Drain = set_combine(sets.midcast['Dark Magic'], {
     legs="Pedagogy Pants +3",       -- 19, 47, 39, 15
+    ring1="Evanescence Ring",       -- 10, __, __, 10
     waist="Fucho-no-obi",           -- __, __, __,  8
     
     -- ear2="Hirudinea Earring",    -- __, __, __,  3
-    -- ring1="Evanescence Ring",    -- 10, __, __, 10
     -- 554 Dark magic skill, 359 INT, 384 M.Acc, 56 Drain/Aspir potency
   })
 

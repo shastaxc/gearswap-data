@@ -396,7 +396,7 @@ function init_gear_sets()
 
   sets.midcast.SpellInterrupt = {
     ammo="Staunch Tathlum +1", --11
-    -- ring1="Evanescence Ring", --5
+    ring1="Evanescence Ring", --5
     -- waist="Sanctuary Obi +1", --10
   }
 

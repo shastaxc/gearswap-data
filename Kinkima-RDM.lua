@@ -1226,7 +1226,7 @@ function init_gear_sets()
     feet="Bunzi's Sabots",            -- ___, __, 55, 32 [ 6/ 6, 150]
     neck="Erra Pendant",              -- ___, 10, 17, __ [__/__, ___]
     ear1="Malignance Earring",        -- ___, __, 10,  8 [__/__, ___]
-    -- ear2="Mani Earring",           -- ___, 10, __, __ [__/__, ___]
+    ear2="Mani Earring",              -- ___, 10, __, __ [__/__, ___]
     ring1="Stikini Ring +1",          -- ___,  8, 11, __ [__/__, ___]
     ring2="Evanescence Ring",         -- ___, 10, __, __ [__/__, ___]
     back="Aurist's Cape +1",          -- ___, __, 33, 33 [__/__, ___]

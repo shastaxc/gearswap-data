@@ -644,24 +644,16 @@ function init_gear_sets()
     ear2="Malignance Earring",
     ring1="Archon Ring",
     ring2="Evanescence Ring",
+    back=gear.GEO_FC_Cape,
     waist="Fucho-no-Obi",
 
     -- main=gear.Rubicundity,
-    -- sub="Ammurapi Shield",
-    -- range=empty,
-    -- ammo="Pemphredo Tathlum",
     -- head="Bagua Galero +3",
     -- body="Geomancy Tunic +3",
-    -- hands="Azimuth Gloves +2",
     -- legs="Azimuth Tights +2",
     -- feet="Agwu's Pigaches",
-    -- neck="Erra Pendant",
     -- ear1="Hirudinea Earring",
-    -- ear2="Malignance Earring",
-    -- ring1="Archon Ring",
-    -- ring2="Evanescence Ring",
     -- back=gear.GEO_Nuke_Cape,
-    -- waist="Fucho-no-Obi",
   })
 
   sets.midcast.Aspir = set_combine(sets.midcast.Drain, {})

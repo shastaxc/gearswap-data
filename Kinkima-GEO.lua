@@ -388,7 +388,7 @@ function init_gear_sets()
   sets.precast.JA['Life Cycle'] = {
     body="Geomancy Tunic +1",
     back=gear.GEO_Idle_Cape,
-    -- body="Geomancy Tunic +3",
+    -- body="Geomancy Tunic +3", -- Increase luopan HP restored
   }
   sets.precast.JA['Radial Arcana'] = {
     feet="Bagua Sandals +3",
@@ -796,21 +796,10 @@ function init_gear_sets()
     waist="Fucho-no-Obi",
 
     -- main=gear.Rubicundity,
-    -- sub="Ammurapi Shield",
-    -- range=empty,
-    -- ammo="Pemphredo Tathlum",
     -- head="Bagua Galero +3",
     -- body="Geomancy Tunic +3",
-    -- hands="Azimuth Gloves +2",
-    -- legs="Azimuth Tights +2",
     -- feet="Agwu's Pigaches",
-    -- neck="Erra Pendant",
     -- ear1="Hirudinea Earring",
-    -- ear2="Malignance Earring",
-    -- ring1="Archon Ring",
-    -- ring2="Evanescence Ring",
-    -- back=gear.GEO_Nuke_Cape,
-    -- waist="Fucho-no-Obi",
   })
 
   sets.midcast.Aspir = set_combine(sets.midcast.Drain, {})
@@ -1248,7 +1237,7 @@ function init_gear_sets()
     legs=gear.Telchine_ENH_legs,      -- 10, __ [__/__, 132] {__/__, __}
     feet="Azimuth Gaiters +2",        -- __, __ [10/10, 158] {__/__, __}
     neck="Bagua Charm +1",            -- __, __ [__/__, ___] {__/__, __}; Luopan Duration +20%
-    ring1="Mephitas's Ring +1",       -- __, 15 [__/__, ___] {__/__, __}
+    ring1="Sheltered Ring",           -- __, __ [__/__, ___] {__/__, __}; Does not stack with brachyura
     ring2="Defending Ring",           -- __, __ [10/10, ___] {__/__, __}
     back=gear.GEO_FC_Cape,            -- __, __ [10/__, ___] {__/__, __}
     waist="Embla Sash",               -- 10, __ [__/__, ___] {__/__, __}
@@ -1261,6 +1250,7 @@ function init_gear_sets()
     -- neck="Bagua Charm +2",         -- __, __ [__/__, ___] {__/__, __}; Luopan Duration +25%
     -- ear1="Brachyura Earring",      -- __, __ [__/__, ___] {__/__, __}; Enhance Protect/Shell
     -- ear2="Azimuth Earring +2",     -- __, __ [ 7/ 7, ___] {__/__, __}
+    -- ring1="Mephitas's Ring +1",    -- __, 15 [__/__, ___] {__/__, __}; If using brachyura
     -- Base                              __, 43
     -- 56 Enh Duration, 62 Conserve MP [50 PDT/40 MDT, 578 M.Eva] {Pet: 0 PDT/0 MDT, 5 Regen}
   }
@@ -1304,20 +1294,7 @@ function init_gear_sets()
     
     -- main="Bhima",                --  3 [__/__, ___] {__/__, __}
     -- sub="Genmei Shield",         -- __ [10/__, ___] {__/__, __}
-    -- range=empty,                 -- __ [__/__, ___] {__/__, __}
-    -- ammo="Staunch Tathlum +1",   -- __ [ 3/ 3, ___] {__/__, __}; Status Resist+11
     -- head="Azimuth Hood +3",      -- __ [12/12, 136] {__/__,  5}
-    -- body="Shamash Robe",         --  3 [10/__, 106] {__/__, __}; Resist Silence+90
-    -- hands="Bagua Mitaines +3",   --  2 [__/__,  57] {__/__, __}
-    -- legs="Assiduity Pants +1",   --  2 [__/__, 107] {__/__, __}
-    -- feet="Volte Gaiters",        --  1 [__/__, 142] {__/__, __}; Refresh Merlinic good alt
-    -- neck="Loricate Torque +1",   -- __ [ 6/ 6, ___] {__/__, __}
-    -- ear1="Arete Del Luna +1",    -- __ [__/__, ___] {__/__, __}; Resists
-    -- ear2="Etiolation Earring",   -- __ [__/ 3, ___] {__/__, __}; Resist Silence+15
-    -- ring1="Stikini Ring +1",     --  1 [__/__, ___] {__/__, __}
-    -- ring2="Stikini Ring +1",     --  1 [__/__, ___] {__/__, __}
-    -- back=gear.GEO_Nuke_Cape,     -- __ [10/__, ___] {__/__, __}
-    -- waist="Carrier's Sash",      -- __ [__/__, ___] {__/__, __}; Ele resist+15
     -- 13 Refresh [51 PDT/24 MDT, 548 M.Eva] {Pet: 0 PDT/0 MDT, 5 Regen}
   }
 

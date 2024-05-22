@@ -707,7 +707,7 @@ function init_gear_sets()
     feet="Wicce Sabots +3",           -- ___, 35, 60, 36 [11/11, 168]
     neck="Erra Pendant",              -- ___, 10, 17, __ [__/__, ___]
     ear1="Malignance Earring",        -- ___, __, 10,  8 [__/__, ___]
-    -- ear2="Mani Earring",           -- ___, 10, __, __ [__/__, ___]
+    ear2="Mani Earring",              -- ___, 10, __, __ [__/__, ___]
     ring1="Stikini Ring +1",          -- ___,  8, 11, __ [__/__, ___]
     ring2="Evanescence Ring",         -- ___, 10, __, __ [__/__, ___]
     back="Aurist's Cape +1",          -- ___, __, 33, 33 [__/__, ___]
@@ -731,7 +731,7 @@ function init_gear_sets()
     feet="Wicce Sabots +3",           -- ___, 35, 60, 36 [11/11, 168] __
     neck="Erra Pendant",              -- ___, 10, 17, __ [__/__, ___]  5
     ear1="Malignance Earring",        -- ___, __, 10,  8 [__/__, ___] __
-    -- ear2="Mani Earring",           -- ___, 10, __, __ [__/__, ___] __
+    ear2="Mani Earring",              -- ___, 10, __, __ [__/__, ___] __
     ring1="Stikini Ring +1",          -- ___,  8, 11, __ [__/__, ___] __
     ring2="Evanescence Ring",         -- ___, 10, __, __ [__/__, ___] 10
     back="Aurist's Cape +1",          -- ___, __, 33, 33 [__/__, ___] __
