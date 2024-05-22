@@ -239,9 +239,8 @@ function init_gear_sets()
     -- 60 Overload-, 6 Maneuver+ [56 PDT/35 MDT, 390 M.Eva] {Pet: 10 PDT/10 MDT, 121 Lv+}
     
     -- body="Karagoz Farsetto +3",    -- 40, __ [13/13, 109] {__/__, ___}
-    -- legs="Foire Churidars +3",     -- __, __ [__/__,  84] { 6/ 6, ___}
     -- ear2="Karagoz Earring +2",     -- __, __ [__/__, ___] {__/__,   1}
-    -- 60 Overload-, 6 Maneuver+ [55 PDT/28 MDT, 430 M.Eva] {Pet: 16 PDT/16 MDT, 122 Lv+}
+    -- 60 Overload-, 6 Maneuver+ [57 PDT/36 MDT, 400 M.Eva] {Pet: 10 PDT/10 MDT, 121 Lv+}
   }
   sets.precast.JA['Deus Ex Automata'] = set_combine(sets.precast.JA['Activate'], {})
   sets.precast.JA['Maneuver'] = set_combine(sets.precast.JA['Activate'], {})
@@ -439,8 +438,7 @@ function init_gear_sets()
   sets.precast.WS["Raging Fists"].MaxTP = set_combine(sets.precast.WS["Raging Fists"], {
     ear2="Ishvara Earring",           -- __, __,  2 <__, __, __> [__/__, ___] {__/__, ___}
 
-    -- Once karagoz earring +2 acquired:
-    -- ear1="Brutal Earring",         -- __, __, __ < 5, __, __> [__/__, ___] {__/__, ___}
+    -- ear1="Brutal Earring",         -- __, __, __ < 5, __, __> [__/__, ___] {__/__, ___}; use if have jse +2 ear
     -- ear2="Karagoz Earring +2",     -- 15, 15, __ <__, __, __> [__/__, ___] {__/__,   1}
   })
 
