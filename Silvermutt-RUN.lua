@@ -1913,7 +1913,7 @@ function update_idle_groups()
         classes.CustomIdleGroups:append('RefreshSub50')
       elseif isRefreshing==true and player.mpp < 100 then
         classes.CustomIdleGroups:append('Refresh')
-      elseif isRefreshing==false and player.mpp < 85 then
+      elseif isRefreshing==false and player.mpp < 80 then
         classes.CustomIdleGroups:append('Refresh')
       end
     end
