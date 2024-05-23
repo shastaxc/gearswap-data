@@ -157,10 +157,9 @@ function init_gear_sets()
 
   sets.precast.JA['Meditate'] = {
     head="Wakido Kabuto +2",
-    hands="Sakonji Kote +1",
+    hands="Sakonji Kote +3",
     back="Smertrios's Mantle",
     -- head="Wakido Kabuto +3",
-    -- hands="Sakonji Kote +3",
   }
 
   sets.precast.JA['Seigan'] = {
@@ -177,8 +176,7 @@ function init_gear_sets()
   }
 
   sets.precast.JA['Blade Bash'] = {
-    hands="Sakonji Kote +1",
-    -- hands="Sakonji Kote +3",
+    hands="Sakonji Kote +3",
   }
 
   sets.precast.JA['Sengikori'] = {

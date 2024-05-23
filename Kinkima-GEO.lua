@@ -402,7 +402,7 @@ function init_gear_sets()
     -- head="Azimuth Hood +3",
   }
   sets.precast.JA['Concentric Pulse'] = {
-    head="Bagua Galero +1",
+    head="Bagua Galero +3",
   }
 
 
@@ -782,7 +782,7 @@ function init_gear_sets()
     sub="Ammurapi Shield",
     range=empty,
     ammo="Pemphredo Tathlum",
-    head=gear.Nyame_B_head,
+    head="Bagua Galero +3",
     body=gear.Nyame_B_body,
     hands="Azimuth Gloves +2",
     legs="Azimuth Tights +2",
@@ -796,7 +796,6 @@ function init_gear_sets()
     waist="Fucho-no-Obi",
 
     -- main=gear.Rubicundity,
-    -- head="Bagua Galero +3",
     -- body="Geomancy Tunic +3",
     -- feet="Agwu's Pigaches",
     -- ear1="Hirudinea Earring",
