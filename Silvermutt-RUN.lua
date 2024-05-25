@@ -1943,7 +1943,7 @@ function job_self_command(cmdParams, eventArgs)
     elseif cmdParams[2] == 'cycleback' then
       cycle_weapons('back')
     elseif cmdParams[2] == 'reset' then
-      cycle_toy_weapons('reset')
+      cycle_weapons('reset')
     elseif cmdParams[2] == 'current' then
       cycle_weapons('current')
     end
