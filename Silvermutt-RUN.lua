@@ -1307,17 +1307,25 @@ function job_precast(spell, action, spellMap, eventArgs)
     end
   end
 
-  -- Use Vallation if Valiance is on cooldown
   if spell.english == 'Valiance' then
     local abil_recasts = windower.ffxi.get_ability_recasts()
+    -- Use Vallation if Valiance is on cooldown or not available at current master level
     if abil_recasts[spell.recast_id] > 0 then
       send_command('input /jobability "Vallation" <me>')
-      eventArgs.cancel = true
+      cancel_spell()
+      eventArgs.handled = true
       return
-    -- Cancel Vallation if using Valiance
-    elseif spell.english == 'Valiance' and buffactive['vallation'] then
+    -- Cancel Vallation buff before using Valiance
+    elseif abil_recasts[spell.recast_id] == 0 and buffactive['Vallation'] then
       cast_delay(0.2)
       send_command('cancel Vallation') -- command requires 'cancel' add-on to work
+    end
+    -- Cancel Valiance buff before using Vallation
+  elseif spell.english == 'Vallation' then
+    local abil_recasts = windower.ffxi.get_ability_recasts()
+    if buffactive['Valiance'] and abil_recasts[spell.recast_id] == 0 then
+      cast_delay(0.2)
+      send_command('cancel Valiance') -- command requires 'cancel' add-on to work
     end
   end
 
