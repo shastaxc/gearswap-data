@@ -707,7 +707,7 @@ function init_gear_sets()
   -- Full MAcc (to land debuff effects)
   sets.precast.CorsairShot['Light Shot'] = {
     ammo=gear.MAccbullet,             -- __, 35, __/__
-    head="Chasseur's Tricorne +2",    -- 35, 51,  9/ 9
+    head="Laksamana's Tricorne +3",   -- 39, 56, __/__; Quick Draw+20
     body="Chasseur's Frac +3",        -- 49, 64, 13/13
     hands="Chasseur's Gants +2",      -- 21, 52, __/__
     legs="Chasseur's Culottes +3",    -- 43, 63, 12/12
@@ -721,9 +721,8 @@ function init_gear_sets()
     waist="K. Kachina Belt +1",       --  8, 20, __/__
     -- AF Set Effect                  -- __, __, __/__
     -- M.Acc from Quick Draw+ stat    -- __, __, __/__
-    -- 257 AGI, 393 M.Acc, 48PDT/38MDT
+    -- 261 AGI, 412 M.Acc, 39 PDT/29 MDT
 
-    -- head="Laksamana's Tricorne +3",-- 39, 56, __/__; Quick Draw+20
     -- hands="Chasseur's Gants +3",   -- 26, 62, __/__
     -- feet="Laksamana's Bottes +3",  -- 49, 52, __/__; Quick Draw+20
     -- neck="Commodore Charm +2",     -- 15, 25, __/__
