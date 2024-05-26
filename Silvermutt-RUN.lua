@@ -21,7 +21,6 @@
 --              [ ALT+F12 ]         Cancel Emergency -PDT/-MDT Mode
 --              [ WIN+H ]           Toggle Charm Defense Mods
 --              [ WIN+D ]           Toggle Death Defense Mods
---              [ WIN+K ]           Toggle Knockback Defense Mods
 --              [ WIN+C ]           Toggle Capacity Points Mode
 --              [ CTRL+PageUp ]     Cycle Toy Weapon Mode
 --              [ CTRL+PageDown ]   Cycleback Toy Weapon Mode
@@ -128,13 +127,10 @@ function job_setup()
   state.HybridMode:options('LightDef', 'Normal')
   state.IdleMode:options('Normal', 'LightDef')
   state.AttCapped = M(false, "Attack Capped")
-  state.Knockback = M(false, 'Knockback')
   state.DeathResist = M(false, 'Death Resist Mode')
   state.WeaponSet = M{['description']='Weapon Set', 'Epeolatry', 'Lionheart', 'Lycurgos', 'Naegling', 'Axe'}
   state.AttackMode = M{['description']='Attack', 'Uncapped', 'Capped'}
   state.CP = M(false, 'Capacity Points Mode')
-  state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger',
-      'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
   state.Runes = M{['description']='Runes', 'Ignis', 'Gelus', 'Flabra', 'Tellus', 'Sulpor', 'Unda', 'Lux', 'Tenebrae'}
   
   set_main_keybinds()
@@ -174,10 +170,6 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Defense Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
-
-  sets.defense.Knockback = {
-    -- back="Repulse Mantle"
-  }
 
   sets.HeavyDef = {
     ammo="Staunch Tathlum +1",                      --  3/ 3, ___ [___] __
@@ -1552,9 +1544,6 @@ function customize_idle_set(idleSet)
     return set_combine(idleSet, sets.Special.Encumbrance)
   end
 
-  if state.Knockback.value == true then
-    idleSet = set_combine(idleSet, sets.defense.Knockback)
-  end
   if state.DeathResist.value == true then
     idleSet = set_combine(idleSet, sets.DeathResist)
   end
@@ -1589,9 +1578,6 @@ end
 
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
-  if state.Knockback.value == true then
-    meleeSet = set_combine(meleeSet, sets.defense.Knockback)
-  end
   if state.DeathResist.value == true then
     meleeSet = set_combine(meleeSet, sets.DeathResist)
   end
@@ -1627,9 +1613,6 @@ function customize_defense_set(defenseSet)
 
   if buffactive['Battuta'] then
     defenseSet = set_combine(defenseSet, sets.defense.Parry)
-  end
-  if state.Knockback.value == true then
-    defenseSet = set_combine(defenseSet, sets.defense.Knockback)
   end
   if state.DeathResist.value == true then
     defenseSet = set_combine(defenseSet, sets.DeathResist)
@@ -1697,12 +1680,7 @@ function display_current_job_state(eventArgs)
 
   local i_msg = state.IdleMode.value
 
-  local toy_msg = state.ToyWeapons.current
-
   local msg = ''
-  if state.Knockback.value == true then
-    msg = msg .. ' Knockback Resist |'
-  end
   if state.Kiting.value then
     msg = msg .. ' Kiting: On |'
   end
@@ -1716,7 +1694,6 @@ function display_current_job_state(eventArgs)
   add_to_chat(r_color, string.char(129,121).. '  ' ..string.upper(r_msg).. '  ' ..string.char(129,122)
       ..string.char(31,004).. ' Defense: ' ..string.char(31,001)..d_msg.. string.char(31,002).. ' |'
       ..string.char(31,207).. ' Idle: ' ..string.char(31,001)..i_msg.. string.char(31,002).. ' |'
-      ..string.char(31,012).. ' Toy Weapon: ' ..string.char(31,001)..toy_msg.. string.char(31,002)..  ' |'
       ..string.char(31,002)..msg)
 
   eventArgs.handled = true
@@ -1795,29 +1772,6 @@ function cycle_weapons(cycle_dir)
 
   add_to_chat(141, 'Weapon Set to '..string.char(31,1)..state.WeaponSet.current)
   equip(sets.WeaponSet[state.WeaponSet.current])
-end
-
-function cycle_toy_weapons(cycle_dir)
-  --If current state is None, save current weapons to switch back later
-  if state.ToyWeapons.current == 'None' then
-    sets.ToyWeapon.None.main = player.equipment.main
-    sets.ToyWeapon.None.sub = player.equipment.sub
-  end
-
-  if cycle_dir == 'forward' then
-    state.ToyWeapons:cycle()
-  elseif cycle_dir == 'back' then
-    state.ToyWeapons:cycleback()
-  else
-    state.ToyWeapons:reset()
-  end
-
-  local mode_color = 001
-  if state.ToyWeapons.current == 'None' then
-    mode_color = 006
-  end
-  add_to_chat(012, 'Toy Weapon Mode: '..string.char(31,mode_color)..state.ToyWeapons.current)
-  equip(sets.ToyWeapon[state.ToyWeapons.current])
 end
 
 function get_element_potencies()
@@ -1929,14 +1883,6 @@ function job_self_command(cmdParams, eventArgs)
 
   if cmdParams[1] == 'rune' then
     send_command('@input /ja '..state.Runes.value..' <me>')
-  elseif cmdParams[1] == 'toyweapon' then
-    if cmdParams[2] == 'cycle' then
-      cycle_toy_weapons('forward')
-    elseif cmdParams[2] == 'cycleback' then
-      cycle_toy_weapons('back')
-    elseif cmdParams[2] == 'reset' then
-      cycle_toy_weapons('reset')
-    end
   elseif cmdParams[1] == 'weaponset' then
     if cmdParams[2] == 'cycle' then
       cycle_weapons('forward')
@@ -2037,19 +1983,16 @@ function set_main_keybinds()
   send_command('bind ^delete gs c weaponset cycleback')
   send_command('bind !delete gs c weaponset reset')
 
-  send_command('bind ^pageup gs c toyweapon cycle')
-  send_command('bind ^pagedown gs c toyweapon cycleback')
-  send_command('bind !pagedown gs c toyweapon reset')
+  send_command('bind ^pageup gs c cycleback Runes')
+  send_command('bind ^pagedown gs c cycle Runes')
+  send_command('bind !pagedown gs c reset Runes')
 
   send_command('bind @d gs c toggle DeathResist')
 
   send_command('bind %numpad0 gs c rune')
   send_command('bind !` input /ja "Vivacious Pulse" <me>')
   send_command('bind !z input /ma "Temper" <me>')
-  send_command('bind ^- gs c cycleback Runes')
-  send_command('bind ^= gs c cycle Runes')
   send_command('bind @c gs c toggle CP')
-  send_command('bind @k gs c toggle Knockback')
 
   send_command('bind !u input /ma "Blink" <me>')
   send_command('bind !i input /ma "Stoneskin" <me>')
@@ -2109,10 +2052,7 @@ function unbind_keybinds()
   send_command('unbind %numpad')
   send_command('unbind !`')
   send_command('unbind !z')
-  send_command('unbind ^-')
-  send_command('unbind ^=')
   send_command('unbind @c')
-  send_command('unbind @k')
 
   send_command('unbind !u')
   send_command('unbind !i')
