@@ -126,7 +126,7 @@ function job_setup()
   state.CastingMode:options('Normal', 'Safe')
   state.HybridMode:options('LightDef', 'Normal')
   state.IdleMode:options('Normal', 'LightDef')
-  state.AttCapped = M(false, "Attack Capped")
+  state.AttCapped = M(false, 'Attack Capped')
   state.DeathResist = M(false, 'Death Resist Mode')
   state.WeaponSet = M{['description']='Weapon Set', 'Epeolatry', 'Lionheart', 'Lycurgos', 'Naegling', 'Axe'}
   state.AttackMode = M{['description']='Attack', 'Uncapped', 'Capped'}
@@ -1349,7 +1349,7 @@ end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
   -- Equip Reive set for ws if in a Reive
-  if spell.type == "WeaponSkill" then
+  if spell.type == 'WeaponSkill' then
     if buffactive['Reive Mark'] then
       equip(sets.Reive)
     end
@@ -1500,7 +1500,7 @@ end
 -- Theory: debuffs must be lowercase and buffs must begin with uppercase
 function job_buff_change(buff,gain)
 
-  if buff == "terror" then
+  if buff == 'terror' then
     if gain then
       equip(sets.defense.PDT)
     end
@@ -1510,7 +1510,7 @@ function job_buff_change(buff,gain)
     equip(sets.Special.SleepyHead)
   end
 
-  if buff == "doom" then
+  if buff == 'doom' then
     if gain then
       send_command('@input /p Doomed.')
     elseif player.hpp > 0 then
@@ -1519,7 +1519,7 @@ function job_buff_change(buff,gain)
   end
 
   -- Update gear for these specific buffs
-  if buff == "terror" or buff == "doom" or buff == "Battuta" then
+  if buff == 'terror' or buff == 'doom' or buff == 'Battuta' then
     status_change(player.status)
   end
 
@@ -1941,9 +1941,9 @@ end)
 windower.raw_register_event('incoming chunk', function(id, data, modified, injected, blocked)
   -- Listen for kill message (when an enemy is defeated)
   if id == 0x029 then -- Combat messages
-    local message_id = data:unpack("H",0x19)%2^15 -- Cut off the most significant bit
+    local message_id = data:unpack('H',0x19)%2^15 -- Cut off the most significant bit
     if message_id == 6 then
-      local defeated_mob_id = data:unpack("I",0x09)
+      local defeated_mob_id = data:unpack('I',0x09)
       if (rayke_target ~= nil and defeated_mob_id == rayke_target.id) and (gambit_target ~= nil and defeated_mob_id == gambit_target.id) then
         -- Display message that Rayke and Gambit have worn off due to mob death (if applicable)
         display_rayke_gambit_worn()
