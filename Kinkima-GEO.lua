@@ -386,9 +386,8 @@ function init_gear_sets()
     body="Bagua Tunic +1",
   }
   sets.precast.JA['Life Cycle'] = {
-    body="Geomancy Tunic +1",
+    body="Geomancy Tunic +3", -- Increase luopan HP restored
     back=gear.GEO_Idle_Cape,
-    -- body="Geomancy Tunic +3", -- Increase luopan HP restored
   }
   sets.precast.JA['Radial Arcana'] = {
     feet="Bagua Sandals +3",
@@ -783,7 +782,7 @@ function init_gear_sets()
     range=empty,
     ammo="Pemphredo Tathlum",
     head="Bagua Galero +3",
-    body=gear.Nyame_B_body,
+    body="Geomancy Tunic +3",
     hands="Azimuth Gloves +2",
     legs="Azimuth Tights +2",
     feet=gear.Nyame_B_feet,
@@ -796,7 +795,6 @@ function init_gear_sets()
     waist="Fucho-no-Obi",
 
     -- main=gear.Rubicundity,
-    -- body="Geomancy Tunic +3",
     -- feet="Agwu's Pigaches",
     -- ear1="Hirudinea Earring",
   })
