@@ -1,82 +1,185 @@
--- File Status: Good.
--- TODO: Add logic to keep feint set equipped until hit applies.
+--[[
+File Status: Good.
+TODO: Add handler for Valiance when Vallation is used.
 
--- Author: Silvermutt
--- Required external libraries: SilverLibs
--- Required addons: HasteInfo, DistancePlus
--- Recommended addons: WSBinder, Reorganizer
--- Misc Recommendations: Disable GearInfo, disable RollTracker
+Author: Silvermutt
+Required external libraries: SilverLibs
+Required addons: HasteInfo, DistancePlus
+Recommended addons: WSBinder, Reorganizer
+Misc Recommendations: Disable GearInfo, disable RollTracker
 
--------------------------------------------------------------------------------------------------------------------
---  Keybinds
--------------------------------------------------------------------------------------------------------------------
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                                  General Use Tips
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+Modes
+* Offense Mode: Changes melee accuracy level
+* Hybrid Mode: Changes damage taken level while engaged
+* Defense Mode: Equips super high emergency damage reduction set, greatly reduces your DPS output
+* Idle Mode: Changes which set is equipped when not engaged
+  * Normal: Pretty tanky but allows for regen, regain, refresh, and move speed gear to swap in when needed
+  * Regain: Forces all regain gear on, overriding anything else
+  * HeavyDef: Forces a tanky set and blocks automatic swapping for regen, regain, refresh, and move speed while idle
+  * Evasion: Forces an evasion set and blocks automatic swapping for regen, regain, refresh, and move speed while idle
+* CP Mode: Equips Capacity Points bonus cape
+* Main Step: Sets a DNC step to be used when you issue the custom command
+* AttCapped: When on, if you have AttCapped set variants for your weaponskills, it will use that. This mode is
+  intended to be used when you think you are attack capped vs your enemy such as when you have a lot of Attack buffs
+  from BRD, COR, GEO, etc.
+* Runes: Select a rune to use when issuing the custom rune command while subbing RUN.
 
---  Modes:      [ F9 ]              Cycle Offense Modes
---              [ CTRL+F9 ]         Cycle Hybrid Modes
---              [ WIN+F9 ]          Cycle Weapon Skill Modes
---              [ F10 ]             Emergency -PDT Mode
---              [ F11 ]             Emergency -MDT Mode
---              [ F12 ]             Update Current Gear / Report Current Status
---              [ CTRL+F12 ]        Cycle Idle Modes
---              [ ALT+F12 ]         Cancel Emergency -PDT/-MDT Mode
---              [ WIN+C ]           Toggle Capacity Points Mode
---              [ CTRL+F8 ]         Toggle Attack Capped mode
---
---  Weapons:    [ CTRL+Insert ]     Cycle Main/Sub Weapon
---              [ CTRL+Delete ]     Cycleback Main/Sub Weapon
---              [ ALT+Delete ]      Reset Main/Sub Weapon
---              [ CTRL+Home ]       Cycle Ranged Weapon
---              [ CTRL+End ]        Cycleback Ranged Weapon
---              [ ALT+End ]         Reset Ranged Weapon
---              [ CTRL+PageUp ]     Cycle Toy Weapon
---              [ CTRL+PageDown ]   Cycleback Toy Weapon
---              [ ALT+PageDown ]    Reset Toy Weapon
---
---  Abilities:  [ ALT+` ]           Flee
---              [ CTRL+Numpad0 ]    Sneak Attack
---              [ CTRL+Numpad. ]    Trick Attack
--- 
---  Subjob:     == WAR ==
---              [ ALT+W ]           Defender
---              [ CTRL+Numpad/ ]    Berserk
---              [ CTRL+Numpad* ]    Warcry
---              [ CTRL+Numpad- ]    Aggressor
---              == SAM ==
---              [ ALT+W ]           Third Eye
---              [ CTRL+Numpad/ ]    Meditate
---              [ CTRL+Numpad* ]    Sekkanoki
---              [ CTRL+Numpad- ]    Hasso
---              == DNC ==
---              [ CTRL+- ]          Cycle Step Mode
---              [ CTRL+= ]          Cycleback Step Mode
---              [ Numpad0 ]         Execute Step
---              [ CTRL+Numlock ]    Reverse Flourish
---              == NIN ==
---              [ Numpad0 ]         Utsusemi: Ichi
---              [ Numpad. ]         Utsusemi: Ni
---              == RUN ==
---              [ CTRL+- ]          Cycle Rune Mode
---              [ CTRL+= ]          Cycleback Rune Mode
---              [ Numpad0 ]         Execute Rune
---              == DRG ==
---              [ ALT+W ]           Ancient Circle
---              [ CTRL+Numpad/ ]    Jump
---              [ CTRL+Numpad* ]    High Jump
---              [ CTRL+Numpad- ]    Super Jump
---
---  Other:      [ E ]               Ranged Attack Current Target
---
---  SilverLibs keybinds:
---              [ ALT+D ]           Interact
---              [ ALT+S ]           Turn 180 degrees in place
---              [ WIN+W ]           Toggle Rearming Lock
---                                  (off = re-equip previous weapons if you go barehanded)
---                                  (on = prevent weapon auto-equipping)
---              [ CTRL+` ]          Cycle Treasure Hunter Mode
---  For more info and available functions, see SilverLibs documentation at:
---  https://github.com/shastaxc/silver-libs
---
---  Global-Binds.lua contains additional non-job-related keybinds
+Weapons
+* Use keybinds to cycle weapons.
+* If you want different weapon sets, edit the sets.WeaponSet sets.
+  * Additional weapon sets can be created but you need to also add them to the state.WeaponSet cycle.
+* If you enable one of the ToyWeapons modes, it will lock your weapons into low level weapons. This can be
+  useful if you are intentionally trying not to kill something, like low level enemies where you may need
+  to proc them with a WS without killing them. This overrides all other weapon modes and weapon equip logic.
+  * Memorize the keybind to turn it off in case you toggle it by accident.
+
+Abilities
+* Sneak Attack
+  * When buff is active, performing a weaponskill will overlay its SA set variant over the normal one
+    if the SA set variant exists.
+  * When buff is active, performing a melee attack will overlay the sets.buff['Sneak Attack'] set on top of your
+    normal engaged set.
+* Trick Attack
+  * When buff is active, performing a weaponskill will overlay its TA set variant over the normal one
+    if the TA set variant exists.
+  * When buff is active, performing a melee attack will overlay the sets.buff['Trick Attack'] set on top of your
+    normal engaged set.
+* Feint: No special WS set for Feint, but performing a melee attack will overlay the sets.buff['Feint'] set on top
+  of your normal engaged set.
+* Priority for SA, TA, and Feint gear when slots conflict: Feint > SA > TA
+
+Other
+* If you are not using my reorganizer addon, remove all the sets.org sets (including in character global file).
+* I generally plan out best-in-slot (BiS) pieces for each set even before I acquire the pieces. These BiS pieces are
+  left commented out in the set, while placeholders that I do have in the meantime are uncommented for that slot.
+* I like to list out the important stats for each piece of item in most of my sets, and then have a total at
+  the bottom of the set. If you ever change any pieces of gear, you should recalculate the stats for the new piece
+  and then recalculate for the set total, or just remove those stat comments entirely to avoid confusion. However,
+  if you choose to ignore them, it doesn't not actually affect anything.
+* Equipping certain gear such as warp rings or ammo belts will automatically lock that slot until you manually
+  unequip it or change zones.
+* If you plan to evasion "tank" as THF with this lua you will need to toggle on Evasion Hybrid Mode, Evasion Idle
+  Mode, and a weapon set with Gandring in it.
+* Treasure Hunter mode functionality comes from SilverLibs. Check the wiki for more info.
+
+
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                                      Keybinds
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+Modes:
+  [ F9 ]              Cycle Melee Accuracy
+  [ CTRL+F9 ]         Cycle Melee Defense
+  [ ALT+F9 ]          Cycle Ranged Accuracy
+  [ F10 ]             Toggle Emergency -PDT
+  [ ALT+F10 ]         Toggle Kiting (on = move speed gear always equipped)
+  [ F11 ]             Toggle Emergency -MDT
+  [ F12 ]             Report current status
+  [ CTRL+F12 ]        Cycle Idle modes
+  [ ALT+F12 ]         Cancel Emergency -PDT/-MDT Mode
+  [ WIN+C ]           Toggle Capacity Points Mode
+  [ CTRL+F8 ]         Toggle Attack Capped mode
+
+Weapons:
+  [ CTRL+Insert ]     Cycle Weapon Sets
+  [ CTRL+Delete ]     Cycleback Weapon Sets
+  [ ALT+Delete ]      Reset to default Weapon Set
+  [ CTRL+Home ]       Cycle Ranged Weapon Set
+  [ CTRL+End ]        Cycleback Ranged Weapon Set
+  [ ALT+End ]         Reset Ranged Weapon Set
+  [ CTRL+PageUp ]     Cycle Toy Weapon Sets
+  [ CTRL+PageDown ]   Cycleback Toy Weapon Sets
+  [ ALT+PageDown ]    Reset to default Toy Weapon Set
+
+Spells:
+  ============ /NIN ============
+  [ ALT+Numpad0 ]     Utsusemi: Ichi
+  [ ALT+Numpad. ]     Utsusemi: Ni
+
+Abilities:
+  [ ALT+` ]           Flee
+  [ CTRL+Numpad0 ]    Sneak Attack
+  [ CTRL+Numpad. ]    Trick Attack
+  ============ /WAR ============
+  [ CTRL+Numlock ]    Defender
+  [ CTRL+Numpad/ ]    Berserk
+  [ CTRL+Numpad* ]    Warcry
+  [ CTRL+Numpad- ]    Aggressor
+  ============ /SAM ============
+  [ CTRL+Numlock ]    Third Eye
+  [ CTRL+Numpad/ ]    Meditate
+  [ CTRL+Numpad* ]    Sekkanoki
+  [ CTRL+Numpad- ]    Hasso
+  ============ /DNC ============
+  [ CTRL+- ]          Cycleback Step
+  [ CTRL+= ]          Cycle Step
+  [ Numpad0 ]         Execute Step
+  [ CTRL+Numlock ]    Reverse Flourish
+  ============ /RUN ============
+  [ CTRL+- ]          Cycleback Rune
+  [ CTRL+= ]          Cycle Rune
+  [ Numpad0 ]         Execute Rune
+  ============ /DRG ============
+  [ ALT+Numlock ]     Ancient Circle
+  [ CTRL+Numpad/ ]    Jump
+  [ CTRL+Numpad* ]    High Jump
+  [ CTRL+Numpad- ]    Super Jump
+
+Other:
+  [ E ]               Ranged Attack
+
+SilverLibs keybinds:
+  [ ALT+D ]           Interact
+  [ ALT+S ]           Turn 180 degrees in place
+  [ WIN+W ]           Toggle Rearming Lock
+                      (off = re-equip previous weapons if you go barehanded)
+                      (on = prevent weapon auto-equipping)
+  [ CTRL+` ]          Cycle Treasure Hunter Mode
+
+For more info and available functions, see SilverLibs documentation at:
+https://github.com/shastaxc/silver-libs
+
+Global-Binds.lua contains additional non-job-related keybinds.
+
+
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                                  Custom Commands
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+Prepend with /console to use these in in-game macros.
+
+gs c runes              Execute rune that is selected in the Rune mode
+gs c step               Execute step that is selected in the MainStep mode
+
+gs c bind               Sets keybinds again. Sometimes they don't all get set when swapping jobs. Calling this manually fixes it.
+
+(More commands available through SilverLibs)
+
+
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                            Recommended In-game Macros
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+__Keybind___Name______________Command_____________
+[ CTRL+1 ] Acc+           /ja "Conspirator" <me>
+[ CTRL+2 ] Hate+          /ja "Accomplice" <stpc>
+[ CTRL+3 ] Hate++         /ja "Collaborator" <stpc>
+[ CTRL+4 ] Haste          /ja "Haste Samba" <me>
+[ CTRL+5 ] Pflug          /ja "Pflug" <me>
+[ CTRL+6 ] Vallatio       /ja "Vallation" <me>
+[ CTRL+7 ] Mug            /ja "Mug" <t>
+[ CTRL+8 ] Despoil        /ja "Despoil" <t>
+[ CTRL+9 ] PD             /ja "Perfect Dodge" <me>
+[ CTRL+0 ] Provoke        /ja "Provoke" <stnpc>
+[ ALT+1 ]  Cure           /ja "Curing Waltz" <stpc>
+[ ALT+2 ]  Hide           /ja "Hide" <me>
+[ ALT+4 ]  Erase          /ja "Healing Waltz" <stpc>
+[ ALT+7 ]  Bully          /ja "Bully" <t>
+[ ALT+8 ]  Feint          /ja "Feint" <me>
+[ ALT+9 ]  Larceny        /ja "Larceny" <t>
+[ ALT+0 ]  Steal          /ja "Steal" <t>
+
+]]--
 
 
 -------------------------------------------------------------------------------------------------------------------
@@ -119,7 +222,6 @@ function job_setup()
   
   state.MainStep = M{['description']='Main Step', 'Box Step', 'Quickstep', 'Feather Step', 'Stutter Step'}
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
-  state.RangedMode:options('Normal', 'Acc')
   state.HybridMode:options('HeavyDef', 'Evasion', 'Normal')
   state.IdleMode:options('Normal', 'Regain', 'HeavyDef', 'Evasion')
   state.CP = M(false, 'Capacity Points Mode')
@@ -189,8 +291,13 @@ function init_gear_sets()
     feet="Skulker's Poulaines +3", --5
   }
 
-  sets.buff['Sneak Attack'] = {}
-  sets.buff['Trick Attack'] = {}
+  sets.buff['Sneak Attack'] = {
+    -- hands="Skulker's Armlets +3",    -- 53, __, 72, __ <__, __, __> (__, __) [11/11,  93] __; SA+30
+  }
+  sets.buff['Trick Attack'] = {
+    hands="Pillager's Armlets +3",      -- 45, __, 48, __ <__, __, __> (__,  4) [__/__,  67] __; TA+20
+  }
+  sets.buff['Feint'] = set_combine(sets.precast.JA['Feint'], {})
 
 
   ------------------------------------------------------------------------------------------------
@@ -1374,14 +1481,14 @@ function job_post_precast(spell, action, spellMap, eventArgs)
     end
   end
   if spell.type == 'WeaponSkill' then
-    if state.Buff['Sneak Attack'] then
-    -- If set isn't found for specific ws, overlay the default set
-      local set = (sets.precast.WS[spell.name] and sets.precast.WS[spell.name].SA) or sets.precast.WS.SA or {}
-      equip(set)
-    end
     if state.Buff['Trick Attack'] then
     -- If set isn't found for specific ws, overlay the default set
       local set = (sets.precast.WS[spell.name] and sets.precast.WS[spell.name].TA) or sets.precast.WS.TA or {}
+      equip(set)
+    end
+    if state.Buff['Sneak Attack'] then
+    -- If set isn't found for specific ws, overlay the default set
+      local set = (sets.precast.WS[spell.name] and sets.precast.WS[spell.name].SA) or sets.precast.WS.SA or {}
       equip(set)
     end
     if buffactive['Reive Mark'] then
@@ -1496,8 +1603,10 @@ function job_handle_equipping_gear(playerStatus, eventArgs)
 
   -- Check for SATA when equipping gear.  If either is active, equip
   -- that gear specifically, and block equipping default gear.
-  check_buff('Sneak Attack', eventArgs)
   check_buff('Trick Attack', eventArgs)
+  check_buff('Sneak Attack', eventArgs)
+  -- If Feint is active, put that gear set on on top of regular gear.
+  check_buff('Feint', eventArgs)
 end
 
 function update_combat_form()
@@ -1905,18 +2014,18 @@ end)
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
   -- Default macro set/book
-  if player.sub_job == 'RUN' then
-    set_macro_page(4, 8)
-  else
-    set_macro_page(5, 8)
-  end
+  set_macro_page(1, 8)
 end
 
 function set_main_keybinds()
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c interact')
   send_command('bind @w gs c toggle RearmingLock')
-  
+  send_command('bind ^` gs c cycle treasuremode')
+
+  send_command('bind @c gs c toggle CP')
+  send_command('bind ^f8 gs c toggle AttCapped')
+
   send_command('bind ^insert gs c weaponset cycle')
   send_command('bind ^delete gs c weaponset cycleback')
   send_command('bind !delete gs c weaponset reset')
@@ -1924,16 +2033,12 @@ function set_main_keybinds()
   send_command('bind ^home gs c rangedweaponset cycle')
   send_command('bind ^end gs c rangedweaponset cycleback')
   send_command('bind !end gs c rangedweaponset reset')
-  
+
   send_command('bind ^pageup gs c toyweapon cycle')
   send_command('bind ^pagedown gs c toyweapon cycleback')
   send_command('bind !pagedown gs c toyweapon reset')
-  
-  send_command('bind ^f8 gs c toggle AttCapped')
-  send_command('bind ^` gs c cycle treasuremode')
-  send_command('bind !` input /ja "Flee" <me>')
-  send_command('bind @c gs c toggle CP')
 
+  send_command('bind !` input /ja "Flee" <me>')
   send_command('bind ^numpad0 input /ja "Sneak Attack" <me>')
   send_command('bind ^numpad. input /ja "Trick Attack" <me>')
   send_command('bind %e input /ra <t>')
@@ -1941,12 +2046,12 @@ end
 
 function set_sub_keybinds()
   if player.sub_job == 'WAR' then
-    send_command('bind !w input /ja "Defender" <me>')
+    send_command('bind ^numlock input /ja "Defender" <me>')
     send_command('bind ^numpad/ input /ja "Berserk" <me>')
     send_command('bind ^numpad* input /ja "Warcry" <me>')
     send_command('bind ^numpad- input /ja "Aggressor" <me>')
   elseif player.sub_job == 'SAM' then
-    send_command('bind !w input /ja "Third Eye" <me>')
+    send_command('bind ^numlock input /ja "Third Eye" <me>')
     send_command('bind ^numpad/ input /ja "Meditate" <me>')
     send_command('bind ^numpad* input /ja "Sekkanoki" <me>')
     send_command('bind ^numpad- input /ja "Hasso" <me>')
@@ -1959,11 +2064,11 @@ function set_sub_keybinds()
     send_command('bind !numpad0 input /ma "Utsusemi: Ichi" <me>')
     send_command('bind !numpad. input /ma "Utsusemi: Ni" <me>')
   elseif player.sub_job == 'RUN' then
-    send_command('bind %numpad0 gs c rune')
     send_command('bind ^- gs c cycleback Runes')
     send_command('bind ^= gs c cycle Runes')
+    send_command('bind %numpad0 gs c rune')
   elseif player.sub_job == 'DRG' then
-    send_command('bind !w input /ja "Ancient Circle" <me>')
+    send_command('bind ^numlock input /ja "Ancient Circle" <me>')
     send_command('bind ^numpad/ input /ja "Jump" <t>')
     send_command('bind ^numpad* input /ja "High Jump" <t>')
     send_command('bind ^numpad- input /ja "Super Jump" <t>')
@@ -1974,6 +2079,10 @@ function unbind_keybinds()
   send_command('unbind !s')
   send_command('unbind !d')
   send_command('unbind @w')
+
+  send_command('unbind @c')
+  send_command('unbind ^f8')
+  send_command('unbind ^`')
 
   send_command('unbind ^insert')
   send_command('unbind ^delete')
@@ -1987,23 +2096,18 @@ function unbind_keybinds()
   send_command('unbind ^pagedown')
   send_command('unbind !pagedown')
 
-  send_command('unbind ^f8')
-  send_command('unbind ^`')
   send_command('unbind !`')
-  send_command('unbind @c')
-
   send_command('unbind ^numpad0')
   send_command('unbind ^numpad.')
   send_command('unbind %e')
 
-  send_command('unbind !w')
+  send_command('unbind ^numlock')
   send_command('unbind ^numpad/')
   send_command('unbind ^numpad*')
-  send_command('unbind ^numpad-')
+  send_command('unbind ^numpad')
   send_command('unbind ^-')
   send_command('unbind ^=')
   send_command('unbind %numpad0')
-  send_command('unbind ^numlock')
   send_command('unbind !numpad0')
   send_command('unbind !numpad.')
 end
