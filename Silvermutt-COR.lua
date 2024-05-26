@@ -707,27 +707,26 @@ function init_gear_sets()
   -- Full MAcc (to land debuff effects)
   sets.precast.CorsairShot['Light Shot'] = {
     ammo=gear.MAccbullet,             -- __, 35, __/__
-    head="Laksamana's Tricorne +3",   -- 39, 56, __/__; Quick Draw+20
+    head="Laksamana's Tricorne +3",   -- 39, 56, __/__
     body="Chasseur's Frac +3",        -- 49, 64, 13/13
     hands="Chasseur's Gants +2",      -- 21, 52, __/__
     legs="Chasseur's Culottes +3",    -- 43, 63, 12/12
-    feet="Malignance Boots",          -- 49, 50,  4/ 4
+    feet="Laksamana's Bottes +3",     -- 49, 52, __/__
     neck="Commodore Charm +1",        -- 12, 20, __/__
     ear1="Hermetic Earring",          -- __,  7, __/__
     ear2="Dignitary's Earring",       -- __, 10, __/__
-    ring1="Ephramad's Ring",          -- 10, __, __/__
+    ring1="Regal Ring",               -- 10, __, __/__
     ring2="Metamorph Ring +1",        -- __, 15, __/__
     back=gear.COR_WS1_Cape,           -- 30, 20, 10/__
     waist="K. Kachina Belt +1",       --  8, 20, __/__
-    -- AF Set Effect                  -- __, __, __/__
+    -- AF Set Effect                  -- __, 30, __/__
     -- M.Acc from Quick Draw+ stat    -- __, __, __/__
-    -- 261 AGI, 412 M.Acc, 39 PDT/29 MDT
+    -- 261 AGI, 444 M.Acc, 35 PDT/25 MDT
 
     -- hands="Chasseur's Gants +3",   -- 26, 62, __/__
-    -- feet="Laksamana's Bottes +3",  -- 49, 52, __/__; Quick Draw+20
+    -- feet="Chasseur's Bottes +3",   -- 56, 60, __/__; move AF feet to storage slip
     -- neck="Commodore Charm +2",     -- 15, 25, __/__
     -- ear1="Crepuscular Earring",    -- __, 10, __/__
-    -- 269 AGI, 502 M.Acc, 35 PDT/25 MDT
   }
   sets.precast.CorsairShot['Dark Shot'] = set_combine(sets.precast.CorsairShot['Light Shot'], {})
 
