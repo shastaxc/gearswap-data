@@ -121,14 +121,14 @@ Weapons:
 
 Spells:
   ============ /NIN ============
-  [ Numpad0 ]         Utsusemi: Ichi
-  [ Numpad. ]         Utsusemi: Ni
+  [ ALT+Numpad0 ]     Utsusemi: Ichi
+  [ ALT+Numpad. ]     Utsusemi: Ni
 
 Abilities:
-  [ ALT+` ]           Reward
+  [ ALT+E ]           Reward
   [ ALT+Q ]           Fight
   [ ALT+W ]           Heel
-  [ ALT+E ]           Bestial Loyalty (if no pet) / Leave (if pet)
+  [ ALT+` ]           Bestial Loyalty (if no pet) / Leave (if pet)
   ============ /WAR ============
   [ CTRL+Numlock ]    Defender
   [ CTRL+Numpad/ ]    Berserk
@@ -2521,6 +2521,12 @@ function set_main_keybinds()
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c interact')
   send_command('bind @w gs c toggle RearmingLock')
+  send_command('bind ^` gs c cycle treasuremode')
+
+  send_command('bind @c gs c toggle CP')
+  send_command('bind ^f8 gs c toggle AttCapped')
+  send_command('bind !z gs c toggle AutomaticPetTargeting')
+  send_command('bind ^u gs c toggle ShowUI')
 
   send_command('bind ^insert gs c weaponset cycle')
   send_command('bind ^delete gs c weaponset cycleback')
@@ -2530,22 +2536,16 @@ function set_main_keybinds()
   send_command('bind ^end gs c cycleback JugMode')
   send_command('bind !end gs c reset JugMode')
 
-  send_command('bind !z gs c toggle AutomaticPetTargeting')
-  send_command('bind !x gs c cycle CorrelationMode')
-  send_command('bind ^u gs c toggle ShowUI')
-  send_command('bind !` input /ja "Reward" <me>')
-
-  send_command('bind ^` gs c cycle treasuremode')
-  send_command('bind @c gs c toggle CP')
-  send_command('bind ^f8 gs c toggle AttCapped')
-
   send_command('bind ^pageup gs c petmode cycleback')
   send_command('bind ^pagedown gs c petmode cycle')
   send_command('bind !pagedown gs c petmode reset')
   
+  send_command('bind !x gs c cycle CorrelationMode')
+
+  send_command('bind !e input /ja "Reward" <me>')
   send_command('bind !q gs c petcontrol fight')
   send_command('bind !w gs c petcontrol heel')
-  send_command('bind !e gs c petactivation')
+  send_command('bind !` gs c petactivation')
 end
 
 function set_sub_keybinds()
@@ -2555,8 +2555,8 @@ function set_sub_keybinds()
     send_command('bind ^numpad* input /ja "Warcry" <me>')
     send_command('bind ^numpad- input /ja "Aggressor" <me>')
   elseif player.sub_job == 'NIN' then
-    send_command('bind ^numpad0 input /ma "Utsusemi: Ichi" <me>')
-    send_command('bind ^numpad. input /ma "Utsusemi: Ni" <me>')
+    send_command('bind !numpad0 input /ma "Utsusemi: Ichi" <me>')
+    send_command('bind !numpad. input /ma "Utsusemi: Ni" <me>')
   end
 end
 
@@ -2595,8 +2595,8 @@ function unbind_keybinds()
   send_command('unbind ^numpad*')
   send_command('unbind ^numpad-')
   
-  send_command('unbind ^numpad0')
-  send_command('unbind ^numpad.')
+  send_command('unbind !numpad0')
+  send_command('unbind !numpad.')
 end
 
 function test()

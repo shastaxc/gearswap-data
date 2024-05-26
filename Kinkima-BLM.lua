@@ -1649,6 +1649,8 @@ function set_main_keybinds()
   send_command('bind !d gs c interact')
   send_command('bind @w gs c toggle RearmingLock')
 
+  send_command('bind @c gs c toggle CP')
+
   send_command('bind ^insert gs c weaponset cycle')
   send_command('bind ^delete gs c weaponset cycleback')
   send_command('bind !delete gs c weaponset reset')
@@ -1657,30 +1659,32 @@ function set_main_keybinds()
   send_command('bind ^pagedown gs c cycle ElementalMode')
   send_command('bind !pagedown gs c reset ElementalMode')
 
+  send_command('bind ^` input /ja "Mana Wall" <me>')
+  
   send_command('bind !q gs c elemental tier3')
   send_command('bind !w gs c elemental tier')
-  
   send_command('bind !z gs c elemental ga')
   send_command('bind !x gs c elemental ja')
-
-  send_command('bind ^` input /ja "Mana Wall" <me>')
-
-  send_command('bind @c gs c toggle CP')
 end
 
 function set_sub_keybinds()
   if player.sub_job == 'SCH' then
     send_command('bind !r input /ja "Sublimation" <me>')
-    send_command('bind !c gs c elemental storm')
-    send_command('bind !/ input /ma "Klimaform" <me>')
     send_command('bind ^- gs c scholar light')
     send_command('bind ^= gs c scholar dark')
     send_command('bind ^[ gs c scholar power')
     send_command('bind ^\\\\ gs c scholar cost')
     send_command('bind ![ gs c scholar aoe')
     send_command('bind !\\\\ gs c scholar speed')
+
+    send_command('bind !c gs c elemental storm')
+    send_command('bind !/ input /ma "Klimaform" <me>')
+    send_command('bind !u input /ma "Blink" <me>')
+    send_command('bind !i input /ma "Stoneskin" <me>')
+    send_command('bind !p input /ma "Aquaveil" <me>')
   elseif player.sub_job == 'RDM' then
     send_command('bind ~` input /ja "Convert" <me>')
+
     send_command('bind !e input /ma "Haste" <stpc>')
     send_command('bind !u input /ma "Blink" <me>')
     send_command('bind !i input /ma "Stoneskin" <me>')
@@ -1700,6 +1704,8 @@ function unbind_keybinds()
   send_command('unbind !d')
   send_command('unbind @w')
 
+  send_command('unbind @c')
+  
   send_command('unbind ^insert')
   send_command('unbind ^delete')
   send_command('unbind !delete')
@@ -1708,26 +1714,23 @@ function unbind_keybinds()
   send_command('unbind ^pagedown')
   send_command('unbind !pagedown')
 
+  send_command('unbind ^`')
   send_command('unbind !q')
   send_command('unbind !w')
-  
   send_command('unbind !z')
   send_command('unbind !x')
 
-  send_command('unbind ^`')
-
-  send_command('unbind @c')
-  
-  send_command('unbind ~`')
+  send_command('unbind !r')
   send_command('unbind !c')
-  send_command('unbind !/')
   send_command('unbind ^-')
   send_command('unbind ^=')
   send_command('unbind ^[')
   send_command('unbind ^\\\\')
   send_command('unbind ![')
   send_command('unbind !\\\\')
+  send_command('unbind !/')
   
+  send_command('unbind ~`')
   send_command('unbind !e')
   send_command('unbind !u')
   send_command('unbind !i')

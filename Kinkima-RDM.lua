@@ -2718,6 +2718,12 @@ function set_main_keybinds()
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c interact')
   send_command('bind @w gs c toggle RearmingLock')
+  send_command('bind ^` gs c cycle treasuremode')
+
+  send_command('bind @c gs c toggle CP')
+  send_command('bind !` gs c toggle MagicBurst')
+  send_command('bind @s gs c cycle SleepMode')
+  send_command('bind @n gs c toggle NM')
 
   send_command('bind ^insert gs c weaponset cycle')
   send_command('bind ^delete gs c weaponset cycleback')
@@ -2730,12 +2736,6 @@ function set_main_keybinds()
   send_command('bind ^pageup gs c cycleback ElementalMode')
   send_command('bind ^pagedown gs c cycle ElementalMode')
   send_command('bind !pagedown gs c reset ElementalMode')
-
-  send_command('bind ^` gs c cycle treasuremode')
-  send_command('bind @c gs c toggle CP')
-  send_command('bind !` gs c toggle MagicBurst')
-  send_command('bind @s gs c cycle SleepMode')
-  send_command('bind @n gs c toggle NM')
 
   send_command('bind ~` input /ja "Convert" <me>')
   send_command('bind ~z input /ja "Composure" <me>')
@@ -2761,14 +2761,15 @@ end
 
 function set_sub_keybinds()
   if player.sub_job == 'SCH' then
-    send_command('bind !c gs c elemental storm')
-    send_command('bind !/ input /ma "Klimaform" <me>')
     send_command('bind ^- gs c scholar light')
     send_command('bind ^= gs c scholar dark')
     send_command('bind ^[ gs c scholar power')
     send_command('bind ^\\\\ gs c scholar cost')
     send_command('bind ![ gs c scholar aoe')
     send_command('bind !\\\\ gs c scholar speed')
+
+    send_command('bind !c gs c elemental storm')
+    send_command('bind !/ input /ma "Klimaform" <me>')
   end
 end
 

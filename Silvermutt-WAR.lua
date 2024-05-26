@@ -1617,18 +1617,18 @@ function set_main_keybinds()
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c interact')
   send_command('bind @w gs c toggle RearmingLock')
+  send_command('bind ^` gs c cycle treasuremode')
+
+  send_command('bind @c gs c toggle CP')
+  send_command('bind ^f8 gs c toggle AttCapped')
 
   send_command('bind ^insert gs c weaponset cycle')
   send_command('bind ^delete gs c weaponset cycleback')
   send_command('bind !delete gs c weaponset reset')
 
-  send_command('bind ^f8 gs c toggle AttCapped')
   send_command('bind ^pageup gs c toyweapon cycle')
   send_command('bind ^pagedown gs c toyweapon cycleback')
   send_command('bind !pagedown gs c toyweapon reset')
-
-  send_command('bind ^` gs c cycle treasuremode')
-  send_command('bind @c gs c toggle CP')
 end
 
 function set_sub_keybinds()
@@ -1638,8 +1638,8 @@ function set_sub_keybinds()
     send_command('bind ^numpad* input /ja "Sekkanoki" <me>')
     send_command('bind ^numpad- input /ja "Hasso" <me>')
   elseif player.sub_job == 'NIN' then
-    send_command('bind ^numpad0 input /ma "Utsusemi: Ichi" <me>')
-    send_command('bind ^numpad. input /ma "Utsusemi: Ni" <me>')
+    send_command('bind !numpad0 input /ma "Utsusemi: Ichi" <me>')
+    send_command('bind !numpad. input /ma "Utsusemi: Ni" <me>')
   elseif player.sub_job == 'DRG' then
     send_command('bind ^numlock input /ja "Ancient Circle" <me>')
     send_command('bind ^numpad/ input /ja "Jump" <t>')
@@ -1661,14 +1661,16 @@ function unbind_keybinds()
   send_command('unbind ^pagedown')
   send_command('unbind !pagedown')
 
+  send_command('unbind ^f8')
+  send_command('unbind ^`')
   send_command('unbind @c')
+
   send_command('unbind ^numlock')
   send_command('unbind ^numpad/')
   send_command('unbind ^numpad*')
   send_command('unbind ^numpad-')
-  send_command('unbind ^numpad0')
-  send_command('unbind ^numpad.')
-  send_command('unbind ^f8')
+  send_command('unbind !numpad0')
+  send_command('unbind !numpad.')
 end
 
 function test()

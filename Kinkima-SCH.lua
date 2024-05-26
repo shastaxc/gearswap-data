@@ -2213,14 +2213,24 @@ function set_main_keybinds()
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c interact')
   send_command('bind @w gs c toggle RearmingLock')
+
   send_command('bind @c gs c toggle CP')
+  send_command('bind !` gs c toggle MagicBurst')
 
   send_command('bind ^insert gs c weaponset cycle')
   send_command('bind ^delete gs c weaponset cycleback')
   send_command('bind !delete gs c weaponset reset')
 
+  send_command('bind ^pageup gs c cycleback ElementalMode')
+  send_command('bind ^pagedown gs c cycle ElementalMode')
+  send_command('bind !pagedown gs c reset ElementalMode')
+  
+  send_command('bind @h gs c cycle HelixMode')
+
+  send_command('bind @r gs c cycle RegenMode')
+
   send_command('bind ^` input /ja Immanence <me>')
-  send_command('bind !` gs c toggle MagicBurst')
+  send_command('bind !r input /ja "Sublimation" <me>')
   send_command('bind ^- gs c scholar light')
   send_command('bind ^= gs c scholar dark')
   send_command('bind ^[ gs c scholar power')
@@ -2229,24 +2239,16 @@ function set_main_keybinds()
   send_command('bind ![ gs c scholar aoe')
   send_command('bind !] gs c scholar duration')
   send_command('bind !\\\\ gs c scholar speed')
-  send_command('bind @h gs c cycle HelixMode')
-  send_command('bind @r gs c cycle RegenMode')
 
-  send_command('bind !r input /ja "Sublimation" <me>')
+  send_command('bind !q gs c elemental tier3')
+  send_command('bind !w gs c elemental tier')
+  send_command('bind !z gs c elemental helix')
+  send_command('bind !c gs c elemental storm')
   send_command('bind !u input /ma "Blink" <me>')
   send_command('bind !i input /ma "Stoneskin" <me>')
   send_command('bind !p input /ma "Aquaveil" <me>')
   send_command('bind !; input /ma "Regen V" <stpc>')
   send_command('bind !/ input /ma "Klimaform" <me>')
-  
-  send_command('bind ^pageup gs c cycleback ElementalMode')
-  send_command('bind ^pagedown gs c cycle ElementalMode')
-  send_command('bind !pagedown gs c reset ElementalMode')
-  
-  send_command('bind !q gs c elemental tier3')
-  send_command('bind !w gs c elemental tier')
-  send_command('bind !z gs c elemental helix')
-  send_command('bind !c gs c elemental storm')
 end
 
 function set_sub_keybinds()

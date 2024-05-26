@@ -1849,25 +1849,24 @@ function set_main_keybinds()
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c interact')
   send_command('bind @w gs c toggle RearmingLock')
+  send_command('bind ^` gs c cycle treasuremode')
+
+  send_command('bind @c gs c toggle CP')
+  send_command('bind !z gs c toggle AutomaticPetTargeting')
+  send_command('bind !x gs c toggle AutomaticManeuvers')
 
   send_command('bind ^insert gs c weaponset cycle')
   send_command('bind ^delete gs c weaponset cycleback')
   send_command('bind !delete gs c weaponset reset')
 
-  send_command('bind !z gs c toggle AutomaticPetTargeting')
-  send_command('bind !x gs c toggle AutomaticManeuvers')
-
-  send_command('bind ^` gs c cycle treasuremode')
-  send_command('bind @c gs c toggle CP')
-
   send_command('bind ^pageup gs c petmode cycleback')
   send_command('bind ^pagedown gs c petmode cycle')
   send_command('bind !pagedown gs c petmode reset')
   
-  send_command('bind !` gs c maneuver')
+  send_command('bind !e gs c maneuver')
   send_command('bind !q gs c petcontrol deploy')
   send_command('bind !w gs c petcontrol retrieve')
-  send_command('bind !e gs c petactivation')
+  send_command('bind !` gs c petactivation')
 end
 
 function set_sub_keybinds()

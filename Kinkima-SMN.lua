@@ -1865,14 +1865,14 @@ end
 function set_main_keybinds()
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c interact')
-  send_command('bind @c gs c toggle CP')
   send_command('bind @w gs c toggle RearmingLock')
+
+  send_command('bind @c gs c toggle CP')
 
   send_command('bind !q input /ja "Assault" <t>')
   send_command('bind !w input /ja "Retreat" <me>')
   send_command('bind !` input /ja "Release" <me>')
   send_command('bind !a input /ja "Avatar\'s Favor" <me>')
-
   send_command('bind ^numlock gs c pact bp99')
   send_command('bind !numlock gs c pact astralflow')
   send_command('bind ^numpad/ gs c pact bp75')
@@ -1884,12 +1884,11 @@ end
 
 function set_sub_keybinds()
   if player.sub_job == 'SCH' then
-    send_command('bind !r input /ja "Sublimation" <me>')
-    send_command('bind !/ input /ma "Klimaform" <me>')
-    send_command('bind !u input /ma "Blink" <me>')
-    send_command('bind !i input /ma "Stoneskin" <me>')
-    send_command('bind !p input /ma "Aquaveil" <me>')
+    send_command('bind ^pageup gs c cycleback Storm')
+    send_command('bind ^pagedown gs c cycle Storm')
+    send_command('bind !pagedown gs c reset Storm')
 
+    send_command('bind !r input /ja "Sublimation" <me>')
     send_command('bind ^- gs c scholar light')
     send_command('bind ^= gs c scholar dark')
     send_command('bind ^[ gs c scholar power')
@@ -1898,11 +1897,13 @@ function set_sub_keybinds()
     send_command('bind !\\\\ gs c scholar speed')
 
     send_command('bind !c gs c storm')
-    send_command('bind ^pageup gs c cycleback Storm')
-    send_command('bind ^pagedown gs c cycle Storm')
-    send_command('bind !pagedown gs c reset Storm')
+    send_command('bind !/ input /ma "Klimaform" <me>')
+    send_command('bind !u input /ma "Blink" <me>')
+    send_command('bind !i input /ma "Stoneskin" <me>')
+    send_command('bind !p input /ma "Aquaveil" <me>')
   elseif player.sub_job == 'RDM' then
     send_command('bind ~` input /ja "Convert" <me>')
+    
     send_command('bind !e input /ma "Haste" <stpc>')
     send_command('bind !u input /ma "Blink" <me>')
     send_command('bind !i input /ma "Stoneskin" <me>')

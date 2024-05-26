@@ -1460,6 +1460,9 @@ function set_main_keybinds()
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c interact')
   send_command('bind @w gs c toggle RearmingLock')
+  send_command('bind ^` gs c cycle treasuremode')
+
+  send_command('bind @c gs c toggle CP')
 
   send_command('bind ^insert gs c weaponset cycle')
   send_command('bind ^delete gs c weaponset cycleback')
@@ -1469,9 +1472,7 @@ function set_main_keybinds()
   send_command('bind ^pagedown gs c toyweapon cycleback')
   send_command('bind !pagedown gs c toyweapon reset')
 
-  send_command('bind ^` gs c cycle treasuremode')
-  send_command('bind @c gs c toggle CP')
-  send_command('bind @v gs c cycle EnmityMode')
+  send_command('bind @e gs c cycle EnmityMode')
 
   send_command('bind !q input /ja "Impetus" <me>')
   send_command('bind !` input /ja "Chakra" <me>')
@@ -1481,12 +1482,12 @@ end
 
 function set_sub_keybinds()
   if player.sub_job == 'WAR' then
-    send_command('bind !w input /ja "Defender" <me>')
+    send_command('bind ^numlock input /ja "Defender" <me>')
     send_command('bind ^numpad/ input /ja "Berserk" <me>')
     send_command('bind ^numpad* input /ja "Warcry" <me>')
     send_command('bind ^numpad- input /ja "Aggressor" <me>')
   elseif player.sub_job == 'SAM' then
-    send_command('bind !w input /ja "Third Eye" <me>')
+    send_command('bind ^numlock input /ja "Third Eye" <me>')
     send_command('bind ^numpad/ input /ja "Meditate" <me>')
     send_command('bind ^numpad* input /ja "Sekkanoki" <me>')
     send_command('bind ^numpad- input /ja "Hasso" <me>')
@@ -1494,12 +1495,12 @@ function set_sub_keybinds()
     send_command('bind ^numpad0 input /ja "Sneak Attack" <me>')
     send_command('bind ^numpad. input /ja "Trick Attack" <me>')
   elseif player.sub_job == 'NIN' then
-    send_command('bind ^numpad0 input /ma "Utsusemi: Ichi" <me>')
-    send_command('bind ^numpad. input /ma "Utsusemi: Ni" <me>')
+    send_command('bind !numpad0 input /ma "Utsusemi: Ichi" <me>')
+    send_command('bind !numpad. input /ma "Utsusemi: Ni" <me>')
   elseif player.sub_job == 'RUN' then
-    send_command('bind %numpad0 gs c rune')
     send_command('bind ^- gs c cycleback Runes')
     send_command('bind ^= gs c cycle Runes')
+    send_command('bind %numpad0 gs c rune')
   end
 end
 
@@ -1527,6 +1528,8 @@ function unbind_keybinds()
   send_command('unbind ^numpad+')
   send_command('unbind ^numpad0')
   send_command('unbind ^numpad.')
+  send_command('unbind !numpad0')
+  send_command('unbind !numpad.')
 
   send_command('unbind %numpad0')
   send_command('unbind ^-')

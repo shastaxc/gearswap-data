@@ -1665,9 +1665,10 @@ function set_main_keybinds()
 
   send_command('bind @w gs c toggle RearmingLock')
 
-  send_command('bind !` input /ja "Afflatus Solace" <me>')
   send_command('bind !w gs c curaga')
+
   send_command('bind !z gs c barelement')
+
   send_command('bind !x gs c barstatus')
   
   send_command('bind ^insert gs c cycleback Barelement')
@@ -1681,6 +1682,8 @@ function set_main_keybinds()
   send_command('bind ^. gs c cycleback CuragaTier')
   send_command('bind ^/ gs c cycle CuragaTier')
 
+  send_command('bind !` input /ja "Afflatus Solace" <me>')
+  
   send_command('bind !a input /ma "Auspice" <me>')
   send_command('bind !e input /ma "Haste" <stpc>')
   send_command('bind !u input /ma "Blink" <me>')
@@ -1695,9 +1698,11 @@ end
 
 function set_sub_keybinds()
   if player.sub_job == 'SCH' then
+    send_command('bind ^pageup gs c cycleback Storm')
+    send_command('bind ^pagedown gs c cycle Storm')
+    send_command('bind !pagedown gs c reset Storm')
+
     send_command('bind !r input /ja "Sublimation" <me>')
-    send_command('bind !c gs c elemental storm')
-    send_command('bind !/ input /ma "Klimaform" <me>')
     send_command('bind ^- gs c scholar light')
     send_command('bind ^= gs c scholar dark')
     send_command('bind ^[ gs c scholar power')
@@ -1705,12 +1710,11 @@ function set_sub_keybinds()
     send_command('bind ![ gs c scholar aoe')
     send_command('bind !\\\\ gs c scholar speed')
 
-    send_command('bind ^pageup gs c cycle Storm')
-    send_command('bind ^pagedown gs c cycleback Storm')
-    send_command('bind !pagedown gs c reset Storm')
-  
+    send_command('bind !c gs c storm')
+    send_command('bind !/ input /ma "Klimaform" <me>')
   elseif player.sub_job == 'RDM' then
     send_command('bind ~` input /ja "Convert" <me>')
+    
     send_command('bind !\' input /ma "Refresh" <stpc>')
   end
 end

@@ -1624,25 +1624,32 @@ function set_main_keybinds()
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c interact')
   send_command('bind @w gs c toggle WeaponLock')
+
+  send_command('bind @c gs c toggle CP')
   send_command('bind ^b gs c toggle BattleMode')
 
+  send_command('bind ^insert gs c weaponset cycle')
+  send_command('bind ^delete gs c weaponset cycleback')
+  send_command('bind !delete gs c weaponset reset')
+
   send_command('bind ^` gs c cycle SongMode')
-  send_command('bind !` input /ma "Chocobo Mazurka" <me>')
-  send_command('bind !p input /ja "Pianissimo" <me>')
 
   send_command('bind ^backspace gs c cycle SongTier')
+
   send_command('bind ^[ gs c cycleback Etude')
   send_command('bind ^] gs c cycle Etude')
+
   send_command('bind ^; gs c cycleback Carol')
   send_command('bind ^\' gs c cycle Carol')
+
   send_command('bind ^, gs c cycleback Threnody')
   send_command('bind ^. gs c cycle Threnody')
 
   send_command('bind @` gs c cycle LullabyMode')
-  send_command('bind @c gs c toggle CP')
-  send_command('bind ^insert gs c weaponset cycle')
-  send_command('bind ^delete gs c weaponset cycleback')
-  send_command('bind !delete gs c weaponset reset')
+
+  send_command('bind !p input /ja "Pianissimo" <me>')
+
+  send_command('bind !` input /ma "Chocobo Mazurka" <me>')
 end
 
 function set_sub_keybinds()

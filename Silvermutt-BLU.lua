@@ -1682,34 +1682,37 @@ end
 function set_main_keybinds()
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c interact')
+  send_command('bind ^` gs c cycle treasuremode')
+
   send_command('bind @c gs c toggle CP')
+  send_command('bind ^f8 gs c toggle AttCapped')
+  send_command('bind !` gs c toggle MagicBurst')
+  send_command('bind ^l gs c toggle Learning')
+
+  send_command('bind ^insert gs c weaponset cycle')
+  send_command('bind ^delete gs c weaponset cycleback')
+  send_command('bind !delete gs c weaponset reset')
 
   send_command('bind ^pageup gs c toyweapon cycle')
   send_command('bind ^pagedown gs c toyweapon cycleback')
   send_command('bind !pagedown gs c toyweapon reset')
 
-  send_command('bind ^f8 gs c toggle AttCapped')
-  send_command('bind ^` gs c cycle treasuremode')
-  send_command('bind !` gs c toggle MagicBurst')
-  send_command('bind ^l gs c toggle Learning')
   send_command('bind ^- input /ja "Chain Affinity" <me>')
   send_command('bind ^= input /ja "Burst Affinity" <me>')
   send_command('bind ^[ input /ja "Efflux" <me>')
-  send_command('bind !w input /ma "Cocoon" <me>')
   send_command('bind ![ input /ja "Diffusion" <me>')
   send_command('bind !] input /ja "Unbridled Learning" <me>')
+
+  send_command('bind !w input /ma "Cocoon" <me>')
   send_command('bind !q input /ma "Occultation" <me>')
   send_command('bind !e input /ma "Erratic Flutter" <me>')
   send_command('bind !\' input /ma "Battery Charge" <me>')
-
-  send_command('bind ^insert gs c weaponset cycle')
-  send_command('bind ^delete gs c weaponset cycleback')
-  send_command('bind !delete gs c weaponset reset')
 end
 
 function set_sub_keybinds()
   if player.sub_job == 'RDM' then
     send_command('bind ~` input /ja "Convert" <me>')
+
     send_command('bind !i input /ma Stoneskin <me>')
     send_command('bind !o input /ma Phalanx <me>')
     send_command('bind !p input /ma Aquaveil <me>')
@@ -1724,16 +1727,21 @@ end
 function unbind_keybinds()
   send_command('unbind !s')
   send_command('unbind !d')
+  send_command('unbind ^`')
+
   send_command('unbind @c')
+  send_command('unbind ^f8')
+  send_command('unbind !`')
+  send_command('unbind ^l')
+
+  send_command('unbind ^insert')
+  send_command('unbind ^delete')
+  send_command('unbind !delete')
 
   send_command('unbind ^pageup')
   send_command('unbind ^pagedown')
   send_command('unbind !pagedown')
 
-  send_command('unbind ^f8')
-  send_command('unbind ^`')
-  send_command('unbind !`')
-  send_command('unbind ^l')
   send_command('unbind ^-')
   send_command('unbind ^=')
   send_command('unbind ^[')
@@ -1743,10 +1751,6 @@ function unbind_keybinds()
   send_command('unbind !q')
   send_command('unbind !e')
   send_command('unbind !\'')
-
-  send_command('unbind ^insert')
-  send_command('unbind ^delete')
-  send_command('unbind !delete')
 
   send_command('unbind ~`')
   send_command('unbind !i')

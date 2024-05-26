@@ -1,5 +1,6 @@
 -- File Status: Good.
 -- TODO: Acc modes for engaged sets are outdated.
+-- TODO: Remove unnecessary modes SelectStepTarget, IgnoreTargetting, UseAltStep, CurrentStep
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs
@@ -49,8 +50,8 @@
 --              [ CTRL+Numpad0 ]    Sneak Attack
 --              [ CTRL+Numpad. ]    Trick Attack
 --
---  Spells:     [ CTRL+Numpad0 ]    Utsusemi: Ichi
---              [ CTRL+Numpad. ]    Utsusemi: Ni
+--  Spells:     [ ALT+Numpad0 ]     Utsusemi: Ichi
+--              [ ALT+Numpad. ]     Utsusemi: Ni
 --
 --  Other:      [ ALT+D ]           Cancel Invisible/Hide & Use Key on <t>
 --              [ ALT+S ]           Turn 180 degrees in place
@@ -1912,10 +1913,13 @@ function select_default_macro_book()
 end
 
 function set_main_keybinds()
-  send_command('bind !a gs c test')
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c interact')
   send_command('bind @w gs c toggle RearmingLock')
+  send_command('bind ^` gs c cycle treasuremode')
+
+  send_command('bind @c gs c toggle CP')
+  send_command('bind ^f8 gs c toggle AttCapped')
 
   send_command('bind ^insert gs c weaponset cycle')
   send_command('bind ^delete gs c weaponset cycleback')
@@ -1929,21 +1933,18 @@ function set_main_keybinds()
   send_command('bind ^pagedown gs c toyweapon cycleback')
   send_command('bind !pagedown gs c toyweapon reset')
   
-  send_command('bind ^f8 gs c toggle AttCapped')
-
   send_command('bind ^- gs c cycleback mainstep')
   send_command('bind ^= gs c cycle mainstep')
+
   send_command('bind !- gs c cycleback altstep')
   send_command('bind != gs c cycle altstep')
+
   send_command('bind ^] gs c toggle usealtstep')
+
   send_command('bind ![ input /ja "Contradance" <me>')
   send_command('bind !q input /ja "Saber Dance" <me>')
   send_command('bind !` input /ja "Chocobo Jig II" <me>')
-  send_command('bind ^numlock input /ja "Reverse Flourish" <me>')
-
-  send_command('bind ^` gs c cycle treasuremode')
-  send_command('bind @c gs c toggle CP')
-
+  send_command('bind !w input /ja "Reverse Flourish" <me>')
   send_command('bind ^numpad+ input /ja "Climactic Flourish" <me>')
   send_command('bind ^numpadenter input /ja "Building Flourish" <me>')
   send_command('bind %numpad0 gs c step t')
@@ -1952,12 +1953,12 @@ end
 
 function set_sub_keybinds()
   if player.sub_job == 'WAR' then
-    send_command('bind !w input /ja "Defender" <me>')
+    send_command('bind ^numlock input /ja "Defender" <me>')
     send_command('bind ^numpad/ input /ja "Berserk" <me>')
     send_command('bind ^numpad* input /ja "Warcry" <me>')
     send_command('bind ^numpad- input /ja "Aggressor" <me>')
   elseif player.sub_job == 'SAM' then
-    send_command('bind !w input /ja "Third Eye" <me>')
+    send_command('bind ^numlock input /ja "Third Eye" <me>')
     send_command('bind ^numpad/ input /ja "Meditate" <me>')
     send_command('bind ^numpad* input /ja "Sekkanoki" <me>')
     send_command('bind ^numpad- input /ja "Hasso" <me>')
@@ -1965,10 +1966,10 @@ function set_sub_keybinds()
     send_command('bind ^numpad0 input /ja "Sneak Attack" <me>')
     send_command('bind ^numpad. input /ja "Trick Attack" <me>')
   elseif player.sub_job == 'NIN' then
-    send_command('bind ^numpad0 input /ma "Utsusemi: Ichi" <me>')
-    send_command('bind ^numpad. input /ma "Utsusemi: Ni" <me>')
+    send_command('bind !numpad0 input /ma "Utsusemi: Ichi" <me>')
+    send_command('bind !numpad. input /ma "Utsusemi: Ni" <me>')
   elseif player.sub_job == 'DRG' then
-    send_command('bind !w input /ja "Ancient Circle" <me>')
+    send_command('bind ^numlock input /ja "Ancient Circle" <me>')
     send_command('bind ^numpad/ input /ja "Jump" <t>')
     send_command('bind ^numpad* input /ja "High Jump" <t>')
     send_command('bind ^numpad- input /ja "Super Jump" <t>')
@@ -2010,8 +2011,8 @@ function unbind_keybinds()
   send_command('unbind ^numpad-')
   send_command('unbind ^numpad+')
   send_command('unbind ^numpadenter')
-  send_command('unbind ^numpad0')
-  send_command('unbind ^numpad.')
+  send_command('unbind !numpad0')
+  send_command('unbind !numpad.')
   send_command('unbind %numpad0')
   send_command('unbind ^f8')
   send_command('unbind %e')

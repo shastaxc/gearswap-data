@@ -1948,28 +1948,28 @@ function set_main_keybinds()
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c interact')
   send_command('bind @w gs c toggle RearmingLock')
+  send_command('bind ^` gs c cycle treasuremode')
+
+  send_command('bind @c gs c toggle CP')
+  send_command('bind ^f8 gs c toggle AttCapped')
+  send_command('bind !` gs c toggle MagicBurst')
 
   send_command('bind ^insert gs c weaponset cycle')
   send_command('bind ^delete gs c weaponset cycleback')
   send_command('bind !delete gs c weaponset reset')
 
-  send_command('bind ^f8 gs c toggle AttCapped')
   send_command('bind ^pageup gs c toyweapon cycle')
   send_command('bind ^pagedown gs c toyweapon cycleback')
   send_command('bind !pagedown gs c toyweapon reset')
 
-  send_command('bind ^` gs c cycle treasuremode')
-  send_command('bind @c gs c toggle CP')
-  send_command('bind !` gs c toggle MagicBurst')
-
   send_command('bind ^- gs c cycleback ElementalMode')
   send_command('bind ^= gs c cycle ElementalMode')
 
-  send_command('bind ^numlock input /ja "Innin" <me>')
-  send_command('bind !numlock input /ja "Yonin" <me>')
-  send_command('bind ^numpad+ gs c ninelemental')
+  send_command('bind ^numpadenter input /ja "Innin" <me>')
+  send_command('bind !numpadenter input /ja "Yonin" <me>')
   send_command('bind !numpad+ input /ja "Futae" <me>')
 
+  send_command('bind ^numpad+ gs c ninelemental')
   send_command('bind !q input /ma "Utsusemi: Ichi" <me>')
   send_command('bind !w input /ma "Utsusemi: Ni" <me>')
   send_command('bind !e input /ma "Utsusemi: San" <me>')
@@ -1977,7 +1977,7 @@ end
 
 function set_sub_keybinds()
   if player.sub_job == 'WAR' then
-    -- send_command('bind !numpad/ input /ja "Defender" <me>')
+    send_command('bind ^numlock input /ja "Defender" <me>')
     send_command('bind ^numpad/ input /ja "Berserk" <me>')
     send_command('bind ^numpad* input /ja "Warcry" <me>')
     send_command('bind ^numpad- input /ja "Aggressor" <me>')

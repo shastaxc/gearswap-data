@@ -2532,41 +2532,49 @@ function set_main_keybinds()
   send_command('bind !s gs c faceaway')
   send_command('bind !d gs c interact')
   send_command('bind @w gs c toggle RearmingLock')
+  send_command('bind ^` gs c cycle treasuremode')
+
+  send_command('bind @c gs c toggle CP')
+  send_command('bind @` gs c toggle LuzafRing')
+  send_command('bind ^/ gs c toggle critmode')
 
   send_command('bind ^pageup gs c toyweapon cycle')
   send_command('bind ^pagedown gs c toyweapon cycleback')
   send_command('bind !pagedown gs c toyweapon reset')
 
-  send_command('bind ^` gs c cycle treasuremode')
-  send_command('bind @c gs c toggle CP')
   send_command('bind ^insert gs c cycle WeaponSet')
   send_command('bind ^delete gs c cycleback WeaponSet')
+  send_command('bind !delete gs c reset WeaponSet')
 
   send_command('bind ^\\\\ gs c cycle QDMode')
+
   send_command('bind ^- gs c cycleback mainqd')
   send_command('bind ^= gs c cycle mainqd')
+
   send_command('bind !- gs c cycleback altqd')
   send_command('bind != gs c cycle altqd')
-  send_command('bind ^p c toggle selectqdtarget')
-  send_command('bind ^l gs c toggle usealtqd')
-  send_command('bind @` gs c toggle LuzafRing')
-  send_command('bind ^/ gs c toggle critmode')
-
+  
   send_command('bind !q input /ja "Double-up" <me>')
   send_command('bind !` input /ja "Bolter\'s Roll" <me>')
   send_command('bind !e input /ja "Random Deal" <me>')
-  send_command('bind ^numlock input /ja "Triple Shot" <me>')
+  send_command('bind !w input /ja "Triple Shot" <me>')
   send_command('bind %numpad0 input /ra <t>')
 end
 
 function set_sub_keybinds()
   if player.sub_job == 'WAR' then
+    send_command('bind ^numlock input /ja "Defender" <me>')
     send_command('bind ^numpad/ input /ja "Berserk" <me>')
     send_command('bind ^numpad* input /ja "Warcry" <me>')
     send_command('bind ^numpad- input /ja "Aggressor" <me>')
   elseif player.sub_job == 'NIN' then
-    send_command('bind ^numpad0 input /ma "Utsusemi: Ichi" <me>')
-    send_command('bind ^numpad. input /ma "Utsusemi: Ni" <me>')
+    send_command('bind !numpad0 input /ma "Utsusemi: Ichi" <me>')
+    send_command('bind !numpad. input /ma "Utsusemi: Ni" <me>')
+  elseif player.sub_job == 'DRG' then
+    send_command('bind ^numlock input /ja "Ancient Circle" <me>')
+    send_command('bind ^numpad/ input /ja "Jump" <t>')
+    send_command('bind ^numpad* input /ja "High Jump" <t>')
+    send_command('bind ^numpad- input /ja "Super Jump" <t>')
   end
 end
 
@@ -2574,35 +2582,40 @@ function unbind_keybinds()
   send_command('unbind !s')
   send_command('unbind !d')
   send_command('unbind @w')
+  send_command('unbind ^`')
+
+  send_command('unbind @c')
+  send_command('unbind @`')
+  send_command('unbind ^/')
 
   send_command('unbind ^pageup')
   send_command('unbind ^pagedown')
   send_command('unbind !pagedown')
 
-  send_command('unbind ^`')
-  send_command('unbind @c')
   send_command('unbind ^insert')
   send_command('unbind ^delete')
+  send_command('unbind !delete')
 
   send_command('unbind ^\\\\')
+
   send_command('unbind ^-')
   send_command('unbind ^=')
+
   send_command('unbind !-')
   send_command('unbind !=')
-  send_command('unbind ^p')
-  send_command('unbind ^l')
-  send_command('unbind @`')
 
   send_command('unbind !q')
   send_command('unbind !`')
   send_command('unbind !e')
-  send_command('unbind ^numlock')
+  send_command('unbind !w')
   send_command('unbind %numpad0')
+
+  send_command('unbind ^numlock')
   send_command('unbind ^numpad/')
   send_command('unbind ^numpad*')
   send_command('unbind ^numpad-')
-  send_command('unbind ^numpad0')
-  send_command('unbind ^numpad.')
+  send_command('unbind !numpad0')
+  send_command('unbind !numpad.')
 end
 
 function test()
