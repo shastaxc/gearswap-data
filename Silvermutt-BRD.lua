@@ -162,7 +162,6 @@ function init_gear_sets()
   -- FC caps 80% but some pieces will be replaced depending on spell type
   sets.precast.FC = {
     sub="Genmei Shield",        -- __ (10, __, ___)
-    head="Bunzi's Hat",         -- 10 ( 7,  7, 123)
     body="Inyanga Jubbah +2",   -- 14 (__,  8, 120)
     hands=gear.Leyline_Gloves,  --  8 (__, __,  62)
     legs="Volte Brais",         --  8 (__, __, 142); Chironic good alt
@@ -175,6 +174,7 @@ function init_gear_sets()
     waist="Embla Sash",         --  5 (__, __, ___)
     -- main="Kali",             --  7 (__, __, ___)
     -- range=gear.Linos_FC,     --  6 (__, __,  15)
+    -- head="Bunzi's Hat",      -- 10 ( 7,  7, 123)
     -- feet="Volte Gaiters",    --  6 (__, __, 142); Chironic good alt
     -- 86 Fast Cast (37 PDT, 28 MDT, 604 MEVA)
   } -- 67 Fast Cast (37 PDT, 28 MDT, 447 MEVA)
@@ -186,7 +186,6 @@ function init_gear_sets()
   -- Total cast speed cap 80%, fill in rest with defensive gear
   sets.precast.FC.Cure = {
     sub="Genmei Shield",              -- __, __ (10, __, ___)
-    head="Bunzi's Hat",               -- 10, __ ( 7,  7, 123)
     body="Inyanga Jubbah +2",         -- 14, __ (__,  8, 120)
     legs=gear.Nyame_B_legs,           -- __, __ ( 8,  8, 150)
     neck="Loricate Torque +1",        -- __, __ ( 6,  6, ___)
@@ -197,6 +196,7 @@ function init_gear_sets()
     waist="Embla Sash",               --  5, __ (__, __, ___)
     -- main="Kali",                   --  7, __ (__, __, ___)
     -- range=gear.Linos_FC,           --  6, __ (__, __,  15)
+    -- head="Bunzi's Hat",            -- 10, __ ( 7,  7, 123)
     -- hands=gear.Gende_CureFC_hands, --  7,  5 ( 4, __,  37)
     -- feet=gear.Vanya_B_feet,        -- __,  7 (__, __, 107)
     -- ear1="Mendi. Earring",         -- __,  5 (__, __, ___)
@@ -207,7 +207,6 @@ function init_gear_sets()
   -- Don't use Quick Magic for songs because lag might mess up midcast sets
   sets.precast.FC.BardSong = {
     sub="Genmei Shield",              -- __, __, __ (10, __, ___)
-    head="Bunzi's Hat",               -- 10, __, __ ( 7,  7, 123)
     body="Inyanga Jubbah +2",         -- 14, __, __ (__,  8, 120)
     hands=gear.Gende_SongFC_hands,    --  7,  4, __ ( 4,  2,  37)
     legs=gear.Gende_SongFC_legs,      -- __,  9, __ ( 3, __, 107)
@@ -220,6 +219,7 @@ function init_gear_sets()
     waist="Embla Sash",               --  5, __, __ (__, __, ___)
     -- main="Kali",                   --  7, __, __ (__, __, ___)
     -- range=gear.Linos_FC,           --  6, __, __ (__, __,  15)
+    -- head="Bunzi's Hat",            -- 10, __, __ ( 7,  7, 123)
     -- hands=gear.Gende_SongFC_hands, --  7,  5,  3 ( 4, __,  37)
     -- legs=gear.Gende_SongFC_legs,   -- __, 10,  3 ( 4, __, 107)
     -- feet="Volte Gaiters",          --  6, __, __ (__, __, 142); Chironic good alt
