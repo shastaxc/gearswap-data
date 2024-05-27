@@ -1,6 +1,6 @@
 --[[
 File Status: Good.
-TODO: Acc modes for engaged sets are outdated.
+TODO: Acc modes for engaged sets are outdated. Add Terpsichore AM engaged set variants with less multihit.
 
 Author: Silvermutt
 Required external libraries: SilverLibs
@@ -963,7 +963,7 @@ function init_gear_sets()
     body="Malignance Tabard",       -- __, 11, 50 <__, __, __> [ 9/ 9, 139] __(__)
     hands=gear.Adhemar_A_hands,     -- __,  7, 52 <__,  4, __> [__/__,  43] __(__)
     legs=gear.Samnuha_legs,         -- __,  7, 15 < 3,  3, __> [__/__,  75] __(__)
-    feet="Maculele Toe Shoes +3",   -- __, 12, 60 <__, __, __> [10/10, 115] __(__); Remove Close Position merits
+    feet="Maculele Toe Shoes +3",   -- __, 12, 60 <__, __, __> [10/10, 115] __(__)
     neck="Etoile Gorget +2",        -- __,  7, 25 <__, __, __> [__/__, ___] __(__)
     ear1="Telos Earring",           -- __,  5, 10 < 1, __, __> [__/__, ___] __(__)
     ear2="Sherida Earring",         -- __,  5, __ < 5, __, __> [__/__, ___] __( 5)
@@ -1002,7 +1002,7 @@ function init_gear_sets()
     body="Malignance Tabard",       -- __, 11, 50 <__, __, __> [ 9/ 9, 139] __(__)
     hands=gear.Adhemar_A_hands,     -- __,  7, 52 <__,  4, __> [__/__,  43] __(__)
     legs=gear.Samnuha_legs,         -- __,  7, 15 < 3,  3, __> [__/__,  75] __(__)
-    feet="Maculele Toe Shoes +3",   -- __, 12, 60 <__, __, __> [10/10, 115] __(__); Remove Close Position merits
+    feet="Maculele Toe Shoes +3",   -- __, 12, 60 <__, __, __> [10/10, 115] __(__)
     neck="Etoile Gorget +2",        -- __,  7, 25 <__, __, __> [__/__, ___] __(__)
     ear1="Telos Earring",           -- __,  5, 10 < 1, __, __> [__/__, ___] __(__)
     ear2="Sherida Earring",         -- __,  5, __ < 5, __, __> [__/__, ___] __( 5)
@@ -1042,7 +1042,7 @@ function init_gear_sets()
     body="Malignance Tabard",       -- __, 11, 50 <__, __, __> [ 9/ 9, 139] __(__)
     hands=gear.Adhemar_A_hands,     -- __,  7, 52 <__,  4, __> [__/__,  43] __(__)
     legs=gear.Samnuha_legs,         -- __,  7, 15 < 3,  3, __> [__/__,  75] __(__)
-    feet="Maculele Toe Shoes +3",   -- __, 12, 60 <__, __, __> [10/10, 115] __(__); Remove Close Position merits
+    feet="Maculele Toe Shoes +3",   -- __, 12, 60 <__, __, __> [10/10, 115] __(__)
     neck="Etoile Gorget +2",        -- __,  7, 25 <__, __, __> [__/__, ___] __(__)
     ear1="Eabani Earring",          --  4, __, __ <__, __, __> [__/__,   8] __(__)
     ear2="Sherida Earring",         -- __,  5, __ < 5, __, __> [__/__, ___] __( 5)
@@ -1084,7 +1084,7 @@ function init_gear_sets()
     body="Maculele Casaque +3",     -- 11, __, __ <__, __, __> [14/14, 109] 14(__)
     hands=gear.Adhemar_A_hands,     -- __,  7, 52 <__,  4, __> [__/__,  43] __(__)
     legs=gear.Samnuha_legs,         -- __,  7, 15 < 3,  3, __> [__/__,  75] __(__)
-    feet="Maculele Toe Shoes +3",   -- __, 12, 60 <__, __, __> [10/10, 115] __(__); Remove Close Position merits
+    feet="Maculele Toe Shoes +3",   -- __, 12, 60 <__, __, __> [10/10, 115] __(__)
     neck="Etoile Gorget +2",        -- __,  7, 25 <__, __, __> [__/__, ___] __(__)
     ear1="Telos Earring",           -- __,  5, 10 < 1, __, __> [__/__, ___] __(__)
     ear2="Sherida Earring",         -- __,  5, __ < 5, __, __> [__/__, ___] __( 5)
@@ -1125,7 +1125,7 @@ function init_gear_sets()
     body="Maculele Casaque +3",     -- 11, __, __ <__, __, __> [14/14, 109] 14(__)
     hands=gear.Adhemar_A_hands,     -- __,  7, 52 <__,  4, __> [__/__,  43] __(__)
     legs=gear.Samnuha_legs,         -- __,  7, 15 < 3,  3, __> [__/__,  75] __(__)
-    feet="Maculele Toe Shoes +3",   -- __, 12, 60 <__, __, __> [10/10, 115] __(__); Remove Close Position merits
+    feet="Maculele Toe Shoes +3",   -- __, 12, 60 <__, __, __> [10/10, 115] __(__)
     neck="Etoile Gorget +2",        -- __,  7, 25 <__, __, __> [__/__, ___] __(__)
     ear1="Suppanomimi",             --  5, __, __ <__, __, __> [__/__, ___] __(__)
     ear2="Eabani Earring",          --  4, __, __ <__, __, __> [__/__,   8] __(__)
@@ -1163,7 +1163,7 @@ function init_gear_sets()
     body="Maculele Casaque +3",     -- 11, __, __ <__, __, __> [14/14, 109] 14(__)
     hands="Floral Gauntlets",       --  5, __, 36 <__,  3, __> [__/ 4,  37] __(__)
     legs=gear.Samnuha_legs,         -- __,  7, 15 < 3,  3, __> [__/__,  75] __(__)
-    feet="Maculele Toe Shoes +3",   -- __, 12, 60 <__, __, __> [10/10, 115] __(__); Remove Close Position merits
+    feet="Maculele Toe Shoes +3",   -- __, 12, 60 <__, __, __> [10/10, 115] __(__)
     neck="Etoile Gorget +2",        -- __,  7, 25 <__, __, __> [__/__, ___] __(__)
     ear1="Suppanomimi",             --  5, __, __ <__, __, __> [__/__, ___] __(__)
     ear2="Eabani Earring",          --  4, __, __ <__, __, __> [__/__,   8] __(__)
@@ -1193,7 +1193,7 @@ function init_gear_sets()
     body="Malignance Tabard",       -- __, 11, 50 <__, __, __> [ 9/ 9, 139] __(__)
     hands="Malignance Gloves",      -- __, 12, 50 <__, __, __> [ 5/ 5, 112] __(__)
     legs="Malignance Tights",       -- __, 10, 50 <__, __, __> [ 7/ 7, 150] __(__)
-    feet="Maculele Toe Shoes +3",   -- __, 12, 60 <__, __, __> [10/10, 115] __(__); Remove Close Position merits
+    feet="Maculele Toe Shoes +3",   -- __, 12, 60 <__, __, __> [10/10, 115] __(__)
     neck="Etoile Gorget +2",        -- __,  7, 25 <__, __, __> [__/__, ___] __(__)
     ear1="Telos Earring",           -- __,  5, 10 < 1, __, __> [__/__, ___] __(__)
     ear2="Sherida Earring",         -- __,  5, __ < 5, __, __> [__/__, ___] __( 5)
@@ -1215,7 +1215,7 @@ function init_gear_sets()
     body="Malignance Tabard",       -- __, 11, 50 <__, __, __> [ 9/ 9, 139] __(__)
     hands="Malignance Gloves",      -- __, 12, 50 <__, __, __> [ 5/ 5, 112] __(__)
     legs=gear.Samnuha_legs,         -- __,  7, 15 < 3,  3, __> [__/__,  75] __(__)
-    feet="Maculele Toe Shoes +3",   -- __, 12, 60 <__, __, __> [10/10, 115] __(__); Remove Close Position merits
+    feet="Maculele Toe Shoes +3",   -- __, 12, 60 <__, __, __> [10/10, 115] __(__)
     neck="Etoile Gorget +2",        -- __,  7, 25 <__, __, __> [__/__, ___] __(__)
     ear1="Telos Earring",           -- __,  5, 10 < 1, __, __> [__/__, ___] __(__)
     ear2="Sherida Earring",         -- __,  5, __ < 5, __, __> [__/__, ___] __( 5)
@@ -1237,7 +1237,7 @@ function init_gear_sets()
     body="Malignance Tabard",       -- __, 11, 50 <__, __, __> [ 9/ 9, 139] __(__)
     hands="Malignance Gloves",      -- __, 12, 50 <__, __, __> [ 5/ 5, 112] __(__)
     legs=gear.Samnuha_legs,         -- __,  7, 15 < 3,  3, __> [__/__,  75] __(__)
-    feet="Maculele Toe Shoes +3",   -- __, 12, 60 <__, __, __> [10/10, 115] __(__); Remove Close Position merits
+    feet="Maculele Toe Shoes +3",   -- __, 12, 60 <__, __, __> [10/10, 115] __(__)
     neck="Etoile Gorget +2",        -- __,  7, 25 <__, __, __> [__/__, ___] __(__)
     ear1="Eabani Earring",          --  4, __, __ <__, __, __> [__/__,   8] __(__)
     ear2="Sherida Earring",         -- __,  5, __ < 5, __, __> [__/__, ___] __( 5)
@@ -1259,7 +1259,7 @@ function init_gear_sets()
     body="Maculele Casaque +3",     -- 11, __, __ <__, __, __> [14/14, 109] 14(__)
     hands=gear.Adhemar_A_hands,     -- __,  7, 52 <__,  4, __> [__/__,  43] __(__)
     legs=gear.Samnuha_legs,         -- __,  7, 15 < 3,  3, __> [__/__,  75] __(__)
-    feet="Maculele Toe Shoes +3",   -- __, 12, 60 <__, __, __> [10/10, 115] __(__); Remove Close Position merits
+    feet="Maculele Toe Shoes +3",   -- __, 12, 60 <__, __, __> [10/10, 115] __(__)
     neck="Etoile Gorget +2",        -- __,  7, 25 <__, __, __> [__/__, ___] __(__)
     ear1="Telos Earring",           -- __,  5, 10 < 1, __, __> [__/__, ___] __(__)
     ear2="Sherida Earring",         -- __,  5, __ < 5, __, __> [__/__, ___] __( 5)
@@ -1281,7 +1281,7 @@ function init_gear_sets()
     body="Maculele Casaque +3",     -- 11, __, __ <__, __, __> [14/14, 109] 14(__)
     hands="Malignance Gloves",      -- __, 12, 50 <__, __, __> [ 5/ 5, 112] __(__)
     legs="Malignance Tights",       -- __, 10, 50 <__, __, __> [ 7/ 7, 150] __(__)
-    feet="Maculele Toe Shoes +3",   -- __, 12, 60 <__, __, __> [10/10, 115] __(__); Remove Close Position merits
+    feet="Maculele Toe Shoes +3",   -- __, 12, 60 <__, __, __> [10/10, 115] __(__)
     neck="Etoile Gorget +2",        -- __,  7, 25 <__, __, __> [__/__, ___] __(__)
     ear1="Suppanomimi",             --  5, __, __ <__, __, __> [__/__, ___] __(__)
     ear2="Eabani Earring",          --  4, __, __ <__, __, __> [__/__,   8] __(__)
@@ -1357,12 +1357,6 @@ function init_gear_sets()
   sets.Special = {}
   sets.Special.SleepyHead = { head="Frenzy Sallet", }
 
-  sets.buff['Saber Dance'] = {
-    legs="Horos Tights +3",
-  }
-  sets.buff['Fan Dance'] = {
-    hands="Horos Bangles +3",
-  }
   -- This is overlaid on TP set during Climactic Flourish
   sets.buff['Climactic Flourish'] = {
     head="Maculele Tiara +3",
