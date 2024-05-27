@@ -1,6 +1,5 @@
 -- File Status: Good.
 -- TODO: Acc modes for engaged sets are outdated.
--- TODO: Remove unnecessary modes SelectStepTarget, IgnoreTargetting, UseAltStep, CurrentStep
 
 -- Author: Silvermutt
 -- Required external libraries: SilverLibs
@@ -119,18 +118,12 @@ function job_setup()
   state.Buff['Climactic Flourish'] = buffactive['climactic flourish'] or false
   state.Buff['Sneak Attack'] = buffactive['sneak attack'] or false
   state.Buff['Trick Attack'] = buffactive['trick attack'] or false
-  state.Buff['Feint'] = buffactive['feint'] or false
 
   state.MainStep = M{['description']='Main Step', 'Box Step', 'Quickstep', 'Feather Step', 'Stutter Step'}
   state.AltStep = M{['description']='Alt Step', 'Quickstep', 'Feather Step', 'Stutter Step', 'Box Step'}
-  state.UseAltStep = M(false, 'Use Alt Step')
-  state.SelectStepTarget = M(false, 'Select Step Target')
-  state.IgnoreTargetting = M(true, 'Ignore Targetting')
-
-  state.CurrentStep = M{['description']='Current Step', 'Main', 'Alt'}
 
   state.CP = M(false, 'Capacity Points Mode')
-  state.AttCapped = M(true, "Attack Capped")
+  state.AttCapped = M(true, 'Attack Capped')
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.HybridMode:options('Normal', 'HeavyDef', 'Safe')
@@ -1426,7 +1419,6 @@ function job_aftercast(spell, action, spellMap, eventArgs)
   if spell.type == 'WeaponSkill' and not spell.interrupted then
     state.Buff['Sneak Attack'] = false
     state.Buff['Trick Attack'] = false
-    state.Buff['Feint'] = false
   end
 end
 
@@ -1637,18 +1629,6 @@ function user_customize_defense_set(defenseSet)
   return silibs.customize_defense_set(defenseSet)
 end
 
--- Handle auto-targetting based on local setup.
-function job_auto_change_target(spell, action, spellMap, eventArgs)
-  if spell.type == 'Step' then
-    if state.IgnoreTargetting.value == true then
-      state.IgnoreTargetting:reset()
-      eventArgs.handled = true
-    end
-
-    eventArgs.SelectNPCTargets = state.SelectStepTarget.value
-  end
-end
-
 -- Function to display the current relevant user state when doing an update.
 -- Set eventArgs.handled to true if display was handled, and you don't want the default info shown.
 function display_current_job_state(eventArgs)
@@ -1671,10 +1651,7 @@ function display_current_job_state(eventArgs)
 
   local i_msg = state.IdleMode.value
 
-  local s_msg = state.MainStep.current
-  if state.UseAltStep.value == true then
-    s_msg = s_msg .. '/'..state.AltStep.current
-  end
+  local s_msg = state.MainStep.current..'/'..state.AltStep.current
 
   local toy_msg = state.ToyWeapons.current
 
@@ -1819,19 +1796,9 @@ function job_self_command(cmdParams, eventArgs)
 
   if not eventArgs.handled then
     if cmdParams[1] == 'step' then
-      if cmdParams[2] == 't' then
-        state.IgnoreTargetting:set()
-      end
-
-      local doStep = ''
-      if state.UseAltStep.value == true then
-        doStep = state[state.CurrentStep.current..'Step'].current
-        state.CurrentStep:cycle()
-      else
-        doStep = state.MainStep.current
-      end
-
-      send_command('@input /ja "'..doStep..'" <t>')
+      send_command('@input /ja "'..state.MainStep.value..'" <t>')
+    elseif cmdParams[1] == 'altstep' then
+      send_command('@input /ja "'..state.AltStep.value..'" <t>')
     elseif cmdParams[1] == 'toyweapon' then
       if cmdParams[2] == 'cycle' then
         cycle_toy_weapons('forward')
@@ -1939,15 +1906,14 @@ function set_main_keybinds()
   send_command('bind !- gs c cycleback altstep')
   send_command('bind != gs c cycle altstep')
 
-  send_command('bind ^] gs c toggle usealtstep')
-
   send_command('bind ![ input /ja "Contradance" <me>')
   send_command('bind !q input /ja "Saber Dance" <me>')
   send_command('bind !` input /ja "Chocobo Jig II" <me>')
   send_command('bind !w input /ja "Reverse Flourish" <me>')
   send_command('bind ^numpad+ input /ja "Climactic Flourish" <me>')
   send_command('bind ^numpadenter input /ja "Building Flourish" <me>')
-  send_command('bind %numpad0 gs c step t')
+  send_command('bind %numpad0 gs c step')
+  send_command('bind %numpad. gs c altstep')
   send_command('bind %e input /ra <t>')
 end
 
