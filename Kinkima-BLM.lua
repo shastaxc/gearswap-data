@@ -53,8 +53,6 @@ Other
                                                       Keybinds
 ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
 Modes:
-  [ F9 ]              Cycle Melee Accuracy
-  [ CTRL+F9 ]         Cycle Melee Defense
   [ F10 ]             Toggle Emergency -PDT
   [ ALT+F10 ]         Toggle Kiting (on = move speed gear always equipped)
   [ F11 ]             Toggle Emergency -MDT
@@ -189,15 +187,10 @@ function job_setup()
   silibs.enable_weapon_rearm()
   silibs.enable_elemental_belt_handling(has_obi, has_orpheus)
 
-  state.OffenseMode:options('Normal')
-  state.HybridMode:options('Normal')
-  state.WeaponskillMode:options('Normal')
   state.CastingMode:options('Normal', 'Spaekona', 'Occult')
-  state.IdleMode:options('Normal')
   state.MagicBurst = M(false, 'Magic Burst')
   state.CP = M(false, 'Capacity Points Mode')
   state.WeaponSet = M{['description']='Weapon Set', 'Casting', 'Cleaving', 'Myrkr'}
-  state.ToyWeapons = M{['description']='Toy Weapons','None'}
   state.ElementalMode = M{['description'] = 'Elemental Mode', 'Fire','Ice','Wind','Earth','Lightning','Water',}
 
   enfeebling_stat_map = {
@@ -1416,16 +1409,6 @@ function job_self_command(cmdParams, eventArgs)
     elseif cmdParams[2] == 'reset' then
       cycle_weapons('reset')
     end
-  elseif cmdParams[1] == 'toyweapon' then
-    if cmdParams[2] == 'cycle' then
-      cycle_toy_weapons('forward')
-    elseif cmdParams[2] == 'cycleback' then
-      cycle_toy_weapons('back')
-    elseif cmdParams[2] == 'set' and cmdParams[3] then
-      cycle_toy_weapons('set', cmdParams[3])
-    elseif cmdParams[2] == 'reset' then
-      cycle_toy_weapons('reset')
-    end
   elseif cmdParams[1] == 'bind' then
     set_main_keybinds()
     set_sub_keybinds()
@@ -1527,36 +1510,15 @@ function cycle_weapons(cycle_dir, set_name)
   equip(select_weapons())
 end
 
-function cycle_toy_weapons(cycle_dir, set_name)
-  if cycle_dir == 'forward' then
-    state.ToyWeapons:cycle()
-  elseif cycle_dir == 'back' then
-    state.ToyWeapons:cycleback()
-  elseif cycle_dir == 'set' then
-    state.ToyWeapons:set(set_name)
-  else
-    state.ToyWeapons:reset()
-  end
-
-  local mode_color = 001
-  if state.ToyWeapons.current == 'None' then
-    mode_color = 006
-  end
-  add_to_chat(012, 'Toy Weapon Mode: '..string.char(31,mode_color)..state.ToyWeapons.current)
-  equip(select_weapons())
-end
-
 function select_weapons()
-  if state.ToyWeapons.current ~= 'None' then
-    return sets.ToyWeapon[state.ToyWeapons.current]
-  elseif sets.WeaponSet[state.WeaponSet.current] then
+  if sets.WeaponSet[state.WeaponSet.current] then
     return sets.WeaponSet[state.WeaponSet.current]
   end
   return {}
 end
 
 function in_battle_mode()
-  return state.WeaponSet.current ~= 'Casting' or state.ToyWeapons.current ~= 'None'
+  return state.WeaponSet.current ~= 'Casting'
 end
 
 function get_enfeebling_duration(spell, set)
