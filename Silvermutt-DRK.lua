@@ -66,11 +66,9 @@ Other
 ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
                                                       Keybinds
 ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
-
 Modes:
   [ F9 ]              Cycle Melee Accuracy
   [ CTRL+F9 ]         Cycle Melee Defense
-  [ ALT+F9 ]          Cycle Ranged Accuracy
   [ F10 ]             Toggle Emergency -PDT
   [ ALT+F10 ]         Toggle Kiting (on = move speed gear always equipped)
   [ F11 ]             Toggle Emergency -MDT
@@ -78,10 +76,6 @@ Modes:
   [ CTRL+F12 ]        Cycle Idle modes
   [ ALT+F12 ]         Cancel Emergency -PDT/-MDT Mode
   [ WIN+C ]           Toggle Capacity Points Mode
-  [ CTRL+- ]          Cycleback Main Step
-  [ CTRL+= ]          Cycle Main Step
-  [ ALT+- ]           Cycleback Alt Step
-  [ ALT+= ]           Cycle Alt Step
   [ CTRL+F8 ]         Toggle Attack Capped mode
 
 Weapons:
@@ -93,17 +87,19 @@ Weapons:
   [ ALT+PageDown ]    Reset to default Toy Weapon Set
 
 Spells:
+  [ ALT+` ]           Endark II
+  [ ALT+E ]           Drain III
+  [ ALT+R ]           Aspir II
   ============ /NIN ============
   [ ALT+Numpad0 ]     Utsusemi: Ichi
   [ ALT+Numpad. ]     Utsusemi: Ni
 
 Abilities:
-  [ ALT+` ]           Call Wyvern/Dismiss (if pet is out)
-  [ ALT+Q ]           Spirit Link
-  [ CTRL+Q ]          Steady Wing
-  [ ALT+W ]           Ancient Circle
-  [ ALT+E ]           Dragon Breaker
-  [ ALT+Z ]           Spirit Bond/Cancel Spirit Bond (if it's active)
+  [ ALT+Q ]           Nether Void
+  [ CTRL+Q ]          Weapon Bash
+  [ ALT+W ]           Dark Seal
+  [ ALT+Z ]           Arcane Circle
+  [ ALT+X ]           Arcane Crest
   ============ /WAR ============
   [ CTRL+Numlock ]    Defender
   [ CTRL+Numpad/ ]    Berserk
@@ -114,6 +110,11 @@ Abilities:
   [ CTRL+Numpad/ ]    Meditate
   [ CTRL+Numpad* ]    Sekkanoki
   [ CTRL+Numpad- ]    Hasso
+  ============ /DRG ============
+  [ CTRL+Numlock ]    Ancient Circle
+  [ CTRL+Numpad/ ]    Jump
+  [ CTRL+Numpad* ]    High Jump
+  [ CTRL+Numpad- ]    Super Jump
 
 SilverLibs keybinds:
   [ ALT+D ]           Interact
@@ -134,7 +135,9 @@ Global-Binds.lua contains additional non-job-related keybinds.
 ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
 Prepend with /console to use these in in-game macros.
 
-gs c bind             Sets keybinds again. Sometimes they don't all get set when swapping jobs. Calling this manually fixes it.
+gs c clear_risky_buffs  Removes Souleater and Last Resort buffs from self.
+
+gs c bind               Sets keybinds again. Sometimes they don't all get set when swapping jobs. Calling this manually fixes it.
 
 (More commands available through SilverLibs)
 
@@ -143,16 +146,19 @@ gs c bind             Sets keybinds again. Sometimes they don't all get set when
                                             Recommended In-game Macros
 ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
 __Keybind___Name______________Command_____________
-[ CTRL+1 ] Jump           /ja "Jump" <t>
-[ CTRL+2 ] HighJump       /ja "High Jump" <t>
-[ CTRL+3 ] SuperJum       /ja "Super Jump" <t>
-[ CTRL+9 ] Eat Pet        /ja "Spirit Surge" <me>
+[ CTRL+1 ] LastReso       /ja "Last Resort" <me>
+[ CTRL+2 ] Souleate       /ja "Souleater" <me>
+[ CTRL+3 ] Drain2         /ma "Drain II" <t>
+[ CTRL+4 ] Bio            /ma "Bio II" <t>
+[ CTRL+9 ] BloodWea       /ja "Blood Weapon" <me>
 [ CTRL+0 ] Provoke        /ja "Provoke" <stnpc>
-[ ALT+1 ]  SoulJump       /ja "Soul Jump" <t>
-[ ALT+2 ]  SpiritJu       /ja "Spirit Jump" <t>
-[ ALT+3 ]  Angon          /ja "Angon" <t>
-[ ALT+4 ]  HealBrea       /ja "Restoring Breath" <me>
-[ ALT+9 ]  FlyHigh        /ja "FlyHigh" <me>
+[ ALT+1 ]  Ab-STR         /ma "Absorb-STR" <t>
+[ ALT+2 ]  Ab-INT         /ma "Absorb-INT" <t>
+[ ALT+3 ]  Ab-Attr        /ma "Absorb-attri" <t>
+[ ALT+4 ]  Ab-TP          /ma "Absorb-TP" <t>
+[ ALT+8 ]  Dread          /ma "Dread Spikes" <me>
+[ ALT+9 ]  SoulEnsl       /ja "Soul Enslavement" <me>
+[ ALT+0 ]  NoBuffs        /console gs c clear_risky_buffs
 
 ]]--
 
@@ -2018,7 +2024,12 @@ function set_main_keybinds()
 end
 
 function set_sub_keybinds()
-  if player.sub_job == 'SAM' then
+  if player.sub_job == 'WAR' then
+    send_command('bind ^numlock input /ja "Defender" <me>')
+    send_command('bind ^numpad/ input /ja "Berserk" <me>')
+    send_command('bind ^numpad* input /ja "Warcry" <me>')
+    send_command('bind ^numpad- input /ja "Aggressor" <me>')
+  elseif player.sub_job == 'SAM' then
     send_command('bind ^numlock input /ja "Third Eye" <me>')
     send_command('bind ^numpad/ input /ja "Meditate" <me>')
     send_command('bind ^numpad* input /ja "Sekkanoki" <me>')
