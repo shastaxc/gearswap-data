@@ -37,7 +37,14 @@ Weapons
   * Memorize the keybind to turn it off in case you toggle it by accident.
 
 Abilities
-* Attempting to dismiss your pet while it is at full HP is blocked.
+* Attempting to dismiss your pet while it is not at full HP is blocked. If it was allowed, it would put your pet on
+  cooldown the same as if it was killed so there is no apparent benefit to allowing this.
+  * Using "Call Wyvern" while pet is active will instead use the "Dismiss" ability (if pet is full HP).
+* Recommend only using Spirit Bond if you need to heal your pet. You can activate Spirit Bond, do Restoring Breath,
+  then immediately cancel Spirit Bond (press the keybind again to cancel buff). This is to avoid you as the DRG taking
+  extra damage because your pet gets hit. This can cause high damage AoEs to kill you by hitting both you and your pet
+  and causing you to take more damage than the game intended one person to take.
+  * Using "Spirit Bond" ability while you already have the buff for it will instead cancel the buff.
 
 Other
 * If you are not using my reorganizer addon, remove all the sets.org sets (including in character global file).
@@ -86,14 +93,12 @@ Spells:
   [ ALT+Numpad. ]     Utsusemi: Ni
 
 Abilities:
-  [ ALT+` ]           Chocobo Jig II
-  [ ALT+Q ]           Saber Dance
-  [ ALT+W ]           Reverse Flourish
-  [ ALT+E ]           Contradance
-  [ CTRL+Numpad+ ]    Climactic Flourish
-  [ CTRL+NumpadEnter ]Building Flourish
-  [ Numpad0 ]         Execute main step
-  [ Numpad. ]         Execute alt step
+  [ ALT+` ]           Call Wyvern/Dismiss (if pet is out)
+  [ ALT+Q ]           Spirit Link
+  [ CTRL+Q ]          Steady Wing
+  [ ALT+W ]           Ancient Circle
+  [ ALT+E ]           Dragon Breaker
+  [ ALT+Z ]           Spirit Bond/Cancel Spirit Bond (if it's active)
   ============ /WAR ============
   [ CTRL+Numlock ]    Defender
   [ CTRL+Numpad/ ]    Berserk
@@ -104,17 +109,6 @@ Abilities:
   [ CTRL+Numpad/ ]    Meditate
   [ CTRL+Numpad* ]    Sekkanoki
   [ CTRL+Numpad- ]    Hasso
-  ============ /THF ============
-  [ CTRL+Numpad0 ]    Sneak Attack
-  [ CTRL+Numpad. ]    Trick Attack
-  ============ /DRG ============
-  [ CTRL+Numlock ]    Ancient Circle
-  [ CTRL+Numpad/ ]    Jump
-  [ CTRL+Numpad* ]    High Jump
-  [ CTRL+Numpad- ]    Super Jump
-
-Other:
-  [ Numpad0 ]         Ranged Attack
 
 SilverLibs keybinds:
   [ ALT+D ]           Interact
@@ -135,9 +129,6 @@ Global-Binds.lua contains additional non-job-related keybinds.
 ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
 Prepend with /console to use these in in-game macros.
 
-gs c step             Uses the currently configured step on the current target.
-gs c altstep          Uses the currently configured "alt" step on the current target.
-
 gs c bind             Sets keybinds again. Sometimes they don't all get set when swapping jobs. Calling this manually fixes it.
 
 (More commands available through SilverLibs)
@@ -147,17 +138,16 @@ gs c bind             Sets keybinds again. Sometimes they don't all get set when
                                             Recommended In-game Macros
 ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
 __Keybind___Name______________Command_____________
-[ CTRL+1 ] NoFootRi       /ja "No Foot Rise" <me>
-[ CTRL+2 ] Stun           /ja "Violent Flourish" <t>
-[ CTRL+3 ] Animated       /ja "Animated Flourish" <stnpc>
-[ CTRL+4 ] Haste          /ja "Haste Samba" <me>
-[ CTRL+9 ] Trance         /ja "Trance" <me>
+[ CTRL+1 ] Jump           /ja "Jump" <t>
+[ CTRL+2 ] HighJump       /ja "High Jump" <t>
+[ CTRL+3 ] SuperJum       /ja "Super Jump" <t>
+[ CTRL+9 ] Eat Pet        /ja "Spirit Surge" <me>
 [ CTRL+0 ] Provoke        /ja "Provoke" <stnpc>
-[ ALT+1 ]  Cure           /ja "Curing Waltz" <stpc>
-[ ALT+2 ]  Divine1        /ja "Divine Waltz" <stpc>
-[ ALT+3 ]  Divine2        /ja "Divine Waltz II" <stpc>
-[ ALT+9 ]  GrandPas       /ja "Grand Pas" <me>
-[ ALT+0 ]  FanDance       /ja "Fan Dance" <me>
+[ ALT+1 ]  SoulJump       /ja "Soul Jump" <t>
+[ ALT+2 ]  SpiritJu       /ja "Spirit Jump" <t>
+[ ALT+3 ]  Angon          /ja "Angon" <t>
+[ ALT+4 ]  HealBrea       /ja "Restoring Breath" <me>
+[ ALT+9 ]  FlyHigh        /ja "FlyHigh" <me>
 
 ]]--
 
@@ -945,10 +935,18 @@ function job_precast(spell, action, spellMap, eventArgs)
   silibs.precast_hook(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
 
-  -- Wyvern Commands
-  if spell.name == 'Dismiss' and pet.hpp < 100 then
+  -- Dismiss pet if attempting to call wyvern (to share keybinds)
+  if spell.name == 'Call Wyvern' and pet.isvalid then
+    eventArgs.cancel = true
+    send_command('input /ja "Dismiss" <me>')
+  -- Prevent dismissing pet if pet HP is not full
+  elseif spell.name == 'Dismiss' and pet.hpp < 100 then
     eventArgs.cancel = true
     add_to_chat(50, 'Cancelling Dismiss! ' ..pet.name.. ' is below full HP! [ ' ..pet.hpp.. '% ]')
+  -- Cancel Spirit Bond buff if pressing Spirit Bond keybind (to share keybinds)
+  elseif spell.name == 'Spirit Bond' and buffactive['Spirit Bond'] then
+    eventArgs.cancel = true
+    send_command('cancel spirit bond')
   end
 end
 
@@ -1356,7 +1354,7 @@ end)
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
   -- Default macro set/book: (set, book)
-  set_macro_page(2, 13)
+  set_macro_page(1, 13)
 end
 
 function set_main_keybinds()
@@ -1381,6 +1379,7 @@ function set_main_keybinds()
   send_command('bind ^q input /ja "Steady Wing" <me>')
   send_command('bind !w input /ja "Ancient Circle" <me>')
   send_command('bind !e input /ja "Dragon Breaker" <t>')
+  send_command('bind !z input /ja "Spirit Bond" <me>')
 end
 
 function set_sub_keybinds()
