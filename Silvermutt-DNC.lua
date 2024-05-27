@@ -1,77 +1,175 @@
--- File Status: Good.
--- TODO: Acc modes for engaged sets are outdated.
+--[[
+File Status: Good.
+TODO: Acc modes for engaged sets are outdated.
 
--- Author: Silvermutt
--- Required external libraries: SilverLibs
--- Required addons: HasteInfo, DistancePlus
--- Recommended addons: WSBinder, Reorganizer, Metronome
--- Misc Recommendations: Disable GearInfo, disable RollTracker
+Author: Silvermutt
+Required external libraries: SilverLibs
+Required addons: HasteInfo, DistancePlus
+Recommended addons: WSBinder, Reorganizer, Metronome
+Misc Recommendations: Disable GearInfo, disable RollTracker
 
--------------------------------------------------------------------------------------------------------------------
---  Keybinds
--------------------------------------------------------------------------------------------------------------------
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                                  General Use Tips
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+Modes
+* Offense Mode: Changes melee accuracy level
+* Hybrid Mode: Changes damage taken level while engaged
+  * Normal: Highest damage output
+  * HeavyDef: Defensive set with decent offensive stats
+  * Safe: Very defensive set. Causes weaponskills with a "Safe" variant to be used.
+* Idle Mode: Determines which set to use when not engaged
+  * Normal: Allows automatically equipping Regen, Refresh, and Regain gear as needed
+  * HeavyDef: Uses defensive set and disables automatically equipping Regen, Refresh, and Regain gear
+* Defense Mode: Equips super high emergency damage reduction set, greatly reduces your DPS output
+* CP Mode: Equips Capacity Points bonus cape
+* AttCapped: When on, if you have AttCapped set variants for your weaponskills, it will use that. This mode is
+  intended to be used when you think you are attack capped vs your enemy such as when you have a lot of Attack buffs
+  from BRD, COR, GEO, etc.
+* Main Step: Selects the step to use as main step
+* Alt Step: Selects the step to use as alternate step
 
---  Modes:      [ F9 ]              Cycle Offense Modes
---              [ CTRL+F9 ]         Cycle Hybrid Modes
---              [ WIN+F9 ]          Cycle Weapon Skill Modes
---              [ F10 ]             Emergency -PDT Mode
---              [ ALT+F10 ]         Toggle Kiting Mode
---              [ F11 ]             Emergency -MDT Mode
---              [ F12 ]             Update Current Gear / Report Current Status
---              [ CTRL+F12 ]        Cycle Idle Modes
---              [ ALT+F12 ]         Cancel Emergency -PDT/-MDT Mode
---              [ WIN+F ]           Toggle Closed Position (Facing) Mode
---              [ WIN+C ]           Toggle Capacity Points Mode
---              [ CTRL+PageUp ]     Cycle Toy Weapon Mode
---              [ CTRL+PageDown ]   Cycleback Toy Weapon Mode
---              [ ALT+PageDown ]    Reset Toy Weapon Mode
---              [ WIN+W ]           Toggle Rearming Lock
---                                  (off = re-equip previous weapons if you go barehanded)
---                                  (on = prevent weapon auto-equipping)
---
---  Abilities:  [ CTRL+- ]          Primary step element cycle forward.
---              [ CTRL+= ]          Primary step element cycle backward.
---              [ ALT+- ]           Secondary step element cycle forward.
---              [ ALT+= ]           Secondary step element cycle backward.
---              [ CTRL+[ ]          Toggle step target type.
---              [ CTRL+] ]          Toggle use secondary step.
---              [ Numpad0 ]         Perform Current Step
---
---              [ CTRL+` ]          Saber Dance
---              [ ALT+` ]           Chocobo Jig II
---              [ ALT+[ ]           Contradance
---              [ CTRL+Numlock ]    Reverse Flourish
---              [ CTRL+Numpad/ ]    Berserk/Meditate
---              [ CTRL+Numpad* ]    Warcry/Sekkanoki
---              [ CTRL+Numpad- ]    Aggressor/Third Eye
---              [ CTRL+Numpad+ ]    Climactic Flourish
---              [ CTRL+NumpadEnter ]Building Flourish
---              [ CTRL+Numpad0 ]    Sneak Attack
---              [ CTRL+Numpad. ]    Trick Attack
---
---  Spells:     [ ALT+Numpad0 ]     Utsusemi: Ichi
---              [ ALT+Numpad. ]     Utsusemi: Ni
---
---  Other:      [ ALT+D ]           Cancel Invisible/Hide & Use Key on <t>
---              [ ALT+S ]           Turn 180 degrees in place
---
---              (Global-Binds.lua contains additional non-job-related keybinds)
+Weapons
+* Use keybinds to cycle weapons.
+* If you want different weapon sets, edit the sets.WeaponSet sets.
+  * Additional weapon sets can be created but you need to also add them to the state.WeaponSet cycle.
+* All other sets (like precast, midcast, idle, etc.) should exclude weapons (main, sub, range).
+  * Ammo will be ignored and handled through a library function based on the configs you set in the setup.
+* If you enable one of the ToyWeapons modes, it will lock your weapons into low level weapons. This can be
+  useful if you are intentionally trying not to kill something, like low level enemies where you may need
+  to proc them with a WS without killing them. This overrides all other weapon modes and weapon equip logic.
+  * Memorize the keybind to turn it off in case you toggle it by accident.
+
+Abilities
+* It is typical to maintain 2 different steps during longer (boss) fights. To aid in this, you should set your
+  main and alt step cycles to the steps you intend to use and then use the keybinds to execute them for convenience.
+* The recommended Metronome addon will display Step level and timers so you don't have to risk steps falling off or
+  wasting a step cooldown on one that is already max level.
+* Using a step will automatically use Presto first if it's not on cooldown.
+
+Other
+* If you are not using my reorganizer addon, remove all the sets.org sets (including in character global file).
+* I generally plan out best-in-slot (BiS) pieces for each set even before I acquire the pieces. These BiS pieces are
+  left commented out in the set, while placeholders that I do have in the meantime are uncommented for that slot.
+* I like to list out the important stats for each piece of item in most of my sets, and then have a total at
+  the bottom of the set. If you ever change any pieces of gear, you should recalculate the stats for the new piece
+  and then recalculate for the set total, or just remove those stat comments entirely to avoid confusion. However,
+  if you choose to ignore them, it doesn't not actually affect anything.
+* Equipping certain gear such as warp rings or ammo belts will automatically lock that slot until you manually
+  unequip it or change zones.
 
 
--------------------------------------------------------------------------------------------------------------------
---  Custom Commands (preface with /console to use these in macros)
--------------------------------------------------------------------------------------------------------------------
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                                      Keybinds
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
 
---  gs c step                       Uses the currently configured step on the target, with either <t> or
---                                  <stnpc> depending on setting.
---  gs c step t                     Uses the currently configured step on the target, but forces use of <t>.
---
---  gs c cycle mainstep             Cycles through the available steps to use as the primary step when using
---                                  one of the above commands.
---  gs c cycle altstep              Cycles through the available steps to use for alternating with the
---                                  configured main step.
---  gs c toggle usealtstep          Toggles whether or not to use an alternate step.
---  gs c toggle selectsteptarget    Toggles whether or not to use <stnpc> (as opposed to <t>) when using a step.
+Modes:
+  [ F9 ]              Cycle Melee Accuracy
+  [ CTRL+F9 ]         Cycle Melee Defense
+  [ ALT+F9 ]          Cycle Ranged Accuracy
+  [ F10 ]             Toggle Emergency -PDT
+  [ ALT+F10 ]         Toggle Kiting (on = move speed gear always equipped)
+  [ F11 ]             Toggle Emergency -MDT
+  [ F12 ]             Report current status
+  [ CTRL+F12 ]        Cycle Idle modes
+  [ ALT+F12 ]         Cancel Emergency -PDT/-MDT Mode
+  [ WIN+C ]           Toggle Capacity Points Mode
+  [ CTRL+- ]          Cycleback Main Step
+  [ CTRL+= ]          Cycle Main Step
+  [ ALT+- ]           Cycleback Alt Step
+  [ ALT+= ]           Cycle Alt Step
+  [ CTRL+F8 ]         Toggle Attack Capped mode
+
+Weapons:
+  [ CTRL+Insert ]     Cycle Weapon Sets
+  [ CTRL+Delete ]     Cycleback Weapon Sets
+  [ ALT+Delete ]      Reset to default Weapon Set
+  [ CTRL+Home ]       Cycle Ranged Weapon Sets
+  [ CTRL+End ]        Cycleback Ranged Weapon Sets
+  [ ALT+End ]         Reset to default Ranged Weapon Set
+  [ CTRL+PageUp ]     Cycle Toy Weapon Sets
+  [ CTRL+PageDown ]   Cycleback Toy Weapon Sets
+  [ ALT+PageDown ]    Reset to default Toy Weapon Set
+
+Spells:
+  ============ /NIN ============
+  [ ALT+Numpad0 ]     Utsusemi: Ichi
+  [ ALT+Numpad. ]     Utsusemi: Ni
+
+Abilities:
+  [ ALT+` ]           Chocobo Jig II
+  [ ALT+Q ]           Saber Dance
+  [ ALT+W ]           Reverse Flourish
+  [ ALT+E ]           Contradance
+  [ CTRL+Numpad+ ]    Climactic Flourish
+  [ CTRL+NumpadEnter ]Building Flourish
+  [ Numpad0 ]         Execute main step
+  [ Numpad. ]         Execute alt step
+  ============ /WAR ============
+  [ CTRL+Numlock ]    Defender
+  [ CTRL+Numpad/ ]    Berserk
+  [ CTRL+Numpad* ]    Warcry
+  [ CTRL+Numpad- ]    Aggressor
+  ============ /SAM ============
+  [ CTRL+Numlock ]    Third Eye
+  [ CTRL+Numpad/ ]    Meditate
+  [ CTRL+Numpad* ]    Sekkanoki
+  [ CTRL+Numpad- ]    Hasso
+  ============ /THF ============
+  [ CTRL+Numpad0 ]    Sneak Attack
+  [ CTRL+Numpad. ]    Trick Attack
+  ============ /DRG ============
+  [ CTRL+Numlock ]    Ancient Circle
+  [ CTRL+Numpad/ ]    Jump
+  [ CTRL+Numpad* ]    High Jump
+  [ CTRL+Numpad- ]    Super Jump
+
+Other:
+  [ Numpad0 ]         Ranged Attack
+
+SilverLibs keybinds:
+  [ ALT+D ]           Interact
+  [ ALT+S ]           Turn 180 degrees in place
+  [ WIN+W ]           Toggle Rearming Lock
+                      (off = re-equip previous weapons if you go barehanded)
+                      (on = prevent weapon auto-equipping)
+  [ CTRL+` ]          Cycle Treasure Hunter Mode
+
+For more info and available functions, see SilverLibs documentation at:
+https://github.com/shastaxc/silver-libs
+
+Global-Binds.lua contains additional non-job-related keybinds.
+
+
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                                  Custom Commands
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+Prepend with /console to use these in in-game macros.
+
+gs c step             Uses the currently configured step on the current target.
+gs c altstep          Uses the currently configured "alt" step on the current target.
+
+gs c bind             Sets keybinds again. Sometimes they don't all get set when swapping jobs. Calling this manually fixes it.
+
+(More commands available through SilverLibs)
+
+
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                            Recommended In-game Macros
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+__Keybind___Name______________Command_____________
+[ CTRL+1 ] NoFootRi       /ja "No Foot Rise" <me>
+[ CTRL+2 ] Stun           /ja "Violent Flourish" <t>
+[ CTRL+3 ] Animated       /ja "Animated Flourish" <stnpc>
+[ CTRL+4 ] Haste          /ja "Haste Samba" <me>
+[ CTRL+9 ] Trance         /ja "Trance" <me>
+[ CTRL+0 ] Provoke        /ja "Provoke" <stnpc>
+[ ALT+1 ]  Cure           /ja "Curing Waltz" <stpc>
+[ ALT+2 ]  Divine1        /ja "Divine Waltz" <stpc>
+[ ALT+3 ]  Divine2        /ja "Divine Waltz II" <stpc>
+[ ALT+9 ]  GrandPas       /ja "Grand Pas" <me>
+[ ALT+0 ]  FanDance       /ja "Fan Dance" <me>
+
+]]--
 
 
 -------------------------------------------------------------------------------------------------------------------
@@ -100,10 +198,10 @@ function job_setup()
   silibs.enable_weapon_rearm()
   silibs.enable_auto_lockstyle(2)
   silibs.enable_waltz_refiner({
-    base_chr= 125,
-    base_vit= 121,
-    bonus_chr= 195,
-    bonus_vit= 117,
+    base_chr = 125,
+    base_vit = 121,
+    bonus_chr = 195,
+    bonus_vit = 117,
     waltz_potency = 50,
     waltz_self_potency = 8,
     est_non_party_target_hp = 2000,
@@ -120,13 +218,13 @@ function job_setup()
   state.Buff['Trick Attack'] = buffactive['trick attack'] or false
 
   state.MainStep = M{['description']='Main Step', 'Box Step', 'Quickstep', 'Feather Step', 'Stutter Step'}
-  state.AltStep = M{['description']='Alt Step', 'Quickstep', 'Feather Step', 'Stutter Step', 'Box Step'}
+  state.AltStep = M{['description']='Alt Step', 'Feather Step', 'Stutter Step', 'Box Step', 'Quickstep'}
 
   state.CP = M(false, 'Capacity Points Mode')
   state.AttCapped = M(true, 'Attack Capped')
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
-  state.HybridMode:options('Normal', 'HeavyDef', 'Safe')
+  state.HybridMode:options('HeavyDef', 'Safe', 'Normal')
   state.IdleMode:options('Normal', 'HeavyDef')
 
   state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger',
@@ -1490,6 +1588,7 @@ function update_combat_form()
     end
   end
 end
+
 function get_custom_wsmode(spell, action, spellMap)
   local wsmode = ''
 
@@ -1876,7 +1975,7 @@ end)
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
   -- Default macro set/book: (set, book)
-  set_macro_page(2, 2)
+  set_macro_page(1, 2)
 end
 
 function set_main_keybinds()
@@ -1906,10 +2005,10 @@ function set_main_keybinds()
   send_command('bind !- gs c cycleback altstep')
   send_command('bind != gs c cycle altstep')
 
-  send_command('bind ![ input /ja "Contradance" <me>')
-  send_command('bind !q input /ja "Saber Dance" <me>')
   send_command('bind !` input /ja "Chocobo Jig II" <me>')
+  send_command('bind !q input /ja "Saber Dance" <me>')
   send_command('bind !w input /ja "Reverse Flourish" <me>')
+  send_command('bind !e input /ja "Contradance" <me>')
   send_command('bind ^numpad+ input /ja "Climactic Flourish" <me>')
   send_command('bind ^numpadenter input /ja "Building Flourish" <me>')
   send_command('bind %numpad0 gs c step')
