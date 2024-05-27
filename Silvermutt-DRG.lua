@@ -3,7 +3,7 @@ File Status: Good.
 
 Author: Silvermutt
 Required external libraries: SilverLibs
-Required addons: N/A
+Required addons: Cancel
 Recommended addons: WSBinder, Reorganizer
 Misc Recommendations: Disable RollTracker
 
