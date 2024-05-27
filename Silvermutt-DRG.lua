@@ -30,7 +30,6 @@ Weapons
 * If you want different weapon sets, edit the sets.WeaponSet sets.
   * Additional weapon sets can be created but you need to also add them to the state.WeaponSet cycle.
 * All other sets (like precast, midcast, idle, etc.) should exclude weapons (main, sub, range).
-  * Ammo will be ignored and handled through a library function based on the configs you set in the setup.
 * If you enable one of the ToyWeapons modes, it will lock your weapons into low level weapons. This can be
   useful if you are intentionally trying not to kill something, like low level enemies where you may need
   to proc them with a WS without killing them. This overrides all other weapon modes and weapon equip logic.

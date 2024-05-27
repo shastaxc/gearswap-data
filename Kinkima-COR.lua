@@ -1,5 +1,6 @@
 --[[
 File Status: Ok. Silvermutt's COR is better.
+TODO: Update bis sets to Silver's latest.
 
 Author: Silvermutt
 Required external libraries: SilverLibs

@@ -1,5 +1,6 @@
 --[[
 File Status: Ok. Kinkima's GEO is better.
+TODO: Update bis sets to kink's latest.
 
 Author: Silvermutt
 Required external libraries: SilverLibs

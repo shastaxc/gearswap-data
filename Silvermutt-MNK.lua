@@ -1,39 +1,167 @@
--- File Status: Good.
+--[[
+File Status: Good.
+TODO: Cancel Boost buff if tp = 3000
 
--- Author: Silvermutt
--- Required external libraries: SilverLibs
--- Required addons: Cancel
--- Recommended addons: WSBinder, Reorganizer
--- Misc Recommendations: Disable RollTracker
+Author: Silvermutt
+Required external libraries: SilverLibs
+Required addons: Cancel
+Recommended addons: WSBinder, Reorganizer
+Misc Recommendations: Disable RollTracker
 
--------------------------------------------------------------------------------------------------------------------
---  Keybinds
--------------------------------------------------------------------------------------------------------------------
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                                  General Use Tips
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+Modes
+* Offense Mode: Changes melee accuracy level
+* Hybrid Mode: Changes damage taken level while engaged
+  * Defaults to squishier/higher damage set with the assumption that MNK's higher HP will help offset the DT loss.
+    If you need the extra DT you can toggle into HeavyDef mode.
+* Defense Mode: Equips super high emergency damage reduction set, greatly reduces your DPS output
+  * There is a Cait Sith PDT mode you can use during fight with the HTBF Cait Sith. Tweak the set to have the
+    correct amount of HP for the fight (not divisible by 2, 3, 4, 5, or 6).
+* Idle Mode: Determines which set to use when not engaged
+  * Normal: Allows automatically equipping Regen, Refresh, and Regain gear as needed
+  * HeavyDef: Uses defensive set and disables automatically equipping Regen, Refresh, and Regain gear
+* CP Mode: Equips Capacity Points bonus cape
+* Enmity Mode: Swaps gear on WS to lower enmity
+  * Normal: Does not swap any -enmity gear during WS
+  * Low: If you have Dirge and -Enmity merits, a simple Novia Earring will cap your -Enmity
+  * Schere: Uses Schere earring during WS to actively lower enmity (only if MP > 0)
+* Runes: Select a rune to use when issuing the custom rune command while subbing RUN.
 
---  Modes:      [ F9 ]              Cycle Offense Modes
---              [ CTRL+F9 ]         Cycle Hybrid Modes
---              [ WIN+F9 ]          Cycle Weapon Skill Modes
---              [ F10 ]             Emergency -PDT Mode
---              [ ALT+F10 ]         Toggle Kiting Mode
---              [ F11 ]             Emergency -MDT Mode
---              [ F12 ]             Update Current Gear / Report Current Status
---              [ CTRL+F12 ]        Cycle Idle Modes
---              [ ALT+F12 ]         Cancel Emergency -PDT/-MDT Mode
---              [ WIN+C ]           Toggle Capacity Points Mode
---              [ CTRL+PageUp ]     Cycle Toy Weapon Mode
---              [ CTRL+PageDown ]   Cycleback Toy Weapon Mode
---              [ ALT+PageDown ]    Reset Toy Weapon Mode
---              [ WIN+W ]           Toggle Rearming Lock
---                                  (off = re-equip previous weapons if you go barehanded)
---                                  (on = prevent weapon auto-equipping)
---
---  Abilities:  [ CTRL+` ]          Impetus
---                                  Chakra
---
---  Other:      [ ALT+D ]           Cancel Invisible/Hide & Use Key on <t>
---              [ ALT+S ]           Turn 180 degrees in place
---
---              (Global-Binds.lua contains additional non-job-related keybinds)
+Weapons
+* Use keybinds to cycle weapons.
+* If you want different weapon sets, edit the sets.WeaponSet sets.
+  * Additional weapon sets can be created but you need to also add them to the state.WeaponSet cycle.
+* All other sets (like precast, midcast, idle, etc.) should exclude weapons (main, sub, range).
+* If you enable one of the ToyWeapons modes, it will lock your weapons into low level weapons. This can be
+  useful if you are intentionally trying not to kill something, like low level enemies where you may need
+  to proc them with a WS without killing them. This overrides all other weapon modes and weapon equip logic.
+  * Memorize the keybind to turn it off in case you toggle it by accident.
+
+Abilities
+* When Boost buff is active, sets.BoostRegain set will be locked on to provide Regain. This is the only realistic
+  use of the Boost ability these days.
+* When Impetus is active, and you have at least 8 consecutive hits, sets.Special.Impetus set will be equipped
+  over normal WS set.
+
+Other
+* If you are not using my reorganizer addon, remove all the sets.org sets (including in character global file).
+* I generally plan out best-in-slot (BiS) pieces for each set even before I acquire the pieces. These BiS pieces are
+  left commented out in the set, while placeholders that I do have in the meantime are uncommented for that slot.
+* I like to list out the important stats for each piece of item in most of my sets, and then have a total at
+  the bottom of the set. If you ever change any pieces of gear, you should recalculate the stats for the new piece
+  and then recalculate for the set total, or just remove those stat comments entirely to avoid confusion. However,
+  if you choose to ignore them, it doesn't not actually affect anything.
+* Equipping certain gear such as warp rings or ammo belts will automatically lock that slot until you manually
+  unequip it or change zones.
+* Set named sets.Special.Sleepyhead will be equipped if you are asleep. This should have a piece of gear in it that
+  will deal damage to you to wake you up.
+
+
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                                      Keybinds
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+Modes:
+  [ F9 ]              Cycle Melee Accuracy
+  [ CTRL+F9 ]         Cycle Melee Defense
+  [ ALT+F9 ]          Cycle Ranged Accuracy
+  [ F10 ]             Toggle Emergency -PDT
+  [ ALT+F10 ]         Toggle Kiting (on = move speed gear always equipped)
+  [ F11 ]             Toggle Emergency -MDT
+  [ F12 ]             Report current status
+  [ CTRL+F12 ]        Cycle Idle modes
+  [ ALT+F12 ]         Cancel Emergency -PDT/-MDT Mode
+  [ WIN+C ]           Toggle Capacity Points Mode
+  [ CTRL+- ]          Cycle Quick Draw primary shot element
+  [ CTRL+= ]          Cycleback Quick Draw primary shot element
+  [ ALT+- ]           Cycle Quick Draw secondary shot element
+  [ ALT+= ]           Cycleback Quick Draw secondary shot element
+  [ CTRL+\ ]          Cycle Quick Draw mode cycle (affects gear equipped for QD)
+  [ WIN+` ]           Toggle Luzaf Ring for Phantom Roll
+  [ CTRL+/ ]          Toggle RA Crit mode
+
+Weapons:
+  [ CTRL+Insert ]     Cycle Weapon Sets
+  [ CTRL+Delete ]     Cycleback Weapon Sets
+  [ ALT+Delete ]      Reset to default Weapon Set
+  [ CTRL+PageUp ]     Cycle Toy Weapon Sets
+  [ CTRL+PageDown ]   Cycleback Toy Weapon Sets
+  [ ALT+PageDown ]    Reset to default Toy Weapon Set
+
+Spells:
+  ============ /NIN ============
+  [ ALT+Numpad0 ]     Utsusemi: Ichi
+  [ ALT+Numpad. ]     Utsusemi: Ni
+
+Abilities:
+  [ ALT+` ]           Bolter's Roll
+  [ ALT+Q ]           Double-Up
+  [ ALT+E ]           Random Deal
+  [ ALT+W ]           Triple Shot
+  ============ /WAR ============
+  [ CTRL+Numlock ]    Defender
+  [ CTRL+Numpad/ ]    Berserk
+  [ CTRL+Numpad* ]    Warcry
+  [ CTRL+Numpad- ]    Aggressor
+  ============ /DRG ============
+  [ CTRL+Numlock ]    Ancient Circle
+  [ CTRL+Numpad/ ]    Jump
+  [ CTRL+Numpad* ]    High Jump
+  [ CTRL+Numpad- ]    Super Jump
+
+Other:
+  [ Numpad0 ]         Ranged Attack
+
+SilverLibs keybinds:
+  [ ALT+D ]           Interact
+  [ ALT+S ]           Turn 180 degrees in place
+  [ WIN+W ]           Toggle Rearming Lock
+                      (off = re-equip previous weapons if you go barehanded)
+                      (on = prevent weapon auto-equipping)
+  [ CTRL+` ]          Cycle Treasure Hunter Mode
+
+For more info and available functions, see SilverLibs documentation at:
+https://github.com/shastaxc/silver-libs
+
+Global-Binds.lua contains additional non-job-related keybinds.
+
+
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                                  Custom Commands
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+Prepend with /console to use these in in-game macros.
+
+gs c qd                 Uses the currently-selected primary Quick Draw shot on current target <t>.
+gs c qd main            Same as above
+gs c qd main t          Same as above
+gs c qd main stnpc      Uses the currently-selected primary Quick Draw shot on select target <stnpc>.
+gs c qd alt             Uses the currently-selected alternate Quick Draw shot on current target <t>.
+gs c qd alt t           Same as above
+gs c qd alt stnpc       Uses the currently-selected alternate Quick Draw shot on select target <stnpc>.
+
+gs c bind               Sets keybinds again. Sometimes they don't all get set when swapping jobs. Calling this manually fixes it.
+
+gs c equipweapons       Equips weapons based on your current states that you've set.
+
+(More commands available through SilverLibs)
+
+
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                            Recommended In-game Macros
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+__Keybind___Name______________Command_____________
+[ CTRL+1 ] SnakeEye       /ja "Snake Eye" <me>
+[ CTRL+2 ] Fold           /ja "Fold" <me>
+[ CTRL+3 ] CrookedC       /ja "Crooked Cards" <me>
+[ CTRL+9 ] WildCard       /ja "Wild Card" <me>
+[ ALT+1 ]  Roll1          /console roller roll roll1
+[ ALT+2 ]  Roll2          /console roller roll roll2
+[ ALT+3 ]  QD             /console gs c qd main t
+[ ALT+4 ]  QD2            /console gs c qd alt t
+[ ALT+9 ]  Cutting        /ja "Cutting Cards" <stpc>
+
+]]--
 
 -------------------------------------------------------------------------------------------------------------------
 -- Setup functions for this job.  Generally should not be modified.
@@ -903,8 +1031,6 @@ function job_post_precast(spell, action, spellMap, eventArgs)
           or (info.impetus_hit_count > 8) then
         equip(sets.Special.Impetus)
       end
-    elseif state.Buff.Footwork and (spell.english == "Dragon's Kick" or spell.english == "Tornado Kick") then
-      equip(sets.Special.Footwork)
     end
 
     if buffactive['Reive Mark'] then
