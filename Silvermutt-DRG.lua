@@ -79,7 +79,7 @@ function user_setup()
 
   include('Global-Binds.lua') -- Additional local binds
 
-  state.WeaponSet = M{['description']='Weapon Set', 'Naegling', 'Shining One', 'Trishula', 'Staff'}
+  state.WeaponSet = M{['description']='Weapon Set', 'Naegling', 'Shining One', 'Trishula', 'Staff', 'Aeolian'}
 
   update_melee_groups()
   select_default_macro_book()
@@ -791,6 +791,10 @@ function init_gear_sets()
   sets.WeaponSet = {}
   sets.WeaponSet['Shining One'] = {main="Shining One", sub="Utu Grip"}
   sets.WeaponSet['Naegling'] = {main="Naegling", sub=empty}
+  sets.WeaponSet['Naegling'].DW = {main="Naegling", sub="Ternion Dagger +1"}
+  -- sets.WeaponSet['Naegling'].DW = {main="Naegling", sub="Kraken Club"}
+  sets.WeaponSet['Aeolian'] = {main="Malevolence", sub=empty}
+  sets.WeaponSet['Aeolian'].DW = {main="Malevolence", sub="Malevolence"}
   sets.WeaponSet['Trishula'] = {main="Trishula", sub="Utu Grip"}
   sets.WeaponSet['Staff'] = {main="Reikikon", sub="Utu Grip"}
 end
@@ -1063,6 +1067,20 @@ function display_current_job_state(eventArgs)
   eventArgs.handled = true
 end
 
+function select_weapons()
+  if state.ToyWeapons.current ~= 'None' then
+    return sets.ToyWeapon[state.ToyWeapons.current]
+  else
+    if sets.WeaponSet[state.WeaponSet.current] then
+      if use_dw_if_available and silibs.can_dual_wield() and sets.WeaponSet[state.WeaponSet.current].DW then
+        return sets.WeaponSet[state.WeaponSet.current].DW
+      else
+        return sets.WeaponSet[state.WeaponSet.current]
+      end
+    end
+  end
+end
+
 function cycle_weapons(cycle_dir)
   if cycle_dir == 'forward' then
     state.WeaponSet:cycle()
@@ -1073,7 +1091,7 @@ function cycle_weapons(cycle_dir)
   end
 
   add_to_chat(141, 'Weapon Set to '..string.char(31,1)..state.WeaponSet.current)
-  equip(sets.WeaponSet[state.WeaponSet.current])
+  equip(select_weapons())
 end
 
 function cycle_toy_weapons(cycle_dir)
@@ -1096,7 +1114,7 @@ function cycle_toy_weapons(cycle_dir)
     mode_color = 006
   end
   add_to_chat(012, 'Toy Weapon Mode: '..string.char(31,mode_color)..state.ToyWeapons.current)
-  equip(sets.ToyWeapon[state.ToyWeapons.current])
+  equip(select_weapons())
 end
 
 
