@@ -35,6 +35,7 @@ Weapons
   useful if you are intentionally trying not to kill something, like low level enemies where you may need
   to proc them with a WS without killing them. This overrides all other weapon modes and weapon equip logic.
   * Memorize the keybind to turn it off in case you toggle it by accident.
+* The "DW" variants of sets will be used automatically if the Dual Wield trait is available.
 
 Abilities
 * Attempting to dismiss your pet while it is not at full HP is blocked. If it was allowed, it would put your pet on
@@ -56,6 +57,8 @@ Other
   if you choose to ignore them, it doesn't not actually affect anything.
 * Equipping certain gear such as warp rings or ammo belts will automatically lock that slot until you manually
   unequip it or change zones.
+* Set named sets.Special.Sleepyhead will be equipped if you are asleep. This should have a piece of gear in it that
+  will deal damage to you to wake you up.
 
 
 ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎

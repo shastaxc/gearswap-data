@@ -44,6 +44,7 @@ Weapons
   useful if you are intentionally trying not to kill something, like low level enemies where you may need
   to proc them with a WS without killing them. This overrides all other weapon modes and weapon equip logic.
   * Memorize the keybind to turn it off in case you toggle it by accident.
+* The "DW" variants of sets will be used automatically if the Dual Wield trait is available.
 
 Spells
 * Spell sets are managed in the AzureSets addon.

@@ -58,6 +58,8 @@ Weapons
   * Additional weapon sets can be created but you need to also add them to the state.WeaponSet cycle.
 * Feel free to put weapons into sets, but they will only swap if in Pet or PetDT hybrid mode and master is not
   engaged. Otherwise, you will be locked into whatever weapons are set in your state.WeaponSet cycle.
+* The "DW" variants of sets will be used automatically if the Dual Wield trait is available.
+  * If idle or in pet mode and you use an ability but cannot dual wield, your offhand will use sets.FallbackShield.
 
 Abilities
 * Ready moves will not swap gear for the midcast if you are in Master hybrid mode unless they are included in the
@@ -84,6 +86,8 @@ Other
   if you choose to ignore them, it doesn't not actually affect anything.
 * Equipping certain gear such as warp rings or ammo belts will automatically lock that slot until you manually
   unequip it or change zones.
+* Set named sets.Special.Sleepyhead will be equipped if you are asleep. This should have a piece of gear in it that
+  will deal damage to you to wake you up.
 * If your pet is engaged and you are in Pet mode, you will be in a PetEngaged set typically. If you need movement
   speed gear equipped in this situation, you can toggle on Kiting mode (CTRL+F10). Just remember to turn it off
   when you're done.
