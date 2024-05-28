@@ -65,7 +65,6 @@ Other
 Modes:
   [ F9 ]              Cycle Melee Accuracy
   [ CTRL+F9 ]         Cycle Melee Defense
-  [ ALT+F9 ]          Cycle Ranged Accuracy
   [ F10 ]             Toggle Emergency -PDT
   [ ALT+F10 ]         Toggle Kiting (on = move speed gear always equipped)
   [ F11 ]             Toggle Emergency -MDT
@@ -73,13 +72,7 @@ Modes:
   [ CTRL+F12 ]        Cycle Idle modes
   [ ALT+F12 ]         Cancel Emergency -PDT/-MDT Mode
   [ WIN+C ]           Toggle Capacity Points Mode
-  [ CTRL+- ]          Cycle Quick Draw primary shot element
-  [ CTRL+= ]          Cycleback Quick Draw primary shot element
-  [ ALT+- ]           Cycle Quick Draw secondary shot element
-  [ ALT+= ]           Cycleback Quick Draw secondary shot element
-  [ CTRL+\ ]          Cycle Quick Draw mode cycle (affects gear equipped for QD)
-  [ WIN+` ]           Toggle Luzaf Ring for Phantom Roll
-  [ CTRL+/ ]          Toggle RA Crit mode
+  [ WIN+E ]           Cycle Enmity Mode
 
 Weapons:
   [ CTRL+Insert ]     Cycle Weapon Sets
@@ -95,23 +88,27 @@ Spells:
   [ ALT+Numpad. ]     Utsusemi: Ni
 
 Abilities:
-  [ ALT+` ]           Bolter's Roll
-  [ ALT+Q ]           Double-Up
-  [ ALT+E ]           Random Deal
-  [ ALT+W ]           Triple Shot
+  [ ALT+` ]           Chakra
+  [ ALT+Q ]           Impetus
+  [ ALT+E ]           Footwork
+  [ CTRL+Numpad+ ]    Boost
   ============ /WAR ============
   [ CTRL+Numlock ]    Defender
   [ CTRL+Numpad/ ]    Berserk
   [ CTRL+Numpad* ]    Warcry
   [ CTRL+Numpad- ]    Aggressor
-  ============ /DRG ============
-  [ CTRL+Numlock ]    Ancient Circle
-  [ CTRL+Numpad/ ]    Jump
-  [ CTRL+Numpad* ]    High Jump
-  [ CTRL+Numpad- ]    Super Jump
-
-Other:
-  [ Numpad0 ]         Ranged Attack
+  ============ /SAM ============
+  [ CTRL+Numlock ]    Third Eye
+  [ CTRL+Numpad/ ]    Meditate
+  [ CTRL+Numpad* ]    Sekkanoki
+  [ CTRL+Numpad- ]    Hasso
+  ============ /THF ============
+  [ CTRL+Numpad0 ]    Sneak Attack
+  [ CTRL+Numpad. ]    Trick Attack
+  ============ /RUN ============
+  [ CTRL+- ]          Cycleback Rune
+  [ CTRL+= ]          Cycle Rune
+  [ Numpad0 ]         Execute Rune
 
 SilverLibs keybinds:
   [ ALT+D ]           Interact
@@ -132,13 +129,7 @@ Global-Binds.lua contains additional non-job-related keybinds.
 ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
 Prepend with /console to use these in in-game macros.
 
-gs c qd                 Uses the currently-selected primary Quick Draw shot on current target <t>.
-gs c qd main            Same as above
-gs c qd main t          Same as above
-gs c qd main stnpc      Uses the currently-selected primary Quick Draw shot on select target <stnpc>.
-gs c qd alt             Uses the currently-selected alternate Quick Draw shot on current target <t>.
-gs c qd alt t           Same as above
-gs c qd alt stnpc       Uses the currently-selected alternate Quick Draw shot on select target <stnpc>.
+gs c runes              Execute rune that is selected in the Rune mode
 
 gs c bind               Sets keybinds again. Sometimes they don't all get set when swapping jobs. Calling this manually fixes it.
 
@@ -151,15 +142,20 @@ gs c equipweapons       Equips weapons based on your current states that you've 
                                             Recommended In-game Macros
 ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
 __Keybind___Name______________Command_____________
-[ CTRL+1 ] SnakeEye       /ja "Snake Eye" <me>
-[ CTRL+2 ] Fold           /ja "Fold" <me>
-[ CTRL+3 ] CrookedC       /ja "Crooked Cards" <me>
-[ CTRL+9 ] WildCard       /ja "Wild Card" <me>
-[ ALT+1 ]  Roll1          /console roller roll roll1
-[ ALT+2 ]  Roll2          /console roller roll roll2
-[ ALT+3 ]  QD             /console gs c qd main t
-[ ALT+4 ]  QD2            /console gs c qd alt t
-[ ALT+9 ]  Cutting        /ja "Cutting Cards" <stpc>
+[ CTRL+1 ] ChiBlast       /ja "Chi Blast" <t>
+[ CTRL+2 ] Focus          /ja "Focus" <me>
+[ CTRL+3 ] CStance        /ja "Counterstance" <me>
+[ CTRL+4 ] HasteSam       /ja "Haste Samba" <me>
+[ CTRL+6 ] Valiance       /ja "Valiance" <me>
+[ CTRL+9 ] HundredF       /ja "Hundred Fists" <me>
+[ CTRL+0 ] Provoke        /ja "Provoke" <stnpc>
+[ ALT+1 ]  Stun           /ws "Shoulder Tackle" <t>
+[ ALT+2 ]  Dodge          /ja "Dodge" <me>
+[ ALT+3 ]  PerfCoun       /ja "Perfect Counter" <me>
+[ ALT+4 ]  Erase          /ja "Healing Waltz" <stpc>
+[ ALT+8 ]  Mantra         /ja "Mantra" <me>
+[ ALT+9 ]  InnerStr       /ja "Inner Strength" <me>
+[ ALT+0 ]  Formless       /ja "Formless Strikes" <me>
 
 ]]--
 
@@ -1511,10 +1507,7 @@ end)
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
   -- Default macro set/book: (set, book)
-  set_macro_page(2, 1)
-  if player.sub_job == 'RUN' then
-    set_macro_page(3, 1)
-  end
+  set_macro_page(1, 1)
 end
 
 
