@@ -1,49 +1,150 @@
--- File Status: Good.
+--[[
+File Status: Good.
 
--- Author: Silvermutt
--- Required external libraries: SilverLibs
--- Required addons: HasteInfo, DistancePlus
--- Recommended addons: WSBinder, Reorganizer
--- Misc Recommendations: Disable GearInfo, disable RollTracker
+Author: Silvermutt
+Required external libraries: SilverLibs
+Required addons: HasteInfo, DistancePlus
+Recommended addons: WSBinder, Reorganizer
+Misc Recommendations: Disable GearInfo, disable RollTracker
 
--------------------------------------------------------------------------------------------------------------------
---  Keybinds
--------------------------------------------------------------------------------------------------------------------
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                                  General Use Tips
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+Modes
+* Offense Mode: Changes melee accuracy level
+* Hybrid Mode: Changes damage taken level while engaged
+* Casting Mode: Changes casting type
+  * Resistant: Allows you to make high magic accuracy set variants for higher level mobs who may resist more frequently
+* Defense Mode: Equips super high emergency damage reduction set, greatly reduces your DPS output
+  * There is a Cait Sith PDT mode you can use during fight with the HTBF Cait Sith. Tweak the set to have the
+    correct amount of HP for the fight (not divisible by 2, 3, 4, 5, or 6).
+* Idle Mode: Determines which set to use when not engaged
+  * Normal: Allows automatically equipping Regen, Refresh, and Regain gear as needed
+  * HeavyDef: Uses defensive set and disables automatically equipping Regen, Refresh, and Regain gear
+* Weaponskill Mode
+  * Proc: When using an Abyssea red proc weaponskill, uses a sets.precast.WS['Proc'] set which should have low damage.
+    Mainly for not killing enemies by accident while proccing, especially with the Katana elemental WSs.
+* CP Mode: Equips Capacity Points bonus cape
+* AttCapped: When on, if you have AttCapped set variants for your weaponskills, it will use that. This mode is
+  intended to be used when you think you are attack capped vs your enemy such as when you have a lot of Attack buffs
+  from BRD, COR, GEO, etc.
+* Magic Burst Mode: Toggle Magic Burst mode on or off. If on, when casting elemental ninjutsu, will
+  use MB set variant to deal more damage. You are expected to know when your spell is going to MB or not, and
+  toggle this mode manually as needed. Good rule of thumb is to leave it on when in a party doing planned skillchains
+  and off otherwise.
+* Elemental Mode: Changes the focused element for elemental ninjutsu. The selected element is used for ninjutsu
+  keybinds.
 
---  Modes:      [ F9 ]              Cycle Offense Modes
---              [ CTRL+F9 ]         Cycle Hybrid Modes
---              [ WIN+F9 ]          Cycle Weapon Skill Modes
---              [ F10 ]             Emergency -PDT Mode
---              [ ALT+F10 ]         Toggle Kiting Mode
---              [ F11 ]             Emergency -MDT Mode
---              [ CTRL+F11 ]        Cycle Casting Modes
---              [ F12 ]             Update Current Gear / Report Current Status
---              [ CTRL+F12 ]        Cycle Idle Modes
---              [ ALT+F12 ]         Cancel Emergency -PDT/-MDT Mode
---              [ CTRL+` ]          Toggle Treasure Hunter Mode
---              [ ALT+` ]           Toggle Magic Burst Mode
---              [ WIN+C ]           Toggle Capacity Points Mode
---
---  Abilities:  [ CTRL+- ]          Yonin
---              [ CTRL+= ]          Innin
---              [ CTRL+Numpad/ ]    Berserk
---              [ CTRL+Numpad* ]    Warcry
---              [ CTRL+Numpad- ]    Aggressor
---
---  Spells:     [ WIN+, ]           Utsusemi: Ichi
---              [ WIN+. ]           Utsusemi: Ni
---              [ WIN+/ ]           Utsusemi: San
---              [ ALT+, ]           Monomi: Ichi
---              [ ALT+. ]           Tonko: Ni
---
---  WS:         [ CTRL+Numpad7 ]    Blade: Kamu
---              [ CTRL+Numpad8 ]    Blade: Shun
---              [ CTRL+Numpad4 ]    Blade: Ten
---              [ CTRL+Numpad6 ]    Blade: Hi
---              [ CTRL+Numpad1 ]    Blade: Yu
---
---
---              (Global-Binds.lua contains additional non-job-related keybinds)
+Weapons
+* Use keybinds to cycle weapons.
+* If you want different weapon sets, edit the sets.WeaponSet sets.
+  * Additional weapon sets can be created but you need to also add them to the state.WeaponSet cycle.
+* All other sets (like precast, midcast, idle, etc.) should exclude weapons (main, sub, range).
+* If you enable one of the ToyWeapons modes, it will lock your weapons into low level weapons. This can be
+  useful if you are intentionally trying not to kill something, like low level enemies where you may need
+  to proc them with a WS without killing them. This overrides all other weapon modes and weapon equip logic.
+  * Memorize the keybind to turn it off in case you toggle it by accident.
+
+Spells
+* While under Yonin, set variant will be used for Utsusemi that prioritizes Enmity+ over Fast Cast (reduces recast
+  time) in the midcast set.
+
+Other
+* If you are not using my reorganizer addon, remove all the sets.org sets (including in character global file).
+* I generally plan out best-in-slot (BiS) pieces for each set even before I acquire the pieces. These BiS pieces are
+  left commented out in the set, while placeholders that I do have in the meantime are uncommented for that slot.
+* I like to list out the important stats for each piece of item in most of my sets, and then have a total at
+  the bottom of the set. If you ever change any pieces of gear, you should recalculate the stats for the new piece
+  and then recalculate for the set total, or just remove those stat comments entirely to avoid confusion. However,
+  if you choose to ignore them, it doesn't not actually affect anything.
+* Equipping certain gear such as warp rings or ammo belts will automatically lock that slot until you manually
+  unequip it or change zones.
+
+
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                                      Keybinds
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+Modes:
+  [ F9 ]                Cycle Melee Accuracy
+  [ CTRL+F9 ]           Cycle Melee Defense
+  [ F10 ]               Toggle Emergency -PDT
+  [ ALT+F10 ]           Toggle Kiting (on = move speed gear always equipped)
+  [ F11 ]               Toggle Emergency -MDT
+  [ F12 ]               Report current status
+  [ CTRL+F12 ]          Cycle Idle modes
+  [ ALT+F12 ]           Cancel Emergency -PDT/-MDT Mode
+  [ WIN+F9 ]            Cycle Weaponskill Mode
+  [ WIN+C ]             Toggle Capacity Points Mode
+  [ ALT+` ]             Toggle Magic Burst mode
+  [ CTRL+- ]            Cycleback Elemental Mode
+  [ CTRL+= ]            Cycle Elemental Mode
+  [ CTRL+F8 ]           Toggle Attack Capped mode
+
+Weapons:
+  [ CTRL+Insert ]       Cycle Weapon Sets
+  [ CTRL+Delete ]       Cycleback Weapon Sets
+  [ ALT+Delete ]        Reset to default Weapon Set
+  [ CTRL+PageUp ]       Cycle Toy Weapon Sets
+  [ CTRL+PageDown ]     Cycleback Toy Weapon Sets
+  [ ALT+PageDown ]      Reset to default Toy Weapon Set
+
+Spells:
+  ============ /NIN ============
+  [ ALT+Q ]             Utsusemi: Ichi
+  [ ALT+W ]             Utsusemi: Ni
+  [ ALT+E ]             Utsusemi: San
+  [ CTRL+Numpad+ ]      Execute elemental ninjutsu
+
+Abilities:
+  [ ALT+Numpad+ ]       Futae
+  [ CTRL+NumpadEnter ]  Innin
+  [ ALT+NumpadEnter ]   Yonin
+  ============ /WAR ============
+  [ CTRL+Numlock ]      Defender
+  [ CTRL+Numpad/ ]      Berserk
+  [ CTRL+Numpad* ]      Warcry
+  [ CTRL+Numpad- ]      Aggressor
+
+SilverLibs keybinds:
+  [ ALT+D ]             Interact
+  [ ALT+S ]             Turn 180 degrees in place
+  [ WIN+W ]             Toggle Rearming Lock
+                          (off = re-equip previous weapons if you go barehanded)
+                          (on = prevent weapon auto-equipping)
+  [ CTRL+` ]            Cycle Treasure Hunter Mode
+
+For more info and available functions, see SilverLibs documentation at:
+https://github.com/shastaxc/silver-libs
+
+Global-Binds.lua contains additional non-job-related keybinds.
+
+
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                                  Custom Commands
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+Prepend with /console to use these in in-game macros.
+
+gs c ninelemental       Execute elemental ninjutsu corresponding to the element that is selected in the Elemental
+                        Mode
+gs c bind               Sets keybinds again. Sometimes they don't all get set when swapping jobs. Calling this
+                        manually fixes it.
+gs c equipweapons       Equips weapons based on your current states that you've set.
+
+(More commands available through SilverLibs)
+
+
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                            Recommended In-game Macros
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+__Keybind___Name______________Command_____________
+[ CTRL+1 ] Issekigan      /ja "Issekigan" <me>
+[ CTRL+0 ] Provoke        /ja "Provoke" <stnpc>
+[ ALT+1 ]  StoreTP        /ma "Kakka: Ichi" <me>
+[ ALT+2 ]  Migawari       /ma "Migawari: Ichi" <me>
+[ ALT+3 ]  SubtlBlo       /ma "Myoshu: Ichi" <me>
+[ ALT+9 ]  Mikage         /ja "Mikage" <me>
+
+]]--
 
 
 -------------------------------------------------------------------------------------------------------------------

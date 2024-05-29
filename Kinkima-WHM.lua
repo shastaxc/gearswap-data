@@ -45,67 +45,67 @@ Other
                                                       Keybinds
 ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
 Modes:
-  [ F9 ]              Cycle Melee Accuracy
-  [ CTRL+F9 ]         Cycle Melee Defense
-  [ F10 ]             Toggle Emergency -PDT
-  [ ALT+F10 ]         Toggle Kiting (on = move speed gear always equipped)
-  [ F11 ]             Toggle Emergency -MDT
-  [ F12 ]             Report current status
-  [ CTRL+F12 ]        Cycle Idle modes
-  [ ALT+F12 ]         Cancel Emergency -PDT/-MDT Mode
-  [ WIN+C ]           Toggle Capacity Points Mode
-  [ CTRL+Insert ]     Cycleback BarElement
-  [ CTRL+Delete ]     Cycle BarElement
-  [ ALT+Delete ]      Reset BarElement cycle
-  [ CTRL+Home ]       Cycleback BarStatus
-  [ CTRL+End ]        Cycle BarStatus
-  [ ALT+End ]         Reset BarStatus
-  [ CTRL+. ]          Cycleback Curaga Tier
-  [ CTRL+/ ]          Cycle Curaga Tier
+  [ F9 ]                Cycle Melee Accuracy
+  [ CTRL+F9 ]           Cycle Melee Defense
+  [ F10 ]               Toggle Emergency -PDT
+  [ ALT+F10 ]           Toggle Kiting (on = move speed gear always equipped)
+  [ F11 ]               Toggle Emergency -MDT
+  [ F12 ]               Report current status
+  [ CTRL+F12 ]          Cycle Idle modes
+  [ ALT+F12 ]           Cancel Emergency -PDT/-MDT Mode
+  [ WIN+C ]             Toggle Capacity Points Mode
+  [ CTRL+Insert ]       Cycleback BarElement
+  [ CTRL+Delete ]       Cycle BarElement
+  [ ALT+Delete ]        Reset BarElement cycle
+  [ CTRL+Home ]         Cycleback BarStatus
+  [ CTRL+End ]          Cycle BarStatus
+  [ ALT+End ]           Reset BarStatus
+  [ CTRL+. ]            Cycleback Curaga Tier
+  [ CTRL+/ ]            Cycle Curaga Tier
   ============ /SCH ============
-  [ CTRL+PageUp ]     Cycle Storm
-  [ CTRL+PageDown]    Cycleback Storm
-  [ ALT+PageDown ]    Reset Storm cycle
+  [ CTRL+PageUp ]       Cycle Storm
+  [ CTRL+PageDown]      Cycleback Storm
+  [ ALT+PageDown ]      Reset Storm cycle
 
 Spells:
-  [ ALT+W ]           Curaga (with tier set from cycle)
-  [ ALT+Z ]           BarElement (set from cycle)
-  [ ALT+X ]           BarStatus (set from cycle)
-  [ ALT+A ]           Auspice
-  [ ALT+E ]           Haste
-  [ ALT+U ]           Blink
-  [ ALT+I ]           Stoneskin
-  [ ALT+P ]           Aquaveil
-  [ ALT+; ]           Regen IV
-  [ CTRL+Z ]          Boost-INT
-  [ CTRL+X ]          Boost-MND
-  [ CTRL+C ]          Boost-STR
-  [ CTRL+V ]          Boost-AGI
+  [ ALT+W ]             Curaga (with tier set from cycle)
+  [ ALT+Z ]             BarElement (set from cycle)
+  [ ALT+X ]             BarStatus (set from cycle)
+  [ ALT+A ]             Auspice
+  [ ALT+E ]             Haste
+  [ ALT+U ]             Blink
+  [ ALT+I ]             Stoneskin
+  [ ALT+P ]             Aquaveil
+  [ ALT+; ]             Regen IV
+  [ CTRL+Z ]            Boost-INT
+  [ CTRL+X ]            Boost-MND
+  [ CTRL+C ]            Boost-STR
+  [ CTRL+V ]            Boost-AGI
   ============ /SCH ============
-  [ ALT+C ]           Storm
-  [ ALT+/ ]           Klimaform
+  [ ALT+C ]             Storm
+  [ ALT+/ ]             Klimaform
   ============ /RDM ============
-  [ ALT+' ]           Refresh
+  [ ALT+' ]             Refresh
 
 Abilities:
-  [ ALT+` ]           Afflatus Solace
+  [ ALT+` ]             Afflatus Solace
   ============ /SCH ============
-  [ ALT+R ]           Sublimation
-  [ CTRL+- ]          Light Arts/Addendum: White
-  [ CTRL+= ]          Dark Arts/Addendum: Black
-  [ CTRL+[ ]          Rapture (LA) / Ebullience (DA)
-  [ CTRL+\ ]          Penury (LA) / Parsimony (DA)
-  [ ALT+[ ]           Accession (LA) / Manifestation (DA)
-  [ ALT+\ ]           Celerity (LA) / Alacrity (DA)
+  [ ALT+R ]             Sublimation
+  [ CTRL+- ]            Light Arts/Addendum: White
+  [ CTRL+= ]            Dark Arts/Addendum: Black
+  [ CTRL+[ ]            Rapture (LA) / Ebullience (DA)
+  [ CTRL+\ ]            Penury (LA) / Parsimony (DA)
+  [ ALT+[ ]             Accession (LA) / Manifestation (DA)
+  [ ALT+\ ]             Celerity (LA) / Alacrity (DA)
   ============ /RDM ============
-  [ Shift+` ]         Convert
+  [ Shift+` ]           Convert
 
 SilverLibs keybinds:
-  [ ALT+D ]           Interact
-  [ ALT+S ]           Turn 180 degrees in place
-  [ WIN+W ]           Toggle Rearming Lock
-                      (off = re-equip previous weapons if you go barehanded)
-                      (on = prevent weapon auto-equipping)
+  [ ALT+D ]             Interact
+  [ ALT+S ]             Turn 180 degrees in place
+  [ WIN+W ]             Toggle Rearming Lock
+                          (off = re-equip previous weapons if you go barehanded)
+                          (on = prevent weapon auto-equipping)
 
 For more info and available functions, see SilverLibs documentation at:
 https://github.com/shastaxc/silver-libs

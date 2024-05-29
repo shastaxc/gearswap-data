@@ -58,63 +58,63 @@ Other
                                                       Keybinds
 ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
 Modes:
-  [ F9 ]              Cycle Melee Accuracy
-  [ CTRL+F9 ]         Cycle Melee Defense
-  [ ALT+F9 ]          Cycle Ranged Accuracy
-  [ F10 ]             Toggle Emergency -PDT
-  [ ALT+F10 ]         Toggle Kiting (on = move speed gear always equipped)
-  [ F11 ]             Toggle Emergency -MDT
-  [ F12 ]             Report current status
-  [ CTRL+F12 ]        Cycle Idle modes
-  [ ALT+F12 ]         Cancel Emergency -PDT/-MDT Mode
-  [ WIN+C ]           Toggle Capacity Points Mode
-  [ CTRL+- ]          Cycle Quick Draw primary shot element
-  [ CTRL+= ]          Cycleback Quick Draw primary shot element
-  [ ALT+- ]           Cycle Quick Draw secondary shot element
-  [ ALT+= ]           Cycleback Quick Draw secondary shot element
-  [ CTRL+\ ]          Cycle Quick Draw mode cycle (affects gear equipped for QD)
-  [ WIN+` ]           Toggle Luzaf Ring for Phantom Roll
-  [ CTRL+/ ]          Toggle RA Crit mode
+  [ F9 ]                Cycle Melee Accuracy
+  [ CTRL+F9 ]           Cycle Melee Defense
+  [ ALT+F9 ]            Cycle Ranged Accuracy
+  [ F10 ]               Toggle Emergency -PDT
+  [ ALT+F10 ]           Toggle Kiting (on = move speed gear always equipped)
+  [ F11 ]               Toggle Emergency -MDT
+  [ F12 ]               Report current status
+  [ CTRL+F12 ]          Cycle Idle modes
+  [ ALT+F12 ]           Cancel Emergency -PDT/-MDT Mode
+  [ WIN+C ]             Toggle Capacity Points Mode
+  [ CTRL+- ]            Cycle Quick Draw primary shot element
+  [ CTRL+= ]            Cycleback Quick Draw primary shot element
+  [ ALT+- ]             Cycle Quick Draw secondary shot element
+  [ ALT+= ]             Cycleback Quick Draw secondary shot element
+  [ CTRL+\ ]            Cycle Quick Draw mode cycle (affects gear equipped for QD)
+  [ WIN+` ]             Toggle Luzaf Ring for Phantom Roll
+  [ CTRL+/ ]            Toggle RA Crit mode
 
 Weapons:
-  [ CTRL+Insert ]     Cycle Weapon Sets
-  [ CTRL+Delete ]     Cycleback Weapon Sets
-  [ ALT+Delete ]      Reset to default Weapon Set
-  [ CTRL+PageUp ]     Cycle Toy Weapon Sets
-  [ CTRL+PageDown ]   Cycleback Toy Weapon Sets
-  [ ALT+PageDown ]    Reset to default Toy Weapon Set
+  [ CTRL+Insert ]       Cycle Weapon Sets
+  [ CTRL+Delete ]       Cycleback Weapon Sets
+  [ ALT+Delete ]        Reset to default Weapon Set
+  [ CTRL+PageUp ]       Cycle Toy Weapon Sets
+  [ CTRL+PageDown ]     Cycleback Toy Weapon Sets
+  [ ALT+PageDown ]      Reset to default Toy Weapon Set
 
 Spells:
   ============ /NIN ============
-  [ ALT+Numpad0 ]     Utsusemi: Ichi
-  [ ALT+Numpad. ]     Utsusemi: Ni
+  [ ALT+Numpad0 ]       Utsusemi: Ichi
+  [ ALT+Numpad. ]       Utsusemi: Ni
 
 Abilities:
-  [ ALT+` ]           Bolter's Roll
-  [ ALT+Q ]           Double-Up
-  [ ALT+E ]           Random Deal
-  [ ALT+W ]           Triple Shot
+  [ ALT+` ]             Bolter's Roll
+  [ ALT+Q ]             Double-Up
+  [ ALT+E ]             Random Deal
+  [ ALT+W ]             Triple Shot
   ============ /WAR ============
-  [ CTRL+Numlock ]    Defender
-  [ CTRL+Numpad/ ]    Berserk
-  [ CTRL+Numpad* ]    Warcry
-  [ CTRL+Numpad- ]    Aggressor
+  [ CTRL+Numlock ]      Defender
+  [ CTRL+Numpad/ ]      Berserk
+  [ CTRL+Numpad* ]      Warcry
+  [ CTRL+Numpad- ]      Aggressor
   ============ /DRG ============
-  [ CTRL+Numlock ]    Ancient Circle
-  [ CTRL+Numpad/ ]    Jump
-  [ CTRL+Numpad* ]    High Jump
-  [ CTRL+Numpad- ]    Super Jump
+  [ CTRL+Numlock ]      Ancient Circle
+  [ CTRL+Numpad/ ]      Jump
+  [ CTRL+Numpad* ]      High Jump
+  [ CTRL+Numpad- ]      Super Jump
 
 Other:
-  [ Numpad0 ]         Ranged Attack
+  [ Numpad0 ]           Ranged Attack
 
 SilverLibs keybinds:
-  [ ALT+D ]           Interact
-  [ ALT+S ]           Turn 180 degrees in place
-  [ WIN+W ]           Toggle Rearming Lock
-                      (off = re-equip previous weapons if you go barehanded)
-                      (on = prevent weapon auto-equipping)
-  [ CTRL+` ]          Cycle Treasure Hunter Mode
+  [ ALT+D ]             Interact
+  [ ALT+S ]             Turn 180 degrees in place
+  [ WIN+W ]             Toggle Rearming Lock
+                          (off = re-equip previous weapons if you go barehanded)
+                          (on = prevent weapon auto-equipping)
+  [ CTRL+` ]            Cycle Treasure Hunter Mode
 
 For more info and available functions, see SilverLibs documentation at:
 https://github.com/shastaxc/silver-libs

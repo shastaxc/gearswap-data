@@ -11,28 +11,32 @@ Misc Recommendations: Disable GearInfo, disable RollTracker
 ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
                                                       Keybinds
 ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
-Modes:      [ F9 ]              Cycle Offense Mode
-            [ CTRL+F9 ]         Cycle Hybrid Modes
-            [ WIN+F9 ]          Cycle Weapon Skill Modes
-            [ F10 ]             Emergency -PDT Mode
-            [ ALT+F10 ]         Toggle Kiting Mode
-            [ F11 ]             Emergency -MDT Mode
-            [ CTRL+F11 ]        Cycle Casting Modes
-            [ F12 ]             Update Current Gear / Report Current Status
-            [ CTRL+F12 ]        Cycle Idle Modes
-            [ ALT+F12 ]         Cancel Emergency -PDT/-MDT Mode
-            [ WIN+C ]           Toggle Capacity Points Mode
-            [ CTRL+B ]          Toggle Battle Mode
-            [ CTRL+Delete ]     Weapon Weapons
-            [ CTRL+Insert ]     Cycleback Weapons
+Modes:
+  [ F9 ]                Cycle Offense Mode
+  [ CTRL+F9 ]           Cycle Hybrid Modes
+  [ WIN+F9 ]            Cycle Weapon Skill Modes
+  [ F10 ]               Emergency -PDT Mode
+  [ ALT+F10 ]           Toggle Kiting Mode
+  [ F11 ]               Emergency -MDT Mode
+  [ CTRL+F11 ]          Cycle Casting Modes
+  [ F12 ]               Update Current Gear / Report Current Status
+  [ CTRL+F12 ]          Cycle Idle Modes
+  [ ALT+F12 ]           Cancel Emergency -PDT/-MDT Mode
+  [ WIN+C ]             Toggle Capacity Points Mode
+  [ CTRL+B ]            Toggle Battle Mode
+  [ CTRL+Delete ]       Weapon Weapons
+  [ CTRL+Insert ]       Cycleback Weapons
 
-Abilities:  [ CTRL+` ]          Cycle SongMode
+Abilities:
+  [ CTRL+` ]            Cycle SongMode
 
-Songs:      [ ALT+` ]           Chocobo Mazurka
-            [ WIN+, ]           Utsusemi: Ichi
-            [ WIN+. ]           Utsusemi: Ni
+Songs:
+  [ ALT+` ]             Chocobo Mazurka
+  [ WIN+, ]             Utsusemi: Ichi
+  [ WIN+. ]             Utsusemi: Ni
 
-Weapons:    [ CTRL+W ]          Toggles Weapon Lock
+Weapons:
+  [ CTRL+W ]            Toggles Weapon Lock
 
 For more info and available functions, see SilverLibs documentation at:
 https://github.com/shastaxc/silver-libs

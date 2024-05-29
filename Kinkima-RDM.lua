@@ -68,70 +68,70 @@ Other
                                                       Keybinds
 ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
 Modes:
-  [ F9 ]              Cycle Melee Accuracy
-  [ CTRL+F9 ]         Cycle Melee Defense
-  [ F10 ]             Toggle Emergency -PDT
-  [ ALT+F10 ]         Toggle Kiting (on = move speed gear always equipped)
-  [ F11 ]             Toggle Emergency -MDT
-  [ F12 ]             Report current status
-  [ CTRL+F12 ]        Cycle Idle modes
-  [ ALT+F12 ]         Cancel Emergency -PDT/-MDT Mode
-  [ WIN+C ]           Toggle Capacity Points Mode
-  [ CTRL+PageUp ]     Cycle Elemental Mode
-  [ CTRL+PageDown ]   Cycleback Elemental Mode
-  [ ALT+PageDown ]    Reset to default Elemental Mode
-  [ ALT+` ]           Toggle Magic Burst mode
-  [ WIN+S ]           Toggle Sleep mode
-  [ WIN+N ]           Toggle NM mode
+  [ F9 ]                Cycle Melee Accuracy
+  [ CTRL+F9 ]           Cycle Melee Defense
+  [ F10 ]               Toggle Emergency -PDT
+  [ ALT+F10 ]           Toggle Kiting (on = move speed gear always equipped)
+  [ F11 ]               Toggle Emergency -MDT
+  [ F12 ]               Report current status
+  [ CTRL+F12 ]          Cycle Idle modes
+  [ ALT+F12 ]           Cancel Emergency -PDT/-MDT Mode
+  [ WIN+C ]             Toggle Capacity Points Mode
+  [ CTRL+PageUp ]       Cycle Elemental Mode
+  [ CTRL+PageDown ]     Cycleback Elemental Mode
+  [ ALT+PageDown ]      Reset to default Elemental Mode
+  [ ALT+` ]             Toggle Magic Burst mode
+  [ WIN+S ]             Toggle Sleep mode
+  [ WIN+N ]             Toggle NM mode
 
 Weapons:
-  [ CTRL+Insert ]     Cycle Weapon Sets
-  [ CTRL+Delete ]     Cycleback Weapon Sets
-  [ ALT+Delete ]      Reset to default Weapon Set
-  [ CTRL+Home ]       Cycle Toy Weapon Sets
-  [ CTRL+End ]        Cycleback Toy Weapon Sets
-  [ ALT+End ]         Reset to default Toy Weapon Set
+  [ CTRL+Insert ]       Cycle Weapon Sets
+  [ CTRL+Delete ]       Cycleback Weapon Sets
+  [ ALT+Delete ]        Reset to default Weapon Set
+  [ CTRL+Home ]         Cycle Toy Weapon Sets
+  [ CTRL+End ]          Cycleback Toy Weapon Sets
+  [ ALT+End ]           Reset to default Toy Weapon Set
 
 Spells:
-  [ ALT+Q ]           Tier 3 single target nuke
-  [ ALT+W ]           Highest available single target nuke
-  [ ALT+Z ]           Temper II
-  [ ALT+X ]           Enspell
-  [ ALT+E ]           Haste II
-  [ ALT+R ]           Dispel
-  [ ALT+U ]           Blink
-  [ ALT+I ]           Stoneskin
-  [ ALT+O ]           Phalanx
-  [ ALT+P ]           Aquaveil
-  [ ALT+; ]           Regen II
-  [ ALT+' ]           Refresh III
-  [ CTRL+Z ]          Gain-INT
-  [ CTRL+X ]          Gain-MND
-  [ CTRL+C ]          Gain-STR
-  [ CTRL+V ]          Gain-DEX
+  [ ALT+Q ]             Tier 3 single target nuke
+  [ ALT+W ]             Highest available single target nuke
+  [ ALT+Z ]             Temper II
+  [ ALT+X ]             Enspell
+  [ ALT+E ]             Haste II
+  [ ALT+R ]             Dispel
+  [ ALT+U ]             Blink
+  [ ALT+I ]             Stoneskin
+  [ ALT+O ]             Phalanx
+  [ ALT+P ]             Aquaveil
+  [ ALT+; ]             Regen II
+  [ ALT+' ]             Refresh III
+  [ CTRL+Z ]            Gain-INT
+  [ CTRL+X ]            Gain-MND
+  [ CTRL+C ]            Gain-STR
+  [ CTRL+V ]            Gain-DEX
   ============ /SCH ============
-  [ ALT+C ]           Storm
-  [ ALT+/ ]           Klimaform
+  [ ALT+C ]             Storm
+  [ ALT+/ ]             Klimaform
 
 Abilities:
-  [ Shift+` ]         Convert
-  [ Shift+Z ]         Composure
-  [ Shift+X ]         Saboteur
+  [ Shift+` ]           Convert
+  [ Shift+Z ]           Composure
+  [ Shift+X ]           Saboteur
   ============ /SCH ============
-  [ CTRL+- ]          Light Arts/Addendum: White
-  [ CTRL+= ]          Dark Arts/Addendum: Black
-  [ CTRL+[ ]          Rapture (LA) / Ebullience (DA)
-  [ CTRL+\ ]          Penury (LA) / Parsimony (DA)
-  [ ALT+[ ]           Accession (LA) / Manifestation (DA)
-  [ ALT+\ ]           Celerity (LA) / Alacrity (DA)
+  [ CTRL+- ]            Light Arts/Addendum: White
+  [ CTRL+= ]            Dark Arts/Addendum: Black
+  [ CTRL+[ ]            Rapture (LA) / Ebullience (DA)
+  [ CTRL+\ ]            Penury (LA) / Parsimony (DA)
+  [ ALT+[ ]             Accession (LA) / Manifestation (DA)
+  [ ALT+\ ]             Celerity (LA) / Alacrity (DA)
 
 SilverLibs keybinds:
-  [ ALT+D ]           Interact
-  [ ALT+S ]           Turn 180 degrees in place
-  [ WIN+W ]           Toggle Rearming Lock
-                      (off = re-equip previous weapons if you go barehanded)
-                      (on = prevent weapon auto-equipping)
-  [ CTRL+` ]          Cycle Treasure Hunter Mode
+  [ ALT+D ]             Interact
+  [ ALT+S ]             Turn 180 degrees in place
+  [ WIN+W ]             Toggle Rearming Lock
+                          (off = re-equip previous weapons if you go barehanded)
+                          (on = prevent weapon auto-equipping)
+  [ CTRL+` ]            Cycle Treasure Hunter Mode
 
 For more info and available functions, see SilverLibs documentation at:
 https://github.com/shastaxc/silver-libs

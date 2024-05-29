@@ -65,60 +65,60 @@ Other
 ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
 
 Modes:
-  [ F9 ]              Cycle Melee Accuracy
-  [ CTRL+F9 ]         Cycle Melee Defense
-  [ ALT+F9 ]          Cycle Ranged Accuracy
-  [ F10 ]             Toggle Emergency -PDT
-  [ ALT+F10 ]         Toggle Kiting (on = move speed gear always equipped)
-  [ F11 ]             Toggle Emergency -MDT
-  [ F12 ]             Report current status
-  [ CTRL+F12 ]        Cycle Idle modes
-  [ ALT+F12 ]         Cancel Emergency -PDT/-MDT Mode
-  [ WIN+C ]           Toggle Capacity Points Mode
-  [ CTRL+- ]          Cycleback Main Step
-  [ CTRL+= ]          Cycle Main Step
-  [ ALT+- ]           Cycleback Alt Step
-  [ ALT+= ]           Cycle Alt Step
-  [ CTRL+F8 ]         Toggle Attack Capped mode
+  [ F9 ]                Cycle Melee Accuracy
+  [ CTRL+F9 ]           Cycle Melee Defense
+  [ ALT+F9 ]            Cycle Ranged Accuracy
+  [ F10 ]               Toggle Emergency -PDT
+  [ ALT+F10 ]           Toggle Kiting (on = move speed gear always equipped)
+  [ F11 ]               Toggle Emergency -MDT
+  [ F12 ]               Report current status
+  [ CTRL+F12 ]          Cycle Idle modes
+  [ ALT+F12 ]           Cancel Emergency -PDT/-MDT Mode
+  [ WIN+C ]             Toggle Capacity Points Mode
+  [ CTRL+- ]            Cycleback Main Step
+  [ CTRL+= ]            Cycle Main Step
+  [ ALT+- ]             Cycleback Alt Step
+  [ ALT+= ]             Cycle Alt Step
+  [ CTRL+F8 ]           Toggle Attack Capped mode
 
 Weapons:
-  [ CTRL+Insert ]     Cycle Weapon Sets
-  [ CTRL+Delete ]     Cycleback Weapon Sets
-  [ ALT+Delete ]      Reset to default Weapon Set
-  [ CTRL+PageUp ]     Cycle Toy Weapon Sets
-  [ CTRL+PageDown ]   Cycleback Toy Weapon Sets
-  [ ALT+PageDown ]    Reset to default Toy Weapon Set
+  [ CTRL+Insert ]       Cycle Weapon Sets
+  [ CTRL+Delete ]       Cycleback Weapon Sets
+  [ ALT+Delete ]        Reset to default Weapon Set
+  [ CTRL+PageUp ]       Cycle Toy Weapon Sets
+  [ CTRL+PageDown ]     Cycleback Toy Weapon Sets
+  [ ALT+PageDown ]      Reset to default Toy Weapon Set
 
 Spells:
   ============ /NIN ============
-  [ ALT+Numpad0 ]     Utsusemi: Ichi
-  [ ALT+Numpad. ]     Utsusemi: Ni
+  [ ALT+Numpad0 ]       Utsusemi: Ichi
+  [ ALT+Numpad. ]       Utsusemi: Ni
 
 Abilities:
-  [ ALT+` ]           Call Wyvern/Dismiss (if pet is out)
-  [ ALT+Q ]           Spirit Link
-  [ CTRL+Q ]          Steady Wing
-  [ ALT+W ]           Ancient Circle
-  [ ALT+E ]           Dragon Breaker
-  [ ALT+Z ]           Spirit Bond/Cancel Spirit Bond (if it's active)
+  [ ALT+` ]             Call Wyvern/Dismiss (if pet is out)
+  [ ALT+Q ]             Spirit Link
+  [ CTRL+Q ]            Steady Wing
+  [ ALT+W ]             Ancient Circle
+  [ ALT+E ]             Dragon Breaker
+  [ ALT+Z ]             Spirit Bond/Cancel Spirit Bond (if it's active)
   ============ /WAR ============
-  [ CTRL+Numlock ]    Defender
-  [ CTRL+Numpad/ ]    Berserk
-  [ CTRL+Numpad* ]    Warcry
-  [ CTRL+Numpad- ]    Aggressor
+  [ CTRL+Numlock ]      Defender
+  [ CTRL+Numpad/ ]      Berserk
+  [ CTRL+Numpad* ]      Warcry
+  [ CTRL+Numpad- ]      Aggressor
   ============ /SAM ============
-  [ CTRL+Numlock ]    Third Eye
-  [ CTRL+Numpad/ ]    Meditate
-  [ CTRL+Numpad* ]    Sekkanoki
-  [ CTRL+Numpad- ]    Hasso
+  [ CTRL+Numlock ]      Third Eye
+  [ CTRL+Numpad/ ]      Meditate
+  [ CTRL+Numpad* ]      Sekkanoki
+  [ CTRL+Numpad- ]      Hasso
 
 SilverLibs keybinds:
-  [ ALT+D ]           Interact
-  [ ALT+S ]           Turn 180 degrees in place
-  [ WIN+W ]           Toggle Rearming Lock
-                      (off = re-equip previous weapons if you go barehanded)
-                      (on = prevent weapon auto-equipping)
-  [ CTRL+` ]          Cycle Treasure Hunter Mode
+  [ ALT+D ]             Interact
+  [ ALT+S ]             Turn 180 degrees in place
+  [ WIN+W ]             Toggle Rearming Lock
+                          (off = re-equip previous weapons if you go barehanded)
+                          (on = prevent weapon auto-equipping)
+  [ CTRL+` ]            Cycle Treasure Hunter Mode
 
 For more info and available functions, see SilverLibs documentation at:
 https://github.com/shastaxc/silver-libs
@@ -131,7 +131,7 @@ Global-Binds.lua contains additional non-job-related keybinds.
 ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
 Prepend with /console to use these in in-game macros.
 
-gs c bind             Sets keybinds again. Sometimes they don't all get set when swapping jobs. Calling this manually fixes it.
+gs c bind               Sets keybinds again. Sometimes they don't all get set when swapping jobs. Calling this manually fixes it.
 
 (More commands available through SilverLibs)
 

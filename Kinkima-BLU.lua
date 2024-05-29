@@ -67,56 +67,56 @@ Other
                                                       Keybinds
 ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
 Modes:
-  [ F9 ]              Cycle Melee Accuracy
-  [ CTRL+F9 ]         Cycle Melee Defense
-  [ ALT+F9 ]          Cycle Ranged Accuracy
-  [ F10 ]             Toggle Emergency -PDT
-  [ ALT+F10 ]         Toggle Kiting (on = move speed gear always equipped)
-  [ F11 ]             Toggle Emergency -MDT
-  [ F12 ]             Report current status
-  [ CTRL+F12 ]        Cycle Idle modes
-  [ ALT+F12 ]         Cancel Emergency -PDT/-MDT Mode
-  [ WIN+C ]           Toggle Capacity Points Mode
-  [ ALT+` ]           Toggle Magic Burst mode
-  [ CTRL+F8 ]         Toggle Attack Capped mode
-  [ CTRL+l ]          Toggle Learning mode
+  [ F9 ]                Cycle Melee Accuracy
+  [ CTRL+F9 ]           Cycle Melee Defense
+  [ ALT+F9 ]            Cycle Ranged Accuracy
+  [ F10 ]               Toggle Emergency -PDT
+  [ ALT+F10 ]           Toggle Kiting (on = move speed gear always equipped)
+  [ F11 ]               Toggle Emergency -MDT
+  [ F12 ]               Report current status
+  [ CTRL+F12 ]          Cycle Idle modes
+  [ ALT+F12 ]           Cancel Emergency -PDT/-MDT Mode
+  [ WIN+C ]             Toggle Capacity Points Mode
+  [ ALT+` ]             Toggle Magic Burst mode
+  [ CTRL+F8 ]           Toggle Attack Capped mode
+  [ CTRL+l ]            Toggle Learning mode
 
 Weapons:
-  [ CTRL+Insert ]     Cycle Weapon Sets
-  [ CTRL+Delete ]     Cycleback Weapon Sets
-  [ ALT+Delete ]      Reset to default Weapon Set
-  [ CTRL+PageUp ]     Cycle Toy Weapon Sets
-  [ CTRL+PageDown ]   Cycleback Toy Weapon Sets
-  [ ALT+PageDown ]    Reset to default Toy Weapon Set
+  [ CTRL+Insert ]       Cycle Weapon Sets
+  [ CTRL+Delete ]       Cycleback Weapon Sets
+  [ ALT+Delete ]        Reset to default Weapon Set
+  [ CTRL+PageUp ]       Cycle Toy Weapon Sets
+  [ CTRL+PageDown ]     Cycleback Toy Weapon Sets
+  [ ALT+PageDown ]      Reset to default Toy Weapon Set
 
 Spells:
-  [ ALT+W ]           Cocoon
-  [ ALT+Q ]           Occultation
-  [ ALT+E ]           Erratic Flutter
-  [ ALT+' ]           Battery Charge
+  [ ALT+W ]             Cocoon
+  [ ALT+Q ]             Occultation
+  [ ALT+E ]             Erratic Flutter
+  [ ALT+' ]             Battery Charge
   ============ /RDM ============
-  [ ALT+I ]           Stoneskin
-  [ ALT+O ]           Phalanx
-  [ ALT+P ]           Aquaveil
+  [ ALT+I ]             Stoneskin
+  [ ALT+O ]             Phalanx
+  [ ALT+P ]             Aquaveil
 
 Abilities:
-  [ CTRL+- ]          Chain Affinity
-  [ CTRL+= ]          Burst Affinity
-  [ CTRL+[ ]          Efflux
-  [ ALT+[ ]           Diffusion
-  [ ALT+] ]           Unbridled Learning
+  [ CTRL+- ]            Chain Affinity
+  [ CTRL+= ]            Burst Affinity
+  [ CTRL+[ ]            Efflux
+  [ ALT+[ ]             Diffusion
+  [ ALT+] ]             Unbridled Learning
   ============ /RDM ============
-  [ Shift+` ]         Convert
+  [ Shift+` ]           Convert
   ============ /WAR ============
-  [ CTRL+Numlock ]    Defender
-  [ CTRL+Numpad/ ]    Berserk
-  [ CTRL+Numpad* ]    Warcry
-  [ CTRL+Numpad- ]    Aggressor
+  [ CTRL+Numlock ]      Defender
+  [ CTRL+Numpad/ ]      Berserk
+  [ CTRL+Numpad* ]      Warcry
+  [ CTRL+Numpad- ]      Aggressor
 
 SilverLibs keybinds:
-  [ ALT+D ]           Interact
-  [ ALT+S ]           Turn 180 degrees in place
-  [ CTRL+` ]          Cycle Treasure Hunter mode
+  [ ALT+D ]             Interact
+  [ ALT+S ]             Turn 180 degrees in place
+  [ CTRL+` ]            Cycle Treasure Hunter mode
 
 For more info and available functions, see SilverLibs documentation at:
 https://github.com/shastaxc/silver-libs

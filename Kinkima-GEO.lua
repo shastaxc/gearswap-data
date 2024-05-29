@@ -71,73 +71,73 @@ Other
                                                       Keybinds
 ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
 Modes:
-  [ F9 ]              Cycle Melee Accuracy
-  [ CTRL+F9 ]         Cycle Melee Defense
-  [ F10 ]             Toggle Emergency -PDT
-  [ ALT+F10 ]         Toggle Kiting (on = move speed gear always equipped)
-  [ F11 ]             Toggle Emergency -MDT
-  [ F12 ]             Report current status
-  [ CTRL+F12 ]        Cycle Idle modes
-  [ ALT+F12 ]         Cancel Emergency -PDT/-MDT Mode
-  [ WIN+C ]           Toggle Capacity Points Mode
-  [ CTRL+PageUp ]     Cycle Elemental Mode
-  [ CTRL+PageDown ]   Cycleback Elemental Mode
-  [ ALT+PageDown ]    Reset to default Elemental Mode
-  [ ALT+` ]           Toggle Magic Burst mode
-  [ WIN+M ]           Toggle Recover MP mode
+  [ F9 ]                Cycle Melee Accuracy
+  [ CTRL+F9 ]           Cycle Melee Defense
+  [ F10 ]               Toggle Emergency -PDT
+  [ ALT+F10 ]           Toggle Kiting (on = move speed gear always equipped)
+  [ F11 ]               Toggle Emergency -MDT
+  [ F12 ]               Report current status
+  [ CTRL+F12 ]          Cycle Idle modes
+  [ ALT+F12 ]           Cancel Emergency -PDT/-MDT Mode
+  [ WIN+C ]             Toggle Capacity Points Mode
+  [ CTRL+PageUp ]       Cycle Elemental Mode
+  [ CTRL+PageDown ]     Cycleback Elemental Mode
+  [ ALT+PageDown ]      Reset to default Elemental Mode
+  [ ALT+` ]             Toggle Magic Burst mode
+  [ WIN+M ]             Toggle Recover MP mode
 
 Weapons:
-  [ CTRL+Insert ]     Cycle Weapon Sets
-  [ CTRL+Delete ]     Cycleback Weapon Sets
-  [ ALT+Delete ]      Reset to default Weapon Set
+  [ CTRL+Insert ]       Cycle Weapon Sets
+  [ CTRL+Delete ]       Cycleback Weapon Sets
+  [ ALT+Delete ]        Reset to default Weapon Set
 
 Spells:
-  [ ALT+Q ]           Tier 3 single target nuke
-  [ ALT+W ]           Highest available single target nuke
-  [ ALT+Z ]           Tier 2 -ara nuke
-  [ ALT+X ]           Tier 3 -ara nuke
+  [ ALT+Q ]             Tier 3 single target nuke
+  [ ALT+W ]             Highest available single target nuke
+  [ ALT+Z ]             Tier 2 -ara nuke
+  [ ALT+X ]             Tier 3 -ara nuke
   ============ /SCH ============
-  [ ALT+C ]           Storm
-  [ ALT+/ ]           Klimaform
-  [ ALT+U ]           Blink
-  [ ALT+I ]           Stoneskin
-  [ ALT+P ]           Aquaveil
+  [ ALT+C ]             Storm
+  [ ALT+/ ]             Klimaform
+  [ ALT+U ]             Blink
+  [ ALT+I ]             Stoneskin
+  [ ALT+P ]             Aquaveil
   ============ /RDM ============
-  [ ALT+E ]           Haste
-  [ ALT+U ]           Blink
-  [ ALT+I ]           Stoneskin
-  [ ALT+O ]           Phalanx
-  [ ALT+P ]           Aquaveil
-  [ ALT+' ]           Refresh
+  [ ALT+E ]             Haste
+  [ ALT+U ]             Blink
+  [ ALT+I ]             Stoneskin
+  [ ALT+O ]             Phalanx
+  [ ALT+P ]             Aquaveil
+  [ ALT+' ]             Refresh
   ============ /WHM ============
-  [ ALT+E ]           Haste
-  [ ALT+U ]           Blink
-  [ ALT+I ]           Stoneskin
-  [ ALT+P ]           Aquaveil
+  [ ALT+E ]             Haste
+  [ ALT+U ]             Blink
+  [ ALT+I ]             Stoneskin
+  [ ALT+P ]             Aquaveil
 
 Abilities:
-  [ CTRL+F ]          Entrust
-  [ CTRL+backspace ]  Full Circle
-  [ ALT+backspace ]   Life Cycle
+  [ CTRL+F ]            Entrust
+  [ CTRL+backspace ]    Full Circle
+  [ ALT+backspace ]     Life Cycle
   ============ /SCH ============
-  [ ALT+R ]           Sublimation
-  [ CTRL+- ]          Light Arts/Addendum: White
-  [ CTRL+= ]          Dark Arts/Addendum: Black
-  [ CTRL+[ ]          Rapture (LA) / Ebullience (DA)
-  [ CTRL+\ ]          Penury (LA) / Parsimony (DA)
-  [ ALT+[ ]           Accession (LA) / Manifestation (DA)
-  [ ALT+\ ]           Celerity (LA) / Alacrity (DA)
+  [ ALT+R ]             Sublimation
+  [ CTRL+- ]            Light Arts/Addendum: White
+  [ CTRL+= ]            Dark Arts/Addendum: Black
+  [ CTRL+[ ]            Rapture (LA) / Ebullience (DA)
+  [ CTRL+\ ]            Penury (LA) / Parsimony (DA)
+  [ ALT+[ ]             Accession (LA) / Manifestation (DA)
+  [ ALT+\ ]             Celerity (LA) / Alacrity (DA)
   ============ /RDM ============
-  [ Shift+` ]         Convert
+  [ Shift+` ]           Convert
 
 SilverLibs keybinds:
-  [ ALT+D ]           Interact
-  [ ALT+S ]           Turn 180 degrees in place
-  [ WIN+W ]           Toggle Rearming Lock
-                      (off = re-equip previous weapons if you go barehanded)
-                      (on = prevent weapon auto-equipping)
-  [ CTRL+` ]          Cycle Treasure Hunter Mode
-  [ CTRL+U ]          Toggle Luopan UI
+  [ ALT+D ]             Interact
+  [ ALT+S ]             Turn 180 degrees in place
+  [ WIN+W ]             Toggle Rearming Lock
+                          (off = re-equip previous weapons if you go barehanded)
+                          (on = prevent weapon auto-equipping)
+  [ CTRL+` ]            Cycle Treasure Hunter Mode
+  [ CTRL+U ]            Toggle Luopan UI
 
 For more info and available functions, see SilverLibs documentation at:
 https://github.com/shastaxc/silver-libs
