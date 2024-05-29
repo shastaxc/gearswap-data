@@ -293,10 +293,10 @@ function init_gear_sets()
   }
 
   sets.buff['Sneak Attack'] = {
-    -- hands="Skulker's Armlets +3",    -- 53, __, 72, __ <__, __, __> (__, __) [11/11,  93] __; SA+30
+    hands="Skulker's Armlets +3", -- SA+30
   }
   sets.buff['Trick Attack'] = {
-    hands="Pillager's Armlets +3",      -- 45, __, 48, __ <__, __, __> (__,  4) [__/__,  67] __; TA+20
+    hands="Pillager's Armlets +3", -- TA+20
   }
   sets.buff['Feint'] = set_combine(sets.precast.JA['Feint'], {})
 
@@ -419,7 +419,7 @@ function init_gear_sets()
   sets.precast.WS.SA = {
     ammo="Yetshila +1",                 -- __, __, __, __ <__, __, __> ( 2,  6) [__/__, ___] __
     head="Pillager's Bonnet +3",        -- 37,  6, __, __ <__, __, __> (__,  5) [__/__,  83] __
-    -- hands="Skulker's Armlets +3",    -- 53, __, 72, __ <__, __, __> (__, __) [11/11,  93] __; SA+30
+    hands="Skulker's Armlets +3",       -- 53, __, 72, __ <__, __, __> (__, __) [11/11,  93] __; SA+30
   }
   sets.precast.WS.TA = {
     ammo="Yetshila +1",                 -- __, __, __, __ <__, __, __> ( 2,  6) [__/__, ___] __
@@ -566,8 +566,9 @@ function init_gear_sets()
   sets.precast.WS["Rudra's Storm"].SA = {
     ammo="Yetshila +1",                 -- __, __, __ [__/__, ___] __
     head="Pillager's Bonnet +3",        -- 37,  6, __ [__/__,  83] __
+    hands="Skulker's Armlets +3",       -- 53, __, 72 [11/11,  93] __; SA+30
+    
     -- head="Skulker's Bonnet +3",      -- 43, __, 61 [__/__, 109] 10
-    -- hands="Skulker's Armlets +3",    -- 53, __, 72 [11/11,  93] __; SA+30
   }
   sets.precast.WS["Rudra's Storm"].TA = { -- TA uses AGI; do not use lustratio
     ammo="Yetshila +1",                 -- __, __, __ [__/__, ___] __
