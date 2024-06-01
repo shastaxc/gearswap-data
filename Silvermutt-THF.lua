@@ -462,7 +462,7 @@ function init_gear_sets()
     head="Gleti's Mask",                -- 28, __, 70, __ <__, __, __> ( 5, __) [ 6/__,  86]  6
     body="Plunderer's Vest +3",         -- 46, __, 65, __ <__, __, __> ( 6,  5) [__/__,  84] __
     hands="Gleti's Gauntlets",          -- 47, __, 70, __ <__, __, __> ( 6, __) [ 7/__,  75]  7
-    legs=gear.Lustratio_B_legs,         -- 43, __, 38, __ <__, __, __> ( 3, __) [__/__, ___] __
+    legs="Pillager's Culottes +3",      -- 15, __, 30, __ <__,  5, __> (__,  5) [__/__,  99] __
     feet=gear.Herc_DEX_CritDmg_feet,    -- 24, __,  9, __ <__,  2, __> (__,  5) [ 2/__,  75] __; adhemar good alt
     neck="Fotia Gorget",                -- __, __, __, __ <__, __, __> (__, __) [__/__, ___] __; ftp+
     ear1="Odr Earring",                 -- 10, __, __, __ <__, __, __> ( 5, __) [__/__, ___] __
@@ -472,9 +472,8 @@ function init_gear_sets()
     back=gear.THF_WS1_Cape,             -- 30, 10, 20, 20 <__, __, __> (__, __) [10/__, ___] __
     waist="Fotia Belt",                 -- __, __, __, __ <__, __, __> (__, __) [__/__, ___] __; ftp+
     -- Traits/Merits/Gifts              -- __, __, __, __ <__, 19, __> (__, 22) [__/__, ___] __
-    -- 228 DEX, 10 WSD, 272 Att, 25 TA Dmg <0 DA, 23 TA, 0 QA> (31 Crit Rate, 38 Crit Dmg) [25 PDT/0 MDT, 320 M.Eva] 13 PDL
+    -- 200 DEX, 10 WSD, 264 Att, 25 TA Dmg <0 DA, 28 TA, 0 QA> (28 Crit Rate, 43 Crit Dmg) [25 PDT/0 MDT, 419 M.Eva] 13 PDL
 
-    -- legs="Pillager's Culottes +3",   -- 15, __, 30, __ <__,  5, __> (__,  5) [__/__,  99] __
     -- back=gear.THF_WS4_Cape,          -- 30, __, 20, 20 <__, __, __> (10, __) [10/__, ___] __
     -- 200 DEX, 6 WSD, 264 Att, 25 TA Dmg <0 DA, 28 TA, 0 QA> (38 Crit Rate, 43 Crit Dmg) [25 PDT/0 MDT, 419 M.Eva] 13 PDL
   }
@@ -487,7 +486,7 @@ function init_gear_sets()
     head="Pillager's Bonnet +3",        -- 37,  6, __, __ <__, __, __> (__,  5) [__/__,  83] __
     body="Plunderer's Vest +3",         -- 46, __, 65, __ <__, __, __> ( 6,  5) [__/__,  84] __
     hands="Gleti's Gauntlets",          -- 47, __, 70, __ <__, __, __> ( 6, __) [ 7/__,  75]  7
-    legs=gear.Lustratio_B_legs,         -- 43, __, 38, __ <__, __, __> ( 3, __) [__/__, ___] __
+    legs="Pillager's Culottes +3",      -- 15, __, 30, __ <__,  5, __> (__,  5) [__/__,  99] __
     feet=gear.Herc_DEX_CritDmg_feet,    -- 24, __,  9, __ <__,  2, __> (__,  5) [ 2/__,  75] __; adhemar good alt
     neck="Fotia Gorget",                -- __, __, __, __ <__, __, __> (__, __) [__/__, ___] __; ftp+
     ear1="Odr Earring",                 -- 10, __, __, __ <__, __, __> ( 5, __) [__/__, ___] __
@@ -497,9 +496,8 @@ function init_gear_sets()
     back=gear.THF_WS1_Cape,             -- 30, 10, 20, 20 <__, __, __> (__, __) [10/__, ___] __
     waist="Fotia Belt",                 -- __, __, __, __ <__, __, __> (__, __) [__/__, ___] __; ftp+
     -- Traits/Merits/Gifts              -- __, __, __, __ <__, 19, __> (__, 22) [__/__, ___] __
-    -- 247 DEX, 16 WSD, 222 Att, 25 TA Dmg <0 DA, 23 TA, 0 QA> (23 Crit Rate, 43 Crit Dmg) [19 PDT/0 MDT, 317 M.Eva] 17 PDL
+    -- 219 DEX, 16 WSD, 214 Att, 25 TA Dmg <0 DA, 28 TA, 0 QA> (20 Crit Rate, 48 Crit Dmg) [19 PDT/0 MDT, 416 M.Eva] 17 PDL
     
-    -- legs="Pillager's Culottes +3",   -- 15, __, 30, __ <__,  5, __> (__,  5) [__/__,  99] __
     -- back=gear.THF_WS4_Cape,          -- 30, __, 20, 20 <__, __, __> (10, __) [10/__, ___] __
     -- 219 DEX, 6 WSD, 214 Att, 25 TA Dmg <0 DA, 28 TA, 0 QA> (30 Crit Rate, 48 Crit Dmg) [19 PDT/0 MDT, 416 M.Eva] 17 PDL
   }
@@ -567,7 +565,7 @@ function init_gear_sets()
     ammo="Yetshila +1",                 -- __, __, __ [__/__, ___] __
     head="Pillager's Bonnet +3",        -- 37,  6, __ [__/__,  83] __
     hands="Skulker's Armlets +3",       -- 53, __, 72 [11/11,  93] __; SA+30
-    
+
     -- head="Skulker's Bonnet +3",      -- 43, __, 61 [__/__, 109] 10
   }
   sets.precast.WS["Rudra's Storm"].TA = { -- TA uses AGI; do not use lustratio
