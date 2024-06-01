@@ -1050,17 +1050,16 @@ function init_gear_sets()
     feet={name="Ratri Sollerets +1",priority=1},-- __, 43, __, __, __ [-6/-6, 139] 487; Duration+25%
     neck="Erra Pendant",                        -- __, 17, 10,  5, __ [__/__, ___] ___
     ear1="Malignance Earring",                  --  8, 10, __, __, __ [__/__, ___] ___
-    ear2="Genmei Earring",                      -- __, __, __, __, __ [ 2/__, ___] ___
+    ear2="Nehalennia Earring",                  -- __, __, __, __, __ [__/__, ___] -60
     ring1="Archon Ring",                        -- __, __, __, __,  5 [__/__, ___] ___
     ring2="Evanescence Ring",                   -- __, __, 10, 10, __ [__/__, ___] ___
     back=gear.DRK_Adoulin_Cape,                 -- __, __, 10, 25, __ [__/__, ___] ___
     waist="Orpheus's Sash",                     -- __, __, __, __, __ [__/__, ___] ___; +1-15% damage
     -- ML30 traits                                        483
-    -- 127 INT, 234 M.Acc, 570 Dark skill, 54 Drain/Aspir Potency, 5 Dark Affinity [7 PDT/9 MDT, 400 M.Eva] 790 HP
+    -- 132 INT, 244 M.Acc, 572 Dark skill, 56 Drain/Aspir Potency, 5 Dark Affinity [5 PDT/9 MDT, 410 M.Eva] 740 HP
 
     -- legs="Heathen's Flanchard +3",           -- 41, 63, 30, __, __ [12/12, 119]  82
     -- ear1="Hirudinea Earring",                -- __, __, __,  3, __ [__/__, ___]  -5
-    -- ear2="Nehalennia Earring",               -- __, __, __, __, __ [__/__, ___] -60
     -- 129 INT, 244 M.Acc, 577 Dark skill, 59 Drain/Aspir Potency, 5 Dark Affinity [6 PDT/10 MDT, 380 M.Eva] 745 HP
     -- D2 Potency = 742, Drained = 2777 w/ nether void
     -- D3 Potency = 970.5, Drained = 3633 w/ nether void
