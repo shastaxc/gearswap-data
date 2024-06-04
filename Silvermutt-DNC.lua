@@ -300,13 +300,10 @@ function init_gear_sets()
     neck="Etoile Gorget +2",          -- 25, 25 [__/__, ___]
     ear1="Dignitary's Earring",       -- 10, 10 [__/__, ___]
     ear2="Maculele Earring +1",       -- 14, 14 [__/__, ___]
-    ring1="Chirich Ring +1",          -- 10, __ [__/__, ___]
+    ring1="Etana Ring",               -- 10, 10 [__/__, ___]
     ring2="Metamorph Ring +1",        -- __, 16 [__/__, ___]
     back=gear.DNC_WS1_Cape,           -- 20, __ [10/__, ___]
     waist="Olseni Belt",              -- 20, __ [__/__, ___]
-    -- 438 Acc, 394 MAcc [44 PDT/28 MDT, 531 M.Eva]
-
-    -- ring1="Etana Ring",            -- 10, 10 [__/__, ___]
     -- 438 Acc, 404 MAcc [44 PDT/28 MDT, 531 M.Eva]
   }
 

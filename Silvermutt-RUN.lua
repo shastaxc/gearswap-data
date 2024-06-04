@@ -449,13 +449,13 @@ function init_gear_sets()
     neck="Erra Pendant",            -- __, 17 [__/__, ___] ___
     ear1="Dignitary's Earring",     -- 10, 10 [__/__, ___] ___
     ear2="Erilaz Earring",          --  7,  7 [__/__,  10] ___
+    ring1="Etana Ring",             -- 10, 10 [__/__, ___]  60
     ring2="Metamorph Ring +1",      -- __, 16 [__/__, ___] ___
     back=gear.RUN_WS2_Cape,         -- 20, __ [10/__, ___] ___
-    -- 323 Acc, 342 Magic Acc [54 PDT/44 MDT, 669 M.Eva] 454 HP
+    -- 333 Acc, 352 Magic Acc [54 PDT/44 MDT, 669 M.Eva] 514 HP
     
     -- body="Erilaz Surcoat +3",    -- 64, 64 [__/__, 130] 143; If you have jse ear +2
     -- ear2="Erilaz Earring +2",    -- 20, 20 [ 8/ 8,  12] ___
-    -- ring1="Etana Ring",          -- 10, 10 [__/__, ___]  60
     -- back=gear.RUN_Nuke_Cape,     -- __, 20 [10/__, ___] ___
     -- waist="Luminary Sash",       -- __, 10 [__/__, ___] ___
     -- 350 Acc, 419 Magic Acc [53 PDT/43 MDT, 662 M.Eva] 521 HP
