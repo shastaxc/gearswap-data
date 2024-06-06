@@ -149,11 +149,14 @@ __Keybind___Name______________Command_____________
 [ CTRL+1 ] SnakeEye       /ja "Snake Eye" <me>
 [ CTRL+2 ] Fold           /ja "Fold" <me>
 [ CTRL+3 ] CrookedC       /ja "Crooked Cards" <me>
+[ CTRL+4 ] Cure           /ja "Curing Waltz" <stpc>
+[ CTRL+5 ] Samba          /ja "Haste Samba" <me>
 [ CTRL+9 ] WildCard       /ja "Wild Card" <me>
 [ ALT+1 ]  Roll1          /console roller roll roll1
 [ ALT+2 ]  Roll2          /console roller roll roll2
 [ ALT+3 ]  QD             /console gs c qd main t
 [ ALT+4 ]  QD2            /console gs c qd alt t
+[ ALT+5 ]  Erase          /ja "Healing Waltz" <stpc>
 [ ALT+9 ]  Cutting        /ja "Cutting Cards" <stpc>
 
 ]]--
@@ -384,7 +387,7 @@ function init_gear_sets()
     hands=gear.Carmine_D_hands,       --  8/11 [__/__,  43]
     legs=gear.Adhemar_D_legs,         -- 10/13 [__/__,  75]
     feet="Meg. Jam. +2",              -- 10/__ [ 3/__,  69]
-    neck="Commodore Charm +1",        --  3/__ [__/__, ___]
+    neck="Commodore Charm +2",        --  4/__ [__/__, ___]
     ear1="Genmei Earring",            -- __/__ [ 2/__, ___]
     ear2="Odnowa Earring +1",         -- __/__ [ 3/ 5, ___]
     ring1="Crepuscular Ring",         --  3/__ [__/__, ___]
@@ -392,10 +395,9 @@ function init_gear_sets()
     back=gear.COR_SNP_Cape,           -- 10/__ [10/__, ___]
     waist="Yemaya Belt",              -- __/ 5 [__/__, ___]
     -- Merits/Traits/Gifts               10/30
-    -- 68 Snapshot / 75 Rapid Shot [37 PDT/24 MDT, 392 M.Eva]
+    -- 69 Snapshot / 75 Rapid Shot [37 PDT/24 MDT, 392 M.Eva]
     
     -- head="Chasseur's Tricorne +3", -- __/18 [10/10, 109]
-    -- neck="Commodore Charm +2",     --  4/__ [__/__, ___]
     -- 69 Snapshot / 77 Rapid Shot [38 PDT/25 MDT, 402 M.Eva]
   }
   -- Account for having flurry 1 buff
@@ -426,7 +428,7 @@ function init_gear_sets()
     hands=gear.Carmine_D_hands,       --  8/11 [__/__,  43]
     legs=gear.Adhemar_D_legs,         -- 10/13 [__/__,  75]
     feet=gear.Pursuer_A_feet,         -- __/10 [__/__,  69]
-    neck="Commodore Charm +1",        --  3/__ [__/__, ___]
+    neck="Commodore Charm +2",        --  4/__ [__/__, ___]
     ear1="Genmei Earring",            -- __/__ [ 2/__, ___]
     ear2="Odnowa Earring +1",         -- __/__ [ 3/ 5, ___]
     ring1="Crepuscular Ring",         --  3/__ [__/__, ___]
@@ -435,10 +437,9 @@ function init_gear_sets()
     waist="Flume Belt +1",            -- __/__ [ 4/__, ___]
     -- Merits/Traits/Gifts               10/30
     -- Embrava                           25/__
-    -- 69 Snapshot / 100 Rapid Shot [38 PDT/24 MDT, 370 M.Eva]
+    -- 70 Snapshot / 100 Rapid Shot [38 PDT/24 MDT, 370 M.Eva]
   
     -- head="Chasseur's Tricorne +3", -- __/18 [10/10, 109]
-    -- neck="Commodore Charm +2",     --  4/__ [__/__, ___]; +1 also fine
     -- 70 Snapshot / 102 Rapid Shot [39 PDT/25 MDT, 380 M.Eva]
   }
   -- Account for having flurry 2 buff
@@ -448,7 +449,7 @@ function init_gear_sets()
     hands=gear.Carmine_D_hands,       --  8/11 [__/__,  43]
     legs=gear.Adhemar_D_legs,         -- 10/13 [__/__,  75]
     feet=gear.Pursuer_A_feet,         -- __/10 [__/__,  69]
-    neck="Commodore Charm +1",        --  3/__ [__/__, ___]
+    neck="Commodore Charm +2",        --  4/__ [__/__, ___]
     ear1="Genmei Earring",            -- __/__ [ 2/__, ___]
     ear2="Odnowa Earring +1",         -- __/__ [ 3/ 5, ___]
     ring1="Gelatinous Ring +1",       -- __/__ [ 7/-1, ___]
@@ -457,10 +458,9 @@ function init_gear_sets()
     waist="Flume Belt +1",            -- __/__ [ 4/__, ___]
     -- Merits/Traits/Gifts               10/30
     -- Flurry 2                          30/__
-    -- 71 Snapshot / 100 Rapid Shot [45 PDT/23 MDT, 370 M.Eva]
+    -- 72 Snapshot / 100 Rapid Shot [45 PDT/23 MDT, 370 M.Eva]
     
     -- head="Chasseur's Tricorne +3", -- __/18 [10/10, 109]
-    -- neck="Commodore Charm +2",     --  4/__ [__/__, ___]; +1 also fine
     -- 72 Snapshot / 102 Rapid Shot [46 PDT/24 MDT, 380 M.Eva]
   }
   -- Account for having flurry 1 buff + embrava
@@ -672,16 +672,18 @@ function init_gear_sets()
     hands="Carmine Fin. Ga. +1",  -- 12, 42, __,  6, __/__
     legs=gear.Nyame_B_legs,       -- 34, 30, 40, __,  8/ 8
     feet="Lanun Bottes +3",       -- 49, 61, 36, __,  6/__
-    neck="Commodore Charm +1",    -- 12,  6, 20, __, __/__
+    neck="Commodore Charm +2",    -- 15,  7, 25, __, __/__
     ear1="Friomisi Earring",      -- __, 10, __, __, __/__
     ear2="Novio Earring",         -- __,  7, __, __, __/__
     ring1="Dingir Ring",          -- 10, 10, __, __, __/__
     ring2="Shiva Ring +1",        -- __,  3, __, __, __/__
     back=gear.COR_RA_Cape,        -- 30, __, __, 10, 10/__
     waist="Eschan Stone",         -- __,  7,  7, __, __/__
-    -- neck="Commodore Charm +2", -- 15,  7, 25, __, __/__
+    -- 232 AGI, 323 MAB, 203 M.Acc, 24 STP, 30PDT/8MDT
+
     -- back=gear.COR_QD_Cape,     -- 30, 10, 20, __, 10/__
-  } -- 229 AGI, 322 MAB, 198 M.Acc, 24 STP, 30PDT/8MDT
+    -- 229 AGI, 322 MAB, 198 M.Acc, 24 STP, 30PDT/8MDT
+  }
 
   -- Full STP; and more recast reduction
   sets.precast.CorsairShot.STP = {
@@ -712,7 +714,7 @@ function init_gear_sets()
     hands="Chasseur's Gants +2",      -- 21, 52, __/__
     legs="Chasseur's Culottes +3",    -- 43, 63, 12/12
     feet="Laksamana's Bottes +3",     -- 49, 52, __/__
-    neck="Commodore Charm +1",        -- 12, 20, __/__
+    neck="Commodore Charm +2",        -- 15, 25, __/__
     ear1="Hermetic Earring",          -- __,  7, __/__
     ear2="Dignitary's Earring",       -- __, 10, __/__
     ring1="Regal Ring",               -- 10, __, __/__
@@ -721,11 +723,10 @@ function init_gear_sets()
     waist="K. Kachina Belt +1",       --  8, 20, __/__
     -- AF Set Effect                  -- __, 30, __/__
     -- M.Acc from Quick Draw+ stat    -- __, __, __/__
-    -- 261 AGI, 444 M.Acc, 35 PDT/25 MDT
+    -- 264 AGI, 449 M.Acc, 35 PDT/25 MDT
 
     -- hands="Chasseur's Gants +3",   -- 26, 62, __/__
     -- feet="Chasseur's Bottes +3",   -- 56, 60, __/__; move AF feet to storage slip
-    -- neck="Commodore Charm +2",     -- 15, 25, __/__
     -- ear1="Crepuscular Earring",    -- __, 10, __/__
   }
   sets.precast.CorsairShot['Dark Shot'] = set_combine(sets.precast.CorsairShot['Light Shot'], {})
@@ -826,14 +827,13 @@ function init_gear_sets()
     hands=gear.Nyame_B_hands, --30; WSD
     legs=gear.Nyame_B_legs, --30; WSD
     feet="Lanun Bottes +3", --55; WSD
-    neck="Commodore Charm +1", --6
+    neck="Commodore Charm +2",
     ear1="Friomisi Earring", --10
     ear2="Novio Earring", --7
     ring1="Dingir Ring", --10
     ring2="Epaminondas's Ring",
     back=gear.COR_WS1_Cape, --0
     waist="Skrymir Cord", --5
-    -- neck="Comm. Charm +2",
     -- waist="Skrymir Cord +1",
   }
   sets.precast.WS['Wildfire'].MaxTP = set_combine(sets.precast.WS['Wildfire'], {
@@ -961,16 +961,13 @@ function init_gear_sets()
     hands=gear.Nyame_B_hands,     -- 17, 40, 65, 40, 11, __, ___
     legs=gear.Nyame_B_legs,       -- 58, 32, 65, 40, 12, __, ___
     feet=gear.Nyame_B_feet,       -- 23, 26, 65, 53, 11, __, ___
-    neck="Commodore Charm +1",    -- 12, __, __, __, __, __, ___
+    neck="Commodore Charm +2",    -- 15, __, __, __, __, __, ___
     ear1="Ishvara Earring",       -- __, __, __, __,  2, __, ___
     ear2="Moonshade Earring",     -- __, __, __,  4, __, __, 250
     ring1="Ephramad's Ring",      -- 10, __, 20, 20, __, 10, ___
     ring2="Epaminondas's Ring",   -- __, __, __, __,  5, __, ___
     back=gear.COR_WS2_Cape,       -- 30, __, 20, 20, 10, __, ___
     waist="Sailfi Belt +1",       -- 15, __, 15, __, __, __, ___
-    -- 224 STR, 149 MND, 315 Attack, 227 Accuracy, 62 WSD, 17 PDL, 450 TP Bonus
-
-    -- neck="Commodore Charm +2", -- 15, __, __, __, __, __, ___
     -- 227 STR, 149 MND, 315 Attack, 227 Accuracy, 62 WSD, 17 PDL, 450 TP Bonus
   }
   sets.precast.WS['Savage Blade'].MaxTP = set_combine(sets.precast.WS['Savage Blade'], {
