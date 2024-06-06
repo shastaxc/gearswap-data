@@ -462,7 +462,7 @@ function init_gear_sets()
   -- sets.precast.FC.QuickMagic.Grimoire = {}
 
   sets.precast.FC.RDM = {
-    main=gear.Pedagogy_C,             --  8 [__/__, ___]
+    main=gear.Musa_C,                 -- 10 [__/__, ___]
     sub="Khonsu",                     -- __ [ 6/ 6, ___]
     ammo="Staunch Tathlum +1",        -- __ [ 3/ 3, ___]; Resist status+11
     head=gear.Merl_FC_head,           -- 15 [__/__,  86]
@@ -478,7 +478,7 @@ function init_gear_sets()
     back=gear.SCH_FC_Cape,            -- 10 [10/__,  30]
     waist="Carrier's Sash",           -- __ [__/__, ___]; Ele Resist+15
     -- Sub RDM trait                  -- 15
-    -- 87 Fast Cast [52 PDT/27 MDT, 544 MEVA]
+    -- 89 Fast Cast [52 PDT/27 MDT, 544 MEVA]
   }
   sets.precast.FC.QuickMagic.RDM = {
     main="Malignance Pole",           -- __ [20/20, ___] __
@@ -503,7 +503,7 @@ function init_gear_sets()
     -- 80 Fast Cast [51PDT/47MDT, 516 MEVA] 11 Quick Magic
   }
   sets.precast.FC.RDM.Grimoire = {
-    main=gear.Pedagogy_C,             --  8 [__/__, ___] __
+    main=gear.Musa_C,                 -- 10 [__/__, ___] __
     sub="Khonsu",                     -- __ [ 6/ 6, ___] __
     ammo="Incantor Stone",            --  2 [__/__, ___] __
     head="Pedagogy Mortarboard +3",   -- __ [__/__,  95] 13
@@ -519,7 +519,7 @@ function init_gear_sets()
     back=gear.SCH_FC_Cape,            -- 10 [10/__,  30] __
     waist="Embla Sash",               --  5 [__/__, ___] __
     -- Sub RDM trait                  -- 15
-    -- 80 Fast Cast [42 PDT/26 MDT, 564 MEVA] 25 Grimoire Speed
+    -- 82 Fast Cast [42 PDT/26 MDT, 564 MEVA] 25 Grimoire Speed
 
     -- hands=gear.Gende_SongFC_hands, --  7 [ 4/__,  37] __
     -- 80 Fast Cast [43 PDT/24 MDT, 564 MEVA] 25 Grimoire Speed
@@ -788,18 +788,14 @@ function init_gear_sets()
   }
 
   sets.midcast.EnhancingDuration = {
-    main=gear.Pedagogy_C,           -- 15,  8
-    sub="Enki Strap",
+    main=gear.Musa_C,               -- 20, 10
+    sub="Clerisy Strap +1",         -- __,  3
     head=gear.Telchine_ENH_head,    -- 10,  5
     body="Pedagogy Gown +3",        -- 12, __
     hands=gear.Telchine_ENH_hands,  -- 10, __
     legs=gear.Telchine_ENH_legs,    -- 10,  5
     feet=gear.Telchine_ENH_feet,    -- 10,  5
     waist="Embla Sash",             -- 10,  5
-    -- 77 Enh Duration, 28 FC
-
-    -- main=gear.Musa_C,            -- 20, 10
-    -- sub="Clerisy Strap +1",      -- __,  3
     -- 82 Enh Duration, 33 FC
   }
 
@@ -807,7 +803,7 @@ function init_gear_sets()
   -- Regen % pieces apply to base value (no LA bonus), floored, then +1.
   -- floor[(Base Regen) + sum(floor(Base Regen x %Regen bonuses)+1) x Embolden)] + LA bonus + Regen Potency from Armor + Morgelai and Musa bonus.
   sets.midcast.Regen = {
-    main=gear.Pedagogy_C,               -- 20, 15, __
+    main=gear.Musa_C,                   -- 25, 20, __
     sub="Khonsu",                       -- __, __, __
     head="Arbatel Bonnet +3",           -- 11, __, __
     body=gear.Telchine_Regen_body,      --  3, __, 12
@@ -817,15 +813,12 @@ function init_gear_sets()
     back=gear.SCH_Adoulin_Regen_Cape,   -- 10, __, __
     waist="Embla Sash",                 -- __, 10,  5
     -- Base Potency (w/ Light Arts)        64, __, __
-    -- 117 Regen Potency, 25 Enh Duration %, 17 Regen Duration
-
-    -- main=gear.Musa_C,                -- 25, 20, __
     -- 122 Regen Potency, 30 Enh Duration %, 17 Regen Duration
   }
 
   -- Can get longer duration, but potency takes a significant hit, so opted not to do that.
   sets.midcast.RegenDuration = {
-    main=gear.Pedagogy_C,             -- 20, 15, __
+    main=gear.Musa_C,                 -- 25, 20, __
     sub="Khonsu",                     -- __, __, __
     head="Arbatel Bonnet +3",         -- 11, __, __
     body=gear.Telchine_ENH_body,      -- __, 10, 12
@@ -835,9 +828,6 @@ function init_gear_sets()
     back=gear.SCH_Adoulin_Regen_Cape, -- 10, __, __
     waist="Embla Sash",               -- __, 10,  5
     -- Base Potency (w/ Light Arts)      64, __, __
-    -- 105 Regen Potency, 65 Enh Duration %, 17 Regen Duration
-
-    -- main=gear.Musa_C,              -- 25, 20, __
     -- 110 Regen Potency, 70 Enh Duration %, 17 Regen Duration
   }
 
