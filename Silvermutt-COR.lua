@@ -223,12 +223,25 @@ function job_setup()
   no_swap_waists = S{"Era. Bul. Pouch", "Dev. Bul. Pouch", "Chr. Bul. Pouch", "Quelling B. Quiver",
       "Yoichi's Quiver", "Artemis's Quiver", "Chrono Quiver", "Liv. Bul. Pouch"}
 
-  gear.RAbullet = "Chrono Bullet"
-  gear.RAccbullet = "Devastating Bullet"
-  gear.MAccbullet = "Devastating Bullet"
-  gear.WSbullet = "Chrono Bullet"
-  gear.MAbullet = "Living Bullet"
-  gear.QDbullet = "Hauksbok Bullet"
+  -- This map will be used by SilverLibs to determine which ammo to use
+  -- Default: Used most of the time. It is also the fallback option in case you don't have any of the other ammo.
+  -- Accuracy: Used in high accuracy situations.
+  -- Physical_Weaponskill: Used for ranged physical weaponskills.
+  -- Magic_Damage: Used when you are dealing magic damage.
+  -- Magic_Accuracy: Used for Light Shot and Dark Shot.
+  -- Quick_Draw: Used when performing Quick Draws (not Light or Dark). This ammo is never consumed.
+  ammo_assignment = {
+    Gun_or_Cannon = {
+      Default = "Chrono Bullet",
+      Accuracy = "Devastating Bullet",
+      Physical_Weaponskill = "Chrono Bullet",
+      Magic_Damage = "Living Bullet",
+      Magic_Accuracy = "Devastating Bullet",
+      Quick_Draw = "Hauksbok Bullet", -- Does not get consumed
+    }
+  }
+
+  -- Message will warn you when low on ammo if you have less than the specified amount when firing.
   options.ammo_warning_limit = 10
 
   -- Update DistancePlus addon with weapon type
@@ -271,14 +284,13 @@ end
 -- Define sets and vars used by this job file.
 function init_gear_sets()
   sets.org.job = {}
-  sets.org.job[1] = {ammo=gear.RAbullet}
-  sets.org.job[2] = {ammo=gear.RAccbullet}
-  sets.org.job[3] = {ammo=gear.WSbullet}
-  sets.org.job[4] = {ammo=gear.MAbullet}
-  sets.org.job[5] = {ammo=gear.QDbullet}
-  sets.org.job[6] = {waist="Chrono bullet pouch"}
-  sets.org.job[7] = {waist="Devastating Bullet Pouch"}
-  sets.org.job[8] = {waist="Living Bullet Pouch"}
+  sets.org.job[1] = {ammo="Chrono Bullet"}
+  sets.org.job[2] = {ammo="Devastating Bullet"}
+  sets.org.job[3] = {ammo="Living Bullet"}
+  sets.org.job[4] = {ammo="Hauksbok Bullet"}
+  sets.org.job[5] = {waist="Chrono bullet pouch"}
+  sets.org.job[6] = {waist="Devastating Bullet Pouch"}
+  sets.org.job[7] = {waist="Living Bullet Pouch"}
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Precast Sets ------------------------------------------
@@ -489,7 +501,7 @@ function init_gear_sets()
   -- (this is done if you simply exclude any more snapshot sets)
 
   sets.midcast.RA = {
-    ammo=gear.RAbullet,               -- __, __, 20/__ <__> {_} (__) [__/__, ___]
+    -- Assume Chrono Bullet           -- __, __, 20/__ <__> {_} (__) [__/__, ___]
     head="Ikenga's Hat",              -- 29,  8, 55/70 <__> {4} (__) [__/__,  96]
     body="Ikenga's Vest",             -- 39, 11, 55/70 < 5> {7} (__) [__/__, 112]
     hands="Malignance Gloves",        -- 24, 12, 50/__ <__> {4} (__) [ 5/ 5, 112]
@@ -506,7 +518,7 @@ function init_gear_sets()
     -- 241 AGI, 88 STP, 370 racc/305 ratt <5 crit> {17 PDL} (68 Recycle) [31 PDT/21 MDT, 595 M.Eva]
   }
   sets.midcast.RA.LowAcc = set_combine(sets.midcast.RA, {
-    ammo=gear.RAccbullet,             -- __, __, 35/__ <__> {_} (__) [__/__, ___]
+    -- Assume Devastating Bullet      -- __, __, 35/__ <__> {_} (__) [__/__, ___]
     ear1="Beyla Earring",             -- __, __, 15/__ <__> {_} (__) [__/__, ___]
     ring2="Crepuscular Ring",         -- __,  6, 10/__ <__> {_} (__) [__/__, ___]
     -- 231 AGI, 85 STP, 403 racc/298 ratt <5 crit> {17 PDL} (68 Recycle) [31 PDT/21 MDT, 595 M.Eva]
@@ -522,7 +534,7 @@ function init_gear_sets()
   })
   
   sets.midcast.RA.Safe = {
-    ammo=gear.RAbullet,               -- __, __, 20/__ <__> {_} (__) [__/__, ___]
+    -- Assume Chrono Bullet           -- __, __, 20/__ <__> {_} (__) [__/__, ___]
     head="Ikenga's Hat",              -- 29,  8, 55/70 <__> {4} (__) [__/__,  96]
     body="Ikenga's Vest",             -- 39, 11, 55/70 < 5> {7} (__) [__/__, 112]
     hands="Malignance Gloves",        -- 24, 12, 50/__ <__> {4} (__) [ 5/ 5, 112]
@@ -540,7 +552,7 @@ function init_gear_sets()
   }
 
   sets.midcast.RA.Critical = {
-    ammo=gear.RAbullet,               -- __, __, 20/__ <__> {_} (__) [__/__, ___]
+    -- Assume Chrono Bullet           -- __, __, 20/__ <__> {_} (__) [__/__, ___]
     head="Ikenga's Hat",              -- 29,  8, 55/70 <__> {4} (__) [__/__,  96]
     body="Ikenga's Vest",             -- 39, 11, 55/70 < 5> {7} (__) [__/__, 112]
     hands="Chasseur's Gants +2",      -- 21, __, 52/52 < 7> {_} (__) [__/__,  83]
@@ -560,7 +572,7 @@ function init_gear_sets()
     -- 233 AGI, 42 STP, 366 racc/262 ratt <48 crit rate> {11 PDL} (58 Recycle) [5 PDT/5 MDT, 539 M.Eva]
   }
   sets.midcast.RA.Critical.Safe = {
-    ammo=gear.RAbullet,               -- __, __, 20/__ <__> {_} (__) [__/__, ___]
+    -- Assume Chrono Bullet           -- __, __, 20/__ <__> {_} (__) [__/__, ___]
     head="Malignance Chapeau",        -- 33,  8, 50/__ <__> {3} (__) [ 6/ 6, 123]
     body="Malignance Tabard",         -- 42, 11, 50/__ <__> {6} (__) [ 9/ 9, 139]
     hands="Chasseur's Gants +2",      -- 21, __, 52/52 < 7> {_} (__) [__/__,  83]
@@ -582,7 +594,7 @@ function init_gear_sets()
 
   -- 60% from traits/gifts
   sets.TripleShot = {
-    ammo=gear.RAbullet,               -- __, __, 20/__ <__> {_} (__) [__/__, ___] (__, __) (__, __)
+    -- Assume Chrono Bullet           -- __, __, 20/__ <__> {_} (__) [__/__, ___] (__, __) (__, __)
     head="Oshosi Mask +1",            -- 44, __, 45/__ <__> {_} (__) [__/__,  90] ( 6, 25) ( 5, 13)
     body="Chasseur's Frac +3",        -- 49, __, 64/74 <__> {_} (__) [13/13, 119] (__, __) (14, __)
     hands="Lanun Gants +3",           -- 22, __, 44/76 <__> {_} (__) [__/__,  84] (__, __) (__, __); Occ. Quad Shot
@@ -600,7 +612,7 @@ function init_gear_sets()
     -- 271 AGI, 36 STP, 339 racc/252 ratt <10 crit> {0 PDL} (68 Recycle) [23 PDT/13 MDT, 555 M.Eva] (17 DS Rate, 25 DS Dmg) (93 TS Rate, 13 TS Dmg)
   }
   sets.TripleShot.Safe = {
-    ammo=gear.RAbullet,               -- __, __, 20/__ <__> {_} (__) [__/__, ___] (__, __) (__, __)
+    -- Assume Chrono Bullet           -- __, __, 20/__ <__> {_} (__) [__/__, ___] (__, __) (__, __)
     head="Oshosi Mask +1",            -- 44, __, 45/__ <__> {_} (__) [__/__,  90] ( 6, 25) ( 5, 13)
     body="Chasseur's Frac +3",        -- 49, __, 64/74 <__> {_} (__) [13/13, 119] (__, __) (14, __)
     hands="Lanun Gants +3",           -- 22, __, 44/76 <__> {_} (__) [__/__,  84] (__, __) (__, __); Occ. Quad Shot
@@ -619,7 +631,7 @@ function init_gear_sets()
   }
 
   sets.TripleShot.Critical = {
-    ammo=gear.RAbullet,               -- __, __, 20/__ <__> {_} (__) [__/__, ___] (__, __) (__, __)
+    -- Assume Chrono Bullet           -- __, __, 20/__ <__> {_} (__) [__/__, ___] (__, __) (__, __)
     head="Oshosi Mask +1",            -- 44, __, 45/__ <__> {_} (__) [__/__,  90] ( 6, 25) ( 5, 13)
     body="Chasseur's Frac +3",        -- 49, __, 64/74 <__> {_} (__) [13/13, 119] (__, __) (14, __)
     hands="Chasseur's Gants +2",      -- 21, __, 52/52 < 7> {_} (__) [__/__,  83] (__, __) (__, __)
@@ -640,7 +652,7 @@ function init_gear_sets()
     -- 258 AGI, 23 STP, 365 racc/196 ratt <43 crit> {0 PDL} (58 Recycle) [18 PDT/18 MDT, 540 M.Eva] (10 DS Rate, 25 DS Dmg) (87 TS Rate, 13 TS Dmg)
   }
   sets.TripleShot.Critical.Safe = {
-    ammo=gear.RAbullet,               -- __, __, 20/__ <__> {_} (__) [__/__, ___] (__, __) (__, __)
+    -- Assume Chrono Bullet           -- __, __, 20/__ <__> {_} (__) [__/__, ___] (__, __) (__, __)
     head="Oshosi Mask +1",            -- 44, __, 45/__ <__> {_} (__) [__/__,  90] ( 6, 25) ( 5, 13)
     body="Chasseur's Frac +3",        -- 49, __, 64/74 <__> {_} (__) [13/13, 119] (__, __) (14, __)
     hands="Chasseur's Gants +2",      -- 21, __, 52/52 < 7> {_} (__) [__/__,  83] (__, __) (__, __)
@@ -666,7 +678,7 @@ function init_gear_sets()
   -- Dmg is NOT affected by M.Dmg.
   -- TP returned is affected by Store TP.
   sets.precast.CorsairShot = {
-    ammo=gear.QDbullet,           -- 10, 40, __, __, __/__
+    -- Assume Hauksbok Bullet     -- 10, 40, __, __, __/__
     head="Ikenga's Hat",          -- 29, 45, 55,  8, __/__
     body="Lanun Frac +3",         -- 43, 61, 40, __,  6/__
     hands="Carmine Fin. Ga. +1",  -- 12, 42, __,  6, __/__
@@ -687,7 +699,7 @@ function init_gear_sets()
 
   -- Full STP; and more recast reduction
   sets.precast.CorsairShot.STP = {
-    ammo=gear.MAbullet,           -- __, 35, 25, __, __/__
+    -- Assume Living Bullet       -- __, 35, 25, __, __/__
     head="Blood Mask",            -- __, __,  3, __, __/__ Recast -5
     body="Malignance Tabard",     -- 42, __, 50, 11,  9/ 9
     hands="Malignance Gloves",    -- 24, __, 50, 12,  5/ 5
@@ -708,7 +720,7 @@ function init_gear_sets()
 
   -- Full MAcc (to land debuff effects)
   sets.precast.CorsairShot['Light Shot'] = {
-    ammo=gear.MAccbullet,             -- __, 35, __/__
+    -- Assume Devastating Bullet      -- __, 35, __/__
     head="Laksamana's Tricorne +3",   -- 39, 56, __/__
     body="Chasseur's Frac +3",        -- 49, 64, 13/13
     hands="Chasseur's Gants +2",      -- 21, 52, __/__
@@ -745,7 +757,7 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.precast.WS = {
-    ammo=gear.WSbullet,
+    -- Assume Chrono Bullet
     head=gear.Nyame_B_head,
     body=gear.Nyame_B_body,
     hands="Meg. Gloves +2",
@@ -780,7 +792,7 @@ function init_gear_sets()
   })
 
   sets.precast.WS['Last Stand'] = {
-    ammo=gear.WSbullet,
+    -- Assume Chrono Bullet
     head=gear.Nyame_B_head,
     body="Ikenga's Vest",
     hands=gear.Nyame_B_hands,
@@ -809,7 +821,7 @@ function init_gear_sets()
     ear2="Telos Earring",
   })
   sets.precast.WS['Last Stand'].HighAcc = set_combine(sets.precast.WS['Last Stand'].MidAcc, {
-    ammo=gear.RAccbullet,
+    -- Assume Devastating Bullet
     neck="Iskur Gorget",
     ear1="Beyla Earring",
     ear2="Telos Earring",
@@ -821,7 +833,7 @@ function init_gear_sets()
   })
 
   sets.precast.WS['Wildfire'] = {
-    ammo=gear.MAbullet,
+    -- Assume Living Bullet
     head=gear.Nyame_B_head, --30; WSD
     body="Lanun Frac +3", --61
     hands=gear.Nyame_B_hands, --30; WSD
@@ -1147,7 +1159,7 @@ function init_gear_sets()
 
   -- No DW (0 needed from gear)
   sets.engaged = {
-    ammo=gear.RAbullet,
+    -- Assume Chrono Bullet
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
     hands=gear.Adhemar_A_hands,       -- __,  7, 52 <__,  4, __> [__/__,  43]
@@ -1181,7 +1193,7 @@ function init_gear_sets()
 
   -- Low DW (11 needed from gear)
   sets.engaged.LowDW = {
-    ammo=gear.RAbullet,
+    -- Assume Chrono Bullet
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body=gear.Adhemar_A_body,         --  6, __, 55 <__,  4, __> [__/__,  69]
     hands=gear.Adhemar_A_hands,       -- __,  7, 52 <__,  4, __> [__/__,  43]
@@ -1214,7 +1226,7 @@ function init_gear_sets()
 
   -- Mid DW (18 needed from gear)
   sets.engaged.MidDW = {
-    ammo=gear.RAbullet,
+    -- Assume Chrono Bullet
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body=gear.Adhemar_A_body,         --  6, __, 55 <__,  4, __> [__/__,  69]
     hands=gear.Adhemar_A_hands,       -- __,  7, 52 <__,  4, __> [__/__,  43]
@@ -1246,7 +1258,7 @@ function init_gear_sets()
 
   -- High DW (31 needed from gear)
   sets.engaged.HighDW = {
-    ammo=gear.RAbullet,
+    -- Assume Chrono Bullet
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body=gear.Adhemar_A_body,         --  6, __, 55 <__,  4, __> [__/__,  69]
     hands=gear.Adhemar_A_hands,       -- __,  7, 52 <__,  4, __> [__/__,  43]
@@ -1278,7 +1290,7 @@ function init_gear_sets()
 
   -- Super DW (42 needed from gear)
   sets.engaged.SuperDW = {
-    ammo=gear.RAbullet,
+    -- Assume Chrono Bullet
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
     hands=gear.Floral_Gauntlets,      --  5, __, 36 <__,  3, __> [__/ 4,  37]
@@ -1312,7 +1324,7 @@ function init_gear_sets()
 
   -- Max DW (49 needed from gear)
   sets.engaged.MaxDW = {
-    ammo=gear.RAbullet,
+    -- Assume Chrono Bullet
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body=gear.Adhemar_A_body,         --  6, __, 55 <__,  4, __> [__/__,  69]
     hands=gear.Floral_Gauntlets,      --  5, __, 36 <__,  3, __> [__/ 4,  37]
@@ -1349,7 +1361,7 @@ function init_gear_sets()
 
   -- No DW (0 needed from gear)
   sets.engaged.HeavyDef = {
-    ammo=gear.RAbullet,
+    -- Assume Chrono Bullet
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
     hands=gear.Adhemar_A_hands,       -- __,  7, 52 <__,  4, __> [__/__,  43]
@@ -1366,7 +1378,7 @@ function init_gear_sets()
     -- 0 DW, 68 STP, 287 Acc <14 DA, 9 TA, 2 QA> [51 PDT/41 MDT, 580 MEVA]
   }
   sets.engaged.HeavyDef.LowAcc = {
-    ammo=gear.RAbullet,
+    -- Assume Chrono Bullet
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
     hands=gear.Adhemar_A_hands,       -- __,  7, 52 <__,  4, __> [__/__,  43]
@@ -1383,7 +1395,7 @@ function init_gear_sets()
     -- 0 DW, 68 STP, 287 Acc <14 DA, 9 TA, 2 QA> [51 PDT/41 MDT, 580 M.Eva]
   }
   sets.engaged.HeavyDef.MidAcc = {
-    ammo=gear.RAbullet,
+    -- Assume Chrono Bullet
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
     hands="Malignance Gloves",        -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
@@ -1400,7 +1412,7 @@ function init_gear_sets()
     -- 0 DW, 73 STP, 313 Acc <20 DA, 3 TA, 0 QA> [53 PDT/35 MDT, 649 M.Eva]
   }
   sets.engaged.HeavyDef.HighAcc = {
-    ammo=gear.RAbullet,
+    -- Assume Chrono Bullet
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
     hands="Malignance Gloves",        -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
@@ -1419,7 +1431,7 @@ function init_gear_sets()
 
   -- Low DW (11 needed from gear)
   sets.engaged.LowDW.HeavyDef = {
-    ammo=gear.RAbullet,
+    -- Assume Chrono Bullet
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body=gear.Adhemar_A_body,         --  6, __, 55 <__,  4, __> [__/__,  69]
     hands=gear.Adhemar_A_hands,       -- __,  7, 52 <__,  4, __> [__/__,  43]
@@ -1436,7 +1448,7 @@ function init_gear_sets()
     -- 11 DW, 44 STP, 282 Acc <10 DA, 10 TA, 2 QA> [55 PDT/37 MDT, 510 MEVA]
   }
   sets.engaged.LowDW.HeavyDef.LowAcc = {
-    ammo=gear.RAbullet,
+    -- Assume Chrono Bullet
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body=gear.Adhemar_A_body,         --  6, __, 55 <__,  4, __> [__/__,  69]
     hands="Malignance Gloves",        -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
@@ -1456,7 +1468,7 @@ function init_gear_sets()
     -- 11 DW, 50 STP, 300 Acc <11 DA, 6 TA, 2 QA> [54 PDT/36 MDT, 579 MEVA]
   }
   sets.engaged.LowDW.HeavyDef.MidAcc = {
-    ammo=gear.RAbullet,
+    -- Assume Chrono Bullet
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
     hands="Malignance Gloves",        -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
@@ -1473,7 +1485,7 @@ function init_gear_sets()
     -- 12 DW, 67 STP, 328 Acc <11 DA, 0 TA, 0 QA> [56 PDT/46 MDT, 649 MEVA]
   }
   sets.engaged.LowDW.HeavyDef.HighAcc = {
-    ammo=gear.RAbullet,
+    -- Assume Chrono Bullet
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
     hands="Malignance Gloves",        -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
@@ -1492,7 +1504,7 @@ function init_gear_sets()
 
   -- Mid DW (18 needed from gear)
   sets.engaged.MidDW.HeavyDef = {
-    ammo=gear.RAbullet,
+    -- Assume Chrono Bullet
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body=gear.Adhemar_A_body,         --  6, __, 55 <__,  4, __> [__/__,  69]
     hands=gear.Adhemar_A_hands,       -- __,  7, 52 <__,  4, __> [__/__,  43]
@@ -1509,7 +1521,7 @@ function init_gear_sets()
     -- 18 DW, 48 STP, 290 Acc <10 DA, 8 TA, 0 QA> [55 PDT/37 MDT, 510 MEVA]
   }
   sets.engaged.MidDW.HeavyDef.LowAcc = {
-    ammo=gear.RAbullet,
+    -- Assume Chrono Bullet
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body=gear.Adhemar_A_body,         --  6, __, 55 <__,  4, __> [__/__,  69]
     hands="Malignance Gloves",        -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
@@ -1526,7 +1538,7 @@ function init_gear_sets()
     -- 18 DW, 47 STP, 291 Acc <11 DA, 10 TA, 0 QA> [51 PDT/39 MDT, 504 MEVA]
   }
   sets.engaged.MidDW.HeavyDef.MidAcc = {
-    ammo=gear.RAbullet,
+    -- Assume Chrono Bullet
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body=gear.Adhemar_A_body,         --  6, __, 55 <__,  4, __> [__/__,  69]
     hands="Malignance Gloves",        -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
@@ -1543,7 +1555,7 @@ function init_gear_sets()
     -- 18 DW, 47 STP, 282 Acc <11 DA, 10 TA, 0 QA> [51 PDT/39 MDT, 504 MEVA]
   }
   sets.engaged.MidDW.HeavyDef.HighAcc = {
-    ammo=gear.RAbullet,
+    -- Assume Chrono Bullet
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
     hands="Malignance Gloves",        -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
@@ -1562,7 +1574,7 @@ function init_gear_sets()
 
   -- High DW (31 needed from gear)
   sets.engaged.HighDW.HeavyDef = {
-    ammo=gear.RAbullet,
+    -- Assume Chrono Bullet
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body=gear.Adhemar_A_body,         --  6, __, 55 <__,  4, __> [__/__,  69]
     hands=gear.Adhemar_A_hands,       -- __,  7, 52 <__,  4, __> [__/__,  43]
@@ -1579,7 +1591,7 @@ function init_gear_sets()
     -- 32 DW, 40 STP, 280 Acc <0 DA, 8 TA, 0 QA> [55 PDT/37 MDT, 518 MEVA]
   }
   sets.engaged.HighDW.HeavyDef.LowAcc = {
-    ammo=gear.RAbullet,
+    -- Assume Chrono Bullet
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body=gear.Adhemar_A_body,         --  6, __, 55 <__,  4, __> [__/__,  69]
     hands="Malignance Gloves",        -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
@@ -1599,7 +1611,7 @@ function init_gear_sets()
     -- 32 DW, 47 STP, 285 Acc <0 DA, 4 TA, 0 QA> [49 PDT/31 MDT, 612 MEVA]
   }
   sets.engaged.HighDW.HeavyDef.MidAcc = {
-    ammo=gear.RAbullet,
+    -- Assume Chrono Bullet
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
     hands="Malignance Gloves",        -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
@@ -1616,7 +1628,7 @@ function init_gear_sets()
     -- 32 DW, 44 STP, 300 Acc <0 DA, 0 TA, 0 QA> [51 PDT/33 MDT, 612 MEVA]
   }
   sets.engaged.HighDW.HeavyDef.HighAcc = {
-    ammo=gear.RAbullet,
+    -- Assume Chrono Bullet
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
     hands="Malignance Gloves",        -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
@@ -1635,7 +1647,7 @@ function init_gear_sets()
 
   -- Super DW (42 needed from gear)
   sets.engaged.SuperDW.HeavyDef = {
-    ammo=gear.RAbullet,
+    -- Assume Chrono Bullet
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body=gear.Adhemar_A_body,         --  6, __, 55 <__,  4, __> [__/__,  69]
     hands=gear.Floral_Gauntlets,      --  5, __, 36 <__,  3, __> [__/ 4,  37]
@@ -1652,7 +1664,7 @@ function init_gear_sets()
     -- 42 DW, 32 STP, 246 Acc <0 DA, 7 TA, 0 QA> [51 PDT/37 MDT, 423 MEVA]
   }
   sets.engaged.SuperDW.HeavyDef.LowAcc = {
-    ammo=gear.RAbullet,
+    -- Assume Chrono Bullet
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
     hands=gear.Floral_Gauntlets,      --  5, __, 36 <__,  3, __> [__/ 4,  37]
@@ -1669,7 +1681,7 @@ function init_gear_sets()
     -- 42 DW, 23 STP, 253 Acc <0 DA, 3 TA, 0 QA> [51 PDT/39 MDT, 448 MEVA]
   }
   sets.engaged.SuperDW.HeavyDef.MidAcc = {
-    ammo=gear.RAbullet,
+    -- Assume Chrono Bullet
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
     hands=gear.Floral_Gauntlets,      --  5, __, 36 <__,  3, __> [__/ 4,  37]
@@ -1686,7 +1698,7 @@ function init_gear_sets()
     -- 33 DW, 32 STP, 296 Acc <0 DA, 3 TA, 0 QA> [49 PDT/37 MDT, 529 MEVA]
   }
   sets.engaged.SuperDW.HeavyDef.HighAcc = {
-    ammo=gear.RAbullet,
+    -- Assume Chrono Bullet
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
     hands="Malignance Gloves",        -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
@@ -1705,7 +1717,7 @@ function init_gear_sets()
 
   -- Max DW (49 needed from gear)
   sets.engaged.MaxDW.HeavyDef = {
-    ammo=gear.RAbullet,
+    -- Assume Chrono Bullet
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body=gear.Adhemar_A_body,         --  6, __, 55 <__,  4, __> [__/__,  69]
     hands=gear.Floral_Gauntlets,      --  5, __, 36 <__,  3, __> [__/ 4,  37]
@@ -1722,7 +1734,7 @@ function init_gear_sets()
     -- 46 DW, 24 STP, 256 Acc <0 DA, 7 TA, 0 QA> [51 PDT/37 MDT, 431 MEVA]
   }
   sets.engaged.MaxDW.HeavyDef.LowAcc = {
-    ammo=gear.RAbullet,
+    -- Assume Chrono Bullet
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
     hands="Malignance Gloves",        -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
@@ -1739,7 +1751,7 @@ function init_gear_sets()
     -- 41 DW, 35 STP, 257 Acc <0 DA, 0 TA, 0 QA> [53 PDT/35 MDT, 531 MEVA]
   }
   sets.engaged.MaxDW.HeavyDef.MidAcc = {
-    ammo=gear.RAbullet,
+    -- Assume Chrono Bullet
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
     hands="Malignance Gloves",        -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
@@ -1756,7 +1768,7 @@ function init_gear_sets()
     -- 35 DW, 53 STP, 290 Acc <0 DA, 0 TA, 0 QA> [52 PDT/42 MDT, 576 MEVA]
   }
   sets.engaged.MaxDW.HeavyDef.HighAcc = {
-    ammo=gear.RAbullet,
+    -- Assume Chrono Bullet
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
     hands="Malignance Gloves",        -- __, 12, 50 <__, __, __> [ 5/ 5, 112]
@@ -1781,7 +1793,7 @@ function init_gear_sets()
   sets.engaged.MaxDW.Safe = set_combine(sets.engaged.MaxDW.HeavyDef, {})
   
   sets.engaged.SubtleBlow = {
-    ammo=gear.RAbullet,
+    -- Assume Chrono Bullet
     head="Malignance Chapeau",    -- [ 6/ 6, 123]
     body="Malignance Tabard",     -- [ 9/ 9, 139]
     hands="Malignance Gloves",    -- [ 5/ 5, 112]
@@ -1798,7 +1810,7 @@ function init_gear_sets()
   sets.engaged.LowDW.SubtleBlow = set_combine(sets.engaged.SubtleBlow, {})
   sets.engaged.MidDW.SubtleBlow = set_combine(sets.engaged.SubtleBlow, {})
   sets.engaged.HighDW.SubtleBlow = {
-    ammo=gear.RAbullet,
+    -- Assume Chrono Bullet
     head="Malignance Chapeau",    -- [ 6/ 6, 123]
     body="Malignance Tabard",     -- [ 9/ 9, 139]
     hands="Malignance Gloves",    -- [ 5/ 5, 112]

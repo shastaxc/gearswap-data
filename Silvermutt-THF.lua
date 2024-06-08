@@ -235,24 +235,22 @@ function job_setup()
   state.WeaponSet = M{['description']='Weapon Set', 'Normal', 'HighAcc', 'Naegling', 'NaeglingAcc', 'H2H', 'Staff', 'SoloCleaving', 'Cleaving'}
   state.RangedWeaponSet = M{['description']='Ranged Weapon Set', 'None', 'Throwing', 'Pulling', 'Archery'}
 
-  -- Indicate if a marksmanship weapon is xbow or gun (archery and throwing not needed here)
-  marksman_weapon_subtypes = {
-    -- ['Gastraphetes'] = "xbow",
-    -- ['Fomalhaut'] = "gun",
+  -- This map will be used by SilverLibs to determine which ammo to use
+  -- Default: Used most of the time. It is also the fallback option in case you don't have any of the other ammo.
+  -- Accuracy: Used in high accuracy situations.
+  -- Physical_Weaponskill: Used for ranged physical weaponskills.
+  -- Magic_Damage: Used when you are dealing magic damage.
+  ammo_assignment = {
+    Bow = {
+      Default = "Eminent Arrow", -- Beryllium Arrow is better
+      Accuracy = "Eminent Arrow", -- Beryllium Arrow is better
+      Physical_Weaponskill = "Eminent Arrow", -- Beryllium Arrow is better
+      Magic_Damage = "Eminent Arrow", -- Beryllium Arrow is better
+    },
   }
 
-  DefaultAmmo = {
-    ['Ullr'] = "Eminent Arrow",
-  }
-  AccAmmo = {
-    ['Ullr'] = "Eminent Arrow",
-  }
-  WSAmmo = {
-    ['Ullr'] = "Eminent Arrow",
-  }
-  MagicAmmo = {
-    ['Ullr'] = "Eminent Arrow",
-  }
+  -- Message will warn you when low on ammo if you have less than the specified amount when firing.
+  options.ammo_warning_limit = 10
 
   set_main_keybinds()
 end

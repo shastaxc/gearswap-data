@@ -90,80 +90,38 @@ function job_setup()
   state.Buff['Velocity Shot'] = buffactive['Velocity Shot'] or false
   state.Buff['Double Shot'] = buffactive['Double Shot'] or false
 
-  options.ammo_warning_limit = 10
-
   no_swap_waists = S{"Era. Bul. Pouch", "Dev. Bul. Pouch", "Chr. Bul. Pouch", "Quelling B. Quiver",
       "Yoichi's Quiver", "Artemis's Quiver", "Chrono Quiver"}
 
-  DefaultAmmo = {
-    ['Yoichinoyumi'] = "Chrono Arrow",
-    ['Gandiva'] = "Chrono Arrow",
-    ['Fail-Not'] = "Chrono Arrow",
-    ['Annihilator'] = "Chrono Bullet",
-    ['Armageddon'] = "Chrono Bullet",
-    ['Gastraphetes'] = "Quelling Bolt",
-    ['Fomalhaut'] = "Chrono Bullet",
-    ['Sparrowhawk +2'] = "Eminent Arrow",
-    ['Sparrowhawk +3'] = "Eminent Arrow",
-    ['Accipiter'] = "Eminent Arrow",
-    ['Anarchy'] = "Chrono Bullet",
-    ['Anarchy +1'] = "Chrono Bullet",
-    ['Anarchy +2'] = "Chrono Bullet",
-    ['Anarchy +3'] = "Chrono Bullet",
-    ['Ataktos'] = "Chrono Bullet",
+  -- This map will be used by SilverLibs to determine which ammo to use
+  -- Default: Used most of the time. It is also the fallback option in case you don't have any of the other ammo.
+  -- Accuracy: Used in high accuracy situations.
+  -- Physical_Weaponskill: Used for ranged physical weaponskills.
+  -- Magic_Damage: Used when you are dealing magic damage.
+  ammo_assignment = {
+    Bow = {
+      Default = "Eminent Arrow", -- Chrono Arrow is better
+      Accuracy = "Eminent Arrow", -- Yoichi's Arrow is better
+      Physical_Weaponskill = "Eminent Arrow", -- Chrono Arrow is better
+      Magic_Damage = "Eminent Arrow", -- Chrono Arrow is better
+    },
+    Crossbow = {
+      Default = "Quelling Bolt",
+      Accuracy = "Quelling Bolt",
+      Physical_Weaponskill = "Quelling Bolt",
+      Magic_Damage = "Quelling Bolt",
+    },
+    Gun_or_Cannon = {
+      Default = "Chrono Bullet",
+      Accuracy = "Devastating Bullet", -- Eradicating Bullet is better
+      Physical_Weaponskill = "Chrono Bullet",
+      Magic_Damage = "Devastating Bullet",
+    }
   }
-  AccAmmo = {
-    ['Yoichinoyumi'] = "Yoichi's Arrow",
-    ['Gandiva'] = "Yoichi's Arrow",
-    ['Fail-Not'] = "Yoichi's Arrow",
-    ['Annihilator'] = "Eradicating Bullet",
-    ['Armageddon'] = "Eradicating Bullet",
-    ['Gastraphetes'] = "Quelling Bolt",
-    ['Fomalhaut'] = "Devastating Bullet",
-    ['Sparrowhawk +2'] = "Eminent Arrow",
-    ['Sparrowhawk +3'] = "Eminent Arrow",
-    ['Accipiter'] = "Eminent Arrow",
-    ['Anarchy'] = "Chrono Bullet",
-    ['Anarchy +1'] = "Chrono Bullet",
-    ['Anarchy +2'] = "Chrono Bullet",
-    ['Anarchy +3'] = "Chrono Bullet",
-    ['Ataktos'] = "Chrono Bullet",
-  }
-  WSAmmo = {
-    ['Yoichinoyumi'] = "Chrono Arrow",
-    ['Gandiva'] = "Chrono Arrow",
-    ['Fail-Not'] = "Chrono Arrow",
-    ['Annihilator'] = "Chrono Bullet",
-    ['Armageddon'] = "Chrono Bullet",
-    ['Gastraphetes'] = "Quelling Bolt",
-    ['Fomalhaut'] = "Chrono Bullet",
-    ['Sparrowhawk +2'] = "Eminent Arrow",
-    ['Sparrowhawk +3'] = "Eminent Arrow",
-    ['Accipiter'] = "Eminent Arrow",
-    ['Anarchy'] = "Chrono Bullet",
-    ['Anarchy +1'] = "Chrono Bullet",
-    ['Anarchy +2'] = "Chrono Bullet",
-    ['Anarchy +3'] = "Chrono Bullet",
-    ['Ataktos'] = "Chrono Bullet",
-  }
-  MagicAmmo = {
-    ['Yoichinoyumi'] = "Chrono Arrow",
-    ['Gandiva'] = "Chrono Arrow",
-    ['Fail-Not'] = "Chrono Arrow",
-    ['Annihilator'] = "Devastating Bullet",
-    ['Armageddon'] = "Devastating Bullet",
-    ['Gastraphetes'] = "Quelling Bolt",
-    ['Fomalhaut'] = "Devastating Bullet",
-    ['Sparrowhawk +2'] = "Eminent Arrow",
-    ['Sparrowhawk +3'] = "Eminent Arrow",
-    ['Accipiter'] = "Eminent Arrow",
-    ['Anarchy'] = "Chrono Bullet",
-    ['Anarchy +1'] = "Chrono Bullet",
-    ['Anarchy +2'] = "Chrono Bullet",
-    ['Anarchy +3'] = "Chrono Bullet",
-    ['Ataktos'] = "Chrono Bullet",
-  }
-  
+
+  -- Message will warn you when low on ammo if you have less than the specified amount when firing.
+  options.ammo_warning_limit = 10
+
   set_main_keybinds()
 end
 
@@ -1950,11 +1908,14 @@ end
 -- Requires DistancePlus addon
 function update_dp_type()
   local weapon = player.equipment.ranged ~= nil and player.equipment.ranged ~= 'empty' and res.items:with('name', player.equipment.ranged)
-  local range_type = (weapon and weapon.range_type) or nil -- Either: Crossbow, Gun, Bow
+  local range_type = (weapon and weapon.range_type) or nil -- Either: Crossbow, Gun, Bow, or Cannon
 
   -- Account for command discrepancy between items value 'Crossbow' and distanceplus accepted command 'xbow'
   if range_type == 'Crossbow' then
     range_type = 'xbow'
+  -- Account for command discrepancy between items value 'Cannon' and distanceplus accepted command 'gun'
+  elseif range_type == 'Cannon' then
+    range_type = 'gun'
   end
 
   -- Update addon if weapon type changed
@@ -1978,10 +1939,12 @@ function equip_ranged_weapons()
   equip(sets.WeaponSet[state.RangedWeaponSet.current])
 
   -- Equip appropriate ammo
-  local ranged = sets.WeaponSet[state.RangedWeaponSet.current].ranged
-  if DefaultAmmo[ranged] then
-    if silibs.has_item(DefaultAmmo[ranged], silibs.equippable_bags) then
-      equip({ammo=DefaultAmmo[ranged]})
+  local weapon_name = sets.WeaponSet[state.RangedWeaponSet.current].ranged
+  local weapon_stats = res.items:with('en', weapon_name)
+  local range_type = ((weapon_stats.range_type == 'Gun' or range_type == 'Cannon') and 'Gun_or_Cannon') or weapon_stats.range_type
+  if range_type and ammo_assignment[range_type].Default then
+    if silibs.has_item(ammo_assignment[range_type].Default, silibs.equippable_bags) then
+      equip({ammo=ammo_assignment[range_type].Default})
     else
       add_to_chat(3,"Default ammo unavailable.  Leaving empty.")
     end
