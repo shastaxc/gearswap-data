@@ -197,6 +197,7 @@ function job_setup()
   silibs.enable_custom_roll_timers() -- Requires Timers plugin
   silibs.enable_elemental_belt_handling(has_obi, has_orpheus)
   silibs.enable_snapshot_auto_equip()
+  silibs.enable_handle_ammo_swaps()
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.HybridMode:options('HeavyDef', 'Safe', 'SubtleBlow', 'Normal')
@@ -1925,9 +1926,6 @@ function job_precast(spell, action, spellMap, eventArgs)
   silibs.precast_hook(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
 
-  -- Check that proper ammo is available if we're using ranged attacks or similar.
-  silibs.equip_ammo(spell, action, spellMap, eventArgs)
-
   -- Gear
   if spell.type == 'CorsairRoll' and not silibs.midaction() then
     roll_timer = os.clock()
@@ -2017,9 +2015,6 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
       end
     end
   end
-
-  -- Check that proper ammo is available if we're using ranged attacks or similar.
-  silibs.equip_ammo(spell, action, spellMap, eventArgs)
 
   -- If slot is locked, keep current equipment on
   if locked_neck then equip({ neck=player.equipment.neck }) end
