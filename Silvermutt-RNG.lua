@@ -73,7 +73,31 @@ function job_setup()
   silibs.enable_haste_info()
   silibs.enable_elemental_belt_handling(has_obi, has_orpheus)
   silibs.enable_snapshot_auto_equip()
-  silibs.enable_handle_ammo_swaps()
+  -- This map will be used by SilverLibs to determine which ammo to use
+  -- Default: Used most of the time. It is also the fallback option in case you don't have any of the other ammo.
+  -- Accuracy: Used in high accuracy situations.
+  -- Physical_Weaponskill: Used for ranged physical weaponskills.
+  -- Magic_Damage: Used when you are dealing magic damage.
+  silibs.enable_handle_ammo_swaps({
+    Bow = {
+      Default = "Eminent Arrow", -- Chrono Arrow is better
+      Accuracy = "Eminent Arrow", -- Yoichi's Arrow is better
+      Physical_Weaponskill = "Eminent Arrow", -- Chrono Arrow is better
+      Magic_Damage = "Eminent Arrow", -- Chrono Arrow is better
+    },
+    Crossbow = {
+      Default = "Quelling Bolt",
+      Accuracy = "Quelling Bolt",
+      Physical_Weaponskill = "Quelling Bolt",
+      Magic_Damage = "Quelling Bolt",
+    },
+    Gun_or_Cannon = {
+      Default = "Chrono Bullet",
+      Accuracy = "Devastating Bullet", -- Eradicating Bullet is better
+      Physical_Weaponskill = "Chrono Bullet",
+      Magic_Damage = "Devastating Bullet",
+    }
+  })
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.HybridMode:options('Normal', 'HeavyDef')
@@ -93,32 +117,6 @@ function job_setup()
 
   no_swap_waists = S{"Era. Bul. Pouch", "Dev. Bul. Pouch", "Chr. Bul. Pouch", "Quelling B. Quiver",
       "Yoichi's Quiver", "Artemis's Quiver", "Chrono Quiver"}
-
-  -- This map will be used by SilverLibs to determine which ammo to use
-  -- Default: Used most of the time. It is also the fallback option in case you don't have any of the other ammo.
-  -- Accuracy: Used in high accuracy situations.
-  -- Physical_Weaponskill: Used for ranged physical weaponskills.
-  -- Magic_Damage: Used when you are dealing magic damage.
-  ammo_assignment = {
-    Bow = {
-      Default = "Eminent Arrow", -- Chrono Arrow is better
-      Accuracy = "Eminent Arrow", -- Yoichi's Arrow is better
-      Physical_Weaponskill = "Eminent Arrow", -- Chrono Arrow is better
-      Magic_Damage = "Eminent Arrow", -- Chrono Arrow is better
-    },
-    Crossbow = {
-      Default = "Quelling Bolt",
-      Accuracy = "Quelling Bolt",
-      Physical_Weaponskill = "Quelling Bolt",
-      Magic_Damage = "Quelling Bolt",
-    },
-    Gun_or_Cannon = {
-      Default = "Chrono Bullet",
-      Accuracy = "Devastating Bullet", -- Eradicating Bullet is better
-      Physical_Weaponskill = "Chrono Bullet",
-      Magic_Damage = "Devastating Bullet",
-    }
-  }
 
   -- Message will warn you when low on ammo if you have less than the specified amount when firing.
   options.ammo_warning_limit = 10

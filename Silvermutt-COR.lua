@@ -197,7 +197,23 @@ function job_setup()
   silibs.enable_custom_roll_timers() -- Requires Timers plugin
   silibs.enable_elemental_belt_handling(has_obi, has_orpheus)
   silibs.enable_snapshot_auto_equip()
-  silibs.enable_handle_ammo_swaps()
+  -- This map will be used by SilverLibs to determine which ammo to use
+  -- Default: Used most of the time. It is also the fallback option in case you don't have any of the other ammo.
+  -- Accuracy: Used in high accuracy situations.
+  -- Physical_Weaponskill: Used for ranged physical weaponskills.
+  -- Magic_Damage: Used when you are dealing magic damage.
+  -- Magic_Accuracy: Used for Light Shot and Dark Shot.
+  -- Quick_Draw: Used when performing Quick Draws (not Light or Dark). This ammo is never consumed.
+  silibs.enable_handle_ammo_swaps({
+    Gun_or_Cannon = {
+      Default = "Chrono Bullet",
+      Accuracy = "Devastating Bullet",
+      Physical_Weaponskill = "Chrono Bullet",
+      Magic_Damage = "Living Bullet",
+      Magic_Accuracy = "Devastating Bullet",
+      Quick_Draw = "Hauksbok Bullet", -- Does not get consumed
+    }
+  })
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.HybridMode:options('HeavyDef', 'Safe', 'SubtleBlow', 'Normal')
@@ -223,24 +239,6 @@ function job_setup()
   -- Put any "consumable" belts here
   no_swap_waists = S{"Era. Bul. Pouch", "Dev. Bul. Pouch", "Chr. Bul. Pouch", "Quelling B. Quiver",
       "Yoichi's Quiver", "Artemis's Quiver", "Chrono Quiver", "Liv. Bul. Pouch"}
-
-  -- This map will be used by SilverLibs to determine which ammo to use
-  -- Default: Used most of the time. It is also the fallback option in case you don't have any of the other ammo.
-  -- Accuracy: Used in high accuracy situations.
-  -- Physical_Weaponskill: Used for ranged physical weaponskills.
-  -- Magic_Damage: Used when you are dealing magic damage.
-  -- Magic_Accuracy: Used for Light Shot and Dark Shot.
-  -- Quick_Draw: Used when performing Quick Draws (not Light or Dark). This ammo is never consumed.
-  ammo_assignment = {
-    Gun_or_Cannon = {
-      Default = "Chrono Bullet",
-      Accuracy = "Devastating Bullet",
-      Physical_Weaponskill = "Chrono Bullet",
-      Magic_Damage = "Living Bullet",
-      Magic_Accuracy = "Devastating Bullet",
-      Quick_Draw = "Hauksbok Bullet", -- Does not get consumed
-    }
-  }
 
   -- Message will warn you when low on ammo if you have less than the specified amount when firing.
   options.ammo_warning_limit = 10
