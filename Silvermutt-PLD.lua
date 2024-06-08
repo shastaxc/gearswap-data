@@ -41,8 +41,11 @@ Weapons
   * Additional weapon sets can be created but you need to also add them to the state.WeaponSet cycle.
 * There are separate keybinds for your offhand weapon called SubWeaponSet. This allows you to mix and match your
   weapons and shields.
-* All other sets (like precast, midcast, idle, etc.) that include weapons (main, sub) will have those slots
-  ignored. The selected WeaponSet will override it.
+* The WeaponSet and SubWeaponSet cycles have an "Any" option (the default). When this is selected, it will allow
+  all other sets (like precast, midcast, idle, etc.) to use the weapons that are specified (main, sub) on those sets.
+  Otherwise, it will have those slots ignored and the selected WeaponSet and SubWeaponSet will override it.
+  * The benefit to allowing the swaps is some of your abilities will be stronger (such as Phalanx or Enmity abilities),
+    while the downside is that you will constantly lose TP and it may make you less tanky.
 
 Spells
 * Sets are built assuming at least 4/5 Spell Interruption Rate merits are enabled.
