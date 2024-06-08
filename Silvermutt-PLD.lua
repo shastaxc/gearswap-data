@@ -54,7 +54,7 @@ Spells
     will use sets.midcast.Cure instead of sets.SIRDCure. But the sets.SIRDCure set will be used most of the time.
 * There is a separate set and keybind for regular Phalanx vs SIRD-capped Phalanx. Use the SIRD-capped one if you
   are tanking lots of enemies or else they will simply interrupt you. Even a weak Phalanx is better than none.
-* I use AzureSets addon to manage the spells. Make sure there is a set in there called pldsub because that will
+* Spell sets are managed in the AzureSets addon. Make sure there is a set in there called pldsub because that will
   attempt to equip automatically when you change jobs.
 
 Other

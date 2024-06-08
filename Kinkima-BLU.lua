@@ -47,7 +47,7 @@ Weapons
 * The "DW" variants of sets will be used automatically if the Dual Wield trait is available.
 
 Spells
-* Spell sets are managed in the AzureSets addon.
+* Spell sets are managed in the AzureSets addon. For convenience, my sets are defined in this comment section.
 * Your BLU spells have been categorized by function (for example: Physical STR-based, Magical DEX-based, Refresh, etc)
   so that you can create sets by category instead of having to specify a set for every individual spell.
 
