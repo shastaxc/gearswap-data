@@ -46,13 +46,16 @@ Weapons
 
 Spells
 * Sets are built assuming at least 4/5 Spell Interruption Rate merits are enabled.
-* 5/5 Iron Will merits plus 4/5 SIRD merits will cap you so while Rampart is active. If you don't have Rampart active or
-  if you don't have the appropriate merits, certain spells which we want to always be SIRD-capped, will equip one of the
-  SIRD sets defined by the map named midcast_SIRD_sets. Modify this if you wish, but I don't recommend changing it.
-  * In the case you do have SIRD capped through merits + Rampart, regular sets will be used. For example, a Cure will
-    use sets.midcast.Cure instead of sets.SIRDCure. But the sets.SIRDCure set will be used most of the time.
-* There is a separate set and keybind for regular Phalanx vs SIRD-capped Phalanx. Use the SIRD-capped one if you are
-  tanking lots of enemies or else they will simply interrupt you. Even a weak Phalanx is better than none.
+* 5/5 Iron Will merits plus 4/5 SIRD merits will cap you so while Rampart is active. If you don't have Rampart
+  active or if you don't have the appropriate merits, certain spells which we want to always be SIRD-capped, will
+  equip one of the SIRD sets defined by the map named midcast_SIRD_sets. Modify this if you wish, but I don't
+  recommend changing it.
+  * In the case you do have SIRD capped through merits + Rampart, regular sets will be used. For example, a Cure
+    will use sets.midcast.Cure instead of sets.SIRDCure. But the sets.SIRDCure set will be used most of the time.
+* There is a separate set and keybind for regular Phalanx vs SIRD-capped Phalanx. Use the SIRD-capped one if you
+  are tanking lots of enemies or else they will simply interrupt you. Even a weak Phalanx is better than none.
+* I use AzureSets addon to manage the spells. Make sure there is a set in there called pldsub because that will
+  attempt to equip automatically when you change jobs.
 
 Other
 * If you are not using my reorganizer addon, remove all the sets.org sets (including in character global file).
@@ -177,18 +180,18 @@ __Keybind___Name______________Command_____________
 ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
                                               Sub-job /BLU Spell Set
 ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
-Cocoon
-Foot Kick
-Sheep Song
-Healing Breeze
-Claw Cyclone
-Mysterious Light
-Mandibular Bite
-Wild Oats
-Sprout Smack
-Power Attack
-Geist Wall
-Blank Gaze
+<slot01>cocoon</slot01>
+<slot02>mysterious light</slot02>
+<slot03>sheep song</slot03>
+<slot04>healing breeze</slot04>
+<slot05>claw cyclone</slot05>
+<slot06>foot kick</slot06>
+<slot07>mandibular bite</slot07>
+<slot08>blank gaze</slot08>
+<slot09>wild oats</slot09>
+<slot10>sprout smack</slot10>
+<slot11>power attack</slot11>
+<slot12>geist wall</slot12>
 
 ]]--
 

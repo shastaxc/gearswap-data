@@ -164,6 +164,107 @@ __Keybind___Name______________Command_____________
 [ ALT+8 ]  AnvilLit       /ma "Anvil Lightning" <stnpc>
 [ ALT+0 ]  Erase          /ma "Erase" <me>
 
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                                  BLU Spell Sets
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+DD:
+  <slot01>sinker drill</slot01>
+  <slot02>heavy strike</slot02>
+  <slot03>barbed crescent</slot03>
+  <slot04>erratic flutter</slot04>
+  <slot05>occultation</slot05>
+  <slot06>cocoon</slot06>
+  <slot07>fantod</slot07>
+  <slot08>anvil lightning</slot08>
+  <slot09>nat. meditation</slot09>
+  <slot10>paralyzing triad</slot10>
+  <slot11>saline coat</slot11>
+  <slot12>delta thrust</slot12>
+  <slot13>sudden lunge</slot13>
+  <slot14>empty thrash</slot14>
+  <slot15>thrashing assault</slot15>
+  <slot16>dream flower</slot16>
+  <slot17>diffusion ray</slot17>
+  <slot18>battery charge</slot18>
+  <slot19>tenebral crush</slot19>
+
+DD2:
+  <slot01>sinker drill</slot01>
+  <slot02>heavy strike</slot02>
+  <slot03>barbed crescent</slot03>
+  <slot04>erratic flutter</slot04>
+  <slot05>occultation</slot05>
+  <slot06>cocoon</slot06>
+  <slot07>fantod</slot07>
+  <slot08>anvil lightning</slot08>
+  <slot09>nat. meditation</slot09>
+  <slot10>paralyzing triad</slot10>
+  <slot11>saline coat</slot11>
+  <slot12>delta thrust</slot12>
+  <slot13>sudden lunge</slot13>
+  <slot14>empty thrash</slot14>
+  <slot15>thrashing assault</slot15>
+  <slot16>dream flower</slot16>
+  <slot17>diffusion ray</slot17>
+  <slot18>battery charge</slot18>
+  <slot19>sweeping gouge</slot19>
+  <slot20>sheep song</slot20>
+
+Mage:
+  <slot01>delta thrust</slot01>
+  <slot02>barbed crescent</slot02>
+  <slot03>erratic flutter</slot03>
+  <slot04>spectral floe</slot04>
+  <slot05>subduction</slot05>
+  <slot06>magic hammer</slot06>
+  <slot07>cocoon</slot07>
+  <slot08>cursed sphere</slot08>
+  <slot09>sound blast</slot09>
+  <slot10>tenebral crush</slot10>
+  <slot11>blinding fulgor</slot11>
+  <slot12>anvil lightning</slot12>
+  <slot13>battery charge</slot13>
+  <slot14>dream flower</slot14>
+  <slot15>occultation</slot15>
+  <slot16>silent storm</slot16>
+  <slot17>saline coat</slot17>
+
+TP Drain:
+  <slot01>saline coat</slot01>
+  <slot02>delta thrust</slot02>
+  <slot03>silent storm</slot03>
+  <slot04>bad breath</slot04>
+  <slot05>blinding fulgor</slot05>
+  <slot06>erratic flutter</slot06>
+  <slot07>tenebral crush</slot07>
+  <slot08>diamondhide</slot08>
+  <slot09>metallic body</slot09>
+  <slot10>feather tickle</slot10>
+  <slot11>entomb</slot11>
+  <slot12>barbed crescent</slot12>
+  <slot13>cocoon</slot13>
+  <slot14>reaving wind</slot14>
+  <slot15>wind breath</slot15>
+  <slot16>magic fruit</slot16>
+  <slot17>sub-zero smash</slot17>
+  <slot18>auroral drape</slot18>
+  <slot19>reactor cool</slot19>
+
+TP Drain 2:
+  <slot01>tenebral crush</slot01>
+  <slot02>blinding fulgor</slot02>
+  <slot03>feather tickle</slot03>
+  <slot04>auroral drape</slot04>
+  <slot05>barbed crescent</slot05>
+  <slot06>erratic flutter</slot06>
+  <slot07>delta thrust</slot07>
+  <slot08>saline coat</slot08>
+  <slot09>silent storm</slot09>
+  <slot10>reaving wind</slot10>
+  <slot11>entomb</slot11>
+  <slot12>magic fruit</slot12>
+  <slot13>winds of promy.</slot13>
+
 ]]--
 
 
