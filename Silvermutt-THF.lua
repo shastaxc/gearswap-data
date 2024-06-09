@@ -214,6 +214,19 @@ function job_setup()
   silibs.enable_equip_loop()
   silibs.enable_haste_info()
   silibs.enable_elemental_belt_handling(has_obi, has_orpheus)
+  -- This map will be used by SilverLibs to determine which ammo to use
+  -- Default: Used most of the time. It is also the fallback option in case you don't have any of the other ammo.
+  -- Accuracy: Used in high accuracy situations.
+  -- Physical_Weaponskill: Used for ranged physical weaponskills.
+  -- Magic_Damage: Used when you are dealing magic damage.
+  silibs.enable_handle_ammo_swaps({
+    Bow = {
+      Default = "Eminent Arrow", -- Beryllium Arrow is better
+      Accuracy = "Eminent Arrow", -- Beryllium Arrow is better
+      Physical_Weaponskill = "Eminent Arrow", -- Beryllium Arrow is better
+      Magic_Damage = "Eminent Arrow", -- Beryllium Arrow is better
+    },
+  })
 
   current_dp_type = nil -- Do not modify
 
@@ -234,20 +247,6 @@ function job_setup()
   -- Customizable Weapon Sets. Name must match set name (far below)
   state.WeaponSet = M{['description']='Weapon Set', 'Normal', 'HighAcc', 'Naegling', 'NaeglingAcc', 'H2H', 'Staff', 'SoloCleaving', 'Cleaving'}
   state.RangedWeaponSet = M{['description']='Ranged Weapon Set', 'None', 'Throwing', 'Pulling', 'Archery'}
-
-  -- This map will be used by SilverLibs to determine which ammo to use
-  -- Default: Used most of the time. It is also the fallback option in case you don't have any of the other ammo.
-  -- Accuracy: Used in high accuracy situations.
-  -- Physical_Weaponskill: Used for ranged physical weaponskills.
-  -- Magic_Damage: Used when you are dealing magic damage.
-  ammo_assignment = {
-    Bow = {
-      Default = "Eminent Arrow", -- Beryllium Arrow is better
-      Accuracy = "Eminent Arrow", -- Beryllium Arrow is better
-      Physical_Weaponskill = "Eminent Arrow", -- Beryllium Arrow is better
-      Magic_Damage = "Eminent Arrow", -- Beryllium Arrow is better
-    },
-  }
 
   -- Message will warn you when low on ammo if you have less than the specified amount when firing.
   options.ammo_warning_limit = 10
