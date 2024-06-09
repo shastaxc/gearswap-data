@@ -43,6 +43,23 @@ function job_setup()
   silibs.enable_haste_info()
   silibs.enable_elemental_belt_handling(has_obi, has_orpheus)
   silibs.enable_custom_roll_timers() -- Requires Timers plugin
+  -- This map will be used by SilverLibs to determine which ammo to use
+  -- Default: Used most of the time. It is also the fallback option in case you don't have any of the other ammo.
+  -- Accuracy: Used in high accuracy situations.
+  -- Physical_Weaponskill: Used for ranged physical weaponskills.
+  -- Magic_Damage: Used when you are dealing magic damage.
+  -- Magic_Accuracy: Used for Light Shot and Dark Shot.
+  -- Quick_Draw: Used when performing Quick Draws (not Light or Dark). This ammo is never consumed.
+  silibs.enable_handle_ammo_swaps({
+    Gun_or_Cannon = {
+      Default = "Chrono Bullet",
+      Accuracy = "Chrono Bullet",
+      Physical_Weaponskill = "Chrono Bullet",
+      Magic_Damage = "Chrono Bullet",
+      Magic_Accuracy = "Chrono Bullet",
+      Quick_Draw = "Hauksbok Bullet", -- Does not get consumed
+    }
+  })
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.HybridMode:options('HeavyDef', 'Safe', 'SubtleBlow', 'Normal')
@@ -71,14 +88,6 @@ function job_setup()
   no_swap_waists = S{"Era. Bul. Pouch", "Dev. Bul. Pouch", "Chr. Bul. Pouch", "Quelling B. Quiver",
       "Yoichi's Quiver", "Artemis's Quiver", "Chrono Quiver", "Liv. Bul. Pouch"}
 
-  
-  gear.RAbullet = "Chrono Bullet"
-  gear.RAccbullet = "Chrono Bullet"
-  gear.WSbullet = "Chrono Bullet"
-  gear.MAbullet = "Chrono Bullet"
-  gear.QDbullet = "Hauksbok Bullet"
-  -- gear.RAccbullet = "Devastating Bullet"
-  -- gear.MAbullet = "Living Bullet"
   options.ammo_warning_limit = 10
 
   -- Update DistancePlus addon with weapon type
@@ -116,14 +125,8 @@ end
 -- Define sets and vars used by this job file.
 function init_gear_sets()
   sets.org.job = {}
-  sets.org.job[1] = {ammo=gear.RAbullet}
-  sets.org.job[2] = {ammo=gear.RAccbullet}
-  sets.org.job[3] = {ammo=gear.WSbullet}
-  sets.org.job[4] = {ammo=gear.MAbullet}
-  sets.org.job[5] = {ammo=gear.QDbullet}
-  -- sets.org.job[6] = {waist="Chrono bullet pouch"}
-  -- sets.org.job[7] = {waist="Devastating Bullet Pouch"}
-  -- sets.org.job[8] = {waist="Living Bullet Pouch"}
+  sets.org.job[1] = {ammo="Chrono Bullet"}
+  sets.org.job[2] = {ammo="Hauksbok Bullet"}
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Precast Sets ------------------------------------------
