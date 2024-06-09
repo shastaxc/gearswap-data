@@ -1935,9 +1935,9 @@ function equip_ranged_weapons()
   local weapon_name = sets.WeaponSet[state.RangedWeaponSet.current].ranged
   local weapon_stats = res.items:with('en', weapon_name)
   local range_type = ((weapon_stats.range_type == 'Gun' or range_type == 'Cannon') and 'Gun_or_Cannon') or weapon_stats.range_type
-  if range_type and ammo_assignment[range_type].Default then
-    if silibs.has_item(ammo_assignment[range_type].Default, silibs.equippable_bags) then
-      equip({ammo=ammo_assignment[range_type].Default})
+  if range_type and silibs.ammo_assignment[range_type].Default then
+    if silibs.has_item(silibs.ammo_assignment[range_type].Default, silibs.equippable_bags) then
+      equip({ammo=silibs.ammo_assignment[range_type].Default})
     else
       add_to_chat(3,"Default ammo unavailable.  Leaving empty.")
     end
