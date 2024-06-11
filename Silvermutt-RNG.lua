@@ -1,43 +1,152 @@
--- File Status: Good.
+--[[
+File Status: Good.
 
--- Author: Silvermutt
--- Required external libraries: SilverLibs
--- Required addons: HasteInfo, DistancePlus
--- Recommended addons: WSBinder, Reorganizer
--- Misc Recommendations: Disable GearInfo, disable RollTracker
+Author: Silvermutt
+Required external libraries: SilverLibs
+Required addons: HasteInfo, DistancePlus
+Recommended addons: WSBinder, Reorganizer
+Misc Recommendations: Disable GearInfo, disable RollTracker
 
--------------------------------------------------------------------------------------------------------------------
---  Keybinds
--------------------------------------------------------------------------------------------------------------------
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                                  General Use Tips
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+Modes
+* Offense Mode: Changes melee accuracy level
+* Hybrid Mode: Changes damage taken level while engaged
+* Defense Mode: Equips super high emergency damage reduction set, greatly reduces your DPS output
+* CP Mode: Equips Capacity Points bonus cape
+* Ranged Mode: Changes ranged accuracy level
 
---  Modes:      [ F9 ]              Cycle Offense Modes
---              [ CTRL+F9 ]         Cycle Hybrid Modes
---              [ ALT+F9 ]          Cycle Ranged Modes
---              [ WIN+F9 ]          Cycle Weapon Skill Modes
---              [ F10 ]             Emergency -PDT Mode
---              [ ALT+F10 ]         Toggle Kiting Mode
---              [ F11 ]             Emergency -MDT Mode
---              [ F12 ]             Update Current Gear / Report Current Status
---              [ CTRL+F12 ]        Cycle Idle Modes
---              [ ALT+F12 ]         Cancel Emergency -PDT/-MDT Mode
---              [ WIN+C ]           Toggle Capacity Points Mode
---
---  Abilities:  [ CTRL+NumLock ]    Double Shot
---              [ CTRL+Numpad/ ]    Berserk/Meditate
---              [ CTRL+Numpad* ]    Warcry/Sekkanoki
---              [ CTRL+Numpad- ]    Aggressor/Third Eye
---
---  Spells:     [ WIN+, ]           Utsusemi: Ichi
---              [ WIN+. ]           Utsusemi: Ni
---
---  Weapons:    [ CTRL+Ins/Del ]    Cycles between available Weapon Sets
---
---  WS:         [ ALT+Numpad 1-9 ]  Dependent on ranged weapon equipped
---
---  RA:         [ Numpad0 ]         Ranged Attack
---
---
---              (Global-Binds.lua contains additional non-job-related keybinds)
+Weapons
+* Use keybinds to cycle weapons.
+* If you want different weapon sets, edit the sets.WeaponSet sets or sets.RangedWeaponSet
+  * Additional weapon sets can be created but you need to also add them to the state.WeaponSet cycle or
+    state.RangedWeaponSet cycle.
+* All other sets (like precast, midcast, idle, etc.) should exclude weapons (main, sub, range).
+  * Ammo will be ignored and handled through a library function based on the configs you set in the setup.
+* Update the ammo configs in the "job_setup" function to match bullets you intend to use for these purposes.
+  * You must have Default at the very least. If you don't have access to that type of ammo listed, change it
+    to something you do have.
+* If you enable one of the ToyWeapons modes, it will lock your weapons into low level weapons. This can be
+  useful if you are intentionally trying not to kill something, like low level enemies where you may need
+  to proc them with a WS without killing them. This overrides all other weapon modes and weapon equip logic.
+  * Memorize the keybind to turn it off in case you toggle it by accident.
+
+Other
+* If you are not using my reorganizer addon, remove all the sets.org sets (including in character global file).
+* I generally plan out best-in-slot (BiS) pieces for each set even before I acquire the pieces. These BiS pieces are
+  left commented out in the set, while placeholders that I do have in the meantime are uncommented for that slot.
+* I like to list out the important stats for each piece of item in most of my sets, and then have a total at
+  the bottom of the set. If you ever change any pieces of gear, you should recalculate the stats for the new piece
+  and then recalculate for the set total, or just remove those stat comments entirely to avoid confusion. However,
+  if you choose to ignore them, it doesn't not actually affect anything.
+* Equipping certain gear such as warp rings or ammo belts will automatically lock that slot until you manually
+  unequip it or change zones.
+
+
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                                      Keybinds
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+Modes:
+  [ F9 ]                Cycle Melee Accuracy
+  [ CTRL+F9 ]           Cycle Melee Defense
+  [ ALT+F9 ]            Cycle Ranged Accuracy
+  [ F10 ]               Toggle Emergency -PDT
+  [ ALT+F10 ]           Toggle Kiting (on = move speed gear always equipped)
+  [ F11 ]               Toggle Emergency -MDT
+  [ F12 ]               Report current status
+  [ CTRL+F12 ]          Cycle Idle modes
+  [ ALT+F12 ]           Cancel Emergency -PDT/-MDT Mode
+  [ WIN+C ]             Toggle Capacity Points Mode
+
+Weapons:
+  [ CTRL+Insert ]       Cycle Weapon Sets
+  [ CTRL+Delete ]       Cycleback Weapon Sets
+  [ ALT+Delete ]        Reset to default Weapon Set
+  [ CTRL+Home ]         Cycle Ranged Weapon Sets
+  [ CTRL+End ]          Cycleback Ranged Weapon Sets
+  [ ALT+End ]           Reset to default Ranged Weapon Set
+  [ CTRL+PageUp ]       Cycle Toy Weapon Sets
+  [ CTRL+PageDown ]     Cycleback Toy Weapon Sets
+  [ ALT+PageDown ]      Reset to default Toy Weapon Set
+
+Spells:
+  ============ /NIN ============
+  [ ALT+Numpad0 ]       Utsusemi: Ichi
+  [ ALT+Numpad. ]       Utsusemi: Ni
+
+Abilities:
+  [ ALT+` ]             Scavenge
+  [ ALT+Q ]             Velocity Shot
+  [ ALT+E ]             Hover Shot
+  [ ALT+W ]             Double Shot
+  ============ /WAR ============
+  [ CTRL+Numlock ]      Defender
+  [ CTRL+Numpad/ ]      Berserk
+  [ CTRL+Numpad* ]      Warcry
+  [ CTRL+Numpad- ]      Aggressor
+  ============ /SAM ============
+  [ CTRL+Numlock ]      Third Eye
+  [ CTRL+Numpad/ ]      Meditate
+  [ CTRL+Numpad* ]      Sekkanoki
+  [ CTRL+Numpad- ]      Hasso
+  ============ /THF ============
+  [ CTRL+Numpad0 ]      Sneak Attack
+  [ CTRL+Numpad. ]      Trick Attack
+  ============ /DRG ============
+  [ CTRL+Numlock ]      Ancient Circle
+  [ CTRL+Numpad/ ]      Jump
+  [ CTRL+Numpad* ]      High Jump
+  [ CTRL+Numpad- ]      Super Jump
+
+Other:
+  [ Numpad0 ]           Ranged Attack
+
+SilverLibs keybinds:
+  [ ALT+D ]             Interact
+  [ ALT+S ]             Turn 180 degrees in place
+  [ WIN+W ]             Toggle Rearming Lock
+                          (off = re-equip previous weapons if you go barehanded)
+                          (on = prevent weapon auto-equipping)
+  [ CTRL+` ]            Cycle Treasure Hunter Mode
+
+For more info and available functions, see SilverLibs documentation at:
+https://github.com/shastaxc/silver-libs
+
+Global-Binds.lua contains additional non-job-related keybinds.
+
+
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                                  Custom Commands
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+Prepend with /console to use these in in-game macros.
+
+gs c bind               Sets keybinds again. Sometimes they don't all get set when swapping jobs. Calling this manually fixes it.
+
+gs c equipweapons       Equips weapons based on your current states that you've set.
+gs c equiprangedweapons Equips ranged weapons based on your current states that you've set.
+
+(More commands available through SilverLibs)
+
+
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                            Recommended In-game Macros
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+__Keybind___Name______________Command_____________
+[ CTRL+1 ] Bounty         /ja "Bounty Shot" <t>
+[ CTRL+2 ] Sharpsho       /ja "Sharpshot" <me>
+[ CTRL+3 ] Barrage        /ja "Barrage" <me>
+[ CTRL+4 ] Cure           /ja "Curing Waltz" <stpc>
+[ CTRL+9 ] EES            /ja "Eagle Eye Shot" <t>
+[ CTRL+0 ] Provoke        /ja "Provoke" <stnpc>
+[ ALT+1 ]  DecoySh        /ja "Decoy Shot" <me>
+[ ALT+2 ]  Camo           /ja "Camouflage" <me>
+[ ALT+3 ]  Shadowbi       /ja "Shadowbind" <t>
+                          /p Shadowbind
+[ ALT+4 ]  Erase          /ja "Healing Waltz" <stpc>
+[ ALT+9 ]  Overkill       /ja "Overkill" <me>
+
+]]--
 
 
 -------------------------------------------------------------------------------------------------------------------
@@ -100,8 +209,8 @@ function job_setup()
   })
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
-  state.HybridMode:options('Normal', 'HeavyDef')
   state.RangedMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
+  state.HybridMode:options('HeavyDef', 'Normal')
   state.IdleMode:options('Normal', 'HeavyDef')
   state.WeaponSet = M{['description']='Weapon Set', 'MagicRA', 'PhysRA', 'PhysRA RangedOnly', 'Melee'}
   state.RangedWeaponSet = M{['description']='Ranged Weapon Set', 'Gastra', 'Arma', 'Fomalhaut', 'Sparrowhawk +2'}
@@ -1768,6 +1877,52 @@ function cycle_toy_weapons(cycle_dir)
   equip(sets.ToyWeapon[state.ToyWeapons.current])
 end
 
+-- Requires DistancePlus addon
+function update_dp_type()
+  local weapon = player.equipment.ranged ~= nil and player.equipment.ranged ~= 'empty' and res.items:with('name', player.equipment.ranged)
+  local range_type = (weapon and weapon.range_type) or nil -- Either: Crossbow, Gun, Bow, or Cannon
+
+  -- Account for command discrepancy between items value 'Crossbow' and distanceplus accepted command 'xbow'
+  if range_type == 'Crossbow' then
+    range_type = 'xbow'
+  -- Account for command discrepancy between items value 'Cannon' and distanceplus accepted command 'gun'
+  elseif range_type == 'Cannon' then
+    range_type = 'gun'
+  end
+
+  -- Update addon if weapon type changed
+  if range_type ~= current_dp_type then
+    current_dp_type = range_type
+    if current_dp_type ~= nil then
+      coroutine.schedule(function()
+        if current_dp_type ~= nil then
+          send_command('dp '..current_dp_type)
+        end
+      end,3)
+    end
+  end
+end
+
+function equip_weapons()
+  equip(sets.WeaponSet[state.WeaponSet.current])
+end
+
+function equip_ranged_weapons()
+  equip(sets.WeaponSet[state.RangedWeaponSet.current])
+
+  -- Equip appropriate ammo
+  local weapon_name = sets.WeaponSet[state.RangedWeaponSet.current].ranged
+  local weapon_stats = res.items:with('en', weapon_name)
+  local range_type = ((weapon_stats.range_type == 'Gun' or range_type == 'Cannon') and 'Gun_or_Cannon') or weapon_stats.range_type
+  if range_type and silibs.ammo_assignment[range_type].Default then
+    if silibs.has_item(silibs.ammo_assignment[range_type].Default, silibs.equippable_bags) then
+      equip({ammo=silibs.ammo_assignment[range_type].Default})
+    else
+      add_to_chat(3,"Default ammo unavailable.  Leaving empty.")
+    end
+  end
+end
+
 -------------------------------------------------------------------------------------------------------------------
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
@@ -1895,53 +2050,7 @@ end)
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
   -- Default macro set/book: (set, book)
-  set_macro_page(2, 9)
-end
-
--- Requires DistancePlus addon
-function update_dp_type()
-  local weapon = player.equipment.ranged ~= nil and player.equipment.ranged ~= 'empty' and res.items:with('name', player.equipment.ranged)
-  local range_type = (weapon and weapon.range_type) or nil -- Either: Crossbow, Gun, Bow, or Cannon
-
-  -- Account for command discrepancy between items value 'Crossbow' and distanceplus accepted command 'xbow'
-  if range_type == 'Crossbow' then
-    range_type = 'xbow'
-  -- Account for command discrepancy between items value 'Cannon' and distanceplus accepted command 'gun'
-  elseif range_type == 'Cannon' then
-    range_type = 'gun'
-  end
-
-  -- Update addon if weapon type changed
-  if range_type ~= current_dp_type then
-    current_dp_type = range_type
-    if current_dp_type ~= nil then
-      coroutine.schedule(function()
-        if current_dp_type ~= nil then
-          send_command('dp '..current_dp_type)
-        end
-      end,3)
-    end
-  end
-end
-
-function equip_weapons()
-  equip(sets.WeaponSet[state.WeaponSet.current])
-end
-
-function equip_ranged_weapons()
-  equip(sets.WeaponSet[state.RangedWeaponSet.current])
-
-  -- Equip appropriate ammo
-  local weapon_name = sets.WeaponSet[state.RangedWeaponSet.current].ranged
-  local weapon_stats = res.items:with('en', weapon_name)
-  local range_type = ((weapon_stats.range_type == 'Gun' or range_type == 'Cannon') and 'Gun_or_Cannon') or weapon_stats.range_type
-  if range_type and silibs.ammo_assignment[range_type].Default then
-    if silibs.has_item(silibs.ammo_assignment[range_type].Default, silibs.equippable_bags) then
-      equip({ammo=silibs.ammo_assignment[range_type].Default})
-    else
-      add_to_chat(3,"Default ammo unavailable.  Leaving empty.")
-    end
-  end
+  set_macro_page(1, 9)
 end
 
 function set_main_keybinds()

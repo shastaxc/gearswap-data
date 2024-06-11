@@ -154,7 +154,7 @@ gs c bind               Sets keybinds again. Sometimes they don't all get set wh
 ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
 __Keybind___Name______________Command_____________
 [ CTRL+1 ] SwapTP         /ja "Tactical Switch" <me>
-[ CTRL+2 ] DeuxEx         /ja "Deus Ex Automata" <me>
+[ CTRL+2 ] DeusEx         /ja "Deus Ex Automata" <me>
 [ CTRL+9 ] OD             /ja "Overdrive" <me>
 [ CTRL+0 ] Provoke        /ja "Provoke" <stnpc>
 [ ALT+1 ]  Repair         /ja "Repair" <me>
