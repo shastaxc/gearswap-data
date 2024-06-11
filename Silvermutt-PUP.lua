@@ -1,7 +1,6 @@
 --[[
 File Status: Good.
-TODO: Fix maneuver handling. Sometimes it'll repeat a maneuver for no apparent reason even if all 3 maneuvers are
-supposed to be different. Looks like it is using them in the wrong order. This happened on SkillUpMelee set.
+TODO: Update auto maneuvers. Does not actually check actual maneuvers, and assumes maneuver use never gets interrupted.
 
 Author: Silvermutt
 Required external libraries: SilverLibs
@@ -1862,6 +1861,7 @@ function check_maneuvers()
     if state.AutomaticManeuvers.value and not silibs.midaction() and abil_recasts[210]
         and abil_recasts[210] < 0.1 and delay_maneuver_check_tick < os.clock()
         and defaultManeuvers[state.PetMode.value] and not buffactive['Overload'] then
+      delay_maneuver_check_tick = os.clock() + 1 -- Delay next check_maneuvers call for 1 second
       -- Cycle through all maneuvers and check how many of each we possess to see total
       local total_active = 0
       for element in pairs(silibs.elements.list) do
@@ -1869,7 +1869,6 @@ function check_maneuvers()
       end
       local total_desired = defaultManeuvers[state.PetMode.value].n
       if total_active < total_desired then
-        delay_maneuver_check_tick = os.clock() + 1 -- Delay next check_maneuvers call for 1 second
         use_maneuver()
       end
     end
