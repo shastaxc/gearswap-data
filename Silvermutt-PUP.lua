@@ -279,7 +279,7 @@ __Keybind___Name______________Command_____________
     <slot12>Optic Fiber II</slot12>
 </rangedacc>
 <skillupmelee>
-    <frame>Sharpshot Frame</frame>
+    <frame>Valoredge Frame</frame>
     <head>Valoredge Head</head>
     <slot01>Percolator</slot01>
     <slot02>Stabilizer V</slot02>
