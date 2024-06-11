@@ -1,70 +1,351 @@
--- File Status: Good.
+--[[
+File Status: Good.
+TODO: Fix maneuver handling. Sometimes it'll repeat a maneuver for no apparent reason even if all 3 maneuvers are
+supposed to be different. Looks like it is using them in the wrong order. This happened on SkillUpMelee set.
 
--- Author: Silvermutt
--- Required external libraries: SilverLibs
--- Required addons: N/A
--- Recommended addons: WSBinder, Reorganizer
--- Misc Recommendations: Disable RollTracker
+Author: Silvermutt
+Required external libraries: SilverLibs
+Required addons: Autocontrol
+Recommended addons: WSBinder, Reorganizer
+Misc Recommendations: Disable RollTracker
 
--------------------------------------------------------------------------------------------------------------------
--- Notes about this specific lua
--------------------------------------------------------------------------------------------------------------------
--- With my attachments, I only need 21% Pet DT to cap when using tank mode. I will aim for that in all sets that do
--- not have a specific set based on pet mode. The minimum attachments/frame for this are:
--- Valoredge frame (12.5%), Armor Plate II (10%), Armor Plate IV (20%), Optic Fiber, Optic Fiber II
--- Optic fibers will add -15% DT with these armor plates and 1 light maneuver, and remember you get -9% DT from
--- Stout Servant III trait.
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                                  General Use Tips
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+Modes
+* The intended use for pet is to set your pet mode using the cycle before summoning the pet. You cannot change
+  mode while pet is active (because the game restricts you from changing attachments when pet is active).
+* You can add or remove pet modes from the cycle but if you add, you should also make sure there is a corresponding
+  set name in AutoControl addon so it can equip the proper attachments. You should also add a corresponding entry
+  to the defaultManeuvers table, and sets for sets.idle.PetEngaged.NewNameHere, sets.engaged.Pet.NewNameHere, and
+  sets.engaged.Halfsies.NewNameHere (the additional .Acc sets are optional).
+* Offense Mode: Changes melee accuracy level
+* Hybrid Mode: Changes damage taken level while engaged
+  * Master: Gear does not swap for pet abilities and does not include stats for pet.
+  * Pet: Gear swaps for pet abilities (priority) and includes almost entirely pet stats.
+  * Halfsies: Balanced gear swapping priority and master/pet stats.
+* Defense Mode: Equips super high emergency damage reduction set, greatly reduces your DPS output
+* CP Mode: Equips Capacity Points bonus cape
+* Automatic Pet Targeting: Automatically issue command for pet to attack something when you engage it.
+* Automatic Maneuvers: Automatically use Maneuver according to the Pet Mode.
+* Pet Mode: Determines what maneuvers to use and which attachments to equip to pet.
 
--- The intended use for pet is to set your pet mode using the cycle before summoning the pet. You cannot change
--- mode while pet is active (because the game restricts you from changing attachments when pet is active).
+Weapons
+* Use keybinds to cycle weapons.
+* If you want different weapon sets, edit the sets.WeaponSet sets.
+  * Additional weapon sets can be created but you need to also add them to the state.WeaponSet cycle.
+* Remember if you are not using Kenkonken, you have to worry about overheating. You may not want to use
+  Automatic Maneuver mode.
 
--- You can add or remove pet modes from the cycle but if you add, you should also make sure there is a corresponding
--- set name in AutoControl addon so it can equip the proper attachments. You should also add a corresponding entry
--- to the defaultManeuvers table, and sets for sets.idle.PetEngaged.NewNameHere, sets.engaged.Pet.NewNameHere, and
--- sets.engaged.Halfsies.NewNameHere (the additional .Acc sets are optional).
+Abilities
+* Automatic Pet Targeting will cause you to use Deploy automatically on your current target if you are engaged
+  and your pet is idle. There is a keybind to toggle it if you choose.
+* Automatic Maneuvers will cause you to use maneuvers whenever you have fewer active maneuvers than listed in the
+  defaultManeuvers table. This will also happen when you are in combat and regardless of Hybrid Mode. Due to these
+  loose conditions, this is disabled by default. There is a keybind to toggle it if you choose.
 
--- For Overdrive, it is expected that you will manually deactivate your pet, change pet mode to the appropriate
--- pet mode (I only have one set for it called OverdriveDD), reactivate your pet, then use the Overdrive JA.
--- It is also expected that you will deactivate the pet, change pet mode, and reactivate again after Overdrive.
+Other
+* If you are not using my reorganizer addon, remove all the sets.org sets (including in character global file).
+* I generally plan out best-in-slot (BiS) pieces for each set even before I acquire the pieces. These BiS pieces are
+  left commented out in the set, while placeholders that I do have in the meantime are uncommented for that slot.
+* I like to list out the important stats for each piece of item in most of my sets, and then have a total at
+  the bottom of the set. If you ever change any pieces of gear, you should recalculate the stats for the new piece
+  and then recalculate for the set total, or just remove those stat comments entirely to avoid confusion. However,
+  if you choose to ignore them, it doesn't not actually affect anything.
+* Equipping certain gear such as warp rings or ammo belts will automatically lock that slot until you manually
+  unequip it or change zones.
+* With my attachments, I only need 21% Pet DT to cap when using tank mode. I will aim for that in all sets that do
+  not have a specific set based on pet mode. The minimum attachments/frame for this are:
+  Valoredge frame (12.5%), Armor Plate II (10%), Armor Plate IV (20%), Optic Fiber, Optic Fiber II
+  Optic fibers will add -15% DT with these armor plates and 1 light maneuver, and remember you get -9% DT from
+  Stout Servant III trait.
+* To ensure the optimal attachments for Overdrive, it is expected that you will manually deactivate your pet,
+  change pet mode to the appropriate pet mode (I only have one set for it called OverdriveDD), reactivate your pet,
+  then use the Overdrive JA. It is also expected that you will deactivate the pet, change pet mode, and reactivate
+  again after Overdrive.
+* If your pet is engaged and you are in Pet Hybrid Mode, you will be in a PetEngaged set typically. If you need
+  movement speed gear equipped in this situation, you can toggle on Kiting mode (CTRL+F10). Just remember to turn
+  it off when you're done.
+* Automaton abilities/spells sets cannot be equipped reactively like SMN can, they have to be equipped before
+  it uses an ability/spell. This is due to a limitation in GearSwap and the information the game sends to our
+  client. This drives several limitations and behaviors in this lua:
+  * Pet WS gear will only equip when in 'Pet' Hybrid Mode, Pet Mode is not Tank, you (master) are idle, pet has
+    over 1000 TP, and does not have equipped Inhibitor, Inhibitor II, Speedloader, or Speedloader II.
+  * For pet magic like for BLM or WHM we cannot equip proper gear to boost magic damage/curing reactively.
+    The workaround I have implemented is to put some of those midcast stats in the engaged sets instead so they
+    basically are equipped before the pet uses its action.
+    * Technically, it should be possible to get midcast sets to work for automatons but GearSwap does not provide
+      a good way to do this so it would have to be a hand-crafted solution. Since magic pets are never/rarely used
+      these days, I have decided not to waste time on developing this feature.
 
--- Pet WS gear will only equip when in 'Pet' Hybrid Mode, you (master) are idle, pet has over 1000 TP, and does not
--- have equipped Inhibitor, Inhibitor II, Speedloader, or Speedloader II.
 
--- Automatic Pet Targeting will cause you to use Deploy automatically on your current target if you are engaged
--- and your pet is idle. There is a keybind to toggle it if you choose.
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                                      Keybinds
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+Modes:
+  [ F9 ]                Cycle Melee Accuracy
+  [ CTRL+F9 ]           Cycle Melee Defense
+  [ F10 ]               Toggle Emergency -PDT
+  [ ALT+F10 ]           Toggle Kiting (on = move speed gear always equipped)
+  [ F11 ]               Toggle Emergency -MDT
+  [ F12 ]               Report current status
+  [ CTRL+F12 ]          Cycle Idle modes
+  [ ALT+F12 ]           Cancel Emergency -PDT/-MDT Mode
+  [ WIN+F9 ]            Cycle Weaponskill Mode
+  [ WIN+C ]             Toggle Capacity Points Mode
+  [ ALT+Z ]             Toggle Automatic Pet Targeting Mode
+  [ ALT+X ]             Toggle Automatic Maneuvers Mode
 
--- Automatic Maneuvers will cause you to use maneuvers whenever you have fewer active maneuvers than listed in the
--- defaultManeuvers table. This will also happen when you are in combat and regardless of Hybrid Mode. Due to these
--- loose conditions, this is disabled by default. There is a keybind to toggle it if you choose.
+Weapons:
+  [ CTRL+Insert ]       Cycle Weapon Sets
+  [ CTRL+Delete ]       Cycleback Weapon Sets
+  [ ALT+Delete ]        Reset to default Weapon Set
+  [ CTRL+PageUp ]       Cycleback Pet Mode
+  [ CTRL+PageDown ]     Cycle Pet Mode
+  [ ALT+PageDown ]      Reset to default Pet Mode
 
--- If your pet is engaged and you are in Pet mode, you will be in a PetEngaged set typically. If you need movement
--- speed gear equipped in this situation, you can toggle on Kiting mode (CTRL+F10). Just remember to turn it off
--- when you're done.
+Abilities:
+  [ ALT+E ]             Execute Maneuver
+  [ ALT+Q ]             Pet: Deploy
+  [ ALT+W ]             Pet: Retrieve
+  [ ALT+` ]             Pet: Activate
+  ============ /WAR ============
+  [ CTRL+Numlock ]      Defender
+  [ CTRL+Numpad/ ]      Berserk
+  [ CTRL+Numpad* ]      Warcry
+  [ CTRL+Numpad- ]      Aggressor
+  ============ /SAM ============
+  [ CTRL+Numlock ]      Third Eye
+  [ CTRL+Numpad/ ]      Meditate
+  [ CTRL+Numpad* ]      Sekkanoki
+  [ CTRL+Numpad- ]      Hasso
 
--- Since pet WS are instant and not initiated by user action, there is no way to switch into a pet WS set fast enough
--- to have any affect on the WS. Also, due to a quirk in gearswap, there is no lifecycle hook for pet_precast so 
--- even pet magic like for BLM pet cannot equip proper gear to boost magic damage/curing reactively. The workaround
--- I have implemented is to put some of those midcast stats in the engaged sets instead so they basically are
--- equipped before the pet uses its action.
+SilverLibs keybinds:
+  [ ALT+D ]             Interact
+  [ ALT+S ]             Turn 180 degrees in place
+  [ WIN+W ]             Toggle Rearming Lock
+                          (off = re-equip previous weapons if you go barehanded)
+                          (on = prevent weapon auto-equipping)
+  [ CTRL+` ]            Cycle Treasure Hunter Mode
 
--------------------------------------------------------------------------------------------------------------------
---  Keybinds
--------------------------------------------------------------------------------------------------------------------
+For more info and available functions, see SilverLibs documentation at:
+https://github.com/shastaxc/silver-libs
 
---  Modes:      [ F9 ]              Cycle Offense Modes
---              [ CTRL+F9 ]         Cycle Hybrid Modes
---              [ WIN+F9 ]          Cycle Weapon Skill Modes
---              [ F10 ]             Emergency -PDT Mode
---              [ ALT+F10 ]         Toggle Kiting Mode
---              [ F11 ]             Emergency -MDT Mode
---              [ F12 ]             Update Current Gear / Report Current Status
---              [ CTRL+F12 ]        Cycle Idle Modes
---              [ ALT+F12 ]         Cancel Emergency -PDT/-MDT Mode
---              [ WIN+A ]           AttackMode: Capped/Uncapped WS Modifier
---              [ WIN+C ]           Toggle Capacity Points Mode
---
---
---              (Global-Binds.lua contains additional non-job-related keybinds)
+Global-Binds.lua contains additional non-job-related keybinds.
+
+
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                                  Custom Commands
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+Prepend with /console to use these in in-game macros.
+
+gs c petcontrol         Issue commands for pet. Requires 2nd parameter.
+        deploy          Command pet to engage.
+        retrieve        Command pet to disengage.
+gs c petactivation      Activate or Deactivate pet (depending if it is currently active or not).
+gs c maneuver           Execute Maneuver according to the defined cycle and pet mode.
+gs c bind               Sets keybinds again. Sometimes they don't all get set when swapping jobs. Calling this
+                        manually fixes it.
+
+(More commands available through SilverLibs)
+
+
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                            Recommended In-game Macros
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+__Keybind___Name______________Command_____________
+[ CTRL+1 ] SwapTP         /ja "Tactical Switch" <me>
+[ CTRL+2 ] DeuxEx         /ja "Deus Ex Automata" <me>
+[ CTRL+9 ] OD             /ja "Overdrive" <me>
+[ CTRL+0 ] Provoke        /ja "Provoke" <stnpc>
+[ ALT+1 ]  Repair         /ja "Repair" <me>
+[ ALT+2 ]  Cooldown       /ja "Cooldown" <me>
+[ ALT+3 ]  SwapHate       /ja "Ventriloquy" <t>
+[ ALT+9 ]  Heady          /ja "Heady Artifice" <me>
+[ ALT+0 ]  SwapHP         /ja "Role Reversal" <me>
+
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                            Automaton Attachment Sets
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+<heal>
+    <frame>Stormwaker Frame</frame>
+    <head>Soulsoother Head</head>
+    <slot01>Mana Booster</slot01>
+    <slot02>Tactical Processor</slot02>
+    <slot03>Mana Tank II</slot03>
+    <slot04>Mana Tank IV</slot04>
+    <slot05>Vivi-valve II</slot05>
+    <slot06>Damage Gauge</slot06>
+    <slot07>Damage Gauge II</slot07>
+    <slot08>Optic Fiber</slot08>
+    <slot09>Optic Fiber II</slot09>
+    <slot10>Resister</slot10>
+    <slot11>Resister II</slot11>
+    <slot12>Scanner</slot12>
+</heal>
+<meleesc>
+    <frame>Sharpshot Frame</frame>
+    <head>Valoredge Head</head>
+    <slot01>Inhibitor</slot01>
+    <slot02>Inhibitor II</slot02>
+    <slot03>Speedloader II</slot03>
+    <slot04>Attuner</slot04>
+    <slot05>Magniplug</slot05>
+    <slot06>Magniplug II</slot06>
+    <slot07>Truesights</slot07>
+    <slot08>Turbo Charger</slot08>
+    <slot09>Turbo Charger II</slot09>
+    <slot10>Optic Fiber</slot10>
+    <slot11>Optic Fiber II</slot11>
+    <slot12>Coiler II</slot12>
+</meleesc>
+<meleespam>
+    <frame>Sharpshot Frame</frame>
+    <head>Valoredge Head</head>
+    <slot01>Barrage Turbine</slot01>
+    <slot02>Heat Capacitor</slot02>
+    <slot03>Heat Capacitor II</slot03>
+    <slot04>Attuner</slot04>
+    <slot05>Magniplug</slot05>
+    <slot06>Magniplug II</slot06>
+    <slot07>Truesights</slot07>
+    <slot08>Turbo Charger</slot08>
+    <slot09>Turbo Charger II</slot09>
+    <slot10>Optic Fiber</slot10>
+    <slot11>Optic Fiber II</slot11>
+    <slot12>Coiler II</slot12>
+</meleespam>
+<nuke>
+    <frame>stormwaker frame</frame>
+    <head>spiritreaver head</head>
+    <slot01>loudspeaker v</slot01>
+    <slot02>ice maker</slot02>
+    <slot03>amplifier ii</slot03>
+    <slot04>tranquilizer ii</slot04>
+    <slot05>optic fiber</slot05>
+    <slot06>optic fiber ii</slot06>
+    <slot07>mana tank iii</slot07>
+    <slot08>mana tank iv</slot08>
+    <slot09>mana conserver</slot09>
+    <slot10>mana jammer iii</slot10>
+    <slot11>mana jammer iv</slot11>
+    <slot12>armor plate iv</slot12>
+</nuke>
+<overdrivedd>
+    <frame>Sharpshot Frame</frame>
+    <head>Valoredge Head</head>
+    <slot01>Armor Plate IV</slot01>
+    <slot02>Magniplug</slot02>
+    <slot03>Speedloader II</slot03>
+    <slot04>Turbo Charger II</slot04>
+    <slot05>Auto-Repair Kit IV</slot05>
+    <slot06>Optic Fiber</slot06>
+    <slot07>Optic Fiber II</slot07>
+    <slot08>Coiler II</slot08>
+    <slot09>Inhibitor</slot09>
+    <slot10>Inhibitor II</slot10>
+    <slot11>Attuner</slot11>
+    <slot12>Magniplug II</slot12>
+</overdrivedd>
+<ranged>
+    <frame>Sharpshot Frame</frame>
+    <head>Sharpshot Head</head>
+    <slot01>Inhibitor</slot01>
+    <slot02>Inhibitor II</slot02>
+    <slot03>Speedloader II</slot03>
+    <slot04>Magniplug</slot04>
+    <slot05>Magniplug II</slot05>
+    <slot06>Attuner</slot06>
+    <slot07>Truesights</slot07>
+    <slot08>Barrage Turbine</slot08>
+    <slot09>Repeater</slot09>
+    <slot10>Drum Magazine</slot10>
+    <slot11>Optic Fiber</slot11>
+    <slot12>Optic Fiber II</slot12>
+</ranged>
+<rangedacc>
+    <frame>Sharpshot Frame</frame>
+    <head>Sharpshot Head</head>
+    <slot01>Inhibitor</slot01>
+    <slot02>Inhibitor II</slot02>
+    <slot03>Scope IV</slot03>
+    <slot04>Magniplug</slot04>
+    <slot05>Magniplug II</slot05>
+    <slot06>Attuner</slot06>
+    <slot07>Truesights</slot07>
+    <slot08>Barrage Turbine</slot08>
+    <slot09>Repeater</slot09>
+    <slot10>Drum Magazine</slot10>
+    <slot11>Optic Fiber</slot11>
+    <slot12>Optic Fiber II</slot12>
+</rangedacc>
+<skillupmelee>
+    <frame>Sharpshot Frame</frame>
+    <head>Valoredge Head</head>
+    <slot01>Percolator</slot01>
+    <slot02>Stabilizer V</slot02>
+    <slot03>Barrage Turbine</slot03>
+    <slot04>Auto-Repair Kit IV</slot04>
+    <slot05>Mana Jammer IV</slot05>
+    <slot06>Armor Plate IV</slot06>
+    <slot07>Turbo Charger</slot07>
+    <slot08>Turbo Charger II</slot08>
+    <slot09>Optic Fiber</slot09>
+    <slot10>Optic Fiber II</slot10>
+    <slot11>Coiler</slot11>
+    <slot12>Coiler II</slot12>
+</skillupmelee>
+<skillupnuke>
+    <frame>stormwaker frame</frame>
+    <head>spiritreaver head</head>
+    <slot01>percolator</slot01>
+    <slot02>optic fiber</slot02>
+    <slot03>optic fiber ii</slot03>
+    <slot04>amplifier</slot04>
+    <slot05>amplifier ii</slot05>
+    <slot06>mana conserver</slot06>
+    <slot07>turbo charger</slot07>
+    <slot08>turbo charger ii</slot08>
+    <slot09>mana booster</slot09>
+    <slot10>power cooler</slot10>
+    <slot11>armor plate iv</slot11>
+    <slot12>auto-repair kit iii</slot12>
+</skillupnuke>
+<skillupranged>
+    <frame>sharpshot frame</frame>
+    <head>sharpshot head</head>
+    <slot01>percolator</slot01>
+    <slot02>optic fiber</slot02>
+    <slot03>optic fiber ii</slot03>
+    <slot04>barrage turbine</slot04>
+    <slot05>repeater</slot05>
+    <slot06>drum magazine</slot06>
+    <slot07>turbo charger</slot07>
+    <slot08>turbo charger ii</slot08>
+    <slot09>coiler</slot09>
+    <slot10>coiler ii</slot10>
+    <slot11>armor plate iv</slot11>
+    <slot12>auto-repair kit iv</slot12>
+</skillupranged>
+<tank>
+    <frame>Valoredge Frame</frame>
+    <head>Soulsoother Head</head>
+    <slot01>Steam Jacket</slot01>
+    <slot02>Strobe</slot02>
+    <slot03>Strobe II</slot03>
+    <slot04>Mana Jammer III</slot04>
+    <slot05>Mana Jammer IV</slot05>
+    <slot06>Armor Plate II</slot06>
+    <slot07>Armor Plate IV</slot07>
+    <slot08>Barrier Module II</slot08>
+    <slot09>Auto-Repair Kit IV</slot09>
+    <slot10>Optic Fiber</slot10>
+    <slot11>Optic Fiber II</slot11>
+    <slot12>Flashbulb</slot12>
+</tank>
+
+]]--
+
 
 -------------------------------------------------------------------------------------------------------------------
 -- Setup functions for this job.  Generally should not be modified.
@@ -101,12 +382,10 @@ function job_setup()
 
   state.OffenseMode:options('Normal', 'Acc')
   state.HybridMode:options('Master', 'Pet', 'Halfsies')
-  state.IdleMode:options('Normal', 'DT')
   state.CP = M(false, 'Capacity Points Mode')
   state.AutomaticPetTargeting = M(true, 'Automatic Pet Targeting')
   state.AutomaticManeuvers = M(false,'Automatic Maneuvers')
-
-  state.PetMode = M{['description']='Pet Mode', 'Tank', 'Ranged', 'RangedAcc', 'Heal', 'MeleeSpam', 'MeleeSC', 'OverdriveDD', 'Nuke', 'SkillUpRanged'}
+  state.PetMode = M{['description']='Pet Mode', 'Tank', 'Ranged', 'RangedAcc', 'Heal', 'MeleeSpam', 'MeleeSC', 'OverdriveDD', 'Nuke', 'SkillUpRanged', 'SkillUpMelee'}
 
   -- List of pet weaponskills to check for
   petWeaponskills = S{'Slapstick', 'Knockout', 'Magic Mortar', 'Chimera Ripper', 'String Clipper', 'Cannibal Blade',
@@ -125,6 +404,7 @@ function job_setup()
 		OverdriveDD =   L{'Light', 'Fire', 'Thunder'},
 		Nuke =          L{'Ice', 'Ice', 'Ice'},
     SkillUpRanged = L{'Light', 'Wind', 'Water'},
+    SkillUpMelee =  L{'Light', 'Thunder', 'Water'},
 	}
 
   ---- DO NOT MODIFY BELOW ------
@@ -138,7 +418,6 @@ function job_setup()
       'Light Maneuver','Dark Maneuver'}
   active_maneuvers = L{}
   delay_maneuver_check_tick = os.clock()
-  
   status_maneuver_blockers = {'overload', 'terror', 'petrification', 'stun', 'sleep', 'charm', 'amnesia', 'impairment'}
   ---- DO NOT MODIFY ABOVE ------
 
@@ -965,6 +1244,7 @@ function init_gear_sets()
     -- [25 PDT/17 MDT, 310 M.Eva] {Pet: 8 PDT /8 MDT, 121 Lv | 24 FC, 15 Regen, 5 Refresh}
   }
   sets.idle.PetEngaged.SkillUpRanged = set_combine(sets.idle.PetEngaged.Ranged, {})
+  sets.idle.PetEngaged.SkillUpMelee = set_combine(sets.idle.PetEngaged.MeleeSpam, {})
   sets.idle.PetEngaged.Nuke = set_combine(sets.idle.PetEngaged.Heal, {})
 
 
@@ -1099,6 +1379,7 @@ function init_gear_sets()
   sets.engaged.PetNuke = set_combine(sets.engaged.PetHeal, {})
   sets.engaged.PetNuke.Acc = set_combine(sets.engaged.PetHeal.Acc, {})
   sets.engaged.SkillUpRanged = set_combine(sets.engaged.PetRanged, {})
+  sets.engaged.SkillUpMelee = set_combine(sets.engaged.PetMeleeSpam, {})
 
 	--------------------- When master is engaged in Halfsies hybrid mode ---------------------
   sets.engaged.HalfsiesTank = {
@@ -1175,6 +1456,7 @@ function init_gear_sets()
   sets.engaged.HalfsiesNuke = set_combine(sets.engaged.PetNuke, {})
   sets.engaged.HalfsiesNuke.Acc = set_combine(sets.engaged.PetNuke.Acc, {})
   sets.engaged.HalfsiesSkillUpRanged = set_combine(sets.engaged.HalfsiesRanged, {})
+  sets.engaged.HalfsiesSkillUpMelee = set_combine(sets.engaged.HalfsiesMeleeSpam, {})
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Special Sets ------------------------------------------
@@ -1216,11 +1498,6 @@ end
 function job_precast(spell, action, spellMap, eventArgs)
   silibs.precast_hook(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
-
-  if state.HybridMode.value == 'Pet' and pending_pet_ability then
-    eventArgs.cancel = true
-    add_to_chat(122, 'Action canceled because pet was midaction.')
-  end
 end
 
 -- Run after the general precast() is done.
@@ -1271,19 +1548,13 @@ end
 
 -- Note: the "spell" object is different in the pet action hooks
 function job_pet_midcast(spell, action, spellMap, eventArgs)
-  pending_pet_ability = true
-
   -- THIS SHIT DOESN'T WORK. Needs a pet_precast function that doesn't exist
   -- equip(get_pup_midcast_set(spell, spellMap))
   -- eventArgs.handled = true
-	if spell.interrupted then
-    pending_pet_ability = false
-  end
 end
 
 -- Note: the "spell" object is different in the pet action hooks
 function job_pet_aftercast(spell, action, spellMap, eventArgs)
-  pending_pet_ability = false
 end
 
 -- Called when a player gains or loses a pet.
@@ -1296,7 +1567,7 @@ end
 
 -- Called when the pet's status changes.
 function job_pet_status_change(newStatus, oldStatus)
-  if pet.isvalid and not midaction() and (newStatus == 'Engaged' or oldStatus == 'Engaged') then
+  if pet.isvalid and not silibs.midaction() and (newStatus == 'Engaged' or oldStatus == 'Engaged') then
     handle_equipping_gear(player.status, newStatus)
   end
 end
@@ -1588,9 +1859,9 @@ function check_maneuvers()
   else
     local abil_recasts = windower.ffxi.get_ability_recasts()
     -- Auto-use maneuvers if missing maneuvers
-    if state.AutomaticManeuvers.value and not midaction() and not pending_pet_ability and abil_recasts[210]
-        and abil_recasts[210] < 0.1 and delay_maneuver_check_tick < os.clock() and defaultManeuvers[state.PetMode.value]
-        and not buffactive['Overload'] then
+    if state.AutomaticManeuvers.value and not silibs.midaction() and abil_recasts[210]
+        and abil_recasts[210] < 0.1 and delay_maneuver_check_tick < os.clock()
+        and defaultManeuvers[state.PetMode.value] and not buffactive['Overload'] then
       -- Cycle through all maneuvers and check how many of each we possess to see total
       local total_active = 0
       for element in pairs(silibs.elements.list) do

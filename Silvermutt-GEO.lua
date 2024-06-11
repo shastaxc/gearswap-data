@@ -567,7 +567,7 @@ function init_gear_sets()
     -- ammo="Esper Stone +1",          -- __, __, __, ___ [__/__, ___]  5
     -- head=gear.Vanya_B_head,         -- 10, 27, 18,  20 [__/ 5,  75] __
     -- body=gear.Vanya_B_body,         -- __, 36, 23,  20 [ 1/ 4,  80] __
-    -- hands="Azimuth Gloves +3",   -- __, 47, 38, ___ [12/12,  98] 13
+    -- hands="Azimuth Gloves +3",      -- __, 47, 38, ___ [12/12,  98] 13
     -- legs=gear.Vanya_B_legs,         -- __, 34, 12,  20 [__/__, 107] __
     -- feet=gear.Vayna_B_feet,         --  5, 19, 10,  40 [__/__, 107] __
     -- ear1="Meili Earring",           -- __, __, __,  10 [__/__, ___] __
