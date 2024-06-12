@@ -1,79 +1,249 @@
--- File Status: Good.
+--[[
+File Status: Good.
 
--- Author: Silvermutt
--- Required external libraries: SilverLibs
--- Required addons: Cancel
--- Recommended addons: WSBinder, Reorganizer
--- Misc Recommendations: Disable RollTracker
+Author: Silvermutt
+Required external libraries: SilverLibs
+Required addons: Cancel
+Recommended addons: WSBinder, Reorganizer
+Misc Recommendations: Disable RollTracker
 
--------------------------------------------------------------------------------------------------------------------
---  Keybinds
--------------------------------------------------------------------------------------------------------------------
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                                  General Use Tips
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+Modes
+* The way I handle modes with tanks is different than all my other jobs. What I do is keep the PDT mode enabled while
+  tanking (it is enabled by default). This still allows for gear to swap during spells or JAs, but for the most part
+  will equip defensive sets while idle or engaged.
+  * When the defense mode is enabled, all spells, JAs, and WSs sets will use their "Safe" variant if it exists.
+  * Kiting Mode is enabled by default. This causes movement speed gear to always remain equipped when idle or engaged.
+    This is obviously not a tanky piece of gear so when you actually need the defense, you have to manually toggle the
+    Kiting Mode off, then manually turn it back on when you want to move fast again.
+* Offense Mode: Changes melee accuracy level
+* Hybrid Mode: Changes damage taken level while engaged
+  * LightDef: Higher defense than "Normal" mode
+  * Normal: Lower defense, more offense
+* Casting Mode: Changes casting type. This is toggled automatically on this job. Do not try to control it manually.
+* Defense Mode: Equips super high emergency damage reduction set, greatly reduces your DPS output
+  * While there is both a PDT and MDT mode, there is no difference between them in this file. As long as either is
+    enabled, defensive gear will be used.
+  * Encumbrance mode will lock you into the sets.Special.Encumbrance set for everything, not even allowing JA swaps
+    except for SPs. This is meant to be used in fights where you will spend a significant time Encumbered. This set
+    has a good mix of stats for defense, resistances, and enmity to roughly cover most situations.
+* Idle Mode: Determines which set to use when not engaged
+* CP Mode: Equips Capacity Points bonus cape
+* AttCapped: When on, if you have AttCapped set variants for your weaponskills, it will use that. This mode is
+  intended to be used when you think you are attack capped vs your enemy such as when you have a lot of Attack buffs
+  from BRD, COR, GEO, etc.
+* Runes: Select a rune to use when issuing the custom rune command.
+* Death Resist: Equips death resistance gear.
 
---  Modes:      [ F9 ]              Cycle Offense Modes
---              [ CTRL+F9 ]         Cycle Hybrid Modes
---              [ WIN+F9 ]          Cycle Weapon Skill Modes
---              [ F10 ]             Emergency -PDT Mode
---              [ ALT+F10 ]         Toggle Kiting Mode
---              [ F11 ]             Emergency -MDT Mode
---              [ F12 ]             Update Current Gear / Report Current Status
---              [ CTRL+F12 ]        Cycle Idle Modes
---              [ ALT+F12 ]         Cancel Emergency -PDT/-MDT Mode
---              [ WIN+H ]           Toggle Charm Defense Mods
---              [ WIN+D ]           Toggle Death Defense Mods
---              [ WIN+C ]           Toggle Capacity Points Mode
---              [ CTRL+PageUp ]     Cycle Toy Weapon Mode
---              [ CTRL+PageDown ]   Cycleback Toy Weapon Mode
---              [ ALT+PageDown ]    Reset Toy Weapon Mode
---              [ WIN+W ]           Toggle Rearming Lock
---                                  (off = re-equip previous weapons if you go barehanded)
---                                  (on = prevent weapon auto-equipping)
---
---  Abilities:  [ CTRL+- ]          Rune element cycle forward.
---              [ CTRL+= ]          Rune element cycle backward.
---              [ Numpad0 ]         Use current Rune
---
---              [ CTRL+` ]          Vivacious Pulse
---              [ ALT+` ]           Temper
---
---              [ CTRL+Numpad/ ]    Berserk/Meditate/Last Resort
---              [ CTRL+Numpad* ]    Warcry/Sekkanoki/Arcane Circle
---              [ CTRL+Numpad- ]    Aggressor/Third Eye/Souleater
---
---              [ ALT+W ]           Defender (WAR sub)/Weapon Bash (DRK sub)
---
---  Spells:     [ WIN+, ]           Utsusemi: Ichi
---              [ WIN+. ]           Utsusemi: Ni
---
---              [ ALT+U ]           Blink
---              [ ALT+I ]           Stoneskin
---              [ ALT+O ]           Phalanx
---              [ ALT+P ]           Aquaveil
---              [ ALT+; ]           Regen IV
---              [ ALT+' ]           Refresh
---              [ ALT+, ]           Blaze Spikes
---              [ ALT+. ]           Ice Spikes
---              [ ALT+/ ]           Shock Spikes
---
---              [ ALT+Q ]           Wild Carrot (BLU sub)
---              [ ALT+W ]           Cocoon (BLU sub)
---              [ ALT+E ]           Refueling (BLU sub)
---
---  Other:      [ ALT+D ]           Cancel Invisible/Hide & Use Key on <t>
---              [ ALT+S ]           Turn 180 degrees in place
---
---
---              (Global-Binds.lua contains additional non-job-related keybinds)
+Weapons
+* Use keybinds to cycle weapons.
+* If you want different weapon sets, edit the sets.WeaponSet sets.
+  * Additional weapon sets can be created but you need to also add them to the state.WeaponSet cycle.
+* There are separate keybinds for your offhand weapon called SubWeaponSet. This allows you to mix and match your
+  weapons and grips/shields.
+  * Sub weapon is only overridden when in Encumbrance PDT mode. The whole idea of the Encumbrance mode is to lock
+    into this set for everything, not even allowing JA swaps. This forces a specific grip to stay equipped.
 
+Abilities:
+* If Valiance is attampted to be used but it is on cooldown, Vallation will be used instead. This allows combining
+  a single macro to be used for both abilities simply by making a macro for Valiance.
+* Activating Battuta will overlay the sets.defense.Parry set on top of your current defense set.
 
--------------------------------------------------------------------------------------------------------------------
---  Custom Commands (preface with /console to use these in macros)
--------------------------------------------------------------------------------------------------------------------
+Spells
+* Sets are built assuming at least 4/5 Spell Interruption Rate merits are enabled.
+* Spell sets are managed in the AzureSets addon. Make sure there is a set in there called pldsub because that will
+  attempt to equip automatically when you change jobs.
+
+Other
+* If you are not using my reorganizer addon, remove all the sets.org sets (including in character global file).
+* I generally plan out best-in-slot (BiS) pieces for each set even before I acquire the pieces. These BiS pieces are
+  left commented out in the set, while placeholders that I do have in the meantime are uncommented for that slot.
+* I like to list out the important stats for each piece of item in most of my sets, and then have a total at
+  the bottom of the set. If you ever change any pieces of gear, you should recalculate the stats for the new piece
+  and then recalculate for the set total, or just remove those stat comments entirely to avoid confusion. However,
+  if you choose to ignore them, it doesn't not actually affect anything.
+* Equipping certain gear such as warp rings or ammo belts will automatically lock that slot until you manually
+  unequip it or change zones.
 
 
---  gs c rune                       Uses current rune
---  gs c cycle Runes                Cycles forward through rune elements
---  gs c cycleback Runes            Cycles backward through rune elements
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                                      Keybinds
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+
+Modes:
+  [ F9 ]                Cycle Melee Accuracy
+  [ CTRL+F9 ]           Cycle Melee Defense
+  [ F10 ]               Toggle Emergency -PDT
+  [ ALT+F10 ]           Toggle Kiting (on = move speed gear always equipped)
+  [ F11 ]               Toggle Emergency -MDT
+  [ F12 ]               Report current status
+  [ CTRL+F12 ]          Cycle Idle modes
+  [ ALT+F12 ]           Cancel Emergency -PDT/-MDT Mode
+  [ WIN+F9 ]            Cycle Weaponskill Mode
+  [ WIN+C ]             Toggle Capacity Points Mode
+  [ CTRL+F8 ]           Toggle Attack Capped mode
+  [ WIN+D ]             Toggle Death Resist Mode
+
+Weapons:
+  [ CTRL+Insert ]       Cycle Weapon Sets
+  [ CTRL+Delete ]       Cycleback Weapon Sets
+  [ ALT+Delete ]        Reset to default Weapon Set
+  [ CTRL+Home ]         Cycle Sub Weapon Sets
+  [ CTRL+End ]          Cycleback Sub Weapon Sets
+  [ ALT+End ]           Reset to default Sub Weapon Set
+
+Spells:
+  [ ALT+U ]             Blink
+  [ ALT+I ]             Stoneskin
+  [ ALT+O ]             Phalanx
+  [ ALT+P ]             Aquaveil
+  [ ALT+; ]             Regen IV
+  [ ALT+' ]             Refresh
+  [ ALT+Z ]             Temper
+  [ ALT+, ]             Blaze Spikes
+  [ ALT+. ]             Ice Spikes
+  [ ALT+/ ]             Shock Spikes
+  ============ /BLU ============
+  [ ALT+Q ]             Wild Carrot
+  [ ALT+W ]             Cocoon
+  [ ALT+E ]             Refueling
+  ============ /NIN ============
+  [ ALT+Numpad0 ]       Utsusemi: Ichi
+  [ ALT+Numpad. ]       Utsusemi: Ni
+
+Abilities:
+  [ CTRL+- ]            Cycleback Rune
+  [ CTRL+= ]            Cycle Rune
+  [ Numpad0 ]           Execute Rune
+  [ ALT+` ]             Vivacious Pulse
+  ============ /WAR ============
+  [ CTRL+Numlock ]      Defender
+  [ CTRL+Numpad/ ]      Berserk
+  [ CTRL+Numpad* ]      Warcry
+  [ CTRL+Numpad- ]      Aggressor
+  ============ /DRK ============
+  [ CTRL+Numlock ]      Weapon Bash
+  [ CTRL+Numpad/ ]      Last Resort
+  [ CTRL+Numpad* ]      Arcane Circle
+  [ CTRL+Numpad- ]      Souleater
+  ============ /SAM ============
+  [ CTRL+Numlock ]      Third Eye
+  [ CTRL+Numpad/ ]      Meditate
+  [ CTRL+Numpad* ]      Sekkanoki
+  [ CTRL+Numpad- ]      Hasso
+
+SilverLibs keybinds:
+  [ ALT+D ]             Interact
+  [ ALT+S ]             Turn 180 degrees in place
+  [ WIN+W ]             Toggle Rearming Lock
+                          (off = re-equip previous weapons if you go barehanded)
+                          (on = prevent weapon auto-equipping)
+
+For more info and available functions, see SilverLibs documentation at:
+https://github.com/shastaxc/silver-libs
+
+Global-Binds.lua contains additional non-job-related keybinds.
+
+
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                                  Custom Commands
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+Prepend with /console to use these in in-game macros.
+
+gs c rune               Uses current rune
+gs c bind               Sets keybinds again. Sometimes they don't all get set when swapping jobs. Calling this
+                        manually fixes it.
+gs c equipweapons       Equips weapons based on your current states that you've set.
+
+(More commands available through SilverLibs)
+
+
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                            Recommended In-game Macros
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+For sub /BLU:
+__Keybind___Name______________Command_____________
+[ CTRL+1 ] Lunge          /ja "Lunge" <stnpc>
+[ CTRL+2 ] Gambit         /ja "Gambit" <stnpc>
+[ CTRL+3 ] Rayke          /ja "Rayke" <stnpc>
+[ CTRL+4 ] Liement        /ja "Liement" <me>
+[ CTRL+5 ] Pflug          /ja "Pflug" <me>
+[ CTRL+6 ] Valiance       /ja "Valiance" <me>
+[ CTRL+7 ] Battuta        /ja "Battuta" <me>
+[ CTRL+8 ] HealingB       /ma "Healing Breeze" <me>
+[ CTRL+9 ] Sforzo         /ja "Elemental Sforzo" <me>
+[ CTRL+0 ] GeistWal       /ma "Geist Wall" <stnpc>
+[ ALT+1 ]  Crusade        /ma "Crusade" <me>
+[ ALT+2 ]  Foil           /ma "Foil" <me>
+[ ALT+3 ]  Flash          /ma "Flash" <stnpc>
+[ ALT+4 ]  BlankGze       /ma "Blank Gaze" <stnpc>
+[ ALT+6 ]  BombToss       /ma "Bomb Toss" <stnpc>
+[ ALT+7 ]  Embolden       /ja "Embolden" <me>
+[ ALT+8 ]  Swordpla       /ja "Swordplay" <me>
+[ ALT+9 ]  Odyllic        /ja "Odyllic Subterfuge" <stnpc>
+[ ALT+0 ]  One4All        /ja "One For All" <me>
+
+For sub /DRK or /BLM:
+__Keybind___Name______________Command_____________
+[ CTRL+1 ] Lunge          /ja "Lunge" <stnpc>
+[ CTRL+2 ] Gambit         /ja "Gambit" <stnpc>
+[ CTRL+3 ] Rayke          /ja "Rayke" <stnpc>
+[ CTRL+4 ] Liement        /ja "Liement" <me>
+[ CTRL+5 ] Pflug          /ja "Pflug" <me>
+[ CTRL+6 ] Valiance       /ja "Valiance" <me>
+[ CTRL+7 ] Battuta        /ja "Battuta" <me>
+[ CTRL+9 ] Sforzo         /ja "Elemental Sforzo" <me>
+[ CTRL+0 ] Poisonga       /ma "Poisonga" <stnpc>
+[ ALT+1 ]  Crusade        /ma "Crusade" <me>
+[ ALT+2 ]  Foil           /ma "Foil" <me>
+[ ALT+3 ]  Flash          /ma "Flash" <stnpc>
+[ ALT+4 ]  Stun           /ma "Stun" <stnpc>
+[ ALT+7 ]  Embolden       /ja "Embolden" <me>
+[ ALT+8 ]  Swordpla       /ja "Swordplay" <me>
+[ ALT+9 ]  Odyllic        /ja "Odyllic Subterfuge" <stnpc>
+[ ALT+0 ]  One4All        /ja "One For All" <me>
+
+For sub /WAR:
+__Keybind___Name______________Command_____________
+[ CTRL+1 ] Lunge          /ja "Lunge" <stnpc>
+[ CTRL+2 ] Gambit         /ja "Gambit" <stnpc>
+[ CTRL+3 ] Rayke          /ja "Rayke" <stnpc>
+[ CTRL+4 ] Liement        /ja "Liement" <me>
+[ CTRL+5 ] Pflug          /ja "Pflug" <me>
+[ CTRL+6 ] Valiance       /ja "Valiance" <me>
+[ CTRL+7 ] Battuta        /ja "Battuta" <me>
+[ CTRL+9 ] Sforzo         /ja "Elemental Sforzo" <me>
+[ CTRL+0 ] Provoke        /ja "Provoke" <stnpc>
+[ ALT+1 ]  Crusade        /ma "Crusade" <me>
+[ ALT+2 ]  Foil           /ma "Foil" <me>
+[ ALT+3 ]  Flash          /ma "Flash" <stnpc>
+[ ALT+7 ]  Embolden       /ja "Embolden" <me>
+[ ALT+8 ]  Swordpla       /ja "Swordplay" <me>
+[ ALT+9 ]  Odyllic        /ja "Odyllic Subterfuge" <stnpc>
+[ ALT+0 ]  One4All        /ja "One For All" <me>
+
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                              Sub-job /BLU Spell Set
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+<slot01>cocoon</slot01>
+<slot02>wild oats</slot02>
+<slot03>sprout smack</slot03>
+<slot04>claw cyclone</slot04>
+<slot05>blank gaze</slot05>
+<slot06>mandibular bite</slot06>
+<slot07>healing breeze</slot07>
+<slot08>power attack</slot08>
+<slot09>geist wall</slot09>
+<slot10>foot kick</slot10>
+<slot11>pollen</slot11>
+<slot12>wild carrot</slot12>
+<slot13>smite of rage</slot13>
+<slot14>bludgeon</slot14>
+<slot15>bomb toss</slot15>
+
+]]--
 
 
 -------------------------------------------------------------------------------------------------------------------
