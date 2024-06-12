@@ -93,6 +93,9 @@ function get_sets()
   coroutine.schedule(function()
     send_command('gs c weaponset current')
   end, 5)
+  coroutine.schedule(function()
+    send_command('gs c subweaponset current')
+  end, 6)
 end
 
 -- Executes on first load and main job change
@@ -129,6 +132,7 @@ function job_setup()
   state.AttCapped = M(false, 'Attack Capped')
   state.DeathResist = M(false, 'Death Resist Mode')
   state.WeaponSet = M{['description']='Weapon Set', 'Epeolatry', 'Lionheart', 'Lycurgos', 'Naegling', 'Axe'}
+  state.SubWeaponSet = M{['description']='Sub Weapon Set', 'Refined', 'Utu'}
   state.AttackMode = M{['description']='Attack', 'Uncapped', 'Capped'}
   state.CP = M(false, 'Capacity Points Mode')
   state.Runes = M{['description']='Runes', 'Ignis', 'Gelus', 'Flabra', 'Tellus', 'Sulpor', 'Unda', 'Lux', 'Tenebrae'}
@@ -192,13 +196,13 @@ function init_gear_sets()
 
   -- PDT cap is 50%, Protect V = 0%
   sets.defense.PDT = set_combine(sets.HeavyDef, {
-    sub="Refined Grip +1",                          --  3/ 3, ___ [ 35] __
+    -- Assume Refined Grip +1                       --  3/ 3, ___ [ 35] __
     -- 51 PDT / 45 MDT, 723 MEVA [1014/1365 HP] 36 Inquartata
   })
 
   -- MDT cap is 50%, Shell V = 29%
   sets.defense.MDT = {
-    sub="Utu Grip",                                 -- __/__, ___ [ 70] (__, __)
+    -- Assume Utu Grip                              -- __/__, ___ [ 70] (__, __)
     ammo="Staunch Tathlum +1",                      --  3/ 3, ___ [___] (11, __)
     head="Erilaz Galea +3",                         -- __/__, 119 [111] (__, __)
     body="Erilaz Surcoat +3",                       -- __/__, 130 [143] (__, __); Retain enmity, Convert dmg to MP
@@ -1054,7 +1058,6 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.engaged = {
-    sub="Utu Grip",                   -- __, __, 30, __ <__, __, __> [__/__, ___]  70
     ammo="Coiste Bodhar",             -- 10,  3, __, __ < 3, __, __> [__/__, ___] ___
     head=gear.Nyame_B_head,           -- 25, __, 50,  6 < 5, __, __> [ 7/ 7, 123]  91
     body="Ashera Harness",            -- 40, 10, 45,  4 <__, __, __> [ 7/ 7,  96] 182
@@ -1090,7 +1093,6 @@ function init_gear_sets()
   })
   
   sets.engaged.LightDef = {
-    sub="Utu Grip",                   -- __, __, 30, __ <__, __, __> [__/__, ___]  70
     ammo="Staunch Tathlum +1",        -- __, __, __, __ <__, __, __> [ 3/ 3, ___] ___
     head=gear.Nyame_B_head,           -- 25, __, 50,  6 < 5, __, __> [ 7/ 7, 123]  91
     body="Ashera Harness",            -- 40, 10, 45,  4 <__, __, __> [ 7/ 7,  96] 182
@@ -1154,7 +1156,7 @@ function init_gear_sets()
   })
 
   sets.LightDef = {
-    sub="Utu Grip",                 -- [__/__, ___]  70
+    -- Assume Utu Grip              -- [__/__, ___]  70
     ammo="Staunch Tathlum +1",      -- [ 3/ 3, ___] ___
     head=gear.Nyame_B_head,         -- [ 7/ 7, 123]  91
     body=gear.Nyame_B_body,         -- [ 9/ 9, 139] 136
@@ -1256,7 +1258,6 @@ function init_gear_sets()
   sets.WeaponSet = {}
   sets.WeaponSet["Naegling"] = {
     main="Naegling",
-    -- sub="Chanter's Shield",
   }
   sets.WeaponSet["Epeolatry"] = {
     main="Epeolatry",
@@ -1269,7 +1270,17 @@ function init_gear_sets()
   }
   sets.WeaponSet['Axe'] = {
     main="Dolichenus",
+  }
+
+  sets.SubWeaponSet = {}
+  sets.SubWeaponSet["Shield"] = {
     -- sub="Chanter's Shield",
+  }
+  sets.SubWeaponSet["Utu"] = {
+    sub="Utu Grip",
+  }
+  sets.SubWeaponSet["Refined"] = {
+    sub="Refined Grip +1",
   }
 
 end
@@ -1370,6 +1381,11 @@ function job_post_precast(spell, action, spellMap, eventArgs)
     end
   end
 
+  -- Override with weapons to be equipped
+  if state[state.DefenseMode.value .. 'DefenseMode'].value ~= 'Encumbrance' then
+    equip(select_weapons())
+  end
+
   -- If slot is locked, keep current equipment on
   if locked_neck then equip({ neck=player.equipment.neck }) end
   if locked_ear1 then equip({ ear1=player.equipment.ear1 }) end
@@ -1412,6 +1428,11 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     equip(sets.Special.Encumbrance)
   end
   
+  -- Override with weapons to be equipped
+  if state[state.DefenseMode.value .. 'DefenseMode'].value ~= 'Encumbrance' then
+    equip(select_weapons())
+  end
+
   -- If slot is locked, keep current equipment on
   if locked_neck then equip({ neck=player.equipment.neck }) end
   if locked_ear1 then equip({ ear1=player.equipment.ear1 }) end
@@ -1493,6 +1514,11 @@ function job_aftercast(spell, action, spellMap, eventArgs)
 end
 
 function job_post_aftercast(spell, action, spellMap, eventArgs)
+  -- Override with weapons to be equipped
+  if state[state.DefenseMode.value .. 'DefenseMode'].value ~= 'Encumbrance' then
+    equip(select_weapons())
+  end
+
   ----------- Non-silibs content goes above this line -----------
   silibs.post_aftercast_hook(spell, action, spellMap, eventArgs)
 end
@@ -1581,6 +1607,8 @@ function customize_idle_set(idleSet)
     idleSet = set_combine(idleSet, sets.buff.Doom)
   end
   
+  idleSet = set_combine(idleSet, select_weapons())
+
   return idleSet
 end
 
@@ -1610,6 +1638,8 @@ function customize_melee_set(meleeSet)
   if buffactive.Doom then
     meleeSet = set_combine(meleeSet, sets.buff.Doom)
   end
+
+  meleeSet = set_combine(meleeSet, select_weapons())
 
   return meleeSet
 end
@@ -1643,7 +1673,12 @@ function customize_defense_set(defenseSet)
   if buffactive.Doom then
     defenseSet = set_combine(defenseSet, sets.buff.Doom)
   end
-  
+
+  -- Allow weapon swaps for Encumbrance mode
+  if state[state.DefenseMode.value .. 'DefenseMode'].value ~= 'Encumbrance' then
+    defenseSet = set_combine(defenseSet, select_weapons())
+  end
+
   return defenseSet
 end
 
@@ -1769,17 +1804,46 @@ function get_custom_wsmode(spell, action, spellMap)
   return wsmode
 end
 
-function cycle_weapons(cycle_dir)
+function cycle_weapons(cycle_dir, set_name)
   if cycle_dir == 'forward' then
     state.WeaponSet:cycle()
   elseif cycle_dir == 'back' then
     state.WeaponSet:cycleback()
-  elseif cycle_dir == 'reset' then
+  elseif cycle_dir == 'set' then
+    state.WeaponSet:set(set_name)
+  else
     state.WeaponSet:reset()
   end
 
   add_to_chat(141, 'Weapon Set to '..string.char(31,1)..state.WeaponSet.current)
-  equip(sets.WeaponSet[state.WeaponSet.current])
+  equip(select_weapons())
+end
+
+function cycle_sub_weapons(cycle_dir, set_name)
+  if cycle_dir == 'forward' then
+    state.SubWeaponSet:cycle()
+  elseif cycle_dir == 'back' then
+    state.SubWeaponSet:cycleback()
+  elseif cycle_dir == 'set' then
+    state.SubWeaponSet:set(set_name)
+  else
+    state.SubWeaponSet:reset()
+  end
+
+  add_to_chat(141, 'Sub Weapon Set to '..string.char(31,1)..state.SubWeaponSet.current)
+  equip(select_weapons())
+end
+
+function select_weapons()
+  local set = {}
+  if sets.WeaponSet[state.WeaponSet.current] then
+    set = set_combine(set, sets.WeaponSet[state.WeaponSet.current])
+  end
+  if sets.SubWeaponSet[state.SubWeaponSet.current] then
+    set = set_combine(set, sets.SubWeaponSet[state.SubWeaponSet.current])
+  end
+
+  return set
 end
 
 function get_element_potencies()
@@ -1901,6 +1965,16 @@ function job_self_command(cmdParams, eventArgs)
     elseif cmdParams[2] == 'current' then
       cycle_weapons('current')
     end
+  elseif cmdParams[1] == 'subweaponset' then
+    if cmdParams[2] == 'cycle' then
+      cycle_sub_weapons('forward')
+    elseif cmdParams[2] == 'cycleback' then
+      cycle_sub_weapons('back')
+    elseif cmdParams[2] == 'set' and cmdParams[3] then
+      cycle_sub_weapons('set', cmdParams[3])
+    else
+      cycle_sub_weapons(cmdParams[2])
+    end
   elseif cmdParams[1] == 'bind' then
     set_main_keybinds()
     set_sub_keybinds()
@@ -1993,6 +2067,10 @@ function set_main_keybinds()
   send_command('bind ^delete gs c weaponset cycleback')
   send_command('bind !delete gs c weaponset reset')
 
+  send_command('bind ^home gs c subweaponset cycle')
+  send_command('bind ^end gs c subweaponset cycleback')
+  send_command('bind !end gs c subweaponset reset')
+
   send_command('bind ^- gs c cycleback Runes')
   send_command('bind ^= gs c cycle Runes')
 
@@ -2046,6 +2124,9 @@ function unbind_keybinds()
   send_command('unbind @w')
   send_command('unbind ^insert')
   send_command('unbind ^delete')
+
+  send_command('unbind ^home')
+  send_command('unbind ^end')
 
   send_command('unbind ^-')
   send_command('unbind ^=')
