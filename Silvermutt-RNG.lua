@@ -2061,10 +2061,6 @@ function set_main_keybinds()
 
   send_command('bind @c gs c toggle CP')
 
-  send_command('bind ^pageup gs c toyweapon cycle')
-  send_command('bind ^pagedown gs c toyweapon cycleback')
-  send_command('bind !pagedown gs c toyweapon reset')
-
   send_command('bind ^insert gs c cycle WeaponSet')
   send_command('bind ^delete gs c cycleback WeaponSet')
   send_command('bind !delete gs c reset WeaponSet')
@@ -2073,10 +2069,14 @@ function set_main_keybinds()
   send_command('bind ^end gs c cycleback RangedWeaponSet')
   send_command('bind !end gs c reset RangedWeaponSet')
 
-  send_command('bind !q input /ja "Velocity Shot" <me>')
-  send_command('bind !e input /ja "Hover Shot" <me>')
+  send_command('bind ^pageup gs c toyweapon cycle')
+  send_command('bind ^pagedown gs c toyweapon cycleback')
+  send_command('bind !pagedown gs c toyweapon reset')
+
   send_command('bind !` input /ja "Scavenge" <me>')
+  send_command('bind !q input /ja "Velocity Shot" <me>')
   send_command('bind !w input /ja "Double Shot" <me>')
+  send_command('bind !e input /ja "Hover Shot" <me>')
   send_command('bind %numpad0 input /ra <t>')
 end
 
@@ -2109,19 +2109,27 @@ function unbind_keybinds()
   send_command('unbind !s')
   send_command('unbind !d')
   send_command('unbind @w')
-
   send_command('unbind ^`')
+
   send_command('unbind @c')
+
   send_command('unbind ^insert')
   send_command('unbind ^delete')
+  send_command('unbind !delete')
+
   send_command('unbind ^home')
   send_command('unbind ^end')
+  send_command('unbind !end')
 
-  send_command('unbind !q')
-  send_command('unbind !e')
+  send_command('unbind ^pageup')
+  send_command('unbind ^pagedown')
+  send_command('unbind !pagedown')
+
   send_command('unbind !`')
-
+  send_command('unbind !q')
   send_command('unbind !w')
+  send_command('unbind !e')
+  send_command('unbind %numpad0')
 
   send_command('unbind ^numlock')
   send_command('unbind ^numpad/')
@@ -2129,7 +2137,6 @@ function unbind_keybinds()
   send_command('unbind ^numpad-')
   send_command('unbind ^numpad0')
   send_command('unbind ^numpad.')
-  send_command('unbind %numpad0')
 end
 
 function test()

@@ -1742,46 +1742,45 @@ function set_sub_keybinds()
     send_command('bind !numpad0 input /ma "Utsusemi: Ichi" <me>')
     send_command('bind !numpad. input /ma "Utsusemi: Ni" <me>')
   elseif player.sub_job == 'RUN' then
-    send_command('bind %numpad0 gs c rune')
     send_command('bind ^- gs c cycleback Runes')
     send_command('bind ^= gs c cycle Runes')
+    send_command('bind %numpad0 gs c rune')
   end
 end
 
 function unbind_keybinds()
-  send_command('unbind ^f8')
-
   send_command('unbind !s')
   send_command('unbind !d')
-
   send_command('unbind @w')
+
+  send_command('unbind @c')
+  send_command('unbind ^f8')
+
   send_command('unbind ^insert')
   send_command('unbind ^delete')
+  send_command('unbind !delete')
 
   send_command('unbind ^home')
   send_command('unbind ^end')
+  send_command('unbind !end')
 
   send_command('unbind !`')
-  send_command('unbind @c')
+  send_command('unbind !q')
+  send_command('unbind !e')
 
   send_command('unbind !o')
   send_command('unbind !l')
 
-  send_command('unbind !q')
-  send_command('unbind !e')
-  
   send_command('unbind !w')
-
+  send_command('unbind ^numlock')
   send_command('unbind ^numpad/')
   send_command('unbind ^numpad*')
   send_command('unbind ^numpad-')
-  
-  send_command('unbind ^numpad0')
-  send_command('unbind ^numpad.')
-  
-  send_command('unbind %numpad0')
+  send_command('unbind !numpad0')
+  send_command('unbind !numpad.')
   send_command('unbind ^-')
   send_command('unbind ^=')
+  send_command('unbind %numpad0')
 end
 
 function test()

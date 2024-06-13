@@ -2133,10 +2133,10 @@ function set_main_keybinds()
   send_command('bind ^pagedown gs c petmode cycle')
   send_command('bind !pagedown gs c petmode reset')
   
-  send_command('bind !e gs c maneuver')
+  send_command('bind !` gs c petactivation')
   send_command('bind !q gs c petcontrol deploy')
   send_command('bind !w gs c petcontrol retrieve')
-  send_command('bind !` gs c petactivation')
+  send_command('bind !e gs c maneuver')
 end
 
 function set_sub_keybinds()
@@ -2158,26 +2158,25 @@ function unbind_keybinds()
   send_command('unbind !s')
   send_command('unbind !d')
   send_command('unbind @w')
+  send_command('unbind ^`')
+
+  send_command('unbind @c')
+  send_command('unbind !z')
+  send_command('unbind !x')
 
   send_command('unbind ^insert')
   send_command('unbind ^delete')
   send_command('unbind !delete')
 
-  send_command('unbind !z')
-  send_command('unbind !x')
-
-  send_command('unbind ^`')
-  send_command('unbind @c')
-
   send_command('unbind ^pageup')
   send_command('unbind ^pagedown')
   send_command('unbind !pagedown')
-  
+
   send_command('unbind !`')
   send_command('unbind !q')
   send_command('unbind !w')
   send_command('unbind !e')
-  
+
   send_command('unbind ^numlock')
   send_command('unbind ^numpad/')
   send_command('unbind ^numpad*')

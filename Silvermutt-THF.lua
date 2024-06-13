@@ -2096,7 +2096,7 @@ function unbind_keybinds()
   send_command('unbind ^numpad0')
   send_command('unbind ^numpad.')
   send_command('unbind %e')
-
+  
   send_command('unbind ^numlock')
   send_command('unbind ^numpad/')
   send_command('unbind ^numpad*')

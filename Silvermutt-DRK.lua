@@ -2009,11 +2009,11 @@ function set_main_keybinds()
   send_command('bind ^pagedown gs c toyweapon cycleback')
   send_command('bind !pagedown gs c toyweapon reset')
   
+  send_command('bind ^q input /ja "Weapon Bash" <t>')
   send_command('bind !q input /ja "Nether Void" <me>')
   send_command('bind !w input /ja "Dark Seal" <me>')
   send_command('bind !z input /ja "Arcane Circle" <me>')
   send_command('bind !x input /ja "Arcane Crest" <t>')
-  send_command('bind ^q input /ja "Weapon Bash" <t>')
 
   send_command('bind !` Endark II')
   send_command('bind !e input /ja "Drain III" <t>')
@@ -2046,29 +2046,29 @@ function unbind_keybinds()
   send_command('unbind !s')
   send_command('unbind !d')
   send_command('unbind @w')
+  send_command('unbind ^`')
+
+  send_command('unbind @c')
+  send_command('unbind ^f8')
 
   send_command('unbind ^insert')
   send_command('unbind ^delete')
   send_command('unbind !delete')
 
-  send_command('unbind ^f8')
   send_command('unbind ^pageup')
   send_command('unbind ^pagedown')
   send_command('unbind !pagedown')
 
-  send_command('unbind ^`')
-  send_command('unbind @c')
-  
-  send_command('unbind !`')
+  send_command('unbind ^q')
   send_command('unbind !q')
   send_command('unbind !w')
-  send_command('unbind !e')
-  send_command('unbind !r')
   send_command('unbind !z')
   send_command('unbind !x')
-  
-  send_command('unbind ^q')
-  
+
+  send_command('unbind !`')
+  send_command('unbind !e')
+  send_command('unbind !r')
+
   send_command('unbind ^numlock')
   send_command('unbind ^numpad/')
   send_command('unbind ^numpad*')

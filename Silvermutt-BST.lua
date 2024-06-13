@@ -2525,10 +2525,10 @@ function set_main_keybinds()
   
   send_command('bind !x gs c cycle CorrelationMode')
 
-  send_command('bind !e input /ja "Reward" <me>')
+  send_command('bind !` gs c petactivation')
   send_command('bind !q gs c petcontrol fight')
   send_command('bind !w gs c petcontrol heel')
-  send_command('bind !` gs c petactivation')
+  send_command('bind !e input /ja "Reward" <me>')
 end
 
 function set_sub_keybinds()
@@ -2547,6 +2547,12 @@ function unbind_keybinds()
   send_command('unbind !s')
   send_command('unbind !d')
   send_command('unbind @w')
+  send_command('unbind ^`')
+
+  send_command('unbind @c')
+  send_command('unbind ^f8')
+  send_command('unbind !z')
+  send_command('unbind ^u')
 
   send_command('unbind ^insert')
   send_command('unbind ^delete')
@@ -2556,28 +2562,21 @@ function unbind_keybinds()
   send_command('unbind ^end')
   send_command('unbind !end')
 
-  send_command('unbind !z')
-  send_command('unbind !x')
-  send_command('unbind ^u')
-  send_command('unbind !`')
-
-  send_command('unbind ^`')
-  send_command('unbind @c')
-  send_command('unbind ^f8')
-
   send_command('unbind ^pageup')
   send_command('unbind ^pagedown')
   send_command('unbind !pagedown')
-  
+
+  send_command('unbind !x')
+
+  send_command('unbind !`')
   send_command('unbind !q')
   send_command('unbind !w')
   send_command('unbind !e')
-  
+
   send_command('unbind ^numlock')
   send_command('unbind ^numpad/')
   send_command('unbind ^numpad*')
   send_command('unbind ^numpad-')
-  
   send_command('unbind !numpad0')
   send_command('unbind !numpad.')
 end

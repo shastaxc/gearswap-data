@@ -1667,7 +1667,7 @@ function unbind_keybinds()
   send_command('unbind @w')
 
   send_command('unbind @c')
-  
+
   send_command('unbind ^insert')
   send_command('unbind ^delete')
   send_command('unbind !delete')
@@ -1677,27 +1677,28 @@ function unbind_keybinds()
   send_command('unbind !pagedown')
 
   send_command('unbind ^`')
+
   send_command('unbind !q')
   send_command('unbind !w')
   send_command('unbind !z')
   send_command('unbind !x')
 
   send_command('unbind !r')
-  send_command('unbind !c')
   send_command('unbind ^-')
   send_command('unbind ^=')
   send_command('unbind ^[')
   send_command('unbind ^\\\\')
   send_command('unbind ![')
   send_command('unbind !\\\\')
+
+  send_command('unbind !c')
   send_command('unbind !/')
-  
-  send_command('unbind ~`')
-  send_command('unbind !e')
   send_command('unbind !u')
   send_command('unbind !i')
-  send_command('unbind !o')
   send_command('unbind !p')
+  send_command('unbind ~`')
+  send_command('unbind !e')
+  send_command('unbind !o')
   send_command('unbind !\'')
 end
 

@@ -2483,10 +2483,10 @@ function set_main_keybinds()
   send_command('bind !- gs c cycleback altqd')
   send_command('bind != gs c cycle altqd')
   
-  send_command('bind !q input /ja "Double-up" <me>')
   send_command('bind !` input /ja "Bolter\'s Roll" <me>')
-  send_command('bind !e input /ja "Random Deal" <me>')
+  send_command('bind !q input /ja "Double-up" <me>')
   send_command('bind !w input /ja "Triple Shot" <me>')
+  send_command('bind !e input /ja "Random Deal" <me>')
   send_command('bind %numpad0 input /ra <t>')
 end
 

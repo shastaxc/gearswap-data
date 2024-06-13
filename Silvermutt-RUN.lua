@@ -2246,16 +2246,16 @@ function set_main_keybinds()
   send_command('bind ^- gs c cycleback Runes')
   send_command('bind ^= gs c cycle Runes')
 
-  send_command('bind %numpad0 gs c rune')
   send_command('bind !` input /ja "Vivacious Pulse" <me>')
+  send_command('bind %numpad0 gs c rune')
 
-  send_command('bind !z input /ma "Temper" <me>')
   send_command('bind !u input /ma "Blink" <me>')
   send_command('bind !i input /ma "Stoneskin" <me>')
   send_command('bind !o input /ma "Phalanx" <me>')
   send_command('bind !p input /ma "Aquaveil" <me>')
   send_command('bind !; input /ma "Regen IV" <stpc>')
   send_command('bind !\' input /ma "Refresh" <stpc>')
+  send_command('bind !z input /ma "Temper" <me>')
   send_command('bind !, input /ma "Blaze Spikes" <me>')
   send_command('bind !. input /ma "Ice Spikes" <me>')
   send_command('bind !/ input /ma "Shock Spikes" <me>')
@@ -2288,49 +2288,46 @@ function set_sub_keybinds()
 end
 
 function unbind_keybinds()
-  send_command('unbind ^f8')
-
   send_command('unbind !s')
   send_command('unbind !d')
-
   send_command('unbind @w')
+
+  send_command('unbind @c')
+  send_command('unbind ^f8')
+  send_command('unbind @d')
+
   send_command('unbind ^insert')
   send_command('unbind ^delete')
+  send_command('unbind !delete')
 
   send_command('unbind ^home')
   send_command('unbind ^end')
+  send_command('unbind !end')
 
   send_command('unbind ^-')
   send_command('unbind ^=')
 
-  send_command('unbind @d')
-
-  send_command('unbind %numpad')
   send_command('unbind !`')
-  send_command('unbind !z')
-  send_command('unbind @c')
+  send_command('unbind %numpad0')
 
   send_command('unbind !u')
   send_command('unbind !i')
   send_command('unbind !o')
   send_command('unbind !p')
-
   send_command('unbind !;')
   send_command('unbind !\'')
-
+  send_command('unbind !z')
   send_command('unbind !,')
   send_command('unbind !.')
   send_command('unbind !/')
-  
+
   send_command('unbind !q')
   send_command('unbind !w')
   send_command('unbind !e')
-  
   send_command('unbind ^numlock')
   send_command('unbind ^numpad/')
   send_command('unbind ^numpad*')
   send_command('unbind ^numpad-')
-  
   send_command('unbind !numpad0')
   send_command('unbind !numpad.')
 end

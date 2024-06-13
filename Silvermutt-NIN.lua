@@ -2089,32 +2089,33 @@ function unbind_keybinds()
   send_command('unbind !s')
   send_command('unbind !d')
   send_command('unbind @w')
+  send_command('unbind ^`')
+
+  send_command('unbind @c')
+  send_command('unbind ^f8')
+  send_command('unbind !`')
 
   send_command('unbind ^insert')
   send_command('unbind ^delete')
+  send_command('unbind !delete')
 
-  send_command('unbind ^f8')
   send_command('unbind ^pageup')
   send_command('unbind ^pagedown')
   send_command('unbind !pagedown')
 
-  send_command('unbind ^`')
-  send_command('unbind @c')
-  send_command('unbind !`')
-
   send_command('unbind ^-')
   send_command('unbind ^=')
 
-  send_command('unbind ^numlock')
-  send_command('unbind !numlock')
-  send_command('unbind ^numpad+')
+  send_command('unbind ^numpadenter')
+  send_command('unbind !numpadenter')
   send_command('unbind !numpad+')
 
+  send_command('unbind ^numpad+')
   send_command('unbind !q')
   send_command('unbind !w')
   send_command('unbind !e')
-  
-  -- send_command('unbind !numpad/')
+
+  send_command('unbind ^numlock')
   send_command('unbind ^numpad/')
   send_command('unbind ^numpad*')
   send_command('unbind ^numpad-')

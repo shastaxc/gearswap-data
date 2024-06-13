@@ -1670,7 +1670,7 @@ function set_main_keybinds()
   send_command('bind !z gs c barelement')
 
   send_command('bind !x gs c barstatus')
-  
+
   send_command('bind ^insert gs c cycleback Barelement')
   send_command('bind ^delete gs c cycle Barelement')
   send_command('bind !delete gs c reset Barelement')
@@ -1683,12 +1683,12 @@ function set_main_keybinds()
   send_command('bind ^/ gs c cycle CuragaTier')
 
   send_command('bind !` input /ja "Afflatus Solace" <me>')
-  
-  send_command('bind !a input /ma "Auspice" <me>')
+
   send_command('bind !e input /ma "Haste" <stpc>')
   send_command('bind !u input /ma "Blink" <me>')
   send_command('bind !i input /ma "Stoneskin" <me>')
   send_command('bind !p input /ma "Aquaveil" <me>')
+  send_command('bind !a input /ma "Auspice" <me>')
   send_command('bind !; input /ma "Regen IV" <stpc>')
   send_command('bind ^z input /ma "Boost-INT" <me>')
   send_command('bind ^x input /ma "Boost-MND" <me>')
@@ -1725,10 +1725,11 @@ function unbind_keybinds()
   send_command('unbind @c')
 
   send_command('unbind @w')
-  
-  send_command('unbind !`')
+
   send_command('unbind !w')
+
   send_command('unbind !z')
+
   send_command('unbind !x')
 
   send_command('unbind ^insert')
@@ -1741,33 +1742,32 @@ function unbind_keybinds()
 
   send_command('unbind ^.')
   send_command('unbind ^/')
-  send_command('unbind !/')
 
-  send_command('unbind !a')
+  send_command('unbind !`')
+
   send_command('unbind !e')
   send_command('unbind !u')
   send_command('unbind !i')
   send_command('unbind !p')
+  send_command('unbind !a')
   send_command('unbind !;')
   send_command('unbind ^z')
   send_command('unbind ^x')
   send_command('unbind ^c')
   send_command('unbind ^v')
 
+  send_command('unbind ^pageup')
+  send_command('unbind ^pagedown')
+  send_command('unbind !pagedown')
   send_command('unbind !r')
-  send_command('unbind !c')
-  send_command('unbind !/')
   send_command('unbind ^-')
   send_command('unbind ^=')
   send_command('unbind ^[')
   send_command('unbind ^\\\\')
   send_command('unbind ![')
   send_command('unbind !\\\\')
-
-  send_command('unbind ^pageup')
-  send_command('unbind ^pagedown')
-  send_command('unbind !pagedown')
-
+  send_command('unbind !c')
+  send_command('unbind !/')
   send_command('unbind ~`')
   send_command('unbind !\'')
 end
