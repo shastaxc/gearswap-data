@@ -16,7 +16,8 @@ Modes
 * Defense Mode: Equips super high emergency damage reduction set, greatly reduces your DPS output
 * Idle Mode: Changes which set is equipped when not engaged
   * Normal: Pretty tanky but allows for regen, regain, refresh, and move speed gear to swap in when needed
-  * Regain: Forces all regain gear on, overriding anything else
+  * Regain: Equips maximum Regain gear. This set is not balanced with other stats and may overwrite movement speed
+    gear. This is intended for short term use only when needed.
   * HeavyDef: Forces a tanky set and blocks automatic swapping for regen, regain, refresh, and move speed while idle
   * Evasion: Forces an evasion set and blocks automatic swapping for regen, regain, refresh, and move speed while idle
 * CP Mode: Equips Capacity Points bonus cape
@@ -847,6 +848,7 @@ function init_gear_sets()
     body="Gleti's Cuirass",
     hands="Gleti's Gauntlets",
     legs="Gleti's Breeches",
+    feet="Gleti's Boots",
   }
 
   sets.resting = {}

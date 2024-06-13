@@ -18,7 +18,8 @@ Modes
 * Idle Mode: Determines which set to use when not engaged
   * Normal: Allows automatically equipping Regen, Refresh, and Regain gear as needed
   * HeavyDef: Uses defensive set and disables automatically equipping Regen, Refresh, and Regain gear
-  * Regain: Forces all regain gear on, overriding anything else
+  * Regain: Equips maximum Regain gear. This set is not balanced with other stats and may overwrite movement speed
+    gear. This is intended for short term use only when needed.
 * Defense Mode: Equips super high emergency damage reduction set, greatly reduces your DPS output
 * CP Mode: Equips Capacity Points bonus cape
 * AttCapped: When on, if you have AttCapped set variants for your weaponskills, it will use that. This mode is
@@ -722,7 +723,7 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.latent_regain = {
-    head="Valorous Mask",       --  3
+    head=gear.Valorous_DT_head, --  3
     body="Gleti's Cuirass",     --  3
     hands="Gleti's Gauntlets",  --  2
     legs="Gleti's Breeches",    --  3

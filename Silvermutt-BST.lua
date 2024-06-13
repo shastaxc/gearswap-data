@@ -19,6 +19,12 @@ Modes
   * PetDT: Focused on pet stats + master defense (in case you need to be in close range).
   * Pet: Focused solely on pet stats.
 * Defense Mode: Equips super high emergency damage reduction set, greatly reduces your DPS output
+* Idle Mode: Determines which set to use when not engaged
+  * Normal: Allows automatically equipping Regen, Refresh, and Regain gear as needed
+  * DT: Ensures enough defensive gear is equipped to keep you safe in case you need to be in close range even if Hybrid
+    Mode is set to Pet.
+  * Regain: Equips maximum Regain gear. This set is not balanced with other stats and may overwrite movement speed
+    gear. This is intended for short term use only when needed.
 * CP Mode: Equips Capacity Points bonus cape
 * AttCapped: When on, if you have AttCapped set variants for your weaponskills, it will use that. This mode is
   intended to be used when you think you are attack capped vs your enemy such as when you have a lot of Attack buffs
@@ -1317,7 +1323,7 @@ function init_gear_sets()
 
   sets.idle.RegainOnly = {
     ammo="Staunch Tathlum +1",        -- __, __ [ 3/ 3, ___] {__/__, ___ | __}
-    head="Gleti's Mask",              --  2,  3 [ 6/__,  86] {__/__, ___ | __}
+    head=gear.Valorous_DT_head,       --  3, __ [ 4/ 4,  48] {__/__, ___ | __}
     body="Gleti's Cuirass",           --  3, __ [ 9/__, 102] {__/__, ___ | __}
     hands="Gleti's Gauntlets",        --  2, __ [ 7/__,  75] { 8/ 8, ___ | __}
     legs="Gleti's Breeches",          --  3, __ [ 8/__, 112] {__/__, ___ | __}
@@ -1329,11 +1335,8 @@ function init_gear_sets()
     ring2="Defending Ring",           -- __, __ [10/10, ___] {__/__, ___ | __}
     back=gear.BST_Pet_Macc_Cape,      -- __, __ [__/__,  20] { 5/ 5, ___ | 10}
     waist="Isa Belt",                 -- __, __ [__/__, ___] { 3/ 3, ___ |  1}
-    -- Traits/Gifts/Merits                                     9/ 9
-    -- 12 Regain, 5 Regen [44 PDT/19 MDT, 507 M.Eva] {Pet: 28 PDT/28 MDT, 2 Lv | 11 Regen}
-    
-    -- head=gear.Valorous_DT_head,    --  3, __ [ 4/ 4,  48] {__/__, ___ | __}
-    -- 13 Regain, 2 Regen [48 PDT/19 MDT, 469 M.Eva] {Pet: 28 PDT/28 MDT, 2 Lv | 11 Regen}
+    -- Traits/Gifts/Merits
+    -- 13 Regain, 2 Regen [52 PDT/23 MDT, 469 M.Eva] {Pet: 19 PDT/19 MDT, 2 Lv | 11 Regen}
   }
 
   sets.idle.Weak = set_combine(sets.HeavyDef, {})

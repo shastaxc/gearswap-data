@@ -20,6 +20,8 @@ Modes
 * Idle Mode: Determines which set to use when not engaged
   * Normal: Allows automatically equipping Regen, Refresh, and Regain gear as needed
   * HeavyDef: Uses defensive set and disables automatically equipping Regen, Refresh, and Regain gear
+  * Regain: Equips maximum Regain gear. This set is not balanced with other stats and may overwrite movement speed
+    gear. This is intended for short term use only when needed.
 * Defense Mode: Equips super high emergency damage reduction set, greatly reduces your DPS output
 * CP Mode: Equips Capacity Points bonus cape
 * AttCapped: When on, if you have AttCapped set variants for your weaponskills, it will use that. This mode is
@@ -227,7 +229,7 @@ function job_setup()
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.HybridMode:options('HeavyDef', 'Safe', 'Normal')
-  state.IdleMode:options('Normal', 'HeavyDef')
+  state.IdleMode:options('Normal', 'HeavyDef', 'Regain')
 
   state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger',
       'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
@@ -904,6 +906,7 @@ function init_gear_sets()
     body="Gleti's Cuirass",
     hands="Gleti's Gauntlets",
     legs="Gleti's Breeches",
+    feet="Gleti's Boots",
   }
   sets.latent_regen = {
     head="Turms Cap +1",

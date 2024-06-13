@@ -629,7 +629,7 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.latent_regain = {
-    head="Valorous Mask",       -- 3
+    head=gear.Valorous_DT_head, -- 3
     -- head="Wakido Kabuto +3", -- 4
   }
   sets.latent_regen = {

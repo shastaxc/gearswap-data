@@ -104,7 +104,7 @@ gear.Odyssean_FC_legs = { name="Odyssean Cuisses", augments={'"Fast Cast"+6','Ma
 gear.Odyssean_FC_feet = { name="Odyssean Greaves", augments={'Accuracy+7','"Fast Cast"+6',}}
 
 -- Valorous
-gear.Valorous_DT_head = {} -- DT-4
+gear.Valorous_DT_head = { name="Valorous Mask", augments={'Mag. Acc.+13','Damage taken-2%','VIT+3','Accuracy+2','Attack+10',}} -- Augment to DT-4
 
 gear.Valorous_Phalanx_body = { name="Valorous Mail", augments={'STR+5','Magic Damage +13','Phalanx +4','Accuracy+13 Attack+13','Mag. Acc.+20 "Mag.Atk.Bns."+20',}}
 
