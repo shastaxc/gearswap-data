@@ -4,7 +4,7 @@ TODO: Missing acc sets. Missing DW sets.
 
 Author: Silvermutt
 Required external libraries: SilverLibs
-Required addons: HasteInfo
+Required addons: HasteInfo, cancel
 Recommended addons: WSBinder, Reorganizer
 Misc Recommendations: Disable GearInfo, disable RollTracker
 
@@ -50,6 +50,8 @@ Abilities
 * There is a map variable named activate_AM_mode which maps specific weapons and the level(s) of Aftermath that will
   trigger their AM set variants to be used for engaged sets. I currently only have UkonvasaraAM variant created, but
   you can add more if you want.
+* If you have Berserk active and then try to use it again, it will cancel the Berserk buff on you. Same with
+  Defender.
 
 Other
 * If you are not using my reorganizer addon, remove all the sets.org sets (including in character global file).
@@ -1155,6 +1157,12 @@ function job_precast(spell, action, spellMap, eventArgs)
     if state.DefenseMode.current ~= 'None' then
       eventArgs.handled = true
     end
+  end
+
+  if spell.english == 'Berserk' and buffactive['Berserk'] then
+    send_command('cancel Berserk')
+  elseif spell.english == 'Defender' and buffactive['Defender'] then
+    send_command('cancel Defender')
   end
 
   if spellMap == 'Utsusemi' and spell.english == 'Utsusemi: Ichi' and
