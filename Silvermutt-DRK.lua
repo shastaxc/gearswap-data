@@ -55,7 +55,7 @@ Other
   if you choose to ignore them, it doesn't not actually affect anything.
 * Equipping certain gear such as warp rings or ammo belts will automatically lock that slot until you manually
   unequip it or change zones.
-* Set named sets.Special.Sleepyhead will be equipped if you are asleep. This should have a piece of gear in it that
+* Set named sets.Special.SleepyHead will be equipped if you are asleep. This should have a piece of gear in it that
   will deal damage to you to wake you up.
 * DRK can actually get so much PDL that under Aria of Passion, they can hit the 100% cap. To avoid wasting stats,
   WS sets have variants that allow you to tailor the PDL amount in your gear and fit in extra useful stats such
@@ -1309,7 +1309,7 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.Special = {}
-  sets.Special.Sleepyhead = { neck="Vim Torque +1", }
+  sets.Special.SleepyHead = { neck="Vim Torque +1", }
 
   -- Quick sets for post-precast adjustments, listed here so that the gear can be Validated.
   sets.buff.Doom = {
@@ -1477,7 +1477,7 @@ function job_buff_change(buff,gain)
   classes.CustomMeleeGroups:clear()
 
   if buff == 'sleep' and gain and player.vitals.hp > 500 and player.status == 'Engaged' then
-    equip(sets.Special.Sleepyhead)
+    equip(sets.Special.SleepyHead)
   end
 
   if buff == 'doom' then
@@ -1744,7 +1744,7 @@ function customize_melee_set(meleeSet)
   if locked_ring2 then meleeSet = set_combine(meleeSet, { ring2=player.equipment.ring2 }) end
 
   if buffactive['sleep'] and player.vitals.hp > 500 and player.status == 'Engaged' then
-    meleeSet = set_combine(meleeSet, sets.Special.Sleepyhead)
+    meleeSet = set_combine(meleeSet, sets.Special.SleepyHead)
   end
 
   if buffactive.Doom then
@@ -1767,7 +1767,7 @@ function customize_defense_set(defenseSet)
   if locked_ring2 then defenseSet = set_combine(defenseSet, { ring2=player.equipment.ring2 }) end
 
   if buffactive['sleep'] and player.vitals.hp > 500 and player.status == 'Engaged' then
-    defenseSet = set_combine(defenseSet, sets.Special.Sleepyhead)
+    defenseSet = set_combine(defenseSet, sets.Special.SleepyHead)
   end
 
   if buffactive.Doom then

@@ -929,7 +929,7 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.Special = {}
-  sets.Special.Sleepyhead = { head="Frenzy Sallet", }
+  sets.Special.SleepyHead = { head="Frenzy Sallet", }
   sets.Special.LowEnmity = { ear2="Novia Earring", } -- Assumes -Enmity merits and Dirge
   sets.Special.Schere = { ear2="Schere Earring", }
 
@@ -1123,7 +1123,7 @@ function job_buff_change(buff,gain)
   classes.CustomMeleeGroups:clear()
 
   if buff == 'sleep' and gain and player.vitals.hp > 500 and player.status == 'Engaged' then
-    equip(sets.Special.Sleepyhead)
+    equip(sets.Special.SleepyHead)
   end
 
   if buff == "doom" then
@@ -1400,7 +1400,7 @@ function customize_melee_set(meleeSet)
   if locked_ring2 then meleeSet = set_combine(meleeSet, { ring2=player.equipment.ring2 }) end
 
   if buffactive['sleep'] and player.vitals.hp > 500 and player.status == 'Engaged' then
-    meleeSet = set_combine(meleeSet, sets.Special.Sleepyhead)
+    meleeSet = set_combine(meleeSet, sets.Special.SleepyHead)
   end
 
   if buffactive.Doom then
@@ -1423,7 +1423,7 @@ function customize_defense_set(defenseSet)
   if locked_ring2 then defenseSet = set_combine(defenseSet, { ring2=player.equipment.ring2 }) end
 
   if buffactive['sleep'] and player.vitals.hp > 500 and player.status == 'Engaged' then
-    defenseSet = set_combine(defenseSet, sets.Special.Sleepyhead)
+    defenseSet = set_combine(defenseSet, sets.Special.SleepyHead)
   end
 
   if buffactive.Doom then

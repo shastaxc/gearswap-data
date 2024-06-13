@@ -55,7 +55,7 @@ Other
   if you choose to ignore them, it doesn't not actually affect anything.
 * Equipping certain gear such as warp rings or ammo belts will automatically lock that slot until you manually
   unequip it or change zones.
-* Set named sets.Special.Sleepyhead will be equipped if you are asleep. This should have a piece of gear in it that
+* Set named sets.Special.SleepyHead will be equipped if you are asleep. This should have a piece of gear in it that
   will deal damage to you to wake you up.
 
 
