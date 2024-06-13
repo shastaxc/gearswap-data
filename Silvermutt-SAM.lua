@@ -1,37 +1,147 @@
--- File Status: Good.
--- TODO: Missing acc sets.
+--[[
+File Status: Good.
+TODO: Missing acc sets.
 
--- Author: Silvermutt
--- Required external libraries: SilverLibs
--- Required addons: N/A
--- Recommended addons: WSBinder, Reorganizer
--- Misc Recommendations: Disable RollTracker
+Author: Silvermutt
+Required external libraries: SilverLibs
+Required addons: N/A
+Recommended addons: WSBinder, Reorganizer
+Misc Recommendations: Disable RollTracker
 
--------------------------------------------------------------------------------------------------------------------
---  Keybinds
--------------------------------------------------------------------------------------------------------------------
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                                  General Use Tips
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+Modes
+* Offense Mode: Changes melee accuracy level
+* Hybrid Mode: Changes damage taken level while engaged
+  * Normal: Highest damage output
+  * HeavyDef: Defensive set with decent offensive stats
+  * SubtleBlow: Uses Subtle Blow capped engaged set
+* Idle Mode: Determines which set to use when not engaged
+  * Normal: Allows automatically equipping Regen, Refresh, and Regain gear as needed
+  * HeavyDef: Uses defensive set and disables automatically equipping Regen, Refresh, and Regain gear
+* Defense Mode: Equips super high emergency damage reduction set, greatly reduces your DPS output
+* CP Mode: Equips Capacity Points bonus cape
+* AttCapped: When on, if you have AttCapped set variants for your weaponskills, it will use that. This mode is
+  intended to be used when you think you are attack capped vs your enemy such as when you have a lot of Attack buffs
+  from BRD, COR, GEO, etc.
+* Enmity Mode: Swaps gear on WS to lower enmity
+  * Normal: Does not swap any -enmity gear during WS
+  * Low: If you have Dirge and -Enmity merits, a simple Novia Earring will cap your -Enmity
+  * Schere: Uses Schere earring during WS to actively lower enmity (only if MP > 0)
 
---  Modes:      [ F9 ]              Cycle Offense Modes
---              [ CTRL+F9 ]         Cycle Hybrid Modes
---              [ WIN+F9 ]          Cycle Weapon Skill Modes
---              [ F10 ]             Emergency -PDT Mode
---              [ ALT+F10 ]         Toggle Kiting Mode
---              [ F11 ]             Emergency -MDT Mode
---              [ F12 ]             Update Current Gear / Report Current Status
---              [ CTRL+F12 ]        Cycle Idle Modes
---              [ ALT+F12 ]         Cancel Emergency -PDT/-MDT Mode
---              [ WIN+C ]           Toggle Capacity Points Mode
---              [ CTRL+PageUp ]     Cycle Toy Weapon Mode
---              [ CTRL+PageDown ]   Cycleback Toy Weapon Mode
---              [ ALT+PageDown ]    Reset Toy Weapon Mode
---              [ WIN+W ]           Toggle Rearming Lock
---                                  (off = re-equip previous weapons if you go barehanded)
---                                  (on = prevent weapon auto-equipping)
---
---  Other:      [ ALT+D ]           Cancel Invisible/Hide & Use Key on <t>
---              [ ALT+S ]           Turn 180 degrees in place
---
---              (Global-Binds.lua contains additional non-job-related keybinds)
+Weapons
+* Use keybinds to cycle weapons.
+* If you want different weapon sets, edit the sets.WeaponSet sets.
+  * Additional weapon sets can be created but you need to also add them to the state.WeaponSet cycle.
+* All other sets (like precast, midcast, idle, etc.) should exclude weapons (main, sub, range).
+* If you enable one of the ToyWeapons modes, it will lock your weapons into low level weapons. This can be
+  useful if you are intentionally trying not to kill something, like low level enemies where you may need
+  to proc them with a WS without killing them. This overrides all other weapon modes and weapon equip logic.
+  * Memorize the keybind to turn it off in case you toggle it by accident.
+
+Abilities
+* The Samurai SP Meikyo Shisui has a quirk in that it does not allow you to gain any TP from your autoattacks when
+  it is active, but it lasts a long time. After using all your TP, you are then stuck unable to weaponskill until you
+  manually remove the buff or wait for it to time out. This lua has an automatic function that removes the buff from
+  you automatically if you are under 1000 TP.
+
+Other
+* If you are not using my reorganizer addon, remove all the sets.org sets (including in character global file).
+* I generally plan out best-in-slot (BiS) pieces for each set even before I acquire the pieces. These BiS pieces are
+  left commented out in the set, while placeholders that I do have in the meantime are uncommented for that slot.
+* I like to list out the important stats for each piece of item in most of my sets, and then have a total at
+  the bottom of the set. If you ever change any pieces of gear, you should recalculate the stats for the new piece
+  and then recalculate for the set total, or just remove those stat comments entirely to avoid confusion. However,
+  if you choose to ignore them, it doesn't not actually affect anything.
+* Equipping certain gear such as warp rings or ammo belts will automatically lock that slot until you manually
+  unequip it or change zones.
+* Set named sets.Special.SleepyHead will be equipped if you are asleep. This should have a piece of gear in it that
+  will deal damage to you to wake you up.
+
+
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                                      Keybinds
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+Modes:
+  [ F9 ]                Cycle Melee Accuracy
+  [ CTRL+F9 ]           Cycle Melee Defense
+  [ F10 ]               Toggle Emergency -PDT
+  [ ALT+F10 ]           Toggle Kiting (on = move speed gear always equipped)
+  [ F11 ]               Toggle Emergency -MDT
+  [ F12 ]               Report current status
+  [ CTRL+F12 ]          Cycle Idle modes
+  [ ALT+F12 ]           Cancel Emergency -PDT/-MDT Mode
+  [ WIN+C ]             Toggle Capacity Points Mode
+  [ CTRL+F8 ]           Toggle Attack Capped mode
+
+Weapons:
+  [ CTRL+Insert ]       Cycle Weapon Sets
+  [ CTRL+Delete ]       Cycleback Weapon Sets
+  [ ALT+Delete ]        Reset to default Weapon Set
+  [ CTRL+PageUp ]       Cycle Toy Weapon Sets
+  [ CTRL+PageDown ]     Cycleback Toy Weapon Sets
+  [ ALT+PageDown ]      Reset to default Toy Weapon Set
+
+Spells:
+  ============ /NIN ============
+  [ ALT+Numpad0 ]       Utsusemi: Ichi
+  [ ALT+Numpad. ]       Utsusemi: Ni
+
+Abilities:
+  [ ALT+Q ]             Meditate
+  [ ALT+W ]             Hamanoha
+  [ ALT+E ]             Hasso
+  ============ /WAR ============
+  [ CTRL+Numlock ]      Defender
+  [ CTRL+Numpad/ ]      Berserk
+  [ CTRL+Numpad* ]      Warcry
+  [ CTRL+Numpad- ]      Aggressor
+  ============ /DRG ============
+  [ CTRL+Numlock ]      Ancient Circle
+  [ CTRL+Numpad/ ]      Jump
+  [ CTRL+Numpad* ]      High Jump
+  [ CTRL+Numpad- ]      Super Jump
+
+SilverLibs keybinds:
+  [ ALT+D ]             Interact
+  [ ALT+S ]             Turn 180 degrees in place
+  [ WIN+W ]             Toggle Rearming Lock
+                          (off = re-equip previous weapons if you go barehanded)
+                          (on = prevent weapon auto-equipping)
+  [ CTRL+` ]            Cycle Treasure Hunter Mode
+
+For more info and available functions, see SilverLibs documentation at:
+https://github.com/shastaxc/silver-libs
+
+Global-Binds.lua contains additional non-job-related keybinds.
+
+
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                                  Custom Commands
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+Prepend with /console to use these in in-game macros.
+
+gs c bind               Sets keybinds again. Sometimes they don't all get set when swapping jobs. Calling this manually fixes it.
+
+(More commands available through SilverLibs)
+
+
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                            Recommended In-game Macros
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+__Keybind___Name______________Command_____________
+[ CTRL+1 ] Konzen         /ja "Konzen-ittai" <t>
+[ CTRL+2 ] Sengikor       /ja "Sengikori" <me>
+[ CTRL+3 ] Sekkanok       /ja "Sekkanoki" <me>
+[ CTRL+0 ] Provoke        /ja "Provoke" <stnpc>
+[ ALT+1 ]  Hagakure       /ja "Hagakure" <me>
+[ ALT+2 ]  ThirdEye       /ja "Third Eye" <me>
+[ ALT+3 ]  Seigan         /ja "Seigan" <me>
+[ ALT+9 ]  Yaegasum       /ja "Yaegasumi" <me>
+
+]]--
+
 
 -------------------------------------------------------------------------------------------------------------------
 -- Setup functions for this job.  Generally should not be modified.
@@ -817,6 +927,12 @@ function job_buff_change(buff,gain)
   end
 end
 
+function check_sp_tp_status()
+  if buffactive['Meikyo Shisui'] and player.tp < 1000 then
+    send_command('cancel Meikyo Shisui')
+  end
+end
+
 
 -------------------------------------------------------------------------------------------------------------------
 -- User code that supplements standard library decisions.
@@ -826,6 +942,7 @@ function job_handle_equipping_gear(playerStatus, eventArgs)
   check_gear()
   update_idle_groups()
   update_melee_groups()
+  check_sp_tp_status()
 end
 
 
@@ -1137,7 +1254,7 @@ end)
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
   -- Default macro set/book: (set, book)
-  set_macro_page(2, 10)
+  set_macro_page(1, 10)
 end
 
 function set_main_keybinds()
@@ -1157,8 +1274,9 @@ function set_main_keybinds()
   send_command('bind ^pagedown gs c toyweapon cycleback')
   send_command('bind !pagedown gs c toyweapon reset')
 
-  send_command('bind !e input /ja "Hasso" <me>')
   send_command('bind !q input /ja "Meditate" <me>')
+  send_command('bind !w input /ja "Hamanoha" <me>')
+  send_command('bind !e input /ja "Hasso" <me>')
 end
 
 function set_sub_keybinds()
