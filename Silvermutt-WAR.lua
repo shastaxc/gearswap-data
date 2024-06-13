@@ -1,37 +1,151 @@
--- File Status: Good.
--- TODO: Missing acc sets. Missing DW sets.
+--[[
+File Status: Good.
+TODO: Missing acc sets. Missing DW sets.
 
--- Author: Silvermutt
--- Required external libraries: SilverLibs
--- Required addons: HasteInfo
--- Recommended addons: WSBinder, Reorganizer
--- Misc Recommendations: Disable GearInfo, disable RollTracker
+Author: Silvermutt
+Required external libraries: SilverLibs
+Required addons: HasteInfo
+Recommended addons: WSBinder, Reorganizer
+Misc Recommendations: Disable GearInfo, disable RollTracker
 
--------------------------------------------------------------------------------------------------------------------
---  Keybinds
--------------------------------------------------------------------------------------------------------------------
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                                  General Use Tips
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+Modes
+* Offense Mode: Changes melee accuracy level
+* Hybrid Mode: Changes damage taken level while engaged
+  * Normal: Highest damage output
+  * HeavyDef: Defensive set with decent offensive stats
+  * SubtleBlow: Uses Subtle Blow capped engaged set
+* Idle Mode: Determines which set to use when not engaged
+  * Normal: Allows automatically equipping Regen, Refresh, and Regain gear as needed
+  * HeavyDef: Uses defensive set and disables automatically equipping Regen, Refresh, and Regain gear
+* Defense Mode: Equips super high emergency damage reduction set, greatly reduces your DPS output
+* CP Mode: Equips Capacity Points bonus cape
+* AttCapped: When on, if you have AttCapped set variants for your weaponskills, it will use that. This mode is
+  intended to be used when you think you are attack capped vs your enemy such as when you have a lot of Attack buffs
+  from BRD, COR, GEO, etc.
+* Enmity Mode: Swaps gear on WS to lower enmity
+  * Normal: Does not swap any -enmity gear during WS
+  * Low: If you have Dirge and -Enmity merits, a simple Novia Earring will cap your -Enmity
+  * Schere: Uses Schere earring during WS to actively lower enmity (only if MP > 0)
 
---  Modes:      [ F9 ]              Cycle Offense Modes
---              [ CTRL+F9 ]         Cycle Hybrid Modes
---              [ WIN+F9 ]          Cycle Weapon Skill Modes
---              [ F10 ]             Emergency -PDT Mode
---              [ ALT+F10 ]         Toggle Kiting Mode
---              [ F11 ]             Emergency -MDT Mode
---              [ F12 ]             Update Current Gear / Report Current Status
---              [ CTRL+F12 ]        Cycle Idle Modes
---              [ ALT+F12 ]         Cancel Emergency -PDT/-MDT Mode
---              [ WIN+C ]           Toggle Capacity Points Mode
---              [ CTRL+PageUp ]     Cycle Toy Weapon Mode
---              [ CTRL+PageDown ]   Cycleback Toy Weapon Mode
---              [ ALT+PageDown ]    Reset Toy Weapon Mode
---              [ WIN+W ]           Toggle Rearming Lock
---                                  (off = re-equip previous weapons if you go barehanded)
---                                  (on = prevent weapon auto-equipping)
---
---  Other:      [ ALT+D ]           Cancel Invisible/Hide & Use Key on <t>
---              [ ALT+S ]           Turn 180 degrees in place
---
---              (Global-Binds.lua contains additional non-job-related keybinds)
+Weapons
+* Use keybinds to cycle weapons.
+* If you want different weapon sets, edit the sets.WeaponSet sets.
+  * Additional weapon sets can be created but you need to also add them to the state.WeaponSet cycle.
+* All other sets (like precast, midcast, idle, etc.) should exclude weapons (main, sub, range).
+* If you enable one of the ToyWeapons modes, it will lock your weapons into low level weapons. This can be
+  useful if you are intentionally trying not to kill something, like low level enemies where you may need
+  to proc them with a WS without killing them. This overrides all other weapon modes and weapon equip logic.
+  * Memorize the keybind to turn it off in case you toggle it by accident.
+* On WAR it is generally not desired to dual wield because the TP Bonus from using a shield in offhand is very strong,
+  but on the rare occasions you might want to dual wield, you must edit the variable named use_dw_if_available and
+  reload GearSwap.
+  * When DW is enabled, the 'DW' set variants will be used.
+* For engaged sets, there are two main variants: single handed and two handed sets. Single handed weapons will use the
+  sets.engaged sets. Two-handed weapons will use the sets.engaged.TwoHanded sets.
+
+Abilities
+* There is a map variable named activate_AM_mode which maps specific weapons and the level(s) of Aftermath that will
+  trigger their AM set variants to be used for engaged sets. I currently only have UkonvasaraAM variant created, but
+  you can add more if you want.
+
+Other
+* If you are not using my reorganizer addon, remove all the sets.org sets (including in character global file).
+* I generally plan out best-in-slot (BiS) pieces for each set even before I acquire the pieces. These BiS pieces are
+  left commented out in the set, while placeholders that I do have in the meantime are uncommented for that slot.
+* I like to list out the important stats for each piece of item in most of my sets, and then have a total at
+  the bottom of the set. If you ever change any pieces of gear, you should recalculate the stats for the new piece
+  and then recalculate for the set total, or just remove those stat comments entirely to avoid confusion. However,
+  if you choose to ignore them, it doesn't not actually affect anything.
+* Equipping certain gear such as warp rings or ammo belts will automatically lock that slot until you manually
+  unequip it or change zones.
+* Set named sets.Special.SleepyHead will be equipped if you are asleep. This should have a piece of gear in it that
+  will deal damage to you to wake you up.
+
+
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                                      Keybinds
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+Modes:
+  [ F9 ]                Cycle Melee Accuracy
+  [ CTRL+F9 ]           Cycle Melee Defense
+  [ F10 ]               Toggle Emergency -PDT
+  [ ALT+F10 ]           Toggle Kiting (on = move speed gear always equipped)
+  [ F11 ]               Toggle Emergency -MDT
+  [ F12 ]               Report current status
+  [ CTRL+F12 ]          Cycle Idle modes
+  [ ALT+F12 ]           Cancel Emergency -PDT/-MDT Mode
+  [ WIN+C ]             Toggle Capacity Points Mode
+  [ CTRL+F8 ]           Toggle Attack Capped mode
+
+Weapons:
+  [ CTRL+Insert ]       Cycle Weapon Sets
+  [ CTRL+Delete ]       Cycleback Weapon Sets
+  [ ALT+Delete ]        Reset to default Weapon Set
+  [ CTRL+PageUp ]       Cycle Toy Weapon Sets
+  [ CTRL+PageDown ]     Cycleback Toy Weapon Sets
+  [ ALT+PageDown ]      Reset to default Toy Weapon Set
+
+Spells:
+  ============ /NIN ============
+  [ ALT+Numpad0 ]       Utsusemi: Ichi
+  [ ALT+Numpad. ]       Utsusemi: Ni
+
+Abilities:
+  ============ /SAM ============
+  [ CTRL+Numlock ]      Third Eye
+  [ CTRL+Numpad/ ]      Meditate
+  [ CTRL+Numpad* ]      Sekkanoki
+  [ CTRL+Numpad- ]      Hasso
+  ============ /DRG ============
+  [ CTRL+Numlock ]      Ancient Circle
+  [ CTRL+Numpad/ ]      Jump
+  [ CTRL+Numpad* ]      High Jump
+  [ CTRL+Numpad- ]      Super Jump
+
+SilverLibs keybinds:
+  [ ALT+D ]             Interact
+  [ ALT+S ]             Turn 180 degrees in place
+  [ WIN+W ]             Toggle Rearming Lock
+                          (off = re-equip previous weapons if you go barehanded)
+                          (on = prevent weapon auto-equipping)
+  [ CTRL+` ]            Cycle Treasure Hunter Mode
+
+For more info and available functions, see SilverLibs documentation at:
+https://github.com/shastaxc/silver-libs
+
+Global-Binds.lua contains additional non-job-related keybinds.
+
+
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                                  Custom Commands
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+Prepend with /console to use these in in-game macros.
+
+gs c bind               Sets keybinds again. Sometimes they don't all get set when swapping jobs. Calling this manually fixes it.
+
+(More commands available through SilverLibs)
+
+
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+                                            Recommended In-game Macros
+∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+__Keybind___Name______________Command_____________
+[ CTRL+1 ] Berserk        /ja "Berserk" <me>
+[ CTRL+2 ] Warcry         /ja "Warcry" <me>
+[ CTRL+3 ] Aggresso       /ja "Aggressor" <me>
+[ CTRL+9 ] MightySt       /ja "Mighty Strikes" <me>
+[ CTRL+0 ] Provoke        /ja "Provoke" <stnpc>
+[ ALT+1 ]  Restrain       /ja "Restraint" <me>
+[ ALT+2 ]  Retaliat       /ja "Retaliation" <me>
+[ ALT+3 ]  BloodRag       /ja "Blood Rage" <me>
+[ ALT+4 ]  Defender       /ja "Defender" <me>
+[ ALT+9 ]  BrazenRu       /ja "Brazen Rush" <me>
+
+]]--
+
 
 -------------------------------------------------------------------------------------------------------------------
 -- Setup functions for this job.  Generally should not be modified.
@@ -66,7 +180,7 @@ function job_setup()
   silibs.enable_elemental_belt_handling(has_obi, has_orpheus)
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
-  state.HybridMode:options('LightDef', 'SubtleBlow', 'Normal')
+  state.HybridMode:options('HeavyDef', 'SubtleBlow', 'Normal')
   state.IdleMode:options('Normal', 'HeavyDef')
   state.AttCapped = M(true, "Attack Capped")
 
@@ -804,7 +918,7 @@ function init_gear_sets()
   ---------------------------------------- Hybrid Sets -------------------------------------------
   ------------------------------------------------------------------------------------------------
 
-  sets.engaged.LightDef = {
+  sets.engaged.HeavyDef = {
     ammo="Coiste Bodhar",                 -- [__/__, ___]  3 <__, __,  3> __, __
     head="Sakpata's Helm",                -- [ 7/ 7, 123] __ <__, __,  5> __,  4; DA dmg +15%
     body="Boii Lorica +3",                -- [14/14, 109] 11 <__, __, __> __,  3
@@ -821,12 +935,12 @@ function init_gear_sets()
     -- WAR Traits                            [__/__, ___] __ <__, __, 33> __, __
     -- [50 PDT/40 MDT, 580 MEVA] 71 STP <0 QA, 3 TA, 71 DA> 0 Crit Rate, 26 Haste; DA dmg+35%
   }
-  sets.engaged.LowAcc.LightDef = set_combine(sets.engaged.LightDef, {})
-  sets.engaged.MidAcc.LightDef = set_combine(sets.engaged.LightDef, {})
-  sets.engaged.HighAcc.LightDef = set_combine(sets.engaged.LightDef, {})
+  sets.engaged.LowAcc.HeavyDef = set_combine(sets.engaged.HeavyDef, {})
+  sets.engaged.MidAcc.HeavyDef = set_combine(sets.engaged.HeavyDef, {})
+  sets.engaged.HighAcc.HeavyDef = set_combine(sets.engaged.HeavyDef, {})
 
   -- Focus capped DA > STP
-  sets.engaged.TwoHanded.LightDef = {
+  sets.engaged.TwoHanded.HeavyDef = {
     ammo="Coiste Bodhar",                 -- [__/__, ___]  3 <__, __,  3> __, __
     head="Hjarrandi Helm",                -- [10/10,  53]  7 <__, __,  6> __, __
     body="Boii Lorica +3",                -- [14/14, 109] 11 <__, __, __> __,  3
@@ -847,14 +961,14 @@ function init_gear_sets()
     -- ear2="Boii Earring +2",            -- [__/__, ___] __ <__, __,  9> __, __
     -- [52 PDT/42 MDT, 460 MEVA] 61 STP <0 QA, 0 TA, 100 DA> 0 Crit Rate, 24 Haste; DA dmg+20%
   }
-  sets.engaged.TwoHanded.LowAcc.LightDef = set_combine(sets.engaged.TwoHanded.LightDef, {
+  sets.engaged.TwoHanded.LowAcc.HeavyDef = set_combine(sets.engaged.TwoHanded.HeavyDef, {
   })
-  sets.engaged.TwoHanded.MidAcc.LightDef = set_combine(sets.engaged.TwoHanded.LightDef, {
+  sets.engaged.TwoHanded.MidAcc.HeavyDef = set_combine(sets.engaged.TwoHanded.HeavyDef, {
   })
-  sets.engaged.TwoHanded.HighAcc.LightDef = set_combine(sets.engaged.TwoHanded.LightDef, {
+  sets.engaged.TwoHanded.HighAcc.HeavyDef = set_combine(sets.engaged.TwoHanded.HeavyDef, {
   })
 
-  sets.engaged.UkonvasaraAM.LightDef = {
+  sets.engaged.UkonvasaraAM.HeavyDef = {
     ammo="Yetshila +1",                   -- [__/__, ___] __ <__, __, __> ( 2,  6) __
     head="Sakpata's Helm",                -- [ 7/ 7, 123] __ <__, __,  5> (__, __)  4; DA dmg +15%
     body="Sakpata's Breastplate",         -- [10/10, 139] __ <__, __,  8> ( 5, __)  2
@@ -890,11 +1004,11 @@ function init_gear_sets()
     -- WAR Traits                            [__/__, ___] __ <__, __, 33> (10, 18) __
     -- [47 PDT/37 MDT, 504 MEVA] 37 STP <0 QA, 0 TA, 100 DA> (33 Crit Rate, 24 Crit Dmg) 26 Haste; DA dmg+46%
   }
-  sets.engaged.UkonvasaraAM.LowAcc.LightDef = set_combine(sets.engaged.UkonvasaraAM.LightDef, {
+  sets.engaged.UkonvasaraAM.LowAcc.HeavyDef = set_combine(sets.engaged.UkonvasaraAM.HeavyDef, {
   })
-  sets.engaged.UkonvasaraAM.MidAcc.LightDef = set_combine(sets.engaged.UkonvasaraAM.LightDef, {
+  sets.engaged.UkonvasaraAM.MidAcc.HeavyDef = set_combine(sets.engaged.UkonvasaraAM.HeavyDef, {
   })
-  sets.engaged.UkonvasaraAM.HighAcc.LightDef = set_combine(sets.engaged.UkonvasaraAM.LightDef, {
+  sets.engaged.UkonvasaraAM.HighAcc.HeavyDef = set_combine(sets.engaged.UkonvasaraAM.HeavyDef, {
   })
 
   sets.engaged.SubtleBlow = {
@@ -1040,8 +1154,6 @@ function job_precast(spell, action, spellMap, eventArgs)
     -- Don't gearswap for weaponskills when Defense is on.
     if state.DefenseMode.current ~= 'None' then
       eventArgs.handled = true
-    elseif buffactive['Sekkanoki'] then
-      equip(sets.precast.JA['Sekkanoki'])
     end
   end
 
