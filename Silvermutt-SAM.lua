@@ -134,6 +134,7 @@ __Keybind___Name______________Command_____________
 [ CTRL+1 ] Konzen         /ja "Konzen-ittai" <t>
 [ CTRL+2 ] Sengikor       /ja "Sengikori" <me>
 [ CTRL+3 ] Sekkanok       /ja "Sekkanoki" <me>
+[ CTRL+9 ] Meikyo         /ja "Meikyo Shisui" <me>
 [ CTRL+0 ] Provoke        /ja "Provoke" <stnpc>
 [ ALT+1 ]  Hagakure       /ja "Hagakure" <me>
 [ ALT+2 ]  ThirdEye       /ja "Third Eye" <me>
