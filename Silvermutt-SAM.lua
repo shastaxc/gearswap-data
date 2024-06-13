@@ -4,7 +4,7 @@ TODO: Missing acc sets.
 
 Author: Silvermutt
 Required external libraries: SilverLibs
-Required addons: N/A
+Required addons: cancel
 Recommended addons: WSBinder, Reorganizer
 Misc Recommendations: Disable RollTracker
 
