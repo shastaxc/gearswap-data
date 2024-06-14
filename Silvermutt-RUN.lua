@@ -1554,7 +1554,7 @@ function job_post_precast(spell, action, spellMap, eventArgs)
   end
 
   -- Override with weapons to be equipped
-  if state[state.DefenseMode.value .. 'DefenseMode'].value ~= 'Encumbrance' then
+  if state.DefenseMode.value == 'None' or state[state.DefenseMode.value .. 'DefenseMode'].value ~= 'Encumbrance' then
     equip(select_weapons())
   end
 
@@ -1601,7 +1601,7 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
   end
   
   -- Override with weapons to be equipped
-  if state[state.DefenseMode.value .. 'DefenseMode'].value ~= 'Encumbrance' then
+  if state.DefenseMode.value == 'None' or state[state.DefenseMode.value .. 'DefenseMode'].value ~= 'Encumbrance' then
     equip(select_weapons())
   end
 
@@ -1687,7 +1687,7 @@ end
 
 function job_post_aftercast(spell, action, spellMap, eventArgs)
   -- Override with weapons to be equipped
-  if state[state.DefenseMode.value .. 'DefenseMode'].value ~= 'Encumbrance' then
+  if state.DefenseMode.value == 'None' or state[state.DefenseMode.value .. 'DefenseMode'].value ~= 'Encumbrance' then
     equip(select_weapons())
   end
 
