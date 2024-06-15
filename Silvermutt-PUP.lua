@@ -5,7 +5,7 @@ TODO: Update auto maneuvers. Does not actually check actual maneuvers, and assum
 Author: Silvermutt
 Required external libraries: SilverLibs
 Required addons: Autocontrol
-Recommended addons: WSBinder, Reorganizer
+Recommended addons: WSBinder, Reorganizer, PetTP
 Misc Recommendations: Disable RollTracker
 
 ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
@@ -160,6 +160,7 @@ __Keybind___Name______________Command_____________
 [ ALT+1 ]  Repair         /ja "Repair" <me>
 [ ALT+2 ]  Cooldown       /ja "Cooldown" <me>
 [ ALT+3 ]  SwapHate       /ja "Ventriloquy" <stnpc>
+[ ALT+4 ]  ErasePet       /ja "Maintenance" <me>
 [ ALT+9 ]  Heady          /ja "Heady Artifice" <me>
 [ ALT+0 ]  SwapHP         /ja "Role Reversal" <me>
 
@@ -365,6 +366,10 @@ function get_sets()
     send_command('gs c weaponset current')
     send_command('gs c petmode current')
   end, 5)
+  coroutine.schedule(function()
+    is_setting_attachments = false
+    send_command('lua l pettp')
+  end, 6)
 end
 
 -- Executes on first load and main job change
@@ -445,6 +450,7 @@ end
 
 function job_file_unload()
   unbind_keybinds()
+  send_command('lua u pettp')
 end
 
 -- Define sets and vars used by this job file.
@@ -548,6 +554,10 @@ function init_gear_sets()
     -- legs=gear.Herc_Repair_legs,    -- __,  8 [ 2/__,  75] {__/__, ___ | ___}
     -- ear1="Pratik Earring",         -- __, 10 [__/__, ___] {__/__, ___ | ___}
     -- 3 Repair+, 46 Repair Potency [38 PDT/21 MDT, 384 M.Eva] {Pet: 17 PDT/17 MDT, 120 Lv | 60 HP}
+  }
+
+	sets.precast.JA['Maintenance'] = {
+    ammo="Can of Automaton Oil +3",
   }
 
   sets.precast.JA['Overdrive'] = {
