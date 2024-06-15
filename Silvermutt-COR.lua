@@ -337,7 +337,7 @@ function init_gear_sets()
     legs="Chasseur's Culottes +3",
   })
   sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {
-    feet="Chasseur's Bottes +1",
+    feet="Chasseur's Bottes +3",
   })
   sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {
     body="Chasseur's Frac +3",
@@ -724,7 +724,7 @@ function init_gear_sets()
     body="Chasseur's Frac +3",        -- 49, 64, 13/13
     hands="Chasseur's Gants +2",      -- 21, 52, __/__
     legs="Chasseur's Culottes +3",    -- 43, 63, 12/12
-    feet="Laksamana's Bottes +3",     -- 49, 52, __/__
+    feet="Chasseur's Bottes +3",      -- 56, 60, __/__; move AF feet to storage slip
     neck="Commodore Charm +2",        -- 15, 25, __/__
     ear1="Hermetic Earring",          -- __,  7, __/__
     ear2="Dignitary's Earring",       -- __, 10, __/__
@@ -734,10 +734,9 @@ function init_gear_sets()
     waist="K. Kachina Belt +1",       --  8, 20, __/__
     -- AF Set Effect                  -- __, 30, __/__
     -- M.Acc from Quick Draw+ stat    -- __, __, __/__
-    -- 264 AGI, 449 M.Acc, 35 PDT/25 MDT
+    -- 271 AGI, 157 M.Acc, 35 PDT/25 MDT
 
     -- hands="Chasseur's Gants +3",   -- 26, 62, __/__
-    -- feet="Chasseur's Bottes +3",   -- 56, 60, __/__; move AF feet to storage slip
     -- ear1="Crepuscular Earring",    -- __, 10, __/__
   }
   sets.precast.CorsairShot['Dark Shot'] = set_combine(sets.precast.CorsairShot['Light Shot'], {})
@@ -745,9 +744,7 @@ function init_gear_sets()
   -- Empy feet for enhancement effect; and more recast reduction
   sets.precast.CorsairShot.Enhance = set_combine(sets.precast.CorsairShot.STP, {
     head="Blood Mask", -- Recast -5
-    feet="Chasseur's Bottes +1",
-    
-    -- feet="Chasseur's Bottes +3",
+    feet="Chasseur's Bottes +3",
   })
 
 
