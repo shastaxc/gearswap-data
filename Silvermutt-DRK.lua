@@ -1900,7 +1900,7 @@ end)
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
   -- Default macro set/book: (set, book)
-  set_macro_page(1, 18)
+  set_macro_page(1, 8)
 end
 
 -- Calculate Fencer tier. Fencer active if not two-handed weapon, and offhand is empty or shield.

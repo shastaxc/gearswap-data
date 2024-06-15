@@ -2112,7 +2112,7 @@ end)
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
   -- Default macro set/book: (set, book)
-  set_macro_page(2, 15)
+  set_macro_page(1, 18)
 end
 
 function set_main_keybinds()

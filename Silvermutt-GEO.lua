@@ -1997,9 +1997,9 @@ end
 function select_default_macro_book()
   -- Default macro set/book: (set, book)
   if player.sub_job == 'SCH' then
-    set_macro_page(3, 12)
+    set_macro_page(2, 21)
   else
-    set_macro_page(2, 12)
+    set_macro_page(1, 21)
   end
 end
 

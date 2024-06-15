@@ -162,7 +162,7 @@ __Keybind___Name______________Command_____________
 [ ALT+4 ]  Dia2           /ma "Diaga" <stnpc>
 [ ALT+7 ]  Blinding       /ma "Blinding Fulgor" <stnpc>
 [ ALT+8 ]  AnvilLit       /ma "Anvil Lightning" <stnpc>
-[ ALT+0 ]  Erase          /ma "Erase" <me>
+[ ALT+0 ]  Erase          /ma "Exuviation" <me>
 
 ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
                                                   BLU Spell Sets
@@ -1873,11 +1873,7 @@ end)
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
   -- Default macro set/book
-  if player.sub_job == 'RDM' then
-      set_macro_page(2, 5)
-  end
-
-  set_macro_page(2,5)
+  set_macro_page(2, 16)
 end
 
 function set_main_keybinds()
