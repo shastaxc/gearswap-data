@@ -156,7 +156,7 @@ __Keybind___Name______________Command_____________
 [ ALT+1 ]  Sleepga        /ma "Sleepga II" <t>
 [ ALT+2 ]  Breakga        /ma "Breakga" <t>
 [ ALT+3 ]  Stun           /ma "Stun" <t>
-[ ALT+4 ]  BreakSp        /ma "Break" personname
+[ ALT+4 ]  BreakSp        /ma "Break" playername
 [ ALT+8 ]  EnmityDo       /ja "Enmity Douse" <me>
 [ ALT+9 ]  SubtleSo       /ja "Subtle Sorcery" <me>
 [ ALT+0 ]  EleSeal        /ja "Elemental Seal" <me>
