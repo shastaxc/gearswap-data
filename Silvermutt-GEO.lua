@@ -1200,7 +1200,7 @@ function init_gear_sets()
     -- Assume White Tathlum         -- __,  2, __, __ [__/__, ___] {__/__, __}
     head="Blistering Sallet +1",    -- 53, __,  3,  8 [ 3/__,  53] {__/__, __}
     body=gear.Nyame_B_body,         -- 40, __,  7,  3 [ 9/ 9, 139] {__/__, __}
-    hands=gear.Nyame_B_hands,       -- 40, __,  5,  3 [ 7/ 7, 112] {__/__, __}
+    hands="Gazu Bracelets +1",      -- 96, __, __,  5 [__/__,  43] {__/__, __}
     legs="Jhakri Slops +2",         -- 45,  9, __,  2 [__/__,  69] {__/__, __}
     feet=gear.Nyame_B_feet,         -- 53, __,  5,  3 [ 7/ 7, 150] {__/__, __}
     neck="Bagua Charm +1",          -- __, __, __, __ [__/__, ___] {__/__, __}; Luopan absorb dmg
@@ -1210,12 +1210,10 @@ function init_gear_sets()
     ring2="Chirich Ring +1",        -- 10,  6, __, __ [__/__, ___] {__/__, __}
     back=gear.GEO_Idle_Cape,        -- __, __, __, __ [__/__,  30] {__/__, 15}
     waist="Olseni Belt",            -- 20,  3, __, __ [__/__, ___] {__/__, __}
-    -- 287 Acc, 34 Store TP, 24 DA, 19 Haste [26 PDT/23 MDT, 553 M.Eva] {Pet: 0 PDT/0 MDT, 15 Regen}
+    -- 343 Acc, 34 Store TP, 19 DA, 21 Haste [19 PDT/16 MDT, 484 M.Eva] {Pet: 0 PDT/0 MDT, 15 Regen}
 
-    -- hands="Gazu Bracelets +1",   -- 96, __, __,  5 [__/__,  43] {__/__, __}
     -- neck="Combatant's Torque",   -- __,  4, __, __ [__/__, ___] {__/__, __}; Skill+15
     -- waist="Goading Belt",        -- __,  5, __,  5 [__/__, ___] {__/__, __}
-    -- 323 Acc, 40 Store TP, 19 DA, 26 Haste [19 PDT/16 MDT, 484 M.Eva] {Pet: 0 PDT/0 MDT, 15 Regen}
   }
   sets.engaged.Safe = {
     -- Assume Dunna                 -- __, __, __, __ [__/__, ___] { 5/ 5, __}
@@ -1248,7 +1246,7 @@ function init_gear_sets()
     -- Assume White Tathlum         -- __,  2, __, __ [__/__, ___] {__/__, __}
     head="Blistering Sallet +1",    -- 53, __,  3,  8 [ 3/__,  53] {__/__, __}
     body=gear.Nyame_B_body,         -- 40, __,  7,  3 [ 9/ 9, 139] {__/__, __}
-    hands=gear.Nyame_B_hands,       -- 40, __,  5,  3 [ 7/ 7, 112] {__/__, __}
+    hands="Gazu Bracelets +1",      -- 96, __, __,  5 [__/__,  43] {__/__, __}
     legs="Jhakri Slops +2",         -- 45,  9, __,  2 [__/__,  69] {__/__, __}
     feet=gear.Nyame_B_feet,         -- 53, __,  5,  3 [ 7/ 7, 150] {__/__, __}
     neck="Bagua Charm +1",          -- __, __, __, __ [__/__, ___] {__/__, __}; Luopan absorb dmg
@@ -1258,11 +1256,9 @@ function init_gear_sets()
     ring2="Chirich Ring +1",        -- 10,  6, __, __ [__/__, ___] {__/__, __}
     back=gear.GEO_Idle_Cape,        -- __, __, __, __ [__/__,  30] {__/__, 15}
     waist="Olseni Belt",            -- 20,  3, __, __ [__/__, ___] {__/__, __}
-    -- 367 Acc, 34 Store TP, 24 DA, 23 Haste [32 PDT/29 MDT, 553 M.Eva] {Pet: 0 PDT/0 MDT, 15 Regen}
+    -- 423 Acc, 34 Store TP, 19 DA, 25 Haste [25 PDT/22 MDT, 484 M.Eva] {Pet: 0 PDT/0 MDT, 15 Regen}
 
-    -- hands="Gazu Bracelets +1",   -- 96, __, __,  5 [__/__,  43] {__/__, __}
     -- neck="Combatant's Torque",   -- __,  4, __, __ [__/__, ___] {__/__, __}; Skill+15
-    -- 423 Acc, 38 Store TP, 19 DA, 25 Haste [25 PDT/22 MDT, 484 M.Eva] {Pet: 0 PDT/0 MDT, 15 Regen}
   }
   sets.engaged.Staff.Safe = {
     -- Assume Mpaca's Staff         -- 50, __, __, __ [__/__, ___] {__/__, __}
@@ -1306,7 +1302,7 @@ function init_gear_sets()
     -- Assume White Tathlum         -- __,  2, __, __ [__/__, ___] {__/__, __}
     head="Blistering Sallet +1",    -- 53, __,  3,  8 [ 3/__,  53] {__/__, __}
     body=gear.Nyame_B_body,         -- 40, __,  7,  3 [ 9/ 9, 139] {__/__, __}
-    hands=gear.Nyame_B_hands,       -- 40, __,  5,  3 [ 7/ 7, 112] {__/__, __}
+    hands="Gazu Bracelets +1",      -- 96, __, __,  5 [__/__,  43] {__/__, __}
     legs="Jhakri Slops +2",         -- 45,  9, __,  2 [__/__,  69] {__/__, __}
     feet=gear.Nyame_B_feet,         -- 53, __,  5,  3 [ 7/ 7, 150] {__/__, __}
     neck="Bagua Charm +1",          -- __, __, __, __ [__/__, ___] {__/__, __}; Luopan absorb dmg
@@ -1316,12 +1312,10 @@ function init_gear_sets()
     ring2="Chirich Ring +1",        -- 10,  6, __, __ [__/__, ___] {__/__, __}
     back=gear.GEO_Idle_Cape,        -- __, __, __, __ [__/__,  30] {__/__, 15}
     waist="Olseni Belt",            -- 20,  3, __, __ [__/__, ___] {__/__, __}
-    -- 342 Acc, 34 Store TP, 24 DA, 19 Haste [36 PDT/23 MDT, 553 M.Eva] {Pet: 0 PDT/0 MDT, 15 Regen}
+    -- 398 Acc, 34 Store TP, 19 DA, 21 Haste [29 PDT/16 MDT, 484 M.Eva] {Pet: 0 PDT/0 MDT, 15 Regen}
 
-    -- hands="Gazu Bracelets +1",   -- 96, __, __,  5 [__/__,  43] {__/__, __}
     -- neck="Combatant's Torque",   -- __,  4, __, __ [__/__, ___] {__/__, __}; Skill+15
     -- waist="Goading Belt",        -- __,  5, __,  5 [__/__, ___] {__/__, __}
-    -- 378 Acc, 40 Store TP, 19 DA, 26 Haste [29 PDT/16 MDT, 484 M.Eva] {Pet: 0 PDT/0 MDT, 15 Regen}
   }
   sets.engaged.Maxentius.Safe = {
     -- Assume Maxentius             -- 40, __, __, __ [__/__, ___] {__/__, __}
@@ -1365,7 +1359,7 @@ function init_gear_sets()
     -- Assume White Tathlum         -- __,  2, __, __ [__/__, ___] {__/__, __}
     head="Blistering Sallet +1",    -- 53, __,  3,  8 [ 3/__,  53] {__/__, __}
     body=gear.Nyame_B_body,         -- 40, __,  7,  3 [ 9/ 9, 139] {__/__, __}
-    hands=gear.Nyame_B_hands,       -- 40, __,  5,  3 [ 7/ 7, 112] {__/__, __}
+    hands="Gazu Bracelets +1",      -- 96, __, __,  5 [__/__,  43] {__/__, __}
     legs="Jhakri Slops +2",         -- 45,  9, __,  2 [__/__,  69] {__/__, __}
     feet=gear.Nyame_B_feet,         -- 53, __,  5,  3 [ 7/ 7, 150] {__/__, __}
     neck="Bagua Charm +1",          -- __, __, __, __ [__/__, ___] {__/__, __}; Luopan absorb dmg
@@ -1375,12 +1369,10 @@ function init_gear_sets()
     ring2="Chirich Ring +1",        -- 10,  6, __, __ [__/__, ___] {__/__, __}
     back=gear.GEO_Idle_Cape,        -- __, __, __, __ [__/__,  30] {__/__, 15}
     waist="Olseni Belt",            -- 20,  3, __, __ [__/__, ___] {__/__, __}
-    -- 332 Acc, 34 Store TP, 24 DA, 19 Haste [36 PDT/23 MDT, 553 M.Eva] {Pet: 25 PDT/25 MDT, 15 Regen}
+    -- 388 Acc, 34 Store TP, 19 DA, 21 Haste [29 PDT/16 MDT, 484 M.Eva] {Pet: 25 PDT/25 MDT, 15 Regen}
 
-    -- hands="Gazu Bracelets +1",   -- 96, __, __,  5 [__/__,  43] {__/__, __}
     -- neck="Combatant's Torque",   -- __,  4, __, __ [__/__, ___] {__/__, __}; Skill+15
     -- waist="Goading Belt",        -- __,  5, __,  5 [__/__, ___] {__/__, __}
-    -- 368 Acc, 40 Store TP, 19 DA, 26 Haste [29 PDT/16 MDT, 484 M.Eva] {Pet: 25 PDT/25 MDT, 15 Regen}
   }
   sets.engaged.Idris.Safe = {
     -- Assume Idris                 -- 30, __, __, __ [__/__, ___] {25/25, __}

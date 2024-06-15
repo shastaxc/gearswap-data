@@ -1406,22 +1406,20 @@ function init_gear_sets()
     ammo="White Tathlum",             -- __,  2, __ <__, __, __> [__/__, ___]
     head=gear.Nyame_B_head,           --  6, __, 50 < 5, __, __> [ 7/ 7, 123]
     body=gear.Nyame_B_body,           --  3, __, 40 < 7, __, __> [ 9/ 9, 139]
-    hands=gear.Nyame_B_hands,         --  3, __, 40 < 5, __, __> [ 7/ 7, 112]
+    hands="Gazu Bracelets +1",        -- 15, __, 96 <__, __, __> [__/__,  43]
     legs="Jhakri Slops +2",           --  2,  9, 45 <__, __, __> [__/__,  69]
     feet=gear.Nyame_B_feet,           --  3, __, 53 < 5, __, __> [ 7/ 7, 150]
     neck="Subtlety Spectacles",       -- __, __, 15 <__, __, __> [__/__, ___]
     ear1="Cessance Earring",          -- __,  3,  6 < 3, __, __> [__/__, ___]
     ear2="Dignitary's Earring",       -- __,  3, 10 <__, __, __> [__/__, ___]
     ring1="Chirich Ring +1",          -- __,  6, 10 <__, __, __> [__/__, ___]
-    ring2="Hetairoi Ring",            -- __, __, __ <__,  2, __> [__/__, ___]
+    ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___]
     back=gear.SCH_TP_Cape,            -- __, 10, 30 <__, __, __> [10/__, ___]
     waist="Olseni Belt",              -- __,  3, 20 <__, __, __> [__/__, ___]
-    -- 21 Haste, 36 STP, 349 Acc <25 DA, 2 TA, 0 QA> [46 PDT/36 MDT, 593 MEVA]
+    -- 33 Haste, 36 STP, 405 Acc <20 DA, 0 TA, 0 QA> [49 PDT/39 MDT, 524 MEVA]
 
-    -- hands="Gazu Bracelets +1",     -- 15, __, 96 <__, __, __> [__/__,  43]
     -- neck="Combatant's Torque",     -- __,  4, __ <__, __, __> [__/__, ___]; Combat skill+15
     -- ear2="Telos Earring",          -- __,  5, 10 < 1, __, __> [__/__, ___]
-    -- ring2="Defending Ring",        -- __, __, __ <__, __, __> [10/10, ___]
     -- 33 Haste, 42 STP, 390 Acc <21 DA, 0 TA, 0 QA> [49 PDT/39 MDT, 524 MEVA]
   }
 

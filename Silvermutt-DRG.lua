@@ -804,8 +804,8 @@ function init_gear_sets()
     -- ammo="Voluspa Tathlum",
   })
   sets.engaged.HighAcc = set_combine(sets.engaged.MidAcc, {
+    hands="Gazu Bracelets +1",
     -- body="Vishap Mail +3",
-    -- hands="Gazu Bracelets +1",
   })
 
   sets.engaged.SamRoll = {
@@ -833,8 +833,8 @@ function init_gear_sets()
     -- ammo="Voluspa Tathlum",
   })
   sets.engaged.HighAcc.SamRoll = set_combine(sets.engaged.MidAcc.SamRoll, {
+    hands="Gazu Bracelets +1",
     -- body="Vishap Mail +3",
-    -- hands="Gazu Bracelets +1",
   })
 
 

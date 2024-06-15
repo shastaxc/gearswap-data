@@ -1035,7 +1035,7 @@ function init_gear_sets()
   sets.engaged = {
     head="Beckoner's Horn +3",
     body="Beckoner's Doublet +2",
-    hands="Bunzi's Gloves",
+    hands="Gazu Bracelets +1",
     legs="Beckoner's Spats +2",
     feet="Beckoner's Pigaches +2",
     neck="Loricate Torque +1",
@@ -1046,7 +1046,6 @@ function init_gear_sets()
     back="Aurist's Cape +1",
     waist="Klouskap Sash +1",
     
-    -- hands="Gazu Bracelets +1",
     -- ear2="Telos Earring",
   }
   sets.engaged.Acc = {
