@@ -188,7 +188,7 @@ end
 -- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
 function job_setup()
   silibs.enable_cancel_outranged_ws()
-  silibs.enable_auto_lockstyle(4)
+  silibs.enable_auto_lockstyle(3)
   silibs.enable_premade_commands()
   silibs.enable_custom_roll_text()
   silibs.enable_equip_loop()

@@ -200,7 +200,7 @@ function job_setup()
   silibs.enable_cancel_outranged_ws()
   silibs.enable_cancel_on_blocking_status()
   silibs.enable_weapon_rearm()
-  silibs.enable_auto_lockstyle(2)
+  silibs.enable_auto_lockstyle(20)
   silibs.enable_waltz_refiner({
     base_chr = 125,
     base_vit = 121,

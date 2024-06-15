@@ -216,7 +216,7 @@ end
 function job_setup()
   silibs.enable_cancel_on_blocking_status()
   silibs.enable_weapon_rearm()
-  silibs.enable_auto_lockstyle(6)
+  silibs.enable_auto_lockstyle(21)
   silibs.enable_premade_commands()
   silibs.enable_custom_roll_text()
   silibs.enable_equip_loop()
