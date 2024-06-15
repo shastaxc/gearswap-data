@@ -724,7 +724,7 @@ function init_gear_sets()
     body="Chasseur's Frac +3",        -- 49, 64, 13/13
     hands="Chasseur's Gants +2",      -- 21, 52, __/__
     legs="Chasseur's Culottes +3",    -- 43, 63, 12/12
-    feet="Chasseur's Bottes +3",      -- 56, 60, __/__; move AF feet to storage slip
+    feet="Chasseur's Bottes +3",      -- 56, 60, __/__
     neck="Commodore Charm +2",        -- 15, 25, __/__
     ear1="Hermetic Earring",          -- __,  7, __/__
     ear2="Dignitary's Earring",       -- __, 10, __/__
