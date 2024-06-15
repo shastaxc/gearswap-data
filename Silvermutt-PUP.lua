@@ -159,7 +159,7 @@ __Keybind___Name______________Command_____________
 [ CTRL+0 ] Provoke        /ja "Provoke" <stnpc>
 [ ALT+1 ]  Repair         /ja "Repair" <me>
 [ ALT+2 ]  Cooldown       /ja "Cooldown" <me>
-[ ALT+3 ]  SwapHate       /ja "Ventriloquy" <t>
+[ ALT+3 ]  SwapHate       /ja "Ventriloquy" <stnpc>
 [ ALT+9 ]  Heady          /ja "Heady Artifice" <me>
 [ ALT+0 ]  SwapHP         /ja "Role Reversal" <me>
 
