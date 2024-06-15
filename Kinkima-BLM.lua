@@ -934,6 +934,10 @@ function init_gear_sets()
     body="Councilor's Garb",
   }
 
+  sets.CP = {
+    back=gear.CP_Cape,
+  }
+
   sets.Special = {}
   -- This set will be overlaid on all idle, melee, and midcast sets while Mana Wall is active
   sets.Special.ManaWall = {
