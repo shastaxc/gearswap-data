@@ -1092,8 +1092,7 @@ function init_gear_sets()
   }
   sets.WeaponSet['Naegling'].DW = {
     main="Naegling",
-    sub="Ternion Dagger +1",
-    -- sub="Sangarius +1",
+    sub="Sangarius +1",
   }
   sets.WeaponSet['Shining One'] = {
     main="Shining One",
@@ -1105,8 +1104,7 @@ function init_gear_sets()
   }
   sets.WeaponSet['Club'].DW = {
     main="Loxotic Mace +1",
-    sub="Ternion Dagger +1",
-    -- sub="Sangarius +1",
+    sub="Sangarius +1",
   }
   sets.WeaponSet['Dagger'] = {
     main=gear.Malevolence_1,
@@ -1130,7 +1128,7 @@ function init_gear_sets()
   }
   sets.WeaponSet['Phys Axe'].DW = {
     main="Dolichenus",
-    -- sub="Sangarius +1",
+    sub="Sangarius +1",
   }
   sets.WeaponSet['Great Sword'] = {
     -- main="Montante +1",

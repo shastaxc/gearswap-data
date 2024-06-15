@@ -1346,8 +1346,7 @@ function init_gear_sets()
   }
   sets.WeaponSet['Naegling'].DW = {
     main="Naegling",
-    sub="Ternion Dagger +1",
-    -- sub="Sangarius +1",
+    sub="Sangarius +1",
   }
   sets.WeaponSet['Anguta'] = {
     main="Anguta",
@@ -1367,8 +1366,7 @@ function init_gear_sets()
   }
   sets.WeaponSet['Club'].DW = {
     main="Loxotic Mace +1",
-    sub="Ternion Dagger +1",
-    -- sub="Sangarius +1",
+    sub="Sangarius +1",
   }
   sets.WeaponSet['Dagger'] = {
     main=gear.Malevolence_1,
