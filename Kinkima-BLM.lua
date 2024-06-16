@@ -1614,6 +1614,7 @@ function set_main_keybinds()
   send_command('bind @w gs c toggle RearmingLock')
 
   send_command('bind @c gs c toggle CP')
+  send_command('bind !` gs c toggle MagicBurst')
 
   send_command('bind ^insert gs c weaponset cycle')
   send_command('bind ^delete gs c weaponset cycleback')
@@ -1669,6 +1670,7 @@ function unbind_keybinds()
   send_command('unbind @w')
 
   send_command('unbind @c')
+  send_command('unbind !`')
 
   send_command('unbind ^insert')
   send_command('unbind ^delete')
