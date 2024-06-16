@@ -570,9 +570,9 @@ function user_setup()
   include('Global-Binds.lua') -- Additional local binds
 
   if S{'THF','DNC','RDM','BRD','RNG','NIN'}:contains(player.sub_job) then
-    state.WeaponSet = M{['description']='Weapon Set', 'Naegling', 'Cleaving'}
+    state.WeaponSet = M{['description']='Weapon Set', 'Naegling', 'Axe', 'Cleaving'}
   else
-    state.WeaponSet = M{['description']='Weapon Set', 'Naegling'}
+    state.WeaponSet = M{['description']='Weapon Set', 'Naegling', 'Axe'}
   end
 
   select_default_macro_book()
@@ -1650,6 +1650,8 @@ function init_gear_sets()
   sets.WeaponSet['Piercing'].DW = {main="Tauret", sub="Ikenga's Axe"}
   sets.WeaponSet['Cleaving'] = {main=gear.Malevolence_1, sub="Sacro Bulwark"}
   sets.WeaponSet['Cleaving'].DW = {main=gear.Malevolence_1, sub=gear.Malevolence_2}
+  sets.WeaponSet['Axe'] = {main="Dolichenus", sub="Sacro Bulwark"}
+  sets.WeaponSet['Axe'].DW = {main="Dolichenus", sub="Ikenga's Axe"}
 end
 
 -------------------------------------------------------------------------------------------------------------------
