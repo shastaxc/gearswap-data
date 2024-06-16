@@ -622,7 +622,6 @@ function init_gear_sets()
     feet="Wicce Sabots +3",           -- ___, 60, 32, __ (__, __, __) [11/11, 168]
     neck="Sorcerer's Stole +2",       -- ___, 30, 15, __ (__, __, __) [__/__, ___]
     ear1="Malignance Earring",        -- ___, 10,  8,  4 (__, __, __) [__/__, ___]
-		ear2="Crepuscular Earring",       -- ___, 10, __, __ (__, __, __) [__/__, ___]
 		ring1="Stikini Ring +1",          -- ___, 11,  8, __ (__, __,  8) [__/__, ___]
     ring2="Stikini Ring +1",          -- ___, 11,  8, __ (__, __,  8) [__/__, ___]
     back="Aurist's Cape +1",          -- ___, 33, 33, __ (__, __, __) [__/__, ___]
@@ -631,6 +630,7 @@ function init_gear_sets()
     
 		-- head=empty,                    -- ___, __, __, __ (__, __, __) [__/__, ___]
 		-- body="Cohort Cloak +1",        -- ___,120, 76, __ (__, __, 34) [__/__, 156]
+		-- ear2="Crepuscular Earring",    -- ___, 10, __, __ (__, __, __) [__/__, ___]
     -- 228 M.Acc skill, 533 M.Acc, 282 MND, 4 FC (0 Enf. Effect, 5 Enf. Duration, 85 Enf. Skill) [30 PDT/30 MDT, 590 M.Eva]
   }
 

@@ -720,13 +720,13 @@ function init_gear_sets()
     feet=gear.Nyame_B_feet,             -- 46, 23, 11 (60, 53) [ 7/ 7, 150]
     neck="Iskur Gorget",                -- __, __, __ (30, 30) [__/__, ___]
     ear1="Telos Earring",               -- __, __, __ (10, 10) [__/__, ___]
+    ear2="Crepuscular Earring",         -- __, __, __ (__, 10) [__/__, ___]
     ring1="Regal Ring",                 -- 10, 10, __ (10, __) [__/__, ___]
     ring2="Ephramad's Ring",            -- 10, 10, __ (20, 20) [__/__, ___]
     back=gear.THF_WS2_Cape,             -- __, 30, 10 (__, __) [10/__, ___]
     waist="Yemaya Belt",                --  7, __, __ (10, 10) [__/__, ___]
-    -- 175 AGI, 219 STR, 68 WSD (380 R.Att, 283 R.Acc) [48 PDT/38 MDT, 674 M.Eva]
+    -- 175 AGI, 219 STR, 68 WSD (380 R.Att, 293 R.Acc) [48 PDT/38 MDT, 674 M.Eva]
 
-    -- ear2="Crepuscular Earring",      -- __, __, __ (__, 10) [__/__, ___]
     -- back=gear.THF_WS6_Cape,          -- 30, __, 10 (20, 20) [10/__, ___]
     -- 205 AGI, 189 STR, 68 WSD (400 R.Att, 313 R.Acc) [48 PDT/38 MDT, 674 M.Eva]
   }

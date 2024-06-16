@@ -706,14 +706,11 @@ function init_gear_sets()
     feet="Malignance Boots",      -- 49, __, 50,  9,  4/ 4
     neck="Iskur Gorget",          -- __, __, __,  8, __/__
     ear1="Dedition Earring",      -- __, __, __,  8, __/__
-    ear2="Telos Earring",         -- __, __, __,  5, __/__
+    ear2="Crepuscular Earring",   -- __, __, 10,  5, __/__
     ring1="Chirich Ring +1",      -- __, __, __,  6, __/__
     ring2="Crepuscular Ring",     -- __, __, 10,  6, __/__
     back=gear.COR_RA_Cape,        -- 30, __, __, 10, 10/__
     waist="Reiki Yotai",          -- __, __, __,  4, __/__
-    -- 188 AGI, 35 MAB, 251 M.Acc, 91 STP, 40PDT/30MDT
-
-    -- ear2="Crepuscular Earring",-- __, __, 10,  5, __/__
     -- 188 AGI, 35 MAB, 261 M.Acc, 91 STP, 40PDT/30MDT
   }
 
@@ -726,7 +723,7 @@ function init_gear_sets()
     legs="Chasseur's Culottes +3",    -- 43, 63, 12/12
     feet="Chasseur's Bottes +3",      -- 56, 60, __/__
     neck="Commodore Charm +2",        -- 15, 25, __/__
-    ear1="Hermetic Earring",          -- __,  7, __/__
+    ear1="Crepuscular Earring",       -- __, 10, __/__
     ear2="Dignitary's Earring",       -- __, 10, __/__
     ring1="Regal Ring",               -- 10, __, __/__
     ring2="Metamorph Ring +1",        -- __, 15, __/__
@@ -734,10 +731,9 @@ function init_gear_sets()
     waist="K. Kachina Belt +1",       --  8, 20, __/__
     -- AF Set Effect                  -- __, 30, __/__
     -- M.Acc from Quick Draw+ stat    -- __, __, __/__
-    -- 271 AGI, 157 M.Acc, 35 PDT/25 MDT
+    -- 271 AGI, 160 M.Acc, 35 PDT/25 MDT
 
     -- hands="Chasseur's Gants +3",   -- 26, 62, __/__
-    -- ear1="Crepuscular Earring",    -- __, 10, __/__
   }
   sets.precast.CorsairShot['Dark Shot'] = set_combine(sets.precast.CorsairShot['Light Shot'], {})
 
