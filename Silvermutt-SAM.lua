@@ -257,8 +257,7 @@ function init_gear_sets()
   }
 
   sets.precast.JA['Warding Circle'] = {
-    head="Wakido Kabuto +2",
-    -- head="Wakido Kabuto +3",
+    head="Wakido Kabuto +3",
   }
 
   sets.precast.JA['Third Eye'] = {
@@ -267,10 +266,9 @@ function init_gear_sets()
   }
 
   sets.precast.JA['Meditate'] = {
-    head="Wakido Kabuto +2",
+    head="Wakido Kabuto +3",
     hands="Sakonji Kote +3",
     back="Smertrios's Mantle",
-    -- head="Wakido Kabuto +3",
   }
 
   sets.precast.JA['Seigan'] = {
@@ -629,8 +627,7 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.latent_regain = {
-    head=gear.Valorous_DT_head, -- 3
-    -- head="Wakido Kabuto +3", -- 4
+    head="Wakido Kabuto +3", -- 4
   }
   sets.latent_regen = {
     body="Sacro Breastplate", --10
