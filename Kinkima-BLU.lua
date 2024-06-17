@@ -1318,6 +1318,10 @@ function init_gear_sets()
     waist="Gishdubar Sash", --10
   }
 
+  sets.CP = {
+    back=gear.CP_Cape,
+  }
+
   sets.TreasureHunter = {
     ammo="Perfect Lucky Egg",
     waist="Chaac Belt",
