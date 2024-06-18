@@ -155,6 +155,7 @@ gs c bind               Sets keybinds again. Sometimes they don't all get set wh
 __Keybind___Name______________Command_____________
 [ CTRL+1 ] SwapTP         /ja "Tactical Switch" <me>
 [ CTRL+2 ] DeusEx         /ja "Deus Ex Automata" <me>
+[ CTRL+3 ] DarkMan        /ja "Dark Maneuver" <me>
 [ CTRL+9 ] OD             /ja "Overdrive" <me>
 [ CTRL+0 ] Provoke        /ja "Provoke" <stnpc>
 [ ALT+1 ]  Repair         /ja "Repair" <me>
@@ -218,18 +219,18 @@ __Keybind___Name______________Command_____________
 <nuke>
     <frame>stormwaker frame</frame>
     <head>spiritreaver head</head>
-    <slot01>loudspeaker v</slot01>
-    <slot02>ice maker</slot02>
-    <slot03>amplifier ii</slot03>
-    <slot04>tranquilizer ii</slot04>
-    <slot05>optic fiber</slot05>
-    <slot06>optic fiber ii</slot06>
-    <slot07>mana tank iii</slot07>
-    <slot08>mana tank iv</slot08>
-    <slot09>mana conserver</slot09>
-    <slot10>mana jammer iii</slot10>
-    <slot11>mana jammer iv</slot11>
-    <slot12>armor plate iv</slot12>
+    <slot01>amplifier</slot01>
+    <slot02>amplifier ii</slot02>
+    <slot03>tactical processor</slot03>
+    <slot04>loudspeaker iv</slot04>
+    <slot05>tranquilizer</slot05>
+    <slot06>optic fiber</slot06>
+    <slot07>optic fiber ii</slot07>
+    <slot08>mana tank iii</slot08>
+    <slot09>mana tank iv</slot09>
+    <slot10>economizer</slot10>
+    <slot11>mana jammer iii</slot11>
+    <slot12>mana jammer iv</slot12>
 </nuke>
 <overdrivedd>
     <frame>Sharpshot Frame</frame>
@@ -247,7 +248,7 @@ __Keybind___Name______________Command_____________
     <slot11>Attuner</slot11>
     <slot12>Magniplug II</slot12>
 </overdrivedd>
-<ranged>
+<rangedsc>
     <frame>Sharpshot Frame</frame>
     <head>Sharpshot Head</head>
     <slot01>Inhibitor</slot01>
@@ -255,30 +256,30 @@ __Keybind___Name______________Command_____________
     <slot03>Speedloader II</slot03>
     <slot04>Magniplug</slot04>
     <slot05>Magniplug II</slot05>
-    <slot06>Attuner</slot06>
+    <slot06>Scope IV</slot06>
     <slot07>Truesights</slot07>
     <slot08>Barrage Turbine</slot08>
     <slot09>Repeater</slot09>
     <slot10>Drum Magazine</slot10>
     <slot11>Optic Fiber</slot11>
     <slot12>Optic Fiber II</slot12>
-</ranged>
-<rangedacc>
+</rangedsc>
+<rangedspam>
     <frame>Sharpshot Frame</frame>
     <head>Sharpshot Head</head>
-    <slot01>Inhibitor</slot01>
-    <slot02>Inhibitor II</slot02>
-    <slot03>Scope IV</slot03>
-    <slot04>Magniplug</slot04>
-    <slot05>Magniplug II</slot05>
-    <slot06>Attuner</slot06>
-    <slot07>Truesights</slot07>
-    <slot08>Barrage Turbine</slot08>
-    <slot09>Repeater</slot09>
-    <slot10>Drum Magazine</slot10>
+    <slot01>Scope II</slot01>
+    <slot02>Scope IV</slot02>
+    <slot03>Truesights</slot03>
+    <slot04>Repeater</slot04>
+    <slot05>Drum Magazine</slot05>
+    <slot06>Dynamo III</slot06>
+    <slot07>Armor Plate IV</slot07>
+    <slot08>Mana Jammer IV</slot08>
+    <slot09>Magniplug</slot09>
+    <slot10>Magniplug II</slot10>
     <slot11>Optic Fiber</slot11>
     <slot12>Optic Fiber II</slot12>
-</rangedacc>
+</rangedspam>
 <skillupmelee>
     <frame>Valoredge Frame</frame>
     <head>Valoredge Head</head>
@@ -389,8 +390,8 @@ function job_setup()
   state.CP = M(false, 'Capacity Points Mode')
   state.AutomaticPetTargeting = M(true, 'Automatic Pet Targeting')
   state.AutomaticManeuvers = M(false,'Automatic Maneuvers')
-  state.PetMode = M{['description']='Pet Mode', 'Tank', 'Ranged', 'RangedAcc', 'Heal', 'MeleeSpam', 'MeleeSC', 'OverdriveDD', 'Nuke'}
-  -- state.PetMode = M{['description']='Pet Mode', 'Tank', 'Ranged', 'RangedAcc', 'Heal', 'MeleeSpam', 'MeleeSC', 'OverdriveDD', 'Nuke', 'SkillUpRanged', 'SkillUpMelee'}
+  state.PetMode = M{['description']='Pet Mode', 'Tank', 'RangedSpam', 'RangedSC', 'Heal', 'MeleeSpam', 'MeleeSC', 'OverdriveDD', 'Nuke'}
+  -- state.PetMode = M{['description']='Pet Mode', 'Tank', 'RangedSpam', 'RangedSC', 'Heal', 'MeleeSpam', 'MeleeSC', 'OverdriveDD', 'Nuke', 'SkillUpRanged', 'SkillUpMelee'}
 
   -- List of pet weaponskills to check for
   petWeaponskills = S{'Slapstick', 'Knockout', 'Magic Mortar', 'Chimera Ripper', 'String Clipper', 'Cannibal Blade',
@@ -401,8 +402,8 @@ function job_setup()
   -- Elements should be listed in the order you wish them to be activated.
 	defaultManeuvers = {
 		Tank =          L{'Light', 'Fire', 'Fire'},
-		Ranged =        L{'Wind', 'Wind', 'Wind'},
-		RangedAcc =     L{'Wind', 'Wind', 'Wind'},
+		RangedSpam =    L{'Wind', 'Wind', 'Wind'},
+		RangedSC =      L{'Wind', 'Wind', 'Fire'},
 		Heal =          L{'Light', 'Light', 'Dark'},
 		MeleeSpam =     L{'Fire', 'Fire', 'Wind'},
 		MeleeSC =       L{'Fire', 'Fire', 'Wind'},
@@ -1175,7 +1176,7 @@ function init_gear_sets()
     -- [11 PDT/5 MDT, 429 M.Eva] {Pet: 22 PDT /22 MDT, 122 Lv | 10 DA, 14 STP, 290 Acc/255 Racc, 40 Att/20 Ratt, 22 Haste, 13 Regen, 23 Enmity}
   }
   -- Haste does not affect the ranged pet
-  sets.idle.PetEngaged.Ranged = {
+  sets.idle.PetEngaged.RangedSC = {
     range="Neo Animator",             -- [__/__, ___] {__/__, 119 | __, __, 30/30, __/__, __, __, __}
     head="Pitre Taj +3",              -- [__/__,  63] {__/__, ___ | __, __, 37/37, 57/57, __,  5, __}
     body="Pitre Tobe +3",             -- [__/__,  73] {__/__, ___ | __, 15, 50/50, 60/60, __, __, __}
@@ -1194,7 +1195,7 @@ function init_gear_sets()
     -- ear2="Karagoz Earring +2",     -- [__/__, ___] {__/__,   1 | __, __, __/__, __/__, __, __, __}
     -- [33 PDT/27 MDT, 453 M.Eva] {Pet: 8 PDT /8 MDT, 122 Lv | 5 DA, 29 STP, 389 Acc/374 Racc, 142 Att/147 Ratt, 9 Haste, 16 Regen, 0 Enmity}
   }
-  sets.idle.PetEngaged.RangedAcc = set_combine(sets.idle.PetEngaged.Ranged, {})
+  sets.idle.PetEngaged.RangedSpam = set_combine(sets.idle.PetEngaged.RangedSC, {})
   sets.idle.PetEngaged.MeleeSpam = {
     range="Neo Animator",             -- [__/__, ___] {__/__, 119 | __, __, 30/30, __/__, __, __, __}
     head="Pitre Taj +3",              -- [__/__,  63] {__/__, ___ | __, __, 37/37, 57/57, __,  5, __}
@@ -1253,7 +1254,7 @@ function init_gear_sets()
     -- ear2="Karagoz Earring +2",     -- [__/__, ___] {__/__,   1 | __, __, __}
     -- [25 PDT/17 MDT, 310 M.Eva] {Pet: 8 PDT /8 MDT, 121 Lv | 24 FC, 15 Regen, 5 Refresh}
   }
-  sets.idle.PetEngaged.SkillUpRanged = set_combine(sets.idle.PetEngaged.Ranged, {})
+  sets.idle.PetEngaged.SkillUpRanged = set_combine(sets.idle.PetEngaged.RangedSC, {})
   sets.idle.PetEngaged.SkillUpMelee = set_combine(sets.idle.PetEngaged.MeleeSpam, {})
   sets.idle.PetEngaged.Nuke = set_combine(sets.idle.PetEngaged.Heal, {})
 
@@ -1314,7 +1315,7 @@ function init_gear_sets()
     -- 19 STP, 218 Acc <0 DA, 3 TA, 0 QA> [50 PDT/31 MDT, 496 M.Eva] {Pet: 17 PDT /17 MDT, 122 Lv | 10 DA, 8 STP, 270 Acc/255 Racc, 20 Att/20 Ratt, 18 Haste, 10 Regen, 11 Enmity}
   }
   sets.engaged.PetTank.Acc = set_combine(sets.engaged.PetTank, {})
-  sets.engaged.PetRanged = {
+  sets.engaged.PetRangedSC = {
     range="Neo Animator",             -- __, 10 <__, __, __> [__/__, ___] {__/__, 119 | __, __, 30/30, __/__, __, __, __}
     head="Pitre Taj +3",              -- __, 37 <__, __, __> [__/__,  63] {__/__, ___ | __, __, 37/37, 57/57, __,  5, __}
     body="Pitre Tobe +3",             -- __, 50 <__, __, __> [__/__,  73] {__/__, ___ | __, 15, 50/50, 60/60, __, __, __}
@@ -1333,9 +1334,9 @@ function init_gear_sets()
     -- ear2="Karagoz Earring +2",     --  8, 20 <__, __, __> [__/__, ___] {__/__,   1 | __, __, __/__, __/__, __, __, __}
     -- 19 STP, 307 Acc <0 DA, 11 TA, 0 QA> [49 PDT/43 MDT, 453 M.Eva] {Pet: 8 PDT /8 MDT, 122 Lv | 5 DA, 23 STP, 359 Acc/344 Racc, 142 Att/147 Ratt, 0 Haste, 16 Regen, 0 Enmity}
   }
-  sets.engaged.PetRanged.Acc = set_combine(sets.engaged.PetRanged, {})
-  sets.engaged.PetRangedAcc = set_combine(sets.engaged.PetRanged, {})
-  sets.engaged.PetRangedAcc.Acc = set_combine(sets.engaged.PetRanged, {})
+  sets.engaged.PetRangedSC.Acc = set_combine(sets.engaged.PetRangedSC, {})
+  sets.engaged.PetRangedSpam = set_combine(sets.engaged.PetRangedSC, {})
+  sets.engaged.PetRangedSpam.Acc = set_combine(sets.engaged.PetRangedSC, {})
   sets.engaged.PetMeleeSpam = {
     range="Neo Animator",             -- __, 10 <__, __, __> [__/__, ___] {__/__, 119 | __, __, 30/30, __/__, __, __, __}
     head="Hike Khat +1",              -- __, __ <__, __, __> [13/__,  75] { 5/ 5, ___ | __, __, __/__, __/__, __, __, __}
@@ -1388,7 +1389,7 @@ function init_gear_sets()
   })
   sets.engaged.PetNuke = set_combine(sets.engaged.PetHeal, {})
   sets.engaged.PetNuke.Acc = set_combine(sets.engaged.PetHeal.Acc, {})
-  sets.engaged.SkillUpRanged = set_combine(sets.engaged.PetRanged, {})
+  sets.engaged.SkillUpRanged = set_combine(sets.engaged.PetRangedSC, {})
   sets.engaged.SkillUpMelee = set_combine(sets.engaged.PetMeleeSpam, {})
 
 	--------------------- When master is engaged in Halfsies hybrid mode ---------------------
@@ -1412,7 +1413,7 @@ function init_gear_sets()
     -- 37 STP, 327 Acc <15 DA, 18 TA, 3 QA> [51 PDT/28 MDT, 493 M.Eva] {Pet: 5 PDT /5 MDT, 122 Lv | 10 DA, 0 STP, 304 Acc/284 Racc, 40 Att/20 Ratt, 0 Haste, 10 Regen, 0 Enmity}
   }
   sets.engaged.HalfsiesTank.Acc = set_combine(sets.engaged.HalfsiesTank, {})
-  sets.engaged.HalfsiesRanged = {
+  sets.engaged.HalfsiesRangedSC = {
     range="Neo Animator",             -- __, 10 <__, __, __> [__/__, ___] {__/__, 119 | __, __, 30/30, __/__, __, __, __}
     head="Mpaca's Cap",               -- __, 55 < 5,  3, __> [ 7/__,  69] {__/__, ___ | __, __, 50/50, __/__, __, __, __}
     body="Pitre Tobe +3",             -- __, 50 <__, __, __> [__/__,  73] {__/__, ___ | __, 15, 50/50, 60/60, __, __, __}
@@ -1431,9 +1432,9 @@ function init_gear_sets()
     -- ear2="Karagoz Earring +2",     --  8, 20 <__, __, __> [__/__, ___] {__/__,   1 | __, __, __/__, __/__, __, __, __}
     -- 35 STP, 355 Acc <5 DA, 14 TA, 0 QA> [51 PDT/38 MDT, 439 M.Eva] {Pet: 8 PDT /8 MDT, 122 Lv | 0 DA, 23 STP, 330 Acc/315 Racc, 65 Att/70 Ratt, 0 Haste, 1 Regen, 0 Enmity}
   }
-  sets.engaged.HalfsiesRanged.Acc = set_combine(sets.engaged.HalfsiesRanged, {})
-  sets.engaged.HalfsiesRangedAcc = set_combine(sets.engaged.HalfsiesRanged, {})
-  sets.engaged.HalfsiesRangedAcc.Acc = set_combine(sets.engaged.HalfsiesRanged, {})
+  sets.engaged.HalfsiesRangedSC.Acc = set_combine(sets.engaged.HalfsiesRangedSC, {})
+  sets.engaged.HalfsiesRangedSpam = set_combine(sets.engaged.HalfsiesRangedSC, {})
+  sets.engaged.HalfsiesRangedSpam.Acc = set_combine(sets.engaged.HalfsiesRangedSC, {})
   sets.engaged.HalfsiesMeleeSpam = {
     range="Neo Animator",             -- __, 10 <__, __, __> [__/__, ___] {__/__, 119 | __, __, 30/30, __/__, __, __, __}
     head="Mpaca's Cap",               -- __, 55 < 5,  3, __> [ 7/__,  69] {__/__, ___ | __, __, 50/50, __/__, __, __, __}
@@ -1465,7 +1466,7 @@ function init_gear_sets()
   sets.engaged.HalfsiesHeal.Acc = set_combine(sets.engaged.PetHeal.Acc, {})
   sets.engaged.HalfsiesNuke = set_combine(sets.engaged.PetNuke, {})
   sets.engaged.HalfsiesNuke.Acc = set_combine(sets.engaged.PetNuke.Acc, {})
-  sets.engaged.HalfsiesSkillUpRanged = set_combine(sets.engaged.HalfsiesRanged, {})
+  sets.engaged.HalfsiesSkillUpRanged = set_combine(sets.engaged.HalfsiesRangedSC, {})
   sets.engaged.HalfsiesSkillUpMelee = set_combine(sets.engaged.HalfsiesMeleeSpam, {})
 
   ------------------------------------------------------------------------------------------------
