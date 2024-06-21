@@ -1,6 +1,7 @@
 --[[
 File Status: Good.
 TODO: Update auto maneuvers. Does not actually check actual maneuvers, and assumes maneuver use never gets interrupted.
+Also, do not use when invisible.
 
 Author: Silvermutt
 Required external libraries: SilverLibs
