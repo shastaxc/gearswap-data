@@ -3,7 +3,7 @@ File Status: Good.
 
 Author: Silvermutt
 Required external libraries: SilverLibs
-Required addons: Cancel
+Required addons: Cancel, Timers
 Recommended addons: WSBinder, Reorganizer
 Misc Recommendations: Disable RollTracker
 
@@ -1630,6 +1630,7 @@ function job_aftercast(spell, action, spellMap, eventArgs)
 
   if spell.name == 'Rayke' then
     if spell.interrupted then
+      add_to_chat(1, 'Rayke interrupted')
       expended_runes = {}
     else
       -- Record Rayke target
@@ -1658,6 +1659,7 @@ function job_aftercast(spell, action, spellMap, eventArgs)
   elseif spell.name == 'Gambit' then
     if spell.interrupted then
       expended_runes = {}
+      add_to_chat(1, 'Gambit interrupted')
     else
       -- Record Rayke target
       gambit_target = spell.target
