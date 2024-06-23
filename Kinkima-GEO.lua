@@ -1141,6 +1141,7 @@ function init_gear_sets()
     ear1="Earthcry Earring",          -- 10 [__/__, ___] {__/__, __}
     ear2="Hearty Earring",            -- __ [__/__, ___] {__/__, __}; Status Resist +5
     ring2="Defending Ring",           -- __ [10/10, ___] {__/__, __}
+    back="Archon Cape",               -- __ [__/__, ___] {__/__, __}
     waist="Siegel Sash",              -- 20 [__/__, ___] {__/__, __}
     -- 60 +Stoneskin [57 PDT/34 MDT, 447 M.Eva] {Pet: 38 PDT/38 MDT, 4 Regen}
 

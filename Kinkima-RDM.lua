@@ -1409,9 +1409,9 @@ function init_gear_sets()
     ear2="Etiolation Earring",        -- __/ 3, ___ [__]; Resist Silence+15
     ring1="Wuji Ring",                -- __/__, ___ [__]; Resists Charm/Sleep
     ring2="Defending Ring",           -- 10/10, ___ [__]
-    back=gear.RDM_INT_Enf_Cape,       -- 10/__, ___ [__]
+    back="Archon Cape",               -- __/__, ___ [__]
     waist="Carrier's Sash",           -- __/__, ___ [__]; Ele Resist+15
-    -- 68 PDT/51 MDT, 641 M.Eva [3 Refresh]
+    -- 58 PDT/51 MDT, 641 M.Eva [3 Refresh]
     
     -- main="Sakpata's Sword",        -- 10/10, ___ [ 3]; R30
     -- sub="Sacro Bulwark",           -- 10/10, ___ [__]

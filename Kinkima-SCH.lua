@@ -1303,9 +1303,9 @@ function init_gear_sets()
     ear2="Etiolation Earring",      -- __/ 3, ___; Resist Silence+15
     ring1="Wuji Ring",              -- __/__, ___; Resists Charm/Sleep
     ring2="Defending Ring",         -- 10/10, ___
-    back=gear.SCH_MAB_Cape,         -- __/__,  15
+    back="Archon Cape",             -- __/__, ___
     waist="Carrier's Sash",         -- __/__, ___; Ele Resist+15
-    -- 68 PDT / 51 MDT, 735 M.Eva
+    -- 68 PDT / 51 MDT, 720 M.Eva
     
     -- ring2="Shadow Ring",         -- __/__, ___; Occ. annuls magic dmg
     -- back="Shadow Mantle",        -- __/__, ___; Occ. annuls physical dmg
