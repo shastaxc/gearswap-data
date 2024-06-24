@@ -1,7 +1,6 @@
 --[[
 File Status: Good.
-TODO: Update auto maneuvers. Does not actually check actual maneuvers, and assumes maneuver use never gets interrupted.
-Also, do not use when invisible.
+TODO: Do not use maneuvers when invisible.
 
 Author: Silvermutt
 Required external libraries: SilverLibs
@@ -285,7 +284,7 @@ __Keybind___Name______________Command_____________
     <frame>Valoredge Frame</frame>
     <head>Valoredge Head</head>
     <slot01>Percolator</slot01>
-    <slot02>Stabilizer V</slot02>
+    <slot02>Stabilizer IV</slot02>
     <slot03>Barrage Turbine</slot03>
     <slot04>Auto-Repair Kit IV</slot04>
     <slot05>Mana Jammer IV</slot05>
@@ -353,6 +352,7 @@ __Keybind___Name______________Command_____________
 -- Setup functions for this job.  Generally should not be modified.
 -------------------------------------------------------------------------------------------------------------------
 
+packets = include('packets')
 -- Initialization function for this job file.
 function get_sets()
   -- Load and initialize Mote library
@@ -421,15 +421,30 @@ function job_setup()
   Flashbulb_Recast = 0
   Flashbulb_Time = 0
   Strobe_Time = 0
-  all_maneuvers = S{'Fire Maneuver','Ice Maneuver','Wind Maneuver','Earth Maneuver','Thunder Maneuver','Water Maneuver',
-      'Light Maneuver','Dark Maneuver'}
+  maneuver_info = {
+    ['fire'] = {id=141, name='Fire Maneuver', short_name='fire', recast_id=210, buff_id=300},
+    ['ice'] = {id=142, name='Ice Maneuver', short_name='ice', recast_id=210, buff_id=301},
+    ['wind'] = {id=143, name='Wind Maneuver', short_name='wind', recast_id=210, buff_id=302},
+    ['earth'] = {id=144, name='Earth Maneuver', short_name='earth', recast_id=210, buff_id=303},
+    ['thunder'] = {id=145, name='Thunder Maneuver', short_name='thunder', recast_id=210, buff_id=304},
+    ['water'] = {id=146, name='Water Maneuver', short_name='water', recast_id=210, buff_id=305},
+    ['light'] = {id=147, name='Light Maneuver', short_name='light', recast_id=210, buff_id=306},
+    ['dark'] = {id=148, name='Dark Maneuver', short_name='dark', recast_id=210, buff_id=307},
+    [300] = {id=141, name='Fire Maneuver', short_name='fire', recast_id=210, buff_id=300},
+    [301] = {id=142, name='Ice Maneuver', short_name='ice', recast_id=210, buff_id=301},
+    [302] = {id=143, name='Wind Maneuver', short_name='wind', recast_id=210, buff_id=302},
+    [303] = {id=144, name='Earth Maneuver', short_name='earth', recast_id=210, buff_id=303},
+    [304] = {id=145, name='Thunder Maneuver', short_name='thunder', recast_id=210, buff_id=304},
+    [305] = {id=146, name='Water Maneuver', short_name='water', recast_id=210, buff_id=305},
+    [306] = {id=147, name='Light Maneuver', short_name='light', recast_id=210, buff_id=306},
+    [307] = {id=148, name='Dark Maneuver', short_name='dark', recast_id=210, buff_id=307},
+  }
   active_maneuvers = L{}
   delay_maneuver_check_tick = os.clock()
   status_maneuver_blockers = {'overload', 'terror', 'petrification', 'stun', 'sleep', 'charm', 'amnesia', 'impairment'}
   ---- DO NOT MODIFY ABOVE ------
 
   -- TODO: Determine pet's initial mode if already summoned
-  check_initial_maneuvers()
   set_main_keybinds()
 end
 
@@ -1595,18 +1610,6 @@ function job_buff_change(buff,gain)
     elseif player.hpp > 0 then
       send_command('@input /p Doom Removed.')
     end
-  elseif all_maneuvers:contains(buff) then
-    -- When maneuver gained, add to queue
-    if gain then
-      active_maneuvers:append(buff)
-    else
-      for k,v in active_maneuvers:it() do
-        if k == buff then
-          active_maneuvers:remove(v)
-          return
-        end
-      end
-    end
   end
 end
 
@@ -1620,7 +1623,6 @@ function job_handle_equipping_gear(playerStatus, eventArgs)
   update_combat_form()
   update_idle_groups()
   auto_engage_pet()
-  check_maneuvers()
 end
 
 function update_combat_form()
@@ -1865,25 +1867,13 @@ function pet_control(command)
   end
 end
 
-function check_maneuvers()
-  if not pet.isvalid then
-    active_maneuvers = L{}
-  else
+function auto_maneuver()
+  if state.AutomaticManeuvers.value and pet.isValid and not silibs.midaction()
+      and defaultManeuvers[state.PetMode.value] and not buffactive['Overload'] then
     local abil_recasts = windower.ffxi.get_ability_recasts()
     -- Auto-use maneuvers if missing maneuvers
-    if state.AutomaticManeuvers.value and not silibs.midaction() and abil_recasts[210]
-        and abil_recasts[210] < 0.1 and delay_maneuver_check_tick < os.clock()
-        and defaultManeuvers[state.PetMode.value] and not buffactive['Overload'] then
-      delay_maneuver_check_tick = os.clock() + 1 -- Delay next check_maneuvers call for 1 second
-      -- Cycle through all maneuvers and check how many of each we possess to see total
-      local total_active = 0
-      for element in pairs(silibs.elements.list) do
-        total_active = total_active + (buffactive[element..' Maneuver'] or 0)
-      end
-      local total_desired = defaultManeuvers[state.PetMode.value].n
-      if total_active < total_desired then
-        use_maneuver()
-      end
+    if abil_recasts[210] and abil_recasts[210] < 0.1 then
+      use_maneuver()
     end
   end
 end
@@ -1953,7 +1943,7 @@ function job_self_command(cmdParams, eventArgs)
       windower.chat.input('/ja Activate <me>')
     end
   elseif cmdParams[1] == 'maneuver' then
-    use_maneuver(cmdParams[2])
+    use_maneuver(true)
   elseif cmdParams[1] == 'bind' then
     set_main_keybinds()
     set_sub_keybinds()
@@ -1963,69 +1953,140 @@ function job_self_command(cmdParams, eventArgs)
   end
 end
 
-function use_maneuver(maneuver_element)
-  if pet.isvalid then
-    -- Block action if unable to use Maneuver
-    if silibs.midaction() then
-      return
-    end
-    if buffactive['Overload'] then
-      add_to_chat(123, 'Cannot use Maneuver while Overloaded.')
-      return
-    end
+-- In the case of a forced refresh, the shortest maneuver will be refreshed
+-- In case of automatic use, the general method is that the set of active maneuvers must contain
+-- the desired maneuvers as a subset. For example, desired maneuvers could be {'fire', 'fire'} and
+-- the active could be {'fire', 'dark', 'fire'} in which case do nothing. But if a maneuver drops
+-- off and active becomes {'dark', 'fire'} then a Fire Maneuver should be used.
+-- This methodology ensures that all desired maneuvers stay active but allows for manual maneuver
+-- activation to be slipped in as well. In the case where 3 desired maneuvers are configured and 
+-- a manual maneuver is slipped in, it should take 30 seconds to cycle through maneuvers to
+-- reset the list to the desired maneuvers defined at the top of this file.
+function use_maneuver(is_forced_refresh)
+  -- Block action if no pet exists
+  if not pet.isvalid then
+    add_to_chat(123,'Error: No valid pet.')
+    return
+  end
+  -- Block action if overloaded
+  if buffactive['Overload'] then
+    add_to_chat(123, 'Cannot use Maneuver while Overloaded.')
+    return
+  end
+  -- Block action if maneuvers are not defined for the selected PetMode
+  if not defaultManeuvers[state.PetMode.value] or #defaultManeuvers[state.PetMode.value] == 0 then
+    add_to_chat(123, 'Maneuvers not defined for PetMode: '..state.PetMode.value)
+    return
+  end
+  -- Block action if already performing another action
+  if silibs.midaction() then
+    return
+  end
+  -- Block action if you have a status that would stop you such as amnesia or stun
+  if not is_forced_refresh then
     for _,status in pairs(status_maneuver_blockers) do
       if buffactive[status] then
         return
       end
     end
-    local abil_recasts = windower.ffxi.get_ability_recasts()
-    if abil_recasts[210] > 0 then
-      return
+  end
+
+  -- In case of multiple maneuvers, need to calculate how many total are desired and active
+  local desired_count = {}
+  -- Count number of each element in the active list
+  for element in defaultManeuvers[state.PetMode.value]:it() do
+    local element = element:lower()
+    desired_count[element] = desired_count[element] and (desired_count[element] + 1) or 1
+  end
+
+  -- In case of multiple maneuvers, need to calculate how many total are desired and active
+  local active_count = {}
+  -- Count number of each element in the active list
+  for maneuver in active_maneuvers:it() do
+    local element = maneuver.short_name
+    active_count[element] = active_count[element] and (active_count[element] + 1) or 1
+  end
+
+  -- Check if desired list is a subset of active list
+  local need_maneuvers = false
+  if not is_forced_refresh then
+    for element,count in pairs(desired_count) do
+      if not active_count[element] or count < active_count[element] then
+        need_maneuvers = true
+        break
+      end
     end
-  
-    -- Maneuver not specified, use defaults based on pet mode
-    if maneuver_element == nil then
-      if defaultManeuvers[state.PetMode.value] then
-        -- Use next maneuver in the list if not all default maneuvers are active
-        local desired_count = {}
-        for element in defaultManeuvers[state.PetMode.value]:it() do
-          desired_count[element] = desired_count[element] and (desired_count[element] + 1) or 1
-          local active = buffactive[element..' Maneuver'] or 0
-          if active < desired_count[element] then
-            windower.chat.input('/pet "'..element..' Maneuver" <me>')
+  end
+
+  -- Use maneuver based on pet mode
+  if is_forced_refresh or need_maneuvers then
+    -- If we are at less than 3 active maneuvers, we will not be replacing any so use whatever is needed
+    if active_maneuvers.n < 3 then
+      -- Use next maneuver in the list if not all default maneuvers are active
+      local desired_processed = {}
+      for _,element in pairs(defaultManeuvers[state.PetMode.value]) do
+        local desired_maneuver = maneuver_info[element:lower()]
+        if not desired_maneuver then
+          add_to_chat(123, 'Cannot find maneuver for: '..element)
+        else
+          -- If the number desired processed+1 is greater than active count then use maneuver
+          local processed_count = desired_processed[desired_maneuver.short_name] or 0
+          if processed_count+1 > (active_count[desired_maneuver.short_name] or 0) then
+            windower.chat.input('/pet "'..desired_maneuver.name..'" <me>')
             return
+          else
+            local index = desired_maneuver.short_name
+            desired_processed[index] = desired_processed[index] and (desired_processed[index] +1 ) or 1
           end
         end
-        -- If we got this far, it means all default maneuvers are active, so we need to refresh duration
-        -- To find which maneuver will be updated with the next activation, check the list
-        local next_maneuver = active_maneuvers[1]
-        windower.chat.input('/pet "'..next_maneuver..'" <me>')
-        -- Move to end of list
-        active_maneuvers:remove(1)
-        active_maneuvers:append(next_maneuver)
       end
     else
-      maneuver_element = maneuver_element:gsub("^%l", string.upper) -- Capitalize first letter
-      if silibs.elements.list:contains(maneuver_element) then
-        windower.chat.input('/pet "'..element..' Maneuver" <me>')
+      -- Determine shortest maneuver
+      local shortest_maneuver
+      if not active_maneuvers or active_maneuvers.n == 0 then
+        shortest_maneuver = maneuver_info[defaultManeuvers[state.PetMode.value][1]:lower()]
       else
-        add_to_chat(123,'Error: Maneuver command format is wrong.')
+        for maneuver in active_maneuvers:it() do
+          if not shortest_maneuver then
+            shortest_maneuver = maneuver
+          else
+            if maneuver.exp < shortest_maneuver.exp then
+              shortest_maneuver = maneuver
+            end
+          end
+        end
       end
-    end
-  else
-      add_to_chat(123,'Error: No valid pet.')
-  end
-end
-
--- Upon loading file, checks to see if any maneuvers are already active and attempts to track them
--- This is partly guesswork without having access to the exact buff durations
--- TODO: Access buff durations to set up the active_maneuvers list in the correct order
-function check_initial_maneuvers()
-  for element in pairs(silibs.elements.list) do
-    local maneuver = element..' Maneuver'
-    local active = buffactive[maneuver] or 0
-    for i=1,active,1 do
-      active_maneuvers:append(maneuver)
+      -- Check if the shortest maneuver is on the desired list
+      -- If it is, see if removing it will still satisfy the desired count required
+      --   If it would not satisfy, refresh the maneuver
+      --   If it would satisfy, determine which desired maneuver to use
+      -- If shortest maneuver is not a desired maneuver, pretend it's not there and apply correct maneuver
+      local shortest_d_count = desired_count[shortest_maneuver.short_name]
+      if shortest_d_count and (active_count[shortest_maneuver.short_name]-1 < shortest_d_count) then
+        windower.chat.input('/pet "'..shortest_maneuver.name..'" <me>')
+        return
+      else
+        -- We can safely replace this shortest maneuver with something else
+        -- Modify the active_count to remove the shortest maneuver, since we're assuming it'll be coming off anyway
+        active_count[shortest_maneuver.short_name] = active_count[shortest_maneuver.short_name] - 1
+        local desired_processed = {}
+        for _,element in pairs(defaultManeuvers[state.PetMode.value]) do
+          local desired_maneuver = maneuver_info[element:lower()]
+          if not desired_maneuver then
+            add_to_chat(123, 'Cannot find maneuver for: '..element)
+          else
+            -- If the number desired processed+1 is greater than active count then use maneuver
+            local processed_count = desired_processed[desired_maneuver.short_name] or 0
+            if processed_count+1 > (active_count[desired_maneuver.short_name] or 0) then
+              windower.chat.input('/pet "'..desired_maneuver.name..'" <me>')
+              return
+            else
+              local index = desired_maneuver.short_name
+              desired_processed[index] = desired_processed[index] and (desired_processed[index] +1 ) or 1
+            end
+          end
+        end
+      end
     end
   end
 end
@@ -2114,6 +2175,10 @@ function check_gear()
   end
 end
 
+function from_server_time(t)
+  return t / 60 + clock_offset
+end
+
 windower.register_event('zone change', function()
   if locked_neck then equip({ neck=empty }) end
   if locked_ear1 then equip({ ear1=empty }) end
@@ -2121,6 +2186,78 @@ windower.register_event('zone change', function()
   if locked_ring1 then equip({ ring1=empty }) end
   if locked_ring2 then equip({ ring2=empty }) end
 end)
+
+windower.raw_register_event('incoming chunk', function(id, data, modified, injected, blocked)
+  if id == 0x037 then
+    -- update clock offset
+    -- credit: Akaden, Buffed addon
+    local p = packets.parse('incoming', data)
+    if p['Timestamp'] and p['Time offset?'] then
+      local vana_time = p['Timestamp'] * 60 - math.floor(p['Time offset?'])
+      clock_offset = math.floor(os.time() - vana_time % 0x100000000 / 60)
+    end
+  elseif id == 0x063 and pet.isValid then -- Set Update packet
+    -- Sends buff ID and expiration for all of main player's current buffs
+    -- Update buff durations. credit: Akaden, Buffed addon
+    -- We will use this to track maneuvers
+    local order = data:unpack('H',0x05)
+    if order == 9 then
+      local buffs = T{}
+
+      -- If you have no buffs, the buffs table will be empty (printed like {})
+      -- Sometimes, such as when zoning, it will give you a full 32 buff list
+      -- where every id == 0. That packet can be ignored, to avoid dumping buffs when
+      -- you really shouldn't. Mark it as a dud and don't process.
+      local is_dud
+
+      -- read ids
+      for i = 1, 32 do
+        local index = 0x09 + ((i-1) * 0x02)
+        local status_i = data:unpack('H', index)
+
+        if i == 1 and status_i == 0 then
+          is_dud = true
+          break
+        end
+
+        if status_i ~= 255 then
+          buffs[i] = { id = status_i }
+        end
+      end
+
+      if not is_dud then
+        new_active_maneuvers = L{}
+        -- read times
+        for i = 1, 32 do
+          -- Filter for only Maneuvers
+          local buff = buffs[i]
+          local maneuver = buff and maneuver_info[buff.id]
+          if maneuver then
+            local index = 0x49 + ((i-1) * 0x04)
+            local expiration = data:unpack('I', index)
+            maneuver.exp = from_server_time(expiration)
+            new_active_maneuvers:append(maneuver)
+          end
+        end
+
+        active_maneuvers = new_active_maneuvers
+      end
+    end
+  end
+end)
+
+timer1 = os.clock()
+windower.raw_register_event('prerender',function()
+  local now = os.clock()
+  if windower.ffxi.get_info().logged_in and windower.ffxi.get_player() then
+    -- Every second, check if maneuvers should be used
+    if now - timer1 > 1 then
+      timer1 = now
+      auto_maneuver()
+    end
+  end
+end)
+
 
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
