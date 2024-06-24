@@ -641,7 +641,7 @@ function init_gear_sets()
     legs=gear.Nyame_B_legs,
     feet=gear.Nyame_B_feet,
     neck="Erra Pendant",
-    ear1="Dignitary's Earring",
+    ear1="Hirudinea Earring",
     ear2="Malignance Earring",
     ring1="Archon Ring",
     ring2="Evanescence Ring",
@@ -653,7 +653,6 @@ function init_gear_sets()
     -- body="Geomancy Tunic +3",
     -- legs="Azimuth Tights +2",
     -- feet="Agwu's Pigaches",
-    -- ear1="Hirudinea Earring",
     -- back=gear.GEO_Nuke_Cape,
   })
 
