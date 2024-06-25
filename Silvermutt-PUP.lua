@@ -1,6 +1,5 @@
 --[[
 File Status: Good.
-TODO: Do not use maneuvers when invisible.
 
 Author: Silvermutt
 Required external libraries: SilverLibs
@@ -39,9 +38,13 @@ Weapons
 Abilities
 * Automatic Pet Targeting will cause you to use Deploy automatically on your current target if you are engaged
   and your pet is idle. There is a keybind to toggle it if you choose.
-* Automatic Maneuvers will cause you to use maneuvers whenever you have fewer active maneuvers than listed in the
-  defaultManeuvers table. This will also happen when you are in combat and regardless of Hybrid Mode. Due to these
-  loose conditions, this is disabled by default. There is a keybind to toggle it if you choose.
+* Automatic Maneuvers will cause you to use maneuvers whenever your active maneuvers do not fully include the
+  maneuvers listed in the defaultManeuvers table. This JA use can trigger when you are in combat regardless of
+  Hybrid Mode. Due to these loose conditions which may cause an automatic JA use to happen at an undesired time,
+  this feature is disabled by default. There is a keybind to toggle it if you choose to use this feature.
+  * Even if you don't want Maneuvers to be used automatically, you can still leverage the custom command to
+    manually trigger use of Maneuvers according to what is defined in the defaultManeuvers table. This way you
+    can control the timing without having to worry about specific elements and their individual timers.
 
 Other
 * If you are not using my reorganizer addon, remove all the sets.org sets (including in character global file).
@@ -441,7 +444,8 @@ function job_setup()
   }
   active_maneuvers = L{}
   delay_maneuver_check_tick = os.clock()
-  status_maneuver_blockers = {'overload', 'terror', 'petrification', 'stun', 'sleep', 'charm', 'amnesia', 'impairment'}
+  status_maneuver_blockers = {'overload', 'terror', 'petrification', 'stun', 'sleep', 'charm',
+      'amnesia', 'impairment', 'invisible', 'hide', 'camouflage'}
   ---- DO NOT MODIFY ABOVE ------
 
   -- TODO: Determine pet's initial mode if already summoned
@@ -2020,73 +2024,64 @@ function use_maneuver(is_forced_refresh)
 
   -- Use maneuver based on pet mode
   if is_forced_refresh or need_maneuvers then
-    -- If we are at less than 3 active maneuvers, we will not be replacing any so use whatever is needed
-    if active_maneuvers.n < 3 then
-      -- Use next maneuver in the list if not all default maneuvers are active
-      local desired_processed = {}
-      for _,element in pairs(defaultManeuvers[state.PetMode.value]) do
-        local desired_maneuver = maneuver_info[element:lower()]
-        if not desired_maneuver then
-          add_to_chat(123, 'Cannot find maneuver for: '..element)
-        else
-          -- If the number desired processed+1 is greater than active count then use maneuver
-          local processed_count = desired_processed[desired_maneuver.short_name] or 0
-          if processed_count+1 > (active_count[desired_maneuver.short_name] or 0) then
-            windower.chat.input('/pet "'..desired_maneuver.name..'" <me>')
-            return
-          else
-            local index = desired_maneuver.short_name
-            desired_processed[index] = desired_processed[index] and (desired_processed[index] +1 ) or 1
-          end
-        end
-      end
+    local num_desired_maneuvers = defaultManeuvers[state.PetMode.value]:length()
+    -- Determine shortest maneuver
+    local shortest_maneuver
+    if not active_maneuvers or active_maneuvers:length() == 0 then
+      shortest_maneuver = maneuver_info[defaultManeuvers[state.PetMode.value][1]:lower()]
     else
-      -- Determine shortest maneuver
-      local shortest_maneuver
-      if not active_maneuvers or active_maneuvers.n == 0 then
-        shortest_maneuver = maneuver_info[defaultManeuvers[state.PetMode.value][1]:lower()]
-      else
-        for maneuver in active_maneuvers:it() do
-          if not shortest_maneuver then
+      for maneuver in active_maneuvers:it() do
+        if not shortest_maneuver then
+          shortest_maneuver = maneuver
+        else
+          if maneuver.exp < shortest_maneuver.exp then
             shortest_maneuver = maneuver
-          else
-            if maneuver.exp < shortest_maneuver.exp then
-              shortest_maneuver = maneuver
-            end
           end
         end
       end
-      -- Check if the shortest maneuver is on the desired list
-      -- If it is, see if removing it will still satisfy the desired count required
-      --   If it would not satisfy, refresh the maneuver
-      --   If it would satisfy, determine which desired maneuver to use
-      -- If shortest maneuver is not a desired maneuver, pretend it's not there and apply correct maneuver
-      local shortest_d_count = desired_count[shortest_maneuver.short_name]
-      if shortest_d_count and (active_count[shortest_maneuver.short_name]-1 < shortest_d_count) then
-        windower.chat.input('/pet "'..shortest_maneuver.name..'" <me>')
-        return
+    end
+
+    -- Check if the shortest maneuver is on the desired list
+    local shortest_d_count = desired_count[shortest_maneuver.short_name]
+
+    -- Refresh the shortest maneuver because it is needed to satisfy the desired maneuver list
+    if active_maneuvers:length() == 3 and shortest_d_count and active_count[shortest_maneuver.short_name]-1 < shortest_d_count then
+      windower.chat.input('/pet "'..shortest_maneuver.name..'" <me>')
+      return
+    end
+
+    -- Under certain circumstances, we can safely replace the shortest maneuver with something else
+      -- Modify the active_count to remove the shortest maneuver, since we're assuming it'll be coming off anyway
+    if active_maneuvers:length() == 3 and (num_desired_maneuvers == 3 or shortest_d_count) and not (shortest_d_count and active_count[shortest_maneuver.short_name]-1 < shortest_d_count) then
+      active_count[shortest_maneuver.short_name] = active_count[shortest_maneuver.short_name] - 1
+    end
+
+    -- Use a maneuver if needed
+    local desired_processed = {}
+    for element in defaultManeuvers[state.PetMode.value]:it() do
+      local desired_maneuver = maneuver_info[element:lower()]
+      if not desired_maneuver then
+        add_to_chat(123, 'Cannot find maneuver for: '..element)
       else
-        -- We can safely replace this shortest maneuver with something else
-        -- Modify the active_count to remove the shortest maneuver, since we're assuming it'll be coming off anyway
-        active_count[shortest_maneuver.short_name] = active_count[shortest_maneuver.short_name] - 1
-        local desired_processed = {}
-        for _,element in pairs(defaultManeuvers[state.PetMode.value]) do
-          local desired_maneuver = maneuver_info[element:lower()]
-          if not desired_maneuver then
-            add_to_chat(123, 'Cannot find maneuver for: '..element)
-          else
-            -- If the number desired processed+1 is greater than active count then use maneuver
-            local processed_count = desired_processed[desired_maneuver.short_name] or 0
-            if processed_count+1 > (active_count[desired_maneuver.short_name] or 0) then
-              windower.chat.input('/pet "'..desired_maneuver.name..'" <me>')
-              return
-            else
-              local index = desired_maneuver.short_name
-              desired_processed[index] = desired_processed[index] and (desired_processed[index] +1 ) or 1
-            end
-          end
+        -- If the number desired processed+1 is greater than active count then use maneuver
+        local processed_count = desired_processed[desired_maneuver.short_name] or 0
+        if processed_count+1 > (active_count[desired_maneuver.short_name] or 0) then
+          windower.chat.input('/pet "'..desired_maneuver.name..'" <me>')
+          return
+        else
+          local index = desired_maneuver.short_name
+          desired_processed[index] = desired_processed[index] and (desired_processed[index] +1 ) or 1
         end
       end
+    end
+
+    -- If we made it this far, it means all desired maneuvers are active
+    -- Display a message to use in certain circumstances if this was triggered by a manual button press/command
+    if is_forced_refresh and (active_maneuvers:length() < 3 or (num_desired_maneuvers < 3 and not shortest_d_count)) then
+      local maneuver_str = (num_desired_maneuvers == 0 and 'No maneuvers')
+          or (num_desired_maneuvers == 1 and 'Only 1 maneuver')
+          or 'Only '..num_desired_maneuvers..' maneuvers'
+      add_to_chat(123, maneuver_str..' defined for '..state.PetMode.value)
     end
   end
 end
