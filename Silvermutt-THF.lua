@@ -1598,13 +1598,6 @@ function job_handle_equipping_gear(playerStatus, eventArgs)
   check_gear()
   update_idle_groups()
   update_combat_form()
-
-  -- Check for SATA when equipping gear.  If either is active, equip
-  -- that gear specifically, and block equipping default gear.
-  check_buff('Trick Attack', eventArgs)
-  check_buff('Sneak Attack', eventArgs)
-  -- If Feint is active, put that gear set on on top of regular gear.
-  check_buff('Feint', eventArgs)
 end
 
 function update_combat_form()
@@ -1692,13 +1685,23 @@ function customize_melee_set(meleeSet)
   if state.CP.current == 'on' then
     meleeSet = set_combine(meleeSet, sets.CP)
   end
-  
+
   -- Keep ranged weapon/ammo equipped if in an RA mode.
   if state.RangedWeaponSet.current ~= 'None' then
     meleeSet = set_combine(meleeSet, {
       range=player.equipment.range,
       ammo=player.equipment.ammo
     })
+  end
+
+  if state.Buff['Trick Attack'] then
+    meleeSet = set_combine(meleeSet, sets.buff['Trick Attack'] or {})
+  end
+  if state.Buff['Sneak Attack'] then
+    meleeSet = set_combine(meleeSet, sets.buff['Sneak Attack'] or {})
+  end
+  if state.Buff['Feint'] then
+    meleeSet = set_combine(meleeSet, sets.buff['Feint'] or {})
   end
 
   -- If slot is locked to use no-swap gear, keep it equipped
@@ -1730,6 +1733,16 @@ function customize_defense_set(defenseSet)
       range=player.equipment.range,
       ammo=player.equipment.ammo
     })
+  end
+
+  if state.Buff['Trick Attack'] then
+    defenseSet = set_combine(defenseSet, sets.buff['Trick Attack'] or {})
+  end
+  if state.Buff['Sneak Attack'] then
+    defenseSet = set_combine(defenseSet, sets.buff['Sneak Attack'] or {})
+  end
+  if state.Buff['Feint'] then
+    defenseSet = set_combine(defenseSet, sets.buff['Feint'] or {})
   end
 
   -- If slot is locked to use no-swap gear, keep it equipped
