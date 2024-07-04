@@ -779,48 +779,48 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.Evasion = {
-    ammo="Yamarang",              -- __/__,  15,  15
-    head="Malignance Chapeau",    --  6/ 6, 123,  91
-    body="Malignance Tabard",     --  9/ 9, 139, 102
-    hands="Malignance Gloves",    --  5/ 5, 112,  80
-    legs="Malignance Tights",     --  7/ 7, 150,  85
-    feet="Malignance Boots",      --  4/ 4, 150, 119
-    neck="Assassin's Gorget +2",  -- __/__, ___,  25
-    ear1="Eabani Earring",        -- __/__,   8,  15
-    ear2="Infused Earring",       -- __/__, ___,  10
-    ring1="Moonlight Ring",       --  5/ 5, ___, ___
-    ring2="Moonlight Ring",       --  5/ 5, ___, ___
-    waist="Kasiri Belt",          -- __/__, ___,  13
-    -- Cape                          10/__, ___, ___
+    ammo="Yamarang",                -- __/__,  15,  15
+    head="Malignance Chapeau",      --  6/ 6, 123,  91
+    body="Malignance Tabard",       --  9/ 9, 139, 102
+    hands="Malignance Gloves",      --  5/ 5, 112,  80
+    legs="Malignance Tights",       --  7/ 7, 150,  85
+    feet="Malignance Boots",        --  4/ 4, 150, 119
+    neck="Assassin's Gorget +2",    -- __/__, ___,  25
+    ear1="Eabani Earring",          -- __/__,   8,  15
+    ear2="Infused Earring",         -- __/__, ___,  10
+    ring1="Moonlight Ring",         --  5/ 5, ___, ___
+    ring2="Moonlight Ring",         --  5/ 5, ___, ___
+    waist="Kasiri Belt",            -- __/__, ___,  13
+    -- Cape                            10/__, ___, ___
     -- 51 PDT / 41 MDT, 697 MEVA, 555 Evasion
   }
 
   sets.HeavyDef = {
-    ammo="Staunch Tathlum +1",  --  3/ 3, ___
-    head="Malignance Chapeau",  --  6/ 6, 123
-    body="Malignance Tabard",   --  9/ 9, 139 
-    hands="Malignance Gloves",  --  5/ 5, 112
-    legs="Malignance Tights",   --  7/ 7, 150
-    feet="Malignance Boots",    --  4/ 4, 150
-    ring2="Moonlight Ring",     --  5/ 5, ___
-    -- Cape                     -- 10/__, ___
+    ammo="Staunch Tathlum +1",      --  3/ 3, ___
+    head="Malignance Chapeau",      --  6/ 6, 123
+    body="Malignance Tabard",       --  9/ 9, 139 
+    hands="Malignance Gloves",      --  5/ 5, 112
+    legs="Malignance Tights",       --  7/ 7, 150
+    feet="Malignance Boots",        --  4/ 4, 150
+    ring2="Moonlight Ring",         --  5/ 5, ___
+    -- Cape                         -- 10/__, ___
     -- 49 PDT/39 MDT, 674 MEVA
   }
 
   sets.defense.PDT = {
-    ammo="Yamarang",            -- __/__,  15
-    head="Malignance Chapeau",  --  6/ 6, 123
-    body="Malignance Tabard",   --  9/ 9, 139
-    hands="Malignance Gloves",  --  5/ 5, 112
-    legs="Malignance Tights",   --  7/ 7, 150
-    feet="Malignance Boots",    --  4/ 4, 150
-    neck="Assassin's Gorget +2",-- __/__, ___
-    ear1="Eabani Earring",      -- __/__,   8
-    ear2="Odnowa Earring +1",   --  3/ 5, ___
-    ring1="Moonlight Ring",     --  5/ 5, ___
-    ring2="Moonlight Ring",     --  5/ 5, ___
-    back=gear.THF_TP_Cape,      -- 10/__, ___
-    waist="Engraved Belt",      -- __/__, ___
+    ammo="Yamarang",                -- __/__,  15
+    head="Malignance Chapeau",      --  6/ 6, 123
+    body="Malignance Tabard",       --  9/ 9, 139
+    hands="Malignance Gloves",      --  5/ 5, 112
+    legs="Malignance Tights",       --  7/ 7, 150
+    feet="Malignance Boots",        --  4/ 4, 150
+    neck="Assassin's Gorget +2",    -- __/__, ___
+    ear1="Eabani Earring",          -- __/__,   8
+    ear2="Odnowa Earring +1",       --  3/ 5, ___
+    ring1="Moonlight Ring",         --  5/ 5, ___
+    ring2="Moonlight Ring",         --  5/ 5, ___
+    back=gear.THF_TP_Cape,          -- 10/__, ___
+    waist="Engraved Belt",          -- __/__, ___
     -- 54 PDT/46 MDT, 697 MEVA
   }
   sets.defense.MDT = set_combine(sets.defense.PDT, {})
@@ -896,23 +896,6 @@ function init_gear_sets()
     back="Moonlight Cape",      --  6/ 6, ___
   })
 
-  -- Gear to show off when in cities. Optional.
-  sets.idle.Town = {
-    ammo="Coiste Bodhar",
-    head="Gleti's Mask",
-    body=gear.Nyame_B_body,
-    hands="Plunderer's Armlets +3",
-    legs=gear.Samnuha_legs,
-    feet="Gleti's Boots",
-    neck="Assassin's Gorget +2",
-    ear1="Telos Earring",
-    ear2="Sherida Earring",
-    ring1="Sroda Ring",
-    ring2="Epaminondas's Ring",
-    back="Moonlight Cape",
-    waist="Reiki Yotai",
-  }
-  
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Engaged Sets ------------------------------------------
@@ -937,6 +920,7 @@ function init_gear_sets()
     -- 0 DW, 62 STP, 281 Acc, 61 TA Dmg <3 DA, 42 TA, 0 QA> (0 Crit Rate, 22 Crit Dmg) [37 PDT/27 MDT, 544 MEVA] 14 PDL
 
     -- ear2="Skulker's Earring +2",     -- __,  8, 20, __ <__,  5, __> (__, __) [__/__, ___] __
+    -- 0 DW, 70 STP, 301 Acc, 61 TA Dmg <3 DA, 44 TA, 0 QA> (0 Crit Rate, 22 Crit Dmg) [37 PDT/27 MDT, 544 MEVA] 14 PDL
   }
   sets.engaged.LowAcc = set_combine(sets.engaged, {
     ammo="Yamarang",                    -- __,  3, 15, __ <__, __, __> (__, __) [__/__,  15] __
@@ -970,6 +954,7 @@ function init_gear_sets()
     -- 7 DW, 61 STP, 283 Acc, 56 TA Dmg <3 DA, 40 TA, 0 QA> (0 Crit Rate, 22 Crit Dmg) [42 PDT/32 MDT, 544 MEVA] 14 PDL
     
     -- ear2="Skulker's Earring +2",     -- __,  8, 20, __ <__,  5, __> (__, __) [__/__, ___] __
+    -- 7 DW, 69 STP, 303 Acc, 56 TA Dmg <3 DA, 42 TA, 0 QA> (0 Crit Rate, 22 Crit Dmg) [42 PDT/32 MDT, 544 MEVA] 14 PDL
   }
   sets.engaged.LowDW.LowAcc = set_combine(sets.engaged.LowDW, {
     ammo="Yamarang",                    -- __,  3, 15, __ <__, __, __> (__, __) [__/__,  15] __
@@ -1004,6 +989,7 @@ function init_gear_sets()
     -- 12 DW, 53 STP, 293 Acc, 56 TA Dmg <3 DA, 40 TA, 0 QA> (0 Crit Rate, 22 Crit Dmg) [42 PDT/32 MDT, 544 MEVA] 14 PDL
     
     -- ear2="Skulker's Earring +2",     -- __,  8, 20, __ <__,  5, __> (__, __) [__/__, ___] __
+    -- 12 DW, 61 STP, 313 Acc, 56 TA Dmg <3 DA, 42 TA, 0 QA> (0 Crit Rate, 22 Crit Dmg) [42 PDT/32 MDT, 544 MEVA] 14 PDL
   }
   sets.engaged.MidDW.LowAcc = set_combine(sets.engaged.MidDW, {
     ammo="Yamarang",                    -- __,  3, 15, __ <__, __, __> (__, __) [__/__,  15] __
@@ -1139,6 +1125,7 @@ function init_gear_sets()
     -- 0 DW, 51 STP, 294 Acc, 61 TA Dmg <0 DA, 38 TA, 0 QA> (6 Crit Rate, 22 Crit Dmg) [50 PDT/35 MDT, 576 MEVA] 21 PDL
 
     -- ear2="Skulker's Earring +2",     -- __,  8, 20, __ <__,  5, __> (__, __) [__/__, ___] __
+    -- 0 DW, 59 STP, 314 Acc, 61 TA Dmg <0 DA, 40 TA, 0 QA> (6 Crit Rate, 22 Crit Dmg) [50 PDT/35 MDT, 576 MEVA] 21 PDL
   }
   sets.engaged.HeavyDef.LowAcc = set_combine(sets.engaged.HeavyDef, {
     waist="Olseni Belt",                -- __,  3, 20, __ <__, __, __> (__, __) [__/__, ___] __
@@ -1175,6 +1162,7 @@ function init_gear_sets()
     -- 7 DW, 61 STP, 286 Acc, 56 TA Dmg <3 DA, 36 TA, 0 QA> (6 Crit Rate, 22 Crit Dmg) [49 PDT/32 MDT, 576 MEVA] 21 PDL
     
     -- ear2="Skulker's Earring +2",     -- __,  8, 20, __ <__,  5, __> (__, __) [__/__, ___] __
+    -- 7 DW, 69 STP, 306 Acc, 56 TA Dmg <3 DA, 38 TA, 0 QA> (6 Crit Rate, 22 Crit Dmg) [49 PDT/32 MDT, 576 MEVA] 21 PDL
   }
   sets.engaged.LowDW.HeavyDef.LowAcc = set_combine(sets.engaged.LowDW.HeavyDef, {
     ammo="Yamarang",                    -- __,  3, 15, __ <__, __, __> (__, __) [__/__,  15] __
@@ -1215,6 +1203,7 @@ function init_gear_sets()
     -- 12 DW, 51 STP, 296 Acc, 56 TA Dmg <0 DA, 36 TA, 0 QA> (6 Crit Rate, 22 Crit Dmg) [52 PDT/35 MDT, 576 MEVA] 21 PDL
     
     -- ear2="Skulker's Earring +2",     -- __,  8, 20, __ <__,  5, __> (__, __) [__/__, ___] __
+    -- 12 DW, 59 STP, 316 Acc, 56 TA Dmg <0 DA, 38 TA, 0 QA> (6 Crit Rate, 22 Crit Dmg) [52 PDT/35 MDT, 576 MEVA] 21 PDL
   }
   sets.engaged.MidDW.HeavyDef.LowAcc = set_combine(sets.engaged.MidDW.HeavyDef, {
     ammo="Yamarang",                    -- __,  3, 15, __ <__, __, __> (__, __) [__/__,  15] __
