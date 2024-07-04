@@ -2170,10 +2170,6 @@ function check_gear()
   end
 end
 
-function from_server_time(t)
-  return t / 60 + clock_offset
-end
-
 windower.register_event('zone change', function()
   if locked_neck then equip({ neck=empty }) end
   if locked_ear1 then equip({ ear1=empty }) end
@@ -2183,15 +2179,7 @@ windower.register_event('zone change', function()
 end)
 
 windower.raw_register_event('incoming chunk', function(id, data, modified, injected, blocked)
-  if id == 0x037 then
-    -- update clock offset
-    -- credit: Akaden, Buffed addon
-    local p = packets.parse('incoming', data)
-    if p['Timestamp'] and p['Time offset?'] then
-      local vana_time = p['Timestamp'] * 60 - math.floor(p['Time offset?'])
-      clock_offset = math.floor(os.time() - vana_time % 0x100000000 / 60)
-    end
-  elseif id == 0x063 and pet.isValid then -- Set Update packet
+  if id == 0x063 and pet.isValid then -- Set Update packet
     -- Sends buff ID and expiration for all of main player's current buffs
     -- Update buff durations. credit: Akaden, Buffed addon
     -- We will use this to track maneuvers
@@ -2229,8 +2217,10 @@ windower.raw_register_event('incoming chunk', function(id, data, modified, injec
           local maneuver = buff and maneuver_info[buff.id]
           if maneuver then
             local index = 0x49 + ((i-1) * 0x04)
-            local expiration = data:unpack('I', index)
-            maneuver.exp = from_server_time(expiration)
+            -- Not adjusting with server clock offset because we don't care about
+            -- the exact expiration time relative to system clock, only the order of
+            -- expirations of maneuvers relative to each other.
+            maneuver.exp = data:unpack('I', index)
             new_active_maneuvers:append(maneuver)
           end
         end
