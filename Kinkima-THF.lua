@@ -537,7 +537,7 @@ function init_gear_sets()
     -- ear1="Odr Earring",              -- 10, __, __ [__/__, ___] __
     -- ear2="Skulker's Earring +2",     -- 15, __, __ [__/__, ___] __
   })
-  sets.precast.WS["Rudra's Storm"].AttCapped = set_combine(sets.precast.WS["Rudra's Storm"], {{
+  sets.precast.WS["Rudra's Storm"].AttCapped = set_combine(sets.precast.WS["Rudra's Storm"], {
     ammo="Cath Palug Stone",            -- 10, __, __ [__/__, ___] __
     head=gear.Nyame_B_head,             -- 25, 11, 65 [ 7/ 7, 123] __
     body=gear.Nyame_B_body,             -- 24, 13, 65 [ 9/ 9, 139] __
