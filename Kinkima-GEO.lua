@@ -1712,7 +1712,7 @@ function job_post_precast(spell, action, spellMap, eventArgs)
   if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
 
   -- Always put this last in job_post_precast
-  if in_battle_mode() then
+  if in_battle_mode() and not spell.type ~= 'Geomancy' then
     equip(select_weapons())
   end
 
