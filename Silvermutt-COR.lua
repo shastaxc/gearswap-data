@@ -16,6 +16,7 @@ Modes
 * Defense Mode: Equips super high emergency damage reduction set, greatly reduces your DPS output
 * CP Mode: Equips Capacity Points bonus cape
 * Ranged Mode: Changes ranged accuracy level
+* Crit Mode: Wear critical hit rate and crit damage enhancing gear for ranged attacks
 
 Weapons
 * Use keybinds to cycle weapons.
