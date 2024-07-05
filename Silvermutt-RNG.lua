@@ -16,6 +16,7 @@ Modes
 * Defense Mode: Equips super high emergency damage reduction set, greatly reduces your DPS output
 * CP Mode: Equips Capacity Points bonus cape
 * Ranged Mode: Changes ranged accuracy level
+* Crit Mode: Wear critical hit rate and crit damage enhancing gear for ranged attacks
 
 Weapons
 * Use keybinds to cycle weapons.
@@ -58,6 +59,7 @@ Modes:
   [ CTRL+F12 ]          Cycle Idle modes
   [ ALT+F12 ]           Cancel Emergency -PDT/-MDT Mode
   [ WIN+C ]             Toggle Capacity Points Mode
+  [ CTRL+/ ]            Toggle RA Crit mode
 
 Weapons:
   [ CTRL+Insert ]       Cycle Weapon Sets
@@ -189,10 +191,10 @@ function job_setup()
   -- Magic_Damage: Used when you are dealing magic damage.
   silibs.enable_handle_ammo_swaps({
     Bow = {
-      Default = "Eminent Arrow", -- Chrono Arrow is better
-      Accuracy = "Eminent Arrow", -- Yoichi's Arrow is better
-      Physical_Weaponskill = "Eminent Arrow", -- Chrono Arrow is better
-      Magic_Damage = "Eminent Arrow", -- Chrono Arrow is better
+      Default = "Artemis's Arrow", -- Chrono Arrow is better
+      Accuracy = "Artemis's Arrow", -- Yoichi's Arrow is better
+      Physical_Weaponskill = "Artemis's Arrow", -- Chrono Arrow is better
+      Magic_Damage = "Artemis's Arrow", -- Chrono Arrow is better
     },
     Crossbow = {
       Default = "Quelling Bolt",
@@ -213,10 +215,11 @@ function job_setup()
   state.HybridMode:options('HeavyDef', 'Normal')
   state.IdleMode:options('Normal', 'HeavyDef')
   state.WeaponSet = M{['description']='Weapon Set', 'MagicRA', 'PhysRA', 'PhysRA RangedOnly', 'Melee'}
-  state.RangedWeaponSet = M{['description']='Ranged Weapon Set', 'Gastra', 'Arma', 'Fomalhaut', 'Sparrowhawk +2'}
+  state.RangedWeaponSet = M{['description']='Ranged Weapon Set', 'Gastra', 'Arma', 'Fomalhaut', 'Gandiva', 'Sparrowhawk +2'}
   state.CP = M(false, 'Capacity Points Mode')
   state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger',
       'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
+  state.CritMode = M(false, 'Crit')
 
   state.Buff.Barrage = buffactive.Barrage or false
   state.Buff.Camouflage = buffactive.Camouflage or false
@@ -252,17 +255,17 @@ function job_file_unload()
   unbind_keybinds()
 end
 
-
 -- Set up all gear sets.
 function init_gear_sets()
   sets.org.job = {}
   sets.org.job[1] = {ammo="Chrono Bullet"}
-  sets.org.job[2] = {ammo="Eminent Arrow"}
+  sets.org.job[2] = {ammo="Artemis's Arrow"}
   sets.org.job[3] = {ammo="Quelling Bolt"}
   sets.org.job[4] = {waist="Quelling Bolt Quiver"}
   sets.org.job[5] = {waist="Chrono Bullet Pouch"}
   sets.org.job[6] = {waist="Devastating Bullet Pouch"}
   sets.org.job[7] = {waist="Devastating Bullet"}
+  sets.org.job[8] = {waist="Artemis's Quiver"}
 
 
   ------------------------------------------------------------------------------------------------
@@ -271,7 +274,7 @@ function init_gear_sets()
 
   -- Precast sets to enhance JAs
   sets.precast.JA['Eagle Eye Shot'] = {
-    legs="Arcadian Braccae +3",
+    -- legs="Arcadian Braccae +3",
   }
   sets.precast.JA['Bounty Shot'] = {
     hands="Amini Glovelettes +2",
@@ -589,79 +592,45 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.precast.WS = {
-    head="Orion Beret +3",
-    body=gear.Nyame_B_body,
-    hands="Meg. Gloves +2",
-    legs="Arcadian Braccae +3",
-    feet=gear.Nyame_B_feet,
-    neck="Fotia Gorget",
-    ear1="Ishvara Earring",
-    ear2="Moonshade Earring",
-    ring1="Ephramad's Ring",
-    ring2="Epaminondas's Ring",
-    back=gear.RNG_WS2_Cape,
-    waist="Fotia Belt",
+    head=gear.Nyame_B_head,       -- 26, 26, 65, 50, 11, __, ___
+    body="Ikenga's Vest",         -- 33, 25, __, __, __,  7, 200
+    hands=gear.Nyame_B_hands,     -- 17, 40, 65, 40, 11, __, ___
+    legs=gear.Nyame_B_legs,       -- 58, 32, 65, 40, 12, __, ___
+    feet=gear.Nyame_B_feet,       -- 23, 26, 65, 53, 11, __, ___
+    neck="Scout's Gorget +1",     -- __, __, __, __, __,  8, ___
+    ear1="Moonshade Earring",     -- __, __, __,  4, __, __, 250
+    ear2="Amini Earring +1",      -- __, __, __, __, __,  8, ___
+    ring1="Ephramad's Ring",      -- 10, __, 20, 20, __, 10, ___
+    ring2="Epaminondas's Ring",   -- __, __, __, __,  5, __, ___
+    back=gear.RNG_WS3_Cape,       -- 30, __, 20, 20, 10, __, ___
+    waist="Sailfi Belt +1",       -- 15, __, 15, __, __, __, ___
+    -- 212 STR, 149 MND, 315 Attack, 227 Accuracy, 60 WSD, 33 PDL, 450 TP Bonus
+
+    -- neck="Scout's Gorget +2",  -- __, __, __, __, __, 10, ___
+    -- ear2="Amini Earring +2",   -- 15, __, __, 20, __,  9, ___
+    -- 227 STR, 149 MND, 315 Attack, 247 Accuracy, 60 WSD, 36 PDL, 450 TP Bonus
   }
   sets.precast.WS.MaxTP = set_combine(sets.precast.WS, {
     ear2="Telos Earring",
   })
+  sets.precast.WS.LowAccMaxTP = set_combine(sets.precast.WS.MaxTP, {})
+  sets.precast.WS.MidAccMaxTP = set_combine(sets.precast.WS.MaxTP, {})
   sets.precast.WS.HighAcc = set_combine(sets.precast.WS, {
-    feet="Arcadian Socks +3",
-    ear1="Beyla Earring",
-    waist="Kwahu Kachina Belt +1",
+    ear1="Telos Earring",         -- __, __, 10, 10, __, __, ___
+    ring2="Rufescent Ring",       --  6,  6, __,  7, __, __, ___
   })
   sets.precast.WS.HighAccMaxTP = set_combine(sets.precast.WS.HighAcc, {
-    ear2="Telos Earring",
-  })
-
-  sets.precast.WS['Apex Arrow'] = set_combine(sets.precast.WS, {})
-  sets.precast.WS['Apex Arrow'].MaxTP = set_combine(sets.precast.WS['Apex Arrow'], {
-  })
-  sets.precast.WS['Apex Arrow'].HighAcc = set_combine(sets.precast.WS['Apex Arrow'], {
-    feet="Orion Socks +1",
-    ear1="Beyla Earring",
-    waist="Kwahu Kachina Belt +1",
-    -- feet="Orion Socks +3",
-  })
-  sets.precast.WS['Apex Arrow'].HighAccMaxTP = set_combine(sets.precast.WS['Apex Arrow'].HighAcc, {
-  })
-
-  -- TODO: Re-evaluate this set
-  -- 80% DEX, 1.75 FTP, ftp replicating
-  sets.precast.WS['Jishnu\'s Radiance'] = set_combine(sets.precast.WS, {
-    head="Mummu Bonnet +2",
-    hands="Mummu Wrists +2",
-    legs="Arcadian Braccae +3",
-    neck="Fotia Gorget",
-    ear1="Sherida Earring",
-    ear2="Moonshade Earring",
-    ring1="Begrudging Ring",
-    ring2="Mummu Ring",
-    back=gear.RNG_WS2_Cape,
-    waist="Fotia Belt",
-    -- body="Abnoba Kaftan",
-    -- feet="Thereoid Greaves",
-  })
-  sets.precast.WS['Jishnu\'s Radiance'].MaxTP = set_combine(sets.precast.WS['Jishnu\'s Radiance'], {
-  })
-  sets.precast.WS['Jishnu\'s Radiance'].HighAcc = set_combine(sets.precast.WS['Jishnu\'s Radiance'], {
-    feet="Arcadian Socks +3",
-    legs="Mummu Kecks +2",
-    neck="Iskur Gorget",
-    ear1="Beyla Earring",
-    ear2="Telos Earring",
-    ring1="Ephramad's Ring",
-    ring2="Cacoethic Ring +1",
-    waist="Kwahu Kachina Belt +1",
-  })
-  sets.precast.WS['Jishnu\'s Radiance'].HighAccMaxTP = set_combine(sets.precast.WS['Jishnu\'s Radiance'].HighAcc, {
+    ear1="Telos Earring",
+    ear2="Amini Earring +1",
+    
+    -- ear2="Amini Earring +2",
   })
 
   sets.precast.WS["Last Stand"] = set_combine(sets.precast.WS, {
     head="Orion Beret +3",
     body="Ikenga's Vest",
-    hands="Meg. Gloves +2",
-    legs="Arcadian Braccae +3",
+    hands=gear.Nyame_B_hands,
+    legs="Ikenga's Trousers",
     feet=gear.Nyame_B_feet,
     neck="Scout's Gorget +1",
     ear1="Moonshade Earring",
@@ -670,12 +639,15 @@ function init_gear_sets()
     ring2="Epaminondas's Ring",
     back=gear.RNG_WS2_Cape,
     waist="Fotia Belt",
+    -- feet="Amini Bottillons +3",
     -- neck="Scout's Gorget +2",
     -- ear2="Amini Earring +2",
   })
   sets.precast.WS['Last Stand'].MaxTP = set_combine(sets.precast.WS['Last Stand'], {
-    ear2="Telos Earring",
+    ear1="Telos Earring",
   })
+  sets.precast.WS['Last Stand'].LowAccMaxTP = set_combine(sets.precast.WS['Last Stand'].MaxTP, {})
+  sets.precast.WS['Last Stand'].MidAccMaxTP = set_combine(sets.precast.WS['Last Stand'].MaxTP, {})
   sets.precast.WS['Last Stand'].HighAcc = set_combine(sets.precast.WS['Last Stand'], {
     feet="Orion Socks +1",
     ear1="Beyla Earring",
@@ -688,12 +660,15 @@ function init_gear_sets()
   })
 
   sets.precast.WS["Coronach"] = set_combine(sets.precast.WS['Last Stand'], {
-    ear2="Sherida Earring",
-    neck="Scout's Gorget +1",
-    -- neck="Scout's Gorget +2",
+    body="Amini Caban +2",
+    ear1="Ishvara Earring",
+
+    -- body="Amini Caban +3",
   })
   sets.precast.WS["Coronach"].MaxTP = set_combine(sets.precast.WS['Coronach'], {
   })
+  sets.precast.WS['Coronach'].LowAccMaxTP = set_combine(sets.precast.WS['Coronach'].MaxTP, {})
+  sets.precast.WS['Coronach'].MidAccMaxTP = set_combine(sets.precast.WS['Coronach'].MaxTP, {})
   sets.precast.WS["Coronach"].HighAcc = set_combine(sets.precast.WS['Coronach'], {
     ear1="Telos Earring",
     ear2="Beyla Earring",
@@ -719,8 +694,9 @@ function init_gear_sets()
   sets.precast.WS["Trueflight"].MaxTP = set_combine(sets.precast.WS["Trueflight"], {
     ear2="Novio Earring",
   })
-  sets.precast.WS["Trueflight"].HighAcc = set_combine(sets.precast.WS["Trueflight"], {
-  })
+  sets.precast.WS['Trueflight'].LowAccMaxTP = set_combine(sets.precast.WS['Trueflight'].MaxTP, {})
+  sets.precast.WS['Trueflight'].MidAccMaxTP = set_combine(sets.precast.WS['Trueflight'].MaxTP, {})
+  sets.precast.WS["Trueflight"].HighAcc = set_combine(sets.precast.WS["Trueflight"], {})
   sets.precast.WS["Trueflight"].HighAccMaxTP = set_combine(sets.precast.WS["Trueflight"].HighAcc, {
     ear2="Novio Earring",
   })
@@ -731,6 +707,8 @@ function init_gear_sets()
   sets.precast.WS["Wildfire"].MaxTP = set_combine(sets.precast.WS["Trueflight"].MaxTP, {
     ring1="Shiva Ring +1",
   })
+  sets.precast.WS['Wildfire'].LowAccMaxTP = set_combine(sets.precast.WS['Trueflight'].LowAccMaxTP, {})
+  sets.precast.WS['Wildfire'].MidAccMaxTP = set_combine(sets.precast.WS['Trueflight'].MidAccMaxTP, {})
   sets.precast.WS["Wildfire"].HighAcc = set_combine(sets.precast.WS["Trueflight"].HighAcc, {
     ring1="Shiva Ring +1",
   })
@@ -738,36 +716,39 @@ function init_gear_sets()
     ring1="Shiva Ring +1",
   })
 
+  -- Maximize accuracy
+  sets.precast.WS['Sniper Shot'] = {
+    head="Orion Beret +3",
+    body="Orion Jerkin +3",
+    hands="Orion Bracers +3",
+    legs="Orion Braccae +3",
+    feet="Malignance Boots",
+    neck="Scout's Gorget +1",
+    ear1="Beyla Earring",
+    ear2="Telos Earring",
+    ring1="Ephramad's ring ",
+    ring2="Cacoethic Ring +1",
+    back=gear.RNG_WS2_Cape,
+    waist="Kwahu Kachina Belt +1",
+
+    -- feet="Amini Bottillons +3",
+    -- neck="Scout's Gorget +2",
+  }
+
   sets.precast.WS['Evisceration'] = {
-    head=gear.Adhemar_B_head,
-    body="Mummu Jacket +2",
-    hands="Mummu Wrists +2",
-    legs=gear.Samnuha_legs,
+    head="Blistering Sallet +1",
+    body="Ikenga's Vest",
+    hands="Amini Glovelettes +2",
+    legs="Amini Bragues +2",
     feet=gear.Nyame_B_feet,
-    neck="Fotia Gorget",
+    neck="Scout's Gorget +1",
     ear1="Odr Earring",
-    ear2="Moonshade Earring",
-    ring1="Ilabrat Ring",
-    ring2="Ephramad's Ring",
+    ear2="Amini Earring +1",
+    ring1="Ephramad's Ring",
+    ring2="Begrudging Ring",
     back=gear.RNG_WS2_Cape,
     waist="Fotia Belt",
-
-    -- Goal:
-    -- body="Abnoba Kaftan",
-    -- legs="Zoar Subligar +1",
-    -- back=gear.RNG_Melee_Crit_Cape
   }
-  sets.precast.WS['Evisceration'].MaxTP = set_combine(sets.precast.WS['Evisceration'], {
-    ear2="Sherida Earring",
-  })
-  sets.precast.WS['Evisceration'].HighAcc = set_combine(sets.precast.WS['Evisceration'], {
-    head="Dampening Tam",
-    ring1="Chirich Ring +1",
-    ear2="Dignitary's Earring",
-    body=gear.Adhemar_A_body,
-  })
-  sets.precast.WS['Evisceration'].HighAccMaxTP = set_combine(sets.precast.WS['Evisceration'].HighAcc, {
-  })
 
   sets.precast.WS['Savage Blade'] = {
     head=gear.Nyame_B_head,       -- 26, 26, 65, 50, 11, __, ___
@@ -791,6 +772,8 @@ function init_gear_sets()
   sets.precast.WS['Savage Blade'].MaxTP = set_combine(sets.precast.WS['Savage Blade'], {
     ear2="Telos Earring",
   })
+  sets.precast.WS['Evisceration'].LowAccMaxTP = set_combine(sets.precast.WS['Savage Blade'].MaxTP, {})
+  sets.precast.WS['Evisceration'].MidAccMaxTP = set_combine(sets.precast.WS['Savage Blade'].MaxTP, {})
   sets.precast.WS['Savage Blade'].HighAcc = set_combine(sets.precast.WS['Savage Blade'].MidAcc, {
     ear1="Telos Earring",         -- __, __, 10, 10, __, __, ___
     ring2="Rufescent Ring",       --  6,  6, __,  7, __, __, ___
@@ -806,25 +789,174 @@ function init_gear_sets()
     feet=gear.Herc_TA_feet
   })
   sets.precast.WS['Rampage'].MaxTP = set_combine(sets.precast.WS['Evisceration'], {})
+  sets.precast.WS['Rampage'].LowAccMaxTP = set_combine(sets.precast.WS['Evisceration'].LowAccMaxTP, {})
+  sets.precast.WS['Rampage'].MidAccMaxTP = set_combine(sets.precast.WS['Evisceration'].MidAccMaxTP, {})
   sets.precast.WS['Rampage'].HighAcc = set_combine(sets.precast.WS['Evisceration'], {})
   sets.precast.WS['Rampage'].HighAccMaxTP = set_combine(sets.precast.WS['Evisceration'].HighAcc, {})
 
-  sets.precast.WS["Aeolian Edge"] = set_combine(sets.precast.WS["Trueflight"], {
+  sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS["Trueflight"], {
     neck="Sibyl Scarf", --10
     ring1="Shiva Ring +1", --3
   })
-  sets.precast.WS["Aeolian Edge"].MaxTP = set_combine(sets.precast.WS["Trueflight"].MaxTP, {
+  sets.precast.WS['Aeolian Edge'].MaxTP = set_combine(sets.precast.WS["Trueflight"].MaxTP, {
     neck="Sibyl Scarf", --10
     ring1="Shiva Ring +1",
   })
-  sets.precast.WS["Aeolian Edge"].HighAcc = set_combine(sets.precast.WS["Trueflight"].HighAcc, {
+  sets.precast.WS['Aeolian Edge'].LowAccMaxTP = set_combine(sets.precast.WS['Trueflight'].LowAccMaxTP, {})
+  sets.precast.WS['Aeolian Edge'].MidAccMaxTP = set_combine(sets.precast.WS['Trueflight'].MidAccMaxTP, {})
+  sets.precast.WS['Aeolian Edge'].HighAcc = set_combine(sets.precast.WS["Trueflight"].HighAcc, {
     neck="Sibyl Scarf", --10
     ring1="Shiva Ring +1",
   })
-  sets.precast.WS["Aeolian Edge"].HighAccMaxTP = set_combine(sets.precast.WS["Trueflight"].HighAccMaxTP, {
+  sets.precast.WS['Aeolian Edge'].HighAccMaxTP = set_combine(sets.precast.WS["Trueflight"].HighAccMaxTP, {
     neck="Sibyl Scarf", --10
     ring1="Shiva Ring +1",
   })
+
+  -- Physical AGI archery ws
+  sets.precast.WS['Empyreal Arrow'] = set_combine(sets.precast.WS, {
+    head="Orion Beret +3",
+    body="Ikenga's Vest",
+    hands=gear.Nyame_B_hands,
+    legs=gear.Nyame_B_legs,
+    feet=gear.Nyame_B_feet,
+    neck="Scout's Gorget +1",
+    ear1="Moonshade Earring",
+    ear2="Amini Earring",
+    ring1="Ephramad's Ring",
+    ring2="Epaminondas's Ring",
+    back=gear.RNG_WS2_Cape,
+    waist="Fotia Belt",
+
+    -- body="Amini Caban +3",
+    -- feet="Amini Bottillons +3",
+    -- neck="Scout's Gorget +2",
+  })
+  sets.precast.WS['Empyreal Arrow'].MaxTP = set_combine(sets.precast.WS['Empyreal Arrow'], {
+    ear1="Ishvara Earring",
+  })
+  sets.precast.WS['Empyreal Arrow'].LowAccMaxTP = set_combine(sets.precast.WS['Empyreal Arrow'].MaxTP, {})
+  sets.precast.WS['Empyreal Arrow'].MidAccMaxTP = set_combine(sets.precast.WS['Empyreal Arrow'].MaxTP, {})
+  sets.precast.WS['Empyreal Arrow'].HighAcc = set_combine(sets.precast.WS['Empyreal Arrow'], {
+    feet="Orion Socks +1",
+    ear1="Beyla Earring",
+    waist="Kwahu Kachina Belt +1",
+    -- feet="Orion Socks +3",
+  })
+  sets.precast.WS['Empyreal Arrow'].HighAccMaxTP = set_combine(sets.precast.WS['Empyreal Arrow'].HighAcc, {
+    ear2="Telos Earring",
+  })
+
+  sets.precast.WS['Apex Arrow'] = set_combine(sets.precast.WS['Empyreal Arrow'], {
+    ear1="Ishvara Earring",
+  })
+  sets.precast.WS['Apex Arrow'].MaxTP = set_combine(sets.precast.WS['Empyreal Arrow'].MaxTP, {})
+  sets.precast.WS['Apex Arrow'].LowAccMaxTP = set_combine(sets.precast.WS['Empyreal Arrow'].LowAccMaxTP, {})
+  sets.precast.WS['Apex Arrow'].MidAccMaxTP = set_combine(sets.precast.WS['Empyreal Arrow'].MidAccMaxTP, {})
+  sets.precast.WS['Apex Arrow'].HighAcc = set_combine(sets.precast.WS['Empyreal Arrow'].HighAcc, {})
+  sets.precast.WS['Apex Arrow'].HighAccMaxTP = set_combine(sets.precast.WS['Empyreal Arrow'].HighAccMaxTP, {})
+
+  sets.precast.WS['Refulgent Arrow'] = set_combine(sets.precast.WS['Empyreal Arrow'], {})
+  sets.precast.WS['Refulgent Arrow'].MaxTP = set_combine(sets.precast.WS['Empyreal Arrow'].MaxTP, {})
+  sets.precast.WS['Refulgent Arrow'].LowAccMaxTP = set_combine(sets.precast.WS['Empyreal Arrow'].LowAccMaxTP, {})
+  sets.precast.WS['Refulgent Arrow'].MidAccMaxTP = set_combine(sets.precast.WS['Empyreal Arrow'].MidAccMaxTP, {})
+  sets.precast.WS['Refulgent Arrow'].HighAcc = set_combine(sets.precast.WS['Empyreal Arrow'].HighAcc, {})
+  sets.precast.WS['Refulgent Arrow'].HighAccMaxTP = set_combine(sets.precast.WS['Empyreal Arrow'].HighAccMaxTP, {})
+
+  sets.precast.WS['Sidewinder'] = set_combine(sets.precast.WS['Empyreal Arrow'], {})
+  sets.precast.WS['Sidewinder'].MaxTP = set_combine(sets.precast.WS['Empyreal Arrow'].MaxTP, {})
+  sets.precast.WS['Sidewinder'].LowAccMaxTP = set_combine(sets.precast.WS['Empyreal Arrow'].LowAccMaxTP, {})
+  sets.precast.WS['Sidewinder'].MidAccMaxTP = set_combine(sets.precast.WS['Empyreal Arrow'].MidAccMaxTP, {})
+  sets.precast.WS['Sidewinder'].HighAcc = set_combine(sets.precast.WS['Empyreal Arrow'].HighAcc, {})
+  sets.precast.WS['Sidewinder'].HighAccMaxTP = set_combine(sets.precast.WS['Empyreal Arrow'].HighAccMaxTP, {})
+
+  sets.precast.WS['Namas Arrow'] = set_combine(sets.precast.WS['Empyreal Arrow'], {
+    ear1="Ishvara Earring",
+  })
+  sets.precast.WS['Namas Arrow'].MaxTP = set_combine(sets.precast.WS['Empyreal Arrow'].MaxTP, {})
+  sets.precast.WS['Namas Arrow'].LowAccMaxTP = set_combine(sets.precast.WS['Empyreal Arrow'].LowAccMaxTP, {})
+  sets.precast.WS['Namas Arrow'].MidAccMaxTP = set_combine(sets.precast.WS['Empyreal Arrow'].MidAccMaxTP, {})
+  sets.precast.WS['Namas Arrow'].HighAcc = set_combine(sets.precast.WS['Empyreal Arrow'].HighAcc, {})
+  sets.precast.WS['Namas Arrow'].HighAccMaxTP = set_combine(sets.precast.WS['Empyreal Arrow'].HighAccMaxTP, {})
+
+  sets.precast.WS['Piercing Arrow'] = set_combine(sets.precast.WS['Empyreal Arrow'], {})
+  sets.precast.WS['Piercing Arrow'].MaxTP = set_combine(sets.precast.WS['Empyreal Arrow'].MaxTP, {})
+  sets.precast.WS['Piercing Arrow'].LowAccMaxTP = set_combine(sets.precast.WS['Empyreal Arrow'].LowAccMaxTP, {})
+  sets.precast.WS['Piercing Arrow'].MidAccMaxTP = set_combine(sets.precast.WS['Empyreal Arrow'].MidAccMaxTP, {})
+  sets.precast.WS['Piercing Arrow'].HighAcc = set_combine(sets.precast.WS['Empyreal Arrow'].HighAcc, {})
+  sets.precast.WS['Piercing Arrow'].HighAccMaxTP = set_combine(sets.precast.WS['Empyreal Arrow'].HighAccMaxTP, {})
+
+  sets.precast.WS['Blast Arrow'] = set_combine(sets.precast.WS['Empyreal Arrow'], {
+    ear1="Ishvara Earring",
+  })
+  sets.precast.WS['Blast Arrow'].MaxTP = set_combine(sets.precast.WS['Empyreal Arrow'].MaxTP, {})
+  sets.precast.WS['Blast Arrow'].LowAccMaxTP = set_combine(sets.precast.WS['Empyreal Arrow'].LowAccMaxTP, {})
+  sets.precast.WS['Blast Arrow'].MidAccMaxTP = set_combine(sets.precast.WS['Empyreal Arrow'].MidAccMaxTP, {})
+  sets.precast.WS['Blast Arrow'].HighAcc = set_combine(sets.precast.WS['Empyreal Arrow'].HighAcc, {})
+  sets.precast.WS['Blast Arrow'].HighAccMaxTP = set_combine(sets.precast.WS['Empyreal Arrow'].HighAccMaxTP, {})
+
+  sets.precast.WS['Arching Arrow'] = set_combine(sets.precast.WS['Empyreal Arrow'], {})
+  sets.precast.WS['Arching Arrow'].MaxTP = set_combine(sets.precast.WS['Empyreal Arrow'].MaxTP, {})
+  sets.precast.WS['Arching Arrow'].LowAccMaxTP = set_combine(sets.precast.WS['Empyreal Arrow'].LowAccMaxTP, {})
+  sets.precast.WS['Arching Arrow'].MidAccMaxTP = set_combine(sets.precast.WS['Empyreal Arrow'].MidAccMaxTP, {})
+  sets.precast.WS['Arching Arrow'].HighAcc = set_combine(sets.precast.WS['Empyreal Arrow'].HighAcc, {})
+  sets.precast.WS['Arching Arrow'].HighAccMaxTP = set_combine(sets.precast.WS['Empyreal Arrow'].HighAccMaxTP, {})
+
+  -- Maximize accuracy
+  sets.precast.WS['Dulling Arrow'] = set_combine(sets.precast.WS['Sniper Shot'], {
+    hands="Amini Glovelettes +2",
+    -- hands="Amini Glovelettes +3",
+    -- feet="Orion Socks +3",
+  })
+
+  -- Hybrid Fire AGI WS
+  sets.precast.WS["Flaming Arrow"] = set_combine(sets.precast.WS["Trueflight"], {
+    ring1="Shiva Ring +1",
+  })
+  sets.precast.WS["Flaming Arrow"].MaxTP = set_combine(sets.precast.WS["Trueflight"].MaxTP, {
+    ring1="Shiva Ring +1",
+  })
+  sets.precast.WS['Flaming Arrow'].LowAccMaxTP = set_combine(sets.precast.WS['Trueflight'].LowAccMaxTP, {
+    ring1="Shiva Ring +1",
+  })
+  sets.precast.WS['Flaming Arrow'].MidAccMaxTP = set_combine(sets.precast.WS['Trueflight'].MidAccMaxTP, {
+    ring1="Shiva Ring +1",
+  })
+  sets.precast.WS["Flaming Arrow"].HighAcc = set_combine(sets.precast.WS["Trueflight"].HighAcc, {
+    ring1="Shiva Ring +1",
+  })
+  sets.precast.WS["Flaming Arrow"].HighAccMaxTP = set_combine(sets.precast.WS["Trueflight"].HighAccMaxTP, {
+    ring1="Shiva Ring +1",
+  })
+
+  -- 80% DEX, 1.75 FTP, ftp replicating, can crit
+  sets.precast.WS['Jishnu\'s Radiance'] = set_combine(sets.precast.WS, {
+    head="Blistering Sallet +1",
+    body="Ikenga's Vest",
+    hands="Amini Glovelettes +2",
+    legs="Amini Bragues +2",
+    feet=gear.Nyame_B_feet,
+    neck="Scout's Gorget +1",
+    ear1="Odr Earring",
+    ear2="Amini Earring +1",
+    ring1="Ephramad's Ring",
+    ring2="Begrudging Ring",
+    back=gear.RNG_WS2_Cape,
+    waist="Fotia Belt",
+
+    -- legs="Amini Bragues +3",
+    -- feet="Amini Bottillons +3",
+    -- neck="Scout's Gorget +2",
+    -- ear2="Amini Earring +2",
+  })
+  sets.precast.WS['Jishnu\'s Radiance'].MaxTP = set_combine(sets.precast.WS['Jishnu\'s Radiance'], {
+  })
+  sets.precast.WS['Jishnu\'s Radiance'].LowAccMaxTP = set_combine(sets.precast.WS['Jishnu\'s Radiance'].MaxTP, {})
+  sets.precast.WS['Jishnu\'s Radiance'].MidAccMaxTP = set_combine(sets.precast.WS['Jishnu\'s Radiance'].MaxTP, {})
+  sets.precast.WS['Jishnu\'s Radiance'].HighAcc = set_combine(sets.precast.WS['Jishnu\'s Radiance'], {})
+  sets.precast.WS['Jishnu\'s Radiance'].HighAccMaxTP = set_combine(sets.precast.WS['Jishnu\'s Radiance'].HighAcc, {
+  })
+
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Midcast Sets ------------------------------------------
@@ -1556,6 +1688,9 @@ function init_gear_sets()
   sets.WeaponSet['Fomalhaut'] = {
     ranged="Fomalhaut",
   }
+  sets.WeaponSet['Gandiva'] = {
+    ranged="Gandiva",
+  }
   sets.WeaponSet['Sparrowhawk +2'] = {
     ranged="Sparrowhawk +2",
   }
@@ -1606,10 +1741,10 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
       else
         equip(sets.DoubleShot)
       end
-      if buffactive['Aftermath: Lv.3'] and player.equipment.ranged == "Armageddon" then
+      if (buffactive['Aftermath: Lv.3'] and player.equipment.ranged == "Armageddon") or state.CritMode.current == 'on' then
         equip(sets.DoubleShot.Critical)
       end
-    elseif buffactive['Aftermath: Lv.3'] and player.equipment.ranged == "Armageddon" then
+    elseif (buffactive['Aftermath: Lv.3'] and player.equipment.ranged == "Armageddon") or state.CritMode.current == 'on' then
       equip(sets.midcast.RA.Critical)
     end
     if state.Buff.Barrage then
@@ -2060,6 +2195,7 @@ function set_main_keybinds()
   send_command('bind ^` gs c cycle treasuremode')
 
   send_command('bind @c gs c toggle CP')
+  send_command('bind ^/ gs c toggle critmode')
 
   send_command('bind ^insert gs c cycle WeaponSet')
   send_command('bind ^delete gs c cycleback WeaponSet')
@@ -2112,6 +2248,7 @@ function unbind_keybinds()
   send_command('unbind ^`')
 
   send_command('unbind @c')
+  send_command('unbind ^/')
 
   send_command('unbind ^insert')
   send_command('unbind ^delete')
