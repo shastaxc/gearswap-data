@@ -1856,7 +1856,8 @@ function auto_engage_pet()
       and pet.isvalid and pet.status == 'Idle'
       and player.status == 'Engaged'
       and player.target.type == 'MONSTER'
-      and player.target.hp > 0 then
+      and player.target.hp > 0
+      and not silibs.midaction() then
     -- Check for status that would prevent action
     for _,status in pairs(status_deploy_blockers) do
       if buffactive[status] then
