@@ -1448,7 +1448,7 @@ function auto_solace_and_arts()
       and not buffactive['Addendum: Black']
   if needs_solace or needs_arts then
     if not areas.Cities:contains(world.area) and not silibs.midaction() then
-      -- Make sure spell casting is not blocked by status effects
+      -- Make sure ability use is not blocked by status effects
       for _,status in pairs(auto_ja_blockers) do
         if buffactive[status] then
           return
@@ -1554,7 +1554,7 @@ timer1 = os.clock()
 windower.raw_register_event('prerender',function()
   local now = os.clock()
   if windower.ffxi.get_info().logged_in and windower.ffxi.get_player() then
-    -- Every second, check if maneuvers should be used
+    -- Execute every second
     if now - timer1 > 1 then
       timer1 = now
       auto_solace_and_arts()
