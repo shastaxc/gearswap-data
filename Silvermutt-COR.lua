@@ -393,7 +393,7 @@ function init_gear_sets()
   -- Snapshot (70% cap) > Rapid Shot (99% cap)
 
   -- Account for having no flurry buffs
-  sets.Snapshot58 = {
+  sets.Snapshot59 = {
     head="Chasseur's Tricorne +2",    -- __/16 [ 9/ 9,  99]
     body="Oshosi Vest +1",            -- 14/__ [__/__, 106]
     hands=gear.Carmine_D_hands,       --  8/11 [__/__,  43]
@@ -434,7 +434,7 @@ function init_gear_sets()
     -- 71 Snapshot / 86 Rapid Shot [44 PDT/31 MDT, 394 M.Eva]
   }
   -- Account for having embrava buff
-  sets.Snapshot34 = {
+  sets.Snapshot35 = {
     head="Chasseur's Tricorne +2",    -- __/16 [ 9/ 9,  99]
     body="Laksamana's Frac +3",       -- __/20 [__/__,  84]
     hands=gear.Carmine_D_hands,       --  8/11 [__/__,  43]
@@ -455,7 +455,7 @@ function init_gear_sets()
     -- 70 Snapshot / 102 Rapid Shot [39 PDT/25 MDT, 380 M.Eva]
   }
   -- Account for having flurry 2 buff
-  sets.Snapshot31 = {
+  sets.Snapshot32 = {
     head="Chasseur's Tricorne +2",    -- __/16 [ 9/ 9,  99]
     body="Laksamana's Frac +3",       -- __/20 [__/__,  84]
     hands=gear.Carmine_D_hands,       --  8/11 [__/__,  43]
