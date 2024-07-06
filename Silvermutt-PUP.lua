@@ -1633,6 +1633,12 @@ function update_combat_form()
   state.CombatForm:reset()
 end
 
+function job_status_change(new,old)
+  if new == 'Engaged' then
+    auto_engage_pet()
+  end
+end
+
 function get_custom_wsmode(spell, action, spellMap)
   local wsmode = ''
 
