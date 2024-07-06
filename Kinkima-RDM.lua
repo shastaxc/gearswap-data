@@ -2191,7 +2191,6 @@ end
 -- Handle notifications of general user state change.
 -- Called by mote-selfcommands
 function job_state_change(stateField, newValue, oldValue)
-    -- print(stateField.." is now ",newValue)
 end
 
 -------------------------------------------------------------------------------------------------------------------

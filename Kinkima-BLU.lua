@@ -1490,7 +1490,6 @@ end
 function job_buff_change(buff,gain)
 end
 
-
 function job_state_change(stateField, newValue, oldValue)
 end
 
