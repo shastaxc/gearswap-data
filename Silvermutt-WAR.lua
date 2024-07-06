@@ -836,7 +836,7 @@ function init_gear_sets()
     -- ring2="Moonlight Ring",           -- [ 5/ 5, ___]  5 <__, __, __> __, __
     -- back=gear.WAR_STP_Cape,           -- [10/__, ___] 10 <__, __, __> __, __; DA dmg+20%
     -- waist="Sailfi Belt +1",           -- [__/__, ___] __ <__,  2,  5> __,  9
-    -- -- WAR Traits                        [__/__, ___] __ <__, __, 33> __, __
+    -- WAR Traits                           [__/__, ___] __ <__, __, 33> __, __
     -- [40 PDT/30 MDT, 394 MEVA] 83 STP <0 QA, 13 TA, 54 DA> 13 Crit Rate, 25 Haste; DA dmg+20%
   }
   sets.engaged.LowAcc = set_combine(sets.engaged, {
@@ -957,19 +957,19 @@ function init_gear_sets()
     -- [52 PDT/42 MDT, 474 MEVA] 48 STP <0 QA, 0 TA, 103 DA> 4 Crit Rate, 25 Haste; DA dmg+31%
 
     -- OLD SET with more STP
-    -- ammo="Coiste Bodhar",                 -- [__/__, ___]  3 <__, __,  3> __, __
-    -- head="Sakpata's Helm",                -- [ 7/ 7, 123] __ <__, __,  5> __,  4; DA dmg +15%
-    -- body="Boii Lorica +3",                -- [14/14, 109] 11 <__, __, __> __,  3
-    -- hands="Sakpata's Gauntlets",          -- [ 8/ 8, 112]  8 <__, __,  6> __,  4
-    -- legs=gear.Odyssean_STP_legs,          -- [__/__,  86] 13 <__, __,  2> __,  5
-    -- feet="Sakpata's Leggings",            -- [ 6/ 6, 150] __ <__, __,  4> __,  2
-    -- neck="Ainia Collar",                  -- [__/__, ___]  8 <__, __, __> __, __
-    -- ear1="Dedition Earring",              -- [__/__, ___]  8 <__, __, __> __, __
-    -- ear2="Schere Earring",                -- [__/__, ___]  5 <__, __,  6> __, __; R30
-    -- ring1="Epona's Ring",                 -- [__/__, ___] __ <__,  3,  3> __, __
-    -- ring2="Moonlight Ring",               -- [ 5/ 5, ___]  5 <__, __, __> __, __
-    -- back=gear.WAR_STP_Cape,               -- [10/__, ___] 10 <__, __, __> __, __; DA dmg+20%
-    -- waist="Ioskeha Belt +1",              -- [__/__, ___] __ <__, __,  9> __,  8
+    -- ammo="Coiste Bodhar",              -- [__/__, ___]  3 <__, __,  3> __, __
+    -- head="Sakpata's Helm",             -- [ 7/ 7, 123] __ <__, __,  5> __,  4; DA dmg +15%
+    -- body="Boii Lorica +3",             -- [14/14, 109] 11 <__, __, __> __,  3
+    -- hands="Sakpata's Gauntlets",       -- [ 8/ 8, 112]  8 <__, __,  6> __,  4
+    -- legs=gear.Odyssean_STP_legs,       -- [__/__,  86] 13 <__, __,  2> __,  5
+    -- feet="Sakpata's Leggings",         -- [ 6/ 6, 150] __ <__, __,  4> __,  2
+    -- neck="Ainia Collar",               -- [__/__, ___]  8 <__, __, __> __, __
+    -- ear1="Dedition Earring",           -- [__/__, ___]  8 <__, __, __> __, __
+    -- ear2="Schere Earring",             -- [__/__, ___]  5 <__, __,  6> __, __; R30
+    -- ring1="Epona's Ring",              -- [__/__, ___] __ <__,  3,  3> __, __
+    -- ring2="Moonlight Ring",            -- [ 5/ 5, ___]  5 <__, __, __> __, __
+    -- back=gear.WAR_STP_Cape,            -- [10/__, ___] 10 <__, __, __> __, __; DA dmg+20%
+    -- waist="Ioskeha Belt +1",           -- [__/__, ___] __ <__, __,  9> __,  8
     -- WAR Traits                            [__/__, ___] __ <__, __, 33> __, __
     -- [50 PDT/40 MDT, 580 MEVA] 71 STP <0 QA, 3 TA, 71 DA> 0 Crit Rate, 26 Haste; DA dmg+35%
   }
