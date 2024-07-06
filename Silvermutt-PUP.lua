@@ -446,6 +446,9 @@ function job_setup()
   delay_maneuver_check_tick = os.clock()
   status_maneuver_blockers = {'overload', 'terror', 'petrification', 'stun', 'sleep', 'charm',
       'amnesia', 'impairment', 'invisible', 'hide', 'camouflage'}
+  status_deploy_blockers = {'terror', 'petrification', 'stun', 'sleep', 'charm',
+      'amnesia', 'impairment', 'invisible', 'hide', 'camouflage'}
+  deploy_max_range = 16 -- Player and target model sizes are added later
   ---- DO NOT MODIFY ABOVE ------
 
   -- TODO: Determine pet's initial mode if already summoned
@@ -1626,7 +1629,6 @@ function job_handle_equipping_gear(playerStatus, eventArgs)
   check_gear()
   update_combat_form()
   update_idle_groups()
-  auto_engage_pet()
 end
 
 function update_combat_form()
@@ -1850,11 +1852,25 @@ function auto_engage_pet()
     return
   end
 
-	local abil_recasts = windower.ffxi.get_ability_recasts()
-
-	if state.AutomaticPetTargeting.value == true and pet.isvalid and pet.status == "Idle" and player.status == 'Engaged'
-      and player.target.type == "MONSTER" and abil_recasts[207] < 0.1 then
-    windower.chat.input('/pet "Deploy" <t>')
+	if state.AutomaticPetTargeting.value == true
+      and pet.isvalid and pet.status == 'Idle'
+      and player.status == 'Engaged'
+      and player.target.type == 'MONSTER'
+      and player.target.hp > 0 then
+    -- Check for status that would prevent action
+    for _,status in pairs(status_deploy_blockers) do
+      if buffactive[status] then
+        return
+      end
+    end
+    -- Check range
+    if player.target.distance < (player.model_size + player.target.model_size + deploy_max_range) then
+      -- Check recast timer on Deploy
+	    local abil_recasts = windower.ffxi.get_ability_recasts()
+      if abil_recasts and abil_recasts[207] < 0.1 then
+        windower.chat.input('/pet "Deploy" <t>')
+      end
+    end
 	end
 end
 
@@ -2232,6 +2248,7 @@ windower.raw_register_event('incoming chunk', function(id, data, modified, injec
 end)
 
 timer1 = os.clock()
+timer2 = os.clock()
 windower.raw_register_event('prerender',function()
   local now = os.clock()
   if windower.ffxi.get_info().logged_in and windower.ffxi.get_player() then
@@ -2240,9 +2257,12 @@ windower.raw_register_event('prerender',function()
       timer1 = now
       auto_maneuver()
     end
+    if now - timer2 > 1.33 then
+      timer2 = now
+      auto_engage_pet()
+    end
   end
 end)
-
 
 -- Select default macro book on initial load or subjob change.
 function select_default_macro_book()
