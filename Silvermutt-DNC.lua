@@ -202,8 +202,6 @@ function job_setup()
   silibs.enable_weapon_rearm()
   silibs.enable_auto_lockstyle(20)
   silibs.enable_waltz_refiner({
-    base_chr = 125,
-    base_vit = 121,
     bonus_chr = 195,
     bonus_vit = 117,
     waltz_potency = 50,
