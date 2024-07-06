@@ -208,6 +208,9 @@ function job_setup()
   state.AutoSolace = M(true, 'AutoSolace') -- Change to false if you don't want Afflatus Solace auto-applied
   state.AutoLightArts = M(true, 'AutoLightArts') -- Change to false if you don't want Light Arts auto-applied
 
+  auto_ja_blockers = {'terror', 'petrification', 'stun', 'sleep', 'charm',
+      'amnesia', 'impairment', 'invisible', 'hide', 'camouflage'}
+
   -- Spells that don't scale with skill. Overrides Mote lib.
   classes.EnhancingDurSpells = S{'Adloquium', 'Haste', 'Haste II', 'Flurry', 'Flurry II', 'Protect', 'Protect II', 'Protect III',
       'Protect IV', 'Protect V', 'Protectra', 'Protectra II', 'Protectra III', 'Protectra IV', 'Protectra V', 'Shell', 'Shell II',
@@ -1434,25 +1437,31 @@ function customize_defense_set(defenseSet)
 end
 
 function auto_solace_and_arts()
-  if not areas.Cities:contains(world.area) and not silibs.midaction() then
-	  local abil_recasts = windower.ffxi.get_ability_recasts()
-    local solace_recast = abil_recasts[29]
-    local arts_recast = abil_recasts[228]
-    local needs_solace = state.AutoSolace.current
-        and not state.Buff['Afflatus Solace']
-        and not state.Buff['Afflatus Misery']
-    local needs_arts = state.AutoLightArts
-        and player.sub_job:lower() == 'sch'
-        and not buffactive['Light Arts']
-        and not buffactive['Addendum: White']
-        and not buffactive['Dark Arts']
-        and not buffactive['Addendum: Black']
-    if needs_solace and needs_arts and solace_recast == 0 and arts_recast == 0 then
-      send_command('input /ja "Afflatus Solace" <me>;wait 1.2;input /ja "Light Arts" <me>')
-    elseif needs_solace and not needs_arts and solace_recast == 0 then
-      send_command('input /ja "Afflatus Solace" <me>')
-    elseif not needs_solace and needs_arts and arts_recast == 0 then
-      send_command('input /ja "Light Arts" <me>')
+  local needs_solace = state.AutoSolace.current == 'on'
+      and not state.Buff['Afflatus Solace']
+      and not state.Buff['Afflatus Misery']
+  local needs_arts = state.AutoLightArts.current == 'on'
+      and player.sub_job == 'SCH'
+      and not buffactive['Light Arts']
+      and not buffactive['Addendum: White']
+      and not buffactive['Dark Arts']
+      and not buffactive['Addendum: Black']
+  if needs_solace or needs_arts then
+    if not areas.Cities:contains(world.area) and not silibs.midaction() then
+      -- Make sure spell casting is not blocked by status effects
+      for _,status in pairs(auto_ja_blockers) do
+        if buffactive[status] then
+          return
+        end
+      end
+      local abil_recasts = windower.ffxi.get_ability_recasts()
+      local solace_recast = abil_recasts[29]
+      local arts_recast = abil_recasts[228]
+      if needs_solace and solace_recast == 0 then
+        send_command('input /ja "Afflatus Solace" <me>')
+      elseif needs_arts and arts_recast == 0 then
+        send_command('input /ja "Light Arts" <me>')
+      end
     end
   end
 end
@@ -1503,7 +1512,6 @@ end
 function job_handle_equipping_gear(playerStatus, eventArgs)
   check_gear()
   update_idle_groups()
-  auto_solace_and_arts()
 end
 
 function check_gear()
@@ -1540,6 +1548,18 @@ windower.register_event('zone change', function()
   if locked_ear2 then equip({ ear2=empty }) end
   if locked_ring1 then equip({ ring1=empty }) end
   if locked_ring2 then equip({ ring2=empty }) end
+end)
+
+timer1 = os.clock()
+windower.raw_register_event('prerender',function()
+  local now = os.clock()
+  if windower.ffxi.get_info().logged_in and windower.ffxi.get_player() then
+    -- Every second, check if maneuvers should be used
+    if now - timer1 > 1 then
+      timer1 = now
+      auto_solace_and_arts()
+    end
+  end
 end)
 
 
