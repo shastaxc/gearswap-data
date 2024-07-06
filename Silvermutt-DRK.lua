@@ -270,6 +270,34 @@ function init_gear_sets()
   ---------------------------------------- Precast Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
 
+  sets.precast.JA['Blood Weapon'] = {
+    body="Fallen's Cuirass +3", -- +1 is acceptable
+  }
+  sets.precast.JA['Arcane Circle'] = {
+    feet="Ignominy Sollerets +1", -- +1 is acceptable
+    -- feet="Ignominy Sollerets +3", -- +1 is acceptable
+  }
+  sets.precast.JA['Last Resort'] = {
+    back=gear.DRK_FC_Cape,
+  }
+  sets.precast.JA['Weapon Bash'] = {
+    hands="Ignominy Gauntlets +1",
+    -- hands="Ignominy Gauntlets +3",
+  }
+  sets.precast.JA['Souleater'] = {
+    head="Ignominy Burgeonet +1",
+    -- head="Ignominy Burgeonet +3",
+  }
+  sets.precast.JA['Diabolic Eye'] = {
+    hands="Fallen's Finger Gauntlets +3", -- +1 is acceptable
+  }
+  sets.precast.JA['Nether Void'] = {
+    legs="Heathen's Flanchard +2",
+    -- legs="Heathen's Flanchard +3",
+  }
+  sets.precast.JA['Provoke'] = set_combine(sets.Enmity, {})
+
+
   -- Fast cast sets for spells
   sets.precast.FC = {
     ammo="Sapience Orb",                            --  2 [__/__, ___]
@@ -303,33 +331,6 @@ function init_gear_sets()
     -- head=empty,
     -- body="Crepuscular Cloak",
   })
-
-  sets.precast.JA['Blood Weapon'] = {
-    body="Fallen's Cuirass +3",
-  }
-  sets.precast.JA['Arcane Circle'] = {
-    feet="Ignominy Sollerets +1",
-    -- feet="Ignominy Sollerets +3",
-  }
-  sets.precast.JA['Last Resort'] = {
-    back=gear.DRK_FC_Cape,
-  }
-  sets.precast.JA['Weapon Bash'] = {
-    hands="Ignominy Gauntlets +1",
-    -- hands="Ignominy Gauntlets +3",
-  }
-  sets.precast.JA['Souleater'] = {
-    head="Ignominy Burgeonet +1",
-    -- head="Ignominy Burgeonet +3",
-  }
-  sets.precast.JA['Diabolic Eye'] = {
-    hands="Fallen's Finger Gauntlets +3",
-  }
-  sets.precast.JA['Nether Void'] = {
-    legs="Heathen's Flanchard +2",
-    -- legs="Heathen's Flanchard +3",
-  }
-  sets.precast.JA['Provoke'] = set_combine(sets.Enmity, {})
 
 
   ------------------------------------------------------------------------------------------------

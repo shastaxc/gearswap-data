@@ -623,13 +623,13 @@ function init_gear_sets()
   sets.TreasureHunter.RA = set_combine(sets.TreasureHunter, {})
 
 
-  ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Precast Sets ------------------------------------------
-  ------------------------------------------------------------------------------------------------
+  -----------------------------------------------------------------------------------------------
+  ------------------------------------- Job Ability Sets ----------------------------------------
+  -----------------------------------------------------------------------------------------------
 
 	sets.precast.JA['Bestial Loyalty'] = {
-    hands="Ankusa Gloves +1", -- Adds 17 pet levels, snapshots
-    -- hands="Ankusa Gloves +3", -- Adds 17 pet levels, snapshots
+    hands="Ankusa Gloves +1", -- Adds 17 pet levels, snapshots; +1 is acceptable
+    -- hands="Ankusa Gloves +3", -- Adds 17 pet levels, snapshots; +1 is acceptable
   }
 	sets.precast.JA['Call Beast'] = sets.precast.JA['Bestial Loyalty']
 
@@ -659,11 +659,11 @@ function init_gear_sets()
     -- 229 MND, 24 Reward Regen, 97 Reward Potency, 37 Reward Recast- [38 PDT/21 MDT, 337 M.Eva] {Pet: 23 PDT/18 MDT, 0 Lv}
   }
 	sets.precast.JA['Killer Instinct'] = {
-    head="Ankusa Helm +1",
-    -- head="Ankusa Helm +3",
+    head="Ankusa Helm +1", -- +1 is acceptable
+    -- head="Ankusa Helm +3", -- +1 is acceptable
   }
 	sets.precast.JA.Familiar = {
-    legs="Ankusa Trousers +3",
+    legs="Ankusa Trousers +3", -- +1 is acceptable
   }
 	sets.precast.JA.Tame = {
     head="Totemic Helm +3",
@@ -730,8 +730,13 @@ function init_gear_sets()
 
   -- With merits and JP gifts, this caps out ready recast reduction at -20s
   sets.precast.ReadyRecast = {
-    legs="Gleti's Breeches",
+    legs="Gleti's Breeches", -- R0 is acceptable
   }
+
+
+  ------------------------------------------------------------------------------------------------
+  ---------------------------------------- Precast Sets ------------------------------------------
+  ------------------------------------------------------------------------------------------------
 
   sets.precast.FC = {
     body=gear.Taeon_FC_body,          --  9

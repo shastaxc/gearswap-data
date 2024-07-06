@@ -277,10 +277,6 @@ end
 function init_gear_sets()
   sets.org.job = {}
 
-  ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Precast Sets ------------------------------------------
-  ------------------------------------------------------------------------------------------------
-
   -- Set to use in normal TH situations
   sets.TreasureHunter = {
     ammo="Perfect Lucky Egg", --1
@@ -298,50 +294,39 @@ function init_gear_sets()
     -- feet="Skulker's Poulaines +3", --5
   }
 
-  sets.buff['Sneak Attack'] = {
-    -- hands="Skulker's Armlets +3", -- SA+30
-  }
-  sets.buff['Trick Attack'] = {
-    -- hands="Pillager's Armlets +3", -- TA+20
-  }
-  sets.buff['Feint'] = set_combine(sets.precast.JA['Feint'], {})
 
-
-  ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Precast Sets ------------------------------------------
-  ------------------------------------------------------------------------------------------------
+  -----------------------------------------------------------------------------------------------
+  ------------------------------------- Job Ability Sets ----------------------------------------
+  -----------------------------------------------------------------------------------------------
 
   -- Precast sets to enhance JAs
   sets.precast.JA['Collaborator'] = {
-    -- head="Skulker's Bonnet +1",
+    -- head="Skulker's Bonnet +1", 
   }
   sets.precast.JA['Accomplice'] = {
-    -- head="Skulker's Bonnet +1",
+    -- head="Skulker's Bonnet +1", 
   }
   sets.precast.JA['Flee'] = {
-    -- feet="Pillager's Poulaines +3",
+    -- feet="Pillager's Poulaines +3", 
   }
   sets.precast.JA['Hide'] = {
-    -- body="Pillager's Vest +3",
-  }
-  sets.precast.JA['Conspirator'] = {
-    -- body="Skulker's Vest +1", -- Must remain equipped to gain the benefit
+    -- body="Pillager's Vest +3", -- +1 is acceptable
   }
 
   -- Theory is level and acc play a part, so prioritize: ilvl > Steal+ > Acc
   sets.precast.JA['Steal'] = {
-    -- ammo="Barathrum",                 --  3, __ [__/__, ___]
-    -- head="Pillager's Bonnet +3",      -- __, 53 [__/__,  83]
+    -- ammo="Barathrum",              --  3, __ [__/__, ___]
+    -- head="Pillager's Bonnet +3",   -- __, 53 [__/__,  83]
     body="Malignance Tabard",         -- __, 50 [ 9/ 9, 139]
     hands="Gazu Bracelets +1",        -- __, 96 [__/__,  43]
-    -- legs="Skulker's Culottes +2",     -- __, 53 [12/12, 115]
-    -- feet="Pillager's Poulaines +3",   -- 15, 52 [__/__,  99]
-    -- neck="Pentalagus Charm",          --  2, __ [__/__, ___]
-    -- ear1="Odr Earring",               -- __, 10 [__/__, ___]
-    -- ear2="Telos Earring",             -- __, 10 [__/__, ___]
+    -- legs="Skulker's Culottes +2",  -- __, 53 [12/12, 115]
+    -- feet="Pillager's Poulaines +3",-- 15, 52 [__/__,  99]
+    -- neck="Pentalagus Charm",       --  2, __ [__/__, ___]
+    -- ear1="Odr Earring",            -- __, 10 [__/__, ___]
+    -- ear2="Telos Earring",          -- __, 10 [__/__, ___]
     ring1="Regal Ring",               -- __, __ [__/__, ___]
     ring2="Ephramad's Ring",          -- __, 20 [__/__, ___]
-    -- back=gear.THF_DW_Cape,            -- __, 20 [10/__, ___]
+    -- back=gear.THF_DW_Cape,         -- __, 20 [10/__, ___]
     waist="Olseni Belt",              -- __, 20 [__/__, ___]
     -- AF set effect                  -- __, 15
     -- 20 Steal, 399 Acc [31 PDT/21 MDT, 479 M.Eva]
@@ -354,14 +339,14 @@ function init_gear_sets()
   }
 
   sets.precast.JA['Despoil'] = {
-    feet="Skulker's Poulaines +2",
+    feet="Skulker's Poulaines +2", 
 
     -- ammo="Barathrum",
-    -- legs="Skulker's Culottes +3",
-    -- feet="Skulker's Poulaines +3",
+    -- legs="Skulker's Culottes +3", 
+    -- feet="Skulker's Poulaines +3", 
   }
   sets.precast.JA['Perfect Dodge'] = {
-    hands="Plunderer's Armlets +3",
+    hands="Plunderer's Armlets +3", -- +1 is acceptable
   }
   sets.precast.JA['Feint'] = {
     -- legs="Plunderer's Culottes +3", -- This needs to be kept equipped for the hit that applies Feint
@@ -375,6 +360,11 @@ function init_gear_sets()
   }
 
   sets.precast.Waltz['Healing Waltz'] = {}
+
+
+  ------------------------------------------------------------------------------------------------
+  ---------------------------------------- Precast Sets ------------------------------------------
+  ------------------------------------------------------------------------------------------------
 
   sets.precast.FC = {
     head="Herculean Helm", --7
@@ -1425,6 +1415,13 @@ function init_gear_sets()
     ring2="Eshmun's Ring", --20
     waist="Gishdubar Sash", --10
   }
+  sets.buff['Sneak Attack'] = {
+    -- hands="Skulker's Armlets +3", -- SA+30
+  }
+  sets.buff['Trick Attack'] = {
+    -- hands="Pillager's Armlets +3", -- TA+20
+  }
+  sets.buff['Feint'] = set_combine(sets.precast.JA['Feint'], {})
 
   sets.Kiting = {
     ring2="Shneddick Ring",

@@ -128,20 +128,21 @@ function init_gear_sets()
   sets.org.job[1] = {ammo="Chrono Bullet"}
   sets.org.job[2] = {ammo="Hauksbok Bullet"}
 
-  ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Precast Sets ------------------------------------------
-  ------------------------------------------------------------------------------------------------
+  -----------------------------------------------------------------------------------------------
+  ---------------------------------------- Job Abilities ----------------------------------------
+  -----------------------------------------------------------------------------------------------
+  
   sets.precast.JA['Snake Eye'] = {
-    legs="Lanun Trews",
-    -- legs="Lanun Trews +3",
+    legs="Lanun Trews", -- +1 is acceptable
+    -- legs="Lanun Trews +3", -- +1 is acceptable
   }
   sets.precast.JA['Wild Card'] = {
-    feet="Lanun Bottes",
-    -- feet="Lanun Bottes +3",
+    feet="Lanun Bottes", -- +1 is acceptable
+    -- feet="Lanun Bottes +3", -- +1 is acceptable
   }
   sets.precast.JA['Random Deal'] = {
-    body="Lanun Frac",
-    -- body="Lanun Frac +3",
+    body="Lanun Frac", -- +1 is acceptable
+    -- body="Lanun Frac +3", -- +1 is acceptable
   }
 
   sets.precast.CorsairRoll = {
@@ -169,26 +170,26 @@ function init_gear_sets()
     -- 45 PDT / 31 MDT, 445 M.Eva (7 PR Potency, 185 PR Duration, 5 PR Delay)
   }
   sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {
-    -- legs="Chasseur's Culottes +1",
+    -- legs="Chasseur's Culottes +1", -- +1 is acceptable
   })
   sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {
-    -- feet="Chasseur's Bottes +1",
+    -- feet="Chasseur's Bottes +1", -- +1 is acceptable
   })
   sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {
-    -- head="Chasseur's Tricorne +1",
+    -- head="Chasseur's Tricorne +1", -- +1 is acceptable
   })
   sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {
-    -- body="Chasseur's Frac +1",
+    -- body="Chasseur's Frac +1", -- +1 is acceptable
   })
   sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {
-    hands="Chasseur's Gants +2",
+    hands="Chasseur's Gants +2", -- +1 is acceptable
   })
 
   sets.precast.LuzafRing = {
     ring1="Luzaf's Ring",
   }
   sets.precast.FoldDoubleBust = {
-    -- hands="Lanun Gants +3",
+    -- hands="Lanun Gants +3", -- +1 is acceptable
   }
 
   sets.precast.Waltz = {
@@ -197,6 +198,11 @@ function init_gear_sets()
   }
 
   sets.precast.Waltz['Healing Waltz'] = {}
+
+
+  ------------------------------------------------------------------------------------------------
+  ---------------------------------------- Precast Sets ------------------------------------------
+  ------------------------------------------------------------------------------------------------
 
   sets.precast.FC = {
     -- head="Herculean Helm", --7

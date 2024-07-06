@@ -292,18 +292,20 @@ function init_gear_sets()
   sets.org.job[6] = {waist="Devastating Bullet Pouch"}
   sets.org.job[7] = {waist="Living Bullet Pouch"}
 
-  ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Precast Sets ------------------------------------------
-  ------------------------------------------------------------------------------------------------
+
+  -----------------------------------------------------------------------------------------------
+  ------------------------------------- Job Ability Sets ----------------------------------------
+  -----------------------------------------------------------------------------------------------
+
   sets.precast.JA['Snake Eye'] = {
-    legs="Lanun Trews +1",
-    -- legs="Lanun Trews +3",
+    legs="Lanun Trews +1", -- +1 is acceptable
+    -- legs="Lanun Trews +3", -- +1 is acceptable
   }
   sets.precast.JA['Wild Card'] = {
-    feet="Lanun Bottes +3",
+    feet="Lanun Bottes +3", -- +1 is acceptable
   }
   sets.precast.JA['Random Deal'] = {
-    body="Lanun Frac +3",
+    body="Lanun Frac +3", -- +1 is acceptable
   }
 
   -- DT > PR Potency > PR Duration; PR Potency does not stack, uses highest piece
@@ -335,23 +337,23 @@ function init_gear_sets()
   -- Intentionally excluding Blitzer's Roll bonus from Chasseur's Tricorne because
   -- the chance at proc from relic head bonus is much more significant.
   sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {
-    legs="Chasseur's Culottes +3",
+    legs="Chasseur's Culottes +3", -- +1 is acceptable
   })
   sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {
-    feet="Chasseur's Bottes +3",
+    feet="Chasseur's Bottes +3", -- +1 is acceptable
   })
   sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {
-    body="Chasseur's Frac +3",
+    body="Chasseur's Frac +3", -- +1 is acceptable
   })
   sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {
-    hands="Chasseur's Gants +2",
+    hands="Chasseur's Gants +2", -- +1 is acceptable
   })
 
   sets.precast.LuzafRing = {
     ring1="Luzaf's Ring",           -- __/__, ___ (__, __, __); Double PR range
   }
   sets.precast.FoldDoubleBust = {
-    hands="Lanun Gants +3",
+    hands="Lanun Gants +3", -- +1 is acceptable
   }
 
   sets.precast.Waltz = {
@@ -361,6 +363,10 @@ function init_gear_sets()
 
   sets.precast.Waltz['Healing Waltz'] = {}
 
+
+  ------------------------------------------------------------------------------------------------
+  ---------------------------------------- Precast Sets ------------------------------------------
+  ------------------------------------------------------------------------------------------------
   sets.precast.FC = {
     head=gear.Carmine_D_head, -- 14
     body=gear.Taeon_FC_body, --9

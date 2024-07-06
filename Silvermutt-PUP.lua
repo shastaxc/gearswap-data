@@ -583,11 +583,11 @@ function init_gear_sets()
   }
 
   sets.precast.JA['Overdrive'] = {
-    body="Pitre Tobe +3",
+    body="Pitre Tobe +3", -- +1 is acceptable
   }
 
   sets.precast.JA['Role Reversal'] = {
-    feet="Pitre Babouches +3",
+    feet="Pitre Babouches +3", -- +1 is acceptable
   }
 
   sets.precast.JA['Tactical Switch'] = {
@@ -595,7 +595,7 @@ function init_gear_sets()
   }
 
   sets.precast.JA['Ventriloquy'] = {
-    legs="Pitre Churidars +3",
+    legs="Pitre Churidars +3", -- +1 is acceptable
   }
 
   -- TODO: update

@@ -250,7 +250,7 @@ function init_gear_sets()
     main="Xoanon",
     sub="Alber Strap"
   }
-  
+
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Special Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
@@ -368,7 +368,7 @@ function init_gear_sets()
   sets.precast.JA['Boost'] = {
     waist="Ask Sash",
   }
-  sets.precast.JA['Boost'].Risky = {
+  sets.precast.JA['Boost'].Idle = {
     head="Gnadbhod's Helm",
     body=empty,
     hands=empty,
@@ -396,14 +396,14 @@ function init_gear_sets()
     -- feet="Bhikku Gaiters +3",
   }
   sets.precast.JA['Formless Strikes'] = {
-    body="Hesychast's Cyclas +2",
+    body="Hesychast's Cyclas +2", -- +1 is acceptable
   }
   sets.precast.JA['Mantra'] = {
-    feet="Hesychast's Gaiters +3",
+    feet="Hesychast's Gaiters +3", -- +1 is acceptable
   }
 
   sets.precast.JA['Chi Blast'] = {
-    head="Hesychast's Crown +1", -- 15, Enhance Penance
+    head="Hesychast's Crown +1", -- 15, Enhance Penance; +1 is acceptable
     body=gear.Herc_TH_body, --2
     hands=gear.Herc_TH_hands, --2
   } -- MND
@@ -985,7 +985,7 @@ function job_precast(spell, action, spellMap, eventArgs)
       eventArgs.cancel = true -- Ensures gear doesn't swap
       return -- Ends function without finishing loop
     elseif not player.in_combat and state.DefenseMode.current == 'None' then
-      equip(sets.precast.JA['Boost'].Risky)
+      equip(sets.precast.JA['Boost'].Idle)
       eventArgs.handled = true
     end
   end

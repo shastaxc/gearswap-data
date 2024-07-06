@@ -1,6 +1,7 @@
 --[[
 File Status: Good.
 TODO: Need to update sets with empy+3. Engaged DT sets need updating.
+Some blue magic sets need to be updated.
 
 Author: Silvermutt
 Required external libraries: SilverLibs
@@ -312,13 +313,7 @@ function job_setup()
   state.MagicBurst = M(false, 'Magic Burst')
   state.Learning = M(false, 'Learning')
 
-  -- DO NOT MODIFY this Buff section
-  state.Buff['Burst Affinity'] = buffactive['Burst Affinity'] or false
-  state.Buff['Chain Affinity'] = buffactive['Chain Affinity'] or false
-  state.Buff.Convergence = buffactive.Convergence or false
-  state.Buff.Diffusion = buffactive.Diffusion or false
-  state.Buff.Efflux = buffactive.Efflux or false
-  state.Buff['Unbridled Learning'] = buffactive['Unbridled Learning'] or false
+  update_active_abilities()
 
   -- Mappings for gear sets to use for various blue magic spells.
   -- While Str isn't listed for each, it's generally assumed as being at least
@@ -424,12 +419,9 @@ end
 
 -- Define sets and vars used by this job file.
 function init_gear_sets()
-
-  ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Precast Sets ------------------------------------------
-  ------------------------------------------------------------------------------------------------
-
-  -- Precast sets to enhance JAs
+  -----------------------------------------------------------------------------------------------
+  ---------------------------------------- Job Abilities ----------------------------------------
+  -----------------------------------------------------------------------------------------------
 
   -- Enmity set
   sets.Enmity = {
@@ -445,32 +437,24 @@ function init_gear_sets()
     -- ring2="Eihwaz Ring", --5
     -- waist="Kasiri Belt", --3
   }
-
   sets.precast.JA['Provoke'] = set_combine(sets.Enmity, {})
-
-  sets.buff['Burst Affinity'] = {
-    legs="Assimilator's Shalwar +3",
-    feet="Hashishin Basmak +2",
-  }
-  sets.buff['Diffusion'] = {
-    -- feet="Luhlaza Charuqs +3"
-  }
-  sets.buff['Efflux'] = {
-    legs="Hashishin Tayt +2",
-  }
-
   sets.precast.JA['Azure Lore'] = {
-    -- hands="Luhlaza Bazubands +1"
+    -- hands="Luhlaza Bazubands +1" -- +1 is acceptable
   }
   sets.precast.JA['Chain Affinity'] = {
     -- feet="Assimilator's Charuqs +1"
   }
   sets.precast.JA['Convergence'] = {
-    -- head="Luhlaza Keffiyeh +3"
+    -- head="Luhlaza Keffiyeh +3" -- +1 is acceptable
   }
   sets.precast.JA['Enchainment'] = {
-    -- body="Luhlaza Jubbah +3"
+    -- body="Luhlaza Jubbah +3" -- +1 is acceptable
   }
+
+
+  ------------------------------------------------------------------------------------------------
+  ---------------------------------------- Precast Sets ------------------------------------------
+  ------------------------------------------------------------------------------------------------
 
   -- Used when casting non-blu spells and not sub RDM (rarely used)
   sets.precast.FC = {
@@ -1317,6 +1301,16 @@ function init_gear_sets()
     ring1="Eshmun's Ring", --20
     waist="Gishdubar Sash", --10
   }
+  sets.buff['Burst Affinity'] = {
+    legs="Assimilator's Shalwar +3", 
+    feet="Hashishin Basmak +2", 
+  }
+  sets.buff['Diffusion'] = {
+    -- feet="Luhlaza Charuqs +3" -- +1 is acceptable
+  }
+  sets.buff['Efflux'] = {
+    legs="Hashishin Tayt +2", 
+  }
 
   sets.CP = {
     back=gear.CP_Cape,
@@ -1391,7 +1385,6 @@ function job_post_precast(spell, action, spellMap, eventArgs)
   if state.Learning.value then
     equip(sets.Learning)
   end
-
   -- Always put this last in job_post_precast
   if in_battle_mode() then
     -- Prevent swapping main/sub weapons
@@ -1417,18 +1410,6 @@ end
 -- Run after the default midcast() is done.
 -- eventArgs is the same one used in job_midcast, in case information needs to be persisted.
 function job_post_midcast(spell, action, spellMap, eventArgs)
-  -- Add enhancement gear for Chain Affinity, etc.
-  if spell.skill == 'Blue Magic' then
-    for buff,active in pairs(state.Buff) do
-      if active and sets.buff[buff] then
-        equip(sets.buff[buff])
-      end
-    end
-    if spellMap == 'Healing' and spell.target.type == 'SELF' then
-      equip(sets.midcast['Blue Magic'].HealingSelf)
-    end
-  end
-
   if spell.skill == 'Enhancing Magic' and classes.NoSkillSpells:contains(spell.english) then
     equip(sets.midcast.EnhancingDuration)
     if spellMap == 'Refresh' then
@@ -1436,8 +1417,15 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     end
   end
 
+  -- Add enhancement gear for JAs
+  apply_ability_bonuses(spell, action, spellMap)
+
   if state.Learning.value then
     equip(sets.Learning)
+  end
+
+  if buffactive['doom'] then
+    equip(sets.buff.Doom)
   end
 
   -- Always put this last in job_post_midcast
@@ -1550,7 +1538,11 @@ function job_get_spell_map(spell, default_spell_map)
   if spell.skill == 'Blue Magic' then
     for category,spell_list in pairs(blue_magic_maps) do
       if spell_list:contains(spell.english) then
-        return category
+        if category == 'Healing' and spell.target.type == 'SELF' then
+          return 'HealingSelf'
+        else
+          return category
+        end
       end
     end
   end
@@ -1767,28 +1759,48 @@ end
 
 function update_active_abilities()
   state.Buff['Burst Affinity'] = buffactive['Burst Affinity'] or false
-  state.Buff['Efflux'] = buffactive['Efflux'] or false
+  state.Buff['Chain Affinity'] = buffactive['Chain Affinity'] or false
+  state.Buff['Convergence'] = buffactive['Convergence'] or false
   state.Buff['Diffusion'] = buffactive['Diffusion'] or false
+  state.Buff['Efflux'] = buffactive['Efflux'] or false
+  state.Buff['Unbridled Learning'] = buffactive['Unbridled Learning'] or false
 end
 
 -- State buff checks that will equip buff gear and mark the event as handled.
 function apply_ability_bonuses(spell, action, spellMap)
-  if state.Buff['Burst Affinity'] and (spellMap == 'Magical' or spellMap == 'MagicalLight' or spellMap == 'MagicalDark' or spellMap == 'Breath') then
-    if state.MagicBurst.value then
-      equip(sets.magic_burst)
+  if spell.type == 'BlueMagic' then
+    if state.Buff['Burst Affinity'] and (
+        spellMap == 'Magical'
+        or spellMap == 'MagicalLight'
+        or spellMap == 'MagicalDark'
+        or spellMap == 'MagicalMnd'
+        or spellMap == 'MagicalChr'
+        or spellMap == 'MagicalVit'
+        or spellMap == 'MagicalDex'
+        or spellMap == 'Breath'
+      ) then
+      if state.MagicBurst.value then
+        equip(sets.magic_burst)
+        equip(sets.buff['Burst Affinity'])
+      end
     end
-    equip(sets.buff['Burst Affinity'])
+    if state.Buff.Efflux and (
+        spellMap == 'Physical'
+        or spellMap == 'PhysicalStr'
+        or spellMap == 'PhysicalDex'
+        or spellMap == 'PhysicalVit'
+        or spellMap == 'PhysicalAgi'
+        or spellMap == 'PhysicalInt'
+        or spellMap == 'PhysicalChr'
+        or spellMap == 'PhysicalChr'
+        or spellMap == 'PhysicalHP'
+      ) then
+      equip(sets.buff['Efflux'])
+    end
+    if state.Buff.Diffusion then
+      equip(sets.buff['Diffusion'])
+    end
   end
-  if state.Buff.Efflux and spellMap == 'Physical' then
-    equip(sets.buff['Efflux'])
-  end
-  if state.Buff.Diffusion and (spellMap == 'Buffs' or spellMap == 'BlueSkill') then
-    equip(sets.buff['Diffusion'])
-  end
-
-  if state.Buff['Burst Affinity'] then equip (sets.buff['Burst Affinity']) end
-  if state.Buff['Efflux'] then equip (sets.buff['Efflux']) end
-  if state.Buff['Diffusion'] then equip (sets.buff['Diffusion']) end
 end
 
 function cycle_weapons(cycle_dir)

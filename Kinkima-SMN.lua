@@ -340,6 +340,136 @@ end
 
 -- Define sets and vars used by this job file.
 function init_gear_sets()
+  -----------------------------------------------------------------------------------------------
+  ------------------------------------- Job Ability Sets ----------------------------------------
+  -----------------------------------------------------------------------------------------------
+
+  sets.precast.JA['Astral Flow'] = {
+    head="Glyphic Horn", -- +1 is acceptable
+  }
+
+  -- MP Siphoned = (Summoning Skill - 50 + Base Siphon Equipment) * (1.0 + Weather/Day bonuses)
+  -- Hachirin-no-obi has no effect; day/weather bonuses always apply.
+  -- Day/weather muliplier caps at 1.4.
+  sets.precast.JA['Elemental Siphon'] = {
+    main="Chatoyant Staff",             -- __, __, 10 [__/__, ___]
+    sub="Khonsu",                       -- __, __, __ [ 6/ 6, ___]
+    ammo="Esper Stone +1",              -- 20, __, __ [__/__, ___]
+    head="Beckoner's Horn +3",          -- __, 23, __ [10/10, 130]
+    body="Beckoner's Doublet +2",       -- __, 19, __ [12/12, 120]
+    hands="Baayami Cuffs +1",           -- __, 33, __ [__/__,  93]
+    legs="Beckoner's Spats +2",         -- __, 25, __ [11/11, 147]
+    feet="Beckoner's Pigaches +2",      -- 70, __, __ [__/__, 158]
+    neck="Incanter's Torque",           -- __, 10, __ [__/__, ___]
+    ear1="Lodurr Earring",              -- __, 10, __ [__/__, ___]
+    ear2="Cath Palug Earring",          -- __,  5, __ [__/__, ___]
+    ring1="Stikini Ring +1",            -- __,  8, __ [__/__, ___]
+    ring2="Defending Ring",             -- __, __, __ [10/10, ___]
+    back="Twilight Cape",               -- __, __,  5 [__/__, ___]
+    waist="Ligeia Sash",                -- 10, __, __ [__/__, ___]
+    -- Traits/Merits/Gifts                 60,469, __ [__/__, ___]
+    -- Assume minimum day/weather          __, __, 10
+    -- 160 Base Siphon, 602 Summoning Skill, 25 Siphon Multiplier [49 PDT/49 MDT, 648 M.Eva]
+    -- MP Siphoned = 883 to 989 (depending on day/weather)
+    
+    -- body="Beckoner's Doublet +3",    -- __, 24, __ [13/13, 130]
+    -- legs="Beckoner's Spats +3",      -- __, 30, __ [12/12, 157]
+    -- feet="Beckoner's Pigaches +3",   -- 80, __, __ [__/__, 168]
+    -- 170 Base Siphon, 612 Summoning Skill, 25 Siphon Multiplier [51 PDT/51 MDT, 678 M.Eva]
+    -- MP Siphoned = 915 to 1024 (depending on day/weather)
+  }
+  sets.precast.JA['Elemental Siphon'].NirvAM = {
+    main="Nirvana",                     -- __, __, __ [__/__, ___]
+    sub="Elan Strap +1",                -- __, __, __ [__/__, ___]
+    ammo="Esper Stone +1",              -- 20, __, __ [__/__, ___]
+    head="Beckoner's Horn +3",          -- __, 23, __ [10/10, 130]
+    body="Beckoner's Doublet +2",       -- __, 19, __ [12/12, 120]
+    hands="Baayami Cuffs +1",           -- __, 33, __ [__/__,  93]
+    legs="Beckoner's Spats +2",         -- __, 25, __ [11/11, 147]
+    feet="Beckoner's Pigaches +2",      -- 70, __, __ [__/__, 158]
+    neck="Incanter's Torque",           -- __, 10, __ [__/__, ___]
+    ear1="Lodurr Earring",              -- __, 10, __ [__/__, ___]
+    ear2="Beckoner's Earring +1",       -- __, __, __ [ 4/ 4, ___]
+    ring1="Stikini Ring +1",            -- __,  8, __ [__/__, ___]
+    ring2="Defending Ring",             -- __, __, __ [10/10, ___]
+    back="Twilight Cape",               -- __, __,  5 [__/__, ___]
+    waist="Ligeia Sash",                -- 10, __, __ [__/__, ___]
+    -- Traits/Merits/Gifts                 60,469, __ [__/__, ___]
+    -- Assume minimum day/weather          __, __, 10
+    -- 160 Base Siphon, 597 Summoning Skill, 15 Weather Multiplier [47 PDT/47 MDT, 648 M.Eva]
+    -- MP Siphoned = 807 to 982 (depending on day/weather)
+    
+    -- body="Beckoner's Doublet +3",    -- __, 24, __ [13/13, 130]
+    -- legs="Beckoner's Spats +3",      -- __, 30, __ [12/12, 157]
+    -- feet="Beckoner's Pigaches +3",   -- 80, __, __ [__/__, 168]
+    -- 170 Base Siphon, 607 Summoning Skill, 15 Weather Multiplier [49 PDT/49 MDT, 678 M.Eva]
+    -- MP Siphoned = 836 to 1017 (depending on day/weather)
+  }
+
+  sets.precast.JA['Mana Cede'] = {
+    -- hands="Caller's Bracers +2", -- Base hands + JP gifts cap out this effect; no need to upgrade
+  }
+
+  -- Pact delay reduction gear: summoning skill, -BP Delay, -BP Delay II
+  -- Caps: summoning skill @670, -BP Delay @15, -BP Delay II @15, -BP Delay Total @30 (including the 10s from gifts)
+  sets.precast.BloodPactWard = {
+    main="Malignance Pole",         -- __, __, __, __ [20/20, ___]
+    sub="Vox Grip",                 --  3, __, __, __ [__/__, ___]
+    ammo="Epitaph",                 -- __, __,  5, __ [__/__, ___]
+    head="Beckoner's Horn +3",      -- 23, __, __, __ [10/10, 130]; Keep on for Favor bonus
+    body="Beckoner's Doublet +2",   -- 19, __, __, __ [12/12, 120]
+    hands="Baayami Cuffs +1",       -- 33,  7, __, __ [__/__,  93]
+    legs="Baayami Slops +1",        -- 35,  8, __, __ [__/__, 139]
+    feet="Baayami Sabots +1",       -- 29, __, __, __ [__/__, 139]
+    neck="Incanter's Torque",       -- 10, __, __, __ [__/__, ___]
+    ear1="Lodurr Earring",          -- 10, __, __, __ [__/__, ___]
+    ear2="Cath Palug Earring",      --  5, __, __, __ [__/__, ___]
+    ring1="Evoker's Ring",          -- 10, __, __, __ [__/__, ___]
+    ring2="Stikini Ring +1",        --  8, __, __, __ [__/__, ___]
+    back=gear.SMN_Skill_Cape,       --  8, __,  2, __ [__/__, ___]
+    waist="Kobo Obi",               --  8, __, __, __ [__/__, ___]
+    -- Traits/Merits/Gifts            469, __, __, 10
+    -- Master Levels                    2
+    -- 672 Summon Skill, 15 -BP Delay, 7 -BP Delay II, 10 -BP Delay III [42 PDT/42 MDT, 621 M.Eva]
+    
+    -- body="Beckoner's Doublet +3",-- 24, __, __, __ [13/13, 130]
+    -- back=gear.SMN_FC_Cape,       -- __, __, __, __ [10/__, ___]
+    -- Traits/Merits/Gifts            469, __, __, 10
+    -- Master Levels                    3
+    -- 670 Summon Skill, 15 -BP Delay, 5 -BP Delay II, 10 -BP Delay III [53 PDT/43 MDT, 631 M.Eva]
+  }
+  sets.precast.BloodPactRage = set_combine(sets.precast.BloodPactWard, {})
+
+  sets.precast.BloodPactWard.NirvAM = {
+    main="Nirvana",                 -- __, __, __, __ [__/__, ___]
+    sub="Elan Strap +1",            -- __, __, __, __ [__/__, ___]
+    ammo="Epitaph",                 -- __, __,  5, __ [__/__, ___]
+    head="Beckoner's Horn +3",      -- 23, __, __, __ [10/10, 130]; Keep on for Favor bonus
+    body="Beckoner's Doublet +2",   -- 19, __, __, __ [12/12, 120]
+    hands="Baayami Cuffs +1",       -- 33,  7, __, __ [__/__,  93]
+    legs="Baayami Slops +1",        -- 35,  8, __, __ [__/__, 139]
+    feet="Baayami Sabots +1",       -- 29, __, __, __ [__/__, 139]
+    neck="Incanter's Torque",       -- 10, __, __, __ [__/__, ___]
+    ear1="Lodurr Earring",          -- 10, __, __, __ [__/__, ___]
+    ear2="Cath Palug Earring",      --  5, __, __, __ [__/__, ___]
+    ring1="Evoker's Ring",          -- 10, __, __, __ [__/__, ___]
+    ring2="Stikini Ring +1",        --  8, __, __, __ [__/__, ___]
+    back=gear.SMN_Skill_Cape,       --  8, __,  2, __ [__/__, ___]
+    waist="Kobo Obi",               --  8, __, __, __ [__/__, ___]
+    -- Traits/Merits/Gifts            469, __, __, 10
+    -- 667 Summon Skill, 15 -BP Delay, 7 -BP Delay II, 10 -BP Delay III [22 PDT/22 MDT, 621 M.Eva]
+
+    -- body="Beckoner's Doublet +3",-- 24, __, __, __ [13/13, 130]
+    -- 672 Summon Skill, 15 -BP Delay, 7 -BP Delay II, 10 -BP Delay III [23 PDT/23 MDT, 631 M.Eva]
+
+    -- ring2="Defending Ring",      -- __, __, __, __ [10/10, ___]
+    -- back=gear.SMN_FC_Cape,       -- __, __, __, __ [10/__, ___]
+    -- Master Levels                   14
+    -- 670 Summon Skill, 15 -BP Delay, 5 -BP Delay II, 10 -BP Delay III [43 PDT/33 MDT, 631 M.Eva]
+  }
+  sets.precast.BloodPactRage.NirvAM = set_combine(sets.precast.BloodPactWard.NirvAM, {})
+
+
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Precast Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
@@ -544,135 +674,6 @@ function init_gear_sets()
     -- legs="Volte Brais",            --  8 [__/__, 142]; merlinic alt
     -- 76 Fast Cast [49 PDT/19 MDT, 570 M.Eva]
   })
-
-  -----------------------------------------------------------------------------------------------
-  ------------------------------------- Job Ability Sets ----------------------------------------
-  -----------------------------------------------------------------------------------------------
-
-  sets.precast.JA['Astral Flow'] = {
-    head="Glyphic Horn",
-  }
-
-  -- MP Siphoned = (Summoning Skill - 50 + Base Siphon Equipment) * (1.0 + Weather/Day bonuses)
-  -- Hachirin-no-obi has no effect; day/weather bonuses always apply.
-  -- Day/weather muliplier caps at 1.4.
-  sets.precast.JA['Elemental Siphon'] = {
-    main="Chatoyant Staff",             -- __, __, 10 [__/__, ___]
-    sub="Khonsu",                       -- __, __, __ [ 6/ 6, ___]
-    ammo="Esper Stone +1",              -- 20, __, __ [__/__, ___]
-    head="Beckoner's Horn +3",          -- __, 23, __ [10/10, 130]
-    body="Beckoner's Doublet +2",       -- __, 19, __ [12/12, 120]
-    hands="Baayami Cuffs +1",           -- __, 33, __ [__/__,  93]
-    legs="Beckoner's Spats +2",         -- __, 25, __ [11/11, 147]
-    feet="Beckoner's Pigaches +2",      -- 70, __, __ [__/__, 158]
-    neck="Incanter's Torque",           -- __, 10, __ [__/__, ___]
-    ear1="Lodurr Earring",              -- __, 10, __ [__/__, ___]
-    ear2="Cath Palug Earring",          -- __,  5, __ [__/__, ___]
-    ring1="Stikini Ring +1",            -- __,  8, __ [__/__, ___]
-    ring2="Defending Ring",             -- __, __, __ [10/10, ___]
-    back="Twilight Cape",               -- __, __,  5 [__/__, ___]
-    waist="Ligeia Sash",                -- 10, __, __ [__/__, ___]
-    -- Traits/Merits/Gifts                 60,469, __ [__/__, ___]
-    -- Assume minimum day/weather          __, __, 10
-    -- 160 Base Siphon, 602 Summoning Skill, 25 Siphon Multiplier [49 PDT/49 MDT, 648 M.Eva]
-    -- MP Siphoned = 883 to 989 (depending on day/weather)
-    
-    -- body="Beckoner's Doublet +3",    -- __, 24, __ [13/13, 130]
-    -- legs="Beckoner's Spats +3",      -- __, 30, __ [12/12, 157]
-    -- feet="Beckoner's Pigaches +3",   -- 80, __, __ [__/__, 168]
-    -- 170 Base Siphon, 612 Summoning Skill, 25 Siphon Multiplier [51 PDT/51 MDT, 678 M.Eva]
-    -- MP Siphoned = 915 to 1024 (depending on day/weather)
-  }
-  sets.precast.JA['Elemental Siphon'].NirvAM = {
-    main="Nirvana",                     -- __, __, __ [__/__, ___]
-    sub="Elan Strap +1",                -- __, __, __ [__/__, ___]
-    ammo="Esper Stone +1",              -- 20, __, __ [__/__, ___]
-    head="Beckoner's Horn +3",          -- __, 23, __ [10/10, 130]
-    body="Beckoner's Doublet +2",       -- __, 19, __ [12/12, 120]
-    hands="Baayami Cuffs +1",           -- __, 33, __ [__/__,  93]
-    legs="Beckoner's Spats +2",         -- __, 25, __ [11/11, 147]
-    feet="Beckoner's Pigaches +2",      -- 70, __, __ [__/__, 158]
-    neck="Incanter's Torque",           -- __, 10, __ [__/__, ___]
-    ear1="Lodurr Earring",              -- __, 10, __ [__/__, ___]
-    ear2="Beckoner's Earring +1",       -- __, __, __ [ 4/ 4, ___]
-    ring1="Stikini Ring +1",            -- __,  8, __ [__/__, ___]
-    ring2="Defending Ring",             -- __, __, __ [10/10, ___]
-    back="Twilight Cape",               -- __, __,  5 [__/__, ___]
-    waist="Ligeia Sash",                -- 10, __, __ [__/__, ___]
-    -- Traits/Merits/Gifts                 60,469, __ [__/__, ___]
-    -- Assume minimum day/weather          __, __, 10
-    -- 160 Base Siphon, 597 Summoning Skill, 15 Weather Multiplier [47 PDT/47 MDT, 648 M.Eva]
-    -- MP Siphoned = 807 to 982 (depending on day/weather)
-    
-    -- body="Beckoner's Doublet +3",    -- __, 24, __ [13/13, 130]
-    -- legs="Beckoner's Spats +3",      -- __, 30, __ [12/12, 157]
-    -- feet="Beckoner's Pigaches +3",   -- 80, __, __ [__/__, 168]
-    -- 170 Base Siphon, 607 Summoning Skill, 15 Weather Multiplier [49 PDT/49 MDT, 678 M.Eva]
-    -- MP Siphoned = 836 to 1017 (depending on day/weather)
-  }
-
-  sets.precast.JA['Mana Cede'] = {
-    -- hands="Caller's Bracers +2", -- This and gifts cap out the effect; no need to reforge
-  }
-
-  -- Pact delay reduction gear: summoning skill, -BP Delay, -BP Delay II
-  -- Caps: summoning skill @670, -BP Delay @15, -BP Delay II @15, -BP Delay Total @30 (including the 10s from gifts)
-  sets.precast.BloodPactWard = {
-    main="Malignance Pole",         -- __, __, __, __ [20/20, ___]
-    sub="Vox Grip",                 --  3, __, __, __ [__/__, ___]
-    ammo="Epitaph",                 -- __, __,  5, __ [__/__, ___]
-    head="Beckoner's Horn +3",      -- 23, __, __, __ [10/10, 130]; Keep on for Favor bonus
-    body="Beckoner's Doublet +2",   -- 19, __, __, __ [12/12, 120]
-    hands="Baayami Cuffs +1",       -- 33,  7, __, __ [__/__,  93]
-    legs="Baayami Slops +1",        -- 35,  8, __, __ [__/__, 139]
-    feet="Baayami Sabots +1",       -- 29, __, __, __ [__/__, 139]
-    neck="Incanter's Torque",       -- 10, __, __, __ [__/__, ___]
-    ear1="Lodurr Earring",          -- 10, __, __, __ [__/__, ___]
-    ear2="Cath Palug Earring",      --  5, __, __, __ [__/__, ___]
-    ring1="Evoker's Ring",          -- 10, __, __, __ [__/__, ___]
-    ring2="Stikini Ring +1",        --  8, __, __, __ [__/__, ___]
-    back=gear.SMN_Skill_Cape,       --  8, __,  2, __ [__/__, ___]
-    waist="Kobo Obi",               --  8, __, __, __ [__/__, ___]
-    -- Traits/Merits/Gifts            469, __, __, 10
-    -- Master Levels                    2
-    -- 672 Summon Skill, 15 -BP Delay, 7 -BP Delay II, 10 -BP Delay III [42 PDT/42 MDT, 621 M.Eva]
-    
-    -- body="Beckoner's Doublet +3",-- 24, __, __, __ [13/13, 130]
-    -- back=gear.SMN_FC_Cape,       -- __, __, __, __ [10/__, ___]
-    -- Traits/Merits/Gifts            469, __, __, 10
-    -- Master Levels                    3
-    -- 670 Summon Skill, 15 -BP Delay, 5 -BP Delay II, 10 -BP Delay III [53 PDT/43 MDT, 631 M.Eva]
-  }
-  sets.precast.BloodPactRage = set_combine(sets.precast.BloodPactWard, {})
-
-  sets.precast.BloodPactWard.NirvAM = {
-    main="Nirvana",                 -- __, __, __, __ [__/__, ___]
-    sub="Elan Strap +1",            -- __, __, __, __ [__/__, ___]
-    ammo="Epitaph",                 -- __, __,  5, __ [__/__, ___]
-    head="Beckoner's Horn +3",      -- 23, __, __, __ [10/10, 130]; Keep on for Favor bonus
-    body="Beckoner's Doublet +2",   -- 19, __, __, __ [12/12, 120]
-    hands="Baayami Cuffs +1",       -- 33,  7, __, __ [__/__,  93]
-    legs="Baayami Slops +1",        -- 35,  8, __, __ [__/__, 139]
-    feet="Baayami Sabots +1",       -- 29, __, __, __ [__/__, 139]
-    neck="Incanter's Torque",       -- 10, __, __, __ [__/__, ___]
-    ear1="Lodurr Earring",          -- 10, __, __, __ [__/__, ___]
-    ear2="Cath Palug Earring",      --  5, __, __, __ [__/__, ___]
-    ring1="Evoker's Ring",          -- 10, __, __, __ [__/__, ___]
-    ring2="Stikini Ring +1",        --  8, __, __, __ [__/__, ___]
-    back=gear.SMN_Skill_Cape,       --  8, __,  2, __ [__/__, ___]
-    waist="Kobo Obi",               --  8, __, __, __ [__/__, ___]
-    -- Traits/Merits/Gifts            469, __, __, 10
-    -- 667 Summon Skill, 15 -BP Delay, 7 -BP Delay II, 10 -BP Delay III [22 PDT/22 MDT, 621 M.Eva]
-
-    -- body="Beckoner's Doublet +3",-- 24, __, __, __ [13/13, 130]
-    -- 672 Summon Skill, 15 -BP Delay, 7 -BP Delay II, 10 -BP Delay III [23 PDT/23 MDT, 631 M.Eva]
-
-    -- ring2="Defending Ring",      -- __, __, __, __ [10/10, ___]
-    -- back=gear.SMN_FC_Cape,       -- __, __, __, __ [10/__, ___]
-    -- Master Levels                   14
-    -- 670 Summon Skill, 15 -BP Delay, 5 -BP Delay II, 10 -BP Delay III [43 PDT/33 MDT, 631 M.Eva]
-  }
-  sets.precast.BloodPactRage.NirvAM = set_combine(sets.precast.BloodPactWard.NirvAM, {})
 
 
   ------------------------------------------------------------------------------------------------

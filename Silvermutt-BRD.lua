@@ -158,7 +158,27 @@ function init_gear_sets()
   sets.org.job[1] = {range="Marsyas"}
   sets.org.job[2] = {range="Daurdabla"}
   sets.org.job[3] = {range="Gjallarhorn"}
-  
+
+
+  -----------------------------------------------------------------------------------------------
+  ------------------------------------- Job Ability Sets ----------------------------------------
+  -----------------------------------------------------------------------------------------------
+
+  -- Precast sets to enhance JAs
+  sets.precast.JA['Nightingale'] = {
+    -- feet="Bihu Slippers +3", -- +1 is acceptable
+  }
+  sets.precast.JA['Troubadour'] = {
+    -- body="Bihu Jstcorps. +3", -- +1 is acceptable
+  }
+  sets.precast.JA['Soul Voice'] = {
+    -- legs="Bihu Cannions +3", -- +1 is acceptable
+  }
+
+  -- Waltz set (chr and vit)
+  sets.precast.Waltz = {}
+
+
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Precast Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
@@ -241,20 +261,6 @@ function init_gear_sets()
     -- sub="Ammurapi Shield", -- M.Acc
     -- waist="Shinjutsu-no-Obi +1", -- Conserve MP
   })
-
-  -- Precast sets to enhance JAs
-  sets.precast.JA.Nightingale = {
-    -- feet="Bihu Slippers +3", -- +1 is acceptable
-  }
-  sets.precast.JA.Troubadour = {
-    -- body="Bihu Jstcorps. +3", -- +1 is acceptable
-  }
-  sets.precast.JA['Soul Voice'] = {
-    -- legs="Bihu Cannions +3", -- +1 is acceptable
-  }
-
-  -- Waltz set (chr and vit)
-  sets.precast.Waltz = {}
 
 
   ------------------------------------------------------------------------------------------------

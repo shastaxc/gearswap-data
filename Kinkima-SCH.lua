@@ -354,26 +354,22 @@ end
 
 -- Define sets and vars used by this job file.
 function init_gear_sets()
+  -----------------------------------------------------------------------------------------------
+  ---------------------------------------- Job Abilities ----------------------------------------
+  -----------------------------------------------------------------------------------------------
+
+  -- Precast sets to enhance JAs
+  sets.precast.JA['Tabula Rasa'] = {
+    legs="Pedagogy Pants +3", -- +1 is acceptable
+  }
+  sets.precast.JA['Enlightenment'] = {
+    body="Pedagogy Gown +3", -- +1 is acceptable
+  }
+
 
   ------------------------------------------------------------------------------------------------
   ---------------------------------------- Precast Sets ------------------------------------------
   ------------------------------------------------------------------------------------------------
-
-  -- Precast sets to enhance JAs
-  sets.precast.JA['Tabula Rasa'] = {
-    legs="Pedagogy Pants +3",
-  }
-  sets.precast.JA['Enlightenment'] = {
-    body="Pedagogy Gown +3",
-  }
-  sets.precast.JA['Sublimation'] = {
-    main="Siriti",                    --1
-    sub="Genmei Shield",
-    head="Academic's Mortarboard +3", --4
-    body="Pedagogy Gown +3",          --5
-    ear1="Savant's Earring",          --1
-    waist="Embla Sash",               --5
-  } -- 15 Sublimation
 
   -- Fast cast sets for spells
   sets.precast.FC = {

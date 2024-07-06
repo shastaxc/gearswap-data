@@ -228,22 +228,22 @@ function init_gear_sets()
 
   -- A tic must pass with the HP+ equipment still on before the HP gains are counted for the ability.
   sets.precast.JA['Spirit Surge'] = {
-    body="Pteroslaver Mail +1",
-    -- body="Pteroslaver Mail +3",
+    body="Pteroslaver Mail +1", -- +1 is acceptable
+    -- body="Pteroslaver Mail +3", -- +1 is acceptable
   }
   sets.precast.JA['Call Wyvern'] = {
-    body="Pteroslaver Mail +1",
-    -- body="Pteroslaver Mail +3",
+    body="Pteroslaver Mail +1", -- +1 is acceptable
+    -- body="Pteroslaver Mail +3", -- +1 is acceptable
   }
   sets.precast.JA['Ancient Circle'] = {
-    legs="Vishap Brais +2",
-    -- legs="Vishap Brais +3",
+    legs="Vishap Brais +2", -- +1 is acceptable
+    -- legs="Vishap Brais +3", -- +1 is acceptable
   }
 
   sets.precast.JA['Spirit Link'] = {
-    hands="Peltast's Vambraces +1",   -- Augments pet debuff erasure, maybe TP transfer/HP restoration
-    feet="Pteroslaver Greaves +1",    -- Augments pet buff duration
-    -- hands="Pteroslaver Vambraces +3",
+    hands="Peltast's Vambraces +1", -- Augments pet debuff erasure, maybe TP transfer/HP restoration
+    feet="Pteroslaver Greaves +1", -- Augments pet buff duration; +1 is acceptable
+    -- hands="Pteroslaver Vambraces +3", -- Augments pet debuff erasure, maybe TP transfer/HP restoration
   }
 
   -- STP > Multihit
@@ -265,6 +265,7 @@ function init_gear_sets()
   }
   sets.precast.JA['High Jump'] = set_combine(sets.precast.JA['Jump'], {
     legs="Vishap Brais +2",
+    -- legs="Vishap Brais +3",
   })
   sets.precast.JA['Spirit Jump'] = set_combine(sets.precast.JA['Jump'], {
     feet="Peltast's Schynbalds +2",       -- __, 50 <__, __, __> [10/10, 120]; Spirit Jump TP+80
@@ -278,9 +279,9 @@ function init_gear_sets()
 
   sets.precast.JA['Angon'] = {
     ammo="Angon",
-    hands="Pteroslaver Finger Gauntlets +1",
+    hands="Pteroslaver Finger Gauntlets +1", -- +1 is acceptable
     ear2="Dragoon's Earring",
-    -- hands="Pteroslaver Finger Gauntlets +3",
+    -- hands="Pteroslaver Finger Gauntlets +3", -- +1 is acceptable
   }
 
   -- Fast cast sets for spells

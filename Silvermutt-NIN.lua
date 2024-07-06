@@ -251,7 +251,7 @@ function init_gear_sets()
     legs="Hattori Hakama +2",                           -- 11/11, 125 [ 70] <__>
     feet="Mochizuki Kyahan +3",                         -- __/__,  84 [ 33] < 8>
     neck="Moonlight Necklace",                          -- __/__,  15 [___] <15>
-    ear1="Odnowa Earring +1",
+    ear1="Odnowa Earring +1",                           --  3/ 5, ___ [110] <__>
     ear2="Cryptic Earring",                             -- __/__, ___ [ 40] < 4>
     ring1="Defending Ring",                             -- 10/10, ___ [___] <__>
     ring2="Eihwaz Ring",                                -- __/__, ___ [ 70] < 5>
@@ -272,20 +272,20 @@ function init_gear_sets()
 
   sets.precast.JA['Provoke'] = set_combine(sets.Enmity, {})
   sets.precast.JA['Mijin Gakure'] = {
-    -- legs="Mochizuki Hakama +3"
+    -- legs="Mochizuki Hakama +3", -- +1 is acceptable
   }
   sets.precast.JA['Futae'] = {
     hands="Hattori Tekko +2",
     -- hands="Hattori Tekko +3",
   }
   sets.precast.JA['Sange'] = {
-    body="Mochizuki Chainmail +3"
+    body="Mochizuki Chainmail +3", -- +1 is acceptable
   }
   sets.precast.JA['Innin'] = {
-    head="Mochizuki Hatsuburi +3"
+    head="Mochizuki Hatsuburi +3", -- +1 is acceptable
   }
   sets.precast.JA['Yonin'] = {
-    head="Mochizuki Hatsuburi +3"
+    head="Mochizuki Hatsuburi +3", -- +1 is acceptable
   }
 
   sets.precast.Waltz = {

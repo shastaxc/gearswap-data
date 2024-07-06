@@ -252,12 +252,12 @@ function init_gear_sets()
 
   -- Precast sets to enhance JAs on use
   sets.precast.JA['Meikyo Shisui'] = {
-    feet="Sakonji Sune-ate +1",
-    -- feet="Sakonji Sune-ate +3",
+    feet="Sakonji Sune-ate +1", -- +1 is acceptable
+    -- feet="Sakonji Sune-ate +3", -- +1 is acceptable
   }
 
   sets.precast.JA['Warding Circle'] = {
-    head="Wakido Kabuto +3",
+    head="Wakido Kabuto +3", -- +1 is acceptable
   }
 
   sets.precast.JA['Third Eye'] = {
@@ -275,17 +275,13 @@ function init_gear_sets()
     head="Kasuga Kabuto +2",
   }
 
-  sets.precast.JA['Sekkanoki'] = {
-    hands="Kasuga Kote +1",
-  }
-
   sets.precast.JA['Shikikoyo'] = {
     legs="Sakonji Haidate +1",
     -- legs="Sakonji Haidate +3",
   }
 
   sets.precast.JA['Blade Bash'] = {
-    hands="Sakonji Kote +3",
+    hands="Sakonji Kote +3", -- +1 is acceptable
   }
 
   sets.precast.JA['Sengikori'] = {
@@ -761,6 +757,10 @@ function init_gear_sets()
     ring2="Eshmun's Ring", --20
     waist="Gishdubar Sash", --10
   }
+  sets.buff['Sekkanoki'] = {
+    hands="Kasuga Kote +1",
+  }
+
   sets.Kiting = {
     feet="Danzo Sune-Ate",
   }
@@ -803,8 +803,8 @@ function job_precast(spell, action, spellMap, eventArgs)
     -- Don't gearswap for weaponskills when Defense is on.
     if state.DefenseMode.current ~= 'None' then
       eventArgs.handled = true
-    elseif buffactive['Sekkanoki'] then
-      equip(sets.precast.JA['Sekkanoki'])
+    elseif buffactive['Sekkanoki'] and player.tp > 2000 then
+      equip(sets.buff['Sekkanoki'])
     end
   end
 

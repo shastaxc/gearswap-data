@@ -294,9 +294,37 @@ function init_gear_sets()
     waist="Chaac Belt", --1
   }
 
-  --------------------------------------
-  -- Precast sets
-  --------------------------------------
+  -----------------------------------------------------------------------------------------------
+  ---------------------------------------- Job Abilities ----------------------------------------
+  -----------------------------------------------------------------------------------------------
+
+  -- Precast sets to enhance JAs
+  sets.precast.JA.Bolster = {
+    body="Bagua Tunic +1", -- +1 is acceptable
+  }
+  sets.precast.JA['Life Cycle'] = {
+    body="Geomancy Tunic +3", -- Increase luopan HP restored
+    back=gear.GEO_Idle_Cape,
+  }
+  sets.precast.JA['Radial Arcana'] = {
+    feet="Bagua Sandals +3", -- +1 is acceptable
+  }
+  sets.precast.JA['Mending Halation'] = {
+    legs="Bagua Pants +3", -- +1 is acceptable
+  }
+  sets.precast.JA['Full Circle'] = {
+    head="Azimuth Hood +2", 
+    hands="Bagua Mitaines +3", -- +1 is acceptable
+    -- head="Azimuth Hood +3", 
+  }
+  sets.precast.JA['Concentric Pulse'] = {
+    head="Bagua Galero +3", -- +1 is acceptable
+  }
+
+
+  -----------------------------------------------------------------------------------------------
+  --------------------------------------- Precast Spells ----------------------------------------
+  -----------------------------------------------------------------------------------------------
 
   -- Fast cast sets for spells
   sets.precast.FC = {
@@ -375,34 +403,6 @@ function init_gear_sets()
     main="Daybreak",
     sub="Genmei Shield",
   })
-
-
-  -----------------------------------------------------------------------------------------------
-  ---------------------------------------- Job Abilities ----------------------------------------
-  -----------------------------------------------------------------------------------------------
-
-  -- Precast sets to enhance JAs
-  sets.precast.JA.Bolster = {
-    body="Bagua Tunic +1",
-  }
-  sets.precast.JA['Life Cycle'] = {
-    body="Geomancy Tunic +3", -- Increase luopan HP restored
-    back=gear.GEO_Idle_Cape,
-  }
-  sets.precast.JA['Radial Arcana'] = {
-    feet="Bagua Sandals +3",
-  }
-  sets.precast.JA['Mending Halation'] = {
-    legs="Bagua Pants +3",
-  }
-  sets.precast.JA['Full Circle'] = {
-    head="Azimuth Hood +2",
-    hands="Bagua Mitaines +3",
-    -- head="Azimuth Hood +3",
-  }
-  sets.precast.JA['Concentric Pulse'] = {
-    head="Bagua Galero +3",
-  }
 
 
   ----------------------------------------------------------------------------------------------

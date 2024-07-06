@@ -280,7 +280,7 @@ function init_gear_sets()
     hands="Amini Glovelettes +2",
   }
   sets.precast.JA['Camouflage'] = {
-    body="Orion Jerkin +3",
+    body="Orion Jerkin +3", -- +1 is acceptable
   }
   sets.precast.JA['Scavenge'] = {
     feet="Orion Socks +1",

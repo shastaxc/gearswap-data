@@ -292,13 +292,13 @@ function init_gear_sets()
     -- feet="Agoge Calligae +3",
   }
   sets.precast.JA['Warcry'] = {
-    head="Agoge Mask +1", -- Upgrades past +1 do not enhance ability
-    -- head="Agoge Mask +3",
+    head="Agoge Mask +1", -- +1 is acceptable
+    -- head="Agoge Mask +3", -- +1 is acceptable
   }
   sets.precast.JA['Tomahawk'] = {
-    feet="Agoge Calligae +1",
+    feet="Agoge Calligae +1", -- +1 is acceptable
     -- ammo="Throwing Tomahawk",
-    -- feet="Agoge Calligae +3",
+    -- feet="Agoge Calligae +3", -- +1 is acceptable
   }
   sets.precast.JA['Retaliation'] = {
     feet="Boii Calligae +3",

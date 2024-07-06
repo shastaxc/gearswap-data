@@ -417,23 +417,23 @@ function init_gear_sets()
   sets.precast.JA = set_combine(sets.Enmity, {})
 
   sets.precast.JA['Invincible'] = set_combine(sets.Enmity, {
-    legs="Caballarius Breeches +3",
+    legs="Caballarius Breeches +3", -- +1 is acceptable
   })
 
   -- Scales off MND
   sets.precast.JA['Chivalry'] = set_combine(sets.Enmity, {
-    hands="Caballarius Gauntlets +1",
-    -- hands="Caballarius Gauntlets +3",
+    hands="Caballarius Gauntlets +1", -- +1 is acceptable
+    -- hands="Caballarius Gauntlets +3", -- +1 is acceptable
   })
 
   sets.precast.JA['Fealty'] = set_combine(sets.Enmity, {
-    body="Caballarius Surcoat +1",
-    -- body="Caballarius Surcoat +3",
+    body="Caballarius Surcoat +1", -- +1 is acceptable
+    -- body="Caballarius Surcoat +3", -- +1 is acceptable
   })
 
   sets.precast.JA['Rampart'] = set_combine(sets.Enmity, {
-    head="Caballarius Coronet +1",
-    -- head="Caballarius Coronet +3",
+    head="Caballarius Coronet +1", -- +1 is acceptable
+    -- head="Caballarius Coronet +3", -- +1 is acceptable
   })
 
   sets.precast.JA['Shield Bash'] = set_combine(sets.Enmity, {
@@ -442,8 +442,8 @@ function init_gear_sets()
   })
 
   sets.precast.JA['Holy Circle'] = set_combine(sets.Enmity, {
-    feet="Reverence Leggings +2",
-    -- feet="Reverence Leggings +3",
+    feet="Reverence Leggings +2", -- +1 is acceptable
+    -- feet="Reverence Leggings +3", -- +1 is acceptable
   })
 
   sets.precast.JA['Divine Emblem'] = set_combine(sets.Enmity, {
