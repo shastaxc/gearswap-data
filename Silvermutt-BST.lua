@@ -478,6 +478,7 @@ function job_setup()
     ['Fantod'] = {id=0, name='', set='Buff', charges=0, tp_affected=true, multihit=false, range_type='Self', effect='+Atk next',},
   }
 
+  -- Populate a few fields of pet info from resource files
   for k,v in pairs(ready_moves) do
     local ja = res.job_abilities:with('en', k)
     v.id = ja.id
@@ -511,11 +512,13 @@ function job_setup()
     end
   end
 
-  skill_ids_2h = S{4, 6, 7, 8, 10, 12} -- DO NOT MODIFY
-  fencer_tp_bonus = {200, 300, 400, 450, 500, 550, 600, 630} -- DO NOT MODIFY
-  current_pet = nil -- DO NOT MODIFY
-  delay_auto_engage_check = os.clock() -- DO NOT MODIFY
-  last_pet_midcast_set = {} -- DO NOT MODIFY
+  ----------------- DO NOT MODIFY BELOW -----------------
+  skill_ids_2h = S{4, 6, 7, 8, 10, 12}
+  fencer_tp_bonus = {200, 300, 400, 450, 500, 550, 600, 630}
+  current_pet = nil
+  last_pet_midcast_set = {}
+  fight_max_range = 16 -- Player and target model sizes are added later
+  ----------------- DO NOT MODIFY ABOVE -----------------
   
   element_colors = {
     ['Fire']      = '\\cs(244,  58,  18)',
@@ -1832,7 +1835,6 @@ function job_handle_equipping_gear(playerStatus, eventArgs)
   check_gear()
   update_combat_form()
   update_idle_groups()
-  auto_engage_pet()
 end
 
 function update_combat_form()
@@ -2137,16 +2139,28 @@ function use_ready_move(index)
 end
 
 function auto_engage_pet()
-	if areas.Cities:contains(world.area) then
+	if state.AutomaticPetTargeting.value ~= true or not pet.isvalid or areas.Cities:contains(world.area) or silibs.midaction() then
     return
   end
 
-	local abil_recasts = windower.ffxi.get_ability_recasts()
-
-	if state.AutomaticPetTargeting.value == true and pet.isvalid and pet.status == 'Idle' and player.status == 'Engaged'
-      and player.target.type == 'MONSTER' and abil_recasts[100] < 0.1 and delay_auto_engage_check < os.clock() then
-    delay_auto_engage_check = os.clock() + 1
-    windower.chat.input('/pet "Fight" <t>')
+  -- If player is fighting and pet is not, order it to attack
+	if pet.status == 'Idle'
+      and player.status == 'Engaged'
+      and player.target.type == 'MONSTER'
+      and player.target.hpp > 0 then
+    -- Check for status that would prevent action
+    for _,status in pairs(silibs.action_type_blockers['Ability']) do
+      if buffactive[status] then
+        return
+      end
+    end
+    -- Check range
+    if player.target.distance < (player.model_size + player.target.model_size + fight_max_range) then
+      local abil_recasts = windower.ffxi.get_ability_recasts()
+      if abil_recasts[100] < 0.1 then
+        windower.chat.input('/pet "Fight" <t>')
+      end
+    end
 	end
 end
 
@@ -2495,6 +2509,18 @@ windower.raw_register_event('incoming chunk', function(id, data, modified, injec
       else
         on_pet_change(packet['Pet Name'])
       end
+    end
+  end
+end)
+
+timer1 = os.clock()
+windower.raw_register_event('prerender',function()
+  local now = os.clock()
+  if windower.ffxi.get_info().logged_in and windower.ffxi.get_player() then
+    -- Execute every second
+    if now - timer1 > 1 then
+      timer1 = now
+      auto_engage_pet()
     end
   end
 end)

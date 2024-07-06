@@ -446,8 +446,6 @@ function job_setup()
   delay_maneuver_check_tick = os.clock()
   status_maneuver_blockers = {'overload', 'terror', 'petrification', 'stun', 'sleep', 'charm',
       'amnesia', 'impairment', 'invisible', 'hide', 'camouflage'}
-  status_deploy_blockers = {'terror', 'petrification', 'stun', 'sleep', 'charm',
-      'amnesia', 'impairment', 'invisible', 'hide', 'camouflage'}
   deploy_max_range = 16 -- Player and target model sizes are added later
   ---- DO NOT MODIFY ABOVE ------
 
@@ -1848,18 +1846,17 @@ function equip_attachments(set_name)
 end
 
 function auto_engage_pet()
-	if areas.Cities:contains(world.area) then
+	if state.AutomaticPetTargeting.value ~= true or not pet.isvalid or areas.Cities:contains(world.area) or silibs.midaction() then
     return
   end
 
-	if state.AutomaticPetTargeting.value == true
-      and pet.isvalid and pet.status == 'Idle'
+  -- If player is fighting and pet is not, order it to attack
+	if pet.status == 'Idle'
       and player.status == 'Engaged'
       and player.target.type == 'MONSTER'
-      and player.target.hp > 0
-      and not silibs.midaction() then
+      and player.target.hpp > 0 then
     -- Check for status that would prevent action
-    for _,status in pairs(status_deploy_blockers) do
+    for _,status in pairs(silibs.action_type_blockers['Ability']) do
       if buffactive[status] then
         return
       end
