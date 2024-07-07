@@ -510,6 +510,7 @@ function init_gear_sets()
     body=gear.Herc_TH_body, --2
     hands=gear.Herc_TH_hands, --2
   }
+  sets.TreasureHunter.RA = set_combine(sets.TreasureHunter, {})
 
   sets.Kiting = {
     feet="Hermes' Sandals"
@@ -746,19 +747,19 @@ function init_gear_sets()
   }
 
   sets.precast.JA['Overdrive'] = {
-    body="Pitre Tobe +3", -- +1 is acceptable
+    body="Pitre Tobe +3", -- Duration +20s; +1 is acceptable
   }
 
   sets.precast.JA['Role Reversal'] = {
-    feet="Pitre Babouches +3", -- +1 is acceptable
+    feet="Pitre Babouches +3", -- Increase HP exchange; +1 is acceptable
   }
 
   sets.precast.JA['Tactical Switch'] = {
-    feet="Karagoz Scarpe +2",
+    feet="Karagoz Scarpe +2", -- Increase TP exchange
   }
 
   sets.precast.JA['Ventriloquy'] = {
-    legs="Pitre Churidars +3", -- +1 is acceptable
+    legs="Pitre Churidars +3", -- Increase enmity exchange; +1 is acceptable
   }
 
   -- TODO: update

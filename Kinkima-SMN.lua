@@ -470,7 +470,7 @@ function init_gear_sets()
   -----------------------------------------------------------------------------------------------
 
   sets.precast.JA['Astral Flow'] = {
-    head="Glyphic Horn", -- +1 is acceptable
+    head="Glyphic Horn", -- Duration +30s; +1 is acceptable
   }
 
   -- MP Siphoned = (Summoning Skill - 50 + Base Siphon Equipment) * (1.0 + Weather/Day bonuses)

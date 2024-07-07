@@ -655,10 +655,10 @@ function init_gear_sets()
   }
   sets.precast.JA['Valiance'] = set_combine(sets.precast.JA['Vallation'], {})
   sets.precast.JA['Battuta'] = set_combine(sets.Enmity, {
-    head="Futhark Bandeau +3",
+    head="Futhark Bandeau +3", --  Increase counter damage
   })
   sets.precast.JA['Liement'] = set_combine(sets.Enmity, {
-    body="Futhark Coat +3",
+    body="Futhark Coat +3", -- Increase duration
   })
 
   sets.precast.JA['Lunge'] = {
@@ -712,16 +712,16 @@ function init_gear_sets()
   sets.precast.JA['Swipe'].Safe = set_combine(sets.precast.JA['Lunge'].Safe, {})
 
   sets.precast.JA['Gambit'] = set_combine(sets.Enmity, {
-    hands="Runeist Mitons +3",
+    hands="Runeist Mitons +3", -- Increase duration
   })
   sets.precast.JA['Rayke'] = set_combine(sets.Enmity, {
-    feet="Futhark Boots +1", -- +1 is acceptable
+    feet="Futhark Boots +1", -- Enhance effect (exact effect unknown); +1 is acceptable
   })
   sets.precast.JA['Elemental Sforzo'] = set_combine(sets.Enmity, {
-    body="Futhark Coat +3", -- +1 is acceptable
+    body="Futhark Coat +3", -- Duration +10s; +1 is acceptable
   })
   sets.precast.JA['Swordplay'] = set_combine(sets.Enmity, {
-    hands="Futhark Mitons",
+    hands="Futhark Mitons", -- Increase Subtle Blow effect
   })
 
   -- Divine Magic skill

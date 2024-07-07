@@ -506,10 +506,10 @@ function init_gear_sets()
 
   -- Precast sets to enhance JAs
   sets.precast.JA['Tabula Rasa'] = {
-    legs="Pedagogy Pants +3", -- +1 is acceptable
+    legs="Pedagogy Pants +3", -- Duration +30s; +1 is acceptable
   }
   sets.precast.JA['Enlightenment'] = {
-    body="Pedagogy Gown +3", -- +1 is acceptable
+    body="Pedagogy Gown +3", -- Increases magic skill based on merits; +1 is acceptable
   }
 
 

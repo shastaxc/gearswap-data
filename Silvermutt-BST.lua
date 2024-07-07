@@ -911,14 +911,14 @@ function init_gear_sets()
     -- 229 MND, 24 Reward Regen, 97 Reward Potency, 37 Reward Recast- [38 PDT/21 MDT, 337 M.Eva] {Pet: 23 PDT/18 MDT, 0 Lv}
   }
 	sets.precast.JA['Killer Instinct'] = {
-    head="Ankusa Helm +1", -- +1 is acceptable
-    -- head="Ankusa Helm +3", -- +1 is acceptable
+    head="Ankusa Helm +1", -- Increase duration based on merits; +1 is acceptable
+    -- head="Ankusa Helm +3", -- Increase duration based on merits; +1 is acceptable
   }
 	sets.precast.JA.Familiar = {
-    legs="Ankusa Trousers +3", -- +1 is acceptable
+    legs="Ankusa Trousers +3", -- Increase duration, pet haste +10%; +1 is acceptable
   }
 	sets.precast.JA.Tame = {
-    head="Totemic Helm +3",
+    head="Totemic Helm +3", -- Increase success rate
   }
 
   -- Charm+ gear cap for accuracy at 99%?
@@ -949,10 +949,10 @@ function init_gear_sets()
 	sets.precast.JA.Spur = {
     main=gear.Skullrender_C,
     sub=gear.Skullrender_C,
-    feet="Nukumi Ocreae +2",
+    feet="Nukumi Ocreae +2", -- Increase pet STP
     back="Artio's Mantle",
 
-    -- feet="Nukumi Ocreae +3",
+    -- feet="Nukumi Ocreae +3", -- Increase pet STP
   }
 	sets.precast.JA['Feral Howl'] = {
     main="Agwu's Axe",                -- 55 [__/__, ___]

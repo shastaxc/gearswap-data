@@ -274,6 +274,7 @@ function init_gear_sets()
     body=gear.Herc_TH_body, --2
     hands=gear.Herc_TH_hands, --2
   }
+  sets.TreasureHunter.RA = set_combine(sets.TreasureHunter, {})
 
   sets.Kiting = {
     feet="Skadi's Jambeaux +1"
@@ -437,10 +438,10 @@ function init_gear_sets()
 
   sets.precast.JA['Provoke'] = set_combine(sets.Enmity, {})
   sets.precast.JA['No Foot Rise'] = {
-    body="Horos Casaque +3", -- +1 is acceptable
+    body="Horos Casaque +3", -- Grant TP return based on merits; +1 is acceptable
   }
   sets.precast.JA['Trance'] = {
-    head="Horos Tiara +3" -- +1 is acceptable
+    head="Horos Tiara +3" -- Duration +20s; +1 is acceptable
   }
 
   -- Waltz Potency/CHR
@@ -492,12 +493,12 @@ function init_gear_sets()
     legs="Dashing Subligar",          -- 10(_), 11, 16 <__> [__/__,  69]; Gives Blink
   })
   sets.precast.Samba = {
-    head="Maxixi Tiara +3", -- +1 is acceptable
+    head="Maxixi Tiara +3", -- Duration +45s; +1 is acceptable
     back=gear.DNC_TP_DW_Cape,
   }
   sets.precast.Jig = {
-    legs="Horos Tights +3", -- +2 is acceptable
-    feet="Maxixi Toe Shoes +3",
+    legs="Horos Tights +3", -- Increase duration; +2 is acceptable
+    feet="Maxixi Toe Shoes +3", -- Increase duration
   }
 
   -- Acc
@@ -520,7 +521,7 @@ function init_gear_sets()
   }
 
   sets.precast.Step['Feather Step'] = set_combine(sets.precast.Step, {
-    feet="Maculele Toe Shoes +3",
+    feet="Maculele Toe Shoes +3", -- Increase critical hit effect
   })
   sets.precast.Flourish1 = {}
   sets.precast.Flourish1['Animated Flourish'] = set_combine(sets.Enmity, {})
@@ -536,15 +537,15 @@ function init_gear_sets()
 
   sets.precast.Flourish2 = {}
   sets.precast.Flourish2['Reverse Flourish'] = {
-    hands="Maculele Bangles +3",
+    hands="Maculele Bangles +3", -- Increase TP return
     back=gear.DNC_Adoulin_Cape,
   }
   sets.precast.Flourish3 = {}
   sets.precast.Flourish3['Striking Flourish'] = {
-    body="Maculele Casaque +3"
+    body="Maculele Casaque +3", -- Increase critical hit rate and double attack
   }
   sets.precast.Flourish3['Climactic Flourish'] = {
-    head="Maculele Tiara +3",
+    head="Maculele Tiara +3", -- Force additional critical hit, increase critical hit damage
   }
 
 

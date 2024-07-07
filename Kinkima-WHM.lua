@@ -328,6 +328,7 @@ function init_gear_sets()
   --     Job Abilities
   -----------------------------------------------------------------------------------------------
 
+  -- Mainly want to reduce enmity.
   sets.precast.JA.Benediction = {
     main="Bunzi's Rod",             -- __/__, ___ [__]
     sub="Genmei Shield",            -- 10/__, ___ [__]

@@ -299,13 +299,13 @@ function init_gear_sets()
 
   -- Precast sets to enhance JAs
   sets.precast.JA['Nightingale'] = {
-    -- feet="Bihu Slippers +3", -- +1 is acceptable
+    -- feet="Bihu Slippers +3", -- Increase duration based on merits; +1 is acceptable
   }
   sets.precast.JA['Troubadour'] = {
-    -- body="Bihu Jstcorps. +3", -- +1 is acceptable
+    -- body="Bihu Jstcorps. +3", -- Increase duration based on merits; +1 is acceptable
   }
   sets.precast.JA['Soul Voice'] = {
-    -- legs="Bihu Cannions +3", -- +1 is acceptable
+    -- legs="Bihu Cannions +3", -- Duration +30s; +1 is acceptable
   }
 
   -- Waltz set (chr and vit)

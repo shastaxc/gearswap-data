@@ -277,6 +277,7 @@ function init_gear_sets()
     body=gear.Herc_TH_body, --2
     hands=gear.Herc_TH_hands, --2
   }
+  sets.TreasureHunter.RA = set_combine(sets.TreasureHunter, {})
 
   sets.Kiting = {
     legs=gear.Carmine_A_legs,
@@ -435,25 +436,24 @@ function init_gear_sets()
   --     Job Abilities
   -----------------------------------------------------------------------------------------------
 
-  -- Precast sets to enhance JAs
   sets.precast.JA['Eagle Eye Shot'] = {
-    -- legs="Arcadian Braccae +3",
+    -- legs="Arcadian Braccae +3", -- Damage +20%
   }
   sets.precast.JA['Bounty Shot'] = {
-    hands="Amini Glovelettes +2",
+    hands="Amini Glovelettes +2", -- Increase initial TH level
   }
   sets.precast.JA['Camouflage'] = {
-    body="Orion Jerkin +3", -- +1 is acceptable
+    body="Orion Jerkin +3", -- Duration +100s; +1 is acceptable
   }
   sets.precast.JA['Scavenge'] = {
-    feet="Orion Socks +1",
-    -- feet="Orion Socks +3",
+    feet="Orion Socks +1", -- Recover more ammo
+    -- feet="Orion Socks +3", -- Recover more ammo
   }
   sets.precast.JA['Shadowbind'] = {
-    hands="Orion Bracers +3",
+    hands="Orion Bracers +3", -- Increase duration
   }
   sets.precast.JA['Sharpshot'] = {
-    legs="Orion Braccae +3",
+    legs="Orion Braccae +3", -- Increase ranged accuracy
   }
 
   sets.precast.Waltz = {

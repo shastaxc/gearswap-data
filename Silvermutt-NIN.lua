@@ -247,6 +247,7 @@ function init_gear_sets()
     body=gear.Herc_TH_body, --2
     hands=gear.Herc_TH_hands, --2
   }
+  sets.TreasureHunter.RA = set_combine(sets.TreasureHunter, {})
 
   sets.Kiting = {
     feet="Danzo sune-ate",
@@ -381,20 +382,10 @@ function init_gear_sets()
 
   sets.precast.JA['Provoke'] = set_combine(sets.Enmity, {})
   sets.precast.JA['Mijin Gakure'] = {
-    -- legs="Mochizuki Hakama +3", -- +1 is acceptable
-  }
-  sets.precast.JA['Futae'] = {
-    hands="Hattori Tekko +2",
-    -- hands="Hattori Tekko +3",
+    -- legs="Mochizuki Hakama +3", -- Damage +50%; +1 is acceptable
   }
   sets.precast.JA['Sange'] = {
-    body="Mochizuki Chainmail +3", -- +1 is acceptable
-  }
-  sets.precast.JA['Innin'] = {
-    head="Mochizuki Hatsuburi +3", -- +1 is acceptable
-  }
-  sets.precast.JA['Yonin'] = {
-    head="Mochizuki Hatsuburi +3", -- +1 is acceptable
+    body="Mochizuki Chainmail +3", -- Increase ranged attack based on merits; +1 is acceptable
   }
 
   sets.precast.Waltz = {
@@ -1542,6 +1533,10 @@ function init_gear_sets()
     ring2="Eshmun's Ring", --20
     waist="Gishdubar Sash", --10
   }
+  sets.buff['Futae'] = {
+    hands="Hattori Tekko +2",
+    -- hands="Hattori Tekko +3",
+  }
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -1617,7 +1612,7 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     end
 
     if state.Buff.Futae then
-      equip(sets.precast.JA['Futae'])
+      equip(sets.buff['Futae'])
     end
   elseif spellMap == 'Utsusemi' then
     if buffactive['Yonin'] then

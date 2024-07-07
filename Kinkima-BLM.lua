@@ -367,7 +367,7 @@ function init_gear_sets()
 
   -- Precast sets to enhance JAs
   sets.precast.JA['Manafont'] = {
-    body="Archmage's Coat +1", -- +1 is acceptable
+    body="Archmage's Coat +1", -- Duration +30s; +1 is acceptable
   }
 
 

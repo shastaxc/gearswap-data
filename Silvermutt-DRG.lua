@@ -325,6 +325,8 @@ function init_gear_sets()
     -- ring2="Stikini Ring +1",   --  1
   }
 
+  -- Idle set could include Pteroslaver body to ensure wyvern gets support job abilities when zoning
+  -- but I don't think the bonuses are strong enough to make it worth losing the defensive stats.
   sets.idle = set_combine(sets.HeavyDef, {})
 
   sets.idle.Regain = set_combine(sets.idle, sets.latent_regain)
@@ -356,16 +358,16 @@ function init_gear_sets()
 
   -- A tic must pass with the HP+ equipment still on before the HP gains are counted for the ability.
   sets.precast.JA['Spirit Surge'] = {
-    body="Pteroslaver Mail +1", -- +1 is acceptable
-    -- body="Pteroslaver Mail +3", -- +1 is acceptable
+    body="Pteroslaver Mail +1", -- Duration +20s; +1 is acceptable
+    -- body="Pteroslaver Mail +3", -- Duration +20s; +1 is acceptable
   }
   sets.precast.JA['Call Wyvern'] = {
-    body="Pteroslaver Mail +1", -- +1 is acceptable
-    -- body="Pteroslaver Mail +3", -- +1 is acceptable
+    body="Pteroslaver Mail +1", -- Add support job abilities to pet; +1 is acceptable
+    -- body="Pteroslaver Mail +3", -- Add support job abilities to pet; +1 is acceptable
   }
   sets.precast.JA['Ancient Circle'] = {
-    legs="Vishap Brais +2", -- +1 is acceptable
-    -- legs="Vishap Brais +3", -- +1 is acceptable
+    legs="Vishap Brais +2", -- Duration +50%, potency +2%; +1 is acceptable
+    -- legs="Vishap Brais +3", -- Duration +50%, potency +2%; +1 is acceptable
   }
 
   sets.precast.JA['Spirit Link'] = {
@@ -392,8 +394,8 @@ function init_gear_sets()
     -- 73 STP, 289 Acc <44 DA, 5 TA, 3 QA> [39 PDT/22 MDT, 378 M.Eva]
   }
   sets.precast.JA['High Jump'] = set_combine(sets.precast.JA['Jump'], {
-    legs="Vishap Brais +2",
-    -- legs="Vishap Brais +3",
+    legs="Vishap Brais +2", -- Increase enmity reduction
+    -- legs="Vishap Brais +3", -- Increase enmity reduction
   })
   sets.precast.JA['Spirit Jump'] = set_combine(sets.precast.JA['Jump'], {
     feet="Peltast's Schynbalds +2",       -- __, 50 <__, __, __> [10/10, 120]; Spirit Jump TP+80
@@ -407,9 +409,9 @@ function init_gear_sets()
 
   sets.precast.JA['Angon'] = {
     ammo="Angon",
-    hands="Pteroslaver Finger Gauntlets +1", -- +1 is acceptable
-    ear2="Dragoon's Earring",
-    -- hands="Pteroslaver Finger Gauntlets +3", -- +1 is acceptable
+    hands="Pteroslaver Finger Gauntlets +1", -- Increase potency based on merits; +1 is acceptable
+    ear2="Dragoon's Earring", -- Chance to not deplete Angon consumable
+    -- hands="Pteroslaver Finger Gauntlets +3", -- Increase potency based on merits; +1 is acceptable
   }
 
 

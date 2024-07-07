@@ -248,6 +248,7 @@ function init_gear_sets()
     body=gear.Herc_TH_body, --2
     hands=gear.Herc_TH_hands, --2
   }
+  sets.TreasureHunter.RA = set_combine(sets.TreasureHunter, {})
 
   sets.Kiting = {
     feet="Hermes' Sandals",
@@ -396,11 +397,12 @@ function init_gear_sets()
 
   -- Precast sets to enhance JAs on use
   sets.precast.JA['Hundred Fists'] = {
-    legs="Hesychast's Hose +3",
+    legs="Hesychast's Hose +3", -- Duration +15s; +1 is acceptable
   }
   sets.precast.JA['Boost'] = {
     waist="Ask Sash",
   }
+  -- Slow+ gear can increase the duration of Boost
   sets.precast.JA['Boost'].Idle = {
     head="Gnadbhod's Helm",
     body=empty,
@@ -412,44 +414,46 @@ function init_gear_sets()
     waist="Ask Sash",
   }
   sets.precast.JA['Perfect Counter'] = {
-    hands="Tantra Crown +1",      -- Increase base counter dmg by +10
-    -- head="Bhikku Crown +3",    -- Increase base counter dmg by +35
+    hands="Tantra Crown +1", -- Increase base counter dmg by +10
+    -- head="Bhikku Crown +3", -- Increase base counter dmg by +35
   }
   sets.precast.JA['Dodge'] = {
-    feet="Anchorite's Gaiters +3",
+    feet="Anchorite's Gaiters +3", -- Increase evasion
   }
   sets.precast.JA['Focus'] = {
-    head="Anchorite's Crown +1",
+    head="Anchorite's Crown +1", -- Increase acc and ranged acc
   }
   sets.precast.JA['Counterstance'] = {
-    feet="Hesychast's Gaiters +3",
+    feet="Hesychast's Gaiters +3", -- Increase counter rate
   }
   sets.precast.JA['Footwork'] = {
-    feet="Bhikku Gaiters +2",
-    -- feet="Bhikku Gaiters +3",
+    feet="Bhikku Gaiters +2", -- Increase attack
+    -- feet="Bhikku Gaiters +3", -- Increase attack
   }
   sets.precast.JA['Formless Strikes'] = {
-    body="Hesychast's Cyclas +2", -- +1 is acceptable
+    body="Hesychast's Cyclas +2", -- Increase duration based on merits; +1 is acceptable
   }
   sets.precast.JA['Mantra'] = {
-    feet="Hesychast's Gaiters +3", -- +1 is acceptable
+    feet="Hesychast's Gaiters +3", -- Increase HP based on merits; +1 is acceptable
   }
 
+  -- MND
   sets.precast.JA['Chi Blast'] = {
-    head="Hesychast's Crown +1", -- 15, Enhance Penance; +1 is acceptable
-    body=gear.Herc_TH_body, --2
-    hands=gear.Herc_TH_hands, --2
-  } -- MND
+    head="Hesychast's Crown +1", -- Enhance Penance; +1 is acceptable
+    body=gear.Herc_TH_body,
+    hands=gear.Herc_TH_hands,
+  }
 
+  -- VIT
   sets.precast.JA['Chakra'] = {
-    body="Anchorite's Cyclas +2", -- Enhances Chakra
-    hands="Hesychast's Gloves", -- Enhances Chakra
+    body="Anchorite's Cyclas +2", -- Increase HP restore, add chance to remove Paralyze
+    hands="Hesychast's Gloves", -- Increase HP restore, add chance to remove Plague
     ear2="Odnowa Earring +1",
     ring1="Defending Ring",
     ring2="Gelatinous Ring +1",
-    -- body="Anchorite's Cyclas +3", -- Enhances Chakra
-    -- hands="Hesychast's Gloves +3", -- Enhances Chakra
-  } -- VIT
+    -- body="Anchorite's Cyclas +3", -- Increase HP restore, add chance to remove Paralyze
+    -- hands="Hesychast's Gloves +3", -- Increase HP restore, add chance to remove Plague
+  }
 
   sets.precast.JA['Provoke'] = set_combine(sets.Enmity, {
     body=gear.Herc_TH_body, --2

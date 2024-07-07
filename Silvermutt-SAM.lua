@@ -341,32 +341,32 @@ function init_gear_sets()
   -----------------------------------------------------------------------------------------------
 
   sets.precast.JA['Meikyo Shisui'] = {
-    feet="Sakonji Sune-ate +1", -- +1 is acceptable
-    -- feet="Sakonji Sune-ate +3", -- +1 is acceptable
+    feet="Sakonji Sune-ate +1", -- Reduce WS cost to 750 TP; +1 is acceptable
+    -- feet="Sakonji Sune-ate +3", -- Reduce WS cost to 750 TP; +1 is acceptable
   }
 
   sets.precast.JA['Warding Circle'] = {
-    head="Wakido Kabuto +3", -- +1 is acceptable
+    head="Wakido Kabuto +3", -- Duration +50%, potency +2%; +1 is acceptable
   }
 
   sets.precast.JA['Third Eye'] = {
-    legs="Sakonji Haidate +1",
-    -- legs="Sakonji Haidate +3",
+    legs="Sakonji Haidate +1", -- Increase counter rate under Seigan
+    -- legs="Sakonji Haidate +3", -- Increase counter rate under Seigan
   }
 
   sets.precast.JA['Meditate'] = {
-    head="Wakido Kabuto +3",
-    hands="Sakonji Kote +3",
-    back="Smertrios's Mantle",
+    head="Wakido Kabuto +3", -- Increase duration
+    hands="Sakonji Kote +3", -- Increase duration
+    back="Smertrios's Mantle", -- Increase duration
   }
 
   sets.precast.JA['Seigan'] = {
-    head="Kasuga Kabuto +2",
+    head="Kasuga Kabuto +2", -- Add counter effect to Seigan
   }
 
   sets.precast.JA['Shikikoyo'] = {
-    legs="Sakonji Haidate +1",
-    -- legs="Sakonji Haidate +3",
+    legs="Sakonji Haidate +1", -- Retain some TP based on merits
+    -- legs="Sakonji Haidate +3", -- Retain some TP based on merits
   }
 
   sets.precast.JA['Blade Bash'] = {
@@ -374,7 +374,7 @@ function init_gear_sets()
   }
 
   sets.precast.JA['Sengikori'] = {
-    feet="Kasuga Sune-ate +1",
+    feet="Kasuga Sune-ate +1", -- Increase duration based on merits
   }
 
   sets.precast.JA['Provoke'] = set_combine(sets.Enmity, {})

@@ -315,16 +315,16 @@ function init_gear_sets()
   -----------------------------------------------------------------------------------------------
 
   sets.precast.JA['Snake Eye'] = {
-    legs="Lanun Trews", -- +1 is acceptable
-    -- legs="Lanun Trews +3", -- +1 is acceptable
+    legs="Lanun Trews", -- Increase chance of 0 recast; +1 is acceptable
+    -- legs="Lanun Trews +3", -- Increase chance of 0 recast; +1 is acceptable
   }
   sets.precast.JA['Wild Card'] = {
-    feet="Lanun Bottes", -- +1 is acceptable
-    -- feet="Lanun Bottes +3", -- +1 is acceptable
+    feet="Lanun Bottes", -- Reduce chance of rolling 1 or 2; +1 is acceptable
+    -- feet="Lanun Bottes +3", -- Reduce chance of rolling 1 or 2; +1 is acceptable
   }
   sets.precast.JA['Random Deal'] = {
-    body="Lanun Frac", -- +1 is acceptable
-    -- body="Lanun Frac +3", -- +1 is acceptable
+    body="Lanun Frac", -- Reduce failure chance, allow restoring 2 JAs ; +1 is acceptable
+    -- body="Lanun Frac +3", -- Reduce failure chance, allow restoring 2 JAs ; +1 is acceptable
   }
 
   sets.precast.CorsairRoll = {
@@ -352,26 +352,26 @@ function init_gear_sets()
     -- 45 PDT / 31 MDT, 445 M.Eva (7 PR Potency, 185 PR Duration, 5 PR Delay)
   }
   sets.precast.CorsairRoll["Caster's Roll"] = set_combine(sets.precast.CorsairRoll, {
-    -- legs="Chasseur's Culottes +1", -- +1 is acceptable
+    -- legs="Chasseur's Culottes +1", -- Increase roll potency; +1 is acceptable
   })
   sets.precast.CorsairRoll["Courser's Roll"] = set_combine(sets.precast.CorsairRoll, {
-    -- feet="Chasseur's Bottes +1", -- +1 is acceptable
+    -- feet="Chasseur's Bottes +1", -- Increase roll potency; +1 is acceptable
   })
   sets.precast.CorsairRoll["Blitzer's Roll"] = set_combine(sets.precast.CorsairRoll, {
-    -- head="Chasseur's Tricorne +1", -- +1 is acceptable
+    -- head="Chasseur's Tricorne +1", -- Increase roll potency; +1 is acceptable
   })
   sets.precast.CorsairRoll["Tactician's Roll"] = set_combine(sets.precast.CorsairRoll, {
-    -- body="Chasseur's Frac +1", -- +1 is acceptable
+    -- body="Chasseur's Frac +1", -- Increase roll potency; +1 is acceptable
   })
   sets.precast.CorsairRoll["Allies' Roll"] = set_combine(sets.precast.CorsairRoll, {
-    hands="Chasseur's Gants +2", -- +1 is acceptable
+    hands="Chasseur's Gants +2", -- Increase roll potency; +1 is acceptable
   })
 
   sets.precast.LuzafRing = {
     ring1="Luzaf's Ring",
   }
   sets.precast.FoldDoubleBust = {
-    -- hands="Lanun Gants +3", -- +1 is acceptable
+    -- hands="Lanun Gants +3", -- Add chance to clear 2 Busts; +1 is acceptable
   }
 
   -- Dmg is based on Gun DMG, bullet DMG, Quick Draw+ stat, elemental bonuses, MAB.
@@ -394,7 +394,8 @@ function init_gear_sets()
     -- waist="Eschan Stone",        -- __,  7,  7, __, __/__
     -- neck="Commodore Charm +2",   -- 15,  7, 25, __, __/__
     -- back=gear.COR_QD_Cape,       -- 30, 10, 20, __, 10/__
-  } -- 229 AGI, 322 MAB, 198 M.Acc, 24 STP, 30PDT/8MDT
+    -- 229 AGI, 322 MAB, 198 M.Acc, 24 STP, 30PDT/8MDT
+  }
 
   -- Full STP; and more recast reduction
   sets.precast.CorsairShot.STP = {
@@ -450,10 +451,9 @@ function init_gear_sets()
   }
   sets.precast.CorsairShot['Dark Shot'] = set_combine(sets.precast.CorsairShot['Light Shot'], {})
 
-  -- Empy feet for enhancement effect; and more recast reduction
   sets.precast.CorsairShot.Enhance = {
     -- head="Blood Mask", -- Recast -5
-    -- feet="Chasseur's Bottes +2",
+    -- feet="Chasseur's Bottes +2", -- Increase subsequent elemental damage of the same type
   }
 
   sets.precast.Waltz = {

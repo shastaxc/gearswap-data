@@ -421,26 +421,26 @@ function init_gear_sets()
   -----------------------------------------------------------------------------------------------
 
   sets.precast.JA['Berserk'] = {
-    body="Pummeler's Lorica +2",
-    feet="Agoge Calligae +1",
-    back="Cichol's Mantle",
-    -- body="Pummeler's Lorica +3",
-    -- feet="Agoge Calligae +3",
+    body="Pummeler's Lorica +2", -- Increase duration
+    feet="Agoge Calligae +1", -- Increase duration
+    back="Cichol's Mantle", -- Increase duration
+    -- body="Pummeler's Lorica +3", -- Increase duration
+    -- feet="Agoge Calligae +3", -- Increase duration
   }
   sets.precast.JA['Warcry'] = {
-    head="Agoge Mask +1", -- +1 is acceptable
-    -- head="Agoge Mask +3", -- +1 is acceptable
+    head="Agoge Mask +1", -- Duration +30s, increase TP Bonus based on merits, makes TP bonus AoE; +1 is acceptable
+    -- head="Agoge Mask +3", -- Duration +30s, increase TP Bonus based on merits, makes TP bonus AoE; +1 is acceptable
   }
   sets.precast.JA['Tomahawk'] = {
-    feet="Agoge Calligae +1", -- +1 is acceptable
+    feet="Agoge Calligae +1", -- Increase defense reduction based on merits; +1 is acceptable
     -- ammo="Throwing Tomahawk",
-    -- feet="Agoge Calligae +3", -- +1 is acceptable
+    -- feet="Agoge Calligae +3", -- Increase defense reduction based on merits; +1 is acceptable
   }
   sets.precast.JA['Retaliation'] = {
-    feet="Boii Calligae +3",
+    feet="Boii Calligae +3", -- Increase retaliation damage
   }
   sets.precast.JA['Blood Rage'] = {
-    body="Boii Lorica +3",
+    body="Boii Lorica +3", -- Increase duration
   }
   sets.precast.JA['Provoke'] = set_combine(sets.Enmity, {})
 

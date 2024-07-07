@@ -494,16 +494,16 @@ function init_gear_sets()
   -----------------------------------------------------------------------------------------------
 
   sets.precast.JA['Collaborator'] = {
-    -- head="Skulker's Bonnet +1",
+    -- head="Skulker's Bonnet +1", -- Transfers additional enmity
   }
   sets.precast.JA['Accomplice'] = {
-    -- head="Skulker's Bonnet +1",
+    -- head="Skulker's Bonnet +1", -- Transfers additional enmity
   }
   sets.precast.JA['Flee'] = {
-    feet="Pillager's Poulaines +3",
+    feet="Pillager's Poulaines +3", -- Increase duration
   }
   sets.precast.JA['Hide'] = {
-    -- body="Pillager's Vest +3", -- +1 is acceptable
+    -- body="Pillager's Vest +3", -- Duration +100s; +1 is acceptable
   }
 
   -- Theory is level and acc play a part, so prioritize: ilvl > Steal+ > Acc
@@ -533,16 +533,17 @@ function init_gear_sets()
 
   sets.precast.JA['Despoil'] = {
     ammo="Barathrum",
-    legs="Skulker's Culottes +2",
-    feet="Skulker's Poulaines +3",
+    legs="Skulker's Culottes +2", -- Increase success rate
+    feet="Skulker's Poulaines +3", -- Increase enfeeble potency
 
     -- legs="Skulker's Culottes +3",
   }
   sets.precast.JA['Perfect Dodge'] = {
-    hands="Plunderer's Armlets +3", -- +1 is acceptable
+    hands="Plunderer's Armlets +3", -- Duration +10s; +1 is acceptable
   }
+  -- Must remain equipped for the hit that applies Feint
   sets.precast.JA['Feint'] = {
-    -- legs="Plunderer's Culottes +3", -- This needs to be kept equipped for the hit that applies Feint
+    -- legs="Plunderer's Culottes +3", -- Increase evasion down; +1 is acceptable
   }
 
   sets.precast.Waltz = {

@@ -295,6 +295,7 @@ function init_gear_sets()
     body=gear.Merl_TH_body, --2
     waist="Chaac Belt", --1
   }
+  sets.TreasureHunter.RA = set_combine(sets.TreasureHunter, {})
 
   sets.Kiting = {
     ring1="Shneddick Ring",
@@ -459,25 +460,25 @@ function init_gear_sets()
   -----------------------------------------------------------------------------------------------
 
   sets.precast.JA.Bolster = {
-    body="Bagua Tunic +1", -- +1 is acceptable
+    body="Bagua Tunic +1", -- Duration +30s; +1 is acceptable
   }
   sets.precast.JA['Life Cycle'] = {
     body="Geomancy Tunic +3", -- Increase luopan HP restored
     back=gear.GEO_Idle_Cape,
   }
   sets.precast.JA['Radial Arcana'] = {
-    feet="Bagua Sandals +3", -- +1 is acceptable
+    feet="Bagua Sandals +3", -- Increase MP restored; +1 is acceptable
   }
   sets.precast.JA['Mending Halation'] = {
-    legs="Bagua Pants +3", -- +1 is acceptable
+    legs="Bagua Pants +3", -- Increase HP restored; +1 is acceptable
   }
   sets.precast.JA['Full Circle'] = {
-    head="Azimuth Hood +2", 
-    hands="Bagua Mitaines +3", -- +1 is acceptable
-    -- head="Azimuth Hood +3", 
+    head="Azimuth Hood +2", -- Increase MP returned
+    hands="Bagua Mitaines +3", -- Increase HP returned; +1 is acceptable
+    -- head="Azimuth Hood +3", -- Increase MP returned
   }
   sets.precast.JA['Concentric Pulse'] = {
-    head="Bagua Galero +3", -- +1 is acceptable
+    head="Bagua Galero +3", -- Deal damage by max HP instead of current HP; +1 is acceptable
   }
 
 

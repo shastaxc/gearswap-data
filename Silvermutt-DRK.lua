@@ -414,29 +414,29 @@ function init_gear_sets()
   -----------------------------------------------------------------------------------------------
 
   sets.precast.JA['Blood Weapon'] = {
-    body="Fallen's Cuirass +3", -- +1 is acceptable
+    body="Fallen's Cuirass +3", -- Duration +10s; +1 is acceptable
   }
   sets.precast.JA['Arcane Circle'] = {
-    feet="Ignominy Sollerets +1", -- +1 is acceptable
-    -- feet="Ignominy Sollerets +3", -- +1 is acceptable
+    feet="Ignominy Sollerets +1", -- Duration +50%, potency +2%; +1 is acceptable
+    -- feet="Ignominy Sollerets +3", -- Duration +50%, potency +2%; +1 is acceptable
   }
   sets.precast.JA['Last Resort'] = {
     back=gear.DRK_FC_Cape,
   }
   sets.precast.JA['Weapon Bash'] = {
-    hands="Ignominy Gauntlets +1",
-    -- hands="Ignominy Gauntlets +3",
+    hands="Ignominy Gauntlets +1", -- Increase damage
+    -- hands="Ignominy Gauntlets +3", -- Increase damage, add Chainbound effect
   }
   sets.precast.JA['Souleater'] = {
-    head="Ignominy Burgeonet +1",
-    -- head="Ignominy Burgeonet +3",
+    head="Ignominy Burgeonet +1", -- Increase HP consumption and attack boost
+    -- head="Ignominy Burgeonet +3", -- Increase HP consumption and attack boost
   }
   sets.precast.JA['Diabolic Eye'] = {
-    hands="Fallen's Finger Gauntlets +3", -- +1 is acceptable
+    hands="Fallen's Finger Gauntlets +3", -- Increase duration based on merits; +1 is acceptable
   }
   sets.precast.JA['Nether Void'] = {
-    legs="Heathen's Flanchard +2",
-    -- legs="Heathen's Flanchard +3",
+    legs="Heathen's Flanchard +2", -- Increase potency
+    -- legs="Heathen's Flanchard +3", -- Increase potency
   }
   sets.precast.JA['Provoke'] = set_combine(sets.Enmity, {})
 

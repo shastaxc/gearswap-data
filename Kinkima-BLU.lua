@@ -575,16 +575,16 @@ function init_gear_sets()
 
   sets.precast.JA['Provoke'] = set_combine(sets.Enmity, {})
   sets.precast.JA['Azure Lore'] = {
-    -- hands="Luhlaza Bazubands +1" -- +1 is acceptable
+    -- hands="Luhlaza Bazubands +1" -- Duration +10s; +1 is acceptable
   }
   sets.precast.JA['Chain Affinity'] = {
-    -- feet="Assimilator's Charuqs +1"
+    -- feet="Assimilator's Charuqs +1" -- Increases damage
   }
   sets.precast.JA['Convergence'] = {
-    -- head="Luhlaza Keffiyeh +3" -- +1 is acceptable
+    -- head="Luhlaza Keffiyeh +3" -- Increases damage; +1 is acceptable
   }
   sets.precast.JA['Enchainment'] = {
-    -- body="Luhlaza Jubbah +3" -- +1 is acceptable
+    -- body="Luhlaza Jubbah +3" -- Increases TP bonus; +1 is acceptable
   }
 
 

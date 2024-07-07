@@ -324,6 +324,7 @@ function init_gear_sets()
     hands="Volte Bracers",
     waist="Chaac Belt",
   }
+  sets.TreasureHunter.RA = set_combine(sets.TreasureHunter, {})
 
   sets.Kiting = {
     legs=gear.Carmine_D_legs,
@@ -617,38 +618,38 @@ function init_gear_sets()
   sets.precast.JA = set_combine(sets.Enmity, {})
 
   sets.precast.JA['Invincible'] = set_combine(sets.Enmity, {
-    legs="Caballarius Breeches +3", -- +1 is acceptable
+    legs="Caballarius Breeches +3", -- Duration +10s; +1 is acceptable
   })
 
   -- Scales off MND
   sets.precast.JA['Chivalry'] = set_combine(sets.Enmity, {
-    hands="Caballarius Gauntlets +1", -- +1 is acceptable
-    -- hands="Caballarius Gauntlets +3", -- +1 is acceptable
+    hands="Caballarius Gauntlets +2", -- Increases MP restored; +1 is acceptable
+    -- hands="Caballarius Gauntlets +3", -- Increases MP restored; +1 is acceptable
   })
 
   sets.precast.JA['Fealty'] = set_combine(sets.Enmity, {
-    body="Caballarius Surcoat +1", -- +1 is acceptable
-    -- body="Caballarius Surcoat +3", -- +1 is acceptable
+    body="Caballarius Surcoat +1", -- Increase duration based on merits; +1 is acceptable
+    -- body="Caballarius Surcoat +3", -- Increase duration based on merits; +1 is acceptable
   })
 
   sets.precast.JA['Rampart'] = set_combine(sets.Enmity, {
-    head="Caballarius Coronet +1", -- +1 is acceptable
-    -- head="Caballarius Coronet +3", -- +1 is acceptable
+    head="Caballarius Coronet +1", -- Duration +30s; +1 is acceptable
+    -- head="Caballarius Coronet +3", -- Duration +30s; +1 is acceptable
   })
 
   sets.precast.JA['Shield Bash'] = set_combine(sets.Enmity, {
-    hands="Caballarius Gauntlets +1",
-    -- hands="Caballarius Gauntlets +3",
+    hands="Caballarius Gauntlets +2", -- Increase damage, add Dispel effect; +2 is acceptable
+    -- hands="Caballarius Gauntlets +3", -- Increase damage, add Dispel effect; +2 is acceptable
   })
 
   sets.precast.JA['Holy Circle'] = set_combine(sets.Enmity, {
-    feet="Reverence Leggings +2", -- +1 is acceptable
-    -- feet="Reverence Leggings +3", -- +1 is acceptable
+    feet="Reverence Leggings +2", -- Duration +50%, potency +2%; +1 is acceptable
+    -- feet="Reverence Leggings +3", -- Duration +50%, potency +2%; +1 is acceptable
   })
 
   sets.precast.JA['Divine Emblem'] = set_combine(sets.Enmity, {
-    feet="Chevalier's Sabatons +2",
-    -- feet="Chevalier's Sabatons +3",
+    feet="Chevalier's Sabatons +2", -- Increase enmity bonus
+    -- feet="Chevalier's Sabatons +3", -- Increase enmity bonus
   })
 
 
