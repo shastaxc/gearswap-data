@@ -42,7 +42,7 @@ Weapons
 Abilities
 * When Boost buff is active, sets.BoostRegain set will be locked on to provide Regain. This is the only realistic
   use of the Boost ability these days.
-* When Impetus is active, and you have at least 8 consecutive hits, sets.Special.Impetus set will be equipped
+* When Impetus is active, and you have at least 8 consecutive hits, sets.Impetus set will be equipped
   over normal WS set.
 
 Other
@@ -55,7 +55,7 @@ Other
   if you choose to ignore them, it doesn't not actually affect anything.
 * Equipping certain gear such as warp rings or ammo belts will automatically lock that slot until you manually
   unequip it or change zones.
-* Set named sets.Special.SleepyHead will be equipped if you are asleep. This should have a piece of gear in it that
+* Set named sets.SleepyHead will be equipped if you are asleep. This should have a piece of gear in it that
   will deal damage to you to wake you up.
 
 
@@ -236,85 +236,34 @@ end
 
 -- Define sets and vars used by this job file.
 function init_gear_sets()
-  sets.org.job = {}
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Common
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
 
-  ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Weapon Sets -------------------------------------------
-  ------------------------------------------------------------------------------------------------
+  if sets.org then
+    sets.org.job = {}
+  end
 
-  sets.WeaponSet = {}
-  sets.WeaponSet['Verethragna'] = {main="Verethragna", sub=empty}
-  sets.WeaponSet['Piercing'] = {main="Birdbanes", sub=empty}
-  sets.WeaponSet['Slashing'] = {main="Vampiric Claws", sub=empty}
-  sets.WeaponSet['Cleaving'] = {
-    main="Xoanon",
-    sub="Alber Strap"
+  sets.TreasureHunter = {
+    body=gear.Herc_TH_body, --2
+    hands=gear.Herc_TH_hands, --2
   }
 
-  ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Special Sets ------------------------------------------
-  ------------------------------------------------------------------------------------------------
-
-  sets.Special = {}
-  sets.Special.Impetus = {
-    body="Bhikku Cyclas +3",
-  }
-  sets.Special.Footwork = {
-    feet="Anchorite's Gaiters +3",
-  }
-  sets.Special.ImpetusAndFootwork = {
-    body="Bhikku Cyclas +3",
-    feet="Anchorite's Gaiters +3",
-  }
-  sets.Special.Counterstance = {
-    feet="Hesychast's Gaiters +3",
-  }
-  sets.Special.SleepyHead = { head="Frenzy Sallet", }
-  sets.Special.LowEnmity = { ear2="Novia Earring", } -- Assumes -Enmity merits and Dirge
-  sets.Special.Schere = { ear2="Schere Earring", }
-  sets.Special.CaitSith = {
-    ammo="Crepuscular Pebble",      -- __, __,  3, __, __ <__, __, __> [ 3/ 3, ___] (___, __) __, __, __(__)
-    head="Malignance Chapeau",      --  8, 50,  3, __, __ <__, __, __> [ 6/ 6, 123] (___, __) __, __, __(__)
-    body="Bhikku Cyclas +3",        -- __, 64, __, __, __ <__, __, __> [__/__, 109] (___, __)  8, __, __(__); Aug Impetus
-    hands="Malignance Gloves",      -- 12, 50,  4, __, __ <__, __, __> [ 5/ 5, 112] (___, __) __, __, __(__)
-    legs="Bhikku Hose +3",          -- 10, 63, __, __, __ <__, __, __> [14/14, 119] (___, 30) __, __, __(__)
-    feet="Anchorite's Gaiters +3",  -- __, 46, __, __, __ <__, __, __> [__/__,  84] (120, 10) __, __, __(__)
-    neck="Monk's Nodowa +2",        -- __, 30, 10, __, __ <__, __, __> [__/__, ___] ( 20, 25) __, __, __(__)
-    ear1="Sherida Earring",         --  5, __, __, __, __ < 5, __, __> [__/__, ___] (___, __) __, __, __( 5)
-    ear2="Bhikku Earring +1",       --  4, 15, __, __, __ <__, __, __> [__/__, ___] (___, __) __,  8, __(__)
-    ring1="Defending Ring",         -- __, __, __, __, __ <__, __, __> [10/10, ___] (___, __) __, __, __(__)
-    ring2="Brass Ring +1",          -- __, __, __, __, __ <__, __, __> [__/__, ___] (___, __) __, __, __(__)
-    back=gear.MNK_DEX_DA_Cape,      -- __, 20, __, __, __ <10, __, __> [10/__, ___] ( 25, 10) __, __, __(__)
-    waist="Moonbow Belt +1",        -- __, __, __, __, __ <__,  8, __> [ 6/ 6, ___] (___, __) __, __, __(15)
-    -- Merits/Traits/Gifts             __, __, __,  5, __ <__, __, __> [__/__, ___] (___, 19)  9, 27, 35(__)
-    -- 39 STP, 328 Acc, 20 PDL, 5 Crit Rate, 6 Crit Dmg <15 DA, 13 TA, 0 QA> [44 PDT/34 MDT, 537 M.Eva] (165 Kick Dmg, 94 Kick Rate) 16 Martial Arts, 35 Counter, 55 Subtle Blow
-  }
-  sets.buff.Doom = {
-    neck="Nicander's Necklace", --20
-    ring2="Eshmun's Ring", --20
-    waist="Gishdubar Sash", --10
-  }
   sets.Kiting = {
     feet="Hermes' Sandals",
   }
   sets.Kiting.Adoulin = {
     body="Councilor's Garb",
   }
+
   sets.CP = {
     back=gear.CP_Cape,
   }
+
   sets.Reive = {
     neck="Ygnas's Resolve +1"
   }
-  sets.TreasureHunter = {
-    body=gear.Herc_TH_body, --2
-    hands=gear.Herc_TH_hands, --2
-  }
-  sets.TreasureHunter.RA = set_combine(sets.TreasureHunter, {})
-  sets.BoostRegain = {
-    waist="Ask Sash",
-  }
-  -- Enmity sets
+
   sets.Enmity = {
     ammo="Sapience Orb",  -- 0/0, 0 [0] <2>
     head="Halitus Helm", --0/0, 43 [88] <8>
@@ -332,34 +281,118 @@ function init_gear_sets()
   }
 
 
-  ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Precast Sets ------------------------------------------
-  ------------------------------------------------------------------------------------------------
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Weapon Sets
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
 
-  -- Fast cast sets for spells
-  sets.precast.FC = {
-    head="Herculean Helm", --7
-    body=gear.Taeon_FC_body, --9
-    hands=gear.Leyline_Gloves, --8
-    legs=gear.Taeon_FC_legs, --5
-    feet=gear.Taeon_FC_feet, --5
-    neck="Orunmila's Torque", --5
-    ear1="Loquac. Earring", --2
-    ring2="Prolix Ring", --2
+  sets.WeaponSet = {} -- DO NOT MODIFY
+  sets.WeaponSet['Verethragna'] = {main="Verethragna", sub=empty}
+  sets.WeaponSet['Piercing'] = {main="Birdbanes", sub=empty}
+  sets.WeaponSet['Slashing'] = {main="Vampiric Claws", sub=empty}
+  sets.WeaponSet['Cleaving'] = {
+    main="Xoanon",
+    sub="Alber Strap"
   }
 
-  sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {
-    ammo="Staunch Tathlum +1",
-    body="Passion Jacket", --10
-    neck="Magoraga Beads", --10
-    ear2="Odnowa Earring +1",
-    ring1="Defending Ring",
+
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Defense
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+
+  sets.defense.PDT = {
+    ammo="Staunch Tathlum +1",  --  3/ 3, ___
+    head="Malignance Chapeau",  --  6/ 6, 123
+    body="Malignance Tabard",   --  9/ 9, 139
+    hands="Malignance Gloves",  --  5/ 5, 112
+    legs="Malignance Tights",   --  7/ 7, 150
+    feet="Malignance Boots",    --  4/ 4, 150
+    neck="Monk's Nodowa +2",    -- __/__, ___
+    ear1="Arete Del Luna +1",   -- __/__, ___; Resists
+    ear2="Odnowa Earring +1",   --  3/ 5, ___
+    ring1="Defending Ring",     -- 10/10, ___
+    ring2="Niqmaddu Ring",      -- __/__, ___
+    back=gear.MNK_DEX_DA_Cape,  -- 10/__, ___
+    waist="Moonbow Belt +1",    --  6/ 6, ___
+  }
+  sets.defense.MDT = set_combine(sets.defense.PDT, {})
+
+  sets.HeavyDefForIdle = {
+    ammo="Staunch Tathlum +1",    --  3/ 3, ___
+    head=gear.Nyame_B_head,       --  7/ 7, 123`
+    body=gear.Nyame_B_body,       --  9/ 9, 139
+    hands=gear.Nyame_B_hands,     --  7/ 7, 112
+    legs=gear.Nyame_B_legs,       --  8/ 8, 150
+    feet=gear.Nyame_B_feet,       --  7/ 7, 150
+    waist="Moonbow Belt +1",      --  6/ 6, ___
+    -- TP Cape                    -- 10/__, ___
+    --57 PDT/47 MDT
+
+    -- head="Bhikku Crown +3",    -- 11/11,  98
+    -- legs="Bhikku Hose +3",     -- 14/14, 119
+    -- feet="Bhikku Gaiters +3",  -- 10/10, 119
+    -- waist="Moonbow Belt +1",   --  6/ 6, ___
+    -- TP Cape                    -- 10/__, ___
+    --51 PDT/41 MDT
+  }
+
+
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Idle
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+
+  sets.latent_regain = {
+  }
+  sets.latent_regen = {
+    body="Hizamaru Haramaki +2",
+    neck="Bathy Choker +1",
+    ear1="Infused Earring",
+    ring1="Chirich Ring +1",
+  }
+  sets.latent_refresh = {
+    head=gear.Herc_Refresh_head,
+    legs="Rawhide Trousers",
+    feet=gear.Herc_Refresh_feet,
+  }
+  sets.latent_refresh_sub50 = set_combine(sets.latent_refresh, {
+    waist="Fucho-no-Obi",
   })
 
-  sets.precast.FC.Trust = set_combine(sets.precast.FC, {
-    ammo="Impatiens",
-    ring1="Weatherspoon Ring", --5
-  })
+  sets.idle = set_combine(sets.defense.PDT, {})
+
+  sets.idle.Regain = set_combine(sets.idle, sets.latent_regain)
+  sets.idle.Regen = set_combine(sets.idle, sets.latent_regen)
+  sets.idle.Refresh = set_combine(sets.idle, sets.latent_refresh)
+  sets.idle.RefreshSub50 = set_combine(sets.idle, sets.latent_refresh_sub50)
+  sets.idle.Regain.Regen = set_combine(sets.idle, sets.latent_regain, sets.latent_regen)
+  sets.idle.Regain.Refresh = set_combine(sets.idle, sets.latent_regain, sets.latent_refresh)
+  sets.idle.Regain.RefreshSub50 = set_combine(sets.idle, sets.latent_regain, sets.latent_refresh_sub50)
+  sets.idle.Regen.Refresh = set_combine(sets.idle, sets.latent_regen, sets.latent_refresh)
+  sets.idle.Regen.RefreshSub50 = set_combine(sets.idle, sets.latent_regen, sets.latent_refresh_sub50)
+  sets.idle.Regain.Regen.Refresh = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh)
+  sets.idle.Regain.Regen.RefreshSub50 = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh_sub50)
+
+  sets.idle.HeavyDef = set_combine(sets.idle, sets.HeavyDefForIdle)
+  sets.idle.HeavyDef.Regain = set_combine(sets.idle.Regain, sets.HeavyDefForIdle)
+  sets.idle.HeavyDef.Regen = set_combine(sets.idle.Regen, sets.HeavyDefForIdle)
+  sets.idle.HeavyDef.Refresh = set_combine(sets.idle.Refresh, sets.HeavyDefForIdle)
+  sets.idle.HeavyDef.RefreshSub50 = set_combine(sets.idle.RefreshSub50, sets.HeavyDefForIdle)
+  sets.idle.HeavyDef.Regain.Regen = set_combine(sets.idle.Regain.Regen, sets.HeavyDefForIdle)
+  sets.idle.HeavyDef.Regain.Refresh = set_combine(sets.idle.Regain.Refresh, sets.HeavyDefForIdle)
+  sets.idle.HeavyDef.Regain.RefreshSub50 = set_combine(sets.idle.Regain.RefreshSub50, sets.HeavyDefForIdle)
+  sets.idle.HeavyDef.Regen.Refresh = set_combine(sets.idle.Regen.Refresh, sets.HeavyDefForIdle)
+  sets.idle.HeavyDef.Regen.RefreshSub50 = set_combine(sets.idle.Regen.RefreshSub50, sets.HeavyDefForIdle)
+  sets.idle.HeavyDef.Regain.Regen.Refresh = set_combine(sets.idle.Regain.Regen.Refresh, sets.HeavyDefForIdle)
+  sets.idle.HeavyDef.Regain.Regen.RefreshSub50 = set_combine(sets.idle.Regain.Regen.RefreshSub50, sets.HeavyDefForIdle)
+
+  sets.idle.Weak = set_combine(sets.defense.PDT, {})
+
+
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Precast
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  -----------------------------------------------------------------------------------------------
+  --     Job Abilities
+  -----------------------------------------------------------------------------------------------
 
   -- Precast sets to enhance JAs on use
   sets.precast.JA['Hundred Fists'] = {
@@ -434,7 +467,36 @@ function init_gear_sets()
 
 
   ------------------------------------------------------------------------------------------------
-  ------------------------------------- Weapon Skill Sets ----------------------------------------
+  --     Fast Cast
+  ------------------------------------------------------------------------------------------------
+
+  sets.precast.FC = {
+    head="Herculean Helm", --7
+    body=gear.Taeon_FC_body, --9
+    hands=gear.Leyline_Gloves, --8
+    legs=gear.Taeon_FC_legs, --5
+    feet=gear.Taeon_FC_feet, --5
+    neck="Orunmila's Torque", --5
+    ear1="Loquac. Earring", --2
+    ring2="Prolix Ring", --2
+  }
+
+  sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {
+    ammo="Staunch Tathlum +1",
+    body="Passion Jacket", --10
+    neck="Magoraga Beads", --10
+    ear2="Odnowa Earring +1",
+    ring1="Defending Ring",
+  })
+
+  sets.precast.FC.Trust = set_combine(sets.precast.FC, {
+    ammo="Impatiens",
+    ring1="Weatherspoon Ring", --5
+  })
+
+
+  ------------------------------------------------------------------------------------------------
+  --    Weapon Skills
   ------------------------------------------------------------------------------------------------
 
   -- Default set for any weaponskill that isn't any more specifically defined
@@ -728,8 +790,11 @@ function init_gear_sets()
   })
 
 
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Midcast
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
   ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Midcast Sets ------------------------------------------
+  --    Spells
   ------------------------------------------------------------------------------------------------
 
   -- Initializes trusts at iLvl 119
@@ -753,118 +818,13 @@ function init_gear_sets()
   }
 
 
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Engaged
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
   ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Defense Sets ------------------------------------------
-  ------------------------------------------------------------------------------------------------
-
-  sets.defense.PDT = {
-    ammo="Staunch Tathlum +1",  --  3/ 3, ___
-    head="Malignance Chapeau",  --  6/ 6, 123
-    body="Malignance Tabard",   --  9/ 9, 139
-    hands="Malignance Gloves",  --  5/ 5, 112
-    legs="Malignance Tights",   --  7/ 7, 150
-    feet="Malignance Boots",    --  4/ 4, 150
-    neck="Monk's Nodowa +2",    -- __/__, ___
-    ear1="Arete Del Luna +1",   -- __/__, ___; Resists
-    ear2="Odnowa Earring +1",   --  3/ 5, ___
-    ring1="Defending Ring",     -- 10/10, ___
-    ring2="Niqmaddu Ring",      -- __/__, ___
-    back=gear.MNK_DEX_DA_Cape,  -- 10/__, ___
-    waist="Moonbow Belt +1",    --  6/ 6, ___
-  }
-  sets.defense.MDT = set_combine(sets.defense.PDT, {})
-
-
-  ------------------------------------------------------------------------------------------------
-  ----------------------------------------- Idle Sets --------------------------------------------
+  --    Normal Engaged
   ------------------------------------------------------------------------------------------------
 
-  sets.latent_regain = {
-  }
-  sets.latent_regen = {
-    body="Hizamaru Haramaki +2",
-    neck="Bathy Choker +1",
-    ear1="Infused Earring",
-    ring1="Chirich Ring +1",
-  }
-  sets.latent_refresh = {
-    head=gear.Herc_Refresh_head,
-    legs="Rawhide Trousers",
-    feet=gear.Herc_Refresh_feet,
-  }
-  sets.latent_refresh_sub50 = set_combine(sets.latent_refresh, {
-    waist="Fucho-no-Obi",
-  })
-
-  sets.idle = set_combine(sets.defense.PDT, {})
-
-  sets.idle.Regain = set_combine(sets.idle, sets.latent_regain)
-  sets.idle.Regen = set_combine(sets.idle, sets.latent_regen)
-  sets.idle.Refresh = set_combine(sets.idle, sets.latent_refresh)
-  sets.idle.RefreshSub50 = set_combine(sets.idle, sets.latent_refresh_sub50)
-  sets.idle.Regain.Regen = set_combine(sets.idle, sets.latent_regain, sets.latent_regen)
-  sets.idle.Regain.Refresh = set_combine(sets.idle, sets.latent_regain, sets.latent_refresh)
-  sets.idle.Regain.RefreshSub50 = set_combine(sets.idle, sets.latent_regain, sets.latent_refresh_sub50)
-  sets.idle.Regen.Refresh = set_combine(sets.idle, sets.latent_regen, sets.latent_refresh)
-  sets.idle.Regen.RefreshSub50 = set_combine(sets.idle, sets.latent_regen, sets.latent_refresh_sub50)
-  sets.idle.Regain.Regen.Refresh = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh)
-  sets.idle.Regain.Regen.RefreshSub50 = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh_sub50)
-
-  sets.HeavyDefForIdle = {
-    ammo="Staunch Tathlum +1",    --  3/ 3, ___
-    head=gear.Nyame_B_head,       --  7/ 7, 123`
-    body=gear.Nyame_B_body,       --  9/ 9, 139
-    hands=gear.Nyame_B_hands,     --  7/ 7, 112
-    legs=gear.Nyame_B_legs,       --  8/ 8, 150
-    feet=gear.Nyame_B_feet,       --  7/ 7, 150
-    waist="Moonbow Belt +1",      --  6/ 6, ___
-    -- TP Cape                    -- 10/__, ___
-    --57 PDT/47 MDT
-
-    -- head="Bhikku Crown +3",    -- 11/11,  98
-    -- legs="Bhikku Hose +3",     -- 14/14, 119
-    -- feet="Bhikku Gaiters +3",  -- 10/10, 119
-    -- waist="Moonbow Belt +1",   --  6/ 6, ___
-    -- TP Cape                    -- 10/__, ___
-    --51 PDT/41 MDT
-  }
-  sets.idle.HeavyDef = set_combine(sets.idle, sets.HeavyDefForIdle)
-  sets.idle.HeavyDef.Regain = set_combine(sets.idle.Regain, sets.HeavyDefForIdle)
-  sets.idle.HeavyDef.Regen = set_combine(sets.idle.Regen, sets.HeavyDefForIdle)
-  sets.idle.HeavyDef.Refresh = set_combine(sets.idle.Refresh, sets.HeavyDefForIdle)
-  sets.idle.HeavyDef.RefreshSub50 = set_combine(sets.idle.RefreshSub50, sets.HeavyDefForIdle)
-  sets.idle.HeavyDef.Regain.Regen = set_combine(sets.idle.Regain.Regen, sets.HeavyDefForIdle)
-  sets.idle.HeavyDef.Regain.Refresh = set_combine(sets.idle.Regain.Refresh, sets.HeavyDefForIdle)
-  sets.idle.HeavyDef.Regain.RefreshSub50 = set_combine(sets.idle.Regain.RefreshSub50, sets.HeavyDefForIdle)
-  sets.idle.HeavyDef.Regen.Refresh = set_combine(sets.idle.Regen.Refresh, sets.HeavyDefForIdle)
-  sets.idle.HeavyDef.Regen.RefreshSub50 = set_combine(sets.idle.Regen.RefreshSub50, sets.HeavyDefForIdle)
-  sets.idle.HeavyDef.Regain.Regen.Refresh = set_combine(sets.idle.Regain.Regen.Refresh, sets.HeavyDefForIdle)
-  sets.idle.HeavyDef.Regain.Regen.RefreshSub50 = set_combine(sets.idle.Regain.Regen.RefreshSub50, sets.HeavyDefForIdle)
-
-  sets.idle.Weak = set_combine(sets.defense.PDT, {})
-
-  sets.idle.Town = {
-    ammo="Coiste Bodhar",
-    head="Mpaca's Cap",
-    body="Bhikku Cyclas +3",
-    hands=gear.Nyame_B_hands,
-    legs="Bhikku Hose +3",
-    feet="Mpaca's Boots",
-    neck="Monk's Nodowa +2",
-    ear1="Sherida Earring",
-    ear2="Schere Earring",
-    ring1="Sroda Ring",
-    ring2="Epaminondas's Ring",
-    back=gear.MNK_STR_DA_Cape,
-    waist="Moonbow Belt +1",
-  }
-
-
-  ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Engaged Sets ------------------------------------------
-  ------------------------------------------------------------------------------------------------
-
-  -- Focus STP, KA, Multihit
   sets.engaged = {
     ammo="Coiste Bodhar",           --  3, __, __, __, __ < 3, __, __> [__/__, ___] (___, __) __, __, __(__)
     head="Malignance Chapeau",      --  8, 50,  3, __, __ <__, __, __> [ 6/ 6, 123] (___, __) __, __, __(__)
@@ -899,7 +859,7 @@ function init_gear_sets()
 
 
   ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Hybrid Sets -------------------------------------------
+  --    Aftermath Engaged
   ------------------------------------------------------------------------------------------------
 
   sets.engaged.VerethragnaAM = {
@@ -963,6 +923,52 @@ function init_gear_sets()
     -- 41 STP, 343 Acc, 20 PDL,  5 Crit Rate, 0 Crit Dmg <15 DA, 13 TA, 0 QA> [54 PDT/44 MDT, 547 M.Eva] (165 Kick Dmg, 94 Kick Rate) 17 Martial Arts, 36 Counter, 55 Subtle Blow
   })
 
+
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Unique/Special/Misc
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+
+  sets.SleepyHead = { head="Frenzy Sallet", }
+  sets.buff.Doom = {
+    neck="Nicander's Necklace", --20
+    ring2="Eshmun's Ring", --20
+    waist="Gishdubar Sash", --10
+  }
+  sets.Impetus = {
+    body="Bhikku Cyclas +3",
+  }
+  sets.Footwork = {
+    feet="Anchorite's Gaiters +3",
+  }
+  sets.ImpetusAndFootwork = {
+    body="Bhikku Cyclas +3",
+    feet="Anchorite's Gaiters +3",
+  }
+  sets.Counterstance = {
+    feet="Hesychast's Gaiters +3",
+  }
+  sets.LowEnmity = { ear2="Novia Earring", } -- Assumes -Enmity merits and Dirge
+  sets.Schere = { ear2="Schere Earring", }
+  sets.CaitSith = {
+    ammo="Crepuscular Pebble",      -- __, __,  3, __, __ <__, __, __> [ 3/ 3, ___] (___, __) __, __, __(__)
+    head="Malignance Chapeau",      --  8, 50,  3, __, __ <__, __, __> [ 6/ 6, 123] (___, __) __, __, __(__)
+    body="Bhikku Cyclas +3",        -- __, 64, __, __, __ <__, __, __> [__/__, 109] (___, __)  8, __, __(__); Aug Impetus
+    hands="Malignance Gloves",      -- 12, 50,  4, __, __ <__, __, __> [ 5/ 5, 112] (___, __) __, __, __(__)
+    legs="Bhikku Hose +3",          -- 10, 63, __, __, __ <__, __, __> [14/14, 119] (___, 30) __, __, __(__)
+    feet="Anchorite's Gaiters +3",  -- __, 46, __, __, __ <__, __, __> [__/__,  84] (120, 10) __, __, __(__)
+    neck="Monk's Nodowa +2",        -- __, 30, 10, __, __ <__, __, __> [__/__, ___] ( 20, 25) __, __, __(__)
+    ear1="Sherida Earring",         --  5, __, __, __, __ < 5, __, __> [__/__, ___] (___, __) __, __, __( 5)
+    ear2="Bhikku Earring +1",       --  4, 15, __, __, __ <__, __, __> [__/__, ___] (___, __) __,  8, __(__)
+    ring1="Defending Ring",         -- __, __, __, __, __ <__, __, __> [10/10, ___] (___, __) __, __, __(__)
+    ring2="Brass Ring +1",          -- __, __, __, __, __ <__, __, __> [__/__, ___] (___, __) __, __, __(__)
+    back=gear.MNK_DEX_DA_Cape,      -- __, 20, __, __, __ <10, __, __> [10/__, ___] ( 25, 10) __, __, __(__)
+    waist="Moonbow Belt +1",        -- __, __, __, __, __ <__,  8, __> [ 6/ 6, ___] (___, __) __, __, __(15)
+    -- Merits/Traits/Gifts             __, __, __,  5, __ <__, __, __> [__/__, ___] (___, 19)  9, 27, 35(__)
+    -- 39 STP, 328 Acc, 20 PDL, 5 Crit Rate, 6 Crit Dmg <15 DA, 13 TA, 0 QA> [44 PDT/34 MDT, 537 M.Eva] (165 Kick Dmg, 94 Kick Rate) 16 Martial Arts, 35 Counter, 55 Subtle Blow
+  }
+  sets.BoostRegain = {
+    waist="Ask Sash",
+  }
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -1025,7 +1031,7 @@ function job_post_precast(spell, action, spellMap, eventArgs)
       -- Need 6 hits at capped dDex, or 9 hits if dDex is uncapped, for Tantra to tie or win.
       if (state.OffenseMode.current ~= 'MidAcc' and state.OffenseMode.current ~= 'HighAcc' and info.impetus_hit_count > 5)
           or (info.impetus_hit_count > 8) then
-        equip(sets.Special.Impetus)
+        equip(sets.Impetus)
       end
     end
 
@@ -1034,9 +1040,9 @@ function job_post_precast(spell, action, spellMap, eventArgs)
     end
 
     if state.EnmityMode.current == 'Low' then
-      equip(sets.Special.LowEnmity)
+      equip(sets.LowEnmity)
     elseif state.EnmityMode.current == 'Schere' and player.mp > 0 then
-      equip(sets.Special.Schere)
+      equip(sets.Schere)
     end
   end
 
@@ -1112,7 +1118,7 @@ function job_buff_change(buff,gain)
   end
 
   if buff == 'sleep' and gain and player.vitals.hp > 500 and player.status == 'Engaged' then
-    equip(sets.Special.SleepyHead)
+    equip(sets.SleepyHead)
   end
 
   if buff == "doom" then
@@ -1299,12 +1305,12 @@ function customize_melee_set(meleeSet)
     meleeSet = set_combine(meleeSet, sets.CP)
   end
   if state.EnmityMode.current == 'Low' then
-    equip(sets.Special.LowEnmity)
+    equip(sets.LowEnmity)
   end
 
   -- Override sets to ensure counterstance feet are equipped if Counterstance is up
   if state.Buff['Counterstance'] then
-    meleeSet = set_combine(meleeSet, sets.Special.Counterstance)
+    meleeSet = set_combine(meleeSet, sets.Counterstance)
   end
 
   -- If slot is locked to use no-swap gear, keep it equipped
@@ -1315,7 +1321,7 @@ function customize_melee_set(meleeSet)
   if locked_ring2 then meleeSet = set_combine(meleeSet, { ring2=player.equipment.ring2 }) end
 
   if buffactive['sleep'] and player.vitals.hp > 500 and player.status == 'Engaged' then
-    meleeSet = set_combine(meleeSet, sets.Special.SleepyHead)
+    meleeSet = set_combine(meleeSet, sets.SleepyHead)
   end
 
   if buffactive.Doom then
@@ -1338,7 +1344,7 @@ function customize_defense_set(defenseSet)
   if locked_ring2 then defenseSet = set_combine(defenseSet, { ring2=player.equipment.ring2 }) end
 
   if buffactive['sleep'] and player.vitals.hp > 500 and player.status == 'Engaged' then
-    defenseSet = set_combine(defenseSet, sets.Special.SleepyHead)
+    defenseSet = set_combine(defenseSet, sets.SleepyHead)
   end
 
   if buffactive.Doom then
@@ -1346,7 +1352,7 @@ function customize_defense_set(defenseSet)
   end
 
   if state.PhysicalDefenseMode.current == 'Cait Sith' then
-    defenseSet = set_combine(defenseSet, sets.Special.CaitSith)
+    defenseSet = set_combine(defenseSet, sets.CaitSith)
   end
 
   return defenseSet

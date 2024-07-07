@@ -340,8 +340,133 @@ end
 
 -- Define sets and vars used by this job file.
 function init_gear_sets()
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Common
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+
+  if sets.org then
+    sets.org.job = {}
+  end
+
+  sets.Kiting = {
+    ring1="Shneddick Ring",
+  }
+  sets.Kiting.Adoulin = {
+    body="Councilor's Garb",
+  }
+
+  sets.CP = {
+    back=gear.CP_Cape
+  }
+
+
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Weapon Sets
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+
+
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Defense
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+
+
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Idle
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+
+  -- With no pet out, don't need perp cost. Focus defensive stats and Refresh
+  sets.idle = {
+    main="Mpaca's Staff",           -- ____ [__/__, ___] ( 2, __) {___, __, __/__}
+    sub="Khonsu",                   -- ____ [ 6/ 6, ___] (__, __) {___, __, __/__}
+    ammo="Staunch Tathlum +1",      -- ____ [ 3/ 3, ___] (__, __) {___, __, __/__}; Resist Status+11
+    head="Beckoner's Horn +3",      --   61 [10/10, 130] ( 4, __) {___, __, __/__}
+    body=gear.Apogee_A_body,        -- -160 [__/__,  91] ( 4, __) {___, __, __/__}
+    hands="Asteria Mitts +1",       --   18 [__/__,  43] ( 2, __) {___, __, __/__}
+    legs="Assiduity Pants +1",      --   43 [__/__, 107] ( 2,  3) {___, __, __/__}
+    feet="Baayami Sabots +1",       --   30 [__/__, 139] ( 3, __) {___, __, __/__}
+    neck="Loricate Torque +1",      -- ____ [ 6/ 6, ___] (__, __) {___, __, __/__}; DEF+60
+    ear1="Cath Palug Earring",      -- ____ [__/__, ___] ( 1, __) {___, __, __/__}
+    ear2="Beckoner's Earring +1",   -- ____ [ 4/ 4, ___] ( 2, __) {  1, __, __/__}
+    ring1="Stikini Ring +1",        -- ____ [__/__, ___] ( 1, __) {___, __, __/__}
+    ring2="Defending Ring",         -- ____ [10/10, ___] (__, __) {___, __, __/__}
+    back=gear.SMN_Phys_BP_Cape,     -- ____ [10/__, ___] (__, __) {  1, __, __/__}; Pet Haste+10
+    waist="Regal Belt",             --   88 [ 3/ 3, ___] (__, __) {___, __, __/__}
+    -- Traits/Merits/JP Gifts                                       99, __,  7/ 7
+    -- 80 HP [52 PDT/42 MDT, 510 M.Eva] (21 Refresh, 3 Perp Cost) {Pet: 101 Lv, 0 Regain, 7 PDT/7 MDT}
+
+    -- ear2="Beckoner's Earring +2",-- ____ [ 6/ 6, ___] ( 3, __) {  1, __, __/__}
+    -- 80 HP [54 PDT/44 MDT, 510 M.Eva] (22 Refresh, 3 Perp Cost) {Pet: 101 Lv, Regain, 7 PDT/7 MDT}
+  }
+
+  -- perp costs:
+  -- spirits: 7
+  -- carby: 11 (5 with mitts)
+  -- fenrir: 13
+  -- others: 15
+  -- avatar's favor: -4/tick
+
+  -- Max useful -perp gear is 1 less than the perp cost (can't be reduced below 1)
+  -- Aim for -14 perp, and refresh in other slots.
+
+  -- Need -14 perp cost
+  sets.idle.Avatar = {
+    main="Gridarvor",               -- ____ [__/__, ___] (__,  5) {___, __, __/__}
+    sub="Khonsu",                   -- ____ [ 6/ 6, ___] (__, __) {___, __, __/__}
+    ammo="Epitaph",                 -- ____ [__/__, ___] (__, __) {119, __, __/__}
+    head="Beckoner's Horn +3",      --   61 [10/10, 130] ( 4, __) {___, __, __/__}
+    body="Beckoner's Doublet +2",   --   74 [12/12, 120] (__,  7) {___, __, __/__}
+    hands="Asteria Mitts +1",       --   18 [__/__,  43] ( 2, __) {___, __, __/__}
+    legs="Assiduity Pants +1",      --   43 [__/__, 107] ( 2,  3) {___, __, __/__}
+    feet="Baayami Sabots +1",       --   30 [__/__, 139] ( 3, __) {___, __, __/__}
+    neck="Caller's Pendant",        -- ____ [__/__, ___] (__, __) {___, 25, __/__}
+    ear1="Enmerkar Earring",        -- ____ [__/__, ___] (__, __) {___, __,  3/ 3}
+    ear2="Beckoner's Earring +1",   -- ____ [ 4/ 4, ___] ( 2, __) {  1, __, __/__}
+    ring1="Stikini Ring +1",        -- ____ [__/__, ___] ( 1, __) {___, __, __/__}
+    ring2="Defending Ring",         -- ____ [10/10, ___] (__, __) {___, __, __/__}
+    back=gear.SMN_Phys_BP_Cape,     -- ____ [10/__, ___] (__, __) {  1, __, __/__}; Pet Haste+10
+    waist="Isa Belt",               -- ____ [__/__, ___] (__, __) {___, __,  3/ 3}
+    -- Traits/Merits/JP Gifts                                      ___, __,  7/ 7
+    -- 226 HP [52 PDT/42 MDT, 539 M.Eva] (14 Refresh, 15 Perp Cost) {Pet: 121 Lv, 25 Regain, 13 PDT/13 MDT}
+
+    -- body="Beckoner's Doublet +3",--   84 [13/13, 130] (__,  8) {___, __, __/__}
+    -- ear2="Beckoner's Earring +2",-- ____ [ 6/ 6, ___] ( 3, __) {  1, __, __/__}
+    -- 236 HP [55 PDT/45 MDT, 549 M.Eva] (15 Refresh, 16 Perp Cost) {Pet: 121 Lv, 25 Regain, 13 PDT/13 MDT}
+  }
+  -- Used when avatar is engaged with an enemy
+  sets.idle.Avatar.Melee = set_combine(sets.idle.Avatar, {
+    waist="Klouskap Sash +1", -- Pet Haste+9
+  })
+
+  -- Need -6 perp cost
+  sets.idle.Spirit = {
+    main="Gridarvor",               -- ____ [__/__, ___] (__,  5) {___, __, __/__}
+    sub="Khonsu",                   -- ____ [ 6/ 6, ___] (__, __) {___, __, __/__}
+    ammo="Epitaph",                 -- ____ [__/__, ___] (__, __) {119, __, __/__}
+    head="Beckoner's Horn +3",      --   61 [10/10, 130] ( 4, __) {___, __, __/__}
+    body=gear.Apogee_A_body,        -- -160 [__/__,  91] ( 4, __) {___, __, __/__}
+    hands="Asteria Mitts +1",       --   18 [__/__,  43] ( 2, __) {___, __, __/__}
+    legs="Assiduity Pants +1",      --   43 [__/__, 107] ( 2,  3) {___, __, __/__}
+    feet="Baayami Sabots +1",       --   30 [__/__, 139] ( 3, __) {___, __, __/__}
+    neck="Loricate Torque +1",      -- ____ [ 6/ 6, ___] (__, __) {___, __, __/__}; DEF+60
+    ear1="Cath Palug Earring",      -- ____ [__/__, ___] ( 1, __) {___, __, __/__}
+    ear2="Beckoner's Earring +1",   -- ____ [ 4/ 4, ___] ( 2, __) {  1, __, __/__}
+    ring1="Stikini Ring +1",        -- ____ [__/__, ___] ( 1, __) {___, __, __/__}
+    ring2="Defending Ring",         -- ____ [10/10, ___] (__, __) {___, __, __/__}
+    back=gear.SMN_Phys_BP_Cape,     -- ____ [10/__, ___] (__, __) {  1, __, __/__}; Pet Haste+10
+    waist="Regal Belt",             --   88 [ 3/ 3, ___] (__, __) {___, __, __/__}
+    -- Traits/Merits/JP Gifts                                      ___, __,  7/ 7
+    -- 80 HP [49 PDT/39 MDT, 510 M.Eva] (19 Refresh, 8 Perp Cost) {Pet: 121 Lv, 0 Regain, 7 PDT/7 MDT}
+
+    -- ear2="Beckoner's Earring +2",-- ____ [ 6/ 6, ___] ( 3, __) {  1, __, __/__}
+    -- 80 HP [51 PDT/41 MDT, 510 M.Eva] (20 Refresh, 8 Perp Cost) {Pet: 121 Lv, 0 Regain, 7 PDT/7 MDT}
+  }
+
+
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Precast
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
   -----------------------------------------------------------------------------------------------
-  ------------------------------------- Job Ability Sets ----------------------------------------
+  --     Job Abilities
   -----------------------------------------------------------------------------------------------
 
   sets.precast.JA['Astral Flow'] = {
@@ -471,7 +596,7 @@ function init_gear_sets()
 
 
   ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Precast Sets ------------------------------------------
+  --     Fast Cast
   ------------------------------------------------------------------------------------------------
 
   -- Fast cast sets for spells
@@ -677,7 +802,7 @@ function init_gear_sets()
 
 
   ------------------------------------------------------------------------------------------------
-  ------------------------------------- Weapon Skill Sets ----------------------------------------
+  --    Weapon Skills
   ------------------------------------------------------------------------------------------------
 
   -- Default set for any weaponskill that isn't any more specifically defined
@@ -720,8 +845,12 @@ function init_gear_sets()
     -- waist="Fotia Belt",
   })
 
+
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Midcast
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
   ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Midcast Sets ------------------------------------------
+  --    Spells
   ------------------------------------------------------------------------------------------------
 
   sets.midcast.FastRecast = set_combine(sets.precast.FC.NirvAM, {})
@@ -936,100 +1065,11 @@ function init_gear_sets()
   })
 
 
-  ------------------------------------------------------------------------------------------------=
-  -------------------------------------- Idle/Defense Sets ----------------------------------------
-  ------------------------------------------------------------------------------------------------=
-
-  -- With no pet out, don't need perp cost. Focus defensive stats and Refresh
-  sets.idle = {
-    main="Mpaca's Staff",           -- ____ [__/__, ___] ( 2, __) {___, __, __/__}
-    sub="Khonsu",                   -- ____ [ 6/ 6, ___] (__, __) {___, __, __/__}
-    ammo="Staunch Tathlum +1",      -- ____ [ 3/ 3, ___] (__, __) {___, __, __/__}; Resist Status+11
-    head="Beckoner's Horn +3",      --   61 [10/10, 130] ( 4, __) {___, __, __/__}
-    body=gear.Apogee_A_body,        -- -160 [__/__,  91] ( 4, __) {___, __, __/__}
-    hands="Asteria Mitts +1",       --   18 [__/__,  43] ( 2, __) {___, __, __/__}
-    legs="Assiduity Pants +1",      --   43 [__/__, 107] ( 2,  3) {___, __, __/__}
-    feet="Baayami Sabots +1",       --   30 [__/__, 139] ( 3, __) {___, __, __/__}
-    neck="Loricate Torque +1",      -- ____ [ 6/ 6, ___] (__, __) {___, __, __/__}; DEF+60
-    ear1="Cath Palug Earring",      -- ____ [__/__, ___] ( 1, __) {___, __, __/__}
-    ear2="Beckoner's Earring +1",   -- ____ [ 4/ 4, ___] ( 2, __) {  1, __, __/__}
-    ring1="Stikini Ring +1",        -- ____ [__/__, ___] ( 1, __) {___, __, __/__}
-    ring2="Defending Ring",         -- ____ [10/10, ___] (__, __) {___, __, __/__}
-    back=gear.SMN_Phys_BP_Cape,     -- ____ [10/__, ___] (__, __) {  1, __, __/__}; Pet Haste+10
-    waist="Regal Belt",             --   88 [ 3/ 3, ___] (__, __) {___, __, __/__}
-    -- Traits/Merits/JP Gifts                                       99, __,  7/ 7
-    -- 80 HP [52 PDT/42 MDT, 510 M.Eva] (21 Refresh, 3 Perp Cost) {Pet: 101 Lv, 0 Regain, 7 PDT/7 MDT}
-
-    -- ear2="Beckoner's Earring +2",-- ____ [ 6/ 6, ___] ( 3, __) {  1, __, __/__}
-    -- 80 HP [54 PDT/44 MDT, 510 M.Eva] (22 Refresh, 3 Perp Cost) {Pet: 101 Lv, Regain, 7 PDT/7 MDT}
-  }
-
-  -- perp costs:
-  -- spirits: 7
-  -- carby: 11 (5 with mitts)
-  -- fenrir: 13
-  -- others: 15
-  -- avatar's favor: -4/tick
-
-  -- Max useful -perp gear is 1 less than the perp cost (can't be reduced below 1)
-  -- Aim for -14 perp, and refresh in other slots.
-
-  -- Need -14 perp cost
-  sets.idle.Avatar = {
-    main="Gridarvor",               -- ____ [__/__, ___] (__,  5) {___, __, __/__}
-    sub="Khonsu",                   -- ____ [ 6/ 6, ___] (__, __) {___, __, __/__}
-    ammo="Epitaph",                 -- ____ [__/__, ___] (__, __) {119, __, __/__}
-    head="Beckoner's Horn +3",      --   61 [10/10, 130] ( 4, __) {___, __, __/__}
-    body="Beckoner's Doublet +2",   --   74 [12/12, 120] (__,  7) {___, __, __/__}
-    hands="Asteria Mitts +1",       --   18 [__/__,  43] ( 2, __) {___, __, __/__}
-    legs="Assiduity Pants +1",      --   43 [__/__, 107] ( 2,  3) {___, __, __/__}
-    feet="Baayami Sabots +1",       --   30 [__/__, 139] ( 3, __) {___, __, __/__}
-    neck="Caller's Pendant",        -- ____ [__/__, ___] (__, __) {___, 25, __/__}
-    ear1="Enmerkar Earring",        -- ____ [__/__, ___] (__, __) {___, __,  3/ 3}
-    ear2="Beckoner's Earring +1",   -- ____ [ 4/ 4, ___] ( 2, __) {  1, __, __/__}
-    ring1="Stikini Ring +1",        -- ____ [__/__, ___] ( 1, __) {___, __, __/__}
-    ring2="Defending Ring",         -- ____ [10/10, ___] (__, __) {___, __, __/__}
-    back=gear.SMN_Phys_BP_Cape,     -- ____ [10/__, ___] (__, __) {  1, __, __/__}; Pet Haste+10
-    waist="Isa Belt",               -- ____ [__/__, ___] (__, __) {___, __,  3/ 3}
-    -- Traits/Merits/JP Gifts                                      ___, __,  7/ 7
-    -- 226 HP [52 PDT/42 MDT, 539 M.Eva] (14 Refresh, 15 Perp Cost) {Pet: 121 Lv, 25 Regain, 13 PDT/13 MDT}
-
-    -- body="Beckoner's Doublet +3",--   84 [13/13, 130] (__,  8) {___, __, __/__}
-    -- ear2="Beckoner's Earring +2",-- ____ [ 6/ 6, ___] ( 3, __) {  1, __, __/__}
-    -- 236 HP [55 PDT/45 MDT, 549 M.Eva] (15 Refresh, 16 Perp Cost) {Pet: 121 Lv, 25 Regain, 13 PDT/13 MDT}
-  }
-  -- Used when avatar is engaged with an enemy
-  sets.idle.Avatar.Melee = set_combine(sets.idle.Avatar, {
-    waist="Klouskap Sash +1", -- Pet Haste+9
-  })
-
-  -- Need -6 perp cost
-  sets.idle.Spirit = {
-    main="Gridarvor",               -- ____ [__/__, ___] (__,  5) {___, __, __/__}
-    sub="Khonsu",                   -- ____ [ 6/ 6, ___] (__, __) {___, __, __/__}
-    ammo="Epitaph",                 -- ____ [__/__, ___] (__, __) {119, __, __/__}
-    head="Beckoner's Horn +3",      --   61 [10/10, 130] ( 4, __) {___, __, __/__}
-    body=gear.Apogee_A_body,        -- -160 [__/__,  91] ( 4, __) {___, __, __/__}
-    hands="Asteria Mitts +1",       --   18 [__/__,  43] ( 2, __) {___, __, __/__}
-    legs="Assiduity Pants +1",      --   43 [__/__, 107] ( 2,  3) {___, __, __/__}
-    feet="Baayami Sabots +1",       --   30 [__/__, 139] ( 3, __) {___, __, __/__}
-    neck="Loricate Torque +1",      -- ____ [ 6/ 6, ___] (__, __) {___, __, __/__}; DEF+60
-    ear1="Cath Palug Earring",      -- ____ [__/__, ___] ( 1, __) {___, __, __/__}
-    ear2="Beckoner's Earring +1",   -- ____ [ 4/ 4, ___] ( 2, __) {  1, __, __/__}
-    ring1="Stikini Ring +1",        -- ____ [__/__, ___] ( 1, __) {___, __, __/__}
-    ring2="Defending Ring",         -- ____ [10/10, ___] (__, __) {___, __, __/__}
-    back=gear.SMN_Phys_BP_Cape,     -- ____ [10/__, ___] (__, __) {  1, __, __/__}; Pet Haste+10
-    waist="Regal Belt",             --   88 [ 3/ 3, ___] (__, __) {___, __, __/__}
-    -- Traits/Merits/JP Gifts                                      ___, __,  7/ 7
-    -- 80 HP [49 PDT/39 MDT, 510 M.Eva] (19 Refresh, 8 Perp Cost) {Pet: 121 Lv, 0 Regain, 7 PDT/7 MDT}
-
-    -- ear2="Beckoner's Earring +2",-- ____ [ 6/ 6, ___] ( 3, __) {  1, __, __/__}
-    -- 80 HP [51 PDT/41 MDT, 510 M.Eva] (20 Refresh, 8 Perp Cost) {Pet: 121 Lv, 0 Regain, 7 PDT/7 MDT}
-  }
-
-
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Engaged
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
   ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Engaged Sets ------------------------------------------
+  --    Normal Engaged
   ------------------------------------------------------------------------------------------------
 
   -- TODO: update set
@@ -1046,7 +1086,7 @@ function init_gear_sets()
     ring2="Chirich Ring +1",
     back="Aurist's Cape +1",
     waist="Klouskap Sash +1",
-    
+
     -- ear2="Telos Earring",
   }
   sets.engaged.Acc = {
@@ -1056,25 +1096,16 @@ function init_gear_sets()
     -- ear1="Cessance Earring",
     -- ear2="Telos Earring",
   }
-  
 
-  ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Special Sets ------------------------------------------
-  ------------------------------------------------------------------------------------------------
+
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Unique/Special/Misc
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
 
   sets.buff.Doom = {
     neck="Nicander's Necklace",     --20
     ring1="Eshmun's Ring",          --20
     waist="Gishdubar Sash",         --10
-  }
-  sets.CP = {
-    back=gear.CP_Cape
-  }
-  sets.Kiting = {
-    ring1="Shneddick Ring",
-  }
-  sets.Kiting.Adoulin = {
-    body="Councilor's Garb",
   }
 end
 

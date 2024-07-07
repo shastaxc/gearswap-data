@@ -419,11 +419,33 @@ end
 
 -- Define sets and vars used by this job file.
 function init_gear_sets()
-  -----------------------------------------------------------------------------------------------
-  ---------------------------------------- Job Abilities ----------------------------------------
-  -----------------------------------------------------------------------------------------------
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Common
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
 
-  -- Enmity set
+  if sets.org then
+    sets.org.job = {}
+  end
+
+  sets.TreasureHunter = {
+    ammo="Perfect Lucky Egg",
+    waist="Chaac Belt",
+  }
+  sets.TreasureHunter.RA = {
+    waist="Chaac Belt",
+  }
+
+  sets.Kiting = {
+    ring1="Shneddick Ring",
+  }
+  sets.Kiting.Adoulin = {
+    body="Councilor's Garb",
+  }
+
+  sets.CP = {
+    back=gear.CP_Cape,
+  }
+
   sets.Enmity = {
     ammo="Sapience Orb", --2
     head="Halitus Helm", --8
@@ -437,6 +459,120 @@ function init_gear_sets()
     -- ring2="Eihwaz Ring", --5
     -- waist="Kasiri Belt", --3
   }
+
+
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Weapon Sets
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+
+  sets.WeaponSet = {} -- DO NOT MODIFY
+  sets.WeaponSet['Naegling'] = {
+    main="Naegling",
+    sub="Genmei Shield",
+  }
+  sets.WeaponSet['Naegling'].DW = {
+    main="Naegling",
+    sub="Maxentius",
+    -- sub="Thibron",
+  }
+  sets.WeaponSet['Maxentius'] = {
+    main="Maxentius",
+    sub={name="Genmei Shield", priority=1},
+  }
+  sets.WeaponSet['Maxentius'].DW = {
+    main="Maxentius",
+    -- sub="Thibron",
+  }
+  sets.WeaponSet['Tizona'] = {
+    -- main="Tizona",
+    sub="Genmei Shield",
+  }
+  sets.WeaponSet['Tizona'].DW = {
+    -- main="Tizona",
+    -- sub="Thibron",
+  }
+
+
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Defense
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+
+
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Idle
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+
+  sets.passive_refresh = {
+    main="Bolelabunga",             -- __/__, ___ [ 1]
+    sub="Genmei Shield",            -- 10/__, ___ [__]
+    ammo="Staunch Tathlum +1",      --  3/ 3, ___ [__]; Resist Status+11
+    head="Rawhide Mask",            -- __/__,  53 [ 1]
+    body="Shamash Robe",            -- 10/__, 106 [ 3]; Resist Silence+90
+    hands=gear.Nyame_B_hands,       --  7/ 7, 112 [__]
+    legs=gear.Rawhide_D_legs,       -- __/__,  69 [ 1]
+    feet=gear.Nyame_B_feet,         --  7/ 7, 150 [__]
+    neck="Loricate Torque +1",      --  6/ 6, ___ [__]; DEF+60
+    ear1="Arete Del Luna +1",       -- __/__, ___ [__]; Resists
+    ear2="Etiolation Earring",      -- __/ 3, ___ [__]; Resist Silence+15
+    ring1="Stikini Ring +1",        -- __/__, ___ [ 1]
+    ring2="Stikini Ring +1",        -- __/__, ___ [ 1]
+    back=gear.BLU_FC_Cape,          -- 10/__, ___ [__]
+    waist="Carrier's Sash",         -- __/__, ___ [__]; Ele Resist+15
+    -- 53 PDT / 26 MDT, 490 M.Eva [8 Refresh]
+
+    -- legs=gear.Lengo_legs,        -- __/__, 107 [ 1]
+    -- 53 PDT / 26 MDT, 528 M.Eva [8 Refresh]
+  }
+  sets.passive_refresh.sub50 = {
+    waist="Fucho-no-Obi",
+  }
+
+  sets.idle = set_combine(sets.passive_refresh, {})
+
+  sets.idle.Evasion = { --Focus on DT cap and evasion
+    -- main="Tizona",
+    -- sub="Sakpata's Sword", --10
+    -- ammo="Amar Cluster", --10EVA
+    head="Malignance Chapeau", --7DT, 91EVA
+    body="Malignance Tabard", --9DT, 102EVA
+    hands="Malignance Gloves", --7DT, 80EVA
+    legs="Malignance Tights", --8DT, 85EVA
+    feet="Malignance Boots", --7DT, 119EVA,
+    -- neck="Bathy Choker +1", --30EVA (after aug)
+    -- ear1="Infused Earring", --10EVA
+    ear2="Eabani Earring", --10EVA
+    ring1="Vengeful Ring", --9EVA
+    ring2="Gelatinous Ring +1", --7PDT
+    -- back=gear.BLU_ENM_Cape, --45EVA
+    -- waist="Shetal Stone", --10EVA
+  } --48 DT, 7PDT
+
+  sets.idle.DT = set_combine(sets.idle, {
+    ammo="Staunch Tathlum +1", --3/3
+    head="Malignance Chapeau", --6/6
+    body="Malignance Tabard", --9/9
+    hands="Malignance Gloves", --5/5
+    legs="Malignance Tights", --7/7
+    feet="Malignance Boots", --4/4
+    ring2="Defending Ring", --10/10
+    -- neck="Warder's Charm +1",
+    -- ring1="Purity Ring", --0/4
+    -- back="Moonlight Cape", --6/6
+  })
+
+  sets.idle.Refresh = set_combine(sets.idle, sets.passive_refresh)
+  sets.idle.Refresh.MpSub50 = set_combine(sets.idle, sets.passive_refresh, sets.passive_refresh.sub50)
+
+  sets.idle.Weak = set_combine(sets.idle.DT, {})
+
+
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Precast
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  -----------------------------------------------------------------------------------------------
+  --     Job Abilities
+  -----------------------------------------------------------------------------------------------
+
   sets.precast.JA['Provoke'] = set_combine(sets.Enmity, {})
   sets.precast.JA['Azure Lore'] = {
     -- hands="Luhlaza Bazubands +1" -- +1 is acceptable
@@ -453,7 +589,7 @@ function init_gear_sets()
 
 
   ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Precast Sets ------------------------------------------
+  --     Fast Cast
   ------------------------------------------------------------------------------------------------
 
   -- Used when casting non-blu spells and not sub RDM (rarely used)
@@ -522,7 +658,7 @@ function init_gear_sets()
 
 
   ------------------------------------------------------------------------------------------------
-  ------------------------------------- Weapon Skill Sets ----------------------------------------
+  --    Weapon Skills
   ------------------------------------------------------------------------------------------------
 
   sets.precast.WS = {
@@ -639,8 +775,12 @@ function init_gear_sets()
     -- ring2="Weather. Ring",
   })
 
+
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Midcast
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
   ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Midcast Sets ------------------------------------------
+  --    Spells
   ------------------------------------------------------------------------------------------------
 
   sets.midcast.FastRecast = set_combine(sets.precast.FC, {})
@@ -652,6 +792,10 @@ function init_gear_sets()
     ring1="Evanescence Ring", --5
     waist="Sanctuary Obi +1", --10
   }
+
+  sets.midcast.Dia = set_combine(sets.TreasureHunter, {})
+  sets.midcast.Diaga = set_combine(sets.TreasureHunter, {})
+  sets.midcast.Bio = set_combine(sets.TreasureHunter, {})
 
   sets.midcast['Blue Magic'] = {
     ammo="Mavi Tathlum",                --  5, __ [__/__, ___]
@@ -982,79 +1126,12 @@ function init_gear_sets()
 
   sets.midcast.Utsusemi = set_combine(sets.midcast.SpellInterrupt, {})
 
+
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Engaged
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
   ------------------------------------------------------------------------------------------------
-  ----------------------------------------- Idle Sets --------------------------------------------
-  ------------------------------------------------------------------------------------------------
-
-  sets.passive_refresh = {
-    main="Bolelabunga",             -- __/__, ___ [ 1]
-    sub="Genmei Shield",            -- 10/__, ___ [__]
-    ammo="Staunch Tathlum +1",      --  3/ 3, ___ [__]; Resist Status+11
-    head="Rawhide Mask",            -- __/__,  53 [ 1]
-    body="Shamash Robe",            -- 10/__, 106 [ 3]; Resist Silence+90
-    hands=gear.Nyame_B_hands,       --  7/ 7, 112 [__]
-    legs=gear.Rawhide_D_legs,       -- __/__,  69 [ 1]
-    feet=gear.Nyame_B_feet,         --  7/ 7, 150 [__]
-    neck="Loricate Torque +1",      --  6/ 6, ___ [__]; DEF+60
-    ear1="Arete Del Luna +1",       -- __/__, ___ [__]; Resists
-    ear2="Etiolation Earring",      -- __/ 3, ___ [__]; Resist Silence+15
-    ring1="Stikini Ring +1",        -- __/__, ___ [ 1]
-    ring2="Stikini Ring +1",        -- __/__, ___ [ 1]
-    back=gear.BLU_FC_Cape,          -- 10/__, ___ [__]
-    waist="Carrier's Sash",         -- __/__, ___ [__]; Ele Resist+15
-    -- 53 PDT / 26 MDT, 490 M.Eva [8 Refresh]
-
-    -- legs=gear.Lengo_legs,        -- __/__, 107 [ 1]
-    -- 53 PDT / 26 MDT, 528 M.Eva [8 Refresh]
-  }
-  sets.passive_refresh.sub50 = {
-    waist="Fucho-no-Obi",
-  }
-
-  -- Resting sets
-  sets.resting = {}
-
-  sets.idle = set_combine(sets.passive_refresh, {})
-
-  sets.idle.Evasion = { --Focus on DT cap and evasion
-    -- main="Tizona",
-    -- sub="Sakpata's Sword", --10
-    -- ammo="Amar Cluster", --10EVA
-    head="Malignance Chapeau", --7DT, 91EVA
-    body="Malignance Tabard", --9DT, 102EVA
-    hands="Malignance Gloves", --7DT, 80EVA
-    legs="Malignance Tights", --8DT, 85EVA
-    feet="Malignance Boots", --7DT, 119EVA,
-    -- neck="Bathy Choker +1", --30EVA (after aug)
-    -- ear1="Infused Earring", --10EVA
-    ear2="Eabani Earring", --10EVA
-    ring1="Vengeful Ring", --9EVA
-    ring2="Gelatinous Ring +1", --7PDT
-    -- back=gear.BLU_ENM_Cape, --45EVA
-    -- waist="Shetal Stone", --10EVA
-  } --48 DT, 7PDT
-
-  sets.idle.DT = set_combine(sets.idle, {
-    ammo="Staunch Tathlum +1", --3/3
-    head="Malignance Chapeau", --6/6
-    body="Malignance Tabard", --9/9
-    hands="Malignance Gloves", --5/5
-    legs="Malignance Tights", --7/7
-    feet="Malignance Boots", --4/4
-    ring2="Defending Ring", --10/10
-    -- neck="Warder's Charm +1",
-    -- ring1="Purity Ring", --0/4
-    -- back="Moonlight Cape", --6/6
-  })
-
-  sets.idle.Refresh = set_combine(sets.idle, sets.passive_refresh)
-  sets.idle.Refresh.MpSub50 = set_combine(sets.idle, sets.passive_refresh, sets.passive_refresh.sub50)
-
-  sets.idle.Weak = set_combine(sets.idle.DT, {})
-
-
-  ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Engaged Sets ------------------------------------------
+  --    Normal Engaged
   ------------------------------------------------------------------------------------------------
 
   -- Variations for TP weapon and (optional) offense/defense modes.  Code will fall back on previous
@@ -1208,7 +1285,7 @@ function init_gear_sets()
 
 
   ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Hybrid Sets -------------------------------------------
+  --    Hybrid Engaged
   ------------------------------------------------------------------------------------------------
 
   sets.engaged.DT = set_combine(sets.engaged, {})
@@ -1273,28 +1350,9 @@ function init_gear_sets()
   }) -- 38 DW, 33 STP, 310 Acc <0 DA, 4 TA, 0 QA> [48 PDT/30 MDT, 542 M.Eva]
 
 
-  ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Special Sets ------------------------------------------
-  ------------------------------------------------------------------------------------------------
-
-  sets.magic_burst = set_combine(sets.midcast['Blue Magic'].Magical, {
-    legs="Assimilator's Shalwar +3", --10
-    feet="Jhakri Pigaches +2", --5
-    -- body="Samnuha Coat", --(8)
-    -- hands="Amalric Gages +1", --(5)
-    -- ring1="Mujin Band", --(5)
-    -- back="Seshaw Cape", --5
-  })
-
-  sets.Kiting = {
-    ring1="Shneddick Ring",
-  }
-  sets.Kiting.Adoulin = {
-    body="Councilor's Garb",
-  }
-  sets.Learning = {
-    hands="Assimilator's Bazubands +1",
-  }
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Unique/Special/Misc
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
 
   sets.buff.Doom = {
     neck="Nicander's Necklace", --20
@@ -1309,47 +1367,20 @@ function init_gear_sets()
     -- feet="Luhlaza Charuqs +3" -- +1 is acceptable
   }
   sets.buff['Efflux'] = {
-    legs="Hashishin Tayt +2", 
+    legs="Hashishin Tayt +2",
   }
 
-  sets.CP = {
-    back=gear.CP_Cape,
+  sets.magic_burst = {
+    legs="Assimilator's Shalwar +3", --10
+    feet="Jhakri Pigaches +2", --5
+    -- body="Samnuha Coat", --(8)
+    -- hands="Amalric Gages +1", --(5)
+    -- ring1="Mujin Band", --(5)
+    -- back="Seshaw Cape", --5
   }
 
-  sets.TreasureHunter = {
-    ammo="Perfect Lucky Egg",
-    waist="Chaac Belt",
-  }
-  sets.TreasureHunter.RA = set_combine(sets.TreasureHunter, {})
-  sets.midcast.Dia = set_combine(sets.TreasureHunter, {})
-  sets.midcast.Diaga = set_combine(sets.TreasureHunter, {})
-  sets.midcast.Bio = set_combine(sets.TreasureHunter, {})
-
-  sets.WeaponSet = {}
-  sets.WeaponSet['Naegling'] = {
-    main="Naegling",
-    sub="Genmei Shield",
-  }
-  sets.WeaponSet['Naegling'].DW = {
-    main="Naegling",
-    sub="Maxentius",
-    -- sub="Thibron",
-  }
-  sets.WeaponSet['Maxentius'] = {
-    main="Maxentius",
-    sub={name="Genmei Shield", priority=1},
-  }
-  sets.WeaponSet['Maxentius'].DW = {
-    main="Maxentius",
-    -- sub="Thibron",
-  }
-  sets.WeaponSet['Tizona'] = {
-    -- main="Tizona",
-    sub="Genmei Shield",
-  }
-  sets.WeaponSet['Tizona'].DW = {
-    -- main="Tizona",
-    -- sub="Thibron",
+  sets.Learning = {
+    hands="Assimilator's Bazubands +1",
   }
 end
 

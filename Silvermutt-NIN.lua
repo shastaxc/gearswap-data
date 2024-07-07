@@ -235,14 +235,40 @@ end
 
 -- Define sets and vars used by this job file.
 function init_gear_sets()
-  sets.org.job = {}
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Common
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
 
+  if sets.org then
+    sets.org.job = {}
+  end
 
-  ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Precast Sets ------------------------------------------
-  ------------------------------------------------------------------------------------------------
+  sets.TreasureHunter = {
+    body=gear.Herc_TH_body, --2
+    hands=gear.Herc_TH_hands, --2
+  }
 
-  -- Enmity set
+  sets.Kiting = {
+    feet="Danzo sune-ate",
+  }
+  sets.Kiting.Adoulin = {
+    body="Councilor's Garb",
+  }
+  sets.Kiting.DayMovement = {
+    feet="Danzo sune-ate",
+  }
+  sets.Kiting.NightMovement = {
+    feet="Hachiya Kyahan +3",
+  }
+
+  sets.CP = {
+    back=gear.CP_Cape,
+  }
+
+  sets.Reive = {
+    neck="Ygnas's Resolve +1"
+  }
+
   sets.Enmity = {
     ammo="Sapience Orb",                                -- __/__, ___ [___] < 2>
     head="Hattori Zukin +2",                            --  9/ 9, 109 [ 61] <__>
@@ -264,11 +290,94 @@ function init_gear_sets()
     -- 50 PDT / 34 MDT, 474 M.Eva [410 HP] <70 Enmity>
   }
 
-  sets.TreasureHunter = {
-    body=gear.Herc_TH_body, --2
-    hands=gear.Herc_TH_hands, --2
+
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Weapon Sets
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+
+  sets.WeaponSet = {} -- DO NOT MODIFY
+  sets.WeaponSet['Heishi'] = {main="Heishi Shorinken", sub="Kunimitsu"}
+  sets.WeaponSet['Naegling'] = {
+    main="Naegling",
+    sub="Kunimitsu",
+    -- sub="Hitaki",
   }
-  sets.TreasureHunter.RA = set_combine(sets.TreasureHunter, {})
+  sets.WeaponSet['Enmity'] = {
+    -- main=gear.Fudo_Masamune_C,
+    sub="Tsuru",
+  }
+  sets.WeaponSet['Aeolian'] = {main="Tauret", sub=gear.Malevolence_1}
+
+
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Defense
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+
+  sets.defense.PDT = {
+    ammo="Staunch Tathlum +1",        -- [ 3/ 3, ___] ___, 11
+    head=gear.Nyame_B_head,           -- [ 7/ 7, 123]  91, __
+    body=gear.Nyame_B_body,           -- [ 9/ 9, 139] 102, __
+    hands=gear.Nyame_B_hands,         -- [ 7/ 7, 112]  80, __
+    legs=gear.Nyame_B_legs,           -- [ 8/ 8, 150]  85, __
+    feet=gear.Nyame_B_feet,           -- [ 7/ 7, 150] 119, __
+    neck="Warder's Charm +1",         -- [__/__, ___] ___, __; Absorb magic dmg
+    ear1="Eabani Earring",            -- [__/__,   8]  15, __
+    ear2="Arete Del Luna +1",         -- [__/__, ___] ___, __; Resists
+    ring1="Archon Ring",              -- [__/__, ___] ___, __; Annul magic dmg
+    ring2="Defending Ring",           -- [10/10, ___] ___, __
+    back=gear.NIN_STP_Cape,
+    waist="Engraved Belt",            -- [__/__, ___] ___, __; Element resist
+
+    -- body="Hattori Ningi +3",       -- [13/13, 129]  95, __; Migawari+16
+    -- ring1="Shadow Ring",           -- [__/__, ___] ___, __; Annul magic dmg
+    -- back="Shadow Mantle",          -- [__/__, ___] ___, __; Annul physical dmg
+    -- [51 PDT/51 MDT, 682 M.Eva] 492 Eva, 11 Status Resist
+  }
+  sets.defense.MDT = set_combine(sets.defense.PDT, {})
+
+
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Idle
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+
+  sets.latent_regain = {
+  }
+  sets.latent_regen = {
+    body="Hizamaru Haramaki +2",
+    neck="Bathy Choker +1",
+    ear1="Infused Earring",
+    ring1="Chirich Ring +1",
+  }
+  sets.latent_refresh = {
+    head=gear.Herc_Refresh_head,
+    legs="Rawhide Trousers",
+    feet=gear.Herc_Refresh_feet,
+  }
+  sets.latent_refresh_sub50 = set_combine(sets.latent_refresh, {
+    waist="Fucho-no-Obi",
+  })
+
+  sets.idle = set_combine(sets.defense.PDT, {})
+
+  sets.idle.Regain = set_combine(sets.idle, sets.latent_regain)
+  sets.idle.Regen = set_combine(sets.idle, sets.latent_regen)
+  sets.idle.Refresh = set_combine(sets.idle, sets.latent_refresh)
+  sets.idle.RefreshSub50 = set_combine(sets.idle, sets.latent_refresh_sub50)
+  sets.idle.Regain.Regen = set_combine(sets.idle, sets.latent_regain, sets.latent_regen)
+  sets.idle.Regain.Refresh = set_combine(sets.idle, sets.latent_regain, sets.latent_refresh)
+  sets.idle.Regain.RefreshSub50 = set_combine(sets.idle, sets.latent_regain, sets.latent_refresh_sub50)
+  sets.idle.Regen.Refresh = set_combine(sets.idle, sets.latent_regen, sets.latent_refresh)
+  sets.idle.Regen.RefreshSub50 = set_combine(sets.idle, sets.latent_regen, sets.latent_refresh_sub50)
+  sets.idle.Regain.Regen.Refresh = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh)
+  sets.idle.Regain.Regen.RefreshSub50 = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh_sub50)
+
+
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Precast
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  -----------------------------------------------------------------------------------------------
+  --     Job Abilities
+  -----------------------------------------------------------------------------------------------
 
   sets.precast.JA['Provoke'] = set_combine(sets.Enmity, {})
   sets.precast.JA['Mijin Gakure'] = {
@@ -297,7 +406,11 @@ function init_gear_sets()
 
   sets.precast.Waltz['Healing Waltz'] = {}
 
-  -- Fast cast sets for spells
+
+  ------------------------------------------------------------------------------------------------
+  --     Fast Cast
+  ------------------------------------------------------------------------------------------------
+
   sets.precast.FC = {
     ammo="Sapience Orb",              --  2 [__/__, ___]
     head=gear.Herc_Refresh_head,      --  7 [__/__,  59]
@@ -326,11 +439,9 @@ function init_gear_sets()
     -- 79 FC [41 PDT/27 MDT, 404 M.Eva]
   })
 
-  sets.precast.RA = {}
-
 
   ------------------------------------------------------------------------------------------------
-  ------------------------------------- Weapon Skill Sets ----------------------------------------
+  --    Weapon Skills
   ------------------------------------------------------------------------------------------------
 
   -- Default set for any weaponskill that isn't any more specifically defined
@@ -821,6 +932,7 @@ function init_gear_sets()
     -- ear2="Hattori Earring +2",
   })
 
+  -- Used for "Proc" mode, when you typically don't want it to do a lot of damage. Focus acc.
   sets.precast.WS['Proc'] = {
     ammo="Yamarang",
     head="Malignance Chapeau",
@@ -838,8 +950,11 @@ function init_gear_sets()
   }
 
 
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Midcast
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
   ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Midcast Sets ------------------------------------------
+  --    Spells
   ------------------------------------------------------------------------------------------------
 
   sets.midcast.FastRecast = set_combine(sets.precast.FC, {})
@@ -1017,6 +1132,11 @@ function init_gear_sets()
 
   sets.midcast.Stun = set_combine(sets.midcast.EnfeeblingNinjutsu, {})
 
+
+  ------------------------------------------------------------------------------------------------
+  --    Ranged
+  ------------------------------------------------------------------------------------------------
+
   sets.midcast.RA = {
     head="Malignance Chapeau",
     body="Malignance Tabard",
@@ -1033,71 +1153,11 @@ function init_gear_sets()
   }
 
 
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Engaged
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
   ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Defense Sets ------------------------------------------
-  ------------------------------------------------------------------------------------------------
-
-  sets.defense.PDT = {
-    ammo="Staunch Tathlum +1",        -- [ 3/ 3, ___] ___, 11
-    head=gear.Nyame_B_head,           -- [ 7/ 7, 123]  91, __
-    body=gear.Nyame_B_body,           -- [ 9/ 9, 139] 102, __
-    hands=gear.Nyame_B_hands,         -- [ 7/ 7, 112]  80, __
-    legs=gear.Nyame_B_legs,           -- [ 8/ 8, 150]  85, __
-    feet=gear.Nyame_B_feet,           -- [ 7/ 7, 150] 119, __
-    neck="Warder's Charm +1",         -- [__/__, ___] ___, __; Absorb magic dmg
-    ear1="Eabani Earring",            -- [__/__,   8]  15, __
-    ear2="Arete Del Luna +1",         -- [__/__, ___] ___, __; Resists
-    ring1="Archon Ring",              -- [__/__, ___] ___, __; Annul magic dmg
-    ring2="Defending Ring",           -- [10/10, ___] ___, __
-    back=gear.NIN_STP_Cape,
-    waist="Engraved Belt",            -- [__/__, ___] ___, __; Element resist
-
-    -- body="Hattori Ningi +3",       -- [13/13, 129]  95, __; Migawari+16
-    -- ring1="Shadow Ring",           -- [__/__, ___] ___, __; Annul magic dmg
-    -- back="Shadow Mantle",          -- [__/__, ___] ___, __; Annul physical dmg
-    -- [51 PDT/51 MDT, 682 M.Eva] 492 Eva, 11 Status Resist
-  }
-  sets.defense.MDT = set_combine(sets.defense.PDT, {})
-
-
-  ------------------------------------------------------------------------------------------------
-  ----------------------------------------- Idle Sets --------------------------------------------
-  ------------------------------------------------------------------------------------------------
-
-  sets.latent_regain = {
-  }
-  sets.latent_regen = {
-    body="Hizamaru Haramaki +2",
-    neck="Bathy Choker +1",
-    ear1="Infused Earring",
-    ring1="Chirich Ring +1",
-  }
-  sets.latent_refresh = {
-    head=gear.Herc_Refresh_head,
-    legs="Rawhide Trousers",
-    feet=gear.Herc_Refresh_feet,
-  }
-  sets.latent_refresh_sub50 = set_combine(sets.latent_refresh, {
-    waist="Fucho-no-Obi",
-  })
-
-  sets.idle = set_combine(sets.defense.PDT, {})
-
-  sets.idle.Regain = set_combine(sets.idle, sets.latent_regain)
-  sets.idle.Regen = set_combine(sets.idle, sets.latent_regen)
-  sets.idle.Refresh = set_combine(sets.idle, sets.latent_refresh)
-  sets.idle.RefreshSub50 = set_combine(sets.idle, sets.latent_refresh_sub50)
-  sets.idle.Regain.Regen = set_combine(sets.idle, sets.latent_regain, sets.latent_regen)
-  sets.idle.Regain.Refresh = set_combine(sets.idle, sets.latent_regain, sets.latent_refresh)
-  sets.idle.Regain.RefreshSub50 = set_combine(sets.idle, sets.latent_regain, sets.latent_refresh_sub50)
-  sets.idle.Regen.Refresh = set_combine(sets.idle, sets.latent_regen, sets.latent_refresh)
-  sets.idle.Regen.RefreshSub50 = set_combine(sets.idle, sets.latent_regen, sets.latent_refresh_sub50)
-  sets.idle.Regain.Regen.Refresh = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh)
-  sets.idle.Regain.Regen.RefreshSub50 = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh_sub50)
-
-
-  ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Engaged Sets ------------------------------------------
+  --    Normal Engaged
   ------------------------------------------------------------------------------------------------
 
   -- No DW (0 needed from gear)
@@ -1295,7 +1355,7 @@ function init_gear_sets()
 
 
   ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Hybrid Sets -------------------------------------------
+  --    Hybrid Engaged
   ------------------------------------------------------------------------------------------------
 
   -- No DW (0 needed from gear)
@@ -1472,53 +1532,16 @@ function init_gear_sets()
   sets.engaged.MaxDW.HeavyDef.HighAcc = set_combine(sets.engaged.MaxDW.HeavyDef.MidAcc, {
   })
 
-  ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Special Sets ------------------------------------------
-  ------------------------------------------------------------------------------------------------
 
-  sets.Special = {}
-
-  sets.buff.Yonin = {}
-  sets.buff.Innin = {}
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Unique/Special/Misc
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
 
   sets.buff.Doom = {
     neck="Nicander's Necklace", --20
     ring2="Eshmun's Ring", --20
     waist="Gishdubar Sash", --10
   }
-
-  sets.Kiting = {
-    feet="Danzo sune-ate",
-  }
-  sets.Kiting.Adoulin = {
-    body="Councilor's Garb",
-  }
-  sets.DayMovement = {
-    feet="Danzo sune-ate",
-  }
-  sets.NightMovement = {
-    feet="Hachiya Kyahan +3",
-  }
-  
-  sets.CP = {
-    back=gear.CP_Cape,
-  }
-  sets.Reive = {
-    neck="Ygnas's Resolve +1"
-  }
-
-  sets.WeaponSet = {}
-  sets.WeaponSet['Heishi'] = {main="Heishi Shorinken", sub="Kunimitsu"}
-  sets.WeaponSet['Naegling'] = {
-    main="Naegling",
-    sub="Kunimitsu",
-    -- sub="Hitaki",
-  }
-  sets.WeaponSet['Enmity'] = {
-    -- main=gear.Fudo_Masamune_C,
-    sub="Tsuru",
-  }
-  sets.WeaponSet['Aeolian'] = {main="Tauret", sub=gear.Malevolence_1}
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -1723,9 +1746,9 @@ function customize_idle_set(idleSet)
       idleSet = set_combine(idleSet, sets.Kiting.Adoulin)
     else
       if world.time >= (17*60) or world.time <= (7*60) then
-        idleSet = set_combine(idleSet, sets.NightMovement)
+        idleSet = set_combine(idleSet, sets.Kiting.NightMovement)
       else
-        idleSet = set_combine(idleSet, sets.DayMovement)
+        idleSet = set_combine(idleSet, sets.Kiting.DayMovement)
       end
     end
   end

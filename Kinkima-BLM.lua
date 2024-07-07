@@ -259,8 +259,110 @@ end
 
 -- Define sets and vars used by this job file.
 function init_gear_sets()
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Common
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+
+  if sets.org then
+    sets.org.job = {}
+  end
+
+  sets.Kiting = {
+    ring1="Shneddick Ring",
+  }
+  sets.Kiting.Adoulin = {
+    body="Councilor's Garb",
+  }
+
+  sets.CP = {
+    back=gear.CP_Cape,
+  }
+
+
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Weapon Sets
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+
+  sets.WeaponSet = {} -- DO NOT MODIFY
+  sets.WeaponSet['Cleaving'] = {
+    main="Mpaca's Staff",
+    sub="Khonsu",
+  }
+  sets.WeaponSet['Myrkr'] = {
+    main="Khatvanga",
+    sub="Khonsu",
+  }
+
+
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Defense
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+
+  sets.HeavyDef = {
+    main="Mpaca's Staff",             -- __/__, ___ [ 2]
+    sub="Enki Strap",                 -- __/__,  10 [__]
+    range=empty,                      -- __/__, ___ [__]
+    ammo="Staunch Tathlum +1",        --  3/ 3, ___ [__]; Resist Status+11
+    head="Wicce Petasos +3",          -- 11/11, 136 [__]
+    body="Shamash Robe",              -- 10/__, 106 [ 3]; Resist Silence+90
+    hands=gear.Nyame_B_hands,         --  7/ 7, 112 [__]
+    legs=gear.Nyame_B_legs,           --  8/ 8, 150 [__]
+    feet="Wicce Sabots +3",           -- 11/11, 168 [__]
+    neck="Loricate Torque +1",        --  6/ 6, ___ [__]; DEF+60
+    ear1="Arete Del Luna +1",         -- __/__, ___ [__]; Resists
+    ear2="Etiolation Earring",        -- __/ 3, ___ [__]; Resist Silence+15
+    ring1="Wuji Ring",                -- __/__, ___ [__]; Resists Charm/Sleep
+    ring2="Archon Ring",              -- __/__, ___ [__]; Annul severe magic dmg
+    back="Archon Cape",               -- __/__, ___ [__]
+    waist="Carrier's Sash",           -- __/__, ___ [__]; Ele Resist+15
+    -- 56 PDT/49 MDT, 682 M.Eva [5 Refresh]
+
+    -- ring2="Shadow Ring",           -- __/__, ___ [__]; Occ. annuls magic dmg
+    -- back="Shadow Mantle",          -- __/__, ___ [__]; Occ. annuls physical dmg
+    -- 56 PDT/49 MDT, 682 M.Eva [5 Refresh]
+  }
+
+  sets.defense.PDT = set_combine(sets.HeavyDef, {})
+  sets.defense.MDT = set_combine(sets.HeavyDef, {})
+
+
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Idle
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+
+  -- Technically, Prime sword Caliburnus has highest refresh
+  -- Used when your weapons are locked "battle mode"
+  sets.passive_refresh = {
+    range=empty,                      -- __/__, ___ [__]
+    ammo="Staunch Tathlum +1",        --  3/ 3, ___ [__]
+    head="Volte Beret",               -- __/__, 104 [ 1]
+    body="Shamash Robe",              -- 10/__, 106 [ 3]; Resist Silence+90
+    hands="Wicce Gloves +3",          -- 13/13,  98 [__]
+    legs="Assiduity Pants +1",        -- __/__, 107 [ 2]
+    feet="Volte Gaiters",             -- __/__, 142 [ 1]
+    neck="Sibyl Scarf",               -- __/__, ___ [ 1]
+    ear1="Arete Del Luna +1",         -- __/__, ___ [__]; Resists
+    ear2="Etiolation Earring",        -- __/ 3, ___ [__]; Resist Silence+15
+    ring1="Stikini Ring +1",          -- __/__, ___ [ 1]
+    ring2="Defending Ring",           -- 10/10, ___ [__]
+    back=gear.BLM_FC_Cape,            -- 10/__, ___ [__]
+    waist="Carrier's Sash",           -- __/__, ___ [__]; Ele Resist
+    -- 46 PDT / 29 MDT, 557 M.Eva [10 Refresh]
+  }
+  sets.passive_refresh.sub50 = {
+    waist="Fucho-no-Obi",             -- __/__, ___ [ 1]
+  }
+
+  sets.idle = set_combine(sets.HeavyDef, {})
+  sets.idle.Refresh = set_combine(sets.idle, sets.passive_refresh)
+  sets.idle.Refresh.MpSub50 = set_combine(sets.idle, sets.passive_refresh, sets.passive_refresh.sub50)
+
+
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Precast
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
   -----------------------------------------------------------------------------------------------
-  ---------------------------------------- Job Abilities ----------------------------------------
+  --     Job Abilities
   -----------------------------------------------------------------------------------------------
 
   -- Precast sets to enhance JAs
@@ -270,7 +372,7 @@ function init_gear_sets()
 
 
   ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Precast Sets ------------------------------------------
+  --     Fast Cast
   ------------------------------------------------------------------------------------------------
 
   -- Fast cast sets for spells (cap 80% FC).
@@ -341,7 +443,7 @@ function init_gear_sets()
 
 
   ------------------------------------------------------------------------------------------------
-  ------------------------------------- Weapon Skill Sets ----------------------------------------
+  --    Weapon Skills
   ------------------------------------------------------------------------------------------------
 
   sets.precast.WS = {
@@ -449,8 +551,11 @@ function init_gear_sets()
   })
 
 
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Midcast
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
   ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Midcast Sets ------------------------------------------
+  --    Spells
   ------------------------------------------------------------------------------------------------
 
   sets.midcast.FastRecast = set_combine(sets.precast.FC,{})
@@ -824,73 +929,11 @@ function init_gear_sets()
   })
 
 
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Engaged
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
   ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Defense Sets ------------------------------------------
-  ------------------------------------------------------------------------------------------------
-
-  sets.HeavyDef = {
-    main="Mpaca's Staff",             -- __/__, ___ [ 2]
-    sub="Enki Strap",                 -- __/__,  10 [__]
-    range=empty,                      -- __/__, ___ [__]
-    ammo="Staunch Tathlum +1",        --  3/ 3, ___ [__]; Resist Status+11
-    head="Wicce Petasos +3",          -- 11/11, 136 [__]
-    body="Shamash Robe",              -- 10/__, 106 [ 3]; Resist Silence+90
-    hands=gear.Nyame_B_hands,         --  7/ 7, 112 [__]
-    legs=gear.Nyame_B_legs,           --  8/ 8, 150 [__]
-    feet="Wicce Sabots +3",           -- 11/11, 168 [__]
-    neck="Loricate Torque +1",        --  6/ 6, ___ [__]; DEF+60
-    ear1="Arete Del Luna +1",         -- __/__, ___ [__]; Resists
-    ear2="Etiolation Earring",        -- __/ 3, ___ [__]; Resist Silence+15
-    ring1="Wuji Ring",                -- __/__, ___ [__]; Resists Charm/Sleep
-    ring2="Archon Ring",              -- __/__, ___ [__]; Annul severe magic dmg
-    back="Archon Cape",               -- __/__, ___ [__]
-    waist="Carrier's Sash",           -- __/__, ___ [__]; Ele Resist+15
-    -- 56 PDT/49 MDT, 682 M.Eva [5 Refresh]
-    
-    -- ring2="Shadow Ring",           -- __/__, ___ [__]; Occ. annuls magic dmg
-    -- back="Shadow Mantle",          -- __/__, ___ [__]; Occ. annuls physical dmg
-    -- 56 PDT/49 MDT, 682 M.Eva [5 Refresh]
-  }
-
-  sets.defense.PDT = set_combine(sets.HeavyDef, {})
-  sets.defense.MDT = set_combine(sets.HeavyDef, {})
-
-
-  ------------------------------------------------------------------------------------------------
-  ----------------------------------------- Idle Sets --------------------------------------------
-  ------------------------------------------------------------------------------------------------
-
-  -- Technically, Prime sword Caliburnus has highest refresh
-  
-  -- Used when your weapons are locked "battle mode"
-  sets.passive_refresh = {
-    range=empty,                      -- __/__, ___ [__]
-    ammo="Staunch Tathlum +1",        --  3/ 3, ___ [__]
-    head="Volte Beret",               -- __/__, 104 [ 1]
-    body="Shamash Robe",              -- 10/__, 106 [ 3]; Resist Silence+90
-    hands="Wicce Gloves +3",          -- 13/13,  98 [__]
-    legs="Assiduity Pants +1",        -- __/__, 107 [ 2]
-    feet="Volte Gaiters",             -- __/__, 142 [ 1]
-    neck="Sibyl Scarf",               -- __/__, ___ [ 1]
-    ear1="Arete Del Luna +1",         -- __/__, ___ [__]; Resists
-    ear2="Etiolation Earring",        -- __/ 3, ___ [__]; Resist Silence+15
-    ring1="Stikini Ring +1",          -- __/__, ___ [ 1]
-    ring2="Defending Ring",           -- 10/10, ___ [__]
-    back=gear.BLM_FC_Cape,            -- 10/__, ___ [__]
-    waist="Carrier's Sash",           -- __/__, ___ [__]; Ele Resist
-    -- 46 PDT / 29 MDT, 557 M.Eva [10 Refresh]
-  }
-  sets.passive_refresh.sub50 = {
-    waist="Fucho-no-Obi",             -- __/__, ___ [ 1]
-  }
-
-  sets.idle = set_combine(sets.HeavyDef, {})
-  sets.idle.Refresh = set_combine(sets.idle, sets.passive_refresh)
-  sets.idle.Refresh.MpSub50 = set_combine(sets.idle, sets.passive_refresh, sets.passive_refresh.sub50)
-
-
-  ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Engaged Sets ------------------------------------------
+  --    Normal Engaged
   ------------------------------------------------------------------------------------------------
 
   sets.engaged = {
@@ -916,50 +959,21 @@ function init_gear_sets()
   }
 
 
-  ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Special Sets ------------------------------------------
-  ------------------------------------------------------------------------------------------------
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Unique/Special/Misc
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
 
   sets.buff.Doom = {
     neck="Nicander's Necklace",     --20
     ring1="Eshmun's Ring",          --20
     waist="Gishdubar Sash",         --10
   }
-
-  sets.Obi = {
-    waist="Hachirin-no-Obi"
-  }
-
-  sets.Kiting = {
-    ring1="Shneddick Ring",
-  }
-  sets.Kiting.Adoulin = {
-    body="Councilor's Garb",
-  }
-
-  sets.CP = {
-    back=gear.CP_Cape,
-  }
-
-  sets.Special = {}
   -- This set will be overlaid on all idle, melee, and midcast sets while Mana Wall is active
-  sets.Special.ManaWall = {
+  sets.buff.ManaWall = {
     feet="Wicce Sabots +3",   -- 25 [11/11, 168]
     back=gear.BLM_FC_Cape,    -- 10 [10/__, ___]
     -- 35 Mana Wall [21 PDT/11 MDT, 168 M.Eva]
   }
-
-  --Weapon sets
-  sets.WeaponSet = {}
-  sets.WeaponSet['Cleaving'] = {
-    main="Mpaca's Staff",
-    sub="Khonsu",
-  }
-  sets.WeaponSet['Myrkr'] = {
-    main="Khatvanga",
-    sub="Khonsu",
-  }
-
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -1065,7 +1079,7 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
   end
 
   if buffactive['Mana Wall'] then
-    equip(sets.Special.ManaWall)
+    equip(sets.buff.ManaWall)
   end
 
   -- Always put this last in job_post_midcast
@@ -1254,7 +1268,7 @@ function customize_idle_set(idleSet)
   end
 
   if buffactive['Mana Wall'] then
-    idleSet = set_combine(idleSet, sets.Special.ManaWall)
+    idleSet = set_combine(idleSet, sets.buff.ManaWall)
   end
 
   -- If slot is locked to use no-swap gear, keep it equipped
@@ -1285,7 +1299,7 @@ function customize_melee_set(meleeSet)
   end
 
   if buffactive['Mana Wall'] then
-    meleeSet = set_combine(meleeSet, sets.Special.ManaWall)
+    meleeSet = set_combine(meleeSet, sets.buff.ManaWall)
   end
 
   -- If slot is locked to use no-swap gear, keep it equipped
@@ -1316,7 +1330,7 @@ function customize_defense_set(defenseSet)
   end
 
   if buffactive['Mana Wall'] then
-    defenseSet = set_combine(defenseSet, sets.Special.ManaWall)
+    defenseSet = set_combine(defenseSet, sets.buff.ManaWall)
   end
 
   -- If slot is locked to use no-swap gear, keep it equipped

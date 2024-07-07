@@ -332,18 +332,273 @@ end
 
 -- Define sets and vars used by this job file.
 function init_gear_sets()
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Common
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+
+  if sets.org then
+    sets.org.job = {}
+  end
+
+  sets.TreasureHunter = {
+    range=empty,
+    ammo="Perfect Lucky Egg", -- 1
+    body=gear.Merl_TH_body,   -- 2
+    waist="Chaac Belt", -- 1
+  }
+  sets.TreasureHunter.RA = {
+    body=gear.Merl_TH_body,   -- 2
+    waist="Chaac Belt", -- 1
+  }
+
+  sets.Kiting = {
+    ring1="Shneddick Ring",
+  }
+  sets.Kiting.Adoulin = {
+    body="Councilor's Garb",
+  }
+
+
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Weapon Sets
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+
+  sets.WeaponSet = {} -- DO NOT MODIFY
+  sets.WeaponSet['Savage'] = {
+    main="Naegling",
+    sub="Ammurapi Shield",
+  }
+  sets.WeaponSet['Savage'].DW = {
+    main="Naegling",
+    sub="Machaera +2",
+    -- sub="Thibron",
+  }
+  sets.WeaponSet['SavageAcc'] = {
+    main="Naegling",
+    sub="Ammurapi Shield",
+  }
+  sets.WeaponSet['SavageAcc'].DW = {
+    main="Naegling",
+    sub="Tauret",
+  }
+  sets.WeaponSet['Enspell'] = {
+    main="Crocea Mors",
+    sub="Ammurapi Shield",
+  }
+  sets.WeaponSet['Enspell'].DW = {
+    main="Crocea Mors",
+    sub="Tauret",
+    -- sub="Gleti's Knife",
+  }
+  sets.WeaponSet['BlackHalo'] = {
+    main="Maxentius",
+    sub="Ammurapi Shield",
+  }
+  sets.WeaponSet['BlackHalo'].DW = {
+    main="Maxentius",
+    sub="Tauret",
+  }
+  sets.WeaponSet['BlackHaloAcc'] = {
+    main="Maxentius",
+    sub="Ammurapi Shield",
+  }
+  sets.WeaponSet['BlackHaloAcc'].DW = {
+    main="Maxentius",
+    sub="Tauret",
+  }
+  sets.WeaponSet['Seraph'] = {
+    main="Crocea Mors",
+    sub="Culminus",
+  }
+  sets.WeaponSet['Seraph'].DW = {
+    main="Crocea Mors",
+    sub="Daybreak",
+  }
+  sets.WeaponSet['Cleaving'] = {
+    main="Tauret",
+    sub="Culminus",
+  }
+  sets.WeaponSet['Cleaving'].DW = {
+    main="Tauret",
+    sub="Bunzi's Rod",
+  }
+  sets.WeaponSet['CleavingAcc'] = {
+    main="Tauret",
+    sub="Culminus",
+  }
+  sets.WeaponSet['CleavingAcc'].DW = {
+    main="Tauret",
+    sub=gear.Malevolence_1,
+  }
+  sets.WeaponSet['Asuran Fists'] = {
+    -- main="Karambit",
+    -- sub=empty,
+  }
+
+
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Defense
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+
+  sets.HeavyDef = { -- Not counting weapons in totals because will not always be equippable (battle mode)
+    main="Mpaca's Staff",             -- __/__, ___ [ 2]
+    sub="Enki Strap",                 -- __/__,  10 [__]
+    range=empty,                      -- __/__, ___ [__]
+    ammo="Staunch Tathlum +1",        --  3/ 3, ___ [__]; Resist Status+11
+    head="Bunzi's Hat",               --  7/ 7, 123 [__]
+    body="Shamash Robe",              -- 10/__, 106 [ 3]; Resist Silence+90
+    hands=gear.Nyame_B_hands,         --  7/ 7, 112 [__]
+    legs=gear.Nyame_B_legs,           --  8/ 8, 150 [__]
+    feet=gear.Nyame_B_feet,           --  7/ 7, 150 [__]
+    neck="Loricate Torque +1",        --  6/ 6, ___ [__]; DEF+60
+    ear1="Arete Del Luna +1",         -- __/__, ___ [__]; Resists
+    ear2="Etiolation Earring",        -- __/ 3, ___ [__]; Resist Silence+15
+    ring1="Wuji Ring",                -- __/__, ___ [__]; Resists Charm/Sleep
+    ring2="Defending Ring",           -- 10/10, ___ [__]
+    back="Archon Cape",               -- __/__, ___ [__]
+    waist="Carrier's Sash",           -- __/__, ___ [__]; Ele Resist+15
+    -- 58 PDT/51 MDT, 641 M.Eva [3 Refresh]
+
+    -- main="Sakpata's Sword",        -- 10/10, ___ [ 3]; R30
+    -- sub="Sacro Bulwark",           -- 10/10, ___ [__]
+    -- head="Lethargy Chappel +3",    -- 10/10, 125 [__]
+    -- ring2="Shadow Ring",           -- __/__, ___ [__]; Occ. annuls magic dmg
+    -- back="Shadow Mantle",          -- __/__, ___ [__]; Occ. annuls physical dmg
+    -- 51 PDT/44 MDT, 643 M.Eva [3 Refresh]
+  }
+
+  sets.defense.PDT = set_combine(sets.HeavyDef, {})
+  sets.defense.MDT = set_combine(sets.HeavyDef, {})
+
+
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Idle
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+
+  -- Technically, Prime sword Caliburnus has highest refresh
+  -- Used when your weapons are locked "battle mode"
+  sets.passive_refresh = {
+    range=empty,                      -- __/__, ___ [__]
+    ammo="Homiliary",                 -- __/__, ___ [ 1]
+    head="Vitiation Chapeau +3",      -- __/__,  95 [ 3]
+    body="Shamash Robe",              -- 10/__, 106 [ 3]; Resist Silence+90
+    hands="Lethargy Gantherots +3",   -- 11/11,  87 [__]
+    legs="Bunzi's Pants",             --  9/ 9, 150 [__]
+    feet="Volte Gaiters",             -- __/__, 142 [ 1]
+    neck="Sibyl Scarf",               -- __/__, ___ [ 1]
+    ear1="Arete Del Luna +1",         -- __/__, ___ [__]; Resists
+    ear2="Etiolation Earring",        -- __/ 3, ___ [__]; Resist Silence+15
+    ring1="Stikini Ring +1",          -- __/__, ___ [ 1]
+    ring2="Defending Ring",           -- 10/10, ___ [__]
+    back=gear.RDM_INT_Enf_Cape,       -- 10/__, ___ [__]
+    waist="Carrier's Sash",           -- __/__, ___ [__]; Ele Resist
+    -- 50 PDT / 33 MDT, 580 M.Eva [10 Refresh]
+  }
+  -- Used when your weapons are unlocked but cannot dual wield (sub SCH)
+  sets.passive_refresh.Single = {
+    main="Mpaca's Staff",             -- __/__, ___ [ 2]
+    sub="Enki Strap",                 -- __/__,  10 [__]
+    range=empty,                      -- __/__, ___ [__]
+    ammo="Homiliary",                 -- __/__, ___ [ 1]
+    head="Vitiation Chapeau +3",      -- __/__,  95 [ 3]
+    body="Shamash Robe",              -- 10/__, 106 [ 3]; Resist Silence+90
+    hands="Lethargy Gantherots +3",   -- 11/11,  87 [__]
+    legs="Bunzi's Pants",             --  9/ 9, 150 [__]
+    feet="Volte Gaiters",             -- __/__, 142 [ 1]
+    neck="Sibyl Scarf",               -- __/__, ___ [ 1]
+    ear1="Arete Del Luna +1",         -- __/__, ___ [__]; Resists
+    ear2="Etiolation Earring",        -- __/ 3, ___ [__]; Resist Silence+15
+    ring1="Stikini Ring +1",          -- __/__, ___ [ 1]
+    ring2="Defending Ring",           -- 10/10, ___ [__]
+    back=gear.RDM_INT_Enf_Cape,       -- 10/__, ___ [__]
+    waist="Carrier's Sash",           -- __/__, ___ [__]; Ele Resist
+    -- 50 PDT / 33 MDT, 590 M.Eva [12 Refresh]
+    
+    -- main="Sakpata's Sword",        -- 10/10, ___ [ 3]; R30
+    -- sub="Sacro Bulwark",           -- 10/10, ___ [__]
+    -- hands="Volte Gloves",          -- __/__,  96 [ 1]
+    -- ring2="Stikini Ring +1",       -- __/__, ___ [ 1]
+    -- 49 PDT / 32 MDT, 589 M.Eva [15 Refresh]
+  }
+  -- Used when weapons are unlocked and you can dual wield
+  sets.passive_refresh.Dual = {
+    main="Bolelabunga",               -- __/__, ___ [ 1]
+    sub="Daybreak",                   -- __/__,  30 [ 1]
+    range=empty,                      -- __/__, ___ [__]
+    ammo="Homiliary",                 -- __/__, ___ [ 1]
+    head="Vitiation Chapeau +3",      -- __/__,  95 [ 3]
+    body="Shamash Robe",              -- 10/__, 106 [ 3]; Resist Silence+90
+    hands="Lethargy Gantherots +3",   -- 11/11,  87 [__]
+    legs="Bunzi's Pants",             --  9/ 9, 150 [__]
+    feet="Volte Gaiters",             -- __/__, 142 [ 1]
+    neck="Sibyl Scarf",               -- __/__, ___ [ 1]
+    ear1="Arete Del Luna +1",         -- __/__, ___ [__]; Resists
+    ear2="Etiolation Earring",        -- __/ 3, ___ [__]; Resist Silence+15
+    ring1="Stikini Ring +1",          -- __/__, ___ [ 1]
+    ring2="Defending Ring",           -- 10/10, ___ [__]
+    back=gear.RDM_INT_Enf_Cape,       -- 10/__, ___ [__]
+    waist="Carrier's Sash",           -- __/__, ___ [__]; Ele Resist
+    -- 50 PDT / 33 MDT, 610 M.Eva [12 Refresh]
+    
+    -- main="Sakpata's Sword",        -- 10/10, ___ [ 3]; R30
+    -- sub="Daybreak",                -- __/__,  30 [ 1]
+    -- hands="Volte Gloves",          -- __/__,  96 [ 1]
+    -- 49 PDT / 32 MDT, 619 M.Eva [15 Refresh]
+  }
+  sets.passive_refresh.sub50 = {
+    waist="Fucho-no-Obi",             -- __/__, ___ [ 1]
+  }
+
+  sets.idle = set_combine(sets.HeavyDef, {})
+  sets.idle.Refresh = set_combine(sets.idle, sets.passive_refresh)
+  sets.idle.Refresh.MpSub50 = set_combine(sets.idle, sets.passive_refresh, sets.passive_refresh.sub50)
+
+  -- Zendick robe also works
+  sets.idle.Gyve = set_combine(sets.idle, {
+    -- body="Gyve Doublet",
+  })
+  sets.idle.Gyve.Refresh = set_combine(sets.idle, sets.passive_refresh, {
+    -- body="Gyve Doublet",
+  })
+  sets.idle.Gyve.Refresh.MpSub50 = set_combine(sets.idle, sets.passive_refresh, sets.passive_refresh.sub50, {
+    -- body="Gyve Doublet",
+  })
+
+  sets.idle.RefreshSingle = set_combine(sets.idle, sets.passive_refresh.Single)
+  sets.idle.RefreshSingle.MpSub50 = set_combine(sets.idle, sets.passive_refresh.Single, sets.passive_refresh.sub50)
+
+  sets.idle.Gyve.RefreshSingle = set_combine(sets.idle, sets.passive_refresh.Single, {
+    -- body="Gyve Doublet",
+  })
+  sets.idle.Gyve.RefreshSingle.MpSub50 = set_combine(sets.idle, sets.passive_refresh.Single, sets.passive_refresh.sub50, {
+    -- body="Gyve Doublet",
+  })
+
+  sets.idle.RefreshDual = set_combine(sets.idle, sets.passive_refresh.Dual)
+  sets.idle.RefreshDual.MpSub50 = set_combine(sets.idle, sets.passive_refresh.Dual, sets.passive_refresh.sub50)
+
+  sets.idle.Gyve.RefreshDual = set_combine(sets.idle, sets.passive_refresh.Dual, {
+    -- body="Gyve Doublet",
+  })
+  sets.idle.Gyve.RefreshDual.MpSub50 = set_combine(sets.idle, sets.passive_refresh.Dual, sets.passive_refresh.sub50, {
+    -- body="Gyve Doublet",
+  })
+
+
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Precast
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
   -----------------------------------------------------------------------------------------------
-  ---------------------------------------- Job Abilities ----------------------------------------
+  --     Job Abilities
   -----------------------------------------------------------------------------------------------
 
-  -- Precast sets to enhance JAs
   sets.precast.JA['Chainspell'] = {
     body="Vitiation Tabard +3", -- +1 is acceptable
   }
 
-  
+
   ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Precast Sets ------------------------------------------
+  --     Fast Cast
   ------------------------------------------------------------------------------------------------
 
   -- Fast cast sets for spells (cap 80% FC).
@@ -413,7 +668,7 @@ function init_gear_sets()
 
 
   ------------------------------------------------------------------------------------------------
-  ------------------------------------- Weapon Skill Sets ----------------------------------------
+  --    Weapon Skills
   ------------------------------------------------------------------------------------------------
 
   sets.precast.WS = {
@@ -593,8 +848,11 @@ function init_gear_sets()
   })
 
 
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Midcast
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
   ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Midcast Sets ------------------------------------------
+  --    Spells
   ------------------------------------------------------------------------------------------------
 
   sets.midcast.FastRecast = set_combine(sets.precast.FC,{})
@@ -1390,163 +1648,12 @@ function init_gear_sets()
     -- 255 M.Acc skill, 8 Elemental Skill, 552 M.Acc, 314 INT, 62 FC [34 PDT/34 MDT, 667 M.Eva]
   }
 
-  sets.buff.Saboteur = {
-    hands="Lethargy Gantherots +3",
-  }
 
-
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Engaged
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
   ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Defense Sets ------------------------------------------
-  ------------------------------------------------------------------------------------------------
-
-  sets.HeavyDef = { -- Not counting weapons in totals because will not always be equippable (battle mode)
-    main="Mpaca's Staff",             -- __/__, ___ [ 2]
-    sub="Enki Strap",                 -- __/__,  10 [__]
-    range=empty,                      -- __/__, ___ [__]
-    ammo="Staunch Tathlum +1",        --  3/ 3, ___ [__]; Resist Status+11
-    head="Bunzi's Hat",               --  7/ 7, 123 [__]
-    body="Shamash Robe",              -- 10/__, 106 [ 3]; Resist Silence+90
-    hands=gear.Nyame_B_hands,         --  7/ 7, 112 [__]
-    legs=gear.Nyame_B_legs,           --  8/ 8, 150 [__]
-    feet=gear.Nyame_B_feet,           --  7/ 7, 150 [__]
-    neck="Loricate Torque +1",        --  6/ 6, ___ [__]; DEF+60
-    ear1="Arete Del Luna +1",         -- __/__, ___ [__]; Resists
-    ear2="Etiolation Earring",        -- __/ 3, ___ [__]; Resist Silence+15
-    ring1="Wuji Ring",                -- __/__, ___ [__]; Resists Charm/Sleep
-    ring2="Defending Ring",           -- 10/10, ___ [__]
-    back="Archon Cape",               -- __/__, ___ [__]
-    waist="Carrier's Sash",           -- __/__, ___ [__]; Ele Resist+15
-    -- 58 PDT/51 MDT, 641 M.Eva [3 Refresh]
-    
-    -- main="Sakpata's Sword",        -- 10/10, ___ [ 3]; R30
-    -- sub="Sacro Bulwark",           -- 10/10, ___ [__]
-    -- head="Lethargy Chappel +3",    -- 10/10, 125 [__]
-    -- ring2="Shadow Ring",           -- __/__, ___ [__]; Occ. annuls magic dmg
-    -- back="Shadow Mantle",          -- __/__, ___ [__]; Occ. annuls physical dmg
-    -- 51 PDT/44 MDT, 643 M.Eva [3 Refresh]
-  }
-
-  sets.defense.PDT = set_combine(sets.HeavyDef, {})
-  sets.defense.MDT = set_combine(sets.HeavyDef, {})
-
-
-  ------------------------------------------------------------------------------------------------
-  ----------------------------------------- Idle Sets --------------------------------------------
-  ------------------------------------------------------------------------------------------------
-
-  -- Technically, Prime sword Caliburnus has highest refresh
-  
-  -- Used when your weapons are locked "battle mode"
-  sets.passive_refresh = {
-    range=empty,                      -- __/__, ___ [__]
-    ammo="Homiliary",                 -- __/__, ___ [ 1]
-    head="Vitiation Chapeau +3",      -- __/__,  95 [ 3]
-    body="Shamash Robe",              -- 10/__, 106 [ 3]; Resist Silence+90
-    hands="Lethargy Gantherots +3",   -- 11/11,  87 [__]
-    legs="Bunzi's Pants",             --  9/ 9, 150 [__]
-    feet="Volte Gaiters",             -- __/__, 142 [ 1]
-    neck="Sibyl Scarf",               -- __/__, ___ [ 1]
-    ear1="Arete Del Luna +1",         -- __/__, ___ [__]; Resists
-    ear2="Etiolation Earring",        -- __/ 3, ___ [__]; Resist Silence+15
-    ring1="Stikini Ring +1",          -- __/__, ___ [ 1]
-    ring2="Defending Ring",           -- 10/10, ___ [__]
-    back=gear.RDM_INT_Enf_Cape,       -- 10/__, ___ [__]
-    waist="Carrier's Sash",           -- __/__, ___ [__]; Ele Resist
-    -- 50 PDT / 33 MDT, 580 M.Eva [10 Refresh]
-  }
-  -- Used when your weapons are unlocked but cannot dual wield (sub SCH)
-  sets.passive_refresh.Single = {
-    main="Mpaca's Staff",             -- __/__, ___ [ 2]
-    sub="Enki Strap",                 -- __/__,  10 [__]
-    range=empty,                      -- __/__, ___ [__]
-    ammo="Homiliary",                 -- __/__, ___ [ 1]
-    head="Vitiation Chapeau +3",      -- __/__,  95 [ 3]
-    body="Shamash Robe",              -- 10/__, 106 [ 3]; Resist Silence+90
-    hands="Lethargy Gantherots +3",   -- 11/11,  87 [__]
-    legs="Bunzi's Pants",             --  9/ 9, 150 [__]
-    feet="Volte Gaiters",             -- __/__, 142 [ 1]
-    neck="Sibyl Scarf",               -- __/__, ___ [ 1]
-    ear1="Arete Del Luna +1",         -- __/__, ___ [__]; Resists
-    ear2="Etiolation Earring",        -- __/ 3, ___ [__]; Resist Silence+15
-    ring1="Stikini Ring +1",          -- __/__, ___ [ 1]
-    ring2="Defending Ring",           -- 10/10, ___ [__]
-    back=gear.RDM_INT_Enf_Cape,       -- 10/__, ___ [__]
-    waist="Carrier's Sash",           -- __/__, ___ [__]; Ele Resist
-    -- 50 PDT / 33 MDT, 590 M.Eva [12 Refresh]
-    
-    -- main="Sakpata's Sword",        -- 10/10, ___ [ 3]; R30
-    -- sub="Sacro Bulwark",           -- 10/10, ___ [__]
-    -- hands="Volte Gloves",          -- __/__,  96 [ 1]
-    -- ring2="Stikini Ring +1",       -- __/__, ___ [ 1]
-    -- 49 PDT / 32 MDT, 589 M.Eva [15 Refresh]
-  }
-  -- Used when weapons are unlocked and you can dual wield
-  sets.passive_refresh.Dual = {
-    main="Bolelabunga",               -- __/__, ___ [ 1]
-    sub="Daybreak",                   -- __/__,  30 [ 1]
-    range=empty,                      -- __/__, ___ [__]
-    ammo="Homiliary",                 -- __/__, ___ [ 1]
-    head="Vitiation Chapeau +3",      -- __/__,  95 [ 3]
-    body="Shamash Robe",              -- 10/__, 106 [ 3]; Resist Silence+90
-    hands="Lethargy Gantherots +3",   -- 11/11,  87 [__]
-    legs="Bunzi's Pants",             --  9/ 9, 150 [__]
-    feet="Volte Gaiters",             -- __/__, 142 [ 1]
-    neck="Sibyl Scarf",               -- __/__, ___ [ 1]
-    ear1="Arete Del Luna +1",         -- __/__, ___ [__]; Resists
-    ear2="Etiolation Earring",        -- __/ 3, ___ [__]; Resist Silence+15
-    ring1="Stikini Ring +1",          -- __/__, ___ [ 1]
-    ring2="Defending Ring",           -- 10/10, ___ [__]
-    back=gear.RDM_INT_Enf_Cape,       -- 10/__, ___ [__]
-    waist="Carrier's Sash",           -- __/__, ___ [__]; Ele Resist
-    -- 50 PDT / 33 MDT, 610 M.Eva [12 Refresh]
-    
-    -- main="Sakpata's Sword",        -- 10/10, ___ [ 3]; R30
-    -- sub="Daybreak",                -- __/__,  30 [ 1]
-    -- hands="Volte Gloves",          -- __/__,  96 [ 1]
-    -- 49 PDT / 32 MDT, 619 M.Eva [15 Refresh]
-  }
-  sets.passive_refresh.sub50 = {
-    waist="Fucho-no-Obi",             -- __/__, ___ [ 1]
-  }
-
-  sets.idle = set_combine(sets.HeavyDef, {})
-  sets.idle.Refresh = set_combine(sets.idle, sets.passive_refresh)
-  sets.idle.Refresh.MpSub50 = set_combine(sets.idle, sets.passive_refresh, sets.passive_refresh.sub50)
-
-  -- Zendick robe also works
-  sets.idle.Gyve = set_combine(sets.idle, {
-    -- body="Gyve Doublet",
-  })
-  sets.idle.Gyve.Refresh = set_combine(sets.idle, sets.passive_refresh, {
-    -- body="Gyve Doublet",
-  })
-  sets.idle.Gyve.Refresh.MpSub50 = set_combine(sets.idle, sets.passive_refresh, sets.passive_refresh.sub50, {
-    -- body="Gyve Doublet",
-  })
-
-  sets.idle.RefreshSingle = set_combine(sets.idle, sets.passive_refresh.Single)
-  sets.idle.RefreshSingle.MpSub50 = set_combine(sets.idle, sets.passive_refresh.Single, sets.passive_refresh.sub50)
-
-  sets.idle.Gyve.RefreshSingle = set_combine(sets.idle, sets.passive_refresh.Single, {
-    -- body="Gyve Doublet",
-  })
-  sets.idle.Gyve.RefreshSingle.MpSub50 = set_combine(sets.idle, sets.passive_refresh.Single, sets.passive_refresh.sub50, {
-    -- body="Gyve Doublet",
-  })
-
-  sets.idle.RefreshDual = set_combine(sets.idle, sets.passive_refresh.Dual)
-  sets.idle.RefreshDual.MpSub50 = set_combine(sets.idle, sets.passive_refresh.Dual, sets.passive_refresh.sub50)
-
-  sets.idle.Gyve.RefreshDual = set_combine(sets.idle, sets.passive_refresh.Dual, {
-    -- body="Gyve Doublet",
-  })
-  sets.idle.Gyve.RefreshDual.MpSub50 = set_combine(sets.idle, sets.passive_refresh.Dual, sets.passive_refresh.sub50, {
-    -- body="Gyve Doublet",
-  })
-
-
-  ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Engaged Sets ------------------------------------------
+  --    Normal Engaged
   ------------------------------------------------------------------------------------------------
 
   -- No DW (0 needed from gear)
@@ -1736,7 +1843,9 @@ function init_gear_sets()
     -- 16 DW, 49 STP, 355 Acc <9 DA, 0 TA, 3 QA> [48 PDT/38 MDT, 610 M.Eva]
   })
 
-  --------------- En-Spell ---------------
+  ------------------------------------------------------------------------------------------------
+  --    Enspell Engaged
+  ------------------------------------------------------------------------------------------------
 
   -- Consider Vitiation Tights if you use enspell merits
   sets.engaged.Enspell = set_combine(sets.engaged, {
@@ -1791,35 +1900,20 @@ function init_gear_sets()
   })
 
 
-  ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Special Sets ------------------------------------------
-  ------------------------------------------------------------------------------------------------
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Unique/Special/Misc
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
 
   sets.buff.Doom = {
     neck="Nicander's Necklace",     --20
     ring1="Eshmun's Ring",          --20
     waist="Gishdubar Sash",         --10
   }
-
-  sets.Obi = {
-    waist="Hachirin-no-Obi"
+  sets.buff.Saboteur = {
+    hands="Lethargy Gantherots +3",
   }
 
-  sets.TreasureHunter = {
-    ammo="Perfect Lucky Egg",
-    body=gear.Merl_TH_body,   -- 2
-    waist="Chaac Belt",
-  }
-
-  sets.Kiting = {
-    ring1="Shneddick Ring",
-  }
-  sets.Kiting.Adoulin = {
-    body="Councilor's Garb",
-  }
-
-  sets.Special = {}
-  sets.Special.CaitSith = {
+  sets.CaitSith = {
     main="Contemplator +1",
     sub="Enki Strap",
     range="Ullr",
@@ -1837,79 +1931,6 @@ function init_gear_sets()
     back=gear.RDM_INT_Enf_Cape,
     waist="Obstinate Sash",
   }
-
-  --Weapon sets
-  sets.WeaponSet = {}
-  sets.WeaponSet['Savage'] = {
-    main="Naegling",
-    sub="Ammurapi Shield",
-  }
-  sets.WeaponSet['Savage'].DW = {
-    main="Naegling",
-    sub="Machaera +2",
-    -- sub="Thibron",
-  }
-  sets.WeaponSet['SavageAcc'] = {
-    main="Naegling",
-    sub="Ammurapi Shield",
-  }
-  sets.WeaponSet['SavageAcc'].DW = {
-    main="Naegling",
-    sub="Tauret",
-  }
-  sets.WeaponSet['Enspell'] = {
-    main="Crocea Mors",
-    sub="Ammurapi Shield",
-  }
-  sets.WeaponSet['Enspell'].DW = {
-    main="Crocea Mors",
-    sub="Tauret",
-    -- sub="Gleti's Knife",
-  }
-  sets.WeaponSet['BlackHalo'] = {
-    main="Maxentius",
-    sub="Ammurapi Shield",
-  }
-  sets.WeaponSet['BlackHalo'].DW = {
-    main="Maxentius",
-    sub="Tauret",
-  }
-  sets.WeaponSet['BlackHaloAcc'] = {
-    main="Maxentius",
-    sub="Ammurapi Shield",
-  }
-  sets.WeaponSet['BlackHaloAcc'].DW = {
-    main="Maxentius",
-    sub="Tauret",
-  }
-  sets.WeaponSet['Seraph'] = {
-    main="Crocea Mors",
-    sub="Culminus",
-  }
-  sets.WeaponSet['Seraph'].DW = {
-    main="Crocea Mors",
-    sub="Daybreak",
-  }
-  sets.WeaponSet['Cleaving'] = {
-    main="Tauret",
-    sub="Culminus",
-  }
-  sets.WeaponSet['Cleaving'].DW = {
-    main="Tauret",
-    sub="Bunzi's Rod",
-  }
-  sets.WeaponSet['CleavingAcc'] = {
-    main="Tauret",
-    sub="Culminus",
-  }
-  sets.WeaponSet['CleavingAcc'].DW = {
-    main="Tauret",
-    sub=gear.Malevolence_1,
-  }
-  sets.WeaponSet['Asuran Fists'] = {
-    -- main="Karambit",
-  }
-
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -1985,7 +2006,7 @@ function job_post_precast(spell, action, spellMap, eventArgs)
   if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
 
   if state.PhysicalDefenseMode.current == 'CaitSith' and state.DefenseMode.current ~= 'None' then
-    equip(sets.Special.CaitSith)
+    equip(sets.CaitSith)
   end
 
   ----------- Non-silibs content goes above this line -----------
@@ -2124,7 +2145,7 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
   if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
 
   if state.PhysicalDefenseMode.current == 'CaitSith' and state.DefenseMode.current ~= 'None' then
-    equip(sets.Special.CaitSith)
+    equip(sets.CaitSith)
   end
 
   ----------- Non-silibs content goes above this line -----------
@@ -2358,7 +2379,7 @@ function customize_defense_set(defenseSet)
   end
 
   if state.PhysicalDefenseMode.current == 'CaitSith' then
-    defenseSet = set_combine(defenseSet, sets.Special.CaitSith)
+    defenseSet = set_combine(defenseSet, sets.CaitSith)
   end
 
   return defenseSet

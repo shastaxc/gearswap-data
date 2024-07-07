@@ -55,7 +55,7 @@ Other
   if you choose to ignore them, it doesn't not actually affect anything.
 * Equipping certain gear such as warp rings or ammo belts will automatically lock that slot until you manually
   unequip it or change zones.
-* Set named sets.Special.SleepyHead will be equipped if you are asleep. This should have a piece of gear in it that
+* Set named sets.SleepyHead will be equipped if you are asleep. This should have a piece of gear in it that
   will deal damage to you to wake you up.
 * DRK can actually get so much PDL that under Aria of Passion, they can hit the 100% cap. To avoid wasting stats,
   WS sets have variants that allow you to tailor the PDL amount in your gear and fit in extra useful stats such
@@ -246,7 +246,38 @@ end
 
 -- Define sets and vars used by this job file.
 function init_gear_sets()
-  sets.org.job = {}
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Common
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+
+  if sets.org then
+    sets.org.job = {}
+  end
+
+  sets.TreasureHunter = {
+    ammo="Perfect Lucky Egg", --1
+    hands="Volte Bracers", --1
+    waist="Chaac Belt", --1
+  }
+  sets.TreasureHunter.RA = {
+    hands="Volte Bracers", --1
+    waist="Chaac Belt", --1
+  }
+
+  sets.Kiting = {
+    legs=gear.Carmine_A_legs,
+  }
+  sets.Kiting.Adoulin = {
+    body="Councilor's Garb",
+  }
+
+  sets.CP = {
+    back=gear.CP_Cape,
+  }
+
+  sets.Reive = {
+    neck="Ygnas's Resolve +1"
+  }
 
   -- Enmity sets
   sets.Enmity = {
@@ -266,9 +297,121 @@ function init_gear_sets()
   }
 
 
-  ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Precast Sets ------------------------------------------
-  ------------------------------------------------------------------------------------------------
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Weapon Sets
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+
+  sets.WeaponSet = {} -- DO NOT MODIFY
+  sets.WeaponSet['Naegling'] = {
+    main="Naegling",
+    sub="Blurred Shield +1",
+  }
+  sets.WeaponSet['Naegling'].DW = {
+    main="Naegling",
+    sub="Sangarius +1",
+  }
+  sets.WeaponSet['Anguta'] = {
+    main="Anguta",
+    sub="Utu Grip",
+  }
+  sets.WeaponSet['Apocalypse'] = {
+    main="Apocalypse",
+    sub="Utu Grip",
+  }
+  sets.WeaponSet['Caladbolg'] = {
+    main="Caladbolg",
+    sub="Utu Grip",
+  }
+  sets.WeaponSet['Club'] = {
+    main="Loxotic Mace +1",
+    sub="Blurred Shield +1",
+  }
+  sets.WeaponSet['Club'].DW = {
+    main="Loxotic Mace +1",
+    sub="Sangarius +1",
+  }
+  sets.WeaponSet['Dagger'] = {
+    main=gear.Malevolence_1,
+    sub="Blurred Shield +1",
+  }
+  sets.WeaponSet['Dagger'].DW = {
+    main=gear.Malevolence_1,
+    sub=gear.Malevolence_2,
+  }
+  sets.WeaponSet['DaggerAcc'] = {
+    main=gear.Malevolence_1,
+    sub="Blurred Shield +1",
+  }
+  sets.WeaponSet['DaggerAcc'].DW = {
+    main=gear.Malevolence_1,
+    sub="Naegling",
+  }
+
+
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Defense
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+
+  sets.defense.PDT = {
+    ammo="Staunch Tathlum +1",                -- __ [ 3/ 3, ___]
+    head={name="Ratri Sallet +1",priority=1}, -- __ [-8/-8, 101]; Used for HP balance
+    body="Sakpata's Breastplate",             -- 10 [10/10, 139]; Resist status+15
+    hands="Heathen's Gauntlets +2",           --  4 [ 9/ 9,  72]
+    legs="Heathen's Flanchards +2",           --  7 [11/11, 109]; Realistically this will be move speed
+    feet="Sakpata's Leggings",                --  7 [ 6/ 6, 150]
+    neck="Loricate Torque +1",                -- __ [ 6/ 6, ___]
+    ear1="Hearty Earring",                    -- __ [__/__, ___]; Resists
+    ear2="Arete Del Luna +1",                 -- __ [__/__, ___]; Resists
+    ring1="Moonlight Ring",                   -- __ [ 5/ 5, ___]
+    ring2="Defending Ring",                   -- __ [10/10, ___]
+    back=gear.DRK_FC_Cape,                    -- __ [10/__, ___]
+    waist="Carrier's Sash",                   -- __ [__/__, ___]; Resists
+    -- 28 M.Def [62 PDT/52 MDT, 571 M.Eva]
+
+    -- hands="Heathen's Gauntlets +3",        --  5 [10/10,  82]
+    -- legs="Heathen's Flanchards +3",        --  8 [12/12, 119]; Realistically this will be move speed
+    -- 30 M.Def [64 PDT/54 MDT, 591 M.Eva]
+  }
+  sets.defense.MDT = set_combine(sets.defense.PDT, {})
+
+
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Idle
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+
+  sets.latent_regain = {
+    head={name="Ratri Sallet +1", priority=1}, -- 5
+  }
+  sets.latent_regen = {
+    body="Sacro Breastplate", --13
+    ear1="Infused Earring",
+  }
+  sets.latent_refresh = {
+    neck="Sibyl Scarf", -- Must be Windurstian
+    ring1="Stikini Ring +1"
+  }
+
+  sets.idle = set_combine(sets.defense.PDT, {})
+
+  sets.idle.Regain = set_combine(sets.idle, sets.latent_regain)
+  sets.idle.Regen = set_combine(sets.idle, sets.latent_regen)
+  sets.idle.Refresh = set_combine(sets.idle, sets.latent_refresh)
+  sets.idle.Regain.Regen = set_combine(sets.idle, sets.latent_regain, sets.latent_regen)
+  sets.idle.Regain.Refresh = set_combine(sets.idle, sets.latent_regain, sets.latent_refresh)
+  sets.idle.Regen.Refresh = set_combine(sets.idle, sets.latent_regen, sets.latent_refresh)
+  sets.idle.Regain.Regen.Refresh = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh)
+
+  sets.idle.HeavyDef = set_combine(sets.defense.PDT, {})
+
+  sets.idle.Weak = set_combine(sets.defense.PDT, {})
+
+
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Precast
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  -----------------------------------------------------------------------------------------------
+  --     Job Abilities
+  -----------------------------------------------------------------------------------------------
 
   sets.precast.JA['Blood Weapon'] = {
     body="Fallen's Cuirass +3", -- +1 is acceptable
@@ -298,7 +441,10 @@ function init_gear_sets()
   sets.precast.JA['Provoke'] = set_combine(sets.Enmity, {})
 
 
-  -- Fast cast sets for spells
+  ------------------------------------------------------------------------------------------------
+  --     Fast Cast
+  ------------------------------------------------------------------------------------------------
+
   sets.precast.FC = {
     ammo="Sapience Orb",                            --  2 [__/__, ___]
     head=gear.Carmine_D_head,                       -- 14 [__/__,  53]
@@ -334,7 +480,7 @@ function init_gear_sets()
 
 
   ------------------------------------------------------------------------------------------------
-  ------------------------------------- Weapon Skill Sets ----------------------------------------
+  --    Weapon Skills
   ------------------------------------------------------------------------------------------------
 
   -- Default set for any weaponskill that isn't any more specifically defined
@@ -866,8 +1012,11 @@ function init_gear_sets()
   }
 
 
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Midcast
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
   ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Midcast Sets ------------------------------------------
+  --    Spells
   ------------------------------------------------------------------------------------------------
 
   -- Initializes trusts at iLvl 119
@@ -1128,68 +1277,13 @@ function init_gear_sets()
     -- hands="Heathen's Gauntlets +3",
     -- legs="Heathen's Flanchard +3",
   })
-  
 
+
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Engaged
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
   ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Defense Sets ------------------------------------------
-  ------------------------------------------------------------------------------------------------
-
-  sets.defense.PDT = {
-    ammo="Staunch Tathlum +1",                -- __ [ 3/ 3, ___]
-    head={name="Ratri Sallet +1",priority=1}, -- __ [-8/-8, 101]; Used for HP balance
-    body="Sakpata's Breastplate",             -- 10 [10/10, 139]; Resist status+15
-    hands="Heathen's Gauntlets +2",           --  4 [ 9/ 9,  72]
-    legs="Heathen's Flanchards +2",           --  7 [11/11, 109]; Realistically this will be move speed
-    feet="Sakpata's Leggings",                --  7 [ 6/ 6, 150]
-    neck="Loricate Torque +1",                -- __ [ 6/ 6, ___]
-    ear1="Hearty Earring",                    -- __ [__/__, ___]; Resists
-    ear2="Arete Del Luna +1",                 -- __ [__/__, ___]; Resists
-    ring1="Moonlight Ring",                   -- __ [ 5/ 5, ___]
-    ring2="Defending Ring",                   -- __ [10/10, ___]
-    back=gear.DRK_FC_Cape,                    -- __ [10/__, ___]
-    waist="Carrier's Sash",                   -- __ [__/__, ___]; Resists
-    -- 28 M.Def [62 PDT/52 MDT, 571 M.Eva]
-
-    -- hands="Heathen's Gauntlets +3",        --  5 [10/10,  82]
-    -- legs="Heathen's Flanchards +3",        --  8 [12/12, 119]; Realistically this will be move speed
-    -- 30 M.Def [64 PDT/54 MDT, 591 M.Eva]
-  }
-  sets.defense.MDT = set_combine(sets.defense.PDT, {})
-
-
-  ------------------------------------------------------------------------------------------------
-  ----------------------------------------- Idle Sets --------------------------------------------
-  ------------------------------------------------------------------------------------------------
-
-  sets.latent_regain = {
-    head={name="Ratri Sallet +1", priority=1}, -- 5
-  }
-  sets.latent_regen = {
-    body="Sacro Breastplate", --13
-    ear1="Infused Earring",
-  }
-  sets.latent_refresh = {
-    neck="Sibyl Scarf", -- Must be Windurstian
-    ring1="Stikini Ring +1"
-  }
-
-  sets.idle = set_combine(sets.defense.PDT, {})
-
-  sets.idle.Regain = set_combine(sets.idle, sets.latent_regain)
-  sets.idle.Regen = set_combine(sets.idle, sets.latent_regen)
-  sets.idle.Refresh = set_combine(sets.idle, sets.latent_refresh)
-  sets.idle.Regain.Regen = set_combine(sets.idle, sets.latent_regain, sets.latent_regen)
-  sets.idle.Regain.Refresh = set_combine(sets.idle, sets.latent_regain, sets.latent_refresh)
-  sets.idle.Regen.Refresh = set_combine(sets.idle, sets.latent_regen, sets.latent_refresh)
-  sets.idle.Regain.Regen.Refresh = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh)
-
-  sets.idle.HeavyDef = set_combine(sets.defense.PDT, {})
-
-  sets.idle.Weak = set_combine(sets.defense.PDT, {})
-
-
-  ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Engaged Sets ------------------------------------------
+  --    Normal Engaged
   ------------------------------------------------------------------------------------------------
 
   sets.engaged = {
@@ -1236,7 +1330,7 @@ function init_gear_sets()
 
 
   ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Hybrid Sets -------------------------------------------
+  --    Hybrid Engaged
   ------------------------------------------------------------------------------------------------
 
   sets.engaged.HeavyDef = {
@@ -1304,85 +1398,18 @@ function init_gear_sets()
   -- TODO
   sets.engaged.HighAcc.SubtleBlow = set_combine(sets.engaged.SubtleBlow, {})
 
-  -----------------------------------------------------------------------------------
-  ---------------------------------------- Special Sets ------------------------------------------
-  ------------------------------------------------------------------------------------------------
 
-  sets.Special = {}
-  sets.Special.SleepyHead = { neck="Vim Torque +1", }
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Unique/Special/Misc
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+
+  sets.SleepyHead = { neck="Vim Torque +1", }
 
   -- Quick sets for post-precast adjustments, listed here so that the gear can be Validated.
   sets.buff.Doom = {
     neck="Nicander's necklace", --20
     ring2="Eshmun's Ring", --20
     waist="Gishdubar Sash", --10
-  }
-  sets.Kiting = {
-    legs=gear.Carmine_A_legs,
-  }
-  sets.Kiting.Adoulin = {
-    body="Councilor's Garb",
-  }
-  sets.CP = {
-    back=gear.CP_Cape,
-  }
-  sets.Reive = {
-    neck="Ygnas's Resolve +1"
-  }
-  sets.TreasureHunter = {
-    ammo="Perfect Lucky Egg", --1
-    hands="Volte Bracers", --1
-    waist="Chaac Belt", --1
-  }
-  sets.TreasureHunter.RA = {
-    hands="Volte Bracers", --1
-    waist="Chaac Belt", --1
-  }
-
-  sets.WeaponSet = {}
-  sets.WeaponSet['Naegling'] = {
-    main="Naegling",
-    sub="Blurred Shield +1",
-  }
-  sets.WeaponSet['Naegling'].DW = {
-    main="Naegling",
-    sub="Sangarius +1",
-  }
-  sets.WeaponSet['Anguta'] = {
-    main="Anguta",
-    sub="Utu Grip",
-  }
-  sets.WeaponSet['Apocalypse'] = {
-    main="Apocalypse",
-    sub="Utu Grip",
-  }
-  sets.WeaponSet['Caladbolg'] = {
-    main="Caladbolg",
-    sub="Utu Grip",
-  }
-  sets.WeaponSet['Club'] = {
-    main="Loxotic Mace +1",
-    sub="Blurred Shield +1",
-  }
-  sets.WeaponSet['Club'].DW = {
-    main="Loxotic Mace +1",
-    sub="Sangarius +1",
-  }
-  sets.WeaponSet['Dagger'] = {
-    main=gear.Malevolence_1,
-    sub="Blurred Shield +1",
-  }
-  sets.WeaponSet['Dagger'].DW = {
-    main=gear.Malevolence_1,
-    sub=gear.Malevolence_2,
-  }
-  sets.WeaponSet['DaggerAcc'] = {
-    main=gear.Malevolence_1,
-    sub="Blurred Shield +1",
-  }
-  sets.WeaponSet['DaggerAcc'].DW = {
-    main=gear.Malevolence_1,
-    sub="Naegling",
   }
 end
 
@@ -1475,7 +1502,7 @@ function job_buff_change(buff,gain)
   classes.CustomMeleeGroups:clear()
 
   if buff == 'sleep' and gain and player.vitals.hp > 500 and player.status == 'Engaged' then
-    equip(sets.Special.SleepyHead)
+    equip(sets.SleepyHead)
   end
 
   if buff == 'doom' then
@@ -1742,7 +1769,7 @@ function customize_melee_set(meleeSet)
   if locked_ring2 then meleeSet = set_combine(meleeSet, { ring2=player.equipment.ring2 }) end
 
   if buffactive['sleep'] and player.vitals.hp > 500 and player.status == 'Engaged' then
-    meleeSet = set_combine(meleeSet, sets.Special.SleepyHead)
+    meleeSet = set_combine(meleeSet, sets.SleepyHead)
   end
 
   if buffactive.Doom then
@@ -1765,7 +1792,7 @@ function customize_defense_set(defenseSet)
   if locked_ring2 then defenseSet = set_combine(defenseSet, { ring2=player.equipment.ring2 }) end
 
   if buffactive['sleep'] and player.vitals.hp > 500 and player.status == 'Engaged' then
-    defenseSet = set_combine(defenseSet, sets.Special.SleepyHead)
+    defenseSet = set_combine(defenseSet, sets.SleepyHead)
   end
 
   if buffactive.Doom then

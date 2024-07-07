@@ -257,20 +257,183 @@ end
 
 -- Set up all gear sets.
 function init_gear_sets()
-  sets.org.job = {}
-  sets.org.job[1] = {ammo="Chrono Bullet"}
-  sets.org.job[2] = {ammo="Artemis's Arrow"}
-  sets.org.job[3] = {ammo="Quelling Bolt"}
-  sets.org.job[4] = {waist="Quelling Bolt Quiver"}
-  sets.org.job[5] = {waist="Chrono Bullet Pouch"}
-  sets.org.job[6] = {waist="Devastating Bullet Pouch"}
-  sets.org.job[7] = {waist="Devastating Bullet"}
-  sets.org.job[8] = {waist="Artemis's Quiver"}
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Common
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+
+  if sets.org then
+    sets.org.job = {}
+    sets.org.job[1] = {ammo="Chrono Bullet"}
+    sets.org.job[2] = {ammo="Artemis's Arrow"}
+    sets.org.job[3] = {ammo="Quelling Bolt"}
+    sets.org.job[4] = {waist="Quelling Bolt Quiver"}
+    sets.org.job[5] = {waist="Chrono Bullet Pouch"}
+    sets.org.job[6] = {waist="Devastating Bullet Pouch"}
+    sets.org.job[7] = {waist="Devastating Bullet"}
+    sets.org.job[8] = {waist="Artemis's Quiver"}
+  end
+
+  sets.TreasureHunter = {
+    body=gear.Herc_TH_body, --2
+    hands=gear.Herc_TH_hands, --2
+  }
+
+  sets.Kiting = {
+    legs=gear.Carmine_A_legs,
+  }
+  sets.Kiting.Adoulin = {
+    body="Councilor's Garb",
+  }
+
+  sets.CP = {
+    back=gear.CP_Cape,
+  }
+
+  sets.Reive = {
+    neck="Ygnas's Resolve +1"
+  }
 
 
-  ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Precast Sets ------------------------------------------
-  ------------------------------------------------------------------------------------------------
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Weapon Sets
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+
+  sets.WeaponSet = {} -- DO NOT MODIFY
+  -- Melee weapon sets
+  sets.WeaponSet['MagicRA'] = {
+    main=gear.Malevolence_1,
+    sub=gear.Malevolence_2,
+  }
+  sets.WeaponSet['PhysRA'] = {
+    main="Ternion Dagger +1",
+    sub="Gleti's Knife",
+  }
+  sets.WeaponSet['PhysRA RangedOnly'] = {
+    main="Gleti's Knife",
+    sub={name="Nusku Shield", priority=1},
+  }
+  sets.WeaponSet['Melee'] = {
+    main="Naegling",
+    sub="Gleti's Knife",
+  }
+  sets.WeaponSet['CritRA'] = {
+    main="Gleti's Knife",
+    sub="Nusku Shield",
+    
+    -- main="Oneiros Knife",
+  }
+
+  -- Ranged weapon sets
+  sets.WeaponSet['Gastra'] = {
+    ranged="Gastraphetes",
+  }
+  sets.WeaponSet['Arma'] = {
+    ranged="Armageddon",
+  }
+  sets.WeaponSet['Fomalhaut'] = {
+    ranged="Fomalhaut",
+  }
+  sets.WeaponSet['Gandiva'] = {
+    ranged="Gandiva",
+  }
+  sets.WeaponSet['Sparrowhawk +2'] = {
+    ranged="Sparrowhawk +2",
+  }
+
+
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Defense
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+
+  sets.HybridDT = {
+    head="Malignance Chapeau",        --  6/ 6, 123
+    body="Malignance Tabard",         --  9/ 9, 139
+    hands="Malignance Gloves",        --  5/ 5, 112
+    legs="Amini Bragues +2",          -- 12/12, 115
+    ring2="Defending Ring",           -- 10/10, ___
+    -- 10 PDT from JSE cape
+  } -- 52 PDT / 42 MDT, 489 MEVA
+
+  sets.HeavyDef = {
+    head="Malignance Chapeau",  --  6/ 6, 123
+    body="Malignance Tabard",   --  9/ 9, 139
+    hands="Malignance Gloves",  --  5/ 5, 112
+    legs="Malignance Tights",   --  7/ 7, 150
+    feet="Malignance Boots",    --  4/ 4, 150
+    neck="Loricate Torque +1",  --  6/ 6, ___
+    ear1="Arete Del Luna +1",   -- __/__, ___; Resists
+    ear2="Odnowa Earring +1",   --  3/ 5, ___
+    ring1="Chirich Ring +1",    -- __/__, ___
+    ring2="Defending Ring",     -- 10/10, ___
+    back=gear.RNG_DW_Cape,      -- __/__,  15
+    waist="Carrier's Sash",     -- __/__, ___
+  } -- 50 PDT / 52 MDT, 689 MEVA
+
+  sets.defense.PDT = set_combine(sets.HeavyDef, {})
+  sets.defense.MDT = set_combine(sets.HeavyDef, {})
+
+
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Idle
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+
+  sets.latent_regain = {
+  }
+  sets.latent_regen = {
+    neck="Bathy Choker +1",
+    ear1="Infused Earring",
+    ring1="Chirich Ring +1",
+  }
+  sets.latent_refresh = {
+    head=gear.Herc_Refresh_head,
+    legs="Rawhide Trousers",
+    feet=gear.Herc_Refresh_feet,
+  }
+  sets.latent_refresh_sub50 = set_combine(sets.latent_refresh, {
+    waist="Fucho-no-Obi",
+  })
+
+  -- Idle sets
+  sets.idle = set_combine(sets.HeavyDef, {})
+
+  sets.idle.Regain = set_combine(sets.idle, sets.latent_regain)
+  sets.idle.Regen = set_combine(sets.idle, sets.latent_regen)
+  sets.idle.Refresh = set_combine(sets.idle, sets.latent_refresh)
+  sets.idle.RefreshSub50 = set_combine(sets.idle, sets.latent_refresh_sub50)
+  sets.idle.Regain.Regen = set_combine(sets.idle, sets.latent_regain, sets.latent_regen)
+  sets.idle.Regain.Refresh = set_combine(sets.idle, sets.latent_regain, sets.latent_refresh)
+  sets.idle.Regain.RefreshSub50 = set_combine(sets.idle, sets.latent_regain, sets.latent_refresh_sub50)
+  sets.idle.Regen.Refresh = set_combine(sets.idle, sets.latent_regen, sets.latent_refresh)
+  sets.idle.Regen.RefreshSub50 = set_combine(sets.idle, sets.latent_regen, sets.latent_refresh_sub50)
+  sets.idle.Regain.Regen.Refresh = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh)
+  sets.idle.Regain.Regen.RefreshSub50 = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh_sub50)
+
+  sets.idle.HeavyDef = set_combine(sets.idle, sets.HybridDT)
+  sets.idle.HeavyDef.Regain = set_combine(sets.idle.Regain, sets.HybridDT)
+  sets.idle.HeavyDef.Regen = set_combine(sets.idle.Regen, sets.HybridDT)
+  sets.idle.HeavyDef.Refresh = set_combine(sets.idle.Refresh, sets.HybridDT)
+  sets.idle.HeavyDef.RefreshSub50 = set_combine(sets.idle.RefreshSub50, sets.HybridDT)
+  sets.idle.HeavyDef.Regain.Regen = set_combine(sets.idle.Regain.Regen, sets.HybridDT)
+  sets.idle.HeavyDef.Regain.Refresh = set_combine(sets.idle.Regain.Refresh, sets.HybridDT)
+  sets.idle.HeavyDef.Regain.RefreshSub50 = set_combine(sets.idle.Regain.RefreshSub50, sets.HybridDT)
+  sets.idle.HeavyDef.Regen.Refresh = set_combine(sets.idle.Regen.Refresh, sets.HybridDT)
+  sets.idle.HeavyDef.Regen.RefreshSub50 = set_combine(sets.idle.Regen.RefreshSub50, sets.HybridDT)
+  sets.idle.HeavyDef.Regain.Regen.Refresh = set_combine(sets.idle.Regain.Regen.Refresh, sets.HybridDT)
+  sets.idle.HeavyDef.Regain.Regen.RefreshSub50 = set_combine(sets.idle.Regain.Regen.RefreshSub50, sets.HybridDT)
+
+  sets.idle.Weak = set_combine(sets.HeavyDef, {
+    neck="Loricate Torque +1",  --  6/ 6, ___
+    ring2="Gelatinous Ring +1", --  7/-1, ___
+    back="Moonlight Cape",      --  6/ 6, ___
+  })
+
+
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Precast
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  -----------------------------------------------------------------------------------------------
+  --     Job Abilities
+  -----------------------------------------------------------------------------------------------
 
   -- Precast sets to enhance JAs
   sets.precast.JA['Eagle Eye Shot'] = {
@@ -300,6 +463,11 @@ function init_gear_sets()
 
   sets.precast.Waltz['Healing Waltz'] = {}
 
+
+  ------------------------------------------------------------------------------------------------
+  --     Fast Cast
+  ------------------------------------------------------------------------------------------------
+
   sets.precast.FC = {
     head=gear.Carmine_D_head, -- 14
     body=gear.Taeon_FC_body, --9
@@ -320,10 +488,15 @@ function init_gear_sets()
   sets.precast.FC.Trust = set_combine(sets.precast.FC, {
     ring1="Weatherspoon Ring", --5
   })
-  
+
+
+  ------------------------------------------------------------------------------------------------
+  --     Ranged
+  ------------------------------------------------------------------------------------------------
+
   -- Snapshot set names should only include the amount of Snapshot from gear (excluding weapons)
   -- Snapshot (70% cap) > Rapid Shot (99% cap)
-  
+
   -- Account for having no flurry buffs
   sets.Snapshot61 = {
     head="Orion Beret +3",          -- __/18 [__/__,  73] {__}
@@ -588,7 +761,7 @@ function init_gear_sets()
 
 
   ------------------------------------------------------------------------------------------------
-  ------------------------------------- Weapon Skill Sets ----------------------------------------
+  --    Weapon Skills
   ------------------------------------------------------------------------------------------------
 
   sets.precast.WS = {
@@ -958,8 +1131,11 @@ function init_gear_sets()
   })
 
 
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Midcast
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
   ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Midcast Sets ------------------------------------------
+  --    Spells
   ------------------------------------------------------------------------------------------------
 
   -- Fast recast for spells
@@ -985,7 +1161,11 @@ function init_gear_sets()
     ring1="Defending Ring", -- DT
   }
 
-  -- Ranged sets
+
+  ------------------------------------------------------------------------------------------------
+  --    Ranged
+  ------------------------------------------------------------------------------------------------
+
   sets.midcast.RA = {
     head="Arcadian Beret +3",       -- 37 [__]  37/ 62 <_> {__} (38) __/__
     body="Ikenga's Vest",           -- 39 [11]  55/ 70 <5> { 7} (__) __/__
@@ -1060,97 +1240,11 @@ function init_gear_sets()
   }
 
 
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Engaged
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
   ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Defense Sets ------------------------------------------
-  ------------------------------------------------------------------------------------------------
-
-  sets.HybridDT = {
-    head="Malignance Chapeau",        --  6/ 6, 123
-    body="Malignance Tabard",         --  9/ 9, 139
-    hands="Malignance Gloves",        --  5/ 5, 112
-    legs="Amini Bragues +2",          -- 12/12, 115
-    ring2="Defending Ring",           -- 10/10, ___
-    -- 10 PDT from JSE cape
-  } -- 52 PDT / 42 MDT, 489 MEVA
-
-  sets.HeavyDef = {
-    head="Malignance Chapeau",  --  6/ 6, 123
-    body="Malignance Tabard",   --  9/ 9, 139
-    hands="Malignance Gloves",  --  5/ 5, 112
-    legs="Malignance Tights",   --  7/ 7, 150
-    feet="Malignance Boots",    --  4/ 4, 150
-    neck="Loricate Torque +1",  --  6/ 6, ___
-    ear1="Arete Del Luna +1",   -- __/__, ___; Resists
-    ear2="Odnowa Earring +1",   --  3/ 5, ___
-    ring1="Chirich Ring +1",    -- __/__, ___
-    ring2="Defending Ring",     -- 10/10, ___
-    back=gear.RNG_DW_Cape,      -- __/__,  15
-    waist="Carrier's Sash",     -- __/__, ___
-  } -- 50 PDT / 52 MDT, 689 MEVA
-
-  sets.defense.PDT = set_combine(sets.HeavyDef, {})
-  sets.defense.MDT = set_combine(sets.HeavyDef, {})
-
-
-  ------------------------------------------------------------------------------------------------
-  ----------------------------------------- Idle Sets --------------------------------------------
-  ------------------------------------------------------------------------------------------------
-
-  sets.latent_regain = {
-  }
-  sets.latent_regen = {
-    neck="Bathy Choker +1",
-    ear1="Infused Earring",
-    ring1="Chirich Ring +1",
-  }
-  sets.latent_refresh = {
-    head=gear.Herc_Refresh_head,
-    legs="Rawhide Trousers",
-    feet=gear.Herc_Refresh_feet,
-  }
-  sets.latent_refresh_sub50 = set_combine(sets.latent_refresh, {
-    waist="Fucho-no-Obi",
-  })
-
-  sets.resting = {}
-
-  -- Idle sets
-  sets.idle = set_combine(sets.HeavyDef, {})
-
-  sets.idle.Regain = set_combine(sets.idle, sets.latent_regain)
-  sets.idle.Regen = set_combine(sets.idle, sets.latent_regen)
-  sets.idle.Refresh = set_combine(sets.idle, sets.latent_refresh)
-  sets.idle.RefreshSub50 = set_combine(sets.idle, sets.latent_refresh_sub50)
-  sets.idle.Regain.Regen = set_combine(sets.idle, sets.latent_regain, sets.latent_regen)
-  sets.idle.Regain.Refresh = set_combine(sets.idle, sets.latent_regain, sets.latent_refresh)
-  sets.idle.Regain.RefreshSub50 = set_combine(sets.idle, sets.latent_regain, sets.latent_refresh_sub50)
-  sets.idle.Regen.Refresh = set_combine(sets.idle, sets.latent_regen, sets.latent_refresh)
-  sets.idle.Regen.RefreshSub50 = set_combine(sets.idle, sets.latent_regen, sets.latent_refresh_sub50)
-  sets.idle.Regain.Regen.Refresh = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh)
-  sets.idle.Regain.Regen.RefreshSub50 = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh_sub50)
-
-  sets.idle.HeavyDef = set_combine(sets.idle, sets.HybridDT)
-  sets.idle.HeavyDef.Regain = set_combine(sets.idle.Regain, sets.HybridDT)
-  sets.idle.HeavyDef.Regen = set_combine(sets.idle.Regen, sets.HybridDT)
-  sets.idle.HeavyDef.Refresh = set_combine(sets.idle.Refresh, sets.HybridDT)
-  sets.idle.HeavyDef.RefreshSub50 = set_combine(sets.idle.RefreshSub50, sets.HybridDT)
-  sets.idle.HeavyDef.Regain.Regen = set_combine(sets.idle.Regain.Regen, sets.HybridDT)
-  sets.idle.HeavyDef.Regain.Refresh = set_combine(sets.idle.Regain.Refresh, sets.HybridDT)
-  sets.idle.HeavyDef.Regain.RefreshSub50 = set_combine(sets.idle.Regain.RefreshSub50, sets.HybridDT)
-  sets.idle.HeavyDef.Regen.Refresh = set_combine(sets.idle.Regen.Refresh, sets.HybridDT)
-  sets.idle.HeavyDef.Regen.RefreshSub50 = set_combine(sets.idle.Regen.RefreshSub50, sets.HybridDT)
-  sets.idle.HeavyDef.Regain.Regen.Refresh = set_combine(sets.idle.Regain.Regen.Refresh, sets.HybridDT)
-  sets.idle.HeavyDef.Regain.Regen.RefreshSub50 = set_combine(sets.idle.Regain.Regen.RefreshSub50, sets.HybridDT)
-
-  sets.idle.Weak = set_combine(sets.HeavyDef, {
-    neck="Loricate Torque +1",  --  6/ 6, ___
-    ring2="Gelatinous Ring +1", --  7/-1, ___
-    back="Moonlight Cape",      --  6/ 6, ___
-  })
-
-
-  ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Engaged Sets ------------------------------------------
+  --    Normal Engaged
   ------------------------------------------------------------------------------------------------
 
   -- Variations for TP weapon and (optional) offense/defense modes.  Code will fall back on previous
@@ -1374,7 +1468,7 @@ function init_gear_sets()
 
 
   ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Hybrid Sets -------------------------------------------
+  --    Hybrid Engaged
   ------------------------------------------------------------------------------------------------
 
   -- No DW (0 needed from gear)
@@ -1610,15 +1704,15 @@ function init_gear_sets()
   })
 
 
-  ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Special Sets ------------------------------------------
-  ------------------------------------------------------------------------------------------------
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Unique/Special/Misc
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
 
-  sets.Special = {}
-  sets.Special.HauksbokArrow = {
-    ammo="Hauksbok Arrow"
+  sets.buff.Doom = {
+    neck="Nicander's Necklace", --20
+    ring2="Eshmun's Ring", --20
+    waist="Gishdubar Sash", --10
   }
-
   sets.buff.Barrage = {
     hands="Orion Bracers +3"
   }
@@ -1628,73 +1722,6 @@ function init_gear_sets()
   sets.buff.Camouflage = {
     body="Orion Jerkin +3"
   }
-
-  sets.buff.Doom = {
-    neck="Nicander's Necklace", --20
-    ring2="Eshmun's Ring", --20
-    waist="Gishdubar Sash", --10
-  }
-
-  sets.Kiting = {
-    legs=gear.Carmine_A_legs,
-  }
-  sets.Kiting.Adoulin = {
-    body="Councilor's Garb",
-  }
-  sets.CP = {
-    back=gear.CP_Cape,
-  }
-  sets.Reive = {
-    neck="Ygnas's Resolve +1"
-  }
-  sets.TreasureHunter = {
-    body=gear.Herc_TH_body, --2
-    hands=gear.Herc_TH_hands, --2
-  }
-  sets.TreasureHunter.RA = set_combine(sets.TreasureHunter, {})
-
-  sets.WeaponSet = {}
-  -- Melee weapon sets
-  sets.WeaponSet['MagicRA'] = {
-    main=gear.Malevolence_1,
-    sub=gear.Malevolence_2,
-  }
-  sets.WeaponSet['PhysRA'] = {
-    main="Ternion Dagger +1",
-    sub="Gleti's Knife",
-  }
-  sets.WeaponSet['PhysRA RangedOnly'] = {
-    main="Gleti's Knife",
-    sub={name="Nusku Shield", priority=1},
-  }
-  sets.WeaponSet['Melee'] = {
-    main="Naegling",
-    sub="Gleti's Knife",
-  }
-  sets.WeaponSet['CritRA'] = {
-    main="Gleti's Knife",
-    sub="Nusku Shield",
-    
-    -- main="Oneiros Knife",
-  }
-
-  -- Ranged weapon sets
-  sets.WeaponSet['Gastra'] = {
-    ranged="Gastraphetes",
-  }
-  sets.WeaponSet['Arma'] = {
-    ranged="Armageddon",
-  }
-  sets.WeaponSet['Fomalhaut'] = {
-    ranged="Fomalhaut",
-  }
-  sets.WeaponSet['Gandiva'] = {
-    ranged="Gandiva",
-  }
-  sets.WeaponSet['Sparrowhawk +2'] = {
-    ranged="Sparrowhawk +2",
-  }
-
 end
 
 -------------------------------------------------------------------------------------------------------------------

@@ -154,14 +154,147 @@ end
 
 -- Define sets and vars used by this job file.
 function init_gear_sets()
-  sets.org.job = {}
-  sets.org.job[1] = {range="Marsyas"}
-  sets.org.job[2] = {range="Daurdabla"}
-  sets.org.job[3] = {range="Gjallarhorn"}
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Common
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+
+  if sets.org then
+    sets.org.job = {}
+    sets.org.job[1] = {range="Marsyas"}
+    sets.org.job[2] = {range="Daurdabla"}
+    sets.org.job[3] = {range="Gjallarhorn"}
+  end
+
+  sets.Kiting = {
+    feet="Fili Cothurnes +1",
+  }
+  sets.Kiting.Adoulin = {
+    body="Councilor's Garb",
+  }
+
+  sets.CP = {
+    back="Mecisto. Mantle",
+  }
+
+  sets.Reive = {
+    neck="Ygnas's Resolve +1",
+  }
 
 
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Weapon Sets
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+
+  sets.WeaponSet = {} -- DO NOT MODIFY
+  sets.WeaponSet.Free = {} -- DO NOT MODIFY
+  sets.WeaponSet.Carnwenhan = {
+    sub="Taming Sari",
+    -- main="Carnwenhan",
+    -- sub="Crepuscular Knife",
+  }
+  sets.WeaponSet.Twashtar = {
+    main="Twashtar",
+    sub="Centovente",
+  }
+  sets.WeaponSet.Naegling = {
+    main="Naegling",
+    sub="Centovente",
+  }
+  sets.WeaponSet.Tauret = {
+    main="Tauret",
+    sub="Twashtar",
+  }
+  sets.WeaponSet.Aeneas = {
+    main="Aeneas",
+    sub="Twashtar",
+  }
+  sets.WeaponSet.Cleaving = {
+    main="Tauret",
+    sub="Twashtar",
+    -- main="Barfawc", -- Path A
+  }
+
+
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Defense
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+
+  -- PDT and MDT cap at 50% each, but included more in case slots swap out for Regen, or in battle mode
+  sets.HeavyDef = {
+    main="Naegling",          -- __, __, ___
+    sub="Genmei Shield",      -- 10, __, ___
+    head=gear.Nyame_B_head,   --  7,  7, 123
+    body=gear.Nyame_B_body,   --  9,  9, 139
+    hands=gear.Nyame_B_hands, --  7,  7, 112
+    legs=gear.Nyame_B_legs,   --  8,  8, 150
+    feet=gear.Nyame_B_feet,   --  7,  7, 150
+    neck="Loricate Torque +1",--  6,  6, ___
+    ear1="Arete Del Luna +1", -- __, __, ___; Resists
+    ear2="Etiolation Earring",-- __,  3, ___; Status resist
+    ring1="Defending Ring",   -- 10, 10, ___
+    ring2="Moonlight Ring",   --  5,  5, ___; Gel. Ring +1 acceptable alt
+    back="Moonlight Cape",    --  6,  6, ___
+    waist="Flume Belt +1", --  4, __, ___
+    -- main="Barfawc",        -- 12, 12, ___
+    -- range=gear.Linos_DT,   --  5, __,  15
+    -- body="Ashera Harness", --  7,  7,  96; Status resist, Mousai Manteel +1 good alt
+    -- 94 PDT, 78 MDT, 646 MEVA
+  }
+
+  sets.defense.PDT = set_combine(sets.HeavyDef, {})
+  sets.defense.MDT = set_combine(sets.HeavyDef, {})
+
+
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Idle
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+
+  sets.latent_regain = {
+  }
+  sets.latent_regen = {
+    main="Gozuki Mezuki",             -- Just to enable use of grip
+    neck="Bathy Choker +1",           -- 3
+    ear2="Infused Earring",           -- 1
+    ring2="Chirich Ring +1",          -- 2
+    -- sub="Mensch Strap +1",         -- 3
+    -- Spare ambu cape can have 5 Regen
+  }
+  sets.latent_refresh = {
+    ring2="Stikini Ring +1",          -- 1
+    -- main="Mpaca's Staff",          -- 2; Contemplator +1 good alt
+    -- sub="Oneiros Grip",            -- 1
+    -- body="Kaykaus Bliaut +1",      -- 3; Gendewitha bliaut +1 good alt
+    -- neck="Chrys. Torque",          -- 1
+    -- ring1="Stikini Ring +1",       -- 1
+  }
+  sets.latent_refresh_sub50 = set_combine(sets.latent_refresh, {
+    waist="Fucho-no-Obi",
+  })
+
+  sets.idle = set_combine(sets.HeavyDef, {})
+  sets.idle.Regain = set_combine(sets.idle, sets.latent_regain)
+  sets.idle.Regen = set_combine(sets.idle, sets.latent_regen)
+  sets.idle.Refresh = set_combine(sets.idle, sets.latent_refresh)
+  sets.idle.RefreshSub50 = set_combine(sets.idle, sets.latent_refresh_sub50)
+  sets.idle.Regain.Regen = set_combine(sets.idle, sets.latent_regain, sets.latent_regen)
+  sets.idle.Regain.Refresh = set_combine(sets.idle, sets.latent_regain, sets.latent_refresh)
+  sets.idle.Regain.RefreshSub50 = set_combine(sets.idle, sets.latent_regain, sets.latent_refresh_sub50)
+  sets.idle.Regen.Refresh = set_combine(sets.idle, sets.latent_regen, sets.latent_refresh)
+  sets.idle.Regen.RefreshSub50 = set_combine(sets.idle, sets.latent_regen, sets.latent_refresh_sub50)
+  sets.idle.Regain.Regen.Refresh = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh)
+  sets.idle.Regain.Regen.RefreshSub50 = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh_sub50)
+
+  -- DT mode disables move speed, regain, regen, refresh
+  sets.idle.DT = set_combine(sets.HeavyDef, {})
+  
+  sets.idle.Weak = set_combine(sets.HeavyDef, {})
+
+
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Precast
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
   -----------------------------------------------------------------------------------------------
-  ------------------------------------- Job Ability Sets ----------------------------------------
+  --     Job Abilities
   -----------------------------------------------------------------------------------------------
 
   -- Precast sets to enhance JAs
@@ -180,7 +313,7 @@ function init_gear_sets()
 
 
   ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Precast Sets ------------------------------------------
+  --     Fast Cast
   ------------------------------------------------------------------------------------------------
 
   -- FC caps 80% but some pieces will be replaced depending on spell type
@@ -264,7 +397,7 @@ function init_gear_sets()
 
 
   ------------------------------------------------------------------------------------------------
-  ------------------------------------- Weapon Skill Sets ----------------------------------------
+  --    Weapon Skills
   ------------------------------------------------------------------------------------------------
 
   -- Default set for any weaponskill that isn't any more specifically defined
@@ -421,8 +554,11 @@ function init_gear_sets()
   }) -- 30 WSD, 3 QA, 2 TA, 14 DA, 271 Att, 157 Acc, 255 STR
 
 
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Midcast
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
   ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Midcast Sets ------------------------------------------
+  --    Spells
   ------------------------------------------------------------------------------------------------
 
   -- General set for recast times.
@@ -686,83 +822,12 @@ function init_gear_sets()
     ring1="Defending Ring", -- DT
   }
 
+
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Engaged
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
   ------------------------------------------------------------------------------------------------
-  ----------------------------------------- Idle Sets --------------------------------------------
-  ------------------------------------------------------------------------------------------------
-
-  sets.latent_regain = {
-  }
-  sets.latent_regen = {
-    main="Gozuki Mezuki",             -- Just to enable use of grip
-    neck="Bathy Choker +1",           -- 3
-    ear2="Infused Earring",           -- 1
-    ring2="Chirich Ring +1",          -- 2
-    -- sub="Mensch Strap +1",         -- 3
-    -- Spare ambu cape can have 5 Regen
-  }
-  sets.latent_refresh = {
-    ring2="Stikini Ring +1",          -- 1
-    -- main="Mpaca's Staff",          -- 2; Contemplator +1 good alt
-    -- sub="Oneiros Grip",            -- 1
-    -- body="Kaykaus Bliaut +1",      -- 3; Gendewitha bliaut +1 good alt
-    -- neck="Chrys. Torque",          -- 1
-    -- ring1="Stikini Ring +1",       -- 1
-  }
-  sets.latent_refresh_sub50 = set_combine(sets.latent_refresh, {
-    waist="Fucho-no-Obi",
-  })
-
-  -- PDT and MDT cap at 50% each, but included more in case slots
-  -- swap out for Regen, or in battle mode
-  sets.HeavyDef = {
-    main="Naegling",          -- __, __, ___
-    sub="Genmei Shield",      -- 10, __, ___
-    head=gear.Nyame_B_head,   --  7,  7, 123
-    body=gear.Nyame_B_body,   --  9,  9, 139
-    hands=gear.Nyame_B_hands, --  7,  7, 112
-    legs=gear.Nyame_B_legs,   --  8,  8, 150
-    feet=gear.Nyame_B_feet,   --  7,  7, 150
-    neck="Loricate Torque +1",--  6,  6, ___
-    ear1="Arete Del Luna +1", -- __, __, ___; Resists
-    ear2="Etiolation Earring",-- __,  3, ___; Status resist
-    ring1="Defending Ring",   -- 10, 10, ___
-    ring2="Moonlight Ring",   --  5,  5, ___; Gel. Ring +1 acceptable alt
-    back="Moonlight Cape",    --  6,  6, ___
-    waist="Flume Belt +1", --  4, __, ___
-    -- main="Barfawc",        -- 12, 12, ___
-    -- range=gear.Linos_DT,   --  5, __,  15
-    -- body="Ashera Harness", --  7,  7,  96; Status resist, Mousai Manteel +1 good alt
-    -- 94 PDT, 78 MDT, 646 MEVA
-  }
-
-  sets.idle = set_combine(sets.HeavyDef, {})
-  sets.idle.Regain = set_combine(sets.idle, sets.latent_regain)
-  sets.idle.Regen = set_combine(sets.idle, sets.latent_regen)
-  sets.idle.Refresh = set_combine(sets.idle, sets.latent_refresh)
-  sets.idle.RefreshSub50 = set_combine(sets.idle, sets.latent_refresh_sub50)
-  sets.idle.Regain.Regen = set_combine(sets.idle, sets.latent_regain, sets.latent_regen)
-  sets.idle.Regain.Refresh = set_combine(sets.idle, sets.latent_regain, sets.latent_refresh)
-  sets.idle.Regain.RefreshSub50 = set_combine(sets.idle, sets.latent_regain, sets.latent_refresh_sub50)
-  sets.idle.Regen.Refresh = set_combine(sets.idle, sets.latent_regen, sets.latent_refresh)
-  sets.idle.Regen.RefreshSub50 = set_combine(sets.idle, sets.latent_regen, sets.latent_refresh_sub50)
-  sets.idle.Regain.Regen.Refresh = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh)
-  sets.idle.Regain.Regen.RefreshSub50 = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh_sub50)
-
-  -- DT mode disables move speed, regain, regen, refresh
-  sets.idle.DT = set_combine(sets.HeavyDef, {})
-  
-  sets.idle.Weak = set_combine(sets.HeavyDef, {})
-
-  ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Defense Sets ------------------------------------------
-  ------------------------------------------------------------------------------------------------
-
-  sets.defense.PDT = set_combine(sets.HeavyDef, {})
-  sets.defense.MDT = set_combine(sets.HeavyDef, {})
-
-
-  ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Engaged Sets ------------------------------------------
+  --    Normal Engaged
   ------------------------------------------------------------------------------------------------
 
   -- Variations for TP weapon and (optional) offense/defense modes.  Code will fall back on previous
@@ -959,7 +1024,7 @@ function init_gear_sets()
   }
 
   ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Hybrid Sets -------------------------------------------
+  --    Hybrid Engaged
   ------------------------------------------------------------------------------------------------
 
   -- Use Barfawc for extra DT
@@ -988,9 +1053,9 @@ function init_gear_sets()
   sets.engaged.MaxDW.DT.Acc = set_combine(sets.engaged.MaxDW.Acc, sets.engaged.Hybrid)
 
 
-  ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Special Sets ------------------------------------------
-  ------------------------------------------------------------------------------------------------
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Unique/Special/Misc
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
 
   sets.SongDWDuration = {
     -- main="Carnwenhan",
@@ -1002,52 +1067,6 @@ function init_gear_sets()
     ring2="Eshmun's Ring", --20
     waist="Gishdubar Sash", --10
   }
-
-  sets.Obi = {
-    waist="Hachirin-no-Obi",
-  }
-  sets.CP = {
-    back="Mecisto. Mantle",
-  }
-  sets.Reive = {
-    neck="Ygnas's Resolve +1",
-  }
-  sets.Kiting = {
-    feet="Fili Cothurnes +1",
-  }
-  sets.Kiting.Adoulin = {
-    body="Councilor's Garb",
-  }
-
-  sets.WeaponSet = {} -- DO NOT MODIFY
-  sets.WeaponSet.Free = {} -- DO NOT MODIFY
-  sets.WeaponSet.Carnwenhan = {
-    sub="Taming Sari",
-    -- main="Carnwenhan",
-    -- sub="Crepuscular Knife",
-  }
-  sets.WeaponSet.Twashtar = {
-    main="Twashtar",
-    sub="Centovente",
-  }
-  sets.WeaponSet.Naegling = {
-    main="Naegling",
-    sub="Centovente",
-  }
-  sets.WeaponSet.Tauret = {
-    main="Tauret",
-    sub="Twashtar",
-  }
-  sets.WeaponSet.Aeneas = {
-    main="Aeneas",
-    sub="Twashtar",
-  }
-  sets.WeaponSet.Cleaving = {
-    main="Tauret",
-    sub="Twashtar",
-    -- main="Barfawc", -- Path A
-  }
-
 end
 
 

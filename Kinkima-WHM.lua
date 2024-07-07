@@ -251,8 +251,81 @@ end
 
 -- Define sets and vars used by this job file.
 function init_gear_sets()
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Common
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+
+  if sets.org then
+    sets.org.job = {}
+  end
+
+  sets.Kiting = {
+    ring1="Shneddick Ring",
+  }
+  sets.Kiting.Adoulin = {
+    body="Councilor's Garb",
+  }
+
+  sets.CP = {
+    back=gear.CP_Cape
+  }
+
+
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Weapon Sets
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+
+
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Defense
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+
+
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Idle
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+
+  sets.idle = {
+    main="Mpaca's Staff",           -- __/__, ___ [ 2]
+    sub="Mensch Strap +1",          --  5/__, ___ [__]
+    ammo="Staunch Tathlum +1",      --  3/ 3, ___ [__]; Resist Status+11
+    head=gear.Nyame_B_head,         --  7/ 7, 123 [__]
+    body="Shamash Robe",            -- 10/__, 106 [ 3]; Resist Silence+90
+    hands="Volte Gloves",           -- __/__,  96 [ 1]
+    legs="Assiduity Pants +1",      -- __/__, 107 [ 2]
+    feet="Volte Gaiters",           -- __/__, 142 [ 1]
+    neck="Loricate Torque +1",      --  6/ 6, ___ [__]; DEF+60
+    ear1="Arete Del Luna +1",       -- __/__, ___ [__]; Resists
+    ear2="Etiolation Earring",      -- __/ 3, ___ [__]; Resist Silence+15
+    ring1="Stikini Ring +1",        -- __/__, ___ [ 1]
+    ring2="Defending Ring",         -- 10/10, ___ [__]
+    back=gear.WHM_FC_Cape,          -- 10/__,  20 [__]
+    waist="Carrier's Sash",         -- __/__, ___ [__]; Ele Resist+15
+    -- 51 PDT / 29 MDT, 594 M.Eva [10 Refresh]
+
+    -- head="Volte Beret",          -- __/__, 104 [ 1]
+    -- ear2="Ebers Earring +2",     --  8/ 8, ___ [__]
+    -- 52 PDT / 27 MDT, 575 M.Eva [11 Refresh]
+  }
+  sets.idle.PDT = set_combine(sets.idle, {
+    hands="Nyame Gauntlets",
+    feet="Nyame Sollerets",
+  })
+  sets.idle.Refresh = set_combine(sets.idle, {})
+  sets.idle.Refresh.MpSub50 = set_combine(sets.idle.Refresh, {
+    waist="Fucho-no-Obi",
+  })
+  sets.idle.Sublimation = set_combine(sets.idle, {
+    waist="Embla Sash",
+  })
+  sets.idle.Sublimation.Refresh = set_combine(sets.idle.Sublimation, {})
+
+
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Precast
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
   -----------------------------------------------------------------------------------------------
-  ------------------------------------- Job Ability Sets ----------------------------------------
+  --     Job Abilities
   -----------------------------------------------------------------------------------------------
 
   sets.precast.JA.Benediction = {
@@ -284,10 +357,9 @@ function init_gear_sets()
 
 
   ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Precast Sets ------------------------------------------
+  --     Fast Cast
   ------------------------------------------------------------------------------------------------
 
-  -- Fast cast sets for spells
   sets.precast.FC = {
     main="Malignance Pole",           -- __ [20/20, ___]
     sub="Clerisy Strap +1",           --  3 [__/__, ___]
@@ -402,9 +474,9 @@ function init_gear_sets()
   }
 
 
-------------------------------------------------------------------------------------------------
-------------------------------------- Weapon Skill Sets ----------------------------------------
-------------------------------------------------------------------------------------------------
+  ------------------------------------------------------------------------------------------------
+  --    Weapon Skills
+  ------------------------------------------------------------------------------------------------
 
   -- TODO: Update
   sets.precast.WS = {
@@ -483,48 +555,46 @@ function init_gear_sets()
   })
 
 
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Midcast
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
   ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Midcast Sets ------------------------------------------
+  --    Spells
   ------------------------------------------------------------------------------------------------
 
-  -- Midcast Sets
   sets.midcast.FastRecast = set_combine(sets.precast.FC, {})
-  
-  -- Cure sets
 
-  -- CPII, CP, Heal Skill, MND, VIT, SIRD, PDT/MDT, -Enmity
-  SIRD_options = {
-    -- main="Eremite's Wand +1",      -- __, __, 25 [__/__, ???] __
-    -- sub="Culminus",                -- __, __, 10 [__/__, ???] __
+  -- SIRD_options       CPII, CP, Heal Skill, MND, VIT, SIRD, PDT/MDT, -Enmity
+  -- main="Eremite's Wand +1",      -- __, __, 25 [__/__, ???] __
+  -- sub="Culminus",                -- __, __, 10 [__/__, ???] __
 
-    -- sub="Magic Strap",             -- __, __,  5 [__/__, ???] __
-    -- ammo="Staunch Tathlum +1",     -- __, __, 11 [ 3/ 3, ???] __
-    -- head="Adhara Turban",          -- __, __, 20 [__/__, ___]  6
-    -- head=gear.Kaykaus_C_head,      -- __, 11, 12 [__/ 3,  75] __
-    -- head="Chironic Hat",           -- __, __, 11 [__/ 2, ???] __
-    -- body=gear.Kaykaus_C_body,      --  4, __, 12 [__/__,  80] __
-    -- body="Rosette Jaseran +1",     -- __, __, 25 [ 5/ 5, ???] 13
-    -- body="Chrionic Doublet",       -- __, 13, 11 [__/__, ???] __
-    -- hands="Chironic Gloves",       -- __, __, 31 [__/__,  48] __
-    -- hands=gear.Kaykaus_C_hands,    -- __, 11, 12 [__/__,  37]  6
-    -- legs=gear.Kaykaus_C_legs,      -- __, 11, 12 [__/__, 107] __
-    -- legs="Chironic Hose",          -- __,  8, 11 [__/__, ???] __
-    -- feet="Chironic Slippers",      -- __, __, 11 [ 2/__, ???]  5
-    -- feet="Theophany Duckbills +3", -- __, __, 29 [__/__, 127] __
-    -- neck="Loricate Torque +1",     -- __, __,  5 [ 6/ 6, ???] __
-    -- ear1="Nourishing Earring +1",  -- __,  7,  5 [__/__, ___] __; Resist Silence +15
-    -- ear1="Magnetic Earring",       -- __, __,  8 [__/__, ???] __
-    -- ear1="Halasz Earring",         -- __, __,  5 [__/__, ???]  3
-    -- ring1="Freke Ring",            -- __, __, 10 [__/__, ???] __
-    -- ring1="Evanescence Ring",      -- __, __,  5 [__/__, ???] __
-    -- back=AmbuCape1,                -- __, 10, 10 [__/__, ???] __
-    -- back=AmbuCape2,                -- __, __, 10 [__/__, ???] 10
-    -- waist="Emphatikos Rope",       -- __, __, 12 [__/__, ???] __
-    -- waist="Sanctuary Obi +1",      -- __, __, 10 [__/__, ???]  4
-    -- waist="Rumination Sash",       -- __, __, 10 [__/__, ???] __
-    -- Merit points                   -- __, __, 10 [__/__, ???]  5
-  }
-  
+  -- sub="Magic Strap",             -- __, __,  5 [__/__, ???] __
+  -- ammo="Staunch Tathlum +1",     -- __, __, 11 [ 3/ 3, ???] __
+  -- head="Adhara Turban",          -- __, __, 20 [__/__, ___]  6
+  -- head=gear.Kaykaus_C_head,      -- __, 11, 12 [__/ 3,  75] __
+  -- head="Chironic Hat",           -- __, __, 11 [__/ 2, ???] __
+  -- body=gear.Kaykaus_C_body,      --  4, __, 12 [__/__,  80] __
+  -- body="Rosette Jaseran +1",     -- __, __, 25 [ 5/ 5, ???] 13
+  -- body="Chrionic Doublet",       -- __, 13, 11 [__/__, ???] __
+  -- hands="Chironic Gloves",       -- __, __, 31 [__/__,  48] __
+  -- hands=gear.Kaykaus_C_hands,    -- __, 11, 12 [__/__,  37]  6
+  -- legs=gear.Kaykaus_C_legs,      -- __, 11, 12 [__/__, 107] __
+  -- legs="Chironic Hose",          -- __,  8, 11 [__/__, ???] __
+  -- feet="Chironic Slippers",      -- __, __, 11 [ 2/__, ???]  5
+  -- feet="Theophany Duckbills +3", -- __, __, 29 [__/__, 127] __
+  -- neck="Loricate Torque +1",     -- __, __,  5 [ 6/ 6, ???] __
+  -- ear1="Nourishing Earring +1",  -- __,  7,  5 [__/__, ___] __; Resist Silence +15
+  -- ear1="Magnetic Earring",       -- __, __,  8 [__/__, ???] __
+  -- ear1="Halasz Earring",         -- __, __,  5 [__/__, ???]  3
+  -- ring1="Freke Ring",            -- __, __, 10 [__/__, ???] __
+  -- ring1="Evanescence Ring",      -- __, __,  5 [__/__, ???] __
+  -- back=AmbuCape1,                -- __, 10, 10 [__/__, ???] __
+  -- back=AmbuCape2,                -- __, __, 10 [__/__, ???] 10
+  -- waist="Emphatikos Rope",       -- __, __, 12 [__/__, ???] __
+  -- waist="Sanctuary Obi +1",      -- __, __, 10 [__/__, ???]  4
+  -- waist="Rumination Sash",       -- __, __, 10 [__/__, ???] __
+  -- Merit points                   -- __, __, 10 [__/__, ???]  5
+
   -- Cap at 700 power; Power = floor(MND÷2) + floor(VIT÷4) + Healing Magic Skill
   sets.midcast.CureNormal = {
     main="Eremite's Wand +1",         -- __, __, 25 [__/__, ___] __
@@ -1104,49 +1174,12 @@ function init_gear_sets()
   }
 
 
-------------------------------------------------------------------------------------------------
------------------------------------------ Idle Sets --------------------------------------------
-------------------------------------------------------------------------------------------------
-
-  sets.idle = {
-    main="Mpaca's Staff",           -- __/__, ___ [ 2]
-    sub="Mensch Strap +1",          --  5/__, ___ [__]
-    ammo="Staunch Tathlum +1",      --  3/ 3, ___ [__]; Resist Status+11
-    head=gear.Nyame_B_head,         --  7/ 7, 123 [__]
-    body="Shamash Robe",            -- 10/__, 106 [ 3]; Resist Silence+90
-    hands="Volte Gloves",           -- __/__,  96 [ 1]
-    legs="Assiduity Pants +1",      -- __/__, 107 [ 2]
-    feet="Volte Gaiters",           -- __/__, 142 [ 1]
-    neck="Loricate Torque +1",      --  6/ 6, ___ [__]; DEF+60
-    ear1="Arete Del Luna +1",       -- __/__, ___ [__]; Resists
-    ear2="Etiolation Earring",      -- __/ 3, ___ [__]; Resist Silence+15
-    ring1="Stikini Ring +1",        -- __/__, ___ [ 1]
-    ring2="Defending Ring",         -- 10/10, ___ [__]
-    back=gear.WHM_FC_Cape,          -- 10/__,  20 [__]
-    waist="Carrier's Sash",         -- __/__, ___ [__]; Ele Resist+15
-    -- 51 PDT / 29 MDT, 594 M.Eva [10 Refresh]
-    
-    -- head="Volte Beret",          -- __/__, 104 [ 1]
-    -- ear2="Ebers Earring +2",     --  8/ 8, ___ [__]
-    -- 52 PDT / 27 MDT, 575 M.Eva [11 Refresh]
-  }
-  sets.idle.PDT = set_combine(sets.idle, {
-    hands="Nyame Gauntlets",
-    feet="Nyame Sollerets",
-  })
-  sets.idle.Refresh = set_combine(sets.idle, {})
-  sets.idle.Refresh.MpSub50 = set_combine(sets.idle.Refresh, {
-    waist="Fucho-no-Obi",
-  })
-  sets.idle.Sublimation = set_combine(sets.idle, {
-    waist="Embla Sash",
-  })
-  sets.idle.Sublimation.Refresh = set_combine(sets.idle.Sublimation, {})
-
-  
-------------------------------------------------------------------------------------------------
----------------------------------------- Engaged Sets ------------------------------------------
-------------------------------------------------------------------------------------------------
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Engaged
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  ------------------------------------------------------------------------------------------------
+  --    Normal Engaged
+  ------------------------------------------------------------------------------------------------
 
   -- TODO: Update
   sets.engaged = {
@@ -1156,24 +1189,13 @@ function init_gear_sets()
   }
 
 
-------------------------------------------------------------------------------------------------
----------------------------------------- Special Sets ------------------------------------------
-------------------------------------------------------------------------------------------------
-  
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Unique/Special/Misc
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+
   -- Can remove from self with 100% success when combined with cursna set
   sets.buff.Doom = {
     waist="Gishdubar Sash", --10
-  }
-
-  sets.CP = {
-    back=gear.CP_Cape
-  }
-
-  sets.Kiting = {
-    ring1="Shneddick Ring",
-  }
-  sets.Kiting.Adoulin = {
-    body="Councilor's Garb",
   }
 end
 

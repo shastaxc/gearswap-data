@@ -56,7 +56,7 @@ Other
   if you choose to ignore them, it doesn't not actually affect anything.
 * Equipping certain gear such as warp rings or ammo belts will automatically lock that slot until you manually
   unequip it or change zones.
-* Set named sets.Special.SleepyHead will be equipped if you are asleep. This should have a piece of gear in it that
+* Set named sets.SleepyHead will be equipped if you are asleep. This should have a piece of gear in it that
   will deal damage to you to wake you up.
 
 
@@ -207,7 +207,38 @@ end
 
 -- Define sets and vars used by this job file.
 function init_gear_sets()
-  sets.org.job = {}
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Common
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+
+  if sets.org then
+    sets.org.job = {}
+  end
+
+  sets.TreasureHunter = {
+    ammo="Perfect Lucky Egg", --1
+    hands="Volte Bracers", --1
+    waist="Chaac Belt", --1
+  }
+  sets.TreasureHunter.RA = {
+    hands="Volte Bracers", --1
+    waist="Chaac Belt", --1
+  }
+
+  sets.Kiting = {
+    feet="Danzo Sune-Ate",
+  }
+  sets.Kiting.Adoulin = {
+    body="Councilor's Garb",
+  }
+
+  sets.CP = {
+    back=gear.CP_Cape,
+  }
+
+  sets.Reive = {
+    neck="Ygnas's Resolve +1"
+  }
 
   -- Enmity sets
   sets.Enmity = {
@@ -226,31 +257,89 @@ function init_gear_sets()
     -- waist="Trance Belt",
   }
 
-  ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Precast Sets ------------------------------------------
-  ------------------------------------------------------------------------------------------------
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Weapon Sets
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
 
-  -- Fast cast sets for spells
-  sets.precast.FC = {
-    body="Sacro Breastplate", --10
-    hands=gear.Leyline_Gloves, --8
-    neck="Orunmila's Torque", --5
-    ear1="Loquac. Earring", --2
-    ring2="Prolix Ring", --2
+  sets.WeaponSet = {} -- DO NOT MODIFY
+  sets.WeaponSet['Doji'] = {main="Dojikiri Yasutsuna", sub="Utu Grip"}
+  sets.WeaponSet['Masa'] = {main="Masamune", sub="Utu Grip"}
+  sets.WeaponSet['Shining One'] = {main="Shining One", sub="Utu Grip"}
+
+
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Defense
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+
+  sets.defense.PDT = {
+    ammo="Coiste Bodhar",       -- __/__, ___
+    head=gear.Nyame_B_head,     --  7/ 7, 123
+    body=gear.Nyame_B_body,     --  9/ 9, 139
+    hands=gear.Nyame_B_hands,   --  7/ 7, 112
+    legs=gear.Nyame_B_legs,     --  8/ 8, 150
+    feet=gear.Nyame_B_feet,     --  7/ 7, 150
+    neck="Samurai's Nodowa +2", -- __/__, ___
+    ear1="Arete Del Luna +1",   -- __/__, ___; Resists
+    ear2="Hearty Earring",      -- __/__, ___; Resist all +5
+    ring1="Niqmaddu Ring",      -- __/__, ___
+    ring2="Defending Ring",     -- 10/10, ___
+    back=gear.SAM_TP_Cape,      -- 10/__, ___
+    waist="Ioskeha Belt +1",    -- __/__, ___
+    --58 PDT/48 MDT, 674 MEVA
   }
+  sets.defense.MDT = set_combine(sets.defense.PDT, {})
 
-  sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {
-    ammo="Staunch Tathlum +1",
-    ring1="Prolix Ring",
-    ring2="Defending Ring",
+
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Idle
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+
+  sets.latent_regain = {
+    head="Wakido Kabuto +3", -- 4
+  }
+  sets.latent_regen = {
+    body="Sacro Breastplate", --10
+    neck="Bathy Choker +1",
+    ear1="Infused Earring",
+    ring1="Chirich Ring +1",
+    -- hands="Rao Kote +1",
+    -- legs="Rao Haidate +1",
+    -- feet="Rao Sune-Ate +1",
+    -- ring2="Chirich Ring +1",
+  }
+  sets.latent_refresh = {
+    -- ring1="Stikini Ring +1", -- 1
+    -- ring2="Stikini Ring +1", -- 1
+  }
+  sets.latent_refresh_sub50 = set_combine(sets.latent_refresh, {
   })
 
-  sets.precast.FC.Trust = set_combine(sets.precast.FC, {
-    ammo="Impatiens",
-    ring1="Weatherspoon Ring", --5
-  })
+  sets.idle = set_combine(sets.defense.PDT, {})
 
-  -- Precast sets to enhance JAs on use
+  sets.idle.Regain = set_combine(sets.idle, sets.latent_regain)
+  sets.idle.Regen = set_combine(sets.idle, sets.latent_regen)
+  sets.idle.Refresh = set_combine(sets.idle, sets.latent_refresh)
+  sets.idle.RefreshSub50 = set_combine(sets.idle, sets.latent_refresh_sub50)
+  sets.idle.Regain.Regen = set_combine(sets.idle, sets.latent_regain, sets.latent_regen)
+  sets.idle.Regain.Refresh = set_combine(sets.idle, sets.latent_regain, sets.latent_refresh)
+  sets.idle.Regain.RefreshSub50 = set_combine(sets.idle, sets.latent_regain, sets.latent_refresh_sub50)
+  sets.idle.Regen.Refresh = set_combine(sets.idle, sets.latent_regen, sets.latent_refresh)
+  sets.idle.Regen.RefreshSub50 = set_combine(sets.idle, sets.latent_regen, sets.latent_refresh_sub50)
+  sets.idle.Regain.Regen.Refresh = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh)
+  sets.idle.Regain.Regen.RefreshSub50 = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh_sub50)
+
+  sets.idle.HeavyDef = set_combine(sets.defense.PDT, {})
+
+  sets.idle.Weak = set_combine(sets.defense.PDT, {})
+
+
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Precast
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  -----------------------------------------------------------------------------------------------
+  --     Job Abilities
+  -----------------------------------------------------------------------------------------------
+
   sets.precast.JA['Meikyo Shisui'] = {
     feet="Sakonji Sune-ate +1", -- +1 is acceptable
     -- feet="Sakonji Sune-ate +3", -- +1 is acceptable
@@ -312,7 +401,31 @@ function init_gear_sets()
 
 
   ------------------------------------------------------------------------------------------------
-  ------------------------------------- Weapon Skill Sets ----------------------------------------
+  --     Fast Cast
+  ------------------------------------------------------------------------------------------------
+
+  sets.precast.FC = {
+    body="Sacro Breastplate", --10
+    hands=gear.Leyline_Gloves, --8
+    neck="Orunmila's Torque", --5
+    ear1="Loquac. Earring", --2
+    ring2="Prolix Ring", --2
+  }
+
+  sets.precast.FC.Utsusemi = set_combine(sets.precast.FC, {
+    ammo="Staunch Tathlum +1",
+    ring1="Prolix Ring",
+    ring2="Defending Ring",
+  })
+
+  sets.precast.FC.Trust = set_combine(sets.precast.FC, {
+    ammo="Impatiens",
+    ring1="Weatherspoon Ring", --5
+  })
+
+
+  ------------------------------------------------------------------------------------------------
+  --    Weapon Skills
   ------------------------------------------------------------------------------------------------
 
   -- Default set for any weaponskill that isn't any more specifically defined
@@ -571,8 +684,11 @@ function init_gear_sets()
   })
 
 
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Midcast
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
   ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Midcast Sets ------------------------------------------
+  --    Spells
   ------------------------------------------------------------------------------------------------
 
   -- Initializes trusts at iLvl 119
@@ -596,73 +712,11 @@ function init_gear_sets()
   }
 
 
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Engaged
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
   ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Defense Sets ------------------------------------------
-  ------------------------------------------------------------------------------------------------
-
-  sets.defense.PDT = {
-    ammo="Coiste Bodhar",       -- __/__, ___
-    head=gear.Nyame_B_head,     --  7/ 7, 123
-    body=gear.Nyame_B_body,     --  9/ 9, 139
-    hands=gear.Nyame_B_hands,   --  7/ 7, 112
-    legs=gear.Nyame_B_legs,     --  8/ 8, 150
-    feet=gear.Nyame_B_feet,     --  7/ 7, 150
-    neck="Samurai's Nodowa +2", -- __/__, ___
-    ear1="Arete Del Luna +1",   -- __/__, ___; Resists
-    ear2="Hearty Earring",      -- __/__, ___; Resist all +5
-    ring1="Niqmaddu Ring",      -- __/__, ___
-    ring2="Defending Ring",     -- 10/10, ___
-    back=gear.SAM_TP_Cape,      -- 10/__, ___
-    waist="Ioskeha Belt +1",    -- __/__, ___
-    --58 PDT/48 MDT, 674 MEVA
-  }
-  sets.defense.MDT = set_combine(sets.defense.PDT, {})
-
-  ------------------------------------------------------------------------------------------------
-  ----------------------------------------- Idle Sets --------------------------------------------
-  ------------------------------------------------------------------------------------------------
-
-  sets.latent_regain = {
-    head="Wakido Kabuto +3", -- 4
-  }
-  sets.latent_regen = {
-    body="Sacro Breastplate", --10
-    neck="Bathy Choker +1",
-    ear1="Infused Earring",
-    ring1="Chirich Ring +1",
-    -- hands="Rao Kote +1",
-    -- legs="Rao Haidate +1",
-    -- feet="Rao Sune-Ate +1",
-    -- ring2="Chirich Ring +1",
-  }
-  sets.latent_refresh = {
-    -- ring1="Stikini Ring +1", -- 1
-    -- ring2="Stikini Ring +1", -- 1
-  }
-  sets.latent_refresh_sub50 = set_combine(sets.latent_refresh, {
-  })
-
-  sets.idle = set_combine(sets.defense.PDT, {})
-
-  sets.idle.Regain = set_combine(sets.idle, sets.latent_regain)
-  sets.idle.Regen = set_combine(sets.idle, sets.latent_regen)
-  sets.idle.Refresh = set_combine(sets.idle, sets.latent_refresh)
-  sets.idle.RefreshSub50 = set_combine(sets.idle, sets.latent_refresh_sub50)
-  sets.idle.Regain.Regen = set_combine(sets.idle, sets.latent_regain, sets.latent_regen)
-  sets.idle.Regain.Refresh = set_combine(sets.idle, sets.latent_regain, sets.latent_refresh)
-  sets.idle.Regain.RefreshSub50 = set_combine(sets.idle, sets.latent_regain, sets.latent_refresh_sub50)
-  sets.idle.Regen.Refresh = set_combine(sets.idle, sets.latent_regen, sets.latent_refresh)
-  sets.idle.Regen.RefreshSub50 = set_combine(sets.idle, sets.latent_regen, sets.latent_refresh_sub50)
-  sets.idle.Regain.Regen.Refresh = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh)
-  sets.idle.Regain.Regen.RefreshSub50 = set_combine(sets.idle, sets.latent_regain, sets.latent_regen, sets.latent_refresh_sub50)
-
-  sets.idle.HeavyDef = set_combine(sets.defense.PDT, {})
-
-  sets.idle.Weak = set_combine(sets.defense.PDT, {})
-
-
-  ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Engaged Sets ------------------------------------------
+  --    Normal Engaged
   ------------------------------------------------------------------------------------------------
 
   sets.engaged = {
@@ -691,9 +745,8 @@ function init_gear_sets()
 
 
   ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Hybrid Sets -------------------------------------------
+  --    Hybrid Engaged
   ------------------------------------------------------------------------------------------------
-
 
   sets.engaged.HeavyDef = {
     ammo="Coiste Bodhar",             -- [__/__, ___] __,  3 < 3, __, __> __, __
@@ -742,14 +795,14 @@ function init_gear_sets()
   sets.engaged.MidAcc.SubtleBlow = set_combine(sets.engaged.SubtleBlow, {})
   sets.engaged.HighAcc.SubtleBlow = set_combine(sets.engaged.SubtleBlow, {})
 
-  -----------------------------------------------------------------------------------
-  ---------------------------------------- Special Sets ------------------------------------------
-  ------------------------------------------------------------------------------------------------
 
-  sets.Special = {}
-  sets.Special.SleepyHead = { head="Frenzy Sallet", }
-  sets.Special.LowEnmity = { ear2="Novia Earring", } -- Assumes -Enmity merits and Dirge
-  sets.Special.Schere = { ear2="Schere Earring", }
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Unique/Special/Misc
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+
+  sets.SleepyHead = { head="Frenzy Sallet", }
+  sets.LowEnmity = { ear2="Novia Earring", } -- Assumes -Enmity merits and Dirge
+  sets.Schere = { ear2="Schere Earring", }
 
   -- Quick sets for post-precast adjustments, listed here so that the gear can be Validated.
   sets.buff.Doom = {
@@ -760,33 +813,6 @@ function init_gear_sets()
   sets.buff['Sekkanoki'] = {
     hands="Kasuga Kote +1",
   }
-
-  sets.Kiting = {
-    feet="Danzo Sune-Ate",
-  }
-  sets.Kiting.Adoulin = {
-    body="Councilor's Garb",
-  }
-  sets.CP = {
-    back=gear.CP_Cape,
-  }
-  sets.Reive = {
-    neck="Ygnas's Resolve +1"
-  }
-  sets.TreasureHunter = {
-    ammo="Perfect Lucky Egg", --1
-    hands="Volte Bracers", --1
-    waist="Chaac Belt", --1
-  }
-  sets.TreasureHunter.RA = {
-    hands="Volte Bracers", --1
-    waist="Chaac Belt", --1
-  }
-
-  sets.WeaponSet = {}
-  sets.WeaponSet['Doji'] = {main="Dojikiri Yasutsuna", sub="Utu Grip"}
-  sets.WeaponSet['Masa'] = {main="Masamune", sub="Utu Grip"}
-  sets.WeaponSet['Shining One'] = {main="Shining One", sub="Utu Grip"}
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -822,9 +848,9 @@ function job_post_precast(spell, action, spellMap, eventArgs)
     end
 
     if state.EnmityMode.current == 'Low' then
-      equip(sets.Special.LowEnmity)
+      equip(sets.LowEnmity)
     elseif state.EnmityMode.current == 'Schere' and player.mp > 0 then
-      equip(sets.Special.Schere)
+      equip(sets.Schere)
     end
   end
 
@@ -882,7 +908,7 @@ function job_buff_change(buff,gain)
   classes.CustomMeleeGroups:clear()
 
   if buff == 'sleep' and gain and player.vitals.hp > 500 and player.status == 'Engaged' then
-    equip(sets.Special.SleepyHead)
+    equip(sets.SleepyHead)
   end
 
   if buff == "doom" then
@@ -1085,7 +1111,7 @@ function customize_melee_set(meleeSet)
     meleeSet = set_combine(meleeSet, sets.CP)
   end
   if state.EnmityMode.current == 'Low' then
-    equip(sets.Special.LowEnmity)
+    equip(sets.LowEnmity)
   end
 
   -- If slot is locked to use no-swap gear, keep it equipped
@@ -1096,7 +1122,7 @@ function customize_melee_set(meleeSet)
   if locked_ring2 then meleeSet = set_combine(meleeSet, { ring2=player.equipment.ring2 }) end
 
   if buffactive['sleep'] and player.vitals.hp > 500 and player.status == 'Engaged' then
-    meleeSet = set_combine(meleeSet, sets.Special.SleepyHead)
+    meleeSet = set_combine(meleeSet, sets.SleepyHead)
   end
 
   if buffactive.Doom then
@@ -1119,7 +1145,7 @@ function customize_defense_set(defenseSet)
   if locked_ring2 then defenseSet = set_combine(defenseSet, { ring2=player.equipment.ring2 }) end
 
   if buffactive['sleep'] and player.vitals.hp > 500 and player.status == 'Engaged' then
-    defenseSet = set_combine(defenseSet, sets.Special.SleepyHead)
+    defenseSet = set_combine(defenseSet, sets.SleepyHead)
   end
 
   if buffactive.Doom then

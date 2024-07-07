@@ -281,7 +281,13 @@ end
 
 -- Define sets and vars used by this job file.
 function init_gear_sets()
-  sets.org.job = {}
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Common
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+
+  if sets.org then
+    sets.org.job = {}
+  end
 
   sets.TreasureHunter = {
     range=empty,
@@ -289,16 +295,169 @@ function init_gear_sets()
     body=gear.Merl_TH_body, --2
     waist="Chaac Belt", --1
   }
-  sets.TreasureHunter.RA = {
-    body=gear.Merl_TH_body, --2
-    waist="Chaac Belt", --1
+
+  sets.Kiting = {
+    ring1="Shneddick Ring",
+  }
+  sets.Kiting.Adoulin = {
+    body="Councilor's Garb",
   }
 
+  sets.CP = {
+    back=gear.CP_Cape,
+  }
+
+
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Weapon Sets
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+
+  sets.WeaponSet = {} -- DO NOT MODIFY
+  sets.WeaponSet['Staff'] = {
+    main="Mpaca's Staff",
+    sub="Khonsu",
+    range=empty,
+    ammo="White Tathlum",
+  }
+  sets.WeaponSet['Staff'].Safe = {
+    main="Mpaca's Staff",
+    sub="Khonsu",
+    range="Dunna",
+    ammo=empty,
+  }
+  sets.WeaponSet['Maxentius'] = {
+    main="Maxentius",
+    sub="Genmei Shield",
+    range=empty,
+    ammo="White Tathlum",
+  }
+  sets.WeaponSet['Maxentius'].Safe = {
+    main="Maxentius",
+    sub="Genmei Shield",
+    range="Dunna",
+    ammo=empty,
+  }
+  sets.WeaponSet['Idris'] = {
+    main="Idris",
+    sub="Genmei Shield",
+    range=empty,
+    ammo="White Tathlum",
+  }
+  sets.WeaponSet['Idris'].Safe = {
+    main="Idris",
+    sub="Genmei Shield",
+    range=empty,
+    ammo="White Tathlum",
+  }
+
+
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Defense
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+
+  sets.HeavyDef = {
+    main="Daybreak",                --  1 [__/__,  30] {__/__, __}
+    sub="Genmei Shield",            -- __ [10/__, ___] {__/__, __}
+    range=empty,                    -- __ [__/__, ___] {__/__, __}
+    ammo="Staunch Tathlum +1",      -- __ [ 3/ 3, ___] {__/__, __}; Status Resist+11
+    head="Azimuth Hood +2",         -- __ [11/11, 126] {__/__,  4}
+    body="Shamash Robe",            --  3 [10/__, 106] {__/__, __}; Resist Silence+90
+    hands="Bagua Mitaines +3",      --  2 [__/__,  57] {__/__, __}
+    legs="Assiduity Pants +1",      --  2 [__/__, 107] {__/__, __}
+    feet="Volte Gaiters",           --  1 [__/__, 142] {__/__, __}; Refresh Merlinic good alt
+    neck="Loricate Torque +1",      -- __ [ 6/ 6, ___] {__/__, __}
+    ear1="Arete Del Luna +1",       -- __ [__/__, ___] {__/__, __}; Resists
+    ear2="Etiolation Earring",      -- __ [__/ 3, ___] {__/__, __}; Resist Silence+15
+    ring1="Stikini Ring +1",        --  1 [__/__, ___] {__/__, __}
+    ring2="Stikini Ring +1",        --  1 [__/__, ___] {__/__, __}
+    back=gear.GEO_Nuke_Cape,        -- __ [10/__, ___] {__/__, __}
+    waist="Carrier's Sash",         -- __ [__/__, ___] {__/__, __}; Ele resist+15
+    -- 11 Refresh [50 PDT/23 MDT, 568 M.Eva] {Pet: 0 PDT/0 MDT, 4 Regen}
+
+    -- head="Azimuth Hood +3",      -- __ [12/12, 136] {__/__,  5}
+    -- 11 Refresh [51 PDT/24 MDT, 578 M.Eva] {Pet: 0 PDT/0 MDT, 5 Regen}
+
+    -- main="Bhima",                --  3 [__/__, ___] {__/__, __}
+    -- sub="Genmei Shield",         -- __ [10/__, ___] {__/__, __}
+    -- head="Azimuth Hood +3",      -- __ [12/12, 136] {__/__,  5}
+    -- 13 Refresh [51 PDT/24 MDT, 548 M.Eva] {Pet: 0 PDT/0 MDT, 5 Regen}
+  }
+
+  -- Pet -38% DT is needed in order to cap at -87.5% (has innate -50% DT)
+  sets.HeavyDef.Pet = {
+    main="Idris",                   -- __ [__/__, ___] {25/25, __}
+    sub="Genmei Shield",            -- __ [10/__, ___] {__/__, __}
+    range=empty,
+    ammo="Staunch Tathlum +1",      -- __ [ 3/ 3, ___] {__/__, __}; Status Resist+11
+    head="Azimuth Hood +2",         -- __ [11/11, 126] {__/__,  4}
+    body="Shamash Robe",            --  3 [10/__, 106] {__/__, __}; Resist Silence+90
+    hands="Geomancy Mitaines +3",   -- __ [ 3/__,  57] {13/13, __}
+    legs="Assiduity Pants +1",      --  2 [__/__, 107] {__/__, __}
+    feet="Bagua Sandals +3",        -- __ [__/__, 127] {__/__,  5}
+    neck="Bagua Charm +1",          -- __ [__/__, ___] {__/__, __}; Absorb Dmg+8
+    ear1="Arete Del Luna +1",       -- __ [__/__, ___] {__/__, __}; Resists
+    ear2="Azimuth Earring +1",      -- __ [ 3/ 3, ___] {__/__, __}
+    ring1="Stikini Ring +1",        --  1 [__/__, ___] {__/__, __}
+    ring2="Defending Ring",         -- __ [10/10, ___] {__/__, __}
+    back=gear.GEO_Idle_Cape,        -- __ [__/__,  30] {__/__, 15}
+    waist="Isa Belt",               -- __ [__/__, ___] { 3/ 3,  1}; Prefer refresh if it existed
+    -- 6 Refresh [50 PDT/27 MDT, 553 M.Eva] {Pet: 41 PDT/41 MDT, 25 Regen}
+
+    -- head="Azimuth Hood +3",      -- __ [12/12, 136] {__/__,  5}
+    -- neck="Bagua Charm +2",       -- __ [__/__, ___] {__/__, __}; Absorb Dmg+10
+    -- ear2="Azimuth Earring +2",   -- __ [ 7/ 7, ___] {__/__, __}
+    -- 6 Refresh [55 PDT/32 MDT, 563 M.Eva] {Pet: 41 PDT/41 MDT, 26 Regen}
+  }
+
+  sets.defense.PDT = set_combine(sets.HeavyDef.Pet, {})
+  sets.defense.MDT = set_combine(sets.HeavyDef.Pet, {})
+
+
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Idle
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+
+  -- Overlaid when MP is needed
+  sets.passive_refresh_sub50 = {
+    waist="Fucho-no-obi",
+  }
+
+  -- When luopan is not existing
+  sets.idle =  set_combine(sets.HeavyDef, {})
+
+  -- When you need to be safe (disables move speed gear)
+  sets.idle.HeavyDef = set_combine(sets.HeavyDef, {})
+
+  sets.idle.Pet = set_combine(sets.HeavyDef.Pet, {})
+
+  sets.idle.HeavyDef.Pet = set_combine(sets.HeavyDef.Pet, {})
+
+  -- Handle refresh
+  sets.idle.Refresh = set_combine(sets.idle, {})
+  sets.idle.RefreshSub50 = set_combine(sets.idle, sets.passive_refresh_sub50)
+  sets.idle.Pet.Refresh = set_combine(sets.idle.Pet, {})
+  sets.idle.Pet.RefreshSub50 = set_combine(sets.idle.Pet, sets.passive_refresh_sub50)
+
+  sets.idle.HeavyDef.Refresh = set_combine(sets.idle.HeavyDef, {})
+  sets.idle.HeavyDef.RefreshSub50 = set_combine(sets.idle.HeavyDef, {})
+  sets.idle.HeavyDef.Pet.Refresh = set_combine(sets.idle.HeavyDef.Pet, {})
+  sets.idle.HeavyDef.Pet.RefreshSub50 = set_combine(sets.idle.HeavyDef.Pet, {})
+
+  sets.idle.Weak = set_combine(sets.idle.HeavyDef.Pet, {})
+  
+  sets.resting = set_combine(sets.idle.HeavyDef.Pet, {
+    main="Chatoyant Staff",
+    sub="Khonsu",
+  })
+
+
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Precast
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
   -----------------------------------------------------------------------------------------------
-  ---------------------------------------- Job Abilities ----------------------------------------
+  --     Job Abilities
   -----------------------------------------------------------------------------------------------
 
-  -- Precast sets to enhance JAs
   sets.precast.JA.Bolster = {
     body="Bagua Tunic +1", -- +1 is acceptable
   }
@@ -322,11 +481,10 @@ function init_gear_sets()
   }
 
 
-  -----------------------------------------------------------------------------------------------
-  --------------------------------------- Precast Spells ----------------------------------------
-  -----------------------------------------------------------------------------------------------
+  ------------------------------------------------------------------------------------------------
+  --     Fast Cast
+  ------------------------------------------------------------------------------------------------
 
-  -- Fast cast sets for spells
   sets.precast.FC = {
     main="Idris",                   -- __ [__/__, ___] {25, __}
     sub="Genmei Shield",            -- __ [10/__, ___] {__, __}
@@ -405,11 +563,10 @@ function init_gear_sets()
   })
 
 
-  ----------------------------------------------------------------------------------------------
-  ---------------------------------------- Weaponskills ----------------------------------------
-  ----------------------------------------------------------------------------------------------
+  ------------------------------------------------------------------------------------------------
+  --    Weapon Skills
+  ------------------------------------------------------------------------------------------------
 
-  -- Weaponskill sets
   -- Default set for any weaponskill that isn't any more specifically defined
   sets.precast.WS = {
     head=gear.Nyame_B_head,
@@ -596,9 +753,13 @@ function init_gear_sets()
     ear2="Malignance Earring",      -- __,  8, __, __
   })
 
-  --------------------------------------
-  -- Midcast sets
-  --------------------------------------
+
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Midcast
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  ------------------------------------------------------------------------------------------------
+  --    Spells
+  ------------------------------------------------------------------------------------------------
 
   sets.midcast.FastRecast = set_combine(sets.precast.FC, {})
 
@@ -1258,105 +1419,12 @@ function init_gear_sets()
   sets.midcast.Shellra = set_combine(sets.midcast.Protect, {})
 
 
-  --------------------------------------
-  -- Idle/resting/etc sets
-  --------------------------------------
-
-  -- Overlaid when MP is needed
-  sets.passive_refresh_sub50 = {
-    waist="Fucho-no-obi",
-  }
-
-  -- When luopan is not existing
-  sets.idle = {
-    main="Daybreak",                --  1 [__/__,  30] {__/__, __}
-    sub="Genmei Shield",            -- __ [10/__, ___] {__/__, __}
-    range=empty,                    -- __ [__/__, ___] {__/__, __}
-    ammo="Staunch Tathlum +1",      -- __ [ 3/ 3, ___] {__/__, __}; Status Resist+11
-    head="Azimuth Hood +2",         -- __ [11/11, 126] {__/__,  4}
-    body="Shamash Robe",            --  3 [10/__, 106] {__/__, __}; Resist Silence+90
-    hands="Bagua Mitaines +3",      --  2 [__/__,  57] {__/__, __}
-    legs="Assiduity Pants +1",      --  2 [__/__, 107] {__/__, __}
-    feet="Volte Gaiters",           --  1 [__/__, 142] {__/__, __}; Refresh Merlinic good alt
-    neck="Loricate Torque +1",      -- __ [ 6/ 6, ___] {__/__, __}
-    ear1="Arete Del Luna +1",       -- __ [__/__, ___] {__/__, __}; Resists
-    ear2="Etiolation Earring",      -- __ [__/ 3, ___] {__/__, __}; Resist Silence+15
-    ring1="Stikini Ring +1",        --  1 [__/__, ___] {__/__, __}
-    ring2="Stikini Ring +1",        --  1 [__/__, ___] {__/__, __}
-    back=gear.GEO_Nuke_Cape,        -- __ [10/__, ___] {__/__, __}
-    waist="Carrier's Sash",         -- __ [__/__, ___] {__/__, __}; Ele resist+15
-    -- 11 Refresh [50 PDT/23 MDT, 568 M.Eva] {Pet: 0 PDT/0 MDT, 4 Regen}
-
-    -- head="Azimuth Hood +3",      -- __ [12/12, 136] {__/__,  5}
-    -- 11 Refresh [51 PDT/24 MDT, 578 M.Eva] {Pet: 0 PDT/0 MDT, 5 Regen}
-    
-    -- main="Bhima",                --  3 [__/__, ___] {__/__, __}
-    -- sub="Genmei Shield",         -- __ [10/__, ___] {__/__, __}
-    -- head="Azimuth Hood +3",      -- __ [12/12, 136] {__/__,  5}
-    -- 13 Refresh [51 PDT/24 MDT, 548 M.Eva] {Pet: 0 PDT/0 MDT, 5 Regen}
-  }
-
-  -- When you need to be safe (disables move speed gear)
-  sets.idle.HeavyDef = set_combine(sets.idle, {})
-
-  -- Pet -38% DT is needed in order to cap at -87.5% (has innate -50% DT)
-  sets.idle.Pet = {
-    main="Idris",                   -- __ [__/__, ___] {25/25, __}
-    sub="Genmei Shield",            -- __ [10/__, ___] {__/__, __}
-    range=empty,
-    ammo="Staunch Tathlum +1",      -- __ [ 3/ 3, ___] {__/__, __}; Status Resist+11
-    head="Azimuth Hood +2",         -- __ [11/11, 126] {__/__,  4}
-    body="Shamash Robe",            --  3 [10/__, 106] {__/__, __}; Resist Silence+90
-    hands="Geomancy Mitaines +3",   -- __ [ 3/__,  57] {13/13, __}
-    legs="Assiduity Pants +1",      --  2 [__/__, 107] {__/__, __}
-    feet="Bagua Sandals +3",        -- __ [__/__, 127] {__/__,  5}
-    neck="Bagua Charm +1",          -- __ [__/__, ___] {__/__, __}; Absorb Dmg+8
-    ear1="Arete Del Luna +1",       -- __ [__/__, ___] {__/__, __}; Resists
-    ear2="Azimuth Earring +1",      -- __ [ 3/ 3, ___] {__/__, __}
-    ring1="Stikini Ring +1",        --  1 [__/__, ___] {__/__, __}
-    ring2="Defending Ring",         -- __ [10/10, ___] {__/__, __}
-    back=gear.GEO_Idle_Cape,        -- __ [__/__,  30] {__/__, 15}
-    waist="Isa Belt",               -- __ [__/__, ___] { 3/ 3,  1}; Prefer refresh if it existed
-    -- 6 Refresh [50 PDT/27 MDT, 553 M.Eva] {Pet: 41 PDT/41 MDT, 25 Regen}
-
-    -- head="Azimuth Hood +3",      -- __ [12/12, 136] {__/__,  5}
-    -- neck="Bagua Charm +2",       -- __ [__/__, ___] {__/__, __}; Absorb Dmg+10
-    -- ear2="Azimuth Earring +2",   -- __ [ 7/ 7, ___] {__/__, __}
-    -- 6 Refresh [55 PDT/32 MDT, 563 M.Eva] {Pet: 41 PDT/41 MDT, 26 Regen}
-  }
-
-  sets.idle.HeavyDef.Pet = set_combine(sets.idle.Pet, {})
-
-  -- Handle refresh
-  sets.idle.Refresh = set_combine(sets.idle, {})
-  sets.idle.RefreshSub50 = set_combine(sets.idle, sets.passive_refresh_sub50)
-  sets.idle.Pet.Refresh = set_combine(sets.idle.Pet, {})
-  sets.idle.Pet.RefreshSub50 = set_combine(sets.idle.Pet, sets.passive_refresh_sub50)
-
-  sets.idle.HeavyDef.Refresh = set_combine(sets.idle.HeavyDef, {})
-  sets.idle.HeavyDef.RefreshSub50 = set_combine(sets.idle.HeavyDef, {})
-  sets.idle.HeavyDef.Pet.Refresh = set_combine(sets.idle.HeavyDef.Pet, {})
-  sets.idle.HeavyDef.Pet.RefreshSub50 = set_combine(sets.idle.HeavyDef.Pet, {})
-
-  sets.idle.Weak = set_combine(sets.idle.HeavyDef.Pet, {})
-  
-  sets.resting = set_combine(sets.idle.HeavyDef.Pet, {
-    main="Chatoyant Staff",
-    sub="Khonsu",
-  })
-
-
-  --------------------------------------
-  -- Defense sets
-  --------------------------------------
-
-  sets.defense.PDT = set_combine(sets.idle.Pet, {})
-  sets.defense.MDT = set_combine(sets.idle.Pet, {})
-
-
-  --------------------------------------
-  -- Engaged sets
-  --------------------------------------
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Engaged
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  ------------------------------------------------------------------------------------------------
+  --    Normal Engaged
+  ------------------------------------------------------------------------------------------------
 
   -- Need 38 pet DT to cap
   -- Normal melee group, used when not weapon locked
@@ -1574,78 +1642,22 @@ function init_gear_sets()
   }
 
 
-  --------------------------------------
-  -- Custom buff sets
-  --------------------------------------
-
-  -- Gear that converts elemental damage done to recover MP.
-  sets.RecoverMP = {
-    body="Seidr Cotehardie",
-  }
-
-  sets.buff.Sublimation = {
-    waist="Embla Sash"
-  }
-
-
-  ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Special Sets ------------------------------------------
-  ------------------------------------------------------------------------------------------------
-
-  sets.Special = {}
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Unique/Special/Misc
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
 
   sets.buff.Doom = {
     neck="Nicander's Necklace", --20
     ring2="Eshmun's Ring", --20
     waist="Gishdubar Sash", --10
   }
-
-  sets.Kiting = {
-    ring1="Shneddick Ring",
-  }
-  sets.Kiting.Adoulin = {
-    body="Councilor's Garb",
-  }
-  sets.CP = {
-    back=gear.CP_Cape,
+  sets.buff.Sublimation = {
+    waist="Embla Sash"
   }
 
-  sets.WeaponSet = {}
-  sets.WeaponSet['Staff'] = {
-    main="Mpaca's Staff",
-    sub="Khonsu",
-    range=empty,
-    ammo="White Tathlum",
-  }
-  sets.WeaponSet['Staff'].Safe = {
-    main="Mpaca's Staff",
-    sub="Khonsu",
-    range="Dunna",
-    ammo=empty,
-  }
-  sets.WeaponSet['Maxentius'] = {
-    main="Maxentius",
-    sub="Genmei Shield",
-    range=empty,
-    ammo="White Tathlum",
-  }
-  sets.WeaponSet['Maxentius'].Safe = {
-    main="Maxentius",
-    sub="Genmei Shield",
-    range="Dunna",
-    ammo=empty,
-  }
-  sets.WeaponSet['Idris'] = {
-    main="Idris",
-    sub="Genmei Shield",
-    range=empty,
-    ammo="White Tathlum",
-  }
-  sets.WeaponSet['Idris'].Safe = {
-    main="Idris",
-    sub="Genmei Shield",
-    range=empty,
-    ammo="White Tathlum",
+  -- Gear that converts elemental damage done to recover MP.
+  sets.RecoverMP = {
+    body="Seidr Cotehardie",
   }
 end
 

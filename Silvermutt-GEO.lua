@@ -1447,7 +1447,7 @@ function init_gear_sets()
     back=gear.CP_Cape,
   }
 
-  sets.WeaponSet = {}
+  sets.WeaponSet = {} -- DO NOT MODIFY
   sets.WeaponSet['Staff'] = {
     main="Xoanon",
     sub="Khonsu",

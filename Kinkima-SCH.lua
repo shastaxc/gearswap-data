@@ -354,8 +354,154 @@ end
 
 -- Define sets and vars used by this job file.
 function init_gear_sets()
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Common
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+
+  if sets.org then
+    sets.org.job = {}
+  end
+
+  sets.Kiting = {
+    ring1="Shneddick Ring",
+  }
+  sets.Kiting.Adoulin = {
+    body="Councilor's Garb",
+  }
+
+  sets.CP = {
+    back=gear.CP_Cape
+  }
+
+
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Weapon Sets
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+
+  sets.WeaponSet = {} -- DO NOT MODIFY
+  sets.WeaponSet['Khatvanga'] = {
+    main="Khatvanga",
+    sub="Khonsu",
+  }
+
+
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Defense
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+
+  sets.HeavyDef = {
+    main="Daybreak",                -- __/__,  30
+    sub="Genmei Shield",            -- 10/__, ___
+    ammo="Staunch Tathlum +1",      --  3/ 3, ___; Resist Status+11
+    head="Arbatel Bonnet +3",       -- 10/10, 136
+    body="Shamash Robe",            -- 10/__, 106; Resist Silence+90
+    hands=gear.Nyame_B_hands,       --  7/ 7, 112
+    legs="Arbatel Pants +3",        -- 12/12, 168
+    feet="Arbatel Loafers +3",      -- __/__, 168
+    neck="Loricate Torque +1",      --  6/ 6, ___; DEF+60
+    ear1="Arete Del Luna +1",       -- __/__, ___; Resists
+    ear2="Etiolation Earring",      -- __/ 3, ___; Resist Silence+15
+    ring1="Wuji Ring",              -- __/__, ___; Resists Charm/Sleep
+    ring2="Defending Ring",         -- 10/10, ___
+    back="Archon Cape",             -- __/__, ___
+    waist="Carrier's Sash",         -- __/__, ___; Ele Resist+15
+    -- 68 PDT / 51 MDT, 720 M.Eva
+
+    -- ring2="Shadow Ring",         -- __/__, ___; Occ. annuls magic dmg
+    -- back="Shadow Mantle",        -- __/__, ___; Occ. annuls physical dmg
+    -- 58 PDT / 41 MDT, 720 M.Eva
+  }
+
+  sets.defense.PDT = set_combine(sets.HeavyDef, {})
+  sets.defense.MDT = set_combine(sets.HeavyDef, {})
+
+
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Idle
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+
+  sets.passive_refresh = {
+    main="Mpaca's Staff",           -- __/__, ___ [ 2]
+    sub="Khonsu",                   --  6/ 6, ___ [__]
+    ammo="Staunch Tathlum +1",      --  3/ 3, ___ [__]; Resist Status+11
+    head=gear.Nyame_B_head,         --  7/ 7, 123 [__]
+    body="Shamash Robe",            -- 10/__, 106 [ 3]; Resist Silence+90
+    hands="Volte Gloves",           -- __/__,  96 [ 1]
+    legs="Assiduity Pants +1",      -- __/__, 107 [ 2]
+    feet="Volte Gaiters",           -- __/__, 142 [ 1]
+    neck="Loricate Torque +1",      --  6/ 6, ___ [__]; DEF+60
+    ear1="Hearty Earring",          -- __/__, ___ [__]; Resist Status+5
+    ear2="Etiolation Earring",      -- __/ 3, ___ [__]; Resist Silence+15
+    ring1="Stikini Ring +1",        -- __/__, ___ [ 1]
+    ring2="Defending Ring",         -- 10/10, ___ [__]
+    back=gear.SCH_FC_Cape,          -- 10/__,  30 [__]
+    waist="Carrier's Sash",         -- __/__, ___ [__]; Ele Resist+15
+    -- 52 PDT / 35 MDT, 584 M.Eva [10 Refresh]
+  }
+  sets.passive_refresh.sub50 = {
+    waist="Fucho-no-Obi",
+  }
+  sets.Sublimation = {
+    main="Siriti",                      -- __/__, ___ [ 1, __]
+    sub="Genmei Shield",                -- 10/__, ___ [__, __]
+    ammo="Staunch Tathlum +1",          --  3/ 3, ___ [__, __]; Resist Status+11
+    head="Academic's Mortarboard +3",   -- __/__,  95 [ 4, __]
+    body="Pedagogy Gown +3",            -- __/__, 100 [ 5, __]
+    hands=gear.Nyame_B_hands,           --  7/ 7, 112 [__, __]
+    legs="Assiduity Pants +1",          -- __/__, 107 [__,  2]
+    feet=gear.Nyame_B_feet,             --  7/ 7, 150 [__, __]
+    neck="Loricate Torque +1",          --  6/ 6, ___ [__, __]; DEF+60
+    ear1="Savant's Earring",            -- __/__, ___ [ 1, __]
+    ear2="Etiolation Earring",          -- __/ 3, ___ [__, __]; Resist Silence+15
+    ring1="Gelatinous Ring +1",         --  7/-1, ___ [__, __]
+    ring2="Defending Ring",             -- 10/10, ___ [__, __]
+    back=gear.SCH_FC_Cape,              -- 10/__,  30 [__, __]
+    waist="Embla Sash",                 -- __/__, ___ [ 5, __]
+    -- 60 PDT / 35 MDT, 594 M.Eva [16 Sublimation, 2 Refresh]
+
+    -- ring1="Shadow Ring",             -- __/__, ___ [__, __]; Annuls magic dmg
+    -- 53 PDT / 36 MDT, 564 M.Eva [16 Sublimation, 2 Refresh]
+  }
+  sets.Sublimation.Refresh = {
+    main="Mpaca's Staff",               -- __/__, ___ [__,  2]
+    sub="Khonsu",                       --  6/ 6, ___ [__, __]
+    ammo="Staunch Tathlum +1",          --  3/ 3, ___ [__, __]; Resist Status+11
+    head="Academic's Mortarboard +3",   -- __/__,  95 [ 4, __]
+    body="Pedagogy Gown +3",            -- __/__, 100 [ 5, __]
+    hands=gear.Nyame_B_hands,           --  7/ 7, 112 [__, __]
+    legs="Assiduity Pants +1",          -- __/__, 107 [__,  2]
+    feet=gear.Nyame_B_feet,             --  7/ 7, 150 [__, __]
+    neck="Loricate Torque +1",          --  6/ 6, ___ [__, __]; DEF+60
+    ear1="Savant's Earring",            -- __/__, ___ [ 1, __]
+    ear2="Etiolation Earring",          -- __/ 3, ___ [__, __]; Resist Silence+15
+    ring1="Stikini Ring +1",            -- __/__, ___ [__,  1]
+    ring2="Defending Ring",             -- 10/10, ___ [__, __]
+    back=gear.SCH_FC_Cape,              -- 10/__,  30 [__, __]
+    waist="Embla Sash",                 -- __/__, ___ [ 5, __]
+    -- 49 PDT / 42 MDT, 594 M.Eva [15 Sublimation, 5 Refresh]
+  }
+
+  sets.idle = set_combine(sets.HeavyDef, {})
+  sets.idle.Sublimation = set_combine(sets.idle, sets.Sublimation)
+  sets.idle.Refresh = set_combine(sets.idle, sets.passive_refresh)
+  sets.idle.Refresh.MpSub50 = set_combine(sets.idle, sets.passive_refresh, sets.passive_refresh.sub50)
+  sets.idle.Sublimation.Refresh = set_combine(sets.idle, sets.Sublimation.Refresh)
+
+  -- When you need to be safe (disables move speed gear)
+  sets.idle.HeavyDef = set_combine(sets.idle, {})
+
+  sets.resting = set_combine(sets.idle, {
+    main="Chatoyant Staff",
+    sub="Khonsu",
+    waist="Shinjutsu-no-Obi +1",
+  })
+
+
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Precast
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
   -----------------------------------------------------------------------------------------------
-  ---------------------------------------- Job Abilities ----------------------------------------
+  --     Job Abilities
   -----------------------------------------------------------------------------------------------
 
   -- Precast sets to enhance JAs
@@ -368,7 +514,7 @@ function init_gear_sets()
 
 
   ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Precast Sets ------------------------------------------
+  --     Fast Cast
   ------------------------------------------------------------------------------------------------
 
   -- Fast cast sets for spells
@@ -548,7 +694,7 @@ function init_gear_sets()
 
 
   ------------------------------------------------------------------------------------------------
-  ------------------------------------- Weapon Skill Sets ----------------------------------------
+  --    Weapon Skills
   ------------------------------------------------------------------------------------------------
 
   sets.precast.WS = {
@@ -616,8 +762,11 @@ function init_gear_sets()
   }
 
 
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Midcast
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
   ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Midcast Sets ------------------------------------------
+  --    Spells
   ------------------------------------------------------------------------------------------------
 
   sets.midcast.FastRecast = set_combine(sets.precast.FC, {})
@@ -629,38 +778,36 @@ function init_gear_sets()
   sets.midcast.Impact = set_combine(sets.precast.FC.Impact, {})
   sets.midcast.Dispelga = set_combine(sets.precast.FC.Dispelga, {})
 
-  -- CPII, CP, Heal Skill, MND, VIT, SIRD, PDT/MDT, -Enmity
-  SIRD_options = {
-    -- main="Eremite's Wand +1",     -- __, __, ___,   2, ___, 25, __/__, __
-    -- sub="Culminus",               -- __, __, ___, ___, ___, 10, __/__, __
+  -- SIRD_options          CPII, CP, Heal Skill, MND, VIT, SIRD, PDT/MDT, -Enmity
+  -- main="Eremite's Wand +1",     -- __, __, ___,   2, ___, 25, __/__, __
+  -- sub="Culminus",               -- __, __, ___, ___, ___, 10, __/__, __
 
-    -- sub="Magic Strap",            -- __, __, ___, ___, ___,  5, __/__, __
-    -- ammo="Staunch Tathlum +1",    -- __, __, ___, ___, ___, 11,  3/ 3, __
-    -- head=gear.Kaykaus_C_head,     -- __, 11,  16,  19,  14, 12, __/ 3, __
-    -- head="Agwu's Cap",            -- __, __, ___,  26,  11, 10, __/__,  5
-    -- head="Chironic Hat",          -- __, __, ___,  29,  14, 11, __/ 2, __
-    -- body=gear.Kaykaus_C_body,     --  4, __, ___,  33,  20, 12, __/__, __
-    -- body="Rosette Jaseran +1",    -- __, __, ___,  29,  21, 25,  5/ 5, 13
-    -- body="Chrionic Doublet",      -- __, 13, ___,  34,  16, 11, __/__, __
-    -- hands="Chironic Gloves",      -- __, __, ___,  38,  20, 31, __/__, __
-    -- hands=gear.Amalric_B_hands,   -- __, __, ___,  34,  20, 11, __/__,  6
-    -- legs=gear.Kaykaus_C_legs,     -- __, 11, ___,  30,  12, 12, __/__, __
-    -- legs="Chironic Hose",         -- __,  8, ___,  29,   6, 11, __/__, __
-    -- feet=gear.Amalric_B_feet,     -- __, __, ___,  20,   6, 16, __/__,  6
-    -- feet="Chironic Slippers",     -- __, __, ___,  24,   6, 11,  2/__,  5
-    -- feet="Agwu's Pigaches",       -- __, __, ___,  26,   8, 10, __/__, __
-    -- neck="Loricate Torque +1",    -- __, __, ___, ___, ___,  5,  6/ 6, __
-    -- ear1="Magnetic Earring",      -- __, __, ___, ___, ___,  8, __/__, __
-    -- ear1="Halasz Earring",        -- __, __, ___, ___, ___,  5, __/__,  3
-    -- ring1="Freke Ring",           -- __, __, ___, ___, ___, 10, __/__, __
-    -- ring1="Evanescence Ring",     -- __, __, ___, ___, ___,  5, __/__, __
-    -- back=AmbuCape1,               -- __, 10, ___,  30, ___, 10, __/__, __
-    -- back=AmbuCape2,               -- __, __, ___,  30, ___, 10, __/__, 10
-    -- waist="Emphatikos Rope",      -- __, __, ___, ___, ___, 12, __/__, __
-    -- waist="Sanctuary Obi +1",     -- __, __, ___, ___, ___, 10, __/__,  4
-    -- waist="Rumination Sash",      -- __, __, ___,   4, ___, 10, __/__, __
-    -- Merit points                  -- __, __, ___, ___, ___, 10, __/__,  5
-  }
+  -- sub="Magic Strap",            -- __, __, ___, ___, ___,  5, __/__, __
+  -- ammo="Staunch Tathlum +1",    -- __, __, ___, ___, ___, 11,  3/ 3, __
+  -- head=gear.Kaykaus_C_head,     -- __, 11,  16,  19,  14, 12, __/ 3, __
+  -- head="Agwu's Cap",            -- __, __, ___,  26,  11, 10, __/__,  5
+  -- head="Chironic Hat",          -- __, __, ___,  29,  14, 11, __/ 2, __
+  -- body=gear.Kaykaus_C_body,     --  4, __, ___,  33,  20, 12, __/__, __
+  -- body="Rosette Jaseran +1",    -- __, __, ___,  29,  21, 25,  5/ 5, 13
+  -- body="Chrionic Doublet",      -- __, 13, ___,  34,  16, 11, __/__, __
+  -- hands="Chironic Gloves",      -- __, __, ___,  38,  20, 31, __/__, __
+  -- hands=gear.Amalric_B_hands,   -- __, __, ___,  34,  20, 11, __/__,  6
+  -- legs=gear.Kaykaus_C_legs,     -- __, 11, ___,  30,  12, 12, __/__, __
+  -- legs="Chironic Hose",         -- __,  8, ___,  29,   6, 11, __/__, __
+  -- feet=gear.Amalric_B_feet,     -- __, __, ___,  20,   6, 16, __/__,  6
+  -- feet="Chironic Slippers",     -- __, __, ___,  24,   6, 11,  2/__,  5
+  -- feet="Agwu's Pigaches",       -- __, __, ___,  26,   8, 10, __/__, __
+  -- neck="Loricate Torque +1",    -- __, __, ___, ___, ___,  5,  6/ 6, __
+  -- ear1="Magnetic Earring",      -- __, __, ___, ___, ___,  8, __/__, __
+  -- ear1="Halasz Earring",        -- __, __, ___, ___, ___,  5, __/__,  3
+  -- ring1="Freke Ring",           -- __, __, ___, ___, ___, 10, __/__, __
+  -- ring1="Evanescence Ring",     -- __, __, ___, ___, ___,  5, __/__, __
+  -- back=AmbuCape1,               -- __, 10, ___,  30, ___, 10, __/__, __
+  -- back=AmbuCape2,               -- __, __, ___,  30, ___, 10, __/__, 10
+  -- waist="Emphatikos Rope",      -- __, __, ___, ___, ___, 12, __/__, __
+  -- waist="Sanctuary Obi +1",     -- __, __, ___, ___, ___, 10, __/__,  4
+  -- waist="Rumination Sash",      -- __, __, ___,   4, ___, 10, __/__, __
+  -- Merit points                  -- __, __, ___, ___, ___, 10, __/__,  5
 
   -- Prioritize: CPII > CP > Heal Skill, MND, VIT (to power cap) > SIRD > -DT > Enmity (to -40)
   -- Cap at 700 power; Power = floor(MND÷2) + floor(VIT÷4) + Healing Magic Skill
@@ -1281,120 +1428,11 @@ function init_gear_sets()
   })
 
 
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Engaged
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
   ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Defense Sets ------------------------------------------
-  ------------------------------------------------------------------------------------------------
-
-  sets.HeavyDef = {
-    main="Daybreak",                -- __/__,  30
-    sub="Genmei Shield",            -- 10/__, ___
-    ammo="Staunch Tathlum +1",      --  3/ 3, ___; Resist Status+11
-    head="Arbatel Bonnet +3",       -- 10/10, 136
-    body="Shamash Robe",            -- 10/__, 106; Resist Silence+90
-    hands=gear.Nyame_B_hands,       --  7/ 7, 112
-    legs="Arbatel Pants +3",        -- 12/12, 168
-    feet="Arbatel Loafers +3",      -- __/__, 168
-    neck="Loricate Torque +1",      --  6/ 6, ___; DEF+60
-    ear1="Arete Del Luna +1",       -- __/__, ___; Resists
-    ear2="Etiolation Earring",      -- __/ 3, ___; Resist Silence+15
-    ring1="Wuji Ring",              -- __/__, ___; Resists Charm/Sleep
-    ring2="Defending Ring",         -- 10/10, ___
-    back="Archon Cape",             -- __/__, ___
-    waist="Carrier's Sash",         -- __/__, ___; Ele Resist+15
-    -- 68 PDT / 51 MDT, 720 M.Eva
-    
-    -- ring2="Shadow Ring",         -- __/__, ___; Occ. annuls magic dmg
-    -- back="Shadow Mantle",        -- __/__, ___; Occ. annuls physical dmg
-    -- 58 PDT / 41 MDT, 720 M.Eva
-  }
-
-  sets.defense.PDT = set_combine(sets.HeavyDef, {})
-  sets.defense.MDT = set_combine(sets.HeavyDef, {})
-
-
-  ------------------------------------------------------------------------------------------------
-  ----------------------------------------- Idle Sets --------------------------------------------
-  ------------------------------------------------------------------------------------------------
-
-  sets.passive_refresh = {
-    main="Mpaca's Staff",           -- __/__, ___ [ 2]
-    sub="Khonsu",                   --  6/ 6, ___ [__]
-    ammo="Staunch Tathlum +1",      --  3/ 3, ___ [__]; Resist Status+11
-    head=gear.Nyame_B_head,         --  7/ 7, 123 [__]
-    body="Shamash Robe",            -- 10/__, 106 [ 3]; Resist Silence+90
-    hands="Volte Gloves",           -- __/__,  96 [ 1]
-    legs="Assiduity Pants +1",      -- __/__, 107 [ 2]
-    feet="Volte Gaiters",           -- __/__, 142 [ 1]
-    neck="Loricate Torque +1",      --  6/ 6, ___ [__]; DEF+60
-    ear1="Hearty Earring",          -- __/__, ___ [__]; Resist Status+5
-    ear2="Etiolation Earring",      -- __/ 3, ___ [__]; Resist Silence+15
-    ring1="Stikini Ring +1",        -- __/__, ___ [ 1]
-    ring2="Defending Ring",         -- 10/10, ___ [__]
-    back=gear.SCH_FC_Cape,          -- 10/__,  30 [__]
-    waist="Carrier's Sash",         -- __/__, ___ [__]; Ele Resist+15
-    -- 52 PDT / 35 MDT, 584 M.Eva [10 Refresh]
-  }
-  sets.passive_refresh.sub50 = {
-    waist="Fucho-no-Obi",
-  }
-  sets.Sublimation = {
-    main="Siriti",                      -- __/__, ___ [ 1, __]
-    sub="Genmei Shield",                -- 10/__, ___ [__, __]
-    ammo="Staunch Tathlum +1",          --  3/ 3, ___ [__, __]; Resist Status+11
-    head="Academic's Mortarboard +3",   -- __/__,  95 [ 4, __]
-    body="Pedagogy Gown +3",            -- __/__, 100 [ 5, __]
-    hands=gear.Nyame_B_hands,           --  7/ 7, 112 [__, __]
-    legs="Assiduity Pants +1",          -- __/__, 107 [__,  2]
-    feet=gear.Nyame_B_feet,             --  7/ 7, 150 [__, __]
-    neck="Loricate Torque +1",          --  6/ 6, ___ [__, __]; DEF+60
-    ear1="Savant's Earring",            -- __/__, ___ [ 1, __]
-    ear2="Etiolation Earring",          -- __/ 3, ___ [__, __]; Resist Silence+15
-    ring1="Gelatinous Ring +1",         --  7/-1, ___ [__, __]
-    ring2="Defending Ring",             -- 10/10, ___ [__, __]
-    back=gear.SCH_FC_Cape,              -- 10/__,  30 [__, __]
-    waist="Embla Sash",                 -- __/__, ___ [ 5, __]
-    -- 60 PDT / 35 MDT, 594 M.Eva [16 Sublimation, 2 Refresh]
-
-    -- ring1="Shadow Ring",             -- __/__, ___ [__, __]; Annuls magic dmg
-    -- 53 PDT / 36 MDT, 564 M.Eva [16 Sublimation, 2 Refresh]
-  }
-  sets.Sublimation.Refresh = {
-    main="Mpaca's Staff",               -- __/__, ___ [__,  2]
-    sub="Khonsu",                       --  6/ 6, ___ [__, __]
-    ammo="Staunch Tathlum +1",          --  3/ 3, ___ [__, __]; Resist Status+11
-    head="Academic's Mortarboard +3",   -- __/__,  95 [ 4, __]
-    body="Pedagogy Gown +3",            -- __/__, 100 [ 5, __]
-    hands=gear.Nyame_B_hands,           --  7/ 7, 112 [__, __]
-    legs="Assiduity Pants +1",          -- __/__, 107 [__,  2]
-    feet=gear.Nyame_B_feet,             --  7/ 7, 150 [__, __]
-    neck="Loricate Torque +1",          --  6/ 6, ___ [__, __]; DEF+60
-    ear1="Savant's Earring",            -- __/__, ___ [ 1, __]
-    ear2="Etiolation Earring",          -- __/ 3, ___ [__, __]; Resist Silence+15
-    ring1="Stikini Ring +1",            -- __/__, ___ [__,  1]
-    ring2="Defending Ring",             -- 10/10, ___ [__, __]
-    back=gear.SCH_FC_Cape,              -- 10/__,  30 [__, __]
-    waist="Embla Sash",                 -- __/__, ___ [ 5, __]
-    -- 49 PDT / 42 MDT, 594 M.Eva [15 Sublimation, 5 Refresh]
-  }
-
-  sets.idle = set_combine(sets.HeavyDef, {})
-  sets.idle.Sublimation = set_combine(sets.idle, sets.Sublimation)
-  sets.idle.Refresh = set_combine(sets.idle, sets.passive_refresh)
-  sets.idle.Refresh.MpSub50 = set_combine(sets.idle, sets.passive_refresh, sets.passive_refresh.sub50)
-  sets.idle.Sublimation.Refresh = set_combine(sets.idle, sets.Sublimation.Refresh)
-
-  -- When you need to be safe (disables move speed gear)
-  sets.idle.HeavyDef = set_combine(sets.idle, {})
-
-  sets.resting = set_combine(sets.idle, {
-    main="Chatoyant Staff",
-    sub="Khonsu",
-    waist="Shinjutsu-no-Obi +1",
-  })
-
-
-  ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Engaged Sets ------------------------------------------
+  --    Normal Engaged
   ------------------------------------------------------------------------------------------------
 
   sets.engaged = {
@@ -1419,9 +1457,31 @@ function init_gear_sets()
     -- 33 Haste, 42 STP, 390 Acc <21 DA, 0 TA, 0 QA> [49 PDT/39 MDT, 524 MEVA]
   }
 
-  ------------------------------------------------------------------------------------------------
-  ---------------------------------------- Special Sets ------------------------------------------
-  ------------------------------------------------------------------------------------------------
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+  --     Unique/Special/Misc
+  -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
+
+  sets.CaitSith = {
+    main="Bunzi's Rod",
+    sub="Genbu's Shield",
+    ammo="Incantor Stone",
+    head="Academic's Mortarboard +3",
+    body="Pedagogy Gown +3",
+    hands="Academic's Bracers +3",
+    legs="Assiduity Pants +1",
+    feet=gear.Kaykaus_D_feet,
+    neck="Loricate Torque +1",
+    ear1="Savant's Earring",
+    ear2="Enhancing Earring",
+    ring1="Metamorph Ring +1",
+    ring2="Defending Ring",
+    back=gear.SCH_FC_Cape,
+    waist="Embla Sash",
+  }
+
+  sets.Bookworm = {
+    back="Bookworm's Cape",
+  }
 
   sets.buff['Ebullience'] = {
     head="Arbatel Bonnet +3",
@@ -1449,50 +1509,10 @@ function init_gear_sets()
   sets.buff['Klimaform'] = {
     feet="Arbatel Loafers +3",
   }
-
   sets.buff.Doom = {
     neck="Nicander's Necklace",     --20
     ring1="Eshmun's Ring",          --20
     waist="Gishdubar Sash",         --10
-  }
-
-  sets.Special = {}
-  sets.Special.CaitSith = {
-    main="Bunzi's Rod",
-    sub="Genbu's Shield",
-    ammo="Incantor Stone",
-    head="Academic's Mortarboard +3",
-    body="Pedagogy Gown +3",
-    hands="Academic's Bracers +3",
-    legs="Assiduity Pants +1",
-    feet=gear.Kaykaus_D_feet,
-    neck="Loricate Torque +1",
-    ear1="Savant's Earring",
-    ear2="Enhancing Earring",
-    ring1="Metamorph Ring +1",
-    ring2="Defending Ring",
-    back=gear.SCH_FC_Cape,
-    waist="Embla Sash",
-  }
-  sets.Bookworm = {
-    back="Bookworm's Cape",
-  }
-  sets.CP = {
-    back=gear.CP_Cape
-  }
-
-  sets.Kiting = {
-    ring1="Shneddick Ring",
-  }
-  sets.Kiting.Adoulin = {
-    body="Councilor's Garb",
-  }
-
-  --Weapon sets
-  sets.WeaponSet = {}
-  sets.WeaponSet['Khatvanga'] = {
-    main="Khatvanga",
-    sub="Khonsu",
   }
 end
 
@@ -1552,7 +1572,7 @@ function job_post_precast(spell, action, spellMap, eventArgs)
   if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
 
   if state.PhysicalDefenseMode.current == 'CaitSith' and state.DefenseMode.current ~= 'None' then
-    equip(sets.Special.CaitSith)
+    equip(sets.CaitSith)
   end
 
   ----------- Non-silibs content goes above this line -----------
@@ -1647,7 +1667,7 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
   if locked_ring2 then equip({ ring2=player.equipment.ring2 }) end
 
   if state.PhysicalDefenseMode.current == 'CaitSith' and state.DefenseMode.current ~= 'None' then
-    equip(sets.Special.CaitSith)
+    equip(sets.CaitSith)
   end
 
   ----------- Non-silibs content goes above this line -----------
@@ -1825,7 +1845,7 @@ function customize_defense_set(defenseSet)
   end
 
   if state.PhysicalDefenseMode.current == 'CaitSith' then
-    defenseSet = set_combine(defenseSet, sets.Special.CaitSith)
+    defenseSet = set_combine(defenseSet, sets.CaitSith)
   end
 
   return defenseSet

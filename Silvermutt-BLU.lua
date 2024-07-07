@@ -1125,7 +1125,7 @@ function init_gear_sets()
   sets.midcast.Diaga = set_combine(sets.TreasureHunter, {})
   sets.midcast.Bio = set_combine(sets.TreasureHunter, {})
 
-  sets.WeaponSet = {}
+  sets.WeaponSet = {} -- DO NOT MODIFY
   sets.WeaponSet['Naegling'] = {
     main="Naegling",
     sub="Genmei Shield",
