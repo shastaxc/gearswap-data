@@ -1503,9 +1503,9 @@ function init_gear_sets()
 
   sets.midcast.Drain = set_combine(sets.midcast['Dark Magic'], {
     feet=gear.Merl_Drain_feet,        --  7 Drain/Aspir potency
+    ear2="Hirudinea Earring",         --  3 Drain/Aspir potency
     ring2="Evanescence Ring",         -- 10 Drain/Aspir potency
     waist="Fucho-no-obi",             --  8 Drain/Aspir potency
-    -- ear2="Hirudinea Earring",      --  3 Drain/Aspir potency
   })
   sets.midcast.Aspir = set_combine(sets.midcast.Drain,{})
 

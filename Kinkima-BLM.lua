@@ -834,16 +834,15 @@ function init_gear_sets()
     feet="Wicce Sabots +3",           -- ___, 35, 60, 36 [11/11, 168] __
     neck="Erra Pendant",              -- ___, 10, 17, __ [__/__, ___]  5
     ear1="Malignance Earring",        -- ___, __, 10,  8 [__/__, ___] __
-    ear2="Mani Earring",              -- ___, 10, __, __ [__/__, ___] __
+    ear2="Hirudinea Earring",         -- ___, __, __, __ [__/__, ___]  3
     ring1="Stikini Ring +1",          -- ___,  8, 11, __ [__/__, ___] __
     ring2="Evanescence Ring",         -- ___, 10, __, __ [__/__, ___] 10
     back="Aurist's Cape +1",          -- ___, __, 33, 33 [__/__, ___] __
     waist="Fucho-no-obi",             -- ___, __, __, __ [__/__, ___]  8
     -- Traits/Merits/Gifts                   469
-    -- 215 M.Acc Skill, 605 Dark skill, 429 M.Acc, 306 INT [24 PDT/24 MDT, 620 M.Eva] 63 Drain/Aspir potency
+    -- 215 M.Acc Skill, 595 Dark skill, 429 M.Acc, 306 INT [24 PDT/24 MDT, 620 M.Eva] 66 Drain/Aspir potency
     
     -- main=gear.Rubicundity,         -- 215, 25, 30, 21 [__/__, ___] 20
-    -- ear2="Hirudinea Earring",      -- ___, __, __, __ [__/__, ___]  3
     -- 215 M.Acc Skill, 598 Dark skill, 433 M.Acc, 306 INT [24 PDT/24 MDT, 620 M.Eva] 66 Drain/Aspir potency
   })
   sets.midcast.Aspir = set_combine(sets.midcast.Drain, {})

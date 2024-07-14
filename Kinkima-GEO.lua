@@ -949,7 +949,7 @@ function init_gear_sets()
     legs="Azimuth Tights +2",
     feet=gear.Nyame_B_feet,
     neck="Erra Pendant",
-    ear1="Dignitary's Earring",
+    ear1="Hirudinea Earring",
     ear2="Malignance Earring",
     ring1="Archon Ring",
     ring2="Evanescence Ring",
@@ -958,7 +958,6 @@ function init_gear_sets()
 
     -- main=gear.Rubicundity,
     -- feet="Agwu's Pigaches",
-    -- ear1="Hirudinea Earring",
   })
 
   sets.midcast.Aspir = set_combine(sets.midcast.Drain, {})

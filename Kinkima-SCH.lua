@@ -1118,10 +1118,9 @@ function init_gear_sets()
   -- Add Drain potency
   sets.midcast.Drain = set_combine(sets.midcast['Dark Magic'], {
     legs="Pedagogy Pants +3",       -- 19, 47, 39, 15
+    ear2="Hirudinea Earring",       -- __, __, __,  3
     ring1="Evanescence Ring",       -- 10, __, __, 10
     waist="Fucho-no-obi",           -- __, __, __,  8
-    
-    -- ear2="Hirudinea Earring",    -- __, __, __,  3
     -- 554 Dark magic skill, 359 INT, 384 M.Acc, 56 Drain/Aspir potency
   })
 
