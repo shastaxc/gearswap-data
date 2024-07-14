@@ -446,8 +446,7 @@ function init_gear_sets()
     body="Orion Jerkin +3", -- Duration +100s; +1 is acceptable
   }
   sets.precast.JA['Scavenge'] = {
-    feet="Orion Socks +1", -- Recover more ammo
-    -- feet="Orion Socks +3", -- Recover more ammo
+    feet="Orion Socks +3", -- Recover more ammo
   }
   sets.precast.JA['Shadowbind'] = {
     hands="Orion Bracers +3", -- Increase duration
@@ -822,12 +821,11 @@ function init_gear_sets()
   sets.precast.WS['Last Stand'].LowAccMaxTP = set_combine(sets.precast.WS['Last Stand'].MaxTP, {})
   sets.precast.WS['Last Stand'].MidAccMaxTP = set_combine(sets.precast.WS['Last Stand'].MaxTP, {})
   sets.precast.WS['Last Stand'].HighAcc = set_combine(sets.precast.WS['Last Stand'], {
-    feet="Orion Socks +1",
+    feet="Orion Socks +3",
     ear1="Beyla Earring",
     ear2="Telos Earring",
     ring2="Cacoethic Ring +1",
     waist="Kwahu Kachina Belt +1",
-    -- feet="Orion Socks +3",
   })
   sets.precast.WS['Last Stand'].HighAccMaxTP = set_combine(sets.precast.WS['Last Stand'].HighAcc, {
   })
@@ -1011,10 +1009,9 @@ function init_gear_sets()
   sets.precast.WS['Empyreal Arrow'].LowAccMaxTP = set_combine(sets.precast.WS['Empyreal Arrow'].MaxTP, {})
   sets.precast.WS['Empyreal Arrow'].MidAccMaxTP = set_combine(sets.precast.WS['Empyreal Arrow'].MaxTP, {})
   sets.precast.WS['Empyreal Arrow'].HighAcc = set_combine(sets.precast.WS['Empyreal Arrow'], {
-    feet="Orion Socks +1",
+    feet="Orion Socks +3",
     ear1="Beyla Earring",
     waist="Kwahu Kachina Belt +1",
-    -- feet="Orion Socks +3",
   })
   sets.precast.WS['Empyreal Arrow'].HighAccMaxTP = set_combine(sets.precast.WS['Empyreal Arrow'].HighAcc, {
     ear2="Telos Earring",
@@ -1078,8 +1075,9 @@ function init_gear_sets()
   -- Maximize accuracy
   sets.precast.WS['Dulling Arrow'] = set_combine(sets.precast.WS['Sniper Shot'], {
     hands="Amini Glovelettes +2",
+    feet="Orion Socks +3",
+
     -- hands="Amini Glovelettes +3",
-    -- feet="Orion Socks +3",
   })
 
   -- Hybrid Fire AGI WS
