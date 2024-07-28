@@ -318,20 +318,10 @@ function init_gear_sets()
   sets.defense.MDT = set_combine(sets.defense.PDT, {})
 
   sets.HeavyDefForIdle = {
-    ammo="Staunch Tathlum +1",    --  3/ 3, ___
-    head=gear.Nyame_B_head,       --  7/ 7, 123`
-    body=gear.Nyame_B_body,       --  9/ 9, 139
-    hands=gear.Nyame_B_hands,     --  7/ 7, 112
-    legs=gear.Nyame_B_legs,       --  8/ 8, 150
-    feet=gear.Nyame_B_feet,       --  7/ 7, 150
+    head="Bhikku Crown +3",       -- 11/11,  98
+    legs="Bhikku Hose +3",        -- 14/14, 119
+    feet="Bhikku Gaiters +3",     -- 10/10, 119
     waist="Moonbow Belt +1",      --  6/ 6, ___
-    -- TP Cape                    -- 10/__, ___
-    --57 PDT/47 MDT
-
-    -- head="Bhikku Crown +3",    -- 11/11,  98
-    -- legs="Bhikku Hose +3",     -- 14/14, 119
-    -- feet="Bhikku Gaiters +3",  -- 10/10, 119
-    -- waist="Moonbow Belt +1",   --  6/ 6, ___
     -- TP Cape                    -- 10/__, ___
     --51 PDT/41 MDT
   }
@@ -414,8 +404,7 @@ function init_gear_sets()
     waist="Ask Sash",
   }
   sets.precast.JA['Perfect Counter'] = {
-    hands="Tantra Crown +1", -- Increase base counter dmg by +10
-    -- head="Bhikku Crown +3", -- Increase base counter dmg by +35
+    head="Bhikku Crown +3", -- Increase base counter dmg by +35
   }
   sets.precast.JA['Dodge'] = {
     feet="Anchorite's Gaiters +3", -- Increase evasion
