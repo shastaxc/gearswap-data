@@ -424,7 +424,7 @@ function init_gear_sets()
     back=gear.DRK_FC_Cape,
   }
   sets.precast.JA['Weapon Bash'] = {
-    hands="Ignominy Gauntlets +1", -- Increase damage
+    hands="Ignominy Gauntlets +2", -- Increase damage, add Chainbound effect
     -- hands="Ignominy Gauntlets +3", -- Increase damage, add Chainbound effect
   }
   sets.precast.JA['Souleater'] = {
