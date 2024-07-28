@@ -1262,7 +1262,7 @@ function init_gear_sets()
   -- Aeolian Edge: 40% DEX/40% INT, 2.0-4.5 fTP, 1 hit (aoe-magical)
   -- Stack MAB > INT > DEX > WSD
   sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
-    ammo="Pemphredo Tathlum",         -- __,  4,  8, __ [__/__, ___] {__/__, ___}
+    ammo="Ghastly Tathlum +1",        -- __, 11, __, __ [__/__, ___] {__/__, ___}
     head=gear.Nyame_B_head,           -- 25, 28, 30, 11 [ 7/ 7, 123] {__/__, ___}
     body=gear.Nyame_B_body,           -- 24, 42, 30, 13 [ 9/ 9, 139] {__/__, ___}
     hands=gear.Nyame_B_hands,         -- 42, 28, 30, 11 [ 7/ 7, 112] {__/__, ___}
@@ -1275,7 +1275,7 @@ function init_gear_sets()
     ring2="Defending Ring",           -- __, __, __, __ [10/10, ___] {__/__, ___}
     back="Argochampsa Mantle",        -- __, __, 12, __ [__/__, ___] {__/__, ___}
     waist="Skrymir Cord",             -- __, __,  5, __ [__/__, ___] {__/__, ___}
-    -- 115 DEX, 165 INT, 224 MAB, 52 WSD [43 PDT/41 MDT, 599 M.Eva] {Pet: 0 PDT/0 MDT, 119 Lv}
+    -- 115 DEX, 172 INT, 216 MAB, 52 WSD [43 PDT/41 MDT, 599 M.Eva] {Pet: 0 PDT/0 MDT, 119 Lv}
 
     -- back=gear.BST_INT_MAB_Cape,    -- __, 30, 10, __ [10/__, ___] {__/__, ___}
     -- waist="Skrymir Cord +1",       -- __, __,  7, __ [__/__, ___] {__/__, ___}

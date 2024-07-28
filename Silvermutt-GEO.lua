@@ -592,7 +592,7 @@ function init_gear_sets()
     main="Daybreak",
     sub="Genmei Shield",
     range=empty,
-    ammo="Pemphredo Tathlum", --4
+    ammo="Ghastly Tathlum +1",
     head=empty,
     body="Cohort Cloak +1", --100
     hands="Azimuth Gloves +2",

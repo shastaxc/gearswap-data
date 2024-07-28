@@ -808,7 +808,7 @@ function init_gear_sets()
   
   -- 40% DEX / 40% INT + MAB
   sets.precast.WS['Aeolian Edge'] = {
-    ammo="Seething Bomblet +1",         -- __, __, __,  7 [__/__, ___]
+    ammo="Ghastly Tathlum +1",          -- __, 11, __, __ [__/__, ___]
     head=gear.Nyame_B_head,             -- 25, 28, 11, 30 [ 7/ 7, 123]
     body=gear.Nyame_B_body,             -- 24, 42, 13, 30 [ 9/ 9, 139]
     hands=gear.Nyame_B_hands,           -- 42, 28, 11, 30 [ 7/ 7, 112]
@@ -821,11 +821,11 @@ function init_gear_sets()
     ring2="Dingir Ring",                -- __, __, __, 10 [__/__, ___]
     back=gear.THF_WS1_Cape,             -- 30, __, 10, __ [10/__, ___]
     waist="Skrymir Cord",               -- __, __, __,  5 [__/__, ___]
-    -- 145 DEX, 152 INT, 62 WSD, 219 MAB [43 PDT/31 MDT, 599 M.Eva]
+    -- 145 DEX, 163 INT, 62 WSD, 212 MAB [43 PDT/31 MDT, 599 M.Eva]
 
     -- back=gear.THF_WS5_Cape,          -- __, 30, __, 10 [10/__, ___]
     -- waist="Skrymir Cord +1",         -- __, __, __,  7 [__/__, ___]
-    -- 115 DEX, 182 INT, 52 WSD, 231 MAB [43 PDT/31 MDT, 599 M.Eva]
+    -- 115 DEX, 193 INT, 52 WSD, 224 MAB [43 PDT/31 MDT, 599 M.Eva]
   }
   sets.precast.WS['Aeolian Edge'].MaxTP = set_combine(sets.precast.WS['Aeolian Edge'], {
     ear2="Novio Earring",               -- __, __, __,  7 [__/__, ___]

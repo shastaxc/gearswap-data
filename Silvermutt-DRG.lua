@@ -771,7 +771,7 @@ function init_gear_sets()
 
   -- Deals lightning elemental damage. Damage varies with TP. 1.0-3.0 fTP
   sets.precast.WS["Raiden Thrust"] = set_combine(sets.precast.WS, {
-    ammo="Pemphredo Tathlum",       --  4
+    ammo="Ghastly Tathlum +1",
     head=gear.Nyame_B_head,         -- 30
     body=gear.Nyame_B_body,         -- 30, __, 12
     hands=gear.Nyame_B_hands,       -- 30

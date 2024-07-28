@@ -765,18 +765,22 @@ function init_gear_sets()
 
   -- 40% DEX/40% INT; wind elemental, dmg varies with TP
   sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS['Cloudsplitter'], {
+    ammo="Ghastly Tathlum +1",
     neck="Sibyl Scarf",
     -- back=gear.WAR_INT_MAB_Cape,
   })
   sets.precast.WS['Aeolian Edge'].MaxTP = set_combine(sets.precast.WS['Cloudsplitter'].MaxTP, {
+    ammo="Ghastly Tathlum +1",
     neck="Sibyl Scarf",
     -- back=gear.WAR_INT_MAB_Cape,
   })
   sets.precast.WS['Aeolian Edge'].AttCapped = set_combine(sets.precast.WS['Cloudsplitter'].AttCapped, {
+    ammo="Ghastly Tathlum +1",
     neck="Sibyl Scarf",
     -- back=gear.WAR_INT_MAB_Cape,
   })
   sets.precast.WS['Aeolian Edge'].AttCappedMaxTP = set_combine(sets.precast.WS['Cloudsplitter'].AttCappedMaxTP, {
+    ammo="Ghastly Tathlum +1",
     neck="Sibyl Scarf",
     -- back=gear.WAR_INT_MAB_Cape,
   })

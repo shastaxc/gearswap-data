@@ -928,7 +928,7 @@ function init_gear_sets()
 
   -- 40% DEX/40% INT; Wind magic aoe; fTP 2.0-4.5
   sets.precast.WS['Aeolian Edge'] = {
-    ammo="Pemphredo Tathlum",         -- __,  4,  8, __,  4, __ [__/__, ___]
+    ammo="Ghastly Tathlum +1",        -- __, 11, __, __, __, 21 [__/__, ___]
     head=gear.Nyame_B_head,           -- 25, 28, 40, 11, 30, __ [ 7/ 7, 123]
     body=gear.Nyame_B_body,           -- 24, 42, 40, 13, 30, __ [ 9/ 9, 139]
     hands=gear.Nyame_B_hands,         -- 42, 28, 40, 11, 30, __ [ 7/ 7, 112]
@@ -941,9 +941,8 @@ function init_gear_sets()
     ring2="Metamorph Ring +1",        -- __, 16, 15, __, __, __ [__/__, ___]
     back=gear.DNC_WS1_Cape,           -- 30, __, __, 10, __, __ [10/__, ___]
     waist="Skrymir Cord",             -- __, __,  5, __,  5, 30 [__/__, ___]
-    -- 145 DEX, 181 INT, 216 M.Acc, 57 WSD, 209 MAB, 30 M.Dmg [43 PDT/31 MDT, 599 M.Eva]
+    -- 145 DEX, 188 INT, 208 M.Acc, 57 WSD, 205 MAB, 51 M.Dmg [43 PDT/31 MDT, 599 M.Eva]
     
-    -- ammo="Ghastly Tathlum +1",     -- __, 11, __, __, __, 21 [__/__, ___]
     -- back=gear.DNC_MAB_Cape,        -- __, 30, 20, __, 10, 20 [10/__, ___]
     -- waist="Skrymir Cord +1",       -- __, __,  7, __,  7, 35 [__/__, ___]
     -- 115 DEX, 218 INT, 230 M.Acc, 47 WSD, 217 MAB, 76 M.Dmg [43 PDT/31 MDT, 599 M.Eva]

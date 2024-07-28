@@ -546,7 +546,7 @@ function init_gear_sets()
   })
 
   sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
-    -- ammo="Ghastly Tathlum +1",
+    ammo="Ghastly Tathlum +1",
     head="Mochizuki Hatsuburi +3",
     body=gear.Nyame_B_body,
     hands=gear.Nyame_B_hands,
@@ -1017,7 +1017,7 @@ function init_gear_sets()
   sets.midcast.ElementalNinjutsu = {}
 
   sets.midcast.ElementalNinjutsu.Ichi = {
-    ammo="Pemphredo Tathlum",         --  4,  4, __, __, __, __ [__/__, ___]
+    ammo="Ghastly Tathlum +1",        -- 11, __, __, 21, __, __ [__/__, ___]
     head="Mochizuki Hatsuburi +3",    -- 32, 82, __, __, __, __ [__/__,  63]
     body=gear.Nyame_B_body,           -- 42, 30, __, __,  7, __ [ 9/ 9, 139]
     hands=gear.Nyame_B_hands,         -- 28, 30, __, __,  5, __ [ 7/ 7, 112]
@@ -1030,10 +1030,7 @@ function init_gear_sets()
     ring2="Dingir Ring",              -- __, 10, __, __, __, __ [__/__, ___]
     back=gear.NIN_MAB_Cape,           -- 30, 10, __, 20, __, __ [10/__, ___]
     waist="Eschan Stone",             -- __,  7, __, __, __, __ [__/__, ___]
-    -- 200 INT, 233 MAB, 0 MAccSk, 20 MDmg, 18 MB Dmg%, 0 MB2 Dmg% [34 PDT/24 MDT, 548 M.Eva]
-    
-    -- ammo="Ghastly Tathlum +1",     -- 11, __, __, 11, __, __ [__/__, ___]
-    -- 206 INT, 229 MAB, 0 MAccSk, 31 MDmg, 18 MB Dmg%, 0 MB2 Dmg% [34 PDT/24 MDT, 548 M.Eva]
+    -- 206 INT, 229 MAB, 0 MAccSk, 41 MDmg, 18 MB Dmg%, 0 MB2 Dmg% [34 PDT/24 MDT, 548 M.Eva]
   }
   sets.midcast.ElementalNinjutsu.Ni = set_combine(sets.midcast.ElementalNinjutsu.Ichi, {
     ring1="Metamorph Ring +1",        -- 16, __, __, __, __, __ [__/__, ___]
@@ -1043,7 +1040,7 @@ function init_gear_sets()
   })
 
   sets.midcast.ElementalNinjutsu.Ichi.MB = {
-    ammo="Pemphredo Tathlum",         --  4,  4, __, __, __, __ [__/__, ___]
+    ammo="Ghastly Tathlum +1",        -- 11, __, __, 21, __, __ [__/__, ___]
     head="Mochizuki Hatsuburi +3",    -- 32, 82, __, __, __, __ [__/__,  63]
     body=gear.Nyame_B_body,           -- 42, 30, __, __,  7, __ [ 9/ 9, 139]
     hands="Hattori Tekko +2",         -- 22, 16, __, __, 10, __ [__/__, 103]
@@ -1056,12 +1053,11 @@ function init_gear_sets()
     ring2="Shiva Ring +1",            --  9,  3, __, __, __, __ [__/__, ___]
     back=gear.NIN_MAB_Cape,           -- 30, 10, __, 20, __, __ [10/__, ___]
     waist="Eschan Stone",             -- __,  7, __, __, __, __ [__/__, ___]
-    -- 183 INT, 209 MAB, 0 MAccSk, 20 MDmg, 33 MB Dmg%, 0 MB2 Dmg% [27 PDT/17 MDT, 539 M.Eva]
+    -- 188 INT, 205 MAB, 0 MAccSk, 41 MDmg, 33 MB Dmg%, 0 MB2 Dmg% [27 PDT/17 MDT, 539 M.Eva]
 
-    -- ammo="Ghastly Tathlum +1",     -- 11, __, __, 11, __, __ [__/__, ___]
     -- hands="Hattori Tekko +3",      -- 27, 18, __, __, 15, __ [__/__, 103]
     -- ring2="Mujin Band",            -- __, __, __, __, __,  5 [__/__, ___]
-    -- 186 INT, 204 MAB, 0 MAccSk, 31 MDmg, 38 MB Dmg%, 5 MB2 Dmg% [27 PDT/17 MDT, 539 M.Eva]
+    -- 186 INT, 204 MAB, 0 MAccSk, 41 MDmg, 38 MB Dmg%, 5 MB2 Dmg% [27 PDT/17 MDT, 539 M.Eva]
   }
   sets.midcast.ElementalNinjutsu.Ni.MB = set_combine(sets.midcast.ElementalNinjutsu.Ichi.MB, {
     neck="Sibyl Scarf",               -- 10, 10, __, __, __, __ [__/__, ___]

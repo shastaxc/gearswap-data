@@ -200,7 +200,7 @@ function job_setup()
 
   state.CP = M(false, 'Capacity Points Mode')
   state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger','Sword','Club','GreatSword','Scythe'}
-  state.WeaponSet = M{['description']='Weapon Set', 'Anguta', 'Naegling', 'Club', 'DaggerAcc', 'Dagger'}
+  state.WeaponSet = M{['description']='Weapon Set', 'Anguta', 'Caladbolg', 'Naegling', 'Club', 'DaggerAcc', 'Dagger'}
   -- state.WeaponSet = M{['description']='Weapon Set', 'Anguta', 'Foenaria', 'Apocalypse', 'Caladbolg', 'Naegling', 'Club', 'Dagger'}
 
   skill_ids_2h = S{4, 6, 7, 8, 10, 12} -- DO NOT MODIFY
@@ -315,7 +315,7 @@ function init_gear_sets()
     sub="Utu Grip",
   }
   sets.WeaponSet['Apocalypse'] = {
-    main="Apocalypse",
+    -- main="Apocalypse",
     sub="Utu Grip",
   }
   sets.WeaponSet['Caladbolg'] = {
@@ -995,7 +995,7 @@ function init_gear_sets()
   
   -- 40% DEX/40% INT; wind elemental, dmg varies with TP
   sets.precast.WS['Aeolian Edge'] = {
-    ammo="Seething Bomblet +1",               -- __, __,  7, __ [__/__, ___]
+    ammo="Ghastly Tathlum +1",                -- __, 11, __, __ [__/__, ___]
     head=gear.Nyame_B_head,                   -- 25, 28, 30, 11 [ 7/ 7, 123]
     body="Fallen's Cuirass +3",               -- 32, 32, 60, __ [__/__,  68]
     hands="Fallen's Finger Gauntlets +3",     -- 39, 24, 62, __ [__/__,  46]
@@ -1008,7 +1008,7 @@ function init_gear_sets()
     ring2="Defending Ring",                   -- __, __, __, __ [10/10, ___]
     back=gear.DRK_MAB_Cape,                   -- __, 30, 10, __ [10/__, ___]
     waist="Eschan Stone",                     -- __, __,  7, __ [__/__, ___]
-    -- 121 DEX, 214 INT, 284 MAB, 35 WSD [35 PDT/25 MDT, 506 M.Eva]
+    -- 121 DEX, 225 INT, 277 MAB, 35 WSD [35 PDT/25 MDT, 506 M.Eva]
   }
 
 

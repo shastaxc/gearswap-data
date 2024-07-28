@@ -758,7 +758,7 @@ function init_gear_sets()
   sets.precast.WS['Atonement'] = set_combine(sets.Enmity, {})
 
   sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
-    ammo="Pemphredo Tathlum",           -- __,  4, __,  4,  8 [__/__, ___] ___
+    ammo="Ghastly Tathlum +1",          -- __, 11, __, __, __ [__/__, ___] ___
     head=gear.Nyame_B_head,             -- 25, 28, 11, 30, 40 [ 7/ 7, 123]  91
     body=gear.Nyame_B_body,             -- 24, 42, 13, 30, 40 [ 9/ 9, 139] 136
     hands=gear.Nyame_B_hands,           -- 42, 28, 11, 30, 40 [ 7/ 7, 112]  91
@@ -771,13 +771,13 @@ function init_gear_sets()
     ring2="Shiva Ring +1",              -- __,  9, __,  3, __ [__/__, ___] ___
     back="Moonlight Cape",              -- __, __, __, __, __ [ 6/ 6, ___] 275
     waist="Skrymir Cord",               -- __, __, __,  5,  5 [__/__, ___] ___
-    -- 117 DEX, 206 INT, 58 WSD, 189 MAB, 229 M.Acc [44 PDT/44 MDT, 674 M.Eva] 715 HP
+    -- 117 DEX, 213 INT, 58 WSD, 185 MAB, 221 M.Acc [44 PDT/44 MDT, 674 M.Eva] 715 HP
     
     -- back=gear.PLD_WS2_Cape,          -- __, 30, __, 10, 20 [10/__, ___] ___
     -- 117 DEX, 236 INT, 58 WSD, 199 MAB, 249 M.Acc [48 PDT/38 MDT, 674 M.Eva] 440 HP
   })
   sets.precast.WS['Aeolian Edge'].Safe = set_combine(sets.precast.WS['Aeolian Edge'], {
-    ammo="Pemphredo Tathlum",                       -- __,  4, __,  4,  8 [__/__, ___] ___
+    ammo="Ghastly Tathlum +1",                      -- __, 11, __, __, __ [__/__, ___] ___
     head=gear.Nyame_B_head,                         -- 25, 28, 11, 30, 40 [ 7/ 7, 123]  91
     body=gear.Nyame_B_body,                         -- 24, 42, 13, 30, 40 [ 9/ 9, 139] 136
     hands=gear.Nyame_B_hands,                       -- 42, 28, 11, 30, 40 [ 7/ 7, 112]  91
@@ -791,7 +791,7 @@ function init_gear_sets()
     back={name="Moonlight Cape",priority=1},        -- __, __, __, __, __ [ 6/ 6, ___] 275
     waist={name="Platinum Moogle Belt",priority=1}, -- __, __, __, __, __ [ 3/ 3,  15] ___
     -- HP from belt                                                                    314
-    -- 117 DEX, 180 INT, 58 WSD, 174 MAB, 208 M.Acc [54 PDT/46 MDT, 1110 M.Eva] 1110/1424 HP
+    -- 117 DEX, 187 INT, 58 WSD, 170 MAB, 200 M.Acc [54 PDT/46 MDT, 1110 M.Eva] 1110/1424 HP
   })
   sets.precast.WS['Aeolian Edge'].SafeMaxTP = set_combine(sets.precast.WS['Aeolian Edge'].Safe, {})
 
