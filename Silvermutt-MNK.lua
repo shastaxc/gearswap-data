@@ -427,8 +427,7 @@ function init_gear_sets()
     feet="Hesychast's Gaiters +3", -- Increase counter rate
   }
   sets.precast.JA['Footwork'] = {
-    feet="Bhikku Gaiters +2", -- Increase attack
-    -- feet="Bhikku Gaiters +3", -- Increase attack
+    feet="Bhikku Gaiters +3", -- Increase attack
   }
   sets.precast.JA['Formless Strikes'] = {
     body="Hesychast's Cyclas +2", -- Increase duration based on merits; +1 is acceptable
