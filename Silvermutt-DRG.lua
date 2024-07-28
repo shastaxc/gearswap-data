@@ -1230,7 +1230,7 @@ function select_weapons()
     return sets.ToyWeapon[state.ToyWeapons.current]
   else
     if sets.WeaponSet[state.WeaponSet.current] then
-      if use_dw_if_available and silibs.can_dual_wield() and sets.WeaponSet[state.WeaponSet.current].DW then
+      if silibs.can_dual_wield() and sets.WeaponSet[state.WeaponSet.current].DW then
         return sets.WeaponSet[state.WeaponSet.current].DW
       else
         return sets.WeaponSet[state.WeaponSet.current]
