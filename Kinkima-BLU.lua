@@ -799,7 +799,7 @@ function init_gear_sets()
 
   sets.midcast['Blue Magic'] = {
     ammo="Mavi Tathlum",                --  5, __ [__/__, ___]
-    body="Assimilator's Jubbah +1",     -- 20, __ [__/__,  64]
+    body="Assimilator's Jubbah +3",     -- 24, __ [__/__,  84]
     hands="Hashishin Bazubands +2",     -- __, 52 [ 9/ 9,  77]
     legs="Hashishin Tayt +2",           -- 28, 53 [11/11, 152]
     neck="Mirage Stole +2",             -- 20, 25 [__/__, ___]
@@ -811,10 +811,9 @@ function init_gear_sets()
     -- Base                               424
     -- Trait/merit/gift                    36
     -- ML  0                                0
-    -- 559 Blue skill, 152 M.Acc [27 PDT/25 MDT, 293 M.Eva]
+    -- 563 Blue skill, 152 M.Acc [27 PDT/25 MDT, 313 M.Eva]
 
     -- head="Luhlaza Keffiyeh +3",      -- 17, 37 [__/__,  73]
-    -- body="Assimilator's Jubbah +3",  -- 24, __ [__/__,  84]
     -- hands=gear.Rawhide_D_hands,      -- 10, 35 [__/__,  37]
     -- feet="Luhlaza Charuqs +3",       -- 12, 36 [__/__,  89]
     -- back=gear.BLU_Adoulin_Cape,      -- 15, 15 [__/__, ___]
