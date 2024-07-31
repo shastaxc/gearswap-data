@@ -577,7 +577,7 @@ function init_gear_sets()
   -- body=gear.Kaykaus_C_body,      --  4, __, 12 [__/__,  80] __
   -- body="Rosette Jaseran +1",     -- __, __, 25 [ 5/ 5, ???] 13
   -- body="Chrionic Doublet",       -- __, 13, 11 [__/__, ???] __
-  -- hands="Chironic Gloves",       -- __, __, 31 [__/__,  48] __
+  -- hands="Chironic Gloves",       -- __, __, 31 [__/__,  48]  4
   -- hands=gear.Kaykaus_C_hands,    -- __, 11, 12 [__/__,  37]  6
   -- legs=gear.Kaykaus_C_legs,      -- __, 11, 12 [__/__, 107] __
   -- legs="Chironic Hose",          -- __,  8, 11 [__/__, ???] __
@@ -670,7 +670,7 @@ function init_gear_sets()
     ammo="Staunch Tathlum +1",        -- __, __, 11 [ 3/ 3, ___] __
     head=gear.Kaykaus_C_head,         -- __, 11, 12 [__/ 3,  75] __
     body="Ebers Bliaut +2",           -- __, __, __ [__/__, 120] __; Solace+16
-    hands=gear.Chironic_SIRD_hands,   -- __, __, 31 [__/__,  48] __; Can add more DT or Enmity
+    hands=gear.Chironic_SIRD_hands,   -- __, __, 31 [__/__,  48]  4; Can add more DT or Enmity
     legs="Ebers Pantaloons +2",       -- __, __, __ [12/12, 147] __; 7% healing to MP
     feet=gear.Kaykaus_D_feet,         -- __, 17, __ [__/__, 107]  6
     neck="Cleric's Torque +1",        -- __,  7, __ [__/__, ___] 20
@@ -682,7 +682,7 @@ function init_gear_sets()
     waist="Sanctuary Obi +1",         -- __, __, 10 [__/__, ___]  4
     -- Kaykaus bonus                      4, __, __ [__/__, ___] __
     -- Merit points                      __, __, 10 [__/__, ___]  5
-    -- 4 CPII, 50 CP, 104 SIRD [57PDT/32MDT, 497 M.Eva] 46 -Enmity
+    -- 4 CPII, 50 CP, 104 SIRD [57PDT/32MDT, 497 M.Eva] 50 -Enmity
     
     -- main="Eremite's Wand +1",      -- __, __, 25 [__/__, ___] __
     -- sub="Culminus",                -- __, __, 10 [__/__, ___] __
@@ -710,7 +710,7 @@ function init_gear_sets()
     ammo="Staunch Tathlum +1",        -- __, __, 11 [ 3/ 3, ___] __
     head="Adhara Turban",             -- __, __, 20 [__/__, ___]  6
     body="Ebers Bliaut +2",           -- __, __, __ [__/__, 120] __; Solace+16
-    hands=gear.Chironic_SIRD_hands,   -- __, __, 31 [__/__,  48] __; Can add more DT or Enmity
+    hands=gear.Chironic_SIRD_hands,   -- __, __, 31 [__/__,  48]  4; Can add more DT or Enmity
     legs="Ebers Pantaloons +2",       -- __, __, __ [12/12, 147] __; 7% healing to MP
     feet="Theophany Duckbills +3",    -- __, __, 29 [__/__, 127] __
     neck="Cleric's Torque +1",        -- __,  7, __ [__/__, ___] 20
@@ -722,14 +722,14 @@ function init_gear_sets()
     waist="Hachirin-no-Obi",          -- __, __, __ [__/__, ___] __
     -- Kaykaus set bonus              -- __, __, __ [__/__, ___] __
     -- Merit points                   -- __, __, 10 [__/__, ___]  5
-    -- 0 CPII, 51 CP, 106 SIRD [57PDT/34MDT, 442 M.Eva] 41 -Enmity
+    -- 0 CPII, 51 CP, 106 SIRD [57PDT/34MDT, 442 M.Eva] 45 -Enmity
 
     -- main="Chatoyant Staff",        -- __, 10, __ [__/__, ___] __
     -- sub="Mensch Strap +1",         -- __, __, __ [ 5/__, ___] __
     -- ammo="Staunch Tathlum +1",     -- __, __, 11 [ 3/ 3, ___] __
     -- head=gear.Kaykaus_C_head,      -- __, 11, 12 [__/ 3,  75] __
     -- body="Ebers Bliaut +3",        -- __, __, __ [__/__, 130] __; Solace+18
-    -- hands=gear.Chironic_SIRD_hands,-- __, __, 31 [__/__,  48] __; Can add more DT or Enmity
+    -- hands=gear.Chironic_SIRD_hands,-- __, __, 31 [__/__,  48]  4; Can add more DT or Enmity
     -- legs="Ebers Pantaloons +3",    -- __, __, __ [13/13, 157] __; 7% healing to MP
     -- feet="Theophany Duckbills +3", -- __, __, 29 [__/__, 127] __
     -- neck="Cleric's Torque +2",     -- __, 10, __ [__/__, ___] 25
@@ -741,12 +741,38 @@ function init_gear_sets()
     -- waist="Hachirin-no-Obi",       -- __, __, __ [__/__, ___] __
     -- Kaykaus set bonus              -- __, __, __ [__/__, ___] __
     -- Merit points                   -- __, __, 10 [__/__, ___]  5
-    -- 0 CPII, 48 CP, 108 SIRD [49PDT/37MDT, 537 M.Eva] 39 -Enmity
+    -- 0 CPII, 48 CP, 108 SIRD [49PDT/37MDT, 537 M.Eva] 43 -Enmity
   }
 
   -- Cap over 960 power; Power = 3×MND + VIT + 3×floor( Healing Magic Skill÷5 )
   sets.midcast.CuragaNormal = set_combine(sets.midcast.CureNormal, {})
   sets.midcast.CuragaWeather = set_combine(sets.midcast.CureWeather, {})
+
+  -- Focus SIRD, DT, and recast time
+  sets.midcast.Esuna = {
+    main="Malignance Pole",           -- __, __, __ [20/20, ___]
+    sub="Mensch Strap +1",            -- __, __, __ [ 5/__, ___]
+    ammo="Incantor Stone",            --  2, __, __ [__/__, ___]
+    head="Bunzi's Hat",               -- 10,  6, __ [ 7/ 7, 123]
+    body="Rosette Jaseran +1",        --  6,  3, 25 [ 5/ 5,  80]
+    hands=gear.Chironic_SIRD_hands,   -- __,  3, 31 [__/__,  48]
+    legs="Ayanmo Cosciales +2",       --  6,  9, __ [ 5/ 5,  69]
+    feet="Theophany Duckbills +3",    -- __,  3, 29 [__/__, 127]
+    neck="Cleric's Torque +1",        --  8, __, __ [__/__, ___]
+    ear1="Malignance Earring",        --  4, __, __ [__/__, ___]
+    ear2="Enchanter's Earring +1",    --  2, __, __ [__/__, ___]
+    ring1="Freke Ring",               -- __, __, 10 [__/__, ___]
+    ring2="Kishar Ring",              --  4, __, __ [__/__, ___]
+    back=gear.WHM_FC_Cape,            -- 10, __, __ [10/__, ___]
+    waist="Shinjutsu-no-obi +1",      --  5, __, __ [__/__, ___]
+    -- Merit points                      __, __, 10 [__/__, ___]
+    -- 57 FC, 24 Haste, 105 SIRD [52 PDT/37 MDT, 447 M.Eva]
+    
+    -- main=gear.Asclepius_C,         -- __, __, __ [15/15, ___]; Augments Esuna effect
+    -- sub="Genmei Shield",           -- __, __, __ [10/__, ___]
+    -- neck="Cleric's Torque +2",     -- 10, __, __ [__/__, ___]
+    -- 59 FC, 24 Haste, 105 SIRD [52 PDT/32 MDT, 447 M.Eva]
+  }
 
   -- Removal rate = Base Rate * (1+(y/100))
   -- Base rate = (10+(Healing Skill / 30)); y = Cursna+ stat from gear
@@ -1347,7 +1373,7 @@ function job_get_spell_map(spell, default_spell_map)
           return 'CureNormal'
         end
       end
-    elseif default_spell_map == 'Curaga' then
+    elseif default_spell_map == 'Curaga' or default_spell_map == 'Cura' then
       if (world.weather_element == 'Light' and not (silibs.get_weather_intensity() < 2 and world.day_element == 'Dark'))
           or (world.day_element == 'Light' and not world.weather_element == 'Dark') then
         return 'CuragaWeather'
