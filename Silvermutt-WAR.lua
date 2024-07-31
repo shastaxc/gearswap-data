@@ -420,6 +420,10 @@ function init_gear_sets()
   --     Job Abilities
   -----------------------------------------------------------------------------------------------
 
+  sets.precast.JA['Mighty Strikes'] = {
+    -- hands="Agoge Mufflers +3", -- Duration +15s; +1 is acceptable
+  }
+
   sets.precast.JA['Berserk'] = {
     body="Pummeler's Lorica +2", -- Increase duration
     feet="Agoge Calligae +3", -- Increase duration
