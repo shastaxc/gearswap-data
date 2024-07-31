@@ -748,7 +748,7 @@ function init_gear_sets()
   sets.midcast.CuragaNormal = set_combine(sets.midcast.CureNormal, {})
   sets.midcast.CuragaWeather = set_combine(sets.midcast.CureWeather, {})
 
-  -- Focus SIRD, DT, and recast time
+  -- Focus SIRD, DT, and recast time. Ayanmo legs are BiS but I'm choosing not to use them to save inventory.
   sets.midcast.Esuna = {
     main="Malignance Pole",           -- __, __, __ [20/20, ___]
     sub="Mensch Strap +1",            -- __, __, __ [ 5/__, ___]
@@ -756,7 +756,7 @@ function init_gear_sets()
     head="Bunzi's Hat",               -- 10,  6, __ [ 7/ 7, 123]
     body="Rosette Jaseran +1",        --  6,  3, 25 [ 5/ 5,  80]
     hands=gear.Chironic_SIRD_hands,   -- __,  3, 31 [__/__,  48]
-    legs="Ayanmo Cosciales +2",       --  6,  9, __ [ 5/ 5,  69]
+    legs="Ebers Pantaloons +2",       -- __,  5, __ [12/12, 147]; Ayanmo is BiS
     feet="Theophany Duckbills +3",    -- __,  3, 29 [__/__, 127]
     neck="Cleric's Torque +1",        --  8, __, __ [__/__, ___]
     ear1="Malignance Earring",        --  4, __, __ [__/__, ___]
@@ -766,12 +766,13 @@ function init_gear_sets()
     back=gear.WHM_FC_Cape,            -- 10, __, __ [10/__, ___]
     waist="Shinjutsu-no-obi +1",      --  5, __, __ [__/__, ___]
     -- Merit points                      __, __, 10 [__/__, ___]
-    -- 57 FC, 24 Haste, 105 SIRD [52 PDT/37 MDT, 447 M.Eva]
+    -- 51 FC, 20 Haste, 105 SIRD [59 PDT/44 MDT, 525 M.Eva]
     
     -- main=gear.Asclepius_C,         -- __, __, __ [15/15, ___]; Augments Esuna effect
     -- sub="Genmei Shield",           -- __, __, __ [10/__, ___]
+    -- legs="Ebers Pantaloons +3",    -- __,  5, __ [13/13, 157]; Ayanmo is BiS
     -- neck="Cleric's Torque +2",     -- 10, __, __ [__/__, ___]
-    -- 59 FC, 24 Haste, 105 SIRD [52 PDT/32 MDT, 447 M.Eva]
+    -- 53 FC, 20 Haste, 105 SIRD [60 PDT/40 MDT, 535 M.Eva]
   }
 
   -- Removal rate = Base Rate * (1+(y/100))
