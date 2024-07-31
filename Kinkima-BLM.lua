@@ -1178,7 +1178,7 @@ end
 -- Custom spell mapping.
 function job_get_spell_map(spell, default_spell_map)
   if spell.action_type == 'Magic' then
-    if default_spell_map == 'Cure' or default_spell_map == 'Curaga' then
+    if default_spell_map == 'Cure' or default_spell_map == 'Curaga' or default_spell_map == 'Cura' then
       if (world.weather_element == 'Light' and not (silibs.get_weather_intensity() < 2 and world.day_element == 'Dark'))
           or (world.day_element == 'Light' and not world.weather_element == 'Dark') then
         return 'CureWeather'

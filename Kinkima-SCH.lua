@@ -790,7 +790,7 @@ function init_gear_sets()
   -- body=gear.Kaykaus_C_body,     --  4, __, ___,  33,  20, 12, __/__, __
   -- body="Rosette Jaseran +1",    -- __, __, ___,  29,  21, 25,  5/ 5, 13
   -- body="Chrionic Doublet",      -- __, 13, ___,  34,  16, 11, __/__, __
-  -- hands="Chironic Gloves",      -- __, __, ___,  38,  20, 31, __/__, __
+  -- hands="Chironic Gloves",      -- __, __, ___,  38,  20, 31, __/__,  4
   -- hands=gear.Amalric_B_hands,   -- __, __, ___,  34,  20, 11, __/__,  6
   -- legs=gear.Kaykaus_C_legs,     -- __, 11, ___,  30,  12, 12, __/__, __
   -- legs="Chironic Hose",         -- __,  8, ___,  29,   6, 11, __/__, __
@@ -821,7 +821,7 @@ function init_gear_sets()
     ammo="Staunch Tathlum +1",        -- __, __, ___, ___, ___, 11,  3/ 3, __
     head=gear.Kaykaus_C_head,         -- __, 11,  16,  19,  14, 12, __/ 3, __
     body=gear.Kaykaus_C_body,         --  4, __, ___,  33,  20, 12, __/__, __
-    hands=gear.Chironic_SIRD_hands,   -- __, __, ___,  38,  20, 31, __/__, __; Can add more DT or Enmity
+    hands=gear.Chironic_SIRD_hands,   -- __, __, ___,  38,  20, 31, __/__,  4; Can add more DT or Enmity
     legs=gear.Kaykaus_C_legs,         -- __, 11, ___,  30,  12, 12, __/__, __
     feet=gear.Kaykaus_D_feet,         -- __, 17, ___,  19,  10, __, __/__,  6
     neck="Loricate Torque +1",        -- __, __, ___, ___, ___,  5,  6/ 6, __
@@ -834,7 +834,7 @@ function init_gear_sets()
     -- Kaykaus bonus                      8, __, ___, ___, ___, __, __/__, __
     -- Base Stats                     -- __, __, 486, 129, 123, __, __/__, __
     -- Merit points                   -- __, __, ___, ___, ___, 10, __/__,  5
-    -- 12 CPII, 49 CP, 502 Heal Skill, 298 MND, 239 VIT, 108 SIRD, 55PDT/48MDT, 37 -Enmity
+    -- 12 CPII, 49 CP, 502 Heal Skill, 298 MND, 239 VIT, 108 SIRD, 55PDT/48MDT, 41 -Enmity
     -- 710 Power
   }
 
@@ -850,7 +850,7 @@ function init_gear_sets()
     ammo="Staunch Tathlum +1",        -- __, __, ___, ___, ___, 11,  3/ 3, __
     head=gear.Kaykaus_C_head,         -- __, 11,  16,  19,  14, 12, __/ 3, __
     body="Rosette Jaseran +1",        -- __, __, ___,  39,  31, 25,  5/ 5, 13
-    hands=gear.Chironic_SIRD_hands,   -- __, __, ___,  38,  20, 31, __/__, __; Can add more DT or Enmity
+    hands=gear.Chironic_SIRD_hands,   -- __, __, ___,  38,  20, 31, __/__,  4; Can add more DT or Enmity
     legs=gear.Kaykaus_C_legs,         -- __, 11, ___,  30,  12, 12, __/__, __
     feet=gear.Kaykaus_D_feet,         -- __, 17, ___,  19,  10, __, __/__,  6
     neck="Loricate Torque +1",        -- __, __, ___, ___, ___,  5,  6/ 6, __
@@ -863,7 +863,7 @@ function init_gear_sets()
     -- Kaykaus set bonus              --  6, __, ___, ___, ___, __, __/__, __
     -- Base Stats                     -- __, __, 486, 129, 123, __, __/__, __
     -- Merit points                   -- __, __, ___, ___, ___, 10, __/__,  5
-    -- 6 CPII, 59 CP, 502 Heal Skill, 309 MND, 233 VIT, 106 SIRD, 50PDT/37MDT, 36 -Enmity
+    -- 6 CPII, 59 CP, 502 Heal Skill, 309 MND, 233 VIT, 106 SIRD, 50PDT/37MDT, 40 -Enmity
     -- 714 Power
   }
 
@@ -1749,7 +1749,7 @@ end
 -- Custom spell mapping.
 function job_get_spell_map(spell, default_spell_map)
   if spell.action_type == 'Magic' then
-    if default_spell_map == 'Cure' or default_spell_map == 'Curaga' then
+    if default_spell_map == 'Cure' or default_spell_map == 'Curaga' or default_spell_map == 'Cura' then
       if (world.weather_element == 'Light' and not (silibs.get_weather_intensity() < 2 and world.day_element == 'Dark'))
           or (world.day_element == 'Light' and not world.weather_element == 'Dark') then
         return 'CureWeather'

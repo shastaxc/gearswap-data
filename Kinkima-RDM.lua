@@ -870,7 +870,7 @@ function init_gear_sets()
     ammo="Staunch Tathlum +1",        -- __, __, ___, ___, ___, 11,  3/ 3, __
     head=gear.Kaykaus_C_head,         -- __, 11,  16,  19,  14, 12, __/ 3, __
     body=gear.Kaykaus_C_body,         --  4, __, ___,  33,  20, 12, __/__, __
-    hands=gear.Chironic_SIRD_hands,   -- __, __, ___,  38,  20, 31, __/__, __; Can add more DT or Enmity
+    hands=gear.Chironic_SIRD_hands,   -- __, __, ___,  38,  20, 31, __/__,  4; Can add more DT or Enmity
     legs="Atrophy Tights +3",         -- __, 12,  17,  39,  22, __, __/__, __
     feet=gear.Kaykaus_D_feet,         -- __, 17, ___,  19,  10, __, __/__,  6
     neck="Loricate Torque +1",        -- __, __, ___, ___, ___,  5,  6/ 6, __
@@ -883,7 +883,7 @@ function init_gear_sets()
     -- Kaykaus set bonus              --  6, __, ___, ___, ___, __, __/__, __
     -- Base Stats                     -- __, __, 414, 129, 123, __, __/__, __
     -- Merit points                   -- __, __, ___, ___, ___, 10, __/__,  5
-    -- 10 CPII, 55 CP, 472 Heal Skill, 309 MND, 212 VIT, 116 SIRD, 42PDT/27MDT, 15 -Enmity
+    -- 10 CPII, 55 CP, 472 Heal Skill, 309 MND, 212 VIT, 116 SIRD, 42PDT/27MDT, 19 -Enmity
     -- 679 Power
   }
   sets.midcast.CureNormalWeaponLock = {
@@ -891,7 +891,7 @@ function init_gear_sets()
     ammo="Staunch Tathlum +1",        -- __, __, ___, ___, ___, 11,  3/ 3, __
     head=gear.Kaykaus_C_head,         -- __, 11,  16,  19,  14, 12, __/ 3, __
     body="Rosette Jaseran +1",        -- __, __, ___,  39,  31, 25,  5/ 5, 13
-    hands=gear.Chironic_SIRD_hands,   -- __, __, ___,  38,  20, 31, __/__, __; Can add more DT or Enmity
+    hands=gear.Chironic_SIRD_hands,   -- __, __, ___,  38,  20, 31, __/__,  4; Can add more DT or Enmity
     legs="Atrophy Tights +3",         -- __, 12,  17,  39,  22, __, __/__, __
     feet=gear.Kaykaus_D_feet,         -- __, 17, ___,  19,  10, __, __/__,  6
     neck="Loricate Torque +1",        -- __, __, ___, ___, ___,  5,  6/ 6, __
@@ -904,7 +904,7 @@ function init_gear_sets()
     -- Kaykaus set bonus              --  4, __, ___, ___, ___, __, __/__, __
     -- Base Stats                     -- __, __, 414, 129, 123, __, __/__, __
     -- Merit points                   -- __, __, ___, ___, ___, 10, __/__,  5
-    -- 4 CPII, 55 CP, 472 Heal Skill, 313 MND, 223 VIT, 104 SIRD, 37PDT/32MDT, 28 -Enmity
+    -- 4 CPII, 55 CP, 472 Heal Skill, 313 MND, 223 VIT, 104 SIRD, 37PDT/32MDT, 32 -Enmity
     -- 683 Power
   }
   
@@ -915,7 +915,7 @@ function init_gear_sets()
     ammo="Staunch Tathlum +1",        -- __, __, ___, ___, ___, 11,  3/ 3, __
     head=gear.Kaykaus_C_head,         -- __, 11,  16,  19,  14, 12, __/ 3, __
     body="Rosette Jaseran +1",        -- __, __, ___,  39,  31, 25,  5/ 5, 13
-    hands=gear.Chironic_SIRD_hands,   -- __, __, ___,  38,  20, 31, __/__, __; Can add more DT or Enmity
+    hands=gear.Chironic_SIRD_hands,   -- __, __, ___,  38,  20, 31, __/__,  4; Can add more DT or Enmity
     legs="Atrophy Tights +3",         -- __, 12,  17,  39,  22, __, __/__, __
     feet=gear.Kaykaus_D_feet,         -- __, 17, ___,  19,  10, __, __/__,  6
     neck="Loricate Torque +1",        -- __, __, ___, ___, ___,  5,  6/ 6, __
@@ -928,7 +928,7 @@ function init_gear_sets()
     -- Kaykaus set bonus              --  4, __, ___, ___, ___, __, __/__, __
     -- Base Stats                     -- __, __, 414, 129, 123, __, __/__, __
     -- Merit points                   -- __, __, ___, ___, ___, 10, __/__,  5
-    -- 4 CPII, 65 CP, 462 Heal Skill, 318 MND, 228 VIT, 102 SIRD, 42PDT/32MDT, 24 -Enmity
+    -- 4 CPII, 65 CP, 462 Heal Skill, 318 MND, 228 VIT, 102 SIRD, 42PDT/32MDT, 28 -Enmity
     -- 673 Power
   }
   sets.midcast.CureWeatherWeaponLock = {
@@ -936,7 +936,7 @@ function init_gear_sets()
     ammo="Staunch Tathlum +1",        -- __, __, ___, ___, ___, 11,  3/ 3, __
     head=gear.Kaykaus_C_head,         -- __, 11,  16,  19,  14, 12, __/ 3, __
     body="Rosette Jaseran +1",        -- __, __, ___,  39,  31, 25,  5/ 5, 13
-    hands=gear.Chironic_SIRD_hands,   -- __, __, ___,  38,  20, 31, __/__, __; Can add more DT or Enmity
+    hands=gear.Chironic_SIRD_hands,   -- __, __, ___,  38,  20, 31, __/__,  4; Can add more DT or Enmity
     legs="Atrophy Tights +3",         -- __, 12,  17,  39,  22, __, __/__, __
     feet=gear.Kaykaus_D_feet,         -- __, 17, ___,  19,  10, __, __/__,  6
     neck="Loricate Torque +1",        -- __, __, ___, ___, ___,  5,  6/ 6, __
@@ -949,7 +949,7 @@ function init_gear_sets()
     -- Kaykaus set bonus              --  4, __, ___, ___, ___, __, __/__, __
     -- Base Stats                     -- __, __, 414, 129, 123, __, __/__, __
     -- Merit points                   -- __, __, ___, ___, ___, 10, __/__,  5
-    -- 4 CPII, 55 CP, 462 Heal Skill, 313 MND, 223 VIT, 102 SIRD, 37PDT/32MDT, 24 -Enmity
+    -- 4 CPII, 55 CP, 462 Heal Skill, 313 MND, 223 VIT, 102 SIRD, 37PDT/32MDT, 28 -Enmity
     -- 673 Power
   }
 
