@@ -517,6 +517,7 @@ function job_setup()
   fencer_tp_bonus = {200, 300, 400, 450, 500, 550, 600, 630}
   current_pet = nil
   last_pet_midcast_set = {}
+  last_pet_midaction_time = 0 -- DO NOT MODIFY
   fight_max_range = 16 -- Player and target model sizes are added later
   ----------------- DO NOT MODIFY ABOVE -----------------
   
@@ -1418,8 +1419,8 @@ function init_gear_sets()
   }
 
   sets.midcast.Pet.Macc = {
-    main=gear.Ready_MAcc_Axe,         -- [__/__, ___] { 4/ 4, ___ | 25, __}; Pet TP Bonus+200
-    sub="Agwu's Axe",                 -- [__/__, ___] {__/__, ___ | 50, 20}
+    main="Agwu's Axe",                 -- [__/__, ___] {__/__, ___ | 50, 20}
+    sub=gear.Ready_MAcc_Axe,         -- [__/__, ___] { 4/ 4, ___ | 25, __}; Pet TP Bonus+200
     ammo="Hesperiidae",               -- [__/__, ___] {__/__, ___ | 10, 10}
     head="Nukumi Cabasset +2",        -- [10/10,  88] {__/__, ___ | 51, __}
     body="Gleti's Cuirass",           -- [ 9/__, 102] {__/__, ___ | 50, __}
@@ -1703,7 +1704,7 @@ function job_precast(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
 
   -- If in Pet hybrid mode, cancel abilities if pet is using Ready move.
-  if (state.HybridMode.value == 'Pet' or state.HybridMode.value == 'PetDT') and pending_pet_ability then
+  if (state.HybridMode.value == 'Pet' or state.HybridMode.value == 'PetDT') and pending_pet_ability() then
     eventArgs.cancel = true
     add_to_chat(122, 'Action canceled because pet was midaction.')
   end
@@ -1799,7 +1800,7 @@ function job_aftercast(spell, action, spellMap, eventArgs)
 	if spell.type == 'Monster' and not spell.interrupted then
     equip(get_bst_pet_midcast_set(spell, spellMap))
     last_pet_midcast_set = set_combine(gearswap.equip_list, {})
-    pending_pet_ability = true
+    last_pet_midaction_time = os.clock()
     if (state.HybridMode.value ~= 'Master' and not always_swap_moves:contains(spell.english))
         or buffactive['Unleash'] then
       eventArgs.handled = true
@@ -1822,13 +1823,13 @@ function job_pet_midcast(spell, action, spellMap, eventArgs)
   equip(get_bst_pet_midcast_set(spell, spellMap))
   eventArgs.handled = true
 	if spell.interrupted then
-    pending_pet_ability = false
+    last_pet_midaction_time = 0
   end
 end
 
 -- Note: the "spell" object is different in the pet action hooks
 function job_pet_aftercast(spell, action, spellMap, eventArgs)
-  pending_pet_ability = false
+  last_pet_midaction_time = 0
 end
 
 -- Called when a player gains or loses a pet.
@@ -1956,7 +1957,7 @@ end
 
 -- Modify the default idle set after it was constructed.
 function customize_idle_set(idleSet)
-  if not pending_pet_ability then
+  if not pending_pet_ability() then
     if buffactive['Unleash'] then
       if pet.isvalid then
         idleSet = set_combine(idleSet, last_pet_midcast_set)
@@ -2013,7 +2014,7 @@ end
 
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
-  if not ((state.HybridMode.value == 'Pet' or state.HybridMode.value == 'PetDT') and pending_pet_ability) then
+  if not ((state.HybridMode.value == 'Pet' or state.HybridMode.value == 'PetDT') and pending_pet_ability()) then
     if buffactive['Unleash'] then
       if pet.isvalid then
         meleeSet = set_combine(meleeSet, last_pet_midcast_set)
@@ -2250,6 +2251,10 @@ function update_idle_groups()
   end
 end
 
+function pending_pet_ability()
+  return (os.clock() - last_pet_midaction_time) < 1.5
+end
+
 function job_self_command(cmdParams, eventArgs)
   silibs.self_command(cmdParams, eventArgs)
   ----------- Non-silibs content goes below this line -----------
@@ -2406,7 +2411,7 @@ end
 function on_pet_change(petname)
   if current_pet ~= petname then
     current_pet = petname
-    pending_pet_ability = false -- Reset gearswap lockout if pet died or new pet summoned
+    last_pet_midaction_time = 0 -- Reset gearswap lockout if pet died or new pet summoned
     update_ui_text()
     update_ui_visibility()
   end
