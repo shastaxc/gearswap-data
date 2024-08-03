@@ -410,7 +410,7 @@ function init_gear_sets()
     feet="Anchorite's Gaiters +3", -- Increase evasion
   }
   sets.precast.JA['Focus'] = {
-    head="Anchorite's Crown +1", -- Increase acc and ranged acc
+    head="Anchorite's Crown +3", -- Increase acc and ranged acc
   }
   sets.precast.JA['Counterstance'] = {
     feet="Hesychast's Gaiters +3", -- Increase counter rate
