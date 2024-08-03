@@ -17,6 +17,10 @@ Modes
 * CP Mode: Equips Capacity Points bonus cape
 * Ranged Mode: Changes ranged accuracy level
 * Crit Mode: Wear critical hit rate and crit damage enhancing gear for ranged attacks
+* Roll Mode: Determines if sets.precast.CorsairRoll.Duration is overlaid on regular roll set
+    * Adaptive: Duration set will only be equipped if you are not engaged in combat.
+    * Always Rostam: Duration set will always be equipped for rolls.
+    * Never Rostam: Duration set will never be equipped for rolls.
 
 Weapons
 * Use keybinds to cycle weapons.
@@ -34,9 +38,9 @@ Weapons
 
 Abilities
 * Phantom Roll: Gear will automatically swap when you roll, and will use what's in sets.precast.CorsairRoll.
-  * sets.precast.CorsairRoll.Duration will additionally be equipped if you roll while not engaged in combat.
-    You can add weapons to this set. This is the only exception to the rule of not putting weapons into your
-    sets because it handles weapons with special rules just for Phanton Roll.
+  * sets.precast.CorsairRoll.Duration will additionally be equipped depending on what your RollMode state.
+    * You can add weapons to this Duration set. This is the only exception to the rule of not putting weapons
+      into your sets because it handles weapons with special rules just for Phanton Roll.
   * You are expected to create your own macros for rolling. I personally use the Roller addon but not for its
     automated rolling, which kinda sucks and Busts a lot. I use text commands to set Roll1 and Roll2 and then
     have macros to actually roll what's set for Roll1 and another macro to roll what's set in Roll2.
@@ -231,6 +235,7 @@ function job_setup()
   state.Altqd:set('Dark') -- Set default alt QD element
   state.QDMode = M{['description']='Quick Draw Mode', 'Potency', 'STP', 'Enhance'}
   state.CritMode = M(false, 'Crit')
+  state.RollMode = M{['description']='Roll Mode', 'Adaptive', 'Always Rostam', 'Never Rostam'}
 
   -- Whether to use Luzaf's Ring
   state.LuzafRing = M(true, "Luzaf's Ring")
@@ -1972,7 +1977,10 @@ end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
   if spell.type == 'CorsairRoll' then
-    if player.status ~= 'Engaged' then
+    -- Check RollMode to determine whether or not to equip duration set.
+    -- The duration set causes weapons to swap which drops all your TP so not always desirable.
+    if (state.RollMode.value == 'Adaptive' and player.status ~= 'Engaged')
+        or state.RollMode.value == 'Always Rostam' then
       equip(sets.precast.CorsairRoll.Duration)
     end
     if state.LuzafRing.value then
@@ -2261,7 +2269,7 @@ function display_current_job_state(eventArgs)
     d_msg = state.DefenseMode.value .. state[state.DefenseMode.value .. 'DefenseMode'].value
   end
 
-  local i_msg = state.IdleMode.value
+  local r_msg = state.RollMode.value
 
   local msg = ''
   if state.Kiting.value then
@@ -2274,7 +2282,7 @@ function display_current_job_state(eventArgs)
   add_to_chat(002, '| ' ..string.char(31,210).. 'Melee' ..cf_msg.. ': ' ..string.char(31,001)..m_msg.. string.char(31,002)..  ' |'
       ..string.char(31,060).. ' QD: '  ..string.char(31,001)..qd_msg.. string.char(31,002)..  ' |'
       ..string.char(31,004).. ' Defense: ' ..string.char(31,001)..d_msg.. string.char(31,002)..  ' |'
-      ..string.char(31,008).. ' Idle: ' ..string.char(31,001)..i_msg.. string.char(31,002)..  ' |'
+      ..string.char(31,008).. ' Rolls: ' ..string.char(31,001)..r_msg.. string.char(31,002)..  ' |'
       ..string.char(31,002)..msg)
 
   eventArgs.handled = true
@@ -2514,7 +2522,9 @@ function set_main_keybinds()
 
   send_command('bind !- gs c cycleback altqd')
   send_command('bind != gs c cycle altqd')
-  
+
+  send_command('bind !f8 gs c cycle RollMode')
+
   send_command('bind !` input /ja "Bolter\'s Roll" <me>')
   send_command('bind !q input /ja "Double-up" <me>')
   send_command('bind !w input /ja "Triple Shot" <me>')
@@ -2564,6 +2574,8 @@ function unbind_keybinds()
 
   send_command('unbind !-')
   send_command('unbind !=')
+
+  send_command('unbind !f8')
 
   send_command('unbind !q')
   send_command('unbind !`')

@@ -79,6 +79,7 @@ function job_setup()
   state.QDMode = M{['description']='Quick Draw Mode', 'Potency', 'STP', 'Enhance'}
   state.Currentqd = M{['description']='Current Quick Draw', 'Main', 'Alt'}
   state.CritMode = M(false, 'Crit')
+  state.RollMode = M{['description']='Roll Mode', 'Adaptive', 'Always Rostam', 'Never Rostam'}
 
   -- Whether to use Luzaf's Ring
   state.LuzafRing = M(true, "Luzaf's Ring")
@@ -2051,8 +2052,11 @@ function job_precast(spell, action, spellMap, eventArgs)
   end
 
   -- Gear
-  if (spell.type == 'CorsairRoll' or spell.english == "Double-Up") then
-    if player.status ~= 'Engaged' then
+  if spell.type == 'CorsairRoll' then
+    -- Check RollMode to determine whether or not to equip duration set.
+    -- The duration set causes weapons to swap which drops all your TP so not always desirable.
+    if (state.RollMode.value == 'Adaptive' and player.status ~= 'Engaged')
+        or state.RollMode.value == 'Always Rostam' then
       equip(sets.precast.CorsairRoll.Duration)
     end
     if state.LuzafRing.value then
@@ -2375,7 +2379,7 @@ function display_current_job_state(eventArgs)
     d_msg = state.DefenseMode.value .. state[state.DefenseMode.value .. 'DefenseMode'].value
   end
 
-  local i_msg = state.IdleMode.value
+  local r_msg = state.RollMode.value
 
   local msg = ''
   if state.Kiting.value then
@@ -2389,7 +2393,7 @@ function display_current_job_state(eventArgs)
       ..string.char(31,207).. ' WS: ' ..string.char(31,001)..ws_msg.. string.char(31,002)..  ' |'
       ..string.char(31,060).. ' QD' ..qd_msg.. ': '  ..string.char(31,001)..e_msg.. string.char(31,002)..  ' |'
       ..string.char(31,004).. ' Defense: ' ..string.char(31,001)..d_msg.. string.char(31,002)..  ' |'
-      ..string.char(31,008).. ' Idle: ' ..string.char(31,001)..i_msg.. string.char(31,002)..  ' |'
+      ..string.char(31,008).. ' Rolls: ' ..string.char(31,001)..r_msg.. string.char(31,002)..  ' |'
       ..string.char(31,002)..msg)
 
   eventArgs.handled = true
@@ -2606,7 +2610,9 @@ function set_main_keybinds()
 
   send_command('bind !- gs c cycleback altqd')
   send_command('bind != gs c cycle altqd')
-  
+
+  send_command('bind !f8 gs c cycle RollMode')
+
   send_command('bind !` input /ja "Bolter\'s Roll" <me>')
   send_command('bind !q input /ja "Double-up" <me>')
   send_command('bind !w input /ja "Triple Shot" <me>')
@@ -2656,6 +2662,8 @@ function unbind_keybinds()
 
   send_command('unbind !-')
   send_command('unbind !=')
+
+  send_command('unbind !f8')
 
   send_command('unbind !`')
   send_command('unbind !q')
