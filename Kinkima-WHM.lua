@@ -275,7 +275,7 @@ function job_setup()
     },
   }
 
-  set_main_keybinds()
+  set_main_keybinds:schedule(2)
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -290,7 +290,7 @@ function user_setup()
   include('Global-Binds.lua') -- Additional local binds
 
   select_default_macro_book()
-  set_sub_keybinds()
+  set_sub_keybinds:schedule(2)
 end
 
 -- Called when this job file is unloaded (eg: job change)
@@ -1689,8 +1689,8 @@ function job_self_command(cmdParams, eventArgs)
   elseif cmdParams[1] == 'storm' then
     send_command('@input /ma "'..state.Storm.current..'" <stpc>')
   elseif cmdParams[1] == 'bind' then
-    set_main_keybinds()
-    set_sub_keybinds()
+    set_main_keybinds:schedule(2)
+    set_sub_keybinds:schedule(2)
     print('Set keybinds!')
   elseif cmdParams[1] == 'test' then
     test()

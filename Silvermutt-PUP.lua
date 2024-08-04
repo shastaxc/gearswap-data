@@ -485,7 +485,7 @@ function job_setup()
     },
   }
 
-  set_main_keybinds()
+  set_main_keybinds:schedule(2)
 end
 
 -- Executes on first load, main job change, **and sub job change**
@@ -502,7 +502,7 @@ function user_setup()
   end
 
   select_default_macro_book()
-  set_sub_keybinds()
+  set_sub_keybinds:schedule(2)
 end
 
 function job_file_unload()
@@ -2042,8 +2042,8 @@ function job_self_command(cmdParams, eventArgs)
   elseif cmdParams[1] == 'maneuver' then
     use_maneuver(true)
   elseif cmdParams[1] == 'bind' then
-    set_main_keybinds()
-    set_sub_keybinds()
+    set_main_keybinds:schedule(2)
+    set_sub_keybinds:schedule(2)
     print('Set keybinds!')
   elseif cmdParams[1] == 'test' then
     test()

@@ -311,7 +311,7 @@ function job_setup()
     },
   }
 
-  set_main_keybinds()
+  set_main_keybinds:schedule(2)
 end
 
 -- Executes on first load, main job change, **and sub job change**
@@ -322,7 +322,7 @@ function user_setup()
   include('Global-Binds.lua') -- Additional local binds
 
   select_default_macro_book()
-  set_sub_keybinds()
+  set_sub_keybinds:schedule(2)
 end
 
 -- Called when this job file is unloaded (eg: job change)
@@ -2125,8 +2125,8 @@ function job_self_command(cmdParams, eventArgs)
   elseif cmdParams[1] == 'rune' then
     send_command('@input /ja '..state.Runes.value..' <me>')
   elseif cmdParams[1] == 'bind' then
-    set_main_keybinds()
-    set_sub_keybinds()
+    set_main_keybinds:schedule(2)
+    set_sub_keybinds:schedule(2)
     print('Set keybinds!')
   elseif cmdParams[1] == 'test' then
     test()
