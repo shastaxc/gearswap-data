@@ -139,22 +139,6 @@ function job_setup()
       'Crashing Thunder','Cruel Joke','Droning Whirlwind','Gates of Hades','Harden Shell','Mighty Guard',
       'Polar Roar','Pyric Bulwark','Tearing Gust','Thunderbolt','Tourbillion','Uproot'}
 
-  set_main_keybinds()
-end
-
--------------------------------------------------------------------------------------------------------------------
--- User setup functions for this job.  Recommend that these be overridden in a sidecar file.
--------------------------------------------------------------------------------------------------------------------
-
--- Setup vars that are user-dependent.  Can override this function in a sidecar file.
-function user_setup()
-  silibs.user_setup_hook()
-  ----------- Non-silibs content goes below this line -----------
-
-  include('Global-Binds.lua') -- Additional local binds
-
-  select_default_macro_book()
-
   job_keybinds = {
     ['main'] = {
       ['!s'] = 'gs c faceaway',
@@ -193,6 +177,22 @@ function user_setup()
       ['^numpad-'] = 'input /ja "Aggressor" <me>',
     },
   }
+
+  set_main_keybinds()
+end
+
+-------------------------------------------------------------------------------------------------------------------
+-- User setup functions for this job.  Recommend that these be overridden in a sidecar file.
+-------------------------------------------------------------------------------------------------------------------
+
+-- Setup vars that are user-dependent.  Can override this function in a sidecar file.
+function user_setup()
+  silibs.user_setup_hook()
+  ----------- Non-silibs content goes below this line -----------
+
+  include('Global-Binds.lua') -- Additional local binds
+
+  select_default_macro_book()
 
   set_sub_keybinds()
 end
