@@ -184,7 +184,7 @@ function job_setup()
   state.CastingMode:options('Resistant', 'Normal')
   state.IdleMode:options('Normal', 'HeavyDef')
   state.WeaponskillMode:options('Normal', 'Proc')
-  
+
   state.CP = M(false, 'Capacity Points Mode')
   state.AttCapped = M(true, 'Attack Capped')
   state.ToyWeapons = M{['description']='Toy Weapons','None','Katana','GreatKatana','Dagger',
@@ -210,6 +210,39 @@ function job_setup()
 
   options.ninja_tool_warning_limit = 10
   state.warned = M(false) -- Whether a warning has been given for low ninja tools
+
+  job_keybinds = {
+    ['main'] = {
+      ['!s'] = 'gs c faceaway',
+      ['!d'] = 'gs c interact',
+      ['@w'] = 'gs c toggle RearmingLock',
+      ['^`'] = 'gs c cycle treasuremode',
+      ['@c'] = 'gs c toggle CP',
+      ['^f8'] = 'gs c toggle AttCapped',
+      ['!`'] = 'gs c toggle MagicBurst',
+      ['^insert'] = 'gs c weaponset cycle',
+      ['^delete'] = 'gs c weaponset cycleback',
+      ['!delete'] = 'gs c weaponset reset',
+      ['^pageup'] = 'gs c toyweapon cycle',
+      ['^pagedown'] = 'gs c toyweapon cycleback',
+      ['!pagedown'] = 'gs c toyweapon reset',
+      ['^-'] = 'gs c cycleback ElementalMode',
+      ['^='] = 'gs c cycle ElementalMode',
+      ['^numpadenter'] = 'input /ja "Innin" <me>',
+      ['!numpadenter'] = 'input /ja "Yonin" <me>',
+      ['!numpad+'] = 'input /ja "Futae" <me>',
+      ['^numpad+'] = 'gs c ninelemental',
+      ['!q'] = 'input /ma "Utsusemi: Ichi" <me>',
+      ['!w'] = 'input /ma "Utsusemi: Ni" <me>',
+      ['!e'] = 'input /ma "Utsusemi: San" <me>',
+    },
+    ['WAR'] = {
+      ['^numlock'] = 'input /ja "Defender" <me>',
+      ['^numpad/'] = 'input /ja "Berserk" <me>',
+      ['^numpad*'] = 'input /ja "Warcry" <me>',
+      ['^numpad-'] = 'input /ja "Aggressor" <me>',
+    },
+  }
 
   set_main_keybinds()
 end
@@ -2059,79 +2092,46 @@ function select_default_macro_book()
 end
 
 function set_main_keybinds()
-  send_command('bind !s gs c faceaway')
-  send_command('bind !d gs c interact')
-  send_command('bind @w gs c toggle RearmingLock')
-  send_command('bind ^` gs c cycle treasuremode')
+  local main_keybinds = job_keybinds['main']
+  if main_keybinds then
+    for key,cmd in pairs(main_keybinds) do
+      send_command(('bind %s %s'):format(key, cmd))
+    end
+  end
 
-  send_command('bind @c gs c toggle CP')
-  send_command('bind ^f8 gs c toggle AttCapped')
-  send_command('bind !` gs c toggle MagicBurst')
-
-  send_command('bind ^insert gs c weaponset cycle')
-  send_command('bind ^delete gs c weaponset cycleback')
-  send_command('bind !delete gs c weaponset reset')
-
-  send_command('bind ^pageup gs c toyweapon cycle')
-  send_command('bind ^pagedown gs c toyweapon cycleback')
-  send_command('bind !pagedown gs c toyweapon reset')
-
-  send_command('bind ^- gs c cycleback ElementalMode')
-  send_command('bind ^= gs c cycle ElementalMode')
-
-  send_command('bind ^numpadenter input /ja "Innin" <me>')
-  send_command('bind !numpadenter input /ja "Yonin" <me>')
-  send_command('bind !numpad+ input /ja "Futae" <me>')
-
-  send_command('bind ^numpad+ gs c ninelemental')
-  send_command('bind !q input /ma "Utsusemi: Ichi" <me>')
-  send_command('bind !w input /ma "Utsusemi: Ni" <me>')
-  send_command('bind !e input /ma "Utsusemi: San" <me>')
+  construct_unbind_command()
 end
 
 function set_sub_keybinds()
-  if player.sub_job == 'WAR' then
-    send_command('bind ^numlock input /ja "Defender" <me>')
-    send_command('bind ^numpad/ input /ja "Berserk" <me>')
-    send_command('bind ^numpad* input /ja "Warcry" <me>')
-    send_command('bind ^numpad- input /ja "Aggressor" <me>')
+  local sub_keybinds = job_keybinds[player.sub_job]
+  if sub_keybinds then
+    for key,cmd in pairs(sub_keybinds) do
+      send_command(('bind %s %s'):format(key, cmd))
+    end
   end
 end
 
+function construct_unbind_command()
+  local commands = L{}
+  local main_keybinds = job_keybinds['main']
+  local sub_keybinds = job_keybinds[player.sub_job]
+  if main_keybinds then
+    for key in pairs(main_keybinds) do
+        commands:append(('unbind %s'):format(key))
+    end
+  end
+  if sub_keybinds then
+    for key in pairs(sub_keybinds) do
+        commands:append(('unbind %s'):format(key))
+    end
+  end
+  unbind_command = commands:concat(';')
+end
+
+-- Combining these all into one send_command to avoid race condition with
+-- setting keybinds for the next job.
 function unbind_keybinds()
-  send_command('unbind !s')
-  send_command('unbind !d')
-  send_command('unbind @w')
-  send_command('unbind ^`')
-
-  send_command('unbind @c')
-  send_command('unbind ^f8')
-  send_command('unbind !`')
-
-  send_command('unbind ^insert')
-  send_command('unbind ^delete')
-  send_command('unbind !delete')
-
-  send_command('unbind ^pageup')
-  send_command('unbind ^pagedown')
-  send_command('unbind !pagedown')
-
-  send_command('unbind ^-')
-  send_command('unbind ^=')
-
-  send_command('unbind ^numpadenter')
-  send_command('unbind !numpadenter')
-  send_command('unbind !numpad+')
-
-  send_command('unbind ^numpad+')
-  send_command('unbind !q')
-  send_command('unbind !w')
-  send_command('unbind !e')
-
-  send_command('unbind ^numlock')
-  send_command('unbind ^numpad/')
-  send_command('unbind ^numpad*')
-  send_command('unbind ^numpad-')
+  send_command(unbind_command)
 end
 
 function test()

@@ -225,7 +225,56 @@ function job_setup()
 
   state.Buff['Afflatus Solace'] = buffactive['Afflatus Solace'] or false
   state.Buff['Afflatus Misery'] = buffactive['Afflatus Misery'] or false
-    
+
+  job_keybinds = {
+    ['main'] = {
+      ['!s'] = 'gs c faceaway',
+      ['!d'] = 'gs c interact',
+      ['@c'] = 'gs c toggle CP',
+      ['@w'] = 'gs c toggle RearmingLock',
+      ['!w'] = 'gs c curaga',
+      ['!z'] = 'gs c barelement',
+      ['!x'] = 'gs c barstatus',
+      ['^insert'] = 'gs c cycleback Barelement',
+      ['^delete'] = 'gs c cycle Barelement',
+      ['!delete'] = 'gs c reset Barelement',
+      ['^home'] = 'gs c cycleback Barstatus',
+      ['^end'] = 'gs c cycle Barstatus',
+      ['!end'] = 'gs c reset Barstatus',
+      ['^.'] = 'gs c cycleback CuragaTier',
+      ['^/'] = 'gs c cycle CuragaTier',
+      ['!`'] = 'input /ja "Afflatus Solace" <me>',
+      ['!e'] = 'input /ma "Haste" <stpc>',
+      ['!u'] = 'input /ma "Blink" <me>',
+      ['!i'] = 'input /ma "Stoneskin" <me>',
+      ['!p'] = 'input /ma "Aquaveil" <me>',
+      ['!a'] = 'input /ma "Auspice" <me>',
+      ['!;'] = 'input /ma "Regen IV" <stpc>',
+      ['^z'] = 'input /ma "Boost-INT" <me>',
+      ['^x'] = 'input /ma "Boost-MND" <me>',
+      ['^c'] = 'input /ma "Boost-STR" <me>',
+      ['^v'] = 'input /ma "Boost-AGI" <me>',
+    },
+    ['SCH'] = {
+      ['^pageup'] = 'gs c cycleback Storm',
+      ['^pagedown'] = 'gs c cycle Storm',
+      ['!pagedown'] = 'gs c reset Storm',
+      ['!r'] = 'input /ja "Sublimation" <me>',
+      ['^-'] = 'gs c scholar light',
+      ['^='] = 'gs c scholar dark',
+      ['^['] = 'gs c scholar power',
+      ['^\\\\'] = 'gs c scholar cost',
+      ['!['] = 'gs c scholar aoe',
+      ['!\\\\'] = 'gs c scholar speed',
+      ['!c'] = 'gs c storm',
+      ['!/'] = 'input /ma "Klimaform" <me>',
+    },
+    ['RDM'] = {
+      ['~`'] = 'input /ja "Convert" <me>',
+      ['!\''] = 'input /ma "Refresh" <stpc>',
+    },
+  }
+
   set_main_keybinds()
 end
 
@@ -1732,117 +1781,46 @@ function select_default_macro_book()
 end
 
 function set_main_keybinds()
-  send_command('bind !s gs c faceaway')
-  send_command('bind !d gs c interact')
-  send_command('bind @c gs c toggle CP')
+  local main_keybinds = job_keybinds['main']
+  if main_keybinds then
+    for key,cmd in pairs(main_keybinds) do
+      send_command(('bind %s %s'):format(key, cmd))
+    end
+  end
 
-  send_command('bind @w gs c toggle RearmingLock')
-
-  send_command('bind !w gs c curaga')
-
-  send_command('bind !z gs c barelement')
-
-  send_command('bind !x gs c barstatus')
-
-  send_command('bind ^insert gs c cycleback Barelement')
-  send_command('bind ^delete gs c cycle Barelement')
-  send_command('bind !delete gs c reset Barelement')
-
-  send_command('bind ^home gs c cycleback Barstatus')
-  send_command('bind ^end gs c cycle Barstatus')
-  send_command('bind !end gs c reset Barstatus')
-
-  send_command('bind ^. gs c cycleback CuragaTier')
-  send_command('bind ^/ gs c cycle CuragaTier')
-
-  send_command('bind !` input /ja "Afflatus Solace" <me>')
-
-  send_command('bind !e input /ma "Haste" <stpc>')
-  send_command('bind !u input /ma "Blink" <me>')
-  send_command('bind !i input /ma "Stoneskin" <me>')
-  send_command('bind !p input /ma "Aquaveil" <me>')
-  send_command('bind !a input /ma "Auspice" <me>')
-  send_command('bind !; input /ma "Regen IV" <stpc>')
-  send_command('bind ^z input /ma "Boost-INT" <me>')
-  send_command('bind ^x input /ma "Boost-MND" <me>')
-  send_command('bind ^c input /ma "Boost-STR" <me>')
-  send_command('bind ^v input /ma "Boost-AGI" <me>')
+  construct_unbind_command()
 end
 
 function set_sub_keybinds()
-  if player.sub_job == 'SCH' then
-    send_command('bind ^pageup gs c cycleback Storm')
-    send_command('bind ^pagedown gs c cycle Storm')
-    send_command('bind !pagedown gs c reset Storm')
-
-    send_command('bind !r input /ja "Sublimation" <me>')
-    send_command('bind ^- gs c scholar light')
-    send_command('bind ^= gs c scholar dark')
-    send_command('bind ^[ gs c scholar power')
-    send_command('bind ^\\\\ gs c scholar cost')
-    send_command('bind ![ gs c scholar aoe')
-    send_command('bind !\\\\ gs c scholar speed')
-
-    send_command('bind !c gs c storm')
-    send_command('bind !/ input /ma "Klimaform" <me>')
-  elseif player.sub_job == 'RDM' then
-    send_command('bind ~` input /ja "Convert" <me>')
-    
-    send_command('bind !\' input /ma "Refresh" <stpc>')
+  local sub_keybinds = job_keybinds[player.sub_job]
+  if sub_keybinds then
+    for key,cmd in pairs(sub_keybinds) do
+      send_command(('bind %s %s'):format(key, cmd))
+    end
   end
 end
 
+function construct_unbind_command()
+  local commands = L{}
+  local main_keybinds = job_keybinds['main']
+  local sub_keybinds = job_keybinds[player.sub_job]
+  if main_keybinds then
+    for key in pairs(main_keybinds) do
+        commands:append(('unbind %s'):format(key))
+    end
+  end
+  if sub_keybinds then
+    for key in pairs(sub_keybinds) do
+        commands:append(('unbind %s'):format(key))
+    end
+  end
+  unbind_command = commands:concat(';')
+end
+
+-- Combining these all into one send_command to avoid race condition with
+-- setting keybinds for the next job.
 function unbind_keybinds()
-  send_command('unbind !s')
-  send_command('unbind !d')
-  send_command('unbind @c')
-
-  send_command('unbind @w')
-
-  send_command('unbind !w')
-
-  send_command('unbind !z')
-
-  send_command('unbind !x')
-
-  send_command('unbind ^insert')
-  send_command('unbind ^delete')
-  send_command('unbind !delete')
-
-  send_command('unbind ^home')
-  send_command('unbind ^end')
-  send_command('unbind !end')
-
-  send_command('unbind ^.')
-  send_command('unbind ^/')
-
-  send_command('unbind !`')
-
-  send_command('unbind !e')
-  send_command('unbind !u')
-  send_command('unbind !i')
-  send_command('unbind !p')
-  send_command('unbind !a')
-  send_command('unbind !;')
-  send_command('unbind ^z')
-  send_command('unbind ^x')
-  send_command('unbind ^c')
-  send_command('unbind ^v')
-
-  send_command('unbind ^pageup')
-  send_command('unbind ^pagedown')
-  send_command('unbind !pagedown')
-  send_command('unbind !r')
-  send_command('unbind ^-')
-  send_command('unbind ^=')
-  send_command('unbind ^[')
-  send_command('unbind ^\\\\')
-  send_command('unbind ![')
-  send_command('unbind !\\\\')
-  send_command('unbind !c')
-  send_command('unbind !/')
-  send_command('unbind ~`')
-  send_command('unbind !\'')
+  send_command(unbind_command)
 end
 
 function test()

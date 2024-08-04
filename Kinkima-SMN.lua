@@ -312,6 +312,58 @@ function job_setup()
   last_pet_midcast_set = {} -- DO NOT MODIFY
   last_pet_midaction_time = 0 -- DO NOT MODIFY
 
+  job_keybinds = {
+    ['main'] = {
+      ['!s'] = 'gs c faceaway',
+      ['!d'] = 'gs c interact',
+      ['@w'] = 'gs c toggle RearmingLock',
+      ['@c'] = 'gs c toggle CP',
+      ['!`'] = 'input /ja "Release" <me>',
+      ['!q'] = 'input /ja "Assault" <t>',
+      ['!w'] = 'input /ja "Retreat" <me>',
+      ['!a'] = 'input /ja "Avatar\'s Favor" <me>',
+      ['!z'] = 'gs c pact debuff1',
+      ['!x'] = 'gs c pact debuff2',
+      ['^numlock'] = 'gs c pact bp99',
+      ['!numlock'] = 'gs c pact astralflow',
+      ['^numpad/'] = 'gs c pact bp75',
+      ['^numpad*'] = 'gs c pact bp70',
+      ['^numpad-'] = 'gs c pact bpextra',
+    },
+    ['SCH'] = {
+      ['^pageup'] = 'gs c cycleback Storm',
+      ['^pagedown'] = 'gs c cycle Storm',
+      ['!pagedown'] = 'gs c reset Storm',
+      ['!r'] = 'input /ja "Sublimation" <me>',
+      ['^-'] = 'gs c scholar light',
+      ['^='] = 'gs c scholar dark',
+      ['^['] = 'gs c scholar power',
+      ['^\\\\'] = 'gs c scholar cost',
+      ['!['] = 'gs c scholar aoe',
+      ['!\\\\'] = 'gs c scholar speed',
+      ['!c'] = 'gs c storm',
+      ['!/'] = 'input /ma "Klimaform" <me>',
+      ['!u'] = 'input /ma "Blink" <me>',
+      ['!i'] = 'input /ma "Stoneskin" <me>',
+      ['!p'] = 'input /ma "Aquaveil" <me>',
+    },
+    ['RDM'] = {
+      ['~`'] = 'input /ja "Convert" <me>',
+      ['!e'] = 'input /ma "Haste" <stpc>',
+      ['!u'] = 'input /ma "Blink" <me>',
+      ['!i'] = 'input /ma "Stoneskin" <me>',
+      ['!o'] = 'input /ma "Phalanx" <me>',
+      ['!p'] = 'input /ma "Aquaveil" <me>',
+      ['!\''] = 'input /ma "Refresh" <stpc>',
+    },
+    ['WHM'] = {
+      ['!e'] = 'input /ma "Haste" <tpc>',
+      ['!u'] = 'input /ma "Blink" <me>',
+      ['!i'] = 'input /ma "Stoneskin" <me>',
+      ['!p'] = 'input /ma "Aquaveil" <me>',
+    },
+  }
+
   set_main_keybinds()
 end
 
@@ -1894,99 +1946,46 @@ function select_default_macro_book(reset)
 end
 
 function set_main_keybinds()
-  send_command('bind !s gs c faceaway')
-  send_command('bind !d gs c interact')
-  send_command('bind @w gs c toggle RearmingLock')
+  local main_keybinds = job_keybinds['main']
+  if main_keybinds then
+    for key,cmd in pairs(main_keybinds) do
+      send_command(('bind %s %s'):format(key, cmd))
+    end
+  end
 
-  send_command('bind @c gs c toggle CP')
-
-  send_command('bind !` input /ja "Release" <me>')
-  send_command('bind !q input /ja "Assault" <t>')
-  send_command('bind !w input /ja "Retreat" <me>')
-  send_command('bind !a input /ja "Avatar\'s Favor" <me>')
-  send_command('bind !z gs c pact debuff1')
-  send_command('bind !x gs c pact debuff2')
-  send_command('bind ^numlock gs c pact bp99')
-  send_command('bind !numlock gs c pact astralflow')
-  send_command('bind ^numpad/ gs c pact bp75')
-  send_command('bind ^numpad* gs c pact bp70')
-  send_command('bind ^numpad- gs c pact bpextra')
+  construct_unbind_command()
 end
 
 function set_sub_keybinds()
-  if player.sub_job == 'SCH' then
-    send_command('bind ^pageup gs c cycleback Storm')
-    send_command('bind ^pagedown gs c cycle Storm')
-    send_command('bind !pagedown gs c reset Storm')
-
-    send_command('bind !r input /ja "Sublimation" <me>')
-    send_command('bind ^- gs c scholar light')
-    send_command('bind ^= gs c scholar dark')
-    send_command('bind ^[ gs c scholar power')
-    send_command('bind ^\\\\ gs c scholar cost')
-    send_command('bind ![ gs c scholar aoe')
-    send_command('bind !\\\\ gs c scholar speed')
-
-    send_command('bind !c gs c storm')
-    send_command('bind !/ input /ma "Klimaform" <me>')
-    send_command('bind !u input /ma "Blink" <me>')
-    send_command('bind !i input /ma "Stoneskin" <me>')
-    send_command('bind !p input /ma "Aquaveil" <me>')
-  elseif player.sub_job == 'RDM' then
-    send_command('bind ~` input /ja "Convert" <me>')
-    
-    send_command('bind !e input /ma "Haste" <stpc>')
-    send_command('bind !u input /ma "Blink" <me>')
-    send_command('bind !i input /ma "Stoneskin" <me>')
-    send_command('bind !o input /ma "Phalanx" <me>')
-    send_command('bind !p input /ma "Aquaveil" <me>')
-    send_command('bind !\' input /ma "Refresh" <stpc>')
-  elseif player.sub_job == 'WHM' then
-    send_command('bind !e input /ma "Haste" <stpc>')
-    send_command('bind !u input /ma "Blink" <me>')
-    send_command('bind !i input /ma "Stoneskin" <me>')
-    send_command('bind !p input /ma "Aquaveil" <me>')
+  local sub_keybinds = job_keybinds[player.sub_job]
+  if sub_keybinds then
+    for key,cmd in pairs(sub_keybinds) do
+      send_command(('bind %s %s'):format(key, cmd))
+    end
   end
 end
 
+function construct_unbind_command()
+  local commands = L{}
+  local main_keybinds = job_keybinds['main']
+  local sub_keybinds = job_keybinds[player.sub_job]
+  if main_keybinds then
+    for key in pairs(main_keybinds) do
+        commands:append(('unbind %s'):format(key))
+    end
+  end
+  if sub_keybinds then
+    for key in pairs(sub_keybinds) do
+        commands:append(('unbind %s'):format(key))
+    end
+  end
+  unbind_command = commands:concat(';')
+end
+
+-- Combining these all into one send_command to avoid race condition with
+-- setting keybinds for the next job.
 function unbind_keybinds()
-  send_command('unbind !s')
-  send_command('unbind !d')
-  send_command('unbind @w')
-
-  send_command('unbind @c')
-
-  send_command('unbind !`')
-  send_command('unbind !q')
-  send_command('unbind !w')
-  send_command('unbind !a')
-  send_command('unbind !z')
-  send_command('unbind !x')
-  send_command('unbind ^numlock')
-  send_command('unbind !numlock')
-  send_command('unbind ^numpad/')
-  send_command('unbind ^numpad*')
-  send_command('unbind ^numpad-')
-
-  send_command('unbind ^pageup')
-  send_command('unbind ^pagedown')
-  send_command('unbind !pagedown')
-  send_command('unbind !r')
-  send_command('unbind ^-')
-  send_command('unbind ^=')
-  send_command('unbind ^[')
-  send_command('unbind ^\\\\')
-  send_command('unbind ![')
-  send_command('unbind !\\\\')
-  send_command('unbind !c')
-  send_command('unbind !/')
-  send_command('unbind !u')
-  send_command('unbind !i')
-  send_command('unbind !p')
-  send_command('unbind ~`')
-  send_command('unbind !e')
-  send_command('unbind !o')
-  send_command('unbind !\'')
+  send_command(unbind_command)
 end
 
 function test()

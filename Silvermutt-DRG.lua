@@ -190,13 +190,48 @@ function job_setup()
   state.IdleMode:options('Normal', 'HeavyDef', 'Regain')
   state.AttCapped = M(true, 'Attack Capped')
   state.CP = M(false, 'Capacity Points Mode')
-  
+
   state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger',
       'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
-  
+
   wyv_breath_spells = S{'Dia', 'Poison', 'Blaze Spikes', 'Protect', 'Sprout Smack', 'Head Butt', 'Cocoon',
       'Barfira', 'Barblizzara', 'Baraera', 'Barstonra', 'Barthundra', 'Barwatera'}
   wyv_elem_breath = S{'Flame Breath', 'Frost Breath', 'Sand Breath', 'Hydro Breath', 'Gust Breath', 'Lightning Breath'}
+
+  job_keybinds = {
+    ['main'] = {
+      ['!s'] = 'gs c faceaway',
+      ['!d'] = 'gs c interact',
+      ['@w'] = 'gs c toggle RearmingLock',
+      ['^`'] = 'gs c cycle treasuremode',
+      ['@c'] = 'gs c toggle CP',
+      ['^f8'] = 'gs c toggle AttCapped',
+      ['^insert'] = 'gs c weaponset cycle',
+      ['^delete'] = 'gs c weaponset cycleback',
+      ['!delete'] = 'gs c weaponset reset',
+      ['^pageup'] = 'gs c toyweapon cycle',
+      ['^pagedown'] = 'gs c toyweapon cycleback',
+      ['!pagedown'] = 'gs c toyweapon reset',
+      ['!`'] = 'input /ja "Call Wyvern" <me>',
+      ['!q'] = 'input /ja "Spirit Link" <me>',
+      ['^q'] = 'input /ja "Steady Wing" <me>',
+      ['!w'] = 'input /ja "Ancient Circle" <me>',
+      ['!e'] = 'input /ja "Dragon Breaker" <t>',
+      ['!z'] = 'input /ja "Spirit Bond" <me>',
+    },
+    ['WAR'] = {
+      ['^numlock'] = 'input /ja "Defender" <me>',
+      ['^numpad/'] = 'input /ja "Berserk" <me>',
+      ['^numpad*'] = 'input /ja "Warcry" <me>',
+      ['^numpad-'] = 'input /ja "Aggressor" <me>',
+    },
+    ['SAM'] = {
+      ['^numlock'] = 'input /ja "Hasso" <me>',
+      ['^numpad/'] = 'input /ja "Meditate" <me>',
+      ['^numpad*'] = 'input /ja "Sekkanoki" <me>',
+      ['^numpad-'] = 'input /ja "Hasso" <me>',
+    },
+  }
 
   set_main_keybinds()
 end
@@ -1389,72 +1424,46 @@ function select_default_macro_book()
 end
 
 function set_main_keybinds()
-  send_command('bind !s gs c faceaway')
-  send_command('bind !d gs c interact')
-  send_command('bind @w gs c toggle RearmingLock')
-  send_command('bind ^` gs c cycle treasuremode')
+  local main_keybinds = job_keybinds['main']
+  if main_keybinds then
+    for key,cmd in pairs(main_keybinds) do
+      send_command(('bind %s %s'):format(key, cmd))
+    end
+  end
 
-  send_command('bind @c gs c toggle CP')
-  send_command('bind ^f8 gs c toggle AttCapped')
-
-  send_command('bind ^insert gs c weaponset cycle')
-  send_command('bind ^delete gs c weaponset cycleback')
-  send_command('bind !delete gs c weaponset reset')
-
-  send_command('bind ^pageup gs c toyweapon cycle')
-  send_command('bind ^pagedown gs c toyweapon cycleback')
-  send_command('bind !pagedown gs c toyweapon reset')
-
-  send_command('bind !` input /ja "Call Wyvern" <me>')
-  send_command('bind !q input /ja "Spirit Link" <me>')
-  send_command('bind ^q input /ja "Steady Wing" <me>')
-  send_command('bind !w input /ja "Ancient Circle" <me>')
-  send_command('bind !e input /ja "Dragon Breaker" <t>')
-  send_command('bind !z input /ja "Spirit Bond" <me>')
+  construct_unbind_command()
 end
 
 function set_sub_keybinds()
-  if player.sub_job == 'WAR' then
-    send_command('bind ^numlock input /ja "Defender" <me>')
-    send_command('bind ^numpad/ input /ja "Berserk" <me>')
-    send_command('bind ^numpad* input /ja "Warcry" <me>')
-    send_command('bind ^numpad- input /ja "Aggressor" <me>')
-  elseif player.sub_job == 'SAM' then
-    send_command('bind ^numlock input /ja "Hasso" <me>')
-    send_command('bind ^numpad/ input /ja "Meditate" <me>')
-    send_command('bind ^numpad* input /ja "Sekkanoki" <me>')
-    send_command('bind ^numpad- input /ja "Hasso" <me>')
+  local sub_keybinds = job_keybinds[player.sub_job]
+  if sub_keybinds then
+    for key,cmd in pairs(sub_keybinds) do
+      send_command(('bind %s %s'):format(key, cmd))
+    end
   end
 end
 
+function construct_unbind_command()
+  local commands = L{}
+  local main_keybinds = job_keybinds['main']
+  local sub_keybinds = job_keybinds[player.sub_job]
+  if main_keybinds then
+    for key in pairs(main_keybinds) do
+        commands:append(('unbind %s'):format(key))
+    end
+  end
+  if sub_keybinds then
+    for key in pairs(sub_keybinds) do
+        commands:append(('unbind %s'):format(key))
+    end
+  end
+  unbind_command = commands:concat(';')
+end
+
+-- Combining these all into one send_command to avoid race condition with
+-- setting keybinds for the next job.
 function unbind_keybinds()
-  send_command('unbind !s')
-  send_command('unbind !d')
-  send_command('unbind @w')
-  send_command('unbind ^`')
-
-  send_command('unbind @c')
-  send_command('unbind ^f8')
-
-  send_command('unbind ^insert')
-  send_command('unbind ^delete')
-  send_command('unbind !delete')
-
-  send_command('unbind ^pageup')
-  send_command('unbind ^pagedown')
-  send_command('unbind !pagedown')
-
-  send_command('unbind !`')
-  send_command('unbind !q')
-  send_command('unbind ^q')
-  send_command('unbind !w')
-  send_command('unbind !e')
-  send_command('unbind !z')
-
-  send_command('unbind ^numlock')
-  send_command('unbind ^numpad/')
-  send_command('unbind ^numpad*')
-  send_command('unbind ^numpad-')
+  send_command(unbind_command)
 end
 
 function test()

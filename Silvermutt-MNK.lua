@@ -213,6 +213,52 @@ function job_setup()
     ["Verethragna"] = S{"Aftermath: Lv.3"},
   }
 
+  job_keybinds = {
+    ['main'] = {
+      ['!s'] = 'gs c faceaway',
+      ['!d'] = 'gs c interact',
+      ['@w'] = 'gs c toggle RearmingLock',
+      ['^`'] = 'gs c cycle treasuremode',
+      ['@c'] = 'gs c toggle CP',
+      ['^insert'] = 'gs c weaponset cycle',
+      ['^delete'] = 'gs c weaponset cycleback',
+      ['!delete'] = 'gs c weaponset reset',
+      ['^pageup'] = 'gs c toyweapon cycle',
+      ['^pagedown'] = 'gs c toyweapon cycleback',
+      ['!pagedown'] = 'gs c toyweapon reset',
+      ['@e'] = 'gs c cycle EnmityMode',
+      ['!`'] = 'input /ja "Chakra" <me>',
+      ['!q'] = 'input /ja "Impetus" <me>',
+      ['!e'] = 'input /ja "Footwork" <me>',
+      ['^numpad+'] = 'input /ja "Boost" <me>',
+    },
+    ['WAR'] = {
+      ['^numlock'] = 'input /ja "Defender" <me>',
+      ['^numpad/'] = 'input /ja "Berserk" <me>',
+      ['^numpad*'] = 'input /ja "Warcry" <me>',
+      ['^numpad-'] = 'input /ja "Aggressor" <me>',
+    },
+    ['SAM'] = {
+      ['^numlock'] = 'input /ja "Third Eye" <me>',
+      ['^numpad/'] = 'input /ja "Meditate" <me>',
+      ['^numpad*'] = 'input /ja "Sekkanoki" <me>',
+      ['^numpad-'] = 'input /ja "Hasso" <me>',
+    },
+    ['THF'] = {
+      ['^numpad0'] = 'input /ja "Snak Attack" <me>',
+      ['^numpad.'] = 'input /ja "Trick Attack" <me>',
+    },
+    ['NIN'] = {
+      ['!numpad0'] = 'input /ma "Utsusemi: Ichi" <me>',
+      ['!numpad.'] = 'input /ma "Utsusemi: Ni" <me>',
+    },
+    ['RUN'] = {
+      ['^-'] = 'gs c cycleback Runes',
+      ['^='] = 'gs c cycle Runes',
+      ['%numpad0'] = 'gs c rune',
+    },
+  }
+
   set_main_keybinds()
 end
 
@@ -1582,87 +1628,46 @@ end
 windower.raw_register_event('action', on_action_for_impetus)
 
 function set_main_keybinds()
-  send_command('bind !s gs c faceaway')
-  send_command('bind !d gs c interact')
-  send_command('bind @w gs c toggle RearmingLock')
-  send_command('bind ^` gs c cycle treasuremode')
+  local main_keybinds = job_keybinds['main']
+  if main_keybinds then
+    for key,cmd in pairs(main_keybinds) do
+      send_command(('bind %s %s'):format(key, cmd))
+    end
+  end
 
-  send_command('bind @c gs c toggle CP')
-
-  send_command('bind ^insert gs c weaponset cycle')
-  send_command('bind ^delete gs c weaponset cycleback')
-  send_command('bind !delete gs c weaponset reset')
-
-  send_command('bind ^pageup gs c toyweapon cycle')
-  send_command('bind ^pagedown gs c toyweapon cycleback')
-  send_command('bind !pagedown gs c toyweapon reset')
-
-  send_command('bind @e gs c cycle EnmityMode')
-
-  send_command('bind !` input /ja "Chakra" <me>')
-  send_command('bind !q input /ja "Impetus" <me>')
-  send_command('bind !e input /ja "Footwork" <me>')
-  send_command('bind ^numpad+ input /ja "Boost" <me>')
+  construct_unbind_command()
 end
 
 function set_sub_keybinds()
-  if player.sub_job == 'WAR' then
-    send_command('bind ^numlock input /ja "Defender" <me>')
-    send_command('bind ^numpad/ input /ja "Berserk" <me>')
-    send_command('bind ^numpad* input /ja "Warcry" <me>')
-    send_command('bind ^numpad- input /ja "Aggressor" <me>')
-  elseif player.sub_job == 'SAM' then
-    send_command('bind ^numlock input /ja "Third Eye" <me>')
-    send_command('bind ^numpad/ input /ja "Meditate" <me>')
-    send_command('bind ^numpad* input /ja "Sekkanoki" <me>')
-    send_command('bind ^numpad- input /ja "Hasso" <me>')
-  elseif player.sub_job == 'THF' then
-    send_command('bind ^numpad0 input /ja "Sneak Attack" <me>')
-    send_command('bind ^numpad. input /ja "Trick Attack" <me>')
-  elseif player.sub_job == 'NIN' then
-    send_command('bind !numpad0 input /ma "Utsusemi: Ichi" <me>')
-    send_command('bind !numpad. input /ma "Utsusemi: Ni" <me>')
-  elseif player.sub_job == 'RUN' then
-    send_command('bind ^- gs c cycleback Runes')
-    send_command('bind ^= gs c cycle Runes')
-    send_command('bind %numpad0 gs c rune')
+  local sub_keybinds = job_keybinds[player.sub_job]
+  if sub_keybinds then
+    for key,cmd in pairs(sub_keybinds) do
+      send_command(('bind %s %s'):format(key, cmd))
+    end
   end
 end
 
+function construct_unbind_command()
+  local commands = L{}
+  local main_keybinds = job_keybinds['main']
+  local sub_keybinds = job_keybinds[player.sub_job]
+  if main_keybinds then
+    for key in pairs(main_keybinds) do
+        commands:append(('unbind %s'):format(key))
+    end
+  end
+  if sub_keybinds then
+    for key in pairs(sub_keybinds) do
+        commands:append(('unbind %s'):format(key))
+    end
+  end
+  unbind_command = commands:concat(';')
+end
+
+-- Combining these all into one send_command to avoid race condition with
+-- setting keybinds for the next job.
 function unbind_keybinds()
-  send_command('unbind !s')
-  send_command('unbind !d')
-  send_command('unbind @w')
-  send_command('unbind ^`')
-
-  send_command('unbind @c')
-
-  send_command('unbind ^insert')
-  send_command('unbind ^delete')
-  send_command('unbind !delete')
-
-  send_command('unbind ^pageup')
-  send_command('unbind ^pagedown')
-  send_command('unbind !pagedown')
-
-  send_command('unbind @e')
-
-  send_command('unbind !`')
-  send_command('unbind !q')
-  send_command('unbind !e')
-  send_command('unbind ^numpad+')
-
-  send_command('unbind ^numlock')
-  send_command('unbind ^numpad/')
-  send_command('unbind ^numpad*')
-  send_command('unbind ^numpad-')
-  send_command('unbind ^numpad0')
-  send_command('unbind ^numpad.')
-  send_command('unbind !numpad0')
-  send_command('unbind !numpad.')
-  send_command('unbind ^-')
-  send_command('unbind ^=')
-  send_command('unbind %numpad0')
+  send_command(unbind_command)
 end
 
 function test()

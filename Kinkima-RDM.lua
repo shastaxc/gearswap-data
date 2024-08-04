@@ -296,6 +296,61 @@ function job_setup()
   -- Spells with variable base duration
   enf_variable_duration_spells = S{'Gravity', 'Gravity II', 'Bind', 'Addle', 'Addle II'}
 
+  job_keybinds = {
+    ['main'] = {
+      ['!s'] = 'gs c faceaway',
+      ['!d'] = 'gs c interact',
+      ['@w'] = 'gs c toggle RearmingLock',
+      ['^`'] = 'gs c cycle treasuremode',
+      ['@c'] = 'gs c toggle CP',
+      ['!`'] = 'gs c toggle MagicBurst',
+      ['@s'] = 'gs c cycle SleepMode',
+      ['@n'] = 'gs c toggle NM',
+      ['^insert'] = 'gs c weaponset cycle',
+      ['^delete'] = 'gs c weaponset cycleback',
+      ['!delete'] = 'gs c weaponset reset',
+      ['^home'] = 'gs c toyweapon cycle',
+      ['^end'] = 'gs c toyweapon cycleback',
+      ['!end'] = 'gs c toyweapon reset',
+      ['^pageup'] = 'gs c cycleback ElementalMode',
+      ['^pagedown'] = 'gs c cycle ElementalMode',
+      ['!pagedown'] = 'gs c reset ElementalMode',
+      ['~`'] = 'input /ja "Convert" <me>',
+      ['~z'] = 'input /ja "Composure" <me>',
+      ['~x'] = 'input /ja "Saboteur" <me>',
+      ['!q'] = 'gs c elemental tier3',
+      ['!w'] = 'gs c elemental tier',
+      ['!e'] = 'input /ma "Haste II" <stpc>',
+      ['!r'] = 'input /ma "Dispel" <t>',
+      ['!u'] = 'input /ma Blink <me>',
+      ['!i'] = 'input /ma Stoneskin <me>',
+      ['!o'] = 'input /ma "Phalanx II" <stpc>',
+      ['!p'] = 'input /ma "Aquaveil" <me>',
+      ['!;'] = 'input /ma "Regen II" <stpc>',
+      ['!\''] = 'input /ma "Refresh III" <stpc>',
+      ['!z'] = 'input /ma "Temper II" <me>',
+      ['!x'] = 'gs c elemental enspell',
+      ['^z'] = 'input /ma "Gain-INT" <me>',
+      ['^x'] = 'input /ma "Gain-MND" <me>',
+      ['^c'] = 'input /ma "Gain-STR" <me>',
+      ['^v'] = 'input /ma "Gain-DEX" <me>',
+    },
+    ['SCH'] = {
+      ['^-'] = 'gs c scholar light',
+      ['^='] = 'gs c scholar dark',
+      ['^['] = 'gs c scholar power',
+      ['^\\\\'] = 'gs c scholar cost',
+      ['!['] = 'gs c scholar aoe',
+      ['!\\\\'] = 'gs c scholar speed',
+      ['!c'] = 'gs c elemental storm',
+      ['!/'] = 'input /ma "Klimaform" <me>',
+    },
+    ['NIN'] = {
+      ['!numpad0'] = 'input /ma "Utsusemi: Ichi" <me>',
+      ['!numpad.'] = 'input /ma "Utsusemi: Ni" <me>',
+    },
+  }
+
   set_main_keybinds()
 
   send_command('lua l debuffed')
@@ -2740,116 +2795,46 @@ function select_default_macro_book()
 end
 
 function set_main_keybinds()
-  send_command('bind !s gs c faceaway')
-  send_command('bind !d gs c interact')
-  send_command('bind @w gs c toggle RearmingLock')
-  send_command('bind ^` gs c cycle treasuremode')
+  local main_keybinds = job_keybinds['main']
+  if main_keybinds then
+    for key,cmd in pairs(main_keybinds) do
+      send_command(('bind %s %s'):format(key, cmd))
+    end
+  end
 
-  send_command('bind @c gs c toggle CP')
-  send_command('bind !` gs c toggle MagicBurst')
-  send_command('bind @s gs c cycle SleepMode')
-  send_command('bind @n gs c toggle NM')
-
-  send_command('bind ^insert gs c weaponset cycle')
-  send_command('bind ^delete gs c weaponset cycleback')
-  send_command('bind !delete gs c weaponset reset')
-
-  send_command('bind ^home gs c toyweapon cycle')
-  send_command('bind ^end gs c toyweapon cycleback')
-  send_command('bind !end gs c toyweapon reset')
-
-  send_command('bind ^pageup gs c cycleback ElementalMode')
-  send_command('bind ^pagedown gs c cycle ElementalMode')
-  send_command('bind !pagedown gs c reset ElementalMode')
-
-  send_command('bind ~` input /ja "Convert" <me>')
-  send_command('bind ~z input /ja "Composure" <me>')
-  send_command('bind ~x input /ja "Saboteur" <me>')
-
-  send_command('bind !q gs c elemental tier3')
-  send_command('bind !w gs c elemental tier')
-  send_command('bind !e input /ma "Haste II" <stpc>')
-  send_command('bind !r input /ma "Dispel" <t>')
-  send_command('bind !u input /ma Blink <me>')
-  send_command('bind !i input /ma Stoneskin <me>')
-  send_command('bind !o input /ma "Phalanx II" <stpc>')
-  send_command('bind !p input /ma "Aquaveil" <me>')
-  send_command('bind !; input /ma "Regen II" <stpc>')
-  send_command('bind !\' input /ma "Refresh III" <stpc>')
-  send_command('bind !z input /ma "Temper II" <me>')
-  send_command('bind !x gs c elemental enspell')
-  send_command('bind ^z input /ma "Gain-INT" <me>')
-  send_command('bind ^x input /ma "Gain-MND" <me>')
-  send_command('bind ^c input /ma "Gain-STR" <me>')
-  send_command('bind ^v input /ma "Gain-DEX" <me>')
+  construct_unbind_command()
 end
 
 function set_sub_keybinds()
-  if player.sub_job == 'SCH' then
-    send_command('bind ^- gs c scholar light')
-    send_command('bind ^= gs c scholar dark')
-    send_command('bind ^[ gs c scholar power')
-    send_command('bind ^\\\\ gs c scholar cost')
-    send_command('bind ![ gs c scholar aoe')
-    send_command('bind !\\\\ gs c scholar speed')
-
-    send_command('bind !c gs c elemental storm')
-    send_command('bind !/ input /ma "Klimaform" <me>')
+  local sub_keybinds = job_keybinds[player.sub_job]
+  if sub_keybinds then
+    for key,cmd in pairs(sub_keybinds) do
+      send_command(('bind %s %s'):format(key, cmd))
+    end
   end
 end
 
+function construct_unbind_command()
+  local commands = L{}
+  local main_keybinds = job_keybinds['main']
+  local sub_keybinds = job_keybinds[player.sub_job]
+  if main_keybinds then
+    for key in pairs(main_keybinds) do
+        commands:append(('unbind %s'):format(key))
+    end
+  end
+  if sub_keybinds then
+    for key in pairs(sub_keybinds) do
+        commands:append(('unbind %s'):format(key))
+    end
+  end
+  unbind_command = commands:concat(';')
+end
+
+-- Combining these all into one send_command to avoid race condition with
+-- setting keybinds for the next job.
 function unbind_keybinds()
-  send_command('unbind !s')
-  send_command('unbind !d')
-  send_command('unbind @w')
-  send_command('unbind ^`')
-
-  send_command('unbind @c')
-  send_command('unbind !`')
-  send_command('unbind @s')
-  send_command('unbind @n')
-
-  send_command('unbind ^insert')
-  send_command('unbind ^delete')
-  send_command('unbind !delete')
-
-  send_command('unbind ^home')
-  send_command('unbind ^end')
-  send_command('unbind !end')
-
-  send_command('unbind ^pageup')
-  send_command('unbind ^pagedown')
-  send_command('unbind !pagedown')
-
-  send_command('unbind ~`')
-  send_command('unbind ~z')
-  send_command('unbind ~x')
-
-  send_command('unbind !q')
-  send_command('unbind !w')
-  send_command('unbind !e')
-  send_command('unbind !r')
-  send_command('unbind !u')
-  send_command('unbind !i')
-  send_command('unbind !o')
-  send_command('unbind !p')
-  send_command('unbind !;')
-  send_command('unbind !\'')
-  send_command('unbind !z')
-  send_command('unbind !x')
-  send_command('unbind ^z')
-  send_command('unbind ^x')
-  send_command('unbind ^c')
-  send_command('unbind ^v')
-
-  send_command('unbind ^-')
-  send_command('unbind ^=')
-  send_command('unbind ^[')
-  send_command('unbind ^\\\\')
-  send_command('unbind ![')
-  send_command('unbind !\\\\')
-  send_command('unbind !c')
-  send_command('unbind !/')
+  send_command(unbind_command)
 end
 
 function test()

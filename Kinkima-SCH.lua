@@ -333,6 +333,53 @@ function job_setup()
       'Blizzard IV', 'Blizzard V', 'Thunder IV', 'Thunder V', 'Sleep', 'Sleep II', 'Break', 'Dispel'}
 
   update_active_strategems()
+
+  job_keybinds = {
+    ['main'] = {
+      ['!s'] = 'gs c faceaway',
+      ['!d'] = 'gs c interact',
+      ['@w'] = 'gs c toggle RearmingLock',
+      ['@c'] = 'gs c toggle CP',
+      ['!`'] = 'gs c toggle MagcBurst',
+      ['^insert'] = 'gs c weaponset cycle',
+      ['^delete'] = 'gs c weaponset cycleback',
+      ['!delete'] = 'gs c weaponset reset',
+      ['^pageup'] = 'gs c cycleback ElementalMode',
+      ['^pagedown'] = 'gs c cycle ElementalMode',
+      ['!pagedown'] = 'gs c reset ElementalMode',
+      ['@h'] = 'gs c cycle HelixMode',
+      ['@r'] = 'gs c cycle RegenMode',
+      ['^`'] = 'input /ja Immanence <me>',
+      ['!r'] = 'input /ja "Sublimation" <me>',
+      ['^-'] = 'gs c scholar light',
+      ['^='] = 'gs c scholar dark',
+      ['^['] = 'gs c scholar power',
+      ['^]'] = 'gs c scholar accuracy',
+      ['^\\\\'] = 'gs c scholar cost',
+      ['!['] = 'gs c scholar aoe',
+      ['!]'] = 'gs c scholar duration',
+      ['!\\\\'] = 'gs c scholar speed',
+      ['!q'] = 'gs c elemental tier3',
+      ['!w'] = 'gs c elemental tier',
+      ['!u'] = 'input /ma "Blink" <me>',
+      ['!i'] = 'input /ma "Stoneskin" <me>',
+      ['!p'] = 'input /ma "Aquaveil" <me>',
+      ['!;'] = 'input /ma "Regen V" <stpc>',
+      ['!z'] = 'gs c elemental helix',
+      ['!c'] = 'gs c elemental storm',
+      ['!/'] = 'input /ma "Klimaform" <me>',
+    },
+    ['RDM'] = {
+      ['~`'] = 'input /ja "Convert" <me>',
+      ['!e'] = 'input /ma "Haste" <stpc>',
+      ['!o'] = 'input /ma "Phalanx" <me>',
+      ['!\''] = 'input /ma "Refresh" <stpc>',
+    },
+    ['WHM'] = {
+      ['!e'] = 'input /ma "Haste" <stpc>',
+    },
+  }
+
   set_main_keybinds()
 end
 
@@ -2205,104 +2252,46 @@ function select_default_macro_book()
 end
 
 function set_main_keybinds()
-  send_command('bind !s gs c faceaway')
-  send_command('bind !d gs c interact')
-  send_command('bind @w gs c toggle RearmingLock')
+  local main_keybinds = job_keybinds['main']
+  if main_keybinds then
+    for key,cmd in pairs(main_keybinds) do
+      send_command(('bind %s %s'):format(key, cmd))
+    end
+  end
 
-  send_command('bind @c gs c toggle CP')
-  send_command('bind !` gs c toggle MagicBurst')
-
-  send_command('bind ^insert gs c weaponset cycle')
-  send_command('bind ^delete gs c weaponset cycleback')
-  send_command('bind !delete gs c weaponset reset')
-
-  send_command('bind ^pageup gs c cycleback ElementalMode')
-  send_command('bind ^pagedown gs c cycle ElementalMode')
-  send_command('bind !pagedown gs c reset ElementalMode')
-  
-  send_command('bind @h gs c cycle HelixMode')
-
-  send_command('bind @r gs c cycle RegenMode')
-
-  send_command('bind ^` input /ja Immanence <me>')
-  send_command('bind !r input /ja "Sublimation" <me>')
-  send_command('bind ^- gs c scholar light')
-  send_command('bind ^= gs c scholar dark')
-  send_command('bind ^[ gs c scholar power')
-  send_command('bind ^] gs c scholar accuracy')
-  send_command('bind ^\\\\ gs c scholar cost')
-  send_command('bind ![ gs c scholar aoe')
-  send_command('bind !] gs c scholar duration')
-  send_command('bind !\\\\ gs c scholar speed')
-
-  send_command('bind !q gs c elemental tier3')
-  send_command('bind !w gs c elemental tier')
-  send_command('bind !u input /ma "Blink" <me>')
-  send_command('bind !i input /ma "Stoneskin" <me>')
-  send_command('bind !p input /ma "Aquaveil" <me>')
-  send_command('bind !; input /ma "Regen V" <stpc>')
-  send_command('bind !z gs c elemental helix')
-  send_command('bind !c gs c elemental storm')
-  send_command('bind !/ input /ma "Klimaform" <me>')
+  construct_unbind_command()
 end
 
 function set_sub_keybinds()
-  if player.sub_job == 'RDM' then
-    send_command('bind ~` input /ja "Convert" <me>')
-
-    send_command('bind !e input /ma "Haste" <stpc>')
-    send_command('bind !o input /ma "Phalanx" <me>')
-    send_command('bind !\' input /ma "Refresh" <stpc>')
-  elseif player.sub_job == 'WHM' then
-    send_command('bind !e input /ma "Haste" <stpc>')
+  local sub_keybinds = job_keybinds[player.sub_job]
+  if sub_keybinds then
+    for key,cmd in pairs(sub_keybinds) do
+      send_command(('bind %s %s'):format(key, cmd))
+    end
   end
 end
 
+function construct_unbind_command()
+  local commands = L{}
+  local main_keybinds = job_keybinds['main']
+  local sub_keybinds = job_keybinds[player.sub_job]
+  if main_keybinds then
+    for key in pairs(main_keybinds) do
+        commands:append(('unbind %s'):format(key))
+    end
+  end
+  if sub_keybinds then
+    for key in pairs(sub_keybinds) do
+        commands:append(('unbind %s'):format(key))
+    end
+  end
+  unbind_command = commands:concat(';')
+end
+
+-- Combining these all into one send_command to avoid race condition with
+-- setting keybinds for the next job.
 function unbind_keybinds()
-  send_command('unbind !s')
-  send_command('unbind !d')
-  send_command('unbind @w')
-
-  send_command('unbind @c')
-  send_command('unbind !`')
-
-  send_command('unbind ^insert')
-  send_command('unbind ^delete')
-  send_command('unbind !delete')
-
-  send_command('unbind ^pageup')
-  send_command('unbind ^pagedown')
-  send_command('unbind !pagedown')
-
-  send_command('unbind @h')
-
-  send_command('unbind @r')
-
-  send_command('unbind ^`')
-  send_command('unbind !r')
-  send_command('unbind ^-')
-  send_command('unbind ^=')
-  send_command('unbind ^[')
-  send_command('unbind ^]')
-  send_command('unbind ^\\\\')
-  send_command('unbind ![')
-  send_command('unbind !]')
-  send_command('unbind !\\\\')
-
-  send_command('unbind !q')
-  send_command('unbind !w')
-  send_command('unbind !u')
-  send_command('unbind !i')
-  send_command('unbind !p')
-  send_command('unbind !;')
-  send_command('unbind !z')
-  send_command('unbind !c')
-  send_command('unbind !/')
-
-  send_command('unbind ~`')
-  send_command('unbind !e')
-  send_command('unbind !o')
-  send_command('unbind !\'')
+  send_command(unbind_command)
 end
 
 function test()

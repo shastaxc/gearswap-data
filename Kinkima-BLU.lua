@@ -392,7 +392,46 @@ function job_setup()
   unbridled_spells = S{'Absolute Terror','Bilgestorm','Blistering Roar','Bloodrake','Carcharian Verve','Cesspool',
       'Crashing Thunder','Cruel Joke','Droning Whirlwind','Gates of Hades','Harden Shell','Mighty Guard',
       'Polar Roar','Pyric Bulwark','Tearing Gust','Thunderbolt','Tourbillion','Uproot'}
-  
+
+  job_keybinds = {
+    ['main'] = {
+      ['!s'] = 'gs c faceaway',
+      ['!d'] = 'gs c interact',
+      ['^`'] = 'gs c cycle treasuremode',
+      ['@c'] = 'gs c toggle CP',
+      ['^f8'] = 'gs c toggle AttCapped',
+      ['!`'] = 'gs c toggle MagicBurst',
+      ['^l'] = 'gs c toggle Learning',
+      ['^insert'] = 'gs c weaponset cycle',
+      ['^delete'] = 'gs c weaponset cycleback',
+      ['!delete'] = 'gs c weaponset reset',
+      ['^pageup'] = 'gs c toyweapon cycle',
+      ['^pagedown'] = 'gs c toyweapon cycleback',
+      ['!pagedown'] = 'gs c toyweapon reset',
+      ['^-'] = 'input /ja "Chain Affinity" <me>',
+      ['^='] = 'input /ja "Burst Affinity" <me>',
+      ['^['] = 'input /ja "Efflux" <me>',
+      ['!['] = 'input /ja "Diffusion" <me>',
+      ['!]'] = 'input /ja "Unbridled Learning" <me>',
+      ['!q'] = 'input /ma "Occultation" <me>',
+      ['!w'] = 'input /ma "Cocoon" <me>',
+      ['!e'] = 'input /ma "Erratic Flutter" <me>',
+      ['!\''] = 'input /ma "Battery Charge" <me>',
+    },
+    ['RDM'] = {
+      ['~`'] = 'input /ja "Convert" <me>',
+      ['!i'] = 'input /ma Stoneskin <me>',
+      ['!o'] = 'input /ma Phalanx <me>',
+      ['!p'] = 'input /ma Aquaveil <me>',
+    },
+    ['WAR'] = {
+      ['^numlock'] = 'input /ja "Defender" <me>',
+      ['^numpad/'] = 'input /ja "Berserk" <me>',
+      ['^numpad*'] = 'input /ja "Warcry" <me>',
+      ['^numpad-'] = 'input /ja "Aggressor" <me>',
+    },
+  }
+
   set_main_keybinds()
 end
 
@@ -1922,87 +1961,46 @@ function select_default_macro_book()
 end
 
 function set_main_keybinds()
-  send_command('bind !s gs c faceaway')
-  send_command('bind !d gs c interact')
-  send_command('bind ^` gs c cycle treasuremode')
+  local main_keybinds = job_keybinds['main']
+  if main_keybinds then
+    for key,cmd in pairs(main_keybinds) do
+      send_command(('bind %s %s'):format(key, cmd))
+    end
+  end
 
-  send_command('bind @c gs c toggle CP')
-  send_command('bind ^f8 gs c toggle AttCapped')
-  send_command('bind !` gs c toggle MagicBurst')
-  send_command('bind ^l gs c toggle Learning')
-
-  send_command('bind ^insert gs c weaponset cycle')
-  send_command('bind ^delete gs c weaponset cycleback')
-  send_command('bind !delete gs c weaponset reset')
-
-  send_command('bind ^pageup gs c toyweapon cycle')
-  send_command('bind ^pagedown gs c toyweapon cycleback')
-  send_command('bind !pagedown gs c toyweapon reset')
-
-  send_command('bind ^- input /ja "Chain Affinity" <me>')
-  send_command('bind ^= input /ja "Burst Affinity" <me>')
-  send_command('bind ^[ input /ja "Efflux" <me>')
-  send_command('bind ![ input /ja "Diffusion" <me>')
-  send_command('bind !] input /ja "Unbridled Learning" <me>')
-
-  send_command('bind !q input /ma "Occultation" <me>')
-  send_command('bind !w input /ma "Cocoon" <me>')
-  send_command('bind !e input /ma "Erratic Flutter" <me>')
-  send_command('bind !\' input /ma "Battery Charge" <me>')
+  construct_unbind_command()
 end
 
 function set_sub_keybinds()
-  if player.sub_job == 'RDM' then
-    send_command('bind ~` input /ja "Convert" <me>')
-
-    send_command('bind !i input /ma Stoneskin <me>')
-    send_command('bind !o input /ma Phalanx <me>')
-    send_command('bind !p input /ma Aquaveil <me>')
-  elseif player.sub_job == 'WAR' then
-    send_command('bind ^numlock input /ja "Defender" <me>')
-    send_command('bind ^numpad/ input /ja "Berserk" <me>')
-    send_command('bind ^numpad* input /ja "Warcry" <me>')
-    send_command('bind ^numpad- input /ja "Aggressor" <me>')
+  local sub_keybinds = job_keybinds[player.sub_job]
+  if sub_keybinds then
+    for key,cmd in pairs(sub_keybinds) do
+      send_command(('bind %s %s'):format(key, cmd))
+    end
   end
 end
 
+function construct_unbind_command()
+  local commands = L{}
+  local main_keybinds = job_keybinds['main']
+  local sub_keybinds = job_keybinds[player.sub_job]
+  if main_keybinds then
+    for key in pairs(main_keybinds) do
+        commands:append(('unbind %s'):format(key))
+    end
+  end
+  if sub_keybinds then
+    for key in pairs(sub_keybinds) do
+        commands:append(('unbind %s'):format(key))
+    end
+  end
+  unbind_command = commands:concat(';')
+end
+
+-- Combining these all into one send_command to avoid race condition with
+-- setting keybinds for the next job.
 function unbind_keybinds()
-  send_command('unbind !s')
-  send_command('unbind !d')
-  send_command('unbind ^`')
-
-  send_command('unbind @c')
-  send_command('unbind ^f8')
-  send_command('unbind !`')
-  send_command('unbind ^l')
-
-  send_command('unbind ^insert')
-  send_command('unbind ^delete')
-  send_command('unbind !delete')
-
-  send_command('unbind ^pageup')
-  send_command('unbind ^pagedown')
-  send_command('unbind !pagedown')
-
-  send_command('unbind ^-')
-  send_command('unbind ^=')
-  send_command('unbind ^[')
-  send_command('unbind ![')
-  send_command('unbind !]')
-
-  send_command('unbind !q')
-  send_command('unbind !w')
-  send_command('unbind !e')
-  send_command('unbind !\'')
-
-  send_command('unbind ~`')
-  send_command('unbind !i')
-  send_command('unbind !o')
-  send_command('unbind !p')
-  send_command('unbind ^numlock')
-  send_command('unbind ^numpad/')
-  send_command('unbind ^numpad*')
-  send_command('unbind ^numpad-')
+  send_command(unbind_command)
 end
 
 function test()

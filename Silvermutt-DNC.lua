@@ -233,6 +233,65 @@ function job_setup()
       'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
   state.RangedWeaponSet = M{['description']='Ranged Weapon Set', 'None', 'Throwing', 'Pulling'}
 
+  job_keybinds = {
+    ['main'] = {
+      ['!s'] = 'gs c faceaway',
+      ['!d'] = 'gs c interact',
+      ['@w'] = 'gs c toggle RearmingLock',
+      ['^`'] = 'gs c cycle treasuremode',
+      ['@c'] = 'gs c toggle CP',
+      ['^f8'] = 'gs c toggle AttCapped',
+      ['^insert'] = 'gs c weaponset cycle',
+      ['^delete'] = 'gs c weaponset cycleback',
+      ['!delete'] = 'gs c weaponset reset',
+      ['^home'] = 'gs c rangedweaponset cycle',
+      ['^end'] = 'gs c rangedweaponset cycleback',
+      ['!end'] = 'gs c rangedweaponset reset',
+      ['^pageup'] = 'gs c toyweapon cycle',
+      ['^pagedown'] = 'gs c toyweapon cycleback',
+      ['!pagedown'] = 'gs c toyweapon reset',
+      ['^-'] = 'gs c cycleback mainstep',
+      ['^='] = 'gs c cycle mainstep',
+      ['!-'] = 'gs c cycleback altstep',
+      ['!='] = 'gs c cycle altstep',
+      ['!`'] = 'input /ja "Chocobo Jig II" <me>',
+      ['!q'] = 'input /ja "Saber Dance" <me>',
+      ['!w'] = 'input /ja "Reverse Flourish" <me>',
+      ['!e'] = 'input /ja "Contradance" <me>',
+      ['^numpad+'] = 'input /ja "Climactic Flourish" <me>',
+      ['^numpadenter'] = 'input /ja "Building Flourish" <me>',
+      ['%numpad0'] = 'gs c step',
+      ['%numpad.'] = 'gs c altstep',
+      ['%e'] = 'input /ra <t>',
+    },
+    ['WAR'] = {
+      ['^numlock'] = 'input /ja "Defender" <me>',
+      ['^numpad/'] = 'input /ja "Berserk" <me>',
+      ['^numpad*'] = 'input /ja "Warcry" <me>',
+      ['^numpad-'] = 'input /ja "Aggressor" <me>',
+    },
+    ['SAM'] = {
+      ['^numlock'] = 'input /ja "Third Eye" <me>',
+      ['^numpad/'] = 'input /ja "Meditate" <me>',
+      ['^numpad*'] = 'input /ja "Sekkanoki" <me>',
+      ['^numpad-'] = 'input /ja "Hasso" <me>',
+    },
+    ['THF'] = {
+      ['^numpad0'] = 'input /ja "Sneak Attack" <me>',
+      ['^numpad.'] = 'input /ja "Trick Attack" <me>',
+    },
+    ['NIN'] = {
+      ['!numpad0'] = 'input /ma "Utsusemi: Ichi" <me>',
+      ['!numpad.'] = 'input /ma "Utsusemi: Ni" <me>',
+    },
+    ['DRG'] = {
+      ['^numlock'] = 'input /ja "Ancient Circle" <me>',
+      ['^numpad/'] = 'input /ja "Jump" <t>',
+      ['^numpad*'] = 'input /ja "High Jump" <t>',
+      ['^numpad-'] = 'input /ja "Super Jump" <t>',
+    },
+  }
+
   set_main_keybinds()
 end
 
@@ -2008,113 +2067,46 @@ function select_default_macro_book()
 end
 
 function set_main_keybinds()
-  send_command('bind !s gs c faceaway')
-  send_command('bind !d gs c interact')
-  send_command('bind @w gs c toggle RearmingLock')
-  send_command('bind ^` gs c cycle treasuremode')
+  local main_keybinds = job_keybinds['main']
+  if main_keybinds then
+    for key,cmd in pairs(main_keybinds) do
+      send_command(('bind %s %s'):format(key, cmd))
+    end
+  end
 
-  send_command('bind @c gs c toggle CP')
-  send_command('bind ^f8 gs c toggle AttCapped')
-
-  send_command('bind ^insert gs c weaponset cycle')
-  send_command('bind ^delete gs c weaponset cycleback')
-  send_command('bind !delete gs c weaponset reset')
-
-  send_command('bind ^home gs c rangedweaponset cycle')
-  send_command('bind ^end gs c rangedweaponset cycleback')
-  send_command('bind !end gs c rangedweaponset reset')
-
-  send_command('bind ^pageup gs c toyweapon cycle')
-  send_command('bind ^pagedown gs c toyweapon cycleback')
-  send_command('bind !pagedown gs c toyweapon reset')
-  
-  send_command('bind ^- gs c cycleback mainstep')
-  send_command('bind ^= gs c cycle mainstep')
-
-  send_command('bind !- gs c cycleback altstep')
-  send_command('bind != gs c cycle altstep')
-
-  send_command('bind !` input /ja "Chocobo Jig II" <me>')
-  send_command('bind !q input /ja "Saber Dance" <me>')
-  send_command('bind !w input /ja "Reverse Flourish" <me>')
-  send_command('bind !e input /ja "Contradance" <me>')
-  send_command('bind ^numpad+ input /ja "Climactic Flourish" <me>')
-  send_command('bind ^numpadenter input /ja "Building Flourish" <me>')
-  send_command('bind %numpad0 gs c step')
-  send_command('bind %numpad. gs c altstep')
-  send_command('bind %e input /ra <t>')
+  construct_unbind_command()
 end
 
 function set_sub_keybinds()
-  if player.sub_job == 'WAR' then
-    send_command('bind ^numlock input /ja "Defender" <me>')
-    send_command('bind ^numpad/ input /ja "Berserk" <me>')
-    send_command('bind ^numpad* input /ja "Warcry" <me>')
-    send_command('bind ^numpad- input /ja "Aggressor" <me>')
-  elseif player.sub_job == 'SAM' then
-    send_command('bind ^numlock input /ja "Third Eye" <me>')
-    send_command('bind ^numpad/ input /ja "Meditate" <me>')
-    send_command('bind ^numpad* input /ja "Sekkanoki" <me>')
-    send_command('bind ^numpad- input /ja "Hasso" <me>')
-  elseif player.sub_job == 'THF' then
-    send_command('bind ^numpad0 input /ja "Sneak Attack" <me>')
-    send_command('bind ^numpad. input /ja "Trick Attack" <me>')
-  elseif player.sub_job == 'NIN' then
-    send_command('bind !numpad0 input /ma "Utsusemi: Ichi" <me>')
-    send_command('bind !numpad. input /ma "Utsusemi: Ni" <me>')
-  elseif player.sub_job == 'DRG' then
-    send_command('bind ^numlock input /ja "Ancient Circle" <me>')
-    send_command('bind ^numpad/ input /ja "Jump" <t>')
-    send_command('bind ^numpad* input /ja "High Jump" <t>')
-    send_command('bind ^numpad- input /ja "Super Jump" <t>')
+  local sub_keybinds = job_keybinds[player.sub_job]
+  if sub_keybinds then
+    for key,cmd in pairs(sub_keybinds) do
+      send_command(('bind %s %s'):format(key, cmd))
+    end
   end
 end
 
+function construct_unbind_command()
+  local commands = L{}
+  local main_keybinds = job_keybinds['main']
+  local sub_keybinds = job_keybinds[player.sub_job]
+  if main_keybinds then
+    for key in pairs(main_keybinds) do
+        commands:append(('unbind %s'):format(key))
+    end
+  end
+  if sub_keybinds then
+    for key in pairs(sub_keybinds) do
+        commands:append(('unbind %s'):format(key))
+    end
+  end
+  unbind_command = commands:concat(';')
+end
+
+-- Combining these all into one send_command to avoid race condition with
+-- setting keybinds for the next job.
 function unbind_keybinds()
-  send_command('unbind !s')
-  send_command('unbind !d')
-  send_command('unbind @w')
-  send_command('unbind ^`')
-
-  send_command('unbind @c')
-  send_command('unbind ^f8')
-
-  send_command('unbind ^insert')
-  send_command('unbind ^delete')
-  send_command('unbind !delete')
-
-  send_command('unbind ^home')
-  send_command('unbind ^end')
-  send_command('unbind !end')
-
-  send_command('unbind ^pageup')
-  send_command('unbind ^pagedown')
-  send_command('unbind !pagedown')
-
-  send_command('unbind ^-')
-  send_command('unbind ^=')
-
-  send_command('unbind !-')
-  send_command('unbind !=')
-
-  send_command('unbind !`')
-  send_command('unbind !q')
-  send_command('unbind !w')
-  send_command('unbind !e')
-  send_command('unbind ^numpad+')
-  send_command('unbind ^numpadenter')
-  send_command('unbind %numpad0')
-  send_command('unbind %numpad.')
-  send_command('unbind %e')
-
-  send_command('unbind ^numlock')
-  send_command('unbind ^numpad/')
-  send_command('unbind ^numpad*')
-  send_command('unbind ^numpad-')
-  send_command('unbind ^numpad0')
-  send_command('unbind ^numpad.')
-  send_command('unbind !numpad0')
-  send_command('unbind !numpad.')
+  send_command(unbind_command)
 end
 
 function test()

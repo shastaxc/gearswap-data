@@ -127,6 +127,40 @@ function job_setup()
   state.BattleMode = M(true, 'Battle Mode')
   state.WeaponLock = M(false, 'Weapon Lock')
 
+  job_keybinds = {
+    ['main'] = {
+      ['!s'] = 'gs c faceaway',
+      ['!d'] = 'gs c interact',
+      ['@w'] = 'gs c toggle WeaponLock',
+      ['@c'] = 'gs c toggle CP',
+      ['^b'] = 'gs c toggle BattleMode',
+      ['^insert'] = 'gs c weaponset cycle',
+      ['^delete'] = 'gs c weaponset cycleback',
+      ['!delete'] = 'gs c weaponset reset',
+      ['^`'] = 'gs c cycle SongMode',
+      ['^backspace'] = 'gs c cycle SongTier',
+      ['^['] = 'gs c cycleback Etude',
+      ['^]'] = 'gs c cycle Etude',
+      ['^;'] = 'gs c cycleback Carol',
+      ['^\''] = 'gs c cycle Carol',
+      ['^,'] = 'gs c cycleback Threnody',
+      ['^.'] = 'gs c cycle Threnody',
+      ['@`'] = 'gs c cycle LullabyMode',
+      ['!p'] = 'input /ja "Pianissimo" <me>',
+      ['!`'] = 'input /ma "Chocobo Mazurka" <me>',
+    },
+    ['NIN'] = {
+      ['!numpad0'] = 'input /ma "Utsusemi: Ichi" <me>',
+      ['!numpad.'] = 'input /ma "Utsusemi: Ni" <me>',
+    },
+    ['WHM'] = {
+      ['!e'] = 'input /ma "Haste" <stpc>',
+      ['!u'] = 'input /ma "Blink" <me>',
+      ['!i'] = 'input /ma "Stoneskin" <me>',
+      ['!p'] = 'input /ma "Aquaveil" <me>',
+    },
+  }
+
   set_main_keybinds()
 end
 
@@ -1650,70 +1684,46 @@ function set_lockstyle()
 end
 
 function set_main_keybinds()
-  send_command('bind !s gs c faceaway')
-  send_command('bind !d gs c interact')
-  send_command('bind @w gs c toggle WeaponLock')
+  local main_keybinds = job_keybinds['main']
+  if main_keybinds then
+    for key,cmd in pairs(main_keybinds) do
+      send_command(('bind %s %s'):format(key, cmd))
+    end
+  end
 
-  send_command('bind @c gs c toggle CP')
-  send_command('bind ^b gs c toggle BattleMode')
-
-  send_command('bind ^insert gs c weaponset cycle')
-  send_command('bind ^delete gs c weaponset cycleback')
-  send_command('bind !delete gs c weaponset reset')
-
-  send_command('bind ^` gs c cycle SongMode')
-
-  send_command('bind ^backspace gs c cycle SongTier')
-
-  send_command('bind ^[ gs c cycleback Etude')
-  send_command('bind ^] gs c cycle Etude')
-
-  send_command('bind ^; gs c cycleback Carol')
-  send_command('bind ^\' gs c cycle Carol')
-
-  send_command('bind ^, gs c cycleback Threnody')
-  send_command('bind ^. gs c cycle Threnody')
-
-  send_command('bind @` gs c cycle LullabyMode')
-
-  send_command('bind !p input /ja "Pianissimo" <me>')
-
-  send_command('bind !` input /ma "Chocobo Mazurka" <me>')
+  construct_unbind_command()
 end
 
 function set_sub_keybinds()
+  local sub_keybinds = job_keybinds[player.sub_job]
+  if sub_keybinds then
+    for key,cmd in pairs(sub_keybinds) do
+      send_command(('bind %s %s'):format(key, cmd))
+    end
+  end
 end
 
+function construct_unbind_command()
+  local commands = L{}
+  local main_keybinds = job_keybinds['main']
+  local sub_keybinds = job_keybinds[player.sub_job]
+  if main_keybinds then
+    for key in pairs(main_keybinds) do
+        commands:append(('unbind %s'):format(key))
+    end
+  end
+  if sub_keybinds then
+    for key in pairs(sub_keybinds) do
+        commands:append(('unbind %s'):format(key))
+    end
+  end
+  unbind_command = commands:concat(';')
+end
+
+-- Combining these all into one send_command to avoid race condition with
+-- setting keybinds for the next job.
 function unbind_keybinds()
-  send_command('unbind !s')
-  send_command('unbind !d')
-  send_command('unbind @w')
-
-  send_command('unbind @c')
-  send_command('unbind ^b')
-
-  send_command('unbind ^delete')
-  send_command('unbind ^insert')
-  send_command('unbind !delete')
-
-  send_command('unbind ^`')
-
-  send_command('unbind ^backspace')
-
-  send_command('unbind ^[')
-  send_command('unbind ^]')
-
-  send_command('unbind ^;')
-  send_command('unbind ^\'')
-
-  send_command('unbind ^,')
-  send_command('unbind ^.')
-
-  send_command('unbind @`')
-
-  send_command('unbind !p')
-
-  send_command('unbind !`')
+  send_command(unbind_command)
 end
 
 function test()

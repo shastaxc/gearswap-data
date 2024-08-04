@@ -308,7 +308,65 @@ function job_setup()
   state.AttackMode = M{['description']='Attack', 'Uncapped', 'Capped'}
   state.CP = M(false, 'Capacity Points Mode')
   state.Runes = M{['description']='Runes', 'Ignis', 'Gelus', 'Flabra', 'Tellus', 'Sulpor', 'Unda', 'Lux', 'Tenebrae'}
-  
+
+  job_keybinds = {
+    ['main'] = {
+      ['!s'] = 'gs c faceaway',
+      ['!d'] = 'gs c interact',
+      ['@w'] = 'gs c toggle RearmingLock',
+      ['@c'] = 'gs c toggle CP',
+      ['^f8'] = 'gs c toggle AttCapped',
+      ['@d'] = 'gs c toggle DeathResist',
+      ['^insert'] = 'gs c weaponset cycle',
+      ['^delete'] = 'gs c weaponset cycleback',
+      ['!delete'] = 'gs c weaponset reset',
+      ['^home'] = 'gs c subweaponset cycle',
+      ['^end'] = 'gs c subweaponset cycleback',
+      ['!end'] = 'gs c subweaponset reset',
+      ['^-'] = 'gs c cycleback Runes',
+      ['^='] = 'gs c cycle Runes',
+      ['!`'] = 'input /ja "Vivacious Pulse" <me>',
+      ['%numpad0'] = 'gs c rune',
+      ['!u'] = 'input /ma "Blink" <me>',
+      ['!i'] = 'input /ma "Stoneskin" <me>',
+      ['!o'] = 'input /ma "Phalanx" <me>',
+      ['!p'] = 'input /ma "Aquaveil" <me>',
+      ['!;'] = 'input /ma "Regen IV" <stpc>',
+      ['!\''] = 'input /ma "Refresh" <stpc>',
+      ['!z'] = 'input /ma "Temper" <me>',
+      ['!,'] = 'input /ma "Blaze Spikes" <me>',
+      ['!.'] = 'input /ma "Ice Spikes" <me>',
+      ['!/'] = 'input /ma "Shock Spikes" <me>',
+    },
+    ['WAR'] = {
+      ['^numlock'] = 'input /ja "Defender" <me>',
+      ['^numpad/'] = 'input /ja "Berserk" <me>',
+      ['^numpad*'] = 'input /ja "Warcry" <me>',
+      ['^numpad-'] = 'input /ja "Aggressor" <me>',
+    },
+    ['BLU'] = {
+      ['!q'] = 'input /ma "Wild Carrot" <stpc>',
+      ['!w'] = 'input /ma "Cocoon" <me>',
+      ['!e'] = 'input /ma "Refueling" <me>',
+    },
+    ['DRK'] = {
+      ['^numlock'] = 'input /ja "Weapon Bash" <t>',
+      ['^numpad/'] = 'input /ja "Last Resort" <me>',
+      ['^numpad*'] = 'input /ja "Arcane Circle" <me>',
+      ['^numpad-'] = 'input /ja "Souleater" <me>',
+    },
+    ['SAM'] = {
+      ['^numlock'] = 'input /ja "Thrd Eye" <me>',
+      ['^numpad/'] = 'input /ja "Meditate" <me>',
+      ['^numpad*'] = 'input /ja "Sekkanoki" <me>',
+      ['^numpad-'] = 'input /ja "Hasso" <me>',
+    },
+    ['NIN'] = {
+      ['!numpad0'] = 'input /ma "Utsusemi: Ichi" <me>',
+      ['!numpad.'] = 'input /ma "Utsusemi: Ni" <me>',
+    },
+  }
+
   set_main_keybinds()
 end
 
@@ -2253,109 +2311,46 @@ function select_default_macro_book()
 end
 
 function set_main_keybinds()
-  send_command('bind !s gs c faceaway')
-  send_command('bind !d gs c interact')
-  send_command('bind @w gs c toggle RearmingLock')
+  local main_keybinds = job_keybinds['main']
+  if main_keybinds then
+    for key,cmd in pairs(main_keybinds) do
+      send_command(('bind %s %s'):format(key, cmd))
+    end
+  end
 
-  send_command('bind @c gs c toggle CP')
-  send_command('bind ^f8 gs c toggle AttCapped')
-  send_command('bind @d gs c toggle DeathResist')
-
-  send_command('bind ^insert gs c weaponset cycle')
-  send_command('bind ^delete gs c weaponset cycleback')
-  send_command('bind !delete gs c weaponset reset')
-
-  send_command('bind ^home gs c subweaponset cycle')
-  send_command('bind ^end gs c subweaponset cycleback')
-  send_command('bind !end gs c subweaponset reset')
-
-  send_command('bind ^- gs c cycleback Runes')
-  send_command('bind ^= gs c cycle Runes')
-
-  send_command('bind !` input /ja "Vivacious Pulse" <me>')
-  send_command('bind %numpad0 gs c rune')
-
-  send_command('bind !u input /ma "Blink" <me>')
-  send_command('bind !i input /ma "Stoneskin" <me>')
-  send_command('bind !o input /ma "Phalanx" <me>')
-  send_command('bind !p input /ma "Aquaveil" <me>')
-  send_command('bind !; input /ma "Regen IV" <stpc>')
-  send_command('bind !\' input /ma "Refresh" <stpc>')
-  send_command('bind !z input /ma "Temper" <me>')
-  send_command('bind !, input /ma "Blaze Spikes" <me>')
-  send_command('bind !. input /ma "Ice Spikes" <me>')
-  send_command('bind !/ input /ma "Shock Spikes" <me>')
+  construct_unbind_command()
 end
 
 function set_sub_keybinds()
-  if player.sub_job == 'BLU' then
-    send_command('bind !q input /ma "Wild Carrot" <stpc>')
-    send_command('bind !w input /ma "Cocoon" <me>')
-    send_command('bind !e input /ma "Refueling" <me>')
-  elseif player.sub_job == 'WAR' then
-    send_command('bind ^numlock input /ja "Defender" <me>')
-    send_command('bind ^numpad/ input /ja "Berserk" <me>')
-    send_command('bind ^numpad* input /ja "Warcry" <me>')
-    send_command('bind ^numpad- input /ja "Aggressor" <me>')
-  elseif player.sub_job == 'DRK' then
-    send_command('bind ^numlock input /ja "Weapon Bash" <t>')
-    send_command('bind ^numpad/ input /ja "Last Resort" <me>')
-    send_command('bind ^numpad* input /ja "Arcane Circle" <me>')
-    send_command('bind ^numpad- input /ja "Souleater" <me>')
-  elseif player.sub_job == 'SAM' then
-    send_command('bind ^numlock input /ja "Third Eye" <me>')
-    send_command('bind ^numpad/ input /ja "Meditate" <me>')
-    send_command('bind ^numpad* input /ja "Sekkanoki" <me>')
-    send_command('bind ^numpad- input /ja "Hasso" <me>')
-  elseif player.sub_job == 'NIN' then
-    send_command('bind !numpad0 input /ma "Utsusemi: Ichi" <me>')
-    send_command('bind !numpad. input /ma "Utsusemi: Ni" <me>')
+  local sub_keybinds = job_keybinds[player.sub_job]
+  if sub_keybinds then
+    for key,cmd in pairs(sub_keybinds) do
+      send_command(('bind %s %s'):format(key, cmd))
+    end
   end
 end
 
+function construct_unbind_command()
+  local commands = L{}
+  local main_keybinds = job_keybinds['main']
+  local sub_keybinds = job_keybinds[player.sub_job]
+  if main_keybinds then
+    for key in pairs(main_keybinds) do
+        commands:append(('unbind %s'):format(key))
+    end
+  end
+  if sub_keybinds then
+    for key in pairs(sub_keybinds) do
+        commands:append(('unbind %s'):format(key))
+    end
+  end
+  unbind_command = commands:concat(';')
+end
+
+-- Combining these all into one send_command to avoid race condition with
+-- setting keybinds for the next job.
 function unbind_keybinds()
-  send_command('unbind !s')
-  send_command('unbind !d')
-  send_command('unbind @w')
-
-  send_command('unbind @c')
-  send_command('unbind ^f8')
-  send_command('unbind @d')
-
-  send_command('unbind ^insert')
-  send_command('unbind ^delete')
-  send_command('unbind !delete')
-
-  send_command('unbind ^home')
-  send_command('unbind ^end')
-  send_command('unbind !end')
-
-  send_command('unbind ^-')
-  send_command('unbind ^=')
-
-  send_command('unbind !`')
-  send_command('unbind %numpad0')
-
-  send_command('unbind !u')
-  send_command('unbind !i')
-  send_command('unbind !o')
-  send_command('unbind !p')
-  send_command('unbind !;')
-  send_command('unbind !\'')
-  send_command('unbind !z')
-  send_command('unbind !,')
-  send_command('unbind !.')
-  send_command('unbind !/')
-
-  send_command('unbind !q')
-  send_command('unbind !w')
-  send_command('unbind !e')
-  send_command('unbind ^numlock')
-  send_command('unbind ^numpad/')
-  send_command('unbind ^numpad*')
-  send_command('unbind ^numpad-')
-  send_command('unbind !numpad0')
-  send_command('unbind !numpad.')
+  send_command(unbind_command)
 end
 
 function test()
