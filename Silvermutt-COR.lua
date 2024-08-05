@@ -262,12 +262,12 @@ function job_setup()
       ['@c'] = 'gs c toggle CP',
       ['@`'] = 'gs c toggle LuzafRing',
       ['^/'] = 'gs c toggle critmode',
+      ['^insert'] = 'gs c weaponset cycle',
+      ['^delete'] = 'gs c weaponset cycleback',
+      ['!delete'] = 'gs c weaponset reset',
       ['^pageup'] = 'gs c toyweapon cycle',
       ['^pagedown'] = 'gs c toyweapon cycleback',
       ['!pagedown'] = 'gs c toyweapon reset',
-      ['^insert'] = 'gs c cycle WeaponSet',
-      ['^delete'] = 'gs c cycleback WeaponSet',
-      ['!delete'] = 'gs c reset WeaponSet',
       ['^\\\\'] = 'gs c cycle QDMode',
       ['^-'] = 'gs c cycleback mainqd',
       ['^='] = 'gs c cycle mainqd',
@@ -2120,7 +2120,7 @@ function job_aftercast(spell, action, spellMap, eventArgs)
 
   if spell.type == 'CorsairRoll' then
     roll_timer = nil
-    equip_weapons()
+    equip(select_weapons())
   elseif spell.english == 'Light Shot' then
     send_command('@timers c "Light Shot ['..spell.target.name..']" 60 down abilities/00195.png')
   end
@@ -2141,11 +2141,6 @@ function job_buff_change(buff,gain)
   end
 end
 
-function job_state_change(stateField, newValue, oldValue)
-  if stateField == 'Weapon Set' then
-    equip_weapons()
-  end
-end
 
 -------------------------------------------------------------------------------------------------------------------
 -- User code that supplements standard library decisions.
@@ -2160,7 +2155,7 @@ function job_handle_equipping_gear(playerStatus, eventArgs)
 end
 
 function update_combat_form()
-  if dw_needed <= 0 or not is_dual_wielding() then
+  if dw_needed <= 0 or not silibs.is_dual_wielding() then
     state.CombatForm:reset()
   else
     if dw_needed > 0 and dw_needed <= 11 then
@@ -2360,18 +2355,6 @@ end
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
 
--- Check sub slot to see if you currently have equipped weapons in a dual wielding configuration
-function is_dual_wielding()
-  local sub_weapon_name = player and player.equipment and player.equipment.sub
-  if sub_weapon_name then
-    local item = res.items:with('en', sub_weapon_name)
-    if item and item.category == 'Weapon' then
-      return true
-    end
-  end
-  return false
-end
-
 function update_idle_groups()
   local isRegening = classes.CustomIdleGroups:contains('Regen')
   local isRefreshing = classes.CustomIdleGroups:contains('Refresh')
@@ -2419,12 +2402,26 @@ function job_self_command(cmdParams, eventArgs)
 
     send_command('@input /ja "'..qd..' Shot" <'..target..'>')
   elseif cmdParams[1] == 'equipweapons' then
-    equip_weapons()
+    equip(select_weapons())
+  elseif cmdParams[1] == 'weaponset' then
+    if cmdParams[2] == 'cycle' then
+      cycle_weapons('forward')
+    elseif cmdParams[2] == 'cycleback' then
+      cycle_weapons('back')
+    elseif cmdParams[2] == 'current' then
+      cycle_weapons('current')
+    elseif cmdParams[2] == 'set' and cmdParams[3] then
+      cycle_weapons('set', cmdParams[3])
+    elseif cmdParams[2] == 'reset' then
+      cycle_weapons('reset')
+    end
   elseif cmdParams[1] == 'toyweapon' then
     if cmdParams[2] == 'cycle' then
       cycle_toy_weapons('forward')
     elseif cmdParams[2] == 'cycleback' then
       cycle_toy_weapons('back')
+    elseif cmdParams[2] == 'set' and cmdParams[3] then
+      cycle_toy_weapons('set', cmdParams[3])
     elseif cmdParams[2] == 'reset' then
       cycle_toy_weapons('reset')
     end
@@ -2507,22 +2504,69 @@ windower.raw_register_event('incoming chunk', function(id, data, modified, injec
   end
 end)
 
-function equip_weapons()
-  if state.ToyWeapons.current ~= 'None' then
-    return equip(sets.ToyWeapon[state.ToyWeapons.current])
+function cycle_weapons(cycle_dir, set_name)
+  if cycle_dir == 'forward' then
+    state.WeaponSet:cycle()
+  elseif cycle_dir == 'back' then
+    state.WeaponSet:cycleback()
+  elseif cycle_dir == 'set' then
+    state.WeaponSet:set(set_name)
   else
-    equip(sets.WeaponSet[state.WeaponSet.current])
+    state.WeaponSet:reset()
+  end
+  state.ToyWeapons:reset()
+
+  add_to_chat(141, 'Weapon Set to '..string.char(31,1)..state.WeaponSet.current)
+  equip(select_weapons())
+end
+
+function cycle_toy_weapons(cycle_dir, set_name)
+  if cycle_dir == 'forward' then
+    state.ToyWeapons:cycle()
+  elseif cycle_dir == 'back' then
+    state.ToyWeapons:cycleback()
+  elseif cycle_dir == 'set' then
+    state.ToyWeapons:set(set_name)
+  else
+    state.ToyWeapons:reset()
+  end
+
+  local mode_color = 001
+  if state.ToyWeapons.current == 'None' then
+    mode_color = 006
+  end
+  add_to_chat(012, 'Toy Weapon Mode: '..string.char(31,mode_color)..state.ToyWeapons.current)
+  equip(select_weapons())
+end
+
+function select_weapons()
+  local weapons_to_equip = {}
+  if state.ToyWeapons.current ~= 'None' then
+    weapons_to_equip = set_combine(sets.ToyWeapon[state.ToyWeapons.current], {})
+  else
+    if silibs.can_dual_wield() and sets.WeaponSet[state.WeaponSet.current] and sets.WeaponSet[state.WeaponSet.current].DW then
+      weapons_to_equip = set_combine(sets.WeaponSet[state.WeaponSet.current].DW, {})
+    elseif sets.WeaponSet[state.WeaponSet.current] then
+      weapons_to_equip = set_combine(sets.WeaponSet[state.WeaponSet.current], {})
+    end
+  end
+
+  -- If trying to equip weapon in offhand but cannot DW, equip empty
+  if not silibs.can_dual_wield() and weapons_to_equip.sub and silibs.is_weapon(weapons_to_equip.sub) then
+    weapons_to_equip.sub = "empty"
   end
 
   -- Equip appropriate ammo
   local ranged = sets.WeaponSet[state.WeaponSet.current].ranged
   if ranged and gear.RAbullet then
     if silibs.has_item(gear.RAbullet, silibs.equippable_bags) then
-      equip({ammo=gear.RAbullet})
+      weapons_to_equip.ammo=gear.RAbullet
     else
       add_to_chat(3,"Default ammo unavailable.  Leaving empty.")
     end
   end
+
+  return weapons_to_equip
 end
 
 -- Perpetual loop
