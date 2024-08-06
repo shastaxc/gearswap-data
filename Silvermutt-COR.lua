@@ -179,8 +179,10 @@ function get_sets()
 
   coroutine.schedule(function()
     send_command('gs reorg')
-    send_command('gs c equipweapons')
   end, 1)
+  coroutine.schedule(function()
+    send_command('gs c equipweapons')
+  end, 2)
   coroutine.schedule(function()
     send_command('hi report')
   end, 3)
@@ -1990,6 +1992,8 @@ function init_gear_sets()
     ring1="Eshmun's Ring", --20
     waist="Gishdubar Sash", --10
   }
+
+  sets.FallbackShield = {sub="Nusku Shield"}
 end
 
 
@@ -2538,10 +2542,11 @@ end
 
 function select_weapons()
   local weapons_to_equip = {}
+  local can_dw = silibs.can_dual_wield()
   if state.ToyWeapons.current ~= 'None' then
     weapons_to_equip = set_combine(sets.ToyWeapon[state.ToyWeapons.current], {})
   else
-    if silibs.can_dual_wield() and sets.WeaponSet[state.WeaponSet.current] and sets.WeaponSet[state.WeaponSet.current].DW then
+    if can_dw and sets.WeaponSet[state.WeaponSet.current] and sets.WeaponSet[state.WeaponSet.current].DW then
       weapons_to_equip = set_combine(sets.WeaponSet[state.WeaponSet.current].DW, {})
     elseif sets.WeaponSet[state.WeaponSet.current] then
       weapons_to_equip = set_combine(sets.WeaponSet[state.WeaponSet.current], {})
@@ -2549,8 +2554,8 @@ function select_weapons()
   end
 
   -- If trying to equip weapon in offhand but cannot DW, equip empty
-  if not silibs.can_dual_wield() and weapons_to_equip.sub and silibs.is_weapon(weapons_to_equip.sub) then
-    weapons_to_equip.sub = "empty"
+  if not can_dw and weapons_to_equip.sub and silibs.is_weapon(weapons_to_equip.sub) then
+    weapons_to_equip.sub = (sets.FallbackShield and sets.FallbackShield.sub) or "empty"
   end
 
   -- Equip appropriate ammo
