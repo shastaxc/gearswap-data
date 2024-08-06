@@ -319,10 +319,11 @@ function user_setup()
   update_combat_form()
 
   select_default_macro_book()
+  set_sub_keybinds:schedule(2)
+
   if initialized then
     send_command('gs c equipweapons')
   end
-  set_sub_keybinds:schedule(2)
 
   roll_timer = nil -- DO NOT MODIFY
   initialized = true -- DO NOT MODIFY
