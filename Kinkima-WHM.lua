@@ -1069,7 +1069,7 @@ function init_gear_sets()
   -- Cap at 500 Enh magic skill
   sets.midcast.BarElement = {
     main="Beneficus",                 -- 15, __ [__/__, ___] __,  5
-    sub="Genmei Shield",              -- __, __ [10/__, ___] __, __
+    sub="Ammurapi Shield",            -- __, 10 [__/__, ___] __, __
     ammo="Staunch Tathlum +1",        -- __, __ [ 3/ 3, ___] __, __
     head="Ebers Cap +2",              -- __, __ [__/__, 115] __, __; Set bonus
     body="Ebers Bliaut +2",           -- __, __ [__/__, 120] __, 16; Set bonus
@@ -1088,7 +1088,7 @@ function init_gear_sets()
     -- Light Arts                        26
     -- Master Levels                     15
     -- Afflatus Solace                                       __,  5
-    -- 514 Enh Skill, 10% Enh Duration [69 PDT/43 MDT, 596 MEVA] 83 Barspell Resistance, 36 Barspell M.Def
+    -- 514 Enh Skill, 20% Enh Duration [59 PDT/43 MDT, 596 MEVA] 83 Barspell Resistance, 36 Barspell M.Def
 
     -- main="Beneficus",              -- 15, __ [__/__, ___] __,  5
     -- sub="Ammurapi Shield",         -- __, 10 [__/__, ___] __, __
