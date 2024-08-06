@@ -176,17 +176,14 @@ function get_sets()
   -- Load and initialize Mote library
   mote_include_version = 2
   include('Mote-Include.lua') -- Executes job_setup, user_setup, init_gear_sets
-  equip({main=empty,sub=empty})
 
   coroutine.schedule(function()
     send_command('gs reorg')
+    send_command('gs c equipweapons')
   end, 1)
   coroutine.schedule(function()
     send_command('hi report')
   end, 3)
-  coroutine.schedule(function()
-    send_command('gs c equipweapons')
-  end, 5)
 end
 
 -- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
