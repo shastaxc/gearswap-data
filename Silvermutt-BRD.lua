@@ -1723,8 +1723,6 @@ function construct_unbind_command()
   unbind_command = commands:concat(';')
 end
 
--- Combining these all into one send_command to avoid race condition with
--- setting keybinds for the next job.
 function unbind_keybinds()
   windower.send_command(unbind_command)
 end
