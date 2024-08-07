@@ -562,7 +562,7 @@ function init_gear_sets()
     hands=gear.Carmine_D_hands,     --  8/11 [__/__,  43] {__}
     legs=gear.Adhemar_D_legs,       -- 10/13 [__/__,  75] {__}
     feet="Meg. Jam. +2",            -- 10/__ [ 3/__,  69] {__}
-    neck="Scout's Gorget +1",       --  3/__ [__/__, ___] {__}
+    neck="Scout's Gorget +2",       --  4/__ [__/__, ___] {__}
     ear1="Genmei Earring",          -- __/__ [ 2/__, ___] {__}
     ear2="Odnowa Earring +1",       -- __/__ [ 3/ 5, ___] {__}
     ring1="Crepuscular Ring",       --  3/__ [__/__, ___] {__}
@@ -570,7 +570,7 @@ function init_gear_sets()
     back=gear.RNG_SNP_Cape,         -- 10/__ [10/__,  20] { 2}
     waist="Impulse Belt",           --  3/__ [__/__, ___] {__}
     -- Merits/Traits/Gifts             10/35 [__/__, ___] {10}
-    -- 71 Snapshot / 77 Rapid Shot [28 PDT/15 MDT, 386 M.Eva] {12% Velocity Shot}
+    -- 72 Snapshot / 77 Rapid Shot [28 PDT/15 MDT, 386 M.Eva] {12% Velocity Shot}
   }
   -- Account for having Gastra on
   sets.Snapshot51 = {
@@ -579,7 +579,7 @@ function init_gear_sets()
     hands=gear.Carmine_D_hands,     --  8/11 [__/__,  43] {__}
     legs=gear.Adhemar_D_legs,       -- 10/13 [__/__,  75] {__}
     feet="Arcadian Socks +3",       -- __/10 [__/__,  89] {__}
-    neck="Scout's Gorget +1",       --  3/__ [__/__, ___] {__}
+    neck="Scout's Gorget +2",       --  4/__ [__/__, ___] {__}
     ear1="Genmei Earring",          -- __/__ [ 2/__, ___] {__}
     ear2="Odnowa Earring +1",       -- __/__ [ 3/ 5, ___] {__}
     ring1="Crepuscular Ring",       --  3/__ [__/__, ___] {__}
@@ -588,7 +588,7 @@ function init_gear_sets()
     waist="Impulse Belt",           --  3/__ [__/__, ___] {__}
     -- Merits/Traits/Gifts             10/35 [__/__, ___] {10}
     -- Flurry (weapons/magic)          10/__
-    -- 71 Snapshot / 87 Rapid Shot [28 PDT/15 MDT, 386 M.Eva] {12% Velocity Shot}
+    -- 72 Snapshot / 87 Rapid Shot [28 PDT/15 MDT, 386 M.Eva] {12% Velocity Shot}
   }
   -- Account for having Flurry 1 buff
   sets.Snapshot47 = {
@@ -597,19 +597,15 @@ function init_gear_sets()
     hands=gear.Carmine_D_hands,     --  8/11 [__/__,  43] {__}
     legs=gear.Adhemar_D_legs,       -- 10/13 [__/__,  75] {__}
     feet="Meg. Jam. +2",            -- 10/__ [ 3/__,  69] {__}
-    neck="Scout's Gorget +1",       --  3/__ [__/__, ___] {__}
+    neck="Scout's Gorget +2",       --  4/__ [__/__, ___] {__}
     ear1="Genmei Earring",          -- __/__ [ 2/__, ___] {__}
     ear2="Odnowa Earring +1",       -- __/__ [ 3/ 5, ___] {__}
     ring1="Crepuscular Ring",       --  3/__ [__/__, ___] {__}
     ring2="Defending Ring",         -- __/__ [10/10, ___] {__}
     back=gear.RNG_SNP_Cape,         -- 10/__ [10/__,  20] { 2}
-    waist="Impulse Belt",           --  3/__ [__/__, ___] {__}
+    waist="Yemaya Belt",            -- __/ 5 [__/__, ___] {__}
     -- Merits/Traits/Gifts             10/35 [__/__, ___] {10}
     -- Flurry (weapons/magic)          15/__
-    -- 72 Snapshot / 93 Rapid Shot [28 PDT/15 MDT, 386 M.Eva] {12% Velocity Shot}
-    
-    -- neck="Scout's Gorget +2",    --  4/__ [__/__, ___] {__}
-    -- waist="Yemaya Belt",         -- __/ 5 [__/__, ___] {__}
     -- 70 Snapshot / 98 Rapid Shot [28 PDT/15 MDT, 386 M.Eva] {12% Velocity Shot}
   }
   -- Account for having Embrava buff
@@ -619,7 +615,7 @@ function init_gear_sets()
     hands=gear.Carmine_D_hands,     --  8/11 [__/__,  43] {__}
     legs=gear.Adhemar_D_legs,       -- 10/13 [__/__,  75] {__}
     feet="Arcadian Socks +3",       -- __/10 [__/__,  89] {__}
-    neck="Scout's Gorget +1",       --  3/__ [__/__, ___] {__}
+    neck="Scout's Gorget +2",       --  4/__ [__/__, ___] {__}
     ear1="Genmei Earring",          -- __/__ [ 2/__, ___] {__}
     ear2="Odnowa Earring +1",       -- __/__ [ 3/ 5, ___] {__}
     ring1="Crepuscular Ring",       --  3/__ [__/__, ___] {__}
@@ -628,7 +624,7 @@ function init_gear_sets()
     waist="Impulse Belt",           --  3/__ [__/__, ___] {__}
     -- Merits/Traits/Gifts             10/35 [__/__, ___] {10}
     -- Flurry (weapons/magic)          25/__
-    -- 72 Snapshot / 103 Rapid Shot [25 PDT/15 MDT, 406 M.Eva] {12% Velocity Shot}
+    -- 73 Snapshot / 103 Rapid Shot [25 PDT/15 MDT, 406 M.Eva] {12% Velocity Shot}
   }
   -- Account for having Flurry 2 buff
   sets.Snapshot31 = {
@@ -655,7 +651,7 @@ function init_gear_sets()
     hands=gear.Carmine_D_hands,     --  8/11 [__/__,  43] {__}
     legs=gear.Pursuer_A_legs,       -- __/19 [__/__,  69] {__}
     feet=gear.Nyame_B_feet,         -- __/__ [ 7/ 7, 150] {__}
-    neck="Scout's Gorget +1",       --  3/__ [__/__, ___] {__}
+    neck="Scout's Gorget +2",       --  4/__ [__/__, ___] {__}
     ear1="Genmei Earring",          -- __/__ [ 2/__, ___] {__}
     ear2="Odnowa Earring +1",       -- __/__ [ 3/ 5, ___] {__}
     ring1="Crepuscular Ring",       --  3/__ [__/__, ___] {__}
@@ -664,7 +660,7 @@ function init_gear_sets()
     waist="Impulse Belt",           --  3/__ [__/__, ___] {__}
     -- Merits/Traits/Gifts             10/35 [__/__, ___] {10}
     -- Flurry (weapons/magic)          40/__
-    -- 77 Snapshot / 99 Rapid Shot [25 PDT/15 MDT, 406 M.Eva] {12% Velocity Shot}
+    -- 78 Snapshot / 99 Rapid Shot [25 PDT/15 MDT, 406 M.Eva] {12% Velocity Shot}
   }
   -- Higher combos of buffs don't matter because we already have a bis set
 
@@ -680,20 +676,18 @@ function init_gear_sets()
     hands=gear.Carmine_D_hands,     --  8/11 [__/__,  43] {__}
     legs="Orion Braccae +3",        -- 15/__ [__/__,  89] {__}
     feet="Meg. Jam. +2",            -- 10/__ [ 3/__,  69] {__}
-    neck="Scout's Gorget +1",       --  3/__ [__/__, ___] {__}
+    neck="Scout's Gorget +2",       --  4/__ [__/__, ___] {__}
     ear1="Genmei Earring",          -- __/__ [ 2/__, ___] {__}
     ear2="Odnowa Earring +1",       -- __/__ [ 3/ 5, ___] {__}
     ring1="Crepuscular Ring",       --  3/__ [__/__, ___] {__}
     ring2="Defending Ring",         -- __/__ [10/10, ___] {__}
     back=gear.RNG_SNP_Cape,         -- 10/__ [10/__,  20] { 2}
-    waist="Impulse Belt",           --  3/__ [__/__, ___] {__}
+    waist="Yemaya Belt",            -- __/ 5 [__/__, ___] {__}
     -- Merits/Traits/Gifts             10/35 [__/__, ___] {10}
     -- Velocity Shot Ability           __/__ [__/__, ___] {15}
-    -- 72 Snapshot / 46 Rapid Shot [28 PDT/15 MDT, 383 M.Eva] {36% Velocity Shot}
+    -- 70 Snapshot / 51 Rapid Shot [28 PDT/15 MDT, 383 M.Eva] {36% Velocity Shot}
 
     -- body="Amini Caban +3",       -- __/__ [__/__, 119] {11}
-    -- neck="Scout's Gorget +2",    --  4/__ [__/__, ___] {__}
-    -- waist="Yemaya Belt",         -- __/ 5 [__/__, ___] {__}
     -- 70 Snapshot / 51 Rapid Shot [28 PDT/15 MDT, 393 M.Eva] {38% Velocity Shot}
   }
   -- Account for having Gastra on
@@ -703,21 +697,19 @@ function init_gear_sets()
     hands=gear.Carmine_D_hands,     --  8/11 [__/__,  43] {__}
     legs="Orion Braccae +3",        -- 15/__ [__/__,  89] {__}
     feet="Meg. Jam. +2",            -- 10/__ [ 3/__,  69] {__}
-    neck="Scout's Gorget +1",       --  3/__ [__/__, ___] {__}
+    neck="Scout's Gorget +2",       --  4/__ [__/__, ___] {__}
     ear1="Genmei Earring",          -- __/__ [ 2/__, ___] {__}
     ear2="Odnowa Earring +1",       -- __/__ [ 3/ 5, ___] {__}
     ring1="Crepuscular Ring",       --  3/__ [__/__, ___] {__}
     ring2="Defending Ring",         -- __/__ [10/10, ___] {__}
     back=gear.RNG_SNP_Cape,         -- 10/__ [10/__,  20] { 2}
-    waist="Impulse Belt",           --  3/__ [__/__, ___] {__}
+    waist="Yemaya Belt",            -- __/ 5 [__/__, ___] {__}
     -- Merits/Traits/Gifts             10/35 [__/__, ___] {10}
     -- Velocity Shot Ability           __/__ [__/__, ___] {15}
     -- Flurry (weapons/magic)          10/__
-    -- 72 Snapshot / 64 Rapid Shot [28 PDT/15 MDT, 403 M.Eva] {36% Velocity Shot}
+    -- 70 Snapshot / 69 Rapid Shot [28 PDT/15 MDT, 403 M.Eva] {36% Velocity Shot}
 
     -- body="Amini Caban +3",       -- __/__ [__/__, 119] {11}
-    -- neck="Scout's Gorget +2",    --  4/__ [__/__, ___] {__}
-    -- waist="Yemaya Belt",         -- __/ 5 [__/__, ___] {__}
     -- 70 Snapshot / 69 Rapid Shot [28 PDT/15 MDT, 413 M.Eva] {38% Velocity Shot}
   }
   -- Account for having Flurry 1 buff
@@ -727,21 +719,19 @@ function init_gear_sets()
     hands=gear.Carmine_D_hands,     --  8/11 [__/__,  43] {__}
     legs=gear.Adhemar_D_legs,       -- 10/13 [__/__,  75] {__}
     feet="Meg. Jam. +2",            -- 10/__ [ 3/__,  69] {__}
-    neck="Scout's Gorget +1",       --  3/__ [__/__, ___] {__}
+    neck="Scout's Gorget +2",       --  4/__ [__/__, ___] {__}
     ear1="Genmei Earring",          -- __/__ [ 2/__, ___] {__}
     ear2="Odnowa Earring +1",       -- __/__ [ 3/ 5, ___] {__}
     ring1="Crepuscular Ring",       --  3/__ [__/__, ___] {__}
     ring2="Defending Ring",         -- __/__ [10/10, ___] {__}
     back=gear.RNG_SNP_Cape,         -- 10/__ [10/__,  20] { 2}
-    waist="Impulse Belt",           --  3/__ [__/__, ___] {__}
+    waist="Yemaya Belt",            -- __/ 5 [__/__, ___] {__}
     -- Merits/Traits/Gifts             10/35 [__/__, ___] {10}
     -- Velocity Shot Ability           __/__ [__/__, ___] {15}
     -- Flurry (weapons/magic)          15/__
-    -- 72 Snapshot / 77 Rapid Shot [28 PDT/15 MDT, 369 M.Eva] {36% Velocity Shot}
+    -- 70 Snapshot / 82 Rapid Shot [28 PDT/15 MDT, 369 M.Eva] {36% Velocity Shot}
 
     -- body="Amini Caban +3",       -- __/__ [__/__, 119] {11}
-    -- neck="Scout's Gorget +2",    --  4/__ [__/__, ___] {__}
-    -- waist="Yemaya Belt",         -- __/ 5 [__/__, ___] {__}
     -- 70 Snapshot / 82 Rapid Shot [28 PDT/15 MDT, 399 M.Eva] {38% Velocity Shot}
   }
   -- Account for having Embrava buff
@@ -751,21 +741,19 @@ function init_gear_sets()
     hands=gear.Carmine_D_hands,     --  8/11 [__/__,  43] {__}
     legs=gear.Adhemar_D_legs,       -- 10/13 [__/__,  75] {__}
     feet="Arcadian Socks +3",       -- __/10 [__/__,  89] {__}
-    neck="Scout's Gorget +1",       --  3/__ [__/__, ___] {__}
+    neck="Scout's Gorget +2",       --  4/__ [__/__, ___] {__}
     ear1="Genmei Earring",          -- __/__ [ 2/__, ___] {__}
     ear2="Odnowa Earring +1",       -- __/__ [ 3/ 5, ___] {__}
     ring1="Crepuscular Ring",       --  3/__ [__/__, ___] {__}
     ring2="Defending Ring",         -- __/__ [10/10, ___] {__}
     back=gear.RNG_SNP_Cape,         -- 10/__ [10/__,  20] { 2}
-    waist="Impulse Belt",           --  3/__ [__/__, ___] {__}
+    waist="Yemaya Belt",            -- __/ 5 [__/__, ___] {__}
     -- Merits/Traits/Gifts             10/35 [__/__, ___] {10}
     -- Velocity Shot Ability           __/__ [__/__, ___] {15}
     -- Flurry (weapons/magic)          25/__
-    -- 72 Snapshot / 87 Rapid Shot [25 PDT/15 MDT, 409 M.Eva] {36% Velocity Shot}
+    -- 70 Snapshot / 92 Rapid Shot [25 PDT/15 MDT, 409 M.Eva] {36% Velocity Shot}
 
     -- body="Amini Caban +3",       -- __/__ [__/__, 119] {11}
-    -- neck="Scout's Gorget +2",    --  4/__ [__/__, ___] {__}
-    -- waist="Yemaya Belt",         -- __/ 5 [__/__, ___] {__}
     -- 70 Snapshot / 92 Rapid Shot [25 PDT/15 MDT, 419 M.Eva] {38% Velocity Shot}
   }
   -- Account for having Flurry 2 buff
@@ -775,7 +763,7 @@ function init_gear_sets()
     hands=gear.Carmine_D_hands,     --  8/11 [__/__,  43] {__}
     legs=gear.Adhemar_D_legs,       -- 10/13 [__/__,  75] {__}
     feet="Arcadian Socks +3",       -- __/10 [__/__,  89] {__}
-    neck="Scout's Gorget +1",       --  3/__ [__/__, ___] {__}
+    neck="Scout's Gorget +2",       --  4/__ [__/__, ___] {__}
     ear1="Genmei Earring",          -- __/__ [ 2/__, ___] {__}
     ear2="Odnowa Earring +1",       -- __/__ [ 3/ 5, ___] {__}
     ring1="Crepuscular Ring",       --  3/__ [__/__, ___] {__}
@@ -785,10 +773,9 @@ function init_gear_sets()
     -- Merits/Traits/Gifts             10/35 [__/__, ___] {10}
     -- Velocity Shot Ability           __/__ [__/__, ___] {15}
     -- Flurry (weapons/magic)          30/__
-    -- 74 Snapshot / 92 Rapid Shot [25 PDT/15 MDT, 409 M.Eva] {36% Velocity Shot}
+    -- 75 Snapshot / 92 Rapid Shot [25 PDT/15 MDT, 409 M.Eva] {36% Velocity Shot}
 
     -- body="Amini Caban +3",       -- __/__ [__/__, 119] {11}
-    -- neck="Scout's Gorget +2",    --  4/__ [__/__, ___] {__}
     -- 75 Snapshot / 92 Rapid Shot [25 PDT/15 MDT, 419 M.Eva] {38% Velocity Shot}
   }
   -- Account for having Flurry 1 + Embrava buff
@@ -798,7 +785,7 @@ function init_gear_sets()
     hands=gear.Carmine_D_hands,     --  8/11 [__/__,  43] {__}
     legs=gear.Pursuer_A_legs,       -- __/19 [__/__,  69] {__}
     feet="Arcadian Socks +3",       -- __/10 [__/__,  89] {__}
-    neck="Scout's Gorget +1",       --  3/__ [__/__, ___] {__}
+    neck="Scout's Gorget +2",       --  4/__ [__/__, ___] {__}
     ear1="Genmei Earring",          -- __/__ [ 2/__, ___] {__}
     ear2="Odnowa Earring +1",       -- __/__ [ 3/ 5, ___] {__}
     ring1="Crepuscular Ring",       --  3/__ [__/__, ___] {__}
@@ -808,10 +795,9 @@ function init_gear_sets()
     -- Merits/Traits/Gifts             10/35 [__/__, ___] {10}
     -- Velocity Shot Ability           __/__ [__/__, ___] {15}
     -- Flurry (weapons/magic)          40/__
-    -- 74 Snapshot / 98 Rapid Shot [25 PDT/15 MDT, 403 M.Eva] {36% Velocity Shot}
+    -- 75 Snapshot / 98 Rapid Shot [25 PDT/15 MDT, 403 M.Eva] {36% Velocity Shot}
 
     -- body="Amini Caban +3",       -- __/__ [__/__, 119] {11}
-    -- neck="Scout's Gorget +2",    --  4/__ [__/__, ___] {__}
     -- 75 Snapshot / 98 Rapid Shot [25 PDT/15 MDT, 413 M.Eva] {38% Velocity Shot}
   }
   -- Higher combos of buffs don't matter because we already have a bis set
@@ -828,16 +814,15 @@ function init_gear_sets()
     hands=gear.Nyame_B_hands,     -- 17, 40, 65, 40, 11, __, ___
     legs=gear.Nyame_B_legs,       -- 58, 32, 65, 40, 12, __, ___
     feet=gear.Nyame_B_feet,       -- 23, 26, 65, 53, 11, __, ___
-    neck="Scout's Gorget +1",     -- __, __, __, __, __,  8, ___
+    neck="Scout's Gorget +2",     -- __, __, __, __, __, 10, ___
     ear1="Moonshade Earring",     -- __, __, __,  4, __, __, 250
     ear2="Amini Earring +1",      -- __, __, __, __, __,  8, ___
     ring1="Ephramad's Ring",      -- 10, __, 20, 20, __, 10, ___
     ring2="Epaminondas's Ring",   -- __, __, __, __,  5, __, ___
     back=gear.RNG_WS3_Cape,       -- 30, __, 20, 20, 10, __, ___
     waist="Sailfi Belt +1",       -- 15, __, 15, __, __, __, ___
-    -- 212 STR, 149 MND, 315 Attack, 227 Accuracy, 60 WSD, 33 PDL, 450 TP Bonus
+    -- 212 STR, 149 MND, 315 Attack, 227 Accuracy, 60 WSD, 35 PDL, 450 TP Bonus
 
-    -- neck="Scout's Gorget +2",  -- __, __, __, __, __, 10, ___
     -- ear2="Amini Earring +2",   -- 15, __, __, 20, __,  9, ___
     -- 227 STR, 149 MND, 315 Attack, 247 Accuracy, 60 WSD, 36 PDL, 450 TP Bonus
   }
@@ -863,7 +848,7 @@ function init_gear_sets()
     hands=gear.Nyame_B_hands,
     legs="Ikenga's Trousers",
     feet=gear.Nyame_B_feet,
-    neck="Scout's Gorget +1",
+    neck="Scout's Gorget +2",
     ear1="Moonshade Earring",
     ear2="Amini Earring +1",
     ring1="Ephramad's Ring",
@@ -871,7 +856,6 @@ function init_gear_sets()
     back=gear.RNG_WS2_Cape,
     waist="Fotia Belt",
     -- feet="Amini Bottillons +3",
-    -- neck="Scout's Gorget +2",
     -- ear2="Amini Earring +2",
   })
   sets.precast.WS['Last Stand'].MaxTP = set_combine(sets.precast.WS['Last Stand'], {
@@ -912,7 +896,7 @@ function init_gear_sets()
     hands=gear.Nyame_B_hands,
     legs=gear.Nyame_B_legs,
     feet=gear.Herc_MAB_feet,
-    neck="Scout's Gorget +1",
+    neck="Scout's Gorget +2",
     ear1="Friomisi Earring", --10
     ear2="Moonshade Earring",
     ring1="Weatherspoon Ring", --10 (light only)
@@ -953,7 +937,7 @@ function init_gear_sets()
     hands="Orion Bracers +3",
     legs="Orion Braccae +3",
     feet="Malignance Boots",
-    neck="Scout's Gorget +1",
+    neck="Scout's Gorget +2",
     ear1="Beyla Earring",
     ear2="Telos Earring",
     ring1="Ephramad's ring ",
@@ -962,7 +946,6 @@ function init_gear_sets()
     waist="Kwahu Kachina Belt +1",
 
     -- feet="Amini Bottillons +3",
-    -- neck="Scout's Gorget +2",
   }
 
   sets.precast.WS['Evisceration'] = {
@@ -971,7 +954,7 @@ function init_gear_sets()
     hands="Amini Glovelettes +2",
     legs="Amini Bragues +2",
     feet=gear.Nyame_B_feet,
-    neck="Scout's Gorget +1",
+    neck="Scout's Gorget +2",
     ear1="Odr Earring",
     ear2="Amini Earring +1",
     ring1="Ephramad's Ring",
@@ -986,16 +969,15 @@ function init_gear_sets()
     hands=gear.Nyame_B_hands,     -- 17, 40, 65, 40, 11, __, ___
     legs=gear.Nyame_B_legs,       -- 58, 32, 65, 40, 12, __, ___
     feet=gear.Nyame_B_feet,       -- 23, 26, 65, 53, 11, __, ___
-    neck="Scout's Gorget +1",     -- __, __, __, __, __,  8, ___
+    neck="Scout's Gorget +2",     -- __, __, __, __, __, 10, ___
     ear1="Moonshade Earring",     -- __, __, __,  4, __, __, 250
     ear2="Amini Earring +1",      -- __, __, __, __, __,  8, ___
     ring1="Ephramad's Ring",      -- 10, __, 20, 20, __, 10, ___
     ring2="Epaminondas's Ring",   -- __, __, __, __,  5, __, ___
     back=gear.RNG_WS3_Cape,       -- 30, __, 20, 20, 10, __, ___
     waist="Sailfi Belt +1",       -- 15, __, 15, __, __, __, ___
-    -- 212 STR, 149 MND, 315 Attack, 227 Accuracy, 60 WSD, 33 PDL, 450 TP Bonus
+    -- 212 STR, 149 MND, 315 Attack, 227 Accuracy, 60 WSD, 35 PDL, 450 TP Bonus
 
-    -- neck="Scout's Gorget +2",  -- __, __, __, __, __, 10, ___
     -- ear2="Amini Earring +2",   -- 15, __, __, 20, __,  9, ___
     -- 227 STR, 149 MND, 315 Attack, 247 Accuracy, 60 WSD, 36 PDL, 450 TP Bonus
   }
@@ -1050,7 +1032,7 @@ function init_gear_sets()
     hands=gear.Nyame_B_hands,
     legs=gear.Nyame_B_legs,
     feet=gear.Nyame_B_feet,
-    neck="Scout's Gorget +1",
+    neck="Scout's Gorget +2",
     ear1="Moonshade Earring",
     ear2="Amini Earring",
     ring1="Ephramad's Ring",
@@ -1060,7 +1042,6 @@ function init_gear_sets()
 
     -- body="Amini Caban +3",
     -- feet="Amini Bottillons +3",
-    -- neck="Scout's Gorget +2",
   })
   sets.precast.WS['Empyreal Arrow'].MaxTP = set_combine(sets.precast.WS['Empyreal Arrow'], {
     ear1="Ishvara Earring",
@@ -1166,7 +1147,7 @@ function init_gear_sets()
     hands="Amini Glovelettes +2",
     legs="Amini Bragues +2",
     feet=gear.Nyame_B_feet,
-    neck="Scout's Gorget +1",
+    neck="Scout's Gorget +2",
     ear1="Odr Earring",
     ear2="Amini Earring +1",
     ring1="Ephramad's Ring",
@@ -1176,7 +1157,6 @@ function init_gear_sets()
 
     -- legs="Amini Bragues +3",
     -- feet="Amini Bottillons +3",
-    -- neck="Scout's Gorget +2",
     -- ear2="Amini Earring +2",
   })
   sets.precast.WS['Jishnu\'s Radiance'].MaxTP = set_combine(sets.precast.WS['Jishnu\'s Radiance'], {
@@ -1229,7 +1209,7 @@ function init_gear_sets()
     hands="Malignance Gloves",      -- 24 [12]  50/ __ <_> { 4} (__)  5/ 5
     legs="Ikenga's Trousers",       -- 40 [10]  55/ 70 <_> { 6} (__) 10/10
     feet="Malignance Boots",        -- 49 [ 9]  50/ __ <_> { 2} (__)  4/ 4
-    neck="Scout's Gorget +1",       -- 20 [ 6]  20/ __ <_> { 8} (__) __/__
+    neck="Scout's Gorget +2",       -- 25 [ 7]  25/ __ <_> {10} (__) __/__
     ear1="Dedition Earring",        -- __ [ 8] -10/-10 <_> {__} (__) __/__
     ear2="Telos Earring",           -- __ [ 5]  10/ 10 <_> {__} (__) __/__
     ring1="Crepuscular Ring",       -- __ [ 6]  10/ __ <_> {__} (__) __/__
@@ -1237,10 +1217,9 @@ function init_gear_sets()
     back=gear.RNG_RA_Cape,          -- 30 [10]  20/ 20 <_> {__} (__) 10/__
     waist="Kwahu Kachina Belt +1",  --  8 [__]  20/ __ <5> {__} (__) __/__
     -- Merits/Traits/Gifts                                      (55)
-    -- 247 AGI [83 STP] 317 racc / 222 ratt <10 crit> {27 PDL} (93 Recycle) 29 PDT/19 MDT
-    
+    -- 252 AGI [84 STP] 322 racc / 222 ratt <10 crit> {29 PDL} (93 Recycle) 29 PDT/19 MDT
+
     -- hands="Amini Glovelettes +3",-- 26 [11]  62/ 62 <_> {__} (__) 11/11; Archery+38
-    -- neck="Scout's Gorget +2",    -- 25 [ 7]  25/ __ <_> {10} (__) __/__
     -- 254 AGI [83 STP] 334 racc / 284 ratt <10 crit> {25 PDL} (93 Recycle) 35 PDT/25 MDT
   }
   sets.midcast.RA.LowAcc = set_combine(sets.midcast.RA, {
