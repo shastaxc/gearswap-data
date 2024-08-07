@@ -890,7 +890,7 @@ function init_gear_sets()
 
   -- Geomancy has no effect on Entrust, skill and duration do.
   sets.buff.Entrust = set_combine(sets.midcast.Geomancy.Indi, {
-    main=gear.Solstice_D,           -- __,  5,  6, 15, __ [__/__, ___] { 4, __} -- Need to add augs
+    main=gear.Solstice_D,           -- __,  5,  6, 15, __ [__/__, ___] { 4, __}
     sub="Genmei Shield",            -- __, __, __, __, __ [10/__, ___] {__, __}
     range="Dunna",                  -- __, 18, __, __, __ [__/__, ___] { 5, __}
     ammo=empty,
