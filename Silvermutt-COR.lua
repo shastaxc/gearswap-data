@@ -2564,13 +2564,25 @@ function select_weapons()
   end
 
   -- Equip appropriate ammo
-  local ranged = sets.WeaponSet[state.WeaponSet.current].ranged
-  if ranged and gear.RAbullet then
-    if silibs.has_item(gear.RAbullet, silibs.equippable_bags) then
-      weapons_to_equip.ammo=gear.RAbullet
+  local range_weapon_name = weapons_to_equip.ranged or weapons_to_equip.range
+  if range_weapon_name and silibs.is_weapon(range_weapon_name) and silibs.ammo_assignment then
+    local ammo_map = silibs.ammo_assignment['Gun_or_Cannon']
+    if ammo_map then
+      local default_ammo = ammo_map.Default
+      if default_ammo then
+        if silibs.has_item(default_ammo, silibs.equippable_bags) then
+          weapons_to_equip.ammo = default_ammo
+        else
+          add_to_chat(3, default_ammo.." ammo unavailable. Leaving empty.")
+        end
+      else
+        add_to_chat(3, "Default ammo not defined for "..range_type..".")
+      end
     else
-      add_to_chat(3,"Default ammo unavailable.  Leaving empty.")
+      add_to_chat(3, "Default ammo not defined for "..range_type..".")
     end
+  else
+    weapons_to_equip.ammo = 'empty'
   end
 
   return weapons_to_equip

@@ -160,15 +160,13 @@ function get_sets()
   -- Load and initialize Mote library
   mote_include_version = 2
   include('Mote-Include.lua') -- Executes job_setup, user_setup, init_gear_sets
-  equip({main=empty,sub=empty})
   
   coroutine.schedule(function()
     send_command('gs reorg')
   end, 1)
   coroutine.schedule(function()
     send_command('gs c equipweapons')
-    send_command('gs c equiprangedweapons')
-  end, 5)
+  end, 2)
 end
 
 -- Executes on first load and main job change
@@ -241,12 +239,12 @@ function job_setup()
       ['^`'] = 'gs c cycle treasuremode',
       ['@c'] = 'gs c toggle CP',
       ['^/'] = 'gs c toggle critmode',
-      ['^insert'] = 'gs c cycle WeaponSet',
-      ['^delete'] = 'gs c cycleback WeaponSet',
-      ['!delete'] = 'gs c reset WeaponSet',
-      ['^home'] = 'gs c cycle RangedWeaponSet',
-      ['^end'] = 'gs c cycleback RangedWeaponSet',
-      ['!end'] = 'gs c reset RangedWeaponSet',
+      ['^insert'] = 'gs c weaponset cycle',
+      ['^delete'] = 'gs c weaponset cycleback',
+      ['!delete'] = 'gs c weaponset reset',
+      ['^home'] = 'gs c rangedweaponset cycle',
+      ['^end'] = 'gs c rangedweaponset cycleback',
+      ['!end'] = 'gs c rangedweaponset reset',
       ['^pageup'] = 'gs c toyweapon cycle',
       ['^pagedown'] = 'gs c toyweapon cycleback',
       ['!pagedown'] = 'gs c toyweapon reset',
@@ -299,6 +297,12 @@ function user_setup()
 
   select_default_macro_book()
   set_sub_keybinds:schedule(2)
+
+  if initialized then
+    send_command('gs c equipweapons')
+  end
+
+  initialized = true -- DO NOT MODIFY
 end
 
 -- Called when this job file is unloaded (eg: job change)
@@ -376,19 +380,20 @@ function init_gear_sets()
   }
 
   -- Ranged weapon sets
-  sets.WeaponSet['Gastra'] = {
+  sets.RangedWeaponSet = {}
+  sets.RangedWeaponSet['Gastra'] = {
     ranged="Gastraphetes",
   }
-  sets.WeaponSet['Arma'] = {
+  sets.RangedWeaponSet['Arma'] = {
     ranged="Armageddon",
   }
-  sets.WeaponSet['Fomalhaut'] = {
+  sets.RangedWeaponSet['Fomalhaut'] = {
     ranged="Fomalhaut",
   }
-  sets.WeaponSet['Gandiva'] = {
+  sets.RangedWeaponSet['Gandiva'] = {
     ranged="Gandiva",
   }
-  sets.WeaponSet['Sparrowhawk +2'] = {
+  sets.RangedWeaponSet['Sparrowhawk +2'] = {
     ranged="Sparrowhawk +2",
   }
 
@@ -1771,6 +1776,8 @@ function init_gear_sets()
   sets.buff.Camouflage = {
     body="Orion Jerkin +3"
   }
+
+  sets.FallbackShield = {sub="Nusku Shield"}
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -1878,14 +1885,6 @@ function job_buff_change(buff,gain)
 
 end
 
-function job_state_change(stateField, newValue, oldValue)
-  if stateField == 'Weapon Set' then
-    equip_weapons()
-  end
-  if stateField == 'Ranged Weapon Set' then
-    equip_ranged_weapons()
-  end
-end
 
 -------------------------------------------------------------------------------------------------------------------
 -- User code that supplements standard library decisions.
@@ -2065,29 +2064,6 @@ function display_current_job_state(eventArgs)
   eventArgs.handled = true
 end
 
-function cycle_toy_weapons(cycle_dir)
-  --If current state is None, save current weapons to switch back later
-  if state.ToyWeapons.current == 'None' then
-    sets.ToyWeapon.None.main = player.equipment.main
-    sets.ToyWeapon.None.sub = player.equipment.sub
-  end
-
-  if cycle_dir == 'forward' then
-    state.ToyWeapons:cycle()
-  elseif cycle_dir == 'back' then
-    state.ToyWeapons:cycleback()
-  else
-    state.ToyWeapons:reset()
-  end
-
-  local mode_color = 001
-  if state.ToyWeapons.current == 'None' then
-    mode_color = 006
-  end
-  add_to_chat(012, 'Toy Weapon Mode: '..string.char(31,mode_color)..state.ToyWeapons.current)
-  equip(sets.ToyWeapon[state.ToyWeapons.current])
-end
-
 -- Requires DistancePlus addon
 function update_dp_type()
   local weapon = player.equipment.ranged ~= nil and player.equipment.ranged ~= 'empty' and res.items:with('name', player.equipment.ranged)
@@ -2114,25 +2090,110 @@ function update_dp_type()
   end
 end
 
-function equip_weapons()
-  equip(sets.WeaponSet[state.WeaponSet.current])
+function cycle_weapons(cycle_dir, set_name)
+  if cycle_dir == 'forward' then
+    state.WeaponSet:cycle()
+  elseif cycle_dir == 'back' then
+    state.WeaponSet:cycleback()
+  elseif cycle_dir == 'set' then
+    state.WeaponSet:set(set_name)
+  else
+    state.WeaponSet:reset()
+  end
+  state.ToyWeapons:reset()
+
+  add_to_chat(141, 'Weapon Set to '..string.char(31,1)..state.WeaponSet.current)
+  equip(select_weapons())
 end
 
-function equip_ranged_weapons()
-  equip(sets.WeaponSet[state.RangedWeaponSet.current])
+function cycle_ranged_weapons(cycle_dir)
+  if cycle_dir == 'forward' then
+    state.RangedWeaponSet:cycle()
+  elseif cycle_dir == 'back' then
+    state.RangedWeaponSet:cycleback()
+  elseif cycle_dir == 'set' then
+    state.RangedWeaponSet:set(set_name)
+  else
+    state.RangedWeaponSet:reset()
+  end
 
-  -- Equip appropriate ammo
-  local weapon_name = sets.WeaponSet[state.RangedWeaponSet.current].ranged
-  local weapon_stats = res.items:with('en', weapon_name)
-  local range_type = ((weapon_stats.range_type == 'Gun' or range_type == 'Cannon') and 'Gun_or_Cannon') or weapon_stats.range_type
-  if range_type and silibs.ammo_assignment[range_type].Default then
-    if silibs.has_item(silibs.ammo_assignment[range_type].Default, silibs.equippable_bags) then
-      equip({ammo=silibs.ammo_assignment[range_type].Default})
-    else
-      add_to_chat(3,"Default ammo unavailable.  Leaving empty.")
+  add_to_chat(141, 'RA Weapon Set to '..string.char(31,1)..state.RangedWeaponSet.current)
+  equip(select_weapons())
+end
+
+function cycle_toy_weapons(cycle_dir, set_name)
+  if cycle_dir == 'forward' then
+    state.ToyWeapons:cycle()
+  elseif cycle_dir == 'back' then
+    state.ToyWeapons:cycleback()
+  elseif cycle_dir == 'set' then
+    state.ToyWeapons:set(set_name)
+  else
+    state.ToyWeapons:reset()
+  end
+
+  local mode_color = 001
+  if state.ToyWeapons.current == 'None' then
+    mode_color = 006
+  end
+  add_to_chat(012, 'Toy Weapon Mode: '..string.char(31,mode_color)..state.ToyWeapons.current)
+  equip(select_weapons())
+end
+
+function select_weapons()
+  local weapons_to_equip = {}
+  local can_dw = silibs.can_dual_wield()
+  if state.ToyWeapons.current ~= 'None' then
+    weapons_to_equip = set_combine(sets.ToyWeapon[state.ToyWeapons.current], {})
+  else
+    if can_dw and sets.WeaponSet[state.WeaponSet.current] and sets.WeaponSet[state.WeaponSet.current].DW then
+      weapons_to_equip = set_combine(sets.WeaponSet[state.WeaponSet.current].DW, {})
+    elseif sets.WeaponSet[state.WeaponSet.current] then
+      weapons_to_equip = set_combine(sets.WeaponSet[state.WeaponSet.current], {})
     end
   end
+
+  -- If trying to equip weapon in offhand but cannot DW, equip empty
+  if not can_dw and weapons_to_equip.sub and silibs.is_weapon(weapons_to_equip.sub) then
+    weapons_to_equip.sub = (sets.FallbackShield and sets.FallbackShield.sub) or "empty"
+  end
+
+  -- Equip ranged weapon
+  local ranged_set = sets.RangedWeaponSet[state.RangedWeaponSet.current]
+  if ranged_set then
+    weapons_to_equip = set_combine(weapons_to_equip, ranged_set)
+
+    -- Equip appropriate ammo
+    local range_weapon_name = ranged_set.ranged or ranged_set.range or ''
+    local weapon_stats = res.items:with('en', range_weapon_name)
+    if weapon_stats and weapon_stats.category == 'Weapon' and silibs.ammo_assignment then
+      local range_type = ((weapon_stats.range_type == 'Gun' or weapon_stats.range_type == 'Cannon') and 'Gun_or_Cannon')
+          or weapon_stats.range_type
+      if range_type then
+        local ammo_map = silibs.ammo_assignment[range_type]
+        if ammo_map then
+          local default_ammo = ammo_map.Default
+          if default_ammo then
+            if silibs.has_item(default_ammo, silibs.equippable_bags) then
+              weapons_to_equip.ammo = default_ammo
+            else
+              add_to_chat(3, default_ammo.." ammo unavailable. Leaving empty.")
+            end
+          else
+            add_to_chat(3, "Default ammo not defined for "..range_type..".")
+          end
+        else
+          add_to_chat(3, "Default ammo not defined for "..range_type..".")
+        end
+      end
+    else
+      weapons_to_equip.ammo = 'empty'
+    end
+  end
+
+  return weapons_to_equip
 end
+
 
 -------------------------------------------------------------------------------------------------------------------
 -- Utility functions specific to this job.
@@ -2191,14 +2252,36 @@ function job_self_command(cmdParams, eventArgs)
   ----------- Non-silibs content goes below this line -----------
 
   if cmdParams[1] == 'equipweapons' then
-    equip_weapons()
-  elseif cmdParams[1] == 'equiprangedweapons' then
-    equip_ranged_weapons()
+    equip(select_weapons())
+  elseif cmdParams[1] == 'weaponset' then
+    if cmdParams[2] == 'cycle' then
+      cycle_weapons('forward')
+    elseif cmdParams[2] == 'cycleback' then
+      cycle_weapons('back')
+    elseif cmdParams[2] == 'current' then
+      cycle_weapons('current')
+    elseif cmdParams[2] == 'set' and cmdParams[3] then
+      cycle_weapons('set', cmdParams[3])
+    elseif cmdParams[2] == 'reset' then
+      cycle_weapons('reset')
+    end
+  elseif cmdParams[1] == 'rangedweaponset' then
+    if cmdParams[2] == 'cycle' then
+      cycle_ranged_weapons('forward')
+    elseif cmdParams[2] == 'cycleback' then
+      cycle_ranged_weapons('back')
+    elseif cmdParams[2] == 'reset' then
+      cycle_ranged_weapons('reset')
+    elseif cmdParams[2] == 'current' then
+      cycle_ranged_weapons('current')
+    end
   elseif cmdParams[1] == 'toyweapon' then
     if cmdParams[2] == 'cycle' then
       cycle_toy_weapons('forward')
     elseif cmdParams[2] == 'cycleback' then
       cycle_toy_weapons('back')
+    elseif cmdParams[2] == 'set' and cmdParams[3] then
+      cycle_toy_weapons('set', cmdParams[3])
     elseif cmdParams[2] == 'reset' then
       cycle_toy_weapons('reset')
     end

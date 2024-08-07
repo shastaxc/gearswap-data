@@ -1955,13 +1955,10 @@ function select_weapons()
     end
   end
 
-  -- Equip appropriate ammo
+  -- Equip ranged weapon
   local ranged_set = sets.RangedWeaponSet[state.RangedWeaponSet.current]
   if ranged_set then
-    local ranged = ranged_set.ranged or ranged_set.range
-    if ranged and silibs.is_weapon(ranged) then
-      weapons_to_equip = set_combine(weapons_to_equip, ranged_set)
-    end
+    weapons_to_equip = set_combine(weapons_to_equip, ranged_set)
   end
 
   return weapons_to_equip
