@@ -167,6 +167,9 @@ function get_sets()
   coroutine.schedule(function()
     send_command('gs c equipweapons')
   end, 2)
+  coroutine.schedule(function()
+    send_command('hi report')
+  end, 3)
 end
 
 -- Executes on first load and main job change
