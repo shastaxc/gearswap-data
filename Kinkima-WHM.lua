@@ -668,9 +668,10 @@ function init_gear_sets()
     
     -- legs="Ebers Pantaloons +3",    -- __, __, __ [13/13, 157] __; 8% healing to MP
     -- neck="Cleric's Torque +2",     -- __, 10, __ [__/__, ___] 25
+    -- ear1="Glorious Earring",       --  2, __, __ [__/__, ___]  5
     -- ear2="Ebers Earring +2",       -- __, __, __ [ 8/ 8, ___]  9
     -- Kaykaus bonus                      8, __, __ [__/__, ___] __
-    -- 12 CPII, 59 CP, 102 SIRD [54 PDT/40 MDT, 456 M.Eva] 55 -Enmity
+    -- 14 CPII, 59 CP, 102 SIRD [54 PDT/37 MDT, 456 M.Eva] 60 -Enmity
   }
 
   sets.midcast.CureWeather = set_combine(sets.midcast.CureNormal, {
@@ -742,7 +743,7 @@ function init_gear_sets()
     -- legs="Ebers Pantaloons +3",    -- __, __, __ [13/13, 157] __; 8% healing to MP
     -- feet=gear.Kaykaus_C_feet,      -- __, 11, 12 [__/__, 107]  6
     -- neck="Cleric's Torque +2",     -- __, 10, __ [__/__, ___] 25
-    -- ear1="Halasz Earring",         -- __, __,  5 [__/__, ___]  3
+    -- ear1="Glorious Earring",       --  2, __, __ [__/__, ___]  5
     -- ear2="Ebers Earring +2",       -- __, __, __ [ 8/ 8, ___]  9
     -- ring1="Gelatinous Ring +1",    -- __, __, __ [ 7/-1, ___] __
     -- ring2="Defending Ring",        -- __, __, __ [10/10, ___] __
@@ -750,7 +751,7 @@ function init_gear_sets()
     -- waist="Sanctuary Obi +1",      -- __, __, 10 [__/__, ___]  4
     -- Kaykaus bonus                      6, __, __ [__/__, ___] __
     -- Merit points                      __, __, 10 [__/__, ___]  5
-    -- 6 CPII, 53 CP, 107 SIRD [51PDT/36MDT, 506 M.Eva] 58 -Enmity
+    -- 8 CPII, 53 CP, 102 SIRD [51PDT/36MDT, 506 M.Eva] 60 -Enmity
   })
 
   sets.midcast.CureWeatherSolace = {
