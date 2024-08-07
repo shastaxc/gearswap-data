@@ -2560,7 +2560,7 @@ function select_weapons()
 
   -- If trying to equip weapon in offhand but cannot DW, equip empty
   if not can_dw and weapons_to_equip.sub and silibs.is_weapon(weapons_to_equip.sub) then
-    weapons_to_equip.sub = (sets.FallbackShield and sets.FallbackShield.sub) or "empty"
+    weapons_to_equip.sub = (sets.FallbackShield and sets.FallbackShield.sub) or 'empty'
   end
 
   -- Equip appropriate ammo
@@ -2573,13 +2573,13 @@ function select_weapons()
         if silibs.has_item(default_ammo, silibs.equippable_bags) then
           weapons_to_equip.ammo = default_ammo
         else
-          add_to_chat(3, default_ammo.." ammo unavailable. Leaving empty.")
+          add_to_chat(3, default_ammo..' ammo unavailable. Leaving empty.')
         end
       else
-        add_to_chat(3, "Default ammo not defined for "..range_type..".")
+        add_to_chat(3, 'Default ammo not defined for '..range_type..'.')
       end
     else
-      add_to_chat(3, "Default ammo not defined for "..range_type..".")
+      add_to_chat(3, 'Default ammo not defined for '..range_type..'.')
     end
   else
     weapons_to_equip.ammo = 'empty'
