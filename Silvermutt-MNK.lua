@@ -1653,12 +1653,12 @@ function construct_unbind_command()
   local sub_keybinds = job_keybinds[player.sub_job]
   if main_keybinds then
     for key in pairs(main_keybinds) do
-        commands:append(('unbind %s'):format(key))
+      commands:append(('unbind %s'):format(key))
     end
   end
   if sub_keybinds then
     for key in pairs(sub_keybinds) do
-        commands:append(('unbind %s'):format(key))
+      commands:append(('unbind %s'):format(key))
     end
   end
   unbind_command = commands:concat(';')
