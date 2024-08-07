@@ -2578,8 +2578,6 @@ function select_weapons()
       else
         add_to_chat(3, 'Default ammo not defined for '..range_type..'.')
       end
-    else
-      add_to_chat(3, 'Default ammo not defined for '..range_type..'.')
     end
   else
     weapons_to_equip.ammo = 'empty'
