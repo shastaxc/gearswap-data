@@ -705,7 +705,7 @@ function init_gear_sets()
     ear2="Brutal Earring",                -- __, __, __, __, __ < 5, __, __> [__/__, ___]
     ring1="Niqmaddu Ring",                -- 10, __, __, __, __ <__, __,  3> [__/__, ___]
     ring2="Ephramad's Ring",              -- 10, 20, __, __, 10 <__, __, __> [__/__, ___]
-    -- back=gear.DRK_STR_DA_Cape,         -- 30, 20, 20, __, __ <10, __, __> [10/__, ___]
+    back=gear.DRK_STR_DA_Cape,            -- 30, 20, 20, __, __ <10, __, __> [10/__, ___]
     waist="Fotia Belt",                   -- __, __, __, __, __ <__, __, __> [__/__, ___]; ftp+
     -- DRK traits/gifts/etc                                  50
     -- 260 STR, 395 Attack, 286 Accuracy, 12 WSD, 88 PDL <48 DA, 0 TA, 3 QA> [42 PDT/32 MDT, 638 M.Eva]
@@ -725,7 +725,7 @@ function init_gear_sets()
     ear2="Heathen's Earring +1",          -- __, 17, 11,  2,  8 <__, __, __> [__/__, ___]
     ring1="Niqmaddu Ring",                -- 10, __, __, __, __ <__, __,  3> [__/__, ___]
     ring2="Ephramad's Ring",              -- 10, 20, 20, __, 10 <__, __, __> [__/__, ___]
-    -- back=gear.DRK_STR_DA_Cape,         -- 30, 20, 20, __, __ <10, __, __> [10/__, ___]
+    back=gear.DRK_STR_DA_Cape,            -- 30, 20, 20, __, __ <10, __, __> [10/__, ___]
     waist="Fotia Belt",                   -- __, __, __, __, __ <__, __, __> [__/__, ___]; ftp+
     -- DRK traits/gifts/etc                                  50
     -- 248 STR, 397 Attack, 317 Accuracy, 14 WSD, 99 PDL <40 DA, 0 TA, 3 QA> [45 PDT/35 MDT, 638 M.Eva]
@@ -890,7 +890,7 @@ function init_gear_sets()
     ear2="Heathen's Earring +1",          -- __, __, 17, 11,  2,  8 <__, __, __> [__/__, ___]
     ring1="Niqmaddu Ring",                -- 10, __, __, __, __, __ <__, __,  3> [__/__, ___]
     ring2="Epaminondas's Ring",           -- __, __, __, __,  5, __ <__, __, __> [__/__, ___]
-    -- back=gear.DRK_STR_DA_Cape,         -- 30, __, 20, 20, __, __ <10, __, __> [10/__, ___]
+    back=gear.DRK_STR_DA_Cape,            -- 30, __, 20, 20, __, __ <10, __, __> [10/__, ___]
     waist="Sailfi Belt +1",               -- 15, __, 15, __, __, __ < 5,  2, __> [__/__, ___]
     -- DRK traits/gifts/etc                                      50
     -- 269 STR, 161 MND, 427 Attack, 276 Accuracy, 66 WSD, 68 PDL <46 DA, 2 TA, 3 QA> [41 PDT/31 MDT, 643 M.Eva]
@@ -908,7 +908,7 @@ function init_gear_sets()
     ear2="Heathen's Earring +1",          -- __, __, 17, 11,  2,  8 <__, __, __> [__/__, ___]
     ring1="Sroda Ring",                   -- 15, __, __, __, __,  3 <__, __, __> [__/__, ___]
     ring2="Ephramad's Ring",              -- 10, __, 20, 20, __, 10 <__, __, __> [__/__, ___]
-    -- back=gear.DRK_STR_DA_Cape,         -- 30, __, 20, 20, __, __ <10, __, __> [10/__, ___]
+    back=gear.DRK_STR_DA_Cape,            -- 30, __, 20, 20, __, __ <10, __, __> [10/__, ___]
     waist="Sailfi Belt +1",               -- 15, __, 15, __, __, __ < 5,  2, __> [__/__, ___]
     -- DRK traits/gifts/etc                                      50
     -- 295 STR, 151 MND, 448 Attack, 322 Accuracy, 38 WSD, 98 PDL <48 DA, 2 TA, 0 QA> [35 PDT/25 MDT, 607 M.Eva]
@@ -951,7 +951,7 @@ function init_gear_sets()
     ear2="Lugra Earring +1",              -- 16, 16, __, __, __, __ < 3, __, __> [__/__, ___]
     ring1="Niqmaddu Ring",                -- 10, __, __, __, __, __ <__, __,  3> [__/__, ___]
     ring2="Epaminondas's Ring",           -- __, __, __, __,  5, __ <__, __, __> [__/__, ___]
-    -- back=gear.DRK_STR_DA_Cape,         -- 30, __, 20, 20, __, __ <10, __, __> [10/__, ___]
+    back=gear.DRK_STR_DA_Cape,            -- 30, __, 20, 20, __, __ <10, __, __> [10/__, ___]
     waist="Sailfi Belt +1",               -- 15, __, 15, __, __, __ < 5,  2, __> [__/__, ___]
     -- DRK traits/gifts/etc                                      50
     -- 285 STR, 180 INT, 410 Attack, 269 Accuracy, 64 WSD, 60 PDL <44 DA, 2 TA, 3 QA> [41 PDT/31 MDT, 643 M.Eva]
@@ -971,7 +971,7 @@ function init_gear_sets()
     ear2="Heathen's Earring +1",          -- __, __, 17, 11,  2,  8 <__, __, __> [__/__, ___]
     ring1="Sroda Ring",                   -- 15, __, __, __, __,  3 <__, __, __> [__/__, ___]
     ring2="Ephramad's Ring",              -- 10, __, 20, 20, __, 10 <__, __, __> [__/__, ___]
-    -- back=gear.DRK_STR_DA_Cape,         -- 30, __, 20, 20, __, __ <10, __, __> [10/__, ___]
+    back=gear.DRK_STR_DA_Cape,            -- 30, __, 20, 20, __, __ <10, __, __> [10/__, ___]
     waist="Sailfi Belt +1",               -- 15, __, 15, __, __, __ < 5,  2, __> [__/__, ___]
     -- DRK traits/gifts/etc                                      50
     -- 305 STR, 155 INT, 448 Attack, 326 Accuracy, 38 WSD, 98 PDL <43 DA, 2 TA, 0 QA> [35 PDT/25 MDT, 607 M.Eva]
