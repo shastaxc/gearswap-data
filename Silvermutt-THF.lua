@@ -325,7 +325,7 @@ function user_setup()
   set_sub_keybinds:schedule(2)
 
   if initialized then
-    send_command('gs c equipweapons')
+    send_command:schedule(1, 'gs c equipweapons')
   end
 
   initialized = true -- DO NOT MODIFY
