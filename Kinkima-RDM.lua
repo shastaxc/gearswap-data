@@ -195,11 +195,13 @@ function get_sets()
 
   -- Load and initialize the include file.
   include('Mote-Include.lua') --DO NOT MOVE TO GLOBALS. MUST BE HERE.
-  equip({main=empty,sub=empty})
-  
+
   coroutine.schedule(function()
     send_command('gs reorg')
   end, 1)
+  coroutine.schedule(function()
+    send_command('gs c equipweapons')
+  end, 2)
 end
 
 
@@ -377,6 +379,12 @@ function user_setup()
 
   select_default_macro_book()
   set_sub_keybinds:schedule(2)
+
+  if initialized then
+    send_command:schedule(1, 'gs c equipweapons')
+  end
+
+  initialized = true -- DO NOT MODIFY
 end
 
 -- Called when this job file is unloaded (eg: job change)
@@ -451,7 +459,8 @@ function init_gear_sets()
   }
   sets.WeaponSet['BlackHalo'].DW = {
     main="Maxentius",
-    sub="Tauret",
+    sub="Machaera +2",
+    -- sub="Thibron",
   }
   sets.WeaponSet['BlackHaloAcc'] = {
     main="Maxentius",
@@ -1986,6 +1995,8 @@ function init_gear_sets()
     back=gear.RDM_INT_Enf_Cape,
     waist="Obstinate Sash",
   }
+
+  sets.FallbackShield = {sub="Genmei Shield"}
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -2514,6 +2525,8 @@ function job_self_command(cmdParams, eventArgs)
     send_command('@input /ma '..state.BarStatus.value..' <me>')
   elseif cmdParams[1] == 'gainspell' then
     send_command('@input /ma '..state.GainSpell.value..' <me>')
+  elseif cmdParams[1] == 'equipweapons' then
+    equip(select_weapons())
   elseif cmdParams[1] == 'weaponset' then
     if cmdParams[2] == 'cycle' then
       cycle_weapons('forward')
@@ -2632,6 +2645,7 @@ function cycle_weapons(cycle_dir, set_name)
   else
     state.WeaponSet:reset()
   end
+  state.ToyWeapons:reset()
 
   add_to_chat(141, 'Weapon Set to '..string.char(31,1)..state.WeaponSet.current)
   equip(select_weapons())
@@ -2657,16 +2671,44 @@ function cycle_toy_weapons(cycle_dir, set_name)
 end
 
 function select_weapons()
+  local weapons_to_equip = {}
+  local can_dw = silibs.can_dual_wield()
   if state.ToyWeapons.current ~= 'None' then
-    return sets.ToyWeapon[state.ToyWeapons.current]
+    weapons_to_equip = set_combine(sets.ToyWeapon[state.ToyWeapons.current], {})
   else
-    if silibs.can_dual_wield() and sets.WeaponSet[state.WeaponSet.current] and sets.WeaponSet[state.WeaponSet.current].DW then
-      return sets.WeaponSet[state.WeaponSet.current].DW
+    if can_dw and sets.WeaponSet[state.WeaponSet.current] and sets.WeaponSet[state.WeaponSet.current].DW then
+      weapons_to_equip = set_combine(sets.WeaponSet[state.WeaponSet.current].DW, {})
     elseif sets.WeaponSet[state.WeaponSet.current] then
-      return sets.WeaponSet[state.WeaponSet.current]
+      weapons_to_equip = set_combine(sets.WeaponSet[state.WeaponSet.current], {})
     end
   end
-  return {}
+
+  -- If trying to equip weapon in offhand but cannot DW, equip empty
+  if not can_dw and weapons_to_equip.sub and silibs.is_weapon(weapons_to_equip.sub) then
+    weapons_to_equip.sub = (sets.FallbackShield and sets.FallbackShield.sub) or 'empty'
+  end
+
+  -- Equip appropriate ammo
+  local range_weapon_name = weapons_to_equip.ranged or weapons_to_equip.range
+  if range_weapon_name and silibs.is_weapon(range_weapon_name) and silibs.ammo_assignment then
+    local ammo_map = silibs.ammo_assignment['Bow']
+    if ammo_map then
+      local default_ammo = ammo_map.Default
+      if default_ammo then
+        if silibs.has_item(default_ammo, silibs.equippable_bags) then
+          weapons_to_equip.ammo = default_ammo
+        else
+          add_to_chat(3, default_ammo..' ammo unavailable. Leaving empty.')
+        end
+      else
+        add_to_chat(3, 'Default ammo not defined for '..range_type..'.')
+      end
+    end
+  else
+    weapons_to_equip.ammo = 'empty'
+  end
+
+  return weapons_to_equip
 end
 
 function in_battle_mode()
