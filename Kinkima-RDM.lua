@@ -447,11 +447,13 @@ function init_gear_sets()
   sets.WeaponSet['Enspell'] = {
     main="Crocea Mors",
     sub="Ammurapi Shield",
+    range="Ullr",
   }
   sets.WeaponSet['Enspell'].DW = {
     main="Crocea Mors",
     sub="Tauret",
     -- sub="Gleti's Knife",
+    range="Ullr",
   }
   sets.WeaponSet['BlackHalo'] = {
     main="Maxentius",
@@ -1915,8 +1917,7 @@ function init_gear_sets()
   sets.engaged.Enspell = set_combine(sets.engaged, {
     -- main="Crocea Mors",            -- __, __, 50 <__, __, __> [__/__, ___] (50, x6, __)
     -- sub="Gleti's Knife",           -- __, __, 55 <__,  6, __> [__/__, ___] (55, __, __); R30
-    range="Ullr",                     -- __, __, __ <__, __, __> [__/__, ___] (40, __, __)
-    ammo=empty,                       -- __, __, __ <__, __, __> [__/__, ___] (__, __, __)
+    -- range="Ullr",                  -- __, __, __ <__, __, __> [__/__, ___] (40, __, __)
     head="Bunzi's Hat",               -- __,  8, 55 <__, __,  3> [ 7/ 7, 123] (55, __, __); R30
     body="Lethargy Sayon +3",         -- __, __, 64 <__, __, __> [14/14, 136] (64, __, __)
     -- hands="Ayanmo Manopolas +2",   -- __, __, 43 <__, __, __> [ 3/ 3,  37] (43, 17, __)
