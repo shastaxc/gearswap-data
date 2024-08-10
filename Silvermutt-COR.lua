@@ -2334,28 +2334,6 @@ function display_current_job_state(eventArgs)
   eventArgs.handled = true
 end
 
-function cycle_toy_weapons(cycle_dir)
-  --If current state is None, save current weapons to switch back later
-  if state.ToyWeapons.current == 'None' then
-    sets.ToyWeapon.None.main = player.equipment.main
-    sets.ToyWeapon.None.sub = player.equipment.sub
-  end
-
-  if cycle_dir == 'forward' then
-    state.ToyWeapons:cycle()
-  elseif cycle_dir == 'back' then
-    state.ToyWeapons:cycleback()
-  else
-    state.ToyWeapons:reset()
-  end
-
-  local mode_color = 001
-  if state.ToyWeapons.current == 'None' then
-    mode_color = 006
-  end
-  add_to_chat(012, 'Toy Weapon Mode: '..string.char(31,mode_color)..state.ToyWeapons.current)
-  equip(sets.ToyWeapon[state.ToyWeapons.current])
-end
 
 -------------------------------------------------------------------------------------------------------------------
 -- Utility functions specific to this job.
