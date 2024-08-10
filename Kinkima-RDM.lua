@@ -682,7 +682,7 @@ function init_gear_sets()
     range=empty,                      -- __ [__/__, ___]
     ammo="Impatiens",                 -- __ [__/__, ___]  2
     head="Bunzi's Hat",               -- 10 [ 7/ 7, 123]
-    body="Pinga Tunic +1",            -- 15 [__/__, 128]
+    body="Vitiation Tabard +3",       -- 15 [__/__, 100]
     hands="Lethargy Gantherots +3",   -- __ [11/11,  87]
     legs="Bunzi's Pants",             -- __ [ 9/ 9, 150]
     feet=gear.Carmine_D_feet,         --  8 [ 4/__,  80]
@@ -694,7 +694,7 @@ function init_gear_sets()
     back="Perimede Cape",             -- __ [__/__, ___]  4
     waist="Witful Belt",              --  3 [__/__, ___]  3
     -- Traits/Gifts/Merits            -- 38 [__/__, ___]
-    -- 81 FC [50 PDT/48 MDT, 568 M.Eva] 11 QM
+    -- 81 FC [50 PDT/48 MDT, 540 M.Eva] 11 QM
   }
 
   sets.precast.FC.Impact = {
