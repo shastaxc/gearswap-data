@@ -199,11 +199,11 @@ function get_sets()
     send_command('gs reorg')
   end, 1)
   coroutine.schedule(function()
+    send_command('gs c equipweapons')
+  end, 2)
+  coroutine.schedule(function()
     send_command('hi report')
   end, 3)
-  coroutine.schedule(function()
-    send_command('gs c weaponset current')
-  end, 5)
 end
 
 -- Executes on first load and main job change
@@ -326,6 +326,12 @@ function user_setup()
 
   select_default_macro_book()
   set_sub_keybinds:schedule(2)
+
+  if initialized then
+    send_command:schedule(1, 'gs c equipweapons')
+  end
+
+  initialized = true -- DO NOT MODIFY
 end
 
 -- Called when this job file is unloaded (eg: job change)
@@ -2008,17 +2014,20 @@ function update_dp_type()
   end
 end
 
-function cycle_weapons(cycle_dir)
+function cycle_weapons(cycle_dir, set_name)
   if cycle_dir == 'forward' then
     state.WeaponSet:cycle()
   elseif cycle_dir == 'back' then
     state.WeaponSet:cycleback()
-  elseif cycle_dir == 'reset' then
+  elseif cycle_dir == 'set' then
+    state.WeaponSet:set(set_name)
+  else
     state.WeaponSet:reset()
   end
+  state.ToyWeapons:reset()
 
   add_to_chat(141, 'Weapon Set to '..string.char(31,1)..state.WeaponSet.current)
-  equip(sets.WeaponSet[state.WeaponSet.current])
+  equip(select_weapons())
 end
 
 function cycle_ranged_weapons(cycle_dir)
@@ -2026,35 +2035,77 @@ function cycle_ranged_weapons(cycle_dir)
     state.RangedWeaponSet:cycle()
   elseif cycle_dir == 'back' then
     state.RangedWeaponSet:cycleback()
+  elseif cycle_dir == 'set' then
+    state.RangedWeaponSet:set(set_name)
   else
     state.RangedWeaponSet:reset()
   end
 
   add_to_chat(141, 'RA Weapon Set to '..string.char(31,1)..state.RangedWeaponSet.current)
-  equip(sets.WeaponSet[state.RangedWeaponSet.current])
+  equip(select_weapons())
 end
 
-function cycle_toy_weapons(cycle_dir)
-  --If current state is None, save current weapons to switch back later
-  if state.ToyWeapons.current == 'None' then
-    sets.ToyWeapon.None.main = player.equipment.main
-    sets.ToyWeapon.None.sub = player.equipment.sub
-  end
-
+function cycle_toy_weapons(cycle_dir, set_name)
   if cycle_dir == 'forward' then
     state.ToyWeapons:cycle()
   elseif cycle_dir == 'back' then
     state.ToyWeapons:cycleback()
+  elseif cycle_dir == 'set' then
+    state.ToyWeapons:set(set_name)
   else
     state.ToyWeapons:reset()
   end
-  
+
   local mode_color = 001
   if state.ToyWeapons.current == 'None' then
     mode_color = 006
   end
   add_to_chat(012, 'Toy Weapon Mode: '..string.char(31,mode_color)..state.ToyWeapons.current)
-  equip(sets.ToyWeapon[state.ToyWeapons.current])
+  equip(select_weapons())
+end
+
+function select_weapons()
+  local weapons_to_equip = {}
+  if state.ToyWeapons.current ~= 'None' then
+    weapons_to_equip = set_combine(sets.ToyWeapon[state.ToyWeapons.current], {})
+  else
+    if sets.WeaponSet[state.WeaponSet.current] then
+      weapons_to_equip = set_combine(sets.WeaponSet[state.WeaponSet.current], {})
+    end
+  end
+
+  -- Equip ranged weapon
+  local ranged_set = sets.RangedWeaponSet[state.RangedWeaponSet.current]
+  if ranged_set then
+    weapons_to_equip = set_combine(weapons_to_equip, ranged_set)
+
+    -- Equip appropriate ammo
+    local range_weapon_name = ranged_set.ranged or ranged_set.range or ''
+    local weapon_stats = res.items:with('en', range_weapon_name)
+    if weapon_stats and weapon_stats.category == 'Weapon' and silibs.ammo_assignment then
+      local range_type = ((weapon_stats.range_type == 'Gun' or weapon_stats.range_type == 'Cannon') and 'Gun_or_Cannon')
+          or weapon_stats.range_type
+      if range_type then
+        local ammo_map = silibs.ammo_assignment[range_type]
+        if ammo_map then
+          local default_ammo = ammo_map.Default
+          if default_ammo then
+            if silibs.has_item(default_ammo, silibs.equippable_bags) then
+              weapons_to_equip.ammo = default_ammo
+            else
+              add_to_chat(3, default_ammo..' ammo unavailable. Leaving empty.')
+            end
+          else
+            add_to_chat(3, 'Default ammo not defined for '..range_type..'.')
+          end
+        end
+      end
+    else
+      weapons_to_equip.ammo = 'empty'
+    end
+  end
+
+  return weapons_to_equip
 end
 
 
@@ -2095,25 +2146,19 @@ function job_self_command(cmdParams, eventArgs)
 
   if cmdParams[1] == 'step' then
     send_command('@input /ja "'..state.MainStep.Current..'" <t>')
-  elseif cmdParams[1] == 'toyweapon' then
-    if cmdParams[2] == 'cycle' then
-      cycle_toy_weapons('forward')
-    elseif cmdParams[2] == 'cycleback' then
-      cycle_toy_weapons('back')
-    elseif cmdParams[2] == 'reset' then
-      cycle_toy_weapons('reset')
-    elseif cmdParams[2] == 'current' then
-      cycle_toy_weapons('current')
-    end
+  elseif cmdParams[1] == 'equipweapons' then
+    equip(select_weapons())
   elseif cmdParams[1] == 'weaponset' then
     if cmdParams[2] == 'cycle' then
       cycle_weapons('forward')
     elseif cmdParams[2] == 'cycleback' then
       cycle_weapons('back')
-    elseif cmdParams[2] == 'reset' then
-      cycle_weapons('reset')
     elseif cmdParams[2] == 'current' then
       cycle_weapons('current')
+    elseif cmdParams[2] == 'set' and cmdParams[3] then
+      cycle_weapons('set', cmdParams[3])
+    elseif cmdParams[2] == 'reset' then
+      cycle_weapons('reset')
     end
   elseif cmdParams[1] == 'rangedweaponset' then
     if cmdParams[2] == 'cycle' then
@@ -2124,6 +2169,16 @@ function job_self_command(cmdParams, eventArgs)
       cycle_ranged_weapons('reset')
     elseif cmdParams[2] == 'current' then
       cycle_ranged_weapons('current')
+    end
+  elseif cmdParams[1] == 'toyweapon' then
+    if cmdParams[2] == 'cycle' then
+      cycle_toy_weapons('forward')
+    elseif cmdParams[2] == 'cycleback' then
+      cycle_toy_weapons('back')
+    elseif cmdParams[2] == 'set' and cmdParams[3] then
+      cycle_toy_weapons('set', cmdParams[3])
+    elseif cmdParams[2] == 'reset' then
+      cycle_toy_weapons('reset')
     end
   elseif cmdParams[1] == 'rune' then
     send_command('@input /ja '..state.Runes.value..' <me>')

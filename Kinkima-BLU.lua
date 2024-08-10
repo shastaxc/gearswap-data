@@ -278,15 +278,13 @@ function get_sets()
   -- Load and initialize Mote library
   mote_include_version = 2
   include('Mote-Include.lua') -- Executes job_setup, user_setup, init_gear_sets
-  equip({main=empty,sub=empty})
 
   coroutine.schedule(function()
     send_command('gs reorg')
   end, 1)
   coroutine.schedule(function()
-    send_command('gs c weaponset current')
-    -- send_command('aset set mage')
-  end, 5)
+    send_command('gs c equipweapons')
+  end, 2)
   coroutine.schedule(function()
     send_command('hi report')
   end, 3)
@@ -408,6 +406,9 @@ function job_setup()
       ['^insert'] = 'gs c weaponset cycle',
       ['^delete'] = 'gs c weaponset cycleback',
       ['!delete'] = 'gs c weaponset reset',
+      ['^home'] = 'gs c rangedweaponset cycle',
+      ['^end'] = 'gs c rangedweaponset cycleback',
+      ['!end'] = 'gs c rangedweaponset reset',
       ['^pageup'] = 'gs c toyweapon cycle',
       ['^pagedown'] = 'gs c toyweapon cycleback',
       ['!pagedown'] = 'gs c toyweapon reset',
@@ -452,6 +453,12 @@ function user_setup()
 
   select_default_macro_book()
   set_sub_keybinds:schedule(2)
+
+  if initialized then
+    send_command:schedule(1, 'gs c equipweapons')
+  end
+
+  initialized = true -- DO NOT MODIFY
 end
 
 -- Called when this job file is unloaded (eg: job change)
@@ -534,6 +541,8 @@ function init_gear_sets()
     -- sub="Thibron",
   }
 
+  -- Ranged weapon sets
+  sets.RangedWeaponSet = {}
 
   -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
   --     Defense
@@ -1462,6 +1471,11 @@ function job_post_precast(spell, action, spellMap, eventArgs)
     -- Prevent swapping main/sub weapons
     equip({main="", sub=""})
   end
+  -- Keep ranged weapon/ammo equipped if in an RA mode.
+  if state.RangedWeaponSet.current ~= 'None' then
+    equip({range=player.equipment.range, ammo=player.equipment.ammo})
+    silibs.equip_ammo(spell, action, spellMap, eventArgs)
+  end
 
   -- If slot is locked, keep current equipment on
   if locked_neck then equip({ neck=player.equipment.neck }) end
@@ -1505,7 +1519,12 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     -- Prevent swapping main/sub weapons
     equip({main="", sub=""})
   end
-  
+  -- Keep ranged weapon/ammo equipped if in an RA mode.
+  if state.RangedWeaponSet.current ~= 'None' then
+    equip({range=player.equipment.range, ammo=player.equipment.ammo})
+    silibs.equip_ammo(spell, action, spellMap, eventArgs)
+  end
+
   -- If slot is locked, keep current equipment on
   if locked_neck then equip({ neck=player.equipment.neck }) end
   if locked_ear1 then equip({ ear1=player.equipment.ear1 }) end
@@ -1802,21 +1821,38 @@ end
 function job_self_command(cmdParams, eventArgs)
   silibs.self_command(cmdParams, eventArgs)
   ----------- Non-silibs content goes below this line -----------
-  if cmdParams[1] == 'weaponset' then
+
+  if cmdParams[1] == 'equipweapons' then
+    equip(select_weapons())
+  elseif cmdParams[1] == 'weaponset' then
     if cmdParams[2] == 'cycle' then
       cycle_weapons('forward')
     elseif cmdParams[2] == 'cycleback' then
       cycle_weapons('back')
     elseif cmdParams[2] == 'current' then
       cycle_weapons('current')
+    elseif cmdParams[2] == 'set' and cmdParams[3] then
+      cycle_weapons('set', cmdParams[3])
     elseif cmdParams[2] == 'reset' then
       cycle_weapons('reset')
+    end
+  elseif cmdParams[1] == 'rangedweaponset' then
+    if cmdParams[2] == 'cycle' then
+      cycle_ranged_weapons('forward')
+    elseif cmdParams[2] == 'cycleback' then
+      cycle_ranged_weapons('back')
+    elseif cmdParams[2] == 'reset' then
+      cycle_ranged_weapons('reset')
+    elseif cmdParams[2] == 'current' then
+      cycle_ranged_weapons('current')
     end
   elseif cmdParams[1] == 'toyweapon' then
     if cmdParams[2] == 'cycle' then
       cycle_toy_weapons('forward')
     elseif cmdParams[2] == 'cycleback' then
       cycle_toy_weapons('back')
+    elseif cmdParams[2] == 'set' and cmdParams[3] then
+      cycle_toy_weapons('set', cmdParams[3])
     elseif cmdParams[2] == 'reset' then
       cycle_toy_weapons('reset')
     end
@@ -1875,24 +1911,44 @@ function apply_ability_bonuses(spell, action, spellMap)
   end
 end
 
-function cycle_weapons(cycle_dir)
+function cycle_weapons(cycle_dir, set_name)
   if cycle_dir == 'forward' then
     state.WeaponSet:cycle()
   elseif cycle_dir == 'back' then
     state.WeaponSet:cycleback()
-  elseif cycle_dir == 'reset' then
+  elseif cycle_dir == 'set' then
+    state.WeaponSet:set(set_name)
+  else
     state.WeaponSet:reset()
   end
+  state.ToyWeapons:reset()
 
   add_to_chat(141, 'Weapon Set to '..string.char(31,1)..state.WeaponSet.current)
   equip(select_weapons())
 end
 
-function cycle_toy_weapons(cycle_dir)
+function cycle_ranged_weapons(cycle_dir)
+  if cycle_dir == 'forward' then
+    state.RangedWeaponSet:cycle()
+  elseif cycle_dir == 'back' then
+    state.RangedWeaponSet:cycleback()
+  elseif cycle_dir == 'set' then
+    state.RangedWeaponSet:set(set_name)
+  else
+    state.RangedWeaponSet:reset()
+  end
+
+  add_to_chat(141, 'RA Weapon Set to '..string.char(31,1)..state.RangedWeaponSet.current)
+  equip(select_weapons())
+end
+
+function cycle_toy_weapons(cycle_dir, set_name)
   if cycle_dir == 'forward' then
     state.ToyWeapons:cycle()
   elseif cycle_dir == 'back' then
     state.ToyWeapons:cycleback()
+  elseif cycle_dir == 'set' then
+    state.ToyWeapons:set(set_name)
   else
     state.ToyWeapons:reset()
   end
@@ -1906,15 +1962,22 @@ function cycle_toy_weapons(cycle_dir)
 end
 
 function select_weapons()
+  local weapons_to_equip = {}
   if state.ToyWeapons.current ~= 'None' then
-    return sets.ToyWeapon[state.ToyWeapons.current]
+    weapons_to_equip = set_combine(sets.ToyWeapon[state.ToyWeapons.current], {})
   else
-    if silibs.can_dual_wield() and sets.WeaponSet[state.WeaponSet.current] and sets.WeaponSet[state.WeaponSet.current].DW then
-      return sets.WeaponSet[state.WeaponSet.current].DW
-    elseif sets.WeaponSet[state.WeaponSet.current] then
-      return sets.WeaponSet[state.WeaponSet.current]
+    if sets.WeaponSet[state.WeaponSet.current] then
+      weapons_to_equip = set_combine(sets.WeaponSet[state.WeaponSet.current], {})
     end
   end
+
+  -- Equip ranged weapon
+  local ranged_set = sets.RangedWeaponSet[state.RangedWeaponSet.current]
+  if ranged_set then
+    weapons_to_equip = set_combine(weapons_to_equip, ranged_set)
+  end
+
+  return weapons_to_equip
 end
 
 function in_battle_mode()
