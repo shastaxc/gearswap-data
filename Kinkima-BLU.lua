@@ -496,17 +496,22 @@ function init_gear_sets()
   }
 
   sets.Enmity = {
-    ammo="Sapience Orb", --2
-    head="Halitus Helm", --8
-    ear1="Cryptic Earring", --4
-    -- body="Emet Harness +1", --10
-    -- hands="Kurys Gloves", --9
-    -- feet="Ahosi Leggings", --7
-    -- neck="Unmoving Collar +1", --10
-    -- ear2="Trux Earring", --5
-    -- ring1="Pernicious Ring", --5
-    -- ring2="Eihwaz Ring", --5
-    -- waist="Kasiri Belt", --3
+    ammo="Sapience Orb",          --  2 [__/__, ___]
+    head="Halitus Helm",          --  8 [__/__,  43]
+    legs="Hashishin Tayt +2",     -- __ [11/11, 152]
+    ear1="Cryptic Earring",       --  4 [__/__, ___]
+
+    -- body="Emet Harness +1",    -- 10 [ 6/__,  64]
+    -- hands="Kurys Gloves",      --  9 [ 2/ 2,  57]
+    -- legs="Hashishin Tayt +3",  -- __ [12/12, 162]
+    -- feet="Ahosi Leggings",     --  7 [ 4/__, 107]
+    -- neck="Unmoving Collar +1", -- 10 [__/__, ___]
+    -- ear2="Trux Earring",       --  5 [__/__, ___]
+    -- ring1="Pernicious Ring",   --  5 [__/__, ___]
+    -- ring2="Eihwaz Ring",       --  5 [__/__, ___]
+    -- back=gear.BLU_ENM_Cape,    -- 10 [10/__, ___]
+    -- waist="Kasiri Belt",       --  3 [__/__, ___]
+    -- 78 Enmity [34 PDT/14 MDT, 433 M.Eva]
   }
 
 
