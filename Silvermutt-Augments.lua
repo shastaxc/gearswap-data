@@ -318,7 +318,7 @@ gear.PLD_TP_Cape = { name="Rudianos's Mantle", augments={'DEX+20','Accuracy+20 A
 -- gear.PUP_STR_DA_Cape = { name="Visucius's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','"Dbl.Atk."+10','Pet: Damage taken -5%',}}
 gear.PUP_STR_Crit_Cape = { name="Visucius's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Crit.hit rate+10','Pet: Damage taken -5%',}}
 -- gear.PUP_STR_WSD_Cape = { name="Visucius's Mantle", augments={'STR+20','Accuracy+20 Attack+20','STR+10','Weapon skill damage +10%','Pet: Damage taken -5%',}}
--- gear.PUP_VIT_DA_Cape = { name="Visucius's Mantle", augments={'VIT+20','Accuracy+20 Attack+20','VIT+10','"Dbl.Atk."+10','Pet: Damage taken -5%',}}
+gear.PUP_VIT_DA_Cape = { name="Visucius's Mantle", augments={'VIT+20','Accuracy+20 Attack+20','VIT+10','"Dbl.Atk."+10','Pet: Damage taken -5%',}}
 -- gear.PUP_DEX_DA_Cape = { name="Visucius's Mantle", augments={'DEX+20','Accuracy+20 Attack+20','DEX+10','"Dbl.Atk."+10','Pet: Damage taken -5%',}}
 -- gear.PUP_Cure_Cape = {} -- Cure Potency +10%, MND+30, Pet DT-5%
 -- gear.PUP_Pet_Nuke_Cape = {} -- Pet M.acc/m.dmg, Pet DT, STP, Acc/att

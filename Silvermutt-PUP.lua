@@ -976,11 +976,9 @@ function init_gear_sets()
     ear2="Moonshade Earring",         -- __, __, __ <__, __, __> [__/__, ___] {__/__, ___}; TP Bonus+250
     ring1="Gere Ring",                -- 10, __, __ <__,  5, __> [__/__, ___] {__/__, ___}
     ring2="Niqmaddu Ring",            -- 10, 10, __ <__, __,  3> [__/__, ___] {__/__, ___}
-    back=gear.PUP_STR_Crit_Cape,      -- 30, __, __ <__, __, __> [__/__, ___] { 5/ 5,   1}
+    back=gear.PUP_VIT_DA_Cape,        -- __, 30, __ <10, __, __> [__/__, ___] { 5/ 5,   1}
     waist="Moonbow Belt +1",          -- 20, __, __ <__,  8, __> [ 6/ 6, ___] {__/__, ___}
-    -- 246 STR, 189 VIT, 52 WSD <33 DA, 16 TA, 3 QA> [44 PDT/37 MDT, 620 M.Eva] {Pet: 5 PDT/5 MDT, 120 Lv}
-    
-    -- back=gear.PUP_VIT_DA_Cape,     -- __, 30, __ <10, __, __> [__/__, ___] { 5/ 5,   1}
+    -- 216 STR, 219 VIT, 52 WSD <43 DA, 16 TA, 3 QA> [44 PDT/37 MDT, 620 M.Eva] {Pet: 5 PDT/5 MDT, 120 Lv}
   })
   sets.precast.WS["Howling Fist"].MaxTP = set_combine(sets.precast.WS["Howling Fist"], {
     head=gear.Nyame_B_head,           -- 26, 24, 11 < 5, __, __> [ 7/ 7, 123] {__/__, ___}
@@ -1367,7 +1365,7 @@ function init_gear_sets()
   --     Engaged
   -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
   ------------------------------------------------------------------------------------------------
-  --    NWhen master is engaged in Master hybrid mode
+  --    When master is engaged in Master hybrid mode
   ------------------------------------------------------------------------------------------------
 
   sets.engaged = {
@@ -1400,7 +1398,7 @@ function init_gear_sets()
 
 
   ------------------------------------------------------------------------------------------------
-  --    NWhen master is engaged in Pet hybrid mode
+  --    When master is engaged in Pet hybrid mode
   ------------------------------------------------------------------------------------------------
 
   -- These will be similar to the idle.PetEngaged modes, but put a little more emphasis on master survivability.
@@ -1503,7 +1501,7 @@ function init_gear_sets()
 
 
   ------------------------------------------------------------------------------------------------
-  --    NWhen master is engaged in Halfsies hybrid mode
+  --    When master is engaged in Halfsies hybrid mode
   ------------------------------------------------------------------------------------------------
 
   sets.engaged.HalfsiesTank = {
