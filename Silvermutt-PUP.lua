@@ -2106,7 +2106,7 @@ function use_maneuver(is_forced_refresh)
   local need_maneuvers = false
   if not is_forced_refresh then
     for element,count in pairs(desired_count) do
-      if not active_count[element] or count < active_count[element] then
+      if not active_count[element] or count > active_count[element] then
         need_maneuvers = true
         break
       end
@@ -2142,7 +2142,7 @@ function use_maneuver(is_forced_refresh)
     end
 
     -- Under certain circumstances, we can safely replace the shortest maneuver with something else
-      -- Modify the active_count to remove the shortest maneuver, since we're assuming it'll be coming off anyway
+    -- Modify the active_count to remove the shortest maneuver, since we're assuming it'll be coming off anyway
     if active_maneuvers:length() == 3 and (num_desired_maneuvers == 3 or shortest_d_count) and not (shortest_d_count and active_count[shortest_maneuver.short_name]-1 < shortest_d_count) then
       active_count[shortest_maneuver.short_name] = active_count[shortest_maneuver.short_name] - 1
     end
