@@ -1206,22 +1206,19 @@ function init_gear_sets()
     head="Sakpata's Helm",                -- [ 7/ 7, 123] __ <__, __,  5> __,  4, __(__); DA dmg +15%
     body="Dagon Breastplate",             -- [__/__,  86] __ <__,  5, __>  4,  1, __(10)
     hands="Sakpata's Gauntlets",          -- [ 8/ 8, 112]  8 <__, __,  6> __,  4,  8(__)
-    legs="Sakpata's Cuisses",             -- [ 9/ 9, 150] __ <__, __,  7> __,  4, __(__)
+    legs="Volte Tights",                  -- [__/__, 107]  8 <__, __, __> __,  9,  8(__)
     feet="Sakpata's Leggings",            -- [ 6/ 6, 150] __ <__, __,  4> __,  2, 13(__)
     neck="Loricate Torque +1",            -- [ 6/ 6, ___] __ <__, __, __> __, __, __(__)
     ear1="Schere Earring",                -- [__/__, ___]  5 <__, __,  6> __, __,  3(__)
     ear2="Boii Earring +1",               -- [__/__, ___] __ <__, __,  8>  4, __,  6(__)
-    ring1="Chirich Ring +1",              -- [__/__, ___]  6 <__, __, __> __, __, 10(__)
+    ring1="Defending Ring",               -- [10/10, ___] __ <__, __, __> __, __, __(__)
     ring2="Niqmaddu Ring",                -- [__/__, ___] __ < 3, __, __> __, __, __( 5)
     back=gear.WAR_STP_Cape,               -- [10/__, ___] 10 <__, __, __> __, __, __(__); DA dmg+20%
     waist="Peiste Belt +1",               -- [__/__, ___] __ <__, __, __> __, __, 10(__)
     -- WAR Traits                            [__/__, ___] __ <__, __, 33> __, __, __(__)
-    -- [46 PDT/36 MDT, 621 MEVA] 29 STP <3 QA, 5 TA, 69 DA> 8 Crit Rate, 20 Haste, 50(15) Subtle Blow; DA dmg+35%
+    -- [47 PDT/37 MDT, 578 MEVA] 31 STP <3 QA, 5 TA, 62 DA> 8 Crit Rate, 25 Haste, 48(15) Subtle Blow; DA dmg+35%
 
-    -- legs="Volte Tights",               -- [__/__, 107]  8 <__, __, __> __,  9,  8(__)
     -- ear2="Boii Earring +2",            -- [__/__, ___] __ <__, __,  9>  8, __,  7(__)
-    -- ring1="Defending Ring",            -- [10/10, ___] __ <__, __, __> __, __, __(__)
-    -- WAR Traits                            [__/__, ___] __ <__, __, 33> __, __, __(__)
     -- [47 PDT/37 MDT, 578 MEVA] 31 STP <3 QA, 5 TA, 63 DA> 12 Crit Rate, 25 Haste, 49(15) Subtle Blow; DA dmg+35%
   }
   sets.engaged.LowAcc.SubtleDD = set_combine(sets.engaged.SubtleDD, {})
@@ -1233,21 +1230,19 @@ function init_gear_sets()
     head="Sakpata's Helm",                -- [ 7/ 7, 123] __ <__, __,  5> __,  4, __(__); DA dmg +15%
     body="Dagon Breastplate",             -- [__/__,  86] __ <__,  5, __>  4,  1, __(10)
     hands="Sakpata's Gauntlets",          -- [ 8/ 8, 112]  8 <__, __,  6> __,  4,  8(__)
-    legs="Sakpata's Cuisses",             -- [ 9/ 9, 150] __ <__, __,  7> __,  4, __(__)
+    legs="Volte Tights",                  -- [__/__, 107]  8 <__, __, __> __,  9,  8(__)
     feet="Sakpata's Leggings",            -- [ 6/ 6, 150] __ <__, __,  4> __,  2, 13(__)
     neck="Loricate Torque +1",            -- [ 6/ 6, ___] __ <__, __, __> __, __, __(__)
     ear1="Dignitary's Earring",           -- [__/__, ___]  3 <__, __, __> __, __,  5(__)
     ear2="Boii Earring +1",               -- [__/__, ___] __ <__, __,  8>  4, __,  6(__)
-    ring1="Chirich Ring +1",              -- [__/__, ___]  6 <__, __, __> __, __, 10(__)
+    ring1="Defending Ring",               -- [10/10, ___] __ <__, __, __> __, __, __(__)
     ring2="Niqmaddu Ring",                -- [__/__, ___] __ < 3, __, __> __, __, __( 5)
     back=gear.WAR_STP_Cape,               -- [10/__, ___] 10 <__, __, __> __, __, __(__); DA dmg+20%
     waist="Peiste Belt +1",               -- [__/__, ___] __ <__, __, __> __, __, 10(__)
     -- WAR Traits                            [__/__, ___] __ <__, __, 33> __, __, __(__)
-    -- [46 PDT/36 MDT, 621 MEVA] 27 STP <3 QA, 5 TA, 63 DA> 8 Crit Rate, 20 Haste, 52(15) Subtle Blow; DA dmg+35%
+    -- [47 PDT/37 MDT, 578 MEVA] 29 STP <3 QA, 5 TA, 56 DA> 8 Crit Rate, 25 Haste, 50(15) Subtle Blow; DA dmg+35%
 
-    -- legs="Volte Tights",               -- [__/__, 107]  8 <__, __, __> __,  9,  8(__)
     -- ear2="Boii Earring +2",            -- [__/__, ___] __ <__, __,  9>  8, __,  7(__)
-    -- ring1="Defending Ring",            -- [10/10, ___] __ <__, __, __> __, __, __(__)
     -- [47 PDT/37 MDT, 578 MEVA] 29 STP <3 QA, 5 TA, 57 DA> 12 Crit Rate, 25 Haste, 51(15) Subtle Blow; DA dmg+35%
   }
   sets.engaged.LowAcc.SubtleTanking = set_combine(sets.engaged.SubtleTanking, {})
