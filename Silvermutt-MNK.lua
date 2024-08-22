@@ -655,6 +655,7 @@ function init_gear_sets()
   -- Ascetic's Fury: 50% STR / 50% VIT, 1.0 fTP (2.0 w/ offhand), 1 hit (2 w/ offhand), can crit, ftp replicating
   -- Cannot crit normally - only TP bonus can increase crit rate
   -- TP Bonus > crit dmg > multihit > WSD
+  -- TODO: Remove crit rate gear, does nothing.
   sets.precast.WS["Ascetic's Fury"] = set_combine(sets.precast.WS, {
     ammo="Knobkierrie",
     head="Mpaca's Cap",
@@ -1143,18 +1144,6 @@ end
 -- gain == true if the buff was gained, false if it was lost.
 -- Theory: debuffs must be lowercase and buffs must begin with uppercase
 function job_buff_change(buff,gain)
-  -- Hundred Fists and Impetus modify the custom melee groups
-  if buff == "Hundred Fists" or buff == "Impetus" or buff == "Footwork" then
-    classes.CustomMeleeGroups:clear()
-
-    if (buff == "Hundred Fists" and gain) or buffactive['hundred fists'] then
-      classes.CustomMeleeGroups:append('HF')
-    end
-    if (buff == "Impetus" and gain) or buffactive.impetus then
-      classes.CustomMeleeGroups:append('Impetus')
-    end
-  end
-
   if buff == 'sleep' and gain and player.vitals.hp > 500 and player.status == 'Engaged' then
     equip(sets.SleepyHead)
   end
