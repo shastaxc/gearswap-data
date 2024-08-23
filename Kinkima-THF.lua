@@ -442,15 +442,16 @@ function init_gear_sets()
   }
 
   -- Ranged weapon sets
-  sets.WeaponSet['Archery'] = {
+  sets.RangedWeaponSet = {}
+  sets.RangedWeaponSet['Archery'] = {
     ranged="Ullr",
     ammo="Eminent Arrow",
   }
-  sets.WeaponSet['Throwing'] = {
+  sets.RangedWeaponSet['Throwing'] = {
     -- ranged="Antitail +1",
     -- ammo=empty,
   }
-  sets.WeaponSet['Pulling'] = {
+  sets.RangedWeaponSet['Pulling'] = {
     -- ranged="Jinx Discus",
     -- ammo=empty,
   }
