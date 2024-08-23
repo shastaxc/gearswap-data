@@ -1,6 +1,6 @@
 -- Initialization function for this job file.
 
-local jobs = T{'BLU', 'BRD', 'BST', 'COR', 'DNC', 'DRG', 'GEO', 'MNK', 'NIN', 'PUP', 'RNG', 'RUN', 'SAM', 'THF', 'WAR'}
+local jobs = T{'BLU', 'BST', 'COR', 'DNC', 'DRG', 'DRK', 'GEO', 'MNK', 'NIN', 'PLD', 'PUP', 'RNG', 'RUN', 'SAM', 'THF', 'WAR'}
 -- local jobs = T{'BLM', 'BLU', 'COR', 'GEO', 'RDM', 'SCH', 'SMN', 'THF', 'WHM'}
 
 mysets = {}
