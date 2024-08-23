@@ -645,7 +645,7 @@ function init_gear_sets()
 
   sets.midcast['Elemental Magic'] = {
     main="Daybreak",
-    sub="Genmei Shield",
+    sub="Ammurapi Shield",
     range=empty,
     ammo="Ghastly Tathlum +1",
     head=empty,
@@ -769,8 +769,9 @@ function init_gear_sets()
 
   sets.midcast.Dispel = {
     main="Daybreak",
-    sub=empty,
-    ammo="Pemphredo Tathlum",
+    sub="Ammurapi Shield",            -- 38, __, 13 [__/__, ___] {__/__, __}
+    range="Dunna",                    -- 10, __, __ [__/__, ___] { 5/ 5, __}
+    ammo=empty,                       -- __, __, __ [__/__, ___] {__/__, __}
     neck="Erra Pendant",
     ear2="Malignance Earring",
     ring1="Metamor. Ring +1",
@@ -797,13 +798,12 @@ function init_gear_sets()
 
   sets.midcast.Dispelga = set_combine(sets.midcast.Dispel, {
     main="Daybreak",                  -- 40, __, __ [__/__,  30] {__/__, __}; Needed to cast dispelga
-    sub=empty,
-    -- sub="Ammurapi Shield",         -- 38, __, 13 [__/__, ___] {__/__, __}
+    sub="Ammurapi Shield",            -- 38, __, 13 [__/__, ___] {__/__, __}
   })
 
   sets.midcast['Enfeebling Magic'] = {
     main="Daybreak",
-    sub=empty,
+    sub="Ammurapi Shield",            -- 38, __, 13, 13, 10 [__/__, ___] {__/__, __}
     range="Dunna",
     ammo=empty,
     head=empty,
@@ -948,7 +948,7 @@ function init_gear_sets()
 
   sets.midcast['Enhancing Magic'] = {
     main="Idris",                     -- __, __, __ [__/__, ___] {25/25, __}
-    sub="Genmei Shield",              -- __, __, __ [10/__, ___] {__/__, __}
+    sub="Ammurapi Shield",            -- __, 10, __ [__/__, ___] {__/__, __}
     range="Dunna",                    -- __, __,  3 [__/__, ___] { 5/ 5, __}
     ammo=empty,
     head=gear.Nyame_B_head,           -- __, __, __ [ 7/ 7, 123] {__/__, __}
@@ -1015,7 +1015,7 @@ function init_gear_sets()
 
   sets.midcast.Refresh = {
     main="Idris",                     -- __, __, __ [__/__, ___] {25/25, __}
-    sub="Genmei Shield",              -- __, __, __ [10/__, ___] {__/__, __}
+    sub="Ammurapi Shield",            -- __, __, 10 [__/__, ___] {__/__, __}
     range=empty,
     ammo="Staunch Tathlum +1",        -- __, __, __ [ 3/ 3, ___] {__/__, __}
     head=gear.Nyame_B_head,           -- __, __, __ [ 7/ 7, 123] {__/__, __}
