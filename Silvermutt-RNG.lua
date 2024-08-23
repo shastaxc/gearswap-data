@@ -321,14 +321,16 @@ function init_gear_sets()
 
   if sets.org then
     sets.org.job = {}
-    sets.org.job[1] = {ammo="Chrono Bullet"}
-    sets.org.job[2] = {ammo="Artemis's Arrow"}
-    sets.org.job[3] = {ammo="Quelling Bolt"}
-    sets.org.job[4] = {waist="Quelling Bolt Quiver"}
-    sets.org.job[5] = {waist="Chrono Bullet Pouch"}
-    sets.org.job[6] = {waist="Devastating Bullet Pouch"}
-    sets.org.job[7] = {waist="Devastating Bullet"}
-    sets.org.job[8] = {waist="Artemis's Quiver"}
+    sets.org.job[1] = {ammo="Hauksbok Bullet"}
+    sets.org.job[2] = {ammo="Hauksbok Arrow"}
+    sets.org.job[3] = {ammo="Chrono Bullet"}
+    sets.org.job[4] = {ammo="Artemis's Arrow"}
+    sets.org.job[5] = {ammo="Quelling Bolt"}
+    sets.org.job[6] = {waist="Quelling Bolt Quiver"}
+    sets.org.job[7] = {waist="Chrono Bullet Pouch"}
+    sets.org.job[8] = {waist="Devastating Bullet Pouch"}
+    sets.org.job[9] = {waist="Devastating Bullet"}
+    sets.org.job[10] = {waist="Artemis's Quiver"}
   end
 
   sets.TreasureHunter = {

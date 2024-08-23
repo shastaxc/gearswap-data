@@ -343,13 +343,14 @@ function init_gear_sets()
 
   if sets.org then
     sets.org.job = {}
-    sets.org.job[1] = {ammo="Chrono Bullet"}
-    sets.org.job[2] = {ammo="Devastating Bullet"}
-    sets.org.job[3] = {ammo="Living Bullet"}
-    sets.org.job[4] = {ammo="Hauksbok Bullet"}
-    sets.org.job[5] = {waist="Chrono bullet pouch"}
-    sets.org.job[6] = {waist="Devastating Bullet Pouch"}
-    sets.org.job[7] = {waist="Living Bullet Pouch"}
+    sets.org.job[1] = {ammo="Hauksbok Bullet"}
+    sets.org.job[2] = {ammo="Chrono Bullet"}
+    sets.org.job[3] = {ammo="Devastating Bullet"}
+    sets.org.job[4] = {ammo="Living Bullet"}
+    sets.org.job[5] = {ammo="Hauksbok Bullet"}
+    sets.org.job[6] = {waist="Chrono bullet pouch"}
+    sets.org.job[7] = {waist="Devastating Bullet Pouch"}
+    sets.org.job[8] = {waist="Living Bullet Pouch"}
   end
 
   sets.TreasureHunter = {
