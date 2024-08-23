@@ -1096,7 +1096,7 @@ function init_gear_sets()
   sets.midcast['Enfeebling Magic'] = {
     ammo="Pemphredo Tathlum",         --  4,  8, __ [__/__, ___]
     head=gear.Carmine_D_head,         -- 26, 50, 11 [__/__,  53]
-    body="Heathen's Cuirass +3",      -- 35, 64, __ [__/__, 103]
+    body="Heathen's Cuirass +2",      -- 30, 54, __ [__/__,  93]
     hands="Heathen's Gauntlets +2",   -- 20, 52, __ [ 9/ 9,  72]
     legs="Heathen's Flanchard +2",    -- 36, 53, __ [11/11, 109]
     feet="Heathen's Sollerets +3",    -- 22, 60, __ [__/__, 119]
@@ -1107,8 +1107,9 @@ function init_gear_sets()
     ring2="Stikini Ring +1",          -- __, 11,  8 [__/__, ___]
     back=gear.DRK_MAB_Cape,           -- 30, 20, __ [10/__, ___]
     waist="Eschan Stone",             -- __,  7, __ [__/__, ___]
-    -- 197 INT, 378 M.Acc, 19 Enfeeb Skill [30 PDT/20 MDT, 456 M.Eva]
+    -- 192 INT, 368 M.Acc, 19 Enfeeb Skill [30 PDT/20 MDT, 446 M.Eva]
 
+    -- body="Heathen's Cuirass +3",   -- 35, 64, __ [__/__, 103]
     -- hands="Heathen's Gauntlets +3",-- 25, 62, __ [10/10,  82]
     -- legs="Heathen's Flanchard +3", -- 41, 63, __ [12/12, 119]
     -- 207 INT, 398 M.Acc, 19 Enfeeb Skill [32 PDT/22 MDT, 476 M.Eva]
@@ -1144,7 +1145,7 @@ function init_gear_sets()
   sets.midcast['Dread Spikes'] = {
     ammo="Egoist's Tathlum",          --  45 [___/___, ___]
     head="Ratri Sallet +1",           -- 510 [ -8/ -8, 101]
-    body="Heathen's Cuirass +3",      --  98 [ 13/ 13, 103]; Potency+55%
+    body="Heathen's Cuirass +2",      --  83 [ 12/ 12,  93]; Potency+45%
     hands="Ratri Gadlings +1",        -- 499 [-10/-10,  90]
     legs="Ratri Cuisses +1",          -- 521 [-12/-12, 139]
     feet="Ratri Sollerets +1",        -- 487 [ -6/ -6, 139]; Duration+25%
@@ -1155,6 +1156,8 @@ function init_gear_sets()
     ring2="Gelatinous Ring +1",       -- 135 [  7/ -1, ___]
     back="Moonlight Cape",            -- 275 [  6/  6, ___]
     waist="Platinum Moogle Belt",     -- ___ [  3/  3,  15]
+
+    -- body="Heathen's Cuirass +3",   --  98 [ 13/ 13, 103]; Potency+55%
     -- Base HP at ML30                  2019
     -- HP from belt                      500
     -- 5009/5509 HP [3 PDT/-5 MDT, 587 M.Eva]
