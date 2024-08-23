@@ -996,7 +996,7 @@ function init_gear_sets()
   }
 
   sets.FallbackShield = {
-    -- sub="Regis"
+    sub="Regis"
   }
 end
 
