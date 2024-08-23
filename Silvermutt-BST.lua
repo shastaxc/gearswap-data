@@ -658,6 +658,13 @@ function init_gear_sets()
 
   if sets.org then
     sets.org.job = {}
+    sets.org.job[1] = {ammo="C. Plasma Broth"}
+    sets.org.job[2] = {ammo="Tant. Broth"}
+    sets.org.job[3] = {ammo="Dire Broth"}
+    sets.org.job[4] = {ammo="Lyrical Broth"}
+    sets.org.job[5] = {ammo="Windy Greens"}
+    sets.org.job[6] = {ammo="Rancid Broth"}
+    sets.org.job[7] = {ammo="Swirling Broth"}
   end
 
   sets.TreasureHunter = {
@@ -1726,6 +1733,10 @@ function init_gear_sets()
     ring2="Eshmun's Ring", --20
     waist="Gishdubar Sash", --10
   }
+  sets.buff['Killer Instinct'] = {
+    body="Ferine Gausape +1",
+    -- body="Nukumi Gausape +3",
+  }
 
   -- Shield to use as a fallback option swap sets when not dual wielding
   sets.FallbackShield = {sub="Sacro Bulwark"}
@@ -1778,6 +1789,10 @@ function job_post_precast(spell, action, spellMap, eventArgs)
   end
 
   if spell.type == 'WeaponSkill' then
+    -- If pet correlation is Favorable and Killer Instinct is active, use empy body
+    if pet.isValid and state.CorrelationMode.current == 'Favorable' and buffactive['Killer Instinct'] then
+      equip(sets.buff['Killer Instinct'])
+    end
     if buffactive['Reive Mark'] then
       equip(sets.Reive)
     end
