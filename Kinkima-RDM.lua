@@ -521,7 +521,7 @@ function init_gear_sets()
     ear2="Etiolation Earring",        -- __/ 3, ___ [__]; Resist Silence+15
     ring1="Wuji Ring",                -- __/__, ___ [__]; Resists Charm/Sleep
     ring2="Defending Ring",           -- 10/10, ___ [__]
-    back="Archon Cape",               -- __/__, ___ [__]
+    back="Shadow Mantle",             -- __/__, ___ [__]; Occ. annuls physical dmg
     waist="Carrier's Sash",           -- __/__, ___ [__]; Ele Resist+15
     -- 58 PDT/51 MDT, 641 M.Eva [3 Refresh]
 
@@ -529,7 +529,6 @@ function init_gear_sets()
     -- sub="Sacro Bulwark",           -- 10/10, ___ [__]
     -- head="Lethargy Chappel +3",    -- 10/10, 125 [__]
     -- ring2="Shadow Ring",           -- __/__, ___ [__]; Occ. annuls magic dmg
-    -- back="Shadow Mantle",          -- __/__, ___ [__]; Occ. annuls physical dmg
     -- 51 PDT/44 MDT, 643 M.Eva [3 Refresh]
   }
 

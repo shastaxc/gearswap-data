@@ -1082,14 +1082,14 @@ function init_gear_sets()
     ear2="Mimir Earring",             -- 10, __ [__/__, ___] __, __
     ring1="Gelatinous Ring +1",       -- __, __ [ 7/-1, ___] __, __
     ring2="Defending Ring",           -- __, __ [10/10, ___] __, __
-    back=gear.WHM_FC_Cape,            -- __, __ [10/__,  20] __, __
+    back="Shadow Mantle",             -- __, __ [__/__, ___] __, __; Annul phys dmg
     waist="Embla Sash",               -- __, 10 [__/__, ___] __, __
     -- Merits/JP                         16, __ [__/__, ___] 50, 10
     -- Base                             378
     -- Light Arts                        26
     -- Master Levels                     15
     -- Afflatus Solace                                       __,  5
-    -- 514 Enh Skill, 20% Enh Duration [59 PDT/43 MDT, 596 MEVA] 83 Barspell Resistance, 36 Barspell M.Def
+    -- 514 Enh Skill, 20% Enh Duration [49 PDT/43 MDT, 576 MEVA] 83 Barspell Resistance, 36 Barspell M.Def
 
     -- main="Beneficus",              -- 15, __ [__/__, ___] __,  5
     -- sub="Ammurapi Shield",         -- __, 10 [__/__, ___] __, __

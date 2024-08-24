@@ -363,12 +363,11 @@ function init_gear_sets()
     ear2="Etiolation Earring",        -- __/ 3, ___ [__]; Resist Silence+15
     ring1="Wuji Ring",                -- __/__, ___ [__]; Resists Charm/Sleep
     ring2="Archon Ring",              -- __/__, ___ [__]; Annul severe magic dmg
-    back="Archon Cape",               -- __/__, ___ [__]
+    back="Shadow Mantle",             -- __/__, ___ [__]; Occ. annuls physical dmg
     waist="Carrier's Sash",           -- __/__, ___ [__]; Ele Resist+15
     -- 56 PDT/49 MDT, 682 M.Eva [5 Refresh]
 
     -- ring2="Shadow Ring",           -- __/__, ___ [__]; Occ. annuls magic dmg
-    -- back="Shadow Mantle",          -- __/__, ___ [__]; Occ. annuls physical dmg
     -- 56 PDT/49 MDT, 682 M.Eva [5 Refresh]
   }
 

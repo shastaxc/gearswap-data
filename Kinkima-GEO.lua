@@ -1357,14 +1357,13 @@ function init_gear_sets()
     ear1="Earthcry Earring",          -- 10 [__/__, ___] {__/__, __}
     ear2="Hearty Earring",            -- __ [__/__, ___] {__/__, __}; Status Resist +5
     ring2="Defending Ring",           -- __ [10/10, ___] {__/__, __}
-    back="Archon Cape",               -- __ [__/__, ___] {__/__, __}
+    back="Shadow Mantle",             -- __ [__/__, ___] {__/__, __}; Annul dmg
     waist="Siegel Sash",              -- 20 [__/__, ___] {__/__, __}
     -- 60 +Stoneskin [57 PDT/34 MDT, 447 M.Eva] {Pet: 38 PDT/38 MDT, 4 Regen}
 
     -- head="Azimuth Hood +3",        -- __ [12/12, 136] {__/__,  5}
     -- legs="Shedir Seraweels",       -- 35 [__/__, ___] {__/__, __}
     -- feet="Azimuth Gaiters +3",     -- __ [11/11, 168] {__/__, __}
-    -- back="Shadow Mantle",          -- __ [__/__, ___] {__/__, __}; Annul dmg
     -- ring1="Shadow Ring",           -- __ [__/__, ___] {__/__, __}; Annul dmg
     -- 95 +Stoneskin [59 PDT/36 MDT, 467 M.Eva] {Pet: 38 PDT/38 MDT, 5 Regen}
   }
