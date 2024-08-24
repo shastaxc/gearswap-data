@@ -185,14 +185,14 @@ function job_setup()
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.HybridMode:options('HeavyDef', 'Normal')
   state.CastingMode:options('Resistant', 'Normal')
-  state.IdleMode:options('Normal', 'HeavyDef')
+  state.IdleMode:options('Normal', 'HeavyDef', 'Gokotai')
   state.WeaponskillMode:options('Normal', 'Proc')
 
   state.CP = M(false, 'Capacity Points Mode')
   state.AttCapped = M(true, 'Attack Capped')
   state.ToyWeapons = M{['description']='Toy Weapons','None','Katana','GreatKatana','Dagger',
       'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
-  state.WeaponSet = M{['description']='Weapon Set', 'Heishi', 'Naegling', 'Aeolian',}
+  state.WeaponSet = M{['description']='Weapon Set', 'Heishi', 'Naegling', 'Gokotai', 'Aeolian'}
   state.MagicBurst = M(true, 'Magic Burst')
   state.ElementalMode = M{['description']='Elemental Mode', 'Fire', 'Ice', 'Wind', 'Earth', 'Thunder', 'Water'}
   nin_element_map = {
@@ -344,6 +344,7 @@ function init_gear_sets()
     sub="Tsuru",
   }
   sets.WeaponSet['Aeolian'] = {main="Tauret", sub=gear.Malevolence_1}
+  sets.WeaponSet['Gokotai'] = {main="Gokotai", sub=gear.Malevolence_1}
 
 
   -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
@@ -395,6 +396,29 @@ function init_gear_sets()
   })
 
   sets.idle = set_combine(sets.defense.PDT, {})
+
+  -- Max out DW
+  sets.idle.Gokotai = {
+    ammo="Staunch Tathlum +1",        -- __ [ 3/ 3, ___] ___
+    head=gear.Ryuo_C_head,            --  9 [__/__,  48]  36
+    body="Mochizuki Chainmail +3",    --  9 [__/__,  73]  72
+    hands=gear.Floral_Gauntlets,      --  5 [__/ 2,  37]  24; Taeon alt
+    feet=gear.Taeon_DW_feet,          --  9 [__/__,  69]  72
+    neck="Loricate Torque +1",        -- __ [ 6/ 6, ___] ___
+    ear1="Eabani Earring",            --  4 [__/__,   8]  15
+    ear2="Suppanomimi",               --  5 [__/__, ___] ___
+    ring1="Gelatinous Ring +1",       -- __ [ 7/-1, ___] ___
+    ring2="Defending Ring",           -- __ [10/10, ___] ___
+    waist="Reiki Yotai",              --  7 [__/__, ___] ___
+    -- Traits                            35
+    -- 83 DW [26 PDT/20 MDT, 235 M.Eva] 219 Evasion
+
+    -- body="Hachiya Chainmail +3",   -- 10 [__/__,  73]  82
+    -- hands="Floral Gauntlets",      --  5 [__/ 4,  37]  24
+    -- legs="Mochizuki Hakama +3",    -- 10 [__/__,  84]  63
+    -- back=gear.NIN_DW_Cape,         -- 10 [10/__, ___] ___
+    -- 104 DW [36 PDT/22 MDT, 319 M.Eva] 292 Evasion
+  }
 
   sets.idle.Regain = set_combine(sets.idle, sets.latent_regain)
   sets.idle.Regen = set_combine(sets.idle, sets.latent_regen)
