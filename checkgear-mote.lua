@@ -2,7 +2,7 @@
   FOR MOTE'S ONLY, NOT SELINDRILE
   To checks your bags for extra gear that you're not using in any of your job's gearswap files...
   1. Put the checkgear-mote.lua file in your gearswap/data folder.
-  2. Edit the variables if you want. There is a "job_whitelist" at the top. If you want it to check all your job files, just delete that whole whitelist.
+  2. Edit the variables if you want. There is a "job_whitelist" at the top. Edit this list to only include the jobs for which you have gearswap files defined.
   3. Run command in game: //gs load checkgear-mote.lua
   4. Check each of your bags individually for extra gear: //gs validate w, //gs validate w2, //gs validate sack, etc. Full list of options is:
       sets = 'sets', set = 'sets', s = 'sets',
