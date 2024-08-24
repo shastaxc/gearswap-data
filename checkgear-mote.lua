@@ -1,3 +1,33 @@
+--[[
+  FOR MOTE'S ONLY, NOT SELINDRILE
+  To checks your bags for extra gear that you're not using in any of your job's gearswap files...
+  1. Put the checkgear-mote.lua file in your gearswap/data folder.
+  2. Edit the variables if you want. There is a "job_whitelist" at the top. If you want it to check all your job files, just delete that whole whitelist.
+  3. Run command in game: //gs load checkgear-mote.lua
+  4. Check each of your bags individually for extra gear: //gs validate w, //gs validate w2, //gs validate sack, etc. Full list of options is:
+      sets = 'sets', set = 'sets', s = 'sets',
+      inventory = 'inventory', inv = 'inventory', i = 'inventory',
+      mogsafe = 'safe', safe = 'safe', ms = 'safe', bank = 'safe',
+      mogsafe2 = 'safe2', safe2 = 'safe2', ms2 = 'safe2', bank2 = 'safe2',
+      storage = 'storage', st = 'storage',
+      moglocker = 'locker', locker = 'locker', ml = 'locker',
+      mogsatchel = 'satchel', satchel = 'satchel', sa = 'satchel',
+      mogsack = 'sack', sack = 'sack', sk = 'sack',
+      mogcase = 'case', case = 'case', c = 'case',
+      wardrobe = 'wardrobe', w = 'wardrobe',
+      wardrobe2 = 'wardrobe2', w2 = 'wardrobe2',
+      wardrobe3 = 'wardrobe3', w3 = 'wardrobe3',
+      wardrobe4 = 'wardrobe4', w4 = 'wardrobe4',
+      wardrobe5 = 'wardrobe5', w5 = 'wardrobe5',
+      wardrobe6 = 'wardrobe6', w6 = 'wardrobe6',
+      wardrobe7 = 'wardrobe7', w7 = 'wardrobe7',
+      wardrobe8 = 'wardrobe8', w8 = 'wardrobe8',
+  5. When you're done, reload gearswap to get it back to normal working condition: //lua reload gearswap
+
+  For debugging purposes, your gearsets are also printed out to a file at gearswap/data/checkgear/sets.txt.
+]]--
+
+
 --================================================================================================================
 -- Set user preferences
 --================================================================================================================
