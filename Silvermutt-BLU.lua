@@ -1247,9 +1247,9 @@ function init_gear_sets()
   sets.magic_burst = {
     legs="Assimilator's Shalwar +3", --10
     feet="Jhakri Pigaches +2", --5
+    ring1="Mujin Band", --(5)
     -- body="Samnuha Coat", --(8)
     -- hands="Amalric Gages +1", --(5)
-    -- ring1="Mujin Band", --(5)
     -- back="Seshaw Cape", --5
   }
 

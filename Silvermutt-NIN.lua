@@ -1086,13 +1086,12 @@ function init_gear_sets()
     ear1="Novio Earring",             -- __,  7, __, __, __, __ [__/__, ___]
     ear2="Friomisi Earring",          -- __, 10, __, __, __, __ [__/__, ___]
     ring1="Dingir Ring",              -- __, 10, __, __, __, __ [__/__, ___]
-    ring2="Shiva Ring +1",            --  9,  3, __, __, __, __ [__/__, ___]
+    ring2="Mujin Band",               -- __, __, __, __, __,  5 [__/__, ___]
     back=gear.NIN_MAB_Cape,           -- 30, 10, __, 20, __, __ [10/__, ___]
     waist="Eschan Stone",             -- __,  7, __, __, __, __ [__/__, ___]
-    -- 188 INT, 205 MAB, 0 MAccSk, 41 MDmg, 33 MB Dmg%, 0 MB2 Dmg% [27 PDT/17 MDT, 539 M.Eva]
+    -- 181 INT, 202 MAB, 0 MAccSk, 41 MDmg, 33 MB Dmg%, 5 MB2 Dmg% [27 PDT/17 MDT, 539 M.Eva]
 
     -- hands="Hattori Tekko +3",      -- 27, 18, __, __, 15, __ [__/__, 103]
-    -- ring2="Mujin Band",            -- __, __, __, __, __,  5 [__/__, ___]
     -- 186 INT, 204 MAB, 0 MAccSk, 41 MDmg, 38 MB Dmg%, 5 MB2 Dmg% [27 PDT/17 MDT, 539 M.Eva]
   }
   sets.midcast.ElementalNinjutsu.Ni.MB = set_combine(sets.midcast.ElementalNinjutsu.Ichi.MB, {
