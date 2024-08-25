@@ -1997,10 +1997,8 @@ function select_weapons()
   local weapons_to_equip = {}
   if state.ToyWeapons.current ~= 'None' then
     weapons_to_equip = set_combine(sets.ToyWeapon[state.ToyWeapons.current], {})
-  else
-    if sets.WeaponSet[state.WeaponSet.current] then
-      weapons_to_equip = set_combine(sets.WeaponSet[state.WeaponSet.current], {})
-    end
+  elseif sets.WeaponSet[state.WeaponSet.current] then
+    weapons_to_equip = set_combine(sets.WeaponSet[state.WeaponSet.current], {})
   end
 
   -- Equip ranged weapon

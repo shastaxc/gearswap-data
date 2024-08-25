@@ -163,7 +163,7 @@ function get_sets()
   -- Load and initialize Mote library
   mote_include_version = 2
   include('Mote-Include.lua') -- Executes job_setup, user_setup, init_gear_sets
-  
+
   coroutine.schedule(function()
     send_command('gs reorg')
   end, 1)
@@ -247,7 +247,7 @@ function user_setup()
   update_melee_groups()
   select_default_macro_book()
   set_sub_keybinds:schedule(2)
-  
+
   if initialized then
     send_command:schedule(1, 'gs c equipweapons')
   end

@@ -2077,9 +2077,9 @@ function select_weapons()
   local weapons_to_equip = {}
   if sets.WeaponSet[state.WeaponSet.current] then
     if state.OffenseMode.current == 'Safe' and sets.WeaponSet[state.WeaponSet.current].Safe then
-      weapons_to_equip = sets.WeaponSet[state.WeaponSet.current].Safe
+      weapons_to_equip = set_combine(sets.WeaponSet[state.WeaponSet.current].Safe, {})
     else
-      weapons_to_equip = sets.WeaponSet[state.WeaponSet.current]
+      weapons_to_equip = set_combine(sets.WeaponSet[state.WeaponSet.current], {})
     end
   end
 
