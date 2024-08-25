@@ -201,7 +201,6 @@ function user_setup()
   if initialized then
     send_command:schedule(1, 'gs c equipweapons')
   end
-
   initialized = true -- DO NOT MODIFY
 end
 
