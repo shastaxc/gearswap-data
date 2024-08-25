@@ -337,7 +337,10 @@ function init_gear_sets()
   -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
 
   sets.WeaponSet = {} -- DO NOT MODIFY
-  sets.WeaponSet['Heishi'] = {main="Heishi Shorinken", sub="Kunimitsu"}
+  sets.WeaponSet['Heishi'] = {
+    main="Heishi Shorinken",
+    sub="Kunimitsu",
+  }
   sets.WeaponSet['Naegling'] = {
     main="Naegling",
     sub="Kunimitsu",
@@ -347,8 +350,14 @@ function init_gear_sets()
     -- main=gear.Fudo_Masamune_C,
     sub="Tsuru",
   }
-  sets.WeaponSet['Aeolian'] = {main="Tauret", sub=gear.Malevolence_1}
-  sets.WeaponSet['Gokotai'] = {main="Gokotai", sub=gear.Malevolence_1}
+  sets.WeaponSet['Aeolian'] = {
+    main="Tauret",
+    sub=gear.Malevolence_1,
+  }
+  sets.WeaponSet['Gokotai'] = {
+    -- main="Gokotai",
+    sub=gear.Malevolence_1,
+  }
 
 
   -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
