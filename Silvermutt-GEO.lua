@@ -19,14 +19,13 @@ function get_sets()
   -- Load and initialize Mote library
   mote_include_version = 2
   include('Mote-Include.lua') -- Executes job_setup, user_setup, init_gear_sets
-  equip({main=empty,sub=empty})
-  
+
   coroutine.schedule(function()
     send_command('gs reorg')
   end, 1)
   coroutine.schedule(function()
     send_command('gs c weaponset current')
-  end, 5)
+  end, 4)
 end
 
 -- Executes on first load and main job change
@@ -138,6 +137,12 @@ function user_setup()
 
   select_default_macro_book()
   set_sub_keybinds:schedule(2)
+
+  if initialized then
+    send_command:schedule(1, 'gs c equipweapons')
+  end
+
+  initialized = true -- DO NOT MODIFY
 end
 
 -- Called when this job file is unloaded (eg: job change)
@@ -1929,6 +1934,8 @@ function job_self_command(cmdParams, eventArgs)
   elseif cmdParams[1] == 'elemental' then
     silibs.handle_elemental(cmdParams, state.ElementalMode.value)
     eventArgs.handled = true
+  elseif cmdParams[1] == 'equipweapons' then
+    equip(select_weapons())
   elseif cmdParams[1] == 'weaponset' then
     if cmdParams[2] == 'cycle' then
       cycle_weapons('forward')
@@ -1936,6 +1943,8 @@ function job_self_command(cmdParams, eventArgs)
       cycle_weapons('back')
     elseif cmdParams[2] == 'current' then
       cycle_weapons('current')
+    elseif cmdParams[2] == 'set' and cmdParams[3] then
+      cycle_weapons('set', cmdParams[3])
     elseif cmdParams[2] == 'reset' then
       cycle_weapons('reset')
     end
@@ -2049,17 +2058,32 @@ function select_default_macro_book()
   end
 end
 
-function cycle_weapons(cycle_dir)
+function cycle_weapons(cycle_dir, set_name)
   if cycle_dir == 'forward' then
     state.WeaponSet:cycle()
   elseif cycle_dir == 'back' then
     state.WeaponSet:cycleback()
-  elseif cycle_dir == 'reset' then
+  elseif cycle_dir == 'set' then
+    state.WeaponSet:set(set_name)
+  else
     state.WeaponSet:reset()
   end
 
   add_to_chat(141, 'Weapon Set to '..string.char(31,1)..state.WeaponSet.current)
-  equip(sets.WeaponSet[state.WeaponSet.current])
+  equip(select_weapons())
+end
+
+function select_weapons()
+  local weapons_to_equip = {}
+  if sets.WeaponSet[state.WeaponSet.current] then
+    if state.OffenseMode.current == 'Safe' and sets.WeaponSet[state.WeaponSet.current].Safe then
+      weapons_to_equip = sets.WeaponSet[state.WeaponSet.current].Safe
+    else
+      weapons_to_equip = sets.WeaponSet[state.WeaponSet.current]
+    end
+  end
+
+  return weapons_to_equip
 end
 
 function in_battle_mode()
@@ -2112,18 +2136,6 @@ function item_available(item)
     return true
   else
     return false
-  end
-end
-
-function select_weapons()
-  if sets.WeaponSet[state.WeaponSet.current] then
-    if state.OffenseMode.current == 'Safe' and sets.WeaponSet[state.WeaponSet.current].Safe then
-      return sets.WeaponSet[state.WeaponSet.current].Safe
-    else
-      return sets.WeaponSet[state.WeaponSet.current]
-    end
-  else
-    return {}
   end
 end
 

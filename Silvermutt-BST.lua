@@ -192,15 +192,14 @@ function get_sets()
   -- Load and initialize Mote library
   mote_include_version = 2
   include('Mote-Include.lua') -- Executes job_setup, user_setup, init_gear_sets
-  equip({main=empty,sub=empty})
-  
+
   coroutine.schedule(function()
     send_command('gs reorg')
   end, 1)
   coroutine.schedule(function()
     send_command('gs c weaponset current')
-  end, 5)
-  
+  end, 4)
+
   texts = require('texts') -- Used for pet UI
 end
 
@@ -619,6 +618,12 @@ function user_setup()
 
   select_default_macro_book()
   set_sub_keybinds:schedule(2)
+
+  if initialized then
+    send_command:schedule(1, 'gs c equipweapons')
+  end
+
+  initialized = true -- DO NOT MODIFY
 end
 
 function job_file_unload()
@@ -2184,17 +2189,36 @@ function display_current_job_state(eventArgs)
   eventArgs.handled = true
 end
 
-function cycle_weapons(cycle_dir)
+function cycle_weapons(cycle_dir, set_name)
   if cycle_dir == 'forward' then
     state.WeaponSet:cycle()
   elseif cycle_dir == 'back' then
     state.WeaponSet:cycleback()
-  elseif cycle_dir == 'reset' then
+  elseif cycle_dir == 'set' then
+    state.WeaponSet:set(set_name)
+  else
     state.WeaponSet:reset()
   end
 
-  add_to_chat(141, 'Weapon set to '..string.char(31,1)..state.WeaponSet.current)
+  add_to_chat(141, 'Weapon Set to '..string.char(31,1)..state.WeaponSet.current)
   equip(select_weapons())
+end
+
+function select_weapons()
+  local weapons_to_equip = {}
+  local can_dw = silibs.can_dual_wield()
+  if can_dw and sets.WeaponSet[state.WeaponSet.current] and sets.WeaponSet[state.WeaponSet.current].DW then
+    weapons_to_equip = set_combine(sets.WeaponSet[state.WeaponSet.current].DW, {})
+  elseif sets.WeaponSet[state.WeaponSet.current] then
+    weapons_to_equip = set_combine(sets.WeaponSet[state.WeaponSet.current], {})
+  end
+
+  -- If trying to equip weapon in offhand but cannot DW, equip empty
+  if not can_dw and weapons_to_equip.sub and silibs.is_weapon(weapons_to_equip.sub) then
+    weapons_to_equip.sub = (sets.FallbackShield and sets.FallbackShield.sub) or 'empty'
+  end
+
+  return weapons_to_equip
 end
 
 function cycle_pet_mode(cycle_dir)
@@ -2205,20 +2229,8 @@ function cycle_pet_mode(cycle_dir)
   elseif cycle_dir == 'reset' then
     state.PetMode:reset()
   end
-  
+
   add_to_chat(141, 'Pet Mode set to '..string.char(31,1)..state.PetMode.current)
-end
-
-function select_weapons()
-  if (state.HybridMode.current ~= 'Pet' and state.HybridMode.current ~= 'PetDT') then
-    if silibs.can_dual_wield() and sets.WeaponSet[state.WeaponSet.current] and sets.WeaponSet[state.WeaponSet.current].DW then
-      return sets.WeaponSet[state.WeaponSet.current].DW
-    elseif sets.WeaponSet[state.WeaponSet.current] then
-      return sets.WeaponSet[state.WeaponSet.current]
-    end
-  end
-
-  return {}
 end
 
 function use_ready_move(index)
@@ -2312,13 +2324,17 @@ function job_self_command(cmdParams, eventArgs)
   silibs.self_command(cmdParams, eventArgs)
   ----------- Non-silibs content goes below this line -----------
 
-  if cmdParams[1] == 'weaponset' then
+  if cmdParams[1] == 'equipweapons' then
+    equip(select_weapons())
+  elseif cmdParams[1] == 'weaponset' then
     if cmdParams[2] == 'cycle' then
       cycle_weapons('forward')
     elseif cmdParams[2] == 'cycleback' then
       cycle_weapons('back')
     elseif cmdParams[2] == 'current' then
       cycle_weapons('current')
+    elseif cmdParams[2] == 'set' and cmdParams[3] then
+      cycle_weapons('set', cmdParams[3])
     elseif cmdParams[2] == 'reset' then
       cycle_weapons('reset')
     end
@@ -2456,7 +2472,7 @@ function create_ui()
     },
     padding=2,
   }
-  
+
   ui = texts.new('${value}', ui_settings)
   ui:hide()
 end
