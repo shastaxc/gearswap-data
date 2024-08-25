@@ -379,7 +379,7 @@ function init_gear_sets()
   sets.WeaponSet = {} -- DO NOT MODIFY
   sets.WeaponSet['Normal'] = {
     main="Twashtar",
-    sub={name="Centovente", priority=1},
+    sub="Centovente",
   }
   sets.WeaponSet['HighAcc'] = {
     main="Twashtar",
@@ -401,6 +401,10 @@ function init_gear_sets()
     main="Karambit",
     sub=empty,
   }
+  sets.WeaponSet['Staff'] = {
+    main="Gozuki Mezuki",
+    sub="Tzacab Grip",
+  }
   sets.WeaponSet['SoloCleaving'] = {
     main=gear.Gandring_C,
     sub=gear.Malevolence_1,
@@ -408,10 +412,6 @@ function init_gear_sets()
   sets.WeaponSet['Cleaving'] = {
     main=gear.Malevolence_2,
     sub=gear.Malevolence_1,
-  }
-  sets.WeaponSet['Staff'] = {
-    main="Gozuki Mezuki",
-    sub="Tzacab Grip",
   }
 
   -- Ranged weapon sets

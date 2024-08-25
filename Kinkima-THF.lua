@@ -393,7 +393,7 @@ function init_gear_sets()
     sub=gear.Malevolence_1,
 
     -- main="Twashtar",
-    -- sub={name="Centovente", priority=1},
+    -- sub="Centovente",
   }
   sets.WeaponSet['HighAcc'] = {
     main="Tauret",
@@ -425,6 +425,10 @@ function init_gear_sets()
     -- main="Karambit",
     -- sub=empty,
   }
+  sets.WeaponSet['Staff'] = {
+    main="Gozuki Mezuki",
+    sub="empty",
+  }
   sets.WeaponSet['SoloCleaving'] = {
     main="Tauret",
     sub=gear.Malevolence_1,
@@ -434,10 +438,6 @@ function init_gear_sets()
   sets.WeaponSet['Cleaving'] = {
     main=gear.Malevolence_2,
     sub=gear.Malevolence_1,
-  }
-  sets.WeaponSet['Staff'] = {
-    main="Gozuki Mezuki",
-    sub="empty",
   }
 
   -- Ranged weapon sets
