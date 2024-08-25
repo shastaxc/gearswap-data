@@ -102,8 +102,8 @@ Weapons:
   [ CTRL+Insert ]       Cycle Weapon Sets
   [ CTRL+Delete ]       Cycleback Weapon Sets
   [ ALT+Delete ]        Reset to default Weapon Set
-  [ CTRL+PageUp ]       Cycleback Pet Mode
-  [ CTRL+PageDown ]     Cycle Pet Mode
+  [ CTRL+PageUp ]       Cycle Pet Mode
+  [ CTRL+PageDown ]     Cycleback Pet Mode
   [ ALT+PageDown ]      Reset to default Pet Mode
 
 Abilities:
