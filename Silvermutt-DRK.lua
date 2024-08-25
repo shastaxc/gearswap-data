@@ -1742,7 +1742,8 @@ function select_weapons()
 
   -- If trying to equip weapon in offhand but cannot DW, equip empty
   if not can_dw and weapons_to_equip.sub and silibs.is_weapon(weapons_to_equip.sub) then
-    weapons_to_equip.sub = (sets.FallbackShield and sets.FallbackShield.sub) or 'empty'
+    local sub_to_use = sets.FallbackShield and sets.FallbackShield.sub or 'empty'
+    weapons_to_equip = set_combine(weapons_to_equip, {sub=sub_to_use})
   end
 
   return weapons_to_equip
