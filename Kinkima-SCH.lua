@@ -281,8 +281,7 @@ function get_sets()
   -- Load and initialize Mote library
   mote_include_version = 2
   include('Mote-Include.lua') -- Executes job_setup, user_setup, init_gear_sets
-  equip({main=empty,sub=empty})
-  
+
   coroutine.schedule(function()
     send_command('gs reorg')
   end, 1)
@@ -310,7 +309,7 @@ function job_setup()
   state.HelixMode = M{['description']='Helix Mode', 'Potency', 'Duration'}
   state.RegenMode = M{['description']='Regen Mode', 'Duration', 'Potency'}
   state.ElementalMode = M{['description'] = 'Elemental Mode', 'Light','Dark','Fire','Ice','Wind','Earth','Lightning','Water'}
-  
+
   state.Buff['Light Arts'] = buffactive['Light Arts'] or false
   state.Buff['Dark Arts'] = buffactive['Dark Arts'] or false
   state.Buff['Addendum: White'] = buffactive['Addendum: White'] or false
