@@ -156,8 +156,7 @@ function get_sets()
   -- Load and initialize Mote library
   mote_include_version = 2
   include('Mote-Include.lua') -- Executes job_setup, user_setup, init_gear_sets
-  equip({main=empty,sub=empty})
-  
+
   coroutine.schedule(function()
     send_command('gs reorg')
   end, 1)
@@ -166,7 +165,7 @@ function get_sets()
   end, 3)
   coroutine.schedule(function()
     send_command('gs c weaponset current')
-  end, 5)
+  end, 4)
 end
 
 -- Executes on first load and main job change
@@ -263,6 +262,12 @@ function user_setup()
 
   select_default_macro_book()
   set_sub_keybinds:schedule(2)
+
+  if initialized then
+    send_command:schedule(1, 'gs c equipweapons')
+  end
+
+  initialized = true -- DO NOT MODIFY
 end
 
 function job_file_unload()
@@ -1916,40 +1921,50 @@ end
 -- Utility functions specific to this job.
 -------------------------------------------------------------------------------------------------------------------
 
-function cycle_weapons(cycle_dir)
+function cycle_weapons(cycle_dir, set_name)
   if cycle_dir == 'forward' then
     state.WeaponSet:cycle()
   elseif cycle_dir == 'back' then
     state.WeaponSet:cycleback()
-  elseif cycle_dir == 'reset' then
+  elseif cycle_dir == 'set' then
+    state.WeaponSet:set(set_name)
+  else
     state.WeaponSet:reset()
   end
+  state.ToyWeapons:reset()
 
   add_to_chat(141, 'Weapon Set to '..string.char(31,1)..state.WeaponSet.current)
-  equip(sets.WeaponSet[state.WeaponSet.current])
+  equip(select_weapons())
 end
 
-function cycle_toy_weapons(cycle_dir)
-  --If current state is None, save current weapons to switch back later
-  if state.ToyWeapons.current == 'None' then
-    sets.ToyWeapon.None.main = player.equipment.main
-    sets.ToyWeapon.None.sub = player.equipment.sub
-  end
-
+function cycle_toy_weapons(cycle_dir, set_name)
   if cycle_dir == 'forward' then
     state.ToyWeapons:cycle()
   elseif cycle_dir == 'back' then
     state.ToyWeapons:cycleback()
+  elseif cycle_dir == 'set' then
+    state.ToyWeapons:set(set_name)
   else
     state.ToyWeapons:reset()
   end
-  
+
   local mode_color = 001
   if state.ToyWeapons.current == 'None' then
     mode_color = 006
   end
   add_to_chat(012, 'Toy Weapon Mode: '..string.char(31,mode_color)..state.ToyWeapons.current)
-  equip(sets.ToyWeapon[state.ToyWeapons.current])
+  equip(select_weapons())
+end
+
+function select_weapons()
+  local weapons_to_equip = {}
+  if state.ToyWeapons.current ~= 'None' then
+    weapons_to_equip = set_combine(sets.ToyWeapon[state.ToyWeapons.current], {})
+  elseif sets.WeaponSet[state.WeaponSet.current] then
+    weapons_to_equip = set_combine(sets.WeaponSet[state.WeaponSet.current], {})
+  end
+
+  return weapons_to_equip
 end
 
 function update_idle_groups()
@@ -1989,25 +2004,29 @@ function job_self_command(cmdParams, eventArgs)
     local target = cmdParams[2] or 't'
 
     send_command('@input /ma "'..ninjutsu..': San" <'..target..'>')
-  elseif cmdParams[1] == 'toyweapon' then
-    if cmdParams[2] == 'cycle' then
-      cycle_toy_weapons('forward')
-    elseif cmdParams[2] == 'cycleback' then
-      cycle_toy_weapons('back')
-    elseif cmdParams[2] == 'reset' then
-      cycle_toy_weapons('reset')
-    elseif cmdParams[2] == 'current' then
-      cycle_toy_weapons('current')
-    end
+  elseif cmdParams[1] == 'equipweapons' then
+    equip(select_weapons())
   elseif cmdParams[1] == 'weaponset' then
     if cmdParams[2] == 'cycle' then
       cycle_weapons('forward')
     elseif cmdParams[2] == 'cycleback' then
       cycle_weapons('back')
-    elseif cmdParams[2] == 'reset' then
-      cycle_weapons('reset')
     elseif cmdParams[2] == 'current' then
       cycle_weapons('current')
+    elseif cmdParams[2] == 'set' and cmdParams[3] then
+      cycle_weapons('set', cmdParams[3])
+    elseif cmdParams[2] == 'reset' then
+      cycle_weapons('reset')
+    end
+  elseif cmdParams[1] == 'toyweapon' then
+    if cmdParams[2] == 'cycle' then
+      cycle_toy_weapons('forward')
+    elseif cmdParams[2] == 'cycleback' then
+      cycle_toy_weapons('back')
+    elseif cmdParams[2] == 'set' and cmdParams[3] then
+      cycle_toy_weapons('set', cmdParams[3])
+    elseif cmdParams[2] == 'reset' then
+      cycle_toy_weapons('reset')
     end
   elseif cmdParams[1] == 'bind' then
     set_main_keybinds:schedule(2)
