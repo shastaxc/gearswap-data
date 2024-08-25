@@ -403,6 +403,7 @@ function init_gear_sets()
     head=gear.Ryuo_C_head,            --  9 [__/__,  48]  36
     body="Mochizuki Chainmail +3",    --  9 [__/__,  73]  72
     hands=gear.Floral_Gauntlets,      --  5 [__/ 2,  37]  24; Taeon alt
+    legs="Mochizuki Hakama +3",       -- 10 [__/__,  84]  63
     feet=gear.Taeon_DW_feet,          --  9 [__/__,  69]  72
     neck="Loricate Torque +1",        -- __ [ 6/ 6, ___] ___
     ear1="Eabani Earring",            --  4 [__/__,   8]  15
@@ -412,11 +413,10 @@ function init_gear_sets()
     back=gear.NIN_DW_Cape,            -- 10 [10/__, ___] ___
     waist="Reiki Yotai",              --  7 [__/__, ___] ___
     -- Traits                            35
-    -- 93 DW [36 PDT/20 MDT, 235 M.Eva] 219 Evasion
+    -- 103 DW [36 PDT/20 MDT, 319 M.Eva] 282 Evasion
 
     -- body="Hachiya Chainmail +3",   -- 10 [__/__,  73]  82
     -- hands="Floral Gauntlets",      --  5 [__/ 4,  37]  24
-    -- legs="Mochizuki Hakama +3",    -- 10 [__/__,  84]  63
     -- 104 DW [36 PDT/22 MDT, 319 M.Eva] 292 Evasion
   }
 
@@ -442,7 +442,7 @@ function init_gear_sets()
 
   sets.precast.JA['Provoke'] = set_combine(sets.Enmity, {})
   sets.precast.JA['Mijin Gakure'] = {
-    -- legs="Mochizuki Hakama +3", -- Damage +50%; +1 is acceptable
+    legs="Mochizuki Hakama +3", -- Damage +50%; +1 is acceptable
   }
   sets.precast.JA['Sange'] = {
     body="Mochizuki Chainmail +3", -- Increase ranged attack based on merits; +1 is acceptable
