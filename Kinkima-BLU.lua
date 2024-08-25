@@ -303,6 +303,7 @@ function job_setup()
 
   state.CP = M(false, 'Capacity Points Mode')
   state.WeaponSet = M{['description']='Weapon Set', 'Casting', 'Naegling', 'Maxentius'}
+  state.RangedWeaponSet = M{['description']='Weapon Set', 'None'}
   state.ToyWeapons = M{['description']='Toy Weapons','None','Dagger',
       'Sword','Club','Staff','Polearm','GreatSword','Scythe'}
 
@@ -531,7 +532,7 @@ function init_gear_sets()
   }
   sets.WeaponSet['Maxentius'] = {
     main="Maxentius",
-    sub={name="Genmei Shield", priority=1},
+    sub="Genmei Shield",
   }
   sets.WeaponSet['Maxentius'].DW = {
     main="Maxentius",
@@ -1464,6 +1465,8 @@ function init_gear_sets()
   sets.Learning = {
     hands="Assimilator's Bazubands +1",
   }
+
+  sets.FallbackShield = { sub="Genmei Shield" }
 end
 
 
@@ -1995,10 +1998,21 @@ end
 
 function select_weapons()
   local weapons_to_equip = {}
+  local can_dw = silibs.can_dual_wield()
   if state.ToyWeapons.current ~= 'None' then
     weapons_to_equip = set_combine(sets.ToyWeapon[state.ToyWeapons.current], {})
-  elseif sets.WeaponSet[state.WeaponSet.current] then
-    weapons_to_equip = set_combine(sets.WeaponSet[state.WeaponSet.current], {})
+  else
+    if can_dw and sets.WeaponSet[state.WeaponSet.current] and sets.WeaponSet[state.WeaponSet.current].DW then
+      weapons_to_equip = set_combine(sets.WeaponSet[state.WeaponSet.current].DW, {})
+    elseif sets.WeaponSet[state.WeaponSet.current] then
+      weapons_to_equip = set_combine(sets.WeaponSet[state.WeaponSet.current], {})
+    end
+  end
+
+  -- If trying to equip weapon in offhand but cannot DW, equip empty
+  if not can_dw and weapons_to_equip.sub and silibs.is_weapon(weapons_to_equip.sub) then
+    local sub_to_use = sets.FallbackShield and sets.FallbackShield.sub or 'empty'
+    weapons_to_equip = set_combine(weapons_to_equip, {sub=sub_to_use})
   end
 
   -- Equip ranged weapon
