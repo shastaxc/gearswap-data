@@ -54,11 +54,10 @@ Modes:
   [ CTRL+F12 ]          Cycle Idle modes
   [ ALT+F12 ]           Cancel Emergency -PDT/-MDT Mode
   [ WIN+C ]             Toggle Capacity Points Mode
-  [ CTRL+Insert ]       Cycleback BarElement
-  [ CTRL+Delete ]       Cycle BarElement
-  [ ALT+Delete ]        Reset BarElement cycle
-  [ CTRL+Home ]         Cycleback BarStatus
-  [ CTRL+End ]          Cycle BarStatus
+  [ CTRL+- ]            Cycleback BarElement
+  [ CTRL+= ]            Cycle BarElement
+  [ ALT+- ]             Cycleback BarStatus
+  [ ALT+= ]             Cycle BarStatus
   [ ALT+End ]           Reset BarStatus
   [ CTRL+. ]            Cycleback Curaga Tier
   [ CTRL+/ ]            Cycle Curaga Tier
@@ -66,6 +65,11 @@ Modes:
   [ CTRL+PageUp ]       Cycle Storm
   [ CTRL+PageDown]      Cycleback Storm
   [ ALT+PageDown ]      Reset Storm cycle
+
+Weapons:
+  [ CTRL+Insert ]       Cycle Weapon Sets
+  [ CTRL+Delete ]       Cycleback Weapon Sets
+  [ ALT+Delete ]        Reset to default Weapon Set
 
 Spells:
   [ ALT+W ]             Curaga (with tier set from cycle)
@@ -178,11 +182,13 @@ function get_sets()
   -- Load and initialize Mote library
   mote_include_version = 2
   include('Mote-Include.lua') -- Executes job_setup, user_setup, init_gear_sets
-  equip({main=empty,sub=empty})
-  
+
   coroutine.schedule(function()
     send_command('gs reorg')
   end, 1)
+  coroutine.schedule(function()
+    send_command('gs c equipweapons')
+  end, 4)
 end
 
 -- Setup vars that are user-independent.  state.Buff vars initialized here will automatically be tracked.
@@ -194,12 +200,12 @@ function job_setup()
   silibs.enable_equip_loop()
   silibs.enable_elemental_belt_handling(has_obi, has_orpheus)
 
-  
   state.OffenseMode:options('Normal')
   state.CastingMode:options('Normal', 'Resistant')
   state.IdleMode:options('Normal', 'PDT')
   state.CP = M(false, 'Capacity Points Mode')
 
+  state.WeaponSet = M{['description']='Weapon Set', 'Casting', 'Yagrush', 'Maxentius'}
   state.Barelement = M{['description']='Barspell','Barfira','Barblizzara','Baraera','Barstonra','Barthundra','Barwatera'}
   state.Barstatus = M{['description']='Barstatus','Barsleepra','Barpoisonra','Barparalyzra','Barblindra','Barsilencera','Barpetra','Barvira','Baramnesra'}
   state.Storm = M{['description']='Storm','Aurorastorm','Sandstorm',
@@ -235,12 +241,13 @@ function job_setup()
       ['!w'] = 'gs c curaga',
       ['!z'] = 'gs c barelement',
       ['!x'] = 'gs c barstatus',
-      ['^insert'] = 'gs c cycleback Barelement',
-      ['^delete'] = 'gs c cycle Barelement',
-      ['!delete'] = 'gs c reset Barelement',
-      ['^home'] = 'gs c cycleback Barstatus',
-      ['^end'] = 'gs c cycle Barstatus',
-      ['!end'] = 'gs c reset Barstatus',
+      ['^insert'] = 'gs c weaponset cycle',
+      ['^delete'] = 'gs c weaponset cycleback',
+      ['!delete'] = 'gs c weaponset reset',
+      ['^-'] = 'gs c cycleback Barelement',
+      ['^='] = 'gs c cycle Barelement',
+      ['!-'] = 'gs c cycleback Barstatus',
+      ['!='] = 'gs c cycle Barstatus',
       ['^.'] = 'gs c cycleback CuragaTier',
       ['^/'] = 'gs c cycle CuragaTier',
       ['!`'] = 'input /ja "Afflatus Solace" <me>',
@@ -291,6 +298,11 @@ function user_setup()
 
   select_default_macro_book()
   set_sub_keybinds:schedule(2)
+
+  if initialized then
+    send_command:schedule(1, 'gs c equipweapons')
+  end
+  initialized = true -- DO NOT MODIFY
 end
 
 -- Called when this job file is unloaded (eg: job change)
@@ -324,6 +336,23 @@ function init_gear_sets()
   --     Weapon Sets
   -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
 
+  sets.WeaponSet = {} -- DO NOT MODIFY
+  sets.WeaponSet['Yagrush'] = {
+    main="Yagrush",
+    sub="Genmei Shield",
+  }
+  sets.WeaponSet['Yagrush'].DW = {
+    main="Yagrush",
+    sub="Bunzi's Rod",
+  }
+  sets.WeaponSet['Maxentius'] = {
+    main="Maxentius",
+    sub="Genmei Shield",
+  }
+  sets.WeaponSet['Maxentius'].DW = {
+    main="Maxentius",
+    sub="Bunzi's Rod",
+  }
 
   -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
   --     Defense
@@ -1275,6 +1304,8 @@ function init_gear_sets()
   sets.buff.Doom = {
     waist="Gishdubar Sash", --10
   }
+
+  sets.FallbackShield = {sub="Genmei Shield"}
 end
 
 -------------------------------------------------------------------------------------------------------------------
@@ -1296,6 +1327,12 @@ function job_precast(spell, action, spellMap, eventArgs)
 end
 
 function job_post_precast(spell, action, spellMap, eventArgs)
+  -- Always put this last in job_post_precast
+  if in_battle_mode() and spell.english ~= 'Dispelga' then
+    -- Prevent swapping main/sub weapons
+    equip({main="", sub=""})
+  end
+
   -- If slot is locked, keep current equipment on
   if locked_neck then equip({ neck=player.equipment.neck }) end
   if locked_ear1 then equip({ ear1=player.equipment.ear1 }) end
@@ -1347,6 +1384,12 @@ function job_post_midcast(spell, action, spellMap, eventArgs)
     equip(sets.buff['Divine Caress'])
   end
 
+  -- Always put this last in job_post_midcast
+  if in_battle_mode() and spell.english ~= 'Dispelga' then
+    -- Prevent swapping main/sub weapons
+    equip({main="", sub=""})
+  end
+
   -- If slot is locked, keep current equipment on
   if locked_neck then equip({ neck=player.equipment.neck }) end
   if locked_ear1 then equip({ ear1=player.equipment.ear1 }) end
@@ -1361,8 +1404,12 @@ end
 function job_aftercast(spell, action, spellMap, eventArgs)
   silibs.aftercast_hook(spell, action, spellMap, eventArgs)
   ----------- Non-silibs content goes below this line -----------
-  
+
   if not spell.interrupted then
+    if in_battle_mode() and spell.english == 'Dispelga' then
+      equip(select_weapons())
+    end
+
     if spell.english == "Sleep II" then
       send_command('@timers c "Sleep II ['..spell.target.name..']" 90 down spells/00259.png')
     elseif spell.english == "Sleep" or spell.english == "Sleepga" then -- Sleep & Sleepga Countdown --
@@ -1370,6 +1417,10 @@ function job_aftercast(spell, action, spellMap, eventArgs)
     elseif spell.english == "Break" then
       send_command('@timers c "Break ['..spell.target.name..']" 30 down spells/00255.png')
     end
+  end
+
+  if in_battle_mode() then
+    equip(select_weapons())
   end
 end
 
@@ -1498,6 +1549,10 @@ function customize_idle_set(idleSet)
     idleSet = set_combine(idleSet, sets.buff.Doom)
   end
 
+  if in_battle_mode() then
+    idleSet = set_combine(idleSet, select_weapons())
+  end
+
   return idleSet
 end
 
@@ -1517,6 +1572,10 @@ function customize_melee_set(meleeSet)
     meleeSet = set_combine(meleeSet, sets.buff.Doom)
   end
 
+  if in_battle_mode() then
+    meleeSet = set_combine(meleeSet, select_weapons())
+  end
+
   return meleeSet
 end
 
@@ -1534,6 +1593,10 @@ function customize_defense_set(defenseSet)
 
   if buffactive.Doom then
     defenseSet = set_combine(defenseSet, sets.buff.Doom)
+  end
+
+  if in_battle_mode() then
+    defenseSet = set_combine(defenseSet, select_weapons())
   end
 
   return defenseSet
@@ -1567,6 +1630,43 @@ function auto_solace_and_arts()
       end
     end
   end
+end
+
+function cycle_weapons(cycle_dir, set_name)
+  if cycle_dir == 'forward' then
+    state.WeaponSet:cycle()
+  elseif cycle_dir == 'back' then
+    state.WeaponSet:cycleback()
+  elseif cycle_dir == 'set' then
+    state.WeaponSet:set(set_name)
+  else
+    state.WeaponSet:reset()
+  end
+
+  add_to_chat(141, 'Weapon Set to '..string.char(31,1)..state.WeaponSet.current)
+  equip(select_weapons())
+end
+
+function select_weapons()
+  local weapons_to_equip = {}
+  local can_dw = silibs.can_dual_wield()
+  if can_dw and sets.WeaponSet[state.WeaponSet.current] and sets.WeaponSet[state.WeaponSet.current].DW then
+    weapons_to_equip = set_combine(sets.WeaponSet[state.WeaponSet.current].DW, {})
+  elseif sets.WeaponSet[state.WeaponSet.current] then
+    weapons_to_equip = set_combine(sets.WeaponSet[state.WeaponSet.current], {})
+  end
+
+  -- If trying to equip weapon in offhand but cannot DW, equip empty
+  if not can_dw and weapons_to_equip.sub and silibs.is_weapon(weapons_to_equip.sub) then
+    local sub_to_use = sets.FallbackShield and sets.FallbackShield.sub or 'empty'
+    weapons_to_equip = set_combine(weapons_to_equip, {sub=sub_to_use})
+  end
+
+  return weapons_to_equip
+end
+
+function in_battle_mode()
+  return state.WeaponSet.current ~= 'Casting'
 end
 
 function update_idle_groups()
@@ -1689,6 +1789,20 @@ function job_self_command(cmdParams, eventArgs)
     send_command('@input /ma "'..state.Barstatus.current..'" <me>')
   elseif cmdParams[1] == 'storm' then
     send_command('@input /ma "'..state.Storm.current..'" <stpc>')
+  elseif cmdParams[1] == 'equipweapons' then
+    equip(select_weapons())
+  elseif cmdParams[1] == 'weaponset' then
+    if cmdParams[2] == 'cycle' then
+      cycle_weapons('forward')
+    elseif cmdParams[2] == 'cycleback' then
+      cycle_weapons('back')
+    elseif cmdParams[2] == 'current' then
+      cycle_weapons('current')
+    elseif cmdParams[2] == 'set' and cmdParams[3] then
+      cycle_weapons('set', cmdParams[3])
+    elseif cmdParams[2] == 'reset' then
+      cycle_weapons('reset')
+    end
   elseif cmdParams[1] == 'bind' then
     set_main_keybinds:schedule(2)
     set_sub_keybinds:schedule(2)
