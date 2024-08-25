@@ -70,7 +70,7 @@ Other
   if you choose to ignore them, it doesn't not actually affect anything.
 * Equipping certain gear such as warp rings or ammo belts will automatically lock that slot until you manually
   unequip it or change zones.
-* If you get under 10 HP, the sets.SafeShield set will be equipped. This is to prevent you from killing yourself
+* If you get under 10 HP, the sets.FallbackShield set will be equipped. This is to prevent you from killing yourself
   while AFK if wearing an early stage Duban that still has the Soul Drain effect.
 
 
@@ -208,17 +208,13 @@ function get_sets()
   -- Load and initialize Mote library
   mote_include_version = 2
   include('Mote-Include.lua') -- Executes job_setup, user_setup, init_gear_sets
-  equip({main=empty,sub=empty})
-  
+
   coroutine.schedule(function()
     send_command('gs reorg')
   end, 1)
   coroutine.schedule(function()
     send_command('gs c weaponset current')
-  end, 5)
-  coroutine.schedule(function()
-    send_command('gs c subweaponset current')
-  end, 6)
+  end, 4)
 end
 
 -- Executes on first load and main job change
@@ -355,6 +351,12 @@ function user_setup()
 
   select_default_macro_book()
   set_sub_keybinds:schedule(2)
+
+  if initialized then
+    send_command:schedule(1, 'gs c equipweapons')
+  end
+
+  initialized = true -- DO NOT MODIFY
 end
 
 function job_file_unload()
@@ -1170,7 +1172,7 @@ function init_gear_sets()
   }
 
   -- Used to swap out Duban if low HP in certain conditions so the "soul drain" doesn't kill you
-  sets.SafeShield = { sub="Priwen" }
+  sets.FallbackShield = { sub="Priwen" }
 
   sets.defense.Phalanx = set_combine(sets.HeavyDef, sets.midcast.Phalanx)
 end
@@ -1378,7 +1380,7 @@ function customize_idle_set(idleSet)
   idleSet = set_combine(idleSet, select_weapons())
   
   if has_soul_drain_shield and player.hp < 10 then
-    idleSet =  set_combine(idleSet, sets.SafeShield)
+    idleSet =  set_combine(idleSet, sets.FallbackShield)
   end
   
   return idleSet
@@ -1411,7 +1413,7 @@ function customize_melee_set(meleeSet)
   meleeSet = set_combine(meleeSet, select_weapons())
   
   if has_soul_drain_shield and player.hp < 10 then
-    meleeSet =  set_combine(meleeSet, sets.SafeShield)
+    meleeSet =  set_combine(meleeSet, sets.FallbackShield)
   end
   
   return meleeSet
@@ -1453,7 +1455,7 @@ function customize_defense_set(defenseSet)
   end
   
   if has_soul_drain_shield and player.hp < 10 then
-    defenseSet =  set_combine(defenseSet, sets.SafeShield)
+    defenseSet =  set_combine(defenseSet, sets.FallbackShield)
   end
   
   return defenseSet
@@ -1598,15 +1600,22 @@ function cycle_sub_weapons(cycle_dir, set_name)
 end
 
 function select_weapons()
-  local set = {}
+  local weapons_to_equip = {}
+  local can_dw = silibs.can_dual_wield()
   if sets.WeaponSet[state.WeaponSet.current] then
-    set = set_combine(set, sets.WeaponSet[state.WeaponSet.current])
+    weapons_to_equip = set_combine(weapons_to_equip, sets.WeaponSet[state.WeaponSet.current])
   end
   if sets.SubWeaponSet[state.SubWeaponSet.current] then
-    set = set_combine(set, sets.SubWeaponSet[state.SubWeaponSet.current])
+    weapons_to_equip = set_combine(weapons_to_equip, sets.SubWeaponSet[state.SubWeaponSet.current])
   end
 
-  return set
+  -- If trying to equip weapon in offhand but cannot DW, equip empty
+  if not can_dw and weapons_to_equip.sub and silibs.is_weapon(weapons_to_equip.sub) then
+    local sub_to_use = sets.FallbackShield and sets.FallbackShield.sub or 'empty'
+    weapons_to_equip = set_combine(weapons_to_equip, {sub=sub_to_use})
+  end
+
+  return weapons_to_equip
 end
 
 function check_for_prime_shield()
@@ -1678,20 +1687,24 @@ function job_self_command(cmdParams, eventArgs)
       cycle_weapons('forward')
     elseif cmdParams[2] == 'cycleback' then
       cycle_weapons('back')
+    elseif cmdParams[2] == 'current' then
+      cycle_weapons('current')
     elseif cmdParams[2] == 'set' and cmdParams[3] then
       cycle_weapons('set', cmdParams[3])
-    else
-      cycle_weapons(cmdParams[2])
+    elseif cmdParams[2] == 'reset' then
+      cycle_weapons('reset')
     end
   elseif cmdParams[1] == 'subweaponset' then
     if cmdParams[2] == 'cycle' then
       cycle_sub_weapons('forward')
     elseif cmdParams[2] == 'cycleback' then
       cycle_sub_weapons('back')
+    elseif cmdParams[2] == 'current' then
+      cycle_sub_weapons('current')
     elseif cmdParams[2] == 'set' and cmdParams[3] then
       cycle_sub_weapons('set', cmdParams[3])
-    else
-      cycle_sub_weapons(cmdParams[2])
+    elseif cmdParams[2] == 'reset' then
+      cycle_sub_weapons('reset')
     end
   elseif cmdParams[1] == 'bind' then
     set_main_keybinds:schedule(2)
