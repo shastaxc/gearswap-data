@@ -409,14 +409,14 @@ function init_gear_sets()
     ear2="Suppanomimi",               --  5 [__/__, ___] ___
     ring1="Gelatinous Ring +1",       -- __ [ 7/-1, ___] ___
     ring2="Defending Ring",           -- __ [10/10, ___] ___
+    back=gear.NIN_DW_Cape,            -- 10 [10/__, ___] ___
     waist="Reiki Yotai",              --  7 [__/__, ___] ___
     -- Traits                            35
-    -- 83 DW [26 PDT/20 MDT, 235 M.Eva] 219 Evasion
+    -- 93 DW [36 PDT/20 MDT, 235 M.Eva] 219 Evasion
 
     -- body="Hachiya Chainmail +3",   -- 10 [__/__,  73]  82
     -- hands="Floral Gauntlets",      --  5 [__/ 4,  37]  24
     -- legs="Mochizuki Hakama +3",    -- 10 [__/__,  84]  63
-    -- back=gear.NIN_DW_Cape,         -- 10 [10/__, ___] ___
     -- 104 DW [36 PDT/22 MDT, 319 M.Eva] 292 Evasion
   }
 
@@ -1353,14 +1353,13 @@ function init_gear_sets()
     ear2="Dedition Earring",          -- __,  8,-10/-10 <__, __, __> [__/__, ___] ___, __
     ring1="Defending Ring",           -- __, __,  __/__ <__, __, __> [10/10, ___] ___, __
     ring2="Epona's Ring",             -- __, __,  __/__ < 3,  3, __> [__/__, ___] ___, __
-    back=gear.NIN_STP_Cape,           -- __, 10,  20/__ <__, __, __> [10/__, ___] ___, __
+    back=gear.NIN_DW_Cape,            -- 10, __,  20/__ <__, __, __> [10/__, ___] ___, __
     waist="Reiki Yotai",              --  7,  4,  10/10 <__, __, __> [__/__, ___] ___, __
     -- Traits/gifts/etc                                                                54
-    -- 22 DW, 79 STP, 295 Acc/255 R.Acc <4 DA, 7 TA, 0 QA> [36 PDT/26 MDT, 529 M.Eva] 375 Evasion, 79 Daken
+    -- 32 DW, 69 STP, 295 Acc/255 R.Acc <4 DA, 7 TA, 0 QA> [36 PDT/26 MDT, 529 M.Eva] 375 Evasion, 79 Daken
     
     -- ear1="Dedition Earring",       -- __,  8,-10/-10 <__, __, __> [__/__, ___] ___, __
     -- ear2="Hattori Earring +2",     -- __,  8,  20/__ <__, __, __> [__/__, ___] ___, __; katana/throwing +12
-    -- back=gear.NIN_DW_Cape,         -- 10, __,  20/__ <__, __, __> [10/__, ___] ___, __
     -- 32 DW, 72 STP, 305 Acc/245 R.Acc <3 DA, 7 TA, 0 QA> [36 PDT/26 MDT, 529 M.Eva] 375 Evasion, 79 Daken
   }
   sets.engaged.SuperDW.LowAcc = set_combine(sets.engaged.SuperDW, {
@@ -1383,13 +1382,12 @@ function init_gear_sets()
     ear2="Dedition Earring",          -- __,  8,-10/-10 <__, __, __> [__/__, ___] ___, __
     ring1="Defending Ring",           -- __, __,  __/__ <__, __, __> [10/10, ___] ___, __
     ring2="Epona's Ring",             -- __, __,  __/__ < 3,  3, __> [__/__, ___] ___, __
-    back=gear.NIN_STP_Cape,           -- __, 10,  20/__ <__, __, __> [10/__, ___] ___, __
+    back=gear.NIN_DW_Cape,            -- 10, __,  20/__ <__, __, __> [10/__, ___] ___, __
     waist="Reiki Yotai",              --  7,  4,  10/10 <__, __, __> [__/__, ___] ___, __
     -- Traits/gifts/etc                                                                54
-    -- 29 DW, 74 STP, 281 Acc/257 R.Acc <3 DA, 3 TA, 0 QA> [36 PDT/26 MDT, 541 M.Eva] 407 Evasion, 89 Daken
+    -- 39 DW, 64 STP, 281 Acc/257 R.Acc <3 DA, 3 TA, 0 QA> [36 PDT/26 MDT, 541 M.Eva] 407 Evasion, 89 Daken
     
     -- ear2="Hattori Earring +2",     -- __,  8,  20/__ <__, __, __> [__/__, ___] ___, __; katana/throwing +12
-    -- back=gear.NIN_DW_Cape,         -- 10, __,  20/__ <__, __, __> [10/__, ___] ___, __
     -- 39 DW, 64 STP, 311 Acc/267 R.Acc <3 DA, 3 TA, 0 QA> [36 PDT/26 MDT, 541 M.Eva] 407 Evasion, 89 Daken
   }
   sets.engaged.MaxDW.LowAcc = set_combine(sets.engaged.MaxDW, {
@@ -1445,13 +1443,12 @@ function init_gear_sets()
     ear2="Dedition Earring",          -- __,  8,-10/-10 <__, __, __> [__/__, ___] ___, __
     ring1="Defending Ring",           -- __, __,  __/__ <__, __, __> [10/10, ___] ___, __
     ring2="Epona's Ring",             -- __, __,  __/__ < 3,  3, __> [__/__, ___] ___, __
-    back=gear.NIN_STP_Cape,           -- __, 10,  20/__ <__, __, __> [10/__, ___] ___, __
+    back=gear.NIN_DW_Cape,            -- 10, __,  20/__ <__, __, __> [10/__, ___] ___, __
     waist="Reiki Yotai",              --  7,  4,  10/10 <__, __, __> [__/__, ___] ___, __
     -- Traits/gifts/etc                                                                54
-    -- 7 DW, 73 STP, 312 Acc/207 R.Acc <3 DA, 11 TA, 0 QA> [50 PDT/32 MDT, 552 M.Eva] 433 Evasion, 79 Daken
+    -- 17 DW, 63 STP, 312 Acc/207 R.Acc <3 DA, 11 TA, 0 QA> [50 PDT/32 MDT, 552 M.Eva] 433 Evasion, 79 Daken
     
     -- ear2="Hattori Earring +2",     -- __,  8,  20/__ <__, __, __> [__/__, ___] ___, __; katana/throwing +12
-    -- back=gear.NIN_DW_Cape,         -- 10, __,  20/__ <__, __, __> [10/__, ___] ___, __
     -- 17 DW, 63 STP, 342 Acc/217 R.Acc <3 DA, 11 TA, 0 QA> [50 PDT/32 MDT, 552 M.Eva] 433 Evasion, 79 Daken
   }
   sets.engaged.LowDW.HeavyDef.LowAcc = set_combine(sets.engaged.LowDW.HeavyDef, {
@@ -1474,12 +1471,9 @@ function init_gear_sets()
     ear2="Eabani Earring",            --  4, __,  __/__ <__, __, __> [__/__,   8]  15, __
     ring1="Defending Ring",           -- __, __,  __/__ <__, __, __> [10/10, ___] ___, __
     ring2="Epona's Ring",             -- __, __,  __/__ < 3,  3, __> [__/__, ___] ___, __
-    back=gear.NIN_STP_Cape,           -- __, 10,  20/__ <__, __, __> [10/__, ___] ___, __
+    back=gear.NIN_DW_Cape,            -- 10, __,  20/__ <__, __, __> [10/__, ___] ___, __
     waist="Reiki Yotai",              --  7,  4,  10/10 <__, __, __> [__/__, ___] ___, __
     -- Traits/gifts/etc                                                                54
-    -- 11 DW, 65 STP, 322 Acc/217 R.Acc <3 DA, 11 TA, 0 QA> [50 PDT/32 MDT, 560 M.Eva] 448 Evasion, 79 Daken
-    
-    -- back=gear.NIN_DW_Cape,         -- 10, __,  20/__ <__, __, __> [10/__, ___] ___, __
     -- 21 DW, 55 STP, 322 Acc/217 R.Acc <3 DA, 11 TA, 0 QA> [50 PDT/32 MDT, 560 M.Eva] 448 Evasion, 79 Daken
   }
   sets.engaged.MidDW.HeavyDef.LowAcc = set_combine(sets.engaged.MidDW.HeavyDef, {
@@ -1502,14 +1496,13 @@ function init_gear_sets()
     ear2="Dedition Earring",          -- __,  8,-10/-10 <__, __, __> [__/__, ___] ___, __
     ring1="Defending Ring",           -- __, __,  __/__ <__, __, __> [10/10, ___] ___, __
     ring2="Epona's Ring",             -- __, __,  __/__ < 3,  3, __> [__/__, ___] ___, __
-    back=gear.NIN_STP_Cape,           -- __, 10,  20/__ <__, __, __> [10/__, ___] ___, __
+    back=gear.NIN_DW_Cape,            -- 10, __,  20/__ <__, __, __> [10/__, ___] ___, __
     waist="Reiki Yotai",              --  7,  4,  10/10 <__, __, __> [__/__, ___] ___, __
     -- Traits/gifts/etc                                                                54
-    -- 14 DW, 64 STP, 323 Acc/158 R.Acc <3 DA, 14 TA, 0 QA> [49 PDT/31 MDT, 468 M.Eva] 378 Evasion, 79 Daken
+    -- 24 DW, 54 STP, 323 Acc/158 R.Acc <3 DA, 14 TA, 0 QA> [49 PDT/31 MDT, 468 M.Eva] 378 Evasion, 79 Daken
     
     -- head="Hattori Zukin +3",       --  7, __,  61/61 <__, __, __> [10/10, 119]  89, __
     -- ear2="Hattori Earring +2",     -- __,  8,  20/__ <__, __, __> [__/__, ___] ___, __; katana/throwing +12
-    -- back=gear.NIN_DW_Cape,         -- 10, __,  20/__ <__, __, __> [10/__, ___] ___, __
     -- 24 DW, 54 STP, 363 Acc/178 R.Acc <3 DA, 14 TA, 0 QA> [50 PDT/32 MDT, 478 M.Eva] 388 Evasion, 79 Daken
   }
   sets.engaged.HighDW.HeavyDef.LowAcc = set_combine(sets.engaged.HighDW.HeavyDef, {
@@ -1532,14 +1525,13 @@ function init_gear_sets()
     ear2="Dedition Earring",          -- __,  8,-10/-10 <__, __, __> [__/__, ___] ___, __
     ring1="Defending Ring",           -- __, __,  __/__ <__, __, __> [10/10, ___] ___, __
     ring2="Gelatinous Ring +1",       -- __, __,  __/__ <__, __, __> [ 7/-1, ___] ___, __
-    back=gear.NIN_STP_Cape,           -- __, 10,  20/__ <__, __, __> [10/__, ___] ___, __
+    back=gear.NIN_DW_Cape,            -- 10, __,  20/__ <__, __, __> [10/__, ___] ___, __
     waist="Reiki Yotai",              --  7,  4,  10/10 <__, __, __> [__/__, ___] ___, __
     -- Traits/gifts/etc                                                                54
-    -- 23 DW, 57 STP, 309 Acc/255 R.Acc <0 DA, 4 TA, 0 QA> [51 PDT/35 MDT, 525 M.Eva] 391 Evasion, 89 Daken
-    
+    -- 33 DW, 47 STP, 309 Acc/255 R.Acc <0 DA, 4 TA, 0 QA> [51 PDT/35 MDT, 525 M.Eva] 391 Evasion, 89 Daken
+
     -- head="Hattori Zukin +3",       --  7, __,  61/61 <__, __, __> [10/10, 119]  89, __
     -- ear2="Hattori Earring +2",     -- __,  8,  20/__ <__, __, __> [__/__, ___] ___, __; katana/throwing +12
-    -- back=gear.NIN_DW_Cape,         -- 10, __,  20/__ <__, __, __> [10/__, ___] ___, __
     -- 33 DW, 47 STP, 349 Acc/275 R.Acc <0 DA, 4 TA, 0 QA> [51 PDT/35 MDT, 535 M.Eva] 401 Evasion, 89 Daken
   }
   sets.engaged.SuperDW.HeavyDef.LowAcc = set_combine(sets.engaged.SuperDW.HeavyDef, {
@@ -1562,13 +1554,12 @@ function init_gear_sets()
     ear2="Suppanomimi",               --  5, __,  __/__ <__, __, __> [__/__, ___] ___, __
     ring1="Defending Ring",           -- __, __,  __/__ <__, __, __> [10/10, ___] ___, __
     ring2="Gelatinous Ring +1",       -- __, __,  __/__ <__, __, __> [ 7/-1, ___] ___, __
-    back=gear.NIN_STP_Cape,           -- __, 10,  20/__ <__, __, __> [10/__, ___] ___, __
+    back=gear.NIN_DW_Cape,            -- 10, __,  20/__ <__, __, __> [10/__, ___] ___, __
     waist="Reiki Yotai",              --  7,  4,  10/10 <__, __, __> [__/__, ___] ___, __
     -- Traits/gifts/etc                                                                54
-    -- 28 DW, 49 STP, 319 Acc/265 R.Acc <0 DA, 4 TA, 0 QA> [50 PDT/34 MDT, 525 M.Eva] 391 Evasion, 89 Daken
-    
+    -- 38 DW, 39 STP, 319 Acc/265 R.Acc <0 DA, 4 TA, 0 QA> [50 PDT/34 MDT, 525 M.Eva] 391 Evasion, 89 Daken
+
     -- head="Hattori Zukin +3",       --  7, __,  61/61 <__, __, __> [10/10, 119]  89, __
-    -- back=gear.NIN_DW_Cape,         -- 10, __,  20/__ <__, __, __> [10/__, ___] ___, __
     -- 38 DW, 39 STP, 329 Acc/275 R.Acc <0 DA, 4 TA, 0 QA> [51 PDT/35 MDT, 535 M.Eva] 401 Evasion, 89 Daken
   }
   sets.engaged.MaxDW.HeavyDef.LowAcc = set_combine(sets.engaged.MaxDW.HeavyDef, {
