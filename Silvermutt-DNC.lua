@@ -305,9 +305,9 @@ function user_setup()
   include('Global-Binds.lua') -- Additional local binds
 
   if S{'PLD','WAR','MNK','BLM','DRG','SMN'}:contains(player.sub_job) then
-    state.WeaponSet = M{['description']='Weapon Set', 'Twashtar', 'TwashtarAcc', 'Terpsichore', 'H2H', 'Healing', 'Staff', 'Cleaving'}
+    state.WeaponSet = M{['description']='Weapon Set', 'Twashtar', 'TwashtarAcc', 'Terpsichore', 'Cleaving', 'Healing', 'H2H', 'Staff'}
   else
-    state.WeaponSet = M{['description']='Weapon Set', 'Twashtar', 'TwashtarAcc', 'Terpsichore', 'H2H', 'Healing', 'Cleaving'}
+    state.WeaponSet = M{['description']='Weapon Set', 'Twashtar', 'TwashtarAcc', 'Terpsichore', 'Cleaving', 'Healing', 'H2H'}
   end
 
   select_default_macro_book()
@@ -402,13 +402,13 @@ function init_gear_sets()
   -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
 
   sets.WeaponSet = {} -- DO NOT MODIFY
-  sets.WeaponSet['Twashtar'] = {main="Twashtar", sub={name="Centovente", priority=1}}
+  sets.WeaponSet['Twashtar'] = {main="Twashtar", sub="Centovente"}
   sets.WeaponSet['TwashtarAcc'] = {main="Twashtar", sub={name="Gleti's Knife", priority=1}}
   sets.WeaponSet['Terpsichore'] = {main="Terpsichore", sub="Twashtar"}
-  sets.WeaponSet['H2H'] = {main="Karambit", sub=empty}
-  sets.WeaponSet['Healing'] = {main="Terpsichore", sub="Enchufla"}
-  sets.WeaponSet['Staff'] = {main="Gozuki Mezuki", sub="Tzacab Grip"}
   sets.WeaponSet['Cleaving'] = {main="Tauret", sub="Twashtar"}
+  sets.WeaponSet['Healing'] = {main="Terpsichore", sub="Enchufla"}
+  sets.WeaponSet['H2H'] = {main="Karambit", sub=empty}
+  sets.WeaponSet['Staff'] = {main="Gozuki Mezuki", sub="Tzacab Grip"}
 
   -- Ranged weapon sets
   sets.RangedWeaponSet = {}
