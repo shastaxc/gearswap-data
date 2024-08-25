@@ -2258,7 +2258,7 @@ function job_aftercast(spell, action, spellMap, eventArgs)
   end
     
   if in_battle_mode() then
-    equip(sets.WeaponSet[state.WeaponSet.current])
+    equip(select_weapons())
   end
 end
 
