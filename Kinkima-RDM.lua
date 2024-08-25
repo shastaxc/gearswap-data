@@ -1199,13 +1199,13 @@ function init_gear_sets()
 
   -- Skill caps at 500 Enhancing Magic skill for a total of Phalanx+35.
   sets.midcast.PhalanxSelf = {
-    -- main="Sakpata's Sword",            --  5, __, __, __ [10/10, ___]
+    main="Pukulatmuj +1",                 -- __, 11, __, __ [__/__, ___]
     sub="Ammurapi Shield",                -- __, __, __, 10 [__/__, ___]
     range=empty,                          -- __, __, __, __ [__/__, ___]
     ammo="Staunch Tathlum +1",            -- __, __, __, __ [ 3/ 3, ___]
     head=gear.Merl_Phalanx_head,          --  5, __, __, __ [__/__,  86]
     body=gear.Merl_Phalanx_body,          --  3, __, __, __ [ 2/__,  91]
-    hands="Atrophy Gloves +3",            -- __, __, __, 20 [__/__,  57]
+    hands=gear.Chironic_Phalanx_hands,    --  3, 15, __, __ [__/__,  48]
     legs=gear.Telchine_ENH_legs,          -- __, __, __, 10 [__/__, 132]
     feet=gear.Merl_Phalanx_feet,          --  4, __, __, __ [__/__, 118]
     neck="Incanter's Torque",             -- __, 10, __, __ [__/__, ___]
@@ -1216,10 +1216,10 @@ function init_gear_sets()
     back=gear.RDM_Adoulin_Cape,           -- __, __, 19, __ [__/__, ___]
     waist="Olympus Sash",                 -- __,  5, __, __ [__/__, ___]
     -- Traits/Gifts/Merits                -- __,456, __, __ [__/__, ___]
-    -- Master Levels                      -- __, __, __, __ [__/__, ___]
-    -- 17 Phalanx+, 481 Enh Skill, 19 Aug Enh Duration, 40 Enh duration [35 PDT/27 MDT, 484 M.Eva]
-    -- 51 Phalanx total
-    
+    -- Master Levels                      -- __,  9, __, __ [__/__, ___]
+    -- 15 Phalanx+, 516 Enh Skill, 19 Aug Enh Duration, 20 Enh duration [25 PDT/17 MDT, 475 M.Eva]
+    -- 50 Phalanx total
+
     -- main="Sakpata's Sword",            --  5, __, __, __ [10/10, ___]
     -- sub="Ammurapi Shield",             -- __, __, __, 10 [__/__, ___]
     -- range=empty,                       -- __, __, __, __ [__/__, ___]

@@ -54,7 +54,7 @@ gear.Grioavolr_Magic_BP = { name="Grioavolr", augments={'Blood Pact Dmg.+9','Pet
 -- gear.Chironic_AE_hands = { }-- 10 WSD > 40 MAB > 15 INT > 15 DEX
 -- gear.Chironic_AE_feet = {} -- 10 WSD > 40 MAB > 15 INT > 15 DEX
 
--- gear.Chironic_Phalanx_hands = {}
+gear.Chironic_Phalanx_hands = { name="Chironic Gloves", augments={'MND+3','Potency of "Cure" effect received+6%','Phalanx +3','Mag. Acc.+16 "Mag.Atk.Bns."+16',}}
 -- gear.Chironic_Phalanx_feet = {}
 
 gear.Chironic_SIRD_hands = { name="Chironic Gloves", augments={'Attack+6','Spell interruption rate down -11%','Mag. Acc.+1',}}
