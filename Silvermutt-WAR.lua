@@ -461,7 +461,7 @@ function init_gear_sets()
   -----------------------------------------------------------------------------------------------
 
   sets.precast.JA['Mighty Strikes'] = {
-    -- hands="Agoge Mufflers +3", -- Duration +15s; +1 is acceptable
+    hands="Agoge Mufflers +1", -- Duration +15s; +1 is acceptable
   }
 
   sets.precast.JA['Berserk'] = {
