@@ -568,7 +568,7 @@ function init_gear_sets()
   -- crit dmg > TP Bonus = crit rate > multihit
   -- 1000 TP bonus = ~15% crit rate
   sets.precast.WS["Victory Smite"] = set_combine(sets.precast.WS, {
-    ammo="Knobkierrie",
+    ammo="Coiste Bodhar",
     head=gear.Adhemar_B_head,
     body="Kendatsuba Samue +1",
     hands=gear.Ryuo_A_hands,
@@ -713,7 +713,7 @@ function init_gear_sets()
   -- Howling Fist: 50% VIT / 20% STR, 2.05-5.8 fTP, 2 hit, ftp replicating
   -- TP Bonus > Multihit > WSD
   sets.precast.WS['Howling Fist'] = set_combine(sets.precast.WS, {
-    ammo="Knobkierrie",
+    ammo="Coiste Bodhar",
     head="Mpaca's Cap",
     body="Tatenashi Haramaki +1",
     hands=gear.Herc_TA_hands,
