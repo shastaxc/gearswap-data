@@ -290,13 +290,13 @@ function init_gear_sets()
 
   sets.WeaponSet = {} -- DO NOT MODIFY
   sets.WeaponSet['Shining One'] = {main="Shining One", sub="Utu Grip",}
-  sets.WeaponSet['Naegling'] = {main="Naegling", sub=empty,}
+  sets.WeaponSet['Naegling'] = {main="Naegling", sub="Regis",}
   sets.WeaponSet['Naegling'].DW = {
     main="Naegling",
     sub="Ternion Dagger +1",
     -- sub="Kraken Club",
   }
-  sets.WeaponSet['Aeolian'] = {main="Malevolence", sub=empty,}
+  sets.WeaponSet['Aeolian'] = {main="Malevolence", sub="Regis",}
   sets.WeaponSet['Aeolian'].DW = {main="Malevolence", sub="Malevolence",}
   sets.WeaponSet['Trishula'] = {main="Trishula", sub="Utu Grip",}
   sets.WeaponSet['Staff'] = {main="Reikikon", sub="Utu Grip",}
