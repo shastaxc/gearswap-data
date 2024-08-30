@@ -568,31 +568,34 @@ function init_gear_sets()
   -- crit dmg > TP Bonus = crit rate > multihit
   -- 1000 TP bonus = ~15% crit rate
   sets.precast.WS["Victory Smite"] = set_combine(sets.precast.WS, {
-    ammo="Coiste Bodhar",
-    head=gear.Adhemar_B_head,
-    body="Kendatsuba Samue +1",
-    hands=gear.Ryuo_A_hands,
-    legs="Mpaca's Hose",
-    feet=gear.Herc_STR_CritDmg_feet,
-    neck="Monk's Nodowa +2", -- PDL
-    ear1="Sherida Earring",
-    ear2="Odr Earring",
-    ring1="Ephramad's Ring",
-    ring2="Niqmaddu Ring",
-    back=gear.MNK_STR_Crit_Cape,
-    waist="Moonbow Belt +1",
+    ammo="Coiste Bodhar",               -- 10, __, __ < 3, __, __> (__, __) [__/__, ___]
+    head=gear.Adhemar_B_head,           -- 31, __, __ <__,  4, __> (__,  6) [__/__,  59]
+    body="Kendatsuba Samue +1",         -- 33, __, __ <__,  6, __> ( 9, __) [__/__, 117]
+    hands=gear.Ryuo_A_hands,            -- 24, __, __ <__, __, __> ( 5,  5) [__/__,  32]
+    legs="Mpaca's Hose",                -- 49, __,  8 <__,  4, __> ( 6, __) [ 9/__, 106]
+    feet=gear.Herc_STR_CritDmg_feet,    -- 16, __, __ <__, __, __> (__,  5) [ 2/__,  75]
+    neck="Monk's Nodowa +2",            -- __, __, 10 <__, __, __> (__, __) [__/__, ___]
+    ear1="Sherida Earring",             --  5, __, __ < 5, __, __> (__, __) [__/__, ___]
+    ear2="Odr Earring",                 -- __, __, __ <__, __, __> ( 5, __) [__/__, ___]
+    ring1="Gere Ring",                  -- 10, __, __ <__,  5, __> (__, __) [__/__, ___]
+    ring2="Ephramad's Ring",            -- 10, __, 10 <__, __, __> (__, __) [__/__, ___]
+    back=gear.MNK_STR_Crit_Cape,        -- 30, __, __ <__, __, __> (10, __) [10/__, ___]
+    waist="Moonbow Belt +1",            -- 20, __, __ <__,  8, __> (__, __) [ 6/ 6, ___]
+    -- 238 STR, 0 WSD, 28 PDL <8 DA, 27 TA, 0 QA> (35 Crit Rate, 16 Crit Dmg) [27 PDT/6 MDT, 389 M.Eva]
   })
   sets.precast.WS["Victory Smite"].MaxTP = set_combine(sets.precast.WS["Victory Smite"], {
   })
   sets.precast.WS["Victory Smite"].Safe = set_combine(sets.precast.WS["Victory Smite"], {
-    feet="Mpaca's Boots",
-    ear1="Odnowa Earring +1",
-    ring2="Defending Ring",
+    feet="Mpaca's Boots",               -- 28, __, __ <__,  3, __> ( 3, __) [ 6/__,  96]
+    ear2="Odnowa Earring +1",           --  3, __, __ <__, __, __> (__, __) [ 3/ 5, ___]
+    ring2="Defending Ring",             -- __, __, __ <__, __, __> (__, __) [10/10, ___]
+    -- 243 STR, 0 WSD, 18 PDL <8 DA, 30 TA, 0 QA> (33 Crit Rate, 11 Crit Dmg) [44 PDT/21 MDT, 410 M.Eva]
   })
   sets.precast.WS["Victory Smite"].SafeMaxTP = set_combine(sets.precast.WS["Victory Smite"], {
-    feet="Mpaca's Boots",
-    ear1="Odnowa Earring +1",
-    ring2="Defending Ring",
+    feet="Mpaca's Boots",               -- 28, __, __ <__,  3, __> ( 3, __) [ 6/__,  96]
+    ear2="Odnowa Earring +1",           --  3, __, __ <__, __, __> (__, __) [ 3/ 5, ___]
+    ring2="Defending Ring",             -- __, __, __ <__, __, __> (__, __) [10/10, ___]
+    -- 243 STR, 0 WSD, 18 PDL <8 DA, 30 TA, 0 QA> (33 Crit Rate, 11 Crit Dmg) [44 PDT/21 MDT, 410 M.Eva]
   })
 
   -- Shijin Spiral: 100% DEX, 1.5 fTP, 5 hit, ftp replicating
