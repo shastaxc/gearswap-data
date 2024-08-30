@@ -860,23 +860,23 @@ function init_gear_sets()
   -- crit dmg > TP Bonus = crit rate > multihit
   -- 1000 TP bonus = ~15% crit rate
   sets.precast.WS["Victory Smite"] = set_combine(sets.precast.WS, {
-    ranged="Neo Animator",            -- __, __, __ <__, __, __> [__/__, ___] {__/__, 119}
-    head="Mpaca's Cap",               -- 33, __,  4 < 5,  3, __> [ 7/__,  69] {__/__, ___}; TP Bonus+200
-    body="Mpaca's Doublet",           -- 39, __,  7 <__,  4, __> [10/__,  86] {__/__, ___}
-    hands=gear.Ryuo_A_hands,          -- 24,  5,  5 <__, __, __> [__/__,  32] {__/__, ___}
-    legs="Mpaca's Hose",              -- 49, __,  6 <__,  4, __> [ 9/__,  96] {__/__, ___}
-    feet=gear.Herc_STR_CritDmg_feet,  -- 16,  5, __ <__,  2, __> [ 2/__,  75] {__/__, ___}
-    neck="Loricate Torque +1",        -- __, __, __ <__, __, __> [ 6/ 6, ___] {__/__, ___}
-    ear1="Odr Earring",               -- __, __,  5 <__, __, __> [__/__, ___] {__/__, ___}
-    ear2="Moonshade Earring",         -- __, __, __ <__, __, __> [__/__, ___] {__/__, ___}; TP Bonus+250
-    ring1="Sroda Ring",               -- 15, __, __ <__, __, __> [__/__, ___] {__/__, ___}
-    ring2="Defending Ring",           -- __, __, __ <__, __, __> [10/10, ___] {__/__, ___}
-    back=gear.PUP_STR_Crit_Cape,      -- 30, __, 10 <__, __, __> [__/__, ___] { 5/ 5,   1}
-    waist="Moonbow Belt +1",          -- 20, __, __ <__,  8, __> [ 6/ 6, ___] {__/__, ___}
-    -- 226 STR, 10 Crit Dmg, 37 Crit Rate <5 DA, 21 TA, 0 QA> [50 PDT/22 MDT, 358 M.Eva] {Pet: 5 PDT/5 MDT, 120 Lv}
+    ranged="Neo Animator",            -- __ <__, __, __> (__, __) [__/__, ___] {__/__, 119}
+    head="Mpaca's Cap",               -- 33 < 5,  3, __> ( 4, __) [ 7/__,  69] {__/__, ___}; TP Bonus+200
+    body="Mpaca's Doublet",           -- 39 <__,  4, __> ( 7, __) [10/__,  86] {__/__, ___}
+    hands=gear.Ryuo_A_hands,          -- 24 <__, __, __> ( 5,  5) [__/__,  32] {__/__, ___}
+    legs="Mpaca's Hose",              -- 49 <__,  4, __> ( 6, __) [ 9/__,  96] {__/__, ___}
+    feet=gear.Herc_STR_CritDmg_feet,  -- 16 <__,  2, __> (__,  5) [ 2/__,  75] {__/__, ___}
+    neck="Loricate Torque +1",        -- __ <__, __, __> (__, __) [ 6/ 6, ___] {__/__, ___}
+    ear1="Odr Earring",               -- __ <__, __, __> ( 5, __) [__/__, ___] {__/__, ___}
+    ear2="Moonshade Earring",         -- __ <__, __, __> (__, __) [__/__, ___] {__/__, ___}; TP Bonus+250
+    ring1="Sroda Ring",               -- 15 <__, __, __> (__, __) [__/__, ___] {__/__, ___}
+    ring2="Defending Ring",           -- __ <__, __, __> (__, __) [10/10, ___] {__/__, ___}
+    back=gear.PUP_STR_Crit_Cape,      -- 30 <__, __, __> (10, __) [__/__, ___] { 5/ 5,   1}
+    waist="Moonbow Belt +1",          -- 20 <__,  8, __> (__, __) [ 6/ 6, ___] {__/__, ___}
+    -- 226 STR <5 DA, 21 TA, 0 QA> (37 Crit Rate, 10 Crit Dmg) [50 PDT/22 MDT, 358 M.Eva] {Pet: 5 PDT/5 MDT, 120 Lv}
   })
   sets.precast.WS["Victory Smite"].MaxTP = set_combine(sets.precast.WS["Victory Smite"], {
-    ear2="Schere Earring",            --  5, __, __ < 6, __, __> [__/__, ___] {__/__, ___}
+    ear2="Schere Earring",            --  5 < 6, __, __> (__, __) [__/__, ___] {__/__, ___}
   })
 
   -- 32% STR / 32% VIT - Chance of Critical varies w/ TP (Mythic WS)
