@@ -2149,9 +2149,6 @@ function equip_attachments(set_name)
   if set_name == state.PetMode.current and not is_setting_attachments then
     is_setting_attachments = true
     attach_set(set_name)
-    coroutine.schedule(function()
-      is_setting_attachments = false
-    end, 3)
   end
 end
 
@@ -2160,19 +2157,23 @@ end
 function attach_set(autoset)
   if not autosets[autoset] then
     add_to_chat(123, 'Specified set "'..autoset..'" is not defined.')
+    is_setting_attachments = false
     return
   end
   if autosets[autoset]:map(string.lower):equals(get_current_autoset():map(string.lower)) then
     add_to_chat(1, chat_d_blue..'Specified set "'..chat_white..autoset..chat_d_blue..'" is already equipped.')
+    is_setting_attachments = false
     return
   end
 
   if not pet.isValid then
     windower.ffxi.reset_attachments()
-    add_to_chat(1, chat_d_blue..'Starting to equip '..chat_white..autoset..chat_white..' to pet.')
+    add_to_chat(1, chat_d_blue..'Starting to equip '..chat_white..autoset..chat_d_blue..' to pet.')
     set_attachments_from_autoset(autoset, 'head')
   else
     add_to_chat(123, 'Cannot change attachments while pet is active.')
+    is_setting_attachments = false
+    return
   end
 end
 
@@ -2215,8 +2216,12 @@ function set_attachments_from_autoset(autoset,slot)
     if tonumber(slot) < 12 then
       coroutine.schedule(set_attachments_from_autoset:prepare(autoset, slot + 1), 0.5)
     else
-      add_to_chat(1, chat_d_blue..'Pet has been equipped with the '..chat_white..autoset..chat_white..' set.')
+      add_to_chat(1, chat_d_blue..'Pet has been equipped with the '..chat_white..autoset..chat_d_blue..' set.')
     end
+  end
+
+  if slot == 12 then
+    is_setting_attachments = false
   end
 end
 
