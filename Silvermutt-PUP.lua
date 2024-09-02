@@ -3,8 +3,8 @@ File Status: Good.
 
 Author: Silvermutt
 Required external libraries: SilverLibs
-Required addons: Autocontrol
-Recommended addons: WSBinder, Reorganizer, PetTP
+Required addons: N/A
+Recommended addons: WSBinder, Reorganizer, PetTP, Autocontrol
 Misc Recommendations: Disable RollTracker
 
 ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
@@ -203,6 +203,22 @@ __Keybind___Name______________Command_____________
     <slot11>Optic Fiber II</slot11>
     <slot12>Coiler II</slot12>
 </meleesc>
+<meleescregen>
+    <frame>Sharpshot Frame</frame>
+    <head>Valoredge Head</head>
+    <slot01>Inhibitor</slot01>
+    <slot02>Inhibitor II</slot02>
+    <slot03>Speedloader II</slot03>
+    <slot04>Attuner</slot04>
+    <slot05>Magniplug</slot05>
+    <slot06>Magniplug II</slot06>
+    <slot07>Truesights</slot07>
+    <slot08>Turbo Charger</slot08>
+    <slot09>Turbo Charger II</slot09>
+    <slot10>Optic Fiber</slot10>
+    <slot11>Optic Fiber II</slot11>
+    <slot12>Coiler II</slot12>
+</meleescregen>
 <meleespam>
     <frame>Sharpshot Frame</frame>
     <head>Valoredge Head</head>
@@ -220,20 +236,20 @@ __Keybind___Name______________Command_____________
     <slot12>Coiler II</slot12>
 </meleespam>
 <nuke>
-    <frame>stormwaker frame</frame>
-    <head>spiritreaver head</head>
-    <slot01>amplifier</slot01>
-    <slot02>amplifier ii</slot02>
-    <slot03>tactical processor</slot03>
-    <slot04>loudspeaker iv</slot04>
-    <slot05>tranquilizer</slot05>
-    <slot06>optic fiber</slot06>
-    <slot07>optic fiber ii</slot07>
-    <slot08>mana tank iii</slot08>
-    <slot09>mana tank iv</slot09>
-    <slot10>economizer</slot10>
-    <slot11>mana jammer iii</slot11>
-    <slot12>mana jammer iv</slot12>
+    <frame>Stormwaker Frame</frame>
+    <head>Spiritreaver Head</head>
+    <slot01>Amplifier</slot01>
+    <slot02>Amplifier II</slot02>
+    <slot03>Tactical Processor</slot03>
+    <slot04>Loudspeaker IV</slot04>
+    <slot05>Tranquilizer</slot05>
+    <slot06>Optic Fiber</slot06>
+    <slot07>Optic Fiber II</slot07>
+    <slot08>Mana Tank III</slot08>
+    <slot09>Mana Tank IV</slot09>
+    <slot10>Economizer</slot10>
+    <slot11>Mana Jammer III</slot11>
+    <slot12>Mana Jammer IV</slot12>
 </nuke>
 <overdrivedd>
     <frame>Sharpshot Frame</frame>
@@ -300,36 +316,36 @@ __Keybind___Name______________Command_____________
     <slot12>Coiler II</slot12>
 </skillupmelee>
 <skillupnuke>
-    <frame>stormwaker frame</frame>
-    <head>spiritreaver head</head>
-    <slot01>percolator</slot01>
-    <slot02>optic fiber</slot02>
-    <slot03>optic fiber ii</slot03>
-    <slot04>amplifier</slot04>
-    <slot05>amplifier ii</slot05>
-    <slot06>mana conserver</slot06>
-    <slot07>turbo charger</slot07>
-    <slot08>turbo charger ii</slot08>
-    <slot09>mana booster</slot09>
-    <slot10>power cooler</slot10>
-    <slot11>armor plate iv</slot11>
-    <slot12>auto-repair kit iii</slot12>
+    <frame>Stormwaker Frame</frame>
+    <head>Spiritreaver Head</head>
+    <slot01>Percolator</slot01>
+    <slot02>Optic Fiber</slot02>
+    <slot03>Optic Fiber II</slot03>
+    <slot04>Amplifier</slot04>
+    <slot05>Amplifier II</slot05>
+    <slot06>Mana Conserver</slot06>
+    <slot07>Turbo Charger</slot07>
+    <slot08>Turbo Charger II</slot08>
+    <slot09>Mana Booster</slot09>
+    <slot10>Power Cooler</slot10>
+    <slot11>Armor Plate IV</slot11>
+    <slot12>Auto-repair Kit III</slot12>
 </skillupnuke>
 <skillupranged>
-    <frame>sharpshot frame</frame>
-    <head>sharpshot head</head>
-    <slot01>percolator</slot01>
-    <slot02>optic fiber</slot02>
-    <slot03>optic fiber ii</slot03>
-    <slot04>barrage turbine</slot04>
-    <slot05>repeater</slot05>
-    <slot06>drum magazine</slot06>
-    <slot07>turbo charger</slot07>
-    <slot08>turbo charger ii</slot08>
-    <slot09>coiler</slot09>
-    <slot10>coiler ii</slot10>
-    <slot11>armor plate iv</slot11>
-    <slot12>auto-repair kit iv</slot12>
+    <frame>Sharpshot Frame</frame>
+    <head>Sharpshot Head</head>
+    <slot01>Percolator</slot01>
+    <slot02>Optic Fiber</slot02>
+    <slot03>Optic Fiber II</slot03>
+    <slot04>Barrage Turbine</slot04>
+    <slot05>Repeater</slot05>
+    <slot06>Drum Magazine</slot06>
+    <slot07>Turbo Charger</slot07>
+    <slot08>Turbo Charger II</slot08>
+    <slot09>Coiler</slot09>
+    <slot10>Coiler II</slot10>
+    <slot11>Armor Plate IV</slot11>
+    <slot12>Auto-repair Kit IV</slot12>
 </skillupranged>
 <tank>
     <frame>Valoredge Frame</frame>
@@ -392,8 +408,8 @@ function job_setup()
   state.CP = M(false, 'Capacity Points Mode')
   state.AutomaticPetTargeting = M(true, 'Automatic Pet Targeting')
   state.AutomaticManeuvers = M(false,'Automatic Maneuvers')
-  state.PetMode = M{['description']='Pet Mode', 'Tank', 'RangedSpam', 'RangedSC', 'Heal', 'MeleeSpam', 'MeleeSC', 'OverdriveDD', 'Nuke'}
-  -- state.PetMode = M{['description']='Pet Mode', 'Tank', 'RangedSpam', 'RangedSC', 'Heal', 'MeleeSpam', 'MeleeSC', 'OverdriveDD', 'Nuke', 'SkillUpRanged', 'SkillUpMelee'}
+  state.PetMode = M{['description']='Pet Mode', 'Tank', 'RangedSpam', 'RangedSC', 'Heal', 'MeleeSpam', 'MeleeSC', 'MeleeSCRegen', 'OverdriveDD', 'Nuke'}
+  -- state.PetMode = M{['description']='Pet Mode', 'Tank', 'RangedSpam', 'RangedSC', 'Heal', 'MeleeSpam', 'MeleeSC', 'MeleeSCRegen', 'OverdriveDD', 'Nuke', 'SkillUpRanged', 'SkillUpMelee'}
 
   -- List of pet weaponskills to check for
   petWeaponskills = S{'Slapstick', 'Knockout', 'Magic Mortar', 'Chimera Ripper', 'String Clipper', 'Cannibal Blade',
@@ -409,11 +425,191 @@ function job_setup()
 		Heal =          L{'Light', 'Light', 'Dark'},
 		MeleeSpam =     L{'Fire', 'Fire', 'Wind'},
 		MeleeSC =       L{'Fire', 'Fire', 'Wind'},
+		MeleeSCRegen =  L{'Fire', 'Light', 'Wind'},
 		OverdriveDD =   L{'Light', 'Fire', 'Thunder'},
 		Nuke =          L{'Ice', 'Ice', 'Ice'},
     SkillUpRanged = L{'Light', 'Wind', 'Water'},
     SkillUpMelee =  L{'Light', 'Thunder', 'Water'},
 	}
+
+  autosets = T{
+    ['Tank'] = T{
+      frame="Valoredge Frame",
+      head="Soulsoother Head",
+      slot01="Steam Jacket",
+      slot02="Strobe",
+      slot03="Strobe II",
+      slot04="Mana Jammer III",
+      slot05="Mana Jammer IV",
+      slot06="Armor Plate II",
+      slot07="Armor Plate IV",
+      slot08="Barrier Module II",
+      slot09="Auto-Repair Kit IV",
+      slot10="Optic Fiber",
+      slot11="Optic Fiber II",
+      slot12="Flashbulb",
+    },
+    ['RangedSpam'] = T{
+      frame="Sharpshot Frame",
+      head="Sharpshot Head",
+      slot01="Scope II",
+      slot02="Scope IV",
+      slot03="Truesights",
+      slot04="Repeater",
+      slot05="Drum Magazine",
+      slot06="Dynamo III",
+      slot07="Armor Plate IV",
+      slot08="Mana Jammer IV",
+      slot09="Magniplug",
+      slot10="Magniplug II",
+      slot11="Optic Fiber",
+      slot12="Optic Fiber II",
+    },
+    ['RangedSC'] = T{
+      frame="Sharpshot Frame",
+      head="Sharpshot Head",
+      slot01="Inhibitor",
+      slot02="Inhibitor II",
+      slot03="Speedloader II",
+      slot04="Magniplug",
+      slot05="Magniplug II",
+      slot06="Scope IV",
+      slot07="Truesights",
+      slot08="Barrage Turbine",
+      slot09="Repeater",
+      slot10="Drum Magazine",
+      slot11="Optic Fiber",
+      slot12="Optic Fiber II",
+    },
+    ['Heal'] = T{
+      frame="Stormwaker Frame",
+      head="Soulsoother Head",
+      slot01="Mana Booster",
+      slot02="Tactical Processor",
+      slot03="Mana Tank II",
+      slot04="Mana Tank IV",
+      slot05="Vivi-valve II",
+      slot06="Damage Gauge",
+      slot07="Damage Gauge II",
+      slot08="Optic Fiber",
+      slot09="Optic Fiber II",
+      slot10="Resister",
+      slot11="Resister II",
+      slot12="Scanner",
+    },
+    ['MeleeSpam'] = T{
+      frame="Sharpshot Frame",
+      head="Valoredge Head",
+      slot01="Barrage Turbine",
+      slot02="Heat Capacitor",
+      slot03="Heat Capacitor II",
+      slot04="Attuner",
+      slot05="Magniplug",
+      slot06="Magniplug II",
+      slot07="Truesights",
+      slot08="Turbo Charger",
+      slot09="Turbo Charger II",
+      slot10="Optic Fiber",
+      slot11="Optic Fiber II",
+      slot12="Coiler II",
+    },
+    ['MeleeSC'] = T{
+      frame="Sharpshot Frame",
+      head="Valoredge Head",
+      slot01="Inhibitor",
+      slot02="Inhibitor II",
+      slot03="Speedloader II",
+      slot04="Attuner",
+      slot05="Magniplug",
+      slot06="Magniplug II",
+      slot07="Truesights",
+      slot08="Turbo Charger",
+      slot09="Turbo Charger II",
+      slot10="Optic Fiber",
+      slot11="Optic Fiber II",
+      slot12="Coiler II",
+    },
+    ['MeleeSCRegen'] = T{
+      frame="Sharpshot Frame",
+      head="Valoredge Head",
+      slot01="Inhibitor",
+      slot02="Inhibitor II",
+      slot03="Speedloader II",
+      slot04="Attuner",
+      slot05="Magniplug",
+      slot06="Magniplug II",
+      slot07="Truesights",
+      slot08="Turbo Charger",
+      slot09="Turbo Charger II",
+      slot10="Optic Fiber",
+      slot11="Optic Fiber II",
+      slot12="Coiler II",
+    },
+    ['OverdriveDD'] = T{
+      frame="Sharpshot Frame",
+      head="Valoredge Head",
+      slot01="Armor Plate IV",
+      slot02="Magniplug",
+      slot03="Speedloader II",
+      slot04="Turbo Charger II",
+      slot05="Auto-Repair Kit IV",
+      slot06="Optic Fiber",
+      slot07="Optic Fiber II",
+      slot08="Coiler II",
+      slot09="Inhibitor",
+      slot10="Inhibitor II",
+      slot11="Attuner",
+      slot12="Magniplug II",
+    },
+    ['Nuke'] = T{
+      frame="Stormwaker Frame",
+      head="Spiritreaver Head",
+      slot01="Amplifier",
+      slot02="Amplifier II",
+      slot03="Tactical Processor",
+      slot04="Loudspeaker IV",
+      slot05="Tranquilizer",
+      slot06="Optic Fiber",
+      slot07="Optic Fiber II",
+      slot08="Mana Tank III",
+      slot09="Mana Tank IV",
+      slot10="Economizer",
+      slot11="Mana Jammer III",
+      slot12="Mana Jammer IV",
+    },
+    ['SkillUpRanged'] = T{
+      frame="Sharpshot Frame",
+      head="Sharpshot Head",
+      slot01="Percolator",
+      slot02="Optic Fiber",
+      slot03="Optic Fiber II",
+      slot04="Barrage Turbine",
+      slot05="Repeater",
+      slot06="Drum Magazine",
+      slot07="Turbo Charger",
+      slot08="Turbo Charger II",
+      slot09="Coiler",
+      slot10="Coiler II",
+      slot11="Armor Plate IV",
+      slot12="Auto-repair Kit IV",
+    },
+    ['SkillUpMelee'] = T{
+      frame="Valoredge Frame",
+      head="Valoredge Head",
+      slot01="Percolator",
+      slot02="Stabilizer IV",
+      slot03="Barrage Turbine",
+      slot04="Auto-Repair Kit IV",
+      slot05="Mana Jammer IV",
+      slot06="Armor Plate IV",
+      slot07="Turbo Charger",
+      slot08="Turbo Charger II",
+      slot09="Optic Fiber",
+      slot10="Optic Fiber II",
+      slot11="Coiler",
+      slot12="Coiler II",
+    },
+  }
 
   ---- DO NOT MODIFY BELOW ------
   Flashbulb_Timer = 45
@@ -422,6 +618,11 @@ function job_setup()
   Flashbulb_Recast = 0
   Flashbulb_Time = 0
   Strobe_Time = 0
+  recast_ids = {
+    deactivate = res.job_abilities:with('english', 'Deactivate').recast_id,
+    activate = res.job_abilities:with('english', 'Activate').recast_id,
+    deusex = res.job_abilities:with('english', 'Deus Ex Automata').recast_id,
+  }
   maneuver_info = {
     ['fire'] = {id=141, name='Fire Maneuver', short_name='fire', recast_id=210, buff_id=300},
     ['ice'] = {id=142, name='Ice Maneuver', short_name='ice', recast_id=210, buff_id=301},
@@ -445,6 +646,16 @@ function job_setup()
   status_maneuver_blockers = {'overload', 'terror', 'petrification', 'stun', 'sleep', 'charm',
       'amnesia', 'impairment', 'invisible', 'hide', 'camouflage'}
   deploy_max_range = 16 -- Player and target model sizes are added later
+  atts = res.items:category('Automaton')
+  chat_purple = string.char(0x1F, 200)
+  chat_grey = string.char(0x1F, 160)
+  chat_red = string.char(0x1F, 167)
+  chat_white = string.char(0x1F, 001)
+  chat_green = string.char(0x1F, 214)
+  chat_yellow = string.char(0x1F, 036)
+  chat_d_blue = string.char(0x1F, 207)
+  chat_pink = string.char(0x1E, 5)
+  chat_l_blue = string.char(0x1E, 6)
   ---- DO NOT MODIFY ABOVE ------
 
   -- TODO: Determine pet's initial mode if already summoned
@@ -678,6 +889,7 @@ function init_gear_sets()
     -- [33 PDT/27 MDT, 443 M.Eva] {Pet: 8 PDT /8 MDT, 121 Lv | 10 DA, 29 STP, 389 Acc/354 Racc, 167 Att/147 Ratt, 19 Haste, 5 Regen, 0 Enmity}
   }
   sets.idle.PetEngaged.MeleeSC = set_combine(sets.idle.PetEngaged.MeleeSpam, {})
+  sets.idle.PetEngaged.MeleeSCRegen = set_combine(sets.idle.PetEngaged.MeleeSpam, {})
   sets.idle.PetEngaged.OverdriveDD = set_combine(sets.idle.PetEngaged.MeleeSpam, {
     range="Neo Animator",             -- [__/__, ___] {__/__, 119 | __, __, 30/30, __/__, __}
     head="Karagoz Cappello +2",       -- [__/__,  88] {__/__, ___ | __, __, 51/51, __/__, __}; TP Bonus+575
@@ -1458,6 +1670,8 @@ function init_gear_sets()
   sets.engaged.PetMeleeSpam.Acc = set_combine(sets.engaged.PetMeleeSpam, {})
   sets.engaged.PetMeleeSC = set_combine(sets.engaged.PetMeleeSpam, {})
   sets.engaged.PetMeleeSC.Acc = set_combine(sets.engaged.PetMeleeSC, {})
+  sets.engaged.PetMeleeSCRegen = set_combine(sets.engaged.PetMeleeSpam, {})
+  sets.engaged.PetMeleeSCRegen.Acc = set_combine(sets.engaged.PetMeleeSCRegen, {})
   sets.engaged.PetOverdriveDD = {
     range="Neo Animator",             -- __, 10 <__, __, __> [__/__, ___] {__/__, 119 | __, __, 30/30, __/__, __, __, __}
     head="Karagoz Cappello +2",       -- __, 51 < 4, __, __> [__/__,  88] {__/__, ___ | __, __, 51/51, __/__, __, __, __}; TP Bonus+575
@@ -1566,6 +1780,8 @@ function init_gear_sets()
   })
   sets.engaged.HalfsiesMeleeSC = set_combine(sets.engaged.HalfsiesMeleeSpam, {})
   sets.engaged.HalfsiesMeleeSC.Acc = set_combine(sets.engaged.HalfsiesMeleeSpam.Acc, {})
+  sets.engaged.HalfsiesMeleeSCRegen = set_combine(sets.engaged.HalfsiesMeleeSpam, {})
+  sets.engaged.HalfsiesMeleeSCRegen.Acc = set_combine(sets.engaged.HalfsiesMeleeSpam.Acc, {})
   sets.engaged.HalfsiesOverdriveDD = set_combine(sets.engaged.PetOverdriveDD, {})
   sets.engaged.HalfsiesOverdriveDD.Acc = set_combine(sets.engaged.PetOverdriveDD.Acc, {})
   sets.engaged.HalfsiesHeal = set_combine(sets.engaged.PetHeal, {})
@@ -1917,11 +2133,11 @@ function cycle_pet_mode(cycle_dir)
     elseif cycle_dir == 'reset' then
       state.PetMode:reset()
     end
-  
-    add_to_chat(141, 'Pet Mode set to '..string.char(31,1)..state.PetMode.current)
-  
+
+    add_to_chat(1, chat_d_blue..'Pet Mode set to '..chat_white..state.PetMode.current)
+
     -- Set automaton attachments
-    local set_name = state.PetMode.current:lower()
+    local set_name = state.PetMode.current
     equip_attachments:schedule(3, set_name)
   end
 end
@@ -1930,12 +2146,99 @@ function equip_attachments(set_name)
   -- Must check 'is_setting_attachments' to avoid trying to set the same mode twice
   -- This would not cause a functional difference, but causes autocontrol to spam
   -- messages in the console.
-  if set_name == state.PetMode.current:lower() and not is_setting_attachments then
+  if set_name == state.PetMode.current and not is_setting_attachments then
     is_setting_attachments = true
-    send_command('acon equipset '..set_name)
+    attach_set(set_name)
     coroutine.schedule(function()
       is_setting_attachments = false
     end, 3)
+  end
+end
+
+-- Kicks off the updating of automaton attachments.
+-- Credit: Nitrous (Shiva) author of AutoControl addon
+function attach_set(autoset)
+  if not autosets[autoset] then
+    add_to_chat(123, 'Specified set "'..autoset..'" is not defined.')
+    return
+  end
+  if autosets[autoset]:map(string.lower):equals(get_current_autoset():map(string.lower)) then
+    add_to_chat(1, chat_d_blue..'Specified set "'..chat_white..autoset..chat_d_blue..'" is already equipped.')
+    return
+  end
+
+  if not pet.isValid then
+    windower.ffxi.reset_attachments()
+    add_to_chat(1, chat_d_blue..'Starting to equip '..chat_white..autoset..chat_white..' to pet.')
+    set_attachments_from_autoset(autoset, 'head')
+  else
+    add_to_chat(123, 'Cannot change attachments while pet is active.')
+  end
+end
+
+-- Performs the equipping of an attachment, and recursive calls to equip remaining attachments.
+-- Credit: Nitrous (Shiva) author of AutoControl addon
+function set_attachments_from_autoset(autoset,slot)
+  if slot == 'head' then
+    local tempHead = autosets[autoset].head:lower()
+    if tempHead then
+      for att in atts:it() do
+        if att.name:lower() == tempHead and att.id > 5000 then
+          windower.ffxi.set_attachment(att.id)
+          break
+        end
+      end
+    end
+    coroutine.schedule(set_attachments_from_autoset:prepare(autoset, 'frame'), 0.5)
+  elseif slot == 'frame' then
+    local tempFrame = autosets[autoset].frame:lower()
+    if tempFrame then
+      for att in atts:it() do
+        if att.name:lower() == tempFrame and att.id > 5000 then
+          windower.ffxi.set_attachment(att.id)
+          break
+        end
+      end
+    end
+    coroutine.schedule(set_attachments_from_autoset:prepare(autoset, '1'), 0.5)
+  else
+    local tempname = autosets[autoset]['slot' .. tostring(slot):zfill(2)]:lower()
+    if tempname then
+      for att in atts:it() do
+        if att.name:lower() == tempname and att.id > 5000 then
+          windower.ffxi.set_attachment(att.id, tonumber(slot))
+          break
+        end
+      end
+    end
+
+    if tonumber(slot) < 12 then
+      coroutine.schedule(set_attachments_from_autoset:prepare(autoset, slot + 1), 0.5)
+    else
+      add_to_chat(1, chat_d_blue..'Pet has been equipped with the '..chat_white..autoset..chat_white..' set.')
+    end
+  end
+end
+
+-- Returns table of currently-equipped attachments
+-- Credit: Nitrous (Shiva) author of AutoControl addon
+function get_current_autoset()
+  if windower.ffxi.get_player().main_job_id == 18 then
+    local autoTable = T{}
+    local mjob_data = windower.ffxi.get_mjob_data()
+    local tmpTable = mjob_data.attachments
+    for i = 1, 12 do
+      local t = ''
+      if tmpTable[i] then
+        if i < 10 then
+          t = '0'
+        end
+        autoTable['slot' .. tostring(i):zfill(2)] = atts[tmpTable[i]].name:lower()
+      end
+    end
+    autoTable.head = atts[mjob_data.head].name:lower()
+    autoTable.frame = atts[mjob_data.frame].name:lower()
+    return autoTable
   end
 end
 
