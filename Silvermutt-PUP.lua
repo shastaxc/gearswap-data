@@ -403,7 +403,7 @@ function job_setup()
   silibs.enable_equip_loop()
   silibs.enable_elemental_belt_handling(has_obi, has_orpheus)
 
-  state.OffenseMode:options('Normal', 'Acc')
+  state.OffenseMode:options('Normal', 'Acc', 'Ngai')
   state.HybridMode:options('Master', 'Pet', 'Halfsies')
   state.CP = M(false, 'Capacity Points Mode')
   state.AutomaticPetTargeting = M(true, 'Automatic Pet Targeting')
@@ -1595,6 +1595,10 @@ function init_gear_sets()
     -- ear2="Karagoz Earring +2",     --  8, 20 <__, __, __> [__/__, ___] {__/__,   1 | __, __, __/__, __/__, __, __, __}
     -- 52 STP, 362 Acc <14 DA, 18 TA, 3 QA> [51 PDT/28 MDT, 483 M.Eva] {Pet: 5 PDT /5 MDT, 122 Lv | 10 DA, 0 STP, 274 Acc/254 Racc, 20 Att/0 Ratt, 0 Haste, 0 Regen, 0 Enmity}
   }
+  sets.engaged.Ngai = set_combine(sets.engaged, {
+    neck="Warder's Charm +1", -- Status resist
+    -- ring2="Shadow Ring",
+  })
   sets.engaged.Acc = set_combine(sets.engaged, {
     neck="Puppetmaster's Collar +2",  -- __, 30 <__, __, __> [__/__, ___] {__/__, ___}
     ring1="Chirich Ring +1",          --  6, 10 <__, __, __> [__/__, ___] {__/__, ___}
