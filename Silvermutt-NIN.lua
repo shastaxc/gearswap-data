@@ -355,7 +355,7 @@ function init_gear_sets()
     sub=gear.Malevolence_1,
   }
   sets.WeaponSet['Gokotai'] = {
-    -- main="Gokotai",
+    main="Gokotai",
     sub=gear.Malevolence_1,
   }
 
