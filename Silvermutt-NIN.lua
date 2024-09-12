@@ -410,7 +410,7 @@ function init_gear_sets()
 
   sets.idle = set_combine(sets.defense.PDT, {})
 
-  -- Max out DW
+  -- Max out DW; Regain from DW caps at 100
   sets.idle.Gokotai = {
     ammo="Staunch Tathlum +1",        -- __ [ 3/ 3, ___] ___
     head=gear.Ryuo_C_head,            --  9 [__/__,  48]  36
@@ -428,9 +428,8 @@ function init_gear_sets()
     -- Traits                            35
     -- 103 DW [36 PDT/20 MDT, 319 M.Eva] 282 Evasion
 
-    -- body="Hachiya Chainmail +3",   -- 10 [__/__,  73]  82
     -- hands="Floral Gauntlets",      --  5 [__/ 4,  37]  24
-    -- 104 DW [36 PDT/22 MDT, 319 M.Eva] 292 Evasion
+    -- 103 DW [36 PDT/22 MDT, 319 M.Eva] 282 Evasion
   }
 
   sets.idle.Regain = set_combine(sets.idle, sets.latent_regain)
