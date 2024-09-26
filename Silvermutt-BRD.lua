@@ -1072,22 +1072,22 @@ function init_gear_sets()
   }
 
   sets.engaged.DT = set_combine(sets.engaged, sets.engaged.Hybrid)
-  sets.engaged.DT.Acc = set_combine(sets.engaged.Acc, sets.engaged.Hybrid)
+  sets.engaged.Acc.DT = set_combine(sets.engaged.Acc, sets.engaged.Hybrid)
 
   sets.engaged.LowDW.DT = set_combine(sets.engaged.LowDW, sets.engaged.Hybrid)
-  sets.engaged.LowDW.DT.Acc = set_combine(sets.engaged.LowDW.Acc, sets.engaged.Hybrid)
+  sets.engaged.LowDW.Acc.DT = set_combine(sets.engaged.LowDW.Acc, sets.engaged.Hybrid)
 
   sets.engaged.MidDW.DT = set_combine(sets.engaged.MidDW, sets.engaged.Hybrid)
-  sets.engaged.MidDW.DT.Acc = set_combine(sets.engaged.MidDW.Acc, sets.engaged.Hybrid)
+  sets.engaged.MidDW.Acc.DT = set_combine(sets.engaged.MidDW.Acc, sets.engaged.Hybrid)
 
   sets.engaged.HighDW.DT = set_combine(sets.engaged.HighDW, sets.engaged.Hybrid)
-  sets.engaged.HighDW.DT.Acc = set_combine(sets.engaged.HighDW.Acc, sets.engaged.Hybrid)
+  sets.engaged.HighDW.Acc.DT = set_combine(sets.engaged.HighDW.Acc, sets.engaged.Hybrid)
 
   sets.engaged.SuperDW.DT = set_combine(sets.engaged.SuperDW, sets.engaged.Hybrid)
-  sets.engaged.SuperDW.DT.Acc = set_combine(sets.engaged.SuperDW.Acc, sets.engaged.Hybrid)
+  sets.engaged.SuperDW.Acc.DT = set_combine(sets.engaged.SuperDW.Acc, sets.engaged.Hybrid)
 
   sets.engaged.MaxDW.DT = set_combine(sets.engaged.MaxDW, sets.engaged.Hybrid)
-  sets.engaged.MaxDW.DT.Acc = set_combine(sets.engaged.MaxDW.Acc, sets.engaged.Hybrid)
+  sets.engaged.MaxDW.Acc.DT = set_combine(sets.engaged.MaxDW.Acc, sets.engaged.Hybrid)
 
 
   -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎

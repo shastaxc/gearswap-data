@@ -1435,11 +1435,11 @@ function init_gear_sets()
     -- ear2="Hattori Earring +2",     -- __,  8,  20/__ <__, __, __> [__/__, ___] ___, __; katana/throwing +12
     -- 0 DW, 69 STP, 334 Acc/207 R.Acc <3 DA, 13 TA, 2 QA> [50 PDT/32 MDT, 552 M.Eva] 433 Evasion, 79 Daken
   }
-  sets.engaged.HeavyDef.LowAcc = set_combine(sets.engaged.HeavyDef, {
+  sets.engaged.LowAcc.HeavyDef = set_combine(sets.engaged.HeavyDef, {
   })
-  sets.engaged.HeavyDef.MidAcc = set_combine(sets.engaged.HeavyDef.LowAcc, {
+  sets.engaged.MidAcc.HeavyDef = set_combine(sets.engaged.LowAcc.HeavyDef, {
   })
-  sets.engaged.HeavyDef.HighAcc = set_combine(sets.engaged.HeavyDef.MidAcc, {
+  sets.engaged.HighAcc.HeavyDef = set_combine(sets.engaged.MidAcc.HeavyDef, {
   })
 
   -- Low DW (15 needed from gear)
@@ -1463,11 +1463,11 @@ function init_gear_sets()
     -- ear2="Hattori Earring +2",     -- __,  8,  20/__ <__, __, __> [__/__, ___] ___, __; katana/throwing +12
     -- 17 DW, 63 STP, 342 Acc/217 R.Acc <3 DA, 11 TA, 0 QA> [50 PDT/32 MDT, 552 M.Eva] 433 Evasion, 79 Daken
   }
-  sets.engaged.LowDW.HeavyDef.LowAcc = set_combine(sets.engaged.LowDW.HeavyDef, {
+  sets.engaged.LowDW.LowAcc.HeavyDef = set_combine(sets.engaged.LowDW.HeavyDef, {
   })
-  sets.engaged.LowDW.HeavyDef.MidAcc = set_combine(sets.engaged.LowDW.HeavyDef.LowAcc, {
+  sets.engaged.LowDW.MidAcc.HeavyDef = set_combine(sets.engaged.LowDW.LowAcc.HeavyDef, {
   })
-  sets.engaged.LowDW.HeavyDef.HighAcc = set_combine(sets.engaged.LowDW.HeavyDef.MidAcc, {
+  sets.engaged.LowDW.HighAcc.HeavyDef = set_combine(sets.engaged.LowDW.MidAcc.HeavyDef, {
   })
 
   -- Mid DW (21 needed from gear)
@@ -1488,11 +1488,11 @@ function init_gear_sets()
     -- Traits/gifts/etc                                                                54
     -- 21 DW, 55 STP, 322 Acc/217 R.Acc <3 DA, 11 TA, 0 QA> [50 PDT/32 MDT, 560 M.Eva] 448 Evasion, 79 Daken
   }
-  sets.engaged.MidDW.HeavyDef.LowAcc = set_combine(sets.engaged.MidDW.HeavyDef, {
+  sets.engaged.MidDW.LowAcc.HeavyDef = set_combine(sets.engaged.MidDW.HeavyDef, {
   })
-  sets.engaged.MidDW.HeavyDef.MidAcc = set_combine(sets.engaged.MidDW.HeavyDef.LowAcc, {
+  sets.engaged.MidDW.MidAcc.HeavyDef = set_combine(sets.engaged.MidDW.LowAcc.HeavyDef, {
   })
-  sets.engaged.MidDW.HeavyDef.HighAcc = set_combine(sets.engaged.MidDW.HeavyDef.MidAcc, {
+  sets.engaged.MidDW.HighAcc.HeavyDef = set_combine(sets.engaged.MidDW.MidAcc.HeavyDef, {
   })
 
   -- High DW (25 needed from gear)
@@ -1517,11 +1517,11 @@ function init_gear_sets()
     -- ear2="Hattori Earring +2",     -- __,  8,  20/__ <__, __, __> [__/__, ___] ___, __; katana/throwing +12
     -- 24 DW, 54 STP, 363 Acc/178 R.Acc <3 DA, 14 TA, 0 QA> [50 PDT/32 MDT, 478 M.Eva] 388 Evasion, 79 Daken
   }
-  sets.engaged.HighDW.HeavyDef.LowAcc = set_combine(sets.engaged.HighDW.HeavyDef, {
+  sets.engaged.HighDW.LowAcc.HeavyDef = set_combine(sets.engaged.HighDW.HeavyDef, {
   })
-  sets.engaged.HighDW.HeavyDef.MidAcc = set_combine(sets.engaged.HighDW.HeavyDef.LowAcc, {
+  sets.engaged.HighDW.MidAcc.HeavyDef = set_combine(sets.engaged.HighDW.LowAcc.HeavyDef, {
   })
-  sets.engaged.HighDW.HeavyDef.HighAcc = set_combine(sets.engaged.HighDW.HeavyDef.MidAcc, {
+  sets.engaged.HighDW.HighAcc.HeavyDef = set_combine(sets.engaged.HighDW.MidAcc.HeavyDef, {
   })
 
   -- Super DW (32 needed from gear)
@@ -1546,16 +1546,17 @@ function init_gear_sets()
     -- ear2="Hattori Earring +2",     -- __,  8,  20/__ <__, __, __> [__/__, ___] ___, __; katana/throwing +12
     -- 33 DW, 47 STP, 349 Acc/275 R.Acc <0 DA, 4 TA, 0 QA> [51 PDT/35 MDT, 535 M.Eva] 401 Evasion, 89 Daken
   }
-  sets.engaged.SuperDW.HeavyDef.LowAcc = set_combine(sets.engaged.SuperDW.HeavyDef, {
+  sets.engaged.SuperDW.LowAcc.HeavyDef = set_combine(sets.engaged.SuperDW.HeavyDef, {
   })
-  sets.engaged.SuperDW.HeavyDef.MidAcc = set_combine(sets.engaged.SuperDW.HeavyDef.LowAcc, {
+  sets.engaged.SuperDW.MidAcc.HeavyDef = set_combine(sets.engaged.SuperDW.LowAcc.HeavyDef, {
   })
-  sets.engaged.SuperDW.HeavyDef.HighAcc = set_combine(sets.engaged.SuperDW.HeavyDef.MidAcc, {
+  sets.engaged.SuperDW.HighAcc.HeavyDef = set_combine(sets.engaged.SuperDW.MidAcc.HeavyDef, {
   })
 
   -- Max DW (39 needed from gear)
   sets.engaged.MaxDW.HeavyDef = {
-    ammo="Seki Shuriken",             -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
+    ammo="Staunch Tathlum +1",
+    -- ammo="Seki Shuriken",             -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
     head="Hattori Zukin +2",          --  7, __,  51/51 <__, __, __> [ 9/ 9, 109]  79, __
     body="Mochizuki Chainmail +3",    --  9, __,  51/47 <__, __, __> [__/__,  73]  72, 10
     hands=gear.Adhemar_A_hands,       -- __,  7,  52/32 <__,  4, __> [__/__,  43]  36, __
@@ -1574,11 +1575,12 @@ function init_gear_sets()
     -- head="Hattori Zukin +3",       --  7, __,  61/61 <__, __, __> [10/10, 119]  89, __
     -- 38 DW, 39 STP, 329 Acc/275 R.Acc <0 DA, 4 TA, 0 QA> [51 PDT/35 MDT, 535 M.Eva] 401 Evasion, 89 Daken
   }
-  sets.engaged.MaxDW.HeavyDef.LowAcc = set_combine(sets.engaged.MaxDW.HeavyDef, {
+  sets.engaged.MaxDW.LowAcc.HeavyDef = set_combine(sets.engaged.MaxDW.HeavyDef, {
+    ammo="Seki Shuriken",             -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
   })
-  sets.engaged.MaxDW.HeavyDef.MidAcc = set_combine(sets.engaged.MaxDW.HeavyDef.LowAcc, {
+  sets.engaged.MaxDW.MidAcc.HeavyDef = set_combine(sets.engaged.MaxDW.LowAcc.HeavyDef, {
   })
-  sets.engaged.MaxDW.HeavyDef.HighAcc = set_combine(sets.engaged.MaxDW.HeavyDef.MidAcc, {
+  sets.engaged.MaxDW.HighAcc.HeavyDef = set_combine(sets.engaged.MaxDW.MidAcc.HeavyDef, {
   })
 
 

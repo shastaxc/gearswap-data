@@ -1481,16 +1481,16 @@ function init_gear_sets()
     -- HP from belt                                                               317
     -- 198 DEX, 61 STP, 308 Acc, 25 Haste <14 DA, 7 TA, 0 QA> [51 PDT/41 MDT, 509 M.Eva] 674/991 HP
   }
-  sets.engaged.HeavyDef.LowAcc = set_combine(sets.engaged.HeavyDef, {
+  sets.engaged.LowAcc.HeavyDef = set_combine(sets.engaged.HeavyDef, {
     ear2="Cessance Earring",          -- __,  3,  6, __ < 3, __, __> [__/__, ___] ___
     -- neck="Combatant's Torque",     -- __,  4, __, __ <__, __, __> [__/__, ___] ___; skill+15
     -- 193 DEX, 56 STP, 314 Acc, 25 Haste <12 DA, 7 TA, 0 QA> [51 PDT/41 MDT, 509 M.Eva] 674/991 HP
   })
-  sets.engaged.HeavyDef.MidAcc = set_combine(sets.engaged.HeavyDef.LowAcc, {
+  sets.engaged.MidAcc.HeavyDef = set_combine(sets.engaged.LowAcc.HeavyDef, {
     ear2="Dignitary's Earring",       -- __,  3, 10, __ <__, __, __> [__/__, ___] ___
     -- 193 DEX, 56 STP, 318 Acc, 25 Haste <9 DA, 7 TA, 0 QA> [51 PDT/41 MDT, 509 M.Eva] 674/991 HP
   })
-  sets.engaged.HeavyDef.HighAcc = set_combine(sets.engaged.HeavyDef.MidAcc, {
+  sets.engaged.HighAcc.HeavyDef = set_combine(sets.engaged.MidAcc.HeavyDef, {
     ammo="Yamarang",                  -- __,  3, 15, __ <__, __, __> [__/__, ___] ___
     legs=gear.Nyame_B_legs,           -- __, __, 40,  5 < 6, __, __> [ 8/ 8, 150] 114
     -- 177 DEX, 52 STP, 358 Acc, 25 Haste <12 DA, 4 TA, 0 QA> [56 PDT/46 MDT, 584 M.Eva] 747/1071 HP

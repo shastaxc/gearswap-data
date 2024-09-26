@@ -2001,19 +2001,26 @@ end
 
 -- Modify the default melee set after it was constructed.
 function customize_melee_set(meleeSet)
-  if not (state.HybridMode.value == 'Pet') then
-    -- Apply pet engaged set
-    if pet.isvalid and pet.status == 'Engaged' and state.HybridMode.value ~= 'Master' then
-      local mode = state.HybridMode.value
-      if state.PetMode.value ~= 'Normal' then
-        mode = mode..state.PetMode.value
+  -- Apply pet engaged set
+  if pet.isvalid and pet.status == 'Engaged' and state.HybridMode.value ~= 'Master' then
+    local set = sets.engaged
+    if state.PetMode.value ~= 'Normal' then
+      local mode = state.HybridMode.value..state.PetMode.value
+      if set[mode] then
+        set = set[mode]
       end
-      meleeSet = set_combine(meleeSet, sets.engaged[mode])
     end
+    if state.OffenseMode.value ~= 'Normal' then
+      local mode = state.OffenseMode.value
+      if set[mode] then
+        set = set[mode]
+      end
+    end
+    meleeSet = set_combine(meleeSet, set)
+  end
 
-    if state.CP.current == 'on' then
-      meleeSet = set_combine(meleeSet, sets.CP)
-    end
+  if state.CP.current == 'on' then
+    meleeSet = set_combine(meleeSet, sets.CP)
   end
 
   -- If slot is locked to use no-swap gear, keep it equipped

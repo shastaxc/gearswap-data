@@ -1152,20 +1152,20 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.engaged.DT = set_combine(sets.engaged, {})
-  sets.engaged.DT.Acc = set_combine(sets.engaged.Acc, {})
+  sets.engaged.Acc.DT = set_combine(sets.engaged.Acc, {})
 
   sets.engaged.LowDW.DT = set_combine(sets.engaged.LowDW, {
     ring1="Gelatinous Ring +1",   -- __, __, __ <__, __, __> [ 7/-1, ___]
   })
-  sets.engaged.LowDW.DT.Acc = set_combine(sets.engaged.LowDW.DT, {})
+  sets.engaged.LowDW.Acc.DT = set_combine(sets.engaged.LowDW.DT, {})
 
   sets.engaged.MidDW.DT = set_combine(sets.engaged.MidDW, {
     ring1="Gelatinous Ring +1",   -- __, __, __ <__, __, __> [ 7/-1, ___]
   })
-  sets.engaged.MidDW.DT.Acc = set_combine(sets.engaged.MidDW.DT, {})
+  sets.engaged.MidDW.Acc.DT = set_combine(sets.engaged.MidDW.DT, {})
 
   sets.engaged.HighDW.DT = set_combine(sets.engaged.MidDW.DT, {})
-  sets.engaged.HighDW.DT.Acc = set_combine(sets.engaged.HighDW.DT, {
+  sets.engaged.HighDW.Acc.DT = set_combine(sets.engaged.HighDW.DT, {
     neck="Mirage Stole +1",       -- __,  6, 20 <__, __, __> [__/__, ___]
     ring1="Gelatinous Ring +1",   -- __, __, __ <__, __, __> [ 7/-1, ___]
 
@@ -1191,7 +1191,7 @@ function init_gear_sets()
     -- back=gear.BLU_DW_Cape,     -- 10, __, 30 <__, __, __> [10/__, ___]
     -- 42 DW, 24 STP, 282 Acc <0 DA, 4 TA, 0 QA> [50 PDT/34 MDT, 461 M.Eva]
   }
-  sets.engaged.SuperDW.DT.Acc = set_combine(sets.engaged.SuperDW.DT, {
+  sets.engaged.SuperDW.Acc.DT = set_combine(sets.engaged.SuperDW.DT, {
     feet="Malignance Boots",      -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
     ear2="Suppanomimi",           --  5, __, __ <__, __, __> [__/__, ___]
 
@@ -1217,7 +1217,7 @@ function init_gear_sets()
     -- back=gear.BLU_DW_Cape,     -- 10, __, 30 <__, __, __> [10/__, ___]
     -- 47 DW, 24 STP, 282 Acc <0 DA, 4 TA, 0 QA> [47 PDT/29 MDT, 461 M.Eva]
   }
-  sets.engaged.MaxDW.DT.Acc = set_combine(sets.engaged.MaxDW.DT, {
+  sets.engaged.MaxDW.Acc.DT = set_combine(sets.engaged.MaxDW.DT, {
     feet="Malignance Boots",      -- __,  9, 50 <__, __, __> [ 4/ 4, 150]
     -- ammo="Voluspa Tathlum",    -- __, __, 10 <__, __, __> [__/__, ___]
     -- 38 DW, 33 STP, 310 Acc <0 DA, 4 TA, 0 QA> [48 PDT/30 MDT, 542 M.Eva]

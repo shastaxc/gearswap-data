@@ -2079,11 +2079,20 @@ function customize_melee_set(meleeSet)
     else
       -- Apply pet engaged set
       if pet.isvalid and pet.status == 'Engaged' and state.HybridMode.value ~= 'Master' then
-        local mode = state.HybridMode.value
+        local set = sets.engaged
         if state.PetMode.value ~= 'Normal' then
-          mode = mode..state.PetMode.value
+          local mode = state.HybridMode.value..state.PetMode.value
+          if set[mode] then
+            set = set[mode]
+          end
         end
-        meleeSet = set_combine(meleeSet, sets.engaged[mode])
+        if state.OffenseMode.value ~= 'Normal' then
+          local mode = state.OffenseMode.value
+          if set[mode] then
+            set = set[mode]
+          end
+        end
+        meleeSet = set_combine(meleeSet, set)
       end
 
       if state.CP.current == 'on' then

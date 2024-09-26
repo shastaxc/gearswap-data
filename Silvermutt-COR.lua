@@ -1538,7 +1538,7 @@ function init_gear_sets()
     -- Traits/Merits/Gifts               __, __, __ <__, __, __> [__/__, ___]
     -- 0 DW, 68 STP, 287 Acc <14 DA, 9 TA, 2 QA> [51 PDT/41 MDT, 580 MEVA]
   }
-  sets.engaged.HeavyDef.LowAcc = {
+  sets.engaged.LowAcc.HeavyDef = {
     -- Assume Chrono Bullet
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
@@ -1555,7 +1555,7 @@ function init_gear_sets()
     -- Traits/Merits/Gifts               __, __, __ <__, __, __> [__/__, ___]
     -- 0 DW, 68 STP, 287 Acc <14 DA, 9 TA, 2 QA> [51 PDT/41 MDT, 580 M.Eva]
   }
-  sets.engaged.HeavyDef.MidAcc = {
+  sets.engaged.MidAcc.HeavyDef = {
     -- Assume Chrono Bullet
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
@@ -1572,7 +1572,7 @@ function init_gear_sets()
     -- Traits/Merits/Gifts               __, __, __ <__, __, __> [__/__, ___]
     -- 0 DW, 73 STP, 313 Acc <20 DA, 3 TA, 0 QA> [53 PDT/35 MDT, 649 M.Eva]
   }
-  sets.engaged.HeavyDef.HighAcc = {
+  sets.engaged.HighAcc.HeavyDef = {
     -- Assume Chrono Bullet
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
@@ -1608,7 +1608,7 @@ function init_gear_sets()
     -- Traits/Merits/Gifts               __, __, __ <__, __, __> [__/__, ___]
     -- 11 DW, 44 STP, 282 Acc <10 DA, 10 TA, 2 QA> [55 PDT/37 MDT, 510 MEVA]
   }
-  sets.engaged.LowDW.HeavyDef.LowAcc = {
+  sets.engaged.LowDW.LowAcc.HeavyDef = {
     -- Assume Chrono Bullet
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body=gear.Adhemar_A_body,         --  6, __, 55 <__,  4, __> [__/__,  69]
@@ -1628,7 +1628,7 @@ function init_gear_sets()
     -- neck="Combatant's Torque",     -- __,  4, __ <__, __, __> [__/__, ___]; Combat skill +15
     -- 11 DW, 50 STP, 300 Acc <11 DA, 6 TA, 2 QA> [54 PDT/36 MDT, 579 MEVA]
   }
-  sets.engaged.LowDW.HeavyDef.MidAcc = {
+  sets.engaged.LowDW.MidAcc.HeavyDef = {
     -- Assume Chrono Bullet
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
@@ -1645,7 +1645,7 @@ function init_gear_sets()
     -- Traits/Merits/Gifts               __, __, __ <__, __, __> [__/__, ___]
     -- 12 DW, 67 STP, 328 Acc <11 DA, 0 TA, 0 QA> [56 PDT/46 MDT, 649 MEVA]
   }
-  sets.engaged.LowDW.HeavyDef.HighAcc = {
+  sets.engaged.LowDW.HighAcc.HeavyDef = {
     -- Assume Chrono Bullet
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
@@ -1681,7 +1681,7 @@ function init_gear_sets()
     -- Traits/Merits/Gifts               __, __, __ <__, __, __> [__/__, ___]
     -- 18 DW, 48 STP, 290 Acc <10 DA, 8 TA, 0 QA> [55 PDT/37 MDT, 510 MEVA]
   }
-  sets.engaged.MidDW.HeavyDef.LowAcc = {
+  sets.engaged.MidDW.LowAcc.HeavyDef = {
     -- Assume Chrono Bullet
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body=gear.Adhemar_A_body,         --  6, __, 55 <__,  4, __> [__/__,  69]
@@ -1698,7 +1698,7 @@ function init_gear_sets()
     -- Traits/Merits/Gifts               __, __, __ <__, __, __> [__/__, ___]
     -- 18 DW, 47 STP, 291 Acc <11 DA, 10 TA, 0 QA> [51 PDT/39 MDT, 504 MEVA]
   }
-  sets.engaged.MidDW.HeavyDef.MidAcc = {
+  sets.engaged.MidDW.MidAcc.HeavyDef = {
     -- Assume Chrono Bullet
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body=gear.Adhemar_A_body,         --  6, __, 55 <__,  4, __> [__/__,  69]
@@ -1715,7 +1715,7 @@ function init_gear_sets()
     -- Traits/Merits/Gifts               __, __, __ <__, __, __> [__/__, ___]
     -- 18 DW, 47 STP, 282 Acc <11 DA, 10 TA, 0 QA> [51 PDT/39 MDT, 504 MEVA]
   }
-  sets.engaged.MidDW.HeavyDef.HighAcc = {
+  sets.engaged.MidDW.HighAcc.HeavyDef = {
     -- Assume Chrono Bullet
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
@@ -1751,7 +1751,7 @@ function init_gear_sets()
     -- Traits/Merits/Gifts               __, __, __ <__, __, __> [__/__, ___]
     -- 32 DW, 40 STP, 280 Acc <0 DA, 8 TA, 0 QA> [55 PDT/37 MDT, 518 MEVA]
   }
-  sets.engaged.HighDW.HeavyDef.LowAcc = {
+  sets.engaged.HighDW.LowAcc.HeavyDef = {
     -- Assume Chrono Bullet
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body=gear.Adhemar_A_body,         --  6, __, 55 <__,  4, __> [__/__,  69]
@@ -1771,7 +1771,7 @@ function init_gear_sets()
     -- neck="Combatant's Torque",     -- __,  4, __ <__, __, __> [__/__, ___]; Combat skill +15
     -- 32 DW, 47 STP, 285 Acc <0 DA, 4 TA, 0 QA> [49 PDT/31 MDT, 612 MEVA]
   }
-  sets.engaged.HighDW.HeavyDef.MidAcc = {
+  sets.engaged.HighDW.MidAcc.HeavyDef = {
     -- Assume Chrono Bullet
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
@@ -1788,7 +1788,7 @@ function init_gear_sets()
     -- Traits/Merits/Gifts               __, __, __ <__, __, __> [__/__, ___]
     -- 32 DW, 44 STP, 300 Acc <0 DA, 0 TA, 0 QA> [51 PDT/33 MDT, 612 MEVA]
   }
-  sets.engaged.HighDW.HeavyDef.HighAcc = {
+  sets.engaged.HighDW.HighAcc.HeavyDef = {
     -- Assume Chrono Bullet
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
@@ -1824,7 +1824,7 @@ function init_gear_sets()
     -- Traits/Merits/Gifts               __, __, __ <__, __, __> [__/__, ___]
     -- 42 DW, 32 STP, 246 Acc <0 DA, 7 TA, 0 QA> [51 PDT/37 MDT, 423 MEVA]
   }
-  sets.engaged.SuperDW.HeavyDef.LowAcc = {
+  sets.engaged.SuperDW.LowAcc.HeavyDef = {
     -- Assume Chrono Bullet
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
@@ -1841,7 +1841,7 @@ function init_gear_sets()
     -- Traits/Merits/Gifts               __, __, __ <__, __, __> [__/__, ___]
     -- 42 DW, 23 STP, 253 Acc <0 DA, 3 TA, 0 QA> [51 PDT/39 MDT, 448 MEVA]
   }
-  sets.engaged.SuperDW.HeavyDef.MidAcc = {
+  sets.engaged.SuperDW.MidAcc.HeavyDef = {
     -- Assume Chrono Bullet
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
@@ -1858,7 +1858,7 @@ function init_gear_sets()
     -- Traits/Merits/Gifts               __, __, __ <__, __, __> [__/__, ___]
     -- 33 DW, 32 STP, 296 Acc <0 DA, 3 TA, 0 QA> [49 PDT/37 MDT, 529 MEVA]
   }
-  sets.engaged.SuperDW.HeavyDef.HighAcc = {
+  sets.engaged.SuperDW.HighAcc.HeavyDef = {
     -- Assume Chrono Bullet
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
@@ -1894,7 +1894,7 @@ function init_gear_sets()
     -- Traits/Merits/Gifts               __, __, __ <__, __, __> [__/__, ___]
     -- 46 DW, 24 STP, 256 Acc <0 DA, 7 TA, 0 QA> [51 PDT/37 MDT, 431 MEVA]
   }
-  sets.engaged.MaxDW.HeavyDef.LowAcc = {
+  sets.engaged.MaxDW.LowAcc.HeavyDef = {
     -- Assume Chrono Bullet
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
@@ -1911,7 +1911,7 @@ function init_gear_sets()
     -- Traits/Merits/Gifts               __, __, __ <__, __, __> [__/__, ___]
     -- 41 DW, 35 STP, 257 Acc <0 DA, 0 TA, 0 QA> [53 PDT/35 MDT, 531 MEVA]
   }
-  sets.engaged.MaxDW.HeavyDef.MidAcc = {
+  sets.engaged.MaxDW.MidAcc.HeavyDef = {
     -- Assume Chrono Bullet
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
@@ -1928,7 +1928,7 @@ function init_gear_sets()
     -- Traits/Merits/Gifts               __, __, __ <__, __, __> [__/__, ___]
     -- 35 DW, 53 STP, 290 Acc <0 DA, 0 TA, 0 QA> [52 PDT/42 MDT, 576 MEVA]
   }
-  sets.engaged.MaxDW.HeavyDef.HighAcc = {
+  sets.engaged.MaxDW.HighAcc.HeavyDef = {
     -- Assume Chrono Bullet
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]

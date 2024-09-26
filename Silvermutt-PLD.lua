@@ -1153,9 +1153,9 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.engaged.LightDef = set_combine(sets.engaged, {})
-  sets.engaged.LightDef.LowAcc = set_combine(sets.engaged.LowAcc, {})
-  sets.engaged.LightDef.MidAcc = set_combine(sets.engaged.MidAcc, {})
-  sets.engaged.LightDef.HighAcc = set_combine(sets.engaged.HighAcc, {})
+  sets.engaged.LowAcc.LightDef = set_combine(sets.engaged.LowAcc, {})
+  sets.engaged.MidAcc.LightDef = set_combine(sets.engaged.MidAcc, {})
+  sets.engaged.HighAcc.LightDef = set_combine(sets.engaged.HighAcc, {})
 
 
   -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎

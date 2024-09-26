@@ -1342,9 +1342,9 @@ function init_gear_sets()
     -- Traits/Merits/Gifts             35, __, __ <__, __, __> [__/__, ___] 33(__)
     -- 35 DW, 80 STP, 315 Acc <19 DA, 7 TA, 2 QA> [52 PDT/42 MDT, 639 M.Eva] 38 Subtle Blow
   }
-  sets.engaged.HeavyDef.LowAcc = set_combine(sets.engaged.HeavyDef, {})
-  sets.engaged.HeavyDef.MidAcc = set_combine(sets.engaged.HeavyDef.LowAcc, {})
-  sets.engaged.HeavyDef.HighAcc = set_combine(sets.engaged.HeavyDef.MidAcc, {})
+  sets.engaged.LowAcc.HeavyDef = set_combine(sets.engaged.HeavyDef, {})
+  sets.engaged.MidAcc.HeavyDef = set_combine(sets.engaged.LowAcc.HeavyDef, {})
+  sets.engaged.HighAcc.HeavyDef = set_combine(sets.engaged.MidAcc.HeavyDef, {})
 
   -- Low DW (8 needed from gear)
   sets.engaged.LowDW.HeavyDef = {
@@ -1364,9 +1364,9 @@ function init_gear_sets()
     -- Traits/Merits/Gifts             __, __, __ <__, __, __> [__/__, ___] 33(__)
     -- 7 DW, 74 STP, 290 Acc <22 DA, 8 TA, 0 QA> [50 PDT/40 MDT, 564 M.Eva] 38 Subtle Blow
   }
-  sets.engaged.LowDW.HeavyDef.LowAcc = set_combine(sets.engaged.LowDW.HeavyDef, {})
-  sets.engaged.LowDW.HeavyDef.MidAcc = set_combine(sets.engaged.LowDW.HeavyDef.LowAcc, {})
-  sets.engaged.LowDW.HeavyDef.HighAcc = set_combine(sets.engaged.LowDW.HeavyDef.MidAcc, {})
+  sets.engaged.LowDW.LowAcc.HeavyDef = set_combine(sets.engaged.LowDW.HeavyDef, {})
+  sets.engaged.LowDW.MidAcc.HeavyDef = set_combine(sets.engaged.LowDW.LowAcc.HeavyDef, {})
+  sets.engaged.LowDW.HighAcc.HeavyDef = set_combine(sets.engaged.LowDW.MidAcc.HeavyDef, {})
 
   -- Mid DW (21 needed from gear)
   sets.engaged.MidDW.HeavyDef = {
@@ -1386,9 +1386,9 @@ function init_gear_sets()
     -- Traits/Merits/Gifts          -- __, __, __ <__, __, __> [__/__, ___] 33(__)
     -- 21 DW, 69 STP, 250 Acc <11 DA, 8 TA, 0 QA> [50 PDT/40 MDT, 572 M.Eva] 38 Subtle Blow
   }
-  sets.engaged.MidDW.HeavyDef.LowAcc = set_combine(sets.engaged.MidDW.HeavyDef, {})
-  sets.engaged.MidDW.HeavyDef.MidAcc = set_combine(sets.engaged.MidDW.HeavyDef.LowAcc, {})
-  sets.engaged.MidDW.HeavyDef.HighAcc = set_combine(sets.engaged.MidDW.HeavyDef.MidAcc,{})
+  sets.engaged.MidDW.LowAcc.HeavyDef = set_combine(sets.engaged.MidDW.HeavyDef, {})
+  sets.engaged.MidDW.MidAcc.HeavyDef = set_combine(sets.engaged.MidDW.LowAcc.HeavyDef, {})
+  sets.engaged.MidDW.HighAcc.HeavyDef = set_combine(sets.engaged.MidDW.MidAcc.HeavyDef,{})
 
   -- High DW (28 needed from gear)
   sets.engaged.HighDW.HeavyDef = {
@@ -1408,9 +1408,9 @@ function init_gear_sets()
     -- Traits/Merits/Gifts             __, __, __ <__, __, __> [__/__, ___] 33(__)
     -- 28 DW, 55 STP, 242 Acc <9 DA, 12 TA, 0 QA> [53 PDT/43 MDT, 465 M.Eva] 52 Subtle Blow
   }
-  sets.engaged.HighDW.HeavyDef.LowAcc = set_combine(sets.engaged.HighDW.HeavyDef, {})
-  sets.engaged.HighDW.HeavyDef.MidAcc = set_combine(sets.engaged.HighDW.HeavyDef.LowAcc, {})
-  sets.engaged.HighDW.HeavyDef.HighAcc = set_combine(sets.engaged.HighDW.HeavyDef.MidAcc, {})
+  sets.engaged.HighDW.LowAcc.HeavyDef = set_combine(sets.engaged.HighDW.HeavyDef, {})
+  sets.engaged.HighDW.MidAcc.HeavyDef = set_combine(sets.engaged.HighDW.LowAcc.HeavyDef, {})
+  sets.engaged.HighDW.HighAcc.HeavyDef = set_combine(sets.engaged.HighDW.MidAcc.HeavyDef, {})
 
   -- Super DW (39 needed from gear)
   sets.engaged.SuperDW.HeavyDef = {
@@ -1430,9 +1430,9 @@ function init_gear_sets()
     -- Traits/Merits/Gifts             __, __, __ <__, __, __> [__/__, ___] 33(__)
     -- 37 DW, 56 STP, 265 Acc <6 DA, 8 TA, 0 QA> [52 PDT/42 MDT, 617 M.Eva] 47 Subtle Blow
   }
-  sets.engaged.SuperDW.HeavyDef.LowAcc = set_combine(sets.engaged.SuperDW.HeavyDef, {})
-  sets.engaged.SuperDW.HeavyDef.MidAcc = set_combine(sets.engaged.SuperDW.HeavyDef.LowAcc, {})
-  sets.engaged.SuperDW.HeavyDef.HighAcc = set_combine(sets.engaged.SuperDW.HeavyDef.MidAcc,{})
+  sets.engaged.SuperDW.LowAcc.HeavyDef = set_combine(sets.engaged.SuperDW.HeavyDef, {})
+  sets.engaged.SuperDW.MidAcc.HeavyDef = set_combine(sets.engaged.SuperDW.LowAcc.HeavyDef, {})
+  sets.engaged.SuperDW.HighAcc.HeavyDef = set_combine(sets.engaged.SuperDW.MidAcc.HeavyDef,{})
 
   -- Max DW (46 needed from gear)
   sets.engaged.MaxDW.HeavyDef = {
@@ -1452,40 +1452,40 @@ function init_gear_sets()
     -- Traits/Merits/Gifts             __, __, __ <__, __, __> [__/__, ___] 33(__)
     -- 42 DW, 49 STP, 228 Acc <3 DA, 7 TA, 0 QA> [49 PDT/37 MDT, 577 M.Eva] 47 Subtle Blow
   }
-  sets.engaged.MaxDW.HeavyDef.LowAcc = set_combine(sets.engaged.MaxDW.HeavyDef, {})
-  sets.engaged.MaxDW.HeavyDef.MidAcc = set_combine(sets.engaged.MaxDW.HeavyDef.LowAcc, {})
-  sets.engaged.MaxDW.HeavyDef.HighAcc = set_combine(sets.engaged.MaxDW.HeavyDef.MidAcc,{})
+  sets.engaged.MaxDW.LowAcc.HeavyDef = set_combine(sets.engaged.MaxDW.HeavyDef, {})
+  sets.engaged.MaxDW.MidAcc.HeavyDef = set_combine(sets.engaged.MaxDW.LowAcc.HeavyDef, {})
+  sets.engaged.MaxDW.HighAcc.HeavyDef = set_combine(sets.engaged.MaxDW.MidAcc.HeavyDef,{})
 
 
   sets.engaged.Safe = set_combine(sets.engaged.HeavyDef, {})
-  sets.engaged.Safe.LowAcc = set_combine(sets.engaged.HeavyDef.LowAcc, {})
-  sets.engaged.Safe.MidAcc = set_combine(sets.engaged.HeavyDef.MidAcc, {})
-  sets.engaged.Safe.HighAcc = set_combine(sets.engaged.HeavyDef.HighAcc, {})
+  sets.engaged.LowAcc.Safe = set_combine(sets.engaged.LowAcc.HeavyDef, {})
+  sets.engaged.MidAcc.Safe = set_combine(sets.engaged.MidAcc.HeavyDef, {})
+  sets.engaged.HighAcc.Safe = set_combine(sets.engaged.HighAcc.HeavyDef, {})
 
   sets.engaged.LowDW.Safe = set_combine(sets.engaged.LowDW.HeavyDef, {})
-  sets.engaged.LowDW.Safe.LowAcc = set_combine(sets.engaged.LowDW.HeavyDef.LowAcc, {})
-  sets.engaged.LowDW.Safe.MidAcc = set_combine(sets.engaged.LowDW.HeavyDef.MidAcc, {})
-  sets.engaged.LowDW.Safe.HighAcc = set_combine(sets.engaged.LowDW.HeavyDef.HighAcc, {})
+  sets.engaged.LowDW.LowAcc.Safe = set_combine(sets.engaged.LowDW.LowAcc.HeavyDef, {})
+  sets.engaged.LowDW.MidAcc.Safe = set_combine(sets.engaged.LowDW.MidAcc.HeavyDef, {})
+  sets.engaged.LowDW.HighAcc.Safe = set_combine(sets.engaged.LowDW.HighAcc.HeavyDef, {})
 
   sets.engaged.MidDW.Safe = set_combine(sets.engaged.MidDW.HeavyDef, {})
-  sets.engaged.MidDW.Safe.LowAcc = set_combine(sets.engaged.MidDW.HeavyDef.LowAcc, {})
-  sets.engaged.MidDW.Safe.MidAcc = set_combine(sets.engaged.MidDW.HeavyDef.MidAcc, {})
-  sets.engaged.MidDW.Safe.HighAcc = set_combine(sets.engaged.MidDW.HeavyDef.HighAcc, {})
+  sets.engaged.MidDW.LowAcc.Safe = set_combine(sets.engaged.MidDW.LowAcc.HeavyDef, {})
+  sets.engaged.MidDW.MidAcc.Safe = set_combine(sets.engaged.MidDW.MidAcc.HeavyDef, {})
+  sets.engaged.MidDW.HighAcc.Safe = set_combine(sets.engaged.MidDW.HighAcc.HeavyDef, {})
 
   sets.engaged.HighDW.Safe = set_combine(sets.engaged.HighDW.HeavyDef, {})
-  sets.engaged.HighDW.Safe.LowAcc = set_combine(sets.engaged.HighDW.HeavyDef.LowAcc, {})
-  sets.engaged.HighDW.Safe.MidAcc = set_combine(sets.engaged.HighDW.HeavyDef.MidAcc, {})
-  sets.engaged.HighDW.Safe.HighAcc = set_combine(sets.engaged.HighDW.HeavyDef.HighAcc, {})
+  sets.engaged.HighDW.LowAcc.Safe = set_combine(sets.engaged.HighDW.LowAcc.HeavyDef, {})
+  sets.engaged.HighDW.MidAcc.Safe = set_combine(sets.engaged.HighDW.MidAcc.HeavyDef, {})
+  sets.engaged.HighDW.HighAcc.Safe = set_combine(sets.engaged.HighDW.HighAcc.HeavyDef, {})
 
   sets.engaged.SuperDW.Safe = set_combine(sets.engaged.SuperDW.HeavyDef, {})
-  sets.engaged.SuperDW.Safe.LowAcc = set_combine(sets.engaged.SuperDW.HeavyDef.LowAcc, {})
-  sets.engaged.SuperDW.Safe.MidAcc = set_combine(sets.engaged.SuperDW.HeavyDef.MidAcc, {})
-  sets.engaged.SuperDW.Safe.HighAcc = set_combine(sets.engaged.SuperDW.HeavyDef.HighAcc, {})
+  sets.engaged.SuperDW.LowAcc.Safe = set_combine(sets.engaged.SuperDW.LowAcc.HeavyDef, {})
+  sets.engaged.SuperDW.MidAcc.Safe = set_combine(sets.engaged.SuperDW.MidAcc.HeavyDef, {})
+  sets.engaged.SuperDW.HighAcc.Safe = set_combine(sets.engaged.SuperDW.HighAcc.HeavyDef, {})
 
   sets.engaged.MaxDW.Safe = set_combine(sets.engaged.MaxDW.HeavyDef, {})
-  sets.engaged.MaxDW.Safe.LowAcc = set_combine(sets.engaged.MaxDW.HeavyDef.LowAcc, {})
-  sets.engaged.MaxDW.Safe.MidAcc = set_combine(sets.engaged.MaxDW.HeavyDef.MidAcc, {})
-  sets.engaged.MaxDW.Safe.HighAcc = set_combine(sets.engaged.MaxDW.HeavyDef.HighAcc, {})
+  sets.engaged.MaxDW.LowAcc.Safe = set_combine(sets.engaged.MaxDW.LowAcc.HeavyDef, {})
+  sets.engaged.MaxDW.MidAcc.Safe = set_combine(sets.engaged.MaxDW.MidAcc.HeavyDef, {})
+  sets.engaged.MaxDW.HighAcc.Safe = set_combine(sets.engaged.MaxDW.HighAcc.HeavyDef, {})
 
 
   -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎

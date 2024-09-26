@@ -1544,7 +1544,7 @@ function init_gear_sets()
     -- waist="Windbuffet Belt +1",    -- __, __,  2 <__,  2,  2> [__/__, ___]
     -- 25 DW, 68 STP, 287 Acc <14 DA, 9 TA, 2 QA> [51 PDT/41 MDT, 580 MEVA]
   }
-  sets.engaged.HeavyDef.LowAcc = {
+  sets.engaged.LowAcc.HeavyDef = {
     ammo=gear.RAbullet,
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
@@ -1565,7 +1565,7 @@ function init_gear_sets()
     -- waist="Windbuffet Belt +1",    -- __, __,  2 <__,  2,  2> [__/__, ___]
     -- 25 DW, 68 STP, 287 Acc <14 DA, 9 TA, 2 QA> [51 PDT/41 MDT, 580 M.Eva]
   }
-  sets.engaged.HeavyDef.MidAcc = {
+  sets.engaged.MidAcc.HeavyDef = {
     ammo=gear.RAbullet,
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
@@ -1584,7 +1584,7 @@ function init_gear_sets()
     -- waist="Kentarch Belt +1",      -- __,  5, 14 < 3, __, __> [__/__, ___]
     -- 25 DW, 73 STP, 313 Acc <20 DA, 3 TA, 0 QA> [53 PDT/35 MDT, 649 M.Eva]
   }
-  sets.engaged.HeavyDef.HighAcc = {
+  sets.engaged.HighAcc.HeavyDef = {
     ammo=gear.RAbullet,
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
@@ -1625,7 +1625,7 @@ function init_gear_sets()
     -- waist="Windbuffet Belt +1",    -- __, __,  2 <__,  2,  2> [__/__, ___]
     -- 36 DW, 44 STP, 282 Acc <10 DA, 10 TA, 2 QA> [55 PDT/37 MDT, 510 MEVA]
   }
-  sets.engaged.LowDW.HeavyDef.LowAcc = {
+  sets.engaged.LowDW.LowAcc.HeavyDef = {
     ammo=gear.RAbullet,
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body=gear.Adhemar_A_body,         --  6, __, 55 <__,  4, __> [__/__,  69]
@@ -1646,7 +1646,7 @@ function init_gear_sets()
     -- waist="Windbuffet Belt +1",    -- __, __,  2 <__,  2,  2> [__/__, ___]
     -- 36 DW, 50 STP, 300 Acc <11 DA, 6 TA, 2 QA> [54 PDT/36 MDT, 579 MEVA]
   }
-  sets.engaged.LowDW.HeavyDef.MidAcc = {
+  sets.engaged.LowDW.MidAcc.HeavyDef = {
     ammo=gear.RAbullet,
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
@@ -1667,7 +1667,7 @@ function init_gear_sets()
     -- ring1="Chirich Ring +1",       -- __,  6, 10 <__, __, __> [__/__, ___]
     -- 37 DW, 67 STP, 328 Acc <11 DA, 0 TA, 0 QA> [56 PDT/46 MDT, 649 MEVA]
   }
-  sets.engaged.LowDW.HeavyDef.HighAcc = {
+  sets.engaged.LowDW.HighAcc.HeavyDef = {
     ammo=gear.RAbullet,
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
@@ -1711,7 +1711,7 @@ function init_gear_sets()
     -- ear2="Telos Earring",          -- __,  5, 10 < 1, __, __> [__/__, ___]
     -- 43 DW, 48 STP, 290 Acc <10 DA, 8 TA, 0 QA> [55 PDT/37 MDT, 510 MEVA]
   }
-  sets.engaged.MidDW.HeavyDef.LowAcc = {
+  sets.engaged.MidDW.LowAcc.HeavyDef = {
     ammo=gear.RAbullet,
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body=gear.Adhemar_A_body,         --  6, __, 55 <__,  4, __> [__/__,  69]
@@ -1732,7 +1732,7 @@ function init_gear_sets()
     -- ring1="Chirich Ring +1",       -- __,  6, 10 <__, __, __> [__/__, ___]
     -- 43 DW, 47 STP, 291 Acc <11 DA, 10 TA, 0 QA> [51 PDT/39 MDT, 504 MEVA]
   }
-  sets.engaged.MidDW.HeavyDef.MidAcc = {
+  sets.engaged.MidDW.MidAcc.HeavyDef = {
     ammo=gear.RAbullet,
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body=gear.Adhemar_A_body,         --  6, __, 55 <__,  4, __> [__/__,  69]
@@ -1753,7 +1753,7 @@ function init_gear_sets()
     -- ring1="Chirich Ring +1",       -- __,  6, 10 <__, __, __> [__/__, ___]
     -- 43 DW, 47 STP, 282 Acc <11 DA, 10 TA, 0 QA> [51 PDT/39 MDT, 504 MEVA]
   }
-  sets.engaged.MidDW.HeavyDef.HighAcc = {
+  sets.engaged.MidDW.HighAcc.HeavyDef = {
     ammo=gear.RAbullet,
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
@@ -1792,7 +1792,7 @@ function init_gear_sets()
     -- back=gear.COR_DW_Cape,         -- 10, __, 20 <__, __, __> [10/__, ___]
     -- 57 DW, 40 STP, 280 Acc <0 DA, 8 TA, 0 QA> [55 PDT/37 MDT, 518 MEVA]
   }
-  sets.engaged.HighDW.HeavyDef.LowAcc = {
+  sets.engaged.HighDW.LowAcc.HeavyDef = {
     ammo=gear.RAbullet,
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body=gear.Adhemar_A_body,         --  6, __, 55 <__,  4, __> [__/__,  69]
@@ -1811,7 +1811,7 @@ function init_gear_sets()
     -- neck="Combatant's Torque",     -- __,  4, __ <__, __, __> [__/__, ___]; Combat skill +15
     -- 57 DW, 47 STP, 285 Acc <0 DA, 4 TA, 0 QA> [49 PDT/31 MDT, 612 MEVA]
   }
-  sets.engaged.HighDW.HeavyDef.MidAcc = {
+  sets.engaged.HighDW.MidAcc.HeavyDef = {
     ammo=gear.RAbullet,
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
@@ -1829,7 +1829,7 @@ function init_gear_sets()
     -- back=gear.COR_DW_Cape,         -- 10, __, 20 <__, __, __> [10/__, ___]
     -- 57 DW, 44 STP, 300 Acc <0 DA, 0 TA, 0 QA> [51 PDT/33 MDT, 612 MEVA]
   }
-  sets.engaged.HighDW.HeavyDef.HighAcc = {
+  sets.engaged.HighDW.HighAcc.HeavyDef = {
     ammo=gear.RAbullet,
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
@@ -1871,7 +1871,7 @@ function init_gear_sets()
     -- back=gear.COR_DW_Cape,         -- 10, __, 20 <__, __, __> [10/__, ___]
     -- 67 DW, 32 STP, 246 Acc <0 DA, 7 TA, 0 QA> [51 PDT/37 MDT, 423 MEVA]
   }
-  sets.engaged.SuperDW.HeavyDef.LowAcc = {
+  sets.engaged.SuperDW.LowAcc.HeavyDef = {
     ammo=gear.RAbullet,
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
@@ -1890,7 +1890,7 @@ function init_gear_sets()
     -- back=gear.COR_DW_Cape,         -- 10, __, 20 <__, __, __> [10/__, ___]
     -- 67 DW, 23 STP, 257 Acc <0 DA, 3 TA, 0 QA> [51 PDT/39 MDT, 448 MEVA]
   }
-  sets.engaged.SuperDW.HeavyDef.MidAcc = {
+  sets.engaged.SuperDW.MidAcc.HeavyDef = {
     ammo=gear.RAbullet,
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
@@ -1909,7 +1909,7 @@ function init_gear_sets()
     -- back=gear.COR_DW_Cape,         -- 10, __, 20 <__, __, __> [10/__, ___]
     -- 58 DW, 32 STP, 296 Acc <0 DA, 3 TA, 0 QA> [49 PDT/37 MDT, 529 MEVA]
   }
-  sets.engaged.SuperDW.HeavyDef.HighAcc = {
+  sets.engaged.SuperDW.HighAcc.HeavyDef = {
     ammo=gear.RAbullet,
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
@@ -1949,7 +1949,7 @@ function init_gear_sets()
     -- back=gear.COR_DW_Cape,            -- 10, __, 20 <__, __, __> [10/__, ___]
     -- 71 DW, 24 STP, 256 Acc <0 DA, 7 TA, 0 QA> [51 PDT/37 MDT, 431 MEVA]
   }
-  sets.engaged.MaxDW.HeavyDef.LowAcc = {
+  sets.engaged.MaxDW.LowAcc.HeavyDef = {
     ammo=gear.RAbullet,
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
@@ -1967,7 +1967,7 @@ function init_gear_sets()
     -- back=gear.COR_DW_Cape,         -- 10, __, 20 <__, __, __> [10/__, ___]
     -- 66 DW, 35 STP, 261 Acc <0 DA, 0 TA, 0 QA> [53 PDT/35 MDT, 531 MEVA]
   }
-  sets.engaged.MaxDW.HeavyDef.MidAcc = {
+  sets.engaged.MaxDW.MidAcc.HeavyDef = {
     ammo=gear.RAbullet,
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
@@ -1988,7 +1988,7 @@ function init_gear_sets()
     -- back=gear.COR_DW_Cape,         -- 10, __, 20 <__, __, __> [10/__, ___]
     -- 60 DW, 52 STP, 284 Acc <0 DA, 0 TA, 0 QA> [51 PDT/41 MDT, 566 MEVA]
   }
-  sets.engaged.MaxDW.HeavyDef.HighAcc = {
+  sets.engaged.MaxDW.HighAcc.HeavyDef = {
     ammo=gear.RAbullet,
     head="Malignance Chapeau",        -- __,  8, 50 <__, __, __> [ 6/ 6, 123]
     body="Malignance Tabard",         -- __, 11, 50 <__, __, __> [ 9/ 9, 139]
@@ -2010,34 +2010,34 @@ function init_gear_sets()
   }
 
   sets.engaged.Safe = set_combine(sets.engaged.HeavyDef, {})
-  sets.engaged.Safe.LowAcc = set_combine(sets.engaged.HeavyDef.LowAcc, {})
-  sets.engaged.Safe.MidAcc = set_combine(sets.engaged.HeavyDef.MidAcc, {})
-  sets.engaged.Safe.HighAcc = set_combine(sets.engaged.HeavyDef.HighAcc, {})
+  sets.engaged.LowAcc.Safe = set_combine(sets.engaged.LowAcc.HeavyDef, {})
+  sets.engaged.MidAcc.Safe = set_combine(sets.engaged.MidAcc.HeavyDef, {})
+  sets.engaged.HighAcc.Safe = set_combine(sets.engaged.HighAcc.HeavyDef, {})
 
   sets.engaged.LowDW.Safe = set_combine(sets.engaged.LowDW.HeavyDef, {})
-  sets.engaged.LowDW.Safe.LowAcc = set_combine(sets.engaged.LowDW.HeavyDef.LowAcc, {})
-  sets.engaged.LowDW.Safe.MidAcc = set_combine(sets.engaged.LowDW.HeavyDef.MidAcc, {})
-  sets.engaged.LowDW.Safe.HighAcc = set_combine(sets.engaged.LowDW.HeavyDef.HighAcc, {})
+  sets.engaged.LowDW.LowAcc.Safe = set_combine(sets.engaged.LowDW.LowAcc.HeavyDef, {})
+  sets.engaged.LowDW.MidAcc.Safe = set_combine(sets.engaged.LowDW.MidAcc.HeavyDef, {})
+  sets.engaged.LowDW.HighAcc.Safe = set_combine(sets.engaged.LowDW.HighAcc.HeavyDef, {})
 
   sets.engaged.MidDW.Safe = set_combine(sets.engaged.MidDW.HeavyDef, {})
-  sets.engaged.MidDW.Safe.LowAcc = set_combine(sets.engaged.MidDW.HeavyDef.LowAcc, {})
-  sets.engaged.MidDW.Safe.MidAcc = set_combine(sets.engaged.MidDW.HeavyDef.MidAcc, {})
-  sets.engaged.MidDW.Safe.HighAcc = set_combine(sets.engaged.MidDW.HeavyDef.HighAcc, {})
+  sets.engaged.MidDW.LowAcc.Safe = set_combine(sets.engaged.MidDW.LowAcc.HeavyDef, {})
+  sets.engaged.MidDW.MidAcc.Safe = set_combine(sets.engaged.MidDW.MidAcc.HeavyDef, {})
+  sets.engaged.MidDW.HighAcc.Safe = set_combine(sets.engaged.MidDW.HighAcc.HeavyDef, {})
 
   sets.engaged.HighDW.Safe = set_combine(sets.engaged.HighDW.HeavyDef, {})
-  sets.engaged.HighDW.Safe.LowAcc = set_combine(sets.engaged.HighDW.HeavyDef.LowAcc, {})
-  sets.engaged.HighDW.Safe.MidAcc = set_combine(sets.engaged.HighDW.HeavyDef.MidAcc, {})
-  sets.engaged.HighDW.Safe.HighAcc = set_combine(sets.engaged.HighDW.HeavyDef.HighAcc, {})
+  sets.engaged.HighDW.LowAcc.Safe = set_combine(sets.engaged.HighDW.LowAcc.HeavyDef, {})
+  sets.engaged.HighDW.MidAcc.Safe = set_combine(sets.engaged.HighDW.MidAcc.HeavyDef, {})
+  sets.engaged.HighDW.HighAcc.Safe = set_combine(sets.engaged.HighDW.HighAcc.HeavyDef, {})
 
   sets.engaged.SuperDW.Safe = set_combine(sets.engaged.SuperDW.HeavyDef, {})
-  sets.engaged.SuperDW.Safe.LowAcc = set_combine(sets.engaged.SuperDW.HeavyDef.LowAcc, {})
-  sets.engaged.SuperDW.Safe.MidAcc = set_combine(sets.engaged.SuperDW.HeavyDef.MidAcc, {})
-  sets.engaged.SuperDW.Safe.HighAcc = set_combine(sets.engaged.SuperDW.HeavyDef.HighAcc, {})
+  sets.engaged.SuperDW.LowAcc.Safe = set_combine(sets.engaged.SuperDW.LowAcc.HeavyDef, {})
+  sets.engaged.SuperDW.MidAcc.Safe = set_combine(sets.engaged.SuperDW.MidAcc.HeavyDef, {})
+  sets.engaged.SuperDW.HighAcc.Safe = set_combine(sets.engaged.SuperDW.HighAcc.HeavyDef, {})
 
   sets.engaged.MaxDW.Safe = set_combine(sets.engaged.MaxDW.HeavyDef, {})
-  sets.engaged.MaxDW.Safe.LowAcc = set_combine(sets.engaged.MaxDW.HeavyDef.LowAcc, {})
-  sets.engaged.MaxDW.Safe.MidAcc = set_combine(sets.engaged.MaxDW.HeavyDef.MidAcc, {})
-  sets.engaged.MaxDW.Safe.HighAcc = set_combine(sets.engaged.MaxDW.HeavyDef.HighAcc, {})
+  sets.engaged.MaxDW.LowAcc.Safe = set_combine(sets.engaged.MaxDW.LowAcc.HeavyDef, {})
+  sets.engaged.MaxDW.MidAcc.Safe = set_combine(sets.engaged.MaxDW.MidAcc.HeavyDef, {})
+  sets.engaged.MaxDW.HighAcc.Safe = set_combine(sets.engaged.MaxDW.HighAcc.HeavyDef, {})
   
   sets.engaged.SubtleBlow = {
     ammo=gear.RAbullet,
