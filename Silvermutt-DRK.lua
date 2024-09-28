@@ -1344,20 +1344,20 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.engaged = {
-    ammo="Coiste Bodhar",                           -- [__/__, ___]  3 < 3, __, __> __, __
-    head="Flamma Zucchetto +2",                     -- [__/__,  53]  6 <__,  5, __> __,  4
-    body={name="Hjarrandi Breastplate",priority=1}, -- [12/12,  69] 10 <__, __, __> 13, __
-    hands="Sakpata's Gauntlets",                    -- [ 8/ 8, 112]  8 < 6, __, __> __,  4
-    legs="Ignominy Flanchard +3",                   -- [__/__,  84] __ <10, __, __> __,  5
-    feet="Flamma Gambieras +2",                     -- [__/__,  86]  6 < 6, __, __> __,  2
-    neck="Abyssal Beads +2",                        -- [__/__, ___]  7 <__, __, __>  4, __
-    ear1="Telos Earring",                           -- [__/__, ___]  5 < 1, __, __> __, __
-    ear2="Dedition Earring",                        -- [__/__, ___]  8 < 1, __, __> __, __
-    ring1={name="Moonlight Ring",priority=1},       -- [ 5/ 5, ___]  5 <__, __, __> __, __
-    ring2={name="Moonlight Ring",priority=1},       -- [ 5/ 5, ___]  5 <__, __, __> __, __
-    back=gear.DRK_STP_Cape,                         -- [10/__, ___] 10 <__, __, __> __, __
-    waist="Sailfi Belt +1",                         -- [__/__, ___] __ < 5,  2, __> __,  9
-    -- [40 PDT/30 MDT, 404 MEVA] 73 STP <32 DA, 7 TA, 0 QA> 17 Crit Rate, 24 Haste
+    ammo="Coiste Bodhar",                           --  3, __ < 3, __, __> (__, __) [__/__, ___] __
+    head="Flamma Zucchetto +2",                     --  6, 44 <__,  5, __> (__, __) [__/__,  53]  4
+    body={name="Hjarrandi Breastplate",priority=1}, -- 10, 47 <__, __, __> (13, __) [12/12,  69] __
+    hands="Sakpata's Gauntlets",                    --  8, 55 < 6, __, __> (__, __) [ 8/ 8, 112]  4
+    legs="Ignominy Flanchard +3",                   -- __, 49 <10, __, __> (__, __) [__/__,  84]  5
+    feet="Flamma Gambieras +2",                     --  6, 42 < 6, __, __> (__, __) [__/__,  86]  2
+    neck="Abyssal Beads +2",                        --  7, 15 <__, __, __> ( 4, __) [__/__, ___] __
+    ear1="Telos Earring",                           --  5, 10 < 1, __, __> (__, __) [__/__, ___] __
+    ear2="Dedition Earring",                        --  8,-10 < 1, __, __> (__, __) [__/__, ___] __
+    ring1={name="Moonlight Ring",priority=1},       --  5,  8 <__, __, __> (__, __) [ 5/ 5, ___] __
+    ring2={name="Moonlight Ring",priority=1},       --  5,  8 <__, __, __> (__, __) [ 5/ 5, ___] __
+    back=gear.DRK_STP_Cape,                         -- 10, 20 <__, __, __> (__, __) [10/__, ___] __
+    waist="Sailfi Belt +1",                         -- __, __ < 5,  2, __> (__, __) [__/__, ___]  9
+    -- 73 STP, 288 Acc <32 DA, 7 TA, 0 QA> (17 Crit Rate, 0 Crit Dmg) [40 PDT/30 MDT, 404 MEVA] 24 Haste
   }
   -- TODO
   sets.engaged.LowAcc = set_combine(sets.engaged, {
@@ -1391,20 +1391,20 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.engaged.HeavyDef = {
-    ammo="Coiste Bodhar",                           -- [__/__, ___]  3 < 3, __, __> __, __
-    head="Flamma Zucchetto +2",                     -- [__/__,  53]  6 <__,  5, __> __,  4
-    body={name="Hjarrandi Breastplate",priority=1}, -- [12/12,  69] 10 <__, __, __> 13, __
-    hands="Sakpata's Gauntlets",                    -- [ 8/ 8, 112]  8 < 6, __, __> __,  4
-    legs="Sakpata's Cuisses",                       -- [ 9/ 9, 150] __ < 7, __, __> __,  4
-    feet="Flamma Gambieras +2",                     -- [__/__,  86]  6 < 6, __, __> __,  2
-    neck="Abyssal Beads +2",                        -- [__/__, ___]  7 <__, __, __>  4, __
-    ear1="Telos Earring",                           -- [__/__, ___]  5 < 1, __, __> __, __
-    ear2="Dedition Earring",                        -- [__/__, ___]  8 < 1, __, __> __, __
-    ring1={name="Moonlight Ring",priority=1},       -- [ 5/ 5, ___]  5 <__, __, __> __, __
-    ring2={name="Moonlight Ring",priority=1},       -- [ 5/ 5, ___]  5 <__, __, __> __, __
-    back=gear.DRK_STP_Cape,                         -- [10/__, ___] 10 <__, __, __> __, __
-    waist="Sailfi Belt +1",                         -- [__/__, ___] __ < 5,  2, __> __,  9
-    -- [49 PDT/39 MDT, 470 MEVA] 73 STP <29 DA, 7 TA, 0 QA> 17 Crit Rate, 23 Haste
+    ammo="Coiste Bodhar",                           --  3, __ < 3, __, __> (__, __) [__/__, ___] __
+    head="Flamma Zucchetto +2",                     --  6, 44 <__,  5, __> (__, __) [__/__,  53]  4
+    body={name="Hjarrandi Breastplate",priority=1}, -- 10, 47 <__, __, __> (13, __) [12/12,  69] __
+    hands="Sakpata's Gauntlets",                    --  8, 55 < 6, __, __> (__, __) [ 8/ 8, 112]  4
+    legs="Sakpata's Cuisses",                       -- __, 55 < 7, __, __> (__, __) [ 9/ 9, 150]  4
+    feet="Flamma Gambieras +2",                     --  6, 42 < 6, __, __> (__, __) [__/__,  86]  2
+    neck="Abyssal Beads +2",                        --  7, 15 <__, __, __> ( 4, __) [__/__, ___] __
+    ear1="Telos Earring",                           --  5, 10 < 1, __, __> (__, __) [__/__, ___] __
+    ear2="Dedition Earring",                        --  8,-10 < 1, __, __> (__, __) [__/__, ___] __
+    ring1={name="Moonlight Ring",priority=1},       --  5,  8 <__, __, __> (__, __) [ 5/ 5, ___] __
+    ring2={name="Moonlight Ring",priority=1},       --  5,  8 <__, __, __> (__, __) [ 5/ 5, ___] __
+    back=gear.DRK_STP_Cape,                         -- 10, 20 <__, __, __> (__, __) [10/__, ___] __
+    waist="Sailfi Belt +1",                         -- __, __ < 5,  2, __> (__, __) [__/__, ___]  9
+    -- 73 STP, 294 Acc <29 DA, 7 TA, 0 QA> (17 Crit Rate, 0 Crit Dmg) [49 PDT/39 MDT, 470 MEVA] 23 Haste
   }
   -- TODO
   sets.engaged.LowAcc.HeavyDef = set_combine(sets.engaged.HeavyDef, {
@@ -1431,20 +1431,20 @@ function init_gear_sets()
   sets.engaged.MaxDW.HeavyDef = set_combine(sets.engaged.LowDW.HeavyDef, {})
 
   sets.engaged.SubtleBlow = {
-    ammo="Seething Bomblet +1",           -- [__/__, ___] __ <__, __, __> __,  5, __(__)
-    head="Sakpata's Helm",                -- [ 7/ 7, 123] __ < 5, __, __> __,  4, __(__)
-    body="Dagon Breastplate",             -- [__/__,  86] __ <__,  5, __>  4,  1, __(10)
-    hands="Sakpata's Gauntlets",          -- [ 8/ 8, 112]  8 < 6, __, __> __,  4,  8(__)
-    legs="Sakpata's Cuisses",             -- [ 9/ 9, 150] __ < 7, __, __> __,  4, __(__)
-    feet="Sakpata's Leggings",            -- [ 6/ 6, 150] __ < 4, __, __> __,  2, 13(__)
-    neck="Loricate Torque +1",            -- [ 6/ 6, ___] __ <__, __, __> __, __, __(__)
-    ear1="Telos Earring",                 -- [__/__, ___]  5 < 1, __, __> __, __, __(__)
-    ear2="Dedition Earring",              -- [__/__, ___]  8 <__, __, __> __, __, __(__)
-    ring1="Chirich Ring +1",              -- [__/__, ___]  6 <__, __, __> __, __, 10(__)
-    ring2="Niqmaddu Ring",                -- [__/__, ___] __ <__, __,  3> __, __, __( 5)
-    back=gear.DRK_STP_Cape,               -- [10/__, ___] 10 <__, __, __> __, __, __(__)
-    waist="Peiste Belt +1",               -- [__/__, ___] __ <__, __, __> __, __, 10(__)
-    -- [46 PDT/36 MDT, 621 MEVA] 37 STP <23 DA, 5 TA, 3 QA> 4 Crit Rate, 20 Haste, 41(15) Subtle Blow
+    ammo="Seething Bomblet +1",           -- __, 13 <__, __, __> (__, __) [__/__, ___]  5, __(__)
+    head="Sakpata's Helm",                -- __, 55 < 5, __, __> (__, __) [ 7/ 7, 123]  4, __(__)
+    body="Dagon Breastplate",             -- __, 45 <__,  5, __> ( 4, __) [__/__,  86]  1, __(10)
+    hands="Sakpata's Gauntlets",          --  8, 55 < 6, __, __> (__, __) [ 8/ 8, 112]  4,  8(__)
+    legs="Sakpata's Cuisses",             -- __, 55 < 7, __, __> (__, __) [ 9/ 9, 150]  4, __(__)
+    feet="Sakpata's Leggings",            -- __, 55 < 4, __, __> (__, __) [ 6/ 6, 150]  2, 15(__)
+    neck="Loricate Torque +1",            -- __, __ <__, __, __> (__, __) [ 6/ 6, ___] __, __(__)
+    ear1="Telos Earring",                 --  5, 10 < 1, __, __> (__, __) [__/__, ___] __, __(__)
+    ear2="Dedition Earring",              --  8,-10 < 1, __, __> (__, __) [__/__, ___] __, __(__)
+    ring1="Chirich Ring +1",              --  6, 10 <__, __, __> (__, __) [__/__, ___] __, 10(__)
+    ring2="Niqmaddu Ring",                -- __, __ <__, __, __> (__, __) [__/__, ___] __, __( 5)
+    back=gear.DRK_STP_Cape,               -- 10, 20 <__, __, __> (__, __) [10/__, ___] __, __(__)
+    waist="Peiste Belt +1",               -- __, __ <__, __, __> (__, __) [__/__, ___] __, 10(__)
+    -- 37 STP, 308 Acc <24 DA, 5 TA, 0 QA> (4 Crit Rate, 0 Crit Dmg) [46 PDT/36 MDT, 621 MEVA] 20 Haste, 43(15) Subtle Blow
   }
   -- TODO
   sets.engaged.LowAcc.SubtleBlow = set_combine(sets.engaged.SubtleBlow, {
