@@ -149,11 +149,12 @@ __Keybind___Name______________Command_____________
 [ CTRL+2 ] Souleate       /ja "Souleater" <me>
 [ CTRL+3 ] Drain2         /ma "Drain II" <t>
 [ CTRL+4 ] Bio            /ma "Bio II" <t>
+[ CTRL+8 ] Scarlet        /ja "Scarlet Delirium" <me>
 [ CTRL+9 ] BloodWea       /ja "Blood Weapon" <me>
 [ CTRL+0 ] Provoke        /ja "Provoke" <stnpc>
-[ ALT+1 ]  Ab-STR         /ma "Absorb-STR" <t>
-[ ALT+2 ]  Ab-INT         /ma "Absorb-INT" <t>
-[ ALT+3 ]  Ab-Attr        /ma "Absorb-attri" <t>
+[ ALT+1 ]  Ab-STR         /ma "Absorb-STR" <stnpc>
+[ ALT+2 ]  Ab-INT         /ma "Absorb-INT" <stnpc>
+[ ALT+3 ]  Ab-Attr        /ma "Absorb-VIT" <stnpc>
 [ ALT+4 ]  Ab-TP          /ma "Absorb-TP" <t>
 [ ALT+8 ]  Dread          /ma "Dread Spikes" <me>
 [ ALT+9 ]  SoulEnsl       /ja "Soul Enslavement" <me>
