@@ -448,12 +448,9 @@ function init_gear_sets()
     ear1="Arete Del Luna +1",       -- __/__, ___; Resists
     ear2="Etiolation Earring",      -- __/ 3, ___; Resist Silence+15
     ring1="Wuji Ring",              -- __/__, ___; Resists Charm/Sleep
-    ring2="Defending Ring",         -- 10/10, ___
+    ring2="Shadow Ring",            -- __/__, ___; Occ. annuls magic dmg
     back="Shadow Mantle",           -- __/__, ___; Occ. annuls physical dmg
     waist="Carrier's Sash",         -- __/__, ___; Ele Resist+15
-    -- 68 PDT / 51 MDT, 720 M.Eva
-
-    -- ring2="Shadow Ring",         -- __/__, ___; Occ. annuls magic dmg
     -- 58 PDT / 41 MDT, 720 M.Eva
   }
 
@@ -498,13 +495,10 @@ function init_gear_sets()
     neck="Loricate Torque +1",          --  6/ 6, ___ [__, __]; DEF+60
     ear1="Savant's Earring",            -- __/__, ___ [ 1, __]
     ear2="Etiolation Earring",          -- __/ 3, ___ [__, __]; Resist Silence+15
-    ring1="Gelatinous Ring +1",         --  7/-1, ___ [__, __]
+    ring1="Shadow Ring",                -- __/__, ___ [__, __]; Annuls magic dmg
     ring2="Defending Ring",             -- 10/10, ___ [__, __]
     back=gear.SCH_FC_Cape,              -- 10/__,  30 [__, __]
     waist="Embla Sash",                 -- __/__, ___ [ 5, __]
-    -- 60 PDT / 35 MDT, 594 M.Eva [16 Sublimation, 2 Refresh]
-
-    -- ring1="Shadow Ring",             -- __/__, ___ [__, __]; Annuls magic dmg
     -- 53 PDT / 36 MDT, 564 M.Eva [16 Sublimation, 2 Refresh]
   }
   sets.Sublimation.Refresh = {

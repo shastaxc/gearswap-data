@@ -510,7 +510,7 @@ function init_gear_sets()
     sub="Enki Strap",                 -- __/__,  10 [__]
     range=empty,                      -- __/__, ___ [__]
     ammo="Staunch Tathlum +1",        --  3/ 3, ___ [__]; Resist Status+11
-    head="Bunzi's Hat",               --  7/ 7, 123 [__]
+    head="Lethargy Chappel +3",       -- 10/10, 125 [__]
     body="Shamash Robe",              -- 10/__, 106 [ 3]; Resist Silence+90
     hands=gear.Nyame_B_hands,         --  7/ 7, 112 [__]
     legs=gear.Nyame_B_legs,           --  8/ 8, 150 [__]
@@ -519,16 +519,13 @@ function init_gear_sets()
     ear1="Arete Del Luna +1",         -- __/__, ___ [__]; Resists
     ear2="Etiolation Earring",        -- __/ 3, ___ [__]; Resist Silence+15
     ring1="Wuji Ring",                -- __/__, ___ [__]; Resists Charm/Sleep
-    ring2="Defending Ring",           -- 10/10, ___ [__]
+    ring2="Shadow Ring",              -- __/__, ___ [__]; Occ. annuls magic dmg
     back="Shadow Mantle",             -- __/__, ___ [__]; Occ. annuls physical dmg
     waist="Carrier's Sash",           -- __/__, ___ [__]; Ele Resist+15
-    -- 58 PDT/51 MDT, 641 M.Eva [3 Refresh]
+    -- 51 PDT/44 MDT, 643 M.Eva [3 Refresh]
 
     -- main="Sakpata's Sword",        -- 10/10, ___ [ 3]; R30
     -- sub="Sacro Bulwark",           -- 10/10, ___ [__]
-    -- head="Lethargy Chappel +3",    -- 10/10, 125 [__]
-    -- ring2="Shadow Ring",           -- __/__, ___ [__]; Occ. annuls magic dmg
-    -- 51 PDT/44 MDT, 643 M.Eva [3 Refresh]
   }
 
   sets.defense.PDT = set_combine(sets.HeavyDef, {})

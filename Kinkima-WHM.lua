@@ -451,16 +451,15 @@ function init_gear_sets()
     neck="Cleric's Torque +1",        --  8 [__/__, ___]
     ear1="Malignance Earring",        --  4 [__/__, ___]
     ear2="Etiolation Earring",        --  1 [__/ 3, ___]; Resist Silence +15
-    ring1="Gelatinous Ring +1",       -- __ [ 7/-1, ___]
+    ring1="Shadow Ring",              -- __ [__/__, ___]; Annuls magic dmg
     ring2="Defending Ring",           -- __ [10/10, ___]
     back=gear.WHM_FC_Cape,            -- 10 [10/__,  20]
     waist="Shinjutsu-no-obi +1",      --  5 [__/__, ___]
-    -- 82 Fast Cast [60 PDT/44 MDT, 597 MEVA]
+    -- 82 Fast Cast [53 PDT/45 MDT, 597 MEVA]
 
     -- hands=gear.Gende_SongFC_hands, --  7 [ 4/__,  37]
     -- neck="Cleric's Torque +2",     -- 10 [__/__, ___]
     -- ear1="Hearty Earring",         -- __ [__/__, ___]; Resist Status +5
-    -- ring1="Shadow Ring",           -- __ [__/__, ___]; Annuls magic dmg
     -- 80 Fast Cast [54 PDT/43 MDT, 597 MEVA]
   }
 
