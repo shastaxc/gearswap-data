@@ -1002,7 +1002,9 @@ function init_gear_sets()
     feet=gear.Nyame_B_feet,           -- __ [ 7/ 7, 150] {__/__, __}
     neck="Nodens Gorget",             -- 30 [__/__, ___] {__/__, __}
     ear2="Hearty Earring",            -- __ [__/__, ___] {__/__, __}; Status Resist +5
+    ring1="Shadow Ring",              -- __ [__/__, ___] {__/__, __}; Annul dmg
     ring2="Defending Ring",           -- __ [10/10, ___] {__/__, __}
+    back="Shadow Mantle",             -- __ [__/__, ___] {__/__, __}; Annul dmg
     waist="Siegel Sash",              -- 20 [__/__, ___] {__/__, __}
     -- 50 +Stoneskin [61 PDT/51 MDT, 674 M.Eva] {Pet: 25 PDT/25 MDT, 0 Regen}
     
@@ -1012,8 +1014,6 @@ function init_gear_sets()
     -- legs="Shedir Seraweels",       -- 35 [__/__, ___] {__/__, __}
     -- feet="Azimuth Gaiters +3",     -- __ [11/11, 168] {__/__, __}
     -- ear1="Earthcry Earring",       -- 10 [__/__, ___] {__/__, __}
-    -- ring1="Shadow Ring",           -- __ [__/__, ___] {__/__, __}; Annul dmg
-    -- back="Shadow Mantle",          -- __ [__/__, ___] {__/__, __}; Annul dmg
     -- 95 +Stoneskin [59 PDT/36 MDT, 467 M.Eva] {Pet: 38 PDT/38 MDT, 5 Regen}
   }
 

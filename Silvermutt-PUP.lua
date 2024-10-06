@@ -1597,7 +1597,7 @@ function init_gear_sets()
   }
   sets.engaged.Ngai = set_combine(sets.engaged, {
     neck="Warder's Charm +1", -- Status resist
-    -- ring2="Shadow Ring",
+    ring2="Shadow Ring",
   })
   sets.engaged.Acc = set_combine(sets.engaged, {
     neck="Puppetmaster's Collar +2",  -- __, 30 <__, __, __> [__/__, ___] {__/__, ___}

@@ -601,9 +601,9 @@ function init_gear_sets()
 
   sets.defense.PDT = set_combine(sets.HeavyDef, {})
   sets.defense.MDT = set_combine(sets.HeavyDef, {
-    -- ammo="Flame Sachet", -- Swap for different element sachet as needed
+    ammo="Flame Sachet", -- Swap for different element sachet as needed
     neck="Warder's Charm +1",
-    -- ring2="Shadow Ring",
+    ring2="Shadow Ring",
   })
 
 

@@ -374,14 +374,12 @@ function init_gear_sets()
     neck="Warder's Charm +1",         -- [__/__, ___] ___, __; Absorb magic dmg
     ear1="Eabani Earring",            -- [__/__,   8]  15, __
     ear2="Arete Del Luna +1",         -- [__/__, ___] ___, __; Resists
-    ring1="Archon Ring",              -- [__/__, ___] ___, __; Annul magic dmg
+    ring1="Shadow Ring",              -- [__/__, ___] ___, __; Annul magic dmg
     ring2="Defending Ring",           -- [10/10, ___] ___, __
-    back=gear.NIN_STP_Cape,
+    back="Shadow Mantle",             -- [__/__, ___] ___, __; Annul physical dmg
     waist="Engraved Belt",            -- [__/__, ___] ___, __; Element resist
 
     -- body="Hattori Ningi +3",       -- [13/13, 129]  95, __; Migawari+16
-    -- ring1="Shadow Ring",           -- [__/__, ___] ___, __; Annul magic dmg
-    -- back="Shadow Mantle",          -- [__/__, ___] ___, __; Annul physical dmg
     -- [51 PDT/51 MDT, 682 M.Eva] 492 Eva, 11 Status Resist
   }
   sets.defense.MDT = set_combine(sets.defense.PDT, {})
@@ -1172,7 +1170,9 @@ function init_gear_sets()
     neck="Moonlight Necklace",        -- __ [__/__,  15]; SIRD+15
     ear1="Arete Del Luna +1",         -- __ [__/__, ___]; Resists
     ear2="Odnowa Earring +1",         -- __ [ 3/ 5, ___]
+    ring1="Shadow Ring",              -- __ [__/__, ___]; Annul magic dmg
     ring2="Defending Ring",           -- __ [10/10, ___]
+    back="Shadow Mantle",             -- __ [__/__, ___]; Annul physical dmg
     -- Merits/Gifts                      25
     -- 25 Ninja Tool Expertise [48 PDT/50 MDT, 503 M.Eva]
 
@@ -1181,8 +1181,6 @@ function init_gear_sets()
     -- hands="Mochizuki Tekko +3",    -- 38 [__/__,  46]
     -- legs="Hattori Hakama +3",      -- __ [12/12, 135]
     -- feet="Hattori Kyahan +3",      -- __ [__/__, 125]; Tactical parry+26
-    -- ring1="Shadow Ring",           -- __ [__/__, ___]; Annul magic dmg
-    -- back="Shadow Mantle",          -- __ [__/__, ___]; Annul physical dmg
     -- waist="Gosha Sarashi",         --  5 [__/__, ___]
     -- Merits/Gifts                      25
     -- 68 Ninja Tool Expertise [51 PDT/53 MDT, 569 M.Eva]
