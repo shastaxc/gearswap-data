@@ -606,6 +606,14 @@ function init_gear_sets()
     ear1="Sanare Earring",
     ring2="Shadow Ring",
   })
+  sets.defense.PDT.Engaged = set_combine(sets.HeavyDef.Engaged, {})
+  sets.defense.MDT.Engaged = set_combine(sets.HeavyDef.Engaged, {
+    ammo="Flame Sachet", -- Swap for different element sachet as needed
+    hands="Sakpata's Gauntlets",
+    neck="Warder's Charm +1",
+    ear1="Odnowa Earring +1",
+    ring2="Shadow Ring",
+  })
 
 
   -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
@@ -1423,7 +1431,11 @@ end
 function customize_defense_set(defenseSet)
   -- Swap to "engaged" tank set if defense mode is engaged and weapon is drawn
   if player.status == 'Engaged' then
-    defenseSet = set_combine(defenseSet, sets.HeavyDef.Engaged)
+    if state.DefenseMode.value == 'Magical' then
+      defenseSet = set_combine(defenseSet, sets.defense.MDT.Engaged)
+    else
+      defenseSet = set_combine(defenseSet, sets.defense.PDT.Engaged)
+    end
   end
 
   if state.CP.current == 'on' then
@@ -1452,11 +1464,11 @@ function customize_defense_set(defenseSet)
 
   -- Use town idle set even if in defense mode
   if areas.Cities:contains(world.area) then
-    defenseSet =  set_combine(defenseSet, sets.idle.Town)
+    defenseSet = set_combine(defenseSet, sets.idle.Town)
   end
   
   if has_soul_drain_shield and player.hp < 10 then
-    defenseSet =  set_combine(defenseSet, sets.FallbackShield)
+    defenseSet = set_combine(defenseSet, sets.FallbackShield)
   end
   
   return defenseSet
