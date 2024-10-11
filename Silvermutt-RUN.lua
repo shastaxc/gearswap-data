@@ -609,7 +609,7 @@ function init_gear_sets()
     neck="Warder's Charm +1",                       -- __/__, ___ [___] (__, 20); Absorb magic dmg
     ear1="Sanare Earring",                          -- __/__,   6 [___] (__, __); M. Def Bonus+4
     ear2="Arete del Luna +1",                       -- __/__, ___ [___] (__, __); Resists
-    ring1="Wuji Ring",                              -- __/__, ___ [___] (__, __); Resists
+    ring1="Shadow Ring",                            -- __/__, ___ [___] (__, __); Absorb magic dmg, resist death
     ring2={name="Moonlight Ring",priority=1},       --  5/ 5, ___ [110] (__, __)
     back="Moonlight Cape",                          --  6/ 6, ___ [275] (__, __)
     waist={name="Platinum Moogle Belt",priority=1}, --  3/ 3,  15 [___] __; HP+10%
