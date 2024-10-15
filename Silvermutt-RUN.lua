@@ -1905,7 +1905,7 @@ function customize_defense_set(defenseSet)
     return set_combine(defenseSet, sets.Encumbrance)
   end
 
-  if buffactive['Battuta'] then
+  if buffactive['Battuta'] and state.DefenseMode.value ~= 'Magical' then
     defenseSet = set_combine(defenseSet, sets.defense.Parry)
   end
   if state.DeathResist.value == true then
