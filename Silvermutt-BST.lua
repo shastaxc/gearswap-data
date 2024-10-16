@@ -470,7 +470,7 @@ function job_setup()
     ['Harden Shell'] = {id=0, name='', set='Buff', charges=0, tp_affected=false, multihit=false, range_type='Self', effect='+Def',},
     ['Rhino Guard'] = {id=0, name='', set='Buff', charges=0, tp_affected=false, multihit=false, range_type='Self', effect='+Eva',},
     ['Zealous Snort'] = {id=0, name='', set='Buff', charges=0, tp_affected=true, multihit=false, range_type='Self', effect='Haste, MDB, Counter, Guard',},
-    ['Frenzied Rage'] = {id=0, name='', set='Buff', charges=0, tp_affected=false, multihit=false, range_type='AoE', effect='+Atk',},
+    ['Frenzied Rage'] = {id=0, name='', set='Buff', charges=0, tp_affected=false, multihit=false, range_type='Self', effect='+Atk',},
     ['Digest'] = {id=0, name='', set='Buff', charges=0, tp_affected=true, multihit=false, range_type='Single', effect='Absorb HP',},
     ['Metallic Body'] = {id=0, name='', set='Buff', charges=0, tp_affected=true, multihit=false, range_type='Self', effect='Stoneskin',},
     ['Water Wall'] = {id=0, name='', set='Buff', charges=0, tp_affected=true, multihit=false, range_type='Self', effect='+Def',},
