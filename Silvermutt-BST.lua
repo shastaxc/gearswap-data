@@ -1468,8 +1468,8 @@ function init_gear_sets()
   }
 
   sets.midcast.Pet.Macc = {
-    main="Agwu's Axe",                 -- [__/__, ___] {__/__, ___ | 50, 20}
-    sub=gear.Ready_MAcc_Axe,         -- [__/__, ___] { 4/ 4, ___ | 25, __}; Pet TP Bonus+200
+    main="Agwu's Axe",                -- [__/__, ___] {__/__, ___ | 50, 20}
+    sub=gear.Ready_MAcc_Axe,          -- [__/__, ___] { 4/ 4, ___ | 25, __}; Pet TP Bonus+200
     ammo="Hesperiidae",               -- [__/__, ___] {__/__, ___ | 10, 10}
     head="Nukumi Cabasset +2",        -- [10/10,  88] {__/__, ___ | 51, __}
     body="Gleti's Cuirass",           -- [ 9/__, 102] {__/__, ___ | 50, __}
