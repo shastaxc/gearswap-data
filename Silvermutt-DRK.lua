@@ -555,17 +555,17 @@ function init_gear_sets()
     feet="Heathen's Sollerets +3",        -- 33, 26, 60, 60, 12, __ [__/__, 119]
     neck="Abyssal Beads +2",              -- 25, __, 40, 15, __, 10 [__/__, ___]
     ear1="Moonshade Earring",             -- __, __, __,  4, __, __ [__/__, ___]; TP bonus+250
-    ear2="Heathen's Earring +1",          -- __, __, 17, 11,  2,  8 [__/__, ___]
+    ear2="Heathen's Earring +1",          -- __, __, 17, 12,  2,  8 [__/__, ___]
     ring1="Sroda Ring",                   -- 15, __, __, __, __,  3 [__/__, ___]
     ring2="Epaminondas's Ring",           -- __, __, __, __,  5, __ [__/__, ___]
     back=gear.DRK_STR_WSD_Cape,           -- 30, __, 20, 20, 10, __ [10/__, ___]
     waist="Sailfi Belt +1",               -- 15, __, 15, __, __, __ [__/__, ___]
     -- DRK traits/gifts/etc                                      50
-    -- 264 STR, 161 MND, 435 Attack, 280 Accuracy, 82 WSD, 71 PDL [41 PDT/31 MDT, 643 M.Eva]
+    -- 264 STR, 161 MND, 435 Attack, 281 Accuracy, 82 WSD, 71 PDL [41 PDT/31 MDT, 643 M.Eva]
   }
   sets.precast.WS.MaxTP = set_combine(sets.precast.WS, {
     ear1="Thrud Earring",                 -- 10, __, __, __,  3, __ [__/__, ___]
-    -- 274 STR, 161 MND, 435 Attack, 276 Accuracy, 85 WSD, 71 PDL [41 PDT/31 MDT, 643 M.Eva]
+    -- 274 STR, 161 MND, 435 Attack, 277 Accuracy, 85 WSD, 71 PDL [41 PDT/31 MDT, 643 M.Eva]
   })
   sets.precast.WS.AttCapped = set_combine(sets.precast.WS, {
     ammo="Crepuscular Pebble",            --  3, __, __, __, __,  3 [ 3/ 3, ___]
@@ -576,17 +576,17 @@ function init_gear_sets()
     feet="Heathen's Sollerets +3",        -- 33, 26, 60, 60, 12, __ [__/__, 119]
     neck="Abyssal Beads +2",              -- 25, __, 40, 15, __, 10 [__/__, ___]
     ear1="Moonshade Earring",             -- __, __, __,  4, __, __ [__/__, ___]; TP bonus+250
-    ear2="Heathen's Earring +1",          -- __, __, 17, 11,  2,  8 [__/__, ___]
+    ear2="Heathen's Earring +1",          -- __, __, 17, 12,  2,  8 [__/__, ___]
     ring1="Sroda Ring",                   -- 15, __, __, __, __,  3 [__/__, ___]
     ring2="Ephramad's Ring",              -- 10, __, 20, 20, __, 10 [__/__, ___]
     back=gear.DRK_STR_WSD_Cape,           -- 30, __, 20, 20, 10, __ [10/__, ___]
     waist="Sailfi Belt +1",               -- 15, __, 15, __, __, __ [__/__, ___]
     -- DRK traits/gifts/etc                                      50
-    -- 288 STR, 151 MND, 433 Attack, 326 Accuracy, 48 WSD, 101 PDL [38 PDT/28 MDT, 607 M.Eva]
+    -- 288 STR, 151 MND, 433 Attack, 327 Accuracy, 48 WSD, 101 PDL [38 PDT/28 MDT, 607 M.Eva]
   })
   sets.precast.WS.AttCappedMaxTP = set_combine(sets.precast.WS.AttCapped, {
     ear1="Thrud Earring",                 -- 10, __, __, __,  3, __ [__/__, ___]
-    -- 298 STR, 151 MND, 433 Attack, 322 Accuracy, 51 WSD, 101 PDL [38 PDT/28 MDT, 607 M.Eva]
+    -- 298 STR, 151 MND, 433 Attack, 323 Accuracy, 51 WSD, 101 PDL [38 PDT/28 MDT, 607 M.Eva]
   })
 
   -- 50% MND / 30% STR. Dark elemental. Absorbs HP. dStat = INT
@@ -617,13 +617,13 @@ function init_gear_sets()
     feet="Heathen's Sollerets +3",        -- 30, 60, 60, 12, __ < 5, __, __> [__/__, 119]
     neck="Abyssal Beads +2",              -- __, 40, 15, __, 10 <__, __, __> [__/__, ___]
     ear1="Moonshade Earring",             -- __, __,  4, __, __ <__, __, __> [__/__, ___]; TP bonus+250
-    ear2="Heathen's Earring +1",          -- __, 17, 11,  2,  8 <__, __, __> [__/__, ___]
+    ear2="Heathen's Earring +1",          -- __, 17, 12,  2,  8 <__, __, __> [__/__, ___]
     ring1="Epaminondas's Ring",           -- __, __, __,  5, __ <__, __, __> [__/__, ___]
     ring2="Gelatinous ring +1",           -- 15, __, __, __, __ <__, __, __> [ 7/-1, ___]
     back=gear.DRK_VIT_WSD_Cape,           -- 30, 20, 20, 10, __ <__, __, __> [10/__, ___]
     waist="Fotia Belt",                   -- __, __, __, __, __ <__, __, __> [__/__, ___]; FTP+
     -- DRK traits/gifts/etc                                  50
-    -- 228 VIT, 420 Attack, 280 Accuracy, 82 WSD, 68 PDL <28 DA, 0 TA, 0 QA> [48 PDT/30 MDT, 643 M.Eva]
+    -- 228 VIT, 420 Attack, 281 Accuracy, 82 WSD, 68 PDL <28 DA, 0 TA, 0 QA> [48 PDT/30 MDT, 643 M.Eva]
   }
   sets.precast.WS['Torcleaver'].MaxTP = set_combine(sets.precast.WS['Torcleaver'], {
     ear1="Thrud Earring",                 -- 10, __, __,  3, __ <__, __, __> [__/__, ___]
@@ -637,13 +637,13 @@ function init_gear_sets()
     feet="Heathen's Sollerets +3",        -- 30, 60, 60, 12, __ < 5, __, __> [__/__, 119]
     neck="Abyssal Beads +2",              -- __, 40, 15, __, 10 <__, __, __> [__/__, ___]
     ear1="Moonshade Earring",             -- __, __,  4, __, __ <__, __, __> [__/__, ___]; TP bonus+250
-    ear2="Heathen's Earring +1",          -- __, 17, 11,  2,  8 <__, __, __> [__/__, ___]
+    ear2="Heathen's Earring +1",          -- __, 17, 12,  2,  8 <__, __, __> [__/__, ___]
     ring1="Epaminondas's Ring",           -- __, __, __,  5, __ <__, __, __> [__/__, ___]
     ring2="Ephramad's Ring",              -- __, 20, 20, __, 10 <__, __, __> [__/__, ___]
     back=gear.DRK_VIT_WSD_Cape,           -- 30, 20, 20, 10, __ <__, __, __> [10/__, ___]
     waist="Fotia Belt",                   -- __, __, __, __, __ <__, __, __> [__/__, ___]; FTP+
     -- DRK traits/gifts/etc                                  50
-    -- 222 VIT, 436 Attack, 311 Accuracy, 71 WSD, 88 PDL <29 DA, 0 TA, 0 QA> [34 PDT/24 MDT, 607 M.Eva]
+    -- 222 VIT, 436 Attack, 312 Accuracy, 71 WSD, 88 PDL <29 DA, 0 TA, 0 QA> [34 PDT/24 MDT, 607 M.Eva]
   }
   sets.precast.WS['Torcleaver'].AttCappedMaxTP = set_combine(sets.precast.WS['Torcleaver'].AttCapped, {
     ear1="Lugra Earring +1",              -- 16, __, __, __, __ < 3, __, __> [__/__, ___]
@@ -679,13 +679,13 @@ function init_gear_sets()
     feet="Sakpata's Leggings",            -- 29, 70, 55, __,  4 < 4, __, __> [ 6/ 6, 150]
     neck="Fotia Gorget",                  -- __, __, __, __, __ <__, __, __> [__/__, ___]; ftp+
     ear1="Moonshade Earring",             -- __,  4, __, __, __ <__, __, __> [__/__, ___]; TP Bonus+250
-    ear2="Heathen's Earring +1",          -- __, 17, 11,  2,  8 <__, __, __> [__/__, ___]
+    ear2="Heathen's Earring +1",          -- __, 17, 12,  2,  8 <__, __, __> [__/__, ___]
     ring1="Niqmaddu Ring",                -- 10, __, __, __, __ <__, __,  3> [__/__, ___]
     ring2="Ephramad's Ring",              -- 10, 20, 20, __, 10 <__, __, __> [__/__, ___]
     back=gear.DRK_STR_DA_Cape,            -- 30, 20, 20, __, __ <10, __, __> [10/__, ___]
     waist="Fotia Belt",                   -- __, __, __, __, __ <__, __, __> [__/__, ___]; ftp+
     -- DRK traits/gifts/etc                                  50
-    -- 248 STR, 397 Attack, 317 Accuracy, 14 WSD, 99 PDL <40 DA, 0 TA, 3 QA> [45 PDT/35 MDT, 638 M.Eva]
+    -- 248 STR, 397 Attack, 318 Accuracy, 14 WSD, 99 PDL <40 DA, 0 TA, 3 QA> [45 PDT/35 MDT, 638 M.Eva]
   })
   sets.precast.WS['Resolution'].AttCappedMaxTP = set_combine(sets.precast.WS['Resolution'].AttCapped, {
     ear1="Brutal Earring",                -- __, __, __, __, __ < 5, __, __> [__/__, ___]
@@ -733,13 +733,13 @@ function init_gear_sets()
     feet="Heathen's Sollerets +3",        -- 33, 60, 60, 12, __ (__, __) <__, __, __> [__/__, 119]
     neck="Abyssal Beads +2",              -- 25, 40, 15, __, 10 ( 4, __) <__, __, __> [__/__, ___]
     ear1="Moonshade Earring",             -- __, __,  4, __, __ (__, __) <__, __, __> [__/__, ___]; TP bonus+250
-    ear2="Heathen's Earring +1",          -- __, 17, 11,  2,  8 (__, __) <__, __, __> [__/__, ___]
+    ear2="Heathen's Earring +1",          -- __, 17, 12,  2,  8 (__, __) <__, __, __> [__/__, ___]
     ring1="Sroda Ring",                   -- 15, __, __, __,  3 (__, __) <__, __, __> [__/__, ___]
     ring2="Ephramad's Ring",              -- 10, 20, 20, __, 10 (__, __) <__, __, __> [__/__, ___]
     -- back=gear.DRK_STR_Crit_Cape,       -- 30, 20, 20, __, __ (10, __) <__, __, __> [10/__, ___]
     waist="Sailfi Belt +1",               -- 15, 15, __, __, __ (__, __) < 5,  2, __> [__/__, ___]
     -- DRK traits/gifts/etc                                  50
-    -- 289 STR, 367 Attack, 303 Accuracy, 50 WSD, 81 PDL (26 Crit Rate, 6 Crit Dmg) <26 DA, 2 TA, 0 QA> [37 PDT/24 MDT, 573 M.Eva]
+    -- 289 STR, 367 Attack, 304 Accuracy, 50 WSD, 81 PDL (26 Crit Rate, 6 Crit Dmg) <26 DA, 2 TA, 0 QA> [37 PDT/24 MDT, 573 M.Eva]
   })
   sets.precast.WS['Vorpal Scythe'].MaxTP = set_combine(sets.precast.WS['Vorpal Scythe'], {
     ear1="Odr Earring",                   -- __, __, 10, __, __ ( 5, __) <__, __, __> [__/__, ___]
@@ -753,13 +753,13 @@ function init_gear_sets()
     feet="Heathen's Sollerets +3",        -- 33, 60, 60, 12, __ (__, __) <__, __, __> [__/__, 119]
     neck="Abyssal Beads +2",              -- 25, 40, 15, __, 10 ( 4, __) <__, __, __> [__/__, ___]
     ear1="Moonshade Earring",             -- __, __,  4, __, __ (__, __) <__, __, __> [__/__, ___]; TP bonus+250
-    ear2="Heathen's Earring +1",          -- __, 17, 11,  2,  8 (__, __) <__, __, __> [__/__, ___]
+    ear2="Heathen's Earring +1",          -- __, 17, 12,  2,  8 (__, __) <__, __, __> [__/__, ___]
     ring1="Sroda Ring",                   -- 15, __, __, __,  3 (__, __) <__, __, __> [__/__, ___]
     ring2="Ephramad's Ring",              -- 10, 20, 20, __, 10 (__, __) <__, __, __> [__/__, ___]
     -- back=gear.DRK_STR_Crit_Cape,       -- 30, 20, 20, __, __ (10, __) <__, __, __> [10/__, ___]
     waist="Sailfi Belt +1",               -- 15, 15, __, __, __ (__, __) < 5,  2, __> [__/__, ___]
     -- DRK traits/gifts/etc                                  50
-    -- 281 STR, 377 Attack, 333 Accuracy, 25 WSD, 96 PDL (31 Crit Rate, 6 Crit Dmg) <28 DA, 2 TA, 0 QA> [39 PDT/26 MDT, 573 M.Eva]
+    -- 281 STR, 377 Attack, 334 Accuracy, 25 WSD, 96 PDL (31 Crit Rate, 6 Crit Dmg) <28 DA, 2 TA, 0 QA> [39 PDT/26 MDT, 573 M.Eva]
   })
   sets.precast.WS['Vorpal Scythe'].AttCappedMaxTP = set_combine(sets.precast.WS['Vorpal Scythe'].AttCapped, {
     ear1="Odr Earring",                   -- __, __, 10, __, __ ( 5, __) <__, __, __> [__/__, ___]
@@ -775,13 +775,13 @@ function init_gear_sets()
     feet="Heathen's Sollerets +3",        -- 33, 26, 60, 60, 12, __ <__, __, __> [__/__, 119]
     neck="Abyssal Beads +2",              -- 25, __, 40, 15, __, 10 <__, __, __> [__/__, ___]
     ear1="Brutal Earring",                -- __, __, __, __, __, __ < 5, __, __> [__/__, ___]
-    ear2="Heathen's Earring +1",          -- __, __, 17, 11,  2,  8 <__, __, __> [__/__, ___]
+    ear2="Heathen's Earring +1",          -- __, __, 17, 12,  2,  8 <__, __, __> [__/__, ___]
     ring1="Niqmaddu Ring",                -- 10, __, __, __, __, __ <__, __,  3> [__/__, ___]
     ring2="Epaminondas's Ring",           -- __, __, __, __,  5, __ <__, __, __> [__/__, ___]
     back=gear.DRK_STR_DA_Cape,            -- 30, __, 20, 20, __, __ <10, __, __> [10/__, ___]
     waist="Sailfi Belt +1",               -- 15, __, 15, __, __, __ < 5,  2, __> [__/__, ___]
     -- DRK traits/gifts/etc                                      50
-    -- 269 STR, 161 MND, 427 Attack, 276 Accuracy, 66 WSD, 68 PDL <46 DA, 2 TA, 3 QA> [41 PDT/31 MDT, 643 M.Eva]
+    -- 269 STR, 161 MND, 427 Attack, 277 Accuracy, 66 WSD, 68 PDL <46 DA, 2 TA, 3 QA> [41 PDT/31 MDT, 643 M.Eva]
   }
   sets.precast.WS['Guillotine'].MaxTP = set_combine(sets.precast.WS['Guillotine'], {})
   sets.precast.WS['Guillotine'].AttCapped = {
@@ -793,13 +793,13 @@ function init_gear_sets()
     feet="Heathen's Sollerets +3",        -- 33, 26, 60, 60, 12, __ <__, __, __> [__/__, 119]
     neck="Abyssal Beads +2",              -- 25, __, 40, 15, __, 10 <__, __, __> [__/__, ___]
     ear1="Brutal Earring",                -- __, __, __, __, __, __ < 5, __, __> [__/__, ___]
-    ear2="Heathen's Earring +1",          -- __, __, 17, 11,  2,  8 <__, __, __> [__/__, ___]
+    ear2="Heathen's Earring +1",          -- __, __, 17, 12,  2,  8 <__, __, __> [__/__, ___]
     ring1="Sroda Ring",                   -- 15, __, __, __, __,  3 <__, __, __> [__/__, ___]
     ring2="Ephramad's Ring",              -- 10, __, 20, 20, __, 10 <__, __, __> [__/__, ___]
     back=gear.DRK_STR_DA_Cape,            -- 30, __, 20, 20, __, __ <10, __, __> [10/__, ___]
     waist="Sailfi Belt +1",               -- 15, __, 15, __, __, __ < 5,  2, __> [__/__, ___]
     -- DRK traits/gifts/etc                                      50
-    -- 295 STR, 151 MND, 448 Attack, 322 Accuracy, 38 WSD, 98 PDL <48 DA, 2 TA, 0 QA> [35 PDT/25 MDT, 607 M.Eva]
+    -- 295 STR, 151 MND, 448 Attack, 323 Accuracy, 38 WSD, 98 PDL <48 DA, 2 TA, 0 QA> [35 PDT/25 MDT, 607 M.Eva]
   }
   sets.precast.WS['Guillotine'].AttCappedMaxTP = set_combine(sets.precast.WS['Guillotine'].AttCapped, {})
 
@@ -833,13 +833,13 @@ function init_gear_sets()
     feet="Heathen's Sollerets +3",        -- 33, 22, 60, 60, 12, __ <__, __, __> [__/__, 119]
     neck="Abyssal Beads +2",              -- 25, __, 40, 15, __, 10 <__, __, __> [__/__, ___]
     ear1="Moonshade Earring",             -- __, __, __,  4, __, __ <__, __, __> [__/__, ___]; TP bonus
-    ear2="Heathen's Earring +1",          -- __, __, 17, 11,  2,  8 <__, __, __> [__/__, ___]
+    ear2="Heathen's Earring +1",          -- __, __, 17, 12,  2,  8 <__, __, __> [__/__, ___]
     ring1="Sroda Ring",                   -- 15, __, __, __, __,  3 <__, __, __> [__/__, ___]
     ring2="Ephramad's Ring",              -- 10, __, 20, 20, __, 10 <__, __, __> [__/__, ___]
     back=gear.DRK_STR_DA_Cape,            -- 30, __, 20, 20, __, __ <10, __, __> [10/__, ___]
     waist="Sailfi Belt +1",               -- 15, __, 15, __, __, __ < 5,  2, __> [__/__, ___]
     -- DRK traits/gifts/etc                                      50
-    -- 305 STR, 155 INT, 448 Attack, 326 Accuracy, 38 WSD, 98 PDL <43 DA, 2 TA, 0 QA> [35 PDT/25 MDT, 607 M.Eva]
+    -- 305 STR, 155 INT, 448 Attack, 327 Accuracy, 38 WSD, 98 PDL <43 DA, 2 TA, 0 QA> [35 PDT/25 MDT, 607 M.Eva]
   }
   sets.precast.WS['Insurgency'].AttCappedMaxTP = set_combine(sets.precast.WS['Insurgency'].AttCapped, {
     ear1="Lugra Earring +1",              -- 16, 16, __, __, __, __ < 3, __, __> [__/__, ___]
@@ -879,6 +879,28 @@ function init_gear_sets()
     -- 121 DEX, 225 INT, 277 MAB, 35 WSD [35 PDT/25 MDT, 506 M.Eva]
   }
 
+  sets.precast.WS['Armor Break'] = {
+    ammo="Pemphredo Tathlum",             -- __,  8,  4 [__/__, ___]
+    head="Heathen's Burgeonet +3",        -- 61, 61, 31 [__/__,  87]
+    body="Heathen's Cuirass +3",          -- 64, 64, 35 [13/13, 103]
+    hands="Heathen's Gauntlets +3",       -- 62, 62, 25 [10/10,  82]
+    legs="Heathen's Flanchard +3",        -- 63, 63, 41 [12/12, 119]
+    feet="Sakpata's Leggings",            -- 55, 55, __ [ 6/ 6, 150]
+    neck="Abyssal Beads +2",              -- 15, 15, __ [__/__, ___]
+    ear1="Dignitary's Earring",           -- 10, 10, __ [__/__, ___]
+    ear2="Heathen's Earring +1",          -- 12, 12, __ [__/__, ___]
+    ring1="Etana Ring",                   --  7,  7, __ [__/__, ___]
+    ring2="Metamorph Ring +1",            -- __, 16, 16 [__/__, ___]
+    back=gear.DRK_MAB_Cape,               -- __, 20, 30 [10/__, ___]
+    waist="Eschan Stone",                 -- 15,  7, __ [__/__, ___]
+    -- 364 Accuracy, 400 M.Acc, 182 INT [51 PDT/41 MDT, 541 M.Eva]
+  }
+  sets.precast.WS['Weapon Break'] = set_combine(sets.precast.WS['Armor Break'], {})
+  sets.precast.WS['Shield Break'] = set_combine(sets.precast.WS['Armor Break'], {})
+  sets.precast.WS['Full Break'] = set_combine(sets.precast.WS['Armor Break'], {})
+  sets.precast.WS['Shockwave'] = set_combine(sets.precast.WS['Armor Break'], {})
+  sets.precast.WS['Herculean Slash'] = set_combine(sets.precast.WS['Armor Break'], {})
+
 
   -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
   --     Midcast
@@ -916,17 +938,17 @@ function init_gear_sets()
     feet="Heathen's Sollerets +3",    -- 22, 60, __ [__/__, 119]
     neck="Erra Pendant",              -- __, 17, __ [__/__, ___]
     ear1="Malignance Earring",        --  8, 10, __ [__/__, ___]
-    ear2="Heathen's Earring +1",      -- __, 11, __ [__/__, ___]
+    ear2="Heathen's Earring +1",      -- __, 12, __ [__/__, ___]
     ring1="Metamorph Ring +1",        -- 16, 15, __ [__/__, ___]
     ring2="Stikini Ring +1",          -- __, 11,  8 [__/__, ___]
     back=gear.DRK_MAB_Cape,           -- 30, 20, __ [10/__, ___]
     waist="Eschan Stone",             -- __,  7, __ [__/__, ___]
-    -- 192 INT, 368 M.Acc, 19 Enfeeb Skill [30 PDT/20 MDT, 446 M.Eva]
+    -- 192 INT, 369 M.Acc, 19 Enfeeb Skill [30 PDT/20 MDT, 446 M.Eva]
 
     -- body="Heathen's Cuirass +3",   -- 35, 64, __ [__/__, 103]
     -- hands="Heathen's Gauntlets +3",-- 25, 62, __ [10/10,  82]
     -- legs="Heathen's Flanchard +3", -- 41, 63, __ [12/12, 119]
-    -- 207 INT, 398 M.Acc, 19 Enfeeb Skill [32 PDT/22 MDT, 476 M.Eva]
+    -- 207 INT, 399 M.Acc, 19 Enfeeb Skill [32 PDT/22 MDT, 476 M.Eva]
   }
 
   sets.midcast.Poison = set_combine(sets.midcast['Enfeebling Magic'],{})
@@ -1102,14 +1124,14 @@ function init_gear_sets()
     feet="Heathen's Sollerets +3",          -- 22, 60, __ [__/__, 102]
     neck="Incanter's Torque",               -- __, __, 10 [__/__, ___]
     ear1="Malignance Earring",              --  8, 10, __ [__/__, ___]
-    ear2="Heathen's Earring +1",            -- __, 11, __ [__/__, ___]
+    ear2="Heathen's Earring +1",            -- __, 12, __ [__/__, ___]
     ring1="Stikini Ring +1",                -- __, 11,  8 [__/__, ___]
     ring2="Metamorph Ring +1",              -- 16, 15, __ [__/__, ___]
     back=gear.DRK_MAB_Cape,                 -- 30, 20, __ [10/__, ___]
     waist="Eschan Stone",                   -- __,  7, __ [__/__, ___]
     
     -- legs="Heathen's Flanchard +3",       -- 41, 63, 30 [12/12, 119]
-    -- 214 INT, 342 M.Acc, 82 Dark skill [22 PDT/16 MDT, 418 M.Eva]
+    -- 214 INT, 343 M.Acc, 82 Dark skill [22 PDT/16 MDT, 418 M.Eva]
   }
 
   sets.midcast['Elemental Magic'] = {
