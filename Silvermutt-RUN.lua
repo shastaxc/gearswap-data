@@ -600,7 +600,7 @@ function init_gear_sets()
   -- MDT cap is 50%, Shell V = 29%
   sets.defense.MDT = {
     -- Assume Utu Grip                              -- __/__, ___ [ 70] (__, __)
-    ammo="Staunch Tathlum +1",                      --  3/ 3, ___ [___] (11, __)
+    ammo="Flame Sachet",                            -- __/__, ___ [___] (__, __); Fire resist
     head="Erilaz Galea +3",                         -- __/__, 119 [111] (__, __)
     body="Erilaz Surcoat +3",                       -- __/__, 130 [143] (__, __); Retain enmity, Convert dmg to MP
     hands="Erilaz Gauntlets +3",                    -- 11/11,  87 [ 59] ( 8, __)
@@ -608,13 +608,13 @@ function init_gear_sets()
     feet="Erilaz Greaves +3",                       -- 11/11, 157 [ 48] (__, 35)
     neck="Warder's Charm +1",                       -- __/__, ___ [___] (__, 20); Absorb magic dmg
     ear1="Sanare Earring",                          -- __/__,   6 [___] (__, __); M. Def Bonus+4
-    ear2="Arete del Luna +1",                       -- __/__, ___ [___] (__, __); Resists
+    ear2="Neptune's Pearl",                         -- __/__, ___ [___] (__, __); Resists
     ring1="Shadow Ring",                            -- __/__, ___ [___] (__, __); Absorb magic dmg, resist death
     ring2={name="Moonlight Ring",priority=1},       --  5/ 5, ___ [110] (__, __)
     back="Moonlight Cape",                          --  6/ 6, ___ [275] (__, __)
     waist={name="Platinum Moogle Belt",priority=1}, --  3/ 3,  15 [___] __; HP+10%
     -- HP from belt                                                341
-    -- 52 PDT / 52 MDT, 671 MEVA [916/1257 HP] (19 Status Resist, 55 Element Resist)
+    -- 49 PDT / 49 MDT, 671 MEVA [916/1257 HP] (19 Status Resist, 55 Element Resist)
   }
 
   sets.defense.Parry = {
