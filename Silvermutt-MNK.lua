@@ -321,14 +321,13 @@ function init_gear_sets()
     body="Emet Harness +1", --6/0, 64 [61] <10>
     hands="Kurys Gloves", --2/2, 57 [25] <9>
     legs=gear.Nyame_B_legs,
-    feet=gear.Nyame_B_feet,
+    feet="Ahosi Leggings", --4/0, 107 [18] <7>
     neck="Unmoving Collar +1", --_/_, __ [200] <10>
     ear1="Friomisi Earring", --0/0, 0 [0] <2>
     ear2="Cryptic Earring", --0/0, 0 [40] <4>
     ring1="Eihwaz Ring", --0/0, 0 [70] <5>
     ring2={name="Supershear Ring", priority=1}, --0/0, 0 [30] <5>
     waist={name="Kasiri Belt", priority=1}, --0/0, 0 [30] <3>
-    -- feet="Ahosi Leggings", --4/0, 107 [18] <7>
   }
 
 

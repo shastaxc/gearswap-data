@@ -242,11 +242,11 @@ function init_gear_sets()
     head="Halitus Helm", --8
     body="Emet Harness +1", --10
     hands="Kurys Gloves", --9
+    feet="Ahosi Leggings", --7
     neck="Unmoving Collar +1", --10
     ear2="Trux Earring", --5
     ring2="Eihwaz Ring", --5
     waist="Kasiri Belt", --3
-    -- feet="Ahosi Leggings", --7
     -- ring1="Pernicious Ring", --5
   }
 
