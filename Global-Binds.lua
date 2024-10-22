@@ -32,6 +32,7 @@
 -------------------------------------------------------------------------------------------------------------------
 
 -- Default Item HotKeys
+send_command('bind @numlock input /item "Moneta\'s Tonic" <me>') -- Negate Terror
 send_command('bind @numpad/ input /item "Steadfast Tonic" <me>') -- Negate Terror
 send_command('bind @numpad* input /item "Savior\'s Tonic" <me>') -- Negate Doom
 send_command('bind @numpad- input /item "Charm Buffer" <me>') -- Negate Charm
