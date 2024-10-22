@@ -173,6 +173,7 @@ __Keybind___Name______________Command_____________
 [ CTRL+9 ] Invincib       /ja "Invincible" <me>
 [ CTRL+0 ] GeistWal       /ma "Geist Wall" <stnpc>
 [ ALT+1 ]  Crusade        /ma "Crusade" <me>
+[ ALT+2 ]  Protect        /ma "Protect V" <stpc>
 [ ALT+3 ]  Flash          /ma "Flash" <stnpc>
 [ ALT+3 ]  BlankGze       /ma "Blank Gaze" <stnpc>
 [ ALT+4 ]  C4A2           /ma "Cure IV" <a20>

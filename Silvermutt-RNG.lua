@@ -147,6 +147,7 @@ __Keybind___Name______________Command_____________
                           /p Shadowbind
 [ ALT+4 ]  Erase          /ja "Healing Waltz" <stpc>
 [ ALT+9 ]  Overkill       /ja "Overkill" <me>
+[ ALT+0 ]  Cancel         /con cancel velocity shot
 
 ]]--
 
