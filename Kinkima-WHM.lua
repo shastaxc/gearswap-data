@@ -794,13 +794,13 @@ function init_gear_sets()
     neck="Cleric's Torque +1",        -- __,  7, __ [__/__, ___] 20
     ear1="Novia Earring",             -- __, __, __ [__/__, ___]  7
     ear2="Halasz Earring",            -- __, __,  5 [__/__, ___]  3
-    ring1="Gelatinous Ring +1",       -- __, __, __ [ 7/-1, ___] __
+    ring1="Lebeche Ring",             -- __,  3, __ [__/__, ___]  5
     ring2="Defending Ring",           -- __, __, __ [10/10, ___] __
     back=gear.WHM_CP_Cape,            -- __, 10, __ [10/__, ___] __; Solace+10
     waist="Hachirin-no-Obi",          -- __, __, __ [__/__, ___] __
     -- Kaykaus set bonus              -- __, __, __ [__/__, ___] __
     -- Merit points                   -- __, __, 10 [__/__, ___]  5
-    -- 0 CPII, 51 CP, 106 SIRD [57PDT/34MDT, 442 M.Eva] 45 -Enmity
+    -- 0 CPII, 54 CP, 106 SIRD [50PDT/35MDT, 442 M.Eva] 50 -Enmity
 
     -- main="Chatoyant Staff",        -- __, 10, __ [__/__, ___] __
     -- sub="Mensch Strap +1",         -- __, __, __ [ 5/__, ___] __
