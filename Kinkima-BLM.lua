@@ -794,7 +794,7 @@ function init_gear_sets()
 
   sets.midcast.INTEnfeebles = {
     main="Contemplator +1",           -- 228, 70, 12, __ (__, __, 20) [__/__, ___]
-    sub="Enki Strap",                 -- ___, 10, 10, __ (__, __, __) [__/__,  10]
+    sub="Khonsu",                     -- ___, 30, __, __ (__, __, __) [ 6/ 6, ___]
     ammo="Ghastly Tathlum +1",        -- ___, __, 11, __ (__, __, __) [__/__, ___]
     head="Wicce Petasos +3",          -- ___, 61, 39, __ (__, __, __) [11/11, 136]
     body="Spaekona's Coat +3",        -- ___, 55, 39, __ (__, __, 21) [__/__, 100]
@@ -808,11 +808,15 @@ function init_gear_sets()
     ring2="Stikini Ring +1",          -- ___, 11, __, __ (__, __,  8) [__/__, ___]
     back="Aurist's Cape +1",          -- ___, 33, 33, __ (__, __, __) [__/__, ___]
     waist="Obstinate Sash",           -- ___, 15, __, __ (__,  5, 15) [__/__, ___]
-    -- 228 M.Acc skill, 487 M.Acc, 321 INT, 11 FC (0 Enf. Effect, 5 Enf. Duration, 64 Enf. Skill) [45 PDT/45 MDT, 646 M.Eva]
-    
+    -- AF set effect                     ___, 15
+    -- 228 M.Acc skill, 522 M.Acc, 311 INT, 11 FC (0 Enf. Effect, 5 Enf. Duration, 64 Enf. Skill) [51 PDT/51 MDT, 636 M.Eva]
+
 		-- head=empty,                    -- ___, __, __, __ (__, __, __) [__/__, ___]
 		-- body="Cohort Cloak +1",        -- ___,120, 76, __ (__, __, 34) [__/__, 156]
-    -- 228 M.Acc skill, 491 M.Acc, 319 INT, 11 FC (0 Enf. Effect, 5 Enf. Duration, 77 Enf. Skill) [34 PDT/34 MDT, 566 M.Eva]
+    -- hands="Spaekona's Gloves +3",  --  21, 49, 44, __ (__, __, __) [__/__,  57]
+    -- feet="Spaekona's Sabots +3",   -- ___, 54, 32, __ (__, __, __) [__/__, 127]
+    -- AF set effect                     ___, 30
+    -- 228 M.Acc skill, 522 M.Acc, 311 INT, 11 FC (0 Enf. Effect, 5 Enf. Duration, 77 Enf. Skill) [16 PDT/16 MDT, 474 M.Eva]
   }
 
   sets.midcast.Dispelga = set_combine(sets.midcast.INTEnfeeblesAcc, {
@@ -821,19 +825,53 @@ function init_gear_sets()
   })
 
   -- For spells like Burn, Choke, etc.
-  sets.midcast.ElementalEnfeeble = set_combine(sets.midcast.INTEnfeebles, {
-    body="Wicce Coat +3",           -- More m.acc, dropping enfeebling skill piece
-    legs="Archmage's Tonban +3",    -- Enhance elemental debuffs
-    feet="Archmage's Sabots +3",    -- Enhance elemental debuffs
-    waist="Acuity Belt +1",         -- More m.acc, dropping enfeebling skill piece
-  })
+  sets.midcast.ElementalEnfeeble = {
+    main="Contemplator +1",           -- 228, 70, 12, __ (__, __, __) [__/__, ___]
+    sub="Khonsu",                     -- ___, 30, __, __ (__, __, __) [ 6/ 6, ___]
+    ammo="Ghastly Tathlum +1",        -- ___, __, 11, __ (__, __, __) [__/__, ___]
+    head="Wicce Petasos +3",          -- ___, 61, 39, __ (__, __, 35) [11/11, 136]
+    body="Wicce Coat +3",             -- ___, 64, 50, __ (__, __, __) [__/__, 141]
+    hands="Wicce Gloves +3",          -- ___, 62, 38, __ (__, __, __) [13/13,  98]
+    legs="Agwu's Slops",              -- ___, 55, 54,  7 (10, __, __) [10/10, 134]
+    feet="Archmage's Sabots +3",      -- ___, 42, 30, __ (30, __, 17) [__/__, 127]
+    neck="Sorcerer's Stole +2",       -- ___, 30, 15, __ (__, __, __) [__/__, ___]
+    ear1="Malignance Earring",        -- ___, 10,  8,  4 (__, __, __) [__/__, ___]
+    ear2="Regal Earring",             -- ___, __, 10, __ (__, __, __) [__/__, ___]
+    ring1="Metamorph Ring +1",        -- ___, 15, 16, __ (__, __, __) [__/__, ___]
+    ring2="Stikini Ring +1",          -- ___, 11, __, __ (__, __,  8) [__/__, ___]
+    back="Aurist's Cape +1",          -- ___, 33, 33, __ (__, __, __) [__/__, ___]
+    waist="Acuity Belt +1",           -- ___, 15, 21, __ (__, __, __) [__/__, ___]
+    -- 228 M.Acc skill, 498 M.Acc, 337 INT, 11 FC (40 Elem. Effect, 0 Elem. Duration, 60 Elem. Skill) [40 PDT/40 MDT, 636 M.Eva]
 
-  sets.midcast.Impact = set_combine(sets.midcast.INTEnfeebles, {
+    -- hands="Spaekona's Gloves +3",  -- ___, 49, 44, __ (__, __, 21) [__/__,  57]
+    -- AF set effect                     ___, 15
+    -- 228 M.Acc skill, 513 M.Acc, 337 INT, 11 FC (40 Elem. Effect, 0 Elem. Duration, 81 Elem. Skill) [40 PDT/40 MDT, 636 M.Eva]
+  }
+
+  sets.midcast.Impact = {
+    main="Contemplator +1",           -- 228, 70, 12, __ (__) [__/__, ___]
+    sub="Khonsu",                     -- ___, 30, __, __ (__) [ 6/ 6, ___]
+    range="Ullr",                     -- ___, 40, __, __ (__) [__/__, ___]
+    ammo=empty,
     head=empty,
-    body="Twilight Cloak",
-    ring2="Archon Ring",
-    waist="Acuity Belt +1",         -- More m.acc, dropping enfeeblign skill piece
-  })
+    body="Crepuscular Cloak",         -- ___, 85, 80, __ (__) [__/__, 231]
+    hands="Wicce Gloves +3",          -- ___, 62, 38, __ (__) [13/13,  98]
+    legs="Agwu's Slops",              -- ___, 55, 54,  7 (__) [10/10, 134]
+    feet="Wicce Sabots +3",           -- ___, 60, 36, __ (__) [11/11, 168]
+    neck="Sorcerer's Stole +2",       -- ___, 30, 15, __ (__) [__/__, ___]
+    ear1="Malignance Earring",        -- ___, 10,  8,  4 (__) [__/__, ___]
+    ear2="Regal Earring",             -- ___, __, 10, __ (__) [__/__, ___]
+    ring1="Metamorph Ring +1",        -- ___, 15, 16, __ (__) [__/__, ___]
+    ring2="Archon Ring",              -- ___, __, __, __ (__) [__/__, ___]; Dark elemental m.acc +5
+    back="Aurist's Cape +1",          -- ___, 33, 33, __ (__) [__/__, ___]
+    waist="Acuity Belt +1",           -- ___, 15, 21, __ (__) [__/__, ___]
+    -- 228 M.Acc skill, 505 M.Acc, 323 INT, 11 FC (0 Elem. Skill) [40 PDT/40 MDT, 631 M.Eva]
+
+    -- hands="Spaekona's Gloves +3",  -- ___, 49, 44, __ (21) [__/__,  57]
+    -- feet="Spaekona's Sabots +3",   -- ___, 54, 32, __ (__) [__/__, 127]
+    -- AF set effect                     ___, 30
+    -- 228 M.Acc skill, 516 M.Acc, 325 INT, 11 FC (21 Elem. Skill) [16 PDT/16 MDT, 549 M.Eva]
+  }
 
   -- Dark magic options:
   -- M.Acc Skill, Dark skill, M.Acc, INT [PDT/MDT, M.Eva]
