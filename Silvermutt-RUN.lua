@@ -304,7 +304,7 @@ function job_setup()
   state.AttCapped = M(false, 'Attack Capped')
   state.DeathResist = M(false, 'Death Resist Mode')
   state.WeaponSet = M{['description']='Weapon Set', 'Epeolatry', 'Lionheart', 'Lycurgos', 'Naegling', 'Axe'}
-  state.SubWeaponSet = M{['description']='Sub Weapon Set', 'Refined', 'Utu'}
+  state.SubWeaponSet = M{['description']='Sub Weapon Set', 'Refined', 'Utu', 'Shield'}
   state.AttackMode = M{['description']='Attack', 'Uncapped', 'Capped'}
   state.CP = M(false, 'Capacity Points Mode')
   state.Runes = M{['description']='Runes', 'Ignis', 'Gelus', 'Flabra', 'Tellus', 'Sulpor', 'Unda', 'Lux', 'Tenebrae'}
@@ -543,14 +543,14 @@ function init_gear_sets()
   }
 
   sets.SubWeaponSet = {}
-  sets.SubWeaponSet["Shield"] = {
-    -- sub="Chanter's Shield",
-  }
   sets.SubWeaponSet["Utu"] = {
     sub="Utu Grip",
   }
   sets.SubWeaponSet["Refined"] = {
     sub="Refined Grip +1",
+  }
+  sets.SubWeaponSet["Shield"] = {
+    sub="Regis", -- Chanter's Shield good alt
   }
 
 
