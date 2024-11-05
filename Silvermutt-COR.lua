@@ -218,6 +218,13 @@ function job_setup()
       Quick_Draw = "Hauksbok Bullet", -- Does not get consumed
     }
   })
+  silibs.enable_waltz_refiner({
+    bonus_chr = 118,
+    bonus_vit = 108,
+    waltz_potency = 13,
+    waltz_self_potency = 0,
+    est_non_party_target_hp = 2000,
+  })
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.HybridMode:options('HeavyDef', 'Safe', 'SubtleBlow', 'Normal')
@@ -657,8 +664,7 @@ function init_gear_sets()
   })
 
   sets.precast.Waltz = {
-    body="Passion Jacket",
-    waist="Gishdubar Sash",
+    body="Passion Jacket", -- 13
   }
 
   sets.precast.Waltz['Healing Waltz'] = {}
@@ -1127,6 +1133,22 @@ function init_gear_sets()
     neck="Loricate Torque +1", -- SIRD + DT
     ear2="Odnowa Earring +1", -- DT
     ring1="Defending Ring", -- DT
+  }
+
+  sets.midcast.Absorb = {
+    ammo="Devastating Bullet",
+    head=gear.Carmine_D_head,
+    body="Chasseur's Frac +3",
+    hands="Chasseur's Gants +3",
+    legs="Chasseur's Culottes +3",
+    feet="Chasseur's Bottes +3",
+    neck="Commodore Charm +2",
+    ear1="Dignitary's Earring",
+    ear2="Crepuscular Earring",
+    ring1="Stikini Ring +1",
+    ring2="Metamorph ring +1",
+    back=gear.COR_WS4_Cape,
+    waist="Kwahu Kachina Belt +1",
   }
 
 
