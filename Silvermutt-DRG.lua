@@ -512,12 +512,12 @@ function init_gear_sets()
     feet=gear.Nyame_B_feet,             -- 23, 26, 65, 53, 11, __
     neck="Dragoon's Collar +2",         -- 15, __, 25, 25, __, 10
     ear1="Moonshade Earring",           -- __, __, __,  4, __, __; tp bonus +250
-    ear2="Peltast's Earring +1",        -- __, __, __, 12, __,  8
+    ear2="Peltast's Earring +1",        -- __, __, __, 14, __,  8
     ring1="Ephramad's Ring",            -- 10, __, 20, 20, __, 10
     ring2="Epaminondas's Ring",         -- __, __, __, __,  5, __
     back=gear.DRG_WS2_Cape,             -- 30, __, 20, 20, 10, __
     waist="Sailfi Belt +1",             -- 15, __, 15, __, __, __
-    -- 250 STR, 122 MND, 448 Att, 354 Acc, 56 WSD, 45 PDL
+    -- 250 STR, 122 MND, 448 Att, 356 Acc, 56 WSD, 45 PDL
     
     -- ear2="Peltast's Earring +2",     -- 15, __, __, 20, __,  9
     -- 265 STR, 122 MND, 448 Att, 362 Acc, 56 WSD, 46 PDL
@@ -562,12 +562,12 @@ function init_gear_sets()
     feet="Flamma Gambieras +2",         -- 31, __, 42, __, __ < 6, __, __>
     neck="Dragoon's Collar +2",         -- 15, 25, 25, __, 10 <__, __, __>
     ear1="Moonshade Earring",           -- __, __,  4, __, __ <__, __, __>; tp bonus +250
-    ear2="Peltast's Earring +1",        -- __, __, 12, __,  8 <__, __, __>
+    ear2="Peltast's Earring +1",        -- __, __, 14, __,  8 <__, __, __>
     ring1="Ephramad's Ring",            -- 10, 20, 20, __, 10 <__, __, __>
     ring2="Niqmaddu Ring",              -- 10, __, __, __, __ <__, __,  3>
     back=gear.DRG_WS1_Cape,             -- 30, 20, 20, __, __ <10, __, __>
     waist="Fotia Belt",                 -- __, __, __, __, __ <__, __, __>; ftp+
-    -- 243 STR, 275 Att, 332 Acc, 0 WSD, 55 PDL <26 DA, 10 TA, 3 QA>
+    -- 243 STR, 275 Att, 334 Acc, 0 WSD, 55 PDL <26 DA, 10 TA, 3 QA>
 
     -- ear2="Peltast's Earring +2",     -- 15, __, 20, __,  9 <__, __, __>
     -- 258 STR, 275 Att, 340 Acc, 0 WSD, 56 PDL <26 DA, 10 TA, 3 QA>
@@ -608,12 +608,12 @@ function init_gear_sets()
     feet=gear.Nyame_B_feet,             -- 23, 24, 65, 53, 11, __
     neck="Dragoon's Collar +2",         -- 15, 15, 25, 25, __, 10
     ear1="Thrud Earring",               -- 10, 10, __, __,  3, __
-    ear2="Peltast's Earring +1",        -- __, __, __, 12, __,  8
+    ear2="Peltast's Earring +1",        -- __, __, __, 14, __,  8
     ring1="Epaminondas's Ring",         -- __, __, __, __,  5, __
     ring2="Ephramad's Ring",            -- 10, __, 20, 20, __, 10
     back=gear.DRG_WS2_Cape,             -- 30, __, 20, 20, 10, __
     waist="Sailfi Belt +1",             -- 15, __, 15, __, __, __
-    -- 260 STR, 200 VIT, 448 Att, 350 Acc, 59 WSD, 45 PDL
+    -- 260 STR, 200 VIT, 448 Att, 352 Acc, 59 WSD, 45 PDL
     
     -- ear2="Peltast's Earring +2",     -- 15, 15, __, 20, __,  9
     -- 275 STR, 215 VIT, 448 Att, 358 Acc, 59 WSD, 46 PDL
@@ -683,12 +683,12 @@ function init_gear_sets()
     feet=gear.Nyame_B_feet,             -- 23, 65, 53, 11, __ (__, __)
     neck="Dragoon's Collar +2",         -- 15, 25, 25, __, 10 ( 4, __)
     ear1="Moonshade Earring",           -- __, __,  4, __, __ (__, __); tp bonus +250
-    ear2="Peltast's Earring +1",        -- __, __, 12, __,  8 ( 4, __)
+    ear2="Peltast's Earring +1",        -- __, __, 14, __,  8 ( 5, __)
     ring1="Ephramad's Ring",            -- 10, 20, 20, __, 10 (__, __)
     ring2="Sroda Ring",                 -- 15, __, __, __,  3 (__, __)
     back=gear.DRG_WS2_Cape,             -- 30, 20, 20, 10, __ (__, __)
     waist="Sailfi Belt +1",             -- 15, 15, __, __, __ (__, __)
-    -- 248 STR, 437 Att, 343 Acc, 50 WSD, 40 PDL (16 Crit Rate, 12 Crit Dmg)
+    -- 248 STR, 437 Att, 345 Acc, 50 WSD, 40 PDL (17 Crit Rate, 12 Crit Dmg)
 
     -- legs="Peltast's Cuissots +3",    -- 53, 73, 63, __, __ (__, 13)
     -- ear2="Peltast's Earring +2",     -- 15, __, 20, __,  9 ( 6, __)
@@ -706,12 +706,12 @@ function init_gear_sets()
     feet="Gleti's Boots",               -- 33, 70, 55, __,  5 ( 4, __)
     neck="Dragoon's Collar +2",         -- 15, 25, 25, __, 10 ( 4, __)
     ear1="Moonshade Earring",           -- __, __,  4, __, __ (__, __); tp bonus +250
-    ear2="Peltast's Earring +1",        -- __, __, 12, __,  8 (__, __)
+    ear2="Peltast's Earring +1",        -- __, __, 14, __,  8 ( 5, __)
     ring1="Niqmaddu Ring",              -- 10, __, __, __, __ (__, __)
     ring2="Ephramad's Ring",            -- 10, 20, 20, __, 10 (__, __)
     back=gear.DRG_WS2_Cape,             -- 30, 20, 20, 10, __ (__, __)
     waist="Sailfi Belt +1",             -- 15, 15, __, __, __ (__, __)
-    -- 254 STR, 453 Att, 356 Acc, 16 WSD, 63 PDL (34 Crit Rate, 0 Crit Dmg)
+    -- 254 STR, 453 Att, 358 Acc, 16 WSD, 63 PDL (39 Crit Rate, 0 Crit Dmg)
     
     -- ear2="Peltast's Earring +2",     -- 15, __, 20, __,  9 ( 6, __)
     -- 269 STR, 453 Att, 364 Acc, 16 WSD, 64 PDL (40 Crit Rate, 0 Crit Dmg)
@@ -750,13 +750,13 @@ function init_gear_sets()
     feet="Gleti's Boots",               -- 29, 70, 55, __,  5
     neck="Dragoon's Collar +2",         -- __, 25, 25, __, 10
     ear1="Moonshade Earring",           -- __, __,  4, __, __; tp bonus +250
-    ear2="Peltast's Earring +1",        -- __, __, 12, __,  8
-    -- 230 DEX, 402 Attack, 326 Accuracy, 44 WSD, 42 PDL
+    ear2="Peltast's Earring +1",        -- __, __, 14, __,  8
+    -- 230 DEX, 402 Attack, 328 Accuracy, 44 WSD, 42 PDL
   })
   sets.precast.WS["Geirskogul"].AttCappedMaxTP = set_combine(sets.precast.WS["Geirskogul"].AttCapped, {
     ear1="Odr Earring",                 -- 10, __, __, __, __
-    ear2="Peltast's Earring +1",        -- __, __, 12, __,  8
-    -- 240 DEX, 402 Attack, 322 Accuracy, 44 WSD, 42 PDL
+    ear2="Peltast's Earring +1",        -- __, __, 14, __,  8
+    -- 240 DEX, 402 Attack, 324 Accuracy, 44 WSD, 42 PDL
   })
 
   -- 50% STR; 4 hit, can crit
@@ -769,12 +769,12 @@ function init_gear_sets()
     feet="Gleti's Boots",               -- 33, __, 70,  5 ( 4, __)
     neck="Dragoon's Collar +2",         -- 15, __, 25, 10 ( 4, __)
     ear1="Moonshade Earring",           -- __, __, __, __ (__, __); TP Bonus+250
-    ear2="Peltast's Earring +1",        -- __, __, __,  8 ( 4, __)
+    ear2="Peltast's Earring +1",        -- __, __, __,  8 ( 5, __)
     ring1="Ephramad's Ring",            -- 10, __, 20, 10 (__, __)
     ring2="Sroda Ring",                 -- 15, __, __, __ (__, __)
     back=gear.DRG_WS2_Cape,             -- 30, 10, 20, __ (__, __)
     waist="Sailfi Belt +1",             -- 15, __, 15, __ (__, __)
-    -- 275 STR, 10 WSD, 351 Att, 40 PDL (41 Crit Rate, 12 Crit Dmg)
+    -- 275 STR, 10 WSD, 351 Att, 40 PDL (42 Crit Rate, 12 Crit Dmg)
 
     -- legs="Peltast's Cuissots +3",    -- 53, __, 73, __ (__, 13)
     -- ear2="Peltast's Earring +2",     -- 15, __, __,  9 ( 6, __)
@@ -794,12 +794,12 @@ function init_gear_sets()
     feet="Gleti's Boots",               -- 33, __, 70,  5 ( 4, __)
     neck="Dragoon's Collar +2",         -- 15, __, 25, 10 ( 4, __)
     ear1="Thrud Earring",               -- 10,  3, __, __ (__, __)
-    ear2="Peltast's Earring +1",        -- __, __, __,  8 (__, __)
+    ear2="Peltast's Earring +1",        -- __, __, __,  8 ( 5, __)
     ring1="Ephramad's Ring",            -- 10, __, 20, 10 (__, __)
     ring2="Sroda Ring",                 -- 15, __, __, __ (__, __)
     back=gear.DRG_WS2_Cape,             -- 30, 10, 20, __ (__, __)
     waist="Sailfi Belt +1",             -- 15, __, 15, __ (__, __)
-    -- 271 STR, 13 WSD, 423 Att, 58 PDL (27 Crit Rate, 12 Crit Dmg)
+    -- 271 STR, 13 WSD, 423 Att, 58 PDL (32 Crit Rate, 12 Crit Dmg)
 
     -- legs="Peltast's Cuissots +3",    -- 53, __, 73, __ (__, 13)
     -- ear2="Peltast's Earring +2",     -- 15, __, __,  9 ( 6, __)
