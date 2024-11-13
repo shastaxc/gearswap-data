@@ -1684,6 +1684,9 @@ function init_gear_sets()
     -- Empy set effect                   ___, __, __, __, __ [__/__, ___]
     -- Traits/Gifts/Merits            --                  38
     -- 255 M.Acc skill, 8 Elemental Skill, 499 M.Acc, 314 INT, 62 FC [26 PDT/26 MDT, 618 M.Eva]
+
+    -- main="Murgleis",               -- 255, __, 70, __, __ [__/__, ___]; +49 M.Acc more from AM
+    -- 255 M.Acc skill, 8 Elemental Skill, 519 M.Acc, 314 INT, 62 FC [26 PDT/26 MDT, 618 M.Eva]
   }
 
   -- For spells like Burn, Choke, etc.
