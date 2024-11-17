@@ -183,7 +183,7 @@ function job_setup()
 
   state.OffenseMode:options('Normal', 'LowAcc', 'MidAcc', 'HighAcc')
   state.HybridMode:options('HeavyDef', 'Normal')
-  state.CastingMode:options('Resistant', 'Normal')
+  state.CastingMode:options('Normal', 'Resistant')
   state.IdleMode:options('Normal', 'HeavyDef', 'Gokotai')
   state.WeaponskillMode:options('Normal', 'Proc')
 
@@ -357,6 +357,8 @@ function init_gear_sets()
   sets.WeaponSet['Gokotai'] = {
     main="Gokotai",
     sub=gear.Malevolence_1,
+    -- range="Ullr",
+    ammo=empty,
   }
 
 
@@ -365,6 +367,7 @@ function init_gear_sets()
   -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
 
   sets.defense.PDT = {
+    range=empty,
     ammo="Staunch Tathlum +1",        -- [ 3/ 3, ___] ___, 11
     head=gear.Nyame_B_head,           -- [ 7/ 7, 123]  91, __
     body=gear.Nyame_B_body,           -- [ 9/ 9, 139] 102, __
@@ -410,7 +413,6 @@ function init_gear_sets()
 
   -- Max out DW; Regain from DW caps at 100
   sets.idle.Gokotai = {
-    ammo="Staunch Tathlum +1",        -- __ [ 3/ 3, ___] ___
     head=gear.Ryuo_C_head,            --  9 [__/__,  48]  36
     body="Mochizuki Chainmail +3",    --  9 [__/__,  73]  72
     hands=gear.Floral_Gauntlets,      --  5 [__/ 2,  37]  24; Taeon alt
@@ -424,10 +426,10 @@ function init_gear_sets()
     back=gear.NIN_DW_Cape,            -- 10 [10/__, ___] ___
     waist="Reiki Yotai",              --  7 [__/__, ___] ___
     -- Traits                            35
-    -- 103 DW [36 PDT/20 MDT, 319 M.Eva] 282 Evasion
+    -- 103 DW [33 PDT/17 MDT, 319 M.Eva] 282 Evasion
 
     -- hands="Floral Gauntlets",      --  5 [__/ 4,  37]  24
-    -- 103 DW [36 PDT/22 MDT, 319 M.Eva] 282 Evasion
+    -- 103 DW [33 PDT/19 MDT, 319 M.Eva] 282 Evasion
   }
 
   sets.idle.Regain = set_combine(sets.idle, sets.latent_regain)
@@ -459,6 +461,7 @@ function init_gear_sets()
   }
 
   sets.precast.Waltz = {
+    range=empty,
     ammo="Yamarang",
     body="Passion Jacket",
     legs="Dashing Subligar",
@@ -473,6 +476,7 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.precast.FC = {
+    range=empty,
     ammo="Sapience Orb",              --  2 [__/__, ___]
     head=gear.Herc_Refresh_head,      --  7 [__/__,  59]
     body=gear.Taeon_FC_body,          --  9 [__/__,  64]
@@ -507,6 +511,7 @@ function init_gear_sets()
 
   -- Default set for any weaponskill that isn't any more specifically defined
   sets.precast.WS = {
+    range=empty,
     ammo="Seething Bomblet +1",
     head="Mpaca's Cap",
     body=gear.Nyame_B_body,
@@ -530,6 +535,7 @@ function init_gear_sets()
     -- ear2="Hattori Earring +2",
   })
   sets.precast.WS.AttCapped = set_combine(sets.precast.WS, {
+    range=empty,
     ammo="Crepuscular Pebble",
     head=gear.Nyame_B_head,
     body=gear.Nyame_B_body,
@@ -555,6 +561,7 @@ function init_gear_sets()
   })
 
   sets.HybridWS = {
+    range=empty,
     ammo="Seething Bomblet +1",
     head="Mochizuki Hatsuburi +3",
     body=gear.Nyame_B_body,
@@ -593,6 +600,7 @@ function init_gear_sets()
   sets.precast.WS['Blade: Chi'].AttCappedMaxTP = set_combine(sets.HybridWS.AttCappedMaxTP, {})
 
   sets.precast.WS['Blade: Ei'] = {
+    range=empty,
     ammo="Seething Bomblet +1",
     head="Pixie Hairpin +1",
     body=gear.Nyame_B_body,
@@ -616,6 +624,7 @@ function init_gear_sets()
   })
 
   sets.precast.WS['Aeolian Edge'] = set_combine(sets.precast.WS, {
+    range=empty,
     ammo="Ghastly Tathlum +1",
     head="Mochizuki Hatsuburi +3",
     body=gear.Nyame_B_body,
@@ -644,6 +653,7 @@ function init_gear_sets()
   sets.precast.WS['Blade: Yu'].AttCappedMaxTP = set_combine(sets.precast.WS['Aeolian Edge'].AttCappedMaxTP, {})
 
   sets.precast.WS['Blade: Hi'] = {
+    range=empty,
     ammo="Yetshila +1",
     head="Blistering Sallet +1",
     body="Hattori Ningi +2",
@@ -665,6 +675,7 @@ function init_gear_sets()
   }
   sets.precast.WS['Blade: Hi'].MaxTP = set_combine(sets.precast.WS['Blade: Hi'], {})
   sets.precast.WS['Blade: Hi'].AttCapped = {
+    range=empty,
     ammo="Yetshila +1",
     head=gear.Nyame_B_head,
     body=gear.Nyame_B_body,
@@ -686,6 +697,7 @@ function init_gear_sets()
   sets.precast.WS['Blade: Hi'].AttCappedMaxTP = set_combine(sets.precast.WS['Blade: Hi'].AttCapped, {})
   
   sets.precast.WS['Blade: Kamu'] = {
+    range=empty,
     ammo="Seething Bomblet +1",
     head=gear.Nyame_B_head,
     body=gear.Nyame_B_body,
@@ -705,6 +717,7 @@ function init_gear_sets()
   }
   sets.precast.WS['Blade: Kamu'].MaxTP = set_combine(sets.precast.WS['Blade: Kamu'], {})
   sets.precast.WS['Blade: Kamu'].AttCapped = {
+    range=empty,
     ammo="Crepuscular Pebble",
     head=gear.Nyame_B_head,
     body=gear.Nyame_B_body,
@@ -725,6 +738,7 @@ function init_gear_sets()
   sets.precast.WS['Blade: Kamu'].AttCappedMaxTP = set_combine(sets.precast.WS['Blade: Kamu'].AttCapped, {})
 
   sets.precast.WS['Blade: Ku'] = {
+    range=empty,
     ammo="Coiste Bodhar",
     head="Mpaca's Cap",
     body=gear.Nyame_B_body,
@@ -745,6 +759,7 @@ function init_gear_sets()
   }
   sets.precast.WS['Blade: Ku'].MaxTP = set_combine(sets.precast.WS['Blade: Ku'], {})
   sets.precast.WS['Blade: Ku'].AttCapped = {
+    range=empty,
     ammo="Crepuscular Pebble",
     head="Blistering Sallet +1",
     body=gear.Nyame_B_body,
@@ -766,6 +781,7 @@ function init_gear_sets()
   sets.precast.WS['Blade: Ku'].AttCappedMaxTP = set_combine(sets.precast.WS['Blade: Ku'].AttCapped, {})
 
   sets.precast.WS['Blade: Metsu'] = {
+    range=empty,
     ammo="Coiste Bodhar",
     head=gear.Nyame_B_head,
     body=gear.Nyame_B_body,
@@ -786,6 +802,7 @@ function init_gear_sets()
   }
   sets.precast.WS['Blade: Metsu'].MaxTP = set_combine(sets.precast.WS['Blade: Metsu'], {})
   sets.precast.WS['Blade: Metsu'].AttCapped = {
+    range=empty,
     ammo="Crepuscular Pebble",
     head=gear.Nyame_B_head,
     body=gear.Nyame_B_body,
@@ -807,6 +824,7 @@ function init_gear_sets()
   sets.precast.WS['Blade: Metsu'].AttCappedMaxTP = set_combine(sets.precast.WS['Blade: Metsu'].AttCapped, {})
 
   sets.precast.WS['Blade: Shun'] = {
+    range=empty,
     ammo="Coiste Bodhar",
     head="Mpaca's Cap",
     body=gear.Nyame_B_head,
@@ -831,6 +849,7 @@ function init_gear_sets()
     -- ear2="Hattori Earring +2",
   })
   sets.precast.WS['Blade: Shun'].AttCapped = {
+    range=empty,
     ammo="Crepuscular Pebble",
     head="Ken. Jinpachi +1",
     body="Malignance Tabard",
@@ -856,6 +875,7 @@ function init_gear_sets()
   })
 
   sets.precast.WS['Blade: Ten'] = {
+    range=empty,
     ammo="Coiste Bodhar",
     head="Mpaca's Cap",
     body=gear.Nyame_B_body,
@@ -880,6 +900,7 @@ function init_gear_sets()
     -- ear2="Hattori Earring +2",
   })
   sets.precast.WS['Blade: Ten'].AttCapped = {
+    range=empty,
     ammo="Crepuscular Pebble",
     head="Mpaca's Cap",
     body=gear.Nyame_B_body,
@@ -905,6 +926,7 @@ function init_gear_sets()
   })
 
   sets.precast.WS['Evisceration'] = {
+    range=empty,
     ammo="Yetshila +1",
     head="Blistering Sallet +1",
     body="Hattori Ningi +2",
@@ -924,6 +946,7 @@ function init_gear_sets()
   }
   sets.precast.WS['Evisceration'].MaxTP = set_combine(sets.precast.WS['Evisceration'], {})
   sets.precast.WS['Evisceration'].AttCapped = {
+    range=empty,
     ammo="Yetshila +1",
     head="Blistering Sallet +1",
     body="Ken. Samue +1",
@@ -944,6 +967,7 @@ function init_gear_sets()
   sets.precast.WS['Evisceration'].AttCappedMaxTP = set_combine(sets.precast.WS['Evisceration'].AttCapped, {})
   
   sets.precast.WS['Savage Blade'] = {
+    range=empty,
     ammo="Seething Bomblet +1",
     head="Mpaca's Cap",
     body=gear.Nyame_B_body,
@@ -968,6 +992,7 @@ function init_gear_sets()
     -- ear2="Hattori Earring +2",
   })
   sets.precast.WS['Savage Blade'].AttCapped = {
+    range=empty,
     ammo="Crepuscular Pebble",
     head=gear.Nyame_B_head,
     body=gear.Nyame_B_body,
@@ -995,6 +1020,7 @@ function init_gear_sets()
 
   -- Used for "Proc" mode, when you typically don't want it to do a lot of damage. Focus acc.
   sets.precast.WS['Proc'] = {
+    range=empty,
     ammo="Yamarang",
     head="Malignance Chapeau",
     body="Malignance Tabard",
@@ -1031,6 +1057,7 @@ function init_gear_sets()
 
   -- DT > FC > +Enmity > SIRD
   sets.midcast.Utsusemi = {
+    range=empty,
     ammo="Staunch Tathlum +1",        -- __, __, __, 11 [ 3/ 3, ___]
     head=gear.Herc_Refresh_head,      -- __,  7, __, __ [__/__,  59]
     body=gear.Taeon_FC_body,          -- __,  9, __, __ [__/__,  64]
@@ -1056,6 +1083,7 @@ function init_gear_sets()
 
   -- DT > +Enmity > FC > SIRD
   sets.midcast.Utsusemi.Yonin = {
+    range=empty,
     ammo="Sapience Orb",              -- __,  2,  2, __ [__/__, ___]
     head="Hattori Zukin +2",          -- __, __, __, __ [ 9/ 9, 109]
     body="Emet Harness +1",           -- __, __, 10, __ [ 6/__,  64]
@@ -1080,65 +1108,78 @@ function init_gear_sets()
     -- 2 Shadows, 2 FC, 62 Enmity, 23 SIRD [50 PDT / 34 MDT, 525 M.Eva]
   }
 
-  -- Elemental Ninjutsu accuracy not affected by M.Acc stat, cannot miss or be resisted
   -- Ninjustu skill cap for damage calculations: Ichi=250, Ni=349, San=499
   -- NIN99 with merits has 469 Ninjusu skill, so naturally capped on Ichi and Ni. San could use more Ninjutsu skill for dmg.
   -- Ninjutsu skill is capped for San at Master Level 30 so we do not need to use any in gear.
-  sets.midcast.ElementalNinjutsu = {}
+  sets.midcast.ElementalNinjutsu = {
+    range=empty,
+    ammo="Ghastly Tathlum +1",        -- 11, __, __, __, 21 (__, __) [__/__, ___]
+    head="Mochizuki Hatsuburi +3",    -- 32, 82, __, 37, __ (__, __) [__/__,  63]
+    body=gear.Nyame_B_body,           -- 42, 30, __, 40, __ ( 7, __) [ 9/ 9, 139]
+    hands="Hattori Tekko +2",         -- 22, 16, __, 52, __ (10, __) [__/__, 103]; Ninjutsu dmg +16%
+    legs=gear.Nyame_B_legs,           -- 44, 30, __, 40, __ ( 6, __) [ 8/ 8, 150]
+    feet="Mochizuki Kyahan +3",       -- __, __, 23, 36, __ (__, __) [__/__,  84]; MAB+25%
+    neck="Sibyl Scarf",               -- 10, 10, __, __, __ (__, __) [__/__, ___]
+    ear1="Friomisi Earring",          -- __, 10, __, __, __ (__, __) [__/__, ___]
+    ear2="Novio Earring",             -- __,  7, __, __, __ (__, __) [__/__, ___]
+    ring1="Shiva Ring +1",            --  9,  3, __, __, __ (__, __) [__/__, ___]
+    ring2="Dingir Ring",              -- __, 10, __, __, __ (__, __) [__/__, ___]
+    back=gear.NIN_MAB_Cape,           -- 30, 10, __, 20, 20 (__, __) [10/__, ___]
+    waist="Eschan Stone",             -- __,  7, __,  7, __ (__, __) [__/__, ___]
+    -- 200 INT, 215 MAB, 23 MAccSk, 232 M.Acc, 41 MDmg (23 MB Dmg%, 0 MB2 Dmg%) [27 PDT/17 MDT, 539 M.Eva]
 
-  sets.midcast.ElementalNinjutsu.Ichi = {
-    ammo="Ghastly Tathlum +1",        -- 11, __, __, 21, __, __ [__/__, ___]
-    head="Mochizuki Hatsuburi +3",    -- 32, 82, __, __, __, __ [__/__,  63]
-    body=gear.Nyame_B_body,           -- 42, 30, __, __,  7, __ [ 9/ 9, 139]
-    hands="Hattori Tekko +2",         -- 22, 16, __, __, 10, __ [__/__, 103]; Ninjutsu dmg +16%
-    legs=gear.Nyame_B_legs,           -- 44, 30, __, __,  6, __ [ 8/ 8, 150]
-    feet="Mochizuki Kyahan +3",       -- __, __, 23, __, __, __ [__/__,  84]; MAB+25%
-    neck="Sibyl Scarf",               -- 10, 10, __, __, __, __ [__/__, ___]
-    ear1="Novio Earring",             -- __,  7, __, __, __, __ [__/__, ___]
-    ear2="Friomisi Earring",          -- __, 10, __, __, __, __ [__/__, ___]
-    ring1="Shiva Ring +1",            --  9,  3, __, __, __, __ [__/__, ___]
-    ring2="Dingir Ring",              -- __, 10, __, __, __, __ [__/__, ___]
-    back=gear.NIN_MAB_Cape,           -- 30, 10, __, 20, __, __ [10/__, ___]
-    waist="Eschan Stone",             -- __,  7, __, __, __, __ [__/__, ___]
-    -- 200 INT, 215 MAB, 23 MAccSk, 41 MDmg, 23 MB Dmg%, 0 MB2 Dmg% [27 PDT/17 MDT, 539 M.Eva]
-
-    -- hands="Hattori Tekko +3",      -- 27, 18, __, __, 15, __ [__/__, 103]; Ninjutsu dmg +18%
+    -- hands="Hattori Tekko +3",      -- 27, 18, __, 62, __, (15, __) [__/__, 103]; Ninjutsu dmg +18%
   }
-  sets.midcast.ElementalNinjutsu.Ni = set_combine(sets.midcast.ElementalNinjutsu.Ichi, {
-    ring1="Metamorph Ring +1",        -- 16, __, __, __, __, __ [__/__, ___]
-  })
-  sets.midcast.ElementalNinjutsu.San = set_combine(sets.midcast.ElementalNinjutsu.Ni, {
-    ring2="Shiva Ring +1",            --  9,  3, __, __, __, __ [__/__, ___]
-  })
+  sets.midcast.ElementalNinjutsu.MB = {
+    range=empty,
+    ammo="Ghastly Tathlum +1",        -- 11, __, __, __, 21 (__, __) [__/__, ___]
+    head="Mochizuki Hatsuburi +3",    -- 32, 82, __, 37, __ (__, __) [__/__,  63]
+    body=gear.Nyame_B_body,           -- 42, 30, __, 40, __ ( 7, __) [ 9/ 9, 139]
+    hands="Hattori Tekko +2",         -- 22, 16, __, 52, __ (10, __) [__/__, 103]; Ninjutsu dmg +16%
+    legs=gear.Nyame_B_legs,           -- 44, 30, __, 40, __ ( 6, __) [ 8/ 8, 150]
+    feet="Mochizuki Kyahan +3",       -- __, __, 23, 36, __ (__, __) [__/__,  84]; MAB+25%
+    neck="Warder's Charm +1",         -- __, __, __, __, __ (10, __) [__/__, ___]
+    ear1="Friomisi Earring",          -- __, 10, __, __, __ (__, __) [__/__, ___]
+    ear2="Novio Earring",             -- __,  7, __, __, __ (__, __) [__/__, ___]
+    ring1="Dingir Ring",              -- __, 10, __, __, __ (__, __) [__/__, ___]
+    ring2="Mujin Band",               -- __, __, __, __, __ (__,  5) [__/__, ___]
+    back=gear.NIN_MAB_Cape,           -- 30, 10, __, 20, 20 (__, __) [10/__, ___]
+    waist="Eschan Stone",             -- __,  7, __,  7, __ (__, __) [__/__, ___]
+    -- 181 INT, 202 MAB, 23 MAccSk, 232 M.Acc, 41 MDmg (33 MB Dmg%, 5 MB2 Dmg%) [27 PDT/17 MDT, 539 M.Eva]
 
-  sets.midcast.ElementalNinjutsu.Ichi.MB = {
-    ammo="Ghastly Tathlum +1",        -- 11, __, __, 21, __, __ [__/__, ___]
-    head="Mochizuki Hatsuburi +3",    -- 32, 82, __, __, __, __ [__/__,  63]
-    body=gear.Nyame_B_body,           -- 42, 30, __, __,  7, __ [ 9/ 9, 139]
-    hands="Hattori Tekko +2",         -- 22, 16, __, __, 10, __ [__/__, 103]; Ninjutsu dmg +16%
-    legs=gear.Nyame_B_legs,           -- 44, 30, __, __,  6, __ [ 8/ 8, 150]
-    feet="Mochizuki Kyahan +3",       -- __, __, 23, __, __, __ [__/__,  84]; MAB+25%
-    neck="Warder's Charm +1",         -- __, __, __, __, 10, __ [__/__, ___]
-    ear1="Novio Earring",             -- __,  7, __, __, __, __ [__/__, ___]
-    ear2="Friomisi Earring",          -- __, 10, __, __, __, __ [__/__, ___]
-    ring1="Dingir Ring",              -- __, 10, __, __, __, __ [__/__, ___]
-    ring2="Mujin Band",               -- __, __, __, __, __,  5 [__/__, ___]
-    back=gear.NIN_MAB_Cape,           -- 30, 10, __, 20, __, __ [10/__, ___]
-    waist="Eschan Stone",             -- __,  7, __, __, __, __ [__/__, ___]
-    -- 181 INT, 202 MAB, 23 MAccSk, 41 MDmg, 33 MB Dmg%, 5 MB2 Dmg% [27 PDT/17 MDT, 539 M.Eva]
-
-    -- hands="Hattori Tekko +3",      -- 27, 18, __, __, 15, __ [__/__, 103]; Ninjutsu dmg +18%
-    -- 186 INT, 204 MAB, 23 MAccSk, 41 MDmg, 38 MB Dmg%, 5 MB2 Dmg% [27 PDT/17 MDT, 539 M.Eva]
+    -- hands="Hattori Tekko +3",      -- 27, 18, __, 62, __, (15, __) [__/__, 103]; Ninjutsu dmg +18%
+    -- 186 INT, 204 MAB, 23 MAccSk, 242 M.Acc, 41 MDmg (38 MB Dmg%, 5 MB2 Dmg%) [27 PDT/17 MDT, 549 M.Eva]
   }
-  sets.midcast.ElementalNinjutsu.Ni.MB = set_combine(sets.midcast.ElementalNinjutsu.Ichi.MB, {
-    neck="Sibyl Scarf",               -- 10, 10, __, __, __, __ [__/__, ___]
-    ear1="Lugra Earring +1",          --  8, __, __, __, __, __ [__/__, ___]
-  })
-  sets.midcast.ElementalNinjutsu.San.MB = set_combine(sets.midcast.ElementalNinjutsu.Ni.MB, {
-    ring1="Metamorph Ring +1",        -- 16, __, __, __, __, __ [__/__, ___]
-  })
+
+  -- Mostly for Ongo who has 445 INT at v25. Your dINT is less than -70 so INT is too low to help with M.Acc.
+  -- Stack M.Acc from gear instead. Expect no help from buffs in that fight. Aim for 1365 m.acc (including 
+  -- m.acc bonuses from ninjutsu skill).
+  -- Aim for 700 m.acc from gear/weapons (including skill bonuses)
+  sets.midcast.ElementalNinjutsu.Resistant = {
+    range=empty,
+    ammo="Yamarang",                  -- __, __, __, 15, __ (__, __) [__/__,  15]
+    head="Hachiya Hatsuburi +3",      -- 31, __, 17, 54, __ (__, __) [__/__,  63]
+    body=gear.Nyame_B_body,           -- 42, 30, __, 40, __ ( 7, __) [ 9/ 9, 139]
+    hands="Hattori Tekko +2",         -- 22, 16, __, 52, __ (10, __) [__/__, 103]; Ninjutsu dmg +16%
+    legs=gear.Nyame_B_legs,           -- 44, 30, __, 40, __ ( 6, __) [ 8/ 8, 150]
+    feet="Mochizuki Kyahan +3",       -- __, __, 23, 36, __ (__, __) [__/__,  84]; MAB+25%
+    neck="Sanctity Necklace",         -- __, 10, __, 10, __ (__, __) [__/__, ___]
+    ear1="Friomisi Earring",          -- __, 10, __, __, __ (__, __) [__/__, ___]
+    ear2="Hattori Earring +1",        -- __, __, __, 12, __ (__, __) [__/__, ___]
+    ring1="Stikini Ring +1",          -- __, __,  8, 11, __ (__, __) [__/__, ___]
+    ring2="Metamorph Ring +1",        -- 16, __, __, 16, __ (__, __) [__/__, ___]
+    back=gear.NIN_MAB_Cape,           -- 30, 10, __, 20, 20 (__, __) [10/__, ___]
+    waist="Eschan Stone",             -- __,  7, __,  7, __ (__, __) [__/__, ___]
+    -- 185 INT, 113 MAB, 48 MAccSk, 313 M.Acc, 20 MDmg (23 MB Dmg%, 0 MB2 Dmg%) [27 PDT/17 MDT, 554 M.Eva]
+
+    -- hands="Hattori Tekko +3",      -- 27, 18, __, 62, __ (15, __) [__/__, 103]; Ninjutsu dmg +18%
+    -- ear2="Novio Earring",          -- __,  7, __, __, __ (__, __) [__/__, ___]; Equip when Hattori Tekko +3
+    -- 190 INT, 122 MAB, 48 MAccSk, 311 M.Acc, 20 MDmg (28 MB Dmg%, 0 MB2 Dmg%) [27 PDT/17 MDT, 554 M.Eva]
+  }
+  sets.midcast.ElementalNinjutsu.Resistant.MB = set_combine(sets.midcast.ElementalNinjutsu.Resistant, {})
 
   sets.midcast.EnfeeblingNinjutsu = {
+    range=empty,
     ammo="Yamarang",                  -- 15, __ [__/__,  15]
     head="Hachiya Hatsuburi +3",      -- 54, 17 [__/__,  63]
     body="Hattori Ningi +2",          -- 54, __ [12/12, 119]
@@ -1165,6 +1206,7 @@ function init_gear_sets()
   -- to about 50%. Lowering it further will just cause non-threatening attacks to wear off Migawari so I am
   -- choosing not to stack Ninjutsu skill in this set. Focusing Ninja Tool Expertise and defensive stats.
   sets.midcast.EnhancingNinjutsu = {
+    range=empty,
     ammo="Staunch Tathlum +1",        -- __ [ 3/ 3, ___]
     head="Hattori Zukin +2",          -- __ [ 9/ 9, 109]
     body="Hattori Ningi +2",          -- __ [12/12, 119]
@@ -1192,26 +1234,6 @@ function init_gear_sets()
   sets.midcast.Stun = set_combine(sets.midcast.EnfeeblingNinjutsu, {})
 
 
-  ------------------------------------------------------------------------------------------------
-  --    Ranged
-  ------------------------------------------------------------------------------------------------
-
-  sets.midcast.RA = {
-    head="Malignance Chapeau",
-    body="Malignance Tabard",
-    hands="Malignance Gloves",
-    legs="Malignance Tights",
-    feet="Malignance Boots",
-    neck="Iskur Gorget",
-    ear1="Enervating Earring",
-    ear2="Telos Earring",
-    ring1="Cacoethic Ring +1",
-    ring2="Hajduk Ring +1",
-    back=gear.NIN_STP_Cape,
-    waist="Yemaya Belt",
-  }
-
-
   -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
   --     Engaged
   -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
@@ -1221,6 +1243,7 @@ function init_gear_sets()
 
   -- No DW (0 needed from gear)
   sets.engaged = {
+    range=empty,
     ammo="Seki Shuriken",             -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
     head="Malignance Chapeau",        -- __,  8,  50/50 <__, __, __> [ 6/ 6, 123]  91, __
     body="Tatenashi Haramaki +1",     -- __,  9,  65/__ <__,  5, __> [__/__,  59]  44, __
@@ -1259,6 +1282,7 @@ function init_gear_sets()
 
   -- Low DW (15 needed from gear)
   sets.engaged.LowDW = {
+    range=empty,
     ammo="Seki Shuriken",             -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
     head=gear.Ryuo_C_head,            --  9, 12,  35/35 <__, __, __> [__/__,  48]  36, __
     body="Mpaca's Doublet",           -- __,  8,  55/__ <__,  4, __> [10/__,  86] 102, __
@@ -1297,6 +1321,7 @@ function init_gear_sets()
 
   -- Mid DW (21 needed from gear)
   sets.engaged.MidDW = {
+    range=empty,
     ammo="Seki Shuriken",             -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
     head=gear.Ryuo_C_head,            --  9, 12,  35/35 <__, __, __> [__/__,  48]  36, __
     body=gear.Adhemar_A_body,         --  6, __,  55/35 <__,  4, __> [__/__,  69]  55, __
@@ -1326,6 +1351,7 @@ function init_gear_sets()
 
   -- High DW (25 needed from gear)
   sets.engaged.HighDW = {
+    range=empty,
     ammo="Seki Shuriken",             -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
     head=gear.Ryuo_C_head,            --  9, 12,  35/35 <__, __, __> [__/__,  48]  36, __
     body="Mochizuki Chainmail +3",    --  9, __,  51/47 <__, __, __> [__/__,  73]  72, 10
@@ -1355,6 +1381,7 @@ function init_gear_sets()
 
   -- Super DW (32 needed from gear)
   sets.engaged.SuperDW = {
+    range=empty,
     ammo="Seki Shuriken",             -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
     head=gear.Ryuo_C_head,            --  9, 12,  35/35 <__, __, __> [__/__,  48]  36, __
     body=gear.Adhemar_A_body,         --  6, __,  55/35 <__,  4, __> [__/__,  69]  55, __
@@ -1384,6 +1411,7 @@ function init_gear_sets()
 
   -- Max DW (39 needed from gear)
   sets.engaged.MaxDW = {
+    range=empty,
     ammo="Seki Shuriken",             -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
     head=gear.Ryuo_C_head,            --  9, 12,  35/35 <__, __, __> [__/__,  48]  36, __
     body="Mochizuki Chainmail +3",    --  9, __,  51/47 <__, __, __> [__/__,  73]  72, 10
@@ -1417,6 +1445,7 @@ function init_gear_sets()
 
   -- No DW (0 needed from gear)
   sets.engaged.HeavyDef = {
+    range=empty,
     ammo="Seki Shuriken",             -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
     head="Malignance Chapeau",        -- __,  8,  50/50 <__, __, __> [ 6/ 6, 123]  91, __
     body="Mpaca's Doublet",           -- __,  8,  55/__ <__,  4, __> [10/__,  86] 102, __
@@ -1445,6 +1474,7 @@ function init_gear_sets()
 
   -- Low DW (15 needed from gear)
   sets.engaged.LowDW.HeavyDef = {
+    range=empty,
     ammo="Seki Shuriken",             -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
     head="Malignance Chapeau",        -- __,  8,  50/50 <__, __, __> [ 6/ 6, 123]  91, __
     body="Mpaca's Doublet",           -- __,  8,  55/__ <__,  4, __> [10/__,  86] 102, __
@@ -1473,6 +1503,7 @@ function init_gear_sets()
 
   -- Mid DW (21 needed from gear)
   sets.engaged.MidDW.HeavyDef = {
+    range=empty,
     ammo="Seki Shuriken",             -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
     head="Malignance Chapeau",        -- __,  8,  50/50 <__, __, __> [ 6/ 6, 123]  91, __
     body="Mpaca's Doublet",           -- __,  8,  55/__ <__,  4, __> [10/__,  86] 102, __
@@ -1498,6 +1529,7 @@ function init_gear_sets()
 
   -- High DW (25 needed from gear)
   sets.engaged.HighDW.HeavyDef = {
+    range=empty,
     ammo="Seki Shuriken",             -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
     head="Hattori Zukin +2",          --  7, __,  51/51 <__, __, __> [ 9/ 9, 109]  79, __
     body="Mpaca's Doublet",           -- __,  8,  55/__ <__,  4, __> [10/__,  86] 102, __
@@ -1527,6 +1559,7 @@ function init_gear_sets()
 
   -- Super DW (32 needed from gear)
   sets.engaged.SuperDW.HeavyDef = {
+    range=empty,
     ammo="Seki Shuriken",             -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
     head="Hattori Zukin +2",          --  7, __,  51/51 <__, __, __> [ 9/ 9, 109]  79, __
     body="Mochizuki Chainmail +3",    --  9, __,  51/47 <__, __, __> [__/__,  73]  72, 10
@@ -1556,8 +1589,8 @@ function init_gear_sets()
 
   -- Max DW (39 needed from gear)
   sets.engaged.MaxDW.HeavyDef = {
-    ammo="Staunch Tathlum +1",
-    -- ammo="Seki Shuriken",             -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
+    range=empty,
+    ammo="Seki Shuriken",             -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
     head="Hattori Zukin +2",          --  7, __,  51/51 <__, __, __> [ 9/ 9, 109]  79, __
     body="Mochizuki Chainmail +3",    --  9, __,  51/47 <__, __, __> [__/__,  73]  72, 10
     hands=gear.Adhemar_A_hands,       -- __,  7,  52/32 <__,  4, __> [__/__,  43]  36, __
@@ -1577,7 +1610,6 @@ function init_gear_sets()
     -- 38 DW, 39 STP, 329 Acc/275 R.Acc <0 DA, 4 TA, 0 QA> [51 PDT/35 MDT, 535 M.Eva] 401 Evasion, 89 Daken
   }
   sets.engaged.MaxDW.LowAcc.HeavyDef = set_combine(sets.engaged.MaxDW.HeavyDef, {
-    ammo="Seki Shuriken",             -- __,  2,  __/__ <__, __, __> [__/__, ___] ___, __
   })
   sets.engaged.MaxDW.MidAcc.HeavyDef = set_combine(sets.engaged.MaxDW.LowAcc.HeavyDef, {
   })
@@ -1654,21 +1686,27 @@ end
 function job_post_midcast(spell, action, spellMap, eventArgs)
   if spellMap == 'ElementalNinjutsu' then
     -- Select set based on tier of nuke and whether MB mode is on or off
-    if spell and not state.MagicBurst.value then
-      if spell.en:endswith('Ichi') then
-        equip(sets.midcast.ElementalNinjutsu.Ichi)
-      elseif spell.en:endswith('Ni') then
-        equip(sets.midcast.ElementalNinjutsu.Ni)
+    if not state.MagicBurst.value then
+      local casting_mode = state.CastingMode.value
+      if sets.midcast.ElementalNinjutsu[casting_mode] then
+        equip(sets.midcast.ElementalNinjutsu[casting_mode])
       else
-        equip(sets.midcast.ElementalNinjutsu.San)
+        equip(sets.midcast.ElementalNinjutsu)
       end
     else
-      if spell.en:endswith('Ichi') then
-        equip(sets.midcast.ElementalNinjutsu.Ichi.MB)
-      elseif spell.en:endswith('Ni') then
-        equip(sets.midcast.ElementalNinjutsu.Ni.MB)
+      local casting_mode = state.CastingMode.value
+      if sets.midcast.ElementalNinjutsu[casting_mode] then
+        if sets.midcast.ElementalNinjutsu[casting_mode].MB then
+          equip(sets.midcast.ElementalNinjutsu[casting_mode].MB)
+        else
+          equip(sets.midcast.ElementalNinjutsu[casting_mode])
+        end
       else
-        equip(sets.midcast.ElementalNinjutsu.San.MB)
+        if sets.midcast.ElementalNinjutsu.MB then
+          equip(sets.midcast.ElementalNinjutsu.MB)
+        else
+          equip(sets.midcast.ElementalNinjutsu)
+        end
       end
     end
 
@@ -1972,6 +2010,12 @@ function select_weapons()
     weapons_to_equip = set_combine(sets.ToyWeapon[state.ToyWeapons.current], {})
   elseif sets.WeaponSet[state.WeaponSet.current] then
     weapons_to_equip = set_combine(sets.WeaponSet[state.WeaponSet.current], {})
+  end
+
+  -- Equip appropriate ammo
+  local range_weapon_name = weapons_to_equip.ranged or weapons_to_equip.range
+  if range_weapon_name and silibs.is_weapon(range_weapon_name) then
+    weapons_to_equip.ammo = 'empty'
   end
 
   return weapons_to_equip
