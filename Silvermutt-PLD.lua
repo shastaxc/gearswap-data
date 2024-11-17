@@ -1,5 +1,5 @@
 --[[
-File Status: Good.
+File Status: Good. Bug with shield swapping for Cures when it's supposed to be locked.
 
 Author: Silvermutt
 Required external libraries: SilverLibs
@@ -714,6 +714,10 @@ function init_gear_sets()
   sets.precast.JA['Divine Emblem'] = set_combine(sets.Enmity, {
     feet="Chevalier's Sabatons +2", -- Increase enmity bonus
     -- feet="Chevalier's Sabatons +3", -- Increase enmity bonus
+  })
+
+  sets.precast.JA['Sentinel'] = set_combine(sets.Enmity, {
+    -- feet="Caballarius Leggings +3", -- Increase duration and DT
   })
 
 
