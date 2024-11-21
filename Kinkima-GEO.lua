@@ -349,7 +349,7 @@ function init_gear_sets()
   end
 
   sets.TreasureHunter = {
-    range=empty,
+    range="empty",
     ammo="Perfect Lucky Egg", --1
     body=gear.Merl_TH_body, --2
     waist="Chaac Belt", --1
@@ -376,37 +376,37 @@ function init_gear_sets()
   sets.WeaponSet['Staff'] = {
     main="Mpaca's Staff",
     sub="Khonsu",
-    range=empty,
+    range="empty",
     ammo="White Tathlum",
   }
   sets.WeaponSet['Staff'].Safe = {
     main="Mpaca's Staff",
     sub="Khonsu",
     range="Dunna",
-    ammo=empty,
+    ammo="empty",
   }
   sets.WeaponSet['Maxentius'] = {
     main="Maxentius",
     sub="Genmei Shield",
-    range=empty,
+    range="empty",
     ammo="White Tathlum",
   }
   sets.WeaponSet['Maxentius'].Safe = {
     main="Maxentius",
     sub="Genmei Shield",
     range="Dunna",
-    ammo=empty,
+    ammo="empty",
   }
   sets.WeaponSet['Idris'] = {
     main="Idris",
     sub="Genmei Shield",
-    range=empty,
+    range="empty",
     ammo="White Tathlum",
   }
   sets.WeaponSet['Idris'].Safe = {
     main="Idris",
     sub="Genmei Shield",
-    range=empty,
+    range="empty",
     ammo="White Tathlum",
   }
 
@@ -418,7 +418,7 @@ function init_gear_sets()
   sets.HeavyDef = {
     main="Daybreak",                --  1 [__/__,  30] {__/__, __}
     sub="Genmei Shield",            -- __ [10/__, ___] {__/__, __}
-    range=empty,                    -- __ [__/__, ___] {__/__, __}
+    range="empty",                    -- __ [__/__, ___] {__/__, __}
     ammo="Staunch Tathlum +1",      -- __ [ 3/ 3, ___] {__/__, __}; Status Resist+11
     head="Azimuth Hood +2",         -- __ [11/11, 126] {__/__,  4}
     body="Shamash Robe",            --  3 [10/__, 106] {__/__, __}; Resist Silence+90
@@ -447,7 +447,7 @@ function init_gear_sets()
   sets.HeavyDef.Pet = {
     main="Idris",                   -- __ [__/__, ___] {25/25, __}
     sub="Genmei Shield",            -- __ [10/__, ___] {__/__, __}
-    range=empty,
+    range="empty",
     ammo="Staunch Tathlum +1",      -- __ [ 3/ 3, ___] {__/__, __}; Status Resist+11
     head="Azimuth Hood +2",         -- __ [11/11, 126] {__/__,  4}
     body="Shamash Robe",            --  3 [10/__, 106] {__/__, __}; Resist Silence+90
@@ -549,7 +549,7 @@ function init_gear_sets()
     main="Idris",                   -- __ [__/__, ___] {25, __}
     sub="Genmei Shield",            -- __ [10/__, ___] {__, __}
     range="Dunna",                  --  3 [__/__, ___] { 5, __}
-    ammo=empty,
+    ammo="empty",
     head=gear.Merl_FC_head,         -- 15 [__/__,  86] {__, __}
     body=gear.Merl_FC_body,         -- 14 [ 2/__,  91] {__, __}
     hands="Geomancy Mitaines +3",   -- __ [ 3/__,  57] {13, __}
@@ -572,7 +572,7 @@ function init_gear_sets()
     main="Idris",                   -- __ [__/__, ___] {25, __}
     sub="Genmei Shield",            -- __ [10/__, ___] {__, __}
     range="Dunna",                  --  3 [__/__, ___] { 5, __}
-    ammo=empty,
+    ammo="empty",
     head=gear.Merl_FC_head,         -- 15 [__/__,  86] {__, __}
     body=gear.Merl_FC_body,         -- 14 [ 2/__,  91] {__, __}
     hands="Geomancy Mitaines +3",   -- __ [ 3/__,  57] {13, __}
@@ -597,8 +597,8 @@ function init_gear_sets()
     main="Idris",                   -- __ [__/__, ___] {25, __}
     sub="Genmei Shield",            -- __ [10/__, ___] {__, __}
     range="Dunna",                  --  3 [__/__, ___] { 5, __}
-    ammo=empty,
-    head=empty,
+    ammo="empty",
+    head="empty",
     body="Crepuscular Cloak",       -- __ [__/__, 231] {__, __}
     hands="Volte Gloves",           --  6 [__/__,  96] {__, __}
     legs="Geomancy Pants +3",       -- 15 [__/__, 127] {__, __}
@@ -838,7 +838,7 @@ function init_gear_sets()
     main="Idris",                   -- 10, __, __ [__/__, ___]
     sub="Genmei Shield",            -- __, __, __ [10/__, ___]
     range="Dunna",                  -- __, 18, __ [__/__, ___]
-    ammo=empty,
+    ammo="empty",
     head="Azimuth Hood +2",         -- __, 20, __ [11/11, 126]; Set bonus
     body="Azimuth Coat +2",         -- __, __, __ [__/__, 131]; Set bonus
     hands="Azimuth Gloves +2",      -- __, __, __ [11/11,  88]; Set bonus
@@ -869,7 +869,7 @@ function init_gear_sets()
     main="Idris",                   -- 10, __, __, __, __ [__/__, ___] {25, __}
     sub="Genmei Shield",            -- __, __, __, __, __ [10/__, ___] {__, __}
     range="Dunna",                  -- __, 18, __, __, __ [__/__, ___] { 5, __}
-    ammo=empty,
+    ammo="empty",
     head=gear.Nyame_B_head,         -- __, __, __, __, __ [ 7/ 7, 123] {__, __}
     body=gear.Nyame_B_body,         -- __, __, __, __, __ [ 9/ 9, 139] {__, __}
     hands="Azimuth Gloves +2",      -- __, __, __, __, __ [11/11,  88] {__, __}; Set bonus: save MP
@@ -897,7 +897,7 @@ function init_gear_sets()
     main=gear.Solstice_D,           -- __,  5,  6, 15, __ [__/__, ___] { 4, __}
     sub="Genmei Shield",            -- __, __, __, __, __ [10/__, ___] {__, __}
     range="Dunna",                  -- __, 18, __, __, __ [__/__, ___] { 5, __}
-    ammo=empty,
+    ammo="empty",
     head="Azimuth Hood +2",         -- __, 20, __, __, __ [11/11, 126] {__,  4}; Set bonus
     hands="Azimuth Gloves +2",      -- __, __, __, __, __ [11/11,  88] {__, __}; Set bonus: save MP
     legs="Bagua Pants +3",          -- __, __, __, 21, __ [__/__, 127] {__, __}
@@ -924,7 +924,7 @@ function init_gear_sets()
   sets.midcast.CureNormal = {
     main=gear.Gada_MND,             -- 18, 21, __,  18 [__/__, ___] __
     sub="Genbu's Shield",           --  5, __, __, ___ [10/__, ___] __
-    range=empty,
+    range="empty",
     ammo="Esper Stone +1",          -- __, __, __, ___ [__/__, ___]  5
     head=gear.Vanya_B_head,         -- 10, 27, 18,  20 [__/ 5,  75] __
     body=gear.Vanya_B_body,         -- __, 36, 23,  20 [ 1/ 4,  80] __
@@ -958,7 +958,7 @@ function init_gear_sets()
   sets.midcast['Elemental Magic'] = {
     main="Bunzi's Rod",
     sub="Ammurapi Shield",
-    range=empty,
+    range="empty",
     ammo="Ghastly Tathlum +1",
     head="Azimuth Hood +2",
     body="Azimuth Coat +2",
@@ -975,7 +975,7 @@ function init_gear_sets()
     
     -- main="Bunzi's Rod",
     -- sub="Ammurapi Shield",
-    -- range=empty,
+    -- range="empty",
     -- ammo="Ghastly Tathlum +1",
     -- head="Azimuth Hood +2",
     -- body="Azimuth Coat +2",
@@ -1000,7 +1000,7 @@ function init_gear_sets()
   sets.midcast['Drain'] = set_combine(sets.midcast.IntEnfeebling, {
     main="Bunzi's Rod",
     sub="Ammurapi Shield",
-    range=empty,
+    range="empty",
     ammo="Pemphredo Tathlum",
     head="Bagua Galero +3",
     body="Geomancy Tunic +3",
@@ -1026,7 +1026,7 @@ function init_gear_sets()
     main="Contemplator +1",           -- 70, __, 12, __ [__/__, ___] {__/__, __}
     sub="Khonsu",                     -- 30, __, __, __ [ 6/ 6, ___] {__/__, __}
     range="Dunna",                    -- 10, __, __,  3 [__/__, ___] { 5/ 5, __}
-    ammo=empty,                       -- __, __, __, __ [__/__, ___] {__/__, __}
+    ammo="empty",                       -- __, __, __, __ [__/__, ___] {__/__, __}
     head=gear.Merl_FC_head,           -- 15, __, 29, 15 [__/__,  86] {__/__, __}
     body=gear.Merl_FC_body,           -- 22, __, 40, 14 [ 2/__,  91] {__/__, __}
     hands="Geomancy Mitaines +3",     -- 48, __, 29, __ [ 3/__,  57] {13/13, __}; Set bonus
@@ -1053,8 +1053,8 @@ function init_gear_sets()
     main="Contemplator +1",           -- 70, __, 12 [__/__, ___] {__/__, __}; M.Acc skill+228
     sub="Khonsu",                     -- 30, __, __ [ 6/ 6, ___] {__/__, __}
     range="Dunna",                    -- 10, __, __ [__/__, ___] { 5/ 5, __}
-    ammo=empty,                       -- __, __, __ [__/__, ___] {__/__, __}
-    head=empty,
+    ammo="empty",                       -- __, __, __ [__/__, ___] {__/__, __}
+    head="empty",
     body="Crepuscular Cloak",         -- 85, __, 80 [__/__, 231] {__/__, __}
     hands="Geomancy Mitaines +3",     -- 48, __, 29 [ 3/__,  57] {13/13, __}; Set bonus
     legs=gear.Nyame_B_legs,           -- 40, __, 44 [ 8/ 8, 150] {__/__, __}
@@ -1083,7 +1083,7 @@ function init_gear_sets()
     main="Contemplator +1",           -- 70, 20, 12 [__/__, ___] {__/__, __}; M.Acc skill+228
     sub="Khonsu",                     -- 30, __, __ [ 6/ 6, ___] {__/__, __}
     range="Dunna",                    -- 10, __, __ [__/__, ___] { 5/ 5, __}
-    ammo=empty,                       -- __, __, __ [__/__, ___] {__/__, __}
+    ammo="empty",                       -- __, __, __ [__/__, ___] {__/__, __}
     head="Azimuth Hood +2",           -- 51, __, 34 [11/11, 126] {__/__,  4}
     body="Azimuth Coat +2",           -- 54, __, 45 [__/__, 131] {__/__, __}
     hands="Azimuth Gloves +2",        -- 52, 23, 31 [11/11,  88] {__/__, __}
@@ -1120,7 +1120,7 @@ function init_gear_sets()
     main="Contemplator +1",           -- 70, 20, 12, 22, __ [__/__, ___] {__/__, __}; M.Acc skill+228
     sub="Khonsu",                     -- 30, __, __, __, __ [ 6/ 6, ___] {__/__, __}
     range="Dunna",                    -- 10, __, __, __, __ [__/__, ___] { 5/ 5, __}
-    ammo=empty,                       -- __, __, __, __, __ [__/__, ___] {__/__, __}
+    ammo="empty",                       -- __, __, __, __, __ [__/__, ___] {__/__, __}
     head="Azimuth Hood +2",           -- 51, __, 34, 27, __ [11/11, 126] {__/__,  4}
     body="Azimuth Coat +2",           -- 54, __, 45, 38, __ [__/__, 131] {__/__, __}
     hands="Regal Cuffs",              -- 45, __, 40, 40, 20 [__/__,  53] {__/__, __}
@@ -1139,7 +1139,7 @@ function init_gear_sets()
     -- main="Idris",                  -- 70, __, __, __, __ [__/__, ___] {25/25, __}; M.Acc skill+255, R15
     -- sub="Ammurapi Shield",         -- 38, __, 13, 13, 10 [__/__, ___] {__/__, __}
     -- range="Dunna",                 -- 10, __, __, __, __ [__/__, ___] { 5/ 5, __}
-    -- ammo=empty,                    -- __, __, __, __, __ [__/__, ___] {__/__, __}
+    -- ammo="empty",                    -- __, __, __, __, __ [__/__, ___] {__/__, __}
     -- head="Azimuth Hood +3",        -- 61, __, 39, 32, __ [12/12, 136] {__/__,  5}
     -- body="Azimuth Coat +3",        -- 64, __, 49, 43, __ [__/__, 141] {__/__, __}
     -- hands="Regal Cuffs",           -- 45, __, 40, 40, 20 [__/__,  53] {__/__, __}
@@ -1159,7 +1159,7 @@ function init_gear_sets()
     -- main="Idris",                  -- 70, __, __, __, __ [__/__, ___] {25/25, __}; M.Acc skill+255, R15
     -- sub="Ammurapi Shield",         -- 38, __, 13, 13, 10 [__/__, ___] {__/__, __}
     -- range="Dunna",                 -- 10, __, __, __, __ [__/__, ___] { 5/ 5, __}
-    -- ammo=empty,                    -- __, __, __, __, __ [__/__, ___] {__/__, __}
+    -- ammo="empty",                    -- __, __, __, __, __ [__/__, ___] {__/__, __}
     -- head="Azimuth Hood +3",        -- 61, __, 39, 32, __ [12/12, 136] {__/__,  5}
     -- body="Azimuth Coat +3",        -- 64, __, 49, 43, __ [__/__, 141] {__/__, __}
     -- hands="Azimuth Gloves +3",     -- 62, 28, 36, 47, __ [12/12,  98] {__/__, __}
@@ -1180,7 +1180,7 @@ function init_gear_sets()
     main="Contemplator +1",           -- 70, 20, 12, 22, __ [__/__, ___] {__/__, __}; M.Acc skill+228
     sub="Khonsu",                     -- 30, __, __, __, __ [ 6/ 6, ___] {__/__, __}
     range="Dunna",                    -- 10, __, __, __, __ [__/__, ___] { 5/ 5, __}
-    ammo=empty,                       -- __, __, __, __, __ [__/__, ___] {__/__, __}
+    ammo="empty",                       -- __, __, __, __, __ [__/__, ___] {__/__, __}
     head="Azimuth Hood +2",           -- 51, __, 34, 27, __ [11/11, 126] {__/__,  4}
     body="Azimuth Coat +2",           -- 54, __, 45, 38, __ [__/__, 131] {__/__, __}
     hands="Regal Cuffs",              -- 45, __, 40, 40, 20 [__/__,  53] {__/__, __}
@@ -1198,7 +1198,7 @@ function init_gear_sets()
     -- main="Idris",                  -- 70, __, __, __, __ [__/__, ___] {25/25, __}; M.Acc skill+255, R15
     -- sub="Ammurapi Shield",         -- 38, __, 13, 13, 10 [__/__, ___] {__/__, __}
     -- range="Dunna",                 -- 10, __, __, __, __ [__/__, ___] { 5/ 5, __}
-    -- ammo=empty,                    -- __, __, __, __, __ [__/__, ___] {__/__, __}
+    -- ammo="empty",                    -- __, __, __, __, __ [__/__, ___] {__/__, __}
     -- head="Azimuth Hood +3",        -- 61, __, 39, 32, __ [12/12, 136] {__/__,  5}
     -- body="Azimuth Coat +3",        -- 64, __, 49, 43, __ [__/__, 141] {__/__, __}
     -- hands="Regal Cuffs",           -- 45, __, 40, 40, 20 [__/__,  53] {__/__, __}
@@ -1217,7 +1217,7 @@ function init_gear_sets()
   sets.midcast.ElementalEnfeeble.Resistant = set_combine(sets.midcast['Enfeebling Magic'].Resistant, {
     main="Maxentius",                 -- 40, __, 15, 15, __ [__/__, ___] {__/__, __}
     sub="Ammurapi Shield",            -- 38, __, 13, 13, 10 [__/__, ___] {__/__, __}
-    range=empty,
+    range="empty",
     ammo="Pemphredo Tathlum",         --  8, __,  4, __, __ [__/__, ___] {__/__, __}
     head="Azimuth Hood +2",           -- 51, __, 34, 27, __ [11/11, 126] {__/__,  4}
     body="Azimuth Coat +2",           -- 54, __, 45, 38, __ [__/__, 131] {__/__, __}
@@ -1236,7 +1236,7 @@ function init_gear_sets()
 
     -- main="Idris",                  -- 70, __, __, __, __ [__/__, ___] {25/25, __}; M.Acc skill+255, R15
     -- sub="Ammurapi Shield",         -- 38, __, 13, 13, 10 [__/__, ___] {__/__, __}
-    -- range=empty,
+    -- range="empty",
     -- ammo="Pemphredo Tathlum",      --  8, __,  4, __, __ [__/__, ___] {__/__, __}
     -- head="Azimuth Hood +3",        -- 61, __, 39, 32, __ [12/12, 136] {__/__,  5}
     -- body="Azimuth Coat +3",        -- 64, __, 49, 43, __ [__/__, 141] {__/__, __}
@@ -1257,7 +1257,7 @@ function init_gear_sets()
   sets.midcast.IntEnfeebles.Resistant = set_combine(sets.midcast['Enfeebling Magic'].Resistant, {
     -- main="Idris",                  -- 70, __, __, __, __ [__/__, ___] {25/25, __}; M.Acc skill+255, R15
     -- sub="Ammurapi Shield",         -- 38, __, 13, 13, 10 [__/__, ___] {__/__, __}
-    -- range=empty,
+    -- range="empty",
     -- ammo="Pemphredo Tathlum",      --  8, __,  4, __, __ [__/__, ___] {__/__, __}
     -- head="Azimuth Hood +3",        -- 61, __, 39, 32, __ [12/12, 136] {__/__,  5}
     -- body="Azimuth Coat +3",        -- 64, __, 49, 43, __ [__/__, 141] {__/__, __}
@@ -1280,7 +1280,7 @@ function init_gear_sets()
   sets.midcast.Dia = {
     main="Idris",                     -- __, __ [__/__, ___] {25/25, __}; M.Acc skill+255
     sub="Ammurapi Shield",            -- __, 10 [__/__, ___] {__/__, __}
-    range=empty,
+    range="empty",
     ammo="Perfect Lucky Egg",         --  1, __ [__/__, ___] {__/__, __}
     head="Azimuth Hood +2",           -- __, __ [11/11, 126] {__/__,  4}
     body=gear.Merl_TH_body,           --  2, __ [ 2/__,  91] {__/__, __}
@@ -1298,7 +1298,7 @@ function init_gear_sets()
     -- main="Idris",                  -- __, __ [__/__, ___] {25/25, __}; M.Acc skill+255
     -- sub="Ammurapi Shield",         -- __, 10 [__/__, ___] {__/__, __}
     -- range="Dunna",                 -- __, __ [__/__, ___] { 5/ 5, __}
-    -- ammo=empty,
+    -- ammo="empty",
     -- head="Azimuth Hood +3",        -- __, __ [12/12, 136] {__/__,  5}
     -- body=gear.Merl_TH_body,        --  2, __ [ 2/__,  91] {__/__, __}
     -- hands="Regal Cuffs",           -- __, 20 [__/__,  53] {__/__, __}
@@ -1323,7 +1323,7 @@ function init_gear_sets()
     main=gear.Gada_ENH,               -- 18,  6, __ [__/__, ___] {__/__, __}
     sub="Ammurapi Shield",            -- __, 10, __ [__/__, ___] {__/__, __}
     range="Dunna",                    -- __, __,  3 [__/__, ___] { 5/ 5, __}
-    ammo=empty,
+    ammo="empty",
     head="Azimuth Hood +2",           -- __, __, __ [11/11, 126] {__/__,  4}
     body=gear.Telchine_ENH_body,      -- 12, 10,  5 [__/__, 104] {__/__, __}
     hands=gear.Telchine_ENH_hands,    -- __, 10, __ [__/__,  37] {__/__, __}
@@ -1351,7 +1351,7 @@ function init_gear_sets()
   sets.midcast.Stoneskin = {
     main="Idris",                     -- __ [__/__, ___] {25/25, __}
     sub="Genmei Shield",              -- __ [10/__, ___] {__/__, __}
-    range=empty,
+    range="empty",
     ammo="Staunch Tathlum +1",        -- __ [ 3/ 3, ___] {__/__, __}; Status Resist +11
     head="Azimuth Hood +2",           -- __ [11/11, 126] {__/__,  4}
     body="Shamash Robe",              -- __ [10/__, 106] {__/__, __}
@@ -1381,7 +1381,7 @@ function init_gear_sets()
   sets.midcast.Refresh = {
     main=gear.Gada_ENH,               -- __, __,  6 [__/__, ___] {__/__, __}
     sub="Ammurapi Shield",            -- __, __, 10 [__/__, ___] {__/__, __}
-    range=empty,
+    range="empty",
     ammo="Staunch Tathlum +1",        -- __, __, __ [ 3/ 3, ___] {__/__, __}
     head="Amalric Coif +1",           --  2, __, __ [__/__,  86] {__/__, __}
     body=gear.Telchine_ENH_body,      -- __, __, 10 [__/__, 104] {__/__, __}
@@ -1416,7 +1416,7 @@ function init_gear_sets()
     main="Idris",                     -- __, __ [__/__, ___] {25/25, __}
     sub="Ammurapi Shield",            -- __, 10 [__/__, ___] {__/__, __}
     range="Dunna",                    -- __, __ [__/__, ___] { 5/ 5, __}
-    ammo=empty,
+    ammo="empty",
     head="Amalric Coif +1",           --  2, __ [__/__,  86] {__/__, __}
     body=gear.Telchine_ENH_body,      -- __, 10 [__/__, 104] {__/__, __}
     hands="Regal Cuffs",              --  2, __ [__/__,  53] {__/__, __}
@@ -1446,7 +1446,7 @@ function init_gear_sets()
   sets.midcast.Protect = {
     main=gear.Gada_ENH,               --  6, __ [__/__, ___] {__/__, __}
     sub="Ammurapi Shield",            -- 10, __ [__/__, ___] {__/__, __}
-    range=empty,
+    range="empty",
     ammo="Pemphredo Tathlum",         -- __,  4 [__/__, ___] {__/__, __}
     head="Azimuth Hood +2",           -- __, __ [11/11, 126] {__/__,  4}
     body=gear.Telchine_ENH_body,      -- 10, __ [__/__, 104] {__/__, __}
@@ -2281,11 +2281,11 @@ function check_gear()
 end
 
 windower.register_event('zone change', function()
-  if locked_neck then equip({ neck=empty }) end
-  if locked_ear1 then equip({ ear1=empty }) end
-  if locked_ear2 then equip({ ear2=empty }) end
-  if locked_ring1 then equip({ ring1=empty }) end
-  if locked_ring2 then equip({ ring2=empty }) end
+  if locked_neck then equip({ neck="empty" }) end
+  if locked_ear1 then equip({ ear1="empty" }) end
+  if locked_ear2 then equip({ ear2="empty" }) end
+  if locked_ring1 then equip({ ring1="empty" }) end
+  if locked_ring2 then equip({ ring2="empty" }) end
 end)
 
 function item_name_to_id(name)

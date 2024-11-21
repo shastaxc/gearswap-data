@@ -169,7 +169,7 @@ function get_sets()
 
   -- Load and initialize the include file.
   include('Mote-Include.lua') --DO NOT MOVE TO GLOBALS. MUST BE HERE.
-  equip({main=empty,sub=empty})
+  equip({main="empty",sub="empty"})
   
   coroutine.schedule(function()
     send_command('gs reorg')
@@ -351,7 +351,7 @@ function init_gear_sets()
   sets.HeavyDef = {
     main="Mpaca's Staff",             -- __/__, ___ [ 2]
     sub="Enki Strap",                 -- __/__,  10 [__]
-    range=empty,                      -- __/__, ___ [__]
+    range="empty",                      -- __/__, ___ [__]
     ammo="Staunch Tathlum +1",        --  3/ 3, ___ [__]; Resist Status+11
     head="Wicce Petasos +3",          -- 11/11, 136 [__]
     body="Shamash Robe",              -- 10/__, 106 [ 3]; Resist Silence+90
@@ -381,7 +381,7 @@ function init_gear_sets()
   -- Technically, Prime sword Caliburnus has highest refresh
   -- Used when your weapons are locked "battle mode"
   sets.passive_refresh = {
-    range=empty,                      -- __/__, ___ [__]
+    range="empty",                      -- __/__, ___ [__]
     ammo="Staunch Tathlum +1",        --  3/ 3, ___ [__]
     head="Volte Beret",               -- __/__, 104 [ 1]
     body="Shamash Robe",              -- 10/__, 106 [ 3]; Resist Silence+90
@@ -425,7 +425,7 @@ function init_gear_sets()
 
   -- Fast cast sets for spells (cap 80% FC).
   sets.precast.FC = {
-    range=empty,                      -- __ [__/__, ___]
+    range="empty",                      -- __ [__/__, ___]
     ammo="Sapience Orb",              --  2 [__/__, ___]
     head=gear.Merl_FC_head,           -- 15 [__/__,  86]
     body=gear.Merl_FC_body,           -- 14 [ 2/__,  91]
@@ -444,7 +444,7 @@ function init_gear_sets()
   sets.precast.FC.QuickMagic = set_combine(sets.precast.FC, {})
 
   sets.precast.FC.Impact = set_combine(sets.precast.FC, {
-    head=empty,                       -- __ [__/__, ___]
+    head="empty",                       -- __ [__/__, ___]
     body="Crepuscular Cloak",         -- __ [__/__, 231]
   })
   sets.precast.FC.Dispelga = set_combine(sets.precast.FC, {
@@ -453,7 +453,7 @@ function init_gear_sets()
   })
   
   sets.precast.FC.RDM = {
-    range=empty,                      -- __ [__/__, ___]
+    range="empty",                      -- __ [__/__, ___]
     ammo="Sapience Orb",              --  2 [__/__, ___]
     head=gear.Merl_FC_head,           -- 15 [__/__,  86]
     body="Shamash Robe",              -- __ [10/__, 106]; Resist Silence+90
@@ -471,7 +471,7 @@ function init_gear_sets()
     -- 80 FC [53 PDT/46 MDT, 542 MEVA]
   }
   sets.precast.FC.QuickMagic.RDM = {
-    range=empty,                      -- __ [__/__, ___]
+    range="empty",                      -- __ [__/__, ___]
     ammo="Impatiens",                 -- __ [__/__, ___]  2
     head=gear.Merl_FC_head,           -- 15 [__/__,  86]
     body=gear.Merl_FC_body,           -- 14 [ 2/__,  91]
@@ -495,7 +495,7 @@ function init_gear_sets()
   ------------------------------------------------------------------------------------------------
 
   sets.precast.WS = {
-    range=empty,                      -- __, __, __, __, __ <__, __, __> (__, __) [__/__, ___]
+    range="empty",                      -- __, __, __, __, __ <__, __, __> (__, __) [__/__, ___]
     ammo="Oshasha's Treatise",        -- __,  5,  5,  3, __ <__, __, __> (__, __) [__/__, ___]
     head=gear.Nyame_B_head,           -- 26, 50, 65, 11, __ < 5, __, __> (__, __) [ 7/ 7, 123]
     body=gear.Nyame_B_body,           -- 45, 40, 65, 13, __ < 7, __, __> (__, __) [ 9/ 9, 139]
@@ -514,7 +514,7 @@ function init_gear_sets()
 
   -- Dark elemental WS. Lower target M.Def. Duration varies with TP. dStat = INT.
   sets.precast.WS['Vidohunir'] = set_combine(sets.precast.WS, {
-    range=empty,                      -- __, __, __, __, __ [__/__, ___]
+    range="empty",                      -- __, __, __, __, __ [__/__, ___]
     ammo="Ghastly Tathlum +1",        -- 11, __, __, __, 21 [__/__, ___]
     head="Wicce Petasos +3",          -- 39, 61, __, 51, 31 [11/11, 136]
     body="Wicce Coat +3",             -- 50, 64, __, 59, 34 [__/__, 141]
@@ -568,7 +568,7 @@ function init_gear_sets()
   
   -- Earth elemental. 40% STR/40% INT. dStat = INT. Damage varies with TP.
   sets.precast.WS['Earth Crusher'] = {
-    range=empty,                      -- __, __, __, __, __, __ [__/__, ___]
+    range="empty",                      -- __, __, __, __, __, __ [__/__, ___]
     ammo="Ghastly Tathlum +1",        -- __, 11, __, __, __, 21 [__/__, ___]
     head="Wicce Petasos +3",          -- 22, 39, 61, __, 51, 31 [11/11, 136]
     body=gear.Nyame_B_body,           -- 45, 42, 40, 13, 30, __ [ 9/ 9, 139]
@@ -683,7 +683,7 @@ function init_gear_sets()
   sets.midcast.Stoneskin = {
     main=gear.Gada_ENH,               -- __, 18,  6, __ [__/__, ___]
     sub="Ammurapi Shield",            -- __, __, 10, __ [__/__, ___]
-    range=empty,                      -- __, __, __, __ [__/__, ___]
+    range="empty",                      -- __, __, __, __ [__/__, ___]
     ammo="Staunch Tathlum +1",        -- __, __, __, __ [ 3/ 3, ___]
     head="Wicce Petasos +3",          -- __, __, __, __ [11/11, 136]
     body=gear.Telchine_ENH_body,      -- __, 12, 10,  5 [__/__, 104]
@@ -709,7 +709,7 @@ function init_gear_sets()
   sets.midcast.Phalanx = {
     main=gear.Gada_ENH,                   -- __, 18,  6 [__/__, ___]
     sub="Ammurapi Shield",                -- __, __, 10 [__/__, ___]
-    range=empty,                          -- __, __, __ [__/__, ___]
+    range="empty",                          -- __, __, __ [__/__, ___]
     ammo="Staunch Tathlum +1",            -- __, __, __ [ 3/ 3, ___]
     head=gear.Merl_Phalanx_head,          --  5, __, __ [__/__,  86]
     body=gear.Merl_Phalanx_body,          --  3, __, __ [ 2/__,  91]
@@ -741,7 +741,7 @@ function init_gear_sets()
   sets.midcast.Aquaveil = set_combine(sets.midcast['Enhancing Magic'], {
     main="Eremite's Wand +1",         -- __, __, __, 25 [__/__, ___]
     sub="Genmei Shield",              -- __, __, __, __ [10/__, ___]
-    range=empty,                      -- __, __, __, __ [__/__, ___]
+    range="empty",                      -- __, __, __, __ [__/__, ___]
     ammo="Staunch Tathlum +1",        -- __, __, __, 11 [ 3/ 3, ___]
     head="Amalric Coif +1",           --  2, __, __, __ [__/__,  86]
     body="Rosette Jaseran +1",        -- __, __, __, 25 [ 5/ 5,  80]
@@ -786,7 +786,7 @@ function init_gear_sets()
     waist="Obstinate Sash",           -- ___, 15,  5, __ (__,  5, 15) [__/__, ___]
     -- 228 M.Acc skill, 529 M.Acc, 282 MND, 4 FC (0 Enf. Effect, 5 Enf. Duration, 72 Enf. Skill) [41 PDT/41 MDT, 670 M.Eva]
     
-		-- head=empty,                    -- ___, __, __, __ (__, __, __) [__/__, ___]
+		-- head="empty",                    -- ___, __, __, __ (__, __, __) [__/__, ___]
 		-- body="Cohort Cloak +1",        -- ___,120, 76, __ (__, __, 34) [__/__, 156]
 		-- ear2="Crepuscular Earring",    -- ___, 10, __, __ (__, __, __) [__/__, ___]
     -- 228 M.Acc skill, 533 M.Acc, 282 MND, 4 FC (0 Enf. Effect, 5 Enf. Duration, 85 Enf. Skill) [30 PDT/30 MDT, 590 M.Eva]
@@ -811,7 +811,7 @@ function init_gear_sets()
     -- AF set effect                     ___, 15
     -- 228 M.Acc skill, 522 M.Acc, 311 INT, 11 FC (0 Enf. Effect, 5 Enf. Duration, 64 Enf. Skill) [51 PDT/51 MDT, 636 M.Eva]
 
-		-- head=empty,                    -- ___, __, __, __ (__, __, __) [__/__, ___]
+		-- head="empty",                    -- ___, __, __, __ (__, __, __) [__/__, ___]
 		-- body="Cohort Cloak +1",        -- ___,120, 76, __ (__, __, 34) [__/__, 156]
     -- hands="Spaekona's Gloves +3",  --  21, 49, 44, __ (__, __, __) [__/__,  57]
     -- feet="Spaekona's Sabots +3",   -- ___, 54, 32, __ (__, __, __) [__/__, 127]
@@ -852,8 +852,8 @@ function init_gear_sets()
     main="Contemplator +1",           -- 228, 70, 12, __ (__) [__/__, ___]
     sub="Khonsu",                     -- ___, 30, __, __ (__) [ 6/ 6, ___]
     range="Ullr",                     -- ___, 40, __, __ (__) [__/__, ___]
-    ammo=empty,
-    head=empty,
+    ammo="empty",
+    head="empty",
     body="Crepuscular Cloak",         -- ___, 85, 80, __ (__) [__/__, 231]
     hands="Wicce Gloves +3",          -- ___, 62, 38, __ (__) [13/13,  98]
     legs="Agwu's Slops",              -- ___, 55, 54,  7 (__) [10/10, 134]
@@ -887,7 +887,7 @@ function init_gear_sets()
   sets.midcast['Dark Magic'] = {
     main=gear.Rubicundity,            -- 215, 22, 26, 21 [__/__, ___]
     sub="Ammurapi Shield",            -- ___, __, 38, 13 [__/__, ___]
-    range=empty,                      -- ___, __, __, __ [__/__, ___]
+    range="empty",                      -- ___, __, __, __ [__/__, ___]
     ammo="Pemphredo Tathlum",         -- ___, __,  8,  4 [__/__, ___]
     head=gear.Amalric_C_head,         -- ___, 20, 36, 36 [__/__,  86]
     body="Wicce Coat +3",             -- ___, __, 64, 50 [__/__, 141]
@@ -911,7 +911,7 @@ function init_gear_sets()
   sets.midcast.Drain = set_combine(sets.midcast['Dark Magic'], {
     main=gear.Rubicundity,            -- 215, 22, 26, 21 [__/__, ___] 20
     sub="Ammurapi Shield",            -- ___, __, 38, 13 [__/__, ___] __
-    range=empty,                      -- ___, __, __, __ [__/__, ___] __
+    range="empty",                      -- ___, __, __, __ [__/__, ___] __
     ammo="Pemphredo Tathlum",         -- ___, __,  8,  4 [__/__, ___] __
     head="Pixie Hairpin +1",          -- ___, __, __, __ [__/__, ___] __; Extra 1.28 multiplier
     body="Wicce Coat +3",             -- ___, __, 64, 50 [__/__, 141] __
@@ -966,7 +966,7 @@ function init_gear_sets()
   sets.midcast['Elemental Magic'] = {
     main="Bunzi's Rod",               -- 255, __, 55 (15, 65,248, 10, __) [__/__, ___]
     sub="Ammurapi Shield",            -- ___, __, 38 (13, 38, __, __, __) [__/__, ___]
-    range=empty,                      -- ___, __, __ (__, __, __, __, __) [__/__, ___]
+    range="empty",                      -- ___, __, __ (__, __, __, __, __) [__/__, ___]
     ammo="Ghastly Tathlum +1",        -- ___, __, __ (11, __, 21, __, __) [__/__, ___]
     head="Ea Hat +1",                 -- ___, __, 50 (43, 38, __,  7,  7) [__/__, 109]
 		body="Wicce Coat +3",             -- ___, __, 64 (50, 59, 34, __,  5) [__/__, 141]
@@ -1695,11 +1695,11 @@ function check_gear()
 end
 
 windower.register_event('zone change', function()
-  if locked_neck then equip({ neck=empty }) end
-  if locked_ear1 then equip({ ear1=empty }) end
-  if locked_ear2 then equip({ ear2=empty }) end
-  if locked_ring1 then equip({ ring1=empty }) end
-  if locked_ring2 then equip({ ring2=empty }) end
+  if locked_neck then equip({ neck="empty" }) end
+  if locked_ear1 then equip({ ear1="empty" }) end
+  if locked_ear2 then equip({ ear2="empty" }) end
+  if locked_ring1 then equip({ ring1="empty" }) end
+  if locked_ring2 then equip({ ring2="empty" }) end
 end)
 
 -- Select default macro book on initial load or subjob change.

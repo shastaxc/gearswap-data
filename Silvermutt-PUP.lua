@@ -782,8 +782,8 @@ function init_gear_sets()
   -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
 
   sets.WeaponSet = {} -- DO NOT MODIFY
-  sets.WeaponSet['Kenkonken'] = {main="Kenkonken", sub=empty}
-  sets.WeaponSet['Verethragna'] = {main="Verethragna", sub=empty}
+  sets.WeaponSet['Kenkonken'] = {main="Kenkonken", sub="empty"}
+  sets.WeaponSet['Verethragna'] = {main="Verethragna", sub="empty"}
   sets.WeaponSet['Cleaving'] = {main="Tauret", sub="Kaja Knife"}
 
 
@@ -2602,11 +2602,11 @@ function check_gear()
 end
 
 windower.register_event('zone change', function()
-  if locked_neck then equip({ neck=empty }) end
-  if locked_ear1 then equip({ ear1=empty }) end
-  if locked_ear2 then equip({ ear2=empty }) end
-  if locked_ring1 then equip({ ring1=empty }) end
-  if locked_ring2 then equip({ ring2=empty }) end
+  if locked_neck then equip({ neck="empty" }) end
+  if locked_ear1 then equip({ ear1="empty" }) end
+  if locked_ear2 then equip({ ear2="empty" }) end
+  if locked_ring1 then equip({ ring1="empty" }) end
+  if locked_ring2 then equip({ ring2="empty" }) end
 end)
 
 windower.raw_register_event('incoming chunk', function(id, data, modified, injected, blocked)

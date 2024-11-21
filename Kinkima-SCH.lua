@@ -709,7 +709,7 @@ function init_gear_sets()
   -- sets.precast.FC.QuickMagic.RDM.Grimoire = {}
 
   sets.precast.FC.Impact = set_combine(sets.precast.FC, {
-    head=empty,
+    head="empty",
     body="Crepuscular Cloak",
   })
   sets.precast.FC.Dispelga = set_combine(sets.precast.FC, {
@@ -1236,7 +1236,7 @@ function init_gear_sets()
     main="Bunzi's Rod",               -- 15, 55, 255, ___, __
     sub="Ammurapi Shield",            -- 13, 38, ___, ___, __
     ammo="Ghastly Tathlum +1",        -- 11, __, ___, ___, __
-    head=empty,
+    head="empty",
     body="Crepuscular Cloak",         -- 80, 85, ___, ___, __
     hands="Arbatel Bracers +3",       -- 36, 62, ___, ___, __
     legs="Arbatel Pants +3",          -- 53, 63, ___, ___, __; M.Acc +36
@@ -2230,11 +2230,11 @@ function check_gear()
 end
 
 windower.register_event('zone change', function()
-  if locked_neck then equip({ neck=empty }) end
-  if locked_ear1 then equip({ ear1=empty }) end
-  if locked_ear2 then equip({ ear2=empty }) end
-  if locked_ring1 then equip({ ring1=empty }) end
-  if locked_ring2 then equip({ ring2=empty }) end
+  if locked_neck then equip({ neck="empty" }) end
+  if locked_ear1 then equip({ ear1="empty" }) end
+  if locked_ear2 then equip({ ear2="empty" }) end
+  if locked_ring1 then equip({ ring1="empty" }) end
+  if locked_ring2 then equip({ ring2="empty" }) end
 end)
 
 -- Select default macro book on initial load or subjob change.

@@ -533,7 +533,7 @@ function init_gear_sets()
     ring1="Weatherspoon Ring", --5
   })
   sets.precast.FC.Impact = set_combine(sets.precast.FC,{
-    -- head=empty,
+    -- head="empty",
     -- body="Crepuscular Cloak",
   })
 
@@ -1053,7 +1053,7 @@ function init_gear_sets()
     -- main="Liberator",
     -- sub="Khonsu",
     -- range="Ullr",
-    -- ammo=empty,
+    -- ammo="empty",
   }
 
   -- Don't care about duration
@@ -1110,7 +1110,7 @@ function init_gear_sets()
     -- main="Father Time",
     -- sub="Dark Grip",
     -- range="Ullr",
-    -- ammo=empty,
+    -- ammo="empty",
   }
   
   sets.midcast.Aspir = set_combine(sets.midcast.Drain, {})
@@ -1154,7 +1154,7 @@ function init_gear_sets()
   -- Elemental magic
   sets.midcast.Impact = set_combine(sets.midcast['Elemental Magic'], {
     ammo="Pemphredo Tathlum",
-    -- head=empty,
+    -- head="empty",
     -- body="Crepuscular Cloak",
     hands="Heathen's Gauntlets +2",
     legs="Heathen's Flanchard +2",
@@ -1817,11 +1817,11 @@ function check_gear()
 end
 
 windower.register_event('zone change', function()
-  if locked_neck then equip({ neck=empty }) end
-  if locked_ear1 then equip({ ear1=empty }) end
-  if locked_ear2 then equip({ ear2=empty }) end
-  if locked_ring1 then equip({ ring1=empty }) end
-  if locked_ring2 then equip({ ring2=empty }) end
+  if locked_neck then equip({ neck="empty" }) end
+  if locked_ear1 then equip({ ear1="empty" }) end
+  if locked_ear2 then equip({ ear2="empty" }) end
+  if locked_ring1 then equip({ ring1="empty" }) end
+  if locked_ring2 then equip({ ring2="empty" }) end
 end)
 
 -- Select default macro book on initial load or subjob change.

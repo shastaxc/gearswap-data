@@ -406,18 +406,18 @@ function init_gear_sets()
   sets.WeaponSet['Terpsichore'] = {main="Terpsichore", sub="Twashtar"}
   sets.WeaponSet['Cleaving'] = {main="Tauret", sub="Twashtar"}
   sets.WeaponSet['Healing'] = {main="Terpsichore", sub="Enchufla"}
-  sets.WeaponSet['H2H'] = {main="Karambit", sub=empty}
+  sets.WeaponSet['H2H'] = {main="Karambit", sub="empty"}
   sets.WeaponSet['Staff'] = {main="Gozuki Mezuki", sub="Tzacab Grip"}
 
   -- Ranged weapon sets
   sets.RangedWeaponSet = {}
   sets.RangedWeaponSet['Throwing'] = {
     ranged="Albin Bane",
-    ammo=empty,
+    ammo="empty",
   }
   sets.RangedWeaponSet['Pulling'] = {
     ranged="Jinx Discus",
-    ammo=empty,
+    ammo="empty",
   }
 
 
@@ -2081,11 +2081,11 @@ function check_gear()
 end
 
 windower.register_event('zone change', function()
-  if locked_neck then equip({ neck=empty }) end
-  if locked_ear1 then equip({ ear1=empty }) end
-  if locked_ear2 then equip({ ear2=empty }) end
-  if locked_ring1 then equip({ ring1=empty }) end
-  if locked_ring2 then equip({ ring2=empty }) end
+  if locked_neck then equip({ neck="empty" }) end
+  if locked_ear1 then equip({ ear1="empty" }) end
+  if locked_ear2 then equip({ ear2="empty" }) end
+  if locked_ring1 then equip({ ring1="empty" }) end
+  if locked_ring2 then equip({ ring2="empty" }) end
 end)
 
 -- Select default macro book on initial load or subjob change.

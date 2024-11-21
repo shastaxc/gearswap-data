@@ -336,9 +336,9 @@ function init_gear_sets()
   -- ∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎∎
 
   sets.WeaponSet = {} -- DO NOT MODIFY
-  sets.WeaponSet['Verethragna'] = {main="Verethragna", sub=empty}
-  sets.WeaponSet['Piercing'] = {main="Birdbanes", sub=empty}
-  sets.WeaponSet['Slashing'] = {main="Vampiric Claws", sub=empty}
+  sets.WeaponSet['Verethragna'] = {main="Verethragna", sub="empty"}
+  sets.WeaponSet['Piercing'] = {main="Birdbanes", sub="empty"}
+  sets.WeaponSet['Slashing'] = {main="Vampiric Claws", sub="empty"}
   sets.WeaponSet['Cleaving'] = {
     main="Xoanon",
     sub="Alber Strap"
@@ -444,9 +444,9 @@ function init_gear_sets()
   -- Slow+ gear can increase the duration of Boost
   sets.precast.JA['Boost'].Idle = {
     head="Gnadbhod's Helm",
-    body=empty,
-    hands=empty,
-    legs=empty,
+    body="empty",
+    hands="empty",
+    legs="empty",
     feet="Mahant Sandals",
     neck="Justiciar's Torque",
     ring1="Sljor ring",
@@ -1541,11 +1541,11 @@ function check_gear()
 end
 
 windower.register_event('zone change', function()
-  if locked_neck then equip({ neck=empty }) end
-  if locked_ear1 then equip({ ear1=empty }) end
-  if locked_ear2 then equip({ ear2=empty }) end
-  if locked_ring1 then equip({ ring1=empty }) end
-  if locked_ring2 then equip({ ring2=empty }) end
+  if locked_neck then equip({ neck="empty" }) end
+  if locked_ear1 then equip({ ear1="empty" }) end
+  if locked_ear2 then equip({ ear2="empty" }) end
+  if locked_ring1 then equip({ ring1="empty" }) end
+  if locked_ring2 then equip({ ring2="empty" }) end
 end)
 
 -- Select default macro book on initial load or subjob change.
